@@ -23,16 +23,23 @@ Verfügbare Aufgabentypen:
 | Typ | Beschreibung | Schwierigkeit | Eignung |
 |---|---|---|---|
 | `multiple-choice` | 4 Optionen, 1 richtig | AFB I | Faktenwissen, Begriffe |
-| `zuordnung` | Elemente korrekt zuordnen (Drag & Drop) | AFB I–II | Zusammenhänge, Kategorien |
+| `zuordnung` | Elemente korrekt zuordnen (Dropdown-Auswahl) | AFB I–II | Zusammenhänge, Kategorien |
 | `lueckentext` | Fehlende Wörter einsetzen | AFB I–II | Fachbegriffe, Definitionen |
 | `reihenfolge` | Elemente in richtige Reihenfolge bringen | AFB II | Chronologie, Prozesse |
 | `freitext-code` | Freitext-Antwort ergibt Code | AFB II–III | Reflexion, Beurteilung |
+
+**Zuordnung – MVP-Implementierung (Dropdown statt Drag & Drop):**
+- Linke Spalte: Begriffe (fest, nicht verschiebbar)
+- Rechte Spalte: `<select>`-Dropdowns mit allen möglichen Zuordnungen
+- Validierung: Alle Dropdowns müssen korrekt zugeordnet sein
+- Post-MVP-Erweiterung: Drag-and-Drop als optionale Alternative
 
 Regeln:
 - **Mindestens 3 verschiedene Typen** pro Mappe
 - **Schwierigkeits-Progression** innerhalb einer Mappe (AFB I → II → III)
 - Jede Aufgabe basiert auf einer Kernaussage aus dem Inhalts-MD
 - Keine Trick-Fragen, keine mehrdeutigen Antworten
+- **MVP-Medienregel**: Alle Aufgaben müssen ohne externe Bilder oder Audio funktionieren. Rein textbasiert + Unicode-Symbole.
 
 ### 2. Freischalt-Codes generieren
 
@@ -99,7 +106,11 @@ Gemäß Schema aus `escape-games/template/data.json`:
           "frage": "[Frage]",
           "optionen": ["A", "B", "C", "D"],
           "loesung": "A",
-          "tipps": ["Hinweis", "Teilantwort", "Lösung"],
+          "tipps": [
+            {"stufe": 1, "text": "Denkanstoß ohne Lösungsverraten"},
+            {"stufe": 2, "text": "Lösungsrichtung andeuten"},
+            {"stufe": 3, "text": "Erklärung mit Lösung"}
+          ],
           "punkte": 10
         }
       ]

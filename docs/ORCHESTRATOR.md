@@ -100,7 +100,11 @@ Alle Agenten arbeiten konsistent auf dem Schema aus `escape-games/template/data.
           "frage": "",
           "optionen": [],
           "loesung": "",
-          "tipps": ["Hinweis", "Teilantwort", "Lösung"],
+          "tipps": [
+            {"stufe": 1, "text": "Denkanstoß ohne Lösungsverraten"},
+            {"stufe": 2, "text": "Lösungsrichtung andeuten"},
+            {"stufe": 3, "text": "Erklärung mit Lösung"}
+          ],
           "punkte": 0
         }
       ]
@@ -108,6 +112,22 @@ Alle Agenten arbeiten konsistent auf dem Schema aus `escape-games/template/data.
   ]
 }
 ```
+
+## Medien-Workflow
+
+### MVP (Phase 2–4): Textbasiert
+
+- **Keine externen Bilder oder Audio-Dateien** im MVP
+- Aufgaben sind rein textbasiert + Unicode-Symbole (✅ ❌ 🔑 📁 💡 🎯)
+- Visuelle Gestaltung über CSS: Hintergründe, Bordüren, Gradienten, `::before`/`::after`
+- Feedback über Animationen und Farbwechsel statt Audio
+
+### Post-MVP (Phase 5+): Medien-Erweiterung
+
+- Public-Domain- und CC0-Quellen für Bilder (Wikimedia Commons, Pixabay)
+- Lizenzprüfung pro Asset dokumentieren
+- Audio-Dateien in `assets/audio/` (MP3, max. 100KB pro Datei)
+- Asset-Pipeline: Beschaffung → Lizenzprüfung → Optimierung → Integration
 
 ## Konventionen
 

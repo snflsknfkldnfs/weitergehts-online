@@ -14,6 +14,61 @@ Vom ORCHESTRATOR:
 | `data_json` | Befüllte data.json (Output von AGENT_RAETSEL) |
 | `template_verzeichnis` | `escape-games/template/` als Blanko-Vorlage |
 
+## Abgrenzung zu AGENT_DESIGN
+
+> **AGENT_TECHNIK** erzeugt funktionales HTML mit semantischer Struktur und CSS-Klassen. Er definiert **keine** Farben, Fonts, Abstände oder Animationen.
+>
+> **AGENT_DESIGN** füllt die Klassen mit visuellem Styling. Er arbeitet **ausschließlich in CSS-Dateien** und ändert kein HTML.
+
+| Verantwortung | AGENT_TECHNIK | AGENT_DESIGN |
+|---|---|---|
+| HTML-Struktur & Semantik | ✅ | ❌ |
+| CSS-Klassennamen (BEM) | ✅ (definiert) | ✅ (stylt) |
+| ARIA-Labels & Accessibility-Attribute | ✅ | ❌ |
+| Farben, Fonts, Abstände | ❌ | ✅ |
+| Animationen & Transitions | ❌ | ✅ |
+| Responsive Breakpoints | ❌ | ✅ |
+| JavaScript-Logik | ✅ | ❌ |
+| Inline-Styles | ❌ (verboten) | ❌ (verboten) |
+
+### BEM-Klassennamen-Konvention
+
+AGENT_TECHNIK verwendet BEM-artige Klassennamen, die AGENT_DESIGN dann stylt:
+
+```html
+<!-- Beispiel: Aufgabe -->
+<section class="aufgabe aufgabe--multiple-choice">
+  <h3 class="aufgabe__titel">...</h3>
+  <div class="aufgabe__inhalt">
+    <div class="aufgabe__optionen">
+      <label class="aufgabe__option">
+        <input type="radio" class="aufgabe__input" />
+        <span class="aufgabe__label">...</span>
+      </label>
+    </div>
+  </div>
+  <div class="aufgabe__feedback aufgabe__feedback--success">...</div>
+  <div class="aufgabe__tipps">
+    <button class="tipp__trigger">Tipp 1</button>
+    <div class="tipp__inhalt">...</div>
+  </div>
+  <div class="aufgabe__code-eingabe">
+    <input class="code__input" />
+    <button class="code__submit">Prüfen</button>
+  </div>
+</section>
+
+<!-- Beispiel: Mappe -->
+<main class="mappe">
+  <header class="mappe__header">
+    <h1 class="mappe__titel">...</h1>
+    <div class="mappe__fortschritt">...</div>
+  </header>
+  <div class="mappe__inhalt">...</div>
+  <nav class="mappe__navigation">...</nav>
+</main>
+```
+
 ## Aufgaben
 
 ### 1. Escape-Game-Verzeichnis anlegen
@@ -53,7 +108,7 @@ escape-games/[thema]/
 - 5 Aufgaben sequenziell dargestellt
 - Aufgabentyp-spezifische UI-Elemente:
   - `multiple-choice`: Radio-Buttons mit 4 Optionen
-  - `zuordnung`: Drag-and-Drop-Bereiche
+  - `zuordnung`: Dropdown-Zuordnung (linke Spalte: Begriffe fest, rechte Spalte: `<select>`-Dropdowns mit allen Zuordnungsoptionen)
   - `lueckentext`: Input-Felder im Text
   - `reihenfolge`: Sortierbare Liste
   - `freitext-code`: Textarea + Code-Ableitung
@@ -74,14 +129,40 @@ escape-games/[thema]/
 Funktionalitäten (implementiert in `assets/js/escape-engine.js`):
 
 ```javascript
-// Kernfunktionen
-EscapeEngine.init(dataJson)           // Initialisierung mit data.json
-EscapeEngine.checkCode(mappeId, code) // Code-Prüfung
-EscapeEngine.saveProgress()           // localStorage-Speicherung
-EscapeEngine.loadProgress()           // Fortschritt laden
-EscapeEngine.showTipp(aufgabeId, stufe) // Tipp anzeigen
-EscapeEngine.resetProgress()          // Neustart
-EscapeEngine.unlockMappe(mappeId)     // Mappe freischalten (Lehrkraft)
+/**
+ * EscapeEngine API – Signaturen (finalisiert in Phase 2)
+ *
+ * @param {string} mappeId     - z.B. "mappe-1"
+ * @param {number} aufgabeIndex - 0-basierter Index der Aufgabe in der Mappe
+ * @param {1|2|3}  stufe       - Tipp-Stufe (1=Denkanstoß, 2=Richtung, 3=Lösung)
+ */
+
+// Initialisierung: Lädt data.json, setzt Event-Listener, stellt Fortschritt wieder her
+EscapeEngine.init(mappeId: string) → void
+
+// Code-Prüfung: Vergleicht Eingabe mit erwartetem Freischalt-Code
+EscapeEngine.checkCode(mappeId: string, eingabe: string)
+  → { correct: boolean, message: string }
+
+// Fortschritt speichern: Schreibt aktuellen Aufgaben-Status in localStorage
+EscapeEngine.saveProgress(mappeId: string, aufgabeIndex: number, solved: boolean)
+  → void
+
+// Fortschritt laden: Liest gespeicherten Status aus localStorage
+EscapeEngine.loadProgress(mappeId: string)
+  → { aufgaben: boolean[], abgeschlossen: boolean }
+
+// Tipp anzeigen: Gibt den Tipp-Text für eine bestimmte Stufe zurück
+EscapeEngine.showTipp(mappeId: string, aufgabeIndex: number, stufe: 1|2|3)
+  → string
+
+// Fortschritt zurücksetzen: Löscht alle localStorage-Einträge für dieses Game
+EscapeEngine.resetProgress()
+  → void
+
+// Mappe freischalten (Lehrkraft): Überspringt Code-Prüfung
+EscapeEngine.unlockMappe(mappeId: string)
+  → void
 ```
 
 localStorage-Schema:

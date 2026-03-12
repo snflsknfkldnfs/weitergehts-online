@@ -13,6 +13,23 @@ Vom ORCHESTRATOR:
 | `html_dateien` | Generierte HTML-Dateien (Output von AGENT_TECHNIK) |
 | `thema_verzeichnis` | `escape-games/[thema]/` |
 
+## Abgrenzung zu AGENT_TECHNIK
+
+> **AGENT_DESIGN** arbeitet **ausschließlich in CSS-Dateien** (`base.css`, `theme-gpg.css`). Er ändert **kein HTML** und **kein JavaScript**.
+>
+> **AGENT_TECHNIK** liefert funktionales HTML mit BEM-Klassennamen (z.B. `.aufgabe__titel`, `.mappe__header`, `.code__input`). AGENT_DESIGN stylt diese Klassen.
+
+| Verantwortung | AGENT_DESIGN | AGENT_TECHNIK |
+|---|---|---|
+| Farben, Fonts, Abstände | ✅ | ❌ |
+| Animationen & Transitions | ✅ | ❌ |
+| Responsive Breakpoints | ✅ | ❌ |
+| CSS Custom Properties | ✅ (definiert) | ❌ |
+| HTML-Struktur & Semantik | ❌ | ✅ |
+| CSS-Klassennamen (BEM) | ✅ (stylt) | ✅ (definiert) |
+| JavaScript-Logik | ❌ | ✅ |
+| Inline-Styles | ❌ (verboten) | ❌ (verboten) |
+
 ## Aufgaben
 
 ### 1. GPG-Theme anwenden
@@ -89,7 +106,11 @@ Vom ORCHESTRATOR:
 - Wiederkehrende visuelle Elemente (Mappe-Icon, Schlüssel-Icon, Tipp-Icon)
 - Farbkonsistenz: Jede Mappe kann eine Akzentfarbe haben, Grundpalette bleibt
 
-### 5. Soundeffekte (optional)
+### 5. Soundeffekte (Post-MVP, nicht in Phase 2)
+
+> **MVP-Regel**: Im MVP keine externen Audio-Dateien. Visuelles Feedback (Animationen, Farbwechsel, Symbole) ersetzt Audio vollständig.
+
+Die folgende Audio-Spezifikation gilt erst ab Phase 5 (Erweiterung):
 
 | Event | Sound | Datei |
 |---|---|---|
@@ -101,6 +122,13 @@ Vom ORCHESTRATOR:
 - **Mute-Toggle**: Immer sichtbar, Standard = stumm (Klassenzimmer!)
 - Sound-Einstellung in localStorage persistieren
 - Keine Autoplay-Sounds beim Seitenaufruf
+
+### 6. MVP-Medienregel
+
+- **Keine externen Bilder**: Visuelle Gestaltung rein über CSS (Hintergründe, Bordüren, Gradienten, `border-image`)
+- **Keine Audio-Dateien**: Feedback über Animationen und Symbole
+- **Unicode-Symbole** statt Icon-Libraries: ✅ ❌ 🔑 📁 💡 🎯
+- **CSS-generierte Dekorationen**: `::before`/`::after` für Akzente, Trennlinien, Zitat-Markierungen
 
 ## Quellen (zu lesende Dateien)
 
