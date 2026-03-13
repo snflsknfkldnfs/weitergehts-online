@@ -5,7 +5,30 @@
     "jahrgangsstufe": "",
     "lehrplanbezug": "",
     "schwierigkeit": "",
-    "geschaetzte_dauer_min": 0
+    "geschaetzte_dauer_min": 0,
+    "narrativ": ""
   },
-  "mappen": []
+  "mappen": [
+    {
+      "id": "mappe-1",
+      "titel": "",
+      "beschreibung": "",
+      "freischalt_code": "",
+      "aufgaben": [
+        {
+          "id": "aufgabe-1-1",
+          "typ": "multiple-choice",
+          "frage": "",
+          "optionen": [],
+          "loesung": "",
+          "tipps": [
+            { "stufe": 1, "text": "" },
+            { "stufe": 2, "text": "" },
+            { "stufe": 3, "text": "" }
+          ],
+          "punkte": 0
+        }
+      ]
+    }
+  ]
 }

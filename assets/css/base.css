@@ -1,0 +1,318 @@
+/* ==========================================================================
+   base.css – Basis-Stylesheet (fach-agnostisch)
+
+   Moderner CSS-Reset, Custom Properties, Grundlayout, Utility-Klassen.
+   Theme-Dateien (z.B. theme-gpg.css) ueberschreiben die Custom Properties.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS-Reset
+   -------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%; /* 16px Basis */
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.6;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+  font-family: var(--font-heading);
+}
+
+/* --------------------------------------------------------------------------
+   2. CSS Custom Properties (Defaults – ueberschreibbar durch Themes)
+   -------------------------------------------------------------------------- */
+
+:root {
+  /* Farben */
+  --color-primary: #1B2A4A;
+  --color-secondary: #C9A84C;
+  --color-background: #F5F0E8;
+  --color-surface: #EDE8DD;
+  --color-text: #2C2416;
+  --color-success: #2D6A4F;
+  --color-error: #9B2226;
+  --color-tipp: #4A6FA5;
+
+  /* Typografie */
+  --font-heading: Georgia, serif;
+  --font-body: system-ui, -apple-system, sans-serif;
+  --font-code: "Courier New", monospace;
+
+  /* Schriftgroessen */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+
+  /* Abstaende */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+
+  /* Rundungen */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Schatten */
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-elevated: 0 4px 16px rgba(0, 0, 0, 0.15);
+
+  /* Uebergaenge */
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
+  --transition-slow: 500ms ease;
+
+  /* Layout */
+  --max-width: 960px;
+  --content-padding: var(--space-md);
+}
+
+/* --------------------------------------------------------------------------
+   3. Grundlayout
+   -------------------------------------------------------------------------- */
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  padding: var(--space-lg) var(--content-padding);
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding: var(--space-lg) var(--content-padding);
+}
+
+nav {
+  padding: var(--space-sm) var(--content-padding);
+}
+
+footer {
+  padding: var(--space-md) var(--content-padding);
+  text-align: center;
+  font-size: var(--text-sm);
+}
+
+/* --------------------------------------------------------------------------
+   4. Interaktive Elemente – Touch-Targets & Fokus
+   -------------------------------------------------------------------------- */
+
+/* Touch-Targets: Minimum 48x48px */
+button,
+[role="button"],
+input[type="radio"],
+input[type="checkbox"],
+select,
+a {
+  min-height: 48px;
+  min-width: 48px;
+}
+
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+  min-height: 48px;
+  padding: var(--space-sm) var(--space-md);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  font-size: var(--text-base); /* Verhindert iOS-Zoom */
+}
+
+/* Sichtbare Fokus-Outlines */
+:focus-visible {
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+/* Fokus-Ring nur bei Keyboard-Navigation */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* --------------------------------------------------------------------------
+   5. Utility-Klassen
+   -------------------------------------------------------------------------- */
+
+/* Visuell versteckt, aber fuer Screenreader zugaenglich */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Scroll-Lock (z.B. bei Modal) */
+.no-scroll {
+  overflow: hidden;
+}
+
+/* Fade-In-Animation */
+.fade-in {
+  animation: fadeIn var(--transition-normal) ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Text-Ausrichtung */
+.text-center { text-align: center; }
+.text-left   { text-align: left; }
+.text-right  { text-align: right; }
+
+/* --------------------------------------------------------------------------
+   6. Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+
+/* Mobile (< 640px) – Standard / Mobile-First */
+
+/* Tablet (640px – 1024px) */
+@media (min-width: 640px) {
+  :root {
+    --content-padding: var(--space-lg);
+  }
+
+  main {
+    padding: var(--space-xl) var(--content-padding);
+  }
+}
+
+/* Desktop (> 1024px) */
+@media (min-width: 1024px) {
+  :root {
+    --content-padding: var(--space-xl);
+    --max-width: 1100px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   7. Print-Reset
+   -------------------------------------------------------------------------- */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+  }
+
+  /* Seitenumbrueche */
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+
+  section, article {
+    page-break-inside: avoid;
+  }
+
+  /* Interaktive Elemente im Druck ausblenden */
+  button,
+  input,
+  select,
+  textarea,
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   8. Reduzierte Bewegung (prefers-reduced-motion)
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

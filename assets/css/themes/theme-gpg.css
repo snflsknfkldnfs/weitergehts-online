@@ -1,0 +1,913 @@
+/* ==========================================================================
+   theme-gpg.css – GPG-Archiv-/Akten-Theme
+
+   Ueberschreibt base.css Custom Properties und ergaenzt
+   GPG-spezifische Komponentenstyles.
+   Designsprache: Archiv-Feeling, Pergament, dezente Bordueren.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Custom Properties – GPG-Farbpalette
+   -------------------------------------------------------------------------- */
+
+:root {
+  /* Farben */
+  --color-primary: #1B2A4A;       /* Navy – Header, Buttons, Ueberschriften */
+  --color-secondary: #C9A84C;     /* Gold – Akzente, Fortschritt, Codes */
+  --color-background: #F5F0E8;    /* Pergament – Seitenhintergrund */
+  --color-surface: #EDE8DD;       /* Leinen – Karten, Aufgabenbereiche */
+  --color-text: #2C2416;          /* Dunkelbraun – Fliesstext */
+  --color-success: #2D6A4F;       /* Gruen – Richtig-Feedback */
+  --color-error: #9B2226;         /* Rot – Falsch-Feedback */
+  --color-tipp: #4A6FA5;          /* Blaugrau – Tipp-Bereiche */
+
+  /* Erweiterte Farben */
+  --color-primary-light: #2a3f6a;
+  --color-secondary-light: #d4b86a;
+  --color-surface-dark: #ddd8cc;
+  --color-border: #c5bfb3;
+  --color-muted: #6b6358;
+
+  /* Typografie */
+  --font-heading: Georgia, "Times New Roman", serif;
+  --font-body: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-code: "Courier New", Courier, monospace;
+}
+
+/* --------------------------------------------------------------------------
+   2. Typografie
+   -------------------------------------------------------------------------- */
+
+h1 {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
+
+h3 {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
+
+p {
+  margin-bottom: var(--space-md);
+}
+
+code,
+.code-text {
+  font-family: var(--font-code);
+  font-size: var(--text-lg);
+  background-color: var(--color-surface);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+}
+
+/* --------------------------------------------------------------------------
+   3. Seiten-Layout (GPG-Archiv-Stil)
+   -------------------------------------------------------------------------- */
+
+body {
+  background-color: var(--color-background);
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(201, 168, 76, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(27, 42, 74, 0.02) 0%, transparent 50%);
+}
+
+header {
+  background-color: var(--color-primary);
+  color: #fff;
+  text-align: center;
+  border-bottom: 3px solid var(--color-secondary);
+}
+
+header h1 {
+  color: #fff;
+}
+
+header .header__meta {
+  font-size: var(--text-sm);
+  color: var(--color-secondary-light);
+  margin-top: var(--space-xs);
+}
+
+footer {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  border-top: 3px solid var(--color-secondary);
+}
+
+footer a {
+  color: var(--color-secondary);
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   4. Mappe-Karten (Uebersicht auf index.html)
+   -------------------------------------------------------------------------- */
+
+.mappen-uebersicht {
+  display: grid;
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+
+.mappe-karte {
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  position: relative;
+}
+
+.mappe-karte:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-elevated);
+}
+
+.mappe-karte--locked {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.mappe-karte--locked::after {
+  content: "🔒";
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  font-size: var(--text-2xl);
+}
+
+.mappe-karte--completed {
+  border-color: var(--color-success);
+}
+
+.mappe-karte--completed::after {
+  content: "✅";
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  font-size: var(--text-2xl);
+}
+
+.mappe-karte--current {
+  border-color: var(--color-secondary);
+  border-width: 3px;
+}
+
+.mappe-karte__titel {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.mappe-karte__beschreibung {
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+}
+
+.mappe-karte__link {
+  display: inline-block;
+  margin-top: var(--space-md);
+  padding: var(--space-sm) var(--space-lg);
+  background-color: var(--color-primary);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  font-weight: bold;
+  transition: background-color var(--transition-fast);
+}
+
+.mappe-karte__link:hover {
+  background-color: var(--color-primary-light);
+}
+
+/* --------------------------------------------------------------------------
+   5. Mappe-Seite (mappe-X.html)
+   -------------------------------------------------------------------------- */
+
+.mappe__header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-lg);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.mappe__titel {
+  font-size: var(--text-3xl);
+  color: var(--color-primary);
+}
+
+.mappe__beschreibung {
+  font-style: italic;
+  color: var(--color-muted);
+  max-width: 600px;
+  margin-inline: auto;
+  margin-top: var(--space-sm);
+}
+
+.mappe__navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-lg) 0;
+  margin-top: var(--space-xl);
+  border-top: 2px solid var(--color-border);
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.mappe__nav-btn {
+  padding: var(--space-sm) var(--space-lg);
+  background-color: var(--color-primary);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  font-weight: bold;
+  transition: background-color var(--transition-fast);
+}
+
+.mappe__nav-btn:hover {
+  background-color: var(--color-primary-light);
+}
+
+.mappe__nav-btn--disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   6. Fortschrittsbalken
+   -------------------------------------------------------------------------- */
+
+.fortschritt {
+  width: 100%;
+  max-width: 400px;
+  margin-inline: auto;
+  margin-top: var(--space-md);
+}
+
+.fortschritt__label {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  text-align: center;
+  margin-bottom: var(--space-xs);
+}
+
+.fortschritt__track {
+  width: 100%;
+  height: 12px;
+  background-color: var(--color-surface-dark);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.fortschritt__bar {
+  height: 100%;
+  background-color: var(--color-secondary);
+  border-radius: 6px;
+  width: 0%;
+  transition: width var(--transition-slow);
+}
+
+/* --------------------------------------------------------------------------
+   7. Aufgaben-Karten
+   -------------------------------------------------------------------------- */
+
+.aufgabe {
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-xl);
+  box-shadow: var(--shadow-card);
+}
+
+.aufgabe--solved {
+  border-color: var(--color-success);
+}
+
+.aufgabe__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.aufgabe__nummer {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  font-weight: bold;
+}
+
+.aufgabe__typ-badge {
+  font-size: var(--text-xs);
+  padding: var(--space-xs) var(--space-sm);
+  background-color: var(--color-primary);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.aufgabe__titel {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+}
+
+.aufgabe__frage {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-lg);
+  line-height: 1.5;
+}
+
+.aufgabe__body {
+  margin-bottom: var(--space-lg);
+}
+
+/* Multiple-Choice-Optionen */
+.aufgabe__optionen {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.aufgabe__option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background-color: #fff;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.aufgabe__option:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-background);
+}
+
+.aufgabe__option--selected {
+  border-color: var(--color-secondary);
+  background-color: rgba(201, 168, 76, 0.1);
+}
+
+.aufgabe__option--correct {
+  border-color: var(--color-success);
+  background-color: rgba(45, 106, 79, 0.1);
+}
+
+.aufgabe__option--incorrect {
+  border-color: var(--color-error);
+  background-color: rgba(155, 34, 38, 0.1);
+}
+
+.aufgabe__input {
+  flex-shrink: 0;
+}
+
+.aufgabe__label {
+  flex: 1;
+}
+
+/* Zuordnung (Dropdown) */
+.aufgabe__zuordnung {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.aufgabe__zuordnung-zeile {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: var(--space-md);
+  align-items: center;
+  padding: var(--space-sm);
+  background-color: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.aufgabe__zuordnung-begriff {
+  font-weight: bold;
+}
+
+.aufgabe__zuordnung-pfeil {
+  color: var(--color-muted);
+}
+
+.aufgabe__zuordnung-select {
+  width: 100%;
+}
+
+/* Lueckentext */
+.aufgabe__lueckentext {
+  line-height: 2;
+}
+
+.aufgabe__luecke {
+  display: inline-block;
+  min-width: 120px;
+  border: none;
+  border-bottom: 2px dashed var(--color-primary);
+  background: transparent;
+  text-align: center;
+  font-family: var(--font-code);
+  padding: var(--space-xs);
+  margin: 0 var(--space-xs);
+}
+
+.aufgabe__luecke:focus {
+  border-bottom-style: solid;
+  border-bottom-color: var(--color-secondary);
+}
+
+.aufgabe__luecke--correct {
+  border-bottom-color: var(--color-success);
+  border-bottom-style: solid;
+}
+
+.aufgabe__luecke--incorrect {
+  border-bottom-color: var(--color-error);
+  border-bottom-style: solid;
+}
+
+/* Reihenfolge */
+.aufgabe__reihenfolge {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.aufgabe__reihenfolge-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background-color: #fff;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.aufgabe__reihenfolge-nummer {
+  font-weight: bold;
+  color: var(--color-primary);
+  min-width: 2rem;
+  text-align: center;
+}
+
+.aufgabe__reihenfolge-text {
+  flex: 1;
+}
+
+.aufgabe__reihenfolge-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.aufgabe__reihenfolge-btn {
+  padding: var(--space-xs) var(--space-sm);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  min-height: 32px;
+  min-width: 32px;
+}
+
+.aufgabe__reihenfolge-btn:hover {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+/* Freitext-Code */
+.aufgabe__freitext {
+  width: 100%;
+}
+
+.aufgabe__textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: var(--space-md);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  resize: vertical;
+}
+
+.aufgabe__textarea:focus {
+  border-color: var(--color-primary);
+}
+
+/* Submit-Button fuer Aufgaben */
+.aufgabe__submit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+  padding: var(--space-sm) var(--space-xl);
+  background-color: var(--color-primary);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  font-weight: bold;
+  font-size: var(--text-base);
+  transition: background-color var(--transition-fast);
+}
+
+.aufgabe__submit:hover {
+  background-color: var(--color-primary-light);
+}
+
+.aufgabe__submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* --------------------------------------------------------------------------
+   8. Feedback-Bereiche
+   -------------------------------------------------------------------------- */
+
+.aufgabe__feedback {
+  margin-top: var(--space-md);
+  padding: var(--space-md);
+  border-radius: var(--radius-sm);
+  font-weight: bold;
+  display: none; /* Standardmaessig versteckt */
+}
+
+.aufgabe__feedback--visible {
+  display: block;
+}
+
+.aufgabe__feedback--success {
+  background-color: rgba(45, 106, 79, 0.1);
+  border: 2px solid var(--color-success);
+  color: var(--color-success);
+}
+
+.aufgabe__feedback--error {
+  background-color: rgba(155, 34, 38, 0.1);
+  border: 2px solid var(--color-error);
+  color: var(--color-error);
+}
+
+.aufgabe__feedback--info {
+  background-color: rgba(74, 111, 165, 0.1);
+  border: 2px solid var(--color-tipp);
+  color: var(--color-tipp);
+}
+
+/* --------------------------------------------------------------------------
+   9. Tipp-Bereiche
+   -------------------------------------------------------------------------- */
+
+.aufgabe__tipps {
+  margin-top: var(--space-lg);
+  border-top: 1px dashed var(--color-border);
+  padding-top: var(--space-md);
+}
+
+.tipp {
+  margin-bottom: var(--space-sm);
+}
+
+.tipp__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-tipp);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: bold;
+  transition: background-color var(--transition-fast);
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.tipp__trigger::before {
+  content: "💡";
+}
+
+.tipp__trigger:hover {
+  background-color: #3a5f95;
+}
+
+.tipp__trigger--used {
+  opacity: 0.7;
+}
+
+.tipp__inhalt {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-normal), padding var(--transition-normal);
+  background-color: rgba(74, 111, 165, 0.05);
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  padding: 0 var(--space-md);
+}
+
+.tipp__inhalt--visible {
+  max-height: 200px;
+  padding: var(--space-md);
+}
+
+.tipp--stufe-1 .tipp__trigger { background-color: var(--color-tipp); }
+.tipp--stufe-2 .tipp__trigger { background-color: #3e609a; }
+.tipp--stufe-3 .tipp__trigger { background-color: #2f4a7a; }
+
+/* --------------------------------------------------------------------------
+   10. Code-Eingabe
+   -------------------------------------------------------------------------- */
+
+.code-eingabe {
+  text-align: center;
+  margin-top: var(--space-xl);
+  padding: var(--space-xl);
+  background-color: var(--color-surface);
+  border: 2px dashed var(--color-secondary);
+  border-radius: var(--radius-lg);
+}
+
+.code-eingabe__label {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+  display: block;
+}
+
+.code-eingabe__label::before {
+  content: "🔑 ";
+}
+
+.code__input {
+  font-family: var(--font-code);
+  font-size: var(--text-2xl);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  padding: var(--space-md) var(--space-lg);
+  border: 3px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  max-width: 300px;
+  width: 100%;
+}
+
+.code__submit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+  padding: var(--space-md) var(--space-xl);
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  font-weight: bold;
+  font-size: var(--text-lg);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.code__submit:hover {
+  background-color: var(--color-secondary-light);
+  transform: scale(1.02);
+}
+
+.code-eingabe--success {
+  border-color: var(--color-success);
+  background-color: rgba(45, 106, 79, 0.05);
+}
+
+.code-eingabe--error {
+  border-color: var(--color-error);
+}
+
+/* --------------------------------------------------------------------------
+   11. Narrativ-Bereich
+   -------------------------------------------------------------------------- */
+
+.narrativ {
+  background-color: var(--color-surface);
+  border-left: 4px solid var(--color-secondary);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-xl);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-style: italic;
+  line-height: 1.8;
+}
+
+.narrativ::before {
+  content: "📜";
+  display: block;
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-sm);
+  font-style: normal;
+}
+
+/* --------------------------------------------------------------------------
+   12. Lehrkraft-Bereich
+   -------------------------------------------------------------------------- */
+
+.lehrkraft__gate {
+  text-align: center;
+  padding: var(--space-2xl);
+}
+
+.lehrkraft__gate-label {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-md);
+}
+
+.lehrkraft__loesungen {
+  margin-top: var(--space-xl);
+}
+
+.lehrkraft__mappe-block {
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.lehrkraft__code-display {
+  font-family: var(--font-code);
+  font-size: var(--text-2xl);
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  letter-spacing: 0.2em;
+}
+
+.lehrkraft__controls {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 2px solid var(--color-border);
+}
+
+.lehrkraft__btn {
+  padding: var(--space-sm) var(--space-lg);
+  background-color: var(--color-primary);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  font-weight: bold;
+  transition: background-color var(--transition-fast);
+}
+
+.lehrkraft__btn:hover {
+  background-color: var(--color-primary-light);
+}
+
+.lehrkraft__btn--danger {
+  background-color: var(--color-error);
+}
+
+.lehrkraft__btn--danger:hover {
+  background-color: #7a1a1e;
+}
+
+/* --------------------------------------------------------------------------
+   13. Animationen (Keyframes)
+   -------------------------------------------------------------------------- */
+
+/* Richtige Antwort – gruener Glow */
+@keyframes richtig-glow {
+  0%   { box-shadow: 0 0 0 0 rgba(45, 106, 79, 0.4); }
+  50%  { box-shadow: 0 0 20px 4px rgba(45, 106, 79, 0.3); }
+  100% { box-shadow: 0 0 0 0 rgba(45, 106, 79, 0); }
+}
+
+.animate-success {
+  animation: richtig-glow 600ms ease-out;
+}
+
+/* Falsche Antwort – rotes Shake */
+@keyframes falsch-shake {
+  0%, 100% { transform: translateX(0); }
+  20%      { transform: translateX(-6px); }
+  40%      { transform: translateX(6px); }
+  60%      { transform: translateX(-4px); }
+  80%      { transform: translateX(4px); }
+}
+
+.animate-error {
+  animation: falsch-shake 400ms ease-out;
+}
+
+/* Mappe freigeschaltet – goldener Effekt */
+@keyframes mappe-unlock {
+  0%   { transform: scale(0.95); opacity: 0.8; border-color: var(--color-border); }
+  50%  { transform: scale(1.02); border-color: var(--color-secondary); }
+  100% { transform: scale(1); opacity: 1; border-color: var(--color-success); }
+}
+
+.animate-unlock {
+  animation: mappe-unlock 800ms ease-out;
+}
+
+/* Fade-In */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --------------------------------------------------------------------------
+   14. Responsive Anpassungen
+   -------------------------------------------------------------------------- */
+
+/* Mobile (< 640px) */
+@media (max-width: 639px) {
+  .aufgabe__zuordnung-zeile {
+    grid-template-columns: 1fr;
+    gap: var(--space-xs);
+  }
+
+  .aufgabe__zuordnung-pfeil {
+    transform: rotate(90deg);
+    text-align: center;
+  }
+
+  .mappe__navigation {
+    flex-direction: column;
+  }
+
+  .mappe__nav-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .code__input {
+    font-size: var(--text-xl);
+    letter-spacing: 0.15em;
+  }
+}
+
+/* Tablet (640px – 1024px) */
+@media (min-width: 640px) {
+  .mappen-uebersicht {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop (> 1024px) */
+@media (min-width: 1024px) {
+  .mappen-uebersicht {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+/* --------------------------------------------------------------------------
+   15. Print-Stylesheet (Lehrkraft-Seite)
+   -------------------------------------------------------------------------- */
+
+@media print {
+  .lehrkraft__gate,
+  .lehrkraft__controls,
+  .mappe__navigation,
+  .tipp__trigger,
+  .aufgabe__submit {
+    display: none !important;
+  }
+
+  .aufgabe {
+    page-break-inside: avoid;
+    border: 1px solid #ccc;
+    box-shadow: none;
+  }
+
+  .lehrkraft__code-display {
+    color: #000;
+    background-color: #eee;
+  }
+
+  .tipp__inhalt {
+    max-height: none;
+    padding: var(--space-sm);
+  }
+}
