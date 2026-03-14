@@ -4,7 +4,7 @@
  * Spezifische Spielmechanik fuer Escape-Games.
  * Nutzt Core (core.js) fuer Storage und Feedback.
  *
- * API (7 Funktionen):
+ * API (8 Funktionen):
  *   EscapeEngine.init(mappeId)
  *   EscapeEngine.checkCode(mappeId, eingabe)
  *   EscapeEngine.saveProgress(mappeId, aufgabeIndex, solved)
@@ -12,6 +12,7 @@
  *   EscapeEngine.showTipp(mappeId, aufgabeIndex, stufe)
  *   EscapeEngine.resetProgress()
  *   EscapeEngine.unlockMappe(mappeId)
+ *   EscapeEngine.setStorageKey(key, data)
  *
  * 5 Aufgabentyp-Renderer:
  *   multiple-choice, zuordnung, lueckentext, reihenfolge, freitext-code
@@ -85,7 +86,7 @@ var EscapeEngine = (function () {
       })
       .catch(function (err) {
         console.error('[EscapeEngine.init] Fehler:', err);
-        _renderFehler('Die Spieldaten konnten nicht geladen werden.');
+        _renderFehler('Keine data.json gefunden. Dieses Template muss erst durch den AGENT_RAETSEL mit Inhalten befüllt werden.');
       });
   }
 
@@ -155,7 +156,11 @@ var EscapeEngine = (function () {
     allProgress.mappen = mappenProgress;
     allProgress.letzteAktivitaet = new Date().toISOString();
 
-    Core.storage.set(_state.storageKey, allProgress);
+    // FIX-09: Storage-Fehler-Feedback
+    var success = Core.storage.set(_state.storageKey, allProgress);
+    if (!success) {
+      _renderFehler('Fortschritt konnte nicht gespeichert werden. Möglicherweise ist der Speicher voll oder blockiert.');
+    }
   }
 
   // ========================================================================
@@ -222,7 +227,7 @@ var EscapeEngine = (function () {
       }
     }
 
-    return 'Tipp fuer Stufe ' + stufe + ' nicht vorhanden.';
+    return 'Tipp für Stufe ' + stufe + ' nicht vorhanden.';
   }
 
   // ========================================================================
@@ -235,7 +240,7 @@ var EscapeEngine = (function () {
   function resetProgress() {
     if (_state.storageKey) {
       Core.storage.remove(_state.storageKey);
-      console.info('[EscapeEngine] Fortschritt zurueckgesetzt.');
+      console.info('[EscapeEngine] Fortschritt zurückgesetzt.');
     }
   }
 
@@ -250,8 +255,38 @@ var EscapeEngine = (function () {
    * @param {string} mappeId – z.B. "mappe-1"
    */
   function unlockMappe(mappeId) {
-    _setMappeAbgeschlossen(mappeId, true);
+    // FIX-18: Direkter Merge statt loadProgress-Roundtrip
+    var allProgress = _getAllProgress();
+    if (!allProgress.mappen) allProgress.mappen = {};
+    if (!allProgress.mappen[mappeId]) {
+      allProgress.mappen[mappeId] = { abgeschlossen: false, aufgaben: {} };
+    }
+    allProgress.mappen[mappeId].abgeschlossen = true;
+    allProgress.letzteAktivitaet = new Date().toISOString();
+
+    // FIX-09: Storage-Fehler-Feedback
+    var success = Core.storage.set(_state.storageKey, allProgress);
+    if (!success) {
+      console.warn('[EscapeEngine] Konnte Mappe nicht freischalten – Speicherfehler.');
+    }
     console.info('[EscapeEngine] Mappe freigeschaltet: ' + mappeId);
+  }
+
+  // ========================================================================
+  // 8. setStorageKey(key, data) → void  [FIX-03]
+  // ========================================================================
+
+  /**
+   * Setzt den Storage-Key und die Spieldaten direkt,
+   * ohne data.json zu laden oder Aufgaben zu rendern.
+   * Wird von lehrkraft.html verwendet.
+   *
+   * @param {string} key – Storage-Key, z.B. "escape-mein-thema"
+   * @param {Object} data – Geladene data.json-Daten
+   */
+  function setStorageKey(key, data) {
+    _state.storageKey = key;
+    _state.data = data;
   }
 
   // ========================================================================
@@ -404,10 +439,12 @@ var EscapeEngine = (function () {
     container.innerHTML = '';
 
     var aufgaben = mappe.aufgaben || [];
+    var total = aufgaben.length;
     for (var i = 0; i < aufgaben.length; i++) {
       var aufgabe = aufgaben[i];
       var geloest = progress.aufgaben[i] || false;
-      var aufgabeEl = _renderAufgabe(aufgabe, i, geloest);
+      // FIX-02: Gesamtzahl der Aufgaben uebergeben
+      var aufgabeEl = _renderAufgabe(aufgabe, i, geloest, total);
       container.appendChild(aufgabeEl);
     }
   }
@@ -417,10 +454,11 @@ var EscapeEngine = (function () {
    * @param {Object} aufgabe – Aufgaben-Daten
    * @param {number} index – 0-basierter Index
    * @param {boolean} geloest – Ob bereits geloest
+   * @param {number} total – Gesamtzahl der Aufgaben in dieser Mappe
    * @returns {HTMLElement}
    * @private
    */
-  function _renderAufgabe(aufgabe, index, geloest) {
+  function _renderAufgabe(aufgabe, index, geloest, total) {
     var section = document.createElement('section');
     section.className = 'aufgabe aufgabe--' + aufgabe.typ;
     section.id = aufgabe.id;
@@ -430,11 +468,11 @@ var EscapeEngine = (function () {
       section.classList.add('aufgabe--solved');
     }
 
-    // Header
+    // Header – FIX-02: dynamische Aufgabenanzahl statt hardcoded "5"
     var header = document.createElement('div');
     header.className = 'aufgabe__header';
     header.innerHTML =
-      '<span class="aufgabe__nummer">Aufgabe ' + (index + 1) + ' von 5</span>' +
+      '<span class="aufgabe__nummer">Aufgabe ' + (index + 1) + ' von ' + total + '</span>' +
       '<span class="aufgabe__typ-badge">' + Core.utils.sanitizeHTML(aufgabe.typ) + '</span>';
     section.appendChild(header);
 
@@ -470,7 +508,7 @@ var EscapeEngine = (function () {
 
     section.appendChild(body);
 
-    // Feedback-Bereich (vorab erstellen, zunachest versteckt)
+    // Feedback-Bereich (vorab erstellen, zunächst versteckt) – FIX-15
     var feedbackEl = document.createElement('div');
     feedbackEl.className = 'aufgabe__feedback';
     feedbackEl.setAttribute('role', 'alert');
@@ -505,7 +543,7 @@ var EscapeEngine = (function () {
     var optionenDiv = document.createElement('div');
     optionenDiv.className = 'aufgabe__optionen';
     optionenDiv.setAttribute('role', 'radiogroup');
-    optionenDiv.setAttribute('aria-label', 'Antwortmoeglichkeiten');
+    optionenDiv.setAttribute('aria-label', 'Antwortmöglichkeiten');
 
     var optionen = aufgabe.optionen || [];
     var gruppenName = 'mc-' + aufgabe.id;
@@ -533,13 +571,13 @@ var EscapeEngine = (function () {
 
     container.appendChild(optionenDiv);
 
-    // Submit-Button
+    // Submit-Button – FIX-14: echte Umlaute
     if (!geloest) {
       var btn = document.createElement('button');
       btn.className = 'aufgabe__submit';
       btn.type = 'button';
-      btn.textContent = 'Antwort pruefen';
-      btn.setAttribute('aria-label', 'Antwort fuer Aufgabe ' + (index + 1) + ' pruefen');
+      btn.textContent = 'Antwort prüfen';
+      btn.setAttribute('aria-label', 'Antwort für Aufgabe ' + (index + 1) + ' prüfen');
       btn.addEventListener('click', function () {
         _checkMultipleChoice(container.parentElement, aufgabe, index, gruppenName);
       });
@@ -554,7 +592,7 @@ var EscapeEngine = (function () {
   function _checkMultipleChoice(section, aufgabe, index, gruppenName) {
     var selected = document.querySelector('input[name="' + gruppenName + '"]:checked');
     if (!selected) {
-      Core.feedback.showInfo(section, 'Bitte waehle eine Antwort aus.');
+      Core.feedback.showInfo(section, 'Bitte wähle eine Antwort aus.');
       return;
     }
 
@@ -597,9 +635,6 @@ var EscapeEngine = (function () {
     var zuordnungDiv = document.createElement('div');
     zuordnungDiv.className = 'aufgabe__zuordnung';
 
-    // optionen enthaelt Paare: [ { "begriff": "...", "zuordnung": "..." }, ... ]
-    // Oder bei einfachem Schema: optionen = ["A->1", "B->2", ...]
-    // Wir erwarten optionen als Array von Strings und loesung als Objekt/Array
     var optionen = aufgabe.optionen || [];
 
     // Alle moeglichen Zuordnungs-Ziele sammeln
@@ -627,13 +662,13 @@ var EscapeEngine = (function () {
 
     container.appendChild(zuordnungDiv);
 
-    // Submit-Button
+    // Submit-Button – FIX-14: echte Umlaute
     if (!geloest) {
       var btn = document.createElement('button');
       btn.className = 'aufgabe__submit';
       btn.type = 'button';
-      btn.textContent = 'Zuordnung pruefen';
-      btn.setAttribute('aria-label', 'Zuordnung fuer Aufgabe ' + (index + 1) + ' pruefen');
+      btn.textContent = 'Zuordnung prüfen';
+      btn.setAttribute('aria-label', 'Zuordnung für Aufgabe ' + (index + 1) + ' prüfen');
       btn.addEventListener('click', function () {
         _checkZuordnung(container.parentElement, aufgabe, index);
       });
@@ -662,12 +697,12 @@ var EscapeEngine = (function () {
     select.className = 'aufgabe__zuordnung-select';
     select.id = selectId;
     select.disabled = geloest;
-    select.setAttribute('aria-label', 'Zuordnung fuer: ' + begriff);
+    select.setAttribute('aria-label', 'Zuordnung für: ' + begriff);
 
-    // Leere Option
+    // Leere Option – FIX-14: echte Umlaute
     var emptyOpt = document.createElement('option');
     emptyOpt.value = '';
-    emptyOpt.textContent = '-- Bitte waehlen --';
+    emptyOpt.textContent = '-- Bitte wählen --';
     select.appendChild(emptyOpt);
 
     for (var i = 0; i < optionen.length; i++) {
@@ -700,10 +735,12 @@ var EscapeEngine = (function () {
         expected = aufgabe.loesung[begriff] || '';
       }
 
+      // FIX-04: CSS-Klassen statt Inline-Styles
+      zeilen[i].classList.remove('aufgabe__zuordnung-zeile--correct', 'aufgabe__zuordnung-zeile--incorrect');
       if (select.value === expected) {
-        zeilen[i].style.borderColor = 'var(--color-success)';
+        zeilen[i].classList.add('aufgabe__zuordnung-zeile--correct');
       } else {
-        zeilen[i].style.borderColor = 'var(--color-error)';
+        zeilen[i].classList.add('aufgabe__zuordnung-zeile--incorrect');
         allCorrect = false;
       }
     }
@@ -749,7 +786,7 @@ var EscapeEngine = (function () {
         input.className = 'aufgabe__luecke';
         input.id = aufgabe.id + '-luecke-' + lueckenIndex;
         input.disabled = geloest;
-        input.setAttribute('aria-label', 'Luecke ' + (lueckenIndex + 1));
+        input.setAttribute('aria-label', 'Lücke ' + (lueckenIndex + 1));
         input.setAttribute('autocomplete', 'off');
         textDiv.appendChild(input);
         lueckenIndex++;
@@ -758,13 +795,13 @@ var EscapeEngine = (function () {
 
     container.appendChild(textDiv);
 
-    // Submit-Button
+    // Submit-Button – FIX-14: echte Umlaute
     if (!geloest) {
       var btn = document.createElement('button');
       btn.className = 'aufgabe__submit';
       btn.type = 'button';
-      btn.textContent = 'Antworten pruefen';
-      btn.setAttribute('aria-label', 'Lueckentext fuer Aufgabe ' + (index + 1) + ' pruefen');
+      btn.textContent = 'Antworten prüfen';
+      btn.setAttribute('aria-label', 'Lückentext für Aufgabe ' + (index + 1) + ' prüfen');
       btn.addEventListener('click', function () {
         _checkLueckentext(container.parentElement, aufgabe, index);
       });
@@ -796,12 +833,12 @@ var EscapeEngine = (function () {
     }
 
     if (allCorrect) {
-      Core.feedback.showSuccess(section, 'Alle Luecken richtig ausgefuellt! ✅');
+      Core.feedback.showSuccess(section, 'Alle Lücken richtig ausgefüllt! ✅');
       saveProgress(_state.mappeId, index, true);
       section.classList.add('aufgabe--solved');
       for (var j = 0; j < inputs.length; j++) { inputs[j].disabled = true; }
     } else {
-      Core.feedback.showError(section, 'Nicht alle Luecken sind richtig. Versuche es nochmal! ❌');
+      Core.feedback.showError(section, 'Nicht alle Lücken sind richtig. Versuche es nochmal! ❌');
     }
 
     _updateFortschritt(_getMappe(_state.mappeId), loadProgress(_state.mappeId));
@@ -829,13 +866,13 @@ var EscapeEngine = (function () {
 
     container.appendChild(listeDiv);
 
-    // Submit-Button
+    // Submit-Button – FIX-14: echte Umlaute
     if (!geloest) {
       var btn = document.createElement('button');
       btn.className = 'aufgabe__submit';
       btn.type = 'button';
-      btn.textContent = 'Reihenfolge pruefen';
-      btn.setAttribute('aria-label', 'Reihenfolge fuer Aufgabe ' + (index + 1) + ' pruefen');
+      btn.textContent = 'Reihenfolge prüfen';
+      btn.setAttribute('aria-label', 'Reihenfolge für Aufgabe ' + (index + 1) + ' prüfen');
       btn.addEventListener('click', function () {
         _checkReihenfolge(container.parentElement, aufgabe, index);
       });
@@ -852,6 +889,7 @@ var EscapeEngine = (function () {
     item.className = 'aufgabe__reihenfolge-item';
     item.setAttribute('data-value', text);
 
+    // FIX-12: Nummerierte Slots statt doppelten Text
     var nummer = document.createElement('span');
     nummer.className = 'aufgabe__reihenfolge-nummer';
     nummer.textContent = (pos + 1) + '.';
@@ -962,19 +1000,19 @@ var EscapeEngine = (function () {
     textarea.className = 'aufgabe__textarea';
     textarea.id = aufgabe.id + '-freitext';
     textarea.disabled = geloest;
-    textarea.setAttribute('aria-label', 'Freitext-Antwort fuer Aufgabe ' + (index + 1));
+    textarea.setAttribute('aria-label', 'Freitext-Antwort für Aufgabe ' + (index + 1));
     textarea.setAttribute('placeholder', 'Schreibe deine Antwort hier...');
 
     freitextDiv.appendChild(textarea);
     container.appendChild(freitextDiv);
 
-    // Submit-Button
+    // Submit-Button – FIX-14: echte Umlaute
     if (!geloest) {
       var btn = document.createElement('button');
       btn.className = 'aufgabe__submit';
       btn.type = 'button';
-      btn.textContent = 'Antwort pruefen';
-      btn.setAttribute('aria-label', 'Freitext fuer Aufgabe ' + (index + 1) + ' pruefen');
+      btn.textContent = 'Antwort prüfen';
+      btn.setAttribute('aria-label', 'Freitext für Aufgabe ' + (index + 1) + ' prüfen');
       btn.addEventListener('click', function () {
         _checkFreitextCode(container.parentElement, aufgabe, index, textarea);
       });
@@ -984,7 +1022,7 @@ var EscapeEngine = (function () {
 
   /**
    * Prueft Freitext-Code-Antwort.
-   * Vergleicht die Eingabe (normalisiert) mit der erwarteten Loesung.
+   * FIX-16: Exakter Match als primaerer Check, indexOf nur als Fallback.
    * @private
    */
   function _checkFreitextCode(section, aufgabe, index, textarea) {
@@ -996,11 +1034,17 @@ var EscapeEngine = (function () {
       return;
     }
 
-    // Freitext: Pruefe ob die Loesung im Text enthalten ist
-    var isCorrect = (userText === expected) || (userText.indexOf(expected) !== -1);
+    // FIX-16: Exakter Match zuerst, indexOf nur als Fallback
+    var isExact = (userText === expected);
+    var isContained = !isExact && expected.length > 0 && (userText.indexOf(expected) !== -1);
 
-    if (isCorrect) {
+    if (isExact) {
       Core.feedback.showSuccess(section, 'Richtig! ✅');
+      saveProgress(_state.mappeId, index, true);
+      section.classList.add('aufgabe--solved');
+      textarea.disabled = true;
+    } else if (isContained) {
+      Core.feedback.showSuccess(section, 'Richtig! ✅ (Deine Antwort enthält die gesuchte Lösung.)');
       saveProgress(_state.mappeId, index, true);
       section.classList.add('aufgabe--solved');
       textarea.disabled = true;
@@ -1139,16 +1183,16 @@ var EscapeEngine = (function () {
 
     var percent = total > 0 ? Math.round((solved / total) * 100) : 0;
 
-    // Fortschrittsbalken aktualisieren
+    // Fortschrittsbalken aktualisieren (Inline-Style notwendig fuer dynamische Breite)
     var bar = document.querySelector('.fortschritt__bar');
     if (bar) {
       bar.style.width = percent + '%';
     }
 
-    // Label aktualisieren
+    // Label aktualisieren – FIX-14: echte Umlaute
     var label = document.querySelector('.fortschritt__label');
     if (label) {
-      label.textContent = solved + ' von ' + total + ' Aufgaben geloest (' + percent + '%)';
+      label.textContent = solved + ' von ' + total + ' Aufgaben gelöst (' + percent + '%)';
     }
   }
 
@@ -1163,7 +1207,8 @@ var EscapeEngine = (function () {
     loadProgress: loadProgress,
     showTipp: showTipp,
     resetProgress: resetProgress,
-    unlockMappe: unlockMappe
+    unlockMappe: unlockMappe,
+    setStorageKey: setStorageKey
   };
 
 })();

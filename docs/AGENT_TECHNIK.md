@@ -89,6 +89,21 @@ escape-games/[thema]/
 └── data.json           # Alle Daten
 ```
 
+### Mappe-Dateien aus Template erstellen
+
+Bei der Erstellung eines konkreten Escape-Games kopiert AGENT_TECHNIK das Template-Verzeichnis und erstellt pro Mappe eine eigene HTML-Datei:
+
+1. Template-Verzeichnis kopieren: `cp -r escape-games/template/ escape-games/[thema]/`
+2. `mappe-template.html` wird pro Mappe kopiert:
+   - `mappe-template.html` → `mappe-1.html` (für `mappe-1`)
+   - `mappe-template.html` → `mappe-2.html` (für `mappe-2`)
+   - usw.
+3. Die Mappe-ID wird automatisch aus dem Dateinamen abgeleitet (`mappe-1.html` → `mappeId = "mappe-1"`)
+4. `mappe-template.html` kann nach dem Kopieren gelöscht werden
+5. Die `data.json` muss die korresponierenden Mappe-IDs (`mappe-1`, `mappe-2`, ...) enthalten
+
+**Wichtig**: Die ID-Konvention `mappe-{N}` ist technisch erforderlich (siehe ORCHESTRATOR.md). Die Navigation zwischen Mappen basiert auf numerischen IDs.
+
 ### 2. data.json integrieren
 
 - Die von AGENT_RAETSEL befüllte `data.json` in das Thema-Verzeichnis kopieren

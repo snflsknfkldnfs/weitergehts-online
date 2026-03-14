@@ -419,6 +419,16 @@ footer a:hover {
   width: 100%;
 }
 
+.aufgabe__zuordnung-zeile--correct {
+  border-color: var(--color-success);
+  background-color: rgba(45, 106, 79, 0.05);
+}
+
+.aufgabe__zuordnung-zeile--incorrect {
+  border-color: var(--color-error);
+  background-color: rgba(155, 34, 38, 0.05);
+}
+
 /* Lueckentext */
 .aufgabe__lueckentext {
   line-height: 2;
@@ -792,6 +802,36 @@ footer a:hover {
   background-color: #7a1a1e;
 }
 
+.lehrkraft__btn--unlock {
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.lehrkraft__aufgabe-detail {
+  margin-bottom: var(--space-md);
+  padding-left: var(--space-md);
+  border-left: 3px solid var(--color-border);
+}
+
+.lehrkraft__tipp-liste {
+  list-style: disc;
+  padding-left: var(--space-lg);
+}
+
+.lehrkraft__gate-hinweis {
+  margin-top: var(--space-lg);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+
+.lehrkraft__inhalt--hidden {
+  display: none;
+}
+
+.lehrkraft__gate--hidden {
+  display: none;
+}
+
 /* --------------------------------------------------------------------------
    13. Animationen (Keyframes)
    -------------------------------------------------------------------------- */
@@ -829,12 +869,6 @@ footer a:hover {
 
 .animate-unlock {
   animation: mappe-unlock 800ms ease-out;
-}
-
-/* Fade-In */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* --------------------------------------------------------------------------

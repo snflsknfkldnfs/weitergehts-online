@@ -59,8 +59,8 @@
           console.error('[Startseite] Fehler beim Laden:', err);
           var hinweis = document.getElementById('lade-hinweis');
           if (hinweis) {
-            hinweis.textContent = 'Die Spieldaten konnten nicht geladen werden.';
-            hinweis.className = 'aufgabe__feedback aufgabe__feedback--visible aufgabe__feedback--error';
+            hinweis.textContent = 'Keine data.json gefunden. Dieses Template muss erst durch den AGENT_RAETSEL mit Inhalten befüllt werden.';
+            hinweis.className = 'aufgabe__feedback aufgabe__feedback--visible aufgabe__feedback--info';
           }
         });
 

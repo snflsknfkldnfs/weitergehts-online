@@ -11,7 +11,7 @@
 
   <header>
     <h1>🔑 Lehrkraft-Zugang</h1>
-    <div class="header__meta">Loesungen, Codes und Steuerung</div>
+    <div class="header__meta">Lösungen, Codes und Steuerung</div>
   </header>
 
   <main>
@@ -29,22 +29,22 @@
           aria-label="Lehrkraft-Passwort"
         >
       </div>
-      <button type="button" class="code__submit" id="gate-submit" aria-label="Passwort pruefen">
-        Zugang pruefen
+      <button type="button" class="code__submit" id="gate-submit" aria-label="Passwort prüfen">
+        Zugang prüfen
       </button>
       <div id="gate-feedback" class="aufgabe__feedback" role="alert" aria-live="polite"></div>
-      <p style="margin-top: var(--space-lg); font-size: var(--text-sm); color: var(--color-muted);">
+      <p class="lehrkraft__gate-hinweis">
         Hinweis: Dies ist ein einfacher clientseitiger Schutz und bietet keine echte Sicherheit.
         Das Standard-Passwort lautet &bdquo;lehrkraft&ldquo;.
       </p>
     </section>
 
     <!-- Inhalt (standardmaessig versteckt, wird nach Passwort-Eingabe angezeigt) -->
-    <div id="lehrkraft-inhalt" style="display: none;">
+    <div id="lehrkraft-inhalt" class="lehrkraft__inhalt--hidden">
 
       <!-- Loesungsuebersicht -->
       <section class="lehrkraft__loesungen" id="loesungen" aria-label="Loesungsuebersicht">
-        <h2>📋 Loesungsuebersicht</h2>
+        <h2>📋 Lösungsübersicht</h2>
         <p id="lade-hinweis" class="text-center">Spieldaten werden geladen...</p>
         <!-- Wird dynamisch befuellt -->
       </section>
@@ -129,8 +129,8 @@
 
         if (eingabe === PASSWORT) {
           // Zugang gewaehren
-          gate.style.display = 'none';
-          inhalt.style.display = 'block';
+          gate.classList.add('lehrkraft__gate--hidden');
+          inhalt.classList.remove('lehrkraft__inhalt--hidden');
           ladeDaten();
         } else {
           // Fehlermeldung
@@ -224,8 +224,7 @@
         unlockBtn.type = 'button';
         unlockBtn.className = 'lehrkraft__btn';
         unlockBtn.textContent = '🔓 Diese Mappe freischalten';
-        unlockBtn.style.marginTop = 'var(--space-sm)';
-        unlockBtn.style.marginBottom = 'var(--space-md)';
+        unlockBtn.classList.add('lehrkraft__btn--unlock');
         unlockBtn.addEventListener('click', function () {
           var mid = mappe.id;
           EscapeEngine.unlockMappe(mid);
@@ -238,9 +237,7 @@
         for (var j = 0; j < aufgaben.length; j++) {
           var aufgabe = aufgaben[j];
           var aufgabeDiv = document.createElement('div');
-          aufgabeDiv.style.marginBottom = 'var(--space-md)';
-          aufgabeDiv.style.paddingLeft = 'var(--space-md)';
-          aufgabeDiv.style.borderLeft = '3px solid var(--color-border)';
+          aufgabeDiv.className = 'lehrkraft__aufgabe-detail';
 
           var aufgabeTitel = document.createElement('p');
           aufgabeTitel.innerHTML =
@@ -267,8 +264,7 @@
             aufgabeDiv.appendChild(tippsP);
 
             var tippsList = document.createElement('ul');
-            tippsList.style.listStyle = 'disc';
-            tippsList.style.paddingLeft = 'var(--space-lg)';
+            tippsList.className = 'lehrkraft__tipp-liste';
             for (var k = 0; k < aufgabe.tipps.length; k++) {
               var li = document.createElement('li');
               li.textContent = 'Stufe ' + aufgabe.tipps[k].stufe + ': ' + (aufgabe.tipps[k].text || '');
@@ -288,11 +284,14 @@
       // ====================================================================
 
       function initSteuerung(data) {
-        // Storage-Key aus Thema ableiten (gleiche Logik wie in EscapeEngine)
+        // Storage-Key aus Thema ableiten und EscapeEngine initialisieren
         var thema = (data.meta && data.meta.titel)
           ? data.meta.titel.toLowerCase().replace(/\s+/g, '-')
           : 'unbenannt';
         var storageKey = 'escape-' + thema;
+
+        // EscapeEngine mit data und storageKey initialisieren (ohne DOM-Rendering)
+        EscapeEngine.setStorageKey(storageKey, data);
 
         // Alle Mappen freischalten
         var btnUnlockAll = document.getElementById('btn-unlock-all');
@@ -313,11 +312,11 @@
         var btnReset = document.getElementById('btn-reset');
         if (btnReset) {
           btnReset.addEventListener('click', function () {
-            if (window.confirm('Soll der gesamte Fortschritt wirklich zurueckgesetzt werden?')) {
+            if (window.confirm('Soll der gesamte Fortschritt wirklich zurückgesetzt werden?')) {
               Core.storage.remove(storageKey);
               Core.feedback.showSuccess(
                 document.getElementById('controls'),
-                'Der Fortschritt wurde zurueckgesetzt.'
+                'Der Fortschritt wurde zurückgesetzt.'
               );
             }
           });

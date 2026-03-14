@@ -113,6 +113,16 @@ Alle Agenten arbeiten konsistent auf dem Schema aus `escape-games/template/data.
 }
 ```
 
+**Lösungs-Typen pro Aufgabentyp** (Pflicht-Konvention):
+
+| Aufgabentyp | `loesung`-Typ | Beispiel |
+|---|---|---|
+| `multiple-choice` | String | `"B"` |
+| `zuordnung` | Object | `{"Begriff1": "Kategorie1", "Begriff2": "Kategorie2"}` |
+| `lueckentext` | Array | `["Wort1", "Wort2"]` |
+| `reihenfolge` | Array | `["Schritt1", "Schritt2", "Schritt3"]` |
+| `freitext-code` | String | `"antwort"` |
+
 ## Medien-Workflow
 
 ### MVP (Phase 2–4): Textbasiert
@@ -136,6 +146,12 @@ Alle Agenten arbeiten konsistent auf dem Schema aus `escape-games/template/data.
 - **Keine externen Abhängigkeiten**: Alles inline oder aus `/assets/`
 - **Sprache**: Alle Inhalte auf Deutsch, Code-Kommentare auf Deutsch
 - **Encoding**: UTF-8 durchgehend
+
+**ID-Konventionen** (Pflicht):
+
+- Mappen-IDs: `mappe-{N}` (z.B. `mappe-1`, `mappe-2`) – numerisch, fortlaufend
+- Aufgaben-IDs: `aufgabe-{M}-{N}` (z.B. `aufgabe-1-1`) – M = Mappe-Nummer, N = Aufgaben-Nummer
+- Diese Konvention ist technisch erforderlich, da die Navigation zwischen Mappen auf numerischen IDs basiert.
 
 ## Ausgabe
 

@@ -28,6 +28,8 @@ Verfügbare Aufgabentypen:
 | `reihenfolge` | Elemente in richtige Reihenfolge bringen | AFB II | Chronologie, Prozesse |
 | `freitext-code` | Freitext-Antwort ergibt Code | AFB II–III | Reflexion, Beurteilung |
 
+**Einschränkung Lückentext**: Maximal 2 Wörter pro Lücke. Längere Antworten führen zu unübersichtlichen Eingabefeldern.
+
 **Zuordnung – MVP-Implementierung (Dropdown statt Drag & Drop):**
 - Linke Spalte: Begriffe (fest, nicht verschiebbar)
 - Rechte Spalte: `<select>`-Dropdowns mit allen möglichen Zuordnungen
@@ -118,6 +120,20 @@ Gemäß Schema aus `escape-games/template/data.json`:
   ]
 }
 ```
+
+### Pflicht: Typ-spezifische Lösungs-Formate
+
+Der Wert von `loesung` in data.json MUSS dem Typ der Aufgabe entsprechen:
+
+| Aufgabentyp | `loesung`-Typ | Beispiel |
+|---|---|---|
+| `multiple-choice` | String (der korrekte Optionstext) | `"B"` |
+| `zuordnung` | Object `{Begriff: Zuordnung}` | `{"Absolutismus": "Regierungsform", "Merkantilismus": "Wirtschaftspolitik"}` |
+| `lueckentext` | Array (ein Eintrag pro Lücke) | `["Ständegesellschaft", "Klerus"]` |
+| `reihenfolge` | Array (korrekte Reihenfolge) | `["Ursache", "Auslöser", "Verlauf", "Ergebnis"]` |
+| `freitext-code` | String (erwartete Antwort) | `"absolutismus"` |
+
+**ACHTUNG**: `loesung` als leerer String `""` ist NUR für `multiple-choice` und `freitext-code` ein valider Platzhalter. Für `zuordnung` muss `{}`, für `lueckentext` und `reihenfolge` muss `[]` verwendet werden.
 
 ## Quellen (zu lesende Dateien)
 

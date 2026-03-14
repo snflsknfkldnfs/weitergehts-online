@@ -64,11 +64,21 @@ var Core = (function () {
     },
 
     /**
-     * Loescht den gesamten localStorage.
+     * Loescht alle Escape-Game-Daten aus localStorage.
+     * Entfernt nur Keys mit Prefix "escape-", nicht andere Daten.
      */
     clear: function () {
       try {
-        localStorage.clear();
+        var keysToRemove = [];
+        for (var i = 0; i < localStorage.length; i++) {
+          var key = localStorage.key(i);
+          if (key && key.indexOf('escape-') === 0) {
+            keysToRemove.push(key);
+          }
+        }
+        for (var j = 0; j < keysToRemove.length; j++) {
+          localStorage.removeItem(keysToRemove[j]);
+        }
       } catch (e) {
         console.warn('[Core.storage.clear] Fehler:', e);
       }
