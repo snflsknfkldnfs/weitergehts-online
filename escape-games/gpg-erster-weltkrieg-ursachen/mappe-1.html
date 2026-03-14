@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pulverfass Europa – Sonderausgabe 1</title>
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/themes/theme-gpg.css">
+</head>
+<body>
+
+  <header>
+    <h1 class="mappe__titel">Sonderausgabe 1: Pulverfass Europa</h1>
+    <div class="header__meta">
+      <span class="mappe__beschreibung">Europa vor 1914 – Bündnisse, Rivalitäten und ein Kontinent am Abgrund.</span>
+    </div>
+  </header>
+
+  <main class="mappe">
+    <!-- Mappe-Header mit Fortschrittsbalken -->
+    <div class="mappe__header">
+      <div class="fortschritt" aria-label="Fortschritt in dieser Mappe">
+        <div class="fortschritt__label" id="fortschritt-label">0 von ? Aufgaben gelöst (0%)</div>
+        <div class="fortschritt__track">
+          <div class="fortschritt__bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Aufgaben-Container (wird dynamisch durch EscapeEngine befuellt) -->
+    <div id="aufgaben-container" aria-label="Aufgaben">
+      <p class="text-center">Aufgaben werden geladen...</p>
+    </div>
+
+    <!-- Code-Eingabe (Freischalt-Code fuer naechste Mappe) -->
+    <section class="code-eingabe" aria-label="Freischalt-Code eingeben">
+      <label class="code-eingabe__label" for="code-input">
+        Freischalt-Code eingeben
+      </label>
+      <div>
+        <input
+          type="text"
+          class="code__input"
+          id="code-input"
+          placeholder="CODE"
+          autocomplete="off"
+          aria-describedby="code-hinweis"
+        >
+      </div>
+      <p id="code-hinweis" class="visually-hidden">
+        Gib den Freischalt-Code ein, der sich aus den gelösten Aufgaben ergibt.
+      </p>
+      <button type="button" class="code__submit" aria-label="Freischalt-Code prüfen">
+        🔓 Code prüfen
+      </button>
+    </section>
+
+    <!-- Navigation -->
+    <nav class="mappe__navigation" aria-label="Mappe-Navigation">
+      <a href="index.html" class="mappe__nav-btn" aria-label="Zurück zur Übersicht">
+        ← Übersicht
+      </a>
+      <span id="nav-mappe-info">Mappe 1 von 4</span>
+      <a href="mappe-2.html" class="mappe__nav-btn" id="nav-weiter" aria-label="Zur nächsten Mappe">
+        Weiter →
+      </a>
+    </nav>
+  </main>
+
+  <footer>
+    <p>
+      <a href="index.html">← Zurück zur Übersicht</a> |
+      <a href="lehrkraft.html">🔑 Lehrkraft-Zugang</a>
+    </p>
+  </footer>
+
+  <script src="../../assets/js/core.js"></script>
+  <script src="../../assets/js/escape-engine.js"></script>
+  <script>
+    (function () {
+      'use strict';
+
+      var mappeId = 'mappe-1';
+
+      // Navigations-Info
+      var navInfo = document.getElementById('nav-mappe-info');
+      if (navInfo) {
+        navInfo.textContent = 'Mappe 1 von 4';
+      }
+
+      // Naechste-Mappe-Link
+      var navWeiter = document.getElementById('nav-weiter');
+      if (navWeiter) {
+        navWeiter.href = 'mappe-2.html';
+      }
+
+      // EscapeEngine initialisieren
+      EscapeEngine.init(mappeId);
+    })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pulverfass Europa – Sonderausgabe 4</title>
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/themes/theme-gpg.css">
+</head>
+<body>
+
+  <header>
+    <h1 class="mappe__titel">Sonderausgabe 4: Der Plan, der scheiterte</h1>
+    <div class="header__meta">
+      <span class="mappe__beschreibung">Deutschland hatte einen Plan für den schnellen Sieg. Doch die Wirklichkeit sah anders aus.</span>
+    </div>
+  </header>
+
+  <main class="mappe">
+    <div class="mappe__header">
+      <div class="fortschritt" aria-label="Fortschritt in dieser Mappe">
+        <div class="fortschritt__label" id="fortschritt-label">0 von ? Aufgaben gelöst (0%)</div>
+        <div class="fortschritt__track">
+          <div class="fortschritt__bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="aufgaben-container" aria-label="Aufgaben">
+      <p class="text-center">Aufgaben werden geladen...</p>
+    </div>
+
+    <section class="code-eingabe" aria-label="Freischalt-Code eingeben">
+      <label class="code-eingabe__label" for="code-input">
+        Freischalt-Code eingeben
+      </label>
+      <div>
+        <input
+          type="text"
+          class="code__input"
+          id="code-input"
+          placeholder="CODE"
+          autocomplete="off"
+          aria-describedby="code-hinweis"
+        >
+      </div>
+      <p id="code-hinweis" class="visually-hidden">
+        Gib den Freischalt-Code ein, der sich aus den gelösten Aufgaben ergibt.
+      </p>
+      <button type="button" class="code__submit" aria-label="Freischalt-Code prüfen">
+        🔓 Code prüfen
+      </button>
+    </section>
+
+    <nav class="mappe__navigation" aria-label="Mappe-Navigation">
+      <a href="mappe-3.html" class="mappe__nav-btn" aria-label="Zur vorherigen Mappe">
+        ← Mappe 3
+      </a>
+      <span id="nav-mappe-info">Mappe 4 von 4</span>
+      <a href="index.html" class="mappe__nav-btn" id="nav-weiter" aria-label="Zurück zur Übersicht">
+        Zur Übersicht →
+      </a>
+    </nav>
+  </main>
+
+  <footer>
+    <p>
+      <a href="index.html">← Zurück zur Übersicht</a> |
+      <a href="lehrkraft.html">🔑 Lehrkraft-Zugang</a>
+    </p>
+  </footer>
+
+  <script src="../../assets/js/core.js"></script>
+  <script src="../../assets/js/escape-engine.js"></script>
+  <script>
+    (function () {
+      'use strict';
+
+      var mappeId = 'mappe-4';
+
+      var navInfo = document.getElementById('nav-mappe-info');
+      if (navInfo) {
+        navInfo.textContent = 'Mappe 4 von 4';
+      }
+
+      // Letzte Mappe: Weiter-Link fuehrt zur Uebersicht
+      var navWeiter = document.getElementById('nav-weiter');
+      if (navWeiter) {
+        navWeiter.href = 'index.html';
+      }
+
+      EscapeEngine.init(mappeId);
+    })();
+  </script>
+
+</body>
+</html>
