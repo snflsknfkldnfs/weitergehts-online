@@ -6,162 +6,32 @@
     "lehrplanbezug": "LB2 Zeit und Wandel",
     "schwierigkeit": "Basis",
     "geschaetzte_dauer_min": 70,
-    "narrativ": "Sommer 1914: Du bist Zeitungsreporter beim 'Europaeischen Kurier'. Seit Wochen brodelt es auf dem Kontinent. Dein Chefredakteur schickt dich auf Recherche: Was passiert hier? Warum steuert Europa auf eine Katastrophe zu?"
+    "narrativ": "Sommer 1914: Du bist Zeitungsreporter beim 'Europäischen Kurier'. Seit Wochen brodelt es auf dem Kontinent – Bündnisse, Rivalitäten, Spannungen. Dein Chefredakteur schickt dich auf Recherche: Was passiert hier? Warum steuert Europa auf eine Katastrophe zu? Löse die Rätsel in vier Sonderausgaben und finde heraus, warum es zum Großen Krieg kam."
   },
   "mappen": [
     {
       "id": "mappe-1",
       "titel": "Sonderausgabe 1: Pulverfass Europa",
-      "beschreibung": "Europa vor 1914 – Buendnisse, Rivalitaeten und ein Kontinent am Abgrund.",
+      "beschreibung": "Europa vor 1914 – Bündnisse, Rivalitäten und ein Kontinent am Abgrund. Recherchiere die Hintergründe der Spannungen.",
       "freischalt_code": "BUND",
-      "einstieg": {
-        "narrativ": "<p>Dein erster Arbeitstag beim <em>Europaeischen Kurier</em>. Der Chefredakteur knallt dir eine Mappe auf den Tisch: <strong>\"Europa steht am Abgrund. Finde heraus warum.\"</strong></p><p>Du beginnst deine Recherche bei den Buendnissen der Grossmaechte.</p>",
-        "problemstellung": "Warum war Europa vor 1914 in zwei feindliche Lager gespalten — und warum machte das den Kontinent so gefaehrlich?"
-      },
-      "materialien": [
-        {
-          "id": "mat-1-1",
-          "typ": "darstellungstext",
-          "titel": "Die Buendnisse Europas vor 1914",
-          "inhalt": "<p>Vor dem Ersten Weltkrieg war Europa in zwei grosse Buendnisbloecke gespalten. Auf der einen Seite stand der <strong>Dreibund</strong> (1882): Deutschland, Oesterreich-Ungarn und Italien hatten sich gegenseitig militaerischen Beistand versprochen.</p><p>Auf der anderen Seite bildete sich die <strong>Triple Entente</strong>: Frankreich, Grossbritannien und Russland naeherten sich schrittweise an — erst 1894, dann 1904, schliesslich 1907. Anders als der Dreibund war die Triple Entente kein fester Militaerpakt, sondern eine lockere Vereinbarung.</p><p>Beide Seiten misstrauten einander. Deutschland fuehlte sich von Frankreich und Russland <strong>eingekreist</strong>. Jede Krise konnte das fragile Gleichgewicht zerstoeren.</p>",
-          "quelle": "Eigene Darstellung auf Basis von: Clark, Christopher: Die Schlafwandler, 2013",
-          "lizenz": ""
-        },
-        {
-          "id": "mat-1-2",
-          "typ": "bildquelle",
-          "titel": "Europakarte 1914: Dreibund und Triple Entente",
-          "inhalt": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Map_Europe_alliances_1914-en.svg/800px-Map_Europe_alliances_1914-en.svg.png",
-          "bildunterschrift": "Europa 1914: Dreibund (rot) und Triple Entente (blau). Die Karte zeigt die Spaltung des Kontinents in zwei feindliche Lager.",
-          "quelle": "Wikimedia Commons",
-          "lizenz": "CC BY-SA 3.0"
-        },
-        {
-          "id": "mat-1-3",
-          "typ": "quellentext",
-          "titel": "Ein Zeitgenosse ueber die Stimmung in Europa",
-          "inhalt": "<p>„Europa gleicht einem riesigen Pulverfass. Die Voelker blicken einander mit Misstrauen und Furcht an. Ein einziger Funke genuegt, und der ganze Kontinent steht in Flammen.&quot;</p>",
-          "quelle": "Berliner Tageblatt, Leitartikel, Fruehling 1914 (paraphrasiert)",
-          "lizenz": ""
-        },
-        {
-          "id": "mat-1-4",
-          "typ": "zeitleiste",
-          "titel": "Buendnisbildung 1882–1907",
-          "inhalt": [
-            {
-              "datum": "1882",
-              "text": "Dreibund gegruendet: Deutschland, Oesterreich-Ungarn, Italien"
-            },
-            {
-              "datum": "1894",
-              "text": "Franzoesisch-russisches Buendnis: Frankreich und Russland verbuenden sich"
-            },
-            {
-              "datum": "1904",
-              "text": "Entente cordiale: Frankreich und Grossbritannien naehern sich an"
-            },
-            {
-              "datum": "1907",
-              "text": "Triple Entente vollstaendig: Grossbritannien, Frankreich und Russland bilden einen Block"
-            }
-          ],
-          "quelle": "Eigene Zusammenstellung",
-          "lizenz": ""
-        },
-        {
-          "id": "mat-1-5",
-          "typ": "statistik",
-          "titel": "Militaerausgaben der Grossmaechte 1913",
-          "inhalt": {
-            "spalten": [
-              "Land",
-              "Militaerausgaben 1913 (Mio. Mark)",
-              "Soldaten (Friedensstaerke)"
-            ],
-            "zeilen": [
-              [
-                "Deutsches Reich",
-                "2.405",
-                "800.000"
-              ],
-              [
-                "Frankreich",
-                "1.855",
-                "770.000"
-              ],
-              [
-                "Grossbritannien",
-                "1.580",
-                "380.000"
-              ],
-              [
-                "Russland",
-                "1.520",
-                "1.400.000"
-              ],
-              [
-                "Oesterreich-Ungarn",
-                "670",
-                "450.000"
-              ]
-            ]
-          },
-          "quelle": "Ferguson, Niall: Der falsche Krieg, 1999 (vereinfacht)",
-          "lizenz": ""
-        },
-        {
-          "id": "mat-1-6",
-          "typ": "tagebuch",
-          "titel": "Tagebuch eines jungen Soldaten",
-          "inhalt": "<p>12. Juni 1914</p><p>Liebes Tagebuch, in der Kaserne reden alle nur noch ueber den naechsten Krieg. <em>\"Er kommt bestimmt\"</em>, sagt der Feldwebel. Frankreich will Elsass-Lothringen zurueck, Russland ruestet auf, und wir sitzen mittendrin.</p><p>Ich verstehe nicht, warum sich alle so sicher sind. Aber ich spuere die Anspannung. Es ist, als wuerde ganz Europa den Atem anhalten.</p>",
-          "quelle": "Fiktiver Tagebucheintrag, basierend auf historischen Quellen",
-          "lizenz": ""
-        },
-        {
-          "id": "mat-1-7",
-          "typ": "karte",
-          "titel": "Vereinfachte Skizze: Einkreisung Deutschlands",
-          "inhalt": "<svg viewBox='0 0 400 300' xmlns='http://www.w3.org/2000/svg'><rect width='400' height='300' fill='#f0f4f8'/><rect x='150' y='100' width='100' height='80' rx='8' fill='#dc2626' opacity='0.3' stroke='#dc2626' stroke-width='2'/><text x='200' y='145' text-anchor='middle' font-size='14' font-weight='bold' fill='#dc2626'>Deutschland</text><circle cx='80' cy='140' r='40' fill='#2563eb' opacity='0.2' stroke='#2563eb' stroke-width='2'/><text x='80' y='145' text-anchor='middle' font-size='12' fill='#2563eb'>Frankreich</text><circle cx='320' cy='140' r='45' fill='#2563eb' opacity='0.2' stroke='#2563eb' stroke-width='2'/><text x='320' y='145' text-anchor='middle' font-size='12' fill='#2563eb'>Russland</text><circle cx='120' cy='50' r='35' fill='#2563eb' opacity='0.2' stroke='#2563eb' stroke-width='2'/><text x='120' y='55' text-anchor='middle' font-size='11' fill='#2563eb'>GB</text><line x1='120' y1='80' x2='150' y2='110' stroke='#2563eb' stroke-width='1.5' stroke-dasharray='4'/><line x1='275' y1='140' x2='250' y2='140' stroke='#2563eb' stroke-width='1.5' stroke-dasharray='4'/><line x1='120' y1='140' x2='150' y2='140' stroke='#2563eb' stroke-width='1.5' stroke-dasharray='4'/><text x='200' y='280' text-anchor='middle' font-size='11' fill='#6b7280'>Rot: Dreibund | Blau: Triple Entente | Gestrichelt: Buendnislinien</text></svg>",
-          "bildunterschrift": "Vereinfachte Darstellung: Deutschland fuehlt sich von den Entente-Maechten eingekreist.",
-          "quelle": "Eigene Darstellung",
-          "lizenz": ""
-        }
-      ],
       "aufgaben": [
         {
           "id": "aufgabe-1-1",
           "typ": "zuordnung",
-          "frage": "Ordne die Laender dem richtigen Buendnis zu:",
-          "material_referenz": [
-            "mat-1-1",
-            "mat-1-2"
-          ],
-          "optionen": [
-            "Dreibund",
-            "Triple Entente"
-          ],
+          "frage": "Ordne die Länder dem richtigen Bündnis zu:",
+          "optionen": ["Dreibund", "Triple Entente"],
           "loesung": {
             "Deutsches Reich": "Dreibund",
-            "Oesterreich-Ungarn": "Dreibund",
+            "Österreich-Ungarn": "Dreibund",
             "Italien": "Dreibund",
             "Frankreich": "Triple Entente",
-            "Grossbritannien": "Triple Entente",
+            "Großbritannien": "Triple Entente",
             "Russland": "Triple Entente"
           },
           "tipps": [
-            {
-              "stufe": 1,
-              "text": "Ueberlege: Welche Laender lagen in der Mitte Europas und fuehlten sich von den anderen eingekreist?"
-            },
-            {
-              "stufe": 2,
-              "text": "Lies den Darstellungstext 'Die Buendnisse Europas vor 1914' nochmal — im ersten und zweiten Absatz stehen die Mitglieder beider Buendnisse."
-            },
-            {
-              "stufe": 3,
-              "text": "Der Dreibund bestand aus drei Laendern in Mittel- und Suedeuropa: Deutschland, Oesterreich-Ungarn und Italien. Die Triple Entente vereinte Frankreich, Grossbritannien und Russland."
-            }
+            {"stufe": 1, "text": "Überlege: Welche Länder lagen in der Mitte Europas und fühlten sich von den anderen eingekreist?"},
+            {"stufe": 2, "text": "Deutschland, Österreich-Ungarn und Italien bildeten den Dreibund. Die anderen drei Länder gehören zur Triple Entente."},
+            {"stufe": 3, "text": "Dreibund: Deutsches Reich, Österreich-Ungarn, Italien. Triple Entente: Frankreich, Großbritannien, Russland."}
           ],
           "punkte": 10
         },
@@ -169,232 +39,163 @@
           "id": "aufgabe-1-2",
           "typ": "multiple-choice",
           "frage": "Was unterschied die Triple Entente vom Dreibund?",
-          "material_referenz": [
-            "mat-1-1"
-          ],
           "optionen": [
-            "Die Triple Entente war ein fester Militaerpakt mit Beistandspflicht.",
-            "Die Triple Entente war kein fester Militaerpakt, sondern eine schrittweise Annaeherung.",
-            "Die Triple Entente hatte mehr Mitgliedslaender als der Dreibund.",
+            "Die Triple Entente war ein fester Militärpakt mit Beistandspflicht.",
+            "Die Triple Entente war kein fester Militärpakt, sondern eine schrittweise Annäherung.",
+            "Die Triple Entente hatte mehr Mitgliedsländer als der Dreibund.",
             "Die Triple Entente wurde vor dem Dreibund geschlossen."
           ],
-          "loesung": "Die Triple Entente war kein fester Militaerpakt, sondern eine schrittweise Annaeherung.",
+          "loesung": "Die Triple Entente war kein fester Militärpakt, sondern eine schrittweise Annäherung.",
           "tipps": [
-            {
-              "stufe": 1,
-              "text": "Hatten alle Mitglieder der Triple Entente die Pflicht, sich gegenseitig im Krieg zu helfen?"
-            },
-            {
-              "stufe": 2,
-              "text": "Im Darstellungstext steht ein wichtiger Unterschied zwischen Dreibund und Triple Entente — lies den zweiten Absatz nochmal genau."
-            },
-            {
-              "stufe": 3,
-              "text": "Der Dreibund war ein echtes Militaerbuendnis mit Beistandspflicht. Die Triple Entente entstand schrittweise (1894, 1904, 1907) als lockere Annaeherung — ohne feste Verpflichtungen."
-            }
+            {"stufe": 1, "text": "Überlege: Hatten alle Mitglieder der Triple Entente die Pflicht, sich gegenseitig im Krieg zu helfen?"},
+            {"stufe": 2, "text": "Der Dreibund war ein echtes Militärbündnis. Die Triple Entente war lockerer – eine Annäherung in mehreren Schritten."},
+            {"stufe": 3, "text": "Richtig ist B: Die Triple Entente war kein fester Militärpakt, sondern entstand schrittweise (1894, 1904, 1907) als Annäherung zwischen Frankreich, Großbritannien und Russland."}
           ],
           "punkte": 10
         },
         {
           "id": "aufgabe-1-3",
           "typ": "reihenfolge",
-          "frage": "Bringe die Buendnisse in die richtige zeitliche Reihenfolge — vom aeltesten zum juengsten:",
-          "material_referenz": [
-            "mat-1-4"
-          ],
+          "frage": "Bringe die Bündnisse in die richtige zeitliche Reihenfolge – vom ältesten zum jüngsten:",
           "optionen": [
-            "Gruendung des Dreibundes",
-            "Franzoesisch-russisches Buendnis",
-            "Entente Cordiale zwischen Grossbritannien und Frankreich",
-            "Britisch-russisches Abkommen vervollstaendigt die Triple Entente"
+            "Dreibund (1882)",
+            "Französisch-russisches Bündnis (1894)",
+            "Entente Cordiale: GB-Frankreich (1904)",
+            "Britisch-russisches Abkommen (1907)"
           ],
           "loesung": [
-            "Gruendung des Dreibundes",
-            "Franzoesisch-russisches Buendnis",
-            "Entente Cordiale zwischen Grossbritannien und Frankreich",
-            "Britisch-russisches Abkommen vervollstaendigt die Triple Entente"
+            "Dreibund (1882)",
+            "Französisch-russisches Bündnis (1894)",
+            "Entente Cordiale: GB-Frankreich (1904)",
+            "Britisch-russisches Abkommen (1907)"
           ],
           "tipps": [
-            {
-              "stufe": 1,
-              "text": "Welches Buendnis wurde zuerst geschlossen — noch im 19. Jahrhundert?"
-            },
-            {
-              "stufe": 2,
-              "text": "Schau dir die Zeitleiste 'Buendnisbildung 1882–1907' an — dort stehen alle vier Ereignisse in der richtigen Reihenfolge."
-            },
-            {
-              "stufe": 3,
-              "text": "Der Dreibund kam zuerst. Dann reagierte Frankreich mit einem Buendnis mit Russland. Anschliessend naeherten sich Grossbritannien und Frankreich an, und zuletzt schloss sich Grossbritannien auch mit Russland zusammen."
-            }
+            {"stufe": 1, "text": "Welches Bündnis wurde zuerst geschlossen – im 19. Jahrhundert?"},
+            {"stufe": 2, "text": "Der Dreibund kam zuerst (1882). Die Triple Entente entstand in drei Schritten: 1894, 1904 und 1907."},
+            {"stufe": 3, "text": "Richtige Reihenfolge: 1. Dreibund (1882), 2. Französisch-russisches Bündnis (1894), 3. Entente Cordiale (1904), 4. Britisch-russisches Abkommen (1907)."}
           ],
           "punkte": 10
         },
         {
           "id": "aufgabe-1-4",
           "typ": "lueckentext",
-          "frage": "Europa war vor 1914 in zwei grosse ___ gespalten. Der ___ und der uebersteigerte ___ verschaerften die Konflikte. Man sprach vom '___', weil ein kleiner Funke genuegen konnte, um einen grossen Krieg auszuloesen.",
-          "material_referenz": [
-            "mat-1-1",
-            "mat-1-3"
-          ],
+          "frage": "Europa war vor 1914 in zwei große ___ gespalten. Der ___ (Imperialismus) und der übersteigerte ___ verschärften die Konflikte. Man sprach vom '___', weil ein kleiner Funke genügen konnte, um einen großen Krieg auszulösen.",
           "optionen": [],
-          "loesung": [
-            "Buendnisbloecke",
-            "Imperialismus",
-            "Nationalismus",
-            "Pulverfass Europa"
-          ],
+          "loesung": ["Bündnisblöcke", "Wettlauf um Kolonien", "Nationalismus", "Pulverfass Europa"],
           "tipps": [
-            {
-              "stufe": 1,
-              "text": "Denke an die beiden grossen Gruppen von Laendern in Europa — wie nennt man solche Gruppen?"
-            },
-            {
-              "stufe": 2,
-              "text": "Im Quellentext des Berliner Tageblatts findest du den Begriff, mit dem Europa verglichen wurde. Im Darstellungstext stehen die langfristigen Ursachen."
-            },
-            {
-              "stufe": 3,
-              "text": "Die zwei grossen Gruppen heissen Buendnisbloecke. Die beiden -ismen sind Imperialismus (Wettlauf um Kolonien) und Nationalismus (uebersteigerte Vaterlandsliebe). Der Vergleich lautet: Pulverfass Europa."
-            }
+            {"stufe": 1, "text": "Denke an die beiden großen Gruppen von Ländern in Europa – wie nennt man solche Gruppen?"},
+            {"stufe": 2, "text": "Die Lücken fragen nach: Bündnis___, Wettlauf um ___, National___, Pulverfass ___"},
+            {"stufe": 3, "text": "Lösung: Bündnisblöcke, Wettlauf um Kolonien, Nationalismus, Pulverfass Europa."}
           ],
           "punkte": 10
         },
         {
           "id": "aufgabe-1-5",
           "typ": "freitext-code",
-          "frage": "Du hast recherchiert: Die Grossmaechte Europas hatten sich in Buendnissen zusammengeschlossen und ruesteten auf. Ein Wort beschreibt diese gegenseitigen Abkommen besonders gut. Wie nennt man dieses System? (Ein Wort, zusammengesetzt aus 'Buendnis' und 'Politik')",
-          "material_referenz": [
-            "mat-1-1",
-            "mat-1-5"
-          ],
+          "frage": "Du hast recherchiert: Die Großmächte Europas hatten sich in Bündnissen zusammengeschlossen und rüsteten auf. Ein Wort beschreibt diese gegenseitigen Abkommen und Versprechen besonders gut. Wie nennt man dieses System? (Ein Wort, zusammengesetzt aus 'Bündnis' und 'Politik')",
           "optionen": [],
-          "loesung": "buendnispolitik",
+          "loesung": "bündnispolitik",
           "tipps": [
-            {
-              "stufe": 1,
-              "text": "Es ist ein zusammengesetztes Wort aus zwei Begriffen, die du schon kennst."
-            },
-            {
-              "stufe": 2,
-              "text": "Das erste Wort ist 'Buendnis', das zweite ist 'Politik'. Schau dir nochmal die Militaerausgaben-Tabelle an — sie zeigt, wie ernst die Maechte ihre Buendnisse nahmen."
-            },
-            {
-              "stufe": 3,
-              "text": "Die Antwort lautet: Buendnispolitik. Damit ist das System der gegenseitigen Beistandsversprechen zwischen den Grossmaechten gemeint."
-            }
+            {"stufe": 1, "text": "Es ist ein zusammengesetztes Wort aus zwei Begriffen, die du schon kennst."},
+            {"stufe": 2, "text": "Das erste Wort ist 'Bündnis', das zweite ist 'Politik'. Setze sie zusammen."},
+            {"stufe": 3, "text": "Die Antwort lautet: Bündnispolitik. Damit ist das System der gegenseitigen Beistandsversprechen zwischen den Großmächten gemeint."}
           ],
           "punkte": 10
         }
-      ],
-      "sicherung": {
-        "tafelbild": {
-          "knoten": [
-            {
-              "id": "k1-1",
-              "text": "Pulverfass Europa",
-              "typ": "kernbegriff"
-            },
-            {
-              "id": "k1-2",
-              "text": "Dreibund 1882",
-              "typ": "kategorie"
-            },
-            {
-              "id": "k1-3",
-              "text": "Triple Entente",
-              "typ": "kategorie"
-            },
-            {
-              "id": "k1-4",
-              "text": "Imperialismus",
-              "typ": "ursache"
-            },
-            {
-              "id": "k1-5",
-              "text": "Nationalismus",
-              "typ": "ursache"
-            },
-            {
-              "id": "k1-6",
-              "text": "Wettrüsten",
-              "typ": "wirkung"
-            }
-          ],
-          "verbindungen": [
-            {
-              "von": "k1-2",
-              "nach": "k1-1",
-              "label": "spaltet Europa"
-            },
-            {
-              "von": "k1-3",
-              "nach": "k1-1",
-              "label": "spaltet Europa"
-            },
-            {
-              "von": "k1-4",
-              "nach": "k1-6",
-              "label": "treibt an"
-            },
-            {
-              "von": "k1-5",
-              "nach": "k1-6",
-              "label": "treibt an"
-            },
-            {
-              "von": "k1-6",
-              "nach": "k1-1",
-              "label": "verschaerft"
-            },
-            {
-              "von": "k1-4",
-              "nach": "k1-2",
-              "label": "motiviert"
-            },
-            {
-              "von": "k1-4",
-              "nach": "k1-3",
-              "label": "motiviert"
-            }
-          ],
-          "voraussetzungen": []
-        },
-        "zusammenfassung": "Europa war vor 1914 in zwei feindliche Buendnisbloecke gespalten: den Dreibund und die Triple Entente. Imperialismus und Nationalismus verschaerften die Rivalitaeten und trieben das Wettrüsten voran. Ein Funke genuegt, um das Pulverfass zur Explosion zu bringen.",
-        "ueberleitung": "Dieser Funke kam im Sommer 1914 — in Sarajevo. In der naechsten Sonderausgabe erfaehrst du, wie ein einzelner Schuss einen Weltkrieg ausloeste."
-      }
+      ]
     },
     {
       "id": "mappe-2",
       "titel": "Sonderausgabe 2: Der Funke von Sarajevo",
-      "beschreibung": "28. Juni 1914 – Ein Attentat erschuettert Europa.",
+      "beschreibung": "28. Juni 1914 – Ein Attentat erschüttert Europa. Finde heraus, warum ein einzelner Schuss einen Weltkrieg auslösen konnte.",
       "freischalt_code": "1914",
       "aufgaben": [
         {
           "id": "aufgabe-2-1",
           "typ": "multiple-choice",
-          "frage": "Was ist der Unterschied zwischen 'Ursache' und 'Ausloeser' des Ersten Weltkriegs?",
+          "frage": "Was ist der Unterschied zwischen 'Ursache' und 'Auslöser' des Ersten Weltkriegs?",
           "optionen": [
-            "Das Attentat war die Ursache, die Buendnisse waren der Ausloeser.",
-            "Die Ursachen waren die tieferliegenden Spannungen (Imperialismus, Nationalismus, Buendnisse), der Ausloeser war das Attentat von Sarajevo.",
-            "Es gibt keinen Unterschied — Ursache und Ausloeser bedeuten dasselbe.",
-            "Der Ausloeser kam vor den Ursachen."
+            "Das Attentat war die Ursache, die Bündnisse waren der Auslöser.",
+            "Die Ursachen waren die tieferliegenden Spannungen (Imperialismus, Nationalismus, Bündnisse), der Auslöser war das Attentat von Sarajevo.",
+            "Es gibt keinen Unterschied – Ursache und Auslöser bedeuten dasselbe.",
+            "Der Auslöser kam vor den Ursachen."
           ],
-          "loesung": "Die Ursachen waren die tieferliegenden Spannungen (Imperialismus, Nationalismus, Buendnisse), der Ausloeser war das Attentat von Sarajevo.",
+          "loesung": "Die Ursachen waren die tieferliegenden Spannungen (Imperialismus, Nationalismus, Bündnisse), der Auslöser war das Attentat von Sarajevo.",
           "tipps": [
-            {
-              "stufe": 1,
-              "text": "Denke an die Pulverfass-Metapher: Was war das Pulver und was war der Funke?"
-            },
-            {
-              "stufe": 2,
-              "text": "Die Ursachen sind wie das Pulver im Fass — sie waren schon lange da. Der Ausloeser ist der Funke, der die Explosion ausloest."
-            },
-            {
-              "stufe": 3,
-              "text": "Die Ursachen (Imperialismus, Nationalismus, Buendnisse) waren die langfristigen Spannungen. Das Attentat von Sarajevo war der konkrete Ausloeser — der Funke im Pulverfass."
-            }
+            {"stufe": 1, "text": "Denke an die Pulverfass-Metapher: Was war das Pulver und was war der Funke?"},
+            {"stufe": 2, "text": "Die Ursachen sind wie das Pulver im Fass – sie waren schon lange da. Der Auslöser ist der Funke, der die Explosion auslöst."},
+            {"stufe": 3, "text": "Richtig ist B: Die Ursachen (Imperialismus, Nationalismus, Bündnisse) waren die 'Füllung' des Pulverfasses. Das Attentat von Sarajevo war der 'Funke' – der Auslöser."}
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-2-2",
+          "typ": "reihenfolge",
+          "frage": "Bringe die Ereignisse der Julikrise 1914 in die richtige zeitliche Reihenfolge:",
+          "optionen": [
+            "Attentat auf Franz Ferdinand in Sarajevo (28. Juni)",
+            "Österreich-Ungarn stellt Serbien ein Ultimatum (23. Juli)",
+            "Österreich-Ungarn erklärt Serbien den Krieg (28. Juli)",
+            "Russland beginnt die Mobilmachung (30. Juli)",
+            "Deutschland erklärt Russland den Krieg (1. August)",
+            "Deutschland erklärt Frankreich den Krieg (3. August)"
+          ],
+          "loesung": [
+            "Attentat auf Franz Ferdinand in Sarajevo (28. Juni)",
+            "Österreich-Ungarn stellt Serbien ein Ultimatum (23. Juli)",
+            "Österreich-Ungarn erklärt Serbien den Krieg (28. Juli)",
+            "Russland beginnt die Mobilmachung (30. Juli)",
+            "Deutschland erklärt Russland den Krieg (1. August)",
+            "Deutschland erklärt Frankreich den Krieg (3. August)"
+          ],
+          "tipps": [
+            {"stufe": 1, "text": "Was passierte zuerst – das Attentat oder die Kriegserklärungen? Beginne damit."},
+            {"stufe": 2, "text": "Nach dem Attentat (Juni) kam erst das Ultimatum (23. Juli), dann die Kriegserklärung an Serbien (28. Juli), dann rollte die Kettenreaktion los."},
+            {"stufe": 3, "text": "Richtige Reihenfolge: 1. Attentat (28.6.), 2. Ultimatum (23.7.), 3. Kriegserklärung ÖU an Serbien (28.7.), 4. Russische Mobilmachung (30.7.), 5. DE erklärt RU Krieg (1.8.), 6. DE erklärt FR Krieg (3.8.)."}
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-2-3",
+          "typ": "lueckentext",
+          "frage": "Am 28. Juni 1914 wurde der österreichisch-ungarische Thronfolger ___ in ___ ermordet. Dieses Attentat war der ___ des Ersten Weltkriegs. Die tieferliegenden ___ (Imperialismus, Nationalismus, Bündnisse) waren die Füllung des '___'.",
+          "optionen": [],
+          "loesung": ["Franz Ferdinand", "Sarajevo", "Auslöser", "Ursachen", "Pulverfasses"],
+          "tipps": [
+            {"stufe": 1, "text": "Wer wurde ermordet? In welcher Stadt? Das sind die ersten beiden Lücken."},
+            {"stufe": 2, "text": "Der Thronfolger hieß Franz ___. Die Stadt liegt in Bosnien. Das Attentat war der Aus___ (nicht die Ursache!)."},
+            {"stufe": 3, "text": "Lösung: Franz Ferdinand, Sarajevo, Auslöser, Ursachen, Pulverfasses."}
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-2-4",
+          "typ": "zuordnung",
+          "frage": "Ordne die Begriffe richtig zu – was gehört zu 'Ursache' und was zu 'Auslöser'?",
+          "optionen": ["Ursache", "Auslöser"],
+          "loesung": {
+            "Imperialismus": "Ursache",
+            "Nationalismus": "Ursache",
+            "Bündnispolitik": "Ursache",
+            "Attentat von Sarajevo": "Auslöser"
+          },
+          "tipps": [
+            {"stufe": 1, "text": "Ursachen sind Dinge, die schon lange da waren. Der Auslöser war ein konkretes Ereignis."},
+            {"stufe": 2, "text": "Drei der vier Begriffe sind langfristige Entwicklungen (= Ursachen). Nur ein Ereignis war der konkrete Anlass."},
+            {"stufe": 3, "text": "Imperialismus, Nationalismus und Bündnispolitik = Ursachen. Das Attentat von Sarajevo = Auslöser."}
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-2-5",
+          "typ": "freitext-code",
+          "frage": "Nach dem Attentat folgte eine Kettenreaktion: Ein Land nach dem anderen erklärte den Krieg. Österreich-Ungarn stellte Serbien eine letzte Forderung mit einer Drohung – wenn Serbien nicht zustimmt, gibt es Krieg. Wie nennt man eine solche letzte Forderung? (Ein Wort)",
+          "optionen": [],
+          "loesung": "ultimatum",
+          "tipps": [
+            {"stufe": 1, "text": "Es ist ein Fremdwort, das aus dem Lateinischen stammt und 'das Letzte' bedeutet."},
+            {"stufe": 2, "text": "Das Wort beginnt mit 'U' und hat 9 Buchstaben."},
+            {"stufe": 3, "text": "Die Antwort lautet: Ultimatum. Es bezeichnet eine letzte Forderung, verbunden mit einer Drohung bei Nichterfüllung."}
           ],
           "punkte": 10
         }
@@ -403,32 +204,86 @@
     {
       "id": "mappe-3",
       "titel": "Sonderausgabe 3: Begeisterung und Angst",
-      "beschreibung": "August 1914 – Die Menschen stroemen auf die Strassen.",
+      "beschreibung": "August 1914 – Die Menschen strömen auf die Straßen. Doch nicht alle jubeln. Finde heraus, warum viele in den Krieg zogen – und warum manche schwiegen.",
       "freischalt_code": "PROP",
       "aufgaben": [
         {
           "id": "aufgabe-3-1",
-          "typ": "multiple-choice",
-          "frage": "Platzhalter-Frage fuer Mappe 3 (Test-Datensatz)",
-          "optionen": [
-            "Antwort A",
-            "Antwort B",
-            "Antwort C"
-          ],
-          "loesung": "Antwort B",
+          "typ": "zuordnung",
+          "frage": "Ordne die vier Gründe für die Kriegsbegeisterung 1914 den richtigen Beschreibungen zu:",
+          "optionen": ["Patriotismus", "Abenteuerlust", "Gesellschaftlicher Druck", "Propaganda"],
+          "loesung": {
+            "Übersteigerte Vaterlandsliebe und Stolz auf die eigene Nation": "Patriotismus",
+            "Krieg als aufregendes Erlebnis – viele junge Männer wollten Helden sein": "Abenteuerlust",
+            "Wer nicht mitmachte, galt als Feigling oder Verräter": "Gesellschaftlicher Druck",
+            "Gezielte Verbreitung von Informationen, die nicht die ganze Wahrheit zeigen": "Propaganda"
+          },
           "tipps": [
-            {
-              "stufe": 1,
-              "text": "Tipp 1"
-            },
-            {
-              "stufe": 2,
-              "text": "Tipp 2"
-            },
-            {
-              "stufe": 3,
-              "text": "Tipp 3"
-            }
+            {"stufe": 1, "text": "Welcher Grund hat mit Liebe zum Vaterland zu tun? Welcher mit dem Wunsch nach Aufregung?"},
+            {"stufe": 2, "text": "Patriotismus = Vaterlandsliebe. Propaganda = gezielte Beeinflussung. Abenteuerlust = Heldentum. Druck = Angst vor Ausgrenzung."},
+            {"stufe": 3, "text": "Vaterlandsliebe → Patriotismus. Helden sein → Abenteuerlust. Feigling gelten → Gesellschaftlicher Druck. Nicht die ganze Wahrheit → Propaganda."}
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-3-2",
+          "typ": "lueckentext",
+          "frage": "___ bedeutet, Informationen gezielt zu verbreiten, um Menschen zu beeinflussen – dabei wird oft nicht die ganze ___ gesagt. 1914 wurde Propaganda eingesetzt, um die Menschen für den ___ zu begeistern. Ein Beispiel: Das Plakat mit dem Spruch 'Die Zeit ist hart, aber der ___ ist sicher.'",
+          "optionen": [],
+          "loesung": ["Propaganda", "Wahrheit", "Krieg", "Sieg"],
+          "tipps": [
+            {"stufe": 1, "text": "Das erste Wort ist ein Fachbegriff, der in dieser Mappe eine wichtige Rolle spielt."},
+            {"stufe": 2, "text": "Pro_____ = gezielte Beeinflussung. Bei Propaganda wird nicht die ganze W_____ gesagt. Ziel war, die Menschen für den K___ zu begeistern."},
+            {"stufe": 3, "text": "Lösung: Propaganda, Wahrheit, Krieg, Sieg."}
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-3-3",
+          "typ": "multiple-choice",
+          "frage": "Was schrieben viele Soldaten 1914 auf ihre Eisenbahnwaggons, als sie in den Krieg zogen?",
+          "optionen": [
+            "Hilfe, wir wollen nicht kämpfen!",
+            "Ausflug nach Paris – Weihnachten sind wir wieder zu Hause!",
+            "Dieser Krieg wird Jahre dauern.",
+            "Frieden für alle Völker Europas!"
+          ],
+          "loesung": "Ausflug nach Paris – Weihnachten sind wir wieder zu Hause!",
+          "tipps": [
+            {"stufe": 1, "text": "Viele Soldaten glaubten an einen ganz kurzen Krieg. Sie nannten es fast wie einen Urlaub."},
+            {"stufe": 2, "text": "Die Soldaten waren überzeugt, den Krieg in wenigen Wochen zu gewinnen – sie dachten, zum Weihnachtsfest wieder daheim zu sein."},
+            {"stufe": 3, "text": "Richtig ist B: 'Ausflug nach Paris – Weihnachten sind wir wieder zu Hause!' Tatsächlich dauerte der Krieg vier Jahre."}
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-3-4",
+          "typ": "multiple-choice",
+          "frage": "Welche Aussage zur Kriegsbegeisterung 1914 ist richtig?",
+          "optionen": [
+            "Alle Menschen in Deutschland waren begeistert vom Krieg.",
+            "Nur Soldaten waren begeistert, die Bevölkerung war dagegen.",
+            "Nicht alle Menschen teilten die Begeisterung – viele Mütter und Ehefrauen hatten Angst, durften das aber oft nicht zeigen.",
+            "Die Kriegsbegeisterung war eine Erfindung der Historiker."
+          ],
+          "loesung": "Nicht alle Menschen teilten die Begeisterung – viele Mütter und Ehefrauen hatten Angst, durften das aber oft nicht zeigen.",
+          "tipps": [
+            {"stufe": 1, "text": "War wirklich jeder Mensch begeistert? Denke an Familien, an Mütter mit Söhnen..."},
+            {"stufe": 2, "text": "Es gab durchaus Menschen, die Angst hatten – aber der gesellschaftliche Druck war groß."},
+            {"stufe": 3, "text": "Richtig ist C: Nicht alle teilten die Begeisterung. Viele Mütter, Ehefrauen und Kinder hatten Angst, durften das aber öffentlich kaum zeigen."}
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-3-5",
+          "typ": "freitext-code",
+          "frage": "Die Soldaten glaubten 1914 an einen ganz kurzen Krieg. Bis wann glaubten sie, wieder zu Hause zu sein? (Ein Wort – der Name des Festes)",
+          "optionen": [],
+          "loesung": "weihnachten",
+          "tipps": [
+            {"stufe": 1, "text": "Es ist ein großes Fest, das im Dezember gefeiert wird."},
+            {"stufe": 2, "text": "Das Fest findet am 24./25. Dezember statt. Die Soldaten zogen im August 1914 los."},
+            {"stufe": 3, "text": "Die Antwort lautet: Weihnachten. Die Soldaten glaubten, bis Weihnachten 1914 wieder zu Hause zu sein. Tatsächlich dauerte der Krieg bis November 1918."}
           ],
           "punkte": 10
         }
@@ -437,32 +292,91 @@
     {
       "id": "mappe-4",
       "titel": "Sonderausgabe 4: Der Plan, der scheiterte",
-      "beschreibung": "Deutschland hatte einen Plan fuer den schnellen Sieg.",
+      "beschreibung": "Deutschland hatte einen Plan für den schnellen Sieg. Doch die Wirklichkeit sah anders aus. Finde heraus, warum der Krieg kein kurzes Abenteuer wurde.",
       "freischalt_code": "MARN",
       "aufgaben": [
         {
           "id": "aufgabe-4-1",
           "typ": "multiple-choice",
-          "frage": "Platzhalter-Frage fuer Mappe 4 (Test-Datensatz)",
+          "frage": "Warum war der Zweifrontenkrieg für Deutschland ein großes Problem?",
           "optionen": [
-            "Antwort A",
-            "Antwort B",
-            "Antwort C"
+            "Deutschland hatte nur eine kleine Armee.",
+            "Deutschland musste gleichzeitig gegen Frankreich im Westen und Russland im Osten kämpfen und konnte seine Kräfte nicht auf eine Front konzentrieren.",
+            "Deutschland hatte keine Verbündeten.",
+            "Deutschland lag nicht in der Mitte Europas."
           ],
-          "loesung": "Antwort A",
+          "loesung": "Deutschland musste gleichzeitig gegen Frankreich im Westen und Russland im Osten kämpfen und konnte seine Kräfte nicht auf eine Front konzentrieren.",
           "tipps": [
-            {
-              "stufe": 1,
-              "text": "Tipp 1"
-            },
-            {
-              "stufe": 2,
-              "text": "Tipp 2"
-            },
-            {
-              "stufe": 3,
-              "text": "Tipp 3"
-            }
+            {"stufe": 1, "text": "Schau dir die Lage Deutschlands auf der Karte an – welche Nachbarn hatte es im Westen und Osten?"},
+            {"stufe": 2, "text": "Im Westen lag Frankreich, im Osten Russland. Beide waren Feinde Deutschlands. Das bedeutet: Krieg an zwei Seiten gleichzeitig."},
+            {"stufe": 3, "text": "Richtig ist B: Deutschland musste an zwei Fronten gleichzeitig kämpfen – gegen Frankreich im Westen und Russland im Osten. Das machte es unmöglich, alle Kräfte zu bündeln."}
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-4-2",
+          "typ": "reihenfolge",
+          "frage": "Bringe die Schritte des Schlieffen-Plans in die richtige Reihenfolge:",
+          "optionen": [
+            "Überraschungsangriff auf Frankreich durch Belgien",
+            "Frankreich schnell besiegen (in wenigen Wochen)",
+            "Alle Truppen nach Osten verlegen",
+            "Russland besiegen (Russland braucht länger für die Mobilmachung)"
+          ],
+          "loesung": [
+            "Überraschungsangriff auf Frankreich durch Belgien",
+            "Frankreich schnell besiegen (in wenigen Wochen)",
+            "Alle Truppen nach Osten verlegen",
+            "Russland besiegen (Russland braucht länger für die Mobilmachung)"
+          ],
+          "tipps": [
+            {"stufe": 1, "text": "Was kommt zuerst – der Angriff im Westen oder im Osten?"},
+            {"stufe": 2, "text": "Der Plan war: Erst Frankreich schnell besiegen (Westen), dann gegen Russland (Osten). Dazwischen müssen die Truppen verlegt werden."},
+            {"stufe": 3, "text": "Richtige Reihenfolge: 1. Überraschungsangriff durch Belgien, 2. Frankreich schnell besiegen, 3. Truppen nach Osten verlegen, 4. Russland besiegen."}
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-4-3",
+          "typ": "zuordnung",
+          "frage": "Warum scheiterte der Schlieffen-Plan? Ordne die Gründe den richtigen Erklärungen zu:",
+          "optionen": ["Belgischer Widerstand", "Englands Kriegseintritt", "Russlands schnelle Mobilmachung", "Schlacht an der Marne"],
+          "loesung": {
+            "Das kleine Land wehrte sich unerwartet heftig gegen den deutschen Durchmarsch": "Belgischer Widerstand",
+            "Großbritannien trat auf der Seite Frankreichs in den Krieg ein": "Englands Kriegseintritt",
+            "Die russische Armee war schneller bereit als Deutschland erwartet hatte": "Russlands schnelle Mobilmachung",
+            "Im September 1914 stoppte ein französischer Gegenangriff den deutschen Vormarsch": "Schlacht an der Marne"
+          },
+          "tipps": [
+            {"stufe": 1, "text": "Welches Land lag auf dem Weg von Deutschland nach Frankreich? Und welches große Land half Frankreich unerwartet?"},
+            {"stufe": 2, "text": "Belgien wehrte sich gegen den Durchmarsch. England half Frankreich. Russland war schneller als gedacht. An der Marne wurde Deutschland gestoppt."},
+            {"stufe": 3, "text": "Kleines Land wehrt sich → Belgischer Widerstand. GB tritt bei → Englands Kriegseintritt. RU schneller → Russlands schnelle Mobilmachung. Franz. Gegenangriff Sept. 1914 → Schlacht an der Marne."}
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-4-4",
+          "typ": "lueckentext",
+          "frage": "Der Schlieffen-Plan sah vor, zuerst ___ schnell zu besiegen und dann gegen ___ zu kämpfen. Deutschland griff durch das neutrale ___ an. Doch im September 1914 stoppte die ___ den deutschen Vormarsch. Statt eines schnellen Krieges begann ein jahrelanger ___.",
+          "optionen": [],
+          "loesung": ["Frankreich", "Russland", "Belgien", "Schlacht an der Marne", "Stellungskrieg"],
+          "tipps": [
+            {"stufe": 1, "text": "Welches Land sollte zuerst besiegt werden? Durch welches kleine Land marschierten die deutschen Truppen?"},
+            {"stufe": 2, "text": "Erst F___, dann R___. Durch B___ (neutral). Gestoppt an der M___. Danach: Stell___krieg."},
+            {"stufe": 3, "text": "Lösung: Frankreich, Russland, Belgien, Schlacht an der Marne, Stellungskrieg."}
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-4-5",
+          "typ": "freitext-code",
+          "frage": "Im September 1914 fand eine entscheidende Schlacht statt, die den Schlieffen-Plan endgültig zum Scheitern brachte. An welchem Fluss in Frankreich wurde der deutsche Vormarsch gestoppt? (Ein Wort – der Name des Flusses)",
+          "optionen": [],
+          "loesung": "marne",
+          "tipps": [
+            {"stufe": 1, "text": "Der Fluss liegt in Nordfrankreich, nicht weit von Paris entfernt."},
+            {"stufe": 2, "text": "Der Name des Flusses hat 5 Buchstaben und beginnt mit 'M'."},
+            {"stufe": 3, "text": "Die Antwort lautet: Marne. Die Schlacht an der Marne im September 1914 stoppte den deutschen Vormarsch und besiegelte das Scheitern des Schlieffen-Plans."}
           ],
           "punkte": 10
         }
