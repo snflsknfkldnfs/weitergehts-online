@@ -917,7 +917,115 @@ footer a:hover {
 }
 
 /* --------------------------------------------------------------------------
-   15. Print-Stylesheet (Lehrkraft-Seite)
+   15. v1: Erarbeitung 2-Spalten-Grid
+   -------------------------------------------------------------------------- */
+
+.mappe__erarbeitung {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .mappe__erarbeitung {
+    grid-template-columns: 1fr 1fr;
+  }
+  .erarbeitung__materialien {
+    position: sticky;
+    top: 1rem;
+    align-self: start;
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+  }
+}
+
+/* Wider layout for 2-column mode */
+@media (min-width: 768px) {
+  .mappe {
+    max-width: var(--max-width-wide, 1400px);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   16. v1: Material-Typ-Styles (BEM)
+   -------------------------------------------------------------------------- */
+
+/* Basis */
+.material { margin-bottom: var(--space-md); padding: var(--space-md); border-radius: var(--radius-md); }
+.material__titel { margin-top: 0; }
+.material__quelle { font-size: 0.85em; color: var(--color-muted); }
+
+/* Darstellungstext */
+.material--darstellung { background: var(--color-surface); border-left: 4px solid var(--color-primary); }
+
+/* Quellentext */
+.material--quelle { font-style: italic; border-left: 4px solid var(--color-secondary); padding-left: var(--space-lg); }
+.material--quelle cite { display: block; margin-top: var(--space-sm); font-style: normal; }
+
+/* Bildquelle */
+.material--bild img { max-width: 100%; height: auto; border-radius: var(--radius-sm); }
+.material--bild figcaption { font-size: 0.85em; margin-top: var(--space-xs); }
+
+/* Karte */
+.material--karte { text-align: center; }
+.material--karte img, .material--karte svg { max-width: 100%; height: auto; }
+
+/* Zeitleiste */
+.material--zeitleiste .zeitleiste__liste { list-style: none; padding-left: var(--space-md); border-left: 3px solid var(--color-primary); }
+.zeitleiste__liste li { margin-bottom: var(--space-sm); position: relative; }
+.zeitleiste__liste li::before { content: ''; position: absolute; left: calc(-1 * var(--space-md) - 7px); top: 0.5em; width: 12px; height: 12px; border-radius: 50%; background: var(--color-primary); }
+.zeitleiste__datum { font-weight: bold; display: block; }
+
+/* Statistik */
+.material--statistik table { width: 100%; border-collapse: collapse; }
+.material--statistik th, .material--statistik td { padding: var(--space-xs) var(--space-sm); border: 1px solid var(--color-border); text-align: left; }
+.material--statistik th { background: var(--color-surface); font-weight: bold; }
+
+/* Tagebuch */
+.material--tagebuch { background: var(--color-surface-warm, #fdf6e3); border: 1px solid var(--color-border); font-family: 'Georgia', serif; }
+.material--tagebuch .tagebuch__text { line-height: 1.8; }
+
+/* --------------------------------------------------------------------------
+   17. v1: Einstieg + Sicherung Styles
+   -------------------------------------------------------------------------- */
+
+.mappe__einstieg { margin-bottom: var(--space-xl); padding: var(--space-lg); background: var(--color-surface); border-radius: var(--radius-md); }
+.mappe__einstieg:empty { display: none; }
+.einstieg__narrativ { line-height: 1.7; }
+.einstieg__problemstellung { font-size: 1.1em; font-weight: 600; margin-top: var(--space-md); }
+
+.mappe__sicherung { margin-top: var(--space-xl); padding: var(--space-lg); background: var(--color-surface); border-radius: var(--radius-md); }
+.sicherung__tafelbild { margin-bottom: var(--space-lg); }
+.sicherung__tafelbild svg { max-width: 100%; height: auto; }
+.sicherung__zusammenfassung { margin-bottom: var(--space-md); }
+.sicherung__ueberleitung { font-style: italic; color: var(--color-muted); }
+
+/* --------------------------------------------------------------------------
+   18. v1: Tafelbild CSS-Variablen
+   -------------------------------------------------------------------------- */
+
+:root {
+  --tb-kernbegriff: #2563eb;
+  --tb-kategorie: #7c3aed;
+  --tb-ursache: #dc2626;
+  --tb-wirkung: #059669;
+  --tb-akteur: #d97706;
+  --tb-ereignis: #6b7280;
+  --tb-ghost: #d1d5db;
+  --tb-verbindung: #374151;
+  --tb-label: #4b5563;
+}
+
+/* --------------------------------------------------------------------------
+   19. v1: material_referenz Verweis-Style
+   -------------------------------------------------------------------------- */
+
+.aufgabe__material-verweis { font-size: 0.9em; color: var(--color-muted); margin-bottom: var(--space-sm); }
+.aufgabe__material-verweis a { color: var(--color-primary); text-decoration: underline; }
+.aufgabe__material-verweis a:hover { color: var(--color-primary-light); }
+
+/* --------------------------------------------------------------------------
+   20. Print-Stylesheet (Lehrkraft-Seite)
    -------------------------------------------------------------------------- */
 
 @media print {

@@ -17,6 +17,7 @@
   </header>
 
   <main class="mappe">
+    <!-- Fortschritt -->
     <div class="mappe__header">
       <div class="fortschritt" aria-label="Fortschritt in dieser Mappe">
         <div class="fortschritt__label" id="fortschritt-label">0 von ? Aufgaben gelöst (0%)</div>
@@ -26,11 +27,22 @@
       </div>
     </div>
 
-    <div id="aufgaben-container" aria-label="Aufgaben">
-      <p class="text-center">Aufgaben werden geladen...</p>
-    </div>
+    <!-- Phase 1: Einstieg (dynamisch) -->
+    <section class="mappe__einstieg" id="einstieg-container"></section>
 
-    <section class="code-eingabe" aria-label="Freischalt-Code eingeben">
+    <!-- Phase 2: Erarbeitung (Material + Aufgaben) -->
+    <section class="mappe__erarbeitung" id="erarbeitung-container">
+      <div class="erarbeitung__materialien" id="material-container"></div>
+      <div class="erarbeitung__aufgaben" id="aufgaben-container">
+        <p class="text-center">Aufgaben werden geladen...</p>
+      </div>
+    </section>
+
+    <!-- Phase 3: Sicherung (dynamisch, initial hidden) -->
+    <section class="mappe__sicherung" id="sicherung-container" style="display:none;"></section>
+
+    <!-- Code-Eingabe -->
+    <section class="code-eingabe" id="code-section" aria-label="Freischalt-Code eingeben">
       <label class="code-eingabe__label" for="code-input">
         Freischalt-Code eingeben
       </label>
@@ -52,9 +64,10 @@
       </button>
     </section>
 
+    <!-- Navigation -->
     <nav class="mappe__navigation" aria-label="Mappe-Navigation">
-      <a href="mappe-3.html" class="mappe__nav-btn" aria-label="Zur vorherigen Mappe">
-        ← Mappe 3
+      <a href="index.html" class="mappe__nav-btn" aria-label="Zurück zur Übersicht">
+        ← Übersicht
       </a>
       <span id="nav-mappe-info">Mappe 4 von 4</span>
       <a href="index.html" class="mappe__nav-btn" id="nav-weiter" aria-label="Zurück zur Übersicht">

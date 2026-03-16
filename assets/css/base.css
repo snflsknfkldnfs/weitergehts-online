@@ -125,7 +125,13 @@ h1, h2, h3, h4, h5, h6 {
 
   /* Layout */
   --max-width: 960px;
+  --max-width-wide: 1400px;
   --content-padding: var(--space-md);
+
+  /* Borders */
+  --color-border: #e0e0e0;
+  --color-muted: #666666;
+  --color-surface-warm: #fdf6e3;
 }
 
 /* --------------------------------------------------------------------------

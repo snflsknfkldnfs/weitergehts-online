@@ -14,73 +14,45 @@
       "titel": "",
       "beschreibung": "",
       "freischalt_code": "",
+      "einstieg": {
+        "narrativ": "",
+        "problemstellung": ""
+      },
+      "materialien": [
+        {
+          "id": "mat-1-1",
+          "typ": "darstellungstext",
+          "titel": "",
+          "inhalt": "",
+          "quelle": "",
+          "lizenz": ""
+        }
+      ],
       "aufgaben": [
         {
           "id": "aufgabe-1-1",
           "typ": "multiple-choice",
           "frage": "",
+          "material_referenz": ["mat-1-1"],
           "optionen": [],
           "loesung": "",
           "tipps": [
-            { "stufe": 1, "text": "" },
-            { "stufe": 2, "text": "" },
-            { "stufe": 3, "text": "" }
-          ],
-          "punkte": 0
-        },
-        {
-          "id": "aufgabe-1-2",
-          "typ": "zuordnung",
-          "frage": "",
-          "optionen": [],
-          "loesung": {},
-          "tipps": [
-            { "stufe": 1, "text": "" },
-            { "stufe": 2, "text": "" },
-            { "stufe": 3, "text": "" }
-          ],
-          "punkte": 0
-        },
-        {
-          "id": "aufgabe-1-3",
-          "typ": "lueckentext",
-          "frage": "",
-          "optionen": [],
-          "loesung": [],
-          "tipps": [
-            { "stufe": 1, "text": "" },
-            { "stufe": 2, "text": "" },
-            { "stufe": 3, "text": "" }
-          ],
-          "punkte": 0
-        },
-        {
-          "id": "aufgabe-1-4",
-          "typ": "reihenfolge",
-          "frage": "",
-          "optionen": [],
-          "loesung": [],
-          "tipps": [
-            { "stufe": 1, "text": "" },
-            { "stufe": 2, "text": "" },
-            { "stufe": 3, "text": "" }
-          ],
-          "punkte": 0
-        },
-        {
-          "id": "aufgabe-1-5",
-          "typ": "freitext-code",
-          "frage": "",
-          "optionen": [],
-          "loesung": "",
-          "tipps": [
-            { "stufe": 1, "text": "" },
-            { "stufe": 2, "text": "" },
-            { "stufe": 3, "text": "" }
+            {"stufe": 1, "text": ""},
+            {"stufe": 2, "text": ""},
+            {"stufe": 3, "text": ""}
           ],
           "punkte": 0
         }
-      ]
+      ],
+      "sicherung": {
+        "tafelbild": {
+          "knoten": [],
+          "verbindungen": [],
+          "voraussetzungen": []
+        },
+        "zusammenfassung": "",
+        "ueberleitung": ""
+      }
     }
   ]
 }
