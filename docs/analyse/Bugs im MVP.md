@@ -1,0 +1,17 @@
+**Bugs MVP:**
+
+- Code-Logik: Der Code für die nächst Mappe muss angezeigt werden, wenn die Fragen alle beantwortet wurden
+- Zuordnungsaufgaben: Zeitliche Reihenfolge schon vorweggenommen weil jede Antowrtmöglcihkeit Zeitangabe enthält (logischer Fehler)
+- Freitexteingeben: zu komplex für SuS, Exaktheit der Antworten kann nicht erwartet werden. 
+- Tipps sind zu verräterisch. Sollen erst eher die Fragestellung erläutern, ggf. Fragestellungen in teilfragen unterteilen, und nie die Lösung explizit verraten.
+- Inhalt fehlt komplett: es sind keine Materialien vorhanden, anhand derer die SuS den lerninhalt erarbeiten können. Es ist bisher nur ein Quiz.
+	- Es müssen also didaktisch aufbereitete artefakte erarbeitet und eingepflegt werden. Diese müssen möglichst ansprechend, abwechslungsreich und motivierend für die SuS sein. Ggf braucht es einen Lernmaterial-Agenten, welcher Ideen für den Entwurf dieser Artefakte erarbeitet bzw für die spezifische Mappe auswählt. 
+		- Gestalterische idee: immer Quelle(n) links, Fragen zur Quelle rechts. Dann scrollbar angeordnet damit SuS Schritt für Schritt den lerninhalt zu erarbeiten. 
+		- Idealer weise: Generieren von Artefakten, die auf Miro-Board angeordnet werden können, und Miro-board in website eingebettet. So ist freies scroling/zooming auf materialen auf miro möglich und auf miro können auch "alte" artefakte wie schulbuchseiten, arbeitsblätter etc. vorgehalten werden. Neben diesem "viewport" von miro ist dann die schrittweise rechercheanleitung bzw. die fragestellungen anzuordnen, die dann von den SuS anhand des materials schrittweise ausgefüllt werden können. Die ganze struktur von "materialienpool" und "Arbeitsfläche" muss dann natürlcih ansprechend thematisch und didaktisch gut gerahmt in den kontext der Mappe/das Setting eingebunden werden. 
+		- Das Mappendesign sollte ggf. dem Vorgehen nach eventuell an üblicher Phasenstrujtur einer UE des jeweiligen Fachs orientiert sein.
+			- z.B.: Immer Motivation/setting/Dringlichkeit der Problemstellung/zwingende handlungssituation schaffen -> dann von allgemeinen Information zum detaillierten, auch innerhalb jeder Mappe. 
+			- Material sollte Ggf. mit Personifizierungen arbeiten (zu beginn schülernah einführen): Tagebucheinträge, historische Quellen, historische Bildquellen, Kartenmaterial, generierte Bilder, Statistiken o.Ä. Eine Mappe soll so eine Art interaktives Arbeitsblatt darstellen. (Verbindung aus Materialpool und Arbeitsfläche, eingebunden in didaktisches Setting)
+- Braucht es dafür ein untergeschlagenes Agenten-Team? Ein fachlicher Experte, ein Didaktikexperte und ein mcp-Technik-Experte allein für die Erstellung des Materials? 
+- Meta notes: 
+- Muss Agentensystem ausdifferenziert werden? Insbesondere das entwerfen des erarbeitungsmaterial muss inhaltlich optimiert werden 
+- Es muss im Sinne der Standardisierung sichergestellt werden, dass die inhaltliche Setzung und die grundsätzliche Ausarbeitung der Entwürfe der Materialartefakte mit dem User abgesprochen werden, von dessen ggf. existierender vorarbeit/Quellen informiert werden und so iterativ und unter intelligentem Einbezug der Präferenzen und Ressourcen des Users entworfen werden, bevor die Mappen dann entsprechend passend ausgearbeitet werden.

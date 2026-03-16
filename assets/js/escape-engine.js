@@ -636,6 +636,13 @@ var EscapeEngine = (function () {
     var blockquote = document.createElement('blockquote');
     blockquote.className = 'material material--quelle';
 
+    if (mat.titel) {
+      var h3 = document.createElement('h3');
+      h3.className = 'material__titel';
+      h3.textContent = mat.titel;
+      blockquote.appendChild(h3);
+    }
+
     var inhaltDiv = document.createElement('div');
     inhaltDiv.className = 'material__inhalt';
     inhaltDiv.innerHTML = mat.inhalt || '';
@@ -1708,10 +1715,10 @@ var EscapeEngine = (function () {
     var allCorrect = true;
 
     for (var i = 0; i < inputs.length; i++) {
-      var userValue = (inputs[i].value || '').trim().toLowerCase();
-      var expected = (loesungen[i] || '').trim().toLowerCase();
+      var userValue = (inputs[i].value || '').trim();
+      var expected = (loesungen[i] || '').trim();
 
-      if (userValue === expected) {
+      if (_fuzzyMatch(userValue, expected)) {
         inputs[i].classList.add('aufgabe__luecke--correct');
         inputs[i].classList.remove('aufgabe__luecke--incorrect');
       } else {
