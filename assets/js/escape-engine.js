@@ -409,6 +409,28 @@ var EscapeEngine = (function () {
    * @private
    */
   function _updateSeitenTitel(mappe) {
+    // Game-Titel aus data.meta setzen (E8-Fix: fehlender uebergeordneter Header)
+    var gameTitel = _state.data && _state.data.meta && _state.data.meta.titel;
+    var headerEl = document.querySelector('header');
+    if (headerEl && gameTitel) {
+      var existingGameTitel = headerEl.querySelector('.game__titel');
+      if (!existingGameTitel) {
+        var gameH1 = document.createElement('h1');
+        gameH1.className = 'game__titel';
+        gameH1.textContent = gameTitel;
+        headerEl.insertBefore(gameH1, headerEl.firstChild);
+
+        // Mappe-Titel von h1 zu h2 herabstufen
+        var mappeTitelEl = headerEl.querySelector('.mappe__titel');
+        if (mappeTitelEl && mappeTitelEl.tagName === 'H1') {
+          var h2 = document.createElement('h2');
+          h2.className = mappeTitelEl.className;
+          h2.textContent = mappeTitelEl.textContent;
+          mappeTitelEl.parentNode.replaceChild(h2, mappeTitelEl);
+        }
+      }
+    }
+
     var titelEl = document.querySelector('.mappe__titel');
     if (titelEl && mappe.titel) {
       titelEl.textContent = mappe.titel;
@@ -419,7 +441,9 @@ var EscapeEngine = (function () {
       beschreibungEl.textContent = mappe.beschreibung;
     }
 
-    if (mappe.titel) {
+    if (mappe.titel && gameTitel) {
+      document.title = mappe.titel + ' – ' + gameTitel;
+    } else if (mappe.titel) {
       document.title = mappe.titel + ' – Escape-Game';
     }
   }
@@ -892,8 +916,13 @@ var EscapeEngine = (function () {
     h2.textContent = 'Sicherung';
     container.appendChild(h2);
 
-    // Tafelbild
+    // Tafelbild (N3-Fix: beschreibender h3 vor SVG)
     if (sicherung.tafelbild) {
+      var tafelbildH3 = document.createElement('h3');
+      tafelbildH3.className = 'sicherung__tafelbild-titel';
+      tafelbildH3.textContent = sicherung.tafelbild.titel || 'Tafelbild';
+      container.appendChild(tafelbildH3);
+
       var tafelbildDiv = document.createElement('div');
       tafelbildDiv.className = 'sicherung__tafelbild';
       tafelbildDiv.id = 'tafelbild-container';
@@ -1251,12 +1280,17 @@ var EscapeEngine = (function () {
       }
     }
 
-    // Sicherung rendern (hidden)
+    // Sicherung rendern (explizit hidden, bis Code-Reveal)
     var sicherungContainer = document.getElementById('sicherung-container');
     if (sicherungContainer && mappe.sicherung) {
       sicherungContainer.innerHTML = '';
+      sicherungContainer.style.display = 'none';
       _renderSicherung(mappe.sicherung, sicherungContainer);
-      // Bleibt hidden (style="display:none" im HTML)
+    }
+
+    // Bei Reload: Sicherung wieder sichtbar wenn bereits abgeschlossen
+    if (sicherungContainer && progress.abgeschlossen) {
+      sicherungContainer.style.display = '';
     }
   }
 
@@ -1533,13 +1567,18 @@ var EscapeEngine = (function () {
 
     var optionen = aufgabe.optionen || [];
 
-    // Alle moeglichen Zuordnungs-Ziele sammeln
+    // Alle moeglichen Zuordnungs-Ziele sammeln (E9-Fix: deduplizieren)
     var alleZiele = [];
     if (typeof aufgabe.loesung === 'object' && !Array.isArray(aufgabe.loesung)) {
       // loesung ist Objekt: { "Begriff1": "Ziel1", "Begriff2": "Ziel2" }
       var begriffe = Object.keys(aufgabe.loesung);
+      var zielSet = {};
       for (var k = 0; k < begriffe.length; k++) {
-        alleZiele.push(aufgabe.loesung[begriffe[k]]);
+        var ziel = aufgabe.loesung[begriffe[k]];
+        if (!zielSet[ziel]) {
+          zielSet[ziel] = true;
+          alleZiele.push(ziel);
+        }
       }
       alleZiele = Core.utils.shuffleArray(alleZiele);
 

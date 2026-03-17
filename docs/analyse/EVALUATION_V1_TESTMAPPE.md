@@ -31,10 +31,10 @@ Erste Prioritaet: Prozesse optimieren, damit Qualitaetsverbesserungen systematis
 | E3 | Tipp-Buttons nebeneinander, sequentiell aufdeckbar | Mittel | **Eingearbeitet** (RAETSEL Tipp-UI-Regeln) |
 | E4 | Hover-Uebersetzung fuer "schwierige Woerter" (gestrichelt unterstrichen) | Hoch | Offen (→ P3) |
 | E5 | Stellungnahme-Aufgabentyp (ethisch/moralisch) | Mittel | **Eingearbeitet** (Freitext-Neudefinition) |
-| E6 | Sicherung visible obwohl Code-Reveal nicht erfolgt (Bug) | Niedrig | Offen (Engine-Fix) |
+| E6 | Sicherung visible obwohl Code-Reveal nicht erfolgt (Bug) | Niedrig | **Behoben** (explizites display:none + Restore) |
 | E7 | Lueckentext-Dopplung (Angabe + ausfuellbarer Text identisch) + visuelles Sizing | Niedrig | **Eingearbeitet** (RAETSEL Darstellungsregel) |
-| E8 | Grosser Header fehlt oben | Niedrig | Offen (Template-Fix) |
-| E9 | Zuordnung-Dropdowns zeigen duplizierte Optionen (3x Dreibund, 3x Triple Entente) | Niedrig | Offen (bekannter Bug M2) |
+| E8 | Grosser Header fehlt oben | Niedrig | **Behoben** (Game-Titel aus data.meta) |
+| E9 | Zuordnung-Dropdowns zeigen duplizierte Optionen (3x Dreibund, 3x Triple Entente) | Niedrig | **Behoben** (Deduplizierung) |
 
 ### D — Inhalt/Didaktik (Agenten-Instruktionen)
 
@@ -57,7 +57,8 @@ Erste Prioritaet: Prozesse optimieren, damit Qualitaetsverbesserungen systematis
 
 - **23 Findings** identifiziert (6 Prozess, 9 Engine/UI, 10 Inhalt/Didaktik)
 - **14 eingearbeitet** in AGENT_MATERIAL.md und AGENT_RAETSEL.md (Qualitaetsspezifikationen pro Materialtyp, Material-Alignment-Pflicht, Freitext-Neudefinition, Lueckentext-Darstellungsregel, Tipp-UI-Regeln, Einstieg-Spezifikation, Quellenangaben-Format)
-- **9 offen** — davon 3 strategisch (P1 MCP-Integration, P2 QM-Struktur, P3 Differenzierung), 6 technisch (E1 Drag-and-drop, E4 Hover, E6 Sicherung-Bug, E8 Header, E9 Dropdown-Bug, E1 Drag-and-drop)
+- **3 behoben** in Engine (E6 Sicherung-Bug, E8 Header, E9 Dropdown-Bug) + N3 Tafelbild-h3
+- **6 offen** — davon 3 strategisch (P1 MCP-Integration, P2 QM-Struktur, P3 Differenzierung), 3 technisch (E1 Drag-and-drop, E3 Tipp-UI, E4 Hover)
 
 ## Naechste Schritte
 
