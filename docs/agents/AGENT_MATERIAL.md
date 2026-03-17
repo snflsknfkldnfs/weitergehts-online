@@ -296,95 +296,292 @@ Dieses JSON wird von AGENT_RAETSEL direkt in den Mappe-Abschnitt der data.json u
 
 ## MCP-Tool-Nutzung (Produktions-Modus)
 
-| Material-Typ | Primaer-Tool | Sekundaer-Tool | Hinweise |
+**Referenz:** Vollstaendige Tool-Dokumentation mit Parametern, Kosten und MCP-IDs in `docs/checklisten/MCP_TOOLS.md`.
+
+### Uebersichtstabelle: Primaere Tool-Zuordnung
+
+| Material-Typ | Primaer-Tool | Sekundaer-Tool | Fallback |
 |---|---|---|---|
-| `darstellungstext` | AGENT schreibt | — | SuS-gerecht, max. 150 Woerter |
-| `quellentext` | markdownify: `webpage-to-markdown` | Manuelle Recherche | Quelle korrekt zitieren, ggf. paraphrasieren |
-| `bildquelle` | `wikimedia_search_images` | rijksmuseum: `search_artwork` | CC0/PD bevorzugen, Lizenz dokumentieren |
-| `karte` | Canva: `generate-design` (infographic) | excalidraw: `create_view` | Canva fuer poliert, excalidraw fuer schnell |
-| `zeitleiste` | Engine-Renderer (JSON-Daten) | excalidraw: `create_view` | Einfach: JSON. Komplex: excalidraw SVG |
-| `statistik` | Engine-Renderer (JSON-Daten) | Canva: `generate-design` | Einfach: JSON-Tabelle. Komplex: Canva-Chart |
-| `tagebuch` | AGENT schreibt | — | Fiktiv aber historisch plausibel |
-| Tafelbild | excalidraw: `create_view` | JSON-only (Engine rendert) | `read_me` immer zuerst |
+| `darstellungstext` | AGENT schreibt | — | — |
+| `quellentext` | `markdownify: webpage-to-markdown` | `WebSearch` + `WebFetch` | `google_drive_search/fetch` |
+| `bildquelle` | `wikimedia_search_images` | `rijksmuseum: search_artwork` | `Canva: generate-design` (Illustration) |
+| `karte` | `wikimedia_search_images` (hist. Karten) | `Canva: generate-design` (infographic) | `excalidraw: create_view` (schematisch) |
+| `zeitleiste` | Engine-Renderer (JSON) | `Mermaid: timeline` | `excalidraw: create_view` (komplex) |
+| `statistik` | `QuickChart: generate_chart` | Engine-Renderer (JSON-Tabelle) | `Canva: generate-design` |
+| `tagebuch` | AGENT schreibt | — | — |
+| Tafelbild (Design) | `Mermaid: validate_and_render` | — | — |
+| Tafelbild (Produktion) | `Mermaid: validate_and_render` | `excalidraw: create_view` | — |
+| Tafelbild-Export | `svg-converter: svg-to-png` | — | — |
 
-### Canva-Workflow (Karten, Infografiken)
+---
 
-```
-1. Canva: generate-design
-   → design_type: "infographic"
-   → query: Detaillierte Beschreibung auf Deutsch, Zielgruppe R7
-2. User waehlt Kandidaten (falls in Cowork)
-3. Canva: create-design-from-candidate → Design-ID
-4. Canva: export-design → PNG (1200px Breite)
-5. PNG in assets/images/[game-id]/ ablegen
-6. URL in materialien[].inhalt referenzieren
-```
+### Produktions-Workflow pro Materialtyp
 
-### wikimedia-Workflow (historische Bilder)
+#### W-1: darstellungstext
+
+**Tool-Chain:** Agent-intern (kein MCP)
 
 ```
-1. wikimedia_search_images("[Suchbegriff]")
-2. Ergebnisse sichten → CC0/PD bevorzugen, CC-BY akzeptieren
-3. Bildunterschrift + Lizenz dokumentieren
-4. URL in materialien[].inhalt
+1. Inhalts-MD lesen → relevante Kernaussagen identifizieren
+2. Darstellungstext schreiben:
+   - Max. 150 Woerter, Saetze ≤20 Woerter, Absaetze ≤5 Saetze
+   - Fachbegriffe bei Erstverwendung erklaeren
+   - Mindestens 1 konkretes Beispiel/Situation
+   - Anschluss an Vormappe herstellen
+3. Quellenangabe als Fussnote wenn auf konkretem Schulbuch/Fachtext basierend
+```
+
+**Qualitaets-Gate:** Schuelernah? Fachbegriffe erklaert? Tafelbild-Knoten-Zuordnung klar?
+
+---
+
+#### W-2: quellentext
+
+**Tool-Chain:** `markdownify: webpage-to-markdown` → `WebSearch` → Aufbereitung
+
+```
+STUFE 1 — Primaerquelle suchen:
+1a. WebSearch("[historisches Ereignis] Originalquelle Rede Brief Dokument")
+    → Quellensammlungen identifizieren (documentarchiv.de, dhm.de/lemo, verfassungen.de)
+1b. markdownify: webpage-to-markdown(url: "[Quellensammlung-URL]")
+    → Volltext der Primaerquelle extrahieren
+1c. ALTERNATIV: google_drive_search(query: "[Thema]")
+    → google_drive_fetch(doc_id: "...") wenn Lehrkraft Quellen in Drive hat
+
+STUFE 2 — Altersgerechte Aufbereitung:
+2a. Originalquelle zu lang/komplex → paraphrasieren ("paraphrasiert nach: [Quelle]")
+2b. Fremdsprachige Quelle → uebersetzen, Original in Fussnote
+2c. Max. 100 Woerter Endprodukt
+
+STUFE 3 — Fallback:
+3a. Schulbuchdarstellung → konkreter Verweis (Autor, Titel, Seite)
+3b. NIEMALS: "basierend auf Schulbuchdarstellungen" ohne Nachweis
+```
+
+**Quellenangaben-Standard:**
+- Archiv/Dokument: `"[Archivname], [Signatur/Datum]"`
+- Schulbuch: `"[Autor], [Titel], [Verlag] [Jahr], S. [Seitenzahl]"`
+- Online: `"[URL], abgerufen am [Datum]"`
+- Paraphrase: `"paraphrasiert nach: [vollstaendige Angabe]"`
+
+**Qualitaets-Gate:** Perspektivitaet erkennbar? Quelltyp-Format eingehalten? Quellenangabe praezise?
+
+---
+
+#### W-3: bildquelle
+
+**Tool-Chain:** `wikimedia_search_images` → `rijksmuseum: search_artwork` → `Canva: generate-design`
+
+```
+PFAD A — Historisches Bild (Quellentreue erforderlich):
+1. wikimedia_search_images(query: "[Suchbegriff englisch] [Zeitraum]", license: "no_restrictions")
+   → CC0/PD zuerst. Falls zu wenig: license: "all" → CC-BY akzeptieren
+2. Falls kein Treffer: rijksmuseum: search_artwork(subject: "[Thema]", creationDate: "[18*]")
+   → Niederlaendische Labels haben hoehere Trefferquote
+3. Bildunterschrift formulieren (was sehen SuS + Erkenntnisfrage)
+4. URL in materialien[].inhalt + materialien[].quelle + materialien[].lizenz
 5. Eintrag in docs/ASSET_LIZENZEN.md
+
+PFAD B — Illustration (Quellentreue NICHT erforderlich):
+1. Canva: generate-design(design_type: "poster", query: "[Beschreibung auf Deutsch, Zielgruppe R7]")
+2. Canva: get-export-formats(designId: "...") → verfuegbare Formate pruefen
+3. User waehlt Kandidaten → Canva: create-design-from-candidate
+4. Canva: export-design(designId: "...", format: {type: "png", width: 1200})
+5. PNG in assets/images/[game-id]/ → URL in materialien[].inhalt
+6. quelle: "Erstellt mit Canva, [Beschreibung]", lizenz: "Canva Content License"
 ```
 
-### excalidraw-Workflow (Diagramme, Tafelbilder)
+**Qualitaets-Gate:** Bild tatsaechlich als URL/SVG vorhanden (nicht nur Alt-Text)? Bildunterschrift mit Erkenntnisfrage? Lizenz dokumentiert?
+
+---
+
+#### W-4: karte
+
+**Tool-Chain:** `wikimedia_search_images` → `Canva: generate-design` → `excalidraw: create_view`
 
 ```
-1. excalidraw: read_me → Element-Format-Spec laden
-2. Konzept-Knoten als Rechtecke, Verbindungen als Pfeile
-3. Farbkodierung nach Kontext (z.B. Dreibund=#C0392B, Entente=#2980B9)
-4. excalidraw: create_view → Diagramm rendern
-5. Export als SVG fuer Sicherungs-Section
+PFAD A — Historische Karte (bevorzugt):
+1. wikimedia_search_images(query: "[Region] map [Zeitraum]", license: "no_restrictions")
+2. Falls Treffer: Bildunterschrift + Legende beschreiben
+3. URL in materialien[].inhalt
+
+PFAD B — Generierte Infografik-Karte:
+1. Canva: generate-design(design_type: "infographic", query: "Historische Karte [Region] [Zeitraum],
+   zeigt [Grenzen/Routen/Gebiete], Legende mit Farbzuordnung, Zielgruppe 7. Klasse Mittelschule")
+2. Canva: get-export-formats(designId: "...") → Formate pruefen
+3. User waehlt Kandidaten → create-design-from-candidate
+4. Canva: export-design → PNG 1200px
+5. PNG in assets/images/[game-id]/
+
+PFAD C — Schematische Karte (Fallback):
+1. excalidraw: read_me → Element-Format laden
+2. Regionen als Polygone/Rechtecke, Grenzen als Linien, Staedte als Kreise
+3. Farbkodierung (z.B. Dreibund=#C0392B, Entente=#2980B9)
+4. excalidraw: create_view(elements: JSON)
+5. svg-converter: svg-to-png fuer Export
 ```
 
-### Quellenrecherche-Workflow (Quellentexte, Statistiken)
+**Qualitaets-Gate:** Legende vorhanden? Farbzuordnung klar? Geographische Orientierung gegeben?
 
-Fuer jeden Quellentext und jede Statistik gilt ein dreistufiger Recherchepfad:
+---
+
+#### W-5: zeitleiste
+
+**Tool-Chain:** Engine-JSON → `Mermaid: timeline` → `excalidraw: create_view`
+
+```
+PFAD A — Einfache Zeitleiste (≤8 Eintraege, linear):
+1. JSON-Daten direkt schreiben:
+   [{"datum": "1882", "text": "Dreibund gegruendet (DE, OeU, IT)"}, ...]
+2. Engine rendert automatisch als CSS-Timeline
+3. Ueberschrift als Frage formulieren
+
+PFAD B — Mittlere Komplexitaet (Mermaid-Visualisierung):
+1. Mermaid: validate_and_render_mermaid_diagram(
+     title: "[Ueberschrift als Frage]",
+     diagramCode: "timeline\n  title [Thema]\n  1882 : Dreibund\n  1894 : Franz-russ. Buendnis\n  ..."
+   )
+2. Validierung + visuelles Ergebnis pruefen
+3. Mermaid-Code als Zusatz-Visualisierung speichern
+
+PFAD C — Komplexe Zeitleiste (parallel, verzweigt):
+1. excalidraw: read_me → Element-Format laden
+2. Zeitachse als horizontale Linie, Ereignisse als Boxen mit Pfeilen
+3. Parallele Straenge fuer verschiedene Akteure/Laender
+4. excalidraw: create_view → SVG
+5. svg-converter: svg-to-png fuer Export
+```
+
+**Qualitaets-Gate:** Max. 8 Eintraege? Ueberschrift als Frage? Bekannte Datenpunkte als Anker hervorgehoben?
+
+---
+
+#### W-6: statistik
+
+**Tool-Chain:** `QuickChart: generate_chart` → Engine-JSON → `Canva: generate-design`
+
+```
+PFAD A — Diagramm (Vergleichsdaten, bevorzugt):
+1. QuickChart: generate_chart(
+     type: "bar",  // oder "line", "pie", "doughnut"
+     labels: ["Deutsches Reich", "Frankreich", ...],
+     datasets: [{label: "Militaerausgaben 1913 (Mio. Mark)", data: [2405, 1855, ...]}],
+     title: "Wer gab am meisten fuer das Militaer aus?"
+   )
+2. Ergebnis-URL in materialien[].inhalt
+   ODER: QuickChart: download_chart(config: {...}, outputPath: "assets/images/[game-id]/chart-statistik.png")
+3. Quellenangabe als Fussnote (Pflicht)
+
+PFAD B — Reine Datentabelle (wenn Diagramm nicht passt):
+1. JSON-Daten direkt schreiben:
+   {"spalten": ["Land", "Militaerausgaben 1913"], "zeilen": [["Deutsches Reich", "2.405"], ...]}
+2. Engine rendert als HTML-Tabelle
+3. Ueberschrift als Frage formulieren
+
+PFAD C — Aufwaendige Infografik (Fallback):
+1. Canva: generate-design(design_type: "infographic", query: "[Datenbeschreibung], visueller Vergleich")
+2. Export als PNG
+```
+
+**Entscheidungslogik Pfad A vs. B:**
+- Vergleich zwischen Akteuren/Laendern/Zeitpunkten → Pfad A (Diagramm)
+- Nachschlagetabelle ohne Vergleichsintention → Pfad B (Tabelle)
+- Beides → Pfad A als Primaer-Darstellung, Pfad B als Ergaenzung
+
+**Qualitaets-Gate:** Didaktischer Sinn der Daten explizit? Quellenangabe praezise? Ueberschrift als Frage?
+
+---
+
+#### W-7: tagebuch
+
+**Tool-Chain:** Agent-intern (kein MCP)
+
+```
+1. Identifikationsfigur festlegen: Name, Alter, Beruf, Herkunft, gesellschaftliche Position
+2. Setting definieren: Ort, Datum, konkrete Situation
+3. Text schreiben:
+   - Max. 120 Woerter
+   - Perspektivitaet zentral: Welche Sichtweise? Welche Interessen?
+   - Konkrete Alltagsdetails statt generischer Gefuehle
+   - Keine anachronistischen Begriffe
+4. Quellenangabe: "Fiktiver Tagebucheintrag, historisch plausibel basierend auf [Fachquelle]"
+```
+
+**Qualitaets-Gate:** Figur mit Name/Alter/Beruf? Konkret statt generisch? Historisch plausibel?
+
+---
+
+#### W-8: Tafelbild (Design-Modus 1.5 + Produktions-Modus 2.2)
+
+**Tool-Chain Design:** `Mermaid: validate_and_render`
+**Tool-Chain Produktion:** `Mermaid: validate_and_render` → `excalidraw: create_view` → `svg-converter: svg-to-png`
+
+```
+DESIGN-MODUS (1.5 Tafelbild-Verifizierung):
+1. Mermaid: validate_and_render_mermaid_diagram(
+     title: "[Tafelbild-Titel]",
+     diagramCode: "flowchart TD\n  k1[Knoten 1] -->|label| k2[Knoten 2]\n  ..."
+   )
+2. Visuell pruefen: Vollstaendigkeit, Verbindungsrichtungen, Label-Praezision
+3. Iterieren bis Verifizierung bestanden
+
+PRODUKTIONS-MODUS (2.2):
+1. Tafelbild-JSON schreiben (Schema siehe Abschnitt 2.2)
+2. Mermaid-Prototyp zur visuellen Pruefung rendern
+3. Optional: excalidraw fuer polierte Visualisierung:
+   a. excalidraw: read_me → Element-Format laden
+   b. Knoten als Rechtecke (Farbkodierung nach Typ), Verbindungen als Pfeile
+   c. excalidraw: create_view(elements: JSON)
+4. Export fuer Lehrkraft-Handout:
+   svg-converter: svg-to-png(svgCode: "...", outputPath: "assets/images/[game-id]/tafelbild-N.png", scale: 2)
+```
+
+**Qualitaets-Gate:** Min. 4 Knoten, min. 5 Verbindungen? Labels praezise (keine generischen Verben)? Jeder Knoten im Material erarbeitet?
+
+---
+
+### Quellenrecherche-Workflow (uebergreifend)
+
+Gilt fuer alle Materialtypen die externe Quellen benoetigen (quellentext, bildquelle, karte, statistik).
 
 **Stufe 1 — Primaerquelle suchen:**
 
-| Quelltyp | MCP-Tool | Suchstrategie |
+| Quelltyp | Tool-Chain | Suchstrategie |
 |---|---|---|
-| Zeitungsartikel, Reden, offizielle Dokumente | `markdownify:webpage-to-markdown` | Historische Quellensammlungen durchsuchen (z.B. documentarchiv.de, dhm.de) |
-| Historische Bilder, Karikaturen, Propagandaplakate | `wikimedia_search_images` | Suchbegriff + Zeitraum, Filter: CC0/PD bevorzugen, CC-BY akzeptieren |
-| Kunstwerke, Portraets | `rijksmuseum:search_artwork` | Kuenstlername oder Thema |
-| Statistische Daten | `markdownify:webpage-to-markdown` | Statistisches Jahrbuch, Schulbuch-Datensammlungen |
+| Reden, Dokumente, Zeitungsartikel | `WebSearch` → `markdownify: webpage-to-markdown` | Erst suchen, dann Volltext extrahieren |
+| Historische Bilder, Karikaturen | `wikimedia_search_images` | Englische Begriffe + Zeitraum, CC0/PD zuerst |
+| Kunstwerke, Portraets | `rijksmuseum: search_artwork` | `subject` + `creationDate`, niederlaendische Labels |
+| Statistische Daten | `WebSearch` → `markdownify: webpage-to-markdown` | Statistisches Jahrbuch, Schulbuch-Daten |
+| Lehrkraft-Materialien | `google_drive_search` → `google_drive_fetch` | Wenn Quellen in Google Drive bereitgestellt |
 
 **Stufe 2 — Altersgerechte Aufbereitung:**
-- Originalquelle zu lang/komplex → paraphrasieren, kenntlich machen ("paraphrasiert nach...")
-- Fremdsprachige Quelle → uebersetzen, Original in Fussnote referenzieren
+- Originalquelle zu lang/komplex → paraphrasieren ("paraphrasiert nach: [Quelle]")
+- Fremdsprachige Quelle → uebersetzen, Original in Fussnote
 - Daten zu umfangreich → auf didaktisch relevante Zeilen/Spalten reduzieren
 
-**Stufe 3 — Fallback wenn keine Primaerquelle:**
-- Schulbuchdarstellung nutzen → konkreten Verweis angeben (Autor, Titel, Seite)
-- Fiktiven Quellentext verfassen (nur bei Tagebuch/Brief) → kenntlich machen: "fiktiver Text, historisch plausibel basierend auf [Fachquelle]"
-- **Niemals:** "basierend auf Schulbuchdarstellungen" ohne konkreten Verweis
+**Stufe 3 — Fallback:**
+- Schulbuchdarstellung → konkreter Verweis (Autor, Titel, Seite)
+- Fiktiven Quellentext nur bei Tagebuch/Brief → kenntlich machen
+- **Niemals:** generische Quellenangaben ohne konkreten Nachweis
 
-**Quellenangaben-Standard:**
-- Archiv/Dokument: "[Archivname], [Signatur/Datum]"
-- Schulbuch: "[Autor], [Titel], [Verlag] [Jahr], S. [Seitenzahl]"
-- Online: "[URL], abgerufen am [Datum]"
-- Paraphrase: "paraphrasiert nach: [vollstaendige Angabe]"
+---
 
 ### Einstieg-Illustration-Workflow
 
-Fuer die optionale Illustration im Einstieg (motivierende Visualisierung des Settings):
+Optionale Visualisierung des Settings im Einstieg:
 
 ```
 1. Zeitraum und Ort aus einstieg.narrativ identifizieren
 2. Bildtyp bestimmen:
-   - Stadtansicht/Landschaft → wikimedia_search_images("[Ort] [Jahr]")
-   - Historische Karte → wikimedia_search_images("[Region] map [Zeitraum]")
-   - Stimmungsbild → Canva: generate-design (illustration, "[Beschreibung]")
+   a. Stadtansicht/Landschaft → wikimedia_search_images("[Ort] [Jahr]", license: "no_restrictions")
+   b. Historische Karte → wikimedia_search_images("[Region] map [Zeitraum]")
+   c. Stimmungsbild (Quellentreue nicht noetig) → Canva: generate-design(design_type: "poster", query: "...")
 3. Bild als bildquelle-Material in materialien[] anlegen (id: "mat-N-einstieg-ill")
-4. Im einstieg.narrativ referenzieren: "Sieh dir das Bild an: [Bildunterschrift]"
+4. Im einstieg.narrativ referenzieren
 5. Lizenz und Quelle dokumentieren
 ```
 
-Illustration ist optional, aber empfohlen wenn das Setting raeumlich oder zeitlich spezifisch ist.
+Empfohlen wenn das Setting raeumlich oder zeitlich spezifisch ist.
 
 ## Kern-Prinzipien
 
