@@ -1,9 +1,9 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-03-16 (Code-Review H1+H2 gefixt, offene Findings dokumentiert)
-**Aktuelle Phase:** Phase 3.1 abgeschlossen → bereit fuer Phase 3.2 (Inhalt + Material)
-**Letzter Arbeitsschritt:** Systematisches Code-Review der v1-Engine. 2 kritische Bugs gefixt: H1 (_checkLueckentext nutzt jetzt _fuzzyMatch statt ===), H2 (_renderMaterialQuelle hat jetzt h3-Titel). 5 weitere Findings (M1-M3, N1-N3) in FIXES_ENGINE_V1_OFFEN.md dokumentiert.
-**Naechster Schritt:** Browser-Test der v1-Engine mit test-data-v1.json, iterativ optimieren falls noetig. Dann: Ebene 0 starten — GAME_BLUEPRINT fuer Game 1 "Pulverfass Europa" erstellen (Tafelbild-Progression, KE-Matrix). Offene Doc-Updates: AGENT_INHALT.md, AGENT_DIDAKTIK.md, Checkliste_Interaktive_Materialien.md.
+**Letzte Aktualisierung:** 2026-03-17 (Evaluation v1-Testmappe + Agenten-Instruktionen verschaerft)
+**Aktuelle Phase:** Phase 3.1 → 3.2 Uebergang (Infrastruktur validiert, Prozessoptimierung laeuft)
+**Letzter Arbeitsschritt:** Docs-Konsolidierung (Projekt_Website/ → docs/), Browser-Test + Lehrkraft-Evaluation der v1-Testmappe (23 Findings), AGENT_MATERIAL.md + AGENT_RAETSEL.md mit Qualitaetsspezifikationen pro Materialtyp verschaerft.
+**Naechster Schritt:** Engine-Quick-Fixes (E6 Sicherung-Hidden, E8 Header, E9 Dropdown-Duplikate). Dann MCP-Integration (P1) recherchieren. Offene Doc-Updates: AGENT_INHALT.md, AGENT_DIDAKTIK.md, Checkliste_Interaktive_Materialien.md.
 **Offene Blocker:** Keine
 
 ---

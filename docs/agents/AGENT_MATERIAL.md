@@ -275,11 +275,11 @@ Dieses JSON wird von AGENT_RAETSEL direkt in den Mappe-Abschnitt der data.json u
 
 ## Kern-Prinzipien
 
-1. **Alles aus dem Material loesbar:** Jede Aufgabe der Mappe muss ausschliesslich mit dem praesentierten Material beantwortbar sein. Kein Vorwissen voraussetzen.
+1. **Alles aus dem Material loesbar:** Jede Aufgabe der Mappe muss ausschliesslich mit dem praesentierten Material beantwortbar sein. Kein Vorwissen voraussetzen. **Jeder Fachbegriff, der in einer Aufgabe vorkommt, muss vorher im Material explizit eingefuehrt und erklaert worden sein.** Wenn eine Aufgabe z.B. "Nationalismus" abfragt, muss ein Material diesen Begriff verankern.
 
-2. **Quellenorientierung:** Wo moeglich, historische Quellen verwenden. Wo nicht moeglich, hochwertige Darstellungstexte auf Schulbuch-Niveau.
+2. **Quellenorientierung:** Wo moeglich, historische Quellen verwenden. Wo nicht moeglich, hochwertige Darstellungstexte auf Schulbuch-Niveau. Quellenangaben als **Fussnoten am Ende der Mappe**, nicht inline neben dem Material (lenkt ab).
 
-3. **Personifizierung:** Mindestens 1 Material pro Mappe mit persoenlicher Perspektive. Macht Geschichte greifbar fuer R7.
+3. **Personifizierung:** Mindestens 1 Material pro Mappe mit persoenlicher Perspektive. Macht Geschichte greifbar fuer R7. Die Perspektivitaet muss klar erkennbar sein: Wer spricht? Woher? Welche Interessen/Sichtweise? Die Figur muss fachwissenschaftlich plausibel gezeichnet sein — keine generischen Gefuehle, sondern konkrete Lebenssituation.
 
 4. **Progressive Disclosure:** Material in der Mappe so anordnen, dass es vom Allgemeinen zum Spezifischen fuehrt. Einstieg schafft Orientierung, dann Details.
 
@@ -288,6 +288,96 @@ Dieses JSON wird von AGENT_RAETSEL direkt in den Mappe-Abschnitt der data.json u
 6. **Keine Fachsprache ohne Erklaerung:** Jeder Fachbegriff wird bei Erstverwendung in Klammern oder im naechsten Satz erklaert.
 
 7. **Saetze max. 20 Woerter, Absaetze max. 5 Saetze.** R7-Mittelschule.
+
+8. **Didaktische Zielklarheit:** Jedes Material muss einen klar benennbaren Beitrag zum Tafelbild leisten. Wenn nicht klar ist, welche Erkenntnis SuS aus einem Material ziehen sollen, fehlt die Zielklarheit — Material ueberarbeiten oder streichen.
+
+---
+
+## Qualitaetsspezifikationen pro Materialtyp
+
+Die folgenden Spezifikationen definieren, was ein **gutes** Material dieses Typs ausmacht. Sie dienen als Qualitaets-Gate: Material, das diese Kriterien nicht erfuellt, ist nicht produktionsreif.
+
+### darstellungstext
+
+**Funktion:** Basisinformation zum Erschliessen eines Tafelbild-Knotens.
+**Qualitaetskriterien:**
+- Schuelernah geschrieben: direkte Ansprache oder lebendige Sprache, nicht lexikonartig
+- Anschluss an Vorphase/Vormappe explizit herstellen ("In der letzten Sonderausgabe hast du erfahren, dass...")
+- Max. 150 Woerter
+- Fachbegriffe bei Erstverwendung erklaeren
+- Mindestens ein konkretes Beispiel oder eine konkrete Situation
+
+### quellentext
+
+**Funktion:** Historische Authentizitaet, Perspektivitaet erfahrbar machen.
+**Qualitaetskriterien:**
+- Muss sich an einer realen historischen Quelle orientieren (nicht frei erfunden)
+- Perspektivitaet muss erkennbar sein: Wer schreibt? Wann? Welches Interesse?
+- Form muss dem Quelltyp entsprechen (Zeitungsbericht = Zeitungsformat, Brief = Briefformat, Rede = Redeformat)
+- Bei Paraphrase: kenntlich machen ("paraphrasiert nach...")
+- Max. 100 Woerter
+- Quellenangabe praezise (nicht "basierend auf Schulbuchdarstellungen", sondern konkreter Verweis)
+
+### bildquelle / karte
+
+**Funktion:** Visueller Zugang, raeumliche Orientierung.
+**Qualitaetskriterien:**
+- Muss tatsaechlich als Bild gerendert werden (URL, SVG, oder MCP-generiert). Alt-Text allein ist kein Ersatz.
+- Bildunterschrift erklaert, was zu sehen ist UND was die Erkenntnisfrage ist
+- Bei Karten: Legende, klare Farbzuordnung, geographische Orientierung
+- Lizenz und Quelle dokumentiert
+- MCP-Nutzung: wikimedia_search_images fuer historische Bilder, Canva/excalidraw fuer Karten
+
+### zeitleiste
+
+**Funktion:** Chronologische Orientierung, Abfolgen sichtbar machen.
+**Qualitaetskriterien:**
+- Ueberschrift beschreibend (nicht "Zeitleiste", sondern "Wann wurden die Buendnisse gegruendet?")
+- Pfeilstruktur/Richtung visuell klar hervorgehoben (CSS-Pfeile zwischen Eintraegen)
+- Wenn moeglich: bereits bekannte Datenpunkte (aus Vorphasen) visuell abgehoben als Orientierungsanker
+- Max. 8 Eintraege (sonst wird es unuebersichtlich fuer R7)
+- Jeder Eintrag: Datum + max. 1 Satz Beschreibung
+
+### statistik
+
+**Funktion:** Datenbasierte Erkenntnis, Vergleiche ermoeglichen.
+**Qualitaetskriterien:**
+- Didaktischer Sinn muss explizit klar sein: Welche Erkenntnis sollen SuS aus den Daten ziehen?
+- Tabelle ist Minimum; wenn die Erkenntnis in einer Visualisierung (Balkendiagramm, Vergleichsgrafik) besser rueberkommt, diese zusaetzlich oder stattdessen verwenden
+- Bei Vergleichsdaten: Buendniszugehoerigkeit o.Ae. visuell kenntlich machen
+- Quellenangabe praezise
+- Ueberschrift als Frage formulieren (z.B. "Wer gab am meisten fuer das Militaer aus?")
+
+### tagebuch
+
+**Funktion:** Emotionaler Zugang, Personifizierung, Perspektivitaet.
+**Qualitaetskriterien:**
+- Perspektivitaet **zentral**: Wer schreibt? Woher? Welche gesellschaftliche Position? Welche Sichtweise?
+- Setting schuelernah und motivierend: Ortsangabe, persoenlicher Kommentar, Alltagsdetails
+- Historisch plausibel: keine anachronistischen Begriffe, keine modernen Denkmuster
+- Personifizierung staerken: Name, Alter, Beruf der Figur erkennbar
+- Nicht generisch ("ich habe Angst"), sondern konkret ("der Feldwebel sagt, naechste Woche werden wir eingezogen")
+- Max. 120 Woerter
+
+### Tafelbild (Sicherung)
+
+**Funktion:** Strukturierte Zusammenfassung des Lerninhalts der Mappe.
+**Qualitaetskriterien:**
+- Inhaltlich korrekt: Verbindungsrichtungen muessen stimmen (z.B. "Buendnis X → fuehrt zu → Einkreisungsgefuehl", nicht umgekehrt)
+- Ausreichend komplex: min. 4 Knoten, min. 5 Verbindungen (sonst kein Erkenntnisgewinn)
+- Jeder Knoten und jede Verbindung muss im Material der Mappe erarbeitet worden sein
+- Labels der Verbindungen muessen den Zusammenhang praezise benennen (nicht "beeinflusst", sondern "treibt Aufruestung an")
+- Voraussetzungen aus vorherigen Mappen als Ghost-Knoten kennzeichnen
+
+### Einstieg
+
+**Funktion:** Motivierung, Orientierung, Problemstellung.
+**Qualitaetskriterien:**
+- Setting motivierend gestalten: Rollenzuweisung (z.B. Geheimdienstagent, Reporter, Zeitreisender)
+- Zeitsetting klar und konkret (nicht nur Jahreszahl, sondern situative Einbettung)
+- Anschluss an vorherige Mappe/Phase herstellen
+- Problemstellung als echte Frage, die Neugier weckt
+- Geschichtsdidaktisch: Perspektivitaet bei Rollenzuweisungen beachten (Rolle eines "unbeteiligten" Beobachters kann sinnvoll sein, um multiperspektivisch zu bleiben)
 
 ## Ausgabe
 

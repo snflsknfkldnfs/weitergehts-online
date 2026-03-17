@@ -4,6 +4,14 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-03-17
+### Docs-Konsolidierung + Evaluation v1-Testmappe + Agenten-Verschaerfung
+- **Phase:** Phase 3.1 → 3.2 Uebergang
+- **Aufgabe:** (1) Verzeichnisstruktur konsolidieren, (2) v1-Testmappe im Browser evaluieren, (3) Agenten-Instruktionen basierend auf Evaluation verschaerfen
+- **Ergebnis:** Projekt_Website/ komplett nach docs/ migriert (9 Unterordner: agents, projekt, architektur, uebergabe, analyse, briefings, checklisten, testdaten, assets). Alle Querverweise in 8 aktiven Docs aktualisiert. PFAD_MANIFEST.md neu geschrieben. Skill projekt-website v2 mit konsolidierten Pfaden paketiert und installiert. Browser-Test + Lehrkraft-Evaluation: 23 Findings (6 Prozess, 9 Engine/UI, 10 Inhalt/Didaktik). 14 davon eingearbeitet in AGENT_MATERIAL.md (Qualitaetsspezifikationen fuer alle 7 Materialtypen + Tafelbild + Einstieg, 3 neue Kern-Prinzipien) und AGENT_RAETSEL.md (Material-Alignment-Pflicht, Freitext-Neudefinition, Lueckentext-Darstellungsregel, Tipp-UI-Regeln). 9 Findings offen (3 strategisch: MCP-Integration, QM-Struktur, Differenzierung; 6 technisch: Drag-and-drop, Hover, Sicherung-Bug, Header, Dropdown-Bug).
+- **Artefakte:** `docs/` (neue Struktur), `docs/agents/AGENT_MATERIAL.md` (verschaerft), `docs/agents/AGENT_RAETSEL.md` (verschaerft), `docs/analyse/EVALUATION_V1_TESTMAPPE.md` (neu), `docs/agents/PFAD_MANIFEST.md` (neu geschrieben), `docs/agents/SKILL_projekt-website_v2.md` (neu)
+- **Naechster Schritt:** Engine-Quick-Fixes (E6, E8, E9), dann MCP-Integration recherchieren (P1)
+
 ## 2026-03-16
 ### Code-Review Fixes + offene Findings dokumentiert
 - **Phase:** Phase 3.1: Infrastruktur-Validierung
