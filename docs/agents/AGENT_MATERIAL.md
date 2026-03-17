@@ -109,12 +109,48 @@ Pro Mappe 5 Aufgaben skizzieren (nicht ausformulieren — das macht RAETSEL):
 - Jede Aufgabe hat eine material_referenz
 - Kein Tafelbild-Knoten erfordert Vorwissen, das nicht in Material ODER Vor-Mappe gesichert ist
 
-#### 1.5 Einstieg und Sicherung entwerfen
+#### 1.5 Tafelbild-Verifizierung
+
+**Pflicht.** Jedes Tafelbild durchlaeuft vor Freigabe diesen Pruefworkflow:
+
+**Schritt 1 — Vollstaendigkeits-Abgleich:**
+Jeden Knoten gegen das Inhalts-MD pruefen: Ist die Kernaussage dort belegt? Fehlen Knoten fuer dokumentierte Kernaussagen? → Fehlende Knoten ergaenzen oder Ruecklauf an AGENT_INHALT.
+
+**Schritt 2 — Verbindungs-Verifizierung:**
+Jede Verbindung einzeln pruefen:
+- Stimmt die Richtung? (A → B bedeutet: A verursacht/ermoeglicht/fuehrt zu B)
+- Ist die Kausalitaet im Inhalts-MD belegt? Wenn nicht: Verbindung streichen oder umformulieren.
+- Gegen-Check: Wuerde die Umkehrung (B → A) fachlich ebenso stimmen? Falls ja → Label schaerfen, damit die Richtung eindeutig wird.
+
+**Schritt 3 — Label-Praezision:**
+Jedes Verbindungs-Label pruefen: Ist es spezifisch genug? Verbotene Labels: "beeinflusst", "haengt zusammen mit", "fuehrt zu Problemen". Stattdessen konkrete Verben: "treibt Aufruestung an", "verstaerkt Einkreisungsgefuehl", "provoziert Gegenbuendnis".
+
+**Schritt 4 — Komplexitaets-Check:**
+- Min. 4 Knoten, min. 5 Verbindungen (sonst kein Erkenntnisgewinn)
+- Kein isolierter Knoten (ohne Verbindung)
+- Mindestens 1 bidirektionale Beziehung oder 1 Dreiecks-Verbindung (sonst zu linear)
+
+**Schritt 5 — Erarbeitbarkeits-Dokumentation:**
+Pro Verbindung dokumentieren: "Behauptung X ist belegt in Material Y, Stelle Z." Wenn keine Material-Referenz moeglich → Ruecklauf: Material fehlt.
+
+#### 1.6 Einstieg und Sicherung entwerfen
 
 - **Einstieg:** Narrativ (2-3 Saetze, Rahmengeschichte fortschreiben) + Problemstellung (Leitfrage der Mappe)
 - **Sicherung:** Zusammenfassung (2-3 Saetze) + Ueberleitung (Bruecke zur naechsten Mappe)
 
-#### 1.6 Blueprint zusammenfuegen und praesentieren
+#### 1.7 Zielklarheit-Pruefung (pro Material)
+
+**Pflicht.** Vor dem Blueprint-Zusammenfuegen jedes Material einzeln pruefen:
+
+| Prueffrage | Wenn NEIN |
+|---|---|
+| Funktion benannt? ("Dieses Material erklaert: [konkrete Erkenntnis]") | Material hat keine Daseinsberechtigung → streichen oder umdesignen |
+| Tafelbild-Knoten zugeordnet? (Welcher Knoten wird durch dieses Material erarbeitet?) | Material haengt in der Luft → Knoten-Zuordnung herstellen oder streichen |
+| In mind. 1 Aufgabe referenziert? (material_referenz) | Material wird nie abgefragt → Aufgabe ergaenzen oder Material streichen |
+
+Ergebnis: Jedes Material hat einen dokumentierten Zweck-Satz im Blueprint. Beispiel: "mat-1-3 (Tagebuch): Erklaert Knoten k1-4 (Aufruestung), referenziert in Aufgabe 4."
+
+#### 1.8 Blueprint zusammenfuegen und praesentieren
 
 Alle Teile in das BLUEPRINT_MAPPE_N-Format (definiert in WORKFLOW_v1.md Abschnitt 5) zusammenfuegen. User reviewt und gibt frei.
 
@@ -138,6 +174,32 @@ Basierend auf dem freigegebenen Blueprint jedes Material vollstaendig produziere
 | `tagebuch` | 120 | Persoenliche Perspektive, historisch plausibel, emotionaler Zugang |
 
 **Gesamtes Wortbudget pro Mappe: max. 500 Woerter Lesetext.**
+
+**Quellenangaben-Format (Fussnoten):**
+
+Quellenangaben werden NICHT inline im Material platziert (lenkt SuS ab), sondern als Fussnoten am Ende der Mappe gesammelt.
+
+Markup im Material-HTML:
+```html
+<p>Text mit Quellenangabe<sup><a href="#fn-1">[1]</a></sup></p>
+```
+
+Fussnoten-Array im JSON-Output (neues Feld auf Mappe-Ebene):
+```json
+{
+  "quellenangaben": [
+    {"id": 1, "text": "Otto von Bismarck, Rede vor dem Reichstag, 06.02.1888"},
+    {"id": 2, "text": "Statistisches Jahrbuch fuer das Deutsche Reich, 1913, S. 42"},
+    {"id": 3, "text": "paraphrasiert nach: Mommsen, Wolfgang J.: Grossmachtstellung und Weltpolitik, 1993, S. 118"}
+  ]
+}
+```
+
+Regeln:
+- Pro Quellentext und Statistik: mindestens 1 Fussnote (Pflicht)
+- Darstellungstexte: Fussnote wenn auf konkretem Schulbuch/Fachtext basierend
+- Tagebuch (fiktiv): keine Fussnote noetig, aber Vermerk "fiktiver Tagebucheintrag, historisch plausibel"
+- Engine rendert Fussnoten-Section automatisch am Mappe-Ende
 
 **Bild-Materialien (bildquelle, karte):**
 - `inhalt` = URL (String) oder SVG-inline
@@ -213,8 +275,13 @@ Alle Teile als `material-mappe-[N].json` ausgeben. Format:
       "lizenz": ""
     }
   ],
+  "quellenangaben": [
+    {"id": 1, "text": "Quelle fuer mat-1-2"},
+    {"id": 2, "text": "Quelle fuer mat-1-5"}
+  ],
   "sicherung": {
     "tafelbild": {
+      "titel": "Buendnisse und Spannungen vor 1914",
       "knoten": [],
       "verbindungen": [],
       "voraussetzungen": []
@@ -272,6 +339,52 @@ Dieses JSON wird von AGENT_RAETSEL direkt in den Mappe-Abschnitt der data.json u
 4. excalidraw: create_view → Diagramm rendern
 5. Export als SVG fuer Sicherungs-Section
 ```
+
+### Quellenrecherche-Workflow (Quellentexte, Statistiken)
+
+Fuer jeden Quellentext und jede Statistik gilt ein dreistufiger Recherchepfad:
+
+**Stufe 1 — Primaerquelle suchen:**
+
+| Quelltyp | MCP-Tool | Suchstrategie |
+|---|---|---|
+| Zeitungsartikel, Reden, offizielle Dokumente | `markdownify:webpage-to-markdown` | Historische Quellensammlungen durchsuchen (z.B. documentarchiv.de, dhm.de) |
+| Historische Bilder, Karikaturen, Propagandaplakate | `wikimedia_search_images` | Suchbegriff + Zeitraum, Filter: CC0/PD bevorzugen, CC-BY akzeptieren |
+| Kunstwerke, Portraets | `rijksmuseum:search_artwork` | Kuenstlername oder Thema |
+| Statistische Daten | `markdownify:webpage-to-markdown` | Statistisches Jahrbuch, Schulbuch-Datensammlungen |
+
+**Stufe 2 — Altersgerechte Aufbereitung:**
+- Originalquelle zu lang/komplex → paraphrasieren, kenntlich machen ("paraphrasiert nach...")
+- Fremdsprachige Quelle → uebersetzen, Original in Fussnote referenzieren
+- Daten zu umfangreich → auf didaktisch relevante Zeilen/Spalten reduzieren
+
+**Stufe 3 — Fallback wenn keine Primaerquelle:**
+- Schulbuchdarstellung nutzen → konkreten Verweis angeben (Autor, Titel, Seite)
+- Fiktiven Quellentext verfassen (nur bei Tagebuch/Brief) → kenntlich machen: "fiktiver Text, historisch plausibel basierend auf [Fachquelle]"
+- **Niemals:** "basierend auf Schulbuchdarstellungen" ohne konkreten Verweis
+
+**Quellenangaben-Standard:**
+- Archiv/Dokument: "[Archivname], [Signatur/Datum]"
+- Schulbuch: "[Autor], [Titel], [Verlag] [Jahr], S. [Seitenzahl]"
+- Online: "[URL], abgerufen am [Datum]"
+- Paraphrase: "paraphrasiert nach: [vollstaendige Angabe]"
+
+### Einstieg-Illustration-Workflow
+
+Fuer die optionale Illustration im Einstieg (motivierende Visualisierung des Settings):
+
+```
+1. Zeitraum und Ort aus einstieg.narrativ identifizieren
+2. Bildtyp bestimmen:
+   - Stadtansicht/Landschaft → wikimedia_search_images("[Ort] [Jahr]")
+   - Historische Karte → wikimedia_search_images("[Region] map [Zeitraum]")
+   - Stimmungsbild → Canva: generate-design (illustration, "[Beschreibung]")
+3. Bild als bildquelle-Material in materialien[] anlegen (id: "mat-N-einstieg-ill")
+4. Im einstieg.narrativ referenzieren: "Sieh dir das Bild an: [Bildunterschrift]"
+5. Lizenz und Quelle dokumentieren
+```
+
+Illustration ist optional, aber empfohlen wenn das Setting raeumlich oder zeitlich spezifisch ist.
 
 ## Kern-Prinzipien
 
@@ -399,10 +512,12 @@ Wird von AGENT_RAETSEL als Eingabe verwendet. RAETSEL uebernimmt materialien[], 
 
 - [ ] 3-8 Tafelbild-Knoten, mindestens 1 `kernbegriff`?
 - [ ] Max. 10 Verbindungen, alle mit Label?
+- [ ] Tafelbild-Verifizierung durchlaufen? (1.5: alle 5 Schritte)
 - [ ] Mindestens 4 Materialien (1 Text, 1 Quelle/Bild, 1 personifiziert, 1 visuell)?
 - [ ] Erarbeitbarkeits-Nachweis fuer jeden Knoten und jede Verbindung?
 - [ ] Jede Aufgabe hat material_referenz?
 - [ ] Kein Knoten erfordert ungesichertes Vorwissen?
+- [ ] Zielklarheit-Pruefung bestanden? (1.7: jedes Material hat Zweck-Satz)
 
 ### Produktions-Modus
 
@@ -413,6 +528,8 @@ Wird von AGENT_RAETSEL als Eingabe verwendet. RAETSEL uebernimmt materialien[], 
 - [ ] Bildquellen mit Lizenz und Quellennachweis?
 - [ ] Tafelbild-JSON mit korrekten Knoten-IDs?
 - [ ] Einstieg und Sicherung ausformuliert?
+- [ ] Quellenangaben als Fussnoten-Array? (mind. 1 pro quellentext/statistik)
+- [ ] Quellenrecherche-Workflow eingehalten? (Stufe 1-3, keine generischen Angaben)
 
 ## Referenz-Dokumente
 
