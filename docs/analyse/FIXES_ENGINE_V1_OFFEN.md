@@ -68,3 +68,7 @@ H1 und H2 wurden sofort behoben. Die folgenden Findings sind fuer kuenftige Fix-
 |---|---|---|
 | H1 | `_checkLueckentext` nutzte exakten String-Vergleich statt `_fuzzyMatch` | `_fuzzyMatch(userValue, expected)` statt `===` (2026-03-16) |
 | H2 | `_renderMaterialQuelle` fehlte `<h3>` Titel | h3-Element mit `material__titel` ergaenzt (2026-03-16) |
+| E6 | Sicherung sichtbar obwohl Code-Reveal nicht erfolgt | Explizites `display:none` + Restore bei `progress.abgeschlossen` (2026-03-17) |
+| E8 | Game-Titel-Header fehlte oben | `_updateSeitenTitel` erzeugt `h1.game__titel` aus `data.meta.titel` (2026-03-17) |
+| E9/M2 | Zuordnung-Dropdowns zeigten duplizierte Optionen | `zielSet`-Deduplizierung in `_renderZuordnung` (2026-03-17) |
+| N3 | Tafelbild-Sektion ohne beschreibenden h3 | `h3.sicherung__tafelbild-titel` vor SVG eingefuegt (2026-03-17) |

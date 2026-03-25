@@ -26,9 +26,20 @@ Verfügbare Aufgabentypen:
 | `zuordnung` | Elemente korrekt zuordnen (Dropdown-Auswahl) | AFB I–II | Zusammenhänge, Kategorien |
 | `lueckentext` | Fehlende Wörter einsetzen | AFB I–II | Fachbegriffe, Definitionen |
 | `reihenfolge` | Elemente in richtige Reihenfolge bringen | AFB II | Chronologie, Prozesse |
-| `freitext-code` | Freitext-Antwort ergibt Code | AFB II–III | Reflexion, Beurteilung |
+| `freitext-code` | Problemorientierte Zusammenfassung mit Leitfragen | AFB II–III | Reflexion, Beurteilung, Stellungnahme |
+
+**Freitext-Code — Neudefinition (v1.1):**
+Der Freitext-Typ ist NICHT fuer einzelne Woerter gedacht (dafuer gibt es Lueckentext). Freitext soll eine eigenstaendige Zusammenfassung oder Stellungnahme der SuS provozieren:
+- Problemorientierte Leitfrage(n) vorgeben (z.B. "Warum machte die Buendnispolitik Europa zu einem Pulverfass?")
+- Teilfragen als Geruest anbieten (z.B. "Beruecksichtige: Welche Buendnisse gab es? Warum misstrauten sie einander?")
+- Fachbegriffe aus dem Material sollen verwendet werden — das Validierungssystem prueft auf Schluesselbegriffe
+- Validierung: Mindestens N Fachbegriffe muessen vorkommen (Schwelle niedrig halten, z.B. 2-3 von 5). Mechanik nicht explizit kommunizieren — SuS sollen frei formulieren.
+- Bei ethisch/moralischen Themen: Stellungnahme anleiten. Dilemma verstaendlich skizzieren, Perspektivitaet anregen, Teilfragen angeben.
 
 **Einschränkung Lückentext**: Maximal 2 Wörter pro Lücke. Längere Antworten führen zu unübersichtlichen Eingabefeldern.
+
+**Lueckentext — Darstellungsregel:**
+Der Lueckentext darf NICHT den vollstaendigen Text sowohl als Angabe (mit Unterstrichen) ALS AUCH als ausfuellbaren Text darstellen. Es gibt nur EINE Darstellung: den Text mit Eingabefeldern an den Lueckenstellen. Der Angabe-Text mit `___`-Platzhaltern ist nur ein internes Format fuer data.json, nicht fuer die UI.
 
 **Zuordnung – MVP-Implementierung (Dropdown statt Drag & Drop):**
 - Linke Spalte: Begriffe (fest, nicht verschiebbar)
@@ -42,6 +53,8 @@ Regeln:
 - Jede Aufgabe basiert auf einer Kernaussage aus dem Inhalts-MD
 - Keine Trick-Fragen, keine mehrdeutigen Antworten
 - **MVP-Medienregel**: Alle Aufgaben müssen ohne externe Bilder oder Audio funktionieren. Rein textbasiert + Unicode-Symbole.
+- **Material-Alignment-Pflicht**: Kein Fachbegriff darf in einer Aufgabe vorkommen, der nicht vorher in mindestens einem Material der Mappe explizit eingefuehrt und erklaert wurde. Vor Finalisierung jeder Aufgabe: Begriffe auflisten → gegen Material-Texte pruefen → fehlende Begriffe melden (Ruecklauf an AGENT_MATERIAL).
+- **material_referenz-Pflicht**: Jede Aufgabe hat mindestens eine material_referenz. Die referenzierten Materialien muessen die Aufgabe tatsaechlich beantwortbar machen.
 
 ### 2. Freischalt-Codes generieren
 
@@ -62,6 +75,11 @@ Qualitätskriterien:
 - Stufe 1 darf die Lösung NICHT verraten
 - Stufe 2 schränkt ein, löst aber nicht auf
 - Stufe 3 erklärt zusätzlich (didaktischer Mehrwert)
+
+UI-Regeln (Engine-seitig, hier als Constraint fuer Tipp-Formulierung):
+- Tipps werden sequentiell freigeschaltet: Tipp 1 muss aufgedeckt sein, bevor Tipp 2 verfuegbar wird
+- Tipp-Buttons nebeneinander (kompakt), immer nur ein Tipp-Inhalt gleichzeitig sichtbar
+- Tipp-Texte kurz halten (max. 2 Saetze pro Stufe)
 
 ### 4. Schwierigkeit innerhalb einer Mappe steigern
 
