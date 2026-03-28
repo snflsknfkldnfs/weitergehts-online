@@ -31,23 +31,72 @@
           "ueberleitung_von": "",
           "sequenz_kontext": {
             "vorher": null,
-            "nachher": {"id": "mat-1-2", "typ": "karte", "kerninhalt": "Europakarte zeigt die zwei Bündnisblöcke 1914 visuell"}
+            "nachher": {"id": "mat-1-4", "typ": "quellentext", "kerninhalt": "Bülows Reichstagsrede zum 'Platz an der Sonne'"}
           }
         },
         {
-          "id": "mat-1-2",
-          "typ": "karte",
-          "titel": "Europakarte 1914: Bündnisse",
-          "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-1-1.png",
-          "bildunterschrift": "Europas Militärbündnisse 1914: Dreibund (grün: Deutschland, Österreich-Ungarn, Italien) und Triple Entente (lila: Frankreich, Russland, Großbritannien).",
-          "quelle": "historicair / Fluteflute & Bibi Saint-Pol, Wikimedia Commons",
-          "lizenz": "CC-BY-SA 2.5",
+          "id": "mat-1-4",
+          "typ": "quellentext",
+          "titel": "Platz an der Sonne — Deutschlands Anspruch",
+          "inhalt": "<p><em>Bernhard von Bülow, Staatssekretär des Äußeren, vor dem Reichstag am 6. Dezember 1897:</em></p><blockquote>&#8222;Wir wollen niemand in den Schatten stellen, aber wir verlangen auch unseren Platz an der Sonne.&#8220;</blockquote><p><em>Bülow begründet damit Deutschlands Anspruch auf Kolonien und eine starke Flotte — das Schlagwort für den deutschen Imperialismus.</em></p>",
+          "quelle": "Bernhard von Bülow, Reichstagsrede 6.12.1897. Zitiert nach: Wikipedia — Spirit of 1914, Background",
           "position": 2,
           "didaktische_funktion": "erarbeitung",
           "voraussetzung": ["mat-1-1"],
-          "ueberleitung_von": "Du hast gelesen, dass Europa in zwei Lager gespalten war. Schau dir jetzt auf der Karte an, welche Länder zu welchem Bündnis gehörten.",
+          "ueberleitung_von": "Im Darstellungstext hast du den Begriff Imperialismus kennengelernt. Jetzt hörst du eine echte Stimme aus der Zeit: Was forderte Deutschlands Politiker Bülow?",
           "sequenz_kontext": {
             "vorher": {"id": "mat-1-1", "typ": "darstellungstext", "kerninhalt": "Einführung in Imperialismus, Nationalismus und das Pulverfass Europa"},
+            "nachher": {"id": "mat-1-8", "typ": "bildquelle", "kerninhalt": "Karikatur zeigt den imperialistischen Anspruch auf Afrika"}
+          }
+        },
+        {
+          "id": "mat-1-8",
+          "typ": "bildquelle",
+          "titel": "Der Koloss von Rhodos — Karikatur zum Imperialismus",
+          "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-1-4.png",
+          "bildunterschrift": "The Rhodes Colossus: Cecil Rhodes als Riese, der mit gespreizten Beinen von Kairo bis Kapstadt steht. Karikatur von Edward Linley Sambourne, Punch, 1892.",
+          "quelle": "Edward Linley Sambourne, Punch Magazine 1892 / Wikimedia Commons",
+          "lizenz": "Public Domain",
+          "position": 3,
+          "didaktische_funktion": "vertiefung",
+          "voraussetzung": ["mat-1-1"],
+          "ueberleitung_von": "Bülow forderte Deutschlands 'Platz an der Sonne'. Diese Karikatur zeigt, wie weit der imperialistische Machtanspruch reichte.",
+          "sequenz_kontext": {
+            "vorher": {"id": "mat-1-4", "typ": "quellentext", "kerninhalt": "Bülows Forderung nach Kolonien und Flotte"},
+            "nachher": {"id": "mat-1-5", "typ": "bildquelle", "kerninhalt": "Kaiser Wilhelm II. als Symbolfigur des deutschen Machtanspruchs"}
+          }
+        },
+        {
+          "id": "mat-1-5",
+          "typ": "bildquelle",
+          "titel": "Kaiser Wilhelm II.",
+          "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-1-2.jpg",
+          "bildunterschrift": "Kaiser Wilhelm II. in Uniform, 1902 (Hofphotograph T. H. Voigt). Als Deutscher Kaiser (1888–1918) trieb er die Flottenrüstung voran und forderte Deutschlands 'Platz an der Sonne'.",
+          "quelle": "Studio of Thomas Heinrich Voigt, Imperial War Museums / Wikimedia Commons",
+          "lizenz": "Public Domain",
+          "position": 4,
+          "didaktische_funktion": "vertiefung",
+          "voraussetzung": ["mat-1-4"],
+          "ueberleitung_von": "Die Karikatur zeigt den imperialistischen Machtanspruch. Der Mann, der diese Politik in Deutschland vorantrieb, war Kaiser Wilhelm II.",
+          "sequenz_kontext": {
+            "vorher": {"id": "mat-1-8", "typ": "bildquelle", "kerninhalt": "Rhodes-Karikatur zum imperialistischen Machtanspruch"},
+            "nachher": {"id": "mat-1-7", "typ": "karte", "kerninhalt": "Bismarcks Bündnissystem vor 1890"}
+          }
+        },
+        {
+          "id": "mat-1-7",
+          "typ": "karte",
+          "titel": "Bismarcks Bündnissystem — Europakarte vor 1890",
+          "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-1-3.png",
+          "bildunterschrift": "Bismarcks komplexes Bündnisnetz (bis 1890): Deutschland hielt Verbindungen zu fast allen Großmächten. Vergleiche mit der Karte von 1914 — was hat sich verändert?",
+          "quelle": "DutchTreat, Wikimedia Commons",
+          "lizenz": "CC-BY-SA 4.0",
+          "position": 5,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": ["mat-1-1"],
+          "ueberleitung_von": "Kaiser Wilhelm II. brach mit Bismarcks Außenpolitik. Doch wie sah Bismarcks ursprüngliches Bündnissystem aus? Schau dir diese ältere Karte an.",
+          "sequenz_kontext": {
+            "vorher": {"id": "mat-1-5", "typ": "bildquelle", "kerninhalt": "Kaiser Wilhelm II. als Akteur der Aufrüstungspolitik"},
             "nachher": {"id": "mat-1-3", "typ": "zeitleiste", "kerninhalt": "Chronologie der Bündnisentstehung 1879–1907"}
           }
         },
@@ -63,44 +112,29 @@
             {"datum": "1907", "text": "Triple Entente komplett: Großbritannien einigt sich mit Russland — Europa ist gespalten"}
           ],
           "quelle": "Eigene Zusammenstellung. Quellen: Wikipedia — Triple Alliance (1882), Triple Entente",
-          "position": 3,
+          "position": 6,
           "didaktische_funktion": "erarbeitung",
-          "voraussetzung": ["mat-1-2"],
-          "ueberleitung_von": "Die Karte zeigt dir zwei Blöcke — aber wie kam es dazu? Die Zeitleiste zeigt dir Schritt für Schritt, wie sich die Bündnisse bildeten.",
+          "voraussetzung": ["mat-1-7"],
+          "ueberleitung_von": "Bismarcks Bündnisnetz hielt Europa im Gleichgewicht. Die Zeitleiste zeigt dir Schritt für Schritt, wie sich nach seinem Abgang zwei feindliche Lager bildeten.",
           "sequenz_kontext": {
-            "vorher": {"id": "mat-1-2", "typ": "karte", "kerninhalt": "Europakarte mit Dreibund und Triple Entente"},
-            "nachher": {"id": "mat-1-4", "typ": "quellentext", "kerninhalt": "Bülows Reichstagsrede zum 'Platz an der Sonne'"}
+            "vorher": {"id": "mat-1-7", "typ": "karte", "kerninhalt": "Bismarcks Bündnissystem vor 1890"},
+            "nachher": {"id": "mat-1-2", "typ": "karte", "kerninhalt": "Europakarte zeigt die zwei Bündnisblöcke 1914"}
           }
         },
         {
-          "id": "mat-1-4",
-          "typ": "quellentext",
-          "titel": "Platz an der Sonne — Deutschlands Anspruch",
-          "inhalt": "<p><em>Bernhard von Bülow, Staatssekretär des Äußeren, vor dem Reichstag am 6. Dezember 1897:</em></p><blockquote>&#8222;Wir wollen niemand in den Schatten stellen, aber wir verlangen auch unseren Platz an der Sonne.&#8220;</blockquote><p><em>Bülow begründet damit Deutschlands Anspruch auf Kolonien und eine starke Flotte — das Schlagwort für den deutschen Imperialismus.</em></p>",
-          "quelle": "Bernhard von Bülow, Reichstagsrede 6.12.1897. Zitiert nach: Wikipedia — Spirit of 1914, Background",
-          "position": 4,
-          "didaktische_funktion": "vertiefung",
-          "voraussetzung": ["mat-1-1"],
-          "ueberleitung_von": "Im Darstellungstext hast du den Begriff Imperialismus kennengelernt. Jetzt hörst du eine echte Stimme aus der Zeit: Was forderte Deutschlands Politiker Bülow?",
+          "id": "mat-1-2",
+          "typ": "karte",
+          "titel": "Europakarte 1914: Bündnisse",
+          "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-1-1.png",
+          "bildunterschrift": "Europas Militärbündnisse 1914: Dreibund (grün: Deutschland, Österreich-Ungarn, Italien) und Triple Entente (lila: Frankreich, Russland, Großbritannien).",
+          "quelle": "historicair / Fluteflute & Bibi Saint-Pol, Wikimedia Commons",
+          "lizenz": "CC-BY-SA 2.5",
+          "position": 7,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": ["mat-1-3"],
+          "ueberleitung_von": "Die Zeitleiste hat dir gezeigt, wie die Bündnisse entstanden. Jetzt siehst du auf der Karte, wie Europa 1914 tatsächlich aufgeteilt war.",
           "sequenz_kontext": {
-            "vorher": {"id": "mat-1-3", "typ": "zeitleiste", "kerninhalt": "Chronologie der Bündnisentstehung"},
-            "nachher": {"id": "mat-1-5", "typ": "bildquelle", "kerninhalt": "Porträt Kaiser Wilhelms II. als Symbolfigur des deutschen Machtanspruchs"}
-          }
-        },
-        {
-          "id": "mat-1-5",
-          "typ": "bildquelle",
-          "titel": "Kaiser Wilhelm II.",
-          "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-1-2.jpg",
-          "bildunterschrift": "Kaiser Wilhelm II. in Uniform, 1902 (Hofphotograph T. H. Voigt). Als Deutscher Kaiser (1888–1918) trieb er die Flottenrüstung voran und forderte Deutschlands 'Platz an der Sonne'.",
-          "quelle": "Studio of Thomas Heinrich Voigt, Imperial War Museums / Wikimedia Commons",
-          "lizenz": "Public Domain",
-          "position": 5,
-          "didaktische_funktion": "vertiefung",
-          "voraussetzung": ["mat-1-4"],
-          "ueberleitung_von": "Bülow sprach vom 'Platz an der Sonne'. Der Mann, der diese Politik vorantrieb, war Kaiser Wilhelm II. — sieh ihn dir an.",
-          "sequenz_kontext": {
-            "vorher": {"id": "mat-1-4", "typ": "quellentext", "kerninhalt": "Bülows Forderung nach Kolonien und Flotte"},
+            "vorher": {"id": "mat-1-3", "typ": "zeitleiste", "kerninhalt": "Chronologie der Bündnisentstehung 1879–1907"},
             "nachher": {"id": "mat-1-6", "typ": "tagebuch", "kerninhalt": "Fiktiver Diplomat beschreibt das Gefühl der Einkreisung 1907"}
           }
         },
@@ -110,46 +144,12 @@
           "titel": "Tagebuch eines Diplomaten",
           "inhalt": "<p><em>Berlin, 12. März 1907</em></p><p>Heute kam die Nachricht aus London. Großbritannien hat sich mit Russland geeinigt. Ich saß lange über den Akten und starrte auf die Karte. Deutschland, Österreich-Ungarn, Italien — das sind unsere Verbündeten. Auf der anderen Seite stehen nun Frankreich, Großbritannien und Russland.</p><p>Vor zwanzig Jahren hatte Bismarck ein Netz von Bündnissen gesponnen. Es sollte den Frieden sichern. Doch jetzt fühle ich mich eingekreist. Jeder Vertrag, der uns schützen soll, macht die andere Seite nervöser.</p><p>Mein Kollege sagt, es sei nur Diplomatie. Aber wenn ich die Karte betrachte, sehe ich zwei Blöcke. Und dazwischen — nichts als Misstrauen.</p>",
           "quelle": "Fiktiver Tagebucheintrag, historisch plausibel. Kontext: Wikipedia — Triple Alliance (1882), Triple Entente",
-          "position": 6,
-          "didaktische_funktion": "vertiefung",
-          "voraussetzung": ["mat-1-2", "mat-1-3"],
-          "ueberleitung_von": "Du kennst jetzt die Bündnisse und ihre Entstehung. Aber wie fühlte sich das an? Ein Diplomat beschreibt in seinem Tagebuch, was die Spaltung Europas für ihn bedeutete.",
-          "sequenz_kontext": {
-            "vorher": {"id": "mat-1-5", "typ": "bildquelle", "kerninhalt": "Kaiser Wilhelm II. als Akteur der Aufrüstungspolitik"},
-            "nachher": {"id": "mat-1-7", "typ": "karte", "kerninhalt": "Bismarcks Bündnisnetz im Vergleich zur Lage 1914"}
-          }
-        },
-        {
-          "id": "mat-1-7",
-          "typ": "karte",
-          "titel": "Bismarcks Bündnissystem — Europakarte vor 1890",
-          "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-1-3.png",
-          "bildunterschrift": "Bismarcks komplexes Bündnisnetz (bis 1890): Deutschland hielt Verbindungen zu fast allen Großmächten. Vergleiche mit der Karte von 1914 — was hat sich verändert?",
-          "quelle": "DutchTreat, Wikimedia Commons",
-          "lizenz": "CC-BY-SA 4.0",
-          "position": 7,
-          "didaktische_funktion": "erarbeitung",
-          "voraussetzung": ["mat-1-2"],
-          "ueberleitung_von": "Der Diplomat erwähnt Bismarck und sein Bündnisnetz. Vergleiche diese ältere Karte mit der von 1914 — was hat sich verändert?",
-          "sequenz_kontext": {
-            "vorher": {"id": "mat-1-6", "typ": "tagebuch", "kerninhalt": "Diplomatenperspektive auf die Einkreisung Deutschlands"},
-            "nachher": {"id": "mat-1-8", "typ": "bildquelle", "kerninhalt": "Karikatur zeigt den imperialistischen Anspruch auf Afrika"}
-          }
-        },
-        {
-          "id": "mat-1-8",
-          "typ": "bildquelle",
-          "titel": "Der Koloss von Rhodos — Karikatur zum Imperialismus",
-          "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-1-4.png",
-          "bildunterschrift": "The Rhodes Colossus: Cecil Rhodes als Riese, der mit gespreizten Beinen von Kairo bis Kapstadt steht. Karikatur von Edward Linley Sambourne, Punch, 1892.",
-          "quelle": "Edward Linley Sambourne, Punch Magazine 1892 / Wikimedia Commons",
-          "lizenz": "Public Domain",
           "position": 8,
           "didaktische_funktion": "vertiefung",
-          "voraussetzung": ["mat-1-1"],
-          "ueberleitung_von": "Du weißt jetzt, wie die Bündnisse Europa spalteten. Doch es gab noch eine andere Triebkraft: den Imperialismus. Diese Karikatur zeigt, wie weit der Machtanspruch reichte.",
+          "voraussetzung": ["mat-1-2", "mat-1-3"],
+          "ueberleitung_von": "Die Karte zeigt zwei feindliche Blöcke. Aber wie fühlte sich das an? Ein Diplomat beschreibt in seinem Tagebuch, was die Spaltung Europas für ihn bedeutete.",
           "sequenz_kontext": {
-            "vorher": {"id": "mat-1-7", "typ": "karte", "kerninhalt": "Vergleich Bismarck-Bündnisse vs. 1914"},
+            "vorher": {"id": "mat-1-2", "typ": "karte", "kerninhalt": "Europakarte mit Dreibund und Triple Entente 1914"},
             "nachher": {"id": "mat-1-9", "typ": "bildquelle", "kerninhalt": "Britische Kriegsflotte als Symbol der Wettrüstung"}
           }
         },
@@ -164,9 +164,9 @@
           "position": 9,
           "didaktische_funktion": "sicherung",
           "voraussetzung": ["mat-1-1"],
-          "ueberleitung_von": "Imperialismus führte zum Wettstreit um Kolonien — und zum Wettrüsten. Dieses Foto zeigt die gewaltige britische Flotte, gegen die Deutschland aufrüstete.",
+          "ueberleitung_von": "Der Diplomat spürt das Misstrauen zwischen den Blöcken. Dieses Misstrauen trieb auch die Wettrüstung an — hier siehst du die gewaltige britische Flotte.",
           "sequenz_kontext": {
-            "vorher": {"id": "mat-1-8", "typ": "bildquelle", "kerninhalt": "Rhodes-Karikatur zum imperialistischen Machtanspruch"},
+            "vorher": {"id": "mat-1-6", "typ": "tagebuch", "kerninhalt": "Diplomatenperspektive auf die Einkreisung und das Misstrauen"},
             "nachher": null
           }
         }
