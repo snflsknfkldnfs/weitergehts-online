@@ -6,32 +6,32 @@
     "lehrplanbezug": "LB2 Zeit und Wandel, LB3 Politik und Gesellschaft",
     "schwierigkeit": "Basis",
     "geschaetzte_dauer_min": 30,
-    "narrativ": "Sommer 1914. Europa steht am Abgrund. Sechs Grossmaechte belauern sich. Deine Aufgabe: Finde heraus, warum ein Kontinent in zwei feindliche Lager zerfallen ist — und warum das so gefaehrlich war."
+    "narrativ": "Sommer 1914. Europa steht am Abgrund. Sechs Großmächte belauern sich. Deine Aufgabe: Finde heraus, warum ein Kontinent in zwei feindliche Lager zerfallen ist — und warum das so gefährlich war."
   },
   "mappen": [
     {
       "id": "mappe-1",
       "titel": "Pulverfass Europa",
-      "beschreibung": "Europa vor 1914 — Buendnisse, Rivalitaeten und ein Kontinent am Abgrund.",
+      "beschreibung": "Europa vor 1914 — Bündnisse, Rivalitäten und ein Kontinent am Abgrund.",
       "freischalt_code": "PULVER",
       "einstieg": {
-        "narrativ": "<p>Sommer 1914. In den Hauptstaedten Europas sitzen Diplomaten ueber Geheimvertraegen. Generaele planen Aufmaersche. Fabrikarbeiter bauen Kriegsschiffe. Sechs Grossmaechte belauern sich — aufgeteilt in zwei Buendnisbloecke. Alle wissen: Ein Funke genuegt.</p>",
-        "problemstellung": "Warum war Europa vor 1914 ein 'Pulverfass' — und warum genuegt ein einziger Funke?"
+        "narrativ": "<p>Sommer 1914. In den Hauptstädten Europas sitzen Diplomaten über Geheimverträgen. Generäle planen Aufmärsche. Fabrikarbeiter bauen Kriegsschiffe. Sechs Großmächte belauern sich — aufgeteilt in zwei Bündnisblöcke. Alle wissen: Ein Funke genügt.</p>",
+        "problemstellung": "Warum war Europa vor 1914 ein 'Pulverfass' — und warum genügt ein einziger Funke?"
       },
       "materialien": [
         {
           "id": "mat-1-1",
           "typ": "darstellungstext",
           "titel": "Pulverfass Europa — Spannungen vor 1914",
-          "inhalt": "<p>Um 1900 bestimmen sechs <strong>Grossmaechte</strong> die Politik Europas: Deutschland, Oesterreich-Ungarn, Italien, Frankreich, Grossbritannien und Russland. Hinter der Fassade des Fortschritts lauert ein gefaehrlicher Wettstreit.</p><p>Zwei Kraefte treiben die Spannungen an. Der <strong>Imperialismus</strong> (die Politik, den eigenen Machtbereich durch Kolonien auszuweiten) fuehrt zu Konflikten — besonders in Afrika. Deutschland fordert als junges Kaiserreich seinen 'Platz an der Sonne'.</p><p>Gleichzeitig waechst der <strong>Nationalismus</strong>: die uebersteigerte Ueberzeugung, das eigene Volk sei den anderen ueberlegen. Diese Haltung macht Kompromisse schwer und schuert Feindbilder zwischen den Voelkern.</p><p>Europa gleicht einem Pulverfass. Imperialismus und Nationalismus haben den Kontinent bis zum Zerreissen gespannt. Es fehlt nur noch der Funke.</p>",
+          "inhalt": "<p>Um 1900 bestimmen sechs <strong>Großmächte</strong> die Politik Europas: Deutschland, Österreich-Ungarn, Italien, Frankreich, Großbritannien und Russland. Hinter der Fassade des Fortschritts lauert ein gefährlicher Wettstreit.</p><p>Zwei Kräfte treiben die Spannungen an. Der <strong>Imperialismus</strong> (die Politik, den eigenen Machtbereich durch Kolonien auszuweiten) führt zu Konflikten — besonders in Afrika. Deutschland fordert als junges Kaiserreich seinen 'Platz an der Sonne'.</p><p>Gleichzeitig wächst der <strong>Nationalismus</strong>: die übersteigerte Überzeugung, das eigene Volk sei den anderen überlegen. Diese Haltung macht Kompromisse schwer und schürt Feindbilder zwischen den Völkern.</p><p>Europa gleicht einem Pulverfass. Imperialismus und Nationalismus haben den Kontinent bis zum Zerreißen gespannt. Es fehlt nur noch der Funke.</p>",
           "quelle": "Eigene Darstellung. Quellen: Wikipedia — Causes of World War I, Triple Alliance (1882), Triple Entente"
         },
         {
           "id": "mat-1-2",
           "typ": "karte",
-          "titel": "Europakarte 1914: Buendnisse",
+          "titel": "Europakarte 1914: Bündnisse",
           "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-1-1.png",
-          "bildunterschrift": "Europas Militaerbuendnisse 1914: Dreibund (gruen: Deutschland, Oesterreich-Ungarn, Italien) und Triple Entente (lila: Frankreich, Russland, Grossbritannien).",
+          "bildunterschrift": "Europas Militärbündnisse 1914: Dreibund (grün: Deutschland, Österreich-Ungarn, Italien) und Triple Entente (lila: Frankreich, Russland, Großbritannien).",
           "quelle": "historicair / Fluteflute & Bibi Saint-Pol, Wikimedia Commons",
           "lizenz": "CC-BY-SA 2.5"
         },
@@ -40,11 +40,11 @@
           "typ": "zeitleiste",
           "titel": "Wie spaltete sich Europa in zwei Lager?",
           "inhalt": [
-            {"datum": "1879", "text": "Zweibund: Deutschland und Oesterreich-Ungarn verbuenden sich"},
-            {"datum": "1882", "text": "Dreibund: Italien tritt bei — drei Maechte gegen Frankreich und Russland"},
-            {"datum": "1894", "text": "Frankreich und Russland schliessen ein Gegenbuendnis"},
-            {"datum": "1904", "text": "Entente Cordiale: Frankreich und Grossbritannien naehern sich an"},
-            {"datum": "1907", "text": "Triple Entente komplett: Grossbritannien einigt sich mit Russland — Europa ist gespalten"}
+            {"datum": "1879", "text": "Zweibund: Deutschland und Österreich-Ungarn verbünden sich"},
+            {"datum": "1882", "text": "Dreibund: Italien tritt bei — drei Mächte gegen Frankreich und Russland"},
+            {"datum": "1894", "text": "Frankreich und Russland schließen ein Gegenbündnis"},
+            {"datum": "1904", "text": "Entente Cordiale: Frankreich und Großbritannien nähern sich an"},
+            {"datum": "1907", "text": "Triple Entente komplett: Großbritannien einigt sich mit Russland — Europa ist gespalten"}
           ],
           "quelle": "Eigene Zusammenstellung. Quellen: Wikipedia — Triple Alliance (1882), Triple Entente"
         },
@@ -52,15 +52,15 @@
           "id": "mat-1-4",
           "typ": "quellentext",
           "titel": "Platz an der Sonne — Deutschlands Anspruch",
-          "inhalt": "<p><em>Bernhard von Buelow, Staatssekretaer des Aeusseren, vor dem Reichstag am 6. Dezember 1897:</em></p><blockquote>&#8222;Wir wollen niemand in den Schatten stellen, aber wir verlangen auch unseren Platz an der Sonne.&#8220;</blockquote><p><em>Buelow begruendet damit Deutschlands Anspruch auf Kolonien und eine starke Flotte — das Schlagwort fuer den deutschen Imperialismus.</em></p>",
-          "quelle": "Bernhard von Buelow, Reichstagsrede 6.12.1897. Zitiert nach: Wikipedia — Spirit of 1914, Background"
+          "inhalt": "<p><em>Bernhard von Bülow, Staatssekretär des Äußeren, vor dem Reichstag am 6. Dezember 1897:</em></p><blockquote>&#8222;Wir wollen niemand in den Schatten stellen, aber wir verlangen auch unseren Platz an der Sonne.&#8220;</blockquote><p><em>Bülow begründet damit Deutschlands Anspruch auf Kolonien und eine starke Flotte — das Schlagwort für den deutschen Imperialismus.</em></p>",
+          "quelle": "Bernhard von Bülow, Reichstagsrede 6.12.1897. Zitiert nach: Wikipedia — Spirit of 1914, Background"
         },
         {
           "id": "mat-1-5",
           "typ": "bildquelle",
           "titel": "Kaiser Wilhelm II.",
           "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-1-2.jpg",
-          "bildunterschrift": "Kaiser Wilhelm II. in Uniform, 1902 (Hofphotograph T. H. Voigt). Als Deutscher Kaiser (1888–1918) trieb er die Flottenruestung voran und forderte Deutschlands 'Platz an der Sonne'.",
+          "bildunterschrift": "Kaiser Wilhelm II. in Uniform, 1902 (Hofphotograph T. H. Voigt). Als Deutscher Kaiser (1888–1918) trieb er die Flottenrüstung voran und forderte Deutschlands 'Platz an der Sonne'.",
           "quelle": "Studio of Thomas Heinrich Voigt, Imperial War Museums / Wikimedia Commons",
           "lizenz": "Public Domain"
         },
@@ -68,15 +68,15 @@
           "id": "mat-1-6",
           "typ": "tagebuch",
           "titel": "Tagebuch eines Diplomaten",
-          "inhalt": "<p><em>Berlin, 12. Maerz 1907</em></p><p>Heute kam die Nachricht aus London. Grossbritannien hat sich mit Russland geeinigt. Ich sass lange ueber den Akten und starrte auf die Karte. Deutschland, Oesterreich-Ungarn, Italien — das sind unsere Verbuendeten. Auf der anderen Seite stehen nun Frankreich, Grossbritannien und Russland.</p><p>Vor zwanzig Jahren hatte Bismarck ein Netz von Buendnissen gesponnen. Es sollte den Frieden sichern. Doch jetzt fuehle ich mich eingekreist. Jeder Vertrag, der uns schuetzen soll, macht die andere Seite nervoeser.</p><p>Mein Kollege sagt, es sei nur Diplomatie. Aber wenn ich die Karte betrachte, sehe ich zwei Bloecke. Und dazwischen — nichts als Misstrauen.</p>",
+          "inhalt": "<p><em>Berlin, 12. März 1907</em></p><p>Heute kam die Nachricht aus London. Großbritannien hat sich mit Russland geeinigt. Ich saß lange über den Akten und starrte auf die Karte. Deutschland, Österreich-Ungarn, Italien — das sind unsere Verbündeten. Auf der anderen Seite stehen nun Frankreich, Großbritannien und Russland.</p><p>Vor zwanzig Jahren hatte Bismarck ein Netz von Bündnissen gesponnen. Es sollte den Frieden sichern. Doch jetzt fühle ich mich eingekreist. Jeder Vertrag, der uns schützen soll, macht die andere Seite nervöser.</p><p>Mein Kollege sagt, es sei nur Diplomatie. Aber wenn ich die Karte betrachte, sehe ich zwei Blöcke. Und dazwischen — nichts als Misstrauen.</p>",
           "quelle": "Fiktiver Tagebucheintrag, historisch plausibel. Kontext: Wikipedia — Triple Alliance (1882), Triple Entente"
         },
         {
           "id": "mat-1-7",
           "typ": "karte",
-          "titel": "Bismarcks Buendnissystem — Europakarte vor 1890",
+          "titel": "Bismarcks Bündnissystem — Europakarte vor 1890",
           "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-1-3.png",
-          "bildunterschrift": "Bismarcks komplexes Buendnisnetz (bis 1890): Deutschland hielt Verbindungen zu fast allen Grossmaechten. Vergleiche mit der Karte von 1914 — was hat sich veraendert?",
+          "bildunterschrift": "Bismarcks komplexes Bündnisnetz (bis 1890): Deutschland hielt Verbindungen zu fast allen Großmächten. Vergleiche mit der Karte von 1914 — was hat sich verändert?",
           "quelle": "DutchTreat, Wikimedia Commons",
           "lizenz": "CC-BY-SA 4.0"
         },
@@ -94,7 +94,7 @@
           "typ": "bildquelle",
           "titel": "Britisches Schlachtgeschwader (ca. 1914)",
           "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-1-5.jpg",
-          "bildunterschrift": "Schiffe des 2. Schlachtgeschwaders der britischen Grand Fleet, ca. 1914. Die Flottenruestung zwischen Deutschland und Grossbritannien war ein zentraler Teil der Wettruestung vor 1914.",
+          "bildunterschrift": "Schiffe des 2. Schlachtgeschwaders der britischen Grand Fleet, ca. 1914. Die Flottenrüstung zwischen Deutschland und Großbritannien war ein zentraler Teil der Wettrüstung vor 1914.",
           "quelle": "Unbekannt, aus: The Nations at War (1917) / Wikimedia Commons",
           "lizenz": "Public Domain"
         }
@@ -103,50 +103,50 @@
         {
           "id": "aufgabe-1-1",
           "typ": "multiple-choice",
-          "frage": "Welche Laender bildeten den Dreibund?",
+          "frage": "Welche Länder bildeten den Dreibund?",
           "material_referenz": ["mat-1-2"],
           "optionen": [
-            "Deutschland, Oesterreich-Ungarn, Italien",
-            "Frankreich, Grossbritannien, Russland",
+            "Deutschland, Österreich-Ungarn, Italien",
+            "Frankreich, Großbritannien, Russland",
             "Deutschland, Frankreich, Italien",
-            "Grossbritannien, Oesterreich-Ungarn, Russland"
+            "Großbritannien, Österreich-Ungarn, Russland"
           ],
-          "loesung": "Deutschland, Oesterreich-Ungarn, Italien",
+          "loesung": "Deutschland, Österreich-Ungarn, Italien",
           "tipps": [
-            {"stufe": 1, "text": "Schau dir die Europakarte 1914 genau an. Welche Laender sind gruen markiert?"},
-            {"stufe": 2, "text": "Die gruen markierten Laender bilden den Dreibund. Es sind drei Laender in Mittel- und Suedeuropa."},
-            {"stufe": 3, "text": "Der Dreibund (1882) verband Deutschland, Oesterreich-Ungarn und Italien."}
+            {"stufe": 1, "text": "Schau dir die Europakarte 1914 genau an. Welche Länder sind grün markiert?"},
+            {"stufe": 2, "text": "Die grün markierten Länder bilden den Dreibund. Es sind drei Länder in Mittel- und Südeuropa."},
+            {"stufe": 3, "text": "Der Dreibund (1882) verband Deutschland, Österreich-Ungarn und Italien."}
           ],
           "punkte": 10
         },
         {
           "id": "aufgabe-1-2",
           "typ": "lueckentext",
-          "frage": "Bernhard von Buelow forderte fuer Deutschland einen 'Platz an der ___'.",
+          "frage": "Bernhard von Bülow forderte für Deutschland einen 'Platz an der ___'.",
           "material_referenz": ["mat-1-4"],
           "loesung": ["Sonne"],
           "tipps": [
-            {"stufe": 1, "text": "Lies den Quellentext von Buelow genau durch."},
-            {"stufe": 2, "text": "Es geht um Kolonialpolitik — Deutschland wollte auch Kolonien wie Frankreich und Grossbritannien."},
-            {"stufe": 3, "text": "Buelow sagte: 'Wir verlangen auch unseren Platz an der Sonne.'"}
+            {"stufe": 1, "text": "Lies den Quellentext von Bülow genau durch."},
+            {"stufe": 2, "text": "Es geht um Kolonialpolitik — Deutschland wollte auch Kolonien wie Frankreich und Großbritannien."},
+            {"stufe": 3, "text": "Bülow sagte: 'Wir verlangen auch unseren Platz an der Sonne.'"}
           ],
           "punkte": 10
         },
         {
           "id": "aufgabe-1-3",
           "typ": "multiple-choice",
-          "frage": "Vergleiche die beiden Europakarten. Was hat sich zwischen Bismarcks Zeit und 1914 veraendert?",
+          "frage": "Vergleiche die beiden Europakarten. Was hat sich zwischen Bismarcks Zeit und 1914 verändert?",
           "material_referenz": ["mat-1-7", "mat-1-2"],
           "optionen": [
-            "Aus Bismarcks Gleichgewichtssystem wurden zwei feindliche Bloecke",
-            "Deutschland hatte 1914 mehr Verbuendete als unter Bismarck",
-            "Russland gehoerte 1914 zum Dreibund",
-            "Grossbritannien war schon unter Bismarck mit Frankreich verbuendet"
+            "Aus Bismarcks Gleichgewichtssystem wurden zwei feindliche Blöcke",
+            "Deutschland hatte 1914 mehr Verbündete als unter Bismarck",
+            "Russland gehörte 1914 zum Dreibund",
+            "Großbritannien war schon unter Bismarck mit Frankreich verbündet"
           ],
-          "loesung": "Aus Bismarcks Gleichgewichtssystem wurden zwei feindliche Bloecke",
+          "loesung": "Aus Bismarcks Gleichgewichtssystem wurden zwei feindliche Blöcke",
           "tipps": [
-            {"stufe": 1, "text": "Schau dir beide Karten nacheinander an: Wieviele Farben/Gruppen gibt es auf jeder Karte?"},
-            {"stufe": 2, "text": "Unter Bismarck gab es ein komplexes Netz mit vielen Verbindungen — 1914 nur noch zwei Bloecke in Konfrontation."},
+            {"stufe": 1, "text": "Schau dir beide Karten nacheinander an: Wie viele Farben/Gruppen gibt es auf jeder Karte?"},
+            {"stufe": 2, "text": "Unter Bismarck gab es ein komplexes Netz mit vielen Verbindungen — 1914 nur noch zwei Blöcke in Konfrontation."},
             {"stufe": 3, "text": "Bismarcks System hielt das Gleichgewicht durch viele Verbindungen. Nach ihm entstand eine klare Konfrontation: Dreibund gegen Triple Entente."}
           ],
           "punkte": 15
@@ -154,19 +154,19 @@
         {
           "id": "aufgabe-1-4",
           "typ": "multiple-choice",
-          "frage": "Was zeigt die Karikatur 'Der Koloss von Rhodos' ueber den Imperialismus?",
+          "frage": "Was zeigt die Karikatur 'Der Koloss von Rhodos' über den Imperialismus?",
           "material_referenz": ["mat-1-8"],
           "optionen": [
-            "Europaeische Maechte wollten ganze Kontinente beherrschen",
-            "Ein Sportler ueberspringt den afrikanischen Kontinent",
-            "Afrika war unter europaeeischen Maechten friedlich aufgeteilt",
-            "Cecil Rhodes baute Bruecken zwischen den Voelkern"
+            "Europäische Mächte wollten ganze Kontinente beherrschen",
+            "Ein Sportler überspringt den afrikanischen Kontinent",
+            "Afrika war unter europäischen Mächten friedlich aufgeteilt",
+            "Cecil Rhodes baute Brücken zwischen den Völkern"
           ],
-          "loesung": "Europaeische Maechte wollten ganze Kontinente beherrschen",
+          "loesung": "Europäische Mächte wollten ganze Kontinente beherrschen",
           "tipps": [
-            {"stufe": 1, "text": "Beschreibe genau, was du siehst: Wo steht der Mann? Was hat er in der Hand? Wo setzt er seine Fuesse auf?"},
-            {"stufe": 2, "text": "Cecil Rhodes plante eine Eisenbahn von Kairo bis Kapstadt — quer durch ganz Afrika. Der Zeichner zeigt das uebertrieben gross."},
-            {"stufe": 3, "text": "Die Karikatur kritisiert den Imperialismus: Europaeische Maechte wie Grossbritannien wollten ganze Kontinente kontrollieren — riesig und ruecksichtslos."}
+            {"stufe": 1, "text": "Beschreibe genau, was du siehst: Wo steht der Mann? Was hat er in der Hand? Wo setzt er seine Füße auf?"},
+            {"stufe": 2, "text": "Cecil Rhodes plante eine Eisenbahn von Kairo bis Kapstadt — quer durch ganz Afrika. Der Zeichner zeigt das übertrieben groß."},
+            {"stufe": 3, "text": "Die Karikatur kritisiert den Imperialismus: Europäische Mächte wie Großbritannien wollten ganze Kontinente kontrollieren — riesig und rücksichtslos."}
           ],
           "punkte": 10
         },
@@ -176,16 +176,16 @@
           "frage": "Was bedeutet die Metapher 'Pulverfass Europa'?",
           "material_referenz": ["mat-1-1"],
           "optionen": [
-            "Europa war so angespannt, dass ein kleiner Anlass zum Krieg genuegt",
-            "Europa hatte zu viel Schiesspulver gelagert",
+            "Europa war so angespannt, dass ein kleiner Anlass zum Krieg genügt",
+            "Europa hatte zu viel Schießpulver gelagert",
             "Die Fabriken in Europa produzierten vor allem Waffen",
             "Europa war durch Vulkane bedroht"
           ],
-          "loesung": "Europa war so angespannt, dass ein kleiner Anlass zum Krieg genuegt",
+          "loesung": "Europa war so angespannt, dass ein kleiner Anlass zum Krieg genügt",
           "tipps": [
-            {"stufe": 1, "text": "Denk an ein Fass voller Schiesspulver. Was passiert, wenn ein Funke hineinfaellt?"},
-            {"stufe": 2, "text": "Die Buendnisse und Rivalitaeten machten Europa explosiv — jeder Konflikt konnte groessr werden."},
-            {"stufe": 3, "text": "Ein einziger Konflikt konnte durch die Buendnispflichten eine Kettenreaktion ausloesen — deshalb die Metapher 'Pulverfass'."}
+            {"stufe": 1, "text": "Denk an ein Fass voller Schießpulver. Was passiert, wenn ein Funke hineinfällt?"},
+            {"stufe": 2, "text": "Die Bündnisse und Rivalitäten machten Europa explosiv — jeder Konflikt konnte größer werden."},
+            {"stufe": 3, "text": "Ein einziger Konflikt konnte durch die Bündnispflichten eine Kettenreaktion auslösen — deshalb die Metapher 'Pulverfass'."}
           ],
           "punkte": 10
         }
@@ -193,52 +193,52 @@
       "sicherung": {
         "tafelbild": {
           "knoten": [
-            {"id": "k1-1", "text": "Pulverfass Europa", "typ": "kernbegriff", "merksatz": "Europa war vor 1914 durch Buendnisse, Nationalismus und Imperialismus ein Pulverfass — ein Funke genuegt."},
-            {"id": "k1-2", "text": "Imperialismus", "typ": "ursache", "merksatz": "Der Wettlauf um Kolonien und den 'Platz an der Sonne' verschaerfte die Rivalitaet zwischen den Grossmaechten."},
-            {"id": "k1-3", "text": "Nationalismus", "typ": "ursache", "merksatz": "Uebersteigerte nationale Ueberzeugungen machten Kompromisse unmoeglich und schuerten Feindbilder."},
-            {"id": "k1-4", "text": "Dreibund (DE, OeU, IT)", "typ": "kategorie", "merksatz": "Deutschland, Oesterreich-Ungarn und Italien verbanden sich 1882 im Dreibund zu gegenseitigem Beistand."},
-            {"id": "k1-5", "text": "Triple Entente (FR, GB, RU)", "typ": "kategorie", "merksatz": "Frankreich, Grossbritannien und Russland naeherten sich schrittweise (1894-1907) in der Triple Entente an."},
-            {"id": "k1-6", "text": "Wettruestung", "typ": "ursache", "merksatz": "Die Grossmaechte ruesteten um die Wette auf — besonders zur See zwischen Deutschland und Grossbritannien."},
-            {"id": "k1-7", "text": "Kettenreaktion", "typ": "wirkung", "merksatz": "Durch die Buendnispflichten zog ein lokaler Konflikt automatisch alle Grossmaechte in den Krieg."}
+            {"id": "k1-1", "text": "Pulverfass Europa", "typ": "kernbegriff", "merksatz": "Europa war vor 1914 durch Bündnisse, Nationalismus und Imperialismus ein Pulverfass — ein Funke genügt."},
+            {"id": "k1-2", "text": "Imperialismus", "typ": "ursache", "merksatz": "Der Wettlauf um Kolonien und den 'Platz an der Sonne' verschärfte die Rivalität zwischen den Großmächten."},
+            {"id": "k1-3", "text": "Nationalismus", "typ": "ursache", "merksatz": "Übersteigerte nationale Überzeugungen machten Kompromisse unmöglich und schürten Feindbilder."},
+            {"id": "k1-4", "text": "Dreibund (DE, ÖU, IT)", "typ": "kategorie", "merksatz": "Deutschland, Österreich-Ungarn und Italien verbanden sich 1882 im Dreibund zu gegenseitigem Beistand."},
+            {"id": "k1-5", "text": "Triple Entente (FR, GB, RU)", "typ": "kategorie", "merksatz": "Frankreich, Großbritannien und Russland näherten sich schrittweise (1894-1907) in der Triple Entente an."},
+            {"id": "k1-6", "text": "Wettrüstung", "typ": "ursache", "merksatz": "Die Großmächte rüsteten um die Wette auf — besonders zur See zwischen Deutschland und Großbritannien."},
+            {"id": "k1-7", "text": "Kettenreaktion", "typ": "wirkung", "merksatz": "Durch die Bündnispflichten zog ein lokaler Konflikt automatisch alle Großmächte in den Krieg."}
           ],
           "verbindungen": [
-            {"von": "k1-2", "nach": "k1-1", "label": "verschaerft Spannungen"},
-            {"von": "k1-3", "nach": "k1-1", "label": "verschaerft Spannungen"},
-            {"von": "k1-4", "nach": "k1-7", "label": "Buendnispflicht erzwingt"},
-            {"von": "k1-5", "nach": "k1-7", "label": "Buendnispflicht erzwingt"},
-            {"von": "k1-6", "nach": "k1-1", "label": "erhoeht Misstrauen"},
-            {"von": "k1-1", "nach": "k1-7", "label": "ein Funke genuegt"}
+            {"von": "k1-2", "nach": "k1-1", "label": "verschärft Spannungen"},
+            {"von": "k1-3", "nach": "k1-1", "label": "verschärft Spannungen"},
+            {"von": "k1-4", "nach": "k1-7", "label": "Bündnispflicht erzwingt"},
+            {"von": "k1-5", "nach": "k1-7", "label": "Bündnispflicht erzwingt"},
+            {"von": "k1-6", "nach": "k1-1", "label": "erhöht Misstrauen"},
+            {"von": "k1-1", "nach": "k1-7", "label": "ein Funke genügt"}
           ],
           "voraussetzungen": [],
           "stundenfrage": "Warum wurde Europa vor 1914 zum Pulverfass?",
           "ordnungsmuster": "kausal",
           "scpl": {
             "situation": {
-              "kontextsatz": "Um 1900 wollen alle europaeischen Grossmaechte Kolonien und Einfluss. Zwei Triebkraefte: der Wettlauf um Kolonien — Imperialismus — und uebersteigerte nationale Ueberzeugungen: Nationalismus.",
+              "kontextsatz": "Um 1900 wollen alle europäischen Großmächte Kolonien und Einfluss. Zwei Triebkräfte: der Wettlauf um Kolonien — Imperialismus — und übersteigerte nationale Überzeugungen: Nationalismus.",
               "fachbegriffe": ["Imperialismus", "Nationalismus"]
             },
             "complication": [
               {
-                "schritt": "Die Staaten ruesten massiv auf, besonders zur See: Deutschland gegen Grossbritannien — Wettruestung.",
-                "fachbegriff": "Wettruestung",
+                "schritt": "Die Staaten rüsten massiv auf, besonders zur See: Deutschland gegen Großbritannien — Wettrüstung.",
+                "fachbegriff": "Wettrüstung",
                 "darstellung": null
               },
               {
-                "schritt": "Europa spaltet sich in zwei feindliche Lager — das Buendnissystem:",
-                "fachbegriff": "Buendnissystem",
+                "schritt": "Europa spaltet sich in zwei feindliche Lager — das Bündnissystem:",
+                "fachbegriff": "Bündnissystem",
                 "darstellung": {
                   "typ": "gegenueberstellung",
-                  "links": {"titel": "Dreibund (1882)", "punkte": ["Deutschland", "Oesterreich-Ungarn", "Italien"]},
-                  "rechts": {"titel": "Triple Entente", "punkte": ["Frankreich", "Grossbritannien", "Russland"]}
+                  "links": {"titel": "Dreibund (1882)", "punkte": ["Deutschland", "Österreich-Ungarn", "Italien"]},
+                  "rechts": {"titel": "Triple Entente", "punkte": ["Frankreich", "Großbritannien", "Russland"]}
                 }
               }
             ],
             "problem": {
-              "satz": "Die Buendnispflicht zieht bei jedem lokalen Konflikt automatisch alle Grossmaechte in den Krieg: Kettenreaktion.",
+              "satz": "Die Bündnispflicht zieht bei jedem lokalen Konflikt automatisch alle Großmächte in den Krieg: Kettenreaktion.",
               "fachbegriff": "Kettenreaktion"
             },
             "loesung": [
-              "Europa war vor 1914 ein Pulverfass: Imperialismus, Nationalismus und Wettruestung spalteten den Kontinent in zwei feindliche Lager. Die Buendnispflichten machten aus jedem lokalen Konflikt eine europaweite Kettenreaktion."
+              "Europa war vor 1914 ein Pulverfass: Imperialismus, Nationalismus und Wettrüstung spalteten den Kontinent in zwei feindliche Lager. Die Bündnispflichten machten aus jedem lokalen Konflikt eine europaweite Kettenreaktion."
             ]
           },
           "transfer": {
@@ -246,14 +246,14 @@
           }
         },
         "kernerkenntnisse": [
-          "Europa war in zwei feindliche Buendnisbloecke gespalten: Dreibund und Triple Entente.",
-          "Imperialismus, Nationalismus und Wettruestung trieben die Spannungen an.",
-          "Das Buendnissystem machte aus jedem lokalen Konflikt eine europaweite Kettenreaktion."
+          "Europa war in zwei feindliche Bündnisblöcke gespalten: Dreibund und Triple Entente.",
+          "Imperialismus, Nationalismus und Wettrüstung trieben die Spannungen an.",
+          "Das Bündnissystem machte aus jedem lokalen Konflikt eine europaweite Kettenreaktion."
         ],
-        "hefteintrag_verweis": "Uebertrage das Tafelbild und die Merksaetze in dein Heft. Achte auf die Verbindungspfeile zwischen den Begriffen.",
-        "reflexionsimpuls": "Warum konnte ein einzelner Schuss einen ganzen Kontinent in den Krieg stuerzen?",
-        "zusammenfassung": "Europa war vor 1914 ein Pulverfass: Imperialismus, Nationalismus und Wettruestung hatten den Kontinent in zwei feindliche Buendnisbloecke gespalten. Jeder kleine Konflikt konnte durch die Buendnispflichten eine Kettenreaktion ausloesen. Der britische Aussenminister Edward Grey fasste es spaeter zusammen: 'The lamps are going out all over Europe, we shall not see them lit again in our lifetime.'",
-        "ueberleitung": "Doch wo ist der Funke? Am 28. Juni 1914 faellt in Sarajevo ein Schuss, der die Welt veraendert."
+        "hefteintrag_verweis": "Übertrage das Tafelbild und die Merksätze in dein Heft. Achte auf die Verbindungspfeile zwischen den Begriffen.",
+        "reflexionsimpuls": "Warum konnte ein einzelner Schuss einen ganzen Kontinent in den Krieg stürzen?",
+        "zusammenfassung": "Europa war vor 1914 ein Pulverfass: Imperialismus, Nationalismus und Wettrüstung hatten den Kontinent in zwei feindliche Bündnisblöcke gespalten. Jeder kleine Konflikt konnte durch die Bündnispflichten eine Kettenreaktion auslösen. Der britische Außenminister Edward Grey fasste es später zusammen: 'The lamps are going out all over Europe, we shall not see them lit again in our lifetime.'",
+        "ueberleitung": "Doch wo ist der Funke? Am 28. Juni 1914 fällt in Sarajevo ein Schuss, der die Welt verändert."
       }
     }
   ]
