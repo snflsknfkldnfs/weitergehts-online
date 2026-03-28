@@ -209,7 +209,41 @@
             {"von": "k1-6", "nach": "k1-1", "label": "erhoeht Misstrauen"},
             {"von": "k1-1", "nach": "k1-7", "label": "ein Funke genuegt"}
           ],
-          "voraussetzungen": []
+          "voraussetzungen": [],
+          "stundenfrage": "Warum wurde Europa vor 1914 zum Pulverfass?",
+          "ordnungsmuster": "kausal",
+          "scpl": {
+            "situation": {
+              "kontextsatz": "Um 1900 wollen alle europaeischen Grossmaechte Kolonien und Einfluss. Zwei Triebkraefte: der Wettlauf um Kolonien — Imperialismus — und uebersteigerte nationale Ueberzeugungen: Nationalismus.",
+              "fachbegriffe": ["Imperialismus", "Nationalismus"]
+            },
+            "complication": [
+              {
+                "schritt": "Die Staaten ruesten massiv auf, besonders zur See: Deutschland gegen Grossbritannien — Wettruestung.",
+                "fachbegriff": "Wettruestung",
+                "darstellung": null
+              },
+              {
+                "schritt": "Europa spaltet sich in zwei feindliche Lager — das Buendnissystem:",
+                "fachbegriff": "Buendnissystem",
+                "darstellung": {
+                  "typ": "gegenueberstellung",
+                  "links": {"titel": "Dreibund (1882)", "punkte": ["Deutschland", "Oesterreich-Ungarn", "Italien"]},
+                  "rechts": {"titel": "Triple Entente", "punkte": ["Frankreich", "Grossbritannien", "Russland"]}
+                }
+              }
+            ],
+            "problem": {
+              "satz": "Die Buendnispflicht zieht bei jedem lokalen Konflikt automatisch alle Grossmaechte in den Krieg: Kettenreaktion.",
+              "fachbegriff": "Kettenreaktion"
+            },
+            "loesung": [
+              "Europa war vor 1914 ein Pulverfass: Imperialismus, Nationalismus und Wettruestung spalteten den Kontinent in zwei feindliche Lager. Die Buendnispflichten machten aus jedem lokalen Konflikt eine europaweite Kettenreaktion."
+            ]
+          },
+          "transfer": {
+            "frage": "Doch wo war der Funke?"
+          }
         },
         "kernerkenntnisse": [
           "Europa war in zwei feindliche Buendnisbloecke gespalten: Dreibund und Triple Entente.",

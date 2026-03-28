@@ -916,74 +916,80 @@ var EscapeEngine = (function () {
     h2.textContent = 'Sicherung';
     container.appendChild(h2);
 
-    // Tafelbild (N3-Fix: beschreibender h3 vor SVG)
+    // Tafelbild/Hefteintrag Routing
     if (sicherung.tafelbild) {
-      var tafelbildH3 = document.createElement('h3');
-      tafelbildH3.className = 'sicherung__tafelbild-titel';
-      tafelbildH3.textContent = sicherung.tafelbild.titel || 'Tafelbild';
-      container.appendChild(tafelbildH3);
+      if (sicherung.tafelbild.scpl) {
+        // v3.1: SCPL-Hefteintrag-Renderer
+        _renderHefteintragSCPL(sicherung, container);
+      } else if (sicherung.tafelbild.knoten && sicherung.tafelbild.knoten.length > 0) {
+        // Legacy: SVG-Tafelbild
+        var tafelbildH3 = document.createElement('h3');
+        tafelbildH3.className = 'sicherung__tafelbild-titel';
+        tafelbildH3.textContent = sicherung.tafelbild.titel || 'Tafelbild';
+        container.appendChild(tafelbildH3);
 
-      var tafelbildDiv = document.createElement('div');
-      tafelbildDiv.className = 'sicherung__tafelbild';
-      tafelbildDiv.id = 'tafelbild-container';
-      _renderTafelbild(sicherung.tafelbild, tafelbildDiv);
-      container.appendChild(tafelbildDiv);
+        var tafelbildDiv = document.createElement('div');
+        tafelbildDiv.className = 'sicherung__tafelbild';
+        tafelbildDiv.id = 'tafelbild-container';
+        _renderTafelbild(sicherung.tafelbild, tafelbildDiv);
+        container.appendChild(tafelbildDiv);
 
-      // v3: Merksaetze unter Tafelbild
-      var merksaetze = (sicherung.tafelbild.knoten || []).filter(function(k) {
-        return k.merksatz;
-      });
-      if (merksaetze.length > 0) {
-        var merksatzDiv = document.createElement('div');
-        merksatzDiv.className = 'sicherung__merksaetze';
-        var merksatzH3 = document.createElement('h3');
-        merksatzH3.textContent = 'Merksätze';
-        merksatzDiv.appendChild(merksatzH3);
-        var ul = document.createElement('ul');
-        for (var mi = 0; mi < merksaetze.length; mi++) {
-          var li = document.createElement('li');
-          var strong = document.createElement('strong');
-          strong.textContent = merksaetze[mi].text + ': ';
-          li.appendChild(strong);
-          li.appendChild(document.createTextNode(merksaetze[mi].merksatz));
-          ul.appendChild(li);
+        // Legacy v3: Merksaetze unter Tafelbild
+        var merksaetze = (sicherung.tafelbild.knoten || []).filter(function(k) {
+          return k.merksatz;
+        });
+        if (merksaetze.length > 0) {
+          var merksatzDiv = document.createElement('div');
+          merksatzDiv.className = 'sicherung__merksaetze';
+          var merksatzH3 = document.createElement('h3');
+          merksatzH3.textContent = 'Merksätze';
+          merksatzDiv.appendChild(merksatzH3);
+          var ul = document.createElement('ul');
+          for (var mi = 0; mi < merksaetze.length; mi++) {
+            var li = document.createElement('li');
+            var strong = document.createElement('strong');
+            strong.textContent = merksaetze[mi].text + ': ';
+            li.appendChild(strong);
+            li.appendChild(document.createTextNode(merksaetze[mi].merksatz));
+            ul.appendChild(li);
+          }
+          merksatzDiv.appendChild(ul);
+          container.appendChild(merksatzDiv);
         }
-        merksatzDiv.appendChild(ul);
-        container.appendChild(merksatzDiv);
-      }
-    }
 
-    // v3: Kernerkenntnisse (Fallback: sicherung- oder tafelbild-Ebene)
-    var kernerkenntnisse = sicherung.kernerkenntnisse
-      || (sicherung.tafelbild && sicherung.tafelbild.kernerkenntnisse)
-      || [];
-    if (kernerkenntnisse.length > 0) {
-      var keDiv = document.createElement('div');
-      keDiv.className = 'sicherung__kernerkenntnisse';
-      var keH3 = document.createElement('h3');
-      keH3.textContent = 'Kernerkenntnisse';
-      keDiv.appendChild(keH3);
-      var keUl = document.createElement('ul');
-      for (var ki = 0; ki < kernerkenntnisse.length; ki++) {
-        var keLi = document.createElement('li');
-        keLi.textContent = kernerkenntnisse[ki];
-        keUl.appendChild(keLi);
-      }
-      keDiv.appendChild(keUl);
-      container.appendChild(keDiv);
-    }
+        // Legacy v3: Kernerkenntnisse
+        var kernerkenntnisse = sicherung.kernerkenntnisse
+          || (sicherung.tafelbild && sicherung.tafelbild.kernerkenntnisse)
+          || [];
+        if (kernerkenntnisse.length > 0) {
+          var keDiv = document.createElement('div');
+          keDiv.className = 'sicherung__kernerkenntnisse';
+          var keH3 = document.createElement('h3');
+          keH3.textContent = 'Kernerkenntnisse';
+          keDiv.appendChild(keH3);
+          var keUl = document.createElement('ul');
+          for (var ki = 0; ki < kernerkenntnisse.length; ki++) {
+            var keLi = document.createElement('li');
+            keLi.textContent = kernerkenntnisse[ki];
+            keUl.appendChild(keLi);
+          }
+          keDiv.appendChild(keUl);
+          container.appendChild(keDiv);
+        }
 
-    // v3: Hefteintrag-Verweis
-    if (sicherung.hefteintrag_verweis) {
-      var heDiv = document.createElement('div');
-      heDiv.className = 'sicherung__hefteintrag';
-      var heH3 = document.createElement('h3');
-      heH3.textContent = 'Hefteintrag';
-      heDiv.appendChild(heH3);
-      var heP = document.createElement('p');
-      heP.innerHTML = sicherung.hefteintrag_verweis;
-      heDiv.appendChild(heP);
-      container.appendChild(heDiv);
+        // Legacy v3: Hefteintrag-Verweis
+        if (sicherung.hefteintrag_verweis) {
+          var heDiv = document.createElement('div');
+          heDiv.className = 'sicherung__hefteintrag';
+          var heH3 = document.createElement('h3');
+          heH3.textContent = 'Hefteintrag';
+          heDiv.appendChild(heH3);
+          var heP = document.createElement('p');
+          heP.innerHTML = sicherung.hefteintrag_verweis;
+          heDiv.appendChild(heP);
+          container.appendChild(heDiv);
+        }
+      }
     }
 
     // Zusammenfassung
@@ -1015,6 +1021,184 @@ var EscapeEngine = (function () {
       refP.appendChild(refEm);
       refDiv.appendChild(refP);
       container.appendChild(refDiv);
+    }
+  }
+
+  // ========================================================================
+  // 1f-scpl: Hefteintrag-Renderer (SCPL — CSS-basiert)
+  // ========================================================================
+
+  /**
+   * Rendert einen CSS-basierten Hefteintrag aus SCPL-Daten.
+   * @param {Object} sicherung – mappen[].sicherung (muss .tafelbild.scpl enthalten)
+   * @param {HTMLElement} container – Ziel-Container (mappe__sicherung)
+   * @private
+   */
+  function _renderHefteintragSCPL(sicherung, container) {
+    var tb = sicherung.tafelbild;
+    var scpl = tb.scpl;
+    var ARROW_SVG = '<svg viewBox="0 0 14 18" width="14" height="18"><path d="M7 1v14M2 11l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+    // Helper: highlight fachbegriffe in text
+    function highlightBegriffe(text, begriffe, colorClass) {
+      var result = text;
+      if (!begriffe) return result;
+      var arr = Array.isArray(begriffe) ? begriffe : [begriffe];
+      for (var i = 0; i < arr.length; i++) {
+        var escaped = arr[i].replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        result = result.replace(new RegExp(escaped, 'g'),
+          '<span class="hefteintrag__fachbegriff ' + colorClass + '">' + arr[i] + '</span>');
+      }
+      return result;
+    }
+
+    // Hefteintrag-Box
+    var box = document.createElement('div');
+    box.className = 'hefteintrag';
+
+    // Datum (dynamisch)
+    var datumDiv = document.createElement('div');
+    datumDiv.className = 'hefteintrag__datum';
+    var d = new Date();
+    var tag = String(d.getDate()).padStart(2, '0');
+    var monat = String(d.getMonth() + 1).padStart(2, '0');
+    datumDiv.textContent = tag + '.' + monat + '.' + d.getFullYear();
+    box.appendChild(datumDiv);
+
+    // Stundenfrage
+    if (tb.stundenfrage) {
+      var sfDiv = document.createElement('div');
+      sfDiv.className = 'hefteintrag__stundenfrage';
+      sfDiv.textContent = tb.stundenfrage;
+      box.appendChild(sfDiv);
+    }
+
+    // SITUATION
+    if (scpl.situation) {
+      var sitDiv = document.createElement('div');
+      sitDiv.className = 'hefteintrag__inhalt';
+      sitDiv.innerHTML = highlightBegriffe(
+        scpl.situation.kontextsatz,
+        scpl.situation.fachbegriffe,
+        'hefteintrag__fachbegriff--rot'
+      );
+      box.appendChild(sitDiv);
+    }
+
+    // COMPLICATION steps
+    if (scpl.complication) {
+      for (var ci = 0; ci < scpl.complication.length; ci++) {
+        var comp = scpl.complication[ci];
+
+        // Arrow
+        var arrowDiv = document.createElement('div');
+        arrowDiv.className = 'hefteintrag__pfeil';
+        arrowDiv.innerHTML = ARROW_SVG;
+        box.appendChild(arrowDiv);
+
+        // Step text
+        var stepDiv = document.createElement('div');
+        stepDiv.className = 'hefteintrag__inhalt';
+        stepDiv.innerHTML = highlightBegriffe(
+          comp.schritt,
+          comp.fachbegriff,
+          'hefteintrag__fachbegriff--blau'
+        );
+        box.appendChild(stepDiv);
+
+        // Darstellung (only gegenueberstellung for v3.1)
+        if (comp.darstellung && comp.darstellung.typ === 'gegenueberstellung') {
+          var gegDiv = document.createElement('div');
+          gegDiv.className = 'hefteintrag__gegenueber';
+
+          // Left column
+          var leftCol = document.createElement('div');
+          leftCol.className = 'hefteintrag__gegenueber-col';
+          var leftH4 = document.createElement('h4');
+          leftH4.textContent = comp.darstellung.links.titel;
+          leftCol.appendChild(leftH4);
+          var leftUl = document.createElement('ul');
+          for (var li = 0; li < comp.darstellung.links.punkte.length; li++) {
+            var leftLi = document.createElement('li');
+            leftLi.textContent = comp.darstellung.links.punkte[li];
+            leftUl.appendChild(leftLi);
+          }
+          leftCol.appendChild(leftUl);
+
+          // VS divider
+          var vsDiv = document.createElement('div');
+          vsDiv.className = 'hefteintrag__gegenueber-vs';
+          vsDiv.textContent = 'vs.';
+
+          // Right column
+          var rightCol = document.createElement('div');
+          rightCol.className = 'hefteintrag__gegenueber-col';
+          var rightH4 = document.createElement('h4');
+          rightH4.textContent = comp.darstellung.rechts.titel;
+          rightCol.appendChild(rightH4);
+          var rightUl = document.createElement('ul');
+          for (var ri = 0; ri < comp.darstellung.rechts.punkte.length; ri++) {
+            var rightLi = document.createElement('li');
+            rightLi.textContent = comp.darstellung.rechts.punkte[ri];
+            rightUl.appendChild(rightLi);
+          }
+          rightCol.appendChild(rightUl);
+
+          gegDiv.appendChild(leftCol);
+          gegDiv.appendChild(vsDiv);
+          gegDiv.appendChild(rightCol);
+          box.appendChild(gegDiv);
+        }
+      }
+    }
+
+    // PROBLEM
+    if (scpl.problem) {
+      var probArrow = document.createElement('div');
+      probArrow.className = 'hefteintrag__pfeil';
+      probArrow.innerHTML = ARROW_SVG;
+      box.appendChild(probArrow);
+
+      var probDiv = document.createElement('div');
+      probDiv.className = 'hefteintrag__inhalt';
+      probDiv.innerHTML = highlightBegriffe(
+        scpl.problem.satz,
+        scpl.problem.fachbegriff,
+        'hefteintrag__fachbegriff--gruen'
+      );
+      box.appendChild(probDiv);
+    }
+
+    // Spacer
+    var spacer = document.createElement('div');
+    spacer.className = 'hefteintrag__spacer';
+    box.appendChild(spacer);
+
+    // MERKBOX (Loesung)
+    if (scpl.loesung && scpl.loesung.length > 0) {
+      var merkbox = document.createElement('div');
+      merkbox.className = 'hefteintrag__merkbox';
+      for (var mi = 0; mi < scpl.loesung.length; mi++) {
+        var merkP = document.createElement('div');
+        merkP.className = 'hefteintrag__merkbox-text';
+        merkP.textContent = scpl.loesung[mi];
+        merkbox.appendChild(merkP);
+      }
+      box.appendChild(merkbox);
+
+      var spacerHalf = document.createElement('div');
+      spacerHalf.className = 'hefteintrag__spacer-half';
+      box.appendChild(spacerHalf);
+    }
+
+    container.appendChild(box);
+
+    // TRANSFER (outside the hefteintrag box)
+    if (tb.transfer && tb.transfer.frage) {
+      var transferDiv = document.createElement('div');
+      transferDiv.className = 'hefteintrag__transfer';
+      transferDiv.textContent = tb.transfer.frage;
+      container.appendChild(transferDiv);
     }
   }
 

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Patrick+Hand&display=swap');
+
 /* ==========================================================================
    theme-gpg.css – GPG-Archiv-/Akten-Theme
 
@@ -1095,6 +1097,208 @@ footer a:hover {
 }
 
 /* --------------------------------------------------------------------------
+   17c. v3.1: Hefteintrag (SCPL — CSS-basiert)
+   -------------------------------------------------------------------------- */
+
+:root {
+  --he-line-h: 32px;
+  --he-bg: #fefcf3;
+  --he-line: #c8d4e0;
+  --he-title: #1a365d;
+  --he-text: #2d3748;
+  --he-accent-red: #c53030;
+  --he-accent-blue: #2b6cb0;
+  --he-accent-green: #276749;
+  --he-arrow: #718096;
+  --he-merk-bg: #fffde7;
+  --he-merk-border: #f0c929;
+  --he-font-hand: 'Caveat', cursive;
+  --he-font-clean: 'Patrick Hand', cursive;
+  --he-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.hefteintrag {
+  background: var(--he-bg);
+  border: 1px solid #d4c5a0;
+  border-radius: 4px;
+  box-shadow: var(--he-shadow), inset 0 0 30px rgba(0,0,0,0.02);
+  padding: 0 2.5rem 0 3.5rem;
+  position: relative;
+  background-image:
+    repeating-linear-gradient(
+      transparent, transparent calc(var(--he-line-h) - 1px),
+      var(--he-line) calc(var(--he-line-h) - 1px), var(--he-line) var(--he-line-h)
+    );
+  background-size: 100% var(--he-line-h);
+  background-position: 0 0;
+}
+
+.hefteintrag::before {
+  content: '';
+  position: absolute;
+  left: 2.5rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #e88c8c;
+  opacity: 0.5;
+}
+
+.hefteintrag::after {
+  content: '';
+  position: absolute;
+  left: 0.8rem;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #bbb;
+  transform: translateY(-50%);
+}
+
+.hefteintrag__datum {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  font-family: var(--he-font-clean);
+  font-size: 0.9rem;
+  color: #a0aec0;
+  line-height: var(--he-line-h);
+  height: var(--he-line-h);
+}
+
+.hefteintrag__stundenfrage {
+  font-family: var(--he-font-hand);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--he-title);
+  text-decoration: underline;
+  text-decoration-color: var(--he-accent-blue);
+  text-underline-offset: 4px;
+  line-height: var(--he-line-h);
+  padding-top: var(--he-line-h);
+  min-height: calc(var(--he-line-h) * 2);
+}
+
+.hefteintrag__inhalt {
+  font-family: var(--he-font-clean);
+  font-size: 1.1rem;
+  color: var(--he-text);
+  line-height: var(--he-line-h);
+}
+
+.hefteintrag__fachbegriff {
+  font-family: var(--he-font-hand);
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.hefteintrag__fachbegriff--rot { color: var(--he-accent-red); }
+.hefteintrag__fachbegriff--blau { color: var(--he-accent-blue); }
+.hefteintrag__fachbegriff--gruen { color: var(--he-accent-green); }
+
+.hefteintrag__pfeil {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--he-arrow);
+  font-family: var(--he-font-clean);
+  font-size: 0.95rem;
+  line-height: var(--he-line-h);
+  height: var(--he-line-h);
+  padding-left: 0.2rem;
+}
+
+.hefteintrag__pfeil svg {
+  width: 14px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.hefteintrag__spacer {
+  height: var(--he-line-h);
+}
+
+.hefteintrag__spacer-half {
+  height: calc(var(--he-line-h) / 2);
+}
+
+.hefteintrag__gegenueber {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0;
+  line-height: var(--he-line-h);
+}
+
+.hefteintrag__gegenueber-col {
+  padding: 0 0.4rem;
+}
+
+.hefteintrag__gegenueber-col h4 {
+  font-family: var(--he-font-hand);
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  line-height: var(--he-line-h);
+}
+
+.hefteintrag__gegenueber-col:first-child h4 {
+  color: var(--he-accent-red);
+  text-decoration-color: var(--he-accent-red);
+}
+
+.hefteintrag__gegenueber-col:last-child h4 {
+  color: var(--he-accent-blue);
+  text-decoration-color: var(--he-accent-blue);
+}
+
+.hefteintrag__gegenueber-col ul {
+  list-style: none;
+  padding: 0;
+  font-family: var(--he-font-clean);
+  font-size: 1rem;
+  line-height: var(--he-line-h);
+}
+
+.hefteintrag__gegenueber-vs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--he-font-hand);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #a0aec0;
+  padding: 0 0.2rem;
+}
+
+.hefteintrag__merkbox {
+  background: var(--he-merk-bg);
+  border: 2px solid var(--he-merk-border);
+  border-radius: 4px;
+  padding: 0 0.8rem;
+  margin: 0;
+  line-height: var(--he-line-h);
+}
+
+.hefteintrag__merkbox-text {
+  font-family: var(--he-font-hand);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--he-title);
+  line-height: var(--he-line-h);
+}
+
+.hefteintrag__transfer {
+  font-family: var(--he-font-clean);
+  font-size: 1rem;
+  color: #718096;
+  font-style: italic;
+  margin-top: 0.5rem;
+  padding-left: 3.5rem;
+}
+
+/* --------------------------------------------------------------------------
    18. v1: Tafelbild CSS-Variablen
    -------------------------------------------------------------------------- */
 
@@ -1171,5 +1375,16 @@ footer a:hover {
   .sicherung__tafelbild svg {
     max-width: 100%;
     page-break-inside: avoid;
+  }
+
+  /* v3.1: Hefteintrag-Druck */
+  .hefteintrag {
+    box-shadow: none;
+    border: 1px solid #ccc;
+    page-break-inside: avoid;
+  }
+
+  .hefteintrag__transfer {
+    display: none;
   }
 }
