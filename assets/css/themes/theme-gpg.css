@@ -1415,7 +1415,7 @@ footer a:hover {
       var(--fb-grid) 1.5em
     );
   background-size: 1.5em 1.5em;
-  background-attachment: scroll;
+  background-attachment: local;
 }
 
 /* Lochrand oben */
@@ -1617,6 +1617,129 @@ footer a:hover {
   border: 2px dashed var(--fb-primary);
   font-family: var(--font-fragebogen);
   color: var(--fb-primary);
+}
+
+/* v3.5c: Tipp-Pillen + Akkordeon */
+.erarbeitung__aufgaben .aufgabe__tipps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: flex-start;
+  margin-top: var(--space-sm);
+  border-top: none;
+  padding-top: 0;
+}
+
+.erarbeitung__aufgaben .tipp {
+  display: inline-flex;
+  margin-bottom: 0;
+}
+
+.erarbeitung__aufgaben .tipp__trigger {
+  width: auto;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  border-radius: 12px;
+  background-color: var(--fb-hint);
+  min-height: auto;
+  min-width: auto;
+}
+
+.erarbeitung__aufgaben .tipp__trigger::before {
+  content: none;
+}
+
+.erarbeitung__aufgaben .tipp__trigger:hover {
+  background-color: #607d8b;
+}
+
+.erarbeitung__aufgaben .tipp__trigger--active {
+  background-color: var(--fb-primary);
+}
+
+.erarbeitung__aufgaben .tipp__trigger--used {
+  opacity: 0.8;
+}
+
+.aufgabe__tipp-inhalt-area {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-normal, 300ms ease), padding var(--transition-normal, 300ms ease);
+  background-color: rgba(120, 144, 156, 0.08);
+  border-radius: 0 0 var(--radius-sm, 4px) var(--radius-sm, 4px);
+  padding: 0 var(--space-md, 1rem);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-top: var(--space-xs, 0.25rem);
+}
+
+.aufgabe__tipp-inhalt-area.tipp__inhalt--visible {
+  max-height: 300px;
+  padding: var(--space-md, 1rem);
+}
+
+.tipp__material-verweis {
+  display: block;
+  margin-bottom: var(--space-xs, 0.25rem);
+  font-weight: 600;
+}
+
+.tipp__material-verweis a {
+  color: var(--fb-primary);
+  text-decoration: underline;
+}
+
+/* v3.5c: Loesungscode-Sektion */
+.loesungscode-sektion {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 2px solid var(--fb-primary);
+  text-align: center;
+}
+
+.loesungscode__titel {
+  font-family: var(--font-fragebogen);
+  font-size: 1.2rem;
+  color: var(--fb-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.loesungscode__hinweis {
+  font-family: var(--font-fragebogen);
+  font-size: 0.9rem;
+  color: var(--fb-hint);
+  margin-bottom: var(--space-md);
+}
+
+.code-buchstaben {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.code-buchstaben__feld {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  border: 2px solid var(--fb-primary);
+  border-radius: 4px;
+  font-family: var(--font-fragebogen);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ccc;
+  background: transparent;
+}
+
+.code-buchstaben__feld--geloest {
+  color: var(--fb-primary);
+  border-color: var(--fb-success);
+  background: rgba(56, 142, 60, 0.05);
 }
 
 /* --------------------------------------------------------------------------

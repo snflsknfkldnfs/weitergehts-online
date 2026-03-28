@@ -1608,6 +1608,10 @@ var EscapeEngine = (function () {
       var aufgabenFortschritt = _renderAufgabenFortschritt(aufgaben, progress);
       inner.appendChild(aufgabenFortschritt);
 
+      // v3.5c: Loesungscode-Sektion im Fragebogen
+      var loesungscode = _renderLoesungscodeSektion(aufgaben, progress, mappe);
+      inner.appendChild(loesungscode);
+
       aufgabenContainer.appendChild(inner);
     }
 
@@ -1684,12 +1688,6 @@ var EscapeEngine = (function () {
     header.innerHTML =
       '<span class="aufgabe__nummer">' + (index + 1) + '</span>';
     section.appendChild(header);
-
-    // 1h: material_referenz-Verweis
-    if (aufgabe.material_referenz && aufgabe.material_referenz.length > 0) {
-      var verweisP = _renderMaterialVerweis(aufgabe.material_referenz);
-      if (verweisP) section.appendChild(verweisP);
-    }
 
     // Frage
     var frage = document.createElement('p');
@@ -1808,7 +1806,7 @@ var EscapeEngine = (function () {
     optionenDiv.setAttribute('role', 'radiogroup');
     optionenDiv.setAttribute('aria-label', 'Antwortmöglichkeiten');
 
-    var optionen = aufgabe.optionen || [];
+    var optionen = Core.utils.shuffleArray(aufgabe.optionen || []);
     var gruppenName = 'mc-' + aufgabe.id;
 
     for (var i = 0; i < optionen.length; i++) {
@@ -2337,56 +2335,111 @@ var EscapeEngine = (function () {
    * @private
    */
   function _renderTipps(aufgabe, index) {
+    var wrapper = document.createDocumentFragment();
+
+    // v3.5c: Material-Referenz als impliziter Tipp 1
+    var tipps = (aufgabe.tipps || []).slice(); // Kopie
+    var hatMaterialRef = aufgabe.material_referenz && aufgabe.material_referenz.length > 0;
+    var materialRefText = '';
+    if (hatMaterialRef) {
+      var refs = aufgabe.material_referenz;
+      var linkTexts = [];
+      for (var r = 0; r < refs.length; r++) {
+        linkTexts.push(refs[r]);
+      }
+      materialRefText = 'Schau dir an: ' + linkTexts.join(', ') + '.';
+    }
+
+    // Wenn Material-Ref vorhanden aber keine Tipps: kuenstlichen Tipp erzeugen
+    if (hatMaterialRef && tipps.length === 0) {
+      tipps.push({ stufe: 1, text: materialRefText });
+      materialRefText = ''; // schon verarbeitet
+    }
+
+    if (tipps.length === 0) return wrapper;
+
+    // v3.5c: Button-Reihe (Pillen)
     var tippsDiv = document.createElement('div');
     tippsDiv.className = 'aufgabe__tipps';
 
-    var tipps = aufgabe.tipps || [];
+    // v3.5c: Shared content area fuer Akkordeon
+    var contentArea = document.createElement('div');
+    contentArea.className = 'aufgabe__tipp-inhalt-area';
+
+    var triggers = [];
 
     for (var i = 0; i < tipps.length; i++) {
       var tipp = tipps[i];
-      var tippEl = document.createElement('div');
-      tippEl.className = 'tipp tipp--stufe-' + tipp.stufe;
 
       var trigger = document.createElement('button');
       trigger.type = 'button';
       trigger.className = 'tipp__trigger';
       trigger.textContent = 'Tipp ' + tipp.stufe;
       trigger.setAttribute('aria-expanded', 'false');
-      trigger.setAttribute('aria-controls', aufgabe.id + '-tipp-' + tipp.stufe);
+      triggers.push(trigger);
 
-      var inhalt = document.createElement('div');
-      inhalt.className = 'tipp__inhalt';
-      inhalt.id = aufgabe.id + '-tipp-' + tipp.stufe;
-      inhalt.setAttribute('role', 'region');
-      inhalt.setAttribute('aria-label', 'Tipp Stufe ' + tipp.stufe);
-
-      // Closure fuer Event-Listener
-      (function (triggerBtn, inhaltDiv, stufe, aufgabeIndex) {
+      // Closure fuer Akkordeon-Event
+      (function (triggerBtn, stufe, aufgabeIndex, tippIndex) {
         triggerBtn.addEventListener('click', function () {
-          var isVisible = inhaltDiv.classList.contains('tipp__inhalt--visible');
-          if (isVisible) {
-            inhaltDiv.classList.remove('tipp__inhalt--visible');
-            triggerBtn.setAttribute('aria-expanded', 'false');
+          var isActive = triggerBtn.classList.contains('tipp__trigger--active');
+
+          // Alle Triggers zuruecksetzen
+          for (var t = 0; t < triggers.length; t++) {
+            triggers[t].classList.remove('tipp__trigger--active');
+            triggers[t].setAttribute('aria-expanded', 'false');
+          }
+
+          if (isActive) {
+            // Toggle: schliessen
+            contentArea.innerHTML = '';
+            contentArea.classList.remove('tipp__inhalt--visible');
           } else {
-            // Tipp-Text laden
+            // Oeffnen
             var tippText = showTipp(_state.mappeId, aufgabeIndex, stufe);
-            inhaltDiv.textContent = tippText;
-            inhaltDiv.classList.add('tipp__inhalt--visible');
-            triggerBtn.setAttribute('aria-expanded', 'true');
+            // v3.5c: Material-Ref in Tipp 1 prependen
+            if (tippIndex === 0 && materialRefText) {
+              tippText = materialRefText + ' ' + tippText;
+            }
+            // Material-Links als klickbare Anker rendern
+            if (tippIndex === 0 && hatMaterialRef) {
+              contentArea.innerHTML = '';
+              var refs = aufgabe.material_referenz;
+              var verweisSpan = document.createElement('span');
+              verweisSpan.className = 'tipp__material-verweis';
+              verweisSpan.textContent = 'Schau dir an: ';
+              for (var m = 0; m < refs.length; m++) {
+                var link = document.createElement('a');
+                link.href = '#' + refs[m];
+                link.textContent = refs[m].replace('mat-', 'M').replace(/-/g, '.');
+                verweisSpan.appendChild(link);
+                if (m < refs.length - 1) verweisSpan.appendChild(document.createTextNode(', '));
+              }
+              verweisSpan.appendChild(document.createTextNode('. '));
+              contentArea.appendChild(verweisSpan);
+              // Rest des Tipp-Texts
+              var restText = showTipp(_state.mappeId, aufgabeIndex, stufe);
+              if (restText && restText !== 'Kein Tipp-Text vorhanden.') {
+                contentArea.appendChild(document.createTextNode(restText));
+              }
+            } else {
+              contentArea.textContent = tippText;
+            }
+            contentArea.classList.add('tipp__inhalt--visible');
+            triggerBtn.classList.add('tipp__trigger--active');
             triggerBtn.classList.add('tipp__trigger--used');
-            // Fokus auf Tipp-Inhalt (Barrierefreiheit)
-            inhaltDiv.setAttribute('tabindex', '-1');
-            inhaltDiv.focus();
+            triggerBtn.setAttribute('aria-expanded', 'true');
+            contentArea.setAttribute('tabindex', '-1');
+            contentArea.focus();
           }
         });
-      })(trigger, inhalt, tipp.stufe, index);
+      })(trigger, tipp.stufe, index, i);
 
-      tippEl.appendChild(trigger);
-      tippEl.appendChild(inhalt);
-      tippsDiv.appendChild(tippEl);
+      tippsDiv.appendChild(trigger);
     }
 
-    return tippsDiv;
+    wrapper.appendChild(tippsDiv);
+    wrapper.appendChild(contentArea);
+    return wrapper;
   }
 
   // ========================================================================
@@ -2536,6 +2589,67 @@ var EscapeEngine = (function () {
     if (funktion && materialien[currentPos - 1]) {
       funktion.textContent = materialien[currentPos - 1].didaktische_funktion || '';
     }
+  }
+
+  // ========================================================================
+  // v3.5c: Loesungscode-Sektion
+  // ========================================================================
+
+  /**
+   * Rendert die Loesungscode-Sektion am Ende des Arbeitsblatts.
+   * Zeigt Buchstaben-Kaestchen wenn freischalt_buchstabe vorhanden, sonst prominent Code-Eingabe.
+   * @param {Array} aufgaben
+   * @param {Object} progress
+   * @param {Object} mappe
+   * @returns {HTMLElement}
+   * @private
+   */
+  function _renderLoesungscodeSektion(aufgaben, progress, mappe) {
+    var container = document.createElement('div');
+    container.className = 'loesungscode-sektion';
+    container.id = 'loesungscode-sektion';
+
+    var titel = document.createElement('h4');
+    titel.className = 'loesungscode__titel';
+    titel.textContent = 'Lösungswort';
+    container.appendChild(titel);
+
+    // Pruefen ob freischalt_buchstabe vorhanden
+    var hatBuchstaben = false;
+    for (var i = 0; i < aufgaben.length; i++) {
+      if (aufgaben[i].freischalt_buchstabe) {
+        hatBuchstaben = true;
+        break;
+      }
+    }
+
+    if (hatBuchstaben) {
+      // Buchstaben-Kaestchen
+      var kaestchen = document.createElement('div');
+      kaestchen.className = 'code-buchstaben';
+      kaestchen.id = 'code-buchstaben';
+      for (var i = 0; i < aufgaben.length; i++) {
+        var feld = document.createElement('span');
+        feld.className = 'code-buchstaben__feld';
+        feld.setAttribute('data-aufgabe-index', i);
+        if (progress.aufgaben && progress.aufgaben[i] && aufgaben[i].freischalt_buchstabe) {
+          feld.textContent = aufgaben[i].freischalt_buchstabe;
+          feld.classList.add('code-buchstaben__feld--geloest');
+        } else {
+          feld.textContent = '_';
+        }
+        kaestchen.appendChild(feld);
+      }
+      container.appendChild(kaestchen);
+    } else {
+      // Hinweistext wenn keine Buchstaben
+      var hinweis = document.createElement('p');
+      hinweis.className = 'loesungscode__hinweis';
+      hinweis.textContent = 'Löse alle Aufgaben und setze den Freischalt-Code zusammen!';
+      container.appendChild(hinweis);
+    }
+
+    return container;
   }
 
   // ========================================================================
