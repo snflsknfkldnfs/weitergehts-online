@@ -626,12 +626,6 @@ var EscapeEngine = (function () {
         ueberleitungText.className = 'material-ueberleitung__text';
         ueberleitungText.textContent = mat.ueberleitung_von;
         ueberleitungDiv.appendChild(ueberleitungText);
-        if (mat.didaktische_funktion) {
-          var funktionBadge = document.createElement('span');
-          funktionBadge.className = 'material-ueberleitung__funktion';
-          funktionBadge.textContent = mat.didaktische_funktion;
-          ueberleitungDiv.appendChild(funktionBadge);
-        }
         frag.appendChild(ueberleitungDiv);
       }
 
@@ -667,6 +661,13 @@ var EscapeEngine = (function () {
         el.id = mat.id;
       }
       if (el) {
+        // v3.5b: Material-Flag (M1, M2, ...)
+        var flagPos = mat.position !== undefined ? mat.position : (i + 1);
+        var flag = document.createElement('span');
+        flag.className = 'material__flag';
+        flag.textContent = 'M' + flagPos;
+        el.insertBefore(flag, el.firstChild);
+
         // v3.3: Sequenzierungs-Attribute
         if (mat.position !== undefined) {
           el.setAttribute('data-position', mat.position);
@@ -1566,9 +1567,6 @@ var EscapeEngine = (function () {
     var materialContainer = document.getElementById('material-container');
     if (materialContainer && mappe.materialien) {
       materialContainer.innerHTML = '';
-      // v3.5: Material-Fortschritt (Dots) vor Materialien
-      var materialFortschritt = _renderMaterialFortschritt(mappe.materialien);
-      materialContainer.appendChild(materialFortschritt);
       var materialienFrag = _renderMaterialien(mappe.materialien);
       materialContainer.appendChild(materialienFrag);
     }
@@ -1615,19 +1613,19 @@ var EscapeEngine = (function () {
 
     // Sicherung rendern (explizit hidden, bis Code-Reveal)
     var sicherungContainer = document.getElementById('sicherung-container');
-    if (sicherungContainer && mappe.sicherung) {
-      sicherungContainer.innerHTML = '';
+    if (sicherungContainer) {
+      // v3.5b: Immer zuerst verstecken, unabhaengig vom Zustand
       sicherungContainer.style.display = 'none';
-      _renderSicherung(mappe.sicherung, sicherungContainer);
+      if (mappe.sicherung) {
+        sicherungContainer.innerHTML = '';
+        _renderSicherung(mappe.sicherung, sicherungContainer);
+      }
+      // Bei Reload: Sicherung wieder sichtbar wenn bereits abgeschlossen
+      if (progress.abgeschlossen) {
+        sicherungContainer.style.display = '';
+      }
     }
 
-    // Bei Reload: Sicherung wieder sichtbar wenn bereits abgeschlossen
-    if (sicherungContainer && progress.abgeschlossen) {
-      sicherungContainer.style.display = '';
-    }
-
-    // v3.5: IntersectionObserver für Material-Fortschritt
-    _initMaterialObserver(mappe.materialien);
   }
 
   // ========================================================================
@@ -1684,8 +1682,7 @@ var EscapeEngine = (function () {
     var header = document.createElement('div');
     header.className = 'aufgabe__header';
     header.innerHTML =
-      '<span class="aufgabe__nummer">Aufgabe ' + (index + 1) + ' von ' + total + '</span>' +
-      '<span class="aufgabe__typ-badge">' + Core.utils.sanitizeHTML(aufgabe.typ) + '</span>';
+      '<span class="aufgabe__nummer">' + (index + 1) + '</span>';
     section.appendChild(header);
 
     // 1h: material_referenz-Verweis

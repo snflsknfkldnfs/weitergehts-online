@@ -944,6 +944,8 @@ footer a:hover {
   }
   .erarbeitung__materialien {
     min-width: 0;
+    max-width: 700px;
+    margin-inline: auto;
   }
   .erarbeitung__aufgaben {
     position: sticky;
@@ -966,15 +968,37 @@ footer a:hover {
    -------------------------------------------------------------------------- */
 
 /* Basis */
-.material { margin-bottom: var(--space-md); padding: var(--space-md); border-radius: var(--radius-md); }
+.material { margin-bottom: var(--space-md); padding: var(--space-md); border-radius: var(--radius-md); position: relative; }
 .material__titel { margin-top: 0; }
 .material__quelle { font-size: 0.85em; color: var(--color-muted); }
+
+/* v3.5b: Material-Flag (M1, M2, ...) */
+.material__flag {
+  position: absolute;
+  top: -8px;
+  left: 12px;
+  background: var(--color-primary);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 0 0 4px 4px;
+  letter-spacing: 0.05em;
+  line-height: 1.3;
+  min-height: auto;
+  min-width: auto;
+}
 
 /* Darstellungstext */
 .material--darstellung { background: var(--color-surface); border-left: 4px solid var(--color-primary); }
 
 /* Quellentext */
 .material--quelle { font-style: italic; border-left: 4px solid var(--color-secondary); padding-left: var(--space-lg); }
+
+/* v3.5b: Blocksatz fuer Textmaterialien */
+.material--darstellung .material__inhalt,
+.material--quelle .material__inhalt,
+.material--tagebuch .tagebuch__text { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
 .material--quelle cite { display: block; margin-top: var(--space-sm); font-style: normal; }
 
 /* Bildquelle */
@@ -1367,19 +1391,6 @@ footer a:hover {
   border-radius: 4px;
 }
 
-.material-ueberleitung__funktion {
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--color-secondary);
-  margin-top: var(--space-sm);
-  padding: 2px 8px;
-  border: 1px solid var(--color-secondary);
-  border-radius: 3px;
-}
-
 /* --------------------------------------------------------------------------
    19c. v3.5: Fragebogen — Notizbuch-Stil (Arbeitsblatt-Metapher)
    -------------------------------------------------------------------------- */
@@ -1392,19 +1403,19 @@ footer a:hover {
     repeating-linear-gradient(
       0deg,
       transparent,
-      transparent 23px,
-      var(--fb-grid) 23px,
-      var(--fb-grid) 24px
+      transparent calc(1.5em - 1px),
+      var(--fb-grid) calc(1.5em - 1px),
+      var(--fb-grid) 1.5em
     ),
     repeating-linear-gradient(
       90deg,
       transparent,
-      transparent 23px,
-      var(--fb-grid) 23px,
-      var(--fb-grid) 24px
+      transparent calc(1.5em - 1px),
+      var(--fb-grid) calc(1.5em - 1px),
+      var(--fb-grid) 1.5em
     );
-  background-size: 24px 24px;
-  background-position: 12px 12px;
+  background-size: 1.5em 1.5em;
+  background-attachment: scroll;
 }
 
 /* Lochrand oben */
@@ -1446,6 +1457,10 @@ footer a:hover {
 /* Fragebogen Inner (Aufgaben-Bereich) */
 .fragebogen__inner {
   padding: var(--space-md) var(--space-lg);
+  font-size: 1rem;
+  line-height: 1.5em;
+  position: relative;
+  z-index: 1;
 }
 
 /* Aufgaben im Notizbuch-Stil */
@@ -1605,60 +1620,6 @@ footer a:hover {
 }
 
 /* --------------------------------------------------------------------------
-   19d. v3.5: Material-Fortschritt (Dots)
-   -------------------------------------------------------------------------- */
-
-.material-fortschritt {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  margin-bottom: var(--space-lg);
-  padding: var(--space-sm) var(--space-md);
-  background: var(--color-surface);
-  border-radius: var(--radius-md);
-}
-
-.material-fortschritt__text {
-  font-size: 0.85rem;
-  color: var(--color-muted);
-  white-space: nowrap;
-}
-
-.material-fortschritt__dots {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-}
-
-.material-fortschritt__dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--color-border);
-  transition: all 200ms ease;
-}
-
-.material-fortschritt__dot--gesehen {
-  background: var(--color-primary);
-}
-
-.material-fortschritt__dot--aktuell {
-  background: var(--color-secondary);
-  width: 14px;
-  height: 14px;
-  margin-top: -2px;
-  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.3);
-}
-
-.material-fortschritt__funktion {
-  font-size: 0.75rem;
-  color: var(--color-secondary);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-/* --------------------------------------------------------------------------
    19e. v3.5: Aufgaben-Fortschritt (Dots statt Balken)
    -------------------------------------------------------------------------- */
 
@@ -1779,8 +1740,11 @@ footer a:hover {
     display: none !important;
   }
 
-  .material-fortschritt,
   .aufgaben-fortschritt {
+    display: none !important;
+  }
+
+  .material__flag {
     display: none !important;
   }
 }
