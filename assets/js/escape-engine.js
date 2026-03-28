@@ -579,17 +579,52 @@ var EscapeEngine = (function () {
   // ========================================================================
 
   /**
+   * Sortiert Materialien nach position-Feld (aufsteigend).
+   * Fallback: Array-Index (Rückwärtskompatibilität für Mappen ohne position).
+   * @param {Array} materialien
+   * @returns {Array} Sortierte Kopie (Original unverändert)
+   * @private
+   */
+  function _sortMaterialienByPosition(materialien) {
+    var sorted = materialien.slice();
+    var hasPosition = false;
+    for (var i = 0; i < sorted.length; i++) {
+      if (sorted[i].position !== undefined && sorted[i].position !== null) {
+        hasPosition = true;
+        break;
+      }
+    }
+    if (hasPosition) {
+      sorted.sort(function(a, b) {
+        var posA = (a.position !== undefined && a.position !== null) ? a.position : 9999;
+        var posB = (b.position !== undefined && b.position !== null) ? b.position : 9999;
+        return posA - posB;
+      });
+    }
+    return sorted;
+  }
+
+  /**
    * Rendert alle Materialien einer Mappe.
    * @param {Array} materialien – mappen[].materialien[]
    * @returns {DocumentFragment}
    * @private
    */
   function _renderMaterialien(materialien) {
+    materialien = _sortMaterialienByPosition(materialien);
     var frag = document.createDocumentFragment();
 
     for (var i = 0; i < materialien.length; i++) {
       var mat = materialien[i];
       var el = null;
+
+      // v3.3: Überleitung vor Material (außer Position 1)
+      if (i > 0 && mat.ueberleitung_von) {
+        var ueberleitungDiv = document.createElement('div');
+        ueberleitungDiv.className = 'material-ueberleitung';
+        ueberleitungDiv.textContent = mat.ueberleitung_von;
+        frag.appendChild(ueberleitungDiv);
+      }
 
       switch (mat.typ) {
         case 'darstellungstext':
@@ -623,6 +658,13 @@ var EscapeEngine = (function () {
         el.id = mat.id;
       }
       if (el) {
+        // v3.3: Sequenzierungs-Attribute
+        if (mat.position !== undefined) {
+          el.setAttribute('data-position', mat.position);
+        }
+        if (mat.didaktische_funktion) {
+          el.setAttribute('data-funktion', mat.didaktische_funktion);
+        }
         frag.appendChild(el);
       }
     }

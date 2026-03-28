@@ -1323,6 +1323,19 @@ footer a:hover {
 .aufgabe__material-verweis a:hover { color: var(--color-primary-light); }
 
 /* --------------------------------------------------------------------------
+   19b. v3.3: Material-Überleitungen
+   -------------------------------------------------------------------------- */
+
+.material-ueberleitung {
+  margin: 1.5rem 0;
+  padding: 0.75rem 1rem;
+  font-style: italic;
+  color: var(--color-muted, #666);
+  border-left: 3px solid var(--color-accent, #c9a96e);
+  background: var(--color-surface-alt, rgba(201, 169, 110, 0.05));
+}
+
+/* --------------------------------------------------------------------------
    20. Print-Stylesheet (Lehrkraft-Seite)
    -------------------------------------------------------------------------- */
 

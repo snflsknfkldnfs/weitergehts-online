@@ -25,7 +25,15 @@
           "titel": "",
           "inhalt": "",
           "quelle": "",
-          "lizenz": ""
+          "lizenz": "",
+          "position": 1,
+          "didaktische_funktion": "einstieg",
+          "voraussetzung": [],
+          "ueberleitung_von": "",
+          "sequenz_kontext": {
+            "vorher": null,
+            "nachher": {"id": "", "typ": "", "kerninhalt": ""}
+          }
         }
       ],
       "aufgaben": [
@@ -46,14 +54,30 @@
       ],
       "sicherung": {
         "tafelbild": {
-          "knoten": [
-            {
-              "id": "",
-              "text": "",
-              "typ": "",
-              "merksatz": ""
-            }
-          ],
+          "stundenfrage": "",
+          "ordnungsmuster": "",
+          "scpl": {
+            "situation": {
+              "kontextsatz": "",
+              "fachbegriffe": []
+            },
+            "complication": [
+              {
+                "schritt": "",
+                "fachbegriff": "",
+                "darstellung": null
+              }
+            ],
+            "problem": {
+              "satz": "",
+              "fachbegriff": ""
+            },
+            "loesung": []
+          },
+          "transfer": {
+            "frage": ""
+          },
+          "knoten": [],
           "verbindungen": [],
           "voraussetzungen": [],
           "kernerkenntnisse": []
