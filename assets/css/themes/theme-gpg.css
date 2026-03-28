@@ -1001,6 +1001,100 @@ footer a:hover {
 .sicherung__ueberleitung { font-style: italic; color: var(--color-muted); }
 
 /* --------------------------------------------------------------------------
+   17b. v3: Tafelbild-Erweiterungen (Merksaetze, Kernerkenntnisse, Hefteintrag)
+   -------------------------------------------------------------------------- */
+
+.sicherung__merksaetze {
+  margin-top: var(--space-lg);
+  padding: var(--space-md);
+  background-color: rgba(37, 99, 235, 0.05);
+  border-left: 4px solid var(--tb-kernbegriff, #2563eb);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.sicherung__merksaetze h3 {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.sicherung__merksaetze ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sicherung__merksaetze li {
+  padding: var(--space-xs) 0;
+  border-bottom: 1px solid var(--color-border);
+  line-height: 1.6;
+}
+
+.sicherung__merksaetze li:last-child {
+  border-bottom: none;
+}
+
+.sicherung__kernerkenntnisse {
+  margin-top: var(--space-lg);
+  padding: var(--space-md);
+  background-color: rgba(5, 150, 105, 0.05);
+  border-left: 4px solid var(--color-success);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.sicherung__kernerkenntnisse h3 {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.sicherung__kernerkenntnisse ul {
+  list-style: disc;
+  padding-left: var(--space-lg);
+}
+
+.sicherung__kernerkenntnisse li {
+  padding: var(--space-xs) 0;
+  line-height: 1.6;
+}
+
+.sicherung__hefteintrag {
+  margin-top: var(--space-lg);
+  padding: var(--space-lg);
+  background-color: #fff;
+  border: 2px solid var(--color-secondary);
+  border-radius: var(--radius-md);
+  position: relative;
+}
+
+.sicherung__hefteintrag::before {
+  content: "📓";
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  font-size: var(--text-xl);
+}
+
+.sicherung__hefteintrag h3 {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.sicherung__hefteintrag p {
+  line-height: 1.8;
+  font-size: var(--text-base);
+}
+
+.sicherung__reflexionsimpuls {
+  margin-top: var(--space-md);
+  font-size: var(--text-base);
+  color: var(--color-muted);
+}
+
+/* --------------------------------------------------------------------------
    18. v1: Tafelbild CSS-Variablen
    -------------------------------------------------------------------------- */
 
@@ -1051,5 +1145,31 @@ footer a:hover {
   .tipp__inhalt {
     max-height: none;
     padding: var(--space-sm);
+  }
+
+  /* v3: Hefteintrag-Druck */
+  .sicherung__hefteintrag {
+    border: 2px solid #000;
+    padding: 1rem;
+    page-break-inside: avoid;
+  }
+
+  .sicherung__hefteintrag::before {
+    display: none;
+  }
+
+  .sicherung__merksaetze {
+    border-left: 3px solid #333;
+    page-break-inside: avoid;
+  }
+
+  .sicherung__kernerkenntnisse {
+    border-left: 3px solid #333;
+    page-break-inside: avoid;
+  }
+
+  .sicherung__tafelbild svg {
+    max-width: 100%;
+    page-break-inside: avoid;
   }
 }

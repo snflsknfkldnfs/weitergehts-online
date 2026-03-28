@@ -1,10 +1,65 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-03-17 (Evaluation v1-Testmappe + Agenten-Instruktionen verschaerft)
-**Aktuelle Phase:** Phase 3.1 → 3.2 Uebergang (Infrastruktur validiert, Prozessoptimierung laeuft)
-**Letzter Arbeitsschritt:** Docs-Konsolidierung (Projekt_Website/ → docs/), Browser-Test + Lehrkraft-Evaluation der v1-Testmappe (23 Findings), AGENT_MATERIAL.md + AGENT_RAETSEL.md mit Qualitaetsspezifikationen pro Materialtyp verschaerft.
-**Naechster Schritt:** Engine-Quick-Fixes (E6 Sicherung-Hidden, E8 Header, E9 Dropdown-Duplikate). Dann MCP-Integration (P1) recherchieren. Offene Doc-Updates: AGENT_INHALT.md, AGENT_DIDAKTIK.md, Checkliste_Interaktive_Materialien.md.
-**Offene Blocker:** Keine
+**Letzte Aktualisierung:** 2026-03-28 (Phase v3-4: Uebergabe-Prompt erstellt)
+**Aktuelle Phase:** v3-Umsetzung → **Phase v3-4 (Engine-Erweiterung) — Uebergabe-Prompt an Claude Code bereit**
+**Letzter Arbeitsschritt:** Phase v3-4 Uebergabe-Prompt formuliert: 4 Aenderungspakete (escape-engine.js: 4 Render-Bloecke fuer merksatz/kernerkenntnisse/hefteintrag/reflexionsimpuls; theme-gpg.css: Bildschirm + Print-Styles; data.json Template: Schema-Erweiterung; Testdaten: Mappe 1 v3-Felder). Abwaertskompatibilitaet sichergestellt (alle neuen Felder optional).
+**Naechster Schritt:** Uebergabe-Prompt in Claude Code ausfuehren (`docs/uebergabe/UEBERGABE_v3-4_ENGINE_ERWEITERUNG.md`). Nach Implementierung: Phase v3-5 (Validierung an Mappe 1).
+**Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet.
+
+---
+
+## Architektur-Entscheidung: Prozessredesign v1 → v2 (2026-03-18)
+
+### Ausloeser
+
+Testmappe-v1.1-Versuch (Mappe 1 "Pulverfass Europa" mit neuen W-1 bis W-8 Workflows) abgebrochen nach Erkennung von 3 strukturellen Problemen:
+
+1. **Token-Ineffizienz:** Recherche (WebSearch, markdownify) und Generierung in einem Cowork-Durchlauf uebersteigt Kontextlimits
+2. **Fehlende inhaltliche Zielklarheit:** Kein kohaerentes Inhaltsgeruest zwischen DIDAKTIK-Rahmen und MATERIAL-Design — Tafelbild entsteht erst waehrend Design (Henne-Ei)
+3. **Blinde Quellenrecherche:** wikimedia_search_images ohne Inhaltsanker liefert keine brauchbaren Ergebnisse
+
+### Kerndiagnose
+
+Vermischung der Agenten-Zustaendigkeiten: INHALT liefert Kernaussagen (Stichpunkte), DIDAKTIK liefert formalen Rahmen (KE-Matrix), aber niemand erzeugt ein **narrativ kohaerentes, schulernahes Inhaltsgeruest**. MATERIAL springt direkt in Materialtyp-Auswahl ohne narratives Rueckgrat.
+
+### Entschiedene Aenderungen
+
+| Aenderung | Alt (v1) | Neu (v2) |
+|---|---|---|
+| Inhaltsquelle | WebSearch + markdownify (blind) | Wikipedia-MCP als primaerer Anker (`get_article` → `get_sections` → `get_links`) |
+| Inhaltsgeruest | Inhalts-MDs (Kernaussagen-Listen) | **SKRIPT-Artefakt**: linearer, schulernaher Text wie Jugendsachbuch |
+| Neuer Agent | — | **AGENT_SKRIPT** (eigenstaendig, nach AGENT_INHALT) |
+| Agenten-Reihenfolge | DIDAKTIK → INHALT parallel | DIDAKTIK → INHALT → SKRIPT (sequentiell) |
+| Chunking | Implizit in Ebene 0 | Explizit durch AGENT_SKRIPT, entlang DIDAKTIK-Struktur |
+| Materialproduktion | AGENT_MATERIAL monolithisch | materialerstellung-skill mit Subagenten pro Materialtyp (Scope offen) |
+| Mappen-Erstellung | Alle Mappen in einem Durchlauf | Sequentiell: Mappe N fertig + validiert → Mappe N+1 |
+| Bildrecherche | wikimedia blind | Wikipedia-Bilder als Anker → gezielte wikimedia-Suche |
+
+### Neue Agenten-Sequenz (v2)
+
+```
+Phase 0: AGENT_DIDAKTIK → AGENT_INHALT → AGENT_SKRIPT
+         Output: Gechunktes Skript (1 Chunk pro Mappe, inkl. Tafelbild-Entwurf)
+         User-Validierung: PFLICHT
+
+Phase 1: Pro Mappe sequentiell:
+         AGENT_MATERIAL (Design) → User-Validierung
+         → materialerstellung-skill (Subagenten) → AGENT_RAETSEL
+         → AGENT_TECHNIK + DESIGN → User-Validierung
+         → Naechste Mappe
+```
+
+### Offene Entscheidungen
+
+- materialerstellung-skill: Claude Code Uebergabe-Prompt oder eigenstaendiger Cowork-Skill?
+- Wird spaeter evaluiert basierend auf erstem Skript-Durchlauf
+
+### Referenz-Dokumente
+
+- Flowcharts: `docs/architektur/flowchart-status-quo.mermaid`, `docs/architektur/flowchart-neuausrichtung.mermaid`
+- Workflow v2: `docs/architektur/WORKFLOW_v2.md` (kanonisch, mit MATERIAL_GERUEST-Template, Fallback-Pfad, Sandwich-Pruefpunkt)
+- Audit-Ergebnis: `docs/analyse/AUDIT_PROZESSREDESIGN_V2_ERGEBNIS.md`
+- Neuer Agent: `docs/agents/AGENT_SKRIPT.md`
 
 ---
 

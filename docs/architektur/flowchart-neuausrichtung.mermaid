@@ -1,0 +1,158 @@
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#1e40af', 'primaryTextColor': '#fff', 'primaryBorderColor': '#1e3a8a', 'lineColor': '#475569', 'secondaryColor': '#7c3aed', 'tertiaryColor': '#059669', 'noteTextColor': '#1e293b', 'noteBkgColor': '#fef3c7'}}}%%
+flowchart TB
+    subgraph LEGEND["LEGENDE"]
+        direction LR
+        L1["🟦 Cowork"]
+        L2["🟪 Claude Code"]
+        L3["🟩 User-Review / Ext. Audit"]
+        L4["🟧 Artefakt"]
+        L5["🔴 NEU vs Status Quo"]
+    end
+
+    subgraph P0["PHASE 0: INHALTSGERUEST (einmalig pro Game)"]
+        direction TB
+
+        INPUT["📥 User-Input:\nThema + Lehrplanbezug +\nJahrgangsstufe"]
+
+        subgraph WIKI_RESEARCH["🔷 AGENT_INHALT (erweitert) — Wikipedia-Recherche"]
+            direction TB
+            WP1["wikipedia: get_article\n(Hauptartikel zum Thema)"]
+            WP2["wikipedia: get_sections\n→ Struktur erfassen"]
+            WP3["wikipedia: get_links\n→ Vertiefungsartikel\nidentifizieren"]
+            WP4["wikipedia: get_summary\n(pro Unterartikel)"]
+            WP5["📄 Strukturierte\nInhaltsbasis\n(Fakten, Chronologie,\nAkteure, Begriffe)"]
+            WP1 --> WP2 --> WP3 --> WP4 --> WP5
+        end
+
+        DIDAKTIK_NEW["🔷 AGENT_DIDAKTIK (erweitert)\n━━━━━━━━━━━━━\n1. KE-Matrix (wie bisher)\n2. 🔴 NEU: SKRIPT schreiben\n   = linearer, schulernaher Text\n   wie Jugendsachbuch\n   (narrativ kohaerentes\n   Inhaltsgeruest)"]
+
+        SKRIPT["📄🔴 SKRIPT-ARTEFAKT\n━━━━━━━━━━━━━\nLinearer, schulernaher Text\ndes gesamten Game-Inhalts\n(wie Jugendsachbuch-Kapitel)\nInkl. Fachbegriffe, Chronologie,\nPersonen, Zusammenhaenge"]
+
+        INPUT --> WIKI_RESEARCH
+        WP5 --> DIDAKTIK_NEW
+        INPUT --> DIDAKTIK_NEW
+        DIDAKTIK_NEW --> SKRIPT
+    end
+
+    AUDIT1["✅🔴 EXTERNER AUDIT 1\nLehrkraft prueft:\n- Fachwiss. Korrektheit\n- Didaktische Reduktion\n- Vollstaendigkeit"]
+    SKRIPT --> AUDIT1
+
+    subgraph P1["PHASE 1: CHUNKING + MAPPEN-GERUEST (einmalig)"]
+        direction TB
+
+        CHUNKING["🔷🔴 AGENT_DIDAKTIK\n(Chunking-Kompetenz)\n━━━━━━━━━━━━━\nSkript in Mappen aufteilen:\n- Jede Mappe = 1 Tafelbild-Ziel\n- Sandwich-Methode:\n  Erkenntnisse Mappe N\n  → Einstieg Mappe N+1\n- Ueberlappungszonen\n  explizit markieren"]
+
+        CHUNKS["📄🔴 GECHUNKTES SKRIPT\n━━━━━━━━━━━━━\nPro Mappe:\n- Skript-Abschnitt\n- Tafelbild-Entwurf\n- Sandwich-Uebergang\n- KE-Zuordnung"]
+
+        MAT_GERUEST["🔷 AGENT_MATERIAL\n(Design-Modus, erweitert)\n━━━━━━━━━━━━━\nPro Mappe evaluieren:\n- Welche Materialformen passen?\n  (z.B. Leitartikel, Tagebuch,\n   Statistik, Karte...)\n- Material-Entwuerfe skizzieren\n- Aufgaben-Typen vorschlagen"]
+
+        BLUEPRINT_GESAMT["📄🔴 MATERIAL-GERUEST\n(Gesamtueberblick)\n━━━━━━━━━━━━━\nPro Mappe: Skript-Chunk\n+ Materialtyp-Zuordnung\n+ Tafelbild-Entwurf\n+ Aufgaben-Skizze"]
+
+        CHUNKING --> CHUNKS
+        CHUNKS --> MAT_GERUEST
+        MAT_GERUEST --> BLUEPRINT_GESAMT
+    end
+
+    AUDIT1 --> P1
+
+    AUDIT2["✅🔴 USER-VALIDIERUNG\nGesamtueberblick:\n- Mappen-Aufteilung ok?\n- Materialformen passend?\n- Progression stimmig?"]
+    BLUEPRINT_GESAMT --> AUDIT2
+
+    subgraph P2["PHASE 2: MAPPEN-PRODUKTION (sequentiell, pro Mappe)"]
+        direction TB
+
+        MAPPE_START["📄 Chunk Mappe N\naus Material-Geruest"]
+
+        subgraph MATERIAL_SKILL["🟪🔴 materialerstellung-skill (Claude Code)"]
+            direction TB
+            SKILL_DISPATCH["AGENT_MATERIAL\n(Produktions-Modus)\n━━━━━━━━━━━━━\nDispatcht Chunk\nan Subagenten"]
+
+            subgraph SUBAGENTEN["Materialtyp-Subagenten (parallel wo moeglich)"]
+                direction LR
+                SUB_TEXT["📝 Text-Agent\nW-1: darstellungstext\nW-7: tagebuch"]
+                SUB_QUELLE["📜 Quellen-Agent\nW-2: quellentext\n(wikipedia: get_article\n→ markdownify)"]
+                SUB_BILD["🖼️ Bild-Agent\nW-3: bildquelle\nW-4: karte\n(wikipedia-Bilder zuerst\n→ wikimedia → Canva)"]
+                SUB_STRUKTUR["📊 Struktur-Agent\nW-5: zeitleiste (Mermaid)\nW-6: statistik (QuickChart)"]
+                SUB_TAFEL["📋 Tafelbild-Agent\nW-8: Tafelbild\n(Mermaid-Validierung)"]
+            end
+
+            MAT_ASSEMBLY["📄 material-mappe-N.json\n(alle Materialien assembliert)"]
+
+            SKILL_DISPATCH --> SUBAGENTEN
+            SUBAGENTEN --> MAT_ASSEMBLY
+        end
+
+        RAETSEL_NEW["🟪 AGENT_RAETSEL\n━━━━━━━━━━━━━\nAufgaben zu den konkreten\nMaterialien formulieren\n(material_referenz auf\ntatsaechlich existierende\nMaterialien)"]
+
+        DATA_N["📄 data.json Mappe N\n(materialien[] + aufgaben[]\n+ einstieg{} + sicherung{})"]
+
+        MAPPE_START --> MATERIAL_SKILL
+        MAT_ASSEMBLY --> RAETSEL_NEW
+        RAETSEL_NEW --> DATA_N
+    end
+
+    AUDIT2 --> P2
+
+    subgraph P3["PHASE 3: IMPLEMENTIERUNG (pro Mappe)"]
+        direction TB
+
+        IMPL["🟪 AGENT_TECHNIK + DESIGN\n━━━━━━━━━━━━━\nHTML-Generierung\nEngine-Integration\nCSS-Styling"]
+
+        MAPPE_LIVE["📄 Mappe N\nfunktional im Browser"]
+
+        IMPL --> MAPPE_LIVE
+    end
+
+    DATA_N --> P3
+
+    AUDIT3["✅🔴 EXTERNER AUDIT 2\nLehrkraft + Browser-Test:\n- Materialqualitaet\n- Aufgaben-Material-Match\n- Schueler-Perspektive"]
+    MAPPE_LIVE --> AUDIT3
+
+    AUDIT3 -->|"PASS"| NEXT_DECISION{"Weitere\nMappen?"}
+    AUDIT3 -->|"FAIL"| FIX["🔄 Gezielter Fix\n(Subagent oder\nAgent identifiziert)"]
+    FIX --> P2
+
+    NEXT_DECISION -->|"Ja"| P2
+    NEXT_DECISION -->|"Nein: Alle Mappen fertig"| FINAL
+
+    subgraph FINAL["PHASE 4: GAME-ASSEMBLY + DEPLOY"]
+        direction TB
+        ASSEMBLY["🟪 data.json zusammenfuegen\n(alle Mappen)\n+ index.html + lehrkraft.html"]
+        DEPLOY_FINAL["🚀 DEPLOYED auf\nweitergehts.online"]
+        ASSEMBLY --> DEPLOY_FINAL
+    end
+
+    subgraph DELTA["🔴 AENDERUNGEN vs STATUS QUO"]
+        direction TB
+        D1["1. Wikipedia-MCP als\n   primaere Inhaltsquelle\n   (statt WebSearch ins Blaue)"]
+        D2["2. SKRIPT-Artefakt\n   (lineares Jugendsachbuch)\n   als narratives Rueckgrat"]
+        D3["3. Explizites Chunking\n   mit Sandwich-Methode\n   (Mappe-Ueberlaeppungen)"]
+        D4["4. materialerstellung-skill\n   mit Subagenten pro Typ\n   (Token-effizient)"]
+        D5["5. Sequentielle Mappen-\n   Produktion mit User-\n   Validierung nach jeder Mappe"]
+        D6["6. Wikipedia-Bilder als\n   gezielte wikimedia-Suche\n   (statt blinder Keyword-Suche)"]
+        D7["7. Externe Audits an\n   2 Stellen eingebaut\n   (Skript + fertige Mappe)"]
+    end
+
+    style P0 fill:#1e40af15,stroke:#1e40af
+    style P1 fill:#1e40af15,stroke:#1e40af
+    style P2 fill:#7c3aed15,stroke:#7c3aed
+    style P3 fill:#7c3aed15,stroke:#7c3aed
+    style FINAL fill:#7c3aed15,stroke:#7c3aed
+    style DELTA fill:#dc262615,stroke:#dc2626
+    style LEGEND fill:#f8fafc,stroke:#94a3b8
+    style WIKI_RESEARCH fill:#1e40af25,stroke:#1e40af
+    style MATERIAL_SKILL fill:#7c3aed25,stroke:#7c3aed
+    style SUBAGENTEN fill:#7c3aed10,stroke:#7c3aed,stroke-dasharray: 5 5
+    style AUDIT1 fill:#059669,color:#fff,stroke:#047857
+    style AUDIT2 fill:#059669,color:#fff,stroke:#047857
+    style AUDIT3 fill:#059669,color:#fff,stroke:#047857
+    style DEPLOY_FINAL fill:#059669,color:#fff,stroke:#047857
+    style FIX fill:#ea580c,color:#fff,stroke:#c2410c
+    style INPUT fill:#f59e0b,color:#000,stroke:#d97706
+    style SKRIPT fill:#dc2626,color:#fff,stroke:#991b1b
+    style CHUNKS fill:#dc2626,color:#fff,stroke:#991b1b
+    style BLUEPRINT_GESAMT fill:#dc2626,color:#fff,stroke:#991b1b
+    style MAT_ASSEMBLY fill:#f59e0b15,stroke:#d97706
+    style DATA_N fill:#f59e0b15,stroke:#d97706
+    style MAPPE_LIVE fill:#f59e0b15,stroke:#d97706
+    style WP5 fill:#f59e0b15,stroke:#d97706

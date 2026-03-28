@@ -46,10 +46,20 @@
       ],
       "sicherung": {
         "tafelbild": {
-          "knoten": [],
+          "knoten": [
+            {
+              "id": "",
+              "text": "",
+              "typ": "",
+              "merksatz": ""
+            }
+          ],
           "verbindungen": [],
-          "voraussetzungen": []
+          "voraussetzungen": [],
+          "kernerkenntnisse": []
         },
+        "hefteintrag_verweis": "",
+        "reflexionsimpuls": "",
         "zusammenfassung": "",
         "ueberleitung": ""
       }

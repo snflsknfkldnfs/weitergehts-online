@@ -928,6 +928,62 @@ var EscapeEngine = (function () {
       tafelbildDiv.id = 'tafelbild-container';
       _renderTafelbild(sicherung.tafelbild, tafelbildDiv);
       container.appendChild(tafelbildDiv);
+
+      // v3: Merksaetze unter Tafelbild
+      var merksaetze = (sicherung.tafelbild.knoten || []).filter(function(k) {
+        return k.merksatz;
+      });
+      if (merksaetze.length > 0) {
+        var merksatzDiv = document.createElement('div');
+        merksatzDiv.className = 'sicherung__merksaetze';
+        var merksatzH3 = document.createElement('h3');
+        merksatzH3.textContent = 'Merksätze';
+        merksatzDiv.appendChild(merksatzH3);
+        var ul = document.createElement('ul');
+        for (var mi = 0; mi < merksaetze.length; mi++) {
+          var li = document.createElement('li');
+          var strong = document.createElement('strong');
+          strong.textContent = merksaetze[mi].text + ': ';
+          li.appendChild(strong);
+          li.appendChild(document.createTextNode(merksaetze[mi].merksatz));
+          ul.appendChild(li);
+        }
+        merksatzDiv.appendChild(ul);
+        container.appendChild(merksatzDiv);
+      }
+    }
+
+    // v3: Kernerkenntnisse (Fallback: sicherung- oder tafelbild-Ebene)
+    var kernerkenntnisse = sicherung.kernerkenntnisse
+      || (sicherung.tafelbild && sicherung.tafelbild.kernerkenntnisse)
+      || [];
+    if (kernerkenntnisse.length > 0) {
+      var keDiv = document.createElement('div');
+      keDiv.className = 'sicherung__kernerkenntnisse';
+      var keH3 = document.createElement('h3');
+      keH3.textContent = 'Kernerkenntnisse';
+      keDiv.appendChild(keH3);
+      var keUl = document.createElement('ul');
+      for (var ki = 0; ki < kernerkenntnisse.length; ki++) {
+        var keLi = document.createElement('li');
+        keLi.textContent = kernerkenntnisse[ki];
+        keUl.appendChild(keLi);
+      }
+      keDiv.appendChild(keUl);
+      container.appendChild(keDiv);
+    }
+
+    // v3: Hefteintrag-Verweis
+    if (sicherung.hefteintrag_verweis) {
+      var heDiv = document.createElement('div');
+      heDiv.className = 'sicherung__hefteintrag';
+      var heH3 = document.createElement('h3');
+      heH3.textContent = 'Hefteintrag';
+      heDiv.appendChild(heH3);
+      var heP = document.createElement('p');
+      heP.innerHTML = sicherung.hefteintrag_verweis;
+      heDiv.appendChild(heP);
+      container.appendChild(heDiv);
     }
 
     // Zusammenfassung
@@ -946,6 +1002,19 @@ var EscapeEngine = (function () {
       em.textContent = sicherung.ueberleitung;
       ueberleitungP.appendChild(em);
       container.appendChild(ueberleitungP);
+    }
+
+    // v3: Reflexionsimpuls
+    if (sicherung.reflexionsimpuls) {
+      var refDiv = document.createElement('div');
+      refDiv.className = 'sicherung__reflexion';
+      var refP = document.createElement('p');
+      refP.className = 'sicherung__reflexionsimpuls';
+      var refEm = document.createElement('em');
+      refEm.textContent = sicherung.reflexionsimpuls;
+      refP.appendChild(refEm);
+      refDiv.appendChild(refP);
+      container.appendChild(refDiv);
     }
   }
 

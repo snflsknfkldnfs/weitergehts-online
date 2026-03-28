@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Audit-Briefing v3-3 — weitergehts.online</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 860px; margin: 40px auto; padding: 0 24px; color: #1a1a1a; line-height: 1.6; }
+  h1 { font-size: 1.5rem; border-bottom: 3px solid #1a1a1a; padding-bottom: 8px; margin-bottom: 4px; }
+  h2 { font-size: 1.1rem; margin-top: 32px; margin-bottom: 8px; border-left: 4px solid #555; padding-left: 10px; }
+  h3 { font-size: 0.95rem; margin-top: 20px; margin-bottom: 6px; color: #333; }
+  .meta { color: #555; font-size: 0.85rem; margin-bottom: 28px; }
+  .block { background: #f5f5f5; border: 1px solid #ddd; border-radius: 6px; padding: 16px 20px; margin: 12px 0; }
+  .block.role { border-left: 4px solid #e63946; }
+  .block.context { border-left: 4px solid #457b9d; }
+  .block.matrix { border-left: 4px solid #2d6a4f; }
+  .block.severity { border-left: 4px solid #e9c46a; }
+  .block.antipattern { border-left: 4px solid #9b2226; }
+  .block.prompt { border-left: 4px solid #6d6875; background: #faf8fb; }
+  pre { background: #1e1e1e; color: #d4d4d4; padding: 14px 16px; border-radius: 5px; font-size: 0.82rem; overflow-x: auto; white-space: pre-wrap; }
+  code { font-family: "SF Mono", "Fira Code", monospace; font-size: 0.88em; background: #eee; padding: 1px 5px; border-radius: 3px; }
+  a { color: #1d6fa5; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.88rem; margin: 10px 0; }
+  th { background: #333; color: #fff; padding: 7px 10px; text-align: left; }
+  td { padding: 6px 10px; border-bottom: 1px solid #ddd; vertical-align: top; }
+  tr:hover td { background: #f9f9f9; }
+  .label { display: inline-block; padding: 1px 7px; border-radius: 10px; font-size: 0.78rem; font-weight: 600; }
+  .blocker { background: #e63946; color: white; }
+  .high { background: #e9820a; color: white; }
+  .medium { background: #e9c46a; color: #333; }
+  .low { background: #aaa; color: white; }
+  .dim { color: #666; font-size: 0.85rem; }
+  .note { background: #fff3cd; border: 1px solid #ffc107; border-radius: 4px; padding: 10px 14px; font-size: 0.88rem; margin: 12px 0; }
+  ul, ol { margin: 8px 0; padding-left: 22px; }
+  li { margin: 3px 0; }
+</style>
+</head>
+<body>
+
+<h1>Audit-Briefing: v3-3 — WORKFLOW + AGENT_MATERIAL + ORCHESTRATOR</h1>
+<div class="meta">
+  Projekt: weitergehts.online &nbsp;·&nbsp; Scope: v3-3-Änderungen (2026-03-26) &nbsp;·&nbsp; Auditor: Claude (neue Session, kein Vorwissen)
+</div>
+
+<div class="note">
+  <strong>Hinweis für den Auditor:</strong> Dieses Briefing ist vollständig selbsterklärend. Lies alle verlinkten Dateien, bevor du den Report erstellst. Keine externen Quellen konsultieren.
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<h2>1. Rolle &amp; Constraint</h2>
+<div class="block role">
+  <pre>Du bist externer Qualitaetsauditor fuer eine Architektur-Dokumentation (Escape-Game-Erstellungssystem fuer Lehrkraefte).
+
+CONSTRAINT: Du hast KEINE Aenderungsbefugnis. Dein Output ist ausschliesslich ein strukturierter Audit-Report.
+Bewerte nur, was in den bereitgestellten Dateien steht. Keine Annahmen ueber Absichten.
+Lies jede verlinkte Datei vollstaendig, bevor du den Report erstellst.</pre>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<h2>2. Kontext: Was wurde in v3-3 geändert?</h2>
+<div class="block context">
+  <p>v3-3 hat drei Kerndokumente auf eine neue Pipeline umgestellt. Die zentrale Änderung: <strong>AGENT_TAFELBILD (Phase 0.4)</strong> wurde als eigenständiger Agent nach AGENT_SKRIPT eingefügt. Das Tafelbild wird nicht mehr von AGENT_SKRIPT als Entwurf produziert, sondern von AGENT_TAFELBILD aus dem fertigen SKRIPT extrahiert. Nach Q-Gate PASS ist das Tafelbild eingefroren (<strong>TB-FREEZE</strong>) — AGENT_MATERIAL darf es nicht mehr verändern.</p>
+
+  <h3>Neue Pipeline (v3)</h3>
+  <pre>DIDAKTIK (0.1) → INHALT (0.2) → ARTEFAKT (0.2b) → SKRIPT (0.3)
+  → [User-Validierung] → TAFELBILD (0.4) → MATERIAL (1.1) → ...</pre>
+
+  <h3>Geänderte Dateien</h3>
+  <table>
+    <tr><th>Datei</th><th>Art der Änderung</th></tr>
+    <tr><td><a href="computer:///Users/paulad/weitergehts.online/weitergehts-online/docs/architektur/WORKFLOW_v2.md">WORKFLOW_v2.md</a></td><td>Phase 0.4 eingefügt, Phase 0.3 SKRIPT aktualisiert (kein TB-Entwurf, 600-900 W), Phase 1 MATERIAL aktualisiert (TB fixiert)</td></tr>
+    <tr><td><a href="computer:///Users/paulad/weitergehts.online/weitergehts-online/docs/agents/AGENT_MATERIAL.md">AGENT_MATERIAL.md</a></td><td>Aufgabe 1.1 → TB-Abdeckungs-Verifizierung (TB-FREEZE). Aufgabe 1.5 → Erarbeitbarkeits-Dokumentation. Sicherung → Hefteintrag-Verweis. Produktions-Modus 2.2 → TB übernehmen</td></tr>
+    <tr><td><a href="computer:///Users/paulad/weitergehts.online/weitergehts-online/docs/agents/ORCHESTRATOR.md">ORCHESTRATOR.md</a></td><td>8 Agenten, Phase 0.4 im Workflow-Diagramm, Ausfüh­rungsorte + Rücklauf-Zuordnung ergänzt</td></tr>
+  </table>
+
+  <h3>Referenz-Dokumente (Audit-Grundlage)</h3>
+  <table>
+    <tr><th>Datei</th><th>Relevanz</th></tr>
+    <tr><td><a href="computer:///Users/paulad/weitergehts.online/weitergehts-online/docs/agents/AGENT_TAFELBILD.md">AGENT_TAFELBILD.md</a></td><td>Definiert Phase 0.4, TB-FREEZE-Regel, Q-Gate G1-G13, dualen Output</td></tr>
+    <tr><td><a href="computer:///Users/paulad/weitergehts.online/weitergehts-online/docs/agents/AGENT_SKRIPT.md">AGENT_SKRIPT.md</a></td><td>Definiert Phase 0.3: kein TB-Entwurf mehr, Wortbudget 600-900</td></tr>
+    <tr><td><a href="computer:///Users/paulad/weitergehts.online/weitergehts-online/docs/checklisten/GUETEKRITERIEN_TAFELBILD.md">GUETEKRITERIEN_TAFELBILD.md</a></td><td>Q-Gate-Referenz für AGENT_TAFELBILD (G1-G13)</td></tr>
+    <tr><td><a href="computer:///Users/paulad/weitergehts.online/weitergehts-online/docs/architektur/UPGRADE_PLAN_v3.md">UPGRADE_PLAN_v3.md</a></td><td>Architektur-Entscheidungen E1-E5, Phasenübersicht</td></tr>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<h2>3. Prüfmatrix (8 Dimensionen)</h2>
+<div class="block matrix">
+  <pre>A1  PIPELINE-KONSISTENZ
+    Stimmt die Agenten-Reihenfolge in WORKFLOW, ORCHESTRATOR, AGENT_MATERIAL überein?
+    Erwartete Sequenz: 0.1 DIDAKTIK → 0.2 INHALT → 0.2b ARTEFAKT → 0.3 SKRIPT
+                       → [User-Val] → 0.4 TAFELBILD → 1.1 MATERIAL → 2.x ...
+
+A2  SCHNITTSTELLEN-INTEGRITÄT
+    Stimmen Ein-/Ausgaben zwischen Agenten überein?
+    Konkret: Empfängt AGENT_MATERIAL das TAFELBILD als Input?
+    Gibt AGENT_TAFELBILD TAFELBILD_[game-id]_Mappe[N].md aus?
+    Referenziert AGENT_MATERIAL diesen Dateinamen korrekt?
+
+A3  TB-FREEZE-DURCHSETZUNG
+    Wird die TB-FREEZE-Regel konsistent beschrieben?
+    Gibt es Stellen, die AGENT_MATERIAL noch erlauben, TB-Knoten hinzuzufügen/zu ändern?
+    Ist der Eskalationspfad ([TB-REVISION NOETIG: kN-M — Grund]) überall gleich?
+
+A4  BEGRIFFSKONGRUENZ
+    Werden diese Begriffe einheitlich verwendet:
+    - "Phase 0.4" (nicht "Phase 0.2c")
+    - "Tafelbild-Abdeckung"/"TB-Abdeckung" (nicht "Tafelbild detaillieren")
+    - "600-900 Woerter" (nicht "400-600")
+    - "acht Agenten" (nicht "sieben")
+    - "v3" in Headern/Referenzen (nicht "v2")
+    - "Erarbeitbarkeits-Verifizierung" (nicht "Tafelbild detaillieren")
+
+A5  TEMPLATE-VALIDITÄT
+    Stimmen Output-Templates mit den beschriebenen Feldern überein?
+    - JSON-Template in WORKFLOW/ORCHESTRATOR: hat merksatz-Feld pro Knoten?
+    - JSON-Template: hat kernerkenntnisse[]-Array?
+    - MATERIAL_GERUEST-Template: zeigt TB-Abdeckungs-Tabelle (nicht TB-Detail)?
+    - Sicherungs-Template: enthält Hefteintrag-Verweis + Reflexionsimpuls?
+
+A6  Q-GATE-ABDECKUNG
+    - SKRIPT-Q-Gate: kein Q6 ("Tafelbild-Entwurf vorhanden") mehr?
+    - TAFELBILD-Q-Gate: referenziert G1-G13 aus GUETEKRITERIEN_TAFELBILD.md?
+    - MATERIAL-Q-Gate: prüft TB-Abdeckung statt TB-Detaillierung?
+
+A7  STALE-REFERENZEN
+    Gibt es Verweise auf nicht-existente oder veraltete Konstrukte?
+    Bekannte Kandidaten: "Tafelbild-Entwurf", "Phase 0.2c", "sieben Agenten",
+    "Tafelbild detaillieren", "400-600 Woerter", "skript_referenz: null"
+
+A8  GOVERNANCE-LÜCKEN
+    Gibt es Stellen, an denen unklar ist, wer entscheidet?
+    - TB-Revision: Ist der Eskalationspfad vollständig (Markierung → User)?
+    - Gibt es Fälle, in denen ein Agent still das TB ändern könnte?
+    - Ist dokumentiert, wann TB-FREEZE einsetzt (nach Q-Gate PASS)?</pre>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<h2>4. Severity-Schema &amp; Report-Format</h2>
+<div class="block severity">
+  <table>
+    <tr><th>Severity</th><th>Definition</th></tr>
+    <tr><td><span class="label blocker">BLOCKER</span></td><td>Widerspruch, der bei Ausführung zu falschem Ergebnis führt (z.B. Agent darf TB ändern obwohl TB-FREEZE gilt)</td></tr>
+    <tr><td><span class="label high">HIGH</span></td><td>Inkonsistenz, die Agenten oder Nutzer in die Irre führen kann</td></tr>
+    <tr><td><span class="label medium">MEDIUM</span></td><td>Unschärfe mit Interpretationsspielraum, kein falsches Ergebnis</td></tr>
+    <tr><td><span class="label low">LOW</span></td><td>Stilistisch / kosmetisch</td></tr>
+  </table>
+
+  <h3>Report-Format pro Finding</h3>
+  <pre>| # | Datei | Sektion/Zeile | Dimension | Severity | Beschreibung | Fix-Vorschlag |
+
+Abschluss:
+- GO: Alle BLOCKER und HIGH behoben oder nicht vorhanden
+- CONDITIONAL GO: BLOCKER vorhanden — vor Weiterarbeit beheben (Liste)
+- NO GO: Strukturelle Grundprobleme</pre>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<h2>5. Bekannte Regressionen (explizit prüfen)</h2>
+<div class="block antipattern">
+  <p>Diese Muster waren in v2-Dokumenten vorhanden und sollten in v3-3 vollständig entfernt sein. Prüfe explizit:</p>
+  <table>
+    <tr><th>Veraltetes Muster (v2)</th><th>Erwartetes Muster (v3)</th><th>Risiko</th></tr>
+    <tr><td><code>Phase 0.2c</code></td><td><code>Phase 0.4</code></td><td><span class="label blocker">BLOCKER</span></td></tr>
+    <tr><td><code>Tafelbild-Entwurf</code> (als SKRIPT-Output)</td><td>Kein TB-Entwurf in SKRIPT — AGENT_TAFELBILD extrahiert eigenständig</td><td><span class="label blocker">BLOCKER</span></td></tr>
+    <tr><td><code>Tafelbild detaillieren</code> (MATERIAL-Aufgabe)</td><td><code>TB-Abdeckung verifizieren</code></td><td><span class="label high">HIGH</span></td></tr>
+    <tr><td><code>400-600 Woerter</code> (SKRIPT-Budget)</td><td><code>600-900 Woerter</code></td><td><span class="label high">HIGH</span></td></tr>
+    <tr><td><code>sieben spezialisierte Agenten</code></td><td><code>acht spezialisierte Agenten</code></td><td><span class="label medium">MEDIUM</span></td></tr>
+    <tr><td><code>skript_referenz: null</code></td><td><code>skript_referenz: "[Chunk-ID, §N]"</code> (direkt gesetzt)</td><td><span class="label medium">MEDIUM</span></td></tr>
+    <tr><td>MATERIAL darf Knoten hinzufügen/entfernen</td><td>TB-FREEZE: keine Änderung erlaubt, nur Eskalation</td><td><span class="label blocker">BLOCKER</span></td></tr>
+    <tr><td><code>v2</code> in Headern/Versionierungen</td><td><code>v3</code></td><td><span class="label medium">MEDIUM</span></td></tr>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<h2>6. Vollständiger Audit-Prompt (copy-paste)</h2>
+<div class="block prompt">
+  <p class="dim">Den folgenden Text in eine neue Claude-Session pasten. Alle 7 Dateien aus Abschnitt 2 als Attachments anfügen oder vorher lesen lassen.</p>
+  <pre>Du bist externer Qualitaetsauditor fuer die Architektur-Dokumentation des Projekts "weitergehts.online" — ein System zur automatisierten Erstellung von interaktiven Escape-Game-Unterrichtsmaterialien.
+
+CONSTRAINT: Du hast KEINE Aenderungsbefugnis. Dein Output ist ausschliesslich ein Audit-Report im vorgegebenen Format. Keine Datei-Aenderungen.
+
+SCOPE: Audit der v3-3-Aenderungen. Drei Kerndokumente wurden auf eine neue Pipeline umgestellt (WORKFLOW_v2.md, AGENT_MATERIAL.md, ORCHESTRATOR.md). Pruefe, ob die Aenderungen intern konsistent sind und keine Widersprueche zu den Referenzdokumenten enthalten.
+
+HINTERGRUND (wichtig — lies sorgfaeltig):
+In v3-3 wurde AGENT_TAFELBILD als eigenstaendige Phase 0.4 eingefuegt. Das Tafelbild wird nicht mehr von AGENT_SKRIPT als Entwurf produziert, sondern nach User-Validierung des SKRIPT von AGENT_TAFELBILD aus dem fertigen Skript extrahiert. Nach Q-Gate PASS (G1-G13) ist das Tafelbild eingefroren (TB-FREEZE): AGENT_MATERIAL darf keine Knoten hinzufuegen, entfernen oder inhaltlich aendern. Bei Nicht-Abdeckung: Eskalation [TB-REVISION NOETIG: kN-M — Grund] an User.
+
+ZU PRUEFENDE DATEIEN (bitte alle lesen):
+Geaenderte Dateien:
+1. WORKFLOW_v2.md (v3) — kanonische Pipeline-Referenz
+2. AGENT_MATERIAL.md — v3-Update (TB-FREEZE, Erarbeitbarkeits-Verifizierung)
+3. ORCHESTRATOR.md — v3-Update (8 Agenten, Phase 0.4)
+
+Referenz-Dokumente:
+4. AGENT_TAFELBILD.md — definiert Phase 0.4, TB-FREEZE, dualen Output
+5. AGENT_SKRIPT.md — definiert Phase 0.3 (kein TB-Entwurf, 600-900 W)
+6. GUETEKRITERIEN_TAFELBILD.md — Q-Gate G1-G13
+7. UPGRADE_PLAN_v3.md — Architektur-Entscheidungen E1-E5
+
+PRUEFMATRIX (8 Dimensionen — alle pruefen):
+A1 PIPELINE-KONSISTENZ: Stimmt die Agenten-Reihenfolge ueberall ueberein?
+   Erwartete Sequenz: 0.1→0.2→0.2b→0.3→[User-Val]→0.4→1.1→2.x
+A2 SCHNITTSTELLEN-INTEGRITAET: Stimmen Ein-/Ausgaben zwischen Agenten ueberein?
+   Konkret: Empfaengt AGENT_MATERIAL das TAFELBILD als Input? Dateiname konsistent?
+A3 TB-FREEZE-DURCHSETZUNG: Wird TB-FREEZE ueberall konsistent beschrieben?
+   Gibt es Stellen, die AGENT_MATERIAL noch TB-Aenderungen erlauben?
+A4 BEGRIFFSKONGRUENZ: Einheitliche Verwendung von:
+   "Phase 0.4" (nicht 0.2c), "600-900 W" (nicht 400-600), "acht Agenten" (nicht sieben),
+   "TB-Abdeckung" (nicht "Tafelbild detaillieren"), "v3" in Headern
+A5 TEMPLATE-VALIDITAET: Stimmen Output-Templates mit beschriebenen Feldern ueberein?
+   JSON-Template: merksatz-Feld + kernerkenntnisse[]? MATERIAL_GERUEST: TB-Abdeckungs-Tabelle?
+A6 Q-GATE-ABDECKUNG: Kein Q6 mehr in SKRIPT? TB-Q-Gate referenziert G1-G13?
+A7 STALE-REFERENZEN: Verweise auf "Tafelbild-Entwurf", "Phase 0.2c", "sieben Agenten" etc.?
+A8 GOVERNANCE-LUECKEN: Ist der TB-Revisions-Eskalationspfad ueberall vollstaendig?
+
+REPORT-FORMAT:
+Erstelle eine Tabelle mit allen Findings:
+| # | Datei | Sektion | Dimension | Severity | Beschreibung | Fix-Vorschlag |
+
+Severity-Definitionen:
+BLOCKER = Widerspruch, der bei Ausfuehrung zu falschem Ergebnis fuehrt
+HIGH = Inkonsistenz, die Agenten oder Nutzer in die Irre fuehren kann
+MEDIUM = Unschaerfe mit Interpretationsspielraum
+LOW = Stilistisch/kosmetisch
+
+Abschluss: GO / CONDITIONAL GO (mit Blocker-Liste) / NO GO
+
+EXPLIZIT ZU PRUEFENDE REGRESSIONEN (bekannte Risiken):
+- "Tafelbild detaillieren" statt "TB-Abdeckung verifizieren" in AGENT_MATERIAL
+- "400-600 Woerter" statt "600-900" in WORKFLOW oder AGENT_MATERIAL
+- MATERIAL darf Knoten hinzufuegen (TB-FREEZE-Verletzung)
+- "Phase 0.2c" irgendwo noch vorhanden
+- JSON-Template ohne merksatz oder kernerkenntnisse[]
+- Sicherungs-Template ohne Hefteintrag-Verweis</pre>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<h2>7. Durchführung</h2>
+<div class="block">
+  <ol>
+    <li>Neue Claude-Session öffnen (kein Kontext aus dieser Session)</li>
+    <li>Prompt aus Abschnitt 6 einfügen</li>
+    <li>Alle 7 Dateien aus Abschnitt 2 anhängen — in der Reihenfolge: geänderte Dateien zuerst, dann Referenz-Dokumente</li>
+    <li>Claude lesen und Report erstellen lassen — <strong>keine Datei-Edits erlauben</strong></li>
+    <li>Findings zurück in diese Session bringen → Remediation</li>
+  </ol>
+</div>
+
+<p class="dim" style="margin-top:40px; border-top: 1px solid #ddd; padding-top:12px;">
+  Erstellt: 2026-03-27 &nbsp;·&nbsp; Scope: v3-3 (WORKFLOW + AGENT_MATERIAL + ORCHESTRATOR) &nbsp;·&nbsp;
+  Vorgänger: <a href="computer:///Users/paulad/weitergehts.online/weitergehts-online/docs/analyse/AUDIT_BRIEFING_v3_TAFELBILD.md">AUDIT_BRIEFING_v3_TAFELBILD.md</a>
+</p>
+
+</body>
+</html>

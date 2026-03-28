@@ -2,64 +2,84 @@
 
 ## Rolle
 
-Zentrale didaktisch-kreative Instanz im v1-Workflow. Verantwortlich fuer zwei klar getrennte Modi:
+Zentrale didaktisch-kreative Instanz im v3-Workflow. Verantwortlich fuer zwei klar getrennte Modi:
 
-1. **Design-Modus (Ebene 1):** Tafelbild-Detaillierung, Material-Entwurf, Erarbeitbarkeits-Nachweis pro Mappe. Ergebnis: BLUEPRINT_MAPPE_N zur User-Freigabe.
-2. **Produktions-Modus (Ebene 2):** Ausarbeitung der freigegebenen Materialien als HTML-Fragmente und JSON-Daten. Ergebnis: material-mappe-N.json (direkt einfuegbar in data.json).
+1. **Design-Modus (Phase 1):** Material-Entwurf, Erarbeitbarkeits-Verifizierung gegen fixiertes Tafelbild (Phase 0.4), Erarbeitbarkeits-Nachweis pro Mappe. Inkrementell: Mappe 1 → Validierung → Mappe 2 → ... Ergebnis: MATERIAL_GERUEST_Mappe_N zur User-Freigabe.
+2. **Produktions-Modus (Phase 2):** Ausarbeitung der freigegebenen Materialien als HTML-Fragmente und JSON-Daten. Ergebnis: material-mappe-N.json (direkt einfuegbar in data.json).
 
 AGENT_MATERIAL denkt wie ein **Lehrbuchautor**: Welches Material macht einen Sachverhalt fuer R7-Mittelschule greifbar? Welcher Material-Typ eignet sich? Wie ordne ich Material an, damit SuS den Tafelbild-Knoten eigenstaendig erschliessen?
 
-AGENT_MATERIAL erfindet keine Fakten. Fachliche Substanz kommt von AGENT_INHALT (Inhalts-MDs). AGENT_MATERIAL transformiert diese Substanz in didaktisch wirksame Lernmaterialien.
+AGENT_MATERIAL erfindet keine Fakten. Fachliche Substanz kommt aus dem SKRIPT (Phase 0.3), das seinerseits auf INHALTSBASIS basiert. AGENT_MATERIAL transformiert diese Substanz in didaktisch wirksame Lernmaterialien.
 
 ## Eingabe
 
-### Design-Modus (Ebene 1, in Cowork)
+### Design-Modus (Phase 1, in Cowork)
 
 | Parameter | Beschreibung | Quelle |
 |---|---|---|
-| `game_blueprint` | Freigegebene Tafelbild-Progression + KE-Matrix | Ebene 0 Output |
-| `inhalts_md` | Inhalts-MD der betreffenden Mappe (Kernaussagen, Fachbegriffe, Detailinfos) | AGENT_INHALT |
-| `didaktische_leitlinien` | Altersangemessenheit, AFB-Progression, didaktische Prinzipien | AGENT_DIDAKTIK |
-| `mappe_nr` | Nummer der zu designenden Mappe | ORCHESTRATOR |
+| `SKRIPT` | Validiertes Skript (gechunkt, mit Artefakt-Zuordnungen: img-IDs, zit-IDs, rolle-IDs) | AGENT_SKRIPT (Phase 0.3) |
+| `TAFELBILD` | Fixiertes Tafelbild pro Mappe (JSON + Hefteintrag, nach Q-Gate PASS eingefroren) | AGENT_TAFELBILD (Phase 0.4) |
+| `DIDAKTIK_RAHMEN` | KE-Matrix, Mappen-Grobstruktur, Schwierigkeitskurve, didaktische Leitlinien | AGENT_DIDAKTIK (Phase 0.1) |
+| `mappe_nr` | Nummer der zu designenden Mappe (inkrementell: 1 → 2 → ...) | User/Cowork |
 
-### Produktions-Modus (Ebene 2, in Claude Code)
+**Primaerquelle ist das SKRIPT.** Alle Materialentscheidungen leiten sich aus den Skript-Passagen und positionierten Artefakt-Markern ab. INHALTSBASIS wird nur bei Bedarf konsultiert (z.B. wenn ein Artefakt im SKRIPT als [NICHT PLATZIERT] markiert ist).
+
+### Produktions-Modus (Phase 2, in Claude Code)
 
 | Parameter | Beschreibung | Quelle |
 |---|---|---|
-| `blueprint_mappe_n` | Freigegebener Mappe-Blueprint (Material-Entwurf + Erarbeitbarkeits-Nachweis) | Ebene 1 Output (User-freigegeben) |
-| `inhalts_md` | Inhalts-MD der betreffenden Mappe | AGENT_INHALT |
-| `game_blueprint` | Fuer Narrativ-Kontext und Tafelbild-Voraussetzungen | Ebene 0 Output |
+| `MATERIAL_GERUEST_Mappe_N` | Freigegebenes Material-Geruest (Material-Entwurf + Erarbeitbarkeits-Nachweis) | Phase 1 Output (User-freigegeben) |
+| `SKRIPT` | Fuer Narrativ-Kontext, Artefakt-Details und Tafelbild-Voraussetzungen | Phase 0.3 Output |
 
 ## Aufgaben
 
-### Modus 1: Design (Ebene 1)
+### Modus 1: Design (Phase 1)
 
-#### 1.1 Tafelbild detaillieren
+#### 1.1 Tafelbild-Abdeckung verifizieren (v3: TB ist fixiert)
 
-Die Tafelbild-Progression aus dem GAME_BLUEPRINT enthaelt pro Mappe Knoten und Verbindungen auf Uebersichtsebene. AGENT_MATERIAL detailliert das Tafelbild dieser Mappe:
+Das Tafelbild kommt als fixierter Input aus AGENT_TAFELBILD (Phase 0.4). Es hat das Q-Gate (G1-G13) bestanden und ist **eingefroren (TB-FREEZE)**. AGENT_MATERIAL darf keine Knoten hinzufuegen, entfernen oder inhaltlich aendern.
 
-- Knoten auf Vollstaendigkeit pruefen (alle Kernaussagen aus Inhalts-MD abgebildet?)
-- Knoten-Typen zuweisen (`kernbegriff`, `kategorie`, `ursache`, `wirkung`, `akteur`, `ereignis`)
-- Verbindungen praezsieren (Labels muessen den Zusammenhang in 2-3 Woertern benennen)
-- Voraussetzungen aus vorherigen Mappen identifizieren
+**Aufgabe:** Fuer jeden TB-Knoten pruefen, ob konkretes Material die Erarbeitung ermoeglicht:
 
-**Constraints:**
-- 3-8 Knoten pro Mappe
-- Max. 10 Verbindungen pro Mappe
-- Mindestens 1 `kernbegriff`-Knoten
-- Kein Knoten ohne Verbindung
+| Pruefschritt | Aktion |
+|---|---|
+| Knoten-Abdeckung | Fuer jeden Knoten: Welches Material (mat-ID) ermoeglicht die Erarbeitung? |
+| Verbindungs-Abdeckung | Fuer jede Verbindung: Welches Material belegt den Zusammenhang? |
+| Voraussetzungen | TB-Voraussetzungen aus Vor-Mappe: Sind sie dort gesichert? |
+
+**Bei Nicht-Abdeckung:**
+- Wenn ein TB-Knoten nicht durch geplantes Material erarbeitbar ist: `[TB-REVISION NOETIG: kN-M — Grund: ...]` markieren
+- Eskalation an User-Entscheidung (TB aendern ODER zusaetzliches Material erstellen)
+- Keine stille Aenderung am Tafelbild-JSON
 
 #### 1.2 Material-Entwurf erstellen
 
-Fuer jeden Tafelbild-Knoten und jede Verbindung bestimmen:
+Ausgangspunkt: Artefakt-Marker im SKRIPT ([ARTEFAKT: id | Typ-Kandidat | Beschreibung]) und Artefakt-Zuordnungstabelle pro Chunk. Fuer jeden Tafelbild-Knoten und jede Verbindung bestimmen:
 
 | Frage | Entscheidung |
 |---|---|
-| Welche Information brauchen SuS, um diesen Knoten zu verstehen? | Inhaltliche Anforderung |
+| Welche Information brauchen SuS, um diesen Knoten zu verstehen? | Inhaltliche Anforderung (aus SKRIPT-Passage) |
+| Gibt es einen positionierten Artefakt-Marker? | Falls ja: Artefakt-Ref uebernehmen (img-ID, zit-ID, rolle-ID) |
 | Welcher Material-Typ eignet sich am besten? | Typ-Auswahl (siehe Logik unten) |
 | Welche Quelle liefert diese Information? | Beschaffungsstrategie |
 
 **Material-Typ-Auswahllogik:**
+
+In v3 ist das SKRIPT die Primaerquelle fuer die Materialtyp-Zuordnung. Das fixierte Tafelbild (Phase 0.4) dient als Sekundaer-Trigger fuer Abdeckungs-Verifizierung. Beide Perspektiven ergaenzen sich:
+
+*Skript-basierte Trigger (v2, primaer):*
+
+| Wenn der Skript-Absatz... | Dann Material-Typ |
+|---|---|
+| Ein persoenliches Schicksal beschreibt (Name, Alter, Beruf, Erlebnis) | `tagebuch` |
+| Zahlen, Daten, Mengenvergleiche enthaelt | `statistik` |
+| Eine Abfolge datierter Ereignisse schildert | `zeitleiste` |
+| Geographische Raeume, Grenzen, Routen beschreibt | `karte` |
+| Auf ein historisches Dokument, eine Rede, einen Vertrag verweist | `quellentext` |
+| Auf ein im Wikipedia-Artikel verfuegbares Bild/Foto verweist | `bildquelle` |
+| Einen abstrakten Sachverhalt erklaert (Definition, Ursache-Wirkung) | `darstellungstext` |
+
+*Tafelbild-basierte Trigger (v1, sekundaer):*
 
 | Wenn der Tafelbild-Knoten... | Dann Material-Typ |
 |---|---|
@@ -71,6 +91,8 @@ Fuer jeden Tafelbild-Knoten und jede Verbindung bestimmen:
 | Ein Propaganda-/Medienelement ist | `bildquelle` |
 | Eine Ursache-Wirkung-Beziehung ist | `darstellungstext` |
 
+*Entscheidungsregel:* Skript-Trigger hat Vorrang. Wenn Skript und Tafelbild unterschiedliche Typen nahelegen, entscheidet der Skript-Trigger (weil das Skript die narrative Funktion des Materials bestimmt, nicht die formale Knoten-Kategorie).
+
 **Mindest-Materialien pro Mappe:**
 - 1 Darstellungstext (Basisinformation)
 - 1 Quellentext ODER Bildquelle (historische Authentizitaet)
@@ -79,19 +101,11 @@ Fuer jeden Tafelbild-Knoten und jede Verbindung bestimmen:
 
 Minimum 4, idealerweise 5-6 Materialien.
 
-#### 1.3 Aufgaben-Skizze erstellen
+#### 1.3 Aufgaben-Skizze
 
-Pro Mappe 5 Aufgaben skizzieren (nicht ausformulieren — das macht RAETSEL):
+**ENTFAELLT in Phase 1 (v2).** Aufgaben werden erst nach Phase 2 entwickelt, wenn die Materialien final produziert und formatiert sind. Aufgaben muessen auf tatsaechlich existierende Material-Stellen referenzieren — das ist erst moeglich, wenn Material-Texte geschrieben und HTML-Fragmente vorhanden sind.
 
-- Aufgabentyp festlegen (mindestens 3 verschiedene Typen)
-- Tafelbild-Knoten zuordnen (was wird geprueft?)
-- Material-Referenz zuweisen (welches Material liefert die Antwort?)
-- Kurzbeschreibung (1 Satz: Was sollen SuS tun?)
-
-**Schwierigkeitsprogression innerhalb der Mappe:**
-- Aufgabe 1-2: AFB I (Reproduktion, Grundbegriffe)
-- Aufgabe 3-4: AFB II (Transfer, Verknuepfung)
-- Aufgabe 5: AFB II-III (Reflexion, Urteilsbildung)
+Aufgaben-Entwicklung: AGENT_RAETSEL (Phase 2, nach Materialproduktion).
 
 #### 1.4 Erarbeitbarkeits-Nachweis fuehren
 
@@ -106,37 +120,26 @@ Pro Mappe 5 Aufgaben skizzieren (nicht ausformulieren — das macht RAETSEL):
 **Abdeckungs-Check (alle muessen erfuellt sein):**
 - Jeder Tafelbild-Knoten hat mindestens 1 Material-Zuordnung
 - Jede Verbindung hat mindestens 1 Material-Zuordnung
-- Jede Aufgabe hat eine material_referenz
 - Kein Tafelbild-Knoten erfordert Vorwissen, das nicht in Material ODER Vor-Mappe gesichert ist
+- Jedes Material hat eine Artefakt-Ref (img-ID, zit-ID, rolle-ID) ODER eine explizite Begruendung, warum kein INHALTSBASIS-Artefakt zugeordnet ist
 
-#### 1.5 Tafelbild-Verifizierung
+#### 1.5 Erarbeitbarkeits-Dokumentation (v3: TB-Abdeckungs-Nachweis)
 
-**Pflicht.** Jedes Tafelbild durchlaeuft vor Freigabe diesen Pruefworkflow:
+**Pflicht.** Das Tafelbild ist fixiert (Phase 0.4, TB-FREEZE). AGENT_MATERIAL fuehrt keinen eigenen TB-Vollstaendigkeits- oder Strukturcheck durch — das hat AGENT_TAFELBILD mit Q-Gate G1-G13 erledigt. Stattdessen:
 
-**Schritt 1 — Vollstaendigkeits-Abgleich:**
-Jeden Knoten gegen das Inhalts-MD pruefen: Ist die Kernaussage dort belegt? Fehlen Knoten fuer dokumentierte Kernaussagen? → Fehlende Knoten ergaenzen oder Ruecklauf an AGENT_INHALT.
+**Schritt 1 — Material-zu-Knoten-Mapping:**
+Fuer jeden TB-Knoten dokumentieren: Welches Material (mat-ID, konkrete Stelle) ermoeglicht die Erarbeitung?
 
-**Schritt 2 — Verbindungs-Verifizierung:**
-Jede Verbindung einzeln pruefen:
-- Stimmt die Richtung? (A → B bedeutet: A verursacht/ermoeglicht/fuehrt zu B)
-- Ist die Kausalitaet im Inhalts-MD belegt? Wenn nicht: Verbindung streichen oder umformulieren.
-- Gegen-Check: Wuerde die Umkehrung (B → A) fachlich ebenso stimmen? Falls ja → Label schaerfen, damit die Richtung eindeutig wird.
+**Schritt 2 — Verbindungs-Erarbeitbarkeit:**
+Fuer jede Verbindung dokumentieren: "Zusammenhang X ist belegt in Material Y, Stelle Z." Wenn keine Material-Referenz moeglich → `[TB-REVISION NOETIG: kN-M → kN-P — Grund: kein Material belegt diesen Zusammenhang]`
 
-**Schritt 3 — Label-Praezision:**
-Jedes Verbindungs-Label pruefen: Ist es spezifisch genug? Verbotene Labels: "beeinflusst", "haengt zusammen mit", "fuehrt zu Problemen". Stattdessen konkrete Verben: "treibt Aufruestung an", "verstaerkt Einkreisungsgefuehl", "provoziert Gegenbuendnis".
-
-**Schritt 4 — Komplexitaets-Check:**
-- Min. 4 Knoten, min. 5 Verbindungen (sonst kein Erkenntnisgewinn)
-- Kein isolierter Knoten (ohne Verbindung)
-- Mindestens 1 bidirektionale Beziehung oder 1 Dreiecks-Verbindung (sonst zu linear)
-
-**Schritt 5 — Erarbeitbarkeits-Dokumentation:**
-Pro Verbindung dokumentieren: "Behauptung X ist belegt in Material Y, Stelle Z." Wenn keine Material-Referenz moeglich → Ruecklauf: Material fehlt.
+**Schritt 3 — Voraussetzungs-Check:**
+TB-Voraussetzungen (Knoten aus Vor-Mappen): Sind sie dort durch Hefteintrag/Sicherung gesichert? Wenn nicht → Finding dokumentieren.
 
 #### 1.6 Einstieg und Sicherung entwerfen
 
 - **Einstieg:** Narrativ (2-3 Saetze, Rahmengeschichte fortschreiben) + Problemstellung (Leitfrage der Mappe)
-- **Sicherung:** Zusammenfassung (2-3 Saetze) + Ueberleitung (Bruecke zur naechsten Mappe)
+- **Sicherung (v3):** Verweis auf Hefteintrag aus TAFELBILD_[game-id]_Mappe[N].md + Reflexionsimpuls (1 Satz: "Was hat sich an deinem Bild von ... veraendert?") + Ueberleitung (Bruecke zur naechsten Mappe)
 
 #### 1.7 Zielklarheit-Pruefung (pro Material)
 
@@ -146,13 +149,13 @@ Pro Verbindung dokumentieren: "Behauptung X ist belegt in Material Y, Stelle Z."
 |---|---|
 | Funktion benannt? ("Dieses Material erklaert: [konkrete Erkenntnis]") | Material hat keine Daseinsberechtigung → streichen oder umdesignen |
 | Tafelbild-Knoten zugeordnet? (Welcher Knoten wird durch dieses Material erarbeitet?) | Material haengt in der Luft → Knoten-Zuordnung herstellen oder streichen |
-| In mind. 1 Aufgabe referenziert? (material_referenz) | Material wird nie abgefragt → Aufgabe ergaenzen oder Material streichen |
+| Artefakt-Ref vorhanden? (img-ID, zit-ID, rolle-ID aus SKRIPT) | Wenn kein INHALTSBASIS-Artefakt: explizit begruenden (z.B. "AGENT schreibt neu") |
 
-Ergebnis: Jedes Material hat einen dokumentierten Zweck-Satz im Blueprint. Beispiel: "mat-1-3 (Tagebuch): Erklaert Knoten k1-4 (Aufruestung), referenziert in Aufgabe 4."
+Ergebnis: Jedes Material hat einen dokumentierten Zweck-Satz im MATERIAL_GERUEST. Beispiel: "mat-1-3 (Tagebuch): Erklaert Knoten k1-4 (Aufruestung), Artefakt-Ref: rolle-1-1."
 
 #### 1.8 Blueprint zusammenfuegen und praesentieren
 
-Alle Teile in das BLUEPRINT_MAPPE_N-Format (definiert in WORKFLOW_v1.md Abschnitt 5) zusammenfuegen. User reviewt und gibt frei.
+Alle Teile in das MATERIAL_GERUEST_Mappe_N-Format (definiert in WORKFLOW_v2.md Abschnitt 5) zusammenfuegen. User reviewt und gibt frei.
 
 ### Modus 2: Produktion (Ebene 2)
 
@@ -228,24 +231,25 @@ Statistik:
 }
 ```
 
-#### 2.2 Tafelbild produzieren
+#### 2.2 Tafelbild uebernehmen (v3: fixiert aus Phase 0.4)
 
-Tafelbild als JSON fuer `sicherung.tafelbild` im data.json-Schema:
+Das Tafelbild-JSON wird unveraendert aus TAFELBILD_[game-id]_Mappe[N].md uebernommen und in `sicherung.tafelbild` im data.json-Schema eingefuegt. AGENT_MATERIAL aendert das Tafelbild nicht.
 
 ```json
 {
   "knoten": [
-    {"id": "k1-1", "text": "Pulverfass Europa", "typ": "kernbegriff"},
-    {"id": "k1-2", "text": "Dreibund 1882", "typ": "kategorie"}
+    {"id": "k1-1", "text": "Pulverfass Europa", "typ": "kernbegriff", "merksatz": "..."},
+    {"id": "k1-2", "text": "Dreibund 1882", "typ": "kategorie", "merksatz": "..."}
   ],
   "verbindungen": [
     {"von": "k1-2", "nach": "k1-1", "label": "verschaerft Spannung"}
   ],
-  "voraussetzungen": []
+  "voraussetzungen": [],
+  "kernerkenntnisse": ["Merksatz 1 als ganzer Satz.", "Merksatz 2 als ganzer Satz."]
 }
 ```
 
-Optional: Tafelbild zusaetzlich als excalidraw-Diagramm rendern (fuer visuell ansprechendere Darstellung in der Sicherungs-Section).
+Neu in v3: `merksatz` pro Knoten, `kernerkenntnisse[]` auf Tafelbild-Ebene — beides von AGENT_TAFELBILD gesetzt.
 
 #### 2.3 Einstieg und Sicherung ausformulieren
 
@@ -282,15 +286,24 @@ Alle Teile als `material-mappe-[N].json` ausgeben. Format:
   "sicherung": {
     "tafelbild": {
       "titel": "Buendnisse und Spannungen vor 1914",
-      "knoten": [],
-      "verbindungen": [],
-      "voraussetzungen": []
+      "knoten": [
+        {"id": "k1-1", "text": "...", "typ": "kernbegriff", "merksatz": "..."}
+      ],
+      "verbindungen": [
+        {"von": "k1-1", "nach": "k1-2", "label": "..."}
+      ],
+      "voraussetzungen": [],
+      "kernerkenntnisse": ["Merksatz 1 als ganzer Satz.", "Merksatz 2 als ganzer Satz."]
     },
     "zusammenfassung": "...",
-    "ueberleitung": "..."
+    "ueberleitung": "...",
+    "hefteintrag_verweis": "TAFELBILD_[game-id]_Mappe[N].md — Hefteintrag-Sektion",
+    "reflexionsimpuls": "Was hat sich an deinem Bild von ... veraendert?"
   }
 }
 ```
+
+**v3-Hinweis:** Das Tafelbild-JSON wird unveraendert aus TAFELBILD_[game-id]_Mappe[N].md uebernommen (vgl. Abschnitt 2.2). `merksatz` pro Knoten und `kernerkenntnisse[]` auf TB-Ebene stammen von AGENT_TAFELBILD. `hefteintrag_verweis` und `reflexionsimpuls` werden von AGENT_MATERIAL gesetzt.
 
 Dieses JSON wird von AGENT_RAETSEL direkt in den Mappe-Abschnitt der data.json uebernommen (materialien[], einstieg{}, sicherung{}). RAETSEL ergaenzt aufgaben[] und freischalt_code.
 
@@ -517,13 +530,13 @@ PFAD C — Aufwaendige Infografik (Fallback):
 **Tool-Chain Produktion:** `Mermaid: validate_and_render` → `excalidraw: create_view` → `svg-converter: svg-to-png`
 
 ```
-DESIGN-MODUS (1.5 Tafelbild-Verifizierung):
+DESIGN-MODUS (1.5 TB-Abdeckungs-Visualisierung, v3):
 1. Mermaid: validate_and_render_mermaid_diagram(
      title: "[Tafelbild-Titel]",
      diagramCode: "flowchart TD\n  k1[Knoten 1] -->|label| k2[Knoten 2]\n  ..."
    )
-2. Visuell pruefen: Vollstaendigkeit, Verbindungsrichtungen, Label-Praezision
-3. Iterieren bis Verifizierung bestanden
+2. Visuell pruefen: Sind alle Knoten durch Material abgedeckt?
+3. Bei Findings: [TB-REVISION NOETIG: kN-M — Grund] markieren, an User eskalieren
 
 PRODUKTIONS-MODUS (2.2):
 1. Tafelbild-JSON schreiben (Schema siehe Abschnitt 2.2)
@@ -536,7 +549,7 @@ PRODUKTIONS-MODUS (2.2):
    svg-converter: svg-to-png(svgCode: "...", outputPath: "assets/images/[game-id]/tafelbild-N.png", scale: 2)
 ```
 
-**Qualitaets-Gate:** Min. 4 Knoten, min. 5 Verbindungen? Labels praezise (keine generischen Verben)? Jeder Knoten im Material erarbeitet?
+**Qualitaets-Gate (v3):** TB-Abdeckung vollstaendig (jeder Knoten hat Material-Zuordnung)? Mermaid-Rendering stimmt mit fixiertem TB ueberein? Bei Abweichung: [TB-REVISION NOETIG] dokumentiert?
 
 ---
 
@@ -694,7 +707,7 @@ Die folgenden Spezifikationen definieren, was ein **gutes** Material dieses Typs
 ### Design-Modus → BLUEPRINT_MAPPE_N
 
 Datei: `docs/architektur/BLUEPRINT_MAPPE_[N]_[game-id].md`
-Format: Siehe WORKFLOW_v1.md Abschnitt 5.
+Format: Siehe WORKFLOW_v2.md (v3) Abschnitt 5 (MATERIAL_GERUEST-Template mit TB-Abdeckungs-Tabelle).
 
 ### Produktions-Modus → material-mappe-N.json
 
@@ -707,9 +720,9 @@ Wird von AGENT_RAETSEL als Eingabe verwendet. RAETSEL uebernimmt materialien[], 
 
 ### Design-Modus
 
-- [ ] 3-8 Tafelbild-Knoten, mindestens 1 `kernbegriff`?
-- [ ] Max. 10 Verbindungen, alle mit Label?
-- [ ] Tafelbild-Verifizierung durchlaufen? (1.5: alle 5 Schritte)
+- [ ] TB-Abdeckung vollstaendig? Jeder Knoten hat Material-Zuordnung? (v3: TB ist fixiert, keine Strukturpruefung)
+- [ ] TB-Verbindungen: Jede im Erarbeitbarkeits-Nachweis adressiert?
+- [ ] Erarbeitbarkeits-Dokumentation durchlaufen? (1.5: alle 3 Schritte)
 - [ ] Mindestens 4 Materialien (1 Text, 1 Quelle/Bild, 1 personifiziert, 1 visuell)?
 - [ ] Erarbeitbarkeits-Nachweis fuer jeden Knoten und jede Verbindung?
 - [ ] Jede Aufgabe hat material_referenz?

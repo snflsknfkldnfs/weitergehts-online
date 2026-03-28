@@ -1,0 +1,118 @@
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#1e40af', 'primaryTextColor': '#fff', 'primaryBorderColor': '#1e3a8a', 'lineColor': '#475569', 'secondaryColor': '#7c3aed', 'tertiaryColor': '#059669', 'noteTextColor': '#1e293b', 'noteBkgColor': '#fef3c7'}}}%%
+flowchart TB
+    subgraph LEGEND["LEGENDE"]
+        direction LR
+        L1["🟦 Cowork-Prozess"]
+        L2["🟪 Claude-Code-Prozess"]
+        L3["🟩 User-Review"]
+        L4["🟧 Artefakt/Output"]
+    end
+
+    subgraph E0["EBENE 0: GAME-RAHMEN (einmalig, Cowork)"]
+        direction TB
+        INPUT["📥 User-Input:\nThema + Lehrplanbezug +\nJahrgangsstufe + Mappen-Anzahl"]
+        BRIEFING["📄 THEMEN_BRIEFING\n(Mappen-Struktur, Kernaussagen,\nFachbegriffe, Quelldateien)"]
+
+        DIDAKTIK["🔷 AGENT_DIDAKTIK\n━━━━━━━━━━━━━\nLehrplan → KE-Matrix\nAFB-Progression\nDidaktische Leitlinien"]
+
+        INHALT["🔷 AGENT_INHALT\n━━━━━━━━━━━━━\nSachanalyse\nKernaussagen-Extraktion\nQuellenrecherche\n(Schulbuch, TUVs, Web)"]
+
+        KE["📄 KE-Matrix\n+ Tafelbild-Progression"]
+        INHALTS_MD["📄 Inhalts-MDs\n(1 pro Mappe)"]
+
+        GAME_BP["📄 GAME_BLUEPRINT\n━━━━━━━━━━━━━\nTafelbild-Progression\nKE-Matrix\nNarrativ-Rahmen"]
+
+        INPUT --> BRIEFING
+        BRIEFING --> DIDAKTIK
+        BRIEFING --> INHALT
+        DIDAKTIK --> KE
+        INHALT --> INHALTS_MD
+        KE --> GAME_BP
+        INHALTS_MD --> GAME_BP
+    end
+
+    REVIEW0["✅ USER REVIEW\n(GAME_BLUEPRINT freigeben)"]
+    GAME_BP --> REVIEW0
+
+    subgraph E1["EBENE 1: MAPPE-BLUEPRINT (pro Mappe, Cowork)"]
+        direction TB
+        MAT_DESIGN["🔷 AGENT_MATERIAL\n(Design-Modus)\n━━━━━━━━━━━━━\n1.1 Tafelbild detaillieren\n1.2 Material-Entwurf\n1.3 Aufgaben-Skizze\n1.4 Erarbeitbarkeits-Nachweis\n1.5 Tafelbild-Verifizierung\n1.6 Einstieg + Sicherung\n1.7 Zielklarheit-Pruefung"]
+
+        BP_N["📄 BLUEPRINT_MAPPE_N\n━━━━━━━━━━━━━\nDetaill. Tafelbild\nMaterial-Entwuerfe\nAufgaben-Skizzen\nErarbeitbarkeits-Nachweis"]
+
+        MAT_DESIGN --> BP_N
+    end
+
+    REVIEW0 --> E1
+    REVIEW1["✅ USER REVIEW\n(BLUEPRINT freigeben)"]
+    BP_N --> REVIEW1
+
+    subgraph E2["EBENE 2: PRODUKTION (pro Mappe, Claude Code)"]
+        direction TB
+        MAT_PROD["🟪 AGENT_MATERIAL\n(Produktions-Modus)\n━━━━━━━━━━━━━\nW-1: darstellungstext (Agent schreibt)\nW-2: quellentext (WebSearch→markdownify)\nW-3: bildquelle (wikimedia→rijksmuseum)\nW-4: karte (wikimedia→Canva→excalidraw)\nW-5: zeitleiste (JSON→Mermaid→excalidraw)\nW-6: statistik (QuickChart→JSON)\nW-7: tagebuch (Agent schreibt)\nW-8: Tafelbild (Mermaid→excalidraw)"]
+
+        RAETSEL["🟪 AGENT_RAETSEL\n━━━━━━━━━━━━━\nAufgaben formulieren\nTipp-System\nFreischalt-Code\nNarrativ-Integration"]
+
+        MAT_JSON["📄 material-mappe-N.json\n(materialien[], einstieg{},\nsicherung{}, quellenangaben[])"]
+
+        DATA_JSON["📄 data.json Abschnitt\n(materialien[] + aufgaben[]\n+ einstieg{} + sicherung{})"]
+
+        MAT_PROD --> MAT_JSON
+        MAT_JSON --> RAETSEL
+        RAETSEL --> DATA_JSON
+    end
+
+    REVIEW1 --> E2
+
+    subgraph E3["EBENE 3: IMPLEMENTIERUNG (einmalig, Claude Code)"]
+        direction TB
+        TECHNIK["🟪 AGENT_TECHNIK\n━━━━━━━━━━━━━\nHTML-Generierung\nEngine-Integration\ndata.json Assembly"]
+
+        DESIGN["🟪 AGENT_DESIGN\n━━━━━━━━━━━━━\nCSS-Styling\nResponsive\n7 Material-Typ-Styles"]
+
+        QUALITAET["🟪 AGENT_QUALITAET\n━━━━━━━━━━━━━\nBrowser-Test\nLehrplan-Abdeckung\nErarbeitbarkeit"]
+
+        GAME["📄 Fertiges Game\n(HTML + CSS + JS + data.json)\nDeployed auf weitergehts.online"]
+
+        TECHNIK --> DESIGN
+        DESIGN --> QUALITAET
+        QUALITAET --> GAME
+    end
+
+    DATA_JSON --> E3
+
+    REVIEW3["✅ USER REVIEW\n(Browser-Test + Evaluation)"]
+    GAME --> REVIEW3
+
+    REVIEW3 -->|"FAIL"| RUECKLAUF["🔄 Ruecklauf an\nzustaendigen Agenten\n(max. 3 Iterationen)"]
+    REVIEW3 -->|"PASS"| DEPLOY["🚀 DEPLOYED"]
+
+    subgraph PROBLEMS["⚠️ ERKANNTE PROBLEME (Status Quo)"]
+        direction TB
+        P1["P1: Kein kohaerentes Inhaltsgeruest\nzwischen DIDAKTIK-Rahmen\nund MATERIAL-Design"]
+        P2["P2: Quellenrecherche blind\n(WebSearch ins Blaue,\nkein Inhaltsanker)"]
+        P3["P3: Token-ineffizient\n(Recherche + Generierung\nin einem Durchlauf)"]
+        P4["P4: Tafelbild-Henne-Ei\n(Tafelbild entsteht erst\nbei Design, nicht vorher)"]
+        P5["P5: Agenten-Vermischung\n(INHALT liefert Kernaussagen,\naber kein narratives Produkt)"]
+    end
+
+    style E0 fill:#1e40af15,stroke:#1e40af
+    style E1 fill:#1e40af15,stroke:#1e40af
+    style E2 fill:#7c3aed15,stroke:#7c3aed
+    style E3 fill:#7c3aed15,stroke:#7c3aed
+    style PROBLEMS fill:#dc262615,stroke:#dc2626
+    style LEGEND fill:#f8fafc,stroke:#94a3b8
+    style REVIEW0 fill:#059669,color:#fff,stroke:#047857
+    style REVIEW1 fill:#059669,color:#fff,stroke:#047857
+    style REVIEW3 fill:#059669,color:#fff,stroke:#047857
+    style DEPLOY fill:#059669,color:#fff,stroke:#047857
+    style RUECKLAUF fill:#ea580c,color:#fff,stroke:#c2410c
+    style INPUT fill:#f59e0b,color:#000,stroke:#d97706
+    style BRIEFING fill:#f59e0b15,stroke:#d97706
+    style GAME_BP fill:#f59e0b15,stroke:#d97706
+    style BP_N fill:#f59e0b15,stroke:#d97706
+    style MAT_JSON fill:#f59e0b15,stroke:#d97706
+    style DATA_JSON fill:#f59e0b15,stroke:#d97706
+    style GAME fill:#f59e0b15,stroke:#d97706
+    style KE fill:#f59e0b15,stroke:#d97706
+    style INHALTS_MD fill:#f59e0b15,stroke:#d97706

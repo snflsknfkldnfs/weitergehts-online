@@ -1,0 +1,386 @@
+# Guetekriterien Tafelbild/Hefteintrag
+
+**Datum:** 2026-03-26
+**Status:** v1 — empirisch fundiert, bereit fuer AGENT_TAFELBILD
+**Quellen:**
+- DG B2 Tafelbild.pdf (Bauer/Hartmann, Bausteinskript Fachdidaktik)
+- 8 Excalidraw-Tafelbilder aus Silas' 1.WK-Sequenz (GPG7, 9 UEs)
+- 8 Verlaufsplaene derselben Sequenz (Erarbeitungswege)
+
+---
+
+## 1. Leitsatz
+
+> "Was nicht auf die Tafel passt, passt auch nicht in den Kopf."
+> — DG B2, Grundsatz 1
+
+> "Das Tafelbild und der daraus entstehende Hefteintrag sind die bleibende Lernessenz einer Unterrichtseinheit."
+> — DG B2, Potthoff et al.
+
+Das Tafelbild ist kein Zusammenfassungstext. Es ist eine **strukturierte Visualisierung der Kernerkenntnisse**, die Schueler:innen durch Materialarbeit selbst erschlossen haben. Der daraus abgeleitete Hefteintrag ist das bleibende Artefakt, an dem beim Lernen der Lernweg mental rekapituliert wird.
+
+---
+
+## 2. Synthese-Extraktion: Warum das Tafelbild NACH dem Skript steht
+
+Im realen Unterricht entsteht das Tafelbild AM ENDE der Stunde: Schueler:innen erarbeiten Inhalte → Lehrkraft strukturiert Erkenntnisse an der Tafel → Schueler:innen uebertragen ins Heft.
+
+Im **Designprozess** folgt AGENT_TAFELBILD dem gleichen Prinzip — es arbeitet auf dem bereits didaktisierten Narrativ:
+1. AGENT_SKRIPT (Phase 0.3) schreibt das didaktisierte Narrativ (600-900 W/Chunk) frei entlang DIDAKTIK_RAHMEN
+2. AGENT_TAFELBILD (Phase 0.4) **extrahiert** aus dem SKRIPT die Quintessenz: Kernerkenntnisse, Ordnungsmuster, Knoten-Struktur
+3. AGENT_MATERIAL stellt sicher, dass jeder TB-Knoten durch konkretes Material **erarbeitbar** wird
+
+Backward Design (Wiggins/McTighe) gilt auf KE-Ebene: DIDAKTIK_RAHMEN definiert Lernziele vor allem anderen. Auf TB-Ebene ist die Synthese-Extraktion aus dem didaktisierten SKRIPT die staerkere Architektur, weil Erarbeitbarkeit gegen das tatsaechliche Narrativ geprueft wird, nicht gegen Roh-Fakten (vgl. E5 in UPGRADE_PLAN_v3.md).
+
+---
+
+## 3. Empirische Muster aus 8 Praxis-Tafelbildern
+
+### 3.1 Elementanzahl und Komplexitaet
+
+| Metrik | Wert | Quelle |
+|---|---|---|
+| Durchschnittliche Elemente pro TB | 9,25 | 8 Excalidraw-TBs |
+| Spannweite | 7-14 | 8 Excalidraw-TBs |
+| Empfohlenes Limit | **max. 10 Elemente** | Synthese aus Empirie + DG B2 "Reduktion" |
+
+### 3.2 Inhaltstypen
+
+| Typ | Anteil | Verwendung |
+|---|---|---|
+| Schlagwoerter/Kurzbegriffe | ~40% | Strukturelemente, Kategorien, Fachbegriffe |
+| Ganze Saetze (Merksaetze) | ~60% | Erklaerungen, Schlussfolgerungen, Kausalaussagen |
+| Merksaetze am Ende | 6 von 8 TBs | Abschliessende Synthese als vollstaendiger Satz |
+
+### 3.3 Organisationsmuster
+
+| Muster | Haeufigkeit | Beschreibung |
+|---|---|---|
+| Kausal-Kette | 4/8 | A fuehrt zu B fuehrt zu C (Pulverfass, Attentat, Schlieffen, Kriegsende) |
+| Kategorien-Gliederung | 3/8 | Hauptkategorien mit Unterpunkten (Front, Heimatfront, Warum Weltkrieg) |
+| Chronologisch | 1/8 | Zeitliche Abfolge (Marne-Schlacht) |
+
+### 3.4 Raeumliche Struktur
+
+Alle 8 TBs nutzen das Excalidraw-Schema: **Haupttafel** (zentraler Inhalt) + **Seitentafel links/rechts** (Vermutungen, Zusatzinfo). Dies entspricht der physischen Tafelteilung im Klassenzimmer.
+
+### 3.5 Sprachregister-Progression
+
+| UE-Bereich | Sprachregister | Beispiel |
+|---|---|---|
+| Politisch-diplomatisch (UE 1-3) | Fachbegrifflich-analytisch | "Dreibund", "Triple-Entente", "Imperialismus" |
+| Militaerisch (UE 4) | Strategisch-beschreibend | "Bewegungskrieg", "Stellungskrieg" |
+| Menschlich-sozial (UE 5-7) | Erfahrungsbezogen-emotional | "dreckige Schuetzengraeben", "Todesangst", "Hungersnot" |
+| Synthese (UE 8) | Kausal-bilanzierend | "Militaerische Niederlage", "Wirtschaftliche Erschoepfung" |
+
+---
+
+## 4. Erarbeitungsweg: Wie das Tafelbild im Unterricht entsteht
+
+### 4.1 Position im Stundenverlauf
+
+Das Tafelbild wird in der **Sicherungsphase** (letzte 7-12 Minuten) aufgebaut — NACH der inhaltlichen Erarbeitung. Es ist kein Vorab-Strukturgeber fuer Schueler:innen, sondern die sichtbare Ordnung dessen, was sie bereits entdeckt haben.
+
+### 4.2 Typischer Ablauf
+
+```
+1. Lehrkraft stellt Leitfrage ("Was habt ihr herausgefunden?")
+2. SuS nennen Ergebnisse aus Materialarbeit
+3. Lehrkraft schreibt/zeichnet in Echtzeit an der Tafel
+4. Lehrkraft ordnet Beitraege in Kategorien/Hierarchien
+5. Klasse verifiziert das fertige Tafelbild gemeinsam
+6. SuS uebertragen ins Heft (5-7 Minuten)
+```
+
+### 4.3 Material-Tafelbild-Korrespondenz
+
+Zentraler Befund: Die **analytischen Kategorien der Erarbeitungsmaterialien** spiegeln sich direkt in der **Struktur des Tafelbilds**. Beispiele:
+
+| UE | Material-Kategorien | Tafelbild-Struktur |
+|---|---|---|
+| 1 (Pulverfass) | 4 Gruppentexte: Dreibund, Triple Entente, Balkankrise, Kolonien | Karte mit Laendernamen, Buendnislinien, Konfliktlinien |
+| 5 (Front) | Chronologische Briefe + Fotos + Feldpost | Kategorien: Kampfbedingungen, Gefuehle, Veraenderung |
+| 6 (Heimatfront) | Film + Beobachtungsbogen (Essen, Frauenarbeit, Stimmung) | Kategorien: Versorgungskrise, Arbeitswelt, Soziale Folgen |
+| 8 (Kriegsende) | 4 Arbeitsblaetter (Militaer, USA, Erschoepfung, Revolution) | 4 Punkte mit Unterbullets unter exakt diesen Kategorien |
+
+**Konsequenz fuer AGENT_TAFELBILD:** Jedes Tafelbild-Element muss einem geplanten Material zuordbar sein. Die Tafelbild-Struktur determiniert die Material-Struktur — nicht umgekehrt.
+
+---
+
+## 5. Guetekriterien-Katalog
+
+Gewichtete Kriterien fuer den AGENT_TAFELBILD Q-Gate. Drei Prioritaetsstufen: **MUSS** (Verletzung = FAIL), **SOLL** (Verletzung = Nachbesserung), **KANN** (Empfehlung).
+
+### MUSS-Kriterien
+
+| # | Kriterium | Operationalisierung | Herkunft |
+|---|---|---|---|
+| G1 | **Lernziel-Kongruenz** | Jede relevante KE aus DIDAKTIK_RAHMEN hat min. 1 Element im Tafelbild | DG B2 Grundsatz 2 |
+| G2 | **Konsequente Reduktion** | Max. 10 Elemente (Knoten). Max. 3 Kernerkenntnisse (Merksaetze). | DG B2 Grundsatz 1 + Empirie (Durchschnitt 9,25) |
+| G3 | **Erarbeitbarkeit** | Jedes TB-Element ist durch ein geplantes Material erarbeitbar (Abgleich mit INHALTSBASIS) | Empirischer Befund: Material-TB-Korrespondenz |
+| G4 | **Strukturklarheit** | TB hat eine erkennbare Ordnung: kausal, chronologisch ODER kategorial — nicht gemischt | DG B2 Grundsatz 5 + Empirie |
+| G5 | **Sprachliches Niveau** | Merksaetze: max. 15 Woerter, R7-Lesbarkeit. Fachbegriffe nur wenn in Material eingefuehrt. | DG B2 Grundsatz 4 + AGENT_SKRIPT Constraints |
+| G6 | **Hefteintrag-Transferierbarkeit** | Hefteintrag-Repraesentation in max. 5 Minuten ins Heft uebertragbar (~80-120 Woerter) | Empirischer Befund: 5-7 min Uebertragungszeit |
+
+### SOLL-Kriterien
+
+| # | Kriterium | Operationalisierung | Herkunft |
+|---|---|---|---|
+| G7 | **Merksatz-Abschluss** | Mindestens 1 Merksatz als ganzer Satz (Synthese der Kernerkenntnis) | Empirie: 6/8 TBs haben Merksatz |
+| G8 | **Anschaulichkeit** | Mindestens 1 visuell-strukturierendes Element: Pfeil, Klammer, Rahmen, Farbcodierung (in Textbeschreibung) | DG B2 Grundsatz 7 |
+| G9 | **Progression** | Voraussetzungen aus vorherigen Mappen korrekt referenziert. TB baut auf Vorwissen auf, wiederholt nicht. | Empirie: Sequenz-Progression ueber 8 UEs |
+| G10 | **Rekapitulierbarkeit** | Beim Lesen des Hefteintrags kann der Lernweg mental nachvollzogen werden (Benennung der Erarbeitungsschritte implizit sichtbar) | DG B2 Grundsatz 8 |
+
+### KANN-Kriterien
+
+| # | Kriterium | Operationalisierung | Herkunft |
+|---|---|---|---|
+| G11 | **Vermutungs-Sektion** | Optional: 1-2 Schueler-Hypothesen als "Seitentafel"-Element (werden durch Material bestaetigt/widerlegt) | Empirie: "Vermutungen:" in mehreren TBs |
+| G12 | **Sprachregister-Passung** | Sprachregister passt zum Themencharakter (analytisch fuer Politik, erfahrungsbezogen fuer Alltag) | Empirie: Sprachregister-Progression |
+| G13 | **Stundenfrage als Titel** | TB-Titel als Frage formuliert (entspricht Stundenziel) | Empirie: Alle 8 TBs nutzen Frage-Titel |
+
+---
+
+## 6. Output-Format fuer AGENT_TAFELBILD
+
+### A. JSON-Repraesentation (fuer Engine)
+
+```json
+{
+  "titel": "Stundenfrage als Tafelbild-Titel",
+  "ordnungsmuster": "kausal | chronologisch | kategorial",
+  "knoten": [
+    {
+      "id": "k1-1",
+      "text": "Schlagwort oder Kurzbegriff",
+      "typ": "kernbegriff | kategorie | ursache | wirkung | akteur | ereignis",
+      "merksatz": "Ganzer Satz, der die Kernerkenntnis zu diesem Knoten formuliert. Max. 15 Woerter.",
+      "skript_referenz": "[Chunk-ID, §N]"
+    }
+  ],
+  "verbindungen": [
+    {
+      "von": "k1-1",
+      "nach": "k1-2",
+      "label": "Praezises Label, 2-3 Woerter"
+    }
+  ],
+  "voraussetzungen": [],
+  "kernerkenntnisse": [
+    "Merksatz 1: Ganzer Satz, max. 15 Woerter.",
+    "Merksatz 2: Ganzer Satz, max. 15 Woerter."
+  ]
+}
+```
+
+Felder gegenueber v2.1:
+- **NEU:** `titel` (Stundenfrage), `ordnungsmuster`, `merksatz` pro Knoten, `kernerkenntnisse[]`
+- **NEU:** `skript_referenz` (wird von AGENT_TAFELBILD direkt bei Erstellung gesetzt — SKRIPT liegt bereits vor)
+- **UNVERAENDERT:** `knoten[]`, `verbindungen[]`, `voraussetzungen[]`
+
+### B. Hefteintrag-Repraesentation (fuer Analogtransfer)
+
+```markdown
+### [Stundenfrage als Titel]
+
+[Strukturierte Textbeschreibung des Tafelbilds:
+- Ordnungsmuster benennen ("Die Ursachen lassen sich in drei Bereiche gliedern:")
+- Knoten als Fachbegriffe/Schlagwoerter in **Fettdruck**
+- Verbindungen als Saetze ("**Imperialismus** fuehrt zu **Wettruestung**, weil...")
+- Pfeil-/Klammer-Hinweise fuer Heft-Skizze ("Zeichne einen Pfeil von X nach Y")]
+
+**Merke:**
+- [Kernerkenntnis 1]
+- [Kernerkenntnis 2]
+- [ggf. Kernerkenntnis 3]
+
+Umfang: 80-120 Woerter (ohne Merksaetze)
+```
+
+---
+
+## 7. Q-Gate-Protokoll
+
+```markdown
+### Q-Gate: Tafelbild Mappe [N]
+
+| # | Kriterium | Prio | Ergebnis | Detail |
+|---|---|---|---|---|
+| G1 | Lernziel-Kongruenz | MUSS | PASS/FAIL | KE [X] abgedeckt durch k[N]-[M] |
+| G2 | Reduktion (max. 10 Knoten, max. 3 Merksaetze) | MUSS | PASS/FAIL | [Anzahl] Knoten, [Anzahl] Merksaetze |
+| G3 | Erarbeitbarkeit | MUSS | PASS/FAIL | Jeder Knoten → Skript-Passage oder Artefakt-Kandidat |
+| G4 | Strukturklarheit | MUSS | PASS/FAIL | Ordnungsmuster: [kausal/chronologisch/kategorial] |
+| G5 | Sprachliches Niveau | MUSS | PASS/FAIL | Laengster Merksatz: [N] Woerter |
+| G6 | Hefteintrag-Transfer | MUSS | PASS/FAIL | [N] Woerter, geschaetzte Uebertragungszeit [N] min |
+| G7 | Merksatz-Abschluss | SOLL | PASS/FAIL | [Anzahl] Merksaetze als ganze Saetze |
+| G8 | Anschaulichkeit | SOLL | PASS/FAIL | Visuelle Elemente: [Liste] |
+| G9 | Progression | SOLL | PASS/FAIL | Voraussetzungen: [Liste] |
+| G10 | Rekapitulierbarkeit | SOLL | PASS/FAIL | Lernweg implizit erkennbar |
+**Gesamt:** PASS / FAIL (G[X] nachgebessert)
+```
+
+---
+
+## 8. Q-Gate-Operationalisierung (maschinell pruefbar)
+
+Konkrete Prueflogik fuer jedes Kriterium, damit AGENT_TAFELBILD das Q-Gate autonom ausfuehren kann.
+
+### G1: Lernziel-Kongruenz (MUSS)
+
+**Input-Daten:** `DIDAKTIK_RAHMEN.ke_matrix[mappe_n]` (Liste der KE-IDs dieser Mappe)
+**Prueflogik:**
+1. Extrahiere alle KE-IDs fuer diese Mappe aus DIDAKTIK_RAHMEN
+2. Fuer jede KE-ID: Pruefe, ob mindestens 1 Knoten-Merksatz oder 1 Kernerkenntnis diese KE inhaltlich adressiert
+3. Erstelle Mapping-Tabelle: `KE-ID → kN-M (Knoten-ID) | kernerkenntnisse[i]`
+**FAIL wenn:** Mindestens 1 KE-ID hat keinen Eintrag in der Mapping-Tabelle
+**Nachbesserung:** Fehlende KE identifizieren → Knoten ergaenzen oder bestehenden Knoten-Merksatz erweitern
+
+### G2: Konsequente Reduktion (MUSS)
+
+**Input-Daten:** `tafelbild.knoten[]`, `tafelbild.kernerkenntnisse[]`
+**Prueflogik:**
+1. Zaehle `len(knoten[])` — Ziel: ≤ 10
+2. Zaehle `len(kernerkenntnisse[])` — Ziel: ≤ 3
+**FAIL wenn:** `len(knoten[]) > 10` ODER `len(kernerkenntnisse[]) > 3`
+**Nachbesserung:** Knoten zusammenfassen (aehnliche Inhalte unter 1 Oberbegriff) oder streichen (niedrigste KE-Relevanz zuerst)
+
+### G3: Erarbeitbarkeit (MUSS)
+
+**Input-Daten:** `tafelbild.knoten[]`, `SKRIPT_[game-id].md` (Chunk dieser Mappe), `ARTEFAKT_INVENTAR`
+**Prueflogik — Entscheidungsbaum pro Knoten:**
+
+```
+Fuer jeden Knoten kN-M:
+├── DIRECT: Gibt es im SKRIPT-Chunk einen Absatz/Passage, der diesen Knoten direkt behandelt?
+│   └── JA → Status: DIRECT, Skript-Referenz: [Chunk-ID, §N]
+├── ARTIFACT: Gibt es im ARTEFAKT_INVENTAR ein Artefakt (im SKRIPT positioniert), das diesen Knoten stuetzt?
+│   └── JA → Status: ARTIFACT, Material-Kandidat: [Artefakt-ID, Skript-Ref]
+├── INFERENTIAL: Kann der Knoten aus 2+ anderen DIRECT/ARTIFACT-Knoten logisch erschlossen werden?
+│   └── JA → Status: INFERENTIAL, Herleitung: [kN-X + kN-Y → kN-M]
+└── KEINE: Kein Weg zum Knoten
+    └── Status: UNKLAR → Knoten entfernen oder Luecke markieren
+```
+
+**Output-Tabelle:**
+
+| Knoten | Status | Skript-Referenz / Herleitung |
+|---|---|---|
+| kN-1 | DIRECT | Chunk 1, §3: "Die Grossmaechte schlossen..." |
+| kN-2 | ARTIFACT | img-1-3 (Buendniskarte), Chunk 1 §4 |
+| kN-3 | INFERENTIAL | kN-1 + kN-2 → Schlussfolgerung |
+
+**FAIL wenn:** Mindestens 1 Knoten hat Status UNKLAR
+**Nachbesserung:** Knoten entfernen ODER `[ERARBEITBARKEIT UNKLAR: kN-M — keine Skript-Passage]` markieren fuer AGENT_MATERIAL
+
+### G4: Strukturklarheit (MUSS)
+
+**Input-Daten:** `tafelbild.ordnungsmuster`, `tafelbild.verbindungen[]`
+**Prueflogik:**
+1. Pruefe: Ist `ordnungsmuster` genau eines von `kausal | chronologisch | kategorial`?
+2. Pruefe Konsistenz: Passen alle Verbindungs-Labels zum gewaehlten Muster?
+   - Kausal: Labels wie "fuehrt zu", "verursacht", "bewirkt" (Richtung: Ursache → Wirkung)
+   - Chronologisch: Labels wie "danach", "fuehrt zu", "loest aus" (Richtung: frueher → spaeter)
+   - Kategorial: Labels wie "gehoert zu", "Aspekt von" (Richtung: Oberbegriff → Unterpunkt)
+3. Pruefe: Gibt es Verbindungen, die dem Muster widersprechen? (z.B. kausale Labels in kategorialem TB)
+**FAIL wenn:** Kein Muster gesetzt ODER ≥2 Verbindungen widersprechen dem Muster
+**Nachbesserung:** Widersprechende Verbindungen umformulieren oder Muster wechseln
+
+### G5: Sprachliches Niveau (MUSS)
+
+**Input-Daten:** Alle `knoten[].merksatz`, alle `kernerkenntnisse[]`
+**Prueflogik:**
+1. Fuer jeden Merksatz: Zaehle Woerter → Ziel: ≤ 15
+2. Fuer jeden Fachbegriff in Merksaetzen: Pruefe, ob er in INHALTSBASIS definiert/eingefuehrt ist
+3. Lesbarkeits-Heuristik: Keine Schachtelsaetze (max. 1 Nebensatz), keine Passivkonstruktionen
+**FAIL wenn:** Ein Merksatz > 15 Woerter ODER ein Fachbegriff nicht in INHALTSBASIS eingefuehrt
+**Nachbesserung:** Merksatz kuerzen (Nebensatz abspalten) oder Fachbegriff durch R7-Alternative ersetzen
+
+### G6: Hefteintrag-Transferierbarkeit (MUSS)
+
+**Input-Daten:** Hefteintrag-Text (Abschnitt B der Ausgabe)
+**Prueflogik:**
+1. Zaehle Woerter im Hefteintrag (ohne "Merke:"-Block) → Ziel: 80-120
+2. Schaetze Uebertragungszeit: Woerter / 15 + Skizzen-Elemente * 0,5 min → Ziel: ≤ 5 min
+3. Pruefe: Enthaelt der Hefteintrag visuelle Hinweise ("Zeichne...", "Pfeil von...") fuer mind. 1 Skizzen-Element?
+**FAIL wenn:** Woerter < 80 ODER > 120 ODER geschaetzte Zeit > 5 min
+**Nachbesserung:** Kuerzen (Details streichen) oder ergaenzen (fehlende Verbindungen als Saetze)
+
+### G7: Merksatz-Abschluss (SOLL)
+
+**Input-Daten:** `tafelbild.kernerkenntnisse[]`
+**Prueflogik:** Mindestens 1 Eintrag in `kernerkenntnisse[]` ist ein ganzer Aussagesatz (Subjekt + Praedikat + Objekt/Ergaenzung)
+**FAIL wenn:** `kernerkenntnisse[]` leer ODER kein Eintrag ist ein vollstaendiger Satz
+**Nachbesserung:** Wichtigste Kernerkenntnis als Aussagesatz ausformulieren
+
+### G8: Anschaulichkeit (SOLL)
+
+**Input-Daten:** Hefteintrag-Text, `tafelbild.verbindungen[]`
+**Prueflogik:** Mindestens 1 visuell-strukturierendes Element vorhanden: Pfeil-Hinweis, Klammer, Rahmen, Farbcodierung (in Textbeschreibung)
+**FAIL wenn:** Kein visueller Hinweis im Hefteintrag UND keine Verbindungen im JSON
+**Nachbesserung:** "Zeichne einen Pfeil von X nach Y" oder Rahmen-Hinweis ergaenzen
+
+### G9: Progression (SOLL)
+
+**Input-Daten:** `tafelbild.voraussetzungen[]`, vorheriges Tafelbild (Mappe N-1)
+**Prueflogik:**
+- **Mappe 1:** `voraussetzungen[]` MUSS leer sein (kein Vorwissen aus Escape-Game)
+- **Mappe 2+:** `voraussetzungen[]` darf NUR Knoten-IDs aus Mappe N-1 enthalten (keine Spruenge ueber Mappen hinweg). Jede referenzierte ID muss im vorherigen Tafelbild existieren.
+- Wiederholungsregel: Kein Knoten-Text darf woertlich aus dem vorherigen TB uebernommen werden
+**FAIL wenn:** Mappe 1 hat nicht-leere Voraussetzungen ODER Mappe 2+ referenziert nicht-existierende IDs
+**Nachbesserung:** Ungueltige Voraussetzungen entfernen oder IDs korrigieren
+
+### G10: Rekapitulierbarkeit (SOLL)
+
+**Input-Daten:** Hefteintrag-Text
+**Prueflogik:** Der Hefteintrag muss den Lernweg implizit erkennbar machen — beim Lesen soll nachvollziehbar sein, WELCHE Erarbeitungsschritte zu den Erkenntnissen fuehrten. Pruefe: Enthaelt der Hefteintrag mindestens 1 Handlungs- oder Prozessverb ("Die Schueler untersuchten...", "Durch Vergleich von...") oder eine erarbeitungsbezogene Formulierung?
+**FAIL wenn:** Hefteintrag liest sich wie reines Faktenwissen ohne Bezug zum Erarbeitungsweg
+**Nachbesserung:** 1-2 Formulierungen ergaenzen, die den Erarbeitungsweg andeuten
+
+### G11: Vermutungs-Sektion (KANN)
+
+**Prueflogik:** Optional. Wenn vorhanden: Max. 2 Schueler-Hypothesen, die durch Material bestaetigt/widerlegt werden.
+**Kein FAIL moeglich** — nur Dokumentation ob vorhanden.
+
+### G12: Sprachregister-Passung (KANN)
+
+**Input-Daten:** `tafelbild.knoten[].merksatz`, Themencharakter aus DIDAKTIK_RAHMEN
+**Prueflogik:** Sprachregister des Tafelbilds soll zum Themencharakter passen:
+- Politisch-diplomatische Themen → fachbegrifflich-analytisch
+- Militaerische Themen → strategisch-beschreibend
+- Menschlich-soziale Themen → erfahrungsbezogen-emotional
+- Synthese-Themen → kausal-bilanzierend
+**Kein FAIL moeglich** — nur Empfehlung zur Anpassung.
+
+### G13: Stundenfrage als Titel (KANN)
+
+**Input-Daten:** `tafelbild.titel`
+**Prueflogik:** `titel` endet mit "?" (Fragezeichen)
+**Kein FAIL moeglich** — nur Empfehlung.
+
+---
+
+## 9. Referenz-Tafelbild: Mappe 1 "Pulverfass Europa" (Silas)
+
+Zum Abgleich — so sieht ein gutes Praxis-TB zu genau dem Thema unserer Mappe 1 aus:
+
+**Elemente (~14):**
+Laendernamen (Deutschland, Oesterreich-Ungarn, Italien, Frankreich, Grossbritannien, Russland), Buendnisbezeichnungen ("Dreibund", "Triple-Entente"), Konfliktfelder, abschliessende Erklaerung
+
+**Ordnungsmuster:** Raeumlich-relational (Karte mit Buendnislinien und Konfliktlinien)
+
+**Merksatz:** Erklaerung, warum Europa ein "Pulverfass" war (Buendnispflichten erzwingen Kettenreaktion)
+
+**Besonderheit:** 4 Gruppentexte (Dreibund, Triple Entente, Balkankrise, Kolonien) fuehren direkt zu 4 TB-Bereichen. Material-TB-Korrespondenz = 1:1.
+
+---
+
+## 10. Abgrenzung: Was AGENT_TAFELBILD NICHT tut
+
+| Nicht-Zustaendigkeit | Zustaendig |
+|---|---|
+| Narrativen Text schreiben | AGENT_SKRIPT |
+| Materialtypen zuordnen | AGENT_MATERIAL |
+| Aufgaben formulieren | AGENT_RAETSEL |
+| SVG/HTML rendern | AGENT_TECHNIK |
+| Material produzieren | SUB_*-Subagenten |
+| Didaktischen Rahmen definieren | AGENT_DIDAKTIK |
