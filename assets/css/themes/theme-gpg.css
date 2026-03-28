@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat:wght@400;600;700&family=Patrick+Hand&display=swap');
 
 /* ==========================================================================
    theme-gpg.css – GPG-Archiv-/Akten-Theme
@@ -34,6 +34,16 @@
   --font-heading: Georgia, "Times New Roman", serif;
   --font-body: system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-code: "Courier New", Courier, monospace;
+  --font-fragebogen: 'Architects Daughter', cursive;
+
+  /* Fragebogen-Farbschema (Notizbuch-Stil) */
+  --fb-primary: #2952A3;
+  --fb-highlight: #FFF176;
+  --fb-success: #388E3C;
+  --fb-error: #C62828;
+  --fb-hint: #78909C;
+  --fb-bg: #FFFFFF;
+  --fb-grid: #E8E8E8;
 }
 
 /* --------------------------------------------------------------------------
@@ -919,7 +929,7 @@ footer a:hover {
 }
 
 /* --------------------------------------------------------------------------
-   15. v1: Erarbeitung 2-Spalten-Grid
+   15. v3.5: Erarbeitung 2/3-1/3 Grid (Material dominant, Fragebogen sticky)
    -------------------------------------------------------------------------- */
 
 .mappe__erarbeitung {
@@ -928,11 +938,14 @@ footer a:hover {
   gap: var(--space-lg);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .mappe__erarbeitung {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
   }
   .erarbeitung__materialien {
+    min-width: 0;
+  }
+  .erarbeitung__aufgaben {
     position: sticky;
     top: 1rem;
     align-self: start;
@@ -942,7 +955,7 @@ footer a:hover {
 }
 
 /* Wider layout for 2-column mode */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .mappe {
     max-width: var(--max-width-wide, 1400px);
   }
@@ -1323,16 +1336,371 @@ footer a:hover {
 .aufgabe__material-verweis a:hover { color: var(--color-primary-light); }
 
 /* --------------------------------------------------------------------------
-   19b. v3.3: Material-Überleitungen
+   19b. v3.5: Material-Überleitungen (optimiert — zentriert, Pfeil, Gradient)
    -------------------------------------------------------------------------- */
 
 .material-ueberleitung {
-  margin: 1.5rem 0;
-  padding: 0.75rem 1rem;
+  text-align: center;
+  padding: var(--space-lg) var(--space-md);
+  margin: var(--space-sm) 0;
+  position: relative;
+}
+
+.material-ueberleitung::before {
+  content: '▽';
+  display: block;
+  font-size: 1.2rem;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-sm);
+  opacity: 0.6;
+}
+
+.material-ueberleitung__text {
   font-style: italic;
-  color: var(--color-muted, #666);
-  border-left: 3px solid var(--color-accent, #c9a96e);
-  background: var(--color-surface-alt, rgba(201, 169, 110, 0.05));
+  color: var(--color-muted);
+  font-size: 1.05rem;
+  line-height: 1.5;
+  max-width: 600px;
+  margin-inline: auto;
+  background: linear-gradient(180deg, transparent 0%, rgba(201,168,76,0.06) 30%, rgba(201,168,76,0.06) 70%, transparent 100%);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 4px;
+}
+
+.material-ueberleitung__funktion {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-secondary);
+  margin-top: var(--space-sm);
+  padding: 2px 8px;
+  border: 1px solid var(--color-secondary);
+  border-radius: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   19c. v3.5: Fragebogen — Notizbuch-Stil (Arbeitsblatt-Metapher)
+   -------------------------------------------------------------------------- */
+
+.erarbeitung__aufgaben {
+  background: var(--fb-bg);
+  border-radius: 0 0 8px 8px;
+  box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.08);
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 23px,
+      var(--fb-grid) 23px,
+      var(--fb-grid) 24px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 23px,
+      var(--fb-grid) 23px,
+      var(--fb-grid) 24px
+    );
+  background-size: 24px 24px;
+  background-position: 12px 12px;
+}
+
+/* Lochrand oben */
+.fragebogen__lochrand {
+  background: var(--fb-primary);
+  height: 36px;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  position: relative;
+}
+
+.fragebogen__lochrand::before,
+.fragebogen__lochrand::after,
+.fragebogen__lochrand span {
+  content: '';
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-background, #F5F0E8);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.15);
+}
+
+/* Fragebogen Header */
+.fragebogen__header {
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 2px solid var(--fb-primary);
+}
+
+.fragebogen__titel {
+  font-family: var(--font-fragebogen);
+  font-size: 1.2rem;
+  color: var(--fb-primary);
+  margin: 0;
+}
+
+/* Fragebogen Inner (Aufgaben-Bereich) */
+.fragebogen__inner {
+  padding: var(--space-md) var(--space-lg);
+}
+
+/* Aufgaben im Notizbuch-Stil */
+.erarbeitung__aufgaben .aufgabe {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px dashed var(--fb-grid);
+  border-radius: 0;
+  box-shadow: none;
+  padding: var(--space-md) 0;
+  margin-bottom: 0;
+}
+
+.erarbeitung__aufgaben .aufgabe:last-of-type {
+  border-bottom: none;
+}
+
+/* Aufgaben-Nummer im Kreis */
+.erarbeitung__aufgaben .aufgabe__nummer {
+  font-family: var(--font-fragebogen);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  min-height: 28px;
+  min-width: 28px;
+  border-radius: 50%;
+  border: 2px solid var(--fb-primary);
+  color: var(--fb-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Frage-Text */
+.erarbeitung__aufgaben .aufgabe__frage {
+  font-family: var(--font-fragebogen);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* MC-Optionen im Arbeitsblatt-Stil */
+.erarbeitung__aufgaben .aufgabe__option {
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 10px;
+  gap: var(--space-sm);
+  transition: background 150ms ease;
+}
+
+.erarbeitung__aufgaben .aufgabe__option:hover {
+  background: rgba(41, 82, 163, 0.06);
+  border-color: transparent;
+}
+
+/* Custom Radio-Buttons */
+.erarbeitung__aufgaben .aufgabe__option input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+  border: 2px solid var(--fb-primary);
+  border-radius: 50%;
+  flex-shrink: 0;
+  position: relative;
+  cursor: pointer;
+  background: transparent;
+  padding: 0;
+}
+
+.erarbeitung__aufgaben .aufgabe__option input[type="radio"]:checked {
+  border-color: var(--fb-primary);
+  background: var(--fb-primary);
+}
+
+.erarbeitung__aufgaben .aufgabe__option input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+/* Feedback im Fragebogen */
+.erarbeitung__aufgaben .aufgabe__feedback--success {
+  border: none;
+  border-left: 3px solid var(--fb-success);
+  background-color: rgba(56, 142, 60, 0.1);
+  color: var(--fb-success);
+}
+
+.erarbeitung__aufgaben .aufgabe__feedback--error {
+  border: none;
+  border-left: 3px solid var(--fb-error);
+  background-color: rgba(198, 40, 40, 0.1);
+  color: var(--fb-error);
+}
+
+/* Submit-Button im Fragebogen */
+.erarbeitung__aufgaben .aufgabe__submit {
+  background: var(--fb-primary);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  padding: var(--space-sm) var(--space-lg);
+}
+
+.erarbeitung__aufgaben .aufgabe__submit:hover {
+  background: #1e3d7a;
+}
+
+/* Solved State */
+.erarbeitung__aufgaben .aufgabe--solved .aufgabe__nummer {
+  border-color: var(--fb-success);
+  color: var(--fb-success);
+  background: rgba(56, 142, 60, 0.08);
+}
+
+/* Lückentext im Fragebogen */
+.erarbeitung__aufgaben .aufgabe__luecke {
+  border-bottom-color: var(--fb-primary);
+  font-family: var(--font-fragebogen);
+  color: var(--fb-primary);
+}
+
+/* Tipp-Buttons im Fragebogen */
+.erarbeitung__aufgaben .tipp__trigger {
+  background-color: var(--fb-hint);
+}
+
+.erarbeitung__aufgaben .tipp__trigger:hover {
+  background-color: #607d8b;
+}
+
+/* Code-Eingabe im Fragebogen */
+.erarbeitung__aufgaben .code-eingabe {
+  border: none;
+  background: transparent;
+  padding: var(--space-md) 0;
+  border-top: 2px solid var(--fb-grid);
+}
+
+.erarbeitung__aufgaben .code-eingabe__label {
+  font-family: var(--font-fragebogen);
+  color: var(--fb-primary);
+}
+
+.erarbeitung__aufgaben .code__input {
+  border: 2px dashed var(--fb-primary);
+  font-family: var(--font-fragebogen);
+  color: var(--fb-primary);
+}
+
+/* --------------------------------------------------------------------------
+   19d. v3.5: Material-Fortschritt (Dots)
+   -------------------------------------------------------------------------- */
+
+.material-fortschritt {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+}
+
+.material-fortschritt__text {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+
+.material-fortschritt__dots {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.material-fortschritt__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-border);
+  transition: all 200ms ease;
+}
+
+.material-fortschritt__dot--gesehen {
+  background: var(--color-primary);
+}
+
+.material-fortschritt__dot--aktuell {
+  background: var(--color-secondary);
+  width: 14px;
+  height: 14px;
+  margin-top: -2px;
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.3);
+}
+
+.material-fortschritt__funktion {
+  font-size: 0.75rem;
+  color: var(--color-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* --------------------------------------------------------------------------
+   19e. v3.5: Aufgaben-Fortschritt (Dots statt Balken)
+   -------------------------------------------------------------------------- */
+
+.aufgaben-fortschritt {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) 0;
+  border-top: 1px solid var(--fb-grid);
+  margin-top: var(--space-md);
+}
+
+.aufgaben-fortschritt__text {
+  font-family: var(--font-fragebogen);
+  font-size: 0.85rem;
+  color: var(--fb-hint);
+  white-space: nowrap;
+}
+
+.aufgaben-fortschritt__dots {
+  display: flex;
+  gap: 6px;
+}
+
+.aufgaben-fortschritt__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--fb-hint);
+  background: transparent;
+  transition: all 200ms ease;
+}
+
+.aufgaben-fortschritt__dot--solved {
+  border-color: var(--fb-success);
+  background: var(--fb-success);
+}
+
+.aufgaben-fortschritt__dot--current {
+  border-color: var(--fb-primary);
+  background: var(--fb-primary);
+  box-shadow: 0 0 0 3px rgba(41, 82, 163, 0.2);
 }
 
 /* --------------------------------------------------------------------------
@@ -1399,5 +1767,20 @@ footer a:hover {
 
   .hefteintrag__transfer {
     display: none;
+  }
+
+  /* v3.5: Fragebogen-Druck */
+  .erarbeitung__aufgaben {
+    background-image: none !important;
+    box-shadow: none !important;
+  }
+
+  .fragebogen__lochrand {
+    display: none !important;
+  }
+
+  .material-fortschritt,
+  .aufgaben-fortschritt {
+    display: none !important;
   }
 }

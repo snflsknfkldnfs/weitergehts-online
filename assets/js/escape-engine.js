@@ -618,11 +618,20 @@ var EscapeEngine = (function () {
       var mat = materialien[i];
       var el = null;
 
-      // v3.3: Überleitung vor Material (außer Position 1)
+      // v3.5: Überleitung vor Material (außer Position 1) — zentriert mit Pfeil
       if (i > 0 && mat.ueberleitung_von) {
         var ueberleitungDiv = document.createElement('div');
         ueberleitungDiv.className = 'material-ueberleitung';
-        ueberleitungDiv.textContent = mat.ueberleitung_von;
+        var ueberleitungText = document.createElement('div');
+        ueberleitungText.className = 'material-ueberleitung__text';
+        ueberleitungText.textContent = mat.ueberleitung_von;
+        ueberleitungDiv.appendChild(ueberleitungText);
+        if (mat.didaktische_funktion) {
+          var funktionBadge = document.createElement('span');
+          funktionBadge.className = 'material-ueberleitung__funktion';
+          funktionBadge.textContent = mat.didaktische_funktion;
+          ueberleitungDiv.appendChild(funktionBadge);
+        }
         frag.appendChild(ueberleitungDiv);
       }
 
@@ -1557,22 +1566,51 @@ var EscapeEngine = (function () {
     var materialContainer = document.getElementById('material-container');
     if (materialContainer && mappe.materialien) {
       materialContainer.innerHTML = '';
+      // v3.5: Material-Fortschritt (Dots) vor Materialien
+      var materialFortschritt = _renderMaterialFortschritt(mappe.materialien);
+      materialContainer.appendChild(materialFortschritt);
       var materialienFrag = _renderMaterialien(mappe.materialien);
       materialContainer.appendChild(materialienFrag);
     }
 
-    // Aufgaben rendern (in den aufgaben-container)
+    // Aufgaben rendern (in den aufgaben-container) — v3.5: Notizbuch-Stil
     var aufgabenContainer = document.getElementById('aufgaben-container');
     if (aufgabenContainer) {
       aufgabenContainer.innerHTML = '';
+
+      // v3.5: Lochrand oben
+      var lochrand = document.createElement('div');
+      lochrand.className = 'fragebogen__lochrand';
+      lochrand.appendChild(document.createElement('span'));
+      aufgabenContainer.appendChild(lochrand);
+
+      // v3.5: Header
+      var header = document.createElement('div');
+      header.className = 'fragebogen__header';
+      var headerTitel = document.createElement('h3');
+      headerTitel.className = 'fragebogen__titel';
+      headerTitel.textContent = 'Arbeitsblatt';
+      header.appendChild(headerTitel);
+      aufgabenContainer.appendChild(header);
+
+      // v3.5: Inner container für Aufgaben
+      var inner = document.createElement('div');
+      inner.className = 'fragebogen__inner';
+
       var aufgaben = mappe.aufgaben || [];
       var total = aufgaben.length;
       for (var i = 0; i < aufgaben.length; i++) {
         var aufgabe = aufgaben[i];
         var geloest = progress.aufgaben[i] || false;
         var aufgabeEl = _renderAufgabe(aufgabe, i, geloest, total);
-        aufgabenContainer.appendChild(aufgabeEl);
+        inner.appendChild(aufgabeEl);
       }
+
+      // v3.5: Aufgaben-Fortschritt (Dots) am Ende
+      var aufgabenFortschritt = _renderAufgabenFortschritt(aufgaben, progress);
+      inner.appendChild(aufgabenFortschritt);
+
+      aufgabenContainer.appendChild(inner);
     }
 
     // Sicherung rendern (explizit hidden, bis Code-Reveal)
@@ -1587,6 +1625,9 @@ var EscapeEngine = (function () {
     if (sicherungContainer && progress.abgeschlossen) {
       sicherungContainer.style.display = '';
     }
+
+    // v3.5: IntersectionObserver für Material-Fortschritt
+    _initMaterialObserver(mappe.materialien);
   }
 
   // ========================================================================
@@ -2398,9 +2439,155 @@ var EscapeEngine = (function () {
   // Fortschrittsbalken
   // ========================================================================
 
+  // ========================================================================
+  // v3.5: Material-Fortschritt (Dot-Anzeige + IntersectionObserver)
+  // ========================================================================
+
   /**
-   * Aktualisiert den Fortschrittsbalken.
-   * Bei v1: Loest Code-Reveal aus, wenn alle Aufgaben geloest.
+   * Rendert die Material-Fortschritt-Dots oberhalb der Materialien.
+   * @param {Array} materialien
+   * @returns {HTMLElement}
+   * @private
+   */
+  function _renderMaterialFortschritt(materialien) {
+    materialien = _sortMaterialienByPosition(materialien);
+    var container = document.createElement('div');
+    container.className = 'material-fortschritt';
+    container.id = 'material-fortschritt';
+
+    var text = document.createElement('span');
+    text.className = 'material-fortschritt__text';
+    text.id = 'material-fortschritt-text';
+    text.textContent = 'Material 1 von ' + materialien.length;
+    container.appendChild(text);
+
+    var dots = document.createElement('div');
+    dots.className = 'material-fortschritt__dots';
+    for (var i = 0; i < materialien.length; i++) {
+      var dot = document.createElement('span');
+      dot.className = 'material-fortschritt__dot';
+      dot.setAttribute('data-index', i);
+      if (i === 0) dot.classList.add('material-fortschritt__dot--aktuell');
+      dots.appendChild(dot);
+    }
+    container.appendChild(dots);
+
+    var funktion = document.createElement('span');
+    funktion.className = 'material-fortschritt__funktion';
+    funktion.id = 'material-fortschritt-funktion';
+    if (materialien.length > 0 && materialien[0].didaktische_funktion) {
+      funktion.textContent = materialien[0].didaktische_funktion;
+    }
+    container.appendChild(funktion);
+
+    return container;
+  }
+
+  /**
+   * Initialisiert IntersectionObserver fuer Material-Scroll-Tracking.
+   * @param {Array} materialien
+   * @private
+   */
+  function _initMaterialObserver(materialien) {
+    if (!materialien || !('IntersectionObserver' in window)) return;
+
+    materialien = _sortMaterialienByPosition(materialien);
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var pos = parseInt(entry.target.getAttribute('data-position'), 10);
+          if (!isNaN(pos)) {
+            _updateMaterialFortschritt(pos, materialien);
+          }
+        }
+      });
+    }, { threshold: 0.3 });
+
+    // Observe all material elements
+    var materialElements = document.querySelectorAll('[data-position]');
+    materialElements.forEach(function (el) {
+      observer.observe(el);
+    });
+  }
+
+  /**
+   * Aktualisiert die Material-Fortschritt-Dots bei Scroll.
+   * @param {number} currentPos - aktuelle Position (1-basiert)
+   * @param {Array} materialien
+   * @private
+   */
+  function _updateMaterialFortschritt(currentPos, materialien) {
+    var dots = document.querySelectorAll('.material-fortschritt__dot');
+    var text = document.getElementById('material-fortschritt-text');
+    var funktion = document.getElementById('material-fortschritt-funktion');
+
+    dots.forEach(function (dot) {
+      var idx = parseInt(dot.getAttribute('data-index'), 10);
+      dot.classList.remove('material-fortschritt__dot--aktuell', 'material-fortschritt__dot--gesehen');
+      if (idx < currentPos - 1) {
+        dot.classList.add('material-fortschritt__dot--gesehen');
+      } else if (idx === currentPos - 1) {
+        dot.classList.add('material-fortschritt__dot--aktuell');
+      }
+    });
+
+    if (text) {
+      text.textContent = 'Material ' + currentPos + ' von ' + materialien.length;
+    }
+
+    if (funktion && materialien[currentPos - 1]) {
+      funktion.textContent = materialien[currentPos - 1].didaktische_funktion || '';
+    }
+  }
+
+  // ========================================================================
+  // v3.5: Aufgaben-Fortschritt (Dots)
+  // ========================================================================
+
+  /**
+   * Rendert die Aufgaben-Fortschritt-Dots.
+   * @param {Array} aufgaben
+   * @param {Object} progress
+   * @returns {HTMLElement}
+   * @private
+   */
+  function _renderAufgabenFortschritt(aufgaben, progress) {
+    var container = document.createElement('div');
+    container.className = 'aufgaben-fortschritt';
+    container.id = 'aufgaben-fortschritt';
+
+    var total = aufgaben.length;
+    var solved = 0;
+    for (var i = 0; i < (progress.aufgaben || []).length; i++) {
+      if (progress.aufgaben[i]) solved++;
+    }
+
+    var text = document.createElement('span');
+    text.className = 'aufgaben-fortschritt__text';
+    text.id = 'aufgaben-fortschritt-text';
+    text.textContent = solved + ' von ' + total;
+    container.appendChild(text);
+
+    var dots = document.createElement('div');
+    dots.className = 'aufgaben-fortschritt__dots';
+    for (var i = 0; i < total; i++) {
+      var dot = document.createElement('span');
+      dot.className = 'aufgaben-fortschritt__dot';
+      dot.setAttribute('data-aufgabe-index', i);
+      if (progress.aufgaben && progress.aufgaben[i]) {
+        dot.classList.add('aufgaben-fortschritt__dot--solved');
+      }
+      dots.appendChild(dot);
+    }
+    container.appendChild(dots);
+
+    return container;
+  }
+
+  /**
+   * Aktualisiert den Fortschritt (Dots + Code-Reveal).
+   * v3.5: Ersetzt den alten Fortschrittsbalken.
    * @param {Object} mappe
    * @param {Object} progress
    * @private
@@ -2414,22 +2601,34 @@ var EscapeEngine = (function () {
       if (progress.aufgaben[i]) solved++;
     }
 
-    var percent = total > 0 ? Math.round((solved / total) * 100) : 0;
+    // v3.5: Aufgaben-Fortschritt-Dots aktualisieren
+    var dots = document.querySelectorAll('.aufgaben-fortschritt__dot');
+    dots.forEach(function (dot) {
+      var idx = parseInt(dot.getAttribute('data-aufgabe-index'), 10);
+      dot.classList.remove('aufgaben-fortschritt__dot--solved', 'aufgaben-fortschritt__dot--current');
+      if (progress.aufgaben[idx]) {
+        dot.classList.add('aufgaben-fortschritt__dot--solved');
+      }
+    });
 
-    // Fortschrittsbalken aktualisieren
+    var fortschrittText = document.getElementById('aufgaben-fortschritt-text');
+    if (fortschrittText) {
+      fortschrittText.textContent = solved + ' von ' + total;
+    }
+
+    // Legacy: Fortschrittsbalken (falls noch im HTML vorhanden)
     var bar = document.querySelector('.fortschritt__bar');
     if (bar) {
+      var percent = total > 0 ? Math.round((solved / total) * 100) : 0;
       bar.style.width = percent + '%';
       bar.setAttribute('aria-valuenow', percent);
     }
-
-    // Label aktualisieren
     var label = document.querySelector('.fortschritt__label');
     if (label) {
-      label.textContent = solved + ' von ' + total + ' Aufgaben gelöst (' + percent + '%)';
+      label.textContent = solved + ' von ' + total + ' Aufgaben gelöst (' + Math.round((solved / total) * 100) + '%)';
     }
 
-    // 1b: Code-Reveal wenn alle geloest
+    // Code-Reveal wenn alle geloest
     if (solved === total && total > 0) {
       _revealFreischaltCode(mappe);
     }
