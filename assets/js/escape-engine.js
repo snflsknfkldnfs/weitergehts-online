@@ -216,7 +216,8 @@ var EscapeEngine = (function () {
     return {
       aufgaben: aufgabenStatus,
       abgeschlossen: mappenProgress ? (mappenProgress.abgeschlossen || false) : false,
-      fehlversuche: mappenProgress ? (mappenProgress.fehlversuche || 0) : 0
+      fehlversuche: mappenProgress ? (mappenProgress.fehlversuche || 0) : 0,
+      tipp_punkte: mappenProgress ? (mappenProgress.tipp_punkte || 0) : 0
     };
   }
 
@@ -244,9 +245,12 @@ var EscapeEngine = (function () {
    */
   function _updateFehlversuche(mappeId) {
     var progress = loadProgress(mappeId);
+    var wert = document.getElementById('fehlversuche-wert');
     var counter = document.getElementById('fehlversuche-counter');
+    if (wert) {
+      wert.textContent = progress.fehlversuche;
+    }
     if (counter) {
-      counter.textContent = 'Fehlversuche: ' + progress.fehlversuche;
       if (progress.fehlversuche > 0) {
         counter.classList.remove('fehlversuche--null');
       } else {
@@ -435,8 +439,33 @@ var EscapeEngine = (function () {
       }
     }
 
+    // v3.5e: Gewichteter Tipp-Counter (nur beim ersten Aufdecken)
+    if (!allProgress.mappen[mappeId].tipps_gezaehlt) {
+      allProgress.mappen[mappeId].tipps_gezaehlt = {};
+    }
+    var tippKey = 'aufgabe-' + aufgabeIndex + '-stufe-' + stufe;
+    if (!allProgress.mappen[mappeId].tipps_gezaehlt[tippKey]) {
+      allProgress.mappen[mappeId].tipps_gezaehlt[tippKey] = true;
+      allProgress.mappen[mappeId].tipp_punkte = (allProgress.mappen[mappeId].tipp_punkte || 0) + stufe;
+    }
+
     allProgress.letzteAktivitaet = new Date().toISOString();
     Core.storage.set(_state.storageKey, allProgress);
+
+    // Tipp-Counter aktualisieren
+    _updateTippCounter(mappeId);
+  }
+
+  /**
+   * v3.5e: Aktualisiert die Tipp-Counter-Anzeige.
+   * @private
+   */
+  function _updateTippCounter(mappeId) {
+    var progress = loadProgress(mappeId);
+    var wert = document.getElementById('tipp-counter-wert');
+    if (wert) {
+      wert.textContent = progress.tipp_punkte;
+    }
   }
 
   /**
@@ -590,43 +619,17 @@ var EscapeEngine = (function () {
    * @private
    */
   function _revealFreischaltCode(mappe) {
-    var codeSection = document.getElementById('code-section') || document.querySelector('.code-eingabe');
-    if (!codeSection) return;
-
-    // Sichtbar machen
-    codeSection.style.display = '';
-    codeSection.classList.add('fade-in');
-
-    // v3.5d: Buchstaben-Kaestchen hervorheben und dorthin scrollen
-    var buchstabenContainer = document.getElementById('code-buchstaben');
-    if (buchstabenContainer) {
-      buchstabenContainer.classList.add('code-buchstaben--komplett');
-
-      // Buchstaben-Felder aktualisieren und staggered reveal
-      var felder = buchstabenContainer.querySelectorAll('.code-buchstaben__feld');
-      var aufgaben = (mappe.aufgaben || []);
-      for (var i = 0; i < felder.length; i++) {
-        if (aufgaben[i] && aufgaben[i].freischalt_buchstabe) {
-          felder[i].textContent = aufgaben[i].freischalt_buchstabe;
-          felder[i].classList.add('code-buchstaben__feld--geloest');
-        }
-        // Staggered animation delay per JS
-        (function(feld, delay) {
-          setTimeout(function() {
-            feld.classList.add('code-buchstaben__feld--reveal');
-          }, delay);
-        })(felder[i], i * 100);
-      }
-
-      // Scroll zu Buchstaben-Kaestchen
-      buchstabenContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    } else {
-      // Fallback: Scroll zum Code-Bereich
-      codeSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // v3.5e: Alle Aufgaben gelöst — Hinweis zum Loesungswort-Puzzle anzeigen
+    var loesungscodeSektion = document.getElementById('loesungscode-sektion');
+    if (loesungscodeSektion) {
+      loesungscodeSektion.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
-    // Erfolgsmeldung
-    Core.feedback.showSuccess(codeSection, 'Alle Aufgaben gelöst! Gib jetzt den Freischalt-Code ein.');
+    // Alte code-eingabe-Sektion verstecken (falls noch im HTML)
+    var codeSection = document.getElementById('code-section') || document.querySelector('.code-eingabe');
+    if (codeSection) {
+      codeSection.style.display = 'none';
+    }
   }
 
   // ========================================================================
@@ -1645,15 +1648,42 @@ var EscapeEngine = (function () {
       headerTitel.textContent = 'Arbeitsblatt';
       header.appendChild(headerTitel);
 
-      // v3.5d: Fehlversuche-Counter im Header
+      // v3.5e: Mappe-Statistik (Tipp-Counter + Fehlversuche) im Header
+      var statistik = document.createElement('div');
+      statistik.className = 'mappe-statistik';
+
+      var tippCounter = document.createElement('div');
+      tippCounter.className = 'tipp-counter';
+      tippCounter.id = 'tipp-counter';
+      var tippLabel = document.createElement('span');
+      tippLabel.className = 'mappe-statistik__label';
+      tippLabel.textContent = 'Tipps:';
+      var tippWert = document.createElement('span');
+      tippWert.className = 'mappe-statistik__wert';
+      tippWert.id = 'tipp-counter-wert';
+      tippWert.textContent = progress.tipp_punkte || 0;
+      tippCounter.appendChild(tippLabel);
+      tippCounter.appendChild(tippWert);
+      statistik.appendChild(tippCounter);
+
       var fehlversucheDiv = document.createElement('div');
       fehlversucheDiv.className = 'fehlversuche';
       fehlversucheDiv.id = 'fehlversuche-counter';
-      fehlversucheDiv.textContent = 'Fehlversuche: ' + (progress.fehlversuche || 0);
+      var fehlLabel = document.createElement('span');
+      fehlLabel.className = 'mappe-statistik__label';
+      fehlLabel.textContent = 'Fehlversuche:';
+      var fehlWert = document.createElement('span');
+      fehlWert.className = 'mappe-statistik__wert';
+      fehlWert.id = 'fehlversuche-wert';
+      fehlWert.textContent = progress.fehlversuche || 0;
+      fehlversucheDiv.appendChild(fehlLabel);
+      fehlversucheDiv.appendChild(fehlWert);
       if ((progress.fehlversuche || 0) === 0) {
         fehlversucheDiv.classList.add('fehlversuche--null');
       }
-      header.appendChild(fehlversucheDiv);
+      statistik.appendChild(fehlversucheDiv);
+
+      header.appendChild(statistik);
 
       aufgabenContainer.appendChild(header);
 
@@ -2447,6 +2477,14 @@ var EscapeEngine = (function () {
 
     var triggers = [];
 
+    // v3.5e: Reload-Zustand ermitteln (welche Tipps schon genutzt)
+    var allProgress = _getAllProgress();
+    var mappenProgress = (allProgress.mappen && allProgress.mappen[_state.mappeId]) || {};
+    var mappe = _getMappe(_state.mappeId);
+    var aufgabeId = (mappe && mappe.aufgaben && mappe.aufgaben[index]) ? mappe.aufgaben[index].id : null;
+    var aufgabeProgress = (aufgabeId && mappenProgress.aufgaben && mappenProgress.aufgaben[aufgabeId]) || {};
+    var tippsGenutzt = aufgabeProgress.tipps_genutzt || 0;
+
     for (var i = 0; i < tipps.length; i++) {
       var tipp = tipps[i];
 
@@ -2457,9 +2495,24 @@ var EscapeEngine = (function () {
       trigger.setAttribute('aria-expanded', 'false');
       triggers.push(trigger);
 
+      // v3.5e: Sequentielle Freischaltung
+      // Stufe 1 immer freigeschaltet. Stufe N freigeschaltet wenn Stufe N-1 genutzt.
+      if (tipp.stufe <= tippsGenutzt) {
+        // Bereits genutzt bei vorherigem Besuch
+        trigger.classList.add('tipp__trigger--used');
+      } else if (tipp.stufe > tippsGenutzt + 1) {
+        // Noch gesperrt
+        trigger.disabled = true;
+        trigger.classList.add('tipp__trigger--gesperrt');
+        trigger.setAttribute('title', 'Decke zuerst Tipp ' + (tipp.stufe - 1) + ' auf');
+      }
+      // Stufe == tippsGenutzt + 1 → naechster freischaltbarer Tipp (enabled, nicht used)
+
       // Closure fuer Akkordeon-Event
       (function (triggerBtn, stufe, aufgabeIndex, tippIndex) {
         triggerBtn.addEventListener('click', function () {
+          if (triggerBtn.disabled) return;
+
           var isActive = triggerBtn.classList.contains('tipp__trigger--active');
 
           // Alle Triggers zuruecksetzen
@@ -2491,7 +2544,6 @@ var EscapeEngine = (function () {
               for (var m = 0; m < refs.length; m++) {
                 var link = document.createElement('a');
                 link.href = '#' + refs[m];
-                // v3.5d: Material-Titel statt technische ID
                 var matObj = null;
                 for (var mi = 0; mi < materialien.length; mi++) {
                   if (materialien[mi].id === refs[m]) { matObj = materialien[mi]; break; }
@@ -2502,7 +2554,6 @@ var EscapeEngine = (function () {
               }
               verweisSpan.appendChild(document.createTextNode('. '));
               contentArea.appendChild(verweisSpan);
-              // Rest des Tipp-Texts
               var restText = showTipp(_state.mappeId, aufgabeIndex, stufe);
               if (restText && restText !== 'Kein Tipp-Text vorhanden.') {
                 contentArea.appendChild(document.createTextNode(restText));
@@ -2516,6 +2567,16 @@ var EscapeEngine = (function () {
             triggerBtn.setAttribute('aria-expanded', 'true');
             contentArea.setAttribute('tabindex', '-1');
             contentArea.focus();
+
+            // v3.5e: Naechsten Tipp freischalten
+            if (tippIndex + 1 < triggers.length) {
+              var nextTrigger = triggers[tippIndex + 1];
+              if (nextTrigger.disabled) {
+                nextTrigger.disabled = false;
+                nextTrigger.classList.remove('tipp__trigger--gesperrt');
+                nextTrigger.removeAttribute('title');
+              }
+            }
           }
         });
       })(trigger, tipp.stufe, index, i);
@@ -2538,37 +2599,11 @@ var EscapeEngine = (function () {
    * @private
    */
   function _initCodeEingabe(mappeId) {
-    var codeInput = document.querySelector('.code__input');
-    var codeSubmit = document.querySelector('.code__submit');
-
-    if (!codeInput || !codeSubmit) return;
-
-    codeSubmit.addEventListener('click', function () {
-      var eingabe = codeInput.value;
-      var result = checkCode(mappeId, eingabe);
-      var codeSection = document.querySelector('.code-eingabe');
-
-      if (result.correct) {
-        if (codeSection) codeSection.classList.add('code-eingabe--success');
-        Core.feedback.showSuccess(codeSection || codeSubmit.parentElement, result.message);
-      } else {
-        if (codeSection) {
-          codeSection.classList.add('code-eingabe--error');
-          setTimeout(function () {
-            codeSection.classList.remove('code-eingabe--error');
-          }, 1000);
-        }
-        Core.feedback.showError(codeSection || codeSubmit.parentElement, result.message);
-      }
-    });
-
-    // Enter-Taste in Code-Eingabe
-    codeInput.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        codeSubmit.click();
-      }
-    });
+    // v3.5e: Alte Code-Eingabe-Sektion verstecken (ersetzt durch Drag-and-Drop-Puzzle)
+    var codeSection = document.getElementById('code-section') || document.querySelector('.code-eingabe');
+    if (codeSection) {
+      codeSection.style.display = 'none';
+    }
   }
 
   // ========================================================================
@@ -2700,42 +2735,361 @@ var EscapeEngine = (function () {
     titel.textContent = 'Lösungswort';
     container.appendChild(titel);
 
-    // Pruefen ob freischalt_buchstabe vorhanden
-    var hatBuchstaben = false;
-    for (var i = 0; i < aufgaben.length; i++) {
-      if (aufgaben[i].freischalt_buchstabe) {
-        hatBuchstaben = true;
+    // v3.5e: Hinweistext
+    var hinweis = document.createElement('p');
+    hinweis.className = 'code-hinweis';
+    hinweis.textContent = 'Löse die Aufgaben, um Buchstaben freizuschalten. Ziehe sie an die richtige Stelle!';
+    container.appendChild(hinweis);
+
+    // v3.5e: Zielbereich — leere Kaestchen, eines pro Buchstabe des freischalt_code
+    var code = (mappe.freischalt_code || '').toUpperCase();
+    var ziel = document.createElement('div');
+    ziel.className = 'code-ziel';
+    ziel.id = 'code-ziel';
+    for (var i = 0; i < code.length; i++) {
+      var feld = document.createElement('div');
+      feld.className = 'code-ziel__feld';
+      feld.setAttribute('data-position', i);
+      // Drop-Events (Mouse)
+      feld.addEventListener('dragover', _onDragOver);
+      feld.addEventListener('dragleave', _onDragLeave);
+      feld.addEventListener('drop', _onDrop);
+      ziel.appendChild(feld);
+    }
+    container.appendChild(ziel);
+
+    // v3.5e: Buchstaben-Pool (anfangs leer, dynamisch befuellt)
+    var pool = document.createElement('div');
+    pool.className = 'code-pool';
+    pool.id = 'code-pool';
+    container.appendChild(pool);
+
+    // Bei Seiten-Reload: bereits geloeste Buchstaben sofort anzeigen
+    _restoreLoesungswortState(aufgaben, progress, mappe);
+
+    return container;
+  }
+
+  /**
+   * v3.5e: Stellt den Loesungswort-Zustand nach Reload wieder her.
+   * @private
+   */
+  function _restoreLoesungswortState(aufgaben, progress, mappe) {
+    // Wird nach DOM-Append aufgerufen (via setTimeout), da Elemente erst im DOM sein muessen
+    setTimeout(function() {
+      var code = (mappe.freischalt_code || '').toUpperCase();
+      var pool = document.getElementById('code-pool');
+      var ziel = document.getElementById('code-ziel');
+      if (!pool || !ziel) return;
+
+      // Prüfe welche Buchstaben korrekt platziert sind (aus localStorage)
+      var allProgress = _getAllProgress();
+      var mappenProgress = (allProgress.mappen && allProgress.mappen[mappe.id]) || {};
+      var platzierteBuchstaben = mappenProgress.platzierte_buchstaben || {};
+
+      for (var i = 0; i < aufgaben.length; i++) {
+        if (!progress.aufgaben[i]) continue; // nicht geloest
+        var buchstabe = aufgaben[i].freischalt_buchstabe;
+        if (!buchstabe) continue;
+
+        // Prüfe ob dieser Buchstabe bereits korrekt platziert wurde
+        var aufgabeKey = 'aufgabe-' + i;
+        if (platzierteBuchstaben[aufgabeKey]) {
+          // Buchstabe ist platziert → in Zielfeld anzeigen
+          var pos = platzierteBuchstaben[aufgabeKey];
+          var feld = ziel.querySelector('[data-position="' + pos + '"]');
+          if (feld && !feld.classList.contains('code-ziel__feld--korrekt')) {
+            feld.textContent = buchstabe.toUpperCase();
+            feld.classList.add('code-ziel__feld--korrekt');
+          }
+        } else {
+          // Buchstabe geloest aber nicht platziert → in Pool zeigen (ohne Animation)
+          _addBuchstabeToPool(buchstabe, i, false);
+        }
+      }
+
+      // Prüfe ob alle Felder korrekt sind
+      _checkLoesungswortKomplett(mappe);
+    }, 0);
+  }
+
+  /**
+   * v3.5e: Fügt einen Buchstaben in den Pool ein.
+   * @param {string} buchstabe
+   * @param {number} aufgabeIndex
+   * @param {boolean} mitAnimation
+   * @private
+   */
+  function _addBuchstabeToPool(buchstabe, aufgabeIndex, mitAnimation) {
+    var pool = document.getElementById('code-pool');
+    if (!pool) return;
+
+    // Prüfen ob schon im Pool
+    var existing = pool.querySelector('[data-aufgabe-index="' + aufgabeIndex + '"]');
+    if (existing) return;
+
+    // Prüfen ob schon platziert
+    var ziel = document.getElementById('code-ziel');
+    if (ziel) {
+      var felder = ziel.querySelectorAll('.code-ziel__feld--korrekt');
+      for (var i = 0; i < felder.length; i++) {
+        if (felder[i].getAttribute('data-source-aufgabe') === String(aufgabeIndex)) return;
+      }
+    }
+
+    var tile = document.createElement('div');
+    tile.className = 'code-pool__buchstabe';
+    tile.textContent = buchstabe.toUpperCase();
+    tile.setAttribute('draggable', 'true');
+    tile.setAttribute('data-buchstabe', buchstabe.toUpperCase());
+    tile.setAttribute('data-aufgabe-index', aufgabeIndex);
+
+    // Drag-Events (Mouse)
+    tile.addEventListener('dragstart', function(e) {
+      e.dataTransfer.setData('text/plain', buchstabe.toUpperCase());
+      e.dataTransfer.setData('aufgabe-index', String(aufgabeIndex));
+      tile.classList.add('code-pool__buchstabe--dragging');
+    });
+    tile.addEventListener('dragend', function() {
+      tile.classList.remove('code-pool__buchstabe--dragging');
+    });
+
+    // Touch-Events
+    _addTouchDragHandlers(tile, buchstabe.toUpperCase(), aufgabeIndex);
+
+    if (mitAnimation) {
+      tile.classList.add('code-pool__buchstabe--erscheint');
+    }
+
+    pool.appendChild(tile);
+  }
+
+  /**
+   * v3.5e: Touch-Drag-Handlers fuer ein Buchstaben-Tile.
+   * @private
+   */
+  function _addTouchDragHandlers(tile, buchstabe, aufgabeIndex) {
+    var startX, startY, clone, currentTarget;
+
+    tile.addEventListener('touchstart', function(e) {
+      e.preventDefault();
+      var touch = e.touches[0];
+      startX = touch.clientX;
+      startY = touch.clientY;
+
+      // Visuellen Klon erstellen
+      clone = tile.cloneNode(true);
+      clone.className = 'code-pool__buchstabe code-pool__buchstabe--touch-ghost';
+      clone.style.position = 'fixed';
+      clone.style.zIndex = '9999';
+      clone.style.pointerEvents = 'none';
+      clone.style.left = (startX - 20) + 'px';
+      clone.style.top = (startY - 20) + 'px';
+      clone.style.transform = 'scale(1.1)';
+      document.body.appendChild(clone);
+
+      tile.classList.add('code-pool__buchstabe--dragging');
+    }, { passive: false });
+
+    tile.addEventListener('touchmove', function(e) {
+      e.preventDefault();
+      if (!clone) return;
+      var touch = e.touches[0];
+      clone.style.left = (touch.clientX - 20) + 'px';
+      clone.style.top = (touch.clientY - 20) + 'px';
+
+      // Prüfe welches Zielfeld unter dem Finger liegt
+      clone.style.display = 'none';
+      var elementBelow = document.elementFromPoint(touch.clientX, touch.clientY);
+      clone.style.display = '';
+
+      // Drag-over Effekt
+      var alleFelder = document.querySelectorAll('.code-ziel__feld');
+      for (var i = 0; i < alleFelder.length; i++) {
+        alleFelder[i].classList.remove('code-ziel__feld--drag-over');
+      }
+      if (elementBelow && elementBelow.classList.contains('code-ziel__feld') &&
+          !elementBelow.classList.contains('code-ziel__feld--korrekt')) {
+        elementBelow.classList.add('code-ziel__feld--drag-over');
+        currentTarget = elementBelow;
+      } else {
+        currentTarget = null;
+      }
+    }, { passive: false });
+
+    tile.addEventListener('touchend', function(e) {
+      e.preventDefault();
+      tile.classList.remove('code-pool__buchstabe--dragging');
+
+      // Klon entfernen
+      if (clone && clone.parentNode) {
+        clone.parentNode.removeChild(clone);
+        clone = null;
+      }
+
+      // Drag-over Effekt entfernen
+      var alleFelder = document.querySelectorAll('.code-ziel__feld');
+      for (var i = 0; i < alleFelder.length; i++) {
+        alleFelder[i].classList.remove('code-ziel__feld--drag-over');
+      }
+
+      // Drop-Logik
+      if (currentTarget && currentTarget.classList.contains('code-ziel__feld') &&
+          !currentTarget.classList.contains('code-ziel__feld--korrekt')) {
+        _handleDrop(currentTarget, buchstabe, aufgabeIndex, tile);
+      }
+      currentTarget = null;
+    }, { passive: false });
+  }
+
+  // --- Drag-and-Drop Event Handlers (Mouse) ---
+
+  function _onDragOver(e) {
+    e.preventDefault();
+    if (!this.classList.contains('code-ziel__feld--korrekt')) {
+      this.classList.add('code-ziel__feld--drag-over');
+    }
+  }
+
+  function _onDragLeave() {
+    this.classList.remove('code-ziel__feld--drag-over');
+  }
+
+  function _onDrop(e) {
+    e.preventDefault();
+    this.classList.remove('code-ziel__feld--drag-over');
+
+    if (this.classList.contains('code-ziel__feld--korrekt')) return; // bereits belegt
+
+    var buchstabe = e.dataTransfer.getData('text/plain');
+    var aufgabeIndex = parseInt(e.dataTransfer.getData('aufgabe-index'), 10);
+
+    // Tile im Pool finden
+    var pool = document.getElementById('code-pool');
+    var tile = pool ? pool.querySelector('[data-aufgabe-index="' + aufgabeIndex + '"]') : null;
+
+    _handleDrop(this, buchstabe, aufgabeIndex, tile);
+  }
+
+  /**
+   * v3.5e: Gemeinsame Drop-Logik fuer Mouse und Touch.
+   * @private
+   */
+  function _handleDrop(feld, buchstabe, aufgabeIndex, tile) {
+    var mappe = _getMappe(_state.mappeId);
+    if (!mappe) return;
+
+    var code = (mappe.freischalt_code || '').toUpperCase();
+    var position = parseInt(feld.getAttribute('data-position'), 10);
+    var expected = code[position];
+
+    if (buchstabe.toUpperCase() === expected) {
+      // Korrekt
+      feld.textContent = buchstabe;
+      feld.classList.add('code-ziel__feld--korrekt');
+      feld.setAttribute('data-source-aufgabe', aufgabeIndex);
+      // Tile aus Pool entfernen
+      if (tile && tile.parentNode) {
+        tile.parentNode.removeChild(tile);
+      }
+      // Position in localStorage speichern
+      _savePlatzierterBuchstabe(_state.mappeId, aufgabeIndex, position);
+      // Prüfen ob alle korrekt
+      _checkLoesungswortKomplett(mappe);
+    } else {
+      // Falsch — rotes Blinken
+      feld.classList.add('code-ziel__feld--falsch');
+      setTimeout(function() {
+        feld.classList.remove('code-ziel__feld--falsch');
+      }, 600);
+      // Fehlversuch zählen
+      _saveFehlversuch(_state.mappeId);
+    }
+  }
+
+  /**
+   * v3.5e: Speichert die Position eines korrekt platzierten Buchstaben.
+   * @private
+   */
+  function _savePlatzierterBuchstabe(mappeId, aufgabeIndex, position) {
+    var allProgress = _getAllProgress();
+    if (!allProgress.mappen) allProgress.mappen = {};
+    if (!allProgress.mappen[mappeId]) {
+      allProgress.mappen[mappeId] = { abgeschlossen: false, aufgaben: {} };
+    }
+    if (!allProgress.mappen[mappeId].platzierte_buchstaben) {
+      allProgress.mappen[mappeId].platzierte_buchstaben = {};
+    }
+    allProgress.mappen[mappeId].platzierte_buchstaben['aufgabe-' + aufgabeIndex] = position;
+    Core.storage.set(_state.storageKey, allProgress);
+  }
+
+  /**
+   * v3.5e: Prüft ob alle Zielfelder korrekt belegt sind.
+   * @private
+   */
+  function _checkLoesungswortKomplett(mappe) {
+    var ziel = document.getElementById('code-ziel');
+    if (!ziel) return;
+
+    var code = (mappe.freischalt_code || '').toUpperCase();
+    var felder = ziel.querySelectorAll('.code-ziel__feld');
+    var alleKorrekt = true;
+
+    for (var i = 0; i < felder.length; i++) {
+      if (!felder[i].classList.contains('code-ziel__feld--korrekt')) {
+        alleKorrekt = false;
         break;
       }
     }
 
-    if (hatBuchstaben) {
-      // Buchstaben-Kaestchen
-      var kaestchen = document.createElement('div');
-      kaestchen.className = 'code-buchstaben';
-      kaestchen.id = 'code-buchstaben';
-      for (var i = 0; i < aufgaben.length; i++) {
-        var feld = document.createElement('span');
-        feld.className = 'code-buchstaben__feld';
-        feld.setAttribute('data-aufgabe-index', i);
-        if (progress.aufgaben && progress.aufgaben[i] && aufgaben[i].freischalt_buchstabe) {
-          feld.textContent = aufgaben[i].freischalt_buchstabe;
-          feld.classList.add('code-buchstaben__feld--geloest');
-        } else {
-          feld.textContent = '_';
-        }
-        kaestchen.appendChild(feld);
-      }
-      container.appendChild(kaestchen);
-    } else {
-      // Hinweistext wenn keine Buchstaben
-      var hinweis = document.createElement('p');
-      hinweis.className = 'loesungscode__hinweis';
-      hinweis.textContent = 'Löse alle Aufgaben und setze den Freischalt-Code zusammen!';
-      container.appendChild(hinweis);
+    if (alleKorrekt && felder.length === code.length && code.length > 0) {
+      _onLoesungswortKomplett(mappe);
+    }
+  }
+
+  /**
+   * v3.5e: Wird aufgerufen wenn das komplette Lösungswort korrekt platziert wurde.
+   * @private
+   */
+  function _onLoesungswortKomplett(mappe) {
+    // Mappe als abgeschlossen markieren
+    _setMappeAbgeschlossen(_state.mappeId, true);
+
+    // Sicherung sichtbar machen
+    var sicherungContainer = document.getElementById('sicherung-container');
+    if (sicherungContainer) {
+      sicherungContainer.style.display = '';
     }
 
-    return container;
+    // Zielbereich komplett-Klasse + staggered Reveal
+    var ziel = document.getElementById('code-ziel');
+    if (ziel) {
+      ziel.classList.add('code-ziel--komplett');
+      var felder = ziel.querySelectorAll('.code-ziel__feld');
+      for (var i = 0; i < felder.length; i++) {
+        (function(feld, delay) {
+          setTimeout(function() {
+            feld.classList.add('code-ziel__feld--reveal');
+          }, delay);
+        })(felder[i], i * 100);
+      }
+    }
+
+    // Hinweistext aktualisieren
+    var hinweis = document.querySelector('.code-hinweis');
+    if (hinweis) {
+      hinweis.textContent = 'Lösungswort komplett! Die Mappe wurde freigeschaltet. 🎉';
+    }
+
+    // Pool verstecken
+    var pool = document.getElementById('code-pool');
+    if (pool) pool.style.display = 'none';
+
+    // Zum Zielbereich scrollen
+    if (ziel) {
+      ziel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
   }
 
   // ========================================================================
@@ -2823,6 +3177,14 @@ var EscapeEngine = (function () {
     var label = document.querySelector('.fortschritt__label');
     if (label) {
       label.textContent = solved + ' von ' + total + ' Aufgaben gelöst (' + Math.round((solved / total) * 100) + '%)';
+    }
+
+    // v3.5e: Nach Aufgaben-Loesung Buchstaben in Pool einfuegen
+    var aufgaben = mappe.aufgaben || [];
+    for (var ai = 0; ai < aufgaben.length; ai++) {
+      if (progress.aufgaben[ai] && aufgaben[ai].freischalt_buchstabe) {
+        _addBuchstabeToPool(aufgaben[ai].freischalt_buchstabe, ai, true);
+      }
     }
 
     // Code-Reveal wenn alle geloest

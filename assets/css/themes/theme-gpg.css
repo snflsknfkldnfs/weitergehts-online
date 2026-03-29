@@ -1501,8 +1501,23 @@ footer a:hover {
 /* Frage-Text */
 .erarbeitung__aufgaben .aufgabe__frage {
   font-family: var(--font-fragebogen);
-  font-size: 1rem;
+  font-size: 1.05em;
   line-height: 1.5;
+  /* v3.5e: Textmarker-Stil */
+  background: linear-gradient(
+    to bottom,
+    transparent 10%,
+    rgba(255, 249, 196, 0.55) 10%,
+    rgba(255, 249, 196, 0.55) 90%,
+    transparent 90%
+  );
+  font-weight: 600;
+  padding: 0.2em 0.4em;
+  margin-bottom: 0.8em;
+  border-radius: 2px;
+  display: inline;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 /* MC-Optionen im Arbeitsblatt-Stil */
@@ -1670,6 +1685,21 @@ footer a:hover {
   content: ' \2713';
 }
 
+/* v3.5e: Gesperrte Tipps */
+.tipp__trigger--gesperrt {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+.erarbeitung__aufgaben .tipp__trigger--gesperrt {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+  background-color: #e0e0e0;
+  color: #999;
+  border: 1px solid #ccc;
+}
+
 .aufgabe__tipp-inhalt-area {
   max-height: 0;
   overflow: hidden;
@@ -1776,15 +1806,153 @@ footer a:hover {
   pointer-events: none;
 }
 
-/* v3.5d: Fehlversuche-Counter */
-.fehlversuche {
+/* v3.5e: Mappe-Statistik (Tipp-Counter + Fehlversuche) */
+.mappe-statistik {
+  display: flex;
+  gap: 1.2em;
   font-family: var(--font-fragebogen);
   font-size: 0.8rem;
+  padding: 4px 0;
+}
+.tipp-counter {
+  color: #4A6FA5;
+}
+.fehlversuche {
   color: var(--fb-error);
-  padding: 2px 8px;
 }
 .fehlversuche--null {
   color: var(--fb-hint);
+}
+.mappe-statistik__label {
+  font-weight: 600;
+  margin-right: 0.3em;
+}
+.mappe-statistik__wert {
+  font-variant-numeric: tabular-nums;
+}
+
+/* v3.5e: Drag-and-Drop Lösungswort-Puzzle */
+.code-hinweis {
+  font-family: var(--font-fragebogen);
+  font-size: 0.9rem;
+  color: var(--fb-hint);
+  margin-bottom: var(--space-md);
+  text-align: center;
+}
+
+.code-ziel {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.code-ziel__feld {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  border: 2px dashed var(--fb-primary);
+  border-radius: 6px;
+  font-family: var(--font-fragebogen);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ccc;
+  background: transparent;
+  transition: all 200ms ease;
+}
+
+.code-ziel__feld--drag-over {
+  border-color: var(--fb-gold, #C9A84C);
+  background: rgba(201, 168, 76, 0.1);
+  transform: scale(1.05);
+}
+
+.code-ziel__feld--korrekt {
+  border-style: solid;
+  border-color: var(--fb-primary);
+  background: rgba(41, 82, 163, 0.12);
+  color: var(--fb-primary);
+}
+
+.code-ziel__feld--falsch {
+  border-color: var(--fb-error);
+  background: rgba(198, 40, 40, 0.12);
+  animation: feldFalsch 600ms ease;
+}
+
+@keyframes feldFalsch {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-4px); }
+  40% { transform: translateX(4px); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(3px); }
+}
+
+.code-ziel__feld--reveal {
+  transform: scale(1.15);
+  transition: transform 300ms ease;
+}
+
+.code-ziel--komplett {
+  padding: var(--space-sm);
+  border: 2px solid var(--fb-success, #388E3C);
+  border-radius: 8px;
+  background: rgba(56, 142, 60, 0.05);
+}
+
+.code-pool {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  min-height: 48px;
+  padding: var(--space-sm);
+}
+
+.code-pool__buchstabe {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--fb-gold, #C9A84C);
+  border-radius: 6px;
+  font-family: var(--font-fragebogen);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--fb-primary);
+  background: rgba(201, 168, 76, 0.08);
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: transform 200ms ease, opacity 200ms ease;
+}
+
+.code-pool__buchstabe:active {
+  cursor: grabbing;
+}
+
+.code-pool__buchstabe--dragging {
+  opacity: 0.4;
+  transform: scale(0.95);
+}
+
+.code-pool__buchstabe--erscheint {
+  animation: buchstabeErscheint 300ms ease forwards;
+}
+
+@keyframes buchstabeErscheint {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.code-pool__buchstabe--touch-ghost {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* --------------------------------------------------------------------------
