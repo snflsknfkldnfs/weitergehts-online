@@ -1603,8 +1603,9 @@ footer a:hover {
   background: rgba(56, 142, 60, 0.08);
 }
 
-/* v3.5g: Lösungswort-Bereich (Full-Width, unterhalb des Grids) */
+/* v3.5h: Lösungswort-Bereich (initial unsichtbar, bis alle Aufgaben gelöst) */
 .loesungswort-bereich {
+  display: none;
   max-width: 700px;
   margin: 2em auto;
   padding: 1.5em;
@@ -1625,6 +1626,11 @@ footer a:hover {
     );
   border-radius: 8px;
   border: 2px solid var(--fb-primary, #2952A3);
+}
+
+/* v3.5h: Sichtbar wenn alle Aufgaben gelöst */
+.loesungswort-bereich--aktiv {
+  display: block;
 }
 
 /* Lückentext im Fragebogen */

@@ -2836,8 +2836,54 @@ var EscapeEngine = (function () {
   // ========================================================================
 
   /**
+   * v3.5h: Aktiviert das Loesungswort — wird aufgerufen wenn alle Aufgaben geloest sind.
+   * Shuffled alle Buchstaben des freischalt_code und rendert sie gleichzeitig im Pool.
+   * @param {Object} mappe
+   * @private
+   */
+  function _aktiviereLoesungswort(mappe) {
+    var code = (mappe.freischalt_code || '').toUpperCase();
+    if (!code) return;
+
+    var loesungswortBereich = document.querySelector('.loesungswort-bereich');
+    if (!loesungswortBereich) return;
+
+    // Bereits aktiv? Nicht nochmal ausfuehren
+    if (loesungswortBereich.classList.contains('loesungswort-bereich--aktiv')) return;
+
+    // Bereich sichtbar machen
+    loesungswortBereich.classList.add('loesungswort-bereich--aktiv');
+
+    // Buchstaben aufteilen und shufflen (Fisher-Yates via Core.utils.shuffleArray)
+    var buchstabenMitIndex = [];
+    for (var i = 0; i < code.length; i++) {
+      buchstabenMitIndex.push({ buchstabe: code[i], index: i });
+    }
+    var shuffled = Core.utils.shuffleArray(buchstabenMitIndex);
+
+    // Alle Buchstaben gleichzeitig in den Pool rendern mit staggered Fade-In
+    for (var s = 0; s < shuffled.length; s++) {
+      (function(item, delay) {
+        setTimeout(function() {
+          _addBuchstabeToPool(item.buchstabe, item.index, true);
+        }, delay);
+      })(shuffled[s], s * 100);
+    }
+
+    // Alte code-eingabe-Sektion verstecken (falls noch im HTML)
+    var codeSection = document.getElementById('code-section') || document.querySelector('.code-eingabe');
+    if (codeSection) codeSection.style.display = 'none';
+
+    // Auto-Scroll zum Loesungswort-Bereich
+    setTimeout(function() {
+      loesungswortBereich.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 400);
+  }
+
+  /**
    * Rendert die Loesungscode-Sektion am Ende des Arbeitsblatts.
-   * Zeigt Buchstaben-Kaestchen wenn freischalt_buchstabe vorhanden, sonst prominent Code-Eingabe.
+   * v3.5h: Rendert Loesungswort-Bereich (initial unsichtbar).
+   * Buchstaben erscheinen erst wenn ALLE Aufgaben geloest sind.
    * @param {Array} aufgaben
    * @param {Object} progress
    * @param {Object} mappe
@@ -2854,13 +2900,12 @@ var EscapeEngine = (function () {
     titel.textContent = 'Lösungswort';
     container.appendChild(titel);
 
-    // v3.5e: Hinweistext
     var hinweis = document.createElement('p');
     hinweis.className = 'code-hinweis';
-    hinweis.textContent = 'Löse die Aufgaben, um Buchstaben freizuschalten. Ziehe sie an die richtige Stelle!';
+    hinweis.textContent = 'Ordne die Buchstaben in der richtigen Reihenfolge an!';
     container.appendChild(hinweis);
 
-    // v3.5e: Zielbereich — leere Kaestchen, eines pro Buchstabe des freischalt_code
+    // v3.5h: Zielbereich — leere Kaestchen, eines pro Buchstabe des freischalt_code
     var code = (mappe.freischalt_code || '').toUpperCase();
     var ziel = document.createElement('div');
     ziel.className = 'code-ziel';
@@ -2869,7 +2914,6 @@ var EscapeEngine = (function () {
       var feld = document.createElement('div');
       feld.className = 'code-ziel__feld';
       feld.setAttribute('data-position', i);
-      // Drop-Events (Mouse)
       feld.addEventListener('dragover', _onDragOver);
       feld.addEventListener('dragleave', _onDragLeave);
       feld.addEventListener('drop', _onDrop);
@@ -2877,99 +2921,125 @@ var EscapeEngine = (function () {
     }
     container.appendChild(ziel);
 
-    // v3.5e: Buchstaben-Pool (anfangs leer, dynamisch befuellt)
+    // v3.5h: Buchstaben-Pool (befuellt durch _aktiviereLoesungswort)
     var pool = document.createElement('div');
     pool.className = 'code-pool';
     pool.id = 'code-pool';
     container.appendChild(pool);
 
-    // Bei Seiten-Reload: bereits geloeste Buchstaben sofort anzeigen
+    // v3.5h: State-Restore bei Reload
     _restoreLoesungswortState(aufgaben, progress, mappe);
 
     return container;
   }
 
   /**
-   * v3.5e: Stellt den Loesungswort-Zustand nach Reload wieder her.
+   * v3.5h: Stellt den Loesungswort-Zustand nach Reload wieder her.
    * @private
    */
   function _restoreLoesungswortState(aufgaben, progress, mappe) {
-    // Wird nach DOM-Append aufgerufen (via setTimeout), da Elemente erst im DOM sein muessen
     setTimeout(function() {
       var code = (mappe.freischalt_code || '').toUpperCase();
       var pool = document.getElementById('code-pool');
       var ziel = document.getElementById('code-ziel');
       if (!pool || !ziel) return;
 
-      // Prüfe welche Buchstaben korrekt platziert sind (aus localStorage)
       var allProgress = _getAllProgress();
       var mappenProgress = (allProgress.mappen && allProgress.mappen[mappe.id]) || {};
       var platzierteBuchstaben = mappenProgress.platzierte_buchstaben || {};
 
-      for (var i = 0; i < aufgaben.length; i++) {
-        if (!progress.aufgaben[i]) continue; // nicht geloest
-        var buchstabe = aufgaben[i].freischalt_buchstabe;
-        if (!buchstabe) continue;
-
-        // Prüfe ob dieser Buchstabe bereits korrekt platziert wurde
-        var aufgabeKey = 'aufgabe-' + i;
-        if (platzierteBuchstaben[aufgabeKey]) {
-          // Buchstabe ist platziert → in Zielfeld anzeigen
-          var pos = platzierteBuchstaben[aufgabeKey];
-          var feld = ziel.querySelector('[data-position="' + pos + '"]');
-          if (feld && !feld.classList.contains('code-ziel__feld--korrekt')) {
-            feld.textContent = buchstabe.toUpperCase();
+      // Fall 1: Mappe abgeschlossen → alle Buchstaben direkt in Zielfeldern, kein Pool
+      if (mappenProgress.abgeschlossen) {
+        var loesungswortBereich = document.querySelector('.loesungswort-bereich');
+        if (loesungswortBereich) loesungswortBereich.classList.add('loesungswort-bereich--aktiv');
+        for (var i = 0; i < code.length; i++) {
+          var feld = ziel.querySelector('[data-position="' + i + '"]');
+          if (feld) {
+            feld.textContent = code[i];
             feld.classList.add('code-ziel__feld--korrekt');
           }
-        } else {
-          // Buchstabe geloest aber nicht platziert → in Pool zeigen (ohne Animation)
-          _addBuchstabeToPool(buchstabe, i, false);
         }
+        // Sicherung sichtbar
+        var sicherungContainer = document.getElementById('sicherung-container');
+        if (sicherungContainer) sicherungContainer.style.display = '';
+        // Pool verstecken
+        pool.style.display = 'none';
+        // Hinweis aktualisieren
+        var hinweis = document.querySelector('.code-hinweis');
+        if (hinweis) hinweis.textContent = 'Lösungswort komplett! Die Mappe wurde freigeschaltet.';
+        return;
       }
 
-      // Prüfe ob alle Felder korrekt sind
-      _checkLoesungswortKomplett(mappe);
+      // Fall 2: Alle Aufgaben geloest aber Loesungswort nicht fertig
+      var total = aufgaben.length;
+      var solved = 0;
+      for (var s = 0; s < (progress.aufgaben || []).length; s++) {
+        if (progress.aufgaben[s]) solved++;
+      }
+
+      if (solved === total && total > 0) {
+        // Bereich sichtbar machen (ohne Scroll-Animation)
+        var loesungswortBereich = document.querySelector('.loesungswort-bereich');
+        if (loesungswortBereich) loesungswortBereich.classList.add('loesungswort-bereich--aktiv');
+
+        // Bereits platzierte Buchstaben in Zielfelder setzen
+        var platziertPositionen = {};
+        for (var key in platzierteBuchstaben) {
+          if (platzierteBuchstaben.hasOwnProperty(key)) {
+            var pos = parseInt(key.replace('position-', ''), 10);
+            var bst = platzierteBuchstaben[key];
+            var feld = ziel.querySelector('[data-position="' + pos + '"]');
+            if (feld && !feld.classList.contains('code-ziel__feld--korrekt')) {
+              feld.textContent = bst;
+              feld.classList.add('code-ziel__feld--korrekt');
+            }
+            platziertPositionen[pos] = true;
+          }
+        }
+
+        // Restliche Buchstaben in Pool (ohne Animation)
+        var buchstaben = code.split('');
+        for (var b = 0; b < buchstaben.length; b++) {
+          if (!platziertPositionen[b]) {
+            _addBuchstabeToPool(buchstaben[b], b, false);
+          }
+        }
+
+        _checkLoesungswortKomplett(mappe);
+      }
+      // Fall 3: Nicht alle Aufgaben geloest → Bereich bleibt unsichtbar (default)
     }, 0);
   }
 
   /**
-   * v3.5e: Fügt einen Buchstaben in den Pool ein.
+   * v3.5h: Fügt einen Buchstaben in den Pool ein.
    * @param {string} buchstabe
-   * @param {number} aufgabeIndex
+   * @param {number} poolIndex - Index im freischalt_code
    * @param {boolean} mitAnimation
    * @private
    */
-  function _addBuchstabeToPool(buchstabe, aufgabeIndex, mitAnimation) {
+  function _addBuchstabeToPool(buchstabe, poolIndex, mitAnimation) {
     var pool = document.getElementById('code-pool');
     if (!pool) {
       console.warn('[EscapeEngine] code-pool Element nicht gefunden');
       return;
     }
 
-    // Prüfen ob schon im Pool
-    var existing = pool.querySelector('[data-aufgabe-index="' + aufgabeIndex + '"]');
+    // Prüfen ob schon im Pool (via data-index)
+    var existing = pool.querySelector('[data-index="' + poolIndex + '"]');
     if (existing) return;
-
-    // Prüfen ob schon platziert
-    var ziel = document.getElementById('code-ziel');
-    if (ziel) {
-      var felder = ziel.querySelectorAll('.code-ziel__feld--korrekt');
-      for (var i = 0; i < felder.length; i++) {
-        if (felder[i].getAttribute('data-source-aufgabe') === String(aufgabeIndex)) return;
-      }
-    }
 
     var tile = document.createElement('div');
     tile.className = 'code-pool__buchstabe';
     tile.textContent = buchstabe.toUpperCase();
     tile.setAttribute('draggable', 'true');
     tile.setAttribute('data-buchstabe', buchstabe.toUpperCase());
-    tile.setAttribute('data-aufgabe-index', aufgabeIndex);
+    tile.setAttribute('data-index', poolIndex);
 
     // Drag-Events (Mouse)
     tile.addEventListener('dragstart', function(e) {
       e.dataTransfer.setData('text/plain', buchstabe.toUpperCase());
-      e.dataTransfer.setData('aufgabe-index', String(aufgabeIndex));
+      e.dataTransfer.setData('pool-index', String(poolIndex));
       tile.classList.add('code-pool__buchstabe--dragging');
     });
     tile.addEventListener('dragend', function() {
@@ -2977,7 +3047,7 @@ var EscapeEngine = (function () {
     });
 
     // Touch-Events
-    _addTouchDragHandlers(tile, buchstabe.toUpperCase(), aufgabeIndex);
+    _addTouchDragHandlers(tile, buchstabe.toUpperCase(), poolIndex);
 
     if (mitAnimation) {
       tile.classList.add('code-pool__buchstabe--erscheint');
@@ -2990,7 +3060,7 @@ var EscapeEngine = (function () {
    * v3.5e: Touch-Drag-Handlers fuer ein Buchstaben-Tile.
    * @private
    */
-  function _addTouchDragHandlers(tile, buchstabe, aufgabeIndex) {
+  function _addTouchDragHandlers(tile, buchstabe, poolIndex) {
     var startX, startY, clone, currentTarget;
 
     tile.addEventListener('touchstart', function(e) {
@@ -3058,7 +3128,7 @@ var EscapeEngine = (function () {
       // Drop-Logik
       if (currentTarget && currentTarget.classList.contains('code-ziel__feld') &&
           !currentTarget.classList.contains('code-ziel__feld--korrekt')) {
-        _handleDrop(currentTarget, buchstabe, aufgabeIndex, tile);
+        _handleDrop(currentTarget, buchstabe, poolIndex, tile);
       }
       currentTarget = null;
     }, { passive: false });
@@ -3081,23 +3151,23 @@ var EscapeEngine = (function () {
     e.preventDefault();
     this.classList.remove('code-ziel__feld--drag-over');
 
-    if (this.classList.contains('code-ziel__feld--korrekt')) return; // bereits belegt
+    if (this.classList.contains('code-ziel__feld--korrekt')) return;
 
     var buchstabe = e.dataTransfer.getData('text/plain');
-    var aufgabeIndex = parseInt(e.dataTransfer.getData('aufgabe-index'), 10);
+    var poolIndex = parseInt(e.dataTransfer.getData('pool-index'), 10);
 
     // Tile im Pool finden
     var pool = document.getElementById('code-pool');
-    var tile = pool ? pool.querySelector('[data-aufgabe-index="' + aufgabeIndex + '"]') : null;
+    var tile = pool ? pool.querySelector('[data-index="' + poolIndex + '"]') : null;
 
-    _handleDrop(this, buchstabe, aufgabeIndex, tile);
+    _handleDrop(this, buchstabe, poolIndex, tile);
   }
 
   /**
    * v3.5e: Gemeinsame Drop-Logik fuer Mouse und Touch.
    * @private
    */
-  function _handleDrop(feld, buchstabe, aufgabeIndex, tile) {
+  function _handleDrop(feld, buchstabe, poolIndex, tile) {
     var mappe = _getMappe(_state.mappeId);
     if (!mappe) return;
 
@@ -3109,14 +3179,11 @@ var EscapeEngine = (function () {
       // Korrekt
       feld.textContent = buchstabe;
       feld.classList.add('code-ziel__feld--korrekt');
-      feld.setAttribute('data-source-aufgabe', aufgabeIndex);
-      // Tile aus Pool entfernen
       if (tile && tile.parentNode) {
         tile.parentNode.removeChild(tile);
       }
-      // Position in localStorage speichern
-      _savePlatzierterBuchstabe(_state.mappeId, aufgabeIndex, position);
-      // Prüfen ob alle korrekt
+      // v3.5h: Position in localStorage speichern (neues Format)
+      _savePlatzierterBuchstabe(_state.mappeId, position, buchstabe.toUpperCase());
       _checkLoesungswortKomplett(mappe);
     } else {
       // Falsch — rotes Blinken
@@ -3124,16 +3191,15 @@ var EscapeEngine = (function () {
       setTimeout(function() {
         feld.classList.remove('code-ziel__feld--falsch');
       }, 600);
-      // Fehlversuch zählen
       _saveFehlversuch(_state.mappeId);
     }
   }
 
   /**
-   * v3.5e: Speichert die Position eines korrekt platzierten Buchstaben.
+   * v3.5h: Speichert einen korrekt platzierten Buchstaben. Format: {"position-N": "BUCHSTABE"}
    * @private
    */
-  function _savePlatzierterBuchstabe(mappeId, aufgabeIndex, position) {
+  function _savePlatzierterBuchstabe(mappeId, position, buchstabe) {
     var allProgress = _getAllProgress();
     if (!allProgress.mappen) allProgress.mappen = {};
     if (!allProgress.mappen[mappeId]) {
@@ -3142,7 +3208,7 @@ var EscapeEngine = (function () {
     if (!allProgress.mappen[mappeId].platzierte_buchstaben) {
       allProgress.mappen[mappeId].platzierte_buchstaben = {};
     }
-    allProgress.mappen[mappeId].platzierte_buchstaben['aufgabe-' + aufgabeIndex] = position;
+    allProgress.mappen[mappeId].platzierte_buchstaben['position-' + position] = buchstabe;
     Core.storage.set(_state.storageKey, allProgress);
   }
 
@@ -3301,31 +3367,16 @@ var EscapeEngine = (function () {
       label.textContent = solved + ' von ' + total + ' Aufgaben gelöst (' + Math.round((solved / total) * 100) + '%)';
     }
 
-    // v3.5f: freshProgress aus localStorage laden (progress-Parameter kann stale sein)
+    // v3.5h: freshProgress aus localStorage laden (progress-Parameter kann stale sein)
     var freshProgress = loadProgress(mappe.id);
-    var aufgaben = mappe.aufgaben || [];
-    for (var ai = 0; ai < aufgaben.length; ai++) {
-      if (freshProgress.aufgaben[ai] && aufgaben[ai].freischalt_buchstabe) {
-        _addBuchstabeToPool(aufgaben[ai].freischalt_buchstabe, ai, true);
-      }
-    }
-
-    // v3.5f: solved auch aus freshProgress berechnen
     var freshSolved = 0;
     for (var fi = 0; fi < freshProgress.aufgaben.length; fi++) {
       if (freshProgress.aufgaben[fi]) freshSolved++;
     }
 
-    // Code-Reveal wenn alle geloest
+    // v3.5h: Wenn alle Aufgaben geloest → Loesungswort aktivieren
     if (freshSolved === total && total > 0) {
-      _revealFreischaltCode(mappe);
-      // v3.5g: Auto-Scroll zum Loesungswort-Bereich
-      var loesungswortBereich = document.querySelector('.loesungswort-bereich');
-      if (loesungswortBereich) {
-        setTimeout(function() {
-          loesungswortBereich.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 400);
-      }
+      _aktiviereLoesungswort(mappe);
     }
   }
 
