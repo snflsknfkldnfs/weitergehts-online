@@ -1795,24 +1795,32 @@ var EscapeEngine = (function () {
     var body = document.createElement('div');
     body.className = 'aufgabe__body';
 
-    switch (aufgabe.typ) {
-      case 'multiple-choice':
-        _renderMultipleChoice(body, aufgabe, index, geloest);
-        break;
-      case 'zuordnung':
-        _renderZuordnung(body, aufgabe, index, geloest);
-        break;
-      case 'lueckentext':
-        _renderLueckentext(body, aufgabe, index, geloest);
-        break;
-      case 'reihenfolge':
-        _renderReihenfolge(body, aufgabe, index, geloest);
-        break;
-      case 'freitext-code':
-        _renderFreitextCode(body, aufgabe, index, geloest);
-        break;
-      default:
-        body.textContent = 'Unbekannter Aufgabentyp: ' + aufgabe.typ;
+    // v3.5f: Kompakte Geloest-Anzeige statt leerer disabled Felder
+    if (geloest) {
+      var geloestBlock = document.createElement('div');
+      geloestBlock.className = 'aufgabe__geloest';
+      geloestBlock.innerHTML = '<span class="aufgabe__geloest-icon">&#10003;</span> Gelöst';
+      body.appendChild(geloestBlock);
+    } else {
+      switch (aufgabe.typ) {
+        case 'multiple-choice':
+          _renderMultipleChoice(body, aufgabe, index, geloest);
+          break;
+        case 'zuordnung':
+          _renderZuordnung(body, aufgabe, index, geloest);
+          break;
+        case 'lueckentext':
+          _renderLueckentext(body, aufgabe, index, geloest);
+          break;
+        case 'reihenfolge':
+          _renderReihenfolge(body, aufgabe, index, geloest);
+          break;
+        case 'freitext-code':
+          _renderFreitextCode(body, aufgabe, index, geloest);
+          break;
+        default:
+          body.textContent = 'Unbekannter Aufgabentyp: ' + aufgabe.typ;
+      }
     }
 
     section.appendChild(body);
@@ -3179,16 +3187,23 @@ var EscapeEngine = (function () {
       label.textContent = solved + ' von ' + total + ' Aufgaben gelöst (' + Math.round((solved / total) * 100) + '%)';
     }
 
-    // v3.5e: Nach Aufgaben-Loesung Buchstaben in Pool einfuegen
+    // v3.5f: freshProgress aus localStorage laden (progress-Parameter kann stale sein)
+    var freshProgress = loadProgress(mappe.id);
     var aufgaben = mappe.aufgaben || [];
     for (var ai = 0; ai < aufgaben.length; ai++) {
-      if (progress.aufgaben[ai] && aufgaben[ai].freischalt_buchstabe) {
+      if (freshProgress.aufgaben[ai] && aufgaben[ai].freischalt_buchstabe) {
         _addBuchstabeToPool(aufgaben[ai].freischalt_buchstabe, ai, true);
       }
     }
 
+    // v3.5f: solved auch aus freshProgress berechnen
+    var freshSolved = 0;
+    for (var fi = 0; fi < freshProgress.aufgaben.length; fi++) {
+      if (freshProgress.aufgaben[fi]) freshSolved++;
+    }
+
     // Code-Reveal wenn alle geloest
-    if (solved === total && total > 0) {
+    if (freshSolved === total && total > 0) {
       _revealFreischaltCode(mappe);
     }
   }
