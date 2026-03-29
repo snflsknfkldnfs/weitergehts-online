@@ -215,8 +215,44 @@ var EscapeEngine = (function () {
 
     return {
       aufgaben: aufgabenStatus,
-      abgeschlossen: mappenProgress ? (mappenProgress.abgeschlossen || false) : false
+      abgeschlossen: mappenProgress ? (mappenProgress.abgeschlossen || false) : false,
+      fehlversuche: mappenProgress ? (mappenProgress.fehlversuche || 0) : 0
     };
+  }
+
+  /**
+   * v3.5d: Speichert einen Fehlversuch im Progress.
+   * @param {string} mappeId
+   * @private
+   */
+  function _saveFehlversuch(mappeId) {
+    var allProgress = _getAllProgress();
+    var mappenProgress = allProgress.mappen || {};
+    if (!mappenProgress[mappeId]) {
+      mappenProgress[mappeId] = { abgeschlossen: false, aufgaben: {}, fehlversuche: 0 };
+    }
+    mappenProgress[mappeId].fehlversuche = (mappenProgress[mappeId].fehlversuche || 0) + 1;
+    allProgress.mappen = mappenProgress;
+    Core.storage.set(_state.storageKey, allProgress);
+    _updateFehlversuche(mappeId);
+  }
+
+  /**
+   * v3.5d: Aktualisiert die Fehlversuche-Anzeige.
+   * @param {string} mappeId
+   * @private
+   */
+  function _updateFehlversuche(mappeId) {
+    var progress = loadProgress(mappeId);
+    var counter = document.getElementById('fehlversuche-counter');
+    if (counter) {
+      counter.textContent = 'Fehlversuche: ' + progress.fehlversuche;
+      if (progress.fehlversuche > 0) {
+        counter.classList.remove('fehlversuche--null');
+      } else {
+        counter.classList.add('fehlversuche--null');
+      }
+    }
   }
 
   // ========================================================================
@@ -561,17 +597,36 @@ var EscapeEngine = (function () {
     codeSection.style.display = '';
     codeSection.classList.add('fade-in');
 
+    // v3.5d: Buchstaben-Kaestchen hervorheben und dorthin scrollen
+    var buchstabenContainer = document.getElementById('code-buchstaben');
+    if (buchstabenContainer) {
+      buchstabenContainer.classList.add('code-buchstaben--komplett');
+
+      // Buchstaben-Felder aktualisieren und staggered reveal
+      var felder = buchstabenContainer.querySelectorAll('.code-buchstaben__feld');
+      var aufgaben = (mappe.aufgaben || []);
+      for (var i = 0; i < felder.length; i++) {
+        if (aufgaben[i] && aufgaben[i].freischalt_buchstabe) {
+          felder[i].textContent = aufgaben[i].freischalt_buchstabe;
+          felder[i].classList.add('code-buchstaben__feld--geloest');
+        }
+        // Staggered animation delay per JS
+        (function(feld, delay) {
+          setTimeout(function() {
+            feld.classList.add('code-buchstaben__feld--reveal');
+          }, delay);
+        })(felder[i], i * 100);
+      }
+
+      // Scroll zu Buchstaben-Kaestchen
+      buchstabenContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } else {
+      // Fallback: Scroll zum Code-Bereich
+      codeSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
     // Erfolgsmeldung
     Core.feedback.showSuccess(codeSection, 'Alle Aufgaben gelöst! Gib jetzt den Freischalt-Code ein.');
-
-    // Zum Code-Bereich scrollen
-    codeSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-    // Input fokussieren
-    var codeInput = codeSection.querySelector('.code__input');
-    if (codeInput) {
-      setTimeout(function () { codeInput.focus(); }, 500);
-    }
   }
 
   // ========================================================================
@@ -1589,6 +1644,17 @@ var EscapeEngine = (function () {
       headerTitel.className = 'fragebogen__titel';
       headerTitel.textContent = 'Arbeitsblatt';
       header.appendChild(headerTitel);
+
+      // v3.5d: Fehlversuche-Counter im Header
+      var fehlversucheDiv = document.createElement('div');
+      fehlversucheDiv.className = 'fehlversuche';
+      fehlversucheDiv.id = 'fehlversuche-counter';
+      fehlversucheDiv.textContent = 'Fehlversuche: ' + (progress.fehlversuche || 0);
+      if ((progress.fehlversuche || 0) === 0) {
+        fehlversucheDiv.classList.add('fehlversuche--null');
+      }
+      header.appendChild(fehlversucheDiv);
+
       aufgabenContainer.appendChild(header);
 
       // v3.5: Inner container für Aufgaben
@@ -1859,29 +1925,32 @@ var EscapeEngine = (function () {
 
     var isCorrect = selected.value === aufgabe.loesung;
 
-    // Alle Optionen markieren
-    var labels = section.querySelectorAll('.aufgabe__option');
-    for (var i = 0; i < labels.length; i++) {
-      var input = labels[i].querySelector('input');
-      if (input.value === aufgabe.loesung) {
-        labels[i].classList.add('aufgabe__option--correct');
-      } else if (input.checked && !isCorrect) {
-        labels[i].classList.add('aufgabe__option--incorrect');
-      }
-      input.disabled = true;
-    }
-
     if (isCorrect) {
+      // Richtig: alle markieren und sperren
+      var labels = section.querySelectorAll('.aufgabe__option');
+      for (var i = 0; i < labels.length; i++) {
+        var input = labels[i].querySelector('input');
+        if (input.value === aufgabe.loesung) {
+          labels[i].classList.add('aufgabe__option--correct');
+        }
+        input.disabled = true;
+      }
       Core.feedback.showSuccess(section, 'Richtig! ✅');
       saveProgress(_state.mappeId, index, true);
       section.classList.add('aufgabe--solved');
+      var btn = section.querySelector('.aufgabe__submit');
+      if (btn) btn.disabled = true;
     } else {
-      Core.feedback.showError(section, 'Leider falsch. Versuche die Tipps! ❌');
+      // v3.5d: Nur die falsch gewahlte Option eliminieren
+      var selectedLabel = selected.closest('.aufgabe__option');
+      if (selectedLabel) {
+        selectedLabel.classList.add('aufgabe__option--eliminated');
+        selected.disabled = true;
+      }
+      selected.checked = false;
+      Core.feedback.showError(section, 'Leider falsch — versuche es nochmal! ❌');
+      _saveFehlversuch(_state.mappeId);
     }
-
-    // Submit-Button deaktivieren
-    var btn = section.querySelector('.aufgabe__submit');
-    if (btn && isCorrect) btn.disabled = true;
 
     _updateFortschritt(_getMappe(_state.mappeId), loadProgress(_state.mappeId));
   }
@@ -2020,6 +2089,7 @@ var EscapeEngine = (function () {
       for (var j = 0; j < selects.length; j++) { selects[j].disabled = true; }
     } else {
       Core.feedback.showError(section, 'Nicht alle Zuordnungen sind richtig. Versuche es nochmal! ❌');
+      _saveFehlversuch(_state.mappeId);
     }
 
     _updateFortschritt(_getMappe(_state.mappeId), loadProgress(_state.mappeId));
@@ -2104,7 +2174,14 @@ var EscapeEngine = (function () {
       section.classList.add('aufgabe--solved');
       for (var j = 0; j < inputs.length; j++) { inputs[j].disabled = true; }
     } else {
+      // v3.5d: Falsche Inputs leeren fuer Neuversuch, korrekte behalten
+      for (var j = 0; j < inputs.length; j++) {
+        if (inputs[j].classList.contains('aufgabe__luecke--incorrect')) {
+          inputs[j].value = '';
+        }
+      }
       Core.feedback.showError(section, 'Nicht alle Lücken sind richtig. Versuche es nochmal! ❌');
+      _saveFehlversuch(_state.mappeId);
     }
 
     _updateFortschritt(_getMappe(_state.mappeId), loadProgress(_state.mappeId));
@@ -2245,6 +2322,7 @@ var EscapeEngine = (function () {
       for (var j = 0; j < btns.length; j++) { btns[j].disabled = true; }
     } else {
       Core.feedback.showError(section, 'Die Reihenfolge stimmt noch nicht. Versuche es nochmal! ❌');
+      _saveFehlversuch(_state.mappeId);
     }
 
     _updateFortschritt(_getMappe(_state.mappeId), loadProgress(_state.mappeId));
@@ -2317,7 +2395,8 @@ var EscapeEngine = (function () {
       section.classList.add('aufgabe--solved');
       textarea.disabled = true;
     } else {
-      Core.feedback.showError(section, 'Das ist noch nicht ganz richtig. Versuche die Tipps! ❌');
+      Core.feedback.showError(section, 'Leider falsch — versuche es nochmal! ❌');
+      _saveFehlversuch(_state.mappeId);
     }
 
     _updateFortschritt(_getMappe(_state.mappeId), loadProgress(_state.mappeId));
@@ -2404,13 +2483,20 @@ var EscapeEngine = (function () {
             if (tippIndex === 0 && hatMaterialRef) {
               contentArea.innerHTML = '';
               var refs = aufgabe.material_referenz;
+              var mappeData = _getMappe(_state.mappeId);
+              var materialien = (mappeData && mappeData.materialien) || [];
               var verweisSpan = document.createElement('span');
               verweisSpan.className = 'tipp__material-verweis';
               verweisSpan.textContent = 'Schau dir an: ';
               for (var m = 0; m < refs.length; m++) {
                 var link = document.createElement('a');
                 link.href = '#' + refs[m];
-                link.textContent = refs[m].replace('mat-', 'M').replace(/-/g, '.');
+                // v3.5d: Material-Titel statt technische ID
+                var matObj = null;
+                for (var mi = 0; mi < materialien.length; mi++) {
+                  if (materialien[mi].id === refs[m]) { matObj = materialien[mi]; break; }
+                }
+                link.textContent = (matObj && matObj.titel) ? matObj.titel : refs[m];
                 verweisSpan.appendChild(link);
                 if (m < refs.length - 1) verweisSpan.appendChild(document.createTextNode(', '));
               }
