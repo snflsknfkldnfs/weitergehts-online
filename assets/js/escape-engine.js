@@ -259,6 +259,47 @@ var EscapeEngine = (function () {
     }
   }
 
+  /**
+   * v3.5g: Speichert den Antwort-State einer Aufgabe in localStorage.
+   * @param {string} mappeId
+   * @param {number} aufgabeIndex
+   * @param {Object} state — typ-spezifischer State
+   * @private
+   */
+  function _saveAntwortState(mappeId, aufgabeIndex, state) {
+    var allProgress = _getAllProgress();
+    if (!allProgress.mappen) allProgress.mappen = {};
+    if (!allProgress.mappen[mappeId]) {
+      allProgress.mappen[mappeId] = { abgeschlossen: false, aufgaben: {} };
+    }
+    var mappe = _getMappe(mappeId);
+    if (mappe && mappe.aufgaben && mappe.aufgaben[aufgabeIndex]) {
+      var aufgabeId = mappe.aufgaben[aufgabeIndex].id;
+      if (!allProgress.mappen[mappeId].aufgaben[aufgabeId]) {
+        allProgress.mappen[mappeId].aufgaben[aufgabeId] = { geloest: false, tipps_genutzt: 0 };
+      }
+      allProgress.mappen[mappeId].aufgaben[aufgabeId].antwort_state = state;
+    }
+    Core.storage.set(_state.storageKey, allProgress);
+  }
+
+  /**
+   * v3.5g: Laedt den Antwort-State einer Aufgabe aus localStorage.
+   * @param {string} mappeId
+   * @param {number} aufgabeIndex
+   * @returns {Object|null}
+   * @private
+   */
+  function _loadAntwortState(mappeId, aufgabeIndex) {
+    var allProgress = _getAllProgress();
+    var mappe = _getMappe(mappeId);
+    if (!mappe || !mappe.aufgaben || !mappe.aufgaben[aufgabeIndex]) return null;
+    var aufgabeId = mappe.aufgaben[aufgabeIndex].id;
+    var mappenProgress = (allProgress.mappen && allProgress.mappen[mappeId]) || {};
+    var aufgabeProgress = (mappenProgress.aufgaben && mappenProgress.aufgaben[aufgabeId]) || {};
+    return aufgabeProgress.antwort_state || null;
+  }
+
   // ========================================================================
   // 5. showTipp(mappeId, aufgabeIndex, stufe) → string
   // ========================================================================
@@ -1704,15 +1745,20 @@ var EscapeEngine = (function () {
       var aufgabenFortschritt = _renderAufgabenFortschritt(aufgaben, progress);
       inner.appendChild(aufgabenFortschritt);
 
-      // v3.5c: Loesungscode-Sektion im Fragebogen
-      var loesungscode = _renderLoesungscodeSektion(aufgaben, progress, mappe);
-      inner.appendChild(loesungscode);
-
       aufgabenContainer.appendChild(inner);
     }
 
-    // Sicherung rendern (explizit hidden, bis Code-Reveal)
+    // v3.5g: Loesungswort-Bereich als eigenstaendige Full-Width-Sektion
     var sicherungContainer = document.getElementById('sicherung-container');
+    if (sicherungContainer && sicherungContainer.parentNode) {
+      var loesungswortBereich = document.createElement('section');
+      loesungswortBereich.className = 'loesungswort-bereich';
+      var loesungscode = _renderLoesungscodeSektion(aufgaben, progress, mappe);
+      loesungswortBereich.appendChild(loesungscode);
+      sicherungContainer.parentNode.insertBefore(loesungswortBereich, sicherungContainer);
+    }
+
+    // Sicherung rendern (explizit hidden, bis Code-Reveal)
     if (sicherungContainer) {
       // v3.5b: Immer zuerst verstecken, unabhaengig vom Zustand
       sicherungContainer.style.display = 'none';
@@ -1795,32 +1841,25 @@ var EscapeEngine = (function () {
     var body = document.createElement('div');
     body.className = 'aufgabe__body';
 
-    // v3.5f: Kompakte Geloest-Anzeige statt leerer disabled Felder
-    if (geloest) {
-      var geloestBlock = document.createElement('div');
-      geloestBlock.className = 'aufgabe__geloest';
-      geloestBlock.innerHTML = '<span class="aufgabe__geloest-icon">&#10003;</span> Gelöst';
-      body.appendChild(geloestBlock);
-    } else {
-      switch (aufgabe.typ) {
-        case 'multiple-choice':
-          _renderMultipleChoice(body, aufgabe, index, geloest);
-          break;
-        case 'zuordnung':
-          _renderZuordnung(body, aufgabe, index, geloest);
-          break;
-        case 'lueckentext':
-          _renderLueckentext(body, aufgabe, index, geloest);
-          break;
-        case 'reihenfolge':
-          _renderReihenfolge(body, aufgabe, index, geloest);
-          break;
-        case 'freitext-code':
-          _renderFreitextCode(body, aufgabe, index, geloest);
-          break;
-        default:
-          body.textContent = 'Unbekannter Aufgabentyp: ' + aufgabe.typ;
-      }
+    // v3.5g: Typ-Renderer IMMER aufrufen (auch bei geloest), State-Restore uebernehmen Renderer
+    switch (aufgabe.typ) {
+      case 'multiple-choice':
+        _renderMultipleChoice(body, aufgabe, index, geloest);
+        break;
+      case 'zuordnung':
+        _renderZuordnung(body, aufgabe, index, geloest);
+        break;
+      case 'lueckentext':
+        _renderLueckentext(body, aufgabe, index, geloest);
+        break;
+      case 'reihenfolge':
+        _renderReihenfolge(body, aufgabe, index, geloest);
+        break;
+      case 'freitext-code':
+        _renderFreitextCode(body, aufgabe, index, geloest);
+        break;
+      default:
+        body.textContent = 'Unbekannter Aufgabentyp: ' + aufgabe.typ;
     }
 
     section.appendChild(body);
@@ -1833,8 +1872,11 @@ var EscapeEngine = (function () {
     feedbackEl.setAttribute('tabindex', '-1');
     section.appendChild(feedbackEl);
 
-    // Tipps
-    if (aufgabe.tipps && aufgabe.tipps.length > 0 && !geloest) {
+    // v3.5g: Tipps immer rendern (auch bei geloest, mit Used-State)
+    if (aufgabe.tipps && aufgabe.tipps.length > 0) {
+      var tippsEl = _renderTipps(aufgabe, index);
+      section.appendChild(tippsEl);
+    } else if (aufgabe.material_referenz && aufgabe.material_referenz.length > 0) {
       var tippsEl = _renderTipps(aufgabe, index);
       section.appendChild(tippsEl);
     }
@@ -1910,8 +1952,11 @@ var EscapeEngine = (function () {
     optionenDiv.setAttribute('role', 'radiogroup');
     optionenDiv.setAttribute('aria-label', 'Antwortmöglichkeiten');
 
-    var optionen = Core.utils.shuffleArray(aufgabe.optionen || []);
     var gruppenName = 'mc-' + aufgabe.id;
+
+    // v3.5g: Bei geloest kein Shuffle (State-Restore), sonst Shuffle
+    var optionen = geloest ? (aufgabe.optionen || []) : Core.utils.shuffleArray(aufgabe.optionen || []);
+    var state = geloest ? _loadAntwortState(_state.mappeId, index) : null;
 
     for (var i = 0; i < optionen.length; i++) {
       var label = document.createElement('label');
@@ -1925,6 +1970,17 @@ var EscapeEngine = (function () {
       input.disabled = geloest;
       input.setAttribute('aria-label', optionen[i]);
 
+      // v3.5g: State-Restore bei geloest
+      if (geloest) {
+        if (input.value === aufgabe.loesung) {
+          label.classList.add('aufgabe__option--correct');
+          input.checked = true;
+        }
+        if (state && state.eliminated && state.eliminated.indexOf(input.value) !== -1) {
+          label.classList.add('aufgabe__option--eliminated');
+        }
+      }
+
       var span = document.createElement('span');
       span.className = 'aufgabe__label';
       span.textContent = optionen[i];
@@ -1936,7 +1992,7 @@ var EscapeEngine = (function () {
 
     container.appendChild(optionenDiv);
 
-    // Submit-Button
+    // Submit-Button (nur bei ungeloest)
     if (!geloest) {
       var btn = document.createElement('button');
       btn.className = 'aufgabe__submit';
@@ -1966,15 +2022,24 @@ var EscapeEngine = (function () {
     if (isCorrect) {
       // Richtig: alle markieren und sperren
       var labels = section.querySelectorAll('.aufgabe__option');
+      var eliminatedList = [];
       for (var i = 0; i < labels.length; i++) {
         var input = labels[i].querySelector('input');
         if (input.value === aufgabe.loesung) {
           labels[i].classList.add('aufgabe__option--correct');
         }
+        if (labels[i].classList.contains('aufgabe__option--eliminated')) {
+          eliminatedList.push(input.value);
+        }
         input.disabled = true;
       }
       Core.feedback.showSuccess(section, 'Richtig! ✅');
       saveProgress(_state.mappeId, index, true);
+      // v3.5g: Antwort-State speichern
+      _saveAntwortState(_state.mappeId, index, {
+        selected: aufgabe.loesung,
+        eliminated: eliminatedList
+      });
       section.classList.add('aufgabe--solved');
       var btn = section.querySelector('.aufgabe__submit');
       if (btn) btn.disabled = true;
@@ -2004,11 +2069,11 @@ var EscapeEngine = (function () {
     zuordnungDiv.className = 'aufgabe__zuordnung';
 
     var optionen = aufgabe.optionen || [];
+    var state = geloest ? _loadAntwortState(_state.mappeId, index) : null;
 
     // Alle moeglichen Zuordnungs-Ziele sammeln (E9-Fix: deduplizieren)
     var alleZiele = [];
     if (typeof aufgabe.loesung === 'object' && !Array.isArray(aufgabe.loesung)) {
-      // loesung ist Objekt: { "Begriff1": "Ziel1", "Begriff2": "Ziel2" }
       var begriffe = Object.keys(aufgabe.loesung);
       var zielSet = {};
       for (var k = 0; k < begriffe.length; k++) {
@@ -2018,15 +2083,23 @@ var EscapeEngine = (function () {
           alleZiele.push(ziel);
         }
       }
-      alleZiele = Core.utils.shuffleArray(alleZiele);
+      // v3.5g: Kein Shuffle bei geloest (State-Restore)
+      if (!geloest) alleZiele = Core.utils.shuffleArray(alleZiele);
 
       for (var i = 0; i < begriffe.length; i++) {
         var zeile = _createZuordnungZeile(begriffe[i], alleZiele, aufgabe.id + '-z-' + i, geloest);
         zuordnungDiv.appendChild(zeile);
+        // v3.5g: State-Restore — korrekte Werte setzen
+        if (geloest && state && state.mappings) {
+          var sel = zeile.querySelector('select');
+          if (sel && state.mappings[begriffe[i]]) {
+            sel.value = state.mappings[begriffe[i]];
+          }
+          zeile.classList.add('aufgabe__zuordnung-zeile--correct');
+        }
       }
     } else {
-      // Fallback: optionen als einfache Liste nutzen
-      var shuffledOptions = Core.utils.shuffleArray(optionen);
+      var shuffledOptions = geloest ? optionen : Core.utils.shuffleArray(optionen);
       for (var j = 0; j < optionen.length; j++) {
         var zeileEl = _createZuordnungZeile(optionen[j], shuffledOptions, aufgabe.id + '-z-' + j, geloest);
         zuordnungDiv.appendChild(zeileEl);
@@ -2035,7 +2108,7 @@ var EscapeEngine = (function () {
 
     container.appendChild(zuordnungDiv);
 
-    // Submit-Button
+    // Submit-Button (nur bei ungeloest)
     if (!geloest) {
       var btn = document.createElement('button');
       btn.className = 'aufgabe__submit';
@@ -2122,9 +2195,16 @@ var EscapeEngine = (function () {
       Core.feedback.showSuccess(section, 'Alle Zuordnungen richtig! ✅');
       saveProgress(_state.mappeId, index, true);
       section.classList.add('aufgabe--solved');
-      // Selects deaktivieren
+      // Selects deaktivieren + State speichern
       var selects = section.querySelectorAll('select');
-      for (var j = 0; j < selects.length; j++) { selects[j].disabled = true; }
+      var mappings = {};
+      for (var j = 0; j < zeilen.length; j++) {
+        var beg = zeilen[j].querySelector('.aufgabe__zuordnung-begriff').textContent;
+        var sel = zeilen[j].querySelector('select');
+        mappings[beg] = sel.value;
+        sel.disabled = true;
+      }
+      _saveAntwortState(_state.mappeId, index, { mappings: mappings });
     } else {
       Core.feedback.showError(section, 'Nicht alle Zuordnungen sind richtig. Versuche es nochmal! ❌');
       _saveFehlversuch(_state.mappeId);
@@ -2144,8 +2224,8 @@ var EscapeEngine = (function () {
     var textDiv = document.createElement('div');
     textDiv.className = 'aufgabe__lueckentext';
 
-    // Frage-Text mit Platzhaltern ___
-    // Ersetze jede ___ durch ein Input-Feld
+    var state = geloest ? _loadAntwortState(_state.mappeId, index) : null;
+
     var text = aufgabe.frage || '';
     var lueckenIndex = 0;
     var parts = text.split('___');
@@ -2162,6 +2242,11 @@ var EscapeEngine = (function () {
         input.disabled = geloest;
         input.setAttribute('aria-label', 'Lücke ' + (lueckenIndex + 1));
         input.setAttribute('autocomplete', 'off');
+        // v3.5g: State-Restore
+        if (geloest && state && state.filled && state.filled[lueckenIndex] !== undefined) {
+          input.value = state.filled[lueckenIndex];
+          input.classList.add('aufgabe__luecke--correct');
+        }
         textDiv.appendChild(input);
         lueckenIndex++;
       }
@@ -2169,7 +2254,6 @@ var EscapeEngine = (function () {
 
     container.appendChild(textDiv);
 
-    // Submit-Button
     if (!geloest) {
       var btn = document.createElement('button');
       btn.className = 'aufgabe__submit';
@@ -2210,7 +2294,12 @@ var EscapeEngine = (function () {
       Core.feedback.showSuccess(section, 'Alle Lücken richtig ausgefüllt! ✅');
       saveProgress(_state.mappeId, index, true);
       section.classList.add('aufgabe--solved');
-      for (var j = 0; j < inputs.length; j++) { inputs[j].disabled = true; }
+      var filled = [];
+      for (var j = 0; j < inputs.length; j++) {
+        filled.push(inputs[j].value);
+        inputs[j].disabled = true;
+      }
+      _saveAntwortState(_state.mappeId, index, { filled: filled });
     } else {
       // v3.5d: Falsche Inputs leeren fuer Neuversuch, korrekte behalten
       for (var j = 0; j < inputs.length; j++) {
@@ -2237,8 +2326,17 @@ var EscapeEngine = (function () {
     listeDiv.className = 'aufgabe__reihenfolge';
     listeDiv.id = aufgabe.id + '-reihenfolge';
 
-    // Optionen mischen (die loesung ist die korrekte Reihenfolge)
-    var items = Core.utils.shuffleArray(aufgabe.optionen || []);
+    // v3.5g: Bei geloest korrekte Reihenfolge anzeigen, sonst mischen
+    var state = geloest ? _loadAntwortState(_state.mappeId, index) : null;
+    var items;
+    if (geloest && state && state.order) {
+      items = state.order;
+    } else if (geloest) {
+      // Fallback: Loesung als Reihenfolge
+      items = Array.isArray(aufgabe.loesung) ? aufgabe.loesung : (aufgabe.optionen || []);
+    } else {
+      items = Core.utils.shuffleArray(aufgabe.optionen || []);
+    }
 
     for (var i = 0; i < items.length; i++) {
       var itemEl = _createReihenfolgeItem(items[i], i, items.length, aufgabe.id, geloest);
@@ -2247,7 +2345,6 @@ var EscapeEngine = (function () {
 
     container.appendChild(listeDiv);
 
-    // Submit-Button
     if (!geloest) {
       var btn = document.createElement('button');
       btn.className = 'aufgabe__submit';
@@ -2355,9 +2452,14 @@ var EscapeEngine = (function () {
       Core.feedback.showSuccess(section, 'Die Reihenfolge stimmt! ✅');
       saveProgress(_state.mappeId, index, true);
       section.classList.add('aufgabe--solved');
-      // Buttons deaktivieren
+      // Buttons deaktivieren + State speichern
       var btns = section.querySelectorAll('.aufgabe__reihenfolge-btn');
       for (var j = 0; j < btns.length; j++) { btns[j].disabled = true; }
+      var order = [];
+      for (var oi = 0; oi < items.length; oi++) {
+        order.push(items[oi].getAttribute('data-value'));
+      }
+      _saveAntwortState(_state.mappeId, index, { order: order });
     } else {
       Core.feedback.showError(section, 'Die Reihenfolge stimmt noch nicht. Versuche es nochmal! ❌');
       _saveFehlversuch(_state.mappeId);
@@ -2384,10 +2486,17 @@ var EscapeEngine = (function () {
     textarea.setAttribute('aria-label', 'Freitext-Antwort für Aufgabe ' + (index + 1));
     textarea.setAttribute('placeholder', 'Schreibe deine Antwort hier...');
 
+    // v3.5g: State-Restore
+    if (geloest) {
+      var state = _loadAntwortState(_state.mappeId, index);
+      if (state && state.text) {
+        textarea.value = state.text;
+      }
+    }
+
     freitextDiv.appendChild(textarea);
     container.appendChild(freitextDiv);
 
-    // Submit-Button
     if (!geloest) {
       var btn = document.createElement('button');
       btn.className = 'aufgabe__submit';
@@ -2425,11 +2534,13 @@ var EscapeEngine = (function () {
     if (isMatch) {
       Core.feedback.showSuccess(section, 'Richtig! ✅');
       saveProgress(_state.mappeId, index, true);
+      _saveAntwortState(_state.mappeId, index, { text: userText });
       section.classList.add('aufgabe--solved');
       textarea.disabled = true;
     } else if (isContained) {
       Core.feedback.showSuccess(section, 'Richtig! ✅ (Deine Antwort enthält die gesuchte Lösung.)');
       saveProgress(_state.mappeId, index, true);
+      _saveAntwortState(_state.mappeId, index, { text: userText });
       section.classList.add('aufgabe--solved');
       textarea.disabled = true;
     } else {
@@ -2830,7 +2941,10 @@ var EscapeEngine = (function () {
    */
   function _addBuchstabeToPool(buchstabe, aufgabeIndex, mitAnimation) {
     var pool = document.getElementById('code-pool');
-    if (!pool) return;
+    if (!pool) {
+      console.warn('[EscapeEngine] code-pool Element nicht gefunden');
+      return;
+    }
 
     // Prüfen ob schon im Pool
     var existing = pool.querySelector('[data-aufgabe-index="' + aufgabeIndex + '"]');
@@ -3205,6 +3319,13 @@ var EscapeEngine = (function () {
     // Code-Reveal wenn alle geloest
     if (freshSolved === total && total > 0) {
       _revealFreischaltCode(mappe);
+      // v3.5g: Auto-Scroll zum Loesungswort-Bereich
+      var loesungswortBereich = document.querySelector('.loesungswort-bereich');
+      if (loesungswortBereich) {
+        setTimeout(function() {
+          loesungswortBereich.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 400);
+      }
     }
   }
 
