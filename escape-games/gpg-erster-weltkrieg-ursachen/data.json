@@ -236,7 +236,7 @@
           ],
           "loesung": "Europäische Mächte wollten ganze Kontinente beherrschen",
           "tipps": [
-            {"stufe": 1, "text": "Beschreibe genau, was du siehst: Wo steht der Mann? Was hat er in der Hand? Wo setzt er seine Füße auf?"},
+            {"stufe": 1, "text": "Beschreibe genau, was du auf der [[mat-1-8|Karikatur von Cecil Rhodes]] (M3) siehst: Wo steht der Mann? Was hat er in der Hand? Wo setzt er seine Füße auf?"},
             {"stufe": 2, "text": "Cecil Rhodes plante eine Eisenbahn von Kairo bis Kapstadt — quer durch ganz Afrika. Der Zeichner zeigt das übertrieben groß."},
             {"stufe": 3, "text": "Die Karikatur kritisiert den Imperialismus: Europäische Mächte wie Großbritannien wollten ganze Kontinente kontrollieren — riesig und rücksichtslos."}
           ],
@@ -314,7 +314,7 @@
             ]
           },
           "transfer": {
-            "frage": "Weiter zur nächsten Mappe: Der Funke fällt in Sarajevo."
+            "frage": "Gibt es heute Situationen, in denen ein kleiner Anlass einen großen Konflikt auslösen könnte?"
           }
         },
         "kernerkenntnisse": [
@@ -323,7 +323,7 @@
           "Das Bündnissystem machte aus jedem lokalen Konflikt eine europaweite Kettenreaktion."
         ],
         "hefteintrag_verweis": "Übertrage das Tafelbild und die Merksätze in dein Heft. Achte auf die Verbindungspfeile zwischen den Begriffen.",
-        "reflexionsimpuls": "Das Pulverfass war gefüllt — der Funke kam am 28. Juni 1914 in Sarajevo. Weiter in der nächsten Mappe.",
+        "reflexionsimpuls": "Was hat sich an deinem Bild von Europa vor 1914 verändert?",
         "zusammenfassung": "Europa war vor 1914 ein Pulverfass: Imperialismus, Nationalismus und Wettrüstung hatten den Kontinent in zwei feindliche Bündnisblöcke gespalten. Jeder kleine Konflikt konnte durch die Bündnispflichten eine Kettenreaktion auslösen. Der britische Außenminister Edward Grey fasste es später zusammen: 'The lamps are going out all over Europe, we shall not see them lit again in our lifetime.'",
         "ueberleitung": "Wie ein einzelner Schuss in Sarajevo das Pulverfass zum Explodieren brachte, erfährst du in der nächsten Mappe."
       }

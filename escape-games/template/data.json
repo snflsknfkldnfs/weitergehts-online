@@ -24,6 +24,7 @@
           "typ": "darstellungstext",
           "titel": "",
           "inhalt": "",
+          "bildunterschrift": "",
           "quelle": "",
           "lizenz": "",
           "position": 1,
@@ -79,9 +80,9 @@
           },
           "knoten": [],
           "verbindungen": [],
-          "voraussetzungen": [],
-          "kernerkenntnisse": []
+          "voraussetzungen": []
         },
+        "kernerkenntnisse": [],
         "hefteintrag_verweis": "",
         "reflexionsimpuls": "",
         "zusammenfassung": "",
