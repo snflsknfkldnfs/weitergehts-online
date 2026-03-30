@@ -327,6 +327,271 @@
         "zusammenfassung": "Europa war vor 1914 ein Pulverfass: Imperialismus, Nationalismus und Wettrüstung hatten den Kontinent in zwei feindliche Bündnisblöcke gespalten. Jeder kleine Konflikt konnte durch die Bündnispflichten eine Kettenreaktion auslösen. Der britische Außenminister Edward Grey fasste es später zusammen: 'The lamps are going out all over Europe, we shall not see them lit again in our lifetime.'",
         "ueberleitung": "Wie ein einzelner Schuss in Sarajevo das Pulverfass zum Explodieren brachte, erfährst du in der nächsten Mappe."
       }
+    },
+    {
+      "id": "mappe-2",
+      "titel": "Das Attentat von Sarajevo",
+      "beschreibung": "Ein Mord in Sarajevo, eine Kettenreaktion — und Europa versinkt im Krieg.",
+      "freischalt_code": "FUNKE",
+      "einstieg": {
+        "narrativ": "<p>Europa ist ein Pulverfass — zwei Bündnisblöcke stehen sich gegenüber, bewaffnet und misstrauisch. Doch noch herrscht Frieden. Dann, am 28. Juni 1914, fallen in Sarajevo Schüsse. Ein Thronfolger stirbt — und innerhalb weniger Wochen steht ganz Europa in Flammen.</p>",
+        "problemstellung": "Warum führte ein Mord in Sarajevo zum Weltkrieg?"
+      },
+      "materialien": [
+        {
+          "id": "mat-2-1",
+          "typ": "darstellungstext",
+          "titel": "Was hatte der Balkan mit dem Weltkrieg zu tun?",
+          "inhalt": "<p>Auf dem <strong>Balkan</strong> trafen die Interessen mehrerer Großmächte aufeinander. <strong>Österreich-Ungarn</strong> hatte 1908 <strong>Bosnien-Herzegowina</strong> annektiert — gegen den Willen Serbiens, das die dort lebenden Südslawen als 'Brüder' betrachtete. Serbien träumte von einem großen südslawischen Staat.</p><p>1912 und 1913 tobten die <strong>Balkankriege</strong>. Serbien ging gestärkt daraus hervor — und wurde für Österreich-Ungarn zur Bedrohung. Die Spannungen zwischen Wien und Belgrad wuchsen.</p><p>Am <strong>28. Juni 1914</strong> besuchte der österreichisch-ungarische Thronfolger <strong>Erzherzog Franz Ferdinand</strong> die bosnische Hauptstadt Sarajevo. Der 19-jährige bosnische Serbe <strong>Gavrilo Princip</strong> erschoss ihn und seine Frau Sophie. Princip gehörte zur Gruppe 'Junges Bosnien', die von der serbischen Geheimorganisation 'Schwarze Hand' unterstützt wurde.</p><p>Doch warum wurde aus diesem Mord ein <strong>Weltkrieg</strong>? Hier ist die Unterscheidung wichtig: Das Attentat war der <strong>Auslöser</strong> — der konkrete Anlass. Die <strong>Ursachen</strong> lagen tiefer: Bündnisse, Rivalitäten und Misstrauen hatten Europa bereits zum Pulverfass gemacht. Ohne das Pulverfass hätte der Funke keinen Brand ausgelöst.</p>",
+          "quelle": "Eigene Darstellung. Quellen: Wikipedia — Assassination of Archduke Franz Ferdinand, July Crisis, Bosnian Crisis",
+          "position": 1,
+          "didaktische_funktion": "einstieg",
+          "voraussetzung": [],
+          "ueberleitung_von": "",
+          "sequenz_kontext": {
+            "vorher": null,
+            "nachher": {"id": "mat-2-2", "typ": "bildquelle", "kerninhalt": "Zeitgenössische Illustration des Attentats"}
+          }
+        },
+        {
+          "id": "mat-2-2",
+          "typ": "bildquelle",
+          "titel": "Der Moment, der die Welt veränderte",
+          "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-2-1.jpg",
+          "bildunterschrift": "So stellte sich ein italienischer Zeitungszeichner das Attentat vor: Gavrilo Princip schießt aus nächster Nähe auf den Thronfolger und seine Frau im offenen Wagen.",
+          "quelle": "Achille Beltrame, Domenica del Corriere, Juli 1914 / Wikimedia Commons",
+          "lizenz": "Public Domain",
+          "position": 2,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": ["mat-2-1"],
+          "ueberleitung_von": "Im Darstellungstext hast du vom Attentat gelesen. Diese zeitgenössische Illustration zeigt, wie sich die Menschen damals das Geschehen vorstellten.",
+          "sequenz_kontext": {
+            "vorher": {"id": "mat-2-1", "typ": "darstellungstext", "kerninhalt": "Balkankrise, Attentat, Ursache vs. Auslöser"},
+            "nachher": {"id": "mat-2-3", "typ": "bildquelle", "kerninhalt": "Franz Ferdinand und Sophie kurz vor dem Attentat"}
+          }
+        },
+        {
+          "id": "mat-2-3",
+          "typ": "bildquelle",
+          "titel": "Franz Ferdinand und Sophie — die letzten Minuten",
+          "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-2-2.jpg",
+          "bildunterschrift": "Erzherzog Franz Ferdinand und seine Frau Sophie verlassen das Rathaus von Sarajevo — wenige Minuten später werden beide erschossen.",
+          "quelle": "Unbekannt, zeitgenössische Postkarte / Wikimedia Commons",
+          "lizenz": "CC-BY-SA 3.0",
+          "position": 3,
+          "didaktische_funktion": "vertiefung",
+          "voraussetzung": ["mat-2-1"],
+          "ueberleitung_von": "Die Illustration zeigt die Szene aus der Vorstellung eines Zeichners. Dieses echte Foto zeigt Franz Ferdinand und Sophie Minuten vor dem Attentat.",
+          "sequenz_kontext": {
+            "vorher": {"id": "mat-2-2", "typ": "bildquelle", "kerninhalt": "Beltrame-Illustration des Attentats"},
+            "nachher": {"id": "mat-2-4", "typ": "quellentext", "kerninhalt": "Das Ultimatum an Serbien"}
+          }
+        },
+        {
+          "id": "mat-2-4",
+          "typ": "quellentext",
+          "titel": "Was forderte Österreich-Ungarn von Serbien?",
+          "inhalt": "<p><em>Am 23. Juli 1914 stellte Österreich-Ungarn ein Ultimatum an Serbien — mit einer Frist von nur 48 Stunden. Die wichtigsten Forderungen:</em></p><blockquote>Serbien soll alle anti-österreichischen Bewegungen unterdrücken, beteiligte Beamte entlassen und — die härteste Forderung — österreichisch-ungarische Beamte sollen auf serbischem Boden an den Ermittlungen zum Attentat teilnehmen.</blockquote><p><em>Serbien akzeptierte fast alle Punkte, lehnte aber die Teilnahme fremder Beamter auf eigenem Staatsgebiet ab. Österreich-Ungarn erklärte die Antwort für ungenügend. Fünf Tage später folgte die Kriegserklärung.</em></p>",
+          "quelle": "Paraphrase des österreichisch-ungarischen Ultimatums vom 23. Juli 1914. Quellen: Wikipedia — July Crisis, Austro-Hungarian Ultimatum",
+          "position": 4,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": ["mat-2-1"],
+          "ueberleitung_von": "Nach dem Attentat reagierte Österreich-Ungarn mit harten Forderungen an Serbien. Was genau verlangte Wien?",
+          "sequenz_kontext": {
+            "vorher": {"id": "mat-2-3", "typ": "bildquelle", "kerninhalt": "Franz Ferdinand und Sophie kurz vor dem Attentat"},
+            "nachher": {"id": "mat-2-5", "typ": "zeitleiste", "kerninhalt": "Julikrise-Chronologie"}
+          }
+        },
+        {
+          "id": "mat-2-5",
+          "typ": "zeitleiste",
+          "titel": "Wie wurde aus dem Attentat ein Weltkrieg?",
+          "inhalt": [
+            {"datum": "28. Juni 1914", "text": "Attentat von Sarajevo: Gavrilo Princip erschießt Erzherzog Franz Ferdinand und seine Frau Sophie"},
+            {"datum": "5./6. Juli 1914", "text": "Blankoscheck: Deutschland sichert Österreich-Ungarn bedingungslose Unterstützung zu"},
+            {"datum": "23. Juli 1914", "text": "Ultimatum: Österreich-Ungarn stellt Serbien ein 48-Stunden-Ultimatum mit harten Forderungen"},
+            {"datum": "25. Juli 1914", "text": "Serbien akzeptiert das Ultimatum weitgehend, aber nicht vollständig"},
+            {"datum": "28. Juli 1914", "text": "Österreich-Ungarn erklärt Serbien den Krieg"},
+            {"datum": "30. Juli 1914", "text": "Russland ordnet die Generalmobilmachung an, um Serbien zu unterstützen"},
+            {"datum": "1. August 1914", "text": "Deutschland erklärt Russland den Krieg"},
+            {"datum": "3./4. August 1914", "text": "Deutschland erklärt Frankreich den Krieg und marschiert in Belgien ein. Großbritannien erklärt Deutschland den Krieg"}
+          ],
+          "quelle": "Eigene Zusammenstellung. Quellen: Wikipedia — July Crisis, Assassination of Archduke Franz Ferdinand",
+          "position": 5,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": ["mat-2-1", "mat-2-4"],
+          "ueberleitung_von": "Das Ultimatum war nur der Anfang. Die Zeitleiste zeigt dir Schritt für Schritt, wie aus dem Attentat innerhalb weniger Wochen ein Weltkrieg wurde.",
+          "sequenz_kontext": {
+            "vorher": {"id": "mat-2-4", "typ": "quellentext", "kerninhalt": "Ultimatum an Serbien"},
+            "nachher": {"id": "mat-2-6", "typ": "tagebuch", "kerninhalt": "Erlebnis eines Bewohners von Sarajevo"}
+          }
+        },
+        {
+          "id": "mat-2-6",
+          "typ": "tagebuch",
+          "titel": "Wie erlebte ein Mensch in Sarajevo den 28. Juni 1914?",
+          "inhalt": "<p><em>Sarajevo, 28. Juni 1914</em></p><p>Heute Morgen war die ganze Stadt auf den Beinen. Der Thronfolger kam zu Besuch — Flaggen wehten, Soldaten standen Spalier. Meine Nachbarin, eine Kroatin, freute sich. Mein serbischer Freund Nikola murmelte nur: 'Ausgerechnet heute.' Es ist der Vidovdan, der serbische Nationalfeiertag.</p><p>Dann die Schüsse. Zuerst dachte ich an Böller. Doch die Gesichter der Soldaten sagten etwas anderes. Der Thronfolger und seine Frau — tot. Erschossen von einem jungen Mann, kaum älter als ich.</p><p>Am Nachmittag begann die Angst. Serbische Geschäfte wurden mit Steinen beworfen. Nikola traute sich nicht mehr auf die Straße. 'Sie werden uns alle verdächtigen', sagte er. Ich weiß nicht, was jetzt kommt. Aber ich spüre: Nichts wird mehr so sein wie vorher.</p>",
+          "quelle": "Fiktiver Tagebucheintrag, historisch plausibel. Kontext: Wikipedia — Assassination of Archduke Franz Ferdinand, Anti-Serb riots in Sarajevo",
+          "position": 6,
+          "didaktische_funktion": "vertiefung",
+          "voraussetzung": ["mat-2-1"],
+          "ueberleitung_von": "Die Zeitleiste zeigt die politischen Folgen. Aber wie erlebten die Menschen vor Ort den Tag des Attentats? Ein fiktiver Tagebucheintrag aus Sarajevo.",
+          "sequenz_kontext": {
+            "vorher": {"id": "mat-2-5", "typ": "zeitleiste", "kerninhalt": "Julikrise-Chronologie"},
+            "nachher": null
+          }
+        }
+      ],
+      "aufgaben": [
+        {
+          "id": "aufgabe-2-1",
+          "typ": "multiple-choice",
+          "frage": "Warum war der Balkan vor 1914 ein Krisenherd?",
+          "material_referenz": ["mat-2-1"],
+          "optionen": [
+            "Österreich-Ungarn hatte Bosnien annektiert, und Serbien fühlte sich bedroht",
+            "Serbien hatte Österreich-Ungarn den Krieg erklärt",
+            "Deutschland wollte den Balkan als Kolonie",
+            "Großbritannien kontrollierte die Balkanstaaten"
+          ],
+          "loesung": "Österreich-Ungarn hatte Bosnien annektiert, und Serbien fühlte sich bedroht",
+          "tipps": [
+            {"stufe": 1, "text": "Lies den [[mat-2-1|Darstellungstext]] (M1) genau: Was passierte 1908 auf dem Balkan?"},
+            {"stufe": 2, "text": "Österreich-Ungarn nahm sich ein Gebiet, das Serbien als 'seines' betrachtete. Das verschärfte die Spannungen."},
+            {"stufe": 3, "text": "1908 annektierte Österreich-Ungarn Bosnien-Herzegowina. Serbien sah die dort lebenden Südslawen als Brüder und fühlte sich bedroht."}
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-2-2",
+          "typ": "zuordnung",
+          "frage": "Ordne die Ereignisse der Julikrise den richtigen Daten zu.",
+          "material_referenz": ["mat-2-5"],
+          "paare": [
+            {"links": "28. Juni 1914", "rechts": "Attentat von Sarajevo"},
+            {"links": "5./6. Juli 1914", "rechts": "Blankoscheck Deutschlands"},
+            {"links": "23. Juli 1914", "rechts": "Ultimatum an Serbien"},
+            {"links": "28. Juli 1914", "rechts": "Kriegserklärung an Serbien"}
+          ],
+          "tipps": [
+            {"stufe": 1, "text": "Schau dir die [[mat-2-5|Zeitleiste der Julikrise]] (M5) genau an. Welches Ereignis steht ganz am Anfang?"},
+            {"stufe": 2, "text": "Zuerst kam das Attentat (Juni), dann der Blankoscheck (Anfang Juli), dann das Ultimatum (23. Juli) und zuletzt die Kriegserklärung (28. Juli)."},
+            {"stufe": 3, "text": "28.6. = Attentat, 5./6.7. = Blankoscheck, 23.7. = Ultimatum, 28.7. = Kriegserklärung an Serbien."}
+          ],
+          "punkte": 15
+        },
+        {
+          "id": "aufgabe-2-3",
+          "typ": "multiple-choice",
+          "frage": "Was ist der Unterschied zwischen Ursache und Auslöser des Ersten Weltkriegs?",
+          "material_referenz": ["mat-2-1"],
+          "optionen": [
+            "Das Attentat war der Auslöser, die Ursachen lagen in den Bündnissen und Rivalitäten",
+            "Das Attentat war die Ursache, die Bündnisse waren der Auslöser",
+            "Ursache und Auslöser bedeuten dasselbe",
+            "Die Ursache war der Blankoscheck, der Auslöser war das Ultimatum"
+          ],
+          "loesung": "Das Attentat war der Auslöser, die Ursachen lagen in den Bündnissen und Rivalitäten",
+          "tipps": [
+            {"stufe": 1, "text": "Lies im [[mat-2-1|Darstellungstext]] (M1) den letzten Absatz: Was ist dort der Unterschied zwischen Ursache und Auslöser?"},
+            {"stufe": 2, "text": "Der Auslöser ist der konkrete Anlass (ein Ereignis). Die Ursachen liegen tiefer — sie waren schon vorher da."},
+            {"stufe": 3, "text": "Das Attentat (= Auslöser) war der Funke. Die Ursachen (Bündnisse, Rivalitäten, Misstrauen) hatten das Pulverfass schon vorher gefüllt."}
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-2-4",
+          "typ": "lueckentext",
+          "frage": "Nach dem Attentat sicherte ___ Österreich-Ungarn bedingungslose Unterstützung zu (Blankoscheck). Dann stellte Österreich-Ungarn ein ___ an Serbien. Als Russland seine Armee mobilisierte, erklärte Deutschland ___ den Krieg.",
+          "material_referenz": ["mat-2-4", "mat-2-5"],
+          "loesung": ["Deutschland", "Ultimatum", "Russland"],
+          "tipps": [
+            {"stufe": 1, "text": "Lies das [[mat-2-4|Ultimatum]] (M4) und die [[mat-2-5|Zeitleiste]] (M5): Welches Land gab den Blankoscheck?"},
+            {"stufe": 2, "text": "Deutschland unterstützte Österreich-Ungarn. Wien stellte ein Ultimatum. Dann mobilisierte Russland — und Deutschland erklärte den Krieg."},
+            {"stufe": 3, "text": "Deutschland gab den Blankoscheck, Österreich-Ungarn stellte das Ultimatum an Serbien, und nach der russischen Mobilmachung erklärte Deutschland Russland den Krieg."}
+          ],
+          "punkte": 15
+        },
+        {
+          "id": "aufgabe-2-5",
+          "typ": "freitext-code",
+          "frage": "Erkläre mit eigenen Worten: Warum hätte das Attentat allein nicht zum Weltkrieg geführt? Verwende die Begriffe 'Ursache', 'Auslöser' und 'Kettenreaktion'.",
+          "material_referenz": ["mat-2-1", "mat-2-5"],
+          "loesung_beispiel": "Das Attentat war nur der Auslöser — der Funke. Ohne die Ursachen (Bündnisse, Rivalitäten, Misstrauen) hätte es keinen Weltkrieg gegeben. Durch die Bündnispflichten entstand eine Kettenreaktion: Ein Land nach dem anderen wurde in den Krieg hineingezogen.",
+          "tipps": [
+            {"stufe": 1, "text": "Denke an die Metapher aus Mappe 1: Was ist ein Pulverfass, was ist der Funke? Lies nochmal den [[mat-2-1|Darstellungstext]] (M1)."},
+            {"stufe": 2, "text": "Das Attentat = Funke (Auslöser). Das Pulverfass (Bündnisse, Rivalitäten) = Ursachen. Die [[mat-2-5|Zeitleiste]] (M5) zeigt die Kettenreaktion."},
+            {"stufe": 3, "text": "Ein Mord allein macht keinen Weltkrieg. Erst die Bündnispflichten (Blankoscheck, Mobilmachung) sorgten dafür, dass ein lokaler Konflikt alle Großmächte erfasste — das ist die Kettenreaktion."}
+          ],
+          "punkte": 20
+        }
+      ],
+      "sicherung": {
+        "tafelbild": {
+          "knoten": [
+            {"id": "k2-1", "text": "Attentat von Sarajevo (28.6.1914)", "typ": "ereignis", "merksatz": "Der bosnische Serbe Gavrilo Princip erschoss Erzherzog Franz Ferdinand und seine Frau Sophie in Sarajevo — der Funke, der das Pulverfass entzündete."},
+            {"id": "k2-2", "text": "Ursache vs. Auslöser", "typ": "kernbegriff", "merksatz": "Der Auslöser ist der konkrete Anlass (Attentat), die Ursachen liegen tiefer (Bündnisse, Rivalitäten, Misstrauen)."},
+            {"id": "k2-3", "text": "Julikrise", "typ": "ereignis", "merksatz": "In nur fünf Wochen (28. Juni bis 4. August 1914) eskalierte ein Mord zum europäischen Krieg — durch Ultimaten, Blankoschecks und Mobilmachungen."},
+            {"id": "k2-4", "text": "Blankoscheck (DE → ÖU)", "typ": "ereignis", "merksatz": "Deutschland sicherte Österreich-Ungarn bedingungslose Unterstützung zu — das ermutigte Wien zu harten Forderungen an Serbien."},
+            {"id": "k2-5", "text": "Kettenreaktion der Kriegserklärungen", "typ": "wirkung", "merksatz": "Die Bündnispflichten zogen ein Land nach dem anderen in den Krieg: Österreich-Ungarn, Russland, Deutschland, Frankreich, Großbritannien."},
+            {"id": "k2-6", "text": "Balkankrise (Vorgeschichte)", "typ": "ursache", "merksatz": "Die Annexion Bosniens (1908) und die Balkankriege (1912/13) verschärften die Spannungen zwischen Österreich-Ungarn und Serbien."}
+          ],
+          "verbindungen": [
+            {"von": "k2-6", "nach": "k2-1", "label": "Spannungen führen zu"},
+            {"von": "k2-1", "nach": "k2-3", "label": "löst aus"},
+            {"von": "k2-4", "nach": "k2-5", "label": "ermutigt Eskalation"},
+            {"von": "k2-3", "nach": "k2-5", "label": "mündet in"},
+            {"von": "k2-2", "nach": "k2-1", "label": "erklärt: Auslöser"},
+            {"von": "k2-2", "nach": "k1-1", "label": "erklärt: Ursache (Pulverfass)"}
+          ],
+          "voraussetzungen": ["k1-1", "k1-4", "k1-5", "k1-7"],
+          "stundenfrage": "Warum führte ein Mord in Sarajevo zum Weltkrieg?",
+          "ordnungsmuster": "chronologisch",
+          "scpl": {
+            "situation": {
+              "kontextsatz": "Europa ist ein Pulverfass: Zwei bewaffnete Bündnisblöcke stehen sich gegenüber. Auf dem Balkan verschärfen die Annexion Bosniens (1908) und die Balkankriege (1912/13) die Spannungen zwischen Österreich-Ungarn und Serbien.",
+              "fachbegriffe": ["Balkankrise", "Annexion"]
+            },
+            "complication": [
+              {
+                "schritt": "Am 28. Juni 1914 erschießt Gavrilo Princip den österreichisch-ungarischen Thronfolger Franz Ferdinand und seine Frau in Sarajevo — das Attentat.",
+                "fachbegriff": "Attentat",
+                "darstellung": null
+              },
+              {
+                "schritt": "Deutschland gibt Österreich-Ungarn bedingungslose Unterstützung: den Blankoscheck. Wien stellt Serbien ein Ultimatum mit absichtlich unannehmbaren Forderungen.",
+                "fachbegriff": "Blankoscheck",
+                "darstellung": null
+              },
+              {
+                "schritt": "Serbien lehnt teilweise ab. Österreich-Ungarn erklärt den Krieg. Russland mobilisiert. Deutschland erklärt Russland und Frankreich den Krieg. Großbritannien tritt ein — die Julikrise mündet in den Weltkrieg.",
+                "fachbegriff": "Julikrise",
+                "darstellung": null
+              }
+            ],
+            "problem": {
+              "satz": "Das Attentat war nur der Auslöser. Ohne die Ursachen — Bündnisse, Rivalitäten, Misstrauen — hätte ein Mord keinen Weltkrieg ausgelöst. Die Bündnispflichten verwandelten einen lokalen Konflikt in eine Kettenreaktion.",
+              "fachbegriff": "Auslöser vs. Ursache"
+            },
+            "loesung": [
+              "Das Attentat von Sarajevo war der Auslöser, aber nicht die Ursache des Ersten Weltkriegs.",
+              "Die Julikrise zeigt, wie Blankoschecks, Ultimaten und Bündnispflichten einen lokalen Mord in eine Kettenreaktion verwandelten, die ganz Europa erfasste."
+            ]
+          },
+          "transfer": {
+            "frage": "Gibt es ein aktuelles Beispiel, bei dem ein einzelnes Ereignis eine Kette von Reaktionen ausgelöst hat?"
+          }
+        },
+        "kernerkenntnisse": [
+          "Das Attentat von Sarajevo (28.6.1914) war der Auslöser, nicht die Ursache des Ersten Weltkriegs.",
+          "Die Julikrise zeigt die Kettenreaktion: Blankoscheck, Ultimatum, Mobilmachung, Kriegserklärungen.",
+          "Ohne die Ursachen (Bündnisse, Rivalitäten, Misstrauen) hätte der Funke keinen Brand ausgelöst."
+        ],
+        "hefteintrag_verweis": "Übertrage das Tafelbild in dein Heft. Markiere den Unterschied zwischen Ursache und Auslöser farbig.",
+        "reflexionsimpuls": "Was hat dich an der Geschwindigkeit der Julikrise am meisten überrascht?",
+        "zusammenfassung": "Das Attentat von Sarajevo war der Auslöser, aber nicht die Ursache des Krieges. Die Ursachen — Bündnisse, Rivalitäten, Misstrauen — lagen schon vorher bereit. Die Julikrise zeigt, wie schnell aus einem Mord ein Weltkrieg werden kann, wenn ein System aus Bündnispflichten und Blankoschecks die Eskalation antreibt. Schon bald war der ursprüngliche Anlass zur Nebensache geworden: 'The ostensible reason for armed conflict — the assassination of an archduke — had already become a side-note to a larger European war.'",
+        "ueberleitung": "Der Krieg hat begonnen. Millionen Soldaten marschieren. Doch wie reagieren die Menschen — mit Angst oder mit Begeisterung? Das erfährst du in der nächsten Mappe."
+      }
     }
   ]
 }
