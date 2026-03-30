@@ -844,14 +844,23 @@ var EscapeEngine = (function () {
     img.loading = 'lazy';
     figure.appendChild(img);
 
-    var captionParts = [];
-    if (mat.bildunterschrift) captionParts.push(mat.bildunterschrift);
-    if (mat.quelle) captionParts.push(mat.quelle);
-    if (mat.lizenz) captionParts.push(mat.lizenz);
-
-    if (captionParts.length > 0) {
+    // v3.8 U4: Bildunterschrift und Quellenangabe getrennt
+    var hasCaption = mat.bildunterschrift || mat.quelle || mat.lizenz;
+    if (hasCaption) {
       var figcaption = document.createElement('figcaption');
-      figcaption.textContent = captionParts.join(' — ');
+      if (mat.bildunterschrift) {
+        figcaption.appendChild(document.createTextNode(mat.bildunterschrift));
+      }
+      var quellTeile = [];
+      if (mat.quelle) quellTeile.push(mat.quelle);
+      if (mat.lizenz) quellTeile.push(mat.lizenz);
+      if (quellTeile.length > 0) {
+        if (mat.bildunterschrift) figcaption.appendChild(document.createTextNode(' — '));
+        var quelleSpan = document.createElement('span');
+        quelleSpan.className = 'material__quelle-teil';
+        quelleSpan.textContent = quellTeile.join(' — ');
+        figcaption.appendChild(quelleSpan);
+      }
       figure.appendChild(figcaption);
     }
 
@@ -869,10 +878,8 @@ var EscapeEngine = (function () {
     // SVG-String oder URL?
     var inhalt = mat.inhalt || '';
     if (inhalt.indexOf('<svg') !== -1) {
-      // SVG-String direkt einsetzen
       inhaltDiv.innerHTML = inhalt;
     } else {
-      // URL: img-Element
       var img = document.createElement('img');
       img.src = inhalt;
       img.alt = mat.titel || '';
@@ -881,13 +888,20 @@ var EscapeEngine = (function () {
     }
     figure.appendChild(inhaltDiv);
 
-    var captionParts = [];
-    if (mat.bildunterschrift) captionParts.push(mat.bildunterschrift);
-    if (mat.quelle) captionParts.push(mat.quelle);
-
-    if (captionParts.length > 0) {
+    // v3.8 U4: Bildunterschrift und Quellenangabe getrennt
+    var hasCaption = mat.bildunterschrift || mat.quelle;
+    if (hasCaption) {
       var figcaption = document.createElement('figcaption');
-      figcaption.textContent = captionParts.join(' — ');
+      if (mat.bildunterschrift) {
+        figcaption.appendChild(document.createTextNode(mat.bildunterschrift));
+      }
+      if (mat.quelle) {
+        if (mat.bildunterschrift) figcaption.appendChild(document.createTextNode(' — '));
+        var quelleSpan = document.createElement('span');
+        quelleSpan.className = 'material__quelle-teil';
+        quelleSpan.textContent = mat.quelle;
+        figcaption.appendChild(quelleSpan);
+      }
       figure.appendChild(figcaption);
     }
 
@@ -1064,7 +1078,7 @@ var EscapeEngine = (function () {
     container.className = 'mappe__sicherung';
 
     var h2 = document.createElement('h2');
-    h2.textContent = 'Sicherung';
+    h2.textContent = 'Hefteintrag';
     container.appendChild(h2);
 
     // Tafelbild/Hefteintrag Routing
@@ -1770,6 +1784,39 @@ var EscapeEngine = (function () {
       if (progress.abgeschlossen) {
         sicherungContainer.style.display = '';
       }
+    }
+
+    // v3.8 U4: Quellenangaben per Default ausblenden (Fallback: ohne JS sichtbar)
+    document.body.classList.add('quellen-hidden');
+    var quellenToggle = document.createElement('button');
+    quellenToggle.className = 'quellen-toggle';
+    quellenToggle.textContent = 'Quellen anzeigen';
+    quellenToggle.setAttribute('type', 'button');
+    quellenToggle.addEventListener('click', function() {
+      document.body.classList.toggle('quellen-hidden');
+      quellenToggle.textContent = document.body.classList.contains('quellen-hidden')
+        ? 'Quellen anzeigen' : 'Quellen ausblenden';
+    });
+    document.body.appendChild(quellenToggle);
+
+    // v3.8 U2: Sticky-Stundenfrage
+    var stickyBar = document.createElement('div');
+    stickyBar.className = 'sticky-stundenfrage';
+    stickyBar.textContent = mappe.titel || '';
+    document.body.appendChild(stickyBar);
+
+    var mappeHeader = document.querySelector('.mappe__header');
+    if (mappeHeader && 'IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            stickyBar.classList.remove('sticky-stundenfrage--visible');
+          } else {
+            stickyBar.classList.add('sticky-stundenfrage--visible');
+          }
+        });
+      }, { threshold: 0 });
+      observer.observe(mappeHeader);
     }
 
   }

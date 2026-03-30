@@ -219,9 +219,15 @@ footer a:hover {
   border-bottom: 2px solid var(--color-border);
 }
 
+/* v3.8 U1: Stundenfrage gross, zentriert, volle Breite */
 .mappe__titel {
-  font-size: var(--text-3xl);
+  font-size: 2.2rem;
   color: var(--color-primary);
+  text-align: center;
+  line-height: 1.3;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--color-surface);
+  border-radius: 8px;
 }
 
 .mappe__beschreibung {
@@ -230,6 +236,8 @@ footer a:hover {
   max-width: 600px;
   margin-inline: auto;
   margin-top: var(--space-sm);
+  text-align: center;
+  font-size: 1.05rem;
 }
 
 .mappe__navigation {
@@ -2032,6 +2040,60 @@ footer a:hover {
 }
 
 /* --------------------------------------------------------------------------
+   20a. v3.8 U2: Sticky-Stundenfrage
+   -------------------------------------------------------------------------- */
+
+.sticky-stundenfrage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--color-surface, #EDE8DD);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: var(--space-xs, 0.25rem) var(--space-md, 1rem);
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  transform: translateY(-100%);
+  transition: transform 0.2s ease;
+}
+
+.sticky-stundenfrage--visible {
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   20b. v3.8 U4: Quellenangaben per Default hidden (JS-gesteuert)
+   -------------------------------------------------------------------------- */
+
+body.quellen-hidden .material__quelle,
+body.quellen-hidden figcaption .material__quelle-teil {
+  display: none;
+}
+
+.quellen-toggle {
+  position: fixed;
+  bottom: var(--space-md, 1rem);
+  right: var(--space-md, 1rem);
+  z-index: 90;
+  background: var(--color-surface, #EDE8DD);
+  color: var(--color-muted, #6b6358);
+  border: 1px solid var(--color-border, #c5bfb3);
+  border-radius: 6px;
+  padding: 0.4em 0.8em;
+  font-size: 0.8rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: background 0.2s ease;
+}
+
+.quellen-toggle:hover {
+  background: var(--color-surface-dark, #ddd8cc);
+}
+
+/* --------------------------------------------------------------------------
    20. Print-Stylesheet (Lehrkraft-Seite)
    -------------------------------------------------------------------------- */
 
@@ -2040,7 +2102,9 @@ footer a:hover {
   .lehrkraft__controls,
   .mappe__navigation,
   .tipp__trigger,
-  .aufgabe__submit {
+  .aufgabe__submit,
+  .sticky-stundenfrage,
+  .quellen-toggle {
     display: none !important;
   }
 
