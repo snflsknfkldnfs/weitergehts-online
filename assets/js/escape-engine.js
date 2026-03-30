@@ -1884,7 +1884,7 @@ var EscapeEngine = (function () {
     // Frage
     var frage = document.createElement('p');
     frage.className = 'aufgabe__frage';
-    frage.textContent = aufgabe.frage || '';
+    frage.appendChild(_parseInlineMaterialLinks(aufgabe.frage || ''));
     section.appendChild(frage);
 
     // Body (typabhaengig)
@@ -2728,7 +2728,8 @@ var EscapeEngine = (function () {
                 contentArea.appendChild(document.createTextNode(restText));
               }
             } else {
-              contentArea.textContent = tippText;
+              contentArea.innerHTML = '';
+              contentArea.appendChild(_parseInlineMaterialLinks(tippText));
             }
             contentArea.classList.add('tipp__inhalt--visible');
             triggerBtn.classList.add('tipp__trigger--active');
@@ -2756,6 +2757,39 @@ var EscapeEngine = (function () {
     wrapper.appendChild(tippsDiv);
     wrapper.appendChild(contentArea);
     return wrapper;
+  }
+
+  // ========================================================================
+  // v3.8: Inline-Material-Links [[mat-id|Text]]
+  // ========================================================================
+
+  /**
+   * Parst [[mat-id|Anzeigetext]]-Markup und gibt ein DocumentFragment zurueck.
+   * Nicht-Markup-Teile werden als TextNodes eingefuegt (XSS-sicher).
+   * @param {string} text — Rohtext mit optionalem [[...]]-Markup
+   * @returns {DocumentFragment}
+   * @private
+   */
+  function _parseInlineMaterialLinks(text) {
+    var frag = document.createDocumentFragment();
+    var regex = /\[\[([a-z0-9-]+)\|([^\]]+)\]\]/g;
+    var lastIndex = 0;
+    var match;
+    while ((match = regex.exec(text)) !== null) {
+      if (match.index > lastIndex) {
+        frag.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
+      }
+      var link = document.createElement('a');
+      link.href = '#' + match[1];
+      link.className = 'tipp__material-link';
+      link.textContent = match[2];
+      frag.appendChild(link);
+      lastIndex = regex.lastIndex;
+    }
+    if (lastIndex < text.length) {
+      frag.appendChild(document.createTextNode(text.slice(lastIndex)));
+    }
+    return frag;
   }
 
   // ========================================================================
