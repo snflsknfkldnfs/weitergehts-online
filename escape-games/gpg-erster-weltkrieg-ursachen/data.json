@@ -22,7 +22,7 @@
         {
           "id": "mat-1-1",
           "typ": "darstellungstext",
-          "titel": "Pulverfass Europa — Spannungen vor 1914",
+          "titel": "Warum war Europa vor 1914 so gefährlich?",
           "inhalt": "<p>Um 1900 bestimmen sechs <strong>Großmächte</strong> die Politik Europas: Deutschland, Österreich-Ungarn, Italien, Frankreich, Großbritannien und Russland. Hinter der Fassade des Fortschritts lauert ein gefährlicher Wettstreit.</p><p>Zwei Kräfte treiben die Spannungen an. Der <strong>Imperialismus</strong> (die Politik, den eigenen Machtbereich durch Kolonien auszuweiten) führt zu Konflikten — besonders in Afrika. Deutschland fordert als junges Kaiserreich seinen 'Platz an der Sonne'.</p><p>Gleichzeitig wächst der <strong>Nationalismus</strong>: die übersteigerte Überzeugung, das eigene Volk sei den anderen überlegen. Diese Haltung macht Kompromisse schwer und schürt Feindbilder zwischen den Völkern.</p><p>Europa gleicht einem Pulverfass. Imperialismus und Nationalismus haben den Kontinent bis zum Zerreißen gespannt. Es fehlt nur noch der Funke.</p>",
           "quelle": "Eigene Darstellung. Quellen: Wikipedia — Causes of World War I, Triple Alliance (1882), Triple Entente",
           "position": 1,
@@ -37,7 +37,7 @@
         {
           "id": "mat-1-4",
           "typ": "quellentext",
-          "titel": "Platz an der Sonne — Deutschlands Anspruch",
+          "titel": "Was forderte Deutschland von der Welt?",
           "inhalt": "<p><em>Bernhard von Bülow, Staatssekretär des Äußeren, vor dem Reichstag am 6. Dezember 1897:</em></p><blockquote>&#8222;Wir wollen niemand in den Schatten stellen, aber wir verlangen auch unseren Platz an der Sonne.&#8220;</blockquote><p><em>Bülow begründet damit Deutschlands Anspruch auf Kolonien und eine starke Flotte — das Schlagwort für den deutschen Imperialismus.</em></p>",
           "quelle": "Bernhard von Bülow, Reichstagsrede 6.12.1897. Zitiert nach: Wikipedia — Spirit of 1914, Background",
           "position": 2,
@@ -52,9 +52,9 @@
         {
           "id": "mat-1-8",
           "typ": "bildquelle",
-          "titel": "Der Koloss von Rhodos — Karikatur zum Imperialismus",
+          "titel": "Wie weit ging der Griff nach Afrika?",
           "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-1-4.png",
-          "bildunterschrift": "The Rhodes Colossus: Cecil Rhodes als Riese, der mit gespreizten Beinen von Kairo bis Kapstadt steht. Karikatur von Edward Linley Sambourne, Punch, 1892.",
+          "bildunterschrift": "Cecil Rhodes als Riese, der mit gespreizten Beinen von Kairo bis Kapstadt steht — so stellte sich eine britische Zeitschrift den Griff nach ganz Afrika vor.",
           "quelle": "Edward Linley Sambourne, Punch Magazine 1892 / Wikimedia Commons",
           "lizenz": "Public Domain",
           "position": 3,
@@ -69,9 +69,9 @@
         {
           "id": "mat-1-5",
           "typ": "bildquelle",
-          "titel": "Kaiser Wilhelm II.",
+          "titel": "Kaiser Wilhelm II. — der Mann hinter der Weltpolitik",
           "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-1-2.jpg",
-          "bildunterschrift": "Kaiser Wilhelm II. in Uniform, 1902 (Hofphotograph T. H. Voigt). Als Deutscher Kaiser (1888–1918) trieb er die Flottenrüstung voran und forderte Deutschlands 'Platz an der Sonne'.",
+          "bildunterschrift": "Kaiser Wilhelm II. in Paradeuniform. Als Deutscher Kaiser (1888–1918) trieb er die Flottenrüstung voran und forderte Deutschlands 'Platz an der Sonne'.",
           "quelle": "Studio of Thomas Heinrich Voigt, Imperial War Museums / Wikimedia Commons",
           "lizenz": "Public Domain",
           "position": 4,
@@ -86,7 +86,7 @@
         {
           "id": "mat-1-7",
           "typ": "karte",
-          "titel": "Bismarcks Bündnissystem — Europakarte vor 1890",
+          "titel": "Wie hielt Bismarck Europa im Gleichgewicht?",
           "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-1-3.png",
           "bildunterschrift": "Bismarcks komplexes Bündnisnetz (bis 1890): Deutschland hielt Verbindungen zu fast allen Großmächten. Vergleiche mit der Karte von 1914 — was hat sich verändert?",
           "quelle": "DutchTreat, Wikimedia Commons",
@@ -124,9 +124,9 @@
         {
           "id": "mat-1-2",
           "typ": "karte",
-          "titel": "Europakarte 1914: Bündnisse",
+          "titel": "In welche Lager war Europa 1914 gespalten?",
           "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-1-1.png",
-          "bildunterschrift": "Europas Militärbündnisse 1914: Dreibund (grün: Deutschland, Österreich-Ungarn, Italien) und Triple Entente (lila: Frankreich, Russland, Großbritannien).",
+          "bildunterschrift": "Europa 1914 — zwei feindliche Lager: Dreibund (grün) gegen Triple Entente (lila). Finde die sechs Großmächte und ordne sie den Bündnissen zu.",
           "quelle": "historicair / Fluteflute & Bibi Saint-Pol, Wikimedia Commons",
           "lizenz": "CC-BY-SA 2.5",
           "position": 7,
@@ -141,7 +141,7 @@
         {
           "id": "mat-1-6",
           "typ": "tagebuch",
-          "titel": "Tagebuch eines Diplomaten",
+          "titel": "Wie fühlte sich die Spaltung Europas an?",
           "inhalt": "<p><em>Berlin, 12. März 1907</em></p><p>Heute kam die Nachricht aus London. Großbritannien hat sich mit Russland geeinigt. Ich saß lange über den Akten und starrte auf die Karte. Deutschland, Österreich-Ungarn, Italien — das sind unsere Verbündeten. Auf der anderen Seite stehen nun Frankreich, Großbritannien und Russland.</p><p>Vor zwanzig Jahren hatte Bismarck ein Netz von Bündnissen gesponnen. Es sollte den Frieden sichern. Doch jetzt fühle ich mich eingekreist. Jeder Vertrag, der uns schützen soll, macht die andere Seite nervöser.</p><p>Mein Kollege sagt, es sei nur Diplomatie. Aber wenn ich die Karte betrachte, sehe ich zwei Blöcke. Und dazwischen — nichts als Misstrauen.</p>",
           "quelle": "Fiktiver Tagebucheintrag, historisch plausibel. Kontext: Wikipedia — Triple Alliance (1882), Triple Entente",
           "position": 8,
@@ -156,9 +156,9 @@
         {
           "id": "mat-1-9",
           "typ": "bildquelle",
-          "titel": "Britisches Schlachtgeschwader (ca. 1914)",
+          "titel": "Die Macht der Flotten — Wettrüsten auf See",
           "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-1-5.jpg",
-          "bildunterschrift": "Schiffe des 2. Schlachtgeschwaders der britischen Grand Fleet, ca. 1914. Die Flottenrüstung zwischen Deutschland und Großbritannien war ein zentraler Teil der Wettrüstung vor 1914.",
+          "bildunterschrift": "Kriegsschiffe der britischen Flotte kurz vor dem Ersten Weltkrieg. Deutschland und Großbritannien lieferten sich einen Wettlauf um die stärkste Marine — ein Zeichen dafür, wie angespannt die Lage war.",
           "quelle": "Unbekannt, aus: The Nations at War (1917) / Wikimedia Commons",
           "lizenz": "Public Domain",
           "position": 9,
@@ -185,7 +185,7 @@
           ],
           "loesung": "Deutschland, Österreich-Ungarn, Italien",
           "tipps": [
-            {"stufe": 1, "text": "Schau dir die Europakarte 1914 genau an. Welche Länder sind grün markiert?"},
+            {"stufe": 1, "text": "Schau dir die [[mat-1-2|Europakarte von 1914]] (M7) genau an. Welche Länder sind grün markiert?"},
             {"stufe": 2, "text": "Die grün markierten Länder bilden den Dreibund. Es sind drei Länder in Mittel- und Südeuropa."},
             {"stufe": 3, "text": "Der Dreibund (1882) verband Deutschland, Österreich-Ungarn und Italien."}
           ],
@@ -198,7 +198,7 @@
           "material_referenz": ["mat-1-4"],
           "loesung": ["Sonne"],
           "tipps": [
-            {"stufe": 1, "text": "Lies den Quellentext von Bülow genau durch."},
+            {"stufe": 1, "text": "Lies den [[mat-1-4|Text von Bülow]] (M2) genau durch."},
             {"stufe": 2, "text": "Es geht um Kolonialpolitik — Deutschland wollte auch Kolonien wie Frankreich und Großbritannien."},
             {"stufe": 3, "text": "Bülow sagte: 'Wir verlangen auch unseren Platz an der Sonne.'"}
           ],
@@ -217,7 +217,7 @@
           ],
           "loesung": "Aus Bismarcks Gleichgewichtssystem wurden zwei feindliche Blöcke",
           "tipps": [
-            {"stufe": 1, "text": "Schau dir beide Karten nacheinander an: Wie viele Farben/Gruppen gibt es auf jeder Karte?"},
+            {"stufe": 1, "text": "Vergleiche die [[mat-1-7|Karte von Bismarcks Bündnissen]] (M5) mit der [[mat-1-2|Karte von 1914]] (M7): Wie viele Farben/Gruppen gibt es auf jeder Karte?"},
             {"stufe": 2, "text": "Unter Bismarck gab es ein komplexes Netz mit vielen Verbindungen — 1914 nur noch zwei Blöcke in Konfrontation."},
             {"stufe": 3, "text": "Bismarcks System hielt das Gleichgewicht durch viele Verbindungen. Nach ihm entstand eine klare Konfrontation: Dreibund gegen Triple Entente."}
           ],
@@ -314,7 +314,7 @@
             ]
           },
           "transfer": {
-            "frage": "Doch wo war der Funke?"
+            "frage": "Weiter zur nächsten Mappe: Der Funke fällt in Sarajevo."
           }
         },
         "kernerkenntnisse": [
@@ -323,9 +323,9 @@
           "Das Bündnissystem machte aus jedem lokalen Konflikt eine europaweite Kettenreaktion."
         ],
         "hefteintrag_verweis": "Übertrage das Tafelbild und die Merksätze in dein Heft. Achte auf die Verbindungspfeile zwischen den Begriffen.",
-        "reflexionsimpuls": "Warum konnte ein einzelner Schuss einen ganzen Kontinent in den Krieg stürzen?",
+        "reflexionsimpuls": "Das Pulverfass war gefüllt — der Funke kam am 28. Juni 1914 in Sarajevo. Weiter in der nächsten Mappe.",
         "zusammenfassung": "Europa war vor 1914 ein Pulverfass: Imperialismus, Nationalismus und Wettrüstung hatten den Kontinent in zwei feindliche Bündnisblöcke gespalten. Jeder kleine Konflikt konnte durch die Bündnispflichten eine Kettenreaktion auslösen. Der britische Außenminister Edward Grey fasste es später zusammen: 'The lamps are going out all over Europe, we shall not see them lit again in our lifetime.'",
-        "ueberleitung": "Doch wo ist der Funke? Am 28. Juni 1914 fällt in Sarajevo ein Schuss, der die Welt verändert."
+        "ueberleitung": "Wie ein einzelner Schuss in Sarajevo das Pulverfass zum Explodieren brachte, erfährst du in der nächsten Mappe."
       }
     }
   ]
