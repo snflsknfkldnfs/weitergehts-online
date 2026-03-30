@@ -240,6 +240,21 @@ footer a:hover {
   font-size: 1.05rem;
 }
 
+/* v3.8 U9: Einstieg-Block zentriert */
+.mappe__einstieg {
+  text-align: center;
+  max-width: 800px;
+  margin-inline: auto;
+  padding: var(--space-xl, 2rem) var(--space-lg, 1.5rem);
+}
+
+.mappe__einstieg .einstieg__problemstellung {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: var(--space-md, 1rem);
+  line-height: 1.4;
+}
+
 .mappe__navigation {
   display: flex;
   justify-content: space-between;
@@ -2057,7 +2072,7 @@ footer a:hover {
   font-weight: 600;
   color: var(--color-primary);
   transform: translateY(-100%);
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease-out;
 }
 
 .sticky-stundenfrage--visible {

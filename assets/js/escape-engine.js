@@ -1805,8 +1805,10 @@ var EscapeEngine = (function () {
     stickyBar.textContent = stundenfrage;
     document.body.appendChild(stickyBar);
 
-    // v3.8 U5: Observer auf Einstieg statt auf (hidden) mappe__header
-    var observeTarget = document.querySelector('.mappe__einstieg') || document.querySelector('header');
+    // v3.8 U10: Observer auf Problemstellung (nicht ganzen Einstieg)
+    var observeTarget = document.querySelector('.einstieg__problemstellung')
+      || document.querySelector('.mappe__einstieg')
+      || document.querySelector('header');
     if (observeTarget && 'IntersectionObserver' in window) {
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
