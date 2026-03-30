@@ -2079,6 +2079,23 @@ footer a:hover {
   transform: translateY(0);
 }
 
+/* v3.8: Material-Links in Tipps */
+.tipp__material-link {
+  text-decoration: underline;
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+.tipp__material-link:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+/* v3.8: Scroll-Offset fuer Fixed Header */
+[id^="mat-"] {
+  scroll-margin-top: 4rem;
+}
+
 /* --------------------------------------------------------------------------
    20b. v3.8 U4: Quellenangaben per Default hidden (JS-gesteuert)
    -------------------------------------------------------------------------- */
