@@ -16,13 +16,13 @@
       "freischalt_code": "PULVER",
       "einstieg": {
         "narrativ": "<p>Sommer 1914. In den Hauptstädten Europas sitzen Diplomaten über Geheimverträgen. Generäle planen Aufmärsche. Fabrikarbeiter bauen Kriegsschiffe. Sechs Großmächte belauern sich — aufgeteilt in zwei Bündnisblöcke. Alle wissen: Ein Funke genügt.</p>",
-        "problemstellung": "Warum war Europa vor 1914 ein 'Pulverfass' — und warum genügt ein einziger Funke?"
+        "problemstellung": "Warum war Europa vor 1914 ein 'Pulverfass'?"
       },
       "materialien": [
         {
           "id": "mat-1-1",
           "typ": "darstellungstext",
-          "titel": "Warum war Europa vor 1914 so gefährlich?",
+          "titel": "Wie war die Situation in Europa vor 1914?",
           "inhalt": "<p>Um 1900 bestimmen sechs <strong>Großmächte</strong> die Politik Europas: Deutschland, Österreich-Ungarn, Italien, Frankreich, Großbritannien und Russland. Hinter der Fassade des Fortschritts lauert ein gefährlicher Wettstreit.</p><p>Zwei Kräfte treiben die Spannungen an. Der <strong>Imperialismus</strong> (die Politik, den eigenen Machtbereich durch Kolonien auszuweiten) führt zu Konflikten — besonders in Afrika. Deutschland fordert als junges Kaiserreich seinen 'Platz an der Sonne'.</p><p>Gleichzeitig wächst der <strong>Nationalismus</strong>: die übersteigerte Überzeugung, das eigene Volk sei den anderen überlegen. Diese Haltung macht Kompromisse schwer und schürt Feindbilder zwischen den Völkern.</p><p>Europa gleicht einem Pulverfass. Imperialismus und Nationalismus haben den Kontinent bis zum Zerreißen gespannt. Es fehlt nur noch der Funke.</p>",
           "quelle": "Eigene Darstellung. Quellen: Wikipedia — Causes of World War I, Triple Alliance (1882), Triple Entente",
           "position": 1,
@@ -282,7 +282,7 @@
             {"von": "k1-1", "nach": "k1-7", "label": "ein Funke genügt"}
           ],
           "voraussetzungen": [],
-          "stundenfrage": "Warum wurde Europa vor 1914 zum Pulverfass?",
+          "stundenfrage": "Warum war Europa vor 1914 ein 'Pulverfass'?",
           "ordnungsmuster": "kausal",
           "scpl": {
             "situation": {

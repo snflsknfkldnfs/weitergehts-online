@@ -2696,41 +2696,10 @@ var EscapeEngine = (function () {
             contentArea.classList.remove('tipp__inhalt--visible');
           } else {
             // Oeffnen
+            // v3.8: Alle Tipps einheitlich durch _parseInlineMaterialLinks rendern
             var tippText = showTipp(_state.mappeId, aufgabeIndex, stufe);
-            // v3.5c: Material-Ref in Tipp 1 prependen
-            if (tippIndex === 0 && materialRefText) {
-              tippText = materialRefText + ' ' + tippText;
-            }
-            // Material-Links als klickbare Anker rendern
-            if (tippIndex === 0 && hatMaterialRef) {
-              contentArea.innerHTML = '';
-              var refs = aufgabe.material_referenz;
-              var mappeData = _getMappe(_state.mappeId);
-              var materialien = (mappeData && mappeData.materialien) || [];
-              var verweisSpan = document.createElement('span');
-              verweisSpan.className = 'tipp__material-verweis';
-              verweisSpan.textContent = 'Schau dir an: ';
-              for (var m = 0; m < refs.length; m++) {
-                var link = document.createElement('a');
-                link.href = '#' + refs[m];
-                var matObj = null;
-                for (var mi = 0; mi < materialien.length; mi++) {
-                  if (materialien[mi].id === refs[m]) { matObj = materialien[mi]; break; }
-                }
-                link.textContent = (matObj && matObj.titel) ? matObj.titel : refs[m];
-                verweisSpan.appendChild(link);
-                if (m < refs.length - 1) verweisSpan.appendChild(document.createTextNode(', '));
-              }
-              verweisSpan.appendChild(document.createTextNode('. '));
-              contentArea.appendChild(verweisSpan);
-              var restText = showTipp(_state.mappeId, aufgabeIndex, stufe);
-              if (restText && restText !== 'Kein Tipp-Text vorhanden.') {
-                contentArea.appendChild(document.createTextNode(restText));
-              }
-            } else {
-              contentArea.innerHTML = '';
-              contentArea.appendChild(_parseInlineMaterialLinks(tippText));
-            }
+            contentArea.innerHTML = '';
+            contentArea.appendChild(_parseInlineMaterialLinks(tippText));
             contentArea.classList.add('tipp__inhalt--visible');
             triggerBtn.classList.add('tipp__trigger--active');
             triggerBtn.classList.add('tipp__trigger--used');
