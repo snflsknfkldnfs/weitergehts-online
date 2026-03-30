@@ -515,42 +515,38 @@ var EscapeEngine = (function () {
    * @private
    */
   function _updateSeitenTitel(mappe) {
-    // Game-Titel aus data.meta setzen (E8-Fix: fehlender uebergeordneter Header)
     var gameTitel = _state.data && _state.data.meta && _state.data.meta.titel;
-    var headerEl = document.querySelector('header');
-    if (headerEl && gameTitel) {
-      var existingGameTitel = headerEl.querySelector('.game__titel');
-      if (!existingGameTitel) {
-        var gameH1 = document.createElement('h1');
-        gameH1.className = 'game__titel';
-        gameH1.textContent = gameTitel;
-        headerEl.insertBefore(gameH1, headerEl.firstChild);
 
-        // Mappe-Titel von h1 zu h2 herabstufen
-        var mappeTitelEl = headerEl.querySelector('.mappe__titel');
-        if (mappeTitelEl && mappeTitelEl.tagName === 'H1') {
-          var h2 = document.createElement('h2');
-          h2.className = mappeTitelEl.className;
-          h2.textContent = mappeTitelEl.textContent;
-          mappeTitelEl.parentNode.replaceChild(h2, mappeTitelEl);
+    // v3.8 U8: Kein separater Game-Titel (h1) mehr — Mappe-Titel bleibt h1
+
+    // v3.8 U6: Mappenbezeichner ergaenzen ("Mappe 1: Pulverfass Europa")
+    var titelEl = document.querySelector('.mappe__titel');
+    var praefix = '';
+    if (titelEl && mappe.titel) {
+      var mappenIndex = 0;
+      if (_state.data && _state.data.mappen) {
+        for (var mi = 0; mi < _state.data.mappen.length; mi++) {
+          if (_state.data.mappen[mi].id === mappe.id) {
+            mappenIndex = mi + 1;
+            break;
+          }
         }
       }
+      praefix = mappenIndex > 0 ? 'Mappe ' + mappenIndex + ': ' : '';
+      titelEl.textContent = praefix + mappe.titel;
     }
 
-    var titelEl = document.querySelector('.mappe__titel');
-    if (titelEl && mappe.titel) {
-      titelEl.textContent = mappe.titel;
-    }
-
+    // v3.8 U7: Beschreibung ausblenden
     var beschreibungEl = document.querySelector('.mappe__beschreibung');
-    if (beschreibungEl && mappe.beschreibung) {
-      beschreibungEl.textContent = mappe.beschreibung;
+    if (beschreibungEl) {
+      beschreibungEl.style.display = 'none';
     }
 
+    // Browser-Tab-Titel
     if (mappe.titel && gameTitel) {
-      document.title = mappe.titel + ' – ' + gameTitel;
+      document.title = praefix + mappe.titel + ' \u2013 ' + gameTitel;
     } else if (mappe.titel) {
-      document.title = mappe.titel + ' – Escape-Game';
+      document.title = praefix + mappe.titel + ' \u2013 Escape-Game';
     }
   }
 
@@ -1799,14 +1795,19 @@ var EscapeEngine = (function () {
     });
     document.body.appendChild(quellenToggle);
 
-    // v3.8 U2: Sticky-Stundenfrage
+    // v3.8 U5: Sticky-Header zeigt Stundenfrage (nicht Mappennamen)
+    var stundenfrage = (mappe.sicherung && mappe.sicherung.tafelbild && mappe.sicherung.tafelbild.stundenfrage)
+      || (mappe.einstieg && mappe.einstieg.problemstellung)
+      || mappe.titel
+      || '';
     var stickyBar = document.createElement('div');
     stickyBar.className = 'sticky-stundenfrage';
-    stickyBar.textContent = mappe.titel || '';
+    stickyBar.textContent = stundenfrage;
     document.body.appendChild(stickyBar);
 
-    var mappeHeader = document.querySelector('.mappe__header');
-    if (mappeHeader && 'IntersectionObserver' in window) {
+    // v3.8 U5: Observer auf Einstieg statt auf (hidden) mappe__header
+    var observeTarget = document.querySelector('.mappe__einstieg') || document.querySelector('header');
+    if (observeTarget && 'IntersectionObserver' in window) {
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
           if (entry.isIntersecting) {
@@ -1816,7 +1817,7 @@ var EscapeEngine = (function () {
           }
         });
       }, { threshold: 0 });
-      observer.observe(mappeHeader);
+      observer.observe(observeTarget);
     }
 
   }
