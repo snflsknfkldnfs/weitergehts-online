@@ -31,7 +31,11 @@
           "ueberleitung_von": "",
           "sequenz_kontext": {
             "vorher": null,
-            "nachher": {"id": "mat-1-4", "typ": "quellentext", "kerninhalt": "Bülows Reichstagsrede zum 'Platz an der Sonne'"}
+            "nachher": {
+              "id": "mat-1-4",
+              "typ": "quellentext",
+              "kerninhalt": "Bülows Reichstagsrede zum 'Platz an der Sonne'"
+            }
           }
         },
         {
@@ -42,11 +46,21 @@
           "quelle": "Bernhard von Bülow, Reichstagsrede 6.12.1897. Zitiert nach: Wikipedia — Spirit of 1914, Background",
           "position": 2,
           "didaktische_funktion": "erarbeitung",
-          "voraussetzung": ["mat-1-1"],
+          "voraussetzung": [
+            "mat-1-1"
+          ],
           "ueberleitung_von": "Im Darstellungstext hast du den Begriff Imperialismus kennengelernt. Jetzt hörst du eine echte Stimme aus der Zeit: Was forderte Deutschlands Politiker Bülow?",
           "sequenz_kontext": {
-            "vorher": {"id": "mat-1-1", "typ": "darstellungstext", "kerninhalt": "Einführung in Imperialismus, Nationalismus und das Pulverfass Europa"},
-            "nachher": {"id": "mat-1-8", "typ": "bildquelle", "kerninhalt": "Karikatur zeigt den imperialistischen Anspruch auf Afrika"}
+            "vorher": {
+              "id": "mat-1-1",
+              "typ": "darstellungstext",
+              "kerninhalt": "Einführung in Imperialismus, Nationalismus und das Pulverfass Europa"
+            },
+            "nachher": {
+              "id": "mat-1-8",
+              "typ": "bildquelle",
+              "kerninhalt": "Karikatur zeigt den imperialistischen Anspruch auf Afrika"
+            }
           }
         },
         {
@@ -59,11 +73,21 @@
           "lizenz": "Public Domain",
           "position": 3,
           "didaktische_funktion": "vertiefung",
-          "voraussetzung": ["mat-1-1"],
+          "voraussetzung": [
+            "mat-1-1"
+          ],
           "ueberleitung_von": "Bülow forderte Deutschlands 'Platz an der Sonne'. Diese Karikatur zeigt, wie weit der imperialistische Machtanspruch reichte.",
           "sequenz_kontext": {
-            "vorher": {"id": "mat-1-4", "typ": "quellentext", "kerninhalt": "Bülows Forderung nach Kolonien und Flotte"},
-            "nachher": {"id": "mat-1-5", "typ": "bildquelle", "kerninhalt": "Kaiser Wilhelm II. als Symbolfigur des deutschen Machtanspruchs"}
+            "vorher": {
+              "id": "mat-1-4",
+              "typ": "quellentext",
+              "kerninhalt": "Bülows Forderung nach Kolonien und Flotte"
+            },
+            "nachher": {
+              "id": "mat-1-5",
+              "typ": "bildquelle",
+              "kerninhalt": "Kaiser Wilhelm II. als Symbolfigur des deutschen Machtanspruchs"
+            }
           }
         },
         {
@@ -76,11 +100,21 @@
           "lizenz": "Public Domain",
           "position": 4,
           "didaktische_funktion": "vertiefung",
-          "voraussetzung": ["mat-1-4"],
+          "voraussetzung": [
+            "mat-1-4"
+          ],
           "ueberleitung_von": "Die Karikatur zeigt den imperialistischen Machtanspruch. Der Mann, der diese Politik in Deutschland vorantrieb, war Kaiser Wilhelm II.",
           "sequenz_kontext": {
-            "vorher": {"id": "mat-1-8", "typ": "bildquelle", "kerninhalt": "Rhodes-Karikatur zum imperialistischen Machtanspruch"},
-            "nachher": {"id": "mat-1-7", "typ": "karte", "kerninhalt": "Bismarcks Bündnissystem vor 1890"}
+            "vorher": {
+              "id": "mat-1-8",
+              "typ": "bildquelle",
+              "kerninhalt": "Rhodes-Karikatur zum imperialistischen Machtanspruch"
+            },
+            "nachher": {
+              "id": "mat-1-7",
+              "typ": "karte",
+              "kerninhalt": "Bismarcks Bündnissystem vor 1890"
+            }
           }
         },
         {
@@ -93,11 +127,21 @@
           "lizenz": "CC-BY-SA 4.0",
           "position": 5,
           "didaktische_funktion": "erarbeitung",
-          "voraussetzung": ["mat-1-1"],
+          "voraussetzung": [
+            "mat-1-1"
+          ],
           "ueberleitung_von": "Kaiser Wilhelm II. brach mit Bismarcks Außenpolitik. Doch wie sah Bismarcks ursprüngliches Bündnissystem aus? Schau dir diese ältere Karte an.",
           "sequenz_kontext": {
-            "vorher": {"id": "mat-1-5", "typ": "bildquelle", "kerninhalt": "Kaiser Wilhelm II. als Akteur der Aufrüstungspolitik"},
-            "nachher": {"id": "mat-1-3", "typ": "zeitleiste", "kerninhalt": "Chronologie der Bündnisentstehung 1879–1907"}
+            "vorher": {
+              "id": "mat-1-5",
+              "typ": "bildquelle",
+              "kerninhalt": "Kaiser Wilhelm II. als Akteur der Aufrüstungspolitik"
+            },
+            "nachher": {
+              "id": "mat-1-3",
+              "typ": "zeitleiste",
+              "kerninhalt": "Chronologie der Bündnisentstehung 1879–1907"
+            }
           }
         },
         {
@@ -105,20 +149,45 @@
           "typ": "zeitleiste",
           "titel": "Wie spaltete sich Europa in zwei Lager?",
           "inhalt": [
-            {"datum": "1879", "text": "Zweibund: Deutschland und Österreich-Ungarn verbünden sich"},
-            {"datum": "1882", "text": "Dreibund: Italien tritt bei — drei Mächte gegen Frankreich und Russland"},
-            {"datum": "1894", "text": "Frankreich und Russland schließen ein Gegenbündnis"},
-            {"datum": "1904", "text": "Entente Cordiale: Frankreich und Großbritannien nähern sich an"},
-            {"datum": "1907", "text": "Triple Entente komplett: Großbritannien einigt sich mit Russland — Europa ist gespalten"}
+            {
+              "datum": "1879",
+              "text": "Zweibund: Deutschland und Österreich-Ungarn verbünden sich"
+            },
+            {
+              "datum": "1882",
+              "text": "Dreibund: Italien tritt bei — drei Mächte gegen Frankreich und Russland"
+            },
+            {
+              "datum": "1894",
+              "text": "Frankreich und Russland schließen ein Gegenbündnis"
+            },
+            {
+              "datum": "1904",
+              "text": "Entente Cordiale: Frankreich und Großbritannien nähern sich an"
+            },
+            {
+              "datum": "1907",
+              "text": "Triple Entente komplett: Großbritannien einigt sich mit Russland — Europa ist gespalten"
+            }
           ],
           "quelle": "Eigene Zusammenstellung. Quellen: Wikipedia — Triple Alliance (1882), Triple Entente",
           "position": 6,
           "didaktische_funktion": "erarbeitung",
-          "voraussetzung": ["mat-1-7"],
+          "voraussetzung": [
+            "mat-1-7"
+          ],
           "ueberleitung_von": "Bismarcks Bündnisnetz hielt Europa im Gleichgewicht. Die Zeitleiste zeigt dir Schritt für Schritt, wie sich nach seinem Abgang zwei feindliche Lager bildeten.",
           "sequenz_kontext": {
-            "vorher": {"id": "mat-1-7", "typ": "karte", "kerninhalt": "Bismarcks Bündnissystem vor 1890"},
-            "nachher": {"id": "mat-1-2", "typ": "karte", "kerninhalt": "Europakarte zeigt die zwei Bündnisblöcke 1914"}
+            "vorher": {
+              "id": "mat-1-7",
+              "typ": "karte",
+              "kerninhalt": "Bismarcks Bündnissystem vor 1890"
+            },
+            "nachher": {
+              "id": "mat-1-2",
+              "typ": "karte",
+              "kerninhalt": "Europakarte zeigt die zwei Bündnisblöcke 1914"
+            }
           }
         },
         {
@@ -131,11 +200,21 @@
           "lizenz": "CC-BY-SA 2.5",
           "position": 7,
           "didaktische_funktion": "erarbeitung",
-          "voraussetzung": ["mat-1-3"],
+          "voraussetzung": [
+            "mat-1-3"
+          ],
           "ueberleitung_von": "Die Zeitleiste hat dir gezeigt, wie die Bündnisse entstanden. Jetzt siehst du auf der Karte, wie Europa 1914 tatsächlich aufgeteilt war.",
           "sequenz_kontext": {
-            "vorher": {"id": "mat-1-3", "typ": "zeitleiste", "kerninhalt": "Chronologie der Bündnisentstehung 1879–1907"},
-            "nachher": {"id": "mat-1-6", "typ": "tagebuch", "kerninhalt": "Fiktiver Diplomat beschreibt das Gefühl der Einkreisung 1907"}
+            "vorher": {
+              "id": "mat-1-3",
+              "typ": "zeitleiste",
+              "kerninhalt": "Chronologie der Bündnisentstehung 1879–1907"
+            },
+            "nachher": {
+              "id": "mat-1-6",
+              "typ": "tagebuch",
+              "kerninhalt": "Fiktiver Diplomat beschreibt das Gefühl der Einkreisung 1907"
+            }
           }
         },
         {
@@ -146,11 +225,22 @@
           "quelle": "Fiktiver Tagebucheintrag, historisch plausibel. Kontext: Wikipedia — Triple Alliance (1882), Triple Entente",
           "position": 8,
           "didaktische_funktion": "vertiefung",
-          "voraussetzung": ["mat-1-2", "mat-1-3"],
+          "voraussetzung": [
+            "mat-1-2",
+            "mat-1-3"
+          ],
           "ueberleitung_von": "Die Karte zeigt zwei feindliche Blöcke. Aber wie fühlte sich das an? Ein Diplomat beschreibt in seinem Tagebuch, was die Spaltung Europas für ihn bedeutete.",
           "sequenz_kontext": {
-            "vorher": {"id": "mat-1-2", "typ": "karte", "kerninhalt": "Europakarte mit Dreibund und Triple Entente 1914"},
-            "nachher": {"id": "mat-1-9", "typ": "bildquelle", "kerninhalt": "Britische Kriegsflotte als Symbol der Wettrüstung"}
+            "vorher": {
+              "id": "mat-1-2",
+              "typ": "karte",
+              "kerninhalt": "Europakarte mit Dreibund und Triple Entente 1914"
+            },
+            "nachher": {
+              "id": "mat-1-9",
+              "typ": "bildquelle",
+              "kerninhalt": "Britische Kriegsflotte als Symbol der Wettrüstung"
+            }
           }
         },
         {
@@ -163,10 +253,16 @@
           "lizenz": "Public Domain",
           "position": 9,
           "didaktische_funktion": "sicherung",
-          "voraussetzung": ["mat-1-1"],
+          "voraussetzung": [
+            "mat-1-1"
+          ],
           "ueberleitung_von": "Der Diplomat spürt das Misstrauen zwischen den Blöcken. Dieses Misstrauen trieb auch die Wettrüstung an — hier siehst du die gewaltige britische Flotte.",
           "sequenz_kontext": {
-            "vorher": {"id": "mat-1-6", "typ": "tagebuch", "kerninhalt": "Diplomatenperspektive auf die Einkreisung und das Misstrauen"},
+            "vorher": {
+              "id": "mat-1-6",
+              "typ": "tagebuch",
+              "kerninhalt": "Diplomatenperspektive auf die Einkreisung und das Misstrauen"
+            },
             "nachher": null
           }
         }
@@ -176,7 +272,9 @@
           "id": "aufgabe-1-1",
           "typ": "multiple-choice",
           "frage": "Welche Länder bildeten den Dreibund?",
-          "material_referenz": ["mat-1-2"],
+          "material_referenz": [
+            "mat-1-2"
+          ],
           "optionen": [
             "Deutschland, Österreich-Ungarn, Italien",
             "Frankreich, Großbritannien, Russland",
@@ -185,9 +283,18 @@
           ],
           "loesung": "Deutschland, Österreich-Ungarn, Italien",
           "tipps": [
-            {"stufe": 1, "text": "Schau dir die [[mat-1-2|Europakarte von 1914]] (M7) genau an. Welche Länder sind grün markiert?"},
-            {"stufe": 2, "text": "Die grün markierten Länder bilden den Dreibund. Es sind drei Länder in Mittel- und Südeuropa."},
-            {"stufe": 3, "text": "Der Dreibund (1882) verband Deutschland, Österreich-Ungarn und Italien."}
+            {
+              "stufe": 1,
+              "text": "Schau dir die [[mat-1-2|Europakarte von 1914]] (M7) genau an. Welche Länder sind grün markiert?"
+            },
+            {
+              "stufe": 2,
+              "text": "Die grün markierten Länder bilden den Dreibund. Es sind drei Länder in Mittel- und Südeuropa."
+            },
+            {
+              "stufe": 3,
+              "text": "Der Dreibund (1882) verband Deutschland, Österreich-Ungarn und Italien."
+            }
           ],
           "punkte": 10
         },
@@ -195,12 +302,25 @@
           "id": "aufgabe-1-2",
           "typ": "lueckentext",
           "frage": "Bernhard von Bülow forderte für Deutschland einen 'Platz an der ___'.",
-          "material_referenz": ["mat-1-4"],
-          "loesung": ["Sonne"],
+          "material_referenz": [
+            "mat-1-4"
+          ],
+          "loesung": [
+            "Sonne"
+          ],
           "tipps": [
-            {"stufe": 1, "text": "Lies den [[mat-1-4|Text von Bülow]] (M2) genau durch."},
-            {"stufe": 2, "text": "Es geht um Kolonialpolitik — Deutschland wollte auch Kolonien wie Frankreich und Großbritannien."},
-            {"stufe": 3, "text": "Bülow sagte: 'Wir verlangen auch unseren Platz an der Sonne.'"}
+            {
+              "stufe": 1,
+              "text": "Lies den [[mat-1-4|Text von Bülow]] (M2) genau durch."
+            },
+            {
+              "stufe": 2,
+              "text": "Es geht um Kolonialpolitik — Deutschland wollte auch Kolonien wie Frankreich und Großbritannien."
+            },
+            {
+              "stufe": 3,
+              "text": "Bülow sagte: 'Wir verlangen auch unseren Platz an der Sonne.'"
+            }
           ],
           "punkte": 10
         },
@@ -208,7 +328,10 @@
           "id": "aufgabe-1-3",
           "typ": "multiple-choice",
           "frage": "Vergleiche die beiden Europakarten. Was hat sich zwischen Bismarcks Zeit und 1914 verändert?",
-          "material_referenz": ["mat-1-7", "mat-1-2"],
+          "material_referenz": [
+            "mat-1-7",
+            "mat-1-2"
+          ],
           "optionen": [
             "Aus Bismarcks Gleichgewichtssystem wurden zwei feindliche Blöcke",
             "Deutschland hatte 1914 mehr Verbündete als unter Bismarck",
@@ -217,9 +340,18 @@
           ],
           "loesung": "Aus Bismarcks Gleichgewichtssystem wurden zwei feindliche Blöcke",
           "tipps": [
-            {"stufe": 1, "text": "Vergleiche die [[mat-1-7|Karte von Bismarcks Bündnissen]] (M5) mit der [[mat-1-2|Karte von 1914]] (M7): Wie viele Farben/Gruppen gibt es auf jeder Karte?"},
-            {"stufe": 2, "text": "Unter Bismarck gab es ein komplexes Netz mit vielen Verbindungen — 1914 nur noch zwei Blöcke in Konfrontation."},
-            {"stufe": 3, "text": "Bismarcks System hielt das Gleichgewicht durch viele Verbindungen. Nach ihm entstand eine klare Konfrontation: Dreibund gegen Triple Entente."}
+            {
+              "stufe": 1,
+              "text": "Vergleiche die [[mat-1-7|Karte von Bismarcks Bündnissen]] (M5) mit der [[mat-1-2|Karte von 1914]] (M7): Wie viele Farben/Gruppen gibt es auf jeder Karte?"
+            },
+            {
+              "stufe": 2,
+              "text": "Unter Bismarck gab es ein komplexes Netz mit vielen Verbindungen — 1914 nur noch zwei Blöcke in Konfrontation."
+            },
+            {
+              "stufe": 3,
+              "text": "Bismarcks System hielt das Gleichgewicht durch viele Verbindungen. Nach ihm entstand eine klare Konfrontation: Dreibund gegen Triple Entente."
+            }
           ],
           "punkte": 15
         },
@@ -227,7 +359,9 @@
           "id": "aufgabe-1-4",
           "typ": "multiple-choice",
           "frage": "Was zeigt die Karikatur 'Der Koloss von Rhodos' über den Imperialismus?",
-          "material_referenz": ["mat-1-8"],
+          "material_referenz": [
+            "mat-1-8"
+          ],
           "optionen": [
             "Europäische Mächte wollten ganze Kontinente beherrschen",
             "Ein Sportler überspringt den afrikanischen Kontinent",
@@ -236,9 +370,18 @@
           ],
           "loesung": "Europäische Mächte wollten ganze Kontinente beherrschen",
           "tipps": [
-            {"stufe": 1, "text": "Beschreibe genau, was du auf der [[mat-1-8|Karikatur von Cecil Rhodes]] (M3) siehst: Wo steht der Mann? Was hat er in der Hand? Wo setzt er seine Füße auf?"},
-            {"stufe": 2, "text": "Cecil Rhodes plante eine Eisenbahn von Kairo bis Kapstadt — quer durch ganz Afrika. Der Zeichner zeigt das übertrieben groß."},
-            {"stufe": 3, "text": "Die Karikatur kritisiert den Imperialismus: Europäische Mächte wie Großbritannien wollten ganze Kontinente kontrollieren — riesig und rücksichtslos."}
+            {
+              "stufe": 1,
+              "text": "Beschreibe genau, was du auf der [[mat-1-8|Karikatur von Cecil Rhodes]] (M3) siehst: Wo steht der Mann? Was hat er in der Hand? Wo setzt er seine Füße auf?"
+            },
+            {
+              "stufe": 2,
+              "text": "Cecil Rhodes plante eine Eisenbahn von Kairo bis Kapstadt — quer durch ganz Afrika. Der Zeichner zeigt das übertrieben groß."
+            },
+            {
+              "stufe": 3,
+              "text": "Die Karikatur kritisiert den Imperialismus: Europäische Mächte wie Großbritannien wollten ganze Kontinente kontrollieren — riesig und rücksichtslos."
+            }
           ],
           "punkte": 10
         },
@@ -246,7 +389,9 @@
           "id": "aufgabe-1-5",
           "typ": "multiple-choice",
           "frage": "Was bedeutet die Metapher 'Pulverfass Europa'?",
-          "material_referenz": ["mat-1-1"],
+          "material_referenz": [
+            "mat-1-1"
+          ],
           "optionen": [
             "Europa war so angespannt, dass ein kleiner Anlass zum Krieg genügt",
             "Europa hatte zu viel Schießpulver gelagert",
@@ -255,9 +400,18 @@
           ],
           "loesung": "Europa war so angespannt, dass ein kleiner Anlass zum Krieg genügt",
           "tipps": [
-            {"stufe": 1, "text": "Denk an ein Fass voller Schießpulver. Was passiert, wenn ein Funke hineinfällt?"},
-            {"stufe": 2, "text": "Die Bündnisse und Rivalitäten machten Europa explosiv — jeder Konflikt konnte größer werden."},
-            {"stufe": 3, "text": "Ein einziger Konflikt konnte durch die Bündnispflichten eine Kettenreaktion auslösen — deshalb die Metapher 'Pulverfass'."}
+            {
+              "stufe": 1,
+              "text": "Denk an ein Fass voller Schießpulver. Was passiert, wenn ein Funke hineinfällt?"
+            },
+            {
+              "stufe": 2,
+              "text": "Die Bündnisse und Rivalitäten machten Europa explosiv — jeder Konflikt konnte größer werden."
+            },
+            {
+              "stufe": 3,
+              "text": "Ein einziger Konflikt konnte durch die Bündnispflichten eine Kettenreaktion auslösen — deshalb die Metapher 'Pulverfass'."
+            }
           ],
           "punkte": 10
         }
@@ -265,21 +419,80 @@
       "sicherung": {
         "tafelbild": {
           "knoten": [
-            {"id": "k1-1", "text": "Pulverfass Europa", "typ": "kernbegriff", "merksatz": "Europa war vor 1914 durch Bündnisse, Nationalismus und Imperialismus ein Pulverfass — ein Funke genügt."},
-            {"id": "k1-2", "text": "Imperialismus", "typ": "ursache", "merksatz": "Der Wettlauf um Kolonien und den 'Platz an der Sonne' verschärfte die Rivalität zwischen den Großmächten."},
-            {"id": "k1-3", "text": "Nationalismus", "typ": "ursache", "merksatz": "Übersteigerte nationale Überzeugungen machten Kompromisse unmöglich und schürten Feindbilder."},
-            {"id": "k1-4", "text": "Dreibund (DE, ÖU, IT)", "typ": "kategorie", "merksatz": "Deutschland, Österreich-Ungarn und Italien verbanden sich 1882 im Dreibund zu gegenseitigem Beistand."},
-            {"id": "k1-5", "text": "Triple Entente (FR, GB, RU)", "typ": "kategorie", "merksatz": "Frankreich, Großbritannien und Russland näherten sich schrittweise (1894-1907) in der Triple Entente an."},
-            {"id": "k1-6", "text": "Wettrüstung", "typ": "ursache", "merksatz": "Die Großmächte rüsteten um die Wette auf — besonders zur See zwischen Deutschland und Großbritannien."},
-            {"id": "k1-7", "text": "Kettenreaktion", "typ": "wirkung", "merksatz": "Durch die Bündnispflichten zog ein lokaler Konflikt automatisch alle Großmächte in den Krieg."}
+            {
+              "id": "k1-1",
+              "text": "Pulverfass Europa",
+              "typ": "kernbegriff",
+              "merksatz": "Europa war vor 1914 durch Bündnisse, Nationalismus und Imperialismus ein Pulverfass — ein Funke genügt."
+            },
+            {
+              "id": "k1-2",
+              "text": "Imperialismus",
+              "typ": "ursache",
+              "merksatz": "Der Wettlauf um Kolonien und den 'Platz an der Sonne' verschärfte die Rivalität zwischen den Großmächten."
+            },
+            {
+              "id": "k1-3",
+              "text": "Nationalismus",
+              "typ": "ursache",
+              "merksatz": "Übersteigerte nationale Überzeugungen machten Kompromisse unmöglich und schürten Feindbilder."
+            },
+            {
+              "id": "k1-4",
+              "text": "Dreibund (DE, ÖU, IT)",
+              "typ": "kategorie",
+              "merksatz": "Deutschland, Österreich-Ungarn und Italien verbanden sich 1882 im Dreibund zu gegenseitigem Beistand."
+            },
+            {
+              "id": "k1-5",
+              "text": "Triple Entente (FR, GB, RU)",
+              "typ": "kategorie",
+              "merksatz": "Frankreich, Großbritannien und Russland näherten sich schrittweise (1894-1907) in der Triple Entente an."
+            },
+            {
+              "id": "k1-6",
+              "text": "Wettrüstung",
+              "typ": "ursache",
+              "merksatz": "Die Großmächte rüsteten um die Wette auf — besonders zur See zwischen Deutschland und Großbritannien."
+            },
+            {
+              "id": "k1-7",
+              "text": "Kettenreaktion",
+              "typ": "wirkung",
+              "merksatz": "Durch die Bündnispflichten zog ein lokaler Konflikt automatisch alle Großmächte in den Krieg."
+            }
           ],
           "verbindungen": [
-            {"von": "k1-2", "nach": "k1-1", "label": "verschärft Spannungen"},
-            {"von": "k1-3", "nach": "k1-1", "label": "verschärft Spannungen"},
-            {"von": "k1-4", "nach": "k1-7", "label": "Bündnispflicht erzwingt"},
-            {"von": "k1-5", "nach": "k1-7", "label": "Bündnispflicht erzwingt"},
-            {"von": "k1-6", "nach": "k1-1", "label": "erhöht Misstrauen"},
-            {"von": "k1-1", "nach": "k1-7", "label": "ein Funke genügt"}
+            {
+              "von": "k1-2",
+              "nach": "k1-1",
+              "label": "verschärft Spannungen"
+            },
+            {
+              "von": "k1-3",
+              "nach": "k1-1",
+              "label": "verschärft Spannungen"
+            },
+            {
+              "von": "k1-4",
+              "nach": "k1-7",
+              "label": "Bündnispflicht erzwingt"
+            },
+            {
+              "von": "k1-5",
+              "nach": "k1-7",
+              "label": "Bündnispflicht erzwingt"
+            },
+            {
+              "von": "k1-6",
+              "nach": "k1-1",
+              "label": "erhöht Misstrauen"
+            },
+            {
+              "von": "k1-1",
+              "nach": "k1-7",
+              "label": "ein Funke genügt"
+            }
           ],
           "voraussetzungen": [],
           "stundenfrage": "Warum war Europa vor 1914 ein 'Pulverfass'?",
@@ -287,7 +500,10 @@
           "scpl": {
             "situation": {
               "kontextsatz": "Um 1900 wollen alle europäischen Großmächte Kolonien und Einfluss. Zwei Triebkräfte: der Wettlauf um Kolonien — Imperialismus — und übersteigerte nationale Überzeugungen: Nationalismus.",
-              "fachbegriffe": ["Imperialismus", "Nationalismus"]
+              "fachbegriffe": [
+                "Imperialismus",
+                "Nationalismus"
+              ]
             },
             "complication": [
               {
@@ -300,8 +516,22 @@
                 "fachbegriff": "Bündnissystem",
                 "darstellung": {
                   "typ": "gegenueberstellung",
-                  "links": {"titel": "Dreibund (1882)", "punkte": ["Deutschland", "Österreich-Ungarn", "Italien"]},
-                  "rechts": {"titel": "Triple Entente", "punkte": ["Frankreich", "Großbritannien", "Russland"]}
+                  "links": {
+                    "titel": "Dreibund (1882)",
+                    "punkte": [
+                      "Deutschland",
+                      "Österreich-Ungarn",
+                      "Italien"
+                    ]
+                  },
+                  "rechts": {
+                    "titel": "Triple Entente",
+                    "punkte": [
+                      "Frankreich",
+                      "Großbritannien",
+                      "Russland"
+                    ]
+                  }
                 }
               }
             ],
@@ -326,6 +556,494 @@
         "reflexionsimpuls": "Was hat sich an deinem Bild von Europa vor 1914 verändert?",
         "zusammenfassung": "Europa war vor 1914 ein Pulverfass: Imperialismus, Nationalismus und Wettrüstung hatten den Kontinent in zwei feindliche Bündnisblöcke gespalten. Jeder kleine Konflikt konnte durch die Bündnispflichten eine Kettenreaktion auslösen. Der britische Außenminister Edward Grey fasste es später zusammen: 'The lamps are going out all over Europe, we shall not see them lit again in our lifetime.'",
         "ueberleitung": "Wie ein einzelner Schuss in Sarajevo das Pulverfass zum Explodieren brachte, erfährst du in der nächsten Mappe."
+      }
+    },
+    {
+      "id": "mappe-2",
+      "titel": "Das Attentat von Sarajevo",
+      "beschreibung": "Wie konnte ein einziger Mord einen Weltkrieg auslösen? — Vom Attentat über die Julikrise zur Kettenreaktion der Kriegserklärungen.",
+      "freischalt_code": "FUNKE",
+      "einstieg": {
+        "narrativ": "<p>Europa ist ein Pulverfass — zwei Bündnisblöcke stehen sich gegenüber, bewaffnet und misstrauisch. Doch noch herrscht Frieden. Dann, am 28. Juni 1914, fallen in Sarajevo Schüsse. Was genau passiert dort? Und wie kann ein einziger Mord einen Weltkrieg auslösen?</p>",
+        "problemstellung": "Wie konnte ein einziger Mord einen Weltkrieg auslösen?"
+      },
+      "materialien": [
+        {
+          "id": "mat-2-1",
+          "typ": "darstellungstext",
+          "titel": "Warum schwelte es auf dem Balkan?",
+          "inhalt": "<p>Auf dem Balkan, im Südosten Europas, herrschen seit Jahren Spannungen. 1908 hat Österreich-Ungarn die Region Bosnien-Herzegowina <strong>annektiert</strong> (dem eigenen Staat einverleibt). Das Nachbarland Serbien protestiert heftig. Viele Serben träumen von einem gemeinsamen Staat aller Südslawen. In den Balkankriegen 1912 und 1913 wird Serbien stärker — Österreich-Ungarn fühlt sich bedroht.</p><p>Am 28. Juni 1914 besucht der österreichisch-ungarische Thronfolger Franz Ferdinand die bosnische Hauptstadt Sarajevo. Der 19-jährige Gavrilo Princip, ein bosnischer Serbe, erschießt ihn und seine Frau Sophie. Das <strong>Attentat</strong> (ein politisch geplanter Mordanschlag) erschüttert ganz Europa.</p><p>Doch warum führt ein Mord zu einem Weltkrieg? Hier ist eine Unterscheidung wichtig: Der <strong>Auslöser</strong> ist der konkrete Anlass — das Attentat. Die <strong>Ursachen</strong> sind die tieferliegenden Gründe: Bündnisse, Rivalitäten, Misstrauen. Ohne das Pulverfass aus Mappe 1 hätte der Funke keinen Brand ausgelöst.</p><cite>Quelle: Eigene Darstellung auf Basis der Sachanalyse (INHALTSBASIS)</cite>",
+          "quelle": "Eigene Darstellung auf Basis der Sachanalyse",
+          "lizenz": "",
+          "position": 1,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [
+            "k1-1 (Pulverfass Europa)",
+            "k1-4 (Dreibund)",
+            "k1-5 (Triple Entente)"
+          ],
+          "ueberleitung_von": null,
+          "sequenz_kontext": "Erstes Material der Mappe. Führt die Balkankrise als Vorgeschichte ein, schildert das Attentat als konkretes Ereignis und etabliert die Kernunterscheidung Auslöser vs. Ursache."
+        },
+        {
+          "id": "mat-2-2",
+          "typ": "bildquelle",
+          "titel": "Wie stellte man sich das Attentat vor?",
+          "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-2-1.jpg",
+          "bildunterschrift": "Zeitgenössische Illustration des Attentats von Sarajevo (Achille Beltrame, 1914). Der italienische Zeichner stellt die Szene dramatisch dar -- Princip feuert aus nächster Nähe auf den Thronfolger und seine Frau. Schau genau hin: Wie wirken die Menschen um das Auto herum?",
+          "quelle": "Achille Beltrame / Domenica del Corriere, Wikimedia Commons",
+          "lizenz": "Public Domain",
+          "position": 2,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [
+            "k2-1 (Attentat -- aus mat-2-1 bekannt)"
+          ],
+          "ueberleitung_von": "mat-2-1",
+          "sequenz_kontext": "Vertieft das im Darstellungstext eingeführte Attentat visuell. SuS sehen die Dramatik der Szene und erkennen, dass das Bild eine Konstruktion ist (Illustration, kein Foto)."
+        },
+        {
+          "id": "mat-2-3",
+          "typ": "bildquelle",
+          "titel": "Die letzten Minuten vor dem Attentat",
+          "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-2-2.jpg",
+          "bildunterschrift": "Erzherzog Franz Ferdinand und seine Frau Sophie verlassen das Rathaus von Sarajevo (28. Juni 1914). Wenige Minuten später werden beide erschossen. Das Foto zeigt eine alltägliche Szene -- niemand ahnt, was gleich geschieht.",
+          "quelle": "Unbekannter Fotograf, Wikimedia Commons",
+          "lizenz": "CC-BY-SA 3.0",
+          "position": 3,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [
+            "k2-1 (Attentat -- aus mat-2-1 und mat-2-2 bekannt)"
+          ],
+          "ueberleitung_von": "mat-2-2",
+          "sequenz_kontext": "Nach der dramatischen Illustration (mat-2-2) zeigt dieses authentische Foto die Ruhe vor dem Sturm. Kontrast zwischen Alltag und Gewalt vertieft das Verständnis von k2-1."
+        },
+        {
+          "id": "mat-2-4",
+          "typ": "quellentext",
+          "titel": "Was forderte Österreich-Ungarn von Serbien?",
+          "inhalt": "<p class='quellentext__einleitung'>Nach dem Attentat sicherte Deutschland Österreich-Ungarn bedingungslose Unterstützung zu -- den <strong>Blankoscheck</strong> (eine Zusage ohne Einschränkung). Am 23. Juli 1914 stellte Österreich-Ungarn Serbien ein <strong>Ultimatum</strong> (eine letzte Forderung mit Drohung).</p><blockquote class='quellentext__wortlaut'><p>\"Österreich-Ungarn forderte von Serbien unter anderem: Die serbische Regierung müsse antiösterreichische Gruppen verbieten. Österreichische Beamte sollten auf serbischem Boden an den Ermittlungen zum Attentat teilnehmen. Serbien erhielt nur 48 Stunden Zeit für eine Antwort.\" (vereinfacht)</p></blockquote><p class='quellentext__nachweis'><em>Ultimatum Österreich-Ungarns an Serbien, 23. Juli 1914</em></p><cite>Vereinfacht nach: Ultimatum Österreich-Ungarns, 23. Juli 1914. Vgl. Wikipedia, July Crisis, Summary</cite>",
+          "quelle": "Vereinfacht nach: Ultimatum Österreich-Ungarns, 23. Juli 1914. Vgl. Wikipedia, July Crisis",
+          "lizenz": "",
+          "position": 4,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [
+            "k2-1 (Attentat -- aus mat-2-1 bekannt)",
+            "k2-6 (Balkankrise -- aus mat-2-1 bekannt)"
+          ],
+          "ueberleitung_von": "mat-2-3",
+          "sequenz_kontext": "Führt die diplomatische Eskalation nach dem Attentat ein. SuS lernen Blankoscheck und Ultimatum als Mechanismen, die aus dem Attentat eine Krise machten."
+        },
+        {
+          "id": "mat-2-5",
+          "typ": "zeitleiste",
+          "titel": "Wie wurde aus einem Mord in 37 Tagen ein Weltkrieg?",
+          "inhalt": [
+            {
+              "datum": "28. Juni",
+              "text": "Attentat in Sarajevo: Gavrilo Princip erschießt Franz Ferdinand und Sophie"
+            },
+            {
+              "datum": "5. Juli",
+              "text": "Blankoscheck: Deutschland sichert Österreich-Ungarn bedingungslose Unterstützung zu"
+            },
+            {
+              "datum": "23. Juli",
+              "text": "Ultimatum: Österreich-Ungarn stellt Serbien unerfüllbare Forderungen (48 Stunden Frist)"
+            },
+            {
+              "datum": "28. Juli",
+              "text": "Österreich-Ungarn erklärt Serbien den Krieg"
+            },
+            {
+              "datum": "30. Juli",
+              "text": "Russland mobilisiert seine Armee zur Unterstützung Serbiens"
+            },
+            {
+              "datum": "1. August",
+              "text": "Deutschland erklärt Russland den Krieg"
+            },
+            {
+              "datum": "3. August",
+              "text": "Deutschland erklärt Frankreich den Krieg"
+            },
+            {
+              "datum": "4. August",
+              "text": "Deutschland marschiert in Belgien ein -- Großbritannien erklärt Deutschland den Krieg"
+            }
+          ],
+          "quelle": "Eigene Zusammenstellung. Quellen: Wikipedia, July Crisis; Wikipedia, World War I",
+          "lizenz": "",
+          "position": 5,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [
+            "k2-1 (Attentat)",
+            "k2-4 (Blankoscheck -- aus mat-2-4 bekannt)",
+            "k1-4 (Dreibund)",
+            "k1-5 (Triple Entente)"
+          ],
+          "ueberleitung_von": "mat-2-4",
+          "sequenz_kontext": "Visualisiert die Eskalation nach dem Ultimatum. SuS sehen die Geschwindigkeit der Kettenreaktion -- von einem regionalen Konflikt zum Weltkrieg in 37 Tagen."
+        },
+        {
+          "id": "mat-2-6",
+          "typ": "quellentext",
+          "titel": "Wie erlebte ein Bewohner Sarajevos den 28. Juni 1914?",
+          "inhalt": "<p><em>Sarajevo, 28. Juni 1914</em></p><p>Heute Morgen war alles wie immer. Die Sonne brannte auf die Pflastersteine. Vor der Bäckerei roch es nach frischem Brot. Dragan, mein Nachbar, trank seinen Kaffee vor der Tür. Wir sprachen über das Wetter und über den hohen Besuch -- der Thronfolger Franz Ferdinand war in der Stadt.</p><p>Dann hörte ich Schüsse. Zwei Schüsse, ganz nah. Menschen schrien und rannten. Ein Junge neben mir sagte: \"Sie haben den Thronfolger erschossen!\" Ich konnte es nicht glauben. Wer tut so etwas?</p><p>Am Abend war die Stadt wie gelähmt. Soldaten patrouillierten durch die Gassen. Mein Freund Mehmed, ein Bosnier, sagte leise: \"Jetzt wird es schlimm für uns alle.\" Die Polizei verhaftete junge Serben auf der Straße. Ich bin kein Serbe, aber ich habe Angst. Diese Stadt hat so viele Spannungen erlebt seit der Annexion. Und jetzt das. Was wird aus uns?</p><cite>Fiktiver Tagebucheintrag, historisch plausibel. Kontext: Wikipedia, Assassination of Archduke Franz Ferdinand; Bosnian crisis</cite>",
+          "quelle": "Fiktiver Tagebucheintrag, historisch plausibel. Kontext: Wikipedia, Assassination of Archduke Franz Ferdinand; Bosnian crisis",
+          "lizenz": "",
+          "position": 6,
+          "didaktische_funktion": "vertiefung",
+          "voraussetzung": [
+            "k2-1 (Attentat)",
+            "k2-6 (Balkankrise)"
+          ],
+          "ueberleitung_von": "mat-2-5",
+          "sequenz_kontext": "Letztes Material vor der Sicherung. Personifiziert Balkankrise und Attentat durch die Perspektive eines einfachen Bewohners. Emotionaler Zugang zu Schock und Angst."
+        }
+      ],
+      "aufgaben": [
+        {
+          "id": "aufgabe-2-1",
+          "typ": "multiple-choice",
+          "frage": "Schau dir die [[mat-2-2|Illustration von Beltrame]] (M2) und das [[mat-2-3|Foto vom 28. Juni 1914]] (M3) genau an. Welche Aussage über das Attentat von Sarajevo ist richtig?",
+          "material_referenz": [
+            "mat-2-2",
+            "mat-2-3"
+          ],
+          "optionen": [
+            "Gavrilo Princip erschoss Erzherzog Franz Ferdinand und seine Frau Sophie.",
+            "Ein französischer Nationalist verübte das Attentat auf den Kaiser von Österreich-Ungarn.",
+            "Das Attentat ereignete sich im Januar 1914 vor dem Wiener Parlament.",
+            "Franz Ferdinand überlebte den Anschlag zunächst und starb erst Wochen später im Krankenhaus."
+          ],
+          "loesung": "Gavrilo Princip erschoss Erzherzog Franz Ferdinand und seine Frau Sophie.",
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Lies die [[mat-2-3|Bildunterschrift des Fotos]] (M3) genau — dort stehen die Namen der Beteiligten und das Datum."
+            },
+            {
+              "stufe": 2,
+              "text": "Option C und D kannst du ausschließen: Das Attentat fand nicht in Wien statt, und beide Opfer starben noch am selben Tag."
+            },
+            {
+              "stufe": 3,
+              "text": "Richtig ist: Gavrilo Princip erschoss am 28. Juni 1914 in Sarajevo den österreichisch-ungarischen Thronfolger Erzherzog Franz Ferdinand und seine Frau Sophie. Die [[mat-2-2|Illustration]] (M2) zeigt den Moment des Attentats, das [[mat-2-3|Foto]] (M3) die letzten Minuten davor."
+            }
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-2-2",
+          "typ": "zuordnung",
+          "frage": "Lies den [[mat-2-1|Text über das Pulverfass auf dem Balkan]] (M1) aufmerksam. Ordne jeden Sachverhalt der richtigen Kategorie zu: Handelt es sich um eine langfristige Ursache oder um den konkreten Auslöser des Ersten Weltkriegs?",
+          "material_referenz": [
+            "mat-2-1"
+          ],
+          "elemente": [
+            {
+              "begriff": "Annexion Bosnien-Herzegowinas durch Österreich-Ungarn (1908)",
+              "zuordnung": "Langfristige Ursache"
+            },
+            {
+              "begriff": "Bündnissysteme zwischen den Großmächten (Dreibund und Entente)",
+              "zuordnung": "Langfristige Ursache"
+            },
+            {
+              "begriff": "Erschießung von Franz Ferdinand und Sophie in Sarajevo",
+              "zuordnung": "Konkreter Auslöser"
+            },
+            {
+              "begriff": "Balkankriege (1912/1913)",
+              "zuordnung": "Langfristige Ursache"
+            },
+            {
+              "begriff": "Rivalitäten und Misstrauen der europäischen Großmächte",
+              "zuordnung": "Langfristige Ursache"
+            }
+          ],
+          "loesung": {
+            "Annexion Bosnien-Herzegowinas durch Österreich-Ungarn (1908)": "Langfristige Ursache",
+            "Bündnissysteme zwischen den Großmächten (Dreibund und Entente)": "Langfristige Ursache",
+            "Erschießung von Franz Ferdinand und Sophie in Sarajevo": "Konkreter Auslöser",
+            "Balkankriege (1912/1913)": "Langfristige Ursache",
+            "Rivalitäten und Misstrauen der europäischen Großmächte": "Langfristige Ursache"
+          },
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Im [[mat-2-1|Text]] (M1) steht ein Absatz, der Auslöser und Ursache genau erklärt. Lies den letzten Absatz nochmal."
+            },
+            {
+              "stufe": 2,
+              "text": "Es gibt nur einen einzigen konkreten Auslöser — alles andere sind langfristige Ursachen. Die Bündnissysteme und Rivalitäten gehören zu den Ursachen."
+            },
+            {
+              "stufe": 3,
+              "text": "Der einzige Auslöser war die Erschießung von Franz Ferdinand und Sophie in Sarajevo am 28. Juni 1914. Alle anderen Sachverhalte — Annexion, Balkankriege, Bündnissysteme, Rivalitäten — sind langfristige Ursachen. Der [[mat-2-1|Text]] (M1) sagt es so: 'Ohne das Pulverfass hätte der Funke keinen Brand ausgelöst.'"
+            }
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-2-3",
+          "typ": "reihenfolge",
+          "frage": "Schau dir die [[mat-2-5|Zeitleiste der Julikrise]] (M5) genau an. Bringe die folgenden Stationen in die richtige Reihenfolge — vom Auslöser bis zum Weltkrieg.",
+          "material_referenz": [
+            "mat-2-5"
+          ],
+          "elemente_ungeordnet": [
+            "Österreich-Ungarn erklärt Serbien den Krieg",
+            "Deutschland sichert Österreich-Ungarn bedingungslose Unterstützung zu (Blankoscheck)",
+            "Großbritannien erklärt Deutschland den Krieg — fast alle Großmächte sind im Krieg",
+            "Gavrilo Princip erschießt Franz Ferdinand und Sophie in Sarajevo",
+            "Österreich-Ungarn stellt Serbien ein Ultimatum mit unerfüllbaren Forderungen"
+          ],
+          "loesung": [
+            "Gavrilo Princip erschießt Franz Ferdinand und Sophie in Sarajevo",
+            "Deutschland sichert Österreich-Ungarn bedingungslose Unterstützung zu (Blankoscheck)",
+            "Österreich-Ungarn stellt Serbien ein Ultimatum mit unerfüllbaren Forderungen",
+            "Österreich-Ungarn erklärt Serbien den Krieg",
+            "Großbritannien erklärt Deutschland den Krieg — fast alle Großmächte sind im Krieg"
+          ],
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Alles beginnt mit dem Attentat in Sarajevo. Was passierte danach als Erstes — militärische Aktion oder diplomatische?"
+            },
+            {
+              "stufe": 2,
+              "text": "An Position 1 steht das Attentat, an Position 5 der Kriegseintritt Großbritanniens. Der Blankoscheck kam vor dem Ultimatum."
+            },
+            {
+              "stufe": 3,
+              "text": "Richtige Reihenfolge: Attentat in Sarajevo → Blankoscheck (Deutschland an Österreich-Ungarn) → Ultimatum an Serbien → Kriegserklärung an Serbien → Kriegseintritt Großbritanniens. Die [[mat-2-5|Zeitleiste]] (M5) zeigt: In nur 37 Tagen wurde aus einem Mord ein Weltkrieg — jede Station trieb die nächste Eskalationsstufe voran."
+            }
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-2-4",
+          "typ": "lueckentext",
+          "frage": "Lies den [[mat-2-4|Quellentext zum Ultimatum]] (M4) aufmerksam. Ergänze dann die fehlenden Begriffe im folgenden Text über die diplomatische Eskalation nach dem Attentat.",
+          "material_referenz": [
+            "mat-2-4"
+          ],
+          "text_mit_luecken": "Nach dem Attentat sicherte Deutschland Österreich-Ungarn einen ___ zu — eine Zusage ohne jede Einschränkung. Gestärkt durch diese Unterstützung stellte Österreich-Ungarn Serbien ein ___: eine letzte Forderung, verbunden mit der Drohung zum Krieg. Serbien sollte unter anderem feindliche Gruppen verbieten und österreichische Beamte an den ___ zum Attentat auf serbischem Boden beteiligen. Für die Antwort blieben Serbien nur ___ Stunden.",
+          "loesung": [
+            "Blankoscheck",
+            "Ultimatum",
+            "Ermittlungen",
+            "48"
+          ],
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Alle Begriffe findest du im [[mat-2-4|Quellentext]] (M4). Achte besonders auf die fett gedruckten Fachbegriffe und die Angaben zur Frist."
+            },
+            {
+              "stufe": 2,
+              "text": "Die ersten beiden Lücken sind Fachbegriffe: Der erste beschreibt die bedingungslose Zusage Deutschlands, der zweite die letzte Forderung an Serbien. Die letzte Lücke ist eine Zahl."
+            },
+            {
+              "stufe": 3,
+              "text": "Blankoscheck — Ultimatum — Ermittlungen — 48. Deutschland gab Österreich-Ungarn einen Blankoscheck (bedingungslose Unterstützung). Daraufhin stellte Österreich-Ungarn ein Ultimatum mit unerfüllbaren Forderungen — unter anderem sollten österreichische Beamte auf serbischem Boden ermitteln. Die kurze Frist von 48 Stunden machte eine Einigung fast unmöglich."
+            }
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-2-5",
+          "typ": "freitext-code",
+          "frage": "Der Erzähler im [[mat-2-6|Tagebuch aus Sarajevo]] (M6) fragt sich: 'Was wird aus uns?' Er ahnt nicht, dass aus dem Attentat ein Weltkrieg wird. Beurteile: War das Attentat allein für den Ausbruch des Ersten Weltkriegs verantwortlich — oder brauchte es mehr als nur diesen 'Funken'?",
+          "material_referenz": [
+            "mat-2-6",
+            "mat-2-1",
+            "mat-2-4",
+            "mat-2-5"
+          ],
+          "loesung": "Auslöser Ursache Kettenreaktion",
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Denke an den [[mat-2-1|Text über den Balkan]] (M1) zurück: Dort wird der Unterschied zwischen Auslöser und Ursache erklärt. Beginne damit, diesen Unterschied in eigenen Worten zu beschreiben."
+            },
+            {
+              "stufe": 2,
+              "text": "Der Erzähler im [[mat-2-6|Tagebuch]] (M6) kennt nur den lokalen Schock — er weiß nichts von Bündnissen oder dem Blankoscheck. Was müsstest du ihm erklären, damit er versteht, warum aus dem Mord ein Weltkrieg wurde?"
+            },
+            {
+              "stufe": 3,
+              "text": "Musterantwort: Das Attentat von Sarajevo war der Auslöser des Ersten Weltkriegs, aber nicht seine eigentliche Ursache. Die Ursachen lagen tiefer: Bündnissysteme, Rivalitäten und Misstrauen hatten Europa schon vorher zum Pulverfass gemacht. Der Blankoscheck ermutigte Österreich-Ungarn zu einem harten Ultimatum, und durch die Bündnispflichten zogen die Kriegserklärungen eine Kettenreaktion nach sich. Ohne den Funken wäre der Brand vielleicht nicht ausgebrochen — aber ohne das Pulverfass hätte der Funke keinen Brand ausgelöst."
+            }
+          ],
+          "punkte": 10
+        }
+      ],
+      "sicherung": {
+        "tafelbild": {
+          "knoten": [
+            {
+              "id": "k2-1",
+              "text": "Attentat von Sarajevo (28.6.1914)",
+              "typ": "ereignis"
+            },
+            {
+              "id": "k2-2",
+              "text": "Ursache vs. Auslöser",
+              "typ": "kernbegriff"
+            },
+            {
+              "id": "k2-3",
+              "text": "Julikrise",
+              "typ": "ereignis"
+            },
+            {
+              "id": "k2-4",
+              "text": "Blankoscheck (DE → Ö-U)",
+              "typ": "ereignis"
+            },
+            {
+              "id": "k2-5",
+              "text": "Kettenreaktion der Kriegserklärungen",
+              "typ": "wirkung"
+            },
+            {
+              "id": "k2-6",
+              "text": "Balkankrise (Vorgeschichte)",
+              "typ": "ursache"
+            }
+          ],
+          "verbindungen": [
+            {
+              "von": "k2-6",
+              "nach": "k2-1",
+              "label": "Spannungen führen zu"
+            },
+            {
+              "von": "k2-1",
+              "nach": "k2-3",
+              "label": "löst aus"
+            },
+            {
+              "von": "k2-4",
+              "nach": "k2-5",
+              "label": "ermutigt Eskalation"
+            },
+            {
+              "von": "k2-3",
+              "nach": "k2-5",
+              "label": "mündet in"
+            },
+            {
+              "von": "k2-2",
+              "nach": "k2-1",
+              "label": "erklärt: Auslöser"
+            },
+            {
+              "von": "k2-2",
+              "nach": "k1-1",
+              "label": "erklärt: Ursache (Pulverfass)"
+            }
+          ],
+          "voraussetzungen": [
+            "k1-1 (Pulverfass Europa)",
+            "k1-4 (Dreibund)",
+            "k1-5 (Triple Entente)",
+            "k1-7 (Kettenreaktion)"
+          ],
+          "stundenfrage": "Wie konnte ein einziger Mord einen Weltkrieg auslösen?",
+          "ordnungsmuster": "chronologisch",
+          "scpl": {
+            "situation": {
+              "kontextsatz": "Auf dem Balkan schwelen seit Jahren Konflikte. 1908 hat Österreich-Ungarn Bosnien-Herzegowina annektiert — das Nachbarland Serbien protestiert.",
+              "fachbegriffe": [
+                "Annexion",
+                "Balkankrise"
+              ]
+            },
+            "complication": [
+              {
+                "schritt": "Am 28. Juni 1914 erschießt Gavrilo Princip den österreichisch-ungarischen Thronfolger Franz Ferdinand in Sarajevo: Attentat.",
+                "fachbegriff": "Attentat",
+                "darstellung": null
+              },
+              {
+                "schritt": "Der Mord ist der Funke — aber nicht das Pulverfass. Ohne Bündnisse, Rivalitäten und Misstrauen kein Weltkrieg: Auslöser und Ursache sind zweierlei.",
+                "fachbegriff": "Auslöser vs. Ursache",
+                "darstellung": null
+              },
+              {
+                "schritt": "Deutschland sichert Österreich-Ungarn bedingungslose Unterstützung zu — der Blankoscheck. Österreich-Ungarn stellt Serbien ein Ultimatum mit unannehmbaren Forderungen.",
+                "fachbegriff": "Blankoscheck",
+                "darstellung": {
+                  "typ": "zeitleiste",
+                  "eintraege": [
+                    {
+                      "datum": "28.06.",
+                      "text": "Attentat in Sarajevo"
+                    },
+                    {
+                      "datum": "05.07.",
+                      "text": "Blankoscheck (DE → Ö-U)"
+                    },
+                    {
+                      "datum": "23.07.",
+                      "text": "Ultimatum an Serbien"
+                    },
+                    {
+                      "datum": "28.07.",
+                      "text": "Ö-U erklärt Serbien den Krieg"
+                    },
+                    {
+                      "datum": "01.08.",
+                      "text": "DE erklärt RU den Krieg"
+                    },
+                    {
+                      "datum": "03.08.",
+                      "text": "DE erklärt FR den Krieg"
+                    },
+                    {
+                      "datum": "04.08.",
+                      "text": "GB erklärt DE den Krieg"
+                    }
+                  ]
+                }
+              }
+            ],
+            "problem": {
+              "satz": "Innerhalb von sechs Wochen stehen fast alle Großmächte im Krieg — eine Kettenreaktion der Bündnispflichten.",
+              "fachbegriff": "Kettenreaktion"
+            },
+            "loesung": [
+              "Das Attentat von Sarajevo war der Auslöser des Ersten Weltkriegs, nicht seine Ursache.",
+              "Der Blankoscheck und das Ultimatum trieben die Julikrise zur Eskalation.",
+              "Die Bündnispflichten machten aus einem Mord eine Kettenreaktion der Kriegserklärungen."
+            ]
+          },
+          "transfer": {
+            "frage": "Kennst du einen heutigen Konflikt, bei dem Auslöser und Ursache verwechselt werden?"
+          },
+          "kernerkenntnisse": [
+            "Das Attentat von Sarajevo war der Auslöser des Ersten Weltkriegs, nicht seine Ursache.",
+            "Der Blankoscheck und das Ultimatum trieben die Julikrise zur Eskalation.",
+            "Die Bündnispflichten machten aus einem Mord eine Kettenreaktion der Kriegserklärungen."
+          ]
+        },
+        "kernerkenntnisse": [
+          "Das Attentat von Sarajevo war der Auslöser des Ersten Weltkriegs, nicht seine Ursache.",
+          "Der Blankoscheck und das Ultimatum trieben die Julikrise zur Eskalation.",
+          "Die Bündnispflichten machten aus einem Mord eine Kettenreaktion der Kriegserklärungen."
+        ],
+        "hefteintrag_verweis": "Übertrage das Tafelbild in dein Heft: Stundenfrage, SCPL-Schritte (Balkankrise → Attentat → Auslöser ≠ Ursache → Blankoscheck/Ultimatum → Kettenreaktion) und die drei Merksätze.",
+        "reflexionsimpuls": "Kennst du einen heutigen Konflikt, bei dem Auslöser und Ursache verwechselt werden?",
+        "zusammenfassung": "Das Attentat von Sarajevo war der Auslöser, aber nicht die Ursache des Krieges. Die Ursachen — Bündnisse, Rivalitäten, Misstrauen — lagen schon vorher bereit. Die Julikrise zeigt, wie schnell aus einem Mord ein Weltkrieg werden kann, wenn ein System aus Bündnispflichten und Blankoschecks die Eskalation antreibt.",
+        "ueberleitung": "Millionen Soldaten stehen nun bereit. Doch wie reagieren die Menschen auf den Kriegsausbruch? Ziehen sie mit Angst oder mit Begeisterung in den Krieg?",
+        "zitat": {
+          "text": "The ostensible reason for armed conflict — the assassination of an archduke — had already become a side-note to a larger European war.",
+          "urheber": "Zeitgenössische Einordnung",
+          "kontext": "Der Anlass des Krieges wurde zur Nebensache — die Eigendynamik der Bündnisse überrollte alles."
+        }
       }
     }
   ]

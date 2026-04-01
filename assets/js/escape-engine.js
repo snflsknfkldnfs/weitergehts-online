@@ -2276,7 +2276,7 @@ var EscapeEngine = (function () {
 
     var state = geloest ? _loadAntwortState(_state.mappeId, index) : null;
 
-    var text = aufgabe.frage || '';
+    var text = aufgabe.text_mit_luecken || aufgabe.frage || '';
     var lueckenIndex = 0;
     var parts = text.split('___');
 
