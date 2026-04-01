@@ -1,0 +1,27 @@
+{
+  "id": "mat-2-6",
+  "typ": "quellentext",
+  "titel": "Wie erlebte ein Bewohner Sarajevos den 28. Juni 1914?",
+  "inhalt": "<p><em>Sarajevo, 28. Juni 1914</em></p><p>Heute Morgen war alles wie immer. Die Sonne brannte auf die Pflastersteine. Vor der Bäckerei roch es nach frischem Brot. Dragan, mein Nachbar, trank seinen Kaffee vor der Tür. Wir sprachen über das Wetter und über den hohen Besuch -- der Thronfolger Franz Ferdinand war in der Stadt.</p><p>Dann hörte ich Schüsse. Zwei Schüsse, ganz nah. Menschen schrien und rannten. Ein Junge neben mir sagte: \"Sie haben den Thronfolger erschossen!\" Ich konnte es nicht glauben. Wer tut so etwas?</p><p>Am Abend war die Stadt wie gelähmt. Soldaten patrouillierten durch die Gassen. Mein Freund Mehmed, ein Bosnier, sagte leise: \"Jetzt wird es schlimm für uns alle.\" Die Polizei verhaftete junge Serben auf der Straße. Ich bin kein Serbe, aber ich habe Angst. Diese Stadt hat so viele Spannungen erlebt seit der Annexion. Und jetzt das. Was wird aus uns?</p><cite>Fiktiver Tagebucheintrag, historisch plausibel. Kontext: Wikipedia, Assassination of Archduke Franz Ferdinand; Bosnian crisis</cite>",
+  "quelle": "Fiktiver Tagebucheintrag, historisch plausibel. Kontext: Wikipedia, Assassination of Archduke Franz Ferdinand; Bosnian crisis",
+  "lizenz": "",
+  "position": 6,
+  "didaktische_funktion": "vertiefung",
+  "voraussetzung": ["k2-1 (Attentat)", "k2-6 (Balkankrise)"],
+  "ueberleitung_von": "mat-2-5",
+  "sequenz_kontext": "Letztes Material vor der Sicherung. Personifiziert Balkankrise und Attentat durch die Perspektive eines einfachen Bewohners. Emotionaler Zugang zu Schock und Angst.",
+  "_meta": {
+    "wortanzahl": 118,
+    "figur": {"name": "Erzähler (namenlos)", "alter": 35, "rolle": "Bewohner Sarajevos, bosnischer Händler", "ort": "Sarajevo"},
+    "artefakt_ref": "rolle-2-1",
+    "historische_details": [
+      "Thronfolger-Besuch in Sarajevo am 28.6.1914 -- belegt in INHALTSBASIS",
+      "Zwei Schüsse -- Princip feuerte zwei Schüsse ab (INHALTSBASIS)",
+      "Verhaftungen junger Serben nach dem Attentat -- belegt: 'serbische Bewohner werden verdächtigt und verhaftet' (INHALTSBASIS rolle-2-1)",
+      "Spannungen seit der Annexion 1908 -- belegt in INHALTSBASIS Balkankrise"
+    ],
+    "tafelbild_knoten_abgedeckt": ["k2-6 (Balkankrise)", "k2-1 (Attentat von Sarajevo)"],
+    "perspektivitaet": "Figur kennt nur den Alltag in Sarajevo. Sie weiß nichts von Bündnissen, Blankoschecks oder Julikrise. Sie erlebt das Attentat als lokalen Schock, nicht als Weltpolitik. Begrenzte Sicht: 'Was wird aus uns?' -- offene Frage ohne Antwort.",
+    "erarbeitbarkeits_check": "PASS -- k2-6: Spannungen seit Annexion im Tagebuch benannt, multiethnische Stadt erlebbar. k2-1: Attentat als konkretes Erlebnis (Schüsse, Schreie, Verhaftungen)."
+  }
+}

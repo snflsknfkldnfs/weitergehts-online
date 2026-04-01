@@ -1,0 +1,25 @@
+{
+  "id": "mat-2-4",
+  "typ": "quellentext",
+  "titel": "Was forderte Österreich-Ungarn von Serbien?",
+  "inhalt": "<p class='quellentext__einleitung'>Nach dem Attentat sicherte Deutschland Österreich-Ungarn bedingungslose Unterstützung zu -- den <strong>Blankoscheck</strong> (eine Zusage ohne Einschränkung). Am 23. Juli 1914 stellte Österreich-Ungarn Serbien ein <strong>Ultimatum</strong> (eine letzte Forderung mit Drohung).</p><blockquote class='quellentext__wortlaut'><p>\"Österreich-Ungarn forderte von Serbien unter anderem: Die serbische Regierung müsse antiösterreichische Gruppen verbieten. Österreichische Beamte sollten auf serbischem Boden an den Ermittlungen zum Attentat teilnehmen. Serbien erhielt nur 48 Stunden Zeit für eine Antwort.\" (vereinfacht)</p></blockquote><p class='quellentext__nachweis'><em>Ultimatum Österreich-Ungarns an Serbien, 23. Juli 1914</em></p><cite>Vereinfacht nach: Ultimatum Österreich-Ungarns, 23. Juli 1914. Vgl. Wikipedia, July Crisis, Summary</cite>",
+  "quelle": "Vereinfacht nach: Ultimatum Österreich-Ungarns, 23. Juli 1914. Vgl. Wikipedia, July Crisis",
+  "lizenz": "",
+  "position": 4,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": ["k2-1 (Attentat -- aus mat-2-1 bekannt)", "k2-6 (Balkankrise -- aus mat-2-1 bekannt)"],
+  "ueberleitung_von": "mat-2-3",
+  "sequenz_kontext": "Führt die diplomatische Eskalation nach dem Attentat ein. SuS lernen Blankoscheck und Ultimatum als Mechanismen, die aus dem Attentat eine Krise machten.",
+  "_meta": {
+    "wortanzahl": 82,
+    "quellentyp": "vertrag",
+    "aufbereitung": "paraphrase",
+    "artefakt_ref": "zit-2-2",
+    "tafelbild_knoten_abgedeckt": ["k2-3 (Julikrise)", "k2-4 (Blankoscheck)"],
+    "quellenkritische_impulse": [
+      "Warum gab Österreich-Ungarn Serbien nur 48 Stunden Zeit?",
+      "Was hätte Serbien tun können -- und was nicht?"
+    ],
+    "erarbeitbarkeits_check": "PASS -- k2-3 (Julikrise): Ultimatum als zentrales Eskalationsereignis der Julikrise dargestellt. k2-4 (Blankoscheck): Einleitungssatz nennt Blankoscheck als Voraussetzung des harten Vorgehens."
+  }
+}

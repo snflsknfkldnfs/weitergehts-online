@@ -1,0 +1,26 @@
+{
+  "id": "aufgabe-2-2",
+  "typ": "zuordnung",
+  "frage": "Lies den [[mat-2-1|Text über das Pulverfass auf dem Balkan]] (M1) aufmerksam. Ordne jeden Sachverhalt der richtigen Kategorie zu: Handelt es sich um eine langfristige Ursache oder um den konkreten Auslöser des Ersten Weltkriegs?",
+  "material_referenz": ["mat-2-1"],
+  "elemente": [
+    { "begriff": "Annexion Bosnien-Herzegowinas durch Österreich-Ungarn (1908)", "zuordnung": "Langfristige Ursache" },
+    { "begriff": "Bündnissysteme zwischen den Großmächten (Dreibund und Entente)", "zuordnung": "Langfristige Ursache" },
+    { "begriff": "Erschießung von Franz Ferdinand und Sophie in Sarajevo", "zuordnung": "Konkreter Auslöser" },
+    { "begriff": "Balkankriege (1912/1913)", "zuordnung": "Langfristige Ursache" },
+    { "begriff": "Rivalitäten und Misstrauen der europäischen Großmächte", "zuordnung": "Langfristige Ursache" }
+  ],
+  "loesung": {
+    "Annexion Bosnien-Herzegowinas durch Österreich-Ungarn (1908)": "Langfristige Ursache",
+    "Bündnissysteme zwischen den Großmächten (Dreibund und Entente)": "Langfristige Ursache",
+    "Erschießung von Franz Ferdinand und Sophie in Sarajevo": "Konkreter Auslöser",
+    "Balkankriege (1912/1913)": "Langfristige Ursache",
+    "Rivalitäten und Misstrauen der europäischen Großmächte": "Langfristige Ursache"
+  },
+  "tipps": [
+    { "stufe": 1, "text": "Im [[mat-2-1|Text]] (M1) steht ein Absatz, der Auslöser und Ursache genau erklärt. Lies den letzten Absatz nochmal." },
+    { "stufe": 2, "text": "Es gibt nur einen einzigen konkreten Auslöser — alles andere sind langfristige Ursachen. Die Bündnissysteme und Rivalitäten gehören zu den Ursachen." },
+    { "stufe": 3, "text": "Der einzige Auslöser war die Erschießung von Franz Ferdinand und Sophie in Sarajevo am 28. Juni 1914. Alle anderen Sachverhalte — Annexion, Balkankriege, Bündnissysteme, Rivalitäten — sind langfristige Ursachen. Der [[mat-2-1|Text]] (M1) sagt es so: 'Ohne das Pulverfass hätte der Funke keinen Brand ausgelöst.'" }
+  ],
+  "punkte": 10
+}

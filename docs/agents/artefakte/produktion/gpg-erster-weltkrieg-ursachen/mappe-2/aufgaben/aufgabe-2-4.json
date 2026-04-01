@@ -1,0 +1,14 @@
+{
+  "id": "aufgabe-2-4",
+  "typ": "lueckentext",
+  "frage": "Lies den [[mat-2-4|Quellentext zum Ultimatum]] (M4) aufmerksam. Ergänze dann die fehlenden Begriffe im folgenden Text über die diplomatische Eskalation nach dem Attentat.",
+  "material_referenz": ["mat-2-4"],
+  "text_mit_luecken": "Nach dem Attentat sicherte Deutschland Österreich-Ungarn einen ___ zu — eine Zusage ohne jede Einschränkung. Gestärkt durch diese Unterstützung stellte Österreich-Ungarn Serbien ein ___: eine letzte Forderung, verbunden mit der Drohung zum Krieg. Serbien sollte unter anderem feindliche Gruppen verbieten und österreichische Beamte an den ___ zum Attentat auf serbischem Boden beteiligen. Für die Antwort blieben Serbien nur ___ Stunden.",
+  "loesung": ["Blankoscheck", "Ultimatum", "Ermittlungen", "48"],
+  "tipps": [
+    { "stufe": 1, "text": "Alle Begriffe findest du im [[mat-2-4|Quellentext]] (M4). Achte besonders auf die fett gedruckten Fachbegriffe und die Angaben zur Frist." },
+    { "stufe": 2, "text": "Die ersten beiden Lücken sind Fachbegriffe: Der erste beschreibt die bedingungslose Zusage Deutschlands, der zweite die letzte Forderung an Serbien. Die letzte Lücke ist eine Zahl." },
+    { "stufe": 3, "text": "Blankoscheck — Ultimatum — Ermittlungen — 48. Deutschland gab Österreich-Ungarn einen Blankoscheck (bedingungslose Unterstützung). Daraufhin stellte Österreich-Ungarn ein Ultimatum mit unerfüllbaren Forderungen — unter anderem sollten österreichische Beamte auf serbischem Boden ermitteln. Die kurze Frist von 48 Stunden machte eine Einigung fast unmöglich." }
+  ],
+  "punkte": 10
+}

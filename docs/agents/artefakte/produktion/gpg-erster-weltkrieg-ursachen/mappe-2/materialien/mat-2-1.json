@@ -1,0 +1,19 @@
+{
+  "id": "mat-2-1",
+  "typ": "darstellungstext",
+  "titel": "Warum schwelte es auf dem Balkan?",
+  "inhalt": "<p>Auf dem Balkan, im Südosten Europas, herrschen seit Jahren Spannungen. 1908 hat Österreich-Ungarn die Region Bosnien-Herzegowina <strong>annektiert</strong> (dem eigenen Staat einverleibt). Das Nachbarland Serbien protestiert heftig. Viele Serben träumen von einem gemeinsamen Staat aller Südslawen. In den Balkankriegen 1912 und 1913 wird Serbien stärker — Österreich-Ungarn fühlt sich bedroht.</p><p>Am 28. Juni 1914 besucht der österreichisch-ungarische Thronfolger Franz Ferdinand die bosnische Hauptstadt Sarajevo. Der 19-jährige Gavrilo Princip, ein bosnischer Serbe, erschießt ihn und seine Frau Sophie. Das <strong>Attentat</strong> (ein politisch geplanter Mordanschlag) erschüttert ganz Europa.</p><p>Doch warum führt ein Mord zu einem Weltkrieg? Hier ist eine Unterscheidung wichtig: Der <strong>Auslöser</strong> ist der konkrete Anlass — das Attentat. Die <strong>Ursachen</strong> sind die tieferliegenden Gründe: Bündnisse, Rivalitäten, Misstrauen. Ohne das Pulverfass aus Mappe 1 hätte der Funke keinen Brand ausgelöst.</p><cite>Quelle: Eigene Darstellung auf Basis der Sachanalyse (INHALTSBASIS)</cite>",
+  "quelle": "Eigene Darstellung auf Basis der Sachanalyse",
+  "lizenz": "",
+  "position": 1,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": ["k1-1 (Pulverfass Europa)", "k1-4 (Dreibund)", "k1-5 (Triple Entente)"],
+  "ueberleitung_von": null,
+  "sequenz_kontext": "Erstes Material der Mappe. Führt die Balkankrise als Vorgeschichte ein, schildert das Attentat als konkretes Ereignis und etabliert die Kernunterscheidung Auslöser vs. Ursache.",
+  "_meta": {
+    "wortanzahl": 148,
+    "fachbegriffe_eingefuehrt": ["Annexion (annektiert)", "Attentat", "Auslöser vs. Ursache"],
+    "tafelbild_knoten_abgedeckt": ["k2-6 (Balkankrise)", "k2-1 (Attentat von Sarajevo)", "k2-2 (Ursache vs. Auslöser)"],
+    "erarbeitbarkeits_check": "PASS — k2-6: Balkankrise explizit (Annexion 1908, Balkankriege, serbischer Traum). k2-1: Attentat mit Datum, Ort, Akteur, Opfer. k2-2: Auslöser vs. Ursache explizit definiert und auf Pulverfass-Metapher aus Mappe 1 rückbezogen."
+  }
+}

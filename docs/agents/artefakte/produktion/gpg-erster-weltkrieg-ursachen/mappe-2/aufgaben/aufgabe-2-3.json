@@ -1,0 +1,26 @@
+{
+  "id": "aufgabe-2-3",
+  "typ": "reihenfolge",
+  "frage": "Schau dir die [[mat-2-5|Zeitleiste der Julikrise]] (M5) genau an. Bringe die folgenden Stationen in die richtige Reihenfolge — vom Auslöser bis zum Weltkrieg.",
+  "material_referenz": ["mat-2-5"],
+  "elemente_ungeordnet": [
+    "Österreich-Ungarn erklärt Serbien den Krieg",
+    "Deutschland sichert Österreich-Ungarn bedingungslose Unterstützung zu (Blankoscheck)",
+    "Großbritannien erklärt Deutschland den Krieg — fast alle Großmächte sind im Krieg",
+    "Gavrilo Princip erschießt Franz Ferdinand und Sophie in Sarajevo",
+    "Österreich-Ungarn stellt Serbien ein Ultimatum mit unerfüllbaren Forderungen"
+  ],
+  "loesung": [
+    "Gavrilo Princip erschießt Franz Ferdinand und Sophie in Sarajevo",
+    "Deutschland sichert Österreich-Ungarn bedingungslose Unterstützung zu (Blankoscheck)",
+    "Österreich-Ungarn stellt Serbien ein Ultimatum mit unerfüllbaren Forderungen",
+    "Österreich-Ungarn erklärt Serbien den Krieg",
+    "Großbritannien erklärt Deutschland den Krieg — fast alle Großmächte sind im Krieg"
+  ],
+  "tipps": [
+    { "stufe": 1, "text": "Alles beginnt mit dem Attentat in Sarajevo. Was passierte danach als Erstes — militärische Aktion oder diplomatische?" },
+    { "stufe": 2, "text": "An Position 1 steht das Attentat, an Position 5 der Kriegseintritt Großbritanniens. Der Blankoscheck kam vor dem Ultimatum." },
+    { "stufe": 3, "text": "Richtige Reihenfolge: Attentat in Sarajevo → Blankoscheck (Deutschland an Österreich-Ungarn) → Ultimatum an Serbien → Kriegserklärung an Serbien → Kriegseintritt Großbritanniens. Die [[mat-2-5|Zeitleiste]] (M5) zeigt: In nur 37 Tagen wurde aus einem Mord ein Weltkrieg — jede Station trieb die nächste Eskalationsstufe voran." }
+  ],
+  "punkte": 10
+}

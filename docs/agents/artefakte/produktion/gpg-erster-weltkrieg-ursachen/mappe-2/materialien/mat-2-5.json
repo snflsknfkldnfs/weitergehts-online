@@ -1,0 +1,30 @@
+{
+  "id": "mat-2-5",
+  "typ": "zeitleiste",
+  "titel": "Wie wurde aus einem Mord in 37 Tagen ein Weltkrieg?",
+  "inhalt": [
+    {"datum": "28. Juni", "text": "Attentat in Sarajevo: Gavrilo Princip erschießt Franz Ferdinand und Sophie"},
+    {"datum": "5. Juli", "text": "Blankoscheck: Deutschland sichert Österreich-Ungarn bedingungslose Unterstützung zu"},
+    {"datum": "23. Juli", "text": "Ultimatum: Österreich-Ungarn stellt Serbien unerfüllbare Forderungen (48 Stunden Frist)"},
+    {"datum": "28. Juli", "text": "Österreich-Ungarn erklärt Serbien den Krieg"},
+    {"datum": "30. Juli", "text": "Russland mobilisiert seine Armee zur Unterstützung Serbiens"},
+    {"datum": "1. August", "text": "Deutschland erklärt Russland den Krieg"},
+    {"datum": "3. August", "text": "Deutschland erklärt Frankreich den Krieg"},
+    {"datum": "4. August", "text": "Deutschland marschiert in Belgien ein -- Großbritannien erklärt Deutschland den Krieg"}
+  ],
+  "quelle": "Eigene Zusammenstellung. Quellen: Wikipedia, July Crisis; Wikipedia, World War I",
+  "lizenz": "",
+  "position": 5,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": ["k2-1 (Attentat)", "k2-4 (Blankoscheck -- aus mat-2-4 bekannt)", "k1-4 (Dreibund)", "k1-5 (Triple Entente)"],
+  "ueberleitung_von": "mat-2-4",
+  "sequenz_kontext": "Visualisiert die Eskalation nach dem Ultimatum. SuS sehen die Geschwindigkeit der Kettenreaktion -- von einem regionalen Konflikt zum Weltkrieg in 37 Tagen.",
+  "_meta": {
+    "eintraege_gesamt": 8,
+    "ankerpunkte": ["28. Juni", "5. Juli", "4. August"],
+    "zeitspanne": "28. Juni -- 4. August 1914",
+    "tempo_hinweis": "37 Tage vom Attentat zum Weltkrieg. Besonders die letzten 7 Tage (28. Juli -- 4. August) zeigen die Kettenreaktion: vier Kriegserklärungen in einer Woche.",
+    "tafelbild_knoten_abgedeckt": ["k2-3 (Julikrise)", "k2-4 (Blankoscheck)", "k2-5 (Kettenreaktion der Kriegserklärungen)"],
+    "erarbeitbarkeits_check": "PASS -- k2-3: Julikrise als Gesamtprozess sichtbar (28.6.--4.8.). k2-4: Blankoscheck als Eintrag mit Datum. k2-5: Kettenreaktion ab 28.7. visuell erkennbar -- vier Kriegserklärungen in 7 Tagen."
+  }
+}

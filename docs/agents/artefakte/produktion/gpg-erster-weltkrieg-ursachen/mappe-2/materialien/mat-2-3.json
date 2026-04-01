@@ -1,0 +1,27 @@
+{
+  "id": "mat-2-3",
+  "typ": "bildquelle",
+  "titel": "Die letzten Minuten vor dem Attentat",
+  "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-2-2.jpg",
+  "bildunterschrift": "Erzherzog Franz Ferdinand und seine Frau Sophie verlassen das Rathaus von Sarajevo (28. Juni 1914). Wenige Minuten später werden beide erschossen. Das Foto zeigt eine alltägliche Szene -- niemand ahnt, was gleich geschieht.",
+  "quelle": "Unbekannter Fotograf, Wikimedia Commons",
+  "lizenz": "CC-BY-SA 3.0",
+  "position": 3,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": ["k2-1 (Attentat -- aus mat-2-1 und mat-2-2 bekannt)"],
+  "ueberleitung_von": "mat-2-2",
+  "sequenz_kontext": "Nach der dramatischen Illustration (mat-2-2) zeigt dieses authentische Foto die Ruhe vor dem Sturm. Kontrast zwischen Alltag und Gewalt vertieft das Verständnis von k2-1.",
+  "_meta": {
+    "artefakt_ref": "img-2-2",
+    "wikimedia_dateiname": "File:Postcard_for_the_assassination_of_Archduke_Franz_Ferdinand_in_Sarajevo.jpg",
+    "thumbnail_breite": 640,
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Postcard_for_the_assassination_of_Archduke_Franz_Ferdinand_in_Sarajevo.jpg/640px-Postcard_for_the_assassination_of_Archduke_Franz_Ferdinand_in_Sarajevo.jpg",
+    "lokaler_pfad": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-2-2.jpg",
+    "url_verifiziert": false,
+    "bildtyp": "foto",
+    "erschliessungsimpuls": "Vergleiche dieses Foto mit der Illustration von Beltrame (mat-2-2). Was zeigt das Foto, was die Illustration nicht zeigt -- und umgekehrt?",
+    "tafelbild_knoten_abgedeckt": ["k2-1 (Attentat von Sarajevo)"],
+    "lizenz_kompatibel": true,
+    "erarbeitbarkeits_check": "PASS -- k2-1 vertieft: Authentisches Foto macht die Szene real. Kontrast Alltag/Gewalt emotional zugänglich."
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "stundenfrage": "Wie konnte ein einziger Mord einen Weltkrieg auslösen?",
+  "ordnungsmuster": "chronologisch",
+  "scpl": {
+    "situation": {
+      "kontextsatz": "Auf dem Balkan schwelen seit Jahren Konflikte. 1908 hat Österreich-Ungarn Bosnien-Herzegowina annektiert — das Nachbarland Serbien protestiert.",
+      "fachbegriffe": ["Annexion", "Balkankrise"]
+    },
+    "complication": [
+      {
+        "schritt": "Am 28. Juni 1914 erschießt Gavrilo Princip den österreichisch-ungarischen Thronfolger Franz Ferdinand in Sarajevo: Attentat.",
+        "fachbegriff": "Attentat",
+        "darstellung": null
+      },
+      {
+        "schritt": "Der Mord ist der Funke — aber nicht das Pulverfass. Ohne Bündnisse, Rivalitäten und Misstrauen kein Weltkrieg: Auslöser und Ursache sind zweierlei.",
+        "fachbegriff": "Auslöser vs. Ursache",
+        "darstellung": null
+      },
+      {
+        "schritt": "Deutschland sichert Österreich-Ungarn bedingungslose Unterstützung zu — der Blankoscheck. Österreich-Ungarn stellt Serbien ein Ultimatum mit unannehmbaren Forderungen.",
+        "fachbegriff": "Blankoscheck",
+        "darstellung": {
+          "typ": "zeitleiste",
+          "eintraege": [
+            {"datum": "28.06.", "text": "Attentat in Sarajevo"},
+            {"datum": "05.07.", "text": "Blankoscheck (DE → Ö-U)"},
+            {"datum": "23.07.", "text": "Ultimatum an Serbien"},
+            {"datum": "28.07.", "text": "Ö-U erklärt Serbien den Krieg"},
+            {"datum": "01.08.", "text": "DE erklärt RU den Krieg"},
+            {"datum": "03.08.", "text": "DE erklärt FR den Krieg"},
+            {"datum": "04.08.", "text": "GB erklärt DE den Krieg"}
+          ]
+        }
+      }
+    ],
+    "problem": {
+      "satz": "Innerhalb von sechs Wochen stehen fast alle Großmächte im Krieg — eine Kettenreaktion der Bündnispflichten.",
+      "fachbegriff": "Kettenreaktion"
+    },
+    "loesung": [
+      "Das Attentat von Sarajevo war der Auslöser des Ersten Weltkriegs, nicht seine Ursache.",
+      "Der Blankoscheck und das Ultimatum trieben die Julikrise zur Eskalation.",
+      "Die Bündnispflichten machten aus einem Mord eine Kettenreaktion der Kriegserklärungen."
+    ]
+  },
+  "transfer": {
+    "frage": "Kennst du einen heutigen Konflikt, bei dem Auslöser und Ursache verwechselt werden?"
+  },
+  "voraussetzungen": ["k1-1 (Pulverfass Europa)", "k1-4 (Dreibund)", "k1-5 (Triple Entente)", "k1-7 (Kettenreaktion)"],
+  "kernerkenntnisse": [
+    "Das Attentat von Sarajevo war der Auslöser des Ersten Weltkriegs, nicht seine Ursache.",
+    "Der Blankoscheck und das Ultimatum trieben die Julikrise zur Eskalation.",
+    "Die Bündnispflichten machten aus einem Mord eine Kettenreaktion der Kriegserklärungen."
+  ],
+  "knoten": [
+    {"id": "k2-1", "text": "Attentat von Sarajevo (28.6.1914)", "typ": "ereignis"},
+    {"id": "k2-2", "text": "Ursache vs. Auslöser", "typ": "kernbegriff"},
+    {"id": "k2-3", "text": "Julikrise", "typ": "ereignis"},
+    {"id": "k2-4", "text": "Blankoscheck (DE → Ö-U)", "typ": "ereignis"},
+    {"id": "k2-5", "text": "Kettenreaktion der Kriegserklärungen", "typ": "wirkung"},
+    {"id": "k2-6", "text": "Balkankrise (Vorgeschichte)", "typ": "ursache"}
+  ],
+  "verbindungen": [
+    {"von": "k2-6", "nach": "k2-1", "label": "Spannungen führen zu"},
+    {"von": "k2-1", "nach": "k2-3", "label": "löst aus"},
+    {"von": "k2-4", "nach": "k2-5", "label": "ermutigt Eskalation"},
+    {"von": "k2-3", "nach": "k2-5", "label": "mündet in"},
+    {"von": "k2-2", "nach": "k2-1", "label": "erklärt: Auslöser"},
+    {"von": "k2-2", "nach": "k1-1", "label": "erklärt: Ursache (Pulverfass)"}
+  ]
+}

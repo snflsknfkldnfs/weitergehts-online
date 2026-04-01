@@ -1,0 +1,19 @@
+{
+  "id": "aufgabe-2-1",
+  "typ": "multiple-choice",
+  "frage": "Schau dir die [[mat-2-2|Illustration von Beltrame]] (M2) und das [[mat-2-3|Foto vom 28. Juni 1914]] (M3) genau an. Welche Aussage über das Attentat von Sarajevo ist richtig?",
+  "material_referenz": ["mat-2-2", "mat-2-3"],
+  "optionen": [
+    "Gavrilo Princip erschoss Erzherzog Franz Ferdinand und seine Frau Sophie.",
+    "Ein französischer Nationalist verübte das Attentat auf den Kaiser von Österreich-Ungarn.",
+    "Das Attentat ereignete sich im Januar 1914 vor dem Wiener Parlament.",
+    "Franz Ferdinand überlebte den Anschlag zunächst und starb erst Wochen später im Krankenhaus."
+  ],
+  "loesung": "Gavrilo Princip erschoss Erzherzog Franz Ferdinand und seine Frau Sophie.",
+  "tipps": [
+    { "stufe": 1, "text": "Lies die [[mat-2-3|Bildunterschrift des Fotos]] (M3) genau — dort stehen die Namen der Beteiligten und das Datum." },
+    { "stufe": 2, "text": "Option C und D kannst du ausschließen: Das Attentat fand nicht in Wien statt, und beide Opfer starben noch am selben Tag." },
+    { "stufe": 3, "text": "Richtig ist: Gavrilo Princip erschoss am 28. Juni 1914 in Sarajevo den österreichisch-ungarischen Thronfolger Erzherzog Franz Ferdinand und seine Frau Sophie. Die [[mat-2-2|Illustration]] (M2) zeigt den Moment des Attentats, das [[mat-2-3|Foto]] (M3) die letzten Minuten davor." }
+  ],
+  "punkte": 10
+}

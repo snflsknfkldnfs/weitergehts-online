@@ -1,0 +1,23 @@
+{
+  "id": "aufgabe-2-5",
+  "typ": "freitext-code",
+  "frage": "Der Erzähler im [[mat-2-6|Tagebuch aus Sarajevo]] (M6) fragt sich: 'Was wird aus uns?' Er ahnt nicht, dass aus dem Attentat ein Weltkrieg wird. Beurteile: War das Attentat allein für den Ausbruch des Ersten Weltkriegs verantwortlich — oder brauchte es mehr als nur diesen 'Funken'?",
+  "material_referenz": ["mat-2-6", "mat-2-1", "mat-2-4", "mat-2-5"],
+  "loesung": "Auslöser Ursache Kettenreaktion",
+  "tipps": [
+    { "stufe": 1, "text": "Denke an den [[mat-2-1|Text über den Balkan]] (M1) zurück: Dort wird der Unterschied zwischen Auslöser und Ursache erklärt. Beginne damit, diesen Unterschied in eigenen Worten zu beschreiben." },
+    { "stufe": 2, "text": "Der Erzähler im [[mat-2-6|Tagebuch]] (M6) kennt nur den lokalen Schock — er weiß nichts von Bündnissen oder dem Blankoscheck. Was müsstest du ihm erklären, damit er versteht, warum aus dem Mord ein Weltkrieg wurde?" },
+    { "stufe": 3, "text": "Musterantwort: Das Attentat von Sarajevo war der Auslöser des Ersten Weltkriegs, aber nicht seine eigentliche Ursache. Die Ursachen lagen tiefer: Bündnissysteme, Rivalitäten und Misstrauen hatten Europa schon vorher zum Pulverfass gemacht. Der Blankoscheck ermutigte Österreich-Ungarn zu einem harten Ultimatum, und durch die Bündnispflichten zogen die Kriegserklärungen eine Kettenreaktion nach sich. Ohne den Funken wäre der Brand vielleicht nicht ausgebrochen — aber ohne das Pulverfass hätte der Funke keinen Brand ausgelöst." }
+  ],
+  "punkte": 10,
+  "_meta": {
+    "teilfragen": [
+      "Was genau geschah am 28. Juni 1914 in Sarajevo — und warum reagierten die Großmächte so heftig?",
+      "Welche Rolle spielten der Blankoscheck, das Ultimatum und die Bündnispflichten bei der Eskalation zum Weltkrieg?",
+      "Erkläre den Unterschied zwischen Auslöser und Ursache am Beispiel des Ersten Weltkriegs."
+    ],
+    "erwartete_begriffe": ["Auslöser", "Ursache", "Blankoscheck", "Kettenreaktion", "Bündnisse"],
+    "validierung_schwelle": 3,
+    "musterantwort": "Das Attentat von Sarajevo war der Auslöser des Ersten Weltkriegs, aber nicht seine eigentliche Ursache. Die Ursachen lagen tiefer: Bündnissysteme, Rivalitäten und Misstrauen hatten Europa schon vorher zum Pulverfass gemacht. Der Blankoscheck ermutigte Österreich-Ungarn zu einem harten Ultimatum, und durch die Bündnispflichten zogen die Kriegserklärungen eine Kettenreaktion nach sich. Ohne den Funken (das Attentat) wäre der Brand vielleicht nicht ausgebrochen — aber ohne das Pulverfass hätte der Funke keinen Brand ausgelöst."
+  }
+}
