@@ -479,12 +479,12 @@ Strategischer Audit durchgefuehrt (docs/analyse/AUDIT_v4_STRATEGIE_ERGEBNIS.md).
 
 ### Runde 3a: Mappe-2 Rahmen + Materialien (Phase 2.0 + 2.1 + 2.1c)
 
-- [ ] Produktionsverzeichnis anlegen
-- [ ] Rahmen produzieren (tafelbild.json, einstieg.json, sicherung.json, meta.json)
-- [ ] Material 1-2 produzieren (sequentiell, mit Q-Gate)
-- [ ] **User-Validierung: PFLICHT** — Kalibrierung Ton/Sprachregister/Vergegenwaertigung (Strategie-Audit E1)
-- [ ] Material 3-6 produzieren (sequentiell, mit Q-Gate)
-- [ ] Phase 2.1c: Material-Cross-Konsistenz (1 Dispatch, 4 Pruefachsen) (Strategie-Audit E2)
+- [x] Produktionsverzeichnis anlegen (2026-04-01)
+- [x] Pre-Flight: git revert c9eb9ec, MATERIAL_GERUEST validiert, HANDOFF_PHASE2.md erstellt (2026-04-01)
+- [x] Repo-Update: 10 Commits (85 Dateien) auf origin/main gepusht (2026-04-01)
+- [x] Testplan erstellt: Post-hoc-Evaluation + Token-Messung als Ebene 4 (2026-04-01)
+- [ ] **Produktion:** Rahmen (D01), Materialien (D02-D07), Cross-Konsistenz (D08)
+- [ ] **User-Validierung: PFLICHT** nach D02+D03 — Kalibrierung Ton/Sprachregister/Vergegenwaertigung (Strategie-Audit E1)
 - [ ] **Checkpoint:** Session-Split hier (Audit S2 — Token-Budget-Mitigation)
 
 ### Runde 3b: Mappe-2 Aufgaben (Phase 2.2)
@@ -493,6 +493,63 @@ Strategischer Audit durchgefuehrt (docs/analyse/AUDIT_v4_STRATEGIE_ERGEBNIS.md).
 - [ ] 5 Aufgaben produzieren (sequentiell, mit Q-Gate)
 - [ ] Cross-Konsistenz-Pruefung
 - [ ] User-Review: Stichprobe auf 1-2 Aufgaben
+
+### Runde 3a-Eval: Post-hoc-Evaluation (NEU — 2026-04-01)
+
+- [ ] Dispatch-Protokoll ausfuellen (Auswertungsboegen pro D01-D08)
+- [ ] Ebene 1-3 auswerten (Prozesskonformitaet, Artefaktqualitaet, Compaction-Resilienz)
+- [ ] **Ebene 4: Token-Profil erstellen** — Input/Output pro Dispatch, WORKFLOW/ORCHESTRATOR-Leseanteil
+- [ ] Optimierungsempfehlungen ableiten (→ Runde 3a-Opt)
+- [ ] `docs/analyse/RUNDE_3a_ERGEBNIS.md` schreiben
+
+### Runde 3a-Opt: Token-Optimierung — Vertrags-Extraktion (NEU — 2026-04-01)
+
+**Ausloeser:** Token-Profil aus Runde 3a-Eval. Hypothese: ~6.650 Token Einsparung pro Dispatch durch phasen-spezifische Vertraege statt WORKFLOW_v4-Volllektuere.
+
+**Massnahmen:**
+
+1. **Vertrags-Extraktion aus WORKFLOW_v4.md:**
+   WORKFLOW_v4.md (953 Zeilen, ~7.285 Token) in 6 phasen-spezifische Vertragsdateien zerlegen:
+   ```
+   docs/architektur/vertraege/
+     VERTRAG_PHASE_2-0_RAHMEN.md          (~80 Z., ~500 Tok)
+     VERTRAG_PHASE_2-1_MATERIAL.md        (~100 Z., ~650 Tok)
+     VERTRAG_PHASE_2-1c_CROSS.md          (~60 Z., ~400 Tok)
+     VERTRAG_PHASE_2-2a_PROGRESSIONSPLAN.md (~70 Z., ~450 Tok)
+     VERTRAG_PHASE_2-2b_AUFGABE.md        (~80 Z., ~500 Tok)
+     VERTRAG_PHASE_2-2c_CROSS.md          (~50 Z., ~350 Tok)
+   ```
+   Jeder Vertrag enthaelt NUR: Read-Schritte, Output-Schema, Q-Gate-Kriterien, Engine-Limitationen fuer diese Phase. P1/P4/P5/P6 als 4-Zeilen-Praeambel.
+
+2. **ORCHESTRATOR.md-Schlankung:**
+   Orchestrator verweist pro Phase auf den spezifischen Vertrag statt auf WORKFLOW_v4 komplett.
+   WORKFLOW_v4.md bleibt als Architektur-Dokumentation erhalten — nicht mehr als Runtime-Lektuere.
+
+3. **Konsistenz-Sicherung:**
+   Vertraege enthalten einen Hash-Verweis auf die WORKFLOW_v4-Version, aus der sie extrahiert wurden.
+   Bei WORKFLOW-Aenderung: Vertraege regenerieren (manuell oder per Script).
+
+**Erwartete Einsparung:**
+| Szenario | Tokens pro Dispatch | Ueber 15 Dispatches |
+|---|---|---|
+| Ist: ORCHESTRATOR + WORKFLOW_v4 komplett | ~9.750 | ~146.250 |
+| Soll: ORCHESTRATOR-schlank + Vertrag | ~3.100 | ~46.500 |
+| Einsparung | ~6.650 (~68%) | ~99.750 |
+
+**Risiken:**
+| Risiko | Mitigation |
+|---|---|
+| Vertraege divergieren von WORKFLOW_v4 | Hash-Verweis + Regenerierungs-Konvention |
+| Agent vermisst Gesamtkontext | P1-P7 Praeambel in jedem Vertrag |
+| Wartungsaufwand | Akzeptabel bei 6 Dateien; skaliert nicht mit Dispatches |
+
+**Validierung:** Runde 3b mit optimierter Architektur. Token-Verbrauch gegen Runde 3a Baseline vergleichen.
+
+- [ ] Token-Profil Runde 3a analysieren (bestaetige Hypothese)
+- [ ] 6 Vertragsdateien aus WORKFLOW_v4.md extrahieren
+- [ ] ORCHESTRATOR.md: Verweis auf Vertraege statt WORKFLOW_v4
+- [ ] WORKFLOW_v4.md: Hinweis ergaenzen (Architektur-Doku, nicht Runtime)
+- [ ] Runde 3b durchfuehren (Token-Vergleich)
 
 ### Runde 4: Phase-3-Uebergabe an Claude Code
 
@@ -506,7 +563,7 @@ Strategischer Audit durchgefuehrt (docs/analyse/AUDIT_v4_STRATEGIE_ERGEBNIS.md).
 - [ ] Was hat funktioniert, was nicht?
 - [ ] **Mappe-N-Retrospektive operationalisieren** (Strategie-Audit E4): Erkenntnisse aus Mappe 2 als Praeambel fuer Mappe-3-Dispatches formulieren
 - [ ] projekt-website-v3 Skill: Orchestrierung der neuen Phasenabfolge anpassen
-- [ ] WORKFLOW_v4 finalisieren (Learnings einarbeiten)
+- [ ] WORKFLOW_v4 finalisieren (Learnings einarbeiten, ggf. Vertrags-Extraktion als Standard)
 
 ---
 
@@ -515,6 +572,7 @@ Strategischer Audit durchgefuehrt (docs/analyse/AUDIT_v4_STRATEGIE_ERGEBNIS.md).
 | Risiko | Wahrscheinlichkeit | Mitigation |
 |---|---|---|
 | Token-Budget in Cowork: 11+ Dispatches mit je 3000-5000 Token Input | HOCH (Audit A4-#1) | **Checkpoint-Strategie (S2):** Session-Split nach Phase 2.1 (Materialien). Runde 3a = Rahmen + Materialien, Runde 3b = Aufgaben. PROGRESSIONSPLAN.md als Uebergabe-Artefakt |
+| Token-Overhead durch WORKFLOW_v4-Volllektuere: ~7.285 Tok pro Dispatch, ~15% relevant | HOCH (Runde 3a-Eval, 2026-04-01) | **Vertrags-Extraktion (Runde 3a-Opt):** 6 phasen-spezifische Vertragsdateien statt WORKFLOW_v4 komplett. Erwartete Einsparung ~68% pro Dispatch |
 | Compaction waehrend Material-Produktion in Cowork | Niedrig-Mittel | P1-Failsafe: Jeder Schritt liest aus Dateien. Bereits geschriebene .json-Dateien bleiben erhalten |
 | Fehlende Integritaetspruefung Phase 2 → Phase 3 (Audit A4-#2) | Mittel | **Phase-3-Pre-Flight erweitert (S3):** Alle erwarteten .json vorhanden? Valides JSON? Alle mat-IDs aus MATERIAL_GERUEST abgedeckt? |
 | .json-Dateien in Cowork-Workspace nicht identisch mit Git-Repo | Niedrig | Dateien liegen in docs/ (Cowork-Domaene). Kein Sync-Problem. Claude Code liest sie per Pfad |
