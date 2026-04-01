@@ -1,0 +1,10 @@
+- Infobox zu beginn der Mappe muss ansprechender gestaltet werden: zentralere anordnung, breite so weit wie Materialspalte und Fragebogen zusammen. Stundenfrage muss dann zentral als Überschrift mittig formatiert sein und im besten fall so fixiert werden, dass sie oben auch beim scrollen durch materialien, Fragebogen etc als dünner header immer präsent bleibt. 
+- Mappenüberschrift/Stundenfrage sollte nur eine Frage umfassen. in diesem Fall zum Bispiel: "Warum war Europa vor 1914 ein 'Pulverfass'?"
+- "Im Darstellungstext" o.Ä. Sollte ersetzt werden durch dynamische Referenz ("im Text oben (M1)" o.Ä.)
+- Die Überschriften der Darstellungstexte etc. müssen prägnanter sein: 
+	- möglichst keine Spiegelstriche
+	- Keine Nominalisierten Konzeptnennungen in Überschrift (diese konzepte müssen ja durch das material implizit sinnhaft von den SuS nachvollzogen, im Geist konstruiert bzw erarbeitet werden): Beispiel "Pulverfass Europa – Spannungen vor 1914" sollte einen Schulbuchtextähnlich formatierten Titel isv einer Lösungsplanung zur beantwortung der stundenfrage/mappenfrage entworfenen Teilfrage umfassen, bspw. "Welche Spannungen gab es in Europa vor 1914?", oder beim M2 (Zitat in dem Fall): "Das fordert der Außenminister von Deutschland:"
+- Alle Quellenangaben sollten möglichst aus dem sichtfeld der SuS entfernt werden, um nicht abzulenken. Bildunterschriften etc. sind sinnvoll didaktisch zu generieren. 
+- Abschlussfrage am Ende der Mappe: beschränken auf eine motivierende, interessenstiftende Frage isv Snadwich-Methode. in diesem flal zum beispiel: "Doch wo ist der Funke? Am 28. Juni 1914 fällt in Sarajevo ein Schuss, der die Welt verändert... Finde in der nächsten Mappe heraus, wie es dazu kam!"
+- Sicherung muss als "Hefteintrag" benannt werden
+	- Außerdem muss die sicherung auf A4-Format beschränkt werden und zentral angeordnet werden. 

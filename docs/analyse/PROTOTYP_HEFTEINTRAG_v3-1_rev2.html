@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hefteintrag-Prototyp v3.1 rev2 — Variante A ueberarbeitet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --he-bg: #fefcf3;
+    --he-line: #c8d4e0;
+    --he-line-strong: #8fa4b8;
+    --he-title: #1a365d;
+    --he-text: #2d3748;
+    --he-accent-red: #c53030;
+    --he-accent-blue: #2b6cb0;
+    --he-accent-green: #276749;
+    --he-accent-purple: #6b46c1;
+    --he-accent-orange: #c05621;
+    --he-merksatz-bg: #ebf4ff;
+    --he-merksatz-border: #2b6cb0;
+    --he-arrow: #718096;
+    --he-font-hand: 'Caveat', cursive;
+    --he-font-clean: 'Patrick Hand', cursive;
+    --he-font-body: 'Segoe UI', system-ui, sans-serif;
+    --he-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--he-font-body);
+    background: #e2e8f0;
+    padding: 2rem;
+    color: var(--he-text);
+  }
+
+  h1 { text-align: center; color: var(--he-title); margin-bottom: 0.3rem; font-size: 1.3rem; }
+  .subtitle { text-align: center; color: #718096; margin-bottom: 0.5rem; font-size: 0.9rem; }
+  .revision-notes {
+    max-width: 700px; margin: 0 auto 2rem; padding: 1rem;
+    background: #fffbe6; border: 1px solid #e2c868; border-radius: 6px;
+    font-size: 0.85rem; line-height: 1.5;
+  }
+  .revision-notes strong { color: #744210; }
+  .revision-notes ol { padding-left: 1.2rem; margin-top: 0.3rem; }
+  .revision-notes li { margin-bottom: 0.2rem; }
+
+  .variants { display: flex; flex-direction: column; gap: 3rem; max-width: 700px; margin: 0 auto; }
+
+  /* === HEFTEINTRAG-BOX === */
+  .hefteintrag {
+    background: var(--he-bg);
+    border: 1px solid #d4c5a0;
+    border-radius: 4px;
+    box-shadow: var(--he-shadow), inset 0 0 30px rgba(0,0,0,0.02);
+    padding: 2rem 2.5rem 1.5rem 3.5rem;
+    position: relative;
+    background-image:
+      repeating-linear-gradient(
+        transparent, transparent 31px, var(--he-line) 31px, var(--he-line) 32px
+      );
+    background-size: 100% 32px;
+    background-position: 0 1.8rem;
+    line-height: 32px;
+  }
+
+  /* Roter Rand links (Heftrand) */
+  .hefteintrag::before {
+    content: '';
+    position: absolute;
+    left: 2.5rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #e88c8c;
+    opacity: 0.5;
+  }
+
+  /* Lochung */
+  .hefteintrag::after {
+    content: '';
+    position: absolute;
+    left: 0.8rem;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #bbb;
+    transform: translateY(-50%);
+  }
+
+  .he-label {
+    position: absolute;
+    top: -14px;
+    right: 16px;
+    background: #edf2f7;
+    border: 1px solid #cbd5e0;
+    border-radius: 3px;
+    padding: 2px 10px;
+    font-size: 0.7rem;
+    color: #718096;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* === STUNDENFRAGE ALS TITEL === */
+  .he-stundenfrage {
+    font-family: var(--he-font-hand);
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--he-title);
+    text-decoration: underline;
+    text-decoration-color: var(--he-accent-blue);
+    text-underline-offset: 4px;
+    margin-bottom: 0.2rem;
+    line-height: 38px;
+  }
+
+  .he-datum {
+    font-family: var(--he-font-clean);
+    font-size: 0.95rem;
+    color: #a0aec0;
+    margin-bottom: 0.8rem;
+  }
+
+  /* === VERTIKALE ZONEN === */
+
+  /* Zone 1: AUSGANGSLAGE (oben) */
+  .zone-ausgangslage {
+    margin-bottom: 0.3rem;
+  }
+
+  .zone-label {
+    font-family: var(--he-font-body);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #a0aec0;
+    margin-bottom: 0.1rem;
+    line-height: 16px;
+  }
+
+  .ausgangslage-text {
+    font-family: var(--he-font-clean);
+    font-size: 1.1rem;
+    color: #4a5568;
+    line-height: 30px;
+  }
+
+  .ausgangslage-fachbegriffe {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .fachbegriff-tag {
+    font-family: var(--he-font-hand);
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0 6px;
+    border-radius: 3px;
+    line-height: 30px;
+  }
+  .fachbegriff-tag--rot { color: var(--he-accent-red); background: rgba(197, 48, 48, 0.08); }
+  .fachbegriff-tag--blau { color: var(--he-accent-blue); background: rgba(43, 108, 176, 0.08); }
+  .fachbegriff-tag--gruen { color: var(--he-accent-green); background: rgba(39, 103, 73, 0.08); }
+  .fachbegriff-tag--lila { color: var(--he-accent-purple); background: rgba(107, 70, 193, 0.08); }
+  .fachbegriff-tag--orange { color: var(--he-accent-orange); background: rgba(192, 86, 33, 0.08); }
+
+  /* Zone 2: ARGUMENTATION (Mitte, vertikal) */
+  .zone-argumentation {
+    margin: 0.3rem 0;
+  }
+
+  .argument-step {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.5rem;
+    align-items: start;
+    margin-bottom: 0.1rem;
+  }
+
+  .argument-step-text {
+    font-family: var(--he-font-clean);
+    font-size: 1.05rem;
+    color: var(--he-text);
+    line-height: 30px;
+  }
+
+  .argument-step-fazit {
+    font-family: var(--he-font-hand);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--he-accent-blue);
+    white-space: nowrap;
+    line-height: 30px;
+    text-align: right;
+  }
+
+  .argument-step-fazit::before {
+    content: '← ';
+    color: var(--he-arrow);
+  }
+
+  /* Vertikaler Pfeil zwischen Schritten */
+  .v-arrow {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    color: var(--he-arrow);
+    font-family: var(--he-font-clean);
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 28px;
+    padding-left: 0.5rem;
+  }
+
+  .v-arrow svg {
+    width: 16px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  /* Gegenueberstellung (eingebettet in Argumentation) */
+  .gegenueber {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 0;
+    margin: 0.3rem 0;
+    line-height: 28px;
+  }
+
+  .gegenueber-col {
+    padding: 0.3rem 0.5rem;
+  }
+
+  .gegenueber-col h4 {
+    font-family: var(--he-font-hand);
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    margin-bottom: 0.2rem;
+  }
+
+  .gegenueber-col:first-child h4 { color: var(--he-accent-red); text-decoration-color: var(--he-accent-red); }
+  .gegenueber-col:last-child h4 { color: var(--he-accent-blue); text-decoration-color: var(--he-accent-blue); }
+
+  .gegenueber-col ul {
+    list-style: none;
+    padding: 0;
+    font-family: var(--he-font-clean);
+    font-size: 1rem;
+  }
+
+  .gegenueber-col li { padding: 1px 0; }
+
+  .gegenueber-vs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--he-font-hand);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #a0aec0;
+    padding: 0 0.3rem;
+  }
+
+  /* === TRENNLINIE === */
+  .he-separator {
+    border: none;
+    border-top: 1.5px dashed var(--he-line-strong);
+    margin: 0.5rem 0;
+  }
+
+  /* === MERKBOX (Mod 3) === */
+  .he-merkbox {
+    background: var(--he-merksatz-bg);
+    border: 2px solid var(--he-merksatz-border);
+    border-radius: 6px;
+    padding: 0.6rem 1rem;
+    margin: 0.5rem 0;
+    position: relative;
+  }
+
+  .he-merkbox-label {
+    position: absolute;
+    top: -10px;
+    left: 12px;
+    background: var(--he-merksatz-border);
+    color: white;
+    font-family: var(--he-font-body);
+    font-size: 0.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 1px 8px;
+    border-radius: 3px;
+    line-height: 16px;
+  }
+
+  .he-merkbox-text {
+    font-family: var(--he-font-hand);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--he-title);
+    line-height: 34px;
+    margin-top: 0.2rem;
+  }
+
+  /* === TRANSFER / MOTIVATION (Mod 4) === */
+  .he-transfer {
+    font-family: var(--he-font-clean);
+    font-size: 1.05rem;
+    color: #4a5568;
+    margin-top: 0.5rem;
+    padding: 0.3rem 0;
+    line-height: 30px;
+    border-top: 1px dotted var(--he-line-strong);
+  }
+
+  .he-transfer-frage {
+    font-style: italic;
+    color: #718096;
+  }
+
+  .he-transfer-vorschau {
+    font-family: var(--he-font-clean);
+    font-size: 0.95rem;
+    color: var(--he-accent-blue);
+    margin-top: 0.1rem;
+    line-height: 28px;
+  }
+
+  /* === UEBERLEITUNG (ausserhalb Box, bleibt) === */
+  .he-ueberleitung {
+    font-style: italic;
+    color: #718096;
+    margin-top: 0.8rem;
+    padding-left: 3.5rem;
+    font-size: 0.95rem;
+  }
+
+  /* === SCHEMA-ANSICHT === */
+  .schema {
+    max-width: 700px;
+    margin: 3rem auto 0;
+    padding: 1.5rem;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .schema h2 {
+    font-size: 1rem;
+    color: var(--he-title);
+    margin-bottom: 0.8rem;
+  }
+
+  .schema pre {
+    background: #f7fafc;
+    border: 1px solid #e2e8f0;
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  /* === PRINT === */
+  @media print {
+    body { background: white; padding: 0; }
+    .he-label { display: none; }
+    .hefteintrag { box-shadow: none; border: 1px solid #ccc; page-break-inside: avoid; }
+    h1, .subtitle, .revision-notes, .schema { display: none; }
+  }
+
+  .variant-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #4a5568;
+    background: #edf2f7;
+    padding: 4px 12px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+  }
+</style>
+</head>
+<body>
+
+<h1>Hefteintrag-Prototyp v3.1 rev2</h1>
+<p class="subtitle">Variante A ueberarbeitet — Mappe 1: Pulverfass Europa</p>
+
+<div class="revision-notes">
+  <strong>Aenderungen gegenueber rev1:</strong>
+  <ol>
+    <li><strong>Stundenfrage als Titel</strong> — schuelernahe, problemorientierte Frage statt Themenname. Merksaetze sind die qualifizierte Antwort.</li>
+    <li><strong>Raeumliche Struktur</strong> — Oben: Ausgangslage/Situation. Mitte: Vertikaler Argumentationsfluss mit horizontalen Fachbegriff-Verankerungen. Unten: Merkbox.</li>
+    <li><strong>Merkbox</strong> — Visuell abgehobener Kasten fuer Merksatz/Merksaetze statt einfacher blauer Leiste.</li>
+    <li><strong>Transfer</strong> — Fragestellung/Motivation fuer Fortschreiten in der Sequenz am Ende des Hefteintrags.</li>
+  </ol>
+</div>
+
+<div class="variants">
+
+<!-- ============================================================ -->
+<!-- VARIANTE A rev2: SCPL-orientiertes vertikales Layout         -->
+<!-- Situation → Complication → Problem → Loesung (Merksatz)      -->
+<!-- ============================================================ -->
+
+<div>
+  <div class="variant-label">Variante A rev2 — SCPL-Struktur</div>
+  <div class="hefteintrag">
+    <span class="he-label">Hefteintrag</span>
+
+    <!-- MOD 1: Stundenfrage statt Themenname -->
+    <div class="he-stundenfrage">Warum wurde Europa vor 1914 zum Pulverfass?</div>
+    <div class="he-datum">GPG 7 — Erster Weltkrieg, Mappe 1</div>
+
+    <!-- ZONE 1: AUSGANGSLAGE / SITUATION (oben) -->
+    <div class="zone-ausgangslage">
+      <div class="zone-label">Ausgangslage</div>
+      <div class="ausgangslage-text">
+        Um 1900 wollen alle europaeischen Grossmaechte Kolonien, Rohstoffe und Einfluss. Jedes Land haelt sich fuer ueberlegen.
+      </div>
+      <div class="ausgangslage-fachbegriffe">
+        <span class="fachbegriff-tag fachbegriff-tag--rot">Imperialismus</span>
+        <span class="fachbegriff-tag fachbegriff-tag--lila">Nationalismus</span>
+      </div>
+    </div>
+
+    <!-- ZONE 2: ARGUMENTATION (vertikal, mit horizontalen Fazits) -->
+    <div class="zone-argumentation">
+
+      <div class="v-arrow">
+        <svg viewBox="0 0 16 20"><path d="M8 2v14M3 12l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        verschaerft sich durch
+      </div>
+
+      <div class="argument-step">
+        <div class="argument-step-text">
+          Die Staaten ruesten massiv auf — besonders zur See: Deutschland will Grossbritannien die Vorherrschaft streitig machen.
+        </div>
+        <div class="argument-step-fazit">Wettruestung</div>
+      </div>
+
+      <div class="v-arrow">
+        <svg viewBox="0 0 16 20"><path d="M8 2v14M3 12l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        fuehrt zu Misstrauen und
+      </div>
+
+      <!-- Gegenueberstellung als Argumentations-Schritt -->
+      <div class="gegenueber">
+        <div class="gegenueber-col">
+          <h4>Dreibund (1882)</h4>
+          <ul>
+            <li>Deutschland</li>
+            <li>Oesterreich-Ungarn</li>
+            <li>Italien</li>
+          </ul>
+        </div>
+        <div class="gegenueber-vs">vs.</div>
+        <div class="gegenueber-col">
+          <h4>Triple Entente</h4>
+          <ul>
+            <li>Frankreich</li>
+            <li>Grossbritannien</li>
+            <li>Russland</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="argument-step">
+        <div class="argument-step-text"></div>
+        <div class="argument-step-fazit">Buendnissystem</div>
+      </div>
+
+      <div class="v-arrow">
+        <svg viewBox="0 0 16 20"><path d="M8 2v14M3 12l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Buendnispflicht erzwingt
+      </div>
+
+      <div class="argument-step">
+        <div class="argument-step-text">
+          Ein lokaler Konflikt zieht automatisch alle Grossmaechte in den Krieg — wie eine Kettenreaktion.
+        </div>
+        <div class="argument-step-fazit">Kettenreaktion</div>
+      </div>
+
+    </div>
+
+    <hr class="he-separator">
+
+    <!-- MOD 3: MERKBOX statt einfacher Merksatz-Leiste -->
+    <div class="he-merkbox">
+      <div class="he-merkbox-label">Merke</div>
+      <div class="he-merkbox-text">
+        Europa war vor 1914 ein Pulverfass: Imperialismus, Nationalismus und Wettruestung spalteten den Kontinent in zwei feindliche Buendnisbloecke. Die Buendnispflichten machten aus jedem lokalen Konflikt eine europaweite Kettenreaktion — ein Funke genuegt.
+      </div>
+    </div>
+
+    <!-- MOD 4: TRANSFER / Motivation zum Fortschreiten -->
+    <div class="he-transfer">
+      <div class="he-transfer-frage">Doch wo ist der Funke? Was loest die Kettenreaktion tatsaechlich aus?</div>
+      <div class="he-transfer-vorschau">→ Naechste Stunde: Das Attentat von Sarajevo (28. Juni 1914)</div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- GENERISCHES SCHEMA: SCPL-Mapping                             -->
+<!-- ============================================================ -->
+
+<div class="schema">
+  <h2>Generisches Hefteintrag-Schema (SCPL-Mapping)</h2>
+  <pre>
+┌────────────────────────────────────────────────────────┐
+│  STUNDENFRAGE (problemorientiert, schuelernahh)        │
+│  Datum / Fach / Sequenzbezug                           │
+│────────────────────────────────────────────────────────│
+│                                                        │
+│  ┌─ SITUATION (Ausgangslage) ─────────────────────┐   │
+│  │  Kontextsatz + Fachbegriff-Tags                 │   │
+│  └─────────────────────────────────────────────────┘   │
+│            │                                           │
+│            ▼  verschaerft sich durch / fuehrt zu       │
+│                                                        │
+│  ┌─ COMPLICATION (Zuspitzung) ────────────────────┐   │
+│  │  Argumentationsschritt          ← Fachbegriff   │   │
+│  │  ggf. Gegenueberstellung / Tabelle / Zeitleiste │   │
+│  └─────────────────────────────────────────────────┘   │
+│            │                                           │
+│            ▼  erzwingt / bedeutet                      │
+│                                                        │
+│  ┌─ PROBLEM (Konsequenz) ─────────────────────────┐   │
+│  │  Zentrales Problem benennen     ← Fachbegriff   │   │
+│  └─────────────────────────────────────────────────┘   │
+│                                                        │
+│  ══════════════════════════════════════════════════════ │
+│  ┌─ MERKBOX ──────────────────────────────────────┐   │
+│  │  LOESUNG = Qualifizierte Antwort auf die        │   │
+│  │  Stundenfrage. Verdichtet S+C+P in 1-3 Saetze. │   │
+│  └─────────────────────────────────────────────────┘   │
+│                                                        │
+│  TRANSFER: Offene Frage → Motivation naechste UE       │
+└────────────────────────────────────────────────────────┘
+
+SCPL-Zonen und ihre Funktion:
+  S (Situation)     = Kontext setzen, Vorwissen aktivieren
+  C (Complication)  = Spannung aufbauen, Zuspitzung zeigen
+  P (Problem)       = Kernproblem benennen, Fachbegriff verankern
+  L (Loesung)       = Merksatz als qualifizierte Antwort
+
+Visuelle Mittel pro Zone:
+  S → Fachbegriff-Tags (farbig), kurzer Kontextsatz
+  C → Vertikale Pfeile, horizontale Fachbegriff-Verankerung,
+      Gegenueberstellungen, Zeitleisten, Tabellen
+  P → Hervorgehobener Satz mit Fachbegriff
+  L → Umrahmte Merkbox mit "Merke"-Label
+  </pre>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+## Ideen zur erhöhung der qualität des rätsels/fragebogens/aufgaben
+- infrastruktur ähnlich zu Agent_Material anlegen 
+	- Rolle des Agent_Rätsel: Brücke zwischen konkretem Material der Mappe und Fragebogenstruktur bilden 
+	- Nach festlegung der Fragetypen und Anordnung der Fragen übergabe an Sub_Agenten, die je als experten in einer art der fragetyp-erstellung trainiert sind (erweiterbar in zukunft)
+		- Was wird an diese Sub-Agenten jeweils übergeben? Sie müssten ja mindestens auf ihren fragetyp geschärfte qualitätsmanagement-informationen enthalten (wozu genau dient der fragetyp didaktisch? Was ist das ziel? Was sind gütekriterien bei der erstellung? sowie von Agent_Raetsel angeleitet werden, den konkret von ihrer Aufgabenstellung abzudeckenden/zu operationalisierenden Materialinhalt abzurufen) 
+		- Welche deliverables sollten diese Sub_Agenten dann wohin übergeben?
+		- Wie wird die fachgemäße technische implementierung sichergestellt? funktionen wie drag-drop implementierung, fomratierung der einzelnen fragetypen etc müssen irgednwie vorgehalten werden. Wird das potentiell zu viel im Agent_Technik (oder wo dieser schritt bisher im workflow verankert ist?) könnte dieser entsprechend vorentlastet werden? 

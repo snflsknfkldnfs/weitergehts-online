@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>v3.5 Layout-Prototyp — Fragebogen Notizbuch-Stil</title>
+<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat:wght@400;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   v3.5 LAYOUT-PROTOTYP
+   Zweck: Visueller Proof-of-Concept fuer
+   - 2/3-1/3 Grid (Material | Fragebogen)
+   - Notizbuch-Stil Fragebogen (Arbeitsblatt)
+   - Abgrenzung zum Hefteintrag (Sicherung)
+   - Material-Fortschritt + Aufgaben-Dots
+   - Ueberleitung-Optimierung
+   ============================================ */
+
+:root {
+  /* GPG Theme Farben (bestehend) */
+  --color-primary: #1B2A4A;
+  --color-secondary: #C9A84C;
+  --color-bg: #F5F0E8;
+  --color-surface: #EDE8DD;
+  --color-text: #2C2416;
+  --color-success: #2D6A4F;
+  --color-error: #9B2226;
+  --color-muted: #6b6358;
+  --color-border: #c5bfb3;
+
+  /* Fragebogen Farben (NEU) */
+  --fb-primary: #2952A3;
+  --fb-highlight: #FFF176;
+  --fb-success: #388E3C;
+  --fb-error: #C62828;
+  --fb-hint: #78909C;
+  --fb-bg: #FFFFFF;
+  --fb-grid: #E8E8E8;
+  --fb-grid-opacity: 0.4;
+
+  /* Hefteintrag Farben (bestehend, zum Vergleich) */
+  --he-bg: #fefcf3;
+  --he-line: #c5bfb3;
+  --he-margin: #e57373;
+
+  /* Fonts */
+  --font-heading: Georgia, 'Times New Roman', serif;
+  --font-body: system-ui, -apple-system, sans-serif;
+  --font-fragebogen: 'Architects Daughter', cursive;
+  --font-hefteintrag-heading: 'Caveat', cursive;
+  --font-hefteintrag-body: 'Patrick Hand', cursive;
+
+  /* Spacing */
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  padding: var(--space-lg);
+}
+
+h1 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  font-size: 1.8rem;
+  margin-bottom: var(--space-sm);
+}
+
+h2 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  font-size: 1.4rem;
+  margin-bottom: var(--space-md);
+}
+
+.prototyp-label {
+  background: var(--color-primary);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: var(--space-md);
+}
+
+/* ============================================
+   EINSTIEG (full-width)
+   ============================================ */
+
+.einstieg {
+  background: var(--color-surface);
+  border-left: 4px solid var(--color-secondary);
+  padding: var(--space-lg);
+  border-radius: 0 8px 8px 0;
+  margin-bottom: var(--space-xl);
+  max-width: 960px;
+  margin-inline: auto;
+}
+
+.einstieg__narrativ {
+  font-style: italic;
+  margin-bottom: var(--space-sm);
+}
+
+.einstieg__problemstellung {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+/* ============================================
+   ERARBEITUNG: 2/3-1/3 Grid
+   ============================================ */
+
+.erarbeitung {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+  max-width: 1400px;
+  margin-inline: auto;
+  margin-bottom: var(--space-xl);
+}
+
+@media (max-width: 1023px) {
+  .erarbeitung {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   MATERIALIEN (linke 2/3)
+   ============================================ */
+
+.materialien {
+  min-width: 0;
+}
+
+/* --- Material-Fortschritt --- */
+
+.material-fortschritt {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-surface);
+  border-radius: 8px;
+}
+
+.material-fortschritt__text {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+
+.material-fortschritt__dots {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.material-fortschritt__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-border);
+  transition: all 200ms ease;
+}
+
+.material-fortschritt__dot--gesehen {
+  background: var(--color-primary);
+}
+
+.material-fortschritt__dot--aktuell {
+  background: var(--color-secondary);
+  width: 14px;
+  height: 14px;
+  margin-top: -2px;
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.3);
+}
+
+.material-fortschritt__funktion {
+  font-size: 0.75rem;
+  color: var(--color-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* --- Material-Karten --- */
+
+.material {
+  background: white;
+  padding: var(--space-lg);
+  border-radius: 8px;
+  margin-bottom: var(--space-md);
+  border-left: 4px solid var(--color-primary);
+}
+
+.material--quelle {
+  border-left-color: var(--color-secondary);
+  font-style: italic;
+}
+
+.material--bild {
+  border-left-color: var(--color-success);
+  text-align: center;
+}
+
+.material__titel {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.material__inhalt {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.material__quelle {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  margin-top: var(--space-sm);
+}
+
+/* --- Ueberleitung (NEU: optimiert) --- */
+
+.ueberleitung {
+  text-align: center;
+  padding: var(--space-lg) var(--space-md);
+  margin: var(--space-sm) 0;
+  position: relative;
+}
+
+.ueberleitung::before {
+  content: '▽';
+  display: block;
+  font-size: 1.2rem;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-sm);
+  opacity: 0.6;
+}
+
+.ueberleitung__text {
+  font-style: italic;
+  color: var(--color-muted);
+  font-size: 1.05rem;
+  line-height: 1.5;
+  max-width: 600px;
+  margin-inline: auto;
+  background: linear-gradient(180deg, transparent 0%, rgba(201,168,76,0.06) 30%, rgba(201,168,76,0.06) 70%, transparent 100%);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 4px;
+}
+
+.ueberleitung__funktion {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-secondary);
+  margin-top: var(--space-sm);
+  padding: 2px 8px;
+  border: 1px solid var(--color-secondary);
+  border-radius: 3px;
+}
+
+/* ============================================
+   FRAGEBOGEN — NOTIZBUCH-STIL (rechte 1/3)
+   ============================================ */
+
+.fragebogen {
+  position: sticky;
+  top: 1rem;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+  background: var(--fb-bg);
+  border-radius: 0 0 8px 8px;
+  box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.08);
+  /* Karo-Muster */
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 23px,
+      var(--fb-grid) 23px,
+      var(--fb-grid) 24px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 23px,
+      var(--fb-grid) 23px,
+      var(--fb-grid) 24px
+    );
+  background-size: 24px 24px;
+  background-position: 12px 12px;
+}
+
+/* Lochrand oben */
+.fragebogen__lochrand {
+  background: var(--fb-primary);
+  height: 36px;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  position: relative;
+}
+
+.fragebogen__lochrand::before,
+.fragebogen__lochrand::after,
+.fragebogen__lochrand span {
+  content: '';
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-bg);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.15);
+}
+
+.fragebogen__header {
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 2px solid var(--fb-primary);
+}
+
+.fragebogen__titel {
+  font-family: var(--font-fragebogen);
+  font-size: 1.2rem;
+  color: var(--fb-primary);
+  margin: 0;
+}
+
+.fragebogen__inner {
+  padding: var(--space-md) var(--space-lg);
+}
+
+/* --- Aufgaben im Fragebogen --- */
+
+.aufgabe {
+  padding: var(--space-md) 0;
+  border-bottom: 2px dashed var(--fb-grid);
+}
+
+.aufgabe:last-of-type {
+  border-bottom: none;
+}
+
+.aufgabe__nummer {
+  font-family: var(--font-fragebogen);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid var(--fb-primary);
+  color: var(--fb-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+}
+
+.aufgabe__frage {
+  font-family: var(--font-fragebogen);
+  font-size: 1rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+  line-height: 1.5;
+}
+
+.aufgabe__material-verweis {
+  font-size: 0.8rem;
+  color: var(--fb-hint);
+  margin-bottom: var(--space-sm);
+}
+
+.aufgabe__material-verweis a {
+  color: var(--fb-primary);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--fb-primary);
+}
+
+/* MC-Optionen im Arbeitsblatt-Stil */
+.aufgabe__optionen {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.aufgabe__option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 150ms ease;
+  font-size: 0.9rem;
+}
+
+.aufgabe__option:hover {
+  background: rgba(41, 82, 163, 0.06);
+}
+
+.aufgabe__option input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--fb-primary);
+  border-radius: 50%;
+  flex-shrink: 0;
+  position: relative;
+  cursor: pointer;
+}
+
+.aufgabe__option input[type="radio"]:checked {
+  border-color: var(--fb-primary);
+  background: var(--fb-primary);
+}
+
+.aufgabe__option input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+/* Lueckentext-Input */
+.aufgabe__luecke {
+  border: none;
+  border-bottom: 2px dashed var(--fb-primary);
+  background: transparent;
+  font-family: var(--font-fragebogen);
+  font-size: 1rem;
+  color: var(--fb-primary);
+  padding: 2px 4px;
+  width: 120px;
+  text-align: center;
+  outline: none;
+  transition: border-color 200ms ease;
+}
+
+.aufgabe__luecke:focus {
+  border-bottom-style: solid;
+  border-bottom-color: var(--color-secondary);
+}
+
+/* Feedback */
+.aufgabe__feedback {
+  margin-top: var(--space-sm);
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  display: none;
+}
+
+.aufgabe__feedback--success {
+  display: block;
+  background: rgba(56, 142, 60, 0.1);
+  border-left: 3px solid var(--fb-success);
+  color: var(--fb-success);
+}
+
+.aufgabe__feedback--error {
+  display: block;
+  background: rgba(198, 40, 40, 0.1);
+  border-left: 3px solid var(--fb-error);
+  color: var(--fb-error);
+}
+
+/* Submit-Button */
+.aufgabe__submit {
+  margin-top: var(--space-sm);
+  padding: 6px 16px;
+  background: var(--fb-primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 150ms ease;
+}
+
+.aufgabe__submit:hover {
+  background: #1e3d7a;
+}
+
+/* --- Solved State --- */
+.aufgabe--solved .aufgabe__nummer {
+  border-color: var(--fb-success);
+  color: var(--fb-success);
+  background: rgba(56, 142, 60, 0.08);
+}
+
+/* --- Aufgaben-Fortschritt (Dots) --- */
+
+.aufgaben-fortschritt {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) 0;
+  border-top: 1px solid var(--fb-grid);
+  margin-top: var(--space-md);
+}
+
+.aufgaben-fortschritt__text {
+  font-family: var(--font-fragebogen);
+  font-size: 0.85rem;
+  color: var(--fb-hint);
+}
+
+.aufgaben-fortschritt__dots {
+  display: flex;
+  gap: 6px;
+}
+
+.aufgaben-fortschritt__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--fb-hint);
+  background: transparent;
+  transition: all 200ms ease;
+}
+
+.aufgaben-fortschritt__dot--solved {
+  border-color: var(--fb-success);
+  background: var(--fb-success);
+}
+
+.aufgaben-fortschritt__dot--current {
+  border-color: var(--fb-primary);
+  background: var(--fb-primary);
+  box-shadow: 0 0 0 3px rgba(41, 82, 163, 0.2);
+}
+
+/* --- Code-Eingabe --- */
+
+.code-eingabe {
+  padding: var(--space-md) 0;
+  text-align: center;
+}
+
+.code-eingabe__label {
+  font-family: var(--font-fragebogen);
+  font-size: 0.9rem;
+  color: var(--fb-primary);
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+
+.code-eingabe__input {
+  font-family: var(--font-fragebogen);
+  font-size: 1.4rem;
+  text-align: center;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: 2px dashed var(--fb-primary);
+  background: transparent;
+  padding: 8px 16px;
+  border-radius: 4px;
+  width: 180px;
+  color: var(--fb-primary);
+  outline: none;
+}
+
+.code-eingabe__input:focus {
+  border-style: solid;
+  box-shadow: 0 0 0 3px rgba(41, 82, 163, 0.15);
+}
+
+/* ============================================
+   SICHERUNG — HEFTEINTRAG (bestehend, zum Vergleich)
+   ============================================ */
+
+.sicherung {
+  max-width: 960px;
+  margin-inline: auto;
+  margin-top: var(--space-xl);
+}
+
+.hefteintrag {
+  background: var(--he-bg);
+  padding: var(--space-xl) var(--space-xl) var(--space-xl) calc(var(--space-xl) + 40px);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  /* Linien */
+  background-image:
+    repeating-linear-gradient(
+      transparent,
+      transparent 31px,
+      var(--he-line) 31px,
+      var(--he-line) 32px
+    );
+  background-size: 100% 32px;
+  background-position: 0 24px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Roter Rand */
+.hefteintrag::before {
+  content: '';
+  position: absolute;
+  left: 40px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--he-margin);
+  opacity: 0.5;
+}
+
+/* Lochpunkte links */
+.hefteintrag::after {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 60px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-bg);
+  box-shadow:
+    0 80px 0 var(--color-bg),
+    0 160px 0 var(--color-bg);
+}
+
+.hefteintrag__stundenfrage {
+  font-family: var(--font-hefteintrag-heading);
+  font-size: 1.5rem;
+  color: var(--fb-primary);
+  border-bottom: 2px solid var(--fb-primary);
+  padding-bottom: 4px;
+  margin-bottom: var(--space-lg);
+  line-height: 32px;
+}
+
+.hefteintrag__inhalt {
+  font-family: var(--font-hefteintrag-body);
+  font-size: 1.1rem;
+  line-height: 32px;
+  color: var(--color-text);
+}
+
+.hefteintrag__fachbegriff {
+  font-family: var(--font-hefteintrag-heading);
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.hefteintrag__merkbox {
+  background: rgba(255, 241, 118, 0.25);
+  border: 1px solid var(--color-secondary);
+  border-radius: 4px;
+  padding: var(--space-sm) var(--space-md);
+  margin: var(--space-md) 0;
+  font-family: var(--font-hefteintrag-heading);
+  font-size: 1.15rem;
+  line-height: 32px;
+}
+
+/* ============================================
+   VERGLEICHSANSICHT
+   ============================================ */
+
+.vergleich {
+  max-width: 1200px;
+  margin: var(--space-xl) auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+}
+
+@media (max-width: 768px) {
+  .vergleich {
+    grid-template-columns: 1fr;
+  }
+}
+
+.vergleich__label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: var(--space-sm);
+}
+
+.vergleich__label--fragebogen { background: var(--fb-primary); }
+.vergleich__label--hefteintrag { background: var(--he-margin); }
+
+/* ============================================
+   UTILITY
+   ============================================ */
+
+.section-divider {
+  border: none;
+  border-top: 2px solid var(--color-border);
+  margin: var(--space-xl) auto;
+  max-width: 960px;
+}
+
+.demo-note {
+  max-width: 960px;
+  margin: var(--space-md) auto;
+  padding: var(--space-md);
+  background: rgba(27, 42, 74, 0.05);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+</style>
+</head>
+<body>
+
+<div style="max-width: 960px; margin: 0 auto var(--space-xl);">
+  <span class="prototyp-label">v3.5 Prototyp</span>
+  <h1>Layout-Redesign: 2/3-1/3 + Notizbuch-Fragebogen</h1>
+  <p class="demo-note">
+    Dieser Prototyp demonstriert das neue Layout mit echten Inhalten aus Mappe 1 (Pulverfass Europa).
+    Oben: Erarbeitungsphase (Material + Fragebogen side-by-side). Unten: Vergleich Fragebogen vs. Hefteintrag.
+  </p>
+</div>
+
+<!-- ========================================
+     EINSTIEG (full-width)
+     ======================================== -->
+
+<div class="einstieg">
+  <p class="einstieg__narrativ">
+    Europa im Jahr 1914: Ein Kontinent auf dem Pulverfass. Machtgierige Imperien,
+    geheime Buendnisse und ein Wettruesten, das seinesgleichen sucht.
+    Was musste passieren, damit der Funke uebersprang?
+  </p>
+  <p class="einstieg__problemstellung">
+    Warum war Europa um 1900 ein "Pulverfass" — und warum konnte ein einzelnes Attentat
+    den grossen Krieg ausloesen?
+  </p>
+</div>
+
+<!-- ========================================
+     ERARBEITUNG: 2/3 Material | 1/3 Fragebogen
+     ======================================== -->
+
+<div class="erarbeitung">
+
+  <!-- ===== MATERIALIEN (2/3) ===== -->
+  <div class="materialien">
+
+    <!-- Material-Fortschritt -->
+    <div class="material-fortschritt">
+      <span class="material-fortschritt__text">Material 3 von 9</span>
+      <div class="material-fortschritt__dots">
+        <div class="material-fortschritt__dot material-fortschritt__dot--gesehen"></div>
+        <div class="material-fortschritt__dot material-fortschritt__dot--gesehen"></div>
+        <div class="material-fortschritt__dot material-fortschritt__dot--aktuell"></div>
+        <div class="material-fortschritt__dot"></div>
+        <div class="material-fortschritt__dot"></div>
+        <div class="material-fortschritt__dot"></div>
+        <div class="material-fortschritt__dot"></div>
+        <div class="material-fortschritt__dot"></div>
+        <div class="material-fortschritt__dot"></div>
+      </div>
+      <span class="material-fortschritt__funktion">Erarbeitung</span>
+    </div>
+
+    <!-- Material 1: Darstellungstext -->
+    <article class="material">
+      <h3 class="material__titel">Der europaeische Imperialismus</h3>
+      <div class="material__inhalt">
+        <p>Im 19. Jahrhundert teilten die europaeischen Grossmaechte weite Teile Afrikas
+        und Asiens unter sich auf. Grossbritannien, Frankreich, das Deutsche Reich,
+        Russland und andere Staaten wetteiferten um Kolonien, Rohstoffe und Einflussgebiete.
+        Dieser Wettlauf um die Welt — der Imperialismus — fuehrte zu wachsenden
+        Spannungen zwischen den Maechten.</p>
+        <p>Besonders das Deutsche Reich unter Kaiser Wilhelm II. forderte seinen "Platz an der Sonne":
+        mehr Kolonien, mehr Einfluss, mehr Macht. Das beunruhigte vor allem Grossbritannien
+        und Frankreich, die ihre Vormachtstellung bedroht sahen.</p>
+      </div>
+      <p class="material__quelle">Vgl. Sachanalyse Imperialismus, basierend auf Wikipedia-Artikeln</p>
+    </article>
+
+    <!-- Ueberleitung -->
+    <div class="ueberleitung">
+      <p class="ueberleitung__text">
+        Der Wettlauf um Kolonien war nur eine Dimension der Rivalitaet.
+        Eine Karikatur aus der Zeit zeigt, wie Europa selbst das Machtstreben wahrnahm...
+      </p>
+      <span class="ueberleitung__funktion">Erarbeitung</span>
+    </div>
+
+    <!-- Material 2: Bildquelle -->
+    <article class="material material--bild">
+      <h3 class="material__titel">Karikatur: "Der Koloss von Rhodos"</h3>
+      <div class="material__inhalt" style="padding: 20px; background: #f0ece4; border-radius: 4px;">
+        <div style="width: 100%; height: 200px; background: #d8d2c6; border-radius: 4px;
+                    display: flex; align-items: center; justify-content: center; color: #8a8279;">
+          [Bildplatzhalter: Karikatur Cecil Rhodes als Koloss]
+        </div>
+      </div>
+      <p class="material__quelle">Punch Magazine, 1892. Quelle: Wikimedia Commons (gemeinfrei)</p>
+    </article>
+
+    <!-- Ueberleitung -->
+    <div class="ueberleitung">
+      <p class="ueberleitung__text">
+        Kaiser Wilhelm II. wollte nicht zurueckstehen — er verfolgte eine aggressive
+        Weltpolitik, die Europa weiter destabilisierte.
+      </p>
+      <span class="ueberleitung__funktion">Vertiefung</span>
+    </div>
+
+    <!-- Material 3: Quellentext -->
+    <article class="material material--quelle">
+      <h3 class="material__titel">Kaiser Wilhelm II. ueber Deutschlands Zukunft (1901)</h3>
+      <blockquote class="material__inhalt">
+        <p>"Niemand darf in Frage stellen, dass die Zukunft Deutschlands auf dem Wasser liegt.
+        In allen Teilen der Erde zeigt sich der wachsende Einfluss unserer Nation."</p>
+      </blockquote>
+      <p class="material__quelle">Kaiser Wilhelm II., Rede in Hamburg, 1901</p>
+    </article>
+
+  </div>
+
+  <!-- ===== FRAGEBOGEN (1/3, Notizbuch-Stil) ===== -->
+  <div class="fragebogen">
+
+    <!-- Lochrand -->
+    <div class="fragebogen__lochrand"><span></span></div>
+
+    <!-- Header -->
+    <div class="fragebogen__header">
+      <h2 class="fragebogen__titel">Arbeitsblatt</h2>
+    </div>
+
+    <div class="fragebogen__inner">
+
+      <!-- Aufgabe 1 (geloest) -->
+      <div class="aufgabe aufgabe--solved">
+        <div class="aufgabe__nummer">1</div>
+        <p class="aufgabe__frage">Was bedeutet "Imperialismus"?</p>
+        <p class="aufgabe__material-verweis">
+          Arbeite mit: <a href="#">Der europaeische Imperialismus</a>
+        </p>
+        <div class="aufgabe__optionen">
+          <label class="aufgabe__option">
+            <input type="radio" name="a1" disabled>
+            <span>Eine Regierungsform</span>
+          </label>
+          <label class="aufgabe__option" style="background: rgba(56,142,60,0.08); border-radius: 4px;">
+            <input type="radio" name="a1" checked disabled>
+            <span>Das Streben nach Kolonien und Macht</span>
+          </label>
+          <label class="aufgabe__option">
+            <input type="radio" name="a1" disabled>
+            <span>Ein Handelsabkommen</span>
+          </label>
+        </div>
+        <div class="aufgabe__feedback aufgabe__feedback--success">
+          Richtig! Imperialismus beschreibt das Streben nach Kolonien, Rohstoffen und weltweitem Einfluss.
+        </div>
+      </div>
+
+      <!-- Aufgabe 2 (aktiv) -->
+      <div class="aufgabe">
+        <div class="aufgabe__nummer">2</div>
+        <p class="aufgabe__frage">
+          Welchen Anspruch formulierte Kaiser Wilhelm II. fuer das Deutsche Reich?
+        </p>
+        <p class="aufgabe__material-verweis">
+          Arbeite mit: <a href="#">Kaiser Wilhelm II.</a>, <a href="#">Karikatur</a>
+        </p>
+        <div class="aufgabe__optionen">
+          <label class="aufgabe__option">
+            <input type="radio" name="a2">
+            <span>Rueckzug aus der Weltpolitik</span>
+          </label>
+          <label class="aufgabe__option">
+            <input type="radio" name="a2">
+            <span>Einen "Platz an der Sonne"</span>
+          </label>
+          <label class="aufgabe__option">
+            <input type="radio" name="a2">
+            <span>Buendnis mit Grossbritannien</span>
+          </label>
+        </div>
+        <button class="aufgabe__submit">Pruefen</button>
+      </div>
+
+      <!-- Aufgabe 3 (Lueckentext, offen) -->
+      <div class="aufgabe">
+        <div class="aufgabe__nummer">3</div>
+        <p class="aufgabe__frage">
+          Der Wettlauf um Kolonien fuehrte zu wachsenden
+          <input class="aufgabe__luecke" type="text" placeholder="...">
+          zwischen den europaeischen Maechten.
+        </p>
+        <button class="aufgabe__submit">Pruefen</button>
+      </div>
+
+      <!-- Aufgaben-Fortschritt -->
+      <div class="aufgaben-fortschritt">
+        <span class="aufgaben-fortschritt__text">1 / 6</span>
+        <div class="aufgaben-fortschritt__dots">
+          <div class="aufgaben-fortschritt__dot aufgaben-fortschritt__dot--solved"></div>
+          <div class="aufgaben-fortschritt__dot aufgaben-fortschritt__dot--current"></div>
+          <div class="aufgaben-fortschritt__dot"></div>
+          <div class="aufgaben-fortschritt__dot"></div>
+          <div class="aufgaben-fortschritt__dot"></div>
+          <div class="aufgaben-fortschritt__dot"></div>
+        </div>
+      </div>
+
+      <!-- Code-Eingabe -->
+      <div class="code-eingabe">
+        <label class="code-eingabe__label">Loesungscode eingeben:</label>
+        <input class="code-eingabe__input" type="text" maxlength="10" placeholder="_ _ _ _ _">
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ========================================
+     VERGLEICHSANSICHT: Fragebogen vs. Hefteintrag
+     ======================================== -->
+
+<hr class="section-divider">
+
+<div style="max-width: 960px; margin: var(--space-xl) auto;">
+  <h2>Visueller Vergleich: Fragebogen (Erarbeitung) vs. Hefteintrag (Sicherung)</h2>
+  <p class="demo-note">
+    Beide Elemente nutzen handschriftliche Fonts, sind aber durch Farbschema, Muster und
+    Metapher klar unterscheidbar: Arbeitsblatt (kariert, tintenblau) vs. Schulheft (liniert, creme).
+  </p>
+</div>
+
+<div class="vergleich">
+
+  <!-- Fragebogen (Mini-Version) -->
+  <div>
+    <span class="vergleich__label vergleich__label--fragebogen">Fragebogen — Erarbeitung</span>
+    <div class="fragebogen" style="position: static; max-height: none;">
+      <div class="fragebogen__lochrand"><span></span></div>
+      <div class="fragebogen__header">
+        <h2 class="fragebogen__titel">Arbeitsblatt</h2>
+      </div>
+      <div class="fragebogen__inner">
+        <div class="aufgabe">
+          <div class="aufgabe__nummer">1</div>
+          <p class="aufgabe__frage">Was bedeutet "Imperialismus"?</p>
+          <div class="aufgabe__optionen">
+            <label class="aufgabe__option">
+              <input type="radio" name="demo1">
+              <span>Eine Regierungsform</span>
+            </label>
+            <label class="aufgabe__option">
+              <input type="radio" name="demo1">
+              <span>Das Streben nach Kolonien</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="demo-note" style="margin-top: var(--space-sm);">
+      Karierter Hintergrund, Tintenblau, Architects Daughter, Lochrand oben = "Klausurbogen"
+    </p>
+  </div>
+
+  <!-- Hefteintrag (Mini-Version) -->
+  <div>
+    <span class="vergleich__label vergleich__label--hefteintrag">Hefteintrag — Sicherung</span>
+    <div class="hefteintrag">
+      <h3 class="hefteintrag__stundenfrage">Warum war Europa ein Pulverfass?</h3>
+      <div class="hefteintrag__inhalt">
+        <p>Um 1900 stritten die europaeischen Grossmaechte um
+        <span class="hefteintrag__fachbegriff">Kolonien</span> und
+        <span class="hefteintrag__fachbegriff">Einflussgebiete</span>.</p>
+        <div class="hefteintrag__merkbox">
+          Merke: Der Imperialismus fuehrte zu wachsenden Spannungen, weil
+          alle Maechte mehr Macht wollten — besonders das Deutsche Reich
+          unter Kaiser Wilhelm II.
+        </div>
+      </div>
+    </div>
+    <p class="demo-note" style="margin-top: var(--space-sm);">
+      Linierter Hintergrund, Creme, Caveat + Patrick Hand, Roter Rand = "Schulheft"
+    </p>
+  </div>
+
+</div>
+
+<!-- ========================================
+     SICHERUNG (full-width, zum Kontext)
+     ======================================== -->
+
+<hr class="section-divider">
+
+<div class="sicherung">
+  <h2>Sicherung (nach Code-Eingabe sichtbar)</h2>
+  <div class="hefteintrag" style="margin-top: var(--space-md);">
+    <h3 class="hefteintrag__stundenfrage">Warum war Europa um 1900 ein "Pulverfass"?</h3>
+    <div class="hefteintrag__inhalt">
+      <p>Um 1900 stritten die europaeischen Grossmaechte um
+      <span class="hefteintrag__fachbegriff">Kolonien</span>,
+      <span class="hefteintrag__fachbegriff">Rohstoffe</span> und
+      <span class="hefteintrag__fachbegriff">Einflussgebiete</span>.
+      Dieser Wettlauf — der <span class="hefteintrag__fachbegriff">Imperialismus</span> —
+      verschaerfte die Spannungen zwischen den Maechten.</p>
+
+      <p>Kaiser <span class="hefteintrag__fachbegriff">Wilhelm II.</span> forderte fuer
+      das Deutsche Reich einen "Platz an der Sonne". Er baute die Flotte aus
+      (<span class="hefteintrag__fachbegriff">Flottenruestung</span>) und provozierte
+      damit Grossbritannien.</p>
+
+      <p>Geheime <span class="hefteintrag__fachbegriff">Buendnissysteme</span> teilten
+      Europa in zwei Lager: den <span class="hefteintrag__fachbegriff">Dreibund</span>
+      und die <span class="hefteintrag__fachbegriff">Triple Entente</span>.
+      Jeder lokale Konflikt konnte so zum Flaechenbrand werden.</p>
+
+      <div class="hefteintrag__merkbox">
+        Merke: Europa war ein Pulverfass, weil Imperialismus, Nationalismus,
+        Militarismus und starre Buendnissysteme jeden kleinen Konflikt in einen
+        grossen Krieg verwandeln konnten. Das Attentat von Sarajevo 1914 war
+        der Funke, der das Fass entzuendete.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="height: 4rem;"></div>
+
+</body>
+</html>
