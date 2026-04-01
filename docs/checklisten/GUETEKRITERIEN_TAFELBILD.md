@@ -137,65 +137,77 @@ Gewichtete Kriterien fuer den AGENT_TAFELBILD Q-Gate. Drei Prioritaetsstufen: **
 |---|---|---|---|
 | G11 | **Vermutungs-Sektion** | Optional: 1-2 Schueler-Hypothesen als "Seitentafel"-Element (werden durch Material bestaetigt/widerlegt) | Empirie: "Vermutungen:" in mehreren TBs |
 | G12 | **Sprachregister-Passung** | Sprachregister passt zum Themencharakter (analytisch fuer Politik, erfahrungsbezogen fuer Alltag) | Empirie: Sprachregister-Progression |
-| G13 | **Stundenfrage als Titel** | TB-Titel als Frage formuliert (entspricht Stundenziel) | Empirie: Alle 8 TBs nutzen Frage-Titel |
+| G13 | **Stundenfrage als Titel** | Hefteintrag-Titel als problemorientierte, schuelernahe Frage formuliert (max. 12 Woerter). Merksatz in Merkbox ist die qualifizierte Antwort. | Empirie: Alle 8 TBs nutzen Frage-Titel. v3.1 Design-Entscheidung: Stundenfrage als Pflicht. |
+| G14 | **SCPL-Kohaerenz** | Jede SCPL-Zone baut logisch auf der vorherigen auf: Situation → Complication → Problem → Loesung. Keine Zone darf isoliert stehen oder eine vorherige Zone inhaltlich widersprechen. Loesung (Merkbox) muss die Stundenfrage direkt beantworten. | v3.1 SCPL-Evaluation (EVALUATION_SCPL_HEFTEINTRAG.md) |
 
 ---
 
-## 6. Output-Format fuer AGENT_TAFELBILD
+## 6. Output-Format fuer AGENT_TAFELBILD (v3.1 — SCPL)
 
-### A. JSON-Repraesentation (fuer Engine)
+### JSON-Repraesentation (fuer Engine → CSS-Hefteintrag)
 
 ```json
 {
-  "titel": "Stundenfrage als Tafelbild-Titel",
+  "stundenfrage": "Problemorientierte Frage, max. 12 Woerter?",
   "ordnungsmuster": "kausal | chronologisch | kategorial",
-  "knoten": [
-    {
-      "id": "k1-1",
-      "text": "Schlagwort oder Kurzbegriff",
-      "typ": "kernbegriff | kategorie | ursache | wirkung | akteur | ereignis",
-      "merksatz": "Ganzer Satz, der die Kernerkenntnis zu diesem Knoten formuliert. Max. 15 Woerter.",
-      "skript_referenz": "[Chunk-ID, §N]"
-    }
-  ],
-  "verbindungen": [
-    {
-      "von": "k1-1",
-      "nach": "k1-2",
-      "label": "Praezises Label, 2-3 Woerter"
-    }
-  ],
+  "scpl": {
+    "situation": {
+      "kontextsatz": "1-2 Saetze Ausgangslage. Fachbegriffe per Doppelpunkt/Gedankenstrich.",
+      "fachbegriffe": ["Begriff1", "Begriff2"]
+    },
+    "complication": [
+      {
+        "schritt": "Sachverhalt als Satz, Fachbegriff am Ende nach Doppelpunkt: Fachbegriff.",
+        "fachbegriff": "Fachbegriff",
+        "darstellung": null
+      },
+      {
+        "schritt": null,
+        "fachbegriff": "Fachbegriff",
+        "darstellung": {
+          "typ": "gegenueberstellung",
+          "links": { "titel": "Titel", "punkte": ["A", "B", "C"] },
+          "rechts": { "titel": "Titel", "punkte": ["D", "E", "F"] }
+        }
+      }
+    ],
+    "problem": {
+      "satz": "Zentrales Problem, Fachbegriff am Ende: Fachbegriff.",
+      "fachbegriff": "Fachbegriff"
+    },
+    "loesung": [
+      "Merksatz 1 = Kernerkenntnis 1. Max. 15 Woerter.",
+      "Merksatz 2 = Kernerkenntnis 2. Max. 15 Woerter."
+    ]
+  },
+  "transfer": {
+    "frage": "Kurze offene Frage, max. 10 Woerter"
+  },
   "voraussetzungen": [],
   "kernerkenntnisse": [
-    "Merksatz 1: Ganzer Satz, max. 15 Woerter.",
-    "Merksatz 2: Ganzer Satz, max. 15 Woerter."
-  ]
+    "Merksatz 1",
+    "Merksatz 2"
+  ],
+  "knoten": [],
+  "verbindungen": []
 }
 ```
 
-Felder gegenueber v2.1:
-- **NEU:** `titel` (Stundenfrage), `ordnungsmuster`, `merksatz` pro Knoten, `kernerkenntnisse[]`
-- **NEU:** `skript_referenz` (wird von AGENT_TAFELBILD direkt bei Erstellung gesetzt — SKRIPT liegt bereits vor)
-- **UNVERAENDERT:** `knoten[]`, `verbindungen[]`, `voraussetzungen[]`
+**v3.1 Aenderungen gegenueber v3.0:**
+- **NEU:** `scpl`-Objekt (Situation, Complication[], Problem, Loesung) — primaerer Rendering-Input
+- **NEU:** `transfer.frage` — wird ausserhalb der Hefteintrag-Box gerendert
+- **NEU:** `stundenfrage` als Pflichtfeld (ersetzt `titel`)
+- **LEGACY:** `knoten[]` und `verbindungen[]` bleiben als leere Arrays (Abwaertskompatibilitaet)
+- **Engine-Routing:** `if (scpl) → _renderHefteintragSCPL() | else if (knoten[].length) → Legacy | else → Fallback`
 
-### B. Hefteintrag-Repraesentation (fuer Analogtransfer)
+### Stilregeln
 
-```markdown
-### [Stundenfrage als Titel]
+1. **Fachbegriffe:** NIEMALS in Klammern. Immer per Doppelpunkt oder Gedankenstrich am Satzende.
+2. **Pfeile:** Nur Symbole, kein qualifizierender Text (Ausnahme: fachlich mehrdeutige Verbindung).
+3. **Merkbox:** Gelb umrandet, keine Ueberschrift/Label.
+4. **Transferfrage:** Ausserhalb des Hefteintrags (muendlicher Impuls, nicht verschriftlicht).
 
-[Strukturierte Textbeschreibung des Tafelbilds:
-- Ordnungsmuster benennen ("Die Ursachen lassen sich in drei Bereiche gliedern:")
-- Knoten als Fachbegriffe/Schlagwoerter in **Fettdruck**
-- Verbindungen als Saetze ("**Imperialismus** fuehrt zu **Wettruestung**, weil...")
-- Pfeil-/Klammer-Hinweise fuer Heft-Skizze ("Zeichne einen Pfeil von X nach Y")]
-
-**Merke:**
-- [Kernerkenntnis 1]
-- [Kernerkenntnis 2]
-- [ggf. Kernerkenntnis 3]
-
-Umfang: 80-120 Woerter (ohne Merksaetze)
-```
+Kanonische Referenz fuer Stilregeln: `docs/architektur/EVALUATION_SCPL_HEFTEINTRAG.md`, Section 7-8.
 
 ---
 
@@ -216,6 +228,10 @@ Umfang: 80-120 Woerter (ohne Merksaetze)
 | G8 | Anschaulichkeit | SOLL | PASS/FAIL | Visuelle Elemente: [Liste] |
 | G9 | Progression | SOLL | PASS/FAIL | Voraussetzungen: [Liste] |
 | G10 | Rekapitulierbarkeit | SOLL | PASS/FAIL | Lernweg implizit erkennbar |
+| G11 | Vermutungs-Sektion | KANN | PASS/FAIL | vorhanden/nicht vorhanden |
+| G12 | Sprachregister-Passung | KANN | PASS/FAIL | Register: [X] |
+| G13 | Stundenfrage als Titel | KANN | PASS/FAIL | Frage: "...?" |
+| G14 | SCPL-Kohaerenz | KANN | PASS/FAIL | Jede Zone baut auf vorheriger auf, Merkbox beantwortet Stundenfrage |
 **Gesamt:** PASS / FAIL (G[X] nachgebessert)
 ```
 
@@ -353,9 +369,20 @@ Fuer jeden Knoten kN-M:
 
 ### G13: Stundenfrage als Titel (KANN)
 
-**Input-Daten:** `tafelbild.titel`
-**Prueflogik:** `titel` endet mit "?" (Fragezeichen)
+**Input-Daten:** `tafelbild.stundenfrage`
+**Prueflogik:** `stundenfrage` endet mit "?" (Fragezeichen), max. 12 Woerter, schuelernahes Register.
 **Kein FAIL moeglich** — nur Empfehlung.
+
+### G14: SCPL-Kohaerenz (KANN)
+
+**Input-Daten:** `tafelbild.scpl` (Situation, Complication[], Problem, Loesung)
+**Prueflogik:**
+1. Situation setzt den Kontext, der in Complication aufgegriffen wird
+2. Jeder Complication-Schritt baut auf dem vorherigen auf (keine isolierten Bloecke)
+3. Problem folgt logisch aus der letzten Complication
+4. Loesung (Merkbox) beantwortet die Stundenfrage direkt
+5. Fachbegriffe werden in der Zone eingefuehrt, in der sie inhaltlich relevant sind (nicht vorher)
+**Kein FAIL moeglich** — aber Dokumentation der Kohaerenz-Bewertung. Bei schwacher Kohaerenz: Nachbesserungsempfehlung.
 
 ---
 
