@@ -300,8 +300,9 @@ Das Tafelbild ist nach Q-Gate PASS **eingefroren**. Folgende Regel gilt fuer AGE
 | Datei | Aenderung | Phase |
 |---|---|---|
 | `docs/checklisten/GUETEKRITERIEN_TAFELBILD.md` | NEU — Empirische Guetekriterien | v3-0 |
+| `docs/checklisten/GUETEKRITERIEN_SKRIPT.md` | NEU — Fachdidaktische Guetekriterien SK1-SK15 (Vergegenwärtigung, Elementarisierung, Gestaltungsprinzipien) | v3-0+ |
 | `docs/agents/AGENT_TAFELBILD.md` | NEU — Eigenstaendiger Agent | v3-1 |
-| `docs/agents/AGENT_SKRIPT.md` | AENDERN — Aufgabe 5 entfernen, Wortbudget 600-900, Q6 entfernen | v3-2 |
+| `docs/agents/AGENT_SKRIPT.md` | AENDERN — Aufgabe 5 entfernen, Wortbudget 600-900, Q6 entfernen, Stufe-2-Q-Gate (SK1-SK15) | v3-2 |
 | `docs/architektur/WORKFLOW_v2.md` (v3) | IN-PLACE aktualisiert — Phase 0.4 eingefuegt, SKRIPT/MATERIAL aktualisiert | v3-3 |
 | `docs/agents/AGENT_MATERIAL.md` | AENDERN — Tafelbild fixiert, nur Verifizierung | v3-3 |
 | `docs/agents/ORCHESTRATOR.md` | AENDERN — Agenten-Sequenz | v3-3 |

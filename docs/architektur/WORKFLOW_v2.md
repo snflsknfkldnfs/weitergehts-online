@@ -89,19 +89,35 @@ Ort: Cowork (DIDAKTIK, SKRIPT, TAFELBILD) + Claude Code (INHALT, ARTEFAKT)
                     ▼
 PHASE 1: MATERIAL-GERUEST (einmalig pro Game)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-AGENT_MATERIAL (Design-Modus)
-Output: Pro Mappe: Materialtyp-Zuordnung + Erarbeitbarkeits-Nachweis
-User-Validierung: PFLICHT
+AGENT_MATERIAL (Design-Modus, Aufgabe 1.1-1.8)
+Output: Pro Mappe: Materialtyp-Zuordnung + Erarbeitbarkeits-Nachweis (Blueprint)
+Ort: Cowork
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                    │
+                    ▼
+PHASE 1.5: SEQUENZPLANUNG (NEU v3.3, pro Mappe)               ← NEU v3.3
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+AGENT_MATERIAL (Aufgabe 1.9-1.10)
+Input: Blueprint (Phase 1) + TAFELBILD + SKRIPT
+Aufgabe: Materialien in didaktisch sinnvolle Reihenfolge bringen
+  → position, didaktische_funktion, voraussetzung pro Material
+  → Ueberleitungen zwischen Materialien formulieren
+  → Sequenzkontext-Objekte fuer Subagenten generieren
+Output: MATERIAL_GERUEST_Mappe_N mit Sequenzplan-Abschnitt
+User-Validierung: PFLICHT (Blueprint + Sequenz gemeinsam)
 Ort: Cowork
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
                     │
                     ▼
 PHASE 2: MAPPEN-PRODUKTION (sequentiell, pro Mappe)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Phase 2.1: Subagenten pro Materialtyp → Material-JSONs
+Phase 2.1: Subagenten pro Materialtyp → Material-JSONs (MIT Sequenzkontext)
   SUB_DARSTELLUNGSTEXT | SUB_QUELLENTEXT | SUB_TAGEBUCH
   SUB_ZEITLEISTE | SUB_BILDQUELLE
-Phase 2.2: AGENT_RAETSEL → Aufgaben auf Basis fertiger Materialien
+  Jeder Subagent erhaelt individuellen Sequenzkontext als Pflicht-Input
+Phase 2.2a: AGENT_RAETSEL (Orchestrator) → Progressionsplan + Konstruktionskontexte
+Phase 2.2b: SUB_AUFGABE_* → Typ-spezifische Aufgabenkonstruktion (5 Subagenten)
+Phase 2.2c: AGENT_RAETSEL (Assembly) → Cross-Konsistenz + aufgaben[] + FRAGEBOGEN_mappe-N.md
 Phase 2.3: Assembly → data.json Abschnitt pro Mappe
 Output: data.json Abschnitt pro Mappe (materialien + aufgaben + einstieg + sicherung + tafelbild)
 User-Validierung: PFLICHT (nach jeder Mappe)
@@ -150,23 +166,38 @@ AGENT_SKRIPT (Phase 0, Schritt 3)
 AGENT_TAFELBILD (Phase 0, Schritt 4) ← NEU v3
     → Synthese-Extrakt aus SKRIPT: Quintessenz des Lernzuwachses pro Mappe
     → Dualer Output: JSON (knoten + verbindungen + merksatz) + Hefteintrag (80-120 W)
-    → Guetekriterien G1-G13 (docs/checklisten/GUETEKRITERIEN_TAFELBILD.md)
+    → Guetekriterien G1-G14 (docs/checklisten/GUETEKRITERIEN_TAFELBILD.md)
     → Wird zur fixierten Zielstruktur fuer AGENT_MATERIAL
     │
     ▼
-AGENT_MATERIAL (Phase 1)
-    → Materialtyp-Zuordnung pro Mappe-Chunk (inkrementell)
-    → Artefakt-Referenzen aus SKRIPT auswerten
+AGENT_MATERIAL (Phase 1 + 1.5)
+    → Phase 1: Materialtyp-Zuordnung pro Mappe-Chunk (inkrementell)
+    → Phase 1: Artefakt-Referenzen aus SKRIPT auswerten
+    → Phase 1.5 (NEU v3.3): Sequenzplanung — Reihenfolge, didaktische Funktion,
+      Voraussetzungen, Ueberleitungen, Sequenzkontext fuer Subagenten
+    → User-Validierung: Blueprint + Sequenz gemeinsam (Phase 1.5 Gate)
     │
     ▼
 Materialtyp-Subagenten (Phase 2.1) ← NEU
     → SUB_DARSTELLUNGSTEXT | SUB_QUELLENTEXT | SUB_TAGEBUCH
     → SUB_ZEITLEISTE | SUB_BILDQUELLE
-    → Jeweils eigener Prompt: docs/agents/AGENT_SUB_*.md
+    → Jeweils eigener Prompt: docs/agents/SUB_MATERIAL_*.md
+    → NEU v3.3: Jeder Subagent erhaelt Sequenzkontext als Pflicht-Input
     │
     ▼
-AGENT_RAETSEL (Phase 2.2)
-    → Aufgaben zu konkreten Materialien
+AGENT_RAETSEL als Orchestrator (Phase 2.2a)
+    → Progressionsplan, Operationalisierungsziele, Konstruktionskontexte
+    │
+    ▼
+SUB_AUFGABE_* (Phase 2.2b)
+    → SUB_AUFGABE_MC | SUB_AUFGABE_ZUORDNUNG | SUB_AUFGABE_LUECKENTEXT
+    → SUB_AUFGABE_REIHENFOLGE | SUB_AUFGABE_FREITEXT
+    → Jeweils eigener Prompt: docs/agents/SUB_AUFGABE_*.md
+    → Jeder Subagent erhaelt individuellen Konstruktionskontext als Pflicht-Input
+    │
+    ▼
+AGENT_RAETSEL Assembly (Phase 2.2c)
+    → Cross-Konsistenz, aufgaben[] zusammenfuehren, FRAGEBOGEN_mappe-N.md
     │
     ▼
 AGENT_TECHNIK + AGENT_DESIGN + AGENT_QUALITAET (Phase 3)
@@ -181,9 +212,9 @@ AGENT_TECHNIK + AGENT_DESIGN + AGENT_QUALITAET (Phase 3)
 | INHALT | Sachanalyse aus Schulbuch/TUVs/Web (Ebene 0) | Wikipedia-basierte Sachanalyse mit strukturiertem Output (Phase 0, Schritt 2a) | **Wikipedia-MCP** als primaere Quelle, Output geht an ARTEFAKT + SKRIPT |
 | ARTEFAKT | — | **NEU.** Artikelstrukturierte Artefakt-Sichtung + Qualifizierung (Phase 0, Schritt 2b) | **Neuer Agent** — loest blinde Bildrecherche + Self-Hosting |
 | SKRIPT | — | **NEU.** Schreibt lineares Skript + chunked es (600-900 W/Chunk, kein TB-Entwurf) | **Schluesselrolle** — Primaerquelle fuer TB-Extraktion + Material-Ableitung |
-| TAFELBILD | — | **NEU v3.** Synthese-Extrakt aus SKRIPT (Phase 0.4), JSON + Hefteintrag | **Neuer Agent** — Eigenes Q-Gate (G1-G13), fixierte Zielstruktur fuer MATERIAL |
+| TAFELBILD | — | **NEU v3.** Synthese-Extrakt aus SKRIPT (Phase 0.4), JSON + Hefteintrag | **Neuer Agent** — Eigenes Q-Gate (G1-G14), fixierte Zielstruktur fuer MATERIAL |
 | MATERIAL | Design (Ebene 1) + Produktion (Ebene 2) | Design (Phase 1) + Dispatch an Subagenten (Phase 2). TB ist fixierter Input (v3). | **Entlastet** — Produktionsarbeit geht an Subagenten, TB-Detaillierung entfaellt |
-| RAETSEL | Arbeitet auf MATERIAL-Output (Ebene 2) | Arbeitet auf konkreten Materialien (Phase 2) | Unveraendert |
+| RAETSEL | Arbeitet auf MATERIAL-Output (Ebene 2) | **Orchestrator** — Progressionsplan + Dispatch an 5 SUB_AUFGABE_* + Cross-Konsistenz (Phase 2.2a/b/c) | **Aufgesplittet** — Konstruktion delegiert an Subagenten, Orchestrator verantwortet Struktur |
 | TECHNIK/DESIGN/QUALITAET | Ebene 3 | Phase 3 | Unveraendert |
 
 ---
@@ -401,7 +432,7 @@ AGENT_TECHNIK + AGENT_DESIGN + AGENT_QUALITAET (Phase 3)
 [...]
 ```
 
-**Qualitaets-Gate AGENT_SKRIPT:**
+**Qualitaets-Gate AGENT_SKRIPT (Stufe 1 — Operationale Pruefung, Q1-Q13):**
 - [ ] Skript narrativ kohaerend (kein Stichpunkt-Aggregat)?
 - [ ] Alle Fakten aus INHALTSBASIS eingearbeitet?
 - [ ] Fachbegriffe bei Erstverwendung erklaert?
@@ -413,6 +444,18 @@ AGENT_TECHNIK + AGENT_DESIGN + AGENT_QUALITAET (Phase 3)
 - [ ] Alle Zitate aus INHALTSBASIS im Skript positioniert oder begruendet ausgeschlossen?
 - [ ] Jeder Chunk hat mindestens 1 Rollenprofil-Zuordnung fuer Tagebuch-Material?
 
+**Qualitaets-Gate AGENT_SKRIPT (Stufe 2 — Fachdidaktische Pruefung, SK1-SK15):**
+Kanonische Referenz: `docs/checklisten/GUETEKRITERIEN_SKRIPT.md`
+- [ ] SK1 Vergegenwärtigung: ≥50% Handlungspassagen pro Chunk?
+- [ ] SK2 Elementarisierung: 1 thematischer Schwerpunkt pro Chunk, keine Verfaelschung?
+- [ ] SK3 Anschaulichkeit: Jedes abstrakte Konzept an konkretem Beispiel verankert?
+- [ ] SK4 Strukturiertheit: Kein isolierter Absatz, Uebergaenge explizit?
+- [ ] SK5 Sprachliche Angemessenheit: R7-Niveau, Fachbegriffe erklaert?
+- [ ] SK6 Vergegenwärtigung vor Besinnung: Narrative Passagen VOR Analyse?
+- [ ] SK7 Multikausualitaet: Keine monokausalen Strukturerklaerungen?
+- SOLL: SK8-SK12 (Gestaltungsprinzipien, Multiperspektivitaet, Motivierung, Spannungsbogen, Sandwich-Qualitaet)
+- KANN: SK13-SK15 (Gegenwartsprinzip, Zeitkolorit, Kontroversitaet)
+
 **User-Validierung (Phase 0 — SKRIPT):**
 - Lehrkraft prueft fachwissenschaftliche Korrektheit
 - Lehrkraft prueft didaktische Reduktion (zu komplex? zu vereinfacht?)
@@ -421,34 +464,42 @@ AGENT_TECHNIK + AGENT_DESIGN + AGENT_QUALITAET (Phase 3)
 
 ---
 
-### Schritt 0.4: AGENT_TAFELBILD ← NEU v3
+### Schritt 0.4: AGENT_TAFELBILD ← NEU v3, AKTUALISIERT v3.1
 
 **Eingabe:**
 - SKRIPT_[game-id].md (Phase 0.3, validiert)
 - DIDAKTIK_RAHMEN (Phase 0.1 — KE-Matrix, Sicherungsziel pro Mappe)
 - ARTEFAKT_INVENTAR (Phase 0.2b — qualifizierte Artefakte)
-- GUETEKRITERIEN_TAFELBILD (docs/checklisten/GUETEKRITERIEN_TAFELBILD.md)
+- GUETEKRITERIEN_TAFELBILD (docs/checklisten/GUETEKRITERIEN_TAFELBILD.md — G1-G14)
 - Vorheriges Tafelbild (ab Mappe 2 — fuer Progression G9)
 
-**Aufgabe:**
-1. Pro Mappe die Quintessenz des Lernzuwachses aus dem SKRIPT-Chunk extrahieren
-2. Knoten + Verbindungen als JSON-Struktur definieren (max. 10 Knoten, G2)
-3. `skript_referenz` direkt setzen: `"[Chunk-ID, §N]"` (SKRIPT liegt vor)
-4. Erarbeitbarkeits-Pruefung gegen SKRIPT: DIRECT / ARTIFACT / INFERENTIAL Entscheidungsbaum
-5. Kernerkenntnisse (1-3 Saetze, Mappe-Ebene) + Merksatz pro Knoten formulieren
-6. Hefteintrag verfassen (80-120 Woerter, halbe DIN-A5-Seite)
+**Aufgabe (v3.1 — SCPL-Struktur):**
+1. Problemorientierte Stundenfrage formulieren (max. 12 Woerter)
+2. Kernerkenntnisse extrahieren (max. 3, je max. 15 Woerter)
+3. Ordnungsmuster waehlen (kausal | chronologisch | kategorial)
+4. SCPL-Struktur aufbauen: Situation → Complication[] → Problem → Loesung
+5. Erarbeitbarkeits-Pruefung pro SCPL-Schritt: DIRECT / ARTIFACT / INFERENTIAL
+6. Stilregeln anwenden: Fachbegriffe per Doppelpunkt/Gedankenstrich (nie Klammern), Pfeile nur als Symbol
 
-**Output:** `TAFELBILD_[game-id]_Mappe[N].md` — Dualer Output:
-- **JSON-Repraesentation:** knoten[] (mit merksatz), verbindungen[], voraussetzungen[], kernerkenntnisse[]
-- **Hefteintrag:** Strukturskizze + "Merke:"-Block
+**Output:** `TAFELBILD_[game-id]_Mappe[N].md` — JSON mit `scpl`-Objekt:
+- **scpl.situation:** Kontextsatz + Fachbegriffe (Ausgangslage oben)
+- **scpl.complication[]:** Argumentationsschritte mit optionalen Darstellungen (gegenueberstellung, zeitleiste, tabelle)
+- **scpl.problem:** Kernproblem + zentraler Fachbegriff
+- **scpl.loesung[]:** Merksaetze = Kernerkenntnisse (gelbe Merkbox)
+- **transfer.frage:** Offene Frage (ausserhalb Hefteintrag gerendert)
+- **Legacy:** `knoten[]` und `verbindungen[]` als leere Arrays (Abwaertskompatibilitaet)
 
-**Q-Gate:** 13 Kriterien (G1-G13) aus GUETEKRITERIEN_TAFELBILD.md. 6 MUSS, 4 SOLL, 3 KANN. Maschinelle Prueflogik in Abschnitt 8 der Guetekriterien.
+**Engine-Rendering:** CSS-Hefteintrag (linierter Hintergrund, Caveat-Handschrift, gelbe Merkbox, dynamisches Datum). Kein SVG-Netzwerk mehr.
 
-**TB-FREEZE-Regel:** Nach Q-Gate PASS ist das Tafelbild eingefroren. AGENT_MATERIAL darf keine Knoten hinzufuegen, entfernen oder inhaltlich aendern. Eskalation: `[TB-REVISION NOETIG: kN-M — Grund]` → User-Entscheidung.
+**Q-Gate:** 14 Kriterien (G1-G14) aus GUETEKRITERIEN_TAFELBILD.md. 6 MUSS, 4 SOLL, 4 KANN. NEU: G14 SCPL-Kohaerenz.
+
+**TB-FREEZE-Regel:** Nach Q-Gate PASS ist das Tafelbild eingefroren. AGENT_MATERIAL darf keine SCPL-Schritte hinzufuegen, entfernen oder inhaltlich aendern. Eskalation: `[TB-REVISION NOETIG — Grund]` → User-Entscheidung.
 
 **Ort:** Cowork
 
 **Prompt-Datei:** `docs/agents/AGENT_TAFELBILD.md`
+**Designentscheidungen:** `docs/architektur/DESIGNENTSCHEIDUNG_v3-1_HEFTEINTRAG.md`
+**SCPL-Evaluation:** `docs/architektur/EVALUATION_SCPL_HEFTEINTRAG.md`
 
 ---
 
@@ -554,19 +605,23 @@ Jeder Materialtyp hat einen spezialisierten Subagenten mit eigenem Prompt, Quali
 
 1. **ARTEFAKT_INVENTAR** — Qualifizierte Bilder mit lokalen Pfaden, Lizenzen, Metadaten
 2. **MATERIAL_GERUEST** — Materialtyp-Zuordnung, Tafelbild-Knoten, Erarbeitbarkeits-Nachweis
-3. **Subagenten-Prompts** (AGENT_SUB_*.md) — Produktionsregeln pro Materialtyp
+3. **Subagenten-Prompts** (SUB_MATERIAL_*.md) — Produktionsregeln pro Materialtyp
 4. **SKRIPT** (relevanter Chunk) — Textgrundlage
 5. **INHALTSBASIS** — Fakten, Zitate, Rollenprofile
 
 #### Subagenten-Uebersicht
 
-| Subagent | Prompt-Datei | Materialtypen | Eingabe (neben MATERIAL_GERUEST) |
-|---|---|---|---|
-| SUB_DARSTELLUNGSTEXT | `AGENT_SUB_DARSTELLUNGSTEXT.md` | darstellungstext | SKRIPT-Chunk, Tafelbild-Knoten |
-| SUB_QUELLENTEXT | `AGENT_SUB_QUELLENTEXT.md` | quellentext (echte Quellen) | INHALTSBASIS Zitat-Daten, SKRIPT-Kontext |
-| SUB_TAGEBUCH | `AGENT_SUB_TAGEBUCH.md` | quellentext (fiktiv, aus Rollenprofil) | INHALTSBASIS Rollenprofil, SKRIPT-Kontext |
-| SUB_ZEITLEISTE | `AGENT_SUB_ZEITLEISTE.md` | zeitleiste | SKRIPT-Chronologie, INHALTSBASIS-Fakten |
-| SUB_BILDQUELLE | `AGENT_SUB_BILDQUELLE.md` | bildquelle (inkl. Karten) | ARTEFAKT_INVENTAR Bild-Metadaten |
+| Subagent | Prompt-Datei | Material-Typ | Engine-Typ | Eingabe (neben MATERIAL_GERUEST) |
+|---|---|---|---|---|
+| SUB_MATERIAL_DARSTELLUNGSTEXT | `SUB_MATERIAL_DARSTELLUNGSTEXT.md` | darstellungstext | darstellungstext | SKRIPT-Chunk (Volltext 200-300W), Tafelbild-Knoten |
+| SUB_MATERIAL_QUELLENTEXT | `SUB_MATERIAL_QUELLENTEXT.md` | quellentext | quellentext | INHALTSBASIS Zitat-Daten, SKRIPT-Kontext |
+| SUB_MATERIAL_TAGEBUCH | `SUB_MATERIAL_TAGEBUCH.md` | tagebuch | quellentext | INHALTSBASIS Rollenprofil, SKRIPT-Kontext |
+| SUB_MATERIAL_ZEITLEISTE | `SUB_MATERIAL_ZEITLEISTE.md` | zeitleiste | zeitleiste | SKRIPT-Chronologie, INHALTSBASIS-Fakten |
+| SUB_MATERIAL_BILDQUELLE | `SUB_MATERIAL_BILDQUELLE.md` | bildquelle | bildquelle | ARTEFAKT_INVENTAR Bild-Metadaten |
+| SUB_MATERIAL_KARTE | `SUB_MATERIAL_KARTE.md` | karte | bildquelle | ARTEFAKT_INVENTAR Karten-Metadaten, 1-Satz-Zusammenfassung |
+| SUB_MATERIAL_STATISTIK | `SUB_MATERIAL_STATISTIK.md` | statistik | zeitleiste/bildquelle | INHALTSBASIS Statistik-Daten, 1-Satz-Zusammenfassung |
+
+**Qualitaetskriterien-Referenz:** Alle Subagenten referenzieren `docs/checklisten/QUALITAETSKRITERIEN_MATERIALPRODUKTION.md` (M1-M12 typ-uebergreifend + typ-spezifische Kriterien inline).
 
 #### Dispatch-Ablauf (pro Mappe) — v2.1
 
@@ -611,26 +666,77 @@ Nach allen Materialien:
 | zeitleiste | `zeitleiste` | Nativ |
 | bildquelle | `bildquelle` | Nativ |
 | karte | `bildquelle` | Engine kennt keinen Karten-Renderer |
+| statistik | `zeitleiste` oder `bildquelle` | Zahlenreihen→zeitleiste, Diagramm-Bild→bildquelle |
 
 #### Ausfuehrungsort
 
 Claude Code. Der Uebergabe-Prompt referenziert die Subagenten-Prompts und orchestriert den Dispatch-Ablauf.
 
-### Phase 2.2: AGENT_RAETSEL (Aufgaben-Produktion)
+### Phase 2.2a: AGENT_RAETSEL — Orchestration
 
-Arbeitet auf den konkreten, produzierten Materialien aus Phase 2.1. `material_referenz` zeigt auf tatsaechlich existierende Material-IDs mit finalen Inhalten.
+AGENT_RAETSEL arbeitet als Orchestrator (nicht als monolithischer Konstrukteur). Arbeitet auf den konkreten, produzierten Materialien aus Phase 2.1.
 
 **Eingabe:**
 - Fertige materialien[] aus Phase 2.1
-- MATERIAL_GERUEST (Tafelbild-Knoten-Zuordnung)
+- TAFELBILD (TB-Knoten + Merksaetze)
+- DIDAKTIK_RAHMEN (Lernziele, AFB-Profil)
 - `_meta.erschliessungsimpuls` aus SUB_BILDQUELLE (fuer Bild-Aufgaben)
 - `_meta.quellenkritische_impulse` aus SUB_QUELLENTEXT (fuer Quellen-Aufgaben)
 
-**Aufgabe:** Pro Mappe 3-5 Aufgaben erstellen, die:
-- Auf konkrete Material-Stellen referenzieren (material_referenz + Absatz/Zeile)
-- Tafelbild-Knoten pruefen (jeder Knoten mindestens 1x in einer Aufgabe)
-- Aufgabentyp-Vielfalt sicherstellen (nicht nur Multiple-Choice)
-- Freischalt-Code generieren
+**Aufgabe:**
+1. Progressionsplan erstellen: AFB-Zuweisung + Typauswahl pro Position (5 Positionen)
+2. Operationalisierungsziel herleiten: `[AFB-Operator] + [TB-Knoten-Merksatz als Frageform]`
+3. Konstruktionskontext generieren: Pro Aufgabe Ziel-Material (Volltext), Material-Zusammenfassungen, TB-Knoten, AFB, Position, Operationalisierungsziel, bisherige Aufgaben, offene Knoten
+4. Freischalt-Code generieren (thematisch, A-Z, 4-8 Zeichen)
+5. Narrative Rahmung (Einstieg, Ueberleitungen, Abschluss)
+
+**Output:** 5 Konstruktionskontexte + Dispatch-Anweisungen an SUB_AUFGABE_*
+
+### Phase 2.2b: SUB_AUFGABE_* — Typ-spezifische Aufgabenkonstruktion
+
+5 Subagenten mit eigener didaktischer Expertise, Konstruktionsheuristiken und typ-spezifischem Q-Gate:
+
+| Subagent | Primaerer AFB | Kernexpertise | Prompt |
+|----------|--------------|---------------|--------|
+| SUB_AUFGABE_MC | I (auch II) | Distractor-Konstruktion | `docs/agents/SUB_AUFGABE_MC.md` |
+| SUB_AUFGABE_ZUORDNUNG | I-II | Pole-Trennschaerfe | `docs/agents/SUB_AUFGABE_ZUORDNUNG.md` |
+| SUB_AUFGABE_LUECKENTEXT | I-II | Lueckenauswahl, Fachbegriff-Recall | `docs/agents/SUB_AUFGABE_LUECKENTEXT.md` |
+| SUB_AUFGABE_REIHENFOLGE | II | Element-Eindeutigkeit | `docs/agents/SUB_AUFGABE_REIHENFOLGE.md` |
+| SUB_AUFGABE_FREITEXT | II-III | Leitfragen-Design, Scaffolding | `docs/agents/SUB_AUFGABE_FREITEXT.md` |
+
+**Eingabe pro Subagent:** Konstruktionskontext aus Phase 2.2a (Volltext nur fuer Ziel-Material, Zusammenfassungen fuer restliche Materialien).
+
+**Output pro Subagent:** aufgabe-JSON-Objekt + Q-Gate-Log.
+
+**Subagenten-Q-Gate (Einzelaufgaben-Ebene):**
+- [ ] A1 AFB-Kongruenz (Einzelaufgabe): AFB stimmt mit Fragestellung ueberein?
+- [ ] A2 Fragestaemme-Klarheit: Genau 1 Anforderung, keine Mehrdeutigkeit?
+- [ ] A3 Material-Kongruenz (Einzelaufgabe): Aus Ziel-Material beantwortbar?
+- [ ] A4-* Typ-spezifische Konstruktionsqualitaet: A4-MC (Distraktoren), A4-ZU (Trennschaerfe), A4-LT (Luecken-Eindeutigkeit), A4-RF (Reihenfolge-Eindeutigkeit)
+- [ ] A6 Tipp-Progression: Richtung → Einschraenkung → Loesung+Erklaerung?
+- [ ] A7 Operator-Praezision: Operationalisierte Verben aus AFB-Taxonomie?
+- [ ] A11-FT Freitext-Qualitaet (nur SUB_AUFGABE_FREITEXT): Leitfrage, Teilfragen, Fachbegriffe, Perspektivitaet?
+
+### Phase 2.2c: AGENT_RAETSEL — Assembly + Cross-Konsistenz
+
+Nach Rueckkehr aller 5 Subagenten-Outputs:
+
+**Cross-Konsistenz-Pruefung (Orchestrator-Q-Gate):**
+- [ ] A1 AFB-Kongruenz (Gesamtbild): AFB-Zuweisung stimmt mit Progressionsplan ueberein?
+- [ ] A3 Material-Kongruenz (Vollstaendigkeit): Alle Materialien in mindestens 1 Aufgabe referenziert?
+- [ ] A5 Schwierigkeits-Progression: Monoton steigend ueber 5 Aufgaben?
+- [ ] A8 Kognitive Aktivierung: Mind. 1 denkanregende Aufgabe pro Mappe?
+- [ ] A9 TB-Bezug: Mind. 1 Aufgabe pro TB-Knoten?
+- [ ] A10 Typvielfalt: Mind. 3 Typen, kein Typ > 2x, Freitext genau 1x?
+- [ ] A12 Sachbezogen-vor-Wertbezogen: Fakten → Transfer → Stellungnahme?
+- KANN: A13-A15 (Gegenwartsbezug, Fehler-Antizipation, Implizite Differenzierung)
+
+**Ruecklauf-Mechanismus:** Bei Cross-Konsistenz-Problem: Re-Dispatch an betroffenen Subagenten mit korrigiertem Konstruktionskontext. Max. 2 Re-Dispatch pro Aufgabe.
+
+**Assembly:**
+1. aufgaben[] aus Subagenten-Outputs zusammenfuehren
+2. FRAGEBOGEN_mappe-N.md als Zwischenartefakt schreiben (parallel, nicht Pipeline-fuehrend)
+3. Loesung-Formate validieren (String/Object/Array je Typ)
 
 ### Phase 2.3: Assembly + Quellenangaben
 
@@ -716,15 +822,18 @@ Kann pro Mappe oder gesammelt nach allen Mappen laufen (Entscheidung nach erstem
 | Dokument | Relevanz |
 |---|---|
 | `docs/architektur/WORKFLOW_v1.md` | Vorgaenger — data.json Schema, Material-Typen, Engine-Spezifikationen bleiben gueltig |
-| `docs/agents/AGENT_MATERIAL.md` | MCP-Tool-Workflows W-1 bis W-8, Qualitaetsspezifikationen pro Materialtyp |
+| `docs/agents/AGENT_MATERIAL.md` | Material-Orchestrator — Typauswahl, Produktionskontext, Dispatch an Subagenten, Cross-Konsistenz |
 | `docs/agents/AGENT_ARTEFAKT.md` | Neuer Agent — Artikelstrukturierte Artefakt-Sichtung + Self-Hosting (Phase 0, Schritt 2b) |
 | `docs/agents/AGENT_SKRIPT.md` | Skript-Erstellung + Chunking (600-900 W/Chunk, kein TB-Entwurf) |
-| `docs/agents/AGENT_TAFELBILD.md` | Synthese-Extrakt aus SKRIPT (Phase 0.4), JSON + Hefteintrag, Q-Gate G1-G13 |
-| `docs/agents/AGENT_SUB_DARSTELLUNGSTEXT.md` | Subagent — Sachtext-Produktion (Phase 2.1) |
-| `docs/agents/AGENT_SUB_QUELLENTEXT.md` | Subagent — Quellentext-Aufbereitung (Phase 2.1) |
-| `docs/agents/AGENT_SUB_TAGEBUCH.md` | Subagent — Fiktive Tagebucheintraege (Phase 2.1) |
-| `docs/agents/AGENT_SUB_ZEITLEISTE.md` | Subagent — Zeitleisten-Strukturierung (Phase 2.1) |
-| `docs/agents/AGENT_SUB_BILDQUELLE.md` | Subagent — Bildquellen-Aufbereitung (Phase 2.1) |
+| `docs/agents/AGENT_TAFELBILD.md` | Synthese-Extrakt aus SKRIPT (Phase 0.4), JSON + Hefteintrag, Q-Gate G1-G14 |
+| `docs/agents/SUB_MATERIAL_DARSTELLUNGSTEXT.md` | Subagent — Sachtext-Produktion (Phase 2.1) |
+| `docs/agents/SUB_MATERIAL_QUELLENTEXT.md` | Subagent — Quellentext-Aufbereitung (Phase 2.1) |
+| `docs/agents/SUB_MATERIAL_TAGEBUCH.md` | Subagent — Fiktive Tagebucheintraege (Phase 2.1) |
+| `docs/agents/SUB_MATERIAL_ZEITLEISTE.md` | Subagent — Zeitleisten-Strukturierung (Phase 2.1) |
+| `docs/agents/SUB_MATERIAL_BILDQUELLE.md` | Subagent — Bildquellen-Aufbereitung (Phase 2.1) |
+| `docs/agents/SUB_MATERIAL_KARTE.md` | Subagent — Historische Karten (Phase 2.1), Engine-Mapping karte→bildquelle |
+| `docs/agents/SUB_MATERIAL_STATISTIK.md` | Subagent — Statistik/Diagramme (Phase 2.1), dual Engine-Mapping |
+| `docs/checklisten/QUALITAETSKRITERIEN_MATERIALPRODUKTION.md` | Zentrale Qualitaetskriterien (M1-M12 + typ-spezifisch), referenziert von allen SUB_MATERIAL_* |
 | `docs/agents/ORCHESTRATOR.md` | Gesamtkoordination (v3 aktualisiert) |
 | `docs/checklisten/MCP_TOOLS.md` | Vollstaendige MCP-Tool-Dokumentation |
 | `docs/architektur/flowchart-status-quo.mermaid` | Flowchart v1 (fuer Vergleich) |

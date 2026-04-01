@@ -358,9 +358,9 @@ Neues Layout-Prinzip: **Phasen-Container** statt flacher Aufgaben-Block.
     <!-- Zusammenfassung + Code-Reveal, dynamisch -->
   </section>
 
-  <!-- Code-Eingabe -->
-  <section class="code-eingabe" id="code-section">
-    <!-- wie bisher -->
+  <!-- Loesungswort-Bereich (unterhalb des Grids, initial display:none) -->
+  <section class="loesungswort-bereich">
+    <!-- Wird sichtbar nach Loesung aller Aufgaben. Buchstaben-DnD-Puzzle. -->
   </section>
 
   <!-- Navigation -->
