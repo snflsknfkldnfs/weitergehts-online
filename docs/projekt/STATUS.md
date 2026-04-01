@@ -1,10 +1,29 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-03-28 (Phase v3-4: Uebergabe-Prompt erstellt)
-**Aktuelle Phase:** v3-Umsetzung → **Phase v3-4 (Engine-Erweiterung) — Uebergabe-Prompt an Claude Code bereit**
-**Letzter Arbeitsschritt:** Phase v3-4 Uebergabe-Prompt formuliert: 4 Aenderungspakete (escape-engine.js: 4 Render-Bloecke fuer merksatz/kernerkenntnisse/hefteintrag/reflexionsimpuls; theme-gpg.css: Bildschirm + Print-Styles; data.json Template: Schema-Erweiterung; Testdaten: Mappe 1 v3-Felder). Abwaertskompatibilitaet sichergestellt (alle neuen Felder optional).
-**Naechster Schritt:** Uebergabe-Prompt in Claude Code ausfuehren (`docs/uebergabe/UEBERGABE_v3-4_ENGINE_ERWEITERUNG.md`). Nach Implementierung: Phase v3-5 (Validierung an Mappe 1).
-**Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet.
+**Letzte Aktualisierung:** 2026-03-31
+**Aktuelle Phase:** **v4 Produktionsarchitektur — Runde 2 abgeschlossen. Agenten auf v4 angepasst, Audit-Fixes umgesetzt.**
+**Letzter Arbeitsschritt:** Runde 2: ORCHESTRATOR.md, AGENT_MATERIAL.md, AGENT_RAETSEL.md, SUB_AUFGABE_FREITEXT.md auf v4-Architektur angepasst (Ausfuehrungsorte, Schnittstellen-Vertraege, Output-Formate, _meta-Migration, Keyword-Regel). UPGRADE_PLAN Nummerierungsfehler + Compaction-Failsafe korrigiert. Querverweis-Check: 4 Inkonsistenzen gefunden und behoben.
+**Naechster Schritt:** Runde 3a: Mappe-2 Rahmen + Materialien (Phase 2.0 + 2.1 + 2.1c). Produktionsverzeichnis anlegen, Rahmen produzieren, Material 1-2 → PFLICHT User-Validierung → Material 3-6 → Cross-Konsistenz → CHECKPOINT.
+**Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. Revert von c9eb9ec steht noch aus (wird in Phase-3-Pre-Flight erledigt). BLOCKER Engine-Patch text_mit_luecken || frage vorbereitet, Ausfuehrung in Runde 4.
+
+**Abgeschlossen seit letztem Update:**
+- v3.5d Bugfix (Commit bc5a208): 4 Fixes — Fehlversuche-System (eliminated-Optionen, globaler Counter, alle 5 Aufgabentypen), Material-Titel statt "M1.2", Tipp-used visuell, Loesungswort-Reveal+Animation
+- v3.5c Bugfix (Commit 072cbfd): 5 Fixes — background-attachment:local, Material-Ref in Tipps, Loesungscode-Kaestchen, MC-Shuffle, Tipp-Pillen+Akkordeon
+- v3.5b Bugfix (Commit a53c914): 8 Fixes — Material-Flag, Zentrierung, Blocksatz, Karo em-basiert, Nummer-Kreis, Interaktivitaet, Sicherung-Display
+- v3.5 Layout-Redesign implementiert (Commit 9c6f7e7): 2/3-1/3 Grid, Notizbuch-Fragebogen, Lochrand, Architects Daughter, Material-Fortschritt, Aufgaben-Dots
+- v3.5 Cowork-Vorbereitung: Design-Spec, HTML-Prototyp, Uebergabe-Prompt
+- ORCHESTRATOR.md: Fehlende Q-Gate-Referenzen nachgetragen (A1-A15, SK1-SK15, S1-S15 in Referenz-Dokumente + Phase-2.2-Box)
+- v3.3b Nachmigration SCPL-Umordnung (Commit 9df75cc): Material-Reihenfolge nach SCPL-Aufbau, Browser-Check bestanden
+- v3.4 GUETEKRITERIEN_AUFGABEN.md (A1-A15): AFB-Kongruenz, Operator-Praezision, Distractor-Qualitaet, kognitive Aktivierung, Besinnungsphasen
+- AGENT_RAETSEL.md: 2-Stufen-Q-Gate (prozedural + A1-A15 fachdidaktisch)
+- WORKFLOW_v2.md Phase 2.2: Q-Gate mit Stufe 1 + Stufe 2
+- v3.3 Material-Sequenzierung (Commit f87dd8b): Schema + Engine + Migration
+- v3-4 Engine-Erweiterung (Commit a3ea44b): Merksaetze, Kernerkenntnisse, Hefteintrag, Reflexionsimpuls
+- v3.1-3 Hefteintrag-Engine (Commit 71a5896): CSS-basierter SCPL-Renderer
+- v3.2 Umlaut-Fix (Commit 2561066): UTF-8-Migration
+- GUETEKRITERIEN_SEQUENZIERUNG.md v1.1: S14 SCPL-Korrespondenz + S15 Skript-Kongruenz als MUSS, 2-Anker-Verfahren in AGENT_MATERIAL
+- GUETEKRITERIEN_SKRIPT.md v1: SK1-SK15 fachdidaktische Q-Gate-Ebene fuer Phase 0.3
+- AGENT_SKRIPT.md: 2-Stufen-Q-Gate (Q1-Q13 operativ + SK1-SK15 fachdidaktisch)
 
 ---
 

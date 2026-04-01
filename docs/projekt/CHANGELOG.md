@@ -4,7 +4,520 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-03-31
+
+### v4 Produktionsarchitektur: Runde 2 — Agenten-Anpassung + Audit-Fixes
+- **Phase:** Architektur-Ueberarbeitung (Runde 2)
+- **Aufgabe:** Alle Agenten-Dokumente auf v4-Architektur angepasst (Ausfuehrungsorte, Schnittstellen-Vertraege, Output-Formate). Audit-Fixes umgesetzt.
+- **Aenderungen:**
+  - **ORCHESTRATOR.md:** Kanonische Referenz → WORKFLOW_v4.md. Ausfuehrungsorte-Tabelle: Phase 2.0-2.2c → Cowork, Phase 3 → Claude Code. Phase-2-Flowchart komplett neu (P1/P4/P5/P6, Rahmen, Cross-Konsistenz, CHECKPOINT). Mappe-Anhang-Prozedur: Eingabe = Produktionsverzeichnis, Assembly rein mechanisch
+  - **AGENT_MATERIAL.md:** Produktionsmodus Output = materialien/mat-N-M.json (statt monolithisch). Schnittstellen-Vertrag Phase 2.1 (8 Read-Schritte mit Bedingungen). P1-Failsafe dokumentiert. Phase 2.1c referenziert. WORKFLOW_v2-Referenzen → v4
+  - **AGENT_RAETSEL.md:** Ausfuehrungsort Cowork. Schnittstellen-Vertraege Phase 2.2a/2.2b. Output = aufgaben/aufgabe-N-M.json + PROGRESSIONSPLAN.md + Q-GATE-LOG.md. FRAGEBOGEN_mappe-N.md entfernt (bewusst, v4). Freitext-loesung = Keyword
+  - **SUB_AUFGABE_FREITEXT.md:** `teilfragen`/`erwartete_begriffe`/`validierung_schwelle` → `_meta` (Audit B2-#2). `loesung` = Keyword 3-5 Woerter (Strategie-Audit E3). `_meta.musterantwort` fuer Tipp 3 + Lehrkraft
+  - **BLOCKER Engine-Patch:** `text_mit_luecken || frage` bereits in WORKFLOW_v4 + UPGRADE_PLAN dokumentiert, Ausfuehrung in Runde 4
+- **Verifikation:** Querverweis-Check (8 Pruefachsen): 5 konsistent, 4 Inkonsistenzen gefunden und korrigiert
+- **Artefakte:** ORCHESTRATOR.md, AGENT_MATERIAL.md, AGENT_RAETSEL.md, SUB_AUFGABE_FREITEXT.md, UPGRADE_PLAN_v4 (2 Fixes aus Vorsession), STATUS.md, CHANGELOG.md
+- **Naechster Schritt:** Runde 3a: Mappe-2 Rahmen + Materialien (Phase 2.0 + 2.1 + 2.1c)
+
+### v4 Produktionsarchitektur: Strategischer Audit + Befund-Integration
+- **Phase:** Architektur-Ueberarbeitung (Runde 1 + Strategischer Audit)
+- **Aufgabe:** Strategischen Audit beauftragt (S1-S7: Subagenten-Isolation, Q-Gate-Wirksamkeit, Rahmen-Sequenz, Skalierung, Aufwand-Qualitaet, Schwachstellen, Goldstandard-Vergleich). 4 Empfehlungen evaluiert und in UPGRADE_PLAN + WORKFLOW_v4 eingearbeitet.
+- **Empfehlungen (alle adressiert):**
+  - **E1:** User-Validierung nach Material 1-2 hochgestuft auf PFLICHT (Mappe 2). Kalibrierung gegen systematischen Subagenten-Bias
+  - **E2:** Phase 2.1c Material-Cross-Konsistenz eingefuehrt (1 Dispatch, 4 Pruefachsen: Sequenz-Kohaerenz, Fachbegriff-Konsistenz, Ueberleitung-Kohaerenz, TB-Gesamtabdeckung)
+  - **E3:** Freitext-loesung als Keyword (3-5 Woerter) statt Mustersatz definiert. Mittelfristig: Engine erwartete_begriffe
+  - **E4:** Mappe-N-Retrospektive als optionaler Schritt vor Phase 2 der Folge-Mappe (ab Mappe 3)
+- **Artefakte:** `docs/analyse/AUDIT_v4_STRATEGIE_ERGEBNIS.md` (Audit-Ergebnis), UPGRADE_PLAN + WORKFLOW_v4 (aktualisiert), STATUS.md, CHANGELOG.md
+- **Naechster Schritt:** User-Validierung, dann Runde 2
+
+### v4 Produktionsarchitektur: Mechanischer Audit + Befund-Integration
+- **Phase:** Architektur-Ueberarbeitung (Runde 1 + Mechanischer Audit)
+- **Aufgabe:** Externen Audit beauftragt (strategisch A1-A5 + mechanisch B1-B5). Befunde evaluiert, gegengeprüeft (3 Befunde gegen Engine/Schema/data.json verifiziert). Korrekturen in UPGRADE_PLAN + WORKFLOW_v4 eingearbeitet.
+- **Audit-Befunde (alle adressiert):**
+  - **BLOCKER B2-#1:** Lueckentext Engine liest `frage` statt `text_mit_luecken`. Fix: Engine-Patch `text_mit_luecken || frage` in Phase-3-Pre-Flight
+  - **MEDIUM B1-#4:** `_meta.zusammenfassung` existiert nicht. Fix: Vertrag korrigiert auf `titel + didaktische_funktion` aus MATERIAL_GERUEST
+  - **MEDIUM B1-#5:** sicherung.json Vertrag fehlte `zusammenfassung`, `ueberleitung`, `kernerkenntnisse[]`. Fix: Vertrag vervollstaendigt
+  - **MEDIUM B4-#7:** FRAGEBOGEN_mappe-N.md fehlt. Entscheidung: Bewusst entfernt (redundant mit .json + PROGRESSIONSPLAN)
+  - **MEDIUM B2-#2:** SUB_AUFGABE_FREITEXT nicht-funktionale Felder. Fix: In `_meta` verschieben (Runde 2)
+- **Strategische Korrekturen:**
+  - Checkpoint-Strategie: Session-Split nach Phase 2.1 (Token-Budget-Mitigation)
+  - Phase-3-Pre-Flight: Integritaetspruefung ergaenzt (alle .json vorhanden + valide)
+  - Risiko-Tabelle: 3 neue Risiken aus Audit (Token-Budget HOCH, Integritaet, Agent-Tool-Verhalten)
+  - Runde 3 gesplittet in 3a (Rahmen + Materialien) und 3b (Aufgaben)
+- **Artefakte:** `docs/analyse/AUDIT_v4_ARCHITEKTUR_ERGEBNIS.md` (Audit-Ergebnis), UPGRADE_PLAN + WORKFLOW_v4 (aktualisiert), STATUS.md, CHANGELOG.md
+
+### v4 Produktionsarchitektur: WORKFLOW_v4.md + UPGRADE_PLAN Refinements
+- **Phase:** Architektur-Ueberarbeitung (Runde 1)
+- **Aufgabe:** User-Refinements R1-R3 in UPGRADE_PLAN eingearbeitet. WORKFLOW_v4.md als verlustfreie Transformation aus WORKFLOW_v2.md (v3) geschrieben.
+- **Ergebnis:**
+  - UPGRADE_PLAN: P6 (Schnittstellen-Vertraege + Occam's Razor), P7 (Verlustfreie Transformation), P3 verfeinert (Rahmen stuetzt Kerninhalt). Explizite Input/Output-Tabellen fuer Phase 2.0, 2.1, 2.2a/b/c.
+  - WORKFLOW_v4.md: 12 Sektionen. Phase 0-1.5 unveraendert. Phase 2 komplett in Cowork mit Schnittstellen-Vertraegen pro Dispatch-Schritt. Phase 3 rein mechanisch. Alle L1-L7, Q-Gates, JSON-Encoding, Engine-Typ-Mapping, Download-Methode, SK/G-Kriterien bewahrt.
+- **Artefakte:** `docs/architektur/WORKFLOW_v4.md` (neu), `UPGRADE_PLAN_v4_PRODUKTIONSARCHITEKTUR.md` (aktualisiert), STATUS.md, CHANGELOG.md
+- **Naechster Schritt:** Audit beauftragen
+
+### v4 Produktionsarchitektur: UPGRADE_PLAN erstellt
+- **Phase:** Architektur-Ueberarbeitung
+- **Aufgabe:** Mappe-2-Produktion v2 (Commit c9eb9ec) evaluiert: Subagenten-Prompts zwar gelesen, aber monolithisch produziert. 4/5 Aufgabentypen Engine-inkompatibel (falsche JSON-Felder: text_mit_luecken statt frage, elemente statt paare, etc.). Root-Cause: Claude Code hat kein Subagent-Isolations-Konzept. Architektur-Neuausrichtung: Phase 2 (didaktische Produktion) wird von Claude Code nach Cowork verlagert.
+- **Ergebnis:**
+  - UPGRADE_PLAN_v4 mit 5 Architekturprinzipien: P1 (Read-from-Artifact), P2 (Didaktik in Cowork), P3 (Rahmen vor Inhalt), P4 (Ein Artefakt pro Dispatch), P5 (Q-Gate als Pflicht-Zwischenschritt)
+  - Neue Phasenstruktur: Phase 2.0 (Rahmen) → 2.1 (Materialien) → 2.2 (Aufgaben) alle in Cowork, Phase 3 (Assembly) in Claude Code (rein mechanisch)
+  - Artefakt-Verzeichnis: docs/agents/artefakte/produktion/{game-id}/mappe-{N}/ mit .json pro Material/Aufgabe
+  - Implementierungsplan: 5 Cowork-Runden (R0: Plan, R1: WORKFLOW_v4, R2: Agenten-Anpassung, R3: Mappe-2-Produktion, R4: Assembly, R5: Retrospektive)
+- **Artefakte:** `docs/architektur/UPGRADE_PLAN_v4_PRODUKTIONSARCHITEKTUR.md` (neu), STATUS.md + CHANGELOG.md
+- **Naechster Schritt:** User-Validierung, dann Runde 1 (WORKFLOW_v4.md)
+
+---
+
+## 2026-03-30
+
+### Mappe-2-Produktion v2: Gescheitert (Commit c9eb9ec — wird revertet)
+- **Phase:** Mappe 2 (Produktion, zweiter Versuch)
+- **Aufgabe:** Uebergabe-Prompt v2 in Claude Code ausgefuehrt (mit expliziten per-Material-Dispatch-Bloecken).
+- **Ergebnis:** Subagenten-Prompts wurden gelesen (Verbesserung vs. v1), aber Produktion erfolgte erneut monolithisch in einem einzigen Edit. Kein Q-Gate-Log, kein Progressionsplan, keine Cross-Konsistenz. 4/5 Aufgabentypen mit Engine-inkompatiblen JSON-Feldern. Compaction trat erneut auf.
+- **Entscheidung:** Revert + Architektur-Ueberarbeitung (v4). Claude Code ist strukturell nicht in der Lage, die Subagenten-Architektur als isolierte Dispatch-Einheiten auszufuehren.
+- **Artefakte:** Commit c9eb9ec (wird revertet), Revert-Commit f5a647a (Revert von a6aa589 — bereits erfolgt)
+
+### Mappe-2-Produktion: Uebergabe-Prompt v2 (Revert + Neugenerierung)
+- **Phase:** Mappe 2 (Korrektur)
+- **Aufgabe:** Mappe-2-Produktion v1 (Commit a6aa589) gescheitert: Subagenten-Prompts (SUB_MATERIAL_*, SUB_AUFGABE_*) wurden nicht gelesen/dispatched. Root-Cause: Uebergabe-Prompt v1 referenzierte Subagenten generisch statt mit expliziten per-Material-Dispatch-Bloecken. Didaktische Qualitaet unzureichend. Domain-Anchoring evaluiert: Subagenten in docs/agents/ (Cowork-Domaene) werden von Claude Code gelesen — kein strukturelles Problem, aber Prompt muss explizite Lese-Anweisungen enthalten.
+- **Ergebnis:**
+  - Neuer Uebergabe-Prompt v2 mit expliziten Dispatch-Bloecken pro Material (6x) und Aufgabe (5x)
+  - Jeder Block: Subagent-Prompt-Pfad, Eingabe-Parameter, Q-Gate-Log-Pflicht
+  - AGENT_RAETSEL als Orchestrator fuer Aufgaben (Progressionsplan → per-Aufgabe SUB_AUFGABE_* Dispatch)
+  - Pre-Flight enthaelt Revert von a6aa589
+  - v3.8 C1-C5 Constraints eingebettet (C1b Stundenfrage, C2 Titel A/B, C3 Inline-Links, C4 Bildunterschriften, C5 Variante A)
+  - Mappe-Anhang-Prozedur (ORCHESTRATOR Z.120-131)
+  - Merge-Schutz: Nur data.json, mappe-2.html, 2 Bilder
+- **Artefakte:** `docs/uebergabe/UEBERGABE_MAPPE2_PRODUKTION_v2.md` (neu), STATUS.md + CHANGELOG.md
+- **Naechster Schritt:** In frischer Claude-Code-Session ausfuehren
+
+### Mappe-2-Produktion v1: Gescheitert (Commit a6aa589 — wird revertet)
+- **Phase:** Mappe 2 (Produktion)
+- **Aufgabe:** Uebergabe-Prompt v1 ausgefuehrt.
+- **Ergebnis:** Strukturell korrekt (Rendering, Format OK), aber didaktisch unzureichend. Subagenten-Prompts nicht gelesen — monolithische Produktion. Aufgaben vermutlich ad-hoc statt ueber SUB_AUFGABE_*-Pipeline.
+- **Entscheidung:** Revert + Neugenerierung mit v2-Prompt.
+- **Artefakte:** Commit a6aa589 (wird in Pre-Flight von v2 revertet)
+
+### v3.8 Audit-Fixes Claude Code (Commit f38149a)
+- **Phase:** v3.8 (Audit-Behebung, Claude-Code-Domaene)
+- **Aufgabe:** Uebergabe-Prompt `UEBERGABE_v3-8_AUDIT_FIXES.md` ausgefuehrt.
+- **Ergebnis:**
+  - F-03: Template data.json auf Goldstandard-Struktur gebracht (materialien-Felder, SCPL-Tafelbild, sicherung-Felder, einstieg-Struktur)
+  - F-06: Inline-Link `[[mat-1-8|Karikatur von Cecil Rhodes]]` in aufgabe-1-4 Tipp 1 nachgeruestet
+  - F-08-data: `transfer.frage` und `reflexionsimpuls` in Mappe-1-Sicherung korrigiert (echte Fragen statt Ueberleitungen)
+- **Artefakte:** `escape-games/template/data.json` + `escape-games/gpg-erster-weltkrieg-ursachen/data.json` (aktualisiert)
+- **Naechster Schritt:** Mappe-2-Generierung
+
+### v3.8 Audit-Findings behoben (Cowork-Domaene)
+- **Phase:** v3.8 (Audit-Behebung)
+- **Aufgabe:** 9 Findings aus externem Produktionsreife-Audit evaluieren und beheben.
+- **Ergebnis Cowork-Fixes:**
+  - F-01 [HIGH]: AGENT_MATERIAL Tafelbild-Beispiel auf SCPL-Format aktualisiert (+ zweites Legacy-Beispiel im Gesamt-JSON gefixt)
+  - F-02 [MEDIUM]: ORCHESTRATOR data.json-Schema durch Verweis auf Goldstandard-data.json ersetzt
+  - F-04 [MEDIUM]: QUALITAETSKRITERIEN_MATERIALPRODUKTION um v3.8-Constraints (C1-C5) ergaenzt
+  - F-05 [LOW]: ORCHESTRATOR G1-G13 → G1-G14 korrigiert
+  - F-07 [HIGH]: Mappe-Anhang-Prozedur in ORCHESTRATOR dokumentiert
+  - F-08 [MEDIUM]: Feld-Semantik (ueberleitung/transfer/reflexionsimpuls) in AGENT_MATERIAL geschaerft
+- **Artefakte:** AGENT_MATERIAL.md, ORCHESTRATOR.md, QUALITAETSKRITERIEN_MATERIALPRODUKTION.md (aktualisiert), `docs/uebergabe/UEBERGABE_v3-8_AUDIT_FIXES.md` (neu), STATUS.md + CHANGELOG.md
+
+### v3.8 CSS-Fix: Links + Scroll-Offset (Commit c3ee2f3)
+- **Phase:** v3.8 (Browser-Validierung)
+- **Aufgabe:** Material-Links in Tipps sichtbar machen + Scroll-Offset fuer Fixed Header.
+- **Ergebnis:** `.tipp__material-link` unterstrichen + farbig. `[id^="mat-"]` mit `scroll-margin-top: 4rem`. Browser-Validierung bestanden.
+- **Artefakte:** `assets/css/themes/theme-gpg.css` (aktualisiert)
+
+### v3.8 Bugfix: Tipps + Stundenfrage + M1-Titel (Commit 9d184ee)
+- **Phase:** v3.8 (Browser-Validierung)
+- **Aufgabe:** (1) Auto-Prepend-Block in Tipp-Rendering entfernt — alle Tipps einheitlich durch `_parseInlineMaterialLinks`. (2) Stundenfrage vereinheitlicht: `einstieg.problemstellung` === `sicherung.tafelbild.stundenfrage`. (3) mat-1-1 Titel: "Wie war die Situation in Europa vor 1914?"
+- **Ergebnis:** Inline-Links in Tipps korrekt gerendert. Stundenfrage wortidentisch an allen Stellen. C1b Identitaets-Constraint in AGENT_SKRIPT + AGENT_TAFELBILD verankert.
+- **Artefakte:** `assets/js/escape-engine.js` + `data.json` (aktualisiert), `docs/agents/AGENT_SKRIPT.md` + `AGENT_TAFELBILD.md` (C1b)
+
+### v3.8 Mappe-1-Migration C2-C5 (Commit 2a192e5)
+- **Phase:** v3.8 (Cowork-Runde 5, Migration)
+- **Aufgabe:** 17 Feldaenderungen in data.json (Mappe 1) gemaess C2-C5.
+- **Ergebnis:** 7x C2 Titel (5x Typ A Frage, 2x Typ B Statement), 3x C3 Inline-Material-Links, 4x C4 didaktische Bildunterschriften, 3x C5 Ueberleitung Variante A. Automatisierter Python-Check bestanden.
+- **Artefakte:** `escape-games/gpg-erster-weltkrieg-ursachen/data.json` (aktualisiert)
+- **Naechster Schritt:** Browser-Validierung
+
+### v3.8 Engine-Erweiterung: Inline-Material-Links (Commit fd883dc)
+- **Phase:** v3.8 (Cowork-Runde 5, Engine)
+- **Aufgabe:** `_parseInlineMaterialLinks()` — parst `[[mat-id|Text]]`-Markup in klickbare Anker-Links. DocumentFragment-basiert, XSS-sicher.
+- **Ergebnis:** Tipp-Rendering und Fragestamm-Rendering unterstuetzen `[[...]]`-Markup. Rueckwaertskompatibel (Texte ohne Markup: identisch). Auto-Prepend fuer material_referenz bleibt.
+- **Artefakte:** `assets/js/escape-engine.js` (aktualisiert)
+
+### v3.8 C2/C3 Revision + Infrastruktur-Schaerfung
+- **Phase:** v3.8 (Cowork-Runde 5, Architektur)
+- **Aufgabe:** C2 und C3 revidieren basierend auf Browser-Feedback. Engine-Erweiterung spezifizieren. Migrationsplan aktualisieren.
+- **Ergebnis C2:** Typ A (Frage-Titel, einstieg/erarbeitung) + Typ B (Statement-Titel, visuelle Anker). Aktualisiert in AGENT_MATERIAL.md + 7x SUB_MATERIAL_*.md (MQ2-Zeilen).
+- **Ergebnis C3:** Neue Markup-Konvention `[[mat-id|Anzeigetext]]` + (M-Position). Aktualisiert in AGENT_RAETSEL.md + 5x SUB_AUFGABE_*.md (MQ3-Zeilen).
+- **Artefakte:** `docs/uebergabe/UEBERGABE_v3-8_ENGINE_INLINE_LINKS.md` (neu), `docs/uebergabe/UEBERGABE_v3-8_MIGRATION_MAPPE1.md` (aktualisiert), UPGRADE_PLAN (aktualisiert), STATUS.md + CHANGELOG.md
+
+### v3.8 U9-U10: Einstieg-Zentrierung + Sticky-Transition (Commit 5650157)
+- **Phase:** v3.8 (Cowork-Runde 4, UI-Feinschliff)
+- **Aufgabe:** (1) U9: Einstieg-Block (Narrativ + Problemstellung) zentriert, max-width 800px, Problemstellung 1.2rem bold. (2) U10: IntersectionObserver auf `.einstieg__problemstellung` statt ganzen Einstieg — Sticky-Header erscheint genau wenn Stundenfrage aus Viewport scrollt. Transition 0.3s ease-out.
+- **Ergebnis:** Browser-Sichtung positiv. Einstieg visuell als zentraler Auftakt, Sticky-Uebergang smooth.
+- **Artefakte:** `assets/css/themes/theme-gpg.css` + `assets/js/escape-engine.js` (aktualisiert), `docs/uebergabe/UEBERGABE_v3-8_U9-U10_EINSTIEG_STICKY_TRANSITION.md` (Prompt)
+- **Naechster Schritt:** Infrastruktur-Dokumentation aktualisieren, dann Mappe-1-Migration
+
+### v3.8 U5-U8: Header-Optimierung (Commit 862af13)
+- **Phase:** v3.8 (Cowork-Runde 4, UI-Korrektur)
+- **Aufgabe:** Browser-Review U1-U4 ergab 4 Nachbesserungen: (1) U5: Sticky-Header zeigt Stundenfrage statt Mappennamen (Quelle: `sicherung.tafelbild.stundenfrage`, Fallback `einstieg.problemstellung`). Observer auf `.mappe__einstieg`. (2) U6: Mappentitel "Mappe X: [Titel]" (Index aus `data.mappen`). (3) U7: Beschreibungszeile `display: none`. (4) U8: Game-Titel-H1 nicht mehr erzeugt, Mappe-Titel bleibt H1.
+- **Ergebnis:** Alle 4 Aenderungen umgesetzt, Browser-Sichtung positiv.
+- **Artefakte:** `assets/js/escape-engine.js` (aktualisiert), `docs/uebergabe/UEBERGABE_v3-8_U5-U8_HEADER_STICKY_BESCHREIBUNG.md` (Prompt)
+- **Naechster Schritt:** U9-U10 Feinschliff
+
+### v3.8 C5-Constraint ueberarbeitet + Uebergabe-Prompts U5-U10 erstellt
+- **Phase:** v3.8 (Cowork-Runde 4, Architektur)
+- **Aufgabe:** (1) C5-Constraint in AGENT_SKRIPT.md ueberarbeiten: Variante A (impulsartige Ueberleitung, nicht-letzte Mappen) + Variante B (Reflexionsfrage, letzte Mappe). MQ5 angepasst. (2) Uebergabe-Prompts U5-U8 und U9-U10 erstellt.
+- **Ergebnis:**
+  - AGENT_SKRIPT.md: ABSCHLUSS-MUSTER C5 mit 2 Varianten, MQ5 aktualisiert, Markierungen `[ABSCHLUSS C5: UEBERLEITUNG]` / `[ABSCHLUSS C5: REFLEXION]`
+  - 2 Uebergabe-Prompts: U5-U8 (Header-Optimierung), U9-U10 (Einstieg + Sticky-Transition)
+- **Artefakte:** AGENT_SKRIPT.md (aktualisiert), 2x UEBERGABE_*.md (neu)
+- **Naechster Schritt:** U5-U10 in Claude Code ausfuehren (erledigt, s.o.)
+
+---
+
+## 2026-03-29
+
+### v3.8 Uebergabe-Prompt U1-U4 erstellt
+- **Phase:** v3.8 (Cowork-Runde 3 Vorbereitung)
+- **Aufgabe:** Uebergabe-Prompt fuer Claude Code erstellen: 4 UI-Aenderungen (Infobox-Redesign, Sticky-Header, Hefteintrag-Umbenennung, Quellen-Toggle)
+- **Ergebnis:** `docs/uebergabe/UEBERGABE_v3-8_U1-U4_UI_OPTIMIERUNG.md` erstellt. Enthaelt: Pre-Flight, 4 detaillierte Aenderungsbeschreibungen mit CSS/JS-Snippets, figcaption-Aufspaltung fuer BQ/KA, Fallback-Strategie (Quellen sichtbar ohne JS), 12-Punkt-Verifikationsliste, Merge-Schutz
+- **Artefakte:** `docs/uebergabe/UEBERGABE_v3-8_U1-U4_UI_OPTIMIERUNG.md` (neu)
+- **Naechster Schritt:** Prompt in Claude Code ausfuehren, Browser-Validierung, dann Mappe-1-Migration
+
+### v3.8 Externer Audit C0-C5 durchgefuehrt
+- **Phase:** v3.8 (Audit)
+- **Aufgabe:** 3 parallele Audit-Subagenten auf die v3.8-Gesamtarchitektur ansetzen (Agent-Prompts, Infrastruktur-Docs, Beispiel-Konsistenz)
+- **Ergebnis:** 0 BLOCKER, 2 Sofort-Fixes (ORCHESTRATOR.md Referenz-Tabelle, QUALITAETSKRITERIEN Status v1→v2), 3 False Positives identifiziert, 3 offene LOW/MEDIUM dokumentiert. MQ1-MQ5 Abdeckung 100%. Audit-Bericht: `docs/analyse/AUDIT_v3-8_C0-C5_FINAL.md`
+- **Artefakte:** `docs/analyse/AUDIT_v3-8_C0-C5_FINAL.md` (neu), ORCHESTRATOR.md + QUALITAETSKRITERIEN (gefixt)
+- **Naechster Schritt:** U1-U4 Uebergabe-Prompt erstellen
+
+### v3.8 C3+C4+C5: Display-Referenzen + Didaktische Bildunterschriften + Abschlussfrage
+- **Phase:** v3.8 (Cowork-Runde 2)
+- **Aufgabe:** C3 (Dynamische Material-Referenzen M[position]), C4 (Bildunterschriften didaktisch statt quellenangabe-artig), C5 (Motivierende Abschlussfrage im letzten Chunk) in Agenten-Architektur verankern.
+- **Ergebnis:**
+  - C3: AGENT_RAETSEL.md — Display-Referenz-Konvention (Konventions-Block mit Falsch/Richtig-Tabelle, Material-Display-ID im Konstruktionskontext, MQ3 im Orchestrator-Q-Gate). 5x SUB_AUFGABE_*.md — MQ3 in allen Q-Gate-Tabellen. Beispiel-Tipps in SUB_AUFGABE_MC + SUB_AUFGABE_ZUORDNUNG auf M[position]-Notation korrigiert
+  - C4: SUB_MATERIAL_BILDQUELLE.md — BILDUNTERSCHRIFT-CONSTRAINT-Block + MQ4 im Q-Gate. SUB_MATERIAL_KARTE.md — BILDUNTERSCHRIFT-CONSTRAINT-Block + MQ4 im Q-Gate
+  - C5: AGENT_SKRIPT.md — ABSCHLUSSFRAGE-MUSTER-Block (3 Muster, Regeln, Markierung) + MQ5 im Q-Gate
+- **Artefakte:** AGENT_RAETSEL.md, AGENT_SKRIPT.md, 5x SUB_AUFGABE_*.md, SUB_MATERIAL_BILDQUELLE.md, SUB_MATERIAL_KARTE.md (alle aktualisiert)
+- **Naechster Schritt:** Externer Audit der v3.8-Gesamtarchitektur, danach U1-U4 Uebergabe-Prompts
+
+### v3.8 C1+C2: Stundenfrage-Constraint + Material-Titel-als-Teilfrage
+- **Phase:** v3.8 (Cowork-Runde 1)
+- **Aufgabe:** C1 (Jede Mappe hat exakt eine Stundenfrage als Ueberschrift) + C2 (Kein Material-Titel mit nominalisierten Konzepten) in Agenten-Architektur verankern.
+- **Ergebnis:**
+  - C1: AGENT_SKRIPT.md — STUNDENFRAGE-CONSTRAINT-Block in Chunk-Template, Beispieltabelle Falsch/Richtig, MQ1 im Q-Gate
+  - C1: AGENT_MATERIAL.md — Stundenfrage-Feld im Produktionskontext als Frageform annotiert
+  - C2: AGENT_MATERIAL.md — Material-Titel-Constraint-Block nach Dispatch-Logik, Beispieltabelle Falsch/Richtig, Subagenten-Delegation
+  - C2: MQ2 Q-Gate-Punkt in allen 7 SUB_MATERIAL_*.md (DT, QT, BQ, ZL, TB als Tabellen-Erstzeile; KA, ST als eigene Subsection "Uebergreifende Material-Qualitaet")
+- **Artefakte:** AGENT_SKRIPT.md, AGENT_MATERIAL.md, 7x SUB_MATERIAL_*.md (alle aktualisiert)
+- **Naechster Schritt:** Cowork-Runde 2: C3+C4+C5
+
+### v3.8 C0: PDF-Qualifikation der Guetekriterien (Runde 2+3)
+- **Phase:** v3.8 (Cowork-Runde 0, Qualifikation)
+- **Aufgabe:** 3 weitere Trainings-PDFs (GPG GB, GPG B1, GPG B2) analysieren und Best Practices in QUALITAETSKRITERIEN + Subagenten einbetten. Keine woertlichen Zitate.
+- **Ergebnis:**
+  - QUALITAETSKRITERIEN v1→v2: M9 um Kontroversitaet erweitert. 4 neue typ-spezifische Kriterien: BQ-7 Karikatur-Sonderregeln, BQ-8 Kommunikationsanalyse Propagandabilder, ZL-6 Visuelle Gestaltungsprinzipien, KA-7 Situationskonfrontation. QT-1 um emotionale Zugaenglichkeit erweitert, QT-5 um Quellentypologie (Ueberreste/Traditionen). DT-1 um Kausalitaetstypen (dynamisch/strukturell). BQ-1 um Bildauswahl-Kriterien und didaktische Einsatzfunktionen.
+  - 5 Subagenten aktualisiert: SUB_MATERIAL_DARSTELLUNGSTEXT (Kausalitaetstypen), SUB_MATERIAL_BILDQUELLE (Karikatur + Kommunikationsanalyse + bildtyp-Enum), SUB_MATERIAL_ZEITLEISTE (Visuelle Gestaltung + Layout-Varianten), SUB_MATERIAL_KARTE (Situationskonfrontation), SUB_MATERIAL_QUELLENTEXT (Emotionale Zugaenglichkeit + Quellentypologie)
+  - Quellen-Header in QUALITAETSKRITERIEN aktualisiert (GPG B2 Beschreibung praezisiert)
+- **Artefakte:** QUALITAETSKRITERIEN_MATERIALPRODUKTION.md (v2), 5x SUB_MATERIAL_*.md (aktualisiert)
+- **Naechster Schritt:** CP3 (WORKFLOW_v2.md) + CP4 (ORCHESTRATOR.md, AGENT_TECHNIK.md) abschliessen
+
+### v3.8 C0: Material-Subagenten-Extraktion implementiert
+- **Phase:** v3.8 (Cowork-Runde 0, C0)
+- **Aufgabe:** AGENT_MATERIAL.md (804-Zeilen-Monolith) in Orchestrator + 7 spezialisierte Subagenten refaktorieren. Best Practices aus 6 Trainings-PDFs (DG B1, DG B3, DG B10, GPG GB, GPG B1, GPG B2) extrahieren und in persistente Referenzdatei + Subagenten einbetten.
+- **Ergebnis:**
+  - Schritt A: 5 Renames via `git mv` (AGENT_SUB_DARSTELLUNGSTEXT → SUB_MATERIAL_DARSTELLUNGSTEXT, etc.)
+  - Schritt B: 2 neue Subagenten erstellt: SUB_MATERIAL_KARTE.md (314 Zeilen: 3-Pfad-Workflow, Schulatlas-Redakteur, Engine-Mapping karte→bildquelle), SUB_MATERIAL_STATISTIK.md (325 Zeilen: 3-Pfad-Workflow, Infografik-Designer, dual Engine-Mapping)
+  - Zentrale Referenzdatei: `docs/checklisten/QUALITAETSKRITERIEN_MATERIALPRODUKTION.md` (M1-M12 typ-uebergreifend + 7 typ-spezifische Kriteriensaetze, nur abstrahierte Prinzipien, keine Zitate aus PDFs)
+  - Schritt C: Alle 7 Subagenten aktualisiert (Qualitaetskriterien-Referenz, Best-Practice-Inline-Einbettung, Header-Rename, Cross-Reference-Bereinigung)
+  - AGENT_MATERIAL.md: Zum Orchestrator refaktoriert (804→613 Zeilen). Subagenten-Referenztabelle, Produktionskontext-Template, Dispatch-Logik, Cross-Material-Konsistenzpruefung. W-1 bis W-7 an Subagenten delegiert, Qualitaetsspezifikationen an zentrale Referenz + Subagenten delegiert.
+- **Artefakte:**
+  - `docs/agents/SUB_MATERIAL_KARTE.md` (neu)
+  - `docs/agents/SUB_MATERIAL_STATISTIK.md` (neu)
+  - `docs/checklisten/QUALITAETSKRITERIEN_MATERIALPRODUKTION.md` (neu)
+  - `docs/agents/AGENT_MATERIAL.md` (refaktoriert)
+  - `docs/agents/SUB_MATERIAL_DARSTELLUNGSTEXT.md` (umbenannt + aktualisiert)
+  - `docs/agents/SUB_MATERIAL_QUELLENTEXT.md` (umbenannt + aktualisiert)
+  - `docs/agents/SUB_MATERIAL_BILDQUELLE.md` (umbenannt + aktualisiert)
+  - `docs/agents/SUB_MATERIAL_ZEITLEISTE.md` (umbenannt + aktualisiert)
+  - `docs/agents/SUB_MATERIAL_TAGEBUCH.md` (umbenannt + aktualisiert)
+- **Naechster Schritt:** WORKFLOW_v2.md aktualisieren (5→7 Subagenten, Namenskonvention), dann C1-C5 Content-Aenderungen
+
+### Uebergabe-Artefakt v3.8 C0 erstellt (Token-Limit Session)
+- **Phase:** v3.8 (Uebergabe)
+- **Aufgabe:** Session-Uebergabe wegen Token-Limit. Uebergabe-Artefakt fuer naechste Cowork-Instanz erstellen.
+- **Ergebnis:** `docs/projekt/UEBERGABE_v3-8_C0.md` erstellt. Enthaelt: Orientierung, Pflichtlektuere (7 Dokumente in Reihenfolge), Implementierungsauftrag C0 (7 Subagenten + Orchestrator-Refactoring), kritische Entscheidungen (9 aus Audit), Qualifizierungsauftrag (Trainingsmaterial-Analyse mit Datenschutz-Anweisung), ausstehende Schritte, Projektkonventionen, Fallstricke.
+- **Artefakte:** `docs/projekt/UEBERGABE_v3-8_C0.md` (neu)
+- **Naechster Schritt:** Neue Cowork-Session: Uebergabe-Artefakt lesen, dann C0 implementieren
+
+### Audit-Evaluation v3.8: 10 Findings bewertet, UPGRADE_PLAN finalisiert
+- **Phase:** v3.8 (Audit-Evaluation)
+- **Aufgabe:** Externen Audit-Report (`docs/analyse/Audit Report v3.8.md`) evaluieren. 10 Findings auf Validitaet pruefen, valide Befunde in UPGRADE_PLAN einarbeiten.
+- **Ergebnis:** 2 HIGH, 4 MEDIUM, 3 LOW, 1 Bestaetigung. 8 valide, 1 faktisch falsch (#3: Auditor nahm an, AGENT_SUB_*.md existieren als Dateien — tun sie nicht, nur als WORKFLOW-Referenzen auf geplante Dateien), 1 modifiziert (#8: C5-Formulierung nur in AGENT_SKRIPT, AGENT_RAETSEL uebernimmt nur). 6 Aenderungen eingearbeitet: (1) Produktionskontext um skript_passage ergaenzt (Volltext fuer DT/TB/QT, Zusammenfassung fuer BQ/KA/ZL/ST). (2) Quellenrecherche-Verortung: Orchestrator behaelt Referenz-Workflow, QT/ST recherchieren materialspezifisch selbst, BQ/KA erhalten vorab heruntergeladene Artefakte. (3) W-8-Entfernung bei C0 dokumentiert (seit v3 obsolet). (4) Engine-Typ-Mapping als Spalte in Subagenten-Tabelle (karte→bildquelle, tagebuch→quellentext, statistik→zeitleiste/bildquelle). (5) Display-Referenz-Konvention M[position] fuer C3 definiert (mappenrelativ, 1-basiert). (6) WORKFLOW_v2.md-Aenderungsscope praezisiert (5→7 Subagenten, Namenskonvention, Typ-Mapping, Produktionskontext). Ausfuehrungsort-Fussnote in Domaenenzugehoerigkeit. 4 neue Verifikationspunkte.
+- **Artefakte:** `docs/architektur/UPGRADE_PLAN_v3-2_INFRASTRUKTUR.md` (7 Edits), `docs/projekt/STATUS.md` (aktualisiert)
+- **Naechster Schritt:** v3.8 Cowork-Runde 0: C0 Material-Subagenten-Extraktion starten
+
+### Audit-Briefing v3.8: Material-Subagenten-Architektur
+- **Phase:** v3.8 (Pre-Audit)
+- **Aufgabe:** Audit-Briefing fuer externen Reviewer erstellen. Drei Prueffragestellungen: (A) Grenzziehung Orchestrator ↔ Subagenten bei Design-/Produktions-Modus-Trennung, (B) Tool-Chain-Verankerung (im Subagenten vs. Orchestrator), (C) Ausfuehrungsort und optimaler Prozess pro Game/Mappe. Auditor soll den bisherigen funktionierenden Prozess kennenlernen und evaluieren.
+- **Ergebnis:** `docs/analyse/AUDIT_BRIEFING_v3-8_MATERIAL_SUBAGENTEN.md` erstellt. 13 Pflichtlektuere-Dokumente in Lesereihenfolge. 4 bekannte Inkonsistenzen dokumentiert (Namenskonvention, Subagenten-Anzahl 5 vs. 7, W-8-Residuum, Ausfuehrungsort-Mehrdeutigkeit). Kontextsektion mit Mappe-1-Deployment-Erfahrung, v2.1-Learnings und v3.7-Pattern-Referenz. Scope-Grenzen definiert (Architektur-Pruefung, keine Implementierung).
+- **Artefakte:** `docs/analyse/AUDIT_BRIEFING_v3-8_MATERIAL_SUBAGENTEN.md` (neu)
+- **Naechster Schritt:** Audit durchfuehren lassen, Findings evaluieren, dann C0 implementieren
+
+### v3.8 UPGRADE_PLAN erweitert: Material-Subagenten-Extraktion (C0) als Voraussetzung
+- **Phase:** v3.8 (Architektur-Erweiterung)
+- **Aufgabe:** Material-Subagenten-Extraktion als strukturelle Voraussetzung fuer C1-C5 in UPGRADE_PLAN einbauen. Analog v3.7 (AGENT_RAETSEL → SUB_AUFGABE_*): AGENT_MATERIAL.md (745+ Zeilen, 7 Workflows monolithisch) zu Orchestrator refaktorieren, 7 SUB_MATERIAL_*.md erstellen.
+- **Ergebnis:** UPGRADE_PLAN v3.8 um C0 (Material-Subagenten-Extraktion) erweitert: Neue Architektur-Sektion mit 7-Subagenten-Tabelle, Strukturelle-Analogie-Tabelle (v3.7 ↔ v3.8/C0), Produktionskontext-Template. Betroffene-Artefakte von 13 auf 19 Dateien erweitert. Implementierungsreihenfolge um Schritt 0 ergaenzt. 4 Verifikationspunkte fuer C0. Phasentitel zu "Material-Subagenten + Qualitaet + UI-Optimierung", Umfang von Mittel auf Gross.
+- **Artefakte:** `docs/architektur/UPGRADE_PLAN_v3-2_INFRASTRUKTUR.md` (erweitert), `docs/projekt/STATUS.md` (aktualisiert)
+- **Naechster Schritt:** v3.8 Cowork-Runde 0: C0 Material-Subagenten-Extraktion starten
+
+### v3.8 UPGRADE_PLAN: Material-Qualitaet + UI-Optimierung definiert
+- **Phase:** v3.8 (Architektur-Design)
+- **Aufgabe:** Neue Phase v3.8 vor v3.6 einschueben. 10 Aenderungswuensche aus `docs/analyse/Updates Materialien und UI.md` kategorisieren, in UPGRADE_PLAN als strukturierte Phase mit Betroffene-Artefakte-Tabelle, Domaenenzugehoerigkeit und Verifikationscheckliste aufnehmen.
+- **Ergebnis:** UPGRADE_PLAN erweitert: Phasentabelle (v3.2-v3.5+v3.7 als DONE, v3.8 als NEU), Dependency-Graph (v3.7 → v3.8 → v3.6), Rollback-Strategie (v3.8 graceful degradation), Q-Gate (MQ1-MQ5 Material-Qualitaet). Phase v3.8 Detail-Sektion: Problem, Abhaengigkeit, 9 Aenderungen in 2 Domaenen (U1-U4 Claude Code, C1-C5 Cowork), 13 betroffene Artefakte, 4-Schritt-Implementierungsreihenfolge, 11 Verifikationspunkte.
+- **Artefakte:** `docs/architektur/UPGRADE_PLAN_v3-2_INFRASTRUKTUR.md` (erweitert), `docs/projekt/STATUS.md` (aktualisiert)
+- **Naechster Schritt:** v3.8 Cowork-Runde 1: C1 + C2 in Material-Agenten-Prompts umsetzen
+
+### v3.7 Abschluss: Workflow + Referenz-Docs aktualisiert
+- **Phase:** v3.7 (Abschluss)
+- **Aufgabe:** Verbleibende kanonische Docs an die neue Subagenten-Architektur anpassen: WORKFLOW_v2.md, ORCHESTRATOR.md, GUETEKRITERIEN_AUFGABEN.md, AGENT_TECHNIK.md.
+- **Ergebnis:** WORKFLOW_v2.md: Phase 2.2 aufgeteilt in 2.2a (Orchestration), 2.2b (SUB_AUFGABE_*), 2.2c (Assembly + Cross-Konsistenz). Uebersichtsblock, Agentendiagramm und Detail-Sektion aktualisiert. ORCHESTRATOR.md: Phasendiagramm, Phasentabelle und Referenztabelle um Subagenten-Eintraege erweitert. GUETEKRITERIEN_AUFGABEN.md: A4 von "Distractor-Qualitaet (MC)" zu typ-spezifischem Namespace (A4-MC/A4-ZU/A4-LT/A4-RF) erweitert. Neue Sektion 3.4 Pruefinstanz-Zuordnung mit vollstaendiger A1-A15 → Orchestrator/Subagent-Tabelle. AGENT_TECHNIK.md: Typ-Registry-Sektion mit Rendering-Kontrakt-Referenzen auf alle 5 SUB_AUFGABE_*.md.
+- **Artefakte:** `docs/architektur/WORKFLOW_v2.md`, `docs/agents/ORCHESTRATOR.md`, `docs/checklisten/GUETEKRITERIEN_AUFGABEN.md`, `docs/agents/AGENT_TECHNIK.md` (alle aktualisiert)
+- **Naechster Schritt:** Test-Run: Mappe 1 mit neuer Architektur generieren (v3.7 Verifikation)
+
+### v3.7 Implementierung: 5 SUB_AUFGABE_*.md + AGENT_RAETSEL Orchestrator-Refactoring
+- **Phase:** v3.7 (Implementierung)
+- **Aufgabe:** Aufgaben-Subagenten-Architektur umsetzen: 5 typ-spezifische Subagenten erstellen, AGENT_RAETSEL von monolithischem Konstrukteur zu Orchestrator refaktorieren, UPGRADE_PLAN Q-Gate-Zuordnung anpassen.
+- **Ergebnis:** 5 SUB_AUFGABE_*.md erstellt (MC, Zuordnung, Lueckentext, Reihenfolge, Freitext) mit vollstaendiger Struktur gemaess v3.7-Spec: Rolle + Didaktischer Zweck, Konstruktionsheuristiken (typ-spezifisch), inline Qualitaetskriterien (A4-MC/A4-ZU/A4-LT/A4-RF/A11-FT), Rendering-Kontrakt (data.json Schema + BEM-Klassen + JS-Verhalten), Beispiel mit Q-Gate-Log. AGENT_RAETSEL.md komplett neu geschrieben: Orchestrator-Rolle, Progressionsplan, Operationalisierungsziel-Herleitung, Konstruktionskontext-Template, Dispatch-Logik, Cross-Konsistenz-Pruefungen, Ruecklauf-Mechanismus. UPGRADE_PLAN: A4-Zeile von "NUR SUB_MC" zu typ-spezifischem Namespace erweitert (A4-MC, A4-ZU, A4-LT, A4-RF). MC-Loesungsbeispiel korrigiert (Optionstext statt Buchstabe). QM-Artefakte (Ulrich 2016, Digital lehren/ILIAS, Moodle Fragetypen) ausgewertet — keine GUETEKRITERIEN-Luecken, Erkenntnisse in Konstruktionsheuristiken eingeflossen.
+- **Artefakte:** `docs/agents/SUB_AUFGABE_MC.md` (neu), `docs/agents/SUB_AUFGABE_ZUORDNUNG.md` (neu), `docs/agents/SUB_AUFGABE_LUECKENTEXT.md` (neu), `docs/agents/SUB_AUFGABE_REIHENFOLGE.md` (neu), `docs/agents/SUB_AUFGABE_FREITEXT.md` (neu), `docs/agents/AGENT_RAETSEL.md` (komplett refaktoriert), `docs/architektur/UPGRADE_PLAN_v3-2_INFRASTRUKTUR.md` (Q-Gate-Tabelle angepasst)
+- **Naechster Schritt:** WORKFLOW_v2.md Phase 2.2 aufteilen, GUETEKRITERIEN_AUFGABEN.md A4-* Mapping, ORCHESTRATOR.md + AGENT_TECHNIK.md Subagenten-Referenzen
+
+### Audit-Evaluation v3.7: 12 Findings bewertet, UPGRADE_PLAN optimiert
+- **Phase:** v3.7 (Audit + Optimierung)
+- **Aufgabe:** Externes Audit-Report (`docs/analyse/Audit report 3.7.md`) evaluieren. 12 Findings auf Validitaet pruefen, valide Befunde in UPGRADE_PLAN einarbeiten.
+- **Ergebnis:** 4 HIGH, 5 MEDIUM, 3 LOW Findings bewertet. 10 eingearbeitet, 2 als Bestaetigungen (kein Handlungsbedarf). Wesentliche Optimierungen: (1) Konstruktionskontext erweitert um Material-Zusammenfassungen und Operationalisierungsziel-Herleitung mit Ableitungsmuster `[AFB-Operator] + [TB-Knoten-Merksatz als Frageform]`. (2) Token-Management-Sektion: Volltext nur fuer Ziel-Material (100-150 Worte), Zusammenfassungen fuer Cross-Consistency. (3) Q-Gate-Zuordnungstabelle A1-A15 → Pruefinstanz (Orchestrator/Subagent/Beide) mit Ruecklauf-Mechanismus (max 2 Re-Dispatches). (4) Zwischenartefakt korrigiert: Subagenten schreiben JSON + .md parallel, kein deterministischer Konversionsschritt. (5) Implicit v3.3-Abhaengigkeit dokumentiert. (6) 3 Edge-Case-Verifikationen ergaenzt. Audit-Protokoll als eigene Sektion im UPGRADE_PLAN.
+- **Artefakte:** `docs/architektur/UPGRADE_PLAN_v3-2_INFRASTRUKTUR.md` (erweitert), `docs/analyse/Audit report 3.7.md` (gelesen), `docs/analyse/AUDIT_BRIEFING_v3-7_AUFGABEN_SUBAGENTEN.md` (Referenz)
+- **Naechster Schritt:** 5 SUB_AUFGABE_*.md erstellen, AGENT_RAETSEL.md refaktorieren
+
+### v3.7 UPGRADE_PLAN: Aufgaben-Subagenten-Architektur + Zwischenartefakte
+- **Phase:** v3.7 (Architektur-Design)
+- **Aufgabe:** Fragebogen-Erstellungsprozess verfeinern. AGENT_RAETSEL von monolithisch zu Orchestrator-Pattern refaktorieren (analog AGENT_MATERIAL). 5 typ-spezifische Subagenten (MC, Zuordnung, Lueckentext, Reihenfolge, Freitext) mit eigener didaktischer Expertise, Konstruktionsheuristiken, Guetekriterien und Rendering-Kontrakt. Zwischenartefakte (FRAGEBOGEN_mappe-N.md) als wartbare Inhaltsschicht neben data.json.
+- **Ergebnis:** UPGRADE_PLAN_v3-2_INFRASTRUKTUR.md: Phase v3.7 vollstaendig definiert. E7 (Subagenten-Split) + E8 (Zwischenartefakte als Nebenprodukt) entschieden. Phasen-Tabelle, Dependency-Graph, Rollback-Strategie, Q-Gate-Architektur, Offene-Entscheidungen aktualisiert. Domainzugehoerigkeit geklaert: Prompt-Definitionen in Cowork, Ausfuehrung in Claude Code, .md-Zwischenartefakte als Bruecke.
+- **Artefakte:** `docs/architektur/UPGRADE_PLAN_v3-2_INFRASTRUKTUR.md` (erweitert)
+- **Naechster Schritt:** 5 SUB_AUFGABE_*.md erstellen, AGENT_RAETSEL.md refaktorieren
+
+### Infrastruktur-Aktualisierung: Loesungswort-Mechanismus in allen kanonischen Docs
+- **Phase:** Infrastruktur (post-v3.5h)
+- **Aufgabe:** Nach erfolgreichem Browser-Review v3.5h: Sicherstellen, dass ALLE kanonischen Docs den neuen Loesungswort-Mechanismus korrekt abbilden. Veraltete `code-eingabe`/`freischalt_buchstabe`-Referenzen eliminieren.
+- **Ergebnis:** 6 Docs aktualisiert: AGENT_RAETSEL (freischalt_code Mechanismus-Abschnitt), AGENT_TECHNIK (HTML-Struktur loesungswort-bereich, API-Signaturen, localStorage-Schema), AGENT_DESIGN (BEM-Beispiel `.code__input` → `.loesungscode__titel`), ORCHESTRATOR (Schema-Kommentar zu freischalt_code), ARCHITEKTUR_v1 (code-eingabe → loesungswort-bereich), UPGRADE_PLAN (Loesungswort-Mechanismus + Rollback korrigiert). Verifikations-Grep: 0 veraltete Referenzen in kanonischen Docs.
+- **Artefakte:** 6 Docs unter `docs/agents/`, `docs/architektur/` (modifiziert)
+- **Naechster Schritt:** Naechstes Escape-Game oder weitere Engine-Verbesserungen
+
+### v3.5h implementiert (Commit d8d67d1)
+- **Phase:** v3.5h
+- **Aufgabe:** Root-Cause-Fix Loesungswort — `freischalt_buchstabe` existierte NIE in data.json
+- **Ergebnis:** Komplett-Redesign: `_aktiviereLoesungswort(mappe)` liest `freischalt_code` direkt aus Mappe-Objekt. Alle Buchstaben erscheinen GLEICHZEITIG nach letzter geloester Aufgabe (Fisher-Yates-Shuffle). DnD positionsbasiert. State-Restore fuer `platzierte_buchstaben`. Browser-Review: funktioniert.
+- **Artefakte:** `assets/js/escape-engine.js`, `assets/css/themes/theme-gpg.css`
+- **Naechster Schritt:** Infrastruktur-Docs aktualisieren
+
+### v3.5h Uebergabe-Prompt: Loesungswort-Redesign (Root-Cause-Fix)
+- **Phase:** v3.5h (Redesign)
+- **Aufgabe:** Root-Cause-Analyse nach 4 fehlgeschlagenen Buchstaben-Fix-Versuchen. Ursache: `freischalt_buchstabe` existierte NIE in data.json — war tote Engine-Logik. Konzept komplett umgestellt.
+- **Ergebnis:** Neues Loesungswort-Konzept: Kein `freischalt_buchstabe` pro Aufgabe. Buchstaben aus `freischalt_code` (Mappe-Ebene, z.B. "PULVER") abgeleitet. Alle erscheinen GLEICHZEITIG nach letzter geloester Aufgabe in zufaelliger Reihenfolge. DnD-Zuordnung bleibt positionsbasiert. Loesungswort-Bereich initial unsichtbar. Infrastruktur-Docs aktualisiert: AGENT_RAETSEL (neuer Abschnitt "freischalt_code Mechanismus"), UPGRADE_PLAN (veraltete Referenzen korrigiert).
+- **Artefakte:** `docs/uebergabe/UEBERGABE_v3-5h_LOESUNGSWORT_REDESIGN.md` (neu), `docs/agents/AGENT_RAETSEL.md` (erweitert), `docs/architektur/UPGRADE_PLAN_v3-2_INFRASTRUKTUR.md` (korrigiert)
+- **Naechster Schritt:** Prompt in Claude Code ausfuehren
+
+### v3.5g implementiert (Commit d5f9455)
+- **Phase:** v3.5g
+- **Aufgabe:** 2 strukturelle Issues aus Browser-Review v3.5f implementiert
+- **Ergebnis:** BUG-23: Loesungswort-Sektion als Full-Width-Bereich unterhalb Grid. BUG-24: Volle Antwort-State-Persistenz (MC: selected+eliminated, Zuordnung: mappings, Lueckentext: filled, Reihenfolge: order, Freitext: text). Tipps bei geloesten Aufgaben mit Used-State.
+- **Artefakte:** `assets/js/escape-engine.js`, `assets/css/themes/theme-gpg.css`
+- **Naechster Schritt:** Browser-Review v3.5g
+
+### v3.5g Uebergabe-Prompt (2 Issues: Loesungswort-Position + Antwort-State-Persistenz)
+- **Phase:** v3.5g (strukturell)
+- **Aufgabe:** Browser-Review v3.5f — 2 strukturelle Issues: BUG-23 Buchstaben erscheinen weiterhin nicht (Loesungswort aus Fragebogen-Sidebar herausnehmen → eigenstaendige Full-Width-Sektion unterhalb Grid). BUG-24 "Geloest"-Kompaktanzeige zu minimal (voller Antwort-State in localStorage: eliminated options, korrekte Antwort, Tipps-Used, alle 5 Aufgabentypen).
+- **Ergebnis:** BUG-23: `.loesungswort-bereich` als neuer Container zwischen Grid und Sicherung. Auto-Scroll nach letzter Aufgabe. Notizbuch-Karo beibehalten. BUG-24: `_saveAntwortState()` / `_loadAntwortState()` pro Aufgabentyp. Typ-Renderer immer aufrufen (kein "Geloest"-Block mehr), bei `geloest===true` State aus localStorage wiederherstellen. Tipps auch bei geloesten Aufgaben rendern mit korrektem Used-State.
+- **Artefakte:** `docs/uebergabe/UEBERGABE_v3-5g_LOESUNGSWORT_POSITION_STATE_RESTORE.md` (neu)
+- **Naechster Schritt:** Prompt in Claude Code ausfuehren
+
+### v3.5f implementiert (Commit 07192d4)
+- **Phase:** v3.5f
+- **Aufgabe:** 2 Issues aus Browser-Review v3.5e implementiert
+- **Ergebnis:** BUG-21: Aufgabennummern Textmarker-Gelb. BUG-22: freshProgress-Reload in _updateFortschritt + "Geloest"-Kompaktanzeige statt leerer disabled Felder
+- **Artefakte:** `assets/js/escape-engine.js`, `assets/css/themes/theme-gpg.css`
+- **Naechster Schritt:** Browser-Review v3.5f
+
+### v3.5f Uebergabe-Prompt (2 Issues: State-Restore + Aufgabennummer-Stil)
+- **Phase:** v3.5f (Bugfix, strukturell)
+- **Aufgabe:** Browser-Review v3.5e — 2 Issues: BUG-21 Aufgabennummern sollen Textmarker-Gelb haben. BUG-22 (strukturell): Buchstaben erscheinen nicht nach Loesung (Stale-Progress in _updateFortschritt) + geloeste Aufgaben visuell leer nach Reload (kein Antwort-State gespeichert).
+- **Ergebnis:** BUG-21: CSS-only (.fragebogen .aufgabe__nummer mit Textmarker-Gelb-Hintergrund). BUG-22: Zwei Fixes — (a) freshProgress-Reload in _updateFortschritt vor Buchstaben-Schleife, (b) kompakte "Geloest"-Anzeige (Haekchen + Text) statt leerer disabled Felder bei geloesten Aufgaben. Keine Tipps bei geloesten Aufgaben.
+- **Artefakte:** `docs/uebergabe/UEBERGABE_v3-5f_BUGFIX_STATE_RESTORE.md` (neu)
+- **Naechster Schritt:** Prompt in Claude Code ausfuehren
+
+### v3.5e implementiert (Commit c4f2906)
+- **Phase:** v3.5e
+- **Aufgabe:** 3 Issues aus Browser-Review v3.5d implementiert
+- **Ergebnis:** DnD-Buchstabenpuzzle (Mouse+Touch, Pool+Zielfelder, positionsbasierte Validierung), Textmarker-Gelb fuer Fragesaetze (inline, box-decoration-break), Tipp-Sequenz (gesperrt bis Vorgaenger aufgedeckt) + gewichteter Counter in .mappe-statistik
+- **Artefakte:** `assets/js/escape-engine.js`, `assets/css/themes/theme-gpg.css`
+- **Naechster Schritt:** Browser-Review v3.5e
+
+### v3.5e Uebergabe-Prompt (3 Issues: Loesungswort-DnD + Fragesatz-Hervorhebung + Tipp-System)
+- **Phase:** v3.5e (Redesign + Enhancement)
+- **Aufgabe:** Browser-Review v3.5d — 3 Issues: BUG-18 Loesungswort nicht angezeigt (Redesign als DnD-Buchstabenpuzzle), BUG-19 Fragesaetze visuell nicht unterscheidbar (Textmarker-Stil), BUG-20 Tipp-System (sequentielle Freischaltung + gewichteter Counter)
+- **Ergebnis:** BUG-18: Komplett-Redesign — Textfeld+Submit entfaellt, ersetzt durch Zielkaestchen + Buchstaben-Pool mit Drag-and-Drop (Mouse + Touch). Positionsbasierte Validierung. BUG-19: Textmarker-Gelb (halbtransparent, Karo scheint durch), inline + box-decoration-break. BUG-20: Tipp 1 vor 2 vor 3 (gesperrte Buttons), gewichteter Counter (Stufe=Punkte) neben Fehlversuche in `.mappe-statistik`.
+- **Artefakte:** `docs/uebergabe/UEBERGABE_v3-5e_LOESUNGSWORT_FRAGESATZ.md` (neu)
+- **Naechster Schritt:** Prompt in Claude Code ausfuehren
+
 ## 2026-03-28
+
+### v3.5d Bugfix implementiert (Commit bc5a208)
+- **Phase:** v3.5d
+- **Aufgabe:** 4 Bugs aus dritter Browser-Review gefixt (1 elementar)
+- **Ergebnis:** Fehlversuche-System (eliminated-Optionen, globaler Counter, localStorage-persistent, alle 5 Aufgabentypen), Material-Titel statt "M1.2" in Tipps, Tipp-used visuell deutlich (heller Hintergrund, gestrichelter Rand, Haekchen), Loesungswort-Reveal mit staggered Animation + Scroll zu Kaestchen
+- **Artefakte:** `assets/js/escape-engine.js`, `assets/css/themes/theme-gpg.css`
+- **Naechster Schritt:** Browser-Review v3.5d oder v3.6
+
+### v3.5d Bugfix-Uebergabe-Prompt (4 Bugs, Runde 3)
+- **Phase:** v3.5d (Bugfix)
+- **Aufgabe:** Dritte Browser-Review — 4 Bugs, davon 1 elementar (Fehlversuche-System)
+- **Ergebnis:** BUG-14: Fehlversuche-System statt Aufgaben-Sperre (Eliminated-Optionen, globaler Counter, localStorage-persistent, alle Aufgabentypen). BUG-15: Material-Titel statt "M1.2" in Tipps. BUG-16: Tipp-used visuell deutlich. BUG-17: Loesungswort-Reveal mit Animation + korrektes Scroll-Ziel.
+- **Artefakte:** `docs/uebergabe/UEBERGABE_v3-5d_BUGFIX_LAYOUT_3.md` (neu)
+- **Naechster Schritt:** Bugfix-Prompt in Claude Code ausfuehren
+
+### v3.5c Bugfix implementiert (Commit 072cbfd)
+- **Phase:** v3.5c
+- **Aufgabe:** 5 Bugs aus zweiter Browser-Review gefixt
+- **Ergebnis:** background-attachment:local, Material-Ref in Tipp 1, Loesungscode-Kaestchen, MC Fisher-Yates Shuffle, Tipp-Pillen + Akkordeon
+- **Artefakte:** `assets/js/escape-engine.js`, `assets/css/themes/theme-gpg.css`
+- **Naechster Schritt:** Dritte Browser-Review
+
+### v3.5c Bugfix-Uebergabe-Prompt (5 Bugs, Runde 2)
+- **Phase:** v3.5c (Bugfix)
+- **Aufgabe:** Zweite Browser-Review — 5 weitere Bugs identifiziert, Bugfix-Prompt erstellt
+- **Ergebnis:** Bugs: Karo-Hintergrund scrollt mit Seite (→ background-attachment: local), Material-Referenz-Links sollen in Tipp 1 (→ Differenzierung), Loesungscode nicht angezeigt (→ Buchstaben-Kaestchen), MC nicht randomisiert (→ Fisher-Yates Shuffle), Tipp-Buttons zu gross (→ Pillen + Akkordeon)
+- **Artefakte:** `docs/uebergabe/UEBERGABE_v3-5c_BUGFIX_LAYOUT_2.md` (neu)
+- **Naechster Schritt:** Bugfix-Prompt in Claude Code ausfuehren
+
+### v3.5b Bugfix implementiert (Commit a53c914)
+- **Phase:** v3.5b
+- **Aufgabe:** 8 Bugs aus erster Browser-Review gefixt
+- **Ergebnis:** Material-Flag M1-M9, Phasen-Badge entfernt, Zentrierung + Blocksatz, Karo em-basiert, Typ-Badge entfernt, Nummer nur Zahl, z-index fix fuer Klickbarkeit, Sicherung-Display-Reihenfolge
+- **Artefakte:** `assets/js/escape-engine.js`, `assets/css/themes/theme-gpg.css`
+- **Naechster Schritt:** Zweite Browser-Review
+
+### v3.5b Bugfix-Uebergabe-Prompt (8 Bugs)
+- **Phase:** v3.5b (Bugfix)
+- **Aufgabe:** Browser-Review v3.5 durch Lehrkraft — 8 Bugs identifiziert, Bugfix-Prompt erstellt
+- **Ergebnis:** Bugs: Material-Fortschritt ueberfluessig (ersetzen durch M1-Flag), Phasenbezeichnung ueberfluessig, fehlende Zentrierung/Blocksatz, Karo-Zoom-Problem (em-basiert loesen), Typ-Badge ueberfluessig, Aufgabennummer-Kreis-Overflow, Aufgaben 1+2 nicht interaktiv, Sicherung vorzeitig sichtbar
+- **Artefakte:** `docs/uebergabe/UEBERGABE_v3-5b_BUGFIX_LAYOUT.md` (neu)
+- **Naechster Schritt:** Bugfix-Prompt in Claude Code ausfuehren
+
+### v3.5 Layout-Redesign implementiert (Commit 9c6f7e7)
+- **Phase:** v3.5
+- **Aufgabe:** Uebergabe-Prompt in Claude Code ausgefuehrt
+- **Ergebnis:** Grid 2fr/1fr, Fragebogen als sticky Sidebar mit Karo + Lochrand + Architects Daughter, Material-Fortschritt, Aufgaben-Dots. Dateien: theme-gpg.css, escape-engine.js, mappe-1.html.
+- **Artefakte:** `assets/css/themes/theme-gpg.css`, `assets/js/escape-engine.js`, `escape-games/gpg-erster-weltkrieg-ursachen/mappe-1.html`
+- **Naechster Schritt:** Browser-Review → Bugfixes
+
+### v3.5 Layout-Redesign — Cowork-Vorbereitung
+- **Phase:** v3.5 (Layout-Redesign)
+- **Aufgabe:** Design-Spec, HTML-Prototyp und Uebergabe-Prompt fuer 2/3-1/3 Grid + Notizbuch-Stil Fragebogen
+- **Ergebnis:** Drei Artefakte erstellt. Design-Entscheidungen: Grid 2fr/1fr (Material dominant), Fragebogen als sticky Sidebar mit Arbeitsblatt-Metapher (kariert, Tintenblau #2952A3, Architects Daughter), visuell klar abgegrenzt vom Hefteintrag (liniert, Creme, Caveat/Patrick Hand). Material-Fortschritt per IntersectionObserver, Aufgaben-Dots statt Balken, Ueberleitung-Boxen zentriert mit Pfeil.
+- **Artefakte:** `docs/analyse/DESIGN_SPEC_v3-5_LAYOUT_REDESIGN.md` (neu), `docs/analyse/PROTOTYP_v3-5_LAYOUT.html` (neu), `docs/uebergabe/UEBERGABE_v3-5_LAYOUT_REDESIGN.md` (neu)
+- **Naechster Schritt:** Uebergabe-Prompt in Claude Code ausfuehren
+
+### ORCHESTRATOR.md Konsistenzfix (A1-A15, SK1-SK15, S1-S15)
+- **Phase:** QM-Infrastruktur
+- **Aufgabe:** Asymmetrische Q-Gate-Referenzierung in ORCHESTRATOR.md beheben
+- **Ergebnis:** Phase-2.2-Box um A1-A15 Q-Gate ergaenzt, Agenten-Tabelle Raetsel-Zeile erweitert, Referenz-Dokumente-Tabelle um GUETEKRITERIEN_AUFGABEN, GUETEKRITERIEN_SKRIPT, GUETEKRITERIEN_SEQUENZIERUNG ergaenzt
+- **Artefakte:** `docs/agents/ORCHESTRATOR.md` (aktualisiert)
+- **Naechster Schritt:** v3.5 Layout-Redesign
+
+### v3.3b Nachmigration SCPL-Umordnung (Commit 9df75cc)
+- **Phase:** v3.3b (Nachmigration)
+- **Aufgabe:** Material-Reihenfolge in Mappe 1 data.json nach SCPL-Aufbau umordnen (S14/S15)
+- **Ergebnis:** 9 Materialien umgeordnet: Einstieg (pos 1) → S-Phase (pos 2-4) → C-Phase (pos 5-7) → C/P-Uebergang (pos 8-9). Browser-Check bestanden.
+- **Artefakte:** `escape-games/gpg-erster-weltkrieg-ursachen/data.json`, `docs/uebergabe/UEBERGABE_v3-3b_NACHMIGRATION_SCPL.md`
+- **Naechster Schritt:** v3.4 GUETEKRITERIEN_AUFGABEN.md
+
+### GUETEKRITERIEN_AUFGABEN.md erstellt (A1-A15) + AGENT_RAETSEL Q-Gate
+- **Phase:** v3.4 QM-Infrastruktur (Phase 2)
+- **Aufgabe:** Fachdidaktische Guetekriterien fuer AGENT_RAETSEL aus Ulrich (2016), LLZ Halle, Rechercheergebnisse Lernziele extrahieren
+- **Ergebnis:** 15 Kriterien (7 MUSS, 5 SOLL, 3 KANN). MUSS: AFB-Kongruenz, Fragestaemme-Klarheit, Material-Aufgabe-Kongruenz, Distractor-Qualitaet, Schwierigkeits-Progression, Tipp-Progression, Operator-Praezision. SOLL: Kognitive Aktivierung, TB-Bezug, Typvielfalt, Freitext-Qualitaet, Sachbezogen-vor-Wertbezogen.
+- **Artefakte:** `docs/checklisten/GUETEKRITERIEN_AUFGABEN.md` (neu), `docs/agents/AGENT_RAETSEL.md` (Q-Gate), `docs/architektur/WORKFLOW_v2.md` (Phase 2.2 Q-Gate), `docs/architektur/UPGRADE_PLAN_v3-2_INFRASTRUKTUR.md` (A1-A15)
+- **Naechster Schritt:** v3.5 Engine-Layout oder Content-Zyklus
+
+### GUETEKRITERIEN_SKRIPT.md erstellt (SK1-SK15) + Infrastruktur-Update
+- **Phase:** QM-Infrastruktur (ergaenzt Phase 0.3)
+- **Aufgabe:** Fachdidaktische Guetekriterien fuer AGENT_SKRIPT aus 4 Seminar-PDFs (GPG B1, DG B1, GPG GB, GPG B2) extrahieren und in Infrastruktur verankern. Gap-Analyse Q1-Q13 → SK1-SK15.
+- **Ergebnis:** 15 Kriterien (7 MUSS, 5 SOLL, 3 KANN). MUSS: Vergegenwärtigung (SK1), Elementarisierung (SK2), Anschaulichkeit (SK3), Strukturiertheit (SK4), Sprachliche Angemessenheit (SK5), Vergegenwärtigung-vor-Besinnung (SK6), Multikausualitaet (SK7). SOLL: Gestaltungsprinzipien-Breite (SK8), Multiperspektivitaet (SK9), Sachbezogene Motivierung (SK10), Dramaturgischer Spannungsbogen (SK11), Sandwich-Qualitaet (SK12). KANN: Gegenwartsprinzip (SK13), Zeitkolorit (SK14), Kontroversitaet (SK15). Operationalisierung mit PASS/FAIL-Mustern. Sektion 4 klaert Verhaeltnis zu Q1-Q13 (operativ vs. fachdidaktisch).
+- **Artefakte:** `docs/checklisten/GUETEKRITERIEN_SKRIPT.md` (neu), `docs/agents/AGENT_SKRIPT.md` (Pflicht-Referenz + 2-Stufen-Q-Gate), `docs/architektur/WORKFLOW_v2.md` (SK-Gate in Phase 0.3), `docs/architektur/UPGRADE_PLAN_v3.md` (Datei-Aenderungen), `docs/architektur/UPGRADE_PLAN_v3-2_INFRASTRUKTUR.md` (Q-Gate-Architektur)
+- **Naechster Schritt:** Nachmigration Mappe 1 (SCPL-Umordnung)
+
+### GUETEKRITERIEN_SEQUENZIERUNG v1.1: S14/S15 + 2-Anker-Verfahren
+- **Phase:** QM-Infrastruktur (ergaenzt Phase 1.5/1.9)
+- **Aufgabe:** Nach Browser-Review der v3.3-Migration: Material-Reihenfolge soll SCPL-Sinnstruktur des Tafelbilds und SKRIPT-Absatzfolge entsprechen. Guetekriterien und AGENT_MATERIAL anpassen.
+- **Ergebnis:** S14 SCPL-Korrespondenz + S15 Skript-Kongruenz als neue MUSS-Kriterien. Sektion 2.1b mit 3 Ordnungsrahmen und Prioritaetstabelle (SCPL > SKRIPT > Artikulationsschema). AGENT_MATERIAL Aufgabe 1.9 umgeschrieben auf 2-Anker-Verfahren (SKRIPT-Primaer-Anker + SCPL-Kontroll-Anker).
+- **Artefakte:** `docs/checklisten/GUETEKRITERIEN_SEQUENZIERUNG.md` (v1.1), `docs/agents/AGENT_MATERIAL.md` (Aufgabe 1.9 Rewrite), `docs/uebergabe/UEBERGABE_v3-3_SEQUENZIERUNG.md` (S1-S15 Update)
+- **Naechster Schritt:** Nachmigration Mappe 1 data.json nach SCPL-Aufbau
+
+### v3.3 Material-Sequenzierung (Commit f87dd8b)
+- **Phase:** v3.3 (Engine + Migration)
+- **Aufgabe:** Schema-Erweiterung (position, didaktische_funktion, voraussetzung, ueberleitung_von, sequenz_kontext), Engine _sortMaterialienByPosition + Ueberleitung-Rendering, Migration Mappe 1
+- **Ergebnis:** 9 Materialien mit position 1-9, didaktische Funktionen, Ueberleitungen, Sequenzkontext. Engine sortiert nach position, rendert Ueberleitungsboxen. Template-Schema erweitert.
+- **Artefakte:** `escape-games/gpg-erster-weltkrieg-ursachen/data.json` (migriert), `escape-games/template/data.json` (Schema), `assets/js/escape-engine.js` (Sort + Rendering), `assets/css/themes/theme-gpg.css` (.material-ueberleitung)
+- **Naechster Schritt:** Browser-Review → Ueberarbeitung Sequenzierung (S14/S15)
+
+### v3.2 Umlaut-Fix umgesetzt (Commit 2561066)
+- **Phase:** v3.2 (UTF-8 nativ)
+- **Aufgabe:** Alle ASCII-Transliterationen in data.json durch echte UTF-8-Umlaute ersetzen. 8 Agenten-Prompts mit Encoding-Regel v3.2 aktualisieren.
+- **Ergebnis:**
+  - **Claude Code (Commit 2561066):** 83 Zeilen in `escape-games/gpg-erster-weltkrieg-ursachen/data.json` geaendert. Alle ae→ä, oe→ö, ue→ü Ersetzungen. ss→ß einzeln geprueft (Misstrauen, Gleichgewichtssystem, Buendnissystem behalten ss; Grossmaechte, Grossbritannien, Schiesspulver, Aussenminister bekommen ß). Schema-Feldnamen (ueberleitung, gegenueberstellung) unveraendert. JSON valide, PULVER funktional, 9 Materialien, 5 Aufgaben, 5 Bilder intakt, SCPL-Hefteintrag zeigt echte Umlaute.
+  - **Cowork (Agenten-Prompts):** UTF-8-Encoding-Regel in 8 Agenten-Prompts: AGENT_SUB_DARSTELLUNGSTEXT, AGENT_SUB_QUELLENTEXT, AGENT_SUB_TAGEBUCH, AGENT_SUB_ZEITLEISTE (JSON-Encoding v2.1→v3.2), AGENT_SKRIPT, AGENT_TAFELBILD, AGENT_RAETSEL (neue Encoding-Regel-Sektion). AGENT_SUB_BILDQUELLE hatte Regel bereits.
+- **Artefakte:** `escape-games/gpg-erster-weltkrieg-ursachen/data.json` (migriert), `docs/uebergabe/UEBERGABE_v3-2_UMLAUT_FIX.md` (erstellt + ausgefuehrt), 8x `docs/agents/AGENT_*.md` (Encoding-Regel)
+- **Naechster Schritt:** v3.3 Material-Sequenzierung (Schema-Erweiterung + Engine)
+
+### v3.2-Vorbereitung abgeschlossen: Plan auditiert, Entscheidungen getroffen, Blockier-Aufgaben behoben
+- **Phase:** Planung v3.2-v3.6 + Infrastruktur-Vorbereitung
+- **Aufgabe:** (1) Upgrade-Plan erstellen + 2x extern auditieren. (2) 6 Entscheidungen (E1-E6) treffen. (3) 3 Blockier-Aufgaben aus finalem Audit beheben.
+- **Ergebnis:**
+  - **Plan:** 5 Phasen (v3.2-v3.6) mit Abhaengigkeitsgraph, Rollback-Strategie, Migrationstest, Q-Gate-Architektur. 2 Audits (13 + 8 Findings), alle eingearbeitet.
+  - **Entscheidungen:** E1 Option A (UTF-8 nativ), E2 Aufgabe 1.9 in AGENT_MATERIAL, E3 Russisch + Arabisch, E4 Copy-to-Clipboard MVP, E5 CSS-only (eigenes Farbschema, Abhebung von Sicherung), E6 User-Gate nach Phase 1.5.
+  - **Blockier-Aufgaben:** AGENT_MATERIAL.md: Aufgabe 1.9 Sequenzplanung (Reihenfolge, didaktische Funktion, Voraussetzungen, Ueberleitungen, Sequenzkontext) + 1.10 gemeinsame Praesentation. WORKFLOW_v2.md: Phase 1.5 SEQUENZPLANUNG im Phasendiagramm + Agenten-Reihenfolge. Alle 5 AGENT_SUB_*.md: Sequenzkontext-Pflicht-Input (8-Feld-Tabelle), materialtyp-spezifische Stilregel Sequenz-Kohaerenz, Q-Gate SQ-1 bis SQ-4.
+- **Artefakte:** `docs/architektur/UPGRADE_PLAN_v3-2_INFRASTRUKTUR.md` (erstellt + 2x auditiert), `docs/agents/AGENT_MATERIAL.md` (Aufgabe 1.9+1.10), `docs/architektur/WORKFLOW_v2.md` (Phase 1.5), `docs/agents/AGENT_SUB_DARSTELLUNGSTEXT.md` (Sequenzkontext), `docs/agents/AGENT_SUB_QUELLENTEXT.md` (Sequenzkontext), `docs/agents/AGENT_SUB_TAGEBUCH.md` (Sequenzkontext), `docs/agents/AGENT_SUB_ZEITLEISTE.md` (Sequenzkontext), `docs/agents/AGENT_SUB_BILDQUELLE.md` (Sequenzkontext), `docs/projekt/STATUS.md` (aktualisiert)
+- **Naechster Schritt:** v3.2 Umlaut-Fix umsetzen (Uebergabe-Prompt an Claude Code)
+
+### Phase v3.1-3: Hefteintrag-Engine durch Claude Code implementiert (Commit 71a5896)
+- **Phase:** v3.1-3 (Engine-Integration)
+- **Aufgabe:** SCPL-Renderer implementieren, Hefteintrag-Styles, data.json SCPL-Migration
+- **Ergebnis:** Claude Code hat Uebergabe-Prompt ausgefuehrt. escape-engine.js: Routing (scpl → _renderHefteintragSCPL, sonst Legacy-SVG), Fachbegriff-Highlighting (rot/blau/gruen), Gegenueberstellung, gelbe Merkbox, Transferfrage ausserhalb, dynamisches Datum. theme-gpg.css: @import Google Fonts, Sektion 17c mit allen Hefteintrag-Klassen + Print. data.json Mappe 1: scpl-Objekt komplett. Bestehende Daten (PULVER, 9 Mat, 5 Aufgaben, 5 Bilder) intakt.
+- **Artefakte:** `assets/js/escape-engine.js` (SCPL-Renderer), `assets/css/themes/theme-gpg.css` (Sektion 17c), `escape-games/gpg-erster-weltkrieg-ursachen/data.json` (scpl-Objekt)
+- **Naechster Schritt:** v3.1-4 Validierung (Website aufrufen, visueller Check, Print-Test)
+
+### Phase v3.1-3: Uebergabe-Prompt Hefteintrag-Engine erstellt
+- **Phase:** v3.1-3 (Engine-Integration)
+- **Aufgabe:** Uebergabe-Prompt fuer Claude Code formulieren: CSS-Hefteintrag-Renderer (`_renderHefteintragSCPL()`), SCPL-Routing in `_renderSicherung()`, Hefteintrag-Styles in theme-gpg.css, data.json Mappe 1 SCPL-Migration
+- **Ergebnis:** 3 Aenderungspakete definiert: (1) escape-engine.js: Routing + neue Renderer-Funktion mit SCPL-Zonen, Fachbegriff-Hervorhebung, Gegenueberstellung, Merkbox, Transferfrage. (2) theme-gpg.css: Komplette Hefteintrag-Styles (linierter Hintergrund, Caveat/Patrick-Hand-Fonts, gelbe Merkbox, Print). (3) data.json: scpl-Objekt fuer Mappe 1 mit allen SCPL-Zonen. Legacy-Kompatibilitaet erhalten.
+- **Artefakte:** `docs/uebergabe/UEBERGABE_v3-1-3_HEFTEINTRAG_ENGINE.md` (neu)
+- **Naechster Schritt:** Prompt in Claude Code ausfuehren, dann v3.1-4 (Validierung)
+
+### Phase v3.1-2: Infrastruktur-Update (Schema + Agenten + Workflow)
+- **Phase:** v3.1-2 (Schema-Finalisierung)
+- **Aufgabe:** SCPL-Learnings in Prozess-Infrastruktur verankern: AGENT_TAFELBILD, Guetekriterien, Workflow, Template-Schema
+- **Ergebnis:** AGENT_TAFELBILD.md komplett neu geschrieben (SCPL-Struktur statt Knoten+Verbindungen, Doppelpunkt-Regel, Stilregeln, neues JSON-Schema). GUETEKRITERIEN_TAFELBILD.md: G14 SCPL-Kohaerenz ergaenzt, G13 geschaerft, Output-Format auf SCPL umgestellt. WORKFLOW_v2.md: Schritt 0.4 auf v3.1 aktualisiert. Template data.json: scpl-Schema ergaenzt. Alle G1-G13-Referenzen auf G1-G14 korrigiert (AGENT_MATERIAL, WORKFLOW).
+- **Artefakte:** `docs/agents/AGENT_TAFELBILD.md` (Rewrite), `docs/checklisten/GUETEKRITERIEN_TAFELBILD.md` (G14+Output), `docs/architektur/WORKFLOW_v2.md` (Schritt 0.4), `escape-games/template/data.json` (scpl-Schema), `docs/agents/AGENT_MATERIAL.md` (G1-G14)
+- **Naechster Schritt:** Phase v3.1-3 (Engine-Integration via Uebergabe-Prompt)
+
+### Phase v3.1-1: Hefteintrag-Design finalisiert (Prototyp rev3 + SCPL)
+- **Phase:** v3.1-1 (Design + Prototyp)
+- **Aufgabe:** Prototyp ueberarbeiten basierend auf User-Feedback, SCPL-Framework evaluieren
+- **Ergebnis:** 3 Prototyp-Iterationen (rev1→rev2→rev3). Rev3: 7 Vereinfachungen (keine Metadaten, dynamisches Datum, Fachbegriffe per Doppelpunkt statt Klammern, Pfeile nur Symbol, Linien-Alignment auf 32px-Raster, Merkbox gelb ohne Label, Transferfrage ausserhalb). SCPL-Framework evaluiert und als Leitstruktur uebernommen (7/8 empirische TBs mappbar). Designentscheidung-Dokument mit finalen Entscheidungen aktualisiert.
+- **Artefakte:** `docs/analyse/PROTOTYP_HEFTEINTRAG_v3-1_rev3.html` (final), `docs/architektur/EVALUATION_SCPL_HEFTEINTRAG.md` (neu), `docs/architektur/DESIGNENTSCHEIDUNG_v3-1_HEFTEINTRAG.md` (aktualisiert)
+- **Naechster Schritt:** Phase v3.1-2 (Schema-Finalisierung)
+
 ### Phase v3-4: Uebergabe-Prompt Engine-Erweiterung formuliert
 - **Phase:** v3-4 (Engine-Erweiterung)
 - **Aufgabe:** Aenderungsbedarf fuer v3-Tafelbild-Features in Engine analysieren, Uebergabe-Prompt fuer Claude Code schreiben
