@@ -163,6 +163,8 @@ Der Agent fuehrte Phase 3 (Assembly) in Cowork durch, nicht in Claude Code wie v
 | F-P6-1 | MEDIUM | Ueberfluessige Reads (HANDOFF, data.json, DIDAKTIK_RAHMEN) | Dateien im Produktionsverzeichnis verfuegbar, Agent optimiert pragmatisch | HANDOFF aus Produktionsverzeichnis entfernen oder als "nicht lesen" markieren |
 | F-P6-2 | MEDIUM | WORKFLOW_v4.md nicht gelesen | Orchestrator reicht als Einstieg, Goldstandard als Schema-Referenz | Bestaetigt Vertrags-Extraktion: Phasen-Vertraege statt Volllektuere |
 | F-P2-1 | MEDIUM | Phase 3 in Cowork statt Claude Code ausgefuehrt | Agent kannte P2-Regel nicht (WORKFLOW nicht gelesen) | Phase-3-Uebergabe explizit als Session-Grenze definieren |
+| F-GOLD-1 | MEDIUM | data.json Mappe 1 als implizites Schema-Template genutzt | Kein explizites Verbot, Agent optimiert pragmatisch | data.json ist MVP, NICHT Template. Schema-Autoritaet bei Orchestrator + Vertraegen |
+| F-P2-2 | MEDIUM | Kein Uebergabe-Prompt fuer Phase 3 (Claude Code) ausgegeben | Phase-2-Abschluss nicht als Grenze definiert | PHASE-2-ABSCHLUSS-Block in Orchestrator + WORKFLOW |
 
 ---
 
@@ -176,24 +178,38 @@ Der Agent fuehrte Phase 3 (Assembly) in Cowork durch, nicht in Claude Code wie v
 
 3. **Q-GATE-LOG.md nachtraeglich erstellen** aus dem Konversationsverlauf. Fuer den Audit-Trail.
 
-### Runde 3a-Opt (Vertrags-Extraktion)
+### Runde 3a-Opt (Vertrags-Extraktion) — UMGESETZT
 
-4. **Bestaetigt: WORKFLOW_v4.md wird nicht gelesen.** Die Vertrags-Extraktion ist der richtige Weg. Phasen-Vertraege muessen aber auch die Dispatch-Isolation explizit erzwingen.
+4. **Bestaetigt: WORKFLOW_v4.md wird nicht gelesen.** Vertrags-Extraktion umgesetzt: 6 Phasen-Vertraege in `docs/architektur/vertraege/`. → **DONE**
 
-5. **Orchestrator-Anpassung:** Explizite Anweisung: "Produziere JEDES Material als EIGENE Nachricht. Warte nach jedem Material auf Bestaetigung, bevor du das naechste produzierst." Das ist die einzige Moeglichkeit, P4 in Cowork zu erzwingen.
+5. **Orchestrator-Anpassung:** Dispatch-Isolation (P4) explizit in ORCHESTRATOR.md Phase 2.1 + 2.2 eingetragen. → **DONE**
 
-6. **Q-GATE-LOG als Dispatch-Abschluss-Bedingung:** "Schreibe das Q-Gate-Ergebnis in Q-GATE-LOG.md BEVOR du die naechste Nachricht schreibst."
+6. **Q-GATE-LOG als Dispatch-Abschluss-Bedingung:** In ORCHESTRATOR.md + allen Vertraegen verankert. → **DONE**
+
+### Runde 3a-Opt (User-Feedback) — UMGESETZT
+
+7. **Goldstandard-Rolle neu definiert:** data.json Mappe 1 = MVP-Produkt, NICHT Template. ORCHESTRATOR.md aktualisiert. Alle Vertraege enthalten "NICHT lesen: data.json". → **DONE** (F-GOLD-1)
+
+8. **Phase-2-Abschluss verankert:** PHASE-2-ABSCHLUSS-Block in ORCHESTRATOR.md + WORKFLOW_v4.md. Uebergabe-Prompt fuer Claude Code als Pflicht-Output. → **DONE** (F-P2-2)
 
 ### Phase 3 (verbleibend)
 
-7. **Uebergabe-Prompt fuer Claude Code** schreiben: Bilder herunterladen, mappe-2.html erstellen, git commit + push. data.json ist bereits assembliert.
+9. **Uebergabe-Prompt fuer Claude Code** schreiben: Bilder herunterladen, mappe-2.html erstellen, git commit + push. data.json ist bereits assembliert.
+
+### Verbleibend (vor naechster Produktion)
+
+10. **TAFELBILD_Mappe2.md erstellen:** Aus produziertem rahmen/tafelbild.json retroaktiv ableiten.
+11. **HANDOFF_PHASE2.md verschieben:** Aus Produktionsverzeichnis nach docs/analyse/.
+12. **Q-GATE-LOG.md nachtraeglich erstellen:** Aus Konversationsverlauf.
 
 ---
 
 ## 8. Entscheidung
 
-**v4-Infrastruktur produziert korrekte Artefakte** (Ebene 2 PASS). Die inhaltliche Qualitaet der Mappe 2 ist hoch — strukturell isomorph zu Mappe 1, Engine-kompatibel, didaktisch koharent.
+**v4-Infrastruktur produziert korrekte Artefakte** (Ebene 2 PASS). Die inhaltliche Qualitaet der Mappe 2 ist hoch — Engine-kompatibel, didaktisch koharent.
 
-**v4-Infrastruktur ist NICHT voll prozesskonform** (Ebene 1 PARTIAL PASS). 3 HIGH-Befunde (Batch-Produktion, kein Q-GATE-LOG, fehlendes TAFELBILD). Diese sind durch Orchestrator-Anpassungen behebbar, nicht durch Architektur-Aenderungen.
+**v4-Infrastruktur ist NICHT voll prozesskonform** (Ebene 1 PARTIAL PASS). 3 HIGH-Befunde (Batch-Produktion, kein Q-GATE-LOG, fehlendes TAFELBILD) + 2 MEDIUM aus User-Feedback (Goldstandard-Rolle, Phase-2-Abschluss). Alle durch Orchestrator-Anpassungen behebbar, nicht durch Architektur-Aenderungen.
 
-**Naechster Schritt:** Befunde F-P4-1, F-P5-1, F-INFRA-1 beheben → Runde 3b (Aufgaben, falls noetig) oder direkt Phase 3 + Runde 3a-Opt.
+**Runde 3a-Opt Status:** Befunde F-P4-1, F-P5-1, F-GOLD-1, F-P2-1, F-P2-2 behoben. F-INFRA-1 (TAFELBILD retroaktiv) + F-P6-1 (HANDOFF verschieben) verbleibend.
+
+**Naechster Schritt:** Verbleibende Sofort-Massnahmen (10-12) → Phase-3-Uebergabe → Runde 3b oder direkt naechstes Game.

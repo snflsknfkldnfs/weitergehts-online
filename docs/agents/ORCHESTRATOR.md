@@ -102,10 +102,14 @@ PHASE 2: MAPPEN-PRODUKTION (sequentiell, pro Mappe)
   │             tafelbild.loesung.saetze[]            │
   │                                                  │
   │  [2.1] Material-Produktion (sequentiell, Cowork) │
-  │        Pro Material: SUB_MATERIAL_* Dispatch      │
+  │        DISPATCH-ISOLATION (P4): Jedes Material   │
+  │        wird als EIGENE Nachricht produziert.     │
+  │        NICHT mehrere Materialien parallel.        │
+  │        Pro Material: 1 SUB_MATERIAL_* Dispatch    │
   │        7 Subagenten: DT, QT, BQ, KA, ZL, ST, TB │
-  │        Ausgabe: materialien/mat-N-M.json (P4)    │
+  │        Ausgabe: materialien/mat-N-M.json          │
   │        Q-Gate: MQ1-MQ5 + typ-spezifisch (P5)    │
+  │        Q-Gate-Ergebnis in Q-GATE-LOG.md PFLICHT  │
   │        Ref: QUALITAETSKRITERIEN_MATERIALPRODUKTION│
   │                                                  │
   │  ══ USER-VALIDIERUNG nach Mat 1-2: PFLICHT ════  │
@@ -122,14 +126,24 @@ PHASE 2: MAPPEN-PRODUKTION (sequentiell, pro Mappe)
   │         Progressionsplan (liest mat-*.json        │
   │         NUR Metadaten, NICHT Volltext)            │
   │  [2.2b] SUB_AUFGABE_* (5 Subagenten, Cowork)    │
-  │         Pro Aufgabe: isolierter Dispatch          │
-  │         Ausgabe: aufgaben/aufgabe-N-M.json (P4)  │
+  │         DISPATCH-ISOLATION (P4): Jede Aufgabe    │
+  │         als EIGENE Nachricht. NICHT parallel.     │
+  │         Ausgabe: aufgaben/aufgabe-N-M.json        │
   │         Q-Gate: A1-A3, A4-*, A6-A7, A11-FT (P5) │
+  │         Q-Gate-Ergebnis in Q-GATE-LOG.md PFLICHT │
   │  [2.2c] AGENT_RAETSEL (Cross-Konsistenz)         │
   │         Q-Gate: A5, A8-A10, A12                  │
   │                                                  │
   │  ══ USER-VALIDIERUNG: EMPFOHLEN ═══════════════  │
   │  Stichproben-Review auf 1-2 Aufgaben             │
+  │  ════════════════════════════════════════════════ │
+  │                                                  │
+  │  ══ PHASE-2-ABSCHLUSS ═════════════════════════  │
+  │  Phase 2 endet HIER. KEIN Assembly in Cowork.    │
+  │  Ausgabe: Uebergabe-Prompt fuer Claude Code      │
+  │  (Phase 3: Assembly + Bilder + HTML + Git).      │
+  │  Inhalt: Produktionsverzeichnis-Pfad,            │
+  │  Game-ID, Mappe-Nr. KEINE Dateiinhalte.          │
   │  ════════════════════════════════════════════════ │
   │                                                  │
   └──────────────────────────────────────────────────┘
@@ -224,9 +238,11 @@ QUALITAETS-GATE
 
 ## Datenstruktur – data.json
 
-**Kanonische Referenz:** Die aktuelle Goldstandard-data.json liegt unter `escape-games/gpg-erster-weltkrieg-ursachen/data.json`. Bei Neuerstellung eines Games dient sie als Strukturvorlage. Das Template unter `escape-games/template/data.json` ist veraltet (pre-v3.3) und soll NICHT als Referenz verwendet werden.
+**Kanonische Schema-Referenz:** Das data.json-Schema wird hier definiert (siehe unten). Die existierende data.json unter `escape-games/gpg-erster-weltkrieg-ursachen/data.json` ist ein MVP-Produkt, KEINE Vorlage. Sie darf NICHT als Template fuer neue Mappen gelesen werden — das wuerde MVP-spezifische Strukturentscheidungen zementieren und die didaktische Flexibilitaet einschraenken. Die Schema-Autoritaet liegt bei diesem Dokument und den Schnittstellen-Vertraegen in WORKFLOW_v4.md (bzw. den phasen-spezifischen Vertraegen in docs/architektur/vertraege/).
 
-Alle Agenten arbeiten konsistent auf folgendem Schema (Kurzuebersicht — fuer Felddetails die Goldstandard-data.json lesen):
+Das Template unter `escape-games/template/data.json` ist veraltet (pre-v3.3) und soll NICHT als Referenz verwendet werden.
+
+Alle Agenten arbeiten konsistent auf folgendem Schema:
 
 ```
 data.json

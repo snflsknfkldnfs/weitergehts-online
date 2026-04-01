@@ -10,6 +10,7 @@
 **Audit 3:** docs/analyse/AUDIT_v4_PRODUKTIONSREIFE_ERGEBNIS.md (2026-03-31) — 0 BLOCKER, 3 HIGH, 6 MEDIUM, eingearbeitet
 **Kern-Prinzip:** Inhaltliche Kohaerenz zuerst — vom Wikipedia-Artikel zum schulernahen Skript zum Tafelbild zum Material
 **Kanonisch fuer:** Agenten-Reihenfolge, Phasenstruktur, Artefakt-Definitionen, Schnittstellen, Ausfuehrungsorte
+**Vertrags-Extraktion (Runde 3a-Opt):** Die Schnittstellen-Vertraege pro Phase sind in `docs/architektur/vertraege/VERTRAG_PHASE_*.md` extrahiert. Diese Vertraege sind die operative Referenz fuer Dispatches — WORKFLOW_v4.md muss NICHT pro Dispatch gelesen werden.
 
 ---
 
@@ -76,8 +77,8 @@ Cowork hat Agent-Dispatch mit isoliertem Kontext, Zwischenergebnisse als Dateien
 **P3: Rahmen stuetzt Inhalt, nicht umgekehrt. Sicherung steuert vom Ende her.**
 Tafelbild, Einstieg und Sicherung werden VOR den Materialien finalisiert (Rahmen-zuerst-Sequenz). Die Sicherung (Kernerkenntnisse, Hefteintrag) definiert das Lernziel — Materialien arbeiten darauf hin. Materialien stellen den fokussierten Kerninhalt in den Mittelpunkt. Der Rahmen stuetzt, qualifiziert und bettet die Materialien in den Lernprozess ein — er schraenkt den inhaltlichen Fokus nicht ein. Aufgaben referenzieren fertige Materialien + Rahmen.
 
-**P4: Ein Artefakt pro Dispatch.**
-Jedes Material und jede Aufgabe wird als eigene .json-Datei produziert und persistiert. Kein monolithischer Output. Jeder Fehler ist isoliert korrigierbar.
+**P4: Ein Artefakt pro Dispatch. DISPATCH-ISOLATION.**
+Jedes Material und jede Aufgabe wird als eigene .json-Datei produziert und persistiert. Kein monolithischer Output. Jeder Fehler ist isoliert korrigierbar. **Jedes Material/jede Aufgabe wird als EIGENE Nachricht produziert. NICHT mehrere Materialien oder Aufgaben parallel in einer Nachricht.** Q-Gate-Ergebnis in Q-GATE-LOG.md PFLICHT vor naechstem Dispatch.
 
 **P5: Q-Gate als Pflicht-Zwischenschritt.**
 Zwischen Produktion und Persistierung steht eine Q-Gate-Pruefung. Erst bei PASS wird das Artefakt geschrieben. Bei FAIL: 1 Nachbesserung, dann Finding dokumentieren.
@@ -731,6 +732,13 @@ Pruefpunkte fuer Aufgaben:
 4. Sandwich-Konsistenz (Uebergang zur naechsten Mappe)
 
 Erst nach PASS → Phase 3 oder naechste Mappe.
+
+### Phase 2 Abschluss
+
+**Phase 2 endet nach Phase 2.3. KEIN Assembly in Cowork.**
+
+Ausgabe am Ende von Phase 2: Uebergabe-Prompt fuer Claude Code (Phase 3: Assembly + Bilder + HTML + Git).
+Inhalt des Uebergabe-Prompts: Produktionsverzeichnis-Pfad, Game-ID, Mappe-Nr. KEINE Dateiinhalte kopieren — Claude Code liest selbst.
 
 ---
 
