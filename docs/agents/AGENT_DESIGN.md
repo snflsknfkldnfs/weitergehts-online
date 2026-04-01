@@ -17,7 +17,7 @@ Vom ORCHESTRATOR:
 
 > **AGENT_DESIGN** arbeitet **ausschließlich in CSS-Dateien** (`base.css`, `theme-gpg.css`). Er ändert **kein HTML** und **kein JavaScript**.
 >
-> **AGENT_TECHNIK** liefert funktionales HTML mit BEM-Klassennamen (z.B. `.aufgabe__titel`, `.mappe__header`, `.code__input`). AGENT_DESIGN stylt diese Klassen.
+> **AGENT_TECHNIK** liefert funktionales HTML mit BEM-Klassennamen (z.B. `.aufgabe__titel`, `.mappe__header`, `.loesungscode__titel`). AGENT_DESIGN stylt diese Klassen.
 
 | Verantwortung | AGENT_DESIGN | AGENT_TECHNIK |
 |---|---|---|

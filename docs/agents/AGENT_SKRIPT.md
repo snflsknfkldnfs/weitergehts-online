@@ -84,6 +84,35 @@ Zwischen jedem Chunk-Paar: Erkenntnisse aus Mappe N im Einstieg von Mappe N+1 au
 - Am Anfang jedes Chunks (ausser dem ersten): 1-2 Saetze, die die Sicherungs-Erkenntnis des vorherigen Chunks aufgreifen und als Ausgangspunkt nutzen
 - Ueberlappungszonen explizit markieren: `[SANDWICH: Uebergang von Chunk N zu Chunk N+1]`
 
+**ABSCHLUSS-MUSTER (C5, v3.8):**
+
+Der LETZTE Chunk einer Mappe endet mit einem motivierenden Abschluss-Impuls. Das Format haengt von der **Position der Mappe** ab:
+
+**Variante A — Ueberleitung (alle Mappen AUSSER der letzten):**
+Ein impulsartiger Satz, der Neugier auf die naechste Mappe weckt. Keine Frage, sondern eine narrative Bruecke. Format: Kontextsatz + "... erfaehrst du in der naechsten Mappe."
+
+| Muster | Beispiel |
+|--------|---------|
+| Ausblick-Impuls | "Wie ein Schuss den ganzen Kontinent in den Krieg stuerzen konnte, erfaehrst du in der naechsten Mappe." |
+| Cliffhanger | "Der Funke war gefallen — was er ausloeste, war beispiellos. Weiter in der naechsten Mappe." |
+| Perspektivwechsel | "Die Diplomaten hatten versagt. Was das fuer die Menschen bedeutete, erfaehrst du in der naechsten Mappe." |
+
+**Variante B — Reflexionsfrage (NUR letzte Mappe):**
+Eine offene, interessenstiftende Frage, die ueber den Stoff hinausweist. Keine Prueffrage, sondern eine narrative Weiterfuehrung.
+
+| Muster | Beispiel |
+|--------|---------|
+| Zukunfts-Perspektive | "Der Krieg war vorbei — aber war auch der Frieden gesichert?" |
+| Dilemma-Frage | "Haetten die Grossmaechte den Krieg verhindern koennen — und wenn ja, um welchen Preis?" |
+| Transfer in die Gegenwart | "Gibt es heute aehnliche Buendnissysteme? Was ist anders?" |
+
+Regeln:
+- Max. 2 Saetze (Kontextsatz + Impuls/Frage)
+- Motivierend, nicht pruefend — keine AFB-Operatoren
+- Variante A: Kein Fragezeichen, sondern Vorfreude auf naechste Mappe
+- Variante B: Genau 1 Frage, inhaltlich anschlussfaehig an den naechsten Lernbereich/die naechste UE
+- Markierung: `[ABSCHLUSS C5: UEBERLEITUNG]` (Variante A) oder `[ABSCHLUSS C5: REFLEXION]` (Variante B)
+
 ### 6. Artefakte aus INHALTSBASIS positionieren
 
 Alle in INHALTSBASIS dokumentierten Artefakte (Wikimedia-Bilder, Zitate, Rollenprofile) im Skript an der narrativ passenden Stelle referenzieren. Das SKRIPT wird damit zur Primaerquelle fuer AGENT_MATERIAL — alle Material-Entscheidungen leiten sich aus den positionierten Artefakten + Skript-Passagen ab.
@@ -105,6 +134,10 @@ Alle in INHALTSBASIS dokumentierten Artefakte (Wikimedia-Bilder, Zitate, Rollenp
 
 **v3-Aenderung:** Tafelbild-Erstellung ist jetzt Aufgabe von AGENT_TAFELBILD (Phase 0.4). AGENT_SKRIPT liefert das didaktisierte Narrativ, aus dem AGENT_TAFELBILD die Quintessenz extrahiert. AGENT_SKRIPT erstellt kein Tafelbild mehr.
 
+## Encoding-Regel (v3.2)
+
+**Umlaute:** Schreibe echte UTF-8-Umlaute (ä, ö, ü, ß). KEINE ASCII-Transliterationen (ae, oe, ue, ss). Gilt fuer alle Texte im Skript — diese werden spaeter 1:1 in Material-HTML und data.json uebernommen.
+
 ## Ausgabe
 
 `SKRIPT_[game-id].md` mit folgender Struktur:
@@ -124,7 +157,23 @@ Alle in INHALTSBASIS dokumentierten Artefakte (Wikimedia-Bilder, Zitate, Rollenp
 
 ---
 
-## Chunk 1: [Mappe-1-Titel]
+## Chunk 1: [Stundenfrage als Mappe-Ueberschrift]
+
+**STUNDENFRAGE-CONSTRAINT (C1, v3.8):**
+Die Chunk-Ueberschrift IST die Stundenfrage der Mappe. Genau EINE Frage, in Frageform (Fragezeichen am Ende). Keine Aussage, kein Doppelpunkt-Titel, keine Aufzaehlung. Die Stundenfrage muss durch die Materialien der Mappe beantwortbar sein.
+
+**IDENTITAETS-CONSTRAINT (C1b, v3.8):**
+Die Stundenfrage erscheint an drei Stellen im Escape-Game — ALLE DREI MUESSEN WORTIDENTISCH sein:
+1. `einstieg.problemstellung` — sichtbar im Einstieg-Block
+2. `sicherung.tafelbild.stundenfrage` — sichtbar im Hefteintrag UND im Sticky-Header
+3. Chunk-Ueberschrift im SKRIPT-Artefakt — Planungsdokument
+Abweichungen (z.B. Doppelfrage, Umformulierung, Ergaenzung) fuehren zu MQ1-FAIL.
+
+| Falsch | Richtig |
+|--------|---------|
+| "Pulverfass Europa — Spannungen vor 1914" | "Warum war Europa vor 1914 ein 'Pulverfass'?" |
+| "Buendnissysteme und Aufruestung" | "Wie spaltete sich Europa in zwei feindliche Lager?" |
+| "Der Weg in den Krieg" | "Warum fuehrte ein Mord in Sarajevo zum Weltkrieg?" |
 
 ### Einstieg-Kontext
 [Wo stehen die SuS? Was wissen sie schon? 1-2 Saetze.]
@@ -148,7 +197,7 @@ Alle in INHALTSBASIS dokumentierten Artefakte (Wikimedia-Bilder, Zitate, Rollenp
 
 ---
 
-## Chunk 2: [Mappe-2-Titel]
+## Chunk 2: [Stundenfrage als Mappe-Ueberschrift — siehe C1-Constraint oben]
 
 ### Einstieg-Kontext
 [Aufgriff der Sandwich-Erkenntnis aus Chunk 1]
@@ -157,7 +206,14 @@ Alle in INHALTSBASIS dokumentierten Artefakte (Wikimedia-Bilder, Zitate, Rollenp
 
 ## Qualitaets-Gate
 
-Vor Uebergabe an User-Review prueft AGENT_SKRIPT das Skript gegen diese Checkliste:
+**Pflicht-Referenz:** `docs/checklisten/GUETEKRITERIEN_SKRIPT.md` (SK1-SK15)
+
+Vor Uebergabe an User-Review prueft AGENT_SKRIPT das Skript in zwei Stufen:
+
+**Stufe 1 — Operationale Pruefung (Q1-Q13):** Binaer PASS/FAIL gemaess untenstehender Tabelle.
+**Stufe 2 — Fachdidaktische Pruefung (SK1-SK15):** Gemaess GUETEKRITERIEN_SKRIPT.md. MUSS-Verletzung = Ueberarbeitung. SOLL-Verletzung = Hinweis im Output.
+
+### Stufe 1: Operationale Checkliste (Q1-Q13)
 
 | # | Pruefpunkt | Kriterium |
 |---|---|---|
@@ -174,8 +230,14 @@ Vor Uebergabe an User-Review prueft AGENT_SKRIPT das Skript gegen diese Checklis
 | Q11 | Wikimedia-Artefakte positioniert | Sind alle img-IDs aus INHALTSBASIS im Skript platziert (Artefakt-Zuordnungstabelle)? Nicht platzierbare mit Begruendung dokumentiert? |
 | Q12 | Zitate positioniert | Sind alle zit-IDs aus INHALTSBASIS im Skript platziert oder begruendet ausgeschlossen? |
 | Q13 | Rollenprofil pro Chunk | Hat jeder Chunk mindestens 1 rolle-ID-Zuordnung fuer Tagebuch-Material? |
+| MQ1 | Stundenfrage-Konformitaet (v3.8 C1/C1b) | Ist jede Chunk-Ueberschrift genau EINE Frage in Frageform (mit Fragezeichen)? Keine Aussage, kein Doppeltitel, keine Aufzaehlung? Ist die Stundenfrage wortidentisch in einstieg.problemstellung, sicherung.tafelbild.stundenfrage und Chunk-Ueberschrift? |
+| MQ5 | Abschluss-Impuls (v3.8 C5) | Endet der letzte Chunk mit Variante A (Ueberleitung, nicht-letzte Mappe) oder Variante B (Reflexionsfrage, letzte Mappe)? Markierung `[ABSCHLUSS C5: UEBERLEITUNG]` oder `[ABSCHLUSS C5: REFLEXION]` vorhanden? |
 
-Jeder Pruefpunkt: PASS / FAIL. Bei FAIL: Ueberarbeiten, bevor User-Review startet.
+Jeder Pruefpunkt: PASS / FAIL. Bei FAIL: Ueberarbeiten, bevor Stufe 2 beginnt.
+
+### Stufe 2: Fachdidaktische Pruefung (SK1-SK15)
+
+Gemaess `docs/checklisten/GUETEKRITERIEN_SKRIPT.md`. Prueft Vergegenwärtigung (SK1), Elementarisierung (SK2), Anschaulichkeit (SK3), Strukturiertheit (SK4), Sprachliche Angemessenheit (SK5), Vergegenwärtigung-vor-Besinnung (SK6), Multikausualitaet (SK7) als MUSS. Gestaltungsprinzipien-Breite (SK8), Multiperspektivitaet (SK9), Sachbezogene Motivierung (SK10), Dramaturgischer Spannungsbogen (SK11), Sandwich-Qualitaet (SK12) als SOLL. Bei MUSS-Verletzung: Ueberarbeiten. Bei SOLL-Verletzung: `[SK-HINWEIS]` im Output.
 
 ## Abgrenzung zu anderen Agenten
 

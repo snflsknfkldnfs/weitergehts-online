@@ -193,27 +193,43 @@ Sekundaer: Aktualisierung der **INHALTSBASIS** mit:
 
 Die Thumbnail-URLs aus der MediaWiki API (`thumburl`) sind CDN-Pfade, die bei haeufigem Zugriff 429-Fehler ausloesen. Bilder muessen lokal gehostet werden.
 
-**AGENT_ARTEFAKT dokumentiert die URLs** — der Download erfolgt in Phase 2.0 (vor Material-Produktion).
+**AGENT_ARTEFAKT dokumentiert die URLs** — der Download erfolgt in Phase 3.1 (Claude Code, rein mechanisch).
 
-### Download-Methode (verbindlich seit v2.1)
+### Download-Methode (verbindlich seit v2.1, praezisiert v4)
 
-**VERBOTEN:** `curl` — Wikimedia liefert bei `curl` HTML-Fehlerseiten (2 KB) statt Bilder.
+**URL-Quelle:** Phase 3.1 liest die Thumbnail-URL direkt aus dem ARTEFAKT_INVENTAR. KEINE manuelle URL-Konstruktion — Wikimedia-Thumb-Pfade enthalten einen Hash-Prefix, der nicht aus dem Dateinamen ableitbar ist.
 
-**PFLICHT:** Python `urllib` mit Bot-User-Agent:
+**VERBOTEN:** `curl` — Wikimedia liefert bei `curl` HTML-Fehlerseiten (2 KB) statt Bilder. Ebenso verboten: Manuelle Konstruktion von `commons/thumb/...`-URLs (fuehrt zu 404).
+
+**PFLICHT:** Python `urllib` mit Bot-User-Agent. Bei 404: Fallback ueber Wikimedia API (`commons.wikimedia.org/w/api.php?action=query&titles=File:{NAME}&prop=imageinfo&iiprop=url&iiurlwidth={BREITE}&format=json` → `thumburl` aus Antwort).
 
 ```python
-import urllib.request, time, os
+import urllib.request, json, time, os
+
+HEADERS = {'User-Agent': 'WeitergehtsOnline/1.0 (https://weitergehts.online; paulcebulla@gmx.de)'}
 
 def download_image(url, path):
     os.makedirs(os.path.dirname(path), exist_ok=True)
-    req = urllib.request.Request(url, headers={
-        'User-Agent': 'WeitergehtsOnline/1.0 (https://weitergehts.online; paulcebulla@gmx.de)'
-    })
+    req = urllib.request.Request(url, headers=HEADERS)
     with urllib.request.urlopen(req) as resp:
         with open(path, 'wb') as f:
             f.write(resp.read())
     assert os.path.getsize(path) > 10_000, f"Fehlgeschlagen: {path} nur {os.path.getsize(path)} Bytes"
     time.sleep(2)  # Rate-Limiting respektieren
+
+def resolve_url_via_api(wiki_filename, width=640):
+    """Fallback bei 404: URL ueber Wikimedia API aufloesen."""
+    api_url = (
+        f"https://commons.wikimedia.org/w/api.php?action=query"
+        f"&titles=File:{wiki_filename}&prop=imageinfo"
+        f"&iiprop=url&iiurlwidth={width}&format=json"
+    )
+    req = urllib.request.Request(api_url, headers=HEADERS)
+    with urllib.request.urlopen(req) as resp:
+        data = json.loads(resp.read())
+    page = list(data["query"]["pages"].values())[0]
+    info = page["imageinfo"][0]
+    return info.get("thumburl") or info["url"]
 ```
 
 ### Download-Timing
@@ -221,10 +237,10 @@ def download_image(url, path):
 | Phase | Was passiert |
 |---|---|
 | Phase 0.2b (AGENT_ARTEFAKT) | URLs + Metadaten dokumentieren. KEIN Download. |
-| Phase 2.0 (vor Material-Produktion) | Download aller QUALIFIZIERT-Bilder. Dateigroesse verifizieren. |
-| Phase 2.1 (Material-Produktion) | Lokale Pfade in `inhalt`-Felder einsetzen. |
+| Phase 3.1 (Claude Code) | Download aller QUALIFIZIERT-Bilder. Thumbnail-URL aus INVENTAR. Bei 404: API-Fallback. Dateigroesse verifizieren. |
+| Phase 2.1 (Material-Produktion, Cowork) | Lokale Pfade in `inhalt`-Felder einsetzen (Pfad: `assets/img/{game-id}/{img-id}.{ext}`). |
 
-AGENT_ARTEFAKT liefert alle noetigen Informationen (URL, Dateiname, Breite, Format), damit Phase 2.0 den Download automatisiert durchfuehren kann.
+AGENT_ARTEFAKT liefert alle noetigen Informationen (Thumbnail-URL, Wikimedia-Dateiname, Breite, Format), damit Phase 3.1 den Download zuverlaessig durchfuehren kann — primaer ueber INVENTAR-URL, bei Bedarf ueber API-Fallback.
 
 ## Qualitaets-Gate
 
@@ -259,7 +275,7 @@ Alle Calls via `markdownify: webpage-to-markdown` als Proxy zur MediaWiki API.
 | Frage | Zustaendig |
 |---|---|
 | Welche Wikipedia-Artikel als Basis? | AGENT_INHALT (Sachanalyse) |
-| Wie wird das Artefakt didaktisch eingebettet? | AGENT_SUB_BILDQUELLE / SUB_QUELLENTEXT / SUB_TAGEBUCH |
+| Wie wird das Artefakt didaktisch eingebettet? | SUB_MATERIAL_BILDQUELLE / SUB_MATERIAL_QUELLENTEXT / SUB_MATERIAL_TAGEBUCH |
 | Bild herunterladen und lokal speichern? | AGENT_TECHNIK / Claude Code (Phase 3) |
 | Aufgaben zum Artefakt? | AGENT_RAETSEL |
 | Artefakt selbst erstellen (Illustration, Diagramm)? | AGENT_MATERIAL (Pfad B/C) — ausserhalb dieses Agenten |

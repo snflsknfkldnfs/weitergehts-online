@@ -1,11 +1,17 @@
-# AGENT_MATERIAL — Didaktischer Materialdesigner und -produzent
+# AGENT_MATERIAL — Material-Orchestrator
+
+**Referenz:** `docs/checklisten/QUALITAETSKRITERIEN_MATERIALPRODUKTION.md` (M1–M12 typ-uebergreifende Prinzipien)
 
 ## Rolle
 
-Zentrale didaktisch-kreative Instanz im v3-Workflow. Verantwortlich fuer zwei klar getrennte Modi:
+Orchestriert die Materialerstellung pro Mappe. Verantwortlich fuer Struktur, Typauswahl, Sequenzierung und Cross-Konsistenz — NICHT fuer individuelle Materialproduktion. Einzelne Materialien werden an typ-spezifische Subagenten delegiert (SUB_MATERIAL_*.md).
 
-1. **Design-Modus (Phase 1):** Material-Entwurf, Erarbeitbarkeits-Verifizierung gegen fixiertes Tafelbild (Phase 0.4), Erarbeitbarkeits-Nachweis pro Mappe. Inkrementell: Mappe 1 → Validierung → Mappe 2 → ... Ergebnis: MATERIAL_GERUEST_Mappe_N zur User-Freigabe.
-2. **Produktions-Modus (Phase 2):** Ausarbeitung der freigegebenen Materialien als HTML-Fragmente und JSON-Daten. Ergebnis: material-mappe-N.json (direkt einfuegbar in data.json).
+Zentrale didaktisch-kreative Instanz im v4-Workflow. Verantwortlich fuer zwei klar getrennte Modi:
+
+1. **Design-Modus (Phase 1, Cowork):** Material-Entwurf, Erarbeitbarkeits-Verifizierung gegen fixiertes Tafelbild (Phase 0.4), Erarbeitbarkeits-Nachweis pro Mappe. Inkrementell: Mappe 1 → Validierung → Mappe 2 → ... Ergebnis: MATERIAL_GERUEST_Mappe_N zur User-Freigabe.
+2. **Produktions-Modus (Phase 2.1, Cowork):** Ausarbeitung der freigegebenen Materialien als isolierte .json-Dateien. Pro Material ein Dispatch an den zustaendigen SUB_MATERIAL_*. Ergebnis: materialien/mat-N-M.json pro Material im Produktionsverzeichnis.
+
+**v4 Aenderung:** Produktionsmodus laeuft in Cowork (nicht Claude Code). Jedes Material wird als eigener Dispatch mit isoliertem Kontext produziert (P1, P4). Output = einzelne .json-Dateien statt monolithischem material-mappe-N.json. Assembly zu data.json erfolgt erst in Phase 3 (Claude Code, rein mechanisch).
 
 AGENT_MATERIAL denkt wie ein **Lehrbuchautor**: Welches Material macht einen Sachverhalt fuer R7-Mittelschule greifbar? Welcher Material-Typ eignet sich? Wie ordne ich Material an, damit SuS den Tafelbild-Knoten eigenstaendig erschliessen?
 
@@ -24,12 +30,55 @@ AGENT_MATERIAL erfindet keine Fakten. Fachliche Substanz kommt aus dem SKRIPT (P
 
 **Primaerquelle ist das SKRIPT.** Alle Materialentscheidungen leiten sich aus den Skript-Passagen und positionierten Artefakt-Markern ab. INHALTSBASIS wird nur bei Bedarf konsultiert (z.B. wenn ein Artefakt im SKRIPT als [NICHT PLATZIERT] markiert ist).
 
-### Produktions-Modus (Phase 2, in Claude Code)
+### Produktions-Modus (Phase 2.1, in Cowork)
 
-| Parameter | Beschreibung | Quelle |
-|---|---|---|
-| `MATERIAL_GERUEST_Mappe_N` | Freigegebenes Material-Geruest (Material-Entwurf + Erarbeitbarkeits-Nachweis) | Phase 1 Output (User-freigegeben) |
-| `SKRIPT` | Fuer Narrativ-Kontext, Artefakt-Details und Tafelbild-Voraussetzungen | Phase 0.3 Output |
+**Kanonischer Schnittstellen-Vertrag:** `docs/architektur/WORKFLOW_v4.md`, Sektion Phase 2.1.
+
+| Read-Schritt | Input-Datei | Gelesene Felder | Bedingung |
+|---|---|---|---|
+| 1 | MATERIAL_GERUEST | NUR Zeile des aktuellen mat-ID | immer |
+| 2 | rahmen/tafelbild.json | NUR referenzierte knoten + stundenfrage | immer |
+| 3 | SUB_MATERIAL_[TYP].md | Vollstaendig | immer |
+| 4 | SKRIPT | NUR referenzierten Chunk | immer |
+| 5 | INHALTSBASIS | NUR zum Chunk gehoerende Sektion | immer |
+| 6 | rahmen/einstieg.json | problemstellung (C1b) | immer |
+| 7 | ARTEFAKT_INVENTAR | NUR Eintraege dieses Materials | **NUR WENN** artefakt_ref gesetzt |
+| 8 | rahmen/sicherung.json | kernerkenntnisse[] | **NUR WENN** didaktische_funktion = sicherung/transfer |
+
+**P1-Failsafe:** Jeder Dispatch beginnt mit Einlesen aus Dateien (Schritte 1-8). Kein Dispatch verlaesst sich auf Kontextinhalte aus vorherigen Dispatches. Compaction-resistent.
+
+## Subagenten-Referenz
+
+| Subagent | Material-Typ | Engine-Typ | Kernexpertise | Prompt-Datei |
+|----------|-------------|-----------|---------------|-------------|
+| SUB_MATERIAL_DARSTELLUNGSTEXT | `darstellungstext` | `darstellungstext` | Sachtext R7, Vergegenwaertigung, narrative Kohaerenz | `docs/agents/SUB_MATERIAL_DARSTELLUNGSTEXT.md` |
+| SUB_MATERIAL_QUELLENTEXT | `quellentext` | `quellentext` | Dreischritt, Quellentyp-Bestimmung, Originalnaehe | `docs/agents/SUB_MATERIAL_QUELLENTEXT.md` |
+| SUB_MATERIAL_BILDQUELLE | `bildquelle` | `bildquelle` | 3-Funktions-Bildunterschrift, Bilderschliessung | `docs/agents/SUB_MATERIAL_BILDQUELLE.md` |
+| SUB_MATERIAL_KARTE | `karte` | **`bildquelle`** | Raeumliche Klarheit, Legende, Orientierungshilfen | `docs/agents/SUB_MATERIAL_KARTE.md` |
+| SUB_MATERIAL_ZEITLEISTE | `zeitleiste` | `zeitleiste` | Didaktische Reduktion, Leitfrage, max 8 Eintraege | `docs/agents/SUB_MATERIAL_ZEITLEISTE.md` |
+| SUB_MATERIAL_STATISTIK | `statistik` | **`bildquelle`** oder **`zeitleiste`** | Diagrammtyp-Auswahl R7, Datenrecherche | `docs/agents/SUB_MATERIAL_STATISTIK.md` |
+| SUB_MATERIAL_TAGEBUCH | `tagebuch` | **`quellentext`** | Figurkonstruktion, Erzaehlprinzipien, hist. Plausibilitaet | `docs/agents/SUB_MATERIAL_TAGEBUCH.md` |
+
+**Verbleibende Verantwortung (Orchestrator):**
+
+| Aufgabe | Beschreibung |
+|---------|-------------|
+| Design-Modus (Phase 1) | Material-Entwurf, TB-Abdeckung, Erarbeitbarkeits-Nachweis, Sequenzplanung |
+| Typauswahl | Welcher Material-Typ fuer welchen TB-Knoten (Skript-basierte + TB-basierte Trigger) |
+| Produktionskontext-Generierung | Pro Material: Pflicht-Input fuer Subagenten zusammenstellen |
+| Dispatch an SUB_MATERIAL_* | Passenden Subagenten pro Material aufrufen |
+| Cross-Material-Konsistenz | Typvielfalt, Sequenz-Kohaerenz, Wortbudget-Einhaltung (500W/Mappe) |
+| Assembly | materialien[] zusammenfuehren, material-mappe-N.json schreiben |
+| Quellenrecherche-Koordination | Uebergreifender Workflow fuer externe Quellen |
+
+**Delegierte Verantwortung (geht an SUB_MATERIAL_*):**
+
+| Aufgabe | Beschreibung | Subagent |
+|---------|-------------|----------|
+| Textproduktion | Sachtext, Quellenaufbereitung, Tagebucheintrag schreiben | DT, QT, TB |
+| Bildunterschrift | 3-Funktions-Unterschrift (Identifikation + Kontextualisierung + Impuls) | BQ, KA |
+| Datenaufbereitung | Zeitleisten-Eintraege, Diagramm-Daten, Tabellen | ZL, ST |
+| Typ-spezifisches Q-Gate | Pruefung gegen typ-spezifische Qualitaetskriterien | Alle |
 
 ## Aufgaben
 
@@ -37,7 +86,7 @@ AGENT_MATERIAL erfindet keine Fakten. Fachliche Substanz kommt aus dem SKRIPT (P
 
 #### 1.1 Tafelbild-Abdeckung verifizieren (v3: TB ist fixiert)
 
-Das Tafelbild kommt als fixierter Input aus AGENT_TAFELBILD (Phase 0.4). Es hat das Q-Gate (G1-G13) bestanden und ist **eingefroren (TB-FREEZE)**. AGENT_MATERIAL darf keine Knoten hinzufuegen, entfernen oder inhaltlich aendern.
+Das Tafelbild kommt als fixierter Input aus AGENT_TAFELBILD (Phase 0.4). Es hat das Q-Gate (G1-G14) bestanden und ist **eingefroren (TB-FREEZE)**. AGENT_MATERIAL darf keine Knoten hinzufuegen, entfernen oder inhaltlich aendern.
 
 **Aufgabe:** Fuer jeden TB-Knoten pruefen, ob konkretes Material die Erarbeitung ermoeglicht:
 
@@ -125,7 +174,7 @@ Aufgaben-Entwicklung: AGENT_RAETSEL (Phase 2, nach Materialproduktion).
 
 #### 1.5 Erarbeitbarkeits-Dokumentation (v3: TB-Abdeckungs-Nachweis)
 
-**Pflicht.** Das Tafelbild ist fixiert (Phase 0.4, TB-FREEZE). AGENT_MATERIAL fuehrt keinen eigenen TB-Vollstaendigkeits- oder Strukturcheck durch — das hat AGENT_TAFELBILD mit Q-Gate G1-G13 erledigt. Stattdessen:
+**Pflicht.** Das Tafelbild ist fixiert (Phase 0.4, TB-FREEZE). AGENT_MATERIAL fuehrt keinen eigenen TB-Vollstaendigkeits- oder Strukturcheck durch — das hat AGENT_TAFELBILD mit Q-Gate G1-G14 erledigt. Stattdessen:
 
 **Schritt 1 — Material-zu-Knoten-Mapping:**
 Fuer jeden TB-Knoten dokumentieren: Welches Material (mat-ID, konkrete Stelle) ermoeglicht die Erarbeitung?
@@ -153,83 +202,138 @@ TB-Voraussetzungen (Knoten aus Vor-Mappen): Sind sie dort durch Hefteintrag/Sich
 
 Ergebnis: Jedes Material hat einen dokumentierten Zweck-Satz im MATERIAL_GERUEST. Beispiel: "mat-1-3 (Tagebuch): Erklaert Knoten k1-4 (Aufruestung), Artefakt-Ref: rolle-1-1."
 
-#### 1.8 Blueprint zusammenfuegen und praesentieren
+#### 1.8 Blueprint zusammenfuegen
 
-Alle Teile in das MATERIAL_GERUEST_Mappe_N-Format (definiert in WORKFLOW_v2.md Abschnitt 5) zusammenfuegen. User reviewt und gibt frei.
+Alle Teile in das MATERIAL_GERUEST_Mappe_N-Format (definiert in WORKFLOW_v4.md Sektion 5) zusammenfuegen.
 
-### Modus 2: Produktion (Ebene 2)
+#### 1.9 Sequenzplanung erstellen (NEU v3.3)
 
-#### 2.1 Materialien ausarbeiten
+**Pflicht.** Nach Blueprint-Erstellung, vor User-Validierung. Die Materialien einer Mappe muessen in eine didaktisch sinnvolle Reihenfolge gebracht werden — nicht als ungeordnete Sammlung, sondern als kohaerente User-Journey.
 
-Basierend auf dem freigegebenen Blueprint jedes Material vollstaendig produzieren:
+**Eingabe:** Validierter Blueprint (Aufgabe 1.1-1.8) + fixiertes TAFELBILD + SKRIPT
 
-**Text-Materialien (darstellungstext, quellentext, tagebuch):**
-- Als **HTML-Fragmente** schreiben (kein Markdown)
-- Erlaubte Tags: `<p>`, `<strong>`, `<em>`, `<br>`, `<ul>`, `<li>`, `<h4>`
-- Kein `<script>`, kein `<style>`, keine Klassen (Styling kommt von DESIGN)
+**Pflicht-Referenz:** `docs/checklisten/GUETEKRITERIEN_SEQUENZIERUNG.md` (S1-S15). Der Sequenzplan muss das Q-Gate S1-S15 bestehen, bevor er dem User praesentiert wird (Aufgabe 1.10).
 
-**Wortbudgets:**
+**Aufgabe:**
 
-| Material-Typ | Max. Woerter | Stil |
+1. **Reihenfolge festlegen:** Jedes Material erhaelt eine `position` (1-basiert). Zwei Ordnungsanker, hierarchisch:
+
+   **Primaer-Anker: SKRIPT-Reihenfolge.** Die Absatzfolge im SKRIPT (Phase 0.3) ist bereits didaktisch sequenziert — AGENT_SKRIPT arbeitet wie ein Jugendsachbuch-Autor: vom Konkreten zum Abstrakten, vom Bekannten zum Unbekannten, mit narrativer Kohaerenz. Die Material-Positionen folgen der Reihenfolge, in der ihre Quell-Passagen und Artefakt-Marker im SKRIPT stehen. Abweichungen nur mit Begruendung.
+
+   **Kontroll-Anker: SCPL-Aufbau des Tafelbilds.** Die Sinnstruktur des fixierten Tafelbilds (Situation → Complication → Problem → Loesung) definiert die logische Aufbauhierarchie. Materialien, die Situation-Knoten erarbeiten, stehen VOR Materialien, die Complication-Knoten erarbeiten, diese VOR Problem-Knoten, diese VOR Loesung-Knoten. Wenn SKRIPT-Reihenfolge und SCPL-Aufbau divergieren: SCPL hat Vorrang (das Tafelbild ist die Quintessenz, der SKRIPT-Aufbau kann stellenweise thematische Vor-/Rueckgriffe enthalten).
+
+2. **Didaktische Funktion zuordnen:** Jedes Material erhaelt genau eine Funktion:
+   - `einstieg` — Aktiviert Vorwissen, stellt Leitfrage, oeffnet das Thema
+   - `erarbeitung` — Vermittelt neues Wissen, fuehrt Fachbegriffe ein
+   - `vertiefung` — Vertieft, differenziert, kontextualisiert bereits Erarbeitetes
+   - `sicherung` — Fasst zusammen, strukturiert, fixiert Gelerntes
+   - `transfer` — Uebertraegt auf neuen Kontext, stellt weitergehende Fragen
+
+3. **Voraussetzungen deklarieren:** Pro Material: Welche Material-IDs muessen vorher bearbeitet sein? Leeres Array nur fuer Position 1.
+
+4. **Ueberleitungen formulieren:** Pro Material (ausser Position 1): 1-2 Saetze narrativer Uebergang vom vorherigen Material. Funktion: Bruecke zwischen den Materialien, die den SuS den roten Faden sichtbar macht.
+
+5. **Sequenzkontext-Objekte generieren:** Pro Material das `sequenz_kontext`-Objekt mit `vorher` und `nachher` (jeweils: Material-ID, Typ, Kerninhalt in 1 Satz). Dieses Objekt wird spaeter als Pflicht-Input an die Materialtyp-Subagenten uebergeben.
+
+**Output:** Neuer Abschnitt `## Sequenzplan` im MATERIAL_GERUEST_Mappe_N:
+
+```markdown
+## Sequenzplan
+
+| # | Material-ID | Typ | Didaktische Funktion | TB-Knoten | Voraussetzung | Kerninhalt (1 Satz) |
+|---|-------------|-----|----------------------|-----------|---------------|---------------------|
+| 1 | mat-N-1 | [typ] | einstieg | k1-1 | — | [Kerninhalt] |
+| 2 | mat-N-2 | [typ] | erarbeitung | k1-2 | mat-N-1 | [Kerninhalt] |
+| ... |
+
+### Ueberleitungen
+- mat-N-1 → mat-N-2: "[Narrativer Uebergang]"
+- mat-N-2 → mat-N-3: "[Narrativer Uebergang]"
+```
+
+**Sequenzkontext fuer Subagenten:** Aus dem Sequenzplan generiert AGENT_MATERIAL fuer jeden Subagenten-Aufruf eine individuelle Sequenzkontext-Tabelle (Format siehe SUB_MATERIAL_*.md, Abschnitt "Eingabe: Sequenzkontext").
+
+#### 1.10 Blueprint + Sequenzplan praesentieren
+
+Blueprint und Sequenzplan gemeinsam dem User praesentieren. User-Validierung ist PFLICHT (Phase 1.5 Gate). Erst nach Freigabe wird Phase 2 (Subagenten-Produktion) gestartet.
+
+### Modus 2: Produktion (Phase 2.1, Cowork)
+
+**Ausfuehrungsort:** Cowork (Agent-Tool-Dispatch pro Material).
+**Output:** Pro Material eine .json-Datei in `docs/agents/artefakte/produktion/{game-id}/mappe-{N}/materialien/mat-N-M.json`.
+
+#### 2.1 Produktionskontext generieren + an Subagenten dispatchen
+
+Basierend auf dem freigegebenen Blueprint fuer jedes Material einen Produktionskontext zusammenstellen und an den zustaendigen Subagenten dispatchen. Jeder Dispatch ist isoliert (P1, P4) — der Subagent liest seine Eingaben aus Dateien, nicht aus dem Cowork-Kontext.
+
+**Produktionskontext-Template (Pflicht-Input pro Subagent):**
+
+```markdown
+## Produktionskontext
+
+| Feld | Wert |
+|------|------|
+| Material-ID | mat-N-M |
+| Material-Typ | [typ aus Blueprint] |
+| TB-Knoten-Zuordnung | kN-M |
+| Funktion | "[1-Satz: Was sollen SuS aus diesem Material lernen?]" |
+| Artefakt-Ref | [img-ID / zit-ID / rolle-ID / —] |
+| Sequenzkontext | Position X von Y |
+| Vorher-Material | mat-ID + Typ + Kerninhalt (1 Satz) |
+| Nachher-Material | mat-ID + Typ + Kerninhalt (1 Satz) |
+| Stundenfrage | [Exakte Stundenfrage aus SKRIPT-Chunk-Ueberschrift — MUSS Frageform sein, siehe C1] |
+| Wortbudget | [typ-spezifisch: DT 150, QT 100, TB 120, BQ/KA 40 BU, ZL 15/Eintrag, ST 15 Ueberschrift] |
+| Skript-Passage | [DT/QT/TB: Volltext 200-300W | BQ/KA/ZL/ST: 1-Satz-Zusammenfassung] |
+```
+
+**Dispatch-Logik:**
+
+| Material-Typ | Subagent | Skript-Passage |
 |---|---|---|
-| `darstellungstext` | 150 | Sachtext, Schulbuch-Niveau, kurze Saetze (max. 20 Woerter), kurze Absaetze (max. 5 Saetze) |
-| `quellentext` | 100 | Originalquelle oder altersgerechte Paraphrase, kursiv-Kennzeichnung |
-| `tagebuch` | 120 | Persoenliche Perspektive, historisch plausibel, emotionaler Zugang |
+| `darstellungstext` | SUB_MATERIAL_DARSTELLUNGSTEXT | Volltext (200-300W) |
+| `quellentext` | SUB_MATERIAL_QUELLENTEXT | Volltext (200-300W) |
+| `tagebuch` | SUB_MATERIAL_TAGEBUCH | Volltext (200-300W) |
+| `bildquelle` | SUB_MATERIAL_BILDQUELLE | 1-Satz-Zusammenfassung |
+| `karte` | SUB_MATERIAL_KARTE | 1-Satz-Zusammenfassung |
+| `zeitleiste` | SUB_MATERIAL_ZEITLEISTE | 1-Satz-Zusammenfassung |
+| `statistik` | SUB_MATERIAL_STATISTIK | 1-Satz-Zusammenfassung |
+
+**Material-Titel-Constraint (C2, v3.8):**
+
+Der Titel-Typ haengt von der **didaktischen Funktion** des Materials ab:
+
+**Typ A — Frage-Titel** (fuer `einstieg`, `erarbeitung`-Materialien):
+Teilfrage oder praegnanter Kontextsatz, der den Inhalt als Frage rahmt. Thematische Verengung der Stundenfrage auf dieses Material. KEINE nominalisierten Konzeptnennungen.
+
+**Typ B — Statement-Titel** (fuer `vertiefung`/`sicherung`-Bildquellen mit illustrierender/ankernder Funktion):
+Praegnanter, statementartiger Titel, der Eindruck macht und die Aufmerksamkeit bindet. Originalquellen (Portraets, Fotografien, Karikaturen als visueller Impuls) behalten ihren statementartigen Charakter. Die Anschaulichkeit der Originalquelle soll durch den Titel verstaerkt werden, nicht in eine Frage gezwungen.
+
+| Funktion | Typ | Falsch | Richtig |
+|----------|-----|--------|---------|
+| einstieg/erarbeitung | A (Frage) | "Buendnissysteme in Europa" | "Wer verbuendete sich mit wem?" |
+| einstieg/erarbeitung | A (Frage) | "Die Flottenaufruestung" | "Warum baute Deutschland eine riesige Flotte?" |
+| vertiefung (Karikatur) | A/B | "Karikatur zum Imperialismus" | "Wie weit ging der Griff nach Afrika?" ODER "Der Koloss von Rhodos — Grossbritanniens Griff nach Afrika" |
+| vertiefung (Portrait) | B (Statement) | "Kaiser Wilhelm II." | "Kaiser Wilhelm II. — der Mann hinter der Machtpolitik" |
+| sicherung (Foto) | B (Statement) | "Britisches Schlachtgeschwader (ca. 1914)" | "Die britische Flotte vor dem Ersten Weltkrieg" |
+
+Entscheidungsregel: Wenn das Material einen **Arbeitsauftrag** impliziert (Karte vergleichen, Text analysieren, Zeitleiste ablesen), dann Typ A (Frage). Wenn das Material primaer **Eindruck machen** soll (Portrait, Foto, Karikatur als visueller Anker), dann Typ B (Statement). Karikaturen koennen beides sein — je nach didaktischer Einbettung.
+
+Jeder Subagent prueft MQ2 in seinem Q-Gate.
+
+**Ruecklauf-Mechanismus:** Max. 2 Re-Dispatch pro Material. Wenn nach 2 Versuchen Q-Gate FAIL → Problem eskalieren (an User melden).
 
 **Gesamtes Wortbudget pro Mappe: max. 500 Woerter Lesetext.**
 
-**Quellenangaben-Format (Fussnoten):**
+**Quellenangaben-Format (cite-Einbettung, L6):**
 
-Quellenangaben werden NICHT inline im Material platziert (lenkt SuS ab), sondern als Fussnoten am Ende der Mappe gesammelt.
+Quellenangaben werden als `<cite>`-Elemente am Ende des Material-`inhalt`-HTML eingebettet (WORKFLOW_v4.md L6). Format: `<cite>Quelle: [Urheber], [Lizenz]</cite>`.
 
-Markup im Material-HTML:
-```html
-<p>Text mit Quellenangabe<sup><a href="#fn-1">[1]</a></sup></p>
-```
-
-Fussnoten-Array im JSON-Output (neues Feld auf Mappe-Ebene):
-```json
-{
-  "quellenangaben": [
-    {"id": 1, "text": "Otto von Bismarck, Rede vor dem Reichstag, 06.02.1888"},
-    {"id": 2, "text": "Statistisches Jahrbuch fuer das Deutsche Reich, 1913, S. 42"},
-    {"id": 3, "text": "paraphrasiert nach: Mommsen, Wolfgang J.: Grossmachtstellung und Weltpolitik, 1993, S. 118"}
-  ]
-}
-```
+**HINWEIS:** Ein separates `quellenangaben[]`-Array auf Mappe-Ebene wird von der Engine aktuell NICHT gerendert. Die `<cite>`-Einbettung in `inhalt` ist der verbindliche Workaround. Post-MVP: Engine-Erweiterung fuer separates Fussnoten-Rendering geplant.
 
 Regeln:
-- Pro Quellentext und Statistik: mindestens 1 Fussnote (Pflicht)
-- Darstellungstexte: Fussnote wenn auf konkretem Schulbuch/Fachtext basierend
-- Tagebuch (fiktiv): keine Fussnote noetig, aber Vermerk "fiktiver Tagebucheintrag, historisch plausibel"
-- Engine rendert Fussnoten-Section automatisch am Mappe-Ende
-
-**Bild-Materialien (bildquelle, karte):**
-- `inhalt` = URL (String) oder SVG-inline
-- `bildunterschrift` ausfuellen
-- `quelle` und `lizenz` dokumentieren
-
-**Strukturierte Materialien (zeitleiste, statistik):**
-- `inhalt` als JSON-Daten (Sub-Schemas aus WORKFLOW_v1.md Abschnitt 9)
-
-Zeitleiste:
-```json
-[
-  {"datum": "1882", "text": "Dreibund gegruendet (DE, OeU, IT)"},
-  {"datum": "1894", "text": "Franzoesisch-russisches Buendnis"}
-]
-```
-
-Statistik:
-```json
-{
-  "spalten": ["Land", "Militaerausgaben 1913 (Mio. Mark)"],
-  "zeilen": [
-    ["Deutsches Reich", "2.405"],
-    ["Frankreich", "1.855"]
-  ]
-}
-```
+- Pro Quellentext und Statistik: mindestens 1 `<cite>` im `inhalt`-HTML (Pflicht)
+- Darstellungstexte: `<cite>` wenn auf konkretem Schulbuch/Fachtext basierend
+- Tagebuch (fiktiv): keine Quellenangabe noetig, aber Vermerk "fiktiver Tagebucheintrag, historisch plausibel" im `quelle`-Feld
 
 #### 2.2 Tafelbild uebernehmen (v3: fixiert aus Phase 0.4)
 
@@ -237,73 +341,81 @@ Das Tafelbild-JSON wird unveraendert aus TAFELBILD_[game-id]_Mappe[N].md ueberno
 
 ```json
 {
-  "knoten": [
-    {"id": "k1-1", "text": "Pulverfass Europa", "typ": "kernbegriff", "merksatz": "..."},
-    {"id": "k1-2", "text": "Dreibund 1882", "typ": "kategorie", "merksatz": "..."}
-  ],
-  "verbindungen": [
-    {"von": "k1-2", "nach": "k1-1", "label": "verschaerft Spannung"}
-  ],
+  "stundenfrage": "[Problemorientierte Frage — C1b: wortidentisch mit einstieg.problemstellung]",
+  "ordnungsmuster": "[kausal | chronologisch | kategorial]",
+  "scpl": {
+    "situation": { "kontextsatz": "[Ausgangslage]", "fachbegriffe": ["..."] },
+    "complication": [{ "schritt": "[Sachverhalt]", "fachbegriff": "[Begriff]", "darstellung": null }],
+    "problem": { "satz": "[Zentrales Problem]", "fachbegriff": "[Begriff]" },
+    "loesung": ["[Merksatz 1]", "[Merksatz 2]"]
+  },
+  "transfer": { "frage": "[Kurze offene Transferfrage, max. 10 Woerter]" },
   "voraussetzungen": [],
-  "kernerkenntnisse": ["Merksatz 1 als ganzer Satz.", "Merksatz 2 als ganzer Satz."]
+  "kernerkenntnisse": ["[Kernerkenntnis 1]", "[Kernerkenntnis 2]"],
+  "knoten": [],
+  "verbindungen": []
 }
 ```
 
-Neu in v3: `merksatz` pro Knoten, `kernerkenntnisse[]` auf Tafelbild-Ebene — beides von AGENT_TAFELBILD gesetzt.
+Format: SCPL (v3.1+). `knoten[]` und `verbindungen[]` bleiben als leere Legacy-Arrays. Kanonische Referenz: `docs/agents/AGENT_TAFELBILD.md`.
 
 #### 2.3 Einstieg und Sicherung ausformulieren
 
 - `einstieg.narrativ`: HTML-Fragment (2-3 Saetze)
-- `einstieg.problemstellung`: Klartext (1 Satz, Leitfrage)
-- `sicherung.zusammenfassung`: Klartext (2-3 Saetze)
-- `sicherung.ueberleitung`: Klartext (1-2 Saetze)
+- `einstieg.problemstellung`: Klartext — **C1b: wortidentisch mit sicherung.tafelbild.stundenfrage und SKRIPT-Chunk-Ueberschrift**
+
+**Sicherungs-Felder — Feld-Semantik (v3.8):**
+
+| Feld | Funktion | Inhalt | C5-Bezug |
+|------|----------|--------|----------|
+| `sicherung.zusammenfassung` | Zusammenfassung der Mappe | 2-3 Saetze, deskriptiv | Kein C5-Bezug |
+| `sicherung.ueberleitung` | **C5-Ueberleitung** (Variante A, nicht-letzte Mappen) | Impulsartige Ueberleitung zur naechsten Mappe, KEINE Frageform | C5 Variante A |
+| `sicherung.reflexionsimpuls` | **C5-Reflexion** (Variante B, letzte Mappe) ODER offene Reflexionsfrage | Offene Frage zur Selbstreflexion | C5 Variante B |
+| `sicherung.tafelbild.transfer.frage` | Muendlicher Transferimpuls (NICHT im Hefteintrag) | Kurze offene Frage, max. 10 Woerter | Kein C5-Bezug |
+| `sicherung.hefteintrag_verweis` | Anweisung fuer SuS zum Hefteintrag | "Uebertrage das Tafelbild..." | Kein C5-Bezug |
+
+**WICHTIG:** Bei nicht-letzten Mappen (Variante A): `ueberleitung` = C5-Ueberleitung. `reflexionsimpuls` = leer oder eigenstaendige Reflexionsfrage (NICHT nochmal Ueberleitung). `transfer.frage` = eigenstaendige Transferfrage (NICHT nochmal Ueberleitung). Jedes Feld hat eine eigene Funktion — keine Doppelungen.
 
 #### 2.4 Output zusammenfuegen
 
-Alle Teile als `material-mappe-[N].json` ausgeben. Format:
+**v3-Legacy-Format.** In v4 wird dieses Gesamtformat NICHT mehr produziert — jedes Material wird als einzelne .json-Datei geschrieben (Phase 2.1, P4). Dieses Schema dient als Referenz fuer die Assembly-Phase 3 und zeigt die Gesamtstruktur.
+
+Format:
 
 ```json
 {
   "einstieg": {
     "narrativ": "<p>HTML-Fragment...</p>",
-    "problemstellung": "Leitfrage der Mappe"
+    "problemstellung": "[C1b: wortidentisch mit stundenfrage]"
   },
   "materialien": [
     {
       "id": "mat-1-1",
       "typ": "darstellungstext",
-      "titel": "Die Buendnisse Europas vor 1914",
-      "inhalt": "<p>Europa war vor 1914 in zwei...</p>",
+      "titel": "[C2: Typ A Frage-Titel]",
+      "inhalt": "<p>...</p>",
+      "position": 1,
+      "didaktische_funktion": "erarbeitung",
       "bildunterschrift": "",
-      "quelle": "Basierend auf Schulbuchdarstellungen",
-      "lizenz": ""
+      "quelle": "...",
+      "lizenz": "",
+      "voraussetzung": [],
+      "ueberleitung_von": "...",
+      "sequenz_kontext": { "vorher": null, "nachher": {"id": "...", "typ": "...", "kerninhalt": "..."} }
     }
   ],
-  "quellenangaben": [
-    {"id": 1, "text": "Quelle fuer mat-1-2"},
-    {"id": 2, "text": "Quelle fuer mat-1-5"}
-  ],
   "sicherung": {
-    "tafelbild": {
-      "titel": "Buendnisse und Spannungen vor 1914",
-      "knoten": [
-        {"id": "k1-1", "text": "...", "typ": "kernbegriff", "merksatz": "..."}
-      ],
-      "verbindungen": [
-        {"von": "k1-1", "nach": "k1-2", "label": "..."}
-      ],
-      "voraussetzungen": [],
-      "kernerkenntnisse": ["Merksatz 1 als ganzer Satz.", "Merksatz 2 als ganzer Satz."]
-    },
-    "zusammenfassung": "...",
-    "ueberleitung": "...",
-    "hefteintrag_verweis": "TAFELBILD_[game-id]_Mappe[N].md — Hefteintrag-Sektion",
-    "reflexionsimpuls": "Was hat sich an deinem Bild von ... veraendert?"
+    "tafelbild": { "...SCPL-Format, siehe 2.2..." },
+    "kernerkenntnisse": ["..."],
+    "zusammenfassung": "[Deskriptiv, 2-3 Saetze]",
+    "ueberleitung": "[C5 Variante A: Impuls zur naechsten Mappe]",
+    "hefteintrag_verweis": "Uebertrage das Tafelbild und die Merksaetze in dein Heft.",
+    "reflexionsimpuls": "[Eigenstaendige Reflexionsfrage oder leer bei Variante A]"
   }
 }
 ```
 
-**v3-Hinweis:** Das Tafelbild-JSON wird unveraendert aus TAFELBILD_[game-id]_Mappe[N].md uebernommen (vgl. Abschnitt 2.2). `merksatz` pro Knoten und `kernerkenntnisse[]` auf TB-Ebene stammen von AGENT_TAFELBILD. `hefteintrag_verweis` und `reflexionsimpuls` werden von AGENT_MATERIAL gesetzt.
+**v3-Hinweis:** Das Tafelbild-JSON wird unveraendert aus TAFELBILD_[game-id]_Mappe[N].md uebernommen (vgl. Abschnitt 2.2). `hefteintrag_verweis` und `reflexionsimpuls` werden von AGENT_MATERIAL gesetzt. Material-Felder `position`, `didaktische_funktion`, `voraussetzung`, `ueberleitung_von`, `sequenz_kontext` stammen aus v3.3+ (AGENT_MATERIAL Aufgabe 1).
 
 Dieses JSON wird von AGENT_RAETSEL direkt in den Mappe-Abschnitt der data.json uebernommen (materialien[], einstieg{}, sicherung{}). RAETSEL ergaenzt aufgaben[] und freischalt_code.
 
@@ -328,203 +440,40 @@ Dieses JSON wird von AGENT_RAETSEL direkt in den Mappe-Abschnitt der data.json u
 
 ---
 
-### Produktions-Workflow pro Materialtyp
+### Produktions-Workflows (delegiert an Subagenten)
 
-#### W-1: darstellungstext
+Die typ-spezifischen Produktions-Workflows sind in den jeweiligen SUB_MATERIAL_*.md dokumentiert. Der Orchestrator generiert den Produktionskontext (Abschnitt 2.1) und dispatcht an den zustaendigen Subagenten.
 
-**Tool-Chain:** Agent-intern (kein MCP)
+**Workflow-Verortung:**
 
-```
-1. Inhalts-MD lesen → relevante Kernaussagen identifizieren
-2. Darstellungstext schreiben:
-   - Max. 150 Woerter, Saetze ≤20 Woerter, Absaetze ≤5 Saetze
-   - Fachbegriffe bei Erstverwendung erklaeren
-   - Mindestens 1 konkretes Beispiel/Situation
-   - Anschluss an Vormappe herstellen
-3. Quellenangabe als Fussnote wenn auf konkretem Schulbuch/Fachtext basierend
-```
+| Workflow | Subagent | Dokumentiert in |
+|----------|----------|----------------|
+| W-1: darstellungstext | SUB_MATERIAL_DARSTELLUNGSTEXT | `docs/agents/SUB_MATERIAL_DARSTELLUNGSTEXT.md` |
+| W-2: quellentext | SUB_MATERIAL_QUELLENTEXT | `docs/agents/SUB_MATERIAL_QUELLENTEXT.md` |
+| W-3: bildquelle | SUB_MATERIAL_BILDQUELLE | `docs/agents/SUB_MATERIAL_BILDQUELLE.md` |
+| W-4: karte | SUB_MATERIAL_KARTE | `docs/agents/SUB_MATERIAL_KARTE.md` |
+| W-5: zeitleiste | SUB_MATERIAL_ZEITLEISTE | `docs/agents/SUB_MATERIAL_ZEITLEISTE.md` |
+| W-6: statistik | SUB_MATERIAL_STATISTIK | `docs/agents/SUB_MATERIAL_STATISTIK.md` |
+| W-7: tagebuch | SUB_MATERIAL_TAGEBUCH | `docs/agents/SUB_MATERIAL_TAGEBUCH.md` |
+| W-8: tafelbild | Orchestrator-intern | Abschnitt 2.2 (unten) |
 
-**Qualitaets-Gate:** Schuelernah? Fachbegriffe erklaert? Tafelbild-Knoten-Zuordnung klar?
+**Cross-Material-Konsistenz (Orchestrator-Verantwortung nach Dispatch):**
 
----
+Nach Rueckkehr aller Subagenten-Outputs:
 
-#### W-2: quellentext
+| Pruefung | Kriterium | Aktion bei Verletzung |
+|----------|-----------|----------------------|
+| Wortbudget | Gesamter Lesetext ≤ 500 Woerter | Material kuerzen lassen (Re-Dispatch mit Wortbudget-Constraint) |
+| Typvielfalt | Mind. 4 Materialien (1 Text, 1 Quelle/Bild, 1 personifiziert, 1 visuell) | Typ im Blueprint tauschen |
+| Sequenz-Kohaerenz | Keine vorgreifenden Fachbegriffe, narrative Bruecken vorhanden | SQ-1 bis SQ-4 pruefen (Subagenten-Q-Gate) |
+| TB-Abdeckung | Jeder Knoten durch mindestens 1 Material erarbeitbar | Fehlendes Material ergaenzen |
+| Quellenangaben | Pro QT/ST mind. 1 Fussnote, keine generischen Angaben | An Subagenten zurueckgeben |
 
-**Tool-Chain:** `markdownify: webpage-to-markdown` → `WebSearch` → Aufbereitung
-
-```
-STUFE 1 — Primaerquelle suchen:
-1a. WebSearch("[historisches Ereignis] Originalquelle Rede Brief Dokument")
-    → Quellensammlungen identifizieren (documentarchiv.de, dhm.de/lemo, verfassungen.de)
-1b. markdownify: webpage-to-markdown(url: "[Quellensammlung-URL]")
-    → Volltext der Primaerquelle extrahieren
-1c. ALTERNATIV: google_drive_search(query: "[Thema]")
-    → google_drive_fetch(doc_id: "...") wenn Lehrkraft Quellen in Drive hat
-
-STUFE 2 — Altersgerechte Aufbereitung:
-2a. Originalquelle zu lang/komplex → paraphrasieren ("paraphrasiert nach: [Quelle]")
-2b. Fremdsprachige Quelle → uebersetzen, Original in Fussnote
-2c. Max. 100 Woerter Endprodukt
-
-STUFE 3 — Fallback:
-3a. Schulbuchdarstellung → konkreter Verweis (Autor, Titel, Seite)
-3b. NIEMALS: "basierend auf Schulbuchdarstellungen" ohne Nachweis
-```
-
-**Quellenangaben-Standard:**
-- Archiv/Dokument: `"[Archivname], [Signatur/Datum]"`
-- Schulbuch: `"[Autor], [Titel], [Verlag] [Jahr], S. [Seitenzahl]"`
-- Online: `"[URL], abgerufen am [Datum]"`
-- Paraphrase: `"paraphrasiert nach: [vollstaendige Angabe]"`
-
-**Qualitaets-Gate:** Perspektivitaet erkennbar? Quelltyp-Format eingehalten? Quellenangabe praezise?
+**Phase 2.1c (v4): Material-Cross-Konsistenz.** Nach Abschluss aller Material-Dispatches folgt ein separater Cross-Konsistenz-Dispatch (1 Dispatch, 4 Pruefachsen: Sequenz-Kohaerenz, Fachbegriff-Konsistenz, Ueberleitung-Kohaerenz, TB-Knoten-Gesamtabdeckung). Dieser Dispatch liest alle materialien/mat-N-*.json + tafelbild.json + MATERIAL_GERUEST. Details: WORKFLOW_v4.md Phase 2.1c.
 
 ---
 
-#### W-3: bildquelle
-
-**Tool-Chain:** `wikimedia_search_images` → `rijksmuseum: search_artwork` → `Canva: generate-design`
-
-```
-PFAD A — Historisches Bild (Quellentreue erforderlich):
-1. wikimedia_search_images(query: "[Suchbegriff englisch] [Zeitraum]", license: "no_restrictions")
-   → CC0/PD zuerst. Falls zu wenig: license: "all" → CC-BY akzeptieren
-2. Falls kein Treffer: rijksmuseum: search_artwork(subject: "[Thema]", creationDate: "[18*]")
-   → Niederlaendische Labels haben hoehere Trefferquote
-3. Bildunterschrift formulieren (was sehen SuS + Erkenntnisfrage)
-4. URL in materialien[].inhalt + materialien[].quelle + materialien[].lizenz
-5. Eintrag in docs/ASSET_LIZENZEN.md
-
-PFAD B — Illustration (Quellentreue NICHT erforderlich):
-1. Canva: generate-design(design_type: "poster", query: "[Beschreibung auf Deutsch, Zielgruppe R7]")
-2. Canva: get-export-formats(designId: "...") → verfuegbare Formate pruefen
-3. User waehlt Kandidaten → Canva: create-design-from-candidate
-4. Canva: export-design(designId: "...", format: {type: "png", width: 1200})
-5. PNG in assets/images/[game-id]/ → URL in materialien[].inhalt
-6. quelle: "Erstellt mit Canva, [Beschreibung]", lizenz: "Canva Content License"
-```
-
-**Qualitaets-Gate:** Bild tatsaechlich als URL/SVG vorhanden (nicht nur Alt-Text)? Bildunterschrift mit Erkenntnisfrage? Lizenz dokumentiert?
-
----
-
-#### W-4: karte
-
-**Tool-Chain:** `wikimedia_search_images` → `Canva: generate-design` → `excalidraw: create_view`
-
-```
-PFAD A — Historische Karte (bevorzugt):
-1. wikimedia_search_images(query: "[Region] map [Zeitraum]", license: "no_restrictions")
-2. Falls Treffer: Bildunterschrift + Legende beschreiben
-3. URL in materialien[].inhalt
-
-PFAD B — Generierte Infografik-Karte:
-1. Canva: generate-design(design_type: "infographic", query: "Historische Karte [Region] [Zeitraum],
-   zeigt [Grenzen/Routen/Gebiete], Legende mit Farbzuordnung, Zielgruppe 7. Klasse Mittelschule")
-2. Canva: get-export-formats(designId: "...") → Formate pruefen
-3. User waehlt Kandidaten → create-design-from-candidate
-4. Canva: export-design → PNG 1200px
-5. PNG in assets/images/[game-id]/
-
-PFAD C — Schematische Karte (Fallback):
-1. excalidraw: read_me → Element-Format laden
-2. Regionen als Polygone/Rechtecke, Grenzen als Linien, Staedte als Kreise
-3. Farbkodierung (z.B. Dreibund=#C0392B, Entente=#2980B9)
-4. excalidraw: create_view(elements: JSON)
-5. svg-converter: svg-to-png fuer Export
-```
-
-**Qualitaets-Gate:** Legende vorhanden? Farbzuordnung klar? Geographische Orientierung gegeben?
-
----
-
-#### W-5: zeitleiste
-
-**Tool-Chain:** Engine-JSON → `Mermaid: timeline` → `excalidraw: create_view`
-
-```
-PFAD A — Einfache Zeitleiste (≤8 Eintraege, linear):
-1. JSON-Daten direkt schreiben:
-   [{"datum": "1882", "text": "Dreibund gegruendet (DE, OeU, IT)"}, ...]
-2. Engine rendert automatisch als CSS-Timeline
-3. Ueberschrift als Frage formulieren
-
-PFAD B — Mittlere Komplexitaet (Mermaid-Visualisierung):
-1. Mermaid: validate_and_render_mermaid_diagram(
-     title: "[Ueberschrift als Frage]",
-     diagramCode: "timeline\n  title [Thema]\n  1882 : Dreibund\n  1894 : Franz-russ. Buendnis\n  ..."
-   )
-2. Validierung + visuelles Ergebnis pruefen
-3. Mermaid-Code als Zusatz-Visualisierung speichern
-
-PFAD C — Komplexe Zeitleiste (parallel, verzweigt):
-1. excalidraw: read_me → Element-Format laden
-2. Zeitachse als horizontale Linie, Ereignisse als Boxen mit Pfeilen
-3. Parallele Straenge fuer verschiedene Akteure/Laender
-4. excalidraw: create_view → SVG
-5. svg-converter: svg-to-png fuer Export
-```
-
-**Qualitaets-Gate:** Max. 8 Eintraege? Ueberschrift als Frage? Bekannte Datenpunkte als Anker hervorgehoben?
-
----
-
-#### W-6: statistik
-
-**Tool-Chain:** `QuickChart: generate_chart` → Engine-JSON → `Canva: generate-design`
-
-```
-PFAD A — Diagramm (Vergleichsdaten, bevorzugt):
-1. QuickChart: generate_chart(
-     type: "bar",  // oder "line", "pie", "doughnut"
-     labels: ["Deutsches Reich", "Frankreich", ...],
-     datasets: [{label: "Militaerausgaben 1913 (Mio. Mark)", data: [2405, 1855, ...]}],
-     title: "Wer gab am meisten fuer das Militaer aus?"
-   )
-2. Ergebnis-URL in materialien[].inhalt
-   ODER: QuickChart: download_chart(config: {...}, outputPath: "assets/images/[game-id]/chart-statistik.png")
-3. Quellenangabe als Fussnote (Pflicht)
-
-PFAD B — Reine Datentabelle (wenn Diagramm nicht passt):
-1. JSON-Daten direkt schreiben:
-   {"spalten": ["Land", "Militaerausgaben 1913"], "zeilen": [["Deutsches Reich", "2.405"], ...]}
-2. Engine rendert als HTML-Tabelle
-3. Ueberschrift als Frage formulieren
-
-PFAD C — Aufwaendige Infografik (Fallback):
-1. Canva: generate-design(design_type: "infographic", query: "[Datenbeschreibung], visueller Vergleich")
-2. Export als PNG
-```
-
-**Entscheidungslogik Pfad A vs. B:**
-- Vergleich zwischen Akteuren/Laendern/Zeitpunkten → Pfad A (Diagramm)
-- Nachschlagetabelle ohne Vergleichsintention → Pfad B (Tabelle)
-- Beides → Pfad A als Primaer-Darstellung, Pfad B als Ergaenzung
-
-**Qualitaets-Gate:** Didaktischer Sinn der Daten explizit? Quellenangabe praezise? Ueberschrift als Frage?
-
----
-
-#### W-7: tagebuch
-
-**Tool-Chain:** Agent-intern (kein MCP)
-
-```
-1. Identifikationsfigur festlegen: Name, Alter, Beruf, Herkunft, gesellschaftliche Position
-2. Setting definieren: Ort, Datum, konkrete Situation
-3. Text schreiben:
-   - Max. 120 Woerter
-   - Perspektivitaet zentral: Welche Sichtweise? Welche Interessen?
-   - Konkrete Alltagsdetails statt generischer Gefuehle
-   - Keine anachronistischen Begriffe
-4. Quellenangabe: "Fiktiver Tagebucheintrag, historisch plausibel basierend auf [Fachquelle]"
-```
-
-**Qualitaets-Gate:** Figur mit Name/Alter/Beruf? Konkret statt generisch? Historisch plausibel?
-
----
-
-#### W-8: Tafelbild (Design-Modus 1.5 + Produktions-Modus 2.2)
+#### W-8: Tafelbild (Design-Modus 1.5 + Produktions-Modus 2.2, Orchestrator-intern)
 
 **Tool-Chain Design:** `Mermaid: validate_and_render`
 **Tool-Chain Produktion:** `Mermaid: validate_and_render` → `excalidraw: create_view` → `svg-converter: svg-to-png`
@@ -618,103 +567,54 @@ Empfohlen wenn das Setting raeumlich oder zeitlich spezifisch ist.
 
 ## Qualitaetsspezifikationen pro Materialtyp
 
-Die folgenden Spezifikationen definieren, was ein **gutes** Material dieses Typs ausmacht. Sie dienen als Qualitaets-Gate: Material, das diese Kriterien nicht erfuellt, ist nicht produktionsreif.
+**Delegiert.** Typ-spezifische Qualitaetskriterien sind in den jeweiligen SUB_MATERIAL_*.md und der zentralen Referenz `docs/checklisten/QUALITAETSKRITERIEN_MATERIALPRODUKTION.md` dokumentiert:
 
-### darstellungstext
+| Material-Typ | Kriterien-IDs | Dokumentiert in |
+|---|---|---|
+| darstellungstext | DT-1 bis DT-6 | SUB_MATERIAL_DARSTELLUNGSTEXT.md + QUALITAETSKRITERIEN M1-M12 |
+| quellentext | QT-1 bis QT-6 | SUB_MATERIAL_QUELLENTEXT.md + QUALITAETSKRITERIEN M1-M12 |
+| bildquelle | BQ-1 bis BQ-6 | SUB_MATERIAL_BILDQUELLE.md + QUALITAETSKRITERIEN M1-M12 |
+| karte | KA-1 bis KA-6 | SUB_MATERIAL_KARTE.md + QUALITAETSKRITERIEN M1-M12 |
+| zeitleiste | ZL-1 bis ZL-5 | SUB_MATERIAL_ZEITLEISTE.md + QUALITAETSKRITERIEN M1-M12 |
+| statistik | ST-1 bis ST-6 | SUB_MATERIAL_STATISTIK.md + QUALITAETSKRITERIEN M1-M12 |
+| tagebuch | TB-1 bis TB-6 | SUB_MATERIAL_TAGEBUCH.md + QUALITAETSKRITERIEN M1-M12 |
 
-**Funktion:** Basisinformation zum Erschliessen eines Tafelbild-Knotens.
-**Qualitaetskriterien:**
-- Schuelernah geschrieben: direkte Ansprache oder lebendige Sprache, nicht lexikonartig
-- Anschluss an Vorphase/Vormappe explizit herstellen ("In der letzten Sonderausgabe hast du erfahren, dass...")
-- Max. 150 Woerter
-- Fachbegriffe bei Erstverwendung erklaeren
-- Mindestens ein konkretes Beispiel oder eine konkrete Situation
-
-### quellentext
-
-**Funktion:** Historische Authentizitaet, Perspektivitaet erfahrbar machen.
-**Qualitaetskriterien:**
-- Muss sich an einer realen historischen Quelle orientieren (nicht frei erfunden)
-- Perspektivitaet muss erkennbar sein: Wer schreibt? Wann? Welches Interesse?
-- Form muss dem Quelltyp entsprechen (Zeitungsbericht = Zeitungsformat, Brief = Briefformat, Rede = Redeformat)
-- Bei Paraphrase: kenntlich machen ("paraphrasiert nach...")
-- Max. 100 Woerter
-- Quellenangabe praezise (nicht "basierend auf Schulbuchdarstellungen", sondern konkreter Verweis)
-
-### bildquelle / karte
-
-**Funktion:** Visueller Zugang, raeumliche Orientierung.
-**Qualitaetskriterien:**
-- Muss tatsaechlich als Bild gerendert werden (URL, SVG, oder MCP-generiert). Alt-Text allein ist kein Ersatz.
-- Bildunterschrift erklaert, was zu sehen ist UND was die Erkenntnisfrage ist
-- Bei Karten: Legende, klare Farbzuordnung, geographische Orientierung
-- Lizenz und Quelle dokumentiert
-- MCP-Nutzung: wikimedia_search_images fuer historische Bilder, Canva/excalidraw fuer Karten
-
-### zeitleiste
-
-**Funktion:** Chronologische Orientierung, Abfolgen sichtbar machen.
-**Qualitaetskriterien:**
-- Ueberschrift beschreibend (nicht "Zeitleiste", sondern "Wann wurden die Buendnisse gegruendet?")
-- Pfeilstruktur/Richtung visuell klar hervorgehoben (CSS-Pfeile zwischen Eintraegen)
-- Wenn moeglich: bereits bekannte Datenpunkte (aus Vorphasen) visuell abgehoben als Orientierungsanker
-- Max. 8 Eintraege (sonst wird es unuebersichtlich fuer R7)
-- Jeder Eintrag: Datum + max. 1 Satz Beschreibung
-
-### statistik
-
-**Funktion:** Datenbasierte Erkenntnis, Vergleiche ermoeglichen.
-**Qualitaetskriterien:**
-- Didaktischer Sinn muss explizit klar sein: Welche Erkenntnis sollen SuS aus den Daten ziehen?
-- Tabelle ist Minimum; wenn die Erkenntnis in einer Visualisierung (Balkendiagramm, Vergleichsgrafik) besser rueberkommt, diese zusaetzlich oder stattdessen verwenden
-- Bei Vergleichsdaten: Buendniszugehoerigkeit o.Ae. visuell kenntlich machen
-- Quellenangabe praezise
-- Ueberschrift als Frage formulieren (z.B. "Wer gab am meisten fuer das Militaer aus?")
-
-### tagebuch
-
-**Funktion:** Emotionaler Zugang, Personifizierung, Perspektivitaet.
-**Qualitaetskriterien:**
-- Perspektivitaet **zentral**: Wer schreibt? Woher? Welche gesellschaftliche Position? Welche Sichtweise?
-- Setting schuelernah und motivierend: Ortsangabe, persoenlicher Kommentar, Alltagsdetails
-- Historisch plausibel: keine anachronistischen Begriffe, keine modernen Denkmuster
-- Personifizierung staerken: Name, Alter, Beruf der Figur erkennbar
-- Nicht generisch ("ich habe Angst"), sondern konkret ("der Feldwebel sagt, naechste Woche werden wir eingezogen")
-- Max. 120 Woerter
+**Orchestrator-Ebene (verbleibt hier):**
 
 ### Tafelbild (Sicherung)
 
 **Funktion:** Strukturierte Zusammenfassung des Lerninhalts der Mappe.
-**Qualitaetskriterien:**
-- Inhaltlich korrekt: Verbindungsrichtungen muessen stimmen (z.B. "Buendnis X → fuehrt zu → Einkreisungsgefuehl", nicht umgekehrt)
-- Ausreichend komplex: min. 4 Knoten, min. 5 Verbindungen (sonst kein Erkenntnisgewinn)
+- Inhaltlich korrekt: Verbindungsrichtungen muessen stimmen
+- Ausreichend komplex: min. 4 Knoten, min. 5 Verbindungen
 - Jeder Knoten und jede Verbindung muss im Material der Mappe erarbeitet worden sein
-- Labels der Verbindungen muessen den Zusammenhang praezise benennen (nicht "beeinflusst", sondern "treibt Aufruestung an")
+- Labels der Verbindungen praezise (nicht "beeinflusst", sondern "treibt Aufruestung an")
 - Voraussetzungen aus vorherigen Mappen als Ghost-Knoten kennzeichnen
 
 ### Einstieg
 
 **Funktion:** Motivierung, Orientierung, Problemstellung.
-**Qualitaetskriterien:**
-- Setting motivierend gestalten: Rollenzuweisung (z.B. Geheimdienstagent, Reporter, Zeitreisender)
-- Zeitsetting klar und konkret (nicht nur Jahreszahl, sondern situative Einbettung)
-- Anschluss an vorherige Mappe/Phase herstellen
-- Problemstellung als echte Frage, die Neugier weckt
-- Geschichtsdidaktisch: Perspektivitaet bei Rollenzuweisungen beachten (Rolle eines "unbeteiligten" Beobachters kann sinnvoll sein, um multiperspektivisch zu bleiben)
+- Setting motivierend: Rollenzuweisung, situative Einbettung
+- Anschluss an vorherige Mappe/Phase
+- Problemstellung als echte Frage
+- Perspektivitaet bei Rollenzuweisungen beachten
 
 ## Ausgabe
 
 ### Design-Modus → BLUEPRINT_MAPPE_N
 
 Datei: `docs/architektur/BLUEPRINT_MAPPE_[N]_[game-id].md`
-Format: Siehe WORKFLOW_v2.md (v3) Abschnitt 5 (MATERIAL_GERUEST-Template mit TB-Abdeckungs-Tabelle).
+Format: Siehe WORKFLOW_v4.md Sektion 5 (MATERIAL_GERUEST-Template mit TB-Abdeckungs-Tabelle).
 
-### Produktions-Modus → material-mappe-N.json
+### Produktions-Modus → materialien/mat-N-M.json (v4)
 
-Datei: `docs/testdaten/material-mappe-[N]_[game-id].json`
-Format: Siehe Abschnitt 2.4 oben.
+Verzeichnis: `docs/agents/artefakte/produktion/{game-id}/mappe-{N}/materialien/`
+Pro Material eine Datei: `mat-N-M.json` (Format: Abschnitt 2.4).
 
-Wird von AGENT_RAETSEL als Eingabe verwendet. RAETSEL uebernimmt materialien[], einstieg{} und sicherung{} unveraendert in data.json und ergaenzt aufgaben[].
+Rahmen-Dateien (Phase 2.0): `docs/agents/artefakte/produktion/{game-id}/mappe-{N}/rahmen/`
+- tafelbild.json, einstieg.json, sicherung.json, meta.json
+
+AGENT_RAETSEL (Phase 2.2) liest materialien/*.json als Eingabe.
+Phase 3 (Claude Code) assembliert alle .json-Dateien zu data.json — rein mechanisch.
 
 ## Qualitaets-Gate (Selbstpruefung vor Ausgabe)
 
@@ -745,9 +645,12 @@ Wird von AGENT_RAETSEL als Eingabe verwendet. RAETSEL uebernimmt materialien[], 
 
 | Dokument | Relevanz |
 |---|---|
-| `docs/architektur/WORKFLOW_v1.md` | Kanonisch fuer Schema, Ablauf, Formate |
+| `docs/architektur/WORKFLOW_v4.md` | **Kanonisch** — Phasenstruktur, Schnittstellen-Vertraege, Dispatch-Ablaeufe |
+| `docs/architektur/WORKFLOW_v1.md` | Legacy — Schema, Engine-Spezifikationen |
 | `docs/architektur/GAME_BLUEPRINT_[game-id].md` | Tafelbild-Progression, KE-Matrix |
 | `docs/agents/AGENT_INHALT.md` | Inhalts-MD-Format (Eingabe) |
-| `docs/agents/AGENT_RAETSEL.md` | Aufgabentypen, Tipp-Regeln (Abnehmer) |
+| `docs/agents/AGENT_RAETSEL.md` | Aufgaben-Orchestrator (Abnehmer, Referenz fuer Orchestrator-Pattern) |
+| `docs/agents/SUB_MATERIAL_*.md` | Typ-spezifische Subagenten (7 Dateien) |
+| `docs/checklisten/QUALITAETSKRITERIEN_MATERIALPRODUKTION.md` | Zentrale Qualitaetskriterien M1-M12 + typ-spezifisch |
 | `docs/checklisten/MCP_TOOLS.md` | Vollstaendige MCP-Dokumentation |
-| `docs/architektur/ARCHITEKTUR_v1.md` | Engine-Erweiterungen (Abschnitt 5), Template (Abschnitt 6) — Implementierungsreferenz |
+| `docs/architektur/ARCHITEKTUR_v1.md` | Engine-Erweiterungen (Abschnitt 5), Template (Abschnitt 6) |

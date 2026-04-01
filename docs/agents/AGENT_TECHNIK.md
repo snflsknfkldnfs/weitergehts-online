@@ -52,9 +52,21 @@ AGENT_TECHNIK verwendet BEM-artige Klassennamen, die AGENT_DESIGN dann stylt:
     <button class="tipp__trigger">Tipp 1</button>
     <div class="tipp__inhalt">...</div>
   </div>
-  <div class="aufgabe__code-eingabe">
-    <input class="code__input" />
-    <button class="code__submit">Prüfen</button>
+</section>
+
+<!-- Loesungswort-Bereich (unterhalb des Material/Fragebogen-Grids, initial unsichtbar) -->
+<section class="loesungswort-bereich loesungswort-bereich--aktiv">
+  <div class="loesungscode-sektion">
+    <h3 class="loesungscode__titel">Lösungswort</h3>
+    <p class="code-hinweis">Löse die Aufgaben, um Buchstaben freizuschalten. Ziehe sie an die richtige Stelle!</p>
+    <div class="code-ziel" id="code-ziel">
+      <div class="code-ziel__feld" data-position="0"></div>
+      <!-- ... ein Feld pro Buchstabe des freischalt_code -->
+    </div>
+    <div class="code-pool" id="code-pool">
+      <!-- Buchstaben-Tiles werden dynamisch generiert (Fisher-Yates-Shuffle) -->
+      <!-- Erscheinen ALLE GLEICHZEITIG wenn solved === total -->
+    </div>
   </div>
 </section>
 
@@ -121,16 +133,17 @@ Bei der Erstellung eines konkreten Escape-Games kopiert AGENT_TECHNIK das Templa
 
 #### mappe-X.html (pro Mappe)
 - 5 Aufgaben sequenziell dargestellt
-- Aufgabentyp-spezifische UI-Elemente:
-  - `multiple-choice`: Radio-Buttons mit 4 Optionen
-  - `zuordnung`: Dropdown-Zuordnung (linke Spalte: Begriffe fest, rechte Spalte: `<select>`-Dropdowns mit allen Zuordnungsoptionen)
-  - `lueckentext`: Input-Felder im Text
-  - `reihenfolge`: Sortierbare Liste
-  - `freitext-code`: Textarea + Code-Ableitung
-- Code-Eingabefeld am Ende jeder Aufgabe
-- Tipp-Aufklapp-Buttons (3 Stufen)
+- Aufgabentyp-spezifische UI-Elemente (Rendering-Kontrakte in SUB_AUFGABE_*.md):
+  - `multiple-choice`: Radio-Buttons mit 4 Optionen — Details: `docs/agents/SUB_AUFGABE_MC.md`
+  - `zuordnung`: Dropdown-Zuordnung (linke Spalte: Begriffe fest, rechte Spalte: `<select>`-Dropdowns) — Details: `docs/agents/SUB_AUFGABE_ZUORDNUNG.md`
+  - `lueckentext`: Input-Felder im Text — Details: `docs/agents/SUB_AUFGABE_LUECKENTEXT.md`
+  - `reihenfolge`: Sortierbare Liste (Drag-and-Drop) — Details: `docs/agents/SUB_AUFGABE_REIHENFOLGE.md`
+  - `freitext-code`: Textarea + Keyword-Validierung — Details: `docs/agents/SUB_AUFGABE_FREITEXT.md`
+- Tipp-Aufklapp-Buttons (3 Stufen, sequentiell freigeschaltet: Tipp 2 erst nach Tipp 1)
+- Mappe-Statistik: Tipp-Counter (gewichtet) + Fehlversuche-Counter
+- Loesungswort-Bereich (unterhalb des Grids, initial unsichtbar): Erscheint nach Loesung aller Aufgaben. Buchstaben des `freischalt_code` als DnD-Tiles in zufaelliger Reihenfolge. Korrekte Anordnung → Sicherung/Hefteintrag freigeschaltet.
 - Navigation: Zurück / Weiter / Zur Übersicht
-- Fortschrittsbalken (Aufgabe X von 5)
+- Fortschrittsanzeige: "X von Y" + Dot-Indikatoren
 
 #### lehrkraft.html (Lehrkraft-Zugang)
 - Alle Lösungen im Klartext
@@ -155,17 +168,18 @@ Funktionalitäten (implementiert in `assets/js/escape-engine.js`):
 // Initialisierung: Lädt data.json, setzt Event-Listener, stellt Fortschritt wieder her
 EscapeEngine.init(mappeId: string) → void
 
-// Code-Prüfung: Vergleicht Eingabe mit erwartetem Freischalt-Code
-EscapeEngine.checkCode(mappeId: string, eingabe: string)
-  → { correct: boolean, message: string }
+// Loesungswort aktivieren: Wird intern aufgerufen wenn solved === total.
+// Shuffled Buchstaben des freischalt_code, rendert Tiles im Pool, macht Bereich sichtbar.
+// KEIN manueller Aufruf noetig — wird automatisch durch _updateFortschritt getriggert.
+// EscapeEngine._aktiviereLoesungswort(mappe) → void (intern)
 
-// Fortschritt speichern: Schreibt aktuellen Aufgaben-Status in localStorage
+// Fortschritt speichern: Schreibt aktuellen Aufgaben-Status + Antwort-State in localStorage
 EscapeEngine.saveProgress(mappeId: string, aufgabeIndex: number, solved: boolean)
   → void
 
 // Fortschritt laden: Liest gespeicherten Status aus localStorage
 EscapeEngine.loadProgress(mappeId: string)
-  → { aufgaben: boolean[], abgeschlossen: boolean }
+  → { aufgaben: boolean[], abgeschlossen: boolean, fehlversuche: number, tipp_punkte: number }
 
 // Tipp anzeigen: Gibt den Tipp-Text für eine bestimmte Stufe zurück
 EscapeEngine.showTipp(mappeId: string, aufgabeIndex: number, stufe: 1|2|3)
@@ -175,7 +189,7 @@ EscapeEngine.showTipp(mappeId: string, aufgabeIndex: number, stufe: 1|2|3)
 EscapeEngine.resetProgress()
   → void
 
-// Mappe freischalten (Lehrkraft): Überspringt Code-Prüfung
+// Mappe freischalten (Lehrkraft): Überspringt Loesungswort-Puzzle
 EscapeEngine.unlockMappe(mappeId: string)
   → void
 ```
@@ -185,8 +199,20 @@ localStorage-Schema:
 {
   "escape-[thema]": {
     "mappen": {
-      "mappe-1": { "abgeschlossen": true, "aufgaben": {...} },
-      "mappe-2": { "abgeschlossen": false, "aufgaben": {...} }
+      "mappe-1": {
+        "abgeschlossen": true,
+        "fehlversuche": 2,
+        "tipp_punkte": 4,
+        "platzierte_buchstaben": { "position-0": "P", "position-3": "V" },
+        "aufgaben": {
+          "aufgabe-0": {
+            "geloest": true,
+            "tipps_genutzt": 2,
+            "antwort_state": { "selected": "...", "eliminated": ["..."] }
+          }
+        }
+      },
+      "mappe-2": { "abgeschlossen": false, "aufgaben": {} }
     },
     "letzteAktivitaet": "2024-01-15T10:30:00Z"
   }
@@ -218,6 +244,23 @@ localStorage-Schema:
 - `escape-games/template/mappe-template.html` – Mappe-Template
 - `escape-games/template/lehrkraft.html` – Lehrkraft-Template
 - `escape-games/template/data.json` – Daten-Schema
+
+### Rendering-Kontrakte — Aufgaben (Typ-Registry)
+- `docs/agents/SUB_AUFGABE_MC.md` – MC: data.json Schema, BEM-Klassen, JS-Validierung
+- `docs/agents/SUB_AUFGABE_ZUORDNUNG.md` – Zuordnung: data.json Schema, BEM-Klassen, JS-Validierung
+- `docs/agents/SUB_AUFGABE_LUECKENTEXT.md` – Lueckentext: data.json Schema, BEM-Klassen, JS-Validierung
+- `docs/agents/SUB_AUFGABE_REIHENFOLGE.md` – Reihenfolge: data.json Schema, BEM-Klassen, JS-Validierung
+- `docs/agents/SUB_AUFGABE_FREITEXT.md` – Freitext: data.json Schema, BEM-Klassen, JS-Validierung
+
+### Rendering-Kontrakte — Materialien (7 SUB_MATERIAL_*)
+- `docs/agents/SUB_MATERIAL_DARSTELLUNGSTEXT.md` – darstellungstext: JSON-Schema, HTML-Tags, Wortbudget
+- `docs/agents/SUB_MATERIAL_QUELLENTEXT.md` – quellentext: Dreischritt (Einleitung/Wortlaut/Impulse), JSON-Schema
+- `docs/agents/SUB_MATERIAL_BILDQUELLE.md` – bildquelle: Bild-Pfad, 3-Funktions-Bildunterschrift, Lizenz
+- `docs/agents/SUB_MATERIAL_KARTE.md` – karte→bildquelle: Legende, Orientierungshilfen, Erschliessungsimpuls
+- `docs/agents/SUB_MATERIAL_ZEITLEISTE.md` – zeitleiste: Eintraege-Array, Leitfrage, Ankerpunkte
+- `docs/agents/SUB_MATERIAL_STATISTIK.md` – statistik→zeitleiste/bildquelle: Diagrammtyp, Datenpunkte
+- `docs/agents/SUB_MATERIAL_TAGEBUCH.md` – tagebuch→quellentext: Figurkonstruktion, Erzaehlprinzipien
+- `docs/checklisten/QUALITAETSKRITERIEN_MATERIALPRODUKTION.md` – Zentrale Qualitaetskriterien (M1-M12 + typ-spezifisch)
 
 ### Shared Code
 - `assets/js/escape-engine.js` – Escape-Game-Engine
