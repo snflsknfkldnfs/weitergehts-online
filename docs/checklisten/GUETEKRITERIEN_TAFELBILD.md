@@ -401,7 +401,29 @@ Laendernamen (Deutschland, Oesterreich-Ungarn, Italien, Frankreich, Grossbritann
 
 ---
 
-## 10. Abgrenzung: Was AGENT_TAFELBILD NICHT tut
+## 10. Stufe-2 Re-Evaluation (Phase 2.1c Achse 6)
+
+Die Guetekriterien G1-G14 werden in Phase 0.4 (Stufe 1) erstmalig gegen den Plan geprueft. Fuenf davon erfordern eine **Re-Evaluation in Phase 2.1c** gegen die tatsaechlich produzierten Materialien, weil ihre Pruefaussage erst mit Material-Kontext vollstaendig bewertbar ist.
+
+### Stufe-2-Kriterien
+
+| # | Kriterium | Stufe-1 Pruefung (Phase 0.4) | Stufe-2 Re-Evaluation (Phase 2.1c Achse 6) |
+|---|---|---|---|
+| G3 | **Erarbeitbarkeit** | Jeder SCPL-Schritt hat Skript-Passage oder Artefakt-Kandidat (theoretische Abdeckung) | Jeder SCPL-Schritt ist durch ein **konkretes produziertes Material** erarbeitbar (faktische Abdeckung). Pruefung gegen materialien/mat-N-*.json, nicht gegen Plan. |
+| G5 | **Sprachliches Niveau** | Merksaetze ≤ 15 Woerter, R7-Lesbarkeit gegen SKRIPT | SCPL-Texte (nach Formulierungs-Revision) sind sprachlich konsistent mit den produzierten Materialien. Fachbegriffe werden in derselben Form verwendet wie im Material. |
+| G10 | **Rekapitulierbarkeit** | Lernweg implizit erkennbar (gegen Plan) | Hefteintrag laesst den **tatsaechlichen** Material-Erarbeitungsweg erkennen. SuS koennen anhand des Hefteintrags rekonstruieren, was sie in den Materialien erarbeitet haben. |
+| G12 | **Sprachregister-Passung** | Register passt zum Themencharakter (gegen DIDAKTIK_RAHMEN) | Register der SCPL-Texte harmoniert mit dem Register der produzierten Materialien. Kein Register-Bruch zwischen Material-Sprache und Hefteintrag-Sprache. |
+| G14 | **SCPL-Kohaerenz** (partiell) | Jede Zone baut logisch auf vorheriger auf (Struktur-Pruefung) | SCPL-Texte (nach Revision) bilden einen **inhaltlich kohaerenten Bogen**, der die Material-Erfahrungen widerspiegelt. Kontextsatz referenziert konkreten Material-Einstieg, nicht abstrakte Beschreibung. |
+
+### Operationalisierung
+
+Die Stufe-2 Re-Evaluation erfolgt im selben Dispatch wie Achse 6 (Hefteintrag-Revision) in VERTRAG_PHASE_2-1c_CROSS.md. Input: alle materialien/mat-N-*.json + rahmen/tafelbild.json (Stufe-1-Output). Bei FAIL eines Stufe-2-Kriteriums: Begruendung in Q-GATE-LOG.md + Nachbesserung der FORMULIERUNGS-OFFEN-Felder (NICHT der STRUKTUR-FREEZE-Felder).
+
+**Nicht re-evaluiert** werden: G1 (Lernziel-Kongruenz — KE-Matrix stabil), G2 (Reduktion — Knotenanzahl stabil), G4 (Strukturklarheit — Ordnungsmuster stabil), G6 (Hefteintrag-Transfer — Wortanzahl stabil), G7-G9, G11, G13 (unveraendert nach Phase 0.4).
+
+---
+
+## 11. Abgrenzung: Was AGENT_TAFELBILD NICHT tut
 
 | Nicht-Zustaendigkeit | Zustaendig |
 |---|---|

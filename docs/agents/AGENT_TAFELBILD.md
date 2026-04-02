@@ -214,6 +214,34 @@ Das Tafelbild gegen alle 14 Guetekriterien pruefen und das Q-Gate-Protokoll ausf
 **SOLL-Kriterien (G7-G10):** Bei FAIL → dokumentieren, ob Nachbesserung moeglich.
 **KANN-Kriterien (G11-G14):** Bei FAIL → kein Nachbesserungszwang, aber dokumentieren.
 
+### 8. Differenzierter FREEZE (nach Q-Gate PASS)
+
+Nach Q-Gate PASS tritt ein **differenzierter FREEZE** in Kraft. Zwei Ebenen:
+
+**STRUKTUR-FREEZE (ab Phase 0.4 — unveraenderlich):**
+
+| Element | Geschuetzt |
+|---|---|
+| SCPL-Zonen (Anzahl, Reihenfolge, Typ) | Keine Zone hinzufuegen, entfernen oder umordnen |
+| Kernerkenntnisse / scpl.loesung[] | Inhaltlich fixiert (Substanz) |
+| Fachbegriffe (pro Zone) | Keine Fachbegriffe hinzufuegen oder entfernen |
+| Ordnungsmuster | Nicht aenderbar |
+| Stundenfrage | Wortidentisch mit einstieg.problemstellung (C1b) |
+
+**FORMULIERUNGS-OFFEN (bis Phase 2.1c Achse 6):**
+
+| Element | Erlaubt |
+|---|---|
+| situation.kontextsatz | Formulierung anpassen an Material-Kontext |
+| complication[].schritt (Saetze) | Sprachliche Verfeinerung, Material-Bezug herstellen |
+| problem.satz | Formulierung an Material-Erfahrung anpassen |
+
+**NICHT PRODUZIERT in Phase 0.4:**
+- zusammenfassung (erst in Phase 2.1c)
+- ueberleitung (erst in Phase 2.1c)
+
+Die Grenze: **WAS gelernt wird** (Struktur) ist fixiert. **WIE es verschriftlicht wird** (Formulierung) darf nach Material-Produktion verfeinert werden. Revision erfolgt in Phase 2.1c Achse 6 (VERTRAG_PHASE_2-1c_CROSS.md).
+
 ## Encoding-Regel (v3.2)
 
 **Umlaute:** Schreibe echte UTF-8-Umlaute (ä, ö, ü, ß). KEINE ASCII-Transliterationen (ae, oe, ue, ss). Gilt fuer Hefteintrag-Text UND JSON-Felder (stundenfrage, situation.kontextsatz, complication[].text, problem.text, loesung.text, fachbegriffe[]).

@@ -1,10 +1,15 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
 **Letzte Aktualisierung:** 2026-04-02
-**Aktuelle Phase:** **v4 Produktionsarchitektur — Audit: Sicherungskette (Tafelbild/Hefteintrag/Sicherung).**
-**Letzter Arbeitsschritt:** AUDIT_BRIEFING_SICHERUNGSKETTE.md erstellt. Bestandsaufnahme der Prozesskette, 6 Strukturprobleme (SP-1 bis SP-6) identifiziert, 16 Prueffragen fuer externen Auditor formuliert. Didaktische Idealstruktur des Auftraggebers als Referenzmodell dokumentiert.
-**Naechster Schritt:** Externen Audit einholen (AUDIT_BRIEFING_SICHERUNGSKETTE.md). Danach: Findings evaluieren, ggf. Prozess umstrukturieren. Parallel noch offen: Engine-Fallback (Ueberleitung ID-Pattern), ARTEFAKT_INVENTAR Mappe 2 nachpflegen.
-**Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. Sicherungskette wartet auf Audit-Ergebnis.
+**Aktuelle Phase:** **v4 Produktionsarchitektur — Audit Sicherungskette: M1-M4 + M1b implementiert. Zwei-Stufen-Architektur aktiv.**
+**Letzter Arbeitsschritt:** Massnahmen M1-M4 + M1b aus Audit Sicherungskette implementiert:
+- M1: Differenzierter FREEZE (STRUKTUR-FREEZE + FORMULIERUNGS-OFFEN) in AGENT_TAFELBILD, ORCHESTRATOR, AGENT_MATERIAL, 3 Vertraegen, UPGRADE_PLAN
+- M1b: GUETEKRITERIEN_TAFELBILD.md Stufe-2 Re-Evaluation (G3, G5, G10, G12, G14 in Phase 2.1c)
+- M2: VERTRAG_PHASE_2-1c Achse 6 "Hefteintrag-Revision" mit Regelwerk erlaubt/verboten, zusammenfassung/ueberleitung-Produktion, Stufe-2 Re-Evaluation
+- M3: VERTRAG_PHASE_2-0 zusammenfassung/ueberleitung als Placeholder "[REVISION IN 2.1c]"
+- M4: VERTRAG_PHASE_2-1 Read-Schritt 2 um SCPL-Schritt erweitert
+**Naechster Schritt:** M5-M9 (Prioritaet 2/3) bei Bedarf. Parallel noch offen: Engine-Fallback (Ueberleitung ID-Pattern), ARTEFAKT_INVENTAR Mappe 2 nachpflegen.
+**Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet.
 
 **Abgeschlossen seit letztem Update:**
 - Runde 3b (Commit 0c0e1ee): Mappe 2 "Das Attentat von Sarajevo" live — 6 Materialien, 5 Aufgaben, 2 Bilder, Engine-Patch, mappe-2.html

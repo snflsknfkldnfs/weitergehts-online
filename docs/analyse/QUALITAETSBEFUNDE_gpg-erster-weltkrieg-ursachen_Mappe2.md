@@ -269,8 +269,8 @@ Hefteintrag wird vor Materialien produziert, kann daher nicht material-bezogen a
 9. VERTRAG_PHASE_2-2b: freitext-code loesung als Array (Q-M2-02) — **ERLEDIGT** (Loesungsformate-Tabelle + SUB_AUFGABE_FT.md)
 10. VERTRAG_PHASE_2-0: reflexionsimpuls/kernerkenntnisse Disjunktionsregel (Q-M2-07) — **ERLEDIGT** (Q-M2-09 als Q-Gate-Kriterium)
 11. Phase 2.1c: Ueberleitungen als Achse 5 + ueberleitungen.json Output (Q-M2-03) — **ERLEDIGT** (VERTRAG_PHASE_2-1c erweitert, AGENT_MATERIAL + ORCHESTRATOR aktualisiert, Zwei-Vektoren-Bruecke als didaktisches Modell)
-12. Hefteintrag: Produktion verschieben oder Q-Gate verschaerfen (Q-M2-05) — OFFEN (Phase-Verschiebung)
-13. GUETEKRITERIEN_HEFTEINTRAG.md erstellen — OFFEN
+12. Hefteintrag: Produktion verschieben oder Q-Gate verschaerfen (Q-M2-05) — **ERLEDIGT** (Audit Sicherungskette: Zwei-Stufen-Architektur. M1 differenzierter FREEZE, M2 Achse 6 HE-Revision in Phase 2.1c, M3 zusammenfassung als Placeholder in Phase 2.0)
+13. GUETEKRITERIEN_HEFTEINTRAG.md erstellen — **TEILWEISE ERLEDIGT** (M1b: Stufe-2 Re-Evaluation in GUETEKRITERIEN_TAFELBILD.md Sektion 10. Eigenstaendige GUETEKRITERIEN_HEFTEINTRAG.md = M9 Prioritaet 3)
 
 ### Langfristig (Engine-Verbesserungen)
 

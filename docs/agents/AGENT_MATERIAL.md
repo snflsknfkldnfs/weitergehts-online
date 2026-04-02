@@ -24,7 +24,7 @@ AGENT_MATERIAL erfindet keine Fakten. Fachliche Substanz kommt aus dem SKRIPT (P
 | Parameter | Beschreibung | Quelle |
 |---|---|---|
 | `SKRIPT` | Validiertes Skript (gechunkt, mit Artefakt-Zuordnungen: img-IDs, zit-IDs, rolle-IDs) | AGENT_SKRIPT (Phase 0.3) |
-| `TAFELBILD` | Fixiertes Tafelbild pro Mappe (JSON + Hefteintrag, nach Q-Gate PASS eingefroren) | AGENT_TAFELBILD (Phase 0.4) |
+| `TAFELBILD` | Fixiertes Tafelbild pro Mappe (JSON + Hefteintrag, STRUKTUR-FREEZE nach Q-Gate PASS: SCPL-Zonen, KE, Fachbegriffe, Ordnungsmuster, Stundenfrage unveraenderlich. SCPL-Texte FORMULIERUNGS-OFFEN bis Phase 2.1c) | AGENT_TAFELBILD (Phase 0.4) |
 | `DIDAKTIK_RAHMEN` | KE-Matrix, Mappen-Grobstruktur, Schwierigkeitskurve, didaktische Leitlinien | AGENT_DIDAKTIK (Phase 0.1) |
 | `mappe_nr` | Nummer der zu designenden Mappe (inkrementell: 1 → 2 → ...) | User/Cowork |
 
@@ -86,7 +86,7 @@ AGENT_MATERIAL erfindet keine Fakten. Fachliche Substanz kommt aus dem SKRIPT (P
 
 #### 1.1 Tafelbild-Abdeckung verifizieren (v3: TB ist fixiert)
 
-Das Tafelbild kommt als fixierter Input aus AGENT_TAFELBILD (Phase 0.4). Es hat das Q-Gate (G1-G14) bestanden und ist **eingefroren (TB-FREEZE)**. AGENT_MATERIAL darf keine Knoten hinzufuegen, entfernen oder inhaltlich aendern.
+Das Tafelbild kommt als fixierter Input aus AGENT_TAFELBILD (Phase 0.4). Es hat das Q-Gate (G1-G14) bestanden und unterliegt dem **STRUKTUR-FREEZE**: SCPL-Zonen, Kernerkenntnisse, Fachbegriffe, Ordnungsmuster und Stundenfrage sind unveraenderlich. AGENT_MATERIAL darf keine Knoten hinzufuegen, entfernen oder inhaltlich aendern. (SCPL-Texte sind FORMULIERUNGS-OFFEN — Revision erfolgt in Phase 2.1c Achse 6, nicht durch AGENT_MATERIAL.)
 
 **Aufgabe:** Fuer jeden TB-Knoten pruefen, ob konkretes Material die Erarbeitung ermoeglicht:
 
@@ -174,7 +174,7 @@ Aufgaben-Entwicklung: AGENT_RAETSEL (Phase 2, nach Materialproduktion).
 
 #### 1.5 Erarbeitbarkeits-Dokumentation (v3: TB-Abdeckungs-Nachweis)
 
-**Pflicht.** Das Tafelbild ist fixiert (Phase 0.4, TB-FREEZE). AGENT_MATERIAL fuehrt keinen eigenen TB-Vollstaendigkeits- oder Strukturcheck durch — das hat AGENT_TAFELBILD mit Q-Gate G1-G14 erledigt. Stattdessen:
+**Pflicht.** Das Tafelbild ist fixiert (Phase 0.4, STRUKTUR-FREEZE). AGENT_MATERIAL fuehrt keinen eigenen TB-Vollstaendigkeits- oder Strukturcheck durch — das hat AGENT_TAFELBILD mit Q-Gate G1-G14 erledigt. Stattdessen:
 
 **Schritt 1 — Material-zu-Knoten-Mapping:**
 Fuer jeden TB-Knoten dokumentieren: Welches Material (mat-ID, konkrete Stelle) ermoeglicht die Erarbeitung?
@@ -469,7 +469,7 @@ Nach Rueckkehr aller Subagenten-Outputs:
 | TB-Abdeckung | Jeder Knoten durch mindestens 1 Material erarbeitbar | Fehlendes Material ergaenzen |
 | Quellenangaben | Pro QT/ST mind. 1 Fussnote, keine generischen Angaben | An Subagenten zurueckgeben |
 
-**Phase 2.1c (v4): Material-Cross-Konsistenz + Ueberleitung-Produktion.** Nach Abschluss aller Material-Dispatches folgt ein separater Cross-Konsistenz-Dispatch (1 Dispatch, 5 Achsen). Achsen 1-4: Sequenz-Kohaerenz, Fachbegriff-Konsistenz, Ueberleitung-Kohaerenz, TB-Knoten-Gesamtabdeckung. Achse 5 (NEU, Q-M2-03): Ueberleitung-Produktion — formuliert die finalen Zwei-Vektoren-Bruecken zwischen Materialien auf Basis der konkreten mat-JSONs + GERUEST-Intentionen. Output: `ueberleitungen.json` (Assembly-Input fuer Phase 3). Details: VERTRAG_PHASE_2-1c_CROSS.md.
+**Phase 2.1c (v4): Material-Cross-Konsistenz + Ueberleitung-Produktion + Hefteintrag-Revision.** Nach Abschluss aller Material-Dispatches folgt ein separater Cross-Konsistenz-Dispatch (1 Dispatch, 6 Achsen). Achsen 1-4: Sequenz-Kohaerenz, Fachbegriff-Konsistenz, Ueberleitung-Kohaerenz, TB-Knoten-Gesamtabdeckung. Achse 5 (Q-M2-03): Ueberleitung-Produktion — formuliert die finalen Zwei-Vektoren-Bruecken zwischen Materialien auf Basis der konkreten mat-JSONs + GERUEST-Intentionen. Output: `ueberleitungen.json` (Assembly-Input fuer Phase 3). Achse 6 (M2): Hefteintrag-Revision — FORMULIERUNGS-OFFEN-Felder der SCPL-Texte auf Material-Kontext anpassen, zusammenfassung + ueberleitung erstmalig produzieren. GUETEKRITERIEN Stufe-2 Re-Evaluation (G3, G5, G10, G12, G14). Details: VERTRAG_PHASE_2-1c_CROSS.md.
 
 ---
 

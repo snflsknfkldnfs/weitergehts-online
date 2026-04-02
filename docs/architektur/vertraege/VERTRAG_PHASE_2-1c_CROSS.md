@@ -1,9 +1,9 @@
-# Vertrag Phase 2.1c: Material-Cross-Konsistenz + Ueberleitung-Produktion
+# Vertrag Phase 2.1c: Material-Cross-Konsistenz + Ueberleitung-Produktion + Hefteintrag-Revision
 
 **Extrahiert aus:** WORKFLOW_v4.md (Commit d627924, 2026-04-01)
-**Erweitert:** 2026-04-02 (Q-M2-03 — Ueberleitung-Produktion als Achse 5)
+**Erweitert:** 2026-04-02 (Q-M2-03 — Achse 5 Ueberleitungen, M2 — Achse 6 Hefteintrag-Revision)
 **Prinzipien:** P1 (Read-from-Artifact) · P4 (Subagenten-Isolation bleibt gewahrt) · P5 (Q-Gate Pflicht) · P6 (Praezise Schnittstellen)
-**Dispatch-Isolation:** 1 Dispatch. Prueft das Zusammenspiel UND produziert Ueberleitungen.
+**Dispatch-Isolation:** 1 Dispatch. Prueft Zusammenspiel, produziert Ueberleitungen, revidiert Hefteintrag.
 
 ---
 
@@ -15,10 +15,11 @@
 | 2 | rahmen/tafelbild.json | knoten[], stundenfrage | TB-Gesamtabdeckung |
 | 3 | MATERIAL_GERUEST | Sequenzreihenfolge, didaktische_funktion pro mat-ID, Ueberleitungen-Sektion | Soll-Ist-Vergleich + Ueberleitung-Intention |
 | 4 | rahmen/einstieg.json | problemstellung | Leitfrage als Ueberleitung-Anker fuer mat-1 |
+| 5 | rahmen/sicherung.json | kernerkenntnisse[], reflexionsimpuls, hefteintrag_verweis | Stufe-1-Felder fuer Achse 6 Kontext + Q-M2-09 Disjunktionspruefung |
 
 **NICHT lesen:** data.json, WORKFLOW_v4.md, SKRIPT, INHALTSBASIS, SUB_MATERIAL_*.md, aufgaben/*.json
 
-## 5 Pruefachsen
+## 6 Achsen
 
 ### Achsen 1-4: Cross-Konsistenz (unveraendert)
 
@@ -53,6 +54,39 @@ Beide Vektoren muessen inhaltlich praezise auf die **konkreten produzierten Mate
 
 **Sonderfall mat-N-1 (Position 1):** Keine Ueberleitung (kein Vorgaenger). Die Problemstellung aus `rahmen/einstieg.json` uebernimmt diese Funktion.
 
+### Achse 6: Hefteintrag-Revision (NEU — M2, Audit Sicherungskette)
+
+**Warum hier:** Phase 2.1c hat bereits ALLE Materialien im Kontext. Die SCPL-Texte aus Phase 0.4 wurden vor Material-Produktion formuliert und koennen jetzt auf konkreten Material-Kontext angepasst werden. Zusaetzlich werden zusammenfassung und ueberleitung erstmalig produziert (in Phase 2.0 nur als Placeholder angelegt).
+
+**Regelwerk: Erlaubt vs. Verboten (PF-8)**
+
+**ERLAUBT (Formulierungs-Revision):**
+- `situation.kontextsatz`: Formulierung anpassen, um auf konkretes Material-Erlebnis Bezug zu nehmen
+- `complication[].schritt` (Saetze): Sprachliche Verfeinerung, Fachbegriffe im Material-Kontext verwenden
+- `problem.satz`: Formulierung an Material-Erfahrung anpassen
+- `zusammenfassung` (NEU): Erstmalige Produktion mit Material-Kontext. Synthese des Erarbeitungsprozesses, nicht abstrakte Inhaltswiedergabe. Soll G10 (Rekapitulierbarkeit) erfuellen.
+- `ueberleitung` (Mappe-zu-Mappe, NEU): Erstmalige Produktion mit Material-Kontext
+
+**VERBOTEN (Struktur-Aenderung — STRUKTUR-FREEZE):**
+- SCPL-Zonen hinzufuegen oder entfernen
+- Complication-Schritte hinzufuegen, entfernen oder umordnen
+- Ordnungsmuster aendern
+- Kernerkenntnisse / Merksaetze (scpl.loesung[]) inhaltlich aendern
+- Fachbegriffe hinzufuegen oder entfernen
+- Stundenfrage aendern
+
+**Grenzfaelle:**
+- Complication-Schritt von 2 Saetzen auf 1 kuerzen: ERLAUBT (Formulierung)
+- Fachbegriff durch Synonym ersetzen: VERBOTEN (Fachbegriff-Aenderung)
+- "Annexion" → "gewaltsame Eingliederung — Annexion": ERLAUBT (Erklaerungskontext, Fachbegriff bleibt)
+
+**Dokumentationspflicht:** Pro Aenderung: "SCPL-Schritt X: Formulierung geaendert von [...] zu [...]. Begruendung: Material Y liefert konkreten Kontext."
+
+**Stufe-2 Re-Evaluation (M1b):** Nach der Formulierungs-Revision werden G3, G5, G10, G12, G14 gegen die produzierten Materialien re-evaluiert (siehe GUETEKRITERIEN_TAFELBILD.md, Sektion 10). Bei FAIL: Nachbesserung der FORMULIERUNGS-OFFEN-Felder.
+
+**Q-M2-09 Disjunktionsregel** gilt weiterhin: reflexionsimpuls und kernerkenntnisse[] muessen inhaltlich disjunkt bleiben.
+**Q-M2-08 Quellenangabe-Hygiene** gilt weiterhin: Keine internen Artefakt-Namen in SuS-sichtbaren Texten.
+
 ## Dispatch-Ablauf
 
 ```
@@ -60,22 +94,32 @@ Beide Vektoren muessen inhaltlich praezise auf die **konkreten produzierten Mate
 2. rahmen/tafelbild.json lesen (P1)
 3. MATERIAL_GERUEST lesen (P1) — inkl. Ueberleitungen-Sektion als Intentionsvorlage
 4. rahmen/einstieg.json lesen (P1) — problemstellung als Kontext fuer mat-1
-5. Achsen 1-4 durchfuehren (Cross-Konsistenz)
-6. Achse 5: Pro Material-Uebergang (mat-N-1→mat-N-2, mat-N-2→mat-N-3, ...):
+5. rahmen/sicherung.json lesen (P1) — Stufe-1-Felder (kernerkenntnisse, reflexionsimpuls, hefteintrag_verweis)
+6. Achsen 1-4 durchfuehren (Cross-Konsistenz)
+7. Achse 5: Pro Material-Uebergang (mat-N-1→mat-N-2, mat-N-2→mat-N-3, ...):
    a. GERUEST-Ueberleitung als Intention lesen
    b. Tatsaechlichen Inhalt beider Materialien analysieren
    c. Zwei-Vektoren-Bruecke formulieren (UE-1 bis UE-5 pruefen)
-7. ueberleitungen.json schreiben (siehe Output)
-8. Bei Achsen 1-4 PASS + Achse 5 produziert: Ergebnis in Q-GATE-LOG.md
-9. Bei FAIL (Achsen 1-4): Betroffene Materialien + Finding dokumentieren
-   → User entscheidet ueber Nachbesserung oder Akzeptanz
+8. ueberleitungen.json schreiben (siehe Output)
+9. Achse 6: Hefteintrag-Revision
+   a. SCPL-Texte aus tafelbild.json gegen Materialien abgleichen
+   b. FORMULIERUNGS-OFFEN-Felder revidieren (Regelwerk beachten)
+   c. zusammenfassung erstmalig produzieren (material-aware, G10)
+   d. ueberleitung (Mappe-zu-Mappe) erstmalig produzieren
+   e. Stufe-2 Re-Evaluation (G3, G5, G10, G12, G14)
+   f. Aenderungs-Dokumentation erstellen
+10. rahmen/sicherung.json aktualisieren (zusammenfassung, ueberleitung ergaenzen)
+11. rahmen/tafelbild.json SCPL-Text-Patches schreiben (NUR Formulierung, NICHT Struktur)
+12. Bei Achsen 1-4 PASS + Achse 5 produziert + Achse 6 revidiert: Ergebnis in Q-GATE-LOG.md
+13. Bei FAIL (Achsen 1-4): Betroffene Materialien + Finding dokumentieren
+    → User entscheidet ueber Nachbesserung oder Akzeptanz
 ```
 
 ## Output
 
-**Q-GATE-LOG.md:** Ergebnisse Achsen 1-5 (wie bisher, plus Achse 5 Bestaetigungseintrag).
+**Q-GATE-LOG.md:** Ergebnisse Achsen 1-6 (Cross-Konsistenz + Ueberleitungen + Hefteintrag-Revision + Stufe-2 Re-Evaluation).
 
-**ueberleitungen.json** (NEU):
+**ueberleitungen.json:**
 
 ```json
 {
@@ -98,6 +142,10 @@ Beide Vektoren muessen inhaltlich praezise auf die **konkreten produzierten Mate
 Ablage: `docs/agents/artefakte/produktion/[game-id]/mappe-[N]/ueberleitungen.json`
 
 **Assembly-Integration:** Phase 3 (Claude Code) liest `ueberleitungen.json` und setzt `ueberleitung_von` in jedem Material-Objekt der data.json auf den zugehoerigen `text`-Wert (statt der bisherigen Material-ID). Fuer mat-N-1 (Position 1) bleibt `ueberleitung_von` leer/null.
+
+**rahmen/sicherung.json (aktualisiert):** zusammenfassung und ueberleitung werden ergaenzt (waren in Phase 2.0 als Placeholder angelegt).
+
+**rahmen/tafelbild.json (SCPL-Text-Patches):** NUR FORMULIERUNGS-OFFEN-Felder werden aktualisiert (situation.kontextsatz, complication[].schritt, problem.satz). STRUKTUR-FREEZE-Felder bleiben unangetastet. Aenderungs-Dokumentation im Q-GATE-LOG.md.
 
 ## Session-Split
 

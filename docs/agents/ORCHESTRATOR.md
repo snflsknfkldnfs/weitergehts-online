@@ -61,7 +61,7 @@ PHASE 0: INHALTSGERUEST (einmalig pro Game)
   │    Ausgabe: TAFELBILD_[game-id]_Mappe[N].md (pro Mappe)
   │             (Dual: JSON-Repraesentation + Hefteintrag 80-120 W)
   │    Q-Gate: 13 Kriterien (G1-G14), GUETEKRITERIEN_TAFELBILD.md
-  │    TB-FREEZE: Nach Q-Gate PASS eingefroren fuer MATERIAL
+  │    STRUKTUR-FREEZE: Nach Q-Gate PASS Struktur eingefroren (SCPL-Zonen, KE, Fachbegriffe, Ordnungsmuster, Stundenfrage). FORMULIERUNGS-OFFEN: SCPL-Texte revidierbar bis Phase 2.1c Achse 6.
   │    Ort: Cowork
   │
   ▼
@@ -117,8 +117,10 @@ PHASE 2: MAPPEN-PRODUKTION (sequentiell, pro Mappe)
   │  Kalibrierung: Ton, Sprachregister, Tiefe        │
   │  ════════════════════════════════════════════════ │
   │                                                  │
-  │  [2.1c] Material-Cross-Konsistenz (1 Dispatch)   │
-  │         4 Pruefachsen (Strategie-Audit E2)       │
+  │  [2.1c] Material-Cross-Konsistenz + Ueberleitung  │
+  │         + Hefteintrag-Revision (1 Dispatch,       │
+  │         6 Achsen: 4 Cross + Achse 5 Ueberleitungen│
+  │         + Achse 6 HE-Revision)                    │
   │                                                  │
   │  --- CHECKPOINT: Session-Split hier ---           │
   │                                                  │
@@ -243,7 +245,7 @@ Bei ~24.000 Token (nach Phase 2.1c) wird ein Session-Split empfohlen. Der Fortse
 - Phase 2.0 (Rahmen): PASS
 - Phase 2.1 (Materialien): PASS ([M] Materialien)
 - Phase 2.1c (Cross): PASS
-- TB-FREEZE: aktiv (TAFELBILD_[game-id]_Mappe[N].md)
+- STRUKTUR-FREEZE: aktiv (TAFELBILD_[game-id]_Mappe[N].md). FORMULIERUNGS-OFFEN bis Phase 2.1c Achse 6.
 
 ## Naechster Schritt
 Phase 2.2a: Progressionsplan erstellen.
@@ -317,7 +319,7 @@ QUALITAETS-GATE
 | 1.1   | AGENT_MATERIAL (Design)  | Cowork      | Design-Entscheidungen, kein Tool-intensiv          |
 | 2.0   | Rahmen-Produktion        | Cowork      | 1 Dispatch: tafelbild/einstieg/sicherung/meta.json (P1, P4) |
 | 2.1   | SUB_MATERIAL_* (7 Subagenten) | Cowork  | Isolierter Dispatch pro Material (P1, P4, P5). Output: .json pro Material |
-| 2.1c  | Material-Cross-Konsistenz | Cowork     | 1 Dispatch: 4 Pruefachsen ueber alle Materialien (Strategie-Audit E2) |
+| 2.1c  | Material-Cross-Konsistenz + Ueberleitung + HE-Revision | Cowork | 1 Dispatch: 6 Achsen (4 Cross + Achse 5 Ueberleitungen + Achse 6 HE-Revision) |
 | 2.2a  | AGENT_RAETSEL (Orchestrator) | Cowork  | Progressionsplan (liest materialien/*.json — NUR Metadaten, NICHT Volltext) |
 | 2.2b  | SUB_AUFGABE_* (5 Subagenten) | Cowork  | Isolierter Dispatch pro Aufgabe (P1, P4, P5). Output: .json pro Aufgabe |
 | 2.2c  | AGENT_RAETSEL (Assembly) | Cowork      | Cross-Konsistenz + Q-GATE-LOG (A5, A8-A10, A12) |

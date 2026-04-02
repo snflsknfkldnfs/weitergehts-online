@@ -1,7 +1,7 @@
 # UPGRADE_PLAN v4: Produktionsarchitektur — Cowork-basierte Materialproduktion
 
 **Datum:** 2026-04-01
-**Status:** Runde 4 abgeschlossen. Alle 10 Qualitaetsbefunde adressiert + alle 8 OPTs umgesetzt. Verbleibend: 3 architektonische Entscheidungen (Q-M2-03, Q-M2-05, GUETEKRITERIEN_HEFTEINTRAG).
+**Status:** Runde 4 abgeschlossen + Audit Sicherungskette M1-M4 + M1b implementiert. Alle 10 Qualitaetsbefunde adressiert + alle 8 OPTs umgesetzt. Q-M2-03 (Ueberleitungen) und Q-M2-05 (Sicherungskette) geloest. Verbleibend: M5-M9 (Prioritaet 2/3).
 **Audit 1:** docs/analyse/AUDIT_v4_ARCHITEKTUR_ERGEBNIS.md (2026-03-31) — 1 BLOCKER, 3 MEDIUM, alle adressiert
 **Audit 2:** docs/analyse/AUDIT_v4_STRATEGIE_ERGEBNIS.md (2026-03-31) — 4 Empfehlungen, alle adressiert
 **Runde 3a:** docs/analyse/RUNDE_3a_ERGEBNIS.md — 8 Befunde, alle in 3a-Opt behoben
@@ -150,13 +150,13 @@ docs/agents/artefakte/produktion/{game-id}/mappe-{N}/
 
 | Read-Schritt | Input-Datei | Gelesene Felder | Zweck |
 |---|---|---|---|
-| 1 | TAFELBILD_Mappe[N].md | Vollstaendig (TB-FREEZE) | → rahmen/tafelbild.json (1:1) |
+| 1 | TAFELBILD_Mappe[N].md | Vollstaendig (STRUKTUR-FREEZE) | → rahmen/tafelbild.json (1:1) |
 | 2 | MATERIAL_GERUEST (Einstieg) | typ, narrativ, problemstellung | → rahmen/einstieg.json |
 | 3 | MATERIAL_GERUEST (Sicherung) | typ, zusammenfassung, ueberleitung, reflexionsimpuls, hefteintrag_verweis, zitat | → rahmen/sicherung.json (Basis) |
 | 4 | rahmen/tafelbild.json (Schritt 1) | loesung.saetze[] (Merkbox) | → sicherung.kernerkenntnisse[] (M3b) |
 | 5 | ORCHESTRATOR + GERUEST Header | Freischalt-Code-Regeln, titel, beschreibung | → rahmen/meta.json |
 
-**M3b-Constraint:** `sicherung.kernerkenntnisse[]` := `tafelbild.loesung.saetze[]` (Merkbox-Inhalt). Wird nicht neu formuliert — Autoritaet liegt beim Tafelbild (TB-FREEZE).
+**M3b-Constraint:** `sicherung.kernerkenntnisse[]` := `tafelbild.loesung.saetze[]` (Merkbox-Inhalt). Wird nicht neu formuliert — Autoritaet liegt beim Tafelbild (STRUKTUR-FREEZE).
 
 **C1b-Identitaetsregel:** einstieg.problemstellung === tafelbild.stundenfrage === SKRIPT-Chunk-Ueberschrift (wortidentisch). Wird in Phase 2.0 einmalig gesetzt und propagiert.
 

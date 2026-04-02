@@ -6,6 +6,30 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ## 2026-04-02
 
+### Implementierung M1-M4 + M1b: Zwei-Stufen-Architektur Sicherungskette
+- **Phase:** Architektur-Implementierung (Audit Sicherungskette — Prioritaet 1)
+- **Aufgabe:** 5 Massnahmen aus AUDIT_SICHERUNGSKETTE_ERGEBNIS.md implementiert. Loest SP-3 (Timing-Inversion), SP-4 (FREEZE zu restriktiv), SP-6 (Steuerungsrichtung).
+- **M1 — Differenzierter FREEZE:** TB-FREEZE ersetzt durch STRUKTUR-FREEZE (Zonen, KE, Fachbegriffe, Ordnungsmuster, Stundenfrage — ab Phase 0.4) + FORMULIERUNGS-OFFEN (SCPL-Texte — bis Phase 2.1c Achse 6). Aktualisiert in: AGENT_TAFELBILD.md (Sektion 8), ORCHESTRATOR.md, AGENT_MATERIAL.md, VERTRAG_PHASE_2-0, UPGRADE_PLAN.
+- **M1b — GUETEKRITERIEN Stufe-2:** GUETEKRITERIEN_TAFELBILD.md um Sektion 10 erweitert. G3, G5, G10, G12, G14 werden in Phase 2.1c gegen produzierte Materialien re-evaluiert (nicht nur gegen Plan).
+- **M2 — Achse 6 Hefteintrag-Revision:** VERTRAG_PHASE_2-1c_CROSS.md erweitert (jetzt 6 Achsen). Regelwerk erlaubt/verboten (PF-8). zusammenfassung + ueberleitung erstmalig produziert. Stufe-2 Re-Evaluation integriert. Aenderungs-Dokumentationspflicht.
+- **M3 — zusammenfassung/ueberleitung Placeholder:** VERTRAG_PHASE_2-0_RAHMEN.md — zusammenfassung und ueberleitung werden in Phase 2.0 als "[REVISION IN 2.1c]" gesetzt, nicht mehr inhaltlich produziert.
+- **M4 — SCPL-Schritt als Material-Input:** VERTRAG_PHASE_2-1_MATERIAL.md Read-Schritt 2 erweitert: neben knoten[] auch zugehoeriger scpl{}-Schritt (situation/complication[i]/problem) als Input.
+- **Aenderungen:** AGENT_TAFELBILD.md, AGENT_MATERIAL.md, ORCHESTRATOR.md, VERTRAG_PHASE_2-0_RAHMEN.md, VERTRAG_PHASE_2-1_MATERIAL.md, VERTRAG_PHASE_2-1c_CROSS.md, GUETEKRITERIEN_TAFELBILD.md, UPGRADE_PLAN_v4, STATUS.md, CHANGELOG.md
+- **Naechster Schritt:** M5-M9 (Prioritaet 2/3) bei Bedarf.
+
+### Audit-Ergebnis: Sicherungskette (Tafelbild/Hefteintrag/Sicherung)
+- **Phase:** Architektur-Audit (Sicherungskette)
+- **Aufgabe:** Externes Audit gemaess AUDIT_BRIEFING_SICHERUNGSKETTE.md. 13 Pflichtlektuere-Dateien eingelesen. 16 Prueffragen (PF-1 bis PF-16) evaluiert.
+- **Kernbefund:** Timing-Inversion (SP-3) ist das kritische Problem — Hefteintrag-Formulierungen werden vor Materialien finalisiert. Loesung: Zwei-Stufen-Architektur mit differenziertem FREEZE.
+- **Empfohlene Architektur:**
+  - Stufe 1 (Phase 0.4): SCPL-Struktur + Kernerkenntnisse → STRUKTUR-FREEZE
+  - Stufe 2 (Phase 2.1c Achse 6): Sprachliche Revision der SCPL-Texte + zusammenfassung/ueberleitung → FORMULIERUNGS-OFFEN
+  - Erfuellt alle 5 Anforderungen: Backward Design, Material-Awareness, Struktur-Schutz, Minimale Dispatches, Azyklizitaet
+- **9 priorisierte Massnahmen:** M1-M4 sofort (differenzierter FREEZE, Achse 6, zusammenfassung-Timing, SCPL-Schritt als Material-Input), M5-M7 kurzfristig, M8-M9 langfristig
+- **SP-Bewertung:** SP-3 KRITISCH, SP-4 KRITISCH, SP-6 HOCH, SP-1 MITTEL, SP-2 MITTEL, SP-5 NIEDRIG
+- **Artefakte:** `docs/analyse/AUDIT_SICHERUNGSKETTE_ERGEBNIS.md` (neu)
+- **Naechster Schritt:** Findings evaluieren (User-Entscheidung). Bei Akzeptanz: M1-M4 implementieren (Vertraege + AGENT_TAFELBILD aktualisieren).
+
 ### Audit-Briefing: Sicherungskette (Tafelbild/Hefteintrag/Sicherung)
 - **Phase:** Architektur-Audit (Runde 5 Vorbereitung)
 - **Aufgabe:** Bestandsaufnahme der gesamten Tafelbild/Hefteintrag/Sicherung-Prozesskette. Strukturprobleme identifizieren. Audit-Briefing fuer externen Auditor erstellen.
