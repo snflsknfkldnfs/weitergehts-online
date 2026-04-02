@@ -1,10 +1,10 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
 **Letzte Aktualisierung:** 2026-04-02
-**Aktuelle Phase:** **v4 Produktionsarchitektur — Runde 4 Kern abgeschlossen. Alle 10 Qualitaetsbefunde adressiert (6 Prozess-Fixes + 5 Engine/Data-Patches).**
-**Letzter Arbeitsschritt:** Claude Code hat alle 5 Sofort-Patches deployed (Branch fix/mappe2-quality-patches): Engine Reihenfolge-Fallback, Freitext Keyword-Array-Matching, mat-2-6 typ, mat-2-1 Quellenangabe, scpl-Duplikate. PR erstellt.
-**Naechster Schritt:** PR mergen. Dann: OPT-1 bis OPT-8 priorisieren, Q-M2-03 (Ueberleitungen), Q-M2-05 (Hefteintrag-Timing), ARTEFAKT_INVENTAR. Danach Runde 5 (Retrospektive + Mappe 3 vorbereiten).
-**Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. OPT-1 bis OPT-8 noch offen. Q-M2-03 und Q-M2-05 erfordern architektonische Entscheidungen.
+**Aktuelle Phase:** **v4 Produktionsarchitektur — Runde 4 abgeschlossen. Alle 10 Qualitaetsbefunde + alle 8 OPTs umgesetzt.**
+**Letzter Arbeitsschritt:** OPT-1/4/5/6/7/8 implementiert: UEBERGABE-TEMPLATE in ORCHESTRATOR.md (konsolidiert OPT-1/4/5/7/8), DT-5 Wortlimit korrigiert (OPT-6). OPT-2/3 bereits zuvor erledigt.
+**Naechster Schritt:** Commit + Push. Dann Runde 5: Retrospektive, Q-M2-03 (Ueberleitungen), Q-M2-05 (Hefteintrag-Timing), GUETEKRITERIEN_HEFTEINTRAG.md, ARTEFAKT_INVENTAR Mappe 2 nachpflegen, Mappe 3 vorbereiten.
+**Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. Q-M2-03 und Q-M2-05 erfordern architektonische Entscheidungen.
 
 **Abgeschlossen seit letztem Update:**
 - Runde 3b (Commit 0c0e1ee): Mappe 2 "Das Attentat von Sarajevo" live — 6 Materialien, 5 Aufgaben, 2 Bilder, Engine-Patch, mappe-2.html

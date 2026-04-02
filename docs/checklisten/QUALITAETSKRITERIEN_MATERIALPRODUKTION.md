@@ -93,7 +93,7 @@ Innerhalb einer Mappe verschiedene Materialtypen einsetzen. Monotonie vermeiden.
 | DT-2 | Vergegenwaertigung | Vergangenes lebendig machen: Detaillieren, Dramatisieren, Personifizieren, Lokalisieren, Verkindlichen |
 | DT-3 | Verkindlichung | Historische Akteure in ihrem Alter/Kontext fassbar machen. Nicht: Herablassung. Sondern: Zugaenglichkeit |
 | DT-4 | Sprachregister R7 | Max 15 Woerter/Satz Durchschnitt. Aktiv > Passiv. Fachbegriffe eingefuehrt. Keine Schachtelsaetze |
-| DT-5 | Textlaenge | 200-300 Woerter. Genuegend fuer Substanz, kurz genug fuer Konzentrationsspanne R7 |
+| DT-5 | Textlaenge | ≤ 150 Woerter (autoritativ: SUB_MATERIAL_DT Q1). Genuegend fuer Substanz, kurz genug fuer Konzentrationsspanne R7 |
 | DT-6 | Ein-Quelle-Prinzip | Jeder DT basiert auf einem definierten Quellen-/Faktenset. Keine wilde Mischung unzusammenhaengender Informationen |
 
 ### 3.2 Quellentext (QT)

@@ -1,7 +1,7 @@
 # UPGRADE_PLAN v4: Produktionsarchitektur — Cowork-basierte Materialproduktion
 
 **Datum:** 2026-04-01
-**Status:** Runde 4 Kern abgeschlossen. Alle 10 Qualitaetsbefunde adressiert (Prozess-Fixes + Engine-Patches). Verbleibend: OPT-1-8, 3 architektonische Entscheidungen.
+**Status:** Runde 4 abgeschlossen. Alle 10 Qualitaetsbefunde adressiert + alle 8 OPTs umgesetzt. Verbleibend: 3 architektonische Entscheidungen (Q-M2-03, Q-M2-05, GUETEKRITERIEN_HEFTEINTRAG).
 **Audit 1:** docs/analyse/AUDIT_v4_ARCHITEKTUR_ERGEBNIS.md (2026-03-31) — 1 BLOCKER, 3 MEDIUM, alle adressiert
 **Audit 2:** docs/analyse/AUDIT_v4_STRATEGIE_ERGEBNIS.md (2026-03-31) — 4 Empfehlungen, alle adressiert
 **Runde 3a:** docs/analyse/RUNDE_3a_ERGEBNIS.md — 8 Befunde, alle in 3a-Opt behoben
@@ -532,20 +532,21 @@ Strategischer Audit durchgefuehrt (docs/analyse/AUDIT_v4_STRATEGIE_ERGEBNIS.md).
 
 **Qualitaetsbefunde:** Mappe 2 ist live, aber inhaltliche Qualitaetsprobleme identifiziert. Noch zu dokumentieren und zu adressieren.
 
-### Runde 4: Qualitaetsbefunde Mappe 2 + Prozess-Optimierungen [ABGESCHLOSSEN — Kern]
+### Runde 4: Qualitaetsbefunde Mappe 2 + Prozess-Optimierungen [ABGESCHLOSSEN]
 
-**Status:** Qualitaetsbefunde dokumentiert. Prozess-Fixes verankert. Engine-Patches deployed. Verbleibend: OPT-1 bis OPT-8, 3 offene architektonische Entscheidungen.
+**Status:** Alle 10 Qualitaetsbefunde adressiert. Alle 8 OPTs umgesetzt. 3 architektonische Entscheidungen verbleiben fuer Runde 5.
 
 - [x] Qualitaetsbefunde dokumentieren (Runde 4a: Browser-Audit + User-Review → 10 Findings, 5 Schwachstellen)
 - [x] Engine-Patches via Claude Code (Runde 4b): Reihenfolge optionen-Fallback, Freitext Keyword-Array, mat-2-6 typ, mat-2-1 Quellenangabe, scpl-Duplikate
 - [x] Prozess-Fixes in Subagenten (MQ3/MQ3b Material-Referenz-Verbot in 5x SUB_AUFGABE + AGENT_RAETSEL)
 - [x] Quellenangabe-Hygiene in 7x SUB_MATERIAL
 - [x] Vertrags-Updates (VERTRAG_2-0 Disjunktionsregel, VERTRAG_2-2b Engine-Kompatibilitaet)
-- [ ] OPT-1 bis OPT-8 aus RUNDE_3b_ERGEBNIS.md priorisieren und umsetzen
+- [x] OPT-2 + OPT-3 konsolidiert: Game-weites ARTEFAKT_INVENTAR in AGENT_INHALT (Sektion 2b) + AGENT_ARTEFAKT (game-weiter Scope, API-Download-Block pro Eintrag)
+- [x] OPT-1: UEBERGABE-TEMPLATE in ORCHESTRATOR.md — ersetzt WORKFLOW_v4-Read am Phase-2-Abschluss (~6800 Token gespart)
+- [x] OPT-4 + OPT-5 + OPT-7: Konsolidiert im UEBERGABE-TEMPLATE — Pre-Flight mit cd-Anweisung, Git-Commit-Befehle als Output 2, strukturierte Checkliste
+- [x] OPT-6: DT-5 Wortlimit in QUALITAETSKRITERIEN_MATERIALPRODUKTION.md korrigiert (200-300 → ≤150, autoritativ: SUB_MATERIAL_DT Q1)
+- [x] OPT-8: Session-Split-Template mit Inline-Phase-2.2-Dispatch-Sequenz in ORCHESTRATOR.md
 - [ ] ARTEFAKT_INVENTAR fuer Mappe 2 nachpflegen (F-3b-INVENTAR)
-- [ ] Uebergabe-Prompt-Template standardisieren (OPT-4, OPT-5, OPT-7)
-- [ ] Wortlimit-Inkonsistenz SUB_MATERIAL_DT vs. QUALITAETSKRITERIEN bereinigen (OPT-6)
-- [ ] WORKFLOW-Read am Abschluss eliminieren (OPT-1)
 - [ ] Q-M2-03: Ueberleitungen — Architektur-Entscheidung (neuer Dispatch vs. Cross-Integration)
 - [ ] Q-M2-05: Hefteintrag-Timing — Phase-Verschiebung oder Zweitpass
 - [ ] GUETEKRITERIEN_HEFTEINTRAG.md erstellen

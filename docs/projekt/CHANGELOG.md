@@ -6,6 +6,28 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ## 2026-04-02
 
+### OPT-1/4/5/6/7/8: Uebergabe-Template + Wortlimit-Fix
+- **Phase:** Prozess-Optimierung (OPT-1/4/5/6/7/8 konsolidiert)
+- **Aufgabe:** Verbleibende 6 OPTs aus RUNDE_3b_ERGEBNIS.md umsetzen.
+- **Aenderungen:**
+  - OPT-1: UEBERGABE-TEMPLATE in ORCHESTRATOR.md — ersetzt WORKFLOW_v4-Read am Phase-2-Abschluss (~6800 Token Einsparung). Enthaelt Output 1 (Uebergabe-Prompt) und Output 2 (Git-Commit-Befehle).
+  - OPT-4: cd-Anweisung als erste Zeile im Pre-Flight des UEBERGABE-TEMPLATE.
+  - OPT-5: Git-Commit-Befehle als standardisierter Output-2-Block.
+  - OPT-6: DT-5 Wortlimit in QUALITAETSKRITERIEN_MATERIALPRODUKTION.md korrigiert (200-300 → ≤150 Woerter, autoritativ: SUB_MATERIAL_DT Q1).
+  - OPT-7: Strukturierte Pre-Flight-Checkliste im UEBERGABE-TEMPLATE (Revert, Pull, data.json-Read, Verzeichnis-Pruefung).
+  - OPT-8: Session-Split-Template mit Inline-Phase-2.2-Dispatch-Sequenz — eliminiert erneutes ORCHESTRATOR-Lesen bei Fortsetzungs-Sessions.
+- **Artefakte:** ORCHESTRATOR.md (geaendert), QUALITAETSKRITERIEN_MATERIALPRODUKTION.md (geaendert), UPGRADE_PLAN (aktualisiert)
+- **Naechster Schritt:** Runde 4 abgeschlossen. Commit + Push. Dann Runde 5 (Retrospektive, architektonische Entscheidungen, Mappe 3).
+
+### OPT-2 + OPT-3: Game-weites Artefakt-Inventar + API-Download-Pattern
+- **Phase:** Prozess-Optimierung (OPT-2/OPT-3 konsolidiert)
+- **Aufgabe:** ARTEFAKT_INVENTAR von pro-Mappe auf game-weiten Scope erweitern. Download-Methode von Thumbnail-URL auf API-Call-Pattern umstellen.
+- **Aenderungen:**
+  - AGENT_INHALT: Neue Sektion 2b "Game-weite Artikelliste". Artikel werden fuer alle Mappen auf einmal identifiziert (Primaer-/Sekundaer-Zuordnung).
+  - AGENT_ARTEFAKT: Scope auf game-weit geaendert. Inventar-Eintrag-Template um Download-Block erweitert (API-Call-Parameter statt direkter Thumbnail-URL). Self-Hosting-Abschnitt aktualisiert.
+- **Artefakte:** AGENT_INHALT.md, AGENT_ARTEFAKT.md (geaendert)
+- **Naechster Schritt:** Verbleibende OPTs (1, 4-8)
+
 ### Runde 4c: Engine-Patches deployed (Claude Code)
 - **Phase:** Engine/Data-Fixes (Runde 4c, Claude Code)
 - **Aufgabe:** 5 Sofort-Patches aus UEBERGABE_RUNDE4b_ENGINE_PATCHES.md ausgefuehrt.

@@ -140,10 +140,11 @@ PHASE 2: MAPPEN-PRODUKTION (sequentiell, pro Mappe)
   │                                                  │
   │  ══ PHASE-2-ABSCHLUSS ═════════════════════════  │
   │  Phase 2 endet HIER. KEIN Assembly in Cowork.    │
-  │  Ausgabe: Uebergabe-Prompt fuer Claude Code      │
-  │  (Phase 3: Assembly + Bilder + HTML + Git).      │
-  │  Inhalt: Produktionsverzeichnis-Pfad,            │
-  │  Game-ID, Mappe-Nr. KEINE Dateiinhalte.          │
+  │  Zwei Pflicht-Outputs:                           │
+  │  1. Uebergabe-Prompt (→ docs/uebergabe/)         │
+  │  2. Git-Commit-Befehle fuer den User             │
+  │  Format: siehe UEBERGABE-TEMPLATE unten.         │
+  │  KEIN WORKFLOW_v4.md lesen noetig (OPT-1).       │
   │  ════════════════════════════════════════════════ │
   │                                                  │
   └──────────────────────────────────────────────────┘
@@ -173,6 +174,88 @@ mit rahmen/*.json, materialien/*.json, aufgaben/*.json (alle in Cowork Phase 2 p
 
 Phase 3 enthaelt KEINE didaktischen Entscheidungen. Nur Datei-I/O und Assembly.
 Uebergabe-Prompts beschreiben deklarativ die Assembly-Schritte und referenzieren das Produktionsverzeichnis. Sie liefern NICHT die gesamte data.json und NICHT die Dateiinhalte.
+
+### UEBERGABE-TEMPLATE (OPT-1/4/5/7 konsolidiert)
+
+Dieses Template ersetzt das Lesen von WORKFLOW_v4.md am Phase-2-Abschluss (~6.800 Token gespart).
+
+**Output 1: Uebergabe-Prompt** (Datei: `docs/uebergabe/UEBERGABE_PHASE3_[game-id]_Mappe[N].md`)
+
+```markdown
+# Uebergabe: Phase 3 — [Game-ID] Mappe [N]
+
+## Pre-Flight (OPT-4/OPT-7)
+cd [ABSOLUTER PFAD ZUM REPO]
+git status          # Working Tree sauber?
+git pull origin main # Aktueller Stand?
+ls docs/agents/artefakte/produktion/[game-id]/mappe-[N]/rahmen/      # === 4 Dateien?
+ls docs/agents/artefakte/produktion/[game-id]/mappe-[N]/materialien/ # === [M] Dateien?
+ls docs/agents/artefakte/produktion/[game-id]/mappe-[N]/aufgaben/    # === 5 Dateien?
+python3 -c "import json, glob; [json.load(open(f)) for f in glob.glob('docs/agents/artefakte/produktion/[game-id]/mappe-[N]/**/*.json', recursive=True)]"
+# Bei Fehler: STOPP.
+
+## Aufgabe
+1. Bild-Download: Fuer jede img-ID in materialien/*.json → ARTEFAKT_INVENTAR nachschlagen → API-Call ausfuehren → Download
+2. Assembly: Produktionsverzeichnis → Mappe-Objekt → data.json append
+3. mappe-[N].html erstellen (Kopie von mappe-template.html mit Mappe-Nr)
+4. Engine-Patches (falls in UEBERGABE dokumentiert)
+
+## Bild-Download-Methode
+Wikimedia Commons API — IMMER. Keine direkten URLs.
+api_url = f'https://commons.wikimedia.org/w/api.php?action=query&titles=File:{dateiname}&prop=imageinfo&iiprop=url&iiurlwidth={breite}&format=json'
+Download von thumburl aus Response. User-Agent: WeitergehtsOnline/1.0
+
+## Merge-Schutz
+Bei Konflikten: NICHT automatisch aufloesen. Dateien auflisten, User-Entscheidung abwarten.
+
+## Verifikation
+- [ ] data.json ist valides JSON
+- [ ] Mappe [N] hat [M] Materialien + 5 Aufgaben
+- [ ] Alle Bilder heruntergeladen + >10 KB
+- [ ] mappe-[N].html existiert + verlinkt data.json korrekt
+- [ ] Bestehende Mappen unveraendert (diff check)
+```
+
+**Output 2: Git-Commit-Befehle fuer den User** (OPT-5)
+
+Am Ende jedes Phase-2-Abschlusses generiert Cowork einen kopierbaren Git-Befehlsblock:
+
+```bash
+cd [ABSOLUTER PFAD ZUM REPO]
+git add docs/agents/artefakte/produktion/[game-id]/mappe-[N]/
+git add docs/uebergabe/UEBERGABE_PHASE3_[game-id]_Mappe[N].md
+git commit -m "docs: Phase 2 abgeschlossen — [game-id] Mappe [N] ([M] Materialien, 5 Aufgaben)"
+git push origin main
+```
+
+### Session-Split-Template (OPT-8)
+
+Bei ~24.000 Token (nach Phase 2.1c) wird ein Session-Split empfohlen. Der Fortsetzungs-Prompt enthaelt die Phase-2.2-Dispatch-Sequenz INLINE (~300 Token), damit ORCHESTRATOR.md NICHT erneut komplett gelesen werden muss:
+
+```markdown
+# Fortsetzung: [Game-ID] Mappe [N] — Phase 2.2
+
+## Status
+- Phase 2.0 (Rahmen): PASS
+- Phase 2.1 (Materialien): PASS ([M] Materialien)
+- Phase 2.1c (Cross): PASS
+- TB-FREEZE: aktiv (TAFELBILD_[game-id]_Mappe[N].md)
+
+## Naechster Schritt
+Phase 2.2a: Progressionsplan erstellen.
+Vertrag lesen: docs/architektur/vertraege/VERTRAG_PHASE_2-2a_PROGRESSIONSPLAN.md
+
+## Phase-2.2-Sequenz (aus ORCHESTRATOR)
+2.2a: 1 Dispatch → PROGRESSIONSPLAN.md (liest alle mat-*.json + aufgaben-Kontext aus TB)
+2.2b: 5 Dispatches → je 1 aufgabe-*.json (Vertrag: VERTRAG_PHASE_2-2b_AUFGABE.md)
+2.2c: 1 Dispatch → Aufgaben-Cross-Konsistenz (Vertrag: VERTRAG_PHASE_2-2c_CROSS.md)
+Phase-2-Abschluss: Uebergabe-Prompt + Git-Befehle generieren
+
+## Read-Reihenfolge
+1. VERTRAG_PHASE_2-2a_PROGRESSIONSPLAN.md
+2. Alle materialien/*.json (fuer Progressionsplan-Input)
+3. TAFELBILD (fuer TB-Knoten-Referenz)
+```
 
 ═══════════════════════════════════════════════════
 PHASE 3: IMPLEMENTIERUNG (pro Mappe oder gesammelt)
