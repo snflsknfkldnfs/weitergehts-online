@@ -6,6 +6,16 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ## 2026-04-02
 
+### Audit-Briefing: Sicherungskette (Tafelbild/Hefteintrag/Sicherung)
+- **Phase:** Architektur-Audit (Runde 5 Vorbereitung)
+- **Aufgabe:** Bestandsaufnahme der gesamten Tafelbild/Hefteintrag/Sicherung-Prozesskette. Strukturprobleme identifizieren. Audit-Briefing fuer externen Auditor erstellen.
+- **Ergebnis:**
+  - 6 Strukturprobleme identifiziert: SP-1 Begriffsvermischung TB/HE, SP-2 Sicherung als Sammel-Artefakt, SP-3 Timing-Inversion bei HE-Formulierung, SP-4 TB-FREEZE blockiert sprachliche Revision, SP-5 Doppelte Kernerkenntnisse-Speicherung, SP-6 Steuerungsrichtung unklar
+  - 16 Prueffragen in 5 Kategorien (Idealstruktur, Begriffstrennung, Timing, Steuerungswirkung, Gesamtarchitektur)
+  - Didaktische Idealstruktur des Auftraggebers als Referenzmodell dokumentiert
+- **Artefakte:** `docs/analyse/AUDIT_BRIEFING_SICHERUNGSKETTE.md` (neu)
+- **Naechster Schritt:** Externen Audit einholen. Findings evaluieren.
+
 ### Q-M2-03: Ueberleitung-Produktion in Phase 2.1c verankert
 - **Phase:** Architektur-Entscheidung (Q-M2-03)
 - **Aufgabe:** Ueberleitungen zwischen Materialien architektonisch verankern. Bisher: `ueberleitung_von` enthielt nur Material-ID, Engine renderte "mat-2-1" statt narrativem Text.

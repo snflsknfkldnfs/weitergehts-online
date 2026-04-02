@@ -1,10 +1,10 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
 **Letzte Aktualisierung:** 2026-04-02
-**Aktuelle Phase:** **v4 Produktionsarchitektur — Runde 4 + Q-M2-03 abgeschlossen. Alle 8 OPTs + Ueberleitung-Architektur umgesetzt.**
-**Letzter Arbeitsschritt:** Q-M2-03 Ueberleitungen: Phase 2.1c um Achse 5 (Ueberleitung-Produktion) erweitert. Zwei-Vektoren-Bruecke als didaktisches Modell, ueberleitungen.json als Assembly-Input, ORCHESTRATOR Uebergabe-Template aktualisiert.
-**Naechster Schritt:** Commit + Push. Dann: Q-M2-05 (Hefteintrag-Timing), GUETEKRITERIEN_HEFTEINTRAG.md, Engine-Fallback (Ueberleitung ID-Pattern), ARTEFAKT_INVENTAR Mappe 2 nachpflegen. Danach Runde 5 (Retrospektive + Mappe 3).
-**Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. Q-M2-05 erfordert architektonische Entscheidung.
+**Aktuelle Phase:** **v4 Produktionsarchitektur — Audit: Sicherungskette (Tafelbild/Hefteintrag/Sicherung).**
+**Letzter Arbeitsschritt:** AUDIT_BRIEFING_SICHERUNGSKETTE.md erstellt. Bestandsaufnahme der Prozesskette, 6 Strukturprobleme (SP-1 bis SP-6) identifiziert, 16 Prueffragen fuer externen Auditor formuliert. Didaktische Idealstruktur des Auftraggebers als Referenzmodell dokumentiert.
+**Naechster Schritt:** Externen Audit einholen (AUDIT_BRIEFING_SICHERUNGSKETTE.md). Danach: Findings evaluieren, ggf. Prozess umstrukturieren. Parallel noch offen: Engine-Fallback (Ueberleitung ID-Pattern), ARTEFAKT_INVENTAR Mappe 2 nachpflegen.
+**Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. Sicherungskette wartet auf Audit-Ergebnis.
 
 **Abgeschlossen seit letztem Update:**
 - Runde 3b (Commit 0c0e1ee): Mappe 2 "Das Attentat von Sarajevo" live — 6 Materialien, 5 Aufgaben, 2 Bilder, Engine-Patch, mappe-2.html
