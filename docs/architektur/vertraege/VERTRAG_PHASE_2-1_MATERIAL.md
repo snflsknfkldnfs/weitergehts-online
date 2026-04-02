@@ -29,7 +29,7 @@
 | 5 | INHALTSBASIS | NUR die zum Chunk gehoerende Mappe-Sektion | immer | Andere Mappen |
 | 6 | rahmen/einstieg.json | problemstellung (fuer C1b-Konsistenz + Rahmung) | immer | — |
 | 7 | ARTEFAKT_INVENTAR | NUR Eintraege mit artefakt_ref dieses Materials | NUR WENN artefakt_ref gesetzt (BQ, KA, ST) | Gesamte Datei bei DT/QT/TB/ZL |
-| 8 | rahmen/sicherung.json | kernerkenntnisse[] | NUR WENN didaktische_funktion = sicherung oder transfer | Gesamte Datei bei einstieg/erarbeitung/vertiefung |
+| 8 | rahmen/hefteintrag.json | scpl.loesung[] (Kernerkenntnisse) | NUR WENN didaktische_funktion = sicherung oder transfer | Gesamte Datei bei einstieg/erarbeitung/vertiefung |
 
 **NICHT lesen:** data.json (kein Goldstandard-Template), andere Mappen-Artefakte, WORKFLOW_v4.md (dieser Vertrag genuegt)
 
@@ -47,7 +47,7 @@
 6. rahmen/einstieg.json lesen → problemstellung (P6: 1 Feld, fuer Rahmung)
 7. NUR WENN artefakt_ref gesetzt: ARTEFAKT_INVENTAR → Eintraege dieses Materials (P6)
 8. NUR WENN didaktische_funktion = sicherung|transfer:
-   rahmen/sicherung.json lesen → kernerkenntnisse[] (M3c: "vom Ende her")
+   rahmen/hefteintrag.json lesen → scpl.loesung[] (M3c: "vom Ende her", Kernerkenntnisse)
 9. Material produzieren — Kerninhalt im Mittelpunkt, Rahmen stuetzt (P3)
 10. Q-Gate pruefen (MQ1-MQ5 + typ-spezifisch)
 11. Bei PASS: materialien/mat-N-M.json schreiben (P4)

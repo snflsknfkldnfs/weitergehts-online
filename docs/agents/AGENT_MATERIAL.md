@@ -43,7 +43,7 @@ AGENT_MATERIAL erfindet keine Fakten. Fachliche Substanz kommt aus dem SKRIPT (P
 | 5 | INHALTSBASIS | NUR zum Chunk gehoerende Sektion | immer |
 | 6 | rahmen/einstieg.json | problemstellung (C1b) | immer |
 | 7 | ARTEFAKT_INVENTAR | NUR Eintraege dieses Materials | **NUR WENN** artefakt_ref gesetzt |
-| 8 | rahmen/sicherung.json | kernerkenntnisse[] | **NUR WENN** didaktische_funktion = sicherung/transfer |
+| 8 | rahmen/hefteintrag.json | scpl.loesung[] (Kernerkenntnisse) | **NUR WENN** didaktische_funktion = sicherung/transfer |
 
 **P1-Failsafe:** Jeder Dispatch beginnt mit Einlesen aus Dateien (Schritte 1-8). Kein Dispatch verlaesst sich auf Kontextinhalte aus vorherigen Dispatches. Compaction-resistent.
 

@@ -13,7 +13,7 @@
 | 1 | TAFELBILD_Mappe[N].md (Phase 0.4) | Vollstaendig (STRUKTUR-FREEZE) | → rahmen/hefteintrag.json (1:1 Uebernahme) |
 | 2 | MATERIAL_GERUEST (Einstieg-Sektion) | typ, narrativ, problemstellung | → rahmen/einstieg.json |
 | 3 | MATERIAL_GERUEST (Sicherung-Sektion) | typ, reflexionsimpuls, hefteintrag_verweis, zitat | → rahmen/sicherung.json (Basis). **NICHT** zusammenfassung/ueberleitung — diese werden erst in Phase 2.1c Achse 6 produziert. |
-| 4 | rahmen/hefteintrag.json (gerade geschrieben) | scpl.loesung[] (= Merksaetze/Merkbox-Inhalt) | → sicherung.kernerkenntnisse[] (M3b) |
+| 4 | rahmen/hefteintrag.json (gerade geschrieben) | scpl.loesung[] (= Merksaetze/Merkbox-Inhalt) | Konsistenzpruefung: scpl.loesung[] muss mit Kernerkenntnissen des Tafelbilds uebereinstimmen |
 | 5 | ORCHESTRATOR.md | Freischalt-Code-Regeln, data.json-Schema | → rahmen/meta.json |
 | 6 | MATERIAL_GERUEST (Header) | titel, beschreibung | → rahmen/meta.json |
 
@@ -25,26 +25,26 @@
 1. TAFELBILD_Mappe[N].md lesen → rahmen/hefteintrag.json schreiben (1:1, STRUKTUR-FREEZE)
 2. MATERIAL_GERUEST Einstieg-Sektion lesen → rahmen/einstieg.json schreiben
 3. MATERIAL_GERUEST Sicherung-Sektion lesen
-4. rahmen/hefteintrag.json lesen → scpl.loesung[] extrahieren
-5. sicherung.kernerkenntnisse[] := tafelbild.scpl.loesung[] (M3b-Constraint)
-6. rahmen/sicherung.json schreiben (inkl. kernerkenntnisse aus Schritt 5).
+4. rahmen/hefteintrag.json lesen → scpl.loesung[] extrahieren (Konsistenzpruefung: stimmen Kernerkenntnisse?)
+5. rahmen/sicherung.json schreiben (reflexionsimpuls, hefteintrag_verweis, zitat).
    zusammenfassung := "[REVISION IN 2.1c]" (Placeholder — finale Produktion in Phase 2.1c Achse 6).
    ueberleitung := "[REVISION IN 2.1c]" (Placeholder — finale Produktion in Phase 2.1c Achse 6).
-7. ORCHESTRATOR + MATERIAL_GERUEST Header lesen → rahmen/meta.json schreiben
-7b. NUR WENN SKRIPT-Chunk oder INHALTSBASIS ein historisches Schlusszitat enthaelt:
+   KEIN kernerkenntnisse[]-Feld — Kernerkenntnisse leben ausschliesslich in hefteintrag.scpl.loesung[] (M8).
+6. ORCHESTRATOR + MATERIAL_GERUEST Header lesen → rahmen/meta.json schreiben
+6b. NUR WENN SKRIPT-Chunk oder INHALTSBASIS ein historisches Schlusszitat enthaelt:
     sicherung.zitat-Objekt {text, urheber, kontext} in rahmen/sicherung.json ergaenzen.
-8. C1b-Identitaetsregel pruefen:
-   einstieg.problemstellung === tafelbild.stundenfrage
+7. C1b-Identitaetsregel pruefen:
+   einstieg.problemstellung === hefteintrag.stundenfrage
    Bei Abweichung: Stundenfrage aus hefteintrag.json hat Vorrang.
-9. Q-Gate-Ergebnis in Q-GATE-LOG.md schreiben.
+8. Q-Gate-Ergebnis in Q-GATE-LOG.md schreiben.
 ```
 
 ## Q-Gate
 
-- C1b: einstieg.problemstellung === tafelbild.stundenfrage
-- M3b: sicherung.kernerkenntnisse[] === tafelbild.scpl.loesung[] (identisch, nicht paraphrasiert)
-- Alle Engine-gerenderten Felder vorhanden: kernerkenntnisse[], reflexionsimpuls, hefteintrag_verweis. zusammenfassung und ueberleitung als Placeholder "[REVISION IN 2.1c]" gesetzt (finale Produktion in Phase 2.1c Achse 6).
-- **Q-M2-09 Disjunktionsregel:** sicherung.reflexionsimpuls und sicherung.kernerkenntnisse[] muessen inhaltlich disjunkt sein. Der reflexionsimpuls darf KEINEN Text enthalten, der bereits in kernerkenntnisse[] vorkommt. Kernerkenntnisse = Was wurde gelernt (Fakten). Reflexionsimpuls = Weiterdenken/Transfer/Bewertung (Metakognition). Pruefung: Kein Satz aus reflexionsimpuls darf eine Paraphrase eines kernerkenntnisse-Eintrags sein.
+- C1b: einstieg.problemstellung === hefteintrag.stundenfrage
+- M3b: hefteintrag.scpl.loesung[] enthaelt die Kernerkenntnisse (identisch mit TAFELBILD-Entwurf, nicht paraphrasiert)
+- Alle Engine-gerenderten Felder vorhanden: reflexionsimpuls, hefteintrag_verweis. zusammenfassung und ueberleitung als Placeholder "[REVISION IN 2.1c]" gesetzt (finale Produktion in Phase 2.1c Achse 6). Kernerkenntnisse werden via hefteintrag.scpl.loesung[] gerendert (NICHT als separates Feld in sicherung.json).
+- **Q-M2-09 Disjunktionsregel:** sicherung.reflexionsimpuls und hefteintrag.scpl.loesung[] muessen inhaltlich disjunkt sein. Der reflexionsimpuls darf KEINEN Text enthalten, der bereits in scpl.loesung[] vorkommt. scpl.loesung[] = Was wurde gelernt (Fakten). Reflexionsimpuls = Weiterdenken/Transfer/Bewertung (Metakognition). Pruefung: Kein Satz aus reflexionsimpuls darf eine Paraphrase eines scpl.loesung[]-Eintrags sein.
 - **Q-M2-08 Quellenangabe-Hygiene:** Alle SuS-sichtbaren Texte (zusammenfassung, ueberleitung, reflexionsimpuls, etc.) duerfen KEINE internen Artefakt-Namen enthalten (INHALTSBASIS, SKRIPT, TAFELBILD, MATERIAL_GERUEST, PROGRESSIONSPLAN, SUB_MATERIAL_*, AGENT_*).
 
 ## Output
@@ -53,7 +53,7 @@
 rahmen/
   hefteintrag.json   # knoten[], verbindungen[], voraussetzungen[], stundenfrage, ordnungsmuster, scpl{}, transfer{}
   einstieg.json    # narrativ (HTML), problemstellung
-  sicherung.json   # kernerkenntnisse[], reflexionsimpuls, hefteintrag_verweis, zitat{}. zusammenfassung + ueberleitung als Placeholder (finale Produktion: Phase 2.1c Achse 6)
+  sicherung.json   # reflexionsimpuls, hefteintrag_verweis, zitat{}. zusammenfassung + ueberleitung als Placeholder (finale Produktion: Phase 2.1c Achse 6). KEIN kernerkenntnisse[] (M8: lebt in hefteintrag.scpl.loesung[])
   meta.json        # id, titel, beschreibung, freischalt_code
 ```
 

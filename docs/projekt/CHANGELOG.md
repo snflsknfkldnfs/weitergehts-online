@@ -6,6 +6,15 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ## 2026-04-02
 
+### Audit v4.2 Produktionskohaerenz: Briefing + Report + Implementierung
+- **Phase:** Pre-Produktion Audit (vor Mappe 3)
+- **Audit-Briefing:** 22 Pflichtlektuere-Dateien, 9 Prueffragen (PF-1 bis PF-9).
+- **Audit-Ergebnis:** 6 KONFORM, 1 UNKRITISCH, 2 ABWEICHUNG produktionsrelevant (PF-1, PF-5), 1 ABWEICHUNG LOW (PF-2 _meta-Feldname, zurueckgestellt).
+- **PF-1 implementiert (KRITISCH):** VERTRAG_PHASE_2-0 — alle 7 kernerkenntnisse[]-Instruktionen bereinigt. M3b-Constraint umformuliert. Dispatch-Schritte neu nummeriert. Zusaetzlich: WORKFLOW_v4 (8 Stellen), UPGRADE_PLAN_v4 (5 Stellen), VERTRAG_PHASE_2-1 (2 Stellen), VERTRAG_PHASE_2-1c (3 Stellen), AGENT_MATERIAL (1 Stelle), ORCHESTRATOR Flowchart (1 Stelle) bereinigt.
+- **PF-5 implementiert (HOCH):** ORCHESTRATOR data.json-Schema — `tafelbild` → `hefteintrag`, `kernerkenntnisse[]` entfernt.
+- **PF-6 implementiert (Housekeeping):** UPGRADE_PLAN_v4 Runde-4-Checkbox GUETEKRITERIEN_HEFTEINTRAG_PRODUKT.md abgehakt.
+- **Aenderungen:** VERTRAG_PHASE_2-0_RAHMEN.md, VERTRAG_PHASE_2-1_MATERIAL.md, VERTRAG_PHASE_2-1c_CROSS.md, WORKFLOW_v4.md, UPGRADE_PLAN_v4.md, ORCHESTRATOR.md, AGENT_MATERIAL.md, docs/analyse/AUDIT_BRIEFING_v4-2_PRODUKTIONSKOHAERENZ.md (neu), STATUS.md, CHANGELOG.md
+
 ### M6+M7+M8: Infrastruktur-Finalisierung (Dateistruktur + Begriffe + Engine)
 - **Phase:** Architektur-Optimierung (Audit Sicherungskette — Prioritaet 2+3, vollstaendig)
 - **M6 — sicherung.json Aufspaltung:** kernerkenntnisse-Feld entfernt (Dopplung mit scpl.loesung). hefteintrag_verweis-Text aktualisiert ("Tafelbild" → "Hefteintrag"). Produktions-Artefakt rahmen/tafelbild.json → rahmen/hefteintrag.json umbenannt. sicherung.json enthält nur noch: zusammenfassung, ueberleitung, reflexionsimpuls, hefteintrag_verweis, zitat.

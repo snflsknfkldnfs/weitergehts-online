@@ -466,7 +466,7 @@ docs/agents/artefakte/produktion/{game-id}/mappe-{N}/
   rahmen/
     meta.json          # freischalt_code, titel, beschreibung
     einstieg.json      # typ, narrativ, problemstellung
-    sicherung.json     # typ, zusammenfassung (Placeholder "[REVISION IN 2.1c]" bis Achse 6), ueberleitung (Placeholder "[REVISION IN 2.1c]" bis Achse 6), reflexionsimpuls, kernerkenntnisse[], hefteintrag_verweis, zitat
+    sicherung.json     # typ, zusammenfassung (Placeholder "[REVISION IN 2.1c]" bis Achse 6), ueberleitung (Placeholder "[REVISION IN 2.1c]" bis Achse 6), reflexionsimpuls, hefteintrag_verweis, zitat. KEIN kernerkenntnisse[] (M8: lebt in hefteintrag.scpl.loesung[])
     hefteintrag.json     # scpl, knoten, verbindungen, voraussetzungen, stundenfrage, merksaetze
   materialien/
     mat-N-1.json       # Vollstaendiges Material-JSON-Objekt (Engine-kompatibel)
@@ -491,7 +491,7 @@ docs/agents/artefakte/produktion/{game-id}/mappe-{N}/
 | 1 | TAFELBILD_Mappe[N].md (Phase 0.4) | Vollstaendig (STRUKTUR-FREEZE) | → rahmen/hefteintrag.json (1:1 Uebernahme) |
 | 2 | MATERIAL_GERUEST (Einstieg-Sektion) | typ, narrativ, problemstellung | → rahmen/einstieg.json |
 | 3 | MATERIAL_GERUEST (Sicherung-Sektion) | typ, reflexionsimpuls, hefteintrag_verweis, zitat. **NICHT** zusammenfassung/ueberleitung (erst Phase 2.1c Achse 6). | → rahmen/sicherung.json (Basis) |
-| 4 | rahmen/hefteintrag.json (gerade geschrieben) | scpl.loesung[] (= Merksaetze/Merkbox-Inhalt) | → sicherung.kernerkenntnisse[] (Constraint M3b) |
+| 4 | rahmen/hefteintrag.json (gerade geschrieben) | scpl.loesung[] (= Merksaetze/Merkbox-Inhalt) | Konsistenzpruefung: scpl.loesung[] = Kernerkenntnisse (M3b) |
 | 5 | ORCHESTRATOR.md | Freischalt-Code-Regeln | → rahmen/meta.json |
 | 6 | MATERIAL_GERUEST (Header) | titel, beschreibung | → rahmen/meta.json |
 
@@ -501,21 +501,21 @@ docs/agents/artefakte/produktion/{game-id}/mappe-{N}/
 1. TAFELBILD_Mappe[N].md lesen → rahmen/hefteintrag.json schreiben (1:1, STRUKTUR-FREEZE)
 2. MATERIAL_GERUEST Einstieg-Sektion lesen → rahmen/einstieg.json schreiben
 3. MATERIAL_GERUEST Sicherung-Sektion lesen (NUR reflexionsimpuls, hefteintrag_verweis, zitat)
-4. rahmen/hefteintrag.json lesen → scpl.loesung[] extrahieren (Array von Merksaetzen)
-5. sicherung.kernerkenntnisse[] := tafelbild.scpl.loesung[] (M3b-Constraint)
-6. rahmen/sicherung.json schreiben (inkl. kernerkenntnisse aus Schritt 5).
+4. rahmen/hefteintrag.json lesen → scpl.loesung[] extrahieren (Konsistenzpruefung: stimmen Kernerkenntnisse?)
+5. rahmen/sicherung.json schreiben (reflexionsimpuls, hefteintrag_verweis, zitat).
    zusammenfassung := "[REVISION IN 2.1c]" (Placeholder). ueberleitung := "[REVISION IN 2.1c]" (Placeholder).
-7. ORCHESTRATOR + MATERIAL_GERUEST Header lesen → rahmen/meta.json schreiben
-7b. NUR WENN SKRIPT-Chunk oder INHALTSBASIS ein historisches Schlusszitat enthaelt:
+   KEIN kernerkenntnisse[]-Feld — Kernerkenntnisse leben ausschliesslich in hefteintrag.scpl.loesung[] (M8).
+6. ORCHESTRATOR + MATERIAL_GERUEST Header lesen → rahmen/meta.json schreiben
+6b. NUR WENN SKRIPT-Chunk oder INHALTSBASIS ein historisches Schlusszitat enthaelt:
     sicherung.zitat-Objekt {text, urheber, kontext} in rahmen/sicherung.json ergaenzen.
     Quelle: SKRIPT oder INHALTSBASIS. Wenn kein Zitat vorhanden: Feld weglassen.
-8. C1b-Identitaetsregel pruefen:
-   einstieg.problemstellung === tafelbild.stundenfrage === SKRIPT-Chunk-Ueberschrift
+7. C1b-Identitaetsregel pruefen:
+   einstieg.problemstellung === hefteintrag.stundenfrage === SKRIPT-Chunk-Ueberschrift
    Bei Abweichung: Korrektur (Stundenfrage aus hefteintrag.json hat Vorrang)
 ```
 
-**M3b-Constraint (Sicherungs-Kernerkenntnisse):**
-`sicherung.kernerkenntnisse[]` wird NICHT neu formuliert, sondern aus `tafelbild.scpl.loesung[]` (Merksaetze = Merkbox-Inhalt) abgeleitet. Begruendung: Die Kernerkenntnisse IM Hefteintrag und die Kernerkenntnisse IN der Sicherungsphase sind dasselbe — sie duerfen nicht divergieren. Die Autoritaet liegt beim Tafelbild (Phase 0.4, STRUKTUR-FREEZE).
+**M3b-Constraint (Kernerkenntnisse, post-M8):**
+Kernerkenntnisse leben ausschliesslich in `hefteintrag.scpl.loesung[]`. Kein separates `kernerkenntnisse[]`-Feld in sicherung.json. Die Autoritaet liegt beim Tafelbild (Phase 0.4, STRUKTUR-FREEZE). Die Engine liest direkt aus `sicherung.hefteintrag.scpl.loesung[]`.
 
 **User-Validierung: EMPFOHLEN**
 
@@ -546,7 +546,7 @@ docs/agents/artefakte/produktion/{game-id}/mappe-{N}/
 | 5 | INHALTSBASIS | NUR die zum Chunk gehoerende Mappe-Sektion | immer | Andere Mappen |
 | 6 | rahmen/einstieg.json | problemstellung (fuer C1b-Konsistenz + Rahmung) | immer | — |
 | 7 | ARTEFAKT_INVENTAR | NUR Eintraege mit artefakt_ref dieses Materials | **NUR WENN** artefakt_ref gesetzt (BQ, KA, ST) | Andere Artefakte; gesamte Datei bei DT/QT/TB/ZL |
-| 8 | rahmen/sicherung.json | kernerkenntnisse[] | **NUR WENN** didaktische_funktion = `sicherung` oder `transfer` (Entscheidung nach Funktionswert, nicht Position. Falls letztes Material andere Funktion hat: Schritt 8 entfaellt) | Gesamte Datei bei einstieg/erarbeitung/vertiefung |
+| 8 | rahmen/hefteintrag.json | scpl.loesung[] (Kernerkenntnisse) | **NUR WENN** didaktische_funktion = `sicherung` oder `transfer` (Entscheidung nach Funktionswert, nicht Position. Falls letztes Material andere Funktion hat: Schritt 8 entfaellt) | Gesamte Datei bei einstieg/erarbeitung/vertiefung |
 
 **Read-Schritt 7 (konditional):** Darstellungstexte, Quellentexte, Tagebuecher und Zeitleisten haben keine artefakt_ref → Schritt 7 entfaellt. Spart 3-4 Reads pro Mappe.
 
@@ -566,7 +566,7 @@ Fuer jedes mat-ID im MATERIAL_GERUEST (sequentiell):
   6. rahmen/einstieg.json lesen → problemstellung (P6: 1 Feld, fuer Rahmung)
   7. NUR WENN artefakt_ref gesetzt: ARTEFAKT_INVENTAR → Eintraege dieses Materials (P6)
   8. NUR WENN didaktische_funktion = sicherung|transfer:
-     rahmen/sicherung.json lesen → kernerkenntnisse[] (M3c: "vom Ende her")
+     rahmen/hefteintrag.json lesen → scpl.loesung[] (M3c: "vom Ende her", Kernerkenntnisse)
   9. Material produzieren — Kerninhalt im Mittelpunkt, Rahmen stuetzt (P3)
   10. Q-Gate pruefen (MQ1-MQ5 + typ-spezifisch)
   11. Bei PASS: materialien/mat-N-M.json schreiben (P4)
@@ -603,7 +603,7 @@ Ab Mappe 3: Herabstufung auf EMPFOHLEN moeglich, wenn Mappe-2-Kalibrierung erfol
 | rahmen/hefteintrag.json | knoten[], stundenfrage, scpl{} | TB-Gesamtabdeckung + SCPL-Revision |
 | MATERIAL_GERUEST | Sequenzreihenfolge, didaktische_funktion pro mat-ID, Ueberleitungen-Sektion | Soll-Ist-Vergleich + Ueberleitung-Intention |
 | rahmen/einstieg.json | problemstellung | Leitfrage als Ueberleitung-Anker fuer mat-1 |
-| rahmen/sicherung.json | kernerkenntnisse[], reflexionsimpuls, hefteintrag_verweis | Stufe-1-Felder + Q-M2-09 Disjunktionspruefung |
+| rahmen/sicherung.json | reflexionsimpuls, hefteintrag_verweis | Stufe-1-Felder + Q-M2-09 Disjunktionspruefung (Kernerkenntnisse kommen aus hefteintrag.scpl.loesung[]) |
 
 **6 Achsen:**
 

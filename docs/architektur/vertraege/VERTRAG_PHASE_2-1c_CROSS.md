@@ -15,7 +15,7 @@
 | 2 | rahmen/hefteintrag.json | knoten[], stundenfrage | TB-Gesamtabdeckung |
 | 3 | MATERIAL_GERUEST | Sequenzreihenfolge, didaktische_funktion pro mat-ID, Ueberleitungen-Sektion | Soll-Ist-Vergleich + Ueberleitung-Intention |
 | 4 | rahmen/einstieg.json | problemstellung | Leitfrage als Ueberleitung-Anker fuer mat-1 |
-| 5 | rahmen/sicherung.json | kernerkenntnisse[], reflexionsimpuls, hefteintrag_verweis | Stufe-1-Felder fuer Achse 6 Kontext + Q-M2-09 Disjunktionspruefung |
+| 5 | rahmen/sicherung.json + rahmen/hefteintrag.json | reflexionsimpuls, hefteintrag_verweis (aus sicherung) + scpl.loesung[] (aus hefteintrag, = Kernerkenntnisse) | Stufe-1-Felder fuer Achse 6 Kontext + Q-M2-09 Disjunktionspruefung |
 
 **NICHT lesen:** data.json, WORKFLOW_v4.md, SKRIPT, INHALTSBASIS, SUB_MATERIAL_*.md, aufgaben/*.json
 
@@ -86,7 +86,7 @@ Beide Vektoren muessen inhaltlich praezise auf die **konkreten produzierten Mate
 
 **Produktqualitaet-Pruefung (HE1-HE13):** Nach der Stufe-2 Re-Evaluation wird der revidierte Hefteintrag gegen HE1-HE13 geprueft (siehe GUETEKRITERIEN_HEFTEINTRAG_PRODUKT.md). Reihenfolge: Erst Stufe-2, dann HE-Pruefung — HE operiert auf dem revidierten Text.
 
-**Q-M2-09 Disjunktionsregel** gilt weiterhin: reflexionsimpuls und kernerkenntnisse[] muessen inhaltlich disjunkt bleiben.
+**Q-M2-09 Disjunktionsregel** gilt weiterhin: reflexionsimpuls und hefteintrag.scpl.loesung[] muessen inhaltlich disjunkt bleiben.
 **Q-M2-08 Quellenangabe-Hygiene** gilt weiterhin: Keine internen Artefakt-Namen in SuS-sichtbaren Texten.
 
 ## Dispatch-Ablauf
@@ -96,7 +96,7 @@ Beide Vektoren muessen inhaltlich praezise auf die **konkreten produzierten Mate
 2. rahmen/hefteintrag.json lesen (P1)
 3. MATERIAL_GERUEST lesen (P1) — inkl. Ueberleitungen-Sektion als Intentionsvorlage
 4. rahmen/einstieg.json lesen (P1) — problemstellung als Kontext fuer mat-1
-5. rahmen/sicherung.json lesen (P1) — Stufe-1-Felder (kernerkenntnisse, reflexionsimpuls, hefteintrag_verweis)
+5. rahmen/sicherung.json lesen (P1) — Stufe-1-Felder (reflexionsimpuls, hefteintrag_verweis). Kernerkenntnisse aus rahmen/hefteintrag.json → scpl.loesung[] (M8)
 6. Achsen 1-4 durchfuehren (Cross-Konsistenz)
 7. Achse 5: Pro Material-Uebergang (mat-N-1→mat-N-2, mat-N-2→mat-N-3, ...):
    a. GERUEST-Ueberleitung als Intention lesen

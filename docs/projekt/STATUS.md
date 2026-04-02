@@ -8,8 +8,8 @@
 - M8: Kernerkenntnisse-Dopplung eliminiert — Engine liest aus hefteintrag.scpl.loesung[] statt sicherung.kernerkenntnisse[]. Mappe-1-scpl.loesung auf 3-Item-Form migriert (M3b-Konformitaet).
 - Engine-Patch: escape-engine.js — sicherung.tafelbild → sicherung.hefteintrag, Kernerkenntnisse-Fallback-Kette aktualisiert.
 - Live-Daten: data.json (Mappe 1+2) + template/data.json migriert.
-**Naechster Schritt:** Mappe 3 starten. Parallel noch offen: Engine-Fallback (Ueberleitung ID-Pattern), ARTEFAKT_INVENTAR Mappe 2 nachpflegen, Skill-Update (v4-1 → v4-2 mit M6-M8).
-**Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet.
+**Naechster Schritt:** Audit-Befunde PF-1/PF-5/PF-6 implementiert. Infrastruktur vollstaendig koharent. Bereit fuer Mappe 3.
+**Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. Parallel noch offen: Engine-Fallback (Ueberleitung ID-Pattern), ARTEFAKT_INVENTAR Mappe 2 nachpflegen.
 
 **Abgeschlossen seit letztem Update:**
 - Runde 3b (Commit 0c0e1ee): Mappe 2 "Das Attentat von Sarajevo" live — 6 Materialien, 5 Aufgaben, 2 Bilder, Engine-Patch, mappe-2.html

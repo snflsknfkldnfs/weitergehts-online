@@ -98,8 +98,8 @@ PHASE 2: MAPPEN-PRODUKTION (sequentiell, pro Mappe)
   │        Ausgabe: rahmen/hefteintrag.json,            │
   │                 einstieg.json, sicherung.json,    │
   │                 meta.json                         │
-  │        M3b: sicherung.kernerkenntnisse :=         │
-  │             tafelbild.loesung.saetze[]            │
+  │        M3b: Kernerkenntnisse in                   │
+  │             hefteintrag.scpl.loesung[] (M8)       │
   │                                                  │
   │  [2.1] Material-Produktion (sequentiell, Cowork) │
   │        DISPATCH-ISOLATION (P4): Jedes Material   │
@@ -346,8 +346,8 @@ data.json
     │   id, typ, frage (C3: [[mat-id|Text]]), material_referenz[], optionen/paare/...,
     │   loesung, tipps[] (C3: [[mat-id|Text]] + (M-Position)), punkte
     └── sicherung:
-        ├── tafelbild: { stundenfrage (C1b), ordnungsmuster, scpl{}, transfer{}, voraussetzungen[], kernerkenntnisse[], knoten[], verbindungen[] }
-        ├── kernerkenntnisse[], zusammenfassung, ueberleitung (C5),
+        ├── hefteintrag: { stundenfrage (C1b), ordnungsmuster, scpl{}, transfer{}, voraussetzungen[], knoten[], verbindungen[] }
+        ├── zusammenfassung, ueberleitung (C5),
         ├── hefteintrag_verweis, reflexionsimpuls
         └── quellenangaben[] (legacy — aktuell in materialien[].quelle)
 ```

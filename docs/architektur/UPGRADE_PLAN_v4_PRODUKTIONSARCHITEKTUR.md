@@ -126,7 +126,7 @@ docs/agents/artefakte/produktion/{game-id}/mappe-{N}/
   rahmen/
     meta.json          # freischalt_code, titel, beschreibung
     einstieg.json      # narrativ, problemstellung
-    sicherung.json     # typ, zusammenfassung, ueberleitung, reflexionsimpuls, kernerkenntnisse[], hefteintrag_verweis, zitat
+    sicherung.json     # typ, zusammenfassung, ueberleitung, reflexionsimpuls, hefteintrag_verweis, zitat. KEIN kernerkenntnisse[] (M8: lebt in hefteintrag.scpl.loesung[])
     hefteintrag.json     # knoten, verbindungen, voraussetzungen, stundenfrage, scpl, merksaetze
   materialien/
     mat-N-1.json       # Vollstaendiges Material-JSON-Objekt (Engine-kompatibel)
@@ -153,10 +153,10 @@ docs/agents/artefakte/produktion/{game-id}/mappe-{N}/
 | 1 | TAFELBILD_Mappe[N].md | Vollstaendig (STRUKTUR-FREEZE) | → rahmen/hefteintrag.json (1:1) |
 | 2 | MATERIAL_GERUEST (Einstieg) | typ, narrativ, problemstellung | → rahmen/einstieg.json |
 | 3 | MATERIAL_GERUEST (Sicherung) | typ, zusammenfassung, ueberleitung, reflexionsimpuls, hefteintrag_verweis, zitat | → rahmen/sicherung.json (Basis) |
-| 4 | rahmen/hefteintrag.json (Schritt 1) | loesung.saetze[] (Merkbox) | → sicherung.kernerkenntnisse[] (M3b) |
+| 4 | rahmen/hefteintrag.json (Schritt 1) | scpl.loesung[] (Merkbox) | Konsistenzpruefung: Kernerkenntnisse (M3b) |
 | 5 | ORCHESTRATOR + GERUEST Header | Freischalt-Code-Regeln, titel, beschreibung | → rahmen/meta.json |
 
-**M3b-Constraint:** `sicherung.kernerkenntnisse[]` := `tafelbild.loesung.saetze[]` (Merkbox-Inhalt). Wird nicht neu formuliert — Autoritaet liegt beim Tafelbild (STRUKTUR-FREEZE).
+**M3b-Constraint (post-M8):** Kernerkenntnisse leben ausschliesslich in `hefteintrag.scpl.loesung[]`. Kein separates `kernerkenntnisse[]`-Feld in sicherung.json. Autoritaet liegt beim Tafelbild (STRUKTUR-FREEZE).
 
 **C1b-Identitaetsregel:** einstieg.problemstellung === tafelbild.stundenfrage === SKRIPT-Chunk-Ueberschrift (wortidentisch). Wird in Phase 2.0 einmalig gesetzt und propagiert.
 
@@ -173,7 +173,7 @@ docs/agents/artefakte/produktion/{game-id}/mappe-{N}/
 | 5 | INHALTSBASIS | NUR zum Chunk gehoerende Mappe-Sektion | immer | Andere Mappen |
 | 6 | rahmen/einstieg.json | problemstellung (C1b-Konsistenz) | immer | — |
 | 7 | ARTEFAKT_INVENTAR | NUR Eintraege dieses Materials | **NUR WENN** artefakt_ref gesetzt | Gesamte Datei bei DT/QT/TB/ZL |
-| 8 | rahmen/sicherung.json | kernerkenntnisse[] | **NUR WENN** didaktische_funktion = sicherung/transfer | Gesamte Datei sonst |
+| 8 | rahmen/hefteintrag.json | scpl.loesung[] (Kernerkenntnisse) | **NUR WENN** didaktische_funktion = sicherung/transfer | Gesamte Datei sonst |
 
 Fuer jedes mat-ID im MATERIAL_GERUEST:
 
@@ -187,7 +187,7 @@ Fuer jedes mat-ID im MATERIAL_GERUEST:
 6. einstieg.json lesen → problemstellung (P6: nur 1 Feld, fuer Rahmung)
 7. NUR WENN artefakt_ref gesetzt: ARTEFAKT_INVENTAR lesen (P6: konditional)
 8. NUR WENN didaktische_funktion = sicherung|transfer:
-   sicherung.json lesen → kernerkenntnisse[] (M3c: "vom Ende her")
+   hefteintrag.json lesen → scpl.loesung[] (M3c: "vom Ende her", Kernerkenntnisse)
 9. Material produzieren — Kerninhalt im Mittelpunkt (P3), Rahmen stuetzt
 10. Q-Gate pruefen (MQ1-MQ5 + typ-spezifisch)
 11. Bei PASS: mat-N-M.json schreiben
@@ -549,7 +549,7 @@ Strategischer Audit durchgefuehrt (docs/analyse/AUDIT_v4_STRATEGIE_ERGEBNIS.md).
 - [ ] ARTEFAKT_INVENTAR fuer Mappe 2 nachpflegen (F-3b-INVENTAR)
 - [x] Q-M2-03: Ueberleitungen — Phase 2.1c als Produzent (Achse 5 + ueberleitungen.json). Zwei-Vektoren-Bruecke, Assembly-Integration, Engine-Fallback dokumentiert
 - [ ] Q-M2-05: Hefteintrag-Timing — Phase-Verschiebung oder Zweitpass
-- [ ] GUETEKRITERIEN_HEFTEINTRAG.md erstellen
+- [x] GUETEKRITERIEN_HEFTEINTRAG_PRODUKT.md (HE1-HE13) — erstellt
 
 ### Runde 5: Retrospektive + Skill-Update
 
