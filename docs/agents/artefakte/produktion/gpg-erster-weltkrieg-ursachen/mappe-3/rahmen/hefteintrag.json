@@ -1,0 +1,55 @@
+{
+  "stundenfrage": "Waren die Menschen 1914 wirklich begeistert vom Krieg?",
+  "ordnungsmuster": "multiperspektivisch",
+  "scpl": {
+    "situation": {
+      "kontextsatz": "Die Buendnisse haben aus einem Mord einen Weltkrieg gemacht. Millionen Soldaten werden mobilisiert — doch wie reagieren die Menschen?",
+      "fachbegriffe": ["Mobilmachung"]
+    },
+    "complication": [
+      {
+        "schritt": "In den Grossstaedten herrscht Aufregung. Soldaten schreiben 'Ausflug nach Paris' auf ihre Zuege. Historiker nennen dieses Gefuehl das Augusterlebnis — die Kriegsbegeisterung.",
+        "fachbegriff": "Kriegsbegeisterung (Augusterlebnis)",
+        "darstellung": null
+      },
+      {
+        "schritt": "Vier Gruende treiben die Begeisterung: Patriotismus, Abenteuerlust, gesellschaftlicher Druck und Propaganda. Die Regierung stellt den Krieg als reine Verteidigung dar.",
+        "fachbegriff": "Propaganda",
+        "darstellung": null
+      },
+      {
+        "schritt": "Doch die Begeisterung ist nicht allgemein. 288 Anti-Kriegs-Versammlungen, 100.000 Demonstranten in Berlin. Auf dem Land herrscht Angst statt Freude.",
+        "fachbegriff": "Gegenstimmen",
+        "darstellung": null
+      }
+    ],
+    "problem": {
+      "satz": "Die SPD stimmt fuer die Kriegskredite — Burgfrieden. Die truegerische Einheit verdeckt die tiefen Risse in der Gesellschaft.",
+      "fachbegriff": "Burgfrieden"
+    },
+    "loesung": [
+      "Die Kriegsbegeisterung 1914 betraf vor allem die staedtische Mittel- und Oberschicht — Arbeiter und Landbevoelkerung waren ueberwiegend skeptisch.",
+      "Patriotismus, Propaganda, Abenteuerlust und gesellschaftlicher Druck trieben die Begeisterung an.",
+      "Der Burgfrieden vereinte sogar Kriegsgegner hinter der Regierung — doch die Einheit war truegerisch."
+    ]
+  },
+  "transfer": {
+    "frage": "Gibt es heute Situationen, in denen gesellschaftlicher Druck Menschen dazu bringt, eine Meinung oeffentlich zu vertreten, die sie privat nicht teilen?"
+  },
+  "voraussetzungen": ["k2-5 (Kettenreaktion der Kriegserklaerungen)"],
+  "knoten": [
+    {"id": "k3-1", "text": "Kriegsbegeisterung (Augusterlebnis)", "typ": "kernbegriff"},
+    {"id": "k3-2", "text": "Patriotismus / Nationalismus", "typ": "ursache"},
+    {"id": "k3-3", "text": "Propaganda (Verteidigungskrieg)", "typ": "ursache"},
+    {"id": "k3-4", "text": "Gesellschaftlicher Druck", "typ": "ursache"},
+    {"id": "k3-5", "text": "Gegenstimmen (Arbeiter, Bauern, Demos)", "typ": "kategorie"},
+    {"id": "k3-6", "text": "Burgfrieden (SPD stimmt zu)", "typ": "wirkung"}
+  ],
+  "verbindungen": [
+    {"von": "k3-2", "nach": "k3-1", "label": "erzeugt"},
+    {"von": "k3-3", "nach": "k3-1", "label": "verstaerkt"},
+    {"von": "k3-4", "nach": "k3-1", "label": "erzwingt Zustimmung"},
+    {"von": "k3-5", "nach": "k3-1", "label": "widerspricht (nicht alle begeistert)"},
+    {"von": "k3-1", "nach": "k3-6", "label": "ermoeglicht"}
+  ]
+}

@@ -24,9 +24,10 @@
         "chronologisch",
         "kategorial",
         "vergleichend",
-        "prozessual"
+        "prozessual",
+        "multiperspektivisch"
       ],
-      "description": "Strukturierendes Organisationsprinzip des Tafelbilds. Bestimmt die Verbindungslogik zwischen Knoten."
+      "description": "Strukturierendes Organisationsprinzip des Tafelbilds. Bestimmt die Verbindungslogik zwischen Knoten. multiperspektivisch: kontrastierende Perspektiven auf dasselbe Ereignis."
     },
     "scpl": {
       "type": "object",

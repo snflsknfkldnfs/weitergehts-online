@@ -6,6 +6,38 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ## 2026-04-02
 
+### C+ Schritt 7: Test-Dispatch mat-3-1 (abgeschlossen)
+- **Phase:** C+ Phase III — Validierung (Schritt 7)
+- **Zweck:** Empirische Validierung der C+ Phase-I-Fixes (Decision-Tree, Q-Gate-Mechanik, Output-Schemata) durch tatsaechliche Material-Produktion
+- **Phase 2.0 Rahmen Mappe 3 produziert:**
+  - hefteintrag.json: SCPL-Struktur mit 6 Knoten, 5 Verbindungen, ordnungsmuster "multiperspektivisch", 3 Loesung-Eintraege
+  - einstieg.json: Narrativ + Problemstellung (C1b-Identitaet mit stundenfrage PASS)
+  - sicherung.json: reflexionsimpuls + hefteintrag_verweis. zusammenfassung/ueberleitung als Placeholder "[REVISION IN 2.1c]". zitat: null (kein passendes Zitat fuer Mappe 3)
+- **2 Schema-Fixes waehrend Produktion:**
+  - hefteintrag-schema.json: ordnungsmuster enum um "multiperspektivisch" erweitert (valides GPG-Ordnungsmuster, fehlte in Enum)
+  - rahmen-sicherung-schema.json: zitat-Feld von type:object zu oneOf[object, null] (erlaubt null wenn kein passendes Zitat vorhanden)
+- **Decision-Tree Read-Steps 1-8 durchlaufen fuer mat-3-1:**
+  - Step 1: MATERIAL_GERUEST → TYP=darstellungstext, TITEL, CHUNKS=§1-§2, TB_KNOTEN=[k3-1..k3-4], ARTEFAKT_REFS=[], DIDAKT_FN=einstieg
+  - Step 1b: SEQUENZKONTEXT → Position 1/5, VORHERIGES=null, NAECHSTES=mat-3-2(BQ), gesperrte Begriffe: k3-5(Gegenstimmen), k3-6(Burgfrieden)
+  - Steps 2-6: Alle gelesen (hefteintrag SCPL complication[0]+[1], SUB_MATERIAL_DT, SKRIPT §1-§2, INHALTSBASIS Mappe 3, einstieg)
+  - Step 7: SKIP (ARTEFAKT_REFS leer — korrekt fuer DT)
+  - Step 8: SKIP (DIDAKT_FN=einstieg — korrekt)
+- **mat-3-1 produziert:**
+  - 115 Woerter, 3 Absaetze, 15 Saetze (Durchschnitt 7.7 Woerter/Satz)
+  - 4 Fachbegriffe: Kriegsbegeisterung/Augusterlebnis, Patriotismus, gesellschaftlicher Druck, Propaganda
+  - TB-Knoten k3-1/k3-2/k3-3/k3-4 abgedeckt
+  - Sequenz-Kohaerenz: k3-5/k3-6 korrekt nicht verwendet
+  - JSON-Encoding: HTML-Entities fuer typographische Anfuehrungszeichen (&bdquo;/&ldquo;), Unicode-Escapes fuer Umlaute
+- **Schema-Validierung:** material-output-schema.json PASS (0 Fehler)
+- **Q-Gate GESAMT-PASS (0 FAIL, 1 WARN):**
+  - 17 Kriterien geprueft (SCHEMA-01, MQ1, MQ2, M1-M5, C6/MQ6, M8, M10, DT-1 bis DT-6, SQ-1 bis SQ-4)
+  - 1 WARN: M8 Quellenorientierung (Quellenangabe korrekt aber unspezifisch)
+  - Q-GATE-LOG.md fuer Mappe 3 angelegt
+- **Befund:** Decision-Tree funktioniert deterministisch. Q-Gate-Mechanik produziert strukturiertes Ergebnis. Output-Schema validiert korrekt. Keine Ambiguitaeten im Dispatch-Ablauf.
+- **Neue Dateien:** mappe-3/rahmen/hefteintrag.json, einstieg.json, sicherung.json, mappe-3/materialien/mat-3-1.json, mappe-3/Q-GATE-LOG.md
+- **Geaenderte Dateien:** hefteintrag-schema.json, rahmen-sicherung-schema.json, STATUS.md, CHANGELOG.md
+- **Naechster Schritt:** C+ Schritt 8 (restliche Mappe-3-Materialien) oder Schritt 4/5 (Steuerungsschicht)
+
 ### C+ Schritt 3: Conditional-Read-Logik als Decision-Tree (abgeschlossen)
 - **Phase:** C+ Phase I — Vertrags-Fixes (Schritt 3/3 — Phase I komplett)
 - **Findings:** 2.1 (comprehensive-review) + Q1-Befund BLOCKIEREND (Conditional-Read-Logik ambig, Sequenzkontext-Interface fehlt)

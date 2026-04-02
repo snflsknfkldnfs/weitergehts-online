@@ -1,12 +1,18 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-02 (Session 3+, C+ Phase I komplett: Schritte 1+2+3)
-**Aktuelle Phase:** **C+ Phase I abgeschlossen. Phase II (Steuerungsschicht) oder Phase III (Validierung) als naechstes.**
-**Letzter Arbeitsschritt:** C+ Schritt 3: Conditional-Read-Logik als Decision-Tree. Read-Steps 1-8 als deterministischer Pseudocode mit exakten Bedingungen, Pfaden, Feldern und Fallbacks. Neuer Read-Step 1b (Sequenzkontext aus MATERIAL_GERUEST). SCPL-Zone-Mapping-Tabelle mit Ableitungsregel + Mappe-3-Beispiel. Walkthrough: mat-3-1 (DT), mat-3-2 (BQ), mat-3-5 (TB) — 0 Ambiguitaeten bei allen 3 Testfaellen.
-**Naechster Schritt:** C+ Schritt 4 (state.json/YAML-Frontmatter) ODER Schritt 7 (Test-Dispatch). Schritte 4+5 sind parallelisierbar, aber nicht auf dem kritischen Pfad. Schritt 7 ist das zentrale Validierungs-Gate.
+**Letzte Aktualisierung:** 2026-04-02 (Session 4, C+ Schritt 7: Test-Dispatch mat-3-1 komplett)
+**Aktuelle Phase:** **C+ Phase III (Validierung) — Schritt 7 abgeschlossen.**
+**Letzter Arbeitsschritt:** C+ Schritt 7: Test-Dispatch mat-3-1. Phase 2.0 Rahmen Mappe 3 produziert (hefteintrag.json, einstieg.json, sicherung.json). Decision-Tree Read-Steps 1-8 fuer mat-3-1 durchlaufen. Darstellungstext produziert (115 Woerter, 4 Fachbegriffe, 4 TB-Knoten abgedeckt). Schema-Validierung PASS. Formales Q-Gate GESAMT-PASS (0 FAIL, 1 WARN bei M8 Quellenorientierung). 2 Schema-Fixes waehrend Produktion (multiperspektivisch enum, null zitat).
+**Naechster Schritt:** C+ Schritt 8 (restliche Mappe-3-Materialien mat-3-2 bis mat-3-5 produzieren) ODER Schritt 4/5 (Steuerungsschicht). Schritt 7 hat Decision-Tree + Q-Gate-Mechanik empirisch validiert.
 **Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. Engine-Fallback (Ueberleitung ID-Pattern), ARTEFAKT_INVENTAR Mappe 2 nachpflegen.
 
 **Abgeschlossen seit letztem Update:**
+- C+ Schritt 7 (Test-Dispatch mat-3-1):
+  - Phase 2.0 Rahmen Mappe 3: 3 JSON-Dateien (hefteintrag, einstieg, sicherung). 2 Schema-Fixes (multiperspektivisch, null zitat).
+  - Decision-Tree Read-Steps 1-8: Alle 8 Schritte durchlaufen. Step 7+8 korrekt uebersprungen (ARTEFAKT_REFS leer, DIDAKT_FN=einstieg).
+  - mat-3-1 produziert: DT, 115 Woerter, 3 Absaetze, TB-Knoten k3-1/k3-2/k3-3/k3-4 abgedeckt. Sequenz-Kohaerenz: k3-5/k3-6 korrekt gesperrt.
+  - Q-Gate GESAMT-PASS: 17 Kriterien geprueft (SCHEMA-01 + MQ1/MQ2 + M1-M10 + DT-1 bis DT-6 + SQ-1 bis SQ-4). 1 WARN (M8). 0 FAIL.
+  - Q-GATE-LOG.md fuer Mappe 3 angelegt.
 - C+ Phase I komplett (Schritte 1-3):
   - Schritt 3: Decision-Tree in VERTRAG_PHASE_2-1. Read-Step 1b (Sequenzkontext). SCPL-Zone-Mapping. Walkthrough verifiziert.
   - Schritt 2: Q-GATE-MECHANIK.md. 6 Vertraege aktualisiert. Trockenlauf verifiziert.

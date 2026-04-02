@@ -1,0 +1,19 @@
+{
+  "id": "mat-3-1",
+  "typ": "darstellungstext",
+  "titel": "Begeisterung und Angst \u2014 August 1914",
+  "inhalt": "<p>August 1914. In den Gro\u00dfst\u00e4dten Deutschlands herrscht Aufregung. Soldaten steigen in Z\u00fcge und schreiben mit Kreide &bdquo;Ausflug nach Paris&ldquo; auf die Waggons. Viele glauben, bis Weihnachten wieder zu Hause zu sein. Historiker nennen dieses Gef\u00fchl die <strong>Kriegsbegeisterung</strong> (auch &bdquo;Augusterlebnis&ldquo; \u2014 die Euphorie bei Kriegsausbruch).</p><p>Diese Begeisterung hat vier Gr\u00fcnde. Erstens: <strong>Patriotismus</strong> (\u00fcbersteigertes Nationalgef\u00fchl). Die russische Mobilmachung l\u00f6st eine Welle der Vaterlandsliebe aus. Zweitens: Abenteuerlust, besonders bei jungen M\u00e4nnern und Studenten. Drittens: <strong>gesellschaftlicher Druck</strong> \u2014 wer nicht begeistert ist, gilt als Feigling. Viertens: <strong>Propaganda</strong> (gezielte Beeinflussung der \u00f6ffentlichen Meinung). Die Regierung stellt den Krieg als reine Verteidigung dar.</p><p>Doch war wirklich ganz Deutschland begeistert? Oder gab es auch andere Stimmen?</p><cite>Eigene Darstellung auf Basis der Sachanalyse</cite>",
+  "quelle": "Eigene Darstellung auf Basis der Sachanalyse",
+  "position": 1,
+  "didaktische_funktion": "einstieg",
+  "voraussetzung": [],
+  "ueberleitung_von": null,
+  "sequenz_kontext": {
+    "vorher": null,
+    "nachher": {
+      "id": "mat-3-2",
+      "typ": "bildquelle",
+      "kerninhalt": "Jubel vor dem Berliner Stadtschloss \u2014 Kriegsbegeisterung als konkretes Bild"
+    }
+  }
+}

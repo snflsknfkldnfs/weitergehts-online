@@ -30,15 +30,20 @@
       "description": "Mappe-zu-Mappe-Ueberleitung. Placeholder '[REVISION IN 2.1c]' nach Phase 2.0, finale Produktion in Phase 2.1c Achse 6. Bruecke zur naechsten Mappe."
     },
     "zitat": {
-      "type": "object",
-      "required": ["text", "urheber", "kontext"],
-      "properties": {
-        "text": { "type": "string", "description": "Zitattext." },
-        "urheber": { "type": "string", "description": "Autor/Sprecher." },
-        "kontext": { "type": "string", "description": "Historischer Kontext des Zitats." }
-      },
-      "additionalProperties": false,
-      "description": "Optionales historisches Schlusszitat. Nur wenn SKRIPT/INHALTSBASIS ein passendes Zitat enthaelt."
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["text", "urheber", "kontext"],
+          "properties": {
+            "text": { "type": "string", "description": "Zitattext." },
+            "urheber": { "type": "string", "description": "Autor/Sprecher." },
+            "kontext": { "type": "string", "description": "Historischer Kontext des Zitats." }
+          },
+          "additionalProperties": false
+        },
+        { "type": "null" }
+      ],
+      "description": "Optionales historisches Schlusszitat. null wenn kein passendes Zitat vorhanden. Nur wenn SKRIPT/INHALTSBASIS ein passendes Zitat enthaelt."
     }
   },
   "additionalProperties": false
