@@ -294,4 +294,4 @@ User-Input Q5 macht reines Iterieren unattraktiv: Wenn Mappe 3 als Prozesstest d
 | Begruendung | Q1 zeigt 2 blockierende Findings, beide durch abgegrenzte C+-Fixes loesbar. Kein Indiz fuer systemische Unrettbarkeit. Mappe 3 als Prozesstest auf verbesserter v4-Basis liefert bessere Entscheidungsgrundlage als Rebuild vor Produktionserfahrung. C+-Investition hat Langzeitwert auch bei spaeterem Upgrade auf A. |
 | Qualifizierungsergebnis Q1 | BLOCKIEREND in Kombination (Conditional-Read + Sequenzkontext-Interface). C+-Schritte 1+3 adressieren beide. Details: §6.3 |
 | Datum | 2026-04-02 |
-| Action-Plan-Dokument | Schritte 1-9 in §7 (Option C+). Naechster Schritt: C+ Schritt 1 (Output-JSON-Schema formal definieren) |
+| Action-Plan-Dokument | `docs/projekt/AUSFUEHRUNGSPLAN_C_PLUS.md` — 9 Schritte, 4 Phasen, Zeitplan 6-10 Sessions |
