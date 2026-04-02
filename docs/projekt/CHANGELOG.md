@@ -6,6 +6,24 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ## 2026-04-02
 
+### Pipeline-Test mat-3-2: Isolierter Subagent-Dispatch (abgeschlossen)
+- **Phase:** C+ Phase III — Validierung (Schritt 7, erweitert)
+- **Zweck:** Realgetreuer Pipeline-Test. Dispatcher sammelt Inputs via Decision-Tree, formuliert Uebergabe-Prompt, spawnt isolierten Subagent (kein Projektzugriff), evaluiert Output.
+- **Dispatch-Modus:** Agent-Tool (general-purpose), NUR Uebergabe-Prompt als Input. Subagent hat SUB_MATERIAL_BILDQUELLE-Regeln + gesammelte Variablen erhalten, sonst nichts.
+- **Read-Step 7 WARNUNG:** ARTEFAKT_INVENTAR hat keine Mappe-3-Eintraege. Bilddaten aus INHALTSBASIS substituiert (Fallback-Regel: WARNUNG + weiter).
+- **Subagent-Output:** Valides BQ-Material. Bildunterschrift mit allen 3 Funktionen (Identifikation, Kontextualisierung, Erschliessungsimpuls). TB-Knoten k3-1 abgedeckt. Sequenz-Kohaerenz eingehalten (k3-5/k3-6 nicht verwendet).
+- **Q-Gate Erstbewertung: GESAMT-FAIL (1 FAIL):**
+  - M2 FAIL: ASCII-Transliterationen (Bevoelkerung, Gefuehle, koennten) in SuS-sichtbarer bildunterschrift
+  - BQ-3 WARN: Konstruiertheit des Fotos nicht explizit reflektiert
+- **Nachbesserung Iteration 1:** M2-Feld korrigiert (UTF-8-Umlaute eingesetzt). Re-Evaluation: GESAMT-PASS (0 FAIL, 1 WARN).
+- **3 Pipeline-Findings:**
+  - P1: ARTEFAKT_INVENTAR Mappe 3 fehlt. Fuer Vollproduktion erstellen.
+  - P2: SUB_MATERIAL_BILDQUELLE.md hat keine explizite Umlaut-Pflicht. FIX: Prompt ergaenzen.
+  - P3: BQ-3 (Bild ≠ Wirklichkeit) wird vom isolierten Subagent nicht proaktiv reflektiert. FIX: Prompt BQ-3-Hinweis verstaerken.
+- **Qualitaetsvergleich isoliert vs. monolithisch:** Uebergabe-Prompt hinreichend fuer valides Material. Subagent-Prompts haben Luecken (P2, P3), die im monolithischen Modus durch Gesamtkontext kompensiert werden. Pipeline-Modus deckt diese Luecken auf — das ist sein Zweck.
+- **Neue Dateien:** materialien/mat-3-2.json
+- **Geaenderte Dateien:** Q-GATE-LOG.md, STATUS.md, CHANGELOG.md
+
 ### C+ Schritt 7: Test-Dispatch mat-3-1 (abgeschlossen)
 - **Phase:** C+ Phase III — Validierung (Schritt 7)
 - **Zweck:** Empirische Validierung der C+ Phase-I-Fixes (Decision-Tree, Q-Gate-Mechanik, Output-Schemata) durch tatsaechliche Material-Produktion

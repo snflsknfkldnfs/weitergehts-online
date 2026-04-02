@@ -49,3 +49,48 @@
 ### Produzierte Dateien
 
 - `materialien/mat-3-1.json`
+
+---
+
+## mat-3-2: Jubel vor dem Berliner Stadtschloss
+
+**Typ:** bildquelle
+**Dispatch-Modus:** PIPELINE-TEST (isolierter Subagent via Agent-Tool, kein Projektzugriff)
+**Ergebnis: GESAMT-PASS nach Nachbesserung** (1 FAIL → korrigiert → 0 FAIL, 1 WARN)
+
+| # | ID | Kriterium | Klasse | Stufe | Detail |
+|---|---|---|---|---|---|
+| 1 | SCHEMA-01 | Schema-Validierung | SCHEMA | PASS | material-output-schema.json: 0 Fehler. |
+| 2 | MQ1 | Stundenfrage-Bezug | KONSISTENZ | PASS | Erschliessungsimpuls fragt nach unterschiedlichen Reaktionen — direkter Bezug zu "wirklich begeistert?". |
+| 3 | MQ2 | Titel (BQ Typ B: Statement) | FORM | PASS | "Jubel vor dem Berliner Stadtschloss" — praegnant, statementartig, visueller Anker. Typ B korrekt fuer Erarbeitungs-BQ mit ankernder Funktion. |
+| 4 | M1 | Sachgemaessheit | INHALT | PASS | Datum (1.8.1914), Ort (Berliner Stadtschloss), Ereignis (Mobilmachung) korrekt. |
+| 5 | M2 | Adressatengemaessheit (R7) | FORM | PASS (nach Nachbesserung) | Erstbewertung FAIL: ASCII-Transliterationen (Bevoelkerung, Gefuehle, koennten) in SuS-sichtbarem Feld. Nachbesserung: UTF-8-Umlaute eingesetzt. |
+| 6 | M4 | Zielklarheit (TB-Knoten-Kongruenz) | DIDAKTIK | PASS | k3-1 (Kriegsbegeisterung/Augusterlebnis) explizit in Kontextualisierung benannt. Bild zeigt das Phaenomen visuell. |
+| 7 | M5 | Aktivierung | DIDAKTIK | PASS | Erschliessungsimpuls: "Welche unterschiedlichen Reaktionen und Gefuehle koennten in dieser Menge nebeneinander existiert haben?" — regt zu genauem Hinsehen an. |
+| 8 | M8 | Quellenorientierung | INHALT | PASS | Quelle: "Imperial War Museums, Wikimedia Commons". Konkreter Urheber benannt. |
+| 9 | M10 | Sprachsensibilitaet | INHALT | PASS | Kein Propagandabegriff unreflektiert uebernommen. "Augusterlebnis" als historischer Begriff kontextualisiert. |
+| 10 | BQ-1 | Heuristische Funktion | DIDAKTIK | PASS | Bild als Erkenntnisquelle: zeigt Kriegsbegeisterung konkret (nicht nur Illustration zum DT). Foto leistet: Visualisierung eines abstrakten Konzepts. |
+| 11 | BQ-3 | Bild ≠ Wirklichkeit | DIDAKTIK | WARN | Bildunterschrift thematisiert nicht explizit, dass das Foto nur EINEN Ausschnitt zeigt (Grossstadt, Begeisterte) und nicht die Gesamtgesellschaft repraesentiert. Erschliessungsimpuls impliziert dies ("unterschiedliche Reaktionen"), aber ohne explizite Konstruktions-Reflexion. |
+| 12 | BQ-4 | 3-Funktions-Bildunterschrift | FORM | PASS | Identifikation (Was/Wer/Wann): PASS. Kontextualisierung (Augusterlebnis-Bezug): PASS. Erschliessungsimpuls (Frage): PASS. |
+| 13 | BQ-8 | Kommunikationsanalyse | DIDAKTIK | n/a | Kein Propagandabild — Kriterium nicht anwendbar. |
+
+**Sequenz-Kohaerenz:**
+
+| ID | Stufe | Detail |
+|---|---|---|
+| SQ-1 | PASS | Referenziert nur Augusterlebnis/Kriegsbegeisterung (k3-1, eingefuehrt in mat-3-1). |
+| SQ-2 | PASS | k3-5 (Gegenstimmen) und k3-6 (Burgfrieden) nicht verwendet. Erschliessungsimpuls fragt nach "unterschiedlichen Reaktionen" — kein Fachbegriff, sondern Beobachtungsauftrag. |
+| SQ-3 | PASS | k3-1 visuell erarbeitbar: Bild zeigt jubelnde Menge = konkrete Visualisierung des Augusterlebnis. |
+| SQ-4 | PASS | Ueberleitung: "Der Sachtext beschrieb die Kriegsbegeisterung in Worten -- dieses Foto zeigt, wie sie konkret aussah." Narrativer Anschluss klar. |
+
+**Nachbesserung:**
+- Iteration 1: M2 FAIL (ASCII-Transliterationen in bildunterschrift). Korrigiert: Bevoelkerung → Bevölkerung, Gefuehle → Gefühle, koennten → könnten. Neues Ergebnis: PASS.
+
+**Pipeline-Findings (Dispatch-spezifisch):**
+- FINDING-P1: ARTEFAKT_INVENTAR Mappe 3 fehlt. Bilddaten aus INHALTSBASIS substituiert (WARNUNG, nicht ABBRUCH). Fuer Vollproduktion: ARTEFAKT_INVENTAR Mappe 3 erstellen.
+- FINDING-P2: SUB_MATERIAL_BILDQUELLE.md hat keine explizite Umlaut-Pflicht wie SUB_MATERIAL_DT.md. Subagent defaultete zu ASCII-Transliterationen. FIX: BQ-Prompt um "Schreibe echte UTF-8-Umlaute" ergaenzen.
+- FINDING-P3: BQ-3 (Bild ≠ Wirklichkeit) ist WARN — der isolierte Subagent reflektiert die Konstruiertheit des Fotos nicht explizit in der Bildunterschrift. In monolithischer Produktion waere das wahrscheinlich mitgedacht worden. Zeigt: Subagent-Prompt sollte BQ-3 staerker betonen.
+
+### Produzierte Dateien
+
+- `materialien/mat-3-2.json`

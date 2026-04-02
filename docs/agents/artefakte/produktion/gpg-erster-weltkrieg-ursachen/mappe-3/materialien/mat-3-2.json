@@ -1,0 +1,25 @@
+{
+  "id": "mat-3-2",
+  "typ": "bildquelle",
+  "titel": "Jubel vor dem Berliner Stadtschloss",
+  "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-3-1.jpg",
+  "bildunterschrift": "Menschenmenge jubelt dem Kaiser auf dem Balkon des Berliner Stadtschlosses zu, 1. August 1914. Dieses Foto dokumentiert das Augusterlebnis -- die Kriegsbegeisterung, die Teile der Bev\u00f6lkerung bei Kriegsausbruch erfasste. Welche unterschiedlichen Reaktionen und Gef\u00fchle k\u00f6nnten in dieser Menge nebeneinander existiert haben?",
+  "quelle": "Imperial War Museums, Wikimedia Commons",
+  "lizenz": "Public Domain",
+  "position": 2,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": ["mat-3-1"],
+  "ueberleitung_von": "Der Sachtext beschrieb die Kriegsbegeisterung in Worten -- dieses Foto zeigt, wie sie konkret aussah.",
+  "sequenz_kontext": {
+    "vorher": {
+      "id": "mat-3-1",
+      "typ": "darstellungstext",
+      "kerninhalt": "Kriegsbegeisterung (Augusterlebnis) und vier Gr\u00fcnde (Patriotismus, Abenteuerlust, Druck, Propaganda)"
+    },
+    "nachher": {
+      "id": "mat-3-3",
+      "typ": "bildquelle",
+      "kerninhalt": "Truppentransport per Bahn -- Aufbruchstimmung oder erzwungener Abschied?"
+    }
+  }
+}

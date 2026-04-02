@@ -1,10 +1,10 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-02 (Session 4, C+ Schritt 7: Test-Dispatch mat-3-1 komplett)
-**Aktuelle Phase:** **C+ Phase III (Validierung) — Schritt 7 abgeschlossen.**
-**Letzter Arbeitsschritt:** C+ Schritt 7: Test-Dispatch mat-3-1. Phase 2.0 Rahmen Mappe 3 produziert (hefteintrag.json, einstieg.json, sicherung.json). Decision-Tree Read-Steps 1-8 fuer mat-3-1 durchlaufen. Darstellungstext produziert (115 Woerter, 4 Fachbegriffe, 4 TB-Knoten abgedeckt). Schema-Validierung PASS. Formales Q-Gate GESAMT-PASS (0 FAIL, 1 WARN bei M8 Quellenorientierung). 2 Schema-Fixes waehrend Produktion (multiperspektivisch enum, null zitat).
-**Naechster Schritt:** C+ Schritt 8 (restliche Mappe-3-Materialien mat-3-2 bis mat-3-5 produzieren) ODER Schritt 4/5 (Steuerungsschicht). Schritt 7 hat Decision-Tree + Q-Gate-Mechanik empirisch validiert.
-**Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. Engine-Fallback (Ueberleitung ID-Pattern), ARTEFAKT_INVENTAR Mappe 2 nachpflegen.
+**Letzte Aktualisierung:** 2026-04-02 (Session 4, Pipeline-Test mat-3-2 komplett)
+**Aktuelle Phase:** **C+ Phase III (Validierung) — Schritt 7 erweitert: Pipeline-Test mit isoliertem Subagent.**
+**Letzter Arbeitsschritt:** Pipeline-Test mat-3-2 (BQ). Erster Dispatch mit isoliertem Subagent (kein Projektzugriff). Q-Gate GESAMT-PASS nach 1 Nachbesserung (M2 FAIL: ASCII-Umlaute → korrigiert). 3 Pipeline-Findings: (P1) ARTEFAKT_INVENTAR Mappe 3 fehlt, (P2) BQ-Prompt fehlende Umlaut-Pflicht, (P3) BQ-3 Konstruktions-Reflexion schwach.
+**Naechster Schritt:** Pipeline-Findings P2 beheben (SUB_MATERIAL_BILDQUELLE.md Umlaut-Pflicht ergaenzen). Dann mat-3-3 bis mat-3-5 als Pipeline-Dispatches. ARTEFAKT_INVENTAR Mappe 3 erstellen (P1).
+**Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. Engine-Fallback (Ueberleitung ID-Pattern), ARTEFAKT_INVENTAR Mappe 2+3 nachpflegen.
 
 **Abgeschlossen seit letztem Update:**
 - C+ Schritt 7 (Test-Dispatch mat-3-1):
