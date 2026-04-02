@@ -266,7 +266,7 @@ Die Engine rendert `bildquelle` als: `<img>` + `<figcaption>` (Bildunterschrift)
 
 ### JSON-Encoding-Regeln (v3.2)
 
-**Umlaute (v3.2):** Schreibe echte UTF-8-Umlaute (ae, oe, ue, ss). KEINE ASCII-Transliterationen in JSON/HTML-Output. Beispiel: "Buendnissysteme", nicht "Buendnissysteme".
+**Umlaute (v3.2):** Schreibe echte UTF-8-Umlaute (ä, ö, ü, ß). KEINE ASCII-Transliterationen (ae, oe, ue, ss). Beispiel: "Bündnissysteme", nicht "Buendnissysteme".
 
 Alle Texte muessen JSON-kompatibel sein. **VERBOTEN:**
 - Typographische Anfuehrungszeichen → durch ASCII `"` ersetzen

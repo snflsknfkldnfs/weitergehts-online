@@ -211,6 +211,8 @@ Die Engine rendert `bildquelle` als: `<img>` + `<figcaption>` (Bildunterschrift)
 | Steuerzeichen | Echte Zeilenumbrueche in Strings | `\n` |
 | Umlaute | erlaubt (UTF-8) | unveraendert lassen |
 
+**Umlaute (v3.2):** Schreibe echte UTF-8-Umlaute (ä, ö, ü, ß). KEINE ASCII-Transliterationen (ae, oe, ue, ss). Beispiel: "Bevölkerung", nicht "Bevoelkerung". Dies gilt fuer ALLE SuS-sichtbaren Felder: `bildunterschrift`, `quelle`, `lizenz`.
+
 **Pflichtschritt:** Nach Fertigstellung JSON validieren:
 ```bash
 python3 -c "import json; json.load(open('data.json'))" && echo "OK"
