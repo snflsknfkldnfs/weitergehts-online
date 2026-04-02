@@ -231,7 +231,7 @@ Alle Teile in das MATERIAL_GERUEST_Mappe_N-Format (definiert in WORKFLOW_v4.md S
 
 3. **Voraussetzungen deklarieren:** Pro Material: Welche Material-IDs muessen vorher bearbeitet sein? Leeres Array nur fuer Position 1.
 
-4. **Ueberleitungen formulieren:** Pro Material (ausser Position 1): 1-2 Saetze narrativer Uebergang vom vorherigen Material. Funktion: Bruecke zwischen den Materialien, die den SuS den roten Faden sichtbar macht.
+4. **Ueberleitungen skizzieren (Intention):** Pro Material (ausser Position 1): 1-2 Saetze narrativer Uebergang vom vorherigen Material. Funktion: Bruecke zwischen den Materialien, die den SuS den roten Faden sichtbar macht. **Hinweis:** Diese Ueberleitungen sind Intentionsskizzen auf Basis des Design-Plans. Die finalen, auf die konkreten Materialien zugeschnittenen Ueberleitungen werden in Phase 2.1c produziert (VERTRAG_PHASE_2-1c, Achse 5). Das GERUEST liefert die didaktische Absicht, 2.1c formuliert die praezise Zwei-Vektoren-Bruecke.
 
 5. **Sequenzkontext-Objekte generieren:** Pro Material das `sequenz_kontext`-Objekt mit `vorher` und `nachher` (jeweils: Material-ID, Typ, Kerninhalt in 1 Satz). Dieses Objekt wird spaeter als Pflicht-Input an die Materialtyp-Subagenten uebergeben.
 
@@ -469,7 +469,7 @@ Nach Rueckkehr aller Subagenten-Outputs:
 | TB-Abdeckung | Jeder Knoten durch mindestens 1 Material erarbeitbar | Fehlendes Material ergaenzen |
 | Quellenangaben | Pro QT/ST mind. 1 Fussnote, keine generischen Angaben | An Subagenten zurueckgeben |
 
-**Phase 2.1c (v4): Material-Cross-Konsistenz.** Nach Abschluss aller Material-Dispatches folgt ein separater Cross-Konsistenz-Dispatch (1 Dispatch, 4 Pruefachsen: Sequenz-Kohaerenz, Fachbegriff-Konsistenz, Ueberleitung-Kohaerenz, TB-Knoten-Gesamtabdeckung). Dieser Dispatch liest alle materialien/mat-N-*.json + tafelbild.json + MATERIAL_GERUEST. Details: WORKFLOW_v4.md Phase 2.1c.
+**Phase 2.1c (v4): Material-Cross-Konsistenz + Ueberleitung-Produktion.** Nach Abschluss aller Material-Dispatches folgt ein separater Cross-Konsistenz-Dispatch (1 Dispatch, 5 Achsen). Achsen 1-4: Sequenz-Kohaerenz, Fachbegriff-Konsistenz, Ueberleitung-Kohaerenz, TB-Knoten-Gesamtabdeckung. Achse 5 (NEU, Q-M2-03): Ueberleitung-Produktion — formuliert die finalen Zwei-Vektoren-Bruecken zwischen Materialien auf Basis der konkreten mat-JSONs + GERUEST-Intentionen. Output: `ueberleitungen.json` (Assembly-Input fuer Phase 3). Details: VERTRAG_PHASE_2-1c_CROSS.md.
 
 ---
 

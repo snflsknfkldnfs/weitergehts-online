@@ -547,7 +547,7 @@ Strategischer Audit durchgefuehrt (docs/analyse/AUDIT_v4_STRATEGIE_ERGEBNIS.md).
 - [x] OPT-6: DT-5 Wortlimit in QUALITAETSKRITERIEN_MATERIALPRODUKTION.md korrigiert (200-300 → ≤150, autoritativ: SUB_MATERIAL_DT Q1)
 - [x] OPT-8: Session-Split-Template mit Inline-Phase-2.2-Dispatch-Sequenz in ORCHESTRATOR.md
 - [ ] ARTEFAKT_INVENTAR fuer Mappe 2 nachpflegen (F-3b-INVENTAR)
-- [ ] Q-M2-03: Ueberleitungen — Architektur-Entscheidung (neuer Dispatch vs. Cross-Integration)
+- [x] Q-M2-03: Ueberleitungen — Phase 2.1c als Produzent (Achse 5 + ueberleitungen.json). Zwei-Vektoren-Bruecke, Assembly-Integration, Engine-Fallback dokumentiert
 - [ ] Q-M2-05: Hefteintrag-Timing — Phase-Verschiebung oder Zweitpass
 - [ ] GUETEKRITERIEN_HEFTEINTRAG.md erstellen
 

@@ -6,6 +6,19 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ## 2026-04-02
 
+### Q-M2-03: Ueberleitung-Produktion in Phase 2.1c verankert
+- **Phase:** Architektur-Entscheidung (Q-M2-03)
+- **Aufgabe:** Ueberleitungen zwischen Materialien architektonisch verankern. Bisher: `ueberleitung_von` enthielt nur Material-ID, Engine renderte "mat-2-1" statt narrativem Text.
+- **Entscheidung:** Phase 2.1c (bisher nur Cross-Konsistenz-Pruefung) wird um Achse 5 erweitert: Ueberleitung-Produktion. 2.1c hat bereits alle Materialien + MATERIAL_GERUEST im Kontext — natuerlicher Ort fuer material-uebergreifende Textproduktion.
+- **Didaktisches Modell:** Zwei-Vektoren-Bruecke — jede Ueberleitung referenziert rueckwaerts (Lernstand aus Vorgaenger) und vorwaerts (Relevanz des naechsten Materials). 5 Qualitaetskriterien (UE-1 bis UE-5).
+- **Aenderungen:**
+  - VERTRAG_PHASE_2-1c_CROSS.md: Achse 5, Read-Schritt 4 (einstieg.json), Output `ueberleitungen.json`, Qualitaetskriterien UE-1 bis UE-5
+  - AGENT_MATERIAL.md: Ueberleitungen im GERUEST als Intentionsskizzen markiert, 2.1c als finaler Produzent referenziert
+  - ORCHESTRATOR.md: Uebergabe-Template erweitert (Ueberleitung-Patching als Assembly-Schritt 2, Pre-Flight + Verifikation)
+  - QUALITAETSBEFUNDE: Massnahme 11 als ERLEDIGT markiert, Massnahme 14 (Engine-Fallback) praezisiert
+- **Artefakte:** VERTRAG_PHASE_2-1c_CROSS.md, AGENT_MATERIAL.md, ORCHESTRATOR.md, QUALITAETSBEFUNDE (geaendert)
+- **Naechster Schritt:** Engine-Fallback (ID-Pattern → nichts rendern) als Defensiv-Patch bei naechster Claude-Code-Uebergabe mitgeben
+
 ### OPT-1/4/5/6/7/8: Uebergabe-Template + Wortlimit-Fix
 - **Phase:** Prozess-Optimierung (OPT-1/4/5/6/7/8 konsolidiert)
 - **Aufgabe:** Verbleibende 6 OPTs aus RUNDE_3b_ERGEBNIS.md umsetzen.

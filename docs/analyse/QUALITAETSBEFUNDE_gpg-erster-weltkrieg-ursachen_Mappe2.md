@@ -268,12 +268,12 @@ Hefteintrag wird vor Materialien produziert, kann daher nicht material-bezogen a
 8. VERTRAG_PHASE_2-2b: Engine-Feldnamen als Pflicht (Q-M2-01) — **ERLEDIGT** (Engine-Feld-Kompatibilitaet als Q-Gate-Kriterium)
 9. VERTRAG_PHASE_2-2b: freitext-code loesung als Array (Q-M2-02) — **ERLEDIGT** (Loesungsformate-Tabelle + SUB_AUFGABE_FT.md)
 10. VERTRAG_PHASE_2-0: reflexionsimpuls/kernerkenntnisse Disjunktionsregel (Q-M2-07) — **ERLEDIGT** (Q-M2-09 als Q-Gate-Kriterium)
-11. Phase 2.1c/2.1d: Ueberleitungen als Pflicht-Output (Q-M2-03) — OFFEN (architektonische Entscheidung)
+11. Phase 2.1c: Ueberleitungen als Achse 5 + ueberleitungen.json Output (Q-M2-03) — **ERLEDIGT** (VERTRAG_PHASE_2-1c erweitert, AGENT_MATERIAL + ORCHESTRATOR aktualisiert, Zwei-Vektoren-Bruecke als didaktisches Modell)
 12. Hefteintrag: Produktion verschieben oder Q-Gate verschaerfen (Q-M2-05) — OFFEN (Phase-Verschiebung)
 13. GUETEKRITERIEN_HEFTEINTRAG.md erstellen — OFFEN
 
 ### Langfristig (Engine-Verbesserungen)
 
 13. Engine: Quellenangabe-Rendering vereinheitlichen (Q-M2-09, Q-M2-10)
-14. Engine: Fallback fuer fehlende Ueberleitungen — nichts rendern statt ID (Q-M2-03)
+14. Engine: Fallback fuer fehlende Ueberleitungen — wenn `ueberleitung_von` auf `/^mat-\d+-\d+$/` matcht, nichts rendern statt ID (Q-M2-03). Defensiv-Massnahme, primaerer Fix ist Prozess-seitig (Achse 5).
 15. Assembly-Skript: JSON-Schema-Validierung gegen Engine-Erwartungen

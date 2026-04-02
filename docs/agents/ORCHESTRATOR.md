@@ -191,14 +191,16 @@ git pull origin main # Aktueller Stand?
 ls docs/agents/artefakte/produktion/[game-id]/mappe-[N]/rahmen/      # === 4 Dateien?
 ls docs/agents/artefakte/produktion/[game-id]/mappe-[N]/materialien/ # === [M] Dateien?
 ls docs/agents/artefakte/produktion/[game-id]/mappe-[N]/aufgaben/    # === 5 Dateien?
+cat docs/agents/artefakte/produktion/[game-id]/mappe-[N]/ueberleitungen.json | python3 -c "import json,sys; d=json.load(sys.stdin); assert len(d['ueberleitungen'])>0" # Ueberleitungen vorhanden?
 python3 -c "import json, glob; [json.load(open(f)) for f in glob.glob('docs/agents/artefakte/produktion/[game-id]/mappe-[N]/**/*.json', recursive=True)]"
 # Bei Fehler: STOPP.
 
 ## Aufgabe
 1. Bild-Download: Fuer jede img-ID in materialien/*.json → ARTEFAKT_INVENTAR nachschlagen → API-Call ausfuehren → Download
-2. Assembly: Produktionsverzeichnis → Mappe-Objekt → data.json append
-3. mappe-[N].html erstellen (Kopie von mappe-template.html mit Mappe-Nr)
-4. Engine-Patches (falls in UEBERGABE dokumentiert)
+2. Ueberleitung-Patching: `ueberleitungen.json` lesen → pro Material-Objekt in data.json das Feld `ueberleitung_von` mit dem zugehoerigen `text`-Wert aus ueberleitungen.json befuellen (statt Material-ID). mat-N-1 (Position 1): `ueberleitung_von` bleibt null.
+3. Assembly: Produktionsverzeichnis → Mappe-Objekt → data.json append
+4. mappe-[N].html erstellen (Kopie von mappe-template.html mit Mappe-Nr)
+5. Engine-Patches (falls in UEBERGABE dokumentiert)
 
 ## Bild-Download-Methode
 Wikimedia Commons API — IMMER. Keine direkten URLs.
@@ -211,6 +213,8 @@ Bei Konflikten: NICHT automatisch aufloesen. Dateien auflisten, User-Entscheidun
 ## Verifikation
 - [ ] data.json ist valides JSON
 - [ ] Mappe [N] hat [M] Materialien + 5 Aufgaben
+- [ ] Alle `ueberleitung_von`-Felder in data.json enthalten narrativen Text (NICHT Material-IDs wie "mat-N-M")
+- [ ] mat-N-1 hat `ueberleitung_von: null` (kein Vorgaenger)
 - [ ] Alle Bilder heruntergeladen + >10 KB
 - [ ] mappe-[N].html existiert + verlinkt data.json korrekt
 - [ ] Bestehende Mappen unveraendert (diff check)
