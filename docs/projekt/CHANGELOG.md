@@ -6,6 +6,17 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ## 2026-04-02
 
+### PM-Session 3: Grundsatzentscheidung + Q1 Test-Dispatch
+- **Phase:** PM-Infrastruktur (Architektur-Entscheidung)
+- **Ausloeser:** Nach Plugin-Evaluation: Soll Produkt-Infrastruktur sauber neu aufgesetzt (Option A) oder iterativ verbessert (Option C+) werden?
+- **GRUNDSATZENTSCHEIDUNG_REBUILD_VS_ITERATE.md erstellt:** 3 Optionen (A/B/C+), Bestandsaufnahme, Bewertungskriterien, Q1-Q6 Qualifizierungsfragen.
+- **User-Inputs integriert:** Q3 (~6h Nacharbeit Mappe 2), Q4 (PM methoden-agnostisch, Produkt Game-spezifisch), Q5 (Mappe 3 = Prozesstest fuer Produktisierung), Q6 (Subagenten ausreichend fuer Mappe 3). Bewertungskriterien revidiert (Lern-Rendite 10%→20%, Produktionsfortschritt 30%→20%).
+- **Q1 Test-Dispatch mat-3-1:** Subagent fuehrte 8 Read-Steps aus VERTRAG_PHASE_2-1 aus. Befund: 2 blockierende Findings (Conditional-Read-Logik, Sequenzkontext-Interface), 1 teilweise blockierend (Q-Gate-Semantik). Subagent konnte mat-3-1 NICHT korrekt produzieren. Alle Findings durch C+-Schritte adressierbar.
+- **Entscheidung: Option C+ (Hybrid mit Architektur-Bewusstsein).** Vertrags-Fixes (Schema, Decision-Tree, Q-Gate-Formalisierung) + Skill-Split mit Trennung Game-spezifisch vs. methoden-agnostisch, dann Mappe 3 als Prozesstest. Option B verworfen (bekannte Fehler wiederholen ≠ valider Prozesstest).
+- **COWORK_PROJECT_ANLEITUNG.md umfassend aktualisiert:** GRUNDSATZENTSCHEIDUNG als 4. Pflichtlektuere, verfuegbare Plugin-Infrastruktur, strategischer Kontext, EVALUATE-Modus.
+- **Aenderungen:** GRUNDSATZENTSCHEIDUNG_REBUILD_VS_ITERATE.md (neu, ~290 Zeilen), COWORK_PROJECT_ANLEITUNG.md (erweitert), POOL_PM_INFRASTRUKTUR_ENHANCEMENTS.md (Blocker-Wording korrigiert), STATUS.md, CHANGELOG.md
+- **Naechster Schritt:** C+ Schritt 1 (Output-JSON-Schema formal definieren), dann Schritte 2-9.
+
 ### PM-Session 1+2: Plugin-Architektur-Evaluation + Plattform-Verifikation
 - **Phase:** PM-Infrastruktur (Tooling-Evaluation)
 - **Ausloeser:** Erste PM-Sessions im Cowork-Project. Statt sofortiger Architektur-Entscheidungen (E1-E5 DEFERRED) wurde PM-Infrastruktur-Verbesserung priorisiert.

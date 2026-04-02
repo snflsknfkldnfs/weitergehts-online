@@ -1,12 +1,13 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-02 (Session 2)
-**Aktuelle Phase:** **PM-Infrastruktur-Evaluation — Plugin-Architektur verifiziert, Plattform-Faehigkeiten geklaert.**
-**Letzter Arbeitsschritt:** Erste PM-Sessions im Cowork-Project. Session 1: Orientierung, Repo-Integritaet, Git-Sandbox-Grenzen dokumentiert. Session 2: PM-Infrastruktur-Enhancements evaluiert — wshobson/agents Marketplace analysiert, 7 Plugins installiert (agent-teams, agent-orchestration, conductor, comprehensive-review, plugin-eval, documentation-generation, full-stack-orchestration), 4/4 Plattform-Unbekannte geklaert (Dateisystem-Zugriff, Model-Tiering, Plugin-Installation, Slash-Commands alle VERIFIZIERT). 3 Plugins funktional gegen Projekt-Artefakte getestet: plugin-eval (Skill-Score 3.61/5), comprehensive-review (14 Findings auf Vertrag 2.1), conductor (70-80% Struktur-Mapping). POOL_PM_INFRASTRUKTUR_ENHANCEMENTS.md als zentrales Evaluierungsdokument erstellt und aktualisiert.
-**Naechster Schritt:** Entscheidung: Produkt-Update (Mappe 3 Produktion mit bestehendem System) oder PM-Infrastruktur-Ausbau (Skill-Refactoring gemaess plugin-eval-Empfehlungen, Vertrags-Fixes gemaess comprehensive-review). E1-E5 Architektur-Entscheidungen weiterhin DEFERRED.
+**Letzte Aktualisierung:** 2026-04-02 (Session 3)
+**Aktuelle Phase:** **Grundsatzentscheidung getroffen: Option C+ (Hybrid mit Architektur-Bewusstsein). Naechster Schritt: C+-Fixes ausfuehren.**
+**Letzter Arbeitsschritt:** PM-Session 3: Grundsatzentscheidung Clean Rebuild vs. Iteratives Patching. Q1-Q6 qualifiziert (Q3/Q4/Q5/Q6 per User-Input, Q1 per Test-Dispatch mat-3-1, Q2 offen/Folgetest). Q1-Ergebnis: 2 blockierende Findings (Conditional-Read-Logik, Sequenzkontext-Interface), beide durch C+-Schritte adressierbar. Entscheidung: Option C+ — Vertrags-Fixes + Skill-Split mit Architektur-Bewusstsein (Game-spezifisch vs. methoden-agnostisch), dann Mappe 3 als Prozesstest. GRUNDSATZENTSCHEIDUNG_REBUILD_VS_ITERATE.md erstellt und qualifiziert. COWORK_PROJECT_ANLEITUNG.md umfassend aktualisiert (Plugins, strategischer Kontext, EVALUATE-Modus).
+**Naechster Schritt:** C+ Schritt 1: Output-JSON-Schema formal definieren (Finding 1.1). Dann Schritte 2-6, dann Test-Dispatch mat-3-1 mit verbessertem System (C+ Schritt 7), dann Mappe 3 Vollproduktion (Schritt 8).
 **Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. Engine-Fallback (Ueberleitung ID-Pattern), ARTEFAKT_INVENTAR Mappe 2 nachpflegen.
 
 **Abgeschlossen seit letztem Update:**
+- PM-Session 3: Grundsatzentscheidung getroffen (Option C+). GRUNDSATZENTSCHEIDUNG_REBUILD_VS_ITERATE.md erstellt, Q1-Q6 qualifiziert, Q1 Test-Dispatch ausgefuehrt, Entscheidungsprotokoll gefuellt. COWORK_PROJECT_ANLEITUNG.md umfassend aktualisiert (Plugins, strategischer Kontext, EVALUATE-Modus, Pflichtlektuere).
 - PM-Session 1+2: Plugin-Architektur-Evaluation abgeschlossen. POOL_PM_INFRASTRUKTUR_ENHANCEMENTS.md (12 Patterns, 7 Plugins, Machbarkeitstabelle). COWORK_PROJECT_ANLEITUNG.md Git-Sektion korrigiert.
 
 **Zuvor abgeschlossen:**

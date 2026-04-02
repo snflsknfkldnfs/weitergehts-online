@@ -1,7 +1,7 @@
 # Grundsatzentscheidung: Clean Rebuild vs. Iteratives Patching
 
 **Erstellt:** 2026-04-02 (PM-Session 3)
-**Status:** EVALUATION — Entscheidung offen. Dieses Dokument wird iterativ qualifiziert bis ein konkreter Action-Plan steht.
+**Status:** ENTSCHIEDEN — Option C+ (Hybrid mit Architektur-Bewusstsein). Entscheidungsprotokoll: §9.
 **Kontext:** Nach Abschluss der PM-Infrastruktur-Evaluation (POOL_PM_INFRASTRUKTUR_ENHANCEMENTS.md) und Plugin-Verifikation steht die Frage: Wie fliessen die Erkenntnisse in das Produkt ein?
 
 ---
@@ -179,7 +179,7 @@ Option C (Hybrid) erscheint als staerkstes Profil: Die 3 HIGH-Vertrags-Fixes und
 
 | # | Frage | Ergebnis | Quelle |
 |---|---|---|---|
-| Q1 | Wie schwerwiegend sind die 3 HIGH-Findings in der Praxis? | OFFEN — Test-Dispatch mat-3-1 noch ausfuehren | — |
+| Q1 | Wie schwerwiegend sind die 3 HIGH-Findings in der Praxis? | **BLOCKIEREND in Kombination.** Test-Dispatch mat-3-1 zeigt: Subagent kann mat-3-1 mit aktuellem Vertrag NICHT korrekt produzieren. Details: §6.3 | Test-Dispatch 2026-04-02 |
 | Q2 | Ist der Skill-Split ohne Plugin-Packaging stabil? | OFFEN — Folgetest | — |
 | Q3 | Wie viel Nacharbeit hat Mappe 2 erzeugt? | **~6h.** Runde 3a: 8 Befunde, alle gefixt. Runde 3b: 5 operative + 8 OPTs. 2 gescheiterte CC-Versuche davor. | User-Schaetzung 2026-04-02 |
 | Q4 | Skaliert die Pipeline auf andere Faecher? | **Produkt (Escape-Game-Pipeline) ist Geschichte-spezifisch.** PM-/Produktentwicklungsebene soll skalierbar bleiben: Cowork-Project-Anweisungen, Plugin-Verfuegbarkeiten, Website-Verwaltung als Meta-Learnings. Ziel: aehnliche Produktentwicklungsweise (User + Claude Cowork-Infrastruktur) fuer andere Methoden (Rollenspiel, Debatte) in anderen Faechern. | User-Input 2026-04-02 |
@@ -201,6 +201,28 @@ Option C (Hybrid) erscheint als staerkstes Profil: Die 3 HIGH-Vertrags-Fixes und
 **Q4 einfuehrt eine neue Dimension:** Die PM-Ebene muss von der Produkt-Ebene trennbar bleiben. Wenn wir die Infrastruktur neu aufsetzen, sollte die Trennung "Game-spezifisch" (Vertraege, Subagenten, Q-Gates) vs. "methoden-agnostisch" (Dispatcher, state.json, Session-Management, Cowork-Patterns) architektonisch sichtbar sein.
 
 **Q3 + Q5 zusammen:** ~6h Nacharbeit bei Mappe 2 ist akzeptabel wenn Mappe 3 als Prozesstest dient. Aber: wenn dieselben Fehlertypen wiederkehren (Vertrags-Ambiguitaet, Engine-Inkompatibilitaet), ist das kein neues Learning sondern verschwendete Wiederholung.
+
+### 6.3 Q1 Test-Dispatch: Detailergebnisse
+
+**Testgegenstand:** mat-3-1 (Darstellungstext "Begeisterung und Angst — August 1914") via VERTRAG_PHASE_2-1_MATERIAL, 8 Read-Steps, SUB_MATERIAL_DARSTELLUNGSTEXT als Subagent.
+
+**Befunde nach Schwere:**
+
+| Finding | Schwere | Beschreibung | C+-Fix ausreichend? |
+|---|---|---|---|
+| Conditional-Read-Logik (Step 7) | BLOCKIEREND | "Gesamte Datei bei DT/QT/TB/ZL" suggeriert, DT soll gesamtes ARTEFAKT_INVENTAR lesen — unklar warum. NICHT-lesen-Spalte widerspricht der Logik. Subagent kann Step 7 nicht deterministisch ausfuehren. | JA — Decision-Tree (C+ Schritt 3) loest dies |
+| Sequenzkontext-Interface | BLOCKIEREND | SUB_MATERIAL_DT verlangt Sequenzkontext (v3.3 PFLICHT), aber Vertrag 2.1 spezifiziert nicht, wie/wo dieser uebergeben wird. Subagent hat keinen Zugriff auf Sequenzinformation. | TEILWEISE — Schema-Fix (C+ Schritt 1) muss Interface explizit definieren |
+| Q-Gate-Semantik | TEILWEISE BLOCKIEREND | Keine formale Definition wann PASS/FAIL. Jeder Dispatch entscheidet willkuerlich. Bei manueller Pruefung tolerierbar, bei skalierter Produktion nicht. | JA — C+ Schritt 2 |
+| Output-Schema | NICHT BLOCKIEREND | Kein formales JSON-Schema, aber implizites Format aus Subagenten-Prompt ableitbar. Erhoehtes Risiko fuer Engine-Inkompatibilitaet. | JA — C+ Schritt 1 |
+| Fehlende Phase-2.0-Artefakte | ERWARTET | hefteintrag.json, einstieg.json, ARTEFAKT_INVENTAR nicht vorhanden — Phase 2.0 wurde noch nicht ausgefuehrt. Kein Defizit der Architektur. | n/a |
+| SKRIPT-SCPL-Diskrepanz | MINOR | SKRIPT hat 4 Gruende fuer Kriegsausbruch, MATERIAL_GERUEST/TB nur 3 Knoten. Inhaltliche Inkonsistenz, kein Architektur-Problem. | n/a — inhaltliches Review |
+
+**Gesamtbefund:** Subagent konnte mat-3-1 mit aktuellem v4-Vertrag NICHT korrekt produzieren. Ursache ist die Kombination aus Conditional-Read-Ambiguitaet + fehlendem Sequenzkontext-Interface. Jedes Problem einzeln waere umgehbar; zusammen erzeugen sie einen Zustand in dem der Subagent zentrale Inputs nicht zuverlaessig lesen kann.
+
+**Bewertung fuer Optionswahl:**
+- Die 2 blockierenden Findings sind durch C+-Schritte 1+3 adressierbar (Schema + Decision-Tree). Ein vollstaendiger Rebuild (Option A) ist NICHT zwingend erforderlich.
+- ABER: Der Test deckt ein Muster auf — die Vertraege wurden als Prosa-Dokumente geschrieben, nicht als maschinenlesbare Dispatch-Spezifikationen. Die Fixes in C+ beheben die Symptome; ein Rebuild wuerde das Grundmuster adressieren.
+- Entscheidungsrelevant: Reichen symptomatische Fixes fuer den Prozesstest (Mappe 3), oder braucht der Prozesstest selbst eine saubere Architektur um aussagekraeftig zu sein?
 
 ### 6.2 Revidierte Optionsbewertung
 
@@ -249,9 +271,17 @@ User-Input Q5 macht reines Iterieren unattraktiv: Wenn Mappe 3 als Prozesstest d
 
 ## 8. Naechster Schritt
 
-**Q1 klaeren:** Test-Dispatch mat-3-1 mit aktuellem v4-System. Dokumentiert: wo genau stossen wir auf die 3 HIGH-Findings, wie schwerwiegend sind sie in der Praxis, reichen die Fixes aus Sektion 7 (C+) oder brauchen wir Option A.
+**Q1 abgeschlossen.** Ergebnis: 2 blockierende + 1 teilweise blockierendes Finding. C+-Fixes adressieren alle drei, aber Test deckt Grundmuster auf (Vertraege als Prosa statt als Dispatch-Spezifikationen).
 
-Danach: Entscheidung treffen und Action-Plan erstellen.
+**Entscheidung steht an.** Die Kernfrage aus §6.3: Reichen symptomatische Fixes (C+) fuer einen aussagekraeftigen Prozesstest, oder muss der Prozesstest selbst auf sauberer Architektur laufen (A)?
+
+**Empfehlung: Option C+.** Begruendung:
+1. Die 2 blockierenden Findings sind durch konkrete, abgegrenzte Fixes loesbar (Schema + Decision-Tree). Kein Indiz fuer systemische Unrettbarkeit.
+2. Mappe 3 als Prozesstest profitiert davon, dass er auf einer *verbesserten* v4-Basis laeuft statt auf einer komplett neuen Architektur — so messen wir, ob die bestehende Basis tragfaehig ist.
+3. Falls Mappe 3 trotz C+-Fixes erneut ~6h Nacharbeit durch strukturelle Defizite produziert, ist das der empirische Beweis fuer Option A bei Mappe 4. Dann war die C+-Investition trotzdem nicht verloren (Fixes haben Langzeitwert).
+4. Option A birgt das Risiko, 34-48h in Infrastruktur zu investieren bevor ein einziges Material die neue Pipeline durchlaeuft — und dabei Fehler erst spaet zu entdecken.
+
+**Wenn User zustimmt:** Entscheidungsprotokoll (§9) fuellen, Action-Plan fuer C+ Schritte 1-9 erstellen.
 
 ---
 
@@ -259,9 +289,9 @@ Danach: Entscheidung treffen und Action-Plan erstellen.
 
 | Feld | Wert |
 |---|---|
-| Entscheidung | OFFEN |
-| Gewahlte Option | — |
-| Begruendung | — |
-| Qualifizierungsergebnis Q1 | — |
-| Datum | — |
-| Action-Plan-Dokument | — |
+| Entscheidung | **GETROFFEN** |
+| Gewahlte Option | **Option C+ (Hybrid mit Architektur-Bewusstsein)** |
+| Begruendung | Q1 zeigt 2 blockierende Findings, beide durch abgegrenzte C+-Fixes loesbar. Kein Indiz fuer systemische Unrettbarkeit. Mappe 3 als Prozesstest auf verbesserter v4-Basis liefert bessere Entscheidungsgrundlage als Rebuild vor Produktionserfahrung. C+-Investition hat Langzeitwert auch bei spaeterem Upgrade auf A. |
+| Qualifizierungsergebnis Q1 | BLOCKIEREND in Kombination (Conditional-Read + Sequenzkontext-Interface). C+-Schritte 1+3 adressieren beide. Details: §6.3 |
+| Datum | 2026-04-02 |
+| Action-Plan-Dokument | Schritte 1-9 in §7 (Option C+). Naechster Schritt: C+ Schritt 1 (Output-JSON-Schema formal definieren) |
