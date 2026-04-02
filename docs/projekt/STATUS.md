@@ -1,12 +1,15 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-02
-**Aktuelle Phase:** **PM-Infrastruktur-Einrichtung — Cowork-Project angelegt, Anleitung + Uebergabe-Prompt erstellt.**
-**Letzter Arbeitsschritt:** Cowork-Project fuer Projektmanagement eingerichtet. COWORK_PROJECT_ANLEITUNG.md (repo-versionierter Anweisungs-Prompt) und UEBERGABE_COWORK_PROJECT_EINRICHTUNG.md (Kickoff fuer erste PM-Session) erstellt. UPGRADE_PLAN_v5_PLUGIN_ARCHITEKTUR.md als Langzeitvision dokumentiert. Ebenen-Trennung etabliert: PM-Project (Koordination) vs. Produktions-Sessions (ORCHESTRATOR) vs. Claude Code (Assembly).
-**Naechster Schritt:** Erste Session im Cowork-Project starten mit UEBERGABE_COWORK_PROJECT_EINRICHTUNG.md. Dort: Orientierung, Repo-Integritaet, uncommitted Changes committen, Architektur-Entscheidungen E1-E5 klaeren, naechste Schritte priorisieren.
-**Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. Engine-Fallback (Ueberleitung ID-Pattern), ARTEFAKT_INVENTAR Mappe 2 nachpflegen. Mappe 3 Phase-0/1-Artefakte + UPGRADE_PLAN_v5 + PM-Artefakte noch NICHT committed.
+**Letzte Aktualisierung:** 2026-04-02 (Session 2)
+**Aktuelle Phase:** **PM-Infrastruktur-Evaluation — Plugin-Architektur verifiziert, Plattform-Faehigkeiten geklaert.**
+**Letzter Arbeitsschritt:** Erste PM-Sessions im Cowork-Project. Session 1: Orientierung, Repo-Integritaet, Git-Sandbox-Grenzen dokumentiert. Session 2: PM-Infrastruktur-Enhancements evaluiert — wshobson/agents Marketplace analysiert, 7 Plugins installiert (agent-teams, agent-orchestration, conductor, comprehensive-review, plugin-eval, documentation-generation, full-stack-orchestration), 4/4 Plattform-Unbekannte geklaert (Dateisystem-Zugriff, Model-Tiering, Plugin-Installation, Slash-Commands alle VERIFIZIERT). 3 Plugins funktional gegen Projekt-Artefakte getestet: plugin-eval (Skill-Score 3.61/5), comprehensive-review (14 Findings auf Vertrag 2.1), conductor (70-80% Struktur-Mapping). POOL_PM_INFRASTRUKTUR_ENHANCEMENTS.md als zentrales Evaluierungsdokument erstellt und aktualisiert.
+**Naechster Schritt:** Entscheidung: Produkt-Update (Mappe 3 Produktion mit bestehendem System) oder PM-Infrastruktur-Ausbau (Skill-Refactoring gemaess plugin-eval-Empfehlungen, Vertrags-Fixes gemaess comprehensive-review). E1-E5 Architektur-Entscheidungen weiterhin DEFERRED.
+**Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. Engine-Fallback (Ueberleitung ID-Pattern), ARTEFAKT_INVENTAR Mappe 2 nachpflegen.
 
 **Abgeschlossen seit letztem Update:**
+- PM-Session 1+2: Plugin-Architektur-Evaluation abgeschlossen. POOL_PM_INFRASTRUKTUR_ENHANCEMENTS.md (12 Patterns, 7 Plugins, Machbarkeitstabelle). COWORK_PROJECT_ANLEITUNG.md Git-Sektion korrigiert.
+
+**Zuvor abgeschlossen:**
 - Runde 3b (Commit 0c0e1ee): Mappe 2 "Das Attentat von Sarajevo" live — 6 Materialien, 5 Aufgaben, 2 Bilder, Engine-Patch, mappe-2.html
 - Runde 3a-Opt: 6 Vertrags-Dateien extrahiert, ORCHESTRATOR + WORKFLOW aktualisiert, TAFELBILD_Mappe2.md erstellt, Goldstandard-Rolle redefiniert
 - Runde 3a-Eval: RUNDE_3a_ERGEBNIS.md — 8 Befunde, alle in 3a-Opt adressiert

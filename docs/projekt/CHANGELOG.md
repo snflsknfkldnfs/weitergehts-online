@@ -6,6 +6,21 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ## 2026-04-02
 
+### PM-Session 1+2: Plugin-Architektur-Evaluation + Plattform-Verifikation
+- **Phase:** PM-Infrastruktur (Tooling-Evaluation)
+- **Ausloeser:** Erste PM-Sessions im Cowork-Project. Statt sofortiger Architektur-Entscheidungen (E1-E5 DEFERRED) wurde PM-Infrastruktur-Verbesserung priorisiert.
+- **Marketplace-Analyse:** wshobson/agents (71 Plugins, 112 Agents, 129 Skills) gegen Projektbedarf evaluiert. 12 Patterns identifiziert (P1-P12), Architektur auf Escape-Game-Pipeline gemappt.
+- **7 Plugins installiert:** agent-teams, agent-orchestration, conductor, comprehensive-review, plugin-eval, documentation-generation, full-stack-orchestration.
+- **4/4 Plattform-Unbekannte geklaert:** (1) CC-Plugins in Cowork: VERIFIZIERT, (2) Subagent-Dateisystem-Zugriff: VERIFIZIERT (mat-2-1.json per Pfad gelesen), (3) Model-Tiering: VERIFIZIERT (Haiku-Agent gestartet), (4) Slash-Commands: VERIFIZIERT.
+- **3 Plugin-Funktionstests gegen Projekt-Artefakte:**
+  - agent-teams: 3 parallele Reviewer auf mat-2-1.json (Fachdidaktik, Engine-Kompatibilitaet, Sprachqualitaet). Strukturierte Befunde, Cross-Validierung.
+  - plugin-eval: Monolithischer Skill Score 3.61/5.0. Anti-Patterns: OVER_CONSTRAINED, 8 gebundelte Verantwortlichkeiten. Refactoring-Empfehlungen: Dispatcher+Referenz aufteilen, Output-Beispiele, Constraints abstufen.
+  - comprehensive-review: VERTRAG_PHASE_2-1 — 14 Findings (3 HIGH, 8 MEDIUM, 3 LOW). Spezifikationsreife 60/100. Spezifikationsluecken, nicht blockierend fuer manuellen Betrieb, relevant vor automatisiertem Subagent-Deployment.
+  - conductor: Projekt hat 70-80% Conductor-Struktur organisch. Selektive Adoption empfohlen, Volladoption = Overhead.
+- **Git-Sandbox-Grenzen dokumentiert:** git status/diff funktioniert, git add/commit/push erfordert User. COWORK_PROJECT_ANLEITUNG.md korrigiert.
+- **Aenderungen:** POOL_PM_INFRASTRUKTUR_ENHANCEMENTS.md (neu, ~450 Zeilen), COWORK_PROJECT_ANLEITUNG.md (Git-Sektion korrigiert), STATUS.md, CHANGELOG.md
+- **Naechster Schritt:** Entscheidung Produkt-Update vs. PM-Infrastruktur-Ausbau. E1-E5 weiterhin DEFERRED.
+
 ### PM-Infrastruktur: Cowork-Project Einrichtung + Uebergabe-Prompt
 - **Phase:** PM-Infrastruktur (Ebenen-Trennung PM vs. Produkt)
 - **Aufgabe:** Cowork-Project fuer Projektmanagement eingerichtet. Anweisungs-Prompt repo-versioniert statt direkt im Anweisungsfeld (Updatebarkeit). Uebergabe-Prompt fuer erste PM-Session erstellt.

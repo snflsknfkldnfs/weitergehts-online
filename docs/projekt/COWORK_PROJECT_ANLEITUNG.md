@@ -53,9 +53,9 @@ FILE-OWNERSHIP:
 - assets/, escape-games/, *.html (Root) = Claude-Code-Domaene. Nur via Uebergabe-Prompt aendern.
 
 GIT:
-- Cowork kann git status, git add, git commit selbst ausfuehren (via Bash-Tool).
-- NUR git push erfordert User-Ausfuehrung. Push-Befehle als kopierbaren Block generieren.
-- Vor jeder inhaltlichen Arbeit: git pull --ff-only ausfuehren.
+- Cowork kann git status und git diff selbst ausfuehren (via Bash-Tool).
+- git add, git commit und git push erfordern User-Ausfuehrung (Sandbox hat keine Schreibrechte auf .git/). Befehle als kopierbaren Block generieren.
+- Vor jeder inhaltlichen Arbeit: git pull --ff-only (User ausfuehren lassen).
 
 INTERAKTIONSMODUS:
 - Kein Filler, keine Emojis, keine Rueckfragen wenn der naechste Schritt eindeutig ist.
