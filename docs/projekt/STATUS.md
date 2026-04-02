@@ -1,15 +1,10 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
 **Letzte Aktualisierung:** 2026-04-02
-**Aktuelle Phase:** **v4 Produktionsarchitektur — Alle Audit-Massnahmen (M1-M9) implementiert. Bereit fuer Mappe 3.**
-**Letzter Arbeitsschritt:** M6+M7+M8 implementiert (Infrastruktur-Finalisierung):
-- M6: sicherung.json aufgesplittet — kernerkenntnisse entfernt (M8), hefteintrag_verweis-Text aktualisiert. Produktions-Artefakt rahmen/tafelbild.json → rahmen/hefteintrag.json umbenannt.
-- M7: Begriffe "Tafelbild" → "Hefteintrag" durchgaengig umbenannt. AGENT_TAFELBILD.md → AGENT_HEFTEINTRAG.md. GUETEKRITERIEN_TAFELBILD.md → GUETEKRITERIEN_HEFTEINTRAG_ENTWURF.md (G1-G14). GUETEKRITERIEN_HEFTEINTRAG.md → GUETEKRITERIEN_HEFTEINTRAG_PRODUKT.md (HE1-HE13). ~15 aktive Architekturdateien aktualisiert.
-- M8: Kernerkenntnisse-Dopplung eliminiert — Engine liest aus hefteintrag.scpl.loesung[] statt sicherung.kernerkenntnisse[]. Mappe-1-scpl.loesung auf 3-Item-Form migriert (M3b-Konformitaet).
-- Engine-Patch: escape-engine.js — sicherung.tafelbild → sicherung.hefteintrag, Kernerkenntnisse-Fallback-Kette aktualisiert.
-- Live-Daten: data.json (Mappe 1+2) + template/data.json migriert.
-**Naechster Schritt:** Audit-Befunde PF-1/PF-5/PF-6 implementiert. Infrastruktur vollstaendig koharent. Bereit fuer Mappe 3.
-**Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. Parallel noch offen: Engine-Fallback (Ueberleitung ID-Pattern), ARTEFAKT_INVENTAR Mappe 2 nachpflegen.
+**Aktuelle Phase:** **PM-Infrastruktur-Einrichtung — Cowork-Project angelegt, Anleitung + Uebergabe-Prompt erstellt.**
+**Letzter Arbeitsschritt:** Cowork-Project fuer Projektmanagement eingerichtet. COWORK_PROJECT_ANLEITUNG.md (repo-versionierter Anweisungs-Prompt) und UEBERGABE_COWORK_PROJECT_EINRICHTUNG.md (Kickoff fuer erste PM-Session) erstellt. UPGRADE_PLAN_v5_PLUGIN_ARCHITEKTUR.md als Langzeitvision dokumentiert. Ebenen-Trennung etabliert: PM-Project (Koordination) vs. Produktions-Sessions (ORCHESTRATOR) vs. Claude Code (Assembly).
+**Naechster Schritt:** Erste Session im Cowork-Project starten mit UEBERGABE_COWORK_PROJECT_EINRICHTUNG.md. Dort: Orientierung, Repo-Integritaet, uncommitted Changes committen, Architektur-Entscheidungen E1-E5 klaeren, naechste Schritte priorisieren.
+**Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. Engine-Fallback (Ueberleitung ID-Pattern), ARTEFAKT_INVENTAR Mappe 2 nachpflegen. Mappe 3 Phase-0/1-Artefakte + UPGRADE_PLAN_v5 + PM-Artefakte noch NICHT committed.
 
 **Abgeschlossen seit letztem Update:**
 - Runde 3b (Commit 0c0e1ee): Mappe 2 "Das Attentat von Sarajevo" live — 6 Materialien, 5 Aufgaben, 2 Bilder, Engine-Patch, mappe-2.html

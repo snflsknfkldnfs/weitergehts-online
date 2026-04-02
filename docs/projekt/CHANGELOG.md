@@ -6,6 +6,31 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ## 2026-04-02
 
+### PM-Infrastruktur: Cowork-Project Einrichtung + Uebergabe-Prompt
+- **Phase:** PM-Infrastruktur (Ebenen-Trennung PM vs. Produkt)
+- **Aufgabe:** Cowork-Project fuer Projektmanagement eingerichtet. Anweisungs-Prompt repo-versioniert statt direkt im Anweisungsfeld (Updatebarkeit). Uebergabe-Prompt fuer erste PM-Session erstellt.
+- **Ebenen-Trennung:** PM-Project (Koordination, Tracking, Audits) vs. Produktions-Sessions (ORCHESTRATOR steuert Game-Erstellung) vs. Claude Code (Assembly, Engine). PM-Instanz verwaltet Produkt-Dokumente, fuehrt aber keine Produktionslogik aus.
+- **Aenderungen:** docs/projekt/COWORK_PROJECT_ANLEITUNG.md (neu), docs/projekt/UEBERGABE_COWORK_PROJECT_EINRICHTUNG.md (neu), STATUS.md, CHANGELOG.md
+- **Naechster Schritt:** Erste Session im Cowork-Project mit UEBERGABE_COWORK_PROJECT_EINRICHTUNG.md starten.
+
+### UPGRADE_PLAN_v5: Plugin-Architektur fuer Game-Erstellungs-Infrastruktur
+- **Phase:** Architektur-Evaluation (Steuerungsschicht)
+- **Ausloeser:** Realgetreuer Produktionstest Mappe 3 offenbarte Luecke — ORCHESTRATOR.md ist Dokumentation, keine Runtime-Instanz. Produktionssessions benoetigen Kickoff-Prompts mit Extrakontext.
+- **Evaluation:** Plugin/Skill-Architektur analysiert. Harte Grenzen: kein erzwungenes Sequencing, kein Subagenten-Nesting, keine Transaktionssemantik. Weiche Grenzen mitigierbar via Convention-over-Configuration (STATUS.md als State-Machine, Fail-Safe bei Q-Gate-FAIL).
+- **Zielarchitektur:** escape-game-creator Plugin mit 9 Skills: 1 Dispatcher (liest STATUS.md, identifiziert naechste Phase, delegiert) + 7 Phasen-Skills (je 1 pro Vertrag) + 1 Session-Split-Skill.
+- **5 offene Architektur-Entscheidungen:** E1 (Trigger-Modus), E2 (Subagenten fuer Dispatches), E3 (Vertrag-zu-Skill manuell/generiert), E4 (Koexistenz mit monolithischem Skill), E5 (STATUS.md YAML-Frontmatter).
+- **Roadmap:** Phase A (PoC: Dispatcher + Rahmen-Skill) → Phase B (alle Phasen-Skills) → Phase C (Plugin-Packaging) → Phase D (Phase-0/1-Integration).
+- **Aenderungen:** docs/architektur/UPGRADE_PLAN_v5_PLUGIN_ARCHITEKTUR.md (neu), STATUS.md, CHANGELOG.md
+- **Naechster Schritt:** User-Validierung E1-E5. Dann: Phase A oder zuerst Mappe 3 mit bestehender Architektur.
+
+### Mappe 3 Produktionsvorbereitung (Phase 0 + Phase 1 + Kickoff)
+- **Phase:** Produktionsvorbereitung (vor Phase 2)
+- **TAFELBILD_Mappe3.md erstellt:** 6 Knoten (k3-1 bis k3-6), 5 Verbindungen, SCPL mit multiperspektivischem Ordnungsmuster, Stundenfrage "Waren die Menschen 1914 wirklich begeistert vom Krieg?", 3 Kernerkenntnisse, Q-Gate G1-G14 PASS.
+- **MATERIAL_GERUEST_Mappe3.md erstellt:** 5 Materialien (1 DT, 2 BQ, 1 QT, 1 TB), Erarbeitbarkeitsnachweis 6/6 Knoten + 5/5 Verbindungen, Zielklarheit-Pruefung, Einstieg + Sicherung + Ueberleitungs-Intentionen.
+- **Produktionsverzeichnis angelegt:** docs/agents/artefakte/produktion/gpg-erster-weltkrieg-ursachen/mappe-3/ (rahmen/, materialien/, aufgaben/)
+- **UEBERGABE_COWORK_MAPPE3_PRODUKTION.md erstellt:** Kickoff-Prompt fuer frische Cowork-Session. Enthaelt Read-Reihenfolge, Phasen-Sequenz (3 Sessions), Vertrags-/Qualitaetskriterien-/Subagenten-Verzeichnis, M8-Hinweise.
+- **Aenderungen:** TAFELBILD_Mappe3.md (neu), MATERIAL_GERUEST_Mappe3.md (neu), mappe-3/ Verzeichnis (neu), UEBERGABE_COWORK_MAPPE3_PRODUKTION.md (neu), STATUS.md, CHANGELOG.md
+
 ### Audit v4.2 Produktionskohaerenz: Briefing + Report + Implementierung
 - **Phase:** Pre-Produktion Audit (vor Mappe 3)
 - **Audit-Briefing:** 22 Pflichtlektuere-Dateien, 9 Prueffragen (PF-1 bis PF-9).

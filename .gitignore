@@ -1,2 +1,5 @@
 .DS_Store
 .Rhistory
+.claude/
+*.skill
+*.plugin
