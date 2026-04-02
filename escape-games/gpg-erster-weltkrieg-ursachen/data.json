@@ -572,7 +572,7 @@
           "id": "mat-2-1",
           "typ": "darstellungstext",
           "titel": "Warum schwelte es auf dem Balkan?",
-          "inhalt": "<p>Auf dem Balkan, im Südosten Europas, herrschen seit Jahren Spannungen. 1908 hat Österreich-Ungarn die Region Bosnien-Herzegowina <strong>annektiert</strong> (dem eigenen Staat einverleibt). Das Nachbarland Serbien protestiert heftig. Viele Serben träumen von einem gemeinsamen Staat aller Südslawen. In den Balkankriegen 1912 und 1913 wird Serbien stärker — Österreich-Ungarn fühlt sich bedroht.</p><p>Am 28. Juni 1914 besucht der österreichisch-ungarische Thronfolger Franz Ferdinand die bosnische Hauptstadt Sarajevo. Der 19-jährige Gavrilo Princip, ein bosnischer Serbe, erschießt ihn und seine Frau Sophie. Das <strong>Attentat</strong> (ein politisch geplanter Mordanschlag) erschüttert ganz Europa.</p><p>Doch warum führt ein Mord zu einem Weltkrieg? Hier ist eine Unterscheidung wichtig: Der <strong>Auslöser</strong> ist der konkrete Anlass — das Attentat. Die <strong>Ursachen</strong> sind die tieferliegenden Gründe: Bündnisse, Rivalitäten, Misstrauen. Ohne das Pulverfass aus Mappe 1 hätte der Funke keinen Brand ausgelöst.</p><cite>Quelle: Eigene Darstellung auf Basis der Sachanalyse (INHALTSBASIS)</cite>",
+          "inhalt": "<p>Auf dem Balkan, im Südosten Europas, herrschen seit Jahren Spannungen. 1908 hat Österreich-Ungarn die Region Bosnien-Herzegowina <strong>annektiert</strong> (dem eigenen Staat einverleibt). Das Nachbarland Serbien protestiert heftig. Viele Serben träumen von einem gemeinsamen Staat aller Südslawen. In den Balkankriegen 1912 und 1913 wird Serbien stärker — Österreich-Ungarn fühlt sich bedroht.</p><p>Am 28. Juni 1914 besucht der österreichisch-ungarische Thronfolger Franz Ferdinand die bosnische Hauptstadt Sarajevo. Der 19-jährige Gavrilo Princip, ein bosnischer Serbe, erschießt ihn und seine Frau Sophie. Das <strong>Attentat</strong> (ein politisch geplanter Mordanschlag) erschüttert ganz Europa.</p><p>Doch warum führt ein Mord zu einem Weltkrieg? Hier ist eine Unterscheidung wichtig: Der <strong>Auslöser</strong> ist der konkrete Anlass — das Attentat. Die <strong>Ursachen</strong> sind die tieferliegenden Gründe: Bündnisse, Rivalitäten, Misstrauen. Ohne das Pulverfass aus Mappe 1 hätte der Funke keinen Brand ausgelöst.</p><cite>Quelle: Eigene Darstellung auf Basis der Sachanalyse</cite>",
           "quelle": "Eigene Darstellung auf Basis der Sachanalyse",
           "lizenz": "",
           "position": 1,
@@ -686,7 +686,7 @@
         },
         {
           "id": "mat-2-6",
-          "typ": "quellentext",
+          "typ": "tagebuch",
           "titel": "Wie erlebte ein Bewohner Sarajevos den 28. Juni 1914?",
           "inhalt": "<p><em>Sarajevo, 28. Juni 1914</em></p><p>Heute Morgen war alles wie immer. Die Sonne brannte auf die Pflastersteine. Vor der Bäckerei roch es nach frischem Brot. Dragan, mein Nachbar, trank seinen Kaffee vor der Tür. Wir sprachen über das Wetter und über den hohen Besuch -- der Thronfolger Franz Ferdinand war in der Stadt.</p><p>Dann hörte ich Schüsse. Zwei Schüsse, ganz nah. Menschen schrien und rannten. Ein Junge neben mir sagte: \"Sie haben den Thronfolger erschossen!\" Ich konnte es nicht glauben. Wer tut so etwas?</p><p>Am Abend war die Stadt wie gelähmt. Soldaten patrouillierten durch die Gassen. Mein Freund Mehmed, ein Bosnier, sagte leise: \"Jetzt wird es schlimm für uns alle.\" Die Polizei verhaftete junge Serben auf der Straße. Ich bin kein Serbe, aber ich habe Angst. Diese Stadt hat so viele Spannungen erlebt seit der Annexion. Und jetzt das. Was wird aus uns?</p><cite>Fiktiver Tagebucheintrag, historisch plausibel. Kontext: Wikipedia, Assassination of Archduke Franz Ferdinand; Bosnian crisis</cite>",
           "quelle": "Fiktiver Tagebucheintrag, historisch plausibel. Kontext: Wikipedia, Assassination of Archduke Franz Ferdinand; Bosnian crisis",
@@ -1020,15 +1020,7 @@
               "Der Blankoscheck und das Ultimatum trieben die Julikrise zur Eskalation.",
               "Die Bündnispflichten machten aus einem Mord eine Kettenreaktion der Kriegserklärungen."
             ]
-          },
-          "transfer": {
-            "frage": "Kennst du einen heutigen Konflikt, bei dem Auslöser und Ursache verwechselt werden?"
-          },
-          "kernerkenntnisse": [
-            "Das Attentat von Sarajevo war der Auslöser des Ersten Weltkriegs, nicht seine Ursache.",
-            "Der Blankoscheck und das Ultimatum trieben die Julikrise zur Eskalation.",
-            "Die Bündnispflichten machten aus einem Mord eine Kettenreaktion der Kriegserklärungen."
-          ]
+          }
         },
         "kernerkenntnisse": [
           "Das Attentat von Sarajevo war der Auslöser des Ersten Weltkriegs, nicht seine Ursache.",

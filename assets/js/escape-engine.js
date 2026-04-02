@@ -2385,7 +2385,7 @@ var EscapeEngine = (function () {
       // Fallback: Loesung als Reihenfolge
       items = Array.isArray(aufgabe.loesung) ? aufgabe.loesung : (aufgabe.optionen || []);
     } else {
-      items = Core.utils.shuffleArray(aufgabe.optionen || []);
+      items = Core.utils.shuffleArray(aufgabe.optionen || aufgabe.elemente_ungeordnet || []);
     }
 
     for (var i = 0; i < items.length; i++) {
@@ -2487,7 +2487,7 @@ var EscapeEngine = (function () {
    */
   function _checkReihenfolge(section, aufgabe, index) {
     var items = section.querySelectorAll('.aufgabe__reihenfolge-item');
-    var expected = Array.isArray(aufgabe.loesung) ? aufgabe.loesung : aufgabe.optionen;
+    var expected = Array.isArray(aufgabe.loesung) ? aufgabe.loesung : (aufgabe.optionen || aufgabe.elemente_ungeordnet);
     var allCorrect = true;
 
     for (var i = 0; i < items.length; i++) {
@@ -2567,28 +2567,34 @@ var EscapeEngine = (function () {
    */
   function _checkFreitextCode(section, aufgabe, index, textarea) {
     var userText = (textarea.value || '').trim();
-    var expected = (aufgabe.loesung || '').trim();
 
     if (!userText) {
       Core.feedback.showInfo(section, 'Bitte gib eine Antwort ein.');
       return;
     }
 
-    // Fuzzy-Match (Umlaute, Levenshtein, Leerzeichen)
-    var isMatch = _fuzzyMatch(userText, expected);
+    var isCorrect = false;
 
-    // Fallback: indexOf-Check (Antwort enthaelt Loesung)
-    var isContained = !isMatch && expected.length > 0 &&
-      (userText.toLowerCase().indexOf(expected.toLowerCase()) !== -1);
+    if (Array.isArray(aufgabe.loesung)) {
+      // Keyword-Modus: ALLE Keywords muessen im Eingabetext vorkommen
+      var eingabeNorm = userText.toLowerCase();
+      isCorrect = aufgabe.loesung.every(function (keyword) {
+        var kwNorm = keyword.trim().toLowerCase();
+        return eingabeNorm.indexOf(kwNorm) !== -1 || _fuzzyMatch(eingabeNorm, kwNorm);
+      });
+    } else {
+      // String-Modus (Rueckwaertskompatibilitaet)
+      var expected = (aufgabe.loesung || '').trim();
+      // Fuzzy-Match (Umlaute, Levenshtein, Leerzeichen)
+      isCorrect = _fuzzyMatch(userText, expected);
+      // Fallback: indexOf-Check (Antwort enthaelt Loesung)
+      if (!isCorrect && expected.length > 0) {
+        isCorrect = userText.toLowerCase().indexOf(expected.toLowerCase()) !== -1;
+      }
+    }
 
-    if (isMatch) {
+    if (isCorrect) {
       Core.feedback.showSuccess(section, 'Richtig! ✅');
-      saveProgress(_state.mappeId, index, true);
-      _saveAntwortState(_state.mappeId, index, { text: userText });
-      section.classList.add('aufgabe--solved');
-      textarea.disabled = true;
-    } else if (isContained) {
-      Core.feedback.showSuccess(section, 'Richtig! ✅ (Deine Antwort enthält die gesuchte Lösung.)');
       saveProgress(_state.mappeId, index, true);
       _saveAntwortState(_state.mappeId, index, { text: userText });
       section.classList.add('aufgabe--solved');
