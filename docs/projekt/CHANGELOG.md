@@ -6,6 +6,34 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ## 2026-04-02
 
+### M6+M7+M8: Infrastruktur-Finalisierung (Dateistruktur + Begriffe + Engine)
+- **Phase:** Architektur-Optimierung (Audit Sicherungskette — Prioritaet 2+3, vollstaendig)
+- **M6 — sicherung.json Aufspaltung:** kernerkenntnisse-Feld entfernt (Dopplung mit scpl.loesung). hefteintrag_verweis-Text aktualisiert ("Tafelbild" → "Hefteintrag"). Produktions-Artefakt rahmen/tafelbild.json → rahmen/hefteintrag.json umbenannt. sicherung.json enthält nur noch: zusammenfassung, ueberleitung, reflexionsimpuls, hefteintrag_verweis, zitat.
+- **M7 — Begriffe "Tafelbild" → "Hefteintrag":** Durchgaengige Umbenennung. AGENT_TAFELBILD.md → AGENT_HEFTEINTRAG.md. GUETEKRITERIEN_TAFELBILD.md → GUETEKRITERIEN_HEFTEINTRAG_ENTWURF.md (G1-G14, Entwurfsqualitaet). GUETEKRITERIEN_HEFTEINTRAG.md → GUETEKRITERIEN_HEFTEINTRAG_PRODUKT.md (HE1-HE13, Produktqualitaet). ~15 aktive Architekturdateien aktualisiert (WORKFLOW_v4, UPGRADE_PLAN_v4, alle Vertraege, ORCHESTRATOR, AGENT_MATERIAL, AGENT_SKRIPT, AGENT_RAETSEL, Checklisten). Historische Dokumente (analyse/, uebergabe/) bewusst unveraendert.
+- **M8 — Kernerkenntnisse-Dopplung eliminiert:** Engine liest kernerkenntnisse primaer aus sicherung.hefteintrag.scpl.loesung[] (statt sicherung.kernerkenntnisse[]). Fallback-Kette fuer Legacy-Daten erhalten.
+- **Engine-Patch:** escape-engine.js — alle sicherung.tafelbild-Referenzen → sicherung.hefteintrag. Sticky-Header (U5) aktualisiert.
+- **Live-Daten-Migration:** data.json (Mappe 1+2) + template/data.json. Mappe-1 scpl.loesung von 1 Item auf 3 Items migriert (M3b-Konformitaet).
+- **Aenderungen:** escape-engine.js, data.json (live + template), AGENT_HEFTEINTRAG.md (umbenannt + Inhalt), AGENT_MATERIAL.md, AGENT_SKRIPT.md, AGENT_RAETSEL.md, ORCHESTRATOR.md, WORKFLOW_v4.md, UPGRADE_PLAN_v4.md, UPGRADE_PLAN_v3.md, alle 5 Vertraege, GUETEKRITERIEN_HEFTEINTRAG_ENTWURF.md (umbenannt + Inhalt), GUETEKRITERIEN_HEFTEINTRAG_PRODUKT.md (umbenannt), GUETEKRITERIEN_SEQUENZIERUNG.md, GUETEKRITERIEN_AUFGABEN.md, QUALITAETSKRITERIEN_MATERIALPRODUKTION.md, EVALUATION_SCPL_HEFTEINTRAG.md, DESIGNENTSCHEIDUNG_v3-1_HEFTEINTRAG.md, STATUS.md, CHANGELOG.md, rahmen/sicherung.json (Produktion), rahmen/hefteintrag.json (umbenannt)
+
+### M6/M9: GUETEKRITERIEN_HEFTEINTRAG_PRODUKT.md (HE1-HE13)
+- **Phase:** Architektur-Optimierung (Audit Sicherungskette — Prioritaet 2)
+- **Aufgabe:** Produktqualitaet-Kriterien fuer den fertigen Hefteintrag nach Phase 2.1c Achse-6-Revision.
+- **Dokument:** docs/checklisten/GUETEKRITERIEN_HEFTEINTRAG.md (neu). 13 Kriterien in 4 Sektionen: SCPL-Text-Qualitaet (HE1-HE4), zusammenfassung (HE5-HE7), ueberleitung (HE8-HE10), Lernprodukt-Qualitaet (HE11-HE13). 7 MUSS, 6 SOLL. Q-Gate-Protokoll-Template enthalten.
+- **Abgrenzung:** GUETEKRITERIEN_TAFELBILD.md (G1-G14) = Entwurfsqualitaet (Phase 0.4). Dieses Dokument = Produktqualitaet (Phase 2.1c+). Keine Redundanz.
+- **Execution-Order:** Stufe-2 Re-Evaluation (G3/G5/G10/G12/G14) → dann HE1-HE13 auf revidiertem Text.
+- **Querverweise:** AGENT_TAFELBILD.md Kanonische Referenzen, VERTRAG_PHASE_2-1c_CROSS.md Achse 6.
+- **Aenderungen:** GUETEKRITERIEN_HEFTEINTRAG.md (neu), AGENT_TAFELBILD.md, VERTRAG_PHASE_2-1c_CROSS.md, STATUS.md, CHANGELOG.md
+
+### Kategorie A: Infrastruktur-Optimierung (WORKFLOW_v4 + MQ6 + Skill)
+- **Phase:** Architektur-Optimierung (Infrastruktur-Haertung vor Mappe 3)
+- **Aufgabe:** WORKFLOW_v4.md kanonisch synchronisiert, M5 implementiert, Skill-Update vorbereitet.
+- **WORKFLOW_v4.md:** 13 gezielte Edits. TB-FREEZE → STRUKTUR-FREEZE/FORMULIERUNGS-OFFEN. Phase 2.1c von "4 Pruefachsen" auf "6 Achsen" aktualisiert (Phasenstruktur + Detailsektion). zusammenfassung-Placeholder in Artefakt-Verzeichnisstruktur + Phase 2.0. SCPL-Schritt in Phase 2.1 Read-Schritt 2.
+- **M5 — MQ6 Erarbeitbarkeits-Plausibilitaet:** C6 in QUALITAETSKRITERIEN_MATERIALPRODUKTION.md (Section 7 Content-Constraints). SOLL-Kriterium: Material muss SCPL-Schritt erarbeitbar machen, nicht nur formal abdecken. Status v2 → v2.1.
+- **Skill-Update:** Aktualisierte SKILL.md als docs/projekt/SKILL_UPDATE_projekt-website-v4.md generiert (Skills-Mount ist read-only). Enthaelt: Zwei-Stufen-Architektur, 6 Achsen, MQ6, zusammenfassung-Placeholder, SCPL-Schritt als Material-Input, STRUKTUR-FREEZE/FORMULIERUNGS-OFFEN im Session-Split.
+- **Verifikation:** 6/6 Konsistenz-Checks PASS (TB-FREEZE-Cleanup, 6-Achsen-Konsistenz, MQ6-Verankerung, Placeholder, SCPL-Input, Skill-Vollstaendigkeit).
+- **Aenderungen:** WORKFLOW_v4.md, QUALITAETSKRITERIEN_MATERIALPRODUKTION.md, STATUS.md, CHANGELOG.md, docs/projekt/SKILL_UPDATE_projekt-website-v4.md (neu)
+- **Naechster Schritt:** Skill-Update manuell einspielen. Dann M6-M9 oder Mappe 3.
+
 ### Implementierung M1-M4 + M1b: Zwei-Stufen-Architektur Sicherungskette
 - **Phase:** Architektur-Implementierung (Audit Sicherungskette — Prioritaet 1)
 - **Aufgabe:** 5 Massnahmen aus AUDIT_SICHERUNGSKETTE_ERGEBNIS.md implementiert. Loest SP-3 (Timing-Inversion), SP-4 (FREEZE zu restriktiv), SP-6 (Steuerungsrichtung).

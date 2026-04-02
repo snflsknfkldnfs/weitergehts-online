@@ -12,7 +12,7 @@
 | Read-Schritt | Input-Datei | Gelesene Felder | Zweck |
 |---|---|---|---|
 | 1 | materialien/mat-N-*.json (alle) | titel, inhalt, ueberleitung_von, fachbegriffe, _meta.tafelbild_knoten_abgedeckt | Cross-Pruefung + Ueberleitung-Kontext |
-| 2 | rahmen/tafelbild.json | knoten[], stundenfrage | TB-Gesamtabdeckung |
+| 2 | rahmen/hefteintrag.json | knoten[], stundenfrage | TB-Gesamtabdeckung |
 | 3 | MATERIAL_GERUEST | Sequenzreihenfolge, didaktische_funktion pro mat-ID, Ueberleitungen-Sektion | Soll-Ist-Vergleich + Ueberleitung-Intention |
 | 4 | rahmen/einstieg.json | problemstellung | Leitfrage als Ueberleitung-Anker fuer mat-1 |
 | 5 | rahmen/sicherung.json | kernerkenntnisse[], reflexionsimpuls, hefteintrag_verweis | Stufe-1-Felder fuer Achse 6 Kontext + Q-M2-09 Disjunktionspruefung |
@@ -82,7 +82,9 @@ Beide Vektoren muessen inhaltlich praezise auf die **konkreten produzierten Mate
 
 **Dokumentationspflicht:** Pro Aenderung: "SCPL-Schritt X: Formulierung geaendert von [...] zu [...]. Begruendung: Material Y liefert konkreten Kontext."
 
-**Stufe-2 Re-Evaluation (M1b):** Nach der Formulierungs-Revision werden G3, G5, G10, G12, G14 gegen die produzierten Materialien re-evaluiert (siehe GUETEKRITERIEN_TAFELBILD.md, Sektion 10). Bei FAIL: Nachbesserung der FORMULIERUNGS-OFFEN-Felder.
+**Stufe-2 Re-Evaluation (M1b):** Nach der Formulierungs-Revision werden G3, G5, G10, G12, G14 gegen die produzierten Materialien re-evaluiert (siehe GUETEKRITERIEN_HEFTEINTRAG_ENTWURF.md, Sektion 10). Bei FAIL: Nachbesserung der FORMULIERUNGS-OFFEN-Felder.
+
+**Produktqualitaet-Pruefung (HE1-HE13):** Nach der Stufe-2 Re-Evaluation wird der revidierte Hefteintrag gegen HE1-HE13 geprueft (siehe GUETEKRITERIEN_HEFTEINTRAG_PRODUKT.md). Reihenfolge: Erst Stufe-2, dann HE-Pruefung — HE operiert auf dem revidierten Text.
 
 **Q-M2-09 Disjunktionsregel** gilt weiterhin: reflexionsimpuls und kernerkenntnisse[] muessen inhaltlich disjunkt bleiben.
 **Q-M2-08 Quellenangabe-Hygiene** gilt weiterhin: Keine internen Artefakt-Namen in SuS-sichtbaren Texten.
@@ -91,7 +93,7 @@ Beide Vektoren muessen inhaltlich praezise auf die **konkreten produzierten Mate
 
 ```
 1. Alle materialien/mat-N-*.json lesen (P1)
-2. rahmen/tafelbild.json lesen (P1)
+2. rahmen/hefteintrag.json lesen (P1)
 3. MATERIAL_GERUEST lesen (P1) — inkl. Ueberleitungen-Sektion als Intentionsvorlage
 4. rahmen/einstieg.json lesen (P1) — problemstellung als Kontext fuer mat-1
 5. rahmen/sicherung.json lesen (P1) — Stufe-1-Felder (kernerkenntnisse, reflexionsimpuls, hefteintrag_verweis)
@@ -102,14 +104,14 @@ Beide Vektoren muessen inhaltlich praezise auf die **konkreten produzierten Mate
    c. Zwei-Vektoren-Bruecke formulieren (UE-1 bis UE-5 pruefen)
 8. ueberleitungen.json schreiben (siehe Output)
 9. Achse 6: Hefteintrag-Revision
-   a. SCPL-Texte aus tafelbild.json gegen Materialien abgleichen
+   a. SCPL-Texte aus hefteintrag.json gegen Materialien abgleichen
    b. FORMULIERUNGS-OFFEN-Felder revidieren (Regelwerk beachten)
    c. zusammenfassung erstmalig produzieren (material-aware, G10)
    d. ueberleitung (Mappe-zu-Mappe) erstmalig produzieren
    e. Stufe-2 Re-Evaluation (G3, G5, G10, G12, G14)
    f. Aenderungs-Dokumentation erstellen
 10. rahmen/sicherung.json aktualisieren (zusammenfassung, ueberleitung ergaenzen)
-11. rahmen/tafelbild.json SCPL-Text-Patches schreiben (NUR Formulierung, NICHT Struktur)
+11. rahmen/hefteintrag.json SCPL-Text-Patches schreiben (NUR Formulierung, NICHT Struktur)
 12. Bei Achsen 1-4 PASS + Achse 5 produziert + Achse 6 revidiert: Ergebnis in Q-GATE-LOG.md
 13. Bei FAIL (Achsen 1-4): Betroffene Materialien + Finding dokumentieren
     → User entscheidet ueber Nachbesserung oder Akzeptanz
@@ -145,7 +147,7 @@ Ablage: `docs/agents/artefakte/produktion/[game-id]/mappe-[N]/ueberleitungen.jso
 
 **rahmen/sicherung.json (aktualisiert):** zusammenfassung und ueberleitung werden ergaenzt (waren in Phase 2.0 als Placeholder angelegt).
 
-**rahmen/tafelbild.json (SCPL-Text-Patches):** NUR FORMULIERUNGS-OFFEN-Felder werden aktualisiert (situation.kontextsatz, complication[].schritt, problem.satz). STRUKTUR-FREEZE-Felder bleiben unangetastet. Aenderungs-Dokumentation im Q-GATE-LOG.md.
+**rahmen/hefteintrag.json (SCPL-Text-Patches):** NUR FORMULIERUNGS-OFFEN-Felder werden aktualisiert (situation.kontextsatz, complication[].schritt, problem.satz). STRUKTUR-FREEZE-Felder bleiben unangetastet. Aenderungs-Dokumentation im Q-GATE-LOG.md.
 
 ## Session-Split
 

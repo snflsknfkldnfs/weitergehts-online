@@ -1,7 +1,7 @@
-# Guetekriterien Tafelbild/Hefteintrag
+# Guetekriterien Hefteintrag — Entwurfsqualitaet (G1-G14)
 
 **Datum:** 2026-03-26
-**Status:** v1 — empirisch fundiert, bereit fuer AGENT_TAFELBILD
+**Status:** v1 — empirisch fundiert, bereit fuer AGENT_HEFTEINTRAG
 **Quellen:**
 - DG B2 Tafelbild.pdf (Bauer/Hartmann, Bausteinskript Fachdidaktik)
 - 8 Excalidraw-Tafelbilder aus Silas' 1.WK-Sequenz (GPG7, 9 UEs)
@@ -25,9 +25,9 @@ Das Tafelbild ist kein Zusammenfassungstext. Es ist eine **strukturierte Visuali
 
 Im realen Unterricht entsteht das Tafelbild AM ENDE der Stunde: Schueler:innen erarbeiten Inhalte → Lehrkraft strukturiert Erkenntnisse an der Tafel → Schueler:innen uebertragen ins Heft.
 
-Im **Designprozess** folgt AGENT_TAFELBILD dem gleichen Prinzip — es arbeitet auf dem bereits didaktisierten Narrativ:
+Im **Designprozess** folgt AGENT_HEFTEINTRAG dem gleichen Prinzip — es arbeitet auf dem bereits didaktisierten Narrativ:
 1. AGENT_SKRIPT (Phase 0.3) schreibt das didaktisierte Narrativ (600-900 W/Chunk) frei entlang DIDAKTIK_RAHMEN
-2. AGENT_TAFELBILD (Phase 0.4) **extrahiert** aus dem SKRIPT die Quintessenz: Kernerkenntnisse, Ordnungsmuster, Knoten-Struktur
+2. AGENT_HEFTEINTRAG (Phase 0.4) **extrahiert** aus dem SKRIPT die Quintessenz: Kernerkenntnisse, Ordnungsmuster, Knoten-Struktur
 3. AGENT_MATERIAL stellt sicher, dass jeder TB-Knoten durch konkretes Material **erarbeitbar** wird
 
 Backward Design (Wiggins/McTighe) gilt auf KE-Ebene: DIDAKTIK_RAHMEN definiert Lernziele vor allem anderen. Auf TB-Ebene ist die Synthese-Extraktion aus dem didaktisierten SKRIPT die staerkere Architektur, weil Erarbeitbarkeit gegen das tatsaechliche Narrativ geprueft wird, nicht gegen Roh-Fakten (vgl. E5 in UPGRADE_PLAN_v3.md).
@@ -103,13 +103,13 @@ Zentraler Befund: Die **analytischen Kategorien der Erarbeitungsmaterialien** sp
 | 6 (Heimatfront) | Film + Beobachtungsbogen (Essen, Frauenarbeit, Stimmung) | Kategorien: Versorgungskrise, Arbeitswelt, Soziale Folgen |
 | 8 (Kriegsende) | 4 Arbeitsblaetter (Militaer, USA, Erschoepfung, Revolution) | 4 Punkte mit Unterbullets unter exakt diesen Kategorien |
 
-**Konsequenz fuer AGENT_TAFELBILD:** Jedes Tafelbild-Element muss einem geplanten Material zuordbar sein. Die Tafelbild-Struktur determiniert die Material-Struktur — nicht umgekehrt.
+**Konsequenz fuer AGENT_HEFTEINTRAG:** Jedes Tafelbild-Element muss einem geplanten Material zuordbar sein. Die Tafelbild-Struktur determiniert die Material-Struktur — nicht umgekehrt.
 
 ---
 
 ## 5. Guetekriterien-Katalog
 
-Gewichtete Kriterien fuer den AGENT_TAFELBILD Q-Gate. Drei Prioritaetsstufen: **MUSS** (Verletzung = FAIL), **SOLL** (Verletzung = Nachbesserung), **KANN** (Empfehlung).
+Gewichtete Kriterien fuer den AGENT_HEFTEINTRAG Q-Gate. Drei Prioritaetsstufen: **MUSS** (Verletzung = FAIL), **SOLL** (Verletzung = Nachbesserung), **KANN** (Empfehlung).
 
 ### MUSS-Kriterien
 
@@ -142,7 +142,7 @@ Gewichtete Kriterien fuer den AGENT_TAFELBILD Q-Gate. Drei Prioritaetsstufen: **
 
 ---
 
-## 6. Output-Format fuer AGENT_TAFELBILD (v3.1 — SCPL)
+## 6. Output-Format fuer AGENT_HEFTEINTRAG (v3.1 — SCPL)
 
 ### JSON-Repraesentation (fuer Engine → CSS-Hefteintrag)
 
@@ -239,7 +239,7 @@ Kanonische Referenz fuer Stilregeln: `docs/architektur/EVALUATION_SCPL_HEFTEINTR
 
 ## 8. Q-Gate-Operationalisierung (maschinell pruefbar)
 
-Konkrete Prueflogik fuer jedes Kriterium, damit AGENT_TAFELBILD das Q-Gate autonom ausfuehren kann.
+Konkrete Prueflogik fuer jedes Kriterium, damit AGENT_HEFTEINTRAG das Q-Gate autonom ausfuehren kann.
 
 ### G1: Lernziel-Kongruenz (MUSS)
 
@@ -417,13 +417,13 @@ Die Guetekriterien G1-G14 werden in Phase 0.4 (Stufe 1) erstmalig gegen den Plan
 
 ### Operationalisierung
 
-Die Stufe-2 Re-Evaluation erfolgt im selben Dispatch wie Achse 6 (Hefteintrag-Revision) in VERTRAG_PHASE_2-1c_CROSS.md. Input: alle materialien/mat-N-*.json + rahmen/tafelbild.json (Stufe-1-Output). Bei FAIL eines Stufe-2-Kriteriums: Begruendung in Q-GATE-LOG.md + Nachbesserung der FORMULIERUNGS-OFFEN-Felder (NICHT der STRUKTUR-FREEZE-Felder).
+Die Stufe-2 Re-Evaluation erfolgt im selben Dispatch wie Achse 6 (Hefteintrag-Revision) in VERTRAG_PHASE_2-1c_CROSS.md. Input: alle materialien/mat-N-*.json + rahmen/hefteintrag.json (Stufe-1-Output). Bei FAIL eines Stufe-2-Kriteriums: Begruendung in Q-GATE-LOG.md + Nachbesserung der FORMULIERUNGS-OFFEN-Felder (NICHT der STRUKTUR-FREEZE-Felder).
 
 **Nicht re-evaluiert** werden: G1 (Lernziel-Kongruenz — KE-Matrix stabil), G2 (Reduktion — Knotenanzahl stabil), G4 (Strukturklarheit — Ordnungsmuster stabil), G6 (Hefteintrag-Transfer — Wortanzahl stabil), G7-G9, G11, G13 (unveraendert nach Phase 0.4).
 
 ---
 
-## 11. Abgrenzung: Was AGENT_TAFELBILD NICHT tut
+## 11. Abgrenzung: Was AGENT_HEFTEINTRAG NICHT tut
 
 | Nicht-Zustaendigkeit | Zustaendig |
 |---|---|

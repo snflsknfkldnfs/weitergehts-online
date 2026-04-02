@@ -3,7 +3,7 @@
 **Datum:** 2026-03-26 (aktualisiert: Architektur-Revision — TB nach SKRIPT)
 **Status:** Phase v3-3 abgeschlossen (WORKFLOW + AGENT_MATERIAL + ORCHESTRATOR angepasst). Phase v3-4 (Engine-Erweiterung) bereit.
 **Kern-These:** Das Tafelbild ist die Quintessenz des Lernzuwachses pro Mappe. Es verdient einen eigenen Agenten, ein eigenes Guete-Framework und eine Doppel-Repraesentation (digital + analog).
-**Empirische Basis:** DG B2 Tafelbild.pdf (10 Grundsaetze), 8 Excalidraw-TBs + 8 Verlaufsplaene aus Silas' 1.WK-Sequenz (exakt unser Thema). Synthese in `docs/checklisten/GUETEKRITERIEN_TAFELBILD.md`.
+**Empirische Basis:** DG B2 Tafelbild.pdf (10 Grundsaetze), 8 Excalidraw-TBs + 8 Verlaufsplaene aus Silas' 1.WK-Sequenz (exakt unser Thema). Synthese in `docs/checklisten/GUETEKRITERIEN_HEFTEINTRAG_ENTWURF.md`.
 
 ---
 
@@ -48,7 +48,7 @@ Phase 0: INHALTSGERUEST
 0.2b AGENT_ARTEFAKT     → Artikelbasierte Artefakt-Sichtung, ARTEFAKT_INVENTAR
 0.3  AGENT_SKRIPT       → Lineares Skript (erweitert: 600-900 W/Chunk)
      User-Validierung: PFLICHT
-0.4  AGENT_TAFELBILD    → Tafelbild pro Mappe (JSON + Hefteintrag)        ← NEU
+0.4  AGENT_HEFTEINTRAG    → Tafelbild pro Mappe (JSON + Hefteintrag)        ← NEU
 ```
 
 **Architektur-Begruendung fuer TB nach SKRIPT:**
@@ -60,18 +60,18 @@ Fruehere Architektur (TB vor SKRIPT, Backward Design) wurde verworfen, weil: (1)
 
 | Aspekt | v2.1 | v3 |
 |---|---|---|
-| Tafelbild-Entstehung | AGENT_SKRIPT (Nebenprodukt) | AGENT_TAFELBILD (eigenstaendig, Phase 0.4) |
+| Tafelbild-Entstehung | AGENT_SKRIPT (Nebenprodukt) | AGENT_HEFTEINTRAG (eigenstaendig, Phase 0.4) |
 | Tafelbild-Position | Im Skript (Aufgabe 5) | Nach Skript — extrahiert Quintessenz aus didaktisiertem Text |
 | Tafelbild-Format | Nur JSON (knoten/verbindungen) | JSON + Hefteintrag-Text (dual) |
 | AGENT_SKRIPT | Erstellt Tafelbild-Entwurf | Aufgabe 5 entfaellt — SKRIPT wird ausfuehrlicher (600-900 W/Chunk) |
-| AGENT_TAFELBILD | Nicht vorhanden | Synthese-Extrakt aus SKRIPT — wird Zielstruktur fuer MATERIAL |
+| AGENT_HEFTEINTRAG | Nicht vorhanden | Synthese-Extrakt aus SKRIPT — wird Zielstruktur fuer MATERIAL |
 | AGENT_MATERIAL | Detailliert Tafelbild | Verifiziert TB-Abdeckung — Tafelbild ist kanonisch |
 | Guetekriterien | Implizit (3-8 Knoten) | Explizit, empirisch fundiert (G1-G13) |
 | Rueckkopplung | Keine | Skript → Tafelbild → Material → Aufgaben (durchgehende Traceability) |
 
 ---
 
-## 3. AGENT_TAFELBILD: Grobentwurf
+## 3. AGENT_HEFTEINTRAG: Grobentwurf
 
 ### Rolle
 
@@ -84,7 +84,7 @@ Erstellt pro Mappe ein Tafelbild als Sicherungsinstrument, das die Quintessenz d
 | SKRIPT_[game-id].md | Phase 0.3 (didaktisiertes Narrativ, 600-900 W/Chunk, Artefakt-Zuordnungen) |
 | DIDAKTIK_RAHMEN | Phase 0.1 (KE-Matrix, Mappen-Struktur, Sicherungsziel pro Mappe) |
 | ARTEFAKT_INVENTAR | Phase 0.2b (qualifizierte Artefakte mit Knoten-Zuordnung) |
-| GUETEKRITERIEN_TAFELBILD | Kanonische Referenz (aus Artefakt-Auswertung, siehe Phase v3-0) |
+| GUETEKRITERIEN_HEFTEINTRAG_ENTWURF | Kanonische Referenz (aus Artefakt-Auswertung, siehe Phase v3-0) |
 | Vorheriges Tafelbild | (Ab Mappe 2) JSON des vorherigen Tafelbilds — fuer Progression (G9) |
 
 ### Output (Dual)
@@ -124,7 +124,7 @@ Umfang: max. halbe DIN-A5-Seite (~80-120 Woerter)
 
 ### Q-Gate
 
-Kanonische Referenz: `docs/checklisten/GUETEKRITERIEN_TAFELBILD.md` — 13 Kriterien (G1-G13), empirisch fundiert in Phase v3-0.
+Kanonische Referenz: `docs/checklisten/GUETEKRITERIEN_HEFTEINTRAG_ENTWURF.md` — 13 Kriterien (G1-G13), empirisch fundiert in Phase v3-0.
 
 | Prio | Kriterien | Zusammenfassung |
 |---|---|---|
@@ -132,7 +132,7 @@ Kanonische Referenz: `docs/checklisten/GUETEKRITERIEN_TAFELBILD.md` — 13 Krite
 | **SOLL** | G7-G10 | Merksatz-Abschluss, Anschaulichkeit, Progression, Rekapitulierbarkeit |
 | **KANN** | G11-G13 | Vermutungs-Sektion, Sprachregister-Passung, Stundenfrage als Titel |
 
-Maschinelle Prueflogik pro Kriterium: siehe Abschnitt 8 in GUETEKRITERIEN_TAFELBILD.md.
+Maschinelle Prueflogik pro Kriterium: siehe Abschnitt 8 in GUETEKRITERIEN_HEFTEINTRAG_ENTWURF.md.
 
 **Begriffsklaerung `kernerkenntnisse` vs. `merksatz`:**
 - `kernerkenntnisse[]` = Array auf Tafelbild-Ebene: 1-3 uebergreifende Saetze, die die Quintessenz der ganzen Mappe zusammenfassen (erscheinen im "Merke:"-Block des Hefteintrags)
@@ -146,11 +146,11 @@ Maschinelle Prueflogik pro Kriterium: siehe Abschnitt 8 in GUETEKRITERIEN_TAFELB
 
 | Aspekt | v2.1 | v3 |
 |---|---|---|
-| Aufgabe 5 (Tafelbild-Entwurf) | Eigenstaendig erstellen | **ENTFAELLT** — Tafelbild wird von AGENT_TAFELBILD aus dem SKRIPT extrahiert |
+| Aufgabe 5 (Tafelbild-Entwurf) | Eigenstaendig erstellen | **ENTFAELLT** — Tafelbild wird von AGENT_HEFTEINTRAG aus dem SKRIPT extrahiert |
 | Wortbudget | 400-600 Woerter pro Chunk | **600-900 Woerter pro Chunk** — mehr Substanz fuer TB-Extraktion und Material-Ableitung |
 | Neue Eingabe | — | Keine neue Eingabe — SKRIPT arbeitet weiterhin auf INHALTSBASIS + DIDAKTIK_RAHMEN |
 | Ausgabe-Template | Enthaelt Tafelbild-Entwurf-Sektion | Tafelbild-Entwurf-Sektion **entfaellt** |
-| Q-Gate | Q6 "Tafelbild-Entwurf vorhanden" | Q6 **entfaellt** (TB-Qualitaet wird von AGENT_TAFELBILD geprueft) |
+| Q-Gate | Q6 "Tafelbild-Entwurf vorhanden" | Q6 **entfaellt** (TB-Qualitaet wird von AGENT_HEFTEINTRAG geprueft) |
 
 ### AGENT_MATERIAL (mittlere Aenderung)
 
@@ -162,7 +162,7 @@ Maschinelle Prueflogik pro Kriterium: siehe Abschnitt 8 in GUETEKRITERIEN_TAFELB
 
 ### AGENT_DIDAKTIK (geringe Aenderung)
 
-Keine strukturelle Aenderung. Aber: DIDAKTIK_RAHMEN sollte pro Mappe ein **Sicherungsziel** explizit benennen (1 Satz: "SuS sollen nach dieser Mappe ..."), das AGENT_TAFELBILD als Leitplanke erhaelt.
+Keine strukturelle Aenderung. Aber: DIDAKTIK_RAHMEN sollte pro Mappe ein **Sicherungsziel** explizit benennen (1 Satz: "SuS sollen nach dieser Mappe ..."), das AGENT_HEFTEINTRAG als Leitplanke erhaelt.
 
 ### Materialtyp-Subagenten (keine Aenderung)
 
@@ -198,17 +198,17 @@ Subagenten bleiben unveraendert. Ihre `tafelbild_knoten_abgedeckt`-Zuordnung ref
 - **Design-Inversion revidiert:** Backward Design gilt auf Ebene der KE-Definition (DIDAKTIK_RAHMEN), nicht auf Ebene der TB-Erstellung. TB entsteht nach SKRIPT als Synthese-Extrakt (vgl. E5)
 - Leitsatz DG B2: "Tafelbild + Hefteintrag = bleibende Lernessenz einer UE"
 
-**Output:** `docs/checklisten/GUETEKRITERIEN_TAFELBILD.md` — 13 gewichtete Kriterien (6 MUSS, 4 SOLL, 3 KANN), Q-Gate-Protokoll, Output-Format (JSON + Hefteintrag), Referenz-TB Mappe 1
+**Output:** `docs/checklisten/GUETEKRITERIEN_HEFTEINTRAG_ENTWURF.md` — 13 gewichtete Kriterien (6 MUSS, 4 SOLL, 3 KANN), Q-Gate-Protokoll, Output-Format (JSON + Hefteintrag), Referenz-TB Mappe 1
 
-### Phase v3-1: AGENT_TAFELBILD erstellen ✅ ABGESCHLOSSEN
+### Phase v3-1: AGENT_HEFTEINTRAG erstellen ✅ ABGESCHLOSSEN
 
 **Abhaengigkeit:** Phase v3-0 abgeschlossen (Guetekriterien liegen vor)
 
 **Vorgehen:**
-1. `docs/agents/AGENT_TAFELBILD.md` geschrieben (Rolle, Eingabe, Aufgaben, Output dual, Q-Gate aus GUETEKRITERIEN)
+1. `docs/agents/AGENT_HEFTEINTRAG.md` geschrieben (Rolle, Eingabe, Aufgaben, Output dual, Q-Gate aus GUETEKRITERIEN)
 2. Output-Template definiert: `TAFELBILD_[game-id]_Mappe[N].md`
 
-**Output:** `docs/agents/AGENT_TAFELBILD.md`
+**Output:** `docs/agents/AGENT_HEFTEINTRAG.md`
 
 ### Phase v3-2: AGENT_SKRIPT anpassen ✅ ABGESCHLOSSEN
 
@@ -228,7 +228,7 @@ Subagenten bleiben unveraendert. Ihre `tafelbild_knoten_abgedeckt`-Zuordnung ref
 **Abhaengigkeit:** Phase v3-2 abgeschlossen
 
 **Vorgehen:**
-1. WORKFLOW_v2.md → v3: Phase 0.4 AGENT_TAFELBILD eingefuegt, Phase 0.3 SKRIPT aktualisiert (kein TB-Entwurf, 600-900 W), Phase 1 MATERIAL aktualisiert (TB fixiert)
+1. WORKFLOW_v2.md → v3: Phase 0.4 AGENT_HEFTEINTRAG eingefuegt, Phase 0.3 SKRIPT aktualisiert (kein TB-Entwurf, 600-900 W), Phase 1 MATERIAL aktualisiert (TB fixiert)
 2. AGENT_MATERIAL.md: Aufgabe 1.1 (Tafelbild detaillieren) → Tafelbild-Abdeckung verifizieren (TB-FREEZE). Aufgabe 1.5 → Erarbeitbarkeits-Dokumentation (TB-Abdeckungs-Nachweis). Sicherung → Hefteintrag-Verweis + Reflexionsimpuls. Produktions-Modus 2.2 → TB uebernehmen statt produzieren.
 3. ORCHESTRATOR.md: Agenten-Sequenz auf 8 Agenten aktualisiert, Phase 0.4 eingefuegt, Ausfuehrungsorte + Ruecklauf-Zuordnung + Referenz-Dokumente ergaenzt
 4. DIDAKTIK_RAHMEN-Template: Sicherungsziel pro Mappe — wird bei Erstdurchlauf ergaenzt (kein separater Template-Fix noetig)
@@ -254,7 +254,7 @@ Subagenten bleiben unveraendert. Ihre `tafelbild_knoten_abgedeckt`-Zuordnung ref
 **Abhaengigkeit:** Phase v3-4 abgeschlossen
 
 **Vorgehen:**
-1. AGENT_TAFELBILD auf Mappe 1 laufen lassen (Retrospektiv-Test)
+1. AGENT_HEFTEINTRAG auf Mappe 1 laufen lassen (Retrospektiv-Test)
 2. Ergebnis vergleichen: v2.1-Tafelbild (6 Knoten, kein Hefteintrag) vs. v3-Tafelbild
 3. Pruefen: Ist der Hefteintrag in ≤5 min ins Heft uebertragbar? Deckt er die KE ab?
 4. Learnings dokumentieren
@@ -278,8 +278,8 @@ Das Tafelbild ist nach Q-Gate PASS **eingefroren**. Folgende Regel gilt fuer AGE
 
 | Regel | Beschreibung |
 |---|---|
-| **TB-FREEZE** | Nach Q-Gate PASS in AGENT_TAFELBILD darf AGENT_MATERIAL keine Knoten hinzufuegen, entfernen oder inhaltlich aendern |
-| **Erlaubte Aenderung** | AGENT_TAFELBILD setzt `skript_referenz` direkt bei Erstellung (da SKRIPT bereits vorliegt) |
+| **TB-FREEZE** | Nach Q-Gate PASS in AGENT_HEFTEINTRAG darf AGENT_MATERIAL keine Knoten hinzufuegen, entfernen oder inhaltlich aendern |
+| **Erlaubte Aenderung** | AGENT_HEFTEINTRAG setzt `skript_referenz` direkt bei Erstellung (da SKRIPT bereits vorliegt) |
 | **Eskalationspfad** | Wenn AGENT_MATERIAL feststellt, dass ein Tafelbild-Knoten nicht durch Material erarbeitbar ist: `[TB-REVISION NOETIG: kN-M — Grund: ...]` markieren → User-Entscheidung erforderlich |
 | **Keine stille Aenderung** | Kein Agent darf das Tafelbild-JSON ohne explizite User-Validierung modifizieren |
 
@@ -287,8 +287,8 @@ Das Tafelbild ist nach Q-Gate PASS **eingefroren**. Folgende Regel gilt fuer AGE
 
 | # | Frage | Optionen | Entscheidung |
 |---|---|---|---|
-| E1 | Soll AGENT_TAFELBILD ein eigenstaendiger Agent (eigene MD-Datei) oder ein Subagent (SUB_TAFELBILD) sein? | Agent: eigenstaendig, eigenes Q-Gate. Subagent: Teil von AGENT_SKRIPT oder AGENT_MATERIAL. | **ENTSCHIEDEN: Eigenstaendiger Agent** — Phase 0.4, nach SKRIPT. Begruendung: Eigenes Q-Gate (G1-G13), dualer Output, steuert MATERIAL. |
-| E2 | Sollen Kernerkenntnisse/Merksaetze vom AGENT_TAFELBILD oder vom AGENT_SKRIPT formuliert werden? | TAFELBILD: mit narrativem Kontext (SKRIPT liegt vor). SKRIPT: muesste Sicherungsziele antizipieren. | **ENTSCHIEDEN: TAFELBILD** — Empirisch belegt: 6/8 Praxis-TBs haben Merksaetze. TB hat jetzt vollen narrativen Kontext aus SKRIPT. |
+| E1 | Soll AGENT_HEFTEINTRAG ein eigenstaendiger Agent (eigene MD-Datei) oder ein Subagent (SUB_TAFELBILD) sein? | Agent: eigenstaendig, eigenes Q-Gate. Subagent: Teil von AGENT_SKRIPT oder AGENT_MATERIAL. | **ENTSCHIEDEN: Eigenstaendiger Agent** — Phase 0.4, nach SKRIPT. Begruendung: Eigenes Q-Gate (G1-G13), dualer Output, steuert MATERIAL. |
+| E2 | Sollen Kernerkenntnisse/Merksaetze vom AGENT_HEFTEINTRAG oder vom AGENT_SKRIPT formuliert werden? | TAFELBILD: mit narrativem Kontext (SKRIPT liegt vor). SKRIPT: muesste Sicherungsziele antizipieren. | **ENTSCHIEDEN: TAFELBILD** — Empirisch belegt: 6/8 Praxis-TBs haben Merksaetze. TB hat jetzt vollen narrativen Kontext aus SKRIPT. |
 | E5 | Soll TB vor oder nach SKRIPT stehen? | Vor SKRIPT: Backward Design, TB als Zielstruktur. Nach SKRIPT: TB als Synthese-Extrakt, Erarbeitbarkeit natuerlich gegeben. | **ENTSCHIEDEN: Nach SKRIPT (Phase 0.4)** — Erarbeitbarkeit gegen SKRIPT statt gegen INHALTSBASIS pruefen. SKRIPT schreibt frei, TB extrahiert. Material basiert auf SKRIPT, nicht auf INHALTSBASIS. |
 | E3 | Welche Artefakte soll der User fuer Phase v3-0 bereitstellen? | DG B2 liegt vor. User hat weitere angekuendigt. | **ERLEDIGT** — DG B2 + 8 Excalidraw-TBs + 8 Verlaufsplaene aus Silas' 1.WK-Sequenz ausgewertet. User kann weitere nachliefern, Basis genuegt fuer v3-1. |
 | E4 | Soll die Engine das Tafelbild als druckbaren Hefteintrag rendern (Print-CSS)? | Ja (voller Analogtransfer). Nein (Hefteintrag nur im Prompt/Markdown). | **Offen — Scope-Entscheidung. Empfehlung: Ja, aber als Phase v3-4 (nicht blockierend fuer v3-1 bis v3-3)** |
@@ -299,9 +299,9 @@ Das Tafelbild ist nach Q-Gate PASS **eingefroren**. Folgende Regel gilt fuer AGE
 
 | Datei | Aenderung | Phase |
 |---|---|---|
-| `docs/checklisten/GUETEKRITERIEN_TAFELBILD.md` | NEU — Empirische Guetekriterien | v3-0 |
+| `docs/checklisten/GUETEKRITERIEN_HEFTEINTRAG_ENTWURF.md` | NEU — Empirische Guetekriterien | v3-0 |
 | `docs/checklisten/GUETEKRITERIEN_SKRIPT.md` | NEU — Fachdidaktische Guetekriterien SK1-SK15 (Vergegenwärtigung, Elementarisierung, Gestaltungsprinzipien) | v3-0+ |
-| `docs/agents/AGENT_TAFELBILD.md` | NEU — Eigenstaendiger Agent | v3-1 |
+| `docs/agents/AGENT_HEFTEINTRAG.md` | NEU — Eigenstaendiger Agent | v3-1 |
 | `docs/agents/AGENT_SKRIPT.md` | AENDERN — Aufgabe 5 entfernen, Wortbudget 600-900, Q6 entfernen, Stufe-2-Q-Gate (SK1-SK15) | v3-2 |
 | `docs/architektur/WORKFLOW_v2.md` (v3) | IN-PLACE aktualisiert — Phase 0.4 eingefuegt, SKRIPT/MATERIAL aktualisiert | v3-3 |
 | `docs/agents/AGENT_MATERIAL.md` | AENDERN — Tafelbild fixiert, nur Verifizierung | v3-3 |

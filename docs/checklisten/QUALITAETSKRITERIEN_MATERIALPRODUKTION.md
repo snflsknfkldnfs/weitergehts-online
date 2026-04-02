@@ -1,7 +1,7 @@
 # Qualitaetskriterien Materialproduktion
 
 **Datum:** 2026-03-29
-**Status:** v2 — fachdidaktisch fundiert (9 PDFs), bereit fuer SUB_MATERIAL_*. v1→v2: M9 Kontroversitaet, BQ-7/BQ-8, ZL-6, KA-7, QT-5 Quellentypologie, DT-1 Kausalitaetstypen
+**Status:** v2.1 — fachdidaktisch fundiert (9 PDFs), bereit fuer SUB_MATERIAL_*. v1→v2: M9 Kontroversitaet, BQ-7/BQ-8, ZL-6, KA-7, QT-5 Quellentypologie, DT-1 Kausalitaetstypen. v2→v2.1: C6/MQ6 Erarbeitbarkeits-Plausibilitaet (Audit Sicherungskette M5)
 **Quellen:**
 - DG B1 Allgemeine Unterrichtsprinzipien (Schroeder 16 Prinzipien, Brunnhuber 6, Hilbert Meyer 10 Merkmale)
 - DG B3 Arbeitsblatt (EFFEKTIV-Modell, sprachliche+inhaltliche+formale Gestaltungsgrundsaetze)
@@ -222,8 +222,9 @@ Zusaetzlich zu M1-M12 gelten ab v3.8 folgende Constraints. Sie sind in den SUB_M
 | ID | Constraint | Pruefpunkt | Referenz |
 |----|-----------|------------|----------|
 | C1 | Stundenfrage | Jede Mappe hat genau eine Stundenfrage (Frageform) | AGENT_SKRIPT MQ1 |
-| C1b | Stundenfrage-Identitaet | `einstieg.problemstellung` === `sicherung.tafelbild.stundenfrage` === Chunk-Ueberschrift — wortidentisch | AGENT_SKRIPT MQ1, AGENT_TAFELBILD |
+| C1b | Stundenfrage-Identitaet | `einstieg.problemstellung` === `sicherung.tafelbild.stundenfrage` === Chunk-Ueberschrift — wortidentisch | AGENT_SKRIPT MQ1, AGENT_HEFTEINTRAG |
 | C2 | Material-Titel Typ A/B | Erarbeitung: Frage-Titel (Typ A). Visuelle Anker (BQ/KA): Statement-Titel (Typ B) erlaubt | SUB_MATERIAL_* MQ2 |
 | C3 | Inline-Material-Links | `[[mat-id\|Anzeigetext]]` + (M-Position) in Fragestamm/Tipps | SUB_AUFGABE_* MQ3 |
 | C4 | Didaktische Bildunterschriften | Bildunterschriften beschreibend/anleitend, keine Quellenangaben | SUB_MATERIAL_BILDQUELLE/KARTE MQ4 |
 | C5 | Abschluss-Impuls | Variante A (Ueberleitung, nicht-letzte Mappen) / Variante B (Reflexion, letzte Mappe) | AGENT_SKRIPT MQ5 |
+| C6 | Erarbeitbarkeits-Plausibilitaet (MQ6) | Der zentrale Inhalt des Materials muss den zugehoerigen SCPL-Schritt (Fachbegriff + Kernaussage) so behandeln, dass SuS ihn nach Bearbeitung eigenstaendig formulieren koennten. Formale Abdeckung (Fachbegriff kommt vor) reicht nicht — das Material muss den Schritt erarbeitbar machen, nicht nur erwaehnen. **SOLL-Kriterium** (qualitative Pruefung mit Ermessensspielraum) | SUB_MATERIAL_* MQ6, Audit Sicherungskette M5/PF-13 |

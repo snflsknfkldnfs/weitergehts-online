@@ -23,7 +23,7 @@
 | Read-Schritt | Input-Datei | Gelesene Felder/Sektionen | Bedingung | NICHT lesen |
 |---|---|---|---|---|
 | 1 | MATERIAL_GERUEST | NUR Zeile des aktuellen mat-ID (typ, titel, skript_chunk, tafelbild_knoten, artefakt_ref, didaktische_funktion) | immer | Andere mat-IDs |
-| 2 | rahmen/tafelbild.json | NUR knoten die in tafelbild_knoten referenziert + stundenfrage + **zugehoeriger scpl{}-Schritt** (situation/complication[i]/problem — je nach SCPL-Zone des tafelbild_knoten) | immer | Andere Knoten, andere SCPL-Zonen |
+| 2 | rahmen/hefteintrag.json | NUR knoten die in tafelbild_knoten referenziert + stundenfrage + **zugehoeriger scpl{}-Schritt** (situation/complication[i]/problem — je nach SCPL-Zone des tafelbild_knoten) | immer | Andere Knoten, andere SCPL-Zonen |
 | 3 | SUB_MATERIAL_[TYP].md | Vollstaendig | immer | Andere SUB_MATERIAL_*.md |
 | 4 | SKRIPT | NUR den in skript_chunk referenzierten Chunk (§-Bereich) | immer | Andere Chunks |
 | 5 | INHALTSBASIS | NUR die zum Chunk gehoerende Mappe-Sektion | immer | Andere Mappen |
@@ -38,7 +38,7 @@
 ```
 1. MATERIAL_GERUEST lesen → mat-ID, typ, titel, skript_chunk, tafelbild_knoten,
    artefakt_ref, didaktische_funktion
-2. rahmen/tafelbild.json lesen → Relevante Knoten + Stundenfrage + zugehoeriger SCPL-Schritt (P1 + P6).
+2. rahmen/hefteintrag.json lesen → Relevante Knoten + Stundenfrage + zugehoeriger SCPL-Schritt (P1 + P6).
    Der SCPL-Schritt liefert didaktischen Kontext (Fachbegriff, Argumentationsschritt, Einbettung in SCPL-Kette).
    Mapping: tafelbild_knoten → scpl.situation | scpl.complication[i] | scpl.problem (je nach Zone).
 3. SUB_MATERIAL_[TYP].md lesen (P1 — NUR den passenden Subagenten)
@@ -85,4 +85,4 @@ Schritte 1-8 lesen IMMER aus Dateien, nie aus dem Kontext. Bereits geschriebene 
 
 - Read-Schritt 7 (konditional): DT, QT, TB, ZL haben keine artefakt_ref → Schritt 7 entfaellt. Spart 3-4 Reads pro Mappe.
 - Read-Schritt 8 (konditional, M3c): Nur letztes Material der Sequenz (sicherung/transfer) erhaelt Kernerkenntnisse.
-- Wenn kein separates TAFELBILD-Artefakt existiert (pre-v3 Games): SCPL-Daten aus rahmen/tafelbild.json (Phase 2.0 Output).
+- Wenn kein separates TAFELBILD-Artefakt existiert (pre-v3 Games): SCPL-Daten aus rahmen/hefteintrag.json (Phase 2.0 Output).

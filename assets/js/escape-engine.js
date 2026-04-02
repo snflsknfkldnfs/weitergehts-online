@@ -1077,26 +1077,26 @@ var EscapeEngine = (function () {
     h2.textContent = 'Hefteintrag';
     container.appendChild(h2);
 
-    // Tafelbild/Hefteintrag Routing
-    if (sicherung.tafelbild) {
-      if (sicherung.tafelbild.scpl) {
+    // Hefteintrag Routing (M7: tafelbild → hefteintrag)
+    if (sicherung.hefteintrag) {
+      if (sicherung.hefteintrag.scpl) {
         // v3.1: SCPL-Hefteintrag-Renderer
         _renderHefteintragSCPL(sicherung, container);
-      } else if (sicherung.tafelbild.knoten && sicherung.tafelbild.knoten.length > 0) {
+      } else if (sicherung.hefteintrag.knoten && sicherung.hefteintrag.knoten.length > 0) {
         // Legacy: SVG-Tafelbild
         var tafelbildH3 = document.createElement('h3');
         tafelbildH3.className = 'sicherung__tafelbild-titel';
-        tafelbildH3.textContent = sicherung.tafelbild.titel || 'Tafelbild';
+        tafelbildH3.textContent = sicherung.hefteintrag.titel || 'Hefteintrag';
         container.appendChild(tafelbildH3);
 
         var tafelbildDiv = document.createElement('div');
         tafelbildDiv.className = 'sicherung__tafelbild';
         tafelbildDiv.id = 'tafelbild-container';
-        _renderTafelbild(sicherung.tafelbild, tafelbildDiv);
+        _renderTafelbild(sicherung.hefteintrag, tafelbildDiv);
         container.appendChild(tafelbildDiv);
 
         // Legacy v3: Merksaetze unter Tafelbild
-        var merksaetze = (sicherung.tafelbild.knoten || []).filter(function(k) {
+        var merksaetze = (sicherung.hefteintrag.knoten || []).filter(function(k) {
           return k.merksatz;
         });
         if (merksaetze.length > 0) {
@@ -1118,9 +1118,10 @@ var EscapeEngine = (function () {
           container.appendChild(merksatzDiv);
         }
 
-        // Legacy v3: Kernerkenntnisse
-        var kernerkenntnisse = sicherung.kernerkenntnisse
-          || (sicherung.tafelbild && sicherung.tafelbild.kernerkenntnisse)
+        // Legacy v3: Kernerkenntnisse (M8: primaer aus hefteintrag.scpl.loesung)
+        var kernerkenntnisse = (sicherung.hefteintrag && sicherung.hefteintrag.scpl && sicherung.hefteintrag.scpl.loesung)
+          || sicherung.kernerkenntnisse
+          || (sicherung.hefteintrag && sicherung.hefteintrag.kernerkenntnisse)
           || [];
         if (kernerkenntnisse.length > 0) {
           var keDiv = document.createElement('div');
@@ -1191,12 +1192,12 @@ var EscapeEngine = (function () {
 
   /**
    * Rendert einen CSS-basierten Hefteintrag aus SCPL-Daten.
-   * @param {Object} sicherung – mappen[].sicherung (muss .tafelbild.scpl enthalten)
+   * @param {Object} sicherung – mappen[].sicherung (muss .hefteintrag.scpl enthalten)
    * @param {HTMLElement} container – Ziel-Container (mappe__sicherung)
    * @private
    */
   function _renderHefteintragSCPL(sicherung, container) {
-    var tb = sicherung.tafelbild;
+    var tb = sicherung.hefteintrag;
     var scpl = tb.scpl;
     var ARROW_SVG = '<svg viewBox="0 0 14 18" width="14" height="18"><path d="M7 1v14M2 11l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
@@ -1796,7 +1797,7 @@ var EscapeEngine = (function () {
     document.body.appendChild(quellenToggle);
 
     // v3.8 U5: Sticky-Header zeigt Stundenfrage (nicht Mappennamen)
-    var stundenfrage = (mappe.sicherung && mappe.sicherung.tafelbild && mappe.sicherung.tafelbild.stundenfrage)
+    var stundenfrage = (mappe.sicherung && mappe.sicherung.hefteintrag && mappe.sicherung.hefteintrag.stundenfrage)
       || (mappe.einstieg && mappe.einstieg.problemstellung)
       || mappe.titel
       || '';

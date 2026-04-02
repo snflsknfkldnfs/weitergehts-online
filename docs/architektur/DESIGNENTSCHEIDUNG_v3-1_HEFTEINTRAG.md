@@ -15,7 +15,7 @@
 - Kein erkennbares didaktisches Ordnungsmuster (kausal, kategorial, chronologisch)
 - 7 separate Bloecke in der Sicherung: SVG + Merksaetze + Kernerkenntnisse + Hefteintrag-Verweis + Zusammenfassung + Ueberleitung + Reflexionsimpuls → Informations-Ueberflutung
 
-### 1.2 Vergleich mit Praxis-Tafelbildern (GUETEKRITERIEN_TAFELBILD.md)
+### 1.2 Vergleich mit Praxis-Tafelbildern (GUETEKRITERIEN_HEFTEINTRAG_ENTWURF.md)
 
 Die 8 Excalidraw-TBs aus Silas' 1.WK-Sequenz zeigen:
 - Handschriftlicher Charakter, raeumliche Tafelteilung (Haupttafel + Seitentafel)
@@ -144,7 +144,7 @@ Die Engine kann beim Rendern pruefen, welches Muster vorliegt, und das passende 
 
 ### 3.5 Neues `ordnungsmuster`-Feld (optional)
 
-Alternativ: AGENT_TAFELBILD setzt explizit `"ordnungsmuster": "kausal"|"kategorial"|"chronologisch"|"gegenueberstellung"` im JSON. Das vermeidet Heuristiken in der Engine.
+Alternativ: AGENT_HEFTEINTRAG setzt explizit `"ordnungsmuster": "kausal"|"kategorial"|"chronologisch"|"gegenueberstellung"` im JSON. Das vermeidet Heuristiken in der Engine.
 
 ---
 
@@ -164,13 +164,13 @@ Alternativ: AGENT_TAFELBILD setzt explizit `"ordnungsmuster": "kausal"|"kategori
 | Render-Funktion | `_renderTafelbild()` (SVG) | `_renderHefteintrag()` (HTML/CSS) |
 | Print-Ausgabe | SVG + Text | Druckfertiger Hefteintrag |
 | JSON-Schema | Unveraendert | + `ordnungsmuster` (optional) |
-| AGENT_TAFELBILD | Unveraendert | + Ordnungsmuster-Bestimmung |
+| AGENT_HEFTEINTRAG | Unveraendert | + Ordnungsmuster-Bestimmung |
 | theme-gpg.css | SVG-Variablen + Sicherungs-Bloecke | `.hefteintrag`-Komponentenbibliothek |
 
 ### 4.3 Was bleibt
 
 - JSON-Datenstruktur (knoten, verbindungen, merksatz, kernerkenntnisse)
-- AGENT_TAFELBILD Workflow und Q-Gate (G1-G13)
+- AGENT_HEFTEINTRAG Workflow und Q-Gate (G1-G13)
 - TB-FREEZE-Governance
 - Abwaertskompatibilitaet (alter Sicherungs-Renderer als Fallback)
 
@@ -194,7 +194,7 @@ Alternativ: AGENT_TAFELBILD setzt explizit `"ordnungsmuster": "kausal"|"kategori
 
 ### Phase v3.1-3: Agenten-Update (Cowork)
 
-1. AGENT_TAFELBILD: `ordnungsmuster`-Feld in Output-Schema
+1. AGENT_HEFTEINTRAG: `ordnungsmuster`-Feld in Output-Schema
 2. GUETEKRITERIEN: G-Kriterium fuer Ordnungsmuster-Wahl
 3. WORKFLOW_v2.md: Sicherungs-Schema aktualisieren
 
@@ -228,7 +228,7 @@ Alternativ: AGENT_TAFELBILD setzt explizit `"ordnungsmuster": "kausal"|"kategori
 
 Vollstaendige Evaluation: `docs/architektur/EVALUATION_SCPL_HEFTEINTRAG.md`
 
-Kernaussage: SCPL bildet kein kuenstliches Zwangsmuster, sondern beschreibt die Struktur, die gute Hefteintraege ohnehin zeigen (7/8 empirische TBs mappbar). Es wird als Leitstruktur fuer AGENT_TAFELBILD uebernommen mit neuem `scpl`-Objekt im JSON-Schema.
+Kernaussage: SCPL bildet kein kuenstliches Zwangsmuster, sondern beschreibt die Struktur, die gute Hefteintraege ohnehin zeigen (7/8 empirische TBs mappbar). Es wird als Leitstruktur fuer AGENT_HEFTEINTRAG uebernommen mit neuem `scpl`-Objekt im JSON-Schema.
 
 ### 6.3 Revidierter Prototyp
 
@@ -249,8 +249,8 @@ Datei: `docs/analyse/PROTOTYP_HEFTEINTRAG_v3-1_rev2.html`
 ### Phase v3.1-2: Schema-Finalisierung (Cowork)
 
 1. JSON-Schema mit `scpl`-Objekt finalisieren
-2. AGENT_TAFELBILD.md aktualisieren (SCPL-Output, G14-Kriterium, Stundenfrage-Pflicht)
-3. GUETEKRITERIEN_TAFELBILD.md: G14 ergaenzen
+2. AGENT_HEFTEINTRAG.md aktualisieren (SCPL-Output, G14-Kriterium, Stundenfrage-Pflicht)
+3. GUETEKRITERIEN_HEFTEINTRAG_ENTWURF.md: G14 ergaenzen
 4. WORKFLOW_v2.md: Sicherungs-Schema aktualisieren
 
 ### Phase v3.1-3: Engine-Integration (Claude Code via Uebergabe-Prompt)

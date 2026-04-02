@@ -14,13 +14,19 @@ Du arbeitest wie ein **Archivrechercheur mit digitalem Werkzeugkasten**: systema
 
 Erlaubte Ausnahme: `wikimedia_search_images` als **Fallback**, wenn ein Artikel keine passenden Bilder enthaelt UND die INHALTSBASIS einen konkreten Bildtyp vorsieht (z.B. "Portraet von Person X"). Dann mit dem Eigennamen aus dem Artikel suchen, nicht mit generischen Begriffen.
 
+## Scope: Game-weit (OPT-2, v4.1)
+
+Das Inventar wird fuer das GESAMTE Game erstellt, nicht pro Mappe. AGENT_INHALT liefert eine game-weite Artikelliste (Sektion 2b). AGENT_ARTEFAKT sichtet alle Artikel auf einmal und ordnet Artefakte den jeweiligen Mappen zu.
+
+**Vorteil:** Spaetere Mappen koennen auf Artefakte frueherer Mappen verweisen (z.B. Rueckbezug-Karte, Portraet-Wiedererkennung). SUB_MATERIAL-Agenten haben bei jeder Mappe das vollstaendige Inventar als Referenz.
+
 ## Eingabe
 
 | Parameter | Beschreibung | Quelle |
 |---|---|---|
-| `artikel_liste` | Wikipedia-Artikel, die AGENT_INHALT als Sachanalyse-Grundlage verwendet hat | INHALTSBASIS |
+| `artikel_liste` | **Game-weite** Wikipedia-Artikelliste mit Mappe-Zuordnung (Primaer/Sekundaer) | INHALTSBASIS (Sektion 2b) |
 | `didaktik_rahmen` | Jahrgangsstufe, Fach, Kompetenzerwartungen | DIDAKTIK_RAHMEN |
-| `tafelbild_entwurf` | Knoten und Verbindungen des Tafelbilds | SKRIPT |
+| `tafelbild_entwurf` | Knoten und Verbindungen des Tafelbilds — **alle Mappen** | SKRIPT |
 | `mappen_themen` | Thematische Zuordnung der Mappen | SKRIPT / MATERIAL_GERUEST |
 
 ## Aufgaben
@@ -129,18 +135,28 @@ Pro Artikel, pro Sektion, pro qualifiziertem Artefakt:
 |---|---|
 | Wikimedia-Dateiname | File:[Dateiname] |
 | Typ | karte / foto / illustration / propagandabild |
-| Thumbnail-URL | [URL mit Breite] |
-| Original-URL | [URL] |
 | Lizenz | [CC-BY-SA 2.5 / Public Domain / ...] |
 | Urheber | [Kuenstler/Fotograf] |
 | Datum | [Entstehungsdatum] |
 | Beschreibung | [ImageDescription aus Metadaten] |
 | Qualifizierung | QUALIFIZIERT / RESERVE |
 | Zugeordneter Tafelbild-Knoten | [k1-2, k1-5, ...] |
-| Zugeordnete Mappe | [Mappe N] |
+| Zugeordnete Mappe | [Mappe N] (Primaer). Sekundaer: [Mappe M, ...] |
 | Didaktischer Einsatz | [bildquelle / karte / kontext-illustration] |
 | Einbettungsvorschlag | [Wie soll das Bild in der Mappe eingesetzt werden?] |
+
+**Download (Phase 3.1):**
+
+| Feld | Wert |
+|---|---|
+| API-Call | `action=query&titles=File:{DATEINAME}&prop=imageinfo&iiprop=url&iiurlwidth={BREITE}&format=json` |
+| Dateiname | [exakter Wikimedia-Dateiname ohne File:-Prefix] |
+| Breite | [px — 800 fuer Karten, 640 fuer Szenen, 440 fuer Portraits] |
+| Ziel-Pfad | `assets/img/{game-id}/{img-id}.{ext}` |
+| Format | [png / jpg] |
 ```
+
+**Warum API-Call statt Thumbnail-URL:** Direkte Thumbnail-URL-Konstruktion fuehrt zu 404 (Hash-Pfad nicht ableitbar). Der API-Call liefert die aktuelle `thumburl` zuverlaessig. Phase 3.1 fuehrt den Call aus, extrahiert `thumburl` aus der Response und laedt herunter.
 
 ### 7. Rollenprofile sichten (fuer Tagebucheintraege)
 
@@ -195,13 +211,13 @@ Die Thumbnail-URLs aus der MediaWiki API (`thumburl`) sind CDN-Pfade, die bei ha
 
 **AGENT_ARTEFAKT dokumentiert die URLs** — der Download erfolgt in Phase 3.1 (Claude Code, rein mechanisch).
 
-### Download-Methode (verbindlich seit v2.1, praezisiert v4)
+### Download-Methode (v4.1 — OPT-2/OPT-3 konsolidiert)
 
-**URL-Quelle:** Phase 3.1 liest die Thumbnail-URL direkt aus dem ARTEFAKT_INVENTAR. KEINE manuelle URL-Konstruktion — Wikimedia-Thumb-Pfade enthalten einen Hash-Prefix, der nicht aus dem Dateinamen ableitbar ist.
+**Primaer-Methode: Wikimedia Commons API.** Phase 3.1 liest pro Inventar-Eintrag den `API-Call` und fuehrt ihn aus. Die API liefert `thumburl` in der Response → Download von dieser URL.
 
-**VERBOTEN:** `curl` — Wikimedia liefert bei `curl` HTML-Fehlerseiten (2 KB) statt Bilder. Ebenso verboten: Manuelle Konstruktion von `commons/thumb/...`-URLs (fuehrt zu 404).
+**VERBOTEN:** Direkte Thumbnail-URL-Konstruktion (`commons/thumb/a/ab/...`). Der Hash-Pfad ist nicht aus dem Dateinamen ableitbar → fuehrt zu 404. Ebenso verboten: `curl` (Wikimedia liefert HTML statt Bilder).
 
-**PFLICHT:** Python `urllib` mit Bot-User-Agent. Bei 404: Fallback ueber Wikimedia API (`commons.wikimedia.org/w/api.php?action=query&titles=File:{NAME}&prop=imageinfo&iiprop=url&iiurlwidth={BREITE}&format=json` → `thumburl` aus Antwort).
+**PFLICHT:** Python `urllib` mit Bot-User-Agent.
 
 ```python
 import urllib.request, json, time, os
@@ -236,11 +252,11 @@ def resolve_url_via_api(wiki_filename, width=640):
 
 | Phase | Was passiert |
 |---|---|
-| Phase 0.2b (AGENT_ARTEFAKT) | URLs + Metadaten dokumentieren. KEIN Download. |
-| Phase 3.1 (Claude Code) | Download aller QUALIFIZIERT-Bilder. Thumbnail-URL aus INVENTAR. Bei 404: API-Fallback. Dateigroesse verifizieren. |
-| Phase 2.1 (Material-Produktion, Cowork) | Lokale Pfade in `inhalt`-Felder einsetzen (Pfad: `assets/img/{game-id}/{img-id}.{ext}`). |
+| Phase 0.2b (AGENT_ARTEFAKT) | Game-weites Inventar erstellen: API-Call-Parameter + Metadaten dokumentieren. KEIN Download. |
+| Phase 2.1 (Material-Produktion, Cowork) | SUB_MATERIAL_BQ/KA referenzieren img-ID aus Inventar. Lokaler Pfad (`assets/img/{game-id}/{img-id}.{ext}`) wird in `inhalt`-Felder eingesetzt. |
+| Phase 3.1 (Claude Code) | Fuer jede referenzierte img-ID: API-Call aus Inventar ausfuehren → `thumburl` extrahieren → Download → Dateigroesse verifizieren (>10 KB). |
 
-AGENT_ARTEFAKT liefert alle noetigen Informationen (Thumbnail-URL, Wikimedia-Dateiname, Breite, Format), damit Phase 3.1 den Download zuverlaessig durchfuehren kann — primaer ueber INVENTAR-URL, bei Bedarf ueber API-Fallback.
+AGENT_ARTEFAKT liefert alle noetigen Informationen (Wikimedia-Dateiname, Breite, Format, API-Call-Template), damit Phase 3.1 den Download zuverlaessig durchfuehren kann — immer ueber API, nie ueber konstruierte URLs.
 
 ## Qualitaets-Gate
 

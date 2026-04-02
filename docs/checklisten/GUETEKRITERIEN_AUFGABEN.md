@@ -75,7 +75,7 @@ Die **Material-Alignment-Pflicht** (AGENT_RAETSEL Aufgabe 1) verlangt, dass jede
 
 ### 2.5 Tafelbild-Bezug
 
-Das Tafelbild ist die Quintessenz des Lernzuwachses einer Mappe (vgl. GUETEKRITERIEN_TAFELBILD G1). Aufgaben muessen pruefen, ob die im Tafelbild verdichteten Erkenntnisse tatsaechlich erworben wurden:
+Das Tafelbild ist die Quintessenz des Lernzuwachses einer Mappe (vgl. GUETEKRITERIEN_HEFTEINTRAG_ENTWURF G1). Aufgaben muessen pruefen, ob die im Tafelbild verdichteten Erkenntnisse tatsaechlich erworben wurden:
 
 - Mindestens **1 Aufgabe pro Mappe** muss direkt auf einen TB-Knoten zielen (testbar: Kann die Aufgabe ohne Verstaendnis des TB-Knotens geloest werden?)
 - Die **letzte Aufgabe** (AFB III, Freitext) sollte die Gesamterkenntnis des Tafelbilds reflektieren
@@ -109,7 +109,7 @@ GPG B1 unterscheidet sachbezogene Besinnung (Zusammenhaenge erkennen, Begriffe k
 | # | Kriterium | Beschreibung | Fundierung |
 |---|---|---|---|
 | A8 | **Kognitive Aktivierung** | Mindestens 1 Aufgabe pro Mappe ist "denkanregend" im Sinne von Ulrich: Anwendungsfrage, Vergleichsfrage, Schlussfolgerungsfrage oder Problemloesefrage. Nicht nur Reproduktion | Ulrich (2016) "Denkanregende Fragen" |
-| A9 | **Tafelbild-Bezug** | Mindestens 1 Aufgabe pro Mappe zielt direkt auf einen TB-Knoten (Pruefung: Ist die Aufgabe ohne Verstaendnis des TB-Knotens loesbar? Wenn ja → kein TB-Bezug). Die letzte Aufgabe reflektiert die Gesamterkenntnis des TB | GUETEKRITERIEN_TAFELBILD G1/G2, Besinnungsprinzip |
+| A9 | **Tafelbild-Bezug** | Mindestens 1 Aufgabe pro Mappe zielt direkt auf einen TB-Knoten (Pruefung: Ist die Aufgabe ohne Verstaendnis des TB-Knotens loesbar? Wenn ja → kein TB-Bezug). Die letzte Aufgabe reflektiert die Gesamterkenntnis des TB | GUETEKRITERIEN_HEFTEINTRAG_ENTWURF G1/G2, Besinnungsprinzip |
 | A10 | **Aufgabentyp-Vielfalt** | Mindestens 3 verschiedene Aufgabentypen pro Mappe. Kein Typ mehr als 2x pro Mappe. Freitext-Code genau 1x pro Mappe (letzte Aufgabe) | AGENT_RAETSEL Aufgabe 1 Regeln |
 | A11 | **Freitext-Qualitaet** | Die Freitext-Aufgabe (Aufgabe 5) verwendet eine problemorientierte Leitfrage, bietet 2-3 Teilfragen als Geruest, spezifiziert erwartete Fachbegriffe und fordert Stellungnahme oder Beurteilung (AFB III) | AGENT_RAETSEL Freitext-Neudefinition v1.1, GPG B1 wertbezogene Besinnung |
 | A12 | **Sachbezogen-vor-Wertbezogen** | Die Aufgabensequenz folgt der Phasenlogik: Faktensicherung (A1-A2, sachbezogen) → Transfer (A3-A4, sachbezogen-analytisch) → Stellungnahme (A5, wertbezogen). Keine wertbezogene Aufgabe ohne sachbezogene Grundlage | GPG B1 Besinnungsphasen |

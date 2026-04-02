@@ -39,7 +39,7 @@ Orchestriert die Aufgabenerstellung pro Mappe. Verantwortlich fuer Struktur, Pro
 | 1 | AGENT_RAETSEL.md | Vollstaendig | — |
 | 2 | materialien/mat-N-*.json | NUR: id, typ, titel, _meta.tafelbild_knoten_abgedeckt | NICHT: inhalt (Volltext erst in 2.2b) |
 | 3 | MATERIAL_GERUEST | didaktische_funktion pro mat-ID | — |
-| 4 | rahmen/tafelbild.json | knoten[], merksaetze[], stundenfrage | — |
+| 4 | rahmen/hefteintrag.json | knoten[], merksaetze[], stundenfrage | — |
 | 5 | DIDAKTIK_RAHMEN | NUR: AFB-Profil + Schwierigkeitskurve dieser Mappe | Andere Mappen |
 
 ### Phase 2.2b — Pro Aufgabe (Schnittstellen-Vertrag P6)

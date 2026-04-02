@@ -4,7 +4,7 @@
 **Basiert auf:** v3 (WORKFLOW_v2.md, 2026-03-26)
 **Ersetzt:** WORKFLOW_v2.md (v3) als kanonische Referenz
 **v4 Aenderungen:** Produktionsarchitektur — Phase 2 von Claude Code nach Cowork verlagert. Schnittstellen-Vertraege (P6). Compaction-Failsafe (P1). Rahmen stuetzt Inhalt (P3 verfeinert). Verlustfreie Transformation (P7). Phase 2.1c Material-Cross-Konsistenz (Strategie-Audit E2). User-Validierung PFLICHT nach Material 1-2 (E1).
-**Vorgaenger-Learnings bewahrt:** L1-L7 (v2.1), SK1-SK15, G1-G14, TB-FREEZE, SCPL, Subagenten-Architektur, JSON-Encoding-Regeln, Engine-Typ-Mapping, Q-Gate-Formate, Download-Methode
+**Vorgaenger-Learnings bewahrt:** L1-L7 (v2.1), SK1-SK15, G1-G14, STRUKTUR-FREEZE (ehem. TB-FREEZE, differenziert seit Audit Sicherungskette), SCPL, Subagenten-Architektur, JSON-Encoding-Regeln, Engine-Typ-Mapping, Q-Gate-Formate, Download-Methode
 **Audit 1:** docs/analyse/AUDIT_v4_ARCHITEKTUR_ERGEBNIS.md (2026-03-31) — 1 BLOCKER, 3 MEDIUM, eingearbeitet
 **Audit 2:** docs/analyse/AUDIT_v4_STRATEGIE_ERGEBNIS.md (2026-03-31) — 4 Empfehlungen (E1-E4), eingearbeitet
 **Audit 3:** docs/analyse/AUDIT_v4_PRODUKTIONSREIFE_ERGEBNIS.md (2026-03-31) — 0 BLOCKER, 3 HIGH, 6 MEDIUM, eingearbeitet
@@ -42,7 +42,7 @@ Alle folgenden Elemente aus v2/v3 bleiben unveraendert in v4:
 | L7: Q-Gate pro Material Pflicht | v2.1 | Bewahrt (P5) |
 | SK1-SK15 Skript-Guetekriterien | v2.1/v3 | Bewahrt (Phase 0.3) |
 | G1-G14 Tafelbild-Guetekriterien | v3 | Bewahrt (Phase 0.4) |
-| TB-FREEZE-Regel | v3 | Bewahrt (Phase 0.4 → Phase 2) |
+| STRUKTUR-FREEZE (ehem. TB-FREEZE) | v3, differenziert in Audit Sicherungskette | Bewahrt + differenziert: STRUKTUR-FREEZE (Phase 0.4 → unveraenderlich) + FORMULIERUNGS-OFFEN (bis Phase 2.1c Achse 6) |
 | SCPL-Struktur | v3.1 | Bewahrt (Phase 0.4) |
 | Subagenten-Expertise (7 Material + 5 Aufgabe) | v3 | Bewahrt (Phase 2.1 + 2.2) |
 | Engine-Typ-Mapping | v2.1 | Bewahrt (Sektion 10) |
@@ -98,7 +98,7 @@ PHASE 0: INHALTSGERUEST (einmalig pro Game)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 AGENT_DIDAKTIK → AGENT_INHALT → AGENT_ARTEFAKT → AGENT_SKRIPT
   User-Validierung: PFLICHT (Externer Audit empfohlen)
-  → AGENT_TAFELBILD
+  → AGENT_HEFTEINTRAG
 Output: Gechunktes Skript (600-900 W/Chunk) + ARTEFAKT_INVENTAR + Tafelbild pro Mappe (JSON + Hefteintrag)
 Ort: Cowork (DIDAKTIK, SKRIPT, TAFELBILD) + Claude Code (INHALT, ARTEFAKT)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -129,7 +129,7 @@ Ort: Cowork
 PHASE 2: DIDAKTISCHE PRODUKTION (sequentiell, pro Mappe)   ← NEU v4: Cowork
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Phase 2.0: Rahmen-Produktion (Cowork)
-  → tafelbild.json, einstieg.json, sicherung.json, meta.json
+  → hefteintrag.json, einstieg.json, sicherung.json, meta.json
   → C1b-Identitaetsregel setzen
   → User-Validierung EMPFOHLEN
 Phase 2.1: Material-Produktion (Cowork, sequentiell pro Material)
@@ -139,11 +139,12 @@ Phase 2.1: Material-Produktion (Cowork, sequentiell pro Material)
   → **User-Validierung nach Material 1-2: PFLICHT (Mappe 2)** (Strategie-Audit E1)
     Kalibrierung: Ton, Sprachregister, Vergegenwaertigungstiefe
     Ab Mappe 3: Herabstufung auf EMPFOHLEN moeglich
-Phase 2.1c: Material-Cross-Konsistenz (NEU — Strategie-Audit E2)
-  → 1 Dispatch: Alle materialien/*.json lesen
-  → 4 Pruefachsen: Sequenz-Kohaerenz, Fachbegriff-Konsistenz,
-    Ueberleitung-Kohaerenz, TB-Knoten-Gesamtabdeckung
-  → Output: Cross-Konsistenz-Ergebnis in Q-GATE-LOG.md
+Phase 2.1c: Cross-Konsistenz + Ueberleitungen + Hefteintrag-Revision (6 Achsen)
+  → 1 Dispatch: Alle materialien/*.json + rahmen/sicherung.json + rahmen/hefteintrag.json lesen
+  → 6 Achsen: Sequenz-Kohaerenz, Fachbegriff-Konsistenz,
+    Ueberleitung-Kohaerenz, TB-Knoten-Gesamtabdeckung,
+    Achse 5 Zwei-Vektoren-Ueberleitungen, Achse 6 Hefteintrag-Revision
+  → Output: Cross-Ergebnis in Q-GATE-LOG.md + ggf. Patches sicherung.json/hefteintrag.json
   ── CHECKPOINT: Session-Split (Audit S2 — Token-Budget) ──
 Phase 2.2: Aufgaben-Produktion (Cowork, sequentiell)
   → 2.2a AGENT_RAETSEL: Progressionsplan (liest fertige materialien/*.json)
@@ -203,11 +204,13 @@ AGENT_SKRIPT (Phase 0, Schritt 3)
     → Artefakt-Marker inline positioniert
     │
     ▼
-AGENT_TAFELBILD (Phase 0, Schritt 4)
+AGENT_HEFTEINTRAG (Phase 0, Schritt 4)
     → Synthese-Extrakt aus SKRIPT: Quintessenz des Lernzuwachses pro Mappe
     → Dualer Output: JSON (SCPL + knoten + verbindungen + merksatz) + Hefteintrag (80-120 W)
-    → Guetekriterien G1-G14 (docs/checklisten/GUETEKRITERIEN_TAFELBILD.md)
-    → Wird zur fixierten Zielstruktur fuer AGENT_MATERIAL (TB-FREEZE)
+    → Guetekriterien G1-G14 (docs/checklisten/GUETEKRITERIEN_HEFTEINTRAG_ENTWURF.md)
+    → STRUKTUR-FREEZE: Zonen, KE, Fachbegriffe, Ordnungsmuster, Stundenfrage unveraenderlich
+    → FORMULIERUNGS-OFFEN: SCPL-Texte revidierbar bis Phase 2.1c Achse 6
+    → Wird zur fixierten Zielstruktur fuer AGENT_MATERIAL
     │
     ▼
 AGENT_MATERIAL (Phase 1 + 1.5)
@@ -219,7 +222,7 @@ AGENT_MATERIAL (Phase 1 + 1.5)
     │
     ▼
 RAHMEN-PRODUKTION (Phase 2.0, Cowork)                      ← NEU v4
-    → tafelbild.json, einstieg.json, sicherung.json, meta.json
+    → hefteintrag.json, einstieg.json, sicherung.json, meta.json
     → C1b-Identitaetsregel gesetzt
     │
     ▼
@@ -373,13 +376,13 @@ Kanonische Referenz: `docs/checklisten/GUETEKRITERIEN_SKRIPT.md`
 **User-Validierung (Phase 0 — SKRIPT): PFLICHT**
 **Prompt-Datei:** `docs/agents/AGENT_SKRIPT.md`
 
-### Schritt 0.4: AGENT_TAFELBILD
+### Schritt 0.4: AGENT_HEFTEINTRAG
 
 **Eingabe:**
 - SKRIPT_[game-id].md (validiert)
 - DIDAKTIK_RAHMEN (KE-Matrix, Sicherungsziel)
 - ARTEFAKT_INVENTAR (qualifizierte Artefakte)
-- GUETEKRITERIEN_TAFELBILD (G1-G14)
+- GUETEKRITERIEN_HEFTEINTRAG_ENTWURF (G1-G14)
 - Vorheriges Tafelbild (ab Mappe 2 — fuer Progression G9)
 
 **Aufgabe (SCPL-Struktur):**
@@ -395,11 +398,15 @@ Kanonische Referenz: `docs/checklisten/GUETEKRITERIEN_SKRIPT.md`
 - transfer.frage (offene Frage, ausserhalb Hefteintrag)
 - Legacy: `knoten[]` und `verbindungen[]` als leere Arrays
 
-**TB-FREEZE-Regel:** Nach Q-Gate PASS ist das Tafelbild eingefroren. AGENT_MATERIAL darf keine SCPL-Schritte aendern. Eskalation: `[TB-REVISION NOETIG — Grund]` → User-Entscheidung.
+**Differenzierter FREEZE (Audit Sicherungskette):**
+- **STRUKTUR-FREEZE** (ab Phase 0.4 — unveraenderlich): SCPL-Zonen (Anzahl, Reihenfolge, Typ), Kernerkenntnisse/scpl.loesung[], Fachbegriffe, Ordnungsmuster, Stundenfrage.
+- **FORMULIERUNGS-OFFEN** (bis Phase 2.1c Achse 6): situation.kontextsatz, complication[].schritt, problem.satz — Formulierungen duerfen nach Material-Produktion revidiert werden.
+- **NICHT PRODUZIERT** in Phase 0.4: zusammenfassung, ueberleitung (erst in Phase 2.1c).
+- AGENT_MATERIAL darf keine SCPL-Schritte aendern. Eskalation: `[TB-REVISION NOETIG — Grund]` → User-Entscheidung.
 
-**Q-Gate:** G1-G14 (6 MUSS, 4 SOLL, 4 KANN). G14: SCPL-Kohaerenz.
+**Q-Gate:** G1-G14 (6 MUSS, 4 SOLL, 4 KANN). G14: SCPL-Kohaerenz. **Stufe-2 Re-Evaluation** (G3, G5, G10, G12, G14) erfolgt in Phase 2.1c Achse 6 gegen produzierte Materialien.
 **Ort:** Cowork
-**Prompt-Datei:** `docs/agents/AGENT_TAFELBILD.md`
+**Prompt-Datei:** `docs/agents/AGENT_HEFTEINTRAG.md`
 
 ---
 
@@ -407,7 +414,7 @@ Kanonische Referenz: `docs/checklisten/GUETEKRITERIEN_SKRIPT.md`
 
 ### AGENT_MATERIAL (Design-Modus)
 
-**Eingabe:** Validiertes SKRIPT (gechunkt, mit Artefakt-Zuordnungen) + TAFELBILD pro Mappe (fixiert, TB-FREEZE)
+**Eingabe:** Validiertes SKRIPT (gechunkt, mit Artefakt-Zuordnungen) + TAFELBILD pro Mappe (STRUKTUR-FREEZE)
 
 **Vorgehen:** Inkrementell pro Mappe (Mappe 1 → Validierung → Mappe 2 → ...).
 
@@ -415,7 +422,7 @@ Kanonische Referenz: `docs/checklisten/GUETEKRITERIEN_SKRIPT.md`
 1. Artefakt-Marker aus SKRIPT auswerten (img-IDs, zit-IDs, rolle-IDs → Materialtyp)
 2. Skript-Passagen auf zusaetzliche Material-Trigger pruefen
 3. Material-Entwuerfe skizzieren (Titel, Typ, Funktion, TB-Zuordnung, Artefakt-Ref)
-4. Erarbeitbarkeits-Verifizierung (TB-FREEZE): Fuer jeden TB-Knoten nachweisen, dass Material die Erarbeitung ermoeglicht
+4. Erarbeitbarkeits-Verifizierung (STRUKTUR-FREEZE): Fuer jeden TB-Knoten nachweisen, dass Material die Erarbeitung ermoeglicht
 5. Erarbeitbarkeits-Nachweis fuehren
 6. Einstieg und Sicherung entwerfen (Sicherung = Verweis auf Hefteintrag + Reflexionsimpuls)
 
@@ -459,8 +466,8 @@ docs/agents/artefakte/produktion/{game-id}/mappe-{N}/
   rahmen/
     meta.json          # freischalt_code, titel, beschreibung
     einstieg.json      # typ, narrativ, problemstellung
-    sicherung.json     # typ, zusammenfassung, ueberleitung, reflexionsimpuls, kernerkenntnisse[], hefteintrag_verweis, zitat
-    tafelbild.json     # scpl, knoten, verbindungen, voraussetzungen, stundenfrage, merksaetze
+    sicherung.json     # typ, zusammenfassung (Placeholder "[REVISION IN 2.1c]" bis Achse 6), ueberleitung (Placeholder "[REVISION IN 2.1c]" bis Achse 6), reflexionsimpuls, kernerkenntnisse[], hefteintrag_verweis, zitat
+    hefteintrag.json     # scpl, knoten, verbindungen, voraussetzungen, stundenfrage, merksaetze
   materialien/
     mat-N-1.json       # Vollstaendiges Material-JSON-Objekt (Engine-kompatibel)
     mat-N-2.json
@@ -481,33 +488,34 @@ docs/agents/artefakte/produktion/{game-id}/mappe-{N}/
 
 | Read-Schritt | Input-Datei | Gelesene Felder | Zweck |
 |---|---|---|---|
-| 1 | TAFELBILD_Mappe[N].md (Phase 0.4) | Vollstaendig (TB-FREEZE) | → rahmen/tafelbild.json (1:1 Uebernahme) |
+| 1 | TAFELBILD_Mappe[N].md (Phase 0.4) | Vollstaendig (STRUKTUR-FREEZE) | → rahmen/hefteintrag.json (1:1 Uebernahme) |
 | 2 | MATERIAL_GERUEST (Einstieg-Sektion) | typ, narrativ, problemstellung | → rahmen/einstieg.json |
-| 3 | MATERIAL_GERUEST (Sicherung-Sektion) | typ, zusammenfassung, ueberleitung, reflexionsimpuls, hefteintrag_verweis, zitat | → rahmen/sicherung.json (Basis) |
-| 4 | rahmen/tafelbild.json (gerade geschrieben) | scpl.loesung[] (= Merksaetze/Merkbox-Inhalt) | → sicherung.kernerkenntnisse[] (Constraint M3b) |
+| 3 | MATERIAL_GERUEST (Sicherung-Sektion) | typ, reflexionsimpuls, hefteintrag_verweis, zitat. **NICHT** zusammenfassung/ueberleitung (erst Phase 2.1c Achse 6). | → rahmen/sicherung.json (Basis) |
+| 4 | rahmen/hefteintrag.json (gerade geschrieben) | scpl.loesung[] (= Merksaetze/Merkbox-Inhalt) | → sicherung.kernerkenntnisse[] (Constraint M3b) |
 | 5 | ORCHESTRATOR.md | Freischalt-Code-Regeln | → rahmen/meta.json |
 | 6 | MATERIAL_GERUEST (Header) | titel, beschreibung | → rahmen/meta.json |
 
 **Dispatch-Ablauf (1 Dispatch, 4 Output-Dateien):**
 
 ```
-1. TAFELBILD_Mappe[N].md lesen → rahmen/tafelbild.json schreiben (1:1, TB-FREEZE)
+1. TAFELBILD_Mappe[N].md lesen → rahmen/hefteintrag.json schreiben (1:1, STRUKTUR-FREEZE)
 2. MATERIAL_GERUEST Einstieg-Sektion lesen → rahmen/einstieg.json schreiben
-3. MATERIAL_GERUEST Sicherung-Sektion lesen
-4. rahmen/tafelbild.json lesen → scpl.loesung[] extrahieren (Array von Merksaetzen)
+3. MATERIAL_GERUEST Sicherung-Sektion lesen (NUR reflexionsimpuls, hefteintrag_verweis, zitat)
+4. rahmen/hefteintrag.json lesen → scpl.loesung[] extrahieren (Array von Merksaetzen)
 5. sicherung.kernerkenntnisse[] := tafelbild.scpl.loesung[] (M3b-Constraint)
-6. rahmen/sicherung.json schreiben (inkl. kernerkenntnisse aus Schritt 5)
+6. rahmen/sicherung.json schreiben (inkl. kernerkenntnisse aus Schritt 5).
+   zusammenfassung := "[REVISION IN 2.1c]" (Placeholder). ueberleitung := "[REVISION IN 2.1c]" (Placeholder).
 7. ORCHESTRATOR + MATERIAL_GERUEST Header lesen → rahmen/meta.json schreiben
 7b. NUR WENN SKRIPT-Chunk oder INHALTSBASIS ein historisches Schlusszitat enthaelt:
     sicherung.zitat-Objekt {text, urheber, kontext} in rahmen/sicherung.json ergaenzen.
     Quelle: SKRIPT oder INHALTSBASIS. Wenn kein Zitat vorhanden: Feld weglassen.
 8. C1b-Identitaetsregel pruefen:
    einstieg.problemstellung === tafelbild.stundenfrage === SKRIPT-Chunk-Ueberschrift
-   Bei Abweichung: Korrektur (Stundenfrage aus tafelbild.json hat Vorrang)
+   Bei Abweichung: Korrektur (Stundenfrage aus hefteintrag.json hat Vorrang)
 ```
 
 **M3b-Constraint (Sicherungs-Kernerkenntnisse):**
-`sicherung.kernerkenntnisse[]` wird NICHT neu formuliert, sondern aus `tafelbild.scpl.loesung[]` (Merksaetze = Merkbox-Inhalt) abgeleitet. Begruendung: Die Kernerkenntnisse IM Hefteintrag und die Kernerkenntnisse IN der Sicherungsphase sind dasselbe — sie duerfen nicht divergieren. Die Autoritaet liegt beim Tafelbild (Phase 0.4, TB-FREEZE).
+`sicherung.kernerkenntnisse[]` wird NICHT neu formuliert, sondern aus `tafelbild.scpl.loesung[]` (Merksaetze = Merkbox-Inhalt) abgeleitet. Begruendung: Die Kernerkenntnisse IM Hefteintrag und die Kernerkenntnisse IN der Sicherungsphase sind dasselbe — sie duerfen nicht divergieren. Die Autoritaet liegt beim Tafelbild (Phase 0.4, STRUKTUR-FREEZE).
 
 **User-Validierung: EMPFOHLEN**
 
@@ -532,7 +540,7 @@ docs/agents/artefakte/produktion/{game-id}/mappe-{N}/
 | Read-Schritt | Input-Datei | Gelesene Felder/Sektionen | Bedingung | NICHT lesen |
 |---|---|---|---|---|
 | 1 | MATERIAL_GERUEST | NUR Zeile des aktuellen mat-ID (typ, titel, skript_chunk, tafelbild_knoten, artefakt_ref, didaktische_funktion) | immer | Andere mat-IDs |
-| 2 | rahmen/tafelbild.json | NUR knoten die in tafelbild_knoten referenziert + stundenfrage | immer | Andere Knoten |
+| 2 | rahmen/hefteintrag.json | NUR knoten die in tafelbild_knoten referenziert + stundenfrage + **zugehoeriger scpl{}-Schritt** (situation/complication[i]/problem) | immer | Andere Knoten, andere SCPL-Zonen |
 | 3 | SUB_MATERIAL_[TYP].md | Vollstaendig | immer | Andere SUB_MATERIAL_*.md |
 | 4 | SKRIPT | NUR den in skript_chunk referenzierten Chunk (§-Bereich) | immer | Andere Chunks |
 | 5 | INHALTSBASIS | NUR die zum Chunk gehoerende Mappe-Sektion | immer | Andere Mappen |
@@ -551,7 +559,7 @@ Fuer jedes mat-ID im MATERIAL_GERUEST (sequentiell):
 
   1. MATERIAL_GERUEST lesen → mat-ID, typ, titel, skript_chunk, tafelbild_knoten,
      artefakt_ref, didaktische_funktion
-  2. rahmen/tafelbild.json lesen → Relevante Knoten + Stundenfrage (P1 + P6)
+  2. rahmen/hefteintrag.json lesen → Relevante Knoten + Stundenfrage + zugehoeriger SCPL-Schritt (P1 + P6)
   3. SUB_MATERIAL_[TYP].md lesen (P1 — NUR den passenden Subagenten)
   4. SKRIPT NUR relevanten Chunk lesen (P1 + P6)
   5. INHALTSBASIS NUR relevante Mappe-Sektion lesen (P1 + P6)
@@ -583,35 +591,44 @@ Nach den ersten 2 produzierten Materialien (Darstellungstext + 1 visuelles Mater
 Bei Befund: Korrekturhinweise fliessen in verbleibende Material-Dispatches ein (als Praeambel).
 Ab Mappe 3: Herabstufung auf EMPFOHLEN moeglich, wenn Mappe-2-Kalibrierung erfolgreich.
 
-### Phase 2.1c: Material-Cross-Konsistenz (NEU — Strategie-Audit E2)
+### Phase 2.1c: Material-Cross-Konsistenz + Ueberleitung-Produktion + Hefteintrag-Revision
 
-**Zweck:** Prueft, ob die isoliert produzierten Materialien als kohaerentes Ganzes funktionieren. Schliesst die strukturelle Luecke, die Isolation erzeugt: Jeder Dispatch kennt den Sequenzkontext (Phase 1.5), aber nicht die tatsaechlichen Ergebnisse der anderen Dispatches.
+**Zweck:** Prueft, ob die isoliert produzierten Materialien als kohaerentes Ganzes funktionieren. Produziert material-uebergreifende Ueberleitungen (Achse 5). Revidiert SCPL-Formulierungen und produziert zusammenfassung/ueberleitung (Achse 6). Details: VERTRAG_PHASE_2-1c_CROSS.md.
 
 **Schnittstellen-Vertrag (P6):**
 
 | Input-Datei | Gelesene Felder | Zweck |
 |---|---|---|
-| materialien/mat-N-*.json (alle) | titel, inhalt, ueberleitung_von, fachbegriffe, _meta.tafelbild_knoten_abgedeckt | Cross-Pruefung |
-| rahmen/tafelbild.json | knoten[], stundenfrage | TB-Gesamtabdeckung |
-| MATERIAL_GERUEST | Sequenzreihenfolge, didaktische_funktion pro mat-ID | Soll-Ist-Vergleich |
+| materialien/mat-N-*.json (alle) | titel, inhalt, ueberleitung_von, fachbegriffe, _meta.tafelbild_knoten_abgedeckt | Cross-Pruefung + Ueberleitung-Kontext + HE-Revision |
+| rahmen/hefteintrag.json | knoten[], stundenfrage, scpl{} | TB-Gesamtabdeckung + SCPL-Revision |
+| MATERIAL_GERUEST | Sequenzreihenfolge, didaktische_funktion pro mat-ID, Ueberleitungen-Sektion | Soll-Ist-Vergleich + Ueberleitung-Intention |
+| rahmen/einstieg.json | problemstellung | Leitfrage als Ueberleitung-Anker fuer mat-1 |
+| rahmen/sicherung.json | kernerkenntnisse[], reflexionsimpuls, hefteintrag_verweis | Stufe-1-Felder + Q-M2-09 Disjunktionspruefung |
 
-**4 Pruefachsen:**
+**6 Achsen:**
 
-1. **Sequenz-Kohaerenz:** Bilden die Materialien in Reihenfolge einen logischen Erkenntnisweg zum Tafelbild — oder stehen sie nebeneinander ohne Aufbau? FAIL wenn: Ein Material setzt einen Fachbegriff als bekannt voraus, der erst in einem spaeteren Material eingefuehrt wird.
-2. **Fachbegriff-Konsistenz:** Wird ein Begriff in allen Materialien identisch verwendet? Keine widersprüchlichen Definitionen durch isolierte Produktion? FAIL wenn: Derselbe Fachbegriff wird in zwei Materialien unterschiedlich definiert oder verwendet.
-3. **Ueberleitung-Kohaerenz:** Passt `ueberleitung_von` von Material N+1 zum tatsaechlichen Inhalt von Material N (nicht nur zum Sequenzkontext-Plan)? FAIL wenn: `ueberleitung_von` bezieht sich auf einen Inhalt, der im tatsaechlichen Vorgaenger-Material nicht vorkommt.
-4. **TB-Knoten-Gesamtabdeckung:** Decken alle Materialien zusammen alle TB-Knoten ab? Kein Knoten unversorgt? FAIL wenn: Ein TB-Knoten wird von keinem Material abgedeckt (binaer pruefbar).
+1. **Sequenz-Kohaerenz:** Bilden die Materialien einen logischen Erkenntnisweg? FAIL wenn: Fachbegriff als bekannt vorausgesetzt, der erst spaeter eingefuehrt wird.
+2. **Fachbegriff-Konsistenz:** Identische Verwendung ueber Materialien? FAIL wenn: Widerspruechliche Definitionen.
+3. **Ueberleitung-Kohaerenz:** Passt Ueberleitung-Intention zum tatsaechlichen Material-Inhalt? FAIL wenn: Bezug auf nicht vorhandenen Inhalt.
+4. **TB-Knoten-Gesamtabdeckung:** Alle Knoten abgedeckt? FAIL wenn: Knoten unversorgt (binaer).
+5. **Ueberleitung-Produktion (Q-M2-03):** Zwei-Vektoren-Bruecke (rueckwaerts + vorwaerts) pro Material-Uebergang. Qualitaetskriterien UE-1 bis UE-5. Output: ueberleitungen.json.
+6. **Hefteintrag-Revision (M2, Audit Sicherungskette):** FORMULIERUNGS-OFFEN-Felder der SCPL-Texte auf Material-Kontext anpassen. zusammenfassung + ueberleitung (Mappe-zu-Mappe) erstmalig produzieren. Stufe-2 Re-Evaluation (G3, G5, G10, G12, G14). Regelwerk: erlaubt (Formulierung) vs. verboten (Struktur). Aenderungs-Dokumentationspflicht.
 
 **Ablauf:**
 
 ```
 1. Alle materialien/mat-N-*.json lesen (P1)
-2. rahmen/tafelbild.json lesen (P1)
-3. MATERIAL_GERUEST lesen (P1)
-4. 4 Pruefachsen durchfuehren
-5. Bei PASS: Ergebnis in Q-GATE-LOG.md
-6. Bei FAIL: Betroffene Materialien + Finding dokumentieren
-   → User entscheidet ueber Nachbesserung oder Akzeptanz
+2. rahmen/hefteintrag.json lesen (P1)
+3. MATERIAL_GERUEST lesen (P1) — inkl. Ueberleitungen-Sektion
+4. rahmen/einstieg.json lesen (P1) — problemstellung
+5. rahmen/sicherung.json lesen (P1) — Stufe-1-Felder
+6. Achsen 1-4 durchfuehren (Cross-Konsistenz)
+7. Achse 5: Ueberleitungen produzieren → ueberleitungen.json
+8. Achse 6: SCPL-Texte revidieren, zusammenfassung/ueberleitung produzieren, Stufe-2 Re-Evaluation
+9. rahmen/sicherung.json aktualisieren + rahmen/hefteintrag.json SCPL-Text-Patches
+10. Bei PASS: Ergebnis in Q-GATE-LOG.md
+11. Bei FAIL (Achsen 1-4): Betroffene Materialien + Finding dokumentieren
+    → User entscheidet ueber Nachbesserung oder Akzeptanz
 ```
 
 **Hinweis:** 1 Dispatch, nicht 6. Prueft das Zusammenspiel, nicht die Einzelqualitaet (dafuer sind die MQ1-MQ5 Q-Gates zustaendig).
@@ -629,16 +646,16 @@ Ab Mappe 3: Herabstufung auf EMPFOHLEN moeglich, wenn Mappe-2-Kalibrierung erfol
 | 1 | AGENT_RAETSEL.md | Vollstaendig (Orchestrationsregeln) | — |
 | 2 | materialien/mat-N-*.json | NUR: id, typ, titel, _meta.tafelbild_knoten_abgedeckt | NICHT: inhalt (Volltext) — Token-Effizienz, Volltext erst in 2.2b |
 | 3 | MATERIAL_GERUEST | NUR: didaktische_funktion pro mat-ID | — |
-| 4 | rahmen/tafelbild.json | knoten[], merksaetze[], stundenfrage | — |
+| 4 | rahmen/hefteintrag.json | knoten[], merksaetze[], stundenfrage | — |
 | 5 | DIDAKTIK_RAHMEN | NUR: AFB-Profil + Schwierigkeitskurve dieser Mappe | Andere Mappen |
 
-**Begruendung Volltext-Ausschluss (Schritt 2):** Der Orchestrator braucht Material-Volltext nicht. Er trifft 3 Entscheidungen: AFB-Zuweisung (braucht TB-Knoten + Schwierigkeitskurve), Typauswahl (braucht Materialtyp + didaktische_funktion), Operationalisierungsziel (braucht TB-Knoten-Merksatz + AFB-Operator, beides aus tafelbild.json). Material-Zusammenfassungen im Konstruktionskontext werden aus `titel + didaktische_funktion` generiert. Der Volltext des Ziel-Materials wird erst vom Subagenten in Phase 2.2b gelesen (P1).
+**Begruendung Volltext-Ausschluss (Schritt 2):** Der Orchestrator braucht Material-Volltext nicht. Er trifft 3 Entscheidungen: AFB-Zuweisung (braucht TB-Knoten + Schwierigkeitskurve), Typauswahl (braucht Materialtyp + didaktische_funktion), Operationalisierungsziel (braucht TB-Knoten-Merksatz + AFB-Operator, beides aus hefteintrag.json). Material-Zusammenfassungen im Konstruktionskontext werden aus `titel + didaktische_funktion` generiert. Der Volltext des Ziel-Materials wird erst vom Subagenten in Phase 2.2b gelesen (P1).
 
 **Dispatch-Ablauf:**
 1. AGENT_RAETSEL.md lesen
 2. Alle materialien/mat-N-*.json lesen (NUR id, typ, titel, _meta — NICHT inhalt)
 3. MATERIAL_GERUEST lesen (didaktische_funktion pro mat-ID)
-4. rahmen/tafelbild.json lesen (knoten, merksaetze, stundenfrage)
+4. rahmen/hefteintrag.json lesen (knoten, merksaetze, stundenfrage)
 5. DIDAKTIK_RAHMEN lesen (NUR AFB-Profil + Schwierigkeitskurve — P6)
 5. Progressionsplan erstellen (5 Positionen, AFB-Zuweisung, Typauswahl)
 6. Pro Aufgabe: Konstruktionskontext generieren (Ziel-Material-ID, TB-Knoten, AFB, Operationalisierungsziel)
@@ -705,7 +722,7 @@ Compaction-Failsafe (P1):
 |---|---|---|
 | aufgaben/aufgabe-N-*.json | Alle Felder | — |
 | materialien/mat-N-*.json | id, typ, titel | Findings (dann Volltext) |
-| rahmen/tafelbild.json | knoten[], merksaetze[] | — |
+| rahmen/hefteintrag.json | knoten[], merksaetze[] | — |
 
 **Cross-Konsistenz-Pruefung (Orchestrator-Q-Gate, bewahrt aus v3):**
 - A1 AFB-Kongruenz (Gesamtbild): AFB-Zuweisung stimmt mit Progressionsplan ueberein?
@@ -842,7 +859,7 @@ Fuer jedes img-ID im ARTEFAKT_INVENTAR (Status: QUALIFIZIERT):
    einstieg.json → mappe.einstieg
    materialien/*.json → mappe.materialien[] (sortiert)
    aufgaben/*.json → mappe.aufgaben[] (sortiert)
-   sicherung.json + tafelbild.json → mappe.sicherung
+   sicherung.json + hefteintrag.json → mappe.sicherung
 5. data.json lesen (aktuell aus Repo)
 6. mappen[N-1] anfuegen (Mappe-Anhang-Prozedur aus ORCHESTRATOR.md)
 

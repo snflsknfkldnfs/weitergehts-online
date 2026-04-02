@@ -10,10 +10,10 @@
 
 | Read-Schritt | Input-Datei | Gelesene Felder | Zweck |
 |---|---|---|---|
-| 1 | TAFELBILD_Mappe[N].md (Phase 0.4) | Vollstaendig (STRUKTUR-FREEZE) | → rahmen/tafelbild.json (1:1 Uebernahme) |
+| 1 | TAFELBILD_Mappe[N].md (Phase 0.4) | Vollstaendig (STRUKTUR-FREEZE) | → rahmen/hefteintrag.json (1:1 Uebernahme) |
 | 2 | MATERIAL_GERUEST (Einstieg-Sektion) | typ, narrativ, problemstellung | → rahmen/einstieg.json |
 | 3 | MATERIAL_GERUEST (Sicherung-Sektion) | typ, reflexionsimpuls, hefteintrag_verweis, zitat | → rahmen/sicherung.json (Basis). **NICHT** zusammenfassung/ueberleitung — diese werden erst in Phase 2.1c Achse 6 produziert. |
-| 4 | rahmen/tafelbild.json (gerade geschrieben) | scpl.loesung[] (= Merksaetze/Merkbox-Inhalt) | → sicherung.kernerkenntnisse[] (M3b) |
+| 4 | rahmen/hefteintrag.json (gerade geschrieben) | scpl.loesung[] (= Merksaetze/Merkbox-Inhalt) | → sicherung.kernerkenntnisse[] (M3b) |
 | 5 | ORCHESTRATOR.md | Freischalt-Code-Regeln, data.json-Schema | → rahmen/meta.json |
 | 6 | MATERIAL_GERUEST (Header) | titel, beschreibung | → rahmen/meta.json |
 
@@ -22,10 +22,10 @@
 ## Dispatch-Ablauf
 
 ```
-1. TAFELBILD_Mappe[N].md lesen → rahmen/tafelbild.json schreiben (1:1, STRUKTUR-FREEZE)
+1. TAFELBILD_Mappe[N].md lesen → rahmen/hefteintrag.json schreiben (1:1, STRUKTUR-FREEZE)
 2. MATERIAL_GERUEST Einstieg-Sektion lesen → rahmen/einstieg.json schreiben
 3. MATERIAL_GERUEST Sicherung-Sektion lesen
-4. rahmen/tafelbild.json lesen → scpl.loesung[] extrahieren
+4. rahmen/hefteintrag.json lesen → scpl.loesung[] extrahieren
 5. sicherung.kernerkenntnisse[] := tafelbild.scpl.loesung[] (M3b-Constraint)
 6. rahmen/sicherung.json schreiben (inkl. kernerkenntnisse aus Schritt 5).
    zusammenfassung := "[REVISION IN 2.1c]" (Placeholder — finale Produktion in Phase 2.1c Achse 6).
@@ -35,7 +35,7 @@
     sicherung.zitat-Objekt {text, urheber, kontext} in rahmen/sicherung.json ergaenzen.
 8. C1b-Identitaetsregel pruefen:
    einstieg.problemstellung === tafelbild.stundenfrage
-   Bei Abweichung: Stundenfrage aus tafelbild.json hat Vorrang.
+   Bei Abweichung: Stundenfrage aus hefteintrag.json hat Vorrang.
 9. Q-Gate-Ergebnis in Q-GATE-LOG.md schreiben.
 ```
 
@@ -51,7 +51,7 @@
 
 ```
 rahmen/
-  tafelbild.json   # knoten[], verbindungen[], voraussetzungen[], stundenfrage, ordnungsmuster, scpl{}, transfer{}
+  hefteintrag.json   # knoten[], verbindungen[], voraussetzungen[], stundenfrage, ordnungsmuster, scpl{}, transfer{}
   einstieg.json    # narrativ (HTML), problemstellung
   sicherung.json   # kernerkenntnisse[], reflexionsimpuls, hefteintrag_verweis, zitat{}. zusammenfassung + ueberleitung als Placeholder (finale Produktion: Phase 2.1c Achse 6)
   meta.json        # id, titel, beschreibung, freischalt_code

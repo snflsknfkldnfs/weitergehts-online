@@ -1,8 +1,8 @@
-# Evaluation: SCPL-Framework fuer AGENT_TAFELBILD
+# Evaluation: SCPL-Framework fuer AGENT_HEFTEINTRAG
 
 **Datum:** 2026-03-28
 **Status:** Entwurf — wartet auf User-Entscheidung
-**Bezug:** DESIGNENTSCHEIDUNG_v3-1_HEFTEINTRAG.md, GUETEKRITERIEN_TAFELBILD.md
+**Bezug:** DESIGNENTSCHEIDUNG_v3-1_HEFTEINTRAG.md, GUETEKRITERIEN_HEFTEINTRAG_ENTWURF.md
 
 ---
 
@@ -32,7 +32,7 @@ Damit entsteht ein geschlossener Bogen:
 FRAGE ──→ S → C → P ──→ ANTWORT (Merkbox) ──→ TRANSFER (naechste Frage)
 ```
 
-### 2.3 Vergleich mit empirischen Tafelbildern (GUETEKRITERIEN_TAFELBILD.md)
+### 2.3 Vergleich mit empirischen Tafelbildern (GUETEKRITERIEN_HEFTEINTRAG_ENTWURF.md)
 
 Die 8 Excalidraw-TBs der 1.WK-Sequenz zeigen bereits implizite SCPL-Muster:
 
@@ -85,7 +85,7 @@ Empirisches Ergebnis: 7 von 8 TBs lassen sich problemlos in SCPL mappen. Das Fra
 
 ---
 
-## 4. Verankerung in AGENT_TAFELBILD
+## 4. Verankerung in AGENT_HEFTEINTRAG
 
 ### 4.1 Neues Output-Schema
 
@@ -129,7 +129,7 @@ Empirisches Ergebnis: 7 von 8 TBs lassen sich problemlos in SCPL mappen. Das Fra
 }
 ```
 
-### 4.2 Aenderungen an AGENT_TAFELBILD.md
+### 4.2 Aenderungen an AGENT_HEFTEINTRAG.md
 
 | Bereich | Aenderung |
 |---------|----------|
@@ -142,7 +142,7 @@ Empirisches Ergebnis: 7 von 8 TBs lassen sich problemlos in SCPL mappen. Das Fra
 
 ### 4.3 Complication-Darstellungstypen
 
-Die C-Zone ist der variable Kern. AGENT_TAFELBILD waehlt pro Schritt:
+Die C-Zone ist der variable Kern. AGENT_HEFTEINTRAG waehlt pro Schritt:
 
 | darstellung.typ | Wann | Visuelles Mittel |
 |----------------|------|-----------------|
@@ -170,7 +170,7 @@ Bestehende Mappe 1 wird bei der v3.1-Engine-Integration auf das neue Schema migr
 
 ## 6. Empfehlung
 
-**SCPL als Leitstruktur fuer AGENT_TAFELBILD uebernehmen.** Gruende:
+**SCPL als Leitstruktur fuer AGENT_HEFTEINTRAG uebernehmen.** Gruende:
 
 1. Empirisch bestaetigt durch 7/8 bestehende TBs
 2. Deckt alle drei Ordnungsmuster ab
@@ -182,7 +182,7 @@ Bestehende Mappe 1 wird bei der v3.1-Engine-Integration auf das neue Schema migr
 **Umsetzungsreihenfolge:**
 1. Prototyp rev3 validieren (User-Review)
 2. JSON-Schema finalisieren (scpl-Objekt)
-3. AGENT_TAFELBILD.md aktualisieren
+3. AGENT_HEFTEINTRAG.md aktualisieren
 4. Engine-Renderer implementieren (Uebergabe-Prompt)
 5. Mappe 1 migrieren und testen
 
@@ -190,7 +190,7 @@ Bestehende Mappe 1 wird bei der v3.1-Engine-Integration auf das neue Schema migr
 
 ## 7. Stilregel: Fachbegriff-Einfuehrung
 
-AGENT_TAFELBILD muss Fachbegriffe per Doppelpunkt oder Gedankenstrich in den Satzfluss integrieren. Klammern sind verboten.
+AGENT_HEFTEINTRAG muss Fachbegriffe per Doppelpunkt oder Gedankenstrich in den Satzfluss integrieren. Klammern sind verboten.
 
 | Falsch | Richtig |
 |--------|---------|
@@ -200,7 +200,7 @@ AGENT_TAFELBILD muss Fachbegriffe per Doppelpunkt oder Gedankenstrich in den Sat
 
 **Begruendung:** Klammern signalisieren "optional/ergaenzend". Fachbegriffe sind das Gegenteil — sie verdichten den Sachverhalt auf einen Begriff. Doppelpunkte und Gedankenstriche setzen den Begriff als Pointe an das Satzende und geben ihm Gewicht.
 
-**Regeln fuer AGENT_TAFELBILD:**
+**Regeln fuer AGENT_HEFTEINTRAG:**
 1. Fachbegriff steht am Satzende, nach Doppelpunkt oder Gedankenstrich
 2. Maximal ein Fachbegriff pro Satz
 3. Kein Fachbegriff in Klammern — niemals

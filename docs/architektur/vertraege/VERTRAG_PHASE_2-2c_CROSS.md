@@ -12,7 +12,7 @@
 |---|---|---|---|
 | 1 | aufgaben/aufgabe-N-*.json | Alle Felder | — |
 | 2 | materialien/mat-N-*.json | id, typ, titel | Findings (dann Volltext) |
-| 3 | rahmen/tafelbild.json | knoten[], merksaetze[] | — |
+| 3 | rahmen/hefteintrag.json | knoten[], merksaetze[] | — |
 
 **NICHT lesen:** data.json, WORKFLOW_v4.md, SKRIPT, INHALTSBASIS, SUB_AUFGABE_*.md, PROGRESSIONSPLAN.md (bereits konsumiert)
 
@@ -34,7 +34,7 @@
 ```
 1. Alle aufgaben/aufgabe-N-*.json lesen (P1)
 2. Alle materialien/mat-N-*.json lesen (NUR id, typ, titel — P6)
-3. rahmen/tafelbild.json lesen (P1)
+3. rahmen/hefteintrag.json lesen (P1)
 4. Cross-Konsistenz-Pruefung durchfuehren (A1, A3, A5, A8-A10, A12)
 5. Bei PASS: Ergebnis in Q-GATE-LOG.md
 6. Bei FAIL: Betroffene Aufgaben + Finding dokumentieren

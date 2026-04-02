@@ -54,7 +54,7 @@
         }
       ],
       "sicherung": {
-        "tafelbild": {
+        "hefteintrag": {
           "stundenfrage": "",
           "ordnungsmuster": "",
           "scpl": {
@@ -82,7 +82,6 @@
           "verbindungen": [],
           "voraussetzungen": []
         },
-        "kernerkenntnisse": [],
         "hefteintrag_verweis": "",
         "reflexionsimpuls": "",
         "zusammenfassung": "",

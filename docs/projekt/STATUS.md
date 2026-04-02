@@ -1,14 +1,14 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
 **Letzte Aktualisierung:** 2026-04-02
-**Aktuelle Phase:** **v4 Produktionsarchitektur — Audit Sicherungskette: M1-M4 + M1b implementiert. Zwei-Stufen-Architektur aktiv.**
-**Letzter Arbeitsschritt:** Massnahmen M1-M4 + M1b aus Audit Sicherungskette implementiert:
-- M1: Differenzierter FREEZE (STRUKTUR-FREEZE + FORMULIERUNGS-OFFEN) in AGENT_TAFELBILD, ORCHESTRATOR, AGENT_MATERIAL, 3 Vertraegen, UPGRADE_PLAN
-- M1b: GUETEKRITERIEN_TAFELBILD.md Stufe-2 Re-Evaluation (G3, G5, G10, G12, G14 in Phase 2.1c)
-- M2: VERTRAG_PHASE_2-1c Achse 6 "Hefteintrag-Revision" mit Regelwerk erlaubt/verboten, zusammenfassung/ueberleitung-Produktion, Stufe-2 Re-Evaluation
-- M3: VERTRAG_PHASE_2-0 zusammenfassung/ueberleitung als Placeholder "[REVISION IN 2.1c]"
-- M4: VERTRAG_PHASE_2-1 Read-Schritt 2 um SCPL-Schritt erweitert
-**Naechster Schritt:** M5-M9 (Prioritaet 2/3) bei Bedarf. Parallel noch offen: Engine-Fallback (Ueberleitung ID-Pattern), ARTEFAKT_INVENTAR Mappe 2 nachpflegen.
+**Aktuelle Phase:** **v4 Produktionsarchitektur — Alle Audit-Massnahmen (M1-M9) implementiert. Bereit fuer Mappe 3.**
+**Letzter Arbeitsschritt:** M6+M7+M8 implementiert (Infrastruktur-Finalisierung):
+- M6: sicherung.json aufgesplittet — kernerkenntnisse entfernt (M8), hefteintrag_verweis-Text aktualisiert. Produktions-Artefakt rahmen/tafelbild.json → rahmen/hefteintrag.json umbenannt.
+- M7: Begriffe "Tafelbild" → "Hefteintrag" durchgaengig umbenannt. AGENT_TAFELBILD.md → AGENT_HEFTEINTRAG.md. GUETEKRITERIEN_TAFELBILD.md → GUETEKRITERIEN_HEFTEINTRAG_ENTWURF.md (G1-G14). GUETEKRITERIEN_HEFTEINTRAG.md → GUETEKRITERIEN_HEFTEINTRAG_PRODUKT.md (HE1-HE13). ~15 aktive Architekturdateien aktualisiert.
+- M8: Kernerkenntnisse-Dopplung eliminiert — Engine liest aus hefteintrag.scpl.loesung[] statt sicherung.kernerkenntnisse[]. Mappe-1-scpl.loesung auf 3-Item-Form migriert (M3b-Konformitaet).
+- Engine-Patch: escape-engine.js — sicherung.tafelbild → sicherung.hefteintrag, Kernerkenntnisse-Fallback-Kette aktualisiert.
+- Live-Daten: data.json (Mappe 1+2) + template/data.json migriert.
+**Naechster Schritt:** Mappe 3 starten. Parallel noch offen: Engine-Fallback (Ueberleitung ID-Pattern), ARTEFAKT_INVENTAR Mappe 2 nachpflegen, Skill-Update (v4-1 → v4-2 mit M6-M8).
 **Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet.
 
 **Abgeschlossen seit letztem Update:**

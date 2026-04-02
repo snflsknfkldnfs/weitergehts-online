@@ -46,7 +46,7 @@ Das didaktisierte SKRIPT (Phase 0.3, AGENT_SKRIPT) ist bereits eine sequenzierte
 
 | Ordnungsrahmen | Quelle | Funktion | Prioritaet bei Divergenz |
 |---|---|---|---|
-| SCPL-Aufbau (Tafelbild) | AGENT_TAFELBILD (Phase 0.4) | Sinnstruktur: S→C→P→L = logische Aufbauhierarchie | **Hoechste** — Tafelbild ist Quintessenz |
+| SCPL-Aufbau (Tafelbild) | AGENT_HEFTEINTRAG (Phase 0.4) | Sinnstruktur: S→C→P→L = logische Aufbauhierarchie | **Hoechste** — Tafelbild ist Quintessenz |
 | SKRIPT-Absatzfolge | AGENT_SKRIPT (Phase 0.3) | Narrative Reihenfolge: konkret→abstrakt, bekannt→unbekannt | **Primaer** — Normalfall |
 | Artikulationsschema | DIDAKTIK_RAHMEN (Phase 0.1) | Phasenlogik: Problembegegnung→Vergegenwärtigung→Besinnung→Sicherung | **Validierung** — Prueft Konformitaet |
 
@@ -149,7 +149,7 @@ Gewichtete Kriterien fuer den AGENT_MATERIAL Q-Gate bei Aufgabe 1.9. Drei Priori
 | # | Kriterium | Operationalisierung | Herkunft |
 |---|---|---|---|
 | S11 | **Materialtyp-Vielfalt** | Die Sequenz einer Mappe enthaelt mindestens 2 verschiedene Materialtypen (z.B. darstellungstext + bildquelle, nicht nur darstellungstext + darstellungstext). | Meyer Methodenvielfalt |
-| S12 | **Sprachregister-Progression** | Das Sprachregister der Materialien passt sich dem Themencharakter an und steigert sich progressiv: erfahrungsbezogen-narrativ → fachbegrifflich-analytisch → bilanzierend-urteilend. | Empirie GUETEKRITERIEN_TAFELBILD (Abschnitt 3.5) |
+| S12 | **Sprachregister-Progression** | Das Sprachregister der Materialien passt sich dem Themencharakter an und steigert sich progressiv: erfahrungsbezogen-narrativ → fachbegrifflich-analytisch → bilanzierend-urteilend. | Empirie GUETEKRITERIEN_HEFTEINTRAG_ENTWURF (Abschnitt 3.5) |
 | S13 | **Personalisierung in Fruehphase** | Mindestens 1 Material in der ersten Sequenzhaelfte hat einen personalisierten Zugang (individuelle Perspektive, Identifikationsfigur, Tagebuch, Brief). | Roth Personalisierung + Vergegenwärtigung |
 
 ---
@@ -312,7 +312,7 @@ Konkrete Prueflogik fuer jedes Kriterium, damit AGENT_MATERIAL das Q-Gate autono
 
 ### S12: Sprachregister-Progression (KANN)
 
-**Prueflogik:** Sprachregister der Materialien korreliert mit Themencharakter und steigt progressiv an (vgl. GUETEKRITERIEN_TAFELBILD Abschnitt 3.5).
+**Prueflogik:** Sprachregister der Materialien korreliert mit Themencharakter und steigt progressiv an (vgl. GUETEKRITERIEN_HEFTEINTRAG_ENTWURF Abschnitt 3.5).
 **Kein FAIL moeglich** — nur Dokumentation.
 
 ### S13: Personalisierung in Fruehphase (KANN)
@@ -372,7 +372,7 @@ Nach User-Validierung (Phase 1.5 Gate) werden die `sequenz_kontext`-Objekte an d
 
 | Praefix | Ebene | Dokument |
 |---|---|---|
-| G1-G14 | Tafelbild | GUETEKRITERIEN_TAFELBILD.md |
+| G1-G14 | Tafelbild | GUETEKRITERIEN_HEFTEINTRAG_ENTWURF.md |
 | S1-S15 | Sequenzplanung | GUETEKRITERIEN_SEQUENZIERUNG.md (dieses Dokument) |
 | SQ-1 bis SQ-4 | Sequenz-Kohaerenz (Subagent) | SUB_MATERIAL_*.md |
 | A1-A?+ | Aufgaben (v3.4) | GUETEKRITERIEN_AUFGABEN.md (geplant) |
@@ -385,7 +385,7 @@ Nach User-Validierung (Phase 1.5 Gate) werden die `sequenz_kontext`-Objekte an d
 |---|---|
 | Materialproduktion (Text, Bild, Format) | SUB_MATERIAL_* |
 | Einzelmaterial-Qualitaet | SQ-1 bis SQ-4 in SUB_MATERIAL_*.md |
-| Tafelbild-Struktur und Hefteintrag | GUETEKRITERIEN_TAFELBILD.md (G1-G14) |
+| Tafelbild-Struktur und Hefteintrag | GUETEKRITERIEN_HEFTEINTRAG_ENTWURF.md (G1-G14) |
 | Aufgaben-/Raetselqualitaet | GUETEKRITERIEN_AUFGABEN.md (v3.4, geplant) |
 | Didaktischer Rahmen (Lernziele, KE) | AGENT_DIDAKTIK |
 | Narratives Skript | AGENT_SKRIPT |

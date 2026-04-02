@@ -31,6 +31,27 @@ Prioritäten:
 3. **Schulbuch-Material**: Trio 7, andere zugelassene Lehrwerke
 4. **Ergänzend Web**: Nur zur Faktenprüfung, nicht als Primärquelle
 
+### 2b. Game-weite Artikelliste erstellen (OPT-2, v4.1)
+
+**Scope:** Die Artikelliste wird fuer das GESAMTE Game erstellt, nicht pro Mappe. Grund: AGENT_ARTEFAKT sichtet Bilder/Zitate/Rollen game-weit. Spaetere Mappen koennen auf Artefakte frueherer Mappen verweisen (z.B. Rueckbezug auf Karte aus Mappe 1 in Mappe 3).
+
+**Output:** Eine Tabelle mit allen Wikipedia-Artikeln, die fuer das Game relevant sind, mit Mappe-Zuordnung:
+
+```markdown
+## Artikel-Inventar (Game-weit)
+
+| Artikel (Wikipedia EN) | Primaer-Mappe(n) | Sekundaer-Mappe(n) | Relevante Sektionen | Bemerkung |
+|---|---|---|---|---|
+| Causes of World War I | 1, 2, 3 | 4 | Sektionen 4, 7, 30, 15-20 | Hauptartikel, deckt alle Mappen ab |
+| Triple Alliance (1882) | 1 | — | Gesamt | Buendnissysteme |
+| July Crisis | 2 | 3 | Gesamt | Attentat + Julikrise |
+```
+
+**Primaer-Mappe:** Der Artikel liefert Kerninhalt fuer diese Mappe(n).
+**Sekundaer-Mappe:** Der Artikel liefert Zusatzkontext oder Anknuepfungspunkte.
+
+Diese Tabelle wird Teil der INHALTSBASIS und dient AGENT_ARTEFAKT als Eingabe fuer die game-weite Sichtung.
+
 ### 3. Strukturierte Inhalts-MDs pro Mappe erstellen
 
 Jedes Inhalts-MD muss:

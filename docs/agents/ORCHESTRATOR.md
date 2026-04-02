@@ -56,11 +56,11 @@ PHASE 0: INHALTSGERUEST (einmalig pro Game)
 ════════════════════════════════════════════════════
   │
   ▼
-[0.4] AGENT_TAFELBILD                                 ← NEU v3
+[0.4] AGENT_HEFTEINTRAG                                 ← NEU v3
   │    Eingabe: Validiertes SKRIPT + DIDAKTIK_RAHMEN + ARTEFAKT_INVENTAR
   │    Ausgabe: TAFELBILD_[game-id]_Mappe[N].md (pro Mappe)
   │             (Dual: JSON-Repraesentation + Hefteintrag 80-120 W)
-  │    Q-Gate: 13 Kriterien (G1-G14), GUETEKRITERIEN_TAFELBILD.md
+  │    Q-Gate: 13 Kriterien (G1-G14), GUETEKRITERIEN_HEFTEINTRAG_ENTWURF.md
   │    STRUKTUR-FREEZE: Nach Q-Gate PASS Struktur eingefroren (SCPL-Zonen, KE, Fachbegriffe, Ordnungsmuster, Stundenfrage). FORMULIERUNGS-OFFEN: SCPL-Texte revidierbar bis Phase 2.1c Achse 6.
   │    Ort: Cowork
   │
@@ -95,7 +95,7 @@ PHASE 2: MAPPEN-PRODUKTION (sequentiell, pro Mappe)
   │                                                  │
   │  [2.0] Rahmen-Produktion (1 Dispatch, Cowork)    │
   │        Eingabe: TAFELBILD + MATERIAL_GERUEST     │
-  │        Ausgabe: rahmen/tafelbild.json,            │
+  │        Ausgabe: rahmen/hefteintrag.json,            │
   │                 einstieg.json, sicherung.json,    │
   │                 meta.json                         │
   │        M3b: sicherung.kernerkenntnisse :=         │
@@ -166,7 +166,7 @@ mit rahmen/*.json, materialien/*.json, aufgaben/*.json (alle in Cowork Phase 2 p
    - einstieg.json → mappe.einstieg
    - materialien/*.json → mappe.materialien[] (sortiert nach position)
    - aufgaben/*.json → mappe.aufgaben[] (sortiert nach position)
-   - sicherung.json + tafelbild.json → mappe.sicherung
+   - sicherung.json + hefteintrag.json → mappe.sicherung
 3. **data.json lesen** — Claude Code liest die aktuelle Version (NICHT aus dem Uebergabe-Prompt uebernehmen)
 4. **mappen[N-1] anfuegen** — Neues Mappe-Objekt als letztes Element in `mappen[]` anhaengen
 5. **meta unveraendert** — `meta{}` wird NICHT modifiziert
@@ -299,7 +299,7 @@ QUALITAETS-GATE
    - Fachfehler → AGENT_INHALT oder AGENT_SKRIPT
    - Didaktische Maengel → AGENT_DIDAKTIK
    - Skript-Kohaerenz → AGENT_SKRIPT
-   - Tafelbild-Struktur/Guete → AGENT_TAFELBILD
+   - Tafelbild-Struktur/Guete → AGENT_HEFTEINTRAG
    - Material-Qualitaet → materialerstellung-skill (Subagenten)
    - Raetsel-Design-Probleme → AGENT_RAETSEL
    - Technische Bugs → AGENT_TECHNIK
@@ -315,7 +315,7 @@ QUALITAETS-GATE
 | 0.1   | AGENT_DIDAKTIK           | Cowork      | Dokumentenarbeit, kein Tool-intensiv               |
 | 0.2   | AGENT_INHALT             | Claude Code | Token-intensive Wikipedia-MCP-Recherche            |
 | 0.3   | AGENT_SKRIPT             | Cowork      | Textproduktion, kein Tool-intensiv                 |
-| 0.4   | AGENT_TAFELBILD          | Cowork      | Synthese-Extraktion aus SKRIPT, kein Tool-intensiv |
+| 0.4   | AGENT_HEFTEINTRAG          | Cowork      | Synthese-Extraktion aus SKRIPT, kein Tool-intensiv |
 | 1.1   | AGENT_MATERIAL (Design)  | Cowork      | Design-Entscheidungen, kein Tool-intensiv          |
 | 2.0   | Rahmen-Produktion        | Cowork      | 1 Dispatch: tafelbild/einstieg/sicherung/meta.json (P1, P4) |
 | 2.1   | SUB_MATERIAL_* (7 Subagenten) | Cowork  | Isolierter Dispatch pro Material (P1, P4, P5). Output: .json pro Material |
@@ -415,7 +415,7 @@ escape-games/[thema]/
 | Didaktik                | `docs/agents/AGENT_DIDAKTIK.md`             | 0.1       | KE-Matrix, Mappen-Grobstruktur, Schwierigkeitskurve, Leitlinien                                                                                   |
 | Inhalt                  | `docs/agents/AGENT_INHALT.md`               | 0.2       | Wikipedia-basierte Sachanalyse, Fakten-Extraktion, Quellenarbeit                                                                                  |
 | Skript                  | `docs/agents/AGENT_SKRIPT.md`               | 0.3       | Lineares Jugendsachbuch-Skript (600-900 W/Chunk), Chunking, Artefakt-Positionierung                                                               |
-| Tafelbild               | `docs/agents/AGENT_TAFELBILD.md`            | 0.4       | Synthese-Extrakt aus SKRIPT, JSON + Hefteintrag, Q-Gate G1-G14                                                                                    |
+| Tafelbild               | `docs/agents/AGENT_HEFTEINTRAG.md`            | 0.4       | Synthese-Extrakt aus SKRIPT, JSON + Hefteintrag, Q-Gate G1-G14                                                                                    |
 | Material (Orchestrator) | `docs/agents/AGENT_MATERIAL.md`             | 1.1 + 2.1 | Design-Modus: Materialtyp-Zuordnung, TB-Abdeckung. Dispatch an 7 SUB_MATERIAL_*. Cross-Konsistenz. Ref: QUALITAETSKRITERIEN_MATERIALPRODUKTION.md |
 | Material-Subagenten     | `docs/agents/SUB_MATERIAL_*.md` (7 Dateien) | 2.1       | Typ-spezifische Materialproduktion (DT, QT, BQ, KA, ZL, ST, TB), eigenes Q-Gate, Engine-Typ-Mapping                                               |
 | Raetsel (Orchestrator)  | `docs/agents/AGENT_RAETSEL.md`              | 2.2a/c    | Progressionsplan, Dispatch, Cross-Konsistenz, Codes, Narrativ, Orchestrator-Q-Gate (A5, A8-A10, A12)                                              |
@@ -430,7 +430,7 @@ escape-games/[thema]/
 | Dokument | Relevanz |
 |---|---|
 | `docs/architektur/WORKFLOW_v4.md` | **Kanonisch** — Phasenstruktur, Agenten-Reihenfolge, Artefakt-Definitionen, Schnittstellen-Vertraege |
-| `docs/checklisten/GUETEKRITERIEN_TAFELBILD.md` | Empirische Guetekriterien G1-G14 fuer Tafelbild (Q-Gate AGENT_TAFELBILD) |
+| `docs/checklisten/GUETEKRITERIEN_HEFTEINTRAG_ENTWURF.md` | Empirische Guetekriterien G1-G14 fuer Tafelbild (Q-Gate AGENT_HEFTEINTRAG) |
 | `docs/checklisten/GUETEKRITERIEN_AUFGABEN.md` | Fachdidaktische Guetekriterien A1-A15 fuer Aufgaben (Q-Gate AGENT_RAETSEL) |
 | `docs/checklisten/GUETEKRITERIEN_SKRIPT.md` | Fachdidaktische Guetekriterien SK1-SK15 fuer Skript (Q-Gate AGENT_SKRIPT) |
 | `docs/checklisten/GUETEKRITERIEN_SEQUENZIERUNG.md` | Fachdidaktische Guetekriterien S1-S15 fuer Sequenzierung (Q-Gate AGENT_MATERIAL) |

@@ -24,7 +24,7 @@ AGENT_MATERIAL erfindet keine Fakten. Fachliche Substanz kommt aus dem SKRIPT (P
 | Parameter | Beschreibung | Quelle |
 |---|---|---|
 | `SKRIPT` | Validiertes Skript (gechunkt, mit Artefakt-Zuordnungen: img-IDs, zit-IDs, rolle-IDs) | AGENT_SKRIPT (Phase 0.3) |
-| `TAFELBILD` | Fixiertes Tafelbild pro Mappe (JSON + Hefteintrag, STRUKTUR-FREEZE nach Q-Gate PASS: SCPL-Zonen, KE, Fachbegriffe, Ordnungsmuster, Stundenfrage unveraenderlich. SCPL-Texte FORMULIERUNGS-OFFEN bis Phase 2.1c) | AGENT_TAFELBILD (Phase 0.4) |
+| `TAFELBILD` | Fixiertes Tafelbild pro Mappe (JSON + Hefteintrag, STRUKTUR-FREEZE nach Q-Gate PASS: SCPL-Zonen, KE, Fachbegriffe, Ordnungsmuster, Stundenfrage unveraenderlich. SCPL-Texte FORMULIERUNGS-OFFEN bis Phase 2.1c) | AGENT_HEFTEINTRAG (Phase 0.4) |
 | `DIDAKTIK_RAHMEN` | KE-Matrix, Mappen-Grobstruktur, Schwierigkeitskurve, didaktische Leitlinien | AGENT_DIDAKTIK (Phase 0.1) |
 | `mappe_nr` | Nummer der zu designenden Mappe (inkrementell: 1 → 2 → ...) | User/Cowork |
 
@@ -37,7 +37,7 @@ AGENT_MATERIAL erfindet keine Fakten. Fachliche Substanz kommt aus dem SKRIPT (P
 | Read-Schritt | Input-Datei | Gelesene Felder | Bedingung |
 |---|---|---|---|
 | 1 | MATERIAL_GERUEST | NUR Zeile des aktuellen mat-ID | immer |
-| 2 | rahmen/tafelbild.json | NUR referenzierte knoten + stundenfrage | immer |
+| 2 | rahmen/hefteintrag.json | NUR referenzierte knoten + stundenfrage | immer |
 | 3 | SUB_MATERIAL_[TYP].md | Vollstaendig | immer |
 | 4 | SKRIPT | NUR referenzierten Chunk | immer |
 | 5 | INHALTSBASIS | NUR zum Chunk gehoerende Sektion | immer |
@@ -86,7 +86,7 @@ AGENT_MATERIAL erfindet keine Fakten. Fachliche Substanz kommt aus dem SKRIPT (P
 
 #### 1.1 Tafelbild-Abdeckung verifizieren (v3: TB ist fixiert)
 
-Das Tafelbild kommt als fixierter Input aus AGENT_TAFELBILD (Phase 0.4). Es hat das Q-Gate (G1-G14) bestanden und unterliegt dem **STRUKTUR-FREEZE**: SCPL-Zonen, Kernerkenntnisse, Fachbegriffe, Ordnungsmuster und Stundenfrage sind unveraenderlich. AGENT_MATERIAL darf keine Knoten hinzufuegen, entfernen oder inhaltlich aendern. (SCPL-Texte sind FORMULIERUNGS-OFFEN — Revision erfolgt in Phase 2.1c Achse 6, nicht durch AGENT_MATERIAL.)
+Das Tafelbild kommt als fixierter Input aus AGENT_HEFTEINTRAG (Phase 0.4). Es hat das Q-Gate (G1-G14) bestanden und unterliegt dem **STRUKTUR-FREEZE**: SCPL-Zonen, Kernerkenntnisse, Fachbegriffe, Ordnungsmuster und Stundenfrage sind unveraenderlich. AGENT_MATERIAL darf keine Knoten hinzufuegen, entfernen oder inhaltlich aendern. (SCPL-Texte sind FORMULIERUNGS-OFFEN — Revision erfolgt in Phase 2.1c Achse 6, nicht durch AGENT_MATERIAL.)
 
 **Aufgabe:** Fuer jeden TB-Knoten pruefen, ob konkretes Material die Erarbeitung ermoeglicht:
 
@@ -174,7 +174,7 @@ Aufgaben-Entwicklung: AGENT_RAETSEL (Phase 2, nach Materialproduktion).
 
 #### 1.5 Erarbeitbarkeits-Dokumentation (v3: TB-Abdeckungs-Nachweis)
 
-**Pflicht.** Das Tafelbild ist fixiert (Phase 0.4, STRUKTUR-FREEZE). AGENT_MATERIAL fuehrt keinen eigenen TB-Vollstaendigkeits- oder Strukturcheck durch — das hat AGENT_TAFELBILD mit Q-Gate G1-G14 erledigt. Stattdessen:
+**Pflicht.** Das Tafelbild ist fixiert (Phase 0.4, STRUKTUR-FREEZE). AGENT_MATERIAL fuehrt keinen eigenen TB-Vollstaendigkeits- oder Strukturcheck durch — das hat AGENT_HEFTEINTRAG mit Q-Gate G1-G14 erledigt. Stattdessen:
 
 **Schritt 1 — Material-zu-Knoten-Mapping:**
 Fuer jeden TB-Knoten dokumentieren: Welches Material (mat-ID, konkrete Stelle) ermoeglicht die Erarbeitung?
@@ -357,7 +357,7 @@ Das Tafelbild-JSON wird unveraendert aus TAFELBILD_[game-id]_Mappe[N].md ueberno
 }
 ```
 
-Format: SCPL (v3.1+). `knoten[]` und `verbindungen[]` bleiben als leere Legacy-Arrays. Kanonische Referenz: `docs/agents/AGENT_TAFELBILD.md`.
+Format: SCPL (v3.1+). `knoten[]` und `verbindungen[]` bleiben als leere Legacy-Arrays. Kanonische Referenz: `docs/agents/AGENT_HEFTEINTRAG.md`.
 
 #### 2.3 Einstieg und Sicherung ausformulieren
 
@@ -611,7 +611,7 @@ Verzeichnis: `docs/agents/artefakte/produktion/{game-id}/mappe-{N}/materialien/`
 Pro Material eine Datei: `mat-N-M.json` (Format: Abschnitt 2.4).
 
 Rahmen-Dateien (Phase 2.0): `docs/agents/artefakte/produktion/{game-id}/mappe-{N}/rahmen/`
-- tafelbild.json, einstieg.json, sicherung.json, meta.json
+- hefteintrag.json, einstieg.json, sicherung.json, meta.json
 
 AGENT_RAETSEL (Phase 2.2) liest materialien/*.json als Eingabe.
 Phase 3 (Claude Code) assembliert alle .json-Dateien zu data.json — rein mechanisch.

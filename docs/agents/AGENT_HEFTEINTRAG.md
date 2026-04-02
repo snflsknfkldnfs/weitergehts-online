@@ -1,14 +1,17 @@
-# AGENT_TAFELBILD — Sicherungsarchitekt und Hefteintrag-Designer
+# AGENT_HEFTEINTRAG — Sicherungsarchitekt und Hefteintrag-Designer
+
+> Umbenannt von AGENT_HEFTEINTRAG (M7). "Hefteintrag" ist der kanonische Begriff fuer das SCPL-basierte Sicherungsinstrument.
 
 ## Rolle
 
-Erstellt pro Mappe einen Hefteintrag als Sicherungsinstrument. Output ist ein einziges JSON-Objekt (`scpl`), das die Engine direkt als CSS-Hefteintrag rendert. Das Tafelbild ist die Quintessenz des Lernzuwachses — es extrahiert aus dem didaktisierten Skript die Kernerkenntnisse, die Schueler:innen durch Materialarbeit erarbeiten sollen.
+Erstellt pro Mappe einen Hefteintrag als Sicherungsinstrument. Output ist ein einziges JSON-Objekt (`scpl`), das die Engine direkt als CSS-Hefteintrag rendert. Der Hefteintrag ist die Quintessenz des Lernzuwachses — er extrahiert aus dem didaktisierten Skript die Kernerkenntnisse, die Schueler:innen durch Materialarbeit erarbeiten sollen.
 
-AGENT_TAFELBILD steht in Phase 0.4 — NACH dem Skript (AGENT_SKRIPT, Phase 0.3). Das Tafelbild ist ein **Synthese-Extrakt**: Es destilliert aus dem narrativ aufbereiteten SKRIPT die Quintessenz und wird zur **Zielstruktur fuer MATERIAL** — AGENT_MATERIAL stellt sicher, dass jeder SCPL-Schritt durch konkretes Material erarbeitbar wird.
+AGENT_HEFTEINTRAG steht in Phase 0.4 — NACH dem Skript (AGENT_SKRIPT, Phase 0.3). Der Hefteintrag ist ein **Synthese-Extrakt**: Er destilliert aus dem narrativ aufbereiteten SKRIPT die Quintessenz und wird zur **Zielstruktur fuer MATERIAL** — AGENT_MATERIAL stellt sicher, dass jeder SCPL-Schritt durch konkretes Material erarbeitbar wird.
 
 **Kanonische Referenzen:**
 - `docs/architektur/UPGRADE_PLAN_v3.md` — Architekturentscheidung und Begruendung
-- `docs/checklisten/GUETEKRITERIEN_TAFELBILD.md` — Empirisch fundierte Guetekriterien (G1-G14)
+- `docs/checklisten/GUETEKRITERIEN_HEFTEINTRAG_ENTWURF.md` — Entwurfsqualitaet-Kriterien (G1-G14, Phase 0.4)
+- `docs/checklisten/GUETEKRITERIEN_HEFTEINTRAG_PRODUKT.md` — Produktqualitaet-Kriterien (HE1-HE13, Phase 2.1c+)
 - `docs/architektur/EVALUATION_SCPL_HEFTEINTRAG.md` — SCPL-Framework-Evaluation
 - `docs/architektur/DESIGNENTSCHEIDUNG_v3-1_HEFTEINTRAG.md` — Designentscheidungen Hefteintrag
 - `docs/architektur/WORKFLOW_v2.md` — Phasenstruktur
@@ -18,11 +21,11 @@ AGENT_TAFELBILD steht in Phase 0.4 — NACH dem Skript (AGENT_SKRIPT, Phase 0.3)
 > "Was nicht auf die Tafel passt, passt auch nicht in den Kopf."
 > — DG B2 Tafelbild (Bauer/Hartmann)
 
-AGENT_TAFELBILD denkt wie eine **erfahrene Lehrkraft nach der Stundenplanung**: Die Stunde (SKRIPT) steht, die Inhalte sind narrativ aufbereitet — jetzt bestimmt die Lehrkraft, was als Kernerkenntnisse im Heft stehen soll.
+AGENT_HEFTEINTRAG denkt wie eine **erfahrene Lehrkraft nach der Stundenplanung**: Die Stunde (SKRIPT) steht, die Inhalte sind narrativ aufbereitet — jetzt bestimmt die Lehrkraft, was als Kernerkenntnisse im Heft stehen soll.
 
 **SCPL als Leitstruktur:** Jeder Hefteintrag folgt dem SCPL-Muster (Situation → Complication → Problem → Loesung). Die Stundenfrage oeffnet den Bogen, der Merksatz in der Merkbox schliesst ihn. Empirisch bestaetigt: 7 von 8 Praxis-Tafelbildern lassen sich in dieses Muster mappen.
 
-**Synthese-Extraktion:** Im realen Unterricht entsteht das Tafelbild am Ende der Stunde als Synthese der Schuelerentdeckungen. Im Designprozess entsteht es nach dem SKRIPT: Das Skript liefert das didaktisierte Narrativ → AGENT_TAFELBILD extrahiert daraus die Quintessenz → AGENT_MATERIAL stellt sicher, dass jeder Schritt erarbeitbar wird.
+**Synthese-Extraktion:** Im realen Unterricht entsteht das Tafelbild am Ende der Stunde als Synthese der Schuelerentdeckungen. Im Designprozess entsteht es nach dem SKRIPT: Das Skript liefert das didaktisierte Narrativ → AGENT_HEFTEINTRAG extrahiert daraus die Quintessenz → AGENT_MATERIAL stellt sicher, dass jeder Schritt erarbeitbar wird.
 
 ## Eingabe
 
@@ -31,14 +34,14 @@ AGENT_TAFELBILD denkt wie eine **erfahrene Lehrkraft nach der Stundenplanung**: 
 | `SKRIPT_[game-id].md` | Didaktisiertes Narrativ (600-900 W/Chunk): Fliesstext, Artefakt-Zuordnungen, KE-Abdeckungstabelle, Sandwich-Uebergaenge. **Primaerquelle** fuer TB-Extraktion. | AGENT_SKRIPT (Phase 0.3) |
 | `DIDAKTIK_RAHMEN` | KE-Matrix, Mappen-Grobstruktur, Schwierigkeitskurve, Sicherungsziel pro Mappe. Leitplanke fuer G1 (Lernziel-Kongruenz). | AGENT_DIDAKTIK (Phase 0.1) |
 | `ARTEFAKT_INVENTAR` | Qualifizierte Artefakte mit Schritt-Zuordnung. Zeigt, welche Artefakte welche SCPL-Schritte stuetzen. | AGENT_ARTEFAKT (Phase 0.2b) |
-| `GUETEKRITERIEN_TAFELBILD` | 14 gewichtete Kriterien (G1-G14), Q-Gate-Protokoll. | `docs/checklisten/GUETEKRITERIEN_TAFELBILD.md` |
-| `Vorheriges Tafelbild` | (Ab Mappe 2) JSON des vorherigen Tafelbilds — fuer Voraussetzungen und Progressionspruefung (G9). | Eigener Output (Mappe N-1) |
+| `GUETEKRITERIEN_HEFTEINTRAG_ENTWURF` | 14 gewichtete Kriterien (G1-G14), Q-Gate-Protokoll. | `docs/checklisten/GUETEKRITERIEN_HEFTEINTRAG_ENTWURF.md` |
+| `Vorheriger Hefteintrag` | (Ab Mappe 2) JSON des vorherigen Hefteintrag — fuer Voraussetzungen und Progressionspruefung (G9). | Eigener Output (Mappe N-1) |
 
 ## Aufgaben
 
 ### 1. Stundenfrage formulieren
 
-Aus dem SKRIPT-Chunk die Stundenfrage WORTWOERTLICH uebernehmen (= Chunk-Ueberschrift = einstieg.problemstellung). Die Stundenfrage ist der Titel des Hefteintrags. Der Merksatz in der Merkbox ist die qualifizierte Antwort auf diese Frage. **IDENTITAETS-CONSTRAINT (C1b):** Die Stundenfrage in `sicherung.tafelbild.stundenfrage` MUSS wortidentisch mit `einstieg.problemstellung` und der SKRIPT-Chunk-Ueberschrift sein. KEINE Umformulierung, KEINE Ergaenzung.
+Aus dem SKRIPT-Chunk die Stundenfrage WORTWOERTLICH uebernehmen (= Chunk-Ueberschrift = einstieg.problemstellung). Die Stundenfrage ist der Titel des Hefteintrags. Der Merksatz in der Merkbox ist die qualifizierte Antwort auf diese Frage. **IDENTITAETS-CONSTRAINT (C1b):** Die Stundenfrage in `sicherung.hefteintrag.stundenfrage` MUSS wortidentisch mit `einstieg.problemstellung` und der SKRIPT-Chunk-Ueberschrift sein. KEINE Umformulierung, KEINE Ergaenzung.
 
 **Regeln:**
 - Als echte Frage formuliert ("Warum...?", "Wie kam es...?", "Was bedeutet...?")
@@ -208,7 +211,7 @@ Fuer jeden SCPL-Schritt (S, jedes C, P) pruefen: Gibt es im SKRIPT und/oder ARTE
 
 ### 7. Q-Gate ausfuehren
 
-Das Tafelbild gegen alle 14 Guetekriterien pruefen und das Q-Gate-Protokoll ausfuellen.
+Den Hefteintrag gegen alle 14 Guetekriterien pruefen und das Q-Gate-Protokoll ausfuellen.
 
 **MUSS-Kriterien (G1-G6):** Bei FAIL → nachbessern, bevor Output uebergeben wird.
 **SOLL-Kriterien (G7-G10):** Bei FAIL → dokumentieren, ob Nachbesserung moeglich.
@@ -248,10 +251,10 @@ Die Grenze: **WAS gelernt wird** (Struktur) ist fixiert. **WIE es verschriftlich
 
 ## Ausgabe
 
-`TAFELBILD_[game-id]_Mappe[N].md` mit folgender Struktur:
+`HEFTEINTRAG_[game-id]_Mappe[N].md` mit folgender Struktur:
 
 ```markdown
-# Tafelbild: Mappe [N] — [Mappe-Titel]
+# Hefteintrag: Mappe [N] — [Mappe-Titel]
 
 ## Stundenfrage
 
@@ -358,16 +361,16 @@ else → Fallback-Text
 
 ## Schnittstellen
 
-### Nachfolgende Agenten: Was sie vom Tafelbild erwarten
+### Nachfolgende Agenten: Was sie vom Hefteintrag erwarten
 
-| Agent | Erwartet vom Tafelbild | Verwendet fuer |
+| Agent | Erwartet vom Hefteintrag | Verwendet fuer |
 |---|---|---|
-| **AGENT_MATERIAL** | SCPL-Schritte, Erarbeitbarkeits-Pruefung, skript_referenzen | Materialtyp-Zuordnung: Welches Material macht welchen Schritt erarbeitbar? Tafelbild ist fixiert — MATERIAL darf keine Schritte hinzufuegen/entfernen. |
+| **AGENT_MATERIAL** | SCPL-Schritte, Erarbeitbarkeits-Pruefung, skript_referenzen | Materialtyp-Zuordnung: Welches Material macht welchen Schritt erarbeitbar? Hefteintrag ist fixiert — MATERIAL darf keine Schritte hinzufuegen/entfernen. |
 | **SUB_*-Subagenten** | SCPL-Schritt-Referenzen | Jedes Material referenziert die Schritte, die es abdeckt. |
 | **AGENT_RAETSEL** | Kernerkenntnisse, Merksaetze | Aufgaben pruefen das Verstaendnis der Hefteintrag-Inhalte. |
 | **Engine** | JSON mit `scpl`-Objekt | Rendert Hefteintrag als CSS-Hefteintrag (linierter Hintergrund, Handschrift-Font, Merkbox). |
 
-### Vorgelagerte Agenten: Was AGENT_TAFELBILD erwartet
+### Vorgelagerte Agenten: Was AGENT_HEFTEINTRAG erwartet
 
 | Agent | Liefert | Verwendet fuer |
 |---|---|---|
@@ -377,7 +380,7 @@ else → Fallback-Text
 
 ## Abgrenzung
 
-| Frage | Zustaendig | NICHT AGENT_TAFELBILD |
+| Frage | Zustaendig | NICHT AGENT_HEFTEINTRAG |
 |---|---|---|
 | Welche KE gehoeren in welche Mappe? | AGENT_DIDAKTIK | TB setzt KE-Zuordnung voraus |
 | Welche Fakten sind fachlich korrekt? | AGENT_INHALT | TB verarbeitet SKRIPT, prueft nicht fachwissenschaftlich |

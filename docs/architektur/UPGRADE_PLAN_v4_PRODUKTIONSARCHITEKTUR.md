@@ -75,7 +75,7 @@ Phase 0: Inhaltliche Vorarbeit (unveraendert)
   0.1 AGENT_DIDAKTIK    → DIDAKTIK_RAHMEN
   0.2 AGENT_INHALT      → INHALTSBASIS
   0.3 AGENT_SKRIPT      → SKRIPT (gechunkt)
-  0.4 AGENT_TAFELBILD   → TAFELBILD pro Mappe
+  0.4 AGENT_HEFTEINTRAG   → TAFELBILD pro Mappe
   0.5 AGENT_ARTEFAKT    → ARTEFAKT_INVENTAR
 
 Phase 1: Material-Design (unveraendert, Cowork)
@@ -84,7 +84,7 @@ Phase 1: Material-Design (unveraendert, Cowork)
 
 Phase 2: Didaktische Produktion (NEU: Cowork statt Claude Code)
   2.0 Rahmen-Produktion (Cowork)
-      → tafelbild.json, einstieg.json, sicherung.json, meta.json
+      → hefteintrag.json, einstieg.json, sicherung.json, meta.json
       → User-Validierung EMPFOHLEN
   2.1 Material-Produktion (Cowork, sequentiell)
       → Pro Material: SUB_MATERIAL_* lesen → produzieren → Q-Gate → .json schreiben
@@ -127,7 +127,7 @@ docs/agents/artefakte/produktion/{game-id}/mappe-{N}/
     meta.json          # freischalt_code, titel, beschreibung
     einstieg.json      # narrativ, problemstellung
     sicherung.json     # typ, zusammenfassung, ueberleitung, reflexionsimpuls, kernerkenntnisse[], hefteintrag_verweis, zitat
-    tafelbild.json     # knoten, verbindungen, voraussetzungen, stundenfrage, scpl, merksaetze
+    hefteintrag.json     # knoten, verbindungen, voraussetzungen, stundenfrage, scpl, merksaetze
   materialien/
     mat-N-1.json       # Vollstaendiges Material-JSON-Objekt (Engine-kompatibel)
     mat-N-2.json
@@ -150,10 +150,10 @@ docs/agents/artefakte/produktion/{game-id}/mappe-{N}/
 
 | Read-Schritt | Input-Datei | Gelesene Felder | Zweck |
 |---|---|---|---|
-| 1 | TAFELBILD_Mappe[N].md | Vollstaendig (STRUKTUR-FREEZE) | → rahmen/tafelbild.json (1:1) |
+| 1 | TAFELBILD_Mappe[N].md | Vollstaendig (STRUKTUR-FREEZE) | → rahmen/hefteintrag.json (1:1) |
 | 2 | MATERIAL_GERUEST (Einstieg) | typ, narrativ, problemstellung | → rahmen/einstieg.json |
 | 3 | MATERIAL_GERUEST (Sicherung) | typ, zusammenfassung, ueberleitung, reflexionsimpuls, hefteintrag_verweis, zitat | → rahmen/sicherung.json (Basis) |
-| 4 | rahmen/tafelbild.json (Schritt 1) | loesung.saetze[] (Merkbox) | → sicherung.kernerkenntnisse[] (M3b) |
+| 4 | rahmen/hefteintrag.json (Schritt 1) | loesung.saetze[] (Merkbox) | → sicherung.kernerkenntnisse[] (M3b) |
 | 5 | ORCHESTRATOR + GERUEST Header | Freischalt-Code-Regeln, titel, beschreibung | → rahmen/meta.json |
 
 **M3b-Constraint:** `sicherung.kernerkenntnisse[]` := `tafelbild.loesung.saetze[]` (Merkbox-Inhalt). Wird nicht neu formuliert — Autoritaet liegt beim Tafelbild (STRUKTUR-FREEZE).
@@ -167,7 +167,7 @@ docs/agents/artefakte/produktion/{game-id}/mappe-{N}/
 | Read-Schritt | Input-Datei | Gelesene Felder/Sektionen | Bedingung | NICHT lesen |
 |---|---|---|---|---|
 | 1 | MATERIAL_GERUEST | NUR Zeile des aktuellen mat-ID (typ, titel, skript_chunk, tafelbild_knoten, artefakt_ref, didaktische_funktion) | immer | Andere mat-IDs |
-| 2 | rahmen/tafelbild.json | NUR referenzierte knoten + stundenfrage | immer | Andere Knoten |
+| 2 | rahmen/hefteintrag.json | NUR referenzierte knoten + stundenfrage | immer | Andere Knoten |
 | 3 | SUB_MATERIAL_[TYP].md | Vollstaendig | immer | Andere SUB_MATERIAL_*.md |
 | 4 | SKRIPT | NUR referenzierten Chunk (§-Bereich) | immer | Andere Chunks |
 | 5 | INHALTSBASIS | NUR zum Chunk gehoerende Mappe-Sektion | immer | Andere Mappen |
@@ -180,7 +180,7 @@ Fuer jedes mat-ID im MATERIAL_GERUEST:
 ```
 1. MATERIAL_GERUEST lesen → mat-ID, typ, titel, skript_chunk, tafelbild_knoten,
    artefakt_ref, didaktische_funktion
-2. tafelbild.json lesen → Relevante Knoten + Stundenfrage (P1 + P6)
+2. hefteintrag.json lesen → Relevante Knoten + Stundenfrage (P1 + P6)
 3. SUB_MATERIAL_[TYP].md lesen (P1)
 4. SKRIPT relevanten Chunk lesen (P1 + P6: NUR diesen Chunk)
 5. INHALTSBASIS relevante Sektion lesen (P1 + P6: NUR diese Mappe)
@@ -206,7 +206,7 @@ Fuer jedes mat-ID im MATERIAL_GERUEST:
 | Input-Datei | Gelesene Felder | Zweck |
 |---|---|---|
 | materialien/mat-N-*.json (alle) | Volltext: titel, inhalt, ueberleitung_von, fachbegriffe, _meta.tafelbild_knoten_abgedeckt | Cross-Pruefung |
-| rahmen/tafelbild.json | knoten[], stundenfrage | TB-Gesamtabdeckung |
+| rahmen/hefteintrag.json | knoten[], stundenfrage | TB-Gesamtabdeckung |
 | MATERIAL_GERUEST | Sequenzreihenfolge, didaktische_funktion pro mat-ID | Soll-Ist-Vergleich |
 
 **Pruefachsen:**
@@ -220,7 +220,7 @@ Fuer jedes mat-ID im MATERIAL_GERUEST:
 
 ```
 1. Alle materialien/mat-N-*.json lesen (P1)
-2. tafelbild.json lesen (P1)
+2. hefteintrag.json lesen (P1)
 3. MATERIAL_GERUEST lesen (P1)
 4. 4 Pruefachsen durchfuehren
 5. Bei PASS: Ergebnis in Q-GATE-LOG.md
@@ -239,7 +239,7 @@ Fuer jedes mat-ID im MATERIAL_GERUEST:
 | 1 | AGENT_RAETSEL.md | Vollstaendig | — |
 | 2 | materialien/mat-N-*.json | NUR: id, typ, titel, _meta.tafelbild_knoten_abgedeckt | NICHT: inhalt (Volltext erst in 2.2b) |
 | 3 | MATERIAL_GERUEST | didaktische_funktion pro mat-ID | — |
-| 4 | rahmen/tafelbild.json | knoten[], merksaetze[], stundenfrage | — |
+| 4 | rahmen/hefteintrag.json | knoten[], merksaetze[], stundenfrage | — |
 | 5 | DIDAKTIK_RAHMEN | NUR: AFB-Profil + Schwierigkeitskurve dieser Mappe | Andere Mappen |
 
 **Begruendung Volltext-Ausschluss:** Orchestrator braucht keinen Material-Volltext. AFB-Zuweisung basiert auf TB-Knoten + Schwierigkeitskurve, Typauswahl auf Materialtyp + didaktische_funktion, Operationalisierungsziel auf TB-Knoten-Merksatz + AFB-Operator. Material-Zusammenfassungen im Konstruktionskontext: `titel + didaktische_funktion`. Einsparung: ~3600-5400 Token pro Mappe.
@@ -258,7 +258,7 @@ Phase 2.2a: AGENT_RAETSEL Orchestration
   1. AGENT_RAETSEL.md lesen
   2. Alle materialien/mat-N-*.json lesen (NUR id, typ, titel, _meta — NICHT inhalt)
   3. MATERIAL_GERUEST lesen (didaktische_funktion pro mat-ID)
-  4. tafelbild.json lesen (knoten, merksaetze, stundenfrage)
+  4. hefteintrag.json lesen (knoten, merksaetze, stundenfrage)
   5. DIDAKTIK_RAHMEN lesen (NUR AFB-Profil + Schwierigkeitskurve dieser Mappe — P6)
   5. Progressionsplan erstellen (5 Positionen, AFB-Zuweisung, Typauswahl)
   6. Pro Aufgabe: Konstruktionskontext generieren (inkl. Ziel-Material-ID, TB-Knoten, AFB)
@@ -277,7 +277,7 @@ Phase 2.2b: Pro Aufgabe
 Phase 2.2c: Cross-Konsistenz
   1. Alle aufgaben/aufgabe-N-*.json lesen
   2. Alle materialien/mat-N-*.json lesen (id, typ, titel — Volltext nur bei Findings)
-  3. tafelbild.json lesen (knoten, merksaetze)
+  3. hefteintrag.json lesen (knoten, merksaetze)
   4. Orchestrator-Q-Gate pruefen (A1 Gesamtbild, A3 Vollstaendigkeit, A5 Progression, A8 Aktivierung, A9 TB-Bezug)
   5. Ergebnis in Q-GATE-LOG.md
 ```
@@ -303,7 +303,7 @@ Aufgabe:
      einstieg.json → mappe.einstieg
      materialien/*.json → mappe.materialien[] (sortiert nach position)
      aufgaben/*.json → mappe.aufgaben[] (sortiert nach position)
-     sicherung.json + tafelbild.json → mappe.sicherung
+     sicherung.json + hefteintrag.json → mappe.sicherung
   5. data.json lesen (aktuell aus Repo)
   6. mappen[N-1] anfuegen (Mappe-Anhang-Prozedur)
   7. mappe-N.html erstellen
@@ -527,7 +527,7 @@ Strategischer Audit durchgefuehrt (docs/analyse/AUDIT_v4_STRATEGIE_ERGEBNIS.md).
 - Ebene 2 PASS: Alle Q-Gates PASS
 - Ebene 3 PASS: Session-Split durchgefuehrt, kein Informationsverlust
 - Ebene 4 VERBESSERT: ~57.300 Token verteilt auf 3 Kontexte (vs. ~58.000 in 1 Kontext)
-- 5 neue Befunde: ARTEFAKT_INVENTAR-Luecke (MEDIUM), Git-Roundtrip (HIGH operativ), Worktree-Verwirrung (LOW), tafelbild.json-Listing (LOW), Wikimedia-404 (LOW)
+- 5 neue Befunde: ARTEFAKT_INVENTAR-Luecke (MEDIUM), Git-Roundtrip (HIGH operativ), Worktree-Verwirrung (LOW), hefteintrag.json-Listing (LOW), Wikimedia-404 (LOW)
 - 8 Optimierungskandidaten (OPT-1 bis OPT-8): inkrementell, keine Architektur-Aenderungen
 
 **Qualitaetsbefunde:** Mappe 2 ist live, aber inhaltliche Qualitaetsprobleme identifiziert. Noch zu dokumentieren und zu adressieren.

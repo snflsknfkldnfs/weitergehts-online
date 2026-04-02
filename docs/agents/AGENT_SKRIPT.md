@@ -2,9 +2,9 @@
 
 ## Rolle
 
-Schreibt ein lineares, schulernahes Skript im Stil eines Jugendsachbuchs. Transformiert die Faktensammlung von AGENT_INHALT in einen zusammenhaengenden, lesbaren Text, der als narratives Rueckgrat fuer alle nachfolgenden Agenten dient. Teilt das Skript in Mappen-Chunks auf. Das SKRIPT ist die Primaerquelle fuer AGENT_TAFELBILD (Phase 0.4 — extrahiert daraus die Quintessenz) und AGENT_MATERIAL (leitet daraus Materialentscheidungen ab).
+Schreibt ein lineares, schulernahes Skript im Stil eines Jugendsachbuchs. Transformiert die Faktensammlung von AGENT_INHALT in einen zusammenhaengenden, lesbaren Text, der als narratives Rueckgrat fuer alle nachfolgenden Agenten dient. Teilt das Skript in Mappen-Chunks auf. Das SKRIPT ist die Primaerquelle fuer AGENT_HEFTEINTRAG (Phase 0.4 — extrahiert daraus die Quintessenz) und AGENT_MATERIAL (leitet daraus Materialentscheidungen ab).
 
-AGENT_SKRIPT ist der Schluessel-Agent der v3-Architektur. Die Qualitaet des Skripts bestimmt die Qualitaet des Tafelbilds, des Materials und damit des gesamten Games.
+AGENT_SKRIPT ist der Schluessel-Agent der v3-Architektur. Die Qualitaet des Skripts bestimmt die Qualitaet des Hefteintrags, des Materials und damit des gesamten Games.
 
 **Kanonische Referenz:** `docs/architektur/WORKFLOW_v2.md` Abschnitt 4, Schritt 0.3
 
@@ -132,7 +132,7 @@ Alle in INHALTSBASIS dokumentierten Artefakte (Wikimedia-Bilder, Zitate, Rollenp
 
 ### ~~5. Tafelbild-Entwurf pro Chunk~~ — ENTFALLEN (v3)
 
-**v3-Aenderung:** Tafelbild-Erstellung ist jetzt Aufgabe von AGENT_TAFELBILD (Phase 0.4). AGENT_SKRIPT liefert das didaktisierte Narrativ, aus dem AGENT_TAFELBILD die Quintessenz extrahiert. AGENT_SKRIPT erstellt kein Tafelbild mehr.
+**v3-Aenderung:** Tafelbild-Erstellung ist jetzt Aufgabe von AGENT_HEFTEINTRAG (Phase 0.4). AGENT_SKRIPT liefert das didaktisierte Narrativ, aus dem AGENT_HEFTEINTRAG die Quintessenz extrahiert. AGENT_SKRIPT erstellt kein Tafelbild mehr.
 
 ## Encoding-Regel (v3.2)
 
@@ -222,7 +222,7 @@ Vor Uebergabe an User-Review prueft AGENT_SKRIPT das Skript in zwei Stufen:
 | Q3 | Fachbegriff-Erklaerung | Ist jeder Fachbegriff bei Erstverwendung erklaert? |
 | Q4 | Satzlaenge | Saetze ≤ 20 Woerter? Absaetze ≤ 5 Saetze? |
 | Q5 | Chunk-Abgeschlossenheit | Traegt jeder Chunk eine eigenstaendige Erkenntnis? |
-| ~~Q6~~ | ~~Tafelbild-Entwurf~~ | **ENTFALLEN (v3)** — Tafelbild wird von AGENT_TAFELBILD erstellt |
+| ~~Q6~~ | ~~Tafelbild-Entwurf~~ | **ENTFALLEN (v3)** — Tafelbild wird von AGENT_HEFTEINTRAG erstellt |
 | Q7 | Sandwich-Uebergaenge | Sind Uebergaenge zwischen allen Chunk-Paaren vorhanden? |
 | Q8 | KE-Abdeckung | Ist jede KE aus DIDAKTIK_RAHMEN im Skript inhaltlich abgedeckt (KE-Tabelle)? |
 | Q9 | Personifizierung | Hat jeder Chunk mindestens 1 konkrete Person/konkretes Schicksal? |
@@ -262,5 +262,5 @@ Cowork. AGENT_SKRIPT ist textproduktiv, nicht tool-intensiv. Alle benoetigten In
 | `docs/architektur/WORKFLOW_v2.md` | Kanonisch: Phasenstruktur, Artefakt-Definitionen |
 | `docs/agents/AGENT_INHALT.md` | Vorgaenger-Agent: Liefert INHALTSBASIS |
 | `docs/agents/AGENT_DIDAKTIK.md` | Vorgaenger-Agent: Liefert DIDAKTIK_RAHMEN |
-| `docs/agents/AGENT_TAFELBILD.md` | Nachfolger-Agent (v3): Extrahiert Tafelbild-Quintessenz aus SKRIPT |
+| `docs/agents/AGENT_HEFTEINTRAG.md` | Nachfolger-Agent (v3): Extrahiert Tafelbild-Quintessenz aus SKRIPT |
 | `docs/agents/AGENT_MATERIAL.md` | Nachfolger-Agent: Nutzt SKRIPT + TAFELBILD als Eingabe |
