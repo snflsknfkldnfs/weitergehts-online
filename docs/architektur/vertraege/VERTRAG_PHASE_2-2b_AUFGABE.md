@@ -35,13 +35,18 @@
 3. MATERIAL_GERUEST lesen (andere mat-IDs: NUR titel + didaktische_funktion — P6)
 4. SUB_AUFGABE_[TYP].md lesen (P1 — NUR den passenden Subagenten)
 5. Aufgabe produzieren (nach Subagenten-Regeln)
-6. Q-Gate pruefen (A1-A7 + typ-spezifisch)
-7. Bei PASS: aufgaben/aufgabe-N-M.json schreiben (P4)
-8. Bei FAIL: 1 Nachbesserung → erneut Q-Gate → bei FAIL: Finding in Q-GATE-LOG.md
-9. Q-Gate-Ergebnis in Q-GATE-LOG.md schreiben
+6. Q-Gate pruefen — Mechanik: docs/architektur/Q-GATE-MECHANIK.md (§3 Aggregation, §4 Nachbesserung, §6 Output-Format).
+   Katalog: Q-GATE-MECHANIK.md §7.2 (Aufgaben-Q-Gate). Pruef-Reihenfolge: SCHEMA zuerst, dann A1-A7 + typ-spezifisch.
+7. Bei GESAMT-PASS oder GESAMT-WARN: aufgaben/aufgabe-N-M.json schreiben (P4)
+8. Bei GESAMT-FAIL: 1 Nachbesserung (§4) → erneut Q-Gate → bei FAIL: Finding in Q-GATE-LOG.md
+9. Q-Gate-Ergebnis in Q-GATE-LOG.md schreiben (Format: Q-GATE-MECHANIK.md §8)
 ```
 
 ## Q-Gate
+
+**Mechanik:** `docs/architektur/Q-GATE-MECHANIK.md` (Bewertungsstufen, Aggregation, Nachbesserung, Output-Format)
+**Katalog:** Q-GATE-MECHANIK.md §7.2 — 9 Kriterien in 4 Klassen (SCHEMA, KONSISTENZ, FORM, DIDAKTIK)
+**Kriterien-Detail:** `docs/checklisten/GUETEKRITERIEN_AUFGABEN.md` (A1-A15)
 
 **Einzelaufgaben-Ebene (A1-A7 + typ-spezifisch):**
 - A1 AFB-Kongruenz

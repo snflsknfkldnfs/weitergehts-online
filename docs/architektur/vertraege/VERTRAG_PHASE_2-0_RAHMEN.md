@@ -36,10 +36,15 @@
 7. C1b-Identitaetsregel pruefen:
    einstieg.problemstellung === hefteintrag.stundenfrage
    Bei Abweichung: Stundenfrage aus hefteintrag.json hat Vorrang.
-8. Q-Gate-Ergebnis in Q-GATE-LOG.md schreiben.
+8. Q-Gate pruefen — Mechanik: docs/architektur/Q-GATE-MECHANIK.md (§3 Aggregation, §4 Nachbesserung, §6 Output-Format).
+   Katalog: Q-GATE-MECHANIK.md §7.3 (Rahmen-Q-Gate).
+9. Q-Gate-Ergebnis in Q-GATE-LOG.md schreiben (Format: Q-GATE-MECHANIK.md §8).
 ```
 
 ## Q-Gate
+
+**Mechanik:** `docs/architektur/Q-GATE-MECHANIK.md` (Bewertungsstufen, Aggregation, Nachbesserung, Output-Format)
+**Katalog:** Q-GATE-MECHANIK.md §7.3 — 6 Kriterien in 3 Klassen (SCHEMA, KONSISTENZ, FORM)
 
 - C1b: einstieg.problemstellung === hefteintrag.stundenfrage
 - M3b: hefteintrag.scpl.loesung[] enthaelt die Kernerkenntnisse (identisch mit TAFELBILD-Entwurf, nicht paraphrasiert)

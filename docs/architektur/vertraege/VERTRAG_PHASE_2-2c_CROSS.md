@@ -18,6 +18,9 @@
 
 ## Cross-Konsistenz-Pruefung (Orchestrator-Q-Gate)
 
+**Mechanik:** `docs/architektur/Q-GATE-MECHANIK.md` (Bewertungsstufen, Aggregation, Nachbesserung, Output-Format)
+**Katalog:** Q-GATE-MECHANIK.md §7.6 — 4 Kriterien in 2 Klassen (KONSISTENZ, DIDAKTIK)
+
 | # | Kriterium | Beschreibung |
 |---|---|---|
 | A1 | AFB-Kongruenz (Gesamtbild) | AFB-Zuweisung stimmt mit Progressionsplan ueberein? |
@@ -36,8 +39,8 @@
 2. Alle materialien/mat-N-*.json lesen (NUR id, typ, titel — P6)
 3. rahmen/hefteintrag.json lesen (P1)
 4. Cross-Konsistenz-Pruefung durchfuehren (A1, A3, A5, A8-A10, A12)
-5. Bei PASS: Ergebnis in Q-GATE-LOG.md
-6. Bei FAIL: Betroffene Aufgaben + Finding dokumentieren
+5. Bei GESAMT-PASS oder GESAMT-WARN: Ergebnis in Q-GATE-LOG.md (Format: Q-GATE-MECHANIK.md §8)
+6. Bei GESAMT-FAIL: Betroffene Aufgaben + Finding dokumentieren
    → Re-Dispatch an betroffenen Subagenten mit korrigiertem Konstruktionskontext
    → Max. 2 Re-Dispatch pro Aufgabe
 ```

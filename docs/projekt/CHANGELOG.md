@@ -6,6 +6,38 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ## 2026-04-02
 
+### C+ Schritt 2: Q-Gate-Semantik formalisieren (abgeschlossen)
+- **Phase:** C+ Phase I — Vertrags-Fixes (Schritt 2/3)
+- **Finding:** 5.1 (comprehensive-review) — keine formale Definition wann PASS/FAIL
+- **Q-GATE-MECHANIK.md erstellt (10 Sektionen):**
+  - §2 Bewertungsstufen: PASS/WARN/FAIL mit Abgrenzungsregel
+  - §3 Aggregationsregel: GESAMT-PASS (0 FAIL, max 2 WARN), GESAMT-WARN (0 FAIL, 3+ WARN), GESAMT-FAIL (1+ FAIL)
+  - §4 Nachbesserungslogik: Max 1 automatische Iteration, danach User-Entscheidung
+  - §5 Kriterien-Klassen: SCHEMA, KONSISTENZ, INHALT, DIDAKTIK, FORM
+  - §6 Strukturiertes JSON-Output-Format (artefakt_id, gesamt, kriterien[], nachbesserung, finding)
+  - §7 Q-Gate-Kataloge: 6 Kataloge fuer alle Phasen (Material, Aufgaben, Rahmen, Cross, Progressionsplan, Cross-Aufgaben). Jedes Kriterium mit ID, Klasse, operationalisierter Stufe-Semantik (FAIL-Bedingung hart definiert)
+  - §8 Q-Gate-Log-Format (Markdown-Template fuer Q-GATE-LOG.md)
+  - §9 Determinismus-Garantie
+- **6 Vertraege aktualisiert:** VERTRAG_PHASE_2-0 (§7.3 Referenz), VERTRAG_PHASE_2-1 (§7.1 + Dispatch-Schritte 11-14), VERTRAG_PHASE_2-1c (§7.4), VERTRAG_PHASE_2-2b (§7.2 + Dispatch-Schritte 6-9), VERTRAG_PHASE_2-2c (§7.6)
+- **Trockenlauf:** mat-2-1 + mat-2-4 durch formalisiertes Q-Gate. Ergebnis: Schema-FAIL (bekanntes Legacy-Format), Inhalts-Kriterien alle PASS. 1 WARN (M8: interner Artefakt-Name in cite). Konsistent mit bestehendem Q-GATE-LOG. Determinismus verifiziert.
+- **Aenderungen:** Q-GATE-MECHANIK.md (neu), TROCKENLAUF_Q-GATE_mat-2-1_mat-2-4.md (neu), 5 Vertraege (aktualisiert), STATUS.md, CHANGELOG.md
+- **Naechster Schritt:** C+ Schritt 3 (Conditional-Read-Logik als Decision-Tree)
+
+### C+ Schritt 1: Output-JSON-Schema formal definieren (abgeschlossen)
+- **Phase:** C+ Phase I — Vertrags-Fixes (Schritt 1/3)
+- **Finding:** 1.1 (comprehensive-review) — kein formales Schema fuer Produktions-Artefakte
+- **5 JSON-Schemata erstellt (draft-07):**
+  - `material-output-schema.json`: 7 Material-Typen, typ-spezifische Constraints (allOf/if-then), Verantwortlichkeits-Trennung Content vs. Struktur
+  - `hefteintrag-schema.json`: SCPL-Didaktikmodell, TB-Knoten, Verbindungen, STRUKTUR-FREEZE/FORMULIERUNGS-OFFEN Markierungen
+  - `rahmen-einstieg-schema.json`: narrativ (HTML) + problemstellung (C1b-Identitaetsregel)
+  - `rahmen-sicherung-schema.json`: reflexionsimpuls, hefteintrag_verweis, Placeholder-Pattern (Phase 2.0→2.1c), Q-M2-09 Disjunktionsregel
+  - `ueberleitungen-schema.json`: Zwei-Vektoren-Bruecke (Achse 5), minLength/maxLength Constraints
+- **Validierung:** Mappe 1 mat-*.json 9/9 PASS, Mappe 2 0/6 (bekanntes Legacy-Format). Hefteintrag/Einstieg/Sicherung: Mappe 1+2 PASS.
+- **3 Vertraege aktualisiert:** VERTRAG_PHASE_2-0 (Schema-Referenzen im Output), VERTRAG_PHASE_2-1 (Schema-Spalte in Read-Steps, neuer Schritt 10 Schema-Validierung, Merge-Logik Subagent+Dispatcher), VERTRAG_PHASE_2-1c (Schema-Spalte, ueberleitungen-schema Referenz)
+- **7 SUB_MATERIAL-Prompts aktualisiert:** Content-only Output (inhalt, quelle, _meta). Struktur-Felder explizit als Dispatcher-Verantwortung dokumentiert. SUB_MATERIAL_KARTE + SUB_MATERIAL_STATISTIK: fehlende Output-Sektionen ergaenzt.
+- **Aenderungen:** 5 Schema-Dateien (neu), 3 Vertraege, 7 SUB_MATERIAL_*.md, STATUS.md, CHANGELOG.md
+- **Naechster Schritt:** C+ Schritt 2 (Q-Gate-Semantik formalisieren)
+
 ### PM-Session 3: Grundsatzentscheidung + Q1 Test-Dispatch
 - **Phase:** PM-Infrastruktur (Architektur-Entscheidung)
 - **Ausloeser:** Nach Plugin-Evaluation: Soll Produkt-Infrastruktur sauber neu aufgesetzt (Option A) oder iterativ verbessert (Option C+) werden?

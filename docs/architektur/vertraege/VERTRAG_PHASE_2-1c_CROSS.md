@@ -112,14 +112,16 @@ Beide Vektoren muessen inhaltlich praezise auf die **konkreten produzierten Mate
    f. Aenderungs-Dokumentation erstellen
 10. rahmen/sicherung.json aktualisieren (zusammenfassung, ueberleitung ergaenzen)
 11. rahmen/hefteintrag.json SCPL-Text-Patches schreiben (NUR Formulierung, NICHT Struktur)
-12. Bei Achsen 1-4 PASS + Achse 5 produziert + Achse 6 revidiert: Ergebnis in Q-GATE-LOG.md
-13. Bei FAIL (Achsen 1-4): Betroffene Materialien + Finding dokumentieren
+12. Q-Gate pruefen — Mechanik: docs/architektur/Q-GATE-MECHANIK.md (§3 Aggregation, §4 Nachbesserung, §6 Output-Format).
+    Katalog: Q-GATE-MECHANIK.md §7.4 (Cross-Konsistenz-Q-Gate).
+13. Bei GESAMT-PASS oder GESAMT-WARN + Achse 5 produziert + Achse 6 revidiert: Ergebnis in Q-GATE-LOG.md
+14. Bei GESAMT-FAIL (Achsen 1-4): Betroffene Materialien + Finding dokumentieren
     → User entscheidet ueber Nachbesserung oder Akzeptanz
 ```
 
 ## Output
 
-**Q-GATE-LOG.md:** Ergebnisse Achsen 1-6 (Cross-Konsistenz + Ueberleitungen + Hefteintrag-Revision + Stufe-2 Re-Evaluation).
+**Q-GATE-LOG.md:** Ergebnisse Achsen 1-6 (Cross-Konsistenz + Ueberleitungen + Hefteintrag-Revision + Stufe-2 Re-Evaluation). Format: Q-GATE-MECHANIK.md §8.
 
 **ueberleitungen.json:** (Schema: `docs/architektur/schemata/ueberleitungen-schema.json`)
 

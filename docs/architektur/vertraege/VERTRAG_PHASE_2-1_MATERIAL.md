@@ -55,15 +55,18 @@
    Vollstaendiges Material MUSS dem Schema entsprechen: docs/architektur/schemata/material-output-schema.json
 10. Schema-Validierung: Output gegen material-output-schema.json pruefen.
     Bei Schema-Fehler: korrigieren BEVOR Q-Gate.
-11. Q-Gate pruefen (MQ1-MQ5 + typ-spezifisch)
-12. Bei PASS: materialien/mat-N-M.json schreiben (P4)
-13. Bei FAIL: 1 Nachbesserung → erneut Q-Gate → bei FAIL: Finding in Q-GATE-LOG.md
-14. Q-Gate-Ergebnis in Q-GATE-LOG.md schreiben (L2, L7)
+11. Q-Gate pruefen — Mechanik: docs/architektur/Q-GATE-MECHANIK.md (§3 Aggregation, §4 Nachbesserung, §6 Output-Format).
+    Katalog: Q-GATE-MECHANIK.md §7.1 (Material-Q-Gate). Pruef-Reihenfolge: SCHEMA zuerst, dann MQ1-MQ6 + M1-M12 + TYP-*.
+12. Bei GESAMT-PASS oder GESAMT-WARN: materialien/mat-N-M.json schreiben (P4)
+13. Bei GESAMT-FAIL: 1 Nachbesserung (§4) → erneut Q-Gate → bei FAIL: Finding in Q-GATE-LOG.md
+14. Q-Gate-Ergebnis in Q-GATE-LOG.md schreiben (Format: Q-GATE-MECHANIK.md §8)
 ```
 
 ## Q-Gate
 
-Qualitaetskriterien-Referenz: `docs/checklisten/QUALITAETSKRITERIEN_MATERIALPRODUKTION.md` (MQ1-MQ5 + typ-spezifisch)
+**Mechanik:** `docs/architektur/Q-GATE-MECHANIK.md` (Bewertungsstufen, Aggregation, Nachbesserung, Output-Format)
+**Katalog:** Q-GATE-MECHANIK.md §7.1 — 12 Kriterien in 5 Klassen (SCHEMA, KONSISTENZ, FORM, INHALT, DIDAKTIK)
+**Kriterien-Detail:** `docs/checklisten/QUALITAETSKRITERIEN_MATERIALPRODUKTION.md` (M1-M12 + typ-spezifisch)
 
 ## Output
 

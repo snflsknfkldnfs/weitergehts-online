@@ -1,14 +1,16 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-02 (Session 3)
-**Aktuelle Phase:** **Grundsatzentscheidung getroffen: Option C+ (Hybrid mit Architektur-Bewusstsein). Naechster Schritt: C+-Fixes ausfuehren.**
-**Letzter Arbeitsschritt:** PM-Session 3: Grundsatzentscheidung Clean Rebuild vs. Iteratives Patching. Q1-Q6 qualifiziert (Q3/Q4/Q5/Q6 per User-Input, Q1 per Test-Dispatch mat-3-1, Q2 offen/Folgetest). Q1-Ergebnis: 2 blockierende Findings (Conditional-Read-Logik, Sequenzkontext-Interface), beide durch C+-Schritte adressierbar. Entscheidung: Option C+ — Vertrags-Fixes + Skill-Split mit Architektur-Bewusstsein (Game-spezifisch vs. methoden-agnostisch), dann Mappe 3 als Prozesstest. GRUNDSATZENTSCHEIDUNG_REBUILD_VS_ITERATE.md erstellt und qualifiziert. COWORK_PROJECT_ANLEITUNG.md umfassend aktualisiert (Plugins, strategischer Kontext, EVALUATE-Modus).
-**Naechster Schritt:** C+ Schritt 1: Output-JSON-Schema formal definieren (Finding 1.1). Dann Schritte 2-6, dann Test-Dispatch mat-3-1 mit verbessertem System (C+ Schritt 7), dann Mappe 3 Vollproduktion (Schritt 8).
+**Letzte Aktualisierung:** 2026-04-02 (Session 3+, C+ Schritt 1+2 abgeschlossen)
+**Aktuelle Phase:** **C+ Phase I: Vertrags-Fixes. Schritt 1+2 abgeschlossen, Schritt 3 naechster.**
+**Letzter Arbeitsschritt:** C+ Schritt 2: Q-Gate-Semantik formalisieren. Q-GATE-MECHANIK.md erstellt (10 Sektionen: Bewertungsstufen PASS/WARN/FAIL, Aggregationsregel, Nachbesserungslogik, 5 Kriterien-Klassen, strukturiertes JSON-Output-Format, 6 Q-Gate-Kataloge fuer alle Phasen, Determinismus-Garantie). Alle 6 Vertraege (2.0, 2.1, 2.1c, 2.2b, 2.2c + implizit 2.2a) mit Q-Gate-Mechanik-Referenz aktualisiert. Trockenlauf mat-2-1 + mat-2-4: Mechanik deterministisch anwendbar, konsistent mit bestehendem Q-GATE-LOG.
+**Naechster Schritt:** C+ Schritt 3: Conditional-Read-Logik als Decision-Tree (Finding 2.1 + Q1-Befund BLOCKIEREND). Decision-Tree-Pseudocode in VERTRAG_PHASE_2-1. SCPL-Zone-Mapping-Tabelle. Sequenzkontext-Read-Step 1b.
 **Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. Engine-Fallback (Ueberleitung ID-Pattern), ARTEFAKT_INVENTAR Mappe 2 nachpflegen.
 
 **Abgeschlossen seit letztem Update:**
-- PM-Session 3: Grundsatzentscheidung getroffen (Option C+). GRUNDSATZENTSCHEIDUNG_REBUILD_VS_ITERATE.md erstellt, Q1-Q6 qualifiziert, Q1 Test-Dispatch ausgefuehrt, Entscheidungsprotokoll gefuellt. COWORK_PROJECT_ANLEITUNG.md umfassend aktualisiert (Plugins, strategischer Kontext, EVALUATE-Modus, Pflichtlektuere).
-- PM-Session 1+2: Plugin-Architektur-Evaluation abgeschlossen. POOL_PM_INFRASTRUKTUR_ENHANCEMENTS.md (12 Patterns, 7 Plugins, Machbarkeitstabelle). COWORK_PROJECT_ANLEITUNG.md Git-Sektion korrigiert.
+- C+ Schritt 2: Q-GATE-MECHANIK.md erstellt. 6 Vertraege aktualisiert. Trockenlauf verifiziert.
+- C+ Schritt 1: 5 JSON-Schemata (draft-07) erstellt + validiert. 3 Vertraege + 7 SUB_MATERIAL-Prompts aktualisiert.
+- PM-Session 3: Grundsatzentscheidung getroffen (Option C+).
+- PM-Session 1+2: Plugin-Architektur-Evaluation abgeschlossen.
 
 **Zuvor abgeschlossen:**
 - Runde 3b (Commit 0c0e1ee): Mappe 2 "Das Attentat von Sarajevo" live — 6 Materialien, 5 Aufgaben, 2 Bilder, Engine-Patch, mappe-2.html
