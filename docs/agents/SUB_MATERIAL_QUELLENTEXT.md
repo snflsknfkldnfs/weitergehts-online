@@ -140,6 +140,8 @@ Pflicht bei jedem Quellentext. Format:
 | Paraphrase | "Vereinfacht nach: [Sprecher], [Anlass], [Datum]. Vgl. Wikipedia, [Artikel]" |
 | Archivquelle (wenn vorhanden) | "[Archiv], [Signatur], [Datum]" |
 
+**Quellenangabe-Hygiene (Q-M2-08):** Die `quellenangabe` und `<cite>`-Texte duerfen KEINE internen Artefakt-Namen enthalten. Verboten: INHALTSBASIS, SKRIPT, TAFELBILD, MATERIAL_GERUEST, PROGRESSIONSPLAN, SUB_MATERIAL_*, AGENT_*. SuS sehen diese Texte — sie muessen fuer Lernende verstaendlich sein.
+
 ## JSON-Encoding-Regeln (v3.2)
 
 **Umlaute (v3.2):** Schreibe echte UTF-8-Umlaute (ä, ö, ü, ß). KEINE ASCII-Transliterationen (ae, oe, ue, ss). Beispiel: "Bündnissysteme", nicht "Buendnissysteme".

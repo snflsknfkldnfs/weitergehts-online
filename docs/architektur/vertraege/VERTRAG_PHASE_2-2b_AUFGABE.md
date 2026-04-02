@@ -51,6 +51,8 @@
 - A6 Tipp-Progression: Richtung → Einschraenkung → Loesung+Erklaerung
 - A7 Operator-Praezision (AFB-Taxonomie)
 - A11-FT Freitext-Qualitaet (nur SUB_AUFGABE_FREITEXT)
+- **MQ3 Material-Referenz-Verbot (Q-M2-04):** `frage`-Feld enthaelt KEINE `[[mat-id|...]]`-Links und KEINE (M[position])-Verweise. Material-Referenzen gehoeren AUSSCHLIESSLICH in Tipp Stufe 1.
+- **Engine-Feld-Kompatibilitaet (Q-M2-01/02):** JSON-Feldnamen muessen exakt den Engine-Erwartungen entsprechen. Reihenfolge: `optionen` (NICHT `elemente_ungeordnet`). Freitext: `loesung` als Array (NICHT als String).
 
 ## Output
 
@@ -67,7 +69,7 @@ aufgaben/aufgabe-N-M.json   # id, typ, frage/text_mit_luecken, loesung,
 | Lueckentext | Array (Lueckenwerte) |
 | Reihenfolge | Array (korrekte Reihenfolge) |
 | Zuordnung | Object (Schluessel→Wert) |
-| Freitext | String (Keyword, 3-5 Woerter) |
+| Freitext | Array (Keywords, 3-5 Eintraege) |
 
 ## Compaction-Failsafe (P1)
 

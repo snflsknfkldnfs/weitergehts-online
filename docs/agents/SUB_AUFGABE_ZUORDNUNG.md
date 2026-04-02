@@ -120,7 +120,8 @@ Referenz: `docs/checklisten/GUETEKRITERIEN_AUFGABEN.md`
 | **A4-ZU Trennschaerfe** | **Typ-spezifisch.** Sind Kategorien disjunkt? | Pro Paar: "Koennte begruendet auch anders zugeordnet werden?" |
 | A6 Tipp-Progression | Stufen eingehalten? | Stufe 2 verrät max. 2 Paare |
 | A7 Operator-Praezision | "Ordne zu", "Verbinde", "Weise zu" | Operationalisiertes Verb |
-| MQ3 Display-Referenzen (v3.8 C3) | Fragestamm + Tipps verwenden `[[mat-id\|Anzeigetext]]`-Inline-Links + (M[position])? | Muster: `[[mat-1-2\|Europakarte von 1914]] (M7)`. Keine generischen Typbezeichnungen ohne ID/Link |
+| **MQ3 Material-Referenz-Verbot in frage (Q-M2-04)** | **Fragestamm enthaelt KEINE `[[mat-id\|...]]`-Links und KEINE (M[position])-Verweise.** Fragestellung ist rein inhaltlich formuliert. Material-Referenzen gehoeren AUSSCHLIESSLICH in Tipp Stufe 1. | Pruefung: `frage` enthaelt keinen `[[`-String und kein `(M` |
+| MQ3b Display-Referenzen in Tipps | Tipp 1 MUSS `[[mat-id\|Anzeigetext]]`-Inline-Link + (M[position]) enthalten (Material-Zuweisung). Tipp 2-3 duerfen Links enthalten. | Muster: `[[mat-1-2\|Europakarte von 1914]] (M7)` |
 
 ---
 

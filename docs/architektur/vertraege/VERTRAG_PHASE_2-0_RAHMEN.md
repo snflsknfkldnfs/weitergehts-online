@@ -42,6 +42,8 @@
 - C1b: einstieg.problemstellung === tafelbild.stundenfrage
 - M3b: sicherung.kernerkenntnisse[] === tafelbild.scpl.loesung[] (identisch, nicht paraphrasiert)
 - Alle Engine-gerenderten Felder vorhanden: zusammenfassung, ueberleitung, kernerkenntnisse[], reflexionsimpuls, hefteintrag_verweis
+- **Q-M2-09 Disjunktionsregel:** sicherung.reflexionsimpuls und sicherung.kernerkenntnisse[] muessen inhaltlich disjunkt sein. Der reflexionsimpuls darf KEINEN Text enthalten, der bereits in kernerkenntnisse[] vorkommt. Kernerkenntnisse = Was wurde gelernt (Fakten). Reflexionsimpuls = Weiterdenken/Transfer/Bewertung (Metakognition). Pruefung: Kein Satz aus reflexionsimpuls darf eine Paraphrase eines kernerkenntnisse-Eintrags sein.
+- **Q-M2-08 Quellenangabe-Hygiene:** Alle SuS-sichtbaren Texte (zusammenfassung, ueberleitung, reflexionsimpuls, etc.) duerfen KEINE internen Artefakt-Namen enthalten (INHALTSBASIS, SKRIPT, TAFELBILD, MATERIAL_GERUEST, PROGRESSIONSPLAN, SUB_MATERIAL_*, AGENT_*).
 
 ## Output
 

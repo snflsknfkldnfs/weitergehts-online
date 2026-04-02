@@ -1,12 +1,18 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-03-31
-**Aktuelle Phase:** **v4 Produktionsarchitektur — Runde 2 abgeschlossen. Agenten auf v4 angepasst, Audit-Fixes umgesetzt.**
-**Letzter Arbeitsschritt:** Runde 2: ORCHESTRATOR.md, AGENT_MATERIAL.md, AGENT_RAETSEL.md, SUB_AUFGABE_FREITEXT.md auf v4-Architektur angepasst (Ausfuehrungsorte, Schnittstellen-Vertraege, Output-Formate, _meta-Migration, Keyword-Regel). UPGRADE_PLAN Nummerierungsfehler + Compaction-Failsafe korrigiert. Querverweis-Check: 4 Inkonsistenzen gefunden und behoben.
-**Naechster Schritt:** Runde 3a: Mappe-2 Rahmen + Materialien (Phase 2.0 + 2.1 + 2.1c). Produktionsverzeichnis anlegen, Rahmen produzieren, Material 1-2 → PFLICHT User-Validierung → Material 3-6 → Cross-Konsistenz → CHECKPOINT.
-**Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. Revert von c9eb9ec steht noch aus (wird in Phase-3-Pre-Flight erledigt). BLOCKER Engine-Patch text_mit_luecken || frage vorbereitet, Ausfuehrung in Runde 4.
+**Letzte Aktualisierung:** 2026-04-02
+**Aktuelle Phase:** **v4 Produktionsarchitektur — Runde 4 Kern abgeschlossen. Alle 10 Qualitaetsbefunde adressiert (6 Prozess-Fixes + 5 Engine/Data-Patches).**
+**Letzter Arbeitsschritt:** Claude Code hat alle 5 Sofort-Patches deployed (Branch fix/mappe2-quality-patches): Engine Reihenfolge-Fallback, Freitext Keyword-Array-Matching, mat-2-6 typ, mat-2-1 Quellenangabe, scpl-Duplikate. PR erstellt.
+**Naechster Schritt:** PR mergen. Dann: OPT-1 bis OPT-8 priorisieren, Q-M2-03 (Ueberleitungen), Q-M2-05 (Hefteintrag-Timing), ARTEFAKT_INVENTAR. Danach Runde 5 (Retrospektive + Mappe 3 vorbereiten).
+**Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. OPT-1 bis OPT-8 noch offen. Q-M2-03 und Q-M2-05 erfordern architektonische Entscheidungen.
 
 **Abgeschlossen seit letztem Update:**
+- Runde 3b (Commit 0c0e1ee): Mappe 2 "Das Attentat von Sarajevo" live — 6 Materialien, 5 Aufgaben, 2 Bilder, Engine-Patch, mappe-2.html
+- Runde 3a-Opt: 6 Vertrags-Dateien extrahiert, ORCHESTRATOR + WORKFLOW aktualisiert, TAFELBILD_Mappe2.md erstellt, Goldstandard-Rolle redefiniert
+- Runde 3a-Eval: RUNDE_3a_ERGEBNIS.md — 8 Befunde, alle in 3a-Opt adressiert
+- Runde 3a: Erster Prozesstest (1 Cowork-Session), RUNDE_3a_ERGEBNIS.md als Baseline
+
+**Zuvor abgeschlossen:**
 - v3.5d Bugfix (Commit bc5a208): 4 Fixes — Fehlversuche-System (eliminated-Optionen, globaler Counter, alle 5 Aufgabentypen), Material-Titel statt "M1.2", Tipp-used visuell, Loesungswort-Reveal+Animation
 - v3.5c Bugfix (Commit 072cbfd): 5 Fixes — background-attachment:local, Material-Ref in Tipps, Loesungscode-Kaestchen, MC-Shuffle, Tipp-Pillen+Akkordeon
 - v3.5b Bugfix (Commit a53c914): 8 Fixes — Material-Flag, Zentrierung, Blocksatz, Karo em-basiert, Nummer-Kreis, Interaktivitaet, Sicherung-Display

@@ -106,6 +106,8 @@ Statistik-Materialien recherchieren ihre Daten SELBST (anders als BQ/KA, die aus
 4. Quellenangabe als Fussnote (Pflicht)
 ```
 
+**Quellenangabe-Hygiene (Q-M2-08):** Die `quellenangabe_fussnote` darf KEINE internen Artefakt-Namen enthalten. Verboten: INHALTSBASIS, SKRIPT, TAFELBILD, MATERIAL_GERUEST, PROGRESSIONSPLAN, SUB_MATERIAL_*, AGENT_*. SuS sehen diese Texte — sie muessen fuer Lernende verstaendlich sein. Korrekt: Konkrete Quellen (Statistisches Jahrbuch, Fachbuch + Seite). Falsch: "Daten aus INHALTSBASIS".
+
 **Diagrammtyp-Auswahl (R7-optimiert):**
 
 | Diagrammtyp | Eignung R7 | Wann einsetzen |

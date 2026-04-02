@@ -120,6 +120,8 @@ Dies in `_meta.tempo_hinweis` dokumentieren, damit AGENT_RAETSEL daraus Aufgaben
 Eigene Zusammenstellung auf Basis der Sachanalyse. Quellen: [Wikipedia-Artikel 1], [Wikipedia-Artikel 2].
 ```
 
+**Quellenangabe-Hygiene (Q-M2-08):** Die Quellenangabe darf KEINE internen Artefakt-Namen enthalten. Verboten: INHALTSBASIS, SKRIPT, TAFELBILD, MATERIAL_GERUEST, PROGRESSIONSPLAN, SUB_MATERIAL_*, AGENT_*. SuS sehen diese Texte — sie muessen fuer Lernende verstaendlich sein.
+
 ## JSON-Encoding-Regeln (v3.2)
 
 **Umlaute (v3.2):** Schreibe echte UTF-8-Umlaute (ä, ö, ü, ß). KEINE ASCII-Transliterationen (ae, oe, ue, ss). Beispiel: "Bündnissysteme", nicht "Buendnissysteme".

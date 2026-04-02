@@ -277,7 +277,8 @@ Der Orchestrator prueft Kriterien, die Cross-Aufgaben-Perspektive erfordern. Ein
 | A9 TB-Bezug | Mind. 1 Aufgabe pro Mappe zielt auf TB-Knoten? |
 | A10 Typvielfalt | Mind. 3 Typen, kein Typ > 2x, Freitext genau 1x? |
 | A12 Sachbezogen-vor-Wertbezogen | Phasenlogik: Fakten → Transfer → Stellungnahme? |
-| MQ3 Display-Referenzen (v3.8 C3) | Alle Fragestamm- und Tipp-Texte verwenden M[position]-Referenzen, KEINE statischen Typbezeichnungen ("Darstellungstext", "Karte" ohne ID)? |
+| MQ3 Material-Referenz-Verbot in frage (Q-M2-04) | **Kein Fragestamm enthaelt `[[mat-id\|...]]`-Links oder (M[position])-Verweise.** Material-Referenzen gehoeren AUSSCHLIESSLICH in Tipp Stufe 1. Orchestrator prueft alle `frage`-Felder auf Abwesenheit von `[[` und `(M`. |
+| MQ3b Display-Referenzen in Tipps | Tipp Stufe 1 jeder Aufgabe enthaelt `[[mat-id\|Anzeigetext]]`-Inline-Link + (M[position]). Keine statischen Typbezeichnungen ohne ID/Link. |
 | A13-A15 | KANN-Pruefung (nur bei expliziter Anforderung) |
 
 **Subagenten pruefen:**

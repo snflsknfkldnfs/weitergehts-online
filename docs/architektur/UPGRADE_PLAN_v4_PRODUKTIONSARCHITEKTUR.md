@@ -1,9 +1,11 @@
 # UPGRADE_PLAN v4: Produktionsarchitektur — Cowork-basierte Materialproduktion
 
-**Datum:** 2026-03-31
-**Status:** ENTWURF — R1-R3 + Audit-Befunde (mechanisch + strategisch) eingearbeitet, User-Validierung ausstehend
+**Datum:** 2026-04-01
+**Status:** Runde 4 Kern abgeschlossen. Alle 10 Qualitaetsbefunde adressiert (Prozess-Fixes + Engine-Patches). Verbleibend: OPT-1-8, 3 architektonische Entscheidungen.
 **Audit 1:** docs/analyse/AUDIT_v4_ARCHITEKTUR_ERGEBNIS.md (2026-03-31) — 1 BLOCKER, 3 MEDIUM, alle adressiert
 **Audit 2:** docs/analyse/AUDIT_v4_STRATEGIE_ERGEBNIS.md (2026-03-31) — 4 Empfehlungen, alle adressiert
+**Runde 3a:** docs/analyse/RUNDE_3a_ERGEBNIS.md — 8 Befunde, alle in 3a-Opt behoben
+**Runde 3b:** docs/analyse/RUNDE_3b_ERGEBNIS.md — Alle 3a-Befunde behoben, 5 neue (operativ), 8 Optimierungskandidaten
 **Vorgaenger:** WORKFLOW_v2.md (v3), UPGRADE_PLAN_v3-2_INFRASTRUKTUR.md
 **Ausloesender Befund:** Mappe-2-Produktion v1 (Commit a6aa589) und v2 (Commit c9eb9ec) beide gescheitert — trotz expliziter Subagenten-Referenzen produzierte Claude Code monolithisch
 
@@ -477,93 +479,83 @@ Strategischer Audit durchgefuehrt (docs/analyse/AUDIT_v4_STRATEGIE_ERGEBNIS.md).
 - [x] AGENT_RAETSEL.md: Ausfuehrungsort Cowork, PROGRESSIONSPLAN.md + Q-GATE-LOG.md als Zwischenartefakte, FRAGEBOGEN entfernt
 - [x] Verifikation: Querverweis-Check (8 Pruefachsen, 4 Inkonsistenzen gefunden + korrigiert)
 
-### Runde 3a: Mappe-2 Rahmen + Materialien (Phase 2.0 + 2.1 + 2.1c)
+### Runde 3a: Erster Prozesstest (Phase 2.0 — 2.2c + Phase 3 in Cowork) [ABGESCHLOSSEN]
 
 - [x] Produktionsverzeichnis anlegen (2026-04-01)
-- [x] Pre-Flight: git revert c9eb9ec, MATERIAL_GERUEST validiert, HANDOFF_PHASE2.md erstellt (2026-04-01)
-- [x] Repo-Update: 10 Commits (85 Dateien) auf origin/main gepusht (2026-04-01)
-- [x] Testplan erstellt: Post-hoc-Evaluation + Token-Messung als Ebene 4 (2026-04-01)
-- [ ] **Produktion:** Rahmen (D01), Materialien (D02-D07), Cross-Konsistenz (D08)
-- [ ] **User-Validierung: PFLICHT** nach D02+D03 — Kalibrierung Ton/Sprachregister/Vergegenwaertigung (Strategie-Audit E1)
-- [ ] **Checkpoint:** Session-Split hier (Audit S2 — Token-Budget-Mitigation)
+- [x] Pre-Flight: git revert c9eb9ec, MATERIAL_GERUEST validiert, HANDOFF_PHASE2.md erstellt
+- [x] Repo-Update: 10 Commits (85 Dateien) auf origin/main gepusht
+- [x] Testplan erstellt: Post-hoc-Evaluation + Token-Messung als Ebene 4
+- [x] Produktion komplett (Rahmen, 6 Materialien, 5 Aufgaben, Cross-Konsistenz)
+- [x] Phase 3 in Cowork ausgefuehrt (Architektur-Verletzung, aber funktional korrekt)
 
-### Runde 3b: Mappe-2 Aufgaben (Phase 2.2)
+**Ergebnis (docs/analyse/RUNDE_3a_ERGEBNIS.md):**
+- Ebene 1 PARTIAL PASS: 3 HIGH (Batch, kein Q-GATE-LOG, kein TAFELBILD), 5 MEDIUM
+- Ebene 2 PASS: Artefaktqualitaet korrekt
+- Ebene 3 NICHT GETESTET: Kein Session-Split erzwungen
+- Ebene 4 BASELINE: ~58.000 Token, WORKFLOW nie gelesen, data.json als Template
 
-- [ ] AGENT_RAETSEL: Progressionsplan (liest materialien/*.json aus Runde 3a)
-- [ ] 5 Aufgaben produzieren (sequentiell, mit Q-Gate)
-- [ ] Cross-Konsistenz-Pruefung
-- [ ] User-Review: Stichprobe auf 1-2 Aufgaben
+### Runde 3a-Eval: Post-hoc-Evaluation [ABGESCHLOSSEN]
 
-### Runde 3a-Eval: Post-hoc-Evaluation (NEU — 2026-04-01)
+- [x] Dispatch-Protokoll ausgefuellt
+- [x] Ebene 1-3 ausgewertet
+- [x] Ebene 4: Token-Profil erstellt
+- [x] Optimierungsempfehlungen abgeleitet (→ 3a-Opt)
+- [x] `docs/analyse/RUNDE_3a_ERGEBNIS.md` geschrieben
 
-- [ ] Dispatch-Protokoll ausfuellen (Auswertungsboegen pro D01-D08)
-- [ ] Ebene 1-3 auswerten (Prozesskonformitaet, Artefaktqualitaet, Compaction-Resilienz)
-- [ ] **Ebene 4: Token-Profil erstellen** — Input/Output pro Dispatch, WORKFLOW/ORCHESTRATOR-Leseanteil
-- [ ] Optimierungsempfehlungen ableiten (→ Runde 3a-Opt)
-- [ ] `docs/analyse/RUNDE_3a_ERGEBNIS.md` schreiben
+### Runde 3a-Opt: Token-Optimierung — Vertrags-Extraktion [ABGESCHLOSSEN]
 
-### Runde 3a-Opt: Token-Optimierung — Vertrags-Extraktion (NEU — 2026-04-01)
+- [x] Token-Profil Runde 3a analysiert (Hypothese bestaetigt)
+- [x] 6 Vertragsdateien aus WORKFLOW_v4.md extrahiert (docs/architektur/vertraege/)
+- [x] ORCHESTRATOR.md: Verweis auf Vertraege, Dispatch-Isolation (P4) explizit, Q-GATE-LOG Pflicht
+- [x] WORKFLOW_v4.md: Vertrags-Extraktion-Header, Phase-2-Abschluss-Sektion
+- [x] Goldstandard-Rolle neu definiert: data.json = MVP, NICHT Template
+- [x] TAFELBILD_Mappe2.md retroaktiv erstellt (Phase 0.4 Prozess)
+- [x] HANDOFF_PHASE2.md nach docs/analyse/ verschoben
 
-**Ausloeser:** Token-Profil aus Runde 3a-Eval. Hypothese: ~6.650 Token Einsparung pro Dispatch durch phasen-spezifische Vertraege statt WORKFLOW_v4-Volllektuere.
+### Runde 3b: Zweiter Prozesstest mit Optimierungen [ABGESCHLOSSEN]
 
-**Massnahmen:**
+- [x] Pre-Flight: Git-State bereinigt, KICKOFF-Prompt erstellt
+- [x] **Session 1 (Cowork):** Phase 2.0 (Rahmen, 4 JSONs, Q-GATE-LOG), Phase 2.1 (6 Materialien, alle isolierte Dispatches), E1 User-Validierung PASS, Phase 2.1c Cross PASS
+- [x] **Session-Split** am Checkpoint (Audit S2)
+- [x] **Session 2 (Cowork):** Phase 2.2a (Progressionsplan), Phase 2.2b (5 Aufgaben, alle isoliert), Phase 2.2c Cross PASS, Phase-2-Abschluss mit UEBERGABE_PROMPT
+- [x] Manueller Git-Commit (18 Dateien) durch User
+- [x] **Session 3 (Claude Code):** Phase 3 Assembly (Engine-Patch, Bild-Download, data.json, mappe-2.html, Validierung 8/8 PASS, Commit 0c0e1ee)
+- [x] Browser-Validierung: Mappe 2 live, technisch funktional
 
-1. **Vertrags-Extraktion aus WORKFLOW_v4.md:**
-   WORKFLOW_v4.md (953 Zeilen, ~7.285 Token) in 6 phasen-spezifische Vertragsdateien zerlegen:
-   ```
-   docs/architektur/vertraege/
-     VERTRAG_PHASE_2-0_RAHMEN.md          (~80 Z., ~500 Tok)
-     VERTRAG_PHASE_2-1_MATERIAL.md        (~100 Z., ~650 Tok)
-     VERTRAG_PHASE_2-1c_CROSS.md          (~60 Z., ~400 Tok)
-     VERTRAG_PHASE_2-2a_PROGRESSIONSPLAN.md (~70 Z., ~450 Tok)
-     VERTRAG_PHASE_2-2b_AUFGABE.md        (~80 Z., ~500 Tok)
-     VERTRAG_PHASE_2-2c_CROSS.md          (~50 Z., ~350 Tok)
-   ```
-   Jeder Vertrag enthaelt NUR: Read-Schritte, Output-Schema, Q-Gate-Kriterien, Engine-Limitationen fuer diese Phase. P1/P4/P5/P6 als 4-Zeilen-Praeambel.
+**Ergebnis (docs/analyse/RUNDE_3b_ERGEBNIS.md):**
+- Ebene 1 PASS: Alle 3a-Befunde behoben (P4 isoliert, P5 Q-GATE-LOG, TAFELBILD vorhanden, kein data.json-Read)
+- Ebene 2 PASS: Alle Q-Gates PASS
+- Ebene 3 PASS: Session-Split durchgefuehrt, kein Informationsverlust
+- Ebene 4 VERBESSERT: ~57.300 Token verteilt auf 3 Kontexte (vs. ~58.000 in 1 Kontext)
+- 5 neue Befunde: ARTEFAKT_INVENTAR-Luecke (MEDIUM), Git-Roundtrip (HIGH operativ), Worktree-Verwirrung (LOW), tafelbild.json-Listing (LOW), Wikimedia-404 (LOW)
+- 8 Optimierungskandidaten (OPT-1 bis OPT-8): inkrementell, keine Architektur-Aenderungen
 
-2. **ORCHESTRATOR.md-Schlankung:**
-   Orchestrator verweist pro Phase auf den spezifischen Vertrag statt auf WORKFLOW_v4 komplett.
-   WORKFLOW_v4.md bleibt als Architektur-Dokumentation erhalten — nicht mehr als Runtime-Lektuere.
+**Qualitaetsbefunde:** Mappe 2 ist live, aber inhaltliche Qualitaetsprobleme identifiziert. Noch zu dokumentieren und zu adressieren.
 
-3. **Konsistenz-Sicherung:**
-   Vertraege enthalten einen Hash-Verweis auf die WORKFLOW_v4-Version, aus der sie extrahiert wurden.
-   Bei WORKFLOW-Aenderung: Vertraege regenerieren (manuell oder per Script).
+### Runde 4: Qualitaetsbefunde Mappe 2 + Prozess-Optimierungen [ABGESCHLOSSEN — Kern]
 
-**Erwartete Einsparung:**
-| Szenario | Tokens pro Dispatch | Ueber 15 Dispatches |
-|---|---|---|
-| Ist: ORCHESTRATOR + WORKFLOW_v4 komplett | ~9.750 | ~146.250 |
-| Soll: ORCHESTRATOR-schlank + Vertrag | ~3.100 | ~46.500 |
-| Einsparung | ~6.650 (~68%) | ~99.750 |
+**Status:** Qualitaetsbefunde dokumentiert. Prozess-Fixes verankert. Engine-Patches deployed. Verbleibend: OPT-1 bis OPT-8, 3 offene architektonische Entscheidungen.
 
-**Risiken:**
-| Risiko | Mitigation |
-|---|---|
-| Vertraege divergieren von WORKFLOW_v4 | Hash-Verweis + Regenerierungs-Konvention |
-| Agent vermisst Gesamtkontext | P1-P7 Praeambel in jedem Vertrag |
-| Wartungsaufwand | Akzeptabel bei 6 Dateien; skaliert nicht mit Dispatches |
-
-**Validierung:** Runde 3b mit optimierter Architektur. Token-Verbrauch gegen Runde 3a Baseline vergleichen.
-
-- [ ] Token-Profil Runde 3a analysieren (bestaetige Hypothese)
-- [ ] 6 Vertragsdateien aus WORKFLOW_v4.md extrahieren
-- [ ] ORCHESTRATOR.md: Verweis auf Vertraege statt WORKFLOW_v4
-- [ ] WORKFLOW_v4.md: Hinweis ergaenzen (Architektur-Doku, nicht Runtime)
-- [ ] Runde 3b durchfuehren (Token-Vergleich)
-
-### Runde 4: Phase-3-Uebergabe an Claude Code
-
-- [ ] Phase-3-Pre-Flight-Integritaetspruefung (Audit S3): Alle .json vorhanden + valide?
-- [ ] Uebergabe-Prompt fuer Phase 3 (Assembly + Engine-Patch Lueckentext) schreiben
-- [ ] In Claude Code ausfuehren
-- [ ] Browser-Validierung
+- [x] Qualitaetsbefunde dokumentieren (Runde 4a: Browser-Audit + User-Review → 10 Findings, 5 Schwachstellen)
+- [x] Engine-Patches via Claude Code (Runde 4b): Reihenfolge optionen-Fallback, Freitext Keyword-Array, mat-2-6 typ, mat-2-1 Quellenangabe, scpl-Duplikate
+- [x] Prozess-Fixes in Subagenten (MQ3/MQ3b Material-Referenz-Verbot in 5x SUB_AUFGABE + AGENT_RAETSEL)
+- [x] Quellenangabe-Hygiene in 7x SUB_MATERIAL
+- [x] Vertrags-Updates (VERTRAG_2-0 Disjunktionsregel, VERTRAG_2-2b Engine-Kompatibilitaet)
+- [ ] OPT-1 bis OPT-8 aus RUNDE_3b_ERGEBNIS.md priorisieren und umsetzen
+- [ ] ARTEFAKT_INVENTAR fuer Mappe 2 nachpflegen (F-3b-INVENTAR)
+- [ ] Uebergabe-Prompt-Template standardisieren (OPT-4, OPT-5, OPT-7)
+- [ ] Wortlimit-Inkonsistenz SUB_MATERIAL_DT vs. QUALITAETSKRITERIEN bereinigen (OPT-6)
+- [ ] WORKFLOW-Read am Abschluss eliminieren (OPT-1)
+- [ ] Q-M2-03: Ueberleitungen — Architektur-Entscheidung (neuer Dispatch vs. Cross-Integration)
+- [ ] Q-M2-05: Hefteintrag-Timing — Phase-Verschiebung oder Zweitpass
+- [ ] GUETEKRITERIEN_HEFTEINTRAG.md erstellen
 
 ### Runde 5: Retrospektive + Skill-Update
 
-- [ ] Was hat funktioniert, was nicht?
-- [ ] **Mappe-N-Retrospektive operationalisieren** (Strategie-Audit E4): Erkenntnisse aus Mappe 2 als Praeambel fuer Mappe-3-Dispatches formulieren
-- [ ] projekt-website-v3 Skill: Orchestrierung der neuen Phasenabfolge anpassen
-- [ ] WORKFLOW_v4 finalisieren (Learnings einarbeiten, ggf. Vertrags-Extraktion als Standard)
+- [ ] Mappe-2-Retrospektive (Strategie-Audit E4): Erkenntnisse als Praeambel fuer Mappe-3-Dispatches
+- [ ] projekt-website Skill: Orchestrierung der neuen Phasenabfolge anpassen
+- [ ] WORKFLOW_v4 finalisieren (Vertrags-Extraktion als Standard bestaetigen)
+- [ ] Naechstes Game oder Mappe 3 planen
 
 ---
 

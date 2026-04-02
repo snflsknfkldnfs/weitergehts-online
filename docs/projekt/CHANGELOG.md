@@ -4,6 +4,88 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-02
+
+### Runde 4c: Engine-Patches deployed (Claude Code)
+- **Phase:** Engine/Data-Fixes (Runde 4c, Claude Code)
+- **Aufgabe:** 5 Sofort-Patches aus UEBERGABE_RUNDE4b_ENGINE_PATCHES.md ausgefuehrt.
+- **Ergebnis:**
+  - Q-M2-01: `_renderReihenfolge` + `_checkReihenfolge` lesen `optionen || elemente_ungeordnet`
+  - Q-M2-02: `_checkFreitextCode` erkennt Array-`loesung` → Keyword-Modus
+  - Q-M2-06: mat-2-6 typ "quellentext" → "tagebuch"
+  - Q-M2-08: mat-2-1 `<cite>` bereinigt (INHALTSBASIS entfernt)
+  - Q-M2-07: scpl.transfer-Duplikat + scpl.kernerkenntnisse-Klon entfernt
+- **Artefakte:** escape-engine.js (3 Stellen), data.json (3 Fixes). Branch: fix/mappe2-quality-patches, PR erstellt.
+- **Naechster Schritt:** PR mergen, dann OPT-1 bis OPT-8 + offene architektonische Entscheidungen
+
+### Runde 4b: Prozess-Fixes verankert + Uebergabe-Prompt geschrieben
+- **Phase:** Prozess-Verankerung (Runde 4b)
+- **Aufgabe:** Alle Qualitaetsbefunde Q-M2-01 bis Q-M2-10 in generativen Prozess zurueckfuehren. Fixes auf drei Ebenen: Subagenten-Prompts, Vertraege/Q-Gates, Uebergabe-Prompt fuer Engine/data.json.
+- **Aenderungen:**
+  - **MQ3/MQ3b Material-Referenz-Verbot (Q-M2-04):** In alle 5 SUB_AUFGABE_*.md + AGENT_RAETSEL.md. Fragestellung darf keine Material-Links enthalten; Material-Verweis gehoert ausschliesslich in Tipp Stufe 1.
+  - **Quellenangabe-Hygiene (Q-M2-08):** In alle 7 SUB_MATERIAL_*.md. Keine internen Artefakt-Namen (INHALTSBASIS, SKRIPT etc.) in schueler-sichtbaren Texten.
+  - **Disjunktionsregel (Q-M2-07/09):** In VERTRAG_PHASE_2-0. reflexionsimpuls und kernerkenntnisse muessen inhaltlich disjunkt sein.
+  - **Engine-Feld-Kompatibilitaet (Q-M2-01/02):** In VERTRAG_PHASE_2-2b. Reihenfolge: `optionen` (nicht `elemente_ungeordnet`). Freitext: `loesung` als Array (nicht String).
+  - **SUB_AUFGABE_RF.md:** Feldname `elemente_ungeordnet` → `optionen` im Schema + Prosa (Q-M2-01)
+  - **SUB_AUFGABE_FT.md:** `loesung` als Array statt String im Schema + Constraints (Q-M2-02)
+- **Artefakte:** 16 Dateien geaendert. `docs/uebergabe/UEBERGABE_RUNDE4b_ENGINE_PATCHES.md` (neu). QUALITAETSBEFUNDE aktualisiert (6 von 13 Massnahmen ERLEDIGT).
+- **Naechster Schritt:** Claude Code fuehrt UEBERGABE_RUNDE4b_ENGINE_PATCHES.md aus (5 Patches: 2 Engine, 3 data.json)
+
+### Runde 4a: Post-Produktions-Qualitaetsreview Mappe 2
+- **Phase:** Qualitaetsreview (Runde 4a)
+- **Aufgabe:** Browser-Audit der Live-Mappe 2 (Chrome, weitergehts.online) + User-Review. Alle 5 Aufgabentypen funktional getestet, alle 6 Materialien geprueft, Hefteintrag evaluiert.
+- **Ergebnis:** 10 Befunde dokumentiert (5 HIGH, 4 MEDIUM, 1 LOW). 5 Prozess-Schwachstellen identifiziert: S1 Engine-Feld-Inkompatibilitaet, S2 fehlende Cross-Material-Artefakte (Ueberleitungen), S3 didaktische Defaults in Subagenten, S4 Quellenangabe-Hygiene, S5 Hefteintrag-Timing. 15 priorisierte Massnahmen (5 Sofort-Patches, 7 Vor-Mappe-3-Fixes, 3 langfristige Engine-Verbesserungen).
+- **Artefakte:** `docs/analyse/QUALITAETSBEFUNDE_gpg-erster-weltkrieg-ursachen_Mappe2.md`, STATUS.md (aktualisiert), CHANGELOG.md (aktualisiert)
+- **Naechster Schritt:** Runde 4b: Sofort-Patches (2 Engine-Fixes + 3 data.json-Korrekturen) via Uebergabe-Prompt an Claude Code
+
+---
+
+## 2026-04-01
+
+### v4 Produktionsarchitektur: Runde 3b — Zweiter Prozesstest (Mappe 2 live)
+- **Phase:** Produktionstest (Runde 3b)
+- **Aufgabe:** Vollstaendiger Prozesstest der v4-Architektur mit allen 3a-Opt-Verbesserungen. 3 Sessions (2 Cowork + 1 Claude Code), 15 Dispatches, Session-Split am Checkpoint.
+- **Ergebnis:**
+  - Ebene 1 PASS: Alle 3a-Befunde behoben (Dispatch-Isolation, Q-GATE-LOG, TB-FREEZE, kein data.json-Read)
+  - Ebene 2 PASS: Alle Q-Gates PASS, M3b + C1b korrekt
+  - Ebene 3 PASS: Session-Split ohne Informationsverlust
+  - Ebene 4: ~57.300 Token verteilt auf 3 Kontexte
+  - 5 neue Befunde: ARTEFAKT_INVENTAR-Luecke (MEDIUM), Git-Roundtrip (HIGH operativ), Worktree-Verwirrung (LOW), tafelbild.json-Listing (LOW), Wikimedia-404 (LOW)
+  - 8 Optimierungskandidaten (OPT-1 bis OPT-8)
+  - Mappe 2 live auf weitergehts.online (Commit 0c0e1ee). Technisch funktional, Qualitaetsbefunde offen.
+- **Artefakte:** `docs/analyse/RUNDE_3b_ERGEBNIS.md`, UPGRADE_PLAN (aktualisiert), STATUS.md (aktualisiert), alle Produktions-JSONs in mappe-2/, data.json, mappe-2.html, Engine-Patch, 2 Bilder
+- **Naechster Schritt:** Runde 4: Qualitaetsbefunde dokumentieren + OPT-1 bis OPT-8 priorisieren
+
+### v4 Produktionsarchitektur: Runde 3a-Opt — Vertrags-Extraktion + Infrastruktur-Fixes
+- **Phase:** Token-Optimierung (Runde 3a-Opt)
+- **Aufgabe:** Alle 8 Befunde aus RUNDE_3a_ERGEBNIS.md adressieren. Vertrags-Extraktion als Kern-Optimierung.
+- **Aenderungen:**
+  - 6 Vertrags-Dateien extrahiert aus WORKFLOW_v4.md nach `docs/architektur/vertraege/` (~400-650 Token je, vs. ~7.285 fuer WORKFLOW komplett)
+  - ORCHESTRATOR.md: Verweise auf Vertraege, Dispatch-Isolation (P4) explizit, Q-GATE-LOG Pflicht, Phase-2-Abschluss-Sektion
+  - WORKFLOW_v4.md: Vertrags-Extraktion-Header, DISPATCH-ISOLATION in P4, Phase-2-Abschluss-Block
+  - TAFELBILD_gpg-erster-weltkrieg-ursachen_Mappe2.md retroaktiv erstellt (Phase 0.4 Prozess)
+  - HANDOFF_PHASE2.md nach docs/analyse/ verschoben
+  - Goldstandard-Rolle redefiniert: data.json = MVP-Produkt, NICHT Template
+  - RUNDE_3b_KICKOFF.md erstellt (Kickoff-Prompt fuer frische Session)
+- **Artefakte:** 6 VERTRAG_PHASE_*.md, TAFELBILD_Mappe2.md, RUNDE_3b_KICKOFF.md, WORKFLOW_v4 + ORCHESTRATOR + RUNDE_3a_ERGEBNIS (aktualisiert)
+- **Naechster Schritt:** Runde 3b (Prozesstest mit Optimierungen)
+
+### v4 Produktionsarchitektur: Runde 3a-Eval — Post-hoc-Evaluation
+- **Phase:** Evaluation (Runde 3a-Eval)
+- **Aufgabe:** Post-hoc-Evaluation der Runde-3a-Produktion. 4 Ebenen: Prozesskonformitaet, Artefaktqualitaet, Compaction-Resilienz, Token-Effizienz.
+- **Ergebnis:** 8 Befunde (3 HIGH: Batch-Produktion, kein Q-GATE-LOG, fehlendes TAFELBILD; 5 MEDIUM: ueberfluessige Reads, WORKFLOW nicht gelesen, Phase 3 in Cowork, data.json als Template, kein Uebergabe-Prompt). Token-Baseline: ~58.000 in 1 Session.
+- **Artefakte:** `docs/analyse/RUNDE_3a_ERGEBNIS.md`
+- **Naechster Schritt:** Runde 3a-Opt (Befunde adressieren)
+
+### v4 Produktionsarchitektur: Runde 3a — Erster Prozesstest
+- **Phase:** Produktionstest (Runde 3a)
+- **Aufgabe:** Erster kontrollierter Test der v4-Produktionsarchitektur. Mappe 2 (gpg-erster-weltkrieg-ursachen) komplett produziert in 1 Cowork-Session.
+- **Ergebnis:** Artefaktqualitaet korrekt (Ebene 2 PASS). Prozesskonformitaet nur PARTIAL PASS: Agent produzierte batch statt isoliert (P4), kein Q-GATE-LOG (P5), Phase 3 in Cowork statt Claude Code (P2). Compaction nicht getestet (kein Session-Split erzwungen).
+- **Artefakte:** Alle Produktions-JSONs (rahmen/, materialien/, aufgaben/), RUNDE_3a_TESTPLAN.md
+- **Naechster Schritt:** Runde 3a-Eval (Post-hoc-Evaluation)
+
+---
+
 ## 2026-03-31
 
 ### v4 Produktionsarchitektur: Runde 2 — Agenten-Anpassung + Audit-Fixes

@@ -147,7 +147,8 @@ Referenz: `docs/checklisten/GUETEKRITERIEN_AUFGABEN.md`
 | A6 Tipp-Progression | Stufe 3 = Musterantwort (nicht "die Loesung")? | Tipp 3 zeigt EINE moegliche Antwort |
 | A7 Operator-Praezision | AFB-III-Operator verwendet? | "beurteile", "nimm Stellung", "eroertere" |
 | **A11-FT Freitext-Qualitaet** | **Typ-exklusiv.** Problemorientierte Leitfrage? Teilfragen? Fachbegriffe? Perspektivitaet? | Vollstaendige Pruefung gemaess Heuristiken 1-4 |
-| MQ3 Display-Referenzen (v3.8 C3) | Fragestamm + Tipps verwenden `[[mat-id\|Anzeigetext]]`-Inline-Links + (M[position])? | Muster: `[[mat-1-2\|Europakarte von 1914]] (M7)`. Keine generischen Typbezeichnungen ohne ID/Link |
+| **MQ3 Material-Referenz-Verbot in frage (Q-M2-04)** | **Fragestamm enthaelt KEINE `[[mat-id\|...]]`-Links und KEINE (M[position])-Verweise.** Fragestellung ist rein inhaltlich formuliert. Material-Referenzen gehoeren AUSSCHLIESSLICH in Tipp Stufe 1. | Pruefung: `frage` enthaelt keinen `[[`-String und kein `(M` |
+| MQ3b Display-Referenzen in Tipps | Tipp 1 MUSS `[[mat-id\|Anzeigetext]]`-Inline-Link + (M[position]) enthalten (Material-Zuweisung). Tipp 2-3 duerfen Links enthalten. | Muster: `[[mat-1-2\|Europakarte von 1914]] (M7)` |
 
 ---
 
@@ -161,7 +162,7 @@ Referenz: `docs/checklisten/GUETEKRITERIEN_AUFGABEN.md`
   "typ": "freitext-code",
   "frage": "Beurteile, ob die Buendnissysteme den Frieden in Europa sicherten oder den Krieg wahrscheinlicher machten.",
   "material_referenz": ["mat-1-1", "mat-1-2", "mat-1-3"],
-  "loesung": "Buendnissysteme Eskalation",
+  "loesung": ["Buendnissysteme", "Eskalation"],
   "tipps": [
     { "stufe": 1, "text": "Beginne mit den Fakten: Welche Buendnisse gab es? Dann ueberlege, was die Buendnisse bewirkt haben — Sicherheit oder Gefahr?" },
     { "stufe": 2, "text": "Die Buendnisse sollten Frieden sichern (Abschreckung), fuehrten aber zum Gegenteil (Misstrauen, Aufruestung). Warum schlug Abschreckung in Eskalation um?" },
@@ -186,7 +187,7 @@ Referenz: `docs/checklisten/GUETEKRITERIEN_AUFGABEN.md`
 Engine-Felder (werden von escape-engine.js gelesen und validiert):
 - `typ`: Immer `"freitext-code"`
 - `frage`: String, problemorientierte Leitfrage mit AFB-III-Operator
-- `loesung`: String, **Keyword oder Kurzphrase (3-5 Woerter)**. **KRITISCH:** Dies ist das EINZIGE Feld, gegen das die Engine die Schuelerantwort prueft (Fuzzy-Match + indexOf-Fallback). MUSS die zentralen Fachbegriffe der erwarteten Antwort enthalten. KEINE vollstaendige Musterantwort — die gehoert in `_meta.musterantwort` und Tipp 3.
+- `loesung`: **Array von Strings (3-5 Keywords)**. **KRITISCH:** Dies ist das EINZIGE Feld, gegen das die Engine die Schuelerantwort prueft. Die Engine prueft, ob ALLE Keywords (case-insensitive, Umlaut-tolerant) im Freitext des Schuelers vorkommen. MUSS die zentralen Fachbegriffe der erwarteten Antwort als einzelne Array-Eintraege enthalten. KEINE vollstaendige Musterantwort — die gehoert in `_meta.musterantwort` und Tipp 3. KEIN Space-separierter String — IMMER Array.
 - `material_referenz`: Array, typischerweise mehrere mat-IDs (Freitext zieht aus der gesamten Mappe)
 - `tipps`: Array mit exakt 3 Objekten
 - `punkte`: Integer, Standardwert 10

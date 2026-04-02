@@ -115,7 +115,8 @@ Referenz: `docs/checklisten/GUETEKRITERIEN_AUFGABEN.md`
 | **A4-RF Eindeutigkeit** | **Typ-spezifisch.** Ist die Reihenfolge eindeutig? | Paarweise Pruefung: Fuer jedes (i,j)-Paar klare Ordnungsrelation? |
 | A6 Tipp-Progression | Stufen eingehalten? | Stufe 1 nennt max. Startpunkt, Stufe 2 max. halbe Sequenz |
 | A7 Operator-Praezision | "Ordne", "Bringe in Reihenfolge", "Stelle dar" | Operationalisiertes Verb |
-| MQ3 Display-Referenzen (v3.8 C3) | Fragestamm + Tipps verwenden `[[mat-id\|Anzeigetext]]`-Inline-Links + (M[position])? | Muster: `[[mat-1-2\|Europakarte von 1914]] (M7)`. Keine generischen Typbezeichnungen ohne ID/Link |
+| **MQ3 Material-Referenz-Verbot in frage (Q-M2-04)** | **Fragestamm enthaelt KEINE `[[mat-id\|...]]`-Links und KEINE (M[position])-Verweise.** Fragestellung ist rein inhaltlich formuliert. Material-Referenzen gehoeren AUSSCHLIESSLICH in Tipp Stufe 1. | Pruefung: `frage` enthaelt keinen `[[`-String und kein `(M` |
+| MQ3b Display-Referenzen in Tipps | Tipp 1 MUSS `[[mat-id\|Anzeigetext]]`-Inline-Link + (M[position]) enthalten (Material-Zuweisung). Tipp 2-3 duerfen Links enthalten. | Muster: `[[mat-1-2\|Europakarte von 1914]] (M7)` |
 
 ---
 
@@ -129,7 +130,7 @@ Referenz: `docs/checklisten/GUETEKRITERIEN_AUFGABEN.md`
   "typ": "reihenfolge",
   "frage": "Bringe die Ereignisse, die zum Ausbruch des Ersten Weltkriegs fuehrten, in die richtige Reihenfolge.",
   "material_referenz": ["mat-1-3", "mat-1-4"],
-  "elemente_ungeordnet": [
+  "optionen": [
     "Oesterreich-Ungarn stellt Serbien ein Ultimatum",
     "Erzherzog Franz Ferdinand wird in Sarajevo ermordet",
     "Russland beginnt mit der Mobilmachung",
@@ -155,8 +156,8 @@ Referenz: `docs/checklisten/GUETEKRITERIEN_AUFGABEN.md`
 **Feld-Constraints:**
 - `typ`: Immer `"reihenfolge"`
 - `frage`: String, Ordnungsprinzip und Kontext benannt
-- `elemente_ungeordnet`: Array von Strings, bewusst gemischte Reihenfolge (NICHT die korrekte Reihenfolge). Anzeigereihenfolge fuer den User
-- `loesung`: Array von Strings in KORREKTER Reihenfolge. Muss exakt dieselben Strings wie `elemente_ungeordnet` enthalten
+- `optionen`: Array von Strings, bewusst gemischte Reihenfolge (NICHT die korrekte Reihenfolge). Anzeigereihenfolge fuer den User
+- `loesung`: Array von Strings in KORREKTER Reihenfolge. Muss exakt dieselben Strings wie `optionen` enthalten
 - `material_referenz`: Array mit mindestens 1 mat-ID
 - `tipps`: Array mit exakt 3 Objekten
 - `punkte`: Integer, Standardwert 10

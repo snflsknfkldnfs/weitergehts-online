@@ -152,6 +152,7 @@ Impuls in `_meta.erschliessungsimpuls` dokumentieren — AGENT_RAETSEL kann dara
 |---|---|---|
 | MQ2 | Titel-Typ nach Funktion (v3.8 C2) | Erarbeitungs-Karten: Frage-Titel (Typ A) — Prueffrage: "Koennte ein SuS den Titel als Frage verstehen?". Vertiefungs-Karten als visueller Anker: Statement-Titel (Typ B) erlaubt |
 | MQ4 | Didaktische Bildunterschrift (v3.8 C4) | `bildunterschrift` enthaelt NUR didaktischen Beschreibungstext (Identifikation + Kontextualisierung), KEINE Quellenangabe. Quellenangabe steht in `quelle` + `lizenz` |
+| MQ-QH | Quellenangabe-Hygiene (Q-M2-08) | `quelle`-Feld darf KEINE internen Artefakt-Namen enthalten (INHALTSBASIS, SKRIPT, TAFELBILD, MATERIAL_GERUEST, PROGRESSIONSPLAN, SUB_MATERIAL_*, AGENT_*). SuS sehen diese Texte. |
 
 ### Karten-spezifische Qualitaetskriterien
 

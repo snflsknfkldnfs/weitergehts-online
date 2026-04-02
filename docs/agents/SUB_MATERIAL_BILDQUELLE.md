@@ -164,6 +164,8 @@ Bei Public Domain: Keine Einschraenkungen.
 Bei CC-BY-SA: Attribution in Bildunterschrift oder Quellenangabe Pflicht.
 Bei CC-BY-NC: **Nicht verwenden** — Unterrichtsmaterial auf oeffentlicher Website ist ggf. nicht "non-commercial".
 
+**Quellenangabe-Hygiene (Q-M2-08):** Die `quelle`-Felder duerfen KEINE internen Artefakt-Namen enthalten. Verboten: INHALTSBASIS, SKRIPT, TAFELBILD, MATERIAL_GERUEST, PROGRESSIONSPLAN, SUB_MATERIAL_*, AGENT_*. SuS sehen diese Texte — sie muessen fuer Lernende verstaendlich sein.
+
 ### 4. Engine-Typ-Mapping
 
 | MATERIAL_GERUEST-Typ | Engine-Typ (data.json) | Begruendung |

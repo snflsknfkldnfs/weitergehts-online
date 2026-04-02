@@ -119,7 +119,8 @@ SUB_AUFGABE_MC prueft folgende A-Kriterien auf Subagent-Ebene:
 | **A4-MC Distractor-Qualitaet** | **Typ-exklusiv.** Plausibilitaet aller Distraktoren. | Distractor-Taxonomie: mind. 2/3 Rang 1-3. Keine absurden/sachfremden Optionen |
 | A6 Tipp-Progression | Stufe 1 ≠ Loesungsverraten, Stufe 2 = Einschraenkung, Stufe 3 = Loesung+Erklaerung | Stufenlogik pruefen |
 | A7 Operator-Praezision | Operationalisiertes Verb im Fragestamm? | Gegen Operatoren-Tabelle pruefen |
-| MQ3 Display-Referenzen (v3.8 C3) | Fragestamm + Tipps verwenden `[[mat-id\|Anzeigetext]]`-Inline-Links + (M[position])? | Muster: `[[mat-1-2\|Europakarte von 1914]] (M7)`. Keine generischen Typbezeichnungen ohne ID/Link |
+| **MQ3 Material-Referenz-Verbot in frage (Q-M2-04)** | **Fragestamm enthaelt KEINE `[[mat-id\|...]]`-Links und KEINE (M[position])-Verweise.** Fragestellung ist rein inhaltlich formuliert. Material-Referenzen gehoeren AUSSCHLIESSLICH in Tipp Stufe 1. | Pruefung: `frage` enthaelt keinen `[[`-String und kein `(M` |
+| MQ3b Display-Referenzen in Tipps | Tipp 1 MUSS `[[mat-id\|Anzeigetext]]`-Inline-Link + (M[position]) enthalten (Material-Zuweisung). Tipp 2-3 duerfen Links enthalten. | Muster: `[[mat-1-2\|Europakarte von 1914]] (M7)` |
 
 **Nicht auf SUB_MC-Ebene geprueft** (Orchestrator-Verantwortung): A5 (Progression), A8-A10 (mappenweite Kriterien), A12 (Sequenzlogik).
 
