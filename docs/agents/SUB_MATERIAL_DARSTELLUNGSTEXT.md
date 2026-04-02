@@ -32,7 +32,7 @@ Der Darstellungstext macht Vergangenes fuer 12-13-Jaehrige vorstellbar. Sechs Er
 
 ## Eingabe: Sequenzkontext (PFLICHT, ab v3.3)
 
-Dieser Abschnitt wird von AGENT_MATERIAL aus dem SEQUENZPLAN_Mappe_N generiert und ist fuer jeden Subagenten-Aufruf individuell befuellt.
+Dieser Abschnitt wird vom Dispatcher via **Read-Step 1b** (VERTRAG_PHASE_2-1_MATERIAL.md) aus dem MATERIAL_GERUEST abgeleitet und ist fuer jeden Subagenten-Aufruf individuell befuellt.
 
 | Feld | Beschreibung |
 |------|--------------|

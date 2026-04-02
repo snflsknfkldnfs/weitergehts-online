@@ -6,6 +6,30 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ## 2026-04-02
 
+### C+ Schritt 3: Conditional-Read-Logik als Decision-Tree (abgeschlossen)
+- **Phase:** C+ Phase I — Vertrags-Fixes (Schritt 3/3 — Phase I komplett)
+- **Findings:** 2.1 (comprehensive-review) + Q1-Befund BLOCKIEREND (Conditional-Read-Logik ambig, Sequenzkontext-Interface fehlt)
+- **VERTRAG_PHASE_2-1 komplett ueberarbeitet:**
+  - Schnittstellen-Vertrag ersetzt durch Decision-Tree-Pseudocode (8 Read-Steps + 1b, je mit exakter Bedingung, Pfad, Feldern, Output-Variablen)
+  - Jeder Read-Step: deterministische Bedingung (TRUE/FALSE), kein "ggf.", kein "bei Bedarf"
+  - Fallback-Regeln: ABBRUCH (Steps 1-3), WARNUNG+weiter (Steps 4-7), unmoeglich (Step 8)
+- **Read-Step 1b (NEU): Sequenzkontext-Interface:**
+  - Quelle: MATERIAL_GERUEST (Material-Entwurf-Tabelle, ALLE Zeilen)
+  - Ableitet: VORHERIGES, NAECHSTES, VORAUSGESETZTES_WISSEN, NOCH_NICHT_EINGEFUEHRT
+  - Loest das BLOCKIERENDE Q1-Finding (Subagent verlangte Sequenzkontext, Vertrag spezifizierte keinen Read-Step)
+- **SCPL-Zone-Mapping-Tabelle:**
+  - Ableitungsregel: TB-Knoten.fachbegriff → scpl.{zone}.fachbegriff Match
+  - Mappe-3-Beispiel: 6 Knoten → 3 Zonen (complication[0], complication[1], complication[2], problem)
+  - Dispatcher erstellt Mapping einmalig pro Mappe vor erstem Material-Dispatch
+- **SUB_MATERIAL_DARSTELLUNGSTEXT.md:** Sequenzkontext-Sektion referenziert jetzt Read-Step 1b statt generischen "SEQUENZPLAN_Mappe_N"
+- **Dispatch-Ablauf aktualisiert:** Schritte 1-8+1b mit expliziten Variablen-Outputs. Subagent-Input-Liste dokumentiert.
+- **Walkthrough-Verifikation (3 Testfaelle):**
+  - mat-3-1 (DT, einstieg, Position 1): 6 aktive Reads, 2 uebersprungen. 0 Ambiguitaeten.
+  - mat-3-2 (BQ, erarbeitung, Position 2): 7 aktive Reads, 1 uebersprungen. 0 Ambiguitaeten.
+  - mat-3-5 (TB, sicherung, Position 5): 8 aktive Reads, 0 uebersprungen. 0 Ambiguitaeten.
+- **Aenderungen:** VERTRAG_PHASE_2-1_MATERIAL.md (ueberarbeitet), SUB_MATERIAL_DARSTELLUNGSTEXT.md (aktualisiert), WALKTHROUGH_DECISION_TREE_Mappe3.md (neu), STATUS.md, CHANGELOG.md
+- **Naechster Schritt:** C+ Phase II (Schritte 4+5) oder direkt Schritt 7 (Test-Dispatch)
+
 ### C+ Schritt 2: Q-Gate-Semantik formalisieren (abgeschlossen)
 - **Phase:** C+ Phase I — Vertrags-Fixes (Schritt 2/3)
 - **Finding:** 5.1 (comprehensive-review) — keine formale Definition wann PASS/FAIL
