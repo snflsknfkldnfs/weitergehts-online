@@ -20,16 +20,16 @@
 
 ## Schnittstellen-Vertrag (P6)
 
-| Read-Schritt | Input-Datei | Gelesene Felder/Sektionen | Bedingung | NICHT lesen |
-|---|---|---|---|---|
-| 1 | MATERIAL_GERUEST | NUR Zeile des aktuellen mat-ID (typ, titel, skript_chunk, tafelbild_knoten, artefakt_ref, didaktische_funktion) | immer | Andere mat-IDs |
-| 2 | rahmen/hefteintrag.json | NUR knoten die in tafelbild_knoten referenziert + stundenfrage + **zugehoeriger scpl{}-Schritt** (situation/complication[i]/problem — je nach SCPL-Zone des tafelbild_knoten) | immer | Andere Knoten, andere SCPL-Zonen |
-| 3 | SUB_MATERIAL_[TYP].md | Vollstaendig | immer | Andere SUB_MATERIAL_*.md |
-| 4 | SKRIPT | NUR den in skript_chunk referenzierten Chunk (§-Bereich) | immer | Andere Chunks |
-| 5 | INHALTSBASIS | NUR die zum Chunk gehoerende Mappe-Sektion | immer | Andere Mappen |
-| 6 | rahmen/einstieg.json | problemstellung (fuer C1b-Konsistenz + Rahmung) | immer | — |
-| 7 | ARTEFAKT_INVENTAR | NUR Eintraege mit artefakt_ref dieses Materials | NUR WENN artefakt_ref gesetzt (BQ, KA, ST) | Gesamte Datei bei DT/QT/TB/ZL |
-| 8 | rahmen/hefteintrag.json | scpl.loesung[] (Kernerkenntnisse) | NUR WENN didaktische_funktion = sicherung oder transfer | Gesamte Datei bei einstieg/erarbeitung/vertiefung |
+| Read-Schritt | Input-Datei | Schema | Gelesene Felder/Sektionen | Bedingung | NICHT lesen |
+|---|---|---|---|---|---|
+| 1 | MATERIAL_GERUEST | — | NUR Zeile des aktuellen mat-ID (typ, titel, skript_chunk, tafelbild_knoten, artefakt_ref, didaktische_funktion) | immer | Andere mat-IDs |
+| 2 | rahmen/hefteintrag.json | hefteintrag-schema.json | NUR knoten die in tafelbild_knoten referenziert + stundenfrage + **zugehoeriger scpl{}-Schritt** (situation/complication[i]/problem — je nach SCPL-Zone des tafelbild_knoten) | immer | Andere Knoten, andere SCPL-Zonen |
+| 3 | SUB_MATERIAL_[TYP].md | — | Vollstaendig | immer | Andere SUB_MATERIAL_*.md |
+| 4 | SKRIPT | — | NUR den in skript_chunk referenzierten Chunk (§-Bereich) | immer | Andere Chunks |
+| 5 | INHALTSBASIS | — | NUR die zum Chunk gehoerende Mappe-Sektion | immer | Andere Mappen |
+| 6 | rahmen/einstieg.json | rahmen-einstieg-schema.json | problemstellung (fuer C1b-Konsistenz + Rahmung) | immer | — |
+| 7 | ARTEFAKT_INVENTAR | — | NUR Eintraege mit artefakt_ref dieses Materials | NUR WENN artefakt_ref gesetzt (BQ, KA, ST) | Gesamte Datei bei DT/QT/TB/ZL |
+| 8 | rahmen/hefteintrag.json | hefteintrag-schema.json | scpl.loesung[] (Kernerkenntnisse) | NUR WENN didaktische_funktion = sicherung oder transfer | Gesamte Datei bei einstieg/erarbeitung/vertiefung |
 
 **NICHT lesen:** data.json (kein Goldstandard-Template), andere Mappen-Artefakte, WORKFLOW_v4.md (dieser Vertrag genuegt)
 
@@ -49,10 +49,16 @@
 8. NUR WENN didaktische_funktion = sicherung|transfer:
    rahmen/hefteintrag.json lesen → scpl.loesung[] (M3c: "vom Ende her", Kernerkenntnisse)
 9. Material produzieren — Kerninhalt im Mittelpunkt, Rahmen stuetzt (P3)
-10. Q-Gate pruefen (MQ1-MQ5 + typ-spezifisch)
-11. Bei PASS: materialien/mat-N-M.json schreiben (P4)
-12. Bei FAIL: 1 Nachbesserung → erneut Q-Gate → bei FAIL: Finding in Q-GATE-LOG.md
-13. Q-Gate-Ergebnis in Q-GATE-LOG.md schreiben (L2, L7)
+   Subagent liefert Content-Felder: inhalt, quelle, [bildunterschrift, lizenz bei BQ/KA], _meta.
+   Dispatcher ergaenzt Struktur-Felder aus MATERIAL_GERUEST: id, typ, titel, position,
+   didaktische_funktion, voraussetzung, ueberleitung_von, sequenz_kontext.
+   Vollstaendiges Material MUSS dem Schema entsprechen: docs/architektur/schemata/material-output-schema.json
+10. Schema-Validierung: Output gegen material-output-schema.json pruefen.
+    Bei Schema-Fehler: korrigieren BEVOR Q-Gate.
+11. Q-Gate pruefen (MQ1-MQ5 + typ-spezifisch)
+12. Bei PASS: materialien/mat-N-M.json schreiben (P4)
+13. Bei FAIL: 1 Nachbesserung → erneut Q-Gate → bei FAIL: Finding in Q-GATE-LOG.md
+14. Q-Gate-Ergebnis in Q-GATE-LOG.md schreiben (L2, L7)
 ```
 
 ## Q-Gate

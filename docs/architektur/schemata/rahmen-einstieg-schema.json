@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "rahmen-einstieg-schema.json",
+  "title": "Escape-Game Einstieg (Rahmen)",
+  "description": "Schema fuer rahmen/einstieg.json. Produziert in Phase 2.0 aus MATERIAL_GERUEST Einstieg-Sektion. Gelesen in Phase 2.1 Read-Step 6 (problemstellung fuer Rahmung) und Phase 2.1c Read-Step 4 (problemstellung als Kontext fuer mat-1).",
+  "type": "object",
+  "required": ["narrativ", "problemstellung"],
+  "properties": {
+    "narrativ": {
+      "type": "string",
+      "minLength": 50,
+      "description": "HTML-formatierter Einstiegstext. Setzt die Szene, erzeugt Immersion. Wird im Einstieg-Renderer der Engine angezeigt."
+    },
+    "problemstellung": {
+      "type": "string",
+      "minLength": 10,
+      "description": "Leitfrage der Mappe. MUSS identisch mit hefteintrag.stundenfrage sein (C1b-Identitaetsregel)."
+    }
+  },
+  "additionalProperties": false
+}

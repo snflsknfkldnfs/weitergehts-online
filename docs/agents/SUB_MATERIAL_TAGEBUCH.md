@@ -145,14 +145,13 @@ Fiktions-Kennzeichnung + Quellenangabe als `<cite>` am Ende: `<cite>Fiktiver Tag
 
 ## Output
 
+**Schema-Referenz:** `docs/architektur/schemata/material-output-schema.json`
+**Verantwortlichkeit:** Du lieferst NUR Content-Felder. Struktur-Felder werden vom Dispatcher ergaenzt.
+
 ```json
 {
-  "id": "[mat_id]",
-  "typ": "quellentext",
-  "titel": "[Titel]",
-  "inhalt": "<p><em>[Ort], [Datum]</em></p><p>[Tagebuchtext als HTML...]</p><cite>Fiktiver Tagebucheintrag, historisch plausibel. Kontext: [Wikipedia-Artikel]</cite>",
+  "inhalt": "<p><em>[Ort], [Datum]</em></p><p>[Tagebuchtext als HTML...]</p>",
   "quelle": "Fiktiver Tagebucheintrag, historisch plausibel. Kontext: [Wikipedia-Artikel]",
-  "lizenz": "",
   "_meta": {
     "wortanzahl": 0,
     "figur": {"name": "", "alter": 0, "rolle": "", "ort": ""},
@@ -165,7 +164,7 @@ Fiktions-Kennzeichnung + Quellenangabe als `<cite>` am Ende: `<cite>Fiktiver Tag
 }
 ```
 
-**Engine-Hinweis:** `typ` ist `quellentext` (nicht `tagebuch`), da die Engine keinen eigenen Tagebuch-Renderer hat. AGENT_TECHNIK kann die Klasse `quellentext--tagebuch` ergaenzen, falls visuell differenziert werden soll.
+**Engine-Hinweis:** In data.json wird `typ` auf `tagebuch` gesetzt (Engine v1 hat eigenen Tagebuch-Renderer). Der Dispatcher setzt den korrekten Typ aus MATERIAL_GERUEST.
 
 ## Qualitaets-Gate
 

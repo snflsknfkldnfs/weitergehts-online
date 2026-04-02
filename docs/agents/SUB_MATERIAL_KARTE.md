@@ -144,6 +144,37 @@ Impuls in `_meta.erschliessungsimpuls` dokumentieren — AGENT_RAETSEL kann dara
 
 ---
 
+## Output
+
+**Schema-Referenz:** `docs/architektur/schemata/material-output-schema.json`
+**Verantwortlichkeit:** Du lieferst NUR Content-Felder. Struktur-Felder werden vom Dispatcher ergaenzt.
+
+```json
+{
+  "inhalt": "../../assets/img/{game-id}/{img-id}.{ext}",
+  "bildunterschrift": "[Karteninhalt beschreiben]. [Vergleichs-/Arbeitsauftrag fuer SuS].",
+  "quelle": "[Urheber], Wikimedia Commons",
+  "lizenz": "[CC-BY-SA 4.0 | Public Domain | ...]",
+  "_meta": {
+    "artefakt_ref": "[img-ID]",
+    "wikimedia_dateiname": "File:[Dateiname]",
+    "download_url": "[Thumbnail-URL fuer Phase-3-Download]",
+    "lokaler_pfad": "../../assets/img/{game-id}/{img-id}.{ext}",
+    "kartentyp": "politisch | physisch | thematisch | historisch",
+    "zeitbezug": "[Epoche/Datum der Karte]",
+    "tafelbild_knoten_abgedeckt": ["k1-5"],
+    "lizenz_kompatibel": true,
+    "erarbeitbarkeits_check": "PASS | FAIL + Begruendung"
+  }
+}
+```
+
+**Feld-Constraints (aus Schema):**
+- `inhalt`: Relativer Pfad zum Bild. PFLICHT: bildunterschrift + lizenz.
+- `bildunterschrift`: Didaktisch, nicht nur deskriptiv. Soll SuS-Arbeitsauftrag enthalten.
+
+---
+
 ## Qualitaetsspezifikation
 
 ### Uebergreifende Material-Qualitaet (v3.8)

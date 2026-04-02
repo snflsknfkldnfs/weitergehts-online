@@ -155,14 +155,13 @@ Quellenangabe als `<cite>` am Ende des `inhalt`-HTML einbetten: `<cite>Quelle: [
 
 ## Output
 
+**Schema-Referenz:** `docs/architektur/schemata/material-output-schema.json`
+**Verantwortlichkeit:** Du lieferst NUR Content-Felder. Struktur-Felder werden vom Dispatcher ergaenzt.
+
 ```json
 {
-  "id": "[mat_id]",
-  "typ": "quellentext",
-  "titel": "[Titel]",
-  "inhalt": "<p class='quellentext__einleitung'>...</p><blockquote>...</blockquote><p class='quellentext__nachweis'>...</p><cite>Quelle: [Sprecher], [Kontext]</cite>",
-  "quelle": "[Fussnoten-Text]",
-  "lizenz": "",
+  "inhalt": "<p><em>[Einleitung]</em></p><blockquote>[Zitat]</blockquote><p><em>[Erlaeuterung]</em></p>",
+  "quelle": "[Sprecher], [Kontext], [Fundort]",
   "_meta": {
     "wortanzahl": 0,
     "quellentyp": "rede | vertrag | brief | zeitungsartikel | statistik",

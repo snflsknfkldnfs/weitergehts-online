@@ -1,0 +1,191 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "hefteintrag-schema.json",
+  "title": "Escape-Game Hefteintrag (Tafelbild-Datenmodell)",
+  "description": "Schema fuer rahmen/hefteintrag.json. Definiert die SCPL-Struktur (Situation-Complication-Problem-Loesung), TB-Knoten, Verbindungen und Voraussetzungen. Produziert in Phase 2.0 (1:1 aus TAFELBILD_Mappe[N].md), revidiert in Phase 2.1c Achse 6 (NUR Formulierung, NICHT Struktur). Zentrale Rolle: (1) Definiert die didaktische Gesamtstruktur der Mappe, (2) TB-Knoten bestimmen Material-Zuordnung, (3) SCPL-Zonen liefern Sequenzkontext fuer Subagenten, (4) scpl.loesung[] = Kernerkenntnisse fuer Sicherung.",
+  "type": "object",
+  "required": [
+    "stundenfrage",
+    "ordnungsmuster",
+    "scpl",
+    "knoten",
+    "verbindungen"
+  ],
+  "properties": {
+    "stundenfrage": {
+      "type": "string",
+      "minLength": 10,
+      "description": "Leitfrage der Unterrichtsstunde. MUSS identisch mit einstieg.problemstellung sein (C1b-Identitaetsregel). Formuliert als echte Frage (endet mit '?')."
+    },
+    "ordnungsmuster": {
+      "type": "string",
+      "enum": [
+        "kausal",
+        "chronologisch",
+        "kategorial",
+        "vergleichend",
+        "prozessual"
+      ],
+      "description": "Strukturierendes Organisationsprinzip des Tafelbilds. Bestimmt die Verbindungslogik zwischen Knoten."
+    },
+    "scpl": {
+      "type": "object",
+      "required": ["situation", "complication", "problem", "loesung"],
+      "properties": {
+        "situation": {
+          "type": "object",
+          "required": ["kontextsatz", "fachbegriffe"],
+          "properties": {
+            "kontextsatz": {
+              "type": "string",
+              "minLength": 20,
+              "description": "Situativer Einstieg. Beschreibt den historischen Ausgangszustand. FORMULIERUNGS-OFFEN (Phase 2.1c darf anpassen)."
+            },
+            "fachbegriffe": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "Fachbegriffe, die in der Situation eingefuehrt werden."
+            }
+          },
+          "additionalProperties": false,
+          "description": "S in SCPL. Ausgangslage, historischer Kontext. Liefert den Rahmen fuer Einstiegs-Materialien."
+        },
+        "complication": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "required": ["schritt", "fachbegriff"],
+            "properties": {
+              "schritt": {
+                "type": "string",
+                "minLength": 10,
+                "description": "Ein Eskalations-/Komplizierungsschritt. FORMULIERUNGS-OFFEN."
+              },
+              "fachbegriff": {
+                "type": "string",
+                "description": "Zentraler Fachbegriff dieses Schritts."
+              },
+              "darstellung": {
+                "oneOf": [
+                  { "type": "string" },
+                  { "type": "object" },
+                  { "type": "null" }
+                ],
+                "description": "Optionale Darstellungsform. String (z.B. 'Pfeil'), Objekt (z.B. {typ: 'gegenueberstellung', ...} oder {typ: 'zeitleiste', ...}), oder null wenn nicht spezifiziert."
+              }
+            },
+            "additionalProperties": false
+          },
+          "description": "C in SCPL. Komplikationsschritte — Eskalation vom Ausgangszustand zum Problem. Jeder Schritt = 1 Erarbeitungsphase mit eigenem Fachbegriff. Liefert den Sequenzkontext fuer Erarbeitungs-Materialien."
+        },
+        "problem": {
+          "type": "object",
+          "required": ["satz", "fachbegriff"],
+          "properties": {
+            "satz": {
+              "type": "string",
+              "minLength": 15,
+              "description": "Problemformulierung — die Zuspitzung. FORMULIERUNGS-OFFEN."
+            },
+            "fachbegriff": {
+              "type": "string",
+              "description": "Zentraler Fachbegriff des Problems."
+            }
+          },
+          "additionalProperties": false,
+          "description": "P in SCPL. Das Problem/die Kernfrage, die durch die Komplikationen entsteht. Liefert den Kontext fuer Vertiefungs-Materialien."
+        },
+        "loesung": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 5,
+          "items": {
+            "type": "string",
+            "minLength": 10
+          },
+          "description": "L in SCPL. Kernerkenntnisse / Merksaetze. STRUKTUR-FREEZE (Phase 2.1c darf diese NICHT aendern). Werden in der Sicherungsphase als Merkbox gerendert. Zentrale Schnittstelle: Material-Produktion prueft Erarbeitbarkeit gegen diese Saetze."
+        }
+      },
+      "additionalProperties": false,
+      "description": "SCPL-Didaktikmodell. Situation → Complication → Problem → Loesung. Definiert den Erarbeitungsweg der Stunde und die didaktische Einbettung jedes Materials."
+    },
+    "knoten": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 14,
+      "items": {
+        "type": "object",
+        "required": ["id", "text", "typ"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^k[0-9]+-[0-9]+$",
+            "description": "Knoten-ID im Format k{mappe}-{nummer}. Referenziert in MATERIAL_GERUEST.tafelbild_knoten."
+          },
+          "text": {
+            "type": "string",
+            "description": "Knoten-Label. Schlagwort oder Kurzphrase."
+          },
+          "typ": {
+            "type": "string",
+            "enum": [
+              "kernbegriff",
+              "ursache",
+              "wirkung",
+              "ereignis",
+              "kategorie",
+              "person",
+              "prozess"
+            ],
+            "description": "Semantischer Typ des Knotens."
+          },
+          "merksatz": {
+            "type": "string",
+            "description": "Optionaler Merksatz zum Knoten. Wenn vorhanden: SuS sollen diesen Satz nach Material-Arbeit in eigenen Worten wiedergeben koennen (M4 Zielklarheit)."
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "TB-Knoten. Jeder Knoten ist ein Lernziel-Baustein. Material-Zuordnung: MATERIAL_GERUEST.tafelbild_knoten referenziert knoten[].id. Empfohlen: max 10 Knoten (empirisch, G1)."
+    },
+    "verbindungen": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["von", "nach", "label"],
+        "properties": {
+          "von": {
+            "type": "string",
+            "pattern": "^k[0-9]+-[0-9]+$",
+            "description": "Quell-Knoten-ID."
+          },
+          "nach": {
+            "type": "string",
+            "pattern": "^k[0-9]+-[0-9]+$",
+            "description": "Ziel-Knoten-ID."
+          },
+          "label": {
+            "type": "string",
+            "description": "Verbindungsbeschriftung (z.B. 'fuehrt zu', 'deshalb', 'trotzdem')."
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "Gerichtete Verbindungen zwischen Knoten. Visualisieren Kausal-/Chronologie-/Kategoriebeziehungen."
+    },
+    "voraussetzungen": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Knoten-IDs aus vorherigen Mappen, die als Vorwissen vorausgesetzt werden. Leer bei Mappe 1. Zielformat: reine ID (z.B. 'k1-1'). Legacy: ID mit Annotation (z.B. 'k1-1 (Pulverfass Europa)') — wird bei Mappe 3+ nicht mehr verwendet."
+    },
+    "transfer": {
+      "type": "object",
+      "description": "Optionaler Transfer-Bereich fuer Mappe-uebergreifende Verknuepfungen."
+    }
+  },
+  "additionalProperties": false
+}

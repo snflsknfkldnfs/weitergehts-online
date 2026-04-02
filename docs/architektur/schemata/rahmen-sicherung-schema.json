@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "rahmen-sicherung-schema.json",
+  "title": "Escape-Game Sicherung (Rahmen)",
+  "description": "Schema fuer rahmen/sicherung.json. Basis-Felder in Phase 2.0, zusammenfassung + ueberleitung in Phase 2.1c Achse 6. Gelesen in Phase 2.1c Read-Step 5 (reflexionsimpuls fuer Q-M2-09 Disjunktionspruefung). Kernerkenntnisse leben NICHT hier, sondern in hefteintrag.scpl.loesung[] (M8).",
+  "type": "object",
+  "required": [
+    "reflexionsimpuls",
+    "hefteintrag_verweis",
+    "zusammenfassung",
+    "ueberleitung"
+  ],
+  "properties": {
+    "reflexionsimpuls": {
+      "type": "string",
+      "minLength": 20,
+      "description": "Metakognitiver Impuls. MUSS inhaltlich disjunkt zu hefteintrag.scpl.loesung[] sein (Q-M2-09). Zielt auf Transfer/Bewertung, NICHT auf Faktenreproduktion."
+    },
+    "hefteintrag_verweis": {
+      "type": "string",
+      "minLength": 20,
+      "description": "Anweisung fuer SuS zum Uebertragen des Tafelbilds ins Heft."
+    },
+    "zusammenfassung": {
+      "type": "string",
+      "description": "Synthese des Erarbeitungsprozesses. Placeholder '[REVISION IN 2.1c]' nach Phase 2.0, finale Produktion in Phase 2.1c Achse 6 mit Material-Kontext. Muss G10 (Rekapitulierbarkeit) erfuellen."
+    },
+    "ueberleitung": {
+      "type": "string",
+      "description": "Mappe-zu-Mappe-Ueberleitung. Placeholder '[REVISION IN 2.1c]' nach Phase 2.0, finale Produktion in Phase 2.1c Achse 6. Bruecke zur naechsten Mappe."
+    },
+    "zitat": {
+      "type": "object",
+      "required": ["text", "urheber", "kontext"],
+      "properties": {
+        "text": { "type": "string", "description": "Zitattext." },
+        "urheber": { "type": "string", "description": "Autor/Sprecher." },
+        "kontext": { "type": "string", "description": "Historischer Kontext des Zitats." }
+      },
+      "additionalProperties": false,
+      "description": "Optionales historisches Schlusszitat. Nur wenn SKRIPT/INHALTSBASIS ein passendes Zitat enthaelt."
+    }
+  },
+  "additionalProperties": false
+}

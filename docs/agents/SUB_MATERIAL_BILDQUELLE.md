@@ -177,11 +177,11 @@ Die Engine rendert `bildquelle` als: `<img>` + `<figcaption>` (Bildunterschrift)
 
 ## Output
 
+**Schema-Referenz:** `docs/architektur/schemata/material-output-schema.json`
+**Verantwortlichkeit:** Du lieferst NUR Content-Felder. Struktur-Felder werden vom Dispatcher ergaenzt.
+
 ```json
 {
-  "id": "[mat_id]",
-  "typ": "bildquelle",
-  "titel": "[Titel]",
   "inhalt": "../../assets/img/{game-id}/{img-id}.{ext}",
   "bildunterschrift": "[Identifikation]. [Kontextualisierung].",
   "quelle": "[Urheber], Wikimedia Commons",

@@ -9,13 +9,13 @@
 
 ## Schnittstellen-Vertrag (P6)
 
-| Read-Schritt | Input-Datei | Gelesene Felder | Zweck |
-|---|---|---|---|
-| 1 | materialien/mat-N-*.json (alle) | titel, inhalt, ueberleitung_von, fachbegriffe, _meta.tafelbild_knoten_abgedeckt | Cross-Pruefung + Ueberleitung-Kontext |
-| 2 | rahmen/hefteintrag.json | knoten[], stundenfrage | TB-Gesamtabdeckung |
-| 3 | MATERIAL_GERUEST | Sequenzreihenfolge, didaktische_funktion pro mat-ID, Ueberleitungen-Sektion | Soll-Ist-Vergleich + Ueberleitung-Intention |
-| 4 | rahmen/einstieg.json | problemstellung | Leitfrage als Ueberleitung-Anker fuer mat-1 |
-| 5 | rahmen/sicherung.json + rahmen/hefteintrag.json | reflexionsimpuls, hefteintrag_verweis (aus sicherung) + scpl.loesung[] (aus hefteintrag, = Kernerkenntnisse) | Stufe-1-Felder fuer Achse 6 Kontext + Q-M2-09 Disjunktionspruefung |
+| Read-Schritt | Input-Datei | Schema | Gelesene Felder | Zweck |
+|---|---|---|---|---|
+| 1 | materialien/mat-N-*.json (alle) | material-output-schema.json | titel, inhalt, ueberleitung_von, sequenz_kontext, _meta.tafelbild_knoten_abgedeckt | Cross-Pruefung + Ueberleitung-Kontext |
+| 2 | rahmen/hefteintrag.json | hefteintrag-schema.json | knoten[], stundenfrage, scpl (alle Zonen) | TB-Gesamtabdeckung + SCPL-Kontext fuer Achse 6 |
+| 3 | MATERIAL_GERUEST | — | Sequenzreihenfolge, didaktische_funktion pro mat-ID, Ueberleitungen-Sektion | Soll-Ist-Vergleich + Ueberleitung-Intention |
+| 4 | rahmen/einstieg.json | rahmen-einstieg-schema.json | problemstellung | Leitfrage als Ueberleitung-Anker fuer mat-1 |
+| 5 | rahmen/sicherung.json + rahmen/hefteintrag.json | rahmen-sicherung-schema.json + hefteintrag-schema.json | reflexionsimpuls, hefteintrag_verweis (aus sicherung) + scpl.loesung[] (aus hefteintrag, = Kernerkenntnisse) | Stufe-1-Felder fuer Achse 6 Kontext + Q-M2-09 Disjunktionspruefung |
 
 **NICHT lesen:** data.json, WORKFLOW_v4.md, SKRIPT, INHALTSBASIS, SUB_MATERIAL_*.md, aufgaben/*.json
 
@@ -121,7 +121,7 @@ Beide Vektoren muessen inhaltlich praezise auf die **konkreten produzierten Mate
 
 **Q-GATE-LOG.md:** Ergebnisse Achsen 1-6 (Cross-Konsistenz + Ueberleitungen + Hefteintrag-Revision + Stufe-2 Re-Evaluation).
 
-**ueberleitungen.json:**
+**ueberleitungen.json:** (Schema: `docs/architektur/schemata/ueberleitungen-schema.json`)
 
 ```json
 {

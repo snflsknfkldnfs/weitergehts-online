@@ -128,14 +128,13 @@ Quellenangabe als `<cite>` am Ende des `inhalt`-HTML einbetten: `<cite>Quelle: [
 
 ## Output
 
+**Schema-Referenz:** `docs/architektur/schemata/material-output-schema.json`
+**Verantwortlichkeit:** Du lieferst NUR Content-Felder. Struktur-Felder (id, typ, titel, position, didaktische_funktion, voraussetzung, ueberleitung_von, sequenz_kontext) werden vom Dispatcher aus MATERIAL_GERUEST ergaenzt.
+
 ```json
 {
-  "id": "[mat_id]",
-  "typ": "darstellungstext",
-  "titel": "[Titel]",
-  "inhalt": "<p>HTML-formatierter Text...</p><p>Zweiter Absatz...</p><cite>Quelle: [Fachliche Grundlage]</cite>",
-  "quelle": "[Quellenangabe]",
-  "lizenz": "",
+  "inhalt": "<p>HTML-formatierter Text...</p><p>Zweiter Absatz...</p>",
+  "quelle": "Eigene Darstellung. Quellen: Wikipedia — [Artikelname]",
   "_meta": {
     "wortanzahl": 0,
     "fachbegriffe_eingefuehrt": ["Begriff1", "Begriff2"],
@@ -144,6 +143,11 @@ Quellenangabe als `<cite>` am Ende des `inhalt`-HTML einbetten: `<cite>Quelle: [
   }
 }
 ```
+
+**Feld-Constraints (aus Schema):**
+- `inhalt`: HTML-String mit `<p>`-Absaetzen. Max 3-4 Absaetze. Fachbegriffe `<strong>`-markiert. Erlaubte Tags: p, strong, em, br, ul, li.
+- `quelle`: Quellenangabe, min 5 Zeichen.
+- `_meta`: Internes Audit-Feld, wird NICHT in data.json uebernommen.
 
 ## Qualitaets-Gate
 

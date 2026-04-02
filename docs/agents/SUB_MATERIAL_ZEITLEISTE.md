@@ -130,29 +130,31 @@ Alle Texte in `text`-Feldern muessen JSON-kompatibel sein. **VERBOTEN:** `„"` 
 
 ## Output
 
+**Schema-Referenz:** `docs/architektur/schemata/material-output-schema.json`
+**Verantwortlichkeit:** Du lieferst NUR Content-Felder. Struktur-Felder werden vom Dispatcher ergaenzt.
+
 ```json
 {
-  "id": "[mat_id]",
-  "typ": "zeitleiste",
-  "titel": "[Leitfrage als Ueberschrift]",
   "inhalt": [
     {"datum": "1879", "text": "Zweibund: Deutschland und Oesterreich-Ungarn verbuenden sich"},
     {"datum": "1882", "text": "Dreibund: Italien tritt dem Buendnis bei"},
-    {"datum": "1894", "text": "Frankreich und Russland schliessen ein Gegenbuendnis"},
-    {"datum": "1904", "text": "Entente Cordiale: Frankreich und Grossbritannien naehern sich an"},
-    {"datum": "1907", "text": "Triple Entente komplett: Grossbritannien, Frankreich und Russland bilden einen Block"}
+    {"datum": "1894", "text": "Frankreich und Russland schliessen ein Gegenbuendnis"}
   ],
   "quelle": "Eigene Zusammenstellung. Quellen: Wikipedia [Artikel 1], [Artikel 2]",
-  "lizenz": "",
   "_meta": {
-    "eintraege_gesamt": 5,
-    "ankerpunkte": ["1882", "1907"],
-    "zeitspanne": "1879–1907",
-    "tempo_hinweis": "28 Jahre — langsamer Prozess der Lagerbildung",
+    "eintraege_gesamt": 3,
+    "ankerpunkte": ["1882"],
+    "zeitspanne": "1879–1894",
+    "tempo_hinweis": "[Einschaetzung der Geschwindigkeit des Prozesses]",
     "tafelbild_knoten_abgedeckt": ["k1-3", "k1-4"],
     "erarbeitbarkeits_check": "PASS | FAIL + Begruendung"
   }
 }
+```
+
+**Feld-Constraints (aus Schema):**
+- `inhalt`: Array von `{datum, text}`-Objekten, min 2, empfohlen 4-7, chronologisch sortiert.
+- `quelle`: Quellenangabe, min 5 Zeichen.
 ```
 
 ## Qualitaets-Gate

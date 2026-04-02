@@ -140,6 +140,33 @@ Statistik-Materialien recherchieren ihre Daten SELBST (anders als BQ/KA, die aus
 
 ---
 
+## Output
+
+**Schema-Referenz:** `docs/architektur/schemata/material-output-schema.json`
+**Verantwortlichkeit:** Du lieferst NUR Content-Felder. Struktur-Felder werden vom Dispatcher ergaenzt.
+
+```json
+{
+  "inhalt": {
+    "typ": "balken | linie | kreis",
+    "daten": [...]
+  },
+  "quelle": "Eigene Darstellung. Quellen: [Datenquelle]",
+  "_meta": {
+    "diagrammtyp": "balken | linie | kreis",
+    "datenpunkte": 0,
+    "tafelbild_knoten_abgedeckt": ["k1-6"],
+    "erarbeitbarkeits_check": "PASS | FAIL + Begruendung"
+  }
+}
+```
+
+**Feld-Constraints (aus Schema):**
+- `inhalt`: Strukturiertes Datenobjekt mit `.typ`-Feld. Engine-Renderer erwartet dieses Feld.
+- Statistik kann optional `bildunterschrift` und `lizenz` haben (wenn auf externer Grafik basierend).
+
+---
+
 ## Qualitaetsspezifikation
 
 ### Uebergreifende Material-Qualitaet (v3.8)

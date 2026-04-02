@@ -49,13 +49,17 @@
 
 ## Output
 
+**Schema-Referenzen:** Alle Output-Dateien MUESSEN gegen ihr jeweiliges Schema validieren.
+
 ```
 rahmen/
-  hefteintrag.json   # knoten[], verbindungen[], voraussetzungen[], stundenfrage, ordnungsmuster, scpl{}, transfer{}
-  einstieg.json    # narrativ (HTML), problemstellung
-  sicherung.json   # reflexionsimpuls, hefteintrag_verweis, zitat{}. zusammenfassung + ueberleitung als Placeholder (finale Produktion: Phase 2.1c Achse 6). KEIN kernerkenntnisse[] (M8: lebt in hefteintrag.scpl.loesung[])
-  meta.json        # id, titel, beschreibung, freischalt_code
+  hefteintrag.json   → docs/architektur/schemata/hefteintrag-schema.json
+  einstieg.json      → docs/architektur/schemata/rahmen-einstieg-schema.json
+  sicherung.json     → docs/architektur/schemata/rahmen-sicherung-schema.json
+  meta.json          # id, titel, beschreibung, freischalt_code (kein separates Schema)
 ```
+
+**Validierung:** Nach Produktion aller 4 Dateien: Schema-Validierung durchfuehren BEVOR Q-Gate.
 
 ## Bekannte Limitationen
 
