@@ -151,7 +151,9 @@ Die folgenden Kataloge definieren WELCHE Kriterien pro Artefakt-Typ geprueft wer
 | 11 | M10 | Sprachsensibilitaet | INHALT | FAIL: Propagandabegriff unreflektiert uebernommen. PASS: Zeitgenoessische Begriffe kontextualisiert. |
 | 12 | TYP-* | Typ-spezifische Kriterien | INHALT/DIDAKTIK | Je nach Typ: DT-1 bis DT-6, QT-1 bis QT-6, BQ-1 bis BQ-8, KA-1 bis KA-7, ZL-1 bis ZL-6, ST-1 bis ST-6, TB-1 bis TB-6. Siehe QUALITAETSKRITERIEN_MATERIALPRODUKTION.md §3. |
 
-**Pruef-Reihenfolge:** SCHEMA zuerst. Bei SCHEMA-FAIL: sofort korrigieren, restliche Kriterien NICHT pruefen (Schema-Fehler verfaelschen Inhaltsbewertung). Nach SCHEMA-PASS: Kriterien 2-12 in angegebener Reihenfolge.
+| 13 | TYP-01 | Typographische Korrektheit (v3.3) | FORM | FAIL: ASCII-Ersatzzeichen in SuS-sichtbaren Feldern (`--` statt `—`, `ae/oe/ue/ss` statt Umlaute, `'` statt `'`). PASS: Alle Felder konform mit Encoding-Regel v3.3. |
+
+**Pruef-Reihenfolge:** SCHEMA zuerst. Bei SCHEMA-FAIL: sofort korrigieren, restliche Kriterien NICHT pruefen (Schema-Fehler verfaelschen Inhaltsbewertung). Nach SCHEMA-PASS: Kriterien 2-13 in angegebener Reihenfolge.
 
 ### 7.2 Aufgaben-Q-Gate (Phase 2.2b)
 
@@ -169,6 +171,8 @@ Die folgenden Kataloge definieren WELCHE Kriterien pro Artefakt-Typ geprueft wer
 | 7 | A7 | Operator-Praezision | FORM | FAIL: Kein AFB-konformer Operator erkennbar. WARN: Implizit statt explizit. |
 | 8 | MQ3 | Material-Referenz-Verbot in Frage | KONSISTENZ | FAIL: [[mat-id]] im frage-Feld. Q-M2-04. |
 | 9 | A11-FT | Freitext-Qualitaet (NUR bei freitext-code) | DIDAKTIK | FAIL: Keine Leitfrage oder <3 Fachbegriffe. |
+| 10 | TYP-01-A | Typographische Korrektheit Aufgaben (v3.3) | FORM | FAIL: ASCII-Ersatzzeichen in frage, optionen, loesung, tipps. |
+| 11 | A2-KURZ | Fragestamm-Kurzregel (v3.3) | FORM | FAIL: Fragestellung > 15 Woerter. WARN: 13-15 Woerter. |
 
 ### 7.3 Rahmen-Q-Gate (Phase 2.0)
 
@@ -183,6 +187,8 @@ Die folgenden Kataloge definieren WELCHE Kriterien pro Artefakt-Typ geprueft wer
 | 4 | Q-M2-09 | Disjunktionsregel | KONSISTENZ | FAIL: reflexionsimpuls paraphrasiert scpl.loesung[]. |
 | 5 | Q-M2-08 | Quellenangabe-Hygiene | FORM | FAIL: Interne Artefakt-Namen in SuS-sichtbaren Texten. |
 | 6 | V-RAHMEN | Vollstaendigkeit | SCHEMA | FAIL: Pflichtfeld fehlt oder ist leer (ausser zusammenfassung/ueberleitung als Placeholder). |
+| 7 | TYP-01-R | Typographische Korrektheit Rahmen (v3.3) | FORM | FAIL: ASCII-Ersatzzeichen in einstieg/sicherung/hefteintrag-Feldern. |
+| 8 | REG-01 | Sprachregister R7 Rahmentexte (v3.3) | FORM | FAIL: Didaktische Metakommentare oder Lehrerhandreichungs-Sprache in SuS-sichtbaren Rahmentexten (einstieg.narrativ, sicherung.zusammenfassung, sicherung.ueberleitung). WARN: Grenzwertig akademischer Ton. |
 
 ### 7.4 Cross-Konsistenz-Q-Gate (Phase 2.1c)
 
@@ -196,6 +202,9 @@ Die folgenden Kataloge definieren WELCHE Kriterien pro Artefakt-Typ geprueft wer
 | 4 | CROSS-4 | TB-Knoten-Gesamtabdeckung | KONSISTENZ | FAIL: TB-Knoten von keinem Material abgedeckt. |
 | 5 | UE-1..5 | Ueberleitung-Qualitaet (Achse 5) | DIDAKTIK | FAIL: Kein Rueckwaerts-Vektor oder kein Vorwaerts-Vektor. WARN: Vektoren vorhanden aber vage. |
 | 6 | HE-REV | Hefteintrag-Revision (Achse 6) | KONSISTENZ | FAIL: STRUKTUR-FREEZE verletzt. WARN: FORMULIERUNGS-OFFEN-Felder nicht revidiert. |
+| 7 | HE-PROD | Hefteintrag-Produktqualitaet (v3.3) | DIDAKTIK | Pruefung gegen GUETEKRITERIEN_HEFTEINTRAG_PRODUKT.md (HE1-HE13). FAIL: HE4 (Sprachliche Geschlossenheit) oder HE12 (Lernbarkeit) nicht erfuellt. WARN: Andere HE-Kriterien grenzwertig. |
+| 8 | TYP-01-C | Typographische Korrektheit Cross-Artefakte (v3.3) | FORM | FAIL: ASCII-Ersatzzeichen in Ueberleitungen, zusammenfassung, ueberleitung, SCPL-Patches. |
+| 9 | REG-01-C | Sprachregister Ueberleitungen (v3.3) | FORM | FAIL: Didaktische Metakommentare in Ueberleitungstexten. Pruefung gegen UE-3 (verschaerft). |
 
 ### 7.5 Progressionsplan-Q-Gate (Phase 2.2a)
 

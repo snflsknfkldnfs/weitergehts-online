@@ -163,6 +163,10 @@ Referenz: `docs/checklisten/GUETEKRITERIEN_AUFGABEN.md`
 **Feld-Constraints:**
 - `typ`: Immer `"zuordnung"`
 - `frage`: String, UTF-8, Zuordnungslogik klar benannt
+
+**Fragestamm-Kurzregel (v3.3):** Die Fragestellung ist ein Handlungsimpuls, KEIN vollstaendiger didaktischer Satz. Max 1 Satz, max 12 Woerter. Den Operator NICHT woertlich benennen. Kontext (Zeit, Ort, Material-Bezug) NUR wenn nicht aus dem Setting ableitbar. Der Quellenbezug gehoert in Tipp 1, nicht in die Fragestellung.
+Negativbeispiel: "Ergaenze die fehlenden Fachbegriffe im folgenden Lueckentext, um den Zusammenhang zwischen Kriegsbegeisterung und gesellschaftlichem Druck im August 1914 darzustellen."
+Positivbeispiel: "Ergaenze die fehlenden Fachbegriffe."
 - `elemente`: Array von Objekten mit `begriff` (String) und `zuordnung` (String). Reihenfolge = Anzeigereihenfolge der linken Spalte
 - `loesung`: Object `{ "Begriff": "Zuordnung", ... }`. Muss exakt `elemente` widerspiegeln
 - `material_referenz`: Array mit mindestens 1 mat-ID
@@ -229,3 +233,8 @@ A7 Operator-Praezision: PASS — "Ordne ... zu" = operationalisiert
 1. **aufgabe JSON-Objekt** gemaess Rendering-Kontrakt
 2. **Q-Gate Log** pro geprueftem A-Kriterium
 3. Bei FAIL: Konkreter Mangel + Korrekturvorschlag
+
+## JSON-Encoding-Regeln (v3.3)
+
+**Umlaute:** Schreibe echte UTF-8-Umlaute (ä, ö, ü, ß). KEINE ASCII-Transliterationen (ae, oe, ue, ss).
+**Typographische Zeichen:** Gedankenstrich als `—` (NICHT `--` oder `-`). Deutsche Anfuehrungszeichen als `„..."` oder `»...«`. Apostroph als `'` (NICHT `'`). Gilt fuer ALLE SuS-sichtbaren Felder: `frage`, `optionen`, `loesung`, `tipps[]`.

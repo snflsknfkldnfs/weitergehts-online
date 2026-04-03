@@ -153,13 +153,44 @@ Muster: **Inhaltliche Kurzbenennung** als Link + **(M-Position)** als Orientieru
 | "Schau dir die Karte an" | "Schau dir die [[mat-1-2\|Europakarte von 1914]] (M7) genau an" |
 | "Lies den Quellentext" | "Lies das [[mat-1-4\|Zitat von Buelow]] (M2) genau durch" |
 
+### 3b. Erarbeitbarkeits-Gegenpruefung nach Typauswahl (v3.3, B8-Patch)
+
+**PFLICHT** nach Progressionsplan (Schritt 1), VOR Dispatch (Schritt 4).
+
+Fuer jede Aufgabe: Pruefen ob der gewaehlte Aufgabentyp mit dem konkreten Ziel-Material kompatibel ist. Die Aufgabe MUSS aus dem Material heraus loesbar sein.
+
+| Typ | Erarbeitbarkeits-Check |
+|---|---|
+| `reihenfolge` | Sind die Elemente im Material in einer EINDEUTIGEN chronologischen oder logischen Sequenz dargestellt? Wenn die Reihenfolge nicht aus dem Material ableitbar ist → Typ wechseln. |
+| `zuordnung` | Sind die Zuordnungspaare im Material klar voneinander abgrenzbar? Gibt es mindestens 2 disjunkte Kategorien? |
+| `lueckentext` | Sind die Lueckenbegriffe Fachbegriffe, die im Material DEFINIERT (nicht nur erwaehnt) werden? |
+| `multiple-choice` | Sind Distraktoren plausibel aber eindeutig falsch? Kann die richtige Antwort AUS DEM MATERIAL begruendet werden? |
+| `freitext-code` | Enthaelt die erwartete Antwort objektivierbare Inhaltselemente (Fachbegriffe, Fakten)? Bei reiner Meinungsaeusserung: reduzierte Bewertungslogik (siehe SUB_AUFGABE_FREITEXT v3.3). |
+
+**Dokumentation:** Im Konstruktionskontext (Schritt 3) wird das Ergebnis der Gegenpruefung dokumentiert: "Erarbeitbarkeits-Check: [Typ] auf [mat-ID] — [Begruendung warum der Typ passt]."
+
+**Bei FAIL:** Typ im Progressionsplan aendern (Typvielfalt-Regeln beachten). Kein Re-Dispatch noetig — die Aenderung erfolgt VOR dem ersten Dispatch.
+
+### 3c. Fragestamm-Kurzregel (v3.3, B6-Patch)
+
+Die Fragestellung ist ein Handlungsimpuls, KEIN vollstaendiger didaktischer Satz. Diese Regel gilt fuer den Orchestrator bei der Formulierung des Operationalisierungsziels UND wird an die Subagenten weitergegeben.
+
+- Max 1 Satz, max 12 Woerter
+- Operator NICHT woertlich benennen (nicht "Ergaenze die fehlenden Fachbegriffe im folgenden Lueckentext, um...")
+- Kontext (Zeit, Ort, Material-Bezug) NUR wenn nicht aus dem Setting ableitbar
+- Quellenbezug gehoert in Tipp 1, nicht in die Fragestellung
+
+**Negativbeispiel:** "Ergaenze die fehlenden Fachbegriffe im folgenden Lueckentext, um den Zusammenhang zwischen Kriegsbegeisterung und gesellschaftlichem Druck im August 1914 darzustellen."
+**Positivbeispiel:** "Ergaenze die fehlenden Fachbegriffe."
+
 ### 4. Dispatch an Subagenten
 
 Fuer jede Aufgabe:
 1. Passenden Subagenten anhand des Typs aus dem Progressionsplan bestimmen
-2. Konstruktionskontext uebergeben
-3. Subagent liefert: aufgabe-JSON-Objekt + Q-Gate-Log
-4. Bei Q-Gate-FAIL im Subagenten-Output: Konstruktionskontext praezisieren und erneut dispatchen (max. 2 Re-Dispatch pro Aufgabe)
+2. Erarbeitbarkeits-Gegenpruefung (Schritt 3b) dokumentieren
+3. Konstruktionskontext uebergeben (inkl. Fragestamm-Kurzregel 3c)
+4. Subagent liefert: aufgabe-JSON-Objekt + Q-Gate-Log
+5. Bei Q-Gate-FAIL im Subagenten-Output: Konstruktionskontext praezisieren und erneut dispatchen (max. 2 Re-Dispatch pro Aufgabe)
 
 ### 5. Cross-Aufgaben-Konsistenz pruefen
 
@@ -300,9 +331,10 @@ Der Orchestrator prueft Kriterien, die Cross-Aufgaben-Perspektive erfordern. Ein
 
 **Stufe 2 — Fachdidaktische Pruefung:** A-Kriterien gemaess Tabellen oben. Bei MUSS-Verletzung (A1-A7): Ueberarbeitung + konkreten Mangel benennen. Bei SOLL-Verletzung (A8-A12): `[A-HINWEIS]` im Output.
 
-## Encoding-Regel (v3.2)
+## Encoding-Regel (v3.3)
 
-Echte UTF-8-Umlaute (ae, oe, ue, ss) in allen Textfeldern. KEINE ASCII-Transliterationen. Gilt fuer frage, optionen, tipps und alle anderen Textfelder.
+Echte UTF-8-Umlaute (ä, ö, ü, ß) in allen Textfeldern. KEINE ASCII-Transliterationen (ae, oe, ue, ss).
+**Typographische Zeichen:** Gedankenstrich als `—` (NICHT `--` oder `-`). Deutsche Anfuehrungszeichen als `„..."` oder `»...«`. Apostroph als `'` (NICHT `'`). Gilt fuer frage, optionen, tipps, loesung und alle anderen SuS-sichtbaren Textfelder.
 
 ## Ausgabe (v4)
 

@@ -187,7 +187,17 @@ Referenz: `docs/checklisten/GUETEKRITERIEN_AUFGABEN.md`
 Engine-Felder (werden von escape-engine.js gelesen und validiert):
 - `typ`: Immer `"freitext-code"`
 - `frage`: String, problemorientierte Leitfrage mit AFB-III-Operator
+
+**Fragestamm-Kurzregel (v3.3):** Die Fragestellung ist ein Handlungsimpuls, KEIN vollstaendiger didaktischer Satz. Max 1 Satz, max 12 Woerter. Den Operator NICHT woertlich benennen. Kontext (Zeit, Ort, Material-Bezug) NUR wenn nicht aus dem Setting ableitbar. Der Quellenbezug gehoert in Tipp 1, nicht in die Fragestellung.
+Negativbeispiel: "Ergaenze die fehlenden Fachbegriffe im folgenden Lueckentext, um den Zusammenhang zwischen Kriegsbegeisterung und gesellschaftlichem Druck im August 1914 darzustellen."
+Positivbeispiel: "Ergaenze die fehlenden Fachbegriffe."
 - `loesung`: **Array von Strings (3-5 Keywords)**. **KRITISCH:** Dies ist das EINZIGE Feld, gegen das die Engine die Schuelerantwort prueft. Die Engine prueft, ob ALLE Keywords (case-insensitive, Umlaut-tolerant) im Freitext des Schuelers vorkommen. MUSS die zentralen Fachbegriffe der erwarteten Antwort als einzelne Array-Eintraege enthalten. KEINE vollstaendige Musterantwort — die gehoert in `_meta.musterantwort` und Tipp 3. KEIN Space-separierter String — IMMER Array.
+
+**Freitext-Bewertungsdifferenzierung (v3.3):** Freitext-Aufgaben mit Beurteilungs-/Bewertungsoperatoren (AFB III: beurteile, bewerte, nimm Stellung) verwenden eine REDUZIERTE Bewertungslogik:
+- `loesung`: Nur 1-2 zentrale Fachbegriffe die in JEDER vertretbaren Antwort vorkommen muessten.
+- Die Engine zeigt bei Abgabe die Musterloesung als Vergleichstext an, nicht "richtig/falsch".
+Freitext-Aufgaben mit Erklaerungsoperatoren (AFB II: erklaere, beschreibe, vergleiche) verwenden die volle Keyword-Pruefung (3-5 Keywords).
+KEIN Freitext fuer reine Meinungsaeusserungen ohne objektivierbare Inhaltselemente.
 - `material_referenz`: Array, typischerweise mehrere mat-IDs (Freitext zieht aus der gesamten Mappe)
 - `tipps`: Array mit exakt 3 Objekten
 - `punkte`: Integer, Standardwert 10
@@ -253,3 +263,8 @@ A11-FT Freitext-Qualitaet: PASS — Problemorientierte Leitfrage (Dilemma: Fried
 1. **aufgabe JSON-Objekt** gemaess Rendering-Kontrakt
 2. **Q-Gate Log** pro geprueftem A-Kriterium
 3. Bei FAIL: Konkreter Mangel + Korrekturvorschlag
+
+## JSON-Encoding-Regeln (v3.3)
+
+**Umlaute:** Schreibe echte UTF-8-Umlaute (ä, ö, ü, ß). KEINE ASCII-Transliterationen (ae, oe, ue, ss).
+**Typographische Zeichen:** Gedankenstrich als `—` (NICHT `--` oder `-`). Deutsche Anfuehrungszeichen als `„..."` oder `»...«`. Apostroph als `'` (NICHT `'`). Gilt fuer ALLE SuS-sichtbaren Felder: `frage`, `optionen`, `loesung`, `tipps[]`.

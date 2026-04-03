@@ -48,7 +48,7 @@ Beide Vektoren muessen inhaltlich praezise auf die **konkreten produzierten Mate
 |---|---|---|
 | UE-1 | Rueckwaerts-Vektor | Benennt konkret, was SuS aus dem Vorgaenger-Material gelernt/gesehen/erfahren haben. Kein generisches "Du hast viel gelernt". |
 | UE-2 | Vorwaerts-Vektor | Macht die Relevanz des naechsten Materials plausibel. Weckt Neugier oder benennt eine offene Frage, die das naechste Material beantwortet. |
-| UE-3 | Sprachregister R7 | Schuelernahe Sprache, max. 2 Saetze, keine Fachbegriffe die noch nicht eingefuehrt sind. |
+| UE-3 | Sprachregister R7 | Schuelernahe Sprache, max. 2 Saetze, keine Fachbegriffe die noch nicht eingefuehrt sind. Keine didaktischen Metakommentare ("macht die Perspektiven erlebbar", "vertieft das Verstaendnis"). Stattdessen: direkte Ankuendigung ("Wie hat sich das angefuehlt? Zwei Menschen erzaehlen."). Klingt wie Moderation, nicht wie Lehrerhandreichung. |
 | UE-4 | Kein Spoiler | Ueberleitung nimmt NICHT die Kernerkenntnis des naechsten Materials vorweg. |
 | UE-5 | Sequenz-Passung | Ueberleitung passt zum tatsaechlichen Inhalt beider Materialien (nicht nur zum GERUEST-Plan). |
 
@@ -150,6 +150,12 @@ Ablage: `docs/agents/artefakte/produktion/[game-id]/mappe-[N]/ueberleitungen.jso
 **rahmen/sicherung.json (aktualisiert):** zusammenfassung und ueberleitung werden ergaenzt (waren in Phase 2.0 als Placeholder angelegt).
 
 **rahmen/hefteintrag.json (SCPL-Text-Patches):** NUR FORMULIERUNGS-OFFEN-Felder werden aktualisiert (situation.kontextsatz, complication[].schritt, problem.satz). STRUKTUR-FREEZE-Felder bleiben unangetastet. Aenderungs-Dokumentation im Q-GATE-LOG.md.
+
+## JSON-Encoding-Regeln (v3.3)
+
+**Umlaute:** Schreibe echte UTF-8-Umlaute (ä, ö, ü, ß). KEINE ASCII-Transliterationen (ae, oe, ue, ss).
+**Typographische Zeichen:** Gedankenstrich als `—` (NICHT `--` oder `-`). Deutsche Anfuehrungszeichen als `„..."` oder `»...«`. Apostroph als `'` (NICHT `'`).
+**Geltungsbereich:** Alle SuS-sichtbaren Textfelder: Ueberleitungstexte, zusammenfassung, ueberleitung (Mappe-zu-Mappe), SCPL-Formulierungspatches.
 
 ## Session-Split
 

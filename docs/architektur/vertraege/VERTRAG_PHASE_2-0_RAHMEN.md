@@ -66,6 +66,12 @@ rahmen/
 
 **Validierung:** Nach Produktion aller 4 Dateien: Schema-Validierung durchfuehren BEVOR Q-Gate.
 
+## JSON-Encoding-Regeln (v3.3)
+
+**Umlaute:** Schreibe echte UTF-8-Umlaute (ä, ö, ü, ß). KEINE ASCII-Transliterationen (ae, oe, ue, ss).
+**Typographische Zeichen:** Gedankenstrich als `—` (NICHT `--` oder `-`). Deutsche Anfuehrungszeichen als `„..."` oder `»...«`. Apostroph als `'` (NICHT `'`).
+**Geltungsbereich:** Alle SuS-sichtbaren Textfelder in allen 4 Output-Dateien (hefteintrag.json, einstieg.json, sicherung.json, meta.json).
+
 ## Bekannte Limitationen
 
 - quellenangaben[]: Engine hat keinen Renderer. Workaround: `<cite>` in Material-HTML (L6).

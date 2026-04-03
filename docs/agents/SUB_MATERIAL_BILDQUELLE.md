@@ -166,6 +166,10 @@ Bei CC-BY-NC: **Nicht verwenden** — Unterrichtsmaterial auf oeffentlicher Webs
 
 **Quellenangabe-Hygiene (Q-M2-08):** Die `quelle`-Felder duerfen KEINE internen Artefakt-Namen enthalten. Verboten: INHALTSBASIS, SKRIPT, TAFELBILD, MATERIAL_GERUEST, PROGRESSIONSPLAN, SUB_MATERIAL_*, AGENT_*. SuS sehen diese Texte — sie muessen fuer Lernende verstaendlich sein.
 
+### Quellenangaben-Trennregel (v3.3)
+
+**Quellenangaben-Trennregel (v3.3):** `inhalt` enthaelt den reinen Materialtext. Quellenangaben (Autor, Titel, Jahr, Fundstelle) gehoeren ausschliesslich in das `quellenangaben`-Array. Im `inhalt`-Feld duerfen Sprecher-/Rollennamen erscheinen (z.B. "Stefan Zweig:"), aber NICHT bibliographische Angaben (z.B. "aus: Die Welt von Gestern, 1942"). Negativbeispiel: `"inhalt": "... (Stefan Zweig, Die Welt von Gestern, 1942)"` — die Klammer-Angabe gehoert in `quellenangaben`, nicht in `inhalt`.
+
 ### 4. Engine-Typ-Mapping
 
 | MATERIAL_GERUEST-Typ | Engine-Typ (data.json) | Begruendung |
@@ -202,16 +206,17 @@ Die Engine rendert `bildquelle` als: `<img>` + `<figcaption>` (Bildunterschrift)
 }
 ```
 
-## JSON-Encoding-Regeln (v2.1)
+## JSON-Encoding-Regeln (v3.3)
 
 | Regel | Falsch | Richtig |
 |---|---|---|
 | Anfuehrungszeichen | `„"` (U+201E/201C) | `"` (ASCII 0x22) oder `&quot;` |
-| Gedankenstriche | `—` (U+2014) | `--` oder ` - ` |
+| Gedankenstriche | `--` oder ` - ` | `—` (U+2014) |
 | Steuerzeichen | Echte Zeilenumbrueche in Strings | `\n` |
-| Umlaute | erlaubt (UTF-8) | unveraendert lassen |
+| Umlaute | ASCII-Transliterationen (ae, oe, ue, ss) | echte UTF-8 (ä, ö, ü, ß) |
 
-**Umlaute (v3.2):** Schreibe echte UTF-8-Umlaute (ä, ö, ü, ß). KEINE ASCII-Transliterationen (ae, oe, ue, ss). Beispiel: "Bevölkerung", nicht "Bevoelkerung". Dies gilt fuer ALLE SuS-sichtbaren Felder: `bildunterschrift`, `quelle`, `lizenz`.
+**Umlaute:** Schreibe echte UTF-8-Umlaute (ä, ö, ü, ß). KEINE ASCII-Transliterationen (ae, oe, ue, ss). Beispiel: "Bevölkerung", nicht "Bevoelkerung". Dies gilt fuer ALLE SuS-sichtbaren Felder: `bildunterschrift`, `quelle`, `lizenz`.
+**Typographische Zeichen:** Gedankenstrich als `—` (NICHT `--` oder `-`). Deutsche Anfuehrungszeichen als `„..."` oder `»...«`. Apostroph als `'` (NICHT `'`). Gilt fuer ALLE SuS-sichtbaren Felder.
 
 **Pflichtschritt:** Nach Fertigstellung JSON validieren:
 ```bash

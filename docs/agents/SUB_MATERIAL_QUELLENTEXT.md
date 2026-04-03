@@ -142,9 +142,14 @@ Pflicht bei jedem Quellentext. Format:
 
 **Quellenangabe-Hygiene (Q-M2-08):** Die `quellenangabe` und `<cite>`-Texte duerfen KEINE internen Artefakt-Namen enthalten. Verboten: INHALTSBASIS, SKRIPT, TAFELBILD, MATERIAL_GERUEST, PROGRESSIONSPLAN, SUB_MATERIAL_*, AGENT_*. SuS sehen diese Texte — sie muessen fuer Lernende verstaendlich sein.
 
-## JSON-Encoding-Regeln (v3.2)
+### Quellenangaben-Trennregel (v3.3)
 
-**Umlaute (v3.2):** Schreibe echte UTF-8-Umlaute (ä, ö, ü, ß). KEINE ASCII-Transliterationen (ae, oe, ue, ss). Beispiel: "Bündnissysteme", nicht "Buendnissysteme".
+**Quellenangaben-Trennregel (v3.3):** `inhalt` enthaelt den reinen Materialtext. Quellenangaben (Autor, Titel, Jahr, Fundstelle) gehoeren ausschliesslich in das `quellenangaben`-Array. Im `inhalt`-Feld duerfen Sprecher-/Rollennamen erscheinen (z.B. "Stefan Zweig:"), aber NICHT bibliographische Angaben (z.B. "aus: Die Welt von Gestern, 1942"). Negativbeispiel: `"inhalt": "... (Stefan Zweig, Die Welt von Gestern, 1942)"` — die Klammer-Angabe gehoert in `quellenangaben`, nicht in `inhalt`.
+
+## JSON-Encoding-Regeln (v3.3)
+
+**Umlaute:** Schreibe echte UTF-8-Umlaute (ä, ö, ü, ß). KEINE ASCII-Transliterationen (ae, oe, ue, ss). Beispiel: "Bündnissysteme", nicht "Buendnissysteme".
+**Typographische Zeichen:** Gedankenstrich als `—` (NICHT `--` oder `-`). Deutsche Anfuehrungszeichen als `„..."` oder `»...«`. Apostroph als `'` (NICHT `'`). Gilt fuer ALLE SuS-sichtbaren Felder.
 
 Alle Texte im `inhalt`-Feld muessen JSON-kompatibel sein. **VERBOTEN** in JSON-Strings:
 - `„` (U+201E), `"` (U+201C) → durch `&bdquo;` / `&ldquo;` oder einfache `"` ersetzen

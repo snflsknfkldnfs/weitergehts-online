@@ -90,8 +90,10 @@ Lueckentext-Validierung ist case-insensitive String-Vergleich. Daher:
 | Stufe | Inhalt | Lueckentext-spezifische Strategie |
 |-------|--------|----------------------------------|
 | 1 (Hinweis) | Richtung | Verweis auf Materialabschnitt + Themenfeld der Luecke: "Die Luecken betreffen Begriffe aus dem Bereich Wirtschaftspolitik." |
-| 2 (Teilantwort) | Einschraenkung | 1-2 Luecken direkt verraten: "Die dritte Luecke ist 'Merkantilismus'." |
+| 2 (Teilantwort) | Antwortpool | Randomisierter Wortpool mit allen Lueckenwoertern (optional: 1-2 Distraktoren) |
 | 3 (Loesung) | Aufloesung | Alle Lueckenwoerter in Reihenfolge + Erklaerung des Zusammenhangs |
+
+**Tipp-2-Regel Lueckentext (v3.3):** Tipp 2 bei Lueckentexten ist IMMER ein Antwortpool, NICHT eine Paraphrase oder Erklaerung. Format: "Diese Begriffe gehoeren in die Luecken: [Begriff1], [Begriff2], [Begriff3], ..." Die Begriffe in randomisierter Reihenfolge auflisten. Optional: 1-2 Distraktoren (plausible aber falsche Begriffe) beimischen und als solche kennzeichnen (z.B. 5 richtige + 1 Distraktor, OHNE den Distraktor als falsch zu markieren).
 
 ### 6. Anti-Patterns
 
@@ -147,6 +149,10 @@ Referenz: `docs/checklisten/GUETEKRITERIEN_AUFGABEN.md`
 **Feld-Constraints:**
 - `typ`: Immer `"lueckentext"`
 - `frage`: String, Arbeitsanweisung (was soll ergaenzt werden?)
+
+**Fragestamm-Kurzregel (v3.3):** Die Fragestellung ist ein Handlungsimpuls, KEIN vollstaendiger didaktischer Satz. Max 1 Satz, max 12 Woerter. Den Operator NICHT woertlich benennen. Kontext (Zeit, Ort, Material-Bezug) NUR wenn nicht aus dem Setting ableitbar. Der Quellenbezug gehoert in Tipp 1, nicht in die Fragestellung.
+Negativbeispiel: "Ergaenze die fehlenden Fachbegriffe im folgenden Lueckentext, um den Zusammenhang zwischen Kriegsbegeisterung und gesellschaftlichem Druck im August 1914 darzustellen."
+Positivbeispiel: "Ergaenze die fehlenden Fachbegriffe."
 - `text_mit_luecken`: String, `___` als Platzhalter fuer jede Luecke. Reihenfolge der `___` entspricht Reihenfolge in `loesung`
 - `loesung`: Array von Strings, ein Eintrag pro Luecke in Reihenfolge ihres Auftretens im Text. Max. 2 Woerter pro Eintrag
 - `material_referenz`: Array mit mindestens 1 mat-ID
@@ -200,3 +206,8 @@ A7 Operator-Praezision: PASS — "Ergaenze" = operationalisiert
 1. **aufgabe JSON-Objekt** gemaess Rendering-Kontrakt
 2. **Q-Gate Log** pro geprueftem A-Kriterium
 3. Bei FAIL: Konkreter Mangel + Korrekturvorschlag
+
+## JSON-Encoding-Regeln (v3.3)
+
+**Umlaute:** Schreibe echte UTF-8-Umlaute (ä, ö, ü, ß). KEINE ASCII-Transliterationen (ae, oe, ue, ss).
+**Typographische Zeichen:** Gedankenstrich als `—` (NICHT `--` oder `-`). Deutsche Anfuehrungszeichen als `„..."` oder `»...«`. Apostroph als `'` (NICHT `'`). Gilt fuer ALLE SuS-sichtbaren Felder: `frage`, `optionen`, `loesung`, `tipps[]`.

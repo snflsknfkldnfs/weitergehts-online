@@ -122,9 +122,10 @@ Eigene Zusammenstellung auf Basis der Sachanalyse. Quellen: [Wikipedia-Artikel 1
 
 **Quellenangabe-Hygiene (Q-M2-08):** Die Quellenangabe darf KEINE internen Artefakt-Namen enthalten. Verboten: INHALTSBASIS, SKRIPT, TAFELBILD, MATERIAL_GERUEST, PROGRESSIONSPLAN, SUB_MATERIAL_*, AGENT_*. SuS sehen diese Texte — sie muessen fuer Lernende verstaendlich sein.
 
-## JSON-Encoding-Regeln (v3.2)
+## JSON-Encoding-Regeln (v3.3)
 
-**Umlaute (v3.2):** Schreibe echte UTF-8-Umlaute (ä, ö, ü, ß). KEINE ASCII-Transliterationen (ae, oe, ue, ss). Beispiel: "Bündnissysteme", nicht "Buendnissysteme".
+**Umlaute:** Schreibe echte UTF-8-Umlaute (ä, ö, ü, ß). KEINE ASCII-Transliterationen (ae, oe, ue, ss). Beispiel: "Bündnissysteme", nicht "Buendnissysteme".
+**Typographische Zeichen:** Gedankenstrich als `—` (NICHT `--` oder `-`). Deutsche Anfuehrungszeichen als `„..."` oder `»...«`. Apostroph als `'` (NICHT `'`). Gilt fuer ALLE SuS-sichtbaren Felder.
 
 Alle Texte in `text`-Feldern muessen JSON-kompatibel sein. **VERBOTEN:** `„"` (deutsche Anfuehrungszeichen), Zeilenumbrueche, Tabs. Nur ASCII-Anfuehrungszeichen oder HTML-Entities.
 

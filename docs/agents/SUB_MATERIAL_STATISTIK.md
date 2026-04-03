@@ -270,9 +270,10 @@ Statistik-Materialien recherchieren ihre Daten SELBST (anders als BQ/KA, die aus
 }
 ```
 
-### JSON-Encoding-Regeln (v3.2)
+### JSON-Encoding-Regeln (v3.3)
 
-**Umlaute (v3.2):** Schreibe echte UTF-8-Umlaute (ä, ö, ü, ß). KEINE ASCII-Transliterationen (ae, oe, ue, ss). Beispiel: "Militärausgaben", nicht "Militaerausgaben".
+**Umlaute:** Schreibe echte UTF-8-Umlaute (ä, ö, ü, ß). KEINE ASCII-Transliterationen (ae, oe, ue, ss). Beispiel: "Militärausgaben", nicht "Militaerausgaben".
+**Typographische Zeichen:** Gedankenstrich als `—` (NICHT `--` oder `-`). Deutsche Anfuehrungszeichen als `„..."` oder `»...«`. Apostroph als `'` (NICHT `'`). Gilt fuer ALLE SuS-sichtbaren Felder.
 
 Alle Texte muessen JSON-kompatibel sein. **VERBOTEN:**
 - Typographische Anfuehrungszeichen → durch ASCII `"` ersetzen

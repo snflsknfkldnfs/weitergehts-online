@@ -155,6 +155,10 @@ SUB_AUFGABE_MC prueft folgende A-Kriterien auf Subagent-Ebene:
 **Feld-Constraints:**
 - `typ`: Immer `"multiple-choice"`
 - `frage`: String, UTF-8, operationalisierter Fragestamm
+
+**Fragestamm-Kurzregel (v3.3):** Die Fragestellung ist ein Handlungsimpuls, KEIN vollstaendiger didaktischer Satz. Max 1 Satz, max 12 Woerter. Den Operator NICHT woertlich benennen. Kontext (Zeit, Ort, Material-Bezug) NUR wenn nicht aus dem Setting ableitbar. Der Quellenbezug gehoert in Tipp 1, nicht in die Fragestellung.
+Negativbeispiel: "Ergaenze die fehlenden Fachbegriffe im folgenden Lueckentext, um den Zusammenhang zwischen Kriegsbegeisterung und gesellschaftlichem Druck im August 1914 darzustellen."
+Positivbeispiel: "Ergaenze die fehlenden Fachbegriffe."
 - `optionen`: Array mit exakt 4 Strings. Reihenfolge = Anzeigereihenfolge
 - `loesung`: String, muss exakt einem Element aus `optionen` entsprechen
 - `material_referenz`: Array mit mindestens 1 mat-ID
@@ -240,3 +244,8 @@ A7 Operator-Praezision: PASS — Impliziter Operator "identifiziere" via "Welche
 1. **aufgabe JSON-Objekt** gemaess Rendering-Kontrakt (primaerer Pipeline-Output)
 2. **Q-Gate Log** pro geprueftem A-Kriterium (PASS/FAIL + Kurzbegruendung)
 3. Bei FAIL: Konkreter Mangel + Korrekturvorschlag (Ruecklauf an Orchestrator)
+
+## JSON-Encoding-Regeln (v3.3)
+
+**Umlaute:** Schreibe echte UTF-8-Umlaute (ä, ö, ü, ß). KEINE ASCII-Transliterationen (ae, oe, ue, ss).
+**Typographische Zeichen:** Gedankenstrich als `—` (NICHT `--` oder `-`). Deutsche Anfuehrungszeichen als `„..."` oder `»...«`. Apostroph als `'` (NICHT `'`). Gilt fuer ALLE SuS-sichtbaren Felder: `frage`, `optionen`, `loesung`, `tipps[]`.
