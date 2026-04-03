@@ -469,29 +469,107 @@ Alle 4 Plattform-Unbekannten sind geklaert. Die Plugin-Architektur ist in Cowork
 
 ---
 
-## Priorisierung (Empfehlung)
+## P13: WCAG-Audit auf Escape-Game-HTML (Accessibility Compliance)
 
-| # | Pattern | Relevanz | Aufwand | Empfehlung |
-|---|---------|----------|---------|------------|
-| P11 | Architektur-Prinzipien | Hoch | Null | Designrichtlinie — sofort uebernehmen |
-| P1 | Dispatcher (Conductor) | Hoch | Mittel | Kernstueck v5 — als erstes evaluieren |
-| P2 | State-File | Hoch | Niedrig | Quick Win — YAML-Frontmatter in STATUS.md |
-| P6 | Progressive Disclosure | Hoch | Mittel | Token-Einsparung — mit P1 zusammen |
-| P3 | Checkpoint | Mittel | Niedrig | Formalisierung bestehender Praxis |
-| P4 | Subagent-Dispatch | Hoch | Hoch | Empirisch testen bevor planen |
-| P12 | Tiered Models | Mittel | Niedrig | Kosten/Qualitaet — Machbarkeit klaeren |
-| P5 | PluginEval | Mittel | Mittel | Erst nach Plugin-Umstellung relevant |
-| P9 | ADR | Mittel | Niedrig | Strukturierung bestehender Entscheidungen |
-| P7 | Team-Audit | **Hoch** | **Niedrig** | **VERIFIZIERT — sofort einsetzbar fuer Q-Gate-Audits** |
-| P10 | Changelog-Auto | Niedrig | Mittel | Unser CHANGELOG ist zu spezifisch |
-| P8 | Git-Revert | Niedrig | Mittel | Nice-to-have, keine Prioritaet |
+**Was:** Automatisiertes WCAG 2.2 AA Accessibility-Audit auf fertige mappe-N.html vor Deployment. Prueft Farbkontrast, ARIA-Labels, Keyboard-Navigation, Screen-Reader-Kompatibilitaet, Touch-Target-Groessen.
+
+**Verfuegbarer Skill:** `accessibility-compliance:wcag-audit-patterns` (installiert). Zusaetzlich `design:accessibility-review` fuer Design-Level-Audit. Agent-Typ `accessibility-compliance:ui-visual-validator` verfuegbar.
+
+**Relevanz fuer uns:** Hoch. Schulkontext = oeffentliche Einrichtung. SuS mit Einschraenkungen (Sehschwaeche, Motorik, Screenreader) muessen die Website nutzen koennen. Bisher null Beruecksichtigung in der Pipeline. Phase 4 (Browser-Validierung) prueft aktuell nur Funktionalitaet, nicht Barrierefreiheit.
+
+**Integrationspunkt:** Phase 4 (Browser-Validierung) — nach Assembly, vor Deployment. 1 Skill-Call auf fertige HTML.
+
+**Aufwand:** Niedrig (1 Audit-Durchlauf pro Mappe). Risiko: null (additiv).
+
+**Evaluationsfrage:** Keine — direkt einsetzbar ab Mappe 3 Phase 4.
 
 ---
 
-## Naechster Schritt
+## P14: E2E-Testing fuer Escape-Engine (Developer Essentials)
 
-3 moegliche Pfade:
+**Was:** Automatisierte Browser-Tests mit Playwright auf escape-engine.js. Prueft alle 5 Aufgabentypen (MC-Shuffle, Lueckentext, Freitext, Reihenfolge, Zuordnung), Material-Navigation, Fortschrittsspeicherung, Loesungswort-Mechanik.
 
-**Pfad A — Plugin-First:** Kritische Unbekannte 1-4 empirisch klaeren. Wenn positiv: Plugin bauen, dann Mappe 3 als erster End-to-End-Test.
-**Pfad B — Hybrid:** Designprinzipien uebernehmen (Progressive Disclosure, State-Machine, Checkpoint-Halts), aber ohne Plugin-Packaging. Vertraege mit Frontmatter versehen, Dispatcher als Skill, state.json manuell. Mappe 3 mit Hybrid produzieren.
-**Pfad C — Produce-First:** Mappe 3 mit bestehendem System produzieren. Erkenntnisse als Input fuer Plugin-Architektur nutzen. Plugin danach bauen.
+**Verfuegbarer Skill:** `developer-essentials:e2e-testing-patterns` (installiert). Agent-Typ `full-stack-orchestration:test-automator` verfuegbar.
+
+**Relevanz fuer uns:** Mittel-hoch. Phase 4 ist aktuell manueller Browser-Test — fehleranfaellig und nicht reproduzierbar. Bei 4+ Mappen amortisiert sich der Setup-Aufwand. Deckt Regressionen auf, die manuell unsichtbar sind (z.B. MC-Shuffle bricht bei bestimmten Distractor-Anzahlen, Lueckentext akzeptiert Umlaut-Varianten nicht).
+
+**Integrationspunkt:** Zwischen Mappe 3 Abschluss und Mappe 4 Start. Test-Suite einmal aufsetzen, dann pro Mappe wiederverwenden.
+
+**Aufwand:** Mittel (Playwright-Setup + Test-Suite fuer 5 Aufgabentypen, ~4-6h). Risiko: niedrig.
+
+**Evaluationsfrage:** Lohnt sich der Setup fuer 4 verbleibende Mappen, oder erst bei > 6 Mappen (zweites Escape-Game)?
+
+---
+
+## P15: Prompt-Optimierung fuer SUB_MATERIAL-Prompts (LLM Application Dev)
+
+**Was:** Systematische Optimierung der 7 SUB_MATERIAL-Prompts und 5 SUB_AUFGABE-Prompts mit LLM-Prompt-Engineering-Patterns (Chain-of-Thought, Few-Shot, Constitutional AI).
+
+**Verfuegbarer Skill:** `llm-application-dev:prompt-optimize` (installiert). Zusaetzlich `llm-application-dev:prompt-engineering-patterns` als Wissens-Skill. Agent-Typ `llm-application-dev:prompt-engineer` verfuegbar.
+
+**Relevanz fuer uns:** Mittel-hoch. Die Prozesstest-Ergebnisse zeigen: 80% First-Pass-Rate ist gut, aber nicht perfekt. P3 (BQ-3 WARN) zeigt, dass isolierte Subagenten bestimmte Qualitaetsdimensionen unterschlagen, die der Prompt nicht stark genug betont. Systematisches Prompt-Engineering koennte die First-Pass-Rate erhoehen und die Dispatcher-Korrekturen reduzieren.
+
+**Konkrete Targets:**
+- SUB_MATERIAL_BILDQUELLE.md: P3 (BQ-3 Bild ≠ Wirklichkeit) staerker verankern
+- Alle 7 SUB_MATERIAL_*.md: Umlaut-Pflicht bereits in P2 gefixt, aber generelle Robustheit pruefen
+- SUB_AUFGABE_*.md: Noch nicht pipeline-getestet — praeventive Optimierung vor Phase 2.2b
+
+**Integrationspunkt:** Zwischen Mappe 3 Abschluss und Mappe 4 Start. Alternativ: SUB_AUFGABE-Prompts VOR Phase 2.2b optimieren (da Aufgaben-Dispatch noch nicht getestet).
+
+**Aufwand:** Mittel (7+5 Prompt-Durchlaeufe, je ~20 min Review). Risiko: niedrig (Ergebnisse werden reviewed, nicht blind uebernommen).
+
+**Evaluationsfrage:** Vor Phase 2.2b (Aufgaben) oder erst nach Mappe 3 komplett?
+
+---
+
+## Priorisierung (Empfehlung, aktualisiert 2026-04-03)
+
+| # | Pattern | Relevanz | Aufwand | Empfehlung | Status |
+|---|---------|----------|---------|------------|--------|
+| P11 | Architektur-Prinzipien | Hoch | Null | Designrichtlinie — sofort uebernehmen | ANGENOMMEN |
+| P7 | Team-Audit | **Hoch** | **Niedrig** | **VERIFIZIERT — einsetzbar fuer Q-Gate-Audits** | **EINSATZ AB PHASE 2.2b** |
+| P13 | WCAG-Audit | **Hoch** | **Niedrig** | **Barrierefreiheit Schulkontext — direkt einsetzbar** | **EINSATZ AB PHASE 4** |
+| P15 | Prompt-Optimierung | **Mittel-hoch** | **Mittel** | **SUB_MATERIAL/AUFGABE-Prompts systematisch verbessern** | **EINSATZ VOR MAPPE 4** |
+| P1 | Dispatcher (Conductor) | Hoch | Mittel | Kernstueck v5 — nach Mappe 3 evaluieren | POOL |
+| P2 | State-File | Hoch | Niedrig | Quick Win — nach Mappe 3 | POOL |
+| P6 | Progressive Disclosure | Hoch | Mittel | Token-Einsparung — mit P1 zusammen | POOL |
+| P4 | Subagent-Dispatch | Hoch | Hoch | Empirisch getestet, funktioniert — nach Mappe 3 | POOL |
+| P14 | E2E-Testing | Mittel-hoch | Mittel | Playwright fuer Engine — vor Mappe 4 evaluieren | POOL |
+| P3 | Checkpoint | Mittel | Niedrig | Formalisierung bestehender Praxis | POOL |
+| P12 | Tiered Models | Mittel | Niedrig | Kosten/Qualitaet — verifiziert, nach Mappe 3 | POOL |
+| P5 | PluginEval | Mittel | Mittel | Erst nach Plugin-Umstellung relevant | POOL |
+| P9 | ADR | Mittel | Niedrig | Strukturierung bestehender Entscheidungen | POOL |
+| P10 | Changelog-Auto | Niedrig | Mittel | Unser CHANGELOG ist zu spezifisch | POOL |
+| P8 | Git-Revert | Niedrig | Mittel | Nice-to-have, keine Prioritaet | POOL |
+
+---
+
+## Tool-Integrations-Roadmap (ENTSCHIEDEN 2026-04-03)
+
+**Prinzip:** Chirurgische Integration — additiv, nicht substitutiv. Der funktionierende manuelle Prozess bleibt Backbone. Tools werden an 3 konkreten Stellen eingefuegt. Wenn ein Tool keinen Mehrwert liefert, wird es fuer Mappe 4 gestrichen.
+
+### Phase 2.2b (Aufgaben-Produktion, Mappe 3)
+
+**Tool:** `agent-teams:team-review` (P7)
+**Einsatz:** Nach jedem Aufgaben-Q-Gate: 3 parallele Reviewer auf die produzierte Aufgabe.
+**Dimensionen:** (1) Fachdidaktik (A1-A15), (2) Engine-Kompatibilitaet (JSON-Schema, Aufgabentyp-Logik), (3) Sprachqualitaet/Adressatengemaessheit.
+**Erwarteter Nutzen:** Breitere Q-Gate-Abdeckung, Cross-Validierung durch Befund-Ueberlappung. Erster Pipeline-Test fuer Aufgaben-Dispatches.
+**Abbruchkriterium:** Falls Reviewer-Befunde redundant zum manuellen Q-Gate sind und keine neuen Findings liefern → fuer Mappe 4 streichen.
+
+### Phase 4 (Browser-Validierung, Mappe 3)
+
+**Tool:** `accessibility-compliance:wcag-audit-patterns` oder `design:accessibility-review` (P13)
+**Einsatz:** Nach Assembly, vor Deployment. 1 Audit auf mappe-3.html.
+**Erwarteter Nutzen:** Barrierefreiheits-Defizite aufdecken (Kontrast, ARIA, Keyboard, Touch-Targets). Baseline fuer alle folgenden Mappen.
+**Abbruchkriterium:** Keiner — Barrierefreiheit ist nicht optional im Schulkontext.
+
+### Zwischen Mappe 3 und Mappe 4
+
+**Tool:** `llm-application-dev:prompt-optimize` (P15)
+**Einsatz:** Systematische Optimierung aller 12 Subagenten-Prompts (7 Material + 5 Aufgabe).
+**Erwarteter Nutzen:** Hoehere First-Pass-Rate, P3 (BQ-3) adressiert, praeventive Robustheit fuer Aufgaben-Prompts.
+**Abbruchkriterium:** Falls Mappe-3-Aufgaben-Produktion 100% First-Pass zeigt → Prioritaet reduzieren, nur P3-Fix durchfuehren.
+
+### Naechster Schritt (fruehestens implementiert)
+
+**Pfad C+ fortgesetzt:** Mappe 3 Restproduktion mit chirurgischer Tool-Integration (P7 bei 2.2b, P13 bei Phase 4). Pfad A/B (Plugin-Architektur) bleibt fuer nach Mappe 3.

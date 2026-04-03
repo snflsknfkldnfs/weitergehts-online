@@ -243,13 +243,17 @@ Mappe 3 als Prozesstest. Post-Produktion entscheidet ueber Mappe-4-Strategie.
 **Zwischenstand:** Phase 2.0 DONE, Phase 2.1 DONE (5/5 Materialien, Pipeline-Fazit erstellt). Naechste: Phase 2.2a (Progressionsplan).
 
 **Phasen:**
-1. Phase 2.0: Rahmen (hefteintrag.json, einstieg.json) — 1 Session
-2. Phase 2.1: 5 Materialien (mat-3-1 bis mat-3-5) — 1-2 Sessions
+1. Phase 2.0: Rahmen (hefteintrag.json, einstieg.json) — 1 Session — **DONE**
+2. Phase 2.1: 5 Materialien (mat-3-1 bis mat-3-5) — 1-2 Sessions — **DONE**
 3. Phase 2.2a: Progressionsplan — in Session mit letztem Material
-4. Phase 2.2b: 5 Aufgaben — 1 Session
+4. Phase 2.2b: 5 Aufgaben — 1 Session — **+ agent-teams Multi-Review (P7)**
 5. Phase 2.2c: Cross-Validierung — in Aufgaben-Session
 6. Phase 3: Assembly (Claude Code Uebergabe) — 1 Session
-7. Phase 4: Browser-Validierung — in Assembly-Session
+7. Phase 4: Browser-Validierung — in Assembly-Session — **+ WCAG-Audit (P13)**
+
+**Tool-Integration (ENTSCHIEDEN 2026-04-03, Details: POOL_PM_INFRASTRUKTUR_ENHANCEMENTS.md):**
+- Phase 2.2b: `agent-teams:team-review` — 3 parallele Reviewer (Fachdidaktik A1-A15, Engine-Kompatibilitaet, Sprachqualitaet) auf jede Aufgabe nach Q-Gate. Additiv, nicht substitutiv.
+- Phase 4: `accessibility-compliance:wcag-audit-patterns` — WCAG 2.2 AA Audit auf mappe-3.html vor Deployment. Schulkontext = Barrierefreiheit nicht optional.
 
 **Prozesstest-Metriken (erfassen waehrend Produktion):**
 - Dispatches pro Material: Soll 1, max 2 (Nachbesserung)
@@ -281,6 +285,7 @@ Mappe 3 als Prozesstest. Post-Produktion entscheidet ueber Mappe-4-Strategie.
    - Falls Nacharbeit 3-6h ABER andere Fehlertypen als Mappe 2 → C+ mit gezielten Nachfixes
    - Falls Nacharbeit > 6h ODER gleiche Fehlertypen wie Mappe 2 → Eskalation zu Option A
 3. GRUNDSATZENTSCHEIDUNG aktualisieren mit empirischem Ergebnis.
+4. **Prompt-Optimierung (P15):** `llm-application-dev:prompt-optimize` auf alle 12 Subagenten-Prompts (7 Material + 5 Aufgabe). Adressiert P3 (BQ-3) und praeventive Robustheit. Details: POOL_PM_INFRASTRUKTUR_ENHANCEMENTS.md.
 
 ---
 

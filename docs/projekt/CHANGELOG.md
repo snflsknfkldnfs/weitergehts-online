@@ -6,6 +6,17 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ## 2026-04-03
 
+### Tool-Integrations-Roadmap (entschieden)
+- **Phase:** C+ Phase IV — Produktion + Auswertung (Infrastruktur-Entscheidung)
+- **Zweck:** Installierte Plugins/Skills chirurgisch in den Produktionsworkflow integrieren. 115 Skills aus wshobson/agents gegen Projektbedarf evaluiert; 3 neue Pool-Eintraege, 3 konkrete Integrationspunkte.
+- **Neue Pool-Eintraege:** P13 (WCAG-Audit, accessibility-compliance), P14 (E2E-Testing, Playwright), P15 (Prompt-Optimierung, llm-application-dev:prompt-optimize).
+- **Integrationspunkte:**
+  - Phase 2.2b: agent-teams:team-review (3 parallele Reviewer auf jede Aufgabe nach Q-Gate)
+  - Phase 4: accessibility-compliance:wcag-audit-patterns (WCAG 2.2 AA auf mappe-3.html)
+  - Nach Mappe 3: llm-application-dev:prompt-optimize (12 Subagenten-Prompts systematisch optimieren)
+- **Prinzip:** Additiv, nicht substitutiv. Manueller Prozess bleibt Backbone.
+- **Geaenderte Dateien:** POOL_PM_INFRASTRUKTUR_ENHANCEMENTS.md, AUSFUEHRUNGSPLAN_C_PLUS.md, STATUS.md, CHANGELOG.md
+
 ### C+ Schritt 8 Pipeline-Fazit konsolidiert (abgeschlossen)
 - **Phase:** C+ Phase IV — Produktion + Auswertung (Schritt 8/9 Teilergebnis)
 - **Zweck:** Konsolidierung aller Pipeline-Validierungsdaten aus Phase 2.1 in formales Prozesstest-Ergebnis.

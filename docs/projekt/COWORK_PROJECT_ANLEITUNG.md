@@ -23,8 +23,12 @@ BEI JEDER SESSION — PFLICHT-LEKTUERE:
 3. docs/architektur/UPGRADE_PLAN_v4_PRODUKTIONSARCHITEKTUR.md — Runden-Status (Sektion 4)
 4. docs/projekt/GRUNDSATZENTSCHEIDUNG_REBUILD_VS_ITERATE.md — Aktuelle Grundsatzentscheidung (Option, Qualifizierungsfragen, Action-Plan)
 
+C+ AUSFUEHRUNGSPLAN (bei laufender Produktion lesen):
+- docs/projekt/AUSFUEHRUNGSPLAN_C_PLUS.md — 9 Schritte, 4 Phasen, Tool-Integrationspunkte, Prozesstest-Metriken
+- docs/projekt/PROZESSTEST_MAPPE3_ERGEBNIS.md — Pipeline-Fazit Phase 2.1 (Baseline fuer Mappe 4)
+
 PM-INFRASTRUKTUR-DOKUMENTATION (bei Bedarf lesen):
-- docs/projekt/POOL_PM_INFRASTRUKTUR_ENHANCEMENTS.md — Evaluierungspool: 12 Patterns, 7 installierte Plugins, Machbarkeitstabelle, Verifikationstests
+- docs/projekt/POOL_PM_INFRASTRUKTUR_ENHANCEMENTS.md — Evaluierungspool: 15 Patterns, 7 installierte Plugins, Tool-Integrations-Roadmap, Verifikationstests
 - docs/architektur/UPGRADE_PLAN_v5_PLUGIN_ARCHITEKTUR.md — Langzeitvision Plugin-Architektur
 
 ARCHITEKTUR-DOKUMENTATION (bei Bedarf lesen):
@@ -40,8 +44,10 @@ QUALITAETSDOKUMENTE (bei Audit/Review):
 - docs/checklisten/GUETEKRITERIEN_SEQUENZIERUNG.md (S1-S15)
 - docs/checklisten/QUALITAETSKRITERIEN_MATERIALPRODUKTION.md (M1-M12 + typ-spezifisch)
 
-VERFUEGBARE PLUGIN-INFRASTRUKTUR (verifiziert 2026-04-02):
-- agent-teams: Parallele Multi-Dimensionen-Audits (3+ Reviewer gleichzeitig). Fuer Q-Gate-Pruefungen.
+VERFUEGBARE PLUGIN-INFRASTRUKTUR (verifiziert 2026-04-02, Roadmap 2026-04-03):
+- agent-teams: Parallele Multi-Dimensionen-Audits (3+ Reviewer gleichzeitig). **EINSATZ AB Phase 2.2b** (Aufgaben-Q-Gate).
+- accessibility-compliance: WCAG 2.2 AA Audit auf fertige HTML. **EINSATZ AB Phase 4** (Browser-Validierung).
+- llm-application-dev: Prompt-Optimierung fuer Subagenten-Prompts. **EINSATZ NACH MAPPE 3** (vor Mappe 4).
 - comprehensive-review: Tiefe Architektur-Reviews auf Einzelartefakte (Vertraege, ORCHESTRATOR).
 - plugin-eval: Skill-Qualitaetsmessung (Triggering, Scope, Token-Effizienz, Anti-Patterns).
 - conductor: Referenz-Patterns (Dispatcher, Track-Lifecycle, state.json). Nicht als Vollstruktur adoptiert.
@@ -49,7 +55,7 @@ VERFUEGBARE PLUGIN-INFRASTRUKTUR (verifiziert 2026-04-02):
 - agent-orchestration: improve-agent, multi-agent-optimize. Nicht getestet.
 - full-stack-orchestration: Referenz-Implementierung fuer Orchestrierungs-Pattern.
 Plattform-Faehigkeiten: Subagent-Dateisystem-Zugriff VERIFIZIERT, Model-Tiering (Opus/Sonnet/Haiku) VERIFIZIERT.
-Details: docs/projekt/POOL_PM_INFRASTRUKTUR_ENHANCEMENTS.md
+Tool-Integrations-Roadmap: docs/projekt/POOL_PM_INFRASTRUKTUR_ENHANCEMENTS.md (Sektion "Tool-Integrations-Roadmap")
 
 STRATEGISCHER KONTEXT:
 - Mappe 3+4 Produktion dient primaer als PROZESSTEST fuer spaetere Produktisierung, nicht nur als Content-Produktion.

@@ -1,12 +1,16 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-03 (Session 5, Pipeline-Fazit konsolidiert)
+**Letzte Aktualisierung:** 2026-04-03 (Session 5, Pipeline-Fazit + Tool-Integrations-Roadmap)
 **Aktuelle Phase:** **C+ Phase IV (Produktion + Auswertung) — Schritt 8 Phase 2.1 DONE. Pipeline-Fazit erstellt (PROZESSTEST_MAPPE3_ERGEBNIS.md). Entscheidung: C+ FORTSETZEN.**
 **Letzter Arbeitsschritt:** PROZESSTEST_MAPPE3_ERGEBNIS.md erstellt. Metriken: 5/5 GESAMT-PASS, 4/5 First-Pass, ~17 min Nacharbeit (vs. ~6h Mappe 2 = 95% Reduktion). 0 systemische Fehler. Decision-Tree 9/9 Steps exercised. Q-Gate konsistent und deterministisch.
-**Naechster Schritt:** Mappe 3 Phase 2.2a (Progressionsplan), dann Phase 2.2b (5 Aufgaben), Phase 2.2c (Cross-Validierung), Phase 3 (Assembly), Phase 4 (Browser-Validierung).
+**Naechster Schritt:** Mappe 3 Phase 2.2a (Progressionsplan), dann Phase 2.2b (5 Aufgaben + agent-teams Multi-Review P7), Phase 2.2c (Cross-Validierung), Phase 3 (Assembly), Phase 4 (Browser-Validierung + WCAG-Audit P13). Nach Mappe 3: Prompt-Optimierung P15 vor Mappe 4.
 **Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. Engine-Fallback (Ueberleitung ID-Pattern), ARTEFAKT_INVENTAR Mappe 2+3 nachpflegen. BQ-3 (Bild ≠ Wirklichkeit) Prompt-Verstaerkung (P3) noch offen.
 
 **Abgeschlossen seit letztem Update:**
+- Tool-Integrations-Roadmap (ENTSCHIEDEN):
+  - Pool um P13 (WCAG-Audit), P14 (E2E-Testing), P15 (Prompt-Optimierung) erweitert.
+  - 3 konkrete Integrationspunkte definiert: P7 bei Phase 2.2b, P13 bei Phase 4, P15 nach Mappe 3.
+  - AUSFUEHRUNGSPLAN Schritt 8 + 9 um Tool-Integrationspunkte ergaenzt.
 - C+ Schritt 8 Pipeline-Fazit (PROZESSTEST_MAPPE3_ERGEBNIS.md):
   - 8 Sektionen: Metriken, Fehlertypen-Vergleich, Q-Gate-Konsistenz, Didaktische Qualitaet, Findings, Nacharbeit, offene Punkte, Fazit.
   - Entscheidungsmatrix: Nacharbeit ~17 min (< 3h), 0 systemische Fehler → C+ FORTSETZEN.
