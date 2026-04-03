@@ -6,6 +6,14 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ## 2026-04-03
 
+### DISPATCH_SKRIPT Mappe 3 Phase 2 erstellt
+- **Phase:** C+ Phase IV — Produktion + Auswertung (Schritt 8 Vorbereitung)
+- **Zweck:** Steuerungsdokument fuer die verbleibende Mappe-3-Produktion (Phase 2.1c bis 2.2c). Ersetzt ad-hoc-Orchestrierung durch strukturierten Dispatch-Plan mit Fortschritts-Tracking.
+- **Inhalt:** 8 Dispatches (D0-D7): D0 Material-Cross + Ueberleitungen + HE-Revision, D1 Progressionsplan, D2-D6 je 1 Aufgabe (isolierter Subagent + agent-teams Multi-Review P7), D7 Cross-Konsistenz.
+- **Features:** Fortschritts-Tracker, 5 Session-Split-Punkte mit Uebergabe-Prompt-Template, Metriken-Gesamttabelle (Phase 2.1 Baseline), ASCII-Dependency-Graph.
+- **Ablage:** docs/agents/artefakte/produktion/gpg-erster-weltkrieg-ursachen/mappe-3/DISPATCH_SKRIPT_MAPPE3_PHASE2.md
+- **Geaenderte Dateien:** DISPATCH_SKRIPT_MAPPE3_PHASE2.md (neu), STATUS.md, CHANGELOG.md
+
 ### Tool-Integrations-Roadmap (entschieden)
 - **Phase:** C+ Phase IV — Produktion + Auswertung (Infrastruktur-Entscheidung)
 - **Zweck:** Installierte Plugins/Skills chirurgisch in den Produktionsworkflow integrieren. 115 Skills aus wshobson/agents gegen Projektbedarf evaluiert; 3 neue Pool-Eintraege, 3 konkrete Integrationspunkte.

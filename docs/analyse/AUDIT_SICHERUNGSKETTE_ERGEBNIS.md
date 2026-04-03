@@ -368,12 +368,12 @@ Empfehlung: Diese Architektur implementieren. Sie ist die einzige evaluierte Opt
 
 ### Prioritaet 1 — Sofort (vor Mappe 3)
 
-| # | Massnahme | Loest | Aufwand | Betroffene Dateien |
-|---|---|---|---|---|
-| M1 | **Differenzierten FREEZE einfuehren:** STRUKTUR-FREEZE (Zonen, KE, Fachbegriffe, Muster, Frage) vs. FORMULIERUNGS-OFFEN (Saetze). Terminologie in allen Dokumenten aktualisieren. | SP-4, Voraussetzung fuer M2 | Gering | AGENT_TAFELBILD.md, alle 6 Vertraege, ORCHESTRATOR.md |
-| M2 | **VERTRAG_PHASE_2-1c: Achse 6 "Hefteintrag-Revision" einfuehren.** Regelwerk: erlaubte vs. verbotene Aenderungen (PF-8). Output: revidierte SCPL-Texte + zusammenfassung + ueberleitung. | SP-3, SP-6, Q-M2-05 | Mittel | VERTRAG_PHASE_2-1c_CROSS.md |
-| M3 | **VERTRAG_PHASE_2-0: zusammenfassung als Placeholder.** Phase 2.0 produziert zusammenfassung NICHT mehr (oder nur als Entwurf mit "[REVISION IN 2.1c]"-Markierung). Finale Produktion in 2.1c. | SP-3 (Teilaspekt) | Gering | VERTRAG_PHASE_2-0_RAHMEN.md |
-| M4 | **VERTRAG_PHASE_2-1: SCPL-Schritt als expliziten Input.** Read-Schritt 2 erweitern: neben knoten[] auch den zugehoerigen scpl{}-Schritt lesen. | PF-12, Material-Hefteintrag-Kohaerenz | Gering | VERTRAG_PHASE_2-1_MATERIAL.md |
+| #   | Massnahme                                                                                                                                                                                      | Loest                                 | Aufwand | Betroffene Dateien                                    |
+| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- | ------- | ----------------------------------------------------- |
+| M1  | **Differenzierten FREEZE einfuehren:** STRUKTUR-FREEZE (Zonen, KE, Fachbegriffe, Muster, Frage) vs. FORMULIERUNGS-OFFEN (Saetze). Terminologie in allen Dokumenten aktualisieren.              | SP-4, Voraussetzung fuer M2           | Gering  | AGENT_TAFELBILD.md, alle 6 Vertraege, ORCHESTRATOR.md |
+| M2  | **VERTRAG_PHASE_2-1c: Achse 6 "Hefteintrag-Revision" einfuehren.** Regelwerk: erlaubte vs. verbotene Aenderungen (PF-8). Output: revidierte SCPL-Texte + zusammenfassung + ueberleitung.       | SP-3, SP-6, Q-M2-05                   | Mittel  | VERTRAG_PHASE_2-1c_CROSS.md                           |
+| M3  | **VERTRAG_PHASE_2-0: zusammenfassung als Placeholder.** Phase 2.0 produziert zusammenfassung NICHT mehr (oder nur als Entwurf mit "[REVISION IN 2.1c]"-Markierung). Finale Produktion in 2.1c. | SP-3 (Teilaspekt)                     | Gering  | VERTRAG_PHASE_2-0_RAHMEN.md                           |
+| M4  | **VERTRAG_PHASE_2-1: SCPL-Schritt als expliziten Input.** Read-Schritt 2 erweitern: neben knoten[] auch den zugehoerigen scpl{}-Schritt lesen.                                                 | PF-12, Material-Hefteintrag-Kohaerenz | Gering  | VERTRAG_PHASE_2-1_MATERIAL.md                         |
 
 ### Prioritaet 2 — Kurzfristig (Runde 5 / vor Game 2)
 

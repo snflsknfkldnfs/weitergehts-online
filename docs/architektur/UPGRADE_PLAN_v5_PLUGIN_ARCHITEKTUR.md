@@ -98,12 +98,12 @@ hooks/                 # Optional: Pre/Post-Hooks
 
 ### 2.5 Weiche Grenzen (mitigierbar)
 
-| Grenze | Mitigation |
-|---|---|
-| **Soft Chaining** | Skill-Prompt kann mit `## Naechster Schritt`-Sektion enden, die den naechsten Skill-Aufruf stark nahelegt. STATUS.md als State-Machine macht den naechsten Schritt eindeutig. |
-| **Kein automatisches STATUS-Update** | Jeder Skill kann als letzte Aktion STATUS.md schreiben. Convention over Configuration. |
-| **Kein automatisches Q-Gate-Logging** | In jeden Dispatch-Skill als Pflicht-Schlussschritt einbauen. |
-| **Session-Split-Erkennung** | Token-Schaetzung via Dateizaehlung (N Dispatches * ~X Token pro Dispatch). Expliziter Checkpoint in Skill-Prompt. |
+| Grenze                                | Mitigation                                                                                                                                                                    |
+| ------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Soft Chaining**                     | Skill-Prompt kann mit `## Naechster Schritt`-Sektion enden, die den naechsten Skill-Aufruf stark nahelegt. STATUS.md als State-Machine macht den naechsten Schritt eindeutig. |
+| **Kein automatisches STATUS-Update**  | Jeder Skill kann als letzte Aktion STATUS.md schreiben. Convention over Configuration.                                                                                        |
+| **Kein automatisches Q-Gate-Logging** | In jeden Dispatch-Skill als Pflicht-Schlussschritt einbauen.                                                                                                                  |
+| **Session-Split-Erkennung**           | Token-Schaetzung via Dateizaehlung (N Dispatches * ~X Token pro Dispatch). Expliziter Checkpoint in Skill-Prompt.                                                             |
 
 ---
 

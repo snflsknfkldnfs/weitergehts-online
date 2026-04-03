@@ -71,11 +71,11 @@ Aus dem SKRIPT-Chunk und DIDAKTIK_RAHMEN (KE-Matrix + Sicherungsziel) die 2-3 ze
 
 Eines der drei empirisch belegten Ordnungsmuster waehlen:
 
-| Muster | Wann geeignet | Beispiel (1.WK) |
-|---|---|---|
-| **Kausal** | Ursache-Wirkungs-Zusammenhaenge, Erklaerungen | Mappe 1: Imperialismus → Buendnisse → Wettruestung → Pulverfass |
-| **Kategorial** | Mehrere gleichrangige Aspekte eines Themas | Mappe 5: Kampfbedingungen / Gefuehle / Veraenderung |
-| **Chronologisch** | Zeitliche Abfolge von Ereignissen | Mappe 2: Attentat → Julikrise → Kriegserklaerungen |
+| Muster            | Wann geeignet                                 | Beispiel (1.WK)                                                 |
+| ----------------- | --------------------------------------------- | --------------------------------------------------------------- |
+| **Kausal**        | Ursache-Wirkungs-Zusammenhaenge, Erklaerungen | Mappe 1: Imperialismus → Buendnisse → Wettruestung → Pulverfass |
+| **Kategorial**    | Mehrere gleichrangige Aspekte eines Themas    | Mappe 5: Kampfbedingungen / Gefuehle / Veraenderung             |
+| **Chronologisch** | Zeitliche Abfolge von Ereignissen             | Mappe 2: Attentat → Julikrise → Kriegserklaerungen              |
 
 **Regel:** Innerhalb eines Hefteintrags NUR EIN Muster verwenden (G4). Nicht mischen.
 
