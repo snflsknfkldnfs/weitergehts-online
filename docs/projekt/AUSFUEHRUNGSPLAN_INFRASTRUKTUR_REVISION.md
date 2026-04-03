@@ -307,6 +307,23 @@ Browser-Review Mappe 3 ergab 3 Findings, die auf 3 generalisierbare Architektur-
 
 **Status:** KOMPLETT. 12 docs/-Dateien gepatcht (Phase A+B). Engine-Patch D1 ERLEDIGT (v3.6c, Browser-PASS 2026-04-03). data.json: antwortpool-Felder ERLEDIGT (alle 4 LT-Aufgaben). D2 Fragestamm-Verankerung ERLEDIGT (aufgabe-3-4, aufgabe-3-6 rewritten mit konkreten Inhaltsankern). D3a/b/c Hefteintrag-Nachpatch ERLEDIGT (kontextsatz autonom, Burgfrieden elaboriert, Gegenueberstellung explizit). D2-Infrastruktur verschaerft: A2b als PFLICHT-Q-Gate-Pruefschritt in alle 5 SUB_AUFGABE_*.md. Cache-Busting-System installiert.
 
+### C1c: Produktionsreife-Audit (Pre-C2) — IN ARBEIT
+
+Vor Mappe-4-Vollproduktion (12-16h) externe Pruefung der Gesamtkohaerenz aller Infrastruktur-Dokumente. 3 parallele Dimensionen:
+
+| Dimension | Prueffrage | Reviewer-Typ |
+|---|---|---|
+| A: Technische Kohaerenz | Schema-Konsistenz, Q-Gate-Vollstaendigkeit, Referenz-Integritaet, Rendering-Kontrakt vs. Engine | Architektur |
+| B: Paedagogisch-Didaktisch | Guetekriterien-Kalibrierung fuer R7/GPG, SCPL-Struktur, AFB-Progression, Aufgabentyp-Balance | Didaktik |
+| C: Engine-Schema-Kompatibilitaet | JSON-Schema in Prompts vs. tatsaechliches Engine-Rendering, Edge Cases, Stretch-Features | Code |
+
+**Methode:** agent-teams, 3 parallele Reviewer.
+**Briefing:** docs/analyse/AUDIT_BRIEFING_PRE_C2_PRODUKTIONSREIFE.md
+**Ergebnis:** docs/analyse/AUDIT_PRE_C2_ERGEBNIS.md
+**Entscheidung:** PROCEED / PATCH-THEN-PROCEED / REDESIGN
+
+**Status:** AUDIT_BRIEFING erstellt (2026-04-03). Audit-Durchfuehrung steht aus.
+
 ### C2: Mappe 4 als Validierung
 
 Mappe 4 Vollproduktion (Phase 2.0→4) mit allen Patches und Architektur-Revisionen aktiv. Browser-Review als empirische Pruefung der Revision.
@@ -352,7 +369,7 @@ Phase C (nach A+B):
 | 4b | C1-S3+S4 (Assembly + Evaluation) | data.json gepatcht, Evaluationsbericht steht | 1-2h | **DONE** |
 | 5+ | C2 (Mappe 4 Produktion) | Validierung der Revision | 12-16h | OFFEN |
 
-**Kritischer Pfad:** A* → B1+B2 → C1 (S1→S2→S3→S4) → C1b (D1-D3) → C2. C1+C1b ERLEDIGT (Session 8+9). Naechster Schritt: C2 (Mappe-4-Validierung).
+**Kritischer Pfad:** A* → B1+B2 → C1 (S1→S2→S3→S4) → C1b (D1-D3) → C1c (Audit) → C2. C1+C1b ERLEDIGT (Session 8+9). C1c IN ARBEIT (Briefing erstellt). Naechster Schritt: Audit-Durchfuehrung, dann C2.
 
 ---
 

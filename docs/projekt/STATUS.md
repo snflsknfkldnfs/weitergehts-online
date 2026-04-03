@@ -1,9 +1,9 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-03 (Session 9, Mappe-3-Daten-Nachpatch D2+D3 DONE)
-**Aktuelle Phase:** **Infrastruktur-Revision vor Mappe 4. A-C1: DONE. D1 Engine-Patch (v3.6c): DONE + Browser-PASS. D2+D3 Mappe-3-Daten-Nachpatch: DONE. D2-Infrastruktur verschaerft (A2b in allen 5 SUB_AUFGABE). Naechster Schritt: C2 Mappe-4-Validierung.**
-**Letzter Arbeitsschritt:** Mappe-3-Daten-Nachpatch: (1) D2 aufgabe-3-4 rewrite: Metasprache "Widerspruch" → konkreter Inhalt "Jubel/Ausflug nach Paris vs. weinende Muetter". (2) D2 aufgabe-3-6 rewrite: "Perspektiven" → "Begeisterung, Angst und Pflicht". (3) D3a kontextsatz: Mappe-2-Rekap entfernt → "August 1914: Die Mobilmachung beginnt." (4) D3b Burgfrieden elaboriert fuer R7. (5) D3c Gegenueberstellung explizit in SCPL-Schritten. (6) A2b Inhaltliche Verankerung als PFLICHT-Q-Gate-Pruefschritt in alle 5 SUB_AUFGABE-Dateien.
-**Naechster Schritt:** (1) Phase C2: Mappe-4-Validierung. Stretch: Engine O3/O5/O6.
+**Letzte Aktualisierung:** 2026-04-03 (Session 9, C1c Audit-Briefing erstellt)
+**Aktuelle Phase:** **Infrastruktur-Revision vor Mappe 4. C1+C1b: DONE. C1c Produktionsreife-Audit: IN ARBEIT (Briefing erstellt, Durchfuehrung steht aus). Naechster Schritt: Audit durchfuehren (agent-teams, 3 Dimensionen), dann C2.**
+**Letzter Arbeitsschritt:** (1) D2+D3 Mappe-3-Daten-Nachpatch (aufgabe-3-4, aufgabe-3-6, hefteintrag). (2) A2b Inhaltliche Verankerung als PFLICHT-Q-Gate in alle 5 SUB_AUFGABE. (3) AUDIT_BRIEFING_PRE_C2_PRODUKTIONSREIFE.md erstellt: 3 Dimensionen (Technische Kohaerenz, Didaktische Kalibrierung, Engine-Schema-Kompatibilitaet), 38 Dateien im Scope.
+**Naechster Schritt:** (1) C1c Audit-Durchfuehrung (agent-teams). (2) Findings evaluieren → PROCEED/PATCH-THEN-PROCEED/REDESIGN. (3) C2: Mappe-4-Validierung. Stretch: Engine O3/O5/O6.
 **Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. ARTEFAKT_INVENTAR Mappe 2+3 nachpflegen. Engine-Erweiterungen O3/O5/O6 (Ordnungsmuster-Rendering, Pfeiltypen, Farbsemantik) als Stretch-Goal.
 
 **Abgeschlossen seit letztem Update:**
