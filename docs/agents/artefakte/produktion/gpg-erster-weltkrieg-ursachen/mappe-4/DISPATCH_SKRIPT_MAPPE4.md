@@ -32,7 +32,7 @@
 |---|---|---|---|---|---|
 | D-1 | 1 | AGENT_MATERIAL Design-Modus (Materialtyp-Zuordnung) | DONE | — | 5 Materialien, 4 Typen (DT, Karte×2, Tagebuch, BQ). Alle 6 TB-Knoten + 6 Verbindungen abgedeckt. 3 Artefakte nicht als eigenes Material (img-4-4, zit-4-2, rolle-4-2) — begruendet. |
 | D-1.5 | 1.5 | AGENT_MATERIAL Sequenzplanung (Reihenfolge, Funktionen, Ueberleitungen) | DONE | S1-S15 PASS (S10 SOLL-FAIL dok.) | 5 Pos: DT→Karte→TB→Karte→BQ. SCPL monoton S→C→P. Skript-kongruent. 4 Ueberleitungen inhaltlich motiviert. |
-| D0 | 2.0 | Rahmen-Produktion (hefteintrag, einstieg, sicherung, meta) | OFFEN | §7.3 | |
+| D0 | 2.0 | Rahmen-Produktion (hefteintrag, einstieg, sicherung, meta) | DONE | §7.3 PASS (8/8, 0 FAIL, 0 WARN) | 6 Knoten, 5 Verbindungen, 3 Merksaetze (k4-1, k4-2, k4-6). SCPL-Texte C1/C3/P gekuerzt (FORMULIERUNGS-OFFEN). Freischalt-Code: MARNE. |
 | D1 | 2.1-1 | Material 1 | OFFEN | M1-M12 + typ | |
 | D2 | 2.1-2 | Material 2 | OFFEN | M1-M12 + typ | |
 | D3 | 2.1-3 | Material 3 | OFFEN | M1-M12 + typ | |

@@ -1,0 +1,104 @@
+{
+  "stundenfrage": "Warum scheiterte der Plan für einen schnellen Sieg?",
+  "ordnungsmuster": "sequenziell",
+  "scpl": {
+    "situation": {
+      "kontextsatz": "August 1914: Deutschland steht im Krieg gegen Frankreich und Russland gleichzeitig.",
+      "fachbegriffe": ["Zweifrontenkrieg"]
+    },
+    "complication": [
+      {
+        "schritt": "Schlieffen-Plan: Erst Frankreich in 40 Tagen besiegen, dann Russland angreifen.",
+        "fachbegriff": "Schlieffen-Plan",
+        "darstellung": null
+      },
+      {
+        "schritt": "August 1914: Deutsche Truppen marschieren durch Belgien bis 40 Kilometer vor Paris.",
+        "fachbegriff": "",
+        "darstellung": null
+      },
+      {
+        "schritt": "September 1914: An der Marne stoppen französische und britische Truppen den Vormarsch \u2014 65 Kilometer Rückzug.",
+        "fachbegriff": "Schlacht an der Marne",
+        "darstellung": null
+      }
+    ],
+    "problem": {
+      "satz": "Der Schlieffen-Plan ist gescheitert \u2014 statt eines schnellen Sieges beginnt der Stellungskrieg.",
+      "fachbegriff": "Stellungskrieg"
+    },
+    "loesung": [
+      "Der Schlieffen-Plan sollte den Zweifrontenkrieg lösen, indem Frankreich in 40 Tagen besiegt wird \u2014 bevor Russland bereit ist.",
+      "Die Schlacht an der Marne stoppte den deutschen Vormarsch \u2014 der Plan war gescheitert.",
+      "Statt eines schnellen Sieges begann der Stellungskrieg: vier Jahre Schützengräben von der Nordsee bis zur Schweiz."
+    ]
+  },
+  "knoten": [
+    {
+      "id": "k4-1",
+      "text": "Schlieffen-Plan",
+      "typ": "kernbegriff",
+      "merksatz": "Deutschlands Plan, Frankreich in 40 Tagen zu besiegen, bevor Russland angreifen kann."
+    },
+    {
+      "id": "k4-2",
+      "text": "Zweifrontenkrieg",
+      "typ": "kernbegriff",
+      "merksatz": "Krieg an zwei Seiten gleichzeitig \u2014 gegen Frankreich im Westen und Russland im Osten."
+    },
+    {
+      "id": "k4-3",
+      "text": "Zeitlücke: Russland mobilisiert langsam",
+      "typ": "ursache"
+    },
+    {
+      "id": "k4-4",
+      "text": "Einmarsch über Belgien",
+      "typ": "ereignis"
+    },
+    {
+      "id": "k4-5",
+      "text": "Schlacht an der Marne (Sept. 1914)",
+      "typ": "ereignis"
+    },
+    {
+      "id": "k4-6",
+      "text": "Stellungskrieg",
+      "typ": "wirkung",
+      "merksatz": "Beide Seiten graben sich in Schützengräben ein und kämpfen jahrelang um wenige Meter."
+    }
+  ],
+  "verbindungen": [
+    {
+      "von": "k4-2",
+      "nach": "k4-1",
+      "label": "Antwort auf",
+      "typ": "kausal"
+    },
+    {
+      "von": "k4-3",
+      "nach": "k4-1",
+      "label": "Grundannahme",
+      "typ": "kausal"
+    },
+    {
+      "von": "k4-1",
+      "nach": "k4-4",
+      "label": "sieht vor",
+      "typ": "temporal"
+    },
+    {
+      "von": "k4-4",
+      "nach": "k4-5",
+      "label": "scheitert an",
+      "typ": "kausal"
+    },
+    {
+      "von": "k4-5",
+      "nach": "k4-6",
+      "label": "führt zu",
+      "typ": "kausal"
+    }
+  ],
+  "voraussetzungen": ["k3-1"]
+}
