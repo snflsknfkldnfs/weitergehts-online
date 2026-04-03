@@ -1,10 +1,10 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-03 (Session 6, Post-Produktion + Infrastruktur-Revision-Planung)
-**Aktuelle Phase:** **Infrastruktur-Revision vor Mappe 4 — AUSFUEHRUNGSPLAN_INFRASTRUKTUR_REVISION.md. Naechster Schritt: Phase A (7 Prompt/Vertrags-Patches).**
-**Letzter Arbeitsschritt:** Mappe 3 vollstaendig produziert (Phase 2→3→4). User-Browser-Review: 11 Findings, 2 BLOCKER, 7 wiederkehrend. GRUNDSATZENTSCHEIDUNG §10 erstellt. AUSFUEHRUNGSPLAN_INFRASTRUKTUR_REVISION.md erstellt (3 Phasen, 10-16h). AUSFUEHRUNGSPLAN_C_PLUS.md Schritt 9 finalisiert.
-**Naechster Schritt:** Infrastruktur-Revision Phase A ausfuehren: A1 Encoding v3.3, A2 Quellenangaben, A3 Sprachregister, A4 Fragestamm, A5 Tipp-2, A6 Freitext-Bewertung, A7 Q-Gate-Erweiterung. Dann Phase B (Hefteintrag + AGENT_RAETSEL). Dann Phase C (Mappe-3-Daten-Patch + Mappe 4).
-**Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. ARTEFAKT_INVENTAR Mappe 2+3 nachpflegen. Hefteintrag-Referenzmodell (B1 Phase B) benoetigt User-Input.
+**Letzte Aktualisierung:** 2026-04-03 (Session 8, Infrastruktur-Revision Phase B1 DONE inkl. Test)
+**Aktuelle Phase:** **Infrastruktur-Revision vor Mappe 4. Phase A: DONE. Phase B1 Hefteintrag-Neukonstruktion: DONE (Analyse + Guetekriterien + Vertrag + Schema + Test 27/27 PASS, HE1-HE16 alle PASS). Naechster Schritt: B2 (AGENT_RAETSEL Typauswahl).**
+**Letzter Arbeitsschritt:** B1 Test: (1) transfer-Feld aus hefteintrag-schema.json + GUETEKRITERIEN_HEFTEINTRAG_ENTWURF.md entfernt. (2) Schema-Korrekturen: ordnungsmuster-Enum auf 6 empirische Typen, verbindungen[].typ neu (kausal/temporal/kontrast/schlussfolgerung), knoten[].typ um "beispiel" erweitert. (3) hefteintrag_B1_TEST.json produziert: SCPL-Texte auf max 15W komprimiert (alt: 25-29W), ordnungsmuster "kontrastierend" (alt: "multiperspektivisch" Legacy), UTF-8 Encoding v3.3, 6 Knoten + 5 typisierte Verbindungen. Schema-Validierung PASS, 27/27 automatisierte Checks PASS, HE1-HE16 manuell PASS (4 Kriterien von FAIL auf PASS gedreht: HE4, HE12, HE14, HE15).
+**Naechster Schritt:** B2 (AGENT_RAETSEL Typauswahl-Gegenpruefung). Dann Phase C (Daten-Patch + Mappe 4).
+**Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. ARTEFAKT_INVENTAR Mappe 2+3 nachpflegen. Engine-Erweiterungen O3/O5/O6 (Ordnungsmuster-Rendering, Pfeiltypen, Farbsemantik) als Stretch-Goal fuer Claude-Code-Uebergabe.
 
 **Abgeschlossen seit letztem Update:**
 - Infrastruktur-Revision verankert:

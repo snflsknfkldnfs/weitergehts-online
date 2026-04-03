@@ -6,6 +6,43 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ## 2026-04-03
 
+### Phase B1 Hefteintrag-Neukonstruktion: Test + Schema-Korrekturen + Transferfrage-Entfernung (Infrastruktur-Revision)
+- **Phase:** Infrastruktur-Revision Phase B1 (DONE — Test abgeschlossen)
+- **Zweck:** (1) Transferfrage aus Hefteintrag-Schema entfernen. (2) Schema auf v2-Konformitaet bringen (ordnungsmuster-Enum, verbindungen.typ, knoten.typ). (3) B1-Test unter Realbedingungen: Mappe-3-Hefteintrag nach revidiertem Vertrag regenerieren und gegen HE1-HE16 evaluieren.
+- **Ergebnis:**
+  - hefteintrag-schema.json: transfer-Objekt entfernt. ordnungsmuster-Enum auf 6 empirische Typen (parallel-kausal, sequenziell, kontrastierend, metaphorisch, relational, konzept-beispiel). verbindungen[].typ als Pflichtfeld (kausal/temporal/kontrast/schlussfolgerung). knoten[].typ um "beispiel" erweitert.
+  - GUETEKRITERIEN_HEFTEINTRAG_ENTWURF.md: transfer-Block aus JSON-Template entfernt, Stilregel 4 + Changelog-Eintrag angepasst.
+  - AUSFUEHRUNGSPLAN: B1 Step 4 (Transferfrage) als ERLEDIGT markiert (Entscheidung: entfernen).
+  - hefteintrag_B1_TEST.json produziert: SCPL-Texte 7-11W (alt: 25-29W), ordnungsmuster "kontrastierend" (alt: "multiperspektivisch"), 6 Knoten + 5 typisierte Verbindungen, Encoding v3.3 (UTF-8 Umlaute + typographische Zeichen).
+  - Schema-Validierung: PASS. 27/27 automatisierte Checks (Text-Dichte, Knoten, Verbindungen, Encoding, Transfer, Schaubild-Integritaet) PASS.
+  - HE1-HE16 manuell: 10/10 hefteintrag-relevante Kriterien PASS. 4 Kriterien von FAIL auf PASS gedreht (HE4, HE12, HE14, HE15).
+- **Geaenderte Dateien:** hefteintrag-schema.json, GUETEKRITERIEN_HEFTEINTRAG_ENTWURF.md, AUSFUEHRUNGSPLAN_INFRASTRUKTUR_REVISION.md, STATUS.md, CHANGELOG.md, hefteintrag_B1_TEST.json (neu)
+- **Naechster Schritt:** B2 (AGENT_RAETSEL Typauswahl). Dann Phase C (Daten-Patch + Mappe 4).
+
+### Phase B1 Hefteintrag-Neukonstruktion: Analyse + Guetekriterien + Vertrag (Infrastruktur-Revision)
+- **Phase:** Infrastruktur-Revision Phase B1 (Analyse + Vertrag — DONE, Test offen)
+- **Zweck:** Hefteintrag-Pipeline auf empirisch fundiertes Schaubild-Elaborierungs-Modell umstellen. Grundlage: 8 gerenderte Praxis-Tafelbilder (Excalidraw-Screenshots) + 4 Unterrichtsentwuerfe der Sequenz Erster Weltkrieg (GPG7).
+- **Empirischer Befund:**
+  - 6 Ordnungsmuster-Typen isoliert: parallel-kausal, sequenziell, kontrastierend, metaphorisch, relational, konzept-beispiel
+  - Invariante Drei-Ebenen-Architektur: Stundenfrage → Erarbeitungszone → Merksatz (8/8 TBs)
+  - Kein Prosa-Absatz in realen TBs. Knoten max 12 W., Kurzesaetze max 15 W., Merksatz max 20 W./Satz
+  - Hefteintrag = Schaubild + gezielte Elaborierung (nicht Fliesstext-Ersatz)
+  - Pfeile im Heft explizit erwuenscht. Merksatz darf elaborierter sein als TB-Kompaktform.
+- **Ergebnis:**
+  - GUETEKRITERIEN_HEFTEINTRAG_PRODUKT.md v2: HE14 (Schaubild-Charakter, MUSS), HE15 (Ordnungsmuster-Treue, SOLL), HE16 (Merksatz-Kalibrierung, SOLL). HE4 revidiert (strukturell-sprachliche Kohaerenz statt Prosa-Kohaerenz). HE12 revidiert (Drei-Ebenen-Architektur). Leitsatz §2.1 mit empirischem Befund.
+  - GUETEKRITERIEN_HEFTEINTRAG_ENTWURF.md: G4 auf 6 Typen erweitert. Sek. 3.2 (Textdichte), 3.3 (Ordnungsmuster), 6 (Output-Format) revidiert. knoten[]/verbindungen[] von Legacy zu Pflichtfeldern hochgestuft. verbindungen[].typ als neues Feld.
+  - VERTRAG_PHASE_2-0_RAHMEN.md: Dispatch-Schritte 1a (Schaubild-Integritaet) + 1b (Text-Dichte) eingefuegt. Q-Gate um HE14-HE16 Pre-Check erweitert.
+  - AUSFUEHRUNGSPLAN_INFRASTRUKTUR_REVISION.md: B1 mit empirischem Befund + revidiertem Vorgehen aktualisiert.
+- **Geaenderte Dateien:** GUETEKRITERIEN_HEFTEINTRAG_PRODUKT.md, GUETEKRITERIEN_HEFTEINTRAG_ENTWURF.md, VERTRAG_PHASE_2-0_RAHMEN.md, AUSFUEHRUNGSPLAN_INFRASTRUKTUR_REVISION.md, STATUS.md, CHANGELOG.md
+- **Naechster Schritt:** B1 Test (Mappe-3-Hefteintrag regenerieren, HE1-HE16 pruefen). Dann B2 (AGENT_RAETSEL). Dann Phase C.
+
+### Phase A: 7 Prompt/Vertrags-Patches (Infrastruktur-Revision)
+- **Phase:** Infrastruktur-Revision Phase A (DONE)
+- **Zweck:** 7 wiederkehrende Findings aus Mappe-3-Browser-Review durch gezielte Patches in 16 Dateien beheben.
+- **Ergebnis:** A1 Encoding v3.3, A2 Quellenangaben-Trennregel, A3 Sprachregister R7, A4 Fragestamm-Kurzregel, A5 Tipp-2-Wortpool, A6 Freitext-Bewertungsdifferenzierung, A7 Q-Gate-Erweiterung (TYP-01, REG-01, HE-PROD, A2-KURZ). Grep-Verifizierung: 0 v3.2-Referenzen in aktiven Dokumenten.
+- **Geaenderte Dateien:** 16 Dateien (7 SUB_MATERIAL_*.md, 5 SUB_AUFGABE_*.md, AGENT_RAETSEL.md, VERTRAG_PHASE_2-0_RAHMEN.md, VERTRAG_PHASE_2-1c_CROSS.md, Q-GATE-MECHANIK.md)
+- **Naechster Schritt:** Phase B (Hefteintrag + AGENT_RAETSEL)
+
 ### Infrastruktur-Revision verankert (PM-Verankerung)
 - **Phase:** C+ Post-Produktion (Schritt 9 DONE) + Infrastruktur-Revision-Planung
 - **Zweck:** Empirische Ergebnisse aus User-Browser-Review Mappe 3 in PM-Dokumenten verankern. 11 Findings (2 BLOCKER, 7 wiederkehrend) erfordern systematische Infrastruktur-Revision vor Mappe 4.

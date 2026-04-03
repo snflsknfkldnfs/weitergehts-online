@@ -44,21 +44,32 @@ Backward Design (Wiggins/McTighe) gilt auf KE-Ebene: DIDAKTIK_RAHMEN definiert L
 | Spannweite | 7-14 | 8 Excalidraw-TBs |
 | Empfohlenes Limit | **max. 10 Elemente** | Synthese aus Empirie + DG B2 "Reduktion" |
 
-### 3.2 Inhaltstypen
+### 3.2 Inhaltstypen und Textdichte (v2)
 
-| Typ | Anteil | Verwendung |
-|---|---|---|
-| Schlagwoerter/Kurzbegriffe | ~40% | Strukturelemente, Kategorien, Fachbegriffe |
-| Ganze Saetze (Merksaetze) | ~60% | Erklaerungen, Schlussfolgerungen, Kausalaussagen |
-| Merksaetze am Ende | 6 von 8 TBs | Abschliessende Synthese als vollstaendiger Satz |
+| Typ | Anteil | Verwendung | Max. Woerter |
+|---|---|---|---|
+| Knoten (Kurzphrasen) | ~40% | Strukturelemente, Kategorien, Fachbegriffe | 12 |
+| Elaborierende Kurzesaetze | ~20% | Kausale Verbindungen, die im reinen Schaubild fuer R7-SuS nicht selbsttragend waeren | 15 |
+| Merksatz | ~15% | Abschliessende Synthese als Antwort auf Stundenfrage (6/8 TBs) | 20 (pro Satz) |
+| Verbindungs-Labels | ~25% | Pfeil-Beschriftungen (kausal, temporal, kontrastiv) | 5 |
 
-### 3.3 Organisationsmuster
+**Schaubild-Elaborierungs-Modell (v2):** Der Hefteintrag ist ein Schaubild mit gezielter Elaborierung. Die Knoten und Pfeile bilden die Basis (identisch mit TB). Elaborierende Kurzesaetze ERGAENZEN die Schaubildstruktur, wo eine Verbindung fuer R7-SuS ohne Explizierung nicht selbsttragend ist. Die Elaborierung ERSETZT nicht die Struktur — Pfeile sind auch im Hefteintrag erwuenscht. Merksaetze duerfen elaborierter sein als im TB (1-3 Saetze statt 1 Nominalphrase), wenn die Elaborierung die Verankerung stuetzt.
 
-| Muster | Haeufigkeit | Beschreibung |
-|---|---|---|
-| Kausal-Kette | 4/8 | A fuehrt zu B fuehrt zu C (Pulverfass, Attentat, Schlieffen, Kriegsende) |
-| Kategorien-Gliederung | 3/8 | Hauptkategorien mit Unterpunkten (Front, Heimatfront, Warum Weltkrieg) |
-| Chronologisch | 1/8 | Zeitliche Abfolge (Marne-Schlacht) |
+### 3.3 Organisationsmuster (v2 — erweitert auf 6 Typen, 2026-04-03)
+
+Revidiert auf Basis gerendeter Screenshots (visuelle Struktur, nicht nur Textelemente):
+
+| Muster | Haeufigkeit | Beschreibung | Referenz-TB |
+|---|---|---|---|
+| parallel-kausal | 2/8 | N parallele Ursachen-Spalten → gemeinsame Wirkung unten | Heimatfront, Kriegsende |
+| sequenziell | 1/8 | Zeitliche Abfolge vertikal, Pfeile zwischen Schritten | Marne-Schlacht |
+| kontrastierend | 1/8 | Zeitachse mit Pol-Wechsel + Kategorien-Boxen | Leben an der Front |
+| metaphorisch | 1/8 | Visualisierte Metapher (Fass + Funke) mit Komponenten | Attentat/Sarajewo |
+| relational | 1/8 | Gruppierungen (Dreibund/Entente) + Konflikte als Pfeile | Pulverfass Europa |
+| konzept-beispiel | 1/8 | Oberbegriff → Beispiele → Schlussfolgerung | Warum Weltkrieg |
+| raeumlich (Sonderfall) | 1/8 | Geografische Darstellung + Kurztext | Schlieffen-Plan |
+
+Anmerkung: Der Typ "raeumlich" (kartenbasiert) ist fuer die Engine-Darstellung schwer abbildbar und wird nicht als Enum-Wert im JSON gefuehrt. Bei raeumlichen Themen → naechstliegendes Muster waehlen (meist sequenziell oder relational).
 
 ### 3.4 Raeumliche Struktur
 
@@ -118,7 +129,7 @@ Gewichtete Kriterien fuer den AGENT_HEFTEINTRAG Q-Gate. Drei Prioritaetsstufen: 
 | G1 | **Lernziel-Kongruenz** | Jede relevante KE aus DIDAKTIK_RAHMEN hat min. 1 Element im Tafelbild | DG B2 Grundsatz 2 |
 | G2 | **Konsequente Reduktion** | Max. 10 Elemente (Knoten). Max. 3 Kernerkenntnisse (Merksaetze). | DG B2 Grundsatz 1 + Empirie (Durchschnitt 9,25) |
 | G3 | **Erarbeitbarkeit** | Jedes TB-Element ist durch ein geplantes Material erarbeitbar (Abgleich mit INHALTSBASIS) | Empirischer Befund: Material-TB-Korrespondenz |
-| G4 | **Strukturklarheit** | TB hat eine erkennbare Ordnung: kausal, chronologisch ODER kategorial — nicht gemischt | DG B2 Grundsatz 5 + Empirie |
+| G4 | **Strukturklarheit** | TB hat eine erkennbare Ordnung aus den 6 empirischen Typen: parallel-kausal, sequenziell, kontrastierend, metaphorisch, relational ODER konzept-beispiel. Ein TB darf EIN Primaermuster verwenden; Mischungen nur wenn Subsektionen klar getrennt. | DG B2 Grundsatz 5 + Empirie (8 Praxis-TBs, v2-Analyse 2026-04-03) |
 | G5 | **Sprachliches Niveau** | Merksaetze: max. 15 Woerter, R7-Lesbarkeit. Fachbegriffe nur wenn in Material eingefuehrt. | DG B2 Grundsatz 4 + AGENT_SKRIPT Constraints |
 | G6 | **Hefteintrag-Transferierbarkeit** | Hefteintrag-Repraesentation in max. 5 Minuten ins Heft uebertragbar (~80-120 Woerter) | Empirischer Befund: 5-7 min Uebertragungszeit |
 
@@ -149,7 +160,7 @@ Gewichtete Kriterien fuer den AGENT_HEFTEINTRAG Q-Gate. Drei Prioritaetsstufen: 
 ```json
 {
   "stundenfrage": "Problemorientierte Frage, max. 12 Woerter?",
-  "ordnungsmuster": "kausal | chronologisch | kategorial",
+  "ordnungsmuster": "parallel-kausal | sequenziell | kontrastierend | metaphorisch | relational | konzept-beispiel",
   "scpl": {
     "situation": {
       "kontextsatz": "1-2 Saetze Ausgangslage. Fachbegriffe per Doppelpunkt/Gedankenstrich.",
@@ -180,32 +191,33 @@ Gewichtete Kriterien fuer den AGENT_HEFTEINTRAG Q-Gate. Drei Prioritaetsstufen: 
       "Merksatz 2 = Kernerkenntnis 2. Max. 15 Woerter."
     ]
   },
-  "transfer": {
-    "frage": "Kurze offene Frage, max. 10 Woerter"
-  },
   "voraussetzungen": [],
   "kernerkenntnisse": [
     "Merksatz 1",
     "Merksatz 2"
   ],
-  "knoten": [],
-  "verbindungen": []
+  "knoten": [
+    {"id": "kN-1", "text": "Kernbegriff (max 12 W.)", "typ": "kernbegriff | ursache | wirkung | kategorie | beispiel"}
+  ],
+  "verbindungen": [
+    {"von": "kN-1", "nach": "kN-2", "label": "Kurzlabel (max 5 W.)", "typ": "kausal | temporal | kontrast | schlussfolgerung"}
+  ]
 }
 ```
 
 **v3.1 Aenderungen gegenueber v3.0:**
 - **NEU:** `scpl`-Objekt (Situation, Complication[], Problem, Loesung) — primaerer Rendering-Input
-- **NEU:** `transfer.frage` — wird ausserhalb der Hefteintrag-Box gerendert
+- **ENTFERNT (v3.2):** `transfer.frage` — Transferimpuls gehoert in Sicherungs-Phase (rahmen/sicherung.json reflexionsimpuls), nicht ins Hefteintrag-Schema.
 - **NEU:** `stundenfrage` als Pflichtfeld (ersetzt `titel`)
-- **LEGACY:** `knoten[]` und `verbindungen[]` bleiben als leere Arrays (Abwaertskompatibilitaet)
-- **Engine-Routing:** `if (scpl) → _renderHefteintragSCPL() | else if (knoten[].length) → Legacy | else → Fallback`
+- **PRIMAER (v2):** `knoten[]` und `verbindungen[]` sind Pflichtfelder — sie bilden die Schaubild-Struktur ab. Jeder SCPL-Schritt korrespondiert mit 1+ Knoten. Die Knoten tragen die kompakten Kurzphrasen, die SCPL-Texte die optionale Elaborierung.
+- **Engine-Routing:** `if (scpl) → _renderHefteintragSCPL() | else if (knoten[].length) → Legacy | else → Fallback`. knoten[]/verbindungen[] steuern zusaetzlich das Ordnungsmuster-Layout (Stretch-Goal: Engine-Erweiterung O3-O6).
 
 ### Stilregeln
 
 1. **Fachbegriffe:** NIEMALS in Klammern. Immer per Doppelpunkt oder Gedankenstrich am Satzende.
 2. **Pfeile:** Nur Symbole, kein qualifizierender Text (Ausnahme: fachlich mehrdeutige Verbindung).
 3. **Merkbox:** Gelb umrandet, keine Ueberschrift/Label.
-4. **Transferfrage:** Ausserhalb des Hefteintrags (muendlicher Impuls, nicht verschriftlicht).
+4. **Transferimpuls:** Lebt in rahmen/sicherung.json (reflexionsimpuls), NICHT im Hefteintrag-Schema.
 
 Kanonische Referenz fuer Stilregeln: `docs/architektur/EVALUATION_SCPL_HEFTEINTRAG.md`, Section 7-8.
 
@@ -221,7 +233,7 @@ Kanonische Referenz fuer Stilregeln: `docs/architektur/EVALUATION_SCPL_HEFTEINTR
 | G1 | Lernziel-Kongruenz | MUSS | PASS/FAIL | KE [X] abgedeckt durch k[N]-[M] |
 | G2 | Reduktion (max. 10 Knoten, max. 3 Merksaetze) | MUSS | PASS/FAIL | [Anzahl] Knoten, [Anzahl] Merksaetze |
 | G3 | Erarbeitbarkeit | MUSS | PASS/FAIL | Jeder Knoten → Skript-Passage oder Artefakt-Kandidat |
-| G4 | Strukturklarheit | MUSS | PASS/FAIL | Ordnungsmuster: [kausal/chronologisch/kategorial] |
+| G4 | Strukturklarheit | MUSS | PASS/FAIL | Ordnungsmuster: [parallel-kausal/sequenziell/kontrastierend/metaphorisch/relational/konzept-beispiel] |
 | G5 | Sprachliches Niveau | MUSS | PASS/FAIL | Laengster Merksatz: [N] Woerter |
 | G6 | Hefteintrag-Transfer | MUSS | PASS/FAIL | [N] Woerter, geschaetzte Uebertragungszeit [N] min |
 | G7 | Merksatz-Abschluss | SOLL | PASS/FAIL | [Anzahl] Merksaetze als ganze Saetze |
@@ -292,12 +304,15 @@ Fuer jeden Knoten kN-M:
 
 **Input-Daten:** `tafelbild.ordnungsmuster`, `tafelbild.verbindungen[]`
 **Prueflogik:**
-1. Pruefe: Ist `ordnungsmuster` genau eines von `kausal | chronologisch | kategorial`?
+1. Pruefe: Ist `ordnungsmuster` genau eines der 6 empirischen Typen?
+   - parallel-kausal: N Ursachen-Spalten → gemeinsame Wirkung (Labels: "fuehrt zu", "verursacht", "bewirkt")
+   - sequenziell: Zeitliche Abfolge (Labels: "danach", "fuehrt zu", "loest aus")
+   - kontrastierend: Gegenueberstellung mit Transformation (Labels: "vs.", "aber", "stattdessen")
+   - metaphorisch: Visualisierte Metapher mit Komponenten (Labels: "ist Teil von", "enthaelt", "symbolisiert")
+   - relational: Gruppierungen + Beziehungslinien (Labels: "verbuendet mit", "Konflikt mit", "gehoert zu")
+   - konzept-beispiel: Oberbegriff → Beispiele → Schlussfolgerung (Labels: "zum Beispiel", "zeigt sich in")
 2. Pruefe Konsistenz: Passen alle Verbindungs-Labels zum gewaehlten Muster?
-   - Kausal: Labels wie "fuehrt zu", "verursacht", "bewirkt" (Richtung: Ursache → Wirkung)
-   - Chronologisch: Labels wie "danach", "fuehrt zu", "loest aus" (Richtung: frueher → spaeter)
-   - Kategorial: Labels wie "gehoert zu", "Aspekt von" (Richtung: Oberbegriff → Unterpunkt)
-3. Pruefe: Gibt es Verbindungen, die dem Muster widersprechen? (z.B. kausale Labels in kategorialem TB)
+3. Pruefe: Gibt es Verbindungen, die dem Muster widersprechen?
 **FAIL wenn:** Kein Muster gesetzt ODER ≥2 Verbindungen widersprechen dem Muster
 **Nachbesserung:** Widersprechende Verbindungen umformulieren oder Muster wechseln
 

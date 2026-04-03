@@ -149,26 +149,44 @@ Mappe-3-Daten retroaktiv patchen (10 Daten-Patches). Mappe 4 als Validierung der
 
 **Problem:** Die aktuelle Pipeline produziert Hefteintraege als zusammenhaengende Fliesstext-Absaetze. Der User erwartet ein visuelles Denkprotokoll: Fachbegriffe als Knoten, Stichpunkte statt Prosa, Pfeilstrukturen, kompakter Merksatz als qualifizierte Antwort auf die Stundenfrage. Die GUETEKRITERIEN_HEFTEINTRAG_PRODUKT (HE1-HE13) wurden beim Generierungsprozess nicht wirksam angewendet — moegliche Ursache: zu starke Zergliederung im Generierungsprozess zerreisst die Gesamtgestalt.
 
-**Betroffene Dokumente:**
-- `docs/architektur/vertraege/VERTRAG_PHASE_2-0_RAHMEN.md` — Hefteintrag-Generierung ueberarbeiten
-- `docs/checklisten/GUETEKRITERIEN_HEFTEINTRAG_PRODUKT.md` — Ggf. verschaerfen
-- `docs/agents/artefakte/produktion/gpg-erster-weltkrieg-ursachen/mappe-3/sicherung/hefteintrag.json` — Referenz-Analyse
+**Empirischer Befund (2026-04-03):** Analyse von 8 gerenderten Praxis-Tafelbildern (Screenshots) + 4 Unterrichtsentwuerfen. Ergebnis:
 
-**Vorgehen:**
-1. **Analyse:** Mappe-2- und Mappe-3-Hefteintrag gegen HE1-HE13 bewerten. Systematische Ausfallmuster identifizieren: Welche HE-Kriterien fallen konsistent durch?
-2. **Gegenmodell:** Manuell einen Referenz-Hefteintrag fuer Mappe 3 entwerfen (User-Input noetig). Daraus Strukturregeln ableiten: Knoten-Dichte, Stichpunkt-Laenge, Merksatz-Schema, Pfeil-Konventionen.
-3. **Vertrag redesignen:** VERTRAG_PHASE_2-0 Hefteintrag-Sektion ersetzen. Neuer Generierungs-Ansatz: Nicht "Schreibe einen Hefteintrag" sondern "Erzeuge ein visuelles Tafelbild-Mapping". Input: TAFELBILD-Knoten → Output: Stichpunktartige Knoten-Beschreibungen + Pfeil-Relationen + 1 kompakter Merksatz (Antwort auf Stundenfrage, max 2 Saetze).
-4. **Transferfrage streichen:** User-Feedback B10 — Transferfrage unter Hefteintrag fehlplatziert. Aus Hefteintrag-Schema entfernen.
-5. **Test:** Hefteintrag fuer Mappe 3 mit neuem Vertrag regenerieren, gegen HE1-HE13 pruefen.
+- Reale Hefteintraege = Tafelbild-Kopien mit gezielter Elaborierung (Schaubild-Charakter)
+- Invariante Drei-Ebenen-Architektur: Stundenfrage → Erarbeitungszone (Knoten + Pfeile) → Merksatz
+- 6 empirische Ordnungsmuster: parallel-kausal, sequenziell, kontrastierend, metaphorisch, relational, konzept-beispiel
+- Keine Prosa-Absaetze — nur Kurzphrasen (max 12 W.) und elaborierende Kurzesaetze (max 15 W.)
+- Pfeile im Hefteintrag explizit erwuenscht (nicht nur im TB)
+- Merksatz darf elaborierter sein als reine TB-Kompaktform (1-3 Saetze, max 20 W./Satz)
+- Elaborierung ERGAENZT Schaubildstruktur, ERSETZT sie nicht
 
-**Akzeptanzkriterien:**
-- HE4 (Sprachliche Geschlossenheit) PASS
-- HE12 (Lernbarkeit) PASS
-- Kein Fliesstext-Absatz > 15 Woerter
-- Merksatz = 1-2 Saetze, direkte Antwort auf Stundenfrage
-- Keine Transferfrage im Hefteintrag
+**Betroffene Dokumente — UMGESETZT:**
+- `docs/checklisten/GUETEKRITERIEN_HEFTEINTRAG_PRODUKT.md` — v2: HE4/HE12 revidiert, HE14-HE16 neu (Schaubild-Charakter, Ordnungsmuster-Treue, Merksatz-Kalibrierung), Leitsatz mit empirischem Befund, 6 Ordnungsmuster-Typen
+- `docs/checklisten/GUETEKRITERIEN_HEFTEINTRAG_ENTWURF.md` — G4 auf 6 Typen erweitert, Sektion 3.2/3.3 revidiert, knoten[]/verbindungen[] als Pflichtfelder (nicht mehr Legacy), verbindungen[].typ-Feld neu
+- `docs/architektur/vertraege/VERTRAG_PHASE_2-0_RAHMEN.md` — Dispatch-Schritt 1a/1b: Schaubild-Integritaet + Text-Dichte-Pruefung, HE14-HE16 als Pre-Check im Q-Gate
 
-**Aufwand:** 4-6h (Analyse 1h, User-Referenz 1h, Vertrag redesignen 1-2h, Test 1-2h)
+**Betroffene Dokumente — OFFEN (Engine-Bereich, benoetigt Uebergabe-Prompt):**
+- Engine-Erweiterung O3: ordnungsmuster als Rendering-Steuerung (6 Typen → 6 Layouts)
+- Engine-Erweiterung O5: verbindungen[].typ fuer Pfeilstil-Differenzierung
+- Engine-Erweiterung O6: knoten[].typ fuer Farbsemantik
+
+**Vorgehen (revidiert):**
+1. ~~Analyse~~ → ERLEDIGT (2026-04-03): 8 TB-Screenshots + 4 UE-Dateien + Mappe-3-Hefteintrag analysiert.
+2. ~~Gegenmodell~~ → ERLEDIGT: Empirisches Modell statt manuellem Referenz-Entwurf. Befunde in GUETEKRITERIEN_HEFTEINTRAG_PRODUKT.md §2.1 dokumentiert.
+3. ~~Vertrag redesignen~~ → ERLEDIGT: VERTRAG_PHASE_2-0 Dispatch-Schritte 1a/1b + Q-Gate erweitert.
+4. ~~Transferfrage~~ → ERLEDIGT (2026-04-03): Entscheidung ENTFERNEN. transfer-Objekt aus hefteintrag-schema.json und GUETEKRITERIEN_HEFTEINTRAG_ENTWURF.md entfernt. Transferimpuls lebt in rahmen/sicherung.json (reflexionsimpuls).
+5. **Test:** Hefteintrag fuer Mappe 3 mit neuem Vertrag regenerieren, gegen HE1-HE16 pruefen.
+6. **Engine-Uebergabe:** Uebergabe-Prompt fuer O3/O5/O6 formulieren (Stretch-Goal, nicht blockierend fuer Mappe 4).
+
+**Akzeptanzkriterien (revidiert):**
+- HE4 (Strukturell-sprachliche Kohaerenz) PASS
+- HE12 (Lernbarkeit / Drei-Ebenen-Architektur) PASS
+- HE14 (Schaubild-Charakter) PASS — Knoten ueberwiegen Prosa
+- HE15 (Ordnungsmuster-Treue) PASS — Konsistentes Ordnungsmuster
+- HE16 (Merksatz-Kalibrierung) PASS — 1-3 Saetze, max 20 W.
+- Kein SCPL-Textblock > 15 Woerter
+- Keine Transferfrage im Hefteintrag (ENTSCHIEDEN: entfernt)
+
+**Aufwand (revidiert):** ~3h verbleibend (Analyse + Vertrag: ERLEDIGT ~3h. Offen: Test 1-2h, Engine-Uebergabe 1h)
 
 ---
 

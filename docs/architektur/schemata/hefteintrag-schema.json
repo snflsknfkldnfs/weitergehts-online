@@ -20,14 +20,14 @@
     "ordnungsmuster": {
       "type": "string",
       "enum": [
-        "kausal",
-        "chronologisch",
-        "kategorial",
-        "vergleichend",
-        "prozessual",
-        "multiperspektivisch"
+        "parallel-kausal",
+        "sequenziell",
+        "kontrastierend",
+        "metaphorisch",
+        "relational",
+        "konzept-beispiel"
       ],
-      "description": "Strukturierendes Organisationsprinzip des Tafelbilds. Bestimmt die Verbindungslogik zwischen Knoten. multiperspektivisch: kontrastierende Perspektiven auf dasselbe Ereignis."
+      "description": "Strukturierendes Organisationsprinzip des Tafelbilds (6 empirische Typen). Bestimmt die Verbindungslogik zwischen Knoten und das Layout der Erarbeitungszone."
     },
     "scpl": {
       "type": "object",
@@ -138,9 +138,10 @@
               "ereignis",
               "kategorie",
               "person",
-              "prozess"
+              "prozess",
+              "beispiel"
             ],
-            "description": "Semantischer Typ des Knotens."
+            "description": "Semantischer Typ des Knotens. Steuert Farbsemantik (Engine-Erweiterung O6)."
           },
           "merksatz": {
             "type": "string",
@@ -155,7 +156,7 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["von", "nach", "label"],
+        "required": ["von", "nach", "label", "typ"],
         "properties": {
           "von": {
             "type": "string",
@@ -169,7 +170,12 @@
           },
           "label": {
             "type": "string",
-            "description": "Verbindungsbeschriftung (z.B. 'fuehrt zu', 'deshalb', 'trotzdem')."
+            "description": "Verbindungsbeschriftung. Max 5 Woerter (z.B. 'fuehrt zu', 'deshalb', 'trotzdem')."
+          },
+          "typ": {
+            "type": "string",
+            "enum": ["kausal", "temporal", "kontrast", "schlussfolgerung"],
+            "description": "Semantischer Typ der Verbindung. Steuert Pfeilstil-Differenzierung (Engine-Erweiterung O5)."
           }
         },
         "additionalProperties": false
@@ -182,10 +188,6 @@
         "type": "string"
       },
       "description": "Knoten-IDs aus vorherigen Mappen, die als Vorwissen vorausgesetzt werden. Leer bei Mappe 1. Zielformat: reine ID (z.B. 'k1-1'). Legacy: ID mit Annotation (z.B. 'k1-1 (Pulverfass Europa)') — wird bei Mappe 3+ nicht mehr verwendet."
-    },
-    "transfer": {
-      "type": "object",
-      "description": "Optionaler Transfer-Bereich fuer Mappe-uebergreifende Verknuepfungen."
     }
   },
   "additionalProperties": false
