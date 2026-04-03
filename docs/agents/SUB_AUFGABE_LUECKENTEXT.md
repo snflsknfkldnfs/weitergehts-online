@@ -70,6 +70,24 @@ Der Lueckentext ist KEIN woertliches Zitat des Materials. Er ist ein eigenstaend
 - Jede Luecke muss aus dem Kontext + Materialkenntnis eindeutig beantwortbar sein
 - Keine Luecke, die mehrere gleichwertige korrekte Antworten zulaesst (z.B. "eine wichtige ___" → zu viele Moeglichkeiten)
 
+### 2b. Antwortpool erstellen (PFLICHT)
+
+Jeder Lueckentext hat einen sichtbaren Antwortpool. Der Pool wird IMMER angezeigt (nicht hinter Tipps versteckt). SuS waehlen aus dem Pool statt frei zu tippen — das senkt die Schwelle (Recognition statt Recall) und eliminiert Rechtschreibprobleme.
+
+**Konstruktionsregeln:**
+- Pool enthaelt alle korrekten Lueckenwoerter PLUS genau 1 Distraktor = N+1 Eintraege (N = Lueckenanzahl)
+- Distraktor ist thematisch plausibel aber eindeutig falsch (typische Schuelerfehlvorstellung, verwandter Fachbegriff aus dem Material, der hier nicht passt)
+- Reihenfolge im Pool ist alphabetisch (verhindert Positionshinweise)
+- Kein Distraktor, der mit einem korrekten Begriff verwechselbar waere (z.B. nicht "Nationalismus" als Distraktor wenn "Patriotismus" korrekt ist — zu nah)
+
+**Distraktor-Qualitaet:**
+| Distraktor-Typ | Eignung | Beispiel |
+|---|---|---|
+| Verwandter Fachbegriff aus Material | Sehr gut | "Imperialismus" als Distraktor bei Mappe ueber Buendnisse |
+| Fachbegriff aus vorheriger Mappe | Gut | Prueft Abgrenzung von verwandtem Vorwissen |
+| Alltagsbegriff fuer Fachkonzept | Gut (AFB I) | "Begeisterung" als Distraktor wenn "Kriegsbegeisterung" korrekt |
+| Offensichtlich falsch | Schlecht | Kein diagnostischer Wert |
+
 ### 3. Kontext-Hinweise einbauen
 
 Der umgebende Text muss genuegend Kontext bieten, damit die Luecke mit Materialkenntnis (aber nicht ohne) loesbar ist:
@@ -93,7 +111,7 @@ Lueckentext-Validierung ist case-insensitive String-Vergleich. Daher:
 | 2 (Teilantwort) | Antwortpool | Randomisierter Wortpool mit allen Lueckenwoertern (optional: 1-2 Distraktoren) |
 | 3 (Loesung) | Aufloesung | Alle Lueckenwoerter in Reihenfolge + Erklaerung des Zusammenhangs |
 
-**Tipp-2-Regel Lueckentext (v3.3):** Tipp 2 bei Lueckentexten ist IMMER ein Antwortpool, NICHT eine Paraphrase oder Erklaerung. Format: "Diese Begriffe gehoeren in die Luecken: [Begriff1], [Begriff2], [Begriff3], ..." Die Begriffe in randomisierter Reihenfolge auflisten. Optional: 1-2 Distraktoren (plausible aber falsche Begriffe) beimischen und als solche kennzeichnen (z.B. 5 richtige + 1 Distraktor, OHNE den Distraktor als falsch zu markieren).
+**Tipp-2-Regel Lueckentext (v3.4):** Da der Antwortpool jetzt als sichtbares Aufgabenfeld existiert (`antwortpool`), ist Tipp 2 bei Lueckentexten eine **inhaltliche Einschraenkung**: Hinweis auf den thematischen Bereich von 1-2 Luecken, Ausschluss eines Distraktors, oder Zuordnung "die erste Luecke betrifft..." — NICHT den Pool wiederholen.
 
 ### 6. Anti-Patterns
 
@@ -122,6 +140,7 @@ Referenz: `docs/checklisten/GUETEKRITERIEN_AUFGABEN.md`
 | A7 Operator-Praezision | "Ergaenze", "Vervollstaendige", "Setze ein" | Operationalisiertes Verb |
 | **MQ3 Material-Referenz-Verbot in frage (Q-M2-04)** | **Fragestamm enthaelt KEINE `[[mat-id\|...]]`-Links und KEINE (M[position])-Verweise.** Fragestellung ist rein inhaltlich formuliert. Material-Referenzen gehoeren AUSSCHLIESSLICH in Tipp Stufe 1. | Pruefung: `frage` enthaelt keinen `[[`-String und kein `(M` |
 | MQ3b Display-Referenzen in Tipps | Tipp 1 MUSS `[[mat-id\|Anzeigetext]]`-Inline-Link + (M[position]) enthalten (Material-Zuweisung). Tipp 2-3 duerfen Links enthalten. | Muster: `[[mat-1-2\|Europakarte von 1914]] (M7)` |
+| Metasprachliche Fragestellung ohne Inhaltsbezug | R7-SuS verstehen nicht, worauf sich die Frage bezieht | Abstrakte Begriffe (Widerspruch, Perspektive, Zusammenhang) durch konkretes Element ersetzen (Person, Ort, Ereignis) |
 
 ---
 
@@ -137,6 +156,7 @@ Referenz: `docs/checklisten/GUETEKRITERIEN_AUFGABEN.md`
   "material_referenz": ["mat-1-1"],
   "text_mit_luecken": "Im Absolutismus steuerte der Koenig die gesamte Wirtschaft. Diese Wirtschaftsform heisst ___. Der Staat foerderte den ___ von Waren ins Ausland und beschraenkte gleichzeitig die Einfuhr. Ziel war es, moeglichst viel ___ im eigenen Land zu behalten.",
   "loesung": ["Merkantilismus", "Export", "Gold"],
+  "antwortpool": ["Export", "Gold", "Manufaktur", "Merkantilismus"],
   "tipps": [
     { "stufe": 1, "text": "Alle drei Begriffe findest du im Infotext ueber die Wirtschaftspolitik. Es geht um eine bestimmte Wirtschaftsform und ihre Ziele." },
     { "stufe": 2, "text": "Die Wirtschaftsform heisst 'Merkantilismus'. Die anderen beiden Begriffe beschreiben, was der Staat foerderte und was im Land bleiben sollte." },
@@ -155,6 +175,7 @@ Negativbeispiel: "Ergaenze die fehlenden Fachbegriffe im folgenden Lueckentext, 
 Positivbeispiel: "Ergaenze die fehlenden Fachbegriffe."
 - `text_mit_luecken`: String, `___` als Platzhalter fuer jede Luecke. Reihenfolge der `___` entspricht Reihenfolge in `loesung`
 - `loesung`: Array von Strings, ein Eintrag pro Luecke in Reihenfolge ihres Auftretens im Text. Max. 2 Woerter pro Eintrag
+- `antwortpool`: Array von Strings, alphabetisch sortiert. Enthaelt alle Eintraege aus `loesung` PLUS genau 1 Distraktor. Laenge = `len(loesung) + 1`. PFLICHT fuer jeden Lueckentext.
 - `material_referenz`: Array mit mindestens 1 mat-ID
 - `tipps`: Array mit exakt 3 Objekten
 - `punkte`: Integer, Standardwert 10

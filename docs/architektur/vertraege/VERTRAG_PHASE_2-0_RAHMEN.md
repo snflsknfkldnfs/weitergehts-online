@@ -22,7 +22,40 @@
 ## Dispatch-Ablauf
 
 ```
-1. TAFELBILD_Mappe[N].md lesen → rahmen/hefteintrag.json schreiben (1:1, STRUKTUR-FREEZE)
+1. TAFELBILD_Mappe[N].md lesen → rahmen/hefteintrag.json schreiben (STRUKTUR-FREEZE).
+   1-pre. S-Zone-Autonomie-Filter (v3.4, PFLICHT):
+       situation.kontextsatz darf KEIN Vormappe-Wissen rekapitulieren. Er formuliert den
+       thematischen Einstieg in die AKTUELLE Stundenfrage. Max 1 Satz, der direkt auf die
+       Stundenfrage hinfuehrt, nicht zurueck auf vorherige Mappen.
+       FAIL: "Buendnisse machen aus einem Mord einen Weltkrieg." (rekapituliert Mappe 1+2)
+       PASS: "Im August 1914 brach der Erste Weltkrieg aus." (eigenstaendiger Einstieg)
+   1a. Schaubild-Integritaet pruefen (v2):
+       - knoten[] ist PFLICHT und nicht leer. Jeder Knoten hat id, text (max 12 W.), typ.
+       - verbindungen[] ist PFLICHT und nicht leer. Jede Verbindung hat von, nach, label (max 5 W.), typ.
+       - ordnungsmuster ist eines der 6 empirischen Typen:
+         parallel-kausal | sequenziell | kontrastierend | metaphorisch | relational | konzept-beispiel
+       - Jeder SCPL-Complication-Schritt korrespondiert mit min. 1 Knoten.
+   1a-post. Ordnungsmuster-Konsequenz (v3.4, PFLICHT):
+       Das gewaehlte ordnungsmuster steuert die SCPL-Textstruktur:
+       - parallel-kausal: Complication als parallele Ursachen. Problem/Loesung als gemeinsame Wirkung.
+       - sequenziell: Complication als chronologische Schritte mit temporalen Verbindungen.
+       - kontrastierend: Complication als Gegenueberstellung (Pol A vs. Pol B mit Wer/Warum).
+         Problem als Synthese der Spannung. Loesung integriert beide Pole.
+         Mindestens 1 Complication-Schritt MUSS als explizite Pol-Gegenueberstellung formuliert sein.
+       - konzept-beispiel: Complication als Beispiel-Reihe unter Oberbegriff.
+       - relational: Complication als Gruppen + Beziehungslinien.
+       - metaphorisch: Complication als Metapher-Komponenten.
+       FAIL wenn: ordnungsmuster="kontrastierend", aber Complication-Schritte sind linear/narrativ
+       statt als Pol-Gegenueberstellung strukturiert.
+   1b. Text-Dichte pruefen (v2 — Schaubild-Elaborierungs-Modell):
+       - SCPL-Texte (situation.kontextsatz, complication[].schritt, problem.satz):
+         Max 15 Woerter pro Einheit. Kompakt-Stil (Kurzphrase oder Kurzesatz), kein Fliesstext.
+         Elaborierende Kurzesaetze nur wo sie eine Verbindung fuer R7-SuS explizieren,
+         die ohne Explizierung nicht selbsttragend waere. Kein atmosphaerischer Prosa-Stil.
+       - scpl.loesung[]: 1-3 Saetze, max 20 Woerter pro Satz.
+         Darf elaborierter sein als TB-Kompaktform. Jeder Satz beantwortet einen Aspekt der Stundenfrage.
+       - Knoten-Texte: Max 12 Woerter. Nominalstil oder Kurzphrase.
+       - Verbindungs-Labels: Max 5 Woerter.
 2. MATERIAL_GERUEST Einstieg-Sektion lesen → rahmen/einstieg.json schreiben
 3. MATERIAL_GERUEST Sicherung-Sektion lesen
 4. rahmen/hefteintrag.json lesen → scpl.loesung[] extrahieren (Konsistenzpruefung: stimmen Kernerkenntnisse?)
@@ -38,6 +71,8 @@
    Bei Abweichung: Stundenfrage aus hefteintrag.json hat Vorrang.
 8. Q-Gate pruefen — Mechanik: docs/architektur/Q-GATE-MECHANIK.md (§3 Aggregation, §4 Nachbesserung, §6 Output-Format).
    Katalog: Q-GATE-MECHANIK.md §7.3 (Rahmen-Q-Gate).
+   Zusaetzlich: HE14 (Schaubild-Charakter), HE15 (Ordnungsmuster-Treue), HE16 (Merksatz-Kalibrierung)
+   aus GUETEKRITERIEN_HEFTEINTRAG_PRODUKT.md als Pre-Check.
 9. Q-Gate-Ergebnis in Q-GATE-LOG.md schreiben (Format: Q-GATE-MECHANIK.md §8).
 ```
 

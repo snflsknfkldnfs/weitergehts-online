@@ -150,6 +150,7 @@ Gewichtete Kriterien fuer den AGENT_HEFTEINTRAG Q-Gate. Drei Prioritaetsstufen: 
 | G12 | **Sprachregister-Passung** | Sprachregister passt zum Themencharakter (analytisch fuer Politik, erfahrungsbezogen fuer Alltag) | Empirie: Sprachregister-Progression |
 | G13 | **Stundenfrage als Titel** | Hefteintrag-Titel als problemorientierte, schuelernahe Frage formuliert (max. 12 Woerter). Merksatz in Merkbox ist die qualifizierte Antwort. | Empirie: Alle 8 TBs nutzen Frage-Titel. v3.1 Design-Entscheidung: Stundenfrage als Pflicht. |
 | G14 | **SCPL-Kohaerenz** | Jede SCPL-Zone baut logisch auf der vorherigen auf: Situation → Complication → Problem → Loesung. Keine Zone darf isoliert stehen oder eine vorherige Zone inhaltlich widersprechen. Loesung (Merkbox) muss die Stundenfrage direkt beantworten. | v3.1 SCPL-Evaluation (EVALUATION_SCPL_HEFTEINTRAG.md) |
+| G15 | **Ordnungsmuster-Konsequenz** | Die SCPL-Textstruktur folgt dem Mapping des gewaehlten Ordnungsmusters. Bei "kontrastierend": Mindestens 1 Complication-Schritt als Pol-Gegenueberstellung (Pol A vs. Pol B mit Wer/Warum), nicht als lineare Narration. Bei "parallel-kausal": Complication als parallele Ursachen-Liste. Bei "sequenziell": Complication als chronologische Schritte. FAIL wenn: ordnungsmuster und SCPL-Textstruktur divergieren (z.B. "kontrastierend" gewaehlt, aber lineare Liste statt Gegenueberstellung). | Browser-Review Mappe 3 (D3c), empirische Ordnungsmuster-Analyse v2 |
 
 ---
 

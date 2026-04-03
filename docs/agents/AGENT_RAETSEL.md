@@ -136,7 +136,12 @@ Das Operationalisierungsziel bestimmt, WAS eine Aufgabe testet — nicht WIE. Es
 2. TB-Knoten-Merksatz als Inhaltsziel nehmen (Zone → Knoten-Zuordnung)
 3. AFB-Operator (aus Progressionsplan) als kognitive Anforderung
 4. Kombination: `[Operator] + [Merksatz als Frageform]`
-5. Gegenpruefung: Ist das Ziel aus dem Ziel-Material beantwortbar? Wenn nein → anderes Material zuweisen oder Ziel anpassen
+5. **Inhaltliche Verankerung (v3.4, PFLICHT):** Abstrakte Metabegriffe (Widerspruch, Zusammenhang, Perspektive, Quelle) durch konkretes Material-Element ersetzen (Person, Ort, Gegenstand, Ereignis). R7-SuS muessen sofort verstehen, worauf sich die Frage bezieht.
+   - FAIL: "Erklaere den Widerspruch zwischen Foto und Quellen"
+   - PASS: "Warum zeigt das Foto Jubel, aber die Tagebuecher berichten von Angst?"
+   - FAIL: "Ordne die Aussagen den Perspektiven zu"
+   - PASS: "Wer war begeistert, wer hatte Angst, wer folgte aus Pflicht?"
+6. Gegenpruefung: Ist das Ziel aus dem Ziel-Material beantwortbar? Wenn nein → anderes Material zuweisen oder Ziel anpassen
 
 **Beispiel:**
 - TB-Knoten: k1-2 "Buendnissysteme teilten Europa in zwei Lager"

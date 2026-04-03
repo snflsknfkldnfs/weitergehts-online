@@ -293,6 +293,20 @@ Strukturierter Vorher/Nachher-Vergleich. Wird VOR Browser-Review geschrieben (Pr
 
 **Artefakt:** `docs/projekt/C1_EVALUATION_MAPPE3.md`
 
+### C1b: Browser-Review-Patches D1-D3c — ERLEDIGT
+
+Browser-Review Mappe 3 ergab 3 Findings, die auf 3 generalisierbare Architektur-Defizite zurueckgefuehrt wurden:
+
+| Patch | Finding | Betroffene Dateien | Engine? |
+|---|---|---|---|
+| D1 | LT ohne Antwortpool | SUB_AUFGABE_LT, GUETEKRITERIEN_AUFGABEN (A4-LT) | Ja |
+| D2 | Fragestellungen zu abstrakt | GUETEKRITERIEN_AUFGABEN (A2), AGENT_RAETSEL, 5x SUB_AUFGABE_*.md | Nein |
+| D3a | S-Zone rekapituliert Vormappe | VERTRAG_PHASE_2-0, GUETEKRITERIEN_HE_PRODUKT (HE17) | Nein |
+| D3b | Komplexe Konzepte ohne Erklaerung | GUETEKRITERIEN_HE_PRODUKT (HE18) | Nein |
+| D3c | Ordnungsmuster steuert Text nicht | VERTRAG_PHASE_2-0, GUETEKRITERIEN_HE_ENTWURF (G15) | Nein |
+
+**Status:** 12 docs/-Dateien gepatcht. Engine-Patch D1 (antwortpool-Rendering) noch offen → Claude-Code-Uebergabe. Mappe-3-Daten-Nachpatch (antwortpool-Felder, Fragestamm-Verankerung, Hefteintrag D3a/D3b/D3c) noch offen.
+
 ### C2: Mappe 4 als Validierung
 
 Mappe 4 Vollproduktion (Phase 2.0→4) mit allen Patches und Architektur-Revisionen aktiv. Browser-Review als empirische Pruefung der Revision.
@@ -334,11 +348,11 @@ Phase C (nach A+B):
 | 1 | A1-A7 (alle Patches) | Alle Vertraege + Subagenten gepatcht | 4-6h |
 | 2 | B1 (Hefteintrag Analyse + Gegenmodell) | Referenz-Hefteintrag steht | 3-4h |
 | 3 | B1 (Vertrag) + B2 (Didaktische Professionalisierung) | Architektur-Revisionen abgeschlossen | 3-4h |
-| 4 | C1-S1+S2 (Patches + Aufgaben-Neugenerierung) | Mappe 3 v2-Aufgaben stehen, Q-Gate A1-A18 PASS | 3-4h |
-| 4b | C1-S3+S4 (Assembly + Evaluation) | data.json gepatcht, Evaluationsbericht steht | 1-2h |
-| 5+ | C2 (Mappe 4 Produktion) | Validierung der Revision | 12-16h |
+| 4 | C1-S1+S2 (Patches + Aufgaben-Neugenerierung) | Mappe 3 v2-Aufgaben stehen, Q-Gate A1-A18 PASS | 3-4h | **DONE** |
+| 4b | C1-S3+S4 (Assembly + Evaluation) | data.json gepatcht, Evaluationsbericht steht | 1-2h | **DONE** |
+| 5+ | C2 (Mappe 4 Produktion) | Validierung der Revision | 12-16h | OFFEN |
 
-**Kritischer Pfad:** A* → B1+B2 → C1 (S1→S2→S3→S4) → C2.
+**Kritischer Pfad:** A* → B1+B2 → C1 (S1→S2→S3→S4) → C2. C1 ERLEDIGT (Session 8). Naechster Schritt: Browser-Test Mappe 3, dann C2.
 
 ---
 

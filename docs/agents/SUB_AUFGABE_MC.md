@@ -121,6 +121,7 @@ SUB_AUFGABE_MC prueft folgende A-Kriterien auf Subagent-Ebene:
 | A7 Operator-Praezision | Operationalisiertes Verb im Fragestamm? | Gegen Operatoren-Tabelle pruefen |
 | **MQ3 Material-Referenz-Verbot in frage (Q-M2-04)** | **Fragestamm enthaelt KEINE `[[mat-id\|...]]`-Links und KEINE (M[position])-Verweise.** Fragestellung ist rein inhaltlich formuliert. Material-Referenzen gehoeren AUSSCHLIESSLICH in Tipp Stufe 1. | Pruefung: `frage` enthaelt keinen `[[`-String und kein `(M` |
 | MQ3b Display-Referenzen in Tipps | Tipp 1 MUSS `[[mat-id\|Anzeigetext]]`-Inline-Link + (M[position]) enthalten (Material-Zuweisung). Tipp 2-3 duerfen Links enthalten. | Muster: `[[mat-1-2\|Europakarte von 1914]] (M7)` |
+| Metasprachliche Fragestellung ohne Inhaltsbezug | R7-SuS verstehen nicht, worauf sich die Frage bezieht | Abstrakte Begriffe (Widerspruch, Perspektive, Zusammenhang) durch konkretes Element ersetzen (Person, Ort, Ereignis) |
 
 **Nicht auf SUB_MC-Ebene geprueft** (Orchestrator-Verantwortung): A5 (Progression), A8-A10 (mappenweite Kriterien), A12 (Sequenzlogik).
 

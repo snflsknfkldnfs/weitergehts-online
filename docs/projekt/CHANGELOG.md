@@ -6,6 +6,18 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ## 2026-04-03
 
+### Browser-Review Mappe 3 → 5 Architektur-Patches D1-D3c (Infrastruktur-Revision)
+- **Phase:** Infrastruktur-Revision, Post-C1 Browser-Review (DONE)
+- **Aufgabe:** 3 Browser-Findings auf Architektur-Defizite zurueckfuehren und generalisierte Patches ableiten
+- **Ergebnis:**
+  - D1 Antwortpool-Pflicht: `antwortpool`-Feld (N+1) als PFLICHT in SUB_AUFGABE_LUECKENTEXT. Tipp-2-Regel v3.4 (Pool nicht mehr in Tipps). A4-LT erweitert. Engine-Aenderung noetig.
+  - D2 Inhaltliche Verankerung: A2 um Verankerungspflicht erweitert. AGENT_RAETSEL Operationalisierungsziel Schritt 5 (v3.4). Anti-Pattern "Metasprachliche Fragestellung" in alle 5 SUB_AUFGABE_*.md.
+  - D3a S-Zone-Filter: VERTRAG_PHASE_2-0 Schritt 1-pre (kein Vormappe-Wissen). HE17 (S-Zone-Autonomie) als MUSS.
+  - D3b Konzept-Elaborierung: HE18 (Konzept-Elaborierung) als MUSS. Komplexe Knoten brauchen Erklaerung.
+  - D3c Ordnungsmuster-Templates: VERTRAG_PHASE_2-0 Schritt 1a-post (Muster→SCPL-Mapping). G15 (Ordnungsmuster-Konsequenz) als SOLL.
+- **Artefakte:** 12 Dateien gepatcht (docs/ Domaene)
+- **Naechster Schritt:** Engine-Patch D1 (Antwortpool-Rendering) + Mappe-3-Daten-Nachpatch + C2
+
 ### Phase C1 Mappe-3-Hybrid-Patch (Infrastruktur-Revision)
 - **Phase:** Infrastruktur-Revision Phase C1 (DONE)
 - **Aufgabe:** Mappe-3-Daten retroaktiv patchen — Hybrid-Ansatz (mechanische Patches + Aufgaben-Neugenerierung via v2-Pipeline)

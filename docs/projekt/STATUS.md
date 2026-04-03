@@ -1,12 +1,19 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-03 (Session 8, Infrastruktur-Revision Phase C1 DONE)
-**Aktuelle Phase:** **Infrastruktur-Revision vor Mappe 4. Phase A: DONE. Phase B1+B2: DONE. Phase C1 Mappe-3-Hybrid-Patch: DONE. Naechster Schritt: Browser-Test Mappe 3 + Phase C2 (Mappe 4).**
+**Letzte Aktualisierung:** 2026-04-03 (Session 8, C1 DONE + D1-D3 Browser-Review-Patches DONE)
+**Aktuelle Phase:** **Infrastruktur-Revision vor Mappe 4. A-C1: DONE. D1-D3 Browser-Review-Patches: DONE. Naechster Schritt: Engine-Patch Antwortpool + Mappe-3-Daten-Nachpatch + C2 (Mappe 4).**
 **Letzter Arbeitsschritt:** C1 Mappe-3-Hybrid-Patch (4 Stufen): (1) Mechanische Patches: 6 Patches auf 5 Dateien (mat-3-4, mat-3-5, einstieg, sicherung, hefteintrag) — Encoding B2, Quellenangaben B3, Einleitungen B4, Hefteintrag B10, Sicherung B11. (2) Aufgaben-Neugenerierung: PROGRESSIONSPLAN_v2.md (SCPL-Mapping, Typ-Begruendungen, Material-Aktivierung A18, Erarbeitbarkeits-Gegenpruefung 7/7 PASS). 7 neue Aufgaben via v2-Pipeline (variable Aufgabenzahl, inhaltsgesteuerte Typauswahl). v1-Aufgaben archiviert. (3) Assembly: data.json per Python-Skript gepatcht (7 Aufgaben, 5 Materialien, Hefteintrag v2, Rahmen). (4) Q-Gate A1-A18: 25/25 PASS. Evaluationsbericht C1_EVALUATION_MAPPE3.md mit 10 Dimensionen Vorher/Nachher + 7 Learnings.
-**Naechster Schritt:** Browser-Test Mappe 3 (User-Review: GitHub Pages Build + visueller Test). Dann Phase C2: Mappe-4-Validierung. Stretch: Engine-Uebergabe O3/O5/O6.
+**Naechster Schritt:** (1) Engine-Patch: escape-engine.js Antwortpool-Rendering (Claude-Code-Uebergabe). (2) Mappe-3-Daten-Nachpatch: antwortpool-Felder + Fragestamm-Verankerung + Hefteintrag D3a/D3b/D3c. (3) Phase C2: Mappe-4-Validierung. Stretch: Engine-Uebergabe O3/O5/O6.
 **Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. ARTEFAKT_INVENTAR Mappe 2+3 nachpflegen. Engine-Erweiterungen O3/O5/O6 (Ordnungsmuster-Rendering, Pfeiltypen, Farbsemantik) als Stretch-Goal fuer Claude-Code-Uebergabe.
 
 **Abgeschlossen seit letztem Update:**
+- Browser-Review Mappe 3 → 5 Architektur-Patches (D1-D3c):
+  - D1: Antwortpool-Pflicht fuer Lueckentexte (N+1 Begriffe, sichtbar). SUB_AUFGABE_LUECKENTEXT + A4-LT. Engine-Aenderung noetig.
+  - D2: Inhaltliche Verankerung aller Fragestellungen (konkretes Element statt Metasprache). A2 + AGENT_RAETSEL + alle 5 SUB_AUFGABE_*.md.
+  - D3a: S-Zone-Autonomie (kein Vormappe-Wissen im Kontextsatz). VERTRAG_PHASE_2-0 + HE17.
+  - D3b: Konzept-Elaborierung (komplexe Knoten brauchen Erklaerung). HE18.
+  - D3c: Ordnungsmuster-Templates (Muster steuert SCPL-Textstruktur). VERTRAG_PHASE_2-0 + G15.
+  - 12 Dateien gepatcht, 0 Engine-Dateien (Engine-Patch D1 als separater Claude-Code-Dispatch).
 - Phase C1 Mappe-3-Hybrid-Patch (4 Stufen):
   - Stufe 1: 6 mechanische Patches auf mat-3-4, mat-3-5, einstieg, sicherung, hefteintrag (Encoding, Quellenangaben, Einleitungen, Hefteintrag v2). Alle JSON-validiert.
   - Stufe 2: PROGRESSIONSPLAN_v2.md + 7 Aufgaben (aufgabe-3-1..3-7) neu generiert. v1-Aufgaben archiviert nach _v1_archiv/. Zentrale Verbesserungen: mat-3-2/mat-3-3 als Primaerquelle (A18), RF-Typ eliminiert (B8), SCPL-Zonen explizit (A16/A17).
