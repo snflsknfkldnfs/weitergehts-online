@@ -308,6 +308,10 @@
           "loesung": [
             "Sonne"
           ],
+          "antwortpool": [
+            "Macht",
+            "Sonne"
+          ],
           "tipps": [
             {
               "stufe": 1,
@@ -833,6 +837,13 @@
             "Ermittlungen",
             "48"
           ],
+          "antwortpool": [
+            "24",
+            "48",
+            "Blankoscheck",
+            "Ermittlungen",
+            "Ultimatum"
+          ],
           "tipps": [
             {
               "stufe": 1,
@@ -1180,6 +1191,13 @@
             "Patriotismus",
             "Propaganda"
           ],
+          "antwortpool": [
+            "Augusterlebnis",
+            "Kriegsbegeisterung",
+            "Nationalismus",
+            "Patriotismus",
+            "Propaganda"
+          ],
           "tipps": [
             {
               "stufe": 1,
@@ -1351,6 +1369,13 @@
             "Kriegskredite",
             "Hugo Haase",
             "Burgfrieden"
+          ],
+          "antwortpool": [
+            "Burgfrieden",
+            "Hugo Haase",
+            "Kriegskredite",
+            "Reichstag",
+            "SPD"
           ],
           "tipps": [
             {
