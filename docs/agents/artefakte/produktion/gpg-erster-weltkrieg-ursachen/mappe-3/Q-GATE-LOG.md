@@ -767,3 +767,61 @@ Kein Re-Dispatch erforderlich. Aufgaben-Set Mappe 3 ist cross-konsistent.
 - `escape-games/gpg-erster-weltkrieg-ursachen/data.json` (aktualisiert, +mappe-3)
 - `assets/img/gpg-erster-weltkrieg-ursachen/img-3-1.jpg` (neu)
 - `assets/img/gpg-erster-weltkrieg-ursachen/img-3-2.jpg` (neu)
+- `escape-games/gpg-erster-weltkrieg-ursachen/mappe-3.html` (neu, Phase 3.3)
+
+---
+
+## Phase 4: Browser-Validierung
+
+**Datum:** 2026-04-03
+**URL:** https://weitergehts.online/escape-games/gpg-erster-weltkrieg-ursachen/mappe-3.html
+**Methode:** Cowork via Chrome (Claude in Chrome MCP)
+
+### Phase 4.1: Funktionstest
+
+| Test | Ergebnis |
+|---|---|
+| Seite laedt, Titel korrekt ("Mappe 3: Kriegsbegeisterung 1914") | PASS |
+| 5 Materialien gerendert (Sachtext, 2 Fotos, Quellentext, Tagebuecher) | PASS |
+| Bilder geladen (img-3-1.jpg Jubel, img-3-2.jpg Truppentransport) | PASS |
+| Aufgabe 1 Lueckentext: 5 Inputs, korrekte Antworten akzeptiert | PASS |
+| Aufgabe 2 MC: 4 Optionen, korrekte Antwort akzeptiert | PASS |
+| Aufgabe 3 Zuordnung: 5 Items, 3 Kategorien, korrekte Zuordnung akzeptiert | PASS |
+| Aufgabe 4 Reihenfolge: Up/Down-Buttons funktional, korrekte Reihenfolge akzeptiert | PASS |
+| Aufgabe 5 Freitext-Code: Keywords (Druck, Meinung, Angst) erkannt | PASS |
+| Fortschrittsanzeige: "5 von 5 Aufgaben geloest (100%)" | PASS |
+| Loesungswort-Puzzle: 6 Tiles (A, G, U, U, S, T) angezeigt | PASS |
+| checkCode('mappe-3', 'AUGUST'): correct=true | PASS |
+| Hefteintrag/Sicherung: Luecken, Merksaetze, Stundenfrage, Ueberleitung | PASS |
+| Navigation: "Mappe 3 von 4", Links auf index.html + mappe-4.html | PASS |
+
+**Ergebnis: 13/13 PASS**
+
+### Phase 4.2: WCAG-Audit (P13)
+
+**Standard:** WCAG 2.1 AA (Browser-basiert)
+
+| Pruefung | Ergebnis | Details |
+|---|---|---|
+| Landmarks (header, nav, main, footer) | PASS | Alle 4 vorhanden |
+| HTML lang-Attribut | PASS | lang="de" |
+| Bilder alt-Texte | PASS | Alle img haben alt |
+| Form-Labels | PASS | Alle inputs/selects haben aria-label oder label |
+| Buttons zugaenglich | PASS | Alle buttons haben Text oder aria-label |
+| Farbkontrast Titel (11.64:1) | PASS | Schwelle 3:1 (Large Text) |
+| Farbkontrast Buttons (7.42:1) | PASS | Schwelle 4.5:1 |
+| Farbkontrast Fortschritt (4.84:1) | PASS | Schwelle 4.5:1 |
+| Farbkontrast Body-Text (12.54:1) | PASS | Schwelle 4.5:1 |
+| Bilder explizite Dimensionen (CLS) | PASS | Alle img haben width/height |
+| Keyboard-fokussierbare Elemente | INFO | 54 fokussierbare Elemente |
+
+**Findings:**
+
+- **W1 (WARNING, Engine-Level):** Heading-Hierarchie springt von H1 direkt auf H3 (Material-Titel). H2 fehlt zwischen Header und Material-Bereich. Engine rendert Material-Titel als H3 — korrekt fuer verschachtelte Semantik, aber WCAG empfiehlt lueckenlose Hierarchie. **Fix:** Engine-Level (escape-engine.js Material-Renderer), nicht mappe-3-spezifisch.
+- **W2 (WARNING, CSS-Level):** Footer-Links Hoehe 17px — unter WCAG 2.5.8 Target Size Minimum (24px). **Fix:** CSS-Level (base.css footer), nicht mappe-3-spezifisch.
+
+**Ergebnis: 11/11 PASS, 2 Warnings (Engine/CSS-Level, nicht mappe-spezifisch)**
+
+### Gesamt-Ergebnis Phase 4
+
+**PASS** — Mappe 3 funktional validiert und WCAG-geprueft. Keine mappe-spezifischen Blocker. 2 Warnings betreffen Engine/CSS-Infrastruktur (H-Hierarchie, Footer-Touch-Target) und gelten fuer alle Mappen gleichermassen.
