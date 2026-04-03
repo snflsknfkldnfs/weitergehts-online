@@ -2798,6 +2798,28 @@ var EscapeEngine = (function () {
    * @private
    */
   function _renderFreitextCode(container, aufgabe, index, geloest) {
+    // Teilfragen-Rendering (v3.9)
+    if (aufgabe._meta && aufgabe._meta.teilfragen && aufgabe._meta.teilfragen.length > 0) {
+      var teilfragenDiv = document.createElement('div');
+      teilfragenDiv.className = 'aufgabe__teilfragen';
+
+      var label = document.createElement('p');
+      label.className = 'aufgabe__teilfragen-label';
+      label.textContent = 'Berücksichtige:';
+      teilfragenDiv.appendChild(label);
+
+      var ul = document.createElement('ul');
+      ul.className = 'aufgabe__teilfragen-liste';
+      aufgabe._meta.teilfragen.forEach(function (tf) {
+        var li = document.createElement('li');
+        li.textContent = tf;
+        ul.appendChild(li);
+      });
+      teilfragenDiv.appendChild(ul);
+
+      container.appendChild(teilfragenDiv);
+    }
+
     var freitextDiv = document.createElement('div');
     freitextDiv.className = 'aufgabe__freitext';
 

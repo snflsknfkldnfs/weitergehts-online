@@ -2318,3 +2318,34 @@ body.quellen-hidden figcaption .material__quelle-teil {
     display: none !important;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Teilfragen-Denkgerüst (v3.9)
+   -------------------------------------------------------------------------- */
+.aufgabe__teilfragen {
+  margin: 0.75rem 0;
+  padding: 0.75rem 1rem;
+  background: var(--color-surface, #f8f8f4);
+  border-left: 3px solid var(--color-primary, #8B4513);
+  border-radius: 0 4px 4px 0;
+}
+
+.aufgabe__teilfragen-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin: 0 0 0.5rem 0;
+  color: var(--color-text, #333);
+}
+
+.aufgabe__teilfragen-liste {
+  margin: 0;
+  padding-left: 1.25rem;
+  list-style: decimal;
+}
+
+.aufgabe__teilfragen-liste li {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 0.35rem;
+  color: var(--color-text, #333);
+}
