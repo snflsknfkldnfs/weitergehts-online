@@ -1,12 +1,16 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-02 (Session 4, Pipeline-Kette mat-3-3..3-5 komplett)
-**Aktuelle Phase:** **C+ Phase III (Validierung) — Schritt 7 abgeschlossen. Mappe 3 Material-Produktion komplett (5/5 Materialien).**
-**Letzter Arbeitsschritt:** Pipeline-Kette mat-3-3 (BQ), mat-3-4 (QT), mat-3-5 (TB) als realistisch simulierte Dispatch-Kette produziert. Alle 3 GESAMT-PASS (mat-3-3: 0F/1W, mat-3-4: 0F/0W, mat-3-5: 0F/0W). P2-Fix bestaetigt (Umlaute korrekt). Erster QT-Dispatch und erster TB-Dispatch validiert. Read-Step 8 (Kernerkenntnisse) bei mat-3-5 erstmals aktiv — alle 3 Kernerkenntnisse transportiert.
-**Naechster Schritt:** C+ Phase III Schritt 8 (Pipeline-Fazit + Findings-Konsolidierung). Dann Phase IV (Schritte 9: Dokumentation, ggf. ARTEFAKT_INVENTAR Mappe 3). Mappe 3 Phase 2.1c (Ueberleitungen) und Phase 2.2 (Aufgaben) stehen noch aus.
+**Letzte Aktualisierung:** 2026-04-03 (Session 5, Pipeline-Fazit konsolidiert)
+**Aktuelle Phase:** **C+ Phase IV (Produktion + Auswertung) — Schritt 8 Phase 2.1 DONE. Pipeline-Fazit erstellt (PROZESSTEST_MAPPE3_ERGEBNIS.md). Entscheidung: C+ FORTSETZEN.**
+**Letzter Arbeitsschritt:** PROZESSTEST_MAPPE3_ERGEBNIS.md erstellt. Metriken: 5/5 GESAMT-PASS, 4/5 First-Pass, ~17 min Nacharbeit (vs. ~6h Mappe 2 = 95% Reduktion). 0 systemische Fehler. Decision-Tree 9/9 Steps exercised. Q-Gate konsistent und deterministisch.
+**Naechster Schritt:** Mappe 3 Phase 2.2a (Progressionsplan), dann Phase 2.2b (5 Aufgaben), Phase 2.2c (Cross-Validierung), Phase 3 (Assembly), Phase 4 (Browser-Validierung).
 **Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. Engine-Fallback (Ueberleitung ID-Pattern), ARTEFAKT_INVENTAR Mappe 2+3 nachpflegen. BQ-3 (Bild ≠ Wirklichkeit) Prompt-Verstaerkung (P3) noch offen.
 
 **Abgeschlossen seit letztem Update:**
+- C+ Schritt 8 Pipeline-Fazit (PROZESSTEST_MAPPE3_ERGEBNIS.md):
+  - 8 Sektionen: Metriken, Fehlertypen-Vergleich, Q-Gate-Konsistenz, Didaktische Qualitaet, Findings, Nacharbeit, offene Punkte, Fazit.
+  - Entscheidungsmatrix: Nacharbeit ~17 min (< 3h), 0 systemische Fehler → C+ FORTSETZEN.
+  - AUSFUEHRUNGSPLAN_C_PLUS.md Schritte 7+8 als DONE markiert, Schritt 9 als TEILWEISE.
 - C+ Schritt 7 Pipeline-Kette mat-3-3..3-5:
   - mat-3-3 (BQ, Truppentransport): Isolierter Subagent. Q-Gate GESAMT-PASS (0F, 1W BQ-3). P2-Fix bestaetigt (UTF-8 korrekt). k3-1 + k3-4 abgedeckt.
   - mat-3-4 (QT, Drei Stimmen): Erster Quellentext-Dispatch. 3 Originalzitate (Zweig, SPD Bremen, Haase). Q-Gate GESAMT-PASS (0F, 0W). k3-5 + k3-6 erstmals eingefuehrt. Dispatcher-Korrektur: Zweig "Tagebucheintrag" → "Erinnerungen".

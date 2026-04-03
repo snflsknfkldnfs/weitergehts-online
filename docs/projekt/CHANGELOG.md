@@ -4,6 +4,24 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-03
+
+### C+ Schritt 8 Pipeline-Fazit konsolidiert (abgeschlossen)
+- **Phase:** C+ Phase IV — Produktion + Auswertung (Schritt 8/9 Teilergebnis)
+- **Zweck:** Konsolidierung aller Pipeline-Validierungsdaten aus Phase 2.1 in formales Prozesstest-Ergebnis.
+- **Ergebnis:** PROZESSTEST_MAPPE3_ERGEBNIS.md mit 8 Sektionen:
+  - Prozesstest-Metriken: 6 Dispatches, 1 Nachbesserung, 4/5 First-Pass-Rate
+  - Q-Gate-Ergebnisse: 5/5 GESAMT-PASS, 3 WARNs (1x M8, 2x BQ-3), Q-Gate deterministisch
+  - Decision-Tree-Abdeckung: 9/9 Steps exercised, alle konditionalen Pfade aktiviert
+  - Fehlertypen-Vergleich: 6 Mappe-2-Fehlertypen eliminiert, 3 neue (0 systemisch, P2 gefixt)
+  - Nacharbeit: ~17 min (vs. ~6h Mappe 2 = 95% Reduktion)
+  - Entscheidung: C+ FORTSETZEN (Nacharbeit < 3h, keine systemischen Fehler)
+- **AUSFUEHRUNGSPLAN aktualisiert:** Schritt 7 DONE, Schritt 8 Phase 2.1 DONE, Schritt 9 TEILWEISE.
+- **Neue Dateien:** docs/projekt/PROZESSTEST_MAPPE3_ERGEBNIS.md
+- **Geaenderte Dateien:** AUSFUEHRUNGSPLAN_C_PLUS.md, STATUS.md, CHANGELOG.md
+
+---
+
 ## 2026-04-02
 
 ### Pipeline-Kette mat-3-3..3-5: Realistisch simulierte Dispatch-Kette (abgeschlossen)

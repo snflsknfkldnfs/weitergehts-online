@@ -210,7 +210,7 @@ Mappe 3 als Prozesstest. Post-Produktion entscheidet ueber Mappe-4-Strategie.
 
 ---
 
-### Schritt 7: Test-Dispatch mat-3-1 mit verbessertem System
+### Schritt 7: Test-Dispatch mat-3-1 mit verbessertem System ✓ DONE (2026-04-02)
 
 **Kategorie:** Validierung (systemisch)
 **Aufwand:** 2-3h (1 Session)
@@ -235,11 +235,12 @@ Mappe 3 als Prozesstest. Post-Produktion entscheidet ueber Mappe-4-Strategie.
 
 ---
 
-### Schritt 8: Mappe 3 Vollproduktion als Prozesstest
+### Schritt 8: Mappe 3 Vollproduktion als Prozesstest — Phase 2.1 DONE (2026-04-03)
 
 **Kategorie:** Produktion (Game-spezifisch)
 **Aufwand:** 12-16h (3-4 Sessions)
 **Abhaengigkeiten:** Schritt 7 PASS.
+**Zwischenstand:** Phase 2.0 DONE, Phase 2.1 DONE (5/5 Materialien, Pipeline-Fazit erstellt). Naechste: Phase 2.2a (Progressionsplan).
 
 **Phasen:**
 1. Phase 2.0: Rahmen (hefteintrag.json, einstieg.json) — 1 Session
@@ -262,7 +263,7 @@ Mappe 3 als Prozesstest. Post-Produktion entscheidet ueber Mappe-4-Strategie.
 
 ---
 
-### Schritt 9: Post-Produktion — Learnings + Mappe-4-Entscheidung
+### Schritt 9: Post-Produktion — Learnings + Mappe-4-Entscheidung (TEILWEISE: Pipeline-Fazit Phase 2.1 erstellt 2026-04-03)
 
 **Kategorie:** Methoden-agnostisch (PM)
 **Aufwand:** 4-6h (1-2 Sessions)
