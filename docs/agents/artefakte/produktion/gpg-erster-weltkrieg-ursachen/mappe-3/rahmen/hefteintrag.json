@@ -3,12 +3,12 @@
   "ordnungsmuster": "multiperspektivisch",
   "scpl": {
     "situation": {
-      "kontextsatz": "Die Buendnisse haben aus einem Mord einen Weltkrieg gemacht. Millionen Soldaten werden mobilisiert — doch wie reagieren die Menschen?",
+      "kontextsatz": "Die Buendnisse haben aus einem Mord einen Weltkrieg gemacht. Soldaten steigen in Zuege und schreiben 'Ausflug nach Paris' auf die Waggons — doch ist das wirklich Begeisterung?",
       "fachbegriffe": ["Mobilmachung"]
     },
     "complication": [
       {
-        "schritt": "In den Grossstaedten herrscht Aufregung. Soldaten schreiben 'Ausflug nach Paris' auf ihre Zuege. Historiker nennen dieses Gefuehl das Augusterlebnis — die Kriegsbegeisterung.",
+        "schritt": "In den Grossstaedten herrscht Aufregung. Menschenmengen jubeln, Fahnen wehen — Historiker nennen dieses Gefuehl das Augusterlebnis: die Kriegsbegeisterung.",
         "fachbegriff": "Kriegsbegeisterung (Augusterlebnis)",
         "darstellung": null
       },
@@ -18,13 +18,13 @@
         "darstellung": null
       },
       {
-        "schritt": "Doch die Begeisterung ist nicht allgemein. 288 Anti-Kriegs-Versammlungen, 100.000 Demonstranten in Berlin. Auf dem Land herrscht Angst statt Freude.",
+        "schritt": "Doch die Begeisterung ist nicht allgemein. Auf dem Land herrscht Angst — Frauen weinen am Bahnhof, Bauern fuerchten um die Ernte. 288 Anti-Kriegs-Versammlungen zeigen: Gegenstimmen gibt es auch in den Staedten.",
         "fachbegriff": "Gegenstimmen",
         "darstellung": null
       }
     ],
     "problem": {
-      "satz": "Die SPD stimmt fuer die Kriegskredite — Burgfrieden. Die truegerische Einheit verdeckt die tiefen Risse in der Gesellschaft.",
+      "satz": "Die SPD stimmt fuer die Kriegskredite — alle Parteien stehen zusammen: Burgfrieden. Die truegerische Einheit verdeckt die tiefen Risse in der Gesellschaft.",
       "fachbegriff": "Burgfrieden"
     },
     "loesung": [

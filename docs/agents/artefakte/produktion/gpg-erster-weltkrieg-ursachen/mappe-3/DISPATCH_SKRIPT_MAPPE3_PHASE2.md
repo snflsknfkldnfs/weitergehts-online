@@ -10,7 +10,7 @@
 
 | # | Dispatch | Status | Q-Gate | Metriken-Notiz |
 |---|---|---|---|---|
-| D0 | Phase 2.1c: Material-Cross + Ueberleitungen + Hefteintrag-Revision | OFFEN | — | — |
+| D0 | Phase 2.1c: Material-Cross + Ueberleitungen + Hefteintrag-Revision | DONE | GESAMT-PASS (0F, 0W) | Achsen 1-4: 4x PASS. Achse 5: 4/4 UE alle UE-1..5 PASS. Achse 6: 4 Formulierungsaenderungen, zusammenfassung 42W, ueberleitung produziert. Stufe-2 5/5 PASS. HE1-HE13 12/12 PASS. |
 | D1 | Phase 2.2a: Progressionsplan | OFFEN | — | — |
 | D2 | Phase 2.2b-1: Aufgabe 1 (Position 1, AFB I) | OFFEN | — | — |
 | D3 | Phase 2.2b-2: Aufgabe 2 (Position 2, AFB I) | OFFEN | — | — |

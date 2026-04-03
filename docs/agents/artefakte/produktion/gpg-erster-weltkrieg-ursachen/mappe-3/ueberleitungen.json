@@ -1,0 +1,25 @@
+{
+  "mappe": "3",
+  "ueberleitungen": [
+    {
+      "von": "mat-3-1",
+      "nach": "mat-3-2",
+      "text": "Du hast gelesen, warum viele Menschen begeistert in den Krieg zogen. Doch wie sah das konkret aus? Das naechste Bild zeigt eine Szene, die genau diesen Moment festhielt."
+    },
+    {
+      "von": "mat-3-2",
+      "nach": "mat-3-3",
+      "text": "Das Foto zeigte jubelnde Menschen in Berlin. Doch nicht ueberall herrschte Jubel \u2014 das naechste Bild zeigt den Moment, in dem Soldaten tatsaechlich aufbrachen."
+    },
+    {
+      "von": "mat-3-3",
+      "nach": "mat-3-4",
+      "text": "Die Bilder zeigten, wie die Kriegsbegeisterung von aussen aussah. Aber was dachten die Menschen wirklich? Drei Personen aus dem August 1914 berichten aus ganz unterschiedlichen Blickwinkeln."
+    },
+    {
+      "von": "mat-3-4",
+      "nach": "mat-3-5",
+      "text": "Die Originalstimmen zeigten drei Perspektiven auf den Kriegsausbruch \u2014 Begeisterung, Angst und Pflichtgefuehl. Wie haben einzelne Menschen diesen Moment ganz persoenlich erlebt? Zwei Tagebucheintraege lassen dich in ihre Gedanken eintauchen."
+    }
+  ]
+}

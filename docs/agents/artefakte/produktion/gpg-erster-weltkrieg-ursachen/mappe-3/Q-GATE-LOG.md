@@ -220,3 +220,121 @@
 ### Produzierte Dateien
 
 - `materialien/mat-3-5.json`
+
+---
+
+# Q-Gate-Log: Mappe 3 — Phase 2.1c (Cross-Konsistenz + Ueberleitungen + Hefteintrag-Revision)
+
+**Phase:** 2.1c
+**Datum:** 2026-04-03
+**Vertrag:** VERTRAG_PHASE_2-1c_CROSS.md
+**Mechanik:** Q-GATE-MECHANIK.md (§3, §4, §7.4)
+**Dispatch:** D0 (DISPATCH_SKRIPT_MAPPE3_PHASE2.md)
+
+---
+
+## Achsen 1-4: Cross-Konsistenz
+
+**Ergebnis: GESAMT-PASS** (0 FAIL, 0 WARN)
+
+| Achse | Kriterium | Ergebnis | Detail |
+|---|---|---|---|
+| 1 | Sequenz-Kohaerenz | PASS | Erkenntnisweg logisch: DT (Phaenomen + Gruende) → BQ (visueller Beleg) → BQ (Ambivalenz) → QT (Originalperspektiven) → TB (persoenliche Erlebbarkeit). Kein Fachbegriff vor Einfuehrung vorausgesetzt. |
+| 2 | Fachbegriff-Konsistenz | PASS | 5 Fachbegriffe geprueft (Kriegsbegeisterung, Patriotismus, Propaganda, Gesellschaftlicher Druck, Mobilmachung). Kein Begriff in zwei Materialien unterschiedlich definiert. |
+| 3 | Ueberleitung-Kohaerenz | PASS | 4 Uebergaenge: Alle ueberleitung_von-Felder referenzieren Inhalte, die in den konkreten Materialien tatsaechlich vorkommen. GERUEST-Intentionen und Material-Ist stimmen ueberein. |
+| 4 | TB-Knoten-Gesamtabdeckung | PASS | 6/6 Knoten abgedeckt: k3-1 (mat-3-1/3-2/3-3/3-5), k3-2 (mat-3-1), k3-3 (mat-3-1), k3-4 (mat-3-1/3-3/3-5), k3-5 (mat-3-4/3-5), k3-6 (mat-3-4). |
+
+---
+
+## Achse 5: Ueberleitung-Produktion
+
+**Ergebnis: GESAMT-PASS** (4/4 Ueberleitungen, alle UE-1 bis UE-5 PASS)
+
+| Uebergang | UE-1 | UE-2 | UE-3 | UE-4 | UE-5 | Zeichen |
+|---|---|---|---|---|---|---|
+| mat-3-1 → mat-3-2 | PASS | PASS | PASS | PASS | PASS | 169 |
+| mat-3-2 → mat-3-3 | PASS | PASS | PASS | PASS | PASS | 159 |
+| mat-3-3 → mat-3-4 | PASS | PASS | PASS | PASS | PASS | 190 |
+| mat-3-4 → mat-3-5 | PASS | PASS | PASS | PASS | PASS | 241 |
+
+**Sonderfall mat-3-1:** Keine Ueberleitung (Position 1). Problemstellung aus einstieg.json uebernimmt Funktion.
+
+---
+
+## Achse 6: Hefteintrag-Revision
+
+### 6a. Formulierungsaenderungen
+
+| SCPL-Feld | Alt | Neu | Begruendung |
+|---|---|---|---|
+| situation.kontextsatz | "Die Buendnisse haben aus einem Mord einen Weltkrieg gemacht. Millionen Soldaten werden mobilisiert — doch wie reagieren die Menschen?" | "Die Buendnisse haben aus einem Mord einen Weltkrieg gemacht. Soldaten steigen in Zuege und schreiben 'Ausflug nach Paris' auf die Waggons — doch ist das wirklich Begeisterung?" | mat-3-1/mat-3-3 liefern konkretes Bild der Zugwaggon-Beschriftung. Macht Kontextsatz erlebbar. |
+| complication[0].schritt | "In den Grossstaedten herrscht Aufregung. Soldaten schreiben 'Ausflug nach Paris' auf ihre Zuege. Historiker nennen dieses Gefuehl das Augusterlebnis — die Kriegsbegeisterung." | "In den Grossstaedten herrscht Aufregung. Menschenmengen jubeln, Fahnen wehen — Historiker nennen dieses Gefuehl das Augusterlebnis: die Kriegsbegeisterung." | mat-3-2 (Jubel vor Stadtschloss) liefert Bild der jubelnden Menge. Vermeidet Redundanz mit revidiertem Kontextsatz. |
+| complication[2].schritt | "Doch die Begeisterung ist nicht allgemein. 288 Anti-Kriegs-Versammlungen, 100.000 Demonstranten in Berlin. Auf dem Land herrscht Angst statt Freude." | "Doch die Begeisterung ist nicht allgemein. Auf dem Land herrscht Angst — Frauen weinen am Bahnhof, Bauern fuerchten um die Ernte. 288 Anti-Kriegs-Versammlungen zeigen: Gegenstimmen gibt es auch in den Staedten." | mat-3-4 (SPD Bremen: "Muetter... weinen") und mat-3-5 (Bauersfrau: "Wer soll die Ernte einbringen?") liefern konkreten Kontext. |
+| problem.satz | "Die SPD stimmt fuer die Kriegskredite — Burgfrieden. Die truegerische Einheit verdeckt die tiefen Risse in der Gesellschaft." | "Die SPD stimmt fuer die Kriegskredite — alle Parteien stehen zusammen: Burgfrieden. Die truegerische Einheit verdeckt die tiefen Risse in der Gesellschaft." | Erklaerungskontext fuer Fachbegriff "Burgfrieden" (mat-3-4: Haase "Wir lassen unser Vaterland... nicht im Stich"). Fachbegriff bleibt. |
+
+**STRUKTUR-FREEZE eingehalten:** 0 Zonen hinzugefuegt/entfernt, 0 Complication-Schritte geaendert, 0 Fachbegriffe geaendert, Ordnungsmuster unveraendert, Kernerkenntnisse/Merksaetze unveraendert, Stundenfrage unveraendert.
+
+### 6b. zusammenfassung (Erstproduktion)
+
+"Ihr habt anhand von Fotos, Originalquellen und Tagebucheintraegen untersucht, wie unterschiedlich die Menschen im August 1914 auf den Kriegsausbruch reagierten. Die Gegenueberstellung von Begeisterung in der Stadt und Angst auf dem Land zeigte: Das Bild einer einheitlichen Kriegsbegeisterung stimmt nicht."
+
+Woerter: 42. Ablage: sicherung.json → zusammenfassung.
+
+### 6c. ueberleitung (Mappe-zu-Mappe, Erstproduktion)
+
+"Die Soldaten glauben an einen schnellen Sieg und erwarten, bis Weihnachten wieder zu Hause zu sein. Doch worauf stuetzt sich dieser Glaube? Die deutschen Generaele haben einen Plan — den Schlieffen-Plan."
+
+Ablage: sicherung.json → ueberleitung.
+
+### 6d. Stufe-2 Re-Evaluation (G3, G5, G10, G12, G14)
+
+| # | Kriterium | Ergebnis | Detail |
+|---|---|---|---|
+| G3 | Erarbeitbarkeit | PASS | Alle 6 TB-Knoten durch produzierte Materialien erarbeitbar. k3-6 via mat-3-4 (Haase-Zitat). |
+| G5 | Sprachliches Niveau | PASS | Merksaetze: 15/10/13 Woerter (alle ≤15). R7-lesbar. Burgfrieden jetzt erklaerend eingebettet. |
+| G10 | Rekapitulierbarkeit | PASS | Revidierter SCPL-Text: Zugwaggons, jubelnde Menge, weinende Frauen, Erntesorgen — Material-Erlebnisse nachvollziehbar. |
+| G12 | Sprachregister-Passung | PASS | Erfahrungsbezogen-emotional, konsistent durchgaengig. Passend zu "menschliche Reaktionen". |
+| G14 | SCPL-Kohaerenz | PASS | Situation → C1 (Begeisterung) → C2 (Gruende) → C3 (Gegenstimmen) → Problem (Burgfrieden) → Loesung. Logische Progression. |
+
+### 6e. HE-Produktqualitaet (HE1-HE13)
+
+**Ergebnis: GESAMT-PASS** (0 FAIL, 0 WARN)
+
+| # | Kriterium | Prio | Ergebnis | Detail |
+|---|---|---|---|---|
+| HE1 | Material-Konkretion | MUSS | PASS | 3/4 Zonen mit konkretem Material-Bezug (Zugwaggons, jubelnde Menge, weinende Frauen). |
+| HE2 | Erarbeitungsnaehe | SOLL | PASS | SCPL spiegelt mat-3-1→3-2→3-3→3-4→3-5 Sequenz. |
+| HE3 | Fachbegriff-Identitaet | MUSS | PASS | 5/5 Fachbegriffe in Materialien vorhanden. Burgfrieden erklaerend eingebettet. |
+| HE4 | Sprachliche Geschlossenheit | SOLL | PASS | Durchgaengig erfahrungsbezogener Stil. |
+| HE5 | Prozess-Synthese | MUSS | PASS | "untersucht", "Gegenueberstellung... zeigte". |
+| HE6 | Disjunktion zu Merksatz | MUSS | PASS | zusammenfassung beschreibt Erkenntnisweg, paraphrasiert keinen Merksatz. |
+| HE7 | R7-Laenge | SOLL | PASS | 42 Woerter (Ziel: 30-50). |
+| HE8 | Bruecke nach vorn | MUSS | PASS | Verknuepft Begeisterung → Schlieffen-Plan. |
+| HE9 | Kein Spoiler | MUSS | PASS | Sagt nicht, dass Plan scheiterte. |
+| HE10 | Letzte-Mappe-Variante | MUSS | n/a | Mappe 3 ist nicht letzte Mappe. |
+| HE11 | Selbststaendigkeit | MUSS | PASS | SCPL-Text ohne Material verstaendlich. |
+| HE12 | Lernbarkeit | SOLL | PASS | Stundenfrage → SCPL → Merkbox → zusammenfassung. |
+| HE13 | Fachbegriff-Kennzeichnung | SOLL | PASS | Alle per Doppelpunkt/Gedankenstrich-Konvention. |
+
+**Q-M2-09 Disjunktion:** reflexionsimpuls (gesellschaftlicher Druck, Gegenwartsbezug) und scpl.loesung[] (Kriegsbegeisterung, Gruende, Burgfrieden) sind inhaltlich disjunkt. PASS.
+
+---
+
+## Gesamt-Ergebnis Phase 2.1c (D0)
+
+| Achse | Ergebnis |
+|---|---|
+| 1 Sequenz-Kohaerenz | PASS |
+| 2 Fachbegriff-Konsistenz | PASS |
+| 3 Ueberleitung-Kohaerenz | PASS |
+| 4 TB-Knoten-Gesamtabdeckung | PASS |
+| 5 Ueberleitung-Produktion (4 UE) | PASS |
+| 6 Hefteintrag-Revision + HE1-HE13 | PASS |
+
+**GESAMT-PASS** (0 FAIL, 0 WARN). Kein Nachbesserungsbedarf.
+
+### Produzierte / aktualisierte Dateien
+
+- `ueberleitungen.json` (NEU, 4 Eintraege)
+- `rahmen/hefteintrag.json` (4 Formulierungsaenderungen)
+- `rahmen/sicherung.json` (zusammenfassung + ueberleitung erstmalig befuellt)
