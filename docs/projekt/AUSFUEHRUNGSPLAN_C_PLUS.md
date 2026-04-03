@@ -267,25 +267,20 @@ Mappe 3 als Prozesstest. Post-Produktion entscheidet ueber Mappe-4-Strategie.
 
 ---
 
-### Schritt 9: Post-Produktion — Learnings + Mappe-4-Entscheidung (TEILWEISE: Pipeline-Fazit Phase 2.1 erstellt 2026-04-03)
+### Schritt 9: Post-Produktion — Learnings + Mappe-4-Entscheidung ✓ DONE (2026-04-03)
 
 **Kategorie:** Methoden-agnostisch (PM)
 **Aufwand:** 4-6h (1-2 Sessions)
 **Abhaengigkeiten:** Schritt 8 abgeschlossen.
 
-**Lieferobjekte:**
-1. `docs/projekt/PROZESSTEST_MAPPE3_ERGEBNIS.md` — Konsolidierte Befunde:
-   - Welche Fehlertypen sind NICHT mehr aufgetreten (vs. Mappe 2)?
-   - Welche NEUEN Fehlertypen sind aufgetreten?
-   - Schema-Validierung: Wie viele Materialien bestanden beim ersten Dispatch?
-   - Q-Gate-Konsistenz: War die Bewertung deterministisch?
-   - Nacharbeit (in Stunden): Vergleich mit Mappe 2 (~6h)
-2. Entscheidung fuer Mappe 4:
-   - Falls Nacharbeit < 3h UND keine neuen systemischen Fehler → C+ fortsetzen
-   - Falls Nacharbeit 3-6h ABER andere Fehlertypen als Mappe 2 → C+ mit gezielten Nachfixes
-   - Falls Nacharbeit > 6h ODER gleiche Fehlertypen wie Mappe 2 → Eskalation zu Option A
-3. GRUNDSATZENTSCHEIDUNG aktualisieren mit empirischem Ergebnis.
-4. **Prompt-Optimierung (P15):** `llm-application-dev:prompt-optimize` auf alle 12 Subagenten-Prompts (7 Material + 5 Aufgabe). Adressiert P3 (BQ-3) und praeventive Robustheit. Details: POOL_PM_INFRASTRUKTUR_ENHANCEMENTS.md.
+**Ergebnis:**
+1. `docs/projekt/PROZESSTEST_MAPPE3_ERGEBNIS.md` — Pipeline-internes Fazit: 95% Nacharbeit-Reduktion, 0 systemische Fehler. Initiale Empfehlung: C+ FORTSETZEN.
+2. **User-Browser-Review (Phase 4.3):** 11 Findings (2 BLOCKER, 3 HIGH, 4 MEDIUM, 2 LOW). 7/11 wiederkehrend aus Mappe 2. Pipeline-interne Metriken unterschaetzten reale Qualitaetsdefizite massiv. Dokumentiert in Q-GATE-LOG.md.
+3. **GRUNDSATZENTSCHEIDUNG aktualisiert:** §10 Post-Mappe-3 Empirische Ergebnisse. Revidierte Entscheidung: C+ fortsetzen + Infrastruktur-Revision vor Mappe 4.
+4. **Neuer Ausfuehrungsplan:** `docs/projekt/AUSFUEHRUNGSPLAN_INFRASTRUKTUR_REVISION.md` — 3 Phasen (A: 7 Prompt/Vertrags-Patches, B: 2 Architektur-Revisionen, C: Daten-Patch + Mappe-4-Validierung). Geschaetzter Aufwand: 10-16h.
+5. Prompt-Optimierung (P15) wird in Phase A integriert (Patches adressieren gleiche Defizite gezielter als generische Prompt-Optimierung).
+
+**Entscheidung:** Abbruchkriterium "gleiche Fehlertypen wie Mappe 2" TEILWEISE ERFUELLT. Eskalation zu Option A NICHT angemessen — stattdessen gezielte Infrastruktur-Revision (Kategorie 1: Patches + Kategorie 2: Teil-Rebuilds). Neues Abbruchkriterium: Falls Mappe 4 nach Revision erneut BLOCKERs oder >3 wiederkehrende Findings → Option A.
 
 ---
 

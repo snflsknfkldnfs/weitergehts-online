@@ -1,12 +1,21 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-03 (Session 5, DISPATCH_SKRIPT + Tool-Integrations-Roadmap)
-**Aktuelle Phase:** **C+ Phase IV (Produktion + Auswertung) — Schritt 8. Phase 2.1 DONE. DISPATCH_SKRIPT_MAPPE3_PHASE2.md erstellt (8 Dispatches, D0-D7). Naechster Dispatch: D0 (Phase 2.1c).**
-**Letzter Arbeitsschritt:** DISPATCH_SKRIPT_MAPPE3_PHASE2.md erstellt. Steuerungsdokument fuer Phase 2.1c bis 2.2c mit Fortschritts-Tracker, Session-Split-Punkten, Dispatch-Spezifikationen, agent-teams-Integration (P7), Metriken-Gesamttabelle.
-**Naechster Schritt:** D0 ausfuehren (Phase 2.1c: Material-Cross-Konsistenz + Ueberleitungen + Hefteintrag-Revision), dann D1-D7 gemaess DISPATCH_SKRIPT. Phase 3 (Assembly), Phase 4 (Browser-Validierung + WCAG-Audit P13). Nach Mappe 3: Prompt-Optimierung P15 vor Mappe 4.
-**Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. Engine-Fallback (Ueberleitung ID-Pattern), ARTEFAKT_INVENTAR Mappe 2+3 nachpflegen. BQ-3 (Bild ≠ Wirklichkeit) Prompt-Verstaerkung (P3) noch offen.
+**Letzte Aktualisierung:** 2026-04-03 (Session 6, Post-Produktion + Infrastruktur-Revision-Planung)
+**Aktuelle Phase:** **Infrastruktur-Revision vor Mappe 4 — AUSFUEHRUNGSPLAN_INFRASTRUKTUR_REVISION.md. Naechster Schritt: Phase A (7 Prompt/Vertrags-Patches).**
+**Letzter Arbeitsschritt:** Mappe 3 vollstaendig produziert (Phase 2→3→4). User-Browser-Review: 11 Findings, 2 BLOCKER, 7 wiederkehrend. GRUNDSATZENTSCHEIDUNG §10 erstellt. AUSFUEHRUNGSPLAN_INFRASTRUKTUR_REVISION.md erstellt (3 Phasen, 10-16h). AUSFUEHRUNGSPLAN_C_PLUS.md Schritt 9 finalisiert.
+**Naechster Schritt:** Infrastruktur-Revision Phase A ausfuehren: A1 Encoding v3.3, A2 Quellenangaben, A3 Sprachregister, A4 Fragestamm, A5 Tipp-2, A6 Freitext-Bewertung, A7 Q-Gate-Erweiterung. Dann Phase B (Hefteintrag + AGENT_RAETSEL). Dann Phase C (Mappe-3-Daten-Patch + Mappe 4).
+**Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. ARTEFAKT_INVENTAR Mappe 2+3 nachpflegen. Hefteintrag-Referenzmodell (B1 Phase B) benoetigt User-Input.
 
 **Abgeschlossen seit letztem Update:**
+- Infrastruktur-Revision verankert:
+  - GRUNDSATZENTSCHEIDUNG_REBUILD_VS_ITERATE.md §10: Post-Mappe-3 Empirische Ergebnisse. 11 Findings, 7 wiederkehrend. Revidierte Entscheidung: C+ + Infrastruktur-Revision.
+  - AUSFUEHRUNGSPLAN_INFRASTRUKTUR_REVISION.md (NEU): 3 Phasen (A: 7 Patches 4-6h, B: 2 Architektur-Revisionen 6-10h, C: Daten-Patch + Mappe-4-Validierung 2-4h).
+  - AUSFUEHRUNGSPLAN_C_PLUS.md Schritt 9 finalisiert (DONE).
+- Mappe 3 Produktion komplett (Phase 2→3→4):
+  - Phase 3.3: mappe-3.html erstellt (aus Template, strukturell validiert).
+  - Phase 4.1: Funktionstest 13/13 PASS.
+  - Phase 4.2: WCAG-Audit 11/11 PASS, 2 Warnings.
+  - Phase 4.3: User-Browser-Review: 11 Findings (B1-B11), Ursachen-Synthese, Daten-Patch-Tabelle in Q-GATE-LOG.md.
 - DISPATCH_SKRIPT_MAPPE3_PHASE2.md erstellt:
   - Steuerungsdokument fuer Phase 2.1c-2.2c (8 Dispatches D0-D7).
   - Fortschritts-Tracker, Session-Split-Punkte, Metriken-Gesamttabelle mit Phase 2.1 Baseline.

@@ -295,3 +295,82 @@ User-Input Q5 macht reines Iterieren unattraktiv: Wenn Mappe 3 als Prozesstest d
 | Qualifizierungsergebnis Q1 | BLOCKIEREND in Kombination (Conditional-Read + Sequenzkontext-Interface). C+-Schritte 1+3 adressieren beide. Details: §6.3 |
 | Datum | 2026-04-02 |
 | Action-Plan-Dokument | `docs/projekt/AUSFUEHRUNGSPLAN_C_PLUS.md` — 9 Schritte, 4 Phasen, Zeitplan 6-10 Sessions |
+| **Post-Mappe-3 Revision** | **§10 — Empirische Ergebnisse erfordern Infrastruktur-Revision vor Mappe 4. Siehe §10.** |
+
+---
+
+## 10. Post-Mappe-3 Empirische Ergebnisse (2026-04-03)
+
+### 10.1 Ausgangslage
+
+C+ Schritte 1-8 sind abgeschlossen. Mappe 3 wurde vollstaendig produziert (Phase 2.0→2.2c→3→4). Die Pipeline-interne Auswertung (PROZESSTEST_MAPPE3_ERGEBNIS.md) ergab:
+
+- 5/5 Materialien GESAMT-PASS, 4/5 First-Pass
+- Nacharbeit ~17 min (vs. ~6h Mappe 2 = 95% Reduktion)
+- 0 systemische Fehler in Phase 2.1
+- Entscheidung: "C+ FORTSETZEN"
+
+Diese Bewertung basierte ausschliesslich auf Pipeline-internen Metriken (Q-Gate-Ergebnisse, Schema-Validierung, Decision-Tree-Abdeckung).
+
+### 10.2 User-Browser-Review: Ernuechternde Ergebnisse
+
+Der User fuehrte einen manuellen Browser-Review auf dem gerenderten Endprodukt durch (Phase 4.3). Ergebnis: **11 Befunde (B1-B11), davon 2 BLOCKER, 3 HIGH, 4 MEDIUM, 2 LOW.** Dokumentiert in: `docs/agents/artefakte/produktion/gpg-erster-weltkrieg-ursachen/mappe-3/Q-GATE-LOG.md` (Phase 4.3).
+
+**Kernbefund:** 7 von 11 Findings sind **wiederkehrende Infrastruktur-Maengel**, die strukturell identisch oder gleichartig bereits in Mappe 2 auftraten. Die Pipeline hat diese Fehler nicht verhindert — die Q-Gates pruefen auf andere Dimensionen als die, die im Browser-Review auffallen.
+
+### 10.3 Befundtabelle
+
+| ID | Befund | Schwere | Wiederkehrend? | Ursache | Fix-Ebene |
+|---|---|---|---|---|---|
+| B1 | Umlaute in Rahmen-JSONs (einstieg, sicherung) | BLOCKER | JA (Mappe 2) | VERTRAG_PHASE_2-0 ohne Encoding-Regel | Vertrag |
+| B2 | `--` statt Gedankenstrich `—` | MEDIUM | JA | Encoding-Regel deckt typographische Zeichen nicht ab | Vertrag + Subagenten |
+| B3 | Quellenangaben doppelt (inhalt + quelle-Feld) | MEDIUM | JA | SUB_MATERIAL schreibt Quellen in beide Felder | Subagenten-Prompts |
+| B4 | M4 unuebersichtlich (QT-Formatierung) | MEDIUM | NEIN (mappe-spezifisch) | Ueberschrift-Hierarchie + Quellenangaben im Material-Body | Daten-Patch |
+| B5 | Ueberleitungston nicht schuelergerecht | MEDIUM | JA | VERTRAG_PHASE_2-1c Achse 5 ohne Sprachregister | Vertrag |
+| B6 | Fragestellungen sperrig | HIGH | JA | Subagenten uebernehmen Operator/Kontext woertlich | Subagenten + AGENT_RAETSEL |
+| B7 | Tipp-2 bei Lueckentext kontraproduktiv | MEDIUM | JA | SUB_AUFGABE_LUECKENTEXT Tipp-Schema suboptimal | Subagenten-Prompt |
+| B8 | Aufgabe 4 Reihenfolge-Typ ungeeignet | HIGH | NEIN (Typauswahl) | AGENT_RAETSEL Typauswahl-Gegenpruefung fehlt | AGENT_RAETSEL Architektur |
+| B9 | Aufgabe 5 Freitext-Bewertung schwammig | HIGH | JA (strukturell) | Freitext-Aufgaben: Bewertungslogik grundsaetzlich unscharf | Subagenten + Bewertungskonzept |
+| B10 | Hefteintrag qualitativ sehr schlecht | BLOCKER | JA (Mappe 2) | Pipeline produziert Fliesstext statt Denkprotokoll | Hefteintrag-Architektur |
+| B11 | Ueberleitung naechste Mappe holprig | LOW | NEIN (mappe-spezifisch) | Stilistisch, kein Infrastruktur-Problem | Daten-Patch |
+
+### 10.4 Abgleich mit Abbruchkriterien
+
+**AUSFUEHRUNGSPLAN_C_PLUS.md Schritt 9 definiert:**
+> Falls Nacharbeit > 6h ODER gleiche Fehlertypen wie Mappe 2 → Eskalation zu Option A.
+
+**§6.1 definiert:**
+> Falls nach Mappe 3 erneut ~6h Nacharbeit durch die gleichen Fehlertypen anfallen.
+
+**Befund:** Das Kriterium "gleiche Fehlertypen wie Mappe 2" ist **TEILWEISE ERFUELLT**. 7/11 Findings sind wiederkehrend. Die Pipeline-interne Nacharbeit (~17 min) unterschaetzt die reale Nacharbeit massiv, weil sie nur Q-Gate-Dimensionen misst, nicht die User-sichtbaren Qualitaetsdefizite.
+
+**Aber:** Die Eskalation zu Option A (Full Rebuild) ist NICHT angemessen. Die 11 Findings lassen sich praezise in zwei Kategorien aufteilen:
+
+| Kategorie | Findings | Fix-Art | Aufwand |
+|---|---|---|---|
+| **Kategorie 1: Prompt/Vertrags-Patches** | B1, B2, B3, B5, B6, B7, B9 | Gezielte Patches in Vertraegen + Subagenten-Prompts. Keine Architektur-Aenderung. | 4-6h |
+| **Kategorie 2: Architektur-Revision** | B8, B10 | Neukonstruktion Hefteintrag-Pipeline + AGENT_RAETSEL Typauswahl-Gegenpruefung. | 6-10h |
+
+Kategorie 1 ist durch das bestehende C+-Muster loesbar (iteratives Patching). Kategorie 2 erfordert gezielte Teil-Rebuilds, aber keinen Full Rebuild der gesamten Pipeline.
+
+### 10.5 Revidierte Entscheidung
+
+| Feld | Wert |
+|---|---|
+| Entscheidung | **REVIDIERT** |
+| Neue Strategie | **C+ fortsetzen + Infrastruktur-Revision vor Mappe 4** |
+| Begruendung | Abbruchkriterium teilweise erfuellt (gleiche Fehlertypen), aber nicht in der Schwere die Full Rebuild (Option A) rechtfertigt. 7/11 Findings durch Patches adressierbar. 2/11 erfordern gezielte Teil-Rebuilds (Hefteintrag, AGENT_RAETSEL Typauswahl). Gesamtaufwand ~10-16h ist deutlich unter Option A (~34-48h) und hat hohe Treffsicherheit, da die Ursachen empirisch identifiziert sind. |
+| Abbruchkriterium NEU | Falls Mappe 4 nach Infrastruktur-Revision erneut BLOCKERs oder >3 wiederkehrende Findings zeigt → Option A. |
+| Datum | 2026-04-03 |
+| Action-Plan-Dokument | `docs/projekt/AUSFUEHRUNGSPLAN_INFRASTRUKTUR_REVISION.md` — 3 Phasen (A: Patches, B: Teil-Rebuilds, C: Validierung) |
+
+### 10.6 Implikationen fuer Q-Gate-Mechanik
+
+Die Diskrepanz zwischen Pipeline-internem Befund ("0 systemische Fehler, C+ FORTSETZEN") und User-Browser-Review (11 Findings, 2 BLOCKER) offenbart eine **blinde Stelle der Q-Gate-Mechanik**: Die Q-Gates pruefen Schema-Konformitaet, inhaltliche Korrektheit und fachdidaktische Kriterien — aber NICHT:
+
+- Sprachregister/Adressatenorientierung der Rahmentexte (Ueberleitungen, Einstieg)
+- Typographische Korrektheit (Gedankenstriche, Anfuehrungszeichen)
+- Formatierungs-Usability des gerenderten Endprodukts
+- Hefteintrag-Qualitaet gegen GUETEKRITERIEN_HEFTEINTRAG_PRODUKT (HE1-HE13)
+
+Diese Dimensionen muessen in Phase A der Infrastruktur-Revision durch Vertrags-Patches adressiert werden, sodass die Q-Gates kuenftig auch diese Aspekte abdecken.

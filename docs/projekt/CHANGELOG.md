@@ -6,6 +6,33 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ## 2026-04-03
 
+### Infrastruktur-Revision verankert (PM-Verankerung)
+- **Phase:** C+ Post-Produktion (Schritt 9 DONE) + Infrastruktur-Revision-Planung
+- **Zweck:** Empirische Ergebnisse aus User-Browser-Review Mappe 3 in PM-Dokumenten verankern. 11 Findings (2 BLOCKER, 7 wiederkehrend) erfordern systematische Infrastruktur-Revision vor Mappe 4.
+- **Ergebnis:**
+  - GRUNDSATZENTSCHEIDUNG_REBUILD_VS_ITERATE.md §10: Post-Mappe-3 Empirische Ergebnisse. Befundtabelle B1-B11. Abgleich mit Abbruchkriterien. Revidierte Entscheidung: C+ + Infrastruktur-Revision.
+  - AUSFUEHRUNGSPLAN_INFRASTRUKTUR_REVISION.md (NEU): 3 Phasen — Phase A (7 Prompt/Vertrags-Patches, 4-6h), Phase B (2 Architektur-Revisionen: Hefteintrag + AGENT_RAETSEL, 6-10h), Phase C (Daten-Patch + Mappe-4-Validierung).
+  - AUSFUEHRUNGSPLAN_C_PLUS.md Schritt 9 finalisiert (DONE).
+  - STATUS.md aktualisiert.
+- **Geaenderte Dateien:** GRUNDSATZENTSCHEIDUNG_REBUILD_VS_ITERATE.md, AUSFUEHRUNGSPLAN_C_PLUS.md, STATUS.md, CHANGELOG.md
+- **Neue Dateien:** AUSFUEHRUNGSPLAN_INFRASTRUKTUR_REVISION.md
+- **Naechster Schritt:** Infrastruktur-Revision Phase A ausfuehren (7 Patches in Vertraegen + Subagenten-Prompts)
+
+### Mappe 3 Phase 3.3 + Phase 4 abgeschlossen
+- **Phase:** C+ Phase IV — Produktion (Schritt 8, Phase 3.3 + 4)
+- **Zweck:** mappe-3.html erstellen (Phase 3.3, war im Vertrag uebersprungen) + Browser-Validierung (Phase 4).
+- **Ergebnis:**
+  - Phase 3.3: mappe-3.html aus Template generiert. mappeId='mappe-3', Titel "Kriegsbegeisterung 1914", Nav "Mappe 3 von 4". 6/6 strukturelle Checks PASS.
+  - Phase 4.1: Funktionstest 13/13 PASS (5 Materialien, 5 Aufgaben, Hefteintrag, Navigation, Loesungswort AUGUST).
+  - Phase 4.2: WCAG-Audit 11/11 PASS, 2 Warnings (W1 Heading-Hierarchie, W2 Footer Touch-Target).
+- **Geaenderte Dateien:** mappe-3.html (NEU), Q-GATE-LOG.md (Phase 4 Sektionen)
+
+### User-Browser-Review Mappe 3 dokumentiert
+- **Phase:** C+ Phase IV — Post-Produktion (Schritt 9, Phase 4.3)
+- **Zweck:** 11 User-Findings aus manuellem Browser-Review verifizieren, root-causen, in Q-GATE-LOG einpflegen.
+- **Ergebnis:** 11 Findings (B1-B11), alle gegen data.json verifiziert. Ursachen-Synthese: 7 wiederkehrende Infrastruktur-Maengel. Daten-Patch-Tabelle: 10 Patches. 2-Kategorien-Analyse (Patches vs. Architektur-Revision).
+- **Geaenderte Dateien:** Q-GATE-LOG.md (Phase 4.3 Sektion)
+
 ### DISPATCH_SKRIPT Mappe 3 Phase 2 erstellt
 - **Phase:** C+ Phase IV — Produktion + Auswertung (Schritt 8 Vorbereitung)
 - **Zweck:** Steuerungsdokument fuer die verbleibende Mappe-3-Produktion (Phase 2.1c bis 2.2c). Ersetzt ad-hoc-Orchestrierung durch strukturierten Dispatch-Plan mit Fortschritts-Tracking.

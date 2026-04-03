@@ -24,8 +24,9 @@ BEI JEDER SESSION — PFLICHT-LEKTUERE:
 4. docs/projekt/GRUNDSATZENTSCHEIDUNG_REBUILD_VS_ITERATE.md — Aktuelle Grundsatzentscheidung (Option, Qualifizierungsfragen, Action-Plan)
 
 C+ AUSFUEHRUNGSPLAN (bei laufender Produktion lesen):
-- docs/projekt/AUSFUEHRUNGSPLAN_C_PLUS.md — 9 Schritte, 4 Phasen, Tool-Integrationspunkte, Prozesstest-Metriken
-- docs/projekt/PROZESSTEST_MAPPE3_ERGEBNIS.md — Pipeline-Fazit Phase 2.1 (Baseline fuer Mappe 4)
+- docs/projekt/AUSFUEHRUNGSPLAN_C_PLUS.md — 9 Schritte (DONE), 4 Phasen, Prozesstest-Metriken
+- docs/projekt/AUSFUEHRUNGSPLAN_INFRASTRUKTUR_REVISION.md — 3 Phasen (A: Patches, B: Architektur-Revision, C: Validierung), AKTIV
+- docs/projekt/PROZESSTEST_MAPPE3_ERGEBNIS.md — Pipeline-Fazit Phase 2.1 (superseded durch User-Browser-Review)
 
 PM-INFRASTRUKTUR-DOKUMENTATION (bei Bedarf lesen):
 - docs/projekt/POOL_PM_INFRASTRUKTUR_ENHANCEMENTS.md — Evaluierungspool: 15 Patterns, 7 installierte Plugins, Tool-Integrations-Roadmap, Verifikationstests
