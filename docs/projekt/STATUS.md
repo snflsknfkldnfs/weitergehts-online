@@ -1,12 +1,19 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-02 (Session 4, Pipeline-Test mat-3-2 komplett)
-**Aktuelle Phase:** **C+ Phase III (Validierung) — Schritt 7 erweitert: Pipeline-Test mit isoliertem Subagent.**
-**Letzter Arbeitsschritt:** Pipeline-Test mat-3-2 (BQ). Erster Dispatch mit isoliertem Subagent (kein Projektzugriff). Q-Gate GESAMT-PASS nach 1 Nachbesserung (M2 FAIL: ASCII-Umlaute → korrigiert). 3 Pipeline-Findings: (P1) ARTEFAKT_INVENTAR Mappe 3 fehlt, (P2) BQ-Prompt fehlende Umlaut-Pflicht, (P3) BQ-3 Konstruktions-Reflexion schwach.
-**Naechster Schritt:** Pipeline-Findings P2 beheben (SUB_MATERIAL_BILDQUELLE.md Umlaut-Pflicht ergaenzen). Dann mat-3-3 bis mat-3-5 als Pipeline-Dispatches. ARTEFAKT_INVENTAR Mappe 3 erstellen (P1).
-**Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. Engine-Fallback (Ueberleitung ID-Pattern), ARTEFAKT_INVENTAR Mappe 2+3 nachpflegen.
+**Letzte Aktualisierung:** 2026-04-02 (Session 4, Pipeline-Kette mat-3-3..3-5 komplett)
+**Aktuelle Phase:** **C+ Phase III (Validierung) — Schritt 7 abgeschlossen. Mappe 3 Material-Produktion komplett (5/5 Materialien).**
+**Letzter Arbeitsschritt:** Pipeline-Kette mat-3-3 (BQ), mat-3-4 (QT), mat-3-5 (TB) als realistisch simulierte Dispatch-Kette produziert. Alle 3 GESAMT-PASS (mat-3-3: 0F/1W, mat-3-4: 0F/0W, mat-3-5: 0F/0W). P2-Fix bestaetigt (Umlaute korrekt). Erster QT-Dispatch und erster TB-Dispatch validiert. Read-Step 8 (Kernerkenntnisse) bei mat-3-5 erstmals aktiv — alle 3 Kernerkenntnisse transportiert.
+**Naechster Schritt:** C+ Phase III Schritt 8 (Pipeline-Fazit + Findings-Konsolidierung). Dann Phase IV (Schritte 9: Dokumentation, ggf. ARTEFAKT_INVENTAR Mappe 3). Mappe 3 Phase 2.1c (Ueberleitungen) und Phase 2.2 (Aufgaben) stehen noch aus.
+**Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. Engine-Fallback (Ueberleitung ID-Pattern), ARTEFAKT_INVENTAR Mappe 2+3 nachpflegen. BQ-3 (Bild ≠ Wirklichkeit) Prompt-Verstaerkung (P3) noch offen.
 
 **Abgeschlossen seit letztem Update:**
+- C+ Schritt 7 Pipeline-Kette mat-3-3..3-5:
+  - mat-3-3 (BQ, Truppentransport): Isolierter Subagent. Q-Gate GESAMT-PASS (0F, 1W BQ-3). P2-Fix bestaetigt (UTF-8 korrekt). k3-1 + k3-4 abgedeckt.
+  - mat-3-4 (QT, Drei Stimmen): Erster Quellentext-Dispatch. 3 Originalzitate (Zweig, SPD Bremen, Haase). Q-Gate GESAMT-PASS (0F, 0W). k3-5 + k3-6 erstmals eingefuehrt. Dispatcher-Korrektur: Zweig "Tagebucheintrag" → "Erinnerungen".
+  - mat-3-5 (TB, Zwei Welten): Erster Tagebuch-Dispatch. 2 fiktive Eintraege (Freiwilliger + Bauersfrau). Read-Step 8 aktiv (sicherung → Kernerkenntnisse). Q-Gate GESAMT-PASS (0F, 0W). Alle 3 Kernerkenntnisse transportiert. k3-1 + k3-4 + k3-5 abgedeckt.
+  - Pipeline-Befunde: P2-Fix wirksam. P1 (ARTEFAKT_INVENTAR Mappe 3) weiterhin offen. P3 (BQ-3) weiterhin offen.
+  - Mappe 3 Material-Bestand: 5/5 Materialien komplett (mat-3-1 DT, mat-3-2 BQ, mat-3-3 BQ, mat-3-4 QT, mat-3-5 TB).
+- C+ Schritt 7 Pipeline-Test mat-3-2 (BQ): P2-Findings identifiziert + gefixt. P2 in allen 7 SUB_MATERIAL-Prompts korrigiert.
 - C+ Schritt 7 (Test-Dispatch mat-3-1):
   - Phase 2.0 Rahmen Mappe 3: 3 JSON-Dateien (hefteintrag, einstieg, sicherung). 2 Schema-Fixes (multiperspektivisch, null zitat).
   - Decision-Tree Read-Steps 1-8: Alle 8 Schritte durchlaufen. Step 7+8 korrekt uebersprungen (ARTEFAKT_REFS leer, DIDAKT_FN=einstieg).

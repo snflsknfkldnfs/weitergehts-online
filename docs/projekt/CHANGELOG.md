@@ -6,6 +6,30 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ## 2026-04-02
 
+### Pipeline-Kette mat-3-3..3-5: Realistisch simulierte Dispatch-Kette (abgeschlossen)
+- **Phase:** C+ Phase III — Validierung (Schritt 7, Pipeline-Kette)
+- **Zweck:** Realgetreuer Pipeline-Test: 3 Materialien sequenziell als isolierte Subagent-Dispatches. Testet: (a) P2-Fix (Umlaute), (b) ersten QT-Dispatch, (c) ersten TB-Dispatch, (d) Read-Step 8 (Kernerkenntnisse bei sicherung), (e) wachsenden Sequenzkontext (VORAUSGESETZTES_WISSEN waechst, NOCH_NICHT_EINGEFUEHRT schrumpft).
+- **mat-3-3 (BQ, Truppentransport per Bahn):**
+  - Isolierter Subagent, SUB_MATERIAL_BILDQUELLE.md
+  - UTF-8-Umlaute korrekt (P2-Fix bestaetigt)
+  - Q-Gate GESAMT-PASS (0 FAIL, 1 WARN BQ-3: Konstruiertheit implizit, nicht explizit)
+  - Bildunterschrift 3-Funktionen erfuellt. k3-1 + k3-4 abgedeckt.
+- **mat-3-4 (QT, Drei Stimmen zum Kriegsausbruch):**
+  - Erster Quellentext-Dispatch. 3 Originalzitate: Zweig (Begeisterung), SPD Bremen (Angst), Haase (Pflicht/Burgfrieden).
+  - Dreischritt-Aufbereitung pro Zitat (Einleitung → Wortlaut → Nachweis).
+  - Dispatcher-Korrektur: Zweig-Nachweis "Tagebucheintrag" → "Erinnerungen" (Memoiren, nicht Tagebuch).
+  - Q-Gate GESAMT-PASS (0 FAIL, 0 WARN). Fuehrt k3-5 (Gegenstimmen) + k3-6 (Burgfrieden) erstmals ein.
+- **mat-3-5 (TB, Zwei Welten — Kriegsfreiwilliger und Bauersfrau):**
+  - Erster Tagebuch-Dispatch. 2 fiktive Eintraege: Freiwilliger (Berlin, Begeisterung) + Bauersfrau (Hannover, Angst).
+  - Read-Step 8 AKTIV (sicherung → Kernerkenntnisse aus hefteintrag.json scpl.loesung[]).
+  - Alle 3 Kernerkenntnisse transportiert: (1) Stadt/Land-Kontrast, (2) Gruende der Begeisterung, (3) truegerische Einheit.
+  - Q-Gate GESAMT-PASS (0 FAIL, 0 WARN). TB-Q1..Q12 alle PASS.
+- **Pipeline-Fazit:** 3/3 GESAMT-PASS. P2-Fix wirksam. Alle 3 Subagent-Typen (BQ, QT, TB) erfolgreich getestet. Decision-Tree (inkl. Read-Step 7 WARNUNG + Fallback, Read-Step 8 aktiv) funktioniert. Sequenzkontext korrekt propagiert. Didaktische Qualitaet der prozessgenerierten Produkte: hoch (differenzierte Perspektiven, emotionale Zugaenglichkeit, TB-Knoten-Abdeckung).
+- **Mappe 3 Material-Bestand:** 5/5 komplett (mat-3-1 DT, mat-3-2 BQ, mat-3-3 BQ, mat-3-4 QT, mat-3-5 TB).
+- **Offene Findings:** P1 (ARTEFAKT_INVENTAR Mappe 3), P3 (BQ-3 Prompt-Verstaerkung).
+- **Neue Dateien:** materialien/mat-3-3.json, materialien/mat-3-4.json, materialien/mat-3-5.json
+- **Geaenderte Dateien:** Q-GATE-LOG.md, STATUS.md, CHANGELOG.md
+
 ### Pipeline-Test mat-3-2: Isolierter Subagent-Dispatch (abgeschlossen)
 - **Phase:** C+ Phase III — Validierung (Schritt 7, erweitert)
 - **Zweck:** Realgetreuer Pipeline-Test. Dispatcher sammelt Inputs via Decision-Tree, formuliert Uebergabe-Prompt, spawnt isolierten Subagent (kein Projektzugriff), evaluiert Output.

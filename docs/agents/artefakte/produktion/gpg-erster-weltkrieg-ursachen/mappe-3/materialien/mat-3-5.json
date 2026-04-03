@@ -1,0 +1,19 @@
+{
+  "id": "mat-3-5",
+  "typ": "tagebuch",
+  "titel": "Zwei Welten -- Kriegsfreiwilliger und Bauersfrau",
+  "inhalt": "<p><em>Berlin, 2. August 1914</em></p><p>Die Stra\u00dfen sind voller Menschen. \u00dcberall Soldaten, Fahnen, Musik. Ich bin so aufgeregt, dass ich kaum schlafen kann. Heute habe ich mich freiwillig gemeldet -- endlich ein Abenteuer! Meine Freunde sagen, wir sind bis Weihnachten zur\u00fcck. Der Krieg ist eine Chance, etwas Gro\u00dfes zu erleben. Wer jetzt nicht geht, ist feige. Alle schauen auf einen hin. Ich habe &bdquo;Ausflug nach Paris&ldquo; auf den Zugwaggon geschrieben wie die anderen. Das Vaterland braucht uns!</p><hr><p><em>M\u00fcller-Hof bei Hannover, 5. August 1914</em></p><p>Mein Mann ist weg. Mein \u00e4ltester Sohn auch. Wer soll die Ernte einbringen? Das Getreide wartet nicht. Die Nachbarin weinte am Bahnhof -- ihre beiden Jungen sind auch fort. Alle sagen, das ist richtig, das ist Pflicht. Aber nachts bin ich wach und denke an nichts anderes. Die Angst sitzt mir im Bauch wie ein Stein. Wenn ich meine Sorge zeige, schaut man mich schief an. Ich muss stark sein und &bdquo;ja&ldquo; sagen -- obwohl ich &bdquo;nein&ldquo; schreie.</p><cite>Fiktive Tagebucheintr\u00e4ge, historisch plausibel. Kontext: Wikipedia, Spirit of 1914</cite>",
+  "quelle": "Fiktive Tagebucheintr\u00e4ge, historisch plausibel. Kontext: Wikipedia, Spirit of 1914",
+  "position": 5,
+  "didaktische_funktion": "sicherung",
+  "voraussetzung": ["mat-3-4"],
+  "ueberleitung_von": "Die Originalquellen lieferten Fakten und Zitate -- diese Tageb\u00fccher machen die Perspektiven pers\u00f6nlich erlebbar.",
+  "sequenz_kontext": {
+    "vorher": {
+      "id": "mat-3-4",
+      "typ": "quellentext",
+      "kerninhalt": "Drei kontr\u00e4re Originalstimmen: Begeisterung (Zweig), Angst (Bremen), Pflicht (Haase)"
+    },
+    "nachher": null
+  }
+}

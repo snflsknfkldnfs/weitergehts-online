@@ -94,3 +94,129 @@
 ### Produzierte Dateien
 
 - `materialien/mat-3-2.json`
+
+---
+
+## mat-3-3: Truppentransport per Bahn, August 1914
+
+**Typ:** bildquelle
+**Dispatch-Modus:** PIPELINE-KETTE (isolierter Subagent, Dispatch 1/3 der Kette mat-3-3..3-5)
+**Ergebnis: GESAMT-PASS** (0 FAIL, 1 WARN)
+
+| # | ID | Kriterium | Klasse | Stufe | Detail |
+|---|---|---|---|---|---|
+| 1 | SCHEMA-01 | Schema-Validierung | SCHEMA | PASS | JSON VALID. Alle Pflichtfelder vorhanden. |
+| 2 | MQ1 | Stundenfrage-Bezug | KONSISTENZ | PASS | Erschliessungsimpuls fragt nach Gefuehlen der Soldaten (Freude/Unsicherheit/Pflichtgefuehl) — direkter Bezug. |
+| 3 | MQ2 | Titel (BQ Typ B: Statement) | FORM | PASS | "Truppentransport per Bahn, August 1914" — praegnant, statementartig. |
+| 4 | M1 | Sachgemaessheit | INHALT | PASS | Bundesarchiv-Foto korrekt referenziert. "Ausflug nach Paris"-Sprueche historisch belegt (SKRIPT §1, INHALTSBASIS). |
+| 5 | M2 | Adressatengemaessheit (R7) | FORM | PASS | UTF-8-Umlaute korrekt (Sprüche, Gefühle, Pflichtgefühl). P2-Fix wirksam. |
+| 6 | M4 | Zielklarheit | DIDAKTIK | PASS | k3-1 (Kriegsbegeisterung) + k3-4 (gesellschaftlicher Druck) in Bildunterschrift adressiert. |
+| 7 | M5 | Aktivierung | DIDAKTIK | PASS | Erschliessungsimpuls: Gefuehle der Soldaten deuten. |
+| 8 | BQ-3 | Bild ≠ Wirklichkeit | DIDAKTIK | WARN | "schwer zu unterscheiden" impliziert Konstruiertheit, aber nicht explizit thematisiert. Gleicher Befund wie mat-3-2 (P3). |
+| 9 | BQ-4 | 3-Funktions-Bildunterschrift | FORM | PASS | Identifikation (19 Woerter): PASS. Kontextualisierung: PASS. Erschliessungsimpuls: PASS. |
+
+**Sequenz-Kohaerenz:**
+
+| ID | Stufe | Detail |
+|---|---|---|
+| SQ-1 | PASS | Referenziert k3-1 (Augusterlebnis) + k3-4 (Druck) — beides vorausgesetzt. |
+| SQ-2 | PASS | k3-5, k3-6 nicht verwendet. |
+| SQ-3 | PASS | k3-1 + k3-4 durch Bild + Unterschrift erarbeitbar: zweite Lesart (Aufbruch vs. Abschied). |
+| SQ-4 | PASS | Ueberleitung: "Das Jubel-Bild zeigte eine Seite -- dieses Foto zeigt eine zweite." Klarer Anschluss. |
+
+**Nachbesserung:** Nicht erforderlich.
+
+**Pipeline-Findings:** P2-Fix bestaetigt (Umlaute korrekt). P1 (ARTEFAKT_INVENTAR) weiterhin offen.
+
+### Produzierte Dateien
+
+- `materialien/mat-3-3.json`
+
+---
+
+## mat-3-4: Drei Stimmen zum Kriegsausbruch
+
+**Typ:** quellentext
+**Dispatch-Modus:** PIPELINE-KETTE (isolierter Subagent, Dispatch 2/3)
+**Ergebnis: GESAMT-PASS** (0 FAIL, 0 WARN)
+
+| # | ID | Kriterium | Klasse | Stufe | Detail |
+|---|---|---|---|---|---|
+| 1 | SCHEMA-01 | Schema-Validierung | SCHEMA | PASS | JSON VALID. |
+| 2 | MQ1 | Stundenfrage-Bezug | KONSISTENZ | PASS | Rahmung fragt "Wer spricht und warum?" — drei kontraere Perspektiven auf die Stundenfrage. |
+| 3 | MQ2 | Titel (Typ A) | FORM | PASS | "Drei Stimmen zum Kriegsausbruch" — praegnanter Kontextsatz. |
+| 4 | M1 | Sachgemaessheit | INHALT | PASS | Alle 3 Zitate korrekt: Zweig (Spirit of 1914, Austria-Hungary), SPD Bremen (Workers and peasants), Haase (Political reactions). |
+| 5 | M2 | Adressatengemaessheit | FORM | PASS | UTF-8-Umlaute korrekt. Einleitungen verstaendlich fuer R7. |
+| 6 | M4 | Zielklarheit | DIDAKTIK | PASS | k3-5 (Gegenstimmen) durch SPD-Bremen-Zitat eingefuehrt. k3-6 (Burgfrieden) durch Haase-Zitat + Einleitung ("SPD stimmt fuer Kriegskredite"). |
+| 7 | QT-Q2 | Einleitungssaetze | FORM | PASS | Alle 3: Sprecher + Funktion + Situation, max 2 Saetze. |
+| 8 | QT-Q3 | Originalnaehe | INHALT | PASS | Alle 3 Zitate originalgetreu aus INHALTSBASIS. |
+| 9 | QT-Q5 | Kein Interpretationsvorgriff | DIDAKTIK | PASS | Einleitungen beschreiben Kontext, bewerten nicht. "nicht ueberall jubelt man" ist Beobachtung, keine Wertung. |
+| 10 | QT-Q8 | Perspektivitaet | DIDAKTIK | PASS | 3 kontraere Perspektiven erkennbar: Begeisterung / Angst / Pflicht. |
+| 11 | QT-Q9 | HTML-Format | FORM | PASS | blockquote fuer Zitate, em fuer Nachweis, CSS-Klassen gesetzt. |
+| 12 | QT-Q10 | Historische Korrektheit | INHALT | PASS | Dispatcher-Korrektur: Zweig-Nachweis von "Tagebucheintrag" zu "Erinnerungen" geaendert (Zweigs Memoiren, nicht Tagebuch). |
+
+**Sequenz-Kohaerenz:**
+
+| ID | Stufe | Detail |
+|---|---|---|
+| SQ-1 | PASS | Referenziert k3-1 (Begeisterung) + k3-4 (Druck) als Vorwissen. Fuehrt k3-5 + k3-6 erstmals ein. |
+| SQ-2 | PASS | Keine gesperrten Begriffe (mat-3-4 fuehrt die letzten neuen Knoten ein). |
+| SQ-3 | PASS | k3-5 erarbeitbar (SPD-Bremen-Zitat: Angst, Weinen). k3-6 erarbeitbar (Haase: SPD stimmt zu). |
+| SQ-4 | PASS | Ueberleitung: "Die Bilder zeigten die Oberflaeche -- diese Originalstimmen zeigen verschiedene Perspektiven dahinter." |
+
+**Nachbesserung:** Nicht erforderlich.
+
+### Produzierte Dateien
+
+- `materialien/mat-3-4.json`
+
+---
+
+## mat-3-5: Zwei Welten — Kriegsfreiwilliger und Bauersfrau
+
+**Typ:** tagebuch
+**Dispatch-Modus:** PIPELINE-KETTE (isolierter Subagent, Dispatch 3/3)
+**Ergebnis: GESAMT-PASS** (0 FAIL, 0 WARN)
+
+| # | ID | Kriterium | Klasse | Stufe | Detail |
+|---|---|---|---|---|---|
+| 1 | SCHEMA-01 | Schema-Validierung | SCHEMA | PASS | JSON VALID. |
+| 2 | MQ1 | Stundenfrage-Bezug | KONSISTENZ | PASS | Beide Eintraege antworten auf "Waren die Menschen wirklich begeistert?" — Freiwilliger: ja. Bauersfrau: nein. |
+| 3 | MQ2 | Titel | FORM | PASS | "Zwei Welten -- Kriegsfreiwilliger und Bauersfrau" — perspektivischer Kontrast-Titel. |
+| 4 | M1 | Sachgemaessheit | INHALT | PASS | Alle historischen Details belegt: "Ausflug nach Paris" (SKRIPT §1), Erntesorgen (SKRIPT §4), Druck (INHALTSBASIS). |
+| 5 | M2 | Adressatengemaessheit | FORM | PASS | UTF-8-Umlaute korrekt. Satzlaenge max 15 Woerter eingehalten. |
+| 6 | M4 | Zielklarheit | DIDAKTIK | PASS | k3-1 (Begeisterung) via Freiwilligen. k3-4 (Druck) in beiden Eintraegen. k3-5 (Gegenstimmen) via Bauersfrau. |
+| 7 | TB-Q1 | Wortanzahl | FORM | PASS | Eintrag 1: ~80 Woerter. Eintrag 2: ~90 Woerter. Je unter 120. |
+| 8 | TB-Q3 | Ich-Perspektive | FORM | PASS | Durchgaengig. Tempusmix Praesens/Perfekt natuerlich fuer Tagebuch. |
+| 9 | TB-Q4 | Historische Plausibilitaet | INHALT | PASS | Alle Aussagen mit INHALTSBASIS vereinbar. |
+| 10 | TB-Q5 | Keine Rueckprojektion | DIDAKTIK | PASS | Keine modernen Bewertungsmasstaebe. Freiwilliger hegt keine Zweifel. Bauersfrau bewertet nicht den Krieg als "sinnlos". |
+| 11 | TB-Q6 | Ueberwaetigungsverbot | DIDAKTIK | PASS | "Angst sitzt mir im Bauch wie ein Stein" — sachlich-empathisch, nicht reisserisch. |
+| 12 | TB-Q7 | Alltagsdetail | DIDAKTIK | PASS | Eintrag 1: Soldaten, Fahnen, Musik, Kreide auf Waggon. Eintrag 2: Getreide, Bahnhof, Stein im Bauch. |
+| 13 | TB-Q8 | Perspektivitaet | DIDAKTIK | PASS | Freiwilliger sieht nur Begeisterung. Bauersfrau sieht nur Verlust. Begrenzte Sicht bei beiden. |
+| 14 | TB-Q9 | Tafelbild-Abdeckung | DIDAKTIK | PASS | k3-1 + k3-4 + k3-5 — alle erarbeitbar. |
+| 15 | TB-Q10 | Fiktions-Kennzeichnung | FORM | PASS | cite-Element: "Fiktive Tagebucheintraege, historisch plausibel." |
+| 16 | TB-Q11 | Name/Ort/Datum | FORM | PASS | "Berlin, 2. August 1914" (Mobilmachungstag). "Mueller-Hof bei Hannover, 5. August 1914". Historisch plausibel. |
+| 17 | TB-Q12 | Kein Stereotyp | DIDAKTIK | PASS | Beide Figuren differenziert. Freiwilliger erwaehnt Druck neben Begeisterung. Bauersfrau zeigt praktische UND emotionale Sorge. |
+
+**Sicherungs-Pruefung (M3c: Vom Ende her):**
+
+| Kernerkenntnis | Transportiert? | Detail |
+|---|---|---|
+| 1. Begeisterung = staedtisch, nicht allgemein | PASS | Stadt/Land-Kontrast der beiden Eintraege. |
+| 2. Vier Gruende der Begeisterung | PASS | Freiwilliger zeigt: Abenteuerlust, Patriotismus ("Vaterland"), Druck ("feige"). Propaganda implizit ("Ausflug nach Paris"). |
+| 3. Truegerische Einheit (Burgfrieden) | PASS | Bauersfrau: "ja sagen obwohl ich nein schreie" — erzwungene Zustimmung als Kern des truegerischen Burgfriedens. |
+
+**Sequenz-Kohaerenz:**
+
+| ID | Stufe | Detail |
+|---|---|---|
+| SQ-1 | PASS | Alle Knoten vorausgesetzt (letztes Material). |
+| SQ-2 | PASS | Keine gesperrten Begriffe (keine vorhanden — letztes Material). |
+| SQ-3 | PASS | k3-1/k3-4/k3-5 erarbeitbar. |
+| SQ-4 | PASS | Ueberleitung: "Originalquellen lieferten Fakten -- Tagebuecher machen Perspektiven persoenlich erlebbar." |
+
+**Nachbesserung:** Nicht erforderlich.
+
+### Produzierte Dateien
+
+- `materialien/mat-3-5.json`

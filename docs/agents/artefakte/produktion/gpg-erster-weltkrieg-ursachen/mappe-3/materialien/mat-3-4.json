@@ -1,0 +1,23 @@
+{
+  "id": "mat-3-4",
+  "typ": "quellentext",
+  "titel": "Drei Stimmen zum Kriegsausbruch",
+  "inhalt": "<p>Drei Stimmen, drei Perspektiven: Wer spricht am 4. August 1914 und warum?</p><p class=\"quellentext__einleitung\">Der \u00f6sterreichische Schriftsteller Stefan Zweig beschreibt die Stimmung in Wien w\u00e4hrend der ersten Kriegstage. Er beobachtet eine nie gekannte Einheit der Bev\u00f6lkerung.</p><blockquote><p>&bdquo;Alle Unterschiede von Stand, Sprache und Religion waren f\u00fcr diesen einen Moment untergetaucht in dem str\u00f6menden Gef\u00fchl der Br\u00fcderlichkeit.&ldquo;</p></blockquote><p class=\"quellentext__nachweis\"><em>Stefan Zweig, \u00f6sterreichischer Schriftsteller, Erinnerungen, August 1914</em></p><p class=\"quellentext__einleitung\">Doch nicht \u00fcberall jubelt man. Ein SPD-Funktion\u00e4r aus Bremen berichtet von der Mobilmachung in Arbeitervierteln -- und schildert ganz andere Gef\u00fchle.</p><blockquote><p>&bdquo;M\u00fctter, Ehefrauen und Br\u00e4ute bringen die jungen M\u00e4nner zum Bahnhof und weinen. Alle haben das Gef\u00fchl, direkt ins Schlachthaus zu gehen.&ldquo;</p></blockquote><p class=\"quellentext__nachweis\"><em>SPD-Funktion\u00e4r aus Bremen, Bericht \u00fcber die Mobilmachung, August 1914</em></p><p class=\"quellentext__einleitung\">Wenige Tage sp\u00e4ter macht auch die SPD eine \u00fcberraschende Wende. Im Reichstag stimmt die Partei f\u00fcr die Kriegskredite. Ihr Fraktionsvorsitzender Hugo Haase begr\u00fcndet diese Entscheidung.</p><blockquote><p>&bdquo;Wir lassen unser Vaterland in der Stunde der Gefahr nicht im Stich.&ldquo;</p></blockquote><p class=\"quellentext__nachweis\"><em>Hugo Haase, SPD-Fraktionsvorsitzender, Reichstagsrede, 4. August 1914</em></p>",
+  "quelle": "Zweig, Stefan: Erinnerungen, August 1914 / Bericht eines SPD-Funktion\u00e4rs, Bremen, August 1914 / Haase, Hugo: Reichstagsrede, 4. August 1914",
+  "position": 4,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": ["mat-3-3"],
+  "ueberleitung_von": "Die Bilder zeigten die Oberfl\u00e4che der Kriegsbegeisterung -- diese Originalstimmen zeigen verschiedene Perspektiven dahinter.",
+  "sequenz_kontext": {
+    "vorher": {
+      "id": "mat-3-3",
+      "typ": "bildquelle",
+      "kerninhalt": "Truppentransport per Bahn -- Aufbruchstimmung oder erzwungener Abschied?"
+    },
+    "nachher": {
+      "id": "mat-3-5",
+      "typ": "tagebuch",
+      "kerninhalt": "Zwei fiktive Tageb\u00fccher: Kriegsfreiwilliger (Begeisterung) vs. Bauersfrau (Angst)"
+    }
+  }
+}

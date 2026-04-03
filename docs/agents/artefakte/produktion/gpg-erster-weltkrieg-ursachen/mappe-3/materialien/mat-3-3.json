@@ -1,0 +1,25 @@
+{
+  "id": "mat-3-3",
+  "typ": "bildquelle",
+  "titel": "Truppentransport per Bahn, August 1914",
+  "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-3-2.jpg",
+  "bildunterschrift": "Soldaten steigen August 1914 in Eisenbahnwagen zur Mobilmachung ein; viele schreiben Spr\u00fcche wie \"Ausflug nach Paris\" auf die Waggons. Das Bild zeigt die Aufbruchsstimmung der Mobilisierung, die zwischen freiwilliger Begeisterung und gesellschaftlichem Druck schwer zu unterscheiden ist. Welche Gef\u00fchle k\u00f6nnten die Gesichter und Gesten der Soldaten verraten -- Freude, Unsicherheit oder Pflichtgef\u00fchl?",
+  "quelle": "Oscar Tellgmann / Bundesarchiv, Wikimedia Commons",
+  "lizenz": "Public Domain",
+  "position": 3,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": ["mat-3-2"],
+  "ueberleitung_von": "Das Jubel-Bild zeigte eine Seite der Kriegsbegeisterung -- dieses Foto zeigt eine zweite: Aufbruch oder Abschied?",
+  "sequenz_kontext": {
+    "vorher": {
+      "id": "mat-3-2",
+      "typ": "bildquelle",
+      "kerninhalt": "Jubel vor dem Berliner Stadtschloss -- Kriegsbegeisterung als Massenph\u00e4nomen"
+    },
+    "nachher": {
+      "id": "mat-3-4",
+      "typ": "quellentext",
+      "kerninhalt": "Drei kontr\u00e4re Originalstimmen zum Kriegsausbruch (Begeisterung, Angst, Pflicht)"
+    }
+  }
+}
