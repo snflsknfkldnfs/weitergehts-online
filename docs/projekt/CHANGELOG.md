@@ -4,6 +4,24 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-03 — Session 9: Produktionsumgebung — COWORK_PROJECT_ANLEITUNG_PRODUKTION
+
+**Phase:** C2 Mappe-4-Validierung (Produktionsumgebung)
+
+**Durchgefuehrt:**
+- COWORK_PROJECT_ANLEITUNG_PRODUKTION.md erstellt: Projektanweisungsdatei fuer separates Cowork-Produktionsprojekt. Drei-Ebenen-Architektur: (1) Identitaet + Prozessrahmen mit allen Pfaden zu Vertraegen, Subagenten, Q-Gates, (2) Compaction-Recovery-Protokoll (6-Schritte deterministisches Re-Entry), (3) Operative Entscheidungsregeln (Encoding, Freitext-Keywords, Knoten-Elaborierung, File-Ownership, Dispatch-Isolation, Q-Gate-Pflicht).
+- Generisch gehalten: [game-id] und [mappe-N] als Platzhalter. Wiederverwendbar fuer jede Mappe und jedes Game.
+- Designentscheidung: Prototyp des spaeter produktisierten Produktbestandteils (nicht nur Test-Infrastruktur).
+
+**Geaenderte Dateien:**
+- docs/projekt/COWORK_PROJECT_ANLEITUNG_PRODUKTION.md (NEU)
+- docs/projekt/STATUS.md
+- docs/projekt/CHANGELOG.md
+
+**Naechster Schritt:** Neues Cowork-Projekt anlegen, Anleitung als Projektanweisung eintragen, C2 starten.
+
+---
+
 ## 2026-04-03 — Session 9: C2-Vorbereitung — TAFELBILD + Dispatch-Skript Mappe 4
 
 **Phase:** C2 Mappe-4-Validierung (Vorbereitung)

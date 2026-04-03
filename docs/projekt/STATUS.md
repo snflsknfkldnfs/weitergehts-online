@@ -1,9 +1,9 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-03 (Session 9, C2-Vorbereitung KOMPLETT)
-**Aktuelle Phase:** **C2: Mappe-4-Validierung. Alle Vorbedingungen erfuellt. TAFELBILD Mappe 4 erstellt, DISPATCH_SKRIPT_MAPPE4 steht. P3 Engine-Patch (v3.9 Teilfragen-Rendering) ausgefuehrt und gemergt.**
-**Letzter Arbeitsschritt:** (1) P3 Engine-Patch v3.9 via Claude Code ausgefuehrt (Teilfragen-Rendering, Cache-Busting ?v=3.9). (2) TAFELBILD_Mappe4.md erstellt (Phase 0.4, SCPL sequenziell, G1-G14 PASS). (3) DISPATCH_SKRIPT_MAPPE4.md erstellt (Steuerungsdokument fuer Produktionssession, 15 Dispatches D-1 bis D15, Session-Split-Punkte, Testbedingungen).
-**Naechster Schritt:** C2 Produktionssession starten. Separate Cowork-Session mit Dispatch-Skript als Steuerung. Phase 1 → 2 → 3 → 4.
+**Letzte Aktualisierung:** 2026-04-03 (Session 9, C2-Vorbereitung + Produktionsumgebung)
+**Aktuelle Phase:** **C2: Mappe-4-Validierung. Alle Vorbedingungen erfuellt. TAFELBILD, DISPATCH_SKRIPT, COWORK_PROJECT_ANLEITUNG_PRODUKTION stehen. Produktionsumgebung bereit.**
+**Letzter Arbeitsschritt:** COWORK_PROJECT_ANLEITUNG_PRODUKTION.md erstellt — Drei-Ebenen-Architektur (Identitaet, Compaction-Recovery, Entscheidungsregeln). Generisch fuer jedes Game/jede Mappe. Prototyp des spaeter produktisierten Produktbestandteils.
+**Naechster Schritt:** Neues Cowork-Projekt anlegen, COWORK_PROJECT_ANLEITUNG_PRODUKTION.md als Projektanweisung eintragen, weitergehts-online/ als Context-Folder verlinken. Dann C2 starten: "Lies DISPATCH_SKRIPT_MAPPE4.md, starte mit D-1."
 **Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. ARTEFAKT_INVENTAR Mappe 2+3 nachpflegen. Engine-Erweiterungen O3/O5/O6 (Ordnungsmuster-Rendering, Pfeiltypen, Farbsemantik) als Stretch-Goal.
 
 **Abgeschlossen seit letztem Update:**
