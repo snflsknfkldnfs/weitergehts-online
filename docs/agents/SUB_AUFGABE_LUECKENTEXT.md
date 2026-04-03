@@ -108,7 +108,7 @@ Lueckentext-Validierung ist case-insensitive String-Vergleich. Daher:
 | Stufe | Inhalt | Lueckentext-spezifische Strategie |
 |-------|--------|----------------------------------|
 | 1 (Hinweis) | Richtung | Verweis auf Materialabschnitt + Themenfeld der Luecke: "Die Luecken betreffen Begriffe aus dem Bereich Wirtschaftspolitik." |
-| 2 (Teilantwort) | Antwortpool | Randomisierter Wortpool mit allen Lueckenwoertern (optional: 1-2 Distraktoren) |
+| 2 (Teilantwort) | Inhaltliche Einschraenkung | Hinweis auf thematischen Bereich von 1-2 Luecken, Ausschluss des Distraktors, oder Zuordnung "die erste Luecke betrifft..." — NICHT den sichtbaren Pool wiederholen |
 | 3 (Loesung) | Aufloesung | Alle Lueckenwoerter in Reihenfolge + Erklaerung des Zusammenhangs |
 
 **Tipp-2-Regel Lueckentext (v3.4):** Da der Antwortpool jetzt als sichtbares Aufgabenfeld existiert (`antwortpool`), ist Tipp 2 bei Lueckentexten eine **inhaltliche Einschraenkung**: Hinweis auf den thematischen Bereich von 1-2 Luecken, Ausschluss eines Distraktors, oder Zuordnung "die erste Luecke betrifft..." — NICHT den Pool wiederholen.
@@ -180,29 +180,43 @@ Positivbeispiel: "Ergaenze die fehlenden Fachbegriffe."
 - `tipps`: Array mit exakt 3 Objekten
 - `punkte`: Integer, Standardwert 10
 
-**Darstellungsregel:** Der `text_mit_luecken` mit `___`-Platzhaltern ist nur das interne Format fuer data.json. Die Engine rendert an jeder `___`-Stelle ein `<input>`-Feld. Es gibt KEINE separate Angabe-Darstellung — nur den Text mit Eingabefeldern.
+**Darstellungsregel (v3.6b):** Der `text_mit_luecken` mit `___`-Platzhaltern ist das interne Format fuer data.json. Die Engine rendert:
+- **Mit `antwortpool`:** Luecken als Inline-`<span>`-Drop-Targets (kein `<input>`). Darunter ein sichtbarer Wortpool als Drag-and-Drop-Quelle. SuS ziehen Begriffe in Luecken oder klicken (Fallback). Kein Label/Beschriftung am Pool — die Aufgabenform ist selbsterklaerend.
+- **Ohne `antwortpool`:** Luecken als `<input type="text">` (Freitext-Fallback). Dieser Pfad soll NICHT mehr genutzt werden — `antwortpool` ist PFLICHT.
 
-### BEM-Klassen (HTML-Struktur)
+### Engine-Rendering (v3.6b)
 
 ```html
-<section class="aufgabe aufgabe--lueckentext">
-  <h3 class="aufgabe__titel">[frage]</h3>
-  <div class="aufgabe__text">
-    Im Absolutismus steuerte der Koenig die gesamte Wirtschaft. Diese Wirtschaftsform heisst
-    <input type="text" class="luecke__input" data-index="0" />.
-    Der Staat foerderte den
-    <input type="text" class="luecke__input" data-index="1" />
-    von Waren ins Ausland...
-  </div>
-</section>
+<!-- Lueckentext mit Inline-Luecken -->
+<div class="aufgabe__lueckentext">
+  Im Absolutismus steuerte der Koenig die gesamte Wirtschaft. Diese Wirtschaftsform heisst
+  <span class="aufgabe__luecke aufgabe__luecke--pool" data-index="0" data-wort=""></span>.
+  Der Staat foerderte den
+  <span class="aufgabe__luecke aufgabe__luecke--pool" data-index="1" data-wort=""></span>
+  von Waren ins Ausland...
+</div>
+<!-- Wortpool UNTER dem Lueckentext -->
+<div class="aufgabe__antwortpool">
+  <span class="aufgabe__pool-wort" draggable="true" data-wort="Export">Export</span>
+  <span class="aufgabe__pool-wort" draggable="true" data-wort="Gold">Gold</span>
+  <span class="aufgabe__pool-wort" draggable="true" data-wort="Manufaktur">Manufaktur</span>
+  <span class="aufgabe__pool-wort" draggable="true" data-wort="Merkantilismus">Merkantilismus</span>
+</div>
 ```
+
+**Visuelle Constraints fuer Generierung (PFLICHT):**
+- Pool-Woerter muessen auf hellem Hintergrund (#e8e2d4) mit dunkler Schrift (var(--color-text)) lesbar sein. Keine CSS-Variablen wie `--color-primary-light` verwenden, da diese themenabhaengig dunkel sein koennen.
+- Kein Label am Pool (kein "Begriffe:", kein "Begriffe zum Einsetzen:"). Die Aufgabenform (Luecken + Pool) ist selbsterklaerend.
+- Luecken sind Inline-Elemente (`display: inline`) und stoeren den Lesefluss nicht (gleiche Schriftgroesse und Zeilenhoehe wie Fliesstext).
+- Pool-Anordnung: unterhalb des Lueckentexts, nicht darueber.
 
 ### JS-Verhalten (Validierung)
 
-- Vergleich: `userInput.trim().toLowerCase() === loesung[i].toLowerCase()` (case-insensitive, trimmed)
+- Pool-Modus: Vergleich `data-wort`-Attribut gegen `loesung[i]` (case-insensitive, trimmed)
+- Freitext-Modus (legacy): Vergleich `.value` gegen `loesung[i]`
 - Alle Luecken muessen korrekt sein fuer PASS
-- Bei Fehler: Falsche Luecken rot markieren, korrekte gruen
-- State-Persistenz: `{ filled: ["eingegebener Text 1", "eingegebener Text 2", ...] }`
+- Bei Fehler: Falsche Luecken rot markieren und Wort zurueck in Pool, korrekte gruen
+- State-Persistenz: `{ filled: ["eingesetzter Begriff 1", "eingesetzter Begriff 2", ...] }`
 
 ---
 

@@ -2339,11 +2339,6 @@ var EscapeEngine = (function () {
       poolDiv.className = 'aufgabe__antwortpool';
       poolDiv.setAttribute('aria-label', 'Verfügbare Begriffe');
 
-      var poolLabel = document.createElement('span');
-      poolLabel.className = 'aufgabe__antwortpool-label';
-      poolLabel.textContent = 'Begriffe zum Einsetzen:';
-      poolDiv.appendChild(poolLabel);
-
       var shuffled = aufgabe.antwortpool.slice();
       for (var s = shuffled.length - 1; s > 0; s--) {
         var r = Math.floor(Math.random() * (s + 1));
