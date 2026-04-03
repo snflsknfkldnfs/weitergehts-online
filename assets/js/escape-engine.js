@@ -2269,6 +2269,10 @@ var EscapeEngine = (function () {
   /**
    * Rendert eine Lueckentext-Aufgabe.
    * Erwartet loesung als Array von Strings (eine Loesung pro Luecke).
+   * v3.6b: Antwortpool als Drag-and-Drop Wortpool UNTER dem Lueckentext.
+   *        Luecken sind inline-dimensioniert (stoeren Lesefluss nicht).
+   *        Drag: Pool→Luecke, Luecke→Pool (zuruecklegen), Luecke→Luecke (tauschen).
+   *        Fallback: Klick auf Pool-Wort + Klick auf Luecke (Touch/Maus).
    * @private
    */
   function _renderLueckentext(container, aufgabe, index, geloest) {
@@ -2276,6 +2280,7 @@ var EscapeEngine = (function () {
     textDiv.className = 'aufgabe__lueckentext';
 
     var state = geloest ? _loadAntwortState(_state.mappeId, index) : null;
+    var hasPool = Array.isArray(aufgabe.antwortpool) && aufgabe.antwortpool.length > 0;
 
     var text = aufgabe.text_mit_luecken || aufgabe.frage || '';
     var lueckenIndex = 0;
@@ -2286,16 +2291,39 @@ var EscapeEngine = (function () {
       textDiv.appendChild(textNode);
 
       if (i < parts.length - 1) {
-        var input = document.createElement('input');
-        input.type = 'text';
-        input.className = 'aufgabe__luecke';
+        var input;
+        if (hasPool) {
+          // v3.6b: Pool-Modus — inline drop-targets
+          input = document.createElement('span');
+          input.className = 'aufgabe__luecke aufgabe__luecke--pool';
+          input.setAttribute('tabindex', '0');
+          input.setAttribute('role', 'button');
+          input.setAttribute('data-index', lueckenIndex);
+          input.setAttribute('data-wort', '');
+        } else {
+          input = document.createElement('input');
+          input.type = 'text';
+          input.className = 'aufgabe__luecke';
+          input.setAttribute('autocomplete', 'off');
+        }
         input.id = aufgabe.id + '-luecke-' + lueckenIndex;
-        input.disabled = geloest;
+        if (geloest) {
+          if (hasPool) {
+            input.setAttribute('aria-disabled', 'true');
+          } else {
+            input.disabled = true;
+          }
+        }
         input.setAttribute('aria-label', 'Lücke ' + (lueckenIndex + 1));
-        input.setAttribute('autocomplete', 'off');
         // v3.5g: State-Restore
         if (geloest && state && state.filled && state.filled[lueckenIndex] !== undefined) {
-          input.value = state.filled[lueckenIndex];
+          if (hasPool) {
+            input.textContent = state.filled[lueckenIndex];
+            input.setAttribute('data-wort', state.filled[lueckenIndex]);
+            input.classList.add('aufgabe__luecke--filled');
+          } else {
+            input.value = state.filled[lueckenIndex];
+          }
           input.classList.add('aufgabe__luecke--correct');
         }
         textDiv.appendChild(input);
@@ -2304,6 +2332,42 @@ var EscapeEngine = (function () {
     }
 
     container.appendChild(textDiv);
+
+    // v3.6b: Antwortpool UNTER dem Lueckentext
+    if (hasPool) {
+      var poolDiv = document.createElement('div');
+      poolDiv.className = 'aufgabe__antwortpool';
+      poolDiv.setAttribute('aria-label', 'Verfügbare Begriffe');
+
+      var poolLabel = document.createElement('span');
+      poolLabel.className = 'aufgabe__antwortpool-label';
+      poolLabel.textContent = 'Begriffe zum Einsetzen:';
+      poolDiv.appendChild(poolLabel);
+
+      var shuffled = aufgabe.antwortpool.slice();
+      for (var s = shuffled.length - 1; s > 0; s--) {
+        var r = Math.floor(Math.random() * (s + 1));
+        var tmp = shuffled[s]; shuffled[s] = shuffled[r]; shuffled[r] = tmp;
+      }
+
+      for (var p = 0; p < shuffled.length; p++) {
+        var wordBtn = document.createElement('span');
+        wordBtn.className = 'aufgabe__pool-wort';
+        wordBtn.textContent = shuffled[p];
+        wordBtn.setAttribute('data-wort', shuffled[p]);
+        wordBtn.setAttribute('draggable', geloest ? 'false' : 'true');
+        if (geloest) {
+          wordBtn.classList.add('aufgabe__pool-wort--used');
+        }
+        poolDiv.appendChild(wordBtn);
+      }
+      container.appendChild(poolDiv);
+
+      // v3.6b: Drag-and-Drop + Klick-Fallback verdrahten
+      if (!geloest) {
+        _initPoolDragDrop(container, aufgabe);
+      }
+    }
 
     if (!geloest) {
       var btn = document.createElement('button');
@@ -2319,16 +2383,199 @@ var EscapeEngine = (function () {
   }
 
   /**
+   * v3.6b: Drag-and-Drop + Klick-Fallback fuer Antwortpool.
+   * Drag: Pool-Wort → Luecke (fuellen), Luecke → Pool (zurueck), Luecke → Luecke (tauschen).
+   * Klick-Fallback: Erstes Klick waehlt Wort (highlight), zweites Klick auf Luecke setzt ein.
+   * @private
+   */
+  function _initPoolDragDrop(container, aufgabe) {
+    var selectedWord = null; // fuer Klick-Fallback
+
+    // --- Hilfsfunktionen ---
+    function _fillLuecke(luecke, wort, sourceBtn) {
+      luecke.textContent = wort;
+      luecke.setAttribute('data-wort', wort);
+      luecke.classList.add('aufgabe__luecke--filled');
+      luecke.classList.remove('aufgabe__luecke--correct', 'aufgabe__luecke--incorrect');
+      if (sourceBtn) {
+        sourceBtn.classList.add('aufgabe__pool-wort--used');
+        sourceBtn.setAttribute('draggable', 'false');
+      }
+    }
+
+    function _clearLuecke(luecke) {
+      var wort = luecke.getAttribute('data-wort');
+      luecke.textContent = '';
+      luecke.setAttribute('data-wort', '');
+      luecke.classList.remove('aufgabe__luecke--filled', 'aufgabe__luecke--correct', 'aufgabe__luecke--incorrect');
+      // Wort zurueck in Pool
+      if (wort) { _returnToPool(wort); }
+      return wort;
+    }
+
+    function _returnToPool(wort) {
+      var btns = container.querySelectorAll('.aufgabe__pool-wort');
+      for (var i = 0; i < btns.length; i++) {
+        if (btns[i].getAttribute('data-wort') === wort && btns[i].classList.contains('aufgabe__pool-wort--used')) {
+          btns[i].classList.remove('aufgabe__pool-wort--used');
+          btns[i].setAttribute('draggable', 'true');
+          return;
+        }
+      }
+    }
+
+    function _findPoolBtn(wort) {
+      var btns = container.querySelectorAll('.aufgabe__pool-wort');
+      for (var i = 0; i < btns.length; i++) {
+        if (btns[i].getAttribute('data-wort') === wort && !btns[i].classList.contains('aufgabe__pool-wort--used')) {
+          return btns[i];
+        }
+      }
+      return null;
+    }
+
+    function _clearSelection() {
+      if (selectedWord) {
+        selectedWord.classList.remove('aufgabe__pool-wort--selected');
+        selectedWord = null;
+      }
+    }
+
+    // --- Drag-Events auf Pool-Woertern ---
+    var poolBtns = container.querySelectorAll('.aufgabe__pool-wort');
+    for (var i = 0; i < poolBtns.length; i++) {
+      (function (btn) {
+        btn.addEventListener('dragstart', function (e) {
+          e.dataTransfer.setData('text/plain', btn.getAttribute('data-wort'));
+          e.dataTransfer.setData('application/x-pool-source', 'pool');
+          btn.classList.add('aufgabe__pool-wort--dragging');
+        });
+        btn.addEventListener('dragend', function () {
+          btn.classList.remove('aufgabe__pool-wort--dragging');
+        });
+
+        // Klick-Fallback: Wort auswaehlen
+        btn.addEventListener('click', function () {
+          if (btn.classList.contains('aufgabe__pool-wort--used')) return;
+          if (selectedWord === btn) {
+            _clearSelection(); return;
+          }
+          _clearSelection();
+          selectedWord = btn;
+          btn.classList.add('aufgabe__pool-wort--selected');
+        });
+      })(poolBtns[i]);
+    }
+
+    // --- Drag-Events auf Luecken (Drop-Targets) ---
+    var luecken = container.querySelectorAll('.aufgabe__luecke--pool');
+    for (var j = 0; j < luecken.length; j++) {
+      (function (luecke) {
+        luecke.addEventListener('dragover', function (e) {
+          e.preventDefault();
+          luecke.classList.add('aufgabe__luecke--dragover');
+        });
+        luecke.addEventListener('dragleave', function () {
+          luecke.classList.remove('aufgabe__luecke--dragover');
+        });
+        luecke.addEventListener('drop', function (e) {
+          e.preventDefault();
+          luecke.classList.remove('aufgabe__luecke--dragover');
+          var wort = e.dataTransfer.getData('text/plain');
+          var source = e.dataTransfer.getData('application/x-pool-source');
+          if (!wort) return;
+
+          // Wenn Luecke schon belegt: altes Wort zurueck in Pool
+          var altesBort = luecke.getAttribute('data-wort');
+          if (altesBort) { _clearLuecke(luecke); }
+
+          if (source === 'pool') {
+            var srcBtn = _findPoolBtn(wort);
+            _fillLuecke(luecke, wort, srcBtn);
+          } else if (source === 'luecke') {
+            // Luecke→Luecke: Wort hierher, altes Wort dorthin (tauschen)
+            _fillLuecke(luecke, wort, null);
+          }
+        });
+
+        // Luecken selbst als Drag-Source (zum Umordnen/Zuruecklegen)
+        luecke.setAttribute('draggable', 'false');
+        luecke.addEventListener('dragstart', function (e) {
+          var w = luecke.getAttribute('data-wort');
+          if (!w) { e.preventDefault(); return; }
+          e.dataTransfer.setData('text/plain', w);
+          e.dataTransfer.setData('application/x-pool-source', 'luecke');
+          luecke.classList.add('aufgabe__luecke--dragging');
+          // Nach kurzem Delay leeren (damit Drop sichtbar wird)
+          setTimeout(function () { _clearLuecke(luecke); }, 0);
+        });
+        luecke.addEventListener('dragend', function () {
+          luecke.classList.remove('aufgabe__luecke--dragging');
+        });
+
+        // Klick-Fallback: Wort einsetzen oder entfernen
+        luecke.addEventListener('click', function () {
+          var bestehendesWort = luecke.getAttribute('data-wort');
+          if (selectedWord) {
+            // Wort aus Pool einsetzen
+            if (bestehendesWort) { _clearLuecke(luecke); }
+            _fillLuecke(luecke, selectedWord.getAttribute('data-wort'), selectedWord);
+            _clearSelection();
+          } else if (bestehendesWort) {
+            // Wort zurueck in Pool
+            _clearLuecke(luecke);
+          }
+        });
+
+        // Gefuellte Luecken sollen draggable werden
+        var observer = new MutationObserver(function () {
+          luecke.setAttribute('draggable', luecke.getAttribute('data-wort') ? 'true' : 'false');
+        });
+        observer.observe(luecke, { attributes: true, attributeFilter: ['data-wort'] });
+      })(luecken[j]);
+    }
+
+    // Pool-Div als Drop-Target (Wort zuruecklegen)
+    var poolDiv = container.querySelector('.aufgabe__antwortpool');
+    if (poolDiv) {
+      poolDiv.addEventListener('dragover', function (e) {
+        e.preventDefault();
+        poolDiv.classList.add('aufgabe__antwortpool--dragover');
+      });
+      poolDiv.addEventListener('dragleave', function () {
+        poolDiv.classList.remove('aufgabe__antwortpool--dragover');
+      });
+      poolDiv.addEventListener('drop', function (e) {
+        e.preventDefault();
+        poolDiv.classList.remove('aufgabe__antwortpool--dragover');
+        // Wort wird schon durch dragstart→_clearLuecke zurueckgegeben
+      });
+    }
+
+    // Klick ausserhalb: Selection aufheben
+    container.addEventListener('click', function (e) {
+      if (!e.target.classList.contains('aufgabe__pool-wort') &&
+          !e.target.classList.contains('aufgabe__luecke--pool')) {
+        _clearSelection();
+      }
+    });
+  }
+
+  /**
    * Prueft Lueckentext-Antworten.
    * @private
    */
   function _checkLueckentext(section, aufgabe, index) {
     var inputs = section.querySelectorAll('.aufgabe__luecke');
     var loesungen = Array.isArray(aufgabe.loesung) ? aufgabe.loesung : [aufgabe.loesung];
+    var hasPool = Array.isArray(aufgabe.antwortpool) && aufgabe.antwortpool.length > 0;
     var allCorrect = true;
 
     for (var i = 0; i < inputs.length; i++) {
-      var userValue = (inputs[i].value || '').trim();
+      // v3.6: Pool-Modus liest aus data-wort, Input-Modus aus .value
+      var userValue = hasPool
+        ? (inputs[i].getAttribute('data-wort') || '').trim()
+        : (inputs[i].value || '').trim();
       var expected = (loesungen[i] || '').trim();
 
       if (_fuzzyMatch(userValue, expected)) {
@@ -2347,15 +2594,44 @@ var EscapeEngine = (function () {
       section.classList.add('aufgabe--solved');
       var filled = [];
       for (var j = 0; j < inputs.length; j++) {
-        filled.push(inputs[j].value);
-        inputs[j].disabled = true;
+        if (hasPool) {
+          filled.push(inputs[j].getAttribute('data-wort') || '');
+          inputs[j].setAttribute('aria-disabled', 'true');
+          inputs[j].style.pointerEvents = 'none';
+        } else {
+          filled.push(inputs[j].value);
+          inputs[j].disabled = true;
+        }
       }
       _saveAntwortState(_state.mappeId, index, { filled: filled });
+      // v3.6: Pool-Buttons deaktivieren bei Erfolg
+      if (hasPool) {
+        var poolBtns = section.querySelectorAll('.aufgabe__pool-wort');
+        for (var b = 0; b < poolBtns.length; b++) { poolBtns[b].disabled = true; }
+      }
     } else {
-      // v3.5d: Falsche Inputs leeren fuer Neuversuch, korrekte behalten
+      // v3.5d/v3.6: Falsche Antworten zurueckgeben
       for (var j = 0; j < inputs.length; j++) {
         if (inputs[j].classList.contains('aufgabe__luecke--incorrect')) {
-          inputs[j].value = '';
+          if (hasPool) {
+            // Wort zurueck in Pool
+            var falschesWort = inputs[j].getAttribute('data-wort');
+            if (falschesWort) {
+              var allBtns = section.querySelectorAll('.aufgabe__pool-wort');
+              for (var m = 0; m < allBtns.length; m++) {
+                if (allBtns[m].getAttribute('data-wort') === falschesWort && allBtns[m].disabled) {
+                  allBtns[m].classList.remove('aufgabe__pool-wort--used');
+                  allBtns[m].disabled = false;
+                  break;
+                }
+              }
+            }
+            inputs[j].textContent = '';
+            inputs[j].setAttribute('data-wort', '');
+            inputs[j].classList.remove('aufgabe__luecke--filled');
+          } else {
+            inputs[j].value = '';
+          }
         }
       }
       Core.feedback.showError(section, 'Nicht alle Lücken sind richtig. Versuche es nochmal! ❌');

@@ -496,6 +496,118 @@ footer a:hover {
   border-bottom-style: solid;
 }
 
+/* v3.6b: Antwortpool (Drag & Drop) */
+.aufgabe__antwortpool {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  margin-top: 0.8em;
+  background: var(--color-surface, #f8f6f0);
+  border: 1px dashed var(--color-border, #d4c5a9);
+  border-radius: 4px;
+  min-height: 2.2em;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.aufgabe__antwortpool--dragover {
+  border-color: var(--color-primary, #8b7355);
+  background: rgba(139, 115, 85, 0.06);
+}
+
+.aufgabe__antwortpool-label {
+  font-size: 0.8em;
+  color: var(--color-text-muted, #6b5b3e);
+  margin-right: 4px;
+  user-select: none;
+}
+
+.aufgabe__pool-wort {
+  display: inline-block;
+  padding: 2px 8px;
+  background: var(--color-primary-light, #e8dcc8);
+  border: 1px solid var(--color-primary, #8b7355);
+  border-radius: 3px;
+  font-family: var(--font-code);
+  font-size: 0.85em;
+  line-height: 1.4;
+  cursor: grab;
+  transition: opacity 0.15s, transform 0.1s, box-shadow 0.1s;
+  user-select: none;
+}
+
+.aufgabe__pool-wort:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.12);
+}
+
+.aufgabe__pool-wort--selected {
+  outline: 2px solid var(--color-secondary, #6b8e5a);
+  outline-offset: 1px;
+  background: var(--color-secondary-light, #d4e6cc);
+}
+
+.aufgabe__pool-wort--used {
+  opacity: 0.25;
+  cursor: default;
+  transform: none;
+  box-shadow: none;
+}
+
+.aufgabe__pool-wort--dragging {
+  opacity: 0.4;
+}
+
+/* v3.6b: Luecken im Pool-Modus — inline, lesefluss-freundlich */
+.aufgabe__luecke--pool {
+  display: inline;
+  padding: 0 4px;
+  border: none;
+  border-bottom: 1.5px dashed var(--color-primary);
+  background: transparent;
+  text-align: center;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  cursor: pointer;
+  vertical-align: baseline;
+  min-width: 3em;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+/* Leere Luecke: Unterstrich-Platzhalter */
+.aufgabe__luecke--pool:empty::after {
+  content: '\00a0\00a0\00a0\00a0\00a0\00a0';
+  opacity: 0.3;
+}
+
+.aufgabe__luecke--pool.aufgabe__luecke--dragover {
+  border-bottom-color: var(--color-secondary, #6b8e5a);
+  background: rgba(107, 142, 90, 0.08);
+}
+
+.aufgabe__luecke--pool.aufgabe__luecke--filled {
+  border-bottom-style: solid;
+  background: rgba(232, 220, 200, 0.5);
+  font-family: var(--font-code);
+  cursor: grab;
+}
+
+.aufgabe__luecke--pool.aufgabe__luecke--correct {
+  border-bottom-color: var(--color-success);
+  border-bottom-style: solid;
+}
+
+.aufgabe__luecke--pool.aufgabe__luecke--incorrect {
+  border-bottom-color: var(--color-error);
+  border-bottom-style: solid;
+}
+
+.aufgabe__luecke--pool.aufgabe__luecke--dragging {
+  opacity: 0.4;
+}
+
 /* Reihenfolge */
 .aufgabe__reihenfolge {
   display: flex;
