@@ -825,3 +825,145 @@ Kein Re-Dispatch erforderlich. Aufgaben-Set Mappe 3 ist cross-konsistent.
 ### Gesamt-Ergebnis Phase 4
 
 **PASS** — Mappe 3 funktional validiert und WCAG-geprueft. Keine mappe-spezifischen Blocker. 2 Warnings betreffen Engine/CSS-Infrastruktur (H-Hierarchie, Footer-Touch-Target) und gelten fuer alle Mappen gleichermassen.
+
+---
+
+## Phase 4.3: User-Browser-Review
+
+**Datum:** 2026-04-03
+**Reviewer:** Paul (manueller Browser-Test)
+**Quelle:** docs/analyse/Browser review Mappe 3.md
+**Bewertung:** Erneut signifikante Qualitaetsmaengel — viele Befunde deckungsgleich mit Mappe-2-Problemen. Ursachen liegen ueberwiegend NICHT in mappe-spezifischen Inhalten, sondern in der Produktionsinfrastruktur (Engine-Rendering, Subagenten-Prompts, Vertragsluecken).
+
+### Befundkatalog
+
+#### B1: Umlaute-Fehler in Einstieg, Hefteintrag, Ueberleitung (BLOCKER)
+
+**Beobachtung:** "Buendnisse", "Grossstaedten", "Zuege", "Gefuehl", "oeffentlich" — ASCII-Transliterationen statt echter UTF-8-Umlaute in Einstieg-narrativ, SCPL-Texten, Ueberleitung, Zusammenfassung.
+**Verifiziert:** Ja. data.json enthaelt `"Die Buendnisse haben aus einem Mord..."` (einstieg.narrativ), `"Die Buendnisse haben aus einem Mord..."` (situation.kontextsatz), `"In den Grossstaedten..."` (complication[0].schritt), `"fuerchten"`, `"oeffentlich"` (transfer.frage).
+**Ursache:** Phase-2.0-Rahmenproduktion (VERTRAG_PHASE_2-0). Die Rahmen-JSONs (einstieg.json, sicherung.json/hefteintrag.json) wurden mit ASCII-Umlauten produziert. Die Materialien (Phase 2.1) verwenden korrekte UTF-8-Umlaute — das Problem ist isoliert auf Phase 2.0.
+**Betroffene Felder:** einstieg.narrativ, sicherung.hefteintrag (alle SCPL-Zonen), sicherung.zusammenfassung, sicherung.ueberleitung, sicherung.reflexionsimpuls.
+**Scope:** Infrastruktur — VERTRAG_PHASE_2-0 muss Encoding-Regel (v3.2, AGENT_RAETSEL: "Echte UTF-8-Umlaute in allen Textfeldern. KEINE ASCII-Transliterationen.") explizit einfordern. Identisches Problem in Mappe 2.
+**Fix-Ebene:** Vertrag (Prompt-Verstaerkung) + Daten-Patch (Mappe 3 retroaktiv).
+
+#### B2: Gedankenstriche als `--` statt `—` (MEDIUM)
+
+**Beobachtung:** Doppel-Bindestriche in Ueberleitungen ("dieses Foto zeigt--"), Material-Titeln ("Zwei Welten -- Kriegsfreiwilliger"), Bildunterschriften.
+**Verifiziert:** Ja. data.json enthaelt `"Die Bilder zeigten die Oberfläche der Kriegsbegeisterung -- diese Originalstimmen..."` (ueberleitung_von mat-3-4), `"Zwei Welten -- Kriegsfreiwilliger und Bauersfrau"` (mat-3-5 titel). Materialien-inhalt innerhalb von HTML-Tags teilweise auch betroffen.
+**Ursache:** Phase-2.1-Material-Produktion und Phase-2.1c-Cross-Konsistenz. Encoding-Regel v3.2 bezieht sich auf Umlaute, aber deckt typographische Zeichen (Gedankenstriche, Anfuehrungszeichen) nicht explizit ab.
+**Scope:** Infrastruktur — Encoding-Regel erweitern um typographische Zeichen: `--` → `—`, gerade Anfuehrungszeichen → typographische.
+**Fix-Ebene:** Vertrag + Subagenten-Prompts + Daten-Patch.
+
+#### B3: Quellenangaben doppelt gerendert (MEDIUM)
+
+**Beobachtung:** Quellenangaben erscheinen zweimal: einmal statisch im Material-Body, nochmal korrekt via "Quellen anzeigen"-Button. Ausblend-Mechanismus wird umgangen.
+**Verifiziert:** Ja. mat-3-4 hat `<p class="quellentext__nachweis"><em>Stefan Zweig...</em></p>` im inhalt UND `"quelle": "Zweig, Stefan: ..."` als separates Feld. mat-3-5 hat `<cite>Fiktive Tagebucheintraege...</cite>` im inhalt UND `"quelle": "..."`.
+**Ursache:** Phase-2.1-Material-Subagenten schreiben Quellenangaben sowohl in den HTML-Body (inhalt) als auch ins quelle-Feld. Die Engine rendert das quelle-Feld im "Quellen anzeigen"-Overlay. Ergebnis: Dopplung.
+**Scope:** Infrastruktur — SUB_MATERIAL_QUELLENTEXT und SUB_MATERIAL_TAGEBUCH muessen explizit angewiesen werden: Quellenangaben AUSSCHLIESSLICH im quelle-Feld, NICHT im inhalt-Body. Identisches Problem in Mappe 2.
+**Fix-Ebene:** Subagenten-Prompts + Daten-Patch.
+
+#### B4: M4 (Quellentext) unuebersichtlich (HIGH)
+
+**Beobachtung:** (a) Ueberschrift + Unterueberschrift ablenkend, (b) Formatierung trennt Sprecher/Aeusserungen nicht genug, (c) Quellenangaben (Name, Ort, Umstaende) im Material-Body ueberfluessig — nur Name/Rolle waere didaktisch sinnvoll.
+**Verifiziert:** Ja. mat-3-4 inhalt hat pro Quelle: `quellentext__einleitung` (Kontextabsatz) → `blockquote` (Zitat) → `quellentext__nachweis` (volle Quellenangabe). Kontextabsaetze sind lang (je 15-25 Woerter), Quellenangaben enthalten Ort/Umstaende.
+**Ursache:** SUB_MATERIAL_QUELLENTEXT Prompt definiert Kontextabsaetze und vollstaendige Nachweise als Pflicht. Fuer Multi-Quellen-Materialien (3 Stimmen in einem Material) ist dieses Schema zu textlastig — es erzeugt zu viel Rahmentext um die eigentlichen Zitate.
+**Scope:** Infrastruktur — SUB_MATERIAL_QUELLENTEXT muss Multi-Quellen-Materialien anders behandeln: (a) Kuerzere Einleitungen (max. 10 Woerter pro Sprecher), (b) Name + Rolle statt voller Nachweis im Body (voller Nachweis nur im quelle-Feld), (c) CSS/Engine fuer visuelle Trennung (z.B. hr oder spacing zwischen Sprechern). Auch Ueberlegung: Mehrere Quellen als SEPARATE Materialien statt als ein Sammel-Material.
+**Fix-Ebene:** Subagenten-Prompt + Engine-CSS + ggf. Material-Redesign.
+
+#### B5: Ueberleitungston didaktisch statt schuelergerecht (MEDIUM)
+
+**Beobachtung:** "... machen die Perspektiven persoenlich erlebbar" — kein schuelernahes Register, sondern didaktischer Kommentar. User bewertet die Zielgruppen-Kalibrierung der Ueberleitungen als unzureichend.
+**Verifiziert:** Ja. Alle 4 Ueberleitungen folgen dem Muster "[vorheriges Material] zeigte X -- [dieses Material] zeigt Y". Die Verben ("machen ... erlebbar", "lieferten Fakten und Zitate") sind Lehrkraft-Register, nicht Schueler-Register.
+**Ursache:** Phase-2.1c (Cross-Konsistenz-Dispatch, Achse 5: Zwei-Vektoren-Ueberleitungen). Der VERTRAG_PHASE_2-1c definiert Ueberleitungen als Bruecken, aber das Zielregister (schuelergerecht) wird nicht explizit eingefordert.
+**Scope:** Infrastruktur — VERTRAG_PHASE_2-1c Achse 5 muss Sprachregister-Vorgabe enthalten: "Ueberleitungen sind aus Schueler-Perspektive formuliert — kurz, konkret, ohne didaktische Metasprache." Identisches Problem in Mappe 2.
+**Fix-Ebene:** Vertrag.
+
+#### B6: Fragestellungen zu sperrig / nicht schuelergerecht (HIGH)
+
+**Beobachtung:**
+- Aufgabe 1: "Ergaenze die fehlenden Fachbegriffe und Informationen zur Kriegsstimmung in Deutschlands Grossstaedten 1914" — "Ergaenze die fehlenden Fachbegriffe" haette gereicht. Mehr Impulscharakter, Rest geht aus Kontext hervor.
+- Aufgabe 2: "laut dem Sachtext" nimmt Quellenbezug vorweg (gehoert in Tipp 1), "in Deutschland 1914" ueberfluessig.
+- Aufgabe 3: "Ordne die Personen und Aussagen den Perspektiven zu, die sie im August 1914 vertreten" — zu abstrakt fuer SuS ("Perspektiven vertreten").
+- Aufgabe 5: Operator "Beurteile" fuer SuS nicht verstaendlich. Beurteilung muss durch Frageformulierung implizit angereizt werden, nicht durch Nennung des Operators. Themen-Bezug zur Mappe unklar. Erwartungshorizont schwammig, kategoriale Bewertung bei persoenlicher Meinungsaeusserung fragwuerdig.
+**Ursache:** Subagenten-Prompts (SUB_AUFGABE_*) produzieren Fragestaemme mit zu viel Kontext und expliziten Operatoren. Die Kurzregel "Impulscharakter, kein Aufsatzthema" fehlt. Der Dispatcher-Konstruktionskontext definiert Operationalisierungsziele mit Operatoren — Subagenten uebernehmen diese woertlich in den Fragestamm statt sie in die Aufgabenstruktur umzusetzen.
+**Scope:** Infrastruktur — (a) Subagenten-Prompts muessen Kurzregel enthalten: "Fragestamm = kurzer Impuls, max. 15 Woerter. Kontext gehoert in Tipps, nicht in Frage." (b) Freitext-Prompt muss explizit verbieten, AFB-Operatoren woertlich in die Frage zu schreiben. (c) AGENT_RAETSEL Konstruktionskontext-Schema muss Trennung Operationalisierungsziel vs. Fragestamm betonen.
+**Fix-Ebene:** Subagenten-Prompts + AGENT_RAETSEL + Daten-Patch.
+
+#### B7: Tipp 2 bei Lueckentexten nicht hilfreich (MEDIUM)
+
+**Beobachtung:** Tipp 2 ist "sperrig/ueberfluessig/kontraproduktiv" bei Lueckentexten. User-Vorschlag: Tipp 2 bei Lueckentexten IMMER als randomisierten Antwortpool (alle oder Teil der einzusetzenden Begriffe) nutzen.
+**Ursache:** SUB_AUFGABE_LUECKENTEXT definiert Tipp 2 als "Einschraenkung", was bei Lueckentexten oft zu vagen Paraphrasierungen fuehrt. Ein Wortpool waere didaktisch effektiver (AFB I: Recall mit Hilfe).
+**Scope:** Infrastruktur — SUB_AUFGABE_LUECKENTEXT Tipp-Stufe-2 umwidmen: "Zeige die einzusetzenden Begriffe in zufaelliger Reihenfolge als Wortpool." Engine unterstuetzt das bereits (Text-Tipp).
+**Fix-Ebene:** Subagenten-Prompt.
+
+#### B8: Aufgabe 4 (Reihenfolge) didaktisch fragwuerdig (HIGH)
+
+**Beobachtung:** (a) Woher sollen SuS die genaue Reihenfolge erarbeitet haben? Die Information steckt so nicht isoliert im Material. (b) Die Zeitspanne (wenige Tage August 1914) macht chronologische Isolierung schwierig. (c) Zeit als Ordnungskriterium hier schwach.
+**Verifiziert:** Die korrekte Reihenfolge (Mobilmachung → Begeisterung → Angst → Burgfrieden) ist aus mat-3-1 ableitbar, aber die Uebergaenge sind fliessend, nicht trennscharf datierbar.
+**Ursache:** AGENT_RAETSEL Progressionsplan setzt Position 4 = AFB II = Reihenfolge. Der Reihenfolge-Typ setzt ein klares Ordnungskriterium voraus. Bei nicht-trennscharf datierbaren Prozessen innerhalb kurzer Zeitspannen ist "chronologische Reihenfolge" ein schwaches Ordnungsprinzip.
+**Scope:** Infrastruktur — (a) AGENT_RAETSEL Progressionsplan muss bei der Typauswahl pruefen: "Hat das Thema eine trennscharf isolierbare Abfolge?" Wenn nein: alternativen Typ waehlen (z.B. Zuordnung, MC-Transfer). (b) SUB_AUFGABE_REIHENFOLGE Gegenpruefung: "Sind die Elemente aus dem Ziel-Material eindeutig in dieser Reihenfolge ableitbar?" Wenn nein: FAIL zurueck an Orchestrator.
+**Fix-Ebene:** AGENT_RAETSEL + SUB_AUFGABE_REIHENFOLGE.
+
+#### B9: Aufgabe 5 (Freitext) Erwartungshorizont/Bewertung problematisch (MEDIUM)
+
+**Beobachtung:** Erwartungshorizont schwammig, automatisierte kategoriale Bewertung (Keywords: Druck, Meinung, Angst) bei persoenlicher Meinungsaeusserung grundsaetzlich fragwuerdig.
+**Verifiziert:** loesung = ["Druck", "Meinung", "Angst"]. Engine prueft Keyword-Vorkommen. Bei einer Beurteilungsaufgabe (AFB III) ist die Qualitaet der Argumentation relevant, nicht Keyword-Matching.
+**Ursache:** Engine-Limitation — freitext-code Typ kann nur Keyword-Matching, keine semantische Bewertung. SUB_AUFGABE_FREITEXT kompensiert das mit generischen Keywords ("Druck", "Meinung", "Angst"), die in jeder halbwegs relevanten Antwort vorkommen wuerden → Validierung hat keinen echten Pruefwert.
+**Scope:** Infrastruktur — Grundsatzfrage: (a) Engine erweitern (semantische Freitext-Bewertung — komplex, langfristig), oder (b) Freitext-Aufgaben als "offene Reflexion" ohne automatische Bewertung gestalten (Antwort wird gespeichert/angezeigt, nicht bewertet), oder (c) Keywords enger und spezifischer waehlen (material-spezifische Fachbegriffe statt generische Woerter). Option (b) oder (c) kurzfristig realistisch.
+**Fix-Ebene:** Engine-Design-Entscheidung + SUB_AUFGABE_FREITEXT.
+
+#### B10: Hefteintrag qualitativ mangelhaft (BLOCKER)
+
+**Beobachtung:** (a) Zu viel Prosa/Erzaehlung, jeder SCPL-Bereich ist ein kleiner Merksatz-Satz statt stichpunktartig/map-of-meaning. (b) Fachbegriffe nicht als Knoten/zentrale Einheiten erkennbar. (c) Stumpfer Pfeil-Ablauf fehlt. (d) Merksaetze (scpl.loesung) zu umfangreich — 3 eigenstaendige Saetze statt einer zusammenhaengenden qualifizierten Antwort auf die Stundenfrage. (e) Transferfrage unter Hefteintrag fehlplatziert — streichen. (f) Umlaute falsch (siehe B1).
+**Verifiziert:** Ja. scpl.loesung hat 3 Eintraege (je 15-20 Woerter), keiner beantwortet die Stundenfrage direkt/zusammenhaengend. SCPL-Schritte sind je 1-2 Saetze Fliesstext statt stichpunktartige Knoten mit Fachbegriffen als Ankerpunkte.
+**HE-Kriterien-Abgleich:**
+- HE1 (Material-Konkretion): GRENZWERTIG — SCPL-Texte nennen "Menschenmengen jubeln, Fahnen wehen" (konkret), aber auch viel Abstraktes.
+- HE4 (Sprachliche Geschlossenheit): FAIL — SCPL-Text liest sich als Nacherzaehlung, nicht als strukturiertes Denkprotokoll.
+- HE5 (Prozess-Synthese): Die zusammenfassung hat Prozessbezug ("Ihr habt anhand von Fotos, Originalquellen und Tagebucheintraegen untersucht") — formal PASS.
+- HE7 (R7-Laenge): zusammenfassung 42 Woerter — PASS.
+- HE12 (Lernbarkeit): FAIL — Keine klare visuelle Hierarchie. SCPL-Schritte konkurrieren mit Merksaetzen. Kein "auf-einen-Blick"-Effekt.
+**Ursache:** Grundlegend — der Generierungsprozess (Phase 0.4 Tafelbild + Phase 2.0 Hefteintrag + Phase 2.1c Achse 6 Revision) produziert narrativen Fliesstext statt strukturiertes Denkprotokoll. User-Frage "Haben wir den Hefteintrag durch die Konzeption des Generierungsprozesses zu sehr zergliedert?" trifft den Kern: Die Pipeline produziert SCPL-Zonen als isolierte Textbausteine, die zusammengesetzt keine visuelle Wissenslandkarte ergeben.
+**Scope:** Infrastruktur — Grundsatzrevision der Hefteintrag-Produktion:
+(a) SCPL-Texte als Stichpunkte/Kurzformulierungen statt Fliesstext.
+(b) Fachbegriffe als visuelle Knoten (fett, mit Kurzerklaerung dahinter).
+(c) Pfeilstruktur (→) zwischen Knoten fuer Zusammenhaenge.
+(d) Merksaetze: Maximal 1-2 Saetze, die zusammen die Stundenfrage beantworten.
+(e) Transfer-Frage aus Hefteintrag entfernen (gehoert in Aufgabe 5, nicht in Sicherung).
+**Fix-Ebene:** GUETEKRITERIEN_HEFTEINTRAG_PRODUKT verschaerfen + Phase-2.0/2.1c-Vertraege anpassen + Daten-Patch.
+
+#### B11: Ueberleitung zur naechsten Mappe holprig (LOW)
+
+**Beobachtung:** Zusammenfassung/Fazit grundsaetzlich gut. Zweiter Absatz (Ueberleitung: "Die Soldaten glauben an einen schnellen Sieg...") passt nicht zum Fazit-Ton.
+**Verifiziert:** Ja. ueberleitung ist: "Die Soldaten glauben an einen schnellen Sieg und erwarten, bis Weihnachten wieder zu Hause zu sein. Doch worauf stuetzt sich dieser Glaube? Die deutschen Generaele haben einen Plan — den Schlieffen-Plan." Inhaltlich korrekt (HE8 PASS), aber stilistisch abrupt nach der Zusammenfassung.
+**HE-Kriterien:** HE8 (Bruecke nach vorn) PASS — verweist auf Schlieffen-Plan (Mappe 4 Thema). HE9 (Kein Spoiler) PASS. Stil-Issue, kein Kriterien-FAIL.
+**Scope:** Daten-Patch (schuelergerechter Uebergang). Kein Infrastruktur-Problem.
+**Fix-Ebene:** Daten-Patch.
+
+### Ursachen-Synthese: Wiederkehrende Infrastruktur-Maengel (Mappe 2 → Mappe 3)
+
+Die folgenden Probleme sind NICHT mappe-spezifisch und traten identisch oder strukturell gleichartig bereits in Mappe 2 auf:
+
+| Befund | Ursache | Fix-Ebene | Prioritaet |
+|---|---|---|---|
+| B1 Umlaute in Rahmen-JSONs | VERTRAG_PHASE_2-0 fehlt Encoding-Regel | Vertrag | BLOCKER |
+| B2 `--` statt `—` | Encoding-Regel deckt typographische Zeichen nicht ab | Vertrag + Subagenten | MEDIUM |
+| B3 Quellenangaben doppelt | SUB_MATERIAL_* schreiben Quellen in inhalt UND quelle | Subagenten-Prompts | MEDIUM |
+| B5 Ueberleitungston | VERTRAG_PHASE_2-1c Achse 5 ohne Sprachregister-Vorgabe | Vertrag | MEDIUM |
+| B6 Fragestellungen sperrig | Subagenten uebernehmen Operator/Kontext woertlich | Subagenten-Prompts + AGENT_RAETSEL | HIGH |
+| B7 Tipp-2 Lueckentext | SUB_AUFGABE_LUECKENTEXT Tipp-Schema suboptimal | Subagenten-Prompt | MEDIUM |
+| B10 Hefteintrag-Qualitaet | Pipeline produziert Fliesstext statt Denkprotokoll | Grundsatzrevision Hefteintrag-Pipeline | BLOCKER |
+
+### Mappe-spezifische Fixes (Daten-Patch)
+
+| Befund | Betroffene Daten | Patch-Art |
+|---|---|---|
+| B1 | einstieg.json, sicherung.json (alle Felder) | Umlaute korrigieren |
+| B2 | mat-3-5 titel, alle ueberleitungen, Bildunterschriften | `--` → `—` |
+| B3 | mat-3-4 inhalt (quellentext__nachweis), mat-3-5 inhalt (cite) | Quellenangaben aus inhalt entfernen |
+| B4 | mat-3-4 inhalt | Kuerzere Einleitungen, Name+Rolle statt voller Nachweis |
+| B6 | aufgabe-3-1 bis aufgabe-3-5 frage-Felder | Kuerzen/vereinfachen |
+| B7 | aufgabe-3-1 tipps[1] | Wortpool statt Paraphrase |
+| B8 | aufgabe-3-4 | Typ ersetzen oder Elemente schaerfen |
+| B9 | aufgabe-3-5 loesung | Spezifischere Keywords oder Bewertungslogik aendern |
+| B10 | sicherung.hefteintrag (komplett) | Stichpunkte, Knoten, Pfeilstruktur, Merksatz kuerzen, Transfer-Frage streichen |
+| B11 | sicherung.ueberleitung | Stilistisch glaetten |
