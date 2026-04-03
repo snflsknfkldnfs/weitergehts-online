@@ -711,3 +711,59 @@ Ablage: sicherung.json → ueberleitung.
 **GESAMT-PASS (9/9 Kriterien PASS, 0 WARN, 0 FAIL)**
 
 Kein Re-Dispatch erforderlich. Aufgaben-Set Mappe 3 ist cross-konsistent.
+
+---
+
+## Phase 3: Assembly
+
+**Datum:** 2026-04-03
+**Vertrag:** VERTRAG_PHASE_3_ASSEMBLY.md (v1.0, mappenunabhaengig)
+**Mappe:** 3 (Kriegsbegeisterung 1914)
+**Freischalt-Code:** AUGUST
+
+### Verlauf
+
+| Schritt | Ergebnis | Detail |
+|---|---|---|
+| 3.0 Pre-Flight | PASS | 14 JSONs valide. 2 Bilder fehlen. Engine-Patch vorhanden. data.json: 2 Mappen, Index 2 frei. |
+| 3.1 Bild-Download | PASS | img-3-1.jpg (Stadtschloss, IWM, 240 KB), img-3-2.jpg (Tellgmann Truppentransport, Bundesarchiv, 75 KB). Wikimedia-Suche via MCP. |
+| 3.2 Assembly | PASS | 5 mat + 5 aufgaben + 3 rahmen → mappe-Objekt. data.json: 79 KB, 3 Mappen. V11: bestehende Mappen unveraendert (SHA256). |
+| 3.3 Validierung | PASS (12/12) | V1-V12 alle PASS. Keine Findings. |
+
+### Validierungs-Detail
+
+| # | Pruefung | Ergebnis |
+|---|---|---|
+| V1 | JSON valide | PASS |
+| V2 | Mappe-Anzahl == 3 | PASS |
+| V3 | Mappe-ID == mappe-3 | PASS |
+| V4 | Freischalt-Code == AUGUST | PASS |
+| V5 | Material-IDs vollstaendig + unique | PASS (5/5) |
+| V6 | Aufgabe-IDs vollstaendig + unique | PASS (5/5) |
+| V7 | material_referenz-Integritaet | PASS (alle Referenzen gueltig) |
+| V8 | Bild-Pfade existieren + > 10 KB | PASS (240 KB, 75 KB) |
+| V9 | Tipps-Struktur (3x stufe 1/2/3) | PASS (5/5) |
+| V10 | Engine-Feld-Kompatibilitaet | PASS (5/5: text_mit_luecken, optionen, elemente, optionen, freitext-code) |
+| V11 | Bestehende Mappen unveraendert | PASS (SHA256-Vergleich) |
+| V12 | Einstieg-Konsistenz (problemstellung == stundenfrage) | PASS |
+
+### Mappe-Header (abgeleitet, kein meta.json)
+
+| Feld | Wert | Quelle |
+|---|---|---|
+| id | mappe-3 | Konvention |
+| titel | Kriegsbegeisterung 1914 | DIDAKTIK_RAHMEN Sektion "Mappe 3" |
+| beschreibung | Warum zogen Menschen begeistert in den Krieg? Patriotismus, Propaganda, gesellschaftlicher Druck — und die Gegenstimmen. | DIDAKTIK_RAHMEN Thematischer Schwerpunkt |
+| freischalt_code | AUGUST | PROGRESSIONSPLAN.md |
+
+### Findings
+
+- **F1 (OFFEN, P1):** Kein meta.json im Produktionsverzeichnis. Header manuell abgeleitet. → ARTEFAKT_INVENTAR Mappe 3 fehlt weiterhin (Known Issue seit Phase 2.1).
+- **F2 (NEU):** ueberleitungen.json im Produktionsverzeichnis vorhanden (4 Eintraege), aber NICHT in data.json-Schema integriert. Ueberleitungen sind in den mat-JSONs als `ueberleitung_von` eingebettet — ueberleitungen.json ist ein Zwischen-Artefakt, kein Assembly-Input. Kein Fix noetig.
+- **F3 (NEU):** Mappe-2-Ueberleitung verweist bereits korrekt auf Mappe 3 ("Wie reagieren die Menschen auf den Kriegsausbruch?"). Keine Spezifizierung noetig.
+
+### Produzierte Dateien
+
+- `escape-games/gpg-erster-weltkrieg-ursachen/data.json` (aktualisiert, +mappe-3)
+- `assets/img/gpg-erster-weltkrieg-ursachen/img-3-1.jpg` (neu)
+- `assets/img/gpg-erster-weltkrieg-ursachen/img-3-2.jpg` (neu)

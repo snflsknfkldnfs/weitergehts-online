@@ -1029,6 +1029,443 @@
           "kontext": "Der Anlass des Krieges wurde zur Nebensache — die Eigendynamik der Bündnisse überrollte alles."
         }
       }
+    },
+    {
+      "id": "mappe-3",
+      "titel": "Kriegsbegeisterung 1914",
+      "beschreibung": "Warum zogen Menschen begeistert in den Krieg? Patriotismus, Propaganda, gesellschaftlicher Druck — und die Gegenstimmen.",
+      "freischalt_code": "AUGUST",
+      "einstieg": {
+        "narrativ": "<p>Die Buendnisse haben aus einem Mord einen Weltkrieg gemacht. Millionen Soldaten werden mobilisiert. Doch wie reagieren die Menschen auf den Kriegsausbruch? Ziehen sie mit Angst oder mit Begeisterung in den Krieg?</p>",
+        "problemstellung": "Waren die Menschen 1914 wirklich begeistert vom Krieg?"
+      },
+      "materialien": [
+        {
+          "id": "mat-3-1",
+          "typ": "darstellungstext",
+          "titel": "Begeisterung und Angst — August 1914",
+          "inhalt": "<p>August 1914. In den Großstädten Deutschlands herrscht Aufregung. Soldaten steigen in Züge und schreiben mit Kreide &bdquo;Ausflug nach Paris&ldquo; auf die Waggons. Viele glauben, bis Weihnachten wieder zu Hause zu sein. Historiker nennen dieses Gefühl die <strong>Kriegsbegeisterung</strong> (auch &bdquo;Augusterlebnis&ldquo; — die Euphorie bei Kriegsausbruch).</p><p>Diese Begeisterung hat vier Gründe. Erstens: <strong>Patriotismus</strong> (übersteigertes Nationalgefühl). Die russische Mobilmachung löst eine Welle der Vaterlandsliebe aus. Zweitens: Abenteuerlust, besonders bei jungen Männern und Studenten. Drittens: <strong>gesellschaftlicher Druck</strong> — wer nicht begeistert ist, gilt als Feigling. Viertens: <strong>Propaganda</strong> (gezielte Beeinflussung der öffentlichen Meinung). Die Regierung stellt den Krieg als reine Verteidigung dar.</p><p>Doch war wirklich ganz Deutschland begeistert? Oder gab es auch andere Stimmen?</p><cite>Eigene Darstellung auf Basis der Sachanalyse</cite>",
+          "quelle": "Eigene Darstellung auf Basis der Sachanalyse",
+          "position": 1,
+          "didaktische_funktion": "einstieg",
+          "voraussetzung": [],
+          "ueberleitung_von": null,
+          "sequenz_kontext": {
+            "vorher": null,
+            "nachher": {
+              "id": "mat-3-2",
+              "typ": "bildquelle",
+              "kerninhalt": "Jubel vor dem Berliner Stadtschloss — Kriegsbegeisterung als konkretes Bild"
+            }
+          }
+        },
+        {
+          "id": "mat-3-2",
+          "typ": "bildquelle",
+          "titel": "Jubel vor dem Berliner Stadtschloss",
+          "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-3-1.jpg",
+          "bildunterschrift": "Menschenmenge jubelt dem Kaiser auf dem Balkon des Berliner Stadtschlosses zu, 1. August 1914. Dieses Foto dokumentiert das Augusterlebnis -- die Kriegsbegeisterung, die Teile der Bevölkerung bei Kriegsausbruch erfasste. Welche unterschiedlichen Reaktionen und Gefühle könnten in dieser Menge nebeneinander existiert haben?",
+          "quelle": "Imperial War Museums, Wikimedia Commons",
+          "lizenz": "Public Domain",
+          "position": 2,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [
+            "mat-3-1"
+          ],
+          "ueberleitung_von": "Der Sachtext beschrieb die Kriegsbegeisterung in Worten -- dieses Foto zeigt, wie sie konkret aussah.",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-3-1",
+              "typ": "darstellungstext",
+              "kerninhalt": "Kriegsbegeisterung (Augusterlebnis) und vier Gründe (Patriotismus, Abenteuerlust, Druck, Propaganda)"
+            },
+            "nachher": {
+              "id": "mat-3-3",
+              "typ": "bildquelle",
+              "kerninhalt": "Truppentransport per Bahn -- Aufbruchstimmung oder erzwungener Abschied?"
+            }
+          }
+        },
+        {
+          "id": "mat-3-3",
+          "typ": "bildquelle",
+          "titel": "Truppentransport per Bahn, August 1914",
+          "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-3-2.jpg",
+          "bildunterschrift": "Soldaten steigen August 1914 in Eisenbahnwagen zur Mobilmachung ein; viele schreiben Sprüche wie \"Ausflug nach Paris\" auf die Waggons. Das Bild zeigt die Aufbruchsstimmung der Mobilisierung, die zwischen freiwilliger Begeisterung und gesellschaftlichem Druck schwer zu unterscheiden ist. Welche Gefühle könnten die Gesichter und Gesten der Soldaten verraten -- Freude, Unsicherheit oder Pflichtgefühl?",
+          "quelle": "Oscar Tellgmann / Bundesarchiv, Wikimedia Commons",
+          "lizenz": "Public Domain",
+          "position": 3,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [
+            "mat-3-2"
+          ],
+          "ueberleitung_von": "Das Jubel-Bild zeigte eine Seite der Kriegsbegeisterung -- dieses Foto zeigt eine zweite: Aufbruch oder Abschied?",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-3-2",
+              "typ": "bildquelle",
+              "kerninhalt": "Jubel vor dem Berliner Stadtschloss -- Kriegsbegeisterung als Massenphänomen"
+            },
+            "nachher": {
+              "id": "mat-3-4",
+              "typ": "quellentext",
+              "kerninhalt": "Drei konträre Originalstimmen zum Kriegsausbruch (Begeisterung, Angst, Pflicht)"
+            }
+          }
+        },
+        {
+          "id": "mat-3-4",
+          "typ": "quellentext",
+          "titel": "Drei Stimmen zum Kriegsausbruch",
+          "inhalt": "<p>Drei Stimmen, drei Perspektiven: Wer spricht am 4. August 1914 und warum?</p><p class=\"quellentext__einleitung\">Der österreichische Schriftsteller Stefan Zweig beschreibt die Stimmung in Wien während der ersten Kriegstage. Er beobachtet eine nie gekannte Einheit der Bevölkerung.</p><blockquote><p>&bdquo;Alle Unterschiede von Stand, Sprache und Religion waren für diesen einen Moment untergetaucht in dem strömenden Gefühl der Brüderlichkeit.&ldquo;</p></blockquote><p class=\"quellentext__nachweis\"><em>Stefan Zweig, österreichischer Schriftsteller, Erinnerungen, August 1914</em></p><p class=\"quellentext__einleitung\">Doch nicht überall jubelt man. Ein SPD-Funktionär aus Bremen berichtet von der Mobilmachung in Arbeitervierteln -- und schildert ganz andere Gefühle.</p><blockquote><p>&bdquo;Mütter, Ehefrauen und Bräute bringen die jungen Männer zum Bahnhof und weinen. Alle haben das Gefühl, direkt ins Schlachthaus zu gehen.&ldquo;</p></blockquote><p class=\"quellentext__nachweis\"><em>SPD-Funktionär aus Bremen, Bericht über die Mobilmachung, August 1914</em></p><p class=\"quellentext__einleitung\">Wenige Tage später macht auch die SPD eine überraschende Wende. Im Reichstag stimmt die Partei für die Kriegskredite. Ihr Fraktionsvorsitzender Hugo Haase begründet diese Entscheidung.</p><blockquote><p>&bdquo;Wir lassen unser Vaterland in der Stunde der Gefahr nicht im Stich.&ldquo;</p></blockquote><p class=\"quellentext__nachweis\"><em>Hugo Haase, SPD-Fraktionsvorsitzender, Reichstagsrede, 4. August 1914</em></p>",
+          "quelle": "Zweig, Stefan: Erinnerungen, August 1914 / Bericht eines SPD-Funktionärs, Bremen, August 1914 / Haase, Hugo: Reichstagsrede, 4. August 1914",
+          "position": 4,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [
+            "mat-3-3"
+          ],
+          "ueberleitung_von": "Die Bilder zeigten die Oberfläche der Kriegsbegeisterung -- diese Originalstimmen zeigen verschiedene Perspektiven dahinter.",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-3-3",
+              "typ": "bildquelle",
+              "kerninhalt": "Truppentransport per Bahn -- Aufbruchstimmung oder erzwungener Abschied?"
+            },
+            "nachher": {
+              "id": "mat-3-5",
+              "typ": "tagebuch",
+              "kerninhalt": "Zwei fiktive Tagebücher: Kriegsfreiwilliger (Begeisterung) vs. Bauersfrau (Angst)"
+            }
+          }
+        },
+        {
+          "id": "mat-3-5",
+          "typ": "tagebuch",
+          "titel": "Zwei Welten -- Kriegsfreiwilliger und Bauersfrau",
+          "inhalt": "<p><em>Berlin, 2. August 1914</em></p><p>Die Straßen sind voller Menschen. Überall Soldaten, Fahnen, Musik. Ich bin so aufgeregt, dass ich kaum schlafen kann. Heute habe ich mich freiwillig gemeldet -- endlich ein Abenteuer! Meine Freunde sagen, wir sind bis Weihnachten zurück. Der Krieg ist eine Chance, etwas Großes zu erleben. Wer jetzt nicht geht, ist feige. Alle schauen auf einen hin. Ich habe &bdquo;Ausflug nach Paris&ldquo; auf den Zugwaggon geschrieben wie die anderen. Das Vaterland braucht uns!</p><hr><p><em>Müller-Hof bei Hannover, 5. August 1914</em></p><p>Mein Mann ist weg. Mein ältester Sohn auch. Wer soll die Ernte einbringen? Das Getreide wartet nicht. Die Nachbarin weinte am Bahnhof -- ihre beiden Jungen sind auch fort. Alle sagen, das ist richtig, das ist Pflicht. Aber nachts bin ich wach und denke an nichts anderes. Die Angst sitzt mir im Bauch wie ein Stein. Wenn ich meine Sorge zeige, schaut man mich schief an. Ich muss stark sein und &bdquo;ja&ldquo; sagen -- obwohl ich &bdquo;nein&ldquo; schreie.</p><cite>Fiktive Tagebucheinträge, historisch plausibel. Kontext: Wikipedia, Spirit of 1914</cite>",
+          "quelle": "Fiktive Tagebucheinträge, historisch plausibel. Kontext: Wikipedia, Spirit of 1914",
+          "position": 5,
+          "didaktische_funktion": "sicherung",
+          "voraussetzung": [
+            "mat-3-4"
+          ],
+          "ueberleitung_von": "Die Originalquellen lieferten Fakten und Zitate -- diese Tagebücher machen die Perspektiven persönlich erlebbar.",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-3-4",
+              "typ": "quellentext",
+              "kerninhalt": "Drei konträre Originalstimmen: Begeisterung (Zweig), Angst (Bremen), Pflicht (Haase)"
+            },
+            "nachher": null
+          }
+        }
+      ],
+      "aufgaben": [
+        {
+          "id": "aufgabe-3-1",
+          "typ": "lueckentext",
+          "frage": "Ergänze die fehlenden Fachbegriffe und Informationen zur Kriegsstimmung in Deutschlands Großstädten 1914.",
+          "material_referenz": [
+            "mat-3-1"
+          ],
+          "text_mit_luecken": "Im August 1914 herrschte in Deutschlands Großstädten große Aufregung. Viele Menschen glaubten, bis ___ wieder zu Hause zu sein. Historiker nennen diese Stimmung die ___ — weil sie vor allem im August auftrat, spricht man auch vom ___. Ein Grund für die Euphorie war übersteigertes Nationalgefühl: ___. Außerdem stellte die Regierung den Krieg durch gezielte ___ als reine Verteidigung dar.",
+          "loesung": [
+            "Weihnachten",
+            "Kriegsbegeisterung",
+            "Augusterlebnis",
+            "Patriotismus",
+            "Propaganda"
+          ],
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Lies den [[mat-3-1|Text über die Kriegsstimmung 1914]] (M1) genau. Der Text erklärt die Begeisterung bei Kriegsausbruch und nennt vier Gründe dafür."
+            },
+            {
+              "stufe": 2,
+              "text": "Die zweite Lücke beschreibt die allgemeine Begeisterung beim Kriegsausbruch (feminin: 'die ...'). Die fünfte Lücke meint die gezielte Beeinflussung der öffentlichen Meinung durch die Regierung."
+            },
+            {
+              "stufe": 3,
+              "text": "Weihnachten — Kriegsbegeisterung — Augusterlebnis — Patriotismus — Propaganda. Die Menschen glaubten an einen kurzen Krieg. Die Begeisterung wurde durch Nationalgefühl, Abenteuerlust, Druck und gezielte Beeinflussung angetrieben."
+            }
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-3-2",
+          "typ": "multiple-choice",
+          "frage": "Welche vier Faktoren führten laut dem Sachtext zur Kriegsbegeisterung in Deutschland 1914?",
+          "material_referenz": [
+            "mat-3-1"
+          ],
+          "optionen": [
+            "Militärische Überlegenheit, wirtschaftliche Chancen, nationale Rivalität und Presse",
+            "Patriotismus, Abenteuerlust, gesellschaftlicher Druck und Propaganda",
+            "Patriotismus, Handelsziele, Zwang durch die Regierung und Konkurrenz um Kolonien",
+            "Abenteuerlust, Propaganda, Industrialisierung und religiöse Überzeugung"
+          ],
+          "loesung": "Patriotismus, Abenteuerlust, gesellschaftlicher Druck und Propaganda",
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Lies den [[mat-3-1|Text über die Kriegsstimmung 1914]] (M1) nochmal genau. Achte auf die Struktur 'Erstens... Zweitens... Drittens... Viertens...'."
+            },
+            {
+              "stufe": 2,
+              "text": "Zwei Optionen enthalten Begriffe, die im Text gar nicht vorkommen: 'wirtschaftliche Chancen' und 'Industrialisierung' sind keine der vier genannten Gründe."
+            },
+            {
+              "stufe": 3,
+              "text": "Patriotismus, Abenteuerlust, gesellschaftlicher Druck und Propaganda. Der Text nennt diese vier Faktoren: (1) übersteigertes Nationalgefühl, (2) Abenteuerlust bei jungen Männern, (3) sozialer Druck — wer nicht begeistert war, galt als Feigling, (4) staatliche Propaganda, die den Krieg als Verteidigung darstellte."
+            }
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-3-3",
+          "typ": "zuordnung",
+          "frage": "Ordne die Personen und Aussagen den Perspektiven zu, die sie im August 1914 vertreten.",
+          "material_referenz": [
+            "mat-3-4"
+          ],
+          "elemente": [
+            {
+              "begriff": "Stefan Zweig beschreibt eine nie gekannte Einheit und Brüderlichkeit",
+              "zuordnung": "Begeisterung und Einheit"
+            },
+            {
+              "begriff": "SPD-Funktionär aus Bremen: Mütter und Ehefrauen weinen am Bahnhof",
+              "zuordnung": "Angst und Gegenstimmen"
+            },
+            {
+              "begriff": "Hugo Haase: Wir lassen unser Vaterland in der Stunde der Gefahr nicht im Stich",
+              "zuordnung": "Pflicht und Verantwortung"
+            },
+            {
+              "begriff": "Junge Männer haben das Gefühl, direkt ins Schlachthaus zu gehen",
+              "zuordnung": "Angst und Gegenstimmen"
+            },
+            {
+              "begriff": "Die SPD stimmt überraschend für die Kriegskredite",
+              "zuordnung": "Pflicht und Verantwortung"
+            }
+          ],
+          "loesung": {
+            "Stefan Zweig beschreibt eine nie gekannte Einheit und Brüderlichkeit": "Begeisterung und Einheit",
+            "SPD-Funktionär aus Bremen: Mütter und Ehefrauen weinen am Bahnhof": "Angst und Gegenstimmen",
+            "Hugo Haase: Wir lassen unser Vaterland in der Stunde der Gefahr nicht im Stich": "Pflicht und Verantwortung",
+            "Junge Männer haben das Gefühl, direkt ins Schlachthaus zu gehen": "Angst und Gegenstimmen",
+            "Die SPD stimmt überraschend für die Kriegskredite": "Pflicht und Verantwortung"
+          },
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Lies [[mat-3-4|die drei Quellen zum Kriegsausbruch]] (M4) nochmal. Achte darauf, welche Quelle Freude beschreibt, welche Trauer zeigt und welche eine schwierige Entscheidung schildert."
+            },
+            {
+              "stufe": 2,
+              "text": "Stefan Zweigs Beschreibung der Brüderlichkeit gehört zu 'Begeisterung und Einheit'. Der Bericht über weinende Mütter am Bahnhof gehört zu 'Angst und Gegenstimmen'."
+            },
+            {
+              "stufe": 3,
+              "text": "Zweig (Brüderlichkeit) → Begeisterung und Einheit. SPD-Funktionär Bremen (Weinen, Schlachthaus) → Angst und Gegenstimmen. Haase → Pflicht und Verantwortung: Er stimmt für den Krieg, aber nicht aus Begeisterung, sondern aus Gewissen. Das Schlachthaus-Gefühl der jungen Männer gehört zur Angst. Auch die SPD-Abstimmung für die Kriegskredite ist Pflicht — die Partei unterstützte den Krieg nicht aus Begeisterung, sondern weil sie das Vaterland nicht im Stich lassen wollte."
+            }
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-3-4",
+          "typ": "reihenfolge",
+          "frage": "Ordne die Schritte von der Mobilmachung bis zum Burgfrieden in die richtige Reihenfolge.",
+          "material_referenz": [
+            "mat-3-1",
+            "mat-3-4"
+          ],
+          "optionen": [
+            "Kriegsbegeisterung erfasst die Großstädte — Patriotismus und Propaganda treiben sie an.",
+            "Die SPD stimmt für die Kriegskredite — der Burgfrieden beginnt: Alle Parteien stehen scheinbar zusammen.",
+            "Der Kaiser ordnet die Mobilmachung an und beruft Soldaten ein.",
+            "Arbeiter und Landbevölkerung äußern Angst und Zweifel am Krieg."
+          ],
+          "loesung": [
+            "Der Kaiser ordnet die Mobilmachung an und beruft Soldaten ein.",
+            "Kriegsbegeisterung erfasst die Großstädte — Patriotismus und Propaganda treiben sie an.",
+            "Arbeiter und Landbevölkerung äußern Angst und Zweifel am Krieg.",
+            "Die SPD stimmt für die Kriegskredite — der Burgfrieden beginnt: Alle Parteien stehen scheinbar zusammen."
+          ],
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Lies [[mat-3-1|den Sachtext zur Kriegsstimmung 1914]] (M1) nochmal. Womit beginnt die Geschichte im August 1914?"
+            },
+            {
+              "stufe": 2,
+              "text": "An Position 1 steht die Mobilmachung. Am Ende steht der Burgfrieden. Überlege: Kommt zuerst die Begeisterung oder zuerst die Gegenstimmen?"
+            },
+            {
+              "stufe": 3,
+              "text": "Mobilmachung → Kriegsbegeisterung in den Städten → Gegenstimmen bei Arbeitern und auf dem Land → SPD stimmt für Kriegskredite (Burgfrieden). Die Mobilmachung löst Begeisterung aus, aber nicht überall. Trotz der Gegenstimmen entsteht durch die SPD-Zustimmung eine scheinbare Einheit."
+            }
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-3-5",
+          "typ": "freitext-code",
+          "frage": "Beurteile, ob es heute Situationen gibt, in denen gesellschaftlicher Druck Menschen dazu bringt, eine Meinung öffentlich zu vertreten, die sie privat nicht teilen. Begründe deine Einschätzung mit Beispielen aus den Materialien und aus deinem Alltag.",
+          "material_referenz": [
+            "mat-3-1",
+            "mat-3-4",
+            "mat-3-5"
+          ],
+          "loesung": [
+            "Druck",
+            "Meinung",
+            "Angst"
+          ],
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Lies [[mat-3-5|die beiden Tagebucheinträge von 1914]] (M5) nochmal. Achte darauf, wie sich die öffentlich gezeigte Haltung und die privaten Gefühle der beiden Personen unterscheiden."
+            },
+            {
+              "stufe": 2,
+              "text": "Die Bauersfrau sagt es direkt: 'Ich muss stark sein und ja sagen — obwohl ich nein schreie.' Sie zeigt nach außen Pflichtbewusstsein, fühlt aber Angst. Überlege: Wo erlebst du oder andere Menschen heute etwas Ähnliches?"
+            },
+            {
+              "stufe": 3,
+              "text": "Musterantwort: Ja, auch heute gibt es Situationen, in denen gesellschaftlicher Druck Menschen zum Schweigen bringt. Die Bauersfrau 1914 musste stark sein und 'ja' sagen, obwohl sie vor Angst nicht schlafen konnte — wer anders dachte, wurde schief angeschaut. In der Schule ist es ähnlich: Manche trauen sich nicht, ihre Meinung zu sagen, weil sie Angst haben, ausgelacht zu werden. In sozialen Medien posten Menschen oft nur das, was anderen gefällt. Der Druck, dazuzugehören, bringt Menschen dazu, ihre echte Meinung zu verstecken — damals wie heute. Deine Antwort sollte Begriffe wie 'Druck', 'Meinung' und 'Angst' verwenden."
+            }
+          ],
+          "punkte": 10,
+          "_meta": {
+            "teilfragen": [
+              "Wie unterscheiden sich in den Tagebucheinträgen die öffentlich gezeigten Gefühle von den privaten Überzeugungen?",
+              "Welche Rolle spielt gesellschaftlicher Druck dabei, dass Menschen ihre wahre Meinung verbergen?",
+              "Gibt es vergleichbare Situationen in der heutigen Gesellschaft? Nenne Beispiele."
+            ],
+            "erwartete_begriffe": [
+              "gesellschaftlicher Druck",
+              "Propaganda",
+              "Patriotismus",
+              "Angst",
+              "Kriegsbegeisterung"
+            ],
+            "validierung_schwelle": 3,
+            "musterantwort": "Ja, auch heute gibt es Situationen, in denen gesellschaftlicher Druck Menschen zum Schweigen bringt. Die Bauersfrau 1914 musste stark sein und 'ja' sagen, obwohl sie vor Angst nicht schlafen konnte — wer anders dachte, wurde schief angeschaut. In der Schule ist es ähnlich: Manche trauen sich nicht, ihre Meinung zu sagen, weil sie Angst haben, ausgelacht zu werden. In sozialen Medien posten Menschen oft nur das, was anderen gefällt. Der Druck, dazuzugehören, bringt Menschen dazu, ihre echte Meinung zu verstecken — damals wie heute."
+          }
+        }
+      ],
+      "sicherung": {
+        "hefteintrag": {
+          "stundenfrage": "Waren die Menschen 1914 wirklich begeistert vom Krieg?",
+          "ordnungsmuster": "multiperspektivisch",
+          "scpl": {
+            "situation": {
+              "kontextsatz": "Die Buendnisse haben aus einem Mord einen Weltkrieg gemacht. Soldaten steigen in Zuege und schreiben 'Ausflug nach Paris' auf die Waggons — doch ist das wirklich Begeisterung?",
+              "fachbegriffe": [
+                "Mobilmachung"
+              ]
+            },
+            "complication": [
+              {
+                "schritt": "In den Grossstaedten herrscht Aufregung. Menschenmengen jubeln, Fahnen wehen — Historiker nennen dieses Gefuehl das Augusterlebnis: die Kriegsbegeisterung.",
+                "fachbegriff": "Kriegsbegeisterung (Augusterlebnis)",
+                "darstellung": null
+              },
+              {
+                "schritt": "Vier Gruende treiben die Begeisterung: Patriotismus, Abenteuerlust, gesellschaftlicher Druck und Propaganda. Die Regierung stellt den Krieg als reine Verteidigung dar.",
+                "fachbegriff": "Propaganda",
+                "darstellung": null
+              },
+              {
+                "schritt": "Doch die Begeisterung ist nicht allgemein. Auf dem Land herrscht Angst — Frauen weinen am Bahnhof, Bauern fuerchten um die Ernte. 288 Anti-Kriegs-Versammlungen zeigen: Gegenstimmen gibt es auch in den Staedten.",
+                "fachbegriff": "Gegenstimmen",
+                "darstellung": null
+              }
+            ],
+            "problem": {
+              "satz": "Die SPD stimmt fuer die Kriegskredite — alle Parteien stehen zusammen: Burgfrieden. Die truegerische Einheit verdeckt die tiefen Risse in der Gesellschaft.",
+              "fachbegriff": "Burgfrieden"
+            },
+            "loesung": [
+              "Die Kriegsbegeisterung 1914 betraf vor allem die staedtische Mittel- und Oberschicht — Arbeiter und Landbevoelkerung waren ueberwiegend skeptisch.",
+              "Patriotismus, Propaganda, Abenteuerlust und gesellschaftlicher Druck trieben die Begeisterung an.",
+              "Der Burgfrieden vereinte sogar Kriegsgegner hinter der Regierung — doch die Einheit war truegerisch."
+            ]
+          },
+          "transfer": {
+            "frage": "Gibt es heute Situationen, in denen gesellschaftlicher Druck Menschen dazu bringt, eine Meinung oeffentlich zu vertreten, die sie privat nicht teilen?"
+          },
+          "voraussetzungen": [
+            "k2-5 (Kettenreaktion der Kriegserklaerungen)"
+          ],
+          "knoten": [
+            {
+              "id": "k3-1",
+              "text": "Kriegsbegeisterung (Augusterlebnis)",
+              "typ": "kernbegriff"
+            },
+            {
+              "id": "k3-2",
+              "text": "Patriotismus / Nationalismus",
+              "typ": "ursache"
+            },
+            {
+              "id": "k3-3",
+              "text": "Propaganda (Verteidigungskrieg)",
+              "typ": "ursache"
+            },
+            {
+              "id": "k3-4",
+              "text": "Gesellschaftlicher Druck",
+              "typ": "ursache"
+            },
+            {
+              "id": "k3-5",
+              "text": "Gegenstimmen (Arbeiter, Bauern, Demos)",
+              "typ": "kategorie"
+            },
+            {
+              "id": "k3-6",
+              "text": "Burgfrieden (SPD stimmt zu)",
+              "typ": "wirkung"
+            }
+          ],
+          "verbindungen": [
+            {
+              "von": "k3-2",
+              "nach": "k3-1",
+              "label": "erzeugt"
+            },
+            {
+              "von": "k3-3",
+              "nach": "k3-1",
+              "label": "verstaerkt"
+            },
+            {
+              "von": "k3-4",
+              "nach": "k3-1",
+              "label": "erzwingt Zustimmung"
+            },
+            {
+              "von": "k3-5",
+              "nach": "k3-1",
+              "label": "widerspricht (nicht alle begeistert)"
+            },
+            {
+              "von": "k3-1",
+              "nach": "k3-6",
+              "label": "ermoeglicht"
+            }
+          ]
+        },
+        "hefteintrag_verweis": "Uebertrage den Hefteintrag in dein Heft: Stundenfrage, SCPL-Schritte (Mobilmachung → Kriegsbegeisterung → Gruende → Gegenstimmen → Burgfrieden) und die drei Merksaetze.",
+        "reflexionsimpuls": "Gibt es heute Situationen, in denen gesellschaftlicher Druck Menschen dazu bringt, eine Meinung oeffentlich zu vertreten, die sie privat nicht teilen?",
+        "zusammenfassung": "Ihr habt anhand von Fotos, Originalquellen und Tagebucheintraegen untersucht, wie unterschiedlich die Menschen im August 1914 auf den Kriegsausbruch reagierten. Die Gegenueberstellung von Begeisterung in der Stadt und Angst auf dem Land zeigte: Das Bild einer einheitlichen Kriegsbegeisterung stimmt nicht.",
+        "ueberleitung": "Die Soldaten glauben an einen schnellen Sieg und erwarten, bis Weihnachten wieder zu Hause zu sein. Doch worauf stuetzt sich dieser Glaube? Die deutschen Generaele haben einen Plan — den Schlieffen-Plan."
+      }
     }
   ]
 }
