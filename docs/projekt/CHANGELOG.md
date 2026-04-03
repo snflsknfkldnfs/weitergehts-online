@@ -4,6 +4,25 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-03 — Session 9: C2-Vorbereitung — TAFELBILD + Dispatch-Skript Mappe 4
+
+**Phase:** C2 Mappe-4-Validierung (Vorbereitung)
+
+**Durchgefuehrt:**
+- P3 Engine-Patch v3.9 via Claude Code ausgefuehrt und gemergt (Commit 5bf49ce → 67c222b). Teilfragen-Rendering: _meta.teilfragen → `<ul class="aufgabe__teilfragen">` vor Textarea. Cache-Busting ?v=3.9.
+- TAFELBILD_gpg-erster-weltkrieg-ursachen_Mappe4.md erstellt (Phase 0.4). "Warum scheiterte der Plan fuer einen schnellen Sieg?" Ordnungsmuster sequenziell. 6 Knoten (Zweifrontenkrieg → Schlieffen-Plan → Vormarsch → Marne → Stellungskrieg). Q-Gate G1-G14 PASS.
+- DISPATCH_SKRIPT_MAPPE4.md erstellt: Steuerungsdokument fuer Produktionssession. 15 Dispatches (Phase 1 → 2 → 3 → 4). Testbedingungen: Kein PM-Eingriff, kein Kopieren von Mappe-3-Artefakten. Erfolgskriterien: 0 wiederkehrende B1-B10, max 2 neue Findings.
+
+**Geaenderte Dateien:**
+- docs/agents/artefakte/TAFELBILD_gpg-erster-weltkrieg-ursachen_Mappe4.md (NEU)
+- docs/agents/artefakte/produktion/gpg-erster-weltkrieg-ursachen/mappe-4/DISPATCH_SKRIPT_MAPPE4.md (NEU)
+- docs/projekt/STATUS.md
+- docs/projekt/CHANGELOG.md
+
+**Naechster Schritt:** C2 Produktionssession starten. Separate Cowork-Session, Uebergabe-Prompt: "Lies DISPATCH_SKRIPT_MAPPE4.md, starte mit D-1."
+
+---
+
 ## 2026-04-03 — Session 9: C1c Audit KOMPLETT + Pre-C2-Patches P1-P3
 
 **Phase:** Infrastruktur-Revision C1c (Audit + Patches)

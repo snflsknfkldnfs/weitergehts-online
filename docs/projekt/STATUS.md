@@ -1,12 +1,16 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-03 (Session 9, C1c Audit KOMPLETT + Pre-C2-Patches P1-P3)
-**Aktuelle Phase:** **Infrastruktur-Revision vor Mappe 4. C1+C1b+C1c: DONE. Pre-C2-Patches P1+P2 ausgefuehrt, P3 als Uebergabe-Prompt vorbereitet. Naechster Schritt: P3 Engine-Patch (Claude Code), dann C2.**
-**Letzter Arbeitsschritt:** (1) C1c Audit durchgefuehrt (3 parallele Reviewer, agent-teams). Ergebnis: PATCH-THEN-PROCEED (0 Blocker nach PM-Verifikation, 3 Pre-C2-Patches). (2) P1: SUB_AUFGABE_FREITEXT loesung[]=Minimum-Keywords dokumentiert. (3) P2: AGENT_HEFTEINTRAG + VERTRAG_PHASE_2-0 Knoten-Elaborierungs-PFLICHT + k3-6 merksatz retroaktiv. (4) P3: UEBERGABE_v3-9_TEILFRAGEN_RENDERING.md erstellt.
-**Naechster Schritt:** (1) P3 Engine-Patch ausfuehren (Claude Code, UEBERGABE_v3-9). (2) C2: Mappe-4-Validierung. Stretch: Engine O3/O5/O6.
+**Letzte Aktualisierung:** 2026-04-03 (Session 9, C2-Vorbereitung KOMPLETT)
+**Aktuelle Phase:** **C2: Mappe-4-Validierung. Alle Vorbedingungen erfuellt. TAFELBILD Mappe 4 erstellt, DISPATCH_SKRIPT_MAPPE4 steht. P3 Engine-Patch (v3.9 Teilfragen-Rendering) ausgefuehrt und gemergt.**
+**Letzter Arbeitsschritt:** (1) P3 Engine-Patch v3.9 via Claude Code ausgefuehrt (Teilfragen-Rendering, Cache-Busting ?v=3.9). (2) TAFELBILD_Mappe4.md erstellt (Phase 0.4, SCPL sequenziell, G1-G14 PASS). (3) DISPATCH_SKRIPT_MAPPE4.md erstellt (Steuerungsdokument fuer Produktionssession, 15 Dispatches D-1 bis D15, Session-Split-Punkte, Testbedingungen).
+**Naechster Schritt:** C2 Produktionssession starten. Separate Cowork-Session mit Dispatch-Skript als Steuerung. Phase 1 → 2 → 3 → 4.
 **Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. ARTEFAKT_INVENTAR Mappe 2+3 nachpflegen. Engine-Erweiterungen O3/O5/O6 (Ordnungsmuster-Rendering, Pfeiltypen, Farbsemantik) als Stretch-Goal.
 
 **Abgeschlossen seit letztem Update:**
+- C2-Vorbereitung (Session 9):
+  - P3 Engine-Patch v3.9 ausgefuehrt: Teilfragen-Rendering (_meta.teilfragen → sichtbare Aufzaehlung vor Textarea). 22 Zeilen JS + 31 Zeilen CSS. Cache-Busting ?v=3.9 auf 5 HTML-Dateien. Commit 5bf49ce, gemergt in 67c222b.
+  - TAFELBILD_gpg-erster-weltkrieg-ursachen_Mappe4.md erstellt (Phase 0.4). Ordnungsmuster: sequenziell. 6 TB-Knoten (k4-1 bis k4-6). 3 Kernerkenntnisse. Q-Gate G1-G14 PASS.
+  - DISPATCH_SKRIPT_MAPPE4.md erstellt: 15 Dispatches (D-1 bis D15), Phase 1-4, Session-Split-Punkte, Testbedingungen (kein PM-Eingriff, kein Kopieren von Mappe-3-Artefakten), Erfolgskriterien (0 wiederkehrende B1-B10 Findings).
 - C1c Produktionsreife-Audit + Pre-C2-Patches (Session 9):
   - Audit: 3 Dimensionen (Technische Kohaerenz, Didaktische Kalibrierung, Engine-Schema), 3 parallele Reviewer, PM-Konsolidierung. Ergebnis: PATCH-THEN-PROCEED, 0 Blocker nach PM-Verifikation (4 Reviewer-BLOCKER als FALSE POSITIVE / LEGACY-ONLY downgraded).
   - P1: SUB_AUFGABE_FREITEXT.md — Zwei-Ebenen-Modell (loesung[] = Minimum-Keywords, _meta.erwartete_begriffe = Gesamt-Set). Engine-ALL-or-nothing-Logik dokumentiert.
