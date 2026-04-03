@@ -1,0 +1,23 @@
+{
+  "id": "aufgabe-3-1",
+  "typ": "lueckentext",
+  "frage": "Ergänze die fehlenden Fachbegriffe und Informationen zur Kriegsstimmung in Deutschlands Großstädten 1914.",
+  "material_referenz": ["mat-3-1"],
+  "text_mit_luecken": "Im August 1914 herrschte in Deutschlands Großstädten große Aufregung. Viele Menschen glaubten, bis ___ wieder zu Hause zu sein. Historiker nennen diese Stimmung die ___ — weil sie vor allem im August auftrat, spricht man auch vom ___. Ein Grund für die Euphorie war übersteigertes Nationalgefühl: ___. Außerdem stellte die Regierung den Krieg durch gezielte ___ als reine Verteidigung dar.",
+  "loesung": ["Weihnachten", "Kriegsbegeisterung", "Augusterlebnis", "Patriotismus", "Propaganda"],
+  "tipps": [
+    {
+      "stufe": 1,
+      "text": "Lies den [[mat-3-1|Text über die Kriegsstimmung 1914]] (M1) genau. Der Text erklärt die Begeisterung bei Kriegsausbruch und nennt vier Gründe dafür."
+    },
+    {
+      "stufe": 2,
+      "text": "Die zweite Lücke beschreibt die allgemeine Begeisterung beim Kriegsausbruch (feminin: 'die ...'). Die fünfte Lücke meint die gezielte Beeinflussung der öffentlichen Meinung durch die Regierung."
+    },
+    {
+      "stufe": 3,
+      "text": "Weihnachten — Kriegsbegeisterung — Augusterlebnis — Patriotismus — Propaganda. Die Menschen glaubten an einen kurzen Krieg. Die Begeisterung wurde durch Nationalgefühl, Abenteuerlust, Druck und gezielte Beeinflussung angetrieben."
+    }
+  ],
+  "punkte": 10
+}

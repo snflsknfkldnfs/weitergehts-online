@@ -338,3 +338,376 @@ Ablage: sicherung.json → ueberleitung.
 - `ueberleitungen.json` (NEU, 4 Eintraege)
 - `rahmen/hefteintrag.json` (4 Formulierungsaenderungen)
 - `rahmen/sicherung.json` (zusammenfassung + ueberleitung erstmalig befuellt)
+
+---
+
+# Q-Gate-Log: Mappe 3 — Phase 2.2b-1 (Aufgabe 1: Lueckentext, AFB I)
+
+**Phase:** 2.2b-1
+**Datum:** 2026-04-03
+**Vertrag:** VERTRAG_PHASE_2-2b_AUFGABE.md
+**Mechanik:** Q-GATE-MECHANIK.md (§3, §4, §7.2)
+**Dispatch:** D2 (DISPATCH_SKRIPT_MAPPE3_PHASE2.md)
+**Konstruktionskontext:** PROGRESSIONSPLAN.md Position 1
+
+---
+
+## aufgabe-3-1: Lueckentext (AFB I, Position 1)
+
+**Typ:** lueckentext
+**Ziel-Material:** mat-3-1 (DT: Begeisterung und Angst — August 1914)
+**TB-Knoten:** k3-1 (Kriegsbegeisterung / Augusterlebnis)
+**Operationalisierungsziel:** Fachbegriff-Recall: Augusterlebnis, Kriegsbegeisterung, Gruende
+**Dispatch-Modus:** Isolierter Subagent via Agent-Tool
+
+### Dispatch-Verlauf
+
+1. Subagent-Dispatch: Aufgabe generiert.
+2. Dispatcher-Korrektur: Luecken 2/3 und Tipp-Format ueberarbeitet (Subagent-Output hatte diagnostisch schwache Luecke 3 + falsche Display-Referenz).
+3. aufgabe-3-1.json geschrieben (v1).
+4. Q-Gate (v1): GESAMT-PASS (0F, 0W).
+5. agent-teams Multi-Review (P7): 3 Reviewer parallel.
+6. Nachbesserung (v2): A4-LT FAIL + A2 WARN aus Fachdidaktik-Review behoben.
+7. Re-Q-Gate (v2): GESAMT-PASS (0F, 0W).
+
+### Q-Gate v1 (vor agent-teams)
+
+**Ergebnis: GESAMT-PASS** (0 FAIL, 0 WARN)
+
+| # | ID | Kriterium | Stufe | Detail |
+|---|---|---|---|---|
+| 1 | SCHEMA-01 | Schema-Validierung | PASS | Alle Pflichtfelder vorhanden. |
+| 2 | A1 | AFB-Kongruenz | PASS | AFB I, Operator "Ergaenze". |
+| 3 | A2 | Fragestamm-Neutralitaet | PASS (spaeter revidiert) | "Augusterlebnis" in frage — Q-Gate uebersehen. |
+| 4 | A3 | Material-Kongruenz | PASS | Alle 5 Luecken aus mat-3-1 beantwortbar. |
+| 5 | A4-LT | Luecken-Eindeutigkeit | PASS (spaeter revidiert) | Synonym-Vertauschbarkeit nicht erkannt. |
+| 6 | A5-A7, MQ3, MQ3b, LT-1, LT-2 | Restliche Kriterien | PASS | Keine Auffaelligkeiten. |
+
+### agent-teams Multi-Review (P7)
+
+| Dimension | Reviewer-Ergebnis | Befunde |
+|---|---|---|
+| Fachdidaktik | 1 FAIL, 1 WARN | A4-LT FAIL: Luecken 2/3 synonym-vertauschbar (Kategorie b). A2 WARN: frage verrät "Augusterlebnis" (Kategorie b). |
+| Engine-Kompatibilitaet | Alle PASS | Keine Befunde. |
+| Sprachqualitaet | PASS mit Anmerkung | WARN: Tipp-Stufe 2-3 geben viel preis. Kategorie (a) — Tipp-Progression ist beabsichtigt (Stufe 3 = vollstaendige Loesung lt. SUB_AUFGABE_LUECKENTEXT.md). |
+
+**Befund-Klassifikation:**
+
+| # | Befund | Kategorie | Aktion |
+|---|---|---|---|
+| 1 | A4-LT FAIL: Luecken 2/3 synonym-vertauschbar | (b) NEU — Mehrwert | Nachbesserung |
+| 2 | A2 WARN: frage nennt "Augusterlebnis" | (b) NEU — Mehrwert | Nachbesserung |
+| 3 | Sprachqualitaet: Tipp-Progression grosszuegig | (a) Bestaetigung | Kein Handlungsbedarf |
+
+**Fazit agent-teams D2:** 2 Kategorie-(b)-Befunde. agent-teams hat diagnostischen Mehrwert gegenueber Q-Gate bewiesen. Weiter bei D3.
+
+### Nachbesserung (v1 → v2)
+
+| Feld | Alt | Neu | Begruendung |
+|---|---|---|---|
+| frage | "...zum Augusterlebnis 1914." | "...zur Kriegsstimmung in Deutschlands Grossstaedten 1914." | A2: frage darf Luecken-Antwort nicht verraten. |
+| text_mit_luecken (Satz 3) | "...die ___ — ein anderer Begriff dafuer ist ___." | "...die ___ — weil sie vor allem im August auftrat, spricht man auch vom ___." | A4-LT: Grammatisches Genus disambiguiert ("die" = feminin → Kriegsbegeisterung, "vom" = neutrum Dativ → Augusterlebnis). Kausale Einbettung gibt zusaetzlichen Kontext-Hinweis. |
+| tipps[0].text | "[[mat-3-1\|Text ueber die Kriegsbegeisterung 1914]]" | "[[mat-3-1\|Text ueber die Kriegsstimmung 1914]]" | Konsistenz mit geaenderter frage. |
+| tipps[1].text | "Die zweite Luecke ist 'Kriegsbegeisterung'." | "Die zweite Luecke beschreibt die allgemeine Begeisterung beim Kriegsausbruch (feminin: 'die ...')." | Stufe 2 soll eingrenzen, nicht loesen. Genus-Hinweis als didaktischer Anker. |
+
+### Q-Gate v2 (nach Nachbesserung)
+
+**Ergebnis: GESAMT-PASS** (0 FAIL, 0 WARN)
+
+| # | ID | Kriterium | Stufe | Detail |
+|---|---|---|---|---|
+| 1 | SCHEMA-01 | Schema-Validierung | PASS | Alle Pflichtfelder. |
+| 2 | A1 | AFB-Kongruenz | PASS | AFB I. |
+| 3 | A2 | Fragestamm-Neutralitaet | PASS | "Kriegsstimmung" verraet keine Luecke. |
+| 4 | A3 | Material-Kongruenz | PASS | mat-3-1. |
+| 5 | A4-LT | Luecken-Eindeutigkeit | PASS | "die ___" (fem) vs "vom ___" (neutr Dat) + kausale Einbettung. Nicht vertauschbar. |
+| 6 | A5 | Schwierigkeitspassung | PASS | 5 Luecken, AFB I. |
+| 7 | A6 | Tipp-Progression | PASS | 3 Stufen: Verweis → Eingrenzung → Loesung. |
+| 8 | A7 | Operationalisierungsziel | PASS | Fachbegriff-Recall vollstaendig. |
+| 9 | MQ3 | Material-Referenz-Verbot | PASS | Keine Referenz in frage. |
+| 10 | MQ3b | Display-Referenz Tipps | PASS | C3-konform. |
+| 11 | LT-1 | Luecken-Anzahl | PASS | 5 (Limit 3-7). |
+| 12 | LT-2 | Luecken-Verteilung | PASS | Ueber 5 Saetze verteilt. |
+
+### Produzierte Dateien
+
+- `aufgaben/aufgabe-3-1.json` (v2, nach Nachbesserung)
+
+---
+
+# Q-Gate-Log: Mappe 3 — Phase 2.2b-2 (Aufgabe 2: Multiple-Choice, AFB I)
+
+**Phase:** 2.2b-2
+**Datum:** 2026-04-03
+**Vertrag:** VERTRAG_PHASE_2-2b_AUFGABE.md
+**Mechanik:** Q-GATE-MECHANIK.md (§3, §4, §7.2)
+**Dispatch:** D3 (DISPATCH_SKRIPT_MAPPE3_PHASE2.md)
+**Konstruktionskontext:** PROGRESSIONSPLAN.md Position 2
+
+---
+
+## aufgabe-3-2: Multiple-Choice (AFB I, Position 2)
+
+**Typ:** multiple-choice
+**Ziel-Material:** mat-3-1 (DT: Begeisterung und Angst — August 1914)
+**TB-Knoten:** k3-2 (Patriotismus), k3-3 (Propaganda), k3-4 (Gesellschaftlicher Druck)
+**Operationalisierungsziel:** Benenne die vier Gruende der Kriegsbegeisterung
+**Dispatch-Modus:** Isolierter Subagent via Agent-Tool
+
+### Dispatch-Verlauf
+
+1. Subagent-Dispatch: Aufgabe generiert.
+2. Dispatcher-Korrektur: id, Extra-Felder entfernt, tipps-Format (Objekt → Array), Display-Referenz C3, Tipp-2 Optionszuordnung korrigiert.
+3. aufgabe-3-2.json geschrieben.
+4. Q-Gate: GESAMT-PASS (0F, 0W).
+5. agent-teams Multi-Review (P7): 3 Reviewer parallel.
+6. Kein Nachbesserungsbedarf.
+
+### Q-Gate
+
+**Ergebnis: GESAMT-PASS** (0 FAIL, 0 WARN)
+
+| # | ID | Kriterium | Stufe | Detail |
+|---|---|---|---|---|
+| 1 | SCHEMA-01 | Schema-Validierung | PASS | Alle Pflichtfelder korrekt. |
+| 2 | A1 | AFB-Kongruenz | PASS | AFB I, Faktenwissen, "Welche vier Faktoren". |
+| 3 | A2 | Fragestamm-Klarheit | PASS | Eine Anforderung, keine Negation. |
+| 4 | A3 | Material-Kongruenz | PASS | Alle 4 Gruende woertlich in mat-3-1. |
+| 5 | A4-MC | Distraktor-Qualitaet | PASS | 3/3 Rang 1-3 (Rang 3 + 2x Rang 2). |
+| 6 | A5 | Schwierigkeitspassung | PASS | AFB I, Position 2. |
+| 7 | A6 | Tipp-Progression | PASS | Verweis → Elimination → Loesung+Erklaerung. |
+| 8 | A7 | Operator-Praezision | PASS | Impliziter Operator "benenne". |
+| 9 | MQ3 | Material-Referenz-Verbot | PASS | Kein [[...]] in frage. |
+| 10 | MQ3b | Display-Referenz Tipps | PASS | C3-konform. |
+| 11 | MC-1..4 | MC-spezifisch | PASS | 4 Optionen, String-Match, kein Laengen-Bias, Position B. |
+
+### agent-teams Multi-Review (P7)
+
+| Dimension | Reviewer-Ergebnis | Befunde |
+|---|---|---|
+| Fachdidaktik | PASS mit WARN | A4-MC WARN: Distraktoren koennten systematischer sein (4-Faktor-Kombis statt heterogener Fehlbegriffe). Kategorie (b) — Optimierungsvorschlag, nicht blocking. |
+| Engine-Kompatibilitaet | Alle PASS | Keine Befunde. |
+| Sprachqualitaet | PASS mit WARN | Fachbegriffe in Distraktoren nicht im Material. Kategorie (c) — False Positive (Distraktoren sollen per Design nicht im Material stehen). |
+
+**Befund-Klassifikation:**
+
+| # | Befund | Kategorie | Aktion |
+|---|---|---|---|
+| 1 | A4-MC WARN: Distraktoren systematischer moeglich | (b) NEU — Optimierung | Notiz fuer Prompt-Improve. Kein NB. |
+| 2 | Fachbegriffe in Distraktoren nicht im Material | (c) False Positive | By design. |
+
+**Fazit agent-teams D3:** 1 Kat-(b) WARN (nicht blocking) + 1 Kat-(c). Kein Nachbesserungsbedarf. Kumuliert D2+D3: 3 Kat-(b), davon 2 behoben (D2), 1 notiert (D3). agent-teams zeigt Mehrwert — weiter aktiv fuer D4+.
+
+### Produzierte Dateien
+
+- `aufgaben/aufgabe-3-2.json`
+
+---
+
+# Q-Gate-Log: Mappe 3 — Phase 2.2b-3 (Aufgabe 3: Zuordnung, AFB II)
+
+**Phase:** 2.2b-3
+**Datum:** 2026-04-03
+**Vertrag:** VERTRAG_PHASE_2-2b_AUFGABE.md
+**Dispatch:** D4 (DISPATCH_SKRIPT_MAPPE3_PHASE2.md)
+**Konstruktionskontext:** PROGRESSIONSPLAN.md Position 3
+
+---
+
+## aufgabe-3-3: Zuordnung (AFB II, Position 3)
+
+**Typ:** zuordnung
+**Ziel-Material:** mat-3-4 (QT: Drei Stimmen zum Kriegsausbruch)
+**TB-Knoten:** k3-1 (Kriegsbegeisterung), k3-5 (Gegenstimmen)
+**Operationalisierungsziel:** Perspektiven Begeisterung/Gegenstimmen/Pflicht zuordnen
+**Dispatch-Modus:** Isolierter Subagent via Agent-Tool
+
+### Dispatch-Verlauf
+
+1. Subagent-Dispatch: Aufgabe mit 3 Kategorien und 5 Elementen generiert.
+2. Dispatcher-Korrektur: elemente[].zuordnung befuellt (war leer), kategorien-Feld entfernt, Tipp-1 (M4) ergaenzt.
+3. aufgabe-3-3.json geschrieben (v1).
+4. Q-Gate (v1): GESAMT-PASS (0F, 0W).
+5. agent-teams Multi-Review (P7): 3 Reviewer parallel.
+6. Nachbesserung (v2): Element 5 ersetzt (Redundanz behoben).
+7. Re-Q-Gate (v2): GESAMT-PASS (0F, 0W).
+
+### Q-Gate v1
+
+**Ergebnis: GESAMT-PASS** (0 FAIL, 0 WARN). Alle 13 Kriterien PASS.
+
+### agent-teams Multi-Review (P7)
+
+| Dimension | Reviewer-Ergebnis | Befunde |
+|---|---|---|
+| Fachdidaktik | PASS mit WARN | A4-ZU WARN: Elemente 1+5 redundant (beide Zweig/Bruederlichkeit). Kat (b). |
+| Engine-Kompatibilitaet | Alle PASS | Keine Befunde. |
+| Sprachqualitaet | WARN/FAIL | FAIL: Elemente zu lang fuer Dropdown. Kat (c) — Begriffe stehen in linker Spalte als Label, nicht im Dropdown. WARN: Vokabular ("Schlachthaus", "Funktionaer"). Kat (c) — direkte Zitat-Sprache aus Material. |
+
+**Befund-Klassifikation:**
+
+| # | Befund | Kategorie | Aktion |
+|---|---|---|---|
+| 1 | A4-ZU WARN: Elemente 1+5 redundant | (b) NEU | NB: Element 5 ersetzt |
+| 2 | Elemente zu lang fuer Dropdown | (c) False Positive (UI-Missverstaendnis) | — |
+| 3 | Vokabular zu schwer | (c) False Positive (Zitat-Sprache) | — |
+
+### Nachbesserung (v1 → v2)
+
+| Feld | Alt | Neu | Begruendung |
+|---|---|---|---|
+| elemente[4].begriff | "Alle Unterschiede von Stand und Religion sind untergetaucht in Bruederlichkeit" (Begeisterung) | "Die SPD stimmt ueberraschend fuer die Kriegskredite" (Pflicht) | Redundanz mit Element 1 behoben. Neues Element testet institutionelle Pflicht-Perspektive. Distribution 2:2:1 → 1:2:2. |
+| tipps[2].text | Endete mit "Zweigs Bruederlichkeits-Zitat gehoert zur Begeisterung." | Ergaenzt: SPD-Kriegskredite = Pflicht-Erklaerung | Konsistenz mit neuem Element 5. |
+
+### Q-Gate v2
+
+**Ergebnis: GESAMT-PASS** (0 FAIL, 0 WARN). A4-ZU Trennschaerfe PASS — 5 Elemente disjunkt, Distribution 1:2:2.
+
+### Produzierte Dateien
+
+- `aufgaben/aufgabe-3-3.json` (v2, nach Nachbesserung)
+
+---
+
+# Q-Gate-Log: Mappe 3 — Phase 2.2b-4 (Aufgabe 4: Reihenfolge, AFB II)
+
+**Phase:** 2.2b-4
+**Datum:** 2026-04-03
+**Dispatch:** D5 (DISPATCH_SKRIPT_MAPPE3_PHASE2.md)
+**Konstruktionskontext:** PROGRESSIONSPLAN.md Position 4
+
+---
+
+## aufgabe-3-4: Reihenfolge (AFB II, Position 4)
+
+**Typ:** reihenfolge
+**Ziel-Material:** mat-3-1 (DT) + mat-3-4 (QT)
+**TB-Knoten:** k3-1 → k3-6 (Kausalkette Mobilmachung → Burgfrieden)
+**Operationalisierungsziel:** Kausalkette ordnen
+**Dispatch-Modus:** Isolierter Subagent via Agent-Tool
+
+### Dispatch-Verlauf
+
+1. Subagent-Dispatch: 5 Elemente generiert.
+2. Dispatcher-Korrektur: id, Extra-Felder, material_referenz, Tipp-Display-Referenzen.
+3. aufgabe-3-4.json geschrieben (v1, 5 Elemente).
+4. Q-Gate (v1): GESAMT-PASS (0F, 0W).
+5. agent-teams Multi-Review (P7): 2 Reviewer (Fachdidaktik + Engine/Sprache kombiniert).
+6. Nachbesserung (v2): 5 → 4 Elemente (SPD/Burgfrieden fusioniert), Passiv behoben.
+7. Re-Q-Gate (v2): GESAMT-PASS (0F, 0W).
+
+### agent-teams Multi-Review (P7)
+
+| Dimension | Befunde |
+|---|---|
+| Fachdidaktik | A4-RF WARN: Schritte 4+5 nicht trennbar (SPD-Zustimmung IST Burgfrieden). Kat (b). Schritte 2+3 temporal parallel. Kat (b) — akzeptabel als didaktisch-narrative Ordnung. |
+| Engine/Sprache | Engine: Alle PASS. Sprache: WARN Passiv in Mobilmachungs-Element. Kat (b). WARN Tipp-Laenge. Kat (a). |
+
+**Befund-Klassifikation:**
+
+| # | Befund | Kategorie | Aktion |
+|---|---|---|---|
+| 1 | A4-RF: SPD/Burgfrieden nicht trennbar | (b) NEU — strukturell | NB: Merge zu 4 Elementen |
+| 2 | Begeisterung/Gegenstimmen parallel | (b) NEU — bedingt gueltig | Akzeptiert: didaktisch-narrative Ordnung |
+| 3 | Passiv in Mobilmachungs-Element | (b) NEU | NB: Aktiv umformuliert |
+| 4 | Tipp-Laenge | (a) Standard | — |
+
+### Nachbesserung (v1 → v2)
+
+| Aenderung | Detail |
+|---|---|
+| 5 → 4 Elemente | "SPD stimmt Kriegskrediten zu" + "Burgfrieden entsteht" → fusioniert zu "Die SPD stimmt fuer die Kriegskredite — der Burgfrieden beginnt: Alle Parteien stehen scheinbar zusammen." |
+| Passiv behoben | "Die Mobilmachung wird angeordnet und Soldaten werden einberufen" → "Der Kaiser ordnet die Mobilmachung an und beruft Soldaten ein." |
+| Tipps angepasst | Position-Referenzen aktualisiert (5→4), Tipp 3 kompakter. |
+
+### Q-Gate v2
+
+**Ergebnis: GESAMT-PASS** (0 FAIL, 0 WARN). A4-RF: 4 Elemente, 6 Paare eindeutig. RF-1: 4 Elemente (Limit 4-6).
+
+### Produzierte Dateien
+
+- `aufgaben/aufgabe-3-4.json` (v2, nach Nachbesserung)
+
+---
+
+## Phase 2.2b-5: D6 — Aufgabe 5 (Freitext-Code, AFB III, Position 5)
+
+**Datum:** 2026-04-03
+**Dispatch:** D6 (DISPATCH_SKRIPT_MAPPE3_PHASE2.md)
+**Konstruktionskontext:** Position 5/5, AFB III, Ziel-Material mat-3-5 (TB: Zwei Welten), TB-Knoten k3-4 (Gesellschaftlicher Druck), Transfer auf Gegenwart
+
+### Dispatch-Verlauf
+
+| Schritt | Ergebnis |
+|---|---|
+| Subagent (Sonnet) | JSON generiert. Befunde: (1) loesung 5 Multi-Word-Keywords, davon 3 nicht in Materialien ("Konformitaet", "oeffentliche Meinung", "private Ueberzeugung"). (2) Tipp-1-Display-Referenz falsch formatiert ([[mat-3-5\|M5]] statt inhaltlicher Beschreibung). |
+| Dispatcher-Korrektur | (1) loesung auf 3 Keywords reduziert: ["Druck", "Meinung", "Angst"]. (2) _meta.erwartete_begriffe: "Konformitaet" ersetzt durch material-verankerte Begriffe. (3) Tipp-1-Referenz: [[mat-3-5\|die beiden Tagebucheintraege von 1914]] (M5). |
+| Q-Gate v1 | GESAMT-PASS (0F, 0W). A1/A2/A3/A6/A7/A11-FT/MQ3/MQ3b alle PASS. |
+| agent-teams (3 Reviewer) | 3 Kat-(b), 1 Kat-(b) akzeptiert, 3 Kat-(c) FP. Details unten. |
+| Nachbesserung | Tipp 3 + _meta.musterantwort sprachlich vereinfacht. |
+| Q-Gate v2 | GESAMT-PASS (0F, 0W). |
+
+### agent-teams Befunde
+
+| # | Reviewer | Befund | Schwere | Kat | Aktion |
+|---|---|---|---|---|---|
+| 1 | R2 Engine | "Meinung" in loesung zu generisch, echo aus frage | WARN | (b) | Akzeptiert — Zentralbegriff, echo unvermeidbar bei Transfer-Frage |
+| 2 | R3 Sprache | Musterantwort (Tipp 3) zu elaboriert: "Mechanismus", "Konsens" ueber 7.-Klasse-Niveau | FAIL | (b) | **NB: Musterantwort in Schuelersprache umgeschrieben** |
+| 3 | R3 Sprache | Passiv in Tipp 3 | WARN | (b) | Mitbehoben bei NB |
+| 4 | R1 Fachdidaktik | Leitfrage steuert auf "Ja" | WARN | (b) | Akzeptiert — Operationalisierungsziel aus PROGRESSIONSPLAN, "Nein" ist vertretbar |
+| 5 | R1 Fachdidaktik | M5 dominiert, M4 kaum adressiert | — | (c) FP | M5 IST Ziel-Material, Dominanz korrekt |
+| 6 | R1 Fachdidaktik | loesung als Kriterienkatalog statt Keywords | — | (c) FP | Engine-Kontrakt erfordert Keyword-Array |
+| 7 | R3 Sprache | "gesellschaftlicher Druck" nicht erklaert | — | (c) FP | In mat-3-1 eingefuehrt, durch Aufgabe 2 getestet |
+
+### Nachbesserung
+
+| Aenderung | Detail |
+|---|---|
+| Tipp 3 vereinfacht | "Der Mechanismus ist derselbe" → "Der Druck, dazuzugehoeren, bringt Menschen dazu, ihre echte Meinung zu verstecken — damals wie heute." "Konsens" und "Ausgrenzung fuerchten" entfernt. Kuerzere Saetze, Schulbeispiel und Social-Media-Beispiel in einfacher Sprache. |
+| _meta.musterantwort | Identisch zu Tipp 3 (ohne Begriffsliste) |
+
+### Q-Gate v2
+
+**Ergebnis: GESAMT-PASS** (0 FAIL, 0 WARN). A6 Tipp-Progression: Musterantwort jetzt in realistischer Schuelersprache. A11-FT: Alle Heuristiken erfuellt.
+
+### Produzierte Dateien
+
+- `aufgaben/aufgabe-3-5.json` (v2, nach Nachbesserung)
+
+---
+
+## Phase 2.2c: D7 — Cross-Konsistenz (Aufgaben-Set Mappe 3)
+
+**Datum:** 2026-04-03
+**Dispatch:** D7 (DISPATCH_SKRIPT_MAPPE3_PHASE2.md)
+**Vorbedingung:** D2-D6 DONE (5/5 Aufgaben produziert)
+
+### Aufgaben-Set
+
+| Pos | ID | Typ | AFB | material_referenz | Fokus |
+|---|---|---|---|---|---|
+| 1 | aufgabe-3-1 | lueckentext | I | mat-3-1 | Fachbegriffe (Augusterlebnis, Kriegsbegeisterung, Patriotismus, Propaganda) |
+| 2 | aufgabe-3-2 | multiple-choice | I | mat-3-1 | 4 Gruende Kriegsbegeisterung |
+| 3 | aufgabe-3-3 | zuordnung | II | mat-3-4 | Perspektiven Begeisterung/Angst/Pflicht |
+| 4 | aufgabe-3-4 | reihenfolge | II | mat-3-1, mat-3-4 | Kausalkette Mobilmachung→Burgfrieden |
+| 5 | aufgabe-3-5 | freitext-code | III | mat-3-1, mat-3-4, mat-3-5 | Transfer gesellschaftlicher Druck heute |
+
+### Cross-Konsistenz-Pruefungen
+
+| Kriterium | Ergebnis | Detail |
+|---|---|---|
+| A1 AFB-Kongruenz Gesamt | PASS | I → I → II → II → III = monoton steigend, entspricht PROGRESSIONSPLAN |
+| A3 Material-Kongruenz | PASS | mat-3-1 (Pos 1,2,4,5), mat-3-4 (Pos 3,4,5), mat-3-5 (Pos 5). mat-3-2/mat-3-3 (Fotos) als Tipp-Referenzen, nicht als Aufgaben-Quellen — konsistent mit PROGRESSIONSPLAN |
+| A5 Schwierigkeits-Progression | PASS | LT(I) → MC(I) → ZU(II) → RF(II) → FT(III) monoton |
+| A8 Kognitive Aktivierung | PASS | Pos 3 (Perspektiven-Zuordnung), Pos 4 (Kausalsequenz), Pos 5 (Transfer) — 3 denkanregende Aufgaben |
+| A9 TB-Bezug | PASS | k3-1 (Pos 1,3,4), k3-2 (Pos 2), k3-3 (Pos 2), k3-4 (Pos 2,5), k3-5 (Pos 3), k3-6 (Pos 4) — 6/6 Knoten |
+| A10 Typvielfalt | PASS | 5 Typen, keiner >1x, Freitext 1x an Pos 5 |
+| A12 Sachbezogen→Wertbezogen | PASS | Pos 1-2 Fakten, Pos 3-4 Analyse, Pos 5 Stellungnahme |
+| MQ3 Material-Ref-Verbot | PASS | 5/5 frage-Felder frei von [[...]] und (M...) |
+| MQ3b Display-Ref in Tipps | PASS | 5/5 Tipp-1-Felder enthalten [[mat-id\|Beschreibung]] (M-pos) |
+
+### Ergebnis
+
+**GESAMT-PASS (9/9 Kriterien PASS, 0 WARN, 0 FAIL)**
+
+Kein Re-Dispatch erforderlich. Aufgaben-Set Mappe 3 ist cross-konsistent.

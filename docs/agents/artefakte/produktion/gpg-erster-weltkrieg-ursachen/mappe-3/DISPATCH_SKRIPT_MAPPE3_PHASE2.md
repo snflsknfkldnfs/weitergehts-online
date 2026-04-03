@@ -11,13 +11,13 @@
 | # | Dispatch | Status | Q-Gate | Metriken-Notiz |
 |---|---|---|---|---|
 | D0 | Phase 2.1c: Material-Cross + Ueberleitungen + Hefteintrag-Revision | DONE | GESAMT-PASS (0F, 0W) | Achsen 1-4: 4x PASS. Achse 5: 4/4 UE alle UE-1..5 PASS. Achse 6: 4 Formulierungsaenderungen, zusammenfassung 42W, ueberleitung produziert. Stufe-2 5/5 PASS. HE1-HE13 12/12 PASS. |
-| D1 | Phase 2.2a: Progressionsplan | OFFEN | — | — |
-| D2 | Phase 2.2b-1: Aufgabe 1 (Position 1, AFB I) | OFFEN | — | — |
-| D3 | Phase 2.2b-2: Aufgabe 2 (Position 2, AFB I) | OFFEN | — | — |
-| D4 | Phase 2.2b-3: Aufgabe 3 (Position 3, AFB II) | OFFEN | — | — |
-| D5 | Phase 2.2b-4: Aufgabe 4 (Position 4, AFB II) | OFFEN | — | — |
-| D6 | Phase 2.2b-5: Aufgabe 5 (Position 5, AFB III, Freitext) | OFFEN | — | — |
-| D7 | Phase 2.2c: Cross-Konsistenz | OFFEN | — | — |
+| D1 | Phase 2.2a: Progressionsplan | DONE | Kein formales Q-Gate | 5 Typen (LT/MC/ZU/RF/FT), AFB I-I-II-II-III, 6/6 TB-Knoten, 5/5 Mat-Abdeckung, 5/5 Gegenpruefungen PASS. Code: AUGUST. |
+| D2 | Phase 2.2b-1: Aufgabe 1 (Position 1, AFB I) | DONE | GESAMT-PASS (0F, 0W) nach NB | Subagent + Dispatcher-Korrektur. agent-teams: 2 Kat-(b)-Befunde (A4-LT FAIL Synonym-Swap, A2 WARN frage-Spoiler). NB: Genus-Disambiguierung. Re-Q-Gate PASS. |
+| D3 | Phase 2.2b-2: Aufgabe 2 (Position 2, AFB I) | DONE | GESAMT-PASS (0F, 0W) | Subagent + Dispatcher-Korrektur (Format). agent-teams: 1 Kat-(b) WARN (Distraktor-Systematik), 1 Kat-(c). Kein NB. |
+| D4 | Phase 2.2b-3: Aufgabe 3 (Position 3, AFB II) | DONE | GESAMT-PASS (0F, 0W) nach NB | 3 Kategorien (Begeisterung/Angst/Pflicht). agent-teams: 1 Kat-(b) (Redundanz Elemente 1+5), 2 Kat-(c). NB: Element 5 ersetzt, Distribution 1:2:2. |
+| D5 | Phase 2.2b-4: Aufgabe 4 (Position 4, AFB II) | DONE | GESAMT-PASS (0F, 0W) nach NB | 5→4 Elemente (SPD/Burgfrieden fusioniert). agent-teams: 2 Kat-(b) (Trennbarkeit, Passiv), 1 Kat-(b) akzeptiert (Parallelitaet). |
+| D6 | Phase 2.2b-5: Aufgabe 5 (Position 5, AFB III, Freitext) | DONE | GESAMT-PASS (0F, 0W) nach NB | Subagent: 5→3 Keywords (3 nicht in Material), Display-Ref falsch. agent-teams: 2 Kat-(b) akzeptiert (Meinung generisch, Leitfrage steuernd), 1 Kat-(b) FAIL (Musterantwort-Sprache). NB: Tipp 3 in Schuelersprache. |
+| D7 | Phase 2.2c: Cross-Konsistenz | DONE | GESAMT-PASS (9/9, 0F, 0W) | 5 Typen, 6/6 TB-Knoten, AFB I-I-II-II-III monoton, MQ3/MQ3b 5/5 clean. Kein Re-Dispatch. |
 
 **Aktualisierungsregel:** Nach jedem Dispatch: Status auf DONE/FAIL setzen, Q-Gate-Ergebnis eintragen, Metriken-Notiz mit Auffaelligkeiten fuellen.
 
@@ -242,15 +242,15 @@ Betroffene Aufgaben identifizieren → Re-Dispatch mit korrigiertem Konstruktion
 
 | Metrik | Phase 2.1 (Baseline) | Phase 2.1c | Phase 2.2a-c |
 |---|---|---|---|
-| Dispatches gesamt | 6 (5 Material + 1 NB) | | |
-| First-Pass-Rate | 80% (4/5) | | |
-| Q-Gate WARN gesamt | 3 | | |
-| Q-Gate FAIL gesamt | 0 (nach NB) | | |
-| Nacharbeit gesamt | ~17 min | | |
-| agent-teams Mehrwert-Befunde | n/a | n/a | |
-| Cross-Konsistenz Re-Dispatches | n/a | | |
-| Session-Splits | 1 | | |
-| Neue Findings | P1, P2 (fixed), P3 | | |
+| Dispatches gesamt | 6 (5 Material + 1 NB) | 1 | 7 (5 Aufgaben + 1 Progressionsplan + 1 Cross) |
+| First-Pass-Rate | 80% (4/5) | 100% | 20% (1/5 Aufgaben ohne NB: D3) |
+| Q-Gate WARN gesamt | 3 | 0 | 0 (nach NB) |
+| Q-Gate FAIL gesamt | 0 (nach NB) | 0 | 0 (nach NB) |
+| Nacharbeit gesamt | ~17 min | — | 4 NB (D2: Genus, D4: Redundanz, D5: Merge+Passiv, D6: Sprache) |
+| agent-teams Mehrwert-Befunde | n/a | n/a | 7 Kat-(b) ueber D2-D6, davon 5 fixed, 2 akzeptiert |
+| Cross-Konsistenz Re-Dispatches | n/a | 0 | 0 |
+| Session-Splits | 1 | 0 | 2 (Context-Recovery) |
+| Neue Findings | P1, P2 (fixed), P3 | — | Alle Subagenten brauchen Dispatcher-Korrektur (id, format, display-ref) |
 
 **Nach Abschluss:** Metriken in PROZESSTEST_MAPPE3_ERGEBNIS.md (Sektion 1) ergaenzen. Vergleich Phase 2.1 vs. Phase 2.2 als Indikator fuer Pipeline-Reife.
 
