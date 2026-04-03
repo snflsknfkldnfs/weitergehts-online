@@ -29,6 +29,13 @@
        Stundenfrage hinfuehrt, nicht zurueck auf vorherige Mappen.
        FAIL: "Buendnisse machen aus einem Mord einen Weltkrieg." (rekapituliert Mappe 1+2)
        PASS: "Im August 1914 brach der Erste Weltkrieg aus." (eigenstaendiger Einstieg)
+   1-post. Knoten-Elaborierung pruefen (v3.5, PFLICHT):
+       Jeder Knoten mit typ=kernbegriff oder typ=wirkung, dessen text einen Fachbegriff
+       enthaelt, der NICHT im allgemeinen R7-Wortschatz liegt, MUSS ein merksatz-Feld haben
+       (max 15 Woerter, erklaert den Begriff in schuelernaher Sprache).
+       FAIL: k3-6 "Burgfrieden (SPD stimmt zu)" ohne merksatz — "Burgfrieden" kein R7-Wort.
+       PASS: k3-6 mit merksatz: "Alle Parteien stellen Streit ein und stuetzen gemeinsam den Krieg."
+       Pruefung: Jeden Knoten scannen → Fachbegriff ausserhalb R7? → merksatz vorhanden? Wenn nein → FAIL.
    1a. Schaubild-Integritaet pruefen (v2):
        - knoten[] ist PFLICHT und nicht leer. Jeder Knoten hat id, text (max 12 W.), typ.
        - verbindungen[] ist PFLICHT und nicht leer. Jede Verbindung hat von, nach, label (max 5 W.), typ.

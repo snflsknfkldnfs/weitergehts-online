@@ -4,6 +4,30 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-03 — Session 9: C1c Audit KOMPLETT + Pre-C2-Patches P1-P3
+
+**Phase:** Infrastruktur-Revision C1c (Audit + Patches)
+
+**Durchgefuehrt:**
+- C1c Audit: 3 Dimensionen × 3 parallele Reviewer (agent-teams). PM-Konsolidierung mit Datenverifikation. 4 Reviewer-BLOCKER als FALSE POSITIVE / LEGACY-ONLY downgraded. Gesamtentscheidung: PATCH-THEN-PROCEED.
+- P1 (Freitext-Keyword-Logik): SUB_AUFGABE_FREITEXT.md — Zwei-Ebenen-Modell dokumentiert: loesung[] = Minimum-Keywords (Engine prueft ALL-or-nothing), _meta.erwartete_begriffe = Gesamt-Set fuer Tipp-3 und Lehrkraft. Faustregel: AFB III max 2 Keywords, AFB II max 4.
+- P2 (Knoten-Elaborierung): AGENT_HEFTEINTRAG.md — Knoten-Elaborierungs-PFLICHT (v3.5) mit FAIL/PASS-Beispiel. VERTRAG_PHASE_2-0 — Schritt 1-post Elaborierungspruefung. data.json k3-6 merksatz retroaktiv: "Alle Parteien stellen Streit ein und stuetzen gemeinsam den Krieg."
+- P3 (Teilfragen-Rendering): UEBERGABE_v3-9_TEILFRAGEN_RENDERING.md erstellt — Engine-Patch ~15 Zeilen JS + ~10 Zeilen CSS. Noch nicht ausgefuehrt (Claude-Code-Domaene).
+
+**Geaenderte Dateien:**
+- docs/agents/SUB_AUFGABE_FREITEXT.md (P1)
+- docs/agents/AGENT_HEFTEINTRAG.md (P2)
+- docs/architektur/vertraege/VERTRAG_PHASE_2-0_RAHMEN.md (P2)
+- escape-games/gpg-erster-weltkrieg-ursachen/data.json (P2c: k3-6 merksatz)
+- docs/uebergabe/UEBERGABE_v3-9_TEILFRAGEN_RENDERING.md (NEU, P3)
+- docs/analyse/AUDIT_PRE_C2_ERGEBNIS.md (NEU, Audit-Ergebnis)
+- docs/projekt/STATUS.md
+- docs/projekt/CHANGELOG.md
+
+**Naechster Schritt:** P3 Engine-Patch ausfuehren (Claude Code, UEBERGABE_v3-9). Dann C2: Mappe-4-Validierung.
+
+---
+
 ## 2026-04-03 — Session 9: C1c Produktionsreife-Audit vorbereitet
 
 **Phase:** Infrastruktur-Revision C1c (Pre-C2 Audit)

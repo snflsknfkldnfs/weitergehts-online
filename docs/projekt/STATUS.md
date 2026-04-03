@@ -1,12 +1,18 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-03 (Session 9, C1c Audit-Briefing erstellt)
-**Aktuelle Phase:** **Infrastruktur-Revision vor Mappe 4. C1+C1b: DONE. C1c Produktionsreife-Audit: IN ARBEIT (Briefing erstellt, Durchfuehrung steht aus). Naechster Schritt: Audit durchfuehren (agent-teams, 3 Dimensionen), dann C2.**
-**Letzter Arbeitsschritt:** (1) D2+D3 Mappe-3-Daten-Nachpatch (aufgabe-3-4, aufgabe-3-6, hefteintrag). (2) A2b Inhaltliche Verankerung als PFLICHT-Q-Gate in alle 5 SUB_AUFGABE. (3) AUDIT_BRIEFING_PRE_C2_PRODUKTIONSREIFE.md erstellt: 3 Dimensionen (Technische Kohaerenz, Didaktische Kalibrierung, Engine-Schema-Kompatibilitaet), 38 Dateien im Scope.
-**Naechster Schritt:** (1) C1c Audit-Durchfuehrung (agent-teams). (2) Findings evaluieren → PROCEED/PATCH-THEN-PROCEED/REDESIGN. (3) C2: Mappe-4-Validierung. Stretch: Engine O3/O5/O6.
+**Letzte Aktualisierung:** 2026-04-03 (Session 9, C1c Audit KOMPLETT + Pre-C2-Patches P1-P3)
+**Aktuelle Phase:** **Infrastruktur-Revision vor Mappe 4. C1+C1b+C1c: DONE. Pre-C2-Patches P1+P2 ausgefuehrt, P3 als Uebergabe-Prompt vorbereitet. Naechster Schritt: P3 Engine-Patch (Claude Code), dann C2.**
+**Letzter Arbeitsschritt:** (1) C1c Audit durchgefuehrt (3 parallele Reviewer, agent-teams). Ergebnis: PATCH-THEN-PROCEED (0 Blocker nach PM-Verifikation, 3 Pre-C2-Patches). (2) P1: SUB_AUFGABE_FREITEXT loesung[]=Minimum-Keywords dokumentiert. (3) P2: AGENT_HEFTEINTRAG + VERTRAG_PHASE_2-0 Knoten-Elaborierungs-PFLICHT + k3-6 merksatz retroaktiv. (4) P3: UEBERGABE_v3-9_TEILFRAGEN_RENDERING.md erstellt.
+**Naechster Schritt:** (1) P3 Engine-Patch ausfuehren (Claude Code, UEBERGABE_v3-9). (2) C2: Mappe-4-Validierung. Stretch: Engine O3/O5/O6.
 **Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. ARTEFAKT_INVENTAR Mappe 2+3 nachpflegen. Engine-Erweiterungen O3/O5/O6 (Ordnungsmuster-Rendering, Pfeiltypen, Farbsemantik) als Stretch-Goal.
 
 **Abgeschlossen seit letztem Update:**
+- C1c Produktionsreife-Audit + Pre-C2-Patches (Session 9):
+  - Audit: 3 Dimensionen (Technische Kohaerenz, Didaktische Kalibrierung, Engine-Schema), 3 parallele Reviewer, PM-Konsolidierung. Ergebnis: PATCH-THEN-PROCEED, 0 Blocker nach PM-Verifikation (4 Reviewer-BLOCKER als FALSE POSITIVE / LEGACY-ONLY downgraded).
+  - P1: SUB_AUFGABE_FREITEXT.md — Zwei-Ebenen-Modell (loesung[] = Minimum-Keywords, _meta.erwartete_begriffe = Gesamt-Set). Engine-ALL-or-nothing-Logik dokumentiert.
+  - P2: AGENT_HEFTEINTRAG.md + VERTRAG_PHASE_2-0 — Knoten-Elaborierungs-PFLICHT (v3.5): merksatz fuer Fachbegriffe ausserhalb R7-Wortschatz. k3-6 merksatz retroaktiv in data.json.
+  - P3: UEBERGABE_v3-9_TEILFRAGEN_RENDERING.md — Engine-Patch fuer _meta.teilfragen-Rendering (JS+CSS). Noch nicht ausgefuehrt.
+  - Artefakte: AUDIT_PRE_C2_ERGEBNIS.md, UEBERGABE_v3-9_TEILFRAGEN_RENDERING.md
 - Mappe-3-Daten-Nachpatch D2+D3 (Session 9):
   - D2 aufgabe-3-4: "Welche Aussage erklaert den Widerspruch zwischen Foto und Quellen?" → "Warum zeigt das Foto Jubel und »Ausflug nach Paris«, aber die Quellen berichten von weinenden Muettern?"
   - D2 aufgabe-3-6: "Ordne die Aussagen den Perspektiven zu." → "Ordne die Zitate aus den Quellen und Tagebuechern den Haltungen Begeisterung, Angst und Pflicht zu."

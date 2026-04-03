@@ -1583,7 +1583,8 @@
             {
               "id": "k3-6",
               "text": "Burgfrieden (SPD stimmt zu)",
-              "typ": "wirkung"
+              "typ": "wirkung",
+              "merksatz": "Alle Parteien stellen Streit ein und stützen gemeinsam den Krieg."
             }
           ],
           "verbindungen": [

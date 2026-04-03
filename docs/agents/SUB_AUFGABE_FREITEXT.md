@@ -92,10 +92,10 @@ Die Leitfrage ist das zentrale Qualitaetsmerkmal der Freitext-Aufgabe. Sie muss:
 
 Freitext wird ueber Schluesselwort-Erkennung validiert. Daher:
 
-**Erwartete Fachbegriffe:**
-- 3-5 Begriffe, die in einer qualitativ guten Antwort vorkommen MUESSEN
+**Erwartete Fachbegriffe (Zwei-Ebenen-Modell):**
+- `loesung[]` (Engine-Feld): NUR die Minimum-Keywords (2-3 bei AFB III, 3-4 bei AFB II), die in JEDER vertretbaren Antwort vorkommen. Engine prueft ALL-or-nothing — daher NUR hier eintragen, was wirklich unverzichtbar ist.
+- `_meta.erwartete_begriffe[]`: Das Gesamt-Set aller wuenschenswerten Fachbegriffe (3-5 Stueck). Dient als Referenz fuer Tipp-3-Musterantwort und Lehrkraft-Ansicht. Wird von Engine NICHT gelesen.
 - Alle Begriffe muessen in den Materialien der Mappe eingefuehrt worden sein
-- Validierungs-Schwelle NIEDRIG halten: 2-3 von 5 Begriffen reichen fuer PASS (SuS sollen frei formulieren, nicht Begriffe abarbeiten)
 - Die Mechanik (Keyword-Pruefung) wird den SuS NICHT kommuniziert
 
 **Begriffauswahl:**
@@ -193,7 +193,8 @@ Engine-Felder (werden von escape-engine.js gelesen und validiert):
 **Fragestamm-Kurzregel (v3.3):** Die Fragestellung ist ein Handlungsimpuls, KEIN vollstaendiger didaktischer Satz. Max 1 Satz, max 12 Woerter. Den Operator NICHT woertlich benennen. Kontext (Zeit, Ort, Material-Bezug) NUR wenn nicht aus dem Setting ableitbar. Der Quellenbezug gehoert in Tipp 1, nicht in die Fragestellung.
 Negativbeispiel: "Ergaenze die fehlenden Fachbegriffe im folgenden Lueckentext, um den Zusammenhang zwischen Kriegsbegeisterung und gesellschaftlichem Druck im August 1914 darzustellen."
 Positivbeispiel: "Ergaenze die fehlenden Fachbegriffe."
-- `loesung`: **Array von Strings (3-5 Keywords)**. **KRITISCH:** Dies ist das EINZIGE Feld, gegen das die Engine die Schuelerantwort prueft. Die Engine prueft, ob ALLE Keywords (case-insensitive, Umlaut-tolerant) im Freitext des Schuelers vorkommen. MUSS die zentralen Fachbegriffe der erwarteten Antwort als einzelne Array-Eintraege enthalten. KEINE vollstaendige Musterantwort — die gehoert in `_meta.musterantwort` und Tipp 3. KEIN Space-separierter String — IMMER Array.
+- `loesung`: **Array von Strings — NUR Minimum-Keywords**. **KRITISCH:** Dies ist das EINZIGE Feld, gegen das die Engine die Schuelerantwort prueft. Die Engine prueft, ob ALLE Keywords (case-insensitive, Umlaut-tolerant) im Freitext des Schuelers vorkommen — ALL-or-nothing-Logik, KEINE Schwelle. Daher: `loesung[]` enthaelt NUR die Keywords, die in JEDER vertretbaren Antwort vorkommen muessen (typisch: 2-3 bei AFB III, 3-5 bei AFB II). Das Gesamt-Set aller erwuenschten Fachbegriffe gehoert in `_meta.erwartete_begriffe[]` (fuer Tipp 3 und Lehrkraft-Ansicht). KEINE vollstaendige Musterantwort — die gehoert in `_meta.musterantwort` und Tipp 3. KEIN Space-separierter String — IMMER Array.
+  **Faustregel:** `loesung[].length` = die Anzahl Keywords, die die Engine als Schwelle prueft (weil ALL-or-nothing). Bei AFB III (Stellungnahme): max 2 Keywords. Bei AFB II (Erklaerung): max 4 Keywords.
 
 **Freitext-Bewertungsdifferenzierung (v3.3):** Freitext-Aufgaben mit Beurteilungs-/Bewertungsoperatoren (AFB III: beurteile, bewerte, nimm Stellung) verwenden eine REDUZIERTE Bewertungslogik:
 - `loesung`: Nur 1-2 zentrale Fachbegriffe die in JEDER vertretbaren Antwort vorkommen muessten.
