@@ -6,6 +6,29 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ## 2026-04-03
 
+### Phase C1 Mappe-3-Hybrid-Patch (Infrastruktur-Revision)
+- **Phase:** Infrastruktur-Revision Phase C1 (DONE)
+- **Aufgabe:** Mappe-3-Daten retroaktiv patchen — Hybrid-Ansatz (mechanische Patches + Aufgaben-Neugenerierung via v2-Pipeline)
+- **Ergebnis:**
+  - Stufe 1: 6 mechanische Patches (mat-3-4, mat-3-5, einstieg, sicherung, hefteintrag) — Encoding B2, Quellenangaben B3, Einleitungen B4, Hefteintrag B10, Sicherung B11
+  - Stufe 2: PROGRESSIONSPLAN_v2.md erstellt (SCPL-Mapping, Typ-Begruendungen, Erarbeitbarkeits-Gegenpruefung). 7 Aufgaben neu generiert (v2-Pipeline: variable Aufgabenzahl, inhaltsgesteuerte Typauswahl, SCPL-Zonen). v1-Aufgaben nach _v1_archiv/ archiviert.
+  - Stufe 3: data.json per Python-Skript assembliert (7 Aufgaben, 5 Materialien, Hefteintrag v2, Rahmen)
+  - Stufe 4: Q-Gate A1-A18: 25/25 PASS. Evaluationsbericht mit 10-Dimensionen-Vergleich + 7 Learnings (L1-L7)
+- **Artefakte:**
+  - docs/agents/artefakte/produktion/.../mappe-3/PROGRESSIONSPLAN_v2.md (NEU)
+  - docs/agents/artefakte/produktion/.../mappe-3/aufgaben/aufgabe-3-1..3-7.json (NEU, v2)
+  - docs/agents/artefakte/produktion/.../mappe-3/aufgaben/_v1_archiv/ (5 archivierte v1-Aufgaben)
+  - docs/agents/artefakte/produktion/.../mappe-3/Q_GATE_A1_A18_MAPPE3_v2.md (NEU)
+  - docs/agents/artefakte/produktion/.../mappe-3/C1_EVALUATION_MAPPE3.md (NEU)
+  - escape-games/gpg-erster-weltkrieg-ursachen/data.json (GEPATCHT: Mappe 3 komplett ersetzt)
+- **Zentrale Verbesserungen v1→v2:**
+  - A18 Material-Aktivierung: mat-3-2 + mat-3-3 als Primaerquelle (v1: nur in Tipps)
+  - Aufgabenzahl 5→7 (inhaltsgesteuert)
+  - RF-Typ eliminiert (ambige Chronologie B8)
+  - SCPL-Zonen explizit: S→C1→C2→C3→P→L(2)
+  - Encoding sauber (0 Findings)
+- **Naechster Schritt:** Browser-Test Mappe 3 (User-Review), dann C2 Mappe-4-Validierung
+
 ### Phase B2 AGENT_RAETSEL Didaktische Professionalisierung (Infrastruktur-Revision)
 - **Phase:** Infrastruktur-Revision Phase B2 (DONE)
 - **Zweck:** AGENT_RAETSEL von starrer 5-Aufgaben-Schablone auf inhaltsgesteuertes SCPL-Fragebogen-Modell umstellen. Typ-Wiederholung erlauben, Material-Aktivierung erzwingen, Fragebogen als diagnostischen Spiegel des Lernwegs etablieren.

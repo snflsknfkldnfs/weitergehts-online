@@ -1,0 +1,28 @@
+{
+  "id": "aufgabe-3-2",
+  "typ": "multiple-choice",
+  "frage": "Welche vier Faktoren führten laut dem Sachtext zur Kriegsbegeisterung in Deutschland 1914?",
+  "material_referenz": ["mat-3-1"],
+  "optionen": [
+    "Militärische Überlegenheit, wirtschaftliche Chancen, nationale Rivalität und Presse",
+    "Patriotismus, Abenteuerlust, gesellschaftlicher Druck und Propaganda",
+    "Patriotismus, Handelsziele, Zwang durch die Regierung und Konkurrenz um Kolonien",
+    "Abenteuerlust, Propaganda, Industrialisierung und religiöse Überzeugung"
+  ],
+  "loesung": "Patriotismus, Abenteuerlust, gesellschaftlicher Druck und Propaganda",
+  "tipps": [
+    {
+      "stufe": 1,
+      "text": "Lies den [[mat-3-1|Text über die Kriegsstimmung 1914]] (M1) nochmal genau. Achte auf die Struktur 'Erstens... Zweitens... Drittens... Viertens...'."
+    },
+    {
+      "stufe": 2,
+      "text": "Zwei Optionen enthalten Begriffe, die im Text gar nicht vorkommen: 'wirtschaftliche Chancen' und 'Industrialisierung' sind keine der vier genannten Gründe."
+    },
+    {
+      "stufe": 3,
+      "text": "Patriotismus, Abenteuerlust, gesellschaftlicher Druck und Propaganda. Der Text nennt diese vier Faktoren: (1) übersteigertes Nationalgefühl, (2) Abenteuerlust bei jungen Männern, (3) sozialer Druck — wer nicht begeistert war, galt als Feigling, (4) staatliche Propaganda, die den Krieg als Verteidigung darstellte."
+    }
+  ],
+  "punkte": 10
+}

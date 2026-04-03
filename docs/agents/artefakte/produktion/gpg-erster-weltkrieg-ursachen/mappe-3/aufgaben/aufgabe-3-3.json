@@ -1,50 +1,51 @@
 {
   "id": "aufgabe-3-3",
   "typ": "zuordnung",
-  "frage": "Ordne die Personen und Aussagen den Perspektiven zu, die sie im August 1914 vertreten.",
-  "material_referenz": ["mat-3-4"],
+  "frage": "Ordne die Ursachen den Beschreibungen zu.",
+  "material_referenz": ["mat-3-1"],
   "elemente": [
     {
-      "begriff": "Stefan Zweig beschreibt eine nie gekannte Einheit und Brüderlichkeit",
-      "zuordnung": "Begeisterung und Einheit"
+      "begriff": "Übersteigertes Nationalgefühl — Vaterlandsliebe als Grund für die Kriegsbegeisterung",
+      "zuordnung": "Patriotismus"
     },
     {
-      "begriff": "SPD-Funktionär aus Bremen: Mütter und Ehefrauen weinen am Bahnhof",
-      "zuordnung": "Angst und Gegenstimmen"
+      "begriff": "Der Krieg als Chance, etwas Großes zu erleben — besonders bei jungen Männern",
+      "zuordnung": "Abenteuerlust"
     },
     {
-      "begriff": "Hugo Haase: Wir lassen unser Vaterland in der Stunde der Gefahr nicht im Stich",
-      "zuordnung": "Pflicht und Verantwortung"
+      "begriff": "Wer nicht begeistert ist, gilt als Feigling — niemand will auffallen",
+      "zuordnung": "Gesellschaftlicher Druck"
     },
     {
-      "begriff": "Junge Männer haben das Gefühl, direkt ins Schlachthaus zu gehen",
-      "zuordnung": "Angst und Gegenstimmen"
-    },
-    {
-      "begriff": "Die SPD stimmt überraschend für die Kriegskredite",
-      "zuordnung": "Pflicht und Verantwortung"
+      "begriff": "Die Regierung stellt den Krieg als reine Verteidigung dar — gezielte Beeinflussung",
+      "zuordnung": "Propaganda"
     }
   ],
   "loesung": {
-    "Stefan Zweig beschreibt eine nie gekannte Einheit und Brüderlichkeit": "Begeisterung und Einheit",
-    "SPD-Funktionär aus Bremen: Mütter und Ehefrauen weinen am Bahnhof": "Angst und Gegenstimmen",
-    "Hugo Haase: Wir lassen unser Vaterland in der Stunde der Gefahr nicht im Stich": "Pflicht und Verantwortung",
-    "Junge Männer haben das Gefühl, direkt ins Schlachthaus zu gehen": "Angst und Gegenstimmen",
-    "Die SPD stimmt überraschend für die Kriegskredite": "Pflicht und Verantwortung"
+    "Übersteigertes Nationalgefühl — Vaterlandsliebe als Grund für die Kriegsbegeisterung": "Patriotismus",
+    "Der Krieg als Chance, etwas Großes zu erleben — besonders bei jungen Männern": "Abenteuerlust",
+    "Wer nicht begeistert ist, gilt als Feigling — niemand will auffallen": "Gesellschaftlicher Druck",
+    "Die Regierung stellt den Krieg als reine Verteidigung dar — gezielte Beeinflussung": "Propaganda"
   },
   "tipps": [
     {
       "stufe": 1,
-      "text": "Lies [[mat-3-4|die drei Quellen zum Kriegsausbruch]] (M4) nochmal. Achte darauf, welche Quelle Freude beschreibt, welche Trauer zeigt und welche eine schwierige Entscheidung schildert."
+      "text": "Lies im [[mat-3-1|Sachtext zur Kriegsstimmung 1914]] (M1) den zweiten Absatz. Dort werden vier Gründe nacheinander erklärt: »Erstens... Zweitens... Drittens... Viertens...«"
     },
     {
       "stufe": 2,
-      "text": "Stefan Zweigs Beschreibung der Brüderlichkeit gehört zu 'Begeisterung und Einheit'. Der Bericht über weinende Mütter am Bahnhof gehört zu 'Angst und Gegenstimmen'."
+      "text": "Propaganda bedeutet gezielte Beeinflussung der Meinung. Gesellschaftlicher Druck bedeutet, dass man sich anpassen muss, weil andere schlecht über einen denken."
     },
     {
       "stufe": 3,
-      "text": "Zweig (Brüderlichkeit) → Begeisterung und Einheit. SPD-Funktionär Bremen (Weinen, Schlachthaus) → Angst und Gegenstimmen. Haase → Pflicht und Verantwortung: Er stimmt für den Krieg, aber nicht aus Begeisterung, sondern aus Gewissen. Das Schlachthaus-Gefühl der jungen Männer gehört zur Angst. Auch die SPD-Abstimmung für die Kriegskredite ist Pflicht — die Partei unterstützte den Krieg nicht aus Begeisterung, sondern weil sie das Vaterland nicht im Stich lassen wollte."
+      "text": "Patriotismus = Nationalgefühl. Abenteuerlust = Krieg als Erlebnis. Gesellschaftlicher Druck = Feigling-Vorwurf. Propaganda = Regierung stellt Krieg als Verteidigung dar. Die vier Ursachen wirken zusammen: Nationalgefühl und staatliche Beeinflussung schaffen eine Stimmung, in der sozialer Druck Andersdenkende zum Schweigen bringt."
     }
   ],
-  "punkte": 10
+  "punkte": 10,
+  "_meta": {
+    "scpl_zone": "C2",
+    "afb": "I-II",
+    "tb_knoten": ["k3-2", "k3-3", "k3-4"],
+    "operationalisierungsziel": "Ordne die vier Ursachen der Kriegsbegeisterung ihren Beschreibungen zu"
+  }
 }

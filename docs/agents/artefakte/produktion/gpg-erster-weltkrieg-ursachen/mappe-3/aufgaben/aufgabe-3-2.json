@@ -1,28 +1,34 @@
 {
   "id": "aufgabe-3-2",
   "typ": "multiple-choice",
-  "frage": "Welche vier Faktoren führten laut dem Sachtext zur Kriegsbegeisterung in Deutschland 1914?",
-  "material_referenz": ["mat-3-1"],
+  "frage": "Was zeigt das Foto vor dem Berliner Stadtschloss?",
+  "material_referenz": ["mat-3-2"],
   "optionen": [
-    "Militärische Überlegenheit, wirtschaftliche Chancen, nationale Rivalität und Presse",
-    "Patriotismus, Abenteuerlust, gesellschaftlicher Druck und Propaganda",
-    "Patriotismus, Handelsziele, Zwang durch die Regierung und Konkurrenz um Kolonien",
-    "Abenteuerlust, Propaganda, Industrialisierung und religiöse Überzeugung"
+    "Eine Menschenmenge jubelt dem Kaiser zu — ein Beispiel für die Kriegsbegeisterung im August 1914.",
+    "Arbeiter demonstrieren gegen den Krieg vor dem Berliner Stadtschloss.",
+    "Soldaten marschieren geordnet zum Bahnhof, um an die Front zu fahren.",
+    "Der Kaiser verkündet das Ende des Krieges — die Menschen feiern den Frieden."
   ],
-  "loesung": "Patriotismus, Abenteuerlust, gesellschaftlicher Druck und Propaganda",
+  "loesung": "Eine Menschenmenge jubelt dem Kaiser zu — ein Beispiel für die Kriegsbegeisterung im August 1914.",
   "tipps": [
     {
       "stufe": 1,
-      "text": "Lies den [[mat-3-1|Text über die Kriegsstimmung 1914]] (M1) nochmal genau. Achte auf die Struktur 'Erstens... Zweitens... Drittens... Viertens...'."
+      "text": "Schau dir das [[mat-3-2|Foto vor dem Berliner Stadtschloss]] (M2) genau an. Was tun die Menschen auf dem Bild? Welche Stimmung herrscht?"
     },
     {
       "stufe": 2,
-      "text": "Zwei Optionen enthalten Begriffe, die im Text gar nicht vorkommen: 'wirtschaftliche Chancen' und 'Industrialisierung' sind keine der vier genannten Gründe."
+      "text": "Zwei Optionen beschreiben Ereignisse, die das Foto nicht zeigt: Es gibt keine Demonstration gegen den Krieg und der Krieg endet nicht 1914."
     },
     {
       "stufe": 3,
-      "text": "Patriotismus, Abenteuerlust, gesellschaftlicher Druck und Propaganda. Der Text nennt diese vier Faktoren: (1) übersteigertes Nationalgefühl, (2) Abenteuerlust bei jungen Männern, (3) sozialer Druck — wer nicht begeistert war, galt als Feigling, (4) staatliche Propaganda, die den Krieg als Verteidigung darstellte."
+      "text": "Das Foto zeigt eine jubelnde Menschenmenge vor dem Berliner Stadtschloss am 1. August 1914. Die Menschen begrüßen den Kaiser auf dem Balkon — das ist ein typisches Beispiel für das Augusterlebnis, die Kriegsbegeisterung bei Kriegsausbruch."
     }
   ],
-  "punkte": 10
+  "punkte": 10,
+  "_meta": {
+    "scpl_zone": "C1",
+    "afb": "I",
+    "tb_knoten": ["k3-1"],
+    "operationalisierungsziel": "Beschreibe, was das Foto vor dem Berliner Stadtschloss zeigt"
+  }
 }

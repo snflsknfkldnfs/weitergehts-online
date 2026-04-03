@@ -1,33 +1,34 @@
 {
   "id": "aufgabe-3-4",
-  "typ": "reihenfolge",
-  "frage": "Ordne die Schritte von der Mobilmachung bis zum Burgfrieden in die richtige Reihenfolge.",
-  "material_referenz": ["mat-3-1", "mat-3-4"],
+  "typ": "multiple-choice",
+  "frage": "Welche Aussage erklärt den Widerspruch zwischen Foto und Quellen?",
+  "material_referenz": ["mat-3-3", "mat-3-4"],
   "optionen": [
-    "Kriegsbegeisterung erfasst die Großstädte — Patriotismus und Propaganda treiben sie an.",
-    "Die SPD stimmt für die Kriegskredite — der Burgfrieden beginnt: Alle Parteien stehen scheinbar zusammen.",
-    "Der Kaiser ordnet die Mobilmachung an und beruft Soldaten ein.",
-    "Arbeiter und Landbevölkerung äußern Angst und Zweifel am Krieg."
+    "Das Foto zeigt nur die eine Seite — in den Quellen wird deutlich, dass Arbeiter und Landbevölkerung Angst statt Begeisterung empfanden.",
+    "Das Foto ist gefälscht — die Regierung hat die Kriegsbegeisterung erfunden, um die Bevölkerung zu täuschen.",
+    "Die Quellen stammen von Kriegsgegnern und sind daher weniger zuverlässig als das Foto.",
+    "Alle Menschen waren gleichermaßen begeistert — die Gegenstimmen in den Quellen sind Ausnahmen ohne Bedeutung."
   ],
-  "loesung": [
-    "Der Kaiser ordnet die Mobilmachung an und beruft Soldaten ein.",
-    "Kriegsbegeisterung erfasst die Großstädte — Patriotismus und Propaganda treiben sie an.",
-    "Arbeiter und Landbevölkerung äußern Angst und Zweifel am Krieg.",
-    "Die SPD stimmt für die Kriegskredite — der Burgfrieden beginnt: Alle Parteien stehen scheinbar zusammen."
-  ],
+  "loesung": "Das Foto zeigt nur die eine Seite — in den Quellen wird deutlich, dass Arbeiter und Landbevölkerung Angst statt Begeisterung empfanden.",
   "tipps": [
     {
       "stufe": 1,
-      "text": "Lies [[mat-3-1|den Sachtext zur Kriegsstimmung 1914]] (M1) nochmal. Womit beginnt die Geschichte im August 1914?"
+      "text": "Vergleiche das [[mat-3-3|Foto vom Truppentransport]] (M3) mit den [[mat-3-4|drei Stimmen zum Kriegsausbruch]] (M4). Was zeigt das Foto? Was sagen die Quellen, das auf dem Foto nicht sichtbar ist?"
     },
     {
       "stufe": 2,
-      "text": "An Position 1 steht die Mobilmachung. Am Ende steht der Burgfrieden. Überlege: Kommt zuerst die Begeisterung oder zuerst die Gegenstimmen?"
+      "text": "Zwei Optionen behaupten Extreme: Das Foto sei gefälscht oder die Gegenstimmen seien bedeutungslos. Beides widerspricht den Quellen. Achte auf die Option, die beide Seiten ernst nimmt."
     },
     {
       "stufe": 3,
-      "text": "Mobilmachung → Kriegsbegeisterung in den Städten → Gegenstimmen bei Arbeitern und auf dem Land → SPD stimmt für Kriegskredite (Burgfrieden). Die Mobilmachung löst Begeisterung aus, aber nicht überall. Trotz der Gegenstimmen entsteht durch die SPD-Zustimmung eine scheinbare Einheit."
+      "text": "Das Foto zeigt nur die eine Seite — Aufbruchsstimmung und Slogans wie »Ausflug nach Paris«. Die Quellen zeigen die andere Seite: Der SPD-Funktionär berichtet von weinenden Müttern, die junge Männer zum Bahnhof bringen. Die Kriegsbegeisterung war nicht einheitlich — Arbeiter und Landbevölkerung empfanden überwiegend Angst."
     }
   ],
-  "punkte": 10
+  "punkte": 10,
+  "_meta": {
+    "scpl_zone": "C3",
+    "afb": "II",
+    "tb_knoten": ["k3-5"],
+    "operationalisierungsziel": "Erkläre, warum das Bild der einheitlichen Kriegsbegeisterung nicht stimmt"
+  }
 }

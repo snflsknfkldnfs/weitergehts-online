@@ -219,24 +219,79 @@ Mappe-3-Daten retroaktiv patchen (10 Daten-Patches). Mappe 4 als Validierung der
 
 ## Phase C: Validierung + Daten-Patch (2-4h, 1 Session)
 
-### C1: Mappe-3-Daten-Patch (10 Patches)
+### C1: Mappe-3-Hybrid-Patch + Aufgaben-Neugenerierung (revidiert Session 8) — ERLEDIGT
 
-Retroaktive Korrektur der Mappe-3-Daten gemaess Patch-Tabelle in Q-GATE-LOG.md (Phase 4.3, "Mappe-spezifische Fixes"). Betrifft:
+**Revision gegenueber Originalplan:** B2 (Didaktische Professionalisierung) hat die Aufgaben-Architektur fundamental geaendert (variable 5-8, SCPL-Zonen, A16-A18). Die urspruenglichen Aufgaben-Patches B6-B9 waeren Symptombehandlung am alten Output — stattdessen Aufgaben-Neugenerierung via v2-Pipeline. Maximiert Signaldichte fuer Prozesstest.
 
-| # | Befund | Betroffene Daten | Patch |
-|---|---|---|---|
-| 1 | B1 | einstieg.json, sicherung.json | Umlaute korrigieren |
-| 2 | B2 | mat-3-5 titel, Ueberleitungen, Bildunterschriften | `--` → `—` |
-| 3 | B3 | mat-3-4 inhalt, mat-3-5 inhalt | Quellenangaben aus inhalt entfernen |
-| 4 | B4 | mat-3-4 inhalt | Kuerzere Einleitungen, Name+Rolle statt voller Nachweis |
-| 5 | B6 | aufgabe-3-1 bis aufgabe-3-5 frage-Felder | Kuerzen/vereinfachen |
-| 6 | B7 | aufgabe-3-1 tipps[1] | Wortpool statt Paraphrase |
-| 7 | B8 | aufgabe-3-4 | Typ ersetzen oder Elemente schaerfen |
-| 8 | B9 | aufgabe-3-5 loesung | Spezifischere Keywords oder reduzierte Bewertungslogik |
-| 9 | B10 | sicherung.hefteintrag (komplett) | Neugeneration mit revidiertem Vertrag |
-| 10 | B11 | sicherung.ueberleitung | Stilistisch glaetten |
+#### Stufe 1: Mechanische Patches (Material + Rahmen)
+
+Patches auf Quelldaten in `docs/agents/artefakte/produktion/.../mappe-3/`. Rein mechanisch, keine didaktische Entscheidung.
+
+| # | Befund | Betroffene Datei(en) | Patch | Domaene |
+|---|---|---|---|---|
+| 1 | B1 | rahmen/einstieg.json, rahmen/sicherung.json | Encoding: Umlaute korrigieren (ae→ä etc.) | docs/ |
+| 2 | B2 | mat-3-5.json titel, ueberleitungen.json | Typographie: `--` → `—` | docs/ |
+| 3 | B3 | mat-3-4.json inhalt, mat-3-5.json inhalt | Quellenangaben aus inhalt-Feld entfernen (→ quellenangaben[]) | docs/ |
+| 4 | B4 | mat-3-4.json inhalt | Kuerzere Einleitungen: Name+Rolle statt voller Nachweis | docs/ |
+| 5 | B10 | rahmen/hefteintrag.json | Ersetzen durch hefteintrag_B1_TEST.json (bereits produziert + validiert) | docs/ |
+| 6 | B11 | rahmen/sicherung.json ueberleitung | Stilistisch glaetten | docs/ |
+
+Patches B6-B9 (Aufgaben) ENTFALLEN — werden durch Stufe 2 (Neugenerierung) ersetzt.
+
+#### Stufe 2: Aufgaben-Neugenerierung (Prozesstest B2)
+
+Vollstaendige Neugenerierung der Mappe-3-Aufgaben nach AGENT_RAETSEL v2. Testet die gesamte revidierte Pipeline unter Realbedingungen.
+
+**Eingabe (nach Stufe 1):**
+- 5 gepatchte Materialien (mat-3-1..3-5)
+- Gepatchter Hefteintrag (hefteintrag_B1_TEST.json: 6 Knoten, 5 Verbindungen, SCPL-Struktur)
+- Stundenfrage: "Waren die Menschen 1914 wirklich begeistert vom Krieg?"
+
+**Durchfuehrung (in dieser Cowork-Session, PM fuehrt AGENT_RAETSEL-Logik manuell aus):**
+1. Aufgabenzahl ableiten (Formel: basis=5, knoten_faktor=ceil(6/5)=1, material_faktor=1 if >4 else 0 → 5+1+1=7 oder 5+1+0=6)
+2. SCPL-Zonen-Mapping erstellen (S, C1, C2, C3, P, L → Aufgaben-Positionen)
+3. Progressionsplan v2 schreiben (AFB-Zuweisung, Typauswahl mit Begruendung, Operationalisierungsziele)
+4. Pro Aufgabe: Konstruktionskontext generieren + Aufgabe formulieren (Orchestrator-Rolle, nicht Subagent-Dispatch)
+5. Cross-Konsistenz pruefen (A5, A10, A12, A16, A17, A18)
+6. Q-Gate A1-A18 durchlaufen
+
+**Vereinfachung gegenueber Vollproduktion:** Kein isolierter Subagenten-Dispatch (Token-Effizienz in Cowork). Orchestrator + Subagent-Logik in einem Durchlauf. Qualitaetsanspruch identisch.
+
+**Output:** aufgabe-3-1.json bis aufgabe-3-N.json (N=Ergebnis aus Schritt 1) + PROGRESSIONSPLAN_v2.md + Q-GATE-LOG Aufgaben-Sektion
+
+#### Stufe 3: Assembly + data.json-Patch
+
+Neue Aufgaben + gepatchte Materialien/Rahmen in data.json assemblieren.
 
 **Ausfuehrung:** Claude-Code-Session mit Uebergabe-Prompt. File-Ownership: escape-games/ ist Claude-Code-Domaene.
+**Scope:** data.json Mappe-3-Sektion ersetzen (meta, materialien, aufgaben, rahmen). Mappen 1+2 unberuehrt.
+
+#### Stufe 4: Evaluationsbericht (C1-EVALUATION.md)
+
+Strukturierter Vorher/Nachher-Vergleich. Wird VOR Browser-Review geschrieben (Prozess-Evaluation), ergaenzt NACH Browser-Review (Produkt-Evaluation).
+
+**Evaluationsrahmen:**
+
+| Dimension | Messung | Vergleichsbasis |
+|---|---|---|
+| Aufgabenzahl | N (neu) vs. 5 (alt) | Ist die Erhoehung inhaltlich begruendet? |
+| SCPL-Zonen-Abdeckung | Zonen mit/ohne Aufgabe (A17) | Alt: keine Zonen-Zuordnung. Neu: explizit |
+| Fragebogen-Kohaerenz | Sequenz-Mapping Aufgaben → SCPL (A16) | Alt: keine Kohaerenz-Pruefung |
+| Material-Aktivierung | Primaerquellen-Matrix (A18) | Alt: mat-3-2, mat-3-3 nur in Tipps |
+| Typauswahl-Begruendung | Jede Typ-Wiederholung dokumentiert? (A10) | Alt: 5 verschiedene Typen ohne Begruendung |
+| AFB-Progression | Monotonie-Check (A5) | Alt: 5 Stufen. Neu: N Stufen |
+| Fragestamm-Laenge | Wortanzahl pro Aufgabe (B6) | Alt: Durchschnitt X Woerter. Neu: max 12W |
+| Tipp-Qualitaet | Stufe-2-Typ (B7) | Alt: Paraphrase. Neu: Wortpool/Einschraenkung |
+| Erarbeitbarkeit | Gegenpruefung pro Aufgabe (B8) | Alt: keine. Neu: dokumentiert |
+| A1-A18 Gesamt | PASS/FAIL-Tabelle | Alt: A1-A15 (A16-A18 nicht existent) |
+
+**Learnings-Extraktion:**
+- Was hat die v2-Pipeline veraendert gegenueber v1?
+- Welche Kriterien waren schwer zu erfuellen? (→ Vertrag/Prompt-Optimierung vor Mappe 4)
+- Aufwands-Vergleich: v1-Patches vs. v2-Neugenerierung
+- Empfehlung: v2-Neugenerierung auch fuer Mappe 2 retroaktiv? Oder nur forward fuer Mappe 4+?
+
+**Artefakt:** `docs/projekt/C1_EVALUATION_MAPPE3.md`
 
 ### C2: Mappe 4 als Validierung
 
@@ -263,8 +318,11 @@ Phase B (nach Phase A empfohlen, aber nicht blockiert):
   B2 (Didaktische Professionalisierung)  ── Unabhaengig von B1
 
 Phase C (nach A+B):
-  C1 (Daten-Patch) ── Benoetigt A+B fuer informierte Patches
-  C2 (Mappe 4)     ── Benoetigt A+B+C1
+  C1-Stufe1 (Mechanische Patches)      ── Benoetigt A (Encoding/Typographie)
+  C1-Stufe2 (Aufgaben-Neugenerierung)  ── Benoetigt B2 (AGENT_RAETSEL v2) + C1-Stufe1
+  C1-Stufe3 (Assembly data.json)       ── Benoetigt C1-Stufe1 + C1-Stufe2
+  C1-Stufe4 (Evaluation)               ── Benoetigt C1-Stufe2 (Prozess) + C1-Stufe3 (Produkt nach Browser-Review)
+  C2 (Mappe 4)                         ── Benoetigt C1-Stufe4 (Learnings)
 ```
 
 ---
@@ -276,10 +334,11 @@ Phase C (nach A+B):
 | 1 | A1-A7 (alle Patches) | Alle Vertraege + Subagenten gepatcht | 4-6h |
 | 2 | B1 (Hefteintrag Analyse + Gegenmodell) | Referenz-Hefteintrag steht | 3-4h |
 | 3 | B1 (Vertrag) + B2 (Didaktische Professionalisierung) | Architektur-Revisionen abgeschlossen | 3-4h |
-| 4 | C1 (Daten-Patch Mappe 3) | Mappe 3 retroaktiv korrigiert | 2-3h |
+| 4 | C1-S1+S2 (Patches + Aufgaben-Neugenerierung) | Mappe 3 v2-Aufgaben stehen, Q-Gate A1-A18 PASS | 3-4h |
+| 4b | C1-S3+S4 (Assembly + Evaluation) | data.json gepatcht, Evaluationsbericht steht | 1-2h |
 | 5+ | C2 (Mappe 4 Produktion) | Validierung der Revision | 12-16h |
 
-**Kritischer Pfad:** A* → B1 → C1 → C2. B2 ist parallel zu B1 ausfuehrbar.
+**Kritischer Pfad:** A* → B1+B2 → C1 (S1→S2→S3→S4) → C2.
 
 ---
 

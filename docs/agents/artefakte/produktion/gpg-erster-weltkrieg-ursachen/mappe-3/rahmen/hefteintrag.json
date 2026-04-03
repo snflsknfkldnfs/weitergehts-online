@@ -1,42 +1,39 @@
 {
   "stundenfrage": "Waren die Menschen 1914 wirklich begeistert vom Krieg?",
-  "ordnungsmuster": "multiperspektivisch",
+  "ordnungsmuster": "kontrastierend",
   "scpl": {
     "situation": {
-      "kontextsatz": "Die Buendnisse haben aus einem Mord einen Weltkrieg gemacht. Soldaten steigen in Zuege und schreiben 'Ausflug nach Paris' auf die Waggons — doch ist das wirklich Begeisterung?",
+      "kontextsatz": "Bündnisse machen aus einem Mord einen Weltkrieg. Millionen Soldaten werden mobilisiert.",
       "fachbegriffe": ["Mobilmachung"]
     },
     "complication": [
       {
-        "schritt": "In den Grossstaedten herrscht Aufregung. Menschenmengen jubeln, Fahnen wehen — Historiker nennen dieses Gefuehl das Augusterlebnis: die Kriegsbegeisterung.",
+        "schritt": "Großstädte: Jubel, Fahnen, »Ausflug nach Paris« — Historiker nennen es Augusterlebnis.",
         "fachbegriff": "Kriegsbegeisterung (Augusterlebnis)",
         "darstellung": null
       },
       {
-        "schritt": "Vier Gruende treiben die Begeisterung: Patriotismus, Abenteuerlust, gesellschaftlicher Druck und Propaganda. Die Regierung stellt den Krieg als reine Verteidigung dar.",
+        "schritt": "Vier Ursachen: Patriotismus, Abenteuerlust, gesellschaftlicher Druck, Propaganda.",
         "fachbegriff": "Propaganda",
         "darstellung": null
       },
       {
-        "schritt": "Doch die Begeisterung ist nicht allgemein. Auf dem Land herrscht Angst — Frauen weinen am Bahnhof, Bauern fuerchten um die Ernte. 288 Anti-Kriegs-Versammlungen zeigen: Gegenstimmen gibt es auch in den Staedten.",
+        "schritt": "Gegenstimmen: 288 Anti-Kriegs-Versammlungen. Auf dem Land Angst statt Freude.",
         "fachbegriff": "Gegenstimmen",
         "darstellung": null
       }
     ],
     "problem": {
-      "satz": "Die SPD stimmt fuer die Kriegskredite — alle Parteien stehen zusammen: Burgfrieden. Die truegerische Einheit verdeckt die tiefen Risse in der Gesellschaft.",
+      "satz": "SPD stimmt für Kriegskredite — Burgfrieden. Trügerische Einheit verdeckt tiefe Risse.",
       "fachbegriff": "Burgfrieden"
     },
     "loesung": [
-      "Die Kriegsbegeisterung 1914 betraf vor allem die staedtische Mittel- und Oberschicht — Arbeiter und Landbevoelkerung waren ueberwiegend skeptisch.",
+      "Die Kriegsbegeisterung 1914 betraf vor allem die städtische Mittel- und Oberschicht — Arbeiter und Landbevölkerung waren überwiegend skeptisch.",
       "Patriotismus, Propaganda, Abenteuerlust und gesellschaftlicher Druck trieben die Begeisterung an.",
-      "Der Burgfrieden vereinte sogar Kriegsgegner hinter der Regierung — doch die Einheit war truegerisch."
+      "Der Burgfrieden vereinte sogar Kriegsgegner hinter der Regierung — doch die Einheit war trügerisch."
     ]
   },
-  "transfer": {
-    "frage": "Gibt es heute Situationen, in denen gesellschaftlicher Druck Menschen dazu bringt, eine Meinung oeffentlich zu vertreten, die sie privat nicht teilen?"
-  },
-  "voraussetzungen": ["k2-5 (Kettenreaktion der Kriegserklaerungen)"],
+  "voraussetzungen": ["k2-5"],
   "knoten": [
     {"id": "k3-1", "text": "Kriegsbegeisterung (Augusterlebnis)", "typ": "kernbegriff"},
     {"id": "k3-2", "text": "Patriotismus / Nationalismus", "typ": "ursache"},
@@ -46,10 +43,10 @@
     {"id": "k3-6", "text": "Burgfrieden (SPD stimmt zu)", "typ": "wirkung"}
   ],
   "verbindungen": [
-    {"von": "k3-2", "nach": "k3-1", "label": "erzeugt"},
-    {"von": "k3-3", "nach": "k3-1", "label": "verstaerkt"},
-    {"von": "k3-4", "nach": "k3-1", "label": "erzwingt Zustimmung"},
-    {"von": "k3-5", "nach": "k3-1", "label": "widerspricht (nicht alle begeistert)"},
-    {"von": "k3-1", "nach": "k3-6", "label": "ermoeglicht"}
+    {"von": "k3-2", "nach": "k3-1", "label": "erzeugt", "typ": "kausal"},
+    {"von": "k3-3", "nach": "k3-1", "label": "verstärkt", "typ": "kausal"},
+    {"von": "k3-4", "nach": "k3-1", "label": "erzwingt Zustimmung", "typ": "kausal"},
+    {"von": "k3-5", "nach": "k3-1", "label": "widerspricht", "typ": "kontrast"},
+    {"von": "k3-1", "nach": "k3-6", "label": "ermöglicht", "typ": "schlussfolgerung"}
   ]
 }

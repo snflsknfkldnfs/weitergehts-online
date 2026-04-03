@@ -1,12 +1,18 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-03 (Session 8, Infrastruktur-Revision Phase B1+B2 DONE)
-**Aktuelle Phase:** **Infrastruktur-Revision vor Mappe 4. Phase A: DONE. Phase B1 Hefteintrag-Neukonstruktion: DONE. Phase B2 AGENT_RAETSEL Didaktische Professionalisierung: DONE. Naechster Schritt: Phase C (Daten-Patch + Mappe 4).**
-**Letzter Arbeitsschritt:** B2 Didaktische Professionalisierung: (1) Empirische Analyse 7 realer UE-Muster + Mappe-2/3-Evaluation. (2) AGENT_RAETSEL.md v2: Variable Aufgabenzahl 5-8 (Sektion 1a), SCPL-Zonen-Mapping (1b), inhaltsgesteuerte Typauswahl mit Wiederholungs-Begruendung (1c), Sektion 2 SCPL-Kontext, Cross-Konsistenz A16/A17/A18 (Sektion 5), Q-Gate erweitert (A10v2, A16-A18). (3) GUETEKRITERIEN_AUFGABEN.md v2: A5 revidiert (5-8), A10 revidiert (inhaltsgesteuerte Typauswahl, max 3x), 3 neue SOLL-Kriterien A16 (Fragebogen-Kohaerenz), A17 (SCPL-Zonen-Abdeckung), A18 (Material-Aktivierung) mit Operationalisierungen (6.7-6.10), Sektionen 2.5/2.6 SCPL-Modell. (4) Cross-File-Konsistenz: 6 Inkonsistenzen in 5 Dateien behoben (AGENT_RAETSEL, COWORK_ANLEITUNG, VERTRAG_2-2a, VERTRAG_2-2b, VERTRAG_2-2c — Referenzen A1-A18→A1-A18, "5 Positionen"→"5-8", A10 >2x→>3x). (5) AUSFUEHRUNGSPLAN B2 Scope erweitert + als ERLEDIGT markiert.
-**Naechster Schritt:** Phase C: C1 Mappe-3-Daten-Patch (10 Patches), C2 Mappe-4-Validierung. Stretch: Engine-Uebergabe O3/O5/O6.
+**Letzte Aktualisierung:** 2026-04-03 (Session 8, Infrastruktur-Revision Phase C1 DONE)
+**Aktuelle Phase:** **Infrastruktur-Revision vor Mappe 4. Phase A: DONE. Phase B1+B2: DONE. Phase C1 Mappe-3-Hybrid-Patch: DONE. Naechster Schritt: Browser-Test Mappe 3 + Phase C2 (Mappe 4).**
+**Letzter Arbeitsschritt:** C1 Mappe-3-Hybrid-Patch (4 Stufen): (1) Mechanische Patches: 6 Patches auf 5 Dateien (mat-3-4, mat-3-5, einstieg, sicherung, hefteintrag) — Encoding B2, Quellenangaben B3, Einleitungen B4, Hefteintrag B10, Sicherung B11. (2) Aufgaben-Neugenerierung: PROGRESSIONSPLAN_v2.md (SCPL-Mapping, Typ-Begruendungen, Material-Aktivierung A18, Erarbeitbarkeits-Gegenpruefung 7/7 PASS). 7 neue Aufgaben via v2-Pipeline (variable Aufgabenzahl, inhaltsgesteuerte Typauswahl). v1-Aufgaben archiviert. (3) Assembly: data.json per Python-Skript gepatcht (7 Aufgaben, 5 Materialien, Hefteintrag v2, Rahmen). (4) Q-Gate A1-A18: 25/25 PASS. Evaluationsbericht C1_EVALUATION_MAPPE3.md mit 10 Dimensionen Vorher/Nachher + 7 Learnings.
+**Naechster Schritt:** Browser-Test Mappe 3 (User-Review: GitHub Pages Build + visueller Test). Dann Phase C2: Mappe-4-Validierung. Stretch: Engine-Uebergabe O3/O5/O6.
 **Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. ARTEFAKT_INVENTAR Mappe 2+3 nachpflegen. Engine-Erweiterungen O3/O5/O6 (Ordnungsmuster-Rendering, Pfeiltypen, Farbsemantik) als Stretch-Goal fuer Claude-Code-Uebergabe.
 
 **Abgeschlossen seit letztem Update:**
+- Phase C1 Mappe-3-Hybrid-Patch (4 Stufen):
+  - Stufe 1: 6 mechanische Patches auf mat-3-4, mat-3-5, einstieg, sicherung, hefteintrag (Encoding, Quellenangaben, Einleitungen, Hefteintrag v2). Alle JSON-validiert.
+  - Stufe 2: PROGRESSIONSPLAN_v2.md + 7 Aufgaben (aufgabe-3-1..3-7) neu generiert. v1-Aufgaben archiviert nach _v1_archiv/. Zentrale Verbesserungen: mat-3-2/mat-3-3 als Primaerquelle (A18), RF-Typ eliminiert (B8), SCPL-Zonen explizit (A16/A17).
+  - Stufe 3: data.json Assembly per Python-Skript. 7 Aufgaben + 5 Materialien + Hefteintrag v2 integriert.
+  - Stufe 4: Q-Gate A1-A18: 25/25 PASS. C1_EVALUATION_MAPPE3.md mit 7 Learnings (L1-L7).
+  - Artefakte: Q_GATE_A1_A18_MAPPE3_v2.md, C1_EVALUATION_MAPPE3.md, PROGRESSIONSPLAN_v2.md
 - Infrastruktur-Revision verankert:
   - GRUNDSATZENTSCHEIDUNG_REBUILD_VS_ITERATE.md §10: Post-Mappe-3 Empirische Ergebnisse. 11 Findings, 7 wiederkehrend. Revidierte Entscheidung: C+ + Infrastruktur-Revision.
   - AUSFUEHRUNGSPLAN_INFRASTRUKTUR_REVISION.md (NEU): 3 Phasen (A: 7 Patches 4-6h, B: 2 Architektur-Revisionen 6-10h, C: Daten-Patch + Mappe-4-Validierung 2-4h).

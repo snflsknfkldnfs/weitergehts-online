@@ -1,0 +1,33 @@
+{
+  "id": "aufgabe-3-4",
+  "typ": "reihenfolge",
+  "frage": "Ordne die Schritte von der Mobilmachung bis zum Burgfrieden in die richtige Reihenfolge.",
+  "material_referenz": ["mat-3-1", "mat-3-4"],
+  "optionen": [
+    "Kriegsbegeisterung erfasst die Großstädte — Patriotismus und Propaganda treiben sie an.",
+    "Die SPD stimmt für die Kriegskredite — der Burgfrieden beginnt: Alle Parteien stehen scheinbar zusammen.",
+    "Der Kaiser ordnet die Mobilmachung an und beruft Soldaten ein.",
+    "Arbeiter und Landbevölkerung äußern Angst und Zweifel am Krieg."
+  ],
+  "loesung": [
+    "Der Kaiser ordnet die Mobilmachung an und beruft Soldaten ein.",
+    "Kriegsbegeisterung erfasst die Großstädte — Patriotismus und Propaganda treiben sie an.",
+    "Arbeiter und Landbevölkerung äußern Angst und Zweifel am Krieg.",
+    "Die SPD stimmt für die Kriegskredite — der Burgfrieden beginnt: Alle Parteien stehen scheinbar zusammen."
+  ],
+  "tipps": [
+    {
+      "stufe": 1,
+      "text": "Lies [[mat-3-1|den Sachtext zur Kriegsstimmung 1914]] (M1) nochmal. Womit beginnt die Geschichte im August 1914?"
+    },
+    {
+      "stufe": 2,
+      "text": "An Position 1 steht die Mobilmachung. Am Ende steht der Burgfrieden. Überlege: Kommt zuerst die Begeisterung oder zuerst die Gegenstimmen?"
+    },
+    {
+      "stufe": 3,
+      "text": "Mobilmachung → Kriegsbegeisterung in den Städten → Gegenstimmen bei Arbeitern und auf dem Land → SPD stimmt für Kriegskredite (Burgfrieden). Die Mobilmachung löst Begeisterung aus, aber nicht überall. Trotz der Gegenstimmen entsteht durch die SPD-Zustimmung eine scheinbare Einheit."
+    }
+  ],
+  "punkte": 10
+}

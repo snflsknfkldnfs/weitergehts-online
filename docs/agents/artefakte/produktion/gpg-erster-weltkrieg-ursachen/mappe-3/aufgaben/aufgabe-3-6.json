@@ -1,0 +1,56 @@
+{
+  "id": "aufgabe-3-6",
+  "typ": "zuordnung",
+  "frage": "Ordne die Aussagen den Perspektiven zu.",
+  "material_referenz": ["mat-3-4", "mat-3-5"],
+  "elemente": [
+    {
+      "begriff": "»Alle Unterschiede von Stand und Sprache waren untergetaucht in einem strömenden Gefühl der Brüderlichkeit.«",
+      "zuordnung": "Begeisterung"
+    },
+    {
+      "begriff": "»Ich habe mich freiwillig gemeldet — endlich ein Abenteuer! Wer jetzt nicht geht, ist feige.«",
+      "zuordnung": "Begeisterung"
+    },
+    {
+      "begriff": "»Mütter, Ehefrauen und Bräute bringen die jungen Männer zum Bahnhof und weinen.«",
+      "zuordnung": "Angst"
+    },
+    {
+      "begriff": "»Die Angst sitzt mir im Bauch wie ein Stein. Ich muss stark sein und ja sagen — obwohl ich nein schreie.«",
+      "zuordnung": "Angst"
+    },
+    {
+      "begriff": "»Wir lassen unser Vaterland in der Stunde der Gefahr nicht im Stich.«",
+      "zuordnung": "Pflicht"
+    }
+  ],
+  "loesung": {
+    "»Alle Unterschiede von Stand und Sprache waren untergetaucht in einem strömenden Gefühl der Brüderlichkeit.«": "Begeisterung",
+    "»Ich habe mich freiwillig gemeldet — endlich ein Abenteuer! Wer jetzt nicht geht, ist feige.«": "Begeisterung",
+    "»Mütter, Ehefrauen und Bräute bringen die jungen Männer zum Bahnhof und weinen.«": "Angst",
+    "»Die Angst sitzt mir im Bauch wie ein Stein. Ich muss stark sein und ja sagen — obwohl ich nein schreie.«": "Angst",
+    "»Wir lassen unser Vaterland in der Stunde der Gefahr nicht im Stich.«": "Pflicht"
+  },
+  "tipps": [
+    {
+      "stufe": 1,
+      "text": "Lies die [[mat-3-4|Quellen zum Kriegsausbruch]] (M4) und die [[mat-3-5|Tagebucheinträge]] (M5) nochmal. Achte auf die Gefühle: Wer ist begeistert, wer hat Angst, wer handelt aus Pflichtgefühl?"
+    },
+    {
+      "stufe": 2,
+      "text": "»Brüderlichkeit« und »Abenteuer« drücken Begeisterung aus. »Weinen« und »Angst im Bauch« zeigen Furcht. Die Haase-Rede spricht von Pflicht gegenüber dem Vaterland."
+    },
+    {
+      "stufe": 3,
+      "text": "Begeisterung: Zweig (Brüderlichkeit) + Kriegsfreiwilliger (Abenteuer). Angst: SPD-Funktionär Bremen (weinende Mütter) + Bauersfrau (»nein schreie«). Pflicht: Haase — er stimmt nicht aus Begeisterung für den Krieg, sondern aus Verantwortungsgefühl gegenüber dem Vaterland. Die drei Perspektiven zeigen: Die Kriegsbegeisterung war nicht einheitlich."
+    }
+  ],
+  "punkte": 10,
+  "_meta": {
+    "scpl_zone": "L",
+    "afb": "II",
+    "tb_knoten": ["k3-1", "k3-5", "k3-6"],
+    "operationalisierungsziel": "Unterscheide die Perspektiven Begeisterung, Angst und Pflicht"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "aufgabe-3-5",
+  "typ": "freitext-code",
+  "frage": "Beurteile, ob es heute Situationen gibt, in denen gesellschaftlicher Druck Menschen dazu bringt, eine Meinung öffentlich zu vertreten, die sie privat nicht teilen. Begründe deine Einschätzung mit Beispielen aus den Materialien und aus deinem Alltag.",
+  "material_referenz": ["mat-3-1", "mat-3-4", "mat-3-5"],
+  "loesung": ["Druck", "Meinung", "Angst"],
+  "tipps": [
+    {
+      "stufe": 1,
+      "text": "Lies [[mat-3-5|die beiden Tagebucheinträge von 1914]] (M5) nochmal. Achte darauf, wie sich die öffentlich gezeigte Haltung und die privaten Gefühle der beiden Personen unterscheiden."
+    },
+    {
+      "stufe": 2,
+      "text": "Die Bauersfrau sagt es direkt: 'Ich muss stark sein und ja sagen — obwohl ich nein schreie.' Sie zeigt nach außen Pflichtbewusstsein, fühlt aber Angst. Überlege: Wo erlebst du oder andere Menschen heute etwas Ähnliches?"
+    },
+    {
+      "stufe": 3,
+      "text": "Musterantwort: Ja, auch heute gibt es Situationen, in denen gesellschaftlicher Druck Menschen zum Schweigen bringt. Die Bauersfrau 1914 musste stark sein und 'ja' sagen, obwohl sie vor Angst nicht schlafen konnte — wer anders dachte, wurde schief angeschaut. In der Schule ist es ähnlich: Manche trauen sich nicht, ihre Meinung zu sagen, weil sie Angst haben, ausgelacht zu werden. In sozialen Medien posten Menschen oft nur das, was anderen gefällt. Der Druck, dazuzugehören, bringt Menschen dazu, ihre echte Meinung zu verstecken — damals wie heute. Deine Antwort sollte Begriffe wie 'Druck', 'Meinung' und 'Angst' verwenden."
+    }
+  ],
+  "punkte": 10,
+  "_meta": {
+    "teilfragen": [
+      "Wie unterscheiden sich in den Tagebucheinträgen die öffentlich gezeigten Gefühle von den privaten Überzeugungen?",
+      "Welche Rolle spielt gesellschaftlicher Druck dabei, dass Menschen ihre wahre Meinung verbergen?",
+      "Gibt es vergleichbare Situationen in der heutigen Gesellschaft? Nenne Beispiele."
+    ],
+    "erwartete_begriffe": ["gesellschaftlicher Druck", "Propaganda", "Patriotismus", "Angst", "Kriegsbegeisterung"],
+    "validierung_schwelle": 3,
+    "musterantwort": "Ja, auch heute gibt es Situationen, in denen gesellschaftlicher Druck Menschen zum Schweigen bringt. Die Bauersfrau 1914 musste stark sein und 'ja' sagen, obwohl sie vor Angst nicht schlafen konnte — wer anders dachte, wurde schief angeschaut. In der Schule ist es ähnlich: Manche trauen sich nicht, ihre Meinung zu sagen, weil sie Angst haben, ausgelacht zu werden. In sozialen Medien posten Menschen oft nur das, was anderen gefällt. Der Druck, dazuzugehören, bringt Menschen dazu, ihre echte Meinung zu verstecken — damals wie heute."
+  }
+}

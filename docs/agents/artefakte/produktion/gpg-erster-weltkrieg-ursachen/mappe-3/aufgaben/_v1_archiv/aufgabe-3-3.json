@@ -1,0 +1,50 @@
+{
+  "id": "aufgabe-3-3",
+  "typ": "zuordnung",
+  "frage": "Ordne die Personen und Aussagen den Perspektiven zu, die sie im August 1914 vertreten.",
+  "material_referenz": ["mat-3-4"],
+  "elemente": [
+    {
+      "begriff": "Stefan Zweig beschreibt eine nie gekannte Einheit und Brüderlichkeit",
+      "zuordnung": "Begeisterung und Einheit"
+    },
+    {
+      "begriff": "SPD-Funktionär aus Bremen: Mütter und Ehefrauen weinen am Bahnhof",
+      "zuordnung": "Angst und Gegenstimmen"
+    },
+    {
+      "begriff": "Hugo Haase: Wir lassen unser Vaterland in der Stunde der Gefahr nicht im Stich",
+      "zuordnung": "Pflicht und Verantwortung"
+    },
+    {
+      "begriff": "Junge Männer haben das Gefühl, direkt ins Schlachthaus zu gehen",
+      "zuordnung": "Angst und Gegenstimmen"
+    },
+    {
+      "begriff": "Die SPD stimmt überraschend für die Kriegskredite",
+      "zuordnung": "Pflicht und Verantwortung"
+    }
+  ],
+  "loesung": {
+    "Stefan Zweig beschreibt eine nie gekannte Einheit und Brüderlichkeit": "Begeisterung und Einheit",
+    "SPD-Funktionär aus Bremen: Mütter und Ehefrauen weinen am Bahnhof": "Angst und Gegenstimmen",
+    "Hugo Haase: Wir lassen unser Vaterland in der Stunde der Gefahr nicht im Stich": "Pflicht und Verantwortung",
+    "Junge Männer haben das Gefühl, direkt ins Schlachthaus zu gehen": "Angst und Gegenstimmen",
+    "Die SPD stimmt überraschend für die Kriegskredite": "Pflicht und Verantwortung"
+  },
+  "tipps": [
+    {
+      "stufe": 1,
+      "text": "Lies [[mat-3-4|die drei Quellen zum Kriegsausbruch]] (M4) nochmal. Achte darauf, welche Quelle Freude beschreibt, welche Trauer zeigt und welche eine schwierige Entscheidung schildert."
+    },
+    {
+      "stufe": 2,
+      "text": "Stefan Zweigs Beschreibung der Brüderlichkeit gehört zu 'Begeisterung und Einheit'. Der Bericht über weinende Mütter am Bahnhof gehört zu 'Angst und Gegenstimmen'."
+    },
+    {
+      "stufe": 3,
+      "text": "Zweig (Brüderlichkeit) → Begeisterung und Einheit. SPD-Funktionär Bremen (Weinen, Schlachthaus) → Angst und Gegenstimmen. Haase → Pflicht und Verantwortung: Er stimmt für den Krieg, aber nicht aus Begeisterung, sondern aus Gewissen. Das Schlachthaus-Gefühl der jungen Männer gehört zur Angst. Auch die SPD-Abstimmung für die Kriegskredite ist Pflicht — die Partei unterstützte den Krieg nicht aus Begeisterung, sondern weil sie das Vaterland nicht im Stich lassen wollte."
+    }
+  ],
+  "punkte": 10
+}

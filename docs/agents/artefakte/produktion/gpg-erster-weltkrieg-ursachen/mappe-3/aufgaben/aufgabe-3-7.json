@@ -1,0 +1,35 @@
+{
+  "id": "aufgabe-3-7",
+  "typ": "freitext-code",
+  "frage": "Beurteile, ob gesellschaftlicher Druck heute noch Menschen zum Schweigen bringt.",
+  "material_referenz": ["mat-3-5"],
+  "loesung": ["Druck", "Meinung", "Angst"],
+  "tipps": [
+    {
+      "stufe": 1,
+      "text": "Lies den [[mat-3-5|Tagebucheintrag der Bauersfrau]] (M5) nochmal. Sie beschreibt, wie sie ihre wahren Gefühle versteckt. Überlege: Wo erlebst du oder andere Menschen heute etwas Ähnliches?"
+    },
+    {
+      "stufe": 2,
+      "text": "Denke an drei Bereiche: Schule (traut sich jemand, eine andere Meinung zu sagen?), soziale Medien (postet man nur, was anderen gefällt?) und Familie (gibt es Themen, über die man nicht spricht?). Die Bauersfrau sagt: »Ich muss stark sein und ja sagen — obwohl ich nein schreie.«"
+    },
+    {
+      "stufe": 3,
+      "text": "Musterantwort: Ja, gesellschaftlicher Druck bringt auch heute Menschen zum Schweigen. Die Bauersfrau 1914 musste ihre Angst verbergen, weil man sie sonst »schief anschaute«. In der Schule trauen sich manche nicht, ihre Meinung zu sagen, aus Angst vor Spott. In sozialen Medien posten Menschen nur, was Likes bringt. Der Druck, dazuzugehören, bringt Menschen dazu, ihre echte Meinung zu verstecken — damals wie heute. Verwende in deiner Antwort Begriffe wie Druck, Meinung und Angst."
+    }
+  ],
+  "punkte": 10,
+  "_meta": {
+    "scpl_zone": "L",
+    "afb": "III",
+    "tb_knoten": ["k3-4"],
+    "teilfragen": [
+      "Wie unterscheiden sich bei der Bauersfrau die öffentlich gezeigte Haltung und die privaten Gefühle?",
+      "Welche Rolle spielt gesellschaftlicher Druck dabei, dass Menschen ihre wahre Meinung verbergen?",
+      "Nenne Beispiele aus deinem Alltag, in denen ähnlicher Druck wirkt."
+    ],
+    "erwartete_begriffe": ["gesellschaftlicher Druck", "Angst", "Meinung", "Schweigen"],
+    "validierung_schwelle": 3,
+    "operationalisierungsziel": "Beurteile, ob gesellschaftlicher Druck heute noch Menschen zum Schweigen bringt"
+  }
+}
