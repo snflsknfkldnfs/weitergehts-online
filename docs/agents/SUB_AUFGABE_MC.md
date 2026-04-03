@@ -115,6 +115,7 @@ SUB_AUFGABE_MC prueft folgende A-Kriterien auf Subagent-Ebene:
 |-----------|----------------------|---------|
 | A1 AFB-Kongruenz | Stimmt deklarierter AFB mit kognitiver Anforderung ueberein? | Operator-AFB-Abgleich (Fakten-MC = I, Transfer-MC = II) |
 | A2 Fragestaemme-Klarheit | Eine kognitive Anforderung? Keine Doppelfrage? | Checkliste: 1 Operator, keine Negation ohne Hervorhebung, keine Mehrdeutigkeit |
+| **A2b Inhaltliche Verankerung (v3.4, PFLICHT)** | **Fragestamm enthaelt mind. 1 konkretes Element (Person, Ort, Gegenstand, Ereignis). Abstrakte Metabegriffe (Widerspruch, Zusammenhang, Perspektive) NUR mit konkretem Bezug.** FAIL: "Erklaere den Widerspruch zwischen Foto und Quellen." PASS: "Warum zeigt das Foto Jubel, aber die Quellen berichten von Angst?" | Pruefung: `frage` auf Metabegriffe scannen → bei Fund: konkretes Element vorhanden? Wenn nein → FAIL |
 | A3 Material-Kongruenz | Aus Ziel-Material beantwortbar? | Korrekte Option im/aus Material ableitbar? Fachbegriffe im Material eingefuehrt? |
 | **A4-MC Distractor-Qualitaet** | **Typ-exklusiv.** Plausibilitaet aller Distraktoren. | Distractor-Taxonomie: mind. 2/3 Rang 1-3. Keine absurden/sachfremden Optionen |
 | A6 Tipp-Progression | Stufe 1 ≠ Loesungsverraten, Stufe 2 = Einschraenkung, Stufe 3 = Loesung+Erklaerung | Stufenlogik pruefen |

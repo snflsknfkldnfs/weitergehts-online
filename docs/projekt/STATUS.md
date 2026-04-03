@@ -1,12 +1,26 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-03 (Session 8, C1 DONE + D1-D3 Browser-Review-Patches DONE)
-**Aktuelle Phase:** **Infrastruktur-Revision vor Mappe 4. A-C1: DONE. D1-D3 Browser-Review-Patches: DONE. Naechster Schritt: Engine-Patch Antwortpool + Mappe-3-Daten-Nachpatch + C2 (Mappe 4).**
-**Letzter Arbeitsschritt:** C1 Mappe-3-Hybrid-Patch (4 Stufen): (1) Mechanische Patches: 6 Patches auf 5 Dateien (mat-3-4, mat-3-5, einstieg, sicherung, hefteintrag) — Encoding B2, Quellenangaben B3, Einleitungen B4, Hefteintrag B10, Sicherung B11. (2) Aufgaben-Neugenerierung: PROGRESSIONSPLAN_v2.md (SCPL-Mapping, Typ-Begruendungen, Material-Aktivierung A18, Erarbeitbarkeits-Gegenpruefung 7/7 PASS). 7 neue Aufgaben via v2-Pipeline (variable Aufgabenzahl, inhaltsgesteuerte Typauswahl). v1-Aufgaben archiviert. (3) Assembly: data.json per Python-Skript gepatcht (7 Aufgaben, 5 Materialien, Hefteintrag v2, Rahmen). (4) Q-Gate A1-A18: 25/25 PASS. Evaluationsbericht C1_EVALUATION_MAPPE3.md mit 10 Dimensionen Vorher/Nachher + 7 Learnings.
-**Naechster Schritt:** (1) Engine-Patch: escape-engine.js Antwortpool-Rendering (Claude-Code-Uebergabe). (2) Mappe-3-Daten-Nachpatch: antwortpool-Felder + Fragestamm-Verankerung + Hefteintrag D3a/D3b/D3c. (3) Phase C2: Mappe-4-Validierung. Stretch: Engine-Uebergabe O3/O5/O6.
-**Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. ARTEFAKT_INVENTAR Mappe 2+3 nachpflegen. Engine-Erweiterungen O3/O5/O6 (Ordnungsmuster-Rendering, Pfeiltypen, Farbsemantik) als Stretch-Goal fuer Claude-Code-Uebergabe.
+**Letzte Aktualisierung:** 2026-04-03 (Session 9, Mappe-3-Daten-Nachpatch D2+D3 DONE)
+**Aktuelle Phase:** **Infrastruktur-Revision vor Mappe 4. A-C1: DONE. D1 Engine-Patch (v3.6c): DONE + Browser-PASS. D2+D3 Mappe-3-Daten-Nachpatch: DONE. D2-Infrastruktur verschaerft (A2b in allen 5 SUB_AUFGABE). Naechster Schritt: C2 Mappe-4-Validierung.**
+**Letzter Arbeitsschritt:** Mappe-3-Daten-Nachpatch: (1) D2 aufgabe-3-4 rewrite: Metasprache "Widerspruch" → konkreter Inhalt "Jubel/Ausflug nach Paris vs. weinende Muetter". (2) D2 aufgabe-3-6 rewrite: "Perspektiven" → "Begeisterung, Angst und Pflicht". (3) D3a kontextsatz: Mappe-2-Rekap entfernt → "August 1914: Die Mobilmachung beginnt." (4) D3b Burgfrieden elaboriert fuer R7. (5) D3c Gegenueberstellung explizit in SCPL-Schritten. (6) A2b Inhaltliche Verankerung als PFLICHT-Q-Gate-Pruefschritt in alle 5 SUB_AUFGABE-Dateien.
+**Naechster Schritt:** (1) Phase C2: Mappe-4-Validierung. Stretch: Engine O3/O5/O6.
+**Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. ARTEFAKT_INVENTAR Mappe 2+3 nachpflegen. Engine-Erweiterungen O3/O5/O6 (Ordnungsmuster-Rendering, Pfeiltypen, Farbsemantik) als Stretch-Goal.
 
 **Abgeschlossen seit letztem Update:**
+- Mappe-3-Daten-Nachpatch D2+D3 (Session 9):
+  - D2 aufgabe-3-4: "Welche Aussage erklaert den Widerspruch zwischen Foto und Quellen?" → "Warum zeigt das Foto Jubel und »Ausflug nach Paris«, aber die Quellen berichten von weinenden Muettern?"
+  - D2 aufgabe-3-6: "Ordne die Aussagen den Perspektiven zu." → "Ordne die Zitate aus den Quellen und Tagebuechern den Haltungen Begeisterung, Angst und Pflicht zu."
+  - D3a kontextsatz: "Buendnisse machen aus einem Mord einen Weltkrieg" (Mappe-2-Rekap) → "August 1914: Die Mobilmachung beginnt. Millionen Soldaten ziehen in den Krieg." (autonom)
+  - D3b Burgfrieden: Konzept elaboriert ("alle Parteien stehen zusammen, das nennt man Burgfrieden")
+  - D3c Ordnungsmuster: Gegenueberstellung explizit ("Die eine Seite" / "Die andere Seite") in SCPL-Complication-Schritten
+  - D2-Infrastruktur: A2b Inhaltliche Verankerung als PFLICHT-Q-Gate-Pruefschritt in alle 5 SUB_AUFGABE_*.md eingetragen (mit FAIL/PASS-Beispielen und Pruefmethode)
+- Engine v3.6c (Drag & Drop Antwortpool) — Browser-PASS:
+  - v3.6: Engine-Patch _renderLueckentext erkennt antwortpool, rendert klickbare Pool-Buttons + Pool-kompatible Validierung.
+  - v3.6b: Drag & Drop statt Click. Pool unterhalb Lueckentext. Luecken als Inline-Elemente (kein Lesefluss-Bruch).
+  - v3.6c: Kontrast-Fix (explizite helle Farben, kein --color-primary-light). Label entfernt. Cache-Busting ?v=3.6c auf 8 HTML-Dateien.
+  - data.json: antwortpool fuer alle 4 LT-Aufgaben (Mappe 1-3) mit N+1 Distraktoren.
+  - SUB_AUFGABE_LUECKENTEXT: Rendering-Kontrakt v3.6b, visuelle PFLICHT-Constraints.
+  - Architektur-Regel installiert: Cache-Busting bei jedem Asset-Update PFLICHT (Memory + COWORK_PROJECT_ANLEITUNG).
 - Browser-Review Mappe 3 → 5 Architektur-Patches (D1-D3c):
   - D1: Antwortpool-Pflicht fuer Lueckentexte (N+1 Begriffe, sichtbar). SUB_AUFGABE_LUECKENTEXT + A4-LT. Engine-Aenderung noetig.
   - D2: Inhaltliche Verankerung aller Fragestellungen (konkretes Element statt Metasprache). A2 + AGENT_RAETSEL + alle 5 SUB_AUFGABE_*.md.

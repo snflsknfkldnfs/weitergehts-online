@@ -116,6 +116,7 @@ Referenz: `docs/checklisten/GUETEKRITERIEN_AUFGABEN.md`
 |-----------|------------------------------|---------|
 | A1 AFB-Kongruenz | Stimmt AFB mit Zuordnungsstruktur ueberein? | Kategorisierung = AFB I, Zusammenhaenge = AFB II |
 | A2 Fragestaemme-Klarheit | Zuordnungslogik klar benannt? | Fragestamm beschreibt WAS → WOHIN |
+| **A2b Inhaltliche Verankerung (v3.4, PFLICHT)** | **Fragestamm enthaelt mind. 1 konkretes Element (Person, Ort, Gegenstand, Ereignis). Abstrakte Metabegriffe (Perspektive, Zusammenhang) NUR mit konkretem Bezug.** FAIL: "Ordne die Aussagen den Perspektiven zu." PASS: "Ordne die Zitate den Haltungen Begeisterung, Angst und Pflicht zu." | Pruefung: `frage` auf Metabegriffe scannen → bei Fund: konkretes Element vorhanden? Wenn nein → FAIL |
 | A3 Material-Kongruenz | Alle Elemente und Ziele im Material? | Jedes Zuordnungspaar gegen Material pruefen |
 | **A4-ZU Trennschaerfe** | **Typ-spezifisch.** Sind Kategorien disjunkt? | Pro Paar: "Koennte begruendet auch anders zugeordnet werden?" |
 | A6 Tipp-Progression | Stufen eingehalten? | Stufe 2 verrät max. 2 Paare |

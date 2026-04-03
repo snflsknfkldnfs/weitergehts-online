@@ -111,6 +111,7 @@ Referenz: `docs/checklisten/GUETEKRITERIEN_AUFGABEN.md`
 |-----------|-------------------------------|---------|
 | A1 AFB-Kongruenz | Reihenfolge = AFB II (Reorganisation)? | Keine Reihenfolge als AFB I deklarieren (Sortieren erfordert immer Reorganisation) |
 | A2 Fragestaemme-Klarheit | Ordnungsprinzip explizit? Zeitraum praezisiert? | Fragestamm benennt WAS nach WELCHEM Prinzip geordnet werden soll |
+| **A2b Inhaltliche Verankerung (v3.4, PFLICHT)** | **Fragestamm enthaelt mind. 1 konkretes Element (Person, Ort, Gegenstand, Ereignis). Abstrakte Metabegriffe NUR mit konkretem Bezug.** FAIL: "Bringe die Ereignisse in die richtige Reihenfolge." PASS: "Bringe die Schritte vom Attentat in Sarajevo bis zum Weltkrieg in die richtige Reihenfolge." | Pruefung: `frage` auf Metabegriffe scannen → bei Fund: konkretes Element vorhanden? Wenn nein → FAIL |
 | A3 Material-Kongruenz | Alle Elemente + Ordnungsrelation im Material? | Jedes Element + jede Paar-Relation gegen Material pruefen |
 | **A4-RF Eindeutigkeit** | **Typ-spezifisch.** Ist die Reihenfolge eindeutig? | Paarweise Pruefung: Fuer jedes (i,j)-Paar klare Ordnungsrelation? |
 | A6 Tipp-Progression | Stufen eingehalten? | Stufe 1 nennt max. Startpunkt, Stufe 2 max. halbe Sequenz |

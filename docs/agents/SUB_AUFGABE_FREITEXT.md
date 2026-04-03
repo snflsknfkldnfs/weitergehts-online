@@ -143,6 +143,7 @@ Referenz: `docs/checklisten/GUETEKRITERIEN_AUFGABEN.md`
 |-----------|----------------------------|---------|
 | A1 AFB-Kongruenz | Synthese = AFB II, Stellungnahme = AFB III? | Leitfrage erfordert Produktion + Begruendung? |
 | A2 Fragestaemme-Klarheit | Leitfrage problemorientiert, nicht suggestiv? | Gibt es mindestens 2 vertretbare Antwortrichtungen? |
+| **A2b Inhaltliche Verankerung (v3.4, PFLICHT)** | **Fragestamm enthaelt mind. 1 konkretes Element (Person, Ort, Gegenstand, Ereignis). Abstrakte Metabegriffe (Widerspruch, Zusammenhang, Perspektive) NUR mit konkretem Bezug.** FAIL: "Erklaere den Zusammenhang zwischen den Quellen." PASS: "Beurteile, ob gesellschaftlicher Druck heute noch Menschen zum Schweigen bringt." | Pruefung: `frage` auf Metabegriffe scannen → bei Fund: konkretes Element vorhanden? Wenn nein → FAIL |
 | A3 Material-Kongruenz | Leitfrage aus Materialien beantwortbar? Fachbegriffe im Material? | Alle Pflichtbegriffe gegen Material pruefen |
 | A6 Tipp-Progression | Stufe 3 = Musterantwort (nicht "die Loesung")? | Tipp 3 zeigt EINE moegliche Antwort |
 | A7 Operator-Praezision | AFB-III-Operator verwendet? | "beurteile", "nimm Stellung", "eroertere" |

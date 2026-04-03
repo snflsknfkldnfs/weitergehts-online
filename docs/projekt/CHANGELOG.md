@@ -4,7 +4,44 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-03 — Session 9: Mappe-3-Daten-Nachpatch D2+D3 + D2-Infrastruktur-Verschaerfung
+
+**Phase:** Infrastruktur-Revision C1b (Mappe-3-Daten-Nachpatch)
+
+**Durchgefuehrt:**
+- D2 Fragestamm-Verankerung (2 Aufgaben):
+  - aufgabe-3-4 (MC): Metasprachliche Frage "Welche Aussage erklaert den Widerspruch zwischen Foto und Quellen?" → "Warum zeigt das Foto Jubel und »Ausflug nach Paris«, aber die Quellen berichten von weinenden Muettern?" Begruendung: "Widerspruch" ist Metasprache, R7-SuS brauchen konkrete Inhaltsanker (Jubel, weinende Muetter).
+  - aufgabe-3-6 (Zuordnung): Generische Frage "Ordne die Aussagen den Perspektiven zu." → "Ordne die Zitate aus den Quellen und Tagebuechern den Haltungen Begeisterung, Angst und Pflicht zu." Begruendung: "Perspektiven" ist abstrakt, die konkreten Haltungsbegriffe sind der eigentliche Inhalt.
+- D3a S-Zone-Autonomie: kontextsatz von "Buendnisse machen aus einem Mord einen Weltkrieg" (rekapituliert Mappe 2) → "August 1914: Die Mobilmachung beginnt. Millionen Soldaten ziehen in den Krieg." (autonom, startet bei Mappe-3-Thema).
+- D3b Konzept-Elaborierung: Burgfrieden elaboriert: "SPD stimmt fuer Kriegskredite — alle Parteien stehen zusammen, das nennt man Burgfrieden." (statt implizites Vorwissen zum Begriff).
+- D3c Ordnungsmuster-Templates: kontrastierend-Muster explizit in SCPL-Complication: "Die eine Seite: ..." / "Die andere Seite: ..." statt impliziter Kontrast.
+- D2-Infrastruktur verschaerft: A2b Inhaltliche Verankerung (v3.4) als formaler PFLICHT-Q-Gate-Pruefschritt in alle 5 SUB_AUFGABE_*.md eingetragen (MC, Zuordnung, Lueckentext, Freitext, Reihenfolge). Jeweils mit FAIL/PASS-Beispiel und Pruefmethode ("frage auf Metabegriffe scannen → bei Fund: konkretes Element vorhanden? Wenn nein → FAIL").
+
+**Geaenderte Dateien:**
+- escape-games/gpg-erster-weltkrieg-ursachen/data.json (D2+D3 Patches)
+- docs/agents/SUB_AUFGABE_MC.md (A2b)
+- docs/agents/SUB_AUFGABE_ZUORDNUNG.md (A2b)
+- docs/agents/SUB_AUFGABE_LUECKENTEXT.md (A2b)
+- docs/agents/SUB_AUFGABE_FREITEXT.md (A2b)
+- docs/agents/SUB_AUFGABE_REIHENFOLGE.md (A2b)
+- docs/projekt/STATUS.md
+- docs/projekt/CHANGELOG.md
+
+**Naechster Schritt:** Phase C2: Mappe-4-Validierung (erstes vollstaendiges Game mit revidierter Infrastruktur).
+
+---
+
 ## 2026-04-03
+
+### Engine v3.6c: Drag & Drop Antwortpool — Browser-PASS
+- **Phase:** Infrastruktur-Revision, Engine-Patch D1 (DONE + Browser-PASS)
+- **Aufgabe:** Antwortpool als Drag & Drop Wortpool fuer Lueckentext-Aufgaben. Kontrast-Fix. Cache-Busting-System. Rendering-Kontrakt-Update.
+- **Ergebnis:**
+  - escape-engine.js: _renderLueckentext erkennt antwortpool-Array, rendert klickbare Wort-Buttons (gemischt). Pool-Modus nutzt span statt input. _initPoolInteraction: Klick→naechste leere Luecke fuellen, Klick auf Luecke→Wort zurueck. _checkLueckentext: Pool-kompatibel (data-wort). State-Restore fuer geloeste Aufgaben. Rueckwaerts-kompatibel (ohne antwortpool = bisheriges freies Eingabe-Verhalten).
+  - theme-gpg.css: 7 neue Klassen (.aufgabe__antwortpool, __antwortpool-label, __pool-wort, __pool-wort--used, __luecke--pool, __luecke--pool.--filled, __luecke--pool.--correct/--incorrect).
+  - data.json: antwortpool fuer aufgabe-1-2 (2 Begriffe), aufgabe-2-4 (5 Begriffe), aufgabe-3-1 (5 Begriffe), aufgabe-3-5 (5 Begriffe). Distraktoren: Macht, 24, Nationalismus, Reichstag.
+- **Artefakte:** assets/js/escape-engine.js, assets/css/themes/theme-gpg.css, escape-games/gpg-erster-weltkrieg-ursachen/data.json
+- **Naechster Schritt:** Browser-Verifikation Antwortpool in allen 3 Mappen. Dann C2 (Mappe 4).
 
 ### Browser-Review Mappe 3 → 5 Architektur-Patches D1-D3c (Infrastruktur-Revision)
 - **Phase:** Infrastruktur-Revision, Post-C1 Browser-Review (DONE)

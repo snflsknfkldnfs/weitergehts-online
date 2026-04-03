@@ -1320,7 +1320,7 @@
         {
           "id": "aufgabe-3-4",
           "typ": "multiple-choice",
-          "frage": "Welche Aussage erklärt den Widerspruch zwischen Foto und Quellen?",
+          "frage": "Warum zeigt das Foto Jubel und »Ausflug nach Paris«, aber die Quellen berichten von weinenden Müttern?",
           "material_referenz": [
             "mat-3-3",
             "mat-3-4"
@@ -1404,7 +1404,7 @@
         {
           "id": "aufgabe-3-6",
           "typ": "zuordnung",
-          "frage": "Ordne die Aussagen den Perspektiven zu.",
+          "frage": "Ordne die Zitate aus den Quellen und Tagebüchern den Haltungen Begeisterung, Angst und Pflicht zu.",
           "material_referenz": [
             "mat-3-4",
             "mat-3-5"
@@ -1519,14 +1519,14 @@
           "ordnungsmuster": "kontrastierend",
           "scpl": {
             "situation": {
-              "kontextsatz": "Bündnisse machen aus einem Mord einen Weltkrieg. Millionen Soldaten werden mobilisiert.",
+              "kontextsatz": "August 1914: Die Mobilmachung beginnt. Millionen Soldaten ziehen in den Krieg.",
               "fachbegriffe": [
                 "Mobilmachung"
               ]
             },
             "complication": [
               {
-                "schritt": "Großstädte: Jubel, Fahnen, »Ausflug nach Paris« — Historiker nennen es Augusterlebnis.",
+                "schritt": "Die eine Seite: In Großstädten Jubel, Fahnen, »Ausflug nach Paris« — Historiker nennen das Augusterlebnis.",
                 "fachbegriff": "Kriegsbegeisterung (Augusterlebnis)",
                 "darstellung": null
               },
@@ -1536,13 +1536,13 @@
                 "darstellung": null
               },
               {
-                "schritt": "Gegenstimmen: 288 Anti-Kriegs-Versammlungen. Auf dem Land Angst statt Freude.",
+                "schritt": "Die andere Seite: 288 Anti-Kriegs-Versammlungen, auf dem Land Angst statt Freude.",
                 "fachbegriff": "Gegenstimmen",
                 "darstellung": null
               }
             ],
             "problem": {
-              "satz": "SPD stimmt für Kriegskredite — Burgfrieden. Trügerische Einheit verdeckt tiefe Risse.",
+              "satz": "SPD stimmt für Kriegskredite — alle Parteien stehen zusammen, das nennt man Burgfrieden. Doch diese Einheit verdeckt tiefe Risse.",
               "fachbegriff": "Burgfrieden"
             },
             "loesung": [

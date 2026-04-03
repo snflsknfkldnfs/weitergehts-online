@@ -134,6 +134,7 @@ Referenz: `docs/checklisten/GUETEKRITERIEN_AUFGABEN.md`
 |-----------|-------------------------------|---------|
 | A1 AFB-Kongruenz | Fachbegriff-Luecken = AFB I, Zusammenhangs-Luecken = AFB I-II? | Lueckentyp-Klassifikation |
 | A2 Fragestaemme-Klarheit | Einleitende Anweisung klar? ("Ergaenze die fehlenden Begriffe.") | Pruefen: versteht SuS, was zu tun ist? |
+| **A2b Inhaltliche Verankerung (v3.4, PFLICHT)** | **Fragestamm enthaelt mind. 1 konkretes Element (Person, Ort, Gegenstand, Ereignis) ODER ist generischer Lueckentext-Impuls ("Ergaenze die fehlenden Begriffe"). Abstrakte Metabegriffe NUR mit konkretem Bezug.** | Pruefung: `frage` auf Metabegriffe scannen → bei Fund: konkretes Element vorhanden? Wenn nein → FAIL |
 | A3 Material-Kongruenz | Alle Lueckenwoerter im Material? Kontext aus Material ableitbar? | Jedes Lueckenwort gegen Material pruefen |
 | **A4-LT Luecken-Eindeutigkeit** | **Typ-spezifisch.** Jede Luecke hat genau 1 korrekte Antwort? | Synonym-Pruefung: Gibt es gleichwertige Alternativen? |
 | A6 Tipp-Progression | Stufen eingehalten? | Stufe 2 verrät max. 2 Lueckenwoerter |

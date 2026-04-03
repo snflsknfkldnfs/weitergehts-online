@@ -305,7 +305,7 @@ Browser-Review Mappe 3 ergab 3 Findings, die auf 3 generalisierbare Architektur-
 | D3b | Komplexe Konzepte ohne Erklaerung | GUETEKRITERIEN_HE_PRODUKT (HE18) | Nein |
 | D3c | Ordnungsmuster steuert Text nicht | VERTRAG_PHASE_2-0, GUETEKRITERIEN_HE_ENTWURF (G15) | Nein |
 
-**Status:** 12 docs/-Dateien gepatcht. Engine-Patch D1 (antwortpool-Rendering) noch offen → Claude-Code-Uebergabe. Mappe-3-Daten-Nachpatch (antwortpool-Felder, Fragestamm-Verankerung, Hefteintrag D3a/D3b/D3c) noch offen.
+**Status:** KOMPLETT. 12 docs/-Dateien gepatcht (Phase A+B). Engine-Patch D1 ERLEDIGT (v3.6c, Browser-PASS 2026-04-03). data.json: antwortpool-Felder ERLEDIGT (alle 4 LT-Aufgaben). D2 Fragestamm-Verankerung ERLEDIGT (aufgabe-3-4, aufgabe-3-6 rewritten mit konkreten Inhaltsankern). D3a/b/c Hefteintrag-Nachpatch ERLEDIGT (kontextsatz autonom, Burgfrieden elaboriert, Gegenueberstellung explizit). D2-Infrastruktur verschaerft: A2b als PFLICHT-Q-Gate-Pruefschritt in alle 5 SUB_AUFGABE_*.md. Cache-Busting-System installiert.
 
 ### C2: Mappe 4 als Validierung
 
@@ -352,7 +352,7 @@ Phase C (nach A+B):
 | 4b | C1-S3+S4 (Assembly + Evaluation) | data.json gepatcht, Evaluationsbericht steht | 1-2h | **DONE** |
 | 5+ | C2 (Mappe 4 Produktion) | Validierung der Revision | 12-16h | OFFEN |
 
-**Kritischer Pfad:** A* → B1+B2 → C1 (S1→S2→S3→S4) → C2. C1 ERLEDIGT (Session 8). Naechster Schritt: Browser-Test Mappe 3, dann C2.
+**Kritischer Pfad:** A* → B1+B2 → C1 (S1→S2→S3→S4) → C1b (D1-D3) → C2. C1+C1b ERLEDIGT (Session 8+9). Naechster Schritt: C2 (Mappe-4-Validierung).
 
 ---
 
