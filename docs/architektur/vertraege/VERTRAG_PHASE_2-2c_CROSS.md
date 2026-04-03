@@ -25,11 +25,14 @@
 |---|---|---|
 | A1 | AFB-Kongruenz (Gesamtbild) | AFB-Zuweisung stimmt mit Progressionsplan ueberein? |
 | A3 | Material-Kongruenz (Vollstaendigkeit) | Alle Materialien in mind. 1 Aufgabe referenziert? |
-| A5 | Schwierigkeits-Progression | Monoton steigend ueber 5 Aufgaben? |
+| A5 | Schwierigkeits-Progression | Monoton steigend ueber 5-8 Aufgaben? Erste AFB I, letzte AFB III? |
 | A8 | Kognitive Aktivierung | Mind. 1 denkanregende Aufgabe? |
 | A9 | TB-Bezug | Mind. 1 Aufgabe pro TB-Knoten? |
-| A10 | Typvielfalt | Mind. 3 Typen, kein Typ > 2x, Freitext genau 1x? |
-| A12 | Sachbezogen-vor-Wertbezogen | Fakten → Transfer → Stellungnahme? |
+| A10 | Inhaltsgesteuerte Typauswahl | Mind. 3 Typen, kein Typ > 3x, Wiederholung didaktisch begruendet? |
+| A12 | Sachbezogen-vor-Wertbezogen | S/C-Zonen (sachbezogen) → P/L-Zonen (wertbezogen)? |
+| A16 | Fragebogen-Kohaerenz | Aufgabensequenz bildet SCPL-Erarbeitungsweg ab? |
+| A17 | SCPL-Zonen-Abdeckung | Jede SCPL-Zone hat mind. 1 diagnostische Aufgabe? |
+| A18 | Material-Aktivierung | Alle Materialien als Primaerquelle (nicht nur Tipp)? |
 | KANN | A13-A15 | Gegenwartsbezug, Fehler-Antizipation, Implizite Differenzierung |
 
 ## Dispatch-Ablauf

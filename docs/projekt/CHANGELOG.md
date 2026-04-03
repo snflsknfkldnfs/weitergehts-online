@@ -6,6 +6,18 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ## 2026-04-03
 
+### Phase B2 AGENT_RAETSEL Didaktische Professionalisierung (Infrastruktur-Revision)
+- **Phase:** Infrastruktur-Revision Phase B2 (DONE)
+- **Zweck:** AGENT_RAETSEL von starrer 5-Aufgaben-Schablone auf inhaltsgesteuertes SCPL-Fragebogen-Modell umstellen. Typ-Wiederholung erlauben, Material-Aktivierung erzwingen, Fragebogen als diagnostischen Spiegel des Lernwegs etablieren.
+- **Empirische Grundlage:** 7 reale Unterrichtsentwuerfe (7-14 Aufgaben/UE, 0.13-0.18 Fragen/min, 4-Stufen-Progression) + Mappe-2/3-Evaluation (mat-3-2/mat-3-3 nur in Tipps = diagnostische Luecke).
+- **Ergebnis:**
+  - AGENT_RAETSEL.md v2: Sektion 1 komplett neu (1a Variable Aufgabenzahl 5-8 mit Formel, 1b SCPL-Zonen-Mapping S/C/P/L → AFB, 1c Inhaltsgesteuerte Typauswahl mit Begruendungspflicht bei Wiederholung). Sektion 2 um SCPL-Kontext erweitert. Sektion 5 Cross-Konsistenz um A16/A17/A18 erweitert. Q-Gate um A10v2 + A16-A18 erweitert. Assembly auf 5-8 Positionen aktualisiert. Alle "5 Positionen"-Referenzen bereinigt.
+  - GUETEKRITERIEN_AUFGABEN.md v2: A5 revidiert (5-8 statt fix 5). A10 vollstaendig revidiert (inhaltsgesteuerte Typauswahl, max 3x statt 2x, Begruendungspflicht). 3 neue SOLL-Kriterien: A16 Fragebogen-Kohaerenz (SCPL-Sequenz-Mapping), A17 SCPL-Zonen-Abdeckung (Vollstaendigkeitspruefung), A18 Material-Aktivierung (Primaerquellen-Pruefung mit BQ/QT-Regel). Operationalisierungen 6.7-6.10 geschrieben. Sektionen 2.5 (SCPL-Fragebogen-Modell) und 2.6 (Besinnungsphasen) fuer SCPL aktualisiert. Pruefinstanz-Zuordnung 3.4 erweitert. Q-Gate 5.2 aktualisiert.
+  - AUSFUEHRUNGSPLAN: B2 Scope erweitert (Typauswahl → volle didaktische Professionalisierung), als ERLEDIGT markiert.
+  - Cross-File-Konsistenz: 6 Inkonsistenzen in 5 Dateien behoben (AGENT_RAETSEL A1-A15→A1-A18, COWORK_ANLEITUNG A1-A15→A1-A18, VERTRAG_2-2a "5 Positionen"→"5-8", VERTRAG_2-2b A1-A15→A1-A18, VERTRAG_2-2c A5/A10/A12 + A16-A18 ergaenzt).
+- **Geaenderte Dateien:** AGENT_RAETSEL.md, GUETEKRITERIEN_AUFGABEN.md, AUSFUEHRUNGSPLAN_INFRASTRUKTUR_REVISION.md, VERTRAG_PHASE_2-2a_PROGRESSIONSPLAN.md, VERTRAG_PHASE_2-2b_AUFGABE.md, VERTRAG_PHASE_2-2c_CROSS.md, COWORK_PROJECT_ANLEITUNG.md, STATUS.md, CHANGELOG.md
+- **Naechster Schritt:** Phase C: C1 Mappe-3-Daten-Patch (10 Patches), C2 Mappe-4-Validierung.
+
 ### Phase B1 Hefteintrag-Neukonstruktion: Test + Schema-Korrekturen + Transferfrage-Entfernung (Infrastruktur-Revision)
 - **Phase:** Infrastruktur-Revision Phase B1 (DONE — Test abgeschlossen)
 - **Zweck:** (1) Transferfrage aus Hefteintrag-Schema entfernen. (2) Schema auf v2-Konformitaet bringen (ordnungsmuster-Enum, verbindungen.typ, knoten.typ). (3) B1-Test unter Realbedingungen: Mappe-3-Hefteintrag nach revidiertem Vertrag regenerieren und gegen HE1-HE16 evaluieren.

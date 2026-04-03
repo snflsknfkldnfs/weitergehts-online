@@ -190,29 +190,30 @@ Mappe-3-Daten retroaktiv patchen (10 Daten-Patches). Mappe 4 als Validierung der
 
 ---
 
-### B2: AGENT_RAETSEL Typauswahl-Gegenpruefung (B8 HIGH)
+### B2: AGENT_RAETSEL Didaktische Professionalisierung (B8 HIGH — Scope erweitert Session 8)
 
-**Problem:** AGENT_RAETSEL waehlt Aufgabentypen basierend auf Progressionsplan und Typvielfalt, aber ohne systematische Gegenpruefung, ob der gewaehlte Typ zum konkreten Lerninhalt passt. Beispiel B8: Reihenfolge-Typ fuer Inhalte, deren chronologische Reihenfolge im Material nicht erarbeitbar ist.
+**Urspruengliches Problem:** AGENT_RAETSEL waehlt Aufgabentypen ohne Gegenpruefung gegen Lerninhalt (B8).
+**Erweiterter Scope (Session 8):** Vollstaendige didaktische Professionalisierung — variable Aufgabenzahl, SCPL-Fragebogen-Modell, inhaltsgesteuerte Typauswahl, neue Qualitaetskriterien.
 
 **Betroffene Dokumente:**
-- `docs/agents/AGENT_RAETSEL.md` — Konstruktionskontext (Sektion 3) + Operationalisierungsziel (Sektion 4) verschaerfen
+- `docs/agents/AGENT_RAETSEL.md` — Sektionen 1 (Progressionsplan v2), 2 (Operationalisierungsziel SCPL-Kontext), 3 (Konstruktionskontext), 5 (Cross-Konsistenz A16-A18), Q-Gate (A10v2, A16, A17, A18), Assembly
+- `docs/checklisten/GUETEKRITERIEN_AUFGABEN.md` — A5 (variable 5-8), A10 (inhaltsgesteuerte Typauswahl), A16 (Fragebogen-Kohaerenz), A17 (SCPL-Zonen-Abdeckung), A18 (Material-Aktivierung), Sektionen 2.5/2.6 (SCPL-Modell), Operationalisierungen 6.7-6.10
 
-**Vorgehen:**
-1. **Analyse:** AGENT_RAETSEL Sektion 3 (Konstruktionskontext) reviewen. Welche Felder sind definiert, welche werden in der Praxis angewendet?
-2. **Gegenpruefungs-Regel:** Neue Pflicht-Pruefung nach Typauswahl: "Ist die Aufgabe mit dem gewaehlten Typ aus dem Material heraus loesbar? Sind alle benoetigten Informationen (Reihenfolge, Zuordnungen, Luecken-Begriffe) im Material explizit vorhanden?"
-3. **Erarbeitbarkeits-Gate:** Typ-spezifische Erarbeitbarkeits-Checks:
-   - Reihenfolge: Sind die Elemente im Material in einer eindeutigen Sequenz dargestellt?
-   - Zuordnung: Sind die Paare im Material klar voneinander abgrenzbar?
-   - Lueckentext: Sind die Lueckenbegriffe Fachbegriffe, die im Material definiert werden?
-   - MC: Sind Distraktoren plausibel aber eindeutig falsch?
-   - Freitext: Enthaelt die erwartete Antwort objektivierbare Inhaltselemente?
-4. **AGENT_RAETSEL aktualisieren:** Gegenpruefung als Pflicht-Schritt zwischen Progressionsplan (Schritt 1) und Dispatch (Schritt 5) einfuegen.
+**Durchgefuehrte Schritte:**
+1. Empirische Analyse: 7 reale UE-Muster (7-14 Aufgaben, 4-Stufen-Progression) + Mappe-2/3-Evaluation (mat-3-2/3 Gap diagnostiziert)
+2. AGENT_RAETSEL.md v2: Sektion 1 (1a Variable Aufgabenzahl, 1b SCPL-Zonen-Mapping, 1c Inhaltsgesteuerte Typauswahl), Sektion 2 (SCPL-Kontext), Sektion 5 (A16/A17/A18 Cross-Checks), Q-Gate (A10v2 + A16-A18), Assembly (5-8 Positionen)
+3. GUETEKRITERIEN_AUFGABEN.md v2: A5 revidiert, A10 vollstaendig revidiert, A16/A17/A18 mit Operationalisierung (6.7-6.10), Sektionen 2.5/2.6 SCPL-Modell, Pruefinstanz-Zuordnung 3.4 erweitert, Q-Gate 5.2 aktualisiert
 
 **Akzeptanzkriterien:**
-- Kein Aufgabentyp wird dispatcht ohne dokumentierte Erarbeitbarkeits-Begruendung.
-- Reihenfolge-Aufgaben nur wenn Material eine explizite Sequenz enthaelt.
+- Kein Aufgabentyp wird dispatcht ohne dokumentierte Erarbeitbarkeits-Begruendung (original B8)
+- Variable Aufgabenzahl 5-8 pro Mappe, abgeleitet aus Inhaltskomplexitaet
+- SCPL-Zonen-Mapping im Progressionsplan dokumentiert
+- Typ-Wiederholung nur mit didaktischer Begruendung
+- Alle Materialien als Primaerquelle aktiviert (A18)
+- Cross-File-Konsistenz: AGENT_RAETSEL ↔ GUETEKRITERIEN_AUFGABEN ↔ Q-Gate
 
-**Aufwand:** 2-4h (Analyse 0.5h, Regel-Design 1h, AGENT_RAETSEL Update 1h, Test 0.5-1.5h)
+**Status:** ERLEDIGT (Session 8, 2026-04-03)
+**Aufwand:** ~4h (Analyse 1h, Architektur 1.5h, GUETEKRITERIEN 1h, Cleanup 0.5h)
 
 ---
 
@@ -259,7 +260,7 @@ Phase A (parallel ausfuehrbar):
 
 Phase B (nach Phase A empfohlen, aber nicht blockiert):
   B1 (Hefteintrag) ── Benoetigt User-Input fuer Referenz-Hefteintrag
-  B2 (Typauswahl)  ── Unabhaengig von B1
+  B2 (Didaktische Professionalisierung)  ── Unabhaengig von B1
 
 Phase C (nach A+B):
   C1 (Daten-Patch) ── Benoetigt A+B fuer informierte Patches
@@ -274,7 +275,7 @@ Phase C (nach A+B):
 |---|---|---|---|
 | 1 | A1-A7 (alle Patches) | Alle Vertraege + Subagenten gepatcht | 4-6h |
 | 2 | B1 (Hefteintrag Analyse + Gegenmodell) | Referenz-Hefteintrag steht | 3-4h |
-| 3 | B1 (Vertrag) + B2 (Typauswahl) | Architektur-Revisionen abgeschlossen | 3-4h |
+| 3 | B1 (Vertrag) + B2 (Didaktische Professionalisierung) | Architektur-Revisionen abgeschlossen | 3-4h |
 | 4 | C1 (Daten-Patch Mappe 3) | Mappe 3 retroaktiv korrigiert | 2-3h |
 | 5+ | C2 (Mappe 4 Produktion) | Validierung der Revision | 12-16h |
 

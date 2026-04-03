@@ -1,9 +1,9 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-03 (Session 8, Infrastruktur-Revision Phase B1 DONE inkl. Test)
-**Aktuelle Phase:** **Infrastruktur-Revision vor Mappe 4. Phase A: DONE. Phase B1 Hefteintrag-Neukonstruktion: DONE (Analyse + Guetekriterien + Vertrag + Schema + Test 27/27 PASS, HE1-HE16 alle PASS). Naechster Schritt: B2 (AGENT_RAETSEL Typauswahl).**
-**Letzter Arbeitsschritt:** B1 Test: (1) transfer-Feld aus hefteintrag-schema.json + GUETEKRITERIEN_HEFTEINTRAG_ENTWURF.md entfernt. (2) Schema-Korrekturen: ordnungsmuster-Enum auf 6 empirische Typen, verbindungen[].typ neu (kausal/temporal/kontrast/schlussfolgerung), knoten[].typ um "beispiel" erweitert. (3) hefteintrag_B1_TEST.json produziert: SCPL-Texte auf max 15W komprimiert (alt: 25-29W), ordnungsmuster "kontrastierend" (alt: "multiperspektivisch" Legacy), UTF-8 Encoding v3.3, 6 Knoten + 5 typisierte Verbindungen. Schema-Validierung PASS, 27/27 automatisierte Checks PASS, HE1-HE16 manuell PASS (4 Kriterien von FAIL auf PASS gedreht: HE4, HE12, HE14, HE15).
-**Naechster Schritt:** B2 (AGENT_RAETSEL Typauswahl-Gegenpruefung). Dann Phase C (Daten-Patch + Mappe 4).
+**Letzte Aktualisierung:** 2026-04-03 (Session 8, Infrastruktur-Revision Phase B1+B2 DONE)
+**Aktuelle Phase:** **Infrastruktur-Revision vor Mappe 4. Phase A: DONE. Phase B1 Hefteintrag-Neukonstruktion: DONE. Phase B2 AGENT_RAETSEL Didaktische Professionalisierung: DONE. Naechster Schritt: Phase C (Daten-Patch + Mappe 4).**
+**Letzter Arbeitsschritt:** B2 Didaktische Professionalisierung: (1) Empirische Analyse 7 realer UE-Muster + Mappe-2/3-Evaluation. (2) AGENT_RAETSEL.md v2: Variable Aufgabenzahl 5-8 (Sektion 1a), SCPL-Zonen-Mapping (1b), inhaltsgesteuerte Typauswahl mit Wiederholungs-Begruendung (1c), Sektion 2 SCPL-Kontext, Cross-Konsistenz A16/A17/A18 (Sektion 5), Q-Gate erweitert (A10v2, A16-A18). (3) GUETEKRITERIEN_AUFGABEN.md v2: A5 revidiert (5-8), A10 revidiert (inhaltsgesteuerte Typauswahl, max 3x), 3 neue SOLL-Kriterien A16 (Fragebogen-Kohaerenz), A17 (SCPL-Zonen-Abdeckung), A18 (Material-Aktivierung) mit Operationalisierungen (6.7-6.10), Sektionen 2.5/2.6 SCPL-Modell. (4) Cross-File-Konsistenz: 6 Inkonsistenzen in 5 Dateien behoben (AGENT_RAETSEL, COWORK_ANLEITUNG, VERTRAG_2-2a, VERTRAG_2-2b, VERTRAG_2-2c — Referenzen A1-A18→A1-A18, "5 Positionen"→"5-8", A10 >2x→>3x). (5) AUSFUEHRUNGSPLAN B2 Scope erweitert + als ERLEDIGT markiert.
+**Naechster Schritt:** Phase C: C1 Mappe-3-Daten-Patch (10 Patches), C2 Mappe-4-Validierung. Stretch: Engine-Uebergabe O3/O5/O6.
 **Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. ARTEFAKT_INVENTAR Mappe 2+3 nachpflegen. Engine-Erweiterungen O3/O5/O6 (Ordnungsmuster-Rendering, Pfeiltypen, Farbsemantik) als Stretch-Goal fuer Claude-Code-Uebergabe.
 
 **Abgeschlossen seit letztem Update:**
@@ -61,10 +61,10 @@
 - v3.5b Bugfix (Commit a53c914): 8 Fixes — Material-Flag, Zentrierung, Blocksatz, Karo em-basiert, Nummer-Kreis, Interaktivitaet, Sicherung-Display
 - v3.5 Layout-Redesign implementiert (Commit 9c6f7e7): 2/3-1/3 Grid, Notizbuch-Fragebogen, Lochrand, Architects Daughter, Material-Fortschritt, Aufgaben-Dots
 - v3.5 Cowork-Vorbereitung: Design-Spec, HTML-Prototyp, Uebergabe-Prompt
-- ORCHESTRATOR.md: Fehlende Q-Gate-Referenzen nachgetragen (A1-A15, SK1-SK15, S1-S15 in Referenz-Dokumente + Phase-2.2-Box)
+- ORCHESTRATOR.md: Fehlende Q-Gate-Referenzen nachgetragen (A1-A18, SK1-SK15, S1-S15 in Referenz-Dokumente + Phase-2.2-Box)
 - v3.3b Nachmigration SCPL-Umordnung (Commit 9df75cc): Material-Reihenfolge nach SCPL-Aufbau, Browser-Check bestanden
-- v3.4 GUETEKRITERIEN_AUFGABEN.md (A1-A15): AFB-Kongruenz, Operator-Praezision, Distractor-Qualitaet, kognitive Aktivierung, Besinnungsphasen
-- AGENT_RAETSEL.md: 2-Stufen-Q-Gate (prozedural + A1-A15 fachdidaktisch)
+- v3.4 GUETEKRITERIEN_AUFGABEN.md (A1-A18): AFB-Kongruenz, Operator-Praezision, Distractor-Qualitaet, kognitive Aktivierung, Besinnungsphasen
+- AGENT_RAETSEL.md: 2-Stufen-Q-Gate (prozedural + A1-A18 fachdidaktisch)
 - WORKFLOW_v2.md Phase 2.2: Q-Gate mit Stufe 1 + Stufe 2
 - v3.3 Material-Sequenzierung (Commit f87dd8b): Schema + Engine + Migration
 - v3-4 Engine-Erweiterung (Commit a3ea44b): Merksaetze, Kernerkenntnisse, Hefteintrag, Reflexionsimpuls

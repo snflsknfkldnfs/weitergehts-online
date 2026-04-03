@@ -28,7 +28,7 @@
 3. MATERIAL_GERUEST lesen (didaktische_funktion pro mat-ID)
 4. rahmen/hefteintrag.json lesen (knoten, merksaetze, stundenfrage)
 5. DIDAKTIK_RAHMEN lesen (NUR AFB-Profil + Schwierigkeitskurve — P6)
-6. Progressionsplan erstellen (5 Positionen, AFB-Zuweisung, Typauswahl)
+6. Progressionsplan erstellen (5-8 Positionen inhaltsgesteuert, AFB-Zuweisung, SCPL-Zonen-Mapping, Typauswahl mit Begruendung)
 7. Pro Aufgabe: Konstruktionskontext generieren
    (Ziel-Material-ID, TB-Knoten, AFB, Operationalisierungsziel)
 8. Freischalt-Code generieren (thematisch, A-Z, 4-8 Zeichen)

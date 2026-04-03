@@ -1,7 +1,7 @@
 # Guetekriterien Aufgaben/Raetsel
 
-**Datum:** 2026-03-28
-**Status:** v1 — fachdidaktisch fundiert, bereit fuer AGENT_RAETSEL
+**Datum:** 2026-04-03 (v2 — erweitert um SCPL-Fragebogen-Modell, variable Aufgabenzahl, inhaltsgesteuerte Typauswahl)
+**Status:** v2 — empirisch revidiert auf Basis 7 realer Unterrichtsentwuerfe + Mappe-2/3-Evaluation
 **Quellen:**
 - Ulrich, I. (2016): Fragen und Fragetypen — Formen von Fragen + Denkanregende Fragen zur Aktivierung
 - LLZ Uni Halle: Uebersicht Fragetypen (ILIAS) — AFB-Zuordnung Frageformate
@@ -73,20 +73,30 @@ Die **Material-Alignment-Pflicht** (AGENT_RAETSEL Aufgabe 1) verlangt, dass jede
 - **Informations-Abdeckung:** Die zur Beantwortung noetige Information muss in den referenzierten Materialien enthalten sein — nicht nur thematisch, sondern konkret
 - **Niveau-Kongruenz:** Die geforderte kognitive Leistung (AFB) muss durch die Materialarbeit vorbereitet sein. Eine AFB-III-Frage braucht Material, das Perspektiven/Kontroversen liefert
 
-### 2.5 Tafelbild-Bezug
+### 2.5 SCPL-Fragebogen-Modell
 
-Das Tafelbild ist die Quintessenz des Lernzuwachses einer Mappe (vgl. GUETEKRITERIEN_HEFTEINTRAG_ENTWURF G1). Aufgaben muessen pruefen, ob die im Tafelbild verdichteten Erkenntnisse tatsaechlich erworben wurden:
+Der Fragebogen einer Mappe ist kein isoliertes Quiz, sondern ein **diagnostischer Spiegel des SCPL-Erarbeitungswegs**. Die SCPL-Struktur des Hefteintrags (Situation → Complication → Problem → Loesung) definiert den Lernweg; die Aufgabensequenz prueft, ob jede Station dieses Wegs verstanden wurde.
 
-- Mindestens **1 Aufgabe pro Mappe** muss direkt auf einen TB-Knoten zielen (testbar: Kann die Aufgabe ohne Verstaendnis des TB-Knotens geloest werden?)
-- Die **letzte Aufgabe** (AFB III, Freitext) sollte die Gesamterkenntnis des Tafelbilds reflektieren
+**Zonen-Zuordnung:**
+
+| SCPL-Zone | Diagnostische Funktion | AFB-Bereich | Prueffokus |
+|---|---|---|---|
+| S (Situation) | Vorwissen aktivieren, Kontext sichern | AFB I | Fachbegriffe, Einordnung |
+| C (Complication) | Pro Erarbeitungsschritt 1+ Aufgabe | AFB I-II (steigend) | Schritt-spezifisches Verstaendnis |
+| P (Problem) | Problemverstaendnis pruefen | AFB II | Zusammenhaenge, Widersprueche |
+| L (Loesung) | Synthese, Transfer, Beurteilung | AFB II-III | Gesamterkenntnis, Stellungnahme |
+
+Die Aufgabenzahl (5-8) ergibt sich aus der Anzahl der C-Schritte plus je 1 Aufgabe fuer S, P, L. Komplexe C-Schritte koennen 2 Aufgaben erhalten; bei wenigen C-Schritten koennen diese zusammengefasst werden.
+
+**Tafelbild-Bezug:** Das Tafelbild ist die Quintessenz des Lernzuwachses (vgl. G1). Mindestens 1 Aufgabe pro Mappe muss direkt auf einen TB-Knoten zielen. Die Freitext-Aufgabe (L-Zone) reflektiert die Gesamterkenntnis des Tafelbilds.
 
 ### 2.6 Besinnungsphasen und Aufgabendesign
 
-GPG B1 unterscheidet sachbezogene Besinnung (Zusammenhaenge erkennen, Begriffe klaeren, Ursachen verstehen) und wertbezogene Besinnung (ethische Stellungnahme). Beide muessen in Aufgaben abgebildet werden:
+GPG B1 unterscheidet sachbezogene Besinnung (Zusammenhaenge erkennen, Begriffe klaeren, Ursachen verstehen) und wertbezogene Besinnung (ethische Stellungnahme). Das SCPL-Modell bildet diese Progression ab:
 
-- **Aufgaben 1-3** (AFB I-II): Sachbezogene Besinnung — Fakten sichern, Zusammenhaenge pruefen
-- **Aufgabe 4** (AFB II): Uebergang — Anwendung/Transfer
-- **Aufgabe 5** (AFB III): Wertbezogene Besinnung — Stellungnahme, Beurteilung
+- **S/C-Zonen** (AFB I-II): Sachbezogene Besinnung — Fakten sichern, Erarbeitungsschritte pruefen, Zusammenhaenge herstellen
+- **P-Zone** (AFB II): Uebergang — Problemverstaendnis, Analyse, Anwendung
+- **L-Zone** (AFB II-III): Wertbezogene Besinnung — Synthese, Transfer auf Gegenwart, Stellungnahme, Beurteilung
 
 ---
 
@@ -100,7 +110,7 @@ GPG B1 unterscheidet sachbezogene Besinnung (Zusammenhaenge erkennen, Begriffe k
 | A2 | **Fragestaemme-Klarheit** | Jede Frage hat genau EINE kognitive Anforderung. Keine doppelten Fragen ("Nenne und erklaere..."), keine Negationen ohne Hervorhebung, keine mehrdeutigen Formulierungen | Ulrich (2016), Anti-Pattern "doppelte Anforderung" |
 | A3 | **Material-Aufgabe-Kongruenz** | Jede Aufgabe ist aus den referenzierten Materialien beantwortbar. Kein Fachbegriff ohne vorherige Einfuehrung im Material. Keine Information gefordert, die in keinem Material vorkommt | AGENT_RAETSEL Material-Alignment-Pflicht, fachdidaktisch praezisiert |
 | A4 | **Typ-spezifische Konstruktionsqualitaet** | Jeder Aufgabentyp hat ein zentrales Konstruktionskriterium: **A4-MC** Distractor-Qualitaet (plausible Fehlvorstellungen, keine absurden Optionen), **A4-ZU** Trennschaerfe (disjunkte Kategorien, eindeutige Zuordnungen), **A4-LT** Luecken-Eindeutigkeit (genau 1 korrekte Antwort pro Luecke, keine gleichwertigen Synonyme), **A4-RF** Reihenfolge-Eindeutigkeit (paarweise klare Ordnungsrelation, keine Ambiguitaet). Freitext hat kein A4-* (stattdessen A11-FT) | LLZ Halle MC-Qualitaet, Testtheorie, v3.7 Subagenten-Architektur |
-| A5 | **Schwierigkeits-Progression** | Die 5 Aufgaben einer Mappe zeigen monoton steigende Schwierigkeit: AFB I → AFB I-II → AFB II → AFB II → AFB II-III. Keine Regression (schwere Aufgabe vor leichter) | AGENT_RAETSEL Aufgabe 4, DG B1 "Vom Einfachen zum Komplexen" |
+| A5 | **Schwierigkeits-Progression** | Die 5-8 Aufgaben einer Mappe zeigen monoton steigende AFB-Schwierigkeit. Erste Aufgabe = AFB I, letzte Aufgabe = AFB III (Freitext). Keine Regression (keine AFB-II-Aufgabe vor einer AFB-I-Aufgabe). Aufgabenzahl ergibt sich aus Inhaltskomplexitaet (Knoten-/Materialanzahl), nicht aus Schablone | AGENT_RAETSEL Aufgabe 1a/1b (v2), DG B1 "Vom Einfachen zum Komplexen" |
 | A6 | **Tipp-Progression** | Tipps folgen strikt der Dreistufigkeit: Stufe 1 = Richtung (KEINE Loesungsverraten), Stufe 2 = Einschraenkung (Ausschluss falscher Optionen), Stufe 3 = Loesung + Erklaerung (didaktischer Mehrwert). Stufe 1 darf Stufe 3 nicht vorwegnehmen | AGENT_RAETSEL Aufgabe 3 |
 | A7 | **Operator-Praezision** | Fragestellungen verwenden operationalisierte Verben aus der AFB-Taxonomie (nenne, beschreibe, erklaere, vergleiche, beurteile). Keine nicht-operationalisierbaren Verben ("Was weisst du ueber...?", "Kennst du...?") | Rechercheergebnisse Lernziele, Anti-Pattern 2 |
 
@@ -110,9 +120,12 @@ GPG B1 unterscheidet sachbezogene Besinnung (Zusammenhaenge erkennen, Begriffe k
 |---|---|---|---|
 | A8 | **Kognitive Aktivierung** | Mindestens 1 Aufgabe pro Mappe ist "denkanregend" im Sinne von Ulrich: Anwendungsfrage, Vergleichsfrage, Schlussfolgerungsfrage oder Problemloesefrage. Nicht nur Reproduktion | Ulrich (2016) "Denkanregende Fragen" |
 | A9 | **Tafelbild-Bezug** | Mindestens 1 Aufgabe pro Mappe zielt direkt auf einen TB-Knoten (Pruefung: Ist die Aufgabe ohne Verstaendnis des TB-Knotens loesbar? Wenn ja → kein TB-Bezug). Die letzte Aufgabe reflektiert die Gesamterkenntnis des TB | GUETEKRITERIEN_HEFTEINTRAG_ENTWURF G1/G2, Besinnungsprinzip |
-| A10 | **Aufgabentyp-Vielfalt** | Mindestens 3 verschiedene Aufgabentypen pro Mappe. Kein Typ mehr als 2x pro Mappe. Freitext-Code genau 1x pro Mappe (letzte Aufgabe) | AGENT_RAETSEL Aufgabe 1 Regeln |
+| A10 | **Inhaltsgesteuerte Typauswahl** | Mindestens 3 verschiedene Aufgabentypen pro Mappe. Kein Typ mehr als 3x pro Mappe. Freitext-Code mindestens 1x pro Mappe (letzte Position, AFB III). Typ-Wiederholung erlaubt WENN didaktisch begruendet im Progressionsplan (z.B. 2x MC: einmal AFB-I-Faktenwissen, einmal AFB-II-Transfer). Typauswahl folgt dem Operationalisierungsziel, nicht einer Diversitaetsquote | AGENT_RAETSEL Aufgabe 1c (v2), empirische Revision 7 UE-Muster |
 | A11 | **Freitext-Qualitaet** | Die Freitext-Aufgabe (Aufgabe 5) verwendet eine problemorientierte Leitfrage, bietet 2-3 Teilfragen als Geruest, spezifiziert erwartete Fachbegriffe und fordert Stellungnahme oder Beurteilung (AFB III) | AGENT_RAETSEL Freitext-Neudefinition v1.1, GPG B1 wertbezogene Besinnung |
-| A12 | **Sachbezogen-vor-Wertbezogen** | Die Aufgabensequenz folgt der Phasenlogik: Faktensicherung (A1-A2, sachbezogen) → Transfer (A3-A4, sachbezogen-analytisch) → Stellungnahme (A5, wertbezogen). Keine wertbezogene Aufgabe ohne sachbezogene Grundlage | GPG B1 Besinnungsphasen |
+| A12 | **Sachbezogen-vor-Wertbezogen** | Die Aufgabensequenz folgt der Phasenlogik: S/C-Zonen (sachbezogen — Fakten sichern, Erarbeitungsschritte pruefen) VOR P/L-Zonen (analytisch/wertbezogen — Problemverstaendnis, Synthese, Beurteilung). Keine wertbezogene Aufgabe ohne sachbezogene Grundlage | GPG B1 Besinnungsphasen, SCPL-Zonen-Mapping |
+| A16 | **Fragebogen-Kohaerenz** | Die Aufgabensequenz bildet den SCPL-Erarbeitungsweg der Mappe als diagnostischen Spiegel ab. Jede Aufgabe testet eine Station des Lernwegs (S → C1 → C2 → ... → P → L). Die Reihenfolge der Aufgaben korrespondiert mit der Reihenfolge der SCPL-Zonen — keine Zone wird uebersprungen, keine Zone wird getestet bevor die vorhergehende Zone geprueft wurde | SCPL-Fragebogen-Modell (v2), "Fragebogen als Erarbeitungs-Spiegel" |
+| A17 | **SCPL-Zonen-Abdeckung** | Jede SCPL-Zone (S, C1...Cn, P, L) hat mindestens 1 diagnostische Aufgabe. Keine Zone bleibt ungetestet. Bei Mappen mit 3+ Complication-Schritten duerfen C-Schritte zusammengefasst werden (max. 2 C-Schritte pro Aufgabe), aber jeder C-Schritt muss in mindestens 1 Aufgabe als Inhalt vorkommen | SCPL-Zonen-Mapping (v2), empirische Analyse realer UE-Muster |
+| A18 | **Material-Aktivierung** | Alle Materialien der Mappe erscheinen in mindestens 1 Aufgabe als Primaerquelle (im Feld `material_referenz`). Bildquellen (BQ) und Quellentexte (QT) duerfen NICHT ausschliesslich in Tipps vorkommen — sie muessen als eigenstaendige Aufgabengrundlage dienen. Darstellungstexte (DT) koennen als Primaerquelle fuer mehrere Aufgaben dienen. Tafelbilder (TB) gelten als Primaerquelle fuer die Freitext-Aufgabe | Material-Alignment-Pflicht (erweitert), Mappe-3-Diagnostik (mat-3-2/mat-3-3 Gap) |
 
 ### 3.3 KANN-Kriterien (Qualitaetssteigerung)
 
@@ -145,6 +158,9 @@ Seit v3.7 wird die Pruefverantwortung zwischen Orchestrator (AGENT_RAETSEL) und 
 | A10 Typvielfalt | NUR Orchestrator | Cross-Aufgaben-Kriterium |
 | A11-FT Freitext-Qualitaet | SUB_AUFGABE_FREITEXT | Typ-spezifisch |
 | A12 Sachbezogen-vor-Wertbezogen | Orchestrator | Cross-Aufgaben-Sequenz |
+| A16 Fragebogen-Kohaerenz | NUR Orchestrator | Cross-Aufgaben-Kriterium (SCPL-Sequenz) |
+| A17 SCPL-Zonen-Abdeckung | NUR Orchestrator | Cross-Aufgaben-Kriterium (Zonen-Vollstaendigkeit) |
+| A18 Material-Aktivierung | NUR Orchestrator | Cross-Aufgaben-Kriterium (Material-Referenzen) |
 | A13-A15 | Orchestrator (KANN) | Game-weite Qualitaetssteigerung |
 
 ---
@@ -155,13 +171,13 @@ AGENT_RAETSEL enthaelt bereits operationale Regeln (Aufgabentypen, Schwierigkeit
 
 | AGENT_RAETSEL-Regel | Abgedeckter Aspekt | Verhaeltnis zu A-Kriterien |
 |---|---|---|
-| Mind. 3 Typen pro Mappe | Typvielfalt | **Teilmenge** von A10. Regel prueft Minimum, A10 prueft Qualitaet der Verteilung |
+| Mind. 3 Typen pro Mappe | Typvielfalt | **Teilmenge** von A10. Regel prueft Minimum, A10 prueft Qualitaet der Verteilung + Begruendung bei Wiederholung |
 | AFB-Progression | Schwierigkeitssteigerung | **Voraussetzung** fuer A5. Regel definiert Richtung, A5 prueft Konsistenz |
 | Material-Alignment-Pflicht | Fachbegriff-Abdeckung | **Teilmenge** von A3. Regel prueft Begriffe, A3 prueft auch Information + Niveau |
 | Freitext-Neudefinition v1.1 | Freitext-Design | **Teilmenge** von A11. Regel definiert Format, A11 prueft fachdidaktische Qualitaet |
 | Tipp 3-Stufen | Tipp-Existenz | **Voraussetzung** fuer A6. Regel definiert Struktur, A6 prueft Progressionsqualitaet |
 
-**Fazit:** AGENT_RAETSEL-Regeln bleiben als **prozedurale Constraints** erhalten. A1-A15 ergaenzen die **fachdidaktische Qualitaetsdimension** (AFB-Kongruenz, Operator-Praezision, kognitive Aktivierung, Besinnungsphasen). Beide Ebenen werden im Q-Gate geprueft.
+**Fazit:** AGENT_RAETSEL-Regeln bleiben als **prozedurale Constraints** erhalten. A1-A18 ergaenzen die **fachdidaktische Qualitaetsdimension** (AFB-Kongruenz, Operator-Praezision, kognitive Aktivierung, Besinnungsphasen, SCPL-Kohaerenz, Material-Aktivierung). Beide Ebenen werden im Q-Gate geprueft.
 
 ---
 
@@ -182,7 +198,7 @@ A1-A15 gemaess diesem Dokument. Dreistufig:
 | Ergebnis | Bedeutung | Aktion |
 |---|---|---|
 | MUSS-Verletzung (A1-A7) | Fachdidaktischer Mangel | Ueberarbeitung vor User-Review. Konkreten Mangel benennen + Korrekturvorschlag |
-| SOLL-Verletzung (A8-A12) | Optimierungspotenzial | Hinweis im Raetsel-Output: `[A-HINWEIS: Ax — Beschreibung]`. User entscheidet |
+| SOLL-Verletzung (A8-A12, A16-A18) | Optimierungspotenzial | Hinweis im Raetsel-Output: `[A-HINWEIS: Ax — Beschreibung]`. User entscheidet |
 | KANN-Verletzung (A13-A15) | Moegliche Qualitaetssteigerung | Nur bei expliziter Nachfrage pruefen |
 
 ### 5.3 Pruefformat
@@ -233,12 +249,14 @@ A4 Distractor-Qualitaet: FAIL — Aufgabe 1, Option D: "Pizza" ist kein plausibl
 
 ### 6.4 A5 Schwierigkeits-Progression — Monotonie-Pruefung
 
-**Methode:** Die 5 Aufgaben einer Mappe in eine AFB-Sequenz abbilden und auf Monotonie pruefen:
+**Methode:** Alle Aufgaben einer Mappe (5-8) in eine AFB-Sequenz abbilden und auf Monotonie pruefen. Erste Aufgabe muss AFB I sein, letzte Aufgabe muss AFB III (Freitext) sein.
 
-**PASS:** I → I → II → II → III (streng monoton steigend)
-**PASS:** I → I-II → II → II → II-III (monoton steigend mit Uebergaengen)
+**PASS (5 Aufgaben):** I → I → II → II → III
+**PASS (7 Aufgaben):** I → I → I-II → II → II → II → III
+**PASS (6 Aufgaben):** I → I-II → II → II → II-III → III
 **FAIL:** I → II → I → II → III (Regression bei Aufgabe 3)
 **FAIL:** II → II → II → II → III (kein Einstieg auf AFB I)
+**FAIL:** I → I → II → II → II (kein AFB-III-Abschluss)
 
 ### 6.5 A7 Operator-Praezision — Verb-Pruefung
 
@@ -257,11 +275,74 @@ Wenn nein → TB-Bezug vorhanden. Dokumentieren: `Aufgabe N → TB-Knoten kX-Y`.
 
 **Schwellenwert:** Mindestens 1 Aufgabe pro Mappe mit direktem TB-Bezug.
 
+### 6.7 A10 Inhaltsgesteuerte Typauswahl — Begruendungspruefung
+
+**Methode:** Pro Mappe die Typverteilung tabellarisch erfassen und pruefen:
+
+| Pruefschritt | Beschreibung |
+|---|---|
+| 1. Zaehlung | Jeden Aufgabentyp zaehlen: MC=?, ZU=?, LT=?, RF=?, FT=? |
+| 2. Vielfalt | Mindestens 3 verschiedene Typen? |
+| 3. Maximum | Kein Typ > 3x? |
+| 4. Freitext | Freitext mindestens 1x, letzte Position, AFB III? |
+| 5. Wiederholungs-Begruendung | Jeder Typ der > 1x vorkommt: Gibt es im Progressionsplan eine didaktische Begruendung? |
+| 6. Operationalisierungsziel-Passung | Pro Aufgabe: Ist der gewaehlte Typ der diagnostisch praeziseste fuer das Operationalisierungsziel? |
+
+**PASS-Muster:** 2x MC (Pos 1: Fachbegriff-Erkennung AFB I, Pos 4: Transfer-Unterscheidung AFB II), 1x LT, 1x ZU, 1x RF, 1x FT — Begruendung im Progressionsplan: "2x MC weil unterschiedliche kognitive Anforderung".
+**FAIL-Muster:** 3x MC ohne Begruendung, oder LT gewaehlt wo ZU diagnostisch praeziser waere.
+
+### 6.8 A16 Fragebogen-Kohaerenz — Sequenz-Mapping
+
+**Methode:** Die SCPL-Zonen des Hefteintrags als Referenzsequenz nehmen und die Aufgabensequenz dagegen mappen:
+
+1. SCPL-Zonen des Hefteintrags auflisten: S, C1, C2, ..., Cn, P, L
+2. Pro Aufgabe die getestete Zone identifizieren (aus Konstruktionskontext oder TB-Knoten-Zuordnung)
+3. Pruefen: Korrespondiert die Aufgabenreihenfolge mit der Zonenreihenfolge?
+
+**PASS:** Aufgabe 1 → S, Aufgabe 2 → C1, Aufgabe 3 → C2, Aufgabe 4 → C3, Aufgabe 5 → P, Aufgabe 6 → L, Aufgabe 7 → L
+**FAIL:** Aufgabe 1 → C2, Aufgabe 2 → S (Zone uebersprungen, dann nachgeholt)
+**FAIL:** Aufgabe 1 → S, Aufgabe 2 → P (C-Zonen uebersprungen)
+
+**Toleranz:** Zusammenfassung benachbarter C-Schritte in 1 Aufgabe ist erlaubt (z.B. Aufgabe 3 testet C2+C3). Ruecksprung ist nicht erlaubt.
+
+### 6.9 A17 SCPL-Zonen-Abdeckung — Vollstaendigkeitspruefung
+
+**Methode:** Jede SCPL-Zone als Zeile, jede Aufgabe als Spalte. Eintragen, welche Zone jede Aufgabe primaer diagnostiziert:
+
+```
+Zone    | Aufg.1 | Aufg.2 | Aufg.3 | Aufg.4 | Aufg.5 | Aufg.6 | Aufg.7 |
+S       |   X    |        |        |        |        |        |        |
+C1      |        |   X    |        |        |        |        |        |
+C2      |        |        |   X    |        |        |        |        |
+C3      |        |        |        |   X    |        |        |        |
+P       |        |        |        |        |   X    |        |        |
+L       |        |        |        |        |        |   X    |   X    |
+```
+
+**PASS-Bedingung:** Jede Zone hat mindestens 1 X. Keine leere Zeile.
+**FAIL-Bedingung:** Zone ohne X = ungetestete Station im Lernweg.
+**Aktion bei FAIL:** Fehlende Zone identifizieren, im Progressionsplan eine Aufgabe ergaenzen (sofern Aufgabenzahl < 8) oder bestehende Aufgabe um den fehlenden Inhalt erweitern.
+
+### 6.10 A18 Material-Aktivierung — Primaerquellen-Pruefung
+
+**Methode:** Pro Material der Mappe pruefen, ob es in mindestens 1 Aufgabe als Primaerquelle vorkommt (im Feld `material_referenz` der Aufgabe):
+
+| Material-ID | Typ | Als Primaerquelle in Aufgabe(n) | Nur in Tipps? | Status |
+|---|---|---|---|---|
+| mat-3-1 | DT | Aufgabe 1, 2 | Nein | PASS |
+| mat-3-2 | BQ | — | Ja (Tipp Aufgabe 1) | **FAIL** |
+| mat-3-3 | BQ | — | Ja (Tipp Aufgabe 3) | **FAIL** |
+| mat-3-4 | QT | Aufgabe 3, 4 | Nein | PASS |
+| mat-3-5 | TB | Aufgabe 5 | Nein | PASS |
+
+**FAIL-Regel:** Bildquellen (BQ) und Quellentexte (QT) die NUR in Tipps vorkommen = FAIL. Sie muessen eigenstaendig als Aufgabengrundlage dienen (z.B. Bildbeschreibung, Quellenanalyse, Perspektiven-Zuordnung).
+**Aktion bei FAIL:** Nicht-referenziertes Material als Ziel-Material in eine verbleibende Aufgabe einbauen. Bei BQ: Zuordnungs- oder MC-Aufgabe mit Bildanalyse. Bei QT: Zuordnungs- oder Reihenfolge-Aufgabe mit Quellenvergleich.
+
 ---
 
 ## 7. Abgrenzung
 
-| Aspekt | GUETEKRITERIEN_AUFGABEN (A1-A15) | AGENT_RAETSEL-Regeln | GUETEKRITERIEN_SEQUENZIERUNG (S1-S15) |
+| Aspekt | GUETEKRITERIEN_AUFGABEN (A1-A18) | AGENT_RAETSEL-Regeln | GUETEKRITERIEN_SEQUENZIERUNG (S1-S15) |
 |---|---|---|---|
 | Gegenstand | Qualitaet der Einzelaufgabe + Aufgabensequenz | Prozedurale Constraints (Typen, Formate, Encoding) | Reihenfolge + Funktion der Materialien |
 | Pruefebene | Fachdidaktisch | Operativ-technisch | Sequenziell-architektonisch |

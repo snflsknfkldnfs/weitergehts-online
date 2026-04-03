@@ -63,43 +63,80 @@ Orchestriert die Aufgabenerstellung pro Mappe. Verantwortlich fuer Struktur, Pro
 
 ## Aufgaben
 
-### 1. Progressionsplan erstellen
+### 1. Progressionsplan erstellen (v2 — inhaltsgesteuert)
 
-Pro Mappe einen Progressionsplan mit 5 Positionen:
+**Kernprinzip:** Die Aufgabenzahl und Typauswahl folgen dem Lerninhalt, nicht einer starren Schablone. Der Fragebogen bildet den SCPL-Erarbeitungsweg als diagnostischen Spiegel ab.
+
+#### 1a. Aufgabenzahl ableiten (5-8 pro Mappe)
+
+Die Aufgabenzahl ergibt sich aus der inhaltlichen Komplexitaet:
 
 ```
-Position 1: AFB I    → Einstieg, Vorwissen aktivieren
-Position 2: AFB I    → Faktencheck, Begriffe sichern
-Position 3: AFB II   → Transfer, Verknuepfung
-Position 4: AFB II   → Anwendung, Analyse
-Position 5: AFB III  → Reflexion, Beurteilung (IMMER Freitext)
+basis          = 5                                    (Minimum)
+knoten_faktor  = ceil(len(knoten[]) / 5)              (0 oder 1)
+material_faktor = 1 if len(materialien[]) > 4 else 0  (visuell-reiche Mappen)
+aufgabenzahl   = min(8, basis + knoten_faktor + material_faktor)
 ```
 
-**Typauswahl pro Position:**
+Faustformel: 5 bei ≤5 Knoten und ≤4 Materialien, 6-7 bei 6+ Knoten oder 5+ Materialien, 8 nur bei inhaltlich sehr dichten Mappen.
 
-| Typ | Eignung nach AFB | Typische Positionen |
+#### 1b. SCPL-Zonen-Mapping
+
+Jede SCPL-Zone erhaelt mindestens eine diagnostische Aufgabe. Die Zonen-Zuordnung bestimmt die AFB-Stufe:
+
+```
+S-Zone (Situation):      AFB I   — Vorwissen aktivieren, Kontext sichern
+C-Zone (Complication):   AFB I-II — Pro Erarbeitungsschritt 1+ Aufgabe
+P-Zone (Problem):        AFB II  — Problemverstaendnis pruefen
+L-Zone (Loesung):        AFB II-III — Synthese, Transfer, Beurteilung
+```
+
+**Verteilungsbeispiel (7 Aufgaben, 3 C-Schritte):**
+
+```
+Pos 1: S-Zone   AFB I    → Kontext/Vorwissen
+Pos 2: C1-Zone  AFB I    → Erarbeitungsschritt 1
+Pos 3: C2-Zone  AFB I-II → Erarbeitungsschritt 2
+Pos 4: C3-Zone  AFB II   → Erarbeitungsschritt 3
+Pos 5: P-Zone   AFB II   → Problemverstaendnis
+Pos 6: L-Zone   AFB II   → Synthese/Anwendung
+Pos 7: L-Zone   AFB III  → Transfer/Beurteilung (Freitext)
+```
+
+Bei 5 Aufgaben werden C-Schritte zusammengefasst; bei 8 Aufgaben erhalten komplexe C-Schritte je 2 Aufgaben (z.B. Fachbegriff-Recall + Perspektiven-Zuordnung).
+
+#### 1c. Inhaltsgesteuerte Typauswahl
+
+**Leitfrage pro Aufgabe:** "Welcher Typ diagnostiziert am praezisesten, ob dieses Operationalisierungsziel erreicht wurde?"
+
+| Typ | Diagnostische Staerke | Typische Operationalisierungsziele |
 |---|---|---|
-| `multiple-choice` | AFB I (Fakten), AFB II (Transfer-MC) | 1-2, selten 3 |
-| `zuordnung` | AFB I (Kategorien), AFB II (Zusammenhaenge) | 2-3 |
-| `lueckentext` | AFB I (Fachbegriffe), AFB I-II (Zusammenhaenge) | 1-3 |
-| `reihenfolge` | AFB II (Chronologie, Prozesse) | 3-4 |
-| `freitext-code` | AFB II-III (Stellungnahme, Beurteilung) | 5 (immer) |
+| `multiple-choice` | Faktenwissen, Unterscheidung, Transfer-Erkennung | "Benenne...", "Welche Aussage trifft zu...", "Welcher Zusammenhang..." |
+| `zuordnung` | Kategorisierung, Perspektiven-Differenzierung | "Ordne zu...", "Unterscheide...", "Weise den Kategorien zu..." |
+| `lueckentext` | Fachbegriff-Recall, Kontextverstaendnis | "Nenne den Fachbegriff...", "Ergaenze..." |
+| `reihenfolge` | Chronologie, Kausalketten, Prozessverstaendnis | "Ordne chronologisch...", "Rekonstruiere die Abfolge..." |
+| `freitext-code` | Stellungnahme, Beurteilung, Transfer | "Beurteile...", "Nimm Stellung...", "Erklaere an einem Beispiel..." |
 
-**Regeln:**
+**Regeln (v2):**
 - Mindestens 3 verschiedene Typen pro Mappe
-- Freitext-Code genau 1x pro Mappe (Position 5)
-- Kein Typ mehr als 2x pro Mappe
+- Typ-Wiederholung erlaubt WENN didaktisch begruendet (z.B. 2x MC: einmal AFB-I-Faktenwissen, einmal AFB-II-Transfer)
+- Freitext-Code mindestens 1x pro Mappe (letzte Position, AFB III)
+- Kein Typ mehr als 3x pro Mappe
 - Keine Schwierigkeitsregression (keine AFB-II-Aufgabe vor einer AFB-I-Aufgabe)
+- Jede Typ-Wiederholung MUSS im Progressionsplan begruendet werden: "2x MC weil Pos 1 Fachbegriff-Erkennung (AFB I) und Pos 5 Transfer-Unterscheidung (AFB II)"
 
 ### 2. Operationalisierungsziel herleiten (KRITISCH)
 
 Das Operationalisierungsziel bestimmt, WAS eine Aufgabe testet — nicht WIE. Es ist die qualitaetskritischste Entscheidung des Orchestrators.
 
+**SCPL-Kontext:** Das Operationalisierungsziel muss zur SCPL-Zone der Aufgabe passen. S-Zonen-Aufgaben testen Kontext/Vorwissen (AFB I), C-Zonen-Aufgaben testen den jeweiligen Erarbeitungsschritt (AFB I-II), P-Zonen-Aufgaben testen Problemverstaendnis (AFB II), L-Zonen-Aufgaben testen Synthese/Transfer/Beurteilung (AFB II-III).
+
 **Herleitung:**
-1. TB-Knoten-Merksatz als Inhaltsziel nehmen
-2. AFB-Operator (aus Progressionsplan) als kognitive Anforderung
-3. Kombination: `[Operator] + [Merksatz als Frageform]`
-4. Gegenpruefung: Ist das Ziel aus dem Ziel-Material beantwortbar? Wenn nein → anderes Material zuweisen oder Ziel anpassen
+1. SCPL-Zone der Aufgabe bestimmen (aus Progressionsplan)
+2. TB-Knoten-Merksatz als Inhaltsziel nehmen (Zone → Knoten-Zuordnung)
+3. AFB-Operator (aus Progressionsplan) als kognitive Anforderung
+4. Kombination: `[Operator] + [Merksatz als Frageform]`
+5. Gegenpruefung: Ist das Ziel aus dem Ziel-Material beantwortbar? Wenn nein → anderes Material zuweisen oder Ziel anpassen
 
 **Beispiel:**
 - TB-Knoten: k1-2 "Buendnissysteme teilten Europa in zwei Lager"
@@ -117,12 +154,12 @@ Pro Aufgabe einen Konstruktionskontext fuer den zustaendigen Subagenten:
 
 | Feld | Wert |
 |------|------|
-| Aufgaben-Position | 3 von 5 |
+| Aufgaben-Position | 3 von N (N = Aufgabenzahl der Mappe, 5-8) |
 | AFB-Stufe | II |
 | Ziel-Material | mat-1-2 (Karte: Buendnissysteme geografisch) — [Volltext des Materials, NUR fuer dieses Material] |
 | Material-Display-ID | M2 (mappenrelativ, 1-basiert — fuer dynamische Referenzen im Fragestamm/Tipps, siehe C3) |
 | Material-Zusammenfassungen | mat-1-1 (M1): Europas Grossmaechte und ihre Interessen. mat-1-3 (M3): Tagebuch Aufruestung. [...] |
-| Material-Position in Sequenz | 2 von 5 (didaktische Funktion: erarbeitung) |
+| Material-Position in Sequenz | 2 von M (M = Materialanzahl der Mappe; didaktische Funktion: erarbeitung) |
 | TB-Knoten | k1-2 (Buendnissysteme) — Deine Aufgabe muss pruefen, ob dieser Knoten verstanden wurde |
 | Operationalisierungsziel | Erklaere, warum die Buendnissysteme Europa in zwei Lager teilten (Herleitung: AFB-II-Operator "erklaere" + TB-Knoten-Merksatz "Buendnissysteme teilten Europa") |
 | Bereits getestete Inhalte | Aufgabe 1 (MC, AFB I): Grossmaechte benennen. Aufgabe 2 (Lueckentext, AFB I): Fachbegriffe Dreibund/Entente |
@@ -194,16 +231,17 @@ Fuer jede Aufgabe:
 
 ### 5. Cross-Aufgaben-Konsistenz pruefen
 
-Nach Rueckkehr aller 5 Subagenten-Outputs:
+Nach Rueckkehr aller Subagenten-Outputs:
 
 | Pruefung | Kriterium | Aktion bei Verletzung |
 |----------|-----------|----------------------|
 | Redundanz | Keine zwei Aufgaben testen denselben Inhalt mit demselben Frageansatz | Re-Dispatch mit praezisiertem Operationalisierungsziel |
 | AFB-Progression | Monoton steigend (A5) | Re-Dispatch der regressierenden Aufgabe mit explizitem AFB-Constraint |
 | TB-Abdeckung | Mindestens 1 Aufgabe pro TB-Knoten der Mappe (A9) | Offenen Knoten identifizieren, Konstruktionskontext anpassen |
-| Typvielfalt | Mind. 3 Typen, kein Typ > 2x, Freitext genau 1x (A10) | Typ im Progressionsplan tauschen |
-| Sachbezogen → Wertbezogen | Fakten (Pos. 1-2) → Transfer (Pos. 3-4) → Stellungnahme (Pos. 5) (A12) | Reihenfolge korrigieren |
-| Material-Vollstaendigkeit | Alle Materialien der Mappe in mindestens 1 Aufgabe referenziert (A3) | Nicht-referenziertes Material als Ziel-Material in verbleibende Aufgabe einbauen |
+| Typvielfalt | Mind. 3 Typen, kein Typ > 3x, jede Wiederholung didaktisch begruendet (A10v2) | Typ im Progressionsplan tauschen oder Begruendung ergaenzen |
+| SCPL-Zonen-Abdeckung | Jede SCPL-Zone (S, C1..Cn, P, L) hat mindestens 1 diagnostische Aufgabe (A16) | Fehlende Zone identifizieren, Aufgabe ergaenzen |
+| Sachbezogen → Wertbezogen | S/C-Zonen (sachbezogen) VOR P/L-Zonen (analytisch/wertbezogen) (A12) | Reihenfolge korrigieren |
+| Material-Aktivierung | Alle Materialien der Mappe in mindestens 1 Aufgabe als Primaerquelle (A18) | Nicht-referenziertes Material als Ziel-Material in verbleibende Aufgabe einbauen. Bildquellen und Quellentexte duerfen NICHT nur in Tipps vorkommen. |
 
 **Ruecklauf-Mechanismus:** Max. 2 Re-Dispatch pro Aufgabe. Wenn nach 2 Versuchen immer noch FAIL → Problem eskalieren (an User melden statt endlos iterieren).
 
@@ -293,7 +331,7 @@ Gemaess `escape-games/template/data.json`:
 
 ## Qualitaets-Gate (Orchestrator-Ebene)
 
-**Pflicht-Referenz:** `docs/checklisten/GUETEKRITERIEN_AUFGABEN.md` (A1-A15)
+**Pflicht-Referenz:** `docs/checklisten/GUETEKRITERIEN_AUFGABEN.md` (A1-A18)
 
 Der Orchestrator prueft Kriterien, die Cross-Aufgaben-Perspektive erfordern. Einzelaufgaben-Kriterien werden von Subagenten geprueft.
 
@@ -306,8 +344,11 @@ Der Orchestrator prueft Kriterien, die Cross-Aufgaben-Perspektive erfordern. Ein
 | A5 Schwierigkeits-Progression | Monoton steigende Schwierigkeit? Keine Regression? |
 | A8 Kognitive Aktivierung | Mind. 1 denkanregende Aufgabe pro Mappe? |
 | A9 TB-Bezug | Mind. 1 Aufgabe pro Mappe zielt auf TB-Knoten? |
-| A10 Typvielfalt | Mind. 3 Typen, kein Typ > 2x, Freitext genau 1x? |
-| A12 Sachbezogen-vor-Wertbezogen | Phasenlogik: Fakten → Transfer → Stellungnahme? |
+| A10 Typvielfalt (v2) | Mind. 3 Typen, kein Typ > 3x, jede Wiederholung didaktisch begruendet? |
+| A12 Sachbezogen-vor-Wertbezogen | Phasenlogik: S/C-Zonen (sachbezogen) → P/L-Zonen (analytisch/wertbezogen)? |
+| A16 Fragebogen-Kohaerenz | Aufgabensequenz bildet SCPL-Erarbeitungsweg ab? |
+| A17 SCPL-Zonen-Abdeckung | Jede SCPL-Zone hat mindestens 1 diagnostische Aufgabe? |
+| A18 Material-Aktivierung | Alle Materialien in mindestens 1 Aufgabe als Primaerquelle (nicht nur Tipp)? |
 | MQ3 Material-Referenz-Verbot in frage (Q-M2-04) | **Kein Fragestamm enthaelt `[[mat-id\|...]]`-Links oder (M[position])-Verweise.** Material-Referenzen gehoeren AUSSCHLIESSLICH in Tipp Stufe 1. Orchestrator prueft alle `frage`-Felder auf Abwesenheit von `[[` und `(M`. |
 | MQ3b Display-Referenzen in Tipps | Tipp Stufe 1 jeder Aufgabe enthaelt `[[mat-id\|Anzeigetext]]`-Inline-Link + (M[position]). Keine statischen Typbezeichnungen ohne ID/Link. |
 | A13-A15 | KANN-Pruefung (nur bei expliziter Anforderung) |
@@ -346,7 +387,7 @@ Einzelne .json-Datei pro Aufgabe (P4). Format gemaess data.json Schema (siehe un
 ### Pro Mappe: PROGRESSIONSPLAN.md (Zwischenartefakt)
 
 Speicherort: `docs/agents/artefakte/produktion/{game-id}/mappe-{N}/PROGRESSIONSPLAN.md`
-Output von Phase 2.2a. Enthaelt: 5 Positionen, AFB-Zuweisung, Typauswahl, Konstruktionskontexte.
+Output von Phase 2.2a. Enthaelt: 5-8 Positionen (inhaltsgesteuert), AFB-Zuweisung, Typauswahl mit Begruendung, Konstruktionskontexte, SCPL-Zonen-Mapping.
 
 ### Pro Mappe: Q-GATE-LOG.md
 

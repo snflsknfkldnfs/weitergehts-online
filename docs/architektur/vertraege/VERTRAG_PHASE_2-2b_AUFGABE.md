@@ -46,7 +46,7 @@
 
 **Mechanik:** `docs/architektur/Q-GATE-MECHANIK.md` (Bewertungsstufen, Aggregation, Nachbesserung, Output-Format)
 **Katalog:** Q-GATE-MECHANIK.md §7.2 — 9 Kriterien in 4 Klassen (SCHEMA, KONSISTENZ, FORM, DIDAKTIK)
-**Kriterien-Detail:** `docs/checklisten/GUETEKRITERIEN_AUFGABEN.md` (A1-A15)
+**Kriterien-Detail:** `docs/checklisten/GUETEKRITERIEN_AUFGABEN.md` (A1-A18)
 
 **Einzelaufgaben-Ebene (A1-A7 + typ-spezifisch):**
 - A1 AFB-Kongruenz
