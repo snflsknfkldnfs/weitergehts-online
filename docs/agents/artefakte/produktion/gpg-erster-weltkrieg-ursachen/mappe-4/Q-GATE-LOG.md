@@ -633,3 +633,54 @@
 | SQ-2 | PASS | noch_nicht_eingefuehrt = leer (letzte Position). Keine gesperrten Begriffe. |
 | SQ-3 | PASS | k4-6 (Stellungskrieg) durch Foto + BU erarbeitbar: visueller Kontrast zum Bewegungskrieg. |
 | SQ-4 | PASS | Baut auf mat-4-4 auf (Karte zeigte Rueckzug → Foto zeigt, was danach kam: Grabenkrieg). |
+
+---
+
+## D6: Cross-Konsistenz + Ueberleitungen + Hefteintrag-Revision (Phase 2.1c)
+
+**Datum:** 2026-04-04
+**Vertrag:** VERTRAG_PHASE_2-1c_CROSS.md
+**Katalog:** Q-GATE-MECHANIK.md §7.4
+
+### Ergebnis: GESAMT-PASS
+
+| # | ID | Kriterium | Klasse | Stufe | Detail |
+|---|---|---|---|---|---|
+| 1 | CROSS-1 | Sequenz-Kohaerenz | KONSISTENZ | PASS | Kein Material setzt nicht-eingefuehrten Fachbegriff voraus. 5/5 Materialien in korrekter Vorwissens-Progression. |
+| 2 | CROSS-2 | Fachbegriff-Konsistenz | KONSISTENZ | PASS | 5 Fachbegriffe geprueft (Zweifrontenkrieg, Schlieffen-Plan, Mobilmachung, Schlacht an der Marne, Stellungskrieg). Alle konsistent ueber Materialien und Hefteintrag. |
+| 3 | CROSS-3 | Ueberleitung-Kohaerenz | KONSISTENZ | PASS | 4/4 GERUEST-Intentionen treffen auf tatsaechlichen Materialinhalt. Keine Diskrepanz Plan vs. Produkt. |
+| 4 | CROSS-4 | TB-Knoten-Gesamtabdeckung | KONSISTENZ | PASS | 6/6 Knoten (k4-1 bis k4-6) durch mindestens 1 Material abgedeckt. |
+| 5 | UE-1..5 | Ueberleitung-Qualitaet (Achse 5) | DIDAKTIK | PASS | 4 Ueberleitungen produziert. Alle UE-1 bis UE-5 PASS: Rueckwaerts-Vektor konkret, Vorwaerts-Vektor plausibilisierend, R7-Register, kein Spoiler, Sequenz-Passung. |
+| 6 | HE-REV | Hefteintrag-Revision (Achse 6) | KONSISTENZ | PASS | STRUKTUR-FREEZE eingehalten. SCPL-Texte: 0 Aenderungen (bereits material-kongruent). zusammenfassung + ueberleitung erstmalig produziert. |
+| 7 | HE-PROD | Hefteintrag-Produktqualitaet | DIDAKTIK | PASS | HE1-HE18: 10/10 MUSS PASS, 7/7 SOLL PASS. Stufe-2 Re-Evaluation (G3,G5,G10,G12,G14): 5/5 PASS. |
+| 8 | TYP-01-C | Typographische Korrektheit | FORM | PASS | UTF-8 Umlaute, Gedankenstrich (—), dt. Anfuehrungszeichen korrekt in allen SuS-sichtbaren Texten. |
+| 9 | REG-01-C | Sprachregister Ueberleitungen | FORM | PASS | Alle 4 Ueberleitungen R7-konform, max 2 Saetze, keine didaktischen Metakommentare. |
+
+### Stufe-2 Re-Evaluation
+
+| # | Kriterium | Stufe | Detail |
+|---|---|---|---|
+| G3 | Erarbeitbarkeit | PASS | Alle 5 SCPL-Schritte durch produzierte Materialien erarbeitbar. |
+| G5 | Sprachliches Niveau | PASS | 4 Fachbegriffe identisch mit Material-Einfuehrung. |
+| G10 | Rekapitulierbarkeit | PASS | SCPL-Bogen bildet Material-Sequenz 1:1 ab. |
+| G12 | Sprachregister-Passung | PASS | Kein Register-Bruch zwischen Materialien und Hefteintrag. |
+| G14 | SCPL-Kohaerenz | PASS | S→C1→C2→C3→P = kohaerenter inhaltlicher Bogen. |
+
+### Achse-6-Aenderungsdokumentation
+
+| Feld | Aenderung | Begruendung |
+|---|---|---|
+| scpl.* (alle Zonen) | Keine | Alle FORMULIERUNGS-OFFEN-Felder bereits material-kongruent. |
+| sicherung.zusammenfassung | NEU (Placeholder ersetzt) | Prozess-Synthese: 39 W, 3 Handlungsverben, disjunkt zu Merksatz. |
+| sicherung.ueberleitung | NEU (Placeholder ersetzt) | Letzte-Mappe-Reflexion mit Transfer-Frage. |
+| hefteintrag.json | Keine Aenderung | SCPL-Texte unveraendert. |
+
+### Nachbesserung
+
+Keine. 0 FAIL, 0 WARN.
+
+### Produzierte Dateien
+
+- ueberleitungen.json (NEU)
+- rahmen/sicherung.json (AKTUALISIERT: zusammenfassung + ueberleitung)
+- rahmen/hefteintrag.json (UNVERAENDERT)

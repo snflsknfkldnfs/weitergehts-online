@@ -1,0 +1,25 @@
+{
+  "mappe": "4",
+  "ueberleitungen": [
+    {
+      "von": "mat-4-1",
+      "nach": "mat-4-2",
+      "text": "Du weißt jetzt, dass der Schlieffen-Plan einen Angriff durch Belgien vorsah. Aber wie sah dieser Plan auf der Landkarte aus?"
+    },
+    {
+      "von": "mat-4-2",
+      "nach": "mat-4-3",
+      "text": "Die Karte zeigt den geplanten Weg durch Belgien nach Frankreich. Doch wie fühlte sich dieser Vormarsch für einen Soldaten an?"
+    },
+    {
+      "von": "mat-4-3",
+      "nach": "mat-4-4",
+      "text": "Friedrich beschreibt Hunger und Erschöpfung nach Wochen des Marsches. Genau in diesem Moment schlagen die Franzosen an der Marne zurück."
+    },
+    {
+      "von": "mat-4-4",
+      "nach": "mat-4-5",
+      "text": "Die Schlacht an der Marne erzwang einen Rückzug von 65 Kilometern \u2014 der schnelle Sieg war gescheitert. Was trat an seine Stelle?"
+    }
+  ]
+}
