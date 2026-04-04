@@ -216,10 +216,12 @@ Nach Abschluss der Transcript-Aufbereitung werden dimensionale Audits durchgefue
 ## 5. Abhaengigkeiten + Reihenfolge
 
 ```
-Transcript-Uebergabe (schrittweise)
+Transcript-Lektuere (read_transcript auf P-1..P-5, schrittweise)
   │
   ▼
 Verlaufsprotokoll pro Session (C2_VERLAUF_SESSION_P-*.md)
+  │
+  ├── Automatisierte Checks (Python: JSON-Validierung, Encoding, Schema → D3/D8 Input)
   │
   ▼
 Konsolidiertes Gesamtprotokoll (C2_VERLAUF_GESAMT.md)
@@ -238,6 +240,80 @@ C2_EVALUATION_MAPPE4.md (Synthese aller Dimensionen, Go/No-Go-Entscheidung)
 ```
 
 D1-D8 koennen teilweise parallel ausgefuehrt werden (agent-teams oder sequentielle Sessions). D2, D3, D8 benoetigen zusaetzlich die Produktions-JSONs. D6 ist nur auswertbar wenn Compaction-Events stattfanden.
+
+---
+
+## 5b. Tooling-Plan (evaluierte Plugins, Skills, MCPs, Agent-Typen)
+
+Systematische Evaluation aller verfuegbaren Werkzeuge gegen die 8 Dimensionen. Durchgefuehrt PM-Session 10 (2026-04-04).
+
+### Primaere Werkzeuge (klarer Benefit, eingeplanter Einsatz)
+
+| Werkzeug | Typ | Dimension(en) | Einsatz | Benefit |
+|---|---|---|---|---|
+| `mcp__session_info__read_transcript` | MCP-Tool | D1, D4, D5, D6, D7 | Transcripts der 5 Produktionssessions programmatisch lesen. Eliminiert manuelle Uebergabe. | HOCH — Effizienz: kein Copy-Paste, vollstaendige Daten, kein Informationsverlust bei Uebergabe. |
+| `mcp__session_info__list_sessions` | MCP-Tool | Alle | Session-Inventar automatisch befuellen (Datum, Titel, Dispatch-Zuordnung). | HOCH — Praezise Session-Metadaten ohne manuelle Rekonstruktion. |
+| `agent-teams:team-reviewer` | Agent-Typ | D2, D8 | Parallele Reviewer auf didaktische Subdimensionen (D2: Sprachregister, Verankerung, SCPL-Kohaerenz) und Patch-Wirksamkeit (D8: P1-P3, A1-A7, B1-B10). | HOCH — Bewaehrtes Pattern aus C1c-Audit. 3 Perspektiven gleichzeitig, strukturiertes Finding-Format, Severity-Kalibrierung. |
+| Bash/Python-Skripte | Direkt | D3, D8 | JSON-Validierung, Encoding-Checks (UTF-8, typogr. Zeichen), Schema-Konformitaet, B1-B10 Regressionspruefung automatisiert auf Produktions-JSONs. | HOCH — Objektive, wiederholbare Pruefung. Keine LLM-Interpretation noetig fuer mechanische Checks. |
+
+### Sekundaere Werkzeuge (situativ nuetzlich, bei Bedarf aktivierbar)
+
+| Werkzeug | Typ | Dimension(en) | Bedingung fuer Einsatz | Benefit |
+|---|---|---|---|---|
+| `agent-teams:team-lead` | Agent-Typ | Orchestrierung | Wenn D1-D8 in einer Session parallel auditiert werden sollen. | MITTEL — Dekomposition + Synthese. Overhead lohnt sich nur bei >= 3 parallelen Dimensionen. |
+| `agent-teams:multi-reviewer-patterns` | Skill | D2, D8 | Bei Finding-Deduplication und Severity-Kalibrierung nach parallelem Review. | MITTEL — Verhindert Doppel-Findings, kalibriert BLOCKER vs. HIGH. |
+| `documentation-generation:mermaid-expert` | Agent-Typ | Visualisierung | Fuer Prozessfluss-Diagramme in C2_EVALUATION_MAPPE4.md. | MITTEL — Visuell fuer Ergebnisdarstellung, nicht fuer Analyse selbst. |
+| `mcp__48177e08__validate_and_render_mermaid_diagram` | MCP-Tool | Visualisierung | Mermaid-Diagramm-Validierung bei Ergebnisdarstellung. | NIEDRIG — Nur relevant wenn Diagramme erstellt werden. |
+| `plugin-eval:eval-judge` | Agent-Typ | D2, D4 | Rubrik-Scoring adaptierbar fuer Qualitaetsbewertung von Produktions-Outputs. | MITTEL — Strukturiertes Scoring-Framework, aber Briefing-Aufwand fuer Custom-Rubrics hoch. |
+| `accessibility-compliance:wcag-audit-patterns` | Skill | D15 (Browser-Val.) | Fuer D15 Browser-Validierung (WCAG 2.2 AA auf mappe-4.html). Nicht fuer D1-D8. | HOCH fuer D15 — aber D15 ist separater Schritt, nicht Teil der Prozessanalyse. |
+| `llm-application-dev:prompt-engineering-patterns` | Skill | Meta | Fuer Verbesserung der Subagenten-Prompts basierend auf D2-Findings. Nicht fuer Analyse, sondern fuer Folge-Iteration. | MITTEL — Einsatz NACH Analyse, nicht waehrend. |
+
+### Nicht einsetzbar (evaluiert, kein Benefit)
+
+| Werkzeug | Grund |
+|---|---|
+| `comprehensive-review:full-review` / `code-reviewer` / `architect-review` | Optimiert fuer Code-Review (Security, Performance, Patterns). Unsere Artefakte sind JSON-Content + Markdown-Prozessdokumente, kein Source-Code. Rubrics passen nicht. |
+| `comprehensive-review:security-auditor` | Kein Security-Kontext in didaktischer Content-Produktion. |
+| `conductor:*` (setup, implement, new-track, etc.) | Track-Management-Overhead ohne Mehrwert fuer einmalige Analyse. Conductor-Patterns bereits manuell in Dispatch-Skript umgesetzt. |
+| `plugin-eval:eval` / `certify` / `compare` | Bewertet Skills/Plugins auf Triggering-Accuracy und Scope. Nicht auf Produktionsprozesse anwendbar. |
+| `mcp__sequentialthinking` | Kein Vorteil gegenueber normalem Reasoning bei PM-Analyse. Overhead durch Tool-Call ohne Informationsgewinn. |
+| `developer-essentials:*` (git, debugging, monorepo, etc.) | Software-Engineering-Patterns. Kein Bezug zu didaktischer Content-Analyse. |
+| `llm-application-dev:rag-implementation` / `vector-*` / `langchain-*` | RAG/Vector-DB-Patterns. Kein Bezug. |
+| `design:*` (critique, handoff, ux-copy, etc.) | UI/UX-Design-Review. Unsere Analyse betrifft Prozess + Content, nicht visuelles Design. |
+| `productivity:*` (task-management, memory, etc.) | Bereits durch TodoWrite + Memory-System abgedeckt. Kein zusaetzlicher Benefit. |
+| `cowork-plugin-management:*` | Plugin-Erstellung/-Konfiguration. Nicht relevant fuer Analyse. |
+| `mcp__Claude_in_Chrome__*` / `mcp__Control_Chrome__*` | Browser-Steuerung. Nur fuer D15 (Browser-Validierung) relevant, nicht fuer Prozessanalyse. |
+| `mcp__Excel__*` / `mcp__Word__*` / `mcp__PowerPoint__*` | Office-Tools. Kein Analyse-Bezug. Metriken werden in Markdown dokumentiert. |
+| `mcp__wikipedia__*` / `mcp__wikimedia-image-search__*` | Content-Recherche-Tools. Nur fuer Produktion, nicht fuer Analyse. |
+
+### Einsatzplan pro Phase
+
+| Phase | Primaere Werkzeuge | Sekundaere (bei Bedarf) |
+|---|---|---|
+| 1. Transcript-Rekonstruktion | `read_transcript`, `list_sessions` | — |
+| 2. Automatisierte Checks (D3, D8 teilw.) | Bash/Python | — |
+| 3a. D1 Prozesskongruenz | PM manuell (Transcript vs. Dispatch-Skript) | — |
+| 3b. D2 Didaktik-Audit | `agent-teams:team-reviewer` (3 Subdimensionen) | `multi-reviewer-patterns`, `eval-judge` |
+| 3c. D3 Technik-Audit | PM + Python-Ergebnisse | — |
+| 3d. D4 Tool-Calling | PM manuell (Tool-Call-Tabellen aus Transcripts) | — |
+| 3e. D5 Token-Effizienz | PM manuell (Session-Zusammenfassungen) | — |
+| 3f. D6 Compaction-Resilienz | PM manuell (Compaction-Events aus Transcripts) | — |
+| 3g. D7 Usability | PM manuell (User-Interventionen aus Transcripts) | — |
+| 3h. D8 Infrastruktur-Wirksamkeit | `agent-teams:team-reviewer` (3 Patch-Cluster) + Python | `multi-reviewer-patterns` |
+| 4. Synthese | PM → C2_EVALUATION_MAPPE4.md | `mermaid-expert` (Visualisierung) |
+| 5. D15 Browser-Validierung (separat) | `accessibility-compliance:wcag-audit-patterns`, Chrome-Tools | — |
+
+### Identifizierte Produktionssessions (via `list_sessions`)
+
+| PM-ID | Session-ID | Titel | Vermutete Dispatches |
+|---|---|---|---|
+| P-1 | `local_c0a75297-05ee-4598-9351-b7d7c875d799` | "Review GPG WWI causes dispatch script" | Orientierung, D-1? |
+| P-2 | `local_c6ba81a8-5b0a-4cfa-9d88-54dd24e25443` | "Complete dispatch script phase one" | D-1.5, D0? |
+| P-3 | `local_dac30110-8cea-4ea1-8931-11d8d934bfb8` | "Dispatch script production tracking" | D1-D5? |
+| P-4 | `local_685f1f4b-0353-4cd9-8b5c-086b0add9e47` | "Dispatch D6 World War One Materials Production" | D6-D7? |
+| P-5 | `local_e4acabe7-4874-4f3b-b208-652c7822fba3` | "Track WWI causes dispatch progress" | D8-D14? |
+
+**Hinweis:** Zuordnung Dispatches↔Sessions ist Erstschaetzung aus Titeln. Wird bei Transcript-Lektuere praezisiert.
 
 ---
 
@@ -307,16 +383,32 @@ Fuer Vergleichbarkeit werden Mappe-3-Metriken als Baseline herangezogen:
 
 ---
 
-## 8. Transcript-Uebergabe-Protokoll
+## 8. Transcript-Aufbereitungs-Protokoll
+
+### Primaerer Pfad: Programmatischer Zugriff (empfohlen)
+
+Die Produktionssessions sind via `mcp__session_info__read_transcript` direkt lesbar.
 
 **Anweisung fuer PM-Session:**
 
-1. User uebergibt Transcript als Text oder Datei.
-2. PM liest Transcript sequenziell.
+1. `mcp__session_info__list_sessions` → Session-Inventar (Sektion 2) befuellen.
+2. Pro Session (P-1 bis P-5): `mcp__session_info__read_transcript(session_id, limit=X)` aufrufen.
+   - `limit` steuert Anzahl der zurueckgegebenen Messages (default 20, most recent).
+   - Bei umfangreichen Sessions: mehrere Calls mit verschiedenen Offsets oder hohem Limit.
+   - **Token-Budget beachten:** Ein volles Transcript kann sehr gross sein. Pro PM-Session maximal 1-2 Produktionssessions aufbereiten.
 3. PM extrahiert pro Dispatch die Informationen gemaess Template (Sektion 3).
-4. PM schreibt C2_VERLAUF_SESSION_P-[N].md.
+4. PM schreibt C2_VERLAUF_SESSION_P-[N].md in docs/analyse/c2-verlauf/.
 5. PM aktualisiert Session-Inventar (Sektion 2).
 6. Nach allen Sessions: PM erstellt C2_VERLAUF_GESAMT.md (Konsolidierung).
 7. Dann: Dimensionale Audits (D1-D8) nach Bedarf.
 
-**Wichtig:** Bei umfangreichen Transcripts in Teilstuecken arbeiten. Pro Session-Transcript ein eigenes Verlaufsprotokoll. Nicht versuchen, alles in einer PM-Session zu konsolidieren — Token-Budget beachten.
+### Fallback-Pfad: Manuelle Uebergabe
+
+Falls `read_transcript` nicht verfuegbar oder Sessions nicht sichtbar:
+1. User uebergibt Transcript als Text oder Datei.
+2. PM liest Transcript sequenziell.
+3. Weiter wie oben ab Schritt 3.
+
+### Token-Budget-Regel
+
+Pro PM-Session maximal 1-2 Produktionssessions aufbereiten. Nicht versuchen, alle 5 Sessions in einer PM-Session zu konsolidieren. Verlaufsprotokolle pro Session persistent schreiben — naechste PM-Session liest sie und kann weiterarbeiten.
