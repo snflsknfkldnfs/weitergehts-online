@@ -1,0 +1,24 @@
+{
+  "id": "aufgabe-4-3",
+  "typ": "reihenfolge",
+  "frage": "Ordne Friedrichs Erlebnisse auf dem Vormarsch chronologisch.",
+  "material_referenz": ["mat-4-3"],
+  "optionen": [
+    "Seit drei Tagen kommt kein Nachschub — die Soldaten essen, was sie auf Feldern finden.",
+    "Friedrich ist stolz: Die Truppen rücken schnell vor und gewinnen jedes Gefecht.",
+    "Friedrich zweifelt — 250 Kilometer liegen hinter ihnen, aber niemand hatte an ihre Beine gedacht.",
+    "Die Soldaten marschieren durch Belgien, vorbei an brennenden Gehöften."
+  ],
+  "loesung": [
+    "Friedrich ist stolz: Die Truppen rücken schnell vor und gewinnen jedes Gefecht.",
+    "Die Soldaten marschieren durch Belgien, vorbei an brennenden Gehöften.",
+    "Seit drei Tagen kommt kein Nachschub — die Soldaten essen, was sie auf Feldern finden.",
+    "Friedrich zweifelt — 250 Kilometer liegen hinter ihnen, aber niemand hatte an ihre Beine gedacht."
+  ],
+  "tipps": [
+    { "stufe": 1, "text": "Lies den [[mat-4-3|Tagebucheintrag von Friedrich]] (M3) noch einmal. Das erste Erlebnis beschreibt seine Gefühle ganz am Anfang des Marsches." },
+    { "stufe": 2, "text": "Friedrich ist am Anfang stolz und zuversichtlich. Am Ende zweifelt er am Plan. Dazwischen liegen der Marsch durch Belgien und der fehlende Nachschub." },
+    { "stufe": 3, "text": "Stolz und Siege → Marsch durch Belgien → Kein Nachschub, Hunger → Zweifel am Plan. Friedrich erlebte den Vormarsch als Abstieg: von Begeisterung über Erschöpfung bis zur Ernüchterung — nach 250 Kilometern und vier Wochen Marsch." }
+  ],
+  "punkte": 10
+}

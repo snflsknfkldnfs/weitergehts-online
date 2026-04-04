@@ -1625,6 +1625,639 @@
         "zusammenfassung": "Ihr habt anhand von Fotos, Originalquellen und Tagebucheinträgen untersucht, wie unterschiedlich die Menschen im August 1914 auf den Kriegsausbruch reagierten. Die Gegenüberstellung von Begeisterung in der Stadt und Angst auf dem Land zeigte: Das Bild einer einheitlichen Kriegsbegeisterung stimmt nicht.",
         "ueberleitung": "Die Soldaten glauben an einen schnellen Sieg und erwarten, bis Weihnachten wieder zu Hause zu sein. Doch worauf stützt sich dieser Glaube? Die deutschen Generäle haben einen Plan — den Schlieffen-Plan."
       }
+    },
+    {
+      "id": "mappe-4",
+      "titel": "Der Schlieffen-Plan",
+      "beschreibung": "Warum der deutsche Plan für einen schnellen Sieg scheiterte: vom Zweifrontenkrieg über den Einmarsch in Belgien und die Schlacht an der Marne bis zum Beginn des Stellungskriegs.",
+      "freischalt_code": "MARNE",
+      "einstieg": {
+        "narrativ": "<p>Die Soldaten glauben an einen schnellen Sieg und erwarten, bis Weihnachten wieder zu Hause zu sein. Doch worauf stützt sich dieser Glaube?</p><p>Die deutschen Generäle haben einen Plan — und dieser Plan wird scheitern.</p>",
+        "problemstellung": "Warum scheiterte der Plan für einen schnellen Sieg?"
+      },
+      "materialien": [
+        {
+          "id": "mat-4-1",
+          "typ": "darstellungstext",
+          "titel": "Wie wollte Deutschland den Krieg an zwei Fronten gewinnen?",
+          "inhalt": "<p>Deutschland liegt auf der Landkarte zwischen zwei Feinden: Im Westen Frankreich, im Osten Russland. Ein Krieg an beiden Grenzen gleichzeitig — ein <strong>Zweifrontenkrieg</strong> (Krieg an zwei Fronten) — gilt als nicht gewinnbar. Schon Jahre vor 1914 sucht die Armeeführung nach einer Lösung.</p><p>General Schlieffen entwickelt den <strong>Schlieffen-Plan</strong> (eine Kriegsstrategie gegen Frankreich). Die Idee: Zuerst Frankreich besiegen, dann Russland. Der Angriff soll nicht über die stark befestigte Grenze führen, sondern durch das neutrale Belgien. &bdquo;Macht mir den rechten Flügel stark!&ldquo; — so lautet Schlieffens berühmter Befehl. In nur 40 Tagen soll Frankreich fallen.</p><p>Der Plan beruht auf einer Annahme: Russland ist riesig und hat schlechte Straßen. Die <strong>Mobilmachung</strong> (die Vorbereitung der Armee für den Krieg) dauert dort länger als in Frankreich. Diese Zeitlücke will Deutschland nutzen — erst den Westen erledigen, dann alle Kräfte nach Osten werfen. Doch ob der Plan aufgeht, wird sich erst im Ernstfall zeigen.</p><cite>Eigene Darstellung auf Basis der Sachanalyse</cite>",
+          "quelle": "Eigene Darstellung. Quellen: Wikipedia — Schlieffen Plan, First Battle of the Marne",
+          "position": 1,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [],
+          "ueberleitung_von": null,
+          "sequenz_kontext": {
+            "vorher": null,
+            "nachher": {
+              "id": "mat-4-2",
+              "typ": "karte",
+              "kerninhalt": "Visualisiert den Schlieffen-Plan: Angriffspfeile durch Belgien nach Frankreich."
+            }
+          },
+          "_meta": {
+            "wortanzahl": 150,
+            "fachbegriffe_eingefuehrt": [
+              "Zweifrontenkrieg",
+              "Schlieffen-Plan",
+              "Mobilmachung"
+            ],
+            "tafelbild_knoten_abgedeckt": [
+              "k4-1",
+              "k4-2",
+              "k4-3"
+            ],
+            "erarbeitbarkeits_check": "PASS — k4-2: Zweifrontenkrieg explizit eingeführt und erklärt. k4-1: Schlieffen-Plan als Strategie mit 40-Tage-Kalkül. k4-3: Zeitlücke durch Russlands langsame Mobilmachung erklärt."
+          }
+        },
+        {
+          "id": "mat-4-2",
+          "typ": "bildquelle",
+          "titel": "Welchen Weg plante die deutsche Armee durch Europa?",
+          "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-4-1.svg",
+          "bildunterschrift": "Karte des Schlieffen-Plans, 1905: Geplante Angriffspfeile der deutschen Armee durch Belgien nach Frankreich. Die Karte zeigt, warum Deutschland das neutrale Belgien angreifen wollte — um die befestigte deutsch-französische Grenze zu umgehen.",
+          "quelle": "Wikimedia Commons",
+          "lizenz": "Public Domain",
+          "position": 2,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [
+            "mat-4-1"
+          ],
+          "ueberleitung_von": "Du weißt jetzt, dass der Schlieffen-Plan einen Angriff durch Belgien vorsah. Aber wie sah dieser Plan auf der Landkarte aus?",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-4-1",
+              "typ": "darstellungstext",
+              "kerninhalt": "Erklärt Zweifrontenkrieg als Problem und Schlieffen-Plan als Strategie mit Zeitlücke."
+            },
+            "nachher": {
+              "id": "mat-4-3",
+              "typ": "tagebuch",
+              "kerninhalt": "Personifiziert den Vormarsch: Siegeszuversicht, dann Erschöpfung und Nachschubprobleme."
+            }
+          },
+          "_meta": {
+            "artefakt_ref": "img-4-1",
+            "wikimedia_dateiname": "File:Schlieffen_Plan.svg",
+            "thumbnail_breite": 800,
+            "download_url": "https://commons.wikimedia.org/w/api.php?action=query&titles=File:Schlieffen_Plan.svg&prop=imageinfo&iiprop=url&iiurlwidth=800&format=json",
+            "lokaler_pfad": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-4-1.svg",
+            "url_verifiziert": false,
+            "bildtyp": "karte",
+            "kartentyp": "historisch",
+            "legende": {
+              "rote Pfeile": "Geplanter deutscher Vormarsch durch Belgien",
+              "blaue Pfeile": "Französischer Plan XVII (Gegenoffensive)"
+            },
+            "erschliessungsimpuls": "Über welche Länder führt der geplante Angriffsweg — und warum wählt die Armee diesen Umweg?",
+            "tafelbild_knoten_abgedeckt": [
+              "k4-1",
+              "k4-4"
+            ],
+            "lizenz_kompatibel": true,
+            "erarbeitbarkeits_check": "PASS — k4-1: Schlieffen-Plan als geographische Strategie visuell nachvollziehbar (Angriffspfeile durch Belgien). k4-4: Einmarschweg über Belgien direkt aus Karte ablesbar."
+          }
+        },
+        {
+          "id": "mat-4-3",
+          "typ": "tagebuch",
+          "titel": "Wie erlebten die Soldaten den Vormarsch?",
+          "inhalt": "<p><em>Irgendwo in Nordfrankreich, 2. September 1914</em></p><p>Seit vier Wochen marschierten wir nun. Am Anfang war ich stolz — wir rückten schnell vor, schlugen den Feind in jedem Gefecht. Durch Belgien ging es über staubige Straßen, vorbei an brennenden Gehöften. Der Leutnant sagte, wir seien bald in Paris.</p><p>Doch meine Stiefel waren durchgelaufen. Seit drei Tagen kam kein Nachschub mehr. Wir aßen, was wir auf den Feldern fanden. Manche Kameraden schliefen im Marsch ein. 250 Kilometer lagen hinter uns — meine Füße waren wund, mein Tornister wog schwerer mit jedem Tag.</p><p>Der Plan klang so einfach: in 40 Tagen nach Paris. Aber niemand hatte an unsere Beine gedacht.</p><cite>Fiktiver Tagebucheintrag, historisch plausibel. Kontext: Wikipedia — First Battle of the Marne, Summary</cite>",
+          "quelle": "Fiktiver Tagebucheintrag, historisch plausibel. Kontext: Wikipedia — First Battle of the Marne (Erschöpfung, Nachschubprobleme)",
+          "position": 3,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [
+            "mat-4-1",
+            "mat-4-2"
+          ],
+          "ueberleitung_von": "Die Karte zeigt den geplanten Weg durch Belgien nach Frankreich. Doch wie fühlte sich dieser Vormarsch für einen Soldaten an?",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-4-2",
+              "typ": "karte",
+              "kerninhalt": "Visualisiert den Schlieffen-Plan: Angriffspfeile durch Belgien nach Frankreich."
+            },
+            "nachher": {
+              "id": "mat-4-4",
+              "typ": "karte",
+              "kerninhalt": "Zeigt die Marne-Schlacht: Gegenoffensive und deutscher Rückzug."
+            }
+          },
+          "_meta": {
+            "wortanzahl": 99,
+            "figur": {
+              "name": "Friedrich",
+              "alter": 22,
+              "rolle": "Deutscher Infanterist",
+              "ort": "Nordfrankreich (Nähe Paris)"
+            },
+            "artefakt_ref": "rolle-4-1",
+            "historische_details": [
+              "250 km Vormarsch durch Belgien/Nordfrankreich — belegt in SKRIPT §4",
+              "Nachschubprobleme und Erschöpfung — belegt in INHALTSBASIS rolle-4-1",
+              "Brennende Gehöfte in Belgien — historisch dokumentiert (belgischer Widerstand, Kriegsverbrechen)"
+            ],
+            "tafelbild_knoten_abgedeckt": [
+              "k4-4"
+            ],
+            "perspektivitaet": "Friedrich weiß nur, was er direkt erlebt: Marsch, Hunger, wunde Füße. Er kennt keine strategischen Details. Er glaubt noch an den Plan, zweifelt aber zunehmend. Was an der Marne geschehen wird, ahnt er nicht.",
+            "erarbeitbarkeits_check": "PASS — k4-4: Einmarsch über Belgien als konkrete Erfahrung: Marsch durch Belgien, 250 km, Gefechte, Annäherung an Paris, dann Erschöpfung und Nachschubprobleme. SuS erleben den Vormarsch aus Soldatenperspektive."
+          }
+        },
+        {
+          "id": "mat-4-4",
+          "typ": "bildquelle",
+          "titel": "Wo stoppten die Franzosen den deutschen Vormarsch?",
+          "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-4-2.jpg",
+          "bildunterschrift": "Karte der Ersten Schlacht an der Marne, September 1914. Sie zeigt die Stellungen der deutschen und französischen Armeen sowie den deutschen Rückzug nach der Gegenoffensive unter General Gallieni.",
+          "quelle": "Frederick Maurice, 1919, Wikimedia Commons",
+          "lizenz": "Public Domain",
+          "position": 4,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": "mat-4-3",
+          "ueberleitung_von": "Friedrich beschreibt Hunger und Erschöpfung nach Wochen des Marsches. Genau in diesem Moment schlagen die Franzosen an der Marne zurück.",
+          "sequenz_kontext": {
+            "position_in_mappe": "4 von 5",
+            "vorheriges_material": {
+              "id": "mat-4-3",
+              "typ": "tagebuch",
+              "kerninhalt": "Personifiziert den Vormarsch: Siegeszuversicht, dann Erschöpfung und Nachschubprobleme."
+            },
+            "naechstes_material": {
+              "id": "mat-4-5",
+              "typ": "bildquelle",
+              "kerninhalt": "Schützengraben-Foto als visueller Anker: Stellungskrieg statt schnellem Sieg."
+            },
+            "vorausgesetztes_wissen": [
+              "k4-1 (Schlieffen-Plan)",
+              "k4-2 (Zweifrontenkrieg)",
+              "k4-3 (Zeitlücke: Russland mobilisiert langsam)",
+              "k4-4 (Einmarsch über Belgien)"
+            ],
+            "noch_nicht_eingefuehrt": [
+              "k4-6 (Stellungskrieg)"
+            ]
+          },
+          "_meta": {
+            "artefakt_ref": "img-4-2",
+            "wikimedia_dateiname": "File:Battle_of_the_Marne,_9_September_1914.jpg",
+            "thumbnail_breite": 800,
+            "download_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Battle_of_the_Marne%2C_9_September_1914.jpg/800px-Battle_of_the_Marne%2C_9_September_1914.jpg",
+            "lokaler_pfad": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-4-2.jpg",
+            "url_verifiziert": true,
+            "bildtyp": "karte",
+            "kartentyp": "historisch",
+            "zeitbezug": "9. September 1914",
+            "legende": {
+              "Armeepositionen": "Deutsche Armeen (1.–5.) und französische Armeen (5., 6., 9.) sowie britisches Expeditionskorps",
+              "Bewegungspfeile": "Rückzugsbewegungen der deutschen Truppen nach der Gegenoffensive",
+              "Frontlinie": "Linie zwischen Paris und Verdun, ca. 230 km"
+            },
+            "erschliessungsimpuls": "Warum war die Nähe zu Paris ein Vorteil für die französische Gegenoffensive?",
+            "tafelbild_knoten_abgedeckt": [
+              "k4-5"
+            ],
+            "lizenz_kompatibel": true,
+            "erarbeitbarkeits_check": "PASS — Karte zeigt Frontlinien, Armeepositionen und Rückzugsbewegungen. SuS können k4-5 (Schlacht an der Marne) räumlich erschließen: Gallieni-Flankenangriff von Paris aus, 65 km deutscher Rückzug."
+          }
+        },
+        {
+          "id": "mat-4-5",
+          "typ": "bildquelle",
+          "titel": "Statt 40 Tagen — vier Jahre Schützengräben",
+          "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-4-3.jpg",
+          "bildunterschrift": "Französische Soldaten bauen Stacheldrahtverhaue in einem Schützengraben in der Argonne, 1914. Nach dem Scheitern des Schlieffen-Plans an der Marne gruben sich beide Seiten ein — der Stellungskrieg hatte begonnen.",
+          "quelle": "Imperial War Museums, Wikimedia Commons",
+          "lizenz": "Public Domain",
+          "position": 5,
+          "didaktische_funktion": "sicherung",
+          "voraussetzung": "mat-4-4",
+          "ueberleitung_von": "Die Schlacht an der Marne erzwang einen Rückzug von 65 Kilometern — der schnelle Sieg war gescheitert. Was trat an seine Stelle?",
+          "sequenz_kontext": {
+            "position_in_mappe": "5 von 5",
+            "vorheriges_material": {
+              "id": "mat-4-4",
+              "typ": "karte",
+              "kerninhalt": "Zeigt die Marne-Schlacht: Gallieni-Flankenangriff, Gegenoffensive, 65 km Rückzug."
+            },
+            "naechstes_material": null,
+            "vorausgesetztes_wissen": [
+              "k4-1 (Schlieffen-Plan)",
+              "k4-2 (Zweifrontenkrieg)",
+              "k4-3 (Zeitlücke: Russland mobilisiert langsam)",
+              "k4-4 (Einmarsch über Belgien)",
+              "k4-5 (Schlacht an der Marne)"
+            ],
+            "noch_nicht_eingefuehrt": []
+          },
+          "kernerkenntnisse": [
+            "Der Schlieffen-Plan sollte den Zweifrontenkrieg lösen, indem Frankreich in 40 Tagen besiegt wird — bevor Russland bereit ist.",
+            "Die Schlacht an der Marne stoppte den deutschen Vormarsch — der Plan war gescheitert.",
+            "Statt eines schnellen Sieges begann der Stellungskrieg: vier Jahre Schützengräben von der Nordsee bis zur Schweiz."
+          ],
+          "_meta": {
+            "artefakt_ref": "img-4-3",
+            "wikimedia_dateiname": "File:The_Western_Front,_1914_Q53490.jpg",
+            "thumbnail_breite": 640,
+            "download_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/The_Western_Front%2C_1914_Q53490.jpg/640px-The_Western_Front%2C_1914_Q53490.jpg",
+            "lokaler_pfad": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-4-3.jpg",
+            "url_verifiziert": true,
+            "bildtyp": "foto",
+            "zeitbezug": "1914",
+            "erschliessungsimpuls": "Was unterscheidet dieses Bild vom schnellen Sieg, den der Schlieffen-Plan versprach?",
+            "kontext_zitat": "zit-4-2 (Moltke d.J.: 'Wir haben den Krieg verloren.') — inhaltlich anschlussfahig fuer AGENT_RAETSEL",
+            "tafelbild_knoten_abgedeckt": [
+              "k4-6"
+            ],
+            "lizenz_kompatibel": true,
+            "erarbeitbarkeits_check": "PASS — Foto zeigt Schützengraben-Bau als konkrete Realität. SuS können k4-6 (Stellungskrieg) visuell erschließen: Kontrast zwischen geplantem Bewegungskrieg (40 Tage) und tatsächlichem Grabenkrieg. Kernerkenntnisse 1-3 transportiert durch Titel (40 Tage vs. 4 Jahre) und BU (Scheitern → Eingraben)."
+          }
+        }
+      ],
+      "aufgaben": [
+        {
+          "id": "aufgabe-4-1",
+          "typ": "lueckentext",
+          "frage": "Ergänze die fehlenden Fachbegriffe.",
+          "material_referenz": [
+            "mat-4-1"
+          ],
+          "text_mit_luecken": "Deutschland musste 1914 gleichzeitig gegen Frankreich und Russland kämpfen — ein ___. Um dieses Problem zu lösen, entwickelte General Schlieffen eine Kriegsstrategie: den ___. Die Idee war, zuerst Frankreich in nur 40 Tagen durch einen Angriff über Belgien zu besiegen und danach alle Truppen gegen Russland einzusetzen. Der Plan nutzte eine Zeitlücke: In Russland dauerte die ___ deutlich länger als in Frankreich.",
+          "loesung": [
+            "Zweifrontenkrieg",
+            "Schlieffen-Plan",
+            "Mobilmachung"
+          ],
+          "antwortpool": [
+            "Mobilmachung",
+            "Schlieffen-Plan",
+            "Stellungskrieg",
+            "Zweifrontenkrieg"
+          ],
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Alle drei Begriffe werden im [[mat-4-1|Text über den Krieg an zwei Fronten]] (M1) erklärt. Es geht um eine Kriegslage, eine Strategie und eine militärische Vorbereitung."
+            },
+            {
+              "stufe": 2,
+              "text": "Der erste Begriff beschreibt einen Krieg an zwei Seiten gleichzeitig. Der Begriff „Stellungskrieg“ im Pool gehört nicht in diesen Text — er beschreibt etwas, das erst nach dem Scheitern des Plans beginnt."
+            },
+            {
+              "stufe": 3,
+              "text": "Zweifrontenkrieg — Schlieffen-Plan — Mobilmachung. Deutschland kämpfte gleichzeitig gegen Frankreich und Russland (Zweifrontenkrieg). General Schlieffen plante, Frankreich in 40 Tagen zu besiegen (Schlieffen-Plan). Der Plan nutzte Russlands langsame Kriegsvorbereitung (Mobilmachung) als Zeitlücke."
+            }
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-4-2",
+          "typ": "multiple-choice",
+          "frage": "Warum plante Deutschland den Angriff über Belgien?",
+          "material_referenz": [
+            "mat-4-2"
+          ],
+          "optionen": [
+            "Belgien war mit Deutschland verbündet.",
+            "Der Weg über Belgien war der kürzeste nach Paris.",
+            "Die deutsch-französische Grenze war stark befestigt.",
+            "Deutschland wollte zuerst Russland angreifen."
+          ],
+          "loesung": "Die deutsch-französische Grenze war stark befestigt.",
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Schau dir die [[mat-4-2|Karte des Schlieffen-Plans]] (M2) genau an. Die Bildunterschrift erklärt, warum der Angriff nicht direkt über die Grenze erfolgte."
+            },
+            {
+              "stufe": 2,
+              "text": "Belgien war nicht mit Deutschland verbündet — es war ein neutrales Land. Und der Schlieffen-Plan sah vor, zuerst Frankreich anzugreifen, nicht Russland."
+            },
+            {
+              "stufe": 3,
+              "text": "Die deutsch-französische Grenze war stark befestigt. Deshalb plante General Schlieffen den Umweg über das neutrale Belgien, um die französischen Verteidigungslinien zu umgehen."
+            }
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-4-3",
+          "typ": "reihenfolge",
+          "frage": "Ordne Friedrichs Erlebnisse auf dem Vormarsch chronologisch.",
+          "material_referenz": [
+            "mat-4-3"
+          ],
+          "optionen": [
+            "Seit drei Tagen kommt kein Nachschub — die Soldaten essen, was sie auf Feldern finden.",
+            "Friedrich ist stolz: Die Truppen rücken schnell vor und gewinnen jedes Gefecht.",
+            "Friedrich zweifelt — 250 Kilometer liegen hinter ihnen, aber niemand hatte an ihre Beine gedacht.",
+            "Die Soldaten marschieren durch Belgien, vorbei an brennenden Gehöften."
+          ],
+          "loesung": [
+            "Friedrich ist stolz: Die Truppen rücken schnell vor und gewinnen jedes Gefecht.",
+            "Die Soldaten marschieren durch Belgien, vorbei an brennenden Gehöften.",
+            "Seit drei Tagen kommt kein Nachschub — die Soldaten essen, was sie auf Feldern finden.",
+            "Friedrich zweifelt — 250 Kilometer liegen hinter ihnen, aber niemand hatte an ihre Beine gedacht."
+          ],
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Lies den [[mat-4-3|Tagebucheintrag von Friedrich]] (M3) noch einmal. Das erste Erlebnis beschreibt seine Gefühle ganz am Anfang des Marsches."
+            },
+            {
+              "stufe": 2,
+              "text": "Friedrich ist am Anfang stolz und zuversichtlich. Am Ende zweifelt er am Plan. Dazwischen liegen der Marsch durch Belgien und der fehlende Nachschub."
+            },
+            {
+              "stufe": 3,
+              "text": "Stolz und Siege → Marsch durch Belgien → Kein Nachschub, Hunger → Zweifel am Plan. Friedrich erlebte den Vormarsch als Abstieg: von Begeisterung über Erschöpfung bis zur Ernüchterung — nach 250 Kilometern und vier Wochen Marsch."
+            }
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-4-4",
+          "typ": "zuordnung",
+          "frage": "Was war geplant, was geschah wirklich an der Marne?",
+          "material_referenz": [
+            "mat-4-4"
+          ],
+          "elemente": [
+            {
+              "begriff": "Frankreich in 40 Tagen besiegen",
+              "zuordnung": "Schlieffen-Plan"
+            },
+            {
+              "begriff": "Französische Gegenoffensive stoppt den Vormarsch",
+              "zuordnung": "Marne — Wirklichkeit"
+            },
+            {
+              "begriff": "Danach alle Truppen gegen Russland werfen",
+              "zuordnung": "Schlieffen-Plan"
+            },
+            {
+              "begriff": "65 Kilometer Rückzug und Beginn des Stellungskriegs",
+              "zuordnung": "Marne — Wirklichkeit"
+            },
+            {
+              "begriff": "Schneller Sieg ohne langen Krieg",
+              "zuordnung": "Schlieffen-Plan"
+            }
+          ],
+          "loesung": {
+            "Frankreich in 40 Tagen besiegen": "Schlieffen-Plan",
+            "Französische Gegenoffensive stoppt den Vormarsch": "Marne — Wirklichkeit",
+            "Danach alle Truppen gegen Russland werfen": "Schlieffen-Plan",
+            "65 Kilometer Rückzug und Beginn des Stellungskriegs": "Marne — Wirklichkeit",
+            "Schneller Sieg ohne langen Krieg": "Schlieffen-Plan"
+          },
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Vergleiche die [[mat-4-2|Karte des Schlieffen-Plans]] (M2) mit der [[mat-4-4|Karte der Marne-Schlacht]] (M4). Was zeigt der Plan — und was zeigt die Wirklichkeit?"
+            },
+            {
+              "stufe": 2,
+              "text": "„Frankreich in 40 Tagen besiegen“ und „danach alle Truppen gegen Russland“ gehören zum Schlieffen-Plan — beides war geplant, nicht eingetreten."
+            },
+            {
+              "stufe": 3,
+              "text": "Schlieffen-Plan: Frankreich in 40 Tagen besiegen, danach Russland angreifen, schneller Sieg. Marne — Wirklichkeit: Französische Gegenoffensive stoppte den Vormarsch, 65 km Rückzug und Stellungskrieg. Der Plan scheiterte an der Marne — statt eines schnellen Sieges folgten vier Jahre Schützengräben."
+            }
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-4-5",
+          "typ": "multiple-choice",
+          "frage": "Was zeigt das Foto über das Scheitern des Schlieffen-Plans?",
+          "material_referenz": [
+            "mat-4-5"
+          ],
+          "optionen": [
+            "Die Soldaten bereiten sich auf einen neuen Angriff vor.",
+            "Der schnelle Sieg ist gelungen — die Soldaten bauen ein Lager.",
+            "Statt eines schnellen Sieges begann ein jahrelanger Stellungskrieg.",
+            "Die Schützengräben dienten nur als kurze Pause zwischen zwei Angriffen."
+          ],
+          "loesung": "Statt eines schnellen Sieges begann ein jahrelanger Stellungskrieg.",
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Schau dir das [[mat-4-5|Foto aus dem Schützengraben]] (M5) genau an. Was bauen die Soldaten — und was sagt das über die Dauer des Krieges?"
+            },
+            {
+              "stufe": 2,
+              "text": "Ein Lager oder eine kurze Pause sieht anders aus. Die Soldaten bauen Stacheldrahtverhaue — das ist eine dauerhafte Befestigung."
+            },
+            {
+              "stufe": 3,
+              "text": "Statt eines schnellen Sieges begann ein jahrelanger Stellungskrieg. Das Foto zeigt Soldaten, die Schützengräben mit Stacheldraht befestigen — ein Zeichen dafür, dass beide Seiten sich eingegraben haben. Der Schlieffen-Plan, der einen Sieg in 40 Tagen versprach, war gescheitert."
+            }
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-4-6",
+          "typ": "reihenfolge",
+          "frage": "Ordne den Weg vom Schlieffen-Plan bis zum Stellungskrieg.",
+          "material_referenz": [
+            "mat-4-1",
+            "mat-4-2",
+            "mat-4-3",
+            "mat-4-4",
+            "mat-4-5"
+          ],
+          "optionen": [
+            "An der Marne stoppen französische Truppen den deutschen Vormarsch.",
+            "Deutschland entwickelt den Schlieffen-Plan gegen den Zweifrontenkrieg.",
+            "Beide Seiten graben sich in Schützengräben ein — der Stellungskrieg beginnt.",
+            "Deutsche Truppen marschieren durch Belgien Richtung Paris.",
+            "Die deutsche Armee muss 65 Kilometer zurückweichen."
+          ],
+          "loesung": [
+            "Deutschland entwickelt den Schlieffen-Plan gegen den Zweifrontenkrieg.",
+            "Deutsche Truppen marschieren durch Belgien Richtung Paris.",
+            "An der Marne stoppen französische Truppen den deutschen Vormarsch.",
+            "Die deutsche Armee muss 65 Kilometer zurückweichen.",
+            "Beide Seiten graben sich in Schützengräben ein — der Stellungskrieg beginnt."
+          ],
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Denke an die Reihenfolge der Materialien: Vom [[mat-4-1|Text über den Schlieffen-Plan]] (M1) bis zum [[mat-4-5|Schützengraben-Foto]] (M5). Das erste Ereignis ist die Planung."
+            },
+            {
+              "stufe": 2,
+              "text": "Am Anfang steht der Schlieffen-Plan. Am Ende steht der Stellungskrieg. Dazwischen liegen der Einmarsch, die Marne-Schlacht und der Rückzug."
+            },
+            {
+              "stufe": 3,
+              "text": "Schlieffen-Plan → Einmarsch durch Belgien → Marne stoppt Vormarsch → 65 km Rückzug → Stellungskrieg. Jeder Schritt folgt kausal aus dem vorherigen: Der Plan führte zum Einmarsch, der Einmarsch scheiterte an der Marne, das Scheitern führte zum Rückzug, und der Rückzug mündete im Stellungskrieg."
+            }
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-4-7",
+          "typ": "freitext-code",
+          "frage": "Warum musste der Plan für einen schnellen Sieg scheitern?",
+          "material_referenz": [
+            "mat-4-1",
+            "mat-4-2",
+            "mat-4-3",
+            "mat-4-4",
+            "mat-4-5"
+          ],
+          "loesung": [
+            "Schlieffen-Plan",
+            "Stellungskrieg"
+          ],
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Denke an alle Materialien zurück: Vom [[mat-4-1|Text über den Schlieffen-Plan]] (M1) bis zum [[mat-4-5|Schützengraben-Foto]] (M5). Welche Annahmen steckten hinter dem Plan — und was lief anders?"
+            },
+            {
+              "stufe": 2,
+              "text": "Der Plan rechnete mit Russlands langsamer Mobilmachung und einem Sieg in 40 Tagen. Denke an Friedrichs Tagebuch: Was machte den Vormarsch langsamer als geplant? Und was geschah an der Marne?"
+            },
+            {
+              "stufe": 3,
+              "text": "Musterantwort: Der Schlieffen-Plan sollte Frankreich in 40 Tagen über Belgien besiegen, bevor Russland angreifen kann. Doch die Soldaten waren nach 250 Kilometern Marsch erschöpft und ohne Nachschub. An der Marne stoppte eine französische Gegenoffensive den Vormarsch — die Deutschen mussten 65 Kilometer zurückweichen. Statt eines schnellen Sieges begann ein vierjähriger Stellungskrieg. Der Plan scheiterte, weil er die Erschöpfung der Soldaten und die Stärke des Gegners unterschätzte."
+            }
+          ],
+          "punkte": 10,
+          "_meta": {
+            "teilfragen": [
+              "Welche Annahmen steckten hinter dem Schlieffen-Plan?",
+              "Warum gingen diese Annahmen nicht auf?"
+            ],
+            "erwartete_begriffe": [
+              "Schlieffen-Plan",
+              "Zweifrontenkrieg",
+              "Marne",
+              "Stellungskrieg",
+              "Mobilmachung"
+            ],
+            "validierung_schwelle": 2,
+            "musterantwort": "Der Schlieffen-Plan beruhte auf der Annahme, Frankreich in 40 Tagen über Belgien besiegen zu können, bevor Russland angreifen kann. Doch die Soldaten waren nach 250 Kilometern Marsch erschöpft und ohne Nachschub. An der Marne stoppte eine französische Gegenoffensive den Vormarsch — die deutschen Truppen mussten 65 Kilometer zurückweichen. Statt eines schnellen Sieges begann ein vierjähriger Stellungskrieg in Schützengräben. Der Plan scheiterte, weil er die menschlichen Grenzen der Soldaten und die Stärke des Gegners unterschätzte."
+          }
+        }
+      ],
+      "sicherung": {
+        "hefteintrag": {
+          "stundenfrage": "Warum scheiterte der Plan für einen schnellen Sieg?",
+          "ordnungsmuster": "sequenziell",
+          "scpl": {
+            "situation": {
+              "kontextsatz": "August 1914: Deutschland steht im Krieg gegen Frankreich und Russland gleichzeitig.",
+              "fachbegriffe": [
+                "Zweifrontenkrieg"
+              ]
+            },
+            "complication": [
+              {
+                "schritt": "Schlieffen-Plan: Erst Frankreich in 40 Tagen besiegen, dann Russland angreifen.",
+                "fachbegriff": "Schlieffen-Plan",
+                "darstellung": null
+              },
+              {
+                "schritt": "August 1914: Deutsche Truppen marschieren durch Belgien bis 40 Kilometer vor Paris.",
+                "fachbegriff": "",
+                "darstellung": null
+              },
+              {
+                "schritt": "September 1914: An der Marne stoppen französische und britische Truppen den Vormarsch — 65 Kilometer Rückzug.",
+                "fachbegriff": "Schlacht an der Marne",
+                "darstellung": null
+              }
+            ],
+            "problem": {
+              "satz": "Der Schlieffen-Plan ist gescheitert — statt eines schnellen Sieges beginnt der Stellungskrieg.",
+              "fachbegriff": "Stellungskrieg"
+            },
+            "loesung": [
+              "Der Schlieffen-Plan sollte den Zweifrontenkrieg lösen, indem Frankreich in 40 Tagen besiegt wird — bevor Russland bereit ist.",
+              "Die Schlacht an der Marne stoppte den deutschen Vormarsch — der Plan war gescheitert.",
+              "Statt eines schnellen Sieges begann der Stellungskrieg: vier Jahre Schützengräben von der Nordsee bis zur Schweiz."
+            ]
+          },
+          "knoten": [
+            {
+              "id": "k4-1",
+              "text": "Schlieffen-Plan",
+              "typ": "kernbegriff",
+              "merksatz": "Deutschlands Plan, Frankreich in 40 Tagen zu besiegen, bevor Russland angreifen kann."
+            },
+            {
+              "id": "k4-2",
+              "text": "Zweifrontenkrieg",
+              "typ": "kernbegriff",
+              "merksatz": "Krieg an zwei Seiten gleichzeitig — gegen Frankreich im Westen und Russland im Osten."
+            },
+            {
+              "id": "k4-3",
+              "text": "Zeitlücke: Russland mobilisiert langsam",
+              "typ": "ursache"
+            },
+            {
+              "id": "k4-4",
+              "text": "Einmarsch über Belgien",
+              "typ": "ereignis"
+            },
+            {
+              "id": "k4-5",
+              "text": "Schlacht an der Marne (Sept. 1914)",
+              "typ": "ereignis"
+            },
+            {
+              "id": "k4-6",
+              "text": "Stellungskrieg",
+              "typ": "wirkung",
+              "merksatz": "Beide Seiten graben sich in Schützengräben ein und kämpfen jahrelang um wenige Meter."
+            }
+          ],
+          "verbindungen": [
+            {
+              "von": "k4-2",
+              "nach": "k4-1",
+              "label": "Antwort auf",
+              "typ": "kausal"
+            },
+            {
+              "von": "k4-3",
+              "nach": "k4-1",
+              "label": "Grundannahme",
+              "typ": "kausal"
+            },
+            {
+              "von": "k4-1",
+              "nach": "k4-4",
+              "label": "sieht vor",
+              "typ": "temporal"
+            },
+            {
+              "von": "k4-4",
+              "nach": "k4-5",
+              "label": "scheitert an",
+              "typ": "kausal"
+            },
+            {
+              "von": "k4-5",
+              "nach": "k4-6",
+              "label": "führt zu",
+              "typ": "kausal"
+            }
+          ],
+          "voraussetzungen": [
+            "k3-1"
+          ]
+        },
+        "hefteintrag_verweis": "Übertrage das Tafelbild in dein Heft. Die Stundenfrage lautet: Warum scheiterte der Plan für einen schnellen Sieg?",
+        "reflexionsimpuls": "Warum gehen Pläne manchmal schief, obwohl sie auf dem Papier logisch klingen?",
+        "zusammenfassung": "Ihr habt untersucht, wie Deutschland mit dem Schlieffen-Plan den Zweifrontenkrieg lösen wollte. Eine Karte zeigte den Angriffsweg durch Belgien, und ein Soldat beschrieb, wie Erschöpfung den Vormarsch bremste. An der Marne stoppte die Gegenoffensive den Plan endgültig.",
+        "ueberleitung": "Vom Pulverfass Europa bis zum Stellungskrieg habt ihr untersucht, warum aus einer Krise ein vierjähriger Weltkrieg wurde. Die Frage bleibt: Warum gehen Pläne manchmal schief, obwohl sie auf dem Papier logisch klingen?"
+      }
     }
   ]
 }

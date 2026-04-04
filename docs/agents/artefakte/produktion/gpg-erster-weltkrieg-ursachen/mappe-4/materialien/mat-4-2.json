@@ -1,0 +1,43 @@
+{
+  "id": "mat-4-2",
+  "typ": "bildquelle",
+  "titel": "Welchen Weg plante die deutsche Armee durch Europa?",
+  "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-4-1.svg",
+  "bildunterschrift": "Karte des Schlieffen-Plans, 1905: Geplante Angriffspfeile der deutschen Armee durch Belgien nach Frankreich. Die Karte zeigt, warum Deutschland das neutrale Belgien angreifen wollte \u2014 um die befestigte deutsch-franz\u00f6sische Grenze zu umgehen.",
+  "quelle": "Wikimedia Commons",
+  "lizenz": "Public Domain",
+  "position": 2,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": ["mat-4-1"],
+  "ueberleitung_von": null,
+  "sequenz_kontext": {
+    "vorher": {
+      "id": "mat-4-1",
+      "typ": "darstellungstext",
+      "kerninhalt": "Erkl\u00e4rt Zweifrontenkrieg als Problem und Schlieffen-Plan als Strategie mit Zeitl\u00fccke."
+    },
+    "nachher": {
+      "id": "mat-4-3",
+      "typ": "tagebuch",
+      "kerninhalt": "Personifiziert den Vormarsch: Siegeszuversicht, dann Ersch\u00f6pfung und Nachschubprobleme."
+    }
+  },
+  "_meta": {
+    "artefakt_ref": "img-4-1",
+    "wikimedia_dateiname": "File:Schlieffen_Plan.svg",
+    "thumbnail_breite": 800,
+    "download_url": "https://commons.wikimedia.org/w/api.php?action=query&titles=File:Schlieffen_Plan.svg&prop=imageinfo&iiprop=url&iiurlwidth=800&format=json",
+    "lokaler_pfad": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-4-1.svg",
+    "url_verifiziert": false,
+    "bildtyp": "karte",
+    "kartentyp": "historisch",
+    "legende": {
+      "rote Pfeile": "Geplanter deutscher Vormarsch durch Belgien",
+      "blaue Pfeile": "Franz\u00f6sischer Plan XVII (Gegenoffensive)"
+    },
+    "erschliessungsimpuls": "\u00dcber welche L\u00e4nder f\u00fchrt der geplante Angriffsweg \u2014 und warum w\u00e4hlt die Armee diesen Umweg?",
+    "tafelbild_knoten_abgedeckt": ["k4-1", "k4-4"],
+    "lizenz_kompatibel": true,
+    "erarbeitbarkeits_check": "PASS \u2014 k4-1: Schlieffen-Plan als geographische Strategie visuell nachvollziehbar (Angriffspfeile durch Belgien). k4-4: Einmarschweg \u00fcber Belgien direkt aus Karte ablesbar."
+  }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Der Schlieffen-Plan – Sonderausgabe 4</title>
+  <link rel="stylesheet" href="../../assets/css/base.css?v=3.9">
+  <link rel="stylesheet" href="../../assets/css/themes/theme-gpg.css?v=3.9">
+</head>
+<body>
+
+  <header>
+    <h1 class="mappe__titel">Sonderausgabe 4: Der Schlieffen-Plan</h1>
+    <div class="header__meta">
+      <span class="mappe__beschreibung">Warum der deutsche Plan für einen schnellen Sieg scheiterte: vom Zweifrontenkrieg über den Einmarsch in Belgien und die Schlacht an der Marne bis zum Beginn des Stellungskriegs.</span>
+    </div>
+  </header>
+
+  <main class="mappe">
+    <!-- Fortschritt (v3.5: Legacy-Balken hidden, Dots werden in JS erzeugt) -->
+    <div class="mappe__header" style="display:none;">
+      <div class="fortschritt" aria-label="Fortschritt in dieser Mappe">
+        <div class="fortschritt__label" id="fortschritt-label">0 von ? Aufgaben gelöst (0%)</div>
+        <div class="fortschritt__track">
+          <div class="fortschritt__bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 1: Einstieg (dynamisch) -->
+    <section class="mappe__einstieg" id="einstieg-container"></section>
+
+    <!-- Phase 2: Erarbeitung (Material + Aufgaben) -->
+    <section class="mappe__erarbeitung" id="erarbeitung-container">
+      <div class="erarbeitung__materialien" id="material-container"></div>
+      <div class="erarbeitung__aufgaben" id="aufgaben-container">
+        <p class="text-center">Aufgaben werden geladen...</p>
+      </div>
+    </section>
+
+    <!-- Phase 3: Sicherung (dynamisch, initial hidden) -->
+    <section class="mappe__sicherung" id="sicherung-container" style="display:none;"></section>
+
+    <!-- Navigation -->
+    <nav class="mappe__navigation" aria-label="Mappe-Navigation">
+      <a href="index.html" class="mappe__nav-btn" aria-label="Zurück zur Übersicht">
+        ← Übersicht
+      </a>
+      <span id="nav-mappe-info">Mappe 4 von 4</span>
+      <a href="index.html" class="mappe__nav-btn" id="nav-weiter" aria-label="Zurück zur Übersicht">
+        Übersicht →
+      </a>
+    </nav>
+  </main>
+
+  <footer>
+    <p>
+      <a href="index.html">← Zurück zur Übersicht</a> |
+      <a href="lehrkraft.html">🔑 Lehrkraft-Zugang</a>
+    </p>
+  </footer>
+
+  <script src="../../assets/js/core.js?v=3.9"></script>
+  <script src="../../assets/js/escape-engine.js?v=3.9"></script>
+  <script>
+    (function () {
+      'use strict';
+
+      var mappeId = 'mappe-4';
+
+      // Navigations-Info
+      var navInfo = document.getElementById('nav-mappe-info');
+      if (navInfo) {
+        navInfo.textContent = 'Mappe 4 von 4';
+      }
+
+      // Letzte Mappe: Weiter-Link zeigt zur Uebersicht
+      var navWeiter = document.getElementById('nav-weiter');
+      if (navWeiter) {
+        navWeiter.href = 'index.html';
+      }
+
+      // EscapeEngine initialisieren
+      EscapeEngine.init(mappeId);
+    })();
+  </script>
+
+</body>
+</html>

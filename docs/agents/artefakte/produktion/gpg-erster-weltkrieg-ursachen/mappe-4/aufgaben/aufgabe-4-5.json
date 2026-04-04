@@ -1,0 +1,19 @@
+{
+  "id": "aufgabe-4-5",
+  "typ": "multiple-choice",
+  "frage": "Was zeigt das Foto über das Scheitern des Schlieffen-Plans?",
+  "material_referenz": ["mat-4-5"],
+  "optionen": [
+    "Die Soldaten bereiten sich auf einen neuen Angriff vor.",
+    "Der schnelle Sieg ist gelungen — die Soldaten bauen ein Lager.",
+    "Statt eines schnellen Sieges begann ein jahrelanger Stellungskrieg.",
+    "Die Schützengräben dienten nur als kurze Pause zwischen zwei Angriffen."
+  ],
+  "loesung": "Statt eines schnellen Sieges begann ein jahrelanger Stellungskrieg.",
+  "tipps": [
+    { "stufe": 1, "text": "Schau dir das [[mat-4-5|Foto aus dem Schützengraben]] (M5) genau an. Was bauen die Soldaten — und was sagt das über die Dauer des Krieges?" },
+    { "stufe": 2, "text": "Ein Lager oder eine kurze Pause sieht anders aus. Die Soldaten bauen Stacheldrahtverhaue — das ist eine dauerhafte Befestigung." },
+    { "stufe": 3, "text": "Statt eines schnellen Sieges begann ein jahrelanger Stellungskrieg. Das Foto zeigt Soldaten, die Schützengräben mit Stacheldraht befestigen — ein Zeichen dafür, dass beide Seiten sich eingegraben haben. Der Schlieffen-Plan, der einen Sieg in 40 Tagen versprach, war gescheitert." }
+  ],
+  "punkte": 10
+}

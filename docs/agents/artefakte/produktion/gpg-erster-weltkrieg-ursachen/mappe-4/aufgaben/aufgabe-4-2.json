@@ -1,0 +1,19 @@
+{
+  "id": "aufgabe-4-2",
+  "typ": "multiple-choice",
+  "frage": "Warum plante Deutschland den Angriff über Belgien?",
+  "material_referenz": ["mat-4-2"],
+  "optionen": [
+    "Belgien war mit Deutschland verbündet.",
+    "Der Weg über Belgien war der kürzeste nach Paris.",
+    "Die deutsch-französische Grenze war stark befestigt.",
+    "Deutschland wollte zuerst Russland angreifen."
+  ],
+  "loesung": "Die deutsch-französische Grenze war stark befestigt.",
+  "tipps": [
+    { "stufe": 1, "text": "Schau dir die [[mat-4-2|Karte des Schlieffen-Plans]] (M2) genau an. Die Bildunterschrift erklärt, warum der Angriff nicht direkt über die Grenze erfolgte." },
+    { "stufe": 2, "text": "Belgien war nicht mit Deutschland verbündet — es war ein neutrales Land. Und der Schlieffen-Plan sah vor, zuerst Frankreich anzugreifen, nicht Russland." },
+    { "stufe": 3, "text": "Die deutsch-französische Grenze war stark befestigt. Deshalb plante General Schlieffen den Umweg über das neutrale Belgien, um die französischen Verteidigungslinien zu umgehen." }
+  ],
+  "punkte": 10
+}

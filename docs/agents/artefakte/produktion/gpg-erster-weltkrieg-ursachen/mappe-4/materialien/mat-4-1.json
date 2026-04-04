@@ -1,0 +1,25 @@
+{
+  "id": "mat-4-1",
+  "typ": "darstellungstext",
+  "titel": "Wie wollte Deutschland den Krieg an zwei Fronten gewinnen?",
+  "inhalt": "<p>Deutschland liegt auf der Landkarte zwischen zwei Feinden: Im Westen Frankreich, im Osten Russland. Ein Krieg an beiden Grenzen gleichzeitig \u2014 ein <strong>Zweifrontenkrieg</strong> (Krieg an zwei Fronten) \u2014 gilt als nicht gewinnbar. Schon Jahre vor 1914 sucht die Armeef\u00fchrung nach einer L\u00f6sung.</p><p>General Schlieffen entwickelt den <strong>Schlieffen-Plan</strong> (eine Kriegsstrategie gegen Frankreich). Die Idee: Zuerst Frankreich besiegen, dann Russland. Der Angriff soll nicht \u00fcber die stark befestigte Grenze f\u00fchren, sondern durch das neutrale Belgien. &bdquo;Macht mir den rechten Fl\u00fcgel stark!&ldquo; \u2014 so lautet Schlieffens ber\u00fchmter Befehl. In nur 40 Tagen soll Frankreich fallen.</p><p>Der Plan beruht auf einer Annahme: Russland ist riesig und hat schlechte Stra\u00dfen. Die <strong>Mobilmachung</strong> (die Vorbereitung der Armee f\u00fcr den Krieg) dauert dort l\u00e4nger als in Frankreich. Diese Zeitl\u00fccke will Deutschland nutzen \u2014 erst den Westen erledigen, dann alle Kr\u00e4fte nach Osten werfen. Doch ob der Plan aufgeht, wird sich erst im Ernstfall zeigen.</p><cite>Eigene Darstellung auf Basis der Sachanalyse</cite>",
+  "quelle": "Eigene Darstellung. Quellen: Wikipedia \u2014 Schlieffen Plan, First Battle of the Marne",
+  "position": 1,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": [],
+  "ueberleitung_von": null,
+  "sequenz_kontext": {
+    "vorher": null,
+    "nachher": {
+      "id": "mat-4-2",
+      "typ": "karte",
+      "kerninhalt": "Visualisiert den Schlieffen-Plan: Angriffspfeile durch Belgien nach Frankreich."
+    }
+  },
+  "_meta": {
+    "wortanzahl": 150,
+    "fachbegriffe_eingefuehrt": ["Zweifrontenkrieg", "Schlieffen-Plan", "Mobilmachung"],
+    "tafelbild_knoten_abgedeckt": ["k4-1", "k4-2", "k4-3"],
+    "erarbeitbarkeits_check": "PASS \u2014 k4-2: Zweifrontenkrieg explizit eingef\u00fchrt und erkl\u00e4rt. k4-1: Schlieffen-Plan als Strategie mit 40-Tage-Kalk\u00fcl. k4-3: Zeitl\u00fccke durch Russlands langsame Mobilmachung erkl\u00e4rt."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "aufgabe-4-7",
+  "typ": "freitext-code",
+  "frage": "Warum musste der Plan für einen schnellen Sieg scheitern?",
+  "material_referenz": ["mat-4-1", "mat-4-2", "mat-4-3", "mat-4-4", "mat-4-5"],
+  "loesung": ["Schlieffen-Plan", "Stellungskrieg"],
+  "tipps": [
+    { "stufe": 1, "text": "Denke an alle Materialien zurück: Vom [[mat-4-1|Text über den Schlieffen-Plan]] (M1) bis zum [[mat-4-5|Schützengraben-Foto]] (M5). Welche Annahmen steckten hinter dem Plan — und was lief anders?" },
+    { "stufe": 2, "text": "Der Plan rechnete mit Russlands langsamer Mobilmachung und einem Sieg in 40 Tagen. Denke an Friedrichs Tagebuch: Was machte den Vormarsch langsamer als geplant? Und was geschah an der Marne?" },
+    { "stufe": 3, "text": "Musterantwort: Der Schlieffen-Plan sollte Frankreich in 40 Tagen über Belgien besiegen, bevor Russland angreifen kann. Doch die Soldaten waren nach 250 Kilometern Marsch erschöpft und ohne Nachschub. An der Marne stoppte eine französische Gegenoffensive den Vormarsch — die Deutschen mussten 65 Kilometer zurückweichen. Statt eines schnellen Sieges begann ein vierjähriger Stellungskrieg. Der Plan scheiterte, weil er die Erschöpfung der Soldaten und die Stärke des Gegners unterschätzte." }
+  ],
+  "punkte": 10,
+  "_meta": {
+    "teilfragen": [
+      "Welche Annahmen steckten hinter dem Schlieffen-Plan?",
+      "Warum gingen diese Annahmen nicht auf?"
+    ],
+    "erwartete_begriffe": ["Schlieffen-Plan", "Zweifrontenkrieg", "Marne", "Stellungskrieg", "Mobilmachung"],
+    "validierung_schwelle": 2,
+    "musterantwort": "Der Schlieffen-Plan beruhte auf der Annahme, Frankreich in 40 Tagen über Belgien besiegen zu können, bevor Russland angreifen kann. Doch die Soldaten waren nach 250 Kilometern Marsch erschöpft und ohne Nachschub. An der Marne stoppte eine französische Gegenoffensive den Vormarsch — die deutschen Truppen mussten 65 Kilometer zurückweichen. Statt eines schnellen Sieges begann ein vierjähriger Stellungskrieg in Schützengräben. Der Plan scheiterte, weil er die menschlichen Grenzen der Soldaten und die Stärke des Gegners unterschätzte."
+  }
+}

@@ -40,15 +40,15 @@
 | D5 | 2.1-5 | Material 5 | DONE | M1-M12 + BQ PASS (0 FAIL, 0 WARN) | BQ (nativ), img-4-3 IWM Q53490, BU 29 W. TB: k4-6. Sicherung + Kernerkenntnisse. Public Domain. Keine Nachbesserung. SQ-1 bis SQ-4 PASS. |
 | D6 | 2.1c | Material-Cross + Ueberleitungen + Hefteintrag-Revision | DONE | §7.4 PASS (0 FAIL, 0 WARN) | Achsen 1-4 PASS. 4 Ueberleitungen produziert (UE-1..5 PASS). HE-Revision: 0 SCPL-Patches (bereits kongruent), zusammenfassung+ueberleitung NEU. Stufe-2 (G3/G5/G10/G12/G14) 5/5 PASS. HE1-HE18 17/17 PASS. |
 | D7 | 2.2a | AGENT_RAETSEL: Progressionsplan | DONE | — | 7 Aufgaben (5+1+1). 5 Typen (LT, MC×2, RF×2, ZU, FT). AFB I→I→I-II→II→II→II→III monoton. Alle 6 TB-Knoten + alle 5 Materialien abgedeckt. SCPL S/C1/C2/C3/P/L alle mit min. 1 Aufgabe. MC×2 begr. (Fakten vs. Transfer), RF×2 begr. (Mikro vs. Makro). Freischalt-Code: MARNE (aus meta.json). |
-| D8 | 2.2b-1 | Aufgabe 1 (LT, AFB I, mat-4-1) | OFFEN | A1-A18 + LT | |
-| D9 | 2.2b-2 | Aufgabe 2 (MC, AFB I, mat-4-2) | OFFEN | A1-A18 + MC | |
-| D10 | 2.2b-3 | Aufgabe 3 (RF, AFB I-II, mat-4-3) | OFFEN | A1-A18 + RF | |
-| D11 | 2.2b-4 | Aufgabe 4 (ZU, AFB II, mat-4-4) | OFFEN | A1-A18 + ZU | |
-| D12 | 2.2b-5 | Aufgabe 5 (MC, AFB II, mat-4-5) | OFFEN | A1-A18 + MC | |
-| D12b | 2.2b-6 | Aufgabe 6 (RF, AFB II, alle) | OFFEN | A1-A18 + RF | |
-| D12c | 2.2b-7 | Aufgabe 7 (FT, AFB III, alle) | OFFEN | A1-A18 + FT | |
-| D13 | 2.2c | Cross-Konsistenz (Orchestrator-Q-Gate) | OFFEN | §7.5 | |
-| D14 | 3 | Assembly + HTML + Commit | OFFEN | JSON-valid | |
+| D8 | 2.2b-1 | Aufgabe 1 (LT, AFB I, mat-4-1) | DONE | A1-A18 + LT PASS (0 FAIL, 0 WARN) | 3 Luecken (Zweifrontenkrieg, Schlieffen-Plan, Mobilmachung). Distraktor: Stellungskrieg. Antwortpool N+1=4. Keine Nachbesserung. |
+| D9 | 2.2b-2 | Aufgabe 2 (MC, AFB I, mat-4-2) | DONE | A1-A18 + MC PASS (0 FAIL, 0 WARN) | Fakten-MC: Angriff ueber Belgien wg. befestigter Grenze. 3 Distraktoren Rang 1-2. Keine Nachbesserung. |
+| D10 | 2.2b-3 | Aufgabe 3 (RF, AFB I-II, mat-4-3) | DONE | A1-A18 + RF PASS (0 FAIL, 0 WARN) | 4 Elemente (Stolz→Belgien→Nachschub→Zweifel). Chronologie aus Tagebuch eindeutig. Keine Nachbesserung. |
+| D11 | 2.2b-4 | Aufgabe 4 (ZU, AFB II, mat-4-4) | DONE | A1-A18 + ZU PASS (0 FAIL, 0 WARN) | 5 Elemente, 2 Pole (Schlieffen-Plan 3 / Marne 2). Trennschaerfe eindeutig. Keine Nachbesserung. |
+| D12 | 2.2b-5 | Aufgabe 5 (MC, AFB II, mat-4-5) | DONE | A1-A18 + MC PASS (0 FAIL, 0 WARN) | Transfer-MC: Foto→Stellungskrieg. 3 Distraktoren Rang 1-2. Keine Nachbesserung. |
+| D12b | 2.2b-6 | Aufgabe 6 (RF, AFB II, alle) | DONE | A1-A18 + RF PASS (0 FAIL, 0 WARN) | 5 Elemente Makro-Kausalsequenz (Plan→Belgien→Marne→Rueckzug→Stellungskrieg). Keine Nachbesserung. |
+| D12c | 2.2b-7 | Aufgabe 7 (FT, AFB III, alle) | DONE | A1-A18 + FT PASS (0 FAIL, 0 WARN) | Stundenfrage als Freitext. 2 Keywords (Schlieffen-Plan, Stellungskrieg). 2 Teilfragen. 5 erwartete Begriffe. Keine Nachbesserung. |
+| D13 | 2.2c | Cross-Konsistenz (Orchestrator-Q-Gate) | DONE | §7.5 PASS (0 FAIL, 0 WARN) | 10 Kriterien geprueft. 5 Typen, AFB I→III monoton, 6/6 TB-Knoten, 6/6 SCPL-Zonen, 5/5 Materialien, MQ3/MQ3b 7/7, Freischalt-Code MARNE. 70 Punkte gesamt. |
+| D14 | 3 | Assembly + HTML + Commit | DONE | JSON-valid PASS (11/11 checks) | 2 JSON-Fixes (typogr. Anf.zeichen aufgabe-4-1, aufgabe-4-4). 3 Bilder DL (SVG 278KB, JPG 131KB, JPG 107KB). data.json 118KB, 4 Mappen. mappe-4.html aus Template. Engine-Patch bereits vorhanden. |
 | D15 | 4 | Browser-Validierung | OFFEN | B1-B10 0 repeat | |
 
 **Aktualisierungsregel:** Nach jedem Dispatch: Status auf DONE/FAIL setzen, Q-Gate-Ergebnis eintragen, Metriken-Notiz mit Auffaelligkeiten fuellen.
@@ -258,12 +258,12 @@ Prueft:
 
 | Metrik | Mappe 3 (Baseline) | Mappe 4 (C2) | Delta |
 |---|---|---|---|
-| Materialien: Anzahl | 5 | | |
-| Materialien: Q-Gate PASS-Rate (1. Durchlauf) | 5/5 (100%) | | |
-| Aufgaben: Anzahl | 7 (dann 5 nach B2) | 7 | |
-| Aufgaben: Q-Gate PASS-Rate (1. Durchlauf) | — (v1 nicht vergleichbar) | | |
-| Aufgaben: Nachbesserungen | 4/5 (D2-D6) | | |
-| Cross-Konsistenz: FAILs | 0 | | |
+| Materialien: Anzahl | 5 | 5 | 0 |
+| Materialien: Q-Gate PASS-Rate (1. Durchlauf) | 5/5 (100%) | 5/5 (100%) | 0 |
+| Aufgaben: Anzahl | 7 (dann 5 nach B2) | 7 | 0 |
+| Aufgaben: Q-Gate PASS-Rate (1. Durchlauf) | — (v1 nicht vergleichbar) | 7/7 (100%) | — |
+| Aufgaben: Nachbesserungen | 4/5 (D2-D6) | 0/7 | -4 |
+| Cross-Konsistenz: FAILs | 0 | 0 | 0 |
 | Browser-Findings: Wiederkehrend (B1-B10) | 7 von 10 | | |
 | Browser-Findings: Neu | — | | |
 | Gesamtdauer (Dispatches) | ~16h (8+9) | | |

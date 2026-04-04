@@ -684,3 +684,211 @@ Keine. 0 FAIL, 0 WARN.
 - ueberleitungen.json (NEU)
 - rahmen/sicherung.json (AKTUALISIERT: zusammenfassung + ueberleitung)
 - rahmen/hefteintrag.json (UNVERAENDERT)
+
+---
+
+## D7: Progressionsplan (Phase 2.2a)
+
+**Datum:** 2026-04-04
+**Artefakt:** PROGRESSIONSPLAN_Mappe4.md
+**Agent:** AGENT_RAETSEL (Orchestrator)
+
+Kein formales Q-Gate fuer Progressionsplan. Orchestrator-interne Validierung:
+
+| Pruefung | Ergebnis | Detail |
+|----------|----------|--------|
+| Aufgabenzahl-Ableitung | 7 | basis=5, knoten_faktor=1 (6>5), material_faktor=1 (5>4) |
+| AFB-Progression | PASS | I→I→I-II→II→II→II→III monoton steigend |
+| Typvielfalt (A10v2) | PASS | 5 Typen: LT, MC, RF, ZU, FT. MC×2 begr. (Fakten/Transfer), RF×2 begr. (Mikro/Makro) |
+| SCPL-Zonen-Abdeckung (A17) | PASS | S(1), C1(1), C2(1), C3(1), P(1), L(2) — alle abgedeckt |
+| TB-Knoten-Vollabdeckung (A9) | PASS | k4-1 bis k4-6 je min. 1× getestet |
+| Material-Aktivierung (A18) | PASS | mat-4-1 bis mat-4-5 je 1× als Primaerquelle |
+| Sachbezogen→Wertbezogen (A12) | PASS | S/C (Pos 1-4) sachbezogen → P/L (Pos 5-7) analytisch/wertbezogen |
+| Erarbeitbarkeits-Gegenpruefung (B8) | PASS | Alle 7 Typ-Material-Kombinationen geprueft und begruendet |
+| Freischalt-Code | MARNE | 5 Buchstaben, A-Z, thematisch passend (bereits in meta.json) |
+
+---
+
+## D8: Aufgabe 1 — Lueckentext (Phase 2.2b-1)
+
+**Datum:** 2026-04-04
+**Artefakt:** aufgaben/aufgabe-4-1.json
+**Typ:** lueckentext | AFB: I | Material: mat-4-1 (M1) | TB-Knoten: k4-2, k4-1, k4-3
+
+| Kriterium | Ergebnis | Detail |
+|-----------|----------|--------|
+| A1 AFB-Kongruenz | PASS | Fachbegriff-Luecken = AFB I Recall. Kongruent mit Progressionsplan. |
+| A2 Fragestamm-Klarheit | PASS | „Ergaenze die fehlenden Fachbegriffe." — 5 Woerter, Operator operationalisiert. |
+| A2b Inhaltliche Verankerung (v3.4) | PASS | Generischer Lueckentext-Impuls (erlaubt). Kontext aus text_mit_luecken. |
+| A3 Material-Kongruenz | PASS | Zweifrontenkrieg, Schlieffen-Plan, Mobilmachung — alle 3 in mat-4-1 mit Klammerdefinition. |
+| A4-LT Luecken-Eindeutigkeit | PASS | Zweifrontenkrieg: einziger Fachbegriff fuer Krieg an zwei Fronten. Schlieffen-Plan: Eigenname. Mobilmachung: einziger Begriff fuer Kriegsvorbereitung im Material. |
+| A6 Tipp-Progression | PASS | Stufe 1: Materialverweis + Themenfeld. Stufe 2: 1 Luecke eingegrenzt + Distraktor-Ausschluss. Stufe 3: Alle Loesungen + Erklaerung. |
+| A7 Operator-Praezision | PASS | „Ergaenze" = operationalisiert. |
+| MQ3 Material-Referenz-Verbot | PASS | frage enthaelt kein `[[` und kein `(M`. |
+| MQ3b Display-Referenzen Tipps | PASS | Tipp 1: `[[mat-4-1|Text ueber den Krieg an zwei Fronten]] (M1)`. |
+| Antwortpool (N+1) | PASS | 4 Eintraege: 3 korrekt + Distraktor „Stellungskrieg" (thematisch plausibel, hier falsch). Alphabetisch. |
+| Encoding (v3.3) | PASS | UTF-8 Umlaute, Gedankenstrich —. |
+
+**Gesamt: PASS (0 FAIL, 0 WARN). Keine Nachbesserung.**
+
+---
+
+## D9: Aufgabe 2 — Multiple-Choice (Phase 2.2b-2)
+
+**Datum:** 2026-04-04
+**Artefakt:** aufgaben/aufgabe-4-2.json
+**Typ:** multiple-choice | AFB: I | Material: mat-4-2 (M2) | TB-Knoten: k4-1
+
+| Kriterium | Ergebnis | Detail |
+|-----------|----------|--------|
+| A1 AFB-Kongruenz | PASS | Fakten-MC, AFB I. Antwort direkt aus BU mat-4-2 ableitbar. |
+| A2 Fragestamm-Klarheit | PASS | 8 Woerter, 1 impliziter Operator (erkenne Grund). |
+| A2b Inhaltliche Verankerung (v3.4) | PASS | Konkretes Element: „Deutschland", „Belgien". |
+| A3 Material-Kongruenz | PASS | BU mat-4-2: „befestigte deutsch-franzoesische Grenze zu umgehen". |
+| A4-MC Distractor-Qualitaet | PASS | D1 „Belgien verbuendet" Rang 1 (Fehlvorstellung: war neutral). D2 „kuerzester Weg" Rang 2 (Teilwahrheit). D3 „zuerst Russland" Rang 1 (Reihenfolge-Verwechslung). 3/3 Rang 1-2. |
+| A6 Tipp-Progression | PASS | Stufe 1: Materialverweis. Stufe 2: 2 Distraktoren ausgeschlossen. Stufe 3: Loesung + Erklaerung. |
+| A7 Operator-Praezision | PASS | Implizit „erkenne" via „Warum...?" |
+| MQ3 Material-Referenz-Verbot | PASS | frage enthaelt kein `[[` und kein `(M`. |
+| MQ3b Display-Referenzen Tipps | PASS | Tipp 1: `[[mat-4-2|Karte des Schlieffen-Plans]] (M2)`. |
+| Encoding (v3.3) | PASS | UTF-8 Umlaute, Gedankenstrich —. |
+
+**Gesamt: PASS (0 FAIL, 0 WARN). Keine Nachbesserung.**
+
+---
+
+## D10: Aufgabe 3 — Reihenfolge (Phase 2.2b-3)
+
+**Datum:** 2026-04-04
+**Artefakt:** aufgaben/aufgabe-4-3.json
+**Typ:** reihenfolge | AFB: I-II | Material: mat-4-3 (M3) | TB-Knoten: k4-4
+
+| Kriterium | Ergebnis | Detail |
+|-----------|----------|--------|
+| A1 AFB-Kongruenz | PASS | Mikro-Chronologie aus Tagebuch = AFB I (Recall Reihenfolge) mit II-Anteil (Zusammenhang erkennen). |
+| A2 Fragestamm-Klarheit | PASS | „Bringe Friedrichs Erlebnisse in die richtige Reihenfolge." — Operator + Bezug klar. |
+| A2b Inhaltliche Verankerung (v3.4) | PASS | Konkretes Element: „Friedrichs Erlebnisse" (benannte Figur aus mat-4-3). |
+| A3 Material-Kongruenz | PASS | Alle 4 Elemente direkt aus mat-4-3 Tagebuch ableitbar. Reihenfolge durch Tagebuch-Chronologie eindeutig. |
+| A4-RF Reihenfolge-Eindeutigkeit | PASS | 4 Elemente mit klarer chronologischer Progression: Stolz → Belgien → Nachschub fehlt → Zweifel. |
+| A6 Tipp-Progression | PASS | Stufe 1: Materialverweis. Stufe 2: Erstes + letztes Element. Stufe 3: Vollstaendige Loesung + Begruendung. |
+| A7 Operator-Praezision | PASS | „Bringe ... in die richtige Reihenfolge" = operationalisiert. |
+| MQ3 Material-Referenz-Verbot | PASS | frage enthaelt kein `[[` und kein `(M`. |
+| MQ3b Display-Referenzen Tipps | PASS | Tipp 1: `[[mat-4-3|Friedrichs Tagebuch]] (M3)`. |
+| Encoding (v3.3) | PASS | UTF-8 Umlaute, Gedankenstrich —. |
+
+**Gesamt: PASS (0 FAIL, 0 WARN). Keine Nachbesserung.**
+
+---
+
+## D11: Aufgabe 4 — Zuordnung (Phase 2.2b-4)
+
+**Datum:** 2026-04-04
+**Artefakt:** aufgaben/aufgabe-4-4.json
+**Typ:** zuordnung | AFB: II | Material: mat-4-4 (M4) | TB-Knoten: k4-5
+
+| Kriterium | Ergebnis | Detail |
+|-----------|----------|--------|
+| A1 AFB-Kongruenz | PASS | Plan vs. Wirklichkeit = Analyse (AFB II). Erfordert Kategorisierung, nicht nur Recall. |
+| A2 Fragestamm-Klarheit | PASS | „Was war geplant, was geschah wirklich an der Marne?" — 2 Kategorien benannt. |
+| A2b Inhaltliche Verankerung (v3.4) | PASS | Konkretes Element: „Marne", 2 benannte Kategorien. |
+| A3 Material-Kongruenz | PASS | 5 Elemente aus mat-4-4 (Marne-Karte) + Rueckgriff auf mat-4-1/4-2 (Schlieffen-Plan). Alle Fakten materialbelegbar. |
+| A4-ZU Zuordnungs-Eindeutigkeit | PASS | 5 Elemente, 2 Pole. 3× Schlieffen-Plan (Zukunftsplanung), 2× Marne-Wirklichkeit (eingetretenes Ergebnis). Trennschaerfe eindeutig. |
+| A6 Tipp-Progression | PASS | Stufe 1: 2 Materialverweise (Karte M2 + Karte M4). Stufe 2: 2 Elemente zugeordnet. Stufe 3: Vollstaendige Loesung. |
+| A7 Operator-Praezision | PASS | Implizit „ordne zu" via Aufgabentyp + Fragestellung. |
+| MQ3 Material-Referenz-Verbot | PASS | frage enthaelt kein `[[` und kein `(M`. |
+| MQ3b Display-Referenzen Tipps | PASS | Tipp 1: `[[mat-4-2|Karte des Schlieffen-Plans]] (M2)` + `[[mat-4-4|Karte der Marne-Schlacht]] (M4)`. |
+| Encoding (v3.3) | PASS | UTF-8 Umlaute, Gedankenstrich —. |
+
+**Gesamt: PASS (0 FAIL, 0 WARN). Keine Nachbesserung.**
+
+---
+
+## D12: Aufgabe 5 — Multiple-Choice Transfer (Phase 2.2b-5)
+
+**Datum:** 2026-04-04
+**Artefakt:** aufgaben/aufgabe-4-5.json
+**Typ:** multiple-choice | AFB: II | Material: mat-4-5 (M5) | TB-Knoten: k4-6
+
+| Kriterium | Ergebnis | Detail |
+|-----------|----------|--------|
+| A1 AFB-Kongruenz | PASS | Transfer-MC, AFB II. Foto-Interpretation erfordert Transferleistung (Bild → historischer Kontext). |
+| A2 Fragestamm-Klarheit | PASS | „Was zeigt das Foto ueber das Scheitern des Schlieffen-Plans?" — Operator implizit (erschliesse), Bezug klar. |
+| A2b Inhaltliche Verankerung (v3.4) | PASS | Konkretes Element: „das Foto", „Schlieffen-Plan". |
+| A3 Material-Kongruenz | PASS | Foto mat-4-5 zeigt Schuetzengrabenbau → Stellungskrieg. Antwort aus BU + Bildinhalt ableitbar. |
+| A4-MC Distractor-Qualitaet | PASS | D1 „neuer Angriff" Rang 2 (plausible Fehlinterpretation). D2 „Sieg gelungen — Lager" Rang 1 (Gegenteil). D3 „kurze Pause" Rang 2 (verharmlost). 3/3 Rang 1-2. |
+| A6 Tipp-Progression | PASS | Stufe 1: Materialverweis + Beobachtungsfokus. Stufe 2: 1 Distraktor ausgeschlossen. Stufe 3: Loesung + Erklaerung. |
+| A7 Operator-Praezision | PASS | „Was zeigt..." = erschliesse/interpretiere. |
+| MQ3 Material-Referenz-Verbot | PASS | frage enthaelt kein `[[` und kein `(M`. |
+| MQ3b Display-Referenzen Tipps | PASS | Tipp 1: `[[mat-4-5|Foto aus dem Schuetzengraben]] (M5)`. |
+| Encoding (v3.3) | PASS | UTF-8 Umlaute, Gedankenstrich —. |
+
+**Gesamt: PASS (0 FAIL, 0 WARN). Keine Nachbesserung.**
+
+---
+
+## D12b: Aufgabe 6 — Reihenfolge Makro (Phase 2.2b-6)
+
+**Datum:** 2026-04-04
+**Artefakt:** aufgaben/aufgabe-4-6.json
+**Typ:** reihenfolge | AFB: II | Material: alle (mat-4-1 bis mat-4-5) | TB-Knoten: k4-1, k4-4, k4-5, k4-6
+
+| Kriterium | Ergebnis | Detail |
+|-----------|----------|--------|
+| A1 AFB-Kongruenz | PASS | Makro-Kausalsequenz ueber alle Materialien = AFB II (Zusammenhaenge ordnen, nicht nur Recall). |
+| A2 Fragestamm-Klarheit | PASS | „Ordne den Weg vom Schlieffen-Plan bis zum Stellungskrieg." — Start + Ziel benannt. |
+| A2b Inhaltliche Verankerung (v3.4) | PASS | Konkretes Element: „Schlieffen-Plan", „Stellungskrieg". |
+| A3 Material-Kongruenz | PASS | 5 Elemente aus allen 5 Materialien ableitbar. Kausallogik durch Material-Sequenz vorgegeben. |
+| A4-RF Reihenfolge-Eindeutigkeit | PASS | 5 Elemente mit klarer kausaler Progression: Plan → Einmarsch → Marne → Rueckzug → Stellungskrieg. |
+| A6 Tipp-Progression | PASS | Stufe 1: Materialverweise (M1 bis M5). Stufe 2: Anfang + Ende benannt. Stufe 3: Vollstaendige Sequenz + Kausalbegruendung. |
+| A7 Operator-Praezision | PASS | „Ordne" = operationalisiert. |
+| MQ3 Material-Referenz-Verbot | PASS | frage enthaelt kein `[[` und kein `(M`. |
+| MQ3b Display-Referenzen Tipps | PASS | Tipp 1: `[[mat-4-1|Text ueber den Schlieffen-Plan]] (M1)` bis `[[mat-4-5|Schuetzengraben-Foto]] (M5)`. |
+| Encoding (v3.3) | PASS | UTF-8 Umlaute, Gedankenstrich —. |
+
+**Gesamt: PASS (0 FAIL, 0 WARN). Keine Nachbesserung.**
+
+---
+
+## D12c: Aufgabe 7 — Freitext (Phase 2.2b-7)
+
+**Datum:** 2026-04-04
+**Artefakt:** aufgaben/aufgabe-4-7.json
+**Typ:** freitext-code | AFB: III | Material: alle (mat-4-1 bis mat-4-5) | TB-Knoten: alle (k4-1 bis k4-6)
+
+| Kriterium | Ergebnis | Detail |
+|-----------|----------|--------|
+| A1 AFB-Kongruenz | PASS | Stundenfrage als Freitext = AFB III (begruendetes Urteil). |
+| A2 Fragestamm-Klarheit | PASS | „Warum musste der Plan fuer einen schnellen Sieg scheitern?" — Operator „begruende" implizit via „Warum musste". |
+| A2b Inhaltliche Verankerung (v3.4) | PASS | Konkretes Element: „Plan fuer einen schnellen Sieg" (= Schlieffen-Plan). |
+| A3 Material-Kongruenz | PASS | Antwort synthetisiert alle 5 Materialien. Musterantwort belegt jeden Satz mit Material-Fakten. |
+| A4-FT Keyword-Check | PASS | loesung[]: 2 Keywords (Schlieffen-Plan, Stellungskrieg). ≤2 fuer AFB III. ALL-or-nothing Logik. erwartete_begriffe (5) nur in _meta. |
+| A5-FT Teilfragen | PASS | 2 Teilfragen in _meta.teilfragen. Leiten SuS durch Antwortstruktur. |
+| A6 Tipp-Progression | PASS | Stufe 1: Materialverweise + Denkimpuls. Stufe 2: Konkrete Hinweise zu Annahmen + Marne. Stufe 3: Vollstaendige Musterantwort (5 Saetze). |
+| A7 Operator-Praezision | PASS | „Warum musste ... scheitern?" = begruende/erklaere. |
+| MQ3 Material-Referenz-Verbot | PASS | frage enthaelt kein `[[` und kein `(M`. |
+| MQ3b Display-Referenzen Tipps | PASS | Tipp 1: `[[mat-4-1|Text ueber den Schlieffen-Plan]] (M1)` bis `[[mat-4-5|Schuetzengraben-Foto]] (M5)`. |
+| Encoding (v3.3) | PASS | UTF-8 Umlaute, Gedankenstrich —. |
+
+**Gesamt: PASS (0 FAIL, 0 WARN). Keine Nachbesserung.**
+
+---
+
+## D13: Cross-Konsistenz — Orchestrator-Q-Gate (Phase 2.2c)
+
+**Datum:** 2026-04-04
+**Katalog:** DISPATCH_SKRIPT_MAPPE4.md §Phase 2.2 / D13
+**Pruefgegenstand:** aufgabe-4-1 bis aufgabe-4-7 (gesamt)
+
+| # | Kriterium | Ergebnis | Detail |
+|---|-----------|----------|--------|
+| 1 | A10 Typendiversitaet (min. 3 Typen) | PASS | 5 verschiedene Typen: lueckentext, multiple-choice, reihenfolge, zuordnung, freitext-code. MC×2 begr. (Fakten AFB I vs. Transfer AFB II). RF×2 begr. (Mikro-Chronologie vs. Makro-Kausalsequenz). |
+| 2 | A5 AFB-Progression (monoton steigend) | PASS | I → I → I-II → II → II → II → III. Kein Rueckschritt. |
+| 3 | A9 TB-Knoten-Vollabdeckung (6/6) | PASS | k4-1: Pos 1, 2. k4-2: Pos 1. k4-3: Pos 1. k4-4: Pos 3. k4-5: Pos 4. k4-6: Pos 5, 6. Alle 6 Knoten min. 1× getestet. |
+| 4 | A16/A17 SCPL-Zonen-Abdeckung | PASS | S(Pos 1), C1(Pos 2), C2(Pos 3), C3(Pos 4), P(Pos 5), L(Pos 6, 7). Alle Zonen abgedeckt. Monotone Zonenfolge S→C→P→L. |
+| 5 | A18 Material-Aktivierung (5/5) | PASS | mat-4-1: Pos 1. mat-4-2: Pos 2. mat-4-3: Pos 3. mat-4-4: Pos 4. mat-4-5: Pos 5. Jedes Material min. 1× als Primaerquelle. |
+| 6 | MQ3 Material-Referenz-Verbot (frage) | PASS | 7/7 frage-Felder: kein `[[`, kein `(M`. |
+| 7 | MQ3b Display-Referenzen (Tipp 1) | PASS | 7/7 Tipp-Stufe-1 enthalten `[[mat-id|Anzeigetext]] (M#)` Markup. |
+| 8 | Freischalt-Code | PASS | meta.json: "MARNE". 5 Buchstaben, A-Z, thematisch (Schlacht an der Marne). Identisch mit meta.json.freischalt_code. |
+| 9 | Punkte-Summe | INFO | 7 × 10 = 70 Gesamtpunkte. |
+| 10 | Encoding (v3.3) | PASS | Alle 7 JSONs: UTF-8 Umlaute, typographische Anfuehrungszeichen, Gedankenstrich U+2014. |
+
+**Gesamt: PASS (0 FAIL, 0 WARN). Phase 2.2 abgeschlossen.**

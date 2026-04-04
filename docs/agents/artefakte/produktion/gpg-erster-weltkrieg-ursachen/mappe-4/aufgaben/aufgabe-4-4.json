@@ -1,0 +1,26 @@
+{
+  "id": "aufgabe-4-4",
+  "typ": "zuordnung",
+  "frage": "Was war geplant, was geschah wirklich an der Marne?",
+  "material_referenz": ["mat-4-4"],
+  "elemente": [
+    { "begriff": "Frankreich in 40 Tagen besiegen", "zuordnung": "Schlieffen-Plan" },
+    { "begriff": "Französische Gegenoffensive stoppt den Vormarsch", "zuordnung": "Marne — Wirklichkeit" },
+    { "begriff": "Danach alle Truppen gegen Russland werfen", "zuordnung": "Schlieffen-Plan" },
+    { "begriff": "65 Kilometer Rückzug und Beginn des Stellungskriegs", "zuordnung": "Marne — Wirklichkeit" },
+    { "begriff": "Schneller Sieg ohne langen Krieg", "zuordnung": "Schlieffen-Plan" }
+  ],
+  "loesung": {
+    "Frankreich in 40 Tagen besiegen": "Schlieffen-Plan",
+    "Französische Gegenoffensive stoppt den Vormarsch": "Marne — Wirklichkeit",
+    "Danach alle Truppen gegen Russland werfen": "Schlieffen-Plan",
+    "65 Kilometer Rückzug und Beginn des Stellungskriegs": "Marne — Wirklichkeit",
+    "Schneller Sieg ohne langen Krieg": "Schlieffen-Plan"
+  },
+  "tipps": [
+    { "stufe": 1, "text": "Vergleiche die [[mat-4-2|Karte des Schlieffen-Plans]] (M2) mit der [[mat-4-4|Karte der Marne-Schlacht]] (M4). Was zeigt der Plan — und was zeigt die Wirklichkeit?" },
+    { "stufe": 2, "text": "\u201EFrankreich in 40 Tagen besiegen\u201C und \u201Edanach alle Truppen gegen Russland\u201C gehören zum Schlieffen-Plan — beides war geplant, nicht eingetreten." },
+    { "stufe": 3, "text": "Schlieffen-Plan: Frankreich in 40 Tagen besiegen, danach Russland angreifen, schneller Sieg. Marne — Wirklichkeit: Französische Gegenoffensive stoppte den Vormarsch, 65 km Rückzug und Stellungskrieg. Der Plan scheiterte an der Marne — statt eines schnellen Sieges folgten vier Jahre Schützengräben." }
+  ],
+  "punkte": 10
+}

@@ -1,0 +1,15 @@
+{
+  "id": "aufgabe-4-1",
+  "typ": "lueckentext",
+  "frage": "Ergänze die fehlenden Fachbegriffe.",
+  "material_referenz": ["mat-4-1"],
+  "text_mit_luecken": "Deutschland musste 1914 gleichzeitig gegen Frankreich und Russland kämpfen — ein ___. Um dieses Problem zu lösen, entwickelte General Schlieffen eine Kriegsstrategie: den ___. Die Idee war, zuerst Frankreich in nur 40 Tagen durch einen Angriff über Belgien zu besiegen und danach alle Truppen gegen Russland einzusetzen. Der Plan nutzte eine Zeitlücke: In Russland dauerte die ___ deutlich länger als in Frankreich.",
+  "loesung": ["Zweifrontenkrieg", "Schlieffen-Plan", "Mobilmachung"],
+  "antwortpool": ["Mobilmachung", "Schlieffen-Plan", "Stellungskrieg", "Zweifrontenkrieg"],
+  "tipps": [
+    { "stufe": 1, "text": "Alle drei Begriffe werden im [[mat-4-1|Text über den Krieg an zwei Fronten]] (M1) erklärt. Es geht um eine Kriegslage, eine Strategie und eine militärische Vorbereitung." },
+    { "stufe": 2, "text": "Der erste Begriff beschreibt einen Krieg an zwei Seiten gleichzeitig. Der Begriff \u201EStellungskrieg\u201C im Pool gehört nicht in diesen Text — er beschreibt etwas, das erst nach dem Scheitern des Plans beginnt." },
+    { "stufe": 3, "text": "Zweifrontenkrieg — Schlieffen-Plan — Mobilmachung. Deutschland kämpfte gleichzeitig gegen Frankreich und Russland (Zweifrontenkrieg). General Schlieffen plante, Frankreich in 40 Tagen zu besiegen (Schlieffen-Plan). Der Plan nutzte Russlands langsame Kriegsvorbereitung (Mobilmachung) als Zeitlücke." }
+  ],
+  "punkte": 10
+}

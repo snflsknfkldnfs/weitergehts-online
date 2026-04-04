@@ -1,0 +1,26 @@
+{
+  "id": "aufgabe-4-6",
+  "typ": "reihenfolge",
+  "frage": "Ordne den Weg vom Schlieffen-Plan bis zum Stellungskrieg.",
+  "material_referenz": ["mat-4-1", "mat-4-2", "mat-4-3", "mat-4-4", "mat-4-5"],
+  "optionen": [
+    "An der Marne stoppen französische Truppen den deutschen Vormarsch.",
+    "Deutschland entwickelt den Schlieffen-Plan gegen den Zweifrontenkrieg.",
+    "Beide Seiten graben sich in Schützengräben ein — der Stellungskrieg beginnt.",
+    "Deutsche Truppen marschieren durch Belgien Richtung Paris.",
+    "Die deutsche Armee muss 65 Kilometer zurückweichen."
+  ],
+  "loesung": [
+    "Deutschland entwickelt den Schlieffen-Plan gegen den Zweifrontenkrieg.",
+    "Deutsche Truppen marschieren durch Belgien Richtung Paris.",
+    "An der Marne stoppen französische Truppen den deutschen Vormarsch.",
+    "Die deutsche Armee muss 65 Kilometer zurückweichen.",
+    "Beide Seiten graben sich in Schützengräben ein — der Stellungskrieg beginnt."
+  ],
+  "tipps": [
+    { "stufe": 1, "text": "Denke an die Reihenfolge der Materialien: Vom [[mat-4-1|Text über den Schlieffen-Plan]] (M1) bis zum [[mat-4-5|Schützengraben-Foto]] (M5). Das erste Ereignis ist die Planung." },
+    { "stufe": 2, "text": "Am Anfang steht der Schlieffen-Plan. Am Ende steht der Stellungskrieg. Dazwischen liegen der Einmarsch, die Marne-Schlacht und der Rückzug." },
+    { "stufe": 3, "text": "Schlieffen-Plan → Einmarsch durch Belgien → Marne stoppt Vormarsch → 65 km Rückzug → Stellungskrieg. Jeder Schritt folgt kausal aus dem vorherigen: Der Plan führte zum Einmarsch, der Einmarsch scheiterte an der Marne, das Scheitern führte zum Rückzug, und der Rückzug mündete im Stellungskrieg." }
+  ],
+  "punkte": 10
+}
