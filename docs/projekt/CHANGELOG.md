@@ -4,6 +4,65 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-04 — Session 10 (Forts. 6): D15b Multi-Agent-Audit Mappe 4 (Schlieffen-Plan)
+
+**Phase:** Post-C2 Qualitaets-Audit (QM-Rueckspeisung in Generierungs-Infrastruktur)
+
+**Ziel:** Konsolidierte, rollen-diverse Qualitaetsbewertung der Mappe 4 mit anschliessender Rueckfuehrung in Subagenten-Prompts/Guetekriterien/Checklisten. Multi-Agent-Architektur mit voller Rollen-Isolation zur Vermeidung von Priming-Kontamination.
+
+**Durchgefuehrt:**
+
+**Phase 1 — Evidenz-Bundle:**
+- D15b_EVIDENZ_BUNDLE_MAPPE4.md: Hauptoberflaeche via Chrome MCP erfasst. Tipps und Feedback NICHT via interaktives Ausklappen sondern via Backend-Extraktion aus `escape-games/gpg-erster-weltkrieg-ursachen/data.json` (21 Tipps verbatim) und `assets/js/escape-engine.js` (8 generische Feedback-Strings, `_aktiviereLoesungswort` Mechanik). Begruendung: tipps/feedback folgen einheitlichem Muster, backend-read effizienter als DOM-Walk.
+- Anhang A: 21 Tipps verbatim aus data.json
+- Anhang B: Feedback-Nachrichten-Tabelle aus escape-engine.js
+- Anhang C: Loesungswort-Mechanik korrekt rekonstruiert — collective unlock von geshuffletem 5-Buchstaben-Pool "MARNE" via `_aktiviereLoesungswort` (Zeile 3193 in escape-engine.js), KEIN 1:1-Mapping Aufgabe->Buchstabe.
+- Screenshot-Header-Problem diagnostiziert: `<header>` NICHT position:fixed (base.css:146), `.sticky-stundenfrage` nur ~40-50px (theme-gpg.css:2169). Ursache ausserhalb DOM identifiziert (Chrome-in-Claude Extension-Overlay). Mitigation: resize 1440x2000, Text-Primat ueber `get_page_text`/`read_page`, `.sticky-stundenfrage` hide + `scrollIntoView`.
+
+**Phase 2 — 6 isolierte Rollen-Agenten (sequenziell):**
+Jeder Agent erhielt NUR Rollen-Charta + Guetekriterien + URL + operationale Chrome-MCP-Anweisungen. Keine Session-Historie, keine Vorbefunde, keine Bundle-Inhalte. Maximal professionalisierte Rollen-Identitaeten.
+
+- **R1 Geschichtsdidaktik** (Prof. Dr. Helene Forstner, W3): FUER-Modell/Pandel/Ruesen. Verdikt: "Einsetzbar mit kleineren bis erheblichen Einschraenkungen". Kritisch: deutschzentrierte Perspektive, fehlende Multiperspektivitaet (keine belgische/franzoesische Sicht), keine Quellenkritik, nur 2/7 Pandel-Dimensionen angesprochen, Fragekompetenz absent, Hefteintrag erklaert Scheitern des Plans nicht ursachenlogisch. Datei: D15b_AUDIT_R1_GESCHICHTSDIDAKTIK.md (40 KB, 533 Zeilen).
+- **R4 Instructional Design** (Dr. Stefan Raithel, ID Lab): Mayer/Sweller/Merrill/Hattie-Timperley/ICAP. Verdikt: "Tragfaehig mit substantiellen Nachschaerfungen". Kritisch: Split-Attention im Material-Layout, engine-generische Feedback-Strings (d~0.20-0.30 vs. Ziel 0.70 Hattie-Timperley), ICAP-Mismatch 6/7 Aufgaben nur Active, Tipp-Haertegrade fehlen, kein Pretraining. Datei: D15b_AUDIT_R4_INSTRUCTIONAL_DESIGN.md (31 KB, 370 Zeilen).
+- **R5 Seminarleiter Bayern** (Bernd Kaltenbrunner): LehrplanPlus Bayern, Meyer 10 Merkmale, APO-RS. Verdikt: "Fuer Lehrprobe mit Ergaenzungen empfehlbar". Zeitbudget: Doppelstunde (90 Min.) statt Einzelstunde noetig. Meyer: 7/10 erfuellt. Tagebuch Friedrich "hervorragend". Kritisch: Aufgabe 7 Freitext benoetigt explizite Rubric fuer Lehrprobensituation, Klassenfuehrung bei Einzelarbeit. Datei: D15b_AUDIT_R5_SEMINARLEITER.md (27 KB, 342 Zeilen).
+- **R6 Unterrichtsqualitaet empirisch** (Prof. Dr. Martin Heidacker): Helmke Basisdimensionen, Hattie d-Werte, COACTIV, OTL. Verdikt: MITTEL, ca. 40-50% unter High-Quality-Benchmark. Effektstaerken-Prognose: d~0.35-0.50 post-test (Ziel 0.60), d~0.10-0.20 transfer (Ziel 0.40). Bloom 1-3 in 6/7 Aufgaben (nur Aufgabe 7 Bloom 4-6). OTL-Effizienz ~20% vs. Ziel 30-40%. Tipp-Nutzungs-Leak 60-70% durch Loesungsvorwegnahme. Datei: D15b_AUDIT_R6_UNTERRICHTSQUALITAET.md (38 KB, 440 Zeilen).
+- **R2 Lehrerin Stadtrealschule/DaZ** (Jasmin Kilic, 42, 17 Jahre, Personas Kenan/Amira/Jannik/Selin): DaZ-Scaffolding, Heterogenitaet, Stadtrealschule-Realitaet. Verdikt: "Ja, mit Vorbereitung und Begleitung" (2h Vorbereitung, Doppelstunde). Unique Findings: DaZ-Glossar-Box fehlt (neutral, Nachschub, befestigt), iPad-Touch-Ergonomie bei Drag-and-Drop problematisch, Trigger-Sensitivitaet fuer Kinder mit Familien aus Kriegsgebieten (Ukraine/Syrien), paraphrasiertes Schlieffen-Zitat nicht als solches gekennzeichnet. Datei: D15b_AUDIT_R2_LEHRERIN_STADT.md (52 KB, 640 Zeilen).
+- **R3 Lehrerin Landrealschule/bildungsfern** (Ute Hellermann, 51, 24 Jahre, Ostdeutschland, 19 SuS, Personas Lars/Mandy/Olena/Tobias): bildungsfernes Milieu, alte Laptops, Plan-B-Kultur. Datei: D15b_AUDIT_R3_LEHRERIN_LAND.md (40 KB, 460 Zeilen).
+
+**Phase 3 — Neutraler Synthese-Agent:**
+- D15b_MULTI_AUDIT_SYNTHESE_MAPPE4.md: Konsolidiertes Befund-Register. 11 Abschnitte + Anhang A Zitat-Register mit Rollen-Sigeln R1-R6. 45 KB, 631 Zeilen.
+- Konvergenz-Klassen:
+  - **Klasse A (5-6/6 Konsens):** A1 Sachkorrektheit ok (6/6), A2 Elaborations-Luecke (6/6), A3 DaZ-Scaffolding-Luecke (4-6/6)
+  - **Klasse B (4/6 Mehrheit):** B1 Feedback zu schwach (4/6), B2 Differenzierung fehlt (4/6), B3 Motivations-Anker schwach (4/6)
+  - **Klasse C (3/6):** C1 Epistemologie/Quellenkritik (3:3 Split)
+  - **Klasse D (Dissens):** D1 Digitalisierungs-Angemessenheit (2:4), D2 Tagebuch Friedrich (3:3 "hervorragend" vs. "Trigger-Risiko")
+  - **Klasse F (blinde Flecken):** F1 Barrierefreiheit/WCAG, F2 Datenschutz/DSGVO, F3 technische Robustheit unter Last
+- Top-10 Handlungsempfehlungen mit Aufwand/Wirkung-Schaetzung
+- 3 Umsetzungs-Szenarien: Konservativ (Minimal-Patches) / Moderat (Top-5) / Optimistisch (Top-10 + Infrastruktur)
+- QM-Rueckschluesse fuer Generierungs-System: Subagenten-Prompts muessen Multiperspektivitaet + Quellenkritik erzwingen; Feedback-Engine braucht aufgabenspezifische Rueckmeldungs-Slots; DaZ-Glossar-Komponente als Engine-Primitive.
+
+**Methodik-Innovationen (fuer kuenftige Audits):**
+- Vollstaendige Rollen-Isolation (kein Session-Kontext, kein Vorwissen, explizite "no prior findings"-Regel in jedem Prompt)
+- Text-Primat ueber Screenshots bei Chrome-in-Claude (Overlay-Workaround)
+- Inter-Rater-Reliability gewichtet nach theoretischer vs. praktischer Rollen-Distanz (Signal-Staerke)
+- Phase 3 ebenfalls in isoliertem Synthese-Agent (keine Orchestrator-Bias)
+
+**Geaenderte/neue Dateien:**
+- docs/analyse/D15b_EVIDENZ_BUNDLE_MAPPE4.md (neu)
+- docs/analyse/D15b_AUDIT_R1_GESCHICHTSDIDAKTIK.md (neu)
+- docs/analyse/D15b_AUDIT_R2_LEHRERIN_STADT.md (neu)
+- docs/analyse/D15b_AUDIT_R3_LEHRERIN_LAND.md (neu)
+- docs/analyse/D15b_AUDIT_R4_INSTRUCTIONAL_DESIGN.md (neu)
+- docs/analyse/D15b_AUDIT_R5_SEMINARLEITER.md (neu)
+- docs/analyse/D15b_AUDIT_R6_UNTERRICHTSQUALITAET.md (neu)
+- docs/analyse/D15b_MULTI_AUDIT_SYNTHESE_MAPPE4.md (neu)
+- docs/projekt/STATUS.md
+- docs/projekt/CHANGELOG.md
+
+**Naechster Schritt:** QM-Rueckspeisung der D15b-Befunde in SUB_AUFGABE_*.md / ORCHESTRATOR.md / AGENT_MATERIAL_*.md / Guetekriterien, bevor Mappe 5 produziert wird.
+
+---
+
 ## 2026-04-04 — Session 10 (Forts. 5): IL-1 + IL-4 Infrastruktur-Patches
 
 **Phase:** Post-C2 Infrastruktur-Revision (Prioritaet 1 vor D15 / Mappe 5)
