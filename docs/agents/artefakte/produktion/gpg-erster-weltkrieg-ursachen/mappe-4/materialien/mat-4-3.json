@@ -1,0 +1,41 @@
+{
+  "id": "mat-4-3",
+  "typ": "tagebuch",
+  "titel": "Wie erlebten die Soldaten den Vormarsch?",
+  "inhalt": "<p><em>Irgendwo in Nordfrankreich, 2. September 1914</em></p><p>Seit vier Wochen marschierten wir nun. Am Anfang war ich stolz \u2014 wir r\u00fcckten schnell vor, schlugen den Feind in jedem Gefecht. Durch Belgien ging es \u00fcber staubige Stra\u00dfen, vorbei an brennenden Geh\u00f6ften. Der Leutnant sagte, wir seien bald in Paris.</p><p>Doch meine Stiefel waren durchgelaufen. Seit drei Tagen kam kein Nachschub mehr. Wir a\u00dfen, was wir auf den Feldern fanden. Manche Kameraden schliefen im Marsch ein. 250 Kilometer lagen hinter uns \u2014 meine F\u00fc\u00dfe waren wund, mein Tornister wog schwerer mit jedem Tag.</p><p>Der Plan klang so einfach: in 40 Tagen nach Paris. Aber niemand hatte an unsere Beine gedacht.</p><cite>Fiktiver Tagebucheintrag, historisch plausibel. Kontext: Wikipedia \u2014 First Battle of the Marne, Summary</cite>",
+  "quelle": "Fiktiver Tagebucheintrag, historisch plausibel. Kontext: Wikipedia \u2014 First Battle of the Marne (Ersch\u00f6pfung, Nachschubprobleme)",
+  "position": 3,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": ["mat-4-1", "mat-4-2"],
+  "ueberleitung_von": null,
+  "sequenz_kontext": {
+    "vorher": {
+      "id": "mat-4-2",
+      "typ": "karte",
+      "kerninhalt": "Visualisiert den Schlieffen-Plan: Angriffspfeile durch Belgien nach Frankreich."
+    },
+    "nachher": {
+      "id": "mat-4-4",
+      "typ": "karte",
+      "kerninhalt": "Zeigt die Marne-Schlacht: Gegenoffensive und deutscher R\u00fcckzug."
+    }
+  },
+  "_meta": {
+    "wortanzahl": 99,
+    "figur": {
+      "name": "Friedrich",
+      "alter": 22,
+      "rolle": "Deutscher Infanterist",
+      "ort": "Nordfrankreich (N\u00e4he Paris)"
+    },
+    "artefakt_ref": "rolle-4-1",
+    "historische_details": [
+      "250 km Vormarsch durch Belgien/Nordfrankreich \u2014 belegt in SKRIPT \u00a74",
+      "Nachschubprobleme und Ersch\u00f6pfung \u2014 belegt in INHALTSBASIS rolle-4-1",
+      "Brennende Geh\u00f6fte in Belgien \u2014 historisch dokumentiert (belgischer Widerstand, Kriegsverbrechen)"
+    ],
+    "tafelbild_knoten_abgedeckt": ["k4-4"],
+    "perspektivitaet": "Friedrich wei\u00df nur, was er direkt erlebt: Marsch, Hunger, wunde F\u00fc\u00dfe. Er kennt keine strategischen Details. Er glaubt noch an den Plan, zweifelt aber zunehmend. Was an der Marne geschehen wird, ahnt er nicht.",
+    "erarbeitbarkeits_check": "PASS \u2014 k4-4: Einmarsch \u00fcber Belgien als konkrete Erfahrung: Marsch durch Belgien, 250 km, Gefechte, Ann\u00e4herung an Paris, dann Ersch\u00f6pfung und Nachschubprobleme. SuS erleben den Vormarsch aus Soldatenperspektive."
+  }
+}
