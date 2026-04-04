@@ -39,12 +39,14 @@
 | D4 | 2.1-4 | Material 4 | DONE | M1-M12 + KA PASS (0 FAIL, 0 WARN) | Karte (→bildquelle), img-4-2 Battle_of_the_Marne 1914 (Maurice), BU 28 W. TB: k4-5. Public Domain. Keine Nachbesserung. SQ-1 bis SQ-4 PASS. |
 | D5 | 2.1-5 | Material 5 | DONE | M1-M12 + BQ PASS (0 FAIL, 0 WARN) | BQ (nativ), img-4-3 IWM Q53490, BU 29 W. TB: k4-6. Sicherung + Kernerkenntnisse. Public Domain. Keine Nachbesserung. SQ-1 bis SQ-4 PASS. |
 | D6 | 2.1c | Material-Cross + Ueberleitungen + Hefteintrag-Revision | DONE | §7.4 PASS (0 FAIL, 0 WARN) | Achsen 1-4 PASS. 4 Ueberleitungen produziert (UE-1..5 PASS). HE-Revision: 0 SCPL-Patches (bereits kongruent), zusammenfassung+ueberleitung NEU. Stufe-2 (G3/G5/G10/G12/G14) 5/5 PASS. HE1-HE18 17/17 PASS. |
-| D7 | 2.2a | AGENT_RAETSEL: Progressionsplan | OFFEN | — | |
-| D8 | 2.2b-1 | Aufgabe 1 | OFFEN | A1-A18 + typ | |
-| D9 | 2.2b-2 | Aufgabe 2 | OFFEN | A1-A18 + typ | |
-| D10 | 2.2b-3 | Aufgabe 3 | OFFEN | A1-A18 + typ | |
-| D11 | 2.2b-4 | Aufgabe 4 | OFFEN | A1-A18 + typ | |
-| D12 | 2.2b-5 | Aufgabe 5 | OFFEN | A1-A18 + typ | |
+| D7 | 2.2a | AGENT_RAETSEL: Progressionsplan | DONE | — | 7 Aufgaben (5+1+1). 5 Typen (LT, MC×2, RF×2, ZU, FT). AFB I→I→I-II→II→II→II→III monoton. Alle 6 TB-Knoten + alle 5 Materialien abgedeckt. SCPL S/C1/C2/C3/P/L alle mit min. 1 Aufgabe. MC×2 begr. (Fakten vs. Transfer), RF×2 begr. (Mikro vs. Makro). Freischalt-Code: MARNE (aus meta.json). |
+| D8 | 2.2b-1 | Aufgabe 1 (LT, AFB I, mat-4-1) | OFFEN | A1-A18 + LT | |
+| D9 | 2.2b-2 | Aufgabe 2 (MC, AFB I, mat-4-2) | OFFEN | A1-A18 + MC | |
+| D10 | 2.2b-3 | Aufgabe 3 (RF, AFB I-II, mat-4-3) | OFFEN | A1-A18 + RF | |
+| D11 | 2.2b-4 | Aufgabe 4 (ZU, AFB II, mat-4-4) | OFFEN | A1-A18 + ZU | |
+| D12 | 2.2b-5 | Aufgabe 5 (MC, AFB II, mat-4-5) | OFFEN | A1-A18 + MC | |
+| D12b | 2.2b-6 | Aufgabe 6 (RF, AFB II, alle) | OFFEN | A1-A18 + RF | |
+| D12c | 2.2b-7 | Aufgabe 7 (FT, AFB III, alle) | OFFEN | A1-A18 + FT | |
 | D13 | 2.2c | Cross-Konsistenz (Orchestrator-Q-Gate) | OFFEN | §7.5 | |
 | D14 | 3 | Assembly + HTML + Commit | OFFEN | JSON-valid | |
 | D15 | 4 | Browser-Validierung | OFFEN | B1-B10 0 repeat | |
@@ -61,7 +63,8 @@
 | D0 (Rahmen) | MOEGLICH | "Phase 2.0 DONE. Lies DISPATCH_SKRIPT_MAPPE4, weiter mit D1." |
 | D3 (nach Material 3) | JA (empfohlen) | "3/5 Materialien DONE. Lies DISPATCH_SKRIPT_MAPPE4, weiter mit D4." |
 | D6 (Phase 2.1c) | JA (empfohlen) | "Phase 2.1c DONE. Lies DISPATCH_SKRIPT_MAPPE4, weiter mit D7." |
-| D10 (nach Aufgabe 3) | MOEGLICH | "3/5 Aufgaben DONE. Lies DISPATCH_SKRIPT_MAPPE4, weiter mit D11." |
+| D10 (nach Aufgabe 3) | MOEGLICH | "3/7 Aufgaben DONE. Lies DISPATCH_SKRIPT_MAPPE4, weiter mit D11." |
+| D12 (nach Aufgabe 5) | MOEGLICH | "5/7 Aufgaben DONE. Lies DISPATCH_SKRIPT_MAPPE4, weiter mit D12b." |
 | D13 (Phase 2.2c) | JA (empfohlen) | "Phase 2 komplett. Lies DISPATCH_SKRIPT_MAPPE4, weiter mit D14 (Assembly)." |
 
 **Uebergabe-Prompt-Template (bei Session-Split):**
@@ -190,7 +193,7 @@ Pro Material:
 
 **Output:** PROGRESSIONSPLAN_Mappe4.md (5-8 Aufgaben, Typen, AFB-Progression, TB-Knoten-Zuordnung, Freischalt-Code)
 
-### D8-D12: Einzelne Aufgaben (SUB_AUFGABE_*)
+### D8-D12c: Einzelne Aufgaben (SUB_AUFGABE_*)
 
 **Vertrag:** VERTRAG_PHASE_2-2b (implizit in SUB_AUFGABE_*.md)
 **Dispatch-Typ:** 1 Dispatch pro Aufgabe (P4)
@@ -257,7 +260,7 @@ Prueft:
 |---|---|---|---|
 | Materialien: Anzahl | 5 | | |
 | Materialien: Q-Gate PASS-Rate (1. Durchlauf) | 5/5 (100%) | | |
-| Aufgaben: Anzahl | 7 (dann 5 nach B2) | | |
+| Aufgaben: Anzahl | 7 (dann 5 nach B2) | 7 | |
 | Aufgaben: Q-Gate PASS-Rate (1. Durchlauf) | — (v1 nicht vergleichbar) | | |
 | Aufgaben: Nachbesserungen | 4/5 (D2-D6) | | |
 | Cross-Konsistenz: FAILs | 0 | | |
