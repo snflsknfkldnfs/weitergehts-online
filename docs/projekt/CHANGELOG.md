@@ -4,6 +4,71 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-04 — Session 10 (Forts. 7): D15b-Optimierungs-PM-Infrastruktur (Phase 0)
+
+**Phase:** Post-D15b Infrastruktur-Optimierung, Phase 0 (PM-Infrastruktur vorbereiten)
+
+**Ausloeser:** User-Direktive nach Push der D15b-Audit-Deliverables: "umfassende schrittweise Optimierung der Generierungsinfrastruktur auf Basis des Testruns Mappe 4, lueckenlos intelligent geplant — PM-Infrastruktur vorbereiten, bevor Strategien ausgearbeitet werden".
+
+**Ziel:** Scaffold fuer phasenbasierte, lueckenlose Verarbeitung der D15b-Audit-Daten etablieren. Keine inhaltliche Qualifizierung in dieser Phase — nur die Werkzeuge.
+
+**Durchgefuehrt:**
+
+**(1) AUSFUEHRUNGSPLAN_D15B_OPTIMIERUNG.md — Master-Plan**
+- 6 Phasen definiert: Phase 0 (PM-Infrastruktur), Phase I (Befund-Qualifizierung), Phase II (Implikations-Analyse), Phase III (Strategie-Ausarbeitung), Phase IV (Umsetzung), Phase V (Re-Audit + Retrospektive).
+- Pro Phase: Ziel, Arbeitsschritte, Deliverables, Abschluss-Kriterium, Aufwands-Schaetzung.
+- Leitprinzipien: Trennung Befund→Qualifizierung→Implikation→Strategie→Umsetzung; lueckenlose Abdeckung (auch verworfene Befunde mit Begruendung); Evidenz-Gewichtung nach IRR; Dissens-Befunde als Optionen/Parameter statt Entscheidungen; keine Vermischung mit Mappe-5-Produktion.
+- Zeit-/Session-Uebersicht: geschaetzt 8-13 Sessions ueber alle Phasen.
+
+**(2) D15B_BEFUND_REGISTER.md — Strukturiertes Befund-Register**
+- Scaffold mit Qualifizierungs-Metadaten-Schema pro Befund (ID, Titel, Quelle, Konvergenz-Klasse, Evidenz-Staerke, Verallgemeinerbarkeit INFRA/MAPPE/MIXED, Severitaet, Qualifizierungs-Verdikt accept/modify/reject/defer, Ebenen-Tag, Status).
+- Teil 1: 20 Synthese-Befunde pre-populiert (Klasse A1-A5, B1-B3, C1-C3, D1-D2, E1-E2, F1-F6). Jeder Befund mit vorlaeufigem Ebenen-Tag.
+- Teil 2: Placeholder-Tabellen pro Rolle (R1-R6) fuer rollen-spezifische Befunde, die in Phase I aus den 6 Einzel-Audit-Dateien extrahiert werden (bekannte Einzelbefunde wie R2-1 DaZ-Glossar, R2-2 iPad-Touch, R2-3 Paraphrase-Kennzeichnung, R4-1 Tipp-Haertegrade, R4-2 Pretraining, R5-1 Rubric, R5-2 Klassenfuehrung, R6-1 Tipp-Leak, R6-2 OTL-Effizienz bereits als Platzhalter angelegt).
+- Teil 3: Arbeitsprotokoll (leer, wird in Phase I gefuellt).
+- Teil 4: Statistik-Dashboard.
+
+**(3) D15B_IMPLIKATIONS_MATRIX.md — Infrastruktur-Mapping**
+- 10 Infrastruktur-Ebenen definiert mit Datei-Zuordnungen:
+  - E0 Meta-Prozess (WORKFLOW_v4.md, ORCHESTRATOR Phasen-Teil)
+  - E1 Vertraege (6 Phasen-Vertraege + Assembly)
+  - E2 Subagenten Material (7 SUB_MATERIAL_*.md + AGENT_HEFTEINTRAG)
+  - E3 Subagenten Aufgaben (5 SUB_AUFGABE_*.md + AGENT_RAETSEL)
+  - E4 Orchestrator (Steuerungs-Teil)
+  - E5 Gueteregeln (6 Kataloge: G1-G14, HE1-HE13, A1-A18, SK1-SK15, S1-S15, M1-M12)
+  - E6 Checklisten/Q-Gates
+  - E7 Engine (escape-engine.js, theme-gpg.css, data.json-Schema)
+  - E8 Begleitdokumente (neu: escape-games/*/lehrkraft/)
+  - E9 Audit-Methodik (D15b-Lessons, Folge-Audits, Plugin-Integration)
+- Matrix-Scaffold (Befund × Ebene) mit vorlaeufigen Zellen (? = Phase II-Pruefung noetig, A/M/D/E = Add/Modify/Delete/Enforce).
+- Vorlaeufige Hotspot-Analyse: E3 (Subagenten Aufgaben) und E5 (Gueteregeln) als SEHR HOCH, E7 (Engine) und E8 (Begleitdokumente) als HOCH, E2 und E9 als MITTEL. Interpretation: Mappe-4-Audit bestaetigt, dass die Material-Ebene funktioniert, aber Aufgaben/Feedback/Gueteregeln strukturell unterdimensioniert sind.
+
+**(4) D15B_OPTIMIERUNGS_STRATEGIEN.md — Strategie-Template**
+- Strategie-Template-Schema (STR-ID, Prioritaet P0-P3, adressierte Befunde, Ebenen, Aenderungs-Typ, Ziel, Skizze, Abhaengigkeiten, Risiken, Validierung, Aufwand, Umsetzungs-Reihenfolge).
+- 7 Strategie-Kategorien mit ~25 erwarteten Arbeitstitel-Strategien als Orientierung (nicht verbindlich fuer Phase III):
+  - S-Engine (5): Layout side-by-side, Feedback-Slots, Differenzierungs-Support, DaZ-Glossar-Komponente, WCAG-Pass
+  - S-Subagenten (7): Multiperspektivitaet, Bloom-Verteilung, Tipp-Haertegrade, elaboratives Feedback, Paraphrase-Kennzeichnung, Concept-Mapping Hefteintrag, Freitext-Rubric
+  - S-Gueteregeln (3): Erweiterung Aufgaben/Material/Sequenzierung
+  - S-Checklisten (2): Pre-Publikations-Checkliste, Multi-Audit als Standard-Q-Gate
+  - S-Begleitdokumente (4): Trigger-Leitfaden, Doppelstunden-Ablauf, Differenzierungs-Arbeitsblaetter, Freitext-Rubric
+  - S-Audit-Methodik (4): D15b-Workflow-Dokumentation, accessibility-compliance Integration, Retention-Test, Mini-Pilot-Test
+  - S-Mappe-4-Daten-Patch (5): Aufgaben-Reihenfolge, Feedback-Texte, DaZ-Glossar-Daten, Paraphrase-Kennzeichnung, Trigger-Warning
+- Abhaengigkeits-Graph-Platzhalter (DAG).
+- Entscheidungspunkte fuer User-Freigabe nach Phase III (Scope-Cut, Engine-Impact, Patch-Reihenfolge, Re-Audit-Scope).
+
+**Geaenderte/neue Dateien:**
+- docs/projekt/AUSFUEHRUNGSPLAN_D15B_OPTIMIERUNG.md (neu)
+- docs/projekt/D15B_BEFUND_REGISTER.md (neu)
+- docs/projekt/D15B_IMPLIKATIONS_MATRIX.md (neu)
+- docs/projekt/D15B_OPTIMIERUNGS_STRATEGIEN.md (neu)
+- docs/projekt/STATUS.md
+- docs/projekt/CHANGELOG.md
+
+**Naechster Schritt:** Phase I starten — aus den 6 Einzel-Audit-Dateien (D15b_AUDIT_R1 bis R6) systematisch alle rollen-spezifischen Befunde extrahieren, in Register Teil 2 eintragen, alle Befunde (Synthese + rollen-spezifisch) qualifizieren. Subagent-Einsatz empfohlen: 6 parallele Extraktions-Agenten, einer pro Audit-Datei, zurueckgebend strukturierte Befund-Listen. Erwartete Gesamt-Befundzahl nach Phase I: 30-45.
+
+**Phase-0-Abschlusskriterium erfuellt:** 4 PM-Dokumente angelegt, in STATUS.md verlinkt, committed.
+
+---
+
 ## 2026-04-04 — Session 10 (Forts. 6): D15b Multi-Agent-Audit Mappe 4 (Schlieffen-Plan)
 
 **Phase:** Post-C2 Qualitaets-Audit (QM-Rueckspeisung in Generierungs-Infrastruktur)
