@@ -1,9 +1,9 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-03 (Session 9, C2-Vorbereitung + Produktionsumgebung)
-**Aktuelle Phase:** **C2: Mappe-4-Validierung. Alle Vorbedingungen erfuellt. TAFELBILD, DISPATCH_SKRIPT, COWORK_PROJECT_ANLEITUNG_PRODUKTION stehen. Produktionsumgebung bereit.**
-**Letzter Arbeitsschritt:** COWORK_PROJECT_ANLEITUNG_PRODUKTION.md erstellt — Drei-Ebenen-Architektur (Identitaet, Compaction-Recovery, Entscheidungsregeln). Generisch fuer jedes Game/jede Mappe. Prototyp des spaeter produktisierten Produktbestandteils.
-**Naechster Schritt:** Neues Cowork-Projekt anlegen, COWORK_PROJECT_ANLEITUNG_PRODUKTION.md als Projektanweisung eintragen, weitergehts-online/ als Context-Folder verlinken. Dann C2 starten: "Lies DISPATCH_SKRIPT_MAPPE4.md, starte mit D-1."
+**Letzte Aktualisierung:** 2026-04-04 (Session 10, C2-Analyse-Vorbereitung)
+**Aktuelle Phase:** **C2 Produktion ABGESCHLOSSEN (D-1 bis D14 DONE, Mappe 4 live). Phase: Prozessanalyse-Vorbereitung. Transcript-Aufbereitung + Dimensionale Audits stehen an.**
+**Letzter Arbeitsschritt:** C2_PROZESSANALYSE_RAHMEN.md erstellt — 8 Analyse-Dimensionen (Prozesskongruenz, Didaktik, Technik, Tool-Calling, Token-Effizienz, Compaction-Resilienz, Usability, Infrastruktur-Wirksamkeit). Transcript-Aufbereitungsformat definiert. Verzeichnis docs/analyse/c2-verlauf/ angelegt.
+**Naechster Schritt:** Session-Transcripts der Produktionssessions schrittweise aufbereiten → C2_VERLAUF_SESSION_P-*.md → Konsolidierung → Dimensionale Audits (D1-D8).
 **Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. ARTEFAKT_INVENTAR Mappe 2+3 nachpflegen. Engine-Erweiterungen O3/O5/O6 (Ordnungsmuster-Rendering, Pfeiltypen, Farbsemantik) als Stretch-Goal.
 
 **Abgeschlossen seit letztem Update:**
