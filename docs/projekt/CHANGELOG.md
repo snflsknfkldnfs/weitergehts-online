@@ -4,6 +4,60 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-04 — Session 10 (Forts. 8): D15b-Optimierung Phase I (Befund-Qualifizierung)
+
+**Phase:** Post-D15b Infrastruktur-Optimierung, Phase I (Befund-Qualifizierung)
+
+**Ausloeser:** User-Direktive "start" nach Phase-0-Abschluss und Commit.
+
+**Ziel:** Vollstaendige Befund-Extraktion aus allen 6 Audit-Dateien, Konsolidierung in Befund-Register, Cluster-basierte Qualifizierung mit Verdikten (accept/modify/reject/defer).
+
+**Durchgefuehrt:**
+
+**Phase I.1 — Parallel-Extraktion (6 Subagenten):**
+- Dispatch 6 general-purpose Agenten, jeweils mit isoliertem Prompt und strukturiertem Ausgabe-Format (Titel, Kernaussage, Evidenz, Objekt, Richtung, Severitaet, Verallgemeinerbarkeit, Konvergenz-Bezug).
+- Ergebnis: 94 Rollen-Befunde
+  - R1 Geschichtsdidaktik: 20 Befunde (Belgien-Problematisierung, Multiperspektivitaet, Quellenkritik, Methoden/Fragekompetenz, Pandel-Dimensionen)
+  - R2 Lehrerin Stadt/DaZ: 14 Befunde (DaZ-Glossar, paraphrasiertes Zitat, Trigger-Sensibilitaet, Zeitrahmen, Foerderkinder)
+  - R3 Lehrerin Land: 15 Befunde (Tagebuch-Staerke, Fachbegriffe, Offline-Fallback, Flucht-Sensibilitaet, Satz-Starter, Equity)
+  - R4 Instructional Design: 15 Befunde (Backward-Design, Split-Attention BLOCKER, Feedback d=0.20 BLOCKER, ICAP, Expertise-Reversal, CLT-Operationalisierung)
+  - R5 Seminarleiter: 15 Befunde (45-Min-Rahmen, Differenzierung, A7-Rubric Lehrprobe-Killer, Synchronisationspunkte, Gueteregeln-Luecken)
+  - R6 Unterrichtsqualitaet: 15 Befunde (Tiefen-/Oberflaechen-Mismatch, Bloom 6:1, Hattie-Feedback, OTL 20%, Gesamt-Effektstaerke d=0.42-0.52 BLOCKER)
+
+**Phase I.2 — Konsolidierung:**
+- D15B_BEFUND_REGISTER.md Teil 2 komplett neu geschrieben: 6 strukturierte Tabellen (eine pro Rolle) mit allen 94 Befunden. Platzhalter raus. Gesamt-Register jetzt 114 Eintraege (20 Synthese + 94 Rollen).
+
+**Phase I.3 — Cluster-basierte Qualifizierung:**
+- 36 Cluster K01-K36 gebildet, die semantisch verwandte Befunde aus mehreren Rollen buendeln.
+- Pro Cluster: Verdikt mit Kurzbegruendung, Prioritaet (P0/P1/P2), Ebenen-Zielverweis.
+- Netto-Bilanz:
+  - **accept P0 (7):** K01 Cognitive Depth/Bloom, K02 Feedback-Qualitaet Hattie, K03 Tipp-Haertegrade, K04 Multiperspektivitaet, K09 Zeit-Realismus, K12 Layout/Spatial-Contiguity, K13 Gueteregeln-Tiefenstruktur
+  - **accept P1 (10):** K05 Quellenkritik, K06 DaZ/Sprache, K07 Differenzierung, K08 Trigger-Sensibilitaet, K14 Hefteintrag/Rubric, K16 Aufgabentypologie/Distraktoren, K32 Schutzregeln (R3-Staerken), K33 Lehrprobe-Tauglichkeit, K34 Personalisierung-Dissens parametrisiert, K36 Audit-Methodik
+  - **accept P2 (6):** K11 Metakognition/Concept-Mapping, K15 Pandel-Dimensionen, K17 WCAG, K22 Synchronisationspunkte, K23 Worked Examples, K31 Sequenz-Uebergeleitung
+  - **modify/scope (4):** K21 kooperative Phasen (umdefiniert), K25 Integration (in K04/K11 integriert), K27 Material-Rezeption (Symptom), K28 SAMR-Mismatch (Meta-Befund)
+  - **reject (1):** K26 Loesungswort (bleibt als bewusste Design-Entscheidung des Escape-Formats)
+  - **defer (5):** K18 DSGVO-Compliance-Track, K19 Performance-Track, K20 Offline-Distribution-Track, K24 Audio-Produktion, K29 Historiografischer Vertiefungs-Zusatz
+  - **merged in other (3):** K10→K07, K30→K01, K35→K16
+- **Netto-Optimierungs-Portfolio fuer Phase III: 23 Cluster.**
+
+**Phase I.4 — Statistik & Bilanz:**
+- D15B_BEFUND_REGISTER.md Teil 4 aktualisiert: Befund-Statistik (114), Cluster-Bilanz (36→23), Severitaets-Verteilung (3 BLOCKER / ~30 HIGH / ~55 MEDIUM / ~20 LOW / 6 INFO-positiv), Verallgemeinerbarkeit (~45/45/8/2%).
+
+**Erkenntnisse:**
+- Starke Konvergenz Theoretiker (R4, R6) und Praktiker (R2, R3, R5) auf K01 (Bloom-Tiefe) und K02 (Feedback) — ueberraschend angesichts der Rollen-Distanz.
+- Dissens D1 (Friedrich-Personalisierung: R1 kritisch, R3 als Equity-Staerke verteidigt) wird nicht zu "pro oder contra" aufgeloest, sondern als parametrisierte Entscheidung: Personalisierung bleibt, wird durch Pflicht-Meta-Reflexions-Aufgabe ergaenzt (K34).
+- R3 liefert 4 positive Staerke-Befunde (Tagebuch aktiviert bildungsferne SuS, Hefteintrag pruefungstauglich, Equity-Faktor, Gesamturteil einsetzbar). Diese werden als "Schutzregeln" kodifiziert (K32) — Optimierung darf sie nicht beschaedigen.
+- Infrastruktur-Hotspots bestaetigt: E3 Aufgaben-Subagent (K01/K03/K05/K07/K11/K14/K16/K23/K34), E5 Gueteregeln (K01/K02/K04/K06/K09/K13/K16/K32/K33), E7 Engine (K02/K03/K06/K07/K12), E8 Begleitdokumente (K08/K14/K21/K22/K31).
+
+**Artefakte:**
+- docs/projekt/D15B_BEFUND_REGISTER.md (Teil 2 neu geschrieben, Teil 3 cluster-qualifiziert, Teil 4 statistik-aktualisiert).
+- docs/projekt/STATUS.md (aktualisiert).
+- docs/projekt/CHANGELOG.md (dieser Eintrag).
+
+**Naechster Schritt:** Phase II (Implikations-Matrix). Pro Cluster Ebenen-Mapping + Skizze. Methodisch-analytisch, keine User-Freigabe noetig.
+
+---
+
 ## 2026-04-04 — Session 10 (Forts. 7): D15b-Optimierungs-PM-Infrastruktur (Phase 0)
 
 **Phase:** Post-D15b Infrastruktur-Optimierung, Phase 0 (PM-Infrastruktur vorbereiten)
