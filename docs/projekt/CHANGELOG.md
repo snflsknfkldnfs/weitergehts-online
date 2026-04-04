@@ -4,6 +4,65 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-04 — Session 10 (Forts. 9): D15b-Optimierung Phase II (Implikations-Matrix)
+
+**Phase:** Post-D15b Infrastruktur-Optimierung, Phase II (Infrastruktur-Implikations-Analyse)
+
+**Ausloeser:** Phase-I-Commit (6fb33e2) durch User gepusht. Phase II ist methodisch-analytisch, per `AUSFUEHRUNGSPLAN_D15B_OPTIMIERUNG.md` ohne User-Freigabe.
+
+**Ziel:** Die 23 Netto-Cluster aus Phase I auf die Infrastruktur-Ebenen E0-E9 mappen, Hotspots verifizieren, Verdichtung zu strategischen Bundle-Zonen.
+
+**Durchgefuehrt:**
+
+1. **Matrix-Umbau**: `D15B_IMPLIKATIONS_MATRIX.md` von Scaffold (Befund × Ebene mit `?`/leer) auf **Cluster × Ebene** mit vollstaendigen A/M/D/E-Zellen umgebaut. Begruendung: 114 Einzelbefunde auf Matrix-Ebene waere unlesbar; Phase I hat bereits auf 23 Cluster verdichtet, dies ist die natuerliche Analyse-Einheit.
+2. **Zell-Befuellung** pro Cluster, Regel: "Zelle bekommt Eintrag nur bei konkretem Datei-Impact, keine Spekulativ-Zellen":
+   - **P0 (7 Cluster):** K01 Bloom (E1+E3+E5+E6), K02 Feedback (E1+E3+E5+E7), K03 Tipps (E1+E3+E5+E7), K04 Multiperspektivitaet (E1+E2+E5+E6), K09 Zeit-Realismus (E0+E1+E5+E6+E8), K12 Layout/Spatial-Contiguity (E5+E6+E7), K13 Gueteregeln-Tiefenstruktur (E5+E6+E9).
+   - **P1 (10 Cluster):** K05 Quellenkritik (E1+E3+E5+E6), K06 DaZ (E2+E5+E7+E8), K07 Differenzierung (E1+E3+E5+E7+E8), K08 Trigger (E2+E6+E8), K14 Hefteintrag (E2+E5), K16 Aufgabentypologie (E1+E3+E5), K32 Schutzregeln (E5+E9), K33 Lehrprobe (E5+E6+E8), K34 Personalisierung (E2+E3+E5), K36 Audit-Methodik (E9).
+   - **P2 (6 Cluster):** K11 Metakognition (E3+E5), K15 Pandel (E5+E9), K17 WCAG (E5+E6+E7+E9), K22 Sync-Punkte (E0+E4), K23 Worked Examples (E3+E5), K31 Sequenz-Uebergang (E5+E8).
+3. **Hotspot-Tally verifiziert:**
+   - E5 Gueteregeln: **20/23** → KRITISCH
+   - E3 Subagenten Aufgaben: 9/23 → SEHR HOCH
+   - E6 Checklisten: 9/23 → HOCH
+   - E1 Vertraege: 8/23 → HOCH
+   - E7 Engine: 6/23 → HOCH
+   - E8 Begleitdokumente: 6/23 → MITTEL
+   - E2 Sub-Material: 5/23 → MITTEL
+   - E9 Audit-Methodik: 5/23 → MITTEL
+   - E0/E4: 1-2 → NIEDRIG
+4. **Nicht-offensichtliche Erkenntnisse** im Arbeitsprotokoll kodifiziert:
+   - **E1↔E3 Kopplung**: 8 von 9 E1-Clustern schlagen auch auf E3 durch. Vertrag (E1) und Subagent-Prompt (E3) muessen als Atom-Unit geaendert werden, sonst Desynchronisation. Wird in Phase III als harte Sequenzierungs-Regel.
+   - **K13 als Meta-Patch**: Tiefenstruktur-Refactor der Gueteregel-Kataloge ist nicht ein Cluster unter vielen, sondern definiert die Qualitaet aller weiteren E5-Aenderungen. Muss zeitlich vor oder gekoppelt mit K01-K12/K14-K17 greifen.
+   - **E6 als Multiplikator**: Jeder E5-Patch erzeugt automatisch einen E6-Patch. Bundle-Option: eine konsolidierte D15b-Post-Publish-Checkliste statt 9 Einzel-Checklisten.
+5. **Verdichtung auf 6 strategische Bundle-Zonen** (Input fuer Phase III):
+   - Z1 E5-Meta (K13 als Primaer-Patch)
+   - Z2 E1+E3-Atom-Units (K01/K02/K03/K05/K07/K16 als gekoppelte Patches)
+   - Z3 E6-Konsolidierung (alle Checklisten-Patches gebuendelt)
+   - Z4 E7-Engine-Session (K02/K03/K06/K07/K12/K17)
+   - Z5 E8-Lehrkraft-Dokumente (K06/K07/K08/K09/K31/K33)
+   - Z6 E9-Audit-Methodik-Iteration (K13/K15/K17/K32/K36)
+6. **STATUS.md** "Letzte Aktualisierung", "Aktuelle Phase", "Letzter Arbeitsschritt", "Naechster Schritt", "Abgeschlossen seit letztem Update" aktualisiert.
+
+**Erkenntnisse:**
+
+- Die Entscheidung, Matrix auf **Cluster-Ebene** statt Befund-Ebene zu fuehren, war entscheidend fuer Lesbarkeit und Entscheidungsrelevanz. Phase-I-Cluster-Verdichtung zahlt sich hier aus.
+- **E5 Gueteregeln ist der zentrale Hebel** der gesamten Optimierung — fast alle Cluster landen dort. Ohne E5-Refactor bleibt strukturell alles gleich. K13 (Tiefenstruktur) ist der Meta-Patch, der E5 qualitativ transformiert.
+- **E3 (Aufgaben-Subagenten) + E1 (Vertraege)** sind die zweite Hauptlast. Die Kopplung zwischen beiden ist die wichtigste nicht-offensichtliche Einsicht dieser Phase.
+- **E7 Engine-Patches** sind heterogen, aber Ownership-Konflikt-arm — gut fuer parallele Session mit Frontend-Fokus.
+- **E8 Lehrkraft-Dokumente** sind niedrig-Risiko, hoher Praxis-Wert → ideale Abschluss-Session.
+- **6 Bundle-Zonen statt 23 Einzel-Patches**: reduziert Phase-III-Entscheidungslast erheblich. Statt 23 Strategie-Entscheidungen noch 6 Bundle-Strategien + interne Sequenzierung.
+
+**Artefakte:**
+
+- `docs/projekt/D15B_IMPLIKATIONS_MATRIX.md` — von Scaffold auf Vollbefuellung (23 Cluster × 10 Ebenen, Hotspot-Tally, Interpretation, Arbeitsprotokoll Phase II)
+- `docs/projekt/STATUS.md` — Update
+- `docs/projekt/CHANGELOG.md` — dieser Eintrag
+
+**Naechster Schritt:**
+
+Phase III — `D15B_OPTIMIERUNGS_STRATEGIEN.md` mit den 6 Bundle-Zonen ausarbeiten. Harte Sequenzierung: Z1 (K13 Meta) vor Z2 (E1+E3 Atom-Units) vor Z3 (E6-Konsolidierung). Z4 (E7) parallel moeglich. Z5 (E8) und Z6 (E9) am Ende. Phase III braucht User-Freigabe vor Phase IV (Umsetzung).
+
+---
+
 ## 2026-04-04 — Session 10 (Forts. 8): D15b-Optimierung Phase I (Befund-Qualifizierung)
 
 **Phase:** Post-D15b Infrastruktur-Optimierung, Phase I (Befund-Qualifizierung)
