@@ -240,3 +240,13 @@ A7 Operator-Praezision: PASS — "Ordne ... zu" = operationalisiert
 
 **Umlaute:** Schreibe echte UTF-8-Umlaute (ä, ö, ü, ß). KEINE ASCII-Transliterationen (ae, oe, ue, ss).
 **Typographische Zeichen:** Gedankenstrich als `—` (NICHT `--` oder `-`). Deutsche Anfuehrungszeichen als `„..."` oder `»...«`. Apostroph als `'` (NICHT `'`). Gilt fuer ALLE SuS-sichtbaren Felder: `frage`, `optionen`, `loesung`, `tipps[]`.
+
+## JSON-Validierung (PFLICHT v4.0 — IL-1)
+
+**Pflichtschritt nach Fertigstellung:** JSON-Datei mit Python validieren, BEVOR du das Artefakt zurueckgibst:
+```bash
+python3 -c "import json; json.load(open('aufgabe-<id>.json'))" && echo "OK"
+```
+Bei Fehler (JSONDecodeError, unescaped quotes, gemischte Anfuehrungszeichen): korrigieren und erneut validieren. **Kein Rueckgabe-Output ohne erfolgreichen Validierungslauf.**
+
+**Begruendung:** C2-Audit (HIGH-Finding P6-F1): Encoding-Fehler in aufgabe-4-1 + aufgabe-4-4 wurden erst in Assembly-Phase entdeckt. Python-Validierung war bei Materialien PFLICHT, fehlte aber bei Aufgaben. IL-1-Patch schliesst die asymmetrische Durchsetzung.

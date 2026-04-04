@@ -122,7 +122,10 @@ PHASE 2: MAPPEN-PRODUKTION (sequentiell, pro Mappe)
   │         6 Achsen: 4 Cross + Achse 5 Ueberleitungen│
   │         + Achse 6 HE-Revision)                    │
   │                                                  │
-  │  --- CHECKPOINT: Session-Split hier ---           │
+  │  --- CHECKPOINT: Session-Split hier (PFLICHT) --- │
+  │  Split-Prompt MUSS generiert werden, bevor P-4   │
+  │  begonnen wird. Siehe Session-Split-Template     │
+  │  (OPT-8) unten. Keine Ausnahme.                  │
   │                                                  │
   │  [2.2a] AGENT_RAETSEL (Orchestrator, Cowork)     │
   │         Progressionsplan (liest mat-*.json        │
@@ -234,9 +237,17 @@ git commit -m "docs: Phase 2 abgeschlossen — [game-id] Mappe [N] ([M] Material
 git push origin main
 ```
 
-### Session-Split-Template (OPT-8)
+### Session-Split-Template (OPT-8 / IL-4 PFLICHT v4.0)
 
-Bei ~24.000 Token (nach Phase 2.1c) wird ein Session-Split empfohlen. Der Fortsetzungs-Prompt enthaelt die Phase-2.2-Dispatch-Sequenz INLINE (~300 Token), damit ORCHESTRATOR.md NICHT erneut komplett gelesen werden muss:
+**PFLICHT-Regel (IL-4, nach C2-Audit P4-F1):**
+Nach Phase 2.1c (Material-Cross-Konsistenz) MUSS ein Session-Split-Prompt generiert werden, BEVOR Phase 2.2a (Progressionsplan) begonnen wird. Dies gilt unabhaengig vom aktuellen Token-Verbrauch und unabhaengig davon, ob der Dispatch-Block als "kurz" oder "lang" eingeschaetzt wird. Begruendung: In C2-Mappe-4 wurde in 1/5 Sessions der Split-Prompt vergessen, obwohl die Session-Laenge es erfordert haette. Implizite Erwartung ("bei ~24K Token") fuehrte zu einem MEDIUM-Finding.
+
+**Durchsetzungs-Mechanismus:**
+- Split-Prompt ist PFLICHT-Output am Ende jedes Phase-2.1c-Dispatches
+- Der Orchestrator (Cowork-Session) darf Phase 2.2a NICHT im selben Session-Kontext ausfuehren — immer Split
+- Analog: zwischen Phase 2.2b (Aufgaben-Dispatches) und Phase 2.2c (Cross-Konsistenz) KANN ein zweiter Split erfolgen, falls Token-Budget es nahelegt (empfohlen, nicht PFLICHT)
+
+Der Fortsetzungs-Prompt enthaelt die Phase-2.2-Dispatch-Sequenz INLINE (~300 Token), damit ORCHESTRATOR.md NICHT erneut komplett gelesen werden muss:
 
 ```markdown
 # Fortsetzung: [Game-ID] Mappe [N] — Phase 2.2

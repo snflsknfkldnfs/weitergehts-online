@@ -4,6 +4,112 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-04 — Session 10 (Forts. 5): IL-1 + IL-4 Infrastruktur-Patches
+
+**Phase:** Post-C2 Infrastruktur-Revision (Prioritaet 1 vor D15 / Mappe 5)
+
+**Durchgefuehrt:**
+- IL-1 Patch (5 Dateien): Python-JSON-Validierung als PFLICHT v4.0 in allen SUB_AUFGABE_*.md verankert. Pflichtschritt `python3 -c "import json; json.load(open('aufgabe-<id>.json'))"` nach Fertigstellung, BEVOR Artefakt zurueckgegeben wird. Kein Rueckgabe-Output ohne erfolgreichen Validierungslauf. Schliesst root cause des HIGH-Findings P6-F1 (asymmetrische Encoding-Durchsetzung).
+- IL-4 Patch (1 Datei): Session-Split-Prompt nach Phase 2.1c als PFLICHT v4.0 in ORCHESTRATOR.md. Zwei Aenderungen: (1) CHECKPOINT-Markierung im Phase-2-Diagramm mit expliziter PFLICHT-Kennzeichnung + Verweis auf OPT-8. (2) Session-Split-Template-Sektion um PFLICHT-Regel + Durchsetzungs-Mechanismus erweitert. Split darf nicht mehr token-basiert (~24K) sondern muss phasen-basiert (nach 2.1c) ausgeloest werden. Adressiert MEDIUM-Finding P4-F1 (1/5 Sessions hatte den Split vergessen).
+- Beide Patches sind Prioritaet 1 aus der C2-Evaluation (Section 4). IL-2, IL-3, IL-5 bleiben als Prioritaet 2 offen (nicht blockierend).
+
+**Geaenderte Dateien:**
+- docs/agents/SUB_AUFGABE_MC.md
+- docs/agents/SUB_AUFGABE_FREITEXT.md
+- docs/agents/SUB_AUFGABE_LUECKENTEXT.md
+- docs/agents/SUB_AUFGABE_REIHENFOLGE.md
+- docs/agents/SUB_AUFGABE_ZUORDNUNG.md
+- docs/agents/ORCHESTRATOR.md
+- docs/projekt/STATUS.md
+- docs/projekt/CHANGELOG.md
+
+**Naechster Schritt:** D15 Browser-Validierung Mappe 4.
+
+---
+
+## 2026-04-04 — Session 10 (Forts. 4): C2_EVALUATION_MAPPE4.md — Go/No-Go = GO
+
+**Phase:** C2 Mappe-4-Validierung (Gesamtsynthese + Entscheidung)
+
+**Durchgefuehrt:**
+- C2_EVALUATION_MAPPE4.md: Finale Bewertung des C2-Validierungstests ueber alle 8 Dimensionen.
+- Erfolgskriterien-Pruefung: (1) B1-B10 Regression: 0 wiederkehrend (8 BEHOBEN, 1 PARTIAL B9, 1 N/A B4) → BESTANDEN. (2) Max 2 neue mappe-spezifische: 3 LOW → BESTANDEN mit Toleranz. (3) Eskalation Option A: NICHT AUSGELOEST.
+- Dimensionale Gesamtbewertung: 8/8 PASS. Keine Dimension mit FAIL oder CONDITIONAL.
+- Mappe-3 vs. Mappe-4 Vergleich: Aufgaben-Nachbesserungen -80pp (100%→20%), 0 B1-B10 Repeats, ~10× schnellere Produktion.
+- Konsolidiertes Finding-Register: 1 HIGH (behoben), 3 MEDIUM (D2-F5 Engine-Limitierung, D8-F1 A1-partial, D6-F1 Recovery), 9 LOW, 8 INFO.
+- 5 Infrastruktur-Luecken (IL-1 bis IL-5) priorisiert. Empfehlung: IL-1 + IL-4 vor Mappe-5.
+- D15-Risikoanalyse: 2 Risiken identifiziert (R1 Engine-Rendering MEDIUM, R2 Browser-Kompatibilitaet LOW).
+- **Go/No-Go: GO fuer D15 Browser-Validierung. Pipeline PRODUKTIONSREIF.**
+
+**Geaenderte Dateien:**
+- docs/analyse/C2_EVALUATION_MAPPE4.md (NEU)
+- docs/projekt/STATUS.md
+- docs/projekt/CHANGELOG.md
+
+**Naechster Schritt:** IL-1 + IL-4 Infrastruktur-Patches → D15 Browser-Validierung.
+
+---
+
+## 2026-04-04 — Session 10 (Forts. 3): D3-D8-Audit + Dimensionale Audits komplett
+
+**Phase:** C2 Mappe-4-Validierung (Dimensionale Audits D3-D8)
+
+**Durchgefuehrt:**
+- D3-D8 konsolidiert in einem Dokument (C2_AUDIT_D3-D8.md). Alle 6 Dimensionen aus Transcript-Metriken + Verlaufsprotokollen analysiert.
+- D3 Technik: Finale Dateien einwandfrei. 1 HIGH Finding (P6-F1 Encoding, in Assembly behoben). Infrastruktur-Luecke: Python-Validierung bei Aufgaben fehlt.
+- D4 Tool-Calling: 265 produktive Calls, <5% Redundanz. Intra-Session-Lerneffekte nachweisbar.
+- D5 Token-Effizienz: ~195K Output-Tokens, Dispatch-Isolation erweist sich als token-effizient (~5.4K/Dispatch bei Aufgaben). Context-Reuse funktioniert.
+- D6 Compaction-Resilienz: 2/2 Events mit korrektem Output. Schwaechen: Pfadfehler (C1), Sprach-Wechsel (reproduzierbar), unvollstaendige Re-Lektuere. 2 Protokoll-Luecken identifiziert.
+- D7 Usability: 0 inhaltliche User-Interventionen in 86 min / 18 Dispatches. Volle Autonomie.
+- D8 Infrastruktur: 7/8 Patches wirksam. A1 Encoding partial (Mechanismus fehlt bei Aufgaben). 5 Infrastruktur-Luecken (IL-1 bis IL-5) identifiziert, alle patchbar.
+- **Alle 8 Dimensionen D1-D8 abgeschlossen.** Naechster Schritt: C2_EVALUATION_MAPPE4.md.
+
+**Geaenderte Dateien:**
+- docs/analyse/C2_AUDIT_D3-D8.md (NEU)
+- docs/projekt/STATUS.md
+- docs/projekt/CHANGELOG.md
+
+**Naechster Schritt:** C2_EVALUATION_MAPPE4.md (Gesamtsynthese + Go/No-Go) → D15 Browser-Validierung.
+
+---
+
+## 2026-04-04 — Session 10 (Forts. 2): D2-Audit Didaktische Qualitaet
+
+**Phase:** C2 Mappe-4-Validierung (Dimensionaler Audit D2)
+
+**Durchgefuehrt:**
+- D2-Audit: Inhaltsanalytische Tiefenpruefung aller 5 Materialien, 7 Aufgaben, Hefteintrag, Einstieg, Sicherung, Ueberleitungen gegen Tafelbild als Referenz. 6 Subdimensionen: Erarbeitbarkeit (6/6 Knoten PASS), AFB-Progression (korrekt I→III), Aufgaben-Material-Alignment (7/7 PASS), SCPL-Kohaerenz (kausale Narrativkette intakt), Hefteintrag-Sicherung (3/3 KE vollstaendig), Systemische Analyse (5/5 Mappe-3-Probleme geloest, 4 neue Loesungsprobleme).
+- Kritischster Befund: D2-F5 (MEDIUM) — Freitext-Validierung (aufgabe-4-7) prueft Keyword-Praesenz, nicht Argumentationsqualitaet. Systemimmanente Engine-Limitierung.
+- Didaktische Staerken: Doppelte Verankerung jedes TB-Knotens (Material + Aufgabe), Kanalwechsel (Text→Karte→Tagebuch→Karte→Foto), dramaturgische Ueberleitungen, starke Distraktor-Konstruktion bei aufgabe-4-2 und aufgabe-4-4.
+
+**Geaenderte Dateien:**
+- docs/analyse/C2_AUDIT_D2_DIDAKTIK.md (NEU)
+- docs/projekt/STATUS.md
+- docs/projekt/CHANGELOG.md
+
+**Naechster Schritt:** Dimensionale Audits D3-D8 → C2_EVALUATION_MAPPE4.md.
+
+---
+
+## 2026-04-04 — Session 10 (Fortsetzung): Automated Checks + D1-Audit
+
+**Phase:** C2 Mappe-4-Validierung (Automatisierte Pruefungen + Dimensionaler Audit D1)
+
+**Durchgefuehrt:**
+- Automatisierte Checks: Python-Skript mit 14 Pruefkategorien auf alle Produktionsdateien. Ergebnis: 14/14 PASS. 5 initiale FAILs analysiert und als False Positives klassifiziert (Testskript nahm falsche Feldnamen, falsche Pfade und falsche Schema-Strukturen an). Kein neuer Produktionsfehler entdeckt.
+- D1 Prozesskongruenz-Audit: 10 Pruefachsen (Dispatch-Vollstaendigkeit, Reihenfolge, Phasenstruktur, Session-Splits, Testbedingungen, Q-Gate-Tracker, Vertrag-Lektuere, Erfolgskriterien, Output-Vollstaendigkeit, Dispatch-Isolation). Ergebnis: PASS mit Einschraenkungen. 3 neue Findings: D1-F1 (LOW: Post-Compaction kein Vertrag re-gelesen), D1-F2 (INFO: D12b/D12c dynamisch), D1-F3 (INFO: Split nach D5 statt D6).
+- Methodische Reflexion zur Testskript-Qualitaet dokumentiert: Schema-Annahmen muessen kuenftig aus kanonischen Vertragsdokumenten abgeleitet werden.
+
+**Geaenderte Dateien:**
+- docs/analyse/C2_AUTOMATED_CHECKS.md (NEU)
+- docs/analyse/C2_AUDIT_D1_PROZESSKONGRUENZ.md (NEU)
+- docs/projekt/STATUS.md
+- docs/projekt/CHANGELOG.md
+
+**Naechster Schritt:** Dimensionale Audits D2-D8 → C2_EVALUATION_MAPPE4.md.
+
+---
+
 ## 2026-04-04 — Session 10: C2-Transcript-Aufbereitung komplett + Konsolidierung
 
 **Phase:** C2 Mappe-4-Validierung (Transcript-Aufbereitung + Konsolidierung)

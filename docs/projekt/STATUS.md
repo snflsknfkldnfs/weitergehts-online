@@ -1,12 +1,21 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-04 (Session 10, C2-Transcript-Aufbereitung abgeschlossen)
-**Aktuelle Phase:** **C2 Transcript-Aufbereitung ABGESCHLOSSEN. 6/6 Sessions protokolliert. Konsolidiertes Gesamtprotokoll erstellt. Phase: Automatisierte Checks + Dimensionale Audits (D1-D8).**
-**Letzter Arbeitsschritt:** Alle 6 Produktionssessions (P-1 bis P-6) aus JSONL-Transcripts aufbereitet. Pro Session: Dispatch-Analyse, Read-Steps, Q-Gate-Ergebnisse, Tool-Call-Tabellen, Findings. C2_VERLAUF_GESAMT.md konsolidiert (Gesamtmetriken, Compaction-Events, Findings-Register, Mappe-3-vs-4-Vergleich). 53 Findings klassifiziert (1 HIGH, 2 MEDIUM, 8 LOW, 14 INFO, 28 PASS).
-**Naechster Schritt:** Automatisierte Checks (Python: JSON-Validierung, Encoding, Schema auf Produktionsdateien) → Dimensionale Audits D1-D8 → C2_EVALUATION_MAPPE4.md.
+**Letzte Aktualisierung:** 2026-04-04 (Session 10, IL-1 + IL-4 Infrastruktur-Patches DONE)
+**Aktuelle Phase:** **Infrastruktur-Patches Prioritaet 1 ausgefuehrt. Bereit fuer D15 Browser-Validierung + Mappe-5-Produktion.**
+**Letzter Arbeitsschritt:** IL-1: Python-JSON-Validierung als PFLICHT v4.0 in alle 5 SUB_AUFGABE_*.md eingetragen (schliesst HIGH-Finding P6-F1 root cause). IL-4: Session-Split-Prompt nach Phase 2.1c als PFLICHT in ORCHESTRATOR.md (sowohl CHECKPOINT-Markierung als auch Session-Split-Template OPT-8). Beide Prioritaet-1-Patches der C2-Evaluation umgesetzt.
+**Naechster Schritt:** (1) D15 Browser-Validierung → (2) Metriken-Gesamttabelle → (3) GRUNDSATZENTSCHEIDUNG aktualisieren → (4) AUSFUEHRUNGSPLAN Phase C als DONE → (5) Mappe-5-Produktion.
 **Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. ARTEFAKT_INVENTAR Mappe 2+3 nachpflegen. Engine-Erweiterungen O3/O5/O6 (Ordnungsmuster-Rendering, Pfeiltypen, Farbsemantik) als Stretch-Goal.
 
 **Abgeschlossen seit letztem Update:**
+- Infrastruktur-Patches Prioritaet 1 (Session 10):
+  - IL-1 Patch: Python-JSON-Validierung als PFLICHT-Schritt nach Fertigstellung in alle 5 SUB_AUFGABE_*.md eingefuegt (MC, FREITEXT, LUECKENTEXT, REIHENFOLGE, ZUORDNUNG). Kein Rueckgabe-Output ohne erfolgreichen `python3 -c "import json; json.load(...)"`-Lauf. Schliesst root cause des C2-HIGH-Findings P6-F1 (asymmetrische Durchsetzung: Material ja, Aufgaben nein).
+  - IL-4 Patch: Session-Split-Prompt nach Phase 2.1c als PFLICHT v4.0 in ORCHESTRATOR.md. Zwei Stellen: (a) CHECKPOINT-Markierung in Phase-2-Diagramm mit expliziter PFLICHT-Kennzeichnung, (b) Session-Split-Template-Sektion mit Durchsetzungs-Mechanismus. Split darf nicht mehr token-basiert sondern muss phasen-basiert ausgeloest werden. Adressiert C2-MEDIUM-Finding P4-F1.
+- C2 Evaluation + Go/No-Go (Session 10):
+  - C2_EVALUATION_MAPPE4.md: Gesamtsynthese ueber alle 8 Dimensionen, B1-B10-Regressionstest, Mappe-3-vs-Mappe-4-Vergleich, Infrastruktur-Empfehlungen, D15-Risikoanalyse.
+  - Entscheidung: GO fuer D15 Browser-Validierung. Pipeline PRODUKTIONSREIF. Keine Eskalation zu Option A.
+  - 13 C2-Analyse-Dokumente erstellt (Rahmen, 5 Verlaufsprotokolle, Gesamtprotokoll, Automated Checks, D1-Audit, D2-Audit, D3-D8-Audit, Evaluation).
+  - Konsolidiertes Finding-Register: 21 Findings (1 HIGH behoben, 3 MEDIUM, 9 LOW, 8 INFO).
+  - 5 Infrastruktur-Luecken identifiziert, priorisiert: IL-1 (Python-Validierung Aufgaben) + IL-4 (Session-Split-Prompt PFLICHT) als Prioritaet 1 vor Mappe-5.
 - C2-Vorbereitung (Session 9):
   - P3 Engine-Patch v3.9 ausgefuehrt: Teilfragen-Rendering (_meta.teilfragen → sichtbare Aufzaehlung vor Textarea). 22 Zeilen JS + 31 Zeilen CSS. Cache-Busting ?v=3.9 auf 5 HTML-Dateien. Commit 5bf49ce, gemergt in 67c222b.
   - TAFELBILD_gpg-erster-weltkrieg-ursachen_Mappe4.md erstellt (Phase 0.4). Ordnungsmuster: sequenziell. 6 TB-Knoten (k4-1 bis k4-6). 3 Kernerkenntnisse. Q-Gate G1-G14 PASS.
