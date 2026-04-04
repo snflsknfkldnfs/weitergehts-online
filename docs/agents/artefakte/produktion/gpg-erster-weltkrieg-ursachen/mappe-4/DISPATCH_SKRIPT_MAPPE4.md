@@ -37,7 +37,7 @@
 | D2 | 2.1-2 | Material 2 | DONE | M1-M12 + KA PASS (0 FAIL, 0 WARN) | Karte (→bildquelle), img-4-1 Schlieffen_Plan.svg, BU 31 W. TB: k4-1, k4-4. Public Domain. |
 | D3 | 2.1-3 | Material 3 | DONE | M1-M12 + TB PASS (0 FAIL, 0 WARN) | Tagebuch, 99 W, Figur Friedrich (22, Infanterist). TB: k4-4. Keine Nachbesserung. SQ-1 bis SQ-4 PASS. |
 | D4 | 2.1-4 | Material 4 | DONE | M1-M12 + KA PASS (0 FAIL, 0 WARN) | Karte (→bildquelle), img-4-2 Battle_of_the_Marne 1914 (Maurice), BU 28 W. TB: k4-5. Public Domain. Keine Nachbesserung. SQ-1 bis SQ-4 PASS. |
-| D5 | 2.1-5 | Material 5 (falls vorhanden) | OFFEN | M1-M12 + typ | |
+| D5 | 2.1-5 | Material 5 | DONE | M1-M12 + BQ PASS (0 FAIL, 0 WARN) | BQ (nativ), img-4-3 IWM Q53490, BU 29 W. TB: k4-6. Sicherung + Kernerkenntnisse. Public Domain. Keine Nachbesserung. SQ-1 bis SQ-4 PASS. |
 | D6 | 2.1c | Material-Cross + Ueberleitungen + Hefteintrag-Revision | OFFEN | §7.4 | |
 | D7 | 2.2a | AGENT_RAETSEL: Progressionsplan | OFFEN | — | |
 | D8 | 2.2b-1 | Aufgabe 1 | OFFEN | A1-A18 + typ | |

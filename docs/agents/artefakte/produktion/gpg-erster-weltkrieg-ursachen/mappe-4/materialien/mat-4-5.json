@@ -1,0 +1,50 @@
+{
+  "id": "mat-4-5",
+  "typ": "bildquelle",
+  "titel": "Statt 40 Tagen — vier Jahre Schützengräben",
+  "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-4-3.jpg",
+  "bildunterschrift": "Französische Soldaten bauen Stacheldrahtverhaue in einem Schützengraben in der Argonne, 1914. Nach dem Scheitern des Schlieffen-Plans an der Marne gruben sich beide Seiten ein — der Stellungskrieg hatte begonnen.",
+  "quelle": "Imperial War Museums, Wikimedia Commons",
+  "lizenz": "Public Domain",
+  "position": 5,
+  "didaktische_funktion": "sicherung",
+  "voraussetzung": "mat-4-4",
+  "ueberleitung_von": null,
+  "sequenz_kontext": {
+    "position_in_mappe": "5 von 5",
+    "vorheriges_material": {
+      "id": "mat-4-4",
+      "typ": "karte",
+      "kerninhalt": "Zeigt die Marne-Schlacht: Gallieni-Flankenangriff, Gegenoffensive, 65 km Rückzug."
+    },
+    "naechstes_material": null,
+    "vorausgesetztes_wissen": [
+      "k4-1 (Schlieffen-Plan)",
+      "k4-2 (Zweifrontenkrieg)",
+      "k4-3 (Zeitlücke: Russland mobilisiert langsam)",
+      "k4-4 (Einmarsch über Belgien)",
+      "k4-5 (Schlacht an der Marne)"
+    ],
+    "noch_nicht_eingefuehrt": []
+  },
+  "kernerkenntnisse": [
+    "Der Schlieffen-Plan sollte den Zweifrontenkrieg lösen, indem Frankreich in 40 Tagen besiegt wird — bevor Russland bereit ist.",
+    "Die Schlacht an der Marne stoppte den deutschen Vormarsch — der Plan war gescheitert.",
+    "Statt eines schnellen Sieges begann der Stellungskrieg: vier Jahre Schützengräben von der Nordsee bis zur Schweiz."
+  ],
+  "_meta": {
+    "artefakt_ref": "img-4-3",
+    "wikimedia_dateiname": "File:The_Western_Front,_1914_Q53490.jpg",
+    "thumbnail_breite": 640,
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/The_Western_Front%2C_1914_Q53490.jpg/640px-The_Western_Front%2C_1914_Q53490.jpg",
+    "lokaler_pfad": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-4-3.jpg",
+    "url_verifiziert": true,
+    "bildtyp": "foto",
+    "zeitbezug": "1914",
+    "erschliessungsimpuls": "Was unterscheidet dieses Bild vom schnellen Sieg, den der Schlieffen-Plan versprach?",
+    "kontext_zitat": "zit-4-2 (Moltke d.J.: 'Wir haben den Krieg verloren.') — inhaltlich anschlussfahig fuer AGENT_RAETSEL",
+    "tafelbild_knoten_abgedeckt": ["k4-6"],
+    "lizenz_kompatibel": true,
+    "erarbeitbarkeits_check": "PASS — Foto zeigt Schützengraben-Bau als konkrete Realität. SuS können k4-6 (Stellungskrieg) visuell erschließen: Kontrast zwischen geplantem Bewegungskrieg (40 Tage) und tatsächlichem Grabenkrieg. Kernerkenntnisse 1-3 transportiert durch Titel (40 Tage vs. 4 Jahre) und BU (Scheitern → Eingraben)."
+  }
+}

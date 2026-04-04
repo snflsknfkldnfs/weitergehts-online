@@ -518,3 +518,118 @@
 | SQ-2 | PASS | Kein Stellungskrieg (k4-6) in BU oder Erschliessungsimpuls. |
 | SQ-3 | PASS | k4-5 (Schlacht an der Marne) durch Karte raeumlich erarbeitbar: Frontlinie, Gegenoffensive, Rueckzug visuell nachvollziehbar. |
 | SQ-4 | PASS | Baut auf mat-4-3 auf (Tagebuch zeigte Erschoepfung → Karte zeigt, wo die Gegenoffensive die erschoepften Truppen trifft). |
+
+---
+
+## D5: Material 5 — mat-4-5 bildquelle (Phase 2.1)
+
+**Datum:** 2026-04-04
+**Artefakt:** materialien/mat-4-5.json
+
+```json
+{
+  "artefakt_id": "mat-4-5",
+  "artefakt_typ": "material",
+  "phase": "2.1",
+  "datum": "2026-04-04",
+  "gesamt": "PASS",
+  "kriterien": [
+    {
+      "id": "SCHEMA-01",
+      "name": "Schema-Validierung",
+      "klasse": "SCHEMA",
+      "stufe": "PASS",
+      "detail": "Alle Pflichtfelder inkl. bildunterschrift + lizenz. typ=bildquelle (nativ). kernerkenntnisse[] vorhanden (sicherung). JSON valide."
+    },
+    {
+      "id": "MQ1",
+      "name": "Stundenfrage-Bezug",
+      "klasse": "KONSISTENZ",
+      "stufe": "PASS",
+      "detail": "Foto zeigt Ergebnis des gescheiterten Plans: Schuetzengraeben statt schnellem Sieg. Direkte Antwort auf Stundenfrage."
+    },
+    {
+      "id": "MQ2",
+      "name": "Titel (Typ B: Statement)",
+      "klasse": "FORM",
+      "stufe": "PASS",
+      "detail": "Statement-Titel: 'Statt 40 Tagen — vier Jahre Schuetzengraeben'. Sicherungs-BQ, visueller Anker. Kontrastiert Plan (40 Tage) mit Realitaet (4 Jahre)."
+    },
+    {
+      "id": "MQ4",
+      "name": "Didaktische Bildunterschrift (v3.8 C4)",
+      "klasse": "FORM",
+      "stufe": "PASS",
+      "detail": "BU enthaelt NUR didaktischen Beschreibungstext. KEINE Quellenangabe. Quelle separat in quelle + lizenz."
+    },
+    {
+      "id": "MQ-QH",
+      "name": "Quellenangabe-Hygiene",
+      "klasse": "FORM",
+      "stufe": "PASS",
+      "detail": "quelle = 'Imperial War Museums, Wikimedia Commons'. Keine internen Artefakt-Namen."
+    },
+    {
+      "id": "M1",
+      "name": "Sachgemaessheit",
+      "klasse": "INHALT",
+      "stufe": "PASS",
+      "detail": "Historisches Foto (IWM Q53490, 1914). Franzoesische Soldaten, Stacheldrahtverhaue, Argonne. Zeitlich korrekt."
+    },
+    {
+      "id": "M3c",
+      "name": "Vom-Ende-her (Sicherung)",
+      "klasse": "DIDAKTIK",
+      "stufe": "PASS",
+      "detail": "Titel transportiert KE 1+3 (40 Tage → Stellungskrieg). BU transportiert KE 2+3 (Scheitern → Eingraben). Alle 3 Kernerkenntnisse anschlussfaehig."
+    },
+    {
+      "id": "M4",
+      "name": "Zielklarheit (TB-Knoten-Kongruenz)",
+      "klasse": "DIDAKTIK",
+      "stufe": "PASS",
+      "detail": "k4-6 (Stellungskrieg) visuell erschliessbar: Schuetzengraben + Stacheldraht als konkrete Realitaet des Grabenkriegs."
+    },
+    {
+      "id": "M5",
+      "name": "Aktivierung",
+      "klasse": "DIDAKTIK",
+      "stufe": "PASS",
+      "detail": "Kontrasttitel erzeugt kognitive Dissonanz. Erschliessungsimpuls fordert Vergleich Plan vs. Ergebnis."
+    },
+    {
+      "id": "TYP-01",
+      "name": "Typographische Korrektheit (v3.3)",
+      "klasse": "FORM",
+      "stufe": "PASS",
+      "detail": "UTF-8 Umlaute korrekt. Gedankenstriche U+2014. Kein ASCII-Ersatz."
+    }
+  ],
+  "nachbesserung": null,
+  "finding": null
+}
+```
+
+**BQ-spezifische Kriterien:**
+
+| ID | Kriterium | Stufe | Detail |
+|---|---|---|---|
+| BQ-Q1 | Pfad | PASS | Lokaler Pfad (../../assets/img/...). download_url in _meta dokumentiert. |
+| BQ-Q2 | Identifikation | PASS | "Franzoesische Soldaten bauen Stacheldrahtverhaue in einem Schuetzengraben in der Argonne, 1914." (11 W ≤20). |
+| BQ-Q3 | Kontextualisierung | PASS | "Nach dem Scheitern des Schlieffen-Plans an der Marne gruben sich beide Seiten ein — der Stellungskrieg hatte begonnen." Verbindung k4-6. |
+| BQ-Q4 | Lizenz | PASS | Public Domain (IWM). |
+| BQ-Q5 | Quellenangabe | PASS | "Imperial War Museums, Wikimedia Commons". |
+| BQ-Q6 | Thumbnail-Breite | PASS | 640px (Foto/Szene). |
+| BQ-Q7 | Tafelbild-Abdeckung | PASS | k4-6 durch Foto + BU erschliessbar. |
+| BQ-Q8 | Kein Interpretationsvorgriff | PASS | BU beschreibt (Soldaten bauen) und kontextualisiert (nach Marne), bewertet nicht. |
+| BQ-Q9 | Engine-Typ | PASS | typ=bildquelle (nativ). |
+| BQ-Q10 | Erschliessungsimpuls | PASS | "Was unterscheidet dieses Bild vom schnellen Sieg, den der Schlieffen-Plan versprach?" (11 W). |
+
+**Sequenz-Kohaerenz:**
+
+| ID | Stufe | Detail |
+|---|---|---|
+| SQ-1 | PASS | Referenziert Schlieffen-Plan (k4-1), Marne (k4-5) — beides vorher erarbeitet. k4-6 wird hier eingefuehrt. |
+| SQ-2 | PASS | noch_nicht_eingefuehrt = leer (letzte Position). Keine gesperrten Begriffe. |
+| SQ-3 | PASS | k4-6 (Stellungskrieg) durch Foto + BU erarbeitbar: visueller Kontrast zum Bewegungskrieg. |
+| SQ-4 | PASS | Baut auf mat-4-4 auf (Karte zeigte Rueckzug → Foto zeigt, was danach kam: Grabenkrieg). |
