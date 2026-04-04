@@ -30,13 +30,12 @@ Die Produktion lief in mehreren Cowork-Sessions. Hier werden die Transcripts nac
 
 | Session | Datum | Dispatches | Compactions | Transcript-Status | Datei |
 |---|---|---|---|---|---|
-| P-1 | | | | AUSSTEHEND | |
-| P-2 | | | | AUSSTEHEND | |
-| P-3 | | | | AUSSTEHEND | |
-| P-4 | | | | AUSSTEHEND | |
-| P-5 | | | | AUSSTEHEND | |
-| P-6 | | | | AUSSTEHEND | |
-| P-... | | | | AUSSTEHEND | |
+| P-1 | 2026-04-03 21:19-21:28 UTC | D-1, D-1.5 | 0 | FERTIG | C2_VERLAUF_SESSION_P-1.md |
+| P-2 | 2026-04-03 21:28-21:48 UTC | D0, D1, D2, D3 | 1 | FERTIG | C2_VERLAUF_SESSION_P-2.md |
+| P-3 | 2026-04-04 07:42-07:54 UTC | D4, D5 | 0 | FERTIG | C2_VERLAUF_SESSION_P-3.md |
+| P-4 | 2026-04-04 07:56-08:05 UTC | D6 | 0 | FERTIG | C2_VERLAUF_SESSION_P-4.md |
+| P-5 | 2026-04-04 08:05-08:21 UTC | D7-D13 (inkl. D12b, D12c) | 1 | FERTIG | C2_VERLAUF_SESSION_P-5.md |
+| P-6 | 2026-04-04 08:42-09:04 UTC | D14 | 0 | FERTIG | C2_VERLAUF_SESSION_P-6.md |
 
 **Aktualisierungsregel:** Pro uebergebenem Transcript eine Zeile ausfuellen. Zeilen hinzufuegen wenn noetig.
 
@@ -307,13 +306,15 @@ Systematische Evaluation aller verfuegbaren Werkzeuge gegen die 8 Dimensionen. D
 
 | PM-ID | Session-ID | Titel | Vermutete Dispatches |
 |---|---|---|---|
-| P-1 | `local_c0a75297-05ee-4598-9351-b7d7c875d799` | "Review GPG WWI causes dispatch script" | Orientierung, D-1? |
-| P-2 | `local_c6ba81a8-5b0a-4cfa-9d88-54dd24e25443` | "Complete dispatch script phase one" | D-1.5, D0? |
-| P-3 | `local_dac30110-8cea-4ea1-8931-11d8d934bfb8` | "Dispatch script production tracking" | D1-D5? |
-| P-4 | `local_685f1f4b-0353-4cd9-8b5c-086b0add9e47` | "Dispatch D6 World War One Materials Production" | D6-D7? |
-| P-5 | `local_e4acabe7-4874-4f3b-b208-652c7822fba3` | "Track WWI causes dispatch progress" | D8-D14? |
+| P-1 | `local_c0a75297-05ee-4598-9351-b7d7c875d799` | "Review GPG WWI causes dispatch script" | D-1, D-1.5 (Phase 1 komplett) |
+| P-2 | `local_c6ba81a8-5b0a-4cfa-9d88-54dd24e25443` | "Complete dispatch script phase one" | D0, D1, D2, D3 (Rahmen + 3 Materialien) |
+| P-3 | `local_dac30110-8cea-4ea1-8931-11d8d934bfb8` | "Dispatch script production tracking" | D4, D5 (Phase 2.1 abgeschlossen) |
+| P-4 | `local_685f1f4b-0353-4cd9-8b5c-086b0add9e47` | "Dispatch D6 World War One Materials Production" | D6 (Phase 2.1c Cross + UE + HE-Revision) |
+| P-5 | `local_e4acabe7-4874-4f3b-b208-652c7822fba3` | "Track WWI causes dispatch progress" | D7-D13 (Progressionsplan + 7 Aufgaben + Cross) |
 
-**Hinweis:** Zuordnung Dispatches↔Sessions ist Erstschaetzung aus Titeln. Wird bei Transcript-Lektuere praezisiert.
+| P-6 | `local_08f5d85e-2a8c-4acc-82e5-16e11614c7f7` | "Update dispatch script for Phase 3 assembly" | D14 (Assembly, Claude Code Worktree) |
+
+**Hinweis:** Zuordnung praezisiert nach Transcript-Lektuere (P-1 bis P-6 vollstaendig).
 
 ---
 

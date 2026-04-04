@@ -1,9 +1,9 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-04 (Session 10, C2-Analyse-Vorbereitung)
-**Aktuelle Phase:** **C2 Produktion ABGESCHLOSSEN (D-1 bis D14 DONE, Mappe 4 live). Phase: Prozessanalyse-Vorbereitung. Transcript-Aufbereitung + Dimensionale Audits stehen an.**
-**Letzter Arbeitsschritt:** C2_PROZESSANALYSE_RAHMEN.md erstellt — 8 Analyse-Dimensionen (Prozesskongruenz, Didaktik, Technik, Tool-Calling, Token-Effizienz, Compaction-Resilienz, Usability, Infrastruktur-Wirksamkeit). Transcript-Aufbereitungsformat definiert. Verzeichnis docs/analyse/c2-verlauf/ angelegt.
-**Naechster Schritt:** Session-Transcripts der Produktionssessions schrittweise aufbereiten → C2_VERLAUF_SESSION_P-*.md → Konsolidierung → Dimensionale Audits (D1-D8).
+**Letzte Aktualisierung:** 2026-04-04 (Session 10, C2-Transcript-Aufbereitung abgeschlossen)
+**Aktuelle Phase:** **C2 Transcript-Aufbereitung ABGESCHLOSSEN. 6/6 Sessions protokolliert. Konsolidiertes Gesamtprotokoll erstellt. Phase: Automatisierte Checks + Dimensionale Audits (D1-D8).**
+**Letzter Arbeitsschritt:** Alle 6 Produktionssessions (P-1 bis P-6) aus JSONL-Transcripts aufbereitet. Pro Session: Dispatch-Analyse, Read-Steps, Q-Gate-Ergebnisse, Tool-Call-Tabellen, Findings. C2_VERLAUF_GESAMT.md konsolidiert (Gesamtmetriken, Compaction-Events, Findings-Register, Mappe-3-vs-4-Vergleich). 53 Findings klassifiziert (1 HIGH, 2 MEDIUM, 8 LOW, 14 INFO, 28 PASS).
+**Naechster Schritt:** Automatisierte Checks (Python: JSON-Validierung, Encoding, Schema auf Produktionsdateien) → Dimensionale Audits D1-D8 → C2_EVALUATION_MAPPE4.md.
 **Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. ARTEFAKT_INVENTAR Mappe 2+3 nachpflegen. Engine-Erweiterungen O3/O5/O6 (Ordnungsmuster-Rendering, Pfeiltypen, Farbsemantik) als Stretch-Goal.
 
 **Abgeschlossen seit letztem Update:**
