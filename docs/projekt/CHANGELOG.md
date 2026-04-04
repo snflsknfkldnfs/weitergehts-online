@@ -4,6 +4,61 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-04 — Session 10 (Forts. 10): D15b-Optimierung Phase III (Strategien-Ausarbeitung)
+
+**Phase:** Post-D15b Infrastruktur-Optimierung, Phase III (Strategie-Ausarbeitung)
+
+**Ausloeser:** User-Direktive "starte entsprechend phase iii" nach Phase-II-Commit (b2d1e1f) + User-Push.
+
+**Ziel:** Die 23 Netto-Cluster / 6 Bundle-Zonen aus Phase II in committierbare Strategien ueberfuehren. DAG, Session-Schnitt, Entscheidungspunkte fuer User-Freigabe.
+
+**Durchgefuehrt:**
+
+1. **25 Strategien definiert** (STR-01 bis STR-25), jede als committierbare Einheit mit Ziel, Aenderungs-Skizze, Abhaengigkeiten, Risiken, Validierung, Aufwand (S/M/L).
+2. **STR-01 als Wave-0-Meta-Fundament** etabliert: Tiefenstruktur-Refactor der 6 Gueteregel-Kataloge (`GUETEKRITERIEN_HEFTEINTRAG_*`, `_AUFGABEN`, `_SKRIPT`, `_SEQUENZIERUNG`, `QUALITAETSKRITERIEN_MATERIALPRODUKTION`). Fuehrt zweischichtige Struktur ein: Oberflaechen- vs. Tiefenstruktur-Kriterien. Tiefenstruktur wird Primaer-Achse. Alle E5-beruehrenden STRs (18 Stueck) haengen von STR-01 ab.
+3. **ATOM-UNIT-Kennzeichnung** bei 6 Strategien (STR-02 Bloom, STR-03 Feedback, STR-04 Tipps, STR-08 Quellenkritik, STR-09 Differenzierung, STR-11 Typologie). Diese muessen Vertrag (E1) + Subagent (E3) + Gueteregel-Katalog (E5) synchron im selben Commit aendern — Umsetzung der Phase-II-Erkenntnis "E1↔E3 Kopplung".
+4. **Engine-Bundle in Wave 3** konsolidiert: STR-03 Feedback-Rendering, STR-04 Tipp-UI, STR-07 Layout side-by-side, STR-09 Track-Switcher, STR-10 Glossar-Tooltip + STR-20 als Sammel-A11y (Kontrast, Touch-Targets, ARIA). Kann parallel zu Wave 1+2 laufen, sobald Vertrags-Commits stehen.
+5. **STR-24 E6-Konsolidierung**: Statt 9 Einzel-Checklisten eine **konsolidierte D15b-Post-Publish-Checkliste** mit allen Spots (Bloom/Feedback/Tipps/Multiperspektive/Zeit/Layout/Quellenkritik/Diff/DaZ/Trigger/Lehrprobe/A11y). Umsetzung der Phase-II-Erkenntnis "E6 als Multiplikator".
+6. **STR-25 C2-Cross-Reference** als expliziter Vorlauf-Schritt vor Phase IV verankert. Jeder offene C2-Finding (3 MEDIUM + 9 LOW + IL-2/IL-3/IL-5) wird auf D15b-Abdeckung geprueft; nicht abgedeckte Findings gehen in separaten C2-Restposten-Track. **Kein Register-Merge**, keine Cluster-Neu-Berechnung. Setzt die Empfehlung aus Session 10 Forts. 9 um.
+7. **DAG als Mermaid-Diagramm** mit STR-01 als Root, Verzweigung auf alle abhaengigen STRs, Engine-Kopplung als dotted edges, STR-24 als Sammel-Knoten vor Phase-IV-Start.
+8. **8 Execution-Waves** als Session-Schnitt:
+   - Wave 0 Fundament (STR-01): 1 Session
+   - Wave 1 E1+E3 Atom-Units (STR-02/03/04/05/07/08/09/11): 2-3 Sessions
+   - Wave 2 E2/E5 Material-Querschnitt (STR-06/10/12/13/14/15): 1-2 Sessions
+   - Wave 3 Engine (STR-03/04/07/09/10 Engine-Teile + STR-20): 2 Sessions — parallel zu Wave 1+2
+   - Wave 4 Lehrkraft-Dokumente (STR-06 E8, STR-09 E8, STR-10 E8, STR-12 E8, STR-16, STR-23): 1 Session
+   - Wave 5 E6-Konsolidierung (STR-24): 1 Session
+   - Wave 6 Audit-Methodik (STR-17, STR-19): 1 Session — parallel
+   - Wave 7 P2-Nachschub (STR-18, STR-21, STR-22): 1 Session
+   - Vorlauf: STR-25 C2-Cross-Reference 0.5 Session
+   - **Summe: 10-12 Sessions Voll / 6-7 Sessions P0+P1-Kern**
+9. **4 Entscheidungspunkte** fuer User-Freigabe formuliert:
+   - (a) Scope-Cut: Voll-Umsetzung (25 STR) oder P0+P1-Kern (11-12 STR)
+   - (b) Engine-Session-Schnitt: 1 oder 2 Engine-Sessions
+   - (c) Re-Audit-Scope Phase V: Voll (6 Rollen) oder reduziert (R4/R6/R2)
+   - (d) Mappe-4-Patch vs. Mappe-5-Neu-Produktion
+10. **STATUS + CHANGELOG aktualisiert.**
+
+**Erkenntnisse:**
+
+- Die Verdichtung von 23 Clustern → 25 Strategien klingt nach Inflation, ist aber korrekt: STR-17 Audit-Methodik, STR-20 A11y-Sammel, STR-24 Checklisten-Sammel, STR-25 C2-Cross-Reference sind **Meta-/Sammel-Strategien**, keine neuen Cluster. 21 der 25 Strategien bilden die 23 Cluster direkt ab (leichte 1:1-Divergenz durch STR-17 Bundle-Zone + Cluster-Merging).
+- Die **ATOM-UNIT-Kennzeichnung** ist die wichtigste operative Entscheidung. Ohne sie wuerde Phase IV in einen fragmentierten Patch-Strom zerfallen, in dem Vertraege und Subagenten-Prompts auseinanderdriften (bekanntes Failure-Pattern aus fruehen Sessions).
+- **Parallelitaets-Potenzial** (Wave 3 + Wave 6 parallel zu Wave 1+2) verkuerzt Phase IV gegenueber rein sequenzieller Abarbeitung um geschaetzt 3-4 Sessions.
+- **STR-25 C2-Cross-Reference als Vorlauf** ist methodisch sauberer als ein C2-Restposten-Track nach Phase IV. Vor Phase IV wissen wir, welche C2-Findings automatisch mit abgedeckt sind und welche separat behandelt werden muessen — das vermeidet Doppel-Arbeit.
+- **Aufwands-Schaetzung konservativ**: Jede Atom-Unit-Strategie (STR-02..11) ist mit M (1-4h) geschaetzt, aber die Kopplung Vertrag+Subagent+Katalog + Pruefung auf Legacy-Kompatibilitaet kann in Einzelfaellen L werden. Realistische Obergrenze: 12 Sessions.
+
+**Artefakte:**
+
+- `docs/projekt/D15B_OPTIMIERUNGS_STRATEGIEN.md` — Template → Voll-Ausarbeitung. Strategie-Register, 25 Strategie-Details, DAG (Mermaid), 8 Waves, Entscheidungspunkte, Arbeitsprotokoll.
+- `docs/projekt/STATUS.md` — Update
+- `docs/projekt/CHANGELOG.md` — dieser Eintrag
+
+**Naechster Schritt:**
+
+**User-Freigabe fuer Phase IV** zu den 4 Entscheidungspunkten einholen. Danach STR-25 C2-Cross-Reference als 0.5-Session-Vorlauf, dann Wave 0 STR-01 Tiefenstruktur-Meta. **Phase IV beginnt nicht ohne Freigabe.**
+
+---
+
 ## 2026-04-04 — Session 10 (Forts. 9): D15b-Optimierung Phase II (Implikations-Matrix)
 
 **Phase:** Post-D15b Infrastruktur-Optimierung, Phase II (Infrastruktur-Implikations-Analyse)
