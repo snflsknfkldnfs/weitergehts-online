@@ -1,0 +1,55 @@
+{
+  "id": "mat-4-4",
+  "typ": "bildquelle",
+  "titel": "Wo stoppten die Franzosen den deutschen Vormarsch?",
+  "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-4-2.jpg",
+  "bildunterschrift": "Karte der Ersten Schlacht an der Marne, September 1914. Sie zeigt die Stellungen der deutschen und französischen Armeen sowie den deutschen Rückzug nach der Gegenoffensive unter General Gallieni.",
+  "quelle": "Frederick Maurice, 1919, Wikimedia Commons",
+  "lizenz": "Public Domain",
+  "position": 4,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": "mat-4-3",
+  "ueberleitung_von": null,
+  "sequenz_kontext": {
+    "position_in_mappe": "4 von 5",
+    "vorheriges_material": {
+      "id": "mat-4-3",
+      "typ": "tagebuch",
+      "kerninhalt": "Personifiziert den Vormarsch: Siegeszuversicht, dann Erschöpfung und Nachschubprobleme."
+    },
+    "naechstes_material": {
+      "id": "mat-4-5",
+      "typ": "bildquelle",
+      "kerninhalt": "Schützengraben-Foto als visueller Anker: Stellungskrieg statt schnellem Sieg."
+    },
+    "vorausgesetztes_wissen": [
+      "k4-1 (Schlieffen-Plan)",
+      "k4-2 (Zweifrontenkrieg)",
+      "k4-3 (Zeitlücke: Russland mobilisiert langsam)",
+      "k4-4 (Einmarsch über Belgien)"
+    ],
+    "noch_nicht_eingefuehrt": [
+      "k4-6 (Stellungskrieg)"
+    ]
+  },
+  "_meta": {
+    "artefakt_ref": "img-4-2",
+    "wikimedia_dateiname": "File:Battle_of_the_Marne,_9_September_1914.jpg",
+    "thumbnail_breite": 800,
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Battle_of_the_Marne%2C_9_September_1914.jpg/800px-Battle_of_the_Marne%2C_9_September_1914.jpg",
+    "lokaler_pfad": "../../assets/img/gpg-erster-weltkrieg-ursachen/img-4-2.jpg",
+    "url_verifiziert": true,
+    "bildtyp": "karte",
+    "kartentyp": "historisch",
+    "zeitbezug": "9. September 1914",
+    "legende": {
+      "Armeepositionen": "Deutsche Armeen (1.–5.) und französische Armeen (5., 6., 9.) sowie britisches Expeditionskorps",
+      "Bewegungspfeile": "Rückzugsbewegungen der deutschen Truppen nach der Gegenoffensive",
+      "Frontlinie": "Linie zwischen Paris und Verdun, ca. 230 km"
+    },
+    "erschliessungsimpuls": "Warum war die Nähe zu Paris ein Vorteil für die französische Gegenoffensive?",
+    "tafelbild_knoten_abgedeckt": ["k4-5"],
+    "lizenz_kompatibel": true,
+    "erarbeitbarkeits_check": "PASS — Karte zeigt Frontlinien, Armeepositionen und Rückzugsbewegungen. SuS können k4-5 (Schlacht an der Marne) räumlich erschließen: Gallieni-Flankenangriff von Paris aus, 65 km deutscher Rückzug."
+  }
+}

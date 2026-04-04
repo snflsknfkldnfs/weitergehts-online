@@ -407,3 +407,114 @@
 | SQ-2 | PASS | Kein Stellungskrieg, keine Marne, kein Rueckzug als militaerisches Ereignis. |
 | SQ-3 | PASS | k4-4 (Einmarsch ueber Belgien) aus Eintrag direkt erarbeitbar. |
 | SQ-4 | PASS | Baut auf mat-4-2 auf (Karte zeigte geplanten Vormarsch → Tagebuch personifiziert ihn). |
+
+---
+
+## D4: Material 4 — mat-4-4 karte (Phase 2.1)
+
+**Datum:** 2026-04-04
+**Artefakt:** materialien/mat-4-4.json
+
+```json
+{
+  "artefakt_id": "mat-4-4",
+  "artefakt_typ": "material",
+  "phase": "2.1",
+  "datum": "2026-04-04",
+  "gesamt": "PASS",
+  "kriterien": [
+    {
+      "id": "SCHEMA-01",
+      "name": "Schema-Validierung",
+      "klasse": "SCHEMA",
+      "stufe": "PASS",
+      "detail": "Alle Pflichtfelder inkl. bildunterschrift + lizenz. typ=bildquelle (karte→bildquelle Mapping korrekt). JSON valide."
+    },
+    {
+      "id": "MQ1",
+      "name": "Stundenfrage-Bezug",
+      "klasse": "KONSISTENZ",
+      "stufe": "PASS",
+      "detail": "Karte zeigt das Scheitern des Vormarschs an der Marne — direkte Antwort auf 'Warum scheiterte der Plan fuer einen schnellen Sieg?'"
+    },
+    {
+      "id": "MQ2",
+      "name": "Titel (Typ A: Frage)",
+      "klasse": "FORM",
+      "stufe": "PASS",
+      "detail": "Frage-Titel: 'Wo stoppten die Franzosen den deutschen Vormarsch?' — aktivierend, kartenbasiert, R7-zugaenglich."
+    },
+    {
+      "id": "MQ4",
+      "name": "Didaktische Bildunterschrift (v3.8 C4)",
+      "klasse": "FORM",
+      "stufe": "PASS",
+      "detail": "BU enthaelt NUR didaktischen Beschreibungstext (Identifikation + Kontextualisierung). KEINE Quellenangabe. Quelle separat in quelle + lizenz."
+    },
+    {
+      "id": "MQ-QH",
+      "name": "Quellenangabe-Hygiene",
+      "klasse": "FORM",
+      "stufe": "PASS",
+      "detail": "quelle = 'Frederick Maurice, 1919, Wikimedia Commons'. Keine internen Artefakt-Namen."
+    },
+    {
+      "id": "M1",
+      "name": "Sachgemaessheit",
+      "klasse": "INHALT",
+      "stufe": "PASS",
+      "detail": "Historische Karte (Maurice 1919) zeigt Marne-Schlacht korrekt. Frontlinien, Armeepositionen, Rueckzug belegbar in SKRIPT §5 und INHALTSBASIS."
+    },
+    {
+      "id": "M2",
+      "name": "Adressatengemaessheit (R7)",
+      "klasse": "FORM",
+      "stufe": "PASS",
+      "detail": "BU 28 Woerter (≤40). Einfache Sprache. Laengster Satz 20 W."
+    },
+    {
+      "id": "M4",
+      "name": "Zielklarheit (TB-Knoten-Kongruenz)",
+      "klasse": "DIDAKTIK",
+      "stufe": "PASS",
+      "detail": "k4-5 (Schlacht an der Marne) raeumlich erschliessbar: Frontlinie Paris–Verdun, Gallieni-Flanke, 65 km Rueckzug."
+    },
+    {
+      "id": "M5",
+      "name": "Aktivierung",
+      "klasse": "DIDAKTIK",
+      "stufe": "PASS",
+      "detail": "Frage-Titel regt aktive Kartenarbeit an. Erschliessungsimpuls fordert Schlussfolgerung (Naehe Paris als strategischer Vorteil)."
+    },
+    {
+      "id": "TYP-01",
+      "name": "Typographische Korrektheit (v3.3)",
+      "klasse": "FORM",
+      "stufe": "PASS",
+      "detail": "UTF-8 Umlaute korrekt. Gedankenstriche U+2014. Kein ASCII-Ersatz."
+    }
+  ],
+  "nachbesserung": null,
+  "finding": null
+}
+```
+
+**KA-spezifische Kriterien:**
+
+| ID | Kriterium | Stufe | Detail |
+|---|---|---|---|
+| KA-BU | Bildunterschrift (3 Funktionen) | PASS | 28/40 W. Identifikation (Karte/Marne/Sept. 1914, 9 W). Kontextualisierung (Armeepositionen + Rueckzug + Gallieni, 19 W). Erschliessungsimpuls in _meta (12 W). |
+| KA-LEG | Legende | PASS | 3 Kategorien dokumentiert: Armeepositionen, Bewegungspfeile, Frontlinie. |
+| KA-ORI | Orientierungshilfen | PASS | Paris und Verdun als bekannte geographische Ankerpunkte. Marne als Fluss. |
+| KA-ALT | Altersgemaeessheit | PASS | 3 Legenden-Kategorien. Nicht ueberfrachtet (≤8 unterscheidbare Elemente). |
+| KA-LIZ | Lizenz | PASS | Public Domain. |
+| KA-ENG | Engine-Typ | PASS | typ=bildquelle (karte→bildquelle Mapping korrekt). |
+
+**Sequenz-Kohaerenz:**
+
+| ID | Stufe | Detail |
+|---|---|---|
+| SQ-1 | PASS | Referenziert nur bereits erarbeitetes Wissen: Vormarsch (k4-4), deutsche Armeen (mat-4-1/mat-4-2). Gallieni als neues Element gehoert zu k4-5 (wird hier eingefuehrt). |
+| SQ-2 | PASS | Kein Stellungskrieg (k4-6) in BU oder Erschliessungsimpuls. |
+| SQ-3 | PASS | k4-5 (Schlacht an der Marne) durch Karte raeumlich erarbeitbar: Frontlinie, Gegenoffensive, Rueckzug visuell nachvollziehbar. |
+| SQ-4 | PASS | Baut auf mat-4-3 auf (Tagebuch zeigte Erschoepfung → Karte zeigt, wo die Gegenoffensive die erschoepften Truppen trifft). |
