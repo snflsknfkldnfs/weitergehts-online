@@ -2,9 +2,9 @@
 
 **Zweck:** Fortschritts- und Artefakt-Tracking fuer Phase III.5. Bei Compaction/Interrupt: diese Datei liefert vollstaendige Wiederaufnahme-Information. STATUS.md verweist nur hierher.
 
-**Letzte Aktualisierung:** 2026-04-05
-**Aktive Sub-Phase:** III.5a (Charten + Evidenz-Bundles) — PENDING START
-**Naechster Schritt:** Verifikations-Test `agent-teams:team-spawn` mit 1 Dummy-Agent durchfuehren, dann 6 Charten anlegen.
+**Letzte Aktualisierung:** 2026-04-05 (Sub-Phase 5a COMPLETE)
+**Aktive Sub-Phase:** III.5a COMPLETE. III.5b WAITING FOR USER APPROVAL.
+**Naechster Schritt:** User-Freigabe fuer 5b einholen. Nach Freigabe: 3 parallele Subagenten (RA1 + RA2 + RA6) via `Agent` Tool spawnen.
 
 ---
 
@@ -12,7 +12,7 @@
 
 | Sub-Phase | Status | Abgeschlossen | Blocker |
 |---|---|---|---|
-| III.5a Charten + Bundles | PENDING | - | - |
+| III.5a Charten + Bundles | COMPLETE | 2026-04-05 | - |
 | III.5b Struktur-Audits (RA1/2/6) | NOT STARTED | - | abhaengig von 5a |
 | III.5c Tiefen-Audits (RA3/4/5) | NOT STARTED | - | abhaengig von 5b |
 | III.5d Verifikations-Gate | NOT STARTED | - | abhaengig von 5b+5c |
@@ -26,20 +26,20 @@
 
 | Artefakt | Status |
 |---|---|
-| VERIFIKATIONSTEST_TEAM_SPAWN.md | PENDING |
-| CHARTA_RA1_SCOPE_DRIFT.md | PENDING |
-| CHARTA_RA2_DEPENDENCIES.md | PENDING |
-| CHARTA_RA3_CODE_KOPPLUNG.md | PENDING |
-| CHARTA_RA4_PIPELINE.md | PENDING |
-| CHARTA_RA5_META.md | PENDING |
-| CHARTA_RA6_KONTEXT.md | PENDING |
-| EVIDENZ_BUNDLE_RA1.md | PENDING |
-| EVIDENZ_BUNDLE_RA2.md | PENDING |
-| EVIDENZ_BUNDLE_RA3.md | PENDING |
-| EVIDENZ_BUNDLE_RA4.md | PENDING |
-| EVIDENZ_BUNDLE_RA5.md | PENDING |
-| EVIDENZ_BUNDLE_RA6.md | PENDING |
-| UEBERGABE_PHASE_III_5_5a.md | PENDING |
+| VERIFIKATIONSTEST_TEAM_SPAWN.md | COMPLETE |
+| CHARTA_RA1_SCOPE_DRIFT.md | COMPLETE |
+| CHARTA_RA2_DEPENDENCIES.md | COMPLETE |
+| CHARTA_RA3_CODE_KOPPLUNG.md | COMPLETE |
+| CHARTA_RA4_PIPELINE.md | COMPLETE |
+| CHARTA_RA5_META.md | COMPLETE |
+| CHARTA_RA6_KONTEXT.md | COMPLETE |
+| EVIDENZ_BUNDLE_RA1.md | COMPLETE |
+| EVIDENZ_BUNDLE_RA2.md | COMPLETE |
+| EVIDENZ_BUNDLE_RA3.md | COMPLETE |
+| EVIDENZ_BUNDLE_RA4.md | COMPLETE |
+| EVIDENZ_BUNDLE_RA5.md | COMPLETE |
+| EVIDENZ_BUNDLE_RA6.md | COMPLETE |
+| UEBERGABE_PHASE_III_5_5a.md | COMPLETE |
 
 ### III.5b — Struktur-Audits
 

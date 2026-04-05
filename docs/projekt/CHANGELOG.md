@@ -4,6 +4,67 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-05 — Session 10 (Forts. 11): Phase III.5a COMPLETE (Charten + Bundles + Verifikationstest)
+
+**Phase:** D15b-Optimierung Phase III.5a (Pre-Implementation-Risiko-Audit, Sub-Phase Vorbereitung)
+
+**Ziel:** Audit-Infrastruktur aufbauen: Verifikations-Test der Subagent-Spawning-Mechanik, Rollen-Charten + Evidenz-Bundles fuer 6 Risiko-Auditoren, Cold-Session-Uebergabe-Prompt. Danach User-Freigabe fuer 5b einholen.
+
+**Durchgefuehrt:**
+
+1. **Verzeichnis-Setup:** `docs/projekt/phase-iii-5/` angelegt als Container fuer alle 5a-5e Artefakte.
+
+2. **Verifikations-Test Subagent-Spawning:** 1 Dummy-Agent via `Agent` Tool mit `subagent_type: Explore`, triviale Dateisystem-Task (D15B_*-Dateien auflisten). Alle 6 Verifikations-Dimensionen PASS (Spawn, Dateisystem-Zugriff, Task-Verstaendnis, Output-Format, Ergebnis-Rueckgabe, Terminierung). Manuelle Gegenprobe via Glob bestaetigt Korrektheit. Report: `phase-iii-5/VERIFIKATIONSTEST_TEAM_SPAWN.md`.
+   - **Entscheidung:** Primaerer Spawning-Mechanismus fuer 5b/5c = parallele `Agent`-Tool-Aufrufe in einer Nachricht. `agent-teams:team-spawn` Skill bleibt als optionale Orchestrierungs-Ebene. Subagenten schreiben direkt in ihre BERICHT-Datei (keine Text-Rueckgabe, kein Truncation-Risiko).
+
+3. **6 Rollen-Charten verfasst** (je Charta: Rolle, Primaerfrage, Scope-Grenzen, Input-Verweis, Methodik, Output-Schema mit Pflicht-Sektionen, Anti-Kontamination, Verbotenes, Freigabe-Kriterium, Mindest-Zeilenzahl):
+   - CHARTA_RA1_SCOPE_DRIFT — Infrastruktur vs. Content/Didaktik/Lehrer-Scope (>=300 Zeilen, >=8 Findings).
+   - CHARTA_RA2_DEPENDENCIES — DAG-Konsistenz, Zirkularitaet, tote/verwaiste Knoten, ATOM-Vollstaendigkeit, Wave-Sequenz (>=250 Zeilen, >=6 Findings, Pflicht-Mermaid-Anhang).
+   - CHARTA_RA3_CODE_KOPPLUNG — escape-engine.js, data.json-Schema, CSS, HTML, Regressionsrisiko Mappen 1-4, Cache-Busting, Wave-3-Atomisierbarkeit (>=350 Zeilen, >=10 Findings).
+   - CHARTA_RA4_PIPELINE — 6 Phasen-Vertraege, ORCHESTRATOR, Subagent-I/O-Kontrakte, Q-Gate-Konsistenz, Composability (>=300 Zeilen, >=8 Findings).
+   - CHARTA_RA5_META — Meta-Auditor ueber RA1-RA4/RA6, Konvergenz-Matrix, Dissens-Register, Blindspot-Map, adaptierte Rubrik (>=350 Zeilen, >=6 Findings, Pflicht-Konvergenz-Matrix).
+   - CHARTA_RA6_KONTEXT — Kollisionen mit Gueteregel-Katalogen, Vertraegen, Agenten, docs/analyse, Referenz-Integritaet, Obsolet-Liste (>=300 Zeilen, >=8 Findings).
+
+4. **6 Evidenz-Bundles verfasst** (je Bundle: Pflicht-Lektuere, kontextuelle Lektuere mit Bedingung, explizite Verbotsliste zur Scope-Isolation, erwartete Output-Datei, kritische Ankerpunkte):
+   - EVIDENZ_BUNDLE_RA1 — STR-Register + Implikations-Matrix als primaere Objekte.
+   - EVIDENZ_BUNDLE_RA2 — STR-Register mit Fokus auf DAG + Waves + Arbeitsprotokoll, mermaid-validator-Tool-Hinweis.
+   - EVIDENZ_BUNDLE_RA3 — escape-engine.js, core.js, data.json, mappe-*.html als Code-Baseline.
+   - EVIDENZ_BUNDLE_RA4 — 6 Phasen-Vertraege, ORCHESTRATOR, VERTRAG_PHASE_3_ASSEMBLY, kontextuell SUB_AUFGABE_*/SUB_MATERIAL_*/AGENT_*.
+   - EVIDENZ_BUNDLE_RA5 — 5 RA-Berichte + 5 Charten als primaere Objekte, sequentialthinking-Tool-Hinweis.
+   - EVIDENZ_BUNDLE_RA6 — 6 Gueteregel-Kataloge + Checkliste_Interaktive_Materialien als primaere Objekte.
+
+5. **UEBERGABE_PHASE_III_5_5a.md** als Cold-Session-Wiederaufnahme-Prompt: Status, was wurde gemacht, Entscheidungen, bekannte Risiken, Naechster-Schritt-Protokoll fuer 5b, Checkpoint-Protokoll fuer User-Freigabe.
+
+6. **State-File `D15B_PHASE_III_5_AUDIT_STATE.md` aktualisiert:** Alle 5a-Artefakte auf COMPLETE, aktive Sub-Phase auf "5a COMPLETE, 5b WAITING FOR USER APPROVAL".
+
+**Erkenntnisse:**
+- Verifikations-Test bestaetigt: Subagent-Spawning-Mechanik funktioniert in diesem Cowork-Sandbox zuverlaessig auf der `Agent`-Tool-Basis-Ebene. High-Level `agent-teams:team-spawn` Skill ist nicht erforderlich — die Basis-Schicht traegt, und weniger Indirektion reduziert Fehlerquellen.
+- Rollen-Isolation kommt zu 100% aus Prompt-Design + Evidenz-Bundle-Disziplin. Das ist wichtig: RA3 und RA4 brauchen technisch Lesezugriff auf viele Dateien, und nur die explizit kodifizierte Bundle-Pflicht-Lektuere haelt sie im Scope.
+- Charten sind mit klarer Verbotsliste zu anderen RAs ausgestattet, um Cross-Contamination in Prompts zu verhindern.
+
+**Artefakte (13 neue Dateien):**
+- docs/projekt/phase-iii-5/VERIFIKATIONSTEST_TEAM_SPAWN.md
+- docs/projekt/phase-iii-5/CHARTA_RA1_SCOPE_DRIFT.md
+- docs/projekt/phase-iii-5/CHARTA_RA2_DEPENDENCIES.md
+- docs/projekt/phase-iii-5/CHARTA_RA3_CODE_KOPPLUNG.md
+- docs/projekt/phase-iii-5/CHARTA_RA4_PIPELINE.md
+- docs/projekt/phase-iii-5/CHARTA_RA5_META.md
+- docs/projekt/phase-iii-5/CHARTA_RA6_KONTEXT.md
+- docs/projekt/phase-iii-5/EVIDENZ_BUNDLE_RA1.md
+- docs/projekt/phase-iii-5/EVIDENZ_BUNDLE_RA2.md
+- docs/projekt/phase-iii-5/EVIDENZ_BUNDLE_RA3.md
+- docs/projekt/phase-iii-5/EVIDENZ_BUNDLE_RA4.md
+- docs/projekt/phase-iii-5/EVIDENZ_BUNDLE_RA5.md
+- docs/projekt/phase-iii-5/EVIDENZ_BUNDLE_RA6.md
+- docs/uebergabe/UEBERGABE_PHASE_III_5_5a.md
+- docs/projekt/D15B_PHASE_III_5_AUDIT_STATE.md (aktualisiert)
+- docs/projekt/STATUS.md (aktualisiert)
+- docs/projekt/CHANGELOG.md (dieser Eintrag)
+
+**Naechster Schritt:** User-Freigabe fuer Sub-Phase 5b einholen. Bei Freigabe: 3 parallele Subagenten (RA1 + RA2 + RA6) in einer Nachricht spawnen.
+
+---
+
 ## 2026-04-05 — Session 10 (Forts. 11): Phase III.5 Pre-Implementation-Risiko-Audit verankert
 
 **Phase:** D15b-Optimierung Phase III.5 (Pre-Implementation-Risiko-Audit)
