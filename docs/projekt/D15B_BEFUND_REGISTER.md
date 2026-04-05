@@ -193,23 +193,23 @@
 
 ### R5 Seminarleiter Bayern (Kaltenbrunner) — Audit: docs/analyse/D15b_AUDIT_R5_SEMINARLEITER.md
 
-| ID | Titel | Richtung | Verallg | Severitaet | Konv-Bezug | Verdikt | Status |
-|----|---|---|---|---|---|---|---|
-| R5-1 | 45-Min-Rahmen nicht eingehalten (82 Min real) | modify | INFRA | HIGH | D1 | pending | pending |
-| R5-2 | Differenzierung nicht im Tool implementiert | add | INFRA | HIGH | A2/E | pending | pending |
-| R5-3 | A7 Freitext ohne Bewertungs-Rubric (Lehrprobe-Killer) | add | MIXED | HIGH | C2 | pending | pending |
-| R5-4 | Fiktives Tagebuch-Kennzeichnung zu schwach | enforce | MAPPE | MEDIUM | B2/D1 | pending | pending |
-| R5-5 | Karten-Vergleich Plan↔Wirklichkeit nicht side-by-side | modify | INFRA | MEDIUM | A4 (Layout) | pending | pending |
-| R5-6 | Reihenfolgen erlauben Trial-and-Error-Pseudolernen | modify | MAPPE | MEDIUM | C3 | pending | pending |
-| R5-7 | MC-Feedback ohne Distraktor-Erklaerung | modify | INFRA | MEDIUM | A1 | pending | pending |
-| R5-8 | Keine kooperativen/Paar-Phasen vorgesehen | add | INFRA | MEDIUM | unklar | pending | pending |
-| R5-9 | Tagebuch-Vorentlastung fehlt | add | MAPPE | MEDIUM | E | pending | pending |
-| R5-10 | Keine Synchronisationspunkte fuer Klassenfuehrung | modify | INFRA | MEDIUM | unklar | pending | pending |
-| R5-11 | Multiperspektivitaet LehrplanPlus unterbelichtet | modify | MAPPE | LOW | B1 | pending | pending |
-| R5-12 | Bildquelle franzoesisch, Perspektive nicht benannt | modify | MAPPE | LOW | B1 | pending | pending |
-| R5-13 | Gueterkriterien ignorieren Lehrprobe-Tauglichkeit | add | INFRA | LOW | E5 | pending | pending |
-| R5-14 | Gueterkriterien ignorieren Zeit-Realismus | add | INFRA | LOW | E5 | pending | pending |
-| R5-15 | Karte-2 Legende unklar | modify | MAPPE | LOW | unklar | pending | pending |
+| ID    | Titel                                                 | Richtung | Verallg | Severitaet | Konv-Bezug  | Verdikt | Status  |
+| ----- | ----------------------------------------------------- | -------- | ------- | ---------- | ----------- | ------- | ------- |
+| R5-1  | 45-Min-Rahmen nicht eingehalten (82 Min real)         | modify   | INFRA   | HIGH       | D1          | pending | pending |
+| R5-2  | Differenzierung nicht im Tool implementiert           | add      | INFRA   | HIGH       | A2/E        | pending | pending |
+| R5-3  | A7 Freitext ohne Bewertungs-Rubric (Lehrprobe-Killer) | add      | MIXED   | HIGH       | C2          | pending | pending |
+| R5-4  | Fiktives Tagebuch-Kennzeichnung zu schwach            | enforce  | MAPPE   | MEDIUM     | B2/D1       | pending | pending |
+| R5-5  | Karten-Vergleich Plan↔Wirklichkeit nicht side-by-side | modify   | INFRA   | MEDIUM     | A4 (Layout) | pending | pending |
+| R5-6  | Reihenfolgen erlauben Trial-and-Error-Pseudolernen    | modify   | MAPPE   | MEDIUM     | C3          | pending | pending |
+| R5-7  | MC-Feedback ohne Distraktor-Erklaerung                | modify   | INFRA   | MEDIUM     | A1          | pending | pending |
+| R5-8  | Keine kooperativen/Paar-Phasen vorgesehen             | add      | INFRA   | MEDIUM     | unklar      | pending | pending |
+| R5-9  | Tagebuch-Vorentlastung fehlt                          | add      | MAPPE   | MEDIUM     | E           | pending | pending |
+| R5-10 | Keine Synchronisationspunkte fuer Klassenfuehrung     | modify   | INFRA   | MEDIUM     | unklar      | pending | pending |
+| R5-11 | Multiperspektivitaet LehrplanPlus unterbelichtet      | modify   | MAPPE   | LOW        | B1          | pending | pending |
+| R5-12 | Bildquelle franzoesisch, Perspektive nicht benannt    | modify   | MAPPE   | LOW        | B1          | pending | pending |
+| R5-13 | Gueterkriterien ignorieren Lehrprobe-Tauglichkeit     | add      | INFRA   | LOW        | E5          | pending | pending |
+| R5-14 | Gueterkriterien ignorieren Zeit-Realismus             | add      | INFRA   | LOW        | E5          | pending | pending |
+| R5-15 | Karte-2 Legende unklar                                | modify   | MAPPE   | LOW        | unklar      | pending | pending |
 
 ### R6 Unterrichtsqualitaet empirisch (Heidacker) — Audit: docs/analyse/D15b_AUDIT_R6_UNTERRICHTSQUALITAET.md
 

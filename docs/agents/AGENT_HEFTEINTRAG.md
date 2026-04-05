@@ -115,12 +115,6 @@ Im Hefteintrag wird daraus:
 - Jeder Schritt kann optional eine Darstellung haben (Gegenueberstellung, Zeitleiste, Tabelle)
 - Fachbegriffe am Satzende nach Doppelpunkt oder Gedankenstrich
 
-**Knoten-Elaborierung (v3.5, PFLICHT):**
-Jeder Knoten mit `typ=kernbegriff` oder `typ=wirkung`, dessen `text` einen Fachbegriff enthaelt, der NICHT im allgemeinen R7-Wortschatz liegt, MUSS ein `merksatz`-Feld haben (max 15 Woerter). Der merksatz erklaert den Begriff in schuelernaher Sprache.
-- FAIL: `{"id": "k3-6", "text": "Burgfrieden (SPD stimmt zu)", "typ": "wirkung"}` — "Burgfrieden" ist kein R7-Alltagswort, kein merksatz.
-- PASS: `{"id": "k3-6", "text": "Burgfrieden (SPD stimmt zu)", "typ": "wirkung", "merksatz": "Alle Parteien stellen Streit ein und stuetzen gemeinsam den Krieg."}` — Fachbegriff elaboriert.
-- Pruefung: Jeden Knoten-text auf Fachbegriffe scannen → bei Fachbegriff ausserhalb R7: merksatz vorhanden? Wenn nein → FAIL.
-
 **Darstellungstypen fuer die C-Zone:**
 
 | darstellung.typ | Wann | Engine-Rendering |
