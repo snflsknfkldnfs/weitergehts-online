@@ -2,7 +2,7 @@
 
 **Zweck:** Konsolidierte Strategie-Entwuerfe, abgeleitet aus `D15B_IMPLIKATIONS_MATRIX.md` (23 Netto-Cluster, 6 Bundle-Zonen). Jede Strategie = eine kohaerente, committierbare Aenderungs-Einheit.
 **Kontext:** `AUSFUEHRUNGSPLAN_D15B_OPTIMIERUNG.md` Phase III.
-**Status:** GEFUELLT (Phase III, 2026-04-04). 25 Strategien STR-01 bis STR-25, DAG + 8 Execution-Waves, C2-Cross-Reference verankert.
+**Status:** GEFUELLT + EVALUIERT (Phase III, 2026-04-05). 21 aktive Strategien (4 nach User-Evaluation gestrichen: STR-07, STR-10, STR-16, STR-18). STR-09 + STR-14 durch strukturell andere Loesungen ersetzt. STR-09-NEU Differenzierungs-Exit-Architektur als Folgeprojekt ausserhalb Phase IV.
 
 ---
 
@@ -26,19 +26,19 @@
 | STR-03 | Elaboratives Feedback als Pflicht-Slot | P0 | K02 | E1, E3, E5 | M | 1 |
 | STR-04 | 3-stufige Tipp-Struktur mit Haertegraden | P0 | K03 | E1, E3, E5 | M | 1 |
 | STR-05 | Multiperspektivitaet-Pflicht bei Konfliktthemen | P0 | K04 | E1, E2, E5 | M | 1 |
-| STR-06 | Zeit-Realismus Doppelstunde | P0 | K09 | E0, E1, E5, E8 | M | 2 |
-| STR-07 | Spatial-Contiguity Layout-Regel | P0 | K12 | E5, E7 | M | 1 |
-| STR-08 | Quellenkritik als eigener Aufgabentyp | P1 | K05 | E1, E3, E5 | L | 1 |
-| STR-09 | Differenzierungs-Tracks A/B/C | P1 | K07 | E1, E3, E5, E7, E8 | L | 1 |
-| STR-10 | DaZ/Sprachliche Sensibilitaet (System) | P1 | K06 | E2, E5, E7, E8 | M | 2 |
+| STR-06 | Zeit-Orientierungsgroesse (weich) | P0 | K09 | E1, E5 | S | 2 |
+| ~~STR-07~~ | ~~Spatial-Contiguity Layout-Regel~~ | GESTRICHEN | — | — | — | — |
+| STR-08 | Quellenkritik als adaptiver Aufgabentyp | P1 | K05 | E1, E3, E5 | L | 1 |
+| STR-09 | Differenzierungs-Exit-Architektur (NEU) | FOLGEPROJEKT | K07 | E1, E2, E7 | L | — |
+| ~~STR-10~~ | ~~DaZ/Sprachliche Sensibilitaet~~ | AUFGEGANGEN in STR-09 | — | — | — | — |
 | STR-11 | Aufgabentypologie-Erweiterung (Vergleich, Begruendung) | P1 | K16 | E1, E3, E5 | M | 1 |
-| STR-12 | Trigger-Sensibilitaet-System | P1 | K08 | E2, E6, E8 | S | 2 |
-| STR-13 | Hefteintrag Reflexions-Slot | P1 | K14 | E2, E5 | S | 2 |
-| STR-14 | Personalisierung parametrisiert (Dissens-Aufloesung) | P1 | K34 | E2, E3, E5 | S | 2 |
+| STR-12 | Trigger-Sensibilitaet-System (Lehrkraft-Metadaten) | P1 | K08 | E2, E6, E8 | S | 2 |
+| STR-13 | Mappenabschluss-Zone Reflexion (standardisiert) | P1 | K14 | E2, E4, E5 | S | 2 |
+| STR-14 | Fiktionalitaets-Kennzeichnung in Quellenangabe (NEU) | P1 | K34 | E2, E5 | S | 2 |
 | STR-15 | R3-Schutzregeln als Regressions-Guard | P1 | K32 | E5, E9 | S | 2 |
-| STR-16 | Lehrprobe-Tauglichkeits-Check | P1 | K33 | E5, E6, E8 | S | 4 |
+| ~~STR-16~~ | ~~Lehrprobe-Tauglichkeits-Check~~ | GESTRICHEN (out of scope) | — | — | — | — |
 | STR-17 | Audit-Methodik-Iteration (D15b-Lessons) | P1 | K36 | E9 | M | 6 |
-| STR-18 | Metakognitions-Prompt-Variante | P2 | K11 | E3, E5 | S | 7 |
+| ~~STR-18~~ | ~~Metakognitions-Prompt-Variante~~ | GESTRICHEN (out of scope) | — | — | — | — |
 | STR-19 | Pandel Geschichtsbewusstsein als Audit-Dimension | P2 | K15 | E5, E9 | S | 6 |
 | STR-20 | WCAG / A11y-Pass | P2 | K17 | E5, E6, E7, E9 | L | 3 |
 | STR-21 | Worked-Example-Variante | P2 | K23 | E3, E5 | S | 7 |
@@ -47,7 +47,9 @@
 | STR-24 | Konsolidierte D15b-Post-Publish-Checkliste | Konsoli | K01-K17 (E6-Anteile) | E6 | M | 5 |
 | STR-25 | C2-Cross-Reference + Restposten-Abgleich | Meta | — (prozess) | — | S | vor IV |
 
-**Summe:** 25 Strategien. P0: 7. P1: 10. P2: 6. Konsolidierung/Meta: 2.
+**Summe (aktiv Phase IV):** 20 Strategien. P0: 5 (STR-02 bis STR-06). P1: 7 (STR-08, 11, 12, 13, 14, 15, 17). P2: 5 (STR-19, 20, 21, 22, 23). Konsolidierung/Meta: 2 (STR-24, 25). P0-META Fundament: 1 (STR-01).
+**Gestrichen nach Evaluation (2026-04-05):** STR-07 (Audit-Fehlannahme), STR-10 (aufgegangen in STR-09-NEU), STR-16 (Lehrprobe out of scope), STR-18 (Metakognition out of scope).
+**Folgeprojekt (ausserhalb Phase IV):** STR-09-NEU Differenzierungs-Exit-Architektur.
 
 ---
 
@@ -164,114 +166,94 @@
 
 ---
 
-### STR-06 — Zeit-Realismus Doppelstunde
+### STR-06 — Zeit-Orientierungsgroesse (weich)
 
 **Prioritaet:** P0
 **Adressiert:** K09 (Zeit-Realismus)
-**Ebenen:** E0, E1, E5, E6, E8
-**Dateien:** `docs/architektur/WORKFLOW_v4.md`, `VERTRAG_PHASE_2-0_RAHMEN.md`, `GUETEKRITERIEN_SKRIPT.md`, `GUETEKRITERIEN_SEQUENZIERUNG.md`, neu: `escape-games/<game>/lehrkraft/doppelstunden-ablauf.md`
+**Ebenen:** E1, E5 (weich)
+**Dateien:** `VERTRAG_PHASE_2-0_RAHMEN.md`, `GUETEKRITERIEN_SKRIPT.md`
 
-**Ziel:** Jede Mappe deklariert `zeitbudget_minuten` pro Station. Summe-Check gegen Gesamt-Unterrichts-Zeit (Standard 45 oder 90 Min). OTL-Anteil (Opportunity-to-Learn) wird geschaetzt. Ein Lehrkraft-Ablaufplan ergaenzt jede Mappe.
+**Ziel (abgeschwaecht nach Evaluation 2026-04-05):** Im Rahmen-Vertrag wird eine **weiche Orientierungsgroesse** verankert: "1 Mappe ≈ 1 Unterrichts-Einheit (45 Min) bearbeitbar". Keine harten Zeitbudgets pro Station, keine OTL-Schaetzung, keine Doppelstunden-Ablaufplaene, kein Pre-Publish-Zeit-Audit. Der Wert ist Leitplanke fuer die Generierung, nicht Gate.
 
 **Aenderung:**
-- WORKFLOW v4: Zeitbudget als Pflicht-Output von Phase 2-0.
-- VERTRAG_2-0: `zeitbudget_pro_station`, `zeitbudget_gesamt`, `otl_schaetzung`.
-- SK-Katalog: SK16 "Zeit-Plausibilitaet" (Tiefenstruktur).
-- S-Katalog: S16 "Station-Zeiten summieren zur Gesamtzeit".
-- E8: Ablaufplan-Template als Markdown in `lehrkraft/`.
+- VERTRAG_2-0: neues weiches Feld `zeit-orientierung: "1 UE"` als Hinweis an alle nachfolgenden Phasen zum Dimensionieren des Material-/Aufgaben-Umfangs.
+- SK-Katalog: Kurz-Notiz unter Tiefenstruktur "Umfang plausibel auf 1 UE dimensioniert" (nicht als BLOCKER-Kriterium).
 
-**Abhaengigkeiten:** Vor: STR-01. Informiert STR-24.
-**Risiken:** Zeitschaetzung ist iterativ korrigierbar — nicht als BLOCKER behandeln.
-**Validierung:** Mappe-4-Retrospektive-Befund (R5 Seminarleiter: 82 Min real vs. 45 deklariert) wird als BLOCKER-Regression verhindert.
-**Aufwand:** M
+**Abweichung zur Urfassung:** Die urspruenglich geplanten Elemente (Zeitbudget-Deklaration pro Station, OTL-Schaetzung, Pre-Publish-Zeit-Audit, E8-Doppelstunden-Ablaufplan) werden **gestrichen**. Begruendung User: zu starres Gate fuer iterativ korrigierbare Groesse. Der Mappe-4-R5-Befund (82 Min real) bleibt als Lessons-Learned im Audit-Register, erzeugt aber kein hartes Kontroll-Artefakt.
+
+**Abhaengigkeiten:** Vor: STR-01.
+**Risiken:** gering (weiche Leitplanke).
+**Validierung:** Mappe-5-Generierung orientiert sich sichtbar an 1 UE.
+**Aufwand:** S
 
 ---
 
-### STR-07 — Spatial-Contiguity Layout-Regel
+### STR-07 — ~~Spatial-Contiguity Layout-Regel~~ GESTRICHEN
 
-**Prioritaet:** P0
-**Adressiert:** K12 (Layout / Split-Attention — Sweller)
-**Ebenen:** E5, E6, E7
-**Dateien:** `GUETEKRITERIEN_HEFTEINTRAG_PRODUKT.md`, `GUETEKRITERIEN_SKRIPT.md`, `assets/css/themes/theme-gpg.css`, `escape-engine.js`
-
-**Ziel:** Material und zugehoerige Aufgabe werden **raeumlich benachbart** dargestellt (Spatial-Contiguity nach Mayer). Ende der Split-Attention-BLOCKER-Situation.
-
-**Aenderung:**
-- E5 (HE/SK-Kataloge): Regel "Material-Aufgabe-Bezug visuell side-by-side oder in sequenzieller Naehe".
-- E7 (Engine): Neues Layout-Modul `_renderStationPair(material, aufgabe)` mit responsive side-by-side Desktop / gestapelt Mobile. CSS-Refactor der Station-Cards.
-- E6: Layout-Audit als Pre-Publish-Check (STR-24).
-
-**Abhaengigkeiten:** Vor: STR-01. Tangential zu STR-03/04 Engine-Patches (gleiche Wave 3-Session).
-**Risiken:** Responsive-Regression auf iPad-Breite — Browser-Test auf 768px + 1024px.
-**Validierung:** Re-Audit R4 (Instructional Design): BLOCKER R4-2 (Split-Attention) gesenkt. Browser-Check 3 Breakpoints.
-**Aufwand:** M
+**Status:** GESTRICHEN nach User-Evaluation 2026-04-05.
+**Begruendung:** Das aktuelle Spalten-Layout erfuellt Spatial-Contiguity bereits. Es existieren keine Mobile-Probleme. Der urspruengliche R4-Split-Attention-Befund (BLOCKER) entstand aus einer Fehlannahme im D15b-Audit-Prozess (R4 Instructional Design stuetzte sich auf eine inkorrekte Layout-Rekonstruktion). Keine Infrastruktur-Aenderung notwendig.
+**Folge fuer Audit-Methodik:** Hinweis in STR-17 (Audit-Methodik-Iteration): R4-Rollen-Subagent benoetigt in v2 einen expliziten Schritt zur Verifikation der Layout-Rekonstruktion (Screenshot-Check + Text-Beschreibung) bevor Split-Attention als BLOCKER klassifiziert wird.
 
 ---
 
-### STR-08 — Quellenkritik als eigener Aufgabentyp [ATOM-UNIT]
+### STR-08 — Quellenkritik als adaptiver Aufgabentyp [ATOM-UNIT]
 
 **Prioritaet:** P1
 **Adressiert:** K05 (Quellenkritik)
-**Ebenen:** E1, E3, E5, E6
-**Dateien:** `VERTRAG_2-2b`, neu: `SUB_AUFGABE_QUELLENKRITIK.md` ODER Erweiterung `SUB_AUFGABE_FREITEXT.md`, `GUETEKRITERIEN_AUFGABEN.md`
+**Ebenen:** E1, E3, E5
+**Dateien:** `VERTRAG_2-2b`, neu: `SUB_AUFGABE_QUELLENKRITIK.md`, `GUETEKRITERIEN_AUFGABEN.md`, Progressionsplan-Agent (Phase 2-2a)
 
-**Ziel:** Quellenkritik ist ein eigenstaendiger Aufgaben-Subtyp mit Struktur W-Fragen (wer, wann, wo, warum, woher, wozu) + Bewertungs-Rubric. Jede Mappe mit Primaerquellen MUSS mind. eine Quellenkritik-Aufgabe enthalten.
+**Ziel (umformuliert nach Evaluation 2026-04-05):** Quellenkritik ist ein **adaptiver, verfuegbarer** Aufgaben-Subtyp mit W-Fragen-Struktur (wer, wann, wo, warum, woher, wozu). Der **Progressionsplan-Agent (Phase 2-2a) entscheidet sinngerichtet**, wann Quellenkritik sinnvoll ist — keine starre Pflicht bei jeder Primaerquelle. Anti-Automatismus-Klausel: Quellenkritik wird getriggert durch didaktische Passung, nicht durch mechanische Quelltyp-Detektion.
 
 **Aenderung:**
-- Entscheidung: Eigener Subagent ODER Erweiterung von FREITEXT. **Empfehlung: eigener Subagent** — das macht die Pflicht kodifizierbar und senkt Prompt-Komplexitaet in FREITEXT.
-- VERTRAG: `aufgaben_typ: "quellenkritik"` + Pflicht bei Primaerquellen-Einsatz.
-- A-Katalog: A22 "Quellenkritik bei Primaerquellen vorhanden" (Tiefenstruktur).
-- Checkliste: Quellenkritik-Spot als Pre-Publish-Check.
+- Neuer Subagent `SUB_AUFGABE_QUELLENKRITIK` mit schlankem W-Fragen-Template.
+- VERTRAG: `aufgaben_typ: "quellenkritik"` wird verfuegbar, ist aber nicht automatisch bei Primaerquellen Pflicht.
+- Progressionsplan-Agent (Phase 2-2a): Entscheidungs-Regel "wenn Material Primaerquelle + didaktisches Ziel Quellen-Reflexion beinhaltet → Quellenkritik-Aufgabe vorsehen".
+- A-Katalog: A22 "Quellenkritik sinngerichtet eingesetzt" (Tiefenstruktur, kein starres Quotenkriterium).
+
+**ATOM-UNIT:** Vertrag + neuer Subagent + A-Katalog-Eintrag im selben Commit.
 
 **Abhaengigkeiten:** Vor: STR-01. Parallel zu STR-02/03/04.
-**Risiken:** Neuer Subagent erhoeht Infrastruktur-Footprint — Prompt klein halten, Template-basiert.
-**Validierung:** Re-Audit R1 (Forstner): Quellenkritik-Kriterium erfuellt.
+**Risiken:** Progressionsplan-Agent muss Entscheidungsregel sauber anwenden — Beispiel-Matrix in Agent-Prompt.
+**Validierung:** Mappe-5-Spot: Primaerquellen mit Quellen-Reflexionsziel erhalten Quellenkritik, andere nicht.
 **Aufwand:** L
 
 ---
 
-### STR-09 — Differenzierungs-Tracks A/B/C [ATOM-UNIT]
+### STR-09 (NEU) — Differenzierungs-Exit-Architektur [FOLGEPROJEKT]
 
-**Prioritaet:** P1
-**Adressiert:** K07 (Differenzierung)
-**Ebenen:** E1, E3, E5, E7, E8
-**Dateien:** `VERTRAG_2-2b`, 5 SUB_AUFGABE_*, A-Katalog, Engine, neu: `lehrkraft/differenzierungs-leitfaden.md`
+**Prioritaet:** FOLGEPROJEKT ausserhalb Phase IV. Umsetzung nach hinreichender Stabilitaet der Kerninfrastruktur.
+**Adressiert:** K07 (Differenzierung), K06 (DaZ/Sprach-Niveau — aufgegangen in dieser Strategie)
+**Ebenen:** E1 (Vertrag um Exit-Hooks), E2 (Material-Metadaten fuer Glossar-Terme), E7 (Engine-Komponenten)
+**Dateien:** spaetere Konkretisierung — nicht in Phase IV. Quelle: `docs/analyse/Ideen zu Differenzierung.md`.
 
-**Ziel:** Drei Tracks pro Aufgabe: **A** (sprachlich/kognitiv reduziert: kuerzere Texte, mehr Scaffolding, geschlossenere Aufgaben), **B** (Basis), **C** (Herausforderung: mehr Abstraktion, offenere Formate). Track-Switcher in Engine + Leitfaden fuer Lehrkraft zur Zuweisung.
+**Kern-Idee (User-Konzept):**
+- **Sprachliche Differenzierung via Hover-Glossar:** Fachbegriffe und schwierige Worte im Material werden beim Hovern mit schuelernahen Kurz-Erklaerungen eingeblendet.
+- **Globale Sprachumstellung des Games:** zentraler Header-Button zur Umschaltung der Game-Sprache (Forschungsfrage offen: nur Materialspalte oder auch Fragebogen? Best-Practice der sprachuebergreifenden Bildung pruefen).
+- **Differenzierung nach unten / nach oben via Clipboard-KI-Prompts:** Buttons an kontextspezifischen Stellen in der Materialspalte kopieren vorgefertigte, rollengepimte KI-Prompts ins Clipboard. SuS fuehren den Prompt beim beliebigen KI-Anbieter aus. Prompts mit Rollenpriming als Lernbegleiter, Folgefragen-Anregung, niedrigschwellige Interaktion.
+  - **Nach unten:** kleinschrittigere, schuelernahe Erklaerung des Materials/Sachverhalts.
+  - **Nach oben:** Hintergrund, Nachfragen, Anknuepfen an Interesse, konstruktivistische Lernprozesse.
 
-**Aenderung:**
-- VERTRAG: `track_flag: "A"|"B"|"C"`, Aufgaben koennen in 2-3 Varianten existieren.
-- SUB_AUFGABE_*: Generieren pro Aufgabe die Tracks (oder aufgaben-spezifisch).
-- A-Katalog: A23 "Differenzierung Track A/B/C vorhanden".
-- Engine: Track-Switcher UI (Lehrkraft kann Klasse auf Track stellen oder Schueler waehlen lassen).
-- E8: Leitfaden zur Track-Zuweisung (Diagnose-Hinweise).
+**Status:** Konzept. **KEINE Umsetzung in Phase IV Waves.** Einplanung als eigenes Folgeprojekt nach hinreichender Stabilitaet der Kerninfrastruktur (Waves 0-6).
 
-**Abhaengigkeiten:** Vor: STR-01. Kopplung mit Wave 3 Engine.
-**Risiken:** Hoher Content-Produktionsaufwand — Track B und C erstmal Pflicht, A optional.
-**Validierung:** Re-Audit R3 (Landrealschule-Hellermann): Differenzierung strukturell verankert.
-**Aufwand:** L
+**Konsequenz fuer die urspruengliche STR-09 (Tracks A/B/C) und STR-10 (DaZ-Glossar-System):**
+- Beide Urfassungen **entfallen**. Tracks A/B/C werden nicht umgesetzt (hoher Content-Aufwand, strukturell fragwuerdige Loesung). Das DaZ-Glossar geht in der Hover-Idee der Exit-Architektur auf und wird nicht als eigener E8-Lehrkraft-Workflow realisiert.
+- Das DaZ-Glossar-Template (E8) entfaellt.
+
+**Offene Punkte fuer Folgeprojekt-Start:**
+1. Engine-Design Hover-Komponente (Accessibility, Touch-Verhalten).
+2. Prompt-Katalog: 3-5 generische Prompt-Templates + Platzhalter fuer kontextspezifische Ergaenzung.
+3. Trigger-Entscheidung: wo in Materialspalte werden Exit-Buttons platziert (heuristisch vs. annotiert).
+4. Sprachumstellung-Scope-Entscheidung.
+
+**Abhaengigkeiten:** Keine fuer Phase IV. Eingabeleistung: Kerninfrastruktur stabil (mindestens Waves 0-3 abgeschlossen + Mappe 5 mit neuer Infrastruktur produziert).
 
 ---
 
-### STR-10 — DaZ / Sprachliche Sensibilitaet (System)
+### STR-10 — ~~DaZ / Sprachliche Sensibilitaet~~ AUFGEGANGEN
 
-**Prioritaet:** P1
-**Adressiert:** K06 (DaZ, Sprach-Niveau)
-**Ebenen:** E2, E5, E7, E8
-**Dateien:** 7 SUB_MATERIAL_*, `QUALITAETSKRITERIEN_MATERIALPRODUKTION.md`, `escape-engine.js` (Glossar-Tooltip), neu: `lehrkraft/daz-glossar-template.md`
-
-**Ziel:** Fachbegriffe und schwierige Worte werden in Materialien markiert (Inline-Tag oder Metadaten). Engine rendert Tooltip/Aufklapp-Glossar. DaZ-Lehrkraefte haben Template fuer Vor-Entlastung.
-
-**Aenderung:**
-- SUB_MATERIAL_*: Prompt-Erweiterung "markiere Fachbegriffe > R7-Wortschatz + erkl. Kurzform".
-- M-Katalog: M14 "Sprach-Niveau-Check" (Tiefenstruktur).
-- Engine: Glossar-Komponente (HTML-Span mit data-glossar-term + Tooltip).
-- E8: Template-Dokument, das Lehrkraft pro Mappe ausfuellt.
-
-**Abhaengigkeiten:** Vor: STR-01. Engine-Teil in Wave 3.
-**Risiken:** Overtagging — Wortschatz-Quelle konkret: Zertifikat Deutsch A2/B1-Liste.
-**Validierung:** Re-Audit R2 (Kilic): DaZ-Glossar-Luecke geschlossen.
-**Aufwand:** M
+**Status:** AUFGEGANGEN in STR-09-NEU (Hover-Glossar). Urspruenglicher Scope (Inline-Tagging, Engine-Tooltip, DaZ-Lehrkraft-Template) deckt sich weitgehend mit der Hover-Komponente der Exit-Architektur. Keine separate Strategie mehr.
+**Konsequenz:** Phase IV enthaelt kein DaZ-System. Die M-Katalog-Ebene kann spaeter im Rahmen von STR-09-NEU ergaenzt werden.
 
 ---
 
@@ -282,16 +264,19 @@
 **Ebenen:** E1, E3, E5
 **Dateien:** `VERTRAG_2-2b`, neue SUB_AUFGABE_VERGLEICH.md, SUB_AUFGABE_BEGRUENDUNG.md (oder als FREITEXT-Varianten), A-Katalog
 
-**Ziel:** Zwei neue Aufgaben-Subtypen: **Vergleich** (systematisch 2-3 Objekte gegenueberstellen, Strukturraster) und **Begruendung** (Claim-Evidence-Reasoning). Adressiert die Bloom-Luecke (K01) durch Typen, die von sich aus Level 4-5 erfordern.
+**Ziel:** Zwei neue Aufgaben-Subtypen werden **verfuegbar gemacht**: **Vergleich** (systematisch 2-3 Objekte gegenueberstellen, Strukturraster) und **Begruendung** (Claim-Evidence-Reasoning). Adressiert die Bloom-Luecke (K01) durch Typen, die von sich aus Level 4-5 erfordern. **Anti-Quota-Klausel:** kein starres "mind. X Typen pro Mappe"-Kriterium. Der Progressionsplan-Agent (Phase 2-2a) waehlt Subtypen **sinngerichtet** entlang didaktischer Zielsetzung.
 
 **Aenderung:**
 - VERTRAG: 2 neue `aufgaben_typ`-Werte.
 - 2 neue SUB_AUFGABE-Prompts oder FREITEXT-Variante mit strukturierter Output-Regel.
-- A-Katalog: Typologie-Erweiterung dokumentiert.
+- A-Katalog: Typologie-Erweiterung dokumentiert mit expliziter **Anti-Template-Rule**: "kein Quotenkriterium mind. X Typen pro Mappe; Progressionsplan waehlt sinngerichtet".
+- Progressionsplan-Agent: Auswahl-Heuristik erweitert um Vergleich/Begruendung.
 
-**Abhaengigkeiten:** Vor: STR-01. Synergetisch mit STR-02 (Bloom).
+**ATOM-UNIT:** Vertrag + Subagent/FREITEXT-Variante + A-Katalog im selben Commit.
+
+**Abhaengigkeiten:** Vor: STR-01. Synergetisch mit STR-02 (Bloom) — nicht quotiert, sondern als zusaetzliche Hebel fuer Bloom-Tiefe.
 **Risiken:** Subagent-Proliferation — zuerst als FREITEXT-Varianten, eigene Subagenten bei Bedarf nach Mappe-5.
-**Validierung:** Mappe-5 enthaelt mind. je 1 Vergleich + 1 Begruendung. Bloom-Verteilung erreicht Policy leichter.
+**Validierung:** Mappe-5 — Progressionsplan zeigt, dass mind. einer der beiden Typen didaktisch sinnvoll eingesetzt wurde (nicht quotenbasiert).
 **Aufwand:** M
 
 ---
@@ -303,10 +288,13 @@
 **Ebenen:** E2, E6, E8
 **Dateien:** SUB_MATERIAL_*, Checkliste, neu: `lehrkraft/trigger-leitfaden.md`
 
-**Ziel:** Materialien mit Triggerpotenzial (Gewalt, Krieg, Tod, Diskriminierung) werden mit `trigger_flags: [gewalt, tod, ...]` markiert. Checkliste verlangt Trigger-Check vor Publikation. Lehrkraft erhaelt Leitfaden zur Vorbereitung + Handhabung (Opt-Out, Gespraechs-Prompts).
+**Ziel:** Materialien mit Triggerpotenzial (Gewalt, Krieg, Tod, Diskriminierung) werden mit `trigger_flags: [gewalt, tod, ...]` als **Lehrkraft-Metadaten** markiert. Checkliste verlangt Trigger-Check vor Publikation. Lehrkraft erhaelt Leitfaden zur Vorbereitung + Handhabung (Opt-Out, Gespraechs-Prompts).
+
+**Sichtbarkeits-Constraint (Evaluation 2026-04-05):** `trigger_flags` sind **ausschliesslich Lehrkraft-Metadaten**. Sie sind **NIE SuS-sichtbar**. Im Schauseiten-Rendering (Engine) werden die Flags unterdrueckt. Der Orchestrator/Assembly-Schritt muss sicherstellen, dass Trigger-Metadaten nur in Lehrkraft-Pfaden (Leitfaden, Pre-Publish-Checkliste) auftauchen.
 
 **Aenderung:**
-- SUB_MATERIAL: Metadaten-Feld `trigger_flags`.
+- SUB_MATERIAL: Metadaten-Feld `trigger_flags` (Lehrkraft-Scope, nicht im oeffentlichen JSON-Export).
+- Engine: expliziter Unterdrueckungs-Check beim Rendern von Material-Metadaten.
 - Checkliste: Trigger-Spot (in STR-24).
 - E8: Leitfaden-Template.
 
@@ -317,43 +305,45 @@
 
 ---
 
-### STR-13 — Hefteintrag Reflexions-Slot
+### STR-13 — Mappenabschluss-Zone Reflexion (standardisiert, Variante a)
 
 **Prioritaet:** P1
-**Adressiert:** K14 (Hefteintrag reflexiv)
-**Ebenen:** E2, E5
-**Dateien:** `AGENT_HEFTEINTRAG.md`, `GUETEKRITERIEN_HEFTEINTRAG_*.md`
+**Adressiert:** K14 (Reflexion) + Aufraeum-Auftrag Mappenabschlussbereich
+**Ebenen:** E2 (Material/Zone-Metadaten), E4 (Assembly/Orchestrator), E5 (HE-Katalog Abgrenzung)
+**Dateien:** Assembly-Skript/Orchestrator, `data.json`-Schema, neues Sub-Template `mappenabschluss-zone.md`, `GUETEKRITERIEN_HEFTEINTRAG_*.md` (Abgrenzungs-Notiz)
 
-**Ziel:** Jeder Hefteintrag enthaelt einen Reflexions-Slot (3. Zone): "Was bedeutet das fuer mich/heute?" — Transfer auf Gegenwart, Urteilsbildung, Metakognition.
+**Ziel (umgebaut nach Evaluation 2026-04-05):** Die Reflexion wird **aus dem Hefteintrag herausgezogen**. Der Hefteintrag bleibt **reine Wissenssicherung**. Unterhalb des Hefteintrags entsteht eine neue **statische Mappenabschluss-Zone** als fixes, standardisiertes Template mit zwei Elementen: (1) 1-2 Reflexions-Frage(n), (2) Ueberleitungssatz zur naechsten Mappe.
 
 **Aenderung:**
-- AGENT_HEFTEINTRAG: Reflexions-Zone als Pflicht-Output.
-- HE-Katalog: HE14 "Reflexions-Zone vorhanden und relevant" (Tiefenstruktur).
+- Neuer Abschnitt in `data.json` / Assembly-Output: `mappenabschluss_zone { reflexion_fragen: [...], ueberleitungssatz: "..." }`.
+- Kleiner **Sub-Task im Assembly-Schritt**, der diese Zone aus fixem Template befuellt (ggf. mit minimaler KI-Unterstuetzung fuer die Ueberleitung).
+- HE-Katalog: Abgrenzungs-Notiz "Hefteintrag = Wissenssicherung; Reflexion gehoert NICHT in den Hefteintrag, sondern in die Mappenabschluss-Zone".
+- **Aufraeum-Auftrag Mappe 4:** Der aktuelle Mappenabschlussbereich in Mappe 4 ist durch Relikte frueherer Architekturentscheidungen chaotisch. Er wird im Zuge dieser Strategie **praezise aufgeraeumt und standardisiert** — alte Elemente entfernen, neues Template einsetzen.
 
-**Abhaengigkeiten:** Vor: STR-01.
-**Risiken:** Floskelhafte Reflexionen — Beispiel-Korpus im AGENT_HEFTEINTRAG.
-**Validierung:** Mappe-5-Hefteintrag hat Reflexions-Zone.
-**Aufwand:** S
+**Abhaengigkeiten:** Vor: STR-01. Auswirkung auf Assembly-Schritt.
+**Risiken:** Floskelhafte Reflexionsfragen — Template-Bank mit 5-8 generischen Fragen, aus der situativ gewaehlt wird.
+**Validierung:** Mappe 4 aufgeraeumt und auf neues Template umgestellt; Mappe 5 laeuft direkt mit neuem Schema.
+**Aufwand:** S (+ einmaliger Mappe-4-Cleanup)
 
 ---
 
-### STR-14 — Personalisierung parametrisiert (K34 Dissens-Aufloesung)
+### STR-14 (NEU) — Fiktionalitaets-Kennzeichnung in Quellenangabe
 
 **Prioritaet:** P1
-**Adressiert:** K34 (Personalisierung Friedrich-Tagebuch: R1 kritisch vs. R3 positiv)
-**Ebenen:** E2, E3, E5
-**Dateien:** `SUB_MATERIAL_TAGEBUCH.md`, SUB_AUFGABE_FREITEXT, M/A-Katalog
+**Adressiert:** K34 (Personalisierung: R1 kritisch vs. R3 positiv, Dissens-Aufloesung)
+**Ebenen:** E2 (Material), E5 (M-Katalog)
+**Dateien:** `SUB_MATERIAL_TAGEBUCH.md`, `SUB_MATERIAL_QUELLENTEXT.md`, `QUALITAETSKRITERIEN_MATERIALPRODUKTION.md`
 
-**Ziel:** Personalisierung (Tagebuch-Ich-Erzaehler, Identifikationsfiguren) **bleibt** als didaktisches Werkzeug (R3-Kontext: Motivation bildungsferne SuS), aber **Pflicht-Meta-Reflexionsaufgabe** zu Fiktionalitaet und Geschichtsbewusstsein (R1-Kritik: epistemologische Probleme).
+**Ziel (umgebaut nach Evaluation 2026-04-05):** Personalisierung (Ich-Erzaehler, Identifikationsfiguren wie Friedrich-Tagebuch) bleibt als didaktisches Werkzeug erhalten. Die R1-Kritik (epistemologische Probleme) wird **nicht** durch eine zusaetzliche Meta-Reflexions-Aufgabe aufgeloest (User-Bewertung: "Overhead + Verwirrung"), sondern durch eine **explizite Fiktionalitaets-Kennzeichnung in der Quellenangabe selbst**.
 
 **Aenderung:**
-- SUB_MATERIAL_TAGEBUCH: `personalisierung_flag: true` plus Pflicht-Meta-Reflexions-Aufgaben-Hook.
-- SUB_AUFGABE: bei personalisierung=true automatisch Meta-Aufgabe "Wie unterscheidet sich dieses Tagebuch von einer realen Quelle?" generieren.
-- M-Katalog: M15 "Personalisierung mit Meta-Reflexion".
+- SUB_MATERIAL_TAGEBUCH und SUB_MATERIAL_QUELLENTEXT: Quellenangabe-Template wird erweitert um ein **Fiktionalitaets-Feld**: wenn das Material fiktional/rekonstruiert/gekuerzt/zusammengesetzt ist, wird das in der Quellenangabe **direkt am Material** klar benannt — inklusive **Abweichungs-Muster** (z.B. "fiktives Tagebuch, basierend auf typischen Erfahrungsberichten junger Soldaten 1914", "gekuerzt und sprachlich vereinfacht", "aus mehreren Originalquellen zusammengesetzt").
+- M-Katalog: M15 "Fiktionalitaets-Status in Quellenangabe explizit gekennzeichnet" (Tiefenstruktur).
+- **Keine Meta-Reflexions-Aufgabe wird generiert.** Keine Aenderung an SUB_AUFGABE_*.
 
 **Abhaengigkeiten:** Vor: STR-01.
-**Risiken:** Meta-Aufgabe wirkt aufgesetzt — Formulierungs-Beispiele mitgeben.
-**Validierung:** Re-Audit R1 (Forstner): Personalisierungs-Kritik gesenkt (kein BLOCKER, eingerahmt).
+**Risiken:** Kennzeichnung muss wahrnehmbar ohne belehrend zu wirken — Formulierungsbeispiele in M-Katalog.
+**Validierung:** Mappe-4-Friedrich-Tagebuch: Quellenangabe enthaelt explizite Fiktionalitaets-Kennzeichnung; R1-Kritik adressiert ohne zusaetzliche Aufgaben-Last.
 **Aufwand:** S
 
 ---
@@ -378,24 +368,10 @@
 
 ---
 
-### STR-16 — Lehrprobe-Tauglichkeits-Check
+### STR-16 — ~~Lehrprobe-Tauglichkeits-Check~~ GESTRICHEN
 
-**Prioritaet:** P1
-**Adressiert:** K33 (Lehrprobe)
-**Ebenen:** E5, E6, E8
-**Dateien:** `GUETEKRITERIEN_SKRIPT.md`, `GUETEKRITERIEN_SEQUENZIERUNG.md`, Checkliste, neu: `lehrkraft/lehrprobe-briefing.md`
-
-**Ziel:** Jede Mappe kann als Lehrprobe eingesetzt werden. Lehrprobe-Check prueft: (a) Artikulation klar, (b) Sichtstrukturen sichtbar, (c) Classroom-Management unterstuetzt, (d) Dokumentation vollstaendig, (e) Rubric vorhanden.
-
-**Aenderung:**
-- SK/S-Kataloge: Lehrprobe-Tauglichkeits-Kriterium (Tiefenstruktur).
-- Checkliste (STR-24): Lehrprobe-Pre-Check.
-- E8: Briefing-Dokument fuer Seminarlehrer.
-
-**Abhaengigkeiten:** Vor: STR-01. Wave 4.
-**Risiken:** Bayerisch-spezifisch vs. bundeslaenderuebergreifend — klar als "Bayern LehrplanPlus" markieren.
-**Validierung:** Re-Audit R5 (Kaltenbrunner): Lehrprobe-Einsatzbereitschaft bestaetigt.
-**Aufwand:** S
+**Status:** GESTRICHEN nach User-Evaluation 2026-04-05.
+**Begruendung:** Lehrprobe-Tauglichkeit ist ein **Effekt guter Planung**, kein **Kriterium** der Infrastruktur. Das Game ist Material; die Einbettung in eine Lehrprobe ist Lehrer-Aufgabe und liegt ausserhalb des Infrastruktur-Scopes. Der R5-Befund wird im Arbeitsprotokoll als "out of infrastructure scope" vermerkt, nicht als Gueteregel kodifiziert.
 
 ---
 
@@ -418,16 +394,10 @@
 
 ---
 
-### STR-18 — Metakognitions-Prompt-Variante
+### STR-18 — ~~Metakognitions-Prompt-Variante~~ GESTRICHEN
 
-**Prioritaet:** P2
-**Adressiert:** K11 (Metakognition)
-**Ebenen:** E3, E5
-**Dateien:** SUB_AUFGABE-Erweiterung, A-Katalog
-
-**Ziel:** Pro Mappe mind. 1 Metakognitions-Aufgabe ("Welche Strategie hast du angewandt? Was hat geholfen?"). Nicht Pflicht, aber Richtwert.
-
-**Aufwand:** S. Abhaengigkeiten: Vor STR-01. Wave 7.
+**Status:** GESTRICHEN nach User-Evaluation 2026-04-05.
+**Begruendung:** Metakognitions-Moderation ist Lehrer-Aufgabe und liegt ausserhalb des Infrastruktur-Scopes. Keine Kodifikation als Aufgaben-Subtyp.
 
 ---
 
@@ -509,10 +479,12 @@
 **Ebenen:** E6
 **Dateien:** `docs/checklisten/CHECKLISTE_D15B_POST_PUBLISH.md` (neu)
 
-**Ziel:** Anstelle von 9 separaten Checklisten eine konsolidierte Pre-Publikations-Checkliste mit allen Spots: Bloom / Feedback / Tipps / Multiperspektivitaet / Zeit / Layout / Quellenkritik / Differenzierung / DaZ / Trigger / Lehrprobe / A11y. Strukturiert nach Tiefenstruktur-Primaer und Oberflaeche-Sekundaer.
+**Ziel:** Anstelle von 9 separaten Checklisten eine konsolidierte Pre-Publikations-Checkliste mit allen Spots: Bloom / Feedback / Tipps / Multiperspektivitaet / Quellenkritik / Trigger / A11y / Fiktionalitaets-Kennzeichnung / Mappenabschluss-Zone. (Gestrichen gegenueber Urfassung: Zeit-Audit, Layout, Differenzierung, DaZ, Lehrprobe.) Strukturiert nach Tiefenstruktur-Primaer und Oberflaeche-Sekundaer.
 
 **Aenderung:**
 - Neue Datei mit allen Spots als Liste + Kurz-Referenz auf Katalog-Eintrag.
+
+**Verhaeltnis zu E5 Gueteregel-Katalogen:** STR-24 **ersetzt die Kataloge nicht**. Die 6 Gueteregel-Kataloge bleiben die **prozess-immanente Qualifikation der Teilschritte** (Phase 2-0, 2-1, 2-2a, 2-2b, 3 — jeder Subagent/Assembly-Schritt prueft gegen "seinen" Katalog). STR-24 ist ein **komplementaeres Pre-Publish-Q-Gate auf Mappen-Ebene**, das quer ueber alle Ebenen-Outputs laeuft, nachdem die Kataloge schon gegriffen haben. Zweck: Fang-Netz fuer cross-Ebenen-Konsistenzen (z.B. Feedback-Schema konsistent mit Engine-Rendering) und fuer Kriterien, die erst auf Mappen-Ebene sichtbar werden (z.B. Bloom-Verteilung ueber alle Aufgaben hinweg).
 
 **Abhaengigkeiten:** Nach: alle STR aus Wave 0-3. Sammelt deren E6-Anteile.
 **Risiken:** Checklisten-Laenge — max. 30 Spots, gruppiert.
@@ -549,17 +521,13 @@ graph TD
   STR01 --> STR03[STR-03 Feedback]
   STR01 --> STR04[STR-04 Tipps]
   STR01 --> STR05[STR-05 Multiperspektive]
-  STR01 --> STR06[STR-06 Zeit]
-  STR01 --> STR07[STR-07 Layout]
-  STR01 --> STR08[STR-08 Quellenkritik]
-  STR01 --> STR09[STR-09 Differenzierung]
-  STR01 --> STR10[STR-10 DaZ]
+  STR01 --> STR06[STR-06 Zeit-Orientierung weich]
+  STR01 --> STR08[STR-08 Quellenkritik adaptiv]
   STR01 --> STR11[STR-11 Typologie]
-  STR01 --> STR12[STR-12 Trigger]
-  STR01 --> STR13[STR-13 Hefteintrag]
-  STR01 --> STR14[STR-14 Personalisierung]
+  STR01 --> STR12[STR-12 Trigger LK-Meta]
+  STR01 --> STR13[STR-13 Mappenabschluss-Zone]
+  STR01 --> STR14[STR-14 Fiktionalitaets-Kennzeichnung]
   STR01 --> STR15[STR-15 Schutzregeln]
-  STR01 --> STR16[STR-16 Lehrprobe]
   STR01 --> STR19[STR-19 Pandel]
   STR01 --> STR20[STR-20 A11y]
   STR01 --> STR23[STR-23 Sequenz]
@@ -567,21 +535,14 @@ graph TD
   STR02 --> STR11
   STR03 -. Engine-Kopplung .-> STR20
   STR04 -. Engine-Kopplung .-> STR20
-  STR07 -. Engine-Kopplung .-> STR20
-  STR09 -. Engine-Kopplung .-> STR20
-  STR10 -. Engine-Kopplung .-> STR20
 
   STR02 --> STR24[STR-24 Konsoli-Checkliste]
   STR03 --> STR24
   STR04 --> STR24
   STR05 --> STR24
-  STR06 --> STR24
-  STR07 --> STR24
   STR08 --> STR24
-  STR09 --> STR24
-  STR10 --> STR24
   STR12 --> STR24
-  STR16 --> STR24
+  STR14 --> STR24
   STR20 --> STR24
 
   STR17[STR-17 Audit-Methodik] -.- STR15
@@ -589,41 +550,46 @@ graph TD
 
   STR25[STR-25 C2-Cross-Ref] --> PHASE_IV((Phase IV Start))
   STR24 --> PHASE_IV
+
+  STR09_NEU[STR-09-NEU Diff-Exit-Architektur FOLGEPROJEKT]:::folge
+  classDef folge fill:#eee,stroke:#999,stroke-dasharray: 5 5
 ```
 
 ---
 
 ## Execution-Waves (Session-Schnitt)
 
-Umsetzungs-Reihenfolge in Phase IV. Jede Wave = 1-2 Cowork-Sessions.
+Umsetzungs-Reihenfolge in Phase IV. Jede Wave = 1-2 Cowork-Sessions. **Nach Evaluation 2026-04-05 geschrumpft: 20 aktive STR statt 25.**
 
 | Wave | Inhalt | STRs | Est. Sessions | Abhaengigkeit |
 |---|---|---|---|---|
 | **0 Fundament** | Tiefenstruktur-Meta | STR-01 | 1 | — |
-| **1 E1+E3 Atom-Units** | Bloom, Feedback, Tipps, Multiperspektive, Layout, Quellenkritik, Differenzierung, Typologie | STR-02, 03, 04, 05, 07, 08, 09, 11 | 2-3 | Wave 0 |
-| **2 E2/E5 Material-Querschnitt** | Zeit, DaZ, Trigger, Hefteintrag, Personalisierung, Schutzregeln | STR-06, 10, 12, 13, 14, 15 | 1-2 | Wave 0 |
-| **3 Engine-Session** | Feedback-Rendering, Tipp-UI, Layout, Track-Switcher, Glossar, A11y | STR-03 (Eng), 04 (Eng), 07 (Eng), 09 (Eng), 10 (Eng), 20 | 2 | Wave 1+2 (kann parallel starten nach Vertrags-Commits) |
-| **4 Lehrkraft-Dokumente** | Ablaufplan, Diff-Leitfaden, DaZ-Template, Trigger-Leitfaden, Lehrprobe-Briefing, Sequenz-Uebergang | STR-06 (E8), 09 (E8), 10 (E8), 12 (E8), 16, 23 | 1 | Wave 1+2 |
+| **1 E1+E3 Atom-Units** | Bloom, Feedback, Tipps, Multiperspektive, Quellenkritik adaptiv, Typologie | STR-02, 03, 04, 05, 08, 11 | 2 | Wave 0 |
+| **2 E2/E5 Material-Querschnitt** | Zeit-Orientierung weich, Trigger LK-Meta, Mappenabschluss-Zone, Fiktionalitaets-Kennzeichnung, Schutzregeln | STR-06, 12, 13, 14, 15 | 1 | Wave 0 |
+| **3 Engine-Session** | Feedback-Rendering, Tipp-UI, A11y | STR-03 (Eng), 04 (Eng), 20 | 1 | Wave 1 (kann parallel starten nach Vertrags-Commits) |
+| **4 Lehrkraft-Dokumente** | Trigger-Leitfaden, Sequenz-Uebergang, Mappe-4-Cleanup (STR-13) | STR-12 (E8), 23, 13-Cleanup | 0.5-1 | Wave 1+2 |
 | **5 E6-Konsolidierung** | Post-Publish-Checkliste | STR-24 | 1 | Wave 0-4 |
 | **6 Audit-Methodik** | D15b-Methodik-Doku, Pandel | STR-17, 19 | 1 | — (parallel) |
-| **7 P2-Nachschub** | Metakognition, Worked Examples, Sync-Punkte | STR-18, 21, 22 | 1 | Wave 0-1 |
+| **7 P2-Nachschub** | Worked Examples, Sync-Punkte | STR-21, 22 | 0.5 | Wave 0-1 |
 | **Cross-Ref vor IV** | C2-Abgleich | STR-25 | 0.5 | — (vor Wave 0) |
 
-**Summe Est.:** 10-12 Cowork-Sessions fuer vollstaendige Phase IV Umsetzung.
+**Summe Est.:** 7-9 Cowork-Sessions fuer vollstaendige Phase IV Umsetzung (gegenueber 10-12 vor Evaluation). P0+P1-Kern-Scope (Waves 0-3 + 5): ~5-6 Sessions.
+
+**Nicht in Phase IV:** STR-09-NEU Differenzierungs-Exit-Architektur (Folgeprojekt nach Stabilitaet Kerninfrastruktur).
 
 ---
 
 ## Entscheidungspunkte (User-Freigabe fuer Phase IV)
 
-Vor Phase IV Start braucht es Klaerung in 4 Punkten:
+Nach der Evaluation 2026-04-05 ist der Scope geklaert. Offen bleiben diese Klaerungspunkte vor Phase IV Start:
 
-1. **Scope-Cut:** Voll-Umsetzung (alle 25 STR) oder nur P0 + ausgewaehlte P1 (STR-01..09, 11, 16)? Voll-Umsetzung = ~10-12 Sessions, P0+P1-kern = ~6-7 Sessions.
+1. **Scope-Cut:** Voll-Umsetzung (alle 20 aktiven STR) oder nur P0+P1-Kern (STR-01 bis STR-08, 11-15)? Voll-Umsetzung = ~7-9 Sessions, Kern-Scope = ~5-6 Sessions.
 
-2. **Engine-Session-Schnitt:** Alle 6 Engine-Teile (STR-03/04/07/09/10/20) in einer Session (2-3h Cowork, hohes Token-Budget) oder auf 2 Sessions aufteilen (Feedback+Tipp+Layout / Diff+DaZ+A11y)?
+2. **Engine-Session-Schnitt:** 3 Engine-Teile (STR-03/04/20) in einer Session oder gesplittet? Empfehlung: in einer Session buendelbar (geringerer Footprint nach Streichung von STR-07/09/10-Engine-Anteilen).
 
-3. **Re-Audit-Scope Phase V:** Voller 6-Rollen-Re-Audit oder reduziert (R4 ID + R6 Empirie + R2 Stadt)? Empfehlung hier: reduziert, da die 3 ausgewaehlten Rollen die meisten BLOCKER trugen.
+3. **Re-Audit-Scope Phase V:** Voller 6-Rollen-Re-Audit oder reduziert (R1 Geschichtsdidaktik + R2 Stadt + R6 Empirie)? R4 Instructional Design hat mit STR-07-Fehlannahme an Gewicht verloren. Empfehlung: reduziert auf R1+R2+R6.
 
-4. **Mappe-4-Daten-Patch vs. Mappe-5-Neu-Produktion:** Mappe 4 retroaktiv patchen als Re-Audit-Baseline, oder Mappe 5 als erstes Produkt der neuen Infrastruktur produzieren (Mappe 4 bleibt Legacy-Dokument)? Empfehlung: Mappe 5 neu, Mappe 4 nur wo trivial.
+4. **Mappe-4-Daten-Patch vs. Mappe-5-Neu-Produktion:** Mappe 4 retroaktiv patchen als Re-Audit-Baseline, oder Mappe 5 als erstes Produkt der neuen Infrastruktur produzieren? Empfehlung: Mappe 5 neu, Mappe 4 nur wo trivial — **mit Ausnahme des STR-13-Mappenabschluss-Cleanups**, der in Mappe 4 explizit nachgezogen wird.
 
 ---
 
@@ -641,8 +607,34 @@ Vor Phase IV Start braucht es Klaerung in 4 Punkten:
 - **Aufwands-Schaetzung 10-12 Sessions** bei Voll-Umsetzung; 6-7 Sessions bei P0+P1-Kern-Scope.
 - **4 Entscheidungspunkte** fuer User-Freigabe vor Phase IV formuliert.
 
-**Naechste Aktion:** User-Freigabe zu den 4 Entscheidungspunkten einholen. Danach STR-25 (C2-Cross-Reference) als Vorlauf ausfuehren, dann Wave 0 STR-01 starten.
+**Naechste Aktion:** User-Evaluation einholen.
+
+**2026-04-05 — Session 10 (Forts. 11): Evaluations-Runde + Scope-Schaerfung**
+
+- User hat die 25 Strategien durchevaluiert und 12 gezielte Rueckmeldungen gegeben.
+- **4 STR gestrichen:**
+  - **STR-07 Spatial-Contiguity Layout-Regel** — R4-Split-Attention-Befund war Fehlannahme im Audit-Prozess. Aktuelles Spalten-Layout erfuellt Spatial Contiguity; keine Mobile-Probleme. Folge fuer STR-17: R4-Subagent-Prompt benoetigt Layout-Rekonstruktions-Verifikation.
+  - **STR-10 DaZ-System** — geht vollstaendig in STR-09-NEU (Hover-Glossar-Anteil der Exit-Architektur) auf.
+  - **STR-16 Lehrprobe-Tauglichkeits-Check** — out of infrastructure scope (Effekt guter Planung, kein Kriterium).
+  - **STR-18 Metakognitions-Prompt-Variante** — out of infrastructure scope (Lehrer-Aufgabe).
+- **2 STR strukturell ersetzt:**
+  - **STR-09 Tracks A/B/C → STR-09-NEU Differenzierungs-Exit-Architektur** (Hover-Glossar + Clipboard-KI-Prompts + optionale Sprachumstellung). Status: Folgeprojekt **ausserhalb Phase IV**, Umsetzung nach Stabilitaet Kerninfrastruktur. Quelle: `docs/analyse/Ideen zu Differenzierung.md`.
+  - **STR-14 Personalisierung-Meta-Reflexion → STR-14-NEU Fiktionalitaets-Kennzeichnung in Quellenangabe.** Keine zusaetzliche Meta-Aufgabe (Overhead), stattdessen explizite Fiktionalitaets- und Abweichungs-Kennzeichnung direkt in der Quellenangabe.
+- **4 STR abgeschwaecht/praezisiert:**
+  - **STR-06 Zeit** — von hartem Gate auf weiche Orientierungsgroesse "1 Mappe ≈ 1 UE" im Rahmen-Vertrag reduziert. Budgets, OTL, Ablaufplaene entfernt. Aufwand L→S.
+  - **STR-08 Quellenkritik** — von starrer Pflicht bei Primaerquellen auf adaptiven Typ via Progressionsplan-Agent-Entscheidung.
+  - **STR-11 Typologie-Erweiterung** — explizite Anti-Quota-Klausel: neue Subtypen werden **verfuegbar**, nicht quotiert. Progressionsplan waehlt sinngerichtet.
+  - **STR-12 Trigger-System** — Sichtbarkeits-Constraint ergaenzt: trigger_flags sind ausschliesslich Lehrkraft-Metadaten, NIE SuS-sichtbar, Engine-Unterdrueckung im Rendering.
+- **1 STR umgebaut:**
+  - **STR-13 Reflexion** — Variante a: Reflexion wird aus dem Hefteintrag herausgezogen (HE bleibt reine Wissenssicherung). Neue **statische Mappenabschluss-Zone** unterhalb des Hefteintrags mit fixem Template (1-2 Reflexionsfragen + Ueberleitungssatz), generiert durch kleinen Sub-Task im Assembly. **Zusatzauftrag:** Mappe-4-Mappenabschlussbereich ist durch Relikte frueherer Architekturentscheidungen chaotisch; wird im Zuge der Umsetzung praezise aufgeraeumt und standardisiert.
+- **1 STR ergaenzt:**
+  - **STR-24** erhaelt Abschnitt "Verhaeltnis zu E5 Gueteregel-Katalogen": Kataloge bleiben prozess-immanente Qualifikation der Teilschritte; STR-24 ist **komplementaeres** Pre-Publish-Q-Gate auf Mappen-Ebene, **nicht Ersatz**.
+- **Wave-Neuberechnung:** Wave 1 verliert STR-07/09; Wave 2 verliert STR-10; Wave 3 Engine verliert STR-07/09/10-Anteile (nur noch STR-03/04/20); Wave 4 verliert STR-09/10 E8-Anteile + STR-16; Wave 7 verliert STR-18. **Neue Aufwandsschaetzung: 7-9 Sessions Voll / 5-6 Sessions Kern** (statt vorher 10-12 / 6-7).
+- **DAG neu gezeichnet:** STR-07/10/16/18 entfernt, STR-09-NEU als Folgeprojekt-Knoten ausserhalb des Haupt-DAG visualisiert.
+- **STR-Register aktualisiert:** 20 aktive Strategien (1 P0-META + 5 P0 + 7 P1 + 5 P2 + 2 Konsoli/Meta), 4 gestrichen, 1 Folgeprojekt.
+
+**Naechste Aktion:** Commit des Evaluations-Updates. Danach User-Freigabe zu den noch offenen Entscheidungspunkten (Scope-Cut, Engine-Session-Schnitt, Re-Audit-Scope, Mappe-4/5-Strategie), dann STR-25 (C2-Cross-Reference) als Vorlauf, dann Wave 0 STR-01 starten.
 
 ---
 
-**Phase III Status:** GEFUELLT. Braucht User-Freigabe vor Phase IV (Umsetzung).
+**Phase III Status:** EVALUIERT. Scope geschaerft. Braucht User-Freigabe zu den 4 verbleibenden Entscheidungspunkten vor Phase IV (Umsetzung).

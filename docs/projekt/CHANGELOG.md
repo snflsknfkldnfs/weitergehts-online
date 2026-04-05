@@ -4,6 +4,55 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-05 — Session 10 (Forts. 11): D15b-Optimierung Phase III Evaluations-Runde
+
+**Phase:** Post-D15b Infrastruktur-Optimierung, Phase III Evaluation + Scope-Schaerfung
+
+**Ausloeser:** User-Evaluation der 25 Strategien aus Forts. 10 mit 12 gezielten Rueckmeldungen + 3 Rueckfrage-Antworten.
+
+**Ziel:** Scope fuer Phase IV schaerfen, strukturell andere Loesungen einarbeiten, Wave-Planung und DAG aktualisieren.
+
+**Durchgefuehrt:**
+
+1. **4 Strategien gestrichen:**
+   - **STR-07 Spatial-Contiguity Layout-Regel**: User bestaetigt — keine Mobile-Probleme, Spalten-Layout erfuellt Spatial-Contiguity bereits. R4-Split-Attention-Befund war Fehlannahme im Audit-Prozess (falsche Layout-Rekonstruktion). Folge: Notiz in STR-17 fuer R4-Subagent-Verifikation.
+   - **STR-10 DaZ-System**: geht vollstaendig in STR-09-NEU auf (Hover-Glossar ist Teil der Exit-Architektur).
+   - **STR-16 Lehrprobe-Tauglichkeits-Check**: out of infrastructure scope. Lehrprobe-Einsatz ist Effekt guter Planung, kein Gueteregel-Kriterium. Game = Material, Einbettung = Lehrer-Aufgabe.
+   - **STR-18 Metakognitions-Prompt-Variante**: out of scope, Lehrer-Aufgabe.
+
+2. **2 Strategien strukturell ersetzt:**
+   - **STR-09 Tracks A/B/C → STR-09-NEU Differenzierungs-Exit-Architektur**: Basierend auf User-Konzept aus `docs/analyse/Ideen zu Differenzierung.md`. Kern: Hover-Glossar fuer schwere Woerter, globaler Sprach-Umschalter im Header, Clipboard-KI-Prompts mit Rollenpriming fuer Differenzierung nach unten/oben. **Status: Folgeprojekt ausserhalb Phase IV**, Umsetzung nach Stabilitaet der Kerninfrastruktur (Waves 0-6 abgeschlossen + Mappe 5 produziert).
+   - **STR-14 Personalisierungs-Meta-Reflexion → STR-14-NEU Fiktionalitaets-Kennzeichnung in Quellenangabe**: User wies zusaetzliche Meta-Aufgabe als "Overhead + Verwirrung" zurueck. Neue Loesung: explizite Fiktionalitaets- und Abweichungs-Kennzeichnung direkt in der Quellenangabe von SUB_MATERIAL_TAGEBUCH und SUB_MATERIAL_QUELLENTEXT. M15-Katalog-Kriterium. Keine Aenderung an SUB_AUFGABE_*.
+
+3. **4 Strategien abgeschwaecht/praezisiert:**
+   - **STR-06 Zeit**: von hartem Gate (Budget-Deklaration, OTL-Schaetzung, Doppelstunden-Ablaufplan, Pre-Publish-Audit) auf weiche Orientierungsgroesse "1 Mappe ≈ 1 UE" im Rahmen-Vertrag. Aufwand L→S.
+   - **STR-08 Quellenkritik**: von starrer Pflicht bei Primaerquellen auf adaptiven Aufgaben-Typ. Progressionsplan-Agent (Phase 2-2a) entscheidet sinngerichtet.
+   - **STR-11 Typologie-Erweiterung**: explizite Anti-Quota-Klausel — neue Subtypen (Vergleich, Begruendung) werden **verfuegbar**, nicht quotiert. Keine "mind. X Typen pro Mappe"-Regel.
+   - **STR-12 Trigger-System**: Sichtbarkeits-Constraint ergaenzt — trigger_flags sind ausschliesslich Lehrkraft-Metadaten, NIE SuS-sichtbar, Engine-Unterdrueckung im Rendering.
+
+4. **STR-13 umgebaut (Variante a):** Reflexion wird aus dem Hefteintrag herausgezogen (HE bleibt reine Wissenssicherung). Neue **statische Mappenabschluss-Zone** unter dem Hefteintrag mit fixem Template (1-2 Reflexionsfragen + Ueberleitungssatz), generiert durch kleinen Sub-Task im Assembly-Schritt. Zusatz: Mappe-4-Mappenabschlussbereich ist durch Relikte frueherer Architekturentscheidungen chaotisch; wird im Zuge der Umsetzung praezise aufgeraeumt und standardisiert.
+
+5. **STR-24 ergaenzt:** neuer Abschnitt "Verhaeltnis zu E5 Gueteregel-Katalogen" — Checkliste ist **komplementaeres** Pre-Publish-Q-Gate auf Mappen-Ebene, **nicht Ersatz** der prozess-immanenten Kataloge. Kataloge bleiben Teilschritt-Qualifikation, STR-24 ist Cross-Ebenen-Fang-Netz.
+
+6. **DAG + Waves neu gezeichnet:** STR-07/10/16/18 aus DAG entfernt. STR-09-NEU als Folgeprojekt-Knoten visuell abgetrennt. Wave 1 schrumpft (STR-07/09 raus), Wave 2 schrumpft (STR-10 raus), Wave 3 Engine deutlich kleiner (nur noch STR-03/04/20), Wave 4 kleiner (STR-09/10 E8-Anteile raus, STR-16 raus), Wave 7 kleiner (STR-18 raus). **Neue Aufwandsschaetzung: 7-9 Sessions Voll / 5-6 Sessions Kern** (statt 10-12 / 6-7).
+
+7. **Register-Update:** 20 aktive Strategien (1 P0-META + 5 P0 + 7 P1 + 5 P2 + 2 Konsoli/Meta). 4 gestrichen, 1 Folgeprojekt.
+
+**Erkenntnisse:**
+- **Audit-Fehlannahme als Methodik-Lessons-Learned:** STR-07 ist ein Beispiel fuer einen Befund, der durch mangelhafte Layout-Rekonstruktion im R4-Subagenten BLOCKER-Status bekam, obwohl das Problem nicht existiert. STR-17 (Audit-Methodik-Iteration) muss in v2 explizite Layout-Verifikations-Schritte fuer Instructional-Design-Befunde einfuehren.
+- **Strukturelle Loesung schlaegt Aufgaben-Schicht:** STR-14 ist ein Beispiel dafuer, dass eine epistemologische Kritik (R1 zu Friedrich-Tagebuch) nicht durch eine zusaetzliche Aufgabe aufgeloest werden muss, sondern durch eine Kennzeichnung am Material selbst. Weniger Overhead, klarere Botschaft.
+- **Exit-Architektur als alternatives Differenzierungs-Modell:** User's Konzept loest Differenzierung nicht durch Content-Multiplikation (Tracks A/B/C), sondern durch Exit-Points zu externen KI-Systemen. Strukturell eleganter, aber technisch und padagogisch noch zu klaeren — deshalb Folgeprojekt.
+- **Mappenabschlussbereich aufraeumen:** User hat explizit auf Architektur-Relikte hingewiesen, die in Mappe 4 chaotisch geworden sind. STR-13 traegt jetzt einen doppelten Auftrag: neue Struktur etablieren + Legacy aufraeumen.
+
+**Artefakte (geaendert):**
+- `docs/projekt/D15B_OPTIMIERUNGS_STRATEGIEN.md` (umfangreich editiert: Strategie-Register, Details STR-06/07/08/09/10/11/12/13/14/16/18/24, DAG, Waves, Entscheidungspunkte, Arbeitsprotokoll Forts. 11)
+- `docs/projekt/STATUS.md`
+- `docs/projekt/CHANGELOG.md` (dieser Eintrag)
+
+**Naechster Schritt:** Commit. Dann User-Freigabe zu den 4 verbleibenden Entscheidungspunkten (Scope-Cut, Engine-Session-Schnitt, Re-Audit-Scope, Mappe-4/5-Strategie) einholen. Danach STR-25 C2-Cross-Reference als Vorlauf, dann Wave 0 STR-01.
+
+---
+
 ## 2026-04-04 — Session 10 (Forts. 10): D15b-Optimierung Phase III (Strategien-Ausarbeitung)
 
 **Phase:** Post-D15b Infrastruktur-Optimierung, Phase III (Strategie-Ausarbeitung)
