@@ -47,6 +47,83 @@ var EscapeEngine = (function () {
     container: null       // DOM-Container fuer Aufgaben
   };
 
+  // ------------------------------------------------------------------
+  // D2 / STR-13: Reflexions-Zone — FLUECHTIGER In-Memory-State.
+  //
+  // INVARIANTE (RA7 F-RA7-06 P1): Reflexions-Texte duerfen NIEMALS in
+  // localStorage oder in einem persistierten Progress-Objekt landen.
+  // Eingaben leben ausschliesslich hier, in diesem Session-Container.
+  // Bei Browser-Reload / Mappen-Wechsel sind sie weg — das ist gewollt.
+  //
+  // WARNUNG fuer spaetere Implementierung einer Reflexions-Zone-UI:
+  //   - _saveAntwortState() / saveProgress() duerfen _reflexionen NICHT
+  //     beruehren.
+  //   - Die UI muss den Hinweis anzeigen: "Diese Eingabe wird nicht
+  //     gespeichert. Notiere dir deine Gedanken bei Bedarf in deinem Heft."
+  // ------------------------------------------------------------------
+  var _reflexionen = {};
+
+  // ------------------------------------------------------------------
+  // E2 / V2 Feedback-Schema-Vertrag: Legacy-Feedback-Fallback.
+  //
+  // Bestandsaufgaben (Mappe 1-4 Erster Weltkrieg) enthalten Feedback
+  // als String. Der V2-Vertrag definiert das neue Schema
+  // {typ, text, ebene}. Diese Funktion normalisiert beide Formen, so
+  // dass der Renderer ausschliesslich mit der Objekt-Form arbeitet.
+  // ------------------------------------------------------------------
+  function normalizeFeedback(raw) {
+    if (raw == null) return raw;
+    if (typeof raw === 'string') {
+      return { typ: 'hinweis', text: raw, ebene: 'verstaendnis' };
+    }
+    if (Array.isArray(raw)) {
+      return raw.map(normalizeFeedback);
+    }
+    return raw;
+  }
+
+  /**
+   * Normalisiert alle feedback-Felder einer frisch geladenen data.json
+   * in-place. Muss einmalig nach dem Laden aufgerufen werden.
+   * @param {Object} data – data.json root
+   * @private
+   */
+  function _normalizeDataFeedback(data) {
+    if (!data || !data.mappen) return;
+    for (var m = 0; m < data.mappen.length; m++) {
+      var mappe = data.mappen[m];
+      if (mappe.aufgaben) {
+        for (var a = 0; a < mappe.aufgaben.length; a++) {
+          var auf = mappe.aufgaben[a];
+          if (auf.feedback !== undefined) {
+            auf.feedback = normalizeFeedback(auf.feedback);
+          }
+        }
+      }
+    }
+  }
+
+  // ------------------------------------------------------------------
+  // E1 / F-RA4-02: AufgabentypRegistry.
+  //
+  // Neue Aufgabentypen werden durch Ergaenzung dieser Registry hinzu-
+  // gefuegt — kein Eingriff in die Core-Render-Logik (_renderAufgabe).
+  // Signatur jedes Renderers: function(container, aufgabe, index, geloest)
+  //
+  // Die eigentlichen Renderer-Funktionen sind weiter unten im Modul
+  // definiert; die Registry wird nach deren Definition via
+  // _buildAufgabentypRegistry() befuellt (siehe unten).
+  // ------------------------------------------------------------------
+  var AufgabentypRegistry = {};
+
+  function _buildAufgabentypRegistry() {
+    AufgabentypRegistry['multiple-choice'] = _renderMultipleChoice;
+    AufgabentypRegistry['zuordnung']       = _renderZuordnung;
+    AufgabentypRegistry['lueckentext']     = _renderLueckentext;
+    AufgabentypRegistry['reihenfolge']     = _renderReihenfolge;
+    AufgabentypRegistry['freitext-code']   = _renderFreitextCode;
+  }
+
   // ========================================================================
   // 1. init(mappeId) → void
   // ========================================================================
@@ -61,9 +138,16 @@ var EscapeEngine = (function () {
     _state.mappeId = mappeId;
     _state.container = document.getElementById('aufgaben-container');
 
+    // Registry einmalig bauen (idempotent)
+    if (!AufgabentypRegistry['multiple-choice']) {
+      _buildAufgabentypRegistry();
+    }
+
     // data.json laden
     _loadData()
       .then(function (data) {
+        // E2: Legacy-Feedback-Fallback vor dem Rendern anwenden
+        _normalizeDataFeedback(data);
         _state.data = data;
 
         // Storage-Key aus Thema ableiten
@@ -1893,24 +1977,14 @@ var EscapeEngine = (function () {
     body.className = 'aufgabe__body';
 
     // v3.5g: Typ-Renderer IMMER aufrufen (auch bei geloest), State-Restore uebernehmen Renderer
-    switch (aufgabe.typ) {
-      case 'multiple-choice':
-        _renderMultipleChoice(body, aufgabe, index, geloest);
-        break;
-      case 'zuordnung':
-        _renderZuordnung(body, aufgabe, index, geloest);
-        break;
-      case 'lueckentext':
-        _renderLueckentext(body, aufgabe, index, geloest);
-        break;
-      case 'reihenfolge':
-        _renderReihenfolge(body, aufgabe, index, geloest);
-        break;
-      case 'freitext-code':
-        _renderFreitextCode(body, aufgabe, index, geloest);
-        break;
-      default:
-        body.textContent = 'Unbekannter Aufgabentyp: ' + aufgabe.typ;
+    // E1 (F-RA4-02): Registry-Lookup statt switch — neue Typen werden via
+    // AufgabentypRegistry ergaenzt, ohne Eingriff in diese Core-Render-Logik.
+    var renderer = AufgabentypRegistry[aufgabe.typ];
+    if (renderer) {
+      renderer(body, aufgabe, index, geloest);
+    } else {
+      body.textContent = 'Unbekannter Aufgabentyp: ' + aufgabe.typ;
+      console.warn('[EscapeEngine] Kein Renderer in AufgabentypRegistry fuer Typ: ' + aufgabe.typ);
     }
 
     section.appendChild(body);
