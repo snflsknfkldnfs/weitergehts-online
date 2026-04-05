@@ -2,9 +2,9 @@
 
 **Zweck:** Fortschritts- und Artefakt-Tracking fuer Phase III.5. Bei Compaction/Interrupt: diese Datei liefert vollstaendige Wiederaufnahme-Information. STATUS.md verweist nur hierher.
 
-**Letzte Aktualisierung:** 2026-04-05 (Sub-Phase 5e IN_PROGRESS — RA7-Nachkalibrierung aufgrund User-Faktenkorrektur)
-**Aktive Sub-Phase:** III.5e IN_PROGRESS.
-**Naechster Schritt:** RA7-Nachkalibrierung schreiben (User-Korrektur 2026-04-05: localStorage-only auf Schul-iPads + Nutzungsvereinbarung deckt Art. 6/8 ab). Dann Synthese aller 7 RAs, comprehensive-review:full-review Zweitmeinung, STR_MUTATIONS_BESCHLUSS, Phase-IV-Go/No-Go-Empfehlung.
+**Letzte Aktualisierung:** 2026-04-05 (Sub-Phase 5e COMPLETE — Phase III.5 INSGESAMT COMPLETE)
+**Aktive Sub-Phase:** Phase III.5 COMPLETE. Phase IV Wave 0 WAITING FOR USER FREIGABE.
+**Naechster Schritt:** User-Freigabe fuer Phase IV Wave 0 (atomarer Commit-Verbund: V1/V2/V4 Vertraege + K1/K2 Katalog + E1/E2 Engine + D1/D2 Datenschutz + DOK1 Transkript-Review).
 
 ---
 
@@ -17,7 +17,7 @@
 | III.5c Tiefen-Audits (RA3/4/5) | COMPLETE | 2026-04-05 | - |
 | III.5d Verifikations-Gate | COMPLETE | 2026-04-05 | - |
 | III.5c-bis RA7 Datenschutz (neu) | COMPLETE | 2026-04-05 | - |
-| III.5e Synthese + Zweitmeinung | IN_PROGRESS | - | - |
+| III.5e Synthese + Zweitmeinung | COMPLETE | RA7_NACHKALIBRIERUNG.md, D15B_PHASE_III_5_SYNTHESE.md, ZWEITMEINUNG_VERGLEICH.md, STR_MUTATIONS_BESCHLUSS.md, UEBERGABE_PHASE_III_5_5e.md | BEDINGTES GO Phase IV |
 
 ---
 
