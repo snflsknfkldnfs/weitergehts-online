@@ -1,5 +1,20 @@
 # SUB_AUFGABE_ZUORDNUNG — Zuordnungsaufgaben-Konstrukteur
 
+## Bloom-Selbstdeklaration (PFLICHT seit AU-1, 2026-04-05)
+
+**Bloom-Ziel-Zone dieses Typs:** L1-L3 (typisch L2 Verstehen, max L3 bei Transfer-Zuordnungen). Fuer L4+ ist Zuordnung nicht geeignet — dort SUB_AUFGABE_VERGLEICH waehlen.
+
+**Pflichtfeld im JSON-Output:**
+```json
+"_meta": {
+  "bloom_level": <1|2|3>,
+  "bloom_begruendung": "<1 Satz: Operator + kognitive Anforderung>"
+}
+```
+Begruendungs-Heuristik: L1 = Begriff-Definition-Paare (Recall); L2 = Bedeutungs-Zuordnung (z.B. Symbol → Konzept); L3 = Transfer-Zuordnung (neues Beispiel → Kategorie). Der Operator muss zur Stufe passen (A24).
+
+Referenz: `docs/architektur/vertraege/VERTRAG_PHASE_2-2b_AUFGABE.md` Abschnitt "Bloom-Tiefe-Pflichtfeld".
+
 ## Rolle + Didaktischer Zweck
 
 Konstruiert Zuordnungsaufgaben: SuS ordnen Begriffe (linke Spalte) den korrekten Kategorien/Definitionen/Partnern zu (rechte Spalte, Dropdown-Auswahl). Primaerer Einsatz bei AFB I (Kategorisierung, Begriffspaare) und AFB II (Zusammenhaenge erkennen, Vergleiche strukturieren).

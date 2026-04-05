@@ -1,5 +1,20 @@
 # SUB_AUFGABE_FREITEXT — Freitext-Aufgaben-Konstrukteur
 
+## Bloom-Selbstdeklaration (PFLICHT seit AU-1, 2026-04-05)
+
+**Bloom-Ziel-Zone dieses Typs:** L3-L6 (Anwenden bis Erschaffen). Freitext ist der einzige Typ, der L6 erreichen kann. Standard: L3 (Synthese-Freitext), L5 (Stellungnahme). L4 strukturiert → besser SUB_AUFGABE_VERGLEICH. L5 CER-Schema → besser SUB_AUFGABE_BEGRUENDUNG (sofern Struktur-Pflicht erwuenscht).
+
+**Pflichtfeld im JSON-Output:**
+```json
+"_meta": {
+  "bloom_level": <3|4|5|6>,
+  "bloom_begruendung": "<1 Satz: Operator + kognitive Anforderung>"
+}
+```
+Begruendungs-Heuristik: L3 = Synthese in eigenen Worten (Anwenden von Fachbegriffen auf Zusammenfassung); L4 = analytische Zerlegung (Vergleich, Ursachenanalyse); L5 = Bewertung mit Begruendung (Stellungnahme, Dilemma-Entscheidung); L6 = produktive Erschaffung (Gegenentwurf, Alternativ-Szenario). Operator muss zur Stufe passen (A24).
+
+Referenz: `docs/architektur/vertraege/VERTRAG_PHASE_2-2b_AUFGABE.md` Abschnitt "Bloom-Tiefe-Pflichtfeld".
+
 ## Rolle + Didaktischer Zweck
 
 Konstruiert Freitext-Code-Aufgaben: SuS verfassen eine eigenstaendige Zusammenfassung oder Stellungnahme zu einer problemorientierten Leitfrage, unterstuetzt durch Teilfragen als Denkgeruest. Validierung ueber Schluesselwort-Erkennung. Primaerer Einsatz bei AFB II-III (Reflexion, Beurteilung, Stellungnahme).

@@ -1,5 +1,20 @@
 # SUB_AUFGABE_MC — Multiple-Choice-Aufgaben-Konstrukteur
 
+## Bloom-Selbstdeklaration (PFLICHT seit AU-1, 2026-04-05)
+
+**Bloom-Ziel-Zone dieses Typs:** L1-L3 (Erinnern, Verstehen, Anwenden). L4+ ist mit MC kaum zuverlaessig pruefbar — hoehere Stufen an SUB_AUFGABE_VERGLEICH / SUB_AUFGABE_BEGRUENDUNG / SUB_AUFGABE_FREITEXT delegieren.
+
+**Pflichtfeld im JSON-Output:**
+```json
+"_meta": {
+  "bloom_level": <1|2|3>,
+  "bloom_begruendung": "<1 Satz: Operator + kognitive Anforderung>"
+}
+```
+Begruendungs-Heuristik: L1 = reine Fakt-Wiedererkennung; L2 = Sinn-Verstaendnis (Umformulierung, Beispiel); L3 = Anwendung auf Transferfall. Der Operator im Fragestamm muss zur deklarierten Stufe passen (A24-Pruefung).
+
+Referenz: `docs/architektur/vertraege/VERTRAG_PHASE_2-2b_AUFGABE.md` Abschnitt "Bloom-Tiefe-Pflichtfeld".
+
 ## Rolle + Didaktischer Zweck
 
 Konstruiert Multiple-Choice-Aufgaben (Single Choice: genau 1 korrekte Option aus 4). Primaerer Einsatz bei AFB I (Faktenwissen, Begriffserkennung), sekundaer bei AFB II (Transfer-MC: Zusammenhaenge erkennen, Schlussfolgerungen ziehen).

@@ -114,6 +114,17 @@ GPG B1 unterscheidet sachbezogene Besinnung (Zusammenhaenge erkennen, Begriffe k
 | A6 | **Tipp-Progression** | Tipps folgen strikt der Dreistufigkeit: Stufe 1 = Richtung (KEINE Loesungsverraten), Stufe 2 = Einschraenkung (Ausschluss falscher Optionen), Stufe 3 = Loesung + Erklaerung (didaktischer Mehrwert). Stufe 1 darf Stufe 3 nicht vorwegnehmen | AGENT_RAETSEL Aufgabe 3 |
 | A7 | **Operator-Praezision** | Fragestellungen verwenden operationalisierte Verben aus der AFB-Taxonomie (nenne, beschreibe, erklaere, vergleiche, beurteile). Keine nicht-operationalisierbaren Verben ("Was weisst du ueber...?", "Kennst du...?") | Rechercheergebnisse Lernziele, Anti-Pattern 2 |
 
+### 3.1a AU-1 MUSS-Kriterien (Phase IV Wave 1, 2026-04-05)
+
+| # | Kriterium | Beschreibung | Fundierung |
+|---|---|---|---|
+| A19 | **Bloom-Verteilung erfuellt Policy** (Mappen-Ebene, STR-02) | Pro Mappe gilt: max 40 % der Aufgaben auf L1-L2 (Reproduktion), min 30 % auf L3-L4 (Reorganisation/Transfer), min 20 % auf L5-L6 (Reflexion/Urteil). Grundlage: aggregiertes `_meta.bloom_level` aller Aufgaben. Validator: `tools/validate_bloom_distribution.py`. | D15b STR-02, VERTRAG_ATOM_UNITS.md §3 AU-1, Bloom-Taxonomie revidiert (Anderson/Krathwohl) |
+| A22 | **Vergleichs-Strukturraster vollstaendig** (nur `typ: vergleich`) | Mindestens 2 Objekte, mindestens 2 Dimensionen, keine leeren Zellen, keine redundanten Dimensionen, mindestens 1 differenzierende Dimension (nicht 100 % Gleichheit). Pseudo-Vergleiche mit 1 Dimension sind FAIL. | D15b STR-11, SUB_AUFGABE_VERGLEICH.md |
+| A23 | **CER-Struktur vollstaendig** (nur `typ: begruendung`) | `claim`, `evidence`, `reasoning` alle drei vorhanden und nicht leer. `evidence` als Array mit min 1 Eintrag. `_meta.akzeptierte_claims` mit min 2 vertretbaren Positionen. Claim ohne Evidence ODER Evidence ohne Reasoning = FAIL. | D15b STR-11, SUB_AUFGABE_BEGRUENDUNG.md, CER-Schema (McNeill & Krajcik) |
+| A24 | **Bloom-Selbstdeklaration konsistent** (alle Typen) | `_meta.bloom_level` (1-6) gesetzt, `_meta.bloom_begruendung` vorhanden (max 1 Satz), Operator im Fragestamm passt zur deklarierten Stufe (z.B. "nenne" → L1, "beurteile" → L5). Operator-Stufe-Abweichung = FAIL. | D15b STR-02, Operatoren-Taxonomie (A7-Erweiterung) |
+
+**Anti-Quota-Klausel (STR-11):** Die Aufgabentypen `vergleich` und `begruendung` werden NICHT per Quote erzwungen. Auswahl ausschliesslich nach Eignung (Material-Struktur + Lernziel + Bloom-Progression der Mappe). Auswahl-Heuristik: siehe `VERTRAG_PHASE_2-2a_PROGRESSIONSPLAN.md`.
+
 ### 3.2 SOLL-Kriterien (Verletzung = Optimierungshinweis)
 
 | # | Kriterium | Beschreibung | Fundierung |

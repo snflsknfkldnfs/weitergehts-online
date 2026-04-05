@@ -4,6 +4,58 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-05 — Session 12 (Fortsetzung 2): D15b Phase IV Wave 1 AU-1 PM-Strang Block 1+2 DONE
+
+**Phase:** D15b-Optimierung Phase IV Wave 1 AU-1 (STR-02 Bloom-Tiefe-Pflicht + STR-11 Teil 1 Vergleich/Begruendung)
+**Modus:** EXECUTE (PM-Artefakt-Produktion)
+**ATOM-UNIT:** AU-1 (VERTRAG_ATOM_UNITS.md §3)
+
+**User-Entscheidungen (Block-0, bestaetigt):**
+1. Option C Hybrid — Bestands-Mappen 1-4 erhalten bloom_level nachtraeglich via Auto-Klassifikator; Wave-1-Neu-Produktion laeuft mit Pflichtfeld.
+2. `vergleich` und `begruendung` als eigenstaendige Subagenten-Prompts (nicht Freitext-Varianten).
+3. Mappe 4 als Test-Mappe fuer die 2 neuen Typ-Exemplare.
+
+**Block 1 Artefakte (PM-Strang, produziert):**
+1. `docs/architektur/vertraege/VERTRAG_PHASE_2-2b_AUFGABE.md` — Patch: Bloom-Tiefe-Pflichtfeld-Sektion, `_meta.bloom_level` (1-6) + `_meta.bloom_begruendung` Pflicht, bloom_verteilung_policy (40/30/20), 2 neue `typ`-Werte vergleich + begruendung, Subagenten-Zuordnungs-Tabelle erweitert um Bloom-Ziel-Zone und 2 neue Zeilen, Anti-Quota-Klausel, Q-Gate-Liste um A19/A22/A23/A24 erweitert, Loesungsformate-Tabelle um vergleich + begruendung erweitert, Output-Schema um `_meta`-Block erweitert.
+2. `docs/architektur/vertraege/VERTRAG_PHASE_2-2a_PROGRESSIONSPLAN.md` — Neue Sektion "Typauswahl-Heuristik (AU-1)": Bloom-Ziel-Zonen pro Typ, Entscheidungsfragen, Wann `vergleich`/`begruendung` waehlen, Anti-Quota-Klausel, Bloom-Verteilungs-Policy-Ziel als `_meta.bloom_verteilung_ziel` im Progressionsplan.
+3. `docs/agents/SUB_AUFGABE_VERGLEICH.md` — Neu. Bloom-Ziel L4, Strukturraster, min 2 Objekte × min 2 Dimensionen, Rendering-Kontrakt (Tabellen-Rendering, `loesung` als verschachteltes Object), Q-Kriterien A22, Anti-Patterns (Pseudo-Vergleich, Ja/Nein-Dimensionen).
+4. `docs/agents/SUB_AUFGABE_BEGRUENDUNG.md` — Neu. Bloom-Ziel L5, CER-Schema (Claim-Evidence-Reasoning), Rendering-Kontrakt (3 Textarea-Felder, `loesung` als Object mit claim/evidence/reasoning + `_meta.akzeptierte_claims` min 2 Positionen + `reasoning_schluesselbegriffe`), Q-Kriterien A23, Anti-Patterns (Claim ohne Evidence, Evidence ohne Reasoning, Suggestivfrage).
+5. `docs/agents/SUB_AUFGABE_MC.md` / `SUB_AUFGABE_ZUORDNUNG.md` / `SUB_AUFGABE_LUECKENTEXT.md` / `SUB_AUFGABE_REIHENFOLGE.md` / `SUB_AUFGABE_FREITEXT.md` — Bloom-Selbstdeklaration-Block (PFLICHT seit AU-1) am Dokumentkopf: Bloom-Ziel-Zone pro Typ, Pflichtfeld-JSON-Beispiel, Begruendungs-Heuristik, Verweis auf VERTRAG_PHASE_2-2b.
+6. `docs/checklisten/GUETEKRITERIEN_AUFGABEN.md` — Neue Sektion 3.1a "AU-1 MUSS-Kriterien": A19 Bloom-Verteilung erfuellt Policy (Mappen-Ebene), A22 Vergleichs-Strukturraster vollstaendig, A23 CER-Struktur vollstaendig, A24 Bloom-Selbstdeklaration konsistent. Anti-Quota-Klausel.
+7. `docs/uebergabe/UEBERGABE_PHASE_IV_WAVE_1_AU_1.md` — Neu. Pre-Flight-Checks, Scope (A Engine-Registry-Erweiterung +2 Typen, B Validator-Tool `tools/validate_bloom_distribution.py`, C Mappe-4-Exemplare, D Cache-Bust v=3.9→v=4.0, E CHANGELOG), Pre-Commit-Gate 3 Checks (RA1 Scope / RA3 Code-Kopplung / RA4 ATOM-UNIT), Validierungsschritte, Commit-Nachricht-Vorlage.
+
+**Block 2 Artefakt (Auto-Klassifikator-Dispatch, Option C):**
+8. `docs/analyse/BLOOM_KLASSIFIKATION_MAPPEN_1_4.md` — Neu. Klassifikator-Heuristik (Operator + Typ + Material, Typ-Dach-Begrenzung), Klassifikation aller 24 Bestandsaufgaben (Mappe 1: 5, Mappe 2: 5, Mappe 3: 7, Mappe 4: 7), Mappen-Verteilungs-Tabelle gegen A19-Policy, strukturelle Erkenntnis (Bestand ueberrepraesentiert L1-L2, unterrepraesentiert L5-L6 — legitimiert STR-11 strukturell), Claude-Code-Datenquelle (verbindliche Zuweisungstabelle fuer data.json-Patch, je Aufgabe 1 Bloom-Stufe + 1 Begruendungs-Satz).
+
+**Policy-Befund Mappen 1-4:**
+- Mappe 1: L1-L2 80 % / L3-L4 20 % / L5-L6 0 % — FAIL × 3.
+- Mappe 2: L1-L2 80 % / L3-L4 0 % / L5-L6 20 % — FAIL × 2.
+- Mappe 3: L1-L2 57 % / L3-L4 29 % / L5-L6 14 % — FAIL × 3 (knapp).
+- Mappe 4: L1-L2 57 % / L3-L4 43 % / L5-L6 0 % — FAIL × 2.
+Nachpflege-Policy: KEINE inhaltliche Umgestaltung bestehender Aufgaben in AU-1. Policy-Luecken werden durch Wave-1+-Neuproduktion geschlossen. Mappe 4 erhaelt in AU-1 zusaetzlich 1 vergleich- und 1 begruendung-Exemplar (Code-Strang).
+
+**Artefakte-Liste fuer User-Commit-Block:**
+```
+docs/architektur/vertraege/VERTRAG_PHASE_2-2b_AUFGABE.md
+docs/architektur/vertraege/VERTRAG_PHASE_2-2a_PROGRESSIONSPLAN.md
+docs/agents/SUB_AUFGABE_VERGLEICH.md
+docs/agents/SUB_AUFGABE_BEGRUENDUNG.md
+docs/agents/SUB_AUFGABE_MC.md
+docs/agents/SUB_AUFGABE_ZUORDNUNG.md
+docs/agents/SUB_AUFGABE_LUECKENTEXT.md
+docs/agents/SUB_AUFGABE_REIHENFOLGE.md
+docs/agents/SUB_AUFGABE_FREITEXT.md
+docs/checklisten/GUETEKRITERIEN_AUFGABEN.md
+docs/uebergabe/UEBERGABE_PHASE_IV_WAVE_1_AU_1.md
+docs/analyse/BLOOM_KLASSIFIKATION_MAPPEN_1_4.md
+docs/projekt/STATUS.md
+docs/projekt/CHANGELOG.md
+```
+
+**Naechster Schritt:** User fuehrt Commit-Block aus (siehe STATUS.md Commit-Block-Sektion). Nach Push: Cold-Handoff an Claude-Code via `docs/uebergabe/UEBERGABE_PHASE_IV_WAVE_1_AU_1.md` fuer Engine-Registry-Erweiterung + Validator + Mappe-4-data.json-Patch + Cache-Bust. Danach AU-1 CLOSED, AU-2-Planung.
+
+---
+
 ## 2026-04-05 — Session 12 (Fortsetzung): D15b Phase IV Wave 0 COMPLETE (Code-Strang integriert)
 
 **Phase:** D15b-Optimierung Phase IV Wave 0 COMPLETE (AU-0 Bootstrap, PM + Code)

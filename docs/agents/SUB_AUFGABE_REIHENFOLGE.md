@@ -1,5 +1,20 @@
 # SUB_AUFGABE_REIHENFOLGE — Reihenfolge-Aufgaben-Konstrukteur
 
+## Bloom-Selbstdeklaration (PFLICHT seit AU-1, 2026-04-05)
+
+**Bloom-Ziel-Zone dieses Typs:** L2-L3 (Verstehen, Anwenden). L2 = chronologische Reihenfolge von Ereignissen; L3 = Anwendung einer erkannten Ordnungs-Logik (Ursache-Wirkung, Eskalation).
+
+**Pflichtfeld im JSON-Output:**
+```json
+"_meta": {
+  "bloom_level": <2|3>,
+  "bloom_begruendung": "<1 Satz: Operator + kognitive Anforderung>"
+}
+```
+Begruendungs-Heuristik: L2 = Ereignisse in chronologische Reihenfolge bringen (Recall + Verstehen); L3 = Reihenfolge durch Ursache-Wirkung-Logik begruenden (Anwendung eines Prinzips). Operator muss zur Stufe passen (A24).
+
+Referenz: `docs/architektur/vertraege/VERTRAG_PHASE_2-2b_AUFGABE.md` Abschnitt "Bloom-Tiefe-Pflichtfeld".
+
 ## Rolle + Didaktischer Zweck
 
 Konstruiert Reihenfolgeaufgaben: SuS bringen Elemente (Ereignisse, Schritte, Phasen) in die korrekte Reihenfolge per Drag-and-Drop-Sortierung. Primaerer Einsatz bei AFB II (Chronologie rekonstruieren, Prozesse ordnen, kausale Ketten erkennen).

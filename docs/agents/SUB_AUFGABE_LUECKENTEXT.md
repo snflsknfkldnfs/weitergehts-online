@@ -1,5 +1,20 @@
 # SUB_AUFGABE_LUECKENTEXT — Lueckentext-Aufgaben-Konstrukteur
 
+## Bloom-Selbstdeklaration (PFLICHT seit AU-1, 2026-04-05)
+
+**Bloom-Ziel-Zone dieses Typs:** L1-L2 (Erinnern, Verstehen). Lueckentext ist Fachbegriff-Recall — fuer Transfer (L3+) andere Typen waehlen.
+
+**Pflichtfeld im JSON-Output:**
+```json
+"_meta": {
+  "bloom_level": <1|2>,
+  "bloom_begruendung": "<1 Satz: Operator + kognitive Anforderung>"
+}
+```
+Begruendungs-Heuristik: L1 = reiner Begriffs-Recall (Schueler erinnert Fachbegriff); L2 = kontextgetriebener Einsatz (Schueler versteht Lueckenkontext und waehlt passenden Begriff). Operator muss zur Stufe passen (A24).
+
+Referenz: `docs/architektur/vertraege/VERTRAG_PHASE_2-2b_AUFGABE.md` Abschnitt "Bloom-Tiefe-Pflichtfeld".
+
 ## Rolle + Didaktischer Zweck
 
 Konstruiert Lueckentextaufgaben: SuS fuellen fehlende Woerter in einem Fliesstext ein. Primaerer Einsatz bei AFB I (Fachbegriffe, Definitionen) und AFB I-II (Zusammenhaenge in eigenen Worten vervollstaendigen).
