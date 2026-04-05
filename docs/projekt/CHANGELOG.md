@@ -4,6 +4,49 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-05 — Session 12 (Fortsetzung 3): D15b Phase IV Wave 1 AU-1 Code-Strang DONE
+
+**Phase:** D15b-Optimierung Phase IV Wave 1 AU-1 (Code-Strang nach PM-Strang Block 1+2)
+**Modus:** EXECUTE (Claude-Code)
+**ATOM-UNIT:** AU-1 (VERTRAG_ATOM_UNITS.md §3) — alle Aenderungen in EINEM Commit
+
+**Scopes (siehe UEBERGABE_PHASE_IV_WAVE_1_AU_1.md):**
+- **A Engine-Registry** `assets/js/escape-engine.js` — 2 neue Aufgabentypen in `AufgabentypRegistry`:
+  - `vergleich` (Bloom L4): `_renderVergleich` / `_checkVergleich` — Tabellen-Rendering (Objekte × Dimensionen), String-Match pro Zelle via `_fuzzyMatch` + Fallback auf `_meta.akzeptierte_varianten[<objekt>__<dimension>]`.
+  - `begruendung` (Bloom L5): `_renderBegruendung` / `_checkBegruendung` — 3 Textarea-Felder (Claim, Evidence, Reasoning). Pruefung: Claim fuzzy-Match gegen `_meta.akzeptierte_claims` (ANY), Evidence ANY-Match gegen `loesung.evidence`, Reasoning Schwelle-Match gegen `_meta.reasoning_schluesselbegriffe` (≥ 1 Treffer).
+  - KEINE Aenderungen an Bestands-Check-Funktionen (RA3 Code-Kopplung: `_checkMultipleChoice`, `_checkZuordnung`, `_checkLueckentext`, `_checkReihenfolge`, `_checkFreitextCode` unberuehrt).
+- **A (CSS)** `assets/css/themes/theme-gpg.css` — BEM-Selektoren `.aufgabe--vergleich`, `.vergleich__raster`, `.vergleich__zelle`, `.aufgabe--begruendung`, `.cer`, `.cer--claim|evidence|reasoning`, `.cer__label`, `.cer__textarea`. Minimalstyle: Tabelle mit Rand, CER-Felder als farbcodierte Randstreifen.
+- **B Validator** `tools/validate_bloom_distribution.py` (neu) — Prueft A19-Policy (max 40 % L1-L2, min 30 % L3-L4, min 20 % L5-L6) und Pflichtfelder `_meta.bloom_level` (Int 1-6) + `_meta.bloom_begruendung` (String). Dual-Modus: Mappen-Verzeichnis (`progressionsplan.json` + `aufgaben/*.json`) ODER monolithische `data.json` (mit optionalem `--mappe`-Filter fuer Gameplay-Repo). Exit 0 PASS / 1 FAIL.
+- **C Mappe-4-Patch** `escape-games/gpg-erster-weltkrieg-ursachen/data.json`:
+  - `_meta.bloom_level` + `_meta.bloom_begruendung` fuer alle 24 Bestandsaufgaben (Mappen 1-4) gemaess verbindlicher Zuweisungstabelle in `docs/analyse/BLOOM_KLASSIFIKATION_MAPPEN_1_4.md`.
+  - 2 neue Exemplare in Mappe 4:
+    - `aufgabe-4-8` (typ=`vergleich`, L4): Geplanter vs. tatsaechlicher Kriegsverlauf entlang Dauer / Hauptgegner / Ergebnis. Bezug mat-4-1, mat-4-2, mat-4-4, mat-4-5.
+    - `aufgabe-4-9` (typ=`begruendung`, L5): "Beurteile, ob das Scheitern des Schlieffen-Plans unvermeidlich war." CER-Schema mit 3 akzeptierten Claim-Positionen, 5 Evidence-Belegen, 7 Reasoning-Schluesselbegriffen. Bezug mat-4-1, mat-4-3, mat-4-4, mat-4-5.
+- **D Cache-Bust** alle HTML-Dateien in `escape-games/gpg-erster-weltkrieg-ursachen/` (index, lehrkraft, mappe-1..4): `?v=3.9` → `?v=4.0` fuer `base.css`, `theme-gpg.css`, `core.js`. (`escape-engine.js` stand in dieser Unterseite bereits auf v=4.0.)
+- **E CHANGELOG** dieser Eintrag.
+
+**Pre-Commit-Gate (RA1/RA3/RA4):**
+- RA1 Scope: STR-02 + STR-11 im D15b-Strategien-Doc aktiv (OK).
+- RA3 Code-Kopplung: Diff `assets/js/escape-engine.js` enthaelt KEINE Aenderungen an Bestands-Check-Funktionen (OK).
+- RA4 ATOM-UNIT: alle 10 AU-1-Dateien (escape-engine.js, theme-gpg.css, validate_bloom_distribution.py, data.json, 6 HTML-Dateien, CHANGELOG.md) im selben Commit (OK).
+
+**Validierungsergebnisse:**
+- `python3 -c "import json; json.load(open(...data.json))"` → JSON OK.
+- `node --check assets/js/escape-engine.js` → kein Syntax-Fehler.
+- `python3 tools/validate_bloom_distribution.py escape-games/gpg-erster-weltkrieg-ursachen/data.json`:
+  - Pflichtfeld-Check: PASS fuer alle 26 Aufgaben (24 Bestand + 2 neu).
+  - Policy-Check Mappe 1: L1-L2 80 % / L3-L4 20 % / L5-L6 0 % — FAIL × 3 (erwartet, siehe BLOOM_KLASSIFIKATION_MAPPEN_1_4.md).
+  - Policy-Check Mappe 2: L1-L2 80 % / L3-L4 0 % / L5-L6 20 % — FAIL × 2 (erwartet).
+  - Policy-Check Mappe 3: L1-L2 57,1 % / L3-L4 28,6 % / L5-L6 14,3 % — FAIL × 3 (erwartet, knapp).
+  - Policy-Check Mappe 4 (n=9 nach AU-1-Erweiterung): L1-L2 44,4 % / L3-L4 44,4 % / L5-L6 11,1 % — FAIL × 2 (erwartet: Restpolicy-Luecken werden in Wave 1+ durch weitere Neuproduktion geschlossen, siehe Nachpflege-Policy).
+  - Gesamt-Verdikt: erwartet FAIL (Policy); unerwartete FAILs = 0. Commit-Gate bleibt gruen, weil Nachpflege-Policy (BLOOM_KLASSIFIKATION_MAPPEN_1_4.md) in AU-1 ausdruecklich KEINE inhaltliche Umgestaltung bestehender Aufgaben vorsieht.
+
+**Browser-Smoke-Test:** offen fuer User (neue Typen in Mappe 4 rendern, Feedback-Anzeige nach Abgabe).
+
+**Commit-Hash:** <wird nach Commit nachgetragen>
+
+---
+
 ## 2026-04-05 — Session 12 (Fortsetzung 2): D15b Phase IV Wave 1 AU-1 PM-Strang Block 1+2 DONE
 
 **Phase:** D15b-Optimierung Phase IV Wave 1 AU-1 (STR-02 Bloom-Tiefe-Pflicht + STR-11 Teil 1 Vergleich/Begruendung)

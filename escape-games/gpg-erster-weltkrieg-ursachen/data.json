@@ -296,7 +296,11 @@
               "text": "Der Dreibund (1882) verband Deutschland, Österreich-Ungarn und Italien."
             }
           ],
-          "punkte": 10
+          "punkte": 10,
+          "_meta": {
+            "bloom_level": 1,
+            "bloom_begruendung": "Fakt-Recall der Dreibund-Mitgliedstaaten (Operator 'welche')."
+          }
         },
         {
           "id": "aufgabe-1-2",
@@ -326,7 +330,11 @@
               "text": "Bülow sagte: 'Wir verlangen auch unseren Platz an der Sonne.'"
             }
           ],
-          "punkte": 10
+          "punkte": 10,
+          "_meta": {
+            "bloom_level": 1,
+            "bloom_begruendung": "Zitat-Fragment-Recall (Fachbegriff 'Sonne')."
+          }
         },
         {
           "id": "aufgabe-1-3",
@@ -357,7 +365,11 @@
               "text": "Bismarcks System hielt das Gleichgewicht durch viele Verbindungen. Nach ihm entstand eine klare Konfrontation: Dreibund gegen Triple Entente."
             }
           ],
-          "punkte": 15
+          "punkte": 15,
+          "_meta": {
+            "bloom_level": 3,
+            "bloom_begruendung": "Vergleichs-Operator in MC-Form reduziert auf Anwenden einer Veraenderungs-Erkennung."
+          }
         },
         {
           "id": "aufgabe-1-4",
@@ -387,7 +399,11 @@
               "text": "Die Karikatur kritisiert den Imperialismus: Europäische Mächte wie Großbritannien wollten ganze Kontinente kontrollieren — riesig und rücksichtslos."
             }
           ],
-          "punkte": 10
+          "punkte": 10,
+          "_meta": {
+            "bloom_level": 2,
+            "bloom_begruendung": "Karikaturen-Interpretation (Bild-Verstehen)."
+          }
         },
         {
           "id": "aufgabe-1-5",
@@ -417,7 +433,11 @@
               "text": "Ein einziger Konflikt konnte durch die Bündnispflichten eine Kettenreaktion auslösen — deshalb die Metapher 'Pulverfass'."
             }
           ],
-          "punkte": 10
+          "punkte": 10,
+          "_meta": {
+            "bloom_level": 2,
+            "bloom_begruendung": "Metaphern-Verstaendnis (Begriffsbedeutung)."
+          }
         }
       ],
       "sicherung": {
@@ -732,7 +752,11 @@
               "text": "Richtig ist: Gavrilo Princip erschoss am 28. Juni 1914 in Sarajevo den österreichisch-ungarischen Thronfolger Erzherzog Franz Ferdinand und seine Frau Sophie. Die [[mat-2-2|Illustration]] (M2) zeigt den Moment des Attentats, das [[mat-2-3|Foto]] (M3) die letzten Minuten davor."
             }
           ],
-          "punkte": 10
+          "punkte": 10,
+          "_meta": {
+            "bloom_level": 2,
+            "bloom_begruendung": "Bild-Interpretation von Illustration und Foto."
+          }
         },
         {
           "id": "aufgabe-2-2",
@@ -784,7 +808,11 @@
               "text": "Der einzige Auslöser war die Erschießung von Franz Ferdinand und Sophie in Sarajevo am 28. Juni 1914. Alle anderen Sachverhalte — Annexion, Balkankriege, Bündnissysteme, Rivalitäten — sind langfristige Ursachen. Der [[mat-2-1|Text]] (M1) sagt es so: 'Ohne das Pulverfass hätte der Funke keinen Brand ausgelöst.'"
             }
           ],
-          "punkte": 10
+          "punkte": 10,
+          "_meta": {
+            "bloom_level": 2,
+            "bloom_begruendung": "Zuordnung von Sachverhalten zu Textaussagen (Verstehen)."
+          }
         },
         {
           "id": "aufgabe-2-3",
@@ -821,7 +849,11 @@
               "text": "Richtige Reihenfolge: Attentat in Sarajevo → Blankoscheck (Deutschland an Österreich-Ungarn) → Ultimatum an Serbien → Kriegserklärung an Serbien → Kriegseintritt Großbritanniens. Die [[mat-2-5|Zeitleiste]] (M5) zeigt: In nur 37 Tagen wurde aus einem Mord ein Weltkrieg — jede Station trieb die nächste Eskalationsstufe voran."
             }
           ],
-          "punkte": 10
+          "punkte": 10,
+          "_meta": {
+            "bloom_level": 2,
+            "bloom_begruendung": "Chronologische Ordnung gemaess Zeitleiste im Material."
+          }
         },
         {
           "id": "aufgabe-2-4",
@@ -858,7 +890,11 @@
               "text": "Blankoscheck — Ultimatum — Ermittlungen — 48. Deutschland gab Österreich-Ungarn einen Blankoscheck (bedingungslose Unterstützung). Daraufhin stellte Österreich-Ungarn ein Ultimatum mit unerfüllbaren Forderungen — unter anderem sollten österreichische Beamte auf serbischem Boden ermitteln. Die kurze Frist von 48 Stunden machte eine Einigung fast unmöglich."
             }
           ],
-          "punkte": 10
+          "punkte": 10,
+          "_meta": {
+            "bloom_level": 1,
+            "bloom_begruendung": "Fachbegriffs-Recall zum Ultimatum-Text."
+          }
         },
         {
           "id": "aufgabe-2-5",
@@ -885,7 +921,11 @@
               "text": "Musterantwort: Das Attentat von Sarajevo war der Auslöser des Ersten Weltkriegs, aber nicht seine eigentliche Ursache. Die Ursachen lagen tiefer: Bündnissysteme, Rivalitäten und Misstrauen hatten Europa schon vorher zum Pulverfass gemacht. Der Blankoscheck ermutigte Österreich-Ungarn zu einem harten Ultimatum, und durch die Bündnispflichten zogen die Kriegserklärungen eine Kettenreaktion nach sich. Ohne den Funken wäre der Brand vielleicht nicht ausgebrochen — aber ohne das Pulverfass hätte der Funke keinen Brand ausgelöst."
             }
           ],
-          "punkte": 10
+          "punkte": 10,
+          "_meta": {
+            "bloom_level": 5,
+            "bloom_begruendung": "Stellungnahme-Freitext zu Kriegsfolgen (AFB III, Bewertung)."
+          }
         }
       ],
       "sicherung": {
@@ -1219,7 +1259,9 @@
             "tb_knoten": [
               "k3-1"
             ],
-            "operationalisierungsziel": "Nenne die Fachbegriffe zur Kriegsstimmung 1914"
+            "operationalisierungsziel": "Nenne die Fachbegriffe zur Kriegsstimmung 1914",
+            "bloom_level": 1,
+            "bloom_begruendung": "Fachbegriffs-Recall."
           }
         },
         {
@@ -1257,7 +1299,9 @@
             "tb_knoten": [
               "k3-1"
             ],
-            "operationalisierungsziel": "Beschreibe, was das Foto vor dem Berliner Stadtschloss zeigt"
+            "operationalisierungsziel": "Beschreibe, was das Foto vor dem Berliner Stadtschloss zeigt",
+            "bloom_level": 2,
+            "bloom_begruendung": "Bild-Interpretation des Jubel-Fotos."
           }
         },
         {
@@ -1314,7 +1358,9 @@
               "k3-3",
               "k3-4"
             ],
-            "operationalisierungsziel": "Ordne die vier Ursachen der Kriegsbegeisterung ihren Beschreibungen zu"
+            "operationalisierungsziel": "Ordne die vier Ursachen der Kriegsbegeisterung ihren Beschreibungen zu",
+            "bloom_level": 2,
+            "bloom_begruendung": "Zuordnung von Ursachen zu Beschreibungen (Verstehen)."
           }
         },
         {
@@ -1353,7 +1399,9 @@
             "tb_knoten": [
               "k3-5"
             ],
-            "operationalisierungsziel": "Erkläre, warum das Bild der einheitlichen Kriegsbegeisterung nicht stimmt"
+            "operationalisierungsziel": "Erkläre, warum das Bild der einheitlichen Kriegsbegeisterung nicht stimmt",
+            "bloom_level": 3,
+            "bloom_begruendung": "Quellenkritik-Anwendung (Widerspruch Bild vs. Quelle) in MC-Form."
           }
         },
         {
@@ -1398,7 +1446,9 @@
             "tb_knoten": [
               "k3-6"
             ],
-            "operationalisierungsziel": "Erkläre den Zusammenhang zwischen Kriegskrediten und Burgfrieden"
+            "operationalisierungsziel": "Erkläre den Zusammenhang zwischen Kriegskrediten und Burgfrieden",
+            "bloom_level": 1,
+            "bloom_begruendung": "Fachbegriffs-Recall zum Burgfrieden."
           }
         },
         {
@@ -1461,7 +1511,9 @@
               "k3-5",
               "k3-6"
             ],
-            "operationalisierungsziel": "Unterscheide die Perspektiven Begeisterung, Angst und Pflicht"
+            "operationalisierungsziel": "Unterscheide die Perspektiven Begeisterung, Angst und Pflicht",
+            "bloom_level": 3,
+            "bloom_begruendung": "Anwendung einer Haltungs-Typologie auf neue Quellen-Zitate."
           }
         },
         {
@@ -1509,7 +1561,9 @@
               "Schweigen"
             ],
             "validierung_schwelle": 3,
-            "operationalisierungsziel": "Beurteile, ob gesellschaftlicher Druck heute noch Menschen zum Schweigen bringt"
+            "operationalisierungsziel": "Beurteile, ob gesellschaftlicher Druck heute noch Menschen zum Schweigen bringt",
+            "bloom_level": 5,
+            "bloom_begruendung": "Bewertungs-Freitext mit Gegenwartsbezug (AFB III)."
           }
         }
       ],
@@ -1904,7 +1958,11 @@
               "text": "Zweifrontenkrieg — Schlieffen-Plan — Mobilmachung. Deutschland kämpfte gleichzeitig gegen Frankreich und Russland (Zweifrontenkrieg). General Schlieffen plante, Frankreich in 40 Tagen zu besiegen (Schlieffen-Plan). Der Plan nutzte Russlands langsame Kriegsvorbereitung (Mobilmachung) als Zeitlücke."
             }
           ],
-          "punkte": 10
+          "punkte": 10,
+          "_meta": {
+            "bloom_level": 1,
+            "bloom_begruendung": "Fachbegriffs-Recall zum Schlieffen-Plan."
+          }
         },
         {
           "id": "aufgabe-4-2",
@@ -1934,7 +1992,11 @@
               "text": "Die deutsch-französische Grenze war stark befestigt. Deshalb plante General Schlieffen den Umweg über das neutrale Belgien, um die französischen Verteidigungslinien zu umgehen."
             }
           ],
-          "punkte": 10
+          "punkte": 10,
+          "_meta": {
+            "bloom_level": 2,
+            "bloom_begruendung": "Begruendungs-Wiedergabe (Verstehen der Planlogik)."
+          }
         },
         {
           "id": "aufgabe-4-3",
@@ -1969,7 +2031,11 @@
               "text": "Stolz und Siege → Marsch durch Belgien → Kein Nachschub, Hunger → Zweifel am Plan. Friedrich erlebte den Vormarsch als Abstieg: von Begeisterung über Erschöpfung bis zur Ernüchterung — nach 250 Kilometern und vier Wochen Marsch."
             }
           ],
-          "punkte": 10
+          "punkte": 10,
+          "_meta": {
+            "bloom_level": 2,
+            "bloom_begruendung": "Chronologische Ordnung der Erlebnisse."
+          }
         },
         {
           "id": "aufgabe-4-4",
@@ -2021,7 +2087,11 @@
               "text": "Schlieffen-Plan: Frankreich in 40 Tagen besiegen, danach Russland angreifen, schneller Sieg. Marne — Wirklichkeit: Französische Gegenoffensive stoppte den Vormarsch, 65 km Rückzug und Stellungskrieg. Der Plan scheiterte an der Marne — statt eines schnellen Sieges folgten vier Jahre Schützengräben."
             }
           ],
-          "punkte": 10
+          "punkte": 10,
+          "_meta": {
+            "bloom_level": 3,
+            "bloom_begruendung": "Soll-Ist-Gegenueberstellung Marne (Anwendung Vergleichsschema)."
+          }
         },
         {
           "id": "aufgabe-4-5",
@@ -2051,7 +2121,11 @@
               "text": "Statt eines schnellen Sieges begann ein jahrelanger Stellungskrieg. Das Foto zeigt Soldaten, die Schützengräben mit Stacheldraht befestigen — ein Zeichen dafür, dass beide Seiten sich eingegraben haben. Der Schlieffen-Plan, der einen Sieg in 40 Tagen versprach, war gescheitert."
             }
           ],
-          "punkte": 10
+          "punkte": 10,
+          "_meta": {
+            "bloom_level": 2,
+            "bloom_begruendung": "Bild-Interpretation (Scheitern-Foto)."
+          }
         },
         {
           "id": "aufgabe-4-6",
@@ -2092,7 +2166,11 @@
               "text": "Schlieffen-Plan → Einmarsch durch Belgien → Marne stoppt Vormarsch → 65 km Rückzug → Stellungskrieg. Jeder Schritt folgt kausal aus dem vorherigen: Der Plan führte zum Einmarsch, der Einmarsch scheiterte an der Marne, das Scheitern führte zum Rückzug, und der Rückzug mündete im Stellungskrieg."
             }
           ],
-          "punkte": 10
+          "punkte": 10,
+          "_meta": {
+            "bloom_level": 3,
+            "bloom_begruendung": "Ursache-Wirkung-Kette vom Plan zum Stellungskrieg (Anwendung)."
+          }
         },
         {
           "id": "aufgabe-4-7",
@@ -2137,7 +2215,151 @@
               "Mobilmachung"
             ],
             "validierung_schwelle": 2,
-            "musterantwort": "Der Schlieffen-Plan beruhte auf der Annahme, Frankreich in 40 Tagen über Belgien besiegen zu können, bevor Russland angreifen kann. Doch die Soldaten waren nach 250 Kilometern Marsch erschöpft und ohne Nachschub. An der Marne stoppte eine französische Gegenoffensive den Vormarsch — die deutschen Truppen mussten 65 Kilometer zurückweichen. Statt eines schnellen Sieges begann ein vierjähriger Stellungskrieg in Schützengräben. Der Plan scheiterte, weil er die menschlichen Grenzen der Soldaten und die Stärke des Gegners unterschätzte."
+            "musterantwort": "Der Schlieffen-Plan beruhte auf der Annahme, Frankreich in 40 Tagen über Belgien besiegen zu können, bevor Russland angreifen kann. Doch die Soldaten waren nach 250 Kilometern Marsch erschöpft und ohne Nachschub. An der Marne stoppte eine französische Gegenoffensive den Vormarsch — die deutschen Truppen mussten 65 Kilometer zurückweichen. Statt eines schnellen Sieges begann ein vierjähriger Stellungskrieg in Schützengräben. Der Plan scheiterte, weil er die menschlichen Grenzen der Soldaten und die Stärke des Gegners unterschätzte.",
+            "bloom_level": 4,
+            "bloom_begruendung": "Kausale Analyse der Scheiterungsgruende (Freitext, AFB III)."
+          }
+        },
+        {
+          "id": "aufgabe-4-8",
+          "typ": "vergleich",
+          "frage": "Vergleiche den geplanten und den tatsächlichen Kriegsverlauf entlang dreier Dimensionen.",
+          "material_referenz": [
+            "mat-4-1",
+            "mat-4-2",
+            "mat-4-4",
+            "mat-4-5"
+          ],
+          "loesung": {
+            "dimensionen": [
+              "Dauer bis Sieg",
+              "Hauptgegner zuerst",
+              "Ergebnis"
+            ],
+            "objekte": [
+              "Schlieffen-Plan",
+              "Wirklichkeit 1914"
+            ],
+            "zellen": {
+              "Schlieffen-Plan": {
+                "Dauer bis Sieg": "40 Tage",
+                "Hauptgegner zuerst": "Frankreich",
+                "Ergebnis": "Schneller Sieg"
+              },
+              "Wirklichkeit 1914": {
+                "Dauer bis Sieg": "Vier Jahre",
+                "Hauptgegner zuerst": "Frankreich",
+                "Ergebnis": "Stellungskrieg"
+              }
+            }
+          },
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Schau in [[mat-4-1|Zweifrontenkrieg-Text]] (M1) und [[mat-4-5|Schützengraben-Foto]] (M5). Fülle die Tabelle Zeile für Zeile."
+            },
+            {
+              "stufe": 2,
+              "text": "Beim Schlieffen-Plan war die geplante Dauer 40 Tage. Wie lange dauerte der Krieg wirklich? Und was stand am Ende — schneller Sieg oder Stellungskrieg?"
+            },
+            {
+              "stufe": 3,
+              "text": "Vollständige Tabelle: Schlieffen-Plan — 40 Tage, Frankreich zuerst, schneller Sieg. Wirklichkeit 1914 — vier Jahre, Frankreich zuerst, Stellungskrieg. Der entscheidende Unterschied liegt in Dauer und Ergebnis: Der Plan rechnete mit einem kurzen Bewegungskrieg, wirklich wurde ein langer Abnutzungskrieg."
+            }
+          ],
+          "punkte": 8,
+          "_meta": {
+            "bloom_level": 4,
+            "bloom_begruendung": "Analyse erfordert Zerlegung in Dimensionen und systematischen Soll-Ist-Abgleich (L4).",
+            "afb": "II-III",
+            "tb_knoten": "schlieffen-plan-scheitern",
+            "akzeptierte_varianten": {
+              "Schlieffen-Plan__Dauer bis Sieg": [
+                "40 Tage",
+                "vierzig Tage",
+                "6 Wochen"
+              ],
+              "Schlieffen-Plan__Hauptgegner zuerst": [
+                "Frankreich",
+                "Frankreich (über Belgien)"
+              ],
+              "Schlieffen-Plan__Ergebnis": [
+                "Schneller Sieg",
+                "Blitzsieg",
+                "kurzer Krieg"
+              ],
+              "Wirklichkeit 1914__Dauer bis Sieg": [
+                "Vier Jahre",
+                "4 Jahre",
+                "bis 1918"
+              ],
+              "Wirklichkeit 1914__Hauptgegner zuerst": [
+                "Frankreich",
+                "Frankreich (über Belgien)"
+              ],
+              "Wirklichkeit 1914__Ergebnis": [
+                "Stellungskrieg",
+                "Abnutzungskrieg",
+                "Grabenkrieg"
+              ]
+            }
+          }
+        },
+        {
+          "id": "aufgabe-4-9",
+          "typ": "begruendung",
+          "frage": "Beurteile, ob das Scheitern des Schlieffen-Plans unvermeidlich war.",
+          "material_referenz": [
+            "mat-4-1",
+            "mat-4-3",
+            "mat-4-4",
+            "mat-4-5"
+          ],
+          "loesung": {
+            "claim": "Das Scheitern des Schlieffen-Plans war unvermeidlich, weil er auf unrealistischen Annahmen beruhte.",
+            "evidence": [
+              "Erschöpfung der Soldaten nach 250 Kilometern Marsch",
+              "französische Gegenoffensive an der Marne",
+              "65 Kilometer Rückzug",
+              "fehlender Nachschub",
+              "Zeitplan von 40 Tagen"
+            ],
+            "reasoning": "Die Belege zeigen, dass der Plan die menschlichen Grenzen der Soldaten und die Stärke des Gegners unterschätzte — ein Sieg in 40 Tagen war unter diesen Bedingungen nicht erreichbar."
+          },
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Lies [[mat-4-1|Text zum Schlieffen-Plan]] (M1), [[mat-4-3|Friedrichs Tagebuch]] (M3) und [[mat-4-4|Marne-Karte]] (M4). Formuliere zuerst deine These, dann nenne mindestens einen Beleg, dann verknüpfe beides."
+            },
+            {
+              "stufe": 2,
+              "text": "Beleg-Beispiel: Friedrichs Tagebuch zeigt erschöpfte Soldaten nach langem Marsch. Warum spricht das für oder gegen die Unvermeidbarkeit? Verknüpfe deinen Beleg mit deiner These."
+            },
+            {
+              "stufe": 3,
+              "text": "Musterantwort — These: 'Das Scheitern war unvermeidlich, weil der Plan auf unrealistischen Annahmen beruhte.' Beleg: 'Die Soldaten waren nach 250 Kilometern Marsch erschöpft, der Nachschub fehlte, und an der Marne stoppte eine französische Gegenoffensive den Vormarsch.' Verknüpfung: 'Ein Zeitplan von 40 Tagen unterschätzt die Erschöpfung und die Gegenwehr systematisch — die Belege zeigen, dass der Plan nicht am Zufall, sondern an seinen eigenen Annahmen gescheitert ist.' Auch die Gegenposition ist vertretbar, wenn sie mit Belegen und Verknüpfung gestützt wird."
+            }
+          ],
+          "punkte": 12,
+          "_meta": {
+            "bloom_level": 5,
+            "bloom_begruendung": "Bewerten erfordert Position beziehen, Belegen aus Material und explizite Verknüpfung (L5 CER-Schema).",
+            "afb": "III",
+            "tb_knoten": "schlieffen-plan-scheitern",
+            "akzeptierte_claims": [
+              "Das Scheitern des Schlieffen-Plans war unvermeidlich, weil er auf unrealistischen Annahmen beruhte.",
+              "Das Scheitern war nicht unvermeidlich — mit besserer Logistik und schnellerem Vormarsch hätte der Plan gelingen können.",
+              "Das Scheitern war teilweise unvermeidlich: einzelne Annahmen waren realistisch, andere nicht."
+            ],
+            "reasoning_schluesselbegriffe": [
+              "Annahmen",
+              "Erschöpfung",
+              "Nachschub",
+              "Gegenwehr",
+              "Unterschätzung",
+              "Marne",
+              "Zeitplan"
+            ]
           }
         }
       ],

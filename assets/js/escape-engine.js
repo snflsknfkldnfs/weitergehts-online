@@ -122,6 +122,9 @@ var EscapeEngine = (function () {
     AufgabentypRegistry['lueckentext']     = _renderLueckentext;
     AufgabentypRegistry['reihenfolge']     = _renderReihenfolge;
     AufgabentypRegistry['freitext-code']   = _renderFreitextCode;
+    // STR-11 Wave 1 AU-1: Vergleich (L4) + Begruendung (L5)
+    AufgabentypRegistry['vergleich']       = _renderVergleich;
+    AufgabentypRegistry['begruendung']     = _renderBegruendung;
   }
 
   // ========================================================================
@@ -2969,6 +2972,281 @@ var EscapeEngine = (function () {
       textarea.disabled = true;
     } else {
       Core.feedback.showError(section, 'Leider falsch — versuche es nochmal! ❌');
+      _saveFehlversuch(_state.mappeId);
+    }
+
+    _updateFortschritt(_getMappe(_state.mappeId), loadProgress(_state.mappeId));
+  }
+
+  // ========================================================================
+  // STR-11 (Wave 1 AU-1): Vergleich — Strukturraster (Bloom L4)
+  // ========================================================================
+
+  /**
+   * Rendert eine Vergleichs-Aufgabe als Tabelle (Objekte × Dimensionen).
+   * Schema: aufgabe.loesung = { dimensionen:[...], objekte:[...], zellen:{obj:{dim:str}} }
+   * Optional: aufgabe._meta.akzeptierte_varianten[objekt__dimension] = [varianten]
+   * @private
+   */
+  function _renderVergleich(container, aufgabe, index, geloest) {
+    var loesung = aufgabe.loesung || {};
+    var dimensionen = loesung.dimensionen || [];
+    var objekte = loesung.objekte || [];
+    var zellen = loesung.zellen || {};
+
+    if (!dimensionen.length || !objekte.length) {
+      container.textContent = 'Vergleichs-Aufgabe unvollstaendig (Dimensionen/Objekte fehlen).';
+      return;
+    }
+
+    var state = geloest ? _loadAntwortState(_state.mappeId, index) : null;
+    var savedZellen = (state && state.zellen) || {};
+
+    var table = document.createElement('table');
+    table.className = 'vergleich__raster';
+
+    var thead = document.createElement('thead');
+    var headRow = document.createElement('tr');
+    headRow.appendChild(document.createElement('th'));
+    for (var d = 0; d < dimensionen.length; d++) {
+      var th = document.createElement('th');
+      th.textContent = dimensionen[d];
+      headRow.appendChild(th);
+    }
+    thead.appendChild(headRow);
+    table.appendChild(thead);
+
+    var tbody = document.createElement('tbody');
+    var inputs = {};
+    for (var o = 0; o < objekte.length; o++) {
+      var objekt = objekte[o];
+      var row = document.createElement('tr');
+      var rowHeader = document.createElement('th');
+      rowHeader.scope = 'row';
+      rowHeader.textContent = objekt;
+      row.appendChild(rowHeader);
+
+      for (var d2 = 0; d2 < dimensionen.length; d2++) {
+        var dim = dimensionen[d2];
+        var td = document.createElement('td');
+        var input = document.createElement('input');
+        input.type = 'text';
+        input.className = 'vergleich__zelle';
+        var cellKey = objekt + '__' + dim;
+        input.id = aufgabe.id + '-zelle-' + o + '-' + d2;
+        input.setAttribute('aria-label', objekt + ' — ' + dim);
+        input.disabled = geloest;
+        if (savedZellen[cellKey]) {
+          input.value = savedZellen[cellKey];
+        }
+        td.appendChild(input);
+        row.appendChild(td);
+        inputs[cellKey] = input;
+      }
+      tbody.appendChild(row);
+    }
+    table.appendChild(tbody);
+    container.appendChild(table);
+
+    if (!geloest) {
+      var btn = document.createElement('button');
+      btn.className = 'aufgabe__submit';
+      btn.type = 'button';
+      btn.textContent = 'Antwort prüfen';
+      btn.setAttribute('aria-label', 'Vergleich für Aufgabe ' + (index + 1) + ' prüfen');
+      btn.addEventListener('click', function () {
+        _checkVergleich(container.parentElement, aufgabe, index, inputs);
+      });
+      container.appendChild(btn);
+    }
+  }
+
+  /**
+   * Prueft Vergleichs-Aufgabe: jede Zelle per Fuzzy-Match gegen erwartete
+   * Zell-Loesung, mit Fallback auf akzeptierte_varianten.
+   * @private
+   */
+  function _checkVergleich(section, aufgabe, index, inputs) {
+    var loesung = aufgabe.loesung || {};
+    var zellen = loesung.zellen || {};
+    var varianten = (aufgabe._meta && aufgabe._meta.akzeptierte_varianten) || {};
+
+    var anyEmpty = false;
+    var korrekt = 0;
+    var total = 0;
+    var userZellen = {};
+
+    for (var cellKey in inputs) {
+      if (!Object.prototype.hasOwnProperty.call(inputs, cellKey)) continue;
+      total++;
+      var parts = cellKey.split('__');
+      var objekt = parts[0];
+      var dim = parts[1];
+      var userVal = (inputs[cellKey].value || '').trim();
+      userZellen[cellKey] = userVal;
+      if (!userVal) { anyEmpty = true; continue; }
+
+      var expected = (zellen[objekt] && zellen[objekt][dim]) || '';
+      var match = false;
+      if (expected && _fuzzyMatch(userVal, expected)) match = true;
+      if (!match && varianten[cellKey] && Array.isArray(varianten[cellKey])) {
+        for (var v = 0; v < varianten[cellKey].length; v++) {
+          if (_fuzzyMatch(userVal, varianten[cellKey][v])) { match = true; break; }
+        }
+      }
+      if (match) korrekt++;
+    }
+
+    if (anyEmpty) {
+      Core.feedback.showInfo(section, 'Bitte fülle alle Felder der Tabelle aus.');
+      return;
+    }
+
+    if (korrekt === total && total > 0) {
+      Core.feedback.showSuccess(section, 'Alle Vergleichszellen richtig! ✅');
+      saveProgress(_state.mappeId, index, true);
+      _saveAntwortState(_state.mappeId, index, { zellen: userZellen });
+      section.classList.add('aufgabe--solved');
+      for (var k in inputs) {
+        if (Object.prototype.hasOwnProperty.call(inputs, k)) inputs[k].disabled = true;
+      }
+    } else {
+      Core.feedback.showError(section, korrekt + ' von ' + total + ' Zellen richtig. Versuche es nochmal! ❌');
+      _saveFehlversuch(_state.mappeId);
+    }
+
+    _updateFortschritt(_getMappe(_state.mappeId), loadProgress(_state.mappeId));
+  }
+
+  // ========================================================================
+  // STR-11 (Wave 1 AU-1): Begruendung — CER-Schema (Bloom L5)
+  // ========================================================================
+
+  /**
+   * Rendert eine CER-Aufgabe mit drei Textarea-Feldern (Claim, Evidence, Reasoning).
+   * Schema: aufgabe.loesung = { claim:str, evidence:[str], reasoning:str }
+   * _meta.akzeptierte_claims:[str], _meta.reasoning_schluesselbegriffe:[str]
+   * @private
+   */
+  function _renderBegruendung(container, aufgabe, index, geloest) {
+    var state = geloest ? _loadAntwortState(_state.mappeId, index) : null;
+    var saved = (state && state.cer) || {};
+
+    var felder = [
+      { key: 'claim',     label: 'These',                                                  rows: 2, placeholder: 'Deine These in 1-2 Saetzen...' },
+      { key: 'evidence',  label: 'Beleg(e) aus dem Material',                              rows: 3, placeholder: 'Nenne mindestens 1 Beleg aus dem Material...' },
+      { key: 'reasoning', label: 'Verknüpfung: Warum stützt der Beleg deine These?',       rows: 3, placeholder: 'Erklaere den Zusammenhang zwischen Beleg und These...' }
+    ];
+
+    var textareas = {};
+    for (var i = 0; i < felder.length; i++) {
+      var f = felder[i];
+      var wrap = document.createElement('div');
+      wrap.className = 'cer cer--' + f.key;
+
+      var lab = document.createElement('label');
+      lab.className = 'cer__label';
+      var taId = aufgabe.id + '-cer-' + f.key;
+      lab.setAttribute('for', taId);
+      lab.textContent = f.label;
+      wrap.appendChild(lab);
+
+      var ta = document.createElement('textarea');
+      ta.className = 'cer__textarea';
+      ta.id = taId;
+      ta.rows = f.rows;
+      ta.disabled = geloest;
+      ta.setAttribute('placeholder', f.placeholder);
+      ta.setAttribute('aria-label', f.label + ' (Aufgabe ' + (index + 1) + ')');
+      if (saved[f.key]) ta.value = saved[f.key];
+      wrap.appendChild(ta);
+
+      container.appendChild(wrap);
+      textareas[f.key] = ta;
+    }
+
+    if (!geloest) {
+      var btn = document.createElement('button');
+      btn.className = 'aufgabe__submit';
+      btn.type = 'button';
+      btn.textContent = 'Antwort prüfen';
+      btn.setAttribute('aria-label', 'CER-Antwort für Aufgabe ' + (index + 1) + ' prüfen');
+      btn.addEventListener('click', function () {
+        _checkBegruendung(container.parentElement, aufgabe, index, textareas);
+      });
+      container.appendChild(btn);
+    }
+  }
+
+  /**
+   * Prueft CER-Antwort:
+   *  - claim:     fuzzy-Match gegen akzeptierte_claims (ANY)
+   *  - evidence:  ANY-Match gegen evidence-Array (mind. 1 Beleg)
+   *  - reasoning: Schwelle-Match gegen reasoning_schluesselbegriffe (>= 1)
+   * @private
+   */
+  function _checkBegruendung(section, aufgabe, index, textareas) {
+    var claimText     = (textareas.claim.value     || '').trim();
+    var evidenceText  = (textareas.evidence.value  || '').trim();
+    var reasoningText = (textareas.reasoning.value || '').trim();
+
+    if (!claimText || !evidenceText || !reasoningText) {
+      Core.feedback.showInfo(section, 'Bitte fülle alle drei Felder aus: These, Beleg, Verknüpfung.');
+      return;
+    }
+
+    var meta = aufgabe._meta || {};
+    var loesung = aufgabe.loesung || {};
+    var akzeptierteClaims = meta.akzeptierte_claims || (loesung.claim ? [loesung.claim] : []);
+    var evidenzPool       = loesung.evidence || [];
+    var schluesselbegriffe = meta.reasoning_schluesselbegriffe || [];
+
+    // 1. Claim — fuzzy-Match gegen einen der akzeptierten Claims oder Substring
+    var claimOk = false;
+    var claimNorm = _normalizeUmlaute(claimText.toLowerCase());
+    for (var c = 0; c < akzeptierteClaims.length; c++) {
+      var ac = _normalizeUmlaute(String(akzeptierteClaims[c]).toLowerCase());
+      if (_fuzzyMatch(claimText, akzeptierteClaims[c])) { claimOk = true; break; }
+      // Substring-Fallback: der Kern-Claim wird im Benutzer-Text erwaehnt
+      if (ac.length > 8 && claimNorm.indexOf(ac) !== -1) { claimOk = true; break; }
+    }
+
+    // 2. Evidence — ANY: mindestens 1 Beleg aus dem Pool im Text
+    var evidenceOk = false;
+    var evidenceNorm = _normalizeUmlaute(evidenceText.toLowerCase());
+    for (var e = 0; e < evidenzPool.length; e++) {
+      var ev = _normalizeUmlaute(String(evidenzPool[e]).toLowerCase());
+      if (ev && evidenceNorm.indexOf(ev) !== -1) { evidenceOk = true; break; }
+      if (ev && _fuzzyMatch(evidenceText, evidenzPool[e])) { evidenceOk = true; break; }
+    }
+
+    // 3. Reasoning — Schwelle: mindestens 1 Schluesselbegriff
+    var reasoningHits = 0;
+    var reasoningNorm = _normalizeUmlaute(reasoningText.toLowerCase());
+    for (var r = 0; r < schluesselbegriffe.length; r++) {
+      var sb = _normalizeUmlaute(String(schluesselbegriffe[r]).toLowerCase());
+      if (sb && reasoningNorm.indexOf(sb) !== -1) reasoningHits++;
+    }
+    var reasoningOk = schluesselbegriffe.length === 0 ? reasoningText.length >= 20 : reasoningHits >= 1;
+
+    var allOk = claimOk && evidenceOk && reasoningOk;
+
+    if (allOk) {
+      Core.feedback.showSuccess(section, 'Vollständige Begründung: These, Beleg und Verknüpfung stimmen. ✅');
+      saveProgress(_state.mappeId, index, true);
+      _saveAntwortState(_state.mappeId, index, {
+        cer: { claim: claimText, evidence: evidenceText, reasoning: reasoningText }
+      });
+      section.classList.add('aufgabe--solved');
+      textareas.claim.disabled = true;
+      textareas.evidence.disabled = true;
+      textareas.reasoning.disabled = true;
+    } else {
+      var fehlend = [];
+      if (!claimOk)     fehlend.push('These');
+      if (!evidenceOk)  fehlend.push('Beleg');
+      if (!reasoningOk) fehlend.push('Verknüpfung');
+      Core.feedback.showError(section, 'Noch nicht vollständig: ' + fehlend.join(', ') + ' überarbeiten. ❌');
       _saveFehlversuch(_state.mappeId);
     }
 
