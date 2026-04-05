@@ -3,3 +3,6 @@
 .claude/
 *.skill
 *.plugin
+
+# D15b Raw-Evaluations-Transkripte (enthalten Autor-PII und System-Prompts — NICHT committen)
+docs/analyse/Evaluiation Testrun Mappe 4/
