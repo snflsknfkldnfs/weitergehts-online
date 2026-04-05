@@ -2,9 +2,9 @@
 
 **Zweck:** Fortschritts- und Artefakt-Tracking fuer Phase III.5. Bei Compaction/Interrupt: diese Datei liefert vollstaendige Wiederaufnahme-Information. STATUS.md verweist nur hierher.
 
-**Letzte Aktualisierung:** 2026-04-05 (Sub-Phase 5d COMPLETE)
-**Aktive Sub-Phase:** III.5d COMPLETE. III.5c-bis (RA7 Datenschutz) WAITING FOR USER APPROVAL.
-**Naechster Schritt:** User-Freigabe fuer III.5c-bis (RA7 Datenschutz-Audit) einholen. RA7 wird vor 5e eingeschoben (Gate-Urteil BEDINGT wegen Datenschutz CRITICAL Blindspot).
+**Letzte Aktualisierung:** 2026-04-05 (Sub-Phase 5c-bis COMPLETE)
+**Aktive Sub-Phase:** III.5c-bis COMPLETE. III.5e WAITING FOR USER APPROVAL.
+**Naechster Schritt:** User-Freigabe fuer 5e (Synthese + Zweitmeinung via comprehensive-review:full-review). RA7 Gate-Urteil ROT — 6 P0-Findings blockieren Live-Nutzung UND Phase IV. 5e muss RA7-Befunde mit 6 anderen RAs synthetisieren und Phase-IV-Go/No-Go neu bewerten.
 
 ---
 
@@ -16,7 +16,7 @@
 | III.5b Struktur-Audits (RA1/2/6) | COMPLETE | 2026-04-05 | - |
 | III.5c Tiefen-Audits (RA3/4/5) | COMPLETE | 2026-04-05 | - |
 | III.5d Verifikations-Gate | COMPLETE | 2026-04-05 | - |
-| III.5c-bis RA7 Datenschutz (neu) | NOT STARTED | - | eingeschoben nach 5d Gate-Urteil |
+| III.5c-bis RA7 Datenschutz (neu) | COMPLETE | 2026-04-05 | - |
 | III.5e Synthese + Zweitmeinung | NOT STARTED | - | abhaengig von 5c-bis |
 
 ---
@@ -68,6 +68,17 @@
 | UEBERGABE_PHASE_III_5_5d.md | COMPLETE |
 
 **Gate-Urteil:** BEDINGT. III.5c-bis (RA7 Datenschutz-Audit) muss vor 5e eingeschoben werden. 20 STR bleiben, keine Streichungen. RA2 F-RA2-03 P0→P3 Downgrade. 6 Konvergenz-Hotspots konsolidiert (5× ACCEPT-mit-PATCH, 1× MODIFY-SCOPE). Vertrags-/Katalog-/Engine-Patch-Listen priorisiert.
+
+### III.5c-bis — RA7 Datenschutz-Audit (nachtraegliche Sub-Phase)
+
+| Artefakt | Status | Verifikation |
+|---|---|---|
+| CHARTA_RA7_DATENSCHUTZ.md | COMPLETE | - |
+| EVIDENZ_BUNDLE_RA7.md | COMPLETE | - |
+| BERICHT_RA7_DATENSCHUTZ.md | COMPLETE | PRE-CHECK PASS (876 Zeilen, 13 Findings inkl. 6 P0, 17 Pflicht-Sektionen + 2 Anhaenge) |
+| UEBERGABE_PHASE_III_5_5c_bis.md | COMPLETE | - |
+
+**Gate-Urteil RA7:** ROT. 6 P0-CRITICAL Findings blockieren Live-Nutzung UND Phase IV. Keine gueltige Rechtsgrundlage, Art. 8 Einwilligung der Erziehungsberechtigten fehlt, STR-13 Reflexions-Zone unverschluesselt (P0), Informations-Pflichten Art. 13 vollstaendig unerfuellt, STR-12 Trigger-Flag-Sichtbarkeit unklar, Wikimedia/GitHub Drittanbieter-Risiken.
 
 ### III.5e — Synthese + Zweitmeinung
 

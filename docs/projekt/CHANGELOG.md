@@ -4,6 +4,71 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-05 — Session 11: Phase III.5c-bis COMPLETE (RA7 Datenschutz-Audit, Gate ROT)
+
+**Phase:** D15b-Optimierung Phase III.5c-bis (nachtraeglich eingeschobene Sub-Phase zur Abdeckung des 5d Blindspots B1 Datenschutz CRITICAL)
+
+**Ziel:** Vollstaendiger DSGVO-Audit (inkl. Art. 8 Minderjaehrigen-Schutz + Schulrecht) des bestehenden Projekts und der 20 geplanten STR. Schliessen der Blindspot-Luecke, die von RA1-RA6 nicht abgedeckt wurde. Gate-Entscheidung fuer Live-Nutzung und Phase IV.
+
+**Durchgefuehrt:**
+
+1. State-File auf `III.5c-bis IN_PROGRESS` gesetzt.
+2. Repo-Inventur: localStorage-Wrapper in core.js (Z. 20-86), Progress/State-Logik in escape-engine.js (Z. 40-500 relevante Bereiche), Production-HTML-Audit per Grep (keine externen Tracker/Fonts/CDNs in escape-games/gpg-erster-weltkrieg-ursachen/ gefunden), Evaluations-Transkripte in docs/analyse/ identifiziert.
+3. `CHARTA_RA7_DATENSCHUTZ.md` erstellt (17 Pflicht-Sektionen, Severitaets-Adaption fuer Datenschutz, Rollen-Isolation, Output-Spezifikation).
+4. `EVIDENZ_BUNDLE_RA7.md` erstellt (kuratierte Datei-Liste mit Zeilen-Hinweisen, vorab dokumentierte localStorage-Struktur, STR-Impact-Mapping fuer STR-03/08/11/12/13/24, Hosting-Kontext GitHub Pages / Schrems-II).
+5. RA7-Subagent gespawnt (general-purpose, direct-write-Strategie).
+6. **`BERICHT_RA7_DATENSCHUTZ.md` (876 Zeilen, 17 Pflicht-Sektionen + 2 Anhaenge, 13 Findings):**
+
+   **Gate-Urteil: ROT** — blockiert Live-Nutzung UND Phase IV bis Remediation der 6 P0.
+
+   **Findings-Verteilung:** 6× P0 CRITICAL, 5× P1 HIGH, 2× P2 MEDIUM.
+
+   **P0 CRITICAL (verkuerzt):**
+   - F-RA7-01: Keine gueltige DSGVO Art. 6 Rechtsgrundlage dokumentiert.
+   - F-RA7-02: Art. 8 Einwilligung der Erziehungsberechtigten fuer Nutzer unter 16 Jahren fehlt vollstaendig.
+   - F-RA7-03: STR-13 Reflexions-Zone freier Text-Input im localStorage unverschluesselt, potentiell personenbezogen.
+   - F-RA7-04: Art. 13 Informations-Pflichten vollstaendig unerfuellt (keine Datenschutzerklaerung, kein Verantwortlicher, kein Zweck, keine Speicherdauer).
+   - F-RA7-05: STR-12 Trigger-Flag Sichtbarkeits-Kontrolle technisch nicht abgesichert (User-Zusage "nur Lehrkraft" nicht erzwungen).
+   - F-RA7-06: Drittanbieter-Disclosure (Wikimedia IP + GitHub Pages Schrems-II-Risiko) ohne AVV.
+
+   **P1 HIGH:** Keine Auskunftsfunktion Art. 15, `antwort_state` potentiell personenbezogener Freitext, keine Verschluesselung Art. 32 TOM, Evaluations-Transkripte in docs/analyse/ im Repo exponiert, GitHub AVV-Status unbekannt.
+
+   **P2 MEDIUM:** Kein Datenpannen-Protokoll Art. 33/34, Kontakt-Informationen fuer Betroffenenrechte fehlen.
+
+   **Remediations-Timeline (Empfehlung):**
+   - Woche 1-2: Schule entscheidet Verantwortlichkeits-Modell + GitHub-Akzeptanz. Datenschutzerklaerung schreiben. Transkripte pruefen/pseudonymisieren.
+   - Woche 2-3: Wikimedia-Bilder lokal herunterladen. Auskunftsfunktion implementieren. STR-13 Verschluesselungs-Spezifikation.
+   - Woche 4: RA7-Follow-up-Audit (Zielurteil GELB).
+
+   **7 offene Fragen an User/Schule** (Sektion 17): Verantwortlichkeits-Modell (Schultraeger vs. Lehrkraft vs. Paul privat?), GitHub-Pages-Akzeptanz durch Schultraeger, STR-13-Design (Text-Input Pflicht oder optional?), Transkript-Handling (Loeschen oder pseudonymisieren?), Datenpannen-Kontakt-Benennung, DPO-Status, bestehende Schule-Datenschutzerklaerung.
+
+7. Pre-Check PASS: 876 Zeilen, 13 Findings, 17 Pflicht-Sektionen, Risiko-Matrix vorhanden, Gate-Urteil vorhanden.
+8. `UEBERGABE_PHASE_III_5_5c_bis.md` angelegt.
+9. State-File, STATUS, CHANGELOG aktualisiert.
+
+**Erkenntnisse:**
+
+- **RA7-Gate ROT ueberschreibt 5d-Gate BEDINGT.** Phase IV NEU zu bewerten.
+- **Portfoliowide P0-Count steigt von 5 (post-5d) auf 11** (5d: RA2:1 + RA4:2 + RA5:1 + RA6:1 nach RA2 Downgrade, korrigiert: 5; RA7: 6).
+- **Der 5d-Blindspot-Befund war validiert.** Systematischer Datenschutz-Audit findet 6 kritische Luecken, die von keiner anderen RA-Rolle abgedeckt wurden.
+- **STR-13 Reflexions-Zone muss Datenschutz-Klausel bekommen** — unveraenderte Umsetzung waere P0-Verstoss.
+- **STR-12 Trigger-Flag Sichtbarkeit** muss von User-Zusage zu technisch erzwungener Kontrolle werden — Kopplung zu RA6 F-RA6-05 und RA3 F-RA3-06 besteht.
+- **Evaluations-Transkripte in docs/analyse/** muessen VOR 5e gesichtet werden — wenn Personenbezug, dann git-Rewrite erforderlich.
+
+**Artefakte:**
+
+- `docs/projekt/phase-iii-5/CHARTA_RA7_DATENSCHUTZ.md` (NEU)
+- `docs/projekt/phase-iii-5/EVIDENZ_BUNDLE_RA7.md` (NEU)
+- `docs/projekt/phase-iii-5/BERICHT_RA7_DATENSCHUTZ.md` (NEU, 876 Z, 13 F, Gate ROT)
+- `docs/uebergabe/UEBERGABE_PHASE_III_5_5c_bis.md` (NEU)
+- `docs/projekt/D15B_PHASE_III_5_AUDIT_STATE.md` (aktualisiert: 5c-bis COMPLETE + RA7-Sektion)
+- `docs/projekt/STATUS.md` (aktualisiert)
+- `docs/projekt/CHANGELOG.md` (dieser Eintrag)
+
+**Naechster Schritt:** User-Freigabe fuer 5e (Synthese + Zweitmeinung). 5e muss RA7-Befunde in neue konsolidierte Konvergenz-Matrix und Severitaets-Bilanz integrieren, `comprehensive-review:full-review` als Tool-Zweitmeinung auf 6 Primaer-RAs ausfuehren, STR_MUTATIONS_BESCHLUSS.md mit finalen Verdikten aller 20 STR erstellen, Phase-IV-Go/No-Go-Empfehlung NEU formulieren.
+
+---
+
 ## 2026-04-05 — Session 11: Phase III.5d COMPLETE (Verifikations-Gate)
 
 **Phase:** D15b-Optimierung Phase III.5d (Pre-Implementation-Risiko-Audit, Verifikations-Gate)
