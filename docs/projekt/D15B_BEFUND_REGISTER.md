@@ -96,7 +96,7 @@
 | F2 | Langzeit-Retention und Transfer-Tests | Synthese §III.F2 | F | — | INFRA | MEDIUM | pending | E9 Audit-Methodik | pending |
 | F3 | Vergleichende Zeitgenossen-Wahrnehmung (Quellendiversitaet) | Synthese §III.F3 | F | — | INFRA | MEDIUM | pending | E2 Subagenten Material, E9 | pending |
 | F4 | Barrierefreiheit / WCAG (von keiner Rolle geprueft) | Synthese Executive/IX | F | — | INFRA | HIGH | pending | E7 Engine, E9 Audit-Methodik (accessibility-compliance Plugin) | pending |
-| F5 | Datenschutz / DSGVO (ungeprueft) | Synthese IX | F | — | INFRA | MEDIUM | pending | E7 Engine, E9 | pending |
+| F5 | Datenschutz / DSGVO | Synthese IX + RA7 Nachkalibrierung + DOK1 Nachtrag 2026-04-05 | F | — | INFRA | P1 HIGH | IN_PROGRESS | RA7 13 Findings, davon F-RA7-12 (JSONL-Transkripte) OFFEN — gitignored, physische Verlagerung offen; F-RA7-05 (Wikimedia) erledigt durch D1 Wave 0 | teilweise |
 | F6 | Technische Robustheit unter Last (Mehrklassen-Nutzung) | Synthese IX | F | — | INFRA | LOW | pending | E7 Engine, E9 | pending |
 
 ---

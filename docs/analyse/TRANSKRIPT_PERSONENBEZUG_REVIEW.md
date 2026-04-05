@@ -1,8 +1,8 @@
 # Transkript-Personenbezug-Review (DOK1)
 
-**Status:** FINAL (Phase IV Wave 0, DOK1)
-**Datum:** 2026-04-05
-**Herkunft:** RA7 Nachkalibrierung Finding F-RA7-05 (P1), DOK1 Wave 0 Paket
+**Status:** TEILWEISE — Nachtrag-Sektion 7 korrigiert Sektion 2.3/5 (2026-04-05)
+**Datum:** 2026-04-05 (urspruengliche Fassung) + 2026-04-05 Nachtrag
+**Herkunft:** RA7 Nachkalibrierung Finding F-RA7-12 (P1), DOK1 Wave 0 Paket
 **Zweck:** Pruefen, ob in `docs/analyse/` und `docs/projekt/` abgelegte Transkripte, Audit-Logs oder Evaluation-Artefakte personenbezogene Daten von Dritten (insbesondere Schuelerinnen) enthalten, die nicht durch die iPad-Nutzungsvereinbarung abgedeckt sind.
 
 ---
@@ -89,7 +89,9 @@ Die Mappen-Inhalte (Erster Weltkrieg) nennen historische Personen (Wilhelm II., 
 
 ## 5. Verknuepfung zu RA7
 
-Dieses Dokument schliesst Finding **F-RA7-05 Transkripte in docs/analyse** (nachkalibriert auf P1) als **ERLEDIGT** ab. Die P1-Markierung war eine Absicherungs-Pflicht, um den Ist-Zustand sauber zu dokumentieren — nicht, weil ein konkreter Verstoss vorlag.
+**Korrektur 2026-04-05 Nachtrag:** Dieses Dokument bezog sich in seiner urspruenglichen Fassung auf Finding "F-RA7-05". Das war eine Nummerierungs-Verwechslung. Die korrekte Finding-Nummer fuer den Transkript-Befund ist **F-RA7-12 "Evaluations-Transkripte nicht pseudonymisiert"** (siehe `docs/projekt/phase-iii-5/BERICHT_RA7_DATENSCHUTZ.md` Zeile 480, Severitaet P1 HIGH). Die urspruenglich referenzierte Nummer F-RA7-05 bezeichnet den **Wikimedia-URL-Befund**, der durch D1 in Phase IV Wave 0 (Lokalisierung der Bilder in `assets/img/gpg-erster-weltkrieg-ursachen/` mit `BILDLIZENZEN.md`) erledigt wurde.
+
+Der urspruengliche Status "ERLEDIGT" fuer den Transkript-Befund wird durch Sektion 7 zurueckgezogen. **F-RA7-12 bleibt OFFEN** bis physische Verlagerung oder Loeschung der JSONL-Session-Dumps bestaetigt ist.
 
 ## 6. Geltungsbereich
 
@@ -98,3 +100,33 @@ Wirksam ab Commit des Phase-IV-Wave-0-Bundles. Review wird bei jedem wesentliche
 ---
 
 **Querverweise:** `docs/projekt/phase-iii-5/RA7_NACHKALIBRIERUNG.md`, `POLICY_TRIGGER_SICHTBARKEIT.md`, iPad-Nutzungsvereinbarung (schulintern, nicht im Repo).
+
+---
+
+## 7. Nachtrag 2026-04-05 — Grep-Methoden-Luecke und Korrektur F-RA7-12
+
+**Anlass:** Vor Commit der Untracked-Dateien in Session 12 wurde ein erweiterter Grep auf `docs/analyse/Evaluiation Testrun Mappe 4/` mit identischem Pattern (`paul|cebulla|paulad|@gmx|@gmail`) ausgefuehrt. Ergebnis: **291 Treffer**, darunter:
+
+- Vollstaendige Dateisystem-Pfade `/Users/paulad/weitergehts.online/weitergehts-online` in jeder Session-Metadaten-Zeile
+- Vollstaendige Cowork-System-Prompts in jeder Nachricht (Autor-Session-Kontext)
+- JSONL-Format pro Session-Ordner (`transcript-Session1..6`) mit jeweils `<session-id>.jsonl` und `metadata.json`
+
+**Methoden-Luecke:** Die urspruengliche Sektion 2 zaehlte "Cowork-Transkripte Mappe 4" zwar in der Risikomatrix (Zeile "vorhanden, Einwilligung" fuer R3), quantifizierte aber nicht die Menge und Art der R3-Referenzen. Die pauschale Einstufung "unkritisch, da Einwilligung" uebersah, dass das Repo ein **PUBLIC GitHub Pages** Repo ist. Ein Commit der 6 Session-Ordner haette den vollstaendigen Datei-Pfad des Autors, alle durchgefuehrten Cowork-Aufrufe und interne System-Prompts oeffentlich einsehbar gemacht. Das ist kein DSGVO-Verstoss im strengen Sinne (da R3 einwilligungsfaehig), wohl aber eine unbeabsichtigte operative Exposition, die eine zumutbare Einwilligung nicht deckt.
+
+**Massnahmen (durchgefuehrt in Session 12 Commit-Runde):**
+1. `.gitignore`-Eintrag `docs/analyse/Evaluiation Testrun Mappe 4/` ergaenzt (Commit `chore(datenschutz): gitignore fuer Evaluiation-Testrun-Transkripte`).
+2. Physische Verlagerung der Transkripte ausserhalb des Repos ist offene User-Aufgabe (Ziel: `~/weitergehts.online/_private_archive/` oder vergleichbar).
+3. Dieser Nachtrag in DOK1.
+4. `D15B_BEFUND_REGISTER` F-RA7-12 Status von "ERLEDIGT" zurueck auf "TEILWEISE / Nachtrag offen".
+
+**Korrigierter Befund F-RA7-12:**
+- Sektion 2.3 (Schueler) bleibt gueltig: Keine R1-PII.
+- Sektion 2.1 (R3) wird praezisiert: R3-Referenzen in `Evaluiation Testrun Mappe 4/` gehen ueber normale Git-Commit-Autor-Metadaten hinaus (vollstaendige Pfade + System-Prompts + Session-Metadaten). Diese Klasse von Artefakten ist **NICHT fuer ein Public-Repo geeignet**, auch wenn der R3 einwilligungsfaehig ist.
+- Sektion 5 Urteil "ERLEDIGT" wird aufgehoben. F-RA7-12 bleibt offen, bis physische Verlagerung oder Loeschung der Transkripte bestaetigt ist.
+
+**Haerteregel vorwaerts:**
+- Keine `.jsonl`-Dateien aus Cowork- oder Claude-Code-Session-Dumps im Repo, unabhaengig vom Ordner.
+- Pre-Commit-Grep auf `/Users/` und `systemPrompt` in allen `docs/analyse/`-Neuzugaengen vor jedem Commit.
+- `.gitignore` haelt diese Regel technisch durch.
+
+**Querverweis:** `docs/projekt/D15B_BEFUND_REGISTER.md` Status-Rueckaenderung F-RA7-12, Commit-Serie Session 12.
