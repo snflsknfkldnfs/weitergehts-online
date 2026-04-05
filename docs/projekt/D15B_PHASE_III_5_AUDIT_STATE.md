@@ -2,9 +2,9 @@
 
 **Zweck:** Fortschritts- und Artefakt-Tracking fuer Phase III.5. Bei Compaction/Interrupt: diese Datei liefert vollstaendige Wiederaufnahme-Information. STATUS.md verweist nur hierher.
 
-**Letzte Aktualisierung:** 2026-04-05 (Sub-Phase 5b COMPLETE)
-**Aktive Sub-Phase:** III.5b COMPLETE. III.5c WAITING FOR USER APPROVAL.
-**Naechster Schritt:** User-Freigabe fuer 5c einholen. Nach Freigabe: 3 parallele Subagenten (RA3 + RA4 + RA5) spawnen — Achtung RA5 ist Meta-Auditor und muss nach RA3+RA4 laufen; also zuerst RA3+RA4 parallel, dann RA5.
+**Letzte Aktualisierung:** 2026-04-05 (Sub-Phase 5c COMPLETE)
+**Aktive Sub-Phase:** III.5c COMPLETE. III.5d WAITING FOR USER APPROVAL.
+**Naechster Schritt:** User-Freigabe fuer 5d (Verifikations-Gate) einholen. 5d arbeitet die 6 RA5-Meta-Findings ab, stabilisiert Kalibrierung (RA2 Inflation), schliesst Blindspots (Datenschutz CRITICAL, Performance, DX, Rollback).
 
 ---
 
@@ -14,7 +14,7 @@
 |---|---|---|---|
 | III.5a Charten + Bundles | COMPLETE | 2026-04-05 | - |
 | III.5b Struktur-Audits (RA1/2/6) | COMPLETE | 2026-04-05 | - |
-| III.5c Tiefen-Audits (RA3/4/5) | NOT STARTED | - | abhaengig von 5b |
+| III.5c Tiefen-Audits (RA3/4/5) | COMPLETE | 2026-04-05 | - |
 | III.5d Verifikations-Gate | NOT STARTED | - | abhaengig von 5b+5c |
 | III.5e Synthese + Zweitmeinung | NOT STARTED | - | abhaengig von 5d |
 
@@ -54,10 +54,10 @@
 
 | Artefakt | Status | Verifikation |
 |---|---|---|
-| BERICHT_RA3_CODE_KOPPLUNG.md | NOT STARTED | - |
-| BERICHT_RA4_PIPELINE.md | NOT STARTED | - |
-| BERICHT_RA5_META.md | NOT STARTED | - |
-| UEBERGABE_PHASE_III_5_5c.md | NOT STARTED | - |
+| BERICHT_RA3_CODE_KOPPLUNG.md | COMPLETE | PRE-CHECK PASS (636 Zeilen, 11 Findings, 12 Pflicht-Sektionen) |
+| BERICHT_RA4_PIPELINE.md | COMPLETE | PRE-CHECK PASS (818 Zeilen, 12 Findings inkl. 1 P0, 15 Pflicht-Sektionen) |
+| BERICHT_RA5_META.md | COMPLETE | PRE-CHECK PASS (384 Zeilen, 6 Meta-Findings, 14 Pflicht-Sektionen inkl. Konvergenz-Matrix, Dissens-Register, Blindspot-Map, Severitaets-Kalibrierung, Scope-Disziplin, adaptierte Rubrik) |
+| UEBERGABE_PHASE_III_5_5c.md | COMPLETE | - |
 
 ### III.5d — Verifikations-Gate
 

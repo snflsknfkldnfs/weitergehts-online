@@ -4,6 +4,76 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-05 — Session 11: Phase III.5c COMPLETE (Tiefen-Audits RA3 + RA4 parallel, RA5 Meta seriell)
+
+**Phase:** D15b-Optimierung Phase III.5c (Pre-Implementation-Risiko-Audit, Tiefen-Audits)
+
+**Ziel:** 2 parallele Tiefen-Audits (RA3 Code-Kopplung + RA4 Pipeline) spawnen, danach seriell RA5 Meta-Auditor zur Synthese (Konvergenz-Matrix, Dissens-Register, Blindspot-Map, Severitaets-Kalibrierung, Scope-Disziplin, adaptierte Rubrik). User-Freigabe fuer 5d einholen.
+
+**Durchgefuehrt:**
+
+1. **State-File auf `III.5c IN_PROGRESS` gesetzt** vor Spawning.
+
+2. **RA3 + RA4 Parallel-Spawning in EINER Nachricht:** 2 `Agent` Tool Calls (subagent_type `general-purpose`). Jeder las Charta + Evidenz-Bundle und schrieb Bericht direkt. Dauer ~180-350s parallel.
+
+3. **RA3 Code-Kopplung → BERICHT_RA3_CODE_KOPPLUNG.md** (636 Zeilen, 12 Pflicht-Sektionen, 11 Findings):
+   - 2 CRITICAL: F-RA3-01 (escape-engine.js Z. 1919-1924, Legacy-Feedback-Fallback erforderlich sonst brechen Mappen 1-4 bei STR-03); F-RA3-05 BLOCKER (escape-engine.js Z. 1868-1945, STR-08/11 neue Aufgabentypen ohne Renderer).
+   - CRITICAL (Projekt-Regel): F-RA3-04 Cache-Busting v=3.9→v=4.0 in ALLEN HTML synchron.
+   - HOCH: F-RA3-02 STR-04 Renderer-Erweiterung, F-RA3-07 STR-20 WCAG Rendering-Impact.
+   - Wave-3-Atomisierungs-Empfehlung: STR-03+STR-04 atomar (separate PRs, gemeinsam deployen), STR-20 nicht rein atomar (CSS+JS gemischt, 2-Phasen-Deployment).
+
+4. **RA4 Pipeline → BERICHT_RA4_PIPELINE.md** (818 Zeilen, 15 Pflicht-Sektionen, 12 Findings inkl. Vertrags-Kontrakt-Map + STR-zu-Vertrag-Matrix):
+   - F-RA4-02 P0 BLOCKING (ORCHESTRATOR.md v4.0 IL-4): Session-Split-Enforcement-Gap, PFLICHT im Text aber nicht im Template/Checkpoint. Phase 2.1c→2.2a Token-Kontext-Leak-Risiko.
+   - F-RA4-06 P0 CRITICAL: ATOM-UNIT Synchronisation STR-04/05/08/11 nicht vertraglich erzwungen.
+   - F-RA4-01 P1 HIGH (VERTRAG_PHASE_2-2b_AUFGABE.md): STR-03 Feedback-Schema Breaking Change (string→Objekt), Engine-Kompat nicht dokumentiert.
+   - F-RA4-03 P1 HIGH (VERTRAG_PHASE_2-2c_CROSS.md): Bloom-Validation fehlt in A1 Q-Gate.
+   - Vertrags-Patch-Prioritaeten: (1) ORCHESTRATOR Session-Split-Checkpoint BLOCKING, (2) VERTRAG_PHASE_2-2b Feedback-Schema Migration HIGH, (3) VERTRAG_PHASE_2-2c Bloom-Distribution-Validation HIGH.
+   - Gesamturteil: BEDINGT — 20 aktive STR halten I/O-Schema-Kompatibilitaet ein FALLS 3 kritische Vertrags-Patches angewandt.
+
+5. **Pre-Check RA3+RA4 PASS.**
+
+6. **RA5 Meta-Auditor seriell gespawnt** nach RA3+RA4 Abschluss. RA5 las Chartas + alle 5 RA-Berichte (RA1, RA2, RA3, RA4, RA6). Dauer ~250s.
+
+7. **RA5 Meta → BERICHT_RA5_META.md** (384 Zeilen, 14 Pflicht-Sektionen):
+   - **Konvergenz-Matrix STR×RA** (Pflicht-Anhang): 20 STR × 5 RAs, Severitaets-Markierung pro Zelle, Top-6-Rangliste.
+   - **Top-6 Multi-RA-Hotspots:** STR-04 (3 RAs, 2×P0 CRITICAL ATOM-UNIT), STR-05 (4 RAs involviert), STR-12 (3 RAs + Sicherheitsluecke RA6-05), STR-03 (2 RAs CRITICAL+P1 Feedback-Schema), STR-08 (3 RAs Progressionsplan-Komplexitaet), STR-11 (3 RAs ATOM-UNIT Sync).
+   - **Dissens-Register:** Kein direkter Verdikt-Dissens. Nur koordinative Spannungen RA1/RA4 ATOM-UNIT (komplementaer) und RA6/RA1 STR-05/14 (unterschiedliche Ebenen).
+   - **Blindspot-Map (7 Blindspots):** Datenschutz/DSGVO **CRITICAL nicht abgedeckt**, Performance (keine Benchmarks), Sicherheit (partial, nur gestreift), Operative Robustheit, Rollback-Faehigkeit, Developer-Experience (keine Prompt-Test-Runs), Dokumentations-Drift (keine SLA).
+   - **Severitaets-Kalibrierung:** RA1/RA3/RA4/RA6 gut kalibriert. RA2 leichte Inflation (F-RA2-03 Cleanup koennte P3 statt P0).
+   - **Scope-Disziplin:** Alle 5 RAs STRIKT DISZIPLINIERT, RA4 minimal-legitime Erweiterung auf Orchestrator-Kontext.
+   - **Adaptierte Rubrik** fuer III.5d Verifikations-Gate.
+   - **6 Meta-Findings:** F-RA5-01 P0 PHASE-IV-BLOCKIEREND ATOM-UNIT Sync-Enforcement, F-RA5-02 P1 Feedback-Schema Breaking, F-RA5-03 P1 Trigger-Sicherheit, F-RA5-04 P2 Subagent-DX, F-RA5-05 P1 Katalog-Rollen nach STR-01, F-RA5-06 P1 Koordinations-Luecken.
+
+8. **Pre-Check RA5 PASS.**
+
+9. **`UEBERGABE_PHASE_III_5_5c.md` angelegt** mit vollstaendiger Befund-Synthese und Naechster-Schritt-Protokoll fuer 5d/5e.
+
+10. **State-File aktualisiert:** 5c COMPLETE mit Pre-Check pro Bericht. 5d WAITING FOR USER APPROVAL.
+
+**Erkenntnisse:**
+
+- Parallel-Spawning 2er Subagenten war effizient, RA5 seriell danach war richtig (brauchte RA3+RA4-Berichte als Input).
+- Subagent-Direct-Write auch bei umfangreichen Berichten stabil (RA4 818 Zeilen, RA5 384 Zeilen mit Tabellen).
+- **Kernbefund der Meta-Analyse:** Das 5-RA-Portfolio ist strukturell robust (keine Dissense, gute Disziplin, konsistente Kalibrierung), aber deckt **Datenschutz, Performance, DX, Sicherheit, Rollback** NICHT oder nur oberflaechlich ab. Das ist ein strategisches Risiko fuer Phase IV.
+- **Kernbefund der Konvergenz-Analyse:** STR-04 und STR-05 sind die hoechsten Risiken. STR-04 hat 2×P0 CRITICAL (ATOM-UNIT) + Rendering-Problem. STR-05 hat 4 RAs involviert (didaktische Logik sickert in Infrastruktur).
+- **Kernbefund der Vertrags-Analyse (RA4):** Ein einziger P0-BLOCKING-Befund (ORCHESTRATOR Session-Split) koennte Phase IV blockieren, falls nicht gepatcht. RA5 bestaetigt als F-RA5-01.
+- **Kernbefund der Code-Analyse (RA3):** Legacy-Feedback-Fallback (Mappen 1-4) und neuer Aufgabentyp-Renderer sind echte Regressions-Risiken, nicht nur Aufwaende.
+
+**Artefakte (neu):**
+- `docs/projekt/phase-iii-5/BERICHT_RA3_CODE_KOPPLUNG.md` (636 Z)
+- `docs/projekt/phase-iii-5/BERICHT_RA4_PIPELINE.md` (818 Z)
+- `docs/projekt/phase-iii-5/BERICHT_RA5_META.md` (384 Z)
+- `docs/uebergabe/UEBERGABE_PHASE_III_5_5c.md`
+
+**Artefakte (aktualisiert):**
+- `docs/projekt/D15B_PHASE_III_5_AUDIT_STATE.md` (5c COMPLETE, Artefakt-Register)
+- `docs/projekt/STATUS.md`
+- `docs/projekt/CHANGELOG.md` (dieser Eintrag)
+
+**Naechster Schritt:** User-Freigabe fuer III.5d (Verifikations-Gate): RA2-Kalibrierungs-Korrektur, 7 Blindspot-Entscheidungen, Konvergenz-Verdikte konsolidieren, ATOM-UNIT-Framework finalisieren, Patch-Listen fuer Vertraege/Kataloge/Engine priorisieren.
+
+---
+
 ## 2026-04-05 — Session 11: Phase III.5b COMPLETE (3 parallele Struktur-Audits RA1 + RA2 + RA6)
 
 **Phase:** D15b-Optimierung Phase III.5b (Pre-Implementation-Risiko-Audit, Struktur-Audits)
