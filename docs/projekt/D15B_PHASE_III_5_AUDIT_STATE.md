@@ -2,9 +2,9 @@
 
 **Zweck:** Fortschritts- und Artefakt-Tracking fuer Phase III.5. Bei Compaction/Interrupt: diese Datei liefert vollstaendige Wiederaufnahme-Information. STATUS.md verweist nur hierher.
 
-**Letzte Aktualisierung:** 2026-04-05 (Sub-Phase 5c-bis COMPLETE)
-**Aktive Sub-Phase:** III.5c-bis COMPLETE. III.5e WAITING FOR USER APPROVAL.
-**Naechster Schritt:** User-Freigabe fuer 5e (Synthese + Zweitmeinung via comprehensive-review:full-review). RA7 Gate-Urteil ROT — 6 P0-Findings blockieren Live-Nutzung UND Phase IV. 5e muss RA7-Befunde mit 6 anderen RAs synthetisieren und Phase-IV-Go/No-Go neu bewerten.
+**Letzte Aktualisierung:** 2026-04-05 (Sub-Phase 5e IN_PROGRESS — RA7-Nachkalibrierung aufgrund User-Faktenkorrektur)
+**Aktive Sub-Phase:** III.5e IN_PROGRESS.
+**Naechster Schritt:** RA7-Nachkalibrierung schreiben (User-Korrektur 2026-04-05: localStorage-only auf Schul-iPads + Nutzungsvereinbarung deckt Art. 6/8 ab). Dann Synthese aller 7 RAs, comprehensive-review:full-review Zweitmeinung, STR_MUTATIONS_BESCHLUSS, Phase-IV-Go/No-Go-Empfehlung.
 
 ---
 
@@ -17,7 +17,7 @@
 | III.5c Tiefen-Audits (RA3/4/5) | COMPLETE | 2026-04-05 | - |
 | III.5d Verifikations-Gate | COMPLETE | 2026-04-05 | - |
 | III.5c-bis RA7 Datenschutz (neu) | COMPLETE | 2026-04-05 | - |
-| III.5e Synthese + Zweitmeinung | NOT STARTED | - | abhaengig von 5c-bis |
+| III.5e Synthese + Zweitmeinung | IN_PROGRESS | - | - |
 
 ---
 

@@ -4,6 +4,38 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-05 — Session 11: Phase III.5e IN_PROGRESS (RA7-Nachkalibrierung + Synthese)
+
+**Phase:** D15b-Optimierung Phase III.5e (Synthese + Zweitmeinung)
+
+**Ziel:** RA7-Befunde aufgrund User-Faktenkorrektur neu kalibrieren, Synthese aller 7 RAs, Phase-IV-Go/No-Go-Empfehlung.
+
+**Durchgefuehrt:**
+
+1. **User-Faktenkorrektur eingearbeitet:** "Es werden ja keinerlei daten erhoben, sondern nur eingaben im lokalen browser cache der schul-ipads gespeichert. zur nutzung der schul-iPads gibt es entsprechende einwilligung aller nutzenden."
+2. **`RA7_NACHKALIBRIERUNG.md` erstellt** (autoritative Fassung der RA7-Findings nach User-Kontext):
+   - F-RA7-01 Art. 6 Rechtsgrundlage: P0 → P2 (BayEUG + iPad-Vereinbarung greifen)
+   - F-RA7-02 Art. 8 Einwilligung: P0 → P3 (iPad-Vereinbarung deckt ab)
+   - F-RA7-03 STR-13 Reflexions-Zone: P0 → P1 (Risiko bleibt, aber begrenzt auf Local-Cache-Expositions-Flaeche)
+   - F-RA7-04 Art. 13 Informations-Pflichten: P0 → P2 (Datenschutzerklaerung als Soft-Gate)
+   - F-RA7-05 STR-12 Sichtbarkeit: P0 → P1 (paedagogisches Problem, nicht primaer Datenschutz, BLOCKING-Patch bleibt)
+   - F-RA7-06 Drittanbieter: P0 → P1+P1 (BLEIBT BLOCKING — einziges echtes Datenschutz-Risiko, da Schrems-II Transfer bei Seitenaufruf)
+   - Gate-Urteil RA7: **ROT → GELB mit Auflagen**
+   - Reduziert auf 3 BLOCKING-Punkte: Wikimedia lokal, STR-13 ohne Persistenz, STR-12 Sichtbarkeit (ueberlappt mit 5d)
+3. **`D15B_PHASE_III_5_SYNTHESE.md` erstellt:**
+   - Portfolio-Ueberblick alle 7 RAs + Severitaets-Bilanz
+   - Konvergenz-Top-8 (5d Top-6 + 2 neue Datenschutz-Cluster STR-13 + Drittanbieter)
+   - Konsolidierte BLOCKING-Liste: V1/V2/V4 Vertrag, K1/K2 Katalog, E1/E2 Engine, D1/D2 Datenschutz
+   - 8 Phase-IV-Gates aktualisiert (G-7 neu als schlankes Datenschutz-Checklisten-Gate statt mehrwoechiges Remediations-Programm)
+   - STR-Verdikt-Vorschau alle 20 STR (keine Streichungen, 1 MODIFY-SCOPE STR-05, 1 Design-Change STR-13)
+   - **Phase-IV-Empfehlung: BEDINGTES GO** nach 8 Gates + DOK1 Transkript-Pruefung
+4. **Portfoliowide P0-Count:** 11 (5d+5c-bis) → **1** (nur F-RA4-02 Aufgabentyp-Renderer, durch E1 BLOCKING adressiert).
+5. State-File, STATUS, CHANGELOG aktualisiert. Commit folgt.
+
+**Hinweis:** BERICHT_RA7_DATENSCHUTZ.md bleibt unveraendert als historisches Dokument. RA7_NACHKALIBRIERUNG.md ist autoritative Fassung fuer alle weiteren Phase-Entscheidungen.
+
+---
+
 ## 2026-04-05 — Session 11: Phase III.5c-bis COMPLETE (RA7 Datenschutz-Audit, Gate ROT)
 
 **Phase:** D15b-Optimierung Phase III.5c-bis (nachtraeglich eingeschobene Sub-Phase zur Abdeckung des 5d Blindspots B1 Datenschutz CRITICAL)
