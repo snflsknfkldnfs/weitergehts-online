@@ -2,9 +2,9 @@
 
 **Zweck:** Fortschritts- und Artefakt-Tracking fuer Phase III.5. Bei Compaction/Interrupt: diese Datei liefert vollstaendige Wiederaufnahme-Information. STATUS.md verweist nur hierher.
 
-**Letzte Aktualisierung:** 2026-04-05 (Sub-Phase 5a COMPLETE)
-**Aktive Sub-Phase:** III.5a COMPLETE. III.5b WAITING FOR USER APPROVAL.
-**Naechster Schritt:** User-Freigabe fuer 5b einholen. Nach Freigabe: 3 parallele Subagenten (RA1 + RA2 + RA6) via `Agent` Tool spawnen.
+**Letzte Aktualisierung:** 2026-04-05 (Sub-Phase 5b COMPLETE)
+**Aktive Sub-Phase:** III.5b COMPLETE. III.5c WAITING FOR USER APPROVAL.
+**Naechster Schritt:** User-Freigabe fuer 5c einholen. Nach Freigabe: 3 parallele Subagenten (RA3 + RA4 + RA5) spawnen — Achtung RA5 ist Meta-Auditor und muss nach RA3+RA4 laufen; also zuerst RA3+RA4 parallel, dann RA5.
 
 ---
 
@@ -13,7 +13,7 @@
 | Sub-Phase | Status | Abgeschlossen | Blocker |
 |---|---|---|---|
 | III.5a Charten + Bundles | COMPLETE | 2026-04-05 | - |
-| III.5b Struktur-Audits (RA1/2/6) | NOT STARTED | - | abhaengig von 5a |
+| III.5b Struktur-Audits (RA1/2/6) | COMPLETE | 2026-04-05 | - |
 | III.5c Tiefen-Audits (RA3/4/5) | NOT STARTED | - | abhaengig von 5b |
 | III.5d Verifikations-Gate | NOT STARTED | - | abhaengig von 5b+5c |
 | III.5e Synthese + Zweitmeinung | NOT STARTED | - | abhaengig von 5d |
@@ -45,10 +45,10 @@
 
 | Artefakt | Status | Verifikation |
 |---|---|---|
-| BERICHT_RA1_SCOPE_DRIFT.md | NOT STARTED | - |
-| BERICHT_RA2_DEPENDENCIES.md | NOT STARTED | - |
-| BERICHT_RA6_KONTEXT.md | NOT STARTED | - |
-| UEBERGABE_PHASE_III_5_5b.md | NOT STARTED | - |
+| BERICHT_RA1_SCOPE_DRIFT.md | COMPLETE | PRE-CHECK PASS (492 Zeilen, 9 Findings, 9 Pflicht-Sektionen) |
+| BERICHT_RA2_DEPENDENCIES.md | COMPLETE | PRE-CHECK PASS (533 Zeilen, 7 Findings, 10 Pflicht-Sektionen, Mermaid-Anhang) |
+| BERICHT_RA6_KONTEXT.md | COMPLETE | PRE-CHECK PASS (452 Zeilen, 8 Findings, alle Pflicht-Sektionen) |
+| UEBERGABE_PHASE_III_5_5b.md | COMPLETE | - |
 
 ### III.5c — Tiefen-Audits
 

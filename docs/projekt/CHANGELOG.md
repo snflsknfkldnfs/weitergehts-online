@@ -4,6 +4,67 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-05 — Session 11: Phase III.5b COMPLETE (3 parallele Struktur-Audits RA1 + RA2 + RA6)
+
+**Phase:** D15b-Optimierung Phase III.5b (Pre-Implementation-Risiko-Audit, Struktur-Audits)
+
+**Ziel:** 3 parallele Subagenten (RA1 Scope-Drift, RA2 Dependencies, RA6 Kontext-Kollision) spawnen, die ihre Audit-Berichte direkt in BERICHT-Dateien schreiben. Pre-Check auf Formal-Qualitaet (Zeilen, Sektionen, Findings). User-Freigabe fuer 5c einholen.
+
+**Durchgefuehrt:**
+
+1. **State-File auf `III.5b IN_PROGRESS` gesetzt** vor Spawning. Aktualisierungs-Pflicht gemaess Resilience-Protokoll eingehalten.
+
+2. **Parallel-Spawning in EINER Nachricht:** 3 `Agent` Tool Calls (subagent_type `general-purpose`) gleichzeitig. Jeder Subagent bekam als Prompt: Verweis auf seine Charta + sein Evidenz-Bundle, Rollen-Isolations-Instruktion, Verbots-Liste (andere RA-Scopes), Output-Pfad, Rueckgabe-Format. Dauer 150-240s pro Agent, parallel.
+
+3. **RA1 Scope-Drift → BERICHT_RA1_SCOPE_DRIFT.md** (492 Zeilen, 9 Pflicht-Sektionen):
+   - 9 Findings: 2 HIGH (F-RA1-02 STR-12 Trigger-Engine-Sicherung Engine-Implementierungsrisiko; F-RA1-01 STR-05 Multiperspektivitaets-Entscheidungslogik sickert in E2), 6 MEDIUM (u.a. F-RA1-03 STR-08 Quellenkritik-Entscheidungslogik in Progressionsplan-Agent als MEDIUM→HIGH markiert), 1 LOW.
+   - Verdikt-Empfehlungen pro STR: 12 accept (P0-P2), 6 modify-scope, 0 reject, 0 defer.
+   - Auffaelligkeit: Severitaets-Kalibrierung im Graubereich (F-RA1-03 als MEDIUM→HIGH) — RA5 muss in III.5c pruefen.
+
+4. **RA2 Dependencies → BERICHT_RA2_DEPENDENCIES.md** (533 Zeilen, 10 Pflicht-Sektionen inkl. Mermaid-Anhang):
+   - 7 Findings (Minimum 6, knapp am unteren Rand). P0: Wave-1 ATOM-Unit-Ordering STR-02↔STR-11 (bidirektionale Kopplung flag), E1↔E3↔E5 Synchronisations-Timing. P1: Kritischer Pfad STR-01→STR-02→STR-11→STR-24→Phase IV. P2: Engine-Kopplung STR-03/04↔STR-20 Parallelisierungs-Semantik.
+   - DAG-Rekonstruktion: azyklisch verifiziert, keine verwaisten Kanten nach Streichung STR-07/10/16/18. Tote Knoten STR-17, STR-19 als Validierungs-Rolle markiert (informelle Dependencies via gestrichelte Kanten).
+   - Mermaid-Anhang: color-coded (P0/P1/P2 Layers), ATOM-UNITs markiert, Wave-Subgraphen, Problem-Kanten annotiert.
+
+5. **RA6 Kontext-Kollision → BERICHT_RA6_KONTEXT.md** (452 Zeilen, alle Pflicht-Sektionen):
+   - 8 Findings: 2 P0 (F-RA6-01 STR-01 Tiefenstruktur-Meta Katalog-Rollen-Unklarheit G vs HE; F-RA6-02 STR-01 M-Katalog Tiefenstruktur-Drift Material-QA-Luecke), 3 P1 (u.a. F-RA6-05 STR-12 Trigger-Sensibilitaet nicht in Katalogen kodifiziert → Ethik-Luecke), 3 P2.
+   - Dokument-zu-STR-Kollisions-Matrix, Widerspruchs-Register, Referenz-Integritaets-Check, Obsolet-Kandidaten-Liste, Post-Umsetzungs-Plan.
+   - STR-01 Tiefenstruktur-Meta bestaetigt als Mega-Hotspot (alle 6 Kataloge betroffen).
+
+6. **Pre-Check-Ergebnisse dokumentiert** in State-File Artefakt-Register (Pflicht-Sektionen vollstaendig, Zeilen ueber Mindest, Findings ueber Mindest). Pre-Check ist ausschliesslich formal — inhaltliche Verifikation erfolgt im Verifikations-Gate (III.5d), RA5 prueft Severitaets-Kalibrierung und Konvergenz/Dissens in III.5c.
+
+7. **Informelle Konvergenz-Hinweise gesammelt** (nicht finalisiert, nur fuer User-Checkpoint):
+   - **STR-12 Trigger** — RA1 HIGH (Engine-Risiko) + RA6 P1 (Katalog-Kodifizierungs-Luecke). Konvergenz zweier unabhaengiger RAs.
+   - **STR-01 Tiefenstruktur-Meta** — RA2 kritischer Pfad + RA6 2x P0. Multi-RA-Hotspot.
+   - **STR-02/STR-11 Kopplung** — RA1 Scope-Verzahnung + RA2 Wave-1-Ordering. Konvergent.
+
+8. **`UEBERGABE_PHASE_III_5_5b.md` angelegt** als Cold-Session-Wiederaufnahme. Inhalt: Was gemacht, Pre-Check-Tabelle, Befund-Rohdaten, informelle Konvergenz-Hinweise, Entscheidungen (Subagent-Output-Strategie hat funktioniert), bekannte Limits (Isolations-Disziplin nur stichprobenartig gepruft), Naechster-Schritt-Protokoll fuer 5c (RA3+RA4 parallel, dann RA5 seriell), Checkpoint-Protokoll.
+
+9. **State-File aktualisiert:** 5b COMPLETE mit Pre-Check-Verifikation pro Bericht. Naechste Sub-Phase 5c WAITING FOR USER APPROVAL.
+
+**Erkenntnisse:**
+
+- Parallel-Spawning via `Agent` Tool in EINER Nachricht funktioniert stabil fuer 3 gleichzeitige Agenten. Keine Race Conditions, kein Truncation, kein Fallback auf sequenzielles Spawning noetig.
+- Subagent-Direct-Write-Strategie (Subagent schreibt BERICHT-Datei selbst, gibt nur Zusammenfassung zurueck) hat sich bewaehrt — umgeht Rueckgabe-Limits und verankert Artefakte robust.
+- Isolations-Disziplin via Prompt-Engineering scheint eingehalten (keine der 3 Berichte referenziert andere RA-Scopes oder Berichte). Stichprobenartig — systematische Isolations-Validierung erfolgt nicht in 5b, sondern implizit ueber RA5-Dissens-Register in III.5c.
+- RA2 lieferte knapp Mindest-Findings (7 von 6). Moeglicherweise Zeichen, dass DAG-Scope enger ist als vermutet ODER dass RA2 unterausgelastet blieb. RA5 soll Schweregrad einordnen.
+- Erste Multi-RA-Konvergenzen sind inhaltlich substanziell (STR-12, STR-01, STR-02/11) — kein pures Rauschen.
+
+**Artefakte (neu):**
+- `docs/projekt/phase-iii-5/BERICHT_RA1_SCOPE_DRIFT.md` (492 Z)
+- `docs/projekt/phase-iii-5/BERICHT_RA2_DEPENDENCIES.md` (533 Z)
+- `docs/projekt/phase-iii-5/BERICHT_RA6_KONTEXT.md` (452 Z)
+- `docs/uebergabe/UEBERGABE_PHASE_III_5_5b.md`
+
+**Artefakte (aktualisiert):**
+- `docs/projekt/D15B_PHASE_III_5_AUDIT_STATE.md` (5b COMPLETE, Artefakt-Register, Verifikations-Spalte)
+- `docs/projekt/STATUS.md` (Phase-Header, Naechster-Schritt, Abschluss-Eintrag)
+- `docs/projekt/CHANGELOG.md` (dieser Eintrag)
+
+**Naechster Schritt:** User-Freigabe fuer III.5c einholen. Dann: RA3 (Code-Kopplung) + RA4 (Pipeline) parallel spawnen, danach seriell RA5 (Meta-Auditor).
+
+---
+
 ## 2026-04-05 — Session 10 (Forts. 11): Phase III.5a COMPLETE (Charten + Bundles + Verifikationstest)
 
 **Phase:** D15b-Optimierung Phase III.5a (Pre-Implementation-Risiko-Audit, Sub-Phase Vorbereitung)
