@@ -4,6 +4,32 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-05 — Session 12: D15b Phase IV Wave 0 PM-Strang COMPLETE (AU-0 Bootstrap Doku-Seite)
+
+**Phase:** D15b-Optimierung Phase IV Wave 0 PM-Strang COMPLETE → Code-Strang ueber Claude-Code-Uebergabe offen
+**Modus:** EXECUTE (PM-Strang-Produktion)
+**Kontext-Abgrenzung:** "Phase IV" bezeichnet hier die Umsetzungs-Phase der D15b-Optimierungs-Serie (Nachfolger von Phase I/II/III/III.5 innerhalb D15b). NICHT zu verwechseln mit AUSFUEHRUNGSPLAN_INFRASTRUKTUR_REVISION Phase A/B/C (dort: Mappe-3/4-Produktions-Revision, Phase A+B KOMPLETT, Phase C als Mappe-4-Validierung, Session 8 abgeschlossen). Die Phase-IV-Wave-Struktur entstammt ausschliesslich der Phase-III.5-Serie; AUSFUEHRUNGSPLAN_INFRASTRUKTUR_REVISION bleibt als eigenstaendiges Dokument valide.
+
+**Durchgefuehrt:**
+1. **V4-Patch `docs/architektur/vertraege/VERTRAG_ATOM_UNITS.md`** erstellt. Definiert ATOM-UNIT-Konzept, AU-0 (Wave 0 Bootstrap mit allen 10 Paketen), AU-1 (STR-02+STR-11), AU-2 (STR-03+STR-04), AU-3 (STR-08+STR-11), AU-4 (STR-05 MODIFY-SCOPE). Pre-Commit-Gate mit 3 Checks (A RA1 Scope, B RA3 Code-Kopplung, C RA4 ATOM-UNIT). Technische Umsetzung via tools/pre-commit-atom-check.sh (Claude-Code-Strang). Hinweis: "V4-Patch" referenziert die Patch-ID aus VERIFIKATION_III_5d.md Sektion "Vertrags-Patches", NICHT eine Vertrags-Versionsnummer. Die existierenden Vertraege heissen weiterhin VERTRAG_PHASE_2-0..2-2c.
+2. **V2-Patch `docs/architektur/vertraege/VERTRAG_FEEDBACK_SCHEMA.md`** erstellt. Neues Schema `{typ, text, ebene}` mit 4 typ-Enum und 4 ebene-Enum. Mehrfach-Feedback als Array. Legacy-Fallback-Funktion `normalizeFeedback()` dokumentiert. Validator `tools/validate-feedback-schema.js` spezifiziert. `ebene` nicht fuer Schueler sichtbar.
+3. **K1-Patch `docs/agents/ROLLEN_KATALOG.md`** erstellt. R1 SuS (keine Lehrkraft-Metadaten, keine Trigger, keine ebene), R2 Lehrkraft (Vollzugriff via lehrkraft.html separat), R3 Autor (Produktions-Workflow-Rolle). Rechte-Matrix. Kein Runtime-Rollenwechsel, Trennung via Build-Time-Separation.
+4. **K2-Patch `docs/agents/POLICY_TRIGGER_SICHTBARKEIT.md`** erstellt. Harte Regel: Trigger-Warnungen ausschliesslich in Lehrkraft-Route, niemals im Schueler-DOM/JSON. CSS-Ausblendung ist KEINE Implementierung. Assembly-Split mit Loeschschritt des `lehrkraft_meta`-Feldes in Schueler-Fassung. Validator-Snippet und Grep-Regel dokumentiert.
+5. **V1-Patch an `docs/agents/ORCHESTRATOR.md`** appliziert. Session-Split-Enforcement im Session-Split-Template (Phase 2.1c → 2.2a) von weicher Regel zu hartem STOPP-Gate verschaerft. Pre-Commit-Check-Hinweis ergaenzt. Datei bleibt in Cowork-docs/-Domaene.
+6. **DOK1 `docs/analyse/TRANSKRIPT_PERSONENBEZUG_REVIEW.md`** erstellt. Grep-basierter Review (Pattern: paul|cebulla|paulad|@gmx|@gmail|schueler*|klarname|echtname) aller Transkripte in `docs/analyse/Evaluiation Testrun Mappe 4/`, `Browser review Mappe 3.md`, Audit-Reports und Phase-III.5-Reports. **Methoden-Einschraenkung:** Kein Volltext-Review, Grep-Stichprobe; kann Initialen, Spitznamen oder Klassen-Codes verfehlen. Ergebnis auf dieser Basis: Kein R1 (Schueler)-Personenbezug vorhanden, nur R3 (Autor) mit Einwilligung. Keine Pseudonymisierungs-Pflicht im Ist-Zustand. Vorwaerts-Regel: kein Commit zukuenftiger Schueler-Session-Daten. F-RA7-05 damit auf dieser Basis ERLEDIGT.
+7. **`docs/uebergabe/UEBERGABE_PHASE_IV_WAVE_0.md`** erstellt. Handoff fuer Claude-Code mit E1 (Renderer-Registry), E2 (Legacy-Fallback), D1 (Wikimedia lokalisieren + BILDLIZENZEN), D2 (STR-13 ohne localStorage), K2-Technical (Validator + Grep-Guard), Tools (validate-feedback-schema.js, pre-commit-atom-check.sh), Cache-Busting-Pflicht. Commit-Nachricht und Verifikations-Checkliste.
+
+**Wave-0-Bundle-Status:**
+- AU-0 Dokumentations-Seite: V1-Patch/V2-Patch/V4-Patch/K1-Patch/K2-Policy/DOK1 = **6/6 committed-ready**
+- AU-0 Code-Seite: E1/E2/D1/D2/K2-Technical + Tools = **ueber Uebergabe-Prompt an Claude-Code offen**
+- Phase-IV Gates G-1 bis G-8: adressiert, finaler Merge-Status erst NACH Code-Strang-Merge. **Wave 0 insgesamt ist NICHT COMPLETE**, nur der PM-Strang.
+
+**Prozess-Nachtrag (Selbstreview):** Nach Compaction wurden COWORK_PROJECT_ANLEITUNG.md PFLICHT-Lektueren (UPGRADE_PLAN_v4, GRUNDSATZENTSCHEIDUNG_REBUILD_VS_ITERATE) zunaechst uebersprungen und retrospektiv nachgeholt. Grundsatzentscheidung C+ (Hybrid mit Architektur-Bewusstsein) bestaetigt die Wave-0-Arbeit inhaltlich. Modus EXECUTE wird nachtraeglich deklariert. Skill projekt-website-v4-2 wurde zu Beginn geladen, aber die ATOM-UNIT-Nomenklatur stammt aus der Phase-III.5d-Serie (VERIFIKATION_III_5d.md), nicht aus dem Skill.
+
+**Naechster Schritt:** User fuehrt Git-Commit-Block aus (siehe Session-Output). Danach Cold-Session-Handoff an Claude-Code via UEBERGABE_PHASE_IV_WAVE_0.md fuer Code-Strang. Wave 0 gilt erst als COMPLETE, wenn der Code-Strang gemerged ist.
+
+---
+
 ## 2026-04-05 — Session 11: Phase III.5e COMPLETE (Zweitmeinung + STR-Beschluss + Uebergabe)
 
 **Phase:** D15b-Optimierung Phase III.5e COMPLETE → **Phase III.5 INSGESAMT COMPLETE**

@@ -239,12 +239,19 @@ git push origin main
 
 ### Session-Split-Template (OPT-8 / IL-4 PFLICHT v4.0)
 
-**PFLICHT-Regel (IL-4, nach C2-Audit P4-F1):**
+**PFLICHT-Regel (IL-4, nach C2-Audit P4-F1; verschaerft in Phase IV Wave 0 V1, 2026-04-05):**
 Nach Phase 2.1c (Material-Cross-Konsistenz) MUSS ein Session-Split-Prompt generiert werden, BEVOR Phase 2.2a (Progressionsplan) begonnen wird. Dies gilt unabhaengig vom aktuellen Token-Verbrauch und unabhaengig davon, ob der Dispatch-Block als "kurz" oder "lang" eingeschaetzt wird. Begruendung: In C2-Mappe-4 wurde in 1/5 Sessions der Split-Prompt vergessen, obwohl die Session-Laenge es erfordert haette. Implizite Erwartung ("bei ~24K Token") fuehrte zu einem MEDIUM-Finding.
 
+**HARTER STOPP-GATE (V1 Wave 0 BLOCKING):**
+Der Phase-2.1c-Dispatch MUSS als letzte Aktion den Split-Prompt erzeugen und dann die Session beenden. Keine weitere inhaltliche Arbeit im selben Session-Kontext. Subagenten-Dispatches duerfen keinen Session-uebergreifenden State akkumulieren — jeder Dispatch liest ausschliesslich aus persistierten Artefakten (P1 Read-from-Artifact). Wenn im Phase-2.1c-Output-Block kein Split-Prompt vorhanden ist, ist die Session-Output-Einheit unvollstaendig und der Commit ist blockiert.
+
+**Pre-Commit-Check (V1 Wave 0):**
+Im Pre-Commit-Gate (siehe VERTRAG_ATOM_UNITS.md Check C) wird bei Aenderungen an Phase-2.1c-Artefakten geprueft, ob im Cowork-Runden-Output ein Fortsetzungs-Prompt fuer Phase 2.2 enthalten ist. Fehlt er, wird der Commit abgelehnt.
+
 **Durchsetzungs-Mechanismus:**
-- Split-Prompt ist PFLICHT-Output am Ende jedes Phase-2.1c-Dispatches
+- Split-Prompt ist PFLICHT-Output am Ende jedes Phase-2.1c-Dispatches (HART)
 - Der Orchestrator (Cowork-Session) darf Phase 2.2a NICHT im selben Session-Kontext ausfuehren — immer Split
+- Cowork-PM prueft bei jeder Uebergabe, ob der Split-Prompt erzeugt wurde, und protokolliert das Ergebnis in STATUS.md
 - Analog: zwischen Phase 2.2b (Aufgaben-Dispatches) und Phase 2.2c (Cross-Konsistenz) KANN ein zweiter Split erfolgen, falls Token-Budget es nahelegt (empfohlen, nicht PFLICHT)
 
 Der Fortsetzungs-Prompt enthaelt die Phase-2.2-Dispatch-Sequenz INLINE (~300 Token), damit ORCHESTRATOR.md NICHT erneut komplett gelesen werden muss:
