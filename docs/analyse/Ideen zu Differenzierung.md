@@ -1,0 +1,13 @@
+Konzeption von Agent_Differenzierung 
+	- Wo in Generierungsprozess einbinden? Wahrscheinlich ganz am Ende, wenn Material inkl. passendem fragebogen final erstellt? 
+	- Ideen: 
+		- Sprachliche differenzierung implementieren 
+			- hovern über schweren wörtern im Material: Einblenden von kurzen, schülernahen erläuterungen des jeweiligen Begriffs/Konzepts
+			- Globale Sprachliche differenzierung: Globale Sprache des games über zentralen Button im Header triggern
+				- Macht es sinn, nur entweder Materialspalte oder Fragebogen zu übersetzen? Was sind die best pracitces in der sprachübergreifenden Bildung/Lernen? 
+		- Differenzierung nach unten und oben über vorgefertigte KI-prompts zum selbstausführen bei beliebigem dienstleister geährleisten
+			- Buttons an geeigneten stellen (ich denke in Materialspalte an konkretem am sinnvollsten?), welche kontextspezifischen prompt in clipboard kopieren 
+			- Generelles Rollenpriming der jeweiligen anschluss-KI sodass interaktives gespräch zwischen jeweiligen SuS und KI zum präzisen Themenbereich/Fragestellung angeregt wird. Inkl. UX-Optimierungen wie folgefragenanregung, verhalten wie lernbegleiter, niedrige interaktionshürden etc.pp.
+			- Ziele dieser prompts: 
+				- Differenzierung nach unten: Erkläre mir den konkreten sachverhalt, der im material dargestellt wird/von mir erarbeitet werden soll genauer, kleinschrittiger und schülerhäher/nach unten differenziert
+				- Differenzierung nach oben: Weitere fragen beantworten, hintergründe liefern, spezifische nachfragen der SuS zum sachverhalt/material ermöglichen, an interesse anknüpfen, motivation zu konstruktivistischen lernprozessen steigern 
