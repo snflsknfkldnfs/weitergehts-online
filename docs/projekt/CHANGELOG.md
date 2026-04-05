@@ -4,6 +4,80 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-05 — Session 11: Phase III.5d COMPLETE (Verifikations-Gate)
+
+**Phase:** D15b-Optimierung Phase III.5d (Pre-Implementation-Risiko-Audit, Verifikations-Gate)
+
+**Ziel:** Systematische Verifikation der 5b/5c-Befunde. Kalibrierungs-Korrektur, Blindspot-Entscheidungen, Konvergenz-Verdikte, ATOM-UNIT-Framework, Patch-Listen priorisieren. Gate-Urteil fuer 5e.
+
+**Durchgefuehrt:**
+
+1. State-File auf `III.5d IN_PROGRESS` gesetzt.
+2. `VERIFIKATION_III_5d.md` erstellt (10 Sektionen).
+3. **RA2-Kalibrierungs-Korrektur:** F-RA2-03 (gestrichene STR Cleanup) P0 → P3 Downgrade begruendet. Portfolio-P0-Count 6→5.
+4. **7 Blindspot-Entscheidungen getroffen:**
+   - B1 Datenschutz CRITICAL → **NEUE Sub-Phase III.5c-bis (RA7 Datenschutz-Audit)** vor 5e + Phase IV Pflicht-Gate.
+   - B2 Performance → Phase IV Wave 0 Baseline-Benchmark.
+   - B3 Sicherheit → Phase IV Wave 0 Mini-Audit (1 Session) auf escape-engine.js Eingabe-Pfade + Template-Interpolation.
+   - B4 Operative Robustheit → ATOM-UNIT Akzeptanzkriterium (graceful-failure-test).
+   - B5 Rollback → Phase IV PFLICHT-Protokoll (Feature-Flag + git tag + Deployment-Checkliste) insbesondere STR-03.
+   - B6 Developer-Experience → Pre-Phase-IV Subagent-Dry-Run auf 1 Dummy-Mappe.
+   - B7 Doku-Drift → Folgeprojekt post Phase IV.
+5. **Konvergenz-Top-6 konsolidierte Verdikte:**
+   - STR-04 3-stufige Tipps: ACCEPT + PATCH (Engine-Renderer + ATOM-UNIT-Gate)
+   - STR-05 Multiperspektivitaet: MODIFY-SCOPE (Entscheidungslogik nicht in E2 sickern)
+   - STR-12 Trigger: ACCEPT + PATCH + SICHERHEITS-REVIEW (Kodifizierung + Injection-Guard)
+   - STR-03 Feedback-Schema: ACCEPT + BLOCKING PATCH (Migration + Legacy-Fallback)
+   - STR-08 Quellenkritik: ACCEPT + PATCH (Engine-Renderer + Scope-Guard)
+   - STR-11 Aufgabentypologie: ACCEPT + BLOCKING PATCH (Engine-Renderer-Erweiterung)
+   - Verteilung: 5× ACCEPT-mit-PATCH, 1× MODIFY-SCOPE, 0× REJECT, 0× DEFER.
+6. **ATOM-UNIT-Framework finalisiert:**
+   - 4 ATOM-UNITs: AU-1 (STR-02+11 Wave 1), AU-2 (STR-03+04 Wave 3), AU-3 (STR-08+11 Wave 3), AU-4 (STR-05 Wave 2).
+   - Pre-Commit-Gate PFLICHT: RA1-Scope-Check + RA3-Code-Check + RA4-Vertrags-Check.
+   - Commit-Message-Sektion `## ATOM-UNIT Pre-Commit-Gate` verpflichtend.
+   - Gemeinsames Deployment, kein Teil-Rollback.
+7. **Vertrags-Patch-Liste priorisiert (4):**
+   - V1 BLOCKING: ORCHESTRATOR.md IL-4 Session-Split-Checkpoint in Template.
+   - V2 P0: VERTRAG_PHASE_2-2b_AUFGABE.md Feedback-Schema Migration (string → {typ, text, ebene}) + Legacy-Fallback.
+   - V3 P0: VERTRAG_PHASE_2-2c_CROSS.md Bloom-Distribution-Validation A1 Q-Gate.
+   - V4 P1: ATOM-UNIT-Framework in Orchestrator + Vertraege.
+8. **Katalog-Patch-Liste priorisiert (3):**
+   - K1 P0: G/HE/M-Katalog STR-01 Tiefenstruktur-Meta Rollen-Klaerung + Material-QA-Luecke.
+   - K2 P1: Trigger-Sensibilitaet STR-12 als formale Kategorie kodifizieren.
+   - K3 P1: Post-STR-01 Rollen-Neubewertung alle Kataloge.
+9. **Engine-Patch-Liste priorisiert (6):**
+   - E1 BLOCKING: escape-engine.js Z. 1868-1945 Aufgabentyp-Renderer STR-08/11.
+   - E2 BLOCKING: escape-engine.js Z. 1919-1924 Legacy-Feedback-Fallback.
+   - E3 P0: Cache-Busting ?v=3.9→?v=4.0 in ALLEN HTML synchron.
+   - E4 P1: STR-04 3-stufige Tipps Renderer-Erweiterung.
+   - E5 P1: STR-20 WCAG 2-Phasen-Deployment (CSS separat von JS).
+   - E6 P1: STR-12 Trigger-Input-Sanitizer (Injection-Guard).
+10. **Phase-IV Gate-Matrix (8 Gates) definiert:** G-1 RA7 Datenschutz, G-2 Performance-Baseline, G-3 Sicherheits-Mini-Audit, G-4 Subagent-Dry-Run, G-5 Vertrags-Patches, G-6 Engine-Patches, G-7 Katalog-Patches, G-8 ATOM-UNIT in Orchestrator. Phase-IV-Startbedingung: G-1 + G-5 + G-7 + G-8.
+11. **Gate-Urteil 5d: BEDINGT freigegeben fuer 5e.** Bedingung: III.5c-bis (RA7 Datenschutz-Audit) VOR 5e.
+12. `UEBERGABE_PHASE_III_5_5d.md` angelegt.
+13. State-File aktualisiert (5d COMPLETE, neue Zeile 5c-bis RA7 hinzugefuegt).
+14. STATUS.md aktualisiert.
+
+**Erkenntnisse:**
+
+- **Datenschutz-Blindspot war kritischster 5d-Befund.** Sechs RAs decken Scope/Dependencies/Code/Vertraege/Kataloge ab, aber DSGVO/Minderjaehrigen-Schutz wurde nicht geprueft. Kann nicht in Phase IV nachgezogen werden — neue Sub-Phase III.5c-bis erforderlich.
+- **Konvergenz-Top-6 alle bleiben im Portfolio.** Keine Streichungen in 5d, nur Patch-Bedingungen. 20 aktive STR stabil.
+- **ATOM-UNIT-Framework formalisiert.** Jede ATOM-UNIT braucht ab jetzt explizite Commit-Message-Sektion mit 3 Check-Ergebnissen.
+- **Patch-Liste umfasst 13 Items** (4 Vertrag + 3 Katalog + 6 Engine) fuer Phase IV.
+- **3 echte BLOCKING-Items:** V1 ORCHESTRATOR Session-Split, E1 Aufgabentyp-Renderer, E2 Legacy-Feedback-Fallback. Ohne diese kein Wave-Start.
+
+**Artefakte:**
+
+- `docs/projekt/phase-iii-5/VERIFIKATION_III_5d.md` (NEU)
+- `docs/uebergabe/UEBERGABE_PHASE_III_5_5d.md` (NEU)
+- `docs/projekt/D15B_PHASE_III_5_AUDIT_STATE.md` (aktualisiert: 5d COMPLETE, 5c-bis hinzugefuegt)
+- `docs/projekt/STATUS.md` (aktualisiert)
+- `docs/projekt/CHANGELOG.md` (dieser Eintrag)
+
+**Naechster Schritt:** User-Freigabe fuer III.5c-bis (RA7 Datenschutz-Audit) einholen. Alternativ: User kann B1-Entscheidung ueberschreiben (RA7 vertagen, Risiko-Akzeptanz dokumentieren).
+
+---
+
 ## 2026-04-05 — Session 11: Phase III.5c COMPLETE (Tiefen-Audits RA3 + RA4 parallel, RA5 Meta seriell)
 
 **Phase:** D15b-Optimierung Phase III.5c (Pre-Implementation-Risiko-Audit, Tiefen-Audits)
