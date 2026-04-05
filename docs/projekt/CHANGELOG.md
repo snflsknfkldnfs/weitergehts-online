@@ -4,6 +4,25 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-05 — Session 12 (Fortsetzung): D15b Phase IV Wave 0 COMPLETE (Code-Strang integriert)
+
+**Phase:** D15b-Optimierung Phase IV Wave 0 COMPLETE (AU-0 Bootstrap, PM + Code)
+**Modus:** EXECUTE (Integration + Merge)
+
+**Durchgefuehrt:**
+1. **PM-Strang-Commit `f494f6a`** von Cowork erstellt und nach `origin/main` gepusht (6 Dok-Artefakte). Git-Lock-Workaround via `mv .git/index.lock .git/index.lock.stale.$RANDOM` nach zsh-HEREDOC-Fehlschlag angewandt.
+2. **Claude-Code-Session (Cold-Handoff via `docs/uebergabe/UEBERGABE_PHASE_IV_WAVE_0.md`)** lieferte Commit `005ff9c` auf Feature-Branch `claude/keen-borg` (Worktree `.claude/worktrees/keen-borg`): `assets/js/escape-engine.js` +110 Zeilen (E1 AufgabentypRegistry, E2 `normalizeFeedback` Legacy-Fallback, D2 STR-13 ohne localStorage), `docs/assets/BILDLIZENZEN.md` (D1, 12 Wikimedia-Bilder in `assets/img/gpg-erster-weltkrieg-ursachen/`), `escape-games/gpg-erster-weltkrieg-ursachen/data.json` (0 wikimedia.org-Referenzen), alle `mappe-*.html` Cache-Busting `v=3.9`, `tools/pre-commit-atom-check.sh`, `tools/validate-feedback-schema.js`, `tools/validate-no-lehrkraft-meta.py` (K2-Technical).
+3. **Claude-Code-Verifikation:** Alle 5 Aufgabentypen rendern via Registry sauber in Mappe 1, 3 und 4. AU-0 Code-Strang verifiziert.
+4. **Merge-Integration:** Initial stale Git-Locks (zweite Instanz) blockierten `git merge --ff-only`. Recovery via `rm -f .git/index.lock .git/ORIG_HEAD.lock .git/HEAD.lock .git/refs/heads/main.lock` auf Mac. Anschliessend `git merge --ff-only claude/keen-borg` (Fast-Forward `f494f6a..005ff9c`, 12 Dateien, +413/-28), `git push origin main` erfolgreich. Worktree via `git worktree remove .claude/worktrees/keen-borg` + `git branch -d claude/keen-borg` + `git worktree prune` sauber entfernt.
+
+**Wave-0-Bundle-Status:** **COMPLETE.** AU-0 vollstaendig auf `origin/main`. Alle 8 Phase-IV-Gates der Wave-0-Schicht erfuellt.
+
+**Prozess-Nachtrag:** Git-Lock-Fragilitaet trat in dieser Session zweimal auf (einmal Cowork-seitig nach zsh-HEREDOC-Fehler, einmal Mac-seitig nach parallelen Git-Prozessen). Recovery-Muster `rm -f .git/*.lock` funktioniert, wenn keine laufenden Git-Prozesse das Lock halten. Claude-Code-Worktree-Pattern (`claude/<name>` auf `.claude/worktrees/`) ist Wave-0-kompatibel, erfordert aber bei Aufraeumen zwingend `git worktree remove` VOR `git branch -d`.
+
+**Naechster Schritt:** Phase IV Wave 1 planen. Reihenfolge AU-1 → AU-2 → AU-3. Vor erstem Dispatch: User-Freigabe der Wave-1-Reihenfolge + Auswahl der ersten ATOM-UNIT.
+
+---
+
 ## 2026-04-05 — Session 12: D15b Phase IV Wave 0 PM-Strang COMPLETE (AU-0 Bootstrap Doku-Seite)
 
 **Phase:** D15b-Optimierung Phase IV Wave 0 PM-Strang COMPLETE → Code-Strang ueber Claude-Code-Uebergabe offen
