@@ -4,6 +4,28 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-06 — Session 13 Block 2: AU-2a PM-Strang CLOSED, User-Signoff, Cold-Handoff
+
+**Phase:** D15b-Optimierung Phase IV Wave 1 AU-2a PM-Strang → CLOSED
+**Modus:** EXECUTE
+**Commit:** `0af35f3` (18 Dateien, 1307 Insertions)
+
+**AU-2a PM-Strang (STR-03 Feedback-Schema Rollout):**
+- VERTRAG_ATOM_UNITS.md: AU-2 gesplittet in AU-2a/2b/2c (E3-Entscheidung).
+- VERTRAG_FEEDBACK_SCHEMA.md: §9 Backfill-Generator-Spec (hybrid E1=B).
+- VERTRAG_PHASE_2-2b_AUFGABE.md: Feedback-Pflichtfeld `{typ,text,ebene}` + A25/A26-Querverweis.
+- GUETEKRITERIEN_AUFGABEN.md: §3.1b A25 (Schema-Vollstaendigkeit) + A26 (Didaktische Feedback-Validitaet).
+- 7× SUB_AUFGABE_*.md: Feedback-Schema-Block pro Aufgabentyp.
+- FEEDBACK_BACKFILL_MAPPEN_1_4.md: 26 Aufgaben / 79 Feedback-Eintraege / Auto-Generator-Dispatch.
+- UEBERGABE_PHASE_IV_WAVE_1_AU_2a.md: Cold-Handoff fuer Claude-Code (Engine-Hardening + Validator + Backfill + Cache-Bust).
+- BEFUND-AU-1-UI-01.md: UI-Befund Vergleich-Zellenhoehe (→ AU-2c).
+- GIT_WORKFLOW_RAHMEN.md + SESSION_13_MASTERPLAN.md: PM-Infrastruktur.
+
+**User-Signoff:**
+- 2026-04-06: Pauschal-Signoff auf alle 26 Feedback-Bloecke im Dispatch. A26-Gatekeeper erfuellt. Claude-Code darf Backfill in data.json ausfuehren.
+
+---
+
 ## 2026-04-06 — Session 13 Block 1: AU-1 CLOSED, Framework-Etablierung, Cleanup, Masterplan
 
 **Phase:** D15b-Optimierung Phase IV Wave 1 AU-1 → CLOSED, AU-2a Vorbereitung

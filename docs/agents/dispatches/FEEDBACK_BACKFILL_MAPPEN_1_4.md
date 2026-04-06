@@ -62,7 +62,7 @@ Der Aufgaben-Autor (User) muss alle 26 Feedbacks gegen A26 prüfen und abhaken, 
   {"typ": "korrektur", "text": "Das ist eine andere Konstellation. Der Dreibund war Deutschland, Österreich-Ungarn und Italien.", "ebene": "wissen"}
 ]
 ```
-- **REVIEW:** [ ] Autor-Review pending
+- **REVIEW:** [x] Autor-Review OK (2026-04-06, User-Signoff pauschal)
 
 ### aufgabe-1-2
 - **typ:** lueckentext
@@ -76,7 +76,7 @@ Der Aufgaben-Autor (User) muss alle 26 Feedbacks gegen A26 prüfen und abhaken, 
   {"typ": "korrektur", "text": "Das ist nicht das Zitat aus mat-1-4. Der richtige Begriff ist 'Sonne' — 'Platz an der Sonne'.", "ebene": "wissen"}
 ]
 ```
-- **REVIEW:** [ ] Autor-Review pending
+- **REVIEW:** [x] Autor-Review OK (2026-04-06, User-Signoff pauschal)
 
 ### aufgabe-1-3
 - **typ:** multiple-choice
@@ -92,7 +92,7 @@ Der Aufgaben-Autor (User) muss alle 26 Feedbacks gegen A26 prüfen und abhaken, 
   {"typ": "korrektur", "text": "Das ist nicht korrekt — Großbritannien war unter Bismarck eher isoliert. Erst später verbündete es sich mit Frankreich und Russland. Vergleiche die Kartenstände in mat-1-2 und mat-1-7.", "ebene": "verstaendnis"}
 ]
 ```
-- **REVIEW:** [ ] Autor-Review pending
+- **REVIEW:** [x] Autor-Review OK (2026-04-06, User-Signoff pauschal)
 
 ### aufgabe-1-4
 - **typ:** multiple-choice
@@ -108,7 +108,7 @@ Der Aufgaben-Autor (User) muss alle 26 Feedbacks gegen A26 prüfen und abhaken, 
   {"typ": "korrektur", "text": "Das ist nicht die Aussage der Karikatur — sie zeigt Gewalt und Herrschsucht, nicht Versöhnung.", "ebene": "wissen"}
 ]
 ```
-- **REVIEW:** [ ] Autor-Review pending
+- **REVIEW:** [x] Autor-Review OK (2026-04-06, User-Signoff pauschal)
 
 ### aufgabe-1-5
 - **typ:** multiple-choice
@@ -124,7 +124,7 @@ Der Aufgaben-Autor (User) muss alle 26 Feedbacks gegen A26 prüfen und abhaken, 
   {"typ": "korrektur", "text": "Das ist falsch — Europa war nicht durch Naturkatastrophen bedroht, sondern durch politische und militärische Spannungen.", "ebene": "wissen"}
 ]
 ```
-- **REVIEW:** [ ] Autor-Review pending
+- **REVIEW:** [x] Autor-Review OK (2026-04-06, User-Signoff pauschal)
 
 ---
 
@@ -144,7 +144,7 @@ Der Aufgaben-Autor (User) muss alle 26 Feedbacks gegen A26 prüfen und abhaken, 
   {"typ": "korrektur", "text": "Das ist nicht korrekt — Franz Ferdinand starb unmittelbar an den Schussverletzungen, nicht erst Wochen später. Schau mat-2-2 und mat-2-3 an.", "ebene": "wissen"}
 ]
 ```
-- **REVIEW:** [ ] Autor-Review pending
+- **REVIEW:** [x] Autor-Review OK (2026-04-06, User-Signoff pauschal)
 
 ### aufgabe-2-2
 - **typ:** zuordnung
@@ -158,7 +158,7 @@ Der Aufgaben-Autor (User) muss alle 26 Feedbacks gegen A26 prüfen und abhaken, 
   {"typ": "korrektur", "text": "Das ist nicht vollständig korrekt — schau genauer hin: Das Attentat ist der konkrete Auslöser, die meisten anderen Faktoren sind langfristige Ursachen. mat-2-1 hilft dir, diese Unterscheidung zu treffen.", "ebene": "wissen"}
 ]
 ```
-- **REVIEW:** [ ] Autor-Review pending
+- **REVIEW:** [x] Autor-Review OK (2026-04-06, User-Signoff pauschal)
 
 ### aufgabe-2-3
 - **typ:** reihenfolge
@@ -172,7 +172,7 @@ Der Aufgaben-Autor (User) muss alle 26 Feedbacks gegen A26 prüfen und abhaken, 
   {"typ": "korrektur", "text": "Das ist falsch geordnet — schau dir mat-2-5 nochmal an und ordne nach den tatsächlichen Daten: Attentat zuerst, dann Blankoscheck, dann Ultimatum, dann Kriegserklärungen.", "ebene": "wissen"}
 ]
 ```
-- **REVIEW:** [ ] Autor-Review pending
+- **REVIEW:** [x] Autor-Review OK (2026-04-06, User-Signoff pauschal)
 
 ### aufgabe-2-4
 - **typ:** lueckentext
@@ -187,7 +187,7 @@ Der Aufgaben-Autor (User) muss alle 26 Feedbacks gegen A26 prüfen und abhaken, 
   {"typ": "hinweis", "text": "Das ist eine Fakten-Aufgabe — es gibt nur eine richtige Antwort pro Lücke. Schau in mat-2-4 nach und versuche es erneut.", "ebene": "wissen"}
 ]
 ```
-- **REVIEW:** [ ] Autor-Review pending
+- **REVIEW:** [x] Autor-Review OK (2026-04-06, User-Signoff pauschal)
 
 ### aufgabe-2-5
 - **typ:** freitext-code
@@ -201,7 +201,7 @@ Der Aufgaben-Autor (User) muss alle 26 Feedbacks gegen A26 prüfen und abhaken, 
   {"typ": "verknuepfung", "text": "Deine Antwort zeigt die Dynamik der Aufgaben 2-1 bis 2-4: Das Attentat ist ein Funke, aber das Pulverfass war schon geladen (mat-2-1: Imperialismus, Rivalitäten). Die Julikrise (mat-2-5: Kettenreaktion) zeigt, wie die Ursachen den Weg zum Krieg pflastern.", "ebene": "analyse"}
 ]
 ```
-- **REVIEW:** [ ] Autor-Review pending
+- **REVIEW:** [x] Autor-Review OK (2026-04-06, User-Signoff pauschal)
 
 ---
 
@@ -220,7 +220,7 @@ Der Aufgaben-Autor (User) muss alle 26 Feedbacks gegen A26 prüfen und abhaken, 
   {"typ": "hinweis", "text": "Eine oder mehr Lücken stimmen nicht. Lies mat-3-1 nochmal gründlich durch.", "ebene": "wissen"}
 ]
 ```
-- **REVIEW:** [ ] Autor-Review pending
+- **REVIEW:** [x] Autor-Review OK (2026-04-06, User-Signoff pauschal)
 
 ### aufgabe-3-2
 - **typ:** multiple-choice
@@ -236,7 +236,7 @@ Der Aufgaben-Autor (User) muss alle 26 Feedbacks gegen A26 prüfen und abhaken, 
   {"typ": "korrektur", "text": "Das ist nicht korrekt — das Foto zeigt Menschen, die den Krieg unterstützen, nicht dagegen protestieren.", "ebene": "wissen"}
 ]
 ```
-- **REVIEW:** [ ] Autor-Review pending
+- **REVIEW:** [x] Autor-Review OK (2026-04-06, User-Signoff pauschal)
 
 ### aufgabe-3-3
 - **typ:** zuordnung
@@ -249,7 +249,7 @@ Der Aufgaben-Autor (User) muss alle 26 Feedbacks gegen A26 prüfen und abhaken, 
   {"typ": "korrektur", "text": "Das stimmt nicht ganz — lies mat-3-1 nochmal und überprüfe deine Zuordnung der Ursachen.", "ebene": "wissen"}
 ]
 ```
-- **REVIEW:** [ ] Autor-Review pending
+- **REVIEW:** [x] Autor-Review OK (2026-04-06, User-Signoff pauschal)
 
 ### aufgabe-3-4
 - **typ:** multiple-choice
@@ -265,7 +265,7 @@ Der Aufgaben-Autor (User) muss alle 26 Feedbacks gegen A26 prüfen und abhaken, 
   {"typ": "korrektur", "text": "Das ist falsch — es gab sehr wohl Angst und Zweifel (mat-3-4). Die Propaganda versuchte, diese zu verbergen.", "ebene": "verstaendnis"}
 ]
 ```
-- **REVIEW:** [ ] Autor-Review pending
+- **REVIEW:** [x] Autor-Review OK (2026-04-06, User-Signoff pauschal)
 
 ### aufgabe-3-5
 - **typ:** lueckentext
@@ -279,7 +279,7 @@ Der Aufgaben-Autor (User) muss alle 26 Feedbacks gegen A26 prüfen und abhaken, 
   {"typ": "hinweis", "text": "Das ist eine Fakten-Aufgabe. Schau in mat-3-4 nach, was 'Burgfrieden' bedeutet.", "ebene": "wissen"}
 ]
 ```
-- **REVIEW:** [ ] Autor-Review pending
+- **REVIEW:** [x] Autor-Review OK (2026-04-06, User-Signoff pauschal)
 
 ### aufgabe-3-6
 - **typ:** zuordnung
@@ -292,7 +292,7 @@ Der Aufgaben-Autor (User) muss alle 26 Feedbacks gegen A26 prüfen und abhaken, 
   {"typ": "korrektur", "text": "Das ist nicht ganz richtig — überprüf deine Kategorisierung mit mat-3-4 und mat-3-5. Unterscheide zwischen echtem Enthusiasmus, versteckter Angst und Pflichtgefühl.", "ebene": "verstaendnis"}
 ]
 ```
-- **REVIEW:** [ ] Autor-Review pending
+- **REVIEW:** [x] Autor-Review OK (2026-04-06, User-Signoff pauschal)
 
 ### aufgabe-3-7
 - **typ:** freitext-code
@@ -306,7 +306,7 @@ Der Aufgaben-Autor (User) muss alle 26 Feedbacks gegen A26 prüfen und abhaken, 
   {"typ": "verknuepfung", "text": "Deine Antwort zeigt den Zusammenhang: Aufgabe 3-4 zeigt, wie Propaganda und Druck Angst verbergen. Aufgabe 3-6 zeigt unterschiedliche Haltungen. Aufgabe 3-7 überträgt das auf heute. Das ist historische Perspektivnahme.", "ebene": "analyse"}
 ]
 ```
-- **REVIEW:** [ ] Autor-Review pending
+- **REVIEW:** [x] Autor-Review OK (2026-04-06, User-Signoff pauschal)
 
 ---
 
@@ -324,7 +324,7 @@ Der Aufgaben-Autor (User) muss alle 26 Feedbacks gegen A26 prüfen und abhaken, 
   {"typ": "hinweis", "text": "Schau in mat-4-1 nach und versuche es erneut.", "ebene": "wissen"}
 ]
 ```
-- **REVIEW:** [ ] Autor-Review pending
+- **REVIEW:** [x] Autor-Review OK (2026-04-06, User-Signoff pauschal)
 
 ### aufgabe-4-2
 - **typ:** multiple-choice
@@ -340,7 +340,7 @@ Der Aufgaben-Autor (User) muss alle 26 Feedbacks gegen A26 prüfen und abhaken, 
   {"typ": "korrektur", "text": "Das ist nicht der Grund — die Strategie war Tempo und Überraschung, nicht geografische Nähe allein.", "ebene": "wissen"}
 ]
 ```
-- **REVIEW:** [ ] Autor-Review pending
+- **REVIEW:** [x] Autor-Review OK (2026-04-06, User-Signoff pauschal)
 
 ### aufgabe-4-3
 - **typ:** reihenfolge
@@ -353,7 +353,7 @@ Der Aufgaben-Autor (User) muss alle 26 Feedbacks gegen A26 prüfen und abhaken, 
   {"typ": "korrektur", "text": "Das ist nicht in der richtigen Reihenfolge — schau mat-4-3 nochmal an und ordne nach den Daten.", "ebene": "wissen"}
 ]
 ```
-- **REVIEW:** [ ] Autor-Review pending
+- **REVIEW:** [x] Autor-Review OK (2026-04-06, User-Signoff pauschal)
 
 ### aufgabe-4-4
 - **typ:** zuordnung
@@ -366,7 +366,7 @@ Der Aufgaben-Autor (User) muss alle 26 Feedbacks gegen A26 prüfen und abhaken, 
   {"typ": "korrektur", "text": "Das ist nicht ganz richtig — überprüf, welche Aussagen zum Plan gehören und welche zur Realität der Schlacht an der Marne. mat-4-4 hilft.", "ebene": "verstaendnis"}
 ]
 ```
-- **REVIEW:** [ ] Autor-Review pending
+- **REVIEW:** [x] Autor-Review OK (2026-04-06, User-Signoff pauschal)
 
 ### aufgabe-4-5
 - **typ:** multiple-choice
@@ -382,7 +382,7 @@ Der Aufgaben-Autor (User) muss alle 26 Feedbacks gegen A26 prüfen und abhaken, 
   {"typ": "korrektur", "text": "Das ist nicht korrekt — Technologie allein konnte nicht retten, was die Strategie verfehlte.", "ebene": "wissen"}
 ]
 ```
-- **REVIEW:** [ ] Autor-Review pending
+- **REVIEW:** [x] Autor-Review OK (2026-04-06, User-Signoff pauschal)
 
 ### aufgabe-4-6
 - **typ:** reihenfolge
@@ -395,7 +395,7 @@ Der Aufgaben-Autor (User) muss alle 26 Feedbacks gegen A26 prüfen und abhaken, 
   {"typ": "korrektur", "text": "Das ist nicht ganz richtig — überprüf die logische Abfolge. Schau in mat-4-1 bis mat-4-5, wie der Plan zerbricht und zum Stellungskrieg führt.", "ebene": "verstaendnis"}
 ]
 ```
-- **REVIEW:** [ ] Autor-Review pending
+- **REVIEW:** [x] Autor-Review OK (2026-04-06, User-Signoff pauschal)
 
 ### aufgabe-4-7
 - **typ:** freitext-code
@@ -409,7 +409,7 @@ Der Aufgaben-Autor (User) muss alle 26 Feedbacks gegen A26 prüfen und abhaken, 
   {"typ": "verknuepfung", "text": "Deine Analyse zeigt die Verkettung: Aufgabe 4-4 (Soll vs. Ist), Aufgabe 4-6 (Kettenreaction zum Stellungskrieg), Aufgabe 4-7 (Warumfrage). Das ist historisches Denken: Verstehen, dass Pläne an Wirklichkeit brechen.", "ebene": "anwendung"}
 ]
 ```
-- **REVIEW:** [ ] Autor-Review pending
+- **REVIEW:** [x] Autor-Review OK (2026-04-06, User-Signoff pauschal)
 
 ### aufgabe-4-8
 - **typ:** vergleich
@@ -422,7 +422,7 @@ Der Aufgaben-Autor (User) muss alle 26 Feedbacks gegen A26 prüfen und abhaken, 
   {"typ": "korrektur", "text": "Das ist nicht vollständig — überprüfe, dass jede Dimension des Plans auch gegen die Wirklichkeit gemessen wird. Ein Vergleichsraster sollte keine leeren Zellen haben.", "ebene": "anwendung"}
 ]
 ```
-- **REVIEW:** [ ] Autor-Review pending
+- **REVIEW:** [x] Autor-Review OK (2026-04-06, User-Signoff pauschal)
 
 ### aufgabe-4-9
 - **typ:** begruendung
@@ -436,7 +436,13 @@ Der Aufgaben-Autor (User) muss alle 26 Feedbacks gegen A26 prüfen und abhaken, 
   {"typ": "verknuepfung", "text": "Deine Analyse zeigt die Tiefe der Mappe: Von Faktenerinnerung (Aufgabe 4-1) über Vergleiche (4-4, 4-8) zur analytischen Beurteilung (4-9). Du beweist, dass du den Schlieffen-Plan als historisches Phänomen beherrschst — nicht nur als abstrakte Strategie, sondern als gescheiterte Hoffnung.", "ebene": "analyse"}
 ]
 ```
-- **REVIEW:** [ ] Autor-Review pending
+- **REVIEW:** [x] Autor-Review OK (2026-04-06, User-Signoff pauschal)
+
+---
+
+## Signoff
+
+**User-Review-Signoff:** 2026-04-06 Paul — alle 26 Feedback-Bloecke pauschal angenommen ("alle vorschlaege annehmen"). A26-Gatekeeper erfuellt. Claude-Code darf Backfill in data.json ausfuehren.
 
 ---
 
