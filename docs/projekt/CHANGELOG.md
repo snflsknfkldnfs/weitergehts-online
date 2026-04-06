@@ -4,6 +4,22 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-06 — AU-2b CLOSED (Code-Strang `3f1d89f`)
+
+**Phase:** D15b-Optimierung Phase IV Wave 1 AU-2b → CLOSED
+**Commit:** `3f1d89f` (Claude-Code, 9 Dateien, 148 Insertions)
+
+**Code-Strang (Claude-Code via Cold-Handoff UEBERGABE_PHASE_IV_WAVE_1_AU_2b.md):**
+- `assets/js/escape-engine.js`: normalizeTipps() Safety-Net mit deterministischem HAERTEGRAD_MAP (stufe→haertegrad).
+- `tools/validate-feedback-schema.js`: Tipp-Schema-Validierung (stufe 1-3 Enum, haertegrad Enum, text Pflicht) + Anti-Leak A21 Heuristik (T3 vs. loesung).
+- 6 HTML-Dateien: Cache-Bust `v=4.1` → `v=4.2`.
+
+**AU-2b damit vollstaendig geschlossen.** PM-Strang (Cowork) + Code-Strang (Claude-Code) auf main.
+
+**Naechster Schritt:** Zeitfenster-A Prompt-Patches (7 Findings aus Checkpoint-1) + AU-2c.
+
+---
+
 ## 2026-04-06 — Checkpoint-1 Infrastruktur-Audit (Post AU-2a, Pre AU-2b)
 
 **Phase:** D15b-Optimierung Phase IV Wave 1, Audit-Modus
