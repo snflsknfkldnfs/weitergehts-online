@@ -4,6 +4,26 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-06 — MEILENSTEIN: Phase IV Wave 2 COMPLETE
+
+**Alle ATOM-UNITs auf main:**
+
+| AU | Commit | Inhalt |
+|----|--------|--------|
+| AU-4 | `24f6ff9` (PM) | STR-05 Multiperspektivitaet MODIFY-SCOPE (7 Dateien, kein Code-Strang) |
+| AU-3 | `24f6ff9` (PM) + `5c80ea7` (Code) | STR-08 Quellenkritik + STR-11 Teil 2 (8. Aufgabentyp) |
+
+**Infrastruktur-Bilanz Wave 2:**
+- Engine: 8 Aufgabentypen (+ quellenkritik), Renderer + Check-Funktion, Cache-Bust v=4.4.
+- Vertraege: Material-Vertrag konflikttyp/perspektiven_policy, Aufgaben-Vertrag quellenkritik-Loesungsformat, Progressionsplan 8-Typ-Heuristik.
+- Prompts: 3 SUB_MATERIAL Perspektiven-Policy, 1 SUB_AUFGABE_QUELLENKRITIK (NEU).
+- Kataloge: M13 (Material-Multiperspektivitaet), SK16 (Skript-Perspektiven-Diversitaet), A27 (Quellenkritik sinngerichtet).
+- Cross-Validierung: VERTRAG_PHASE_2-1c_CROSS 7 Achsen (+ Achse 5 Perspektiven-Diversitaet).
+
+**Naechster Schritt:** Checkpoint-2 Infrastruktur-Audit oder Wave 3+ Planung.
+
+---
+
 ## 2026-04-06 — AU-3 Code-Strang: STR-08 Quellenkritik Engine-Integration
 
 **Phase:** D15b-Optimierung Phase IV Wave 2 AU-3 Code-Strang
