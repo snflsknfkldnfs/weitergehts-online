@@ -4,6 +4,22 @@
 **Bloom-Ziel-Zone:** L5 Bewerten (Claim-Evidence-Reasoning)
 **Primaerer AFB:** III
 
+## Feedback-Schema (PFLICHT seit AU-2a, 2026-04-06)
+
+**Schema:** `VERTRAG_FEEDBACK_SCHEMA.md` — `{typ, text, ebene}` bzw. Array davon.
+
+**Begruendungs-Spezifikation (Single-Output, 3 Eintraege, CER-gebunden):** `feedback` ist ein Array aus genau drei Eintraegen, die entlang der CER-Achse Claim / Evidence / Reasoning strukturiert sind. (a) `typ = "bestaetigung"` — bekraeftigt die Vertretbarkeit des Claims (auch bei alternativem Claim) und den logischen Kern der gewaehlten Position. (b) `typ = "korrektur"` — verweist auf die haeufigste Evidence-Luecke ("Oft fehlt der Beleg aus mat-N-M ..."). (c) `typ = "verknuepfung"` — macht den Reasoning-Schritt explizit und verweist auf das begruendende Material bzw. ein Argumentations-Scaffold. `ebene`: immer `analyse` (L5-6). Texte muessen Mehrdeutigkeit zulassen (mehrere vertretbare Claims) — keine einzig-richtige These vorgeben.
+
+```json
+"feedback": [
+  {"typ": "bestaetigung", "text": "Deine These ist vertretbar, wenn ...", "ebene": "analyse"},
+  {"typ": "korrektur", "text": "Haeufig fehlt der Beleg aus mat-N-M — der belegt ...", "ebene": "analyse"},
+  {"typ": "verknuepfung", "text": "Der Reasoning-Schritt verknuepft Beleg und These ueber ...", "ebene": "analyse"}
+]
+```
+
+Keine Emojis, keine Lehrer-Perspektive, keine normativ-vorgegebene These. Legacy-String UNZULAESSIG. Pruefung: A25 + A26.
+
 ## Rolle + Didaktischer Zweck
 
 Konstruiert strukturierte Begruendungs-Aufgaben nach dem **CER-Schema (Claim-Evidence-Reasoning)**: SuS formulieren eine These (`claim`), belegen sie mit mindestens einem Material-Beleg (`evidence`) und verknuepfen Beleg und These explizit (`reasoning`). Der Typ erzwingt Bewertungs-/Urteilsleistung (L5), weil der reine Beleg nicht genuegt — die Verknuepfungs-Logik muss explizit gemacht werden.

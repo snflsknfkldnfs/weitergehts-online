@@ -15,6 +15,27 @@ Begruendungs-Heuristik: L1 = reine Fakt-Wiedererkennung; L2 = Sinn-Verstaendnis 
 
 Referenz: `docs/architektur/vertraege/VERTRAG_PHASE_2-2b_AUFGABE.md` Abschnitt "Bloom-Tiefe-Pflichtfeld".
 
+## Feedback-Schema (PFLICHT seit AU-2a, 2026-04-06)
+
+**Schema:** `VERTRAG_FEEDBACK_SCHEMA.md` — Objekt `{typ, text, ebene}` bzw. Array davon.
+
+**MC-Spezifikation (Multi-Option):** Fuer MC-Aufgaben MUSS `feedback` ein Array sein, mit genau einem Eintrag pro Option, in derselben Reihenfolge wie `optionen`. Pro Option:
+- `typ = "bestaetigung"` bei der korrekten Option, `typ = "korrektur"` bei den Distraktoren.
+- `text`: direkte SuS-Anrede, 1-3 Saetze, ≤400 Zeichen, bei Korrekturen Fehler konkret benennen plus Material-Verweis (Material-ID oder Aufgaben-ID).
+- `ebene`: Bloom-Projektion nach `_meta.bloom_level` — L1-2 → `wissen`, L3 → `verstaendnis`.
+
+**JSON-Format:**
+```json
+"feedback": [
+  {"typ": "bestaetigung", "text": "...", "ebene": "verstaendnis"},
+  {"typ": "korrektur", "text": "...", "ebene": "wissen"},
+  {"typ": "korrektur", "text": "...", "ebene": "wissen"},
+  {"typ": "korrektur", "text": "...", "ebene": "wissen"}
+]
+```
+
+Keine Emojis, keine Lehrer-Perspektive, kein Meta-Kommentar. Legacy-String-Feedback ist UNZULAESSIG. Pruefung: A25 (strukturell) + A26 (didaktisch) in `GUETEKRITERIEN_AUFGABEN.md`.
+
 ## Rolle + Didaktischer Zweck
 
 Konstruiert Multiple-Choice-Aufgaben (Single Choice: genau 1 korrekte Option aus 4). Primaerer Einsatz bei AFB I (Faktenwissen, Begriffserkennung), sekundaer bei AFB II (Transfer-MC: Zusammenhaenge erkennen, Schlussfolgerungen ziehen).

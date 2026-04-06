@@ -43,9 +43,25 @@ Die Phase-IV-Wave-0 ist die erste AU und enthaelt alle 10 Wave-0-Pakete:
 - **Datei-Scope:** SUB_AUFGABE_*.md, assets/js/escape-engine.js (Aufgabentyp-Registry), katalog-Eintraege
 - **Atomaritaet:** Neue Aufgabentypen ohne Spuren-Hook aufgehaengt brechen Progression. Spuren-Mechanik ohne Typen ist leerer Container.
 
-### AU-2 — STR-03 Feedback-Schema + STR-04 Aufgabentypologie
-- **Datei-Scope:** VERTRAG_PHASE_2-2b_AUFGABE.md, SUB_AUFGABE_*.md, escape-engine.js (Feedback-Renderer), JSON-Schema
-- **Atomaritaet:** Neue Typologie-Kategorien verwenden automatisch das neue Feedback-Schema. Alter Text-Feedback passt nicht zu neuen Typ-Kategorien.
+### AU-2 — [GESPLITTET in AU-2a / AU-2b / AU-2c, siehe SESSION_13_MASTERPLAN.md]
+
+Der ursprueng­liche Scope "STR-03 Feedback-Schema + STR-04 Aufgabentypologie" wurde in Session 13 (2026-04-06) aufgrund von (1) Rollback-Radius bei Monolith-AU, (2) strukturelle Abhaengigkeit STR-03 → STR-04, (3) pro-Typ-Evaluation der Tipps (E2=B), (4) Entkopplung des UI-Befunds BEFUND-AU-1-UI-01 gesplittet in drei unabhaengige ATOM-UNITs. Reihenfolge fixiert: AU-2a → AU-2b; AU-2c kann parallel zu AU-2b oder davor.
+
+### AU-2a — STR-03 Feedback-Schema Rollout
+- **Datei-Scope:** VERTRAG_PHASE_2-2b_AUFGABE.md (Feedback-Pflichtfeld), VERTRAG_FEEDBACK_SCHEMA.md (Backfill-Generator-Spec), SUB_AUFGABE_{MC,ZUORDNUNG,LUECKENTEXT,REIHENFOLGE,FREITEXT,VERGLEICH,BEGRUENDUNG}.md (Feedback-Schema-Block mandatory), GUETEKRITERIEN_AUFGABEN.md (A25 Schema-Vollstaendigkeit + A26 Didaktische Feedback-Validitaet), docs/agents/dispatches/FEEDBACK_BACKFILL_MAPPEN_1_4.md (24-Aufgaben-Dispatch), assets/js/escape-engine.js (`normalizeFeedback()` + Schema-Validator), escape-games/gpg-erster-weltkrieg-ursachen/data.json (Feedback-Backfill Mappen 1-4 via Dispatch), Cache-Bust v=4.0 → v=4.1 in allen HTMLs dieser Unterseite.
+- **Atomaritaet:** Schema-Pflichtfeld im Vertrag ohne Engine-`normalizeFeedback()` bricht die 24 Alt-Aufgaben. Engine-Normalize ohne data.json-Backfill laesst Aufgaben ohne Feedback laufen. Subagenten-Patches ohne Guetekriterien sind nicht durchsetzbar. Backfill-Dispatch ohne Generator-Spec im Schema-Vertrag ist orakel-basiert. Alle Teile muessen gemeinsam.
+- **Quelle:** Phase III.5d Verifikations-Gate Konvergenz-Top-6 (STR-03), F-RA4-01 P1 HIGH (Feedback-Schema Breaking Change), Session-13-Masterplan E3-Entscheidung.
+
+### AU-2b — STR-04 3-stufige Tipps (pro Aufgabentyp evaluiert)
+- **Datei-Scope:** VERTRAG_PHASE_2-2b_AUFGABE.md (Tipp-Eskalations-Sektion), SUB_AUFGABE_{MC,ZUORDNUNG,LUECKENTEXT,REIHENFOLGE,FREITEXT,VERGLEICH,BEGRUENDUNG}.md (pro Typ eigene Tipp-Eskalations-Logik + didaktisch-qualitative Beispiele), GUETEKRITERIEN_AUFGABEN.md (A27 Tipp-Eskalation), assets/js/escape-engine.js (Tipp-Renderer + Eskalations-Zustand), Content-Backfill fuer 24 Alt-Aufgaben (separater Dispatch oder Retroactive-Delta-Entscheidung).
+- **Atomaritaet:** Tipp-Renderer ohne inhaltliche Tipps in den Aufgaben = leeres UI-Element. Inhaltliche Tipps ohne Renderer = totes JSON. Pro-Typ-Evaluation ist Voraussetzung fuer sinnvolle Subagenten-Prompts und muss vor dem Dispatch abgeschlossen sein.
+- **Abhaengigkeit:** AU-2a CLOSED (Feedback-Schema liefert `ebene: "hinweis"`-Kategorie, die AU-2b referenziert).
+- **Quelle:** E2-Entscheidung des Users (pro-Typ didaktisch-qualitativ), Phase III.5d STR-04 Konvergenz 3 RAs + 2×P0.
+
+### AU-2c — BEFUND-AU-1-UI-01 Vergleich-Input-Zellen-Hoehe (Notizbuch-Handschrift-Theme)
+- **Datei-Scope:** `assets/css/themes/theme-gpg.css` (primaer), `assets/css/base.css` (sekundaer, falls Layout-Ursache), optional minimaler `assets/js/escape-engine.js`-Renderer-Patch (nur bei Option-A-Loesung `textarea`-Umstellung), Cache-Bust der betroffenen HTMLs.
+- **Atomaritaet:** CSS-Fix + ggf. Renderer-Patch + Cache-Bust in einem Commit, damit kein Cache-Stand-Konflikt entsteht. Entkoppelt von Schema/Tipps — darf parallel zu AU-2b laufen oder davor.
+- **Quelle:** `docs/befunde/BEFUND-AU-1-UI-01.md`, Claude-Code Smoke-Test nach Commit `5b470c5` (Session 12 Fortsetzung 3).
 
 ### AU-3 — STR-08 Quellenkritik Bloom-Progression + STR-11 neue Aufgabentypen
 - **Datei-Scope:** AGENT_RAETSEL.md Progressions-Logik, VERTRAG_PHASE_2-2a_PROGRESSIONSPLAN.md, SUB_AUFGABE_FREITEXT.md

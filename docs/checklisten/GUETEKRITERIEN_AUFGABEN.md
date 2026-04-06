@@ -125,6 +125,15 @@ GPG B1 unterscheidet sachbezogene Besinnung (Zusammenhaenge erkennen, Begriffe k
 
 **Anti-Quota-Klausel (STR-11):** Die Aufgabentypen `vergleich` und `begruendung` werden NICHT per Quote erzwungen. Auswahl ausschliesslich nach Eignung (Material-Struktur + Lernziel + Bloom-Progression der Mappe). Auswahl-Heuristik: siehe `VERTRAG_PHASE_2-2a_PROGRESSIONSPLAN.md`.
 
+### 3.1b AU-2a MUSS-Kriterien (Phase IV Wave 1, 2026-04-06)
+
+| # | Kriterium | Beschreibung | Fundierung |
+|---|---|---|---|
+| A25 | **Feedback-Schema-Vollstaendigkeit** (alle Typen, strukturell) | Das Feld `feedback` der Aufgabe existiert und entspricht dem Schema `{typ, text, ebene}` gemaess `VERTRAG_FEEDBACK_SCHEMA.md`. Pflichtregeln: (a) `typ` aus Enum `bestaetigung \| korrektur \| hinweis \| verknuepfung`. (b) `text` String, 1-3 Saetze, max 400 Zeichen, keine Emojis. (c) `ebene` aus Enum `wissen \| verstaendnis \| anwendung \| analyse`. (d) Bei Multi-Option-Typen (MC, Zuordnung, Reihenfolge) MUSS `feedback` ein Array der Laenge = Anzahl Optionen sein, jeder Eintrag Schema-konform. (e) Bei Single-Output-Typen (Freitext, Vergleich, Begruendung) mindestens ein Eintrag `typ = "bestaetigung"`. Legacy-String-Feedback = FAIL (Fallback greift bei Laufzeit, aber verletzt A25 bei neuer Produktion). Pruefung: strukturell-syntaktisch durch `tools/validate-feedback-schema.js`. | D15b STR-03, VERTRAG_FEEDBACK_SCHEMA.md, F-RA4-01 P1 HIGH |
+| A26 | **Didaktische Feedback-Validitaet** (alle Typen, inhaltlich) | Inhaltliche Qualitaet des `feedback`-Felds: (a) Bestaetigungen bekraeftigen ohne Floskeln und knuepfen an das Lernziel der Aufgabe an. (b) Korrekturen benennen den Fehler konkret und verweisen auf ein Material der Mappe (Material-ID im Text). (c) Verknuepfungen nennen Material-ID oder Aufgaben-ID explizit. (d) `ebene` entspricht der Bloom-Projektion aus VERTRAG_FEEDBACK_SCHEMA.md §9.3 (L1-2 → wissen, L3 → verstaendnis, L4 → anwendung, L5-6 → analyse) und ist konsistent mit `_meta.bloom_level` der Aufgabe. (e) Direkte Anrede an SuS, keine Lehrer-Perspektive, kein Meta-Kommentar. (f) Bei Korrektur: Re-Try-Impuls enthalten oder Verweis auf Tipp. Pruefung: inhaltlich-qualitativ durch den Aufgaben-Subagenten selbst und durch den Q-Gate-Reviewer im Dispatch. | D15b STR-03, VERTRAG_FEEDBACK_SCHEMA.md §9.3, Feedback-Forschung (Hattie/Timperley 2007 "The Power of Feedback") |
+
+**Backfill-Hinweis (Bestands-Mappen 1-4):** Die 24 Bestandsaufgaben werden via `docs/agents/dispatches/FEEDBACK_BACKFILL_MAPPEN_1_4.md` einmalig nachgepflegt. Review-Block im Dispatch pro Aufgabe. Vor Merge MUSS der Aufgaben-Autor (User) die 24 Feedback-Vorschlaege gegen A26 pruefen. Kein Auto-Merge ohne Review-Signatur.
+
 ### 3.2 SOLL-Kriterien (Verletzung = Optimierungshinweis)
 
 | # | Kriterium | Beschreibung | Fundierung |

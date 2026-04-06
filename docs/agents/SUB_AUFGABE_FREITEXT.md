@@ -15,6 +15,22 @@ Begruendungs-Heuristik: L3 = Synthese in eigenen Worten (Anwenden von Fachbegrif
 
 Referenz: `docs/architektur/vertraege/VERTRAG_PHASE_2-2b_AUFGABE.md` Abschnitt "Bloom-Tiefe-Pflichtfeld".
 
+## Feedback-Schema (PFLICHT seit AU-2a, 2026-04-06)
+
+**Schema:** `VERTRAG_FEEDBACK_SCHEMA.md` — `{typ, text, ebene}` bzw. Array davon.
+
+**Freitext-Spezifikation (Single-Output, 2-3 Eintraege):** `feedback` ist ein Array mit mindestens einem `typ = "bestaetigung"`-Eintrag (bekraeftigt die erreichten Schluesselbegriffe und knuepft ans Lernziel an), einem `typ = "korrektur"`-Eintrag (nennt den haeufigsten Fehler oder fehlenden Schluesselbegriff und verweist aufs Material) sowie — bei Bloom-Level ≥ 4 — einem `typ = "verknuepfung"`-Eintrag, der explizit auf ein anderes Material oder eine andere Aufgabe der Mappe verweist. `ebene`: L3 → `verstaendnis`, L4 → `anwendung`, L5-6 → `analyse`.
+
+```json
+"feedback": [
+  {"typ": "bestaetigung", "text": "...", "ebene": "anwendung"},
+  {"typ": "korrektur", "text": "Haeufig fehlt der Begriff X — siehe mat-N-M ...", "ebene": "anwendung"},
+  {"typ": "verknuepfung", "text": "Dieser Schritt baut auf Aufgabe N-M auf ...", "ebene": "analyse"}
+]
+```
+
+Keine Emojis, keine Lehrer-Perspektive. Legacy-String UNZULAESSIG. Pruefung: A25 + A26.
+
 ## Rolle + Didaktischer Zweck
 
 Konstruiert Freitext-Code-Aufgaben: SuS verfassen eine eigenstaendige Zusammenfassung oder Stellungnahme zu einer problemorientierten Leitfrage, unterstuetzt durch Teilfragen als Denkgeruest. Validierung ueber Schluesselwort-Erkennung. Primaerer Einsatz bei AFB II-III (Reflexion, Beurteilung, Stellungnahme).

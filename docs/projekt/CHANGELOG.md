@@ -4,6 +4,63 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-06 — Session 13 Block 1: AU-1 CLOSED, Framework-Etablierung, Cleanup, Masterplan
+
+**Phase:** D15b-Optimierung Phase IV Wave 1 AU-1 → CLOSED, AU-2a Vorbereitung
+**Modus:** EXECUTE
+**Atom-Unit:** Infrastruktur-Block (kein AU-Inhalt, Rahmen + Dokumentation + Cleanup)
+
+**Abschluss AU-1 (Verifikation):**
+- Commit-Hashes: PM-Strang `5c718df` (Session 12 Fortsetzung 2) + Code-Strang `5b470c5` (Claude-Code, Session 12 Fortsetzung 3, Worktree `festive-benz`). Code-Strang per Fast-Forward in `main` gemerged, auf `origin/main` gepusht.
+- Smoke-Test Claude-Code gruen: `aufgabe-4-8` (typ=vergleich, L4) und `aufgabe-4-9` (typ=begruendung, L5 CER) rendern und validieren im Browser korrekt.
+- 1 UI-Befund nicht blockierend: Vergleich-Input-Zellen im Notizbuch-Handschrift-Theme schneiden Text horizontal ab (Zellenhoehe zu niedrig). Erfasst als `docs/befunde/BEFUND-AU-1-UI-01.md`, Zuweisung AU-2c.
+
+**Framework-Etablierung: Git-Workflow-Rahmen**
+- Anlass: In Sessions 11 und 12 trat mehrfach dieselbe Fehlerklasse auf — zsh heredoc + `#` Kommentarzeilen (ohne `setopt interactive_comments`), persistente `.git/index.lock`, Claude-Code-Worktree-Leichen nach Merge. Copy-Paste-Rueckmeldeschleife friktionsreich.
+- Neues Dokument: `docs/projekt/GIT_WORKFLOW_RAHMEN.md` (~130 Zeilen).
+  - §1 Ebenen-Rollen: User/Cowork/Claude-Code mit getrennten write/push/terminal-Rechten.
+  - §2 Default-Workflow: Copy-Paste mit `git commit -F <datei>` statt Heredoc (umgeht zsh-`#`-Bug vollstaendig).
+  - §3 Extended osascript-Workflow (opt-in pro Session).
+    - §3.1 Operations-Klassen L (read) / S (state-change local) / R (remote-effecting, push/fetch) / V (verboten ohne User-Entscheidung).
+    - §3.2 Ausfuehrungs-Protokoll: Ankuendigung → Ausfuehrung → Ergebnis-Log → Session-Ende-Aggregat ins CHANGELOG.
+    - §3.3 Entscheidungsbaum.
+    - §3.4 Recovery-Patterns: Index-Lock, Worktree-Leichen, Heredoc-Alternative.
+  - §4 Audit-Format `[YYYY-MM-DD HH:MM] Cowork osascript <Klasse>: <cmd>` mit Session-Ende-Rollup.
+  - §5 Abgrenzungen: ersetzt NICHT Claude-Code-Worktree-Pattern, KEIN Auto-Push, KEIN Bulk-Destructive, KEIN Umgehen der Pre-Commit-Gate-3-Checks.
+- Ersetzt Copy-Paste-Pflicht NICHT, sondern bietet gated opt-in-Pfad. Kompatibel mit COWORK_PROJECT_ANLEITUNG.md.
+
+**Session-13-Cleanup (via osascript Klasse S):**
+- Claude-Code Worktree `festive-benz` entfernt + lokaler Branch `claude/festive-benz` geloescht + Remote-Branch `origin/claude/festive-benz` geloescht (verifiziert merged in main).
+- Alt-Worktrees `elegant-wilson` + `heuristic-galileo` entfernt + Branches `claude/elegant-wilson` + `claude/heuristic-galileo` geloescht (beide verifiziert merged, 29 bzw. 73 Commits ahead, alle im main).
+- Standalone-Branch `fix/mappe2-quality-patches` geloescht (81 Commits, merged).
+- `docs/projekt/D15B_OPTIMIERUNGS_STRATEGIEN.md` via `git checkout --` revertiert (Diff war reine Tabellen-Spalten-Alignment-Formatierung ohne Inhaltsaenderung).
+- **Finaler Repo-State:** `main @ 5b470c5`, 1 Worktree, 1 Branch, clean bis auf neue Dokumentation dieser Session.
+
+**Git-Ops-Log (Rahmen §4):**
+```
+[2026-04-06] Cowork osascript L: git worktree list / git branch -l / git status / git log --oneline --graph origin/main..claude/<branch> → Triage-Input
+[2026-04-06] Cowork osascript S: git worktree remove .claude/worktrees/festive-benz; git branch -d claude/festive-benz
+[2026-04-06] Cowork osascript R: git push origin --delete claude/festive-benz
+[2026-04-06] Cowork osascript S: git checkout -- docs/projekt/D15B_OPTIMIERUNGS_STRATEGIEN.md
+[2026-04-06] Cowork osascript S: git worktree remove .claude/worktrees/elegant-wilson; git branch -d claude/elegant-wilson
+[2026-04-06] Cowork osascript S: git worktree remove .claude/worktrees/heuristic-galileo; git branch -d claude/heuristic-galileo
+[2026-04-06] Cowork osascript S: git branch -d fix/mappe2-quality-patches
+```
+
+**Masterplan persistiert (Kompaktions-Resilienz):**
+- Neues Dokument: `docs/projekt/SESSION_13_MASTERPLAN.md`.
+- User-Entscheidungen dokumentiert: E1=B (STR-03 hybrider Backfill via Auto-Generator-Dispatch), E2=B (STR-04 pro Aufgabentyp didaktisch-qualitativ evaluiert), E3=Cowork-Entscheid zum Systemziel.
+- **E3-Ergebnis:** SPLIT AU-2 in AU-2a (STR-03 Feedback-Schema), AU-2b (STR-04 Tipps, pro-Typ), AU-2c (BEFUND-AU-1-UI-01).
+  - Begruendung: (1) ATOM-UNIT-Prinzip — AU-2 monolithisch waere ~3× AU-1, Rollback-Radius inakzeptabel. (2) Strukturelle Abhaengigkeit — STR-03-Schema geht STR-04-Tipps voraus (Tipps sind `ebene: "hinweis"` im normalisierten Schema). (3) E2-Evaluations-Tiefe — 10-Typen-Pro-Typ-Pruefung muss vor AU-2b-Dispatch und wuerde AU-2 ohne Split um eine Sub-Phase aufblaehen. (4) UI-Befund-Entkopplung — AU-2c ist reines CSS, darf den Code-Strang nicht versperren.
+- DoD AU-2a, Ausfuehrungsplan (14 Schritte), Abbruch-/Recovery-Punkte pro Schritt, Risiken (R1-R4 mit Mitigationen) dokumentiert.
+
+**PM-Infrastruktur-Beobachtung:**
+- `projekt-website-v4-2` Skill teilweise veraltet bestaetigt. `COWORK_PROJECT_ANLEITUNG.md` ist authoritative Quelle. Memory-Eintrag angelegt (`.auto-memory/feedback_skill_vs_anleitung_prioritaet.md`).
+
+**Naechster Schritt:** AU-2a Inhaltsarbeit gemaess Masterplan Schritt 5 ff. — BEFUND-AU-1-UI-01 anlegen, VERTRAG_ATOM_UNITS.md AU-2-Split, dann Vertrag 2-2b / Feedback-Schema / Subagenten / Guetekriterien / Backfill-Dispatch / Uebergabe / Commit-Block.
+
+---
+
 ## 2026-04-05 — Session 12 (Fortsetzung 3): D15b Phase IV Wave 1 AU-1 Code-Strang DONE
 
 **Phase:** D15b-Optimierung Phase IV Wave 1 AU-1 (Code-Strang nach PM-Strang Block 1+2)

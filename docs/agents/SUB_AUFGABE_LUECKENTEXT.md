@@ -15,6 +15,21 @@ Begruendungs-Heuristik: L1 = reiner Begriffs-Recall (Schueler erinnert Fachbegri
 
 Referenz: `docs/architektur/vertraege/VERTRAG_PHASE_2-2b_AUFGABE.md` Abschnitt "Bloom-Tiefe-Pflichtfeld".
 
+## Feedback-Schema (PFLICHT seit AU-2a, 2026-04-06)
+
+**Schema:** `VERTRAG_FEEDBACK_SCHEMA.md` — `{typ, text, ebene}` bzw. Array davon.
+
+**Lueckentext-Spezifikation (Single-Sammelfeedback):** `feedback` ist entweder ein Array mit einem Eintrag pro Luecke (in Reihenfolge der Lueckenpositionen) oder ein kompaktes 2-3-elementiges Sammelfeedback (1x `bestaetigung`, optional 1x `korrektur` fuer das haeufigste Fehl-Muster, optional 1x `verknuepfung` zu einem Material, wenn der Textausschnitt materialgebunden ist). Empfehlung: Bei ≤3 Luecken pro Luecke, bei >3 Luecken Sammelfeedback. `ebene`: L1 → `wissen`, L2 → `verstaendnis`.
+
+```json
+"feedback": [
+  {"typ": "bestaetigung", "text": "...", "ebene": "wissen"},
+  {"typ": "korrektur", "text": "Oft wird statt X der Begriff Y eingesetzt, ...", "ebene": "wissen"}
+]
+```
+
+Keine Emojis, keine Lehrer-Perspektive. Legacy-String UNZULAESSIG. Pruefung: A25 + A26.
+
 ## Rolle + Didaktischer Zweck
 
 Konstruiert Lueckentextaufgaben: SuS fuellen fehlende Woerter in einem Fliesstext ein. Primaerer Einsatz bei AFB I (Fachbegriffe, Definitionen) und AFB I-II (Zusammenhaenge in eigenen Worten vervollstaendigen).

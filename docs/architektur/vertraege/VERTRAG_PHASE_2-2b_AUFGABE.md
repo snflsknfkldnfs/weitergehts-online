@@ -1,7 +1,7 @@
 # Vertrag Phase 2.2b: Aufgaben-Produktion
 
 **Extrahiert aus:** WORKFLOW_v4.md (Commit d627924, 2026-04-01)
-**Patch-Stand:** 2026-04-05 — AU-1 (STR-02 Bloom-Tiefe-Pflicht + STR-11 Vergleich/Begruendung). Siehe VERTRAG_ATOM_UNITS.md §3 AU-1.
+**Patch-Stand:** 2026-04-06 — AU-2a (STR-03 Feedback-Schema-Pflichtfeld, A25/A26). Vorher AU-1 (STR-02 Bloom-Tiefe-Pflicht + STR-11 Vergleich/Begruendung, 2026-04-05). Siehe VERTRAG_ATOM_UNITS.md §3 AU-1, AU-2a.
 **Prinzipien:** P1 (Read-from-Artifact) · P4 (1 Aufgabe = 1 Dispatch = 1 .json) · P5 (Q-Gate Pflicht) · P6 (Praezise Schnittstellen)
 **Dispatch-Isolation:** Jede Aufgabe wird als EIGENE Nachricht produziert. NICHT mehrere Aufgaben parallel.
 
@@ -70,6 +70,23 @@ Die Policy gilt pro Mappe (nicht pro Aufgabe). Verletzungen sind Q-Gate-FAIL auf
 
 **Auto-Klassifikator:** Fuer Bestands-Mappen 1-4 laeuft ein Auto-Klassifikator-Subagent-Dispatch (Option C Hybrid), der `_meta.bloom_level` nachpflegt. Ergebnis in `docs/analyse/BLOOM_KLASSIFIKATION_MAPPEN_1_4.md`.
 
+## Feedback-Schema-Pflichtfeld (STR-03, AU-2a)
+
+**Pflichtfeld pro Aufgabe:** `feedback` als Objekt bzw. Array von Objekten im Schema `{typ, text, ebene}` gemaess `VERTRAG_FEEDBACK_SCHEMA.md`.
+
+**Regeln:**
+- `typ` aus Enum `bestaetigung | korrektur | hinweis | verknuepfung`.
+- `text` direkte Anrede an SuS, 1-3 Saetze, max 400 Zeichen, keine Emojis, kein Meta.
+- `ebene` aus Enum `wissen | verstaendnis | anwendung | analyse` (Bloom-Projektion gemaess VERTRAG_FEEDBACK_SCHEMA.md §9.3).
+- Bei Multi-Option-Typen (MC, Zuordnung, Reihenfolge): `feedback` ist ein Array, ein Eintrag pro Option/Position, Reihenfolge entspricht `optionen`.
+- Bei Single-Output-Typen (Freitext, Vergleich, Begruendung, Lueckentext-Zusammenfassung): mindestens ein `bestaetigung`-Eintrag, optional ergaenzt um `korrektur` und `verknuepfung`.
+
+**Selbstdeklaration:** Jeder Aufgaben-Subagent (siehe SUB_AUFGABE_*.md) erzeugt Feedback direkt im neuen Schema. Legacy-String-Feedback ist in neu produzierten Aufgaben UNZULAESSIG.
+
+**Backfill Bestands-Mappen 1-4:** Siehe `docs/agents/dispatches/FEEDBACK_BACKFILL_MAPPEN_1_4.md` (AU-2a-Artefakt, Backfill-Generator-Dispatch analog BLOOM_KLASSIFIKATION). Der Legacy-Fallback `normalizeFeedback()` in `escape-engine.js` bleibt als Safety-Net bestehen.
+
+**Querverweis Guetekriterien:** A25 (Schema-Vollstaendigkeit, strukturell) + A26 (Didaktische Feedback-Validitaet, inhaltlich). Siehe GUETEKRITERIEN_AUFGABEN.md.
+
 ## Q-Gate
 
 **Mechanik:** `docs/architektur/Q-GATE-MECHANIK.md` (Bewertungsstufen, Aggregation, Nachbesserung, Output-Format)
@@ -88,6 +105,8 @@ Die Policy gilt pro Mappe (nicht pro Aufgabe). Verletzungen sind Q-Gate-FAIL auf
 - **A22 Vergleichs-Strukturraster vollstaendig** (nur SUB_AUFGABE_VERGLEICH): mindestens 2 Objekte, mindestens 2 Dimensionen, keine leeren Zellen, keine redundanten Dimensionen.
 - **A23 CER-Struktur vollstaendig** (nur SUB_AUFGABE_BEGRUENDUNG): `claim`, `evidence` (min 1 Material-Beleg), `reasoning` (explizite Verknuepfung) — alle drei Felder pflicht, keines leer.
 - **A24 Bloom-Selbstdeklaration konsistent** (alle Typen): `_meta.bloom_level` gesetzt, `_meta.bloom_begruendung` vorhanden, Operator passt zu deklarierter Stufe.
+- **A25 Feedback-Schema-Vollstaendigkeit** (alle Typen, STR-03, AU-2a): `feedback`-Feld vorhanden, entspricht dem Schema `{typ, text, ebene}` aus VERTRAG_FEEDBACK_SCHEMA.md, bei Multi-Option-Typen Array mit Laenge = Anzahl Optionen, jedes Element Schema-konform, `text` ≤ 400 Zeichen. Strukturelle Pruefung, nicht inhaltlich.
+- **A26 Didaktische Feedback-Validitaet** (alle Typen, STR-03, AU-2a): Inhaltliche Pruefung des `feedback`-Felds. Bestaetigungen bekraeftigen ohne Floskeln und knuepfen an das Lernziel. Korrekturen benennen den Fehler konkret und verweisen auf Material. `ebene` entspricht der Bloom-Projektion aus VERTRAG_FEEDBACK_SCHEMA.md §9.3 (L1-2=wissen, L3=verstaendnis, L4=anwendung, L5-6=analyse). Keine SuS-sichtbare Lehrer-Perspektive, keine Meta-Kommentare.
 - **MQ3 Material-Referenz-Verbot (Q-M2-04):** `frage`-Feld enthaelt KEINE `[[mat-id|...]]`-Links und KEINE (M[position])-Verweise. Material-Referenzen gehoeren AUSSCHLIESSLICH in Tipp Stufe 1.
 - **Engine-Feld-Kompatibilitaet (Q-M2-01/02):** JSON-Feldnamen muessen exakt den Engine-Erwartungen entsprechen. Reihenfolge: `optionen` (NICHT `elemente_ungeordnet`). Freitext: `loesung` als Array (NICHT als String).
 
@@ -96,6 +115,7 @@ Die Policy gilt pro Mappe (nicht pro Aufgabe). Verletzungen sind Q-Gate-FAIL auf
 ```
 aufgaben/aufgabe-N-M.json   # id, typ, frage/text_mit_luecken, loesung,
                               # material_referenz, tipp[], afb, position,
+                              # feedback: {typ,text,ebene} | [{typ,text,ebene}, ...],
                               # _meta: { bloom_level, bloom_begruendung }
 ```
 

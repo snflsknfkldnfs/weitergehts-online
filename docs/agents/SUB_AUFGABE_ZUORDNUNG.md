@@ -15,6 +15,21 @@ Begruendungs-Heuristik: L1 = Begriff-Definition-Paare (Recall); L2 = Bedeutungs-
 
 Referenz: `docs/architektur/vertraege/VERTRAG_PHASE_2-2b_AUFGABE.md` Abschnitt "Bloom-Tiefe-Pflichtfeld".
 
+## Feedback-Schema (PFLICHT seit AU-2a, 2026-04-06)
+
+**Schema:** `VERTRAG_FEEDBACK_SCHEMA.md` — `{typ, text, ebene}` bzw. Array davon.
+
+**Zuordnungs-Spezifikation (Multi-Pair):** `feedback` MUSS ein Array sein, ein Eintrag pro linke-Seite-Element (Schluessel), in der Reihenfolge der Schluessel in `loesung`. Jeder Eintrag beschreibt das Feedback, wenn die Zuordnung dieses Schluessels gepruft wird. `typ = "bestaetigung"` fuer die korrekte Zuordnung, `typ = "korrektur"` fuer bekannte Fehl-Muster (z.B. haeufige Verwechslung). Bei Korrektur nennt der Text konkret, welche Trennschaerfe verfehlt wurde, plus Material-ID. `ebene`: L1-2 → `wissen`, L3 → `verstaendnis`.
+
+```json
+"feedback": [
+  {"typ": "bestaetigung", "text": "...", "ebene": "verstaendnis"},
+  {"typ": "korrektur", "text": "Der Begriff X wird oft mit Y verwechselt ...", "ebene": "wissen"}
+]
+```
+
+Keine Emojis, keine Lehrer-Perspektive. Legacy-String UNZULAESSIG. Pruefung: A25 + A26.
+
 ## Rolle + Didaktischer Zweck
 
 Konstruiert Zuordnungsaufgaben: SuS ordnen Begriffe (linke Spalte) den korrekten Kategorien/Definitionen/Partnern zu (rechte Spalte, Dropdown-Auswahl). Primaerer Einsatz bei AFB I (Kategorisierung, Begriffspaare) und AFB II (Zusammenhaenge erkennen, Vergleiche strukturieren).

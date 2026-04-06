@@ -89,7 +89,9 @@ Scheitert die Validierung, wird der Pfad der fehlerhaften Datei plus Begruendung
 
 ## 6. Verpflichtungen Subagenten
 
-Jeder SUB_AUFGABE_*.md Subagent-Prompt wird in AU-2 (Phase IV Wave 1) so angepasst, dass er `feedback` immer als Schema-Objekt bzw. Array davon ausgibt. Die Aenderung der Subagenten-Prompts ist Teil von AU-2, nicht von Wave 0 selbst — Wave 0 etabliert nur den Vertrag plus Legacy-Fallback.
+Jeder SUB_AUFGABE_*.md Subagent-Prompt wird in **AU-2a** (Phase IV Wave 1, gesplittet aus Ur-AU-2) so angepasst, dass er `feedback` immer als Schema-Objekt bzw. Array davon ausgibt. Die Aenderung der Subagenten-Prompts ist Teil von AU-2a, nicht von Wave 0 selbst — Wave 0 etabliert nur den Vertrag plus Legacy-Fallback.
+
+**Querverweis AU-2a Pflichtfelder:** Der Vertrag `VERTRAG_PHASE_2-2b_AUFGABE.md` wird in AU-2a um ein Pflichtfeld `feedback` auf Aufgaben-Ebene erweitert, mit normativem Verweis auf dieses Schema und auf die Guetekriterien `GUETEKRITERIEN_AUFGABEN.md` A25 (Schema-Vollstaendigkeit) + A26 (Didaktische Feedback-Validitaet).
 
 ## 7. Verpflichtungen Engine
 
@@ -100,8 +102,53 @@ Jeder SUB_AUFGABE_*.md Subagent-Prompt wird in AU-2 (Phase IV Wave 1) so angepas
 
 ## 8. Geltungsbereich
 
-Ab Commit des Phase-IV-Wave-0-Bundles. Alle neu produzierten Aufgaben ab diesem Zeitpunkt MUESSEN das Schema erfuellen. Bestandsaufgaben werden durch Legacy-Fallback transformiert und koennen optional via Claude-Code-Run nach AU-2 endgueltig migriert werden.
+Ab Commit des Phase-IV-Wave-0-Bundles. Alle neu produzierten Aufgaben ab diesem Zeitpunkt MUESSEN das Schema erfuellen. Bestandsaufgaben werden durch Legacy-Fallback transformiert und in **AU-2a** per Backfill-Generator-Dispatch (Sektion 9) endgueltig migriert.
+
+## 9. Backfill-Generator-Spec (AU-2a)
+
+### 9.1 Zweck
+
+Die 24 Bestandsaufgaben aus Mappen 1-4 (`escape-games/gpg-erster-weltkrieg-ursachen/data.json`) haben Feedback-Felder, die entweder als String vorliegen oder fehlen. Der Legacy-Fallback `normalizeFeedback()` rettet die Laufzeit, liefert aber didaktisch unzureichendes Einheits-Feedback (`typ: "hinweis"`, Text = Original-String, `ebene: "verstaendnis"`). AU-2a verlangt eine einmalige, aufgabenspezifische Backfill-Operation, die didaktisch sinnvolles, bloom-tiefen-adaequates Feedback generiert und in `data.json` persistiert.
+
+### 9.2 Vorgehen (hybrider Ansatz, User-Entscheidung E1=B)
+
+Der Backfill wird NICHT durch Regenerate der Aufgaben erzeugt und NICHT manuell pro Aufgabe gepflegt. Stattdessen liefert ein **Auto-Generator-Dispatch-Dokument** (`docs/agents/dispatches/FEEDBACK_BACKFILL_MAPPEN_1_4.md`, analog zum Bloom-Dispatch `BLOOM_KLASSIFIKATION_MAPPEN_1_4.md`) fuer jede der 24 Aufgaben einen Vorschlag:
+
+- **Input pro Aufgabe:** `aufgabe_id`, `typ`, `bloom_level` (aus bestehendem Metadatum nach AU-1), `loesung`, bisheriges String-Feedback (falls vorhanden), Material-Bezug.
+- **Output pro Aufgabe:** Ein vollstaendiges Feedback-Objekt bzw. Array (bei MC/Zuordnung pro Option) im Schema `{typ, text, ebene}`.
+
+### 9.3 Regeln fuer den Generator
+
+1. **`typ`-Auswahl:**
+   - Fuer Single-Feedback (Freitext, Begruendung, Vergleich, Lueckentext-Zusammenfassung): `typ = "bestaetigung"` bei korrekter Loesungskonstruktion, ergaenzt um 1 optionalen `typ = "korrektur"`-Eintrag als Fehler-Hinweis. Bei Bloom-Level ≥ 4 zusaetzlich 1 Eintrag `typ = "verknuepfung"` zu einem Material der Mappe.
+   - Fuer Multi-Feedback (MC, Zuordnung, Reihenfolge): pro Option/Position genau ein Eintrag mit `typ = "bestaetigung"` (richtig) oder `typ = "korrektur"` (falsch).
+
+2. **`text`-Formulierung:**
+   - Direkte Anrede ("du"), 1-3 Saetze, max. 400 Zeichen.
+   - Korrektur-Texte benennen den Fehler konkret und verweisen auf Material.
+   - Bestaetigungs-Texte bekraeftigen ohne Floskeln ("Genau"), knuepfen an das Wissens-Ziel der Aufgabe an.
+   - Verknuepfungs-Texte nennen Material-ID oder Aufgaben-ID explizit.
+
+3. **`ebene`-Zuweisung (Bloom-Projektion):**
+   | `bloom_level` | `ebene` |
+   |---|---|
+   | 1-2 | `wissen` |
+   | 3 | `verstaendnis` |
+   | 4 | `anwendung` |
+   | 5-6 | `analyse` |
+
+4. **Qualitaets-Check durch Aufgaben-Autor:** Der Generator produziert Vorschlaege, die vor dem Merge durch A26 geprueft werden. Kein Auto-Merge ohne Review-Block im Dispatch-Dokument.
+
+### 9.4 Engine-Migrations-Pfad
+
+1. `normalizeFeedback()` bleibt im Code als Safety-Net (Legacy-Fallback).
+2. Nach erfolgtem Backfill liegt `data.json` vollstaendig im Schema vor, d.h. der Fallback wird in Mappen 1-4 nicht mehr ausgeloest.
+3. Optional: Log-Warnung in `normalizeFeedback()`, wenn ein String-Feedback noch gesichtet wird (Signal fuer unvollstaendigen Backfill).
+
+### 9.5 Cache-Bust
+
+Da AU-2a das `data.json` + `normalizeFeedback()` + ggf. Renderer-Verhalten (typ-spezifische Icons) beruehrt, muss ein Cache-Bust-Schritt Bestandteil der Uebergabe sein: `v=4.0` → `v=4.1` in allen HTML-Referenzen der Unterseite `escape-games/gpg-erster-weltkrieg-ursachen/`.
 
 ---
 
-**Querverweise:** `VERTRAG_ATOM_UNITS.md` (AU-0, AU-2), `VERTRAG_PHASE_2-2b_AUFGABE.md` (wird in AU-2 erweitert).
+**Querverweise:** `VERTRAG_ATOM_UNITS.md` (AU-0, AU-2a, AU-2b), `VERTRAG_PHASE_2-2b_AUFGABE.md` (wird in AU-2a erweitert), `GUETEKRITERIEN_AUFGABEN.md` (A25, A26), `docs/agents/dispatches/FEEDBACK_BACKFILL_MAPPEN_1_4.md` (AU-2a-Artefakt).

@@ -4,6 +4,21 @@
 **Bloom-Ziel-Zone:** L4 Analysieren (Strukturraster, Dimensions-Zerlegung)
 **Primaerer AFB:** II-III
 
+## Feedback-Schema (PFLICHT seit AU-2a, 2026-04-06)
+
+**Schema:** `VERTRAG_FEEDBACK_SCHEMA.md` — `{typ, text, ebene}` bzw. Array davon.
+
+**Vergleichs-Spezifikation (Single-Output, 2-3 Eintraege):** `feedback` ist ein Array mit mindestens einem `typ = "bestaetigung"`-Eintrag (bekraeftigt die erkannte Strukturachse und benennt die wichtigste Differenzierungs-Dimension) und einem `typ = "korrektur"`-Eintrag (nennt die typische Verwechslungs-Falle entlang einer Dimension, plus Material-ID). Bei L4 zusaetzlich optional `typ = "verknuepfung"`, der die Vergleichs-Einsicht an das Mappenabschluss-Lernziel knuepft. `ebene`: immer `anwendung` (L4). Die Korrektur MUSS die konkrete Dimension benennen, in der der Fehler typisch ist — keine allgemeinen Hinweise.
+
+```json
+"feedback": [
+  {"typ": "bestaetigung", "text": "...", "ebene": "anwendung"},
+  {"typ": "korrektur", "text": "In der Dimension X wird Y oft mit Z verwechselt, siehe mat-N-M ...", "ebene": "anwendung"}
+]
+```
+
+Keine Emojis, keine Lehrer-Perspektive. Legacy-String UNZULAESSIG. Pruefung: A25 + A26.
+
 ## Rolle + Didaktischer Zweck
 
 Konstruiert strukturierte Vergleichs-Aufgaben: SuS tragen entlang vordefinierter Dimensionen Merkmale von 2-3 Vergleichsobjekten zusammen und erkennen so Gemeinsamkeiten und Unterschiede. Der Typ erzwingt analytisches Denken (L4), weil oberflaechliche Reproduktion nicht ausreicht — SuS muessen Material-Informationen nach Kategorien sortieren und auf Vergleichsdimensionen abbilden.

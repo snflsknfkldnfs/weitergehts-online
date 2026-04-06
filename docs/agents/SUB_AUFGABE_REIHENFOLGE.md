@@ -15,6 +15,21 @@ Begruendungs-Heuristik: L2 = Ereignisse in chronologische Reihenfolge bringen (R
 
 Referenz: `docs/architektur/vertraege/VERTRAG_PHASE_2-2b_AUFGABE.md` Abschnitt "Bloom-Tiefe-Pflichtfeld".
 
+## Feedback-Schema (PFLICHT seit AU-2a, 2026-04-06)
+
+**Schema:** `VERTRAG_FEEDBACK_SCHEMA.md` — `{typ, text, ebene}` bzw. Array davon.
+
+**Reihenfolge-Spezifikation (Multi-Position):** `feedback` MUSS ein Array sein, ein Eintrag pro Position in der korrekten Reihenfolge. `typ = "bestaetigung"` pro richtig einsortiertem Element (Text verankert das Element in der Kausal-/Chronologie-Logik), optional `typ = "korrektur"` als Hinweis auf haeufige Vertauschungen (z.B. "Schritt X wird oft vor Y gesetzt, weil..."). `ebene`: L2 → `wissen`, L3 → `verstaendnis`. Korrektur-Texte nennen die Fehl-Ordnung konkret und verweisen auf das begruendende Material.
+
+```json
+"feedback": [
+  {"typ": "bestaetigung", "text": "Position 1: ...", "ebene": "verstaendnis"},
+  {"typ": "bestaetigung", "text": "Position 2: ...", "ebene": "verstaendnis"}
+]
+```
+
+Keine Emojis, keine Lehrer-Perspektive. Legacy-String UNZULAESSIG. Pruefung: A25 + A26.
+
 ## Rolle + Didaktischer Zweck
 
 Konstruiert Reihenfolgeaufgaben: SuS bringen Elemente (Ereignisse, Schritte, Phasen) in die korrekte Reihenfolge per Drag-and-Drop-Sortierung. Primaerer Einsatz bei AFB II (Chronologie rekonstruieren, Prozesse ordnen, kausale Ketten erkennen).
