@@ -4,6 +4,26 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-06 — Checkpoint-1 Infrastruktur-Audit (Post AU-2a, Pre AU-2b)
+
+**Phase:** D15b-Optimierung Phase IV Wave 1, Audit-Modus
+**Modus:** AUDIT
+
+**Methode:** 4 parallele Review-Agenten (D1 Schema-Konsistenz, D2 Coverage-Gaps, D3 Didaktische Kohaerenz, D4 Engine-Kompatibilitaet).
+
+**Konsolidiertes Ergebnis (16 Findings):**
+- 2 CRITICAL: Feedback nie gerendert (Wave 3 Engine), Freitext Bloom-Beispiel divergiert (Prompt-Patch).
+- 6 HIGH: Reihenfolge L1-ebene, 4× Enum unterspezifiziert, MC ebene-Mischung, Freitext Anti-Leak unklar, freitext/freitext-code Naming, Reihenfolge optionen[] fehlt.
+- 6 MEDIUM: bloom_level nicht validiert, A26 nicht maschinell pruefbar, A22/A23 Validatoren fehlen, Vergleich T2/T3 unklar, L4→anwendung Trade-off, kein Runtime-Test.
+- 2 LOW: Prompt-Redundanz, kein Copy-Paste-Check.
+
+**Gate-Urteil:** GRUEN fuer AU-2b Code-Strang. GELB fuer naechsten Generierungslauf (7 Prompt-Patches noetig).
+
+**Artefakt:** `docs/befunde/BEFUND-CHECKPOINT-1-INFRASTRUKTUR.md`
+**Naechster Schritt:** AU-2b Code-Strang (Cold-Handoff), dann Zeitfenster-A Prompt-Patches vor Game-2-Generierung.
+
+---
+
 ## 2026-04-06 — AU-2a Code-Strang: STR-03 Feedback-Schema Rollout
 
 **Phase:** D15b-Optimierung Phase IV Wave 1 AU-2a Code-Strang
