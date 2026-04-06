@@ -4,6 +4,31 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-06 — Wave 4 W4-A + W4-B COMPLETE (Phase-0-Haertung)
+
+**Phase:** Phase IV Wave 4 — Phase-0-Infrastruktur
+**Modus:** EXECUTE
+**Session:** 14
+
+**W4-A Vertrag-Extraktion (3 Vertraege):**
+- NEU: `docs/architektur/vertraege/VERTRAG_PHASE_0-1_DIDAKTIK.md` — Input-Spec (6 Parameter inkl. vorgaenger_game), Output-Schema (7 Pflicht-Sektionen), Q-Gate QD1-QD8 (2 BLOCKER, 4 HIGH, 2 MEDIUM), User-Validierung PFLICHT
+- NEU: `docs/architektur/vertraege/VERTRAG_PHASE_0-2_INHALT.md` — Recherche-Protokoll (Mindest-Coverage mappen×2+1, Quellen-Diversitaet), Output-Schema (7 pro-Mappe-Sektionen + 4 Dokument-Sektionen), Q-Gate QI1-QI6 (2 BLOCKER, 3 HIGH, 1 MEDIUM), Artefakt-Sichtung integriert, Lizenz-Pruefung
+- NEU: `docs/architektur/vertraege/VERTRAG_PHASE_0-3_SKRIPT.md` — Chunking-Regeln (600-900W, 1:1 Mappen-Alignment), Artefakt-Marker-Syntax, 3-Stufen-Q-Gate (Q1-Q13 operativ + SK1-SK17 fachdidaktisch + QS1-QS6 strukturell), Referenz auf GUETEKRITERIEN_SKRIPT.md
+
+**W4-B Game-1-Rueckblick-Audit:**
+- NEU: `docs/projekt/BEFUND_PHASE_0_RUECKBLICK.md` — 3 Dimensionen (DIDAKTIK, INHALT, SKRIPT), 11 Findings (2 HIGH, 4 MEDIUM, 3 LOW, 2 INFO)
+- 2 HIGH-Findings identifiziert, die ohne Vertrag durchgerutscht waeren: (1) KE-Scoping fuer Game-Sequenzen nicht dokumentiert, (2) KE→Fakten-Mapping in INHALTSBASIS fehlt
+- 3 Vertragsnachschaerfungen (P1-P3) direkt eingearbeitet
+
+**Planungsdokument:**
+- NEU: `docs/projekt/SESSION_14_MASTERPLAN.md` — Problemanalyse (5 Risiken), W4-A/B/C-Plan, Abhaengigkeiten, Erfolgskriterien
+
+**Dateien neu:** 5 (3 Vertraege, 1 Befund, 1 Masterplan)
+**Dateien modifiziert:** 3 (Vertragsnachschaerfungen P1-P3) + STATUS.md + CHANGELOG.md
+**Naechster Schritt:** W4-C Game-2 Design-Spike (DIDAKTIK_RAHMEN → User-Validierung → INHALTSBASIS)
+
+---
+
 ## 2026-04-06 — Wave 3 PM-Strang COMPLETE (5 STR)
 
 **Phase:** D15b-Optimierung Phase IV Wave 3
