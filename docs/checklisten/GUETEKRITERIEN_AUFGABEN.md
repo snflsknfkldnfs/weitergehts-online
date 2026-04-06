@@ -134,6 +134,14 @@ GPG B1 unterscheidet sachbezogene Besinnung (Zusammenhaenge erkennen, Begriffe k
 
 **Backfill-Hinweis (Bestands-Mappen 1-4):** Die 24 Bestandsaufgaben werden via `docs/agents/dispatches/FEEDBACK_BACKFILL_MAPPEN_1_4.md` einmalig nachgepflegt. Review-Block im Dispatch pro Aufgabe. Vor Merge MUSS der Aufgaben-Autor (User) die 24 Feedback-Vorschlaege gegen A26 pruefen. Kein Auto-Merge ohne Review-Signatur.
 
+### 3.1c AU-2b MUSS-Kriterien (Phase IV Wave 1, 2026-04-06)
+
+| # | Kriterium | Beschreibung | Fundierung |
+|---|---|---|---|
+| A21 | **Tipp-Haertegrade strikt, kein Leak** (alle Typen, strukturell + inhaltlich) | Jede Aufgabe hat exakt 3 Tipps im Schema `{stufe: 1\|2\|3, haertegrad: "kognitiv"\|"strukturierend"\|"heuristisch", text: string}`. Pflichtregeln: (a) `haertegrad` entspricht deterministisch der Stufe: 1=kognitiv, 2=strukturierend, 3=heuristisch. (b) T1 (kognitiv) aktiviert Vorwissen, enthaelt Material-Referenz `[[mat-id\|Anzeigetext]]` (M[pos]), schliesst KEINEN Distraktor aus. (c) T2 (strukturierend) schraenkt ein, fokussiert auf relevanten Material-Abschnitt, nennt NICHT die korrekte Antwort. (d) T3 (heuristisch) liefert Loesungsstrategie + Erklaerung, darf Loesung NICHT verbatim vorwegnehmen (Anti-Leak). Ein Tipp "leaked" wenn er die korrekte Antwort woertlich oder sinngemaess enthaelt. Pruefung: strukturell durch Validator (Feldpraesenz, Enum-Werte), inhaltlich durch Q-Gate-Reviewer (Anti-Leak-Scan T3 vs. `loesung`-Feld). | D15b STR-04, Tipp-Forschung (scaffolding: Wood/Bruner/Ross 1976), Anti-Leak analog Distractor-Disclosure-Prinzip |
+
+**Infrastruktur-Primaer:** AU-2b optimiert die Generierungsinfrastruktur (Vertraege, Subagenten-Prompts, Guetekriterien). Das bestehende Game 1 dient als Testumgebung. Kein Backfill-Dispatch fuer Bestands-Tipps — das `haertegrad`-Feld ist bei Bedarf mechanisch ableitbar (stufe→haertegrad 1:1-Mapping).
+
 ### 3.2 SOLL-Kriterien (Verletzung = Optimierungshinweis)
 
 | # | Kriterium | Beschreibung | Fundierung |

@@ -120,6 +120,17 @@ Wenn die Antwort fuer mindestens ein Paar unklar ist → Elemente umformulieren 
 | 2 (Teilantwort) | Einschraenkung | 2-3 Elemente in korrekter Teilsequenz verraten: "An Position 1 steht [X], an Position 3 steht [Y]." |
 | 3 (Loesung) | Aufloesung | Vollstaendige Reihenfolge + Erklaerung der Logik |
 
+**Tipp-Schema (STR-04, AU-2b Pflicht):**
+Jeder Tipp ist ein JSON-Objekt: `{stufe: 1|2|3, haertegrad: "kognitiv"|"strukturierend"|"heuristisch", text: string}`.
+- `haertegrad` ist Pflichtfeld (deterministisch: stufe 1 = kognitiv, stufe 2 = strukturierend, stufe 3 = heuristisch).
+- `text` enthaelt den Tipp-Inhalt (1-3 Saetze, direkte Anrede "du", max 400 Zeichen).
+
+**Anti-Leak-Regel (A21):** Tipp 3 (heuristisch) darf die korrekte Antwort NICHT woertlich oder sinngemaess enthalten. Pruefung: Vergleich `tipps[2].text` gegen `loesung`-Feld — bei woertlicher Uebereinstimmung oder Paraphrase = FAIL.
+
+**REIHENFOLGE-spezifisches Anti-Leak-Beispiel:**
+- LEAK: "Die richtige Reihenfolge ist 3, 1, 4, 2." → FAIL.
+- KEIN LEAK: "Beginne mit dem fruehesten Datum und arbeite dich chronologisch vor."
+
 ### 5. Anti-Patterns
 
 | Anti-Pattern | Problem | Korrektur |
@@ -144,7 +155,7 @@ Referenz: `docs/checklisten/GUETEKRITERIEN_AUFGABEN.md`
 | **A2b Inhaltliche Verankerung (v3.4, PFLICHT)** | **Fragestamm enthaelt mind. 1 konkretes Element (Person, Ort, Gegenstand, Ereignis). Abstrakte Metabegriffe NUR mit konkretem Bezug.** FAIL: "Bringe die Ereignisse in die richtige Reihenfolge." PASS: "Bringe die Schritte vom Attentat in Sarajevo bis zum Weltkrieg in die richtige Reihenfolge." | Pruefung: `frage` auf Metabegriffe scannen → bei Fund: konkretes Element vorhanden? Wenn nein → FAIL |
 | A3 Material-Kongruenz | Alle Elemente + Ordnungsrelation im Material? | Jedes Element + jede Paar-Relation gegen Material pruefen |
 | **A4-RF Eindeutigkeit** | **Typ-spezifisch.** Ist die Reihenfolge eindeutig? | Paarweise Pruefung: Fuer jedes (i,j)-Paar klare Ordnungsrelation? |
-| A6 Tipp-Progression | Stufen eingehalten? | Stufe 1 nennt max. Startpunkt, Stufe 2 max. halbe Sequenz |
+| A6 Tipp-Progression | Stufen eingehalten? | Stufe 1 nennt max. Startpunkt, Stufe 2 max. halbe Sequenz; **Haertegrad-Enum korrekt (A21)** |
 | A7 Operator-Praezision | "Ordne", "Bringe in Reihenfolge", "Stelle dar" | Operationalisiertes Verb |
 | **MQ3 Material-Referenz-Verbot in frage (Q-M2-04)** | **Fragestamm enthaelt KEINE `[[mat-id\|...]]`-Links und KEINE (M[position])-Verweise.** Fragestellung ist rein inhaltlich formuliert. Material-Referenzen gehoeren AUSSCHLIESSLICH in Tipp Stufe 1. | Pruefung: `frage` enthaelt keinen `[[`-String und kein `(M` |
 | MQ3b Display-Referenzen in Tipps | Tipp 1 MUSS `[[mat-id\|Anzeigetext]]`-Inline-Link + (M[position]) enthalten (Material-Zuweisung). Tipp 2-3 duerfen Links enthalten. | Muster: `[[mat-1-2\|Europakarte von 1914]] (M7)` |

@@ -152,6 +152,17 @@ Wenn die Leitfrage eine wertbezogene Stellungnahme fordert:
 
 **Besonderheit Tipp 3:** Bei Freitext ist Tipp 3 eine MUSTERANTWORT, keine "die Loesung". Es gibt keine einzige korrekte Antwort. Der Tipp zeigt EINE moegliche gute Antwort und benennt, welche Elemente eine gute Antwort enthaelt.
 
+**Tipp-Schema (STR-04, AU-2b Pflicht):**
+Jeder Tipp ist ein JSON-Objekt: `{stufe: 1|2|3, haertegrad: "kognitiv"|"strukturierend"|"heuristisch", text: string}`.
+- `haertegrad` ist Pflichtfeld (deterministisch: stufe 1 = kognitiv, stufe 2 = strukturierend, stufe 3 = heuristisch).
+- `text` enthaelt den Tipp-Inhalt (1-3 Saetze, direkte Anrede "du", max 400 Zeichen).
+
+**Anti-Leak-Regel (A21):** Tipp 3 (heuristisch) darf die korrekte Antwort NICHT woertlich oder sinngemaess enthalten. Pruefung: Vergleich `tipps[2].text` gegen `loesung`-Feld — bei woertlicher Uebereinstimmung oder Paraphrase = FAIL.
+
+**FREITEXT-spezifisches Anti-Leak-Beispiel:**
+- LEAK: "Schreib: Die Buendnispolitik fuehrte zum Krieg." → FAIL.
+- KEIN LEAK: "Denke an die Kettenreaktion nach dem Attentat — welche Buendnisse wurden aktiviert?"
+
 ### 6. Anti-Patterns
 
 | Anti-Pattern | Problem | Korrektur |

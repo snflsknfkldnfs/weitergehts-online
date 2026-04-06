@@ -21,6 +21,22 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-06 — Session 13 Block 4: AU-2b PM-Strang CLOSED, Cold-Handoff
+
+**Phase:** D15b-Optimierung Phase IV Wave 1 AU-2b PM-Strang → CLOSED
+**Modus:** EXECUTE
+
+**AU-2b PM-Strang (STR-04 Tipp-Haertegrade, Infrastruktur-only):**
+- VERTRAG_PHASE_2-2b_AUFGABE.md: A6 Tipp-Schema `{stufe, haertegrad, text}` Pflichtfeld, Output-Block aktualisiert.
+- VERTRAG_ATOM_UNITS.md: AU-2b Scope aktualisiert (Infrastruktur-First, kein Backfill).
+- GUETEKRITERIEN_AUFGABEN.md: §3.1c A21 "Tipp-Haertegrade strikt, kein Leak" (Anti-Leak-Scan T3 vs. loesung).
+- 7× SUB_AUFGABE_*.md: Haertegrad-Beispielmatrix pro Typ + Anti-Leak-Regel + typ-spezifisches LEAK/KEIN-LEAK-Beispiel.
+- UEBERGABE_PHASE_IV_WAVE_1_AU_2b.md: Cold-Handoff fuer Claude-Code (normalizeTipps + Validator-Erweiterung + Cache-Bust).
+
+**Grundsatzentscheidung Infrastruktur-First:** Kein Backfill-Dispatch fuer Bestands-Tipps. Game 1 = Testumgebung. Wertschoepfung liegt in Generierungspipeline fuer Game 2+.
+
+---
+
 ## 2026-04-06 — Session 13 Block 3: AU-2a CLOSED (Code-Strang `bcb9eeb`)
 
 **Phase:** D15b-Optimierung Phase IV Wave 1 AU-2a → CLOSED

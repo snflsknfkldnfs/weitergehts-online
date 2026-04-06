@@ -128,6 +128,17 @@ Jeder Distraktor muss plausibel sein — die zentrale Qualitaetsanforderung an M
 - Tipp 2 darf die korrekte Option nicht namentlich nennen (das ist Stufe 3)
 - Tipp 3 muss ueber "Die Antwort ist X" hinausgehen — Erklaerung des Zusammenhangs
 
+**Tipp-Schema (STR-04, AU-2b Pflicht):**
+Jeder Tipp ist ein JSON-Objekt: `{stufe: 1|2|3, haertegrad: "kognitiv"|"strukturierend"|"heuristisch", text: string}`.
+- `haertegrad` ist Pflichtfeld (deterministisch: stufe 1 = kognitiv, stufe 2 = strukturierend, stufe 3 = heuristisch).
+- `text` enthaelt den Tipp-Inhalt (1-3 Saetze, direkte Anrede "du", max 400 Zeichen).
+
+**Anti-Leak-Regel (A21):** Tipp 3 (heuristisch) darf die korrekte Antwort NICHT woertlich oder sinngemaess enthalten. Pruefung: Vergleich `tipps[2].text` gegen `loesung`-Feld — bei woertlicher Uebereinstimmung oder Paraphrase = FAIL.
+
+**MC-spezifisches Anti-Leak-Beispiel:**
+- LEAK: "Die Antwort ist Option C: Deutschland, Oesterreich-Ungarn, Italien." → FAIL.
+- KEIN LEAK: "Ueberlege, welche drei Laender sich militaerisch verbunden haben — schau dir die Buendniskarte genau an."
+
 ### 5. Anti-Patterns
 
 | Anti-Pattern | Problem | Korrektur |
@@ -154,7 +165,7 @@ SUB_AUFGABE_MC prueft folgende A-Kriterien auf Subagent-Ebene:
 | **A2b Inhaltliche Verankerung (v3.4, PFLICHT)** | **Fragestamm enthaelt mind. 1 konkretes Element (Person, Ort, Gegenstand, Ereignis). Abstrakte Metabegriffe (Widerspruch, Zusammenhang, Perspektive) NUR mit konkretem Bezug.** FAIL: "Erklaere den Widerspruch zwischen Foto und Quellen." PASS: "Warum zeigt das Foto Jubel, aber die Quellen berichten von Angst?" | Pruefung: `frage` auf Metabegriffe scannen → bei Fund: konkretes Element vorhanden? Wenn nein → FAIL |
 | A3 Material-Kongruenz | Aus Ziel-Material beantwortbar? | Korrekte Option im/aus Material ableitbar? Fachbegriffe im Material eingefuehrt? |
 | **A4-MC Distractor-Qualitaet** | **Typ-exklusiv.** Plausibilitaet aller Distraktoren. | Distractor-Taxonomie: mind. 2/3 Rang 1-3. Keine absurden/sachfremden Optionen |
-| A6 Tipp-Progression | Stufe 1 ≠ Loesungsverraten, Stufe 2 = Einschraenkung, Stufe 3 = Loesung+Erklaerung | Stufenlogik pruefen |
+| A6 Tipp-Progression | Stufe 1 ≠ Loesungsverraten, Stufe 2 = Einschraenkung, Stufe 3 = Loesung+Erklaerung | Stufenlogik pruefen; **Haertegrad-Enum korrekt (A21)** |
 | A7 Operator-Praezision | Operationalisiertes Verb im Fragestamm? | Gegen Operatoren-Tabelle pruefen |
 | **MQ3 Material-Referenz-Verbot in frage (Q-M2-04)** | **Fragestamm enthaelt KEINE `[[mat-id\|...]]`-Links und KEINE (M[position])-Verweise.** Fragestellung ist rein inhaltlich formuliert. Material-Referenzen gehoeren AUSSCHLIESSLICH in Tipp Stufe 1. | Pruefung: `frage` enthaelt keinen `[[`-String und kein `(M` |
 | MQ3b Display-Referenzen in Tipps | Tipp 1 MUSS `[[mat-id\|Anzeigetext]]`-Inline-Link + (M[position]) enthalten (Material-Zuweisung). Tipp 2-3 duerfen Links enthalten. | Muster: `[[mat-1-2\|Europakarte von 1914]] (M7)` |

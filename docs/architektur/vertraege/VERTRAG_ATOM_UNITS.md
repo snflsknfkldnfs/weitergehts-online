@@ -52,11 +52,13 @@ Der ursprueng­liche Scope "STR-03 Feedback-Schema + STR-04 Aufgabentypologie" w
 - **Atomaritaet:** Schema-Pflichtfeld im Vertrag ohne Engine-`normalizeFeedback()` bricht die 24 Alt-Aufgaben. Engine-Normalize ohne data.json-Backfill laesst Aufgaben ohne Feedback laufen. Subagenten-Patches ohne Guetekriterien sind nicht durchsetzbar. Backfill-Dispatch ohne Generator-Spec im Schema-Vertrag ist orakel-basiert. Alle Teile muessen gemeinsam.
 - **Quelle:** Phase III.5d Verifikations-Gate Konvergenz-Top-6 (STR-03), F-RA4-01 P1 HIGH (Feedback-Schema Breaking Change), Session-13-Masterplan E3-Entscheidung.
 
-### AU-2b — STR-04 3-stufige Tipps (pro Aufgabentyp evaluiert)
-- **Datei-Scope:** VERTRAG_PHASE_2-2b_AUFGABE.md (Tipp-Eskalations-Sektion), SUB_AUFGABE_{MC,ZUORDNUNG,LUECKENTEXT,REIHENFOLGE,FREITEXT,VERGLEICH,BEGRUENDUNG}.md (pro Typ eigene Tipp-Eskalations-Logik + didaktisch-qualitative Beispiele), GUETEKRITERIEN_AUFGABEN.md (A27 Tipp-Eskalation), assets/js/escape-engine.js (Tipp-Renderer + Eskalations-Zustand), Content-Backfill fuer 24 Alt-Aufgaben (separater Dispatch oder Retroactive-Delta-Entscheidung).
-- **Atomaritaet:** Tipp-Renderer ohne inhaltliche Tipps in den Aufgaben = leeres UI-Element. Inhaltliche Tipps ohne Renderer = totes JSON. Pro-Typ-Evaluation ist Voraussetzung fuer sinnvolle Subagenten-Prompts und muss vor dem Dispatch abgeschlossen sein.
-- **Abhaengigkeit:** AU-2a CLOSED (Feedback-Schema liefert `ebene: "hinweis"`-Kategorie, die AU-2b referenziert).
-- **Quelle:** E2-Entscheidung des Users (pro-Typ didaktisch-qualitativ), Phase III.5d STR-04 Konvergenz 3 RAs + 2×P0.
+### AU-2b — STR-04 3-stufige Tipps mit Haertegraden (Infrastruktur-only)
+- **Datei-Scope PM-Strang (Cowork):** VERTRAG_PHASE_2-2b_AUFGABE.md (A6 Tipp-Schema `{stufe, haertegrad, text}` Pflichtfeld), SUB_AUFGABE_{MC,ZUORDNUNG,LUECKENTEXT,REIHENFOLGE,FREITEXT,VERGLEICH,BEGRUENDUNG}.md (Haertegrad-Beispielmatrix + Anti-Leak-Regel pro Typ), GUETEKRITERIEN_AUFGABEN.md (A21 Tipp-Haertegrade strikt, kein Leak).
+- **Datei-Scope Code-Strang (Claude-Code):** assets/js/escape-engine.js (`normalizeTipps()` Safety-Net analog `normalizeFeedback()`), tools/validate-feedback-schema.js (Erweiterung: Tipp-Feld-Validierung `haertegrad`-Enum + Anti-Leak-Heuristik), Cache-Bust v=4.1 → v=4.2.
+- **Kein Backfill-Dispatch:** Bestehendes Game 1 dient als Testumgebung. Das `haertegrad`-Feld ist bei Bedarf mechanisch ableitbar (stufe→haertegrad 1:1-Mapping). Infrastruktur-Primaer: Optimierung der Generierungspipeline fuer zukuenftige Games.
+- **Atomaritaet:** Vertrag-Pflichtfeld ohne Subagenten-Prompts ist nicht durchsetzbar. Prompts ohne A21-Guetekriterium sind nicht pruefbar. Engine-Safety-Net ohne Validator ist nicht verifizierbar.
+- **Abhaengigkeit:** AU-2a CLOSED (Feedback-Schema liefert `ebene`-Kategorie, die AU-2b in Tipp-Kontext referenziert).
+- **Quelle:** E2-Entscheidung des Users (pro-Typ didaktisch-qualitativ), Phase III.5d STR-04 Konvergenz 3 RAs + 2×P0. User-Grundsatzentscheidung 2026-04-06: Infrastruktur-First, kein Backfill.
 
 ### AU-2c — BEFUND-AU-1-UI-01 Vergleich-Input-Zellen-Hoehe (Notizbuch-Handschrift-Theme)
 - **Datei-Scope:** `assets/css/themes/theme-gpg.css` (primaer), `assets/css/base.css` (sekundaer, falls Layout-Ursache), optional minimaler `assets/js/escape-engine.js`-Renderer-Patch (nur bei Option-A-Loesung `textarea`-Umstellung), Cache-Bust der betroffenen HTMLs.

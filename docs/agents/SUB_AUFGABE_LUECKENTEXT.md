@@ -143,6 +143,17 @@ Lueckentext-Validierung ist case-insensitive String-Vergleich. Daher:
 
 **Tipp-2-Regel Lueckentext (v3.4):** Da der Antwortpool jetzt als sichtbares Aufgabenfeld existiert (`antwortpool`), ist Tipp 2 bei Lueckentexten eine **inhaltliche Einschraenkung**: Hinweis auf den thematischen Bereich von 1-2 Luecken, Ausschluss eines Distraktors, oder Zuordnung "die erste Luecke betrifft..." — NICHT den Pool wiederholen.
 
+**Tipp-Schema (STR-04, AU-2b Pflicht):**
+Jeder Tipp ist ein JSON-Objekt: `{stufe: 1|2|3, haertegrad: "kognitiv"|"strukturierend"|"heuristisch", text: string}`.
+- `haertegrad` ist Pflichtfeld (deterministisch: stufe 1 = kognitiv, stufe 2 = strukturierend, stufe 3 = heuristisch).
+- `text` enthaelt den Tipp-Inhalt (1-3 Saetze, direkte Anrede "du", max 400 Zeichen).
+
+**Anti-Leak-Regel (A21):** Tipp 3 (heuristisch) darf die korrekte Antwort NICHT woertlich oder sinngemaess enthalten. Pruefung: Vergleich `tipps[2].text` gegen `loesung`-Feld — bei woertlicher Uebereinstimmung oder Paraphrase = FAIL.
+
+**LUECKENTEXT-spezifisches Anti-Leak-Beispiel:**
+- LEAK: "Das fehlende Wort ist 'Imperialismus'." → FAIL.
+- KEIN LEAK: "Der Begriff beschreibt das Streben nach Kolonien und Weltmacht — lies nochmal mat-1-4."
+
 ### 6. Anti-Patterns
 
 | Anti-Pattern | Problem | Korrektur |
@@ -167,7 +178,7 @@ Referenz: `docs/checklisten/GUETEKRITERIEN_AUFGABEN.md`
 | **A2b Inhaltliche Verankerung (v3.4, PFLICHT)** | **Fragestamm enthaelt mind. 1 konkretes Element (Person, Ort, Gegenstand, Ereignis) ODER ist generischer Lueckentext-Impuls ("Ergaenze die fehlenden Begriffe"). Abstrakte Metabegriffe NUR mit konkretem Bezug.** | Pruefung: `frage` auf Metabegriffe scannen → bei Fund: konkretes Element vorhanden? Wenn nein → FAIL |
 | A3 Material-Kongruenz | Alle Lueckenwoerter im Material? Kontext aus Material ableitbar? | Jedes Lueckenwort gegen Material pruefen |
 | **A4-LT Luecken-Eindeutigkeit** | **Typ-spezifisch.** Jede Luecke hat genau 1 korrekte Antwort? | Synonym-Pruefung: Gibt es gleichwertige Alternativen? |
-| A6 Tipp-Progression | Stufen eingehalten? | Stufe 2 verrät max. 2 Lueckenwoerter |
+| A6 Tipp-Progression | Stufen eingehalten? | Stufe 2 verrät max. 2 Lueckenwoerter; **Haertegrad-Enum korrekt (A21)** |
 | A7 Operator-Praezision | "Ergaenze", "Vervollstaendige", "Setze ein" | Operationalisiertes Verb |
 | **MQ3 Material-Referenz-Verbot in frage (Q-M2-04)** | **Fragestamm enthaelt KEINE `[[mat-id\|...]]`-Links und KEINE (M[position])-Verweise.** Fragestellung ist rein inhaltlich formuliert. Material-Referenzen gehoeren AUSSCHLIESSLICH in Tipp Stufe 1. | Pruefung: `frage` enthaelt keinen `[[`-String und kein `(M` |
 | MQ3b Display-Referenzen in Tipps | Tipp 1 MUSS `[[mat-id\|Anzeigetext]]`-Inline-Link + (M[position]) enthalten (Material-Zuweisung). Tipp 2-3 duerfen Links enthalten. | Muster: `[[mat-1-2\|Europakarte von 1914]] (M7)` |

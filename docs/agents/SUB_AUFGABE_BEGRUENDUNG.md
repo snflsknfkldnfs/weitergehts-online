@@ -89,7 +89,7 @@ Konstruiert strukturierte Begruendungs-Aufgaben nach dem **CER-Schema (Claim-Evi
 | A1 AFB-Kongruenz | AFB III, Urteilsleistung |
 | A2 Fragestaemme-Klarheit | Max 14 Woerter, nicht suggestiv |
 | A3 Material-Kongruenz | Mindestens 2 belegfaehige Stellen im Material |
-| **A23 CER-Struktur vollstaendig** | `claim`, `evidence`, `reasoning` als drei Eingabefelder definiert; min 1 akzeptabler Beleg, min 1 akzeptabler Claim |
+| **A23 CER-Struktur vollstaendig** | `claim`, `evidence`, `reasoning` als drei Eingabefelder definiert; min 1 akzeptabler Beleg, min 1 akzeptabler Claim; **Haertegrad-Enum korrekt (A21)** |
 | **A24 Bloom-Selbstdeklaration** | `_meta.bloom_level: 5`, `_meta.bloom_begruendung` gesetzt |
 | MQ3 Material-Referenz-Verbot | Keine `[[mat-id]]` in `frage` |
 
@@ -125,6 +125,40 @@ Konstruiert strukturierte Begruendungs-Aufgaben nach dem **CER-Schema (Claim-Evi
     "reasoning_schluesselbegriffe": ["Druck", "Propaganda", "Konformitaet", "Ideologie"]
   }
 }
+```
+
+## Tipp-Schema (STR-04, AU-2b)
+
+**Verpflichtend seit 2026-04-06:** Alle Tipps folgen einem strukturierten JSON-Schema mit Haertegrad-Enum. Jeder Tipp ist ein Objekt mit:
+
+```json
+{
+  "stufe": 1|2|3,
+  "haertegrad": "kognitiv"|"strukturierend"|"heuristisch",
+  "text": "string"
+}
+```
+
+**Deterministische Haertegrad-Zuordnung (Fix, nicht verhandelbar):**
+- **Stufe 1 → `kognitiv`** (Material-Verweis + Struktur-Erklaerung der CER-Achse)
+- **Stufe 2 → `strukturierend`** (Ein Beleg-Beispiel + Hinweis auf fehlende Verknuepfung)
+- **Stufe 3 → `heuristisch`** (Meta-Hinweis zur CER-Strategie, kein komplettes Muster-CER)
+
+## Anti-Leak-Regel (A21)
+
+**Tipp 3 (heuristisch) darf NICHT die Loesung verraten**, weder den Claim noch die Verknuepfungs-Logik. SuS sollen selbst die Urteilsleistung (L5) vollziehen.
+
+**BEGRUENDUNG-Beispiel:**
+
+```
+LEAK (verboten):
+"Dein Claim sollte sein: Der Schlieffen-Plan scheiterte."
+
+KEIN LEAK (akzeptabel):
+"Formuliere zuerst eine klare These (Claim), dann suche in den Materialien nach Beleg (Evidence). Frag dich: Wie verknuepft der Beleg die These?"
+```
+
+Bei BEGRUENDUNG besonders kritisch: Tipp 3 darf **keinen akzeptierten Claim vorgeben**, keine **Verknuepfungs-Slogans** (z.B. "Druck → fehlende Begeisterung") und keine **Evidence-Beispiele** nennen. Nur **CER-Meta-Struktur** (erklaere zuerst, belege dann, verknuepfe zuletzt).
 ```
 
 **Feld-Constraints:**

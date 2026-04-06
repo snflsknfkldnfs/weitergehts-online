@@ -87,7 +87,7 @@ Konstruiert strukturierte Vergleichs-Aufgaben: SuS tragen entlang vordefinierter
 | A1 AFB-Kongruenz | Vergleich = AFB II-III, kein Lookup |
 | A2 Fragestaemme-Klarheit | Max 12 Woerter, Operator eindeutig |
 | A3 Material-Kongruenz | Alle Zell-Loesungen im Material belegbar |
-| **A22 Vergleichs-Strukturraster vollstaendig** | min 2 Objekte, min 2 Dimensionen, keine leeren Zellen, keine redundanten Dimensionen |
+| **A22 Vergleichs-Strukturraster vollstaendig** | min 2 Objekte, min 2 Dimensionen, keine leeren Zellen, keine redundanten Dimensionen; **Haertegrad-Enum korrekt (A21)** |
 | **A24 Bloom-Selbstdeklaration** | `_meta.bloom_level: 4`, `_meta.bloom_begruendung` gesetzt |
 | MQ3 Material-Referenz-Verbot | Keine `[[mat-id]]` in `frage` |
 
@@ -131,6 +131,40 @@ Konstruiert strukturierte Vergleichs-Aufgaben: SuS tragen entlang vordefinierter
     }
   }
 }
+```
+
+## Tipp-Schema (STR-04, AU-2b)
+
+**Verpflichtend seit 2026-04-06:** Alle Tipps folgen einem strukturierten JSON-Schema mit Haertegrad-Enum. Jeder Tipp ist ein Objekt mit:
+
+```json
+{
+  "stufe": 1|2|3,
+  "haertegrad": "kognitiv"|"strukturierend"|"heuristisch",
+  "text": "string"
+}
+```
+
+**Deterministische Haertegrad-Zuordnung (Fix, nicht verhandelbar):**
+- **Stufe 1 → `kognitiv`** (Nachdenken aktivieren, ohne Vorstufen-Loesung)
+- **Stufe 2 → `strukturierend`** (Spezifische Hilfestellung oder Teilbeleg)
+- **Stufe 3 → `heuristisch`** (Meta-Hinweis zur Vergleichs-Strategie, ohne Muster-Antwort)
+
+## Anti-Leak-Regel (A21)
+
+**Tipp 3 (heuristisch) darf NICHT die Loesung verraten**, weder wortwortlich noch paraphrasiert. Sinn: SuS sollen selbst an die Vergleichslogik gelangen, nicht die Antwort abschreiben.
+
+**VERGLEICH-Beispiel:**
+
+```
+LEAK (verboten):
+"Schreib bei Dimension 'Ziel': Deutschland=Weltmacht, Frankreich=Revanche."
+
+KEIN LEAK (akzeptabel):
+"Vergleiche die Kriegsziele — was wollte jede Seite erreichen? Nutze mat-3-2."
+```
+
+Bei VERGLEICH besonders kritisch: Tipp 3 darf **keine Zell-Eintraege** (weder komplett noch partiell) wiedergeben, nur **Meta-Hinweise** zu Dimensionen und Materialfundstellen geben.
 ```
 
 **Feld-Constraints:**

@@ -98,7 +98,7 @@ Die Policy gilt pro Mappe (nicht pro Aufgabe). Verletzungen sind Q-Gate-FAIL auf
 - A2 Fragestaemme-Klarheit (genau 1 Anforderung)
 - A3 Material-Kongruenz (aus Ziel-Material beantwortbar)
 - A4-MC Distraktoren / A4-ZU Trennschaerfe / A4-LT Luecken-Eindeutigkeit / A4-RF Reihenfolge-Eindeutigkeit
-- A6 Tipp-Progression: Richtung → Einschraenkung → Loesung+Erklaerung
+- **A6 Tipp-Progression + Haertegrade (STR-04, AU-2b):** Jede Aufgabe hat exakt 3 Tipps. Schema: `{stufe: 1|2|3, haertegrad: "kognitiv"|"strukturierend"|"heuristisch", text: string}`. Stufe 1 (kognitiv-aktivierend): Vorwissen aktivieren, Material-Referenz per `[[mat-id|Anzeigetext]]` (M[pos]). Stufe 2 (strukturierend): Einschraenken, Ausschluss, Fokussierung auf relevanten Abschnitt. Stufe 3 (heuristisch): Loesungsstrategie + Erklaerung, ABER Loesung NICHT vorwegnehmen (Anti-Leak). `haertegrad` ist Pflichtfeld seit AU-2b.
 - A7 Operator-Praezision (AFB-Taxonomie)
 - A11-FT Freitext-Qualitaet (nur SUB_AUFGABE_FREITEXT)
 - **A19 Bloom-Verteilung erfuellt Policy** (Mappen-Ebene, STR-02): max 40 % L1-L2, min 30 % L3-L4, min 20 % L5-L6.
@@ -114,7 +114,9 @@ Die Policy gilt pro Mappe (nicht pro Aufgabe). Verletzungen sind Q-Gate-FAIL auf
 
 ```
 aufgaben/aufgabe-N-M.json   # id, typ, frage/text_mit_luecken, loesung,
-                              # material_referenz, tipp[], afb, position,
+                              # material_referenz,
+                              # tipps: [{stufe, haertegrad, text}, ...],
+                              # afb, position,
                               # feedback: {typ,text,ebene} | [{typ,text,ebene}, ...],
                               # _meta: { bloom_level, bloom_begruendung }
 ```
