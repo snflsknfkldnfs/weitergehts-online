@@ -4,6 +4,22 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-06 — AU-3 Code-Strang: STR-08 Quellenkritik Engine-Integration
+
+**Phase:** D15b-Optimierung Phase IV Wave 2 AU-3 Code-Strang
+**Modus:** EXECUTE
+**ATOM-UNIT:** AU-3 (VERTRAG_ATOM_UNITS.md §3 AU-3)
+
+**Code-Aenderungen:**
+- AufgabentypRegistry: neuer Typ "quellenkritik" registriert
+- _renderQuellenkritik: Material-Referenz + W-Fragen-Textareas + Pruefen-Button
+- _checkQuellenkritik: Keyword-Matching pro W-Frage, >= 50% Schwelle
+- theme-gpg.css: BEM-Klassen .quellenkritik__* (Notizbuch-Theme, AU-2c-Lessons)
+- Cache-Bust v=4.3 → v=4.4 (6 HTML-Dateien)
+- Infrastruktur-Only: keine Quellenkritik-Aufgaben in Game 1 (Game 2+)
+
+---
+
 ## 2026-04-06 — AU-3 PM-Strang COMPLETE: STR-08 Quellenkritik + STR-11 Teil 2
 
 **ATOM-UNIT:** AU-3 (PM-Strang, Code-Strang via Cold-Handoff)

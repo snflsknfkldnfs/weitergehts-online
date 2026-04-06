@@ -154,6 +154,8 @@ var EscapeEngine = (function () {
     // STR-11 Wave 1 AU-1: Vergleich (L4) + Begruendung (L5)
     AufgabentypRegistry['vergleich']       = _renderVergleich;
     AufgabentypRegistry['begruendung']     = _renderBegruendung;
+    // STR-08 Wave 2 AU-3: Quellenkritik
+    AufgabentypRegistry['quellenkritik']   = _renderQuellenkritik;
   }
 
   // ========================================================================
@@ -3276,6 +3278,157 @@ var EscapeEngine = (function () {
       if (!evidenceOk)  fehlend.push('Beleg');
       if (!reasoningOk) fehlend.push('Verknüpfung');
       Core.feedback.showError(section, 'Noch nicht vollständig: ' + fehlend.join(', ') + ' überarbeiten. ❌');
+      _saveFehlversuch(_state.mappeId);
+    }
+
+    _updateFortschritt(_getMappe(_state.mappeId), loadProgress(_state.mappeId));
+  }
+
+  // ========================================================================
+  // STR-08 (Wave 2 AU-3): Quellenkritik — W-Fragen zu einer Quelle
+  // ========================================================================
+
+  /**
+   * Rendert eine Quellenkritik-Aufgabe: Material-Referenz + W-Fragen-Textareas.
+   * Schema: aufgabe.w_fragen = [{schluessel, frage}, ...],
+   *         aufgabe.loesung = {schluessel: "Musterantwort", ...},
+   *         aufgabe.material_referenz = "mat-N-M"
+   * @private
+   */
+  function _renderQuellenkritik(container, aufgabe, index, geloest) {
+    var state = geloest ? _loadAntwortState(_state.mappeId, index) : null;
+    var saved = (state && state.antworten) || {};
+
+    // Material-Referenz
+    if (aufgabe.material_referenz) {
+      var refP = document.createElement('p');
+      refP.className = 'quellenkritik__material-ref';
+      refP.textContent = 'Lies das Material ' + aufgabe.material_referenz + ' und beantworte die folgenden Fragen:';
+      container.appendChild(refP);
+    }
+
+    var wFragen = aufgabe.w_fragen || [];
+    var textareas = {};
+
+    for (var i = 0; i < wFragen.length; i++) {
+      var wf = wFragen[i];
+      var wrap = document.createElement('div');
+      wrap.className = 'quellenkritik__frage-block';
+
+      var lab = document.createElement('label');
+      lab.className = 'quellenkritik__frage';
+      var taId = aufgabe.id + '-qk-' + wf.schluessel;
+      lab.setAttribute('for', taId);
+      lab.textContent = (i + 1) + '. ' + wf.frage;
+      wrap.appendChild(lab);
+
+      var ta = document.createElement('textarea');
+      ta.className = 'quellenkritik__antwort';
+      ta.id = taId;
+      ta.rows = 2;
+      ta.disabled = geloest;
+      ta.setAttribute('data-schluessel', wf.schluessel);
+      ta.setAttribute('aria-label', wf.frage + ' (Aufgabe ' + (index + 1) + ')');
+      if (saved[wf.schluessel]) ta.value = saved[wf.schluessel];
+      wrap.appendChild(ta);
+
+      container.appendChild(wrap);
+      textareas[wf.schluessel] = ta;
+    }
+
+    if (!geloest) {
+      var btn = document.createElement('button');
+      btn.className = 'aufgabe__submit';
+      btn.type = 'button';
+      btn.textContent = 'Antwort prüfen';
+      btn.setAttribute('aria-label', 'Quellenkritik für Aufgabe ' + (index + 1) + ' prüfen');
+      btn.addEventListener('click', function () {
+        _checkQuellenkritik(container.parentElement, aufgabe, index, textareas);
+      });
+      container.appendChild(btn);
+    }
+  }
+
+  /**
+   * Prueft Quellenkritik-Antworten: Keyword-Matching pro W-Frage.
+   * PASS wenn >= 50% der W-Fragen korrekt.
+   * @private
+   */
+  function _checkQuellenkritik(section, aufgabe, index, textareas) {
+    var wFragen = aufgabe.w_fragen || [];
+    var loesung = aufgabe.loesung || {};
+
+    // Pruefen ob alle Felder ausgefuellt
+    var alleAusgefuellt = true;
+    for (var k in textareas) {
+      if (!(textareas[k].value || '').trim()) { alleAusgefuellt = false; break; }
+    }
+    if (!alleAusgefuellt) {
+      Core.feedback.showInfo(section, 'Bitte beantworte alle Fragen.');
+      return;
+    }
+
+    var korrekt = 0;
+    var gesamt = wFragen.length;
+    var details = [];
+    var antworten = {};
+
+    for (var i = 0; i < wFragen.length; i++) {
+      var wf = wFragen[i];
+      var ta = textareas[wf.schluessel];
+      var eingabe = (ta.value || '').trim();
+      antworten[wf.schluessel] = eingabe;
+      var muster = String(loesung[wf.schluessel] || '');
+
+      // Extrahiere Schluesselwoerter aus Musterantwort (Woerter >= 4 Zeichen)
+      var keywords = muster.toLowerCase().split(/[\s,;.!?()]+/).filter(function(w) {
+        return w.length >= 4;
+      });
+      // Mindestens 2 Keywords, max aus verfuegbaren
+      if (keywords.length < 2) {
+        keywords = muster.toLowerCase().split(/[\s,;.!?()]+/).filter(function(w) {
+          return w.length >= 2;
+        });
+      }
+
+      var eingabeNorm = _normalizeUmlaute(eingabe.toLowerCase());
+      var treffer = 0;
+      for (var j = 0; j < keywords.length; j++) {
+        var kw = _normalizeUmlaute(keywords[j]);
+        if (kw && eingabeNorm.indexOf(kw) !== -1) treffer++;
+      }
+
+      var schwelle = Math.ceil(keywords.length * 0.5);
+      var istKorrekt = keywords.length > 0 ? treffer >= schwelle : eingabe.length >= 10;
+
+      if (istKorrekt) {
+        korrekt++;
+        ta.style.borderColor = '#5f7a3d';
+        ta.style.backgroundColor = '#f0f7e6';
+      } else {
+        ta.style.borderColor = '#a33';
+        ta.style.backgroundColor = '#fef0f0';
+        // Musterantwort anzeigen
+        var hint = ta.parentElement.querySelector('.quellenkritik__muster');
+        if (!hint) {
+          hint = document.createElement('p');
+          hint.className = 'quellenkritik__muster';
+          ta.parentElement.appendChild(hint);
+        }
+        hint.textContent = 'Musterantwort: ' + muster;
+      }
+    }
+
+    var bestanden = korrekt >= Math.ceil(gesamt * 0.5);
+
+    if (bestanden) {
+      Core.feedback.showSuccess(section, 'Quellenkritik bestanden: ' + korrekt + '/' + gesamt + ' Fragen korrekt. ✅');
+      saveProgress(_state.mappeId, index, true);
+      _saveAntwortState(_state.mappeId, index, { antworten: antworten });
+      section.classList.add('aufgabe--solved');
+      for (var key in textareas) { textareas[key].disabled = true; }
+    } else {
+      Core.feedback.showError(section, korrekt + '/' + gesamt + ' Fragen korrekt — überarbeite die markierten Antworten. ❌');
       _saveFehlversuch(_state.mappeId);
     }
 
