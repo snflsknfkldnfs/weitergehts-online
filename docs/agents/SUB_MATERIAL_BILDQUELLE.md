@@ -191,6 +191,14 @@ Bei CC-BY-NC: **Nicht verwenden** — Unterrichtsmaterial auf oeffentlicher Webs
 
 Die Engine rendert `bildquelle` als: `<img>` + `<figcaption>` (Bildunterschrift) + Quellenangabe.
 
+### Trigger-Metadaten (STR-12)
+
+**Pflicht bei JEDEM Material.** Pruefe, ob das Material Triggerpotenzial hat (Gewalt, Krieg, Tod, Diskriminierung, Trauma). Falls ja: `trigger_flags` in `_meta` setzen.
+
+**Erlaubte Flags:** `gewalt`, `tod`, `krieg`, `diskriminierung`, `trauma`, `sexualisierte_gewalt`
+**Sichtbarkeit:** Ausschliesslich Lehrkraft-Metadaten. NIE SuS-sichtbar. Engine unterdrueckt diese Flags im Rendering.
+**Over-Flagging vermeiden:** Nur flaggen, wenn das Material explizit belastende Inhalte darstellt. Bildquellen mit Gewaltdarstellungen (Schlachtszenen, Propaganda) IMMER flaggen.
+
 ## Output
 
 **Schema-Referenz:** `docs/architektur/schemata/material-output-schema.json`
@@ -213,7 +221,8 @@ Die Engine rendert `bildquelle` als: `<img>` + `<figcaption>` (Bildunterschrift)
     "erschliessungsimpuls": "[Frage fuer AGENT_RAETSEL]",
     "tafelbild_knoten_abgedeckt": ["k1-2"],
     "lizenz_kompatibel": true,
-    "erarbeitbarkeits_check": "PASS | FAIL + Begruendung"
+    "erarbeitbarkeits_check": "PASS | FAIL + Begruendung",
+    "trigger_flags": []
   }
 }
 ```

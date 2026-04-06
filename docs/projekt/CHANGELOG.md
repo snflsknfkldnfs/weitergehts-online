@@ -4,6 +4,41 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-06 — Wave 3 PM-Strang COMPLETE (5 STR)
+
+**Phase:** D15b-Optimierung Phase IV Wave 3
+**Modus:** EXECUTE
+**Session:** 13 (Fortsetzung)
+
+**STR-06 Zeit-Orientierung:**
+- VERTRAG_PHASE_2-0_RAHMEN.md: §Zeit-Orientierung (weiche Leitplanke 1 Mappe ≈ 1 UE, Konsequenzen fuer Phase 2.1/2.2)
+- GUETEKRITERIEN_SKRIPT.md: SK17 Umfangs-Plausibilitaet (KANN-Kriterium)
+
+**STR-14-NEU Fiktionalitaets-Kennzeichnung:**
+- SUB_MATERIAL_TAGEBUCH.md: §4a Fiktionalitaets-Feld mit Abweichungs-Mustern (3 Muster)
+- SUB_MATERIAL_QUELLENTEXT.md: §4a Aufbereitungs-Muster (4 Muster, nur bei aufbereitung != original)
+- QUALITAETSKRITERIEN_MATERIALPRODUKTION.md: M14 mit Ton-Leitplanke + Negativ-Beispielen
+
+**STR-15 R3-Schutzregeln:**
+- 6 Gueteregel-Kataloge: Identischer Schutzregeln-Block (R3-S1 bis R3-S4) mit Regressions-Check-Pflicht
+
+**STR-12 Trigger-System:**
+- 7× SUB_MATERIAL_*.md: Trigger-Metadaten-Block + trigger_flags in _meta JSON
+- QUALITAETSKRITERIEN_MATERIALPRODUKTION.md: M15 Trigger-Pruefung
+- POLICY_TRIGGER_SICHTBARKEIT.md: §4.5 Verbindung trigger_flags → lehrkraft_meta
+
+**STR-13 Mappenabschluss-Zone:**
+- VERTRAG_PHASE_2-0_RAHMEN.md: 5. Output-Datei mappenabschluss_zone.json, §Mappenabschluss-Zone (Struktur + Varianten)
+- GUETEKRITERIEN_HEFTEINTRAG_ENTWURF.md + PRODUKT.md: Abgrenzungsnotiz (HE = Wissenssicherung, Reflexion in Zone)
+- NEU: SUB_TEMPLATE_MAPPENABSCHLUSS.md (Reflexionsfragen-Bank, Q-Gate MZ1-MZ5)
+- NEU: UEBERGABE_PHASE_IV_WAVE_3_STR_12_13.md (Cold-Handoff fuer Code-Strang)
+
+**Dateien modifiziert:** 18 (7 SUB_MATERIAL, 6 Kataloge, 2 HE-Kataloge, 1 Rahmen-Vertrag, 1 Policy, 1 Skript-Katalog)
+**Dateien neu:** 2 (SUB_TEMPLATE_MAPPENABSCHLUSS.md, UEBERGABE_PHASE_IV_WAVE_3_STR_12_13.md)
+**M-Katalog:** M1-M13 → M1-M15 (M14 Fiktionalitaet, M15 Trigger)
+
+---
+
 ## 2026-04-06 — Checkpoint-2 Infrastruktur-Audit COMPLETE
 
 **Phase:** D15b-Optimierung Phase IV Checkpoint-2

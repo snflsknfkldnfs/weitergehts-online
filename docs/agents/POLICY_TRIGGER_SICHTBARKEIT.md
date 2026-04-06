@@ -85,6 +85,14 @@ if grep -rE 'trigger_warnung|lehrkraft_meta' escape-games/*/mappe-*.html; then
 fi
 ```
 
+### 4.5 Verbindung zu _meta.trigger_flags (STR-12, Wave 3)
+
+Ab Wave 3 setzen alle SUB_MATERIAL_*-Agenten ein `_meta.trigger_flags`-Array (erlaubte Werte: `gewalt`, `tod`, `krieg`, `diskriminierung`, `trauma`, `sexualisierte_gewalt`). Dies ist die **Produktions-Zeit-Markierung**. Die flags sind leichtgewichtig und automatisiert.
+
+Im Assembly-Schritt werden `_meta.trigger_flags` in `lehrkraft_meta.trigger_warnung` angereichert (Schweregrad, Hinweis, Alternative). Die Schueler-Assembly loescht sowohl `lehrkraft_meta` als auch `_meta` vollstaendig — beide Ebenen sind somit durch den bestehenden §4.2 Assembly-Split abgesichert.
+
+M-Katalog-Referenz: M15 (QUALITAETSKRITERIEN_MATERIALPRODUKTION.md).
+
 ## 5. Geltungsbereich
 
 Ab Commit des Phase-IV-Wave-0-Bundles. Bestehende Mappen (Mappe 1-4 Erster Weltkrieg) enthalten derzeit keine Trigger-Warnungen — die Policy ist **vorwaerts wirksam** ab dem Moment, wo das erste STR-12-Trigger-Feld in einer Produktions-JSON auftaucht. Bis dahin ist der Validator-Schritt ein Safety-Net.

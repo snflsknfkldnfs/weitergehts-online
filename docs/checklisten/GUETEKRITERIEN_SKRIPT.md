@@ -120,6 +120,8 @@ GPG B1 praezisiert: Vergegenwärtigung schafft **Kenntnisse** (Vordergrund), Bes
 | SK14 | **Zeitkolorit/Lokalisierung** | Zeittypische Details (Kleidung, Technik, Alltagsleben, Ortsbilder) schaffen atmosphaerische Dichte. Mindestens 1 Detailpassage pro Chunk | Roth "Lokalisierung"/"Zeittiefe", GPG B1 "Kostuemiere"/"Lokalisiere" |
 | SK15 | **Kontroversitaet** | Wo historisch umstritten: unterschiedliche Deutungen altersangemessen benennen, statt zu glaetten | GPG GB Fachprinzip |
 
+| SK17 | **Umfangs-Plausibilitaet** (STR-06) | Skript-Umfang ist auf ca. 1 UE (45 Min) Bearbeitungszeit der resultierenden Mappe dimensioniert. Prueffrage: Erzeugt dieses Skript voraussichtlich 3-5 Materialien mit max. 700-900 Woerter Gesamtumfang? Kein BLOCKER — bei Ueberschreitung WARN und Hinweis an Material-Vertrag | STR-06 (D15B K09), VERTRAG_PHASE_2-0_RAHMEN §Zeit-Orientierung |
+
 ---
 
 ## 4. Verhaeltnis zu bestehenden Q1-Q13
@@ -242,3 +244,18 @@ Chunk N:
 | Pruefzeitpunkt | Phase 0.3 (Skript-Erstellung) | Phase 0.3 (Skript-Erstellung) | Phase 1.9 (Material-Sequenzierung) |
 | Agent | AGENT_SKRIPT | AGENT_SKRIPT | AGENT_MATERIAL |
 | Prefix | SK- | Q- | S- |
+
+---
+
+## Schutzregeln (STR-15, Do-not-break)
+
+Die folgenden 4 Qualitaeten wurden in der R3-Evaluation als zentrale Staerken identifiziert. Sie duerfen durch keinen Patch, keine Optimierung und kein Re-Audit verschlechtert werden.
+
+| # | Schutzregel | Beschreibung | Pruefregel |
+|---|---|---|---|
+| R3-S1 | Niedrigschwelliger Einstieg | Jede Mappe beginnt mit einem Einstieg, der ohne Vorwissen der aktuellen Mappe zugaenglich ist. SuS werden abgeholt, nicht ueberfordert. | Kein Patch darf den Einstieg einer Mappe fachsprachlich oder kognitiv anspruchsvoller machen als den Ist-Stand. |
+| R3-S2 | Starke Identifikationsfiguren | Personalisierung (Tagebuch-Figuren, Ich-Erzaehler, benannte Akteure) macht Geschichte greifbar. Diese Figuren sind ein didaktisches Kernmerkmal. | Kein Patch darf Identifikationsfiguren entfernen oder zu abstrakten Darstellungen degradieren. |
+| R3-S3 | Visuelle Klarheit | Schaubilder, Karten, Bildquellen sind klar strukturiert, nicht ueberladen, und fuer R7-SuS auf den ersten Blick erfassbar. | Kein Patch darf die visuelle Komplexitaet erhoehen, ohne dass ein kompensierender Scaffolding-Mechanismus eingefuehrt wird. |
+| R3-S4 | Emotionale Ansprache | Materialien wecken Interesse und Empathie durch konkrete, lebensnahe Darstellungen. Sachlichkeit und emotionale Zugaenglichkeit sind kein Widerspruch. | Kein Patch darf emotionale Zugaenglichkeit zugunsten rein analytischer Darstellung opfern. |
+
+**Regressions-Check (Audit-Pflicht):** Bei jedem Re-Audit und jeder Patch-Runde: Explizit pruefen, ob R3-S1 bis R3-S4 unverletzt sind. Finding-Kategorie bei Verletzung: CRITICAL.

@@ -129,6 +129,14 @@ Eigene Zusammenstellung auf Basis der Sachanalyse. Quellen: [Wikipedia-Artikel 1
 
 Alle Texte in `text`-Feldern muessen JSON-kompatibel sein. **VERBOTEN:** `„"` (deutsche Anfuehrungszeichen), Zeilenumbrueche, Tabs. Nur ASCII-Anfuehrungszeichen oder HTML-Entities.
 
+### Trigger-Metadaten (STR-12)
+
+**Pflicht bei JEDEM Material.** Pruefe, ob das Material Triggerpotenzial hat (Gewalt, Krieg, Tod, Diskriminierung, Trauma). Falls ja: `trigger_flags` in `_meta` setzen.
+
+**Erlaubte Flags:** `gewalt`, `tod`, `krieg`, `diskriminierung`, `trauma`, `sexualisierte_gewalt`
+**Sichtbarkeit:** Ausschliesslich Lehrkraft-Metadaten. NIE SuS-sichtbar. Engine unterdrueckt diese Flags im Rendering.
+**Over-Flagging vermeiden:** Nur flaggen, wenn das Material explizit belastende Inhalte darstellt. Allgemeine Kriegsthematik ohne explizite Gewaltdarstellung ist KEIN Trigger.
+
 ## Output
 
 **Schema-Referenz:** `docs/architektur/schemata/material-output-schema.json`
@@ -148,7 +156,8 @@ Alle Texte in `text`-Feldern muessen JSON-kompatibel sein. **VERBOTEN:** `„"` 
     "zeitspanne": "1879–1894",
     "tempo_hinweis": "[Einschaetzung der Geschwindigkeit des Prozesses]",
     "tafelbild_knoten_abgedeckt": ["k1-3", "k1-4"],
-    "erarbeitbarkeits_check": "PASS | FAIL + Begruendung"
+    "erarbeitbarkeits_check": "PASS | FAIL + Begruendung",
+    "trigger_flags": []
   }
 }
 ```

@@ -20,6 +20,8 @@ Keine Redundanz: Stufe-2 Re-Evaluation bleibt in GUETEKRITERIEN_HEFTEINTRAG_ENTW
 
 Der Hefteintrag ist das bleibende Artefakt einer Unterrichtsstunde. Beim Lernen fuer eine Probe rekapituliert der SuS anhand des Hefteintrags mental den Erarbeitungsweg. Ein guter Hefteintrag macht das moeglich, ohne dass der SuS die Materialien erneut lesen muss. Er ist kein Zusammenfassungstext, sondern ein **strukturiertes Denkprotokoll** — die sichtbare Ordnung dessen, was SuS durch Materialarbeit entdeckt haben.
 
+**Abgrenzung Reflexion (STR-13):** Der produzierte Hefteintrag (hefteintrag.json) ist **reine Wissenssicherung**. Reflexionsfragen und Ueberleitungen leben in der eigenstaendigen Mappenabschluss-Zone (mappenabschluss_zone.json). KEIN HE-Kriterium darf Reflexionselemente im Hefteintrag fordern oder bewerten.
+
 ### 2.1 Empirischer Befund: Schaubild-Charakter (v2)
 
 Analyse von 8 gerenderten Praxis-Tafelbildern (Sequenz Erster Weltkrieg, GPG7) + 4 Unterrichtsentwuerfen ergibt: Reale Hefteintraege sind **Schaubild-Kopien** mit gezielter Elaborierung. Nicht Fliesstext, nicht reine Nominalphrasen, sondern ein Zwischenformat:
@@ -140,3 +142,18 @@ Reihenfolge innerhalb Phase 2.1c Achse 6: Zuerst Stufe-2 Re-Evaluation (G3/G5/G1
 ## 6. Nutzungshinweis
 
 Phase 2.1c Achse 6 liest dieses Dokument NICHT als Runtime-Lektuere (Vertrag bleibt schlank). Die Kriterien HE1-HE13 sind als Prueflogik im Vertrag selbst operationalisiert. Dieses Dokument dient als kanonische Referenz bei Audits, Qualitaetsbefunden und Skill-Orientierung.
+
+---
+
+## Schutzregeln (STR-15, Do-not-break)
+
+Die folgenden 4 Qualitaeten wurden in der R3-Evaluation als zentrale Staerken identifiziert. Sie duerfen durch keinen Patch, keine Optimierung und kein Re-Audit verschlechtert werden.
+
+| # | Schutzregel | Beschreibung | Pruefregel |
+|---|---|---|---|
+| R3-S1 | Niedrigschwelliger Einstieg | Jede Mappe beginnt mit einem Einstieg, der ohne Vorwissen der aktuellen Mappe zugaenglich ist. SuS werden abgeholt, nicht ueberfordert. | Kein Patch darf den Einstieg einer Mappe fachsprachlich oder kognitiv anspruchsvoller machen als den Ist-Stand. |
+| R3-S2 | Starke Identifikationsfiguren | Personalisierung (Tagebuch-Figuren, Ich-Erzaehler, benannte Akteure) macht Geschichte greifbar. Diese Figuren sind ein didaktisches Kernmerkmal. | Kein Patch darf Identifikationsfiguren entfernen oder zu abstrakten Darstellungen degradieren. |
+| R3-S3 | Visuelle Klarheit | Schaubilder, Karten, Bildquellen sind klar strukturiert, nicht ueberladen, und fuer R7-SuS auf den ersten Blick erfassbar. | Kein Patch darf die visuelle Komplexitaet erhoehen, ohne dass ein kompensierender Scaffolding-Mechanismus eingefuehrt wird. |
+| R3-S4 | Emotionale Ansprache | Materialien wecken Interesse und Empathie durch konkrete, lebensnahe Darstellungen. Sachlichkeit und emotionale Zugaenglichkeit sind kein Widerspruch. | Kein Patch darf emotionale Zugaenglichkeit zugunsten rein analytischer Darstellung opfern. |
+
+**Regressions-Check (Audit-Pflicht):** Bei jedem Re-Audit und jeder Patch-Runde: Explizit pruefen, ob R3-S1 bis R3-S4 unverletzt sind. Finding-Kategorie bei Verletzung: CRITICAL.

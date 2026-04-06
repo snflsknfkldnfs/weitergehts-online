@@ -155,6 +155,25 @@ Pflicht bei jedem Quellentext. Format:
 
 **Quellenangabe-Hygiene (Q-M2-08):** Die `quellenangabe` und `<cite>`-Texte duerfen KEINE internen Artefakt-Namen enthalten. Verboten: INHALTSBASIS, SKRIPT, TAFELBILD, MATERIAL_GERUEST, PROGRESSIONSPLAN, SUB_MATERIAL_*, AGENT_*. SuS sehen diese Texte — sie muessen fuer Lernende verstaendlich sein.
 
+### 4a. Fiktionalitaets-Kennzeichnung (STR-14-NEU, M14)
+
+**Pflicht bei JEDEM Quellentext, der nicht woertlich original ist.** Wenn der Text gekuerzt, sprachlich vereinfacht, paraphrasiert oder aus mehreren Quellen zusammengesetzt wurde, muss die Quellenangabe das **explizit** benennen.
+
+| Aufbereitungs-Muster | Fussnoten-Erweiterung |
+|---|---|
+| Gekuerzt | "Gekuerzt. Auslassungen mit [...] gekennzeichnet." |
+| Sprachlich vereinfacht | "Sprachlich vereinfacht fuer Jahrgang 7." |
+| Gekuerzt + vereinfacht | "Gekuerzt und sprachlich vereinfacht." |
+| Zusammengesetzt | "Zusammengesetzt aus mehreren Abschnitten von [Quelle]." |
+
+**Wo:** Aufbereitungs-Muster wird als **letzter Satz** der Fussnote angefuegt (nach Sprecher/Anlass/Datum/Fundort).
+
+**Nur bei `_meta.aufbereitung != "original"`:** Originalzitate ohne Kuerzung brauchen KEINE Fiktionalitaets-Kennzeichnung.
+
+**Ton:** Sachlich. "Gekuerzt" reicht — kein "Achtung, dies ist kein Originaltext".
+
+**Q-Gate-Pruefung:** Q6 (Quellenangabe) wird verschaerft: FAIL wenn `_meta.aufbereitung` nicht "original" ist UND die Fussnote kein Aufbereitungs-Muster enthaelt.
+
 ### Quellenangaben-Trennregel (v3.3)
 
 **Quellenangaben-Trennregel (v3.3):** `inhalt` enthaelt den reinen Materialtext. Quellenangaben (Autor, Titel, Jahr, Fundstelle) gehoeren ausschliesslich in das `quellenangaben`-Array. Im `inhalt`-Feld duerfen Sprecher-/Rollennamen erscheinen (z.B. "Stefan Zweig:"), aber NICHT bibliographische Angaben (z.B. "aus: Die Welt von Gestern, 1942"). Negativbeispiel: `"inhalt": "... (Stefan Zweig, Die Welt von Gestern, 1942)"` — die Klammer-Angabe gehoert in `quellenangaben`, nicht in `inhalt`.
@@ -170,6 +189,14 @@ Alle Texte im `inhalt`-Feld muessen JSON-kompatibel sein. **VERBOTEN** in JSON-S
 - Tabs → Leerzeichen
 
 Quellenangabe als `<cite>` am Ende des `inhalt`-HTML einbetten: `<cite>Quelle: [Sprecher], [Kontext]</cite>`
+
+### Trigger-Metadaten (STR-12)
+
+**Pflicht bei JEDEM Material.** Pruefe, ob das Material Triggerpotenzial hat (Gewalt, Krieg, Tod, Diskriminierung, Trauma). Falls ja: `trigger_flags` in `_meta` setzen.
+
+**Erlaubte Flags:** `gewalt`, `tod`, `krieg`, `diskriminierung`, `trauma`, `sexualisierte_gewalt`
+**Sichtbarkeit:** Ausschliesslich Lehrkraft-Metadaten. NIE SuS-sichtbar. Engine unterdrueckt diese Flags im Rendering.
+**Over-Flagging vermeiden:** Nur flaggen, wenn das Material explizit belastende Inhalte darstellt. Allgemeine Kriegsthematik ohne explizite Gewaltdarstellung ist KEIN Trigger.
 
 ## Output
 
@@ -187,7 +214,8 @@ Quellenangabe als `<cite>` am Ende des `inhalt`-HTML einbetten: `<cite>Quelle: [
     "artefakt_ref": "[zit-ID]",
     "tafelbild_knoten_abgedeckt": ["k1-3"],
     "quellenkritische_impulse": ["Impuls 1", "Impuls 2"],
-    "erarbeitbarkeits_check": "PASS | FAIL + Begruendung"
+    "erarbeitbarkeits_check": "PASS | FAIL + Begruendung",
+    "trigger_flags": []
   }
 }
 ```

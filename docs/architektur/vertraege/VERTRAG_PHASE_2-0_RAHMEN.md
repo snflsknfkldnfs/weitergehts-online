@@ -100,19 +100,55 @@
 
 ```
 rahmen/
-  hefteintrag.json   → docs/architektur/schemata/hefteintrag-schema.json
-  einstieg.json      → docs/architektur/schemata/rahmen-einstieg-schema.json
-  sicherung.json     → docs/architektur/schemata/rahmen-sicherung-schema.json
-  meta.json          # id, titel, beschreibung, freischalt_code (kein separates Schema)
+  hefteintrag.json           → docs/architektur/schemata/hefteintrag-schema.json
+  einstieg.json              → docs/architektur/schemata/rahmen-einstieg-schema.json
+  sicherung.json             → docs/architektur/schemata/rahmen-sicherung-schema.json
+  mappenabschluss_zone.json  # STR-13: Reflexion + Ueberleitung (separiert von Hefteintrag)
+  meta.json                  # id, titel, beschreibung, freischalt_code (kein separates Schema)
 ```
 
-**Validierung:** Nach Produktion aller 4 Dateien: Schema-Validierung durchfuehren BEVOR Q-Gate.
+**Validierung:** Nach Produktion aller 5 Dateien: Schema-Validierung durchfuehren BEVOR Q-Gate.
+
+### Mappenabschluss-Zone (STR-13, Wave 3)
+
+**Architektur-Prinzip:** Hefteintrag = reine Wissenssicherung. Reflexion gehoert NICHT in den Hefteintrag, sondern in die eigenstaendige Mappenabschluss-Zone, die **unterhalb** des Hefteintrags gerendert wird.
+
+**Struktur `rahmen/mappenabschluss_zone.json`:**
+```json
+{
+  "reflexion_fragen": [
+    "Weiterdenk-Frage 1 (Transfer/Bewertung/Metakognition)",
+    "Weiterdenk-Frage 2 (optional)"
+  ],
+  "ueberleitungssatz": "Satz, der zur naechsten Mappe hinleitet. Nur bei nicht-letzten Mappen.",
+  "_variante": "A | B"
+}
+```
+
+**Varianten:**
+- **Variante A (nicht-letzte Mappen):** 1-2 Reflexionsfragen + Ueberleitungssatz zur naechsten Mappe.
+- **Variante B (letzte Mappe):** 1-2 Reflexionsfragen (abschliessend, uebergreifend). Kein Ueberleitungssatz.
+
+**Befuellung:** Assembly-Schritt erzeugt die Zone aus fixem Template + minimaler KI-Unterstuetzung fuer situative Anpassung.
+
+**Konsequenz fuer sicherung.json:** Die Felder `zusammenfassung` und `ueberleitung` in sicherung.json werden durch die Mappenabschluss-Zone ersetzt. `reflexionsimpuls` in sicherung.json bleibt als **Sicherungszonen-Impuls** (kurzer Denkimpuls direkt nach dem Hefteintrag), die tiefere Reflexion lebt in mappenabschluss_zone.reflexion_fragen[].
 
 ## JSON-Encoding-Regeln (v3.3)
 
 **Umlaute:** Schreibe echte UTF-8-Umlaute (ä, ö, ü, ß). KEINE ASCII-Transliterationen (ae, oe, ue, ss).
 **Typographische Zeichen:** Gedankenstrich als `—` (NICHT `--` oder `-`). Deutsche Anfuehrungszeichen als `„..."` oder `»...«`. Apostroph als `'` (NICHT `'`).
-**Geltungsbereich:** Alle SuS-sichtbaren Textfelder in allen 4 Output-Dateien (hefteintrag.json, einstieg.json, sicherung.json, meta.json).
+**Geltungsbereich:** Alle SuS-sichtbaren Textfelder in allen 5 Output-Dateien (hefteintrag.json, einstieg.json, sicherung.json, mappenabschluss_zone.json, meta.json).
+
+## Zeit-Orientierung (STR-06, Wave 3)
+
+**Weiche Leitplanke:** 1 Mappe ≈ 1 Unterrichts-Einheit (45 Min) bearbeitbar. Dieser Wert ist Orientierungsgroesse fuer alle nachfolgenden Phasen (Material-Umfang, Aufgaben-Anzahl, Textlaenge). Kein hartes Gate — Ueberschreitung fuehrt nicht zu Q-Gate-FAIL, sondern zu einem WARN-Vermerk.
+
+**Konsequenzen fuer nachfolgende Vertraege:**
+- Phase 2.1 (Material): Gesamtumfang aller Materialien einer Mappe auf ca. 700-900 Woerter dimensionieren (ergibt mit Aufgaben ca. 30-35 Min Lesezeit + Bearbeitungszeit).
+- Phase 2.2 (Aufgaben): 5-8 Aufgaben pro Mappe als Richtwert. Mehr nur bei sehr kurzen Aufgabentypen (MC, Reihenfolge).
+- Kein Zeitbudget-Tracking pro Station/Material. Keine OTL-Schaetzung.
+
+---
 
 ## Bekannte Limitationen
 

@@ -143,6 +143,22 @@ Fiktiver Tagebucheintrag. Historisch plausibel auf Basis von: [Wikipedia-Artikel
 Figur und Erlebnisse sind erfunden, historischer Kontext ist belegt.
 ```
 
+### 4a. Fiktionalitaets-Kennzeichnung (STR-14-NEU, M14)
+
+**Pflicht bei JEDEM Tagebuch-Material.** Die Quellenangabe muss den Fiktionalitaets-Status explizit benennen — SuS duerfen fiktive/rekonstruierte Texte nie fuer Originaldokumente halten.
+
+**Fiktionalitaets-Feld in `quelle`:** Der erste Satz der `quelle` deklariert den Fiktionalitaets-Status. Der zweite Satz benennt das **Abweichungs-Muster** (wie genau weicht das Material von einem echten Dokument ab).
+
+| Abweichungs-Muster | Beispiel-Formulierung |
+|---|---|
+| Fiktive Figur, belegter Kontext | "Fiktiver Tagebucheintrag, basierend auf typischen Erfahrungsberichten [Personengruppe] [Zeitraum]." |
+| Reale Figur, rekonstruierte Worte | "Rekonstruierter Tagebucheintrag. [Person] ist historisch belegt, die Worte sind frei formuliert." |
+| Zusammengesetzt aus mehreren Quellen | "Fiktiver Tagebucheintrag, zusammengesetzt aus mehreren Zeitzeugenberichten [Zeitraum]." |
+
+**Ton:** Sachlich, nicht belehrend. Keine Meta-Reflexions-Aufforderung ("Diskutiere, ob das echt ist"). Die Kennzeichnung informiert — sie paedagogisiert nicht.
+
+**Q-Gate-Pruefung:** Q10 (Fiktions-Kennzeichnung) wird verschaerft: FAIL wenn `quelle` keinen expliziten Fiktionalitaets-Status + Abweichungs-Muster enthaelt.
+
 **Quellenangabe-Hygiene (Q-M2-08):** Die `quellenangabe` und `<cite>`-Texte duerfen KEINE internen Artefakt-Namen enthalten. Verboten: INHALTSBASIS, SKRIPT, TAFELBILD, MATERIAL_GERUEST, PROGRESSIONSPLAN, SUB_MATERIAL_*, AGENT_*. SuS sehen diese Texte — sie muessen fuer Lernende verstaendlich sein.
 
 ### Quellenangaben-Trennregel (v3.3)
@@ -161,6 +177,14 @@ Alle Texte im `inhalt`-Feld muessen JSON-kompatibel sein. **VERBOTEN** in JSON-S
 
 Fiktions-Kennzeichnung + Quellenangabe als `<cite>` am Ende: `<cite>Fiktiver Tagebucheintrag, historisch plausibel. Kontext: [Wikipedia-Artikel]</cite>`
 
+### Trigger-Metadaten (STR-12)
+
+**Pflicht bei JEDEM Material.** Pruefe, ob das Material Triggerpotenzial hat (Gewalt, Krieg, Tod, Diskriminierung, Trauma). Falls ja: `trigger_flags` in `_meta` setzen.
+
+**Erlaubte Flags:** `gewalt`, `tod`, `krieg`, `diskriminierung`, `trauma`, `sexualisierte_gewalt`
+**Sichtbarkeit:** Ausschliesslich Lehrkraft-Metadaten. NIE SuS-sichtbar. Engine unterdrueckt diese Flags im Rendering.
+**Over-Flagging vermeiden:** Nur flaggen, wenn das Material explizit belastende Inhalte darstellt. Allgemeine Kriegsthematik ohne explizite Gewaltdarstellung ist KEIN Trigger.
+
 ## Output
 
 **Schema-Referenz:** `docs/architektur/schemata/material-output-schema.json`
@@ -177,7 +201,8 @@ Fiktions-Kennzeichnung + Quellenangabe als `<cite>` am Ende: `<cite>Fiktiver Tag
     "historische_details": ["Detail 1 — belegt in INHALTSBASIS Fakt X"],
     "tafelbild_knoten_abgedeckt": ["k1-5"],
     "perspektivitaet": "[Was weiss/glaubt die Figur? Was weiss sie NICHT?]",
-    "erarbeitbarkeits_check": "PASS | FAIL + Begruendung"
+    "erarbeitbarkeits_check": "PASS | FAIL + Begruendung",
+    "trigger_flags": []
   }
 }
 ```

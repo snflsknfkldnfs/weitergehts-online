@@ -144,6 +144,14 @@ Impuls in `_meta.erschliessungsimpuls` dokumentieren — AGENT_RAETSEL kann dara
 
 ---
 
+### Trigger-Metadaten (STR-12)
+
+**Pflicht bei JEDEM Material.** Pruefe, ob das Material Triggerpotenzial hat (Gewalt, Krieg, Tod, Diskriminierung, Trauma). Falls ja: `trigger_flags` in `_meta` setzen.
+
+**Erlaubte Flags:** `gewalt`, `tod`, `krieg`, `diskriminierung`, `trauma`, `sexualisierte_gewalt`
+**Sichtbarkeit:** Ausschliesslich Lehrkraft-Metadaten. NIE SuS-sichtbar. Engine unterdrueckt diese Flags im Rendering.
+**Over-Flagging vermeiden:** Nur flaggen, wenn das Material explizit belastende Inhalte darstellt. Karten mit Schlachtverlaeufen/Bombardierungen pruefen.
+
 ## Output
 
 **Schema-Referenz:** `docs/architektur/schemata/material-output-schema.json`
@@ -164,7 +172,8 @@ Impuls in `_meta.erschliessungsimpuls` dokumentieren — AGENT_RAETSEL kann dara
     "zeitbezug": "[Epoche/Datum der Karte]",
     "tafelbild_knoten_abgedeckt": ["k1-5"],
     "lizenz_kompatibel": true,
-    "erarbeitbarkeits_check": "PASS | FAIL + Begruendung"
+    "erarbeitbarkeits_check": "PASS | FAIL + Begruendung",
+    "trigger_flags": []
   }
 }
 ```

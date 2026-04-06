@@ -19,6 +19,8 @@
 
 Das Tafelbild ist kein Zusammenfassungstext. Es ist eine **strukturierte Visualisierung der Kernerkenntnisse**, die Schueler:innen durch Materialarbeit selbst erschlossen haben. Der daraus abgeleitete Hefteintrag ist das bleibende Artefakt, an dem beim Lernen der Lernweg mental rekapituliert wird.
 
+**Abgrenzung Reflexion (STR-13):** Der Hefteintrag ist **reine Wissenssicherung**. Reflexionsfragen, Weiterdenk-Impulse und Ueberleitungen zur naechsten Mappe gehoeren NICHT in den Hefteintrag, sondern in die eigenstaendige **Mappenabschluss-Zone** (siehe VERTRAG_PHASE_2-0_RAHMEN §Mappenabschluss-Zone). Ein Hefteintrag-Entwurf, der Reflexionselemente enthaelt, muss diese auslagern.
+
 ---
 
 ## 2. Synthese-Extraktion: Warum das Tafelbild NACH dem Skript steht
@@ -449,3 +451,18 @@ Die Stufe-2 Re-Evaluation erfolgt im selben Dispatch wie Achse 6 (Hefteintrag-Re
 | SVG/HTML rendern | AGENT_TECHNIK |
 | Material produzieren | SUB_*-Subagenten |
 | Didaktischen Rahmen definieren | AGENT_DIDAKTIK |
+
+---
+
+## Schutzregeln (STR-15, Do-not-break)
+
+Die folgenden 4 Qualitaeten wurden in der R3-Evaluation als zentrale Staerken identifiziert. Sie duerfen durch keinen Patch, keine Optimierung und kein Re-Audit verschlechtert werden.
+
+| # | Schutzregel | Beschreibung | Pruefregel |
+|---|---|---|---|
+| R3-S1 | Niedrigschwelliger Einstieg | Jede Mappe beginnt mit einem Einstieg, der ohne Vorwissen der aktuellen Mappe zugaenglich ist. SuS werden abgeholt, nicht ueberfordert. | Kein Patch darf den Einstieg einer Mappe fachsprachlich oder kognitiv anspruchsvoller machen als den Ist-Stand. |
+| R3-S2 | Starke Identifikationsfiguren | Personalisierung (Tagebuch-Figuren, Ich-Erzaehler, benannte Akteure) macht Geschichte greifbar. Diese Figuren sind ein didaktisches Kernmerkmal. | Kein Patch darf Identifikationsfiguren entfernen oder zu abstrakten Darstellungen degradieren. |
+| R3-S3 | Visuelle Klarheit | Schaubilder, Karten, Bildquellen sind klar strukturiert, nicht ueberladen, und fuer R7-SuS auf den ersten Blick erfassbar. | Kein Patch darf die visuelle Komplexitaet erhoehen, ohne dass ein kompensierender Scaffolding-Mechanismus eingefuehrt wird. |
+| R3-S4 | Emotionale Ansprache | Materialien wecken Interesse und Empathie durch konkrete, lebensnahe Darstellungen. Sachlichkeit und emotionale Zugaenglichkeit sind kein Widerspruch. | Kein Patch darf emotionale Zugaenglichkeit zugunsten rein analytischer Darstellung opfern. |
+
+**Regressions-Check (Audit-Pflicht):** Bei jedem Re-Audit und jeder Patch-Runde: Explizit pruefen, ob R3-S1 bis R3-S4 unverletzt sind. Finding-Kategorie bei Verletzung: CRITICAL.

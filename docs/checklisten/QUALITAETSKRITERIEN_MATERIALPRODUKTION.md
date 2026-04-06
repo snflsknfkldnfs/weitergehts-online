@@ -21,7 +21,7 @@ Materialien in Escape-Games sind keine Illustrationen. Sie sind **didaktisch kon
 
 ---
 
-## 2. Typ-uebergreifende Prinzipien (M1–M13)
+## 2. Typ-uebergreifende Prinzipien (M1–M15)
 
 Diese Prinzipien gelten fuer ALLE Materialtypen. Jeder SUB_MATERIAL_* prueft sie als Basisschicht seines Q-Gates.
 
@@ -94,6 +94,38 @@ Innerhalb einer Mappe verschiedene Materialtypen einsetzen. Monotonie vermeiden.
 - WARN wenn: Nur 2 von 3 deklarierten Perspektiven vertreten — Finding dokumentieren, ggf. Fallback-Regelung (Darstellungstext mit expliziter Perspektiv-Benennung)
 
 **Abgrenzung zu M9:** M9 ist das allgemeine Multiperspektivitaets-Prinzip (gilt immer). M13 ist das verschaerfte, operationalisierte Gate fuer Konfliktthemen mit quantifiziertem Minimum und `_meta`-Tracking. Bei `konflikttyp: false` gilt nur M9.
+
+### M14 Fiktionalitaets-Kennzeichnung (STR-14-NEU)
+
+**Tiefenstruktur-Prinzip:** Jedes Material, das nicht woertlich original ist (fiktiv, rekonstruiert, gekuerzt, vereinfacht, zusammengesetzt), muss seinen **Fiktionalitaets-Status in der Quellenangabe explizit** benennen — inklusive des konkreten Abweichungs-Musters.
+
+**Operationalisierung:**
+- Tagebuch-Materialien: `quelle` beginnt mit Fiktionalitaets-Deklaration + Abweichungs-Muster (siehe SUB_MATERIAL_TAGEBUCH §4a)
+- Quellentexte mit `_meta.aufbereitung != "original"`: Fussnote enthaelt Aufbereitungs-Muster als letzten Satz (siehe SUB_MATERIAL_QUELLENTEXT §4a)
+- Darstellungstexte: Nicht betroffen (keine Quellenangabe im klassischen Sinn)
+- Bildquellen mit Bearbeitung (Ausschnitt, Kolorierung): Analoges Prinzip — Bearbeitungs-Hinweis in Quellenangabe
+
+**FAIL wenn:** Material ist nachweislich nicht-original UND Quellenangabe enthaelt keinen Fiktionalitaets-Status.
+**Formulierungsbeispiele (Ton-Leitplanke):**
+- GUT: "Fiktiver Tagebucheintrag, basierend auf typischen Erfahrungsberichten junger Soldaten 1914."
+- GUT: "Gekuerzt und sprachlich vereinfacht fuer Jahrgang 7."
+- SCHLECHT: "ACHTUNG: Dies ist kein echtes Dokument! Bitte beachte, dass..."
+- SCHLECHT: "Diskutiere mit deinem Partner, ob dieser Text echt sein koennte."
+
+**Abgrenzung:** M14 regelt die **Kennzeichnung** in der Quellenangabe. Es erzeugt KEINE zusaetzliche Meta-Reflexions-Aufgabe (kein Aufgaben-Overhead). Die Kennzeichnung informiert — sie paedagogisiert nicht.
+
+### M15 Trigger-Pruefung (STR-12)
+
+**Pflicht bei JEDEM Material.** Jeder SUB_MATERIAL-Agent prueft, ob das produzierte Material Triggerpotenzial hat und setzt ggf. `trigger_flags` in `_meta`.
+
+**Operationalisierung:**
+- Erlaubte Flags: `gewalt`, `tod`, `krieg`, `diskriminierung`, `trauma`, `sexualisierte_gewalt`
+- `trigger_flags` sind ausschliesslich **Lehrkraft-Metadaten** — NIE SuS-sichtbar
+- Engine unterdrueckt trigger_flags im Rendering (Code-Strang, STR-12)
+- **Over-Flagging-Schwelle:** Nur flaggen wenn das Material **explizit** belastende Inhalte darstellt. Allgemeine Erwaehnung von Krieg/Konflikt ohne Gewaltdetails ist KEIN Trigger. Beispiele: Tagebucheintrag mit Todesangst → `["krieg", "tod"]`. Darstellungstext ueber Buendnissysteme → `[]` (kein Trigger).
+
+**FAIL wenn:** Material enthaelt erkennbar belastende Inhalte UND `trigger_flags` ist leer.
+**WARN wenn:** Fraglicher Fall — Subagent dokumentiert Abwaegung in _meta.
 
 ---
 
@@ -242,3 +274,18 @@ Zusaetzlich zu M1-M12 gelten ab v3.8 folgende Constraints. Sie sind in den SUB_M
 | C4 | Didaktische Bildunterschriften | Bildunterschriften beschreibend/anleitend, keine Quellenangaben | SUB_MATERIAL_BILDQUELLE/KARTE MQ4 |
 | C5 | Abschluss-Impuls | Variante A (Ueberleitung, nicht-letzte Mappen) / Variante B (Reflexion, letzte Mappe) | AGENT_SKRIPT MQ5 |
 | C6 | Erarbeitbarkeits-Plausibilitaet (MQ6) | Der zentrale Inhalt des Materials muss den zugehoerigen SCPL-Schritt (Fachbegriff + Kernaussage) so behandeln, dass SuS ihn nach Bearbeitung eigenstaendig formulieren koennten. Formale Abdeckung (Fachbegriff kommt vor) reicht nicht — das Material muss den Schritt erarbeitbar machen, nicht nur erwaehnen. **SOLL-Kriterium** (qualitative Pruefung mit Ermessensspielraum) | SUB_MATERIAL_* MQ6, Audit Sicherungskette M5/PF-13 |
+
+---
+
+## Schutzregeln (STR-15, Do-not-break)
+
+Die folgenden 4 Qualitaeten wurden in der R3-Evaluation als zentrale Staerken identifiziert. Sie duerfen durch keinen Patch, keine Optimierung und kein Re-Audit verschlechtert werden.
+
+| # | Schutzregel | Beschreibung | Pruefregel |
+|---|---|---|---|
+| R3-S1 | Niedrigschwelliger Einstieg | Jede Mappe beginnt mit einem Einstieg, der ohne Vorwissen der aktuellen Mappe zugaenglich ist. SuS werden abgeholt, nicht ueberfordert. | Kein Patch darf den Einstieg einer Mappe fachsprachlich oder kognitiv anspruchsvoller machen als den Ist-Stand. |
+| R3-S2 | Starke Identifikationsfiguren | Personalisierung (Tagebuch-Figuren, Ich-Erzaehler, benannte Akteure) macht Geschichte greifbar. Diese Figuren sind ein didaktisches Kernmerkmal. | Kein Patch darf Identifikationsfiguren entfernen oder zu abstrakten Darstellungen degradieren. |
+| R3-S3 | Visuelle Klarheit | Schaubilder, Karten, Bildquellen sind klar strukturiert, nicht ueberladen, und fuer R7-SuS auf den ersten Blick erfassbar. | Kein Patch darf die visuelle Komplexitaet erhoehen, ohne dass ein kompensierender Scaffolding-Mechanismus eingefuehrt wird. |
+| R3-S4 | Emotionale Ansprache | Materialien wecken Interesse und Empathie durch konkrete, lebensnahe Darstellungen. Sachlichkeit und emotionale Zugaenglichkeit sind kein Widerspruch. | Kein Patch darf emotionale Zugaenglichkeit zugunsten rein analytischer Darstellung opfern. |
+
+**Regressions-Check (Audit-Pflicht):** Bei jedem Re-Audit und jeder Patch-Runde: Explizit pruefen, ob R3-S1 bis R3-S4 unverletzt sind. Finding-Kategorie bei Verletzung: CRITICAL.

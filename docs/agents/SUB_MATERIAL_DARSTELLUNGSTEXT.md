@@ -145,6 +145,14 @@ Alle Texte im `inhalt`-Feld muessen JSON-kompatibel sein. **VERBOTEN** in JSON-S
 
 Quellenangabe als `<cite>` am Ende des `inhalt`-HTML einbetten: `<cite>Quelle: [Fachliche Grundlage]</cite>`
 
+### Trigger-Metadaten (STR-12)
+
+**Pflicht bei JEDEM Material.** Pruefe, ob das Material Triggerpotenzial hat (Gewalt, Krieg, Tod, Diskriminierung, Trauma). Falls ja: `trigger_flags` in `_meta` setzen.
+
+**Erlaubte Flags:** `gewalt`, `tod`, `krieg`, `diskriminierung`, `trauma`, `sexualisierte_gewalt`
+**Sichtbarkeit:** Ausschliesslich Lehrkraft-Metadaten. NIE SuS-sichtbar. Engine unterdrueckt diese Flags im Rendering.
+**Over-Flagging vermeiden:** Nur flaggen, wenn das Material explizit belastende Inhalte darstellt. Allgemeine Kriegsthematik ohne explizite Gewaltdarstellung ist KEIN Trigger.
+
 ## Output
 
 **Schema-Referenz:** `docs/architektur/schemata/material-output-schema.json`
@@ -159,7 +167,8 @@ Quellenangabe als `<cite>` am Ende des `inhalt`-HTML einbetten: `<cite>Quelle: [
     "fachbegriffe_eingefuehrt": ["Begriff1", "Begriff2"],
     "tafelbild_knoten_abgedeckt": ["k1-1", "k1-2"],
     "erarbeitbarkeits_check": "PASS | FAIL + Begruendung",
-    "perspektive": "uebergreifend (P1, P2) | P1: [Akteur]"
+    "perspektive": "uebergreifend (P1, P2) | P1: [Akteur]",
+    "trigger_flags": []
   }
 }
 ```

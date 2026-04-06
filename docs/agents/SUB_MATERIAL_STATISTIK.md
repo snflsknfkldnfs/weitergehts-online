@@ -140,6 +140,14 @@ Statistik-Materialien recherchieren ihre Daten SELBST (anders als BQ/KA, die aus
 
 ---
 
+### Trigger-Metadaten (STR-12)
+
+**Pflicht bei JEDEM Material.** Pruefe, ob das Material Triggerpotenzial hat (Gewalt, Krieg, Tod, Diskriminierung, Trauma). Falls ja: `trigger_flags` in `_meta` setzen.
+
+**Erlaubte Flags:** `gewalt`, `tod`, `krieg`, `diskriminierung`, `trauma`, `sexualisierte_gewalt`
+**Sichtbarkeit:** Ausschliesslich Lehrkraft-Metadaten. NIE SuS-sichtbar. Engine unterdrueckt diese Flags im Rendering.
+**Over-Flagging vermeiden:** Nur flaggen, wenn das Material explizit belastende Inhalte darstellt. Statistiken zu Opferzahlen/Kriegsverlusten IMMER flaggen.
+
 ## Output
 
 **Schema-Referenz:** `docs/architektur/schemata/material-output-schema.json`
@@ -156,7 +164,8 @@ Statistik-Materialien recherchieren ihre Daten SELBST (anders als BQ/KA, die aus
     "diagrammtyp": "balken | linie | kreis",
     "datenpunkte": 0,
     "tafelbild_knoten_abgedeckt": ["k1-6"],
-    "erarbeitbarkeits_check": "PASS | FAIL + Begruendung"
+    "erarbeitbarkeits_check": "PASS | FAIL + Begruendung",
+    "trigger_flags": []
   }
 }
 ```
