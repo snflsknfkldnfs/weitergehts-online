@@ -21,6 +21,24 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-06 — Session 13 Block 3: AU-2a CLOSED (Code-Strang `bcb9eeb`)
+
+**Phase:** D15b-Optimierung Phase IV Wave 1 AU-2a → CLOSED
+**Commit:** `bcb9eeb` (Claude-Code, 10 Dateien)
+
+**Code-Strang (Claude-Code via Cold-Handoff UEBERGABE_PHASE_IV_WAVE_1_AU_2a.md):**
+- `assets/js/escape-engine.js`: Log-Warning in `normalizeFeedback()` fuer Legacy-String-Sichtbarkeit.
+- `tools/validate-feedback-schema.js`: AU-2a-Upgrade — String=FAIL, typ-spezifische Konsistenz-Checks, CLI-Output.
+- `escape-games/gpg-erster-weltkrieg-ursachen/data.json`: Backfill 26 Aufgaben / 79 Feedback-Eintraege aus Dispatch.
+- 6 HTML-Dateien: Cache-Bust `v=4.0` → `v=4.1`.
+- `CHANGELOG.md`: Code-Strang-Eintrag.
+- Validator-Ergebnis: 26/26 PASS, 0 FAIL, 3 WARN (Reihenfolge-Sammelfeedback — vertragskonform).
+- Pre-Commit-Gate-3-Checks: alle bestanden.
+
+**AU-2a damit vollstaendig geschlossen.** PM-Strang (Cowork) + Code-Strang (Claude-Code) + User-Signoff alle auf main.
+
+---
+
 ## 2026-04-06 — Session 13 Block 2: AU-2a PM-Strang CLOSED, User-Signoff, Cold-Handoff
 
 **Phase:** D15b-Optimierung Phase IV Wave 1 AU-2a PM-Strang → CLOSED
