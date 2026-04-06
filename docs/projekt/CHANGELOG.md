@@ -4,6 +4,41 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-06 — AU-3 PM-Strang COMPLETE: STR-08 Quellenkritik + STR-11 Teil 2
+
+**ATOM-UNIT:** AU-3 (PM-Strang, Code-Strang via Cold-Handoff)
+**STR:** STR-08 Quellenkritik als adaptiver Aufgabentyp (P1, K05) + STR-11 Teil 2 Quellenkritik-Integration (P1, K16)
+
+**7 Dateien + Cold-Handoff:**
+1. `docs/agents/SUB_AUFGABE_QUELLENKRITIK.md` (NEU) — W-Fragen-Template (aeussere + innere Quellenkritik), Auswahl-Heuristik pro Quelltyp, Anti-Automatismus-Klausel, Engine-Rendering-Spezifikation, Q-Gate QK-1 bis QK-8.
+2. `docs/architektur/vertraege/VERTRAG_PHASE_2-2b_AUFGABE.md` — typ-Wert `quellenkritik` in Engine-Registry-Liste + Loesungsformat-Zeile (Object mit W-Fragen-Schluesseln + Pflichtfeld `w_fragen`).
+3. `docs/architektur/vertraege/VERTRAG_PHASE_2-2a_PROGRESSIONSPLAN.md` — Typauswahl-Heuristik: `quellenkritik` Bloom-Zone L3-L5, Entscheidungsregel (Primaerquelle + Perspektiv-Reflexion + Anti-Automatismus), max 1 pro Mappe, Anti-Quota erweitert. Registry 7→8 Typen.
+4. `docs/agents/AGENT_RAETSEL.md` — Subagenten-Referenz: SUB_AUFGABE_QUELLENKRITIK + VERGLEICH + BEGRUENDUNG ergaenzt.
+5. `docs/checklisten/GUETEKRITERIEN_AUFGABEN.md` — A27 Quellenkritik sinngerichtet eingesetzt (MUSS, Tiefenstruktur): Anti-Automatismus, W-Fragen-Qualitaet, Perspektivitaets-Frage Pflicht, max 1 pro Mappe.
+6. `docs/uebergabe/UEBERGABE_PHASE_IV_WAVE_2_AU_3.md` (NEU) — Cold-Handoff fuer Claude-Code: AufgabentypRegistry + `_renderQuellenkritik` + `_checkQuellenkritik` + CSS BEM-Klassen + Cache-Bust v=4.3→v=4.4 + Smoke-Test-Anleitung.
+
+**Design-Prinzip:** Anti-Automatismus (aus STR-08 Evaluation) — Quellenkritik wird sinngerichtet vom Progressionsplan-Agent eingesetzt, nicht mechanisch bei jeder Primaerquelle. Max 1 pro Mappe.
+
+---
+
+## 2026-04-06 — AU-4 PM-Strang COMPLETE: STR-05 Multiperspektivitaet MODIFY-SCOPE
+
+**ATOM-UNIT:** AU-4 (reiner PM-Strang, kein Code-Strang)
+**STR:** STR-05 Multiperspektivitaet-Pflicht bei Konfliktthemen (P0, K04)
+
+**7 Dateien gepatcht:**
+1. `docs/architektur/vertraege/VERTRAG_PHASE_2-1_MATERIAL.md` — Neue Sektion "Multiperspektivitaet-Policy": `konflikttyp` boolean + `perspektiven_policy` string im MATERIAL_GERUEST, Dispatch-Erweiterung, Adaptivitaets-Regel, Fallback bei Quellenknappheit.
+2. `docs/agents/SUB_MATERIAL_QUELLENTEXT.md` — Perspektiven-Policy-Sektion: Perspektiv-Bewusstsein in Einleitung, Gegen-Perspektive in Impuls, `_meta.perspektive`.
+3. `docs/agents/SUB_MATERIAL_TAGEBUCH.md` — Perspektiven-Policy-Sektion: Figur-Zuordnung zu deklarierter Perspektive, Echos anderer Perspektiven, keine rueckprojizierte Ausgewogenheit, `_meta.perspektive`.
+4. `docs/agents/SUB_MATERIAL_BILDQUELLE.md` — Perspektiven-Policy-Sektion: Perspektiv-Bewusstsein in Bildunterschrift, Perspektiv-Frage in Erschliessungsimpuls, `_meta.perspektive`.
+5. `docs/checklisten/QUALITAETSKRITERIEN_MATERIALPRODUKTION.md` — M13 Multiperspektivitaet bei Konfliktthemen (Tiefenstruktur): min 3 Perspektiven pro Mappe bei `konflikttyp: true`, Cross-Pruefung via `_meta.perspektive`, Abgrenzung zu M9.
+6. `docs/checklisten/GUETEKRITERIEN_SKRIPT.md` — SK16 Perspektiven-Diversitaet bei Konfliktthemen: Skript muss narrative Grundlagen fuer min 3 Perspektiven legen, Verschaerfung von SK9.
+7. `docs/architektur/vertraege/VERTRAG_PHASE_2-1c_CROSS.md` — Neue Achse 5 Perspektiven-Diversitaet (Achsen 5→6, 6→7 renummeriert), Dispatch-Ablauf und Output-Referenzen aktualisiert.
+
+**Design-Prinzip:** MODIFY-SCOPE (aus 5d Konvergenz-Verdikt) — adaptiv statt starre Pflicht. `konflikttyp`-Flag ist Entscheidung des Skript-Agenten, nicht mechanische Detektion. Perspektiven-Diversitaet entsteht durch Mappe-Kombination, nicht durch Zwang auf Einzelmaterial.
+
+---
+
 ## 2026-04-06 — MEILENSTEIN: Phase IV Wave 1 COMPLETE
 
 **Alle ATOM-UNITs auf main:**

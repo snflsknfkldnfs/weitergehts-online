@@ -56,6 +56,18 @@ Referenziere ausschliesslich Konzepte und Fachbegriffe, die laut "Vorausgesetzte
 | SQ-3 | Material macht den zugeordneten TB-Knoten erarbeitbar |
 | SQ-4 | Narrativer Anschluss an vorheriges Material erkennbar |
 
+### Multiperspektivitaet-Policy (STR-05, AU-4)
+
+**Gilt wenn:** Der Dispatcher den Parameter `perspektiven_policy` uebergibt (= `konflikttyp: true` im MATERIAL_GERUEST).
+
+**Regeln fuer Bildquellen bei Konfliktthemen:**
+
+1. **Perspektiv-Bewusstsein in Bildunterschrift:** Bei Konfliktthemen muss die Kontextualisierung (Funktion 2) explizit benennen, aus wessen Sicht oder zu wessen Gunsten das Bild entstanden ist. Besonders relevant bei Propagandabildern, Karikaturen und offiziellen Fotografien.
+2. **Erschliessungsimpuls mit Perspektiv-Frage:** Der Erschliessungsimpuls (Funktion 3) soll bei `konflikttyp: true` mindestens eine Frage enthalten, die zur Reflexion ueber die Perspektive des Bildes anregt: "Wer hat dieses Bild in Auftrag gegeben? Welches Bild haette die Gegenseite gezeigt?"
+3. **Perspektiv-Deklaration in _meta:** `_meta.perspektive` dokumentiert, welche der deklarierten Perspektiven dieses Bild repraesentiert (z.B. `"P1: Deutschland"` bei einem deutschen Propagandaplakat).
+
+**Ohne `perspektiven_policy`:** Bestehende Regeln gelten unveraendert (BQ-3 Bild ≠ Wirklichkeit, BQ-8 Kommunikationsanalyse, M9). Kein zusaetzlicher Zwang.
+
 ---
 
 ## Aufgaben

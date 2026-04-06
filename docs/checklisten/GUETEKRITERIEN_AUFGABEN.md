@@ -142,6 +142,14 @@ GPG B1 unterscheidet sachbezogene Besinnung (Zusammenhaenge erkennen, Begriffe k
 
 **Infrastruktur-Primaer:** AU-2b optimiert die Generierungsinfrastruktur (Vertraege, Subagenten-Prompts, Guetekriterien). Das bestehende Game 1 dient als Testumgebung. Kein Backfill-Dispatch fuer Bestands-Tipps — das `haertegrad`-Feld ist bei Bedarf mechanisch ableitbar (stufe→haertegrad 1:1-Mapping).
 
+### 3.1d AU-3 MUSS-Kriterien (Phase IV Wave 2, 2026-04-06)
+
+| # | Kriterium | Beschreibung | Fundierung |
+|---|---|---|---|
+| A27 | **Quellenkritik sinngerichtet eingesetzt** (typ `quellenkritik`, inhaltlich) | Quellenkritik-Aufgaben werden NUR bei Primaerquellen (Quellentext, historische Bildquelle) mit erkennbarer Perspektive/Intention eingesetzt. Pflichtregeln: (a) Anti-Automatismus: Einsatz ist sinngerichtet begruendet im Progressionsplan, nicht mechanisch durch Quelltyp-Detektion getriggert. (b) W-Fragen-Qualitaet: Min 4, max 6 W-Fragen; min je 1 aus aeusserer Quellenkritik (Wer/Wann/Wo/Quellenart) und innerer Quellenkritik (Warum/Fuer wen/Wozu/Was fehlt). (c) Perspektivitaets-Frage: Min 1 W-Frage zielt auf Perspektive, Intention oder fehlende Sichtweise. (d) Musterantworten sind R7-verstaendlich, inhaltlich korrekt, aus dem Material erschliessbar. (e) Max 1 Quellenkritik-Aufgabe pro Mappe (Monotonie-Vermeidung). FAIL wenn: Quellenkritik bei nicht-perspektivischem Material (Statistik, Zeitleiste) oder ohne Perspektivitaets-Frage. | D15b STR-08, GPG B2 Quellentypologie + Quellenarbeit, GPG GB Historische Methodenkompetenz |
+
+**Infrastruktur-Primaer:** AU-3 erweitert die Aufgabentyp-Registry um `quellenkritik` (Engine-Renderer via Cold-Handoff an Claude-Code). Kein Backfill — Quellenkritik-Aufgaben entstehen erst bei kuenftiger Game-Generierung.
+
 ### 3.2 SOLL-Kriterien (Verletzung = Optimierungshinweis)
 
 | # | Kriterium | Beschreibung | Fundierung |

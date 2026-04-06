@@ -19,7 +19,7 @@
 
 **NICHT lesen:** data.json, WORKFLOW_v4.md, SKRIPT, INHALTSBASIS, SUB_MATERIAL_*.md, aufgaben/*.json
 
-## 6 Achsen
+## 7 Achsen
 
 ### Achsen 1-4: Cross-Konsistenz (unveraendert)
 
@@ -31,7 +31,9 @@
 
 4. **TB-Knoten-Gesamtabdeckung:** Decken alle Materialien zusammen alle TB-Knoten ab? FAIL wenn: Ein TB-Knoten wird von keinem Material abgedeckt (binaer pruefbar).
 
-### Achse 5: Ueberleitung-Produktion (NEU — Q-M2-03)
+5. **Perspektiven-Diversitaet (STR-05, AU-4):** NUR bei `konflikttyp: true` im MATERIAL_GERUEST. Prueft: Sind mindestens 3 der in `perspektiven_policy` deklarierten Perspektiven ueber die Materialien der Mappe verteilt? Auswertung ueber `_meta.perspektive` der einzelnen Materialien. FAIL wenn: Weniger als 2 verschiedene Perspektiven. WARN wenn: Nur 2 von mindestens 3 deklarierten Perspektiven vertreten — Finding dokumentieren + Fallback-Option pruefen (Darstellungstext mit expliziter Perspektiv-Benennung als Ersatz). SKIP wenn: `konflikttyp: false` oder absent.
+
+### Achse 6: Ueberleitung-Produktion (Q-M2-03, vormals Achse 5)
 
 **Warum hier und nicht im SUB_MATERIAL:** Ueberleitungen erfordern Kontext ueber Material-Grenzen hinweg — der isolierte Subagent (P4) kennt nur sein eigenes Material. Phase 2.1c hat bereits ALLE Materialien + MATERIAL_GERUEST im Kontext. Das macht diesen Dispatch zum natuerlichen Ort fuer die Ueberleitung-Produktion.
 
@@ -54,7 +56,7 @@ Beide Vektoren muessen inhaltlich praezise auf die **konkreten produzierten Mate
 
 **Sonderfall mat-N-1 (Position 1):** Keine Ueberleitung (kein Vorgaenger). Die Problemstellung aus `rahmen/einstieg.json` uebernimmt diese Funktion.
 
-### Achse 6: Hefteintrag-Revision (NEU — M2, Audit Sicherungskette)
+### Achse 7: Hefteintrag-Revision (M2, Audit Sicherungskette, vormals Achse 6)
 
 **Warum hier:** Phase 2.1c hat bereits ALLE Materialien im Kontext. Die SCPL-Texte aus Phase 0.4 wurden vor Material-Produktion formuliert und koennen jetzt auf konkreten Material-Kontext angepasst werden. Zusaetzlich werden zusammenfassung und ueberleitung erstmalig produziert (in Phase 2.0 nur als Placeholder angelegt).
 
@@ -98,12 +100,14 @@ Beide Vektoren muessen inhaltlich praezise auf die **konkreten produzierten Mate
 4. rahmen/einstieg.json lesen (P1) — problemstellung als Kontext fuer mat-1
 5. rahmen/sicherung.json lesen (P1) — Stufe-1-Felder (reflexionsimpuls, hefteintrag_verweis). Kernerkenntnisse aus rahmen/hefteintrag.json → scpl.loesung[] (M8)
 6. Achsen 1-4 durchfuehren (Cross-Konsistenz)
-7. Achse 5: Pro Material-Uebergang (mat-N-1→mat-N-2, mat-N-2→mat-N-3, ...):
+6b. Achse 5 (Perspektiven-Diversitaet): NUR bei konflikttyp: true.
+    _meta.perspektive aller Materialien sammeln → gegen perspektiven_policy pruefen.
+7. Achse 6: Pro Material-Uebergang (mat-N-1→mat-N-2, mat-N-2→mat-N-3, ...):
    a. GERUEST-Ueberleitung als Intention lesen
    b. Tatsaechlichen Inhalt beider Materialien analysieren
    c. Zwei-Vektoren-Bruecke formulieren (UE-1 bis UE-5 pruefen)
 8. ueberleitungen.json schreiben (siehe Output)
-9. Achse 6: Hefteintrag-Revision
+9. Achse 7: Hefteintrag-Revision
    a. SCPL-Texte aus hefteintrag.json gegen Materialien abgleichen
    b. FORMULIERUNGS-OFFEN-Felder revidieren (Regelwerk beachten)
    c. zusammenfassung erstmalig produzieren (material-aware, G10)
@@ -114,14 +118,14 @@ Beide Vektoren muessen inhaltlich praezise auf die **konkreten produzierten Mate
 11. rahmen/hefteintrag.json SCPL-Text-Patches schreiben (NUR Formulierung, NICHT Struktur)
 12. Q-Gate pruefen — Mechanik: docs/architektur/Q-GATE-MECHANIK.md (§3 Aggregation, §4 Nachbesserung, §6 Output-Format).
     Katalog: Q-GATE-MECHANIK.md §7.4 (Cross-Konsistenz-Q-Gate).
-13. Bei GESAMT-PASS oder GESAMT-WARN + Achse 5 produziert + Achse 6 revidiert: Ergebnis in Q-GATE-LOG.md
+13. Bei GESAMT-PASS oder GESAMT-WARN + Achse 5 geprueft + Achse 6 produziert + Achse 7 revidiert: Ergebnis in Q-GATE-LOG.md
 14. Bei GESAMT-FAIL (Achsen 1-4): Betroffene Materialien + Finding dokumentieren
     → User entscheidet ueber Nachbesserung oder Akzeptanz
 ```
 
 ## Output
 
-**Q-GATE-LOG.md:** Ergebnisse Achsen 1-6 (Cross-Konsistenz + Ueberleitungen + Hefteintrag-Revision + Stufe-2 Re-Evaluation). Format: Q-GATE-MECHANIK.md §8.
+**Q-GATE-LOG.md:** Ergebnisse Achsen 1-7 (Cross-Konsistenz + Perspektiven-Diversitaet + Ueberleitungen + Hefteintrag-Revision + Stufe-2 Re-Evaluation). Format: Q-GATE-MECHANIK.md §8.
 
 **ueberleitungen.json:** (Schema: `docs/architektur/schemata/ueberleitungen-schema.json`)
 

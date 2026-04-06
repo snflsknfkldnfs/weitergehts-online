@@ -65,13 +65,17 @@ Der ursprueng­liche Scope "STR-03 Feedback-Schema + STR-04 Aufgabentypologie" w
 - **Atomaritaet:** CSS-Fix + ggf. Renderer-Patch + Cache-Bust in einem Commit, damit kein Cache-Stand-Konflikt entsteht. Entkoppelt von Schema/Tipps — darf parallel zu AU-2b laufen oder davor.
 - **Quelle:** `docs/befunde/BEFUND-AU-1-UI-01.md`, Claude-Code Smoke-Test nach Commit `5b470c5` (Session 12 Fortsetzung 3).
 
-### AU-3 — STR-08 Quellenkritik Bloom-Progression + STR-11 neue Aufgabentypen
-- **Datei-Scope:** AGENT_RAETSEL.md Progressions-Logik, VERTRAG_PHASE_2-2a_PROGRESSIONSPLAN.md, SUB_AUFGABE_FREITEXT.md
-- **Atomaritaet:** Bloom-Validierung ohne den dafuer designten Aufgabentyp (Quellenkritik-Freitext) greift ins Leere.
+### AU-3 — STR-08 Quellenkritik (adaptiver Aufgabentyp) + STR-11 Teil 2 (Quellenkritik-Integration)
+- **PM-Strang Datei-Scope:** `docs/agents/SUB_AUFGABE_QUELLENKRITIK.md` (NEU), `docs/architektur/vertraege/VERTRAG_PHASE_2-2b_AUFGABE.md` (neuer typ-Wert), `docs/architektur/vertraege/VERTRAG_PHASE_2-2a_PROGRESSIONSPLAN.md` (Typauswahl-Heuristik + Entscheidungsregel), `docs/agents/AGENT_RAETSEL.md` (Quellenkritik-Dispatch), `docs/checklisten/GUETEKRITERIEN_AUFGABEN.md` (neues Kriterium A27).
+- **Code-Strang Datei-Scope:** `assets/js/escape-engine.js` (AufgabentypRegistry + Renderer `quellenkritik`), Cache-Bust HTML.
+- **Atomaritaet:** Neuer Aufgabentyp ohne Renderer bricht Engine. Progressionsplan ohne Typ-Heuristik dispatcht nie.
+- **Abhaengigkeit:** AU-1 CLOSED (Engine-Registry-Pattern), AU-2a CLOSED (Feedback-Schema), AU-2b CLOSED (Tipp-Schema).
 
-### AU-4 — STR-05 Session-Split MODIFY-SCOPE
-- **Datei-Scope:** docs/agents/ORCHESTRATOR.md (V1-Patch), docs/architektur/WORKFLOW_v4.md (Phasen-Referenz), docs/architektur/vertraege/VERTRAG_PHASE_2-1c_CROSS.md
-- **Atomaritaet:** MODIFY-SCOPE bedeutet: Session-Split-Enforcement wird aus "weiche Empfehlung" zu "harter Gate". Das muss ueberall gleichzeitig aktualisiert werden, sonst widersprechen sich Vertraege.
+### AU-4 — STR-05 Multiperspektivitaet MODIFY-SCOPE
+- **Datei-Scope:** `docs/architektur/vertraege/VERTRAG_PHASE_2-1_MATERIAL.md` (neues Flag `konflikttyp` + `perspektiven_policy`), `docs/agents/SUB_MATERIAL_QUELLENTEXT.md` + `SUB_MATERIAL_TAGEBUCH.md` + `SUB_MATERIAL_BILDQUELLE.md` (Perspektiven-Prompt), `docs/checklisten/QUALITAETSKRITERIEN_MATERIALPRODUKTION.md` (M13 Multiperspektivitaet), `docs/checklisten/GUETEKRITERIEN_SKRIPT.md` (Perspektiven-Diversitaets-Check), `docs/architektur/vertraege/VERTRAG_PHASE_2-1c_CROSS.md` (Cross-Validierung Perspektiven).
+- **Kein Code-Strang.** Reiner PM-Strang (docs/). Infrastruktur-First: Pipeline-Optimierung fuer Game-2-Generierung.
+- **Atomaritaet:** Material-Flag ohne Prompt-Anpassung wirkungslos. Prompt ohne M-Katalog-Kriterium nicht pruefbar. MODIFY-SCOPE (aus 5d Konvergenz-Verdikt): adaptiv statt starre Pflicht — Progressionsplan entscheidet, nicht mechanische Detektion.
+- **Abhaengigkeit:** Keine harte Abhaengigkeit auf AU-1/2/3. Kann parallel zu AU-3.
 
 ## 4. Pre-Commit-Gate (3 Checks)
 

@@ -37,7 +37,7 @@
 
 ## Typauswahl-Heuristik (AU-1, 2026-04-05)
 
-Seit AU-1 (STR-11) stehen 7 Aufgabentypen zur Verfuegung: `mc`, `zuordnung`, `lueckentext`, `reihenfolge`, `freitext`, `vergleich`, `begruendung`.
+Seit AU-3 (STR-11 Teil 2) stehen 8 Aufgabentypen zur Verfuegung: `mc`, `zuordnung`, `lueckentext`, `reihenfolge`, `freitext`, `vergleich`, `begruendung`, `quellenkritik`.
 
 **Bloom-Ziel-Zonen pro Typ:**
 
@@ -49,6 +49,7 @@ Seit AU-1 (STR-11) stehen 7 Aufgabentypen zur Verfuegung: `mc`, `zuordnung`, `lu
 | reihenfolge | L2-L3 | Chronologie, Ursache-Wirkung-Ordnung |
 | **vergleich** | **L4 (Ziel)** | Analyse entlang Dimensionen, wenn min 2 Objekte + min 2 Dimensionen im Material |
 | **begruendung** | **L5 (Ziel)** | Bewertung mit CER, wenn Streitfrage + belegfaehige Material-Stellen |
+| **quellenkritik** | **L3-L5 (Ziel)** | Systematische Quellenanalyse via W-Fragen, wenn Primaerquelle + Perspektiv-Reflexion |
 | freitext | L3-L6 | Synthese, Stellungnahme, Gegenentwurf (Standard letzte Aufgabe) |
 
 **Entscheidungsfragen pro Aufgaben-Position:**
@@ -68,7 +69,15 @@ Seit AU-1 (STR-11) stehen 7 Aufgabentypen zur Verfuegung: `mc`, `zuordnung`, `lu
 - Bloom-Ziel der Mappe verlangt L5-Anteil strukturiert (CER-Gitter statt freier Stellungnahme).
 - Andernfalls: SUB_AUFGABE_FREITEXT (Stellungnahme-Variante, L5 ohne CER-Pflicht).
 
-**Anti-Quota-Klausel:** Kein Mappen-Mindest-Vorkommen von `vergleich`/`begruendung`. Die Typen werden nur eingesetzt, wenn Material + Lernziel passen. Pseudo-Vergleiche (1 Dimension) oder Pseudo-Begruendungen (Claim ohne Evidence) sind Q-Gate-FAIL und zaehlen nicht zur Bloom-Abdeckung.
+**Wann `quellenkritik` waehlen (AU-3, STR-08):**
+- Material ist eine Primaerquelle (Quellentext oder historische Bildquelle) mit erkennbarer Perspektive/Intention.
+- Didaktisches Ziel der Mappe beinhaltet Quellen-Reflexion (Perspektivitaet, Intention, Glaubwuerdigkeit).
+- Bloom-Ziel verlangt L3-L5-Anteil, der durch systematische Quellenanalyse abgedeckt werden kann.
+- **Anti-Automatismus:** Quellenkritik wird NICHT automatisch bei jeder Primaerquelle eingesetzt. Entscheidung ist sinngerichtet — keine starre Pflicht, keine mechanische Quelltyp-Detektion. Neutrale Statistiken, rein informative Urkunden oder Quellen ohne erkennbare Perspektive erhalten keine Quellenkritik-Aufgabe.
+- Andernfalls: SUB_AUFGABE_FREITEXT (mit quellenkritischem Impuls als Leitfrage) oder Quellenkritik weglassen.
+- Max 1 Quellenkritik-Aufgabe pro Mappe (Monotonie-Vermeidung). Bei 2+ geeigneten Primaerquellen: die didaktisch ertragreichste waehlen.
+
+**Anti-Quota-Klausel:** Kein Mappen-Mindest-Vorkommen von `vergleich`/`begruendung`/`quellenkritik`. Die Typen werden nur eingesetzt, wenn Material + Lernziel passen. Pseudo-Vergleiche (1 Dimension), Pseudo-Begruendungen (Claim ohne Evidence) oder Pseudo-Quellenkritik (W-Fragen ohne Perspektiv-Analyse) sind Q-Gate-FAIL und zaehlen nicht zur Bloom-Abdeckung.
 
 **Bloom-Verteilungs-Policy (A19):** Pro Mappe: max 40 % L1-L2, min 30 % L3-L4, min 20 % L5-L6. Der Progressionsplan muss die voraussichtliche Bloom-Verteilung als `_meta.bloom_verteilung_ziel` dokumentieren, bevor Aufgaben-Dispatch startet.
 

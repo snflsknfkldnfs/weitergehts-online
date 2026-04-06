@@ -61,6 +61,19 @@ Referenziere ausschliesslich Konzepte und Fachbegriffe, die laut "Vorausgesetzte
 | SQ-3 | Material macht den zugeordneten TB-Knoten erarbeitbar |
 | SQ-4 | Narrativer Anschluss an vorheriges Material erkennbar |
 
+### Multiperspektivitaet-Policy (STR-05, AU-4)
+
+**Gilt wenn:** Der Dispatcher den Parameter `perspektiven_policy` uebergibt (= `konflikttyp: true` im MATERIAL_GERUEST).
+
+**Regeln fuer Tagebucheintraege bei Konfliktthemen:**
+
+1. **Perspektiv-Zuordnung:** Die Figur repraesentiert genau EINE der in `perspektiven_policy` deklarierten Perspektiven. Die Figurkonstruktion (Name, Ort, Rolle) muss diese Zuordnung plausibel machen.
+2. **Andere Perspektiven als Echos:** Die Figur darf andere Sichtweisen erwaehnen ("Mein Nachbar meint, dass...", "Die Zeitung schreibt..."), aber die eigene Perspektive dominiert. Mindestens ein Satz im Kernabschnitt, der eine andere Perspektive als Geruecht, Nachricht oder Gespraech einfliessen laesst.
+3. **Keine rueckprojizierte Ausgewogenheit:** Die Figur ist NICHT neutral. Sie hat die Vorurteile, Aengste und Hoffnungen ihrer Position. Das ist didaktisch gewollt — die Ausgewogenheit entsteht durch die Kombination aller Materialien der Mappe, nicht innerhalb eines einzelnen Tagebucheintrags.
+4. **Perspektiv-Deklaration in _meta:** `_meta.perspektive` dokumentiert, welche der deklarierten Perspektiven die Figur abdeckt (z.B. `"P2: Frankreich"`).
+
+**Ohne `perspektiven_policy`:** Bestehende Regeln gelten unveraendert (TB "Multiperspektivitaet" unter Didaktische Regeln, M9). Kein zusaetzlicher Zwang.
+
 ---
 
 ## Aufgaben

@@ -110,6 +110,7 @@ GPG B1 praezisiert: Vergegenwärtigung schafft **Kenntnisse** (Vordergrund), Bes
 | SK10 | **Sachbezogene Motivierung** | Jeder Chunk-Einstieg motiviert aus dem Sachverhalt selbst heraus (Widerspruch, ueberraschendes Faktum, offene Frage), nicht durch sachfremde Mittel | Brunnhuber "sachbezogen > sachfremd" (DG B1), Schroeder "Motivierung" |
 | SK11 | **Dramaturgischer Spannungsbogen** | Ueber alle Chunks hinweg ist ein erkennbarer Spannungsbogen vorhanden (Einstieg → Eskalation → Klimax → Reflexion). Kein gleichfoermiges Abarbeiten | GPG B1 "Dramatisiere", Roth Hauptforderung 7 |
 | SK12 | **Sandwich-Qualitaet** | Uebergaenge zwischen Chunks greifen die Sicherungs-Erkenntnis des vorherigen Chunks auf UND oeffnen eine neue Frage. Nicht nur thematische Ankuendigung | AGENT_SKRIPT Aufgabe 4, Meyer "sinnstiftendes Kommunizieren" (DG B1) |
+| SK16 | **Perspektiven-Diversitaet bei Konfliktthemen** (STR-05) | Bei Skripten, deren Thema einen Konflikt behandelt (`konflikttyp: true`): Das Skript muss in seiner Gesamtheit die narrativen Grundlagen fuer mindestens 3 verschiedene Akteursperspektiven legen. Prueffrage: Kann aus dem Skript-Text Material aus mindestens 3 Perspektiven abgeleitet werden? Verschaerfung von SK9 fuer Konfliktthemen. Bei `konflikttyp: false`: SK9 genuegt | GPG GB Fachprinzip, STR-05 (D15B K04), VERTRAG_PHASE_2-1_MATERIAL.md §Multiperspektivitaet-Policy |
 
 ### 3.3 KANN-Kriterien (Qualitaetssteigerung)
 

@@ -56,6 +56,19 @@ Referenziere ausschliesslich Konzepte und Fachbegriffe, die laut "Vorausgesetzte
 | SQ-3 | Material macht den zugeordneten TB-Knoten erarbeitbar |
 | SQ-4 | Narrativer Anschluss an vorheriges Material erkennbar |
 
+### Multiperspektivitaet-Policy (STR-05, AU-4)
+
+**Gilt wenn:** Der Dispatcher den Parameter `perspektiven_policy` uebergibt (= `konflikttyp: true` im MATERIAL_GERUEST).
+
+**Regeln fuer Quellentexte bei Konfliktthemen:**
+
+1. **Perspektiv-Bewusstsein Pflicht:** Jeder Quellentext repraesentiert genau EINE der in `perspektiven_policy` deklarierten Perspektiven. Mache in der Einleitung (Schritt A) explizit, wessen Sicht dargestellt wird.
+2. **Gegen-Perspektive benennen:** Im quellenkritischen Impuls (Schritt C) mindestens eine Frage einbauen, die auf eine andere Perspektive verweist: "Wie haetten [Akteur der Gegen-Perspektive] dieses Ereignis wohl beschrieben?"
+3. **Keine Einseitigkeit tarnen:** Ein Quellentext darf parteilich sein (Quellen SIND parteilich). Aber die Einleitung muss diese Parteilichkeit erkennbar machen, nicht verschleiern.
+4. **Perspektiv-Deklaration in _meta:** `_meta.perspektive` dokumentiert, welche der deklarierten Perspektiven dieser Quellentext abdeckt (z.B. `"P1: Deutschland"`).
+
+**Ohne `perspektiven_policy`:** Bestehende Regeln gelten unveraendert (QT-5 Quellenkritische Rahmung, M9 Multiperspektivitaet). Kein zusaetzlicher Zwang.
+
 ---
 
 ## Aufgaben

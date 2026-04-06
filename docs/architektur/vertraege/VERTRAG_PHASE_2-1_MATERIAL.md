@@ -191,6 +191,35 @@ Datei nicht gefunden:
 14. Q-Gate-Ergebnis in Q-GATE-LOG.md schreiben (Format: Q-GATE-MECHANIK.md §8)
 ```
 
+## Multiperspektivitaet-Policy (STR-05, AU-4)
+
+**Geltung:** Alle Mappen, deren Thema einen Konflikt behandelt (Krieg, Revolution, gesellschaftliche Auseinandersetzung, diplomatische Krise).
+
+### Flags im MATERIAL_GERUEST
+
+Das MATERIAL_GERUEST deklariert pro Mappe zwei Felder:
+
+| Feld | Typ | Beschreibung |
+|------|-----|-------------|
+| `konflikttyp` | boolean | `true` wenn das Mappenthema einen historischen Konflikt behandelt. Entscheidung liegt beim Skript-Agenten bei Geruest-Erstellung. |
+| `perspektiven_policy` | string | Bei `konflikttyp: true`: Pflicht-Deklaration der mindestens 3 darzustellenden Perspektiven. Format: `"P1: [Akteur/Gruppe] | P2: [Akteur/Gruppe] | P3: [Akteur/Gruppe]"`. Bei `konflikttyp: false`: leer oder absent. |
+
+### Auswirkung auf Dispatch
+
+Bei `konflikttyp: true` gilt fuer **alle Material-Dispatches dieser Mappe**:
+
+1. **Read-Step 3 Erweiterung:** Der Subagenten-Prompt erhaelt zusaetzlich den `perspektiven_policy`-String als Eingabeparameter. Die SUB_MATERIAL-Prompts (QUELLENTEXT, TAGEBUCH, BILDQUELLE) enthalten Regeln zur Umsetzung (siehe jeweilige Prompt-Dateien).
+2. **Perspektiven-Verteilungs-Constraint:** Ueber die Gesamtheit der Materialien einer Mappe muessen mindestens 3 der deklarierten Perspektiven repraesentiert sein. Kein Material muss alle Perspektiven abdecken — aber die Mappe als Ganzes muss es. Die Pruefung erfolgt in Phase 2.1c (Cross-Konsistenz, Achse Perspektiven-Diversitaet).
+3. **Kein mechanischer Zwang:** Ein einzelnes Material darf auch bei `konflikttyp: true` eine einzelne Perspektive einnehmen (z.B. ein Tagebuch aus Sicht eines Soldaten). Die Diversitaet entsteht durch die Kombination der Materialien.
+
+### Adaptivitaet (MODIFY-SCOPE)
+
+Die Entscheidung `konflikttyp: true/false` ist **adaptiv**, nicht mechanisch. Der Skript-Agent entscheidet bei Geruest-Erstellung auf Basis des Mappenthemas. Nicht jedes historische Thema ist ein Konfliktthema (z.B. "Erfindung der Dampfmaschine" ≠ Konflikt). Die Perspektiven-Policy greift nur bei explizitem Flag.
+
+**Fallback bei Quellenknappheit:** Wenn fuer eine deklarierte Perspektive keine geeignete Primaerquelle verfuegbar ist, darf eine Sekundaer-Perspektive (Darstellungstext mit expliziter Perspektiv-Benennung) oder ein Lehrkraft-Input-Hinweis als Ersatz dienen. Finding im Q-GATE-LOG dokumentieren.
+
+---
+
 ## Q-Gate
 
 **Mechanik:** `docs/architektur/Q-GATE-MECHANIK.md` (Bewertungsstufen, Aggregation, Nachbesserung, Output-Format)

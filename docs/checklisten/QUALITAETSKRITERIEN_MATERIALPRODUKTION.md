@@ -81,6 +81,20 @@ Das Darstellungsformat muss zum Inhalt passen. Chronologien → Zeitleiste. Raeu
 
 Innerhalb einer Mappe verschiedene Materialtypen einsetzen. Monotonie vermeiden. Wechsel zwischen Text, Bild, Karte, Zeitleiste haelt Aufmerksamkeit und bedient unterschiedliche Lernzugaenge. Aber: M11 hat Vorrang — kein falscher Typ nur fuer Abwechslung.
 
+### M13 Multiperspektivitaet bei Konfliktthemen (Tiefenstruktur, STR-05)
+
+**Aktivierungsbedingung:** `konflikttyp: true` im MATERIAL_GERUEST der Mappe (siehe VERTRAG_PHASE_2-1_MATERIAL.md §Multiperspektivitaet-Policy).
+
+**Kriterium:** Bei Konfliktthemen muessen die Materialien einer Mappe in ihrer Gesamtheit mindestens 3 der in `perspektiven_policy` deklarierten Perspektiven repraesentieren. Kein einzelnes Material muss alle Perspektiven abdecken — die Diversitaet entsteht durch die Kombination.
+
+**Operationalisierung:**
+- Jedes perspektiv-tragende Material (Quellentext, Tagebuch, Bildquelle) deklariert in `_meta.perspektive`, welche Perspektive es abdeckt
+- Cross-Pruefung in Phase 2.1c (Achse Perspektiven-Diversitaet): Sind mindestens 3 verschiedene Perspektiven ueber alle Materialien vertreten?
+- FAIL wenn: Alle Materialien einer Mappe dieselbe Perspektive einnehmen (z.B. nur "deutsche Sicht")
+- WARN wenn: Nur 2 von 3 deklarierten Perspektiven vertreten — Finding dokumentieren, ggf. Fallback-Regelung (Darstellungstext mit expliziter Perspektiv-Benennung)
+
+**Abgrenzung zu M9:** M9 ist das allgemeine Multiperspektivitaets-Prinzip (gilt immer). M13 ist das verschaerfte, operationalisierte Gate fuer Konfliktthemen mit quantifiziertem Minimum und `_meta`-Tracking. Bei `konflikttyp: false` gilt nur M9.
+
 ---
 
 ## 3. Typ-spezifische Kriterien

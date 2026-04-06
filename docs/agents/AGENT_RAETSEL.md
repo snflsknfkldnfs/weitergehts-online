@@ -60,6 +60,9 @@ Orchestriert die Aufgabenerstellung pro Mappe. Verantwortlich fuer Struktur, Pro
 | SUB_AUFGABE_LUECKENTEXT | I-II | Lueckenauswahl, Fachbegriff-Recall | `docs/agents/SUB_AUFGABE_LUECKENTEXT.md` |
 | SUB_AUFGABE_REIHENFOLGE | II | Element-Eindeutigkeit, Ordnungsprinzipien | `docs/agents/SUB_AUFGABE_REIHENFOLGE.md` |
 | SUB_AUFGABE_FREITEXT | II-III | Problemorientierte Leitfrage, Scaffolding | `docs/agents/SUB_AUFGABE_FREITEXT.md` |
+| SUB_AUFGABE_VERGLEICH | III (L4) | Dimensionen-Analyse, Raster-Konstruktion | `docs/agents/SUB_AUFGABE_VERGLEICH.md` |
+| SUB_AUFGABE_BEGRUENDUNG | III (L5) | CER-Gitter, Evidenz-Selektion | `docs/agents/SUB_AUFGABE_BEGRUENDUNG.md` |
+| SUB_AUFGABE_QUELLENKRITIK | II-III (L3-L5) | W-Fragen-Quellenanalyse, Perspektivitaet | `docs/agents/SUB_AUFGABE_QUELLENKRITIK.md` |
 
 ## Aufgaben
 

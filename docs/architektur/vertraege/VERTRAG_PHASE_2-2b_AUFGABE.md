@@ -121,7 +121,7 @@ aufgaben/aufgabe-N-M.json   # id, typ, frage/text_mit_luecken, loesung,
                               # _meta: { bloom_level, bloom_begruendung }
 ```
 
-**typ-Werte (Engine-Registry):** `mc` · `zuordnung` · `lueckentext` · `reihenfolge` · `freitext-code` · `vergleich` · `begruendung`
+**typ-Werte (Engine-Registry):** `mc` · `zuordnung` · `lueckentext` · `reihenfolge` · `freitext-code` · `vergleich` · `begruendung` · `quellenkritik`
 
 ## Loesungsformate (Engine-kompatibel)
 
@@ -134,6 +134,7 @@ aufgaben/aufgabe-N-M.json   # id, typ, frage/text_mit_luecken, loesung,
 | Freitext | Array (Keywords, 3-5 Eintraege) |
 | Vergleich | Object `{ dimensionen: [..], objekte: [..], zellen: { <obj>: { <dim>: "<erwarteter Wert>" } } }` |
 | Begruendung | Object `{ claim: "<These>", evidence: ["<Material-Beleg 1>", ...], reasoning: "<Verknuepfung>" }` |
+| Quellenkritik | Object `{ <w-fragen-schluessel>: "<Musterantwort>", ... }` (Schluessel aus: wer, wann, wo, warum, fuer_wen, wozu, was_fehlt, quellenart). Zusaetzliches Pflichtfeld `w_fragen`: Array `[{schluessel, frage}, ...]`. |
 
 ## Compaction-Failsafe (P1)
 
