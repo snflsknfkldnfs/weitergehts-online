@@ -4,6 +4,20 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-06 — AU-2c PM-Strang: Cold-Handoff Vergleich-Zellenhoehe CSS-Fix
+
+**Phase:** D15b-Optimierung Phase IV Wave 1 AU-2c PM-Strang → CLOSED
+**Modus:** EXECUTE
+
+**Cold-Handoff:** `docs/uebergabe/UEBERGABE_PHASE_IV_WAVE_1_AU_2c.md`
+- Scope A: `_renderVergleich` input→textarea (escape-engine.js)
+- Scope B: `.vergleich__zelle` CSS min-height + resize + font-inherit (theme-gpg.css)
+- Scope C: Cache-Bust v=4.2→v=4.3
+
+**Naechster Schritt:** Claude-Code fuehrt Code-Strang aus.
+
+---
+
 ## 2026-04-06 — Zeitfenster-A Prompt-Patches (Checkpoint-1 Findings)
 
 **Phase:** D15b-Optimierung Phase IV Wave 1, Checkpoint-1 Remediation
