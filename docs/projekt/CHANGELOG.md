@@ -4,6 +4,29 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-06 — MEILENSTEIN: Phase IV Wave 1 COMPLETE
+
+**Alle ATOM-UNITs auf main:**
+
+| AU | Commit | Inhalt |
+|----|--------|--------|
+| AU-1 | `5b470c5` | STR-02 Bloom-Tiefe + STR-11 Teil 1 (Vergleich L4, Begruendung L5 CER) |
+| AU-2a | `bcb9eeb` | STR-03 Feedback-Schema Rollout (26 Aufgaben, 79 Eintraege) |
+| AU-2b | `3f1d89f` | STR-04 Tipp-Haertegrade Infrastruktur (normalizeTipps, Validator, Anti-Leak) |
+| AU-2c | `a3a1db1` | BEFUND-AU-1-UI-01 Vergleich-Zellenhoehe (input→textarea, CSS) |
+
+**Infrastruktur-Bilanz Wave 1:**
+- Engine: 2 neue Aufgabentypen (vergleich, begruendung), normalizeFeedback + normalizeTipps Safety-Nets, AufgabentypRegistry 7 Typen.
+- Validator: validate-feedback-schema.js mit Feedback + Tipp + Anti-Leak + typ-spezifischen Checks.
+- Vertraege: Feedback-Schema V2, Tipp-Schema, Bloom-Tiefe-Pflicht, freitext-code Alignment.
+- Prompts: 7/7 Subagenten-Prompts mit Feedback-Block, Tipp-Haertegrad, Anti-Leak-Beispielen, typ-Enum-Constraint.
+- Checkpoint-1: 16 Findings, 7 Prompt-Patches angewendet, Gate GRUEN fuer Generierungslauf.
+- Cache-Bust: v=4.0 → v=4.3 (4 Inkremente).
+
+**Naechster Schritt:** Wave 2 (AU-3 STR-08+11 Teil 2, AU-4 STR-05) oder Session-Ende.
+
+---
+
 ## 2026-04-06 — AU-2c Code-Strang: BEFUND-AU-1-UI-01 Vergleich-Zellenhoehe CSS-Fix
 
 **Phase:** D15b-Optimierung Phase IV Wave 1 AU-2c Code-Strang
