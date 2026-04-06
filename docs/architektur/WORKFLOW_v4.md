@@ -1,9 +1,10 @@
 # Workflow v4: Cowork-basierte Produktion + Praezise Schnittstellen
 
-**Datum:** 2026-03-31 (v4)
+**Datum:** 2026-03-31 (v4), 2026-04-06 (v4.1)
 **Basiert auf:** v3 (WORKFLOW_v2.md, 2026-03-26)
 **Ersetzt:** WORKFLOW_v2.md (v3) als kanonische Referenz
 **v4 Aenderungen:** Produktionsarchitektur — Phase 2 von Claude Code nach Cowork verlagert. Schnittstellen-Vertraege (P6). Compaction-Failsafe (P1). Rahmen stuetzt Inhalt (P3 verfeinert). Verlustfreie Transformation (P7). Phase 2.1c Material-Cross-Konsistenz (Strategie-Audit E2). User-Validierung PFLICHT nach Material 1-2 (E1).
+**v4.1 Aenderungen (2026-04-06):** AGENT_ARTEFAKT (ehem. Schritt 0.2b) in AGENT_INHALT (Schritt 0.2) integriert. Begruendung: BEFUND_PHASE_0_ARCHITEKTUR_EVALUATION.md §7, Option B. Phase-0-Kette jetzt 4 Agenten (DIDAKTIK → INHALT → SKRIPT → HEFTEINTRAG). Rueckwaerts-Kontingenz-Klauseln in Phase-0-Vertraege eingearbeitet.
 **Vorgaenger-Learnings bewahrt:** L1-L7 (v2.1), SK1-SK15, G1-G14, STRUKTUR-FREEZE (ehem. TB-FREEZE, differenziert seit Audit Sicherungskette), SCPL, Subagenten-Architektur, JSON-Encoding-Regeln, Engine-Typ-Mapping, Q-Gate-Formate, Download-Methode
 **Audit 1:** docs/analyse/AUDIT_v4_ARCHITEKTUR_ERGEBNIS.md (2026-03-31) — 1 BLOCKER, 3 MEDIUM, eingearbeitet
 **Audit 2:** docs/analyse/AUDIT_v4_STRATEGIE_ERGEBNIS.md (2026-03-31) — 4 Empfehlungen (E1-E4), eingearbeitet
@@ -96,11 +97,11 @@ Alle produktiven, qualitaetsmaximierenden Elemente und Entscheidungen aus v2/v3 
 ```
 PHASE 0: INHALTSGERUEST (einmalig pro Game)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-AGENT_DIDAKTIK → AGENT_INHALT → AGENT_ARTEFAKT → AGENT_SKRIPT
+AGENT_DIDAKTIK → AGENT_INHALT (inkl. Artefakt-Sichtung) → AGENT_SKRIPT
   User-Validierung: PFLICHT (Externer Audit empfohlen)
   → AGENT_HEFTEINTRAG
-Output: Gechunktes Skript (600-900 W/Chunk) + ARTEFAKT_INVENTAR + Tafelbild pro Mappe (JSON + Hefteintrag)
-Ort: Cowork (DIDAKTIK, SKRIPT, TAFELBILD) + Claude Code (INHALT, ARTEFAKT)
+Output: Gechunktes Skript (600-900 W/Chunk) + INHALTSBASIS (inkl. ARTEFAKT_INVENTAR) + Tafelbild pro Mappe (JSON + Hefteintrag)
+Ort: Cowork (DIDAKTIK, SKRIPT, TAFELBILD) + Claude Code (INHALT inkl. Artefakt-Sichtung)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
                     │
                     ▼
@@ -187,15 +188,12 @@ AGENT_DIDAKTIK (Phase 0, Schritt 1)
     → Lehrplan-Verankerung, KE-Matrix, Mappen-Struktur, Schwierigkeitskurve
     │
     ▼
-AGENT_INHALT (Phase 0, Schritt 2a)
+AGENT_INHALT (Phase 0, Schritt 2 — inkl. Artefakt-Sichtung)
     → Wikipedia-Recherche, Sachanalyse, Fakten-Extraktion
-    │  MCP: wikipedia: get_article, get_sections, get_links, get_summary
-    │
-    ▼
-AGENT_ARTEFAKT (Phase 0, Schritt 2b)
-    → Artikelstrukturierte Artefakt-Sichtung (Bilder, Zitate, Rollenprofile)
-    │  API: MediaWiki action=parse + action=query (via markdownify)
-    │  Output: ARTEFAKT_INVENTAR (qualifizierte Artefakte mit Self-Hosting-Daten)
+    → Artefakt-Sichtung: Bilder, Zitate, Rollenprofile (integriert)
+    │  MCP: wikipedia (get_article, get_sections, get_links, get_summary)
+    │  MCP: wikimedia_search_images (Artefakt-Recherche)
+    │  Output: INHALTSBASIS (inkl. ARTEFAKT_INVENTAR-Sektionen)
     │
     ▼
 AGENT_SKRIPT (Phase 0, Schritt 3)
@@ -258,8 +256,8 @@ PHASE 3: Assembly (Claude Code)                             ← NEU v4: Nur Asse
 | Agent | v3 | v4 | Aenderung |
 |---|---|---|---|
 | DIDAKTIK | Phase 0, Schritt 1 | Unveraendert | — |
-| INHALT | Phase 0, Schritt 2a | Unveraendert | — |
-| ARTEFAKT | Phase 0, Schritt 2b | Unveraendert | — |
+| INHALT | Phase 0, Schritt 2a | Phase 0, Schritt 2 (inkl. Artefakt-Sichtung) | v4.1: AGENT_ARTEFAKT integriert (Architektur-Evaluation 2026-04-06) |
+| ~~ARTEFAKT~~ | Phase 0, Schritt 2b | Integriert in AGENT_INHALT (Schritt 2) | v4.1: Aufgeloest — Artefakt-Sichtung passiert waehrend Recherche |
 | SKRIPT | Phase 0, Schritt 3 | Unveraendert | — |
 | TAFELBILD | Phase 0, Schritt 4 | Unveraendert | — |
 | MATERIAL | Design (Phase 1+1.5) | Unveraendert | — |
@@ -286,18 +284,20 @@ PHASE 3: Assembly (Claude Code)                             ← NEU v4: Nur Asse
 **Output:** `DIDAKTIK_RAHMEN_[game-id].md`
 **Prompt-Datei:** `docs/agents/AGENT_DIDAKTIK.md`
 
-### Schritt 0.2a: AGENT_INHALT
+### Schritt 0.2: AGENT_INHALT (inkl. Artefakt-Sichtung)
+
+**v4.1-Aenderung (2026-04-06):** Ehemals getrennt in 0.2a (INHALT) + 0.2b (ARTEFAKT). Zusammengelegt, weil Artefakt-Sichtung waehrend der Recherche anfaellt und separate Dispatches keinen Qualitaetsgewinn bringen. Vertragsreferenz: `VERTRAG_PHASE_0-2_INHALT.md`.
 
 **Eingabe:** DIDAKTIK_RAHMEN + Thema
 
-**Aufgabe:**
+**Aufgabe (Sachanalyse + Artefakt-Sichtung):**
 1. Wikipedia-Hauptartikel zum Thema abrufen (`wikipedia: get_article`)
 2. Artikelstruktur erfassen (`wikipedia: get_sections`)
 3. Quellen-Ergiebigkeit pruefen (< 5 Absaetze → Fallback-Pfad)
 4. Vertiefungsartikel identifizieren (`wikipedia: get_links`)
 5. Pro Mappe relevante Sektionen und Vertiefungsartikel lesen
 6. Fakten, Chronologie, Akteure, Fachbegriffe, Zahlen extrahieren
-7. Wikimedia-Artefakte funktional dokumentieren
+7. **Artefakt-Sichtung (integriert):** Wikimedia-Artefakte pro Mappe identifizieren (`wikimedia_search_images`), Lizenz pruefen (CC-BY-NC/CC-BY-ND → AUSSCHLUSS), didaktisch bewerten (QUALIFIZIERT / RESERVE / VERWORFEN), Self-Hosting-Daten dokumentieren
 8. Originalzitate extrahieren
 9. Rollenprofile fuer Tagebuch-Material recherchieren
 
@@ -309,31 +309,14 @@ PHASE 3: Assembly (Claude Code)                             ← NEU v4: Nur Asse
 | 2 | Auch verwandte Artikel duenn | WebSearch + `markdownify: webpage-to-markdown` |
 | 3 | Auch WebSearch ergebnislos | User informieren, im INHALTSBASIS-Output dokumentieren |
 
-**MCP-Tools:** `wikipedia: get_article`, `get_sections`, `get_links`, `get_summary`, `extract_key_facts`, `markdownify: webpage-to-markdown`
+**MCP-Tools:** `wikipedia: get_article`, `get_sections`, `get_links`, `get_summary`, `extract_key_facts`, `markdownify: webpage-to-markdown`, `wikimedia_search_images`
 
-**Output:** `INHALTSBASIS_[game-id].md`
+**Output:** `INHALTSBASIS_[game-id].md` (enthalt integrierte ARTEFAKT_INVENTAR-Sektionen pro Mappe)
 **Prompt-Datei:** `docs/agents/AGENT_INHALT.md`
-
-### Schritt 0.2b: AGENT_ARTEFAKT
-
-**Eingabe:** INHALTSBASIS (Artikel-Liste) + DIDAKTIK_RAHMEN
-
-**Aufgabe:**
-1. Artikelstruktur laden (MediaWiki `action=parse&prop=sections`)
-2. Bilder pro Sektion sichten (`action=parse&section=N&prop=images`)
-3. Metadaten qualifizieren (`action=query&prop=imageinfo`) — CC-BY-NC verwerfen
-4. Didaktisch bewerten (QUALIFIZIERT / RESERVE / VERWORFEN)
-5. Rollenprofile und Zitate sichten
-6. Self-Hosting-Daten dokumentieren (Thumbnail-URL + Breite + MIME)
-
-**Kernprinzip:** Strukturierte Sichtung entlang der Artikel-Sachstruktur. Kein `wikimedia_search_images` als Primaermethode.
-
-**Output:** `ARTEFAKT_INVENTAR_[game-id].md`
-**Prompt-Datei:** `docs/agents/AGENT_ARTEFAKT.md`
 
 ### Schritt 0.3: AGENT_SKRIPT
 
-**Eingabe:** DIDAKTIK_RAHMEN + INHALTSBASIS + ARTEFAKT_INVENTAR
+**Eingabe:** DIDAKTIK_RAHMEN + INHALTSBASIS (enthalt Artefakt-Inventar seit v4.1)
 
 **Aufgabe:**
 1. Lineares, schulernahes Skript schreiben (Jugendsachbuch-Stil)
@@ -381,7 +364,7 @@ Kanonische Referenz: `docs/checklisten/GUETEKRITERIEN_SKRIPT.md`
 **Eingabe:**
 - SKRIPT_[game-id].md (validiert)
 - DIDAKTIK_RAHMEN (KE-Matrix, Sicherungsziel)
-- ARTEFAKT_INVENTAR (qualifizierte Artefakte)
+- INHALTSBASIS (enthalt Artefakt-Inventar seit v4.1)
 - GUETEKRITERIEN_HEFTEINTRAG_ENTWURF (G1-G14)
 - Vorheriges Tafelbild (ab Mappe 2 — fuer Progression G9)
 

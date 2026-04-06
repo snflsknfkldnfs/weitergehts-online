@@ -4,18 +4,30 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
-## 2026-04-06 — Phase-0 Architektur-Evaluation
+## 2026-04-06 — Phase-0 Architektur-Schaerfung (v4.1)
 
-**Phase:** Phase IV — Phase-0-Architektur-Pruefung
-**Modus:** AUDIT
+**Phase:** Phase IV — Phase-0-Architektur-Evaluation + Schaerfung
+**Modus:** AUDIT → EXECUTE
 **Session:** 14 (Fortsetzung nach Compaction)
 
-**Architektur-Evaluation Phase 0 (auf User-Anfrage):**
-- NEU: `docs/projekt/BEFUND_PHASE_0_ARCHITEKTUR_EVALUATION.md` — Evaluation des Phase-0-Status-Quo gegen WORKFLOW_v4, ORCHESTRATOR, Phase-1-Handoff-Anforderungen
-- **Kernbefund:** Mappen-Aufteilung korrekt bei AGENT_DIDAKTIK (bestaetigt durch WORKFLOW_v4 §5.1 + ORCHESTRATOR [0.1])
-- **6 Findings:** F-A1 HIGH (AGENT_ARTEFAKT-Inkonsistenz: 3 Quellen widersprechen sich), F-A2 HIGH (VERTRAG_PHASE_0-4_HEFTEINTRAG fehlt), F-A3-F-A6 MEDIUM/LOW (Sequenzierbarkeit, Phase-2.0-Kompatibilitaet, Agent-Prompt-Reifegefaelle, User-Validierungsformat)
-- **Rueckwaerts-Kontingenz identifiziert:** Phase-1/1.5/2.0-Anforderungen (STRUKTUR-FREEZE, Sequenzierbarkeit, hefteintrag.json-Kompatibilitaet) nicht als Qualitaetskriterien in Phase-0-Vertraegen kodiert
-- **User-Entscheidung noetig:** AGENT_ARTEFAKT separat (WORKFLOW_v4) oder integriert (ORCHESTRATOR/Vertrag)? Empfehlung: Option B (integriert) mit WORKFLOW_v4-Anpassung.
+**1. Architektur-Evaluation Phase 0 (auf User-Anfrage):**
+- NEU: `docs/projekt/BEFUND_PHASE_0_ARCHITEKTUR_EVALUATION.md` — 6 Findings (2 HIGH), Rueckwaerts-Kontingenz-Analyse
+- Kernbefund: Mappen-Aufteilung korrekt bei AGENT_DIDAKTIK (WORKFLOW_v4 §5.1 + ORCHESTRATOR [0.1])
+
+**2. F-A1 RESOLVED: AGENT_ARTEFAKT Integration (Option B):**
+- MODIFIZIERT: `WORKFLOW_v4.md` → v4.1: Schritt 0.2a+0.2b zusammengelegt zu Schritt 0.2 (AGENT_INHALT inkl. Artefakt-Sichtung). Phase-0-Kette jetzt 4 Agenten. Rollenprofil-Tabelle aktualisiert.
+- MODIFIZIERT: `ORCHESTRATOR.md` [0.2]: Tool-Anforderung praezisiert (Wikipedia MCP + wikimedia_search_images), Vertragsreferenz ergaenzt.
+- MODIFIZIERT: `VERTRAG_PHASE_0-2_INHALT.md` → v1.1: Header aktualisiert auf v4.1-Konsistenz.
+
+**3. F-A2 RESOLVED: VERTRAG_PHASE_0-4_HEFTEINTRAG:**
+- NEU: `docs/architektur/vertraege/VERTRAG_PHASE_0-4_HEFTEINTRAG.md` — Input-Spec (5 Parameter), Output-Schema (JSON Phase-2.0-kompatibel), STRUKTUR-FREEZE-Definition (9 Elemente), 3-stufiges Q-Gate (QH1-QH7 operativ + G1-G14 fachdidaktisch + QH-RC1-RC3 Rueckwaerts-Kontingenz).
+
+**4. F-A3 + F-A5 RESOLVED: Sequenzierbarkeit + Rueckwaerts-Kontingenz:**
+- MODIFIZIERT: `VERTRAG_PHASE_0-1_DIDAKTIK.md` → v1.1: +QD9 Sequenzierbarkeit (HIGH), +QD10 STRUKTUR-FREEZE-Tauglichkeit (HIGH).
+- MODIFIZIERT: `VERTRAG_PHASE_0-3_SKRIPT.md` → v1.1: +QS7 Interne Sequenzierbarkeit (HIGH), +QS8 TAFELBILD-Ableitbarkeit (HIGH).
+- MODIFIZIERT: `VERTRAG_PHASE_0-2_INHALT.md` → v1.1: +QI-RC1 SKRIPT-Tauglichkeit, +QI-RC2 TAFELBILD-Tauglichkeit, +QI-RC3 Material-Tauglichkeit.
+
+**Offen:** F-A5 Agent-Prompts auf v2.0 heben (INHALT, SKRIPT, HEFTEINTRAG). F-A6 User-Validierungsformat SKRIPT. PF-1 KE-Katalog (User-Input). User-Validierung DIDAKTIK_RAHMEN Game 2.
 
 ---
 

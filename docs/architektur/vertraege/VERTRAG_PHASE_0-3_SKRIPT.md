@@ -1,6 +1,6 @@
 # VERTRAG Phase 0.3 — AGENT_SKRIPT (Didaktisiertes Skript)
 
-**Version:** v1.0 (Phase IV Wave 4)
+**Version:** v1.1 (Phase IV Architektur-Evaluation)
 **Datum:** 2026-04-06
 **Extrahiert aus:** ORCHESTRATOR.md §0.3, WORKFLOW_v4.md §3, GUETEKRITERIEN_SKRIPT.md (SK1-SK17), Game-1 SKRIPT (Ist-Format)
 **Kanonisch fuer:** Phase 0.3 jedes neuen Escape-Games
@@ -132,10 +132,14 @@ Gemaess GUETEKRITERIEN_SKRIPT.md. Dreistufig:
 | QS4 | Artefakt-Vollstaendigkeit | Jedes Artefakt aus INHALTSBASIS (img, zit, rolle) ist mindestens einmal im Skript referenziert. ≥3 Artefakt-Marker pro Chunk. Marker-Syntax korrekt. | HIGH |
 | QS5 | Tafelbild-Plausibilitaet | Jeder Tafelbild-Entwurf hat ≥4 Knoten, ≥3 Verbindungen. Kernbegriff der Mappe ist als Knoten vorhanden. Verbindungen haben semantische Labels (nicht nur Pfeile). | MEDIUM |
 | QS6 | Umfangs-Plausibilitaet (SK17) | Skript-Gesamtumfang laesst 3-5 Materialien pro Mappe bei max. 700-900 W Materialtext erwarten. Bei Ueberschreitung: WARN + Hinweis an Phase 2 Vertrag. | MEDIUM |
+| QS7 | Interne Sequenzierbarkeit (F-A3) | Jeder Chunk enthaelt thematisch trennbare Einheiten, die in Phase 1.5 in verschiedene Materialreihenfolgen gebracht werden koennen. Kein Chunk, in dem alle Informationen chronologisch so verzahnt sind, dass nur eine einzige Material-Reihenfolge moeglich waere. | HIGH |
+| QS8 | TAFELBILD-Ableitbarkeit (F-A4) | Tafelbild-Entwurf pro Chunk muss als Grundlage fuer Phase-0.4-AGENT_HEFTEINTRAG dienen koennen. Kernbegriffe, Ordnungsmuster-Hinweis und Verbindungsstruktur muessen erkennbar sein. | HIGH |
 
 **Gate-Urteil:** PASS wenn alle BLOCKER bestanden + max 2 HIGH als WARN. Sonst: Nachbesserung.
 
 **User-Validierung:** PFLICHT nach Q-Gate. Lehrkraft prueft: Fachliche Korrektheit, didaktische Reduktion, Mappen-Aufteilung, Progression, Sprachregister, Artefakt-Eignung.
+
+**Ruecklauf-Szenario:** Wenn User-Validierung oder AGENT_HEFTEINTRAG (Phase 0.4) ein strukturelles Problem im SKRIPT aufdeckt (z.B. SCPL nicht ableitbar, Chunk nicht sequenzierbar): Ruecklauf zu AGENT_SKRIPT mit praezisem Finding. AGENT_SKRIPT ueberarbeitet den betroffenen Chunk. Max. 1 Iteration pro Chunk. Wenn nach Iteration nicht loesbar: Finding dokumentieren + User-Entscheidung (ggf. Ruecklauf bis AGENT_DIDAKTIK, wenn das Mappen-Zuschnitt-Problem ist).
 
 ---
 

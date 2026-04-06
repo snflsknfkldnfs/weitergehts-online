@@ -35,12 +35,15 @@ PHASE 0: INHALTSGERUEST (einmalig pro Game)
   │             (KE-Matrix, Mappen-Grobstruktur, Schwierigkeitskurve, Leitlinien)
   │
   ▼
-[0.2] AGENT_INHALT
+[0.2] AGENT_INHALT (inkl. Artefakt-Sichtung — v4.1)
   │    Eingabe: DIDAKTIK_RAHMEN + thema
   │    Ausgabe: INHALTSBASIS_[game-id].md
-  │             (Wikipedia-basierte Sachanalyse, Fakten, Akteure, Bilder pro Mappe)
+  │             (Wikipedia-basierte Sachanalyse, Fakten, Akteure, Artefakte pro Mappe)
+  │             (Integriertes ARTEFAKT_INVENTAR: Bilder, Karten, Lizenzen, Self-Hosting-Daten)
   │    MCP: wikipedia (get_article, get_sections, get_links, get_summary, extract_key_facts)
-  │    Ort: Claude Code (Token-intensive Wikipedia-Recherche)
+  │    MCP: wikimedia_search_images (Artefakt-Recherche)
+  │    Vertrag: VERTRAG_PHASE_0-2_INHALT.md
+  │    Ort: Claude Code (Token-intensive Wikipedia-Recherche + Artefakt-Sichtung)
   │
   ▼
 [0.3] AGENT_SKRIPT

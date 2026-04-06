@@ -1,6 +1,6 @@
 # VERTRAG Phase 0.1 — AGENT_DIDAKTIK (Didaktischer Rahmen)
 
-**Version:** v1.0 (Phase IV Wave 4)
+**Version:** v1.1 (Phase IV Architektur-Evaluation)
 **Datum:** 2026-04-06
 **Extrahiert aus:** ORCHESTRATOR.md §0.1, WORKFLOW_v4.md §3/§4, Game-1 DIDAKTIK_RAHMEN (Ist-Format)
 **Kanonisch fuer:** Phase 0.1 jedes neuen Escape-Games
@@ -65,6 +65,8 @@ AGENT_DIDAKTIK erzeugt den didaktischen Rahmen fuer ein Escape-Game. Das Artefak
 | QD6 | AFB-Progression | Schwierigkeitskurve steigt monoton oder ist begruendet nicht-monoton. Mappe 1 beginnt maximal bei AFB II. | MEDIUM |
 | QD7 | Ethik-Abdeckung | Mindestens Multiperspektivitaet + Ueberwaetigungsverbot sind adressiert. Kein Thema ohne ethische Reflexion. | HIGH |
 | QD8 | Strukturvorgaben vollstaendig | Artikulationsstruktur, Narrativ-Rahmen und Differenzierungshinweise sind vorhanden. Narrativ-Rahmen ist altersgerecht und nicht trivial. | MEDIUM |
+| QD9 | Sequenzierbarkeit der Mappen | Jede Mappe hat einen thematisch abgeschlossenen Schwerpunkt, der intern in mehrere Materialien zerlegbar ist (Phase-1.5-Kompatibilitaet). Kein chronologisch-thematisches Verschraenkungsproblem: Wenn eine Mappe Teile zweier Chronologien enthaelt, muessen diese trennbar sein. | HIGH |
+| QD10 | STRUKTUR-FREEZE-Tauglichkeit | Jede Mappe-Grobstruktur muss hinreichend praezise sein, um als Grundlage fuer ein TAFELBILD (Phase 0.4) zu dienen, das als STRUKTUR-FREEZE die gesamte nachfolgende Produktion steuert. "Thematischer Schwerpunkt" und "Zentrale Erkenntnis" muessen so formuliert sein, dass ein Hefteintrag daraus ableitbar ist. | HIGH |
 
 **Gate-Urteil:** PASS wenn alle BLOCKER bestanden + max 1 HIGH als WARN. Sonst: Nachbesserung.
 

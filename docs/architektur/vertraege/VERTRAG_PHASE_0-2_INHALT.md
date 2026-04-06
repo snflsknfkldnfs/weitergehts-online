@@ -1,8 +1,8 @@
 # VERTRAG Phase 0.2 — AGENT_INHALT (Inhaltsbasis + Artefakt-Sichtung)
 
-**Version:** v1.0 (Phase IV Wave 4)
-**Datum:** 2026-04-06
-**Extrahiert aus:** ORCHESTRATOR.md §0.2/§0.2b, WORKFLOW_v4.md §3, Game-1 INHALTSBASIS (Ist-Format)
+**Version:** v1.1 (Phase IV Architektur-Evaluation)
+**Datum:** 2026-04-06 (v1.0), 2026-04-06 (v1.1 — AGENT_ARTEFAKT-Integration konsistent mit WORKFLOW_v4.1)
+**Extrahiert aus:** ORCHESTRATOR.md §0.2, WORKFLOW_v4.md §5 Schritt 0.2 (v4.1), Game-1 INHALTSBASIS (Ist-Format)
 **Kanonisch fuer:** Phase 0.2 jedes neuen Escape-Games
 
 ---
@@ -13,7 +13,7 @@ AGENT_INHALT recherchiert die faktische Grundlage fuer ein Escape-Game auf Basis
 
 **Abgrenzung:** AGENT_INHALT entscheidet ueber Faktenauswahl und Quellenzuordnung. Er entscheidet NICHT ueber Mappen-Struktur (→ AGENT_DIDAKTIK, Phase 0.1), Narrativ/Chunking (→ AGENT_SKRIPT, Phase 0.3) oder konkrete Aufgabenformate (→ AGENT_RAETSEL, Phase 2.2).
 
-**Artefakt-Sichtung (ehemals AGENT_ARTEFAKT, Phase 0.2b):** Ist integraler Bestandteil dieser Phase. Wikimedia-Artefakte werden waehrend der Recherche pro Mappe identifiziert und direkt in die INHALTSBASIS aufgenommen. Kein separater Dispatch.
+**Artefakt-Sichtung (ehemals AGENT_ARTEFAKT, Phase 0.2b):** Ist integraler Bestandteil dieser Phase (v4.1). Wikimedia-Artefakte werden waehrend der Recherche pro Mappe identifiziert, lizenzgeprueft, didaktisch qualifiziert (QUALIFIZIERT / RESERVE / VERWORFEN) und direkt in die INHALTSBASIS aufgenommen. Kein separater Dispatch. Downstream-Agenten (AGENT_SKRIPT, AGENT_HEFTEINTRAG) erhalten die vollstaendige Artefakt-Inventar-Tabelle aus der INHALTSBASIS und verwenden ausschliesslich Artefakte mit Status QUALIFIZIERT.
 
 ---
 
@@ -100,6 +100,14 @@ AGENT_INHALT recherchiert die faktische Grundlage fuer ein Escape-Game auf Basis
 | QI4 | DIDAKTIK_RAHMEN-Abdeckung | Jede KE aus der KE-Matrix des DIDAKTIK_RAHMEN hat mindestens 3 stuetzende Fakten in der INHALTSBASIS. Jeder Gegenstandsbereich ist mit Fachbegriffen abgedeckt. Keine Mappe hat Fakten, die nicht zum thematischen Schwerpunkt (laut DIDAKTIK_RAHMEN) passen. **Pflicht-Output pro Mappe:** Eine KE-Abdeckungszeile: `KE-Abdeckung: [KE-ID] gestuetzt durch [Fakt-1, Fakt-2, Fakt-3+]`. | HIGH |
 | QI5 | Artefakt-Qualitaet | ≥2 Wikimedia-Artefakte pro Mappe. Alle Lizenzen CC-kompatibel (PD, CC-BY, CC-BY-SA). Kein Artefakt ohne Einbettungsvorschlag. Typ-Diversitaet: nicht alle Artefakte eines Typs pro Mappe (Ausnahme: nur 2 verfuegbar). | MEDIUM |
 | QI6 | Inhaltsluecken-Transparenz | Identifizierte Luecken sind dokumentiert mit Status. Keine Mappe hat offene Luecken in Kernbereichen (Chronologie, Akteure). Duenne Quellenlage ist explizit benannt. | HIGH |
+
+### Rueckwaerts-Kontingenz (Downstream-Kompatibilitaet)
+
+| ID | Kriterium | Pruefung | Severity |
+|---|---|---|---|
+| QI-RC1 | SKRIPT-Tauglichkeit | Pro Mappe genuegend Fakten + Akteure + Artefakte, um einen 600-900W Skript-Chunk zu stuetzen. Keine Mappe mit weniger als 8 Fakten + 2 Akteure + 2 Artefakte. | HIGH |
+| QI-RC2 | TAFELBILD-Tauglichkeit | Pro Mappe genuegend strukturiertes Material (Kausalitaeten, Chronologien, Begriffshierarchien), um ein SCPL-Tafelbild ableiten zu koennen. Kein reines Faktenaggregat ohne innere Struktur. | MEDIUM |
+| QI-RC3 | Material-Tauglichkeit | Pro Mappe mindestens 2 verschiedene Artefakt-Typen (foto + karte, zitat + rollenprofil, etc.), damit Phase-1 Materialtyp-Diversitaet moeglich ist. | MEDIUM |
 
 **Gate-Urteil:** PASS wenn alle BLOCKER bestanden + max 1 HIGH als WARN. Sonst: Nachbesserung.
 
