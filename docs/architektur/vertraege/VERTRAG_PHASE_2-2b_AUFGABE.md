@@ -1,7 +1,7 @@
 # Vertrag Phase 2.2b: Aufgaben-Produktion
 
 **Extrahiert aus:** WORKFLOW_v4.md (Commit d627924, 2026-04-01)
-**Patch-Stand:** 2026-04-06 — AU-2a (STR-03 Feedback-Schema-Pflichtfeld, A25/A26). Vorher AU-1 (STR-02 Bloom-Tiefe-Pflicht + STR-11 Vergleich/Begruendung, 2026-04-05). Siehe VERTRAG_ATOM_UNITS.md §3 AU-1, AU-2a.
+**Patch-Stand:** 2026-04-06 — CP-2 Patches (F-CP2-01 Subagenten-Tabelle + F-CP2-03 Anti-Quota). Vorher AU-2a (STR-03 Feedback-Schema-Pflichtfeld, A25/A26). Vorher AU-1 (STR-02 Bloom-Tiefe-Pflicht + STR-11 Vergleich/Begruendung, 2026-04-05). Siehe VERTRAG_ATOM_UNITS.md §3 AU-1, AU-2a.
 **Prinzipien:** P1 (Read-from-Artifact) · P4 (1 Aufgabe = 1 Dispatch = 1 .json) · P5 (Q-Gate Pflicht) · P6 (Praezise Schnittstellen)
 **Dispatch-Isolation:** Jede Aufgabe wird als EIGENE Nachricht produziert. NICHT mehrere Aufgaben parallel.
 
@@ -18,8 +18,9 @@
 | SUB_AUFGABE_FREITEXT | II-III | L3-L6 | Leitfragen-Design, Scaffolding | SUB_AUFGABE_FREITEXT.md |
 | SUB_AUFGABE_VERGLEICH | II-III | **L4** (Ziel) | Strukturraster, Dimensions-Design | SUB_AUFGABE_VERGLEICH.md |
 | SUB_AUFGABE_BEGRUENDUNG | III | **L5** (Ziel) | CER-Schema (Claim-Evidence-Reasoning) | SUB_AUFGABE_BEGRUENDUNG.md |
+| SUB_AUFGABE_QUELLENKRITIK | II-III | **L3-L5** (Ziel) | W-Fragen-Systematik, Perspektiv-Reflexion | SUB_AUFGABE_QUELLENKRITIK.md |
 
-**STR-11 Anti-Quota-Klausel:** Die neuen Typen `vergleich` und `begruendung` werden NICHT per Quote erzwungen. Auswahl ausschliesslich nach Eignung (Material-Struktur + Lernziel). Pseudo-Vergleiche (nur 1 Dimension) und Pseudo-Begruendungen (Claim ohne Evidence) sind Q-Gate-FAIL. Auswahl-Heuristik: siehe VERTRAG_PHASE_2-2a_PROGRESSIONSPLAN.md.
+**STR-11 Anti-Quota-Klausel:** Die neuen Typen `vergleich`, `begruendung` und `quellenkritik` werden NICHT per Quote erzwungen. Auswahl ausschliesslich nach Eignung (Material-Struktur + Lernziel). Pseudo-Vergleiche (nur 1 Dimension), Pseudo-Begruendungen (Claim ohne Evidence) und Pseudo-Quellenkritik (W-Fragen ohne Perspektiv-Analyse) sind Q-Gate-FAIL. Auswahl-Heuristik: siehe VERTRAG_PHASE_2-2a_PROGRESSIONSPLAN.md.
 
 ## Schnittstellen-Vertrag (P6)
 

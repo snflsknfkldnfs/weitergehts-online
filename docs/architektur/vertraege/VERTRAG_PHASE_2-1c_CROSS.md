@@ -21,7 +21,7 @@
 
 ## 7 Achsen
 
-### Achsen 1-4: Cross-Konsistenz (unveraendert)
+### Achsen 1-5: Cross-Konsistenz
 
 1. **Sequenz-Kohaerenz:** Bilden die Materialien in Reihenfolge einen logischen Erkenntnisweg zum Tafelbild? FAIL wenn: Ein Material setzt einen Fachbegriff als bekannt voraus, der erst in einem spaeteren Material eingefuehrt wird.
 

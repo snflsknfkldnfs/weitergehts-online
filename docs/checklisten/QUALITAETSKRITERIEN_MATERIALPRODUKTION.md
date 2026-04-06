@@ -21,7 +21,7 @@ Materialien in Escape-Games sind keine Illustrationen. Sie sind **didaktisch kon
 
 ---
 
-## 2. Typ-uebergreifende Prinzipien (M1–M12)
+## 2. Typ-uebergreifende Prinzipien (M1–M13)
 
 Diese Prinzipien gelten fuer ALLE Materialtypen. Jeder SUB_MATERIAL_* prueft sie als Basisschicht seines Q-Gates.
 

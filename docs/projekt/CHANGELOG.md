@@ -4,6 +4,26 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-06 — Checkpoint-2 Infrastruktur-Audit COMPLETE
+
+**Phase:** D15b-Optimierung Phase IV Checkpoint-2
+**Modus:** AUDIT
+**Methode:** 4 parallele Review-Agenten (D1-D4) + PM-Blind-Spot-Self-Check (6 Hypothesen)
+
+**Ergebnis:** 11 Findings (2 CRITICAL, 3 HIGH, 5 MEDIUM, 1 LOW).
+- **F-CP2-01 CRITICAL:** SUB_AUFGABE_QUELLENKRITIK fehlt in Subagenten-Zuordnungstabelle VERTRAG_PHASE_2-2b.
+- **F-CP2-02 CRITICAL (Blind-Spot):** SUB_MATERIAL_DARSTELLUNGSTEXT ohne formale Multiperspektivitaet-Policy (3 von 4 Prompts gepatcht, DARSTELLUNGSTEXT vergessen).
+- **F-CP2-03 HIGH:** Anti-Quota in VERTRAG_PHASE_2-2b veraltet (fehlt quellenkritik).
+- **F-CP2-04/05 HIGH:** Doku-Header-Inkonsistenzen (CROSS-Vertrag Achse-5, M-Katalog M1-M13).
+- **F-CP2-06/07 MEDIUM:** Schema-Luecken (_meta nicht in material-output-schema, aufgabe-output-schema existiert nicht).
+- **F-CP2-08 MEDIUM:** Wave-2-Konstrukte ohne maschinelle Validierung (akzeptiert: prompt-enforced).
+- **F-CP2-09/10 MEDIUM:** Checkpoint-1 Findings F-CP1-11 scope-erweitert + F-CP1-05/09 ueberfaellig.
+- **Gate-Urteil:** ~~GELB~~ → GRUEN fuer Generierung (5 Zeitfenster-A-Patches sofort angewendet), GRUEN fuer Wave 3+ Planung.
+- **Zeitfenster-A-Patches (5/5 DONE):** VERTRAG_PHASE_2-2b (Subagenten-Tabelle + Anti-Quota), SUB_MATERIAL_DARSTELLUNGSTEXT (formale Multiperspektivitaet-Policy + _meta.perspektive), VERTRAG_PHASE_2-1c_CROSS (Header Achsen 1-5), QUALITAETSKRITERIEN_MATERIALPRODUKTION (Header M1-M13).
+- **Befund:** `docs/befunde/BEFUND-CHECKPOINT-2-INFRASTRUKTUR.md`
+
+---
+
 ## 2026-04-06 — MEILENSTEIN: Phase IV Wave 2 COMPLETE
 
 **Alle ATOM-UNITs auf main:**

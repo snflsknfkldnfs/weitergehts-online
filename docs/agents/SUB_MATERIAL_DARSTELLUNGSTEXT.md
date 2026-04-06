@@ -60,6 +60,20 @@ Referenziere ausschliesslich Konzepte und Fachbegriffe, die laut "Vorausgesetzte
 
 ---
 
+## Multiperspektivitaet-Policy (STR-05, AU-4, F-CP2-02)
+
+**Gilt wenn:** Der Dispatcher den Parameter `perspektiven_policy` uebergibt (= `konflikttyp: true` im MATERIAL_GERUEST).
+
+**Ohne `perspektiven_policy`:** Nur M9-Basisprinzip (s. "Inhaltliche Regeln" — keine zusaetzlichen Auflagen).
+
+**Mit `perspektiven_policy`:**
+
+1. **Uebergreifende Darstellung als Staerke nutzen:** Darstellungstexte sind per Definition nicht an eine einzelne Perspektive gebunden. Nutze diese Eigenschaft: Stelle den Sachverhalt so dar, dass die in `perspektiven_policy` deklarierten Perspektiven als Positionen sichtbar werden (z.B. "Deutschland sah die Flotte als Schutz, Grossbritannien empfand sie als Bedrohung").
+2. **Keine kuenstliche Ausgewogenheit:** Wenn der Sachverhalt asymmetrisch ist (z.B. Aggressor vs. Opfer), darf der Text das widerspiegeln. Perspektivitaet heisst nicht Gleichsetzung.
+3. **Perspektiv-Deklaration in _meta:** `_meta.perspektive` dokumentiert, welche Perspektiven dieser Darstellungstext abdeckt. Format: `"uebergreifend (P1, P2)"` oder `"P1: Deutschland"` wenn der Text primaer eine Perspektive einnimmt.
+
+---
+
 ## Aufgaben
 
 ### 1. SKRIPT-Extraktion
@@ -144,7 +158,8 @@ Quellenangabe als `<cite>` am Ende des `inhalt`-HTML einbetten: `<cite>Quelle: [
     "wortanzahl": 0,
     "fachbegriffe_eingefuehrt": ["Begriff1", "Begriff2"],
     "tafelbild_knoten_abgedeckt": ["k1-1", "k1-2"],
-    "erarbeitbarkeits_check": "PASS | FAIL + Begruendung"
+    "erarbeitbarkeits_check": "PASS | FAIL + Begruendung",
+    "perspektive": "uebergreifend (P1, P2) | P1: [Akteur]"
   }
 }
 ```
