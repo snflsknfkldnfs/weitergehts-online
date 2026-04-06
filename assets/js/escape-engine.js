@@ -3058,9 +3058,9 @@ var EscapeEngine = (function () {
       for (var d2 = 0; d2 < dimensionen.length; d2++) {
         var dim = dimensionen[d2];
         var td = document.createElement('td');
-        var input = document.createElement('input');
-        input.type = 'text';
+        var input = document.createElement('textarea');
         input.className = 'vergleich__zelle';
+        input.rows = 2;
         var cellKey = objekt + '__' + dim;
         input.id = aufgabe.id + '-zelle-' + o + '-' + d2;
         input.setAttribute('aria-label', objekt + ' — ' + dim);

@@ -4,6 +4,21 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-06 — AU-2c Code-Strang: BEFUND-AU-1-UI-01 Vergleich-Zellenhoehe CSS-Fix
+
+**Phase:** D15b-Optimierung Phase IV Wave 1 AU-2c Code-Strang
+**Modus:** EXECUTE
+**ATOM-UNIT:** AU-2c (VERTRAG_ATOM_UNITS.md §3 AU-2c)
+
+**Code-Aenderungen:**
+- Renderer-Patch: input[type=text] → textarea in _renderVergleich (escape-engine.js)
+- CSS-Fix: vergleich__zelle min-height, resize:vertical, font-family/size inherit (theme-gpg.css)
+- Cache-Bust v=4.2 → v=4.3 (6 HTML-Dateien, Subpage gpg-erster-weltkrieg-ursachen)
+
+**Befund:** docs/befunde/BEFUND-AU-1-UI-01.md
+
+---
+
 ## 2026-04-06 — AU-2c PM-Strang: Cold-Handoff Vergleich-Zellenhoehe CSS-Fix
 
 **Phase:** D15b-Optimierung Phase IV Wave 1 AU-2c PM-Strang → CLOSED
