@@ -4,6 +4,25 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-06 — Zeitfenster-A Prompt-Patches (Checkpoint-1 Findings)
+
+**Phase:** D15b-Optimierung Phase IV Wave 1, Checkpoint-1 Remediation
+**Modus:** EXECUTE
+
+**7 Findings gepatcht (alle docs/, S-Groesse):**
+- F-CP1-02: SUB_AUFGABE_FREITEXT.md — Feedback-Beispiel ebene "anwendung" → "analyse" (konsistent mit L5-Zielzone).
+- F-CP1-03: SUB_AUFGABE_REIHENFOLGE.md — L2/wissen-Beispiel + korrektur-Eintrag ergaenzt.
+- F-CP1-04: 7× SUB_AUFGABE_*.md — `typ`-Enum-Constraint (`bestaetigung` · `korrektur` · `hinweis` · `verknuepfung`) explizit eingefuegt.
+- F-CP1-06: SUB_AUFGABE_FREITEXT.md — Anti-Leak-Regel bei Freitext praezisiert (T3=Musterantwort + Bewertungsmassstab, nicht 1:1-Kopie).
+- F-CP1-07: VERTRAG_PHASE_2-2b_AUFGABE.md — `freitext` → `freitext-code` (Engine-Alignment, User-Entscheidung).
+- F-CP1-08: VERTRAG_PHASE_2-2b_AUFGABE.md — `optionen[]` als Pflichtfeld fuer Reihenfolge dokumentiert.
+- F-CP1-12: SUB_AUFGABE_VERGLEICH.md — T1/T2/T3 Haertegrad-Beispiele mit konkreten Formulierungen, T2/T3-Abgrenzung geschaerft.
+
+**Gate-Urteil Checkpoint-1 jetzt GRUEN fuer naechsten Generierungslauf.**
+**Naechster Schritt:** AU-2c (BEFUND-AU-1-UI-01 Vergleich-Zellenhoehe CSS).
+
+---
+
 ## 2026-04-06 — AU-2b CLOSED (Code-Strang `3f1d89f`)
 
 **Phase:** D15b-Optimierung Phase IV Wave 1 AU-2b → CLOSED

@@ -19,12 +19,13 @@ Referenz: `docs/architektur/vertraege/VERTRAG_PHASE_2-2b_AUFGABE.md` Abschnitt "
 
 **Schema:** `VERTRAG_FEEDBACK_SCHEMA.md` — `{typ, text, ebene}` bzw. Array davon.
 
-**Reihenfolge-Spezifikation (Multi-Position):** `feedback` MUSS ein Array sein, ein Eintrag pro Position in der korrekten Reihenfolge. `typ = "bestaetigung"` pro richtig einsortiertem Element (Text verankert das Element in der Kausal-/Chronologie-Logik), optional `typ = "korrektur"` als Hinweis auf haeufige Vertauschungen (z.B. "Schritt X wird oft vor Y gesetzt, weil..."). `ebene`: L2 → `wissen`, L3 → `verstaendnis`. Korrektur-Texte nennen die Fehl-Ordnung konkret und verweisen auf das begruendende Material.
+**Reihenfolge-Spezifikation (Multi-Position):** `feedback` MUSS ein Array sein, ein Eintrag pro Position in der korrekten Reihenfolge. `typ = "bestaetigung"` pro richtig einsortiertem Element (Text verankert das Element in der Kausal-/Chronologie-Logik), optional `typ = "korrektur"` als Hinweis auf haeufige Vertauschungen (z.B. "Schritt X wird oft vor Y gesetzt, weil..."). `ebene`: L2 → `wissen`, L3 → `verstaendnis`. Korrektur-Texte nennen die Fehl-Ordnung konkret und verweisen auf das begruendende Material. `typ`-Enum: `bestaetigung` · `korrektur` · `hinweis` · `verknuepfung` (keine anderen Werte).
 
 ```json
 "feedback": [
-  {"typ": "bestaetigung", "text": "Position 1: ...", "ebene": "verstaendnis"},
-  {"typ": "bestaetigung", "text": "Position 2: ...", "ebene": "verstaendnis"}
+  {"typ": "bestaetigung", "text": "Position 1: ...", "ebene": "wissen"},
+  {"typ": "bestaetigung", "text": "Position 2: ...", "ebene": "wissen"},
+  {"typ": "korrektur", "text": "Schritt X wird oft vor Y gesetzt — pruefe die Jahreszahlen in mat-N-M.", "ebene": "wissen"}
 ]
 ```
 

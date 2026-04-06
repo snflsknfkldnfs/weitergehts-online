@@ -121,7 +121,7 @@ aufgaben/aufgabe-N-M.json   # id, typ, frage/text_mit_luecken, loesung,
                               # _meta: { bloom_level, bloom_begruendung }
 ```
 
-**typ-Werte (Engine-Registry):** `mc` · `zuordnung` · `lueckentext` · `reihenfolge` · `freitext` · `vergleich` · `begruendung`
+**typ-Werte (Engine-Registry):** `mc` · `zuordnung` · `lueckentext` · `reihenfolge` · `freitext-code` · `vergleich` · `begruendung`
 
 ## Loesungsformate (Engine-kompatibel)
 
@@ -129,7 +129,7 @@ aufgaben/aufgabe-N-M.json   # id, typ, frage/text_mit_luecken, loesung,
 |---|---|
 | MC | String (korrekte Option) |
 | Lueckentext | Array (Lueckenwerte) |
-| Reihenfolge | Array (korrekte Reihenfolge) |
+| Reihenfolge | Array (korrekte Reihenfolge). **Zusaetzliches Pflichtfeld `optionen`:** Array derselben Strings in gemischter Anzeigereihenfolge. |
 | Zuordnung | Object (Schluessel→Wert) |
 | Freitext | Array (Keywords, 3-5 Eintraege) |
 | Vergleich | Object `{ dimensionen: [..], objekte: [..], zellen: { <obj>: { <dim>: "<erwarteter Wert>" } } }` |

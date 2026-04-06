@@ -23,11 +23,13 @@ Referenz: `docs/architektur/vertraege/VERTRAG_PHASE_2-2b_AUFGABE.md` Abschnitt "
 
 ```json
 "feedback": [
-  {"typ": "bestaetigung", "text": "...", "ebene": "anwendung"},
-  {"typ": "korrektur", "text": "Haeufig fehlt der Begriff X — siehe mat-N-M ...", "ebene": "anwendung"},
+  {"typ": "bestaetigung", "text": "...", "ebene": "analyse"},
+  {"typ": "korrektur", "text": "Haeufig fehlt der Begriff X — siehe mat-N-M ...", "ebene": "analyse"},
   {"typ": "verknuepfung", "text": "Dieser Schritt baut auf Aufgabe N-M auf ...", "ebene": "analyse"}
 ]
 ```
+
+`typ`-Enum: `bestaetigung` · `korrektur` · `hinweis` · `verknuepfung` (keine anderen Werte).
 
 Keine Emojis, keine Lehrer-Perspektive. Legacy-String UNZULAESSIG. Pruefung: A25 + A26.
 
@@ -157,11 +159,11 @@ Jeder Tipp ist ein JSON-Objekt: `{stufe: 1|2|3, haertegrad: "kognitiv"|"struktur
 - `haertegrad` ist Pflichtfeld (deterministisch: stufe 1 = kognitiv, stufe 2 = strukturierend, stufe 3 = heuristisch).
 - `text` enthaelt den Tipp-Inhalt (1-3 Saetze, direkte Anrede "du", max 400 Zeichen).
 
-**Anti-Leak-Regel (A21):** Tipp 3 (heuristisch) darf die korrekte Antwort NICHT woertlich oder sinngemaess enthalten. Pruefung: Vergleich `tipps[2].text` gegen `loesung`-Feld — bei woertlicher Uebereinstimmung oder Paraphrase = FAIL.
+**Anti-Leak-Regel (A21):** Tipp 3 (heuristisch) darf die korrekte Antwort NICHT woertlich oder sinngemaess enthalten. Bei Freitext ist T3 eine MUSTERANTWORT (siehe "Besonderheit Tipp 3" oben) — die Anti-Leak-Grenze liegt hier anders als bei geschlossenen Typen: T3 darf die **Argumentationsstruktur** benennen (z.B. "Deine Antwort sollte Begriffe wie X, Y, Z verwenden") und EINE moegliche gute Antwort zeigen, aber NICHT identisch mit dem `musterantwort`-Feld in `_meta` sein. Der Mehrwert gegenueber der Musterantwort: T3 benennt zusaetzlich den **Bewertungsmassstab** (welche Elemente werden erwartet). Pruefung: `tipps[2].text` darf sich inhaltlich mit `_meta.musterantwort` ueberlappen, muss aber kuerzer sein und den Bewertungsmassstab explizit machen.
 
 **FREITEXT-spezifisches Anti-Leak-Beispiel:**
-- LEAK: "Schreib: Die Buendnispolitik fuehrte zum Krieg." → FAIL.
-- KEIN LEAK: "Denke an die Kettenreaktion nach dem Attentat — welche Buendnisse wurden aktiviert?"
+- LEAK: Tipp 3 ist eine 1:1-Kopie von `_meta.musterantwort` ohne Bewertungsmassstab → FAIL.
+- KEIN LEAK: "Musterantwort: Die Buendnissysteme Dreibund und Entente teilten Europa in zwei Lager. [...] Deine Antwort sollte Begriffe wie 'Dreibund', 'Entente', 'Aufruestung' und 'Einkreisung' verwenden."
 
 ### 6. Anti-Patterns
 

@@ -17,6 +17,8 @@
 ]
 ```
 
+`typ`-Enum: `bestaetigung` · `korrektur` · `hinweis` · `verknuepfung` (keine anderen Werte).
+
 Keine Emojis, keine Lehrer-Perspektive. Legacy-String UNZULAESSIG. Pruefung: A25 + A26.
 
 ## Rolle + Didaktischer Zweck
@@ -146,9 +148,9 @@ Konstruiert strukturierte Vergleichs-Aufgaben: SuS tragen entlang vordefinierter
 ```
 
 **Deterministische Haertegrad-Zuordnung (Fix, nicht verhandelbar):**
-- **Stufe 1 → `kognitiv`** (Nachdenken aktivieren, ohne Vorstufen-Loesung)
-- **Stufe 2 → `strukturierend`** (Spezifische Hilfestellung oder Teilbeleg)
-- **Stufe 3 → `heuristisch`** (Meta-Hinweis zur Vergleichs-Strategie, ohne Muster-Antwort)
+- **Stufe 1 → `kognitiv`** (Nachdenken aktivieren, ohne Vorstufen-Loesung). Beispiel: "Welche zwei Laender werden hier verglichen? Ueberlege zuerst, was du schon ueber beide weisst."
+- **Stufe 2 → `strukturierend`** (Spezifische Hilfestellung: benennt 1-2 Dimensionen oder verweist auf konkretes Material). Beispiel: "Achte auf die Dimension 'Mitglieder' — mat-3-2 listet die Buendnis-Partner auf."
+- **Stufe 3 → `heuristisch`** (Meta-Hinweis zur Vergleichs-Strategie, KEINE Zell-Eintraege). Beispiel: "Vergleiche die Kriegsziele — was wollte jede Seite erreichen? Nutze mat-3-2." Abgrenzung zu T2: T2 benennt eine **konkrete Dimension + Materialstelle**, T3 gibt eine **uebergreifende Vergleichs-Strategie** ohne Zell-Inhalte preiszugeben.
 
 ## Anti-Leak-Regel (A21)
 

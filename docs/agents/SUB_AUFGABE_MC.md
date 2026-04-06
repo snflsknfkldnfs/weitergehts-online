@@ -34,6 +34,8 @@ Referenz: `docs/architektur/vertraege/VERTRAG_PHASE_2-2b_AUFGABE.md` Abschnitt "
 ]
 ```
 
+`typ`-Enum: `bestaetigung` · `korrektur` · `hinweis` · `verknuepfung` (keine anderen Werte).
+
 Keine Emojis, keine Lehrer-Perspektive, kein Meta-Kommentar. Legacy-String-Feedback ist UNZULAESSIG. Pruefung: A25 (strukturell) + A26 (didaktisch) in `GUETEKRITERIEN_AUFGABEN.md`.
 
 ## Rolle + Didaktischer Zweck

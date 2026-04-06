@@ -28,6 +28,8 @@ Referenz: `docs/architektur/vertraege/VERTRAG_PHASE_2-2b_AUFGABE.md` Abschnitt "
 ]
 ```
 
+`typ`-Enum: `bestaetigung` · `korrektur` · `hinweis` · `verknuepfung` (keine anderen Werte).
+
 Keine Emojis, keine Lehrer-Perspektive. Legacy-String UNZULAESSIG. Pruefung: A25 + A26.
 
 ## Rolle + Didaktischer Zweck

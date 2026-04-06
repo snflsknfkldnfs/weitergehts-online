@@ -128,6 +128,8 @@
 
 **Gesamt-Aufwand Zeitfenster A:** ~1 PM-Session (7 Patches, alle S-Groesse, reine docs/).
 
+**Status: ALLE 7 PATCHES ANGEWENDET (2026-04-06).** Zusaetzlich typ-Enum-Constraint auch in SUB_AUFGABE_FREITEXT, SUB_AUFGABE_VERGLEICH, SUB_AUFGABE_BEGRUENDUNG ergaenzt (Konsistenz, nicht im Original-Finding).
+
 ### Zeitfenster B: Wave 1 (Validator-Erweiterungen, parallel zu AU-2b/2c)
 
 | Finding | Aktion | Datei | Aufwand |

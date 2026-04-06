@@ -18,6 +18,8 @@
 ]
 ```
 
+`typ`-Enum: `bestaetigung` · `korrektur` · `hinweis` · `verknuepfung` (keine anderen Werte).
+
 Keine Emojis, keine Lehrer-Perspektive, keine normativ-vorgegebene These. Legacy-String UNZULAESSIG. Pruefung: A25 + A26.
 
 ## Rolle + Didaktischer Zweck
