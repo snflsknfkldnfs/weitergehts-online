@@ -4,6 +4,23 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-06 — AU-2a Code-Strang: STR-03 Feedback-Schema Rollout
+
+**Phase:** D15b-Optimierung Phase IV Wave 1 AU-2a Code-Strang
+**Modus:** EXECUTE
+**ATOM-UNIT:** AU-2a (VERTRAG_ATOM_UNITS.md §3 AU-2a)
+
+**Code-Aenderungen:**
+- Engine-Hardening: normalizeFeedback Log-Warning fuer Legacy-String-Sichtbarkeit (escape-engine.js)
+- tools/validate-feedback-schema.js: AU-2a-Upgrade (String=FAIL, typ-spezifische Konsistenz-Checks, CLI-Pfad-Argument)
+- data.json Feedback-Backfill: 26 Aufgaben / 79 Feedback-Eintraege aus Auto-Generator-Dispatch (User-Signoff-verifiziert)
+- Cache-Bust v=4.0 → v=4.1 (6 HTML-Dateien, Subpage gpg-erster-weltkrieg-ursachen)
+
+**Dispatch:** docs/agents/dispatches/FEEDBACK_BACKFILL_MAPPEN_1_4.md
+**Vertrag:** docs/architektur/vertraege/VERTRAG_FEEDBACK_SCHEMA.md (V2, §9)
+
+---
+
 ## 2026-04-06 — Session 13 Block 2: AU-2a PM-Strang CLOSED, User-Signoff, Cold-Handoff
 
 **Phase:** D15b-Optimierung Phase IV Wave 1 AU-2a PM-Strang → CLOSED

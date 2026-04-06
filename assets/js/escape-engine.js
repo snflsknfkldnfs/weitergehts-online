@@ -74,6 +74,10 @@ var EscapeEngine = (function () {
   function normalizeFeedback(raw) {
     if (raw == null) return raw;
     if (typeof raw === 'string') {
+      // AU-2a: Safety-Net + Log-Warning fuer Backfill-Sichtbarkeit
+      if (typeof console !== 'undefined' && console.warn) {
+        console.warn('[escape-engine] Legacy-String feedback erkannt, sollte via Backfill auf {typ,text,ebene} migriert werden:', raw.slice(0, 60));
+      }
       return { typ: 'hinweis', text: raw, ebene: 'verstaendnis' };
     }
     if (Array.isArray(raw)) {
