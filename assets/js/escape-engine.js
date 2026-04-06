@@ -86,9 +86,31 @@ var EscapeEngine = (function () {
     return raw;
   }
 
+  // ------------------------------------------------------------------
+  // AU-2b: normalizeTipps — deterministisches stufe->haertegrad Mapping.
+  // Bestands-Tipps haben {stufe, text}, neue Games liefern
+  // {stufe, haertegrad, text}. Safety-Net ergaenzt haertegrad zur Laufzeit.
+  // ------------------------------------------------------------------
+  function normalizeTipps(tipps) {
+    if (!Array.isArray(tipps)) return tipps;
+    var HAERTEGRAD_MAP = {1: 'kognitiv', 2: 'strukturierend', 3: 'heuristisch'};
+    return tipps.map(function(t) {
+      if (typeof t === 'string') {
+        if (typeof console !== 'undefined' && console.warn) {
+          console.warn('[escape-engine] Legacy-String tipp erkannt:', t.slice(0, 60));
+        }
+        return {stufe: 0, haertegrad: 'unbekannt', text: t};
+      }
+      if (t && typeof t === 'object' && !t.haertegrad && t.stufe) {
+        t.haertegrad = HAERTEGRAD_MAP[t.stufe] || 'unbekannt';
+      }
+      return t;
+    });
+  }
+
   /**
-   * Normalisiert alle feedback-Felder einer frisch geladenen data.json
-   * in-place. Muss einmalig nach dem Laden aufgerufen werden.
+   * Normalisiert alle feedback- und tipps-Felder einer frisch geladenen
+   * data.json in-place. Muss einmalig nach dem Laden aufgerufen werden.
    * @param {Object} data – data.json root
    * @private
    */
@@ -101,6 +123,9 @@ var EscapeEngine = (function () {
           var auf = mappe.aufgaben[a];
           if (auf.feedback !== undefined) {
             auf.feedback = normalizeFeedback(auf.feedback);
+          }
+          if (auf.tipps !== undefined) {
+            auf.tipps = normalizeTipps(auf.tipps);
           }
         }
       }

@@ -24,6 +24,20 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-06 — AU-2b Code-Strang: STR-04 Tipp-Haertegrade Infrastruktur
+
+**Phase:** D15b-Optimierung Phase IV Wave 1 AU-2b Code-Strang
+**Modus:** EXECUTE
+**ATOM-UNIT:** AU-2b (VERTRAG_ATOM_UNITS.md §3 AU-2b)
+
+**Code-Aenderungen:**
+- Engine: normalizeTipps() Safety-Net (deterministisches stufe->haertegrad Mapping + Legacy-String-Warning)
+- tools/validate-feedback-schema.js: Tipp-Schema-Checks (3 Eintraege, Enum, Konsistenz) + Anti-Leak-Heuristik A21
+- Cache-Bust v=4.1 → v=4.2 (6 HTML-Dateien, Subpage gpg-erster-weltkrieg-ursachen)
+- Kein Backfill (Infrastruktur-First, User-Grundsatzentscheidung 2026-04-06)
+
+---
+
 ## 2026-04-06 — AU-2a Code-Strang: STR-03 Feedback-Schema Rollout
 
 **Phase:** D15b-Optimierung Phase IV Wave 1 AU-2a Code-Strang

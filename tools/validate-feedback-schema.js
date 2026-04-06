@@ -1,18 +1,24 @@
 #!/usr/bin/env node
 /**
- * validate-feedback-schema.js — Phase IV Wave 1 AU-2a
+ * validate-feedback-schema.js — Phase IV Wave 1 AU-2a/AU-2b
  *
- * Validiert feedback-Felder in data.json gemaess VERTRAG_FEEDBACK_SCHEMA V2.
+ * Validiert feedback- und tipps-Felder in data.json.
  *
  * Nutzung:
  *   node tools/validate-feedback-schema.js escape-games/gpg-erster-weltkrieg-ursachen/data.json
  *   node tools/validate-feedback-schema.js "escape-games/** /data.json"
  *
- * Akzeptierte Form (ab AU-2a):
+ * Feedback (ab AU-2a):
  *   - Objekt { typ, text, ebene }
  *   - Array davon (Multi-Option-Typen)
  *   - null/undefined → WARN (toleriert)
  *   - String → FAIL (Legacy nicht mehr zulaessig seit AU-2a)
+ *
+ * Tipps (ab AU-2b):
+ *   - Array mit genau 3 Eintraegen { stufe, haertegrad, text }
+ *   - stufe 1=kognitiv, 2=strukturierend, 3=heuristisch
+ *   - Fehlendes haertegrad → WARN (Legacy, Safety-Net greift zur Laufzeit)
+ *   - Anti-Leak-Heuristik A21: tipps[2].text darf Loesung nicht woertlich enthalten
  *
  * Konsistenz-Checks pro Aufgabentyp (VERTRAG_FEEDBACK_SCHEMA §3):
  *   mc/zuordnung/reihenfolge: Array, Laenge = Anzahl Optionen/Paare/Positionen
@@ -31,9 +37,11 @@ const { glob } = (() => {
   try { return { glob: require('glob').sync || require('glob').globSync }; } catch (_) { return { glob: null }; }
 })();
 
-const TYP_ALLOWED   = ['bestaetigung', 'korrektur', 'hinweis', 'verknuepfung'];
-const EBENE_ALLOWED = ['wissen', 'verstaendnis', 'anwendung', 'analyse'];
-const TEXT_MAX      = 400;
+const TYP_ALLOWED       = ['bestaetigung', 'korrektur', 'hinweis', 'verknuepfung'];
+const EBENE_ALLOWED     = ['wissen', 'verstaendnis', 'anwendung', 'analyse'];
+const HAERTEGRAD_ALLOWED = ['kognitiv', 'strukturierend', 'heuristisch'];
+const STUFE_HAERTEGRAD   = {1: 'kognitiv', 2: 'strukturierend', 3: 'heuristisch'};
+const TEXT_MAX           = 400;
 
 const fails = [];
 const warns = [];
@@ -166,6 +174,73 @@ function validateTypKonsistenz(aufgabe, ctx) {
   }
 }
 
+// --- AU-2b: Tipp-Schema-Validierung ---
+
+let tippPassCount = 0;
+
+function validateTipps(aufgabe, ctx) {
+  var tipps = aufgabe.tipps;
+  if (tipps == null) {
+    warn(ctx + '.tipps', 'tipps ist null/undefined');
+    return;
+  }
+  if (!Array.isArray(tipps)) {
+    fail(ctx + '.tipps', 'tipps ist kein Array');
+    return;
+  }
+  if (tipps.length !== 3) {
+    warn(ctx + '.tipps', 'Array-Laenge ' + tipps.length + ', erwartet genau 3');
+  }
+
+  var allOk = true;
+  for (var i = 0; i < tipps.length; i++) {
+    var t = tipps[i];
+    var tc = ctx + '.tipps[' + i + ']';
+    if (typeof t === 'string') {
+      fail(tc, 'Legacy-String tipp nicht zulaessig');
+      allOk = false;
+      continue;
+    }
+    if (t == null || typeof t !== 'object') {
+      fail(tc, 'Eintrag ist kein Objekt');
+      allOk = false;
+      continue;
+    }
+    // stufe
+    if (t.stufe == null || ![1, 2, 3].includes(t.stufe)) {
+      fail(tc, 'stufe=' + t.stufe + ' nicht in [1, 2, 3]');
+      allOk = false;
+    }
+    // text
+    if (typeof t.text !== 'string' || t.text.length === 0) {
+      fail(tc, 'text fehlt oder leer');
+      allOk = false;
+    } else if (t.text.length > TEXT_MAX) {
+      warn(tc, 'text ' + t.text.length + ' Zeichen (max ' + TEXT_MAX + ', Legacy-Tipp)');
+    }
+    // haertegrad
+    if (!t.haertegrad) {
+      warn(tc, 'haertegrad fehlt (Legacy, Safety-Net greift zur Laufzeit)');
+    } else if (!HAERTEGRAD_ALLOWED.includes(t.haertegrad)) {
+      fail(tc, 'haertegrad="' + t.haertegrad + '" nicht in [' + HAERTEGRAD_ALLOWED.join(', ') + ']');
+      allOk = false;
+    } else if (t.stufe && STUFE_HAERTEGRAD[t.stufe] && t.haertegrad !== STUFE_HAERTEGRAD[t.stufe]) {
+      warn(tc, 'stufe=' + t.stufe + ' erwartet haertegrad="' + STUFE_HAERTEGRAD[t.stufe] + '", ist "' + t.haertegrad + '"');
+    }
+  }
+
+  // Anti-Leak-Heuristik A21: tipps[2] (Stufe 3) darf Loesung nicht woertlich enthalten
+  if (tipps.length >= 3 && tipps[2] && typeof tipps[2].text === 'string' && aufgabe.loesung) {
+    var loesungStr = typeof aufgabe.loesung === 'string' ? aufgabe.loesung :
+                     (Array.isArray(aufgabe.loesung) && aufgabe.loesung.length > 0 ? String(aufgabe.loesung[0]) : null);
+    if (loesungStr && loesungStr.length >= 3 && tipps[2].text.toLowerCase().includes(loesungStr.toLowerCase())) {
+      warn(ctx + '.tipps[2]', 'Anti-Leak A21: Stufe-3-Tipp enthaelt Loesung woertlich ("' + loesungStr.slice(0, 30) + '...")');
+    }
+  }
+
+  if (allOk) tippPassCount++;
+}
+
 function resolveFiles(args) {
   var files = [];
   for (var i = 0; i < args.length; i++) {
@@ -239,13 +314,14 @@ function main() {
         aufgabenTotal++;
         validateFeedback(auf.feedback, ctx);
         validateTypKonsistenz(auf, ctx);
+        validateTipps(auf, ctx);
       }
     }
   }
 
   // Report
   console.log('');
-  console.log('[validate-feedback-schema] Dateien: ' + files.length + '  Aufgaben: ' + aufgabenTotal + '  PASS: ' + passCount + '  WARN: ' + warns.length + '  FAIL: ' + fails.length);
+  console.log('[validate-feedback-schema] Dateien: ' + files.length + '  Aufgaben: ' + aufgabenTotal + '  Feedback-PASS: ' + passCount + '  Tipps-PASS: ' + tippPassCount + '  WARN: ' + warns.length + '  FAIL: ' + fails.length);
 
   if (warns.length > 0) {
     console.log('');
