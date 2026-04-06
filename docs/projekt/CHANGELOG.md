@@ -4,6 +4,37 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-06 — Phase-0 Architektur-Evaluation
+
+**Phase:** Phase IV — Phase-0-Architektur-Pruefung
+**Modus:** AUDIT
+**Session:** 14 (Fortsetzung nach Compaction)
+
+**Architektur-Evaluation Phase 0 (auf User-Anfrage):**
+- NEU: `docs/projekt/BEFUND_PHASE_0_ARCHITEKTUR_EVALUATION.md` — Evaluation des Phase-0-Status-Quo gegen WORKFLOW_v4, ORCHESTRATOR, Phase-1-Handoff-Anforderungen
+- **Kernbefund:** Mappen-Aufteilung korrekt bei AGENT_DIDAKTIK (bestaetigt durch WORKFLOW_v4 §5.1 + ORCHESTRATOR [0.1])
+- **6 Findings:** F-A1 HIGH (AGENT_ARTEFAKT-Inkonsistenz: 3 Quellen widersprechen sich), F-A2 HIGH (VERTRAG_PHASE_0-4_HEFTEINTRAG fehlt), F-A3-F-A6 MEDIUM/LOW (Sequenzierbarkeit, Phase-2.0-Kompatibilitaet, Agent-Prompt-Reifegefaelle, User-Validierungsformat)
+- **Rueckwaerts-Kontingenz identifiziert:** Phase-1/1.5/2.0-Anforderungen (STRUKTUR-FREEZE, Sequenzierbarkeit, hefteintrag.json-Kompatibilitaet) nicht als Qualitaetskriterien in Phase-0-Vertraegen kodiert
+- **User-Entscheidung noetig:** AGENT_ARTEFAKT separat (WORKFLOW_v4) oder integriert (ORCHESTRATOR/Vertrag)? Empfehlung: Option B (integriert) mit WORKFLOW_v4-Anpassung.
+
+---
+
+## 2026-04-06 — Wave 4 COMPLETE (Phase-0-Haertung + Testrun)
+
+**Phase:** Phase IV Wave 4 — Phase-0-Infrastruktur + Testvalidierung
+**Modus:** EXECUTE
+**Session:** 14 (Fortsetzung)
+
+**W4-C AGENT_DIDAKTIK Upgrade + Testrun + Audit + Iteration:**
+- MODIFIZIERT: `docs/agents/AGENT_DIDAKTIK.md` v1→v2.0: 8 Aufgaben (KE-Extraktion, Mappen-Aufteilung mit Kern-Algorithmus, Lernziele, KE-Matrix, Schwierigkeitskurve, Ethik, Strukturvorgaben, Scope-Abgrenzung), 7 Heuristiken (H1-H7), Q-Gate Self-Check QD1-QD8, Vorgaenger-Anschluss-Logik
+- NEU: `docs/agents/artefakte/DIDAKTIK_RAHMEN_gpg-erster-weltkrieg-ende.md` — Testrun-Output (4 Mappen: Schuetzengraben → Technisierung → Heimatfront → Kriegsende), Q-Gate PASS mit 1 WARN
+- NEU: `docs/projekt/BEFUND_W4C_TESTRUN_DIDAKTIK.md` — 5 Prozess-Findings (PF-1 HIGH: KE-Katalog fehlt, PF-2 MEDIUM: Stoffdichte-Heuristik)
+- Iteration: 2 Patches in AGENT_DIDAKTIK eingearbeitet (Mappen-Titel Pflicht, H7 Stoffdichte-Kontrolle)
+
+**Offen:** PF-1 (KE_KATALOG_GPG_R7.md) erfordert User-Input. User-Validierung DIDAKTIK_RAHMEN Game 2 ausstehend.
+
+---
+
 ## 2026-04-06 — Wave 4 W4-A + W4-B COMPLETE (Phase-0-Haertung)
 
 **Phase:** Phase IV Wave 4 — Phase-0-Infrastruktur
