@@ -4,6 +4,32 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-07 — Welle-1 Konsistenz-Audit (3-RA) + Schema-Sofort-Patches
+
+**Phase:** Phase IV — Welle-1 Qualitaetskontrolle
+**Modus:** AUDIT
+**Session:** 15
+
+**3-RA-Audit auf Welle-1-Patches:**
+- RA-A (Cross-Contract-Konsistenz): **GRUEN** — 0 Verletzungen, 1 Observation (Datumssynchronisation)
+- RA-B (Operationalisierbarkeit): **GELB** — 12 Findings (4C/4H/3M). Kern: Complication.typ-Zuweisungsanleitung fehlt, Eskalations-Trigger vage, H5 nicht operationalisierbar
+- RA-C (Downstream-Bruch): **ROT → GELB** nach PM-Bewertung + 2 Sofort-Patches
+
+**Sofort-Patches (aus RA-C):**
+- SCHEMA_HEFTEINTRAG_JSON.md v1.0 → v1.1: `complication[].typ` von required auf empfohlen (Legacy-Kompatibilitaet), `additionalProperties: true` (Phase-2.0/2.1c Felder-Ergaenzung erlaubt)
+
+**Konsolidiertes Gate-Urteil: GELB** — Architektur konsistent, Operationalisierungsluecken vor Testlauf schliessen.
+
+**Persistierte Artefakte (4):**
+- docs/projekt/audit_welle1_konsistenz/BERICHT_RA_A_CROSS_CONTRACT.md
+- docs/projekt/audit_welle1_konsistenz/BERICHT_RA_B_OPERATIONALISIERBARKEIT.md
+- docs/projekt/audit_welle1_konsistenz/BERICHT_RA_C_DOWNSTREAM_BRUCH.md
+- docs/projekt/audit_welle1_konsistenz/BEFUND_WELLE1_KONSISTENZ_AUDIT.md
+
+**Offen (Prio 1-3 vor Testlauf):** Complication.typ-Guide, Eskalations-Schwellenwerte, H5-Fallbeispiele.
+
+---
+
 ## 2026-04-07 — Welle-1-Patches (5 Massnahmen aus Qualitaets-Audit)
 
 **Phase:** Phase IV — Infrastruktur-Schaerfung Welle 1

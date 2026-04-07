@@ -1,8 +1,8 @@
 # JSON-Schema: Hefteintrag (Phase-0.4 → Phase-2.0)
 
-**Version:** v1.0
+**Version:** v1.1
 **Datum:** 2026-04-07
-**Anlass:** Welle-1-Patch RA1-F03 (Phase-2.0-JSON unvalidiert), RA3-F01 (JSON-Schema-Inkompatibilitaet Placeholders)
+**Anlass:** Welle-1-Patch RA1-F03 (Phase-2.0-JSON unvalidiert), RA3-F01 (JSON-Schema-Inkompatibilitaet Placeholders). v1.1: Audit-Patches RA-C-F01 (typ optional), RA-C-F02 (additionalProperties entfernt).
 **Kanonisch fuer:** Output von AGENT_HEFTEINTRAG (Phase 0.4), Input von Phase-2.0-Rahmen-Produktion
 
 ---
@@ -42,7 +42,7 @@
           "maxItems": 4,
           "items": {
             "type": "object",
-            "required": ["schritt", "typ", "erarbeitbarkeit"],
+            "required": ["schritt", "erarbeitbarkeit"],
             "properties": {
               "schritt": {
                 "type": "string",
@@ -51,7 +51,7 @@
               "typ": {
                 "type": "string",
                 "enum": ["narrativ", "konzeptuell", "kontrastiv", "kausal"],
-                "description": "Art der Problematisierung: narrativ (Wendepunkt), konzeptuell (Warum war das ein Problem?), kontrastiv (Widerspruch), kausal (Ursache-Wirkung)"
+                "description": "Art der Problematisierung: narrativ (Wendepunkt), konzeptuell (Warum war das ein Problem?), kontrastiv (Widerspruch), kausal (Ursache-Wirkung). EMPFOHLEN ab v1.1, PFLICHT ab naechstem Game. Legacy-Dateien ohne typ bleiben valide."
               },
               "erarbeitbarkeit": {
                 "type": "string",
@@ -132,7 +132,7 @@
       }
     }
   },
-  "additionalProperties": false
+  "additionalProperties": true
 }
 ```
 
@@ -169,3 +169,4 @@ Diese Felder werden NICHT im Phase-0.4-Schema produziert. Phase 2.0 legt sie als
 | Version | Datum | Aenderung |
 |---|---|---|
 | v1.0 | 2026-04-07 | Initiale Schema-Definition. Complication[].typ ergaenzt (M-QA3). Placeholder-Verbot (RA3-F01). |
+| v1.1 | 2026-04-07 | Audit-Patches: complication[].typ von required→empfohlen (Legacy-Kompatibilitaet, RA-C-F01). additionalProperties true (Phase-2.0/2.1c darf Felder ergaenzen, RA-C-F02). |
