@@ -50,12 +50,22 @@ Kompetenzen bauen ueber Jahrgangsstufen aufeinander auf. Der Katalog dokumentier
 - **Anschluss (Jg 8/9):** Welche KE werden in spaeteren Stufen vertieft?
 - **Implikation:** AGENT_DIDAKTIK kann pruefen, ob ein Game Vorwissen voraussetzt, das nicht gesichert ist.
 
-### 3.4 Exemplarische Inhaltsauswahl
+### 3.4 Exemplarische Inhaltsauswahl (Arbeitshypothesen — fachdidaktisch zu qualifizieren)
 
-Drei Qualitaetskriterien fuer Inhaltsauswahl:
+Drei Denkanstösse des Users fuer Inhaltsauswahl. Status: **tendenzielle Ideen**, NICHT formalisierte Kriterien. Muessen vor Verankerung im Katalog fachdidaktisch evaluiert und ggf. durch etablierte Selektionskriterien ersetzt/ergaenzt werden.
 - **Pars pro toto:** Ein Inhalt steht stellvertretend fuer ein Prinzip/Konzept
-- **Konzeptreinheit des Exemplars:** Das Beispiel illustriert genau EINE Kompetenz, nicht mehrere vermischt
-- **Konzeptdichte des Inhalts:** Der Inhalt ist reichhaltig genug fuer mehrere Mappen/Materialien
+- **Konzeptreinheit des Exemplars:** Das Beispiel illustriert genau EINE Kompetenz, nicht mehrere vermischt — zu pruefen: ist das fachdidaktisch haltbar oder widerspricht es der Vernetzungsidee des Lehrplans?
+- **Konzeptdichte des Inhalts:** Der Inhalt ist reichhaltig genug fuer mehrere Mappen/Materialien — zu pruefen: Spannung zwischen Konzeptdichte und Ueberladung (vgl. QD5 Mappen-Balance)
+
+### 3.5 Vorarbeiten (externe KI-Entwuerfe, evaluiert Session 17)
+
+Zwei Vorentwuerfe liegen in `docs/analyse/` vor:
+
+**Entwurf 1** (`KI Entwurf KE_KATALOG_GPG_R7.md`): Nur LB2 (8 KE). Staerken: Kernkonzept-Ebene (6 Basiskonzepte), didaktische Knotenpunkte (3 High-Value-Themen), Teleologie-Warnung, "Inhalte austauschbar, Konzepte fix". Schwaechen: kein AFB, keine Operatoren, keine K/E/KB-Trennung, kein LB1/3/4.
+
+**Entwurf 2** (`Entwurf KE_Katalog_GPG 2.md`): Alle 4 LB (19 KE). Staerken: vollstaendig, konkrete Escape-Game-Szenarien pro KE. Schwaechen: kein AFB, keine Operatoren, kein Spiralcurriculum, Game-Szenarien sind AGENT_SKRIPT-Ebene (Ebenenverletzung), KE-Wortlaute teilweise paraphrasiert.
+
+**Verwertungsentscheidung:** KE-Wortlaute aus Entwurf 2 als Roh-Basis (nach PDF-Verifikation). Strukturelle Einsichten aus Entwurf 1 als optionale Annotationen (Basiskonzepte, Knotenpunkte, Teleologie-Warnung). Game-Szenarien aus Entwurf 2 separat als Ideenpool fuer AGENT_SKRIPT sichern, NICHT in KE_KATALOG aufnehmen. Alles Fehlende (AFB, Operatoren, Spiralcurriculum, K/E/KB-Typisierung) wird in den Prozess-Schritten 1-3 neu erarbeitet.
 
 ---
 
@@ -74,12 +84,12 @@ Drei Qualitaetskriterien fuer Inhaltsauswahl:
 ### 4.2 GPG7 R7 — Detail (Escape-Game-Zielgruppe)
 
 **LB1 Lebensraum Erde (Geographie-Schwerpunkt):**
-- 4 KE: Topographie Asien/Afrika, Entwicklungsstand, Lebensbedingungen-Vergleich, Konsumverhalten/Ressourcen
+- 3 KE: Topographie Asien/Afrika, Entwicklungsstand/Lebensbedingungen-Vergleich, Konsumverhalten/Ressourcen
 - Inhalte: Kontinente, Entwicklungszusammenhaenge, Ressourcen (Baumwolle, Coltan), Anbau-/Produktionsbedingungen
 - **Escape-Game-Eignung:** MITTEL (eher kategorial/geographisch, weniger narrativ)
 
 **LB2 Zeit und Wandel (Geschichte-Schwerpunkt):**
-- 7 KE: Absolutismus vs. Demokratie, Franz. Revolution (nicht-linear), Industrialisierung (Perspektiven), Reichsgruendung, Imperialismus/Kolonialismus, Attentat Sarajevo, Erster Weltkrieg (Front + Heimat)
+- 8 KE: Absolutismus vs. Demokratie, Franz. Revolution (nicht-linear), Industrialisierung (Perspektiven), Reichsgruendung, Imperialismus/Kolonialismus, Attentat Sarajevo, Erster Weltkrieg Verlauf (Front + Heimat), Erster Weltkrieg Auswirkungen/Folgen
 - Inhalte: Ludwig XIV., Franz. Revolution, Industrialisierung, Reichsgruendung, Imperialismus/Afrika, Erster Weltkrieg
 - **Escape-Game-Eignung:** HOCH (starke Narrative, chronologisch, viele Quellen)
 - **Bereits abgedeckt (Game 1):** Industrialisierung (Teilmenge von LB2 + LB3)
@@ -113,7 +123,8 @@ Drei Qualitaetskriterien fuer Inhaltsauswahl:
 
 **KE-ID-Schema:** `GPG7_LB[N]_K_[NN]` (konsistent mit VERTRAG_PHASE_0-1_DIDAKTIK.md §5)
 
-**Qualitaetskriterium:** Vollstaendigkeit — kein KE-Bullet aus der PDF darf fehlen. Zaehlung: LB1=4, LB2=7, LB3=4, LB4=4 = **19 KE total**.
+**Qualitaetskriterium:** Vollstaendigkeit — kein KE-Bullet aus der PDF darf fehlen. Zaehlung: LB1=3, LB2=8, LB3=4, LB4=4 = **19 KE total**.
+**Hinweis:** Entwurf 2 (docs/analyse/) liefert 19 KE-Wortlaute als Roh-Grundlage. Gegen PDF zu verifizieren (teilweise paraphrasiert).
 
 ---
 
@@ -256,7 +267,7 @@ Dokumentierte User-Entscheidungen aus Schritt 5
 
 | # | Kriterium | Pruefung |
 |---|---|---|
-| R1 | Vollstaendigkeit | Alle 19 KE aus GPG7 R7 LB1-LB4 enthalten |
+| R1 | Vollstaendigkeit | Alle 19 KE aus GPG7 R7 LB1-LB4 enthalten (LB1=3, LB2=8, LB3=4, LB4=4) |
 | R2 | KE-ID-Konsistenz | Format `GPG7_LB[N]_K_[NN]`, keine Luecken |
 | R3 | Kompetenz/Inhalt-Trennung | Jeder Inhalt als K/E/KB typisiert |
 | R4 | Spiralcurriculum | Min. 1 Vorwissen- ODER Anschluss-Verweis pro LB2/LB3-KE |
