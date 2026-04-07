@@ -4,6 +4,24 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-07 — Skript-Analyse 7: FD-Q8 GPG-Gesamthandbuch (Seminarbuch Band III)
+
+**Phase:** Phase-0-Standardisierung
+**Modus:** EVALUATE
+**Session:** 20
+
+**Skript 7 analysiert: FD-Q8 (GPG-Gesamthandbuch, 19 Kapitel, alle 3 Perspektiven)** — hoechste Relevanz, breiteste Bestaetigung.
+- GPG-Strukturmodell (S. 18): 8-Phasen-3-Block-Artikulationsschema als kanonische S1-Referenz identifiziert
+- Sachanalyse-Workflow (S. 2) bestaetigt Pipeline-Architektur Phase 0.1 (KE_KATALOG → Sequenz)
+- P-E-G-Lernpsychologie-Prinzip (S. 3): Personen/Ereignisse/Gefuehle als Einstiegsheuristik fuer AGENT_MATERIAL
+- Quellenkritischer 5-Stufen-Prozess (S. 6): Betrachten→Beschreiben→Wahrnehmen→Einordnen→Interpretieren fuer SUB_AUFGABE_QUELLENKRITIK
+- 7-dimensionales Geschichtsbewusstsein (S. 4) als optionale KE_KATALOG-Annotation
+- Beutelsbacher Konsens Ableitungsbaum (S. 10) bestaetigt FD-Q6
+- Alle S1-S15 bestaetigt (S1/S2/S3/S4/S5/S7/S8/S9/S10/S11/S12/S14) — breiteste Einzelquellen-Abdeckung
+- Verwertung: BESTAETIGEN + REFERENZIEREN (3 Notizen fuer AGENT_MATERIAL, SUB_AUFGABE_QUELLENKRITIK, KE_KATALOG)
+
+---
+
 ## 2026-04-07 — Skript-Analyse 6: FD-Q7 Methodische Vollzugsformen Sozialwissenschaftliche Perspektive
 
 **Phase:** Phase-0-Standardisierung

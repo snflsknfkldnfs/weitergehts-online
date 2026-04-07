@@ -464,3 +464,64 @@ Diese Fragen definieren den Analyse-Fokus fuer die angekuendigten 4-8 geschichts
 - **Frage 4 (Elementarisierungs-Stufen):** NICHT ADRESSIERT. Bereits beantwortet durch FD-Q2+FD-Q4.
 
 **Verwertungsentscheidung:** BESTAETIGEN + NOTIEREN (Keine neuen S1-S15-Eingriffe. Fallanalyse-Verlaufsmodell als Referenzschema fuer S1 bei sozialkundlichen Themen dokumentiert. 2 Notizen fuer AGENT_MATERIAL/AGENT_DIDAKTIK: Mikro/Makro-Scope-Constraint und Spielformen-Taxonomie. Alle 4 offenen Fragen weiterhin beantwortet, Frage 2 verstaerkt.)
+
+### 9.7 — FD-Q8: GPG-Gesamthandbuch (Seminarbuch Band III)
+
+**Quelle:** Fachdidaktisches Gesamthandbuch GPG — alle drei Perspektiven (Geschichte, Politik, Geographie), 19 Kapitel (nicht-oeffentlich).
+**Relevanz fuer Pipeline:** HOCH — Einzige Quelle, die alle drei GPG-Perspektiven integriert behandelt. Liefert das vollstaendige GPG-Strukturmodell (Artikulationsschema S. 18), den Sachanalyse-Workflow (S. 2), den quellenkritischen 5-Stufen-Prozess (S. 6) und das P-E-G-Lernpsychologie-Prinzip (S. 3). Breiteste Abdeckung aller bisherigen Quellen.
+
+**Bestaetigung bestehender Kriterien:**
+
+- **S1:** Direkt und umfassend bestaetigt. Das GPG-Strukturmodell (S. 18) liefert das vollstaendigste Artikulationsschema aller bisherigen Quellen: 8 Phasen in 3 Meta-Bloecken. Block 1 "Ins Boot holen": Einstieg/Warm-up → Aktivierung von Vorwissen → Hinfuehrung zur Zielangabe → Zielangabe. Block 2 "Lernen lassen": Erarbeitung → Einholen der Ergebnisse → Zusammenfassung und Sicherung. Block 3 "Netze knuepfen": Alltagsbezug/Lebensbezug/Transfer → Reflexion. Expliziter Hinweis: "unterliegt zwangslaeufig einem fachlichen Schwerpunkt in historischer, geographischer oder politischer Perspektive" — bestaetigt S1-Perspektivabhaengigkeit. Dies ist die kanonische Referenz fuer S1.
+- **S2:** Direkt bestaetigt. "Aktivierung von Vorwissen" als eigene Phase im Strukturmodell (S. 18). "Aufgreifen bekannter Inhalte/Tafelbild aus der Vorstunde" — Vorwissen als Anknuepfungspunkt. Konsistent mit S2.
+- **S3:** Bestaetigt durch Sachanalyse-Beispiel (S. 2). Vollstaendig ausgearbeitetes Beispiel "Absolutismus und Franz. Revolution": LP-Kompetenzerwartungen → Inhalte nach Gegenstandsbereichen × Perspektiven → moegliche Sequenz mit UE-Zuordnung. Zeigt, wie Inhaltsknoten aus LP-Analyse extrahiert und in Sequenz ueberfuehrt werden. Entspricht exakt unserem Phase-0.1-Workflow (KE_KATALOG → DIDAKTIK_RAHMEN).
+- **S4:** Direkt bestaetigt. Strukturmodell (S. 18) definiert die Funktionssequenz: Einstieg → Erarbeitung → Sicherung → Transfer → Reflexion. Konsistent mit S4.
+- **S5:** Bestaetigt durch Fallbeispiel-Phasenmodell (S. 9): Anfangsphase (Emotionen wecken, Vorwissen aktivieren, Zielangabe) → Mittelphase (Fall klären, Informationen sammeln, Loesungen) → Schlussphase (Rueckschau, neue Erkenntnisse, Reflexion). Strikte V-vor-B-Ordnung. Zusaetzlich Strukturmodell (S. 18): "Erarbeitung" (= Vergegenwaertigung) vor "Zusammenfassung/Sicherung" (= Besinnung sachbezogen) vor "Transfer/Reflexion" (= Besinnung wertbezogen).
+- **S7:** Bestaetigt durch multisensorisches Prinzip (S. 5): "Bilder erzeugen, Sinne aktivieren" — visuell/konkret vor abstrakt. Geographie (S. 14): Progression von 3D-Modellen (Sandkasten, Globus) zu 2D-Karten. Konsistent mit S7 und Schroeders 6-Stufen-Leiter (FD-Q4).
+- **S8:** Umfassend bestaetigt. Quellenkritischer 5-Stufen-Prozess (S. 6): Betrachten → Beschreiben → Wahrnehmen → Einordnen → Interpretieren. Dazu 6 explizite Kontextfragen: Echtheit? Urheber? Adressat? Entstehungszeit? Aussage ueber die Zeit? Entstehungsumstaende? Dies ist granularer als S8s aktueller "Kontext-Check" und bestaetigt die Notwendigkeit kontextueller Vorentlastung.
+- **S9:** Direkt bestaetigt. "Netze knuepfen" als eigener Meta-Block im Strukturmodell (S. 18). "Regional- und Weltgeschichte — Zusammenhaenge erkennen" (S. 8). Konsistent mit S9.
+- **S10:** Direkt bestaetigt. "Einstieg/Warm-up" + "Hinfuehrung zur Zielangabe" (S. 18): "Lehrkraft weckt Interesse, macht neugierig, entwickelt eine Problemfrage." Medien: "Impuls, Provokation, Bild, Szene, Landkarte." P-E-G-Prinzip (S. 3): Zugang ueber Personen, Ereignisse, Gefuehle/Emotionen am effektivsten. Konsistent mit S10.
+- **S11:** Implizit bestaetigt. "Ich verwende abwechslungsreiche Methoden, Sozialformen und Lernumgebungen" (S. 3). Geographie-Handlungsorientierung (S. 15-16) zeigt breite Methodenpalette. Konsistent mit S11.
+- **S12:** Bestaetigt durch Strukturmodell-Sequenz (S. 18): "Erarbeitung" (erfahrungsbasiert) → "Einholen der Ergebnisse" → "Zusammenfassung" (Begriffssicherung). Erfahrung vor Fachbegriff. Konsistent mit S12.
+- **S14:** Bestaetigt. Strukturmodell (S. 18) mappt auf SCPL: Hinfuehrung/Zielangabe = S (Situation), Erarbeitung = C (Complication entfaltet Komplexitaet), Einholen/Zusammenfassung = P (Problem kristallisiert, Ergebnisse gesichert), Transfer/Reflexion = L (Loesung durch Anwendung und Reflexion).
+
+**Neue Perspektiven:**
+
+1. **GPG-Strukturmodell als kanonische S1-Referenz (S. 18):** Das 8-Phasen-3-Block-Schema ist das vollstaendigste Artikulationsschema aller 8 analysierten Quellen. Es integriert alle drei Perspektiven und definiert fuer jede Phase: Was wird sichtbar + moegliche Sozialformen/Medien. Fuer die Pipeline: Dies sollte die primaere S1-Referenz werden. Die bisherigen perspektivspezifischen Schemata (historisch: V-B-S, sozialpolitisch: Fallanalyse 5 Phasen, geographisch: implizit) sind Spezialisierungen dieses Grundschemas.
+   → Handlungsbedarf: GERING. S1 funktioniert bereits korrekt. Das 8-Phasen-Schema bestaetigt die bestehende Architektur mit hoeherer Granularitaet. Bei naechster S1-Revision als Referenzdokument verlinken.
+
+2. **P-E-G-Lernpsychologie-Prinzip (S. 3):** "Zugang zu beiden Gehirnhaelften am effektivsten ueber: P Personen, E Ereignisse, G Gefuehle/Emotionen." Direkte Pipeline-Implikation: AGENT_MATERIAL sollte bei der Einstiegs-Material-Auswahl (S10-Phase) bevorzugt Materialien waehlen, die Personen zeigen, konkrete Ereignisse schildern oder Emotionen ausloesen. Das Sachanalyse-Beispiel (S. 2) demonstriert dies: "Wer war Ludwig XIV?" (Person), "Warum stuermte Paul die Bastille?" (Person + Ereignis + Emotion). Unser Escape-Game verwendet bereits personenbasiertes Framing — P-E-G formalisiert die Begruendung.
+   → Handlungsbedarf: NOTIEREN fuer AGENT_MATERIAL. P-E-G als Auswahlheuristik fuer Einstiegsmaterial dokumentieren. Kein GK-Eingriff.
+
+3. **Quellenkritischer 5-Stufen-Prozess (S. 6):** Betrachten → Beschreiben → Wahrnehmen → Einordnen → Interpretieren. Granularer als S8s aktueller Kontext-Check. Fuer die Pipeline: SUB_AUFGABE_QUELLENKRITIK koennte diese 5 Stufen als Scaffolding-Template verwenden. Ergaenzt die Lasswelsche Formel (FD-Q3) um den visuellen Analysepfad.
+   → Handlungsbedarf: NOTIEREN fuer SUB_AUFGABE_QUELLENKRITIK. 5-Stufen-Prozess als alternatives Scaffolding neben Lasswelscher Formel. Lasswelsche Formel = fuer Textquellen, 5-Stufen-Prozess = fuer Bild-/Sachquellen.
+
+4. **Sachanalyse-Workflow als Phase-0.1-Validierung (S. 2):** Vollstaendig ausgearbeitetes Beispiel zeigt: LP-Kompetenzerwartungen → Inhaltliche Analyse (Gegenstandsbereiche × Perspektiven × Prozessbezogene Kompetenzen) → Sequenz-Ableitung. Dies ist exakt unser KE_KATALOG → DIDAKTIK_RAHMEN → Sequenz-Workflow. Bestaetigt architektonische Korrektheit der Pipeline.
+   → Handlungsbedarf: NEIN. Pipeline-Architektur bestaetigt.
+
+5. **7-dimensionales Geschichtsbewusstsein (S. 4):** Temporal + Wirklichkeit + Historizitaet (3 Basis) + Identitaet + Politisch + Oekonomisch-sozial + Moralisch (4 gesellschaftlich). Optionale Anreicherung fuer KE_KATALOG: Jeder KE koennte annotiert werden, welche Dimensionen er primaer adressiert. Nicht blockierend, aber nuetzlich fuer Sequenzierungsentscheidungen (z.B. moralische Dimension → Besinnungsphase priorisieren).
+   → Handlungsbedarf: GERING. Optionale KE_KATALOG-Annotation bei naechster Revision.
+
+6. **Entwicklungspsychologische Perspektivuebernahme (S. 1):** Alter 8-10: selbstreflexiv, 10-12: wechselseitig, 12-15: sozial/systemisch. Fuer R7 (Jgst. 7 ≈ 12-13 Jahre): SuS befinden sich am Uebergang zur systemischen Perspektivuebernahme. Implikation: Multiperspektivische Materialien sind moeglich, aber die Komplexitaet muss an der Schwelle systemisch/wechselseitig bleiben. Fuer die Pipeline: AGENT_DIDAKTIK koennte einen Altersgruppen-Modifier fuer Multiperspektivitaets-Intensitaet erhalten.
+   → Handlungsbedarf: GERING. Optionale Annotation fuer AGENT_DIDAKTIK. Nicht blockierend.
+
+7. **Medieneinsatz-Checkliste (S. 17):** 8 Prueffragen: Wozu, Was, Wie, Passung, Wann, Wie lange, Wo, Aufwand/Nutzen. Teilweise in GUETEKRITERIEN_MATERIALPRODUKTION M1-M12 abgedeckt. Die "Passung"-Frage (Alter, Vorwissen, Sozialform) ist fuer AGENT_MATERIAL relevant.
+   → Handlungsbedarf: NEIN. Bereits durch bestehende Kataloge abgedeckt.
+
+8. **Spielerische Elemente im Geographieunterricht (S. 16):** Schatzkiste, Bilderbuffet, Quizkarten, Paketdienst, Puzzle — konkrete Spielmechaniken. Escape-Game-Raetsel koennten diese Formate adaptieren. Fuer AGENT_MATERIAL: Raetseltyp-Katalog erweitern.
+   → Handlungsbedarf: GERING. Optionale Erweiterung des Raetseltyp-Katalogs.
+
+9. **Beutelsbacher Konsens + Ableitungsbaum (S. 10):** Bestaetigt FD-Q6. Neu: Grafische Darstellung der Ableitungshierarchie: Ueberwaeltigungsverbot → Interessenorientierung + Wissenschaftsorientierung + Handlungsorientierung + Induktives Vorgehen. Kontroversitaet → Schuelerorientierung/Aktualitaet + Problemorientierung + Exemplaritaet. Fuer die Pipeline: Die abgeleiteten Prinzipien (Exemplaritaet, Problemorientierung) sind bereits in AGENT_DIDAKTIK implementiert.
+   → Handlungsbedarf: NEIN. Bestaetigt bestehende Architektur.
+
+10. **Leistungsfeststellung: AFB-Niveaustufen (S. 19):** I Reproduktion, II Zusammenhaenge herstellen, III Verallgemeinern und Reflektieren. Bestaetigt GUETEKRITERIEN_AUFGABEN A5 AFB-Progression.
+    → Handlungsbedarf: NEIN.
+
+**Antworten auf offene Punkte (Sektion 7):**
+
+- **Frage 1 (Narrativitaet):** VERSTAERKT. S. 3: "Ich schule ihre narrativen Kompetenzen. Ich lasse meine Schueler viel erzaehlen und erklaeren." S. 5: Lehrererzaehlung als zentrale Methode mit 6 Gestaltungsprinzipien (Recherchieren, Dramatisieren, Personifizieren, Kostueieren, Lokalisieren, Bildhaft Beschreiben). Bestaetigt FD-Q2-Befund, erweitert um konkrete Erzaehlprinzipien. Kein neues Sequenzierungskriterium.
+- **Frage 2 (Kontroversitaet):** VERSTAERKT. S. 10: Beutelsbacher Konsens mit Ableitungsbaum. Bestaetigt FD-Q6-Befund.
+- **Frage 3 (Quellenarten-Progression):** VERSTAERKT. S. 6: Differenzierte Quellenarten-Liste (Sachueber­reste, Texte/Karten, Bilder/Fotos/Filme). 5-Stufen-Analyseprozess. Bestaetigt FD-Q3-Befund mit zusaetzlicher Granularitaet.
+- **Frage 4 (Elementarisierungs-Stufen):** VERSTAERKT. S. 14: Karten-Abstraktionsprogression (3D → 2D). S. 5: Multisensorisch → visuell → abstrakt. Bestaetigt FD-Q4-Befund (Schroeder-Leiter).
+
+**Verwertungsentscheidung:** BESTAETIGEN + REFERENZIEREN (GPG-Strukturmodell als kanonische S1-Referenz. Sachanalyse-Workflow bestaetigt Pipeline-Architektur. 3 Notizen: P-E-G fuer AGENT_MATERIAL, 5-Stufen-Quellenkritik fuer SUB_AUFGABE_QUELLENKRITIK, Geschichtsbewusstsein-Dimensionen fuer KE_KATALOG. Breiteste Bestaetigung aller S1-S15-Kriterien in einer einzelnen Quelle. Alle 4 Fragen weiterhin beantwortet und verstaerkt.)
