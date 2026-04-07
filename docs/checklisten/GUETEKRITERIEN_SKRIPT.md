@@ -216,14 +216,33 @@ SK3 Anschaulichkeit: FAIL — Chunk 2, §4: "Imperialismus fuehrte zu Spannungen
 
 **Ausnahme:** Direkte Kausalitaet im Einzelfall ("Er schoss, weil er die Monarchie hasste") darf monokausal sein. Strukturelle Erklaerungen ("Der Krieg brach aus, weil...") muessen multikausal sein.
 
-### 6.6 SK18 Quellenorientierung — Quellenbezuege pruefen
+### 6.6 SK18 Quellenorientierung — Quellenbezuege pruefen (Operationalisierung adressiert RA-B-F01)
 
-**Methode:** Pro Chunk zaehlen: Wie viele Stellen machen erkennbar, WOHER das praesentierte Wissen stammt? Quellenbezuege koennen sein: Verweis auf Dokumente ("ein Brief zeigt..."), Artefakte ("auf einer Karte sieht man..."), Augenzeugenberichte ("ein Soldat schrieb..."), archäologische Funde, historische Forschung ("Historiker fanden heraus...").
+**Methode:** Pro Chunk zaehlen: Wie viele Stellen machen erkennbar, WOHER das praesentierte Wissen stammt?
 
 **Schwellenwert:** Mindestens 1 expliziter Quellenbezug pro Chunk. Ideal: 2-3, verteilt ueber den Chunk.
 
-**FAIL-Muster:** "Die Lebensbedingungen in den Fabriken waren schlecht. Die Arbeiter mussten 14 Stunden am Tag arbeiten." — Kein Hinweis, woher dieses Wissen stammt.
-**PASS-Muster:** "Aus Fabrikberichten der Zeit wissen wir: Arbeiter mussten bis zu 14 Stunden am Tag schuften." — Quelle benannt.
+#### Explizitaets-Schwelle (5 Kategorien guestiger Quellenbezuege)
+
+Ein Quellenbezug ist "explizit genug", wenn er den **Quellentyp** ODER den **Quellennamen** muendlich erkennbar macht. Die Herkunft des Wissens muss fuer R7-SuS hoerbar/lesbar sein — nicht nur implizit im Hintergrund stehen.
+
+| Kategorie | Mindest-Beispiel (PASS) | Maximal-Beispiel (vorbildlich) | FAIL-Variante |
+|---|---|---|---|
+| **Dokument** (Brief, Vertrag, Gesetz, Erlass) | "Ein Gesetz von 1839 verbot Kinderarbeit unter 9 Jahren." | "Im preussischen Regulativ von 1839 hiess es woertlich: Kinder unter 9 Jahren duerfen nicht in Fabriken arbeiten." | "Kinderarbeit wurde irgendwann verboten." |
+| **Artefakt** (Karte, Bild, Foto, Muenze, Gegenstand) | "Auf Bildern aus der Zeit sieht man Kinder in Fabrikhallen." | "Eine Fotografie von 1908 zeigt achtjaehrige Maedchen an Spinnmaschinen in einer Textilfabrik in Lancashire." | "Die Arbeitsbedingungen waren schlecht." |
+| **Augenzeugenbericht** (Tagebuch, Memoiren, muendliche Ueberlieferung) | "Ein Arbeiter schrieb, dass er kaum genug zum Leben verdiente." | "In seinem Tagebuch notierte der Weber Johann H. 1847: 'Wir arbeiten 14 Stunden und koennen die Familie dennoch nicht ernaehren.'" | "Die Arbeiter verdienten zu wenig." |
+| **Forschungsstand** (Historiker, Studien, Statistik) | "Historiker schaetzen, dass die Bevoelkerung sich verdoppelte." | "Der Historiker E.P. Thompson wies nach, dass sich die Reallöhne zwischen 1790 und 1830 kaum verbesserten." | "Die Bevoelkerung wuchs stark." |
+| **Chronikale Quelle** (Zeitungsbericht, amtliche Statistik, Volkszaehlung) | "Laut Volkszaehlung lebten 1850 bereits 2 Millionen Menschen in London." | "Die Times berichtete am 12. Juni 1842: 'Die Zustaende in den Bergwerken sind eine Schande fuer das Koenigreich.'" | "London war eine Grossstadt." |
+
+#### Grenzfall-Regeln
+
+- **"Historiker fanden heraus, dass..."** = PASS (Kategorie Forschungsstand, Quellentyp benannt). Nicht ideal, aber explizit genug.
+- **"Man weiss heute, dass..."** = FAIL. Wer weiss? Woher? Quellentyp nicht erkennbar.
+- **"Es ist bekannt, dass..."** = FAIL. Passivkonstruktion verschleiert Herkunft.
+- **"Quellen berichten..."** = GRENZFALL → PASS nur wenn im selben Satz der Quellentyp folgt ("Quellen aus der Zeit — vor allem Fabrikberichte — zeigen..."). Sonst FAIL.
+- **Fiktive Identifikationsfiguren** (Johann, Anna, Peter): Wenn der Text klar macht, dass die Figur exemplarisch ist UND auf reale Quellengrundlage verweist ("Viele Familien erlebten, was wir hier anhand von Johann erzaehlen — das wissen wir aus Fabrikinspektionsberichten"), zaehlt der Meta-Verweis als Quellenbezug. Die Figur selbst ist keine Quelle.
+
+**FAIL-Muster (zusammengefasst):** Jeder Satz, der historisches Wissen als gesicherte Tatsache praesentiert, ohne dass die Herkunft dieses Wissens im Text erkennbar wird. Erkennbar = Quellentyp oder Quellenname ist im Satz oder in maximal 1 Folgesatz benannt.
 
 **Abgrenzung zu Phase 2:** SK18 stellt sicher, dass das SKRIPT die narrativen Grundlagen fuer quellenorientierte Materialien legt. Die Quellen selbst werden in Phase 0.2 (INHALTSBASIS) identifiziert und in Phase 1/2 als Materialien aufbereitet. SK18 prueft nicht die Quellenarbeit der SuS, sondern ob das Narrativ Quellenherkunft sichtbar macht.
 

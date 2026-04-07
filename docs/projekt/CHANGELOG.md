@@ -29,6 +29,20 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-07 — Operationalisierungs-Runde Prio 4-5 (RA-B HIGH Findings geschlossen)
+
+**Phase:** Phase IV — Operationalisierung nach Welle-1-Audit
+**Modus:** EXECUTE
+**Session:** 16
+
+**2 HIGH RA-B-Findings adressiert:**
+- **RA-B-F01 (SK18 Explizitaet):** 5-Kategorien-Tabelle (Dokument/Artefakt/Augenzeuge/Forschung/Chronik) mit Mindest-/Vorbildlich-/FAIL-Beispielen, Grenzfall-Regeln (4 Einzelfaelle), fiktive Identifikationsfiguren-Regel. Inline in `docs/checklisten/GUETEKRITERIEN_SKRIPT.md` §6.6 erweitert.
+- **RA-B-F05 (E-H Trigger):** Ableitbarkeits-Definition (DIREKT/INFERENTIELL/NICHT ableitbar) und Auffindbarkeits-Test bereits in `docs/architektur/OPERATIONALISIERUNG_ESKALATIONSPFADE.md` §2 (Prio-2-Patch). Querverweis in VERTRAG_0-4 eingetragen.
+
+**RA-B Gate-Upgrade:** GELB → GRUEN. Alle 4 CRITICAL + 3 HIGH Findings aus RA-B geschlossen. 3 MEDIUM Findings (F08/F09/F10) verbleiben als bekannte Risiken — nicht blockierend.
+
+---
+
 ## 2026-04-07 — Welle-1 Konsistenz-Audit (3-RA) + Schema-Sofort-Patches
 
 **Phase:** Phase IV — Welle-1 Qualitaetskontrolle
