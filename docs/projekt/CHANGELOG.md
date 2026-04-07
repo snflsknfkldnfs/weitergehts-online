@@ -4,6 +4,24 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-07 — Fachdidaktische Evaluation: Brauch + Sequenzplanung vs. S1-S15
+
+**Phase:** Phase-0-Standardisierung
+**Modus:** EVALUATE
+**Session:** 18
+
+**EVALUATION_FACHDIDAKTIK_VS_GUETEKRITERIEN.md erstellt** (`docs/analyse/EVALUATION_FACHDIDAKTIK_VS_GUETEKRITERIEN.md`):
+- Brauch-Geschichtsdidaktik (4 Grundprinzipien, 5 Kompetenzbereiche) gegen S1-S15 gemappt
+- Sequenzplanungs-Anleitung (12 Komponenten, 6 Prinzipien) gegen Pipeline-Architektur gemappt
+- Ergebnis: S1-S15 fachdidaktisch solide, keine signifikanten Luecken auf Sequenzierungs-Ebene
+- 3 Luecken identifiziert (L1-L3), alle auf anderen Architektur-Ebenen (AGENT_DIDAKTIK, ORCHESTRATOR)
+- Prozess fuer Skript-Einzeluebergabe (4-8 Skripte) definiert mit Analyse-Template
+- 4 offene Fragen fuer Skript-Analyse formuliert (Narrativitaet, Kontroversitaet, Quellenarten-Progression, Elementarisierung)
+
+**Naechster Schritt:** User uebergibt geschichtsdidaktische Skripte einzeln zur Analyse (Sektion 9.N im Evaluationsdokument).
+
+---
+
 ## 2026-04-07 — KE_KATALOG_GPG_R7 v1.0 fertiggestellt
 
 **Phase:** Phase-0-Standardisierung
