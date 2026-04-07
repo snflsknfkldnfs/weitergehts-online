@@ -4,6 +4,63 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-06 — Phase-0 Qualitaets-Audit v2 (persistierte RA-Berichte + Delta-Analyse)
+
+**Phase:** Phase IV — Phase-0-Qualitaets-Audit v2
+**Modus:** AUDIT
+**Session:** 15 (Fortsetzung)
+
+**Motivation:** v1-Audit verlor RA-Einzelergebnisse bei Context-Compaction. v2 implementiert Audit-Persistenz-Best-Practice: jeder RA-Agent schreibt eigenes Ergebnis-Artefakt.
+
+**Audit-Durchfuehrung:**
+- 5 parallele Review-Agenten mit identischen Dimensionen wie v1: RA1 (Artefakt-Qualitaet), RA2 (Prozess-Robustheit), RA3 (Downstream-Kompatibilitaet), RA4 (Fachdidaktische Schaerfe), RA5 (Generalisierbarkeit)
+- Scope: identisch zu v1 (4 Phase-0-Vertraege + WORKFLOW_v4.1 + ORCHESTRATOR + GUETEKRITERIEN)
+- NEU: Jeder Agent persistiert Ergebnis unter docs/projekt/audit_phase0_v2/
+
+**Persistierte Artefakte (5):**
+- docs/projekt/audit_phase0_v2/BERICHT_RA1_ARTEFAKT_QUALITAET.md — 8 Findings (0C/4H/4M)
+- docs/projekt/audit_phase0_v2/BERICHT_RA2_PROZESS_ROBUSTHEIT.md — 12 Findings (2C/6H/4M)
+- docs/projekt/audit_phase0_v2/BERICHT_RA3_DOWNSTREAM_KOMPATIBILITAET.md — 6 Findings (0C/3H/3M)
+- docs/projekt/audit_phase0_v2/BERICHT_RA4_FACHDIDAKTIK.md — 9 Findings (1C/2H/5M/1L)
+- docs/projekt/audit_phase0_v2/BERICHT_RA5_GENERALISIERBARKEIT.md — 10 Findings (1C/5H/4M)
+
+**Konsolidierung (BEFUND v2):**
+- Delta v1→v2: +9 genuinely neue Findings, 4 Severity-Aenderungen, alle 4 Konvergenz-Cluster bestaetigt
+- Gesamt: 31 Findings (3 CRITICAL, 14 HIGH, 10 MEDIUM, 4 LOW), 24 Massnahmen in 3 Wellen
+- Gate-Urteil: GELB (unveraendert)
+- §8 Delta-Analyse, §9 Audit-Best-Practice, §10 erweiterte User-Entscheidungen
+
+**Dokumentation:**
+- MODIFIZIERT: docs/projekt/BEFUND_PHASE_0_QUALITAETS_AUDIT.md → v2 (§8-§10 ergaenzt, Zaehler aktualisiert)
+- MODIFIZIERT: docs/projekt/COWORK_PROJECT_ANLEITUNG.md (Audit-Persistenz-Best-Practice Sektion)
+- MODIFIZIERT: docs/projekt/STATUS.md, docs/projekt/CHANGELOG.md
+
+**Offen:** 4 User-Entscheidungen (M-QA1 Thementyp, M-QA2 Eskalationspfad, M-QA3 SCPL-Flex, Prioritaet Game-2 vs. Architektur).
+
+---
+
+## 2026-04-06 — Phase-0 Qualitaets-Audit v1 (5-RA-Konsolidierung)
+
+**Phase:** Phase IV — Phase-0-Qualitaets-Audit
+**Modus:** AUDIT
+**Session:** 14 (Fortsetzung nach Compaction)
+
+**Audit-Durchfuehrung:**
+- 5 parallele Review-Agenten: RA1 (Artefakt-Qualitaet), RA2 (Prozess-Robustheit), RA3 (Downstream-Kompatibilitaet), RA4 (Fachdidaktische Schaerfe), RA5 (Generalisierbarkeit)
+- Scope: Alle 4 Phase-0-Vertraege + WORKFLOW_v4.1 + ORCHESTRATOR + GUETEKRITERIEN (SK1-SK17, G1-G14)
+- Prueffrage: Pipeline-Qualitaet fuer beliebige Geschichtsthemen (nicht nur WK1)
+
+**Konsolidierung:**
+- NEU: `docs/projekt/BEFUND_PHASE_0_QUALITAETS_AUDIT.md` — 22 Findings (2 CRITICAL, 10 HIGH, 7 MEDIUM, 3 LOW), 4 Konvergenz-Cluster, 19 Massnahmen in 3 Wellen
+- Gate-Urteil: GELB (funktionsfaehig fuer Ereignisgeschichte, nicht generalisiert)
+- Staerkste Konvergenz (4 RAs): Thementyp-Klassifikation fehlt — Pipeline implizit auf WK1-aehnliche Ereignisgeschichte kalibriert
+- Zweite Konvergenz (3 RAs): SCPL als einzige Containerstruktur zu rigide
+- 6 Welle-1-Massnahmen identifiziert (CRITICAL + architektonische HIGH), 6 Welle-2, 7 Welle-3
+
+**Offen:** User-Entscheidungen zu M-QA1 (Thementyp-Trias), M-QA3 (SCPL-Flexibilisierung), Prioritaet (Architektur vs. Game-2-Produktion).
+
+---
+
 ## 2026-04-06 — Phase-0 Architektur-Schaerfung (v4.1)
 
 **Phase:** Phase IV — Phase-0-Architektur-Evaluation + Schaerfung

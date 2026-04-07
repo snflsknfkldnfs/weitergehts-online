@@ -45,6 +45,13 @@ QUALITAETSDOKUMENTE (bei Audit/Review):
 - docs/checklisten/GUETEKRITERIEN_SEQUENZIERUNG.md (S1-S15)
 - docs/checklisten/QUALITAETSKRITERIEN_MATERIALPRODUKTION.md (M1-M12 + typ-spezifisch)
 
+AUDIT-PERSISTENZ-BEST-PRACTICE:
+- Bei Multi-Agenten-Audits: Jeder RA-Agent MUSS sein Ergebnis als eigene Datei persistieren BEVOR die Konsolidierung beginnt. Grund: Conversation-Compaction kann nicht-persistierte Agenten-Outputs unwiederbringlich loeschen.
+- Verzeichniskonvention: docs/projekt/audit_[scope]_v[N]/ (z.B. audit_phase0_v2/)
+- Dateikonvention: BERICHT_RA[N]_[DIMENSION].md
+- Konsolidierter Befund referenziert die Einzelberichte per Pfad.
+- Dokumentiert in: BEFUND_PHASE_0_QUALITAETS_AUDIT.md §9.
+
 VERFUEGBARE PLUGIN-INFRASTRUKTUR (verifiziert 2026-04-02, Roadmap 2026-04-03):
 - agent-teams: Parallele Multi-Dimensionen-Audits (3+ Reviewer gleichzeitig). **EINSATZ AB Phase 2.2b** (Aufgaben-Q-Gate).
 - accessibility-compliance: WCAG 2.2 AA Audit auf fertige HTML. **EINSATZ AB Phase 4** (Browser-Validierung).
