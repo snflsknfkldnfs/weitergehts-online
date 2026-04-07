@@ -4,6 +4,33 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-07 — KE_KATALOG_GPG_R7 v1.0 fertiggestellt
+
+**Phase:** Phase-0-Standardisierung
+**Modus:** EXECUTE
+**Session:** 17
+
+**KE_KATALOG_GPG_R7.md v1.0 erstellt** (`docs/agents/artefakte/KE_KATALOG_GPG_R7.md`):
+- 19 KE extrahiert aus Fachlehrplan GPG R7 (LB1=3, LB2=8, LB3=4, LB4=4)
+- Operator + AFB pro KE (I bis III)
+- Kompetenz-Kern / Exemplar-Pool Trennung mit K/E/KB-Typisierung
+- Spiralcurriculum-Mapping: Vorwissen (Jg 5/6) + Anschluss (Jg 8/9) pro KE
+- 5 Game-Cluster: G1 (besteht), G2 Absolutismus/Revolution, G3 Reichsgruendung/WK1/Versailles, G4 Asien/Afrika, G5 Jugendstrafrecht
+- Abdeckungs-Matrix: 19/19 KE, kein Overlap
+- 5 Grenzfall-Entscheidungen dokumentiert (GF-1 bis GF-5)
+- Pipeline-Kompatibilitaets-Pruefung: 9/9 PASS
+- Lebensweltbezug-Annotationen und Teleologie-Warnung
+
+**2 externe KI-Entwuerfe evaluiert:**
+- Entwurf 1 (LB2-only): Kernkonzepte, didaktische Knotenpunkte, Teleologie-Warnung uebernommen
+- Entwurf 2 (alle LB): KE-Wortlaute als Roh-Grundlage, Game-Szenarien als AGENT_SKRIPT-Ideenpool separiert
+
+**Konzeptreinheit/Konzeptdichte korrigiert:** Von "formalisierte Prinzipien" auf "Arbeitshypothesen" herabgestuft (User-Feedback).
+
+**Naechster Schritt:** VERTRAG_PHASE_0-0_INTAKE.md, dann AGENT_DIDAKTIK Input-Spec Update, dann Testlauf Game 2.
+
+---
+
 ## 2026-04-07 — Phase-0-Standardisierung: KE_KATALOG PM-Prozess
 
 **Phase:** Phase-0-Standardisierung
