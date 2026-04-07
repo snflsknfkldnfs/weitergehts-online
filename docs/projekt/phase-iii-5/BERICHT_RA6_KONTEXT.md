@@ -81,7 +81,7 @@
 - **Referenzen in Katalogen:**
   - M10 (Sprachsensibilität) in QUALITAETSKRITERIEN_MATERIALPRODUKTION.md
   - SK5 (Sprachliche Angemessenheit) in GUETEKRITERIEN_SKRIPT.md
-- **Status:** M10 und SK5 sind **nicht-STR-spezifisch** (basiert auf DG B1, fachdidaktisch). Nach STR-10-Streichung sind M10/SK5 als **unabhängige Qualitätskriterien** erhalten geblieben. ✓ **KONSISTENT**
+- **Status:** M10 und SK5 sind **nicht-STR-spezifisch** (basiert auf FD-Q4, fachdidaktisch). Nach STR-10-Streichung sind M10/SK5 als **unabhängige Qualitätskriterien** erhalten geblieben. ✓ **KONSISTENT**
 
 **STR-16 (Lehrprobe-Tauglichkeits-Check) — GESTRICHEN**
 - **Befund:** Kein Verweis in Katalogen. STR-16 war Audit-Dimension, nicht Produktions-Kriterium. ✓ **SAUBER**

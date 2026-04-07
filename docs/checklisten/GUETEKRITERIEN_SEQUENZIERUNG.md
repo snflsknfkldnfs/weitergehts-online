@@ -3,22 +3,22 @@
 **Datum:** 2026-03-28
 **Status:** v1.1 — SCPL-Korrespondenz + Skript-Primaer-Anker ergaenzt
 **Quellen:**
-- GPG GB Grundsaetze des GPG-Unterrichts (Artikulationsschemata, Kompetenzstrukturmodell)
-- DG B1 Allgemeine Unterrichtsprinzipien (Schroeder, Brunnhuber, Hilbert Meyer)
-- GPG B1 Vergegenwärtigung im Geschichtsunterricht (Roth, Besinnungsphasen)
-- GPG B2 Fachspezifische Arbeitsweisen — Historische Perspektive (Quellentypologie, Bilderschliessung)
-- DG B10 Medieneinsatz im Unterricht (Medienklassifikation, didaktischer Ort)
-- Alle: Bausteine Fachdidaktik, AG der MS-Seminarleiter Unterfranken
+- FD-Q1 Grundsaetze des GPG-Unterrichts (Artikulationsschemata, Kompetenzstrukturmodell)
+- FD-Q4 Allgemeine Unterrichtsprinzipien (Schroeder, Brunnhuber, Hilbert Meyer)
+- FD-Q2 Vergegenwaertigung im Geschichtsunterricht (Roth, Besinnungsphasen)
+- FD-Q3 Fachspezifische Arbeitsweisen — Historische Perspektive (Quellentypologie, Bilderschliessung)
+- FD-Q5 Medieneinsatz im Unterricht (Medienklassifikation, didaktischer Ort)
+- Alle: Fachdidaktische Grundlagentexte (nicht-oeffentlich)
 
 ---
 
 ## 1. Leitsatz
 
 > "Strukturierung ist Erhellung von Zusammenhaengen, [...] nicht Aneinanderreihen beziehungsloser Wissenselemente."
-> — Brunnhuber, zit. in DG B1
+> — Brunnhuber, zit. in FD-Q4
 
 > "Vergegenwärtigung schafft Faktenwissen (Vordergrund), Besinnung schafft Erkenntnisse (Hintergrund). Sachbezogene Besinnung ist Voraussetzung fuer wertbezogene."
-> — GPG B1
+> — FD-Q2
 
 Die Sequenzierung ist keine organisatorische Sortierung von Materialien. Sie ist die **didaktische Architektur des Lernwegs** — die Entscheidung, in welcher Reihenfolge, mit welcher Funktion und unter welchen Voraussetzungen jedes Material im Escape-Game praesentiert wird. Eine gute Sequenz macht den roten Faden sichtbar, baut Wissen kumulativ auf und fuehrt Schueler:innen vom Konkreten zum Abstrakten, vom Bekannten zum Unbekannten, vom Anschaulichen zum Begrifflichen.
 
@@ -54,7 +54,7 @@ Im Normalfall stimmen alle drei ueberein, weil AGENT_SKRIPT bereits nach Artikul
 
 ### 2.2 Vergegenwärtigung-Besinnung-Prinzip
 
-Roths 10 Hauptforderungen an die Vergegenwärtigung (GPG B1) definieren die Qualitaet der fruehen Sequenzphasen:
+Roths 10 Hauptforderungen an die Vergegenwärtigung (FD-Q2) definieren die Qualitaet der fruehen Sequenzphasen:
 
 1. **Geschichte in Handlung rueckverwandeln** — fruehe Materialien muessen narrativ, nicht abstrakt sein
 2. **Anschaulichkeit** — konkrete Bilder, Personen, Orte vor allgemeinen Begriffen
@@ -67,7 +67,7 @@ Roths 10 Hauptforderungen an die Vergegenwärtigung (GPG B1) definieren die Qual
 
 ### 2.3 Vorwissen-Gebot bei Quellenarbeit
 
-GPG B2 stellt klar: Textquellen und Bildquellen setzen Kontextwissen voraus.
+FD-Q3 stellt klar: Textquellen und Bildquellen setzen Kontextwissen voraus.
 
 - **Textquellen:** "Das Vorwissen muss bei den Schuelern vorhanden sein" — ein Quellentext darf nicht das erste Material einer Sequenz sein, es sei denn, er dient ausschliesslich der Problembegegnung (dann: kurz, provokant, ohne Analyseanspruch)
 - **Bildquellen heuristisch:** Bilder in heuristischer Funktion (Entdeckungsfunktion) benoetigen vorbereitenden Kontext; Bilder in illustrativer Funktion (Bestaetigungsfunktion) koennen spaeter stehen
@@ -77,7 +77,7 @@ GPG B2 stellt klar: Textquellen und Bildquellen setzen Kontextwissen voraus.
 
 ### 2.4 Medien nach didaktischem Ort
 
-DG B10 klassifiziert Medien nach ihrer Funktion im Unterrichtsverlauf:
+FD-Q5 klassifiziert Medien nach ihrer Funktion im Unterrichtsverlauf:
 
 | Didaktischer Ort | Medienfunktion | Sequenzposition |
 |---|---|---|
@@ -91,7 +91,7 @@ DG B10 klassifiziert Medien nach ihrer Funktion im Unterrichtsverlauf:
 
 ### 2.5 Allgemeine Unterrichtsprinzipien als Sequenzregeln
 
-Aus DG B1 (Schroeder, Brunnhuber, Hilbert Meyer) leiten sich uebergreifende Sequenzprinzipien ab:
+Aus FD-Q4 (Schroeder, Brunnhuber, Hilbert Meyer) leiten sich uebergreifende Sequenzprinzipien ab:
 
 | Prinzip | Quelle | Sequenz-Implikation |
 |---|---|---|
@@ -126,11 +126,11 @@ Gewichtete Kriterien fuer den AGENT_MATERIAL Q-Gate bei Aufgabe 1.9. Drei Priori
 
 | # | Kriterium | Operationalisierung | Herkunft |
 |---|---|---|---|
-| S1 | **Artikulationsschema-Konformitaet** | Sequenz folgt dem Artikulationsschema der zutreffenden GPG-Perspektive (historisch/geographisch/sozialpolitisch). Phasenfolge darf nicht verletzt werden. | GPG GB Artikulationsschemata |
-| S2 | **Vorwissen-Progression** | Kein Material referenziert Konzepte oder Fachbegriffe, die nicht durch ein vorheriges Material (niedrigere Position) oder durch explizites Vorwissen aus vorherigen Mappen eingefuehrt wurden. | GPG B2 + Brunnhuber Strukturierung |
+| S1 | **Artikulationsschema-Konformitaet** | Sequenz folgt dem Artikulationsschema der zutreffenden GPG-Perspektive (historisch/geographisch/sozialpolitisch). Phasenfolge darf nicht verletzt werden. | FD-Q1 Artikulationsschemata |
+| S2 | **Vorwissen-Progression** | Kein Material referenziert Konzepte oder Fachbegriffe, die nicht durch ein vorheriges Material (niedrigere Position) oder durch explizites Vorwissen aus vorherigen Mappen eingefuehrt wurden. | FD-Q3 + Brunnhuber Strukturierung |
 | S3 | **TB-Knoten-Abdeckung** | Jeder TB-Knoten aus dem fixierten TAFELBILD hat mindestens 1 zugeordnetes Material im Sequenzplan. Kein Knoten bleibt ohne Erarbeitungsweg. | Analogie zu G3 (Erarbeitbarkeit) |
-| S4 | **Didaktische-Funktion-Sequenzlogik** | Die didaktischen Funktionen folgen einer gültigen Reihenfolge: einstieg → erarbeitung → vertiefung → sicherung → transfer. Kein sicherung-Material vor dem letzten erarbeitung-Material. Kein transfer-Material vor sicherung. | DG B10 Didaktischer Ort + Artikulationsschemata |
-| S5 | **Vergegenwärtigung vor Besinnung** | Materialien mit narrativ-anschaulichem Charakter (Darstellungstext, Bildquelle illustrativ, Tagebucheintrag) stehen VOR Materialien mit analytisch-urteilendem Charakter (Quellentext mit Analyseauftrag, Bildquelle heuristisch mit Interpretationsauftrag). | GPG B1 Roth + Vergegenwärtigung/Besinnung-Prinzip |
+| S4 | **Didaktische-Funktion-Sequenzlogik** | Die didaktischen Funktionen folgen einer gültigen Reihenfolge: einstieg → erarbeitung → vertiefung → sicherung → transfer. Kein sicherung-Material vor dem letzten erarbeitung-Material. Kein transfer-Material vor sicherung. | FD-Q5 Didaktischer Ort + Artikulationsschemata |
+| S5 | **Vergegenwärtigung vor Besinnung** | Materialien mit narrativ-anschaulichem Charakter (Darstellungstext, Bildquelle illustrativ, Tagebucheintrag) stehen VOR Materialien mit analytisch-urteilendem Charakter (Quellentext mit Analyseauftrag, Bildquelle heuristisch mit Interpretationsauftrag). | FD-Q2 Roth + Vergegenwärtigung/Besinnung-Prinzip |
 | S6 | **Sequenzkontext-Vollstaendigkeit** | Jedes Material hat ein vollstaendiges `sequenz_kontext`-Objekt mit `vorher` (leer nur bei Position 1) und `nachher` (leer nur bei letzter Position). | AGENT_MATERIAL Aufgabe 1.9.5 |
 | S14 | **SCPL-Korrespondenz** | Die Materialreihenfolge korrespondiert mit dem SCPL-Aufbau des Tafelbilds: Materialien, die Situation-Knoten (S) erarbeiten, stehen vor Complication-Knoten (C), diese vor Problem-Knoten (P), diese vor Loesung-Knoten (L). Bei Materialien, die mehrere Knoten bedienen, zaehlt der primaere TB-Knoten. | Tafelbild-Sinnstruktur als didaktischer Aufbaurahmen |
 | S15 | **Skript-Kongruenz** | Die Materialreihenfolge folgt der Absatzfolge im SKRIPT, soweit diese nicht gegen S14 (SCPL-Korrespondenz) verstoesst. Abweichungen von der SKRIPT-Reihenfolge sind nur mit expliziter Begruendung zulaessig. | AGENT_SKRIPT liefert implizite didaktische Sequenz |
@@ -139,8 +139,8 @@ Gewichtete Kriterien fuer den AGENT_MATERIAL Q-Gate bei Aufgabe 1.9. Drei Priori
 
 | # | Kriterium | Operationalisierung | Herkunft |
 |---|---|---|---|
-| S7 | **Vom Anschaulichen zum Abstrakten** | Die Sequenz bewegt sich tendenziell von konkreten, anschaulichen Materialien (Bilder, Erzaehlungen, Fallbeispiele) zu abstrakteren Materialien (Begriffsarbeit, Strukturanalyse, Transfer). Messbar: durchschnittlicher Abstraktionsgrad der ersten Haelfte < zweite Haelfte. | DG B10 Anschaulichkeitsprinzip + Schroeder Elementarisierung |
-| S8 | **Kontextgebot Quellenarbeit** | Quellentext- und Bildquellen-Materialien (Typ: quellentext, bildquelle) stehen NICHT an Position 1, es sei denn ihre didaktische Funktion ist `einstieg` mit reiner Problembegegnungs-Intention (kein Analyseauftrag). Vor jeder Quellenarbeit steht mindestens 1 kontextgebendes Material. | GPG B2 Vorwissen-Gebot |
+| S7 | **Vom Anschaulichen zum Abstrakten** | Die Sequenz bewegt sich tendenziell von konkreten, anschaulichen Materialien (Bilder, Erzaehlungen, Fallbeispiele) zu abstrakteren Materialien (Begriffsarbeit, Strukturanalyse, Transfer). Messbar: durchschnittlicher Abstraktionsgrad der ersten Haelfte < zweite Haelfte. | FD-Q5 Anschaulichkeitsprinzip + Schroeder Elementarisierung |
+| S8 | **Kontextgebot Quellenarbeit** | Quellentext- und Bildquellen-Materialien (Typ: quellentext, bildquelle) stehen NICHT an Position 1, es sei denn ihre didaktische Funktion ist `einstieg` mit reiner Problembegegnungs-Intention (kein Analyseauftrag). Vor jeder Quellenarbeit steht mindestens 1 kontextgebendes Material. | FD-Q3 Vorwissen-Gebot |
 | S9 | **Uebergangs-Kohaerenz** | Jede Ueberleitung (Aufgabe 1.9.4) ist inhaltlich motiviert — sie benennt, was das vorherige Material ergeben hat und welche Frage/welchen Aspekt das naechste Material aufgreift. Rein formale Ueberleitungen ("Als naechstes...") sind unzureichend. | Brunnhuber Strukturierung + Meyer Sinnstiftendes Kommunizieren |
 | S10 | **Aktivierung am Sequenzbeginn** | Das erste Material (Position 1) hat die didaktische Funktion `einstieg` und aktiviert Vorwissen oder weckt Neugier. Es fuehrt KEINE neuen Fachbegriffe ein. | Brunnhuber Aktivierung + Meyer Lernfoerderliches Klima |
 

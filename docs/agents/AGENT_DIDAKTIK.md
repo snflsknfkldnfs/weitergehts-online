@@ -32,7 +32,7 @@ Erzeugt den didaktischen Rahmen fuer ein Escape-Game. Das Artefakt ist die inhal
 ### Pflicht-Lektuere vor Beginn
 
 1. **Fachlehrplan** — Kompetenzerwartungen und Inhalte fuer `lehrplanbezug` + `jahrgangsstufe`
-2. **Fachdidaktische Grundlagen** — Seminarbuch-Bausteine (GPG B1, DG B1, GPG GB) fuer Artikulationsstruktur, Kompetenzstrukturmodell, Fachprinzipien
+2. **Fachdidaktische Grundlagen** — Seminarbuch-Bausteine (FD-Q2, FD-Q4, FD-Q1) fuer Artikulationsstruktur, Kompetenzstrukturmodell, Fachprinzipien
 3. **Wenn `vorgaenger_game`:** DIDAKTIK_RAHMEN des Vorgaengers lesen. Notieren: letzte Mappe, offene KEs, thematischer Anschlusspunkt
 
 ---
@@ -161,9 +161,9 @@ Dokumentieren:
 - Jahrgangsstufenprofil (Uebergreifende Bildungsziele)
 
 ### Fachdidaktik (PFLICHT bei Geschichte)
-- GPG B1: Vergegenwärtigung im Geschichtsunterricht (Roth, Gestaltungsprinzipien)
-- DG B1: Allgemeine Unterrichtsprinzipien (Strukturierung, Motivierung, Elementarisierung)
-- GPG GB: Grundsaetze des GPG-Unterrichts (Fachprinzipien, Artikulationsschemata)
+- FD-Q2: Vergegenwärtigung im Geschichtsunterricht (Roth, Gestaltungsprinzipien)
+- FD-Q4: Allgemeine Unterrichtsprinzipien (Strukturierung, Motivierung, Elementarisierung)
+- FD-Q1: Grundsaetze des GPG-Unterrichts (Fachprinzipien, Artikulationsschemata)
 
 ### Referenz-Artefakte (falls vorhanden)
 - DIDAKTIK_RAHMEN des Vorgaenger-Games (wenn `vorgaenger_game`)

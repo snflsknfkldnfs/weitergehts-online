@@ -1,7 +1,7 @@
 # Evaluation: Fachdidaktische Ressourcen vs. GUETEKRITERIEN_SEQUENZIERUNG
 
 **Datum:** 2026-04-07
-**Scope:** Brauch-Geschichtsdidaktik-Uebersicht + Sequenzplanungs-Anleitung + GPG GB vs. S1-S15 (v1.1)
+**Scope:** Brauch-Geschichtsdidaktik-Uebersicht + Sequenzplanungs-Anleitung + FD-Q1 vs. S1-S15 (v1.1)
 **Zweck:** Identifikation von Abdeckung, Luecken und Schaerfungsbedarf im bestehenden Framework
 
 ---
@@ -144,7 +144,7 @@
 
 **GUETEKRITERIEN_SEQUENZIERUNG v1.1 ist fachdidaktisch solide.** Die beiden Ressourcen decken keine signifikanten Luecken auf, die in S1-S15 geschlossen werden muessten. Die identifizierten Luecken L1-L3 betreffen andere Architektur-Ebenen (AGENT_DIDAKTIK, ORCHESTRATOR), nicht die Materialsequenzierung.
 
-Die Haupterkenntnis: Die bestehenden Quellen (Bausteine Fachdidaktik AG MS-Seminarleiter) waren bereits die richtige Grundlage. Brauch liefert den theoretischen Ueberbau, den die Bausteine operationalisiert haben. Die Sequenzplanungs-Anleitung liefert ein Planungs-Template, das unsere Pipeline-Architektur bereits in maschineller Form abbildet.
+Die Haupterkenntnis: Die bestehenden Quellen (Fachdidaktische Grundlagentexte AG MS-Seminarleiter) waren bereits die richtige Grundlage. Brauch liefert den theoretischen Ueberbau, den die Bausteine operationalisiert haben. Die Sequenzplanungs-Anleitung liefert ein Planungs-Template, das unsere Pipeline-Architektur bereits in maschineller Form abbildet.
 
 ---
 
@@ -204,22 +204,22 @@ Diese Fragen definieren den Analyse-Fokus fuer die angekuendigten 4-8 geschichts
 
 ## 9. Skript-Einzelbefunde
 
-### 9.1 — GPG GB: Grundsaetze des GPG-Unterrichts
+### 9.1 — FD-Q1: Grundsaetze des GPG-Unterrichts
 
-**Quelle:** Hofmann, Dieter (Seminarrektor). Bausteine Fachdidaktik GPG, Baustein GB. AG der MS-Seminarleiter/-innen Unterfranken.
+**Quelle:**  Fachdidaktische Grundlagentexte GPG, Baustein GB. 
 **Relevanz fuer Pipeline:** HOCH — ist bereits Primaerquelle fuer S1-S15. Extraktion-Vollstaendigkeits-Pruefung.
 
 **Bestaetigung bestehender Kriterien:**
 
-- **S1:** Artikulationsschemata alle drei Perspektiven korrekt extrahiert. GK-Tabelle (S. 1, Sektion 2.1) stimmt mit GPG GB Sektionen 3.3, 4.3, 5.5 ueberein.
-- **S5:** Vergegenwaertigung-Besinnung-Prinzip korrekt. GPG GB Modell 1 (S. 5-6) differenziert sachbezogene Besinnung (3.1: "Eindringen in den sachlichen Gehalt") und wertbezogene Besinnung (3.2: "Wertende Aufbereitung, Bezuege zur Gegenwart"). GK S5 bildet diese Zweistufigkeit korrekt ab.
+- **S1:** Artikulationsschemata alle drei Perspektiven korrekt extrahiert. GK-Tabelle (S. 1, Sektion 2.1) stimmt mit FD-Q1 Sektionen 3.3, 4.3, 5.5 ueberein.
+- **S5:** Vergegenwaertigung-Besinnung-Prinzip korrekt. FD-Q1 Modell 1 (S. 5-6) differenziert sachbezogene Besinnung (3.1: "Eindringen in den sachlichen Gehalt") und wertbezogene Besinnung (3.2: "Wertende Aufbereitung, Bezuege zur Gegenwart"). GK S5 bildet diese Zweistufigkeit korrekt ab.
 - **S4:** Didaktische-Funktion-Sequenzlogik konsistent mit allen drei Strukturmodellen. Monotonie-Anforderung in S4 spiegelt die Phasenfolge aller drei Perspektiven.
 - **S10:** Aktivierung am Sequenzbeginn gedeckt durch alle drei Modelle: historisch 1.1 "Motivation/Weckung der Aufmerksamkeit", geographisch 1. "Hinfuehrung", sozialpolitisch 1.1 "Problemorientierung/Darstellung einer Situation".
 - **S7:** Vom Anschaulichen zum Abstrakten gedeckt durch Geographie-Prinzip "Exemplarisches Lernen" (4.2.3: "Vom Speziellen zum Allgemeinen, induktives Vorgehen").
 
 **Neue Perspektiven:**
 
-1. **Zwei Modelle fuer historische Perspektive:** GPG GB enthaelt Modell 1 (detailliert, 4 Hauptphasen mit Subphasen 1.1-1.4, 2.1-2.3, 3.1-3.2, 4) UND Modell 2 (kompakt, 4 Phasen: Motivation→Vergegenwaertigung→Besinnung→Bewaeltigung). GK S1 arbeitet mit einer Mischform. Kein Problem — beide Modelle sind konsistent, Modell 2 ist die Zusammenfassung von Modell 1. Aber: **Modell 1 liefert Sub-Phasen-Granularitaet**, die fuer AGENT_SKRIPT-Phasen-Annotation nuetzlich sein koennte (z.B. "Vermutungen" als eigene Sub-Phase vor "Informationsgewinnung").
+1. **Zwei Modelle fuer historische Perspektive:** FD-Q1 enthaelt Modell 1 (detailliert, 4 Hauptphasen mit Subphasen 1.1-1.4, 2.1-2.3, 3.1-3.2, 4) UND Modell 2 (kompakt, 4 Phasen: Motivation→Vergegenwaertigung→Besinnung→Bewaeltigung). GK S1 arbeitet mit einer Mischform. Kein Problem — beide Modelle sind konsistent, Modell 2 ist die Zusammenfassung von Modell 1. Aber: **Modell 1 liefert Sub-Phasen-Granularitaet**, die fuer AGENT_SKRIPT-Phasen-Annotation nuetzlich sein koennte (z.B. "Vermutungen" als eigene Sub-Phase vor "Informationsgewinnung").
    → Handlungsbedarf: NEIN fuer GK. JA fuer AGENT_SKRIPT-Spec (Sub-Phasen als optionale Annotation).
 
 2. **Multikausalitaet** (3.2): "Erkennen unterschiedlicher Strukturen, Unterscheidung zwischen Ursache, Grund und Ausloeser." Nicht in S1-S15 (kein Sequenzierungs-Kriterium). Relevant fuer AGENT_SKRIPT: kausale Strukturen muessen differenziert dargestellt werden, nicht mono-kausal.
@@ -240,14 +240,57 @@ Diese Fragen definieren den Analyse-Fokus fuer die angekuendigten 4-8 geschichts
 7. **Sozialpolitisch: Sehen→Beurteilen→Handeln** (5.3): Drei-Schritt-Grundsatz. S1 deckt dies ueber das Artikulationsschema ab (Problemstellung→Problementfaltung→Problemloesung→Wertung→Sicherung). Der Drei-Schritt ist die didaktische Kurzformel dafuer.
    → Handlungsbedarf: NEIN. Bereits abgedeckt.
 
-8. **Sub-Phasen-Granularitaet aller drei Perspektiven:** GPG GB liefert deutlich mehr Subphasen als GK S1 abbildet. Beispiel historisch: 1.1 Motivation, 1.2 Zeitliche/raeumliche Einordnung, 1.3 Problemisolierung, 1.4 Zielangabe. Beispiel geographisch: 3.1 Vermutungen, 3.2 Zielklaerung, 3.3 Organisationsplanung, 3.4 Bearbeitung, 3.5 Ergebnispresentation. Diese Subphasen sind fuer Material-Sequenzierung zu granular (eine Mappe hat 3-5 Materialien, nicht 12+ Subphasen), aber fuer AGENT_SKRIPT-Strukturierung wertvoll.
+8. **Sub-Phasen-Granularitaet aller drei Perspektiven:** FD-Q1 liefert deutlich mehr Subphasen als GK S1 abbildet. Beispiel historisch: 1.1 Motivation, 1.2 Zeitliche/raeumliche Einordnung, 1.3 Problemisolierung, 1.4 Zielangabe. Beispiel geographisch: 3.1 Vermutungen, 3.2 Zielklaerung, 3.3 Organisationsplanung, 3.4 Bearbeitung, 3.5 Ergebnispresentation. Diese Subphasen sind fuer Material-Sequenzierung zu granular (eine Mappe hat 3-5 Materialien, nicht 12+ Subphasen), aber fuer AGENT_SKRIPT-Strukturierung wertvoll.
    → Handlungsbedarf: NEIN fuer GK. NOTIEREN fuer AGENT_SKRIPT.
 
 **Antworten auf offene Punkte (Sektion 7):**
 
-- **Frage 1 (Narrativitaet):** TEILWEISE BEANTWORTET. GPG GB bestaetigt: Historisches Lernen ist narrativ ("Bildung von Geschichtsbewusstsein durch Erzaehlen"). Aber: formalisierte Kriterien fuer narrative Kohaerenz ueber S9 hinaus liefert GPG GB nicht. Die Narrativitaet wird als Grundprinzip gesetzt, nicht als Pruefkatalog operationalisiert.
+- **Frage 1 (Narrativitaet):** TEILWEISE BEANTWORTET. FD-Q1 bestaetigt: Historisches Lernen ist narrativ ("Bildung von Geschichtsbewusstsein durch Erzaehlen"). Aber: formalisierte Kriterien fuer narrative Kohaerenz ueber S9 hinaus liefert FD-Q1 nicht. Die Narrativitaet wird als Grundprinzip gesetzt, nicht als Pruefkatalog operationalisiert.
 - **Frage 2 (Kontroversitaet):** NICHT ADRESSIERT als Sequenzregel. Kontroversitaet wird als Prinzip genannt (3.2), aber ohne Sequenzierungsvorschrift ("wann in der Sequenz darf eine Kontroverse eroeffnet werden").
-- **Frage 3 (Quellenarten-Progression):** NICHT ADRESSIERT. GPG GB nennt diverse Quellenarten (Modell 2 Vergegenwaertigungsphase: "Quellen, Medien, Lehrerbericht, -erzaehlung") ohne Reihenfolge-Norm.
+- **Frage 3 (Quellenarten-Progression):** NICHT ADRESSIERT. FD-Q1 nennt diverse Quellenarten (Modell 2 Vergegenwaertigungsphase: "Quellen, Medien, Lehrerbericht, -erzaehlung") ohne Reihenfolge-Norm.
 - **Frage 4 (Elementarisierungs-Stufen):** TEILWEISE BEANTWORTET. Modell 1 Subphasen implizieren eine Elementarisierung: erst "Vergegenwärtigung der geschichtlichen Inhalte" (2.1-2.3), dann "Eindringen in den sachlichen Gehalt" (3.1). Das ist eine Zwei-Stufen-Elementarisierung (Oberflaechenwissen→Tiefenstruktur), aber kein formales Modell.
 
 **Verwertungsentscheidung:** INTEGRIEREN (L1-Upgrade bestaetigt, Sub-Phasen-Granularitaet als AGENT_SKRIPT-Input notiert, 2 von 4 offenen Fragen teilweise beantwortet).
+
+### 9.2 — FD-Q2: Vergegenwaertigung im Geschichtsunterricht und die Bedeutung der Besinnungsphase
+
+**Quelle:**  Fachdidaktische Grundlagentexte GPG, Baustein B1. 
+**Relevanz fuer Pipeline:** HOCH — Primaerquelle fuer S5 (Vergegenwaertigung vor Besinnung) und Sektion 2.2 (Roths 10 Forderungen). Extraktion-Vollstaendigkeits-Pruefung.
+
+**Bestaetigung bestehender Kriterien:**
+
+- **S5:** Kernkriterium dieses Dokuments. Bestaetigt und praezisiert: Vergegenwaertigung = Kenntnisse (geschichtlicher Vordergrund, Faktenwissen), Besinnung = Erkenntnisse (geschichtlicher Hintergrund, Tiefendimension). Diagramm S. 12 zeigt den Abstraktionsprozess explizit. S5-Operationalisierung (sachbezogene vor wertbezogener Besinnung) ist korrekt aus §10 extrahiert.
+- **S7 (Vom Anschaulichen zum Abstrakten):** Direkt bestaetigt durch den Abstraktionsprozess-Pfeil (S. 12): Vergegenwaertigung→Besinnung = konkret→abstrakt = Vordergrund→Hintergrund. S7 ist die Generalisierung dieses Prinzips.
+- **S8 (Kontextgebot Quellenarbeit):** Verstaerkt durch §11 Karikaturen: "verlangen Abstraktionsfaehigkeit, Symbole muessen gedeutet werden (Sachwissen!)". Karikaturen erfordern MEHR Vorwissen als Standard-Bildquellen → S8 greift hier besonders strikt.
+- **S13 (Personalisierung in Fruehphase):** Bestaetigt durch Roth #7 ("personalisieren, lokalisieren, in Szene setzen") und §7.5 Gestaltungsprinzip "Personifiziere". Schutzregel R3-S2 (Starke Identifikationsfiguren) ist direkt aus diesem Baustein abgeleitet.
+- **Schutzregeln R3-S1 bis R3-S4:** Alle vier Schutzregeln sind in FD-Q2 fundiert: R3-S1 (niedrigschwelliger Einstieg) = Roth #9 (Sozialsprache), R3-S2 (Identifikationsfiguren) = Roth #7 + §7, R3-S3 (visuelle Klarheit) = Roth #2/#3, R3-S4 (emotionale Ansprache) = §7.3 ("Erzaehlungen wecken Emotionen und Affekte").
+
+**Neue Perspektiven:**
+
+1. **Roths 10 Hauptforderungen — Vollstaendigkeits-Check:** GK Sektion 2.2 listet 6 der 10 Forderungen. Die 4 fehlenden:
+   - Roth #3 (graphisch/kartographisch Darstellbares zugaenglich machen): Materialproduktions-Ebene, nicht Sequenzierung. Kein GK-Bedarf.
+   - Roth #4 (wirkliche Begegnung mit Ueberresten, Dokumenten): Im Escape-Game-Kontext nur als digitale Reproduktion moeglich. Kein GK-Bedarf, aber AGENT_MATERIAL-Hinweis: wenn moeglich, digitalisierte Originalquellen verwenden.
+   - Roth #8 (Zeitatmosphaere durch Detailschilderung und farbenkraeftiges Kolorieren): AGENT_SKRIPT-Produktionsregel, nicht Sequenzierung.
+   - Roth #9 (abstrakte Begriffe vermeiden, Sozialsprache): Sprachregister-Frage. S12 (Sprachregister-Progression) deckt dies als KANN-Kriterium ab. Kein Schaerfungsbedarf.
+   → Handlungsbedarf: NEIN fuer GK. Die 4 fehlenden Forderungen sind korrekterweise nicht in S1-S15, weil sie Produktions-Kriterien sind, keine Sequenzierungs-Kriterien.
+
+2. **Kausalzusammenhang dynamisch vs. Strukturzusammenhang statisch** (§10.1): Sachbezogene Besinnung unterscheidet zwei Formen: (a) dynamischer Kausalzusammenhang (Ursache→Wirkung im zeitlichen Nacheinander, z.B. Weltwirtschaftskrise→Arbeitslose→Radikalisierung) und (b) statischer Strukturzusammenhang (Gegenstand determiniert durch viele Komponenten in Wechselbeziehung). Fuer die Pipeline: SCPL bildet primaer dynamische Kausalzusammenhaenge ab (S→C→P→L = zeitliche Abfolge). Statische Strukturzusammenhaenge (z.B. Gesellschaftspyramide, Feudalsystem) erfordern moeglicherweise ein anderes SCPL-Muster (S = Zustand, C = Spannung im System, P = Widerspruch, L = Erkenntnis ueber Struktur).
+   → Handlungsbedarf: NOTIEREN fuer AGENT_HEFTEINTRAG. SCPL muss beide Zusammenhangstypen abbilden koennen. Kein GK-Eingriff, aber Pruefpunkt bei SCPL-Erstellung.
+
+3. **Erzaehlung als didaktisches Kernmedium der Vergegenwaertigung** (§7): Umfangreiche Behandlung (Gestaltungsprinzipien, Vor-/Nachteile, Beispiel "Der arme Konrad"). Fuer die Pipeline: Der SKRIPT-Output IST funktional eine Geschichtserzaehlung — er muss die Gestaltungsprinzipien (§7.5: Detailliere, Motiviere, Verkindliche, Dramatisiere, Personifiziere, Lokalisiere, Kostümiere, Vereinfache) einhalten. §7.7 warnt vor Nachteilen: Personalisierung kann zur "Geschichte grosser Maenner" verzerren, suggestive Darstellung kann manipulieren.
+   → Handlungsbedarf: NOTIEREN fuer GUETEKRITERIEN_SKRIPT. 8 Gestaltungsprinzipien als Pruefpunkte. §7.7-Warnungen als Anti-Patterns (Ueberbetonung Akteure, suggestive Darstellung, Geschlossenheit auf Kosten von Genauigkeit). Kein GK-Eingriff.
+
+4. **Roth #10 und Teleologie-Warnung:** "Die oft sehr verwickelten kausalen, teleologischen und anderen Zusammenhaenge sind auf die Hauptlinie zu vereinfachen, ohne dass die Tatsachen selbst verbogen oder verfaelscht werden." Dies BESTAETIGT die Teleologie-Warnung im KE_KATALOG_GPG_R7 (§9): Vereinfachung ja, aber keine teleologische Verformung ("es musste so kommen"). Roth selbst fordert: vereinfachen, nicht verfaelschen.
+   → Handlungsbedarf: NEIN. Bereits im KE_KATALOG verankert.
+
+5. **Karikaturen als Sonder-Materialtyp** (§11): Karikaturen erfordern: (a) Sachwissen als Voraussetzung, (b) Abstraktionsfaehigkeit, (c) politische Sensibilitaet. Fuer die Pipeline: Wenn AGENT_MATERIAL eine Karikatur in die Sequenz einbaut, muss S8 besonders strikt angewendet werden — Karikatur darf NIE an Position 1 stehen und braucht mindestens 2 vorausgehende Kontextmaterialien.
+   → Handlungsbedarf: GERING. S8 deckt dies generisch ab ("Quellenarbeit braucht Kontext"). Optionale Schaerfung: Karikatur als Spezialfall in S8-Operationalisierung erwaehnen. **Empfehlung: Bei naechster GK-Revision als Anmerkung in S8 ergaenzen, nicht blockierend.**
+
+**Antworten auf offene Punkte (Sektion 7):**
+
+- **Frage 1 (Narrativitaet als Sequenzprinzip):** BEANTWORTET. FD-Q2 §7 liefert die Begruendung: Erzaehlung ist das didaktische Kernmedium der Vergegenwaertigungsphase. Die 8 Gestaltungsprinzipien (§7.5) sind formalisierte Kriterien fuer narrative Qualitaet — allerdings auf Produktions-Ebene, nicht auf Sequenzierungs-Ebene. Fuer Sequenzierung gilt: das narrative Material MUSS in der fruehen Sequenzhaelfte stehen (= S5 + S13). Narrative Kohaerenz ueber die gesamte Sequenz ist eine AGENT_SKRIPT-Verantwortung, nicht GK.
+- **Frage 2 (Kontroversitaet):** NICHT ADRESSIERT. FD-Q2 behandelt Kontroversitaet nicht.
+- **Frage 3 (Quellenarten-Progression):** TEILWEISE BEANTWORTET. §11 etabliert eine implizite Hierarchie: Karikaturen erfordern mehr Vorwissen als Standard-Bildquellen, Standard-Bildquellen mehr als Darstellungstexte. Daraus folgt eine Sequenzierungsregel: Darstellungstext → Bildquelle → Karikatur → Quellentext (aufsteigend nach Kontextbedarf). Aber: FD-Q2 formalisiert diese Reihenfolge nicht explizit. Sie ergibt sich logisch aus S2 (Vorwissen-Progression) + S8 (Kontextgebot).
+- **Frage 4 (Elementarisierungs-Stufen):** BEANTWORTET. §3 (Aufgabe des Lehrers) und §9.2 (Diagramm) liefern ein Zwei-Stufen-Modell: (1) Vergegenwaertigung = Elementarisierung auf Faktenniveau (Kenntnisse, Vordergrund, Addition historischer Fakten), (2) Besinnung = Abstraktion auf Erkenntnissniveau (Erkenntnisse, Hintergrund, Zusammenhang/Einordnung/Wertung). Das ist kein mehrstufiges Elementarisierungsmodell, sondern eine binaere Unterscheidung. Fuer unsere Pipeline: Die SCPL-Struktur bildet dies ab — S/C = Vergegenwaertigungsebene (was passiert?), P/L = Besinnungsebene (was bedeutet es?).
+
+**Verwertungsentscheidung:** INTEGRIEREN (S5 bestaetigt, Roth-Extraktion vollstaendig, 3 AGENT_SKRIPT-Notizen, Karikatur-Sonderfall fuer S8, 3 von 4 offenen Fragen jetzt beantwortet oder teilbeantwortet).

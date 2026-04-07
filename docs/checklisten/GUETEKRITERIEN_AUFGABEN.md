@@ -6,10 +6,10 @@
 - Ulrich, I. (2016): Fragen und Fragetypen — Formen von Fragen + Denkanregende Fragen zur Aktivierung
 - LLZ Uni Halle: Uebersicht Fragetypen (ILIAS) — AFB-Zuordnung Frageformate
 - Rechercheergebnisse Lernzielformulierung: AFB-Operatoren, Kompetenzmodelle, Anti-Patterns
-- GPG GB Grundsaetze des GPG-Unterrichts: Kompetenzstrukturmodell, Fachprinzipien
-- DG B1 Allgemeine Unterrichtsprinzipien: Erfolgssicherung, Motivierung, Differenzierung
-- GPG B1 Vergegenwärtigung im Geschichtsunterricht: Besinnungsphase (sachbezogen/wertbezogen)
-- Alle: Bausteine Fachdidaktik, AG der MS-Seminarleiter Unterfranken
+- FD-Q1 Grundsaetze des GPG-Unterrichts: Kompetenzstrukturmodell, Fachprinzipien
+- FD-Q4 Allgemeine Unterrichtsprinzipien: Erfolgssicherung, Motivierung, Differenzierung
+- FD-Q2 Vergegenwärtigung im Geschichtsunterricht: Besinnungsphase (sachbezogen/wertbezogen)
+- Alle: Fachdidaktische Grundlagentexte (nicht-oeffentlich)
 
 ---
 
@@ -92,7 +92,7 @@ Die Aufgabenzahl (5-8) ergibt sich aus der Anzahl der C-Schritte plus je 1 Aufga
 
 ### 2.6 Besinnungsphasen und Aufgabendesign
 
-GPG B1 unterscheidet sachbezogene Besinnung (Zusammenhaenge erkennen, Begriffe klaeren, Ursachen verstehen) und wertbezogene Besinnung (ethische Stellungnahme). Das SCPL-Modell bildet diese Progression ab:
+FD-Q2 unterscheidet sachbezogene Besinnung (Zusammenhaenge erkennen, Begriffe klaeren, Ursachen verstehen) und wertbezogene Besinnung (ethische Stellungnahme). Das SCPL-Modell bildet diese Progression ab:
 
 - **S/C-Zonen** (AFB I-II): Sachbezogene Besinnung — Fakten sichern, Erarbeitungsschritte pruefen, Zusammenhaenge herstellen
 - **P-Zone** (AFB II): Uebergang — Problemverstaendnis, Analyse, Anwendung
@@ -110,7 +110,7 @@ GPG B1 unterscheidet sachbezogene Besinnung (Zusammenhaenge erkennen, Begriffe k
 | A2 | **Fragestaemme-Klarheit + Inhaltliche Verankerung** | Jede Frage hat genau EINE kognitive Anforderung. Keine doppelten Fragen ("Nenne und erklaere..."), keine Negationen ohne Hervorhebung, keine mehrdeutigen Formulierungen. **Inhaltliche Verankerung (v3.4):** Der Fragestamm enthaelt mindestens 1 konkretes inhaltliches Element (Person, Ort, Gegenstand, Ereignis, Materialbestandteil). Abstrakte Metabegriffe (Widerspruch, Zusammenhang, Perspektive, Quelle) NUR mit konkretem Bezug. FAIL-Muster: "Erklaere den Widerspruch zwischen Foto und Quellen." PASS-Muster: "Warum zeigt das Foto Jubel, aber die Tagebuecher berichten von Angst?" | Ulrich (2016), Anti-Pattern "doppelte Anforderung", Browser-Review Mappe 3 (D2) |
 | A3 | **Material-Aufgabe-Kongruenz** | Jede Aufgabe ist aus den referenzierten Materialien beantwortbar. Kein Fachbegriff ohne vorherige Einfuehrung im Material. Keine Information gefordert, die in keinem Material vorkommt | AGENT_RAETSEL Material-Alignment-Pflicht, fachdidaktisch praezisiert |
 | A4 | **Typ-spezifische Konstruktionsqualitaet** | Jeder Aufgabentyp hat ein zentrales Konstruktionskriterium: **A4-MC** Distractor-Qualitaet (plausible Fehlvorstellungen, keine absurden Optionen), **A4-ZU** Trennschaerfe (disjunkte Kategorien, eindeutige Zuordnungen), **A4-LT** Luecken-Eindeutigkeit + Antwortpool (genau 1 korrekte Antwort pro Luecke, keine gleichwertigen Synonyme. `antwortpool` mit N+1 Eintraegen PFLICHT: alle korrekten Begriffe + 1 plausibler Distraktor, alphabetisch sortiert), **A4-RF** Reihenfolge-Eindeutigkeit (paarweise klare Ordnungsrelation, keine Ambiguitaet). Freitext hat kein A4-* (stattdessen A11-FT) | LLZ Halle MC-Qualitaet, Testtheorie, v3.7 Subagenten-Architektur |
-| A5 | **Schwierigkeits-Progression** | Die 5-8 Aufgaben einer Mappe zeigen monoton steigende AFB-Schwierigkeit. Erste Aufgabe = AFB I, letzte Aufgabe = AFB III (Freitext). Keine Regression (keine AFB-II-Aufgabe vor einer AFB-I-Aufgabe). Aufgabenzahl ergibt sich aus Inhaltskomplexitaet (Knoten-/Materialanzahl), nicht aus Schablone | AGENT_RAETSEL Aufgabe 1a/1b (v2), DG B1 "Vom Einfachen zum Komplexen" |
+| A5 | **Schwierigkeits-Progression** | Die 5-8 Aufgaben einer Mappe zeigen monoton steigende AFB-Schwierigkeit. Erste Aufgabe = AFB I, letzte Aufgabe = AFB III (Freitext). Keine Regression (keine AFB-II-Aufgabe vor einer AFB-I-Aufgabe). Aufgabenzahl ergibt sich aus Inhaltskomplexitaet (Knoten-/Materialanzahl), nicht aus Schablone | AGENT_RAETSEL Aufgabe 1a/1b (v2), FD-Q4 "Vom Einfachen zum Komplexen" |
 | A6 | **Tipp-Progression** | Tipps folgen strikt der Dreistufigkeit: Stufe 1 = Richtung (KEINE Loesungsverraten), Stufe 2 = Einschraenkung (Ausschluss falscher Optionen), Stufe 3 = Loesung + Erklaerung (didaktischer Mehrwert). Stufe 1 darf Stufe 3 nicht vorwegnehmen | AGENT_RAETSEL Aufgabe 3 |
 | A7 | **Operator-Praezision** | Fragestellungen verwenden operationalisierte Verben aus der AFB-Taxonomie (nenne, beschreibe, erklaere, vergleiche, beurteile). Keine nicht-operationalisierbaren Verben ("Was weisst du ueber...?", "Kennst du...?") | Rechercheergebnisse Lernziele, Anti-Pattern 2 |
 
@@ -146,7 +146,7 @@ GPG B1 unterscheidet sachbezogene Besinnung (Zusammenhaenge erkennen, Begriffe k
 
 | # | Kriterium | Beschreibung | Fundierung |
 |---|---|---|---|
-| A27 | **Quellenkritik sinngerichtet eingesetzt** (typ `quellenkritik`, inhaltlich) | Quellenkritik-Aufgaben werden NUR bei Primaerquellen (Quellentext, historische Bildquelle) mit erkennbarer Perspektive/Intention eingesetzt. Pflichtregeln: (a) Anti-Automatismus: Einsatz ist sinngerichtet begruendet im Progressionsplan, nicht mechanisch durch Quelltyp-Detektion getriggert. (b) W-Fragen-Qualitaet: Min 4, max 6 W-Fragen; min je 1 aus aeusserer Quellenkritik (Wer/Wann/Wo/Quellenart) und innerer Quellenkritik (Warum/Fuer wen/Wozu/Was fehlt). (c) Perspektivitaets-Frage: Min 1 W-Frage zielt auf Perspektive, Intention oder fehlende Sichtweise. (d) Musterantworten sind R7-verstaendlich, inhaltlich korrekt, aus dem Material erschliessbar. (e) Max 1 Quellenkritik-Aufgabe pro Mappe (Monotonie-Vermeidung). FAIL wenn: Quellenkritik bei nicht-perspektivischem Material (Statistik, Zeitleiste) oder ohne Perspektivitaets-Frage. | D15b STR-08, GPG B2 Quellentypologie + Quellenarbeit, GPG GB Historische Methodenkompetenz |
+| A27 | **Quellenkritik sinngerichtet eingesetzt** (typ `quellenkritik`, inhaltlich) | Quellenkritik-Aufgaben werden NUR bei Primaerquellen (Quellentext, historische Bildquelle) mit erkennbarer Perspektive/Intention eingesetzt. Pflichtregeln: (a) Anti-Automatismus: Einsatz ist sinngerichtet begruendet im Progressionsplan, nicht mechanisch durch Quelltyp-Detektion getriggert. (b) W-Fragen-Qualitaet: Min 4, max 6 W-Fragen; min je 1 aus aeusserer Quellenkritik (Wer/Wann/Wo/Quellenart) und innerer Quellenkritik (Warum/Fuer wen/Wozu/Was fehlt). (c) Perspektivitaets-Frage: Min 1 W-Frage zielt auf Perspektive, Intention oder fehlende Sichtweise. (d) Musterantworten sind R7-verstaendlich, inhaltlich korrekt, aus dem Material erschliessbar. (e) Max 1 Quellenkritik-Aufgabe pro Mappe (Monotonie-Vermeidung). FAIL wenn: Quellenkritik bei nicht-perspektivischem Material (Statistik, Zeitleiste) oder ohne Perspektivitaets-Frage. | D15b STR-08, FD-Q3 Quellentypologie + Quellenarbeit, FD-Q1 Historische Methodenkompetenz |
 
 **Infrastruktur-Primaer:** AU-3 erweitert die Aufgabentyp-Registry um `quellenkritik` (Engine-Renderer via Cold-Handoff an Claude-Code). Kein Backfill — Quellenkritik-Aufgaben entstehen erst bei kuenftiger Game-Generierung.
 
@@ -157,8 +157,8 @@ GPG B1 unterscheidet sachbezogene Besinnung (Zusammenhaenge erkennen, Begriffe k
 | A8 | **Kognitive Aktivierung** | Mindestens 1 Aufgabe pro Mappe ist "denkanregend" im Sinne von Ulrich: Anwendungsfrage, Vergleichsfrage, Schlussfolgerungsfrage oder Problemloesefrage. Nicht nur Reproduktion | Ulrich (2016) "Denkanregende Fragen" |
 | A9 | **Tafelbild-Bezug** | Mindestens 1 Aufgabe pro Mappe zielt direkt auf einen TB-Knoten (Pruefung: Ist die Aufgabe ohne Verstaendnis des TB-Knotens loesbar? Wenn ja → kein TB-Bezug). Die letzte Aufgabe reflektiert die Gesamterkenntnis des TB | GUETEKRITERIEN_HEFTEINTRAG_ENTWURF G1/G2, Besinnungsprinzip |
 | A10 | **Inhaltsgesteuerte Typauswahl** | Mindestens 3 verschiedene Aufgabentypen pro Mappe. Kein Typ mehr als 3x pro Mappe. Freitext-Code mindestens 1x pro Mappe (letzte Position, AFB III). Typ-Wiederholung erlaubt WENN didaktisch begruendet im Progressionsplan (z.B. 2x MC: einmal AFB-I-Faktenwissen, einmal AFB-II-Transfer). Typauswahl folgt dem Operationalisierungsziel, nicht einer Diversitaetsquote | AGENT_RAETSEL Aufgabe 1c (v2), empirische Revision 7 UE-Muster |
-| A11 | **Freitext-Qualitaet** | Die Freitext-Aufgabe (Aufgabe 5) verwendet eine problemorientierte Leitfrage, bietet 2-3 Teilfragen als Geruest, spezifiziert erwartete Fachbegriffe und fordert Stellungnahme oder Beurteilung (AFB III) | AGENT_RAETSEL Freitext-Neudefinition v1.1, GPG B1 wertbezogene Besinnung |
-| A12 | **Sachbezogen-vor-Wertbezogen** | Die Aufgabensequenz folgt der Phasenlogik: S/C-Zonen (sachbezogen — Fakten sichern, Erarbeitungsschritte pruefen) VOR P/L-Zonen (analytisch/wertbezogen — Problemverstaendnis, Synthese, Beurteilung). Keine wertbezogene Aufgabe ohne sachbezogene Grundlage | GPG B1 Besinnungsphasen, SCPL-Zonen-Mapping |
+| A11 | **Freitext-Qualitaet** | Die Freitext-Aufgabe (Aufgabe 5) verwendet eine problemorientierte Leitfrage, bietet 2-3 Teilfragen als Geruest, spezifiziert erwartete Fachbegriffe und fordert Stellungnahme oder Beurteilung (AFB III) | AGENT_RAETSEL Freitext-Neudefinition v1.1, FD-Q2 wertbezogene Besinnung |
+| A12 | **Sachbezogen-vor-Wertbezogen** | Die Aufgabensequenz folgt der Phasenlogik: S/C-Zonen (sachbezogen — Fakten sichern, Erarbeitungsschritte pruefen) VOR P/L-Zonen (analytisch/wertbezogen — Problemverstaendnis, Synthese, Beurteilung). Keine wertbezogene Aufgabe ohne sachbezogene Grundlage | FD-Q2 Besinnungsphasen, SCPL-Zonen-Mapping |
 | A16 | **Fragebogen-Kohaerenz** | Die Aufgabensequenz bildet den SCPL-Erarbeitungsweg der Mappe als diagnostischen Spiegel ab. Jede Aufgabe testet eine Station des Lernwegs (S → C1 → C2 → ... → P → L). Die Reihenfolge der Aufgaben korrespondiert mit der Reihenfolge der SCPL-Zonen — keine Zone wird uebersprungen, keine Zone wird getestet bevor die vorhergehende Zone geprueft wurde | SCPL-Fragebogen-Modell (v2), "Fragebogen als Erarbeitungs-Spiegel" |
 | A17 | **SCPL-Zonen-Abdeckung** | Jede SCPL-Zone (S, C1...Cn, P, L) hat mindestens 1 diagnostische Aufgabe. Keine Zone bleibt ungetestet. Bei Mappen mit 3+ Complication-Schritten duerfen C-Schritte zusammengefasst werden (max. 2 C-Schritte pro Aufgabe), aber jeder C-Schritt muss in mindestens 1 Aufgabe als Inhalt vorkommen | SCPL-Zonen-Mapping (v2), empirische Analyse realer UE-Muster |
 | A18 | **Material-Aktivierung** | Alle Materialien der Mappe erscheinen in mindestens 1 Aufgabe als Primaerquelle (im Feld `material_referenz`). Bildquellen (BQ) und Quellentexte (QT) duerfen NICHT ausschliesslich in Tipps vorkommen — sie muessen als eigenstaendige Aufgabengrundlage dienen. Darstellungstexte (DT) koennen als Primaerquelle fuer mehrere Aufgaben dienen. Tafelbilder (TB) gelten als Primaerquelle fuer die Freitext-Aufgabe | Material-Alignment-Pflicht (erweitert), Mappe-3-Diagnostik (mat-3-2/mat-3-3 Gap) |
@@ -167,9 +167,9 @@ GPG B1 unterscheidet sachbezogene Besinnung (Zusammenhaenge erkennen, Begriffe k
 
 | # | Kriterium | Beschreibung | Fundierung |
 |---|---|---|---|
-| A13 | **Gegenwartsbezug** | Mindestens 1 Aufgabe pro Game stellt einen Bezug zur Gegenwart/Lebenswelt der SuS her | GPG GB Fachprinzip, Rechercheergebnisse "Gegenwartsbezug" |
+| A13 | **Gegenwartsbezug** | Mindestens 1 Aufgabe pro Game stellt einen Bezug zur Gegenwart/Lebenswelt der SuS her | FD-Q1 Fachprinzip, Rechercheergebnisse "Gegenwartsbezug" |
 | A14 | **Fehler-Antizipation** | MC-Distraktoren und Lueckentext-Alternativen antizipieren haeufige Schuelerfehlvorstellungen zum Thema. Nicht zufaellig gewaehlt, sondern didaktisch informiert | Testtheorie, Fehlvorstellungsforschung |
-| A15 | **Implizite Differenzierung** | Das Tipp-System bietet implizite Differenzierung: Leistungsstaerkere SuS loesen ohne Tipps, leistungsschwaeche mit Tipp-Unterstuetzung. Keine explizite Niveaukennzeichnung noetig | DG B1 Differenzierung, Rechercheergebnisse Differenzierung |
+| A15 | **Implizite Differenzierung** | Das Tipp-System bietet implizite Differenzierung: Leistungsstaerkere SuS loesen ohne Tipps, leistungsschwaeche mit Tipp-Unterstuetzung. Keine explizite Niveaukennzeichnung noetig | FD-Q4 Differenzierung, Rechercheergebnisse Differenzierung |
 
 ---
 

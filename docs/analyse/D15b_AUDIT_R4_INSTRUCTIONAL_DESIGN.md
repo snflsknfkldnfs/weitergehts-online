@@ -308,7 +308,7 @@ Die Mappe funktioniert kurzfristig (Aufgaben werden gelöst), aber wahrscheinlic
    *Theoriebelig:* Chi & Wylie (ICAP): Interactive-Aufgaben erzeugen tiefere Elaboration als Constructive. Implementierung: Nach A7 optional: „Bonus-Debatte: Du bist General Schlieffen. Ein Offizier fragt, warum Du angenommen hast, Russland braucht 40 Tage? Antworte." (könnte bot-gestützt sein oder human-reviewed für Klasse).
 
 10. **Kontroversität einbauen (GPG-Fachprinzip).**
-    *Theoriebelig:* GPG GB (Fachprinzipien): Multiperspektivität und Kontroversität. Implementierung: Optional Punkt „Historische Debatten: Manche Historiker argumentieren, dass der Plan nicht wirklich hätte funktionieren können (z.B. wegen Transportlogistik). Andere sagen, 40 Tage waren realistisch, wenn schneller marschiert worden wäre. Was denkst du?". Das ist kognitiv höher, optional für Starke.
+    *Theoriebelig:* FD-Q1 (Fachprinzipien): Multiperspektivität und Kontroversität. Implementierung: Optional Punkt „Historische Debatten: Manche Historiker argumentieren, dass der Plan nicht wirklich hätte funktionieren können (z.B. wegen Transportlogistik). Andere sagen, 40 Tage waren realistisch, wenn schneller marschiert worden wäre. Was denkst du?". Das ist kognitiv höher, optional für Starke.
 
 ---
 
@@ -361,7 +361,7 @@ Die bestehenden Kriterien sind solide operativ (Q1-Q13, HE1-HE18), aber instrukt
 | **Analysedauer (geschätzt)** | 3.5 Std. (Live-Navigation: 45 min; Dokumentenanalyse: 2 Std.; Gutachtenserstellung: 45 min) |
 | **Technische Einschränkungen** | Chrome-Seite laden sehr lange (möglicherweise Netzwerk oder Rendering). Vollständiger interaktiver Test (alle 7 Aufgaben mit Tipps) war zeitlich begrenzt, daher exemplarisch (A1–A2 vollständig, A3–A7 strukturelle Analyse aus data.json). |
 | **Nicht pruefbare Aspekte** | Langzeiteffekte (Retention nach 4 Wochen) können nicht getestet werden (nur in Feld-Studien). Effektivität des Escape-Game-Framings für Motivation (qualitativ unterschiedlich je Schüler). Vergleich mit anderen Unterrichtsmethoden (würde externe Kontrollgruppe erfordern). |
-| **Genutzte Quellen** | GUETEKRITERIEN_SKRIPT.md, GUETEKRITERIEN_HEFTEINTRAG_PRODUKT.md, data.json (Aufgabenstruktur), escape-engine.js (Feedback-Implementierung), Live-Mappe (Observation, UI/UX). Textbooks/Papers: Sweller (1988+), Mayer (2009), Chi & Wylie (2014), Hattie & Timperley (2007), Reiser & Dempsey (2012), Roth (1994 GPG B1), Brunnhuber (in DG B1), Bjork & Bjork (1992), Karpicke & Roediger (2008). |
+| **Genutzte Quellen** | GUETEKRITERIEN_SKRIPT.md, GUETEKRITERIEN_HEFTEINTRAG_PRODUKT.md, data.json (Aufgabenstruktur), escape-engine.js (Feedback-Implementierung), Live-Mappe (Observation, UI/UX). Textbooks/Papers: Sweller (1988+), Mayer (2009), Chi & Wylie (2014), Hattie & Timperley (2007), Reiser & Dempsey (2012), Roth (1994 FD-Q2), Brunnhuber (in FD-Q4), Bjork & Bjork (1992), Karpicke & Roediger (2008). |
 | **Unabhängigkeit** | Dieses Gutachten ist unabhängig verfasst. Es wurden keine vorherigen Audits, C2-Evaluationen oder Kollegial-Gutachten berücksichtigt. |
 | **Konfidentialiät & Bias** | Gutachter hat weder Autorschaft noch andere Interessenskonflikte an dieser Mappe. Theoretische Grundlagen (Sweller, Mayer, Hattie etc.) sind international peer-reviewed und nicht instruktions-programm-spezifisch. |
 

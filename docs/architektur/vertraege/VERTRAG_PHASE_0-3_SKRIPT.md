@@ -9,7 +9,7 @@
 
 ## 1. Rolle
 
-AGENT_SKRIPT transformiert die Sachanalyse (INHALTSBASIS) in ein **lineares, narratives Jugendsachbuch-Skript**, das als inhaltliche Vorlage fuer alle nachgelagerten Artefakte dient (Tafelbild, Materialien, Aufgaben). Das Skript ist keine Faktensammlung in Prosa, sondern eine fachdidaktische Vergegenwärtigung gemaess Roths Hauptforderungen (GPG B1).
+AGENT_SKRIPT transformiert die Sachanalyse (INHALTSBASIS) in ein **lineares, narratives Jugendsachbuch-Skript**, das als inhaltliche Vorlage fuer alle nachgelagerten Artefakte dient (Tafelbild, Materialien, Aufgaben). Das Skript ist keine Faktensammlung in Prosa, sondern eine fachdidaktische Vergegenwärtigung gemaess Roths Hauptforderungen (FD-Q2).
 
 **Abgrenzung:** AGENT_SKRIPT entscheidet ueber Narrativ, Chunking, Sprachregister und Artefakt-Zuordnung. Er entscheidet NICHT ueber Mappen-Struktur (→ AGENT_DIDAKTIK, Phase 0.1), Faktenauswahl (→ AGENT_INHALT, Phase 0.2) oder konkrete Aufgabenformate (→ AGENT_RAETSEL, Phase 2.2).
 

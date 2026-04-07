@@ -16,9 +16,9 @@
 
 ## Zusammenfassung
 
-Die Phase-0-Vertraege sind fachdidaktisch fundiert auf Roth (GPG B1), bieten aber kritische Blindstellen fuer die GPG-Kompetenzstruktur des Lehrplan PLUS (R7). Insbesondere:
+Die Phase-0-Vertraege sind fachdidaktisch fundiert auf Roth (FD-Q2), bieten aber kritische Blindstellen fuer die GPG-Kompetenzstruktur des Lehrplan PLUS (R7). Insbesondere:
 
-1. **Quellenorientierung ist nicht operationalisiert:** GPG B1 fordert Quellenarbeit (Analyse, Einordnung, Kritik) als didaktisches Kernprinzip, aber die Vertraege kennen Quellen nur als Artefakt-Typ, nicht als Handlungsweise. SK-Kriterien regeln „Personifizierung", nicht „Quellenanalyse".
+1. **Quellenorientierung ist nicht operationalisiert:** FD-Q2 fordert Quellenarbeit (Analyse, Einordnung, Kritik) als didaktisches Kernprinzip, aber die Vertraege kennen Quellen nur als Artefakt-Typ, nicht als Handlungsweise. SK-Kriterien regeln „Personifizierung", nicht „Quellenanalyse".
 
 2. **SCPL-Struktur ist zu starr fuer kategoriale Themen:** 9 Ordnungsmuster in HEFTEINTRAG §3.3, aber SCPL-JSON erzwingt immer S-C-P-L, auch wenn „Complication" semantisch nicht passt (z.B. bei „Vergleich Staende: Klerus vs. Adel vs. Bauern").
 
@@ -45,7 +45,7 @@ Die Pipeline ist funktionsfaehig fuer Ereignisgeschichte (WK1-Prototyp). Fuer vo
 **Severity:** CRITICAL  
 **Betroffene Vertraege:** VERTRAG_PHASE_0-3_SKRIPT, GUETEKRITERIEN_SKRIPT.md  
 **Beschreibung:**  
-GPG B1 und GPG GB fordern Quellenarbeit (Analyse, Einordnung, Kritik) als Kernfachprinzip. GUETEKRITERIEN_SKRIPT.md enthält SK-Kriterien SK1-SK17, aber keines adressiert explizit, dass SuS eine historische Quelle ANALYSIEREN (nicht nur lesen). SK8 nennt „Wechsel der Darstellungsformen" (Beschreibung, Dialog, innerer Monolog, Kommentar) — das ist Vergegenwärtigung, nicht Quellenarbeit.
+FD-Q2 und FD-Q1 fordern Quellenarbeit (Analyse, Einordnung, Kritik) als Kernfachprinzip. GUETEKRITERIEN_SKRIPT.md enthält SK-Kriterien SK1-SK17, aber keines adressiert explizit, dass SuS eine historische Quelle ANALYSIEREN (nicht nur lesen). SK8 nennt „Wechsel der Darstellungsformen" (Beschreibung, Dialog, innerer Monolog, Kommentar) — das ist Vergegenwärtigung, nicht Quellenarbeit.
 
 **Evidenz:**  
 - GUETEKRITERIEN_SKRIPT.md §3: SK1-SK15 (+ SK17). SK-Kriterien fokussieren auf Narrativ-Qualitaeten (Vergegenwärtigung, Elementarisierung, Personifizierung, Strukturiertheit), nicht auf Quellenorientierung als Handlung.
@@ -53,7 +53,7 @@ GPG B1 und GPG GB fordern Quellenarbeit (Analyse, Einordnung, Kritik) als Kernfa
 - INHALTSBASIS behandelt Zitate als Artefakte (zit-X-Y ID), SKRIPT referenziert sie per [ARTEFAKT: zit-X-Y]-Marker, aber der Uebergang zu „Quellenanalyse" (nicht nur Zitat-Einbindung) ist ungeregelt.
 
 **Impact:**  
-Phase-0-Skripte erfuellen GPG B1 nicht vollstaendig. SuS arbeiten mit Quellen als Text-Bausteine des Narrativs, nicht als historische Primaerquellen zur Analyse. Dies widerspricht dem Lehrplan R7 GPG (Quellenarbeit in Lernbereich Zeitperspektive, Lernbereich 1: Analyse historischer Quellen).
+Phase-0-Skripte erfuellen FD-Q2 nicht vollstaendig. SuS arbeiten mit Quellen als Text-Bausteine des Narrativs, nicht als historische Primaerquellen zur Analyse. Dies widerspricht dem Lehrplan R7 GPG (Quellenarbeit in Lernbereich Zeitperspektive, Lernbereich 1: Analyse historischer Quellen).
 
 **Recommended Fix:**  
 1. Neue MUSS-Kriterium SK18 in GUETEKRITERIEN_SKRIPT.md ergaenzen:  
@@ -203,7 +203,7 @@ SK15 „Kontroversitaet": Aufgelistet als KANN-Kriterium (§3.3), nicht SOLL ode
 
 Beides ist zu unrefiniert:
 - **Q9:** Unterschied zwischen „ein Name erwaehnt" (z.B. „Kaiser Wilhelm II.") vs. „konsistente Perspektivfigur ueber mehrere Saetze" ist nicht erfasst. Ein generischer Name-Drop erfuellt Q9, waehrend eine durchgehaeltene Perspektive didaktisch plauzibel ist.
-- **SK15:** Fuer viele GPG-Themen ist Kontroversitaet (Beutelsbacher Konsens) zentral: Kolonialisierung, Revolutionen, Kriegsdarstellung, Industrialisierung. SK15 als KANN suggeriert Optionalitaet, widerspricht aber explizit GPG GB Fachprinzip „Kontroversitaet".
+- **SK15:** Fuer viele GPG-Themen ist Kontroversitaet (Beutelsbacher Konsens) zentral: Kolonialisierung, Revolutionen, Kriegsdarstellung, Industrialisierung. SK15 als KANN suggeriert Optionalitaet, widerspricht aber explizit FD-Q1 Fachprinzip „Kontroversitaet".
 
 **Evidenz:**  
 - VERTRAG_PHASE_0-3_SKRIPT.md §5.1 Q9: „Personifizierung (mindestens 1 Person/Chunk)". Keine Abstufung.
@@ -244,7 +244,7 @@ SK15: Kontroverse Themen ohne explizite Adressierung von Deutungsvielfalt erstue
 **Beschreibung:**  
 SK15 ist als KANN-Kriterium aufgelistet (GUETEKRITERIEN_SKRIPT.md §3.3). Das bedeutet, Skripte koennen valide sein, ohne Kontroversitaet zu adressieren.
 
-Aber GPG GB (Fachprinzipien) nennt Kontroversitaet explizit, und Beutelsbacher Konsens (Sozialwissenschaften R7) fordert: Bei historisch umstrittenen Themen MUESSEN unterschiedliche Deutungen vermittelt werden — nicht als fakultative Erweiterung, sondern als Kernprinzip.
+Aber FD-Q1 (Fachprinzipien) nennt Kontroversitaet explizit, und Beutelsbacher Konsens (Sozialwissenschaften R7) fordert: Bei historisch umstrittenen Themen MUESSEN unterschiedliche Deutungen vermittelt werden — nicht als fakultative Erweiterung, sondern als Kernprinzip.
 
 Beispiele GPG R7, wo Kontroversitaet zentral ist:
 - Napoleonische Kriege: Befreiung vs. Unterdrueckung
@@ -260,7 +260,7 @@ QD7 in DIDAKTIK-Vertrag (Phase 0.1) fordert: „Ethische Hinweise: Multiperspekt
 - Gegenbefund: GUETEKRITERIEN_HEFTEINTRAG_ENTWURF.md G13 scheint zu implizieren, dass Kontroversitaet in Stundenfrage-Architektur eingebaut sein sollte (\"Stundenfrage als problemorientierte, schuelernahe Frage\") — Problematisierung deutet auf Kontroversitaet hin.
 
 **Impact:**  
-Skripte zu kontroversen Themen koennen SK15 nicht erfuellen und trotzdem PASS gehen. Dies verletzt Beutelsbacher Konsens und GPG GB Fachprinzipien. Fuer R7-Lehrkraefte ist unklar, ob sie verpflichtet sind, die Phase-0-Artefakte nachzubessern (Kontroversitaet einfuegen) oder ob sie so verwendet werden duerfen.
+Skripte zu kontroversen Themen koennen SK15 nicht erfuellen und trotzdem PASS gehen. Dies verletzt Beutelsbacher Konsens und FD-Q1 Fachprinzipien. Fuer R7-Lehrkraefte ist unklar, ob sie verpflichtet sind, die Phase-0-Artefakte nachzubessern (Kontroversitaet einfuegen) oder ob sie so verwendet werden duerfen.
 
 **Recommended Fix:**  
 1. Neue Metadaten fuer jeden Theme bei Audit-Eingang (ORCHESTRATOR oder AGENT_DIDAKTIK Phase 0.1):  
@@ -424,7 +424,7 @@ Phase 1 erbt eine Artefakt-Liste ohne klare Handlungsvorgaben fuer Quellen. Werd
 
 ### 1. **SK18 Quellenorientierung einfuehren (CRITICAL)**
 
-**Grund:** GPG B1 und Lehrplan R7 fordern Quellenarbeit als didaktisches Kernprinzip. Derzeitige Vertraege kennen nur Quellentypen, nicht Quellenhandlungen (Analyse, Einordnung, Kritik). Priorisierung maximal, weil dies Grundmission der Escape-Game-Pipeline (GPG-Unterricht fuer R7) adressiert.
+**Grund:** FD-Q2 und Lehrplan R7 fordern Quellenarbeit als didaktisches Kernprinzip. Derzeitige Vertraege kennen nur Quellentypen, nicht Quellenhandlungen (Analyse, Einordnung, Kritik). Priorisierung maximal, weil dies Grundmission der Escape-Game-Pipeline (GPG-Unterricht fuer R7) adressiert.
 
 **Umsetzung:**
 - Neue MUSS-Kriterium SK18 in GUETEKRITERIEN_SKRIPT.md
@@ -463,7 +463,7 @@ Phase 1 erbt eine Artefakt-Liste ohne klare Handlungsvorgaben fuer Quellen. Werd
 
 ## Schlusswort
 
-Die Phase-0-Vertraege bieten solide architektonische Fundamente (Rueckwaerts-Kontingenz, STRUKTUR-FREEZE, Artefakt-Kette). Fachdidaktisch sind aber 8 Blindstellen zu adressieren, damit die Pipeline GPG B1 (Vergegenwärtigung) UND GPG GB (Quellenarbeit, Kontroversitaet, Multiperspektivitaet) vollstaendig erfuellt. Top-Prioritaet: Quellenorientierung operationalisieren + SCPL flexibilisieren. Mit Welle-1-Massnahmen (F01 + F02) ist die Pipeline fuer die naechste Generation nicht-ereignisgeschichtlicher Themen (Konzeptgeschichte, Kulturgeschichte) genuetzt.
+Die Phase-0-Vertraege bieten solide architektonische Fundamente (Rueckwaerts-Kontingenz, STRUKTUR-FREEZE, Artefakt-Kette). Fachdidaktisch sind aber 8 Blindstellen zu adressieren, damit die Pipeline FD-Q2 (Vergegenwärtigung) UND FD-Q1 (Quellenarbeit, Kontroversitaet, Multiperspektivitaet) vollstaendig erfuellt. Top-Prioritaet: Quellenorientierung operationalisieren + SCPL flexibilisieren. Mit Welle-1-Massnahmen (F01 + F02) ist die Pipeline fuer die naechste Generation nicht-ereignisgeschichtlicher Themen (Konzeptgeschichte, Kulturgeschichte) genuetzt.
 
 ---
 

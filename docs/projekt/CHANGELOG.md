@@ -4,13 +4,31 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
-## 2026-04-07 — Skript-Analyse 1: GPG GB + L1-Upgrade
+## 2026-04-07 — Skript-Analyse 2: FD-Q2 Vergegenwaertigung/Besinnung
 
 **Phase:** Phase-0-Standardisierung
 **Modus:** EVALUATE
 **Session:** 18
 
-**Skript 1 analysiert: GPG GB (Hofmann, Bausteine Fachdidaktik)** — Primaerquelle von S1-S15.
+**Skript 2 analysiert: FD-Q2 ([Fachdidaktische Grundlagentexte])** — Primaerquelle fuer S5.
+- S5 korrekt operationalisiert (Vergegenwaertigung=Kenntnisse/Vordergrund, Besinnung=Erkenntnisse/Hintergrund)
+- Roths 10 Forderungen: 6/10 korrekt in GK extrahiert, 4/10 korrekterweise als Produktions-Kriterien ausgeklammert
+- Schutzregeln R3-S1 bis R3-S4 alle in FD-Q2 fundiert — Herkunftsnachweis jetzt vollstaendig
+- 3 AGENT_SKRIPT-Notizen (Erzaehlungs-Gestaltungsprinzipien, Kausalzusammenhang-Typen, Anti-Patterns)
+- Offene Fragen: 3 von 4 jetzt beantwortet (Narrativitaet, Quellenarten-Progression, Elementarisierung)
+- Verbleibend offen: Frage 2 (Kontroversitaet) — in keinem bisherigen Skript adressiert
+
+**Naechster Schritt:** Weitere Skripte analysieren.
+
+---
+
+## 2026-04-07 — Skript-Analyse 1: FD-Q1 + L1-Upgrade
+
+**Phase:** Phase-0-Standardisierung
+**Modus:** EVALUATE
+**Session:** 18
+
+**Skript 1 analysiert: FD-Q1 ([Fachdidaktische Grundlagentexte])** — Primaerquelle von S1-S15.
 - Extraktion in S1-S15 ist vollstaendig und korrekt
 - 8 neue Perspektiven identifiziert, davon 0 GK-Aenderungen, 3 AGENT_SKRIPT-Notizen, 1 L1-Verstaerkung
 - 2 von 4 offenen Fragen teilweise beantwortet (Narrativitaet, Elementarisierung)
@@ -2606,17 +2624,17 @@ Jeder Agent erhielt NUR Rollen-Charta + Guetekriterien + URL + operationale Chro
 
 ### v3.8 C0: PDF-Qualifikation der Guetekriterien (Runde 2+3)
 - **Phase:** v3.8 (Cowork-Runde 0, Qualifikation)
-- **Aufgabe:** 3 weitere Trainings-PDFs (GPG GB, GPG B1, GPG B2) analysieren und Best Practices in QUALITAETSKRITERIEN + Subagenten einbetten. Keine woertlichen Zitate.
+- **Aufgabe:** 3 weitere Trainings-PDFs (FD-Q1, FD-Q2, FD-Q3) analysieren und Best Practices in QUALITAETSKRITERIEN + Subagenten einbetten. Keine woertlichen Zitate.
 - **Ergebnis:**
   - QUALITAETSKRITERIEN v1→v2: M9 um Kontroversitaet erweitert. 4 neue typ-spezifische Kriterien: BQ-7 Karikatur-Sonderregeln, BQ-8 Kommunikationsanalyse Propagandabilder, ZL-6 Visuelle Gestaltungsprinzipien, KA-7 Situationskonfrontation. QT-1 um emotionale Zugaenglichkeit erweitert, QT-5 um Quellentypologie (Ueberreste/Traditionen). DT-1 um Kausalitaetstypen (dynamisch/strukturell). BQ-1 um Bildauswahl-Kriterien und didaktische Einsatzfunktionen.
   - 5 Subagenten aktualisiert: SUB_MATERIAL_DARSTELLUNGSTEXT (Kausalitaetstypen), SUB_MATERIAL_BILDQUELLE (Karikatur + Kommunikationsanalyse + bildtyp-Enum), SUB_MATERIAL_ZEITLEISTE (Visuelle Gestaltung + Layout-Varianten), SUB_MATERIAL_KARTE (Situationskonfrontation), SUB_MATERIAL_QUELLENTEXT (Emotionale Zugaenglichkeit + Quellentypologie)
-  - Quellen-Header in QUALITAETSKRITERIEN aktualisiert (GPG B2 Beschreibung praezisiert)
+  - Quellen-Header in QUALITAETSKRITERIEN aktualisiert (FD-Q3 Beschreibung praezisiert)
 - **Artefakte:** QUALITAETSKRITERIEN_MATERIALPRODUKTION.md (v2), 5x SUB_MATERIAL_*.md (aktualisiert)
 - **Naechster Schritt:** CP3 (WORKFLOW_v2.md) + CP4 (ORCHESTRATOR.md, AGENT_TECHNIK.md) abschliessen
 
 ### v3.8 C0: Material-Subagenten-Extraktion implementiert
 - **Phase:** v3.8 (Cowork-Runde 0, C0)
-- **Aufgabe:** AGENT_MATERIAL.md (804-Zeilen-Monolith) in Orchestrator + 7 spezialisierte Subagenten refaktorieren. Best Practices aus 6 Trainings-PDFs (DG B1, DG B3, DG B10, GPG GB, GPG B1, GPG B2) extrahieren und in persistente Referenzdatei + Subagenten einbetten.
+- **Aufgabe:** AGENT_MATERIAL.md (804-Zeilen-Monolith) in Orchestrator + 7 spezialisierte Subagenten refaktorieren. Best Practices aus 6 Trainings-PDFs (FD-Q4, Fachdidaktische Grundlagentexte, FD-Q5, FD-Q1, FD-Q2, FD-Q3) extrahieren und in persistente Referenzdatei + Subagenten einbetten.
 - **Ergebnis:**
   - Schritt A: 5 Renames via `git mv` (AGENT_SUB_DARSTELLUNGSTEXT → SUB_MATERIAL_DARSTELLUNGSTEXT, etc.)
   - Schritt B: 2 neue Subagenten erstellt: SUB_MATERIAL_KARTE.md (314 Zeilen: 3-Pfad-Workflow, Schulatlas-Redakteur, Engine-Mapping karte→bildquelle), SUB_MATERIAL_STATISTIK.md (325 Zeilen: 3-Pfad-Workflow, Infografik-Designer, dual Engine-Mapping)
@@ -2842,7 +2860,7 @@ Jeder Agent erhielt NUR Rollen-Charta + Guetekriterien + URL + operationale Chro
 
 ### GUETEKRITERIEN_SKRIPT.md erstellt (SK1-SK15) + Infrastruktur-Update
 - **Phase:** QM-Infrastruktur (ergaenzt Phase 0.3)
-- **Aufgabe:** Fachdidaktische Guetekriterien fuer AGENT_SKRIPT aus 4 Seminar-PDFs (GPG B1, DG B1, GPG GB, GPG B2) extrahieren und in Infrastruktur verankern. Gap-Analyse Q1-Q13 → SK1-SK15.
+- **Aufgabe:** Fachdidaktische Guetekriterien fuer AGENT_SKRIPT aus 4 Seminar-PDFs (FD-Q2, FD-Q4, FD-Q1, FD-Q3) extrahieren und in Infrastruktur verankern. Gap-Analyse Q1-Q13 → SK1-SK15.
 - **Ergebnis:** 15 Kriterien (7 MUSS, 5 SOLL, 3 KANN). MUSS: Vergegenwärtigung (SK1), Elementarisierung (SK2), Anschaulichkeit (SK3), Strukturiertheit (SK4), Sprachliche Angemessenheit (SK5), Vergegenwärtigung-vor-Besinnung (SK6), Multikausualitaet (SK7). SOLL: Gestaltungsprinzipien-Breite (SK8), Multiperspektivitaet (SK9), Sachbezogene Motivierung (SK10), Dramaturgischer Spannungsbogen (SK11), Sandwich-Qualitaet (SK12). KANN: Gegenwartsprinzip (SK13), Zeitkolorit (SK14), Kontroversitaet (SK15). Operationalisierung mit PASS/FAIL-Mustern. Sektion 4 klaert Verhaeltnis zu Q1-Q13 (operativ vs. fachdidaktisch).
 - **Artefakte:** `docs/checklisten/GUETEKRITERIEN_SKRIPT.md` (neu), `docs/agents/AGENT_SKRIPT.md` (Pflicht-Referenz + 2-Stufen-Q-Gate), `docs/architektur/WORKFLOW_v2.md` (SK-Gate in Phase 0.3), `docs/architektur/UPGRADE_PLAN_v3.md` (Datei-Aenderungen), `docs/architektur/UPGRADE_PLAN_v3-2_INFRASTRUKTUR.md` (Q-Gate-Architektur)
 - **Naechster Schritt:** Nachmigration Mappe 1 (SCPL-Umordnung)

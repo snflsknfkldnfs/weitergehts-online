@@ -3,18 +3,18 @@
 **Datum:** 2026-04-07
 **Status:** v1.1 — SK18 Quellenorientierung ergaenzt (Welle-1-Patch RA4-F01 CRITICAL)
 **Quellen:**
-- GPG B1 Vergegenwärtigung im Geschichtsunterricht (Roth, Gestaltungsprinzipien der Erzaehlung, Aspekte der Vergegenwärtigung)
-- DG B1 Allgemeine Unterrichtsprinzipien (Schroeder, Brunnhuber, Hilbert Meyer)
-- GPG GB Grundsaetze des GPG-Unterrichts (Kompetenzstrukturmodell, Fachprinzipien, Artikulationsschemata)
-- GPG B2 Fachspezifische Arbeitsweisen — Historische Perspektive (Quellentypologie, Quellenarbeit)
-- Alle: Bausteine Fachdidaktik, AG der MS-Seminarleiter Unterfranken
+- FD-Q2 Vergegenwärtigung im Geschichtsunterricht (Roth, Gestaltungsprinzipien der Erzaehlung, Aspekte der Vergegenwärtigung)
+- FD-Q4 Allgemeine Unterrichtsprinzipien (Schroeder, Brunnhuber, Hilbert Meyer)
+- FD-Q1 Grundsaetze des GPG-Unterrichts (Kompetenzstrukturmodell, Fachprinzipien, Artikulationsschemata)
+- FD-Q3 Fachspezifische Arbeitsweisen — Historische Perspektive (Quellentypologie, Quellenarbeit)
+- Alle: Fachdidaktische Grundlagentexte (nicht-oeffentlich)
 
 ---
 
 ## 1. Leitsatz
 
 > "Geschichte muss in Handlung zurueckverwandelt werden."
-> — Roth, Hauptforderung 1 an die Vergegenwärtigung, GPG B1
+> — Roth, Hauptforderung 1 an die Vergegenwärtigung, FD-Q2
 
 > "Strukturierung ist Erhellung von Zusammenhaengen, [...] nicht Aneinanderreihen beziehungsloser Wissenselemente."
 > — Brunnhuber, zit. in DG B1
@@ -27,7 +27,7 @@ Das didaktisierte Skript ist kein Sachtext-Aggregat und keine Faktensammlung in 
 
 ### 2.1 Vergegenwärtigung als Kernaufgabe
 
-Roths 10 Hauptforderungen an die Vergegenwärtigung (GPG B1) definieren das Anforderungsprofil an historisches Erzaehlen im Unterricht:
+Roths 10 Hauptforderungen an die Vergegenwärtigung (FD-Q2) definieren das Anforderungsprofil an historisches Erzaehlen im Unterricht:
 
 1. **Geschichte in Handlung rueckverwandeln** — Nicht Zustaende beschreiben, sondern Handelnde in Situationen zeigen
 2. **Anschaulichkeit** — Konkrete Personen, Orte, Gegenstaende statt abstrakter Kategorien
@@ -42,7 +42,7 @@ Roths 10 Hauptforderungen an die Vergegenwärtigung (GPG B1) definieren das Anfo
 
 ### 2.2 Gestaltungsprinzipien der Erzaehlung
 
-GPG B1 benennt 8 Gestaltungsprinzipien fuer historisches Erzaehlen, die das sprachlich-stilistische Anforderungsprofil des Skripts definieren:
+FD-Q2 benennt 8 Gestaltungsprinzipien fuer historisches Erzaehlen, die das sprachlich-stilistische Anforderungsprofil des Skripts definieren:
 
 | Prinzip | Bedeutung fuer das Skript |
 |---|---|
@@ -57,15 +57,15 @@ GPG B1 benennt 8 Gestaltungsprinzipien fuer historisches Erzaehlen, die das spra
 
 ### 2.3 Elementarisierung und Strukturierung
 
-Brunnhuber (DG B1) fordert **einsichtiges, nicht beziehungsloses Wissen**: Fakten muessen in erkennbare Zusammenhaenge eingebettet sein. Schroeder ergaenzt das Prinzip der **Fasslichkeit** (Verstaendlichkeit auf Zielniveau) und der **Elementarisierung** (didaktische Reduktion ohne inhaltliche Verfaelschung).
+Brunnhuber (FD-Q4) fordert **einsichtiges, nicht beziehungsloses Wissen**: Fakten muessen in erkennbare Zusammenhaenge eingebettet sein. Schroeder ergaenzt das Prinzip der **Fasslichkeit** (Verstaendlichkeit auf Zielniveau) und der **Elementarisierung** (didaktische Reduktion ohne inhaltliche Verfaelschung).
 
-Hilbert Meyers **inhaltliche Klarheit** verlangt, dass Lernende jederzeit wissen, worum es gerade geht und wie sich der aktuelle Abschnitt zum Ganzen verhaelt.
+Hilbert Meyer's **inhaltliche Klarheit** verlangt, dass Lernende jederzeit wissen, worum es gerade geht und wie sich der aktuelle Abschnitt zum Ganzen verhaelt.
 
 **Konsequenz fuer das Skript:** Jeder Absatz muss einen erkennbaren Platz in der Gesamtargumentation haben. Uebergaenge zwischen Absaetzen muessen die logische Verbindung explizit machen. Isolierte Fakten-Absaetze ohne erkennbare Funktion im Gesamtnarrativ sind ein Qualitaetsmangel.
 
 ### 2.4 Fachprinzipien des GPG-Unterrichts
 
-GPG GB definiert Fachprinzipien, die im Skript strukturell abgebildet sein muessen:
+FD-Q1 definiert Fachprinzipien, die im Skript strukturell abgebildet sein muessen:
 
 | Prinzip | Skript-Implikation |
 |---|---|
@@ -77,11 +77,11 @@ GPG GB definiert Fachprinzipien, die im Skript strukturell abgebildet sein muess
 
 ### 2.5 Vergegenwärtigung vor Besinnung
 
-Das Artikulationsschema der historischen Perspektive (GPG GB, Modell 2) setzt die Phasenfolge:
+Das Artikulationsschema der historischen Perspektive (FD-Q1, Modell 2) setzt die Phasenfolge:
 
 **Motivation → Vergegenwärtigung → Besinnung (sachbezogen → wertbezogen) → Bewaeltigung**
 
-GPG B1 praezisiert: Vergegenwärtigung schafft **Kenntnisse** (Vordergrund), Besinnung schafft **Erkenntnisse** (Hintergrund). Sachbezogene Besinnung (Zusammenhaenge erkennen, Begriffe klaeren, Ursachen verstehen) ist Voraussetzung fuer wertbezogene Besinnung (ethische Stellungnahme).
+FD-Q2 praezisiert: Vergegenwärtigung schafft **Kenntnisse** (Vordergrund), Besinnung schafft **Erkenntnisse** (Hintergrund). Sachbezogene Besinnung (Zusammenhaenge erkennen, Begriffe klaeren, Ursachen verstehen) ist Voraussetzung fuer wertbezogene Besinnung (ethische Stellungnahme).
 
 **Konsequenz fuer das Skript:** Innerhalb jedes Chunks muss das Narrativ zunaechst vergegenwärtigen (konkret, anschaulich, erlebbar), bevor es analysiert oder bewertet. Chunks, die mit Analyse oder Bewertung einsteigen ohne vorherige Vergegenwärtigung, verletzen die fachdidaktische Phasenlogik.
 
@@ -93,33 +93,33 @@ GPG B1 praezisiert: Vergegenwärtigung schafft **Kenntnisse** (Vordergrund), Bes
 
 | # | Kriterium | Beschreibung | Fundierung |
 |---|---|---|---|
-| SK1 | **Vergegenwärtigung** | Jeder Chunk verwandelt Geschichte in erlebbare Handlung. Mindestens 50% des Chunk-Textes zeigt handelnde Personen in konkreten Situationen (nicht: abstrakte Zustandsbeschreibungen) | Roth Hauptforderung 1, GPG B1 |
-| SK2 | **Elementarisierung** | Komplexe Sachverhalte sind auf ihre Kernstruktur reduziert, ohne inhaltlich verfaelscht zu werden. Jeder Chunk hat genau EINEN thematischen Schwerpunkt | Brunnhuber, Schroeder (DG B1) |
-| SK3 | **Anschaulichkeit** | Jedes abstrakte Konzept ist an mindestens einem konkreten Beispiel verankert (Person, Ort, Situation, Gegenstand). Keine unbelegten Abstraktionen | Roth Hauptforderung 2, Schroeder Prinzip Anschauung (DG B1) |
-| SK4 | **Strukturiertheit** | Jeder Absatz hat einen erkennbaren Platz in der Gesamtargumentation. Uebergaenge zwischen Absaetzen machen die logische Verbindung explizit. Kein Absatz steht isoliert | Brunnhuber "einsichtiges Wissen" (DG B1), Meyer "inhaltliche Klarheit" |
-| SK5 | **Sprachliche Angemessenheit** | Wortschatz, Satzbau und Abstraktionsniveau sind auf R7-Mittelschule kalibriert. Fachbegriffe bei Erstverwendung erklaert. Keine schulbuchuntypische Syntax | Schroeder "Fasslichkeit" (DG B1), Stil-Constraints AGENT_SKRIPT |
-| SK6 | **Vergegenwärtigung vor Besinnung** | Innerhalb jedes Chunks: anschaulich-narrative Passagen (Vergegenwärtigung) VOR analytisch-erklaerenden Passagen (Besinnung). Kein Chunk steigt mit Analyse oder Bewertung ein | GPG B1, Artikulationsschema Modell 2 (GPG GB) |
-| SK7 | **Multikausualitaet** | Historische Ereignisse werden nie monokausal erklaert. Wo mehrere Ursachen/Faktoren vorliegen, werden mindestens 2 benannt und in Beziehung gesetzt | GPG GB Fachprinzip |
-| SK18 | **Quellenorientierung** | Historische Quellen sind im Narrativ verortet: Was wissen wir woher? Pro Chunk mindestens 1 expliziter Quellenbezug (z.B. "Ein Brief von X zeigt...", "Auf einer Karte von 1914 sieht man...", "Historiker fanden heraus, dass..."). Kein Chunk, in dem alle Fakten als gesichertes Wissen praesentiert werden, ohne dass die Herkunft dieses Wissens erkennbar wird. Stellt die Grundlage fuer quellenorientierte Materialien in Phase 1/2 her | GPG GB Fachprinzip Quellenorientierung, GPG B2 Fachspezifische Arbeitsweisen |
+| SK1 | **Vergegenwärtigung** | Jeder Chunk verwandelt Geschichte in erlebbare Handlung. Mindestens 50% des Chunk-Textes zeigt handelnde Personen in konkreten Situationen (nicht: abstrakte Zustandsbeschreibungen) | Roth Hauptforderung 1, FD-Q2 |
+| SK2 | **Elementarisierung** | Komplexe Sachverhalte sind auf ihre Kernstruktur reduziert, ohne inhaltlich verfaelscht zu werden. Jeder Chunk hat genau EINEN thematischen Schwerpunkt | Brunnhuber, Schroeder (FD-Q4) |
+| SK3 | **Anschaulichkeit** | Jedes abstrakte Konzept ist an mindestens einem konkreten Beispiel verankert (Person, Ort, Situation, Gegenstand). Keine unbelegten Abstraktionen | Roth Hauptforderung 2, Schroeder Prinzip Anschauung (FD-Q4) |
+| SK4 | **Strukturiertheit** | Jeder Absatz hat einen erkennbaren Platz in der Gesamtargumentation. Uebergaenge zwischen Absaetzen machen die logische Verbindung explizit. Kein Absatz steht isoliert | Brunnhuber "einsichtiges Wissen" (FD-Q4), Meyer "inhaltliche Klarheit" |
+| SK5 | **Sprachliche Angemessenheit** | Wortschatz, Satzbau und Abstraktionsniveau sind auf R7-Mittelschule kalibriert. Fachbegriffe bei Erstverwendung erklaert. Keine schulbuchuntypische Syntax | Schroeder "Fasslichkeit" (FD-Q4), Stil-Constraints AGENT_SKRIPT |
+| SK6 | **Vergegenwärtigung vor Besinnung** | Innerhalb jedes Chunks: anschaulich-narrative Passagen (Vergegenwärtigung) VOR analytisch-erklaerenden Passagen (Besinnung). Kein Chunk steigt mit Analyse oder Bewertung ein | FD-Q2, Artikulationsschema Modell 2 (FD-Q1) |
+| SK7 | **Multikausualitaet** | Historische Ereignisse werden nie monokausal erklaert. Wo mehrere Ursachen/Faktoren vorliegen, werden mindestens 2 benannt und in Beziehung gesetzt | FD-Q1 Fachprinzip |
+| SK18 | **Quellenorientierung** | Historische Quellen sind im Narrativ verortet: Was wissen wir woher? Pro Chunk mindestens 1 expliziter Quellenbezug (z.B. "Ein Brief von X zeigt...", "Auf einer Karte von 1914 sieht man...", "Historiker fanden heraus, dass..."). Kein Chunk, in dem alle Fakten als gesichertes Wissen praesentiert werden, ohne dass die Herkunft dieses Wissens erkennbar wird. Stellt die Grundlage fuer quellenorientierte Materialien in Phase 1/2 her | FD-Q1 Fachprinzip Quellenorientierung, FD-Q3 Fachspezifische Arbeitsweisen |
 
 ### 3.2 SOLL-Kriterien (Verletzung = Optimierungshinweis)
 
 | # | Kriterium | Beschreibung | Fundierung |
 |---|---|---|---|
-| SK8 | **Gestaltungsprinzipien-Breite** | Pro Chunk sind mindestens 4 der 8 Gestaltungsprinzipien (Detailliere, Motiviere, Verkindliche, Dramatisiere, Personifiziere, Lokalisiere, Kostuemiere, Vereinfache) aktiv nachweisbar | GPG B1 Gestaltungsprinzipien der Erzaehlung |
-| SK9 | **Multiperspektivitaet** | Ueber das Gesamtskript hinweg sind mindestens 2 verschiedene Akteursperspektiven repraesentiert (nicht nur Herrschende/Maechte, auch Betroffene/Bevoelkerung) | GPG GB Fachprinzip |
-| SK10 | **Sachbezogene Motivierung** | Jeder Chunk-Einstieg motiviert aus dem Sachverhalt selbst heraus (Widerspruch, ueberraschendes Faktum, offene Frage), nicht durch sachfremde Mittel | Brunnhuber "sachbezogen > sachfremd" (DG B1), Schroeder "Motivierung" |
-| SK11 | **Dramaturgischer Spannungsbogen** | Ueber alle Chunks hinweg ist ein erkennbarer Spannungsbogen vorhanden (Einstieg → Eskalation → Klimax → Reflexion). Kein gleichfoermiges Abarbeiten | GPG B1 "Dramatisiere", Roth Hauptforderung 7 |
-| SK12 | **Sandwich-Qualitaet** | Uebergaenge zwischen Chunks greifen die Sicherungs-Erkenntnis des vorherigen Chunks auf UND oeffnen eine neue Frage. Nicht nur thematische Ankuendigung | AGENT_SKRIPT Aufgabe 4, Meyer "sinnstiftendes Kommunizieren" (DG B1) |
-| SK16 | **Perspektiven-Diversitaet bei Konfliktthemen** (STR-05) | Bei Skripten, deren Thema einen Konflikt behandelt (`konflikttyp: true`): Das Skript muss in seiner Gesamtheit die narrativen Grundlagen fuer mindestens 3 verschiedene Akteursperspektiven legen. Prueffrage: Kann aus dem Skript-Text Material aus mindestens 3 Perspektiven abgeleitet werden? Verschaerfung von SK9 fuer Konfliktthemen. Bei `konflikttyp: false`: SK9 genuegt | GPG GB Fachprinzip, STR-05 (D15B K04), VERTRAG_PHASE_2-1_MATERIAL.md §Multiperspektivitaet-Policy |
+| SK8 | **Gestaltungsprinzipien-Breite** | Pro Chunk sind mindestens 4 der 8 Gestaltungsprinzipien (Detailliere, Motiviere, Verkindliche, Dramatisiere, Personifiziere, Lokalisiere, Kostuemiere, Vereinfache) aktiv nachweisbar | FD-Q2 Gestaltungsprinzipien der Erzaehlung |
+| SK9 | **Multiperspektivitaet** | Ueber das Gesamtskript hinweg sind mindestens 2 verschiedene Akteursperspektiven repraesentiert (nicht nur Herrschende/Maechte, auch Betroffene/Bevoelkerung) | FD-Q1 Fachprinzip |
+| SK10 | **Sachbezogene Motivierung** | Jeder Chunk-Einstieg motiviert aus dem Sachverhalt selbst heraus (Widerspruch, ueberraschendes Faktum, offene Frage), nicht durch sachfremde Mittel | Brunnhuber "sachbezogen > sachfremd" (FD-Q4), Schroeder "Motivierung" |
+| SK11 | **Dramaturgischer Spannungsbogen** | Ueber alle Chunks hinweg ist ein erkennbarer Spannungsbogen vorhanden (Einstieg → Eskalation → Klimax → Reflexion). Kein gleichfoermiges Abarbeiten | FD-Q2 "Dramatisiere", Roth Hauptforderung 7 |
+| SK12 | **Sandwich-Qualitaet** | Uebergaenge zwischen Chunks greifen die Sicherungs-Erkenntnis des vorherigen Chunks auf UND oeffnen eine neue Frage. Nicht nur thematische Ankuendigung | AGENT_SKRIPT Aufgabe 4, Meyer "sinnstiftendes Kommunizieren" (FD-Q4) |
+| SK16 | **Perspektiven-Diversitaet bei Konfliktthemen** (STR-05) | Bei Skripten, deren Thema einen Konflikt behandelt (`konflikttyp: true`): Das Skript muss in seiner Gesamtheit die narrativen Grundlagen fuer mindestens 3 verschiedene Akteursperspektiven legen. Prueffrage: Kann aus dem Skript-Text Material aus mindestens 3 Perspektiven abgeleitet werden? Verschaerfung von SK9 fuer Konfliktthemen. Bei `konflikttyp: false`: SK9 genuegt | FD-Q1 Fachprinzip, STR-05 (D15B K04), VERTRAG_PHASE_2-1_MATERIAL.md §Multiperspektivitaet-Policy |
 
 ### 3.3 KANN-Kriterien (Qualitaetssteigerung)
 
 | # | Kriterium | Beschreibung | Fundierung |
 |---|---|---|---|
-| SK13 | **Gegenwartsprinzip** | Wo inhaltlich sinnvoll: explizite Verbindung zur Lebenswelt der SuS oder zur Gegenwart. Nicht erzwungen, aber bei naheliegendem Bezug nicht ausgelassen | GPG GB Fachprinzip |
-| SK14 | **Zeitkolorit/Lokalisierung** | Zeittypische Details (Kleidung, Technik, Alltagsleben, Ortsbilder) schaffen atmosphaerische Dichte. Mindestens 1 Detailpassage pro Chunk | Roth "Lokalisierung"/"Zeittiefe", GPG B1 "Kostuemiere"/"Lokalisiere" |
-| SK15 | **Kontroversitaet** | Wo historisch umstritten: unterschiedliche Deutungen altersangemessen benennen, statt zu glaetten | GPG GB Fachprinzip |
+| SK13 | **Gegenwartsprinzip** | Wo inhaltlich sinnvoll: explizite Verbindung zur Lebenswelt der SuS oder zur Gegenwart. Nicht erzwungen, aber bei naheliegendem Bezug nicht ausgelassen | FD-Q1 Fachprinzip |
+| SK14 | **Zeitkolorit/Lokalisierung** | Zeittypische Details (Kleidung, Technik, Alltagsleben, Ortsbilder) schaffen atmosphaerische Dichte. Mindestens 1 Detailpassage pro Chunk | Roth "Lokalisierung"/"Zeittiefe", FD-Q2 "Kostuemiere"/"Lokalisiere" |
+| SK15 | **Kontroversitaet** | Wo historisch umstritten: unterschiedliche Deutungen altersangemessen benennen, statt zu glaetten | FD-Q1 Fachprinzip |
 
 | SK17 | **Umfangs-Plausibilitaet** (STR-06) | Skript-Umfang ist auf ca. 1 UE (45 Min) Bearbeitungszeit der resultierenden Mappe dimensioniert. Prueffrage: Erzeugt dieses Skript voraussichtlich 3-5 Materialien mit max. 700-900 Woerter Gesamtumfang? Kein BLOCKER — bei Ueberschreitung WARN und Hinweis an Material-Vertrag | STR-06 (D15B K09), VERTRAG_PHASE_2-0_RAHMEN §Zeit-Orientierung |
 

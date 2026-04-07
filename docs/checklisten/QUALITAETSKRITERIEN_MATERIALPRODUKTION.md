@@ -3,13 +3,13 @@
 **Datum:** 2026-03-29
 **Status:** v2.1 — fachdidaktisch fundiert (9 PDFs), bereit fuer SUB_MATERIAL_*. v1→v2: M9 Kontroversitaet, BQ-7/BQ-8, ZL-6, KA-7, QT-5 Quellentypologie, DT-1 Kausalitaetstypen. v2→v2.1: C6/MQ6 Erarbeitbarkeits-Plausibilitaet (Audit Sicherungskette M5)
 **Quellen:**
-- DG B1 Allgemeine Unterrichtsprinzipien (Schroeder 16 Prinzipien, Brunnhuber 6, Hilbert Meyer 10 Merkmale)
-- DG B3 Arbeitsblatt (EFFEKTIV-Modell, sprachliche+inhaltliche+formale Gestaltungsgrundsaetze)
-- DG B10 Medieneinsatz (Medienklassifikation, 8 Auswahlkriterien, Diagrammtypen, Verbundmedien)
-- GPG GB Grundsaetze des GPG-Unterrichts (Kompetenzstrukturmodell, Fachprinzipien, Raum-/Zeitkompetenz)
-- GPG B1 Vergegenwärtigung im Geschichtsunterricht (Erzaehlprinzipien, Roth-Forderungen, Elementarisierung)
-- GPG B2 Fachspezifische Arbeitsweisen/Historische Perspektive (Quellentypologie Ueberreste/Traditionen, Textquellen-Auswahlkriterien, Bilderschliessung, Bildauswahl, Kommunikationsanalyse, Sachquellen-Erschliessung)
-- Alle: Bausteine Fachdidaktik, AG der MS-Seminarleiter Unterfranken
+- FD-Q4 Allgemeine Unterrichtsprinzipien (Schroeder 16 Prinzipien, Brunnhuber 6, Hilbert Meyer 10 Merkmale)
+- Fachdidaktische Grundlagentexte Arbeitsblatt (EFFEKTIV-Modell, sprachliche+inhaltliche+formale Gestaltungsgrundsaetze)
+- FD-Q5 Medieneinsatz (Medienklassifikation, 8 Auswahlkriterien, Diagrammtypen, Verbundmedien)
+- FD-Q1 Grundsaetze des GPG-Unterrichts (Kompetenzstrukturmodell, Fachprinzipien, Raum-/Zeitkompetenz)
+- FD-Q2 Vergegenwärtigung im Geschichtsunterricht (Erzaehlprinzipien, Roth-Forderungen, Elementarisierung)
+- FD-Q3 Fachspezifische Arbeitsweisen/Historische Perspektive (Quellentypologie Ueberreste/Traditionen, Textquellen-Auswahlkriterien, Bilderschliessung, Bildauswahl, Kommunikationsanalyse, Sachquellen-Erschliessung)
+- Alle: Fachdidaktische Grundlagentexte (nicht-oeffentlich)
 
 **Konvention:** Keine woertlichen Zitate aus Trainingsmaterialien. Nur abstrahierte, operationalisierte Prinzipien.
 

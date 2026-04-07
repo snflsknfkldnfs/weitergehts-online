@@ -97,7 +97,7 @@ Die Mappe nutzt folgende Materialien:
 - **Belgische Perspektive:** Absent — friedliche werden in Friedrichs Tagebuch erwähnt ("brennende Gehöfte"), aber nicht aus belgischer Perspektive
 - **Britische Perspektive:** Absent — британский участие в Марне упомянуто в mat-4-4 ("britisches Expeditionskorps"), aber nicht aus britischer Quelle
 
-**Bewertung:** Die Mappe ist **deutlich deutsch-zentriert**. Dies entspricht dem Duktus vieler Schulbücher (deutsche Geschichte aus deutscher Perspektive), aber es verstößt gegen das **Fachprinzip der Multiperspektivität** (GPG GB). Besonders problematisch: **Belgien wird als Opferland thematisiert, aber nicht gehört.** Ein belgischer Schullehrer hätte Anspruch zu sagen: "Hier wird von unserer Invasion erzählt, aber nicht mit uns."
+**Bewertung:** Die Mappe ist **deutlich deutsch-zentriert**. Dies entspricht dem Duktus vieler Schulbücher (deutsche Geschichte aus deutscher Perspektive), aber es verstößt gegen das **Fachprinzip der Multiperspektivität** (FD-Q1). Besonders problematisch: **Belgien wird als Opferland thematisiert, aber nicht gehört.** Ein belgischer Schullehrer hätte Anspruch zu sagen: "Hier wird von unserer Invasion erzählt, aber nicht mit uns."
 
 **Quellenkritik:**
 
@@ -442,11 +442,11 @@ Ich bewerte die Mappe auf dieser **vierstufigen Skala:**
 
 **Empf. 1: Belgien-Perspektive hinzufügen**
 Die Mappe erwähnt Belgiens Neutralitätsverletzung und "brennende Gehöfte", thematisiert aber nicht deren Konsequenzen (Kriegseintritt Großbritanniens). Ergänze Material M4b (neue Quellentext-Komponente): Eine belgische Zeitung von 1914, die die Invasion als Bruch Völkerrechts anklagt (ca. 100 Wörter, zu mat-4-2 oder mat-4-3). Änderungsergebnis: Aufgabe 4-2 erhält eine neue Option "Belgien war mit Frankreich und Großbritannien verbündet" (falsch), was Multiperspektivität stärkt.
-**Begründung:** Fachprinzip Multiperspektivität (GPG GB) | **Aufwand: Mittel** (Quellensuche, Übersetzung)
+**Begründung:** Fachprinzip Multiperspektivität (FD-Q1) | **Aufwand: Mittel** (Quellensuche, Übersetzung)
 
 **Empf. 2: Quellenkritik-Aufgabe einbauen (Aufgabe 4-2b, neu)**
 Zwischen M4 und M5 (nach Aufgabe 4-4) eine neue Aufgabe einfügen: "Die Karte der Marne-Schlacht (M4) stammt von Frederick Maurice, 1919. Warum könnte eine Karte aus 5 Jahren später weniger zuverlässig sein als eine zeitgenössische Feldpostkarte?" Multiple Choice mit Optionen zu Gedächtnis/Archive/Perspektive.
-**Begründung:** Quellenkritik ist Kernmethode (GPG B2), wird aktuell nicht gefördert | **Aufwand: Klein** (Eine MC-Aufgabe)
+**Begründung:** Quellenkritik ist Kernmethode (FD-Q3), wird aktuell nicht gefördert | **Aufwand: Klein** (Eine MC-Aufgabe)
 
 **Empf. 3: Hefteintrag-Sicherung präzisieren**
 Der Hefteintrag benennt das Scheitern, erklärt es aber nicht. Ergänze einen Absatz mit **Ursachen**: "Der Plan scheiterte, weil (1) die Soldaten nach 250 Kilometern Marsch erschöpft waren und Nachschub fehlte, (2) die Franzosen unter General Gallieni einen Gegenangriff starteten, und (3) Großbritannien mit Frankreich kämpfte."
@@ -460,7 +460,7 @@ Nach Aufgabe 4-3 ergänzen: "Friedrichs Tagebuch ist fiktiv, historisch aber pla
 
 **Empf. 5: Bilderschließungs-Aufgabe zu M5 (Aufgabe 4-5b, revidiert)**
 Aktuelle Aufgabe 4-5 ist oberflächlich (Multiple Choice). Ersetze durch: "Beschreibe, was du auf dem Foto siehst: Schützengraben, Stacheldraht, Soldaten. Erkläre dann: Warum zeigt dieses Foto, dass Schlieffens Plan gescheitert ist?"
-**Begründung:** Fördert Bilderschließung (GPG B2: Bilderschließungs-Stufen), nicht nur Zuordnung | **Aufwand: Mittel** (Aufgabe rekonzeptualisieren)
+**Begründung:** Fördert Bilderschließung (FD-Q3: Bilderschließungs-Stufen), nicht nur Zuordnung | **Aufwand: Mittel** (Aufgabe rekonzeptualisieren)
 
 **Empf. 6: Französische Strategie visualisieren (Material M2b, neu)**
 Unter der Schlieffen-Plan-Karte (M2) eine zweite Karte zeigen: Frankreichs "Plan XVII" (Offensive in den Osten statt Defensive). Ergänze Aufgabe 4-4 mit einer Zuordnung: "Welcher Plan führte zum Erfolg an der Marne?"

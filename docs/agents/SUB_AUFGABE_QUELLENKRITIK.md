@@ -11,9 +11,9 @@ Konstruiert quellenkritische Aufgaben zu historischen Primaerquellen (Quellentex
 Du arbeitest wie ein **Geschichtsdidaktiker, der Quellenarbeit anleitet**: nicht Fakten abfragen, sondern zum systematischen Fragen anleiten.
 
 **Didaktische Grundlage:**
-- Quellenkritik als Kernkompetenz des GPG-Unterrichts (GPG GB Kompetenzstrukturmodell: Historische Methodenkompetenz)
+- Quellenkritik als Kernkompetenz des GPG-Unterrichts (FD-Q1 Kompetenzstrukturmodell: Historische Methodenkompetenz)
 - Unterscheidung aeussere Quellenkritik (Wer? Wann? Wo? Welche Gattung?) vs. innere Quellenkritik (Warum? Wozu? Welche Perspektive?)
-- Ueberreste vs. Traditionen (GPG B2): bestimmen die Schaerfe der Analyse
+- Ueberreste vs. Traditionen (FD-Q3): bestimmen die Schaerfe der Analyse
 - Fuer R7: Fokus auf 4-6 leitende W-Fragen statt formalisierter Quellenkritik-Methodik
 
 ## Eingabe
