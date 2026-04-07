@@ -4,6 +4,26 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-07 — User-Entscheidungen M-QA1 bis M-QA4
+
+**Phase:** Phase IV — Phase-0-Qualitaets-Audit Abschluss
+**Modus:** AUDIT → EXECUTE
+**Session:** 15
+
+**User-Entscheidungen zu 4 offenen Fragen aus dem Qualitaets-Audit:**
+1. **M-QA1 Thementyp (VORLAEUFIG OFFEN):** Keine harte Klassifikation. Alle Themen haben/bekommen eine didaktisch gewaehlte Zeitstruktur. Kleinster gemeinsamer Nenner statt Overhead. Weiter evaluieren.
+2. **M-QA2 Eskalationspfad (BEDINGT):** Agent-Fallback erlaubt, wenn QM-Prozess standardisiert und zuverlaessig. Kein stiller Fallback ohne Audit-Spur.
+3. **M-QA3 SCPL-Flex (RICHTUNG):** Complication[] bleibt, wird erweitert von "narrative Komplikation" zu "didaktische Problematisierung aus Schuelerperspektive". Weiter evaluieren.
+4. **Prioritaet (ENTSCHIEDEN):** Infrastruktur-Schaerfung zuerst → phasenweise Testlaeufe → Learnings einarbeiten → Gesamt-Game unter Realbedingungen.
+
+**Artefakte:**
+- MODIFIZIERT: docs/projekt/BEFUND_PHASE_0_QUALITAETS_AUDIT.md (§10 User-Entscheidungen, §11 Naechste Schritte)
+- MODIFIZIERT: docs/projekt/STATUS.md, docs/projekt/CHANGELOG.md
+
+**Naechster Schritt:** Welle-1-Massnahmen starten (Eskalationspfade, Complication-Erweiterung, H1-H7-Pruefung, Quellenorientierung, JSON-Schema).
+
+---
+
 ## 2026-04-06 — Phase-0 Qualitaets-Audit v2 (persistierte RA-Berichte + Delta-Analyse)
 
 **Phase:** Phase IV — Phase-0-Qualitaets-Audit v2

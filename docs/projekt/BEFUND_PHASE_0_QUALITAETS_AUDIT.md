@@ -250,9 +250,39 @@ RA4 tendiert zu MEDIUM bei Findings, die RA5 als HIGH einstuft (Thementyp-Adapti
 
 ---
 
-## 10. Offene Fragen an User
+## 10. User-Entscheidungen (Session 15, 2026-04-07)
 
-1. **Thementyp-Klassifikation:** Trias (Ereignis/Konzept/Kultur) oder Quartett (+Langzeitprozess, wie RA5 vorschlaegt)? R7-Lehrplan GPG liefert: Raum, Zeit, Gesellschaft, Politik — davon sind Raum und Gesellschaft eher konzeptuell.
-2. **SCPL-Flexibilisierung:** Complication[] optional machen (min. 0), oder alternatives Container-Format fuer nicht-narrative Ordnungsmuster?
-3. **Prioritaet:** Zuerst Thementyp-Architektur (M-QA1, abstrakt) oder zuerst naechstes Game produzieren (Game 2 WK1-Ende, Ereignisgeschichte, Pipeline funktioniert as-is)?
-4. **Eskalationspfad-Design (QA-C3):** Soll AGENT_DIDAKTIK bei BLOCKER-Scheitern autonom Thema-Ablehnung vorschlagen duerfen, oder immer User-Entscheidung?
+### 10.1 Thementyp-Klassifikation (M-QA1) — VORLAEUFIG OFFEN
+
+**Entscheidung:** Keine harte Differenzierung in Typen. Alle Themen haben (oder bekommen didaktisch) eine Zeitstruktur — auch vermeintlich nicht-chronologische. Der Ansatz soll ein kleinster gemeinsamer Nenner sein, der Overhead und Misfits vermeidet.
+**Status:** Weiter zu evaluieren. Konkret: Wie kann die Pipeline ein Thema so aufbereiten, dass die didaktisch zugeschriebene/gewaeehlte Zeitstruktur als Grundlage dient, ohne eine starre Thementyp-Klassifikation vorauszusetzen?
+**Implikation fuer M-QA1:** Kein Thementyp-Feld in Vertraegen. Stattdessen pruefen, ob H1-H7 und SCPL durch robustere Formulierung (z.B. "gewaehlte Ordnung" statt "chronologische Ordnung") bereits abdeckbar sind.
+
+### 10.2 Eskalationspfad-Autonomie (M-QA2) — BEDINGT ENTSCHIEDEN
+
+**Entscheidung:** Agent darf selbst waehlen, WENN ein hochwertiger, verlaesslicher QM-Prozess standardisiert ist und angewendet wird. Besonders bei didaktischen Implikationen muss die Qualitaetssicherung greifen.
+**Implikation fuer M-QA2:** Eskalationspfade mit Fallback-Option implementieren, aber flankiert durch verpflichtende Q-Gate-Pruefung des Fallback-Ergebnisses. Kein "stiller Fallback" ohne Audit-Spur.
+
+### 10.3 SCPL-Flexibilisierung (M-QA3) — RICHTUNG ENTSCHIEDEN
+
+**Entscheidung:** Complication[] NICHT abschaffen, sondern konzeptuell erweitern. Jeder Sachverhalt muss didaktisch aus Schuelerperspektive problematisiert werden — braucht also immer eine Complication-Dimension. Die Frage ist, wie Complication qualitativ geschaerft und fuer nicht-narrative Themen nutzbar gemacht wird.
+**Status:** Weiter zu evaluieren. Konkret: Wie kann Complication[] so definiert werden, dass sie auch kategoriale/konzeptuelle Problematisierungen (z.B. "Warum war das ein Problem fuer die Menschen?") erfasst, nicht nur narrative Wendepunkte?
+**Implikation fuer M-QA3:** Complication[] bleibt Pflicht (min. 1), aber die Definition wird erweitert von "narrative Komplikation" zu "didaktische Problematisierung aus Schuelerperspektive". Vertrag HEFTEINTRAG §Output anpassen.
+
+### 10.4 Prioritaet — ENTSCHIEDEN
+
+**Entscheidung:** Infrastruktur-Schaerfung zuerst. Vorgehen: (1) Pipeline Schritt fuer Schritt optimieren fuer hochwertige Ergebnisse und funktionalen Ablauf. (2) Schrittweise/phasenweise in Realsituationen testen. (3) Learnings optimierend einarbeiten. (4) Dann Gesamt-Game unter Realbedingungen erstellen.
+**Implikation:** Game-2-Produktion nicht als naechster Schritt, sondern erst nach Welle-1-Massnahmen (CRITICAL + architektonische HIGH). Testlaeufe koennen phasenweise erfolgen (z.B. nur Phase 0.1+0.2 testen, dann 0.3+0.4).
+
+---
+
+## 11. Naechste Schritte (post User-Entscheidungen)
+
+1. **Welle 1 — CRITICAL + architektonische HIGH (Reihenfolge):**
+   - M-QA2: Eskalationspfade mit Fallback + Q-Gate in VERTRAG_PHASE_0-1_DIDAKTIK einbauen
+   - M-QA3: Complication[]-Definition in VERTRAG_PHASE_0-4_HEFTEINTRAG erweitern ("didaktische Problematisierung")
+   - M-QA1 (light): H1-H7 und Ordnungsmuster-Formulierungen auf "gewaehlte Ordnung" pruefen/anpassen (ohne Thementyp-Feld)
+   - Quellenorientierung (RA4-F01 CRITICAL): SK18 in GUETEKRITERIEN_SKRIPT, QI-Erweiterung in VERTRAG_INHALT
+   - JSON-Schema-Validierung (RA1-F03, RA3-F01): Formale Schema-Definition fuer Phase-2.0-Kompatibilitaet
+2. **Phasenweise Testlaeufe** nach Welle-1-Patches (z.B. Phase 0.1+0.2 mit Game-2-Thema)
+3. **Welle 2+3** nach Test-Learnings priorisieren
