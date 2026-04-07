@@ -120,13 +120,13 @@
 **Ordnungsrahmen:** SKRIPT-Absatzfolge (Primaer) + SCPL-Aufbau (Kontrolle). Keine Divergenz — beide kongruent.
 **Artikulationsschema:** Historisch (Problembegegnung → Vergegenwaertigung → Besinnung → Sicherung)
 
-| # | Material-ID | Typ | Didaktische Funktion | TB-Knoten | SCPL-Phase | Voraussetzung | Kerninhalt (1 Satz) |
-|---|-------------|-----|----------------------|-----------|------------|---------------|---------------------|
-| 1 | mat-4-1 | darstellungstext | erarbeitung | k4-2, k4-1, k4-3 | S+C1 | — | Erklaert Zweifrontenkrieg als Problem und Schlieffen-Plan als Strategie mit Zeitluecke. |
-| 2 | mat-4-2 | karte | erarbeitung | k4-1, k4-4 | C1+C2 | mat-4-1 | Visualisiert den Schlieffen-Plan: Angriffspfeile durch Belgien nach Frankreich. |
-| 3 | mat-4-3 | tagebuch | erarbeitung | k4-4 | C2 | mat-4-2 | Personifiziert den Vormarsch: Siegeszuversicht, dann Erschoepfung und Nachschubprobleme. |
-| 4 | mat-4-4 | karte | erarbeitung | k4-5 | C3 | mat-4-3 | Zeigt die Marne-Schlacht: Gallieni-Flanke, Gegenoffensive, 65 km Rueckzug. |
-| 5 | mat-4-5 | bildquelle | sicherung | k4-6 | P | mat-4-4 | Schuetzengraben-Foto als visueller Anker: Stellungskrieg statt schnellem Sieg. |
+| # | Material-ID | Typ | Didaktische Funktion | TB-Knoten | SCPL-Phase | material_charakter | bildfunktion | analyseauftrag | personalisiert | primary_tb_knoten | Voraussetzung | Kerninhalt (1 Satz) |
+|---|-------------|-----|----------------------|-----------|------------|-------------------|--------------|----------------|----------------|-------------------|---------------|---------------------|
+| 1 | mat-4-1 | darstellungstext | erarbeitung | k4-2, k4-1, k4-3 | S+C1 | vergegenwaertigung | n/a | false | false | k4-2 | — | Erklaert Zweifrontenkrieg als Problem und Schlieffen-Plan als Strategie mit Zeitluecke. |
+| 2 | mat-4-2 | karte | erarbeitung | k4-1, k4-4 | C1+C2 | vergegenwaertigung | illustrativ | false | false | k4-1 | mat-4-1 | Visualisiert den Schlieffen-Plan: Angriffspfeile durch Belgien nach Frankreich. |
+| 3 | mat-4-3 | tagebuch | erarbeitung | k4-4 | C2 | vergegenwaertigung | n/a | false | true | k4-4 | mat-4-2 | Personifiziert den Vormarsch: Siegeszuversicht, dann Erschoepfung und Nachschubprobleme. |
+| 4 | mat-4-4 | karte | erarbeitung | k4-5 | C3 | vergegenwaertigung | illustrativ | false | false | k4-5 | mat-4-3 | Zeigt die Marne-Schlacht: Gallieni-Flanke, Gegenoffensive, 65 km Rueckzug. |
+| 5 | mat-4-5 | bildquelle | sicherung | k4-6 | P | vergegenwaertigung | illustrativ | false | false | k4-6 | mat-4-4 | Schuetzengraben-Foto als visueller Anker: Stellungskrieg statt schnellem Sieg. |
 
 ### Ueberleitungen (Intentionsskizzen — finale Formulierung in Phase 2.1c)
 

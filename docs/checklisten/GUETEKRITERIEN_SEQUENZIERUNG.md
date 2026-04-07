@@ -1,7 +1,7 @@
 # Guetekriterien Sequenzierung
 
-**Datum:** 2026-03-28
-**Status:** v1.1 — SCPL-Korrespondenz + Skript-Primaer-Anker ergaenzt
+**Datum:** 2026-04-07
+**Status:** v2.0 — Operationalisierungs-Audit: 7 Input-Felder (P1-P6 + P12), deterministische Prueflogik S1/S5/S7/S8/S13/S14/S15
 **Quellen:**
 - FD-Q1 Grundsaetze des GPG-Unterrichts (Artikulationsschemata, Kompetenzstrukturmodell)
 - FD-Q4 Allgemeine Unterrichtsprinzipien (Schroeder, Brunnhuber, Hilbert Meyer)
@@ -126,21 +126,21 @@ Gewichtete Kriterien fuer den AGENT_MATERIAL Q-Gate bei Aufgabe 1.9. Drei Priori
 
 | # | Kriterium | Operationalisierung | Herkunft |
 |---|---|---|---|
-| S1 | **Artikulationsschema-Konformitaet** | Sequenz folgt dem Artikulationsschema der zutreffenden GPG-Perspektive (historisch/geographisch/sozialpolitisch). Phasenfolge darf nicht verletzt werden. | FD-Q1 Artikulationsschemata |
+| S1 | **Artikulationsschema-Konformitaet** | Sequenz folgt dem Artikulationsschema der zutreffenden GPG-Perspektive (historisch/geographisch/sozialpolitisch). Phasenfolge darf nicht verletzt werden. Phasenzuordnung erfolgt ueber `material_charakter` (vergegenwaertigung / besinnung_sachbezogen / besinnung_wertbezogen) und `didaktische_funktion`. | FD-Q1 Artikulationsschemata |
 | S2 | **Vorwissen-Progression** | Kein Material referenziert Konzepte oder Fachbegriffe, die nicht durch ein vorheriges Material (niedrigere Position) oder durch explizites Vorwissen aus vorherigen Mappen eingefuehrt wurden. | FD-Q3 + Brunnhuber Strukturierung |
 | S3 | **TB-Knoten-Abdeckung** | Jeder TB-Knoten aus dem fixierten TAFELBILD hat mindestens 1 zugeordnetes Material im Sequenzplan. Kein Knoten bleibt ohne Erarbeitungsweg. | Analogie zu G3 (Erarbeitbarkeit) |
 | S4 | **Didaktische-Funktion-Sequenzlogik** | Die didaktischen Funktionen folgen einer gültigen Reihenfolge: einstieg → erarbeitung → vertiefung → sicherung → transfer. Kein sicherung-Material vor dem letzten erarbeitung-Material. Kein transfer-Material vor sicherung. | FD-Q5 Didaktischer Ort + Artikulationsschemata |
-| S5 | **Vergegenwärtigung vor Besinnung** | Materialien mit narrativ-anschaulichem Charakter (Darstellungstext, Bildquelle illustrativ, Tagebucheintrag) stehen VOR Materialien mit analytisch-urteilendem Charakter (Quellentext mit Analyseauftrag, Bildquelle heuristisch mit Interpretationsauftrag). | FD-Q2 Roth + Vergegenwärtigung/Besinnung-Prinzip |
+| S5 | **Vergegenwärtigung vor Besinnung** | Materialien mit `material_charakter` = `vergegenwaertigung` stehen VOR Materialien mit `material_charakter` = `besinnung_sachbezogen`, diese VOR `besinnung_wertbezogen`. Bei Bildquellen: `bildfunktion` = `illustrativ` zaehlt als Vergegenwärtigung, `heuristisch` als Besinnung. | FD-Q2 Roth + Vergegenwärtigung/Besinnung-Prinzip |
 | S6 | **Sequenzkontext-Vollstaendigkeit** | Jedes Material hat ein vollstaendiges `sequenz_kontext`-Objekt mit `vorher` (leer nur bei Position 1) und `nachher` (leer nur bei letzter Position). | AGENT_MATERIAL Aufgabe 1.9.5 |
-| S14 | **SCPL-Korrespondenz** | Die Materialreihenfolge korrespondiert mit dem SCPL-Aufbau des Tafelbilds: Materialien, die Situation-Knoten (S) erarbeiten, stehen vor Complication-Knoten (C), diese vor Problem-Knoten (P), diese vor Loesung-Knoten (L). Bei Materialien, die mehrere Knoten bedienen, zaehlt der primaere TB-Knoten. | Tafelbild-Sinnstruktur als didaktischer Aufbaurahmen |
+| S14 | **SCPL-Korrespondenz** | Die Materialreihenfolge korrespondiert mit dem SCPL-Aufbau des Tafelbilds: Materialien, die Situation-Knoten (S) erarbeiten, stehen vor Complication-Knoten (C), diese vor Problem-Knoten (P), diese vor Loesung-Knoten (L). Einordnung erfolgt ueber `primary_tb_knoten` und dessen `scpl_phase` (aus AGENT_HEFTEINTRAG-Annotation). | Tafelbild-Sinnstruktur als didaktischer Aufbaurahmen |
 | S15 | **Skript-Kongruenz** | Die Materialreihenfolge folgt der Absatzfolge im SKRIPT, soweit diese nicht gegen S14 (SCPL-Korrespondenz) verstoesst. Abweichungen von der SKRIPT-Reihenfolge sind nur mit expliziter Begruendung zulaessig. | AGENT_SKRIPT liefert implizite didaktische Sequenz |
 
 ### SOLL-Kriterien
 
 | # | Kriterium | Operationalisierung | Herkunft |
 |---|---|---|---|
-| S7 | **Vom Anschaulichen zum Abstrakten** | Die Sequenz bewegt sich tendenziell von konkreten, anschaulichen Materialien (Bilder, Erzaehlungen, Fallbeispiele) zu abstrakteren Materialien (Begriffsarbeit, Strukturanalyse, Transfer). Messbar: durchschnittlicher Abstraktionsgrad der ersten Haelfte < zweite Haelfte. | FD-Q5 Anschaulichkeitsprinzip + Schroeder Elementarisierung |
-| S8 | **Kontextgebot Quellenarbeit** | Quellentext- und Bildquellen-Materialien (Typ: quellentext, bildquelle) stehen NICHT an Position 1, es sei denn ihre didaktische Funktion ist `einstieg` mit reiner Problembegegnungs-Intention (kein Analyseauftrag). Vor jeder Quellenarbeit steht mindestens 1 kontextgebendes Material. | FD-Q3 Vorwissen-Gebot |
+| S7 | **Vom Anschaulichen zum Abstrakten** | Die Sequenz bewegt sich tendenziell von konkreten, anschaulichen Materialien zu abstrakteren. Messbar ueber Abstraktionsgrad (1-4), verfeinert durch `material_charakter` und `bildfunktion`: Durchschnitt(1. Haelfte) ≤ Durchschnitt(2. Haelfte). | FD-Q5 Anschaulichkeitsprinzip + Schroeder Elementarisierung |
+| S8 | **Kontextgebot Quellenarbeit** | Quellentext- und Bildquellen-Materialien (Typ: quellentext, bildquelle mit `bildfunktion` = `heuristisch`) stehen NICHT an Position 1, es sei denn `didaktische_funktion` = `einstieg` UND `analyseauftrag` = false. Vor jeder Quellenarbeit steht mindestens 1 kontextgebendes Material. | FD-Q3 Vorwissen-Gebot |
 | S9 | **Uebergangs-Kohaerenz** | Jede Ueberleitung (Aufgabe 1.9.4) ist inhaltlich motiviert — sie benennt, was das vorherige Material ergeben hat und welche Frage/welchen Aspekt das naechste Material aufgreift. Rein formale Ueberleitungen ("Als naechstes...") sind unzureichend. | Brunnhuber Strukturierung + Meyer Sinnstiftendes Kommunizieren |
 | S10 | **Aktivierung am Sequenzbeginn** | Das erste Material (Position 1) hat die didaktische Funktion `einstieg` und aktiviert Vorwissen oder weckt Neugier. Es fuehrt KEINE neuen Fachbegriffe ein. | Brunnhuber Aktivierung + Meyer Lernfoerderliches Klima |
 
@@ -150,7 +150,55 @@ Gewichtete Kriterien fuer den AGENT_MATERIAL Q-Gate bei Aufgabe 1.9. Drei Priori
 |---|---|---|---|
 | S11 | **Materialtyp-Vielfalt** | Die Sequenz einer Mappe enthaelt mindestens 2 verschiedene Materialtypen (z.B. darstellungstext + bildquelle, nicht nur darstellungstext + darstellungstext). | Meyer Methodenvielfalt |
 | S12 | **Sprachregister-Progression** | Das Sprachregister der Materialien passt sich dem Themencharakter an und steigert sich progressiv: erfahrungsbezogen-narrativ → fachbegrifflich-analytisch → bilanzierend-urteilend. | Empirie GUETEKRITERIEN_HEFTEINTRAG_ENTWURF (Abschnitt 3.5) |
-| S13 | **Personalisierung in Fruehphase** | Mindestens 1 Material in der ersten Sequenzhaelfte hat einen personalisierten Zugang (individuelle Perspektive, Identifikationsfigur, Tagebuch, Brief). | Roth Personalisierung + Vergegenwärtigung |
+| S13 | **Personalisierung in Fruehphase** | Mindestens 1 Material in der ersten Sequenzhaelfte hat `personalisiert` = true (individuelle Perspektive, Identifikationsfigur, Tagebuch, Brief). | Roth Personalisierung + Vergegenwärtigung |
+
+### 4.2 Input-Felder fuer maschinelle Operationalisierung (v2.0)
+
+Die folgenden Felder muessen pro Material im Sequenzplan (MATERIAL_GERUEST) vorhanden sein, damit die Prueflogik in Sektion 6 deterministisch auswertbar ist. Felder P1-P6 werden durch AGENT_MATERIAL (Phase 1, Aufgabe 1.9) gesetzt. P12 wird durch AGENT_HEFTEINTRAG (Phase 0.4) pro TB-Knoten annotiert und von AGENT_MATERIAL referenziert.
+
+| ID | Feldname | Typ | Werte | Setzt | Genutzt von |
+|---|---|---|---|---|---|
+| P1 | `material_charakter` | Enum | `vergegenwaertigung` / `besinnung_sachbezogen` / `besinnung_wertbezogen` | AGENT_MATERIAL | S1, S5, S7 |
+| P2 | `didaktische_funktion` | Enum | `einstieg` / `erarbeitung` / `vertiefung` / `sicherung` / `transfer` | AGENT_MATERIAL | S1, S4, S8, S10 |
+| P3 | `bildfunktion` | Enum | `illustrativ` / `heuristisch` / `n/a` | AGENT_MATERIAL | S5, S7, S8 |
+| P4 | `analyseauftrag` | Boolean | true / false | AGENT_MATERIAL | S8 |
+| P5 | `personalisiert` | Boolean | true / false | AGENT_MATERIAL | S13 |
+| P6 | `primary_tb_knoten` | String | kN-X (ein einzelner TB-Knoten-Identifikator) | AGENT_MATERIAL | S14 |
+| P12 | `scpl_phase` | Enum | `S` / `C` / `P` / `L` | AGENT_HEFTEINTRAG (pro TB-Knoten) | S14 |
+
+**Zuweisungsregeln `material_charakter` (P1):**
+
+| Materialtyp | Default-Charakter | Abweichung moeglich wenn |
+|---|---|---|
+| darstellungstext | `vergegenwaertigung` | Inhalt ist explizit analytisch (Vergleich, Kausalanalyse) → `besinnung_sachbezogen` |
+| tagebuch | `vergegenwaertigung` | — (immer narrativ-anschaulich) |
+| bildquelle (`bildfunktion` = `illustrativ`) | `vergegenwaertigung` | — |
+| bildquelle (`bildfunktion` = `heuristisch`) | `besinnung_sachbezogen` | — |
+| quellentext | `besinnung_sachbezogen` | Ohne Analyseauftrag, rein illustrativ → `vergegenwaertigung` |
+| zeitleiste | `vergegenwaertigung` | — |
+| schaubild | `besinnung_sachbezogen` | Rein illustrativ (Karte, Diagramm ohne Interpretationsauftrag) → `vergegenwaertigung` |
+| jeder Typ mit Urteilsauftrag | `besinnung_wertbezogen` | — |
+
+**Zuweisungsregeln `bildfunktion` (P3):**
+- `illustrativ`: Bild bestaetigt/veranschaulicht bereits bekannten Inhalt (Bestaetigungsfunktion)
+- `heuristisch`: Bild dient als Entdeckungsmedium, SuS erschliessen neuen Inhalt aus dem Bild (Entdeckungsfunktion)
+- `n/a`: Material ist kein Bild-Material
+
+**Zuweisungsregeln `primary_tb_knoten` (P6):**
+- Bei Materialien mit genau 1 TB-Knoten: dieser Knoten
+- Bei Materialien mit mehreren TB-Knoten: der Knoten, dessen Erarbeitung den groessten Anteil des Materials ausmacht
+- Bei Einstiegsmaterialien (didaktische_funktion = einstieg): der erste TB-Knoten in SCPL-Reihenfolge, den das Material anspricht
+
+**Abhaengigkeit P12 (AGENT_HEFTEINTRAG → AGENT_MATERIAL):**
+AGENT_HEFTEINTRAG muss in Phase 0.4 jeden TB-Knoten mit `scpl_phase: S|C|P|L` annotieren. Diese Annotation wird von AGENT_MATERIAL in Phase 1 referenziert, um S14 deterministisch zu pruefen. Ohne P12-Annotation ist S14 nur heuristisch pruefbar (Fallback: Inhaltsabgleich mit scpl-Bloecken, fehleranfaellig).
+
+**MATERIAL_GERUEST-Template (erweitert):**
+
+```markdown
+| # | Material-ID | Typ | Didaktische Funktion | TB-Knoten | SCPL-Phase | material_charakter | bildfunktion | analyseauftrag | personalisiert | primary_tb_knoten | Voraussetzung | Kerninhalt |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | M4-1 | ... | einstieg | ... | S | vergegenwaertigung | n/a | false | true | k4-1 | — | ... |
+```
 
 ---
 
@@ -187,16 +235,29 @@ Konkrete Prueflogik fuer jedes Kriterium, damit AGENT_MATERIAL das Q-Gate autono
 
 ### S1: Artikulationsschema-Konformitaet (MUSS)
 
-**Input-Daten:** `DIDAKTIK_RAHMEN.perspektive` (historisch/geographisch/sozialpolitisch), Sequenzplan-Tabelle
+**Input-Daten:** `DIDAKTIK_RAHMEN.perspektive`, Sequenzplan mit `didaktische_funktion` (P2) und `material_charakter` (P1)
 **Prueflogik:**
 1. Bestimme das Artikulationsschema aus `DIDAKTIK_RAHMEN.perspektive`
-2. Ordne jede Sequenzposition einer Phase des Schemas zu:
-   - Historisch: `einstieg` → Problembegegnung, `erarbeitung` (narrativ) → Vergegenwärtigung, `erarbeitung` (analytisch) + `vertiefung` → Besinnung, `sicherung` → Sicherung
-   - Geographisch: `einstieg` → Hinführung/Situationskonfrontation, `erarbeitung` → Situationsanalyse, `vertiefung` → Situationsbeurteilung, `sicherung` → Sicherung
-   - Sozialpolitisch: `einstieg` → Problemstellung, `erarbeitung` → Problementfaltung, `vertiefung` → Problemloesung/Wertung, `sicherung` → Sicherung
+2. Ordne jede Sequenzposition einer Phase des Schemas zu (Mapping-Tabelle):
+   - **Historisch:**
+     - `einstieg` → Problembegegnung
+     - `erarbeitung` + `material_charakter` = `vergegenwaertigung` → Vergegenwärtigung
+     - `erarbeitung` + `material_charakter` ∈ {`besinnung_sachbezogen`, `besinnung_wertbezogen`} → Besinnung
+     - `vertiefung` → Besinnung
+     - `sicherung` → Sicherung
+   - **Geographisch:**
+     - `einstieg` → Hinfuehrung/Situationskonfrontation
+     - `erarbeitung` → Situationsanalyse
+     - `vertiefung` → Situationsbeurteilung
+     - `sicherung` → Sicherung
+   - **Sozialpolitisch:**
+     - `einstieg` → Problemstellung
+     - `erarbeitung` → Problementfaltung
+     - `vertiefung` → Problemloesung/Wertung
+     - `sicherung` → Sicherung
 3. Pruefe: Ist die Zuordnung monoton aufsteigend? (Keine spaetere Phase vor einer frueheren)
-**FAIL wenn:** Phasenfolge verletzt (z.B. Besinnung vor Vergegenwärtigung)
-**Nachbesserung:** Material umpositionieren oder didaktische Funktion anpassen
+**FAIL wenn:** Phasenfolge verletzt (z.B. Besinnung vor Vergegenwärtigung bei historischer Perspektive)
+**Nachbesserung:** Material umpositionieren oder `material_charakter` / `didaktische_funktion` korrigieren
 
 ### S2: Vorwissen-Progression (MUSS)
 
@@ -233,16 +294,17 @@ Konkrete Prueflogik fuer jedes Kriterium, damit AGENT_MATERIAL das Q-Gate autono
 
 ### S5: Vergegenwärtigung vor Besinnung (MUSS)
 
-**Input-Daten:** Sequenzplan + Materialtypen + didaktische Funktionen
+**Input-Daten:** Sequenzplan mit `material_charakter` (P1), `bildfunktion` (P3)
 **Prueflogik:**
-1. Klassifiziere jedes Material:
-   - **Vergegenwärtigung:** darstellungstext, tagebuch, bildquelle (illustrativ), zeitleiste
-   - **Besinnung (sachbezogen):** quellentext (Analyse), bildquelle (heuristisch mit Interpretationsauftrag)
-   - **Besinnung (wertbezogen):** Materialien mit Bewertungs-/Urteilsauftrag
-2. Pruefe Reihenfolge: min(Position Vergegenwärtigung) < min(Position sachbezogene Besinnung) < min(Position wertbezogene Besinnung)
-3. Toleranz: Wenn Mappe nur 2-3 Materialien hat, genuegt Vergegenwärtigung vor Besinnung (Unterscheidung sachbezogen/wertbezogen entfaellt)
-**FAIL wenn:** Erste Besinnung vor erster Vergegenwärtigung
-**Nachbesserung:** Vergegenwärtigung-Material vorziehen oder Besinnungs-Material zurueckstellen
+1. Lese `material_charakter` direkt aus Sequenzplan (kein Typ-basiertes Raten noetig):
+   - **Vergegenwärtigung:** `material_charakter` = `vergegenwaertigung`
+   - **Besinnung (sachbezogen):** `material_charakter` = `besinnung_sachbezogen`
+   - **Besinnung (wertbezogen):** `material_charakter` = `besinnung_wertbezogen`
+2. Konsistenz-Check: Bei bildquelle MUSS `bildfunktion` mit `material_charakter` korrespondieren (`illustrativ` → `vergegenwaertigung`, `heuristisch` → `besinnung_sachbezogen`). Inkonsistenz → WARNING, `material_charakter` gilt.
+3. Pruefe Reihenfolge: min(Position `vergegenwaertigung`) < min(Position `besinnung_sachbezogen`) < min(Position `besinnung_wertbezogen`)
+4. Toleranz: Wenn Mappe nur 2-3 Materialien hat, genuegt `vergegenwaertigung` vor jeder `besinnung_*` (Unterscheidung sachbezogen/wertbezogen entfaellt)
+**FAIL wenn:** Erste `besinnung_*` vor erster `vergegenwaertigung`
+**Nachbesserung:** Material umpositionieren oder `material_charakter` korrigieren
 
 ### S6: Sequenzkontext-Vollstaendigkeit (MUSS)
 
@@ -259,29 +321,35 @@ Konkrete Prueflogik fuer jedes Kriterium, damit AGENT_MATERIAL das Q-Gate autono
 
 ### S7: Vom Anschaulichen zum Abstrakten (SOLL)
 
-**Input-Daten:** Sequenzplan + Materialtypen
+**Input-Daten:** Sequenzplan mit Materialtypen, `material_charakter` (P1), `bildfunktion` (P3)
 **Prueflogik:**
-1. Ordne jedem Materialtyp einen Abstraktionsgrad zu:
-   - 1 (konkret): bildquelle, tagebuch
-   - 2 (narrativ): darstellungstext, zeitleiste
-   - 3 (analytisch): quellentext
-   - 4 (abstrakt): Begriffsarbeit, Strukturdiagramm
-2. Berechne Durchschnitt der ersten Haelfte und der zweiten Haelfte
+1. Ordne jedem Material einen Abstraktionsgrad zu (2-stufig):
+   a. Basis-Grad nach Typ:
+      - 1 (konkret): bildquelle, tagebuch
+      - 2 (narrativ): darstellungstext, zeitleiste
+      - 3 (analytisch): quellentext, schaubild
+      - 4 (abstrakt): Begriffsarbeit, Strukturdiagramm
+   b. Modifikator nach `material_charakter` und `bildfunktion`:
+      - `vergegenwaertigung` + `bildfunktion` = `illustrativ`: -0.5
+      - `besinnung_sachbezogen` + `bildfunktion` = `heuristisch`: +0.5
+      - `besinnung_wertbezogen`: +1.0
+2. Berechne Durchschnitt der ersten Haelfte und der zweiten Haelfte (mit Modifikator)
 3. Erwartung: Durchschnitt(1. Haelfte) ≤ Durchschnitt(2. Haelfte)
 **FAIL wenn:** Durchschnitt(1. Haelfte) > Durchschnitt(2. Haelfte) + 0.5
-**Nachbesserung:** Konkrete Materialien nach vorne, abstrakte nach hinten verschieben
+**Nachbesserung:** Konkrete/vergegenwaertigende Materialien nach vorne, abstrakte/besinnende nach hinten
 
 ### S8: Kontextgebot Quellenarbeit (SOLL)
 
-**Input-Daten:** Sequenzplan, Materialtypen
+**Input-Daten:** Sequenzplan mit Materialtypen, `bildfunktion` (P3), `analyseauftrag` (P4), `didaktische_funktion` (P2)
 **Prueflogik:**
-1. Identifiziere alle Materialien mit Typ `quellentext` oder `bildquelle` (heuristisch)
+1. Identifiziere alle Materialien mit Typ `quellentext` ODER (Typ `bildquelle` UND `bildfunktion` = `heuristisch`)
 2. Fuer jedes solche Material an Position P:
    - Pruefe: Gibt es mindestens 1 Material an Position < P mit Typ ∈ {darstellungstext, zeitleiste, tagebuch}?
-   - Ausnahme: Material hat `didaktische_funktion` = `einstieg` UND keinen Analyseauftrag
+   - Ausnahme: `didaktische_funktion` = `einstieg` UND `analyseauftrag` = false (reine Problembegegnung)
 3. Erstelle Verletzungsliste
 **FAIL wenn:** Quellenarbeit ohne vorheriges Kontextmaterial (und keine Einstiegs-Ausnahme)
 **Nachbesserung:** Kontextmaterial vor Quellenarbeit einfuegen oder Quellenarbeit zurueckpositionieren
+**Hinweis:** Bildquellen mit `bildfunktion` = `illustrativ` fallen NICHT unter das Kontextgebot (sie SIND Kontextmaterial)
 
 ### S9: Uebergangs-Kohaerenz (SOLL)
 
@@ -317,24 +385,24 @@ Konkrete Prueflogik fuer jedes Kriterium, damit AGENT_MATERIAL das Q-Gate autono
 
 ### S13: Personalisierung in Fruehphase (KANN)
 
-**Prueflogik:** Mindestens 1 Material in Position 1 bis ⌈N/2⌉ hat Typ `tagebuch` ODER Materialinhalt mit individueller Perspektive/Identifikationsfigur.
+**Input-Daten:** Sequenzplan mit `personalisiert` (P5)
+**Prueflogik:** Mindestens 1 Material in Position 1 bis ⌈N/2⌉ hat `personalisiert` = true.
 **Kein FAIL moeglich** — nur Empfehlung.
+**Hinweis:** `personalisiert` = true bei Typ `tagebuch` (immer), oder bei darstellungstext/bildquelle mit individueller Perspektive, Identifikationsfigur, Ich-Erzaehler, benanntem Akteur.
 
 ### S14: SCPL-Korrespondenz (MUSS)
 
-**Input-Daten:** Sequenzplan-Tabelle (Spalte TB-Knoten), TAFELBILD.scpl (Situation, Complication, Problem, Loesung), TAFELBILD.knoten[]
+**Input-Daten:** Sequenzplan mit `primary_tb_knoten` (P6), TB-Knoten-Tabelle mit `scpl_phase` (P12, aus AGENT_HEFTEINTRAG)
 **Prueflogik:**
-1. Ordne jeden TB-Knoten einer SCPL-Phase zu:
-   - Knoten, deren Inhalt im `scpl.situation`-Block steht oder deren Fachbegriffe dort erscheinen: **S**
-   - Knoten, deren Inhalt in `scpl.complication[]`-Schritten steht: **C**
-   - Knoten, deren Inhalt in `scpl.problem` steht: **P**
-   - Knoten, deren Inhalt in `scpl.loesung[]` steht: **L**
-2. Fuer jedes Material im Sequenzplan: Bestimme die SCPL-Phase seines primaeren TB-Knotens
-3. Pruefe Monotonie: S-Materialien haben niedrigere Positionen als C-Materialien, C < P, P < L
-4. Toleranz: Materialien mit reiner `einstieg`-Funktion (Position 1) sind phasen-neutral
-5. Toleranz: Materialien, die sowohl S- als auch C-Knoten bedienen, werden nach ihrem primaeren Knoten eingeordnet
+1. Fuer jedes Material: Lese `primary_tb_knoten` (P6) aus Sequenzplan
+2. Schlage `scpl_phase` (P12) des `primary_tb_knoten` in der TB-Knoten-Tabelle nach:
+   - Jeder TB-Knoten hat genau eine `scpl_phase` ∈ {S, C, P, L} (annotiert durch AGENT_HEFTEINTRAG in Phase 0.4)
+   - **Fallback** (wenn P12-Annotation fehlt): Ordne heuristisch nach Inhalt im scpl-Block zu (fehleranfaellig, WARNING erzeugen)
+3. Pruefe Monotonie: Materialien mit scpl_phase S haben niedrigere Positionen als C, C < P, P < L
+4. Toleranz: Materialien mit `didaktische_funktion` = `einstieg` (Position 1) sind phasen-neutral
+5. Toleranz: Materialien, die sowohl S- als auch C-Knoten bedienen, werden nach `primary_tb_knoten` eingeordnet (daher P6 kritisch)
 **FAIL wenn:** Ein P-Material steht vor dem letzten C-Material ODER ein L-Material vor dem letzten P-Material
-**Nachbesserung:** Material umpositionieren, sodass SCPL-Aufbau monoton ist. Alternativ: primaere Knoten-Zuordnung pruefen
+**Nachbesserung:** Material umpositionieren ODER `primary_tb_knoten`-Zuordnung pruefen ODER `scpl_phase`-Annotation in AGENT_HEFTEINTRAG korrigieren
 
 ### S15: Skript-Kongruenz (MUSS)
 
@@ -344,7 +412,7 @@ Konkrete Prueflogik fuer jedes Kriterium, damit AGENT_MATERIAL das Q-Gate autono
 2. Ordne jedem Material einen SKRIPT-Index zu (Reihenfolge des Auftretens im SKRIPT-Chunk)
 3. Pruefe: Ist die Sequenzplan-Reihenfolge kongruent mit der SKRIPT-Index-Reihenfolge?
 4. Abweichungen dokumentieren mit Begruendung (z.B. "S14: SCPL-Korrespondenz erfordert Umstellung")
-**FAIL wenn:** Mehr als 2 Materialien von der SKRIPT-Reihenfolge abweichen UND keine Begruendung vorliegt
+**FAIL wenn:** Mehr als ⌊N/3⌋ Materialien (N = Gesamtzahl Materialien in Mappe) von der SKRIPT-Reihenfolge abweichen UND keine Begruendung vorliegt
 **Nachbesserung:** Begruendung nachliefern ODER Reihenfolge an SKRIPT anpassen (sofern S14 nicht verletzt)
 
 ---

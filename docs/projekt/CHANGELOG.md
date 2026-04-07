@@ -4,6 +4,30 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-07 — Schritt 1: Schema-Erweiterung GUETEKRITERIEN_SEQUENZIERUNG v2.0
+
+**Phase:** Phase-0-Standardisierung
+**Modus:** EXECUTE (Implementation aus Audit-Befund v2)
+**Session:** 22
+
+**7 Input-Felder (P1-P6 + P12) in GUETEKRITERIEN_SEQUENZIERUNG.md implementiert.**
+- Neue Sektion 4.2: Input-Felder fuer maschinelle Operationalisierung mit Zuweisungsregeln und erweitertem MATERIAL_GERUEST-Template (13 Spalten)
+- P1 `material_charakter` (3er-Enum): vergegenwaertigung / besinnung_sachbezogen / besinnung_wertbezogen → S1, S5, S7
+- P2 `didaktische_funktion` (Enum formalisiert) → S1, S4, S8, S10
+- P3 `bildfunktion` (illustrativ / heuristisch / n/a) → S5, S7, S8
+- P4 `analyseauftrag` (Boolean) → S8
+- P5 `personalisiert` (Boolean) → S13
+- P6 `primary_tb_knoten` (String) → S14
+- P12 `scpl_phase` (S/C/P/L, AGENT_HEFTEINTRAG-Annotation) → S14
+- Prueflogik S1/S5/S7/S8/S13/S14 auf neue Felder umgestellt (deterministisch statt heuristisch)
+- S15 Threshold: ⌊N/3⌋ statt fester 2
+- Mappe-4-Retrofit: Sequenzplan mit allen 7 Feldern befuellt, Token-Budget +~200 Tokens (marginal)
+- Verifikation: Alle MUSS-Kriterien PASS, konsistent mit bestehenden Q-Gate-Ergebnissen
+- Artefakte: docs/checklisten/GUETEKRITERIEN_SEQUENZIERUNG.md (v2.0), MATERIAL_GERUEST Mappe 4 (erweitert)
+- Naechster Schritt: Schritt 2 (P7-P8: Fachbegriff-Felder, Uebergangs-Strukturierung, AGENT_MATERIAL Prompt-Update)
+
+---
+
 ## 2026-04-07 — Operationalisierungs-Audit S1-S15 v2 (Multi-Agenten)
 
 **Phase:** Phase-0-Standardisierung
