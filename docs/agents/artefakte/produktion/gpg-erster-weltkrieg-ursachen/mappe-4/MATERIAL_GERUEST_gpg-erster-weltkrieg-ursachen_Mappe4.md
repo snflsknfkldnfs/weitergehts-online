@@ -120,20 +120,54 @@
 **Ordnungsrahmen:** SKRIPT-Absatzfolge (Primaer) + SCPL-Aufbau (Kontrolle). Keine Divergenz — beide kongruent.
 **Artikulationsschema:** Historisch (Problembegegnung → Vergegenwaertigung → Besinnung → Sicherung)
 
-| # | Material-ID | Typ | Didaktische Funktion | TB-Knoten | SCPL-Phase | material_charakter | bildfunktion | analyseauftrag | personalisiert | primary_tb_knoten | Voraussetzung | Kerninhalt (1 Satz) |
-|---|-------------|-----|----------------------|-----------|------------|-------------------|--------------|----------------|----------------|-------------------|---------------|---------------------|
-| 1 | mat-4-1 | darstellungstext | erarbeitung | k4-2, k4-1, k4-3 | S+C1 | vergegenwaertigung | n/a | false | false | k4-2 | — | Erklaert Zweifrontenkrieg als Problem und Schlieffen-Plan als Strategie mit Zeitluecke. |
-| 2 | mat-4-2 | karte | erarbeitung | k4-1, k4-4 | C1+C2 | vergegenwaertigung | illustrativ | false | false | k4-1 | mat-4-1 | Visualisiert den Schlieffen-Plan: Angriffspfeile durch Belgien nach Frankreich. |
-| 3 | mat-4-3 | tagebuch | erarbeitung | k4-4 | C2 | vergegenwaertigung | n/a | false | true | k4-4 | mat-4-2 | Personifiziert den Vormarsch: Siegeszuversicht, dann Erschoepfung und Nachschubprobleme. |
-| 4 | mat-4-4 | karte | erarbeitung | k4-5 | C3 | vergegenwaertigung | illustrativ | false | false | k4-5 | mat-4-3 | Zeigt die Marne-Schlacht: Gallieni-Flanke, Gegenoffensive, 65 km Rueckzug. |
-| 5 | mat-4-5 | bildquelle | sicherung | k4-6 | P | vergegenwaertigung | illustrativ | false | false | k4-6 | mat-4-4 | Schuetzengraben-Foto als visueller Anker: Stellungskrieg statt schnellem Sieg. |
+| # | Material-ID | Typ | Didaktische Funktion | TB-Knoten | SCPL-Phase | material_charakter | bildfunktion | analyseauftrag | personalisiert | primary_tb_knoten | fachbegriffe_eingefuehrt | fachbegriffe_referenziert | Voraussetzung | Kerninhalt (1 Satz) |
+|---|-------------|-----|----------------------|-----------|------------|-------------------|--------------|----------------|----------------|-------------------|------------------------|--------------------------|---------------|---------------------|
+| 1 | mat-4-1 | darstellungstext | erarbeitung | k4-2, k4-1, k4-3 | S+C1 | vergegenwaertigung | n/a | false | false | k4-2 | [Zweifrontenkrieg, Schlieffen-Plan, Zeitluecke] | [Kriegsbegeisterung†] | — | Erklaert Zweifrontenkrieg als Problem und Schlieffen-Plan als Strategie mit Zeitluecke. |
+| 2 | mat-4-2 | karte | erarbeitung | k4-1, k4-4 | C1+C2 | vergegenwaertigung | illustrativ | false | false | k4-1 | [Einmarsch] | [Schlieffen-Plan] | mat-4-1 | Visualisiert den Schlieffen-Plan: Angriffspfeile durch Belgien nach Frankreich. |
+| 3 | mat-4-3 | tagebuch | erarbeitung | k4-4 | C2 | vergegenwaertigung | n/a | false | true | k4-4 | [] | [Einmarsch] | mat-4-2 | Personifiziert den Vormarsch: Siegeszuversicht, dann Erschoepfung und Nachschubprobleme. |
+| 4 | mat-4-4 | karte | erarbeitung | k4-5 | C3 | vergegenwaertigung | illustrativ | false | false | k4-5 | [Schlacht an der Marne, Gegenoffensive] | [Schlieffen-Plan] | mat-4-3 | Zeigt die Marne-Schlacht: Gallieni-Flanke, Gegenoffensive, 65 km Rueckzug. |
+| 5 | mat-4-5 | bildquelle | sicherung | k4-6 | P | vergegenwaertigung | illustrativ | false | false | k4-6 | [Stellungskrieg] | [Schlacht an der Marne, Schlieffen-Plan] | mat-4-4 | Schuetzengraben-Foto als visueller Anker: Stellungskrieg statt schnellem Sieg. |
 
-### Ueberleitungen (Intentionsskizzen — finale Formulierung in Phase 2.1c)
+† Kriegsbegeisterung = Mappe-3-Voraussetzung (k3-1), Stufe 4 (Kontext-FB), MILD-Pruefung
 
-- mat-4-1 → mat-4-2: "Du hast gelesen, dass der Schlieffen-Plan einen Angriff durch Belgien vorsah. Aber wie genau sah dieser Plan auf der Karte aus?"
-- mat-4-2 → mat-4-3: "Die Karte zeigt den geplanten Vormarsch. Doch wie erlebten die Soldaten diesen Marsch durch Belgien und Frankreich?"
-- mat-4-3 → mat-4-4: "Der Soldat beschreibt Erschoepfung und Hunger nach einem Monat Feldzug. Genau in diesem Moment beginnt die franzoesische Gegenoffensive."
-- mat-4-4 → mat-4-5: "An der Marne mussten die deutschen Truppen 65 Kilometer zurueckweichen. Der Plan fuer einen schnellen Sieg war gescheitert. Was folgte stattdessen?"
+### Uebergangsobjekte (v2.0 — strukturiert nach Sektion 4.4 GUETEKRITERIEN_SEQUENZIERUNG)
+
+```json
+[
+  {
+    "von_mat": "mat-4-1",
+    "zu_mat": "mat-4-2",
+    "rueckbezug_inhalt_ref": "Der Darstellungstext hat den Schlieffen-Plan als Strategie gegen den Zweifrontenkrieg erklaert und den Angriff durch Belgien als Kernidee benannt.",
+    "vorausblick_frage": "Wie sah der geplante Vormarsch konkret auf der Karte aus, und welchen Weg sollten die Truppen nehmen?",
+    "kausalitaets_typ": "vertiefend",
+    "intentionsskizze": "Du hast gelesen, dass der Schlieffen-Plan einen Angriff durch Belgien vorsah. Aber wie genau sah dieser Plan auf der Karte aus?"
+  },
+  {
+    "von_mat": "mat-4-2",
+    "zu_mat": "mat-4-3",
+    "rueckbezug_inhalt_ref": "Die Karte hat den geplanten Vormarsch als geographische Strategie mit Angriffspfeilen durch Belgien nach Frankreich visualisiert.",
+    "vorausblick_frage": "Wie erlebten die Soldaten diesen Vormarsch — was bedeutete der Plan fuer die Menschen, die ihn ausfuehren mussten?",
+    "kausalitaets_typ": "perspektivwechsel",
+    "intentionsskizze": "Die Karte zeigt den geplanten Vormarsch. Doch wie erlebten die Soldaten diesen Marsch durch Belgien und Frankreich?"
+  },
+  {
+    "von_mat": "mat-4-3",
+    "zu_mat": "mat-4-4",
+    "rueckbezug_inhalt_ref": "Das Tagebuch beschreibt den Wandel von Siegeszuversicht zu Erschoepfung und Nachschubproblemen nach einem Monat Feldzug.",
+    "vorausblick_frage": "Was geschah militaerisch in genau diesem Moment der Erschoepfung — wie reagierte die franzoesische Seite?",
+    "kausalitaets_typ": "temporal",
+    "intentionsskizze": "Der Soldat beschreibt Erschoepfung und Hunger nach einem Monat Feldzug. Genau in diesem Moment beginnt die franzoesische Gegenoffensive."
+  },
+  {
+    "von_mat": "mat-4-4",
+    "zu_mat": "mat-4-5",
+    "rueckbezug_inhalt_ref": "Die Karte zeigt die Marne-Schlacht mit Gallieni-Flankenangriff und dem Rueckzug der deutschen Truppen um 65 Kilometer.",
+    "vorausblick_frage": "Was folgte aus dem Scheitern des schnellen Sieges — wie sah der Krieg danach konkret aus?",
+    "kausalitaets_typ": "kausal",
+    "intentionsskizze": "An der Marne mussten die deutschen Truppen 65 Kilometer zurueckweichen. Der Plan fuer einen schnellen Sieg war gescheitert. Was folgte stattdessen?"
+  }
+]
+```
 
 ### Sequenzkontext-Objekte (fuer Subagenten-Dispatch)
 

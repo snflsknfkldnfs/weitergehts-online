@@ -1,7 +1,7 @@
 # Guetekriterien Sequenzierung
 
 **Datum:** 2026-04-07
-**Status:** v2.0 — Operationalisierungs-Audit: 7 Input-Felder (P1-P6 + P12), deterministische Prueflogik S1/S5/S7/S8/S13/S14/S15
+**Status:** v2.1 — P1-P8+P12: 10 Input-Felder, Fachbegriff-Taxonomie, Uebergangsobjekt-Schema, deterministische Prueflogik S1-S2/S5/S7-S10/S13-S15
 **Quellen:**
 - FD-Q1 Grundsaetze des GPG-Unterrichts (Artikulationsschemata, Kompetenzstrukturmodell)
 - FD-Q4 Allgemeine Unterrichtsprinzipien (Schroeder, Brunnhuber, Hilbert Meyer)
@@ -127,7 +127,7 @@ Gewichtete Kriterien fuer den AGENT_MATERIAL Q-Gate bei Aufgabe 1.9. Drei Priori
 | # | Kriterium | Operationalisierung | Herkunft |
 |---|---|---|---|
 | S1 | **Artikulationsschema-Konformitaet** | Sequenz folgt dem Artikulationsschema der zutreffenden GPG-Perspektive (historisch/geographisch/sozialpolitisch). Phasenfolge darf nicht verletzt werden. Phasenzuordnung erfolgt ueber `material_charakter` (vergegenwaertigung / besinnung_sachbezogen / besinnung_wertbezogen) und `didaktische_funktion`. | FD-Q1 Artikulationsschemata |
-| S2 | **Vorwissen-Progression** | Kein Material referenziert Konzepte oder Fachbegriffe, die nicht durch ein vorheriges Material (niedrigere Position) oder durch explizites Vorwissen aus vorherigen Mappen eingefuehrt wurden. | FD-Q3 + Brunnhuber Strukturierung |
+| S2 | **Vorwissen-Progression** | Kein Material referenziert Fachbegriffe (`fachbegriffe_referenziert[]`), die nicht durch ein vorheriges Material (`fachbegriffe_eingefuehrt[]` an niedrigerer Position) oder durch Mappe-Voraussetzungen (`tafelbild.voraussetzungen[]`) verfuegbar sind. Strengegrad nach Fachbegriff-Taxonomie (Sektion 4.3). | FD-Q3 + Brunnhuber Strukturierung |
 | S3 | **TB-Knoten-Abdeckung** | Jeder TB-Knoten aus dem fixierten TAFELBILD hat mindestens 1 zugeordnetes Material im Sequenzplan. Kein Knoten bleibt ohne Erarbeitungsweg. | Analogie zu G3 (Erarbeitbarkeit) |
 | S4 | **Didaktische-Funktion-Sequenzlogik** | Die didaktischen Funktionen folgen einer gültigen Reihenfolge: einstieg → erarbeitung → vertiefung → sicherung → transfer. Kein sicherung-Material vor dem letzten erarbeitung-Material. Kein transfer-Material vor sicherung. | FD-Q5 Didaktischer Ort + Artikulationsschemata |
 | S5 | **Vergegenwärtigung vor Besinnung** | Materialien mit `material_charakter` = `vergegenwaertigung` stehen VOR Materialien mit `material_charakter` = `besinnung_sachbezogen`, diese VOR `besinnung_wertbezogen`. Bei Bildquellen: `bildfunktion` = `illustrativ` zaehlt als Vergegenwärtigung, `heuristisch` als Besinnung. | FD-Q2 Roth + Vergegenwärtigung/Besinnung-Prinzip |
@@ -141,7 +141,7 @@ Gewichtete Kriterien fuer den AGENT_MATERIAL Q-Gate bei Aufgabe 1.9. Drei Priori
 |---|---|---|---|
 | S7 | **Vom Anschaulichen zum Abstrakten** | Die Sequenz bewegt sich tendenziell von konkreten, anschaulichen Materialien zu abstrakteren. Messbar ueber Abstraktionsgrad (1-4), verfeinert durch `material_charakter` und `bildfunktion`: Durchschnitt(1. Haelfte) ≤ Durchschnitt(2. Haelfte). | FD-Q5 Anschaulichkeitsprinzip + Schroeder Elementarisierung |
 | S8 | **Kontextgebot Quellenarbeit** | Quellentext- und Bildquellen-Materialien (Typ: quellentext, bildquelle mit `bildfunktion` = `heuristisch`) stehen NICHT an Position 1, es sei denn `didaktische_funktion` = `einstieg` UND `analyseauftrag` = false. Vor jeder Quellenarbeit steht mindestens 1 kontextgebendes Material. | FD-Q3 Vorwissen-Gebot |
-| S9 | **Uebergangs-Kohaerenz** | Jede Ueberleitung (Aufgabe 1.9.4) ist inhaltlich motiviert — sie benennt, was das vorherige Material ergeben hat und welche Frage/welchen Aspekt das naechste Material aufgreift. Rein formale Ueberleitungen ("Als naechstes...") sind unzureichend. | Brunnhuber Strukturierung + Meyer Sinnstiftendes Kommunizieren |
+| S9 | **Uebergangs-Kohaerenz** | Jedes Uebergangsobjekt (Sektion 4.4) hat `rueckbezug_inhalt_ref` ≥ 8 Woerter UND `vorausblick_frage` ≥ 8 Woerter UND validen `kausalitaets_typ`. Rein formale Ueberleitungen (nur `intentionsskizze` ohne strukturierte Felder) sind unzureichend. | Brunnhuber Strukturierung + Meyer Sinnstiftendes Kommunizieren |
 | S10 | **Aktivierung am Sequenzbeginn** | Das erste Material (Position 1) hat die didaktische Funktion `einstieg` und aktiviert Vorwissen oder weckt Neugier. Es fuehrt KEINE neuen Fachbegriffe ein. | Brunnhuber Aktivierung + Meyer Lernfoerderliches Klima |
 
 ### KANN-Kriterien
@@ -164,6 +164,9 @@ Die folgenden Felder muessen pro Material im Sequenzplan (MATERIAL_GERUEST) vorh
 | P4 | `analyseauftrag` | Boolean | true / false | AGENT_MATERIAL | S8 |
 | P5 | `personalisiert` | Boolean | true / false | AGENT_MATERIAL | S13 |
 | P6 | `primary_tb_knoten` | String | kN-X (ein einzelner TB-Knoten-Identifikator) | AGENT_MATERIAL | S14 |
+| P7a | `fachbegriffe_eingefuehrt` | Array[String] | Stufe 1-3 Begriffe, die dieses Material erstmals einfuehrt | AGENT_MATERIAL | S2, S10 |
+| P7b | `fachbegriffe_referenziert` | Array[String] | Stufe 1-3 Begriffe, die Vorwissen voraussetzen | AGENT_MATERIAL | S2 |
+| P8 | Uebergangsobjekte (JSON) | Object | Schema: siehe Sektion 4.4 | AGENT_MATERIAL (Aufgabe 1.9.4) | S9 |
 | P12 | `scpl_phase` | Enum | `S` / `C` / `P` / `L` | AGENT_HEFTEINTRAG (pro TB-Knoten) | S14 |
 
 **Zuweisungsregeln `material_charakter` (P1):**
@@ -192,13 +195,76 @@ Die folgenden Felder muessen pro Material im Sequenzplan (MATERIAL_GERUEST) vorh
 **Abhaengigkeit P12 (AGENT_HEFTEINTRAG → AGENT_MATERIAL):**
 AGENT_HEFTEINTRAG muss in Phase 0.4 jeden TB-Knoten mit `scpl_phase: S|C|P|L` annotieren. Diese Annotation wird von AGENT_MATERIAL in Phase 1 referenziert, um S14 deterministisch zu pruefen. Ohne P12-Annotation ist S14 nur heuristisch pruefbar (Fallback: Inhaltsabgleich mit scpl-Bloecken, fehleranfaellig).
 
-**MATERIAL_GERUEST-Template (erweitert):**
+**MATERIAL_GERUEST-Template (erweitert, v2.0):**
 
 ```markdown
-| # | Material-ID | Typ | Didaktische Funktion | TB-Knoten | SCPL-Phase | material_charakter | bildfunktion | analyseauftrag | personalisiert | primary_tb_knoten | Voraussetzung | Kerninhalt |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | M4-1 | ... | einstieg | ... | S | vergegenwaertigung | n/a | false | true | k4-1 | — | ... |
+| # | Material-ID | Typ | Didaktische Funktion | TB-Knoten | SCPL-Phase | material_charakter | bildfunktion | analyseauftrag | personalisiert | primary_tb_knoten | fachbegriffe_eingefuehrt | fachbegriffe_referenziert | Voraussetzung | Kerninhalt |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | M4-1 | ... | einstieg | ... | S | vergegenwaertigung | n/a | false | true | k4-1 | [] | [] | — | ... |
 ```
+
+### 4.3 Fachbegriff-Taxonomie (v2.0)
+
+Die Prueflogik S2 (Vorwissen-Progression) und S10 (Aktivierung am Sequenzbeginn) erfordern explizite Fachbegriff-Listen pro Material. Die folgende Taxonomie definiert, welche Begriffe als Fachbegriff zaehlen und wie streng ihre Vorwissen-Pruefung erfolgt.
+
+**5-Stufen-Klassifikation:**
+
+| Stufe | Bezeichnung | Definition | Beispiele (hist. Perspektive) | S2-Strengegrad |
+|---|---|---|---|---|
+| 1 | **Struktur-FB** | Ordnet den TB-Aufbau, benennt zentrale Gliederungseinheiten der UE | Zweifrontenkrieg, Schlieffen-Plan, Stellungskrieg | STRENG: Muss explizit durch vorheriges Material eingefuehrt sein |
+| 2 | **Prozess-FB** | Beschreibt Kausalitaeten, Ablaeufe, Mechanismen | Zeitluecke, Flankenangriff, Mobilmachung | NORMAL: Muss vor Referenz an niedrigerer Position stehen |
+| 3 | **Konzept-FB** | Kategoriales Gegensatzpaar oder uebergreifendes Ordnungsmuster | Bewegungskrieg ↔ Stellungskrieg, Angriff ↔ Verteidigung | STRENG: Muss explizit eingefuehrt sein (beide Pole) |
+| 4 | **Kontext-FB** | Curriculum-relevant, teilweise als Vorwissen annehmbar | Erschoepfung, Kriegsbegeisterung, Nachschub | MILD: Kontextuelle Annahme erlaubt (wenn thematisch naheliegend) |
+| 5 | **Nicht-FB** | Reine Lokalisierung, Zahlenwerte, Eigennamen ohne Fachcharakter | Belgien, 65 km, September 1914, Gallieni | IGNORIEREN: Nicht in Listen aufnehmen |
+
+**Zuweisungsregeln:**
+- `fachbegriffe_eingefuehrt[]` enthaelt nur Stufe 1-3 Begriffe, die durch dieses Material **erstmals** in der Mappe eingefuehrt werden
+- `fachbegriffe_referenziert[]` enthaelt nur Stufe 1-3 Begriffe, die durch vorherige Materialien oder Mappe-Voraussetzungen eingefuehrt sein muessen
+- Stufe 4 (Kontext-FB) wird NUR in `fachbegriffe_referenziert[]` aufgenommen, wenn das Material den Begriff in fachanalytischem Kontext verwendet (nicht bei beilaeufiger Erwaehnung)
+- Stufe 5 wird nie aufgenommen
+- Ein Begriff kann in Material N als `eingefuehrt` und in Material N+1 als `referenziert` stehen — das ist der Normalfall
+
+**Mappe-Voraussetzungen:** Begriffe, die in vorherigen Mappen gesichert wurden, gelten als `verfuegbar` und muessen nicht erneut eingefuehrt werden. Referenz: `tafelbild.voraussetzungen[]`.
+
+**Grenzfall-Dokumentation:** Bei Ambiguitaet (z.B. "Ist 'Nachschub' Stufe 2 oder Stufe 4?") entscheidet AGENT_MATERIAL nach Kontext und dokumentiert die Entscheidung im Sequenzplan-Kommentar. Keine perfekte Trennschaerfe angestrebt — Taxonomie dient der Pruefbarkeit, nicht der linguistischen Vollstaendigkeit.
+
+### 4.4 Uebergangsobjekt-Schema (v2.0)
+
+Die Prueflogik S9 (Uebergangs-Kohaerenz) erfordert strukturierte Uebergangsobjekte statt Freitext-Ueberleitungen. Jeder Uebergang zwischen zwei aufeinanderfolgenden Materialien wird als JSON-Objekt beschrieben.
+
+**Schema:**
+
+```json
+{
+  "von_mat": "mat-N-X",
+  "zu_mat": "mat-N-Y",
+  "rueckbezug_inhalt_ref": "Kerninhalt/Ergebnis des vorherigen Materials (1 Satz)",
+  "vorausblick_frage": "Frage oder Aspekt, den das naechste Material aufgreift (1 Satz)",
+  "kausalitaets_typ": "temporal | kausal | kontrastiv | vertiefend | perspektivwechsel",
+  "intentionsskizze": "Ueberleitung als Fliesstext fuer den Escape-Game-Kontext (2-3 Saetze)"
+}
+```
+
+**Feld-Definitionen:**
+
+| Feld | Typ | Pflicht | Funktion |
+|---|---|---|---|
+| `von_mat` | String (mat-ID) | ja | Quell-Material |
+| `zu_mat` | String (mat-ID) | ja | Ziel-Material |
+| `rueckbezug_inhalt_ref` | String | ja | Benennt, was das vorherige Material ergeben hat. S9-Pruefung: != null ∧ Laenge ≥ 8 Woerter |
+| `vorausblick_frage` | String | ja | Benennt, welche Frage/welchen Aspekt das naechste Material aufgreift. S9-Pruefung: != null ∧ Laenge ≥ 8 Woerter |
+| `kausalitaets_typ` | Enum | ja | Klassifiziert die inhaltliche Beziehung zwischen den Materialien |
+| `intentionsskizze` | String | ja | Fliesstext-Ueberleitung fuer Phase 2.1c (SUB_MATERIAL_*-Dispatch) |
+
+**Enum `kausalitaets_typ`:**
+
+| Wert | Bedeutung | Beispiel |
+|---|---|---|
+| `temporal` | Zeitliche Abfolge | "Nachdem X geschah... → Was folgte?" |
+| `kausal` | Ursache-Wirkung | "Weil X scheiterte... → Welche Folgen hatte das?" |
+| `kontrastiv` | Gegensatz/Kontrast | "Der Plan sah X vor, doch die Realitaet..." |
+| `vertiefend` | Detaillierung eines Aspekts | "Du weisst nun, dass X. Aber wie genau...?" |
+| `perspektivwechsel` | Anderer Blickwinkel auf selben Sachverhalt | "Die Karte zeigt den Plan. Doch wie erlebten die Soldaten...?" |
 
 ---
 
@@ -261,15 +327,20 @@ Konkrete Prueflogik fuer jedes Kriterium, damit AGENT_MATERIAL das Q-Gate autono
 
 ### S2: Vorwissen-Progression (MUSS)
 
-**Input-Daten:** Sequenzplan-Tabelle, pro Material: Liste der referenzierten Fachbegriffe/Konzepte, pro Material: Liste der eingefuehrten Fachbegriffe/Konzepte, `tafelbild.voraussetzungen[]` (Vorwissen aus vorherigen Mappen)
+**Input-Daten:** Sequenzplan mit `fachbegriffe_eingefuehrt[]` (P7a) und `fachbegriffe_referenziert[]` (P7b) pro Material, `tafelbild.voraussetzungen[]`
 **Prueflogik:**
 1. Initialisiere `verfuegbares_wissen` = Menge aus `tafelbild.voraussetzungen[]`
 2. Iteriere ueber Materialien in Sequenzreihenfolge (Position 1 → N):
-   a. Pruefe: Alle referenzierten Konzepte dieses Materials ⊆ `verfuegbares_wissen`?
-   b. Fuege die durch dieses Material eingefuehrten Konzepte zu `verfuegbares_wissen` hinzu
-3. Erstelle Verletzungsliste: `[(Material-ID, Konzept, fehlt_seit_Position)]`
-**FAIL wenn:** Verletzungsliste nicht leer
-**Nachbesserung:** Material umpositionieren (Konzept-einfuehrendes Material vor Konzept-referenzierendes) ODER fehlendes Konzept als Vorwissen in Mappen-Voraussetzungen deklarieren (nur bei echtem Vorwissen aus vorheriger Mappe)
+   a. Pruefe: `fachbegriffe_referenziert[]` dieses Materials ⊆ `verfuegbares_wissen`?
+      - Strengegrad nach Taxonomie (Sektion 4.3): Stufe 1+3 STRENG, Stufe 2 NORMAL, Stufe 4 MILD
+      - STRENG: Muss exakt in `verfuegbares_wissen` enthalten sein
+      - NORMAL: Muss an niedrigerer Position stehen (aber nicht zwingend als `eingefuehrt` gelistet, wenn kontextuell ableitbar)
+      - MILD: WARNING statt FAIL bei Verletzung
+   b. Fuege `fachbegriffe_eingefuehrt[]` dieses Materials zu `verfuegbares_wissen` hinzu
+3. Erstelle Verletzungsliste: `[(Material-ID, Begriff, Stufe, fehlt_seit_Position)]`
+**FAIL wenn:** Verletzungsliste enthaelt mindestens 1 Eintrag mit Stufe 1, 2 oder 3
+**WARNING wenn:** Verletzungsliste enthaelt nur Stufe-4-Eintraege
+**Nachbesserung:** Material umpositionieren (begriffe-einfuehrendes Material vor referenzierendes) ODER fehlenden Begriff als Mappe-Voraussetzung deklarieren (nur bei echtem Vorwissen aus vorheriger Mappe) ODER Taxonomie-Einstufung pruefen
 
 ### S3: TB-Knoten-Abdeckung (MUSS)
 
@@ -353,25 +424,30 @@ Konkrete Prueflogik fuer jedes Kriterium, damit AGENT_MATERIAL das Q-Gate autono
 
 ### S9: Uebergangs-Kohaerenz (SOLL)
 
-**Input-Daten:** Ueberleitungstexte aus Sequenzplan
+**Input-Daten:** Uebergangsobjekte (P8, JSON-Schema aus Sektion 4.4) fuer jedes Materialpaar (N-1 → N)
 **Prueflogik:**
-1. Fuer jede Ueberleitung (ab Position 2) pruefe:
-   - Enthaelt die Ueberleitung einen Rueckbezug auf das Ergebnis/den Inhalt des vorherigen Materials?
-   - Enthaelt sie einen Vorausblick auf die Fragestellung/den Aspekt des naechsten Materials?
-   - Ist sie laenger als 8 Woerter? (Mindestsubstanz)
-2. Klassifiziere: `inhaltlich_motiviert` vs. `rein_formal`
-**FAIL wenn:** > 50% der Ueberleitungen `rein_formal`
-**Nachbesserung:** Formale Ueberleitungen durch inhaltliche ersetzen
+1. Fuer jedes Uebergangsobjekt (ab Uebergang von Material 1 → Material 2) pruefe:
+   a. `rueckbezug_inhalt_ref` != null UND Wortanzahl ≥ 8
+   b. `vorausblick_frage` != null UND Wortanzahl ≥ 8
+   c. `kausalitaets_typ` ∈ {temporal, kausal, kontrastiv, vertiefend, perspektivwechsel}
+   d. `intentionsskizze` != null (Fliesstext fuer Phase 2.1c)
+2. Klassifiziere: Objekt ist `vollstaendig` (a+b+c+d) oder `unvollstaendig`
+3. Konsistenz-Check: `rueckbezug_inhalt_ref` muss inhaltlich zum `Kerninhalt` des Quell-Materials passen (semantische Pruefung, nicht exact match)
+**FAIL wenn:** > 50% der Uebergangsobjekte `unvollstaendig` ODER ein Pflichtfeld fehlt
+**Nachbesserung:** Fehlende Felder ergaenzen. Bei `kausalitaets_typ`-Unsicherheit: `vertiefend` als Default
 
 ### S10: Aktivierung am Sequenzbeginn (SOLL)
 
-**Input-Daten:** Material an Position 1
+**Input-Daten:** Material an Position 1, `fachbegriffe_eingefuehrt[]` (P7a), `didaktische_funktion` (P2)
 **Prueflogik:**
 1. `didaktische_funktion` == `einstieg`?
-2. Material fuehrt 0 neue Fachbegriffe ein? (Fachbegriffe erst ab Position 2)
+2. `fachbegriffe_eingefuehrt[]` an Position 1 ist leer ODER enthaelt nur Stufe-4-Begriffe (Kontext-FB)?
+   - Stufe 1-3 Begriffe an Position 1 = FAIL (Fachbegriffe erst ab Position 2)
 3. Material hat aktivierenden Charakter? (Frage, Bild, Provokation, Hypothese — nicht Lehrtext)
-**FAIL wenn:** Position 1 ist kein Einstieg ODER fuehrt Fachbegriffe ein
-**Nachbesserung:** Einstiegsmaterial vorschalten oder Position-1-Material entfachbegrifflichen
+**Sonderfall Rahmen-Einstieg:** Wenn der Escape-Game-Rahmen (rahmen/einstieg.json) die Einstiegsfunktion uebernimmt, darf Position 1 `didaktische_funktion` = `erarbeitung` haben. In diesem Fall: S10-Check entfaellt fuer `didaktische_funktion`, aber die Fachbegriff-Pruefung (Punkt 2) bleibt aktiv.
+**FAIL wenn:** Position 1 fuehrt Stufe 1-3 Fachbegriffe ein (unabhaengig von Rahmen-Einstieg)
+**FAIL wenn:** Position 1 ist kein Einstieg UND kein Rahmen-Einstieg vorhanden
+**Nachbesserung:** Einstiegsmaterial vorschalten ODER `fachbegriffe_eingefuehrt[]` an Position 1 bereinigen (Begriffe auf spaeteres Material verschieben)
 
 ### S11: Materialtyp-Vielfalt (KANN)
 

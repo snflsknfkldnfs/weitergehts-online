@@ -222,16 +222,34 @@ Alle Teile in das MATERIAL_GERUEST_Mappe_N-Format (definiert in WORKFLOW_v4.md S
 
    **Kontroll-Anker: SCPL-Aufbau des Tafelbilds.** Die Sinnstruktur des fixierten Tafelbilds (Situation → Complication → Problem → Loesung) definiert die logische Aufbauhierarchie. Materialien, die Situation-Knoten erarbeiten, stehen VOR Materialien, die Complication-Knoten erarbeiten, diese VOR Problem-Knoten, diese VOR Loesung-Knoten. Wenn SKRIPT-Reihenfolge und SCPL-Aufbau divergieren: SCPL hat Vorrang (das Tafelbild ist die Quintessenz, der SKRIPT-Aufbau kann stellenweise thematische Vor-/Rueckgriffe enthalten).
 
-2. **Didaktische Funktion zuordnen:** Jedes Material erhaelt genau eine Funktion:
+2. **Didaktische Funktion zuordnen:** Jedes Material erhaelt genau eine `didaktische_funktion` (Enum):
    - `einstieg` — Aktiviert Vorwissen, stellt Leitfrage, oeffnet das Thema
    - `erarbeitung` — Vermittelt neues Wissen, fuehrt Fachbegriffe ein
    - `vertiefung` — Vertieft, differenziert, kontextualisiert bereits Erarbeitetes
    - `sicherung` — Fasst zusammen, strukturiert, fixiert Gelerntes
    - `transfer` — Uebertraegt auf neuen Kontext, stellt weitergehende Fragen
 
+2b. **Semantische Klassifikations-Felder zuweisen (v2.0):** Pro Material die folgenden Felder setzen (Zuweisungsregeln: GUETEKRITERIEN_SEQUENZIERUNG.md Sektion 4.2):
+   - `material_charakter`: vergegenwaertigung / besinnung_sachbezogen / besinnung_wertbezogen
+   - `bildfunktion`: illustrativ / heuristisch / n/a (nur bei Bild-Materialien)
+   - `analyseauftrag`: true / false
+   - `personalisiert`: true / false
+   - `primary_tb_knoten`: ein einzelner TB-Knoten-Identifikator (bei Multi-Knoten: der mit dem groessten Erarbeitungsanteil)
+
+2c. **Fachbegriffe klassifizieren (v2.0):** Pro Material die Fachbegriffe nach 5-Stufen-Taxonomie (GUETEKRITERIEN_SEQUENZIERUNG.md Sektion 4.3) zuordnen:
+   - `fachbegriffe_eingefuehrt[]`: Stufe 1-3 Begriffe, die dieses Material erstmals einfuehrt
+   - `fachbegriffe_referenziert[]`: Stufe 1-3 Begriffe, die Vorwissen voraussetzen
+   - Stufe 4 (Kontext-FB) nur bei fachanalytischer Verwendung in `_referenziert[]`
+   - Stufe 5 (Nicht-FB) ignorieren
+
 3. **Voraussetzungen deklarieren:** Pro Material: Welche Material-IDs muessen vorher bearbeitet sein? Leeres Array nur fuer Position 1.
 
-4. **Ueberleitungen skizzieren (Intention):** Pro Material (ausser Position 1): 1-2 Saetze narrativer Uebergang vom vorherigen Material. Funktion: Bruecke zwischen den Materialien, die den SuS den roten Faden sichtbar macht. **Hinweis:** Diese Ueberleitungen sind Intentionsskizzen auf Basis des Design-Plans. Die finalen, auf die konkreten Materialien zugeschnittenen Ueberleitungen werden in Phase 2.1c produziert (VERTRAG_PHASE_2-1c, Achse 5). Das GERUEST liefert die didaktische Absicht, 2.1c formuliert die praezise Zwei-Vektoren-Bruecke.
+4. **Uebergangsobjekte erstellen (v2.0):** Pro Material-Uebergang (Position N-1 → N) ein strukturiertes Uebergangsobjekt nach JSON-Schema (GUETEKRITERIEN_SEQUENZIERUNG.md Sektion 4.4):
+   - `rueckbezug_inhalt_ref`: Was hat das vorherige Material ergeben? (≥ 8 Woerter)
+   - `vorausblick_frage`: Welche Frage greift das naechste Material auf? (≥ 8 Woerter)
+   - `kausalitaets_typ`: temporal / kausal / kontrastiv / vertiefend / perspektivwechsel
+   - `intentionsskizze`: Fliesstext-Ueberleitung fuer Phase 2.1c (2-3 Saetze)
+   **Hinweis:** Die `intentionsskizze` ist die Design-Absicht. Die finalen Ueberleitungen werden in Phase 2.1c produziert (VERTRAG_PHASE_2-1c, Achse 5). Die strukturierten Felder (`rueckbezug_inhalt_ref`, `vorausblick_frage`, `kausalitaets_typ`) sind pruefbar (S9) und bleiben bestehen.
 
 5. **Sequenzkontext-Objekte generieren:** Pro Material das `sequenz_kontext`-Objekt mit `vorher` und `nachher` (jeweils: Material-ID, Typ, Kerninhalt in 1 Satz). Dieses Objekt wird spaeter als Pflicht-Input an die Materialtyp-Subagenten uebergeben.
 
@@ -240,15 +258,14 @@ Alle Teile in das MATERIAL_GERUEST_Mappe_N-Format (definiert in WORKFLOW_v4.md S
 ```markdown
 ## Sequenzplan
 
-| # | Material-ID | Typ | Didaktische Funktion | TB-Knoten | Voraussetzung | Kerninhalt (1 Satz) |
-|---|-------------|-----|----------------------|-----------|---------------|---------------------|
-| 1 | mat-N-1 | [typ] | einstieg | k1-1 | — | [Kerninhalt] |
-| 2 | mat-N-2 | [typ] | erarbeitung | k1-2 | mat-N-1 | [Kerninhalt] |
+| # | Material-ID | Typ | Didaktische Funktion | TB-Knoten | SCPL-Phase | material_charakter | bildfunktion | analyseauftrag | personalisiert | primary_tb_knoten | fachbegriffe_eingefuehrt | fachbegriffe_referenziert | Voraussetzung | Kerninhalt (1 Satz) |
+|---|-------------|-----|----------------------|-----------|------------|-------------------|--------------|----------------|----------------|-------------------|------------------------|--------------------------|---------------|---------------------|
+| 1 | mat-N-1 | [typ] | einstieg | ... | S | vergegenwaertigung | n/a | false | true | k1-1 | [] | [] | — | [Kerninhalt] |
+| 2 | mat-N-2 | [typ] | erarbeitung | ... | C | vergegenwaertigung | illustrativ | false | false | k1-2 | [Begriff-X] | [Begriff-Y] | mat-N-1 | [Kerninhalt] |
 | ... |
 
-### Ueberleitungen
-- mat-N-1 → mat-N-2: "[Narrativer Uebergang]"
-- mat-N-2 → mat-N-3: "[Narrativer Uebergang]"
+### Uebergangsobjekte
+[JSON-Array nach Schema aus GUETEKRITERIEN_SEQUENZIERUNG.md Sektion 4.4]
 ```
 
 **Sequenzkontext fuer Subagenten:** Aus dem Sequenzplan generiert AGENT_MATERIAL fuer jeden Subagenten-Aufruf eine individuelle Sequenzkontext-Tabelle (Format siehe SUB_MATERIAL_*.md, Abschnitt "Eingabe: Sequenzkontext").

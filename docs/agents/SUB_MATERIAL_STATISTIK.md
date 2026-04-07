@@ -67,6 +67,7 @@ Referenziere ausschliesslich Konzepte und Fachbegriffe, die laut "Vorausgesetzte
 | SQ-2 | Kein Fachbegriff aus "Noch nicht eingefuehrt" verwendet |
 | SQ-3 | Material macht den zugeordneten TB-Knoten erarbeitbar |
 | SQ-4 | Narrativer Anschluss an vorheriges Material erkennbar |
+| SQ-5 | Produziertes Material ist konsistent mit `material_charakter` aus MATERIAL_GERUEST (vergegenwaertigung → narrativ-anschaulich, besinnung_sachbezogen → analytisch, besinnung_wertbezogen → urteilend) |
 
 ---
 

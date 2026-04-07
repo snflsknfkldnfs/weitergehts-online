@@ -4,6 +4,26 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-07 — Schritt 2: Fachbegriff-Felder + Uebergangs-Strukturierung + SQ-5
+
+**Phase:** Phase-0-Standardisierung
+**Modus:** EXECUTE (Implementation aus Audit-Befund v2, Patches P7, P8, IR4)
+**Session:** 22
+
+**P7+P8+IR4 implementiert. 12 Artefakte modifiziert.**
+- GUETEKRITERIEN_SEQUENZIERUNG.md: Sektion 4.3 (5-Stufen-Fachbegriff-Taxonomie mit Strengegraden), Sektion 4.4 (Uebergangsobjekt-JSON-Schema mit kausalitaets_typ-Enum)
+- P7a/b: `fachbegriffe_eingefuehrt[]` + `fachbegriffe_referenziert[]` als Pflichtfelder, S2-Prueflogik auf Taxonomie-basierte Strengegrade umgestellt (STRENG/NORMAL/MILD)
+- P8: S9-Prueflogik von Freitext-Bewertung auf strukturierte Feld-Pruefung umgestellt (rueckbezug + vorausblick + kausalitaets_typ)
+- S10-Prueflogik: fachbegriffe_eingefuehrt[]-basiert + Rahmen-Einstieg-Sonderfall definiert
+- Sektion 4.2 Input-Tabelle um P7a/P7b/P8 erweitert, Katalog-Eintraege S2/S9 aktualisiert
+- IR4: SQ-5 (`material_charakter`-Konformitaet) in alle 7 SUB_MATERIAL_*-Prompts eingefuegt
+- AGENT_MATERIAL: Aufgabe 1.9 um Schritte 2b (semantische Klassifikation), 2c (Fachbegriff-Klassifikation), 4 (Uebergangsobjekte) erweitert, Output-Template auf 15 Spalten
+- Mappe-4-Retrofit: fachbegriffe pro Material + 4 strukturierte Uebergangsobjekte befuellt
+- Verifikation: S2 PASS, S9 PASS, S10 FAIL (erwartet, konsistent mit bestehendem Q-Gate)
+- Naechster Schritt: Schritt 3 (P9-P11: S15 SKRIPT-Index-Konvention, S9 Feld-Prueflogik-Finalisierung, S10 Rahmen-Interaktion) + Schritt 4 (P13-P14: S6-Auslagerung, S12-Integration)
+
+---
+
 ## 2026-04-07 — Schritt 1: Schema-Erweiterung GUETEKRITERIEN_SEQUENZIERUNG v2.0
 
 **Phase:** Phase-0-Standardisierung
