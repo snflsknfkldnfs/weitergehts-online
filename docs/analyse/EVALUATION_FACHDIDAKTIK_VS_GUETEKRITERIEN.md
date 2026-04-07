@@ -423,3 +423,44 @@ Diese Fragen definieren den Analyse-Fokus fuer die angekuendigten 4-8 geschichts
 - **Frage 4 (Elementarisierungs-Stufen):** NICHT ADRESSIERT (bereits beantwortet durch FD-Q2+FD-Q4).
 
 **Verwertungsentscheidung:** INTEGRIEREN SELEKTIV (Beutelsbacher Konsens als Quellengrundlage fuer SK15-Differenzierung. Ueberwaeltigungsverbot als Anti-Pattern notiert. Restliche Politikdidaktik-Inhalte fuer geschichtsdidaktische Pipeline nicht primaer relevant. Alle 4 offenen Fragen jetzt beantwortet.)
+
+### 9.6 — FD-Q7: Sozialwissenschaftliche Perspektive — Methodische Vollzugsformen
+
+**Quelle:** Fachdidaktische Grundlagentexte GPG, Methodenkatalog Politik/Sozialkunde (nicht-oeffentlich).
+**Relevanz fuer Pipeline:** MITTEL — Primaer Methoden-Katalog (Mikro-/Makromethoden), nicht Sequenzierungslogik. Hauptwert: Fallanalyse-Verlaufsmodell als kanonisches sozialkundliches Artikulationsschema, Mikro/Makro-Scope-Unterscheidung fuer AGENT_MATERIAL, Spielformen-Taxonomie fuer Produkt-Einordnung.
+
+**Bestaetigung bestehender Kriterien:**
+
+- **S1:** Bestaetigt und praezisiert. Das Fallanalyse-Verlaufsmodell (Konfrontation → Information → Resolution → Disputation → Kollation) ist das ausformulierte sozialkundliche Artikulationsschema. Es korrespondiert mit dem in FD-Q6 notierten Reinhardt-Schema (informieren → argumentieren → reflektieren), liefert aber die 5-Phasen-Detailstruktur. S1-konform: perspektivspezifisches Schema vorhanden. Optional vorgeschaltete Phase "Vorkurs" (Vorinformation durch Lehrkraft) entspricht der Vorwissen-Aktivierung (S2).
+- **S5:** Bestaetigt. Phasen-Mapping: Konfrontation + Information = Vergegenwaertigung (Sachgrundlage aufbauen). Resolution + Disputation = Besinnung (Loesungen abwaegen, Entscheidungen diskutieren). Kollation = Transfer/Sicherung (Vergleich mit realer Loesung). Strikte V-vor-B-Ordnung eingehalten.
+- **S10:** Bestaetigt durch Mikromethoden-Katalog. Brainstorming (§2.1.4), Blitzlicht (§2.1.6), Stellung nehmen (§2.1.7) als Einstiegsmethoden — alle zielen auf Vorwissen-Aktivierung oder Neugier-Weckung. Konsistent mit S10.
+- **S14:** Bestaetigt. Fallanalyse-Phasen mappen auf SCPL: Konfrontation = S (Ausgangssituation praesentieren), Information = C (Komplexitaet des Falls entfalten), Resolution = P (Problem kristallisiert, Loesungswege abwaegen), Disputation + Kollation = L (Loesung durch Deliberation und Realitaetsabgleich). Strukturelle Isomorphie.
+
+**Neue Perspektiven:**
+
+1. **Fallanalyse-Verlaufsmodell als sozialkundliches S1-Schema (§2.2.1):** Das 5-Phasen-Modell (+ Vorkurs) ist die detaillierteste Artikulationsschema-Variante fuer die sozialwissenschaftliche Perspektive. Fuer die Pipeline: Wenn S1 fuer sozialkundliche Themen angewendet wird, ist dieses Schema die Referenz (analog zum historischen Dreischritt Vergegenwaertigung-Besinnung-Sicherung). FD-Q1 hatte bereits das sozialpolitische Schema (Problemstellung → Problementfaltung → Problemloesung → Wertung → Sicherung). FD-Q7 liefert die Makromethoden-Variante (Fallanalyse) mit identischer Grundstruktur.
+   → Handlungsbedarf: GERING. S1 ist bereits perspektivabhaengig definiert. Das Fallanalyse-Modell bestaetigt die bestehende Architektur, liefert aber kein neues Gate-Kriterium. Bei naechster S1-Revision als Referenzschema dokumentieren.
+
+2. **Mikro/Makro-Methoden-Unterscheidung (Klippert §2):** Mikromethoden = elementare Einzeltechniken (Textanalyse, Karikatur-Analyse, Debatte, Brainstorming etc.). Makromethoden = komplexe, mehrphasige Vollzugsformen aus mehreren Mikromethoden (Fallanalyse, Erkundung, Planspiel, Projekt, Sozialstudie). Fuer die Pipeline: Escape-Game = Makromethode (Spielform). Einzelne Mappen verwenden Mikromethoden. Diese Unterscheidung impliziert eine Scope-Constraint fuer AGENT_MATERIAL: Eine Mappe sollte nicht selbst eine Makromethode sein (z.B. keine komplette Erkundung innerhalb einer Mappe), sondern Mikromethoden-Elemente verwenden.
+   → Handlungsbedarf: NOTIEREN fuer AGENT_MATERIAL. Scope-Pruefpunkt: material_typ-Auswahl auf Mikromethoden-kompatible Formate beschraenken. Makromethoden-Scope ist Game-Ebene (ueber Mappen hinweg), nicht Mappen-Ebene.
+
+3. **Spielformen-Taxonomie (§2.2.6-2.2.9):** Rollenspiel (individuelle Rollen, affektiv-empathisch), Planspiel (institutionelle Rollen, simulierte Umwelt, komplex), Entscheidungsspiel (abgeschlossener Fall, Pro/Contra, Urteil). Escape-Game in unserer Pipeline ist am naechsten ein **Entscheidungsspiel-Hybrid**: SuS erhalten Information → bewerten → entscheiden (Raetsel loesen = Entscheidung treffen). Kein Rollenspiel (keine personalen Rollen), kein Planspiel (keine institutionelle Simulation). Relevant fuer Produkt-Dokumentation und Aussenkommunikation.
+   → Handlungsbedarf: NEIN fuer GK. Fuer Produkt-Beschreibung (README, AGENT_DIDAKTIK-Spec) als methodische Einordnung nuetzlich.
+
+4. **Fallanalyse-Typologisierung (§2.2.1):** Fuenf Falltypen: Entscheidungsfall, Problemfindungsfall/Beurteilungsfall, Informationsfall, Beurteilungsfall, Untersuchungsfall. Escape-Game-Mappen sind typischerweise Informationsfaelle (SuS erhalten Informationen, ordnen und bewerten sie) oder Beurteilungsfaelle (SuS bilden ein Urteil auf Basis gegebener Fakten). Entscheidungsfaelle waeren moeglich, erfordern aber offenere Aufgabenformate.
+   → Handlungsbedarf: GERING. Optionale Annotation fuer AGENT_DIDAKTIK: Falltyp pro Mappe als Metadatum. Nicht blockierend.
+
+5. **Karikatur-Analyse: Ueberladungsfehler (§2.1.2):** Typischer Fehler bei Karikatur-Einsatz: "Ueberladung" — zu viele Aspekte auf einmal ansprechen, zentrale Aussage wird nicht erkannt. Fuer die Pipeline: Bestaetigt FD-Q3s Unterscheidung illustrative vs. heuristische Bildfunktion. Karikaturen sind per Definition heuristisch und erfordern fokussierte Analyseauftraege. Konsistent mit S8-Kontextgebot (Karikatur braucht Dekodierungshilfe).
+   → Handlungsbedarf: NEIN. Bereits durch FD-Q3 abgedeckt (S8-Annotation fuer heuristische Bildquellen).
+
+6. **Expertenbefragung + Kontroversitaetsgebot (§2.1.13):** Explizite Notiz: "Experten sind haeufig nicht objektiv → Kontroversitaetsgebot, Ueberwaeltigungsverbot (andere Positionen auch darstellen)." Verstaerkt FD-Q6-Befund zum Beutelsbacher Konsens. Fuer die Pipeline: Wenn AGENT_MATERIAL Experten-Zitate als Quellentyp verwendet, muss S8-Kontext auf Bias hinweisen und Gegenperspektive gefordert werden (SK15).
+   → Handlungsbedarf: NEIN (bereits durch FD-Q6 SK15-Empfehlung abgedeckt).
+
+**Antworten auf offene Punkte (Sektion 7):**
+
+- **Frage 1 (Narrativitaet):** NICHT ADRESSIERT (Methoden-Katalog, nicht Narrativitaetstheorie). Bereits beantwortet durch FD-Q2.
+- **Frage 2 (Kontroversitaet):** VERSTAERKT (nicht neu beantwortet). Pro-Contra-Debatte (§2.1.9) und Expertenbefragung (§2.1.13) als methodische Operationalisierungen des Kontroversitaetsgebots. Bestaetigt FD-Q6-Befund.
+- **Frage 3 (Quellenarten-Progression):** NICHT ADRESSIERT. Bereits beantwortet durch FD-Q2+FD-Q3.
+- **Frage 4 (Elementarisierungs-Stufen):** NICHT ADRESSIERT. Bereits beantwortet durch FD-Q2+FD-Q4.
+
+**Verwertungsentscheidung:** BESTAETIGEN + NOTIEREN (Keine neuen S1-S15-Eingriffe. Fallanalyse-Verlaufsmodell als Referenzschema fuer S1 bei sozialkundlichen Themen dokumentiert. 2 Notizen fuer AGENT_MATERIAL/AGENT_DIDAKTIK: Mikro/Makro-Scope-Constraint und Spielformen-Taxonomie. Alle 4 offenen Fragen weiterhin beantwortet, Frage 2 verstaerkt.)

@@ -4,6 +4,22 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-07 — Skript-Analyse 6: FD-Q7 Methodische Vollzugsformen Sozialwissenschaftliche Perspektive
+
+**Phase:** Phase-0-Standardisierung
+**Modus:** EVALUATE
+**Session:** 20
+
+**Skript 6 analysiert: FD-Q7 (Fachdidaktische Grundlagentexte GPG, Methoden-Katalog Politik/Sozialkunde)** — primaer bestaedigend.
+- Fallanalyse-Verlaufsmodell (5 Phasen) als kanonisches sozialkundliches Artikulationsschema fuer S1 dokumentiert
+- Mikro/Makro-Methoden-Unterscheidung (Klippert): Escape-Game = Makromethode, Mappen = Mikromethoden-Scope
+- Spielformen-Taxonomie: Escape-Game als Entscheidungsspiel-Hybrid klassifiziert
+- Frage 2 (Kontroversitaet) verstaerkt: Pro-Contra-Debatte + Expertenbefragung als methodische Operationalisierungen
+- 2 Notizen fuer AGENT_MATERIAL/AGENT_DIDAKTIK (Mikro/Makro-Scope, Spielformen-Taxonomie)
+- Verwertung: BESTAETIGEN + NOTIEREN (keine neuen GK-Eingriffe)
+
+---
+
 ## 2026-04-07 — Skript-Analyse 5: FD-Q6 Sozialwissenschaftliche Perspektive
 
 **Phase:** Phase-0-Standardisierung
