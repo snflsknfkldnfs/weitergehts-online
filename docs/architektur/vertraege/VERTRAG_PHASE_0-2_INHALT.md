@@ -1,6 +1,6 @@
 # VERTRAG Phase 0.2 — AGENT_INHALT (Inhaltsbasis + Artefakt-Sichtung)
 
-**Version:** v1.1 (Phase IV Architektur-Evaluation)
+**Version:** v1.2 (Welle-1-Patches: Quellenorientierung-Downstream)
 **Datum:** 2026-04-06 (v1.0), 2026-04-06 (v1.1 — AGENT_ARTEFAKT-Integration konsistent mit WORKFLOW_v4.1)
 **Extrahiert aus:** ORCHESTRATOR.md §0.2, WORKFLOW_v4.md §5 Schritt 0.2 (v4.1), Game-1 INHALTSBASIS (Ist-Format)
 **Kanonisch fuer:** Phase 0.2 jedes neuen Escape-Games
@@ -105,7 +105,7 @@ AGENT_INHALT recherchiert die faktische Grundlage fuer ein Escape-Game auf Basis
 
 | ID | Kriterium | Pruefung | Severity |
 |---|---|---|---|
-| QI-RC1 | SKRIPT-Tauglichkeit | Pro Mappe genuegend Fakten + Akteure + Artefakte, um einen 600-900W Skript-Chunk zu stuetzen. Keine Mappe mit weniger als 8 Fakten + 2 Akteure + 2 Artefakte. | HIGH |
+| QI-RC1 | SKRIPT-Tauglichkeit | Pro Mappe genuegend Fakten + Akteure + Artefakte, um einen 600-900W Skript-Chunk zu stuetzen. Keine Mappe mit weniger als 8 Fakten + 2 Akteure + 2 Artefakte. Pro Mappe mindestens 1 Quellenbezug dokumentiert (Dokument, Brief, Karte, Bericht, Fotografie), der im SKRIPT als Quellenorientierung (SK18) verwendbar ist. | HIGH |
 | QI-RC2 | TAFELBILD-Tauglichkeit | Pro Mappe genuegend strukturiertes Material (Kausalitaeten, Chronologien, Begriffshierarchien), um ein SCPL-Tafelbild ableiten zu koennen. Kein reines Faktenaggregat ohne innere Struktur. | MEDIUM |
 | QI-RC3 | Material-Tauglichkeit | Pro Mappe mindestens 2 verschiedene Artefakt-Typen (foto + karte, zitat + rollenprofil, etc.), damit Phase-1 Materialtyp-Diversitaet moeglich ist. | MEDIUM |
 

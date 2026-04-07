@@ -1,7 +1,7 @@
 # Guetekriterien Skript-Erstellung
 
-**Datum:** 2026-03-28
-**Status:** v1 — fachdidaktisch fundiert, bereit fuer AGENT_SKRIPT
+**Datum:** 2026-04-07
+**Status:** v1.1 — SK18 Quellenorientierung ergaenzt (Welle-1-Patch RA4-F01 CRITICAL)
 **Quellen:**
 - GPG B1 Vergegenwärtigung im Geschichtsunterricht (Roth, Gestaltungsprinzipien der Erzaehlung, Aspekte der Vergegenwärtigung)
 - DG B1 Allgemeine Unterrichtsprinzipien (Schroeder, Brunnhuber, Hilbert Meyer)
@@ -100,6 +100,7 @@ GPG B1 praezisiert: Vergegenwärtigung schafft **Kenntnisse** (Vordergrund), Bes
 | SK5 | **Sprachliche Angemessenheit** | Wortschatz, Satzbau und Abstraktionsniveau sind auf R7-Mittelschule kalibriert. Fachbegriffe bei Erstverwendung erklaert. Keine schulbuchuntypische Syntax | Schroeder "Fasslichkeit" (DG B1), Stil-Constraints AGENT_SKRIPT |
 | SK6 | **Vergegenwärtigung vor Besinnung** | Innerhalb jedes Chunks: anschaulich-narrative Passagen (Vergegenwärtigung) VOR analytisch-erklaerenden Passagen (Besinnung). Kein Chunk steigt mit Analyse oder Bewertung ein | GPG B1, Artikulationsschema Modell 2 (GPG GB) |
 | SK7 | **Multikausualitaet** | Historische Ereignisse werden nie monokausal erklaert. Wo mehrere Ursachen/Faktoren vorliegen, werden mindestens 2 benannt und in Beziehung gesetzt | GPG GB Fachprinzip |
+| SK18 | **Quellenorientierung** | Historische Quellen sind im Narrativ verortet: Was wissen wir woher? Pro Chunk mindestens 1 expliziter Quellenbezug (z.B. "Ein Brief von X zeigt...", "Auf einer Karte von 1914 sieht man...", "Historiker fanden heraus, dass..."). Kein Chunk, in dem alle Fakten als gesichertes Wissen praesentiert werden, ohne dass die Herkunft dieses Wissens erkennbar wird. Stellt die Grundlage fuer quellenorientierte Materialien in Phase 1/2 her | GPG GB Fachprinzip Quellenorientierung, GPG B2 Fachspezifische Arbeitsweisen |
 
 ### 3.2 SOLL-Kriterien (Verletzung = Optimierungshinweis)
 
@@ -215,7 +216,18 @@ SK3 Anschaulichkeit: FAIL — Chunk 2, §4: "Imperialismus fuehrte zu Spannungen
 
 **Ausnahme:** Direkte Kausalitaet im Einzelfall ("Er schoss, weil er die Monarchie hasste") darf monokausal sein. Strukturelle Erklaerungen ("Der Krieg brach aus, weil...") muessen multikausal sein.
 
-### 6.6 SK8 Gestaltungsprinzipien-Breite — Checkliste pro Chunk
+### 6.6 SK18 Quellenorientierung — Quellenbezuege pruefen
+
+**Methode:** Pro Chunk zaehlen: Wie viele Stellen machen erkennbar, WOHER das praesentierte Wissen stammt? Quellenbezuege koennen sein: Verweis auf Dokumente ("ein Brief zeigt..."), Artefakte ("auf einer Karte sieht man..."), Augenzeugenberichte ("ein Soldat schrieb..."), archäologische Funde, historische Forschung ("Historiker fanden heraus...").
+
+**Schwellenwert:** Mindestens 1 expliziter Quellenbezug pro Chunk. Ideal: 2-3, verteilt ueber den Chunk.
+
+**FAIL-Muster:** "Die Lebensbedingungen in den Fabriken waren schlecht. Die Arbeiter mussten 14 Stunden am Tag arbeiten." — Kein Hinweis, woher dieses Wissen stammt.
+**PASS-Muster:** "Aus Fabrikberichten der Zeit wissen wir: Arbeiter mussten bis zu 14 Stunden am Tag schuften." — Quelle benannt.
+
+**Abgrenzung zu Phase 2:** SK18 stellt sicher, dass das SKRIPT die narrativen Grundlagen fuer quellenorientierte Materialien legt. Die Quellen selbst werden in Phase 0.2 (INHALTSBASIS) identifiziert und in Phase 1/2 als Materialien aufbereitet. SK18 prueft nicht die Quellenarbeit der SuS, sondern ob das Narrativ Quellenherkunft sichtbar macht.
+
+### 6.7 SK8 Gestaltungsprinzipien-Breite — Checkliste pro Chunk
 
 **Methode:** Pro Chunk die 8 Gestaltungsprinzipien als Checkliste durchgehen:
 

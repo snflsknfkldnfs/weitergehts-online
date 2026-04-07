@@ -1,6 +1,6 @@
 # VERTRAG Phase 0.3 — AGENT_SKRIPT (Didaktisiertes Skript)
 
-**Version:** v1.1 (Phase IV Architektur-Evaluation)
+**Version:** v1.2 (Welle-1-Patches: SK18 Quellenorientierung)
 **Datum:** 2026-04-06
 **Extrahiert aus:** ORCHESTRATOR.md §0.3, WORKFLOW_v4.md §3, GUETEKRITERIEN_SKRIPT.md (SK1-SK17), Game-1 SKRIPT (Ist-Format)
 **Kanonisch fuer:** Phase 0.3 jedes neuen Escape-Games
@@ -118,7 +118,7 @@ Gemaess GUETEKRITERIEN_SKRIPT.md. Dreistufig:
 
 | Kategorie | Kriterien | Severity | Aktion bei Verletzung |
 |---|---|---|---|
-| MUSS | SK1-SK7 (Vergegenwärtigung, Elementarisierung, Anschaulichkeit, Strukturiertheit, Sprachliche Angemessenheit, Phasenfolge, Multikausualitaet) | BLOCKER | Ueberarbeitung vor User-Review |
+| MUSS | SK1-SK7, SK18 (Vergegenwärtigung, Elementarisierung, Anschaulichkeit, Strukturiertheit, Sprachliche Angemessenheit, Phasenfolge, Multikausualitaet, Quellenorientierung) | BLOCKER | Ueberarbeitung vor User-Review |
 | SOLL | SK8-SK12, SK16 (Gestaltungsprinzipien-Breite, Multiperspektivitaet, Sachbezogene Motivierung, Spannungsbogen, Sandwich-Qualitaet, Perspektiven-Diversitaet) | HIGH | Hinweis als [SK-HINWEIS] im Output |
 | KANN | SK13-SK15, SK17 (Gegenwartsprinzip, Zeitkolorit, Kontroversitaet, Umfangs-Plausibilitaet) | MEDIUM | Nur bei expliziter Nachfrage |
 

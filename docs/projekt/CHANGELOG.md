@@ -4,6 +4,38 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-07 — Welle-1-Patches (5 Massnahmen aus Qualitaets-Audit)
+
+**Phase:** Phase IV — Infrastruktur-Schaerfung Welle 1
+**Modus:** EXECUTE
+**Session:** 15
+
+**5 Patches basierend auf Audit-Findings + User-Entscheidungen:**
+
+1. **W1-1 Eskalationspfade (M-QA2, QA-C3 CRITICAL):**
+   - VERTRAG_DIDAKTIK v1.2: §4a neu — 5 Eskalationstypen (E-D1 bis E-D5), Fallback mit Q-Gate-Reprüfung, Audit-Spur-Pflicht, Didaktische Implikations-Pruefung, Eskalations-Log als Pflicht-Sektion
+   - VERTRAG_HEFTEINTRAG v1.1: Gate-Urteil erweitert um 3 Eskalationstypen (E-H1 bis E-H3)
+
+2. **W1-2 Complication[]-Erweiterung (M-QA3):**
+   - VERTRAG_HEFTEINTRAG: Complication[] von "narrative Wendepunkte" zu "didaktische Problematisierung aus Schuelerperspektive" erweitert. `typ`-Feld (narrativ/konzeptuell/kontrastiv/kausal) in JSON-Struktur + QH3
+
+3. **W1-3 Ordnungsheuristiken (M-QA1 light):**
+   - AGENT_DIDAKTIK: H1 "Chronologische Schnitte" → "Natuerliche Ordnungsschnitte" (chronologisch + kategorial). H5 "Schluesselereignis" → "Konkreter Anker fuer Vergegenwärtigung" (Ereignis + Fallbeispiel + Situation)
+   - VERTRAG_DIDAKTIK: QD9 "chronologisch-thematisches Verschraenkungsproblem" → "Ordnungs-Verschraenkungsproblem"
+
+4. **W1-4 SK18 Quellenorientierung (RA4-F01 CRITICAL):**
+   - GUETEKRITERIEN_SKRIPT v1.1: SK18 als MUSS-Kriterium (min. 1 Quellenbezug/Chunk). §6.6 Operationalisierung mit PASS/FAIL-Mustern
+   - VERTRAG_SKRIPT v1.2: SK18 in MUSS-Zeile aufgenommen
+   - VERTRAG_INHALT v1.2: QI-RC1 um Quellenbezug-Anforderung ergaenzt
+
+5. **W1-5 JSON-Schema (RA1-F03, RA3-F01):**
+   - NEU: docs/architektur/SCHEMA_HEFTEINTRAG_JSON.md — Formale JSON-Schema-Definition mit Validierungsregeln, Placeholder-Verbot, Phase-2.0-Uebernahme-Protokoll
+   - VERTRAG_HEFTEINTRAG: Schema-Referenz ergaenzt
+
+**Dateien:** 6 modifiziert (4 Vertraege + 1 Guetekriterien + 1 Agent), 1 neu (Schema-Dokument)
+
+---
+
 ## 2026-04-07 — User-Entscheidungen M-QA1 bis M-QA4
 
 **Phase:** Phase IV — Phase-0-Qualitaets-Audit Abschluss

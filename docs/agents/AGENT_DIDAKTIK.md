@@ -311,9 +311,9 @@ Nach Fertigstellung des DIDAKTIK_RAHMEN fuehrt AGENT_DIDAKTIK den folgenden Self
 
 Die folgenden Heuristiken unterstuetzen Aufgabe 2 (Mappen-Aufteilung). Sie sind KEINE starren Regeln, sondern Orientierungshilfen. Die endgueltige Aufteilung basiert auf fachdidaktischem Urteil.
 
-### H1: Chronologische Schnitte bevorzugen
+### H1: Natuerliche Ordnungsschnitte bevorzugen
 
-Bei historischen Themen natuerliche Zaesuren nutzen (Schlachten, Vertraege, Regierungswechsel). Jede Mappe sollte einen klar abgrenzbaren Zeitabschnitt oder Ereigniskomplex abdecken.
+Bei der Mappen-Aufteilung natuerliche Zaesuren der gewaehlten Ordnung nutzen. Bei chronologischen Themen: zeitliche Zaesuren (Schlachten, Vertraege, Regierungswechsel). Bei kategorialen Themen: thematische Cluster (Lebensbereiche, Akteursgruppen, Raumdimensionen). Jede Mappe sollte einen klar abgrenzbaren Abschnitt innerhalb der gewaehlten Ordnung abdecken.
 
 ### H2: Ein zentrales Konzept pro Mappe
 
@@ -327,9 +327,9 @@ Vor dem Festlegen einer Mappe pruefen: Gibt es genuegend potenzielle Materialien
 
 Zwischen je zwei aufeinanderfolgenden Mappen muss ein natuerlicher Uebergang moeglich sein ("Sandwich-Faehigkeit"): Die Erkenntnis der Mappe N wirft eine Frage auf, die Mappe N+1 beantwortet.
 
-### H5: Schluesselereignis-Verankerung
+### H5: Konkreter Anker fuer Vergegenwärtigung
 
-Jede Mappe sollte mindestens ein konkretes, datierbares Ereignis enthalten, das als Anker fuer die Vergegenwärtigung dient. Rein strukturelle Mappen (z.B. "Ursachenkomplex" ohne Ereignis) sind zu abstrakt fuer R7-Niveau.
+Jede Mappe sollte mindestens einen konkreten Ankerpunkt enthalten, der Vergegenwärtigung ermoeglicht. Bei Ereignisgeschichte: datierbares Ereignis. Bei konzeptuellen Themen: konkretes Fallbeispiel, exemplarische Person oder anschauliche Situation. Rein abstrakte Mappen ohne konkreten Anker sind zu abstrakt fuer R7-Niveau — die didaktische Zuschreibung einer konkreten Situation ist immer moeglich und noetig.
 
 ### H6: Vorgaenger-Kontinuitaet
 
