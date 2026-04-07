@@ -294,3 +294,55 @@ Diese Fragen definieren den Analyse-Fokus fuer die angekuendigten 4-8 geschichts
 - **Frage 4 (Elementarisierungs-Stufen):** BEANTWORTET. §3 (Aufgabe des Lehrers) und §9.2 (Diagramm) liefern ein Zwei-Stufen-Modell: (1) Vergegenwaertigung = Elementarisierung auf Faktenniveau (Kenntnisse, Vordergrund, Addition historischer Fakten), (2) Besinnung = Abstraktion auf Erkenntnissniveau (Erkenntnisse, Hintergrund, Zusammenhang/Einordnung/Wertung). Das ist kein mehrstufiges Elementarisierungsmodell, sondern eine binaere Unterscheidung. Fuer unsere Pipeline: Die SCPL-Struktur bildet dies ab — S/C = Vergegenwaertigungsebene (was passiert?), P/L = Besinnungsebene (was bedeutet es?).
 
 **Verwertungsentscheidung:** INTEGRIEREN (S5 bestaetigt, Roth-Extraktion vollstaendig, 3 AGENT_SKRIPT-Notizen, Karikatur-Sonderfall fuer S8, 3 von 4 offenen Fragen jetzt beantwortet oder teilbeantwortet).
+
+### 9.3 — FD-Q3: Fachspezifische Arbeitsweisen — Historische Perspektive
+
+**Quelle:** Fachdidaktische Grundlagentexte GPG (nicht-oeffentlich).
+**Relevanz fuer Pipeline:** HOCH — Primaerquelle fuer S2 (Vorwissen-Progression), S8 (Kontextgebot Quellenarbeit). Liefert Quellentypologie und Bilderschliessungs-Verlaufsstruktur.
+
+**Bestaetigung bestehender Kriterien:**
+
+- **S2:** Direkt bestaetigt. §1.2.1 Textquellen-Auswahlkriterien: "Das noetige geschichtliche Vorwissen muss bei den Schuelern vorhanden sein." §3.2 Bildauswahl: "Fuer welches Bild stehen schon Vorinformationen zur Verfuegung, die den Zugang erleichtern?" — S2-Operationalisierung korrekt.
+- **S5:** 6-Stufen-Bilderschliessung (§3.3) bestaetigt V-vor-B-Prinzip auf Material-Mikroebene: Vorbereitung/Einstimmung → Betrachtung → Beschreibung → Analyse → Deutung/Quellenkritik → Sicherung. Konkrete Begegnung zwingend VOR Analyse und Deutung.
+- **S7:** Implizit bestaetigt. Sachquellen-Erschliessung (§1.2.2): Wahrnehmung → Erschliessung → Erkenntnis = anschaulich → analytisch → abstrakt. Bildquellen: illustrative Funktion (konkret) steht unter heuristischer Funktion (abstrakt) in der Anforderungshierarchie.
+- **S8:** Direkt bestaetigt. §3.3 Stufe 1 (Vorbereitung): "Einfuehrung in das Zeitkolorit, Liefern von Hintergrundinformationen" — Kontext MUSS vor Quellenarbeit stehen. §3.2: "Welches Bild ist weitgehend ohne ergaenzende Medien oder Hinweise bzw. Vorinformationen von den Schuelern erschliessbar?" — Kontextbedarf ist Bildauswahl-Kriterium. S8-Herkunft (FD-Q3 Vorwissen-Gebot) korrekt.
+- **S10:** Bestaetigt. §3.5 Didaktischer Ort: Bild kann "eine Problemfrage ausloesen" und "einen Sachverhalt problematisieren" — diese Funktionen sind Einstiegs-Funktionen. S10 (Aktivierung am Sequenzbeginn) konsistent.
+
+**Neue Perspektiven:**
+
+1. **Ueberreste vs. Traditionen (Droysen) als Analysetiefe-Marker (§1.1):** Traditionen enthalten "ein hohes Mass an Subjektivitaet" und erfordern schaerfere Quellenkritik als Ueberreste. Fuer die Pipeline: Wenn AGENT_MATERIAL einen Quellentext sequenziert, sollte die Quellenart (Ueberrest/Tradition) den erforderlichen Kontext-Aufwand bestimmen. Eine Tradition (z.B. Chronik, Memoiren) braucht mehr vorausgehenden Kontext als ein Ueberrest (z.B. Vertragsurkunde).
+   → Handlungsbedarf: NOTIEREN fuer SUB_AUFGABE_QUELLENKRITIK. Ueberreste-Traditionen-Unterscheidung als Analyse-Kriterium bereits dort verankert. Kein GK-Eingriff, aber AGENT_MATERIAL koennte bei Traditionen den Kontextbedarf (S8) verschaerfen. **Empfehlung: Bei naechster S8-Revision als Anmerkung ergaenzen.**
+
+2. **Illustrative vs. heuristische Bildfunktion als Sequenzierungskriterium (§2.2):** Ein Bild in illustrativer Funktion (Veranschaulichung, Zeitkolorit) kann frueher in der Sequenz stehen als dasselbe Bild in heuristischer Funktion (Selbstentdeckung, Analyseanstoss). Diese Unterscheidung fehlt in S5/S8 — dort wird "Bildquelle" einheitlich behandelt. Die Bilderschliessungs-Verlaufsstruktur (§3.3) zeigt: heuristische Nutzung erfordert alle 6 Stufen, illustrative nur Stufen 1-3.
+   → Handlungsbedarf: MITTEL fuer S5/S8. Operationalisierung sollte zwischen `bildquelle_illustrativ` und `bildquelle_heuristisch` differenzieren. Illustrative Bildquellen gehoeren zur Vergegenwaertigungsphase (fruehe Sequenz), heuristische zur Besinnungsphase (spaetere Sequenz). **Empfehlung: Bei naechster GK-Revision in S5-Operationalisierung aufnehmen.**
+
+3. **Sachquellen als niedrigschwelligster Materialtyp (§1.2.2):** Sachquellen-Erschliessung ist handlungsorientiert und "alltagsweltlich-menschlich" — damit der konkreteste Zugang. FD-Q3 §4 empfiehlt: "In der 5./6. Klasse mehr gegenstaendliche und bildliche Quellen einsetzen, um eine Ueberforderung der Schueler zu vermeiden." Fuer die Pipeline: In R7 (7. Klasse) sind Sachquellen nicht mehr obligatorisch bevorzugt, aber das Prinzip stuetzt S7 (Anschauliches vor Abstraktem).
+   → Handlungsbedarf: NEIN. S7 deckt dies generisch ab.
+
+4. **Fragenkatalog als Analyse-Scaffolding (§3.4):** Lasswelsche Formel ("Wer sagt was zu wem auf welchem Kanal und mit welcher Wirkung?") als universelles Quellen-Analyse-Geruest. Fuer die Pipeline: SUB_AUFGABE_QUELLENKRITIK sollte dieses Schema als Standard-Analysegeruest fuer quellenbasierte Aufgaben verwenden.
+   → Handlungsbedarf: NOTIEREN fuer SUB_AUFGABE_QUELLENKRITIK. Kein GK-Eingriff.
+
+5. **Textquellen-Bearbeitungsregeln (§1.2.1):** Kuerzungen kenntlich machen, keine Sinnveraenderung, Worterklarungen beigeben, zeitliche Einordnung. Fuer die Pipeline: AGENT_MATERIAL/SUB_MATERIAL_QUELLENTEXT muss bei Quellentext-Kuerzung diese Regeln einhalten.
+   → Handlungsbedarf: NOTIEREN fuer GUETEKRITERIEN_SKRIPT. SK-Kriterien pruefen, ob Textquellen-Integritaet bereits abgedeckt.
+
+**Antworten auf offene Punkte (Sektion 7):**
+
+- **Frage 1 (Narrativitaet):** NICHT ADRESSIERT. FD-Q3 behandelt Quellen-Arbeitsweisen, nicht narrative Kohaerenz. (Bereits durch FD-Q2 beantwortet.)
+- **Frage 2 (Kontroversitaet):** NICHT ADRESSIERT. FD-Q3 erwaehnt "kontroverse Texte" als Auswahlkriterium fuer Textquellen (§1.2.1), aber keine Sequenzierungsregel fuer kontroverse Themen. Kontroversitaet als Textqualitaet ≠ Kontroversitaet als Sequenzprinzip.
+- **Frage 3 (Quellenarten-Progression):** WESENTLICH BEANTWORTET. FD-Q3 liefert die fehlenden Bausteine fuer eine Quellenarten-Hierarchie nach Kontextbedarf:
+  - **Sachquellen** = niedrigster Kontextbedarf (handlungsorientiert, "alltagsweltlich", §1.2.2)
+  - **Bildquellen illustrativ** = niedriger Kontextbedarf (Zeitkolorit, emotional, §2.2.1)
+  - **Darstellungstexte** = mittlerer Kontextbedarf (Vorwissen noetig, aber Texte koennen selbsterklaerend sein)
+  - **Bildquellen heuristisch** = hoher Kontextbedarf (Selbstentdeckung erfordert Voranalyse, §2.2.2)
+  - **Textquellen (Primaerquellen)** = hoher Kontextbedarf ("Vorwissen muss vorhanden sein", §1.2.1)
+  - **Karikaturen** = hoechster Kontextbedarf (schon aus FD-Q2 §11: Sachwissen + Abstraktionsfaehigkeit + politische Sensibilitaet)
+
+  Zusammengefuehrt mit FD-Q2-Befund ergibt sich die Sequenzierungsnorm:
+  **Sachquelle → Bildquelle (illustrativ) → Darstellungstext → Bildquelle (heuristisch) → Textquelle (Primaerquelle) → Karikatur**
+  (aufsteigend nach Kontextbedarf, absteigend nach Selbsterklaerungskraft)
+
+  Diese Norm ist keine starre Reihenfolge, sondern ein Orientierungsrahmen. Sie ist logisch ableitbar aus S2 (Vorwissen-Progression) + S8 (Kontextgebot) und erfordert kein neues S-Kriterium, aber eine **Anmerkung in S8** wuerde die Operationalisierung schaerfen.
+
+- **Frage 4 (Elementarisierungs-Stufen):** NICHT ADRESSIERT. (Bereits durch FD-Q2 beantwortet: binaeres Modell Vergegenwaertigung/Besinnung.)
+
+**Verwertungsentscheidung:** INTEGRIEREN (S2/S5/S7/S8 bestaetigt, Quellenarten-Progression als Frage 3 jetzt substantiell beantwortet, 2 Schaerfungsempfehlungen fuer S5 und S8 bei naechster Revision, 3 Notizen fuer nachgelagerte Agenten).

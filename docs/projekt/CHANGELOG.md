@@ -4,6 +4,22 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-07 — Skript-Analyse 3: FD-Q3 Fachspezifische Arbeitsweisen
+
+**Phase:** Phase-0-Standardisierung
+**Modus:** EVALUATE
+**Session:** 19
+
+**Skript 3 analysiert: FD-Q3 (Fachdidaktische Grundlagentexte)** — Primaerquelle fuer S2/S8.
+- S2 (Vorwissen-Progression) und S8 (Kontextgebot) direkt bestaetigt
+- Quellenarten-Hierarchie nach Kontextbedarf substantiell beantwortet (Frage 3): Sachquelle → Bild illustrativ → Darstellungstext → Bild heuristisch → Primaerquelle → Karikatur
+- Schaerfungsempfehlung S5/S8: Bildquelle illustrativ vs. heuristisch differenzieren
+- Ueberreste-Traditionen-Unterscheidung (Droysen) als Analyse-Kriterium notiert
+- Lasswelsche Formel als Quellen-Analyse-Scaffolding notiert
+- Frage 2 (Kontroversitaet als Sequenzregel) weiterhin offen — in keinem der 3 bisherigen Skripte adressiert
+
+---
+
 ## 2026-04-07 — Skript-Analyse 2: FD-Q2 Vergegenwaertigung/Besinnung
 
 **Phase:** Phase-0-Standardisierung
