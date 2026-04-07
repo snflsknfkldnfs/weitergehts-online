@@ -4,6 +4,24 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-07 — Skript-Analyse 1: GPG GB + L1-Upgrade
+
+**Phase:** Phase-0-Standardisierung
+**Modus:** EVALUATE
+**Session:** 18
+
+**Skript 1 analysiert: GPG GB (Hofmann, Bausteine Fachdidaktik)** — Primaerquelle von S1-S15.
+- Extraktion in S1-S15 ist vollstaendig und korrekt
+- 8 neue Perspektiven identifiziert, davon 0 GK-Aenderungen, 3 AGENT_SKRIPT-Notizen, 1 L1-Verstaerkung
+- 2 von 4 offenen Fragen teilweise beantwortet (Narrativitaet, Elementarisierung)
+- Sub-Phasen-Granularitaet (Modell 1: 12+ Subphasen) als AGENT_SKRIPT-Input notiert
+
+**L1 Upgrade GERING→HOCH:** Geschichtsdidaktische Idee ist nicht optional, sondern die Problemstruktur, die das Artikulationsschema durchzieht. Konsequenz: AGENT_DIDAKTIK braucht Pflichtfeld `geschichtsdidaktische_idee` im DIDAKTIK_RAHMEN.
+
+**Naechster Schritt:** Weitere Skripte analysieren (User uebergibt einzeln).
+
+---
+
 ## 2026-04-07 — Fachdidaktische Evaluation: Brauch + Sequenzplanung vs. S1-S15
 
 **Phase:** Phase-0-Standardisierung

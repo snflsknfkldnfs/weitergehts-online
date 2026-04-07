@@ -1,7 +1,7 @@
 # Evaluation: Fachdidaktische Ressourcen vs. GUETEKRITERIEN_SEQUENZIERUNG
 
 **Datum:** 2026-04-07
-**Scope:** Brauch-Geschichtsdidaktik-Uebersicht + Sequenzplanungs-Anleitung vs. S1-S15 (v1.1)
+**Scope:** Brauch-Geschichtsdidaktik-Uebersicht + Sequenzplanungs-Anleitung + GPG GB vs. S1-S15 (v1.1)
 **Zweck:** Identifikation von Abdeckung, Luecken und Schaerfungsbedarf im bestehenden Framework
 
 ---
@@ -67,13 +67,19 @@
 
 ## 4. Identifizierte Luecken
 
-### 4.1 Luecke L1: Geschichtsdidaktische Idee als Sequenz-Anker
+### 4.1 Luecke L1: Geschichtsdidaktische Idee als Sequenz-Anker [UPGRADE: HOCH]
 
 **Brauch-Prinzip:** Die Planung beginnt mit einer "geschichtsdidaktischen Idee" — einer fachlich fundierten, didaktisch begruendeten Leitidee, die kognitive Aktivierung erzeugt.
 
-**Ist-Zustand in Pipeline:** AGENT_DIDAKTIK generiert DIDAKTIK_RAHMEN mit Leitfrage, Perspektive, KE-Matrix. Aber: ob diese Leitfrage als roter Faden die gesamte Materialsequenz durchzieht, wird in S1-S15 nicht explizit geprueft.
+**GPG-GB-Bestaetigung (Skript 1, Sektion 3.3.2 Modell 2):** Die geschichtsdidaktische Idee ist nicht optional — sie IST die Problemstruktur, die das gesamte Artikulationsschema durchzieht. Modell 2 zeigt: Problemfindung (Motivation) → Problemloesung (Vergegenwaertigung) → Problemauswertung (Besinnung) → Ergebnissicherung (Bewaeltigung). Das Problem ist der rote Faden. Ohne explizite geschichtsdidaktische Idee wird SCPL (S→C→P→L) eine mechanische Struktur ohne kognitive Kohaerenz.
 
-**Handlungsbedarf:** GERING. S14 (SCPL-Korrespondenz) erzwingt implizit eine Sinnstruktur, die einer Leitfrage entspricht (S→C→P→L = Situation aufwerfen → verkomplizieren → Problem benennen → loesen). Dennoch waere eine explizite Annotation im DIDAKTIK_RAHMEN ("Geschichtsdidaktische Idee: ...") sinnvoll. **Empfehlung: Pruefpunkt in AGENT_DIDAKTIK-Spec, nicht in GK.**
+**Ist-Zustand in Pipeline:** AGENT_DIDAKTIK generiert DIDAKTIK_RAHMEN mit Leitfrage, Perspektive, KE-Matrix. Aber: (a) ob die Leitfrage als Problemstruktur die gesamte Materialsequenz durchzieht, wird in S1-S15 nicht geprueft; (b) SCPL wird formal erzwungen (S14), aber die Verbindung "S14-Monotonie MUSS aus der geschichtsdidaktischen Idee folgen, nicht aus formaler Zuordnung" fehlt.
+
+**Handlungsbedarf:** HOCH. Zweifacher Eingriff noetig:
+1. **AGENT_DIDAKTIK-Spec:** Pflichtfeld `geschichtsdidaktische_idee` im DIDAKTIK_RAHMEN. Format: "Die Leitfrage [X] erzeugt die Problemstruktur [S: ..., C: ..., P: ..., L: ...]". Damit wird die SCPL-Struktur des Tafelbilds nicht post-hoc formalisiert, sondern aus der didaktischen Idee abgeleitet.
+2. **S14 Schaerfung (optional):** Ergaenzender Pruefhinweis: "Die SCPL-Zuordnung muss inhaltlich aus der geschichtsdidaktischen Idee im DIDAKTIK_RAHMEN ableitbar sein, nicht nur formal monoton."
+
+**Nicht-Eingriff in GK vertretbar, wenn AGENT_DIDAKTIK das Pflichtfeld zuverlaessig liefert.** Die Luecke liegt primaer in Phase 0.1, nicht in Phase 1.9.
 
 ### 4.2 Luecke L2: Lernaufgaben-Hierarchie (1. und 2. Ordnung)
 
@@ -198,4 +204,50 @@ Diese Fragen definieren den Analyse-Fokus fuer die angekuendigten 4-8 geschichts
 
 ## 9. Skript-Einzelbefunde
 
-(Wird sukzessive befuellt bei Skript-Uebergabe durch User.)
+### 9.1 — GPG GB: Grundsaetze des GPG-Unterrichts
+
+**Quelle:** Hofmann, Dieter (Seminarrektor). Bausteine Fachdidaktik GPG, Baustein GB. AG der MS-Seminarleiter/-innen Unterfranken.
+**Relevanz fuer Pipeline:** HOCH — ist bereits Primaerquelle fuer S1-S15. Extraktion-Vollstaendigkeits-Pruefung.
+
+**Bestaetigung bestehender Kriterien:**
+
+- **S1:** Artikulationsschemata alle drei Perspektiven korrekt extrahiert. GK-Tabelle (S. 1, Sektion 2.1) stimmt mit GPG GB Sektionen 3.3, 4.3, 5.5 ueberein.
+- **S5:** Vergegenwaertigung-Besinnung-Prinzip korrekt. GPG GB Modell 1 (S. 5-6) differenziert sachbezogene Besinnung (3.1: "Eindringen in den sachlichen Gehalt") und wertbezogene Besinnung (3.2: "Wertende Aufbereitung, Bezuege zur Gegenwart"). GK S5 bildet diese Zweistufigkeit korrekt ab.
+- **S4:** Didaktische-Funktion-Sequenzlogik konsistent mit allen drei Strukturmodellen. Monotonie-Anforderung in S4 spiegelt die Phasenfolge aller drei Perspektiven.
+- **S10:** Aktivierung am Sequenzbeginn gedeckt durch alle drei Modelle: historisch 1.1 "Motivation/Weckung der Aufmerksamkeit", geographisch 1. "Hinfuehrung", sozialpolitisch 1.1 "Problemorientierung/Darstellung einer Situation".
+- **S7:** Vom Anschaulichen zum Abstrakten gedeckt durch Geographie-Prinzip "Exemplarisches Lernen" (4.2.3: "Vom Speziellen zum Allgemeinen, induktives Vorgehen").
+
+**Neue Perspektiven:**
+
+1. **Zwei Modelle fuer historische Perspektive:** GPG GB enthaelt Modell 1 (detailliert, 4 Hauptphasen mit Subphasen 1.1-1.4, 2.1-2.3, 3.1-3.2, 4) UND Modell 2 (kompakt, 4 Phasen: Motivation→Vergegenwaertigung→Besinnung→Bewaeltigung). GK S1 arbeitet mit einer Mischform. Kein Problem — beide Modelle sind konsistent, Modell 2 ist die Zusammenfassung von Modell 1. Aber: **Modell 1 liefert Sub-Phasen-Granularitaet**, die fuer AGENT_SKRIPT-Phasen-Annotation nuetzlich sein koennte (z.B. "Vermutungen" als eigene Sub-Phase vor "Informationsgewinnung").
+   → Handlungsbedarf: NEIN fuer GK. JA fuer AGENT_SKRIPT-Spec (Sub-Phasen als optionale Annotation).
+
+2. **Multikausalitaet** (3.2): "Erkennen unterschiedlicher Strukturen, Unterscheidung zwischen Ursache, Grund und Ausloeser." Nicht in S1-S15 (kein Sequenzierungs-Kriterium). Relevant fuer AGENT_SKRIPT: kausale Strukturen muessen differenziert dargestellt werden, nicht mono-kausal.
+   → Handlungsbedarf: NEIN fuer GK. NOTIEREN fuer AGENT_SKRIPT/GUETEKRITERIEN_SKRIPT.
+
+3. **Kontroversitaet** (3.2): "Deutungsabhaengigkeit historischen Wissens, fachwissenschaftliche Diskurse." Bereits in STR-05 (Multiperspektivitaet) adressiert.
+   → Handlungsbedarf: NEIN.
+
+4. **Narrative Kompetenz** (1.1): "Historisches Lernen ist Bildung von Geschichtsbewusstsein durch Erzaehlen. Eine zentrale Bedeutung nimmt hierbei die narrative Kompetenz ein." Dies verbindet sich direkt mit L1 (geschichtsdidaktische Idee): Die Idee MUSS narrativ strukturierbar sein, weil historisches Lernen narrativ funktioniert. SCPL IST eine Narrations-Struktur (Situation→Komplikation→Problem→Loesung = klassischer Erzaehlbogen).
+   → Handlungsbedarf: Verstaerkt L1-Upgrade. AGENT_DIDAKTIK muss die geschichtsdidaktische Idee als narrativ formulierbare Problemstruktur liefern.
+
+5. **Bewaeltigungsphase oeffnet neues Problem** (Modell 2, S. 7): "Entdeckung eines neuen Problems" als letzter Schritt der Bewaeltigungsphase. Fuer unsere Pipeline: Die Sicherung einer Mappe koennte einen Ausblick auf die naechste Mappe enthalten (Cross-Mappen-Verknuepfung).
+   → Handlungsbedarf: GERING. Fuer ORCHESTRATOR als optionales Feature bei Multi-Mappen-Games. Nicht in GK.
+
+6. **Geographie: "Vom Nahen zum Fernen"** (4.2.3): Grundprinzip des Geographie-Unterrichts. Nicht in S1-S15, weil aktueller Scope historische Perspektive (LB2). Bei zukuenftigen LB3/LB4-Mappen mit geographischer Perspektive muesste S7 um dieses Prinzip erweitert werden.
+   → Handlungsbedarf: NEIN aktuell. NOTIEREN fuer zukuenftige Perspektiv-Erweiterung.
+
+7. **Sozialpolitisch: Sehen→Beurteilen→Handeln** (5.3): Drei-Schritt-Grundsatz. S1 deckt dies ueber das Artikulationsschema ab (Problemstellung→Problementfaltung→Problemloesung→Wertung→Sicherung). Der Drei-Schritt ist die didaktische Kurzformel dafuer.
+   → Handlungsbedarf: NEIN. Bereits abgedeckt.
+
+8. **Sub-Phasen-Granularitaet aller drei Perspektiven:** GPG GB liefert deutlich mehr Subphasen als GK S1 abbildet. Beispiel historisch: 1.1 Motivation, 1.2 Zeitliche/raeumliche Einordnung, 1.3 Problemisolierung, 1.4 Zielangabe. Beispiel geographisch: 3.1 Vermutungen, 3.2 Zielklaerung, 3.3 Organisationsplanung, 3.4 Bearbeitung, 3.5 Ergebnispresentation. Diese Subphasen sind fuer Material-Sequenzierung zu granular (eine Mappe hat 3-5 Materialien, nicht 12+ Subphasen), aber fuer AGENT_SKRIPT-Strukturierung wertvoll.
+   → Handlungsbedarf: NEIN fuer GK. NOTIEREN fuer AGENT_SKRIPT.
+
+**Antworten auf offene Punkte (Sektion 7):**
+
+- **Frage 1 (Narrativitaet):** TEILWEISE BEANTWORTET. GPG GB bestaetigt: Historisches Lernen ist narrativ ("Bildung von Geschichtsbewusstsein durch Erzaehlen"). Aber: formalisierte Kriterien fuer narrative Kohaerenz ueber S9 hinaus liefert GPG GB nicht. Die Narrativitaet wird als Grundprinzip gesetzt, nicht als Pruefkatalog operationalisiert.
+- **Frage 2 (Kontroversitaet):** NICHT ADRESSIERT als Sequenzregel. Kontroversitaet wird als Prinzip genannt (3.2), aber ohne Sequenzierungsvorschrift ("wann in der Sequenz darf eine Kontroverse eroeffnet werden").
+- **Frage 3 (Quellenarten-Progression):** NICHT ADRESSIERT. GPG GB nennt diverse Quellenarten (Modell 2 Vergegenwaertigungsphase: "Quellen, Medien, Lehrerbericht, -erzaehlung") ohne Reihenfolge-Norm.
+- **Frage 4 (Elementarisierungs-Stufen):** TEILWEISE BEANTWORTET. Modell 1 Subphasen implizieren eine Elementarisierung: erst "Vergegenwärtigung der geschichtlichen Inhalte" (2.1-2.3), dann "Eindringen in den sachlichen Gehalt" (3.1). Das ist eine Zwei-Stufen-Elementarisierung (Oberflaechenwissen→Tiefenstruktur), aber kein formales Modell.
+
+**Verwertungsentscheidung:** INTEGRIEREN (L1-Upgrade bestaetigt, Sub-Phasen-Granularitaet als AGENT_SKRIPT-Input notiert, 2 von 4 offenen Fragen teilweise beantwortet).
