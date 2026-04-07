@@ -4,6 +4,26 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-07 — Phase-0-Standardisierung: KE_KATALOG PM-Prozess
+
+**Phase:** Phase-0-Standardisierung
+**Modus:** EXECUTE
+**Session:** 17
+
+**PM-Prozess fuer KE_KATALOG_GPG_R7.md entworfen:**
+- `docs/projekt/AUSFUEHRUNGSPLAN_KE_KATALOG.md` (v1.0): 8-Schritte-Prozess von Roh-Extraktion bis Review
+- Lehrplan-PDF (GPG Jg 5-9) vollstaendig analysiert: 19 KE in GPG7 R7, 4 Lernbereiche
+- 4 User-Designentscheidungen verankert (DE-1 bis DE-4): minimaler Intake, keine Differenzierung im Katalog, LB als primaere Cluster-Einheit, Standardisierung vor Edge-Cases
+- 3 inhaltliche Design-Prinzipien formalisiert: Kompetenz/Inhalt-Trennung (K/E/KB-Typisierung), Spiralcurriculum-Kontingenz (Jg 5-9 Cross-Mapping), exemplarische Inhaltsauswahl (pars pro toto, Konzeptreinheit, Konzeptdichte)
+- Vorschlag Game-Sequenz: 5 Games (Game 1 besteht, Game 2-5 LB2+LB3, LB2, LB1, LB4)
+- Pipeline-Kompatibilitaet verifiziert: KE-ID-Format konsistent mit VERTRAG_PHASE_0-1 §5, bestehende Testrun-KE-IDs referenzierbar
+- Abhaengigkeitskette dokumentiert: KE_KATALOG → VERTRAG_PHASE_0-0_INTAKE → AGENT_DIDAKTIK Update → Testlauf
+- 2 User-Gates identifiziert: Schritt 5 (Grenzfaelle) + Schritt 8 (Final-Validierung)
+
+**Naechster Schritt:** Schritte 1-4 ausfuehren (keine User-Abhaengigkeit), dann Schritt 5 Grenzfall-Vorlage.
+
+---
+
 ## 2026-04-07 — Operationalisierungs-Runde Prio 1-3 (RA-B CRITICAL Findings geschlossen)
 
 **Phase:** Phase IV — Operationalisierung nach Welle-1-Audit
