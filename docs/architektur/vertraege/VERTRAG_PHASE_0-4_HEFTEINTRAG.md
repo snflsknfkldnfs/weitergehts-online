@@ -126,7 +126,7 @@ Nach Q-Gate PASS gilt:
 |---|---|---|---|
 | QH1 | Vollstaendigkeit Dokument-Struktur | Alle Pflicht-Sektionen vorhanden. Header mit Game-ID, Mappe-Nr, Validierungsstatus. | BLOCKER |
 | QH2 | Stundenfrage-Qualitaet | Problemorientiert, max. 12 W, durch Materialarbeit beantwortbar, nicht trivial (Ja/Nein). | HIGH |
-| QH3 | SCPL-Struktur vollstaendig | Alle 4 Zonen (S, C[], P, L[]) vorhanden. Min. 1 Complication (als didaktische Problematisierung — narrativ, konzeptuell, kontrastiv oder kausal). Min. 1 Loesung. Jede Complication hat `typ`-Feld. JSON-Schema valide. Knoten/Verbindungen als leere Arrays. | BLOCKER |
+| QH3 | SCPL-Struktur vollstaendig | Alle 4 Zonen (S, C[], P, L[]) vorhanden. Min. 1 Complication (als didaktische Problematisierung — narrativ, konzeptuell, kontrastiv oder kausal). Min. 1 Loesung. Jede Complication hat `typ`-Feld (Zuweisungsanleitung: `docs/checklisten/GUETEKRITERIEN_HEFTEINTRAG_COMPLICATION_TYPEN.md`). JSON-Schema valide. Knoten/Verbindungen als leere Arrays. | BLOCKER |
 | QH4 | Kernerkenntnisse-Qualitaet | Max. 3 pro Mappe. Je max. 15 W. Im SKRIPT-Chunk auffindbar (Synthese-Extraktion, nicht Erfindung). Beantwortet Stundenfrage. | HIGH |
 | QH5 | Erarbeitbarkeits-Nachweis | Pro SCPL-Schritt markiert. Mindestens 70% DIRECT + ARTIFACT. Kein SCPL-Schritt ohne Nachweis. | HIGH |
 | QH6 | Transfer-Frage vorhanden | Offene Frage, ausserhalb Hefteintrag. Weist ueber Mappe hinaus. | MEDIUM |
@@ -150,7 +150,7 @@ Kanonische Referenz: `docs/checklisten/GUETEKRITERIEN_HEFTEINTRAG_ENTWURF.md`
 | QH-RC2 | Phase-1-Erarbeitbarkeit | Fuer jeden SCPL-Schritt ist mindestens ein Materialtyp denkbar, der die Erarbeitung ermoeglicht. Kein SCPL-Schritt, der nur durch Lehrervortrag erarbeitbar waere. | HIGH |
 | QH-RC3 | Kernerkenntnisse-Konsistenz (M3b) | scpl.loesung[] korrespondiert mit den KE aus DIDAKTIK_RAHMEN fuer diese Mappe. Kein Widerspruch zwischen Kernerkenntnis und KE-Schwerpunkt. | HIGH |
 
-**Gate-Urteil:** PASS wenn alle BLOCKER bestanden + max 1 HIGH als WARN. Sonst: Nachbesserung (max. 1 Iteration). Wenn nach Iteration nicht loesbar:
+**Gate-Urteil:** PASS wenn alle BLOCKER bestanden + max 1 HIGH als WARN. Sonst: Nachbesserung (max. 1 Iteration). Schwellenwerte und Iterationslimits: `docs/architektur/OPERATIONALISIERUNG_ESKALATIONSPFADE.md`. Wenn nach Iteration nicht loesbar:
 
 | Eskalationstyp | Ausloeser | Agent-Aktion |
 |---|---|---|

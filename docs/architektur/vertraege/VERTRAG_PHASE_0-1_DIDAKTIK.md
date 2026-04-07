@@ -68,7 +68,7 @@ AGENT_DIDAKTIK erzeugt den didaktischen Rahmen fuer ein Escape-Game. Das Artefak
 | QD9 | Sequenzierbarkeit der Mappen | Jede Mappe hat einen thematisch abgeschlossenen Schwerpunkt, der intern in mehrere Materialien zerlegbar ist (Phase-1.5-Kompatibilitaet). Kein Ordnungs-Verschraenkungsproblem: Wenn eine Mappe Teile zweier Ordnungsdimensionen enthaelt (z.B. zwei Zeitstraenge, zwei Raumebenen, zwei Kategorie-Cluster), muessen diese trennbar sein. | HIGH |
 | QD10 | STRUKTUR-FREEZE-Tauglichkeit | Jede Mappe-Grobstruktur muss hinreichend praezise sein, um als Grundlage fuer ein TAFELBILD (Phase 0.4) zu dienen, das als STRUKTUR-FREEZE die gesamte nachfolgende Produktion steuert. "Thematischer Schwerpunkt" und "Zentrale Erkenntnis" muessen so formuliert sein, dass ein Hefteintrag daraus ableitbar ist. | HIGH |
 
-**Gate-Urteil:** PASS wenn alle BLOCKER bestanden + max 1 HIGH als WARN. Sonst: Nachbesserung (max. 1 Iteration). Wenn nach Iteration nicht loesbar: Eskalationspfad (siehe §4a).
+**Gate-Urteil:** PASS wenn alle BLOCKER bestanden + max 1 HIGH als WARN. Sonst: Nachbesserung (max. 1 Iteration). Wenn nach Iteration nicht loesbar: Eskalationspfad (siehe §4a). Schwellenwerte und Iterationslimits: `docs/architektur/OPERATIONALISIERUNG_ESKALATIONSPFADE.md`.
 
 **User-Validierung:** PFLICHT nach Q-Gate. Lehrkraft prueft: Mappen-Aufteilung, KE-Matrix, Progression, Narrativ.
 

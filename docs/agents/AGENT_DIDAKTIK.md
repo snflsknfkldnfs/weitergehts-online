@@ -315,6 +315,17 @@ Die folgenden Heuristiken unterstuetzen Aufgabe 2 (Mappen-Aufteilung). Sie sind 
 
 Bei der Mappen-Aufteilung natuerliche Zaesuren der gewaehlten Ordnung nutzen. Bei chronologischen Themen: zeitliche Zaesuren (Schlachten, Vertraege, Regierungswechsel). Bei kategorialen Themen: thematische Cluster (Lebensbereiche, Akteursgruppen, Raumdimensionen). Jede Mappe sollte einen klar abgrenzbaren Abschnitt innerhalb der gewaehlten Ordnung abdecken.
 
+**Kategoriale Fallbeispiele (Operationalisierung, adressiert RA-B-F06):**
+
+| Thema | Ordnungsdimension | Natuerliche Schnitte (= Mappen) | Begruendung |
+|---|---|---|---|
+| Industrialisierung (kategorial) | Akteursgruppen | M1: Unternehmer, M2: Arbeiter, M3: Handwerker, M4: Staat | Jede Gruppe hat eigenstaendige Perspektive + eigene KE. Ueberschneidungen minimal. |
+| Industrialisierung (hybrid) | Phasen + Aspekte | M1: Voraussetzungen (Agrarwende), M2: Fabriksystem (Technik), M3: Soziale Frage (Gesellschaft), M4: Reaktionen (Politik) | Grobe Chronologie, aber innerhalb jeder Mappe thematisch geschlossen. |
+| Mittelalterliche Gesellschaft (kategorial) | Staende | M1: Adel/Ritter, M2: Klerus, M3: Bauern, M4: Stadtbuerger | Staendeordnung liefert natuerliche Cluster. Jede Mappe = 1 Stand mit eigener Lebenswelt. |
+| Erster Weltkrieg (hybrid) | Raumdimensionen | M1: Weg in den Krieg (Diplomatie), M2: Westfront (Stellungskrieg), M3: Heimatfront (Gesellschaft), M4: Kriegsende (Politik) | Raum-Logik: Diplomatie → Front → Heimat → Nachkrieg. |
+
+**Entscheidungshilfe bei kategorialen Themen:** Wenn >1 Cluster-Dimension moeglich ist (z.B. Akteure vs. Raeume vs. Aspekte), waehle die Dimension, bei der (a) die Schnitte am trennschaerfsten sind (minimale Ueberlappung) und (b) jeder Cluster eine eigenstaendige Kernerkenntnis tragen kann (H2-Kompatibilitaet).
+
 ### H2: Ein zentrales Konzept pro Mappe
 
 Jede Mappe traegt genau EINE Kernidee, die in der Zentralen Erkenntnis formulierbar ist. Wenn eine Mappe zwei gleichwertige Kernideen hat, ist sie zu gross.
@@ -330,6 +341,30 @@ Zwischen je zwei aufeinanderfolgenden Mappen muss ein natuerlicher Uebergang moe
 ### H5: Konkreter Anker fuer Vergegenwärtigung
 
 Jede Mappe sollte mindestens einen konkreten Ankerpunkt enthalten, der Vergegenwärtigung ermoeglicht. Bei Ereignisgeschichte: datierbares Ereignis. Bei konzeptuellen Themen: konkretes Fallbeispiel, exemplarische Person oder anschauliche Situation. Rein abstrakte Mappen ohne konkreten Anker sind zu abstrakt fuer R7-Niveau — die didaktische Zuschreibung einer konkreten Situation ist immer moeglich und noetig.
+
+**Konkretisierungs-Schwelle (Operationalisierung, adressiert RA-B-F07):**
+
+Ein Anker ist "konkret genug", wenn er mindestens 1 der folgenden Marker enthaelt: Personenname, Ortsname, Jahreszahl/Datum, exemplarisches Fallbeispiel mit szenischer Konkretion (wer tut was wo).
+
+**Vier-Quadranten-Matrix:**
+
+| | Raum-Anker | Zeit-Anker |
+|---|---|---|
+| **Ereignis** | Ort: "Berlin, Maerz 1848" | Datum: "Am 28. Juni 1914" |
+| **Konzept** | Fallbeispiel: "Die Textilfabrik in Augsburg" | Historisches Moment: "Kants 'Kritik der reinen Vernunft' (1781)" |
+
+**FAIL/PASS-Beispiele:**
+
+| Themenbereich | FAIL (zu abstrakt) | PASS (konkret genug) |
+|---|---|---|
+| Aufklaerung | "Die Zeit der Aufklaerung veraenderte das Denken." | "Kant schrieb 1784: 'Habe Mut, dich deines eigenen Verstandes zu bedienen.'" |
+| Industrialisierung | "Die Arbeiter hatten es schwer." | "In der Augsburger Kammgarnspinnerei arbeiteten Kinder ab 8 Jahren — 14 Stunden am Tag." |
+| Verfassungsrecht | "Die Verfassung regelte die Rechte der Buerger." | "Die Paulskirchenverfassung von 1849 versprach Pressefreiheit — doch der preussische Koenig lehnte ab." |
+| Wissenschaftsgeschichte | "Neue Entdeckungen veraenderten das Weltbild." | "Als Darwin 1859 'Die Entstehung der Arten' veroeffentlichte, reagierte die Kirche mit Empoerung." |
+| Alltag/Sozialgeschichte | "Das Leben in der Stadt war anders als auf dem Land." | "Familie Meier zog 1870 aus dem Dorf Oberndorf nach Muenchen — und teilte sich dort mit 3 Familien eine Wohnung." |
+| Recht/Ethik | "Die Menschenrechte wurden entwickelt." | "1789 erklaerte die franzoesische Nationalversammlung: Alle Menschen sind frei und gleich an Rechten." |
+
+**Operativer Test fuer Agenten:** Nach Formulierung der Mappen-Grobstruktur pruefen: Enthaelt die "Zentrale Erkenntnis" oder der "Thematische Schwerpunkt" mindestens einen konkreten Marker (Name, Ort, Jahr, szenisches Fallbeispiel)? Wenn Nein: Anker ergaenzen oder Formulierung konkretisieren.
 
 ### H6: Vorgaenger-Kontinuitaet
 
