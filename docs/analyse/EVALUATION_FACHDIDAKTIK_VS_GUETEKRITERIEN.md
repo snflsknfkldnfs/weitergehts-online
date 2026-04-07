@@ -346,3 +346,80 @@ Diese Fragen definieren den Analyse-Fokus fuer die angekuendigten 4-8 geschichts
 - **Frage 4 (Elementarisierungs-Stufen):** NICHT ADRESSIERT. (Bereits durch FD-Q2 beantwortet: binaeres Modell Vergegenwaertigung/Besinnung.)
 
 **Verwertungsentscheidung:** INTEGRIEREN (S2/S5/S7/S8 bestaetigt, Quellenarten-Progression als Frage 3 jetzt substantiell beantwortet, 2 Schaerfungsempfehlungen fuer S5 und S8 bei naechster Revision, 3 Notizen fuer nachgelagerte Agenten).
+
+### 9.4 — FD-Q4: Allgemeine Unterrichtsprinzipien
+
+**Quelle:** Fachdidaktische Grundlagentexte, Didaktischer Grundkurs (nicht-oeffentlich).
+**Relevanz fuer Pipeline:** HOCH — Primaerquelle fuer S7 (Veranschaulichung/Schroeder), S9 (Strukturierung/Brunnhuber), S10 (Aktivierung/Brunnhuber+Meyer), S11 (Methodenvielfalt/Meyer). Allgemeindidaktischer Rahmen, nicht fachspezifisch.
+
+**Bestaetigung bestehender Kriterien:**
+
+- **S2:** Bestaetigt. Brunnhuber §3.3 Strukturierung: "An Lernerfahrungen anknuepfen" — Vorwissen als Anknuepfungspunkt. §3.5 Angemessenheit: "optimale Passung unter- und ueberfordert die Schueler nicht zu sehr" — Vorwissen-Progression verhindert Ueberforderung. S2-Operationalisierung korrekt.
+- **S7:** Direkt bestaetigt. Schroeder §2.15 Veranschaulichung liefert 6-stufige Konkretisierungsleiter: Realbegegnung → Praeparat → Modell → Bildhafte Darstellung → Schema → Symbol. Dies ist die theoretische Grundlage fuer S7 (Anschauliches vor Abstraktem). §2.5 Elementarisierung: "Reduktion eines komplexen Sachverhalts zum Zwecke der Lernerleichterung, ohne dabei den Wahrheitsgehalt zu verfaelschen" — bestaetigt Vereinfachungs-Gebot ohne Verfaelschung (konsistent mit Roth #10 aus FD-Q2).
+- **S9:** Direkt bestaetigt. Brunnhuber §3.3: "Bei beziehungslosem Wissen ist Vergessen fast vorprogrammiert. Es sollten Beziehungen hergestellt werden." Meyer §4.5 Sinnstiftendes Kommunizieren: Schueler "greifen von sich aus auf vorherige Unterrichtsthemen zurueck." S9-Herkunft (Brunnhuber Strukturierung + Meyer Sinnstiftendes Kommunizieren) korrekt.
+- **S10:** Direkt bestaetigt. Brunnhuber §3.2 Motivierung: "Sachbezogene Motivation erreicht man ueber eine gelungene Ausgangssituation" — Einstieg muss motivieren, nicht instruieren. §3.4 Aktivierung: "Erfolg aus eigenem Tun motiviert zum Weiterarbeiten." Meyer §4.4 Inhaltliche Klarheit: "informierende Unterrichtseinstiege." S10-Herkunft korrekt.
+- **S11:** Direkt bestaetigt. Meyer §4.6 Methodenvielfalt: "Reichtum an Inszenierungstechniken, Vielfalt der Handlungsmuster, zur Zielsetzung passend gewaehlte Methoden." S11-Herkunft (Meyer Methodenvielfalt) korrekt.
+- **S12:** Implizit gestuetzt. Brunnhuber §3.3: "Begriffe als Ergebnis von erst praktischem und dann geistigem Akt gefunden werden" — erfahrungsbezogen vor fachbegrifflich, konsistent mit S12-Progression.
+
+**Neue Perspektiven:**
+
+1. **Schroeders 6-Stufen-Konkretisierungsleiter (§2.15):** Realbegegnung → Praeparat → Modell → Bildhafte Darstellung → Schema → Symbol. Dies koennte S7 operationalisierbar machen: Jedem Material einen Abstraktionsgrad (1-6) zuweisen, S7 prueft ob Median der ersten Sequenzhaelfte < Median der zweiten Haelfte. Fuer Escape-Games: Stufen 1-2 entfallen (digital), relevanter Bereich ist 3-6. Bildquellen = Stufe 3-4, Darstellungstexte = Stufe 4-5, Schemata/Strukturbilder = Stufe 5-6.
+   → Handlungsbedarf: GERING. S7 funktioniert generisch. Die 6-Stufen-Leiter ist ein optionaler Operationalisierungsvorschlag bei naechster GK-Revision, nicht blockierend.
+
+2. **Drei-Quellen-Modell der Informationsbeschaffung (§3.4):** Brunnhuber unterscheidet: unmittelbare Wirklichkeit → mittelbare Wirklichkeit → dargebotenes Wort. Parallele Abstraktionshierarchie zu S7. Fuer Escape-Games: Alle Materialien sind "mittelbare Wirklichkeit" (digitale Reproduktionen), daher begrenzte direkte Anwendbarkeit. Bestaetigt aber: visuelle/konkrete Materialien vor reinen Textmaterialien.
+   → Handlungsbedarf: NEIN. Bereits in S7 abgedeckt.
+
+3. **Motivierungstypen und Ausgangssituation (§3.2):** Sachbezogene Motivation ueber "Originale Begegnung, Kontrast, Ueberraschung." Fuer die Pipeline: S10 (Aktivierung am Sequenzbeginn) sollte diese drei Motivierungsstrategien als Pruefpunkte fuer den Einstieg nutzen. Bereits implizit durch S10 abgedeckt ("aktiviert Vorwissen oder weckt Neugier"), aber die drei Strategien sind konkreter.
+   → Handlungsbedarf: NOTIEREN fuer AGENT_MATERIAL. Bei Einstiegs-Material-Auswahl: Kontrast, Ueberraschung oder Originale Begegnung als Auswahlkriterium. Kein GK-Eingriff.
+
+4. **Erfolgssicherung als Sequenzanforderung (§2.4 + §3.6):** Schroeder: "Lernzuwachs einer Unterrichtseinheit fuer laengere Zeit sichern (durch Wiederholung, Anwendung, Transfer, Merktexte)." Meyer §4.4: "Festhalten von Zwischenergebnissen, regelmaessige Wiederholung." Fuer die Pipeline: Das Tafelbild/der Hefteintrag IST die Erfolgssicherung. S4 (Didaktische-Funktion-Sequenzlogik) setzt sicherung ans Ende der Sequenz — konsistent.
+   → Handlungsbedarf: NEIN. S4 + SCPL-L-Zone deckt dies ab.
+
+5. **Differenzierung/Individualisierung (§2.2 + §3.5 + §4.7):** Drei Quellen (Schroeder, Brunnhuber, Meyer) fordern innere Differenzierung. Fuer die Pipeline: GUETEKRITERIEN_AUFGABEN A15 (Implizite Differenzierung via Tipp-System) adressiert dies bereits. Kein Sequenzierungs-Thema.
+   → Handlungsbedarf: NEIN. Bereits in anderem Katalog abgedeckt.
+
+**Antworten auf offene Punkte (Sektion 7):**
+
+- **Frage 1 (Narrativitaet):** NICHT ADRESSIERT. FD-Q4 ist allgemeindidaktisch, enthält keine fachspezifischen Narrativitaets-Kriterien. (Bereits durch FD-Q2 beantwortet.)
+- **Frage 2 (Kontroversitaet):** NICHT ADRESSIERT. Kein Prinzip in FD-Q4 behandelt Kontroversitaet als Sequenzregel. (Weiterhin offen — 4 von 4 Skripten ohne Befund.)
+- **Frage 3 (Quellenarten-Progression):** NICHT ADRESSIERT (allgemeindidaktisch, nicht fachspezifisch). (Bereits durch FD-Q2+FD-Q3 substantiell beantwortet.)
+- **Frage 4 (Elementarisierungs-Stufen):** TEILWEISE ERGAENZT. Schroeders 6-stufige Konkretisierungsleiter (§2.15) liefert ein Stufenmodell fuer Medien-/Material-Abstraktionsgrade. Das ist kein Inhalts-Elementarisierungsmodell (das war Frage 4), aber ein komplementaeres Medien-Abstraktionsmodell. Zusammen mit FD-Q2 (binaeres V/B-Modell fuer Inhalte) ergibt sich: Inhalt hat 2 Stufen (Vergegenwaertigung/Besinnung), Medium hat 6 Stufen (Realbegegnung→Symbol). Beide Dimensionen laufen parallel in Richtung steigender Abstraktion. Frage 4 damit vollstaendig beantwortet: Es gibt kein mehrstufiges Inhalts-Elementarisierungsmodell jenseits der V/B-Binaerunterscheidung, aber die Medien-Abstraktionsstufen liefern die fehlende Granularitaet.
+
+**Verwertungsentscheidung:** BESTAETIGEN (alle 6 S-Kriterien mit FD-Q4-Herkunft korrekt extrahiert und operationalisiert. Kein GK-Eingriff noetig. 1 Notiz fuer AGENT_MATERIAL. Frage 4 jetzt vollstaendig beantwortet. Frage 2 weiterhin einzige offene Frage nach 4 Skripten).
+
+### 9.5 — FD-Q6: Sozialwissenschaftliche Perspektive — Fachspezifische Arbeitsweisen I
+
+**Quelle:** Fachdidaktische Grundlagentexte GPG (nicht-oeffentlich).
+**Relevanz fuer Pipeline:** MITTEL fuer Sequenzierung, HOCH fuer Frage 2 (Kontroversitaet). Schwerpunkt Politikdidaktik, nicht primaer Geschichtsdidaktik. Pipeline zielt auf historische Perspektive — Transfer selektiv.
+
+**Bestaetigung bestehender Kriterien:**
+
+- **S1:** Sozialpolitische Perspektive implizit bestaetigt. Die Reinhardt-Arbeitsweisen (informieren → interpretieren → Meinung aeussern → argumentieren → reflektieren → handeln) korrespondieren mit dem sozialpolitischen Artikulationsschema (Problemstellung → Problementfaltung → Problemloesung → Wertung → Sicherung) aus FD-Q1. Keine Divergenz.
+- **S5:** Implizit bestaetigt. Die Arbeitsweisen-Sequenz folgt dem V-vor-B-Prinzip: Information/Interpretation (= Vergegenwaertigung) VOR Meinung/Argumentation/Reflexion (= Besinnung). FD-Q6 liefert keine neue Operationalisierung, aber eine perspektivenuebergreifende Bestaetigung.
+
+**Neue Perspektiven:**
+
+1. **Beutelsbacher Konsens — Kontroversitaetsgebot (§1.1):** "Der Lehrende muss ein Thema kontrovers darstellen und diskutieren, wenn es in der Oeffentlichkeit kontrovers erscheint." Dies ist die einzige explizite Sequenzierungsregel fuer Kontroversitaet in allen bisherigen Quellen. Konsequenzen fuer die Pipeline:
+   - **Ausloeser:** Wenn ein Thema oeffentlich kontrovers ist, MUSS die Materialsequenz kontraere Perspektiven enthalten.
+   - **Sequenzposition:** Kontroverse Materialien gehoeren in die Besinnungsphase (P/L-Zone im SCPL), NICHT in die Vergegenwaertigungsphase (S/C-Zone). Begruendung: SuS brauchen erst Sachgrundlage (S5), bevor sie kontroverse Positionen bewerten koennen.
+   - **Bezug zu SK15:** GUETEKRITERIEN_SKRIPT SK15 (Kontroversitaet) ist derzeit KANN. Das Kontroversitaetsgebot des Beutelsbacher Konsens ist aber KEIN optionales Prinzip — es ist eine Minimalbedingung politischer Bildung. Fuer Themen mit oeffentlicher Kontroverse muesste SK15 auf SOLL oder MUSS hochgestuft werden.
+   - **Bezug zu Audit-Befund:** BERICHT_RA4_FACHDIDAKTIK hatte bereits moniert, dass SK15 als KANN fuer kontroverse Themen problematisch ist. FD-Q6 liefert jetzt die Quellengrundlage fuer eine Hochstufung.
+   → Handlungsbedarf: MITTEL. SK15-Prioristaet themenabhaengig differenzieren: Fuer Themen mit oeffentlicher Kontroverse (Kolonialisierung, Revolutionen, Kriegsdarstellung, Industrialisierung-Soziale-Frage) → SOLL. Fuer rein deskriptive Themen (Zeitleiste, Geographie-Topographie) → KANN bleibt. **Empfehlung: Bei naechster GUETEKRITERIEN_SKRIPT-Revision SK15 mit Kontroversitaets-Trigger versehen.**
+
+2. **Ueberwaeltigungsverbot (§1.1):** "Lehrende duerfen Schuelern nicht ihre Meinung aufzwingen. Schueler sollen sich mit Hilfe des Unterrichts eine eigene Meinung bilden koennen." Fuer die Pipeline: AGENT_SKRIPT darf in der Besinnungsphase keine geschlossene Wertung vorgeben. Der Hefteintrag (SCPL L-Zone) muss Raum fuer eigenes Urteil lassen. Dies ist eine Anti-Pattern-Regel fuer GUETEKRITERIEN_SKRIPT/GUETEKRITERIEN_HEFTEINTRAG.
+   → Handlungsbedarf: NOTIEREN fuer GUETEKRITERIEN_SKRIPT. Pruefpunkt: Enthaelt das Skript in der L-Zone eine geschlossene Wertung ohne Alternativ-Perspektive? Wenn ja → Verstoess gegen Ueberwaeltigungsverbot. Kein S-Kriterium noetig (betrifft Skript-Produktion, nicht Materialsequenzierung).
+
+3. **Schuelerorientierung als Analysekompetenz (§1.1):** "Politische Bildung muss Schueler in die Lage versetzen, die politische Situation der Gesellschaft und ihre eigene Position zu analysieren." Fuer die Pipeline: GUETEKRITERIEN_AUFGABEN A11 (Freitext-Qualitaet) fordert bereits Stellungnahme/Beurteilung. Konsistent, kein neuer Handlungsbedarf.
+   → Handlungsbedarf: NEIN.
+
+4. **Reinhardt-Arbeitsweisen als AFB-Korrespondenz (§3):** informieren/interpretieren = AFB I-II, Meinung aeussern/argumentieren = AFB II-III, reflektieren/handeln = AFB III. Diese Korrespondenz bestaetigt die AFB-Schwierigkeitsprogression in GUETEKRITERIEN_AUFGABEN A5. Kein neuer Befund.
+   → Handlungsbedarf: NEIN.
+
+**Antworten auf offene Punkte (Sektion 7):**
+
+- **Frage 1 (Narrativitaet):** NICHT ADRESSIERT (Politikdidaktik, nicht Geschichtsdidaktik).
+- **Frage 2 (Kontroversitaet als Sequenzregel):** **BEANTWORTET.** Beutelsbacher Konsens §1.1 Kontroversitaetsgebot: Oeffentlich kontroverse Themen MUESSEN kontrovers dargestellt werden. Fuer die Sequenzierung: Kontroverse Materialien gehoeren in die Besinnungsphase (nach Sachgrundlage). SK15-Prioritaet themenabhaengig differenzieren. Dies ist die erste und einzige explizite Quellengrundlage fuer eine Kontroversitaets-Sequenzregel in allen 5 analysierten Skripten.
+- **Frage 3 (Quellenarten-Progression):** NICHT ADRESSIERT (bereits beantwortet durch FD-Q2+FD-Q3).
+- **Frage 4 (Elementarisierungs-Stufen):** NICHT ADRESSIERT (bereits beantwortet durch FD-Q2+FD-Q4).
+
+**Verwertungsentscheidung:** INTEGRIEREN SELEKTIV (Beutelsbacher Konsens als Quellengrundlage fuer SK15-Differenzierung. Ueberwaeltigungsverbot als Anti-Pattern notiert. Restliche Politikdidaktik-Inhalte fuer geschichtsdidaktische Pipeline nicht primaer relevant. Alle 4 offenen Fragen jetzt beantwortet.)

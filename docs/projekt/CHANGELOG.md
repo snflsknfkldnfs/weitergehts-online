@@ -4,6 +4,36 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-07 — Skript-Analyse 5: FD-Q6 Sozialwissenschaftliche Perspektive
+
+**Phase:** Phase-0-Standardisierung
+**Modus:** EVALUATE
+**Session:** 19
+
+**Skript 5 analysiert: FD-Q6 (Fachdidaktische Grundlagentexte GPG, Politikdidaktik)** — selektiver Transfer.
+- **Frage 2 (Kontroversitaet) BEANTWORTET:** Beutelsbacher Konsens Kontroversitaetsgebot als einzige explizite Quellengrundlage
+- SK15-Differenzierung empfohlen: SOLL fuer oeffentlich kontroverse Themen, KANN fuer deskriptive
+- Ueberwaeltigungsverbot als Anti-Pattern fuer AGENT_SKRIPT L-Zone notiert
+- **Alle 4 offenen Fragen (Sektion 7) jetzt beantwortet**
+- Verwertung: INTEGRIEREN SELEKTIV (Politikdidaktik-Kern nicht primaer fuer geschichtsdidaktische Pipeline)
+
+---
+
+## 2026-04-07 — Skript-Analyse 4: FD-Q4 Allgemeine Unterrichtsprinzipien
+
+**Phase:** Phase-0-Standardisierung
+**Modus:** EVALUATE
+**Session:** 19
+
+**Skript 4 analysiert: FD-Q4 (Fachdidaktische Grundlagentexte, Didaktischer Grundkurs)** — allgemeindidaktischer Rahmen.
+- Alle 6 S-Kriterien mit FD-Q4-Herkunft (S2/S7/S9/S10/S11/S12) korrekt extrahiert und operationalisiert
+- Schroeders 6-Stufen-Konkretisierungsleiter als optionaler Operationalisierungsvorschlag fuer S7 notiert
+- Frage 4 (Elementarisierungs-Stufen) jetzt vollstaendig beantwortet: binaeres V/B-Modell (Inhalt) + 6-Stufen-Leiter (Medium)
+- Frage 2 (Kontroversitaet als Sequenzregel) bleibt die EINZIGE offene Frage — in keinem der 4 Skripte adressiert
+- Verwertungsentscheidung: BESTAETIGEN (kein GK-Eingriff noetig)
+
+---
+
 ## 2026-04-07 — Skript-Analyse 3: FD-Q3 Fachspezifische Arbeitsweisen
 
 **Phase:** Phase-0-Standardisierung
