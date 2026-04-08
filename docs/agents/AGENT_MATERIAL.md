@@ -235,6 +235,7 @@ Alle Teile in das MATERIAL_GERUEST_Mappe_N-Format (definiert in WORKFLOW_v4.md S
    - `analyseauftrag`: true / false
    - `personalisiert`: true / false
    - `primary_tb_knoten`: ein einzelner TB-Knoten-Identifikator (bei Multi-Knoten: der mit dem groessten Erarbeitungsanteil)
+   - `aktivierungscharakter` (nur Position 1): frage / bild / provokation / hypothese / keine (S10-Pruefung)
 
 2c. **Fachbegriffe klassifizieren (v2.0):** Pro Material die Fachbegriffe nach 5-Stufen-Taxonomie (GUETEKRITERIEN_SEQUENZIERUNG.md Sektion 4.3) zuordnen:
    - `fachbegriffe_eingefuehrt[]`: Stufe 1-3 Begriffe, die dieses Material erstmals einfuehrt
@@ -258,10 +259,10 @@ Alle Teile in das MATERIAL_GERUEST_Mappe_N-Format (definiert in WORKFLOW_v4.md S
 ```markdown
 ## Sequenzplan
 
-| # | Material-ID | Typ | Didaktische Funktion | TB-Knoten | SCPL-Phase | material_charakter | bildfunktion | analyseauftrag | personalisiert | primary_tb_knoten | fachbegriffe_eingefuehrt | fachbegriffe_referenziert | Voraussetzung | Kerninhalt (1 Satz) |
-|---|-------------|-----|----------------------|-----------|------------|-------------------|--------------|----------------|----------------|-------------------|------------------------|--------------------------|---------------|---------------------|
-| 1 | mat-N-1 | [typ] | einstieg | ... | S | vergegenwaertigung | n/a | false | true | k1-1 | [] | [] | — | [Kerninhalt] |
-| 2 | mat-N-2 | [typ] | erarbeitung | ... | C | vergegenwaertigung | illustrativ | false | false | k1-2 | [Begriff-X] | [Begriff-Y] | mat-N-1 | [Kerninhalt] |
+| # | Material-ID | Typ | Didaktische Funktion | TB-Knoten | SCPL-Phase | material_charakter | bildfunktion | analyseauftrag | personalisiert | primary_tb_knoten | aktivierungscharakter | fachbegriffe_eingefuehrt | fachbegriffe_referenziert | Voraussetzung | Kerninhalt (1 Satz) |
+|---|-------------|-----|----------------------|-----------|------------|-------------------|--------------|----------------|----------------|-------------------|-----------------------|------------------------|--------------------------|---------------|---------------------|
+| 1 | mat-N-1 | [typ] | einstieg | ... | S | vergegenwaertigung | n/a | false | true | k1-1 | frage | [] | [] | — | [Kerninhalt] |
+| 2 | mat-N-2 | [typ] | erarbeitung | ... | C | vergegenwaertigung | illustrativ | false | false | k1-2 | — | [Begriff-X] | [Begriff-Y] | mat-N-1 | [Kerninhalt] |
 | ... |
 
 ### Uebergangsobjekte

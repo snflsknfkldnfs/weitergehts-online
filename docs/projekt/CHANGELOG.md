@@ -4,6 +4,27 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-08 — Schritt 3+4: Prueflogik-Revisionen + Bereinigung (P9-P15)
+
+**Phase:** Phase-0-Standardisierung
+**Modus:** EXECUTE (Implementation aus Audit-Befund v2, Patches P9-P15)
+**Session:** 23
+
+**P9-P15 implementiert. GUETEKRITERIEN v2.2 vollstaendig. 4 Artefakte modifiziert.**
+- P9: S15 SKRIPT-Index-Konvention formalisiert ("erste Absatz-Position §N des Materials im SKRIPT-Chunk"), Threshold ⌊N/3⌋ bestaetigt
+- P10: S9 Prueflogik finalisiert (referentielle Integritaet von_mat/zu_mat, Vollstaendigkeits-Check N-1 Objekte, Semantik-Check)
+- P11: `aktivierungscharakter`-Enum definiert (frage/bild/provokation/hypothese/keine), S10-Prueflogik mit expliziter Rahmen-Einstieg-Erkennung, 4-stufigem Check (Rahmen-Erkennung → Funktions-Check → Aktivierungscharakter → Fachbegriff), DEFEKT→ROBUST
+- P13: S6 aus MUSS-Kriterium auf Pre-Check (Phase 1.9.5) ausgelagert, Prozessvalidierung vor Q-Gate-Start
+- P14: S12 (Sprachregister-Progression) in S7 integriert (material_charakter-Modifikator bildet Sprachregister implizit ab)
+- P15: Grenzfall-Toleranzen: S1 (<3 Mat: nur V-vor-B), S5 (Hybrid: primaerer Charakter zaehlt), S14 (Einstieg phasenneutral explizit)
+- Input-Tabelle Sektion 4.2: P11 `aktivierungscharakter` als 11. Feld ergaenzt
+- AGENT_HEFTEINTRAG: Aufgabe 6b (scpl_phase pro TB-Knoten annotieren) als Pflichtschritt eingefuegt
+- AGENT_MATERIAL: `aktivierungscharakter` in Schritt 2b und Output-Template eingefuegt
+- Mappe-4-Retrofit: `aktivierungscharakter` = `keine` (Rahmen-Einstieg), Q-Gate aktualisiert (S6→Pre-Check, S10 deterministic, S12→integriert)
+- **Erwartetes Audit-Ergebnis nach P1-P15:** 13 ROBUST, 0 FRAGIL, 0 DEFEKT, 1 Pre-Check (S6), 1 Integriert (S12)
+
+---
+
 ## 2026-04-07 — Schritt 2: Fachbegriff-Felder + Uebergangs-Strukturierung + SQ-5
 
 **Phase:** Phase-0-Standardisierung

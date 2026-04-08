@@ -1,7 +1,7 @@
 # Guetekriterien Sequenzierung
 
 **Datum:** 2026-04-07
-**Status:** v2.1 — P1-P8+P12: 10 Input-Felder, Fachbegriff-Taxonomie, Uebergangsobjekt-Schema, deterministische Prueflogik S1-S2/S5/S7-S10/S13-S15
+**Status:** v2.2 — P1-P15 vollstaendig: 11 Input-Felder, Fachbegriff-Taxonomie, Uebergangsobjekt-Schema, deterministische Prueflogik S1-S5/S7-S10/S13-S15, S6→Pre-Check, S12→S7-integriert, Grenzfall-Toleranzen
 **Quellen:**
 - FD-Q1 Grundsaetze des GPG-Unterrichts (Artikulationsschemata, Kompetenzstrukturmodell)
 - FD-Q4 Allgemeine Unterrichtsprinzipien (Schroeder, Brunnhuber, Hilbert Meyer)
@@ -131,7 +131,6 @@ Gewichtete Kriterien fuer den AGENT_MATERIAL Q-Gate bei Aufgabe 1.9. Drei Priori
 | S3 | **TB-Knoten-Abdeckung** | Jeder TB-Knoten aus dem fixierten TAFELBILD hat mindestens 1 zugeordnetes Material im Sequenzplan. Kein Knoten bleibt ohne Erarbeitungsweg. | Analogie zu G3 (Erarbeitbarkeit) |
 | S4 | **Didaktische-Funktion-Sequenzlogik** | Die didaktischen Funktionen folgen einer gültigen Reihenfolge: einstieg → erarbeitung → vertiefung → sicherung → transfer. Kein sicherung-Material vor dem letzten erarbeitung-Material. Kein transfer-Material vor sicherung. | FD-Q5 Didaktischer Ort + Artikulationsschemata |
 | S5 | **Vergegenwärtigung vor Besinnung** | Materialien mit `material_charakter` = `vergegenwaertigung` stehen VOR Materialien mit `material_charakter` = `besinnung_sachbezogen`, diese VOR `besinnung_wertbezogen`. Bei Bildquellen: `bildfunktion` = `illustrativ` zaehlt als Vergegenwärtigung, `heuristisch` als Besinnung. | FD-Q2 Roth + Vergegenwärtigung/Besinnung-Prinzip |
-| S6 | **Sequenzkontext-Vollstaendigkeit** | Jedes Material hat ein vollstaendiges `sequenz_kontext`-Objekt mit `vorher` (leer nur bei Position 1) und `nachher` (leer nur bei letzter Position). | AGENT_MATERIAL Aufgabe 1.9.5 |
 | S14 | **SCPL-Korrespondenz** | Die Materialreihenfolge korrespondiert mit dem SCPL-Aufbau des Tafelbilds: Materialien, die Situation-Knoten (S) erarbeiten, stehen vor Complication-Knoten (C), diese vor Problem-Knoten (P), diese vor Loesung-Knoten (L). Einordnung erfolgt ueber `primary_tb_knoten` und dessen `scpl_phase` (aus AGENT_HEFTEINTRAG-Annotation). | Tafelbild-Sinnstruktur als didaktischer Aufbaurahmen |
 | S15 | **Skript-Kongruenz** | Die Materialreihenfolge folgt der Absatzfolge im SKRIPT, soweit diese nicht gegen S14 (SCPL-Korrespondenz) verstoesst. Abweichungen von der SKRIPT-Reihenfolge sind nur mit expliziter Begruendung zulaessig. | AGENT_SKRIPT liefert implizite didaktische Sequenz |
 
@@ -142,15 +141,25 @@ Gewichtete Kriterien fuer den AGENT_MATERIAL Q-Gate bei Aufgabe 1.9. Drei Priori
 | S7 | **Vom Anschaulichen zum Abstrakten** | Die Sequenz bewegt sich tendenziell von konkreten, anschaulichen Materialien zu abstrakteren. Messbar ueber Abstraktionsgrad (1-4), verfeinert durch `material_charakter` und `bildfunktion`: Durchschnitt(1. Haelfte) ≤ Durchschnitt(2. Haelfte). | FD-Q5 Anschaulichkeitsprinzip + Schroeder Elementarisierung |
 | S8 | **Kontextgebot Quellenarbeit** | Quellentext- und Bildquellen-Materialien (Typ: quellentext, bildquelle mit `bildfunktion` = `heuristisch`) stehen NICHT an Position 1, es sei denn `didaktische_funktion` = `einstieg` UND `analyseauftrag` = false. Vor jeder Quellenarbeit steht mindestens 1 kontextgebendes Material. | FD-Q3 Vorwissen-Gebot |
 | S9 | **Uebergangs-Kohaerenz** | Jedes Uebergangsobjekt (Sektion 4.4) hat `rueckbezug_inhalt_ref` ≥ 8 Woerter UND `vorausblick_frage` ≥ 8 Woerter UND validen `kausalitaets_typ`. Rein formale Ueberleitungen (nur `intentionsskizze` ohne strukturierte Felder) sind unzureichend. | Brunnhuber Strukturierung + Meyer Sinnstiftendes Kommunizieren |
-| S10 | **Aktivierung am Sequenzbeginn** | Das erste Material (Position 1) hat die didaktische Funktion `einstieg` und aktiviert Vorwissen oder weckt Neugier. Es fuehrt KEINE neuen Fachbegriffe ein. | Brunnhuber Aktivierung + Meyer Lernfoerderliches Klima |
+| S10 | **Aktivierung am Sequenzbeginn** | Das erste Material (Position 1) hat `didaktische_funktion` = `einstieg` (oder `erarbeitung` bei Rahmen-Einstieg) und `aktivierungscharakter` ∈ {frage, bild, provokation, hypothese}. Es fuehrt KEINE Stufe 1-3 Fachbegriffe ein. | Brunnhuber Aktivierung + Meyer Lernfoerderliches Klima |
 
 ### KANN-Kriterien
 
 | # | Kriterium | Operationalisierung | Herkunft |
 |---|---|---|---|
 | S11 | **Materialtyp-Vielfalt** | Die Sequenz einer Mappe enthaelt mindestens 2 verschiedene Materialtypen (z.B. darstellungstext + bildquelle, nicht nur darstellungstext + darstellungstext). | Meyer Methodenvielfalt |
-| S12 | **Sprachregister-Progression** | Das Sprachregister der Materialien passt sich dem Themencharakter an und steigert sich progressiv: erfahrungsbezogen-narrativ → fachbegrifflich-analytisch → bilanzierend-urteilend. | Empirie GUETEKRITERIEN_HEFTEINTRAG_ENTWURF (Abschnitt 3.5) |
+| ~~S12~~ | ~~**Sprachregister-Progression**~~ | **Integriert in S7** (v2.2, P14). Sprachregister-Progression wird als Teilaspekt der Abstraktionsprogression in S7 mitgeprueft (Modifikator `material_charakter` bildet Sprachregister implizit ab: vergegenwaertigung = narrativ, besinnung_sachbezogen = analytisch, besinnung_wertbezogen = urteilend). | Empirie GUETEKRITERIEN_HEFTEINTRAG_ENTWURF (Abschnitt 3.5) |
 | S13 | **Personalisierung in Fruehphase** | Mindestens 1 Material in der ersten Sequenzhaelfte hat `personalisiert` = true (individuelle Perspektive, Identifikationsfigur, Tagebuch, Brief). | Roth Personalisierung + Vergegenwärtigung |
+
+### Pre-Check (Prozessvalidierung, nicht fachdidaktisch)
+
+Die folgenden Pruefungen sind **Prozess-Metriken**, keine fachdidaktischen Qualitaetskriterien. Sie werden VOR dem Q-Gate (Phase 1.9.5) ausgefuehrt und stellen sicher, dass die Datenstruktur fuer die eigentlichen Pruefungen vollstaendig ist.
+
+| # | Kriterium | Operationalisierung | Herkunft |
+|---|---|---|---|
+| S6 | **Sequenzkontext-Vollstaendigkeit** | Jedes Material hat ein vollstaendiges `sequenz_kontext`-Objekt mit `vorher` (leer nur bei Position 1) und `nachher` (leer nur bei letzter Position). Pruefung: Konsistenz vorher(N) = nachher(N-1). | AGENT_MATERIAL Aufgabe 1.9.5 |
+
+**Hinweis:** S6 ist eine Vollstaendigkeitspruefung der Datenstruktur (Prozess-Metrik), kein fachdidaktisches Guetekriterium. S6-FAIL blockiert den Start des Q-Gates (die sequenz_kontext-Objekte werden von SUB_MATERIAL_* benoetigt). S6 zaehlt nicht zur PASS/FAIL-Bilanz des Q-Gates.
 
 ### 4.2 Input-Felder fuer maschinelle Operationalisierung (v2.0)
 
@@ -167,6 +176,7 @@ Die folgenden Felder muessen pro Material im Sequenzplan (MATERIAL_GERUEST) vorh
 | P7a | `fachbegriffe_eingefuehrt` | Array[String] | Stufe 1-3 Begriffe, die dieses Material erstmals einfuehrt | AGENT_MATERIAL | S2, S10 |
 | P7b | `fachbegriffe_referenziert` | Array[String] | Stufe 1-3 Begriffe, die Vorwissen voraussetzen | AGENT_MATERIAL | S2 |
 | P8 | Uebergangsobjekte (JSON) | Object | Schema: siehe Sektion 4.4 | AGENT_MATERIAL (Aufgabe 1.9.4) | S9 |
+| P11 | `aktivierungscharakter` | Enum | `frage` / `bild` / `provokation` / `hypothese` / `keine` | AGENT_MATERIAL (nur Position 1) | S10 |
 | P12 | `scpl_phase` | Enum | `S` / `C` / `P` / `L` | AGENT_HEFTEINTRAG (pro TB-Knoten) | S14 |
 
 **Zuweisungsregeln `material_charakter` (P1):**
@@ -198,9 +208,9 @@ AGENT_HEFTEINTRAG muss in Phase 0.4 jeden TB-Knoten mit `scpl_phase: S|C|P|L` an
 **MATERIAL_GERUEST-Template (erweitert, v2.0):**
 
 ```markdown
-| # | Material-ID | Typ | Didaktische Funktion | TB-Knoten | SCPL-Phase | material_charakter | bildfunktion | analyseauftrag | personalisiert | primary_tb_knoten | fachbegriffe_eingefuehrt | fachbegriffe_referenziert | Voraussetzung | Kerninhalt |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | M4-1 | ... | einstieg | ... | S | vergegenwaertigung | n/a | false | true | k4-1 | [] | [] | — | ... |
+| # | Material-ID | Typ | Didaktische Funktion | TB-Knoten | SCPL-Phase | material_charakter | bildfunktion | analyseauftrag | personalisiert | primary_tb_knoten | aktivierungscharakter | fachbegriffe_eingefuehrt | fachbegriffe_referenziert | Voraussetzung | Kerninhalt |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | M4-1 | ... | einstieg | ... | S | vergegenwaertigung | n/a | false | true | k4-1 | frage | [] | [] | — | ... |
 ```
 
 ### 4.3 Fachbegriff-Taxonomie (v2.0)
@@ -280,7 +290,7 @@ Die Prueflogik S9 (Uebergangs-Kohaerenz) erfordert strukturierte Uebergangsobjek
 | S3 | TB-Knoten-Abdeckung | MUSS | PASS/FAIL | [N]/[M] Knoten abgedeckt, fehlend: [Liste] |
 | S4 | Didaktische-Funktion-Sequenzlogik | MUSS | PASS/FAIL | Reihenfolge: [einstieg → erarbeitung → ... → transfer] |
 | S5 | Vergegenwärtigung vor Besinnung | MUSS | PASS/FAIL | Narrativ-anschaulich: Positionen [X], Analytisch: Positionen [Y] |
-| S6 | Sequenzkontext-Vollstaendigkeit | MUSS | PASS/FAIL | [N]/[M] Objekte vollstaendig |
+| S6 | Sequenzkontext-Vollstaendigkeit | Pre-Check | PASS/BLOCK | [N]/[M] Objekte vollstaendig (Phase 1.9.5, vor Q-Gate) |
 | S14 | SCPL-Korrespondenz | MUSS | PASS/FAIL | S-Knoten: Pos. [X], C-Knoten: Pos. [Y], P-Knoten: Pos. [Z], L-Knoten: Pos. [W] |
 | S15 | Skript-Kongruenz | MUSS | PASS/FAIL | [N]/[M] Materialien folgen SKRIPT-Reihenfolge, Abweichungen: [Liste] |
 | S7 | Vom Anschaulichen zum Abstrakten | SOLL | PASS/FAIL | Abstraktionsgrad 1. Haelfte: [X], 2. Haelfte: [Y] |
@@ -288,7 +298,7 @@ Die Prueflogik S9 (Uebergangs-Kohaerenz) erfordert strukturierte Uebergangsobjek
 | S9 | Uebergangs-Kohaerenz | SOLL | PASS/FAIL | [N]/[M] Ueberleitungen inhaltlich motiviert |
 | S10 | Aktivierung am Sequenzbeginn | SOLL | PASS/FAIL | Pos. 1: Funktion [X], Fachbegriffe eingefuehrt: [ja/nein] |
 | S11 | Materialtyp-Vielfalt | KANN | PASS/FAIL | Typen: [Liste], Anzahl verschiedener: [N] |
-| S12 | Sprachregister-Progression | KANN | PASS/FAIL | Progression erkennbar: [ja/nein] |
+| ~~S12~~ | ~~Sprachregister-Progression~~ | — | — | Integriert in S7 (v2.2, P14) |
 | S13 | Personalisierung in Fruehphase | KANN | PASS/FAIL | Personalisiertes Material an Pos. [X] |
 **Gesamt:** PASS / FAIL (S[X] nachgebessert)
 ```
@@ -322,6 +332,7 @@ Konkrete Prueflogik fuer jedes Kriterium, damit AGENT_MATERIAL das Q-Gate autono
      - `vertiefung` → Problemloesung/Wertung
      - `sicherung` → Sicherung
 3. Pruefe: Ist die Zuordnung monoton aufsteigend? (Keine spaetere Phase vor einer frueheren)
+**Grenzfall-Toleranz (P15):** Bei Mappen mit < 3 Materialien: Nur die Grundregel V-vor-B pruefen (Vergegenwärtigung vor Besinnung). Die feinere Phasenzuordnung (z.B. Problembegegnung vs. Vergegenwärtigung) entfaellt, da bei 1-2 Materialien keine sinnvolle Phasenfolge abbildbar ist.
 **FAIL wenn:** Phasenfolge verletzt (z.B. Besinnung vor Vergegenwärtigung bei historischer Perspektive)
 **Nachbesserung:** Material umpositionieren oder `material_charakter` / `didaktische_funktion` korrigieren
 
@@ -373,12 +384,14 @@ Konkrete Prueflogik fuer jedes Kriterium, damit AGENT_MATERIAL das Q-Gate autono
    - **Besinnung (wertbezogen):** `material_charakter` = `besinnung_wertbezogen`
 2. Konsistenz-Check: Bei bildquelle MUSS `bildfunktion` mit `material_charakter` korrespondieren (`illustrativ` → `vergegenwaertigung`, `heuristisch` → `besinnung_sachbezogen`). Inkonsistenz → WARNING, `material_charakter` gilt.
 3. Pruefe Reihenfolge: min(Position `vergegenwaertigung`) < min(Position `besinnung_sachbezogen`) < min(Position `besinnung_wertbezogen`)
-4. Toleranz: Wenn Mappe nur 2-3 Materialien hat, genuegt `vergegenwaertigung` vor jeder `besinnung_*` (Unterscheidung sachbezogen/wertbezogen entfaellt)
+4. Toleranz (< 3 Materialien): Wenn Mappe nur 2-3 Materialien hat, genuegt `vergegenwaertigung` vor jeder `besinnung_*` (Unterscheidung sachbezogen/wertbezogen entfaellt)
+5. **Toleranz Hybrid-Materialien (P15):** Wenn ein Material sowohl vergegenwaertigende als auch besinnende Anteile hat (z.B. Darstellungstext mit narrativem Einstieg und analytischem Schluss), zaehlt der `material_charakter` (primaerer Charakter). Der Klassifikator entscheidet nach dem dominanten Charakter — Hybrid-Ambiguitaet ist kein FAIL-Grund, solange `material_charakter` konsistent gesetzt ist.
 **FAIL wenn:** Erste `besinnung_*` vor erster `vergegenwaertigung`
 **Nachbesserung:** Material umpositionieren oder `material_charakter` korrigieren
 
-### S6: Sequenzkontext-Vollstaendigkeit (MUSS)
+### S6: Sequenzkontext-Vollstaendigkeit (Pre-Check, Phase 1.9.5)
 
+**Status:** Ausgelagert aus MUSS-Kriterien (P13). Prozessvalidierung vor Q-Gate-Start.
 **Input-Daten:** Sequenzplan, pro Material: `sequenz_kontext`-Objekt
 **Prueflogik:**
 1. Fuer jedes Material pruefe:
@@ -387,8 +400,8 @@ Konkrete Prueflogik fuer jedes Kriterium, damit AGENT_MATERIAL das Q-Gate autono
    - Ausnahme Position 1: `vorher` darf leer sein
    - Ausnahme letzte Position: `nachher` darf leer sein
 2. Pruefe Konsistenz: `vorher` von Material N muss mit `nachher` von Material N-1 uebereinstimmen
-**FAIL wenn:** Ein Objekt fehlt oder ist inkonsistent
-**Nachbesserung:** Fehlende Objekte generieren, Inkonsistenzen aufloesen
+**BLOCK wenn:** Ein Objekt fehlt oder ist inkonsistent → Q-Gate darf nicht starten
+**Nachbesserung:** Fehlende Objekte generieren, Inkonsistenzen aufloesen. Dann Q-Gate (S1-S15 ohne S6) starten.
 
 ### S7: Vom Anschaulichen zum Abstrakten (SOLL)
 
@@ -408,6 +421,7 @@ Konkrete Prueflogik fuer jedes Kriterium, damit AGENT_MATERIAL das Q-Gate autono
 3. Erwartung: Durchschnitt(1. Haelfte) ≤ Durchschnitt(2. Haelfte)
 **FAIL wenn:** Durchschnitt(1. Haelfte) > Durchschnitt(2. Haelfte) + 0.5
 **Nachbesserung:** Konkrete/vergegenwaertigende Materialien nach vorne, abstrakte/besinnende nach hinten
+**Integriert (v2.2, P14):** S12 (Sprachregister-Progression) wird durch den `material_charakter`-Modifikator implizit mitgeprueft: vergegenwaertigung = narrativ, besinnung_sachbezogen = analytisch, besinnung_wertbezogen = urteilend. Eine korrekte Abstraktionsprogression impliziert korrekte Sprachregister-Progression.
 
 ### S8: Kontextgebot Quellenarbeit (SOLL)
 
@@ -426,38 +440,63 @@ Konkrete Prueflogik fuer jedes Kriterium, damit AGENT_MATERIAL das Q-Gate autono
 
 **Input-Daten:** Uebergangsobjekte (P8, JSON-Schema aus Sektion 4.4) fuer jedes Materialpaar (N-1 → N)
 **Prueflogik:**
-1. Fuer jedes Uebergangsobjekt (ab Uebergang von Material 1 → Material 2) pruefe:
+1. **Vollstaendigkeits-Check:** Fuer N Materialien muessen genau N-1 Uebergangsobjekte existieren (jedes aufeinanderfolgende Paar).
+2. **Referentielle Integritaet:** Fuer jedes Uebergangsobjekt pruefe:
+   a. `von_mat` und `zu_mat` sind valide Material-IDs aus dem Sequenzplan
+   b. `von_mat` hat Position P und `zu_mat` hat Position P+1 (direkte Nachfolge)
+   c. Kein Material-Paar ohne Uebergangsobjekt, kein Uebergangsobjekt ohne Materialpaar
+3. **Feld-Pruefung:** Fuer jedes Uebergangsobjekt pruefe:
    a. `rueckbezug_inhalt_ref` != null UND Wortanzahl ≥ 8
    b. `vorausblick_frage` != null UND Wortanzahl ≥ 8
    c. `kausalitaets_typ` ∈ {temporal, kausal, kontrastiv, vertiefend, perspektivwechsel}
    d. `intentionsskizze` != null (Fliesstext fuer Phase 2.1c)
-2. Klassifiziere: Objekt ist `vollstaendig` (a+b+c+d) oder `unvollstaendig`
-3. Konsistenz-Check: `rueckbezug_inhalt_ref` muss inhaltlich zum `Kerninhalt` des Quell-Materials passen (semantische Pruefung, nicht exact match)
-**FAIL wenn:** > 50% der Uebergangsobjekte `unvollstaendig` ODER ein Pflichtfeld fehlt
-**Nachbesserung:** Fehlende Felder ergaenzen. Bei `kausalitaets_typ`-Unsicherheit: `vertiefend` als Default
+4. Klassifiziere: Objekt ist `vollstaendig` (3a+3b+3c+3d) oder `unvollstaendig`
+5. **Semantik-Check:** `rueckbezug_inhalt_ref` muss inhaltlich zum `Kerninhalt` des Quell-Materials passen (semantische Pruefung, nicht exact match)
+**FAIL wenn:** Punkt 1 verletzt (fehlende Objekte) ODER > 50% der Uebergangsobjekte `unvollstaendig` ODER Punkt 2 verletzt (referentielle Integritaet)
+**Nachbesserung:** Fehlende Objekte ergaenzen, IDs korrigieren, Felder vervollstaendigen. Bei `kausalitaets_typ`-Unsicherheit: `vertiefend` als Default
 
 ### S10: Aktivierung am Sequenzbeginn (SOLL)
 
-**Input-Daten:** Material an Position 1, `fachbegriffe_eingefuehrt[]` (P7a), `didaktische_funktion` (P2)
+**Input-Daten:** Material an Position 1: `didaktische_funktion` (P2), `fachbegriffe_eingefuehrt[]` (P7a), `aktivierungscharakter` (P11). Escape-Game-Metadaten: `rahmen/einstieg.json` (vorhanden ja/nein).
 **Prueflogik:**
-1. `didaktische_funktion` == `einstieg`?
-2. `fachbegriffe_eingefuehrt[]` an Position 1 ist leer ODER enthaelt nur Stufe-4-Begriffe (Kontext-FB)?
+1. **Rahmen-Einstieg-Erkennung:**
+   - Existiert `rahmen/einstieg.json` fuer diese Mappe? → `rahmen_einstieg` = true/false
+   - **Definition Rahmen-Einstieg:** Der Escape-Game-Rahmen (narrativer Einstieg, Problemstellung, Stundenfrage) uebernimmt die Aktivierungsfunktion VOR dem ersten Material. Die Einstiegsfunktion ist dann durch den Rahmen abgedeckt, nicht durch Position 1.
+2. **Funktions-Check:**
+   - Wenn `rahmen_einstieg` = false: `didaktische_funktion` an Position 1 MUSS `einstieg` sein
+   - Wenn `rahmen_einstieg` = true: `didaktische_funktion` an Position 1 DARF `erarbeitung` sein (Rahmen hat Einstieg uebernommen)
+3. **Aktivierungscharakter-Check (nur wenn `didaktische_funktion` = `einstieg`):**
+   - `aktivierungscharakter` (P11) MUSS ∈ {`frage`, `bild`, `provokation`, `hypothese`} sein
+   - `aktivierungscharakter` = `keine` → WARNING (Einstieg ohne aktivierenden Charakter)
+   - Bei `rahmen_einstieg` = true UND Position 1 = `erarbeitung`: Aktivierungscharakter-Check entfaellt (Rahmen aktiviert)
+4. **Fachbegriff-Check (gilt IMMER, auch bei Rahmen-Einstieg):**
+   - `fachbegriffe_eingefuehrt[]` an Position 1 ist leer ODER enthaelt nur Stufe-4-Begriffe (Kontext-FB)?
    - Stufe 1-3 Begriffe an Position 1 = FAIL (Fachbegriffe erst ab Position 2)
-3. Material hat aktivierenden Charakter? (Frage, Bild, Provokation, Hypothese — nicht Lehrtext)
-**Sonderfall Rahmen-Einstieg:** Wenn der Escape-Game-Rahmen (rahmen/einstieg.json) die Einstiegsfunktion uebernimmt, darf Position 1 `didaktische_funktion` = `erarbeitung` haben. In diesem Fall: S10-Check entfaellt fuer `didaktische_funktion`, aber die Fachbegriff-Pruefung (Punkt 2) bleibt aktiv.
+
+**Enum `aktivierungscharakter` (P11):**
+
+| Wert | Bedeutung | Beispiel |
+|---|---|---|
+| `frage` | Material stellt eine Leitfrage oder provokante Frage | "Warum glaubten alle, der Krieg sei schnell vorbei?" |
+| `bild` | Material zeigt ein Bild/Foto/Karte als Impuls | Historisches Foto als Einstieg |
+| `provokation` | Material konfrontiert mit ueberraschendem Fakt oder Widerspruch | "Die Soldaten packten Weihnachtsgeschenke ein..." |
+| `hypothese` | Material laesst eine Vermutung aufstellen | "Was denkst du: Kann ein Krieg in 40 Tagen gewonnen werden?" |
+| `keine` | Material hat keinen aktivierenden Charakter (nur bei `rahmen_einstieg` = true sinnvoll) | Darstellungstext ohne Impuls |
+
 **FAIL wenn:** Position 1 fuehrt Stufe 1-3 Fachbegriffe ein (unabhaengig von Rahmen-Einstieg)
 **FAIL wenn:** Position 1 ist kein Einstieg UND kein Rahmen-Einstieg vorhanden
-**Nachbesserung:** Einstiegsmaterial vorschalten ODER `fachbegriffe_eingefuehrt[]` an Position 1 bereinigen (Begriffe auf spaeteres Material verschieben)
+**WARNING wenn:** `aktivierungscharakter` = `keine` UND `didaktische_funktion` = `einstieg`
+**Nachbesserung:** Einstiegsmaterial vorschalten ODER `fachbegriffe_eingefuehrt[]` an Position 1 bereinigen (Begriffe auf spaeteres Material verschieben) ODER `aktivierungscharakter` korrigieren
 
 ### S11: Materialtyp-Vielfalt (KANN)
 
 **Prueflogik:** `len(set(materialtypen))` ≥ 2
 **Kein FAIL moeglich** — nur Empfehlung bei Monokultur.
 
-### S12: Sprachregister-Progression (KANN)
+### ~~S12: Sprachregister-Progression~~ (integriert in S7, v2.2)
 
-**Prueflogik:** Sprachregister der Materialien korreliert mit Themencharakter und steigt progressiv an (vgl. GUETEKRITERIEN_HEFTEINTRAG_ENTWURF Abschnitt 3.5).
-**Kein FAIL moeglich** — nur Dokumentation.
+**Status:** P14 — S12 wurde in S7 integriert. Die Sprachregister-Progression (erfahrungsbezogen-narrativ → fachbegrifflich-analytisch → bilanzierend-urteilend) korreliert direkt mit dem `material_charakter`-Modifikator in S7: `vergegenwaertigung` = narratives Register, `besinnung_sachbezogen` = analytisches Register, `besinnung_wertbezogen` = urteilendes Register. Da S7 bereits ueber den Modifikator die Abstraktionsprogression inklusive Sprachregister prueft, ist S12 als eigenstaendiges Kriterium redundant.
+**Kein separater Check mehr.** Q-Gate-Protokoll entfaellt fuer S12.
 
 ### S13: Personalisierung in Fruehphase (KANN)
 
@@ -475,17 +514,18 @@ Konkrete Prueflogik fuer jedes Kriterium, damit AGENT_MATERIAL das Q-Gate autono
    - Jeder TB-Knoten hat genau eine `scpl_phase` ∈ {S, C, P, L} (annotiert durch AGENT_HEFTEINTRAG in Phase 0.4)
    - **Fallback** (wenn P12-Annotation fehlt): Ordne heuristisch nach Inhalt im scpl-Block zu (fehleranfaellig, WARNING erzeugen)
 3. Pruefe Monotonie: Materialien mit scpl_phase S haben niedrigere Positionen als C, C < P, P < L
-4. Toleranz: Materialien mit `didaktische_funktion` = `einstieg` (Position 1) sind phasen-neutral
+4. **Toleranz Einstieg phasenneutral (P15):** Materialien mit `didaktische_funktion` = `einstieg` (Position 1) sind phasen-neutral — sie werden bei der SCPL-Monotonie-Pruefung uebersprungen, da der Einstieg per Definition vor der SCPL-Erarbeitung liegt
 5. Toleranz: Materialien, die sowohl S- als auch C-Knoten bedienen, werden nach `primary_tb_knoten` eingeordnet (daher P6 kritisch)
 **FAIL wenn:** Ein P-Material steht vor dem letzten C-Material ODER ein L-Material vor dem letzten P-Material
 **Nachbesserung:** Material umpositionieren ODER `primary_tb_knoten`-Zuordnung pruefen ODER `scpl_phase`-Annotation in AGENT_HEFTEINTRAG korrigieren
 
 ### S15: Skript-Kongruenz (MUSS)
 
-**Input-Daten:** Sequenzplan-Tabelle, SKRIPT (Artefakt-Zuordnungstabelle pro Chunk, Absatzreihenfolge)
+**Input-Daten:** Sequenzplan-Tabelle (Spalte `Skript-Ref`), SKRIPT (Artefakt-Zuordnungstabelle pro Chunk, Absatzreihenfolge)
+**SKRIPT-Index-Konvention:** Der SKRIPT-Index eines Materials ist die **erste Absatz-Position** (§N) im SKRIPT-Chunk, die das Material referenziert. Bei mehreren §-Referenzen (z.B. `§2, §4`) zaehlt die niedrigste (§2). Bei Materialien ohne explizite §-Referenz: Position des Artefakt-Markers im SKRIPT-Fliesstext.
 **Prueflogik:**
-1. Fuer jedes Material: Bestimme die Quell-Passage im SKRIPT (Artefakt-Marker oder Absatz-Referenz aus MATERIAL_GERUEST)
-2. Ordne jedem Material einen SKRIPT-Index zu (Reihenfolge des Auftretens im SKRIPT-Chunk)
+1. Fuer jedes Material: Bestimme den SKRIPT-Index aus `Skript-Ref` im MATERIAL_GERUEST (§-Nummer der ersten referenzierten Passage)
+2. Ordne die Materialien nach SKRIPT-Index aufsteigend
 3. Pruefe: Ist die Sequenzplan-Reihenfolge kongruent mit der SKRIPT-Index-Reihenfolge?
 4. Abweichungen dokumentieren mit Begruendung (z.B. "S14: SCPL-Korrespondenz erfordert Umstellung")
 **FAIL wenn:** Mehr als ⌊N/3⌋ Materialien (N = Gesamtzahl Materialien in Mappe) von der SKRIPT-Reihenfolge abweichen UND keine Begruendung vorliegt

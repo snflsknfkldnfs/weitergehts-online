@@ -209,6 +209,29 @@ Fuer jeden SCPL-Schritt (S, jedes C, P) pruefen: Gibt es im SKRIPT und/oder ARTE
    b) Luecke markieren: AGENT_MATERIAL muss adressieren.
 ```
 
+### 6b. SCPL-Phase pro TB-Knoten annotieren (P12)
+
+Nach der Erarbeitbarkeits-Pruefung: Fuer jeden TB-Knoten im `knoten[]`-Array (bzw. in der SCPL-Struktur) die zugehoerige SCPL-Phase annotieren.
+
+**Pflichtfeld:** `scpl_phase: S | C | P | L` pro TB-Knoten.
+
+**Zuweisungsregel:**
+- Knoten, die in `scpl.situation` behandelt werden → `scpl_phase: S`
+- Knoten, die in `scpl.complication[]` behandelt werden → `scpl_phase: C`
+- Knoten, die in `scpl.problem` behandelt werden → `scpl_phase: P`
+- Knoten, die in `scpl.loesung[]` behandelt werden → `scpl_phase: L`
+
+**Zweck:** AGENT_MATERIAL (Phase 1) referenziert `scpl_phase` pro TB-Knoten fuer S14 (SCPL-Korrespondenz). Ohne diese Annotation ist S14 nur heuristisch pruefbar.
+
+**Output-Ergaenzung:** Im Erarbeitbarkeits-Pruefung-Block zusaetzlich eine Spalte `scpl_phase` fuehren:
+
+```markdown
+| SCPL-Schritt | Status | Skript-Referenz | TB-Knoten | scpl_phase | Aktion |
+|---|---|---|---|---|---|
+| S: [Situation] | [Status] | [Ref] | kN-X | S | — |
+| C1: [Schritt 1] | [Status] | [Ref] | kN-Y | C | — |
+```
+
 ### 7. Q-Gate ausfuehren
 
 Den Hefteintrag gegen alle 14 Guetekriterien pruefen und das Q-Gate-Protokoll ausfuellen.

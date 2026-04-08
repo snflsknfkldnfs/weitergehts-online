@@ -120,13 +120,13 @@
 **Ordnungsrahmen:** SKRIPT-Absatzfolge (Primaer) + SCPL-Aufbau (Kontrolle). Keine Divergenz — beide kongruent.
 **Artikulationsschema:** Historisch (Problembegegnung → Vergegenwaertigung → Besinnung → Sicherung)
 
-| # | Material-ID | Typ | Didaktische Funktion | TB-Knoten | SCPL-Phase | material_charakter | bildfunktion | analyseauftrag | personalisiert | primary_tb_knoten | fachbegriffe_eingefuehrt | fachbegriffe_referenziert | Voraussetzung | Kerninhalt (1 Satz) |
-|---|-------------|-----|----------------------|-----------|------------|-------------------|--------------|----------------|----------------|-------------------|------------------------|--------------------------|---------------|---------------------|
-| 1 | mat-4-1 | darstellungstext | erarbeitung | k4-2, k4-1, k4-3 | S+C1 | vergegenwaertigung | n/a | false | false | k4-2 | [Zweifrontenkrieg, Schlieffen-Plan, Zeitluecke] | [Kriegsbegeisterung†] | — | Erklaert Zweifrontenkrieg als Problem und Schlieffen-Plan als Strategie mit Zeitluecke. |
-| 2 | mat-4-2 | karte | erarbeitung | k4-1, k4-4 | C1+C2 | vergegenwaertigung | illustrativ | false | false | k4-1 | [Einmarsch] | [Schlieffen-Plan] | mat-4-1 | Visualisiert den Schlieffen-Plan: Angriffspfeile durch Belgien nach Frankreich. |
-| 3 | mat-4-3 | tagebuch | erarbeitung | k4-4 | C2 | vergegenwaertigung | n/a | false | true | k4-4 | [] | [Einmarsch] | mat-4-2 | Personifiziert den Vormarsch: Siegeszuversicht, dann Erschoepfung und Nachschubprobleme. |
-| 4 | mat-4-4 | karte | erarbeitung | k4-5 | C3 | vergegenwaertigung | illustrativ | false | false | k4-5 | [Schlacht an der Marne, Gegenoffensive] | [Schlieffen-Plan] | mat-4-3 | Zeigt die Marne-Schlacht: Gallieni-Flanke, Gegenoffensive, 65 km Rueckzug. |
-| 5 | mat-4-5 | bildquelle | sicherung | k4-6 | P | vergegenwaertigung | illustrativ | false | false | k4-6 | [Stellungskrieg] | [Schlacht an der Marne, Schlieffen-Plan] | mat-4-4 | Schuetzengraben-Foto als visueller Anker: Stellungskrieg statt schnellem Sieg. |
+| # | Material-ID | Typ | Didaktische Funktion | TB-Knoten | SCPL-Phase | material_charakter | bildfunktion | analyseauftrag | personalisiert | primary_tb_knoten | aktivierungscharakter | fachbegriffe_eingefuehrt | fachbegriffe_referenziert | Voraussetzung | Kerninhalt (1 Satz) |
+|---|-------------|-----|----------------------|-----------|------------|-------------------|--------------|----------------|----------------|-------------------|-----------------------|------------------------|--------------------------|---------------|---------------------|
+| 1 | mat-4-1 | darstellungstext | erarbeitung | k4-2, k4-1, k4-3 | S+C1 | vergegenwaertigung | n/a | false | false | k4-2 | keine | [Zweifrontenkrieg, Schlieffen-Plan, Zeitluecke] | [Kriegsbegeisterung†] | — | Erklaert Zweifrontenkrieg als Problem und Schlieffen-Plan als Strategie mit Zeitluecke. |
+| 2 | mat-4-2 | karte | erarbeitung | k4-1, k4-4 | C1+C2 | vergegenwaertigung | illustrativ | false | false | k4-1 | — | [Einmarsch] | [Schlieffen-Plan] | mat-4-1 | Visualisiert den Schlieffen-Plan: Angriffspfeile durch Belgien nach Frankreich. |
+| 3 | mat-4-3 | tagebuch | erarbeitung | k4-4 | C2 | vergegenwaertigung | n/a | false | true | k4-4 | — | [] | [Einmarsch] | mat-4-2 | Personifiziert den Vormarsch: Siegeszuversicht, dann Erschoepfung und Nachschubprobleme. |
+| 4 | mat-4-4 | karte | erarbeitung | k4-5 | C3 | vergegenwaertigung | illustrativ | false | false | k4-5 | — | [Schlacht an der Marne, Gegenoffensive] | [Schlieffen-Plan] | mat-4-3 | Zeigt die Marne-Schlacht: Gallieni-Flanke, Gegenoffensive, 65 km Rueckzug. |
+| 5 | mat-4-5 | bildquelle | sicherung | k4-6 | P | vergegenwaertigung | illustrativ | false | false | k4-6 | — | [Stellungskrieg] | [Schlacht an der Marne, Schlieffen-Plan] | mat-4-4 | Schuetzengraben-Foto als visueller Anker: Stellungskrieg statt schnellem Sieg. |
 
 † Kriegsbegeisterung = Mappe-3-Voraussetzung (k3-1), Stufe 4 (Kontext-FB), MILD-Pruefung
 
@@ -202,15 +202,15 @@
 | S3 | TB-Knoten-Abdeckung | MUSS | PASS | 6/6 Knoten abgedeckt (k4-1 bis k4-6). |
 | S4 | Didaktische-Funktion-Sequenzlogik | MUSS | PASS | erarbeitung ×4 → sicherung. Monoton (parallele erarbeitung bei mehreren C-Knoten erlaubt). |
 | S5 | Vergegenwaertigung vor Besinnung | MUSS | PASS | Alle 5 Materialien Vergegenwaertigung-Typ. Kein Besinnungs-Material. |
-| S6 | Sequenzkontext-Vollstaendigkeit | MUSS | PASS | 5/5 Objekte vollstaendig. Pos 1 vorher leer, Pos 5 nachher leer. |
+| S6 | Sequenzkontext-Vollstaendigkeit | Pre-Check | PASS | 5/5 Objekte vollstaendig. Pos 1 vorher leer, Pos 5 nachher leer. (Phase 1.9.5, vor Q-Gate) |
 | S14 | SCPL-Korrespondenz | MUSS | PASS | S-Knoten: Pos 1. C-Knoten: Pos 1-4. P-Knoten: Pos 5. Monoton S → C → P. |
 | S15 | Skript-Kongruenz | MUSS | PASS | 5/5 Materialien folgen SKRIPT-Reihenfolge. Keine Abweichungen. |
 | S7 | Vom Anschaulichen zum Abstrakten | SOLL | PASS | 1. Haelfte: DT(2)+Karte(1)=1.5. 2. Haelfte: TB(1)+Karte(1)+BQ(1)=1.0. Grenzwert nicht ueberschritten. |
 | S8 | Kontextgebot Quellenarbeit | SOLL | PASS | Kein Quellentext. BQ (Pos 5) hat 4 Kontextmaterialien vorangestellt. |
 | S9 | Uebergangs-Kohaerenz | SOLL | PASS | 4/4 Ueberleitungen inhaltlich motiviert (Rueckbezug + Vorausblick). |
-| S10 | Aktivierung am Sequenzbeginn | SOLL | FAIL | Pos 1 = erarbeitung mit Fachbegriffen. Begruendung: Einstieg-Funktion durch Rahmen-einstieg.json abgedeckt. Material-Sequenz beginnt mit Erarbeitung. |
+| S10 | Aktivierung am Sequenzbeginn | SOLL | FAIL | Rahmen-Einstieg: ja. Funktions-Check: PASS (erarbeitung bei Rahmen-Einstieg erlaubt). Aktivierungscharakter-Check: entfaellt (Rahmen aktiviert). Fachbegriff-Check: FAIL (Stufe 1-3 an Pos 1: Zweifrontenkrieg, Schlieffen-Plan, Zeitluecke). |
 | S11 | Materialtyp-Vielfalt | KANN | PASS | 4 verschiedene Typen (DT, Karte, Tagebuch, BQ). |
-| S12 | Sprachregister-Progression | KANN | PASS | Narrativ-erklaerend → visuell-deskriptiv → personalisiert → visuell → ankernd. |
+| ~~S12~~ | ~~Sprachregister-Progression~~ | — | — | Integriert in S7 (v2.2, P14). Implizit PASS: alle Materialien vergegenwaertigung = narratives Register, konsistent. |
 | S13 | Personalisierung in Fruehphase | KANN | PASS | mat-4-3 (Tagebuch) an Pos 3 = erste Haelfte. |
 
-**Gesamt:** PASS (8/8 MUSS, 4/5 SOLL — S10 FAIL dokumentiert und begruendet, 3/3 KANN)
+**Gesamt:** PASS (7/7 MUSS, 3/4 SOLL — S10 FAIL dokumentiert und begruendet, 2/2 KANN. Pre-Check S6: PASS. S12: integriert in S7.)
