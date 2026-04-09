@@ -1,7 +1,7 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-09 (Session 26, Phase-1-Testrun Evaluation + Vertragspatch)
-**Modus:** AUDIT
+**Letzte Aktualisierung:** 2026-04-09 (Session 26, Testumgebungs-Reset fuer Phase 1 Neulauf)
+**Modus:** EXECUTE
 
 ---
 
@@ -73,8 +73,8 @@ Parallel dazu: P1-1 Wave 3 Code-Strang (unabhaengig, Claude Code).
 **Architektur-Entscheidung (Session 25, 2026-04-08):**
 Generator wird eigenstaendiges Repo (`escape-game-generator/`). Begruendung: (1) Produkt soll vertriebsfaehig sein, (2) Pfad-Isolation eliminiert Grep-Drift zwischen PM und Produkt, (3) Agenten-Dateien haben hardcodierte `docs/`-Pfade die bei Koexistenz im selben Repo zu Ambiguitaet fuehren. Konsequenzen: Alle internen Pfade werden Repo-relativ umgeschrieben, PROJECT_INSTRUCTIONS.md erhaelt Dual-Root-Logik (GENERATOR_ROOT + TARGET_ROOT), `weitergehts-online/docs/agents/` etc. werden zu Legacy (Quelle der Wahrheit ist Generator-Repo). Audit-Befund: 2 BLOCKER, 4 HIGH, 4 MEDIUM, 2 LOW — werden im Rahmen der Migration gepatcht.
 
-**Letzter Arbeitsschritt:** Session 26: Phase-1-Testrun evaluiert. FAIL — 3 Findings (MG-C1: Vertrag-SCPL-Inkompatibilitaet, MG-H1: fehlende v2.0-Sequenzplanfelder, MG-H2: M3 auf defektem TB). Root Cause: AGENT_MATERIAL.md nicht fuer SCPL-Modell aktualisiert → Agent fiel auf pre-Pipeline-Vorgaenger-Game als Format-Vorlage zurueck. MASSNAHMEN UMGESETZT: (1) AGENT_MATERIAL.md Vertragspatch (Knoten→SCPL, Output-Template, v2.0-Pflichtfelder). (2) M3 TAFELBILD reframt (v2, kausal). Befund: `docs/befunde/BEFUND_PHASE_1_TESTRUN.md`.
-**Naechster Schritt:** (1) User-Validierung M1-M4 TAFELBILDer. (2) STRUKTUR-FREEZE aktivieren. (3) Phase-1-Testrun neu (alle 4 Mappen, mit gepatchtem Vertrag). (4) Bisherige MATERIAL_GERUEST-Dateien verwerfen.
+**Letzter Arbeitsschritt:** Session 26: Testumgebungs-Reset. (1) 4 defekte MATERIAL_GERUEST-Dateien entfernt (pre-Patch, fehlende v2.0-Felder). (2) PROJECT_INSTRUCTIONS.md State-Machine auf Phase 0.4 DONE / Phase 1 PENDING zurueckgesetzt. (3) SKRIPT + M1/M2/M4 TAFELBILD Produktionskorrekturen eingecheckt. Alle 4 TAFELBILDs VALIDIERT + STRUKTUR-FREEZE aktiv. Phase-1-Inputs vollstaendig: DIDAKTIK_RAHMEN, INHALTSBASIS, SKRIPT, 4 TAFELBILDs.
+**Naechster Schritt:** Phase 1.0 AGENT_MATERIAL (Design-Modus) — frische Ausfuehrung mit gepatchtem Vertrag (SCPL-kompatibel, v2.0-Pflichtfelder, Anti-Kontaminations-Direktive).
 
 ### Abgeschlossene Bilanzen (Referenz)
 

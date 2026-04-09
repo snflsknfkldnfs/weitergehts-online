@@ -20,7 +20,7 @@ Die Schülerinnen und Schüler setzen ihre Rolle als Zeitungsreporter fort (Narr
 
 ---
 
-## Chunk 1: Wer überlebt im Schützengraben? Der Stellungskrieg an der Westfront
+## Chunk 1: Wer überlebt im Schützengraben?
 
 ### Einstieg-Kontext
 
@@ -89,7 +89,7 @@ Die Schülerinnen und Schüler setzen ihre Rolle als Zeitungsreporter fort (Narr
 
 ---
 
-## Chunk 2: Hungernd arbeiten. Die Heimatfront 1914–1918
+## Chunk 2: Was bedeutete der Krieg für die Menschen zuhause?
 
 ### Einstieg-Kontext
 
@@ -153,7 +153,7 @@ Die Schülerinnen und Schüler setzen ihre Rolle als Zeitungsreporter fort (Narr
 
 ---
 
-## Chunk 3: Revolution statt Niederlage. Der Zusammenbruch 1917–1918
+## Chunk 3: Warum endete der Krieg durch Revolution?
 
 ### Einstieg-Kontext
 
@@ -220,7 +220,7 @@ Die Schülerinnen und Schüler setzen ihre Rolle als Zeitungsreporter fort (Narr
 
 ---
 
-## Chunk 4: Ein Diktats-Frieden. Versailles 1919 und die Hoffnung, die stirbt
+## Chunk 4: Warum wurde der Friedensvertrag zum Diktat?
 
 ### Einstieg-Kontext
 

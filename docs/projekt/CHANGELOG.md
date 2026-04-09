@@ -4,6 +4,21 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-09 — Testumgebungs-Reset fuer Phase 1 Neulauf
+
+**Phase:** Infrastruktur-Reset
+**Modus:** EXECUTE
+**Session:** 26
+
+**Testumgebung fuer frischen Phase-1-Lauf vorbereitet.**
+- 4 defekte MATERIAL_GERUEST-Dateien entfernt (Mappe 1-4, pre-Vertragspatch, fehlende v2.0-Felder)
+- PROJECT_INSTRUCTIONS.md State-Machine zurueckgesetzt: Phase 0.4 DONE → Phase 1 PENDING
+- Ausstehende Produktionskorrekturen eingecheckt (SKRIPT 8 Zeilen, M1/M2/M4 TAFELBILD je 2 Zeilen)
+- Phase-1-Inputs verifiziert: DIDAKTIK_RAHMEN, INHALTSBASIS, SKRIPT, 4 TAFELBILDs (alle VALIDIERT + STRUKTUR-FREEZE)
+- Bereit fuer: Phase 1.0 AGENT_MATERIAL Design-Modus mit gepatchtem Vertrag
+
+---
+
 ## 2026-04-09 — Phase-1-Testrun Evaluation + AGENT_MATERIAL Vertragspatch
 
 **Phase:** Qualitaetssicherung + Infrastruktur-Patch

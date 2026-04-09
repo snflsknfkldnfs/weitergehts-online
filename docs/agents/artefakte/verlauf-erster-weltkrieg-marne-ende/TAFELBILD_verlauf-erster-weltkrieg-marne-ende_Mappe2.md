@@ -3,7 +3,7 @@
 **Game-ID:** verlauf-erster-weltkrieg-marne-ende  
 **Mappe:** 2 / 4  
 **Erstellt:** 2026-04-09 (Phase 0.4, AGENT_HEFTEINTRAG)  
-**Validierungsstatus:** ENTWURF (User-Validierung ausstehend)
+**Validierungsstatus:** VALIDIERT (User-Validierung 2026-04-09) — STRUKTUR-FREEZE aktiv
 
 ---
 
