@@ -1,6 +1,6 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-09 (Session 28, Evaluation Phase 2.2c + 3.0 Testrun M1)
+**Letzte Aktualisierung:** 2026-04-10 (Session 28, Konsolidierter Befund Testrun M1)
 **Modus:** AUDIT
 
 ---
@@ -71,8 +71,8 @@
                         [DONE] P0-2h Phase 2.2b Aufgaben-Produktion M1 (PASS, 0H/1M/2L, 7/7 Q-Gates PASS)
                           [DONE] P0-2i Phase 2.2c Aufgaben-Cross M1 (PASS, 10/10)
                             [DONE] P0-2j Phase 3.0 Assembly M1 (PASS, 0H/2M/1L)
-                              → P0-2k Infrastruktur-Patches (zitat-Template, merksaetze-Ref) ← NAECHSTER SCHRITT
-                                → P0-3 Zweiter Testfall / Mappe 2
+                              → P0-2k v3.9 Patches (F-P1 ORCH-Router, F-P2 Phase3-STOP, F-L1 Vertrag-Pfad) ← NAECHSTER SCHRITT
+                                → P0-3 Mappe 2 Produktion
               → P2-5 Runde 5 Retrospektive
 ```
 
@@ -83,8 +83,8 @@ Parallel dazu: P1-1 Wave 3 Code-Strang (unabhaengig, Claude Code).
 **Architektur-Entscheidung (Session 25, 2026-04-08):**
 Generator wird eigenstaendiges Repo (`escape-game-generator/`). Begruendung: (1) Produkt soll vertriebsfaehig sein, (2) Pfad-Isolation eliminiert Grep-Drift zwischen PM und Produkt, (3) Agenten-Dateien haben hardcodierte `docs/`-Pfade die bei Koexistenz im selben Repo zu Ambiguitaet fuehren. Konsequenzen: Alle internen Pfade werden Repo-relativ umgeschrieben, PROJECT_INSTRUCTIONS.md erhaelt Dual-Root-Logik (GENERATOR_ROOT + TARGET_ROOT), `weitergehts-online/docs/agents/` etc. werden zu Legacy (Quelle der Wahrheit ist Generator-Repo). Audit-Befund: 2 BLOCKER, 4 HIGH, 4 MEDIUM, 2 LOW — werden im Rahmen der Migration gepatcht.
 
-**Letzter Arbeitsschritt:** Session 28: Evaluation Phase 2.2c + Phase 3.0 Assembly M1. PASS (0H/2M/1L). Phase 2.2c: 10/10 Cross-Kriterien PASS. Phase 3.0: V1-V12 PASS. data.json 45KB, 1 Mappe, 5 Mat, 7 Aufgaben. HTML-Templates + Bild-Asset generiert. Findings: (M1) sicherung.zitat fehlt in data.json — Vertrags-Template-Luecke. (M2) merksaetze[]-Referenz in 3 Vertraegen inkonsistent mit knoten[].merksatz-Schema. (L1) Assembly-Vertrag unter agents/ statt vertraege/. Befund: `docs/befunde/BEFUND_PHASE_2-2c_3-0_TESTRUN_M1.md`. Vorherige Session (27): Infrastruktur-Patches typ-Registry + Encoding-Hints (8 SUB_AUFGABE-Dateien, escape-game-generator Repo, uncommitted).
-**Naechster Schritt:** (1) Infrastruktur-Patches vor Mappe 2: zitat-Feld in VERTRAG_PHASE_3_ASSEMBLY.md, merksaetze→knoten[].merksatz in 3 Vertraegen. (2) escape-game-generator committen (10 Dateien aus Session 27 + neue Patches). (3) Mappe 2 Produktion starten (Phase 2.0 Rahmen). (4) OPT: Assembly-Vertrag nach vertraege/ verschieben. (5) OPT: Engine zitat-Rendering (P1 Code-Strang).
+**Letzter Arbeitsschritt:** Session 28 (Forts.): Konsolidierter Befund Testrun M1. Alle Findings aus 6 Einzelbefunden zusammengefuehrt. 3H/10M/9L + 2 Prozess. Davon gepatcht (v3.6-v3.8): 3H+5M+5L. Prozess-Audit: ORCHESTRATOR nicht als Router genutzt (F-P1), Assembly in Cowork statt Claude Code (F-P2). Befund: `docs/befunde/BEFUND_TESTRUN_M1_KONSOLIDIERT.md`.
+**Naechster Schritt:** v3.9 Infrastruktur-Patches (4 offene Findings): (1) F-P1: ORCHESTRATOR-Read als Phasen-Precondition in PROJECT_INSTRUCTIONS + ORCHESTRATOR. (2) F-P2: Phase-3-STOP-Marker + Ort-Constraint. (3) F-L1: Assembly-Vertrag nach vertraege/ verschieben. (4) F-M1 Rest: Engine zitat-Rendering (Claude Code, P1-Scope).
 
 ### Abgeschlossene Bilanzen (Referenz)
 

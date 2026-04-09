@@ -4,6 +4,20 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-10 — Konsolidierter Befund Testrun Mappe 1
+
+**Phase:** Qualitaetssicherung
+**Modus:** AUDIT
+**Session:** 28 (Fortsetzung)
+
+**Alle Findings aus Testrun M1 konsolidiert. 3H/10M/9L + 2 Prozess-Findings. Davon gepatcht: 3H+5M+5L.**
+- Prozess-Audit: ORCHESTRATOR nicht als Phasen-Router genutzt (F-P1 HIGH), Assembly in Cowork statt Claude Code (F-P2 MEDIUM)
+- 4 offene Patches vor Mappe 2 identifiziert: ORCHESTRATOR-Precondition, Phase-3-STOP-Marker, Engine-zitat-Rendering, Assembly-Vertrag-Verschiebung
+- Infrastruktur-Versionen v3.6→v3.8 dokumentiert, v3.9 geplant
+- Befund: `docs/befunde/BEFUND_TESTRUN_M1_KONSOLIDIERT.md`
+
+---
+
 ## 2026-04-09 — Evaluation Testrun Phase 2.2c Cross-Konsistenz + Phase 3.0 Assembly M1
 
 **Phase:** Qualitaetssicherung
