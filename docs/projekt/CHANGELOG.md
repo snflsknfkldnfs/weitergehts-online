@@ -4,6 +4,22 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-09 — Persistenz-Checkpoint + Clean-Slate fuer Testrun 5
+
+**Phase:** Persistenz + Testrun-Vorbereitung
+**Modus:** EXECUTE
+**Session:** 25 (Abschluss)
+
+**Beide Repos committet. Testlauf-4-Artefakte archiviert. State Machine zurueckgesetzt.**
+- Generator-Repo: Commit a4b8a76 (15 Dateien: Infrastruktur-Separation + 12 Audit-Patches, VERTRAG_0-2 v1.4, VERTRAG_0-3 v1.3, GUETEKRITERIEN_SKRIPT v1.2)
+- Target-Repo: Commit 1332f58 (93 Dateien: Game-1-Migration, Testlauf-4-Artefakte, 3 Befunde, PM-Updates, COWORK_PROJECT_ANLEITUNG v2.0, .gitignore)
+- Testlauf-4-Artefakte archiviert: `docs/befunde/testlauf-4-artefakte/` (3 Dateien: DIDAKTIK_RAHMEN, INHALTSBASIS, SKRIPT)
+- Game-2-Verzeichnis `artefakte/verlauf-erster-weltkrieg-marne-ende/` geraeumt (Clean-Slate fuer Testrun 5)
+- PROJECT_INSTRUCTIONS.md: State Machine PRODUKTION_PHASE_0 → ONBOARDING zurueckgesetzt
+- Testrun 5 bereit: Selbes Game-Thema, Phase 0 komplett, 12 Patches aktiv
+
+---
+
 ## 2026-04-08 — USER-VALIDIERUNG + 2 weitere Infrastruktur-Patches (VP-7, VP-8)
 
 **Phase:** Qualitaetssicherung + Infrastruktur-Optimierung
