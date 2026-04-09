@@ -4,6 +4,23 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-09 — Vergleichsaudit Testlauf 4 vs. Testlauf 5
+
+**Phase:** Qualitaetssicherung
+**Modus:** AUDIT
+**Session:** 26
+
+**3-dimensionale Parallelevaluation abgeschlossen. 76% Patch-Wirksamkeit, absolute Qualitaet +1 Stufe, 10 Regressionsbefunde identifiziert.**
+- Dim 1 (Patch-Wirksamkeit): 8/14 PASS, 4/14 PARTIAL, 2/14 FAIL (VP-1 Sprachraum, VP-5 TRANSFER-Marker)
+- Dim 2 (Absolute Qualitaet): INHALTSBASIS CONDITIONAL PASS → PASS, SKRIPT PASS_WITH_WARNINGS → PASS
+- Dim 3 (Regression): 1 CRITICAL (Chunk 3 = 2553W), 4 HIGH (Mappen 3→4, Narrativ-Kohaerenz, KE-Luecke, Cross-Artefakt)
+- Root Cause: Mappen-Expansion 3→4 unkoordiniert mit DIDAKTIK_RAHMEN (Cluster A, 5/10 Findings)
+- 5 Infrastruktur-Patches abgeleitet: VP-9 (Mappen-Invariante, CRITICAL), VP-10 (Chunk-Limit), VP-11 (TRANSFER-Pflicht), VP-12 (Cross-Artefakt-Check), VP-1r (DE-Wikipedia hardcoded)
+- Befund: `docs/befunde/BEFUND_VERGLEICHSAUDIT_T4_T5.md`
+- PM aktualisiert: STATUS.md kritischer Pfad um P0-2f erweitert
+
+---
+
 ## 2026-04-09 — Persistenz-Checkpoint + Clean-Slate fuer Testrun 5
 
 **Phase:** Persistenz + Testrun-Vorbereitung

@@ -1,7 +1,7 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-08 (Session 25, Infrastruktur-Separation)
-**Modus:** EXECUTE
+**Letzte Aktualisierung:** 2026-04-09 (Session 26, Vergleichsaudit T4/T5)
+**Modus:** AUDIT
 
 ---
 
@@ -24,7 +24,7 @@
 | ID | Aufgabe | Quelle | Naechster Schritt |
 |---|---|---|---|
 | ~~P0-1~~ | ~~SKRIPT-Persistenz im Repo~~ | ~~Session 23 Meta-Task~~ | **CLOSED** (Session 24): ORCHESTRATOR Persistenz-Checkpoint + VERTRAG_PHASE_0-3 Persistenz-PFLICHT |
-| P0-2 | Produktions-Testlauf v2.4 | Operationalisierungs-Audit v2 Abschluss | **Phase 0 PASS (Testlauf 4).** Naechst: USER-VALIDIERUNG SKRIPT → Phase 0.4 → Phase 1 → Phase 2 |
+| P0-2 | Produktions-Testlauf v2.4 | Operationalisierungs-Audit v2 Abschluss | **Testlauf 5 PASS. Vergleichsaudit T4/T5 abgeschlossen.** 76% Patch-Wirksamkeit, 10 Regressions-Findings (1C/4H). Naechst: VP-9..VP-12 patchen → Testrun 6 → Phase 0.4 |
 | P0-3 | Zweiter Testfall Grenzfaelle | Operationalisierungs-Audit v2 P15 | Mappe mit quellentext + bildquelle heuristisch, Rahmen-Einstieg-Konflikt, oder <3 Mat |
 
 **P1 — Wichtig, nicht blockierend:**
@@ -59,9 +59,11 @@
 [DONE] P0-1 SKRIPT-Persistenz scopen
   [DONE] P0-2a Repo-Separation + Audit-Patches (B1, B2, H2, H4, M1)
     [DONE] P0-2c Phase 0 Testlauf (v2.4, Testlauf 4 PASS)
-      → P0-2d Game 2 Produktion fortsetzen (Phase 0.4 → 1.1 → 2.x)  ← NAECHSTER SCHRITT
-        → P0-3 Zweiter Testfall Grenzfaelle
-          → P2-5 Runde 5 Retrospektive
+      [DONE] P0-2e Testlauf 5 + Vergleichsaudit T4/T5 (76% Patch-Wirksamkeit, 10 Regressionen)
+        → P0-2f VP-9..VP-12 Regressions-Patches + Testrun 6  ← NAECHSTER SCHRITT
+          → P0-2d Game 2 Produktion fortsetzen (Phase 0.4 → 1.1 → 2.x)
+            → P0-3 Zweiter Testfall Grenzfaelle
+              → P2-5 Runde 5 Retrospektive
 ```
 
 Parallel dazu: P1-1 Wave 3 Code-Strang (unabhaengig, Claude Code).
@@ -71,8 +73,8 @@ Parallel dazu: P1-1 Wave 3 Code-Strang (unabhaengig, Claude Code).
 **Architektur-Entscheidung (Session 25, 2026-04-08):**
 Generator wird eigenstaendiges Repo (`escape-game-generator/`). Begruendung: (1) Produkt soll vertriebsfaehig sein, (2) Pfad-Isolation eliminiert Grep-Drift zwischen PM und Produkt, (3) Agenten-Dateien haben hardcodierte `docs/`-Pfade die bei Koexistenz im selben Repo zu Ambiguitaet fuehren. Konsequenzen: Alle internen Pfade werden Repo-relativ umgeschrieben, PROJECT_INSTRUCTIONS.md erhaelt Dual-Root-Logik (GENERATOR_ROOT + TARGET_ROOT), `weitergehts-online/docs/agents/` etc. werden zu Legacy (Quelle der Wahrheit ist Generator-Repo). Audit-Befund: 2 BLOCKER, 4 HIGH, 4 MEDIUM, 2 LOW — werden im Rahmen der Migration gepatcht.
 
-**Letzter Arbeitsschritt:** Session 25 (Abschluss): Persistenz-Checkpoint abgeschlossen. Generator-Repo committet (a4b8a76: 15 Dateien, 12 Audit-Patches). Target-Repo committet (1332f58: 93 Dateien, Game-Isolation + Testlauf-4-Artefakte + PM). Testlauf-4-Artefakte nach `docs/befunde/testlauf-4-artefakte/` archiviert. Game-2-Artefakt-Verzeichnis geraeumt (Clean-Slate). PROJECT_INSTRUCTIONS.md State Machine auf ONBOARDING zurueckgesetzt.
-**Naechster Schritt:** (1) Testrun 5 in separater Produktions-Session: Selbes Game-Thema (verlauf-erster-weltkrieg-marne-ende), Phase 0 komplett, Vergleich gegen 8 dokumentierte Testlauf-4-Schwachstellen. (2) Nach Testrun 5: Vergleichsaudit Testlauf 4 vs 5 (Archiv in docs/befunde/testlauf-4-artefakte/). (3) Weiter im kritischen Pfad: Phase 0.4 → Phase 1 → Phase 2.
+**Letzter Arbeitsschritt:** Session 26: Vergleichsaudit T4/T5 abgeschlossen. 3-dimensionale Parallelevaluation (Patch-Wirksamkeit 76%, Absolute Qualitaet +1 Stufe beide Artefakte, 10 Regressions-Findings). Befund: `docs/befunde/BEFUND_VERGLEICHSAUDIT_T4_T5.md`. Root Cause: Mappen-Expansion 3→4 unkoordiniert (Cluster A, 5/10 Findings). 5 Infrastruktur-Patches abgeleitet (VP-9 CRITICAL, VP-10/11/12 HIGH, VP-1r MEDIUM).
+**Naechster Schritt:** (1) VP-9..VP-12 in Generator-Repo patchen (Mappen-Invariante, Chunk-Limit, TRANSFER-Pflicht, Cross-Artefakt-Check). (2) Testrun 6 mit identischem Game-Thema, Fokus Cluster-A-Regression. (3) Bei PASS: Phase 0.4 → Phase 1 → Phase 2.
 
 ### Abgeschlossene Bilanzen (Referenz)
 
