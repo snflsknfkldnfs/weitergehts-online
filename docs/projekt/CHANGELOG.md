@@ -4,6 +4,22 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-09 — Phase-1 Inhaltsaudit (Fachdidaktische Qualitaet)
+
+**Phase:** Qualitaetssicherung
+**Modus:** AUDIT
+**Session:** 26
+
+**Fachdidaktische Tiefenpruefung der 4 MATERIAL_GERUESTs. CONDITIONAL PASS.**
+- Dual-Agenten-Audit: Agent 1 (M1+M2) + Agent 2 (M3+M4)
+- 3 CRITICAL: M3 C2-Inferenz zu schwach fuer R7, M3 Reframe-Risiko (Zeitleiste verstaerkt Chronologie), M4 Dolchstosslegende-Mythologisierungsgefahr
+- 6 HIGH: M1 C1→C2 Kausal-Luecke, M2 S→C1→C2-Kompression, M2 P-Zone narrativ statt analytisch, Paraphrasen als Quellen, M4 Stoffdichte, M4 Art. 231 zu formal
+- STRUKTUR-FREEZE bleibt. Alle Findings sind Phase-2-kompensierbar (Generierungs-Constraints fuer SUB_MATERIAL-Dispatches).
+- Empfehlung: Dispatch-Kontext-Katalog vor Phase 2 erstellen
+- Befund: `docs/befunde/BEFUND_PHASE_1_INHALTSAUDIT.md`
+
+---
+
 ## 2026-04-09 — Phase-1-Neulauf Evaluation (Dual-Agenten-Audit)
 
 **Phase:** Qualitaetssicherung

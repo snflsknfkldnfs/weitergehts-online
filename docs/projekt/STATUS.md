@@ -73,8 +73,8 @@ Parallel dazu: P1-1 Wave 3 Code-Strang (unabhaengig, Claude Code).
 **Architektur-Entscheidung (Session 25, 2026-04-08):**
 Generator wird eigenstaendiges Repo (`escape-game-generator/`). Begruendung: (1) Produkt soll vertriebsfaehig sein, (2) Pfad-Isolation eliminiert Grep-Drift zwischen PM und Produkt, (3) Agenten-Dateien haben hardcodierte `docs/`-Pfade die bei Koexistenz im selben Repo zu Ambiguitaet fuehren. Konsequenzen: Alle internen Pfade werden Repo-relativ umgeschrieben, PROJECT_INSTRUCTIONS.md erhaelt Dual-Root-Logik (GENERATOR_ROOT + TARGET_ROOT), `weitergehts-online/docs/agents/` etc. werden zu Legacy (Quelle der Wahrheit ist Generator-Repo). Audit-Befund: 2 BLOCKER, 4 HIGH, 4 MEDIUM, 2 LOW — werden im Rahmen der Migration gepatcht.
 
-**Letzter Arbeitsschritt:** Session 26: Phase-1-Neulauf evaluiert. CONDITIONAL PASS. Output: 4 MATERIAL_GERUEST-Dateien (M1-M4), alle vertragskonform. Vertragspatch-Wirksamkeit 100% — alle 3 Testrun-1-Findings behoben. 1 Prozess-Finding (CRITICAL: State-Machine nicht aktualisiert, nachgeholt). 3 MEDIUM (Token-Effizienz). Befund: `docs/befunde/BEFUND_PHASE_1_NEULAUF.md`.
-**Naechster Schritt:** User-Validierung der 4 MATERIAL_GERUESTs. Danach Phase 2.1 (Materialproduktion).
+**Letzter Arbeitsschritt:** Session 26: Phase-1 Inhaltsaudit. CONDITIONAL PASS. 3 CRITICAL (M3 C2-Inferenz, M3 Reframe-Risiko, M4 Dolchstosslegende), 6 HIGH, 15 MEDIUM, 11 LOW. Alle Phase-2-kompensierbar — STRUKTUR-FREEZE bleibt. Befunde: `docs/befunde/BEFUND_PHASE_1_NEULAUF.md` (Template-Compliance) + `docs/befunde/BEFUND_PHASE_1_INHALTSAUDIT.md` (Fachdidaktik).
+**Naechster Schritt:** (1) User-Validierung MATERIAL_GERUESTs. (2) Dispatch-Kontext-Katalog fuer Phase 2 erstellen (P0-Findings als Generierungs-Constraints). (3) Phase 2.1 Materialproduktion.
 
 ### Abgeschlossene Bilanzen (Referenz)
 
