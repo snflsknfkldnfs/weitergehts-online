@@ -1,7 +1,7 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-09 (Session 26, v3.7 Scope-Patch 2.1b + BEFUND-Fixes + State-Machine-Patch)
-**Modus:** EXECUTE
+**Letzte Aktualisierung:** 2026-04-09 (Session 27, Evaluation Phase 2.2b Testrun M1)
+**Modus:** AUDIT
 
 ---
 
@@ -68,7 +68,8 @@
                   [DONE] P0-2g3 Phase 2.1c Cross-Konsistenz M1 (PASS)
                     [DONE] P0-2g4 Phase 2.2a Progressionsplan M1 (PASS, 7 Aufgaben)
                       [DONE] P0-2g5 v3.7 Scope-Patch (D5 aus 2.1b, State Machine, Bloom-Fix, Zitat-Fix)
-                        → P0-2h Phase 2.2b Aufgaben-Produktion M1  ← NAECHSTER SCHRITT
+                        [DONE] P0-2h Phase 2.2b Aufgaben-Produktion M1 (PASS, 0H/1M/2L, 7/7 Q-Gates PASS)
+                          → P0-2i Phase 2.2c Aufgaben-Cross M1  ← NAECHSTER SCHRITT
                       → P0-3 Zweiter Testfall Grenzfaelle
               → P2-5 Runde 5 Retrospektive
 ```
@@ -81,7 +82,7 @@ Parallel dazu: P1-1 Wave 3 Code-Strang (unabhaengig, Claude Code).
 Generator wird eigenstaendiges Repo (`escape-game-generator/`). Begruendung: (1) Produkt soll vertriebsfaehig sein, (2) Pfad-Isolation eliminiert Grep-Drift zwischen PM und Produkt, (3) Agenten-Dateien haben hardcodierte `docs/`-Pfade die bei Koexistenz im selben Repo zu Ambiguitaet fuehren. Konsequenzen: Alle internen Pfade werden Repo-relativ umgeschrieben, PROJECT_INSTRUCTIONS.md erhaelt Dual-Root-Logik (GENERATOR_ROOT + TARGET_ROOT), `weitergehts-online/docs/agents/` etc. werden zu Legacy (Quelle der Wahrheit ist Generator-Repo). Audit-Befund: 2 BLOCKER, 4 HIGH, 4 MEDIUM, 2 LOW — werden im Rahmen der Migration gepatcht.
 
 **Letzter Arbeitsschritt:** Session 26 (Fortsetzung): Evaluation + Infrastruktur-Patches. (A) BEFUND Phase 2.1c+2.2a: CONDITIONAL PASS (1H/2M/2L). (B) Ueberlappungsanalyse 2.1b vs 2.1c: D5 aus 2.1b entfernt (redundant mit 2.1c Achsen 1-4). 2.1b → 4 Achsen D1-D4 (v3.7). (C) PROJECT_INSTRUCTIONS.md State Machine um Phase 2.1b ergaenzt. (D) PROGRESSIONSPLAN Pos 5 Bloom L4→L3. (E) sicherung.json zitat.urheber [sinngemäß] ergaenzt. (F) Phase 2.1b fuer M1 NICHT nachtraeglich ausgefuehrt (Materialien bereits v3.6-gepatcht, kein Qualitaetsgewinn; Prozess-Validierung erfolgt bei Mappe 2).
-**Naechster Schritt:** (1) Phase 2.2b Aufgaben-Produktion M1 (Testrun fortsetzen). (2) OPT-1: material-output-schema.json um _meta erweitern.
+**Naechster Schritt:** (1) Phase 2.2c Aufgaben-Cross-Konsistenz M1 (Testrun fortsetzen, separate Cowork-Session). (2) P1-Fix: PROGRESSIONSPLAN Pos 5 Header L4→L3. (3) P2-Fix: VERTRAG_PHASE_2-2b typ-Registry mc→multiple-choice. (4) OPT: material-output-schema.json um _meta erweitern. (5) OPT: SUB_AUFGABE_ZUORDNUNG.md Encoding-Hinweis.
 
 ### Abgeschlossene Bilanzen (Referenz)
 

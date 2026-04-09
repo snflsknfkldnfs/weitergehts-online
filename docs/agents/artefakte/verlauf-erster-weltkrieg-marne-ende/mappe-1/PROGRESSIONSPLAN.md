@@ -97,7 +97,7 @@ MC doppelt begründet: Pos 1 = AFB I (Fakten-Wiedererkennung), Pos 5 = AFB II (T
 - **Display-Reference:** `[[mat-1-4|Quelle: Verdun und die Somme 1916]]` (M4)
 - **Erarbeitbarkeits-Check:** Quellentext enthält Dual-Voice (Falkenhayn-Zitat + britischer Soldat). Zuordnung anhand Wortwahl und Perspektive möglich. Min 4 Items konstruierbar.
 
-### Pos 5 — mc (AFB II, L4)
+### Pos 5 — mc (AFB II, L3)
 
 - **Ziel-Material:** mat-1-5 (tagebuch, P-Zone)
 - **TB-Knoten:** k1-7 (Hoffnungslosigkeit der Soldaten)

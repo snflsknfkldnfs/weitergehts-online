@@ -4,6 +4,26 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-09 — Evaluation Testrun Phase 2.2b Aufgaben-Produktion M1
+
+**Phase:** Qualitaetssicherung
+**Modus:** AUDIT
+**Session:** 27
+
+**Produktions-Testrun Phase 2.2b evaluiert. PASS (0H/1M/2L).**
+- 7 Aufgaben produziert (aufgabe-1-1 bis aufgabe-1-7), alle Q-Gates PASS
+- Bloom-Verteilung konform: L1-2 29%, L3-4 43%, L5-6 29% (A19 PASS)
+- 6 verschiedene Aufgabentypen: mc(x2), lueckentext, reihenfolge, zuordnung, begruendung, freitext-code
+- AFB-Progression I→I→II→II→II→III→III monoton steigend
+- M1: PROGRESSIONSPLAN Pos-5-Konstruktionskontext Header L4 nicht nachkorrigiert (Fix: L4→L3)
+- L1: Vertrag typ-Registry sagt "mc", Engine erwartet "multiple-choice" — Artefakte korrekt, Vertrag falsch
+- L2: aufgabe-1-4 Encoding-Fix (typographische Anfuehrungszeichen) innerhalb Dispatch-Zyklus behoben
+- Schema-Validierung: 7/7 Dateien konform (Pflichtfelder, Feedback-Schema, Tipps, _meta)
+- Dispatch-Isolation, Read-from-Artifact, Subagenten-Routing: alle PASS
+- Befund: `docs/befunde/BEFUND_PHASE_2-2b_TESTRUN_M1.md`
+
+---
+
 ## 2026-04-09 — Evaluation Testrun Phase 2.1c + 2.2a Mappe 1
 
 **Phase:** Qualitaetssicherung
