@@ -1,7 +1,7 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-09 (Session 26, Phase-2.1-Evaluation Material M1)
-**Modus:** AUDIT
+**Letzte Aktualisierung:** 2026-04-09 (Session 26, Tiefenaudit + Infrastruktur-Patches v3.6 + Phase 2.1b Vertrag)
+**Modus:** EXECUTE
 
 ---
 
@@ -63,8 +63,11 @@
         [DONE] P0-2f VP-10/VP-11 gepatcht (VERTRAG_0-3 v1.4), VP-1r = MCP-Konfiguration (--language de)
           [DONE] P0-2d Phase 1 + Phase 2.0 Rahmen M1 (CONDITIONAL PASS, 2H/3M/2L)
             [DONE] P0-2g Phase 2.1 Material-Produktion M1 (PASS, 0H/2M/2L)
-              → P0-2h Phase 2.2 Aufgaben-Produktion M1  ← NAECHSTER SCHRITT
-              → P0-3 Zweiter Testfall Grenzfaelle
+              [DONE] Tiefenaudit + v3.6 Infrastruktur-Patches (5 SUB_MATERIAL + 3 Q-Gate-Kriterien + Phase 2.1b Vertrag)
+                → P0-2g2 Phase 2.1b Didaktik-Review M1  ← NAECHSTER SCHRITT
+                  → P0-2g3 Phase 2.1c Cross-Revision M1
+                    → P0-2h Phase 2.2 Aufgaben-Produktion M1
+                      → P0-3 Zweiter Testfall Grenzfaelle
               → P2-5 Runde 5 Retrospektive
 ```
 
@@ -75,8 +78,8 @@ Parallel dazu: P1-1 Wave 3 Code-Strang (unabhaengig, Claude Code).
 **Architektur-Entscheidung (Session 25, 2026-04-08):**
 Generator wird eigenstaendiges Repo (`escape-game-generator/`). Begruendung: (1) Produkt soll vertriebsfaehig sein, (2) Pfad-Isolation eliminiert Grep-Drift zwischen PM und Produkt, (3) Agenten-Dateien haben hardcodierte `docs/`-Pfade die bei Koexistenz im selben Repo zu Ambiguitaet fuehren. Konsequenzen: Alle internen Pfade werden Repo-relativ umgeschrieben, PROJECT_INSTRUCTIONS.md erhaelt Dual-Root-Logik (GENERATOR_ROOT + TARGET_ROOT), `weitergehts-online/docs/agents/` etc. werden zu Legacy (Quelle der Wahrheit ist Generator-Repo). Audit-Befund: 2 BLOCKER, 4 HIGH, 4 MEDIUM, 2 LOW — werden im Rahmen der Migration gepatcht.
 
-**Letzter Arbeitsschritt:** Session 26 (Fortsetzung): Phase-2.1-Evaluation Material M1 (BEFUND_PHASE_2-1_MATERIAL_M1.md). PASS: 0 HIGH, 2 MEDIUM (_meta vs. additionalProperties:false Schema-Hygiene, mat-1-1 url_verifiziert:false), 2 LOW. Keine Artefakt-Korrekturen noetig. Compaction-Failsafe (P1) erstmalig unter Realbedingungen validiert. Infrastruktur-Patches aus Phase 2.0 zeigen Wirkung (kein HIGH-Finding).
-**Naechster Schritt:** (1) Phase 2.2 Aufgaben-Produktion M1 (oder Phase 2.1c Cross-Revision falls definiert). (2) Dann M2-M4 Rahmen + Material. (3) OPT-1: material-output-schema.json um _meta erweitern (Generator-Repo).
+**Letzter Arbeitsschritt:** Session 26 (Fortsetzung): Tiefenaudit Phase 2.1 M1 — Selbstreferenz-Hypothese BESTAETIGT (1 CRITICAL, 3 HIGH, 2 MEDIUM). Infrastruktur-Patches v3.6 umgesetzt: (1) SUB_MATERIAL_TAGEBUCH Perspektiv-Wissensgrenze, (2) SUB_MATERIAL_BILDQUELLE Erschliessungs-Beschraenkung, (3) SUB_MATERIAL_QUELLENTEXT Format-Regel rekonstruierte Zitate + [sinngemäß]-Marker, (4) Dispatch-Constraint-Sprache "erarbeitbar machen" statt "beantworten", (5) Q-GATE-MECHANIK +3 Kriterien (TYP-TB-PERSPEKTIV, TYP-BQ-ERSCHL, TYP-QT-REKON). Neue Phase 2.1b (isolierter Didaktik-Review) im Workflow verankert: VERTRAG_PHASE_2-1b_DIDAKTIK_REVIEW.md + WORKFLOW_v4.md + ORCHESTRATOR.md.
+**Naechster Schritt:** (1) Phase 2.1b Didaktik-Review M1 (Testlauf des neuen Vertrags — kann als PM-Review in Cowork ausgefuehrt werden). (2) Phase 2.1c Cross-Revision. (3) Phase 2.2 Aufgaben-Produktion M1. (4) OPT-1: material-output-schema.json um _meta erweitern.
 
 ### Abgeschlossene Bilanzen (Referenz)
 

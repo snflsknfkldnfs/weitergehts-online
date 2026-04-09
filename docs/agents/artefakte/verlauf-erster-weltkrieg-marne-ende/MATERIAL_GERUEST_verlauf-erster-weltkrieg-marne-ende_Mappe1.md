@@ -41,7 +41,7 @@
 
 **Dispatch-Constraints aus Inhaltsaudit (BEFUND_PHASE_1_INHALTSAUDIT):**
 - **mat-1-3 (gewalt_altersfilter):** `altersfilter_hinweis`: Giftgas-Beschreibung altersgerecht filtern — Wirkung benennen, aber keine explizite Leidensdarstellung. Fokus auf Faktum + Konsequenz, nicht auf Sterbevorgang.
-- **mat-1-3 (M1-A2, HIGH):** Dispatch-Constraint: Der DT MUSS die KAUSALE Frage beantworten "Warum Gas?" — Stellungskrieg festgefahren → Generaele suchten technologischen Ausweg → Giftgas als Eskalation. Nicht nur WAS (Chlorgas, Ypern), sondern WARUM.
+- **mat-1-3 (M1-A2, HIGH):** Dispatch-Constraint: Der DT MUSS die KAUSALE Frage erarbeitbar machen "Warum Gas?" — die Fakten liefern, aus denen SuS die Kausalkette Stellungskrieg festgefahren → Generaele suchten technologischen Ausweg → Giftgas als Eskalation SELBST ableiten koennen. Nicht nur WAS (Chlorgas, Ypern), sondern die Voraussetzungen fuer das WARUM. (v3.6: "erarbeitbar machen" statt "beantworten" — kognitive Eigenleistung erhalten)
 - **mat-1-4 (UE-001, HIGH):** Typ geaendert zu `quellentext (rekonstruiert)`. Dispatch-Constraint: Fussnote MUSS "Rekonstruierter Text auf Basis historischer Quellen" enthalten. `_meta.aufbereitung: "rekonstruiert"`.
 
 **Wortbudget gesamt:** ~500W (Ziel: max. 500W)

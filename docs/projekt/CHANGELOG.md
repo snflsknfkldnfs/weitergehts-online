@@ -4,6 +4,26 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-09 — Tiefenaudit + v3.6 Infrastruktur-Patches + Phase 2.1b Didaktik-Review Vertrag
+
+**Phase:** Qualitaetssicherung + Qualitaetsmanagement
+**Modus:** AUDIT + EXECUTE
+**Session:** 26 (Fortsetzung)
+
+**Tiefenaudit bestaetigt Selbstreferenz-Hypothese. 5 Infrastruktur-Patches + 3 neue Q-Gate-Kriterien + Phase 2.1b als neuer Workflow-Schritt.**
+- Tiefenaudit (BEFUND_PHASE_2-1_MATERIAL_M1_TIEFENAUDIT.md): 1 CRITICAL (System-Selbstreferenz), 3 HIGH (Lehrbuch-Proxy in TB, BU-Vorwegnahme in BQ, _meta.perspektivitaet als Alibi), 2 MEDIUM (DT kognitiv passiv, blockquote bei rekonstruierten Zitaten)
+- Patch 1: SUB_MATERIAL_TAGEBUCH — Perspektiv-Wissensgrenze v3.6 (VERBOTEN: ueberregionale Zahlen, Fachbegriff-Definitionen, strategische Analysen in Figur-Text. STATTDESSEN: Erzaehlerstimme-Rahmen). Q8 verschaerft
+- Patch 2: SUB_MATERIAL_BILDQUELLE — Erschliessungs-Beschraenkung v3.6 (BU darf Erschliessungsimpuls NICHT beantworten, keine beschreibenden Adjektive). Q8 verschaerft
+- Patch 3: SUB_MATERIAL_QUELLENTEXT — Format-Regel v3.6 (kein blockquote bei aufbereitung=rekonstruiert, [sinngemäß]-Marker PFLICHT). Q9 verschaerft + HTML-Template differenziert
+- Patch 4: MATERIAL_GERUEST M1 Dispatch-Constraint M1-A2: "erarbeitbar machen" statt "beantworten"
+- Patch 5: Q-GATE-MECHANIK §7.1 — 3 neue Kriterien: TYP-TB-PERSPEKTIV (Nr. 14), TYP-BQ-ERSCHL (Nr. 15), TYP-QT-REKON (Nr. 16)
+- VERTRAG_PHASE_2-1b_DIDAKTIK_REVIEW.md (NEU): Input-isolierter Batch-Review nach Phase 2.1. 5 Achsen (D1-D5). Output: DIDAKTIK_REVIEW_LOG.md
+- WORKFLOW_v4.md: Phase 2.1b eingefuegt (zwischen 2.1 und 2.1c)
+- ORCHESTRATOR.md: Phase 2.1b Block eingefuegt + Fortsetzungs-Prompt-Template erweitert + Ausfuehrungsorte-Tabelle ergaenzt
+- Befund: `docs/befunde/BEFUND_PHASE_2-1_MATERIAL_M1_TIEFENAUDIT.md`
+
+---
+
 ## 2026-04-09 — Phase-2.1-Evaluation Material-Produktion Mappe 1
 
 **Phase:** Qualitaetssicherung
