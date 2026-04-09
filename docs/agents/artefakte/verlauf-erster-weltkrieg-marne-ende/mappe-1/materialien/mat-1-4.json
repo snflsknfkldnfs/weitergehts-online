@@ -2,7 +2,7 @@
   "id": "mat-1-4",
   "typ": "quellentext",
   "titel": "Wofür starben Hunderttausende bei Verdun und der Somme?",
-  "inhalt": "<p><em>Zwei Stimmen zum Jahr 1916 — ein General und ein einfacher Soldat.</em></p><p><em>General Erich von Falkenhayn plante 1916 den Angriff auf Verdun. Sein Ziel: eine</em> <strong>Ausblutungsschlacht</strong> — <em>Frankreich durch möglichst viele Tote erschöpfen.</em></p><blockquote><p>Wir müssen das französische Heer ausbluten. Jeder Mann, den sie verlieren, schwächt sie mehr als uns.</p></blockquote><p><em>An der Somme griffen im Juli 1916 britische Soldaten an. Am ersten Tag fielen 57.000.</em></p><blockquote><p>Wir fielen wie Kaninchen im Gewehrfeuer. Unsere Generäle schickten uns in den sicheren Tod.</p></blockquote><p><em>Bei Verdun starben 600.000 Soldaten. An der Somme fast eine Million. Die Front verschob sich kaum.</em></p>",
+  "inhalt": "<p><em>Zwei Stimmen zum Jahr 1916 — ein General und ein einfacher Soldat.</em></p><p><em>General Erich von Falkenhayn plante 1916 den Angriff auf Verdun. Sein Ziel: eine</em> <strong>Ausblutungsschlacht</strong> — <em>Frankreich durch möglichst viele Tote erschöpfen.</em></p><p><em>[sinngemäß]</em> <em>Wir müssen das französische Heer ausbluten. Jeder Mann, den sie verlieren, schwächt sie mehr als uns.</em></p><p><em>An der Somme griffen im Juli 1916 britische Soldaten an. Am ersten Tag fielen 57.000.</em></p><p><em>[sinngemäß]</em> <em>Wir fielen wie Kaninchen im Gewehrfeuer. Unsere Generäle schickten uns in den sicheren Tod.</em></p><p><em>Bei Verdun starben 600.000 Soldaten. An der Somme fast eine Million. Die Front verschob sich kaum.</em></p>",
   "quelle": "Rekonstruierte Texte auf Basis historischer Quellen. Erich von Falkenhayn, Verdun-Strategie 1916. Britischer Infanterist, Schlacht an der Somme 1916. Kein wörtliches Originalzitat.",
   "position": 4,
   "didaktische_funktion": "erarbeitung",
@@ -22,7 +22,7 @@
   },
   "_meta": {
     "wortanzahl": 93,
-    "quellentyp": "rede",
+    "quellentyp": "zeugnis",
     "aufbereitung": "rekonstruiert",
     "artefakt_ref": ["zit-1-1", "zit-1-2"],
     "tafelbild_knoten_abgedeckt": ["k1-4", "k1-5", "k1-6"],

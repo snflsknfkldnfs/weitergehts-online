@@ -4,6 +4,23 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-09 — Retroaktive v3.6-Patches Material-Artefakte M1
+
+**Phase:** Qualitaetsmanagement
+**Modus:** EXECUTE
+**Session:** 26 (Fortsetzung)
+
+**4 von 5 Materialien retroaktiv an v3.6-Regeln angepasst. mat-1-3 (DT) unveraendert (typgemaess informierend).**
+- mat-1-2 (TB Karl): "700 km" + "Stellungskrieg"-Definition aus Figur-Text in Erzaehlerstimme-Rahmen verschoben. Karl spricht nur noch eigenes Erleben. W: 117→154 (Figur: 117, Erzaehlerstimme: 37)
+- mat-1-5 (TB Friedrich): "Materialschlacht — Maschinen gegen Menschen" aus Figur-Text in Erzaehlerstimme verschoben. Friedrich beschreibt nur MG+Stacheldraht-Erfahrung. W: 110→125 (Figur: 107, Erzaehlerstimme: 18)
+- mat-1-1 (BQ): "beengt, schlammig, voller Soldaten" aus BU entfernt. BU kontextualisiert nur noch sachlich (Ort, Zeit, Herkunft, Frontlaenge). Erschliessungsimpuls nicht mehr vorweggenommen
+- mat-1-4 (QT rekonstruiert): blockquote→em + [sinngemäß]-Marker fuer beide Zitate. quellentyp: "rede"→"zeugnis"
+- mat-1-3 (DT): Kein Patch. DT-Typ ist informierend, kognitive Passivitaet typgemaess. Phase 2.1b evaluiert D2 im Gesamtkontext
+- Q-Gate Re-Check: Nr. 14 (TYP-TB-PERSPEKTIV) PASS (mat-1-2, mat-1-5). Nr. 15 (TYP-BQ-ERSCHL) PASS (mat-1-1). Nr. 16 (TYP-QT-REKON) PASS (mat-1-4)
+- Artefakte: `docs/agents/artefakte/verlauf-erster-weltkrieg-marne-ende/mappe-1/materialien/mat-1-{1,2,4,5}.json`
+
+---
+
 ## 2026-04-09 — Tiefenaudit + v3.6 Infrastruktur-Patches + Phase 2.1b Didaktik-Review Vertrag
 
 **Phase:** Qualitaetssicherung + Qualitaetsmanagement

@@ -1,6 +1,6 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-09 (Session 26, Tiefenaudit + Infrastruktur-Patches v3.6 + Phase 2.1b Vertrag)
+**Letzte Aktualisierung:** 2026-04-09 (Session 26, Retroaktive v3.6-Patches Material-Artefakte M1)
 **Modus:** EXECUTE
 
 ---
@@ -78,8 +78,8 @@ Parallel dazu: P1-1 Wave 3 Code-Strang (unabhaengig, Claude Code).
 **Architektur-Entscheidung (Session 25, 2026-04-08):**
 Generator wird eigenstaendiges Repo (`escape-game-generator/`). Begruendung: (1) Produkt soll vertriebsfaehig sein, (2) Pfad-Isolation eliminiert Grep-Drift zwischen PM und Produkt, (3) Agenten-Dateien haben hardcodierte `docs/`-Pfade die bei Koexistenz im selben Repo zu Ambiguitaet fuehren. Konsequenzen: Alle internen Pfade werden Repo-relativ umgeschrieben, PROJECT_INSTRUCTIONS.md erhaelt Dual-Root-Logik (GENERATOR_ROOT + TARGET_ROOT), `weitergehts-online/docs/agents/` etc. werden zu Legacy (Quelle der Wahrheit ist Generator-Repo). Audit-Befund: 2 BLOCKER, 4 HIGH, 4 MEDIUM, 2 LOW — werden im Rahmen der Migration gepatcht.
 
-**Letzter Arbeitsschritt:** Session 26 (Fortsetzung): Tiefenaudit Phase 2.1 M1 — Selbstreferenz-Hypothese BESTAETIGT (1 CRITICAL, 3 HIGH, 2 MEDIUM). Infrastruktur-Patches v3.6 umgesetzt: (1) SUB_MATERIAL_TAGEBUCH Perspektiv-Wissensgrenze, (2) SUB_MATERIAL_BILDQUELLE Erschliessungs-Beschraenkung, (3) SUB_MATERIAL_QUELLENTEXT Format-Regel rekonstruierte Zitate + [sinngemäß]-Marker, (4) Dispatch-Constraint-Sprache "erarbeitbar machen" statt "beantworten", (5) Q-GATE-MECHANIK +3 Kriterien (TYP-TB-PERSPEKTIV, TYP-BQ-ERSCHL, TYP-QT-REKON). Neue Phase 2.1b (isolierter Didaktik-Review) im Workflow verankert: VERTRAG_PHASE_2-1b_DIDAKTIK_REVIEW.md + WORKFLOW_v4.md + ORCHESTRATOR.md.
-**Naechster Schritt:** (1) Phase 2.1b Didaktik-Review M1 (Testlauf des neuen Vertrags — kann als PM-Review in Cowork ausgefuehrt werden). (2) Phase 2.1c Cross-Revision. (3) Phase 2.2 Aufgaben-Produktion M1. (4) OPT-1: material-output-schema.json um _meta erweitern.
+**Letzter Arbeitsschritt:** Session 26 (Fortsetzung): Retroaktive v3.6-Patches auf Material-Artefakte M1. 4/5 Materialien gepatcht: mat-1-2 + mat-1-5 (Erzaehlerstimme fuer systemisches Wissen), mat-1-1 (BU-Beschraenkung), mat-1-4 (blockquote→em + [sinngemäß] + quellentyp-Fix). mat-1-3 unveraendert (DT typgemaess informierend). Q-Gate Re-Check v3.6: Nr. 14/15/16 alle PASS.
+**Naechster Schritt:** (1) Phase 2.1b Didaktik-Review M1 (Testlauf des neuen Vertrags — isolierter Batch-Review der gepatchten Materialien). (2) Phase 2.1c Cross-Revision. (3) Phase 2.2 Aufgaben-Produktion M1. (4) OPT-1: material-output-schema.json um _meta erweitern.
 
 ### Abgeschlossene Bilanzen (Referenz)
 

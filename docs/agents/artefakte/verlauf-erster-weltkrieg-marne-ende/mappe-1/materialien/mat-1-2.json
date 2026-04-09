@@ -2,7 +2,7 @@
   "id": "mat-1-2",
   "typ": "tagebuch",
   "titel": "Was erlebte ein Soldat Tag für Tag im Schützengraben?",
-  "inhalt": "<p><em>Schützengraben bei Arras, 18. November 1914</em></p><p>Seit drei Wochen sitzen wir in diesem Schützengraben. Das Wasser steht mir bis zu den Knien. Meine Stiefel sind durchweicht, die Füße tun weh. Nachts kriechen Ratten über uns — sie fressen alles, sogar Brot aus den Taschen.</p><p>Im August hieß es noch: Weihnachten sind wir zu Hause. Jetzt graben wir uns immer tiefer ein. Die Offiziere nennen es Stellungskrieg — auf 700 Kilometer rückt niemand vor. Zwischen uns und den Franzosen liegen 200 Meter. Ein Kamerad meinte, drüben sei es genauso schlimm.</p><p>Heute Morgen schlug eine Granate drei Meter neben mir ein. Mein Kamerad Fritz schrie, dann war er still. Man gewöhnt sich nicht daran.</p><p>Mutter schrieb, sie bete jeden Tag für mich. Was soll ich ihr sagen?</p>",
+  "inhalt": "<p><em>Schützengraben bei Arras, 18. November 1914</em></p><p>Seit drei Wochen sitzen wir in diesem Schützengraben. Das Wasser steht mir bis zu den Knien. Meine Stiefel sind durchweicht, die Füße tun weh. Nachts kriechen Ratten über uns — sie fressen alles, sogar Brot aus den Taschen.</p><p>Im August hieß es noch: Weihnachten sind wir zu Hause. Jetzt graben wir uns immer tiefer ein. Die Offiziere sagen, wir sollen durchhalten, der Feind sei genauso am Ende. Zwischen uns und den Franzosen liegen 200 Meter. Ein Kamerad meinte, drüben sei es genauso schlimm.</p><p><em>Was Karl nicht wissen konnte: Die Grabenlinie erstreckte sich bereits über 700 Kilometer von der Nordsee bis zur Schweiz. Fachleute nennen diese Lage Stellungskrieg — keine Seite konnte vorrücken.</em></p><p>Heute Morgen schlug eine Granate drei Meter neben mir ein. Mein Kamerad Fritz schrie, dann war er still. Man gewöhnt sich nicht daran.</p><p>Mutter schrieb, sie bete jeden Tag für mich. Was soll ich ihr sagen?</p>",
   "quelle": "Fiktiver Tagebucheintrag, basierend auf typischen Erfahrungsberichten deutscher Soldaten an der Westfront 1914. Figur und Erlebnisse sind erfunden, historischer Kontext ist belegt.",
   "position": 2,
   "didaktische_funktion": "erarbeitung",
@@ -21,7 +21,9 @@
     }
   },
   "_meta": {
-    "wortanzahl": 117,
+    "wortanzahl": 154,
+    "wortanzahl_figur": 117,
+    "wortanzahl_erzaehlerstimme": 37,
     "figur": {
       "name": "Karl Meißner",
       "alter": 22,
@@ -37,9 +39,9 @@
       "Erwartung Weihnachten 1914 — belegt in Wikipedia Christmas truce (Vorgeschichte)"
     ],
     "tafelbild_knoten_abgedeckt": ["k1-1", "k1-2"],
-    "perspektivitaet": "Karl weiß nur, was er im Graben sieht. Er kennt keine Gesamtlage, keine strategischen Pläne. Er weiß nicht, wie lange der Krieg dauern wird.",
+    "perspektivitaet": "Karl weiß nur, was er im Graben sieht. Er kennt keine Gesamtlage, keine strategischen Pläne, keine Frontlänge. Systemisches Wissen (700 km, Stellungskrieg) steht in Erzählerstimme-Rahmen (v3.6).",
     "perspektive": "P1: Deutsche Soldaten",
-    "erarbeitbarkeits_check": "PASS — k1-1: Stellungskrieg + 700 km Front explizit benannt. k1-2: Nässe, Ratten, Tod des Kameraden Fritz direkt erlebbar.",
+    "erarbeitbarkeits_check": "PASS — k1-1: Stellungskrieg + 700 km Front in Erzählerstimme-Rahmen (v3.6). k1-2: Nässe, Ratten, Tod des Kameraden Fritz direkt erlebbar im Figur-Text.",
     "trigger_flags": ["krieg", "tod"]
   }
 }
