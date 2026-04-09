@@ -4,6 +4,24 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-09 — Phase-1-Testrun Evaluation + AGENT_MATERIAL Vertragspatch
+
+**Phase:** Qualitaetssicherung + Infrastruktur-Patch
+**Modus:** AUDIT + EXECUTE
+**Session:** 26
+
+**Phase-1-Testrun evaluiert. FAIL — Vorgaenger-Game-Kontamination.**
+- Root Cause: AGENT_MATERIAL.md referenzierte Knoten/Verbindungen-Modell, TAFELBILDs liefern SCPL-Zonen. Agent fiel auf pre-Pipeline-Vorgaenger-Game als Format-Vorlage zurueck.
+- Finding MG-C1 (CRITICAL): Vertrag-SCPL-Inkompatibilitaet. Gepatcht: §1.1, §1.4, §1.5, §1.7, §1.9, Q-Gate (Knoten→SCPL durchgaengig).
+- Finding MG-H1 (HIGH): 8 fehlende v2.0-Sequenzplanfelder (bildfunktion, analyseauftrag, Uebergangsobjekte, Sequenzkontext, Fachbegriff-Taxonomie). Gepatcht: Explizites SCPL-Output-Template in §1.8b eingefuegt mit allen Pflichtfeldern.
+- Finding MG-H2 (HIGH): M3 MATERIAL_GERUEST auf defektem chronologischem TAFELBILD. M3 TAFELBILD bereits reframt (v2, kausal).
+- Anti-Kontaminations-Direktive: "AGENT_MATERIAL darf KEINE Artefakte aus anderen Games als Format-Referenz verwenden."
+- Befund: `docs/befunde/BEFUND_PHASE_1_TESTRUN.md`
+- Vertragspatch: `escape-game-generator/agents/AGENT_MATERIAL.md`
+- Alle 4 bisherigen MATERIAL_GERUEST-Dateien zum Verwerfen markiert (Neulauf nach Vertragspatch)
+
+---
+
 ## 2026-04-09 — Inhaltsaudit Phase 0.4 (Fachdidaktische Qualitaet vor STRUKTUR-FREEZE)
 
 **Phase:** Qualitaetssicherung

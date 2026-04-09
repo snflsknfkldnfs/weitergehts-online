@@ -1,6 +1,6 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-09 (Session 26, Phase 0.4 Evaluation)
+**Letzte Aktualisierung:** 2026-04-09 (Session 26, Phase-1-Testrun Evaluation + Vertragspatch)
 **Modus:** AUDIT
 
 ---
@@ -61,7 +61,7 @@
     [DONE] P0-2c Phase 0 Testlauf (v2.4, Testlauf 4 PASS)
       [DONE] P0-2e Testlauf 5 + Vergleichsaudit T4/T5 Rev.1 (76% Patch-Wirksamkeit, 7 valide Findings: 0C/0H/5M/2L)
         [DONE] P0-2f VP-10/VP-11 gepatcht (VERTRAG_0-3 v1.4), VP-1r = MCP-Konfiguration (--language de)
-          → P0-2d Game 2 Produktion fortsetzen (Phase 0.4 → 1.1 → 2.x)  ← NAECHSTER SCHRITT
+          → P0-2d Game 2 Produktion fortsetzen (Phase 1 neu mit gepatchtem Vertrag → 2.x)  ← NAECHSTER SCHRITT
             → P0-3 Zweiter Testfall Grenzfaelle
               → P2-5 Runde 5 Retrospektive
 ```
@@ -73,8 +73,8 @@ Parallel dazu: P1-1 Wave 3 Code-Strang (unabhaengig, Claude Code).
 **Architektur-Entscheidung (Session 25, 2026-04-08):**
 Generator wird eigenstaendiges Repo (`escape-game-generator/`). Begruendung: (1) Produkt soll vertriebsfaehig sein, (2) Pfad-Isolation eliminiert Grep-Drift zwischen PM und Produkt, (3) Agenten-Dateien haben hardcodierte `docs/`-Pfade die bei Koexistenz im selben Repo zu Ambiguitaet fuehren. Konsequenzen: Alle internen Pfade werden Repo-relativ umgeschrieben, PROJECT_INSTRUCTIONS.md erhaelt Dual-Root-Logik (GENERATOR_ROOT + TARGET_ROOT), `weitergehts-online/docs/agents/` etc. werden zu Legacy (Quelle der Wahrheit ist Generator-Repo). Audit-Befund: 2 BLOCKER, 4 HIGH, 4 MEDIUM, 2 LOW — werden im Rahmen der Migration gepatcht.
 
-**Letzter Arbeitsschritt:** Session 26: Inhaltsaudit Phase 0.4 konsolidiert. Dual-Agenten-Audit (fachdidaktische Qualitaet + Cross-Mappe-Progression + Phase-1/2-Readiness). CONDITIONAL PASS. 1 CRITICAL: M3 SCPL ist Chronologie statt Erkenntnisweg — Reframe erforderlich. M1/M2/M4 FREEZE-bereit. Befund: `docs/befunde/BEFUND_PHASE_0-4_INHALTSAUDIT.md`.
-**Naechster Schritt:** (1) M3 SCPL-Reframe (kausal statt chronologisch). (2) User-Validierung aller 4 TAFELBILDer. (3) STRUKTUR-FREEZE. (4) Phase 1.
+**Letzter Arbeitsschritt:** Session 26: Phase-1-Testrun evaluiert. FAIL — 3 Findings (MG-C1: Vertrag-SCPL-Inkompatibilitaet, MG-H1: fehlende v2.0-Sequenzplanfelder, MG-H2: M3 auf defektem TB). Root Cause: AGENT_MATERIAL.md nicht fuer SCPL-Modell aktualisiert → Agent fiel auf pre-Pipeline-Vorgaenger-Game als Format-Vorlage zurueck. MASSNAHMEN UMGESETZT: (1) AGENT_MATERIAL.md Vertragspatch (Knoten→SCPL, Output-Template, v2.0-Pflichtfelder). (2) M3 TAFELBILD reframt (v2, kausal). Befund: `docs/befunde/BEFUND_PHASE_1_TESTRUN.md`.
+**Naechster Schritt:** (1) User-Validierung M1-M4 TAFELBILDer. (2) STRUKTUR-FREEZE aktivieren. (3) Phase-1-Testrun neu (alle 4 Mappen, mit gepatchtem Vertrag). (4) Bisherige MATERIAL_GERUEST-Dateien verwerfen.
 
 ### Abgeschlossene Bilanzen (Referenz)
 
