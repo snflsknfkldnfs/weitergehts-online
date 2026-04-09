@@ -4,6 +4,24 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-09 — Infrastruktur-Patches aus Inhaltsaudit-Abstraktion
+
+**Phase:** Qualitaetsmanagement
+**Modus:** EXECUTE
+**Session:** 26
+
+**7 themen-unabhaengige Infrastruktur-Patches auf Basis des Inhaltsaudits.**
+- Ziel: Generierungsinfrastruktur so optimieren, dass die im Inhaltsaudit identifizierten Suboptimalitaeten (kausale Luecken, Zonen-Kompression, Quellen-Verwischung, Inferenz-Schwaeche, sensible Konzepte, Typ-SCPL-Interferenz, Perspektiven-Asymmetrie) kuenftig themen-unabhaengig praeventiv adressiert werden
+- Design-Prinzip: Alle Patches als SOLL mit Begruendungspflicht, keine harten Prohibitionen — Sichtbarkeit/Reflexion statt Blockade
+- 3 Zieldateien im Generator-Repo (escape-game-generator/):
+  - `agents/AGENT_MATERIAL.md`: §1.4 kausal_mechanismus Pflichtfeld, §1.5 inferenz_stuetzen Plan fuer INFERENTIAL-Zonen, §1.8b sensibilitaets_markierung (Enum + Dispatch-Constraints), Perspektiven-Abdeckungsmatrix, quellentext-Taxonomie (primaer/rekonstruiert)
+  - `checklisten/GUETEKRITERIEN_SEQUENZIERUNG.md`: S16 Zonen-Last-Limit, S17 Materialtyp-SCPL-Kongruenz, v2.2→v2.3
+  - `agents/SUB_MATERIAL_QUELLENTEXT.md`: §4b quellentext_primaer vs _rekonstruiert Taxonomie + _meta.aufbereitung-Erweiterung
+- Keine Strukturaenderungen an bestehenden Kriterien (S1-S15 unberuehrt)
+- S1-S15→S1-S17 Referenzen in AGENT_MATERIAL.md aktualisiert
+
+---
+
 ## 2026-04-09 — Phase-1 Inhaltsaudit (Fachdidaktische Qualitaet)
 
 **Phase:** Qualitaetssicherung

@@ -1,7 +1,7 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-09 (Session 26, Phase-1-Neulauf Evaluation)
-**Modus:** AUDIT
+**Letzte Aktualisierung:** 2026-04-09 (Session 26, Infrastruktur-Patches aus Inhaltsaudit)
+**Modus:** EXECUTE
 
 ---
 
@@ -14,7 +14,7 @@
 | UPGRADE_PLAN v4 Runden 0-4 | COMPLETE | `docs/architektur/UPGRADE_PLAN_v4_PRODUKTIONSARCHITEKTUR.md` |
 | D15b Phase III.5 Risiko-Audit (7 RAs) | COMPLETE | `docs/projekt/D15B_PHASE_III_5_AUDIT_STATE.md` |
 | D15b Phase IV Waves 1-4 | COMPLETE | Commits: AU-1 `5b470c5`, AU-2a `bcb9eeb`, AU-2b `3f1d89f`, AU-2c `a3a1db1`, AU-3+4 `5c80ea7`/`24f6ff9`, Wave 3 PM `24f6ff9`, Wave 4 W4-A/B/C |
-| Operationalisierungs-Audit v2 (P1-P15) | COMPLETE | GUETEKRITERIEN_SEQUENZIERUNG.md v2.2. 13 ROBUST, 0 FRAGIL, 0 DEFEKT, 1 Pre-Check (S6), 1 Integriert (S12) |
+| Operationalisierungs-Audit v2 (P1-P15) + Infrastruktur-Patch (S16-S17) | COMPLETE | GUETEKRITERIEN_SEQUENZIERUNG.md v2.3. S1-S17 (13 Original + 2 Neu). S16 Zonen-Last-Limit, S17 Materialtyp-SCPL-Kongruenz |
 | Checkpoint-1 + Checkpoint-2 Infrastruktur-Audits | COMPLETE | `docs/befunde/BEFUND-CHECKPOINT-{1,2}-INFRASTRUKTUR.md` |
 
 ### Offene Arbeitsstroeme nach Prioritaet
@@ -73,7 +73,7 @@ Parallel dazu: P1-1 Wave 3 Code-Strang (unabhaengig, Claude Code).
 **Architektur-Entscheidung (Session 25, 2026-04-08):**
 Generator wird eigenstaendiges Repo (`escape-game-generator/`). Begruendung: (1) Produkt soll vertriebsfaehig sein, (2) Pfad-Isolation eliminiert Grep-Drift zwischen PM und Produkt, (3) Agenten-Dateien haben hardcodierte `docs/`-Pfade die bei Koexistenz im selben Repo zu Ambiguitaet fuehren. Konsequenzen: Alle internen Pfade werden Repo-relativ umgeschrieben, PROJECT_INSTRUCTIONS.md erhaelt Dual-Root-Logik (GENERATOR_ROOT + TARGET_ROOT), `weitergehts-online/docs/agents/` etc. werden zu Legacy (Quelle der Wahrheit ist Generator-Repo). Audit-Befund: 2 BLOCKER, 4 HIGH, 4 MEDIUM, 2 LOW — werden im Rahmen der Migration gepatcht.
 
-**Letzter Arbeitsschritt:** Session 26: Phase-1 Inhaltsaudit. CONDITIONAL PASS. 3 CRITICAL (M3 C2-Inferenz, M3 Reframe-Risiko, M4 Dolchstosslegende), 6 HIGH, 15 MEDIUM, 11 LOW. Alle Phase-2-kompensierbar — STRUKTUR-FREEZE bleibt. Befunde: `docs/befunde/BEFUND_PHASE_1_NEULAUF.md` (Template-Compliance) + `docs/befunde/BEFUND_PHASE_1_INHALTSAUDIT.md` (Fachdidaktik).
+**Letzter Arbeitsschritt:** Session 26: 7 Infrastruktur-Patches aus Inhaltsaudit-Abstraktion. Patches auf 3 Dateien im Generator-Repo: AGENT_MATERIAL.md (§1.4 kausal_mechanismus, §1.5 inferenz_stuetzen, §1.8b sensibilitaets_markierung + Perspektiven-Matrix + quellentext-Taxonomie), GUETEKRITERIEN_SEQUENZIERUNG.md (S16 Zonen-Last-Limit, S17 Materialtyp-SCPL-Kongruenz, v2.2→v2.3), SUB_MATERIAL_QUELLENTEXT.md (quellentext_primaer vs _rekonstruiert). Alle Patches als SOLL mit Begruendungspflicht, keine harten Prohibitionen.
 **Naechster Schritt:** (1) User-Validierung MATERIAL_GERUESTs. (2) Dispatch-Kontext-Katalog fuer Phase 2 erstellen (P0-Findings als Generierungs-Constraints). (3) Phase 2.1 Materialproduktion.
 
 ### Abgeschlossene Bilanzen (Referenz)
