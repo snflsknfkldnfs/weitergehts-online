@@ -4,6 +4,22 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-09 — Inhaltsaudit Phase 0.4 (Fachdidaktische Qualitaet vor STRUKTUR-FREEZE)
+
+**Phase:** Qualitaetssicherung
+**Modus:** AUDIT
+**Session:** 26
+
+**Dual-Agenten-Inhaltsaudit der 4 TAFELBILD-Dateien. CONDITIONAL PASS.**
+- 2 unabhaengige Audit-Agenten (Dim 1-4: KE/SCPL/Complication/Fachbegriffe + Cross-Mappe/Phase-1-2-Readiness/Stundenfragen)
+- M1, M2, M4: FREEZE-bereit. Starke SCPL-Logik, Phase-1/2-kompatibel.
+- M3: CRITICAL — SCPL ist chronologische Zeitleiste (USA→Offensive→Schwarzer Tag→Meuterei→Revolution), kein Erkenntnisweg. KE sind Stationen statt Einsichten. Reframe-Vorlage erstellt (kausal: Erschoepfung→Offensive scheitert→Vertrauensbruch→Volksaufstand).
+- Weitere Findings: M3 temporale Desynchronisation M2→M3 (MEDIUM), fehlendes "Raete" (LOW), M1 KE-Abstraktion + M2 Propaganda-Luecke (LOW, Phase-1-kompensierbar).
+- Cross-Mappe-Progression: M1→M2 stark, M2→M3 schwach (vor Reframe), M3→M4 stark. Nach M3-Reframe durchgaengig kausal.
+- Befund: `docs/befunde/BEFUND_PHASE_0-4_INHALTSAUDIT.md`
+
+---
+
 ## 2026-04-09 — Phase 0.4 AGENT_HEFTEINTRAG Evaluation
 
 **Phase:** Qualitaetssicherung
