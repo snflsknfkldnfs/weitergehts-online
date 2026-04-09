@@ -4,6 +4,22 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-09 — Phase 0.4 AGENT_HEFTEINTRAG Evaluation
+
+**Phase:** Qualitaetssicherung
+**Modus:** AUDIT
+**Session:** 26
+
+**4 TAFELBILD-Dateien gegen VERTRAG_PHASE_0-4 v1.1 + G1-G14 evaluiert. CONDITIONAL PASS.**
+- M1-M4 strukturell korrekt: JSON valide, SCPL vollstaendig, Stundenfragen ≤12W, Kernerkenntnisse ≤15W, Fachbegriffe dokumentiert
+- 1 Finding: HE-W1 (HIGH) — M3 G11 Wortlimit 127W (Limit 120W). Agent-Self-Check meldete 115W (Diskrepanz 12W).
+- Prozess-Beobachtung: Agent loeste Schema-Konflikt (AGENT vs VERTRAG Dateiname) korrekt, Encoding-Konventionen beachtet, keine Subagent-Delegation
+- Infrastruktur-Anmerkung: Agent-Wortzaehlung unzuverlaessig. Automatisierten Word-Count als Q-Gate-Pflichtschritt empfohlen.
+- Phase-2.0-Bereitschaft: PASS (JSON 1:1 uebernehmbar, SCPL konsistent, Ordnungsmuster + Fachbegriffe vorhanden)
+- Befund: `docs/befunde/BEFUND_PHASE_0-4_HEFTEINTRAG.md`
+
+---
+
 ## 2026-04-09 — VP-10/VP-11 Regressions-Patches + VP-1r MCP-Konfiguration
 
 **Phase:** Infrastruktur-Optimierung

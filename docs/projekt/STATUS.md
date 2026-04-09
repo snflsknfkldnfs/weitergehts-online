@@ -1,7 +1,7 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-09 (Session 26, VP-10/VP-11 gepatcht)
-**Modus:** EXECUTE
+**Letzte Aktualisierung:** 2026-04-09 (Session 26, Phase 0.4 Evaluation)
+**Modus:** AUDIT
 
 ---
 
@@ -73,8 +73,8 @@ Parallel dazu: P1-1 Wave 3 Code-Strang (unabhaengig, Claude Code).
 **Architektur-Entscheidung (Session 25, 2026-04-08):**
 Generator wird eigenstaendiges Repo (`escape-game-generator/`). Begruendung: (1) Produkt soll vertriebsfaehig sein, (2) Pfad-Isolation eliminiert Grep-Drift zwischen PM und Produkt, (3) Agenten-Dateien haben hardcodierte `docs/`-Pfade die bei Koexistenz im selben Repo zu Ambiguitaet fuehren. Konsequenzen: Alle internen Pfade werden Repo-relativ umgeschrieben, PROJECT_INSTRUCTIONS.md erhaelt Dual-Root-Logik (GENERATOR_ROOT + TARGET_ROOT), `weitergehts-online/docs/agents/` etc. werden zu Legacy (Quelle der Wahrheit ist Generator-Repo). Audit-Befund: 2 BLOCKER, 4 HIGH, 4 MEDIUM, 2 LOW — werden im Rahmen der Migration gepatcht.
 
-**Letzter Arbeitsschritt:** Session 26 (Abschluss): VP-10 (Chunk-Wortlimit Narrativtext, QS3 praezisiert) und VP-11 (TRANSFER-Marker QS-Gate-Pflicht, QS9 NEU) in VERTRAG_PHASE_0-3_SKRIPT v1.4 gepatcht. VP-1r (Wikipedia-MCP `--language de`) als MCP-Konfigurationsaenderung dokumentiert — User muss in Produktions-Session setzen. Befund: `docs/befunde/BEFUND_VERGLEICHSAUDIT_T4_T5.md` (Rev.1).
-**Naechster Schritt:** (1) Wikipedia-MCP in Produktions-Session auf `--language de` konfigurieren. (2) Phase 0.4 AGENT_HEFTEINTRAG → Phase 1 → Phase 2 fortsetzen. Kein Testrun 6 erforderlich.
+**Letzter Arbeitsschritt:** Session 26: Phase 0.4 AGENT_HEFTEINTRAG evaluiert. 4 TAFELBILD-Dateien geprueft. CONDITIONAL PASS — 1 Finding (HE-W1: M3 G11 = 127W, Limit 120W). Alle BLOCKER + SOLL bestanden. Befund: `docs/befunde/BEFUND_PHASE_0-4_HEFTEINTRAG.md`.
+**Naechster Schritt:** (1) HE-W1 beheben (M3 um ~7W kuerzen). (2) User-Validierung aller 4 TAFELBILDer. (3) STRUKTUR-FREEZE aktivieren. (4) Phase 1 starten.
 
 ### Abgeschlossene Bilanzen (Referenz)
 
