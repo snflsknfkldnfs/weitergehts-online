@@ -4,6 +4,22 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-09 — VP-10/VP-11 Regressions-Patches + VP-1r MCP-Konfiguration
+
+**Phase:** Infrastruktur-Optimierung
+**Modus:** EXECUTE
+**Session:** 26 (Abschluss)
+
+**3 Massnahmen aus Vergleichsaudit Rev.1 umgesetzt.**
+- VP-10: QS3 Chunking-Konformitaet praezisiert — Wortlimit 600-900W gilt nur fuer Narrativtext (§-Absaetze), ±10% Toleranz (max 990W). Agent MUSS Word-Count pro Chunk angeben. FAIL bei >990W.
+- VP-11: QS9 TRANSFER-Marker-Pflicht NEU — HIGH-Severity. Fuer jede KE mit Transfer-Forderung mindestens 1 TRANSFER-Marker Pflicht. §3.3b von "optional" zu "PFLICHT" geaendert + Q-Gate-Konsequenz dokumentiert.
+- VP-1r: Wikipedia-MCP Root Cause identifiziert — `--language de` Startup-Parameter fehlte. MCP-Konfigurationsaenderung, kein Vertragspatch. User setzt in Produktions-Session.
+- VERTRAG_PHASE_0-3_SKRIPT.md v1.3 → v1.4
+- Infrastruktur-Stand: 14 Patches (VP-1..VP-11, GK-1..GK-3, AP-1) + VP-1r (MCP-Konfiguration)
+- Naechster Schritt: Phase 0.4 AGENT_HEFTEINTRAG
+
+---
+
 ## 2026-04-09 — Vergleichsaudit Testlauf 4 vs. Testlauf 5 (Rev.1 mit Transkript-Gegenprüfung)
 
 **Phase:** Qualitaetssicherung

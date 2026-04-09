@@ -48,7 +48,7 @@ Testrun 5 zeigt signifikante Qualitaetsverbesserungen in den Dimensionen Inhalts
 
 ### 2.3 Analyse der FAILs
 
-**VP-1 (Sprachraum DE-Primaet):** Der Produktionsagent nutzt weiterhin EN-Wikipedia als primaere Quelle. Hypothese: Der Patch formuliert eine Praeferenz, aber der Agent-Prompt resolvet bei Wikimedia-API-Anfragen auf EN als Default. Infrastruktureller Fix noetig: Explizite Sprach-Parameter in der Suchstrategie oder Hardcoding von `de.wikipedia.org` als primaeren Endpunkt.
+**VP-1 (Sprachraum DE-Primaet):** Der Produktionsagent nutzt weiterhin EN-Wikipedia als primaere Quelle. **Root Cause identifiziert (Rev.1):** Das Wikipedia-MCP (github.com/Rudra-ravi/wikipedia-mcp) unterstuetzt Sprachauswahl ueber den Startup-Parameter `--language de`, laeuft aber ohne dieses Flag (Default: EN). Der Agent versuchte DE-Titel (Msg 143-148), das MCP resolvet aber immer auf EN. **Fix:** MCP-Konfiguration in der Produktions-Session auf `--language de` setzen. Kein Vertragspatch noetig — das Vertragsgebot ist korrekt, die MCP-Konfiguration war falsch.
 
 **VP-5 (TRANSFER-Marker):** TRANSFER-Marker erscheinen nicht im T5-Skript. Hypothese: Die Syntax-Definition in §3.3b ist vorhanden, aber der Agent interpretiert sie nicht als Pflicht-Output. Fix: TRANSFER-Marker als explizites QS-Gate-Kriterium mit Abbruchbedingung definieren.
 
@@ -156,7 +156,7 @@ T5 zeigt breite Verbesserungen in Quellentransparenz, Luecken-Dokumentation, nar
 |---|---|---|---|
 | VP-10 | MEDIUM | Chunk-Wortlimit als harte Obergrenze (max 900W Narrativtext) mit expliziter Pruefanweisung im Q-Gate Self-Check. Aktuell: Chunk 1 = 1091W, Chunk 3 = 956W. | VERTRAG_PHASE_0-3_SKRIPT |
 | VP-11 | HIGH | TRANSFER-Marker als QS-Gate-Pflichtkriterium mit FAIL-Konsequenz (nicht nur Syntax-Definition). Aktuell: 0 Marker trotz VP-5. | VERTRAG_PHASE_0-3_SKRIPT |
-| VP-1r | MEDIUM | VP-1 Revision: MCP-Tool-Limitation dokumentieren. Entweder DE-Wikipedia-API konfigurieren oder Vertrag anpassen (EN akzeptabel wenn DE-MCP nicht verfuegbar, mit Dokumentationspflicht). | VERTRAG_PHASE_0-2_INHALT |
+| VP-1r | MEDIUM | VP-1 Revision: Wikipedia-MCP mit `--language de` starten (Startup-Parameter, nicht per-Tool). Siehe github.com/Rudra-ravi/wikipedia-mcp — unterstuetzt 140+ Sprachen via `--language`/`--country`. Aktuell: Default EN. Fix: MCP-Konfiguration in Produktions-Session aendern. Kein Vertragspatch noetig. | MCP-Konfiguration (Cowork/Claude Code Settings) |
 
 ~~VP-9 (Mappen-Invariante):~~ Entfaellt — Mappen-Expansion war User-Entscheidung, kein Agent-Defekt. Bestehende Infrastruktur hat korrekt reagiert (DIDAKTIK_RAHMEN-Update, PI-Update).
 ~~VP-12 (Cross-Artefakt-Check):~~ Entfaellt — alle Artefakte waren konsistent.
