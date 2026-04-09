@@ -1,6 +1,6 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-09 (Session 27, Evaluation Phase 2.2b Testrun M1)
+**Letzte Aktualisierung:** 2026-04-09 (Session 28, Evaluation Phase 2.2c + 3.0 Testrun M1)
 **Modus:** AUDIT
 
 ---
@@ -69,8 +69,10 @@
                     [DONE] P0-2g4 Phase 2.2a Progressionsplan M1 (PASS, 7 Aufgaben)
                       [DONE] P0-2g5 v3.7 Scope-Patch (D5 aus 2.1b, State Machine, Bloom-Fix, Zitat-Fix)
                         [DONE] P0-2h Phase 2.2b Aufgaben-Produktion M1 (PASS, 0H/1M/2L, 7/7 Q-Gates PASS)
-                          → P0-2i Phase 2.2c Aufgaben-Cross M1  ← NAECHSTER SCHRITT
-                      → P0-3 Zweiter Testfall Grenzfaelle
+                          [DONE] P0-2i Phase 2.2c Aufgaben-Cross M1 (PASS, 10/10)
+                            [DONE] P0-2j Phase 3.0 Assembly M1 (PASS, 0H/2M/1L)
+                              → P0-2k Infrastruktur-Patches (zitat-Template, merksaetze-Ref) ← NAECHSTER SCHRITT
+                                → P0-3 Zweiter Testfall / Mappe 2
               → P2-5 Runde 5 Retrospektive
 ```
 
@@ -81,8 +83,8 @@ Parallel dazu: P1-1 Wave 3 Code-Strang (unabhaengig, Claude Code).
 **Architektur-Entscheidung (Session 25, 2026-04-08):**
 Generator wird eigenstaendiges Repo (`escape-game-generator/`). Begruendung: (1) Produkt soll vertriebsfaehig sein, (2) Pfad-Isolation eliminiert Grep-Drift zwischen PM und Produkt, (3) Agenten-Dateien haben hardcodierte `docs/`-Pfade die bei Koexistenz im selben Repo zu Ambiguitaet fuehren. Konsequenzen: Alle internen Pfade werden Repo-relativ umgeschrieben, PROJECT_INSTRUCTIONS.md erhaelt Dual-Root-Logik (GENERATOR_ROOT + TARGET_ROOT), `weitergehts-online/docs/agents/` etc. werden zu Legacy (Quelle der Wahrheit ist Generator-Repo). Audit-Befund: 2 BLOCKER, 4 HIGH, 4 MEDIUM, 2 LOW — werden im Rahmen der Migration gepatcht.
 
-**Letzter Arbeitsschritt:** Session 26 (Fortsetzung): Evaluation + Infrastruktur-Patches. (A) BEFUND Phase 2.1c+2.2a: CONDITIONAL PASS (1H/2M/2L). (B) Ueberlappungsanalyse 2.1b vs 2.1c: D5 aus 2.1b entfernt (redundant mit 2.1c Achsen 1-4). 2.1b → 4 Achsen D1-D4 (v3.7). (C) PROJECT_INSTRUCTIONS.md State Machine um Phase 2.1b ergaenzt. (D) PROGRESSIONSPLAN Pos 5 Bloom L4→L3. (E) sicherung.json zitat.urheber [sinngemäß] ergaenzt. (F) Phase 2.1b fuer M1 NICHT nachtraeglich ausgefuehrt (Materialien bereits v3.6-gepatcht, kein Qualitaetsgewinn; Prozess-Validierung erfolgt bei Mappe 2).
-**Naechster Schritt:** (1) Phase 2.2c Aufgaben-Cross-Konsistenz M1 (Testrun fortsetzen, separate Cowork-Session). (2) P1-Fix: PROGRESSIONSPLAN Pos 5 Header L4→L3. (3) P2-Fix: VERTRAG_PHASE_2-2b typ-Registry mc→multiple-choice. (4) OPT: material-output-schema.json um _meta erweitern. (5) OPT: SUB_AUFGABE_ZUORDNUNG.md Encoding-Hinweis.
+**Letzter Arbeitsschritt:** Session 28: Evaluation Phase 2.2c + Phase 3.0 Assembly M1. PASS (0H/2M/1L). Phase 2.2c: 10/10 Cross-Kriterien PASS. Phase 3.0: V1-V12 PASS. data.json 45KB, 1 Mappe, 5 Mat, 7 Aufgaben. HTML-Templates + Bild-Asset generiert. Findings: (M1) sicherung.zitat fehlt in data.json — Vertrags-Template-Luecke. (M2) merksaetze[]-Referenz in 3 Vertraegen inkonsistent mit knoten[].merksatz-Schema. (L1) Assembly-Vertrag unter agents/ statt vertraege/. Befund: `docs/befunde/BEFUND_PHASE_2-2c_3-0_TESTRUN_M1.md`. Vorherige Session (27): Infrastruktur-Patches typ-Registry + Encoding-Hints (8 SUB_AUFGABE-Dateien, escape-game-generator Repo, uncommitted).
+**Naechster Schritt:** (1) Infrastruktur-Patches vor Mappe 2: zitat-Feld in VERTRAG_PHASE_3_ASSEMBLY.md, merksaetze→knoten[].merksatz in 3 Vertraegen. (2) escape-game-generator committen (10 Dateien aus Session 27 + neue Patches). (3) Mappe 2 Produktion starten (Phase 2.0 Rahmen). (4) OPT: Assembly-Vertrag nach vertraege/ verschieben. (5) OPT: Engine zitat-Rendering (P1 Code-Strang).
 
 ### Abgeschlossene Bilanzen (Referenz)
 

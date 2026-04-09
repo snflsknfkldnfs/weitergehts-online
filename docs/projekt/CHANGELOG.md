@@ -4,6 +4,37 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-09 — Evaluation Testrun Phase 2.2c Cross-Konsistenz + Phase 3.0 Assembly M1
+
+**Phase:** Qualitaetssicherung
+**Modus:** AUDIT
+**Session:** 28
+
+**Phase 2.2c + Phase 3.0 evaluiert. PASS (0H/2M/1L). Mappe 1 produktionsreif.**
+- Phase 2.2c: 10/10 Cross-Konsistenz-Kriterien PASS (A1, A3, A5, A8-A10, A12, A16-A18)
+- Phase 3.0: V1-V12 Assembly-Validierung PASS. data.json 45 KB, 1 Mappe, 5 Materialien, 7 Aufgaben
+- HTML-Templates generiert: index.html, lehrkraft.html, mappe-1.html
+- Bild-Asset: img-1-1.jpg (122 KB, Wikimedia, Public Domain)
+- M1: sicherung.zitat fehlt in data.json — VERTRAG_PHASE_3_ASSEMBLY.md Template-Luecke (kein zitat-Feld definiert)
+- M2: merksaetze[]-Referenz in 3 Vertraegen inkonsistent mit tatsaechlichem knoten[].merksatz-Schema (Doku-Drift)
+- L1: Assembly-Vertrag unter agents/ statt architektur/vertraege/ (Konsistenz)
+- Befund: `docs/befunde/BEFUND_PHASE_2-2c_3-0_TESTRUN_M1.md`
+
+---
+
+## 2026-04-09 — Infrastruktur-Patches typ-Registry + Encoding (escape-game-generator)
+
+**Phase:** Qualitaetsmanagement
+**Modus:** EXECUTE
+**Session:** 27
+
+**3 Infrastruktur-Patches auf escape-game-generator Repo (uncommitted).**
+- VERTRAG_PHASE_2-2b: typ-Registry `mc` → `multiple-choice` (Engine-konform)
+- 8x SUB_AUFGABE_*.md: JSON-Encoding-Hinweis (v3.7) eingefuegt — verbietet typographische Anfuehrungszeichen in JSON-Strings
+- Dateien: VERTRAG_PHASE_2-2b_AUFGABE.md + SUB_AUFGABE_{MC,ZUORDNUNG,LUECKENTEXT,REIHENFOLGE,FREITEXT,BEGRUENDUNG,VERGLEICH,QUELLENKRITIK}.md
+
+---
+
 ## 2026-04-09 — Evaluation Testrun Phase 2.2b Aufgaben-Produktion M1
 
 **Phase:** Qualitaetssicherung
