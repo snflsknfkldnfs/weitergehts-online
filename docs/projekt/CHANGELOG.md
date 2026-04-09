@@ -4,6 +4,25 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-09 — Retroaktive GERUEST-Patches (Infrastruktur-Felder + BEFUND-Constraints)
+
+**Phase:** Qualitaetsmanagement
+**Modus:** EXECUTE
+**Session:** 26 (Fortsetzung)
+
+**Alle 4 MATERIAL_GERUESTs (M1-M4) retroaktiv mit v2.3-Infrastruktur-Feldern + BEFUND-Findings nachgeruestet.**
+- Neue Felder in allen 4 Dateien: sensibilitaets_markierung-Spalte im Material-Entwurf, kausal_mechanismus in Uebergangsobjekten, Perspektiven-Abdeckungsmatrix, S16+S17 im Q-Gate, Dispatch-Constraints-Sektion
+- quellentext-Taxonomie (rekonstruiert): M1 mat-1-4, M2 mat-2-1, M3 mat-3-3
+- M3: inferenz_stuetzen-Plan fuer C2-Zone (INFERENTIAL, M3-A1 CRITICAL)
+- M4: sensibilitaets_markierung = mythos_korrektur_noetig fuer mat-4-5 (M4-G1 Dolchstosslegende)
+- Dispatch-Constraints bilden BEFUND-Findings ab: 3 CRITICAL (M3-A1, M3-F1, M4-G1) + 6 HIGH (M1-A2, M2-A2, M2-A4, UE-001, M4-A2, M4-F1) als verbindliche Generierungs-Constraints
+- S16: M1 PASS, M2 WARN (mat-2-2), M3 PASS, M4 WARN (mat-4-2)
+- S17: M1 PASS, M2 PASS, M3 WARN (Zeitleiste-kausal), M4 PASS
+- Verification PASS: Alle Pflichtfelder konsistent in 4/4 Dateien
+- Artefakte: `docs/agents/artefakte/verlauf-erster-weltkrieg-marne-ende/MATERIAL_GERUEST_*_Mappe{1,2,3,4}.md`
+
+---
+
 ## 2026-04-09 — Infrastruktur-Patches aus Inhaltsaudit-Abstraktion
 
 **Phase:** Qualitaetsmanagement

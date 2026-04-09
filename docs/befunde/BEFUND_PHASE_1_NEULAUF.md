@@ -92,15 +92,15 @@ PASS. Keine Knoten-IDs, keine k1-X-Notationen, keine Vorgaenger-Game-Referenzen.
 
 ## Dimension 3: Vergleich mit gescheitertem Testrun 1
 
-| Kriterium | Testrun 1 (FAIL) | Neulauf (PASS) |
-|---|---|---|
-| Vertrag-SCPL-Kompatibilitaet | Knoten/Verbindungen statt SCPL | SCPL durchgaengig |
-| v2.0-Sequenzplanfelder | 8 Felder fehlend | Alle 8 Felder vorhanden |
-| Vorgaenger-Game-Kontamination | gpg-erster-weltkrieg-ursachen als Vorlage | Keine Cross-Game-Referenzen |
-| Uebergangsobjekte | Fehlend | Vollstaendig (rueckbezug, vorausblick, kausalitaet, intentionsskizze) |
-| Sequenzkontext-Objekte | Fehlend | Vollstaendig (vorher/nachher konsistent) |
-| Fachbegriff-Taxonomie | Nicht vorhanden | Eingefuehrt/Referenziert korrekt getrennt |
-| Q-Gate Self-Check | Nicht gegen S1-S15 | S1-S15 vollstaendig referenziert |
+| Kriterium                     | Testrun 1 (FAIL)                          | Neulauf (PASS)                                                        |
+| ----------------------------- | ----------------------------------------- | --------------------------------------------------------------------- |
+| Vertrag-SCPL-Kompatibilitaet  | Knoten/Verbindungen statt SCPL            | SCPL durchgaengig                                                     |
+| v2.0-Sequenzplanfelder        | 8 Felder fehlend                          | Alle 8 Felder vorhanden                                               |
+| Vorgaenger-Game-Kontamination | gpg-erster-weltkrieg-ursachen als Vorlage | Keine Cross-Game-Referenzen                                           |
+| Uebergangsobjekte             | Fehlend                                   | Vollstaendig (rueckbezug, vorausblick, kausalitaet, intentionsskizze) |
+| Sequenzkontext-Objekte        | Fehlend                                   | Vollstaendig (vorher/nachher konsistent)                              |
+| Fachbegriff-Taxonomie         | Nicht vorhanden                           | Eingefuehrt/Referenziert korrekt getrennt                             |
+| Q-Gate Self-Check             | Nicht gegen S1-S15                        | S1-S15 vollstaendig referenziert                                      |
 
 **Vertragspatch-Wirksamkeit: 100%.** Alle 3 Findings des Testrun 1 (MG-C1, MG-H1, MG-H2) sind im Neulauf behoben.
 
