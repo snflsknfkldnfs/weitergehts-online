@@ -4,6 +4,24 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-09 — Phase-1-Neulauf Evaluation (Dual-Agenten-Audit)
+
+**Phase:** Qualitaetssicherung
+**Modus:** AUDIT
+**Session:** 26
+
+**Phase-1-Neulauf evaluiert. CONDITIONAL PASS.**
+- Dual-Agenten-Audit: Output-Compliance + Prozess-Compliance parallel
+- Output: 4 MATERIAL_GERUEST (M1-M4), alle 9 Pflichtsektionen vorhanden, SCPL-Treue 100%, Sequenzplan v2.0 vollstaendig
+- Vertragspatch-Wirksamkeit 100%: Alle 3 Testrun-1-Findings (MG-C1 Vertrag-SCPL, MG-H1 v2.0-Felder, MG-H2 M3-Defekt) behoben
+- Anti-Kontamination: PASS — keine Vorgaenger-Game-Referenzen
+- 3 LOW Findings: M3/M4 Q-Gate S5/S13 Warnungen (Personalisierung erst spaete Position, didaktisch begruendet)
+- Prozess: 1 CRITICAL (State-Machine nicht aktualisiert, nachgeholt), 3 MEDIUM (Token-Ineffizienz durch Mehrfach-Reads)
+- Naechster Schritt: User-Validierung der 4 MATERIAL_GERUESTs
+- Befund: `docs/befunde/BEFUND_PHASE_1_NEULAUF.md`
+
+---
+
 ## 2026-04-09 — Testumgebungs-Reset fuer Phase 1 Neulauf
 
 **Phase:** Infrastruktur-Reset
