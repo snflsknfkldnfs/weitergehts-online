@@ -1,0 +1,41 @@
+{
+  "id": "mat-1-5",
+  "typ": "tagebuch",
+  "titel": "Was machte der Krieg mit den Soldaten?",
+  "inhalt": "<p><em>Westfront, 3. November 1917</em></p><p>Im Sommer 1916 glaubte ich noch an den Sieg. Meine Kompanie lag vor Verdun. Wir sollten die Franzosen brechen. Stattdessen brachen wir selbst. 38 Mann verloren in zwei Wochen — für einen Graben, den wir drei Tage später aufgaben.</p><p>An der Somme war es nicht besser. Maschinengewehre und Stacheldraht machten jeden Angriff aussichtslos. Die Offiziere nannten es Materialschlacht — Maschinen gegen Menschen, und die Maschinen gewannen.</p><p>Heute habe ich 23 Männer unter mir. Von den 120, die 1914 mit mir kamen, lebt keiner mehr. Ein britischer Gefangener sagte, bei ihnen sei es genauso. Wir verstanden uns ohne ein Wort.</p><p>Ich schreibe nicht mehr nach Hause, dass alles gut wird. Es wäre eine Lüge.</p>",
+  "quelle": "Fiktiver Tagebucheintrag, basierend auf typischen Erfahrungsberichten deutscher Offiziere an der Westfront 1916–1917. Figur und Erlebnisse sind erfunden, historischer Kontext ist belegt.",
+  "position": 5,
+  "didaktische_funktion": "vertiefung",
+  "voraussetzung": ["mat-1-4"],
+  "ueberleitung_von": "Bei Verdun und der Somme starben Hunderttausende für wenige Kilometer Boden. Was machte diese Erfahrung mit den Menschen, die sie durchleben mussten?",
+  "sequenz_kontext": {
+    "vorher": {
+      "id": "mat-1-4",
+      "typ": "quellentext",
+      "kerninhalt": "Verdun und Somme als industrielles Massensterben."
+    },
+    "nachher": null
+  },
+  "_meta": {
+    "wortanzahl": 110,
+    "figur": {
+      "name": "Friedrich von Hartmann",
+      "alter": 29,
+      "rolle": "Oberleutnant, Zugführer",
+      "ort": "Westfront"
+    },
+    "artefakt_ref": "rolle-1-2",
+    "historische_details": [
+      "Verdun 1916 als Ausblutungsschlacht — belegt in SKRIPT §4 und INHALTSBASIS",
+      "Somme 1916 mit hohen Verlusten — belegt in SKRIPT §5",
+      "MG + Stacheldraht als Verteidigungsvorteil — belegt in SKRIPT §6",
+      "Offiziers-Verlustrate höher als Mannschaftsgrade — belegt in Wikipedia Western Front (Officers)",
+      "Gegenseitiges Verständnis zwischen Feinden im Graben — belegt in Wikipedia Christmas truce / Live and let live"
+    ],
+    "tafelbild_knoten_abgedeckt": ["k1-7"],
+    "perspektivitaet": "Friedrich kennt nur seinen Frontabschnitt. Er versteht die strategische Lage nicht, erlebt nur die Konsequenz. Er weiß nicht, wann der Krieg enden wird.",
+    "perspektive": "P1: Deutsche Soldaten",
+    "erarbeitbarkeits_check": "PASS — k1-7: Hoffnungslosigkeit klar erarbeitbar durch Bogen von Siegeshoffnung (Sommer 1916) zu 'Es wäre eine Lüge' (November 1917). Materialschlacht als Ursache benannt.",
+    "trigger_flags": ["krieg", "tod"]
+  }
+}

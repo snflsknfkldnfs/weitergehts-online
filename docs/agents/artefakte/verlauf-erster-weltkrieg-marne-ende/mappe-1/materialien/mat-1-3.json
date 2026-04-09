@@ -1,0 +1,33 @@
+{
+  "id": "mat-1-3",
+  "typ": "darstellungstext",
+  "titel": "Warum wurde Gas zur Waffe?",
+  "inhalt": "<p>Der <strong>Stellungskrieg</strong> war festgefahren. Seit Monaten lagen sich die Armeen in Schützengräben gegenüber — kein Angriff brachte einen Durchbruch. Die Generäle suchten nach einer Waffe, die das Gleichgewicht brechen könnte. Ihre Antwort war Gift.</p><p>Am 22. April 1915 setzten deutsche Truppen bei Ypern in Belgien zum ersten Mal <strong>Giftgas</strong> (giftiges Chlorgas) ein. Eine grüne Wolke trieb über die französischen Gräben. Das Gas überraschte Tausende Soldaten. Es griff die Lungen an und war oft tödlich.</p><p>Insgesamt starben etwa 90.000 Soldaten im Krieg durch Giftgas. Tausende Überlebende blieben ihr Leben lang blind oder lungenkrank. Doch die erhoffte Entscheidung brachte das Gas nicht — der Stellungskrieg ging weiter.</p>",
+  "quelle": "Eigene Darstellung auf Basis der Sachanalyse.",
+  "position": 3,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": ["mat-1-2"],
+  "ueberleitung_von": "Der Tagebucheintrag zeigte den täglichen Kampf ums Überleben im Graben. Doch 1915 kam eine neue Waffe, die den Krieg noch schrecklicher machte.",
+  "sequenz_kontext": {
+    "vorher": {
+      "id": "mat-1-2",
+      "typ": "tagebuch",
+      "kerninhalt": "Ein Gefreiter beschreibt seinen Alltag im Schützengraben."
+    },
+    "nachher": {
+      "id": "mat-1-4",
+      "typ": "quellentext",
+      "kerninhalt": "Stimmen zu Verdun und der Somme 1916."
+    }
+  },
+  "_meta": {
+    "wortanzahl": 101,
+    "fachbegriffe_eingefuehrt": ["Giftgas"],
+    "fachbegriffe_referenziert": ["Stellungskrieg"],
+    "tafelbild_knoten_abgedeckt": ["k1-3"],
+    "erarbeitbarkeits_check": "PASS — k1-3: Ypern 1915 explizit, Chlorgas benannt, 90.000 Tote als Gesamtzahl. Kausale Frage beantwortet: festgefahren → Generäle suchen Ausweg → Gift.",
+    "perspektive": "übergreifend (P1, P2)",
+    "altersfilter_hinweis": "Wirkung benannt (Lungen, tödlich, blind, lungenkrank), keine explizite Leidensdarstellung. Fokus auf Faktum + Konsequenz.",
+    "trigger_flags": ["krieg", "tod"]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "mat-1-1",
+  "typ": "bildquelle",
+  "titel": "Wie sah der Krieg im Graben wirklich aus?",
+  "inhalt": "../../assets/img/verlauf-erster-weltkrieg-marne-ende/img-1-1.jpg",
+  "bildunterschrift": "Britische Soldaten des Cheshire Regiments in einem Schützengraben an der Somme (Foto, 1916). Das Foto entstand auf britischer Seite, doch die Gräben sahen auf beiden Seiten der 700 km langen Front ähnlich aus — beengt, schlammig, voller Soldaten. Was verrät das Foto über die Lebensbedingungen der Soldaten?",
+  "quelle": "Wikimedia Commons",
+  "lizenz": "Public Domain",
+  "position": 1,
+  "didaktische_funktion": "einstieg",
+  "voraussetzung": [],
+  "ueberleitung_von": null,
+  "sequenz_kontext": {
+    "vorher": null,
+    "nachher": {
+      "id": "mat-1-2",
+      "typ": "tagebuch",
+      "kerninhalt": "Ein Gefreiter beschreibt seinen Alltag im Schützengraben."
+    }
+  },
+  "_meta": {
+    "artefakt_ref": "img-1-1",
+    "wikimedia_dateiname": "File:Cheshire_Regiment_trench_Somme_1916.jpg",
+    "thumbnail_breite": 640,
+    "lokaler_pfad": "../../assets/img/verlauf-erster-weltkrieg-marne-ende/img-1-1.jpg",
+    "url_verifiziert": false,
+    "bildtyp": "foto",
+    "erschliessungsimpuls": "Was verrät das Foto über die Lebensbedingungen der Soldaten?",
+    "tafelbild_knoten_abgedeckt": ["k1-1"],
+    "lizenz_kompatibel": true,
+    "erarbeitbarkeits_check": "PASS — Foto zeigt Grabenverhaeltnisse (beengt, schlammig, Soldaten zusammengedraengt), macht k1-1 (Stellungskrieg 700 km Front) visuell erfahrbar.",
+    "trigger_flags": ["krieg"],
+    "perspektive": "P2: Britische/Französische Soldaten",
+    "aufbereitung": "original"
+  }
+}

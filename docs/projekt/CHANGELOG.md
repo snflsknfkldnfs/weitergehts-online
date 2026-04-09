@@ -4,6 +4,23 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-09 — Phase-2.1-Evaluation Material-Produktion Mappe 1
+
+**Phase:** Qualitaetssicherung
+**Modus:** AUDIT
+**Session:** 26 (Fortsetzung)
+
+**Phase 2.1 Material-Produktion M1 evaluiert. PASS (0H/2M/2L). Keine Artefakt-Korrekturen.**
+- 5/5 Materialien (mat-1-1 bis mat-1-5) PASS. Prozesstreue: Dispatch-Isolation (P4), Read-Sequenz (8 Steps), Compaction-Failsafe (P1) — alles vertragskonform
+- GERUEST-Konformitaet: Typ, Titel, SCPL-Zone, W-Budget, Dispatch-Constraints — 100% Match
+- Sequenz-Kohaerenz: SQ-1 bis SQ-5 PASS, Fachbegriff-Progression lueckenlos (5 Begriffe), Perspektiven 3/3 abgedeckt
+- Compaction-Failsafe (P1) erstmalig unter Realbedingungen validiert — kein Datenverlust
+- Findings: M1 (_meta vs. additionalProperties:false — Schema-Hygiene, OPT-1 vorgeschlagen), M2 (mat-1-1 url_verifiziert:false — Deployment-Vorbereitung), L1 (quellentyp "rede" unpassend), L2 (Perspektiven-Delta GERUEST vs. Produktion — erwuenscht)
+- Infrastruktur-Patches aus Phase 2.0 zeigen Wirkung: Kein HIGH-Finding, drastische Qualitaetsverbesserung gegenueber Phase 2.0 (2H/3M/2L → 0H/2M/2L)
+- Befund: `docs/befunde/BEFUND_PHASE_2-1_MATERIAL_M1.md`
+
+---
+
 ## 2026-04-09 — Phase-2.0-Evaluation + Artefakt/Infrastruktur-Patches (Option B)
 
 **Phase:** Qualitaetssicherung + Qualitaetsmanagement

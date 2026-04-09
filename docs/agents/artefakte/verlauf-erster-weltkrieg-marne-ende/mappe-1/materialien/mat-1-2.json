@@ -1,0 +1,45 @@
+{
+  "id": "mat-1-2",
+  "typ": "tagebuch",
+  "titel": "Was erlebte ein Soldat Tag für Tag im Schützengraben?",
+  "inhalt": "<p><em>Schützengraben bei Arras, 18. November 1914</em></p><p>Seit drei Wochen sitzen wir in diesem Schützengraben. Das Wasser steht mir bis zu den Knien. Meine Stiefel sind durchweicht, die Füße tun weh. Nachts kriechen Ratten über uns — sie fressen alles, sogar Brot aus den Taschen.</p><p>Im August hieß es noch: Weihnachten sind wir zu Hause. Jetzt graben wir uns immer tiefer ein. Die Offiziere nennen es Stellungskrieg — auf 700 Kilometer rückt niemand vor. Zwischen uns und den Franzosen liegen 200 Meter. Ein Kamerad meinte, drüben sei es genauso schlimm.</p><p>Heute Morgen schlug eine Granate drei Meter neben mir ein. Mein Kamerad Fritz schrie, dann war er still. Man gewöhnt sich nicht daran.</p><p>Mutter schrieb, sie bete jeden Tag für mich. Was soll ich ihr sagen?</p>",
+  "quelle": "Fiktiver Tagebucheintrag, basierend auf typischen Erfahrungsberichten deutscher Soldaten an der Westfront 1914. Figur und Erlebnisse sind erfunden, historischer Kontext ist belegt.",
+  "position": 2,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": ["mat-1-1"],
+  "ueberleitung_von": "Das Foto zeigte den Schützengraben als engen, schlammigen Ort. Doch wie erlebten die Soldaten ihren Alltag dort wirklich — Tag für Tag?",
+  "sequenz_kontext": {
+    "vorher": {
+      "id": "mat-1-1",
+      "typ": "bildquelle",
+      "kerninhalt": "Foto zeigt Soldaten im Schützengraben 1916."
+    },
+    "nachher": {
+      "id": "mat-1-3",
+      "typ": "darstellungstext",
+      "kerninhalt": "Giftgas-Einsatz bei Ypern 1915 und seine Folgen."
+    }
+  },
+  "_meta": {
+    "wortanzahl": 117,
+    "figur": {
+      "name": "Karl Meißner",
+      "alter": 22,
+      "rolle": "Gefreiter, Infanterie",
+      "ort": "Schützengraben bei Arras, Westfront"
+    },
+    "artefakt_ref": "rolle-1-1",
+    "historische_details": [
+      "700 km Frontlänge — belegt in INHALTSBASIS Fakt 1 (Stellungskrieg ab Herbst 1914)",
+      "Knietief Wasser im Graben — belegt in Wikipedia Trench warfare (Conditions)",
+      "Ratten als Plage — belegt in Wikipedia Trench warfare (Vermin)",
+      "Artilleriebeschuss als Haupttodesursache — belegt in INHALTSBASIS Fakt 3",
+      "Erwartung Weihnachten 1914 — belegt in Wikipedia Christmas truce (Vorgeschichte)"
+    ],
+    "tafelbild_knoten_abgedeckt": ["k1-1", "k1-2"],
+    "perspektivitaet": "Karl weiß nur, was er im Graben sieht. Er kennt keine Gesamtlage, keine strategischen Pläne. Er weiß nicht, wie lange der Krieg dauern wird.",
+    "perspektive": "P1: Deutsche Soldaten",
+    "erarbeitbarkeits_check": "PASS — k1-1: Stellungskrieg + 700 km Front explizit benannt. k1-2: Nässe, Ratten, Tod des Kameraden Fritz direkt erlebbar.",
+    "trigger_flags": ["krieg", "tod"]
+  }
+}

@@ -50,3 +50,83 @@
 - mappe-1/rahmen/sicherung.json
 - mappe-1/rahmen/mappenabschluss_zone.json
 - mappe-1/rahmen/meta.json
+
+---
+
+# Q-Gate-Log: Mappe 1 — Phase 2.1 (Material-Produktion)
+
+**Phase:** 2.1
+**Datum:** 2026-04-09
+**Vertrag:** VERTRAG_PHASE_2-1_MATERIAL.md
+**Katalog:** Q-GATE-MECHANIK.md §7.4
+
+## Dispatch-Übersicht
+
+| # | Material | Typ | SCPL-Zone | W-Count | Schema | SQ-Gate | Typ-Gate | Gesamt |
+|---|---|---|---|---|---|---|---|---|
+| 1 | mat-1-1 | bildquelle | S | ~40W (BU) | PASS | PASS (5/5) | PASS (MQ2,Q1-Q10) | PASS |
+| 2 | mat-1-2 | tagebuch | C1 | 117W | PASS | PASS (5/5) | PASS (MQ2,Q1-Q12) | PASS |
+| 3 | mat-1-3 | darstellungstext | C2 | 101W | PASS | PASS (5/5) | PASS (MQ2,Q1-Q10) | PASS |
+| 4 | mat-1-4 | quellentext | C3 | 93W | PASS | PASS (5/5) | PASS (MQ2,Q1-Q10) | PASS |
+| 5 | mat-1-5 | tagebuch | P | 110W | PASS | PASS (5/5) | PASS (MQ2,Q1-Q12) | PASS |
+
+## Sequenz-Kohärenz (SQ-1 bis SQ-5, alle Materialien)
+
+| Prüfpunkt | mat-1-1 | mat-1-2 | mat-1-3 | mat-1-4 | mat-1-5 |
+|---|---|---|---|---|---|
+| SQ-1 Nur erarbeitetes Wissen | PASS | PASS | PASS | PASS | PASS |
+| SQ-2 Keine verbotenen Begriffe | PASS | PASS | PASS | PASS | PASS |
+| SQ-3 TB-Knoten erarbeitbar | k1-1 | k1-1,k1-2 | k1-3 | k1-4,k1-5,k1-6 | k1-7 |
+| SQ-4 Narrativer Anschluss | — (erstes) | PASS | PASS | PASS | PASS |
+| SQ-5 material_charakter | PASS | PASS | PASS | PASS | PASS |
+
+## Fachbegriff-Progression
+
+| Position | Material | eingeführt | referenziert |
+|---|---|---|---|
+| 1 | mat-1-1 | — | — |
+| 2 | mat-1-2 | Stellungskrieg, Schützengraben | — |
+| 3 | mat-1-3 | Giftgas | Stellungskrieg |
+| 4 | mat-1-4 | Ausblutungsschlacht | Stellungskrieg |
+| 5 | mat-1-5 | Materialschlacht | Stellungskrieg, Schützengraben, Ausblutungsschlacht |
+
+## Perspektiven-Abdeckung (Konflikttyp=true)
+
+| Perspektive | mat-1-1 | mat-1-2 | mat-1-3 | mat-1-4 | mat-1-5 | Abdeckung |
+|---|---|---|---|---|---|---|
+| P1: Deutsche Soldaten | | X | | | X | 2/5 |
+| P2: Brit./Franz. Soldaten | X (BU) | | X (übergreifend) | X (brit. Soldat) | | 3/5 |
+| P3: Militärführung | | | | X (Falkenhayn) | | 1/5 |
+
+**3/3 Perspektiven abgedeckt.** PASS.
+
+## Dispatch-Constraints
+
+| Constraint | Material | Prio | Ergebnis | Detail |
+|---|---|---|---|---|
+| gewalt_altersfilter | mat-1-3 | HIGH | PASS | Wirkung benannt, keine explizite Leidensdarstellung. |
+| M1-A2 Kausalfrage | mat-1-3 | HIGH | PASS | Kausalkette: festgefahren → Ausweg → Gift. Explizit in P1+P3. |
+| UE-001 rekonstruiert | mat-1-4 | HIGH | PASS | _meta.aufbereitung=rekonstruiert. Fußnote enthält Kennzeichnung. |
+
+## Text-Dichte
+
+| Material | Wörter | Max | Ergebnis |
+|---|---|---|---|
+| mat-1-1 (BU) | ~40W | — | PASS |
+| mat-1-2 | 117 | 120 | PASS |
+| mat-1-3 | 101 | 150 | PASS |
+| mat-1-4 | 93 | 100 | PASS |
+| mat-1-5 | 110 | 120 | PASS |
+| **Gesamt** | **~461** | **~500** | **PASS** |
+
+## Gesamt
+
+**PASS** (5/5 Dispatches PASS, Sequenz-Kohärenz PASS, Perspektiven PASS, Dispatch-Constraints PASS, Text-Dichte konform).
+
+## Produzierte Dateien
+
+- mappe-1/materialien/mat-1-1.json
+- mappe-1/materialien/mat-1-2.json
+- mappe-1/materialien/mat-1-3.json
+- mappe-1/materialien/mat-1-4.json
+- mappe-1/materialien/mat-1-5.json

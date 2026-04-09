@@ -1,0 +1,37 @@
+{
+  "id": "mat-1-4",
+  "typ": "quellentext",
+  "titel": "Wofür starben Hunderttausende bei Verdun und der Somme?",
+  "inhalt": "<p><em>Zwei Stimmen zum Jahr 1916 — ein General und ein einfacher Soldat.</em></p><p><em>General Erich von Falkenhayn plante 1916 den Angriff auf Verdun. Sein Ziel: eine</em> <strong>Ausblutungsschlacht</strong> — <em>Frankreich durch möglichst viele Tote erschöpfen.</em></p><blockquote><p>Wir müssen das französische Heer ausbluten. Jeder Mann, den sie verlieren, schwächt sie mehr als uns.</p></blockquote><p><em>An der Somme griffen im Juli 1916 britische Soldaten an. Am ersten Tag fielen 57.000.</em></p><blockquote><p>Wir fielen wie Kaninchen im Gewehrfeuer. Unsere Generäle schickten uns in den sicheren Tod.</p></blockquote><p><em>Bei Verdun starben 600.000 Soldaten. An der Somme fast eine Million. Die Front verschob sich kaum.</em></p>",
+  "quelle": "Rekonstruierte Texte auf Basis historischer Quellen. Erich von Falkenhayn, Verdun-Strategie 1916. Britischer Infanterist, Schlacht an der Somme 1916. Kein wörtliches Originalzitat.",
+  "position": 4,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": ["mat-1-3"],
+  "ueberleitung_von": "Giftgas zeigte eine neue Dimension der Brutalität. Doch was passierte, als Generäle Hunderttausende in aussichtslose Schlachten schickten?",
+  "sequenz_kontext": {
+    "vorher": {
+      "id": "mat-1-3",
+      "typ": "darstellungstext",
+      "kerninhalt": "Giftgas-Einsatz bei Ypern 1915 und seine Folgen."
+    },
+    "nachher": {
+      "id": "mat-1-5",
+      "typ": "tagebuch",
+      "kerninhalt": "Ein Offizier beschreibt den Wandel von Hoffnung zu Hoffnungslosigkeit."
+    }
+  },
+  "_meta": {
+    "wortanzahl": 93,
+    "quellentyp": "rede",
+    "aufbereitung": "rekonstruiert",
+    "artefakt_ref": ["zit-1-1", "zit-1-2"],
+    "tafelbild_knoten_abgedeckt": ["k1-4", "k1-5", "k1-6"],
+    "quellenkritische_impulse": [
+      "Welches Ziel verfolgte Falkenhayn mit der Ausblutungsschlacht?",
+      "Wie hätte ein französischer General die Schlacht bei Verdun beschrieben?"
+    ],
+    "perspektive": "P2: Britische/Französische Soldaten + P3: Militärführung (Falkenhayn)",
+    "erarbeitbarkeits_check": "PASS — k1-4: Verdun 1916 + 600.000 Tote explizit. k1-5: Somme 1916 + fast eine Million + 57.000 erster Tag. k1-6: Ausblutungsschlacht + Falkenhayn + Definition.",
+    "trigger_flags": ["krieg", "tod"]
+  }
+}
