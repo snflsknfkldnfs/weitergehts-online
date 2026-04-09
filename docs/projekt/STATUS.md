@@ -1,6 +1,6 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-09 (Session 26, Retroaktive GERUEST-Patches)
+**Letzte Aktualisierung:** 2026-04-09 (Session 26, Phase-2.0-Evaluation + Artefakt/Infrastruktur-Patches)
 **Modus:** EXECUTE
 
 ---
@@ -61,7 +61,8 @@
     [DONE] P0-2c Phase 0 Testlauf (v2.4, Testlauf 4 PASS)
       [DONE] P0-2e Testlauf 5 + Vergleichsaudit T4/T5 Rev.1 (76% Patch-Wirksamkeit, 7 valide Findings: 0C/0H/5M/2L)
         [DONE] P0-2f VP-10/VP-11 gepatcht (VERTRAG_0-3 v1.4), VP-1r = MCP-Konfiguration (--language de)
-          → P0-2d Game 2 Produktion fortsetzen (Phase 1 neu mit gepatchtem Vertrag → 2.x)  ← NAECHSTER SCHRITT
+          [DONE] P0-2d Phase 1 + Phase 2.0 Rahmen M1 (CONDITIONAL PASS, 2H/3M/2L)
+            → P0-2g Phase 2.1 Material-Produktion M1  ← NAECHSTER SCHRITT
             → P0-3 Zweiter Testfall Grenzfaelle
               → P2-5 Runde 5 Retrospektive
 ```
@@ -73,8 +74,8 @@ Parallel dazu: P1-1 Wave 3 Code-Strang (unabhaengig, Claude Code).
 **Architektur-Entscheidung (Session 25, 2026-04-08):**
 Generator wird eigenstaendiges Repo (`escape-game-generator/`). Begruendung: (1) Produkt soll vertriebsfaehig sein, (2) Pfad-Isolation eliminiert Grep-Drift zwischen PM und Produkt, (3) Agenten-Dateien haben hardcodierte `docs/`-Pfade die bei Koexistenz im selben Repo zu Ambiguitaet fuehren. Konsequenzen: Alle internen Pfade werden Repo-relativ umgeschrieben, PROJECT_INSTRUCTIONS.md erhaelt Dual-Root-Logik (GENERATOR_ROOT + TARGET_ROOT), `weitergehts-online/docs/agents/` etc. werden zu Legacy (Quelle der Wahrheit ist Generator-Repo). Audit-Befund: 2 BLOCKER, 4 HIGH, 4 MEDIUM, 2 LOW — werden im Rahmen der Migration gepatcht.
 
-**Letzter Arbeitsschritt:** Session 26 (Fortsetzung): Retroaktive GERUEST-Patches. Alle 4 MATERIAL_GERUESTs (M1-M4) mit neuen Infrastruktur-Feldern nachgeruestet: sensibilitaets_markierung-Spalte, kausal_mechanismus in Uebergangsobjekten, Perspektiven-Abdeckungsmatrix, S16/S17 im Q-Gate, Dispatch-Constraints-Sektion mit BEFUND-Findings als Generierungs-Constraints, quellentext-Taxonomie (rekonstruiert) wo zutreffend. M3 zusaetzlich: inferenz_stuetzen-Plan fuer INFERENTIAL C2. M4 zusaetzlich: mythos_korrektur_noetig fuer mat-4-5 (Dolchstosslegende). Verification PASS: Alle Pflichtfelder konsistent in allen 4 Dateien.
-**Naechster Schritt:** (1) User-Validierung der 4 gepatchten MATERIAL_GERUESTs. (2) Dispatch-Kontext-Katalog fuer Phase 2 erstellen. (3) Phase 2.1 Materialproduktion.
+**Letzter Arbeitsschritt:** Session 26 (Fortsetzung): Phase-2.0-Evaluation (BEFUND_PHASE_2-0_RAHMEN_M1.md). CONDITIONAL PASS: 2 HIGH (Phase-0.4-Vorbedingungsfehler: leere knoten/verbindungen, invalides ordnungsmuster), 3 MEDIUM (fehlender merksatz k1-2, hefteintrag_verweis widerspricht ordnungsmuster, JSON-Encoding). Option B ausgefuehrt: Artefakt-Fixes (M1/M2/Q-Gate) + Forward-only Infrastruktur-Patches im Generator-Repo (AGENT_HEFTEINTRAG: knoten-Populierung PFLICHT, Schema-Enum ordnungsmuster, voraussetzungen-Format; GUETEKRITERIEN_HEFTEINTRAG_ENTWURF: G2 um knoten-Validierung erweitert).
+**Naechster Schritt:** (1) Phase 2.1 Material-Produktion Mappe 1. (2) Dann M2-M4 Rahmen + Material. (3) Phase 2.1c Cross-Revision.
 
 ### Abgeschlossene Bilanzen (Referenz)
 

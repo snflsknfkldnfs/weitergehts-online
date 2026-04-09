@@ -1,0 +1,87 @@
+{
+  "stundenfrage": "Wer überlebt im Schützengraben?",
+  "ordnungsmuster": "parallel-kausal",
+  "scpl": {
+    "situation": {
+      "kontextsatz": "Ab Herbst 1914 graben sich die Armeen auf 700 km ein — Bewegungskrieg wird Stellungskrieg.",
+      "fachbegriffe": ["Stellungskrieg"]
+    },
+    "complication": [
+      {
+        "schritt": "Soldaten leben in Schützengräben voller Wasser, Ratten und Leichen — Schützengraben.",
+        "fachbegriff": "Schützengraben",
+        "darstellung": null
+      },
+      {
+        "schritt": "1915 setzen die Deutschen bei Ypern Chlorgas ein — 90.000 Tote durch Giftgas.",
+        "fachbegriff": "Giftgas",
+        "darstellung": null
+      },
+      {
+        "schritt": "Bei Verdun 1916 sterben 600.000 Soldaten für wenige Kilometer — Ausblutungsschlacht.",
+        "fachbegriff": "Ausblutungsschlacht",
+        "darstellung": null
+      }
+    ],
+    "problem": {
+      "satz": "Maschinengewehre und Stacheldraht machen jeden Angriff zum Massensterben — Materialschlacht.",
+      "fachbegriff": "Materialschlacht"
+    },
+    "loesung": [
+      "Der Stellungskrieg zwang Soldaten jahrelang in Schützengräben unter unmenschlichen Bedingungen.",
+      "Neue Waffen wie Giftgas machten jeden Angriff zur Todesfalle.",
+      "Bei Verdun und der Somme 1916 starben Hunderttausende — die Front verschob sich kaum."
+    ]
+  },
+  "knoten": [
+    {
+      "id": "k1-1",
+      "text": "Stellungskrieg (700 km Front)",
+      "typ": "kernbegriff",
+      "merksatz": "Beide Seiten graben sich ein und kämpfen aus festen Gräben — niemand rückt vor."
+    },
+    {
+      "id": "k1-2",
+      "text": "Schützengraben: Nässe, Ratten, Tod",
+      "typ": "wirkung",
+      "merksatz": "Befestigte Gräben, in denen Soldaten monatelang lebten und kämpften."
+    },
+    {
+      "id": "k1-3",
+      "text": "Giftgas 1915 (90.000 Tote)",
+      "typ": "ursache",
+      "merksatz": "Die Deutschen setzten 1915 bei Ypern erstmals giftiges Chlorgas ein."
+    },
+    {
+      "id": "k1-4",
+      "text": "Verdun 1916 (600.000 Opfer)",
+      "typ": "ereignis"
+    },
+    {
+      "id": "k1-5",
+      "text": "Somme 1916 (1 Mio. Opfer)",
+      "typ": "ereignis"
+    },
+    {
+      "id": "k1-6",
+      "text": "Ausblutungsschlacht (Falkenhayn)",
+      "typ": "ursache",
+      "merksatz": "Der General will den Feind durch möglichst viele Tote erschöpfen."
+    },
+    {
+      "id": "k1-7",
+      "text": "Hoffnungslosigkeit der Soldaten",
+      "typ": "wirkung"
+    }
+  ],
+  "verbindungen": [
+    { "von": "k1-1", "nach": "k1-2", "label": "schafft Elend", "typ": "kausal" },
+    { "von": "k1-2", "nach": "k1-7", "label": "verstärkt", "typ": "kausal" },
+    { "von": "k1-3", "nach": "k1-2", "label": "ergänzt Schrecken", "typ": "kausal" },
+    { "von": "k1-6", "nach": "k1-4", "label": "bestimmt Taktik", "typ": "kausal" },
+    { "von": "k1-6", "nach": "k1-5", "label": "bestimmt Taktik", "typ": "kausal" },
+    { "von": "k1-4", "nach": "k1-7", "label": "erzeugt Verzweiflung", "typ": "kausal" },
+    { "von": "k1-5", "nach": "k1-7", "label": "erzeugt Verzweiflung", "typ": "kausal" }
+  ],
+  "voraussetzungen": []
+}

@@ -4,6 +4,20 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-09 — Phase-2.0-Evaluation + Artefakt/Infrastruktur-Patches (Option B)
+
+**Phase:** Qualitaetssicherung + Qualitaetsmanagement
+**Modus:** AUDIT + EXECUTE
+**Session:** 26 (Fortsetzung)
+
+**Phase 2.0 Rahmen-Produktion M1 evaluiert. CONDITIONAL PASS. Option B ausgefuehrt.**
+- Evaluation: 2 HIGH (H1 leere knoten/verbindungen, H2 invalides ordnungsmuster — beides Phase-0.4-Vorbedingungsfehler), 3 MEDIUM (M1 merksatz k1-2, M2 hefteintrag_verweis, M3 JSON-Encoding), 2 LOW
+- Artefakt-Fixes (weitergehts-online): k1-2 merksatz nachgetragen, hefteintrag_verweis an parallel-kausales ordnungsmuster angepasst, Q-GATE-LOG HE16 PASS→WARN korrigiert
+- Infrastruktur-Patches (escape-game-generator): AGENT_HEFTEINTRAG v3.5 (knoten/verbindungen PFLICHT statt leere Legacy-Arrays, ordnungsmuster Schema-Enum, voraussetzungen string[]-Format, Knoten-Typ-Mapping-Tabelle, merksatz-Pflicht fuer Fachbegriff-Knoten). GUETEKRITERIEN_HEFTEINTRAG_ENTWURF G2 erweitert (knoten minItems:3, ordnungsmuster Enum-Pruefung)
+- Befund: `docs/befunde/BEFUND_PHASE_2-0_RAHMEN_M1.md`
+
+---
+
 ## 2026-04-09 — Retroaktive GERUEST-Patches (Infrastruktur-Felder + BEFUND-Constraints)
 
 **Phase:** Qualitaetsmanagement
