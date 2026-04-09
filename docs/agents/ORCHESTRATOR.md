@@ -59,6 +59,19 @@ PHASE 0: INHALTSGERUEST (einmalig pro Game)
 ════════════════════════════════════════════════════
   │
   ▼
+══ PERSISTENZ-CHECKPOINT (PFLICHT — Phase 0 Artefakte) ═════
+  Nach SKRIPT-Validierung: Alle Phase-0-Artefakte committen.
+  git add docs/agents/artefakte/DIDAKTIK_RAHMEN_[game-id].md
+  git add docs/agents/artefakte/INHALTSBASIS_[game-id].md
+  git add docs/agents/artefakte/SKRIPT_[game-id].md
+  git commit -m "docs: Phase 0.1-0.3 [game-id] — DIDAKTIK + INHALT + SKRIPT"
+  git push origin main  ← User-Aufgabe (Cowork kann nicht pushen)
+  BEGRUENDUNG: SKRIPT ist Primaerquelle fuer alle Downstream-Artefakte.
+  Ohne Persistenz geht es bei Session-Wechsel/Compaction verloren.
+  Phase 0.4+ DARF NICHT STARTEN ohne SKRIPT im Repo.
+═════════════════════════════════════════════════════════════
+  │
+  ▼
 [0.4] AGENT_HEFTEINTRAG                                 ← NEU v3
   │    Eingabe: Validiertes SKRIPT + DIDAKTIK_RAHMEN + ARTEFAKT_INVENTAR
   │    Ausgabe: TAFELBILD_[game-id]_Mappe[N].md (pro Mappe)

@@ -6,3 +6,10 @@
 
 # D15b Raw-Evaluations-Transkripte (enthalten Autor-PII und System-Prompts — NICHT committen)
 docs/analyse/Evaluiation Testrun Mappe 4/
+
+# FUSE temp files
+.fuse_hidden*
+*/.fuse_hidden*
+
+# Testlauf-Transkripte (potentiell gross, PII-relevant)
+docs/analyse/transcript-*/

@@ -152,3 +152,4 @@ Gemaess GUETEKRITERIEN_SKRIPT.md. Dreistufig:
 - **Ablageort:** `docs/agents/artefakte/`
 - **Ort der Ausfuehrung:** Cowork (narrative Qualitaet erfordert iterative Arbeit)
 - **Referenz-Dokument:** GUETEKRITERIEN_SKRIPT.md ist kanonisch fuer alle fachdidaktischen Qualitaetskriterien. Dieser Vertrag referenziert, dupliziert nicht.
+- **Persistenz-PFLICHT:** SKRIPT MUSS nach User-Validierung im Repo committet sein, BEVOR Phase 0.4 startet. Ohne persistiertes SKRIPT ist Phase 0.4+ gesperrt. Begruendung: SKRIPT ist Primaerquelle fuer AGENT_HEFTEINTRAG (Phase 0.4), AGENT_MATERIAL (Phase 1+2), SUB_MATERIAL_* (Phase 2.1 Read-Schritt 4) und GUETEKRITERIEN_SEQUENZIERUNG S15 (SKRIPT-Index). Nicht-Persistenz fuehrt bei Session-Wechsel/Compaction zu unwiederbringlichem Qualitaetsverlust.

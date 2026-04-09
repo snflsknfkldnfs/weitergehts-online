@@ -1,19 +1,87 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-08 (Session 23, Schritt 3+4 COMPLETE)
+**Letzte Aktualisierung:** 2026-04-08 (Session 25, Infrastruktur-Separation)
 **Modus:** EXECUTE
-**Aktuelle Phase:** **Operationalisierungs-Audit v2 Implementierung VOLLSTAENDIG. Alle 15 Patches (P1-P15) umgesetzt. GUETEKRITERIEN_SEQUENZIERUNG.md v2.2 (11 Input-Felder, Fachbegriff-Taxonomie, Uebergangsobjekte, S6→Pre-Check, S12→S7-integriert, Grenzfall-Toleranzen). Erwartetes Audit-Ergebnis: 13 ROBUST, 0 FRAGIL, 0 DEFEKT, 1 Pre-Check (S6), 1 Integriert (S12). Offener Meta-Task: SKRIPT-Persistenz im Repo (siehe Memory).**
-**Vorherige Phase (abgeschlossen):** Phase IV Wave 1 AU-1 CLOSED (beide Straenge auf origin/main). PM-Strang Commit `5c718df`, Code-Strang Commit `5b470c5` (FF-merged in main). Smoke-Test Claude-Code gruen: `aufgabe-4-8` (vergleich, L4) und `aufgabe-4-9` (begruendung, L5 CER) rendern und validieren korrekt. 1 UI-Befund nicht blockierend: Vergleich-Input-Zellen im Notizbuch-Handschrift-Theme haben zu niedrige Zellenhoehe (Text horizontal abgeschnitten) — erfasst als BEFUND-AU-1-UI-01, Zuweisung AU-2c. Session 13 Block 1 Cleanup: alle Claude-Code-Alt-Worktrees (festive-benz, elegant-wilson, heuristic-galileo) entfernt, Branch `fix/mappe2-quality-patches` geloescht (merged), D15B_OPTIMIERUNGS_STRATEGIEN.md Formatierungs-Noise revertiert. Framework etabliert: `docs/projekt/GIT_WORKFLOW_RAHMEN.md` (gestuftes osascript-Modell L/S/R/V mit Audit-Spur) — institutionalisiert den osascript-delegierten Git-Workflow als Antwort auf rekurrente Heredoc-/Lock-/Worktree-Leichen-Fehler. Masterplan persistiert: `docs/projekt/SESSION_13_MASTERPLAN.md` (E1/E2/E3-Entscheidungen, AU-2-Split-Begruendung, Ausfuehrungsplan mit Recovery-Punkten). E3-Entscheidung: AU-2 → AU-2a (STR-03 Feedback-Schema), AU-2b (STR-04 Tipps, pro-Typ-Evaluation), AU-2c (BEFUND-AU-1-UI-01). AU-2a STARTING NEXT: Vertrag 2-2b Feedback-Pflichtfeld, 7 Subagenten-Patches, GUETEKRITERIEN A25/A26, FEEDBACK_BACKFILL_MAPPEN_1_4.md Dispatch, Uebergabe AU-2a, Commit-Block.**
-**Letzter Arbeitsschritt:** Phase III Evaluations-Runde: User hat die 25 Strategien durchevaluiert und 12 gezielte Rueckmeldungen gegeben. Umgesetzt in `D15B_OPTIMIERUNGS_STRATEGIEN.md`: (1) **4 STR gestrichen**: STR-07 Spatial-Contiguity (R4-Befund war Audit-Fehlannahme, keine Mobile-Probleme), STR-10 DaZ-System (aufgegangen in STR-09-NEU), STR-16 Lehrprobe (out of infrastructure scope), STR-18 Metakognition (out of scope). (2) **2 STR strukturell ersetzt**: STR-09 Tracks A/B/C → STR-09-NEU Differenzierungs-Exit-Architektur (Hover-Glossar + Clipboard-KI-Prompts, Status: Folgeprojekt ausserhalb Phase IV nach Stabilitaet der Kerninfrastruktur); STR-14 Meta-Reflexion → STR-14-NEU Fiktionalitaets-Kennzeichnung direkt in der Quellenangabe (kein Overhead-Aufgabentyp). (3) **4 STR abgeschwaecht/praezisiert**: STR-06 Zeit von hartem Gate auf weiche Orientierungsgroesse "1 Mappe ≈ 1 UE" (Budgets/OTL/Ablaufplaene entfernt, Aufwand L→S); STR-08 Quellenkritik von starrer Pflicht auf adaptive Entscheidung durch Progressionsplan-Agent; STR-11 Typologie-Erweiterung mit expliziter Anti-Quota-Klausel (verfuegbar, nicht quotiert); STR-12 Trigger-System mit Sichtbarkeits-Constraint (ausschliesslich Lehrkraft-Metadaten, NIE SuS-sichtbar). (4) **STR-13 umgebaut (Variante a)**: Reflexion raus aus Hefteintrag (bleibt reine Wissenssicherung), stattdessen neue statische Mappenabschluss-Zone mit fixem Template (1-2 Reflexionsfragen + Ueberleitungssatz), Assembly-Sub-Task. Zusaetzlicher Cleanup-Auftrag: Mappe-4-Mappenabschlussbereich praezise aufraeumen. (5) **STR-24 ergaenzt**: Abschnitt "Verhaeltnis zu E5 Gueteregel-Katalogen" — Checkliste ist komplementaeres Pre-Publish-Q-Gate auf Mappen-Ebene, nicht Ersatz der prozess-immanenten Kataloge. (6) **DAG und Waves neu gezeichnet**: Aufwandsschaetzung 7-9 Sessions Voll / 5-6 Sessions Kern (statt 10-12 / 6-7).
-**Naechster Schritt:** (1) Meta-Aufgabe: SKRIPT-Persistenz im Repo evaluieren und scopen (aktuell werden SKRIPTs nur in-process uebergeben, nicht persistiert — Skriptqualitaet bedingt Spielqualitaet zentral). (2) Produktions-Testlauf mit vollstaendigem v2.2-Schema gegen eine neue Mappe. (3) Zweiter Testfall fuer Audit-Ergebnisse: Mappe mit quellentext + bildquelle heuristisch, Rahmen-Einstieg-Konflikt, oder <3 Materialien.
-**Wave-4-Bilanz:** W4-A: 3 Vertraege + 3 Audit-Patches. W4-B: 11 Findings (2 HIGH gepatcht). W4-C: AGENT_DIDAKTIK v2.0 (8 Aufgaben, 7 Heuristiken, Q-Gate Self-Check), Testrun Game 2 (PASS mit 1 WARN), 5 Prozess-Findings (1 HIGH: fehlender KE-Katalog), 2 Agent-Patches (M2 Mappen-Titel, M3 Stoffdichte-Heuristik H7). Dateien: 3 neu (AGENT_DIDAKTIK v2, Testrun-Output, Testrun-Befund), 1 modifiziert (AGENT_DIDAKTIK Patches).
-**Deferred:** Wave 3 Code-Strang (STR-12 Engine-Unterdrueckung + STR-13 Mappenabschluss-Rendering) via Uebergabe `UEBERGABE_PHASE_IV_WAVE_3_STR_12_13.md` — nicht blockierend fuer W4-C.
-**Wave-3-Bilanz:** 5 STR gepatcht (STR-06, STR-12, STR-13, STR-14-NEU, STR-15). PM-Strang: 18 Dateien modifiziert, 2 neu erstellt. Code-Strang: Uebergabe-Prompt geschrieben. Kein ATOM-UNIT erforderlich (unabhaengige STRs).
-**Checkpoint-2-Bilanz:** 11 Findings (2 CRITICAL, 3 HIGH, 5 MEDIUM, 1 LOW). Alle 5 Zeitfenster-A-Patches angewendet → Gate GRUEN fuer Generierung UND Wave 3+. 1 genuiner Blind-Spot gefunden + gefixt: SUB_MATERIAL_DARSTELLUNGSTEXT ohne formale Multiperspektivitaet-Policy. Befund: `docs/befunde/BEFUND-CHECKPOINT-2-INFRASTRUKTUR.md`.
-**Wave-2-Bilanz:** AU-4 CLOSED (STR-05 Multiperspektivitaet, reiner PM-Strang, 7 Dateien, Commit `24f6ff9`). AU-3 CLOSED (STR-08 Quellenkritik + STR-11 Teil 2, PM-Strang `24f6ff9` + Code-Strang `5c80ea7`, 8. Aufgabentyp `quellenkritik` in Engine).
 
-**Alter Naechster-Schritt (abgearbeitet in 5d):** Sub-Phase 5c lieferte: BERICHT_RA3_CODE_KOPPLUNG (636 Z, 11 Findings inkl. 2 CRITICAL: Legacy-Feedback-Fallback, neue Aufgabentyp-Renderer fehlt), BERICHT_RA4_PIPELINE (818 Z, 12 Findings inkl. 1 P0 BLOCKING: ORCHESTRATOR Session-Split-Enforcement-Gap), BERICHT_RA5_META (384 Z, 6 Meta-Findings, vollstaendige Konvergenz-Matrix, Dissens-Register, Blindspot-Map, Severitaets-Kalibrierung, Scope-Disziplin, adaptierte Rubrik). Konvergenz-Top-6: STR-04 (3 RAs, 2xP0 ATOM-UNIT), STR-05 (4 RAs), STR-12 (3 RAs inkl. Sicherheitsluecke), STR-03 (Feedback-Schema Breaking), STR-08 (3 RAs), STR-11 (3 RAs). Kein Dissens. Kalibrierung konsistent bis auf leichte RA2-Inflation. 7 Blindspots identifiziert, davon **Datenschutz CRITICAL** (nicht abgedeckt). Bei Freigabe: 5d Verifikations-Gate (RA2-Kalibrierungs-Korrektur, Blindspot-Entscheidungen, Konvergenz-Verdikte konsolidieren, ATOM-UNIT-Framework finalisieren, Patch-Listen fuer Vertraege/Kataloge/Engine priorisieren).
-**Offene Blocker:** quellenangaben[] Engine-Support fehlt (Workaround: cite-Einbettung). Flowcharts (mermaid) veraltet. ARTEFAKT_INVENTAR Mappe 2+3 nachpflegen. Engine-Erweiterungen O3/O5/O6 (Ordnungsmuster-Rendering, Pfeiltypen, Farbsemantik) als Stretch-Goal.
+---
+
+## Konsolidierter Projektstatus (Stand 2026-04-08)
+
+### Abgeschlossene Grossprojekte
+
+| Projekt | Status | Referenz |
+|---|---|---|
+| UPGRADE_PLAN v4 Runden 0-4 | COMPLETE | `docs/architektur/UPGRADE_PLAN_v4_PRODUKTIONSARCHITEKTUR.md` |
+| D15b Phase III.5 Risiko-Audit (7 RAs) | COMPLETE | `docs/projekt/D15B_PHASE_III_5_AUDIT_STATE.md` |
+| D15b Phase IV Waves 1-4 | COMPLETE | Commits: AU-1 `5b470c5`, AU-2a `bcb9eeb`, AU-2b `3f1d89f`, AU-2c `a3a1db1`, AU-3+4 `5c80ea7`/`24f6ff9`, Wave 3 PM `24f6ff9`, Wave 4 W4-A/B/C |
+| Operationalisierungs-Audit v2 (P1-P15) | COMPLETE | GUETEKRITERIEN_SEQUENZIERUNG.md v2.2. 13 ROBUST, 0 FRAGIL, 0 DEFEKT, 1 Pre-Check (S6), 1 Integriert (S12) |
+| Checkpoint-1 + Checkpoint-2 Infrastruktur-Audits | COMPLETE | `docs/befunde/BEFUND-CHECKPOINT-{1,2}-INFRASTRUKTUR.md` |
+
+### Offene Arbeitsstroeme nach Prioritaet
+
+**P0 — Blockiert naechste Produktion:**
+
+| ID | Aufgabe | Quelle | Naechster Schritt |
+|---|---|---|---|
+| ~~P0-1~~ | ~~SKRIPT-Persistenz im Repo~~ | ~~Session 23 Meta-Task~~ | **CLOSED** (Session 24): ORCHESTRATOR Persistenz-Checkpoint + VERTRAG_PHASE_0-3 Persistenz-PFLICHT |
+| P0-2 | Produktions-Testlauf v2.4 | Operationalisierungs-Audit v2 Abschluss | **Phase 0 PASS (Testlauf 4).** Naechst: USER-VALIDIERUNG SKRIPT → Phase 0.4 → Phase 1 → Phase 2 |
+| P0-3 | Zweiter Testfall Grenzfaelle | Operationalisierungs-Audit v2 P15 | Mappe mit quellentext + bildquelle heuristisch, Rahmen-Einstieg-Konflikt, oder <3 Mat |
+
+**P1 — Wichtig, nicht blockierend:**
+
+| ID | Aufgabe | Quelle | Status |
+|---|---|---|---|
+| P1-1 | Wave 3 Code-Strang (STR-12 Engine-Unterdrueckung + STR-13 Mappenabschluss-Rendering) | D15b Phase IV Wave 3 | Uebergabe geschrieben: `UEBERGABE_PHASE_IV_WAVE_3_STR_12_13.md`. Ausfuehrung in Claude Code ausstehend |
+| ~~P1-2~~ | ~~DOK1 Evaluations-Transkripte Personenbezugs-Pruefung~~ | ~~D15b SYNTHESE 3.5~~ | **CLOSED** (Session 24): PASS — kein substantieller Personenbezug, Gitignore ausreichend. Befund: `docs/befunde/DOK1_TRANSKRIPT_PII_PRUEFUNG.md` |
+| P1-3 | quellenangaben[] Engine-Support | Offener Blocker (persistent) | Workaround: cite-Einbettung. Eigener Engine-Patch noetig |
+| P1-4 | D3 datenschutz.html Minimal-Erklaerung | D15b SYNTHESE 3.4 | Soft-Gate, 2 Wochen nach Live |
+| P1-5 | DOK2 GitHub AVV Schultraeger-Klaerung | D15b SYNTHESE 3.5 | Dokumentationspflicht, nicht BLOCKING |
+
+**P2 — Nachrangig / Stretch:**
+
+| ID | Aufgabe | Quelle |
+|---|---|---|
+| P2-1 | UPGRADE_PLAN v4 M5-M9 (Prioritaet 2/3 Restposten) | UPGRADE_PLAN Sektion 4 |
+| P2-2 | ARTEFAKT_INVENTAR Mappe 2+3 nachpflegen | Offener Blocker (persistent) |
+| P2-3 | Flowcharts (Mermaid) veraltet | Offener Blocker (persistent) |
+| P2-4 | Engine-Erweiterungen O3/O5/O6 (Ordnungsmuster, Pfeiltypen, Farbsemantik) | Offener Blocker (Stretch-Goal) |
+| P2-5 | UPGRADE_PLAN v4 Runde 5 Retrospektive + Skill-Update | UPGRADE_PLAN Sektion 4 (nach naechster Produktion) |
+
+**DEFERRED (Folgeprojekt):**
+
+| ID | Aufgabe | Quelle |
+|---|---|---|
+| DEF-1 | STR-09-NEU Differenzierungs-Exit-Architektur | D15b Phase III Eval (Folgeprojekt nach Kerninfrastruktur-Stabilitaet) |
+
+### Kritischer Pfad
+
+```
+[DONE] P0-1 SKRIPT-Persistenz scopen
+  [DONE] P0-2a Repo-Separation + Audit-Patches (B1, B2, H2, H4, M1)
+    [DONE] P0-2c Phase 0 Testlauf (v2.4, Testlauf 4 PASS)
+      → P0-2d Game 2 Produktion fortsetzen (Phase 0.4 → 1.1 → 2.x)  ← NAECHSTER SCHRITT
+        → P0-3 Zweiter Testfall Grenzfaelle
+          → P2-5 Runde 5 Retrospektive
+```
+
+Parallel dazu: P1-1 Wave 3 Code-Strang (unabhaengig, Claude Code).
+
+---
+
+**Architektur-Entscheidung (Session 25, 2026-04-08):**
+Generator wird eigenstaendiges Repo (`escape-game-generator/`). Begruendung: (1) Produkt soll vertriebsfaehig sein, (2) Pfad-Isolation eliminiert Grep-Drift zwischen PM und Produkt, (3) Agenten-Dateien haben hardcodierte `docs/`-Pfade die bei Koexistenz im selben Repo zu Ambiguitaet fuehren. Konsequenzen: Alle internen Pfade werden Repo-relativ umgeschrieben, PROJECT_INSTRUCTIONS.md erhaelt Dual-Root-Logik (GENERATOR_ROOT + TARGET_ROOT), `weitergehts-online/docs/agents/` etc. werden zu Legacy (Quelle der Wahrheit ist Generator-Repo). Audit-Befund: 2 BLOCKER, 4 HIGH, 4 MEDIUM, 2 LOW — werden im Rahmen der Migration gepatcht.
+
+**Letzter Arbeitsschritt:** Session 25 (Fortsetzung, Teil 4): USER-VALIDIERUNG 4 Findings abgeschlossen + 2 zusaetzliche Infrastruktur-Patches (VP-7 KE-Abdeckungs-Tiefenpruefung, VP-8 Wikimedia-Kontextpraeferenz). VERTRAG_PHASE_0-2_INHALT.md → v1.4. Gesamt: 12 Patches verifiziert. USER-VALIDIERUNG-Ergebnisse: IB-M5 (Militaerkontrolle) → infrastrukturell geloest (VP-7 Tiefenpruefung), SK-M2 (Alliierte Perspektive) → Lehrplan-getrieben (K_04 fokussiert DE-Reaktion), IB-H1 (Wikipedia-EN) → infrastrukturell geloest (VP-1), IB-M3 (Britisches Fabrikfoto) → ANALOGIE akzeptiert + infrastrukturell geloest (VP-8 Kontextpraeferenz).
+**Naechster Schritt:** (1) PERSISTENZ-CHECKPOINT (git commit Generator-Repo + Target-Repo). (2) Testrun 5: Selbes Game-Thema, Phase 0 komplett, Vergleich gegen Testlauf-4-Schwachstellen. (3) Phase 0.4 AGENT_HEFTEINTRAG → Phase 1 → Phase 2.
+
+### Abgeschlossene Bilanzen (Referenz)
+
+**Wave-4-Bilanz:** W4-A: 3 Vertraege + 3 Audit-Patches. W4-B: 11 Findings (2 HIGH gepatcht). W4-C: AGENT_DIDAKTIK v2.0 (8 Aufgaben, 7 Heuristiken, Q-Gate Self-Check), Testrun Game 2 (PASS mit 1 WARN), 5 Prozess-Findings (1 HIGH: fehlender KE-Katalog), 2 Agent-Patches (M2 Mappen-Titel, M3 Stoffdichte-Heuristik H7).
+**Wave-3-Bilanz:** 5 STR gepatcht (STR-06, STR-12, STR-13, STR-14-NEU, STR-15). PM-Strang: 18 Dateien modifiziert, 2 neu erstellt. Code-Strang: Uebergabe geschrieben.
+**Wave-2-Bilanz:** AU-4 CLOSED (STR-05, `24f6ff9`). AU-3 CLOSED (STR-08 + STR-11, `24f6ff9` + `5c80ea7`, 8 Aufgabentypen in Engine).
+**Wave-1-Bilanz:** AU-1 CLOSED (`5b470c5`). AU-2a CLOSED (`bcb9eeb`). AU-2b CLOSED (`3f1d89f`). AU-2c CLOSED (`a3a1db1`). Checkpoint-1: 16 Findings, Gate GRUEN.
+**Checkpoint-2-Bilanz:** 11 Findings, Gate GRUEN. 1 Blind-Spot gefixt (SUB_MATERIAL_DARSTELLUNGSTEXT Multiperspektivitaet-Policy).
+**D15b III.5 Bilanz:** 7 RAs, 63 Findings (1 P0, 23 P1, 25 P2, 14 P3). Gate: BEDINGTES GO. 8 Gates definiert. STR-Portfolio: 20 aktiv, 0 Streichungen, 1 MODIFY-SCOPE (STR-05), 1 Design-Change (STR-13).
 
 **Abgeschlossen seit letztem Update:**
 - **PHASE IV WAVE 2 COMPLETE (Session 13):**

@@ -213,11 +213,82 @@ Alle vorgeschlagenen Patches wurden gegen R3-S1 bis R3-S4 geprueft (RA1, RA3, RA
 
 ---
 
-## 8. Naechster Schritt
+## 8. Implementierungsrisiken und Mitigationen (IR-Annex)
 
-Der Audit ist abgeschlossen. Die 15 Patches (P1-P15) sind priorisiert und nach Aufwand geschaetzt. Der logische naechste PM-Schritt:
+Post-Audit-Evaluation: 7 Implementierungsrisiken identifiziert, Entscheidungen dokumentiert.
 
-1. **Schritt 1 umsetzen:** MATERIAL_GERUEST-Template in GUETEKRITERIEN_SEQUENZIERUNG.md Sektion 6 erweitern (P1-P6). Geschaetzter Aufwand: 1 Session.
-2. **Testlauf:** Mappe-4-Testfall mit neuem Schema re-evaluieren (alle S1-S15 nochmals durchlaufen).
-3. **Schritt 2 umsetzen:** Taxonomie-Konvention + Uebergangs-Struktur (P7-P8). Erfordert AGENT_MATERIAL-Prompt-Ueberarbeitung.
-4. **Schritt 3+4:** Prueflogik-Revisionen und Bereinigung parallel zur naechsten Produktions-Session.
+### IR1: Enum-Inkonsistenz `material_charakter` (RA1 vs. RA3)
+
+**Problem:** RA1 schlaegt 3er-Enum `erarbeitungscharakter` vor, RA3 schlaegt 2er-Enum `material_charakter` vor.
+**Entscheidung:** 3er-Enum. Feldname: `material_charakter`.
+**Werte:** `vergegenwaertigung` / `besinnung_sachbezogen` / `besinnung_wertbezogen`
+**Begruendung:** S5 erfordert die Unterscheidung sachbezogen/wertbezogen fuer die Prueflogik `min(V) < min(B_sach) < min(B_wert)`. Eine 2er-Variante wuerde S5-D2 nicht vollstaendig loesen.
+**Anwendungskontext-Check:** Bei geographischer Perspektive (Situationsanalyse vs. Situationsbeurteilung) und sozialpolitischer Perspektive (Problemloesung vs. Wertung) bildet die 3er-Variante ebenfalls die relevante Unterscheidung ab.
+
+### IR2: Feld-Proliferation und Token-Budget
+
+**Problem:** Sequenzplan-Tabelle waechst von 7 auf 13 Spalten. Bei 4 Mappen × 5-8 Materialien × 13 Spalten steigt der Token-Verbrauch im AGENT_MATERIAL-Kontext.
+**Mitigation:** (a) Felder `bildfunktion` und `analyseauftrag` sind konditional (nur bei bestimmten Typen → NULL bei anderen, spart Spaltenbreite). (b) Token-Budget-Test: Mappe-4-Retrofit mit vollstaendigem neuem Template, Token-Zaehlung vor/nach. (c) Falls kritisch: `personalisiert` und `analyseauftrag` koennen als Flags in Klammern hinter Typ stehen statt als eigene Spalten.
+**Grenzwert:** Wenn Sequenzplan-Tabelle > 40% des AGENT_MATERIAL-Kontextbudgets (Design-Modus) einnimmt, Schema komprimieren.
+
+### IR3: Rueckwaerts-Kompatibilitaet (Mappe 3+4)
+
+**Problem:** Bestehende MATERIAL_GERUESTs haben die neuen Felder nicht.
+**Entscheidung:** Mappe 4 als Referenz-Retrofit. Mappe 3 optional.
+**Workflow:** PM fuellt neue Felder fuer Mappe-4-Sequenzplan nachtraeglich aus (anhand bestehender Materialbeschreibungen + Q-Gate-Ergebnis). Dient als Validierung: Sind die Felder eindeutig befuellbar? Wo entsteht Ambiguitaet?
+**Erwartetes Ergebnis:** Retrofit deckt potenzielle Zuweisungsprobleme auf, bevor AGENT_MATERIAL-Prompt geaendert wird.
+
+### IR4: Inter-Agenten-Konsistenz (AGENT_MATERIAL vs. SUB_MATERIAL_*)
+
+**Problem:** AGENT_MATERIAL klassifiziert in Phase 1, SUB_MATERIAL_* produziert in Phase 2.1. Keine Validierung, ob produzierter Text zum klassifizierten Charakter passt.
+**Mitigation:** SQ-Kriterien (SQ-1 bis SQ-4) um Charakter-Konformitaetspruefung erweitern. Neues SQ-5: "Produziertes Material ist konsistent mit `material_charakter` aus MATERIAL_GERUEST." Aufwand: 1 Satz pro SUB_MATERIAL_*-Prompt.
+**Timing:** Nach Schritt 1, parallel zu Schritt 2.
+
+### IR5: Fachbegriff-Taxonomie als potentieller Bottleneck
+
+**Problem:** 5-Stufen-Taxonomie (Struktur/Prozess/Konzept/Kontext/Nicht-FB) wurde nur an Mappe 4 entwickelt. Neue Mappen produzieren neue Grenzfaelle.
+**Mitigation:** (a) Taxonomie als Heuristik definieren, nicht als striktes Regelwerk. AGENT_MATERIAL dokumentiert Grenzfall-Entscheidungen in einem `taxonomie_notizen`-Feld (Freitext, 1 Satz). (b) S2-Prueflogik prueft nur Struktur-FB und Konzept-FB streng; Prozess-FB normal; Kontext-FB mild. Dadurch betreffen Grenzfaelle primaer die MILD-Kategorie, wo sie per Definition toleriert werden. (c) Taxonomie-Beispielbank: Pro Game werden 5-10 Grenzfall-Entscheidungen dokumentiert. Waechst organisch.
+**Anwendungskontext-Check:** Bei anderen Themen (z.B. Industrialisierung, Imperialismus) werden Struktur-FB anders verteilt sein. Die Kategorien selbst sind themen-agnostisch.
+
+### IR6: P12-Abhaengigkeit (AGENT_HEFTEINTRAG → AGENT_MATERIAL)
+
+**Problem:** P12 (SCPL-Phase pro TB-Knoten) muss in AGENT_HEFTEINTRAG (Phase 0.4) umgesetzt werden, bevor AGENT_MATERIAL (Phase 1) die Daten nutzen kann.
+**Entscheidung:** P12 in Schritt 1 vorziehen (war Schritt 3). AGENT_HEFTEINTRAG-Prompt erhaelt einen Zusatz: "Pro Knoten: `scpl_phase: S|C|P|L` annotieren."
+**Retrofit:** Fuer bestehende Mappen 3+4 sind die SCPL-Zuordnungen aus dem TAFELBILD-JSON trivial ableitbar (Knoten-Inhalt steht bereits in scpl.situation/complication/problem/loesung). PM fuellt bei Mappe-4-Retrofit mit.
+
+### IR7: Testabdeckung (nur 1 Testfall)
+
+**Problem:** Alle RA-Agenten haben nur an Mappe 4 getestet (historische Perspektive, 5 Materialien, kein quellentext, kein Rahmen-Einstieg-Konflikt).
+**Mitigation:** Mappe-4-Retrofit ist Minimal-Test. Volle Testabdeckung erfordert mindestens:
+- 1 Mappe mit quellentext + bildquelle (heuristisch) → testet S8 + bildfunktion
+- 1 Mappe mit Rahmen-Einstieg → testet S10-Ambiguitaet
+- 1 Mappe mit < 3 Materialien → testet Grenzfall-Toleranzen (S1, S5, S15)
+- Optional: 1 nicht-historische Perspektive → testet Artikulationsschema-Mapping
+**Realistisch:** Mappen 1-3 decken teilweise ab. Nach Retrofit Mappe 4: Mappe 1 oder 2 als zweiten Testfall pruefen.
+
+---
+
+## 9. Naechster Schritt
+
+Die 15 Patches (P1-P15) sind priorisiert, Implementierungsrisiken identifiziert und mitigiert. Umsetzungsplan:
+
+**Schritt 1 (blockierend, revidiert):**
+- P1-P6 + P12: Schema-Felder in GUETEKRITERIEN_SEQUENZIERUNG.md Sektion 4+6 definieren
+- AGENT_HEFTEINTRAG-Prompt: `scpl_phase` pro TB-Knoten als Pflichtfeld ergaenzen
+- Mappe-4-Retrofit: Sequenzplan mit allen neuen Feldern nachtraeglich befuellen
+- Token-Budget pruefen
+
+**Schritt 2 (hoch):**
+- P7-P8: Fachbegriff-Felder + Uebergangs-Strukturierung
+- Taxonomie-Konvention dokumentieren (5-Stufen + Beispielbank)
+- AGENT_MATERIAL-Prompt ueberarbeiten (Aufgabe 1.9 erweitern)
+- SQ-5 (Charakter-Konformitaet) in SUB_MATERIAL_*-Prompts ergaenzen
+
+**Schritt 3 (mittel):**
+- P9-P11: Prueflogik-Revisionen (S15, S9, S10)
+- Grenzfall-Toleranzen (P15) in S1, S5, S14
+
+**Schritt 4 (bereinigung):**
+- P13-P14: S6-Auslagerung, S12-Integration
+
+**Validierung nach jedem Schritt:** Mappe-4-Sequenzplan gegen S1-S15 mit neuer Prueflogik laufen lassen. Erwartete ROBUST-Quote dokumentieren.

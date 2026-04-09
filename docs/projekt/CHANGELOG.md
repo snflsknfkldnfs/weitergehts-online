@@ -4,6 +4,243 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-08 — USER-VALIDIERUNG + 2 weitere Infrastruktur-Patches (VP-7, VP-8)
+
+**Phase:** Qualitaetssicherung + Infrastruktur-Optimierung
+**Modus:** UPDATE + EXECUTE
+**Session:** 25 (Fortsetzung, Teil 4)
+
+**USER-VALIDIERUNG der 4 inhaltlichen Findings aus BEFUND §7 abgeschlossen. 2 zusaetzliche Patches fuer Recherche-Tiefe und Wikimedia-Suchstrategie.**
+- IB-M5 (Militaerkontrolle duenn): Infrastrukturell geloest durch VP-7 — AGENT_INHALT fuehrt kuenftig KE-Abdeckungs-Tiefenpruefung durch (§3.1 Schritt 6 NEU)
+- SK-M2 (Alliierte Perspektive Mappe 3): Lehrplan-getrieben — K_04 fordert explizit DE-Reaktion ("Unzufriedenheit im Deutschen Reich"), nicht alliierte Verhandlungslogik. Kein Infrastruktur-Defizit.
+- IB-H1 (Wikipedia-EN-Bias): Bereits durch VP-1 (Sprachraum-Anforderung) geloest. Aktuelles Game: akzeptiert.
+- IB-M3 (Britisches Fabrikfoto): ANALOGIE didaktisch vertretbar. Kuenftig durch VP-8 (Wikimedia-Kontextpraeferenz) vorgebeugt — DE-spezifische Suchbegriffe priorisiert.
+- VP-7: KE-Abdeckungs-Tiefenpruefung in VERTRAG_0-2 §3.1 (Schritt 6 NEU). Nach Hauptrecherche: pro KE Substopics auf Abdeckung pruefen, bei duenner Abdeckung interne Wikipedia-Links verfolgen. Max. 3 zusaetzliche Vertiefungsartikel.
+- VP-8: Wikimedia-Kontextpraeferenz in VERTRAG_0-2 §3.2 (vor Ablauf). Suchbegriffe priorisieren behandelten nationalen Kontext. DIREKT vor ANALOGIE. Bei ANALOGIE dokumentieren, dass DIREKT-Suche erfolglos.
+- VERTRAG_PHASE_0-2_INHALT.md v1.3 → v1.4. Gesamt 12 Patches verifiziert (Grep-basiert).
+
+---
+
+## 2026-04-08 — Infrastruktur-Patches Testlauf-4-Audit angewendet (10/10)
+
+**Phase:** Infrastruktur-Optimierung (Generator-Repo)
+**Modus:** EXECUTE
+**Session:** 25 (Fortsetzung, Teil 3)
+
+**Alle 10 aus dem Artefakt-Audit abgeleiteten Patches in die Generierungsinfrastruktur eingearbeitet und verifiziert.**
+- VERTRAG_PHASE_0-2_INHALT.md v1.2 → v1.3: VP-1 Sprachraum-Anforderung (DE-Wikipedia-Primaet), VP-2 DIREKT/ANALOGIE-Kontext bei Wikimedia-Artefakten, VP-3 Lueckenstatus 3-stufig (GESCHLOSSEN/WORKAROUND/OFFEN), VP-4 Zahlen-Unsicherheit-Markierung, VP-6 Primaerquellen-Suchpflicht (§3.3 NEU, min. 2/Game), AP-1 Diversitaets-Softmarker bei Rollenprofilen
+- VERTRAG_PHASE_0-3_SKRIPT.md v1.2 → v1.3: VP-5 TRANSFER-Marker-Syntax (§3.3b NEU), QS6 revidiert (Stoffdichte statt Materialkopplung, Korridor 4-8 als Phase-1-Entscheidung), SK19 in SOLL-Liste aufgenommen
+- GUETEKRITERIEN_SKRIPT.md v1.1 → v1.2: GK-1 SK17 revidiert (narrative Tiefe fuer Stoffdichte, nicht Materialanzahl), GK-2 Perspektiven-Tiefe bei SK9 (Motiv statt Reaktion), GK-3 SK19 Chronologische Transparenz (NEU, SOLL)
+- Verifikation: Grep-basiert alle 10 Patches gegen Zieldateien bestaetigt
+
+---
+
+## 2026-04-08 — Artefakt-Qualitaetsaudit Testlauf 4 (INHALTSBASIS + SKRIPT)
+
+**Phase:** Audit P0-2c (Qualitaetssicherung Phase 0)
+**Modus:** AUDIT
+**Session:** 25 (Fortsetzung, Teil 2)
+
+**Unabhaengiger Qualitaetsaudit der 3 Phase-0-Artefakte gegen Vertraege, Guetekriterien und Fachwissenschaft. Patches nach User-Feedback revidiert (Grundsatzentscheidung Phasen-Verantwortung).**
+- DIDAKTIK_RAHMEN: PASS (Referenzqualitaet, kein Finding)
+- INHALTSBASIS: CONDITIONAL PASS — 3 HIGH (Wikipedia-EN-Bias, Feldpostbrief-Closure fragwuerdig, Zahlen-Unsicherheit nicht markiert), 5 MEDIUM
+- SKRIPT: PASS_WITH_WARNINGS — 4 MEDIUM (SK17, Alliierte Perspektive C3, Satzlaenge, Verdun/Somme-Parallelisierung)
+- Cross-Artefakt-Konsistenz: PASS
+- **Grundsatzentscheidung:** Phasen-Verantwortungsgrenzen explizit definiert — IB/SKRIPT = maximal vorhalten, MATERIAL_GERUEST = didaktischer Judgment Call (4-8 Materialien/Mappe), Phase 2 = generative Leistung (Transfer, Aufgaben)
+- **Revidierte Patches (10 statt 12):** 6 Vertragspatches (VP-1 bis VP-6 inkl. NEU: VP-6 Primaerquellen-Suchpflicht, VP-5 revidiert zu TRANSFER-Marker im SKRIPT statt Transfer-Material in IB), 3 Guetekriterien (GK-1 revidiert: Stoffdichte statt Materialkopplung, GK-2 unv., GK-3 NEU: Chronologische Transparenz hochgestuft), 1 Agent-Prompt (AP-1 revidiert: Soft-Marker statt Minimum; AP-2 hochgestuft zu GK-3; AP-3 gestrichen: Sprachregister-Tradeoff akzeptiert)
+- 4 inhaltliche Findings fuer USER-VALIDIERUNG (Verdun/Somme raus — infrastrukturell geloest via GK-3)
+- Befund: `docs/befunde/BEFUND_ARTEFAKT_AUDIT_TESTLAUF_4.md`
+
+---
+
+## 2026-04-08 — Testlauf 4 PASS: Phase 0 komplett (v2.4)
+
+**Phase:** Produktions-Testlauf P0-2c (Versuch 4)
+**Modus:** EXECUTE
+**Session:** 25
+
+**Erster erfolgreicher Produktions-Durchlauf. Phase 0.1–0.3 komplett, 3 Artefakte generiert.**
+- ONBOARDING stoerungsfrei: Path-Discovery, Kohaerenzpruefung, 3-Parameter-Erhebung, Clean-Slate, Game-Isolation — alle PASS
+- Phase 0.1 AGENT_DIDAKTIK: DIDAKTIK_RAHMEN erstellt. lehrplanbezug (LB2+LB3) und mappen_anzahl (3) auto-ermittelt. KE_KATALOG als game-uebergreifende Ressource korrekt konsultiert. Vorgaenger-Game `gpg-erster-weltkrieg-ursachen` als Kontext (nicht Vorlage) behandelt.
+- Phase 0.2 AGENT_INHALT: INHALTSBASIS erstellt. 13 Wikipedia-Artikel, 10 Wikimedia-Recherchen, 6 Rollenprofile. Inhaltsluecke "Deutsche Frauen" dokumentiert (duenn).
+- Phase 0.3 AGENT_SKRIPT: SKRIPT erstellt. 3 Chunks (650/700/680 W), Q-Gate 3-Stufen PASS (35/35 Kriterien). Fachdidaktische Qualitaet hoch.
+- Context-Limit nach Phase 0.3 erreicht. Compaction-Recovery funktional: Agent setzte bei USER-VALIDIERUNG korrekt fort.
+- State-Update P-06: ZUSTAND nach Phase 0.3 nicht vom Agent aktualisiert (Context-Limit). Manuell korrigiert auf "0.3 SKRIPT, NAECHSTE: USER-VALIDIERUNG".
+- Artefakt-WARNs: M3 Wikimedia-Artefakte fehlen in INHALTSBASIS (I-01), Deutsche Frauen duenn (I-02)
+- Audit-Befund: `docs/befunde/BEFUND_TESTLAUF_4_PHASE_0.md`
+- Transkript: `docs/analyse/transcript-1775675275382/`
+- Game: `verlauf-erster-weltkrieg-marne-ende` (3 Mappen: Schuetzengraben / Heimatfront / Versailler Vertrag)
+
+---
+
+## 2026-04-08 — Architektur-Fix: Strukturelle Game-Isolation (v2.4)
+
+**Phase:** Architektur-Refactor
+**Modus:** AUDIT → EXECUTE
+**Session:** 25
+
+**Artefakte per Verzeichnisstruktur pro Game isoliert. `produktion/`-Ebene eliminiert. 13 Dateien, 30+ Pfade umgeschrieben.**
+- Architektur-Entscheidung: Verhaltenssteuerung (ARTEFAKT-ISOLATION-Anweisung, v2.3) ersetzt durch strukturelle Isolation — jedes Game bekommt eigenes Verzeichnis `docs/agents/artefakte/[game-id]/`
+- Neue Verzeichnisstruktur: `artefakte/[game-id]/` (Phase 0/1 Artefakte) + `artefakte/[game-id]/mappe-[N]/` (Phase 2, vorher `artefakte/produktion/[game-id]/mappe-[N]/`)
+- `KE_KATALOG_*.md` bleibt auf Root-Ebene von `artefakte/` (game-uebergreifende Ressource)
+- Game-1-Migration: 10 Dateien + 3 Mappen-Verzeichnisse (mappe-2, mappe-3, mappe-4) in `artefakte/gpg-erster-weltkrieg-ursachen/` verschoben
+- `produktion/`-Verzeichnisebene vollstaendig eliminiert (inkl. .DS_Store-Bereinigung)
+- Generator-Repo: 13 Dateien aktualisiert (PROJECT_INSTRUCTIONS.md, ORCHESTRATOR.md, 4 VERTRAEGe, WORKFLOW_v4.md, AGENT_MATERIAL.md, AGENT_RAETSEL.md, VERTRAG_PHASE_3_ASSEMBLY.md, POLICY_TRIGGER_SICHTBARKEIT.md, VERTRAG_PHASE_2-1c_CROSS.md)
+- Clean-Slate (Schritt 2b) vereinfacht: Prueft nur noch Existenz von `artefakte/[game-id]/` (statt Glob-Suche)
+- v2.3 ARTEFAKT-ISOLATION-Workaround durch GAME-ISOLATION ersetzt (strukturell statt verhaltensbasiert)
+- Verifikation: 0 verbleibende `artefakte/produktion/`-Referenzen, 0 flat Artefakte auf Root-Ebene
+
+---
+
+## 2026-04-08 — Testlauf 3 Artefakt-Kontamination + Hotfix: Artefakt-Isolation (v2.3)
+
+**Phase:** Produktions-Testlauf P0-2c (Versuch 3)
+**Modus:** EXECUTE → AUDIT → HOTFIX
+**Session:** 25
+
+**Testlauf erreichte Phase 0.1, Abbruch wegen Legacy-Artefakt. Hotfix: Artefakt-Isolation + Bereinigung.**
+- v2.2-Fixes alle funktional: Path-Discovery PASS, Kohaerenzpruefung PASS, 3-Parameter-Erhebung PASS (AskUserQuestion), game_id `erster-weltkrieg-marne` generiert, Clean-Slate fuer diese game_id PASS
+- Abbruch: Agent startete Phase 0.1, suchte Lehrplan-Referenzen in TARGET-Repo, fand `DIDAKTIK_RAHMEN_gpg-erster-weltkrieg-ende.md` (W4-C Testrun, nie validiert, andere game_id). Agent stoppte und fragte User nach Uebernahme
+- Root Cause 1: W4-C-Testrun-Artefakt nie bereinigt nach Architektur-Migration
+- Root Cause 2: Kein Isolations-Prinzip — Agent behandelte fremde Artefakte als potentielle Vorlagen
+- Fix 1: `DIDAKTIK_RAHMEN_gpg-erster-weltkrieg-ende.md` geloescht (einziges Testrun-Artefakt)
+- Fix 2: Schritt 2c (Artefakt-Landschaft) in ONBOARDING eingefuegt — listet ALLE existierenden Artefakte auf, markiert sie explizit als TABU (keine Uebernahme, keine Vorlage, keine User-Rueckfrage)
+- Fix 3: ARTEFAKT-ISOLATION-Anweisung in Phase 0.1 eingefuegt — Artefakte anderer Games TABU, Ausnahme: `KE_KATALOG_*.md` (game-uebergreifende Ressource)
+- PROJECT_INSTRUCTIONS.md v2.3 + State zurueckgesetzt auf ONBOARDING
+- Transkript: `docs/analyse/transcript-1775662299412/`
+- Positiv: Alle v2.1/v2.2-Fixes (Path-Discovery, Auto-Determination, Clean-Slate) bestaetigt funktional
+
+---
+
+## 2026-04-08 — Testlauf 2 Prozess-Fehler + Hotfix: Auto-Determination + Clean-Slate (v2.2)
+
+**Phase:** Produktions-Testlauf P0-2c (Versuch 2)
+**Modus:** EXECUTE → AUDIT → HOTFIX
+**Session:** 25
+
+**Testlauf ergab 3 Prozess-Fehler. Hotfix: PROJECT_INSTRUCTIONS.md v2.2 + 3 Agenten-Dokumente synchronisiert.**
+- Path-Discovery (v2.1-Fix) funktional: Mount-Pfade korrekt ermittelt, Kohaerenzpruefung PASS
+- Fehler 1: Agent fragte User nach lehrplanbezug — soll von AGENT_DIDAKTIK auto-ermittelt werden (Aufgabe 0 neu)
+- Fehler 2: Agent fragte User nach mappen_anzahl — soll AGENT_DIDAKTIK autonom aus didaktischer Analyse bestimmen (3-6)
+- Fehler 3: Bestehende Artefakte (DIDAKTIK_RAHMEN aus Game 1, game-id `gpg-erster-weltkrieg-ende`) im TARGET-Repo nicht erkannt
+- Fix 1: AGENT_DIDAKTIK.md — Aufgabe 0 (Lehrplan-Zuordnung) eingefuegt, mappen_anzahl von Input zu Output umklassifiziert
+- Fix 2: PROJECT_INSTRUCTIONS.md v2.2 — GAME-PARAMETER auf 3 User-Inputs + 3 auto-ermittelte Werte, Schritt 2b (Clean-Slate-Pruefung) eingefuegt
+- Fix 3: ORCHESTRATOR.md — Eingabe-Tabelle gesplittet (3 User + 2 Auto), Phase-0.1-Beschreibung synchronisiert
+- Fix 4: VERTRAG_PHASE_0-1_DIDAKTIK.md — Input/Output-Tabellen aktualisiert, Auto-Output-Sektion eingefuegt
+- State zurueckgesetzt: ZUSTAND → ONBOARDING, GAME-PARAMETER → leer
+- Transkript: `docs/analyse/transcript-1775648950565/`
+
+---
+
+## 2026-04-08 — Testlauf 1 FAIL + Hotfix: Path-Discovery fuer Cowork-Sandbox
+
+**Phase:** Produktions-Testlauf P0-2c (Versuch 1)
+**Modus:** EXECUTE → AUDIT → HOTFIX
+**Session:** 25
+
+**Testlauf gescheitert: Sandbox-Pfadaufloesung. Hotfix: Path-Discovery-Schritt (PROJECT_INSTRUCTIONS.md v2.1).**
+- User startete Produktions-Session: Cowork-Project mit escape-game-generator + weitergehts-online als Context-Folder, PROJECT_INSTRUCTIONS.md im Instructions-Feld
+- PROJECT_INSTRUCTIONS.md wurde korrekt eingelesen, ONBOARDING-Zustand erkannt
+- Kohaerenzpruefung scheiterte: Agent suchte relative Pfade (`agents/ORCHESTRATOR.md`) — loesen sich nicht auf weil CWD `/sessions/[name]/` ist, nicht Repo-Root
+- Root Cause: Cowork-Sandbox mountet Repos unter `/sessions/[name]/mnt/[repo-name]/`, CWD bleibt `/sessions/[name]/`
+- Hotfix: Schritt 0 (Path Discovery) eingefuegt — `ls /sessions/*/mnt/` → GENERATOR_PATH + TARGET_PATH ermitteln → alle Folge-Operationen mit absoluten Pfaden
+- Transkript: `docs/analyse/transcript-1775648314299/`
+
+---
+
+## 2026-04-08 — Architektur-Entscheidung: Generator als eigenstaendiges Repo
+
+**Phase:** Architektur-Migration
+**Modus:** AUDIT → EXECUTE (in progress)
+**Session:** 25
+
+**MVP-Kaltstart-Audit → Architektur-Entscheidung → Repo-Separation COMPLETE.**
+- 5-Dimensionen-Audit (5 parallele Agenten): Referenz-Integritaet, Kaltstart-Walkthrough, Schnittstellenkonsistenz, Externe Abhaengigkeiten, Usability/Reibung
+- Audit-Ergebnis: 2 BLOCKER, 4 HIGH, 4 MEDIUM, 2 LOW
+- Architektur-Entscheidung: Self-Contained + eigenes Repo (`escape-game-generator/`)
+- Migration ausgefuehrt (8 Phasen): Scaffolding → 228 Pfad-Referenzen analysiert → 168 interne Pfade umgeschrieben (sed, 19 Rewrite-Regeln) → 0 interne docs/-Referenzen verbleibend → 114 Target-Referenzen intakt → PROJECT_INSTRUCTIONS.md v2.0 (Dual-Root, Q-Gate-FAIL-Protokoll, eindeutige Parameter-Tabelle, direktiver ONBOARDING-Uebergang) → ONBOARDING.md aktualisiert → Kaltstart-Simulation 11/11 PASS
+- Gepatcht: B1 (Pfad-Isolation), B2 (doppelte Tabelle), H2 (Q-Gate-FAIL), H4 (Uebergangs-Ambiguitaet), M1 (Parameter-Erklaerungen)
+- Offene Audit-Findings (nicht-blockierend): H1 (Leselast ~113KB), H3 (KE-Fakten-Verknuepfung Phase 0.2), M2-M4
+- User-Aktion: Generator-Repo auf Festplatte verschieben, git init
+
+---
+
+## 2026-04-08 — Infrastruktur-Separation + State-Machine-Architektur
+
+**Phase:** Infrastruktur-Architektur
+**Modus:** EXECUTE
+**Session:** 25
+
+**Generierungsinfrastruktur extrahiert (63 Dateien). PROJECT_INSTRUCTIONS.md als zustandstragende Steuerungsinstanz.**
+- `infrastruktur/` Verzeichnis im Repo-Root erstellt: 29 Agenten, 6 Architektur-Docs, 5 JSON-Schemata, 12 Vertraege, 9 Checklisten
+- Bewusst ausgeschlossen: AGENT_DESIGN.md (legacy v1), AGENT_TECHNIK.md (legacy v2), SKILL_projekt-website_v2/v3.md, MATERIAL_PIPELINE.md (SUPERSEDED), alte Workflows (v1/v2), UPGRADE_PLANs (PM-History), Game-1-Artefakte
+- `infrastruktur/PROJECT_INSTRUCTIONS.md` (v1.0): Zustandstragende State Machine (ONBOARDING → PRODUKTION_PHASE_0 → PHASE_1 → PHASE_2_MAPPE_N → ABGESCHLOSSEN). Wird im Cowork-Project-Instructions-Feld verlinkt, bei jeder Session automatisch eingelesen. Selbst-Aktualisierung nach jeder Phase als Drift-Praevention bei Compaction/Session-Split. Infrastruktur-Kohaerenzpruefung im ONBOARDING-Zustand. Game-Parameter-Erhebung integriert.
+- `infrastruktur/ONBOARDING.md` auf Meta-Dokumentation reduziert (Setup-Anleitung fuer Lehrkraefte)
+- Diff-Verifikation: 0 Abweichungen zwischen Infrastruktur-Kopien und Quellen
+- COWORK_PROJECT_ANLEITUNG.md: Vertiefungslektuere um beide Infrastruktur-Dateien ergaenzt
+
+---
+
+## 2026-04-08 — P1-2 DOK1 CLOSED + P1-1 Wave 3 Uebergabe verifiziert
+
+**Phase:** Backlog-Abarbeitung
+**Modus:** EXECUTE + AUDIT
+**Session:** 24
+
+**DOK1 Transkript-Pruefung PASS. Wave-3-Uebergabe ausfuehrungsbereit.**
+- DOK1: 11 JSONL + 2 metadata.json geprueft. Kein Klarname, keine E-Mail. Schwacher Personenbezug (OS-Username `paulad` in Dateipfaden). Gitignore ausreichend. Gate G-8 GRUEN. Befund: `docs/befunde/DOK1_TRANSKRIPT_PII_PRUEFUNG.md`
+- P1-1: `UEBERGABE_PHASE_IV_WAVE_3_STR_12_13.md` verifiziert — alle 4 referenzierten Dateien existieren (POLICY_TRIGGER_SICHTBARKEIT.md, SUB_TEMPLATE_MAPPENABSCHLUSS.md, VERTRAG_PHASE_2-0_RAHMEN.md, escape-engine.js). Ausfuehrung in Claude Code ausstehend
+
+---
+
+## 2026-04-08 — PM-Architektur: Routing-Dokument + Redirect-Skill + Drift-Elimination
+
+**Phase:** Projektmanagement-Architektur
+**Modus:** EXECUTE (Anti-Drift-Refaktor)
+**Session:** 24
+
+**COWORK_PROJECT_ANLEITUNG.md v2.0 + projekt-website Redirect-Skill. 6 Drift-Quellen eliminiert.**
+- COWORK_PROJECT_ANLEITUNG.md von State-Kopie (v1.0, 112 Zeilen, 6 drift-anfaellige Sektionen) auf Routing-Dokument (v2.0, 4 stabile Abschnitte) refaktoriert
+- Eliminiert: C+ Ausfuehrungsplan (veraltet), Plugin-Infrastruktur-Liste (dupliziert), Strategischer Kontext (veraltet), GRUNDSATZENTSCHEIDUNG-Verweis (abgeschlossen), EVALUATE/REVIEW-Modi (konsolidiert in AUDIT/EXECUTE)
+- Pflichtlektuere von 4 Dateien auf 2 reduziert (STATUS.md + CHANGELOG.md), Vertiefungslektuere bei-Bedarf-Liste
+- GIT-Sektion korrigiert: Cowork kann committen, nur push braucht User
+- Wartungs-Trigger explizit definiert: NUR bei neuen/umbenannten Dokumenten oder Prozessaenderungen
+- 6 alte Skill-Versionen (projekt-website v1 bis v4-2, je ~22KB) durch 1 Redirect-Skill (~40 Zeilen) ersetzt. Skill verweist nur auf Anleitung, enthaelt keine eigene Logik
+- .skill-Paket erzeugt (projekt-website.skill, Doppelklick-Installation)
+- Auto-Memory aktualisiert: PM-Routing-Architektur als Feedback-Memory verankert
+- Verifikation: 19/19 Pfade in Anleitung existieren, 0 State-Leakage
+
+---
+
+## 2026-04-08 — P0-1 SKRIPT-Persistenz: Workflow-Checkpoint eingefuegt
+
+**Phase:** Phase-0-Standardisierung
+**Modus:** EXECUTE (P0-1 aus konsolidiertem Backlog)
+**Session:** 24
+
+**SKRIPT-Persistenz als PFLICHT-Checkpoint im Workflow verankert. 2 Dateien modifiziert.**
+- Befund: Game-1-SKRIPT existiert (`SKRIPT_gpg-erster-weltkrieg-ursachen.md`), Game-2-SKRIPT fehlt. Problem nicht Format/Ablageort (beides definiert), sondern fehlender Persistenz-Checkpoint im Workflow
+- ORCHESTRATOR.md: Neuer `PERSISTENZ-CHECKPOINT (PFLICHT — Phase 0 Artefakte)` zwischen User-Validierung SKRIPT und Phase 0.4. git add/commit fuer DIDAKTIK_RAHMEN + INHALTSBASIS + SKRIPT. Push als User-Aufgabe. Sperrklausel: Phase 0.4+ darf nicht ohne SKRIPT im Repo starten
+- VERTRAG_PHASE_0-3_SKRIPT.md Sektion 6: Persistenz-PFLICHT als Konvention ergaenzt mit Begruendung (Primaerquelle fuer 4+ Downstream-Artefakte, S15 SKRIPT-Index)
+- P0-1 damit CLOSED. Naechster P0: P0-2 Produktions-Testlauf v2.2
+
+---
+
+## 2026-04-08 — PM-Konsolidierung: Alle offenen Planungen verankert
+
+**Phase:** Projektmanagement
+**Modus:** UPDATE (Konsolidierung)
+**Session:** 24
+
+**STATUS.md restrukturiert. 5 abgeschlossene Grossprojekte, 13 offene Items in 4 Prioritaetsstufen, kritischer Pfad definiert.**
+- Neue Sektion "Konsolidierter Projektstatus" mit tabellarischer Uebersicht: Abgeschlossene Grossprojekte (UPGRADE_PLAN v4, D15b III.5, Phase IV Waves 1-4, Operationalisierungs-Audit v2, Checkpoints)
+- Offene Arbeitsstroeme nach Prioritaet: 3× P0 (SKRIPT-Persistenz, Produktions-Testlauf v2.2, Grenzfall-Testfall), 5× P1 (Wave 3 Code-Strang, DOK1, quellenangaben[], D3, DOK2), 5× P2 (M5-M9, ARTEFAKT_INVENTAR, Flowcharts, O3/O5/O6, Runde 5), 1× DEFERRED (STR-09-NEU)
+- Kritischer Pfad explizit: P0-1 → P0-2 → P0-3 → P2-5
+- Abgeschlossene Bilanzen (Waves 1-4, Checkpoints, D15b) als Referenz-Sektion erhalten
+- Veraltete Felder (Alter Naechster-Schritt, redundante Bilanz-Bloecke) bereinigt
+
+---
+
 ## 2026-04-08 — Schritt 3+4: Prueflogik-Revisionen + Bereinigung (P9-P15)
 
 **Phase:** Phase-0-Standardisierung
