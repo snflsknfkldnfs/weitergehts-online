@@ -5,14 +5,15 @@
 **Game:** verlauf-erster-weltkrieg-marne-ende
 **Methode:** 3-dimensionale Parallelevaluation (Patch-Wirksamkeit, Absolute Qualitaet, Regression)
 **Infrastruktur-Delta:** 12 Patches (VP-1..VP-8, GK-1..GK-3, AP-1) zwischen T4 und T5
+**Revision:** 2026-04-09 Rev.1 — Transkript-Gegenprüfung. 2 Findings invalidiert, 2 downgraded. Details: §4.4.
 
 ---
 
 ## 1. Executive Summary
 
-Testrun 5 zeigt signifikante Qualitaetsverbesserungen in den Dimensionen Inhaltsbasis und Skript. 8 von 14 Patch-Zielen sind voll wirksam, die absolute Qualitaet steigt von CONDITIONAL PASS auf PASS (Inhaltsbasis) bzw. von PASS_WITH_WARNINGS auf PASS (Skript). Gleichzeitig treten 10 neue Regressionsbefunde auf, darunter 1 CRITICAL (Chunk-Laenge 2553W) und 4 HIGH (Mappen-Struktur, Narrativ-Kohaerenz, KE-Abdeckung, Cross-Artefakt-Konsistenz).
+Testrun 5 zeigt signifikante Qualitaetsverbesserungen in den Dimensionen Inhaltsbasis und Skript. 8 von 14 Patch-Zielen sind voll wirksam, die absolute Qualitaet steigt von CONDITIONAL PASS auf PASS (Inhaltsbasis) bzw. von PASS_WITH_WARNINGS auf PASS (Skript). Nach Transkript-Gegenprüfung verbleiben 6 valide Regressionsbefunde (0 CRITICAL, 1 HIGH, 4 MEDIUM, 1 LOW). Die urspruenglich gemeldeten 10 Befunde enthielten 2 Fehlalarme (User-initiierte Mappen-Expansion faelschlich als Agent-Regression gewertet) und 2 ueberbewertete Schweregrade (Chunk-Laenge auf Gesamtdokument statt Narrativtext berechnet).
 
-**Infrastruktur-Reifegrad:** 62% → 76% (Patch-Wirksamkeit) bei gleichzeitigem Regressionsrisiko in struktureller Kohaerenz.
+**Infrastruktur-Reifegrad:** 76% Patch-Wirksamkeit bei stabilem Qualitaetsniveau. Kein strukturelles Regressionsrisiko.
 
 ---
 
@@ -91,52 +92,74 @@ T5 zeigt breite Verbesserungen in Quellentransparenz, Luecken-Dokumentation, nar
 
 ## 4. Dimension 3 — Regression
 
-### 4.1 Befunde
+### 4.1 Befunde (Rev.1 — nach Transkript-Gegenprüfung)
 
-| ID | Schwere | Titel | Beschreibung |
-|---|---|---|---|
-| REG-1 | HIGH | Mappen-Struktur 3→4 unkoordiniert | T5-Skript verwendet 4 Mappen statt 3 (wie in T4/DIDAKTIK_RAHMEN). Keine Aktualisierung des DIDAKTIK_RAHMEN erfolgt. Strukturelle Inkonsistenz zwischen Artefakten. |
-| REG-2 | MEDIUM | Einleitungs-Chunk ueberladen | Chunk 1 enthaelt narrativen Einstieg + Kontextsetzung + ersten Handlungsstrang. Funktionsueberladung. |
-| REG-3 | MEDIUM | Rollenprofil-Tiefe ungleich | Protagonist detailliert, Nebenfiguren skizzenhaft. |
-| REG-4 | LOW | Quellennummerierung inkonsistent | Fussnoten-Stil wechselt zwischen INHALTSBASIS-Abschnitten. |
-| REG-5 | **CRITICAL** | Chunk 3 = 2553 Woerter (Limit: 600-900W) | Chunk 3 ueberschreitet das Wortlimit um Faktor 2.8. Bricht Escape-Game-Spielbarkeit (Textmenge pro Station). |
-| REG-6 | MEDIUM | TRANSFER-Marker fehlen | Trotz VP-5 keine TRANSFER-Marker im Skript. Verhindert saubere Phase-2-Uebergabe. |
-| REG-7 | HIGH | Narrativ-Kohaerenz bricht in Chunk 3 | Ab Chunk 3 degradiert das Skript von narrativer Vergegenwärtigung zu Faktenauflistung. Korreliert mit REG-5 (Ueberlaenge). |
-| REG-8 | HIGH | Mappe 3 ohne Hauptzuordnung | Keine KE deckt "Kriegsende/Revolution" als Hauptthema ab. M3 ist thematisch verwaist im KE-Katalog. |
-| REG-9 | MEDIUM | Cross-Artefakt Zahlen-Divergenz | Einzelne Zahlenangaben (Truppenstaerken) divergieren zwischen INHALTSBASIS und SKRIPT. |
-| REG-10 | HIGH | INHALTSBASIS↔SKRIPT Inkonsistenz Mappe 3/4 | INHALTSBASIS strukturiert nach 3 Mappen, SKRIPT nach 4. Mappe 3 und 4 im Skript referenzieren Inhalte, die in der INHALTSBASIS anders zugeordnet sind. |
+| ID | Schwere | Titel | Beschreibung | Status Rev.1 |
+|---|---|---|---|---|
+| ~~REG-1~~ | ~~HIGH~~ | ~~Mappen-Struktur 3→4 unkoordiniert~~ | ~~T5-Skript verwendet 4 Mappen statt 3.~~ | **INVALIDIERT** — User-initiiert (Msg 84: "M3 ist zu umfangreich"), DIDAKTIK_RAHMEN korrekt auf 4 aktualisiert, mappen_anzahl in PI gesetzt. |
+| REG-2 | MEDIUM | Einleitungs-Chunk ueberladen | Chunk 1 enthaelt ~1091W Narrativtext (21% ueber 900W Korridor). Funktionsueberladung. | Bestaetigt. Chunk 1 ist tatsaechlich der laengste Chunk. |
+| REG-3 | MEDIUM | Rollenprofil-Tiefe ungleich | Protagonist detailliert, Nebenfiguren skizzenhaft. | Bestaetigt. |
+| REG-4 | LOW | Quellennummerierung inkonsistent | Fussnoten-Stil wechselt zwischen INHALTSBASIS-Abschnitten. | Bestaetigt. |
+| ~~REG-5~~ | ~~CRITICAL~~ | ~~Chunk 3 = 2553W~~ | ~~Chunk 3 ueberschreitet Wortlimit um Faktor 2.8.~~ | **DOWNGRADE → MEDIUM**: Narrativtext Chunk 3 = ~956W (6% ueber 900W). 2553W war Gesamtlaenge inkl. Metadata/Tafelbild/Artefakt-Zuordnung. Chunk 1 (~1091W) ist das groessere Problem (= REG-2). |
+| REG-6 | MEDIUM | TRANSFER-Marker fehlen | Trotz VP-5 keine TRANSFER-Marker im Skript. Verhindert saubere Phase-2-Uebergabe. | Bestaetigt (0 Marker im Dokument). |
+| REG-7 | ~~HIGH~~ → MEDIUM | Narrativ-Kohaerenz Chunk 3 | Chunk 3 zeigt leichte Tendenz zur Faktenreihung in §1-§2, erholt sich ab §4 (Matrosenmeuterei). | **DOWNGRADE**: Ohne REG-5-Ueberlaenge faellt die Hauptursache weg. Leichtes Stilproblem, keine strukturelle Regression. |
+| ~~REG-8~~ | ~~HIGH~~ | ~~Mappe 3 ohne Hauptzuordnung~~ | ~~KE-Luecke fuer Kriegsende/Revolution.~~ | **DOWNGRADE → LOW**: Im DIDAKTIK_RAHMEN explizit dokumentiert und begruendet ("Anmerkung zu Mappe 3": K_07+K_08 als Nebenzuordnung, M3 = narrative Bruecke). |
+| REG-9 | MEDIUM | Cross-Artefakt Zahlen-Divergenz | Einzelne Zahlenangaben (Truppenstaerken) divergieren zwischen INHALTSBASIS und SKRIPT. | Bestaetigt. |
+| ~~REG-10~~ | ~~HIGH~~ | ~~INHALTSBASIS↔SKRIPT Inkonsistenz Mappe 3/4~~ | ~~INHALTSBASIS 3 Mappen, SKRIPT 4.~~ | **INVALIDIERT** — INHALTSBASIS hat ebenfalls 4 Mappen (Zeilen 70, 181, 284, 398). Alle Artefakte konsistent. |
 
-### 4.2 Aggregat
+### 4.2 Aggregat (Rev.1)
 
-| Schwere | Anzahl |
-|---|---|
-| CRITICAL | 1 |
-| HIGH | 4 |
-| MEDIUM | 4 |
-| LOW | 1 |
-| **Gesamt** | **10** |
+| Schwere | Urspruenglich | Nach Rev.1 |
+|---|---|---|
+| CRITICAL | 1 | **0** |
+| HIGH | 4 | **0** |
+| MEDIUM | 4 | **4** (REG-2, REG-5↓, REG-6, REG-7↓) + REG-9 = **5** |
+| LOW | 1 | **1** (REG-4) + REG-8↓ = **2** |
+| INVALIDIERT | 0 | **2** (REG-1, REG-10) |
+| **Valide Gesamt** | **10** | **7** (0C/0H/5M/2L) |
 
-### 4.3 Cluster-Analyse
+### 4.3 Cluster-Analyse (Rev.1)
 
-Die Regressionsbefunde clustern in zwei Hauptursachen:
+~~**Cluster A — Mappen-Expansion:**~~ **AUFGELOEST.** Die Mappen-Expansion war User-Entscheidung, nicht Agent-Regression. Alle Artefakte sind konsistent auf 4 Mappen. REG-1, REG-10 invalidiert, REG-5/REG-7/REG-8 auf andere Ursachen zurueckgefuehrt.
 
-**Cluster A — Mappen-Expansion (REG-1, REG-5, REG-7, REG-8, REG-10):** Der Agent hat die Mappen-Struktur eigenmaechtich von 3 auf 4 erweitert, ohne den DIDAKTIK_RAHMEN zu aktualisieren. Folgewirkung: Chunk 3 absorbiert ueberschuessiges Material (2553W), narrativer Zerfall, KE-Zuordnungsluecke, Cross-Artefakt-Inkonsistenz. **5 von 10 Findings** gehen auf dieses Cluster zurueck.
+**Cluster B — Agent-Compliance (REG-6, VP-5 FAIL):** Bestaetigt. Der Agent ignoriert TRANSFER-Marker-Anforderungen. Syntax-Definition reicht nicht; QS-Gate mit Abbruchbedingung noetig.
 
-**Cluster B — Agent-Compliance (REG-6, VP-5 FAIL):** Der Agent ignoriert TRANSFER-Marker-Anforderungen. Das Patch-Format (Syntax-Definition) reicht nicht aus; ein QS-Gate mit Abbruchbedingung ist noetig.
+**Cluster C — Chunk-Laenge (REG-2, REG-5↓):** Chunk 1 (~1091W) und Chunk 3 (~956W) ueberschreiten den 900W-Korridor leicht. Kein spielbarkeitskritisches Problem, aber Vertrags-Compliance-Luecke.
+
+**VP-1 Prozess-Befund:** Orchestrator versuchte DE-Wikipedia-Suche (Msg 143-148: "Erster Weltkrieg", "Schlacht um Verdun", "Friedensvertrag von Versailles"). MCP-Tool resolvet auf EN-Wikipedia. Agent erkannte Limitation (Msg 156: "MCP nutzt EN-Wikipedia") und wechselte bewusst zu EN. **Root Cause: MCP-Tool-Limitation, nicht Vertragsmissachtung.** VP-1 kann nicht durch Vertragsformulierung allein geloest werden — erfordert MCP-Konfiguration oder alternativen Suchmechanismus.
+
+### 4.4 Transkript-Gegenprüfung (Revision 1)
+
+**Quelle:** Session-Export `session-export-1775723222387/` (Cowork-Session `3c86d2b9`, 351 Messages, 4 Subagents)
+
+**Methode:** Vollstaendige Rekonstruktion des Produktionsprozesses anhand des Haupttranskripts und der Subagent-Transkripte. Abgleich jeder Regression gegen tatsaechlichen Prozessverlauf.
+
+**Korrekturen:**
+
+| Finding | Aenderung | Evidenz |
+|---|---|---|
+| REG-1 | INVALIDIERT | User Msg 84: "Habe das Gefühl M3 ist zu umfangreich". Orchestrator schlaegt 4 Mappen vor. User Msg 90: "ja". DIDAKTIK_RAHMEN Edits Msg 97-121. mappen_anzahl=4 in PI Msg 121. |
+| REG-5 | CRITICAL→MEDIUM | Python-Wortzaehlung: Chunk 3 Narrativtext (§1-§6) = 956W. Metadata/Tafelbild/Artefakt-Zuordnung = ~1597W zusaetzlich. Audit-Agents zaehlten Gesamtblock. |
+| REG-8 | HIGH→LOW | DIDAKTIK_RAHMEN Zeile 67: Explizite "Anmerkung zu Mappe 3" mit Begruendung (K_07+K_08 Nebenzuordnung, narrative Bruecke). |
+| REG-10 | INVALIDIERT | INHALTSBASIS Zeilen 70/181/284/398: 4 Mappen-Sektionen. Identische Struktur wie SKRIPT. |
+| VP-1 | FAIL bestaetigt, Root Cause praezisiert | Msg 143-148: DE-Suchversuche ("Erster Weltkrieg" etc.). Msg 156: "MCP nutzt EN-Wikipedia". Root Cause = MCP-Limitation, nicht Agent-Compliance. |
+
+**Bewertung der urspruenglichen Audit-Agents:** Die 3 Parallel-Agents hatten keinen Zugang zum Produktionstranskript und evaluierten nur Artefakt-gegen-Artefakt. Dies fuehrte zu 2 Fehlalarmen und 2 Schweregrad-Ueberbewertungen. Kuenftige Audits sollten bei strukturellen Findings (Mappen-Anzahl, Cross-Artefakt) das Produktionstranskript als Gegenprobe einbeziehen.
 
 ---
 
-## 5. Infrastruktur-Ableitung
+## 5. Infrastruktur-Ableitung (Rev.1)
 
 ### 5.1 Erforderliche Patches (naechste Iteration)
 
 | ID | Prioritaet | Massnahme | Ziel-Datei |
 |---|---|---|---|
-| VP-9 | CRITICAL | Mappen-Anzahl-Invariante: Skript MUSS exakt die im DIDAKTIK_RAHMEN definierte Mappen-Anzahl verwenden. Abweichung = QS-Gate FAIL. | VERTRAG_PHASE_0-3_SKRIPT |
-| VP-10 | HIGH | Chunk-Wortlimit als harte Obergrenze (max 900W) mit expliziter Pruefanweisung im Q-Gate Self-Check | VERTRAG_PHASE_0-3_SKRIPT |
-| VP-11 | HIGH | TRANSFER-Marker als QS-Gate-Pflichtkriterium mit FAIL-Konsequenz (nicht nur Syntax-Definition) | VERTRAG_PHASE_0-3_SKRIPT |
-| VP-12 | HIGH | Cross-Artefakt-Konsistenzpruefung: Skript-Agent MUSS Mappen-Struktur gegen DIDAKTIK_RAHMEN abgleichen bevor Q-Gate | VERTRAG_PHASE_0-3_SKRIPT |
-| VP-1r | MEDIUM | VP-1 Revision: `de.wikipedia.org` als hartkodierter Default-Endpunkt statt Praeferenz-Formulierung | VERTRAG_PHASE_0-2_INHALT |
+| VP-10 | MEDIUM | Chunk-Wortlimit als harte Obergrenze (max 900W Narrativtext) mit expliziter Pruefanweisung im Q-Gate Self-Check. Aktuell: Chunk 1 = 1091W, Chunk 3 = 956W. | VERTRAG_PHASE_0-3_SKRIPT |
+| VP-11 | HIGH | TRANSFER-Marker als QS-Gate-Pflichtkriterium mit FAIL-Konsequenz (nicht nur Syntax-Definition). Aktuell: 0 Marker trotz VP-5. | VERTRAG_PHASE_0-3_SKRIPT |
+| VP-1r | MEDIUM | VP-1 Revision: MCP-Tool-Limitation dokumentieren. Entweder DE-Wikipedia-API konfigurieren oder Vertrag anpassen (EN akzeptabel wenn DE-MCP nicht verfuegbar, mit Dokumentationspflicht). | VERTRAG_PHASE_0-2_INHALT |
+
+~~VP-9 (Mappen-Invariante):~~ Entfaellt — Mappen-Expansion war User-Entscheidung, kein Agent-Defekt. Bestehende Infrastruktur hat korrekt reagiert (DIDAKTIK_RAHMEN-Update, PI-Update).
+~~VP-12 (Cross-Artefakt-Check):~~ Entfaellt — alle Artefakte waren konsistent.
 
 ### 5.2 Infrastruktur-Reifegrad
 
@@ -145,17 +168,17 @@ Die Regressionsbefunde clustern in zwei Hauptursachen:
 | Patch-Wirksamkeit | — | 76% | Baseline |
 | Absolute Qualitaet IB | CONDITIONAL PASS | PASS | ↑ |
 | Absolute Qualitaet SK | PASS_WITH_WARNINGS | PASS | ↑ |
-| Regressions-Findings | — | 10 (1C/4H/4M/1L) | Baseline |
-| Strukturelle Kohaerenz | OK (3 Mappen konsistent) | DEFEKT (3→4 Drift) | ↓ |
+| Regressions-Findings (valide) | — | 7 (0C/0H/5M/2L) | Baseline |
+| Strukturelle Kohaerenz | OK | OK (4 Mappen konsistent, User-validiert) | → |
 
 ---
 
-## 6. Empfehlung
+## 6. Empfehlung (Rev.1)
 
-1. **VP-9 (Mappen-Invariante) sofort patchen.** Dies ist die Root Cause fuer 5/10 Regressionsbefunde und den einzigen CRITICAL. Ohne diesen Patch ist eine Fortfuehrung auf Phase 0.4+ riskant.
-2. **VP-10, VP-11, VP-12 im selben Patch-Zyklus.** Diese drei adressieren die verbleibenden HIGH-Befunde und haerten die Cross-Artefakt-Konsistenz.
-3. **VP-1r nachrangig.** EN-Wikipedia-Bias ist ein Qualitaetsproblem, aber kein Strukturproblem. Kann im naechsten Testrun adressiert werden.
-4. **Nach Patch-Anwendung: Testrun 6** mit identischem Game-Thema, fokussiert auf Cluster-A-Regression. Kein Testrun mit neuem Thema vor Bestehen der Strukturinvarianten.
+1. **VP-11 (TRANSFER-Marker-Pflicht) patchen.** Einziger HIGH-Befund. Blockiert saubere Phase-2-Uebergabe. QS-Gate muss FAIL bei fehlenden Markern liefern.
+2. **VP-10 (Chunk-Wortlimit) im selben Patch-Zyklus.** 21% Ueberschreitung in Chunk 1 ist kein Blocker, aber Vertrags-Compliance-Luecke.
+3. **VP-1r abwaegen.** Root Cause ist MCP-Tool-Limitation, nicht Agent-Verhalten. Loesung erfordert entweder MCP-Konfiguration (DE-Wikipedia-Endpunkt) oder Vertragsanpassung (EN akzeptabel mit Dokumentation). Kein Patch im Generierungs-Vertrag allein loesbar.
+4. **Kein Testrun 6 erforderlich.** Die validen Regressionsbefunde sind alle MEDIUM oder LOW. Die absolute Qualitaet ist PASS. Phase 0.4 → Phase 1 → Phase 2 kann fortgesetzt werden nach VP-11-Patch.
 
 ---
 
@@ -170,3 +193,4 @@ Die Regressionsbefunde clustern in zwei Hauptursachen:
 | T5 INHALTSBASIS | `docs/agents/artefakte/verlauf-erster-weltkrieg-marne-ende/INHALTSBASIS_verlauf-erster-weltkrieg-marne-ende.md` |
 | T5 SKRIPT | `docs/agents/artefakte/verlauf-erster-weltkrieg-marne-ende/SKRIPT_verlauf-erster-weltkrieg-marne-ende.md` |
 | Testlauf-4-Artefakt-Audit | `docs/befunde/BEFUND_ARTEFAKT_AUDIT_TESTLAUF_4.md` |
+| T5 Produktions-Transkript | `docs/analyse/session-export-1775723222387/` (351 Msgs, 4 Subagents) |

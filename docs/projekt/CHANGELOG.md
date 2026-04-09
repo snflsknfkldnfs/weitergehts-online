@@ -4,20 +4,21 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
-## 2026-04-09 — Vergleichsaudit Testlauf 4 vs. Testlauf 5
+## 2026-04-09 — Vergleichsaudit Testlauf 4 vs. Testlauf 5 (Rev.1 mit Transkript-Gegenprüfung)
 
 **Phase:** Qualitaetssicherung
 **Modus:** AUDIT
 **Session:** 26
 
-**3-dimensionale Parallelevaluation abgeschlossen. 76% Patch-Wirksamkeit, absolute Qualitaet +1 Stufe, 10 Regressionsbefunde identifiziert.**
-- Dim 1 (Patch-Wirksamkeit): 8/14 PASS, 4/14 PARTIAL, 2/14 FAIL (VP-1 Sprachraum, VP-5 TRANSFER-Marker)
+**3-dimensionale Parallelevaluation + Transkript-Gegenprüfung abgeschlossen.**
+- Dim 1 (Patch-Wirksamkeit): 8/14 PASS, 4/14 PARTIAL, 2/14 FAIL (VP-1 Sprachraum = MCP-Limitation, VP-5 TRANSFER-Marker = Agent-Compliance)
 - Dim 2 (Absolute Qualitaet): INHALTSBASIS CONDITIONAL PASS → PASS, SKRIPT PASS_WITH_WARNINGS → PASS
-- Dim 3 (Regression): 1 CRITICAL (Chunk 3 = 2553W), 4 HIGH (Mappen 3→4, Narrativ-Kohaerenz, KE-Luecke, Cross-Artefakt)
-- Root Cause: Mappen-Expansion 3→4 unkoordiniert mit DIDAKTIK_RAHMEN (Cluster A, 5/10 Findings)
-- 5 Infrastruktur-Patches abgeleitet: VP-9 (Mappen-Invariante, CRITICAL), VP-10 (Chunk-Limit), VP-11 (TRANSFER-Pflicht), VP-12 (Cross-Artefakt-Check), VP-1r (DE-Wikipedia hardcoded)
+- Dim 3 (Regression): Urspruenglich 10 Findings (1C/4H/4M/1L). Nach Transkript-Abgleich: **7 valide (0C/0H/5M/2L)**
+- Rev.1 Korrekturen: REG-1 + REG-10 invalidiert (Mappen-Expansion User-initiiert, alle Artefakte konsistent 4 Mappen). REG-5 CRITICAL→MEDIUM (Narrativtext 956W, nicht 2553W — Audit hatte Metadata mitgezaehlt). REG-8 HIGH→LOW (im DIDAKTIK_RAHMEN explizit begruendet).
+- 3 Patches abgeleitet: VP-11 HIGH (TRANSFER-Pflicht), VP-10 MEDIUM (Chunk-Limit), VP-1r MEDIUM (MCP-Limitation)
+- **Kein Testrun 6 erforderlich** — absolute Qualitaet PASS, keine HIGH/CRITICAL Regressionen
 - Befund: `docs/befunde/BEFUND_VERGLEICHSAUDIT_T4_T5.md`
-- PM aktualisiert: STATUS.md kritischer Pfad um P0-2f erweitert
+- PM aktualisiert: Kritischer Pfad → VP-11 patchen → Phase 0.4 fortsetzen
 
 ---
 

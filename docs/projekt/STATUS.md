@@ -24,7 +24,7 @@
 | ID | Aufgabe | Quelle | Naechster Schritt |
 |---|---|---|---|
 | ~~P0-1~~ | ~~SKRIPT-Persistenz im Repo~~ | ~~Session 23 Meta-Task~~ | **CLOSED** (Session 24): ORCHESTRATOR Persistenz-Checkpoint + VERTRAG_PHASE_0-3 Persistenz-PFLICHT |
-| P0-2 | Produktions-Testlauf v2.4 | Operationalisierungs-Audit v2 Abschluss | **Testlauf 5 PASS. Vergleichsaudit T4/T5 abgeschlossen.** 76% Patch-Wirksamkeit, 10 Regressions-Findings (1C/4H). Naechst: VP-9..VP-12 patchen → Testrun 6 → Phase 0.4 |
+| P0-2 | Produktions-Testlauf v2.4 | Operationalisierungs-Audit v2 Abschluss | **Testlauf 5 PASS. Vergleichsaudit T4/T5 Rev.1 abgeschlossen.** 76% Patch-Wirksamkeit, 7 valide Regressions-Findings (0C/0H/5M/2L). Naechst: VP-11 patchen → Phase 0.4 fortsetzen |
 | P0-3 | Zweiter Testfall Grenzfaelle | Operationalisierungs-Audit v2 P15 | Mappe mit quellentext + bildquelle heuristisch, Rahmen-Einstieg-Konflikt, oder <3 Mat |
 
 **P1 — Wichtig, nicht blockierend:**
@@ -59,8 +59,8 @@
 [DONE] P0-1 SKRIPT-Persistenz scopen
   [DONE] P0-2a Repo-Separation + Audit-Patches (B1, B2, H2, H4, M1)
     [DONE] P0-2c Phase 0 Testlauf (v2.4, Testlauf 4 PASS)
-      [DONE] P0-2e Testlauf 5 + Vergleichsaudit T4/T5 (76% Patch-Wirksamkeit, 10 Regressionen)
-        → P0-2f VP-9..VP-12 Regressions-Patches + Testrun 6  ← NAECHSTER SCHRITT
+      [DONE] P0-2e Testlauf 5 + Vergleichsaudit T4/T5 Rev.1 (76% Patch-Wirksamkeit, 7 valide Findings: 0C/0H/5M/2L)
+        → P0-2f VP-11 TRANSFER-Marker-Pflicht patchen  ← NAECHSTER SCHRITT
           → P0-2d Game 2 Produktion fortsetzen (Phase 0.4 → 1.1 → 2.x)
             → P0-3 Zweiter Testfall Grenzfaelle
               → P2-5 Runde 5 Retrospektive
@@ -73,8 +73,8 @@ Parallel dazu: P1-1 Wave 3 Code-Strang (unabhaengig, Claude Code).
 **Architektur-Entscheidung (Session 25, 2026-04-08):**
 Generator wird eigenstaendiges Repo (`escape-game-generator/`). Begruendung: (1) Produkt soll vertriebsfaehig sein, (2) Pfad-Isolation eliminiert Grep-Drift zwischen PM und Produkt, (3) Agenten-Dateien haben hardcodierte `docs/`-Pfade die bei Koexistenz im selben Repo zu Ambiguitaet fuehren. Konsequenzen: Alle internen Pfade werden Repo-relativ umgeschrieben, PROJECT_INSTRUCTIONS.md erhaelt Dual-Root-Logik (GENERATOR_ROOT + TARGET_ROOT), `weitergehts-online/docs/agents/` etc. werden zu Legacy (Quelle der Wahrheit ist Generator-Repo). Audit-Befund: 2 BLOCKER, 4 HIGH, 4 MEDIUM, 2 LOW — werden im Rahmen der Migration gepatcht.
 
-**Letzter Arbeitsschritt:** Session 26: Vergleichsaudit T4/T5 abgeschlossen. 3-dimensionale Parallelevaluation (Patch-Wirksamkeit 76%, Absolute Qualitaet +1 Stufe beide Artefakte, 10 Regressions-Findings). Befund: `docs/befunde/BEFUND_VERGLEICHSAUDIT_T4_T5.md`. Root Cause: Mappen-Expansion 3→4 unkoordiniert (Cluster A, 5/10 Findings). 5 Infrastruktur-Patches abgeleitet (VP-9 CRITICAL, VP-10/11/12 HIGH, VP-1r MEDIUM).
-**Naechster Schritt:** (1) VP-9..VP-12 in Generator-Repo patchen (Mappen-Invariante, Chunk-Limit, TRANSFER-Pflicht, Cross-Artefakt-Check). (2) Testrun 6 mit identischem Game-Thema, Fokus Cluster-A-Regression. (3) Bei PASS: Phase 0.4 → Phase 1 → Phase 2.
+**Letzter Arbeitsschritt:** Session 26: Vergleichsaudit T4/T5 abgeschlossen + Rev.1 (Transkript-Gegenprüfung). Urspruenglich 10 Regressionsbefunde (1C/4H/4M/1L), nach Transkript-Abgleich 7 valide (0C/0H/5M/2L). 2 invalidiert (Mappen-Expansion war User-Entscheidung), 2 downgraded (Chunk-Zaehlung auf Narrativtext statt Gesamtblock). Befund: `docs/befunde/BEFUND_VERGLEICHSAUDIT_T4_T5.md`. 3 Patches abgeleitet: VP-11 HIGH (TRANSFER-Pflicht), VP-10 MEDIUM (Chunk-Limit), VP-1r MEDIUM (MCP-Limitation).
+**Naechster Schritt:** (1) VP-11 in Generator-Repo patchen (TRANSFER-Marker als QS-Gate-Pflichtkriterium). (2) Phase 0.4 → Phase 1 → Phase 2 fortsetzen. Kein Testrun 6 erforderlich (absolute Qualitaet PASS, keine HIGH/CRITICAL Regressionen).
 
 ### Abgeschlossene Bilanzen (Referenz)
 
