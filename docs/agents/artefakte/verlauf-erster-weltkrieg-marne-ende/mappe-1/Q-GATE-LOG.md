@@ -130,3 +130,117 @@
 - mappe-1/materialien/mat-1-3.json
 - mappe-1/materialien/mat-1-4.json
 - mappe-1/materialien/mat-1-5.json
+
+---
+
+# Q-Gate-Log: Mappe 1 — Phase 2.1c (Cross-Konsistenz)
+
+**Phase:** 2.1c
+**Datum:** 2026-04-09
+
+## User-Revisionen (v3.6 Erzählerstimme-Rahmen)
+
+Der User hat mat-1-2 und mat-1-5 restrukturiert. Systemisches Wissen (Stellungskrieg 700 km, Materialschlacht-Definition) wurde aus der Figur-Stimme in einen kursiven Erzählerstimme-Rahmen verschoben. mat-1-4 erhielt [sinngemäß]-Marker vor rekonstruierten Zitaten. mat-1-1 BU wurde sachlicher formuliert.
+
+**Pattern (für alle Folge-Mappen):** Fachbegriffe und analytisches Wissen, das die Figur nicht realistisch besitzen kann, in `<em>`-Erzählerstimme-Rahmen setzen. Figurentext bleibt perspektivisch begrenzt. _meta dokumentiert wortanzahl_figur / wortanzahl_erzaehlerstimme getrennt.
+
+## Cross-Konsistenz
+
+| Prüfpunkt | Ergebnis | Detail |
+|---|---|---|
+| Fachbegriff-Progression | PASS | Stellungskrieg(mat-1-2) → Schützengraben(mat-1-2) → Giftgas(mat-1-3) → Ausblutungsschlacht(mat-1-4) → Materialschlacht(mat-1-5). Lückenlos, keine Vorgriffe. |
+| TB-Knoten-Abdeckung | PASS | k1-1(mat-1-1/1-2), k1-2(mat-1-2), k1-3(mat-1-3), k1-4(mat-1-4), k1-5(mat-1-4), k1-6(mat-1-4), k1-7(mat-1-5). 7/7 abgedeckt. |
+| SCPL-Zone-Abdeckung | PASS | S(1-1), C1(1-2), C2(1-3), C3(1-4), P(1-5). 5/5 DIRECT. |
+| Loesung[]-Erarbeitbarkeit | PASS | L1 aus mat-1-1+1-2, L2 aus mat-1-3, L3 aus mat-1-4. Alle drei Kernerkenntnisse aus Materialien ableitbar. |
+| Perspektiven 3/3 | PASS | P1(mat-1-2,1-5), P2(mat-1-1,1-3,1-4), P3(mat-1-4). |
+| Zusammenfassung | PASS | Alle 5 Fachbegriffe + Hoffnungslosigkeit als Zielpunkt. |
+| Ueberleitung → Mappe 2 | PASS | Brücke Heimatfront (Frauen, Fabriken, Hunger). |
+| Wortbudget | PASS | ~461W (nach User-Revision ~480W mit Erzählerstimme). Budget 500W. |
+
+## Gesamt
+
+**PASS** — Phase 2.1c Cross-Konsistenz bestanden. Mappe 1 Material-Produktion abgeschlossen.
+
+## Aktualisierte Dateien
+
+- mappe-1/rahmen/sicherung.json (zusammenfassung + ueberleitung befüllt)
+
+---
+
+# Q-Gate-Log: Mappe 1 — Phase 2.2a (Progressionsplan)
+
+**Phase:** 2.2a
+**Datum:** 2026-04-09
+**Vertrag:** VERTRAG_PHASE_2-2a_PROGRESSIONSPLAN.md
+**Katalog:** Q-GATE-MECHANIK.md §7.5
+
+## Aufgabenzahl-Formel
+
+```
+basis(5) + knoten_faktor(1, 7 Knoten > 5) + material_faktor(1, 5 Materialien > 4) = 7
+```
+
+## Bloom-Verteilung (A19)
+
+| Zone | Aufgaben | Anteil | Policy | Ergebnis |
+|---|---|---|---|---|
+| L1–L2 | Pos 1, 2 | 29 % | max 40 % | PASS |
+| L3–L4 | Pos 3, 4, 5 | 43 % | min 30 % | PASS |
+| L5–L6 | Pos 6, 7 | 29 % | min 20 % | PASS |
+
+## Typvielfalt
+
+6 Typen bei 7 Aufgaben: mc (×2), lueckentext, reihenfolge, zuordnung, begruendung, freitext.
+MC-Duplikat begründet: Pos 1 = AFB I (Fakten-Wiedererkennung), Pos 5 = AFB II (Transfer). PASS.
+
+## SCPL-Zonen-Abdeckung
+
+| Zone | Pos | Ergebnis |
+|---|---|---|
+| S | 1 | PASS |
+| C1 | 2 | PASS |
+| C2 | 3 | PASS |
+| C3 | 4 | PASS |
+| P | 5 | PASS |
+| L | 6, 7 | PASS |
+
+Alle 5 SCPL-Zonen + L abgedeckt. PASS.
+
+## TB-Knoten-Abdeckung
+
+| Knoten | Pos | Ergebnis |
+|---|---|---|
+| k1-1 | 1, 2 | PASS |
+| k1-2 | 2 | PASS |
+| k1-3 | 3, 6 | PASS |
+| k1-4 | 4 | PASS |
+| k1-5 | 4 | PASS |
+| k1-6 | 4, 6 | PASS |
+| k1-7 | 5 | PASS |
+
+7/7 Knoten mindestens 1× adressiert. PASS.
+
+## Einzelprüfung Konstruktionskontexte
+
+| Pos | Typ | AFB | Erarbeitbarkeit | Fragestamm ≤12W | Display-Ref | Ergebnis |
+|---|---|---|---|---|---|---|
+| 1 | mc | I | PASS (BU enthält Stellungskrieg) | PASS (8W) | PASS | PASS |
+| 2 | lueckentext | I | PASS (TB + Erzählerstimme) | PASS (5W) | PASS | PASS |
+| 3 | reihenfolge | II | PASS (kausale Abfolge in DT) | PASS (8W) | PASS | PASS |
+| 4 | zuordnung | II | PASS (Dual-Voice in QT) | PASS (9W) | PASS | PASS |
+| 5 | mc | II | PASS (Stimmungswandel in TB) | PASS (10W) | PASS | PASS |
+| 6 | begruendung | III | PASS (Streitfrage + 2 Evidenz-Quellen) | PASS (11W) | PASS | PASS |
+| 7 | freitext | III | PASS (alle Knoten erarbeitet) | PASS (11W) | PASS | PASS |
+
+## Anti-Quota-Check
+
+- begruendung (Pos 6): Echte Streitfrage (Generäle vs. Waffen), 2 vertretbare Positionen, belegfähig aus mat-1-3 + mat-1-4. Kein Pseudo-CER. PASS.
+- quellenkritik: Nicht eingesetzt. mat-1-4 ist rekonstruiert (kein Primärquellentext) → Anti-Automatismus greift. Korrekte Entscheidung.
+
+## Gesamt
+
+**PASS** (Bloom A19 PASS, Typvielfalt PASS, SCPL PASS, TB-Knoten 7/7 PASS, 7/7 Konstruktionskontexte PASS, Anti-Quota PASS).
+
+## Produzierte Dateien
+
+- mappe-1/PROGRESSIONSPLAN.md

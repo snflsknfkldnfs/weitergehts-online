@@ -4,6 +4,24 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-09 — Evaluation Testrun Phase 2.1c + 2.2a Mappe 1
+
+**Phase:** Qualitaetssicherung
+**Modus:** AUDIT
+**Session:** 26 (Fortsetzung)
+
+**Produktions-Testrun Phase 2.1c + 2.2a evaluiert. CONDITIONAL PASS (1H/2M/2L).**
+- H1: Phase 2.1b (Didaktik-Review) uebersprungen — Root Cause: PROJECT_INSTRUCTIONS.md State Machine nicht um 2.1b erweitert. Agent folgte korrekt seiner State Machine. Infrastruktur-Patch noetig
+- M1: PROGRESSIONSPLAN Pos 5 (mc, P-Zone) als Bloom L4 deklariert, aber MC-Typ reicht laut Heuristik nur bis L3. Deklarationsfehler, kein funktionales Problem
+- M2: sicherung.json zitat.urheber fehlt [sinngemäß]-Marker — Zitat stammt aus rekonstruiertem Quellentext (mat-1-4)
+- L1: Q-GATE-LOG Phase 2.1 Wortanzahlen nicht retroaktiv an v3.6-Patches angepasst (kosmetisch)
+- L2: PROJECT_INSTRUCTIONS.md Uebergangstabelle + Workflow-Sequenz ohne Phase 2.1b (direkte Folge von H1)
+- Phase 2.1c Artefakte: sicherung.json zusammenfassung + ueberleitung qualitativ solide (5 Fachbegriffe, S→P-Bogen, Heimatfront-Bruecke)
+- Phase 2.2a: PROGRESSIONSPLAN 7 Aufgaben, 6 Typen, Bloom A19 konform (29/43/29), alle SCPL-Zonen + 7/7 TB-Knoten. Freischalt-Code GRABEN. Anti-Quota begruendung + quellenkritik korrekt behandelt
+- Befund: `docs/befunde/BEFUND_PHASE_2-1c_2-2a_TESTRUN_M1.md`
+
+---
+
 ## 2026-04-09 — Retroaktive v3.6-Patches Material-Artefakte M1
 
 **Phase:** Qualitaetsmanagement

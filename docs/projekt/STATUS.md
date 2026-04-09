@@ -1,6 +1,6 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-09 (Session 26, Retroaktive v3.6-Patches Material-Artefakte M1)
+**Letzte Aktualisierung:** 2026-04-09 (Session 26, v3.7 Scope-Patch 2.1b + BEFUND-Fixes + State-Machine-Patch)
 **Modus:** EXECUTE
 
 ---
@@ -64,9 +64,11 @@
           [DONE] P0-2d Phase 1 + Phase 2.0 Rahmen M1 (CONDITIONAL PASS, 2H/3M/2L)
             [DONE] P0-2g Phase 2.1 Material-Produktion M1 (PASS, 0H/2M/2L)
               [DONE] Tiefenaudit + v3.6 Infrastruktur-Patches (5 SUB_MATERIAL + 3 Q-Gate-Kriterien + Phase 2.1b Vertrag)
-                → P0-2g2 Phase 2.1b Didaktik-Review M1  ← NAECHSTER SCHRITT
-                  → P0-2g3 Phase 2.1c Cross-Revision M1
-                    → P0-2h Phase 2.2 Aufgaben-Produktion M1
+                [SKIP] P0-2g2 Phase 2.1b M1 (uebersprungen, v3.6-Patches manuell, Prozess-Test bei M2)
+                  [DONE] P0-2g3 Phase 2.1c Cross-Konsistenz M1 (PASS)
+                    [DONE] P0-2g4 Phase 2.2a Progressionsplan M1 (PASS, 7 Aufgaben)
+                      [DONE] P0-2g5 v3.7 Scope-Patch (D5 aus 2.1b, State Machine, Bloom-Fix, Zitat-Fix)
+                        → P0-2h Phase 2.2b Aufgaben-Produktion M1  ← NAECHSTER SCHRITT
                       → P0-3 Zweiter Testfall Grenzfaelle
               → P2-5 Runde 5 Retrospektive
 ```
@@ -78,8 +80,8 @@ Parallel dazu: P1-1 Wave 3 Code-Strang (unabhaengig, Claude Code).
 **Architektur-Entscheidung (Session 25, 2026-04-08):**
 Generator wird eigenstaendiges Repo (`escape-game-generator/`). Begruendung: (1) Produkt soll vertriebsfaehig sein, (2) Pfad-Isolation eliminiert Grep-Drift zwischen PM und Produkt, (3) Agenten-Dateien haben hardcodierte `docs/`-Pfade die bei Koexistenz im selben Repo zu Ambiguitaet fuehren. Konsequenzen: Alle internen Pfade werden Repo-relativ umgeschrieben, PROJECT_INSTRUCTIONS.md erhaelt Dual-Root-Logik (GENERATOR_ROOT + TARGET_ROOT), `weitergehts-online/docs/agents/` etc. werden zu Legacy (Quelle der Wahrheit ist Generator-Repo). Audit-Befund: 2 BLOCKER, 4 HIGH, 4 MEDIUM, 2 LOW — werden im Rahmen der Migration gepatcht.
 
-**Letzter Arbeitsschritt:** Session 26 (Fortsetzung): Retroaktive v3.6-Patches auf Material-Artefakte M1. 4/5 Materialien gepatcht: mat-1-2 + mat-1-5 (Erzaehlerstimme fuer systemisches Wissen), mat-1-1 (BU-Beschraenkung), mat-1-4 (blockquote→em + [sinngemäß] + quellentyp-Fix). mat-1-3 unveraendert (DT typgemaess informierend). Q-Gate Re-Check v3.6: Nr. 14/15/16 alle PASS.
-**Naechster Schritt:** (1) Phase 2.1b Didaktik-Review M1 (Testlauf des neuen Vertrags — isolierter Batch-Review der gepatchten Materialien). (2) Phase 2.1c Cross-Revision. (3) Phase 2.2 Aufgaben-Produktion M1. (4) OPT-1: material-output-schema.json um _meta erweitern.
+**Letzter Arbeitsschritt:** Session 26 (Fortsetzung): Evaluation + Infrastruktur-Patches. (A) BEFUND Phase 2.1c+2.2a: CONDITIONAL PASS (1H/2M/2L). (B) Ueberlappungsanalyse 2.1b vs 2.1c: D5 aus 2.1b entfernt (redundant mit 2.1c Achsen 1-4). 2.1b → 4 Achsen D1-D4 (v3.7). (C) PROJECT_INSTRUCTIONS.md State Machine um Phase 2.1b ergaenzt. (D) PROGRESSIONSPLAN Pos 5 Bloom L4→L3. (E) sicherung.json zitat.urheber [sinngemäß] ergaenzt. (F) Phase 2.1b fuer M1 NICHT nachtraeglich ausgefuehrt (Materialien bereits v3.6-gepatcht, kein Qualitaetsgewinn; Prozess-Validierung erfolgt bei Mappe 2).
+**Naechster Schritt:** (1) Phase 2.2b Aufgaben-Produktion M1 (Testrun fortsetzen). (2) OPT-1: material-output-schema.json um _meta erweitern.
 
 ### Abgeschlossene Bilanzen (Referenz)
 
