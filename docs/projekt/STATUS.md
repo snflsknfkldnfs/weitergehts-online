@@ -1,7 +1,9 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-10 (Session 28, v3.9 + v3.9.1 + v3.9.2 + v3.9.3 Deferred-Pfad-Legalisierung COMPLETE)
-**Modus:** AUDIT
+**Letzte Aktualisierung:** 2026-04-10 (v3.10 Generator-Hardening UMGESETZT: T1/T3/T2/T4 + Smoketest-Dry-Run 3/3 PASS. T2.F + 21 mat-Backlog offen.)
+**Modus:** IMPLEMENTATION → COMMIT
+**Aktiver Upgrade-Plan:** `docs/architektur/UPGRADE_PLAN_v3-10_GENERATOR_HARDENING.md` (Scope: T1→T3→T2→T4→Smoketests. T6 zurueckgestellt. Umsetzung 2026-04-10 abgeschlossen, Commit+Push offen.)
+**Offene Folgetickets:** T2.F (typ-spezifische Meta-Sub-Schemata via oneOf-Discriminator), 21 mat-*.json Migrations-Backlog (Q4 vorwaertsgetrieben, siehe `docs/projekt/berichte/BERICHT_SCHEMA_MIGRATION_2026-04-10.md`).
 
 ---
 

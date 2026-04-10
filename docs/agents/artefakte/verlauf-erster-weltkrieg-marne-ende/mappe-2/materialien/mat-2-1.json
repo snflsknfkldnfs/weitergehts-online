@@ -1,0 +1,34 @@
+{
+  "id": "mat-2-1",
+  "typ": "quellentext",
+  "titel": "Was verrät diese Brotkarte über den Krieg?",
+  "inhalt": "<p><em>Im Januar 1915 führte das Deutsche Reich die Brotkarte ein. Die Regierung legte fest, wie viel Brot jede Person pro Woche kaufen durfte.</em></p><p><em>[sinngemäß]</em> <em>Verordnung über die Brotkarte, Januar 1915: Pro Woche erhalten Arbeiter 1500 Gramm Brot, Angestellte 1200 Gramm, Kinder und Alte 800 Gramm. Die Karte ist nur mit gültigem Stempel einzulösen. Wer ohne Karte kauft, wird bestraft.</em></p><p><em>Die Rationen sollten den Hunger verhindern — und doch reichten sie ab 1916 nicht mehr aus, um einen arbeitenden Menschen zu ernähren.</em></p>",
+  "quelle": "Rekonstruierter Text auf Basis historischer Quellen. Amtliche Brotkarten-Verordnung, Deutsches Reich, Januar 1915. Kein wörtliches Originalzitat.",
+  "position": 1,
+  "didaktische_funktion": "einstieg",
+  "voraussetzung": [],
+  "ueberleitung_von": null,
+  "sequenz_kontext": {
+    "vorher": null,
+    "nachher": {
+      "id": "mat-2-2",
+      "typ": "darstellungstext",
+      "kerninhalt": "Die britische Seeblockade führte über Rationierung zum Steckrübenwinter 1916/17."
+    }
+  },
+  "_meta": {
+    "wortanzahl": 81,
+    "quellentyp": "verordnung",
+    "aufbereitung": "rekonstruiert",
+    "rekonstruktions_begruendung": "Keine SuS-taugliche digitale Fassung der amtlichen Brotkarten-Verordnung vom Januar 1915 frei verfügbar. Der Text ist sinngemäß auf Basis historischer Quellen zur Rationierung im Deutschen Reich rekonstruiert. Mengen und Stichdatum sind historisch belegt.",
+    "artefakt_ref": ["pq-2-1"],
+    "tafelbild_knoten_abgedeckt": ["k2-2"],
+    "quellenkritische_impulse": [
+      "Warum unterschied die Regierung zwischen Arbeitern, Angestellten und Kindern?",
+      "Welches Bild vom Staat zeichnet diese Verordnung — fürsorglich oder kontrollierend?"
+    ],
+    "perspektive": "P2: Regierung/Obrigkeit",
+    "erarbeitbarkeits_check": "PASS — k2-2 (Brotkarte/Rationierung): explizit mit Datum Januar 1915 und konkreten Mengen (Arbeiter 1500g, Angestellte 1200g, Kinder/Alte 800g). Provokations-Charakter: SuS sehen staatliche Rationierung, fragen nach dem Warum — Hinführung auf mat-2-2 (Seeblockade als Ursache).",
+    "trigger_flags": []
+  }
+}

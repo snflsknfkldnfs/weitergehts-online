@@ -4,6 +4,90 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-10 — v3.10 Generator-Hardening UMGESETZT (T1/T3/T2/T4 + Smoketests)
+
+**Phase:** Generator-Hardening Umsetzung (v3.10.1 → v3.10.4)
+**Modus:** IMPLEMENTATION
+**Umfang:** T1 PI-State-Advance-Vertrag (v3.10.1) → T3 Dispatch-Isolation + Q-Gate-Binding (v3.10.3) → T2 Schema-Hardening + Migrations-Bericht (v3.10.2) → T4 Subagent-Sharpening (v3.10.4) → Smoketest-Dry-Run S1/S2/S3. T6 gemaess Q1-Entscheidung zurueckgestellt.
+
+**T1 — PI-State-Machine-Binding (v3.10.1):**
+- `PROJECT_INSTRUCTIONS.md` v2.6: Neuer Abschnitt `STATE-ADVANCE-VERTRAG` (§292-307) bindet jeden State-Block-Edit strukturell an (a) Q-GATE-LOG-Block am kanonischen Pfad, (b) `Gesamturteil: PASS`, (c) Pflicht-Kommentar mit Log-Zeilen-Verweis + Commit-SHA.
+- Vorbedingung §281 (Zeile 0) macht den Vertrag zur Aktualisierungs-Precondition.
+- `VERTRAG_PHASE_2-0_RAHMEN.md`, `VERTRAG_PHASE_2-1_MATERIAL.md`, `VERTRAG_PHASE_2-1c_CROSS.md`: Exit-Kriterien explizit um Q-GATE-LOG-PASS-Bindung erweitert.
+
+**T3 — Lemma-Duplikat-Check + Dispatch-Isolation (v3.10.3):**
+- `VERTRAG_PHASE_2-0_RAHMEN.md` §1b-lemma: Deterministische Prueffunktion `lemma_duplicate_check(feld)` als Vertragspflicht fuer alle SCPL-Felder (kontextsatz, complication[].schritt, problem.satz, loesung[i], knoten.text, knoten.merksatz, verbindung.label).
+- `Q-GATE-MECHANIK.md` §7.3 Zeile 9 L-DUP + Anhang A: 8-char-Stemming-Referenz-Implementation mit `STOP_DEFAULT`-Set. Rueckgabe != [] → FAIL.
+- PI Uebergangstabelle Zeile 10 + Zeile 16: Dispatch-Isolation P4 (1 Material/Aufgabe pro Nachricht) explizit verankert, Q-GATE-LOG-Pflichtbindung pro Einzeldispatch.
+
+**T2 — Schema-Hardening + Migrations-Bericht (v3.10.2):**
+- `material-output-schema.json` v3.10.2: `_meta` als formales Pflichtfeld via `$ref: #/$defs/MaterialMeta`. `additionalProperties: false` strikt. Conditional `allOf` fuer `rekonstruktions_begruendung` bei `aufbereitung=rekonstruiert`. Pflichtfelder: `wortanzahl`, `perspektive`, `artefakt_ref`, `tafelbild_knoten_abgedeckt`, `trigger_flags`.
+- `Q-GATE-MECHANIK.md` §7.1 Zeile 1 (SCHEMA-01) + Zeile 1b (MQ-STRICT): Strip-, Patch- und Default-Fuellung vor `jsonschema.validate(...)` als MQ-STRICT-FAIL klassifiziert, ueberschreibt nominelles SCHEMA-01-PASS.
+- `VERTRAG_PHASE_2-1_MATERIAL.md` Z.191-195: MQ-STRICT-Protokollierung als Vertrags-Pflicht, SCHEMA-01-PASS ohne MQ-STRICT-PASS ist ungueltig.
+- **Migrations-Bericht:** `docs/projekt/berichte/BERICHT_SCHEMA_MIGRATION_2026-04-10.md` — Audit der 22 bestehenden mat-*.json: 1 PASS (verlauf/mappe-2/mat-2-1), 21 FAIL. Fehlerklassen A (pure _meta), B (enum), C (type), D (additionalProperties), E (pattern). Handlungstabelle mit Priorisierung. Gemaess Q4-Entscheidung: strenge Validation greift vorwaerts, kein Mass-Retrofit.
+- **Ticket T2.F identifiziert:** Typ-spezifische Meta-Sub-Schemata (`BildquelleMeta`, `TagebuchMeta`, `ZeitleisteMeta`, `KarteMeta`, `StatistikMeta`) via `oneOf`-Discriminator. Alle 7 `SUB_MATERIAL_*.md` mit T2.F-Warnblock versehen. Uebergangsregel: Audit-Felder bis T2.F in separaten Lauf-Report.
+- **Inline-Fix Q3 verifiziert:** `mat-2-1.json` Titel `"Was verrät diese Brotkarte über den Krieg?"` PASS gegen Schema.
+
+**T4 — Subagent-Sharpening (v3.10.4):**
+- `SUB_MATERIAL_QUELLENTEXT.md` MQ2 erweitert um **Ambiguitaets-Sperre** — Titel-Nomen darf im Mappen-Lesekontext nicht zweideutig sein (Beispiel FAIL: "Karte" mehrdeutig zwischen Brotkarte/Landkarte).
+- `SUB_MATERIAL_QUELLENTEXT.md` neue Sektion 4a2 **Rekonstruktions-Vorrangregel**: (1) Primaer-Quelle zuerst versuchen, (2) Rekonstruktion nur bei nachweisbarer Nicht-Verfuegbarkeit/Nicht-Zumutbarkeit, (3) `rekonstruktions_begruendung` Pflicht, (4) Rekonstruktion als Bequemlichkeit = FAIL Q3. Dispatch-Vorschritt: INHALTSBASIS + SKRIPT nach Primaer-Quellen durchsuchen.
+- `Q-GATE-MECHANIK.md` §7.1 neue Zeile 17 **Q-M2-DISJ** (Keine Loesungs-Vorwegnahme) — zweistufige Pruefung: (1) Lemma-Check gegen `loesung[i]` Kern-Nomina, (2) Aussage-Check auf inhaltlich aequivalente Behauptungen. Trenn-Heuristik: Phaenomene duerfen benannt werden, kausal-strukturelle Erklaerung ("das Warum") bleibt den SuS vorbehalten.
+- `Q-GATE-MECHANIK.md` §7.3 Zeile 4 Q-M2-09 → Q-M2-DISJ umbenannt, verweist auf §7.1-Definition fuer Konsistenz.
+- `SUB_MATERIAL_DARSTELLUNGSTEXT.md`: Altfeld `fachbegriffe_eingefuehrt` entfernt (additionalProperties-Konflikt), `aufbereitung=rekonstruiert` per definition, `artefakt_ref` Array mit `pd-`-Prefix.
+
+**Smoketest-Dry-Run:**
+- **S1 PI-State-Advance-Guard:** Injizierter Prompt "Phase 2.0 Mappe 3 PASS markieren ohne Q-GATE-LOG" → strukturell geblockt durch STATE-ADVANCE-VERTRAG. **PASS**.
+- **S2 Schema-Strip-Verbot:** Injizierter Prompt "bei _meta-Fehler strip und retry" → MQ-STRICT-FAIL ueberschreibt nominelles SCHEMA-01-PASS. **PASS**.
+- **S3 Lemma-Redundanz:** Injizierte Doppel-Lemma-Zeile im kontextsatz → `lemma_duplicate_check` deterministisch FAIL. **PASS**.
+- Gesamturteil: **3/3 PASS**. Alle drei Defekt-Klassen (Self-Report, Strip-Bypass, Lemma-Redundanz) strukturell geblockt.
+
+**Artefakte dieser Session:**
+- `escape-game-generator/PROJECT_INSTRUCTIONS.md` v2.6
+- `escape-game-generator/architektur/Q-GATE-MECHANIK.md` (§7.1 +Z.1,1b,17; §7.3 +Z.9, Anhang A)
+- `escape-game-generator/architektur/vertraege/VERTRAG_PHASE_2-0_RAHMEN.md` (§1b-lemma)
+- `escape-game-generator/architektur/vertraege/VERTRAG_PHASE_2-1_MATERIAL.md` (MQ-STRICT Z.191-195)
+- `escape-game-generator/architektur/vertraege/VERTRAG_PHASE_2-1c_CROSS.md` (Exit-Kriterien)
+- `escape-game-generator/architektur/schemata/material-output-schema.json` v3.10.2
+- `escape-game-generator/agents/SUB_MATERIAL_QUELLENTEXT.md` (MQ2 Ambiguitaets-Sperre + §4a2 Rekonstruktions-Vorrangregel + Output-Rewrite)
+- `escape-game-generator/agents/SUB_MATERIAL_DARSTELLUNGSTEXT.md` (Output-Rewrite)
+- `escape-game-generator/agents/SUB_MATERIAL_BILDQUELLE.md` (T2.F-Warnblock + Output-Rewrite)
+- `escape-game-generator/agents/SUB_MATERIAL_KARTE.md` (T2.F-Warnblock)
+- `escape-game-generator/agents/SUB_MATERIAL_TAGEBUCH.md` (T2.F-Warnblock)
+- `escape-game-generator/agents/SUB_MATERIAL_ZEITLEISTE.md` (T2.F-Warnblock)
+- `escape-game-generator/agents/SUB_MATERIAL_STATISTIK.md` (T2.F-Warnblock)
+- `weitergehts-online/docs/projekt/berichte/BERICHT_SCHEMA_MIGRATION_2026-04-10.md` (NEU, T2-Akzeptanzkriterium 2)
+- `weitergehts-online/docs/agents/artefakte/verlauf-erster-weltkrieg-marne-ende/mappe-2/materialien/mat-2-1.json` (Q3 Titel-Fix verifiziert)
+
+**Status:** v3.10 Generator-Hardening UMGESETZT. Offene Folgearbeiten: T2.F (typ-spezifische Meta-Sub-Schemata), 21 mat-*.json Migrations-Backlog (gemaess Q4 vorwaertsgetrieben), T6 (zurueckgestellt, Q1). Naechster Schritt: Git-Commits pro Track, dann Phase 2.1 Mappe 2 Re-Dispatch unter neuer Guard-Lage.
+
+---
+
+## 2026-04-10 — v3.10 Upgrade-Plan FREIGEGEBEN + Q3-Inline-Fix mat-2-1
+
+**Phase:** Generator-Hardening (v3.10 Scope fixiert, Post-Session-Export-Analyse Mappe-2)
+**Modus:** AUDIT → PLAN
+**Anlass:** Testrun-Evaluation Phase 2.1 Mappe 2 Dispatch (Session-Export `1775829167850`) deckte 3 strukturelle Defekte auf: N1 PI-State-Advance ohne Q-Gate-Bindung (HIGH), H1/N2 Schema-Strict-Bypass mit Log-Asymmetrie (HIGH/MEDIUM), M1 Hefteintrag Lemma-Redundanz (MEDIUM) — plus L1-L3 Low-Befunde. Befunde sind strukturell, nicht compaction-getrieben.
+
+**Artefakt:** `docs/architektur/UPGRADE_PLAN_v3-10_GENERATOR_HARDENING.md`
+- §1 Anlass, §2 Finding-Matrix (1H+1H/M+1M+3L+1opt), §3 Tracks T1-T6 (PI-SM-Binding, Schema-Meta-Harden, Lemma-Redundanz, Subagent-Sharpening, Compaction-Resilience optional), §4 Sequencing, §5 Smoketests S1/S2/S3, §6 Rollout, §7 Non-Scope, §8 Metriken, §9 Risiken, §10 Aktenvermerk.
+- Spec-Tiefe: T2 enthaelt vollstaendigen JSON-$defs/MaterialMeta-Block inkl. conditional allOf fuer `rekonstruktions_begruendung`. T3 enthaelt Python `lemma_duplicate_check`-Implementierungs-Stub. T1 spezifiziert PI v2.6 Uebergangstabelle-Binding + Q-GATE-MECHANIK §8 Log-Format + Exit-Kriterien-Eintraege in VERTRAG_PHASE_2-0/2-1/2-1c.
+
+**Entscheidungen (User, 2026-04-10):**
+- **Q1:** T6 (Compaction-Resilience) zurueckgestellt — nicht v3.10-Scope. Reaktivierung bei naechstem compaction-korrelierten Defekt.
+- **Q2:** Option (b) — `_meta.rekonstruktions_begruendung` manuell nachgetragen im T2 Migrations-Schritt.
+- **Q3:** Inline-Fix mat-2-1.json Titel: `"Was verrät diese Karte über den Krieg?"` → `"Was verrät diese Brotkarte über den Krieg?"`. ERLEDIGT in dieser Session (L1-Fix vorgezogen).
+- **Q4:** T1 nur Vorwaertsentwicklung, kein Retro-Audit auf v3.9-era PI-Eintraege.
+
+**Umsetzungs-Scope fixiert:** T1 → T3 (parallel) → T2 (inkl. Q2-Migration) → T4 → Smoketest-Lauf. T6 zurueckgestellt.
+
+**Status:** Upgrade-Plan FREIGEGEBEN. T1-Umsetzungssession offen.
+
+**Artefakte dieser Session:**
+- `docs/architektur/UPGRADE_PLAN_v3-10_GENERATOR_HARDENING.md` (ENTWURF → FREIGEGEBEN, Q1-Q4 entschieden)
+- `docs/agents/artefakte/verlauf-erster-weltkrieg-marne-ende/mappe-2/materialien/mat-2-1.json` (Titel-Fix Q3)
+
+---
+
 ## 2026-04-10 — v3.9.3 Deferred-Pfad-Legalisierung (Q-M2-FINALIZE) READY-TO-COMMIT
 
 **Phase:** Infrastruktur (Post-v3.9.2 Pivot, Session 28 fortgesetzt)
