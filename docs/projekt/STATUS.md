@@ -1,9 +1,11 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-10 (v3.10 Generator-Hardening UMGESETZT: T1/T3/T2/T4 + Smoketest-Dry-Run 3/3 PASS. T2.F + 21 mat-Backlog offen.)
+**Letzte Aktualisierung:** 2026-04-10 (v3.11 Deploy-State-Machine UMGESETZT: T1/T2/T3/T4 + Smoketests D1/D2/D3 PASS. Neuer Defekt entdeckt: ursachen-Titel-Drift → P1 Mini-Korrektur nach v3.11. v3.10-Folgearbeiten weiter offen per Q5=c.)
 **Modus:** IMPLEMENTATION → COMMIT
-**Aktiver Upgrade-Plan:** `docs/architektur/UPGRADE_PLAN_v3-10_GENERATOR_HARDENING.md` (Scope: T1→T3→T2→T4→Smoketests. T6 zurueckgestellt. Umsetzung 2026-04-10 abgeschlossen, Commit+Push offen.)
-**Offene Folgetickets:** T2.F (typ-spezifische Meta-Sub-Schemata via oneOf-Discriminator), 21 mat-*.json Migrations-Backlog (Q4 vorwaertsgetrieben, siehe `docs/projekt/berichte/BERICHT_SCHEMA_MIGRATION_2026-04-10.md`).
+**Aktiver Upgrade-Plan:** `docs/architektur/UPGRADE_PLAN_v3-11_DEPLOY_STATE_MACHINE.md` (Scope: T1 PI+Vertrag → T2 Q-Gate-Katalog+Scripts → T3 CSS Feature-Flag → T4 Retro-Log Marne → Smoketests. Alle Tracks 2026-04-10 abgeschlossen, Commit+Push offen.)
+**Offene Folgetickets:**
+- **P1-NEU Ursachen-Titel-Drift** (entdeckt durch erste Ausfuehrung von `tools/deploy-check.sh gpg-erster-weltkrieg-ursachen`, 2026-04-10): `data.json.meta.titel="Der Erste Weltkrieg — Ursachen und Ausbruch"` vs. Landing-Page-`<li>`="Pulverfass Europa – Der Erste Weltkrieg (GPG R7)". Eine der beiden Seiten muss angeglichen werden. Vorgeschlagene Richtung: Landing-Page `<li>`-Text an `data.json.meta.titel` angleichen (data.json ist Single-Source fuer Game-Metadata), alternativ `data.json.meta.titel` an Landing-Page angleichen, falls der Marketing-Titel gewuenscht ist. Nicht v3.11-Scope, eigene Mini-Aktion.
+- **P1 v3.10-Folgearbeiten** (zurueckgestellt per Q5=c waehrend v3.11 lief): T2.F (typ-spezifische Meta-Sub-Schemata via oneOf-Discriminator), 21 mat-*.json Migrations-Backlog (Q4 vorwaertsgetrieben, siehe `docs/projekt/berichte/BERICHT_SCHEMA_MIGRATION_2026-04-10.md`).
 
 ---
 

@@ -4,6 +4,70 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-10 — v3.11 Deploy-State-Machine UMGESETZT (T1/T2/T3/T4 + Smoketests D1/D2/D3)
+
+**Phase:** Deploy-State-Machine-Binding Umsetzung (v3.11)
+**Modus:** IMPLEMENTATION
+**Ausloeser:** Strukturluecke zwischen Phase 3.0 Assembly (Claude Code) und Live-Schaltung. Konkreter Defekt: Marne-Game ging live ohne Landing-Page-Eintrag; Heilung via manuellem Commit `3fda51d`. v3.11 baut den Gate-Mechanismus, der diese Klasse von Defekten strukturell blockt.
+
+**Q-Entscheidungen (vom User gesetzt):**
+- **Q1=a** CSS Feature-Flag (Soft-Isolation via `data-status="staging"` + `?staging=1`) statt separates Staging-Verzeichnis.
+- **Q2=b** Post-Deploy-Smoketest OPTIONAL (nicht Teil des Blocking-Gate, nur auf User-Wunsch).
+- **Q3=c** Retro-Q-Gate-Log nur fuer Marne-Game (direkter Defekt-Trigger), nicht fuer ursachen/bayern. Akzeptierter Nachteil: asymmetrischer Audit-Zustand.
+- **Q4=a** Phase-3-Renumbering: 3.0 Assembly (extern) + 3.1 Deploy-Preparation (Cowork) + 3.2 Live-Go (Cowork+User).
+- **Q5=c** v3.10-Folgearbeiten (T2.F, 21 mat-Backlog) nach v3.11.
+
+**T1 — PI-State-Machine + Vertrag (escape-game-generator):**
+- `PROJECT_INSTRUCTIONS.md` v2.6 → **v2.7**: Zeile 19 (3.0 Assembly) + 4 neue Steuerzeilen 20-23: Zeile 20 Phase 3.1 Deploy-Preparation (deploy-check.sh, Q-GATE-LOG game-scope, Staging-Flag setzen), Zeile 21 USER-VALIDIERUNG LIVE-FREIGABE (`?staging=1` Flow), Zeile 22 Phase 3.2 Live-Go (Staging-Flag entfernen, Commit, push durch User, optional smoketest, MAPPEN_ABGESCHLOSSEN++ HIER), Zeile 23 Verzweigung.
+- SELBST-AKTUALISIERUNG Punkt 4: `MAPPEN_ABGESCHLOSSEN++` verschoben von Zeile 19 (Assembly) nach Zeile 22 (Live-Go). Assembly alleine markiert keine Mappe mehr als abgeschlossen — erst die Live-Schaltung.
+- STATE-ADVANCE-VERTRAG erweitert: Bedingung 5 (Phase 3.1 DEPLOY-01..05 PASS wortwoertlich) + Bedingung 6 (Phase 3.2 STAGING-FLAG-ENTFERNT + COMMIT-SHA + optional POST-DEPLOY-SMOKETEST).
+- **Neuer Vertrag:** `architektur/vertraege/VERTRAG_PHASE_3-1_DEPLOY.md` — §1 Vorbedingungen, §2 Ausfuehrung (2.1 Script-Aufruf, 2.2 Q-GATE-LOG-Format, 2.3 Staging-Flag-Prozedur), §3 FAIL-PROTOKOLL mit gate-spezifischer Ruecklauf-Zuordnung, §4 Nachbedingungen, §5 Referenzen.
+- `agents/PFAD_MANIFEST.md`: 3 neue Eintraege (VERTRAG_PHASE_3-1_DEPLOY, `{TARGET}/tools/deploy-check.sh`, `{TARGET}/tools/post-deploy-smoketest.sh`).
+
+**T2 — Q-Gate-Katalog + Scripts:**
+- `architektur/Q-GATE-MECHANIK.md` §7.7 **Deploy-Preparation-Q-Gate (Phase 3.1)** neu: DEPLOY-01 (data.json valide, Pflichtfelder), DEPLOY-02 (Asset-Referenzen existieren, extension-basiert), DEPLOY-03 (Titel-Byte-Identitaet data.json.meta.titel <-> Landing-Page `<li>`), DEPLOY-04 (`len(mappen[])` == `mappe-*.html` Count), DEPLOY-05 (Game-index.html referenziert escape-engine + data.json).
+- `architektur/Q-GATE-MECHANIK.md` §7.8 **Live-Go-Q-Gate (Phase 3.2)** neu: LIVE-01 STAGING-FLAG-ENTFERNT, LIVE-02 COMMIT-SHA-vorhanden, LIVE-03 POST-DEPLOY-SMOKETEST (optional per Q2=b).
+- **Hinweis Abweichung vom Plan:** Plan verwies initial auf §7.4, aber §7.4 war bereits durch Cross-Konsistenz belegt. Tatsaechliche Einsatzorte: §7.7 + §7.8.
+- **Neu:** `tools/deploy-check.sh` (weitergehts-online, ~300 Zeilen). Bash-Wrapper + inline python3 pro Gate. Exit 0 = PASS, 1 = FAIL, 2 = Infra-Fehler. Chmod +x.
+- **Neu:** `tools/post-deploy-smoketest.sh` (weitergehts-online). HTTP-Check via curl fuer LANDING + GAME_URL + DATA_URL, 6 Retry-Versuche a 10s (GitHub-Pages-Cache-Fenster). Chmod +x.
+
+**T3 — CSS Feature-Flag in `index.html` (Soft-Isolation):**
+- `<style>`-Block: `li[data-status="staging"] { display: none; }` als Default. `html.staging-mode` override: orange dashed outline, `::after` Text "[STAGING — nicht live]", `body::before` Banner "STAGING-MODUS aktiv (via ?staging=1)".
+- Synchroner `<script>` im `<head>` (vor Body-Render): liest `?staging=1` via URLSearchParams, setzt `document.documentElement.classList.add('staging-mode')`. Verhindert Flash-of-Hidden-Content.
+- `<li>` Elemente beider bestehenden Games erhalten IDs (`game-gpg-erster-weltkrieg-ursachen`, `game-verlauf-erster-weltkrieg-marne-ende`) fuer DEPLOY-03 Gate-Matching.
+
+**T4 — Retro-Q-Gate-Log Marne-Game (Q3=c):**
+- **Neu:** `docs/agents/artefakte/verlauf-erster-weltkrieg-marne-ende/Q-GATE-LOG_PHASE_3.md` (game-scope).
+- Phase 3.0 Abschnitt: Verweis auf externe Assembly-Sandbox + Commit `1a13fce`.
+- Phase 3.1 Abschnitt: deploy-check.sh stdout wortwoertlich eingefuegt, alle 5 Gates PASS. DEPLOY-03 PASS ist der strukturelle Beleg, dass `3fda51d` (Heilungs-Commit) den Zielzustand erreicht hat. Staging-Flag-Schritt retro NICHT APPLIZIERT (Marne lief ohne).
+- Phase 3.2 Abschnitt: Rekonstruktion aus Git-Log. Doppel-Commit (`1a13fce` + `3fda51d`) als Artefakt-Beleg des Defekts, der v3.11 motiviert hat. LIVE-01 N/A, LIVE-02 PASS (retro), LIVE-03 N/A (optional).
+
+**Smoketests D1/D2/D3 (Structural Dry-Runs):**
+- **D1 Titel-Drift:** Natuerlicher Smoketest via `gpg-erster-weltkrieg-ursachen`-Game. `deploy-check.sh` blockt mit `DEPLOY-03 FAIL Titel-Drift: data.json='Der Erste Weltkrieg — Ursachen und Ausbruch' vs. <li>='Pulverfass Europa – Der Erste Weltkrieg (GPG R7)'`. **PASS.** (Und findet damit einen realen Live-Defekt, siehe unten.)
+- **D2 Landing-Gap:** Fixture `escape-games/zzz-smoke-d2/` (Kopie von Marne) ohne `<li>`-Eintrag in `index.html`. Script blockt mit `DEPLOY-03 FAIL <li> fuer zzz-smoke-d2 nicht im Landing-HTML`. **PASS.** Fixture nach Test entfernt.
+- **D3 Untracked Asset:** Fixture `escape-games/zzz-smoke-d3/` mit injiziertem `meta.fake_bild = "../../assets/img/zzz-nonexistent-smoke/fake.jpg"`. Script blockt mit `DEPLOY-02 FAIL fehlende Assets: 1/2 - meta.fake_bild=...`. **PASS.** Fixture nach Test entfernt.
+
+**Neuer Defekt entdeckt (erster Live-Einsatz des neuen Gates):**
+Erster Run von `tools/deploy-check.sh gpg-erster-weltkrieg-ursachen` deckte **Titel-Drift** auf: `data.json.meta.titel = "Der Erste Weltkrieg — Ursachen und Ausbruch"` vs. Landing-Page-`<li>` = "Pulverfass Europa – Der Erste Weltkrieg (GPG R7)". Aufgenommen in STATUS.md als P1-Folgearbeit (NICHT v3.11-Scope — v3.11 liefert das Werkzeug, die Korrektur ist eigene Mini-Aktion nach v3.11-Abschluss).
+
+**Nachtraegliche Bugfixes im Script selbst:**
+- DEPLOY-02 erste Version field-name-basiert (`bild_pfad|hero_image|image`) fand 0 Assets weil aktuelles Schema `inhalt`-Feld mit `../../assets/...` nutzt. Umgestellt auf extension-basiert (`.jpg|.jpeg|.png|.webp|.svg|.gif`), handled `../../`-Praefix, skip `File:`-Wikimedia-Metadaten, Dedup. Re-Test: Marne 1 Ref, Ursachen 12 Refs, alle vorhanden.
+- DEPLOY-03 nach T3 matchte `<li>` INSIDE HTML-Kommentar (`<!-- v3.11 Staging-Flag: blendet <li data-status="staging"> aus; -->`). Fix: Preprocessing-Schritt strippt HTML-Kommentare + `<style>` + `<script>`-Bloecke vor dem `<li>`-Regex. Sanity Re-Run PASS.
+
+**Artefakt-Uebersicht:**
+- `docs/architektur/UPGRADE_PLAN_v3-11_DEPLOY_STATE_MACHINE.md` — Entwurf + Q-Entscheidungstabelle §11. Status: FREIGEGEBEN.
+- `docs/agents/artefakte/verlauf-erster-weltkrieg-marne-ende/Q-GATE-LOG_PHASE_3.md` — Retro-Log Marne.
+- `tools/deploy-check.sh` — DEPLOY-01..05 Script, chmod +x.
+- `tools/post-deploy-smoketest.sh` — LIVE-03 HTTP-Smoketest Script, chmod +x.
+- `index.html` — CSS Feature-Flag + IDs.
+- Generator-Repo (getrennter Commit via Host-Terminal wegen Virtiofs-Lock): `PROJECT_INSTRUCTIONS.md` v2.7, `architektur/vertraege/VERTRAG_PHASE_3-1_DEPLOY.md`, `architektur/Q-GATE-MECHANIK.md` §7.7+§7.8, `agents/PFAD_MANIFEST.md`.
+
+**Offene Folgeschritte nach v3.11-Abschluss:**
+- Ursachen-Titel-Drift korrigieren (P1 Mini-Aktion, siehe STATUS).
+- v3.10-Folgearbeiten: T2.F typ-spezifische Meta-Sub-Schemata, 21 mat-Backlog Migration (per Q5=c).
+
+---
+
 ## 2026-04-10 — v3.10 Generator-Hardening UMGESETZT (T1/T3/T2/T4 + Smoketests)
 
 **Phase:** Generator-Hardening Umsetzung (v3.10.1 → v3.10.4)

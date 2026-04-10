@@ -617,6 +617,17 @@ Keine separaten Befund-Dateien; dieser Upgrade-Plan ist die konsolidierte Form. 
 
 ---
 
-**Dokument-Status:** ENTWURF (2026-04-10) — wartet auf Q1-Q5 Entscheidung
-**Naechster Schritt:** User-Review + Freigabe der Q-Entscheidungen → T1 Umsetzung
+**Dokument-Status:** FREIGEGEBEN (2026-04-10) — Q1-Q5 durch User entschieden
 **Verweis:** v3.10 als Template (`UPGRADE_PLAN_v3-10_GENERATOR_HARDENING.md`)
+
+## 11. Q-Entscheidungen (gelockt 2026-04-10)
+
+| Q | Entscheidung | Begruendung |
+|---|---|---|
+| Q1 | **a** — T3a CSS-Feature-Flag mit `data-status="staging"` + `?staging=1` | Solo-Betrieb, minimaler Aufwand, rueckbaubar |
+| Q2 | **b** — Post-Deploy-Smoketest optional, manuell ausfuehrbar | Keine Netzwerk-Abhaengigkeit zum Push-Zeitpunkt; Script wird trotzdem bereitgestellt |
+| Q3 | **c** (Abweichung vom Vorschlag a) — Retro-Log NUR fuer Marne-Game (`verlauf-erster-weltkrieg-marne-ende`), NICHT fuer `gpg-erster-weltkrieg-ursachen` | Marne-Game war der direkte Defekt-Ausloeser (Titel-Drift + fehlende Landing-Page). bayern-1918 / gpg-erster-weltkrieg-ursachen zeigte keine dokumentierten DEPLOY-Defekte. Minimaler Aufwand bei akzeptabler Audit-Luecke. **Akzeptierter Nachteil:** Ein Game bleibt ohne Retro-Log, Audit-Konsistenz ist asymmetrisch. |
+| Q4 | **a** — Renumbering der Phase-3-Sequenz (3.0 Kompilation, 3.1 Deploy-Preparation, 3.2 Live-Go) | Semantisch korrekt, Diff-Laermpegel einmalig, konsistent mit v3.9.1-Muster |
+| Q5 | **c** — v3.10-Folgearbeiten (T2.F, 21 mat-Migration, T6 Compaction-Resilience) NACH v3.11 | v3.11 schliesst blockierende Luecke fuer jede neue Produktion; T2.F kann warten |
+
+**Folge fuer T4:** Scope reduziert sich auf 1 Game statt 2 — Aufwand ~20 min statt ~60 min.

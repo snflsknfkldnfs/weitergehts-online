@@ -5,6 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>weitergehts.online – Interaktive Unterrichtsmaterialien</title>
     <link rel="stylesheet" href="assets/css/base.css">
+    <!-- v3.11 Staging-Flag: blendet <li data-status="staging"> aus; nur sichtbar mit ?staging=1 -->
+    <style>
+      li[data-status="staging"] { display: none; }
+      html.staging-mode li[data-status="staging"] {
+        display: list-item;
+        outline: 2px dashed #d97706;
+        padding: 4px 8px;
+        background: #fff7ed;
+      }
+      html.staging-mode li[data-status="staging"]::after {
+        content: " [STAGING — nicht live]";
+        color: #d97706;
+        font-weight: bold;
+        font-size: 0.9em;
+      }
+      html.staging-mode body::before {
+        content: "STAGING-MODUS aktiv (via ?staging=1)";
+        display: block;
+        background: #d97706;
+        color: white;
+        padding: 8px 16px;
+        font-weight: bold;
+        text-align: center;
+      }
+    </style>
+    <script>
+      // Synchron im <head>: verhindert Flash-of-Hidden-Content
+      (function() {
+        try {
+          var params = new URLSearchParams(window.location.search);
+          if (params.get('staging') === '1') {
+            document.documentElement.classList.add('staging-mode');
+          }
+        } catch (e) { /* keine URLSearchParams-Unterstuetzung -> staging off */ }
+      })();
+    </script>
 </head>
 <body>
     <main>
@@ -13,12 +49,12 @@
 
         <h2>Escape-Games</h2>
         <ul>
-            <li>
+            <li id="game-gpg-erster-weltkrieg-ursachen">
                 <a href="escape-games/gpg-erster-weltkrieg-ursachen/index.html">
                     Pulverfass Europa – Der Erste Weltkrieg (GPG R7)
                 </a>
             </li>
-            <li>
+            <li id="game-verlauf-erster-weltkrieg-marne-ende">
                 <a href="escape-games/verlauf-erster-weltkrieg-marne-ende/index.html">
                     Der Erste Weltkrieg — Verlauf von der Marne bis zum Ende (GPG R7)
                 </a>
