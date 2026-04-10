@@ -1,6 +1,6 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-10 (Session 28, v3.9 + v3.9.1 + v3.9.2 Follow-up-Patches COMPLETE)
+**Letzte Aktualisierung:** 2026-04-10 (Session 28, v3.9 + v3.9.1 + v3.9.2 + v3.9.3 Deferred-Pfad-Legalisierung COMPLETE)
 **Modus:** AUDIT
 
 ---

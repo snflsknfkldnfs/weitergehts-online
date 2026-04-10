@@ -1272,22 +1272,29 @@ var EscapeEngine = (function () {
       }
     }
 
+    // v3.9.3: Assembly-Guard — unresolved Deferred-Marker unterdruecken (Q-M2-FINALIZE-Verstoss)
+    var DEFERRED_MARKER = '[REVISION IN 2.1c]';
+
     // Zusammenfassung
-    if (sicherung.zusammenfassung) {
+    if (sicherung.zusammenfassung && sicherung.zusammenfassung !== DEFERRED_MARKER) {
       var zusammenfassungDiv = document.createElement('div');
       zusammenfassungDiv.className = 'sicherung__zusammenfassung';
       zusammenfassungDiv.textContent = sicherung.zusammenfassung;
       container.appendChild(zusammenfassungDiv);
+    } else if (sicherung.zusammenfassung === DEFERRED_MARKER && typeof console !== 'undefined' && console.warn) {
+      console.warn('[escape-engine v3.9.3] sicherung.zusammenfassung enthaelt unresolved Deferred-Marker — Phase 2.1c Achse 7 wurde nicht ausgefuehrt. Rendering unterdrueckt.');
     }
 
     // Ueberleitung
-    if (sicherung.ueberleitung) {
+    if (sicherung.ueberleitung && sicherung.ueberleitung !== DEFERRED_MARKER) {
       var ueberleitungP = document.createElement('p');
       ueberleitungP.className = 'sicherung__ueberleitung';
       var em = document.createElement('em');
       em.textContent = sicherung.ueberleitung;
       ueberleitungP.appendChild(em);
       container.appendChild(ueberleitungP);
+    } else if (sicherung.ueberleitung === DEFERRED_MARKER && typeof console !== 'undefined' && console.warn) {
+      console.warn('[escape-engine v3.9.3] sicherung.ueberleitung enthaelt unresolved Deferred-Marker — Phase 2.1c Achse 7 wurde nicht ausgefuehrt. Rendering unterdrueckt.');
     }
 
     // v3.9.2: Zitat (historische Quelle)

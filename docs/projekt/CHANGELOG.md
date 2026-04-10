@@ -4,6 +4,63 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-10 — v3.9.3 Deferred-Pfad-Legalisierung (Q-M2-FINALIZE) READY-TO-COMMIT
+
+**Phase:** Infrastruktur (Post-v3.9.2 Pivot, Session 28 fortgesetzt)
+**Modus:** AUDIT
+**Anlass:** Session-Eval des realgetreuen Mappe-2-Fortsetzungs-Testruns (`docs/analyse/session-export-1775825661315`). KI hat Phase 2.0 Mappe 2 PASS gemeldet, dabei `sicherung.zusammenfassung` und `sicherung.ueberleitung` mit der Magic-String `"[REVISION IN 2.1c]"` befuellt. Erste Eval-Lesart: HIGH-1 Verstoss. Re-Read der Vertraege ergab: das Muster ist BEREITS in `VERTRAG_PHASE_2-0_RAHMEN.md` Z.69-71 + Z.93 + `VERTRAG_PHASE_2-1c_CROSS.md` Achse 7 Z.61, 113-114, 117 dokumentiert und in der Schema-Description referenziert. KI war contract-compliant. **Realer Befund:** Under-Specification (Magic-String, kein Schema-Enforcement, kein Q-Gate-Eintrag, kein Engine-Guard) + bestehender STR-13-Architektur-Konflikt (Mappenabschluss-Zone halb-implementiert).
+
+**v3.9.3 — Patch-Pfad A: Deferred-Pfad haerten + STR-13 als bekannte Limitation eintragen**
+
+**1. Schema-Patch — `architektur/schemata/rahmen-sicherung-schema.json`:**
+
+- Neuer `$defs/DeferredOrText`-Block mit `oneOf`-Constraint: entweder finalisierter Prosa-Text (`type: string, minLength: 30, not: { const: "[REVISION IN 2.1c]" }`) ODER exakt der Deferred-Marker (`type: string, const: "[REVISION IN 2.1c]"`).
+- `zusammenfassung` und `ueberleitung` referenzieren `$ref: "#/$defs/DeferredOrText"` statt simpler `type: string`. Required-Liste unveraendert.
+- Title/Description aktualisiert auf v3.9.3 inkl. Hinweis auf STR-13-Konflikt.
+- Smoke-Test (jsonschema python) gegen alle 5 Bestand-`sicherung.json`-Dateien (M1-M4 GPG-Mappen mit finalisiertem Prosa-Text + M2 Verlauf mit Deferred-Marker): alle 5 PASS. Negative Tests: zu kurzer String + leerer String werden korrekt rejected.
+
+**2. VERTRAG_PHASE_2-0_RAHMEN.md:**
+
+- Read-Schritt 3 + Dispatch-Schritt 5: "Achse 6" → "Achse 7" (Sync mit tatsaechlicher Achsen-Numerierung in 2-1c). Hinweis auf v3.9.3 Deferred-Pfad + Schema-$defs-Referenz.
+- Q-Gate-Eintrag um `Q-M2-DEFERRED` erweitert: exakt der const-Marker, schema-enforced.
+- Neuer §Bekannte Limitationen-Eintrag: **STR-13 Mappenabschluss-Zone vs. Deferred-Pfad** — dokumentiert die zwei parallel laufenden Pfade, dass der Deferred-Pfad operativ ist (Engine rendert `sicherung.zusammenfassung`+`sicherung.ueberleitung`), STR-13 halb-implementiert ist (Datei wird produziert, aber kein Engine-Renderer + kein Assembly-Sub-Task — siehe `BERICHT_RA4_PIPELINE.md` Z.773), und die Aufloesung als eigenes Vorhaben verschoben wird (STR-13 Engine-Patches + Migration aller Bestand-`sicherung.json` + Schema-Drop).
+
+**3. VERTRAG_PHASE_2-1c_CROSS.md:**
+
+- Achse 7 (Hefteintrag-Revision): `sicherung.zusammenfassung`/`ueberleitung` aus generischem "(NEU)" zu **FINALIZE-PFLICHT v3.9.3** umformuliert. Mindestlaenge 30 Zeichen, MUSS den Marker ersetzen, Sonderhinweis fuer letzte Mappe (kein leerer String).
+- Neue Q-Gate-Regel **Q-M2-FINALIZE**: Nach Achse 7 MUSS `sicherung.zusammenfassung !== "[REVISION IN 2.1c]"` UND `sicherung.ueberleitung !== "[REVISION IN 2.1c]"`. Schema-Validierung gegen `$defs/DeferredOrText` Prosa-Variante. FAIL → §Q-GATE-FAIL-PROTOKOLL der PI, max 3 Iterationen.
+- Dispatch-Schritt 10 ergaenzt: explizite Schema-Validierung der Prosa-Variante als Pre-Q-Gate-Check.
+
+**4. PROJECT_INSTRUCTIONS.md (PI v2.5):**
+
+- **Zeile 9** (Phase 2.0): Output von 4 Dateien auf **5 Dateien** korrigiert (mappenabschluss_zone.json war fehlend gelistet, STR-13-Status "halb-implementiert" annotiert). Vertragsspalte auf `VERTRAG_PHASE_2-0_RAHMEN.md` gesetzt. Constraint-Spalte um Deferred-Pfad-Hinweis erweitert: `sicherung.zusammenfassung`+`sicherung.ueberleitung` als Deferred-Marker, Finalisierung in Zeile 13 PFLICHT. Spalte "Abgeschlossen" auf `1.1 PASS / 3.0 Mappe [N-1]` erweitert (Loop-Einstieg-Sync).
+- **Zeile 13** (Phase 2.1c): "6 Achsen" → **"7 Achsen"** (Sync mit Vertrag — Achse 5 Perspektiven-Diversitaet war fehlend gelistet). Vertragsspalte auf `VERTRAG_PHASE_2-1c_CROSS.md` gesetzt. Constraint-Spalte um Q-M2-FINALIZE + Schema-Validierungs-PFLICHT erweitert.
+
+**5. Engine Assembly-Guard — `weitergehts-online/assets/js/escape-engine.js`:**
+
+- Neuer Konstant-Block in `_renderSicherung()` direkt vor zusammenfassung-Render: `var DEFERRED_MARKER = "[REVISION IN 2.1c]";`
+- `if (sicherung.zusammenfassung)` → `if (sicherung.zusammenfassung && sicherung.zusammenfassung !== DEFERRED_MARKER)`. Else-if-Branch loggt `console.warn` mit klarer Diagnose ("Phase 2.1c Achse 7 wurde nicht ausgefuehrt. Rendering unterdrueckt.") wenn der Marker zur Render-Zeit noch praesent ist.
+- Identisches Pattern fuer `sicherung.ueberleitung`.
+- Cache-Busting: alle 12 HTML-Refs (`escape-games/**/*.html`) von `?v=3.9.2` auf `?v=3.9.3` gebumpt.
+
+**6. M2 sicherung.json Retro-Patch:**
+
+- Entfaellt: Schema akzeptiert den existierenden const-Marker als legitimen Deferred-Wert. Datei bleibt unveraendert.
+
+**Verifikation:**
+
+- jsonschema-Validierung aller 5 Bestand-sicherung.json: PASS (4x PROSE 150-313c, 1x DEFERRED).
+- Negative-Test (kurz, leer): korrekt rejected.
+- Engine: `_renderSicherung()` syntaktisch unveraendert ausser Guard-Inserts; Cache-Bust-Sweep komplett.
+
+**Architektur-Schuld dokumentiert:**
+
+- STR-13-Konflikt aufgeloest IN den Vertrags-§Bekannte Limitationen, NICHT in Code/Schema. Cut-Over-Voraussetzungen explizit benannt: (a) Engine-Renderer fuer mappenabschluss_zone.json, (b) Assembly-Sub-Task fuer Mappenabschluss-Zone-Befuellung, (c) Migration aller Bestand-sicherung.json (Felder droppen), (d) Schema-Update (Required-Liste reduzieren). Dieses Vorhaben als eigene Wave plant der Folgesession.
+
+**Sandbox-Lock-Pattern:** escape-game-generator/.git/index.lock weiter blockierend. v3.9.3 Commit fuer Generator-Repo wird als Block an den User uebergeben. weitergehts-online (Engine + HTML + STATUS + CHANGELOG) committet Agent direkt.
+
+---
+
 ## 2026-04-10 — v3.9.2 Follow-up-Patches (F-M1 Engine, F-L1 Pfad-Move, Legacy-Refs) READY-TO-COMMIT
 
 **Phase:** Infrastruktur (Post-v3.9.1 Follow-ups)
