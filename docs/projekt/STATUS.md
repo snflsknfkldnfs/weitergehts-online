@@ -1,10 +1,10 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-10 (v3.11 Deploy-State-Machine UMGESETZT: T1/T2/T3/T4 + Smoketests D1/D2/D3 PASS. Neuer Defekt entdeckt: ursachen-Titel-Drift → P1 Mini-Korrektur nach v3.11. v3.10-Folgearbeiten weiter offen per Q5=c.)
+**Letzte Aktualisierung:** 2026-04-10 (v3.11 Deploy-State-Machine UMGESETZT + gepusht. Ursachen-Titel-Drift korrigiert (Richtung A, Landing-Page an data.json angeglichen). Beide Games deploy-check.sh PASS. v3.10-Folgearbeiten weiter offen per Q5=c.)
 **Modus:** IMPLEMENTATION → COMMIT
-**Aktiver Upgrade-Plan:** `docs/architektur/UPGRADE_PLAN_v3-11_DEPLOY_STATE_MACHINE.md` (Scope: T1 PI+Vertrag → T2 Q-Gate-Katalog+Scripts → T3 CSS Feature-Flag → T4 Retro-Log Marne → Smoketests. Alle Tracks 2026-04-10 abgeschlossen, Commit+Push offen.)
+**Aktiver Upgrade-Plan:** `docs/architektur/UPGRADE_PLAN_v3-11_DEPLOY_STATE_MACHINE.md` (Scope: T1 PI+Vertrag → T2 Q-Gate-Katalog+Scripts → T3 CSS Feature-Flag → T4 Retro-Log Marne → Smoketests. Alle Tracks 2026-04-10 abgeschlossen. Commits 775f1c1 (v3.11) + ffd240c (Host-Script) gepusht.)
 **Offene Folgetickets:**
-- **P1-NEU Ursachen-Titel-Drift** (entdeckt durch erste Ausfuehrung von `tools/deploy-check.sh gpg-erster-weltkrieg-ursachen`, 2026-04-10): `data.json.meta.titel="Der Erste Weltkrieg — Ursachen und Ausbruch"` vs. Landing-Page-`<li>`="Pulverfass Europa – Der Erste Weltkrieg (GPG R7)". Eine der beiden Seiten muss angeglichen werden. Vorgeschlagene Richtung: Landing-Page `<li>`-Text an `data.json.meta.titel` angleichen (data.json ist Single-Source fuer Game-Metadata), alternativ `data.json.meta.titel` an Landing-Page angleichen, falls der Marketing-Titel gewuenscht ist. Nicht v3.11-Scope, eigene Mini-Aktion.
+- ~~**P1-NEU Ursachen-Titel-Drift**~~ **CLOSED 2026-04-10**: Richtung A umgesetzt. Landing-Page `<li id="game-gpg-erster-weltkrieg-ursachen">`-Text geaendert von "Pulverfass Europa – Der Erste Weltkrieg (GPG R7)" zu "Der Erste Weltkrieg — Ursachen und Ausbruch (GPG R7)". `data.json.meta.titel` unveraendert als Single-Source. Regression-Check via `./tools/deploy-check.sh gpg-erster-weltkrieg-ursachen` + Marne-Regression: beide PASS. Marketing-Framing "Pulverfass Europa" entfallen — ggf. in Folgeprojekt als separater Untertitel-Block nachziehen falls pedagogisch gewuenscht.
 - **P1 v3.10-Folgearbeiten** (zurueckgestellt per Q5=c waehrend v3.11 lief): T2.F (typ-spezifische Meta-Sub-Schemata via oneOf-Discriminator), 21 mat-*.json Migrations-Backlog (Q4 vorwaertsgetrieben, siehe `docs/projekt/berichte/BERICHT_SCHEMA_MIGRATION_2026-04-10.md`).
 
 ---
