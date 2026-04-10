@@ -4,6 +4,47 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-10 — v3.9.1 Struktur-Audit-Patch (Anschlussfaehigkeit + Konsistenz) READY-TO-COMMIT
+
+**Phase:** Infrastruktur (Post-v3.9-Audit)
+**Modus:** AUDIT
+**Session:** 28 (Fortsetzung)
+
+**Nach Abschluss von v3.9 fundierter Struktur-Audit gefahren (2H + 4M + 4L Findings), alle 10 Findings in einem Patch-Release v3.9.1 behoben. Ziel: lueckenlose Konsistenz und Anschlussfaehigkeit der Steuerungs- und Vertragsschicht vor Mappe-2-Produktion.**
+
+**Motivation:** User-Direktive nach v3.9-Abschluss: "fundierter praeziser Audit der Infrastruktur um blinde Flecken bei der Refaktorisierung zu evaluieren". Danach: "alles entsprechend praezise optimieren, erlaesslichkeit und lueckenlose Kontingenz/Anschlussfaehigkeit muss sichergestellt werden".
+
+**Audit-Befunde (Session 28, 2026-04-10):**
+
+- **HIGH:**
+  - H1: Q-GATE-FAIL-Protokoll in PI nur rudimentaer, volle Ruecklauf-Zuordnung fehlte → SSOT-Tabelle gebaut.
+  - H2: Legacy Phase-3-Agenten (TECHNIK/DESIGN/QUALITAET) noch als aktiv in §Zugehoerige Agenten-Definitionen → als obsolet markiert.
+- **MEDIUM:**
+  - M1: Phase 0.4 innere Schleife pro Mappe in PI nicht explizit (nur implizit ueber "fuer alle Mappen") → explizit ausgeschrieben inkl. Progressionsinput G9 ab Mappe 2.
+  - M2: Schema-Referenz fehlt in Phase 2.1/2.2b → **verworfen** nach tiefer Pruefung: `architektur/schemata/` enthaelt dedizierte Teilschemata (material-output, feedback-via-VERTRAG), VERTRAG_PHASE_2-2b sagt explizit "NICHT lesen: data.json" — Separation by design.
+  - M3: PFAD_MANIFEST.md Dokumentations-Section mit veralteten ORCHESTRATOR-Akteur-Referenzen → umgewidmet auf PI/Cowork-Session, Phase-0.3/0.4/1 Agenten (SKRIPT, HEFTEINTRAG, ARTEFAKT) aufgenommen.
+  - M4: Zeile 11 (Strategie-Audit E1) war eigene Row obwohl konditional NUR fuer Mappe 2 → als Sub-Constraint in Zeile 10 integriert, Zeilen 12-20 umnummeriert, Verzweigungslogik Zeile 19 (3.0 → Zeile 9 fuer Loop, nicht Zeile 6) explizit.
+- **LOW:**
+  - L1: WORKFLOW_v4.md in ORCH als "kanonisch" und "Tiebreaker bei Widerspruechen" — widersprach PI=SSOT-Prinzip → Autoritaets-Hierarchie klargestellt (PI = Steuerung, ORCH = Schema, WORKFLOW_v4 = historisch, keine Konflikt-Aufloesung mehr).
+  - L2: VERTRAG_PHASE_0-{1,2,3,4} Header "Extrahiert aus: ORCHESTRATOR.md §0.X" — ORCH-Sections existieren seit v3.9 nicht mehr → Header auf WORKFLOW_v4 §5 Schritt 0.X (historisch) + PI Uebergangstabelle Zeile 2/3/4/6 (Runtime) umgestellt.
+  - L3: VERTRAG_PHASE_2-1b §6 Dispatcher-Verantwortlichkeit nannte "ORCHESTRATOR" als Akteur → umbenannt auf "PI/Cowork-Session" + Terminologie-Hinweis vorangestellt. Ebenso VERTRAG_PHASE_0-2 Zeile 25.
+  - L4: Q-GATE-LOG-Format-Referenz in PI zeigte auf QUALITAETSKRITERIEN_MATERIALPRODUKTION.md — dort nicht definiert → korrigiert auf `architektur/Q-GATE-MECHANIK.md` §8 Q-Gate-Log-Format (existiert tatsaechlich).
+
+**Verifikation:**
+
+- Grep-Check: keine ORCH §0.X Runtime-Referenzen mehr in Vertraegen; Templates (Session-Split, UEBERGABE, Mappe-Anhang) in ORCH vollstaendig und von PI korrekt referenziert; alle Zeilen-Querverweise in PI konsistent zur neuen Nummerierung.
+- Walkthrough Mappe-2-Produktion: Loop-Einstieg Zeile 9 (Rahmen), nicht Zeile 6 (TAFELBILD); Phase 0.4 nicht erneut; Strategie-Audit E1 Sonderstopp greift ausschliesslich Mappe 2; PFLICHT-SPLIT Zeile 14, STOP-UEBERGABE Zeile 18, Claude-Code-Assembly Zeile 19 alle durchgaengig referenzierbar.
+
+**Staging:** 8 Dateien im escape-game-generator Repo staged, bereit zum Commit. Commit blockiert durch Sandbox-Lock (`index.lock` Read-only fuer Agent) — **Commit-Block an User geliefert zur manuellen Ausfuehrung**.
+
+**Offene Follow-ups (nicht in v3.9.1):**
+
+- F-M1: Engine zitat-Rendering in `assets/js/escape-engine.js` (Claude-Code-Patch)
+- F-L1: VERTRAG_PHASE_3_ASSEMBLY.md nach `architektur/vertraege/` verschieben
+- Legacy AGENT_TECHNIK-Refs in SUB_MATERIAL_*.md Abgrenzungstabellen (semantisch korrekt, terminologisch veraltet)
+
+---
+
 ## 2026-04-10 — v3.9 Steuerungsrefaktor (Option A) COMPLETE
 
 **Phase:** Infrastruktur
