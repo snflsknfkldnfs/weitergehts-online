@@ -1263,6 +1263,49 @@ footer a:hover {
   color: var(--color-muted);
 }
 
+/* v3.9.2: Historisches Zitat */
+.sicherung__zitat {
+  margin: var(--space-lg) 0;
+  padding: var(--space-md) var(--space-lg);
+  background-color: #fdf6e3;
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+}
+
+.sicherung__zitat-text {
+  margin: 0;
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: var(--text-lg);
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--color-text);
+  quotes: "„" """ "‚" "'";
+}
+
+.sicherung__zitat-text::before {
+  content: open-quote;
+}
+
+.sicherung__zitat-text::after {
+  content: close-quote;
+}
+
+.sicherung__zitat-urheber {
+  margin-top: var(--space-sm);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+  text-align: right;
+}
+
+.sicherung__zitat-kontext {
+  margin-top: var(--space-xs);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  color: var(--color-muted);
+  font-style: normal;
+}
+
 /* --------------------------------------------------------------------------
    17c. v3.1: Hefteintrag (SCPL — CSS-basiert)
    -------------------------------------------------------------------------- */

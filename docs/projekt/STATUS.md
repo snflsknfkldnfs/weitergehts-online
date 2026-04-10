@@ -1,6 +1,6 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-10 (Session 28, v3.9 + v3.9.1 Struktur-Audit-Patch COMPLETE)
+**Letzte Aktualisierung:** 2026-04-10 (Session 28, v3.9 + v3.9.1 + v3.9.2 Follow-up-Patches COMPLETE)
 **Modus:** AUDIT
 
 ---
@@ -72,11 +72,9 @@
                           [DONE] P0-2i Phase 2.2c Aufgaben-Cross M1 (PASS, 10/10)
                             [DONE] P0-2j Phase 3.0 Assembly M1 (PASS, 0H/2M/1L)
                               [DONE] P0-2k v3.9 Steuerungsrefaktor (Option A): PI = SSOT Steuerung, ORCH = Referenz. Commit escape-game-generator Session 28.
-                              [DONE] P0-2k1 v3.9.1 Struktur-Audit-Patch: 2H+4M+4L Findings konsolidiert. Q-GATE-FAIL-PROTOKOLL als SSOT, Phase-0.4 innere Schleife explizit, Zeile-11 Strategie-Audit E1 in Zeile 10 integriert (Renumbering 12→11 ff.), Q-GATE-LOG-Format-Ref zu Q-GATE-MECHANIK.md §8 korrigiert, WORKFLOW_v4 Tiebreaker entfernt, VERTRAG_PHASE_0-* Header + VERTRAG_PHASE_2-1b Actor auf PI/Cowork-Session umgestellt, PFAD_MANIFEST Dokumentations-Section aktualisiert. Ready-to-commit, Commit-Block an User geliefert.
-                                → P0-2k2 F-M1 zitat-Rendering (escape-engine.js, Claude Code)
-                                → P0-2k3 F-L1 Assembly-Vertrag Pfad-Move (agents/ → architektur/vertraege/)
-                                → P0-2k4 Legacy AGENT_TECHNIK-Refs in SUB_MATERIAL_*.md Abgrenzungstabellen (low prio, semantisch OK aber terminologisch veraltet)
-                                  → P0-3 Mappe 2 Produktion ← NAECHSTER SCHRITT
+                              [DONE] P0-2k1 v3.9.1 Struktur-Audit-Patch: 2H+4M+4L Findings konsolidiert. Q-GATE-FAIL-PROTOKOLL als SSOT, Phase-0.4 innere Schleife explizit, Zeile-11 Strategie-Audit E1 in Zeile 10 integriert (Renumbering 12→11 ff.), Q-GATE-LOG-Format-Ref zu Q-GATE-MECHANIK.md §8 korrigiert, WORKFLOW_v4 Tiebreaker entfernt, VERTRAG_PHASE_0-* Header + VERTRAG_PHASE_2-1b Actor auf PI/Cowork-Session umgestellt, PFAD_MANIFEST Dokumentations-Section aktualisiert.
+                              [DONE] P0-2k2 v3.9.2 Follow-up-Patches: (1) F-M1 Engine zitat-Rendering: `_renderSicherung()` in escape-engine.js um sicherung.zitat-Block (text/urheber/kontext) erweitert (figure/blockquote/figcaption), .sicherung__zitat* CSS in theme-gpg.css, Cache-Bust auf ?v=3.9.2 in allen HTML-Refs. (2) F-L1 Pfad-Move: VERTRAG_PHASE_3_ASSEMBLY.md von `agents/` nach `architektur/vertraege/`, ONBOARDING.md + PFAD_MANIFEST.md aktualisiert. (3) P0-2k4 Legacy AGENT_TECHNIK-Refs in 12 Dateien (Abgrenzungstabellen + Prosa) auf "Engine (escape-engine.js) / Claude-Code-Assembly [ehem. AGENT_TECHNIK, Legacy ab v3.9]" umgestellt; ORCHESTRATOR/PFAD_MANIFEST historische Marker bewusst behalten.
+                                → P0-3 Mappe 2 Produktion ← NAECHSTER SCHRITT
               → P2-5 Runde 5 Retrospektive
 ```
 

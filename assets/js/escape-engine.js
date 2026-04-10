@@ -1290,6 +1290,29 @@ var EscapeEngine = (function () {
       container.appendChild(ueberleitungP);
     }
 
+    // v3.9.2: Zitat (historische Quelle)
+    if (sicherung.zitat && sicherung.zitat.text) {
+      var zitatFig = document.createElement('figure');
+      zitatFig.className = 'sicherung__zitat';
+      var zitatQ = document.createElement('blockquote');
+      zitatQ.className = 'sicherung__zitat-text';
+      zitatQ.textContent = sicherung.zitat.text;
+      zitatFig.appendChild(zitatQ);
+      if (sicherung.zitat.urheber) {
+        var zitatCap = document.createElement('figcaption');
+        zitatCap.className = 'sicherung__zitat-urheber';
+        zitatCap.textContent = '— ' + sicherung.zitat.urheber;
+        zitatFig.appendChild(zitatCap);
+      }
+      if (sicherung.zitat.kontext) {
+        var zitatKon = document.createElement('p');
+        zitatKon.className = 'sicherung__zitat-kontext';
+        zitatKon.textContent = sicherung.zitat.kontext;
+        zitatFig.appendChild(zitatKon);
+      }
+      container.appendChild(zitatFig);
+    }
+
     // v3: Reflexionsimpuls
     if (sicherung.reflexionsimpuls) {
       var refDiv = document.createElement('div');

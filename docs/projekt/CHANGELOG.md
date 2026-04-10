@@ -4,6 +4,53 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-10 — v3.9.2 Follow-up-Patches (F-M1 Engine, F-L1 Pfad-Move, Legacy-Refs) READY-TO-COMMIT
+
+**Phase:** Infrastruktur (Post-v3.9.1 Follow-ups)
+**Modus:** AUDIT
+**Session:** 28 (Fortsetzung, nach User-Push v3.9.1)
+
+**Umsetzung der drei dokumentierten Follow-ups aus v3.9.1:**
+
+**F-M1 — Engine zitat-Rendering (MEDIUM):**
+
+- Befund (BEFUND_TESTRUN_M1_KONSOLIDIERT): `sicherung.zitat` Schema in v3.8 Assembly-Template gepatcht, aber Engine-Renderer `_renderSicherung()` in `assets/js/escape-engine.js` unterstuetzte das Feld nicht — Zitat wurde ignoriert.
+- Patch in `escape-engine.js`: Neuer Block `// v3.9.2: Zitat (historische Quelle)` zwischen Ueberleitung und Reflexionsimpuls. Rendert `<figure class="sicherung__zitat">` mit `<blockquote class="sicherung__zitat-text">` (Text), `<figcaption class="sicherung__zitat-urheber">` (Urheber, falls vorhanden), und `<p class="sicherung__zitat-kontext">` (Kontext, optional). Defensive `if (sicherung.zitat && sicherung.zitat.text)` — kein Crash bei fehlendem Feld.
+- CSS in `assets/css/themes/theme-gpg.css` (nach .sicherung__reflexionsimpuls): `.sicherung__zitat` (beige Hintergrund `#fdf6e3`, border-left akzent-farben), `.sicherung__zitat-text` (serif italic, quotes via CSS `open-quote`/`close-quote` mit deutschen Anfuehrungszeichen „"), `.sicherung__zitat-urheber` (klein, primary-farbe, rechtsbuendig), `.sicherung__zitat-kontext` (muted, non-italic).
+- Cache-Busting: Alle HTML-Refs (`escape-games/**/*.html`) auf `?v=3.9.2` gebumpt (vorher gemischt `3.6c` / `4.4`). Betrifft template/, gpg-erster-weltkrieg-ursachen/, verlauf-erster-weltkrieg-marne-ende/.
+- Verifikation: Node.js Parse-Check auf escape-engine.js PASS; CSS Brace-Balance 385/385; alle 4 neuen Klassen present.
+
+**F-L1 — VERTRAG_PHASE_3_ASSEMBLY Pfad-Move (LOW):**
+
+- `git mv agents/VERTRAG_PHASE_3_ASSEMBLY.md architektur/vertraege/VERTRAG_PHASE_3_ASSEMBLY.md` — strukturelle Konsistenz mit allen anderen Phase-Vertraegen.
+- `ONBOARDING.md` aktualisiert: VERTRAG_PHASE_3_ASSEMBLY aus agents/-Block entfernt, vertraege/-Zeile auf "(14 Vertraege inkl. VERTRAG_PHASE_3_ASSEMBLY.md ab v3.9.2)". ORCHESTRATOR.md-Kommentar auf "Referenz-Dokument (v3.9: Schema, Templates)", AGENT_*.md auf "(ohne Legacy-Phase-3)", WORKFLOW_v4.md auf "Historisch-ausfuehrlich (nicht kanonisch ab v3.9.1)".
+- `PFAD_MANIFEST.md` um Row erweitert: "Claude-Code-Assembly (Phase 3.0, mechanisch) | `architektur/vertraege/VERTRAG_PHASE_3_ASSEMBLY.md` | `agents/VERTRAG_PHASE_3_ASSEMBLY.md` (verschoben v3.9.2)".
+- `PROJECT_INSTRUCTIONS.md` Zeile 194 nutzt Dateinamen ohne Pfad-Prefix — kein Patch noetig.
+
+**P0-2k4 — Legacy AGENT_TECHNIK-Refs in Abgrenzungstabellen (LOW):**
+
+- 12 Dateien gepatcht (`checklisten/GUETEKRITERIEN_SEQUENZIERUNG.md`, `checklisten/GUETEKRITERIEN_HEFTEINTRAG_ENTWURF.md`, `agents/AGENT_ARTEFAKT.md`, `agents/AGENT_HEFTEINTRAG.md`, `agents/AGENT_SKRIPT.md`, `agents/SUB_MATERIAL_BILDQUELLE.md` x3, `agents/SUB_MATERIAL_DARSTELLUNGSTEXT.md`, `agents/SUB_MATERIAL_KARTE.md`, `agents/SUB_MATERIAL_QUELLENTEXT.md` x2, `agents/SUB_MATERIAL_STATISTIK.md`, `agents/SUB_MATERIAL_TAGEBUCH.md`, `agents/SUB_MATERIAL_ZEITLEISTE.md`).
+- Replacement-Strategie (Python regex, longest-match-first):
+  - `AGENT_TECHNIK / Claude Code (Phase 3)` → `Claude-Code-Assembly (v3.9+, Phase 3)`
+  - `AGENT_TECHNIK / Claude Code` → `Claude-Code-Assembly (v3.9+)`
+  - `AGENT_TECHNIK/DESIGN` → `Engine (escape-engine.js) / Claude-Code-Assembly`
+  - `AGENT_TECHNIK (Engine-Renderer|Engine rendert ...|Engine, je nach Engine-Typ|Engine)` → `Engine (escape-engine.js ...)`
+  - Bare `AGENT_TECHNIK` → `Engine (escape-engine.js) / Claude-Code-Assembly [ehem. AGENT_TECHNIK, Legacy ab v3.9]`
+- Absichtlich NICHT gepatcht: ORCHESTRATOR.md §Obsolet-Hinweis (historischer Kontext), PFAD_MANIFEST.md obsolet-Zeile (Legacy-Dokumentation), AGENT_QUALITAET.md (selbst Legacy-Dokument).
+
+**Verifikation:**
+
+- Grep `\bAGENT_TECHNIK\b` residual: 11 Hits in 10 Dateien, alle im erwarteten Replacement-Marker `[ehem. AGENT_TECHNIK, ...]` oder in bewusst belassenen Legacy-Kontexten (ORCH, PFAD_MANIFEST, AGENT_QUALITAET).
+- Grep `agents/VERTRAG_PHASE_3_ASSEMBLY` im Generator-Repo: 0 Hits (alle alten Pfad-Referenzen eliminiert).
+- Engine-Parse: OK. CSS-Struktur: OK.
+
+**Staging:**
+
+- escape-game-generator: 15 Dateien modifiziert + 1 rename (VERTRAG_PHASE_3_ASSEMBLY.md), `index.lock` Sandbox-Problem → Commit via User.
+- weitergehts-online: 2 Source-Files (escape-engine.js, theme-gpg.css) + 7 HTML (ursachen + template) + 3 HTML (verlauf-game, vermutlich untracked) + STATUS.md + CHANGELOG.md. Commit via User oder direkte sandbox-Ausfuehrung.
+
+---
+
 ## 2026-04-10 — v3.9.1 Struktur-Audit-Patch (Anschlussfaehigkeit + Konsistenz) READY-TO-COMMIT
 
 **Phase:** Infrastruktur (Post-v3.9-Audit)
