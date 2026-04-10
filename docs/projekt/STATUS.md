@@ -1,6 +1,6 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-10 (Session 28, Konsolidierter Befund Testrun M1)
+**Letzte Aktualisierung:** 2026-04-10 (Session 28, v3.9 Steuerungsrefaktor COMPLETE)
 **Modus:** AUDIT
 
 ---
@@ -71,8 +71,10 @@
                         [DONE] P0-2h Phase 2.2b Aufgaben-Produktion M1 (PASS, 0H/1M/2L, 7/7 Q-Gates PASS)
                           [DONE] P0-2i Phase 2.2c Aufgaben-Cross M1 (PASS, 10/10)
                             [DONE] P0-2j Phase 3.0 Assembly M1 (PASS, 0H/2M/1L)
-                              → P0-2k v3.9 Patches (F-P1 ORCH-Router, F-P2 Phase3-STOP, F-L1 Vertrag-Pfad) ← NAECHSTER SCHRITT
-                                → P0-3 Mappe 2 Produktion
+                              [DONE] P0-2k v3.9 Steuerungsrefaktor (Option A): PI = SSOT Steuerung, ORCH = Referenz. Commit escape-game-generator Session 28.
+                                → P0-2k2 F-M1 zitat-Rendering (escape-engine.js, Claude Code)
+                                → P0-2k3 F-L1 Assembly-Vertrag Pfad-Move (agents/ → architektur/vertraege/)
+                                  → P0-3 Mappe 2 Produktion ← NAECHSTER SCHRITT
               → P2-5 Runde 5 Retrospektive
 ```
 

@@ -4,6 +4,56 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-10 — v3.9 Steuerungsrefaktor (Option A) COMPLETE
+
+**Phase:** Infrastruktur
+**Modus:** AUDIT
+**Session:** 28 (Fortsetzung)
+
+**Redundanz zwischen PROJECT_INSTRUCTIONS.md (auto-loaded State Machine) und ORCHESTRATOR.md (manual steering doc) eliminiert. PI = einziges Steuerungsdokument, ORCH = reines Referenz-Dokument.**
+
+Umsetzung gemaess `docs/architektur/UPGRADE_PLAN_v3-9_STEUERUNGSREFAKTOR.md` Sektion 4 (Option A):
+
+- **PROJECT_INSTRUCTIONS.md (v2.4 → v2.5, escape-game-generator repo):**
+  - Einheitliche Uebergangstabelle (20 Zeilen, 5 Spalten: Abgeschlossen | NAECHSTE_AKTION | Vertrag/Prompt | Ort | Constraint/STOP-Marker)
+  - Alle Constraints inline: PFLICHT-SPLIT IL-4 (Zeile 15, 2.1c → Split), STOP-UEBERGABE (Zeile 19, 2.2c → Claude Code), Assembly-Ort Claude Code (Zeile 20, Phase 3.0)
+  - DISPATCH-ISOLATION P4 (1 Material pro Nachricht in 2.1/2.2b) inline
+  - Q-GATE-FAIL-Protokoll: max 3 Iterationen, danach STOP + Eskalation
+  - REFERENZ-DOKUMENT-Sektion: wann und warum ORCH gelesen wird (nur Trigger Z.9, 15, 19, 20)
+  - 312 Zeilen / 18716 Bytes / ~4679 Tokens
+
+- **agents/ORCHESTRATOR.md (v3.9, escape-game-generator repo):**
+  - Header explizit: "Referenz-Dokument... NICHT das Steuerungsdokument"
+  - Lookup-Tabelle "Wann dieses Dokument lesen" (Anlass → Abschnitt)
+  - Legacy PHASE 3 entfernt (AGENT_TECHNIK/DESIGN/QUALITAET — obsolet, Phase 3 ist jetzt rein mechanisch Assembly)
+  - Ausfuehrungsorte-Tabelle nach PI verlagert (Redirect-Hinweis)
+  - Erhalten: Mappe-Anhang-Prozedur (v4), UEBERGABE-TEMPLATE (OPT-1/4/5/7), Session-Split-Template, data.json-Schema, Medien-Workflow, Konventionen, Referenz-Dokumente-Liste
+  - 299 Zeilen / 20325 Bytes / ~5081 Tokens
+
+**Token-Bilanz:**
+- Vor Refaktor: PI ~3800 + ORCH ~8000 = ~11800 Tokens
+- Nach Refaktor: PI ~4679 + ORCH ~5081 = ~9760 Tokens
+- Absolute Ersparnis: -17% (2040 Tokens)
+- Effektive Per-Transition-Ersparnis: ~60%, da ORCH nicht mehr bei jedem Phasenwechsel gelesen werden muss, sondern nur an definierten Triggerpunkten (Zeile 9 Recherche-Ort, 15 Split-Template, 19 Uebergabe-Template, 20 Assembly-Prozedur)
+
+**Motivation (aus Testrun-Befund F-P1/F-P2/F-P3):**
+- F-P1 (HIGH): ORCHESTRATOR.md wurde im M1-Testrun nicht als Phasen-Router genutzt → STOP-Marker wurden uebersehen
+- F-P2 (MEDIUM): Phase 3 Assembly lief faelschlich in Cowork statt Claude Code
+- F-P3: Redundante Steuerungslogik in zwei Dokumenten → inkonsistente Lesung
+
+**Verifikation:**
+- Grep-Check: Keine gebrochenen `ORCH §` Referenzen. 2 intentionale Verweise in PI-Tabelle (Z.15 Session-Split-Template, Z.19 Uebergabe-Template) zeigen auf existierende ORCH-Sektionen
+- 4 historische `Extrahiert aus: ORCHESTRATOR.md §X.Y` Metadaten-Kommentare in VERTRAG-Dateien sind nicht-funktional, akzeptiert
+- Vertrag-Inhalte (VERTRAG_PHASE_0-*.md) unveraendert
+
+**Commit (escape-game-generator repo):** "v3.9 Steuerungsrefaktor: PI = SSOT Steuerung, ORCH = Referenz"
+
+**Offene Folge-Patches vor Mappe 2:**
+- F-M1: zitat-Rendering in escape-engine.js (Claude Code, separate Task)
+- F-L1: Assembly-Vertrag-Pfad-Move agents/ → architektur/vertraege/
+
+---
+
 ## 2026-04-10 — Konsolidierter Befund Testrun Mappe 1
 
 **Phase:** Qualitaetssicherung
