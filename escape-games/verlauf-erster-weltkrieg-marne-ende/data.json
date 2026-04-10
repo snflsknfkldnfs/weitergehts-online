@@ -1,0 +1,887 @@
+{
+  "meta": {
+    "titel": "Der Erste Weltkrieg — Verlauf von der Marne bis zum Ende",
+    "fach": "GPG",
+    "jahrgangsstufe": "R7 Mittelschule Bayern",
+    "lehrplanbezug": "LB2 Zeit und Wandel, LB3 Politik und Gesellschaft",
+    "schwierigkeit": "Basis",
+    "geschaetzte_dauer_min": 30,
+    "narrativ": "Der Schlieffen-Plan ist gescheitert. Statt eines schnellen Sieges sitzen Millionen Soldaten in Gräben fest. Eure Aufgabe als Kriegskorrespondenten: Berichtet, was der Krieg wirklich bedeutet — für die Soldaten an der Front, für die Menschen in der Heimat, und für ein ganzes Kaiserreich, das am Ende zusammenbricht."
+  },
+  "mappen": [
+    {
+      "id": "mappe-1",
+      "titel": "Leben und Sterben im Schützengraben",
+      "beschreibung": "Mappe 1 erkundet den Stellungskrieg: Von den Schützengräben über Giftgas bis zu den Massenschlachten bei Verdun und an der Somme.",
+      "freischalt_code": "GRABEN",
+      "einstieg": {
+        "narrativ": "<p>Euer Frontbericht beginnt. Der Schlieffen-Plan ist gescheitert — statt eines schnellen Sieges sitzen Millionen Soldaten in Gräben fest.</p><p>Eure Aufgabe als Kriegskorrespondenten: Findet heraus, was der Stellungskrieg für die Menschen wirklich bedeutete.</p>",
+        "problemstellung": "Wer überlebt im Schützengraben?"
+      },
+      "materialien": [
+        {
+          "id": "mat-1-1",
+          "typ": "bildquelle",
+          "titel": "Wie sah der Krieg im Graben wirklich aus?",
+          "inhalt": "../../assets/img/verlauf-erster-weltkrieg-marne-ende/img-1-1.jpg",
+          "bildunterschrift": "Britische Soldaten des Cheshire Regiments in einem Schützengraben an der Somme (Foto, 1916). Das Foto entstand auf britischer Seite, doch die Gräben sahen auf beiden Seiten der 700 km langen Front ähnlich aus. Was verrät das Foto über die Lebensbedingungen der Soldaten?",
+          "quelle": "Wikimedia Commons",
+          "lizenz": "Public Domain",
+          "position": 1,
+          "didaktische_funktion": "einstieg",
+          "voraussetzung": [],
+          "ueberleitung_von": null,
+          "sequenz_kontext": {
+            "vorher": null,
+            "nachher": {
+              "id": "mat-1-2",
+              "typ": "tagebuch",
+              "kerninhalt": "Ein Gefreiter beschreibt seinen Alltag im Schützengraben."
+            }
+          },
+          "_meta": {
+            "artefakt_ref": "img-1-1",
+            "wikimedia_dateiname": "File:Cheshire_Regiment_trench_Somme_1916.jpg",
+            "thumbnail_breite": 640,
+            "lokaler_pfad": "../../assets/img/verlauf-erster-weltkrieg-marne-ende/img-1-1.jpg",
+            "url_verifiziert": false,
+            "bildtyp": "foto",
+            "erschliessungsimpuls": "Was verrät das Foto über die Lebensbedingungen der Soldaten?",
+            "tafelbild_knoten_abgedeckt": [
+              "k1-1"
+            ],
+            "lizenz_kompatibel": true,
+            "erarbeitbarkeits_check": "PASS — Foto zeigt Grabenverhaeltnisse, macht k1-1 (Stellungskrieg 700 km Front) visuell erfahrbar. BU kontextualisiert sachlich ohne beschreibende Adjektive (v3.6).",
+            "trigger_flags": [
+              "krieg"
+            ],
+            "perspektive": "P2: Britische/Französische Soldaten",
+            "aufbereitung": "original"
+          }
+        },
+        {
+          "id": "mat-1-2",
+          "typ": "tagebuch",
+          "titel": "Was erlebte ein Soldat Tag für Tag im Schützengraben?",
+          "inhalt": "<p><em>Schützengraben bei Arras, 18. November 1914</em></p><p>Seit drei Wochen sitzen wir in diesem Schützengraben. Das Wasser steht mir bis zu den Knien. Meine Stiefel sind durchweicht, die Füße tun weh. Nachts kriechen Ratten über uns — sie fressen alles, sogar Brot aus den Taschen.</p><p>Im August hieß es noch: Weihnachten sind wir zu Hause. Jetzt graben wir uns immer tiefer ein. Die Offiziere sagen, wir sollen durchhalten, der Feind sei genauso am Ende. Zwischen uns und den Franzosen liegen 200 Meter. Ein Kamerad meinte, drüben sei es genauso schlimm.</p><p><em>Was Karl nicht wissen konnte: Die Grabenlinie erstreckte sich bereits über 700 Kilometer von der Nordsee bis zur Schweiz. Fachleute nennen diese Lage Stellungskrieg — keine Seite konnte vorrücken.</em></p><p>Heute Morgen schlug eine Granate drei Meter neben mir ein. Mein Kamerad Fritz schrie, dann war er still. Man gewöhnt sich nicht daran.</p><p>Mutter schrieb, sie bete jeden Tag für mich. Was soll ich ihr sagen?</p>",
+          "quelle": "Fiktiver Tagebucheintrag, basierend auf typischen Erfahrungsberichten deutscher Soldaten an der Westfront 1914. Figur und Erlebnisse sind erfunden, historischer Kontext ist belegt.",
+          "position": 2,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [
+            "mat-1-1"
+          ],
+          "ueberleitung_von": "Das Foto zeigte den Schützengraben als engen, schlammigen Ort. Doch wie erlebten die Soldaten ihren Alltag dort wirklich — Tag für Tag?",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-1-1",
+              "typ": "bildquelle",
+              "kerninhalt": "Foto zeigt Soldaten im Schützengraben 1916."
+            },
+            "nachher": {
+              "id": "mat-1-3",
+              "typ": "darstellungstext",
+              "kerninhalt": "Giftgas-Einsatz bei Ypern 1915 und seine Folgen."
+            }
+          },
+          "_meta": {
+            "wortanzahl": 154,
+            "wortanzahl_figur": 117,
+            "wortanzahl_erzaehlerstimme": 37,
+            "figur": {
+              "name": "Karl Meißner",
+              "alter": 22,
+              "rolle": "Gefreiter, Infanterie",
+              "ort": "Schützengraben bei Arras, Westfront"
+            },
+            "artefakt_ref": "rolle-1-1",
+            "historische_details": [
+              "700 km Frontlänge — belegt in INHALTSBASIS Fakt 1 (Stellungskrieg ab Herbst 1914)",
+              "Knietief Wasser im Graben — belegt in Wikipedia Trench warfare (Conditions)",
+              "Ratten als Plage — belegt in Wikipedia Trench warfare (Vermin)",
+              "Artilleriebeschuss als Haupttodesursache — belegt in INHALTSBASIS Fakt 3",
+              "Erwartung Weihnachten 1914 — belegt in Wikipedia Christmas truce (Vorgeschichte)"
+            ],
+            "tafelbild_knoten_abgedeckt": [
+              "k1-1",
+              "k1-2"
+            ],
+            "perspektivitaet": "Karl weiß nur, was er im Graben sieht. Er kennt keine Gesamtlage, keine strategischen Pläne, keine Frontlänge. Systemisches Wissen (700 km, Stellungskrieg) steht in Erzählerstimme-Rahmen (v3.6).",
+            "perspektive": "P1: Deutsche Soldaten",
+            "erarbeitbarkeits_check": "PASS — k1-1: Stellungskrieg + 700 km Front in Erzählerstimme-Rahmen (v3.6). k1-2: Nässe, Ratten, Tod des Kameraden Fritz direkt erlebbar im Figur-Text.",
+            "trigger_flags": [
+              "krieg",
+              "tod"
+            ]
+          }
+        },
+        {
+          "id": "mat-1-3",
+          "typ": "darstellungstext",
+          "titel": "Warum wurde Gas zur Waffe?",
+          "inhalt": "<p>Der <strong>Stellungskrieg</strong> war festgefahren. Seit Monaten lagen sich die Armeen in Schützengräben gegenüber — kein Angriff brachte einen Durchbruch. Die Generäle suchten nach einer Waffe, die das Gleichgewicht brechen könnte. Ihre Antwort war Gift.</p><p>Am 22. April 1915 setzten deutsche Truppen bei Ypern in Belgien zum ersten Mal <strong>Giftgas</strong> (giftiges Chlorgas) ein. Eine grüne Wolke trieb über die französischen Gräben. Das Gas überraschte Tausende Soldaten. Es griff die Lungen an und war oft tödlich.</p><p>Insgesamt starben etwa 90.000 Soldaten im Krieg durch Giftgas. Tausende Überlebende blieben ihr Leben lang blind oder lungenkrank. Doch die erhoffte Entscheidung brachte das Gas nicht — der Stellungskrieg ging weiter.</p>",
+          "quelle": "Eigene Darstellung auf Basis der Sachanalyse.",
+          "position": 3,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [
+            "mat-1-2"
+          ],
+          "ueberleitung_von": "Der Tagebucheintrag zeigte den täglichen Kampf ums Überleben im Graben. Doch 1915 kam eine neue Waffe, die den Krieg noch schrecklicher machte.",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-1-2",
+              "typ": "tagebuch",
+              "kerninhalt": "Ein Gefreiter beschreibt seinen Alltag im Schützengraben."
+            },
+            "nachher": {
+              "id": "mat-1-4",
+              "typ": "quellentext",
+              "kerninhalt": "Stimmen zu Verdun und der Somme 1916."
+            }
+          },
+          "_meta": {
+            "wortanzahl": 101,
+            "fachbegriffe_eingefuehrt": [
+              "Giftgas"
+            ],
+            "fachbegriffe_referenziert": [
+              "Stellungskrieg"
+            ],
+            "tafelbild_knoten_abgedeckt": [
+              "k1-3"
+            ],
+            "erarbeitbarkeits_check": "PASS — k1-3: Ypern 1915 explizit, Chlorgas benannt, 90.000 Tote als Gesamtzahl. Kausale Frage beantwortet: festgefahren → Generäle suchen Ausweg → Gift.",
+            "perspektive": "übergreifend (P1, P2)",
+            "altersfilter_hinweis": "Wirkung benannt (Lungen, tödlich, blind, lungenkrank), keine explizite Leidensdarstellung. Fokus auf Faktum + Konsequenz.",
+            "trigger_flags": [
+              "krieg",
+              "tod"
+            ]
+          }
+        },
+        {
+          "id": "mat-1-4",
+          "typ": "quellentext",
+          "titel": "Wofür starben Hunderttausende bei Verdun und der Somme?",
+          "inhalt": "<p><em>Zwei Stimmen zum Jahr 1916 — ein General und ein einfacher Soldat.</em></p><p><em>General Erich von Falkenhayn plante 1916 den Angriff auf Verdun. Sein Ziel: eine</em> <strong>Ausblutungsschlacht</strong> — <em>Frankreich durch möglichst viele Tote erschöpfen.</em></p><p><em>[sinngemäß]</em> <em>Wir müssen das französische Heer ausbluten. Jeder Mann, den sie verlieren, schwächt sie mehr als uns.</em></p><p><em>An der Somme griffen im Juli 1916 britische Soldaten an. Am ersten Tag fielen 57.000.</em></p><p><em>[sinngemäß]</em> <em>Wir fielen wie Kaninchen im Gewehrfeuer. Unsere Generäle schickten uns in den sicheren Tod.</em></p><p><em>Bei Verdun starben 600.000 Soldaten. An der Somme fast eine Million. Die Front verschob sich kaum.</em></p>",
+          "quelle": "Rekonstruierte Texte auf Basis historischer Quellen. Erich von Falkenhayn, Verdun-Strategie 1916. Britischer Infanterist, Schlacht an der Somme 1916. Kein wörtliches Originalzitat.",
+          "position": 4,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [
+            "mat-1-3"
+          ],
+          "ueberleitung_von": "Giftgas zeigte eine neue Dimension der Brutalität. Doch was passierte, als Generäle Hunderttausende in aussichtslose Schlachten schickten?",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-1-3",
+              "typ": "darstellungstext",
+              "kerninhalt": "Giftgas-Einsatz bei Ypern 1915 und seine Folgen."
+            },
+            "nachher": {
+              "id": "mat-1-5",
+              "typ": "tagebuch",
+              "kerninhalt": "Ein Offizier beschreibt den Wandel von Hoffnung zu Hoffnungslosigkeit."
+            }
+          },
+          "_meta": {
+            "wortanzahl": 93,
+            "quellentyp": "zeugnis",
+            "aufbereitung": "rekonstruiert",
+            "artefakt_ref": [
+              "zit-1-1",
+              "zit-1-2"
+            ],
+            "tafelbild_knoten_abgedeckt": [
+              "k1-4",
+              "k1-5",
+              "k1-6"
+            ],
+            "quellenkritische_impulse": [
+              "Welches Ziel verfolgte Falkenhayn mit der Ausblutungsschlacht?",
+              "Wie hätte ein französischer General die Schlacht bei Verdun beschrieben?"
+            ],
+            "perspektive": "P2: Britische/Französische Soldaten + P3: Militärführung (Falkenhayn)",
+            "erarbeitbarkeits_check": "PASS — k1-4: Verdun 1916 + 600.000 Tote explizit. k1-5: Somme 1916 + fast eine Million + 57.000 erster Tag. k1-6: Ausblutungsschlacht + Falkenhayn + Definition.",
+            "trigger_flags": [
+              "krieg",
+              "tod"
+            ]
+          }
+        },
+        {
+          "id": "mat-1-5",
+          "typ": "tagebuch",
+          "titel": "Was machte der Krieg mit den Soldaten?",
+          "inhalt": "<p><em>Westfront, 3. November 1917</em></p><p>Im Sommer 1916 glaubte ich noch an den Sieg. Meine Kompanie lag vor Verdun. Wir sollten die Franzosen brechen. Stattdessen brachen wir selbst. 38 Mann verloren in zwei Wochen — für einen Graben, den wir drei Tage später aufgaben.</p><p>An der Somme war es nicht besser. Maschinengewehre und Stacheldraht machten jeden Angriff aussichtslos. Wer aufstand, fiel.</p><p><em>Fachleute nennen diese Art des Krieges Materialschlacht: Nicht mehr Mut oder Taktik entschieden, sondern Maschinen, Munition und Nachschub.</em></p><p>Heute habe ich 23 Männer unter mir. Von den 120, die 1914 mit mir kamen, lebt keiner mehr. Ein britischer Gefangener sagte, bei ihnen sei es genauso. Wir verstanden uns ohne ein Wort.</p><p>Ich schreibe nicht mehr nach Hause, dass alles gut wird. Es wäre eine Lüge.</p>",
+          "quelle": "Fiktiver Tagebucheintrag, basierend auf typischen Erfahrungsberichten deutscher Offiziere an der Westfront 1916–1917. Figur und Erlebnisse sind erfunden, historischer Kontext ist belegt.",
+          "position": 5,
+          "didaktische_funktion": "vertiefung",
+          "voraussetzung": [
+            "mat-1-4"
+          ],
+          "ueberleitung_von": "Bei Verdun und der Somme starben Hunderttausende für wenige Kilometer Boden. Was machte diese Erfahrung mit den Menschen, die sie durchleben mussten?",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-1-4",
+              "typ": "quellentext",
+              "kerninhalt": "Verdun und Somme als industrielles Massensterben."
+            },
+            "nachher": null
+          },
+          "_meta": {
+            "wortanzahl": 125,
+            "wortanzahl_figur": 107,
+            "wortanzahl_erzaehlerstimme": 18,
+            "figur": {
+              "name": "Friedrich von Hartmann",
+              "alter": 29,
+              "rolle": "Oberleutnant, Zugführer",
+              "ort": "Westfront"
+            },
+            "artefakt_ref": "rolle-1-2",
+            "historische_details": [
+              "Verdun 1916 als Ausblutungsschlacht — belegt in SKRIPT §4 und INHALTSBASIS",
+              "Somme 1916 mit hohen Verlusten — belegt in SKRIPT §5",
+              "MG + Stacheldraht als Verteidigungsvorteil — belegt in SKRIPT §6",
+              "Offiziers-Verlustrate höher als Mannschaftsgrade — belegt in Wikipedia Western Front (Officers)",
+              "Gegenseitiges Verständnis zwischen Feinden im Graben — belegt in Wikipedia Christmas truce / Live and let live"
+            ],
+            "tafelbild_knoten_abgedeckt": [
+              "k1-7"
+            ],
+            "perspektivitaet": "Friedrich kennt nur seinen Frontabschnitt. Er erlebt MG + Stacheldraht als aussichtslos, aber reflektiert nicht analytisch. Systemisches Wissen (Materialschlacht-Definition) steht in Erzählerstimme-Rahmen (v3.6).",
+            "perspektive": "P1: Deutsche Soldaten",
+            "erarbeitbarkeits_check": "PASS — k1-7: Hoffnungslosigkeit klar erarbeitbar durch Bogen von Siegeshoffnung (Sommer 1916) zu 'Es wäre eine Lüge' (November 1917). Materialschlacht-Definition in Erzählerstimme (v3.6).",
+            "trigger_flags": [
+              "krieg",
+              "tod"
+            ]
+          }
+        }
+      ],
+      "aufgaben": [
+        {
+          "id": "aufgabe-1-1",
+          "typ": "multiple-choice",
+          "frage": "Was zeigt das Foto über den Stellungskrieg?",
+          "material_referenz": [
+            "mat-1-1"
+          ],
+          "optionen": [
+            "Die Soldaten marschierten in Reihen über offenes Feld.",
+            "Beide Seiten gruben sich in Schützengräben ein und rückten nicht vor.",
+            "Die Soldaten lebten in sicheren Bunkern hinter der Front.",
+            "Der Krieg wurde hauptsächlich mit Reitern und Pferden geführt."
+          ],
+          "loesung": "Beide Seiten gruben sich in Schützengräben ein und rückten nicht vor.",
+          "tipps": [
+            {
+              "stufe": 1,
+              "haertegrad": "kognitiv",
+              "text": "Schau dir die Bildunterschrift genau an — wie wird die Art des Krieges dort beschrieben? [[mat-1-1|Foto: Schützengraben an der Somme]] (M1)"
+            },
+            {
+              "stufe": 2,
+              "haertegrad": "strukturierend",
+              "text": "Reiter und offenes Feld passen nicht zu dem, was du auf dem Foto siehst. Auch sichere Bunker zeigt das Foto nicht."
+            },
+            {
+              "stufe": 3,
+              "haertegrad": "heuristisch",
+              "text": "Die Soldaten stehen in einem schmalen Graben dicht beieinander. Das ist typisch für den Stellungskrieg: Beide Seiten gruben sich ein und konnten nicht vorrücken."
+            }
+          ],
+          "feedback": [
+            {
+              "typ": "korrektur",
+              "text": "Das Foto zeigt keine Soldaten auf offenem Feld. Schau genau hin — die Soldaten stehen in einem Graben. Das war typisch für den Stellungskrieg.",
+              "ebene": "wissen"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "Genau. Das Foto zeigt britische Soldaten in einem Schützengraben. Im Stellungskrieg gruben sich beide Seiten ein — niemand konnte vorrücken.",
+              "ebene": "wissen"
+            },
+            {
+              "typ": "korrektur",
+              "text": "Die Gräben waren keine sicheren Bunker. Das Foto zeigt einen offenen Graben ohne festes Dach. Die Soldaten waren Wetter, Schlamm und Beschuss ausgesetzt.",
+              "ebene": "wissen"
+            },
+            {
+              "typ": "korrektur",
+              "text": "Pferde und Reiter spielten im Stellungskrieg kaum eine Rolle. Das Foto zeigt Soldaten zu Fuß in einem Schützengraben — so sah der Krieg an der Westfront aus.",
+              "ebene": "wissen"
+            }
+          ],
+          "afb": "I",
+          "position": 1,
+          "punkte": 10,
+          "_meta": {
+            "bloom_level": 1,
+            "bloom_begruendung": "Reine Fakten-Wiedererkennung: SuS identifizieren anhand des Fotos das Merkmal Stellungskrieg (Operator: benennen, AFB I)."
+          }
+        },
+        {
+          "id": "aufgabe-1-2",
+          "typ": "lueckentext",
+          "frage": "Ergänze die fehlenden Begriffe.",
+          "material_referenz": [
+            "mat-1-2"
+          ],
+          "text_mit_luecken": "Im Herbst 1914 gruben sich die Armeen an der Westfront in ___ ein. Die Soldaten lebten dort unter schlimmen Bedingungen: Wasser stand knietief, Ratten fraßen das Brot und Granaten töteten Kameraden. Die Frontlinie erstreckte sich über ___ Kilometer. Keine Seite konnte vorrücken — Fachleute nennen diese Lage ___.",
+          "loesung": [
+            "Schützengräben",
+            "700",
+            "Stellungskrieg"
+          ],
+          "antwortpool": [
+            "700",
+            "Bewegungskrieg",
+            "Schützengräben",
+            "Stellungskrieg"
+          ],
+          "tipps": [
+            {
+              "stufe": 1,
+              "haertegrad": "kognitiv",
+              "text": "Alle drei Begriffe findest du in Karls Tagebuch und der Erzählerstimme darunter. [[mat-1-2|Tagebuch: Karl Meißner]] (M2)"
+            },
+            {
+              "stufe": 2,
+              "haertegrad": "strukturierend",
+              "text": "Der Distraktor im Pool beschreibt das Gegenteil der Lage an der Westfront. Die letzte Lücke betrifft einen Fachbegriff aus der Erzählerstimme."
+            },
+            {
+              "stufe": 3,
+              "haertegrad": "heuristisch",
+              "text": "Die Soldaten gruben sich in befestigte Gräben ein. Die Frontlinie war so lang wie die Strecke von München nach Hamburg. Und wenn keine Seite vorrücken kann, ist das das Gegenteil von Bewegung."
+            }
+          ],
+          "feedback": [
+            {
+              "typ": "bestaetigung",
+              "text": "Richtig. Die Soldaten lebten monatelang in Schützengräben, die Frontlinie war 700 Kilometer lang, und weil niemand vorrückte, nennt man das Stellungskrieg.",
+              "ebene": "wissen"
+            },
+            {
+              "typ": "korrektur",
+              "text": "Bewegungskrieg ist das Gegenteil — dabei rücken Armeen schnell vor. An der Westfront ab 1914 bewegte sich aber nichts mehr. Lies nochmal die Erzählerstimme in mat-1-2.",
+              "ebene": "wissen"
+            }
+          ],
+          "afb": "I",
+          "position": 2,
+          "punkte": 10,
+          "_meta": {
+            "bloom_level": 2,
+            "bloom_begruendung": "Kontextgetriebener Begriffseinsatz: SuS müssen den Kontext verstehen, um die Fachbegriffe an der richtigen Stelle einzusetzen (Operator: ergänzen, AFB I, Bloom L2)."
+          }
+        },
+        {
+          "id": "aufgabe-1-3",
+          "typ": "reihenfolge",
+          "frage": "Bringe die Ereignisse rund um den Giftgaseinsatz in die richtige Reihenfolge.",
+          "material_referenz": [
+            "mat-1-3"
+          ],
+          "optionen": [
+            "Deutsche Truppen setzten bei Ypern Chlorgas ein.",
+            "Der Stellungskrieg ging trotzdem weiter.",
+            "Der Stellungskrieg war festgefahren — kein Angriff brachte einen Durchbruch.",
+            "Etwa 90.000 Soldaten starben im Krieg durch Giftgas.",
+            "Die Generäle suchten nach einer neuen Waffe."
+          ],
+          "loesung": [
+            "Der Stellungskrieg war festgefahren — kein Angriff brachte einen Durchbruch.",
+            "Die Generäle suchten nach einer neuen Waffe.",
+            "Deutsche Truppen setzten bei Ypern Chlorgas ein.",
+            "Etwa 90.000 Soldaten starben im Krieg durch Giftgas.",
+            "Der Stellungskrieg ging trotzdem weiter."
+          ],
+          "tipps": [
+            {
+              "stufe": 1,
+              "haertegrad": "kognitiv",
+              "text": "Die Kette beginnt mit einem Problem und endet mit einer Enttäuschung. Lies den Text nochmal Absatz für Absatz. [[mat-1-3|Text: Giftgas im Stellungskrieg]] (M3)"
+            },
+            {
+              "stufe": 2,
+              "haertegrad": "strukturierend",
+              "text": "Am Anfang steht der festgefahrene Stellungskrieg. Am Ende steht — derselbe Stellungskrieg. Dazwischen liegen drei Schritte."
+            },
+            {
+              "stufe": 3,
+              "haertegrad": "heuristisch",
+              "text": "Frage dich bei jedem Schritt: Was war die Ursache, was die Folge? Jeder Satz ist das Ergebnis des vorherigen — eine Kette, die am Ende wieder dort ankommt, wo sie begonnen hat."
+            }
+          ],
+          "feedback": [
+            {
+              "typ": "bestaetigung",
+              "text": "Richtig an Position 1: Alles begann mit dem festgefahrenen Stellungskrieg — das war das Problem, das die Generäle lösen wollten.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "Richtig an Position 2: Die Generäle suchten einen Ausweg aus der Sackgasse — das war der Grund für die neue Waffe.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "Richtig an Position 3: Bei Ypern 1915 wurde erstmals Chlorgas eingesetzt — die Antwort der Generäle auf den Stillstand.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "Richtig an Position 4: Das Giftgas tötete insgesamt 90.000 Soldaten — eine schreckliche Folge der neuen Waffe.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "Richtig an Position 5: Trotz allem ging der Stellungskrieg weiter — das Gas brachte keine Entscheidung.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "korrektur",
+              "text": "Oft werden die Opferzahlen vor den Gaseinsatz gestellt. Aber die 90.000 Toten sind eine Gesamtzahl für den ganzen Krieg — sie stehen als Folge, nicht als Auslöser.",
+              "ebene": "verstaendnis"
+            }
+          ],
+          "afb": "II",
+          "position": 3,
+          "punkte": 10,
+          "_meta": {
+            "bloom_level": 3,
+            "bloom_begruendung": "Ursache-Wirkung-Ordnung: SuS wenden das Kausalitätsprinzip an, um die Schritte vom Problem (Stellungskrieg) über die Lösung (Gas) zur Folge (weiterhin Stellungskrieg) zu ordnen (Operator: ordnen, AFB II, Bloom L3)."
+          }
+        },
+        {
+          "id": "aufgabe-1-4",
+          "typ": "zuordnung",
+          "frage": "Ordne die Aussagen dem General oder dem Soldaten zu.",
+          "material_referenz": [
+            "mat-1-4"
+          ],
+          "elemente": [
+            {
+              "begriff": "Der Feind soll durch möglichst viele Tote erschöpft werden.",
+              "zuordnung": "General Falkenhayn"
+            },
+            {
+              "begriff": "Man schickte uns über offenes Feld direkt ins Gewehrfeuer.",
+              "zuordnung": "Einfacher Soldat"
+            },
+            {
+              "begriff": "Frankreich muss ausbluten — das schwächt sie mehr als uns.",
+              "zuordnung": "General Falkenhayn"
+            },
+            {
+              "begriff": "Wir fielen wie Kaninchen — unsere Generäle schickten uns in den Tod.",
+              "zuordnung": "Einfacher Soldat"
+            },
+            {
+              "begriff": "Das Ziel der Schlacht ist nicht Land, sondern die Vernichtung des Gegners.",
+              "zuordnung": "General Falkenhayn"
+            }
+          ],
+          "loesung": {
+            "Der Feind soll durch möglichst viele Tote erschöpft werden.": "General Falkenhayn",
+            "Man schickte uns über offenes Feld direkt ins Gewehrfeuer.": "Einfacher Soldat",
+            "Frankreich muss ausbluten — das schwächt sie mehr als uns.": "General Falkenhayn",
+            "Wir fielen wie Kaninchen — unsere Generäle schickten uns in den Tod.": "Einfacher Soldat",
+            "Das Ziel der Schlacht ist nicht Land, sondern die Vernichtung des Gegners.": "General Falkenhayn"
+          },
+          "tipps": [
+            {
+              "stufe": 1,
+              "haertegrad": "kognitiv",
+              "text": "Achte auf die Wortwahl: Wer spricht von Strategie und Zielen? Wer beschreibt, was er selbst erlebt? [[mat-1-4|Quelle: Verdun und die Somme 1916]] (M4)"
+            },
+            {
+              "stufe": 2,
+              "haertegrad": "strukturierend",
+              "text": "Die Aussage mit den »Kaninchen« stammt vom Soldaten. Die Aussage über das »Ausbluten« stammt vom General."
+            },
+            {
+              "stufe": 3,
+              "haertegrad": "heuristisch",
+              "text": "Der General plant kalt — er spricht über den Feind als Ziel. Der Soldat erlebt den Krieg am eigenen Leib — er spricht über sich und seine Kameraden. Dieses Muster hilft dir bei allen fünf Aussagen."
+            }
+          ],
+          "feedback": [
+            {
+              "typ": "bestaetigung",
+              "text": "Richtig. Das kalte Kalkül mit den Verlusten des Feindes — das ist die Sprache eines Generals, der den Krieg von oben plant.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "Richtig. Der Soldat beschreibt, was er selbst erlebt hat: den Befehl, über offenes Feld zu laufen, direkt ins Feuer.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "Richtig. »Ausbluten« — das war Falkenhayns Strategie bei Verdun. Er wollte Frankreich durch Verluste besiegen.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "Richtig. »Wie Kaninchen« — der Soldat beschreibt seine Hilflosigkeit. Er macht den Generälen einen Vorwurf.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "Richtig. Nicht Landgewinn, sondern Vernichtung — das ist der Kern der Ausblutungsstrategie des Generals.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "korrektur",
+              "text": "Wenn du eine Aussage dem Soldaten zugeordnet hast, die eigentlich vom General stammt: Achte darauf, ob jemand über Strategie spricht oder über eigenes Erleben. Lies mat-1-4 nochmal.",
+              "ebene": "verstaendnis"
+            }
+          ],
+          "afb": "II",
+          "position": 4,
+          "punkte": 10,
+          "_meta": {
+            "bloom_level": 3,
+            "bloom_begruendung": "Transfer-Zuordnung: SuS wenden das Unterscheidungsprinzip Planer-Perspektive vs. Betroffenen-Perspektive auf paraphrasierte Aussagen an (Operator: zuordnen, AFB II, Bloom L3)."
+          }
+        },
+        {
+          "id": "aufgabe-1-5",
+          "typ": "multiple-choice",
+          "frage": "Warum schreibt Friedrich nicht mehr, dass alles gut wird?",
+          "material_referenz": [
+            "mat-1-5"
+          ],
+          "optionen": [
+            "Er ist muede und hat keine Lust mehr zu schreiben.",
+            "Er hat nach drei Jahren Krieg jede Hoffnung auf Sieg verloren.",
+            "Er moechte seine Mutter nicht mit schlechten Nachrichten belasten.",
+            "Die Feldpost funktioniert an der Front nicht mehr."
+          ],
+          "loesung": "Er hat nach drei Jahren Krieg jede Hoffnung auf Sieg verloren.",
+          "tipps": [
+            {
+              "stufe": 1,
+              "haertegrad": "kognitiv",
+              "text": "Lies Friedrichs letzten Satz genau. Was sagt er ueber das Schreiben nach Hause? [[mat-1-5|Tagebuch: Friedrich von Hartmann]] (M5)"
+            },
+            {
+              "stufe": 2,
+              "haertegrad": "strukturierend",
+              "text": "Es geht nicht um die Post und nicht um Muedigkeit. Friedrich sagt etwas ueber Wahrheit und Luege."
+            },
+            {
+              "stufe": 3,
+              "haertegrad": "heuristisch",
+              "text": "Friedrich hat 1916 noch an den Sieg geglaubt. Jetzt, 1917, sind fast alle seine Kameraden tot. Ueberlege: Was hat sich zwischen diesen beiden Zeitpunkten veraendert?"
+            }
+          ],
+          "feedback": [
+            {
+              "typ": "korrektur",
+              "text": "Friedrich schreibt weiterhin Tagebuch. Das Problem ist nicht Muedigkeit, sondern dass er nichts Gutes mehr zu berichten hat. Lies seinen letzten Satz nochmal.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "Richtig. Friedrich hat in drei Jahren Krieg fast alle Kameraden verloren. Er kann nicht mehr luegen — die Hoffnung ist weg.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "korrektur",
+              "text": "Friedrich sagt nicht, dass er seine Mutter schuetzen will. Er sagt, es waere eine Luege. Der Unterschied: Er kann nicht mehr hoffen, nicht nur nicht mehr schreiben.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "korrektur",
+              "text": "Die Post funktioniert — Friedrich hat frueher geschrieben, dass alles gut wird. Jetzt kann er es nicht mehr, weil es nicht mehr stimmt.",
+              "ebene": "verstaendnis"
+            }
+          ],
+          "afb": "II",
+          "position": 5,
+          "punkte": 10,
+          "_meta": {
+            "bloom_level": 3,
+            "bloom_begruendung": "Transfer-MC: SuS wenden ihr Wissen ueber Materialschlacht und Massensterben auf Friedrichs Stimmungswandel an und erkennen die Hoffnungslosigkeit als Folge (Operator: erklaeren, AFB II, Bloom L3)."
+          }
+        },
+        {
+          "id": "aufgabe-1-6",
+          "typ": "begruendung",
+          "frage": "Wer traegt mehr Schuld am Massensterben — Generaele oder Waffen? Begruende.",
+          "material_referenz": [
+            "mat-1-3",
+            "mat-1-4"
+          ],
+          "loesung": {
+            "claim": "Die Generaele tragen mehr Schuld, weil sie die Entscheidungen trafen.",
+            "evidence": [
+              "Falkenhayn wollte Frankreich bei Verdun ausbluten — 600.000 Tote",
+              "An der Somme schickten Generaele Soldaten ins Maschinengewehrfeuer — 57.000 am ersten Tag",
+              "Generaele suchten nach einer neuen Waffe und setzten Giftgas ein — 90.000 Tote"
+            ],
+            "reasoning": "Waffen wie Giftgas und Maschinengewehre toeteten, aber Menschen entschieden, sie einzusetzen. Ohne den Befehl der Generaele waere das Massensterben nicht passiert."
+          },
+          "tipps": [
+            {
+              "stufe": 1,
+              "haertegrad": "kognitiv",
+              "text": "Lies [[mat-1-3|Text: Giftgas]] (M3) und [[mat-1-4|Quelle: Verdun und die Somme]] (M4). Formuliere zuerst eine These. Dann nenne mindestens einen Beleg aus dem Material. Erklaere zum Schluss, warum der Beleg deine These stuetzt."
+            },
+            {
+              "stufe": 2,
+              "haertegrad": "strukturierend",
+              "text": "Suche in den Materialien nach konkreten Zahlen und Aussagen, die deine These stuetzen. Hast du auch erklaert, WARUM der Beleg deine These stuetzt — nicht nur, DASS er es tut?"
+            },
+            {
+              "stufe": 3,
+              "haertegrad": "heuristisch",
+              "text": "Drei Schritte: Erstens eine klare These. Zweitens mindestens eine Stelle aus dem Material zitieren. Drittens erklaeren, wie der Beleg und die These zusammenhaengen. Beide Positionen sind vertretbar — entscheidend ist die Begruendung."
+            }
+          ],
+          "feedback": [
+            {
+              "typ": "bestaetigung",
+              "text": "Deine These ist vertretbar — egal ob du dich fuer Generaele oder Waffen entschieden hast. Wichtig ist, dass du eine klare Position bezogen hast.",
+              "ebene": "analyse"
+            },
+            {
+              "typ": "korrektur",
+              "text": "Oft fehlt ein konkreter Beleg. Nenne eine Zahl oder eine Aussage direkt aus dem Material — zum Beispiel die Opferzahlen oder Falkenhayns Strategie.",
+              "ebene": "analyse"
+            },
+            {
+              "typ": "verknuepfung",
+              "text": "Der entscheidende Schritt: Erklaere, WARUM dein Beleg deine These stuetzt. Wenn du sagst, die Generaele tragen Schuld, dann erklaere, was ihre Entscheidungen bewirkt haben. Wenn du sagst, die Waffen tragen Schuld, erklaere, warum die Technik entscheidender war als der Befehl.",
+              "ebene": "analyse"
+            }
+          ],
+          "afb": "III",
+          "position": 6,
+          "punkte": 12,
+          "_meta": {
+            "bloom_level": 5,
+            "bloom_begruendung": "Bewerten mit CER-Struktur: SuS beurteilen eine Streitfrage, belegen ihre Position aus dem Material und verknuepfen Beleg und These (Operator: beurteilen, AFB III, Bloom L5).",
+            "akzeptierte_claims": [
+              "Die Generaele tragen mehr Schuld, weil sie die Entscheidungen trafen.",
+              "Die Waffen tragen mehr Schuld, weil sie das Massensterben erst moeglich machten.",
+              "Beide tragen gleich viel Schuld — Generaele entschieden, Waffen toeteten."
+            ],
+            "reasoning_schluesselbegriffe": [
+              "Entscheidung",
+              "Verantwortung",
+              "Befehl",
+              "Technik",
+              "Strategie",
+              "Ausblutung"
+            ]
+          }
+        },
+        {
+          "id": "aufgabe-1-7",
+          "typ": "freitext-code",
+          "frage": "Wer ueberlebt im Schuetzengraben — und um welchen Preis?",
+          "material_referenz": [
+            "mat-1-1",
+            "mat-1-2",
+            "mat-1-3",
+            "mat-1-4",
+            "mat-1-5"
+          ],
+          "loesung": [
+            "Stellungskrieg",
+            "Materialschlacht"
+          ],
+          "tipps": [
+            {
+              "stufe": 1,
+              "haertegrad": "kognitiv",
+              "text": "Denke an alle fuenf Materialien zurueck. Was haben die Soldaten erlebt? Was hat der Krieg mit ihnen gemacht? [[mat-1-2|Tagebuch: Karl]] (M2) und [[mat-1-5|Tagebuch: Friedrich]] (M5) zeigen zwei Zeitpunkte."
+            },
+            {
+              "stufe": 2,
+              "haertegrad": "strukturierend",
+              "text": "Beantworte drei Fragen: Was war der Stellungskrieg? Warum konnten neue Waffen ihn nicht beenden? Und was machte das mit den Soldaten?"
+            },
+            {
+              "stufe": 3,
+              "haertegrad": "heuristisch",
+              "text": "Deine Antwort sollte die Begriffe Stellungskrieg und Materialschlacht verwenden. Erklaere, wie der Krieg vom Graben ueber Giftgas und Ausblutungsschlachten zur Hoffnungslosigkeit fuehrte."
+            }
+          ],
+          "feedback": [
+            {
+              "typ": "bestaetigung",
+              "text": "Gut. Du hast die wichtigsten Zusammenhaenge zwischen Stellungskrieg, Waffen und dem Preis fuer die Soldaten beschrieben.",
+              "ebene": "analyse"
+            },
+            {
+              "typ": "korrektur",
+              "text": "Oft fehlt der Begriff Materialschlacht. Er beschreibt, dass nicht mehr Mut entschied, sondern Maschinen und Munition — lies dazu nochmal mat-1-5.",
+              "ebene": "analyse"
+            },
+            {
+              "typ": "verknuepfung",
+              "text": "Vergleiche Karls Tagebuch (1914) mit Friedrichs Tagebuch (1917). Der Unterschied zwischen beiden zeigt den Preis des Krieges: von Hoffnung zu Hoffnungslosigkeit.",
+              "ebene": "analyse"
+            }
+          ],
+          "afb": "III",
+          "position": 7,
+          "punkte": 10,
+          "_meta": {
+            "bloom_level": 6,
+            "bloom_begruendung": "Synthese-Stellungnahme: SuS erschaffen eine eigene Antwort auf die Stundenfrage, indem sie Fakten aus allen Materialien zu einer begruendeten Gesamtdeutung verknuepfen (Operator: Stellung nehmen, AFB III, Bloom L6).",
+            "teilfragen": [
+              "Was erlebten die Soldaten im Schuetzengraben?",
+              "Warum konnten neue Waffen wie Giftgas den Krieg nicht entscheiden?",
+              "Welchen Preis zahlten die Ueberlebenden — koerperlich und seelisch?"
+            ],
+            "erwartete_begriffe": [
+              "Stellungskrieg",
+              "Schuetzengraben",
+              "Giftgas",
+              "Materialschlacht",
+              "Hoffnungslosigkeit"
+            ],
+            "validierung_schwelle": 2,
+            "musterantwort": "Im Stellungskrieg lebten Millionen Soldaten monatelang in Schuetzengraeben unter schlimmsten Bedingungen. Neue Waffen wie Giftgas und die Materialschlacht bei Verdun und der Somme brachten keine Entscheidung — nur mehr Tote. Wer ueberlebte, zahlte einen hohen Preis: Friedrich von Hartmann konnte nach drei Jahren nicht mehr schreiben, dass alles gut wird. Die Hoffnungslosigkeit war der Preis des Ueberlebens."
+          }
+        }
+      ],
+      "sicherung": {
+        "hefteintrag": {
+          "stundenfrage": "Wer überlebt im Schützengraben?",
+          "ordnungsmuster": "parallel-kausal",
+          "scpl": {
+            "situation": {
+              "kontextsatz": "Ab Herbst 1914 graben sich die Armeen auf 700 km ein — Bewegungskrieg wird Stellungskrieg.",
+              "fachbegriffe": [
+                "Stellungskrieg"
+              ]
+            },
+            "complication": [
+              {
+                "schritt": "Soldaten leben in Schützengräben voller Wasser, Ratten und Leichen — Schützengraben.",
+                "fachbegriff": "Schützengraben",
+                "darstellung": null
+              },
+              {
+                "schritt": "1915 setzen die Deutschen bei Ypern Chlorgas ein — 90.000 Tote durch Giftgas.",
+                "fachbegriff": "Giftgas",
+                "darstellung": null
+              },
+              {
+                "schritt": "Bei Verdun 1916 sterben 600.000 Soldaten für wenige Kilometer — Ausblutungsschlacht.",
+                "fachbegriff": "Ausblutungsschlacht",
+                "darstellung": null
+              }
+            ],
+            "problem": {
+              "satz": "Maschinengewehre und Stacheldraht machen jeden Angriff zum Massensterben — Materialschlacht.",
+              "fachbegriff": "Materialschlacht"
+            },
+            "loesung": [
+              "Der Stellungskrieg zwang Soldaten jahrelang in Schützengräben unter unmenschlichen Bedingungen.",
+              "Neue Waffen wie Giftgas machten jeden Angriff zur Todesfalle.",
+              "Bei Verdun und der Somme 1916 starben Hunderttausende — die Front verschob sich kaum."
+            ]
+          },
+          "knoten": [
+            {
+              "id": "k1-1",
+              "text": "Stellungskrieg (700 km Front)",
+              "typ": "kernbegriff",
+              "merksatz": "Beide Seiten graben sich ein und kämpfen aus festen Gräben — niemand rückt vor."
+            },
+            {
+              "id": "k1-2",
+              "text": "Schützengraben: Nässe, Ratten, Tod",
+              "typ": "wirkung",
+              "merksatz": "Befestigte Gräben, in denen Soldaten monatelang lebten und kämpften."
+            },
+            {
+              "id": "k1-3",
+              "text": "Giftgas 1915 (90.000 Tote)",
+              "typ": "ursache",
+              "merksatz": "Die Deutschen setzten 1915 bei Ypern erstmals giftiges Chlorgas ein."
+            },
+            {
+              "id": "k1-4",
+              "text": "Verdun 1916 (600.000 Opfer)",
+              "typ": "ereignis"
+            },
+            {
+              "id": "k1-5",
+              "text": "Somme 1916 (1 Mio. Opfer)",
+              "typ": "ereignis"
+            },
+            {
+              "id": "k1-6",
+              "text": "Ausblutungsschlacht (Falkenhayn)",
+              "typ": "ursache",
+              "merksatz": "Der General will den Feind durch möglichst viele Tote erschöpfen."
+            },
+            {
+              "id": "k1-7",
+              "text": "Hoffnungslosigkeit der Soldaten",
+              "typ": "wirkung"
+            }
+          ],
+          "verbindungen": [
+            {
+              "von": "k1-1",
+              "nach": "k1-2",
+              "label": "schafft Elend",
+              "typ": "kausal"
+            },
+            {
+              "von": "k1-2",
+              "nach": "k1-7",
+              "label": "verstärkt",
+              "typ": "kausal"
+            },
+            {
+              "von": "k1-3",
+              "nach": "k1-2",
+              "label": "ergänzt Schrecken",
+              "typ": "kausal"
+            },
+            {
+              "von": "k1-6",
+              "nach": "k1-4",
+              "label": "bestimmt Taktik",
+              "typ": "kausal"
+            },
+            {
+              "von": "k1-6",
+              "nach": "k1-5",
+              "label": "bestimmt Taktik",
+              "typ": "kausal"
+            },
+            {
+              "von": "k1-4",
+              "nach": "k1-7",
+              "label": "erzeugt Verzweiflung",
+              "typ": "kausal"
+            },
+            {
+              "von": "k1-5",
+              "nach": "k1-7",
+              "label": "erzeugt Verzweiflung",
+              "typ": "kausal"
+            }
+          ],
+          "voraussetzungen": []
+        },
+        "hefteintrag_verweis": "Übertrage das Tafelbild in dein Heft. Zeichne, wie Stellungskrieg, Giftgas und Ausblutungsschlacht gemeinsam zur Hoffnungslosigkeit führen.",
+        "reflexionsimpuls": "Was hat sich an deinem Bild vom Ersten Weltkrieg verändert?",
+        "zusammenfassung": "Der Stellungskrieg zwang Millionen Soldaten in Schützengräben. Giftgas, Ausblutungsschlachten bei Verdun und der Somme und die Materialschlacht machten den Krieg zu einer Hölle ohne Ausweg. Am Ende blieb den Soldaten nur Hoffnungslosigkeit.",
+        "ueberleitung": "Die Soldaten im Schützengraben erleben jahrelanges Leiden und Hoffnungslosigkeit. Doch was passiert gleichzeitig zuhause — wo Frauen in Fabriken arbeiten und Kinder hungern?"
+      }
+    }
+  ]
+}

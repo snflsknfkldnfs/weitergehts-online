@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escape-Game – Mappe</title>
+  <link rel="stylesheet" href="../../assets/css/base.css?v=3.6c">
+  <link rel="stylesheet" href="../../assets/css/themes/theme-gpg.css?v=3.9.3">
+</head>
+<body>
+
+  <header>
+    <h1 class="mappe__titel">Mappe wird geladen...</h1>
+    <div class="header__meta">
+      <span class="mappe__beschreibung"></span>
+    </div>
+  </header>
+
+  <main class="mappe">
+    <!-- Fortschritt -->
+    <div class="mappe__header">
+      <div class="fortschritt" aria-label="Fortschritt in dieser Mappe">
+        <div class="fortschritt__label" id="fortschritt-label">0 von ? Aufgaben gelöst (0%)</div>
+        <div class="fortschritt__track">
+          <div class="fortschritt__bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 1: Einstieg (dynamisch) -->
+    <section class="mappe__einstieg" id="einstieg-container"></section>
+
+    <!-- Phase 2: Erarbeitung (Material + Aufgaben) -->
+    <section class="mappe__erarbeitung" id="erarbeitung-container">
+      <div class="erarbeitung__materialien" id="material-container"></div>
+      <div class="erarbeitung__aufgaben" id="aufgaben-container">
+        <p class="text-center">Aufgaben werden geladen...</p>
+      </div>
+    </section>
+
+    <!-- Phase 3: Sicherung (dynamisch, initial hidden) -->
+    <section class="mappe__sicherung" id="sicherung-container" style="display:none;"></section>
+
+    <!-- Code-Eingabe -->
+    <section class="code-eingabe" id="code-section" aria-label="Freischalt-Code eingeben">
+      <label class="code-eingabe__label" for="code-input">
+        Freischalt-Code eingeben
+      </label>
+      <div>
+        <input
+          type="text"
+          class="code__input"
+          id="code-input"
+          placeholder="CODE"
+          autocomplete="off"
+          aria-describedby="code-hinweis"
+        >
+      </div>
+      <p id="code-hinweis" class="visually-hidden">
+        Gib den Freischalt-Code ein, der sich aus den geloesten Aufgaben ergibt.
+      </p>
+      <button type="button" class="code__submit" aria-label="Freischalt-Code pruefen">
+        🔓 Code prüfen
+      </button>
+    </section>
+
+    <!-- Navigation -->
+    <nav class="mappe__navigation" aria-label="Mappe-Navigation">
+      <a href="index.html" class="mappe__nav-btn" aria-label="Zurueck zur Uebersicht">
+        ← Übersicht
+      </a>
+      <span id="nav-mappe-info"></span>
+      <a href="#" class="mappe__nav-btn" id="nav-weiter" aria-label="Zur naechsten Mappe">
+        Weiter →
+      </a>
+    </nav>
+  </main>
+
+  <footer>
+    <p>
+      <a href="index.html">← Zurück zur Übersicht</a> |
+      <a href="lehrkraft.html">🔑 Lehrkraft-Zugang</a>
+    </p>
+  </footer>
+
+  <script src="../../assets/js/core.js?v=3.6c"></script>
+  <script src="../../assets/js/escape-engine.js?v=3.9.3"></script>
+  <script>
+    /**
+     * Mappe-Seite: Ermittelt Mappe-ID aus Dateinamen und initialisiert Engine.
+     *
+     * HINWEIS: Bei der Erstellung eines konkreten Escape-Games wird diese
+     * Datei als mappe-1.html, mappe-2.html etc. kopiert.
+     * Die Mappe-ID wird aus dem Dateinamen abgeleitet.
+     */
+    (function () {
+      'use strict';
+
+      // Mappe-ID aus Dateinamen ableiten
+      var page = Core.nav.getCurrentPage(); // z.B. "mappe-1"
+      var mappeId = page;
+
+      // Fallback: Wenn Template direkt geoeffnet wird
+      if (mappeId === 'mappe-template') {
+        mappeId = 'mappe-1';
+      }
+
+      // Navigations-Info setzen
+      var navInfo = document.getElementById('nav-mappe-info');
+      if (navInfo) {
+        var mappeNummer = mappeId.replace('mappe-', '');
+        navInfo.textContent = 'Mappe ' + mappeNummer;
+      }
+
+      // Naechste-Mappe-Link setzen
+      var navWeiter = document.getElementById('nav-weiter');
+      if (navWeiter) {
+        var currentNum = parseInt(mappeId.replace('mappe-', ''), 10);
+        if (!isNaN(currentNum)) {
+          navWeiter.href = 'mappe-' + (currentNum + 1) + '.html';
+        }
+      }
+
+      // EscapeEngine initialisieren
+      EscapeEngine.init(mappeId);
+    })();
+  </script>
+
+</body>
+</html>
