@@ -273,3 +273,154 @@ Dieses Befund aendert den R0-FINAL-Zustand (Wiki-Scope-Katalog §8, wikipedia-mc
 ## §11 — Zusammenfassung fuer STATUS.md
 
 **R0.7 PASS mit Einschraenkung.** bpb.de ist standardisiert abrufbar (markdownify + WebFetch), aber rechtlich auf Zitat-Modus limitiert (CC BY-NC-ND). bpb wird NICHT als Volltext-Ingest-Kanal parallel zu Wikipedia integriert, sondern als optionale Phase 0.2.Z "Zitat-Baustein-Kuratierung". Drei Wiki-Scope-Luecken entdeckt (Kriegsoekonomie, Frauen-Heimatfront, Kulturkrise) zur lehrplanabhaengigen Pruefung. R1-Start nicht blockiert.
+
+---
+
+## §12 — Erweiterte Nutzungs-Muster (Nachtrag Session 29)
+
+Ausgangspunkt: PM-Feedback, dass bpb-Volltext fuer SuS ohnehin zu komplex ist, Paraphrase also didaktisch noetig waere — aber durch ND verboten. Alternative Nutzungs-Muster identifiziert, die die Lizenz-Beschraenkung umgehen oder umgehbar machen:
+
+### 12.1 — Muster A: Dossier-Struktur als Qualifizierungsraster (frei, unproblematisch)
+
+**Rechtslage:** Gliederungsideen sind urheberrechtlich NICHT geschuetzt (§2 UrhG schuetzt Ausdrucksform, nicht die zugrundeliegende Idee). Kapitel-Reihenfolge, Themen-Auswahl, thematische Schwerpunkte sind frei uebernehmbar.
+
+**Einsatz:**
+- PM-Handschritt in Phase 0.1: Nach eigener Mappen-Strukturierung die bpb-Dossier-Gliederung als Vergleichsraster nutzen. Fragen: "Welche bpb-Kapitel decken wir ab? Welche ignorieren wir? Warum?". Ergebnis: expliziter Struktur-Entscheid mit Begruendung im Mappen-Plan.
+- NEUES Q-Gate **Q-STRUKTUR-bpb-Coverage** (Runde 4 oder Phase 0.1-Schaerfung): fuer jeden bpb-Kapitel-Titel eine Mappen-Zuordnung oder eine explizite Ausschluss-Begruendung. Keine stille Luecken.
+- Sub-Agent-Input: bpb-Dossier-Gliederung als strukturierter Katalog-Input (nur Titel + URL, kein Volltext), hilft bei Scope-Abgrenzung in Phase 0.1.
+
+**Lizenz-Status:** gruen. Keine Attribution noetig fuer reine Struktur-Uebernahme, hoeflichkeitshalber aber Erwaehnung "bpb-Dossier als Strukturreferenz herangezogen" im Mappen-Plan.
+
+### 12.2 — Muster B: Medien-Kuratierung als Qualitaets-Stempel (hybrid)
+
+**Rechtslage:** bpb-Bildunterschriften sind CC BY-NC-ND, aber typischerweise 1-3 Saetze — wortgetreue Uebernahme als Kurzzitat erlaubt (§51 UrhG + Lizenz). Die **Tatsache**, dass bpb ein bestimmtes Commons-Bild didaktisch ausgewaehlt hat, ist reine Information ohne Urheberschutz.
+
+**Einsatz:**
+- medien_katalog_game.json Schema-Erweiterung:
+  ```
+  "bpb_verifiziert": true,
+  "bpb_discovery_url": "https://www.bpb.de/...",
+  "bpb_bildunterschrift_zitat": "Mobilmachung 1914: Deutscher Truppentransport. (Bundesarchiv, Bild 146-1994-022-19A)",
+  "bpb_didaktische_einordnung": "zeigt Kriegs-Einstimmung der Bevoelkerung"
+  ```
+- Sub-Agent 0.2.M (Medien-Extraktor) liest bpb-Artikel-Medien parallel zu Commons-Suche, markiert gefundene Medien als `bpb_verifiziert: true` wenn Commons-Datei und bpb-Bild identifizierbar dieselbe sind (Match ueber Bundesarchiv-ID, Bildname, perceptual hash optional).
+- Funktionale Klassifikation (analytisch/atmospherisch/etc.) aus R0.4 bekommt zusaetzliche Signalquelle aus bpb-Bildunterschriften.
+
+**Lizenz-Status:** gruen fuer Commons-Assets (laufen ueber Commons-Lizenz weiter), gelb fuer wortgetreue bpb-Bildunterschrift-Uebernahme (mit Attribution), rot fuer bpb-eigene Grafiken ausser als unveraenderte Einbettung.
+
+**Didaktischer Hebel:** bpb-Qualitaetsstempel reduziert Sichter-Workload in Runde 5 (Medien-Diversitaet), weil bpb-markierte Medien bereits didaktisch vorqualifiziert sind.
+
+### 12.3 — Muster C: Primaerquellen-Extraktion (der eigentliche Hebel)
+
+**Rechtliches Kernprinzip:** bpb's CC BY-NC-ND schuetzt nur den **Autoren-Text des bpb-Artikels** (Kruse's Kommentar, Einordnung, Analyse). Primaerquellen, die der bpb-Artikel zitiert (Kaiser-Rede, Tagebuch, Kriegserklaerung, Gedicht, Karikatur) haben ihr **eigenes** Urheberrecht, das am Original-Autor haengt. Wenn die Primaerquelle gemeinfrei ist, ist sie frei verwendbar — unabhaengig von bpb.
+
+**PD-Pruefung pro Quellentyp (relevant fuer Scope Erster Weltkrieg 1914-1918):**
+
+| Quellentyp | Schutzregel | Status fuer WWI-Scope |
+|---|---|---|
+| Amtliche Werke (§5 UrhG): Gesetze, Verordnungen, Kaiser-Erlasse, amtliche Bekanntmachungen, Kriegserklaerungen | zeitlos gemeinfrei | **alle PD** (z.B. Blankoscheck-Telegramm, Ultimatum an Serbien im Wortlaut, "Ich kenne keine Parteien mehr"-Thronrede als amtliche Reichstags-Rede moeglich-PD) |
+| Reden von Politikern, Monarchen, Militaers | 70J nach Tod des Sprechers (§64 UrhG) | Wilhelm II. (†1941) PD seit 2012; Bethmann Hollweg (†1921) PD seit 1992; Tirpitz (†1930) PD seit 2001; Moltke d.J. (†1916) PD seit 1987; Falkenhayn (†1922) PD seit 1993; Ludendorff (†1937) PD seit 2008; Hindenburg (†1934) PD seit 2005; Clemenceau (†1929) PD seit 2000; Lloyd George (†1945) PD seit 2016. **ALLE zentralen Akteure PD.** |
+| Soldaten-Tagebuecher, Feldpost-Briefe | 70J nach Tod des Verfassers | case-by-case. Gefallene Soldaten (Tod 1914-1918) PD seit spaetestens 1989. **Ueberlebende mit spaetem Todesjahr problematisch**: Ernst Juenger (†1998, PD erst 2069), Remarque (†1970, PD erst 2041). Wenn Name/Todesjahr unklar → NICHT verwenden. |
+| Lichtbilder/Fotos 1914-1918 | §72 UrhG einfaches Lichtbild 50J nach Erstveroeffentlichung; Lichtbildwerk 70J nach Tod | typisch PD, insbesondere Presse-Fotos und Bundesarchiv-Bestaende. Bereits durch Commons-Kanal redundant abgedeckt. |
+| Gedichte / Literatur | 70J nach Tod | Stadler (†1914) PD seit 1985; Heym (†1912) PD seit 1983; Trakl (†1914) PD seit 1985; Rilke (†1926) PD seit 1997. **Frueh-Expressionisten WWI-Scope alle PD.** |
+| Karikaturen / Kunst | 70J nach Tod des Kuenstlers | Simplicissimus-Karikaturen 1914-18 typisch PD (Kuenstler aus der Zeit mit Tod vor 1956). |
+
+**bpb-Editions-Schutz:** Die Transkription einer Primaerquelle durch bpb ist NUR geschuetzt, wenn eigenschoepferische Editions-Leistung vorliegt (Kollationierung mehrerer Ueberlieferungen, kritischer Apparat, Uebersetzung). Bei blo"szer Wortlaut-Wiedergabe einer bekannten Rede → keine Schoepfungshoehe → bpb hat kein eigenes Recht auf diese Transkription. Fuer WWI-Reden, Kriegserklaerungen, bekannte Feldpostbriefe: **bpb-Wiedergabe ist praktisch nie editions-schutzwuerdig**.
+
+**Operative Regel:** bpb als **Discovery-Signal** nutzen, Primaerquelle aber immer aus **originaler Primaer-Quelle** (Wikisource, Bundesarchiv-Digitalisat, Deutsches Textarchiv, Europeana, Reichstag-Stenographische-Berichte digital) zitieren. Dies eliminiert jede bpb-Schutz-Frage. bpb liefert nur den Hinweis "diese Rede ist didaktisch relevant" + die didaktische Einordnung (letztere NICHT uebernehmen, nur inspirierend nutzen).
+
+**Pipeline-Konsequenz (das architektonisch Entscheidende):**
+Primaerquellen-Texte sind nach PD-Verifikation **im vollen Wikipedia-artigen Volltext-Ingest-Modus verwendbar**. Das bedeutet:
+- Phase 0.1 darf Primaerquelle als Volltext-Input an Sub-Agenten weitergeben.
+- Sub-Agent darf paraphrasieren, kuerzen, lernerorientiert umformulieren.
+- Schueler-sprachliche Vereinfachung erlaubt.
+- Keine ND-Restriktion.
+
+Damit wird bpb paradoxerweise zu einem **staerkeren** Quell-Kanal als nur Zitat-Baustein-Lieferant: bpb ist in dieser Rolle ein **Discovery-Mechanismus fuer gemeinfreie, didaktisch bereits vorqualifizierte Primaerquellen**, deren Text unbeschraenkt verarbeitet werden kann.
+
+### 12.4 — Erweiterung Phase 0.2.Z: zweiter Sub-Agent
+
+Der in §7.2 entworfene Sub-Agent `bpb_zitat_kurator` (Modus Zitat aus bpb-Autorentext) wird um einen zweiten Sub-Agent ergaenzt:
+
+**Name:** `bpb_primaerquellen_extraktor`
+**Input:** Liste von bpb-URLs (Dossier-Unterartikel), thematischer Fokus.
+**Aufgabe:**
+1. `markdownify` auf bpb-Artikel → Volltext.
+2. Regex/Heuristik auf zitierte Primaerquellen (Anfuehrungszeichen, Einrueckungs-Muster, Zitat-Intros wie "Wilhelm II. erklaerte...", "Der Ultimatumstext lautete...", "Im Tagebuch von X heisst es").
+3. Jede erkannte Primaerquelle: Autor + Datum extrahieren.
+4. **PD-Pruefung per Autor-Wikipedia-Lookup** (`mcp__wikipedia__get_summary` → Todesjahr) und Regel: `todesjahr + 70 < aktuelles_jahr`. Amtliche Werke: immer PD.
+5. **Original-Quelle suchen** in Wikisource, Deutsches Textarchiv, Bundesarchiv via WebSearch.
+6. Output `primaerquellen_katalog_game.json`.
+
+**Output-Schema:**
+```
+{
+  "id": "PQ001",
+  "typ": "rede | thronrede | erlass | kriegserklaerung | ultimatum | tagebuch | feldpost | gedicht | karikatur | amtliche_bekanntmachung",
+  "sprecher_autor": "Wilhelm II.",
+  "autor_todesjahr": 1941,
+  "pd_status": "PD",
+  "pd_grundlage": "§64 UrhG 70J nach Tod (Wilhelm II. †1941, PD seit 2012-01-01)",
+  "entstehungsdatum": "1914-08-04",
+  "titel": "Thronrede vor dem Reichstag",
+  "volltext_wortgetreu": "...",
+  "discovery_quelle_bpb": "https://www.bpb.de/.../155302/...",
+  "bpb_didaktische_einordnung_notiz": "Kruse ordnet die Rede als Auftakt des 'Burgfriedens' ein",
+  "original_archiv_url": "https://de.wikisource.org/wiki/Thronrede_Wilhelms_II._am_4._August_1914",
+  "original_archiv_lizenz": "PD",
+  "einsatz_pipeline": "Phase 0.1 Volltext-Ingest erlaubt (PD)",
+  "ingest_erlaubnis": {
+    "paraphrase": true,
+    "kuerzung": true,
+    "lernerorientierte_umformulierung": true,
+    "uebersetzung": true
+  }
+}
+```
+
+**Invarianten:**
+- PQI1 PD-Pruefung PFLICHT vor Aufnahme. Kein Auto-Bypass.
+- PQI2 PFLICHT Original-Archiv-URL. bpb ist nur Discovery-Quelle, Zitat erfolgt aus Original.
+- PQI3 PFLICHT bpb-didaktische-Einordnung als Notiz (nicht als zitierfaehiger Text) dokumentieren, da sie nicht urheberrechtlich verwertbar ist.
+- PQI4 Bei PD-Unsicherheit oder fehlendem Todesjahr → **nicht aufnehmen** (konservativer Abbruch statt Heuristik).
+- PQI5 Amtliche Werke (§5 UrhG) werden ohne Todesjahr-Check als PD markiert (pd_grundlage: "§5 UrhG").
+- PQI6 Original-Archiv-URL wird nach Fundort priorisiert: Wikisource > Deutsches Textarchiv > Bundesarchiv-Digitalisat > Europeana > nur bpb. Nur-bpb-Fund = Warnung, manueller Review-Schritt.
+
+### 12.5 — Konsolidierte Drei-Kanal-Architektur
+
+Nach R0.7-Erweiterung ergibt sich folgende Quell-Kanal-Matrix fuer Escape-Game-Generierung:
+
+| Kanal | Quelle | Lizenz | Phase | Volltext-Ingest | Paraphrase erlaubt | Typische Nutzung |
+|---|---|---|---|---|---|---|
+| 1 | Wikipedia Kern-Artikel | CC-BY-SA 4.0 | 0.1 | JA | JA | Fach-Grundlage, Faktenbasis |
+| 2 | Wikimedia Commons Medien | div. frei | 0.2.M | JA (Bild) | JA (Bild-Nutzung) | Bilder, Karten, Grafiken |
+| 3a | bpb Autoren-Text (Zitat) | CC BY-NC-ND | 0.2.Z | NEIN | NEIN | Wortgetreue Kurzzitate als Puzzle-Material |
+| 3b | bpb-kuratierte Commons-Medien | Commons-Lizenz | 0.2.M + bpb-Tag | JA | JA | Didaktisch vorqualifizierte Bilder |
+| 3c | bpb-entdeckte Primaerquellen | PD (nach Pruefung) | 0.2.Z → 0.1 | JA | JA | Reden, Erlasse, Tagebuecher als Volltext-Ingest |
+| 3d | Dossier-Strukturreferenz | frei (Idee, nicht Ausdruck) | 0.1-Handschritt | (N/A) | (N/A) | Q-Gate-Coverage-Check |
+
+Die drei Sub-Kanaele 3a-3d sind operativ getrennt, aber alle ueber denselben Discovery-Mechanismus (markdownify + WebFetch auf bpb-URL) adressierbar. Der Unterschied liegt im Extraktions-Filter und im nachfolgenden Rechtsstatus.
+
+### 12.6 — Didaktischer Hebel gegenueber "ohnehin zu komplex fuer SuS"
+
+Das urspruengliche PM-Argument war: bpb-Texte sind sprachlich zu komplex fuer Mittelstufen-SuS, ND verbietet Vereinfachung, also bpb sinnlos. R0.7-Erweiterung kehrt das um:
+- **Muster A (Struktur)**: nutzt bpb-Denkleistung ohne Text-Verwendung.
+- **Muster B (Medien-Kuratierung)**: nutzt bpb-Didaktik-Vorarbeit am Bild-Scope.
+- **Muster C (Primaerquellen)**: nutzt bpb als **Such-Maschine** fuer gemeinfreie Originaltexte, die dann **unter Wikipedia-Lizenz-Regeln** von der normalen Sub-Agent-Pipeline schueler-sprachlich umgeschrieben werden duerfen.
+
+Damit wird der eigentliche Wert eines bpb-Dossiers in der Escape-Game-Pipeline **nicht der Autorentext**, sondern die darunterliegenden didaktisch kuratierten Commons-Medien und Primaerquellen-Verweise, plus die Gliederungs-Struktur als Q-Gate-Raster.
+
+---
+
+## §13 — Konsolidierte Plan-Impact-Punkte (ersetzt §8.1)
+
+Die in §8.1 vorgeschlagenen Punkte 10-12 werden um §12-Erweiterungen ergaenzt:
+
+- **Punkt 10**: Phase 0.2.Z "Zitat-Baustein-Kuratierung" mit **zwei** Sub-Agenten (`bpb_zitat_kurator` fuer Modus A + `bpb_primaerquellen_extraktor` fuer Modus C).
+- **Punkt 11**: Wiki-Scope-Katalog-Luecken-Pruefung (Kriegsoekonomie, Frauen-Heimatfront, Kulturkrise).
+- **Punkt 12**: Sub-Agenten-Invariante "Lizenz-Pre-Check" fuer alle Nicht-Wikipedia-Quellen.
+- **Punkt 13 (NEU)**: medien_katalog_game.json Schema-Erweiterung um Felder `bpb_verifiziert`, `bpb_discovery_url`, `bpb_bildunterschrift_zitat`, `bpb_didaktische_einordnung`. Sub-Agent 0.2.M ergaenzt um bpb-Dual-Kanal-Abfrage.
+- **Punkt 14 (NEU)**: Neues Artefakt `primaerquellen_katalog_game.json` mit Schema aus §12.4. Paralleler Katalog-Typ zu medien_katalog_game.json und zitat_katalog_game.json.
+- **Punkt 15 (NEU)**: Q-Gate "Q-STRUKTUR-bpb-Coverage" (Runde 4 oder Phase 0.1): Pflicht-Mapping jeder bpb-Dossier-Kapitel auf Mappen-Zuordnung oder Ausschluss-Begruendung.
+- **Punkt 16 (NEU)**: PD-Pruef-Workflow `bpb_primaerquellen_extraktor`: Invarianten PQI1-PQI6 aus §12.4, Autor-Todesjahr via `mcp__wikipedia__get_summary`, amtliche Werke per §5 UrhG-Regel auto-PD. Bei Unsicherheit konservativer Abbruch.
+

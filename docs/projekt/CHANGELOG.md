@@ -4,6 +4,51 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-11 — R0.7-Erweiterung §12: Vier alternative bpb-Nutzungs-Muster, inkl. PD-Primaerquellen-Hebel
+
+**Phase:** Nachtrag zu R0.7 nach PM-Feedback ("bpb-Volltext ohnehin zu komplex fuer SuS, also muessen andere Einsatz-Muster gefunden werden")
+**Modus:** EXECUTE (PM) — Erweiterungs-Analyse
+
+**Zweck:** Vier alternative Nutzungs-Muster fuer bpb-Dossiers entwickeln, die die CC-BY-NC-ND-Beschraenkung umgehen oder irrelevant machen.
+
+**Muster A — Dossier-Struktur als Q-Gate-Coverage-Raster:** Gliederungsideen sind urheberrechtlich nicht geschuetzt (§2 UrhG). bpb-Kapitel-Struktur als Validierungsraster fuer Mappen-Strukturen verwendbar. Neues Q-Gate "Q-STRUKTUR-bpb-Coverage".
+
+**Muster B — Medien-Kuratierung als Qualitaetsstempel:** 2/3 getesteter bpb-Bilder sind Bundesarchiv-/PD-Assets ueber Commons-Kanal. bpb-Kuratierung liefert didaktische Vorab-Qualifikation. Schema-Erweiterung medien_katalog_game.json um bpb-Felder.
+
+**Muster C — Primaerquellen-Extraktion (der eigentliche Hebel):** bpb's CC BY-NC-ND schuetzt nur Kruse-Autorentext, NICHT die zitierten Primaerquellen. Primaerquellen haben eigenes Urheberrecht am Original-Autor, das fuer WWI-Scope typischerweise abgelaufen ist: Wilhelm II. (†1941) PD seit 2012, Bethmann Hollweg (†1921) PD seit 1992, Tirpitz (†1930), Moltke d.J. (†1916), Ludendorff (†1937), Hindenburg (†1934), Clemenceau (†1929), Lloyd George (†1945), Frueh-Expressionisten Stadler/Trakl/Heym (alle †1914/1912) seit 1980er PD. Amtliche Werke (§5 UrhG, Kriegserklaerungen, Ultimaten, Erlasse) sind zeitlos gemeinfrei. **PD-Primaerquellen duerfen in Phase 0.1 Volltext-Ingest mit Paraphrase/Kuerzung/Schueler-Vereinfachung** — das hebelt die NC-ND-Beschraenkung systematisch aus. Best Practice: bpb als Discovery-Signal, Zitat aus Original-Archiv (Wikisource, Deutsches Textarchiv, Bundesarchiv-Digitalisat), damit auch die Frage des bpb-Editions-Schutzes eliminiert ist.
+
+**Muster D — Struktur-Inspiration:** Parallel zu Muster A, nutzbar auch als Sub-Agent-Input fuer Scope-Abgrenzung.
+
+**Architektonisches Ergebnis:** Phase 0.2.Z bekommt ZWEI Sub-Agenten:
+- `bpb_zitat_kurator` (Modus A/Autorentext-Zitat, bestehend)
+- `bpb_primaerquellen_extraktor` (NEU, Modus C/PD-Primaerquellen)
+
+Zweiter Sub-Agent Workflow: markdownify → Regex auf Primaerquellen-Zitate → Autor-Todesjahr-Lookup via `mcp__wikipedia__get_summary` → PD-Regel `todesjahr+70 < aktuelles_jahr` → Original-Archiv-Suche → Aufnahme in neues Artefakt `primaerquellen_katalog_game.json`. Invarianten PQI1-PQI6 (PD-Pflicht, Original-Archiv-Pflicht, konservativer Abbruch bei Unsicherheit, §5-UrhG-Auto-PD fuer amtliche Werke).
+
+**Plan-Impact-Erweiterung (Punkte 13-16 in STATUS.md):**
+- Punkt 13: medien_katalog_game.json Schema-Erweiterung um bpb-Felder.
+- Punkt 14: neues Artefakt primaerquellen_katalog_game.json.
+- Punkt 15: Q-Gate Q-STRUKTUR-bpb-Coverage.
+- Punkt 16: Sub-Agent bpb_primaerquellen_extraktor mit PQI1-PQI6.
+
+**Drei-Kanal-Matrix konsolidiert:**
+| Kanal | Quelle | Lizenz | Phase | Volltext-Ingest | Paraphrase |
+|---|---|---|---|---|---|
+| 1 | Wikipedia Kern-Artikel | CC-BY-SA | 0.1 | JA | JA |
+| 2 | Commons Medien | frei | 0.2.M | JA (Bild) | JA |
+| 3a | bpb Autoren-Text | CC BY-NC-ND | 0.2.Z | NEIN | NEIN |
+| 3b | bpb-kuratierte Commons-Medien | Commons | 0.2.M + bpb-Tag | JA | JA |
+| 3c | **bpb-entdeckte Primaerquellen (PD)** | **PD** | **0.2.Z → 0.1** | **JA** | **JA** |
+| 3d | Dossier-Struktur | Idee (frei) | 0.1 Handschritt | (N/A) | (N/A) |
+
+**Didaktisches Fazit:** Der eigentliche Wert eines bpb-Dossiers ist in der Escape-Game-Pipeline **nicht** der Kruse-Autorentext (zu komplex fuer SuS, ND-geschuetzt), sondern (a) die darunterliegenden didaktisch kuratierten Commons-Medien, (b) die zitierten PD-Primaerquellen und (c) die Gliederungs-Struktur als Q-Gate-Raster. bpb wird von "schwierigem Sekundaertext" zu "Discovery-Maschine fuer qualifiziertes Primaerquellen-Material".
+
+**R1-Start:** weiter nicht blockiert. Phase 0.2.Z bleibt optional.
+
+**Artefakte:** `docs/befunde/TESTRUN_BPB_DOSSIER_2026-04-11.md` §12+§13 (neu, ca. 230 Zeilen Erweiterung), `docs/projekt/STATUS.md` (R0.7-Eintrag erweitert + Plan-Impact Punkte 13-16), dieser CHANGELOG-Eintrag.
+
+---
+
 ## 2026-04-11 — R0.7 bpb.de-Dossier Viability-Eval: PASS mit Lizenz-Restriktion
 
 **Phase:** Audit-Track R0.7 (nach User-Meldung hochwertiges bpb-Dossier Erster Weltkrieg)
