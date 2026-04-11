@@ -5,9 +5,10 @@
 **Abgrenzung:** Keine Implementierungs-Entscheidung. Keine Priorisierung als Fait Accompli. Seed fuer Rundenstruktur-Entscheidung. Dokument **ist** Vorschlag — jedes Bundle und jede Empfehlung wartet auf User-Abnahme.
 **Scope-Repos:** Diagnose gegen `escape-game-generator/` (Produkt-Infrastruktur). Engine-Seite (`weitergehts-online/assets/`) nur erwaehnt, wo Engine-Aenderung Voraussetzung ist.
 
-**Datum:** 2026-04-10, Audit-Integration 2026-04-11
-**Status:** VORSCHLAG v2 — integriert mit Fachdidaktik-Audit. Wartet auf Scope-Entscheidung.
+**Datum:** 2026-04-10, Audit-Integration 2026-04-11, User-Entscheidungen v2.1 2026-04-11
+**Status:** VORSCHLAG v2.1 — integriert mit Fachdidaktik-Audit und drei User-Entscheidungen (F-02, F-05, F-07). Wartet auf Scope-Entscheidung zu Rundenstruktur.
 **Aenderungen v1 → v2:** (1) Neue Dimensions-Schicht D1-D8 (§1.2), (2) neuer Loesungsproblem-Katalog D-01..D-08 (§1.3), (3) fachdidaktische Option-Annotation pro Finding, (4) neue Option **O-01-E Dualistische Stundenfrage-Architektur** (§2.1), (5) revidierte Empfehlungs-Kandidaten markiert mit `[REVIDIERT]`, (6) erweiterte Achsen-Synthese (§3), (7) S×D-Kreuzmatrix in Nebenwirkungs-Ueberblick (§5), (8) offene Fragen von 7 auf 15 erweitert (§6), (9) neue §7 Kurz-Summa fuer Entscheider.
+**Aenderungen v2 → v2.1 (User-Entscheidungen 2026-04-11):** (1) Neue Option **O-02-E Wiki-Artikel-Medien-Extraktions-Workflow** (F-02, gesetzt) — inklusive Denkmal-Bruecke als Vergegenwaertigungs-Transfer, (2) neue Option **O-05-E Sprecher-Portraet-Anreicherung** (F-05, gesetzt) — passbild-artige Einbindung mit visueller Sprecher-Identifikation ueber Anordnung, gilt auch fuer Tagebuch-Figuren und Rollen-Doppel-Figuren, (3) **O-07-P-C Feedback-First gesetzt** (F-07, User-Zitat: *"C ist die beste, sollte praezise implementiert werden"*), O-07-P-B entfaellt als Interim, Escape-Mechanik-Umbau ist Implementierungs-Pflicht, (4) **F-07 Umlaut-Ursache praezisiert** auf Retrofit-Luecke (zwei spaeter hinzugefuegte Fragetypen haben den existierenden Umlaut-Fix nie mitbekommen, nicht mit Pruefstrenge verknuepft), (5) Achse B Bundle aktualisiert auf O-02-E → O-02-D → O-02-C → O-02-A, (6) §5.4 Reihenfolge-Hypothese v2.1 (D.1-Retrofit ∥ B.0, dann D.2, A, C, B.1), (7) §6.0 Sektion "Bereits entschieden" hinzugefuegt, offene Fragen auf 11 reduziert und teils praezisiert, (8) §7 Kurz-Summa erweitert um User-Entscheidungen und kritische Implementierungs-Abhaengigkeit B.0 → C.
 
 ---
 
@@ -161,8 +162,16 @@ Die S1-S8-Taxonomie ist technisch-strukturell und faengt folgende **neuen** Loes
   - **Fachdidaktisch (D):** **D1 +, D2 +, D3 +, D4 +.** Repraesentationsform-Entscheidung gehoert fachdidaktisch in die DIDAKTIK-Phase (Bruner: enaktiv/ikonisch/symbolisch; Pestalozzi: Kopf/Herz/Hand). Dort wird entschieden, welche Mappe eine Karte *braucht*. **Starker Upstream-Anker gegen D-02.**
   - **Hebel:** Hoch. Behebt Ursache Upstream.
 
-**Empfehlungs-Kandidat [REVIDIERT v2]:**
-> Reihenfolge umgekehrt gegenueber v1: **O-02-D zuerst** (Upstream-Anker im DIDAKTIK) → **O-02-C** (Reife-Programm) → **O-02-A nur themenspezifisch** (geographisch → Karte, Verlauf → Zeitleiste, quantitativ → Statistik), niemals generisch. O-02-A ohne O-02-D ist abzulehnen, weil D-02 ausgeloest wuerde.
+- **O-02-E (Wiki-Artikel-Medien-Extraktions-Workflow als primaere Quelle)** — **L, neu in v2.1, User-gesetzt 2026-04-11** — Das Gesamt-System der Medien-Qualifizierung steht und faellt mit **praeziser Recherche und Dokumentation qualifizierter Medien aus den Lehrplan-/Thema-relevanten Wikipedia-Artikeln**. Strukturell bedeutet das drei Eingriffe:
+  1. **Neue Phase 0.2.M (Medien-Extraktion):** Zwischen Phase 0.2 INHALT und Phase 2.1 MATERIAL wird ein deterministischer Schritt eingezogen, der pro Sequenz/Mappe die relevanten Wikipedia-Artikel (bereits in Phase 0.2 referenziert) systematisch nach Medien durchsucht: (a) Infobox-Bilder, (b) Artikel-Bilder mit Captions, (c) commons-verlinkte Galerien, (d) eingebettete Karten/Diagramme/Statistiken, (e) **Denkmaeler und Gedenkstaetten** als Bild-Quelle **inklusive Verortung im Gegenwartsbezug**. Ergebnis: `medien_katalog_mappe_{N}.json` mit pro Medium `{wikimedia_url, commons_license, caption_original, caption_de, themen_zuordnung, typ, denkmal_transfer: bool}`.
+  2. **AGENT_MATERIAL-Kopplung:** Sub-Agenten ziehen aus dem `medien_katalog` statt aus freier Wikimedia-Suche. Freie Wikimedia-Suche nur im expliziten Notfall-Branch (Katalog hat <2 Treffer fuer geforderten Typ), mit erhoehter Pruef-Schwelle und dokumentiertem `_meta.fallback_begruendung`.
+  3. **Denkmal-Bruecke als didaktische Sonderrolle:** Denkmaeler/Gedenkstaetten sind als Medien-Quelle explizit aufgewertet, weil sie in einer Mappe eine **Vergegenwaertigungs-/Transfer-Bruecke** bilden (historische Ereignis ↔ gegenwaertiger Gedenkraum, oft vor Ort verfuegbar). Pro Mappe darf max 1 Denkmal-Medium gesetzt werden, Position idealerweise in der Transfer-Zone (SCPL-L).
+  - **Technisch (S):** S1 (bestehende Games haben kein `medien_katalog`), S2 (zusaetzlicher Phase-0.2.M-Schritt), S4 (neue Artefakt-Abhaengigkeit INHALT → MATERIAL), S5 (Sub-Agenten muessen Katalog-Input konsumieren statt frei zu suchen — reduziert S5 mittelfristig, weil deterministische Eingabe statt undeterministischer Suche).
+  - **Fachdidaktisch (D):** **D1 +++, D2 ++, D3 ++, D4 +, D5 +, D6 +, D8 +.** Quellen-Authentizitaet wird strukturell gesichert (Medien sind nachweislich aus Lehrplan-/Thema-relevanten Artikeln). Freie Suche ist qualitativ nicht kontrollierbar und tokenintensiv — der Workflow verschiebt die Qualitaetsschicht von LLM-Judge auf deterministische Extraktion. Denkmal-Bruecke adressiert **Vergegenwaertigungs-Problem** (R7: Warum geht mich das an?) — direkter Beitrag zu D6 und D8.
+  - **Hebel:** Sehr hoch — loest die strukturelle Ursache fuer sowohl F-02 als auch die latente Medien-Qualitaets-Lotterie in bestehenden Games. Voraussetzung fuer reife Durchsetzung von O-02-A/O-02-D.
+
+**Empfehlungs-Kandidat [REVIDIERT v2.1]:**
+> **O-02-E zuerst** (Extraktions-Workflow als Infrastruktur-Basis, User-gesetzt 2026-04-11) → **O-02-D** (Upstream-Anker im DIDAKTIK, verzahnt mit Extraktions-Katalog: `medien_skizze` in 0.1 → `medien_katalog_mappe` in 0.2.M) → **O-02-C** (Reife-Programm fuer konsumierende Sub-Agenten) → **O-02-A nur themenspezifisch** (geographisch → Karte, Verlauf → Zeitleiste, quantitativ → Statistik), niemals generisch. O-02-A ohne O-02-D+O-02-E ist abzulehnen, weil D-02 ausgeloest wuerde **und** die Sub-Agenten auf freie Wikimedia-Suche zurueckfallen muessten. Freie Wikimedia-Suche im Sub-Agenten-Runtime **nur als expliziter Notfall-Branch** mit Begruendungspflicht.
 
 ---
 
@@ -273,7 +282,13 @@ Die v3.6-Policy wurde eingefuehrt, weil Tagebuch-Materialien in fruehen Versione
   - **Fachdidaktisch (D):** D4 +, **D8 −** (Monotonie-Risiko im narrativen Rahmen).
   - **Hebel:** Mittel.
 
-**Empfehlungs-Kandidat [unveraendert v2]:** **O-05-A + O-05-C**. O-05-B als Uebergang, falls Schema-Runde verschoben wird.
+- **O-05-E (Sprecher-Portraet-Anreicherung mit Design-Integration)** — **M, neu in v2.1, User-gesetzt 2026-04-11** — Bilder der "sprechenden" historischen Personen werden als eigener Datenpfad zum Material eingezogen. Schema-Erweiterung ergaenzt den `QuellentextMehrstimmen`-Subtyp (O-05-A) um pro Stimme ein optionales Feld `portraet: {wikimedia_url, caption, commons_license, portraet_stil: "historisch_foto" | "zeichnung" | "gemaelde" | "buste"}`. Engine-Rendering positioniert die Portraets **passbild-artig links/rechts neben dem Blockquote**, sodass **Sprecher-Identifikation ueber die Anordnung erfolgt** (Portraet-Blockquote-Paar als visuelle Einheit) — kein Namens-Raten noetig. Gleiches Pattern greift fuer **Tagebuch-Figuren** (eine Figur pro Material → ein Portraet im Header des Tagebuch-Materials) und fuer die in F-04 O-04-D eingefuehrte **Rollen-Doppel-Figur pro Mappe** (zwei Portraets definieren die Mappen-Perspektiven sofort visuell).
+  - **Technisch (S):** S1 (bestehende Games haben keine Portraets), S4 (Portraet-Pipeline: Katalog-Zugriff an O-02-E gekoppelt, da Portraets aus denselben Wikipedia-Artikel-Infoboxen stammen), S6 (Engine-CSS-Layout fuer Portraet-Blockquote-Grid), S2 (Mehraufwand pro Material).
+  - **Fachdidaktisch (D):** **D1 ++, D2 ++, D3 ++, D6 +++, D8 +++.** Visuelle Sprecher-Identifikation senkt kognitive Last bei R7 drastisch (D6 — R7-Leseprofil). Portraets sind **Alteritaets-Anker** (Ruesen): ein Foto eines 19-jaehrigen Gefreiten 1916 leistet mehr als drei Saetze Einleitung. Historische Personen werden als **Personen** sichtbar, nicht als Zitate. **Haelt D-05 (Narrative-Dichte-Verlust) massiv fern** und verstaerkt O-04-D (Rollen-Doppel-Figuren) didaktisch: die Doppel-Figur wird durch zwei Portraets sofort erkennbar.
+  - **Hebel:** Sehr hoch — multipliziert Wirkung von O-05-A, O-04-D und O-02-E (Portraets sind Sub-Ergebnis des Extraktions-Katalogs).
+  - **Abgrenzung:** Keine Portraets erfundener/rekonstruierter Figuren. Nur real belegte historische Personen, deren Portraets gemeinfrei verfuegbar sind. Rekonstruierte Figuren (z.B. "Karl Meissner, Gefreiter") bleiben ohne Portraet — was wiederum ein didaktisches Argument **gegen** erfundene Figuren und **fuer** real belegte Personen als Identifikationstraeger sein kann (Ruecksprung auf F-04 O-04-D).
+
+**Empfehlungs-Kandidat [REVIDIERT v2.1]:** **O-05-A + O-05-E (User-gesetzt) + O-05-C**. O-05-A liefert die Schema-Struktur, O-05-E zieht das Portraet-Feld in die Struktur ein und verankert Sprecher-Identifikation visuell. O-05-B nur als Uebergang, falls Schema-Runde verschoben wird. **O-05-E traegt auch zurueck auf F-04:** Rollen-Doppel-Figuren sollten nach Moeglichkeit real belegte Personen mit Portraet sein.
 
 ---
 
@@ -323,9 +338,11 @@ Die v3.6-Policy wurde eingefuehrt, weil Tagebuch-Materialien in fruehen Versione
 - `VERTRAG_PHASE_2-2b_AUFGABE.md:125` — typ-Enum geschlossen.
 
 **Ursache-Mechanik:**
-*Umlaut-Dimension:* Phase-0-Vertraege fordern ASCII ("Dateikompatibilitaet" — obsolete Begruendung), Phase-2-Dokumente UTF-8. Phase-2.2b-Aufgaben referenzieren Phase-0-Artefakte und uebernehmen deren ASCII. Sub-Agent-Templates selbst ASCII-kontaminiert. TYP-01-A ohne Enforcer.
+*Umlaut-Dimension [PRAEZISIERT v2.1 nach User-Klarstellung 2026-04-11]:* Die Phase-0-vs-Phase-2-Encoding-Spannung ist strukturelle Latenz, aber **NICHT** der aktive Trigger fuer die zwei konkret bug-behafteten Fragetypen. Der aktive Trigger ist eine **Retrofit-Luecke:** Als die Umlaut-Problematik auf fruehere Fragetypen erstmals identifiziert wurde, wurde fuer diese ein Fix eingezogen (Template-Saeuberung, fuzzy-match-Whitelisting, ggf. Normalisierungs-Schritt). Die zwei jetzt bug-behafteten Fragetypen wurden **chronologisch spaeter** hinzugefuegt und haben diesen Fix **nicht mitbekommen**. Es handelt sich also um einen reinen Propagations-Defekt: ein bekannter, geloester Bug-Typ wurde bei Neu-Einfuehrung eines Fragetyps nicht mitgezogen. Die Phase-0-Encoding-Policy ist orthogonal dazu und kann separat adressiert werden, ist aber nicht Blocker fuer den Retrofit-Fix.
 
-*Pruefstrenge-Dimension:* CER-Schema ist didaktisch begruendet (Bewertungs-Leistung, Bloom L5). Der User-Wunsch "weniger streng" ist **mehrdeutig** — drei Lesarten (L1/L2/L3 siehe Revision).
+**Identifizierungs-Pflicht:** Vor Implementierung der Umlaut-Optionen muessen die zwei konkret betroffenen Fragetypen durch Sichtung von `agents/SUB_AUFGABE_*.md` (Template-ASCII-Spuren) und `architektur/Q-GATE-MECHANIK.md` TYP-01-A-Katalog eindeutig identifiziert werden. Arbeitshypothese ohne Verifikation: Freitext-Varianten mit CER-Struktur (F-07) und die Multi-Begriff-Transfer-Aufgabe (F-08). Eine gezielte Code-Lese-Runde ist Vor-Schritt jeder Implementierungsrunde.
+
+*Pruefstrenge-Dimension [PRAEZISIERT v2.1]:* Umlaut und Pruefstrenge sind **entkoppelte** Phaenomene. Der User hat beide Themen in F-07 nebeneinander beschrieben, sie sind aber technisch und didaktisch unabhaengig zu behandeln. CER-Schema ist didaktisch begruendet (Bewertungs-Leistung, Bloom L5). Der User-Wunsch "weniger streng" ist trotzdem adressierbar: die **Pruefstrenge-Antwort ist O-07-P-C (Feedback-First)**, User-gesetzt 2026-04-11. Lesart-Aufloesung L1/L2/L3 bleibt als Diagnose-Werkzeug relevant, aber die Policy-Entscheidung ist getroffen.
 
 **Optionen (Umlaut):**
 
@@ -371,11 +388,11 @@ Die v3.6-Policy wurde eingefuehrt, weil Tagebuch-Materialien in fruehen Versione
   - **Fachdidaktisch (D):** Neutral als Meta-Policy; wirkungsabhaengig vom Mechanismus (A/B/C).
   - **Hebel:** Hoch als Rahmen, erfordert Mechanismus.
 
-**Empfehlungs-Kandidat Umlaut [leicht revidiert v2]:**
-> **O-07-U-A + O-07-U-B + O-07-U-D** in Kombination. **O-07-U-C abgelehnt** (D5−, Fehlmapping-Risiko). Uebergangs-Heilung fuer bestehende Games: gezielter retroaktiver Fix mit Whitelist, nicht generische Normalisierung.
+**Empfehlungs-Kandidat Umlaut [REVIDIERT v2.1, Retrofit-Fokus]:**
+> **Zweistufig:** (1) **Retrofit-Patch** — Fragetyp-Identifizierung + gezielte Uebernahme des existierenden Fixes auf die zwei betroffenen Fragetypen (`tools/typ-check-aufgaben.sh`-aehnlicher Checker + Template-Saeuberung fuer genau diese Fragetypen). Das ist der chirurgische, sofort wirksame Schritt und adressiert den aktiven User-Befund. (2) **Upstream-Haertung** via **O-07-U-A** (Phase-0-Vertraege UTF-8) + **O-07-U-B** (Script-Checker als Gate) + **O-07-U-D** (Template-Saeuberung global), um die strukturelle Propagationsluecke zu schliessen. **O-07-U-C bleibt abgelehnt** (D5−, Fehlmapping-Risiko). Schritt (1) ist Voraussetzung fuer Live-Nutzung, Schritt (2) ist Voraussetzung fuer zukuenftige Fragetyp-Erweiterungen.
 
-**Empfehlungs-Kandidat Pruefstrenge [REVIDIERT v2]:**
-> **O-07-P-A streichen** (loest D-03 aus, deprivilegiert Bloom L5). Priorisierung: **O-07-P-C als Ziel-Architektur** (Feedback-First) → **O-07-P-B als Interim** (bis Feedback-First gebaut) → **O-07-P-D als Policy-Rahmen**. **Vor allen P-Optionen: Umlaut-Fix (O-07-U-*) + Re-Test des Marne-Games**, weil ein grosser Teil des User-"zu streng"-Befunds Lesart L1 ist (Fuzzy-Matching durch Umlaut-Artefakte verrauscht).
+**Empfehlungs-Kandidat Pruefstrenge [ENTSCHIEDEN v2.1, User 2026-04-11]:**
+> **O-07-P-C (Feedback-First) ist gesetzt** — nicht mehr Ziel-Architektur, sondern Implementierungs-Vorgabe. *"C ist die beste, sollte praezise implementiert werden."* (User, 2026-04-11). **O-07-P-A bleibt gestrichen** (loest D-03 aus). **O-07-P-B (pro-Aufgabe `pruef_modus`) entfaellt** als Interim — Feedback-First wird direkt gebaut, kein Fallback-Mechanismus. **O-07-P-D (Policy-Rahmen)** bleibt optional fuer Alpha/Beta/Produktiv-Phasen, ist aber nicht mehr entscheidend, da Feedback-First die Progression ohnehin freischaltet. Der Escape-Mechanik-Umbau (Progression nicht mehr an Richtig-Loesung geblockt, sondern an Antwort-Abgabe + Musterloesungs-Anzeige) ist jetzt **Implementierungs-Pflicht**, nicht Option. Umlaut-Retrofit bleibt unabhaengig davon als separater Track erforderlich, weil die Lesart-L1-Verunreinigung die Diagnose-Qualitaet aller Pruefstrenge-Arbeit trueben wuerde.
 
 ---
 
@@ -449,14 +466,14 @@ v1-Bundle **O-01-B + O-01-C + O-08-B** ist **fachdidaktisch nicht empfohlen** (l
 
 ### Achse B — Medien-Diversitaet + Sub-Agent-Reife (F-02)
 
-**Technisch:** Keine Cross-Cut-Konflikte innerhalb F-02. Externe Konflikte: O-02-A (Mehr-Material-Bedarf) ↔ O-04-A (Mehr-Darstellungstexte durch v3.6-Rueckbau) — **S2 kumuliert**, Mengen-Limit in VERTRAG_PHASE_2-1 kann konflikttreiben.
+**Technisch:** Keine Cross-Cut-Konflikte innerhalb F-02. Externe Konflikte: O-02-A (Mehr-Material-Bedarf) ↔ O-04-A (Mehr-Darstellungstexte durch v3.6-Rueckbau) — **S2 kumuliert**, Mengen-Limit in VERTRAG_PHASE_2-1 kann konflikttreiben. **Neue Kopplung v2.1:** O-02-E (Extraktions-Katalog) ist Datenquelle fuer O-05-E (Sprecher-Portraets, F-05) — beide Optionen ziehen aus derselben Wikipedia-Artikel-Infoboxen-Pipeline.
 
 **Fachdidaktisches Re-Framing:**
-v1-Empfehlung "O-02-C → O-02-A → O-02-D" → **Reihenfolge umgekehrt**. DIDAKTIK-Skizze (O-02-D) liefert das fachdidaktische Argument, warum eine Karte/Statistik/Zeitleiste gebraucht wird. Ohne dieses Argument ist O-02-A formal-leer und triggert D-02.
+v1-Empfehlung "O-02-C → O-02-A → O-02-D" wurde in v2 auf "O-02-D → O-02-C → O-02-A themenspezifisch" umgekehrt. **v2.1 zieht O-02-E als Infrastruktur-Basis davor**, User-gesetzt 2026-04-11: Medien-Qualitaet steht und faellt mit deterministischer Extraktion aus qualifizierten Wikipedia-Artikeln. Freie Wikimedia-Suche ist nicht kontrollierbar und tokenintensiv.
 
-**v2-Bundle [REVIDIERT]:** **O-02-D zuerst (Upstream-Anker) → O-02-C (Reife-Programm) → O-02-A themenspezifisch** (geographisch → Karte, Verlauf → Zeitleiste, quantitativ → Statistik). **Nie generisches `min 1 nicht-Text`.**
+**v2.1-Bundle [REVIDIERT]:** **O-02-E zuerst (Extraktions-Workflow + Denkmal-Bruecke, User-gesetzt) → O-02-D (Upstream-Anker im DIDAKTIK, verzahnt mit Katalog) → O-02-C (Reife-Programm fuer konsumierende Sub-Agenten) → O-02-A themenspezifisch** (geographisch → Karte, Verlauf → Zeitleiste, quantitativ → Statistik). **Nie generisches `min 1 nicht-Text`.** Freie Wikimedia-Suche in Sub-Agenten nur als Notfall-Branch mit Begruendungspflicht.
 
-**Charakterisierung:** Repraesentationsform-Planung wandert in Phase 0.1, Sub-Agent-Reife wird aufgebaut, Diversitaets-Pflicht ist themengesteuert.
+**Charakterisierung:** Medien-Qualitaet wird Upstream in Phase 0.2.M deterministisch gesichert, Repraesentationsform-Planung wandert in Phase 0.1, Sub-Agent-Reife wird aufgebaut, Diversitaets-Pflicht ist themengesteuert. Denkmaeler sind als didaktische Vergegenwaertigungs-Bruecke explizit zugelassen.
 
 ---
 
@@ -484,19 +501,21 @@ Die v1-Offenheit "beide Pfade legitim" wird revidiert. **LehrplanPLUS GPG 7 Baye
 
 **Drei Sub-Tracks:**
 
-**D.1 Umlaut-Enforcement:**
-v2-Bundle: **O-07-U-A (Phase-0-Vertraege UTF-8) + O-07-U-B (Script-Checker) + O-07-U-D (Template-Saeuberung)**. **O-07-U-C abgelehnt** (D5−, Fehlmapping).
+**D.1 Umlaut-Enforcement [PRAEZISIERT v2.1]:**
+**Primaerer Track — Retrofit-Patch:** Die zwei konkret bug-behafteten Fragetypen identifizieren (Code-Lese-Runde, Hypothese: CER-Freitext + Transfer-Aufgabe), dann chirurgischen Fix uebernehmen (Template-Saeuberung + Gate-Pruefung fuer genau diese Fragetypen). Das ist der aktive User-Befund und direkt adressierbar.
+**Sekundaerer Track — strukturelle Haertung:** **O-07-U-A (Phase-0-Vertraege UTF-8) + O-07-U-B (Script-Checker global) + O-07-U-D (Template-Saeuberung global)** um die Propagations-Luecke zu schliessen, die die Retrofit-Luecke ueberhaupt entstehen liess. **O-07-U-C bleibt abgelehnt** (D5−, Fehlmapping).
 
-**D.2 Pruefstrenge-Policy:** **[REVIDIERT]**
-- **O-07-P-A streichen** (loest D-03 aus).
-- **O-07-P-C als Ziel-Architektur** (Feedback-First, Black/Wiliam, Hattie).
-- **O-07-P-B als Interim** (bis Feedback-First gebaut).
-- **O-07-P-D als Policy-Rahmen**.
-- **Vor allen P-Optionen:** Umlaut-Fix + Re-Test des Marne-Games, weil der "zu streng"-Befund wahrscheinlich Lesart L1 ist (Fuzzy-Matching durch Umlaut-Artefakte verrauscht).
+**D.2 Pruefstrenge-Policy [ENTSCHIEDEN v2.1, User 2026-04-11]:**
+- **O-07-P-C ist gesetzt.** Feedback-First wird direkt gebaut. *"C ist die beste, sollte praezise implementiert werden."*
+- **O-07-P-A bleibt gestrichen** (loest D-03 aus).
+- **O-07-P-B entfaellt als Interim** — kein Fallback-Mechanismus, direkte Implementierung.
+- **O-07-P-D (Policy-Rahmen)** optional fuer Alpha/Beta/Produktiv-Phasen, nicht mehr entscheidend.
+- **Escape-Mechanik-Umbau** (Progression an Antwort-Abgabe + Musterloesungs-Anzeige, nicht an Richtig-Loesung) ist Implementierungs-Pflicht.
+- **Entkopplung von Umlaut:** User hat klargestellt, dass Umlaut und Pruefstrenge nicht verknuepft waren. Lesart L1 bleibt trotzdem relevant als **Diagnose-Hygiene**: der Retrofit-Umlaut-Patch muss VOR dem Feedback-First-Rollout auf die zwei betroffenen Fragetypen greifen, damit die Musterloesungs-Anzeige nicht selbst Umlaut-verseucht ist.
 
 **D.3 Enforcement-Framework allgemein:** siehe §4 Meta (M-01).
 
-**Charakterisierung:** Umlaut-Sauberkeit zuerst, dann didaktische Pruefmodi (Feedback-First als Norm), global-permissive dauerhaft ausgeschlossen.
+**Charakterisierung:** Umlaut-Retrofit als chirurgischer Sofort-Fix, strukturelle Haertung parallel, Feedback-First als gesetzte Pruefstrenge-Architektur, global-permissive dauerhaft ausgeschlossen.
 
 ---
 
@@ -506,11 +525,11 @@ Der User-Befund *"Aufgaben zu streng geprueft"* ist didaktisch mehrdeutig. Drei 
 
 | Lesart | Bedeutung | Richtige Option |
 |---|---|---|
-| **L1 — weniger streng bei Formulierungs-Varianten** | Fuzzy-Match, Umlaute-Toleranz, Synonyme | **Bereits vorhanden** (SUB_AUFGABE_BEGRUENDUNG.md:193). Groesster Anteil des Befunds wird durch **O-07-U-A/B/D** (reine Umlaut-Sauberkeit) gedeckt. |
-| **L2 — weniger Leistungsdruck auf SuS** | Fail-Zustand zerstoert intrinsische Motivation | **O-07-P-C (Feedback-First)**. Lernpsychologisch korrekt. |
-| **L3 — pragmatisches Durchkommen im Alpha-Deployment** | Spielfluss darf nicht an Pruefdetail scheitern | **O-07-P-D (Policy-Rahmen) + O-07-P-B (Mechanismus, Alpha-profile)**. |
+| **L1 — weniger streng bei Formulierungs-Varianten** | Fuzzy-Match, Umlaute-Toleranz, Synonyme | **Fuzzy-Match existiert** (SUB_AUFGABE_BEGRUENDUNG.md:193), aber zwei Fragetypen haben den Umlaut-Fix nie erhalten (Retrofit-Luecke). User-Klarstellung v2.1: **kein Diagnose-Konflikt, sondern reiner Propagations-Bug**. Retrofit-Patch noetig, unabhaengig von Pruefstrenge-Policy. |
+| **L2 — weniger Leistungsdruck auf SuS** | Fail-Zustand zerstoert intrinsische Motivation | **O-07-P-C (Feedback-First) — ENTSCHIEDEN v2.1, User-gesetzt**. Wird gebaut. |
+| **L3 — pragmatisches Durchkommen im Alpha-Deployment** | Spielfluss darf nicht an Pruefdetail scheitern | Wird durch O-07-P-C implizit mit-geloest (keine Progress-Blockade mehr). **O-07-P-D** bleibt als optionaler Policy-Rahmen fuer Phasen-Kennzeichnung. |
 
-**Diagnostischer Schritt vor Policy-Umsetzung:** Marne-Game nach Umlaut-Fix re-testen. Falls "zu streng"-Gefuehl bleibt → L2 adressieren (O-07-P-C). Falls verschwunden → L1 war Primaer-Ursache.
+**Status v2.1 [ENTKOPPELT]:** Die v2-Hypothese, ein Re-Test nach Umlaut-Fix koennte die L2-Entscheidung erueberigen, hat sich durch die User-Klarstellung ueberholt. L1 (Umlaut-Retrofit) und L2 (Feedback-First) werden beide addressiert, unabhaengig voneinander. L1 ist Bug-Fix, L2 ist Architektur-Entscheidung.
 
 ---
 
@@ -582,24 +601,32 @@ Parallel zu Achse B: Reife-Matrix pro Sub-Agent nach Kriterien (i) Engine-Render
 
 **Befund:** Das v2-Bundle senkt in allen Achsen die D-Last, erhoeht in Achse A und C die technische S-Last moderat. **Das ist der fachdidaktische Preis fuer Quellen-Integritaet, Schueler-Interessen-Wahrung und Kompetenz-Erhalt.**
 
-### 5.4 Reihenfolge-Hypothese (revidiert v2)
+### 5.4 Reihenfolge-Hypothese (revidiert v2.1)
 
 v1-Hypothese: **D → A → B → C**.
-v2-Revision: **D.1 (Umlaut) → Re-Test → D.2 (Pruefstrenge-Policy) → A (dualistisch) → C (Pfad-ABSCHAFFEN) → B (Reife + themenspezifisch)**.
+v2-Revision: **D.1 → Re-Test → D.2 → A → C → B**.
+v2.1-Revision: **D.1-Retrofit (Umlaut-Patch) ∥ B.0 (O-02-E Extraktions-Workflow) → D.2 (Feedback-First, gesetzt) → A (dualistisch) → C (Pfad-ABSCHAFFEN) → B.1 (O-02-D/C/A)**.
 
-Begruendung:
-1. **D.1 (Umlaut)** loest vermutlich einen grossen Anteil des "zu streng"-Befunds allein (Lesart L1). Niedrigster Hebel-pro-Risiko, isoliert testbar.
-2. **Re-Test** bewertet, ob D.2 (Pruefstrenge) ueberhaupt noch adressiert werden muss oder erst spaeter.
-3. **D.2** baut Feedback-First als Ziel-Architektur auf, Interim O-07-P-B. Hoechster didaktischer Hebel nach D.1.
-4. **A (dualistisch)** ist Schema-Eingriff und Voraussetzung fuer kohaerente F-08-Behandlung.
-5. **C (Pfad-ABSCHAFFEN)** ist der groesste Einzel-Scope, kann aber auf A aufbauen (Stundenfrage-Grounding koppelt an Material-Gruppe).
-6. **B** erfordert Reife-Programm und wird mit Achse C (Material-Strukturumbau) zeitlich gekoppelt.
+Begruendung v2.1:
+1. **D.1-Retrofit** ist chirurgischer Bug-Fix, isolierbar, sofort wirksam. Nicht mehr Diagnose-Schritt, sondern Bug-Track. Unabhaengig von D.2.
+2. **B.0 (O-02-E)** kann parallel zu D.1 laufen (unterschiedliche Datei-Ownership). Ist Voraussetzung fuer O-05-E (Portraets in C), daher frueh einzuziehen. User-gesetzt.
+3. **D.2 (Feedback-First)** ist Architektur-Entscheidung, User-gesetzt — direkt bauen, keine Interim-Stufen mehr.
+4. **A (dualistisch)** Schema-Eingriff, Voraussetzung fuer kohaerente F-08-Behandlung.
+5. **C (Pfad-ABSCHAFFEN)** groesster Einzel-Scope, kann auf A aufbauen und profitiert von B.0 (Portraets fuer Rollen-Doppel-Figuren).
+6. **B.1** (O-02-D/C/A themenspezifisch) nach C, weil Sub-Agent-Reife-Programm mit Material-Strukturumbau gekoppelt ist.
 
-**Status:** Denkvorschlag, nicht Empfehlung. User entscheidet Rundenzerlegung.
+**Status:** Denkvorschlag bezueglich der noch nicht entschiedenen Fragen (Runden-Struktur, Parallelisierung). Die drei User-Entscheidungen (O-02-E, O-05-E, O-07-P-C gesetzt + Umlaut-Retrofit) sind nicht mehr verhandelbar.
 
 ---
 
 ## 6. Offene Entscheidungsfragen
+
+### 6.0 Bereits entschieden (User 2026-04-11)
+
+- ✅ **F-02 Medien-Workflow:** O-02-E (Wiki-Artikel-Extraktions-Workflow als Primaerquelle, freie Wikimedia-Suche nur Notfall, Denkmaeler als didaktische Vergegenwaertigungs-Bruecke) **gesetzt**.
+- ✅ **F-05 Sprecher-Portraets:** O-05-E (Portraets real belegter historischer Personen passbild-artig ins Material, Sprecher-Identifikation ueber Anordnung) **gesetzt**.
+- ✅ **F-07 Pruefstrenge:** O-07-P-C (Feedback-First) **gesetzt**, direkte Implementierung, keine Interim-Stufen.
+- ✅ **F-07 Umlaut-Diagnose:** Retrofit-Luecke an zwei spaeter hinzugefuegten Fragetypen, keine Verknuepfung mit Pruefstrenge-Dimension. Retrofit-Patch ist Bug-Fix-Track.
 
 ### 6.1 Technische Runden-Struktur
 
@@ -608,40 +635,52 @@ Begruendung:
 3. **Sub-Agent-Reife-Programm (M-03 / Achse B):** Eigenstaendiger Track oder Voraussetzung fuer v3.12-Implementierung?
 4. **Phase 3.3 (M-02):** Wird die Live-Sichtung als eigene State-Machine-Phase etabliert?
 5. **Retroaktive Fixes:** Werden die bestehenden Games (Marne, Ursachen) retrograd migriert, oder gilt v3.12 nur fuer neu generierte Games?
+6. **Phase 0.2.M (O-02-E Extraktions-Phase):** Wird als eigene formale State-Machine-Sub-Phase eingezogen oder als Schritt innerhalb Phase 0.2 INHALT verankert?
+7. **Fragetyp-Identifikation (Umlaut-Retrofit):** Wird als kleiner diagnostischer Vor-Track gestartet (Code-Lese + Template-Scan), oder direkt im Implementierungs-Track?
 
-### 6.2 Fachdidaktische Grundsatz-Entscheidungen
+### 6.2 Fachdidaktische Grundsatz-Entscheidungen (offen)
 
-6. **Dualistische Stundenfrage-Architektur (O-01-E):** Wird als neue Option akzeptiert und Achse A darauf gebaut? (**Zentrales v2-Novum.**)
-7. **Quellen-Authentizitaet als Top-Norm:** Wird LehrplanPLUS GPG 7 Bayern *"Quellen von Darstellungen unterscheiden"* als hartes fachdidaktisches Axiom akzeptiert, das Pfad C-ABSCHAFFEN zwingend macht?
-8. **Feedback-First (O-07-P-C) als Ziel-Architektur:** Akzeptabel, auch wenn die Escape-Mechanik (Progression blockiert bei falscher Antwort) umgebaut werden muss?
-9. **Rollen-Doppel-Figuren pro Mappe:** Wird als didaktisches Grundmuster etabliert? Enabler fuer O-04-A ohne Immersionsverlust.
-10. **Alibi-Medien-Schutz:** Wird in O-02-A eine explizite Klausel eingefuehrt, dass dekorative Medien (ohne historische Aussage) als FAIL gelten?
-11. **Operator-Transparenz:** Wird die Klieme-konforme Pflicht zur expliziten Operator-Nennung bei Abschluss-Aufgaben generell eingefuehrt, oder bleibt sie auf Position 7 beschraenkt?
-12. **Beutelsbacher Konsens als Prueflinse:** Werden Stundenfragen zusaetzlich gegen Beutelsbach §3 (Schueler-Interessen) geprueft, oder bleibt die Pruefung rein kognitiv-operational?
+8. **Dualistische Stundenfrage-Architektur (O-01-E):** Wird als neue Option akzeptiert und Achse A darauf gebaut? (**Zentrales v2-Novum.**)
+9. **Quellen-Authentizitaet als Top-Norm:** Wird LehrplanPLUS GPG 7 Bayern *"Quellen von Darstellungen unterscheiden"* als hartes fachdidaktisches Axiom akzeptiert, das Pfad C-ABSCHAFFEN zwingend macht?
+10. **Rollen-Doppel-Figuren pro Mappe:** Wird als didaktisches Grundmuster etabliert? Enabler fuer O-04-A ohne Immersionsverlust. **Teilweise impliziert durch O-05-E** (Portraets funktionieren besser bei real belegten Personen als bei erfundenen Figuren — User-Entscheidung zu O-05-E zwingt schrittweise in Richtung real belegte Doppel-Figuren).
+11. **Alibi-Medien-Schutz:** Wird in O-02-A eine explizite Klausel eingefuehrt, dass dekorative Medien (ohne historische Aussage) als FAIL gelten? **Teilweise geloest durch O-02-E** (Extraktion aus qualifizierten Artikeln reduziert Alibi-Gefahr strukturell).
+12. **Operator-Transparenz:** Wird die Klieme-konforme Pflicht zur expliziten Operator-Nennung bei Abschluss-Aufgaben generell eingefuehrt, oder bleibt sie auf Position 7 beschraenkt?
+13. **Beutelsbacher Konsens als Prueflinse:** Werden Stundenfragen zusaetzlich gegen Beutelsbach §3 (Schueler-Interessen) geprueft, oder bleibt die Pruefung rein kognitiv-operational?
+14. **Escape-Mechanik-Umbau fuer Feedback-First:** Wie genau wird die Progression entkoppelt? (a) Antwort-Abgabe genuegt, Musterloesung wird danach gezeigt, oder (b) Mehrfach-Versuch mit Feedback zwischen Versuchen, oder (c) Optional-Skip mit Abzug in der Gesamt-Wertung. **Benoetigt Detail-Design-Runde.**
+15. **Portraet-Fallback bei erfundenen Figuren:** Wenn O-05-E keine Portraets fuer rekonstruierte Figuren zulaesst, werden dann (a) erfundene Figuren generell verworfen zugunsten real belegter Personen, oder (b) rekonstruierte Figuren ohne Portraet akzeptiert (Stilbruch zum visuellen Pattern)?
 
 ### 6.3 Diagnostisch
 
-13. **Marne/Ursachen Re-Test nach Umlaut-Fix:** Wird der "zu streng"-Befund isoliert gegen L1/L2/L3 getestet, bevor Pruefstrenge-Policy gebaut wird?
-14. **Parallele Sichtung Game 1 (Ursachen):** Wird sie nach gleicher Methodik durchgefuehrt, um zu pruefen, ob die 8 Findings systemisch oder Marne-spezifisch sind?
-15. **M-03 Reife-Matrix:** Wird das Audit der Sub-Agent-Reife als erste Massnahme gestartet, unabhaengig von der Rundenzerlegung?
+16. **Parallele Sichtung Game 1 (Ursachen):** Wird sie nach gleicher Methodik durchgefuehrt, um zu pruefen, ob die 8 Findings systemisch oder Marne-spezifisch sind?
+17. **M-03 Reife-Matrix:** Wird das Audit der Sub-Agent-Reife als erste Massnahme gestartet, unabhaengig von der Rundenzerlegung?
+18. **Wikipedia-Artikel-Scope fuer O-02-E:** Welche Artikel werden pro Mappe kanonisch als Extraktions-Quelle definiert? (Lehrplan-Artikel + Thema-Hauptartikel, oder breiter inkl. verlinkter Spezial-Artikel?) Wird in Phase 0.2 INHALT als Pflicht-Output konsolidiert?
 
 ---
 
 ## 7. Kurz-Summa fuer Entscheider
 
-**Wesentliche v2-Revisionen gegenueber v1:**
+**v2.1 Status:** Drei weitere User-Entscheidungen (2026-04-11) sind integriert. Offene Fragen-Zahl ist auf 11 reduziert.
 
-1. **Achse A:** v1-Bundle O-01-B + O-01-C + O-08-B **ist fachdidaktisch zurueckgezogen**. Neue Option **O-01-E (dualistische Stundenfrage)** ersetzt den Operationalisierungs-Zwang durch eine `narrativ`/`operational`-Trennung. Erhaelt biographisch-emotionale SuS-Zugaenge (Beutelsbach §3, Alteritaet nach Ruesen), ermoeglicht trotzdem deterministisches Material-Grounding. Bundle v2: O-01-E + O-01-A (weich) + O-01-B (gegen `operational`).
+**User-Entscheidungen v2.1 (nicht mehr verhandelbar):**
 
-2. **Achse C:** v1-Offenheit "C-ABSCHAFFEN vs. C-VERSCHAERFEN" **ist auf C-ABSCHAFFEN entschieden**. LehrplanPLUS GPG 7 Bayern *"Quellen von Darstellungen unterscheiden"* ist hart und unverhandelbar. v3.6-Erhalt laesst D-01 (Quellen-Authentizitaets-Verletzung) und D-07 (Autoritaets-Verschiebung) chronisch ausgeloest — unvertretbar. Bundle v2: O-04-A + O-04-D (Rollen-Doppel-Figuren) + O-06-A (info_box) + O-05-A (QuellentextMehrstimmen) + O-03-B (typ-spezifische Titel-Pattern). Retroaktive Migration der bestehenden Games empfohlen.
+- **F-02 → O-02-E gesetzt.** Medien-Workflow steht und faellt mit deterministischer Extraktion aus qualifizierten Wikipedia-Artikeln (pro Mappe ein `medien_katalog`-JSON, Phase 0.2.M). Freie Wikimedia-Suche nur Notfall-Branch mit Begruendungspflicht. **Denkmaeler und Gedenkstaetten explizit als didaktische Vergegenwaertigungs-Bruecke zugelassen** (Transfer-Zone der Mappe).
+- **F-05 → O-05-E gesetzt.** Sprecher-Portraets real belegter historischer Personen werden passbild-artig ins Material eingebunden. Sprecher-Identifikation erfolgt visuell ueber Anordnung. Pattern greift auch fuer Tagebuch-Figuren und Rollen-Doppel-Figuren (F-04 O-04-D). Datenquelle ist der O-02-E-Extraktions-Katalog.
+- **F-07 → O-07-P-C gesetzt.** Feedback-First wird direkt gebaut, keine Interim-Stufen. Escape-Mechanik-Umbau (Progression an Antwort-Abgabe + Musterloesungs-Anzeige) ist Implementierungs-Pflicht. **O-07-P-A bleibt gestrichen**, O-07-P-B entfaellt.
+- **F-07 → Umlaut-Retrofit-Track eigenstaendig.** User-Klarstellung: Umlaut und Pruefstrenge sind nicht verknuepft. Die zwei bug-behafteten Fragetypen wurden chronologisch nach dem urspruenglichen Umlaut-Fix eingefuehrt und haben den Fix nie mitbekommen. Retrofit-Patch ist Bug-Fix, nicht Policy-Frage.
 
-3. **Achse D:** **O-07-P-A (globaler Permissive-Flag) ist gestrichen** (loest D-03 Kompetenz-Deprivation aus, deaktiviert CER-Schema auf AFB-III-/Bloom-L5-Niveau). **O-07-P-C (Feedback-First)** wird Ziel-Architektur, O-07-P-B Interim. Umlaut-Fix (O-07-U-A/B/D, **ohne** O-07-U-C) zuerst, weil ein grosser Teil des "zu streng"-Befunds vermutlich Lesart L1 ist (Fuzzy-Match-Rauschen durch Umlaut-Artefakte).
+**Stabil aus v2 (in v2.1 unveraendert):**
 
-4. **Achse B:** Reihenfolge umgekehrt zu **O-02-D → O-02-C → O-02-A themenspezifisch**. DIDAKTIK-Skizze als Upstream-Anker; generischer `min 1 nicht-Text`-Zwang abgelehnt (loest D-02 Didaktische Monokultur aus).
+1. **Achse A:** Neue Option **O-01-E (dualistische Stundenfrage)** mit `narrativ`/`operational`-Trennung. v1-Bundle O-01-B+C+O-08-B bleibt zurueckgezogen. Bundle v2: O-01-E + O-01-A (weich) + O-01-B (gegen `operational`).
 
-**Technischer Preis:** Achse A moderat hoeher (Schema-Migration Stundenfrage-Dualismus), Achse C gleich hoch (war immer teuer), Achsen B/D stabil oder niedriger. **Fachdidaktischer Gewinn: D-01, D-03, D-04, D-05, D-07 werden ferngehalten; D-02 nur bei disziplinierter O-02-A-Formulierung; D-06, D-08 werden adressiert.**
+2. **Achse C:** Pfad C-ABSCHAFFEN gesetzt (LehrplanPLUS GPG 7 Bayern *"Quellen von Darstellungen unterscheiden"* als hartes Axiom). Bundle: O-04-A + O-04-D (Rollen-Doppel-Figuren) + O-06-A (info_box) + O-05-A (QuellentextMehrstimmen) + O-03-B (typ-spezifische Titel-Pattern). **In v2.1 verstaerkt durch O-05-E:** Rollen-Doppel-Figuren sollten real belegte Personen mit Portraet sein — verstaerkt den fachdidaktischen Druck, erfundene Figuren durch real belegte zu ersetzen.
 
-**Entscheidungsgrundlage nicht Entscheidung:** Das Dokument empfiehlt, entscheidet aber nicht. Die 15 offenen Fragen in §6 warten auf User-Antworten, bevor die v3.12-Rundenstruktur als Track-Katalog operationalisiert wird.
+3. **Achse B:** Bundle v2.1 **O-02-E → O-02-D → O-02-C → O-02-A themenspezifisch**. O-02-E als Infrastruktur-Basis (neu, User-gesetzt). Generischer `min 1 nicht-Text`-Zwang bleibt abgelehnt.
+
+**Technischer Preis v2.1:** Achse B substantiell hoeher als in v2 (O-02-E zieht neue Phase 0.2.M + Katalog-Pipeline ein, S1/S2/S4/S6 kumuliert). Achse C moderat hoeher (O-05-E fuegt Portraet-Pipeline + Engine-CSS-Layout hinzu). **Fachdidaktischer Gewinn v2.1:** D-01/D-03/D-04/D-05/D-07 ferngehalten (v2-Stand), zusaetzlich **D6 und D8 deutlich gestaerkt** durch Portraet-Pattern (visuelle R7-Entlastung + Alteritaets-Anker). Alibi-Medien-Gefahr (D-02) strukturell gedaempft durch Extraktions-Constraint (v2.1).
+
+**Kritische Implementierungs-Abhaengigkeit v2.1:** O-05-E ist Daten-Konsument von O-02-E. Reihenfolge B.0 (O-02-E) → C (enthaelt O-05-E) ist damit nicht nur Empfehlung, sondern strukturell zwingend. B.0 und C koennen nur gekoppelt (oder mit B.0 strikt vor C) rollouten.
+
+**Entscheidungsgrundlage nicht Entscheidung:** Das Dokument empfiehlt, entscheidet aber nicht. Die verbleibenden 11 offenen Fragen in §6 (§6.0 listet die bereits getroffenen Entscheidungen) warten auf User-Antworten, bevor die v3.12-Rundenstruktur als Track-Katalog operationalisiert wird.
 
 ---
 
@@ -710,4 +749,4 @@ Begruendung:
 
 ---
 
-**Status:** VORSCHLAG v2 — integriert mit Fachdidaktik-Audit. Wartet auf Scope-Entscheidung fuer v3.12-Rundenstruktur. Antworten zu §6 (15 offene Fragen) wandeln dieses Dokument in einen operativen Upgrade-Plan.
+**Status:** VORSCHLAG v2.1 — integriert mit Fachdidaktik-Audit und drei User-Entscheidungen (F-02 O-02-E, F-05 O-05-E, F-07 O-07-P-C gesetzt, Umlaut-Retrofit als eigener Track). Wartet auf Scope-Entscheidung fuer v3.12-Rundenstruktur. Antworten zu §6 (11 verbleibende offene Fragen) wandeln dieses Dokument in einen operativen Upgrade-Plan.
