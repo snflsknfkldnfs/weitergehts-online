@@ -4,6 +4,40 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-11 — R0.7 bpb.de-Dossier Viability-Eval: PASS mit Lizenz-Restriktion
+
+**Phase:** Audit-Track R0.7 (nach User-Meldung hochwertiges bpb-Dossier Erster Weltkrieg)
+**Modus:** EXECUTE (PM) — reine Evaluation, kein Implementierungs-Schritt
+**Zweck:** Evaluieren, ob bpb.de-Dossiers standardisiert ueber Cowork abrufbar und fuer Escape-Games nutzbar sind.
+
+**Vorgehen:**
+1. `mcp-registry search` mit bpb-Keywords → 0 Treffer (kein dedi Connector).
+2. `WebFetch` auf Dossier-Root + Unterartikel 155302 (Kruse, "Ausloesung und Beginn") → Gliederung, Autor, Medien-Inventur, Lizenz erfasst.
+3. `markdownify webpage-to-markdown` auf denselben Unterartikel → 62 KB / 556 Zeilen sauberer Volltext, 1 von 3 Bildern erfasst (JS-Lazy-Load-Defekt).
+4. Lizenz-Analyse CC BY-NC-ND 4.0 gegen Pipeline-Anforderungen.
+5. Architektur-Integrations-Check: bpb als dritter Quell-Kanal?
+
+**Ergebnis:**
+- **Abruf standardisiert moeglich** via `markdownify` (Volltext) + `WebFetch` (Medien/Gliederung). Dual-Kanal noetig, keine neue MCP-Installation.
+- **Lizenz-Blocker**: CC BY-NC-ND 4.0 verbietet Paraphrase/Kuerzung/LLM-Umarbeitung. bpb-Volltext darf NICHT in die Wikipedia-artige Ingest-Pipeline (Phase 0.1), weil Sub-Agent sonst verbotene Derivatwerke erzeugen wuerde.
+- **Verwendbarer Modus**: Zitat-Baustein. Wortgetreue Kurzzitate (1-5 Saetze) mit Attribution — doppelt gedeckt durch §51 UrhG Zitatrecht und Lizenz-Wortlaut selbst. Unveraenderte Bild-Einbettung mit Rechteinhaber-Hinweis.
+- **Medien-Effekt**: bpb-Dossiers bieten vorrangig Kuratierungsleistung — 2 von 3 getesteten bpb-Artikel-Bildern sind Bundesarchiv-/PD-Assets, die bereits ueber Commons-Kanal laufen. Nur bpb-eigene Grafiken (z.B. Schlieffenplan-Rekonstruktion) sind bpb-exklusiv und unveraendert einbettbar.
+- **Strukturkritik am Wiki-Scope**: bpb-Dossier deckt drei Themenbereiche, die im R0.6-Wiki-Katalog §8 fehlen — Kriegsoekonomie (Kap. 5), Frauen-Heimatfront/Gender (Kap. 7), Kulturkrise/moderne Kunst (Kap. 11). Lehrplan-abhaengig pruefen.
+
+**Plan-Impact (neue Punkte 10-12 in STATUS.md):**
+- **Punkt 10**: Neue Phase **0.2.Z "Zitat-Baustein-Kuratierung"** als optionale Sub-Phase parallel zu 0.2.M einziehen. Sub-Agent `bpb_zitat_kurator`, Output `zitat_katalog_game.json`, Invarianten I1-I6 (Befund §7.2).
+- **Punkt 11**: Wiki-Scope-Katalog §8 um drei Luecken pruefen (Kriegsoekonomie, Frauen-Heimatfront, Kulturkrise). Keine automatische Aufnahme.
+- **Punkt 12**: Neue Sub-Agenten-Invariante **"Lizenz-Pre-Check"** fuer alle Nicht-Wikipedia-Quellen: Quellen mit ND-Klausel duerfen nicht in die Volltext-Ingest-Pipeline.
+
+**Gate-Status R0.7:**
+- G-bpb.1 PASS (standardisierter Abruf), G-bpb.2 PASS (Volltext), G-bpb.3 PARTIAL (Medien-JS-Lazy-Load), G-bpb.4 FAIL (Volltext-Pipeline-Inkompatibilitaet), G-bpb.5 PASS (Zitat-Pipeline), G-bpb.6 PASS (nicht R1-blockierend).
+
+**Modus-Abschluss**: R0 FINAL+ (R0.1-R0.7). R1-Start (v3.11.1 Bugfix-Bundle) bleibt unblockiert.
+
+**Artefakte:** `docs/befunde/TESTRUN_BPB_DOSSIER_2026-04-11.md` (Befund, Lizenz-Analyse, Integrations-Vorschlag), `docs/projekt/STATUS.md` (Header + R0-Befunde + Plan-Impact-Punkte 10-12), dieser CHANGELOG-Eintrag.
+
+---
+
 ## 2026-04-11 — R0.6 Titel-Verifikation post-MCP-Config: 9 von 28 Titel ungueltig
 
 **Phase:** Zwischenschritt nach User-Push Session 29 (wikipedia-mcp Config-Fix aktiviert)
