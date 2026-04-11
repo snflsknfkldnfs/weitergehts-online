@@ -4,6 +4,34 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-11 — R0 Audit-Track COMPLETE: 4 Befunde commit-ready
+
+**Phase:** UPGRADE_PLAN_v3-12 Runde 0 (Audits & Voraussetzungen)
+**Modus:** EXECUTE (PM)
+**Zweck:** Runde 0 gemaess Plan §2 vollstaendig ausgefuehrt. Diagnose-Track, keine Code-Aenderungen am Generator oder an der Engine.
+
+**Artefakte (alle neu):**
+
+| Gate | Artefakt | Kern-Befund |
+|---|---|---|
+| G-0-1 | `docs/befunde/M-03_REIFE_MATRIX_v3-12_2026-04-11.md` | 15 Sub-Agenten auf 5 Kriterien bewertet. ROT: STATISTIK, QUELLENKRITIK. GELB: KARTE, ZEITLEISTE, FREITEXT, BEGRUENDUNG, VERGLEICH. Scoping-Hypothese "KARTE/ZEITLEISTE/STATISTIK unreif" partiell falsifiziert — KARTE/ZEITLEISTE sind engine-reif, Pipeline-Luecke. |
+| G-0-2 | `docs/befunde/UMLAUT_FRAGETYP_FORENSIK_R0_2026-04-11.md` | Scoping-Hypothese "zwei Fragetypen ohne Umlaut-Fix" falsifiziert. **Drei** Sub-Agenten ohne Generation-Regel (BEGRUENDUNG, VERGLEICH, QUELLENKRITIK). QUELLENKRITIK v3.3-Block ist selbst-widerspruechlich ("echte UTF-8-Umlaute (ae, oe, ue, ss)"). **Vierter** Sub-Agent (FREITEXT) hat Regel, aber Marne-Live-Output zeigt ASCII — Generations-Disziplin-Luecke. Plan-Impact: O-07-U-B-Checker wird Pflicht-Gate, nicht optional. |
+| G-0-3 | `docs/befunde/VERGLEICH_G1_G2_SICHTUNG_2026-04-11.md` | 5 von 8 G2-Findings systemisch bestaetigt. F-LS-M1-04/06 sind v3.6-Policy-spezifisch (G2-exklusiv, Policy-Defekt). F-LS-M1-07/08 zeigen G1→G2-Umlaut-Regression: G1 hat ASCII nur in `_meta.bloom_begruendung`, G2 in SuS-sichtbaren Feldern. G1/M1 nutzt Karten + Zeitleisten, G2/M1 nicht — Medien-Monokultur ist Disziplin-Bug, nicht Reife-Bug. |
+| (R0.4) | `docs/befunde/WIKI_SCOPE_KATALOG_v3-12_PILOT_2026-04-11.md` | 13 Kern-Artikel (Volltext-Ingest) + 15 erweiterter Medien-Scope fuer v3.12-Pilot (Neu-Regeneration G1). Budget-Konflikt: erweiterter Scope ueberschreitet §15.1 F18 Default (10/Game). Empfehlung Option A (15/Game, Pilot-Anhebung). Drei User-Entscheidungen offen (§7 des Katalogs). |
+
+**Plan-Impact (offen, wird in UPGRADE_PLAN v1.3 nachgezogen):**
+1. R1 Arbeitspaket 1 Umlaut-Retrofit Scope auf **drei** Sub-Agenten (nicht zwei) erweitern.
+2. R1 Arbeitspaket 4 O-07-U-B-Checker als Pflicht-Gate-Hook in PROJECT_INSTRUCTIONS State-Machine.
+3. R2 Arbeitspaket 8 M-03-Reife-Programm: STATISTIK + QUELLENKRITIK Pflicht-Einsatz im v3.12-Pilot.
+4. R4 Fiktions-Klausel muss v3.6-Erzaehlerstimmen-Policy revidieren (H2 aus R0.3).
+5. R5 Medien-Diversitaet muss Pflicht-Quoten-Q-Gate einziehen (H3 aus R0.3).
+
+**Commit:** folgt in einem Commit.
+
+**Naechster Schritt:** Commit R0 + STATUS/CHANGELOG-Sync, dann UPGRADE_PLAN v1.3-Update mit den 5 Plan-Impact-Punkten, dann Start R1 (v3.11.1 Bugfix-Bundle mit korrigiertem Umlaut-Retrofit-Scope).
+
+---
+
 ## 2026-04-11 — Upgrade-Plan v3.12 v1.2: Archivierung aus R0 entfernt
 
 **Phase:** Plan-Korrektur v1.1 -> v1.2
