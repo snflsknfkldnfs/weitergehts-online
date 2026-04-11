@@ -4,7 +4,7 @@
 
 **Zweck:** Operativer Upgrade-Plan, der die SCOPING-Entscheidungen in eine Runden-Architektur mit klaren Abhaengigkeiten, Scopes, Exit-Kriterien und Risiko-Gates uebersetzt. **Kein Scoping mehr, sondern Ausfuehrungsvorlage.**
 
-**Status:** VORSCHLAG v1 — 2026-04-11. Wartet auf User-Freigabe der Runden-Struktur. Offene Detail-Fragen in §8.
+**Status:** v1.1 — 2026-04-11. User-Entscheidungen zu allen 11 Detail-Fragen integriert (siehe §15.1). Runden-Struktur freigegeben. Start-Bedingung R0: bestehendes G1 (Ursachen) archivieren.
 
 **Abgrenzung:** Der Plan schreibt NICHT die konkrete Implementierungs-Reihenfolge innerhalb einer Runde vor. Innerhalb einer Runde bleibt die Claude-Code-Seite (escape-game-generator) frei in der taktischen Umsetzung. Der Plan setzt nur Scope, Artefakte, Gates und Runden-Reihenfolge.
 
@@ -94,6 +94,8 @@ Runde 1 (Bugfix)  ──┤                                    └──► Rund
 
 **Arbeitspakete:**
 
+0. **R0.ARCHIV-G1 — Archivierung bestehendes Game 1 (Marne).** Erste Task, blockiert alle nachfolgenden Arbeitspakete. Ziel: Interferenzfreiheit fuer v3.12-Neugenerierung, die ebenfalls Ursachen-und-Ausbruch adressiert (oder alternativ Marne-Remake — je nach Wahl in §15.1 F11-Entscheidung). Vorgehen nach Default-Variante (b): Verschiebung nach `archiv/g1-v3-11-marne/` ausserhalb Deploy-Scope. Landing-Page-Eintrag fuer Marne aus `index.html` entfernen. Q-GATE-LOG Eintrag setzen. Commit in weitergehts-online Repo, Push durch User. **Vorbedingung:** User bestaetigt Archivierungs-Variante (a/b/c) und bestaetigt: Neu-Generierung adressiert Ursachen-und-Ausbruch (per User-Antwort F11), bestehendes G1 (Ursachen) in weitergehts-online wird parallel archiviert oder war nicht live. **Wichtig:** Wenn bestehendes G1 und G2 beide existieren und beide Ursachen-Thema behandeln, muss R0.ARCHIV-G1 beide Stilllegungen koordinieren.
+
 1. **M-03 Sub-Agent-Reife-Matrix erstellen.** Pro Sub-Agent in `escape-game-generator/agents/SUB_*.md` eine Ampel-Bewertung auf fuenf Kriterien:
    - (i) Engine-Rendering existiert und funktioniert
    - (ii) Asset-Pipeline angebunden (Wikimedia, commons)
@@ -106,14 +108,15 @@ Runde 1 (Bugfix)  ──┤                                    └──► Rund
 
 3. **Konsolidierung Parallel-Sichtung Game 1.** User hat bereits Game 1 (Ursachen) gesichtet und die Befunde als systemisch bestaetigt. Dieser Schritt konsolidiert die bereits erhobenen Erkenntnisse in ein kurzes Vergleichs-Dokument. Output: `docs/befunde/VERGLEICH_G1_G2_SICHTUNG_2026-04-XX.md` — eine Seite, die pro F-LS-M1-Finding bestaetigt oder differenziert, ob es auch in G1 auftrat.
 
-4. **Wikipedia-Artikel-Scope-Katalog fuer Ersttest.** Fuer das geplante v3.12-Erstgame (vermutlich Marne-Remake oder neues Thema, User-Entscheidung offen) werden die Kern-Artikel (Text-Scope) und der erweiterte Medien-Scope (tiefer, spezialisierte Wikipedia-Artikel fuer Medien-Extraktion) konkret benannt. Dient Runde 2 als Referenz-Datenpunkt fuer die Phase-0.2.M-Implementierung.
+4. **Wikipedia-Artikel-Scope-Katalog fuer Ersttest.** Fuer das v3.12-Erstgame (Neu-Regeneration G1 Ursachen-und-Ausbruch gemaess §15.1 F11) werden die Kern-Artikel (Text-Scope) und der erweiterte Medien-Scope (tiefer, spezialisierte Wikipedia-Artikel fuer Medien-Extraktion) konkret benannt. Dient Runde 2 als Referenz-Datenpunkt fuer die Phase-0.2.M-Implementierung.
 
 **Gates:**
+- **G-0-0:** R0.ARCHIV-G1 abgeschlossen, bestehendes G1 (Marne/Ursachen) ist nicht mehr im Deploy-Scope. User-Push bestaetigt.
 - **G-0-1:** Reife-Matrix liegt vor und identifiziert mindestens die Sub-Agenten KARTE/ZEITLEISTE/STATISTIK als unreif (Hypothese aus Scoping §2 F-02).
 - **G-0-2:** Zwei Umlaut-bug-behaftete Fragetypen sind eindeutig benannt.
 - **G-0-3:** Vergleichs-Dokument G1/G2 bestaetigt Systemizitaet.
 
-**Exit:** Alle vier Artefakte im Repo committet. Keine offenen Diagnose-Fragen mehr, die Runde 2 blockieren.
+**Exit:** Alle fuenf Arbeitspakete abgeschlossen (R0.ARCHIV-G1 + vier Audits). Keine offenen Diagnose-Fragen mehr, die Runde 2 blockieren.
 
 **Risiko:** Wenn die Reife-Matrix zeigt, dass auch vermeintlich reife Sub-Agenten Luecken haben (TAGEBUCH, QUELLENTEXT), vergroessert sich das M-03-Reife-Programm in Runde 2. Plan-Anpassung muss moeglich sein.
 
@@ -165,7 +168,7 @@ Runde 1 (Bugfix)  ──┤                                    └──► Rund
    - **Kern-Artikel-Liste** (aus Phase 0.2 INHALT uebernommen) — diese Artikel werden volltext-analytisch verarbeitet (Sachanalyse, Skript-Grundierung).
    - **Erweiterter Medien-Scope** — spezialisierte Wikipedia-Artikel, die nur fuer Medien-Extraktion durchsucht werden. Textinhalt wird explizit **nicht** in Sachanalyse/Inhaltsartefakt/Skript uebernommen (Token-Effizienz). Beispiel: Fuer eine Mappe zu "Verdun" koennte der Kern-Artikel `Schlacht um Verdun` sein, der erweiterte Medien-Scope zusaetzlich `Fort Douaumont`, `Mort Homme (Verdun)`, `Memorial de Verdun` (Denkmaeler).
 
-3. **Output-Schema `medien_katalog_mappe.json`.** Schema-Skizze:
+3. **Output-Schema `medien_katalog_game.json`.** Schema-Skizze:
    ```json
    {
      "mappe_id": "M1",
@@ -204,7 +207,7 @@ Runde 1 (Bugfix)  ──┤                                    └──► Rund
    - `info_box` als `<aside>`-Rendering (Schulbuch-Randspalte-Look)
    - Graceful Degradation: wenn `portraet` fehlt (fiktive Figur), wird ohne Portraet gerendert, Stilbruch akzeptiert (User-Entscheidung 15).
 
-7. **AGENT_MATERIAL-Kopplung.** Sub-Agenten `SUB_MATERIAL_BILDQUELLE` / `SUB_MATERIAL_KARTE` / `SUB_MATERIAL_ZEITLEISTE` / `SUB_MATERIAL_STATISTIK` ziehen ihre Assets aus `medien_katalog_mappe.json`, nicht aus freier Wikimedia-Suche. Notfall-Branch: wenn Katalog fuer den geforderten Typ weniger als zwei Treffer hat, darf der Sub-Agent freie Suche ausfuehren, muss aber `_meta.fallback_begruendung` setzen (neues Gate MED-FALLBACK in Runde 7).
+7. **AGENT_MATERIAL-Kopplung.** Sub-Agenten `SUB_MATERIAL_BILDQUELLE` / `SUB_MATERIAL_KARTE` / `SUB_MATERIAL_ZEITLEISTE` / `SUB_MATERIAL_STATISTIK` ziehen ihre Assets aus `medien_katalog_game.json`, nicht aus freier Wikimedia-Suche. Notfall-Branch: wenn Katalog fuer den geforderten Typ weniger als zwei Treffer hat, darf der Sub-Agent freie Suche ausfuehren, muss aber `_meta.fallback_begruendung` setzen (neues Gate MED-FALLBACK in Runde 7).
 
 8. **M-03-Reife-Programm.** Auf Basis der Reife-Matrix aus Runde 0: pro als unreif markierten Sub-Agenten die fehlenden Reife-Kriterien schliessen:
    - Template-Beispiele nachziehen (auf Basis eines neuen Marne-Test-Games oder eines frisch generierten Test-Games)
@@ -214,7 +217,7 @@ Runde 1 (Bugfix)  ──┤                                    └──► Rund
    Der genaue Scope der unreifen Sub-Agenten haengt von Runde 0 ab.
 
 **Gates:**
-- **G-2-1:** Neues Schema `medien_katalog_mappe.json` ist definiert und mit einem Test-JSON validiert.
+- **G-2-1:** Neues Schema `medien_katalog_game.json` ist definiert und mit einem Test-JSON validiert.
 - **G-2-2:** Phase 0.2.M ist in PROJECT_INSTRUCTIONS und als eigener Vertrag dokumentiert.
 - **G-2-3:** `SUB_MEDIEN_EXTRAKTION` (oder Aequivalent) existiert als Sub-Agent-Datei.
 - **G-2-4:** Schema-Erweiterung QuellentextMehrstimmen + Portraet + info_box ist in `material-output-schema.json` eingezogen und wird vom Engine gerendert (kleines Test-Material).
@@ -322,7 +325,7 @@ Runde 1 (Bugfix)  ──┤                                    └──► Rund
 
 1. **O-02-D Phase-0.1 `medien_skizze`.** AGENT_DIDAKTIK bekommt neuen Pflicht-Output: pro Mappe eine `medien_skizze` mit Empfehlungen fuer Medien-Typen auf Basis der Mappen-Natur (geographisch → Karte empfohlen; Prozess/Verlauf → Zeitleiste empfohlen; quantitativ → Statistik empfohlen). Die Skizze ist Empfehlung, nicht Zwang.
 
-2. **Kopplung zu `medien_katalog_mappe` (Phase 0.2.M).** `medien_skizze` wird Input fuer den Medien-Extraktions-Sub-Agenten. Der Extraktions-Sub-Agent priorisiert empfohlene Typen bei der Durchsuchung der Kern- und erweiterten Scope-Artikel.
+2. **Kopplung zu `medien_katalog_game` (Phase 0.2.M).** `medien_skizze` wird Input fuer den Medien-Extraktions-Sub-Agenten. Der Extraktions-Sub-Agent priorisiert empfohlene Typen bei der Durchsuchung der Kern- und erweiterten Scope-Artikel.
 
 3. **O-02-C Sub-Agent-Reife-Verifikation.** Auf Basis der Reife-Arbeit in Runde 2 wird hier final verifiziert, dass KARTE/ZEITLEISTE/STATISTIK-Sub-Agenten produktionsreif sind. Falls ein Sub-Agent weiterhin unreif ist, bleibt sein Medien-Typ im Fallback-Branch (mit WARN) und wird in einem Folge-Track nachgezogen.
 
@@ -469,7 +472,7 @@ Runde 1 (Bugfix)  ──┤                                    └──► Rund
 | **G-MED-FUNKTION** | 2.1 | deterministisch | 5 | Jedes Medium hat `funktion` + `funktions_begruendung` |
 | **G-MED-TYP-THEMA** | 2.1 | script | 5 | Themenspezifische Typ-Anforderung erfuellt |
 | **G-MED-FALLBACK** | 0.2.M/2.1 | deterministisch | 5 | Freie-Wikimedia-Suche nur mit `_meta.fallback_begruendung` |
-| **G-KATALOG-MIN** | 0.2.M | deterministisch | 2 | `medien_katalog_mappe` hat min 3 qualifizierte Medien |
+| **G-KATALOG-MIN** | 0.2.M | deterministisch | 2 | `medien_katalog_game` hat min 3 qualifizierte Medien |
 | **G-PORTRAET-COMMONS** | 0.2.M | script | 2 | Portraet-URLs sind Commons-lizenz-verifiziert |
 | **G-INFO-BOX-ZWECK** | 2.1 | deterministisch | 2/4 | `info_box.zweck` ist aus Enum gewaehlt |
 | **G-FEEDBACK-MUSTER** | 2.2b | deterministisch | 6 | Aufgabe hat Musterloesung fuer Feedback-Anzeige |
@@ -482,7 +485,7 @@ Runde 1 (Bugfix)  ──┤                                    └──► Rund
 |---|---|---|
 | 0 | `M-03_REIFE_MATRIX_v3-12_*.md`, `VERGLEICH_G1_G2_SICHTUNG_*.md`, Addendum an `BEFUND_LIVE_SICHTUNG_G2_M1` | — |
 | 1 | `tools/typ-check-aufgaben.sh` | VERTRAG_PHASE_0-1/0-2/0-3/0-4, Q-GATE-MECHANIK (STOP_DEFAULT), SUB_AUFGABE_*, SUB_MATERIAL_*, material-output-schema.json (Titel-Description) |
-| 2 | `VERTRAG_PHASE_0-2-M_MEDIEN-EXTRAKTION.md`, `SUB_MEDIEN_EXTRAKTION.md`, Schema `medien_katalog_mappe.json` | PROJECT_INSTRUCTIONS (State-Machine), material-output-schema.json (Subtypen), AGENT_INHALT, AGENT_MATERIAL, escape-engine.js (Rendering), styles.css |
+| 2 | `VERTRAG_PHASE_0-2-M_MEDIEN-EXTRAKTION.md`, `SUB_MEDIEN_EXTRAKTION.md`, Schema `medien_katalog_game.json` | PROJECT_INSTRUCTIONS (State-Machine), material-output-schema.json (Subtypen), AGENT_INHALT, AGENT_MATERIAL, escape-engine.js (Rendering), styles.css |
 | 3 | — | VERTRAG_PHASE_0-3/0-4/2-0/2-2b, AGENT_SKRIPT, AGENT_DIDAKTIK, AGENT_HEFTEINTRAG, SUB_AUFGABE_FREITEXT, Schemata (Stundenfrage-Objekt) |
 | 4 | — | SUB_MATERIAL_TAGEBUCH, SUB_MATERIAL_QUELLENTEXT, VERTRAG_PHASE_2-1, AGENT_MATERIAL, Q-GATE-MECHANIK (neue Gates) |
 | 5 | — | VERTRAG_PHASE_0-1, VERTRAG_PHASE_2-1, AGENT_DIDAKTIK, AGENT_MATERIAL, SUB_MATERIAL_*, Q-GATE-MECHANIK |
@@ -577,6 +580,175 @@ Diese Fragen koennen im Plan nicht abgeschlossen werden und benoetigen User-Antw
 
 ---
 
+## 15.1 Entscheidungen zu Detail-Fragen (2026-04-11)
+
+Dieser Abschnitt schliesst alle 11 Detail-Fragen aus §15 ab. Er wurde nach User-Input 2026-04-11 eingefuegt. Die Fragen selbst bleiben in §15 als Ableitungs-Nachweis erhalten.
+
+### F11 (Vor R0) — v3.12-Pilot-Game
+
+**Entscheidung:** **Neu-Regeneration G1 (Ursachen-und-Ausbruch)** als v3.12-Pilot. Das bestehende G1 (Marne) wird als v3.12-Pilot nicht genutzt, weil R2-R6 Phase 0 betreffen (DIDAKTIK, INHALT, SKRIPT, HEFT-EINTRAG) und eine Voll-Neugenerierung erzwingen.
+
+**Zusaetzliche R0-Task (neu):** Bestehendes G1 muss **archiviert oder entfernt** werden, bevor der v3.12-Erst-Lauf startet. Grund: Interferenzfreiheit zwischen Legacy-v3.11-Artefakten und v3.12-Neugenerierung (Landing-Page-Eintrag, data.json, cache-Busting, mappe-HTMLs).
+
+**Archivierungs-Prozedur (Vorschlag, zu bestaetigen in R0-Start):**
+- Variante (a) **Archiv-Branch:** `git branch archiv/g1-v3-11-marne`, danach auf main entfernen. Nachteil: Live-Zugriff auf altes Game nur per Branch-Checkout.
+- Variante (b) **Archiv-Unterordner:** Verschiebung nach `archiv/g1-v3-11-marne/` (nicht im Deploy-Scope). Nachteil: Wiederherstellung braucht Rueckverschiebung.
+- Variante (c) **Hard-Remove:** Loeschen via git, History bleibt. Nachteil: kein schneller Zugriff aufs alte Game zum Vergleich.
+- **Default in diesem Plan: Variante (b)** — `archiv/` Unterordner ausserhalb Deploy-Scope. Begruendung: schneller Zugriff fuers Vergleichs-Audit, History bleibt, keine Interferenz mit Live-Deploy.
+
+**Folge fuer R0:** Neue Task `R0.ARCHIV-G1` als erste Task in Runde 0. Die Audit-Tasks (M-03 Reife, Umlaut-ID, Vergleich G1/G2, Wiki-Scope-Katalog) laufen danach.
+
+### F1 (Vor R2) — SUB_MEDIEN_EXTRAKTION Architektur
+
+**Entscheidung:** **Eigenstaendige Phase 0.2.M als Konsument des SUB_RECHERCHE-Outputs.** SUB_MEDIEN_EXTRAKTION ist neuer Sub-Agent, kein Part von SUB_RECHERCHE.
+
+**Begruendung (3 Gruende):**
+1. **Unterschiedliche Qualitaets-Kriterien.** SUB_RECHERCHE prueft inhaltliche Relevanz von Text-Passagen; SUB_MEDIEN_EXTRAKTION prueft Lizenz-Status, Bildqualitaet, Caption-Uebersetzbarkeit, Funktions-Zuweisung. Keine Synergie, sondern verschiedene Domaenen.
+2. **Token-Oekonomie.** Medien-Extraktion muss nicht den Volltext der Artikel verarbeiten — Infobox, Gallery-Sektionen, Commons-Kategorien genuegen. Das ist ein anderer Lese-Modus als SUB_RECHERCHE.
+3. **Wiederverwendbarkeit.** Der SUB_RECHERCHE-Output (Liste relevanter Artikel + Pfade) kann von mehreren Downstream-Konsumenten genutzt werden. Eine Kopplung an SUB_RECHERCHE waere architektonisch voreilig.
+
+**Workflow:**
+1. SUB_RECHERCHE liefert Artefakt `recherche_output.json` mit Liste relevanter Wikipedia-Artikel + Kernpfaden + Weiterfuehrenden Verweisen.
+2. SUB_MEDIEN_EXTRAKTION liest `recherche_output.json`, iteriert ueber die genannten Artikel, extrahiert Medien-Kandidaten aus Infobox + Gallery + Commons-Verlinkung, qualifiziert sie (Commons-Check, Caption, Funktions-Vorschlag).
+3. SUB_MEDIEN_EXTRAKTION darf zusaetzlich **potentiell verwertbare** Artikel ausserhalb des Kern-Scopes durchsuchen — aber nur solche, die ueber Wikilinks aus den Kern-Artikeln erreichbar sind (Tiefe 1). Diese Erweiterung ist der "erweiterte Medien-Scope" (siehe F2).
+4. Output: `medien_katalog_game.json` (siehe F3 fuer Scope-Klarstellung).
+
+**Betroffene Artefakte:** Neuer Vertrag `VERTRAG_PHASE_0-2-M_MEDIEN-EXTRAKTION.md`, neuer Sub-Agent `SUB_MEDIEN_EXTRAKTION.md`, Schema-Definition, Q-Gate `G-KATALOG-MIN`.
+
+### F2 (Vor R2) — Dual-Scope-Prioritaet
+
+**Entscheidung:** **Hierarchie (a) > (b) > (c)** mit praeziser Anleitung:
+- **(a) Primaerpfad — Kern-Artikel-Extraktion.** SUB_MEDIEN_EXTRAKTION wird zunaechst **intelligent enabled**, qualifizierte Medien aus den SUB_RECHERCHE-identifizierten Kern-Artikeln zu ziehen. Das ist der Default.
+- **(b) Sekundaerpfad — Erweiterter Medien-Scope.** Innerhalb **vertretbaren Rahmens** (Tiefe 1 via Wikilinks aus Kern-Artikeln, pro Artikel max N Medien-Kandidaten, pro Game Gesamt-Limit). **Funktional praezise angeleitet** ueber Such-Prompt-Template im Vertrag.
+- **(c) Notfallpfad — Freie Wikimedia-Suche.** Nur dann, wenn (a)+(b) zusammen nicht genuegend qualifizierte Medien fuer die Themen-Matrix (siehe F15) liefern. Erfordert `_meta.fallback_begruendung` im Katalog-Eintrag. Wird von Q-Gate `G-MED-FALLBACK` auf Grenzwert geprueft.
+
+**Begruendung:** User-Position ist klar priorisiert. (a) ist tokeneffizient und qualifikations-stark (Wikipedia-Kontext buergt fuer Relevanz). (b) erschliesst Medien-Breite ohne Qualitaetsverlust. (c) ist Notfall, weil Wikimedia-Freisuche ohne Kontext schwer validierbar ist.
+
+**Konkrete Limits (vorlaeufig, in R2-Vertrag zu verankern):**
+- (b) Wikilinks-Tiefe: 1 (nur direkte Wikilinks aus Kern-Artikeln, keine Rekursion).
+- (b) Max Medien-Kandidaten pro erweitertem Artikel: 5.
+- (b) Max erweiterte Artikel pro Game: 10.
+- (c) Max Wikimedia-Freisuchen pro Game: 3, mit `_meta.fallback_begruendung` je Eintrag.
+
+### F3 (Vor R2) — Klarstellung Scope und Laufzeit
+
+**User-Rueckfrage loest Architektur-Korrektur aus.** Der User hat korrekt hinterfragt, ob die Medien-Recherche **game-weit** laeuft und dann pro Mappe gefiltert wird. Antwort: **Ja, genau so ist es gedacht.** Die bisherige Benennung `medien_katalog_game.json` war irrefuehrend.
+
+**Korrektur:**
+- Umbenennung: `medien_katalog_game.json` → `medien_katalog_game.json`.
+- **Laufzeit:** Phase 0.2.M laeuft **einmal pro Game**, nicht einmal pro Mappe. Der Sub-Agent iteriert ueber alle in der Rahmen-Architektur vorgesehenen Mappen-Themen, fuehrt Medien-Extraktion fuer alle aus, schreibt einen konsolidierten Game-Katalog.
+- **Per-Mappe-Konsum:** Jede Mappe-Generierung (Phase 2.1 MATERIAL) liest den Game-Katalog und filtert per Thema/Funktion/Tag die fuer ihre Mappe relevanten Eintraege heraus. Das ist ein **Read-Query**, keine erneute Extraktion.
+
+**Schema-Folge:** `medien_katalog_game.json` hat obere Ebene `games[0].mappen[]` mit pro Mappe gelisteten Medien (gefiltert aus Game-Pool). Zweite Ebene: `pool[]` mit allen extrahierten Medien (Game-weit), aus denen die Mappen-Filter greifen.
+
+**Vorteil:** Einmal-Extraktion pro Game spart Token, sichert Konsistenz (selbe Medien koennen von mehreren Mappen genutzt werden), erlaubt Game-weite Diversitaets-Pruefung (G-MED-TYP-THEMA), und ermoeglicht Wiederverwendung.
+
+### F4 (Vor R3) — Sichtstruktur-String F-08 Implementierung
+
+**Entscheidung:** Default-Vorschlag aus §15 akzeptiert mit praeziser Implementierungs-Regel.
+
+**Implementierungs-Regel:** Im data.json wird pro Aufgabe **ein einziger Fragestamm** gespeichert (der Sicht-Fragestamm). Die Tiefenstruktur liegt als **planungs-internes Meta-Feld** `aufgabe.planung.operational_target` vor, das von der Engine **nicht gerendert** wird. Die Engine hat keinen Zugriff auf das Planungs-Feld und zeigt nur den Sicht-Fragestamm.
+
+**Konsequenz fuer Schema:** `aufgabe.fragestamm: string` (wie bisher) + optional `aufgabe.planung.operational_target: string` + optional `aufgabe.planung.sicht_struktur: string` + optional `aufgabe.planung.tiefen_struktur: string`. Das Planungs-Feld ist fuer Nachlese, Audit und Sub-Agent-Kontrolle wichtig.
+
+**Begruendung:** Die Engine soll nicht wissen, was "Sicht" vs. "Tiefe" ist — sie rendert nur. Die Trennung liegt im Sub-Agenten (SUB_AUFGABE_FREITEXT wird angewiesen, Sicht-Fragestamm zu formulieren, aber Tiefen-Ziel zu notieren) und im Audit-Gate (G-SF-DUAL-01/02 prueft, dass beide existieren und plausibel sind).
+
+**Offene Praezisierung in R3-Start:** Schema-Validator muss `aufgabe.planung` als optionales Objekt zulassen, ohne dass bestehende Mappen, die das Feld nicht haben, failen. Schema-Version-Bump. Migrationsstrategie: Bestehende Mappen erhalten das Feld nicht (Legacy), neue Mappen ab v3.12 erhalten das Feld pflichtig.
+
+### F7 (Vor R3) — Beutelsbach-Judge Architektur
+
+**Entscheidung:** **Regel-Modul in SUB_AUFGABE_FREITEXT**, kein eigenstaendiger Sub-Agent.
+
+**Begruendung:**
+1. Der Judge ist ein one-shot Regel-Check (nicht-blockend, konstruktiv-kommentierend), nicht ein Multi-Step-Reasoning-Task. Ein eigener Sub-Agent waere Overhead.
+2. Der Judge braucht Zugriff auf den Aufgaben-Kontext, den SUB_AUFGABE_FREITEXT bereits im Arbeitsspeicher hat. Auslagerung wuerde Kontext-Duplikation erfordern.
+3. Non-blocking Natur bedeutet: Judge-Output wird als Kommentar an die Aufgabe angehaengt (`aufgabe.planung.beutelsbach_notiz`), wird von AGENT_DIDAKTIK im naechsten Pass gelesen und optional zur Reformulierung genutzt.
+
+**Zusaetzliche Abwaegungs-Direktive aus User-Position:** Der Judge muss zwei Kriterien gleichzeitig abwaegen:
+- **Eigenstruktur des Themas gemaess Inhaltsbasis** (was ist inhaltlich kontrovers?)
+- **Antizipierte Interessenstruktur des User-Pools** (welche Kontroverse ist fuer 7.-Klasse-SuS 2026 interpretierbar?)
+
+Die Abwaegung wird im Judge-Prompt explizit gemacht: Der Judge gibt zwei getrennte Kurz-Einschaetzungen (eine pro Kriterium) und eine Gesamt-Empfehlung ab. Keine Mehrheitsregel, sondern getrennte Transparenz.
+
+**Folge fuer R3-Vertrag:** `VERTRAG_PHASE_0-1_DIDAKTIK.md` (oder wo SUB_AUFGABE_FREITEXT angesiedelt ist) bekommt ein neues Unter-Kapitel "Beutelsbach-Judge als Regel-Modul" mit Prompt-Template, Output-Schema und non-blocking-Klausel.
+
+### F8 (Vor R4) — Fiktions-Klausel B1/B2/B3
+
+**Entscheidung:** **Alternativ (ODER-verknuepft).** User-Vorschlag akzeptiert. Eine der drei Bedingungen genuegt fuer Fiktions-Lizenz. Die Begruendung im `_meta.fiktiv_grund`-Feld verweist auf welche der drei Bedingungen erfuellt ist.
+
+**B1/B2/B3 Kurz-Definition (aus SCOPING v2.1 uebernommen):**
+- **B1 Didaktische Notwendigkeit:** Die Perspektive ist inhaltlich notwendig und durch kein real-belegtes Individuum abbildbar.
+- **B2 Typen-Legitimitaet:** Die Figur ist erkennbar als Repraesentantin eines historischen Typus (Arbeiterin, Bauer, Staedter) und nicht als Einzelperson.
+- **B3 Gattungs-Transparenz:** Der Text ist als didaktische Rekonstruktion markiert (Tagebuch-Simulation, fiktives Gespraech), nicht als historische Quelle.
+
+**Q-Gate G-QUELL-INTEGRITAET prueft:** Ist `_meta.fiktiv: true` gesetzt, dann muss `_meta.fiktiv_grund` einen Wert aus {B1, B2, B3} haben. Keine weitere Prueftiefe (non-blocking constructive judge fuer Inhaltliche Plausibilitaet kommt separat).
+
+### F14 (Vor R4) — `_meta.fiktiv` Scope
+
+**Entscheidung:** **Generell erlaubt fuer Quellentext-Elemente.** User-Tendenz akzeptiert.
+
+**Implementierung:** Das Feld `_meta.fiktiv: boolean` (mit Pflicht-Feld `_meta.fiktiv_grund`) ist gueltiges Schema-Element fuer alle Quellentext-Subtypen: `material.quellentext.*`, `material.tagebuch`, `material.portraet.dialog_portraet`, `material.quellentext_mehrstimmen`, und ggf. `material.statistik` (wenn didaktisch rekonstruiert).
+
+**Begruendung:** 
+1. Konsistenz — ein einheitliches Flag ueber alle Text-Elemente ist schematisch sauberer als ein Element-spezifisches Flag nur fuer `dialog_portraet`.
+2. Erweiterbarkeit — zukuenftige Text-Materialtypen erben das Flag automatisch.
+3. Enforcement — Q-Gate G-FIKTIV-META kann einmal definiert werden und auf alle Text-Elemente angewendet werden.
+
+**Zusaetzliches Pflicht-Feld:** `_meta.fiktiv_label: string` — sichtbare Kennzeichnung fuer die Rendering-Engine ("Rekonstruierter Tagebuch-Eintrag", "Fiktiver Dialog", "Didaktische Simulation"). Die Engine rendert das Label immer prominent, wenn `_meta.fiktiv: true`.
+
+**Q-Gate G-FIKTIV-META:** Wenn `_meta.fiktiv === true`, dann muss `_meta.fiktiv_grund in {B1,B2,B3}` und `_meta.fiktiv_label: string` gesetzt sein. Sonst FAIL.
+
+### F15 (Vor R5) — Themen-Medien-Matrix Platzierung
+
+**Entscheidung:** **Separates Katalog-Dokument**, nicht im Vertrag. User war unsicher; meine Position ist klar.
+
+**Platzierung:** `escape-game-generator/architektur/kataloge/MEDIEN_THEMA_MATRIX.md`.
+
+**Begruendung (3 Gruende):**
+1. **Iterative Erweiterung.** Die Matrix wird ueber Zeit mit neuen Themen, neuen Erkenntnissen aus Live-Laeufen, neuen didaktischen Einsichten wachsen. Vertraege sind stabile Strukturen, die nicht bei jedem neuen Thema gebumpt werden sollten.
+2. **Read-Zugriff getrennt von Struktur-Zugriff.** Die Matrix ist eine Referenz-Datenbank, auf die Sub-Agenten lesend zugreifen. Vertraege definieren Struktur und Ablauf. Trennung von Read-Content und Struktur-Doku.
+3. **Vertrag referenziert Matrix per Pfad.** `VERTRAG_PHASE_0-2-M` enthaelt: "Die Themen-spezifischen Medien-Anforderungen sind in `kataloge/MEDIEN_THEMA_MATRIX.md` dokumentiert und muessen zur Extraktions-Prioritaet genutzt werden."
+
+**Schema des Katalog-Dokuments:**
+- YAML-Block pro Thema (z.B. `industrialisierung`, `erster-weltkrieg-ursachen`, `reichsgruendung`) mit:
+  - `pflicht_medientypen: [...]` (z.B. `[karte, zeitleiste, bildquelle_atmosphaerisch, bildquelle_analytisch]`)
+  - `empfohlene_medientypen: [...]` (Sekundaer-Wunsch)
+  - `funktions_verteilung: {analytisch: min 2, atmospherisch: min 1, evokativ: 1, strukturierend: 1}` (Matrix pro Funktion)
+  - `begruendung: string` (Kurzsatz warum)
+
+**Q-Gate G-MED-TYP-THEMA prueft:** Der `medien_katalog_game.json` fuer das aktuelle Game muss die in `MEDIEN_THEMA_MATRIX.md` fuer das Thema definierten Pflicht-Medientypen erfuellen. FAIL-Hinweis gibt die Luecke an.
+
+### F18 (Vor R5) — Denkmal-Bruecke Implementation
+
+**Entscheidung:** **Tag auf Bildquelle**, kein neuer Medientyp. User war unsicher; meine Position ist klar.
+
+**Implementierung:** Bestehender Materialtyp `material.bildquelle` erhaelt neues optionales Feld `bildquelle.rolle: string` mit moeglichen Werten `{"primaer", "denkmal_bruecke", "atmosphaerisch", "analytisch_detail"}`.
+
+**Begruendung (3 Gruende):**
+1. **Kein neuer Medientyp = kein Schema-Breakage.** Bestehende Mappen sind unveraendert lauffaehig, Engine-Rendering funktioniert ohne Code-Aenderung.
+2. **Semantik bleibt sauber.** Ein Denkmal IST ein Bild (photographisches Abbild eines materiellen Objekts), nur mit besonderer didaktischer Funktion. Das Rollen-Tag drueckt die Funktion aus, ohne die Typologie zu verletzen.
+3. **Gezielte Einbindung moeglich.** Sub-Agent `SUB_MATERIAL_BILDQUELLE` kann bei Rolle=`denkmal_bruecke` automatisch eine Transfer-Frage an SuS ergaenzen ("Warum errichtet die Gegenwart genau dieses Denkmal?"). Das ist die didaktische Bruecke, die der User in F-02-Feedback gemeint hat.
+
+**Folge fuer R5:**
+- `material-output-schema.json` → `material.bildquelle.rolle` optional.
+- `SUB_MATERIAL_BILDQUELLE.md` → neues Unter-Kapitel "Rolle: Denkmal-Bruecke" mit Handling-Regeln.
+- `MEDIEN_THEMA_MATRIX.md` → pro Thema optional Wunsch `denkmal_bruecke: 1` in den empfohlenen Typen.
+- Engine-Rendering: keine Aenderung noetig, `rolle` ist ein stiller Planungs-Tag.
+
+### F9 (Vor R6) — feedback_first_mode Default
+
+**Entscheidung:** **Default: `true`.** User-Position akzeptiert.
+
+**Implementierung:** 
+- Engine liest `data.meta.feedback_first_mode` aus. 
+- Wenn Feld fehlt, Engine verwendet Default `true` (= neues Verhalten).
+- Legacy-Games behalten altes Verhalten durch **explizites** `data.meta.feedback_first_mode: false` in ihrer data.json.
+- Migrations-Protokoll: Vor v3.12-Deploy werden die bestehenden Games ursachen/bayern/marne (falls nicht archiviert) um `feedback_first_mode: false` erweitert, um ihr bisheriges Verhalten zu bewahren.
+
+**Begruendung:** Neue Games erhalten automatisch neues Verhalten, Alt-Games explizit Alt-Verhalten. Das ist die typische "new-default-opt-out-legacy"-Struktur und minimiert Pflege-Aufwand fuer Neu-Generierungen.
+
+---
+
 ## 16. Zusammenhang zu anderen Upgrade-Plaenen
 
 - `UPGRADE_PLAN_v3-9_STEUERUNGSREFAKTOR.md` — bereits committed, Grundlage des aktuellen Steuerungs-Gefuges. v3.12 setzt darauf auf.
@@ -615,11 +787,12 @@ Siehe SCOPING v2.1 §9 fuer vollstaendige Referenzliste (Droysen, Pandel, Ruesen
 
 ## 18. Naechste Schritte
 
-1. **User-Freigabe dieses Plans** — insbesondere der Runden-Struktur und der Abhaengigkeits-Logik.
-2. **Antworten zu den Detail-Fragen in §15** — mindestens die Vor-Runde-0- und Vor-Runde-2-Fragen (Frage 1-3 und 11) vor Runde-0-Start.
-3. **Start Runde 0** — Audit-Track, kein Code-Eingriff.
-4. **Status-Tracking** — STATUS.md bekommt einen v3.12-Track-Block mit den 9 Runden als Fortschrittsmarker.
+1. **Runden-Struktur ist freigegeben** (Plan v1.1). Detail-Fragen sind in §15.1 entschieden.
+2. **R0.ARCHIV-G1:** Bestehendes G1 (Marne) archivieren. Default-Prozedur: Verschiebung nach `archiv/g1-v3-11-marne/` in weitergehts-online Repo, ausserhalb Deploy-Scope. Landing-Page-Eintrag fuer Marne entfernen. Commit + Host-Push. Erfordert User-Bestaetigung der Archivierungs-Variante (a/b/c in §15.1 F11).
+3. **R0-Audits starten** nach Abschluss R0.ARCHIV-G1: M-03 Reife-Matrix, Umlaut-Fragetyp-ID, G1/G2-Vergleich, Wikipedia-Artikel-Scope-Katalog.
+4. **STATUS.md v3.12-Track-Block** — einfuegen nach Plan-Freigabe mit den 9 Runden als Fortschrittsmarker.
+5. **Artefakt-Inventar aktualisieren** — neue Dateien (SUB_MEDIEN_EXTRAKTION.md, VERTRAG_PHASE_0-2-M_*.md, MEDIEN_THEMA_MATRIX.md) als geplante Eintraege.
 
 ---
 
-**Status:** VORSCHLAG v1, 2026-04-11. Wartet auf User-Freigabe.
+**Status:** v1.1, 2026-04-11. Alle 11 Detail-Fragen entschieden. Start-Vorbedingung: R0.ARCHIV-G1 (Variante-Wahl steht aus).
