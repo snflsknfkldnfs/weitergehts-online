@@ -4,6 +4,25 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-11 — Upgrade-Plan v3.12 v1.2: Archivierung aus R0 entfernt
+
+**Phase:** Plan-Korrektur v1.1 -> v1.2
+**Modus:** EXECUTE (PM)
+
+**Ausloeser:** User-Korrektur: R0-R8 sind reine Infrastruktur-Arbeit am Generator und der Engine. Es wird in diesem Scope kein Live-Game entfernt oder veraendert. Archivierung des bestehenden Live-G1 ist kein R0-Vorbedingung, sondern Pre-Pilotlauf-Task nach R8.
+
+**Aenderungen:**
+- R0.ARCHIV-G1 Arbeitspaket aus §2 Runde 0 entfernt.
+- Gate G-0-0 entfernt.
+- §15.1 F11 umgeschrieben: Archivierungs-Zeitpunkt auf Pre-Pilotlauf verschoben, Varianten bleiben als Vormerkung.
+- §18 Naechste Schritte ohne Archivierungs-Block; R0 kann unmittelbar starten. Pre-Pilotlauf-Vormerkung als Schritt 5.
+- R0-Sektion: neuer Hinweis-Block "R0 beruehrt keine Live-Games. Alle Runden R0-R8 sind Infrastruktur-Arbeit."
+- Header-Status v1.1 -> v1.2 aktualisiert.
+
+**Commit:** folgt.
+
+---
+
 ## 2026-04-11 — Upgrade-Plan v3.12 v1.1: 11 Detail-Fragen entschieden
 
 **Phase:** Plan-Freigabe v1 -> v1.1

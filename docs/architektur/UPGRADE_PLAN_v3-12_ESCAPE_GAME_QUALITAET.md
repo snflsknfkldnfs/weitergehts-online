@@ -4,7 +4,7 @@
 
 **Zweck:** Operativer Upgrade-Plan, der die SCOPING-Entscheidungen in eine Runden-Architektur mit klaren Abhaengigkeiten, Scopes, Exit-Kriterien und Risiko-Gates uebersetzt. **Kein Scoping mehr, sondern Ausfuehrungsvorlage.**
 
-**Status:** v1.1 — 2026-04-11. User-Entscheidungen zu allen 11 Detail-Fragen integriert (siehe §15.1). Runden-Struktur freigegeben. Start-Bedingung R0: bestehendes G1 (Ursachen) archivieren.
+**Status:** v1.2 — 2026-04-11. User-Entscheidungen zu allen 11 Detail-Fragen integriert (siehe §15.1). Runden-Struktur freigegeben. R0-R8 sind Infrastruktur-Arbeit am Generator + Engine und beruehren keine Live-Games. Archivierung bestehender Live-Games ist Pre-Pilotlauf-Task nach R8, nicht vor R0.
 
 **Abgrenzung:** Der Plan schreibt NICHT die konkrete Implementierungs-Reihenfolge innerhalb einer Runde vor. Innerhalb einer Runde bleibt die Claude-Code-Seite (escape-game-generator) frei in der taktischen Umsetzung. Der Plan setzt nur Scope, Artefakte, Gates und Runden-Reihenfolge.
 
@@ -94,8 +94,6 @@ Runde 1 (Bugfix)  ──┤                                    └──► Rund
 
 **Arbeitspakete:**
 
-0. **R0.ARCHIV-G1 — Archivierung bestehendes Game 1 (Marne).** Erste Task, blockiert alle nachfolgenden Arbeitspakete. Ziel: Interferenzfreiheit fuer v3.12-Neugenerierung, die ebenfalls Ursachen-und-Ausbruch adressiert (oder alternativ Marne-Remake — je nach Wahl in §15.1 F11-Entscheidung). Vorgehen nach Default-Variante (b): Verschiebung nach `archiv/g1-v3-11-marne/` ausserhalb Deploy-Scope. Landing-Page-Eintrag fuer Marne aus `index.html` entfernen. Q-GATE-LOG Eintrag setzen. Commit in weitergehts-online Repo, Push durch User. **Vorbedingung:** User bestaetigt Archivierungs-Variante (a/b/c) und bestaetigt: Neu-Generierung adressiert Ursachen-und-Ausbruch (per User-Antwort F11), bestehendes G1 (Ursachen) in weitergehts-online wird parallel archiviert oder war nicht live. **Wichtig:** Wenn bestehendes G1 und G2 beide existieren und beide Ursachen-Thema behandeln, muss R0.ARCHIV-G1 beide Stilllegungen koordinieren.
-
 1. **M-03 Sub-Agent-Reife-Matrix erstellen.** Pro Sub-Agent in `escape-game-generator/agents/SUB_*.md` eine Ampel-Bewertung auf fuenf Kriterien:
    - (i) Engine-Rendering existiert und funktioniert
    - (ii) Asset-Pipeline angebunden (Wikimedia, commons)
@@ -111,12 +109,13 @@ Runde 1 (Bugfix)  ──┤                                    └──► Rund
 4. **Wikipedia-Artikel-Scope-Katalog fuer Ersttest.** Fuer das v3.12-Erstgame (Neu-Regeneration G1 Ursachen-und-Ausbruch gemaess §15.1 F11) werden die Kern-Artikel (Text-Scope) und der erweiterte Medien-Scope (tiefer, spezialisierte Wikipedia-Artikel fuer Medien-Extraktion) konkret benannt. Dient Runde 2 als Referenz-Datenpunkt fuer die Phase-0.2.M-Implementierung.
 
 **Gates:**
-- **G-0-0:** R0.ARCHIV-G1 abgeschlossen, bestehendes G1 (Marne/Ursachen) ist nicht mehr im Deploy-Scope. User-Push bestaetigt.
 - **G-0-1:** Reife-Matrix liegt vor und identifiziert mindestens die Sub-Agenten KARTE/ZEITLEISTE/STATISTIK als unreif (Hypothese aus Scoping §2 F-02).
 - **G-0-2:** Zwei Umlaut-bug-behaftete Fragetypen sind eindeutig benannt.
 - **G-0-3:** Vergleichs-Dokument G1/G2 bestaetigt Systemizitaet.
 
-**Exit:** Alle fuenf Arbeitspakete abgeschlossen (R0.ARCHIV-G1 + vier Audits). Keine offenen Diagnose-Fragen mehr, die Runde 2 blockieren.
+**Exit:** Alle vier Audit-Artefakte im Repo committet. Keine offenen Diagnose-Fragen mehr, die Runde 2 blockieren.
+
+**Hinweis zu Live-Games:** R0 beruehrt keine Live-Games. Alle Runden R0-R8 sind Infrastruktur-Arbeit am Generator + Engine. Die Archivierung bestehender Live-Games (falls fuer spaeteren v3.12-Pilotlauf erforderlich) ist eine separate Folge-Task nach R8-Abschluss, nicht Teil von R0.
 
 **Risiko:** Wenn die Reife-Matrix zeigt, dass auch vermeintlich reife Sub-Agenten Luecken haben (TAGEBUCH, QUELLENTEXT), vergroessert sich das M-03-Reife-Programm in Runde 2. Plan-Anpassung muss moeglich sein.
 
@@ -584,19 +583,19 @@ Diese Fragen koennen im Plan nicht abgeschlossen werden und benoetigen User-Antw
 
 Dieser Abschnitt schliesst alle 11 Detail-Fragen aus §15 ab. Er wurde nach User-Input 2026-04-11 eingefuegt. Die Fragen selbst bleiben in §15 als Ableitungs-Nachweis erhalten.
 
-### F11 (Vor R0) — v3.12-Pilot-Game
+### F11 (Vor Pilotlauf, nicht vor R0) — v3.12-Pilot-Game
 
 **Entscheidung:** **Neu-Regeneration G1 (Ursachen-und-Ausbruch)** als v3.12-Pilot. Das bestehende G1 (Marne) wird als v3.12-Pilot nicht genutzt, weil R2-R6 Phase 0 betreffen (DIDAKTIK, INHALT, SKRIPT, HEFT-EINTRAG) und eine Voll-Neugenerierung erzwingen.
 
-**Zusaetzliche R0-Task (neu):** Bestehendes G1 muss **archiviert oder entfernt** werden, bevor der v3.12-Erst-Lauf startet. Grund: Interferenzfreiheit zwischen Legacy-v3.11-Artefakten und v3.12-Neugenerierung (Landing-Page-Eintrag, data.json, cache-Busting, mappe-HTMLs).
+**Zeitpunkt der Archivierung:** Die Archivierung oder Entfernung des bestehenden Live-G1 geschieht **nicht vor R0**, sondern erst unmittelbar vor dem v3.12-Pilotlauf (nach Abschluss der Infrastruktur-Runden R0-R8). Grund: R0-R8 sind reine Generator- und Engine-Arbeit und beruehren Live-Games nicht. Erst wenn die neue Generierung laeuft und das neue Game deployed werden soll, entsteht Interferenz-Risiko mit dem Legacy-Game.
 
-**Archivierungs-Prozedur (Vorschlag, zu bestaetigen in R0-Start):**
-- Variante (a) **Archiv-Branch:** `git branch archiv/g1-v3-11-marne`, danach auf main entfernen. Nachteil: Live-Zugriff auf altes Game nur per Branch-Checkout.
-- Variante (b) **Archiv-Unterordner:** Verschiebung nach `archiv/g1-v3-11-marne/` (nicht im Deploy-Scope). Nachteil: Wiederherstellung braucht Rueckverschiebung.
-- Variante (c) **Hard-Remove:** Loeschen via git, History bleibt. Nachteil: kein schneller Zugriff aufs alte Game zum Vergleich.
-- **Default in diesem Plan: Variante (b)** — `archiv/` Unterordner ausserhalb Deploy-Scope. Begruendung: schneller Zugriff fuers Vergleichs-Audit, History bleibt, keine Interferenz mit Live-Deploy.
+**Archivierungs-Varianten (zur spaeteren User-Wahl vor Pilotlauf):**
+- Variante (a) **Archiv-Branch:** `git branch archiv/g1-v3-11-<thema>`, danach auf main entfernen. Nachteil: Live-Zugriff auf altes Game nur per Branch-Checkout.
+- Variante (b) **Archiv-Unterordner:** Verschiebung nach `archiv/g1-v3-11-<thema>/` ausserhalb Deploy-Scope. Nachteil: Wiederherstellung braucht Rueckverschiebung.
+- Variante (c) **Hard-Remove:** Loeschen via git, History bleibt.
+- **Default-Vorschlag: Variante (b)** — schneller Vergleichs-Zugriff bleibt, keine Interferenz.
 
-**Folge fuer R0:** Neue Task `R0.ARCHIV-G1` als erste Task in Runde 0. Die Audit-Tasks (M-03 Reife, Umlaut-ID, Vergleich G1/G2, Wiki-Scope-Katalog) laufen danach.
+**Folge fuer Runden-Plan:** Keine. R0 bleibt unveraendert audit-only. Die Archivierung wird als Pre-Pilotlauf-Task nach R8 gefuehrt (siehe §18 Naechste Schritte).
 
 ### F1 (Vor R2) — SUB_MEDIEN_EXTRAKTION Architektur
 
@@ -787,12 +786,12 @@ Siehe SCOPING v2.1 §9 fuer vollstaendige Referenzliste (Droysen, Pandel, Ruesen
 
 ## 18. Naechste Schritte
 
-1. **Runden-Struktur ist freigegeben** (Plan v1.1). Detail-Fragen sind in §15.1 entschieden.
-2. **R0.ARCHIV-G1:** Bestehendes G1 (Marne) archivieren. Default-Prozedur: Verschiebung nach `archiv/g1-v3-11-marne/` in weitergehts-online Repo, ausserhalb Deploy-Scope. Landing-Page-Eintrag fuer Marne entfernen. Commit + Host-Push. Erfordert User-Bestaetigung der Archivierungs-Variante (a/b/c in §15.1 F11).
-3. **R0-Audits starten** nach Abschluss R0.ARCHIV-G1: M-03 Reife-Matrix, Umlaut-Fragetyp-ID, G1/G2-Vergleich, Wikipedia-Artikel-Scope-Katalog.
-4. **STATUS.md v3.12-Track-Block** — einfuegen nach Plan-Freigabe mit den 9 Runden als Fortschrittsmarker.
-5. **Artefakt-Inventar aktualisieren** — neue Dateien (SUB_MEDIEN_EXTRAKTION.md, VERTRAG_PHASE_0-2-M_*.md, MEDIEN_THEMA_MATRIX.md) als geplante Eintraege.
+1. **Runden-Struktur ist freigegeben** (Plan v1.2). Detail-Fragen sind in §15.1 entschieden.
+2. **R0 starten** — Audit-Track, kein Code-Eingriff. Vier Arbeitspakete: M-03 Reife-Matrix, Umlaut-Fragetyp-ID, G1/G2-Vergleichs-Konsolidierung, Wikipedia-Artikel-Scope-Katalog fuer v3.12-Pilotgame (Ursachen-und-Ausbruch Neu-Regeneration).
+3. **STATUS.md v3.12-Track-Block** — einfuegen mit den 9 Runden als Fortschrittsmarker.
+4. **Artefakt-Inventar aktualisieren** — neue Dateien (SUB_MEDIEN_EXTRAKTION.md, VERTRAG_PHASE_0-2-M_*.md, MEDIEN_THEMA_MATRIX.md) als geplante Eintraege.
+5. **Pre-Pilotlauf-Task nach R8 (Vormerkung):** Archivierung bestehendes Live-G1 vor v3.12-Pilot-Deploy. Variante-Wahl (a/b/c, Default b) wird kurz vor Pilotlauf getroffen, nicht jetzt.
 
 ---
 
-**Status:** v1.1, 2026-04-11. Alle 11 Detail-Fragen entschieden. Start-Vorbedingung: R0.ARCHIV-G1 (Variante-Wahl steht aus).
+**Status:** v1.2, 2026-04-11. Alle 11 Detail-Fragen entschieden. R0 kann unmittelbar starten.
