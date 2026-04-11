@@ -156,11 +156,37 @@ Die M-03-Reife-Matrix markiert SUB_MATERIAL_STATISTIK als ROT. Der v3.12-Pilot s
 
 ---
 
-## 7. Offene Punkte fuer User-Entscheidung (Input fuer Runde 2)
+## 7. User-Entscheidungen (Session 29)
 
-1. **Budget-Anpassung:** Option A (15 Artikel) vs. Option B (10 Artikel) — fuer den Pilot-Lauf.
-2. **M3 Quellentext-Mehrstimmen-Beispiel:** Der neue `QuellentextMehrstimmen`-Subtyp (Runde 2 Arbeitspaket 5) braucht einen geeigneten Pilot-Fall. M3 hat mit "Drei Stimmen zum Kriegsausbruch" bereits eine Kandidaten-Stelle. Soll der Pilot diese Stelle regenerieren oder neu komponieren (z. B. eine Stimme aus Frankreich, eine aus Russland, eine aus Deutschland)?
-3. **M4 Vergleich-Aufgabe mit neuer Plan-vs-Wirklichkeit-Matrix:** G1 v3.11 hat aufgabe-4-8 (vergleich) bereits mit dieser Struktur. Soll der v3.12-Pilot die Aufgabe uebernehmen, erweitern, oder auf Runde 3-5 Policy-Aenderungen anpassen?
+1. **Budget-Anpassung: Option A CONFIRMED.** 15 Artikel/Game im erweiterten Scope fuer den Pilot-Lauf. Nach Pilot wird das Budget empirisch justiert.
+2. **M3 Quellentext-Mehrstimmen: NEU GENERIEREN CONFIRMED.** M3 wird im v3.12-Pilot vollstaendig neu erzeugt (nicht aus G1 uebernommen). Begruendung (User): "neu generieren waere der bessere test". Das testet die Pipeline gegen den neuen `QuellentextMehrstimmen`-Subtyp ohne Legacy-Altlasten.
+3. **M4 Vergleich-Aufgabe: NEUESTE INFRASTRUKTUR CONFIRMED.** Der v3.12-Pilot soll, wo moeglich, die aktuellste Infrastruktur-Form testen. Fuer M4 bedeutet das: die Vergleich-Aufgabe wird mit der neuen Plan-vs-Wirklichkeit-Matrix aus Runde 2 Arbeitspaket 5 neu gebaut, nicht aus G1 v3.11 uebernommen. Damit laufen alle Runde-2-Policy-Aenderungen (Umlaut-Retrofit, IL-1, neue Medien-Funktions-Klassifikation) durch die M4-Vergleich-Aufgabe durch.
+
+### 7.1 Anpassungen aus Testrun R0.5
+
+Zusaetzlich zu den User-Entscheidungen hat der Testrun R0.5 (TESTRUN_MEDIEN_EXTRAKTION_M4_2026-04-11.md) drei Katalog-Korrekturen ergeben:
+
+**A) `Taxis_von_der_Marne` aus M4 entfernt.** Der Titel existiert nicht auf de.wikipedia.org (404). Ersatz: Taxi-Abschnitt direkt im Kern-Artikel `Erste_Schlacht_an_der_Marne` nutzen (Option B aus R0.5 §8.1). Commons-Suche "Taxis Marne 1914" bleibt als Medien-Kanal erhalten.
+
+**B) M4 erweitert um drei Medien-Cluster:**
+- `Schlieffen-Denkschrift.jpg` — aus `Schlieffen-Plan`-Artikel. Pflicht-Quellenkritik-Anker fuer M-03-Reife (QUELLENKRITIK ROT, braucht Pflicht-Einsatz im Pilot). Funktionstyp: strukturierend.
+- Marne-Generale-Portraet-Cluster: `Joseph_Joffre`, `Karl_von_Buelow`, `Alexander_von_Kluck`, `Ferdinand_Foch` — aus `Erste_Schlacht_an_der_Marne`-Artikel. Didaktisch stark fuer Zuordnungs- oder Vergleich-Aufgabe ("Wer kaempfte auf welcher Seite? Welche Rolle?"). Funktionstyp: analytisch.
+- IWM-Belgien-Reportage-Cluster: sechs `Q53xxx`-Fotos (Commons, Public domain, Imperial War Museums). Zusammenhaengende Fotoreportage September 1914 (belg. Pioniere, Rueckzug nach Antwerpen, Trummerbilder Malines). Funktionstyp: evokativ + atmospherisch.
+
+**C) Phase-0.2.M Dual-Kanal-Pflicht bestaetigt.** Sub-Agent muss WebFetch-Artikel-Inventur UND Commons-Suche kombinieren (siehe R0.5 §8.2). Wird in Runde 2 Arbeitspaket 2 in die Sub-Agent-Kontrakte eingebaut.
+
+### 7.2 Infrastruktur-Gap (nicht-blockierend fuer Medien-Pipeline)
+
+**wikipedia-mcp Sprach-Default:** Der MCP-Server defaultet auf Englisch (siehe R0.5 §3.1). Config-Fix vor Phase-0.2.M-Start:
+
+```json
+"wikipedia": {
+  "command": "/Users/paulad/.local/bin/wikipedia-mcp",
+  "args": ["--language", "de"]
+}
+```
+
+**Status:** Vor Runde 2 Arbeitspaket 2 einzuspielen. Blockiert nur Text-Ingest (Volltext-Analyse der Kern-Artikel-Liste), nicht die Medien-Extraktions-Pipeline selbst (die laeuft ueber `wikimedia_search_images` + WebFetch, beide sprachunabhaengig).
 
 ---
 

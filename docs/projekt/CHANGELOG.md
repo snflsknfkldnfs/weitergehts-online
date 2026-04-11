@@ -4,6 +4,33 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-11 — R0.5 Testrun Medien-Extraktion M4 + Katalog-Update
+
+**Phase:** Zwischenschritt R0.4 → Runde 2 (User-Auftrag Session 29)
+**Modus:** EXECUTE (PM)
+**Zweck:** Viability-Test der Phase-0.2.M-Planung an M4 Schlieffen-Plan, bevor die v3.12-Pipeline dagegen gebaut wird. Keine Game-Daten geaendert, kein Generator-Code beruehrt.
+
+**Artefakte:**
+
+| ID | Artefakt | Kern-Befund |
+|---|---|---|
+| R0.5 | `docs/befunde/TESTRUN_MEDIEN_EXTRAKTION_M4_2026-04-11.md` | Viability POSITIV mit drei Korrekturen. (1) wikipedia-mcp defaultet auf Englisch, Config-Fix `args: ["--language", "de"]` noetig. (2) `Taxis_von_der_Marne` existiert nicht auf de.wikipedia.org (404), Katalog-Ersatz durch Taxi-Abschnitt im Kern-Artikel `Erste_Schlacht_an_der_Marne`. (3) Drei hochwertige Medien-Cluster neu entdeckt: Schlieffen-Denkschrift (Primaerquelle fuer QUELLENKRITIK-Pflicht-Einsatz), Marne-Generale-Portraet-Cluster (Joffre/Buelow/Kluck/Foch), IWM-Belgien-Reportage (6 Fotos). 21 inventarisierte Medien alle lizenzkonform (15 PD, 6 CC-BY-SA, 0 Blocker). Dual-Kanal-Pflicht (WebFetch + Commons) fuer Sub-Agent bestaetigt. |
+| R0.4-Update | `docs/befunde/WIKI_SCOPE_KATALOG_v3-12_PILOT_2026-04-11.md` §7 | User-Entscheidungen Session 29 eingepflegt: Budget Option A (15 Artikel/Game) CONFIRMED, M3 neu generieren CONFIRMED, M4 neueste Infrastruktur (Plan-vs-Wirklichkeit-Matrix aus R2 A5) CONFIRMED. §7.1 Testrun-Korrekturen, §7.2 Infrastruktur-Gap. |
+
+**Methodik-Befunde (fuer Runde 2 Arbeitspaket 2 verbindlich):**
+- `wikimedia_search_images` ist sprachunabhaengig, kann unmittelbar genutzt werden.
+- `wikipedia-mcp` (Rudra-ravi) hat kein dediziertes Medien-Extraktions-Tool. WebFetch auf `de.wikipedia.org/wiki/<titel>` ist tauglicher Fallback fuer Artikel-embedded Medien-Inventur (inkl. `<figcaption>`-Captions).
+- Dual-Kanal-Pflicht: Sub-Agent muss WebFetch UND Commons-Suche kombinieren. Nur Commons = verpasst Caption-Kontext. Nur WebFetch = verpasst Commons-Reichweite.
+
+**Plan-Impact (ergaenzt in STATUS.md Punkte 6-8):**
+6. R2 Arbeitspaket 2 Phase-0.2.M: Dual-Kanal-Pflicht fuer Medien-Sub-Agent. Pre-Requisite: wikipedia-mcp Config-Fix `--language de` vor R2-Start.
+7. R2 Arbeitspaket 5 Plan-vs-Wirklichkeit-Matrix: M4 baut darueber neu, nicht aus G1 v3.11 uebernommen.
+8. R2 Arbeitspaket 5 QuellentextMehrstimmen: M3 komplette Neu-Generierung.
+
+**Commit:** folgt im naechsten Commit mit R0-Artefakten.
+
+---
+
 ## 2026-04-11 — R0 Audit-Track COMPLETE: 4 Befunde commit-ready
 
 **Phase:** UPGRADE_PLAN_v3-12 Runde 0 (Audits & Voraussetzungen)

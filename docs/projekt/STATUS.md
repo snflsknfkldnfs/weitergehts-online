@@ -1,21 +1,25 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-11 (R0 Audit-Track COMPLETE: 4 Befunde commit-ready. R0.1 M-03 Reife-Matrix, R0.2 Umlaut-Forensik, R0.3 G1/G2-Vergleich, R0.4 Wiki-Scope-Katalog.)
-**Modus:** R0-COMPLETE → R1/R2-BEREIT
+**Letzte Aktualisierung:** 2026-04-11 (R0 Audit-Track COMPLETE + R0.5 Testrun Medien-Extraktion M4. Fuenf Befunde. User-Entscheidungen Session 29: Budget Option A, M3 neu generieren, M4 neueste Infrastruktur.)
+**Modus:** R0-COMPLETE → R1/R2-BEREIT (wikipedia-mcp Config-Fix vor Runde 2 Arbeitspaket 2 einspielen)
 **Aktiver Upgrade-Plan:** `docs/architektur/UPGRADE_PLAN_v3-12_ESCAPE_GAME_QUALITAET.md` v1.2 (Runden R0-R8: Audits → v3.11.1 Bugfix → 0.2.M Infrastruktur → Stundenfrage-Dualismus → Quellen-Integritaet → Medien-Diversitaet → Feedback-First → Enforcement → Sichtungs-Stops). R0-R8 = reine Generator-/Engine-Infrastruktur, keine Live-Game-Beruehrung. 13 neue Q-Gates. Alle 11 Detail-Fragen in §15.1 entschieden. v3.12-Pilot = Neu-Regeneration G1 (Ursachen-und-Ausbruch) nach R8. Archivierung bestehendes Live-G1 ist Pre-Pilotlauf-Task nach R8-Abschluss. Vorgaenger v3.11 COMPLETE + gepusht.
 
 **R0-Befunde (Gate-Status):**
 - **G-0-1** (Reife-Matrix): ERFUELLT. `docs/befunde/M-03_REIFE_MATRIX_v3-12_2026-04-11.md`. STATISTIK + QUELLENKRITIK ROT; KARTE/ZEITLEISTE GELB (nicht ROT — Hypothese partiell falsifiziert); BEGRUENDUNG/VERGLEICH/FREITEXT GELB (Kopplung an R0.2).
 - **G-0-2** (Umlaut-Fragetyp-ID): ERFUELLT mit Korrektur. `docs/befunde/UMLAUT_FRAGETYP_FORENSIK_R0_2026-04-11.md`. **Drei** (nicht zwei) Sub-Agenten ohne Retrofit (BEGRUENDUNG, VERGLEICH, QUELLENKRITIK) + **ein** Sub-Agent mit Regel-aber-nicht-Enforcement (FREITEXT). O-07-U-B-Checker wird primaerer Schutzmechanismus statt Template-Saeuberung.
 - **G-0-3** (G1/G2-Vergleich): ERFUELLT. `docs/befunde/VERGLEICH_G1_G2_SICHTUNG_2026-04-11.md`. 5 von 8 Findings systemisch bestaetigt, 2 v3.6-Policy-spezifisch (G2-exklusiv, Policy-Defekt), G1→G2-Umlaut-Regression dokumentiert.
-- **R0.4 Wiki-Scope-Katalog:** LIEGT VOR. `docs/befunde/WIKI_SCOPE_KATALOG_v3-12_PILOT_2026-04-11.md`. 13 Kern-Artikel + 15 erweiterter Medien-Scope fuer v3.12-Pilot. Budget-Anpassung offen (Option A 15/Game empfohlen vs. Option B 10/Game strikt). Drei User-Entscheidungen ausstehend (siehe §7 des Katalogs).
+- **R0.4 Wiki-Scope-Katalog:** LIEGT VOR + aktualisiert mit User-Entscheidungen. `docs/befunde/WIKI_SCOPE_KATALOG_v3-12_PILOT_2026-04-11.md`. Budget Option A (15 Artikel/Game) CONFIRMED. M3 neu generieren CONFIRMED. M4 neueste Infrastruktur CONFIRMED. Drei Katalog-Korrekturen aus R0.5 eingepflegt (Taxis-Titel entfernt, Schlieffen-Denkschrift + Marne-Generale-Cluster + IWM-Belgien-Reportage aufgenommen).
+- **R0.5 Testrun Medien-Extraktion M4:** LIEGT VOR. `docs/befunde/TESTRUN_MEDIEN_EXTRAKTION_M4_2026-04-11.md`. Viability POSITIV. Dual-Kanal-Pflicht (WebFetch + Commons) bestaetigt. Drei Korrekturen: (a) wikipedia-mcp Config-Fix `--language de`, (b) Katalog-Ersatz fuer Taxis_von_der_Marne, (c) Medien-Erweiterung um 3 Cluster. Alle 21 inventarisierten Medien lizenzkonform (15 PD, 6 CC BY-SA, 0 Blocker).
 
 **Plan-Impact R0-Befunde (muss in UPGRADE_PLAN v1.3 nachgezogen werden):**
 1. Runde 1 Arbeitspaket 1 Umlaut-Retrofit: Scope **drei** Fragetypen (nicht zwei).
 2. Runde 1 Arbeitspaket 4 O-07-U-B-Checker: nicht optional, sondern Pflicht-Gate-Hook.
-3. Runde 2 Arbeitspaket 8 M-03-Reife-Programm: STATISTIK + QUELLENKRITIK Pflicht-Einsatz im Pilot.
+3. Runde 2 Arbeitspaket 8 M-03-Reife-Programm: STATISTIK + QUELLENKRITIK Pflicht-Einsatz im Pilot. Pflicht-Anker fuer QUELLENKRITIK = `Schlieffen-Denkschrift.jpg` in M4 (R0.5-Empfehlung).
 4. Runde 4 Fiktions-Klausel: muss v3.6-Erzaehlerstimmen-Policy revidieren (H2 aus R0.3).
 5. Runde 5 Medien-Diversitaet: Pflicht-Quoten-Q-Gate (nicht nur Sub-Agenten-Verbesserung).
+6. Runde 2 Arbeitspaket 2 Phase-0.2.M: Dual-Kanal-Pflicht fuer Medien-Sub-Agent (WebFetch-Artikel-Inventur + Commons-Suche, R0.5 §8.2). Pre-Requisite: wikipedia-mcp Config-Fix `--language de` (R0.5 §7).
+7. Runde 2 Arbeitspaket 5 Plan-vs-Wirklichkeit-Matrix: M4-Vergleich-Aufgabe wird darueber neu gebaut (User-Entscheidung Session 29), nicht aus G1 v3.11 uebernommen.
+8. Runde 2 Arbeitspaket 5 QuellentextMehrstimmen: M3-Pilot-Fall = komplette Neu-Generierung (User-Entscheidung Session 29).
 **Offene Folgetickets:**
 - ~~**P1-NEU Ursachen-Titel-Drift**~~ **CLOSED 2026-04-10**: Richtung A umgesetzt. Landing-Page `<li id="game-gpg-erster-weltkrieg-ursachen">`-Text geaendert von "Pulverfass Europa – Der Erste Weltkrieg (GPG R7)" zu "Der Erste Weltkrieg — Ursachen und Ausbruch (GPG R7)". `data.json.meta.titel` unveraendert als Single-Source. Regression-Check via `./tools/deploy-check.sh gpg-erster-weltkrieg-ursachen` + Marne-Regression: beide PASS. Marketing-Framing "Pulverfass Europa" entfallen — ggf. in Folgeprojekt als separater Untertitel-Block nachziehen falls pedagogisch gewuenscht.
 - **P1 v3.10-Folgearbeiten** (zurueckgestellt per Q5=c waehrend v3.11 lief): T2.F (typ-spezifische Meta-Sub-Schemata via oneOf-Discriminator), 21 mat-*.json Migrations-Backlog (Q4 vorwaertsgetrieben, siehe `docs/projekt/berichte/BERICHT_SCHEMA_MIGRATION_2026-04-10.md`).
