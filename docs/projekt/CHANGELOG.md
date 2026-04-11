@@ -4,6 +4,56 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-11 — R0.7-Refaktor: Streichung `bpb_zitat_kurator` + Spezifikation bpb-Discovery-Mechanismus (§14)
+
+**Phase:** R0.7 Finale Refaktor nach User-Direktive
+**Modus:** EXECUTE (PM) — Spezifikations-Schaerfung, kein Code
+
+**User-Direktive (woertlich):** *"`bpb_zitat_kurator` wuerde ich sogar kuerzen um kein risiko einzugehen. Sollen wir die infrastruktur entsprechend praezise funktional implementieren? wie ueberprueft die infrastruktur, ob es einen geeigneten bpb-artikel gibt? Ueber user abfrage?"*
+
+**Teil 1 — Streichung `bpb_zitat_kurator`:**
+- Begruendung: Grenze zwischen wortgetreuem Kurzzitat (§51 UrhG Zitatrecht) und Bearbeitung (CC BY-NC-ND ND-Klausel verletzt) ist im Schulkontext nicht sauber zu ziehen. Konservativer Schnitt.
+- Konsequenzen: Artefakt `zitat_katalog_game.json` entfaellt. Feld `bpb_bildunterschrift_zitat` aus medien_katalog_game.json Schema-Erweiterung gestrichen. Invarianten I1-I6 obsolet. bpb-Autorentext ist permanent aus der Pipeline gesperrt.
+- Phase 0.2.Z enthaelt nur noch **einen** Sub-Agent: `bpb_primaerquellen_extraktor` (PQI1-PQI6).
+- Verbleibende drei Nutzungs-Kanaele: (A) Dossier-Gliederung als Q-Gate-Raster, (B) Commons-Medien-Kuratierung als Qualitaetsstempel, (C) PD-Primaerquellen-Extraktion als eigentlicher didaktischer Hebel. Muster 3a (bpb-Autorentext) aus Kanal-Matrix gestrichen.
+
+**Teil 2 — Spezifikation Discovery-Mechanismus (neu §14 in Befund):**
+Dreistufig hybrid, loest die User-Frage "Ueber User-Abfrage?" mit Nein+Ja: primaer deterministisch, Fallback User-Abfrage, finaler Freigabe-Gate immer User.
+
+- **Stage 1 — Statische Registry:** `escape-game-generator/data/bpb_dossier_registry.json`. PM-gepflegt, Schema: entries mit `id`, `titel`, `url_root`, `thema_tags`, `lehrplan_bezug_gpg`, `autor_primaer`, `unterartikel_anzahl`, `qualitaet_pm_note`, `zuletzt_pm_geprueft`. Initial-Befuellung als separater PM-Task in Runde 2 Arbeitspaket 2b (getrennt von Code).
+- **Stage 2 — Discovery-Sub-Agent `bpb_discovery_agent`:** Registry-Lookup primaer via thema_tags / lehrplan_bezug_gpg aus game-meta. Bei Miss Fallback WebSearch `site:bpb.de [thema] dossier` mit Scoring-Regeln (URL-Pattern `/themen/[bereich]/[slug]/`, Titel-Match, Unterartikel-Signal). Output: Top 3-5 Kandidaten an PM.
+- **Stage 3 — User-Bestaetigungs-Gate (PFLICHT):** Kein Auto-Ingest. PM praesentiert Kandidaten, User waehlt 0/1/N. Persistenz in `docs/agents/artefakte/[game-id]/bpb_discovery_bestaetigung.json`.
+- **Stage 4 — `bpb_primaerquellen_extraktor`** laeuft nur auf Stage-3-bestaetigten URLs. Medien-Kuratierungs-Hook in 0.2.M analog.
+
+**Warum Hybrid:**
+- Reine User-Abfrage: verlagert Recherche-Pflicht auf User, widerspricht Automatisierungs-Ziel, erzeugt Inkonsistenz zwischen Games.
+- Reine Automatisierung: WebSearch produziert False-Positives, bpb hat themen-uebergreifende Seiten ohne Dossier-Tiefe. Auto-Ingest waere Risiko-Eskalation.
+- Registry-First + Fallback + Bestaetigung: Wiederkehrende Themen (WWI, Weimar, DDR, Grundgesetz) sofort deterministisch, neue Themen mit Scoring + User-Entscheidung, Token-Budget bleibt klein.
+
+**Befund-Edits (`docs/befunde/TESTRUN_BPB_DOSSIER_2026-04-11.md`):**
+- §7: HINWEIS-Block eingefuegt, §7-Unterabschnitte als superseded markiert, Matrix §7.1 zeigt bpb-Autorentext "AUSGESCHLOSSEN aus Pipeline" mit drei neuen Rows (3b Commons, 3c Primaerquellen, 3d Dossier-Gliederung).
+- §12.4: "zweiten Sub-Agent" → "genau einen Sub-Agent".
+- §12.5: Row 3a in Quell-Kanal-Matrix durchgestrichen.
+- §12.6: Didaktischer-Hebel-Begruendung refaktoriert, bpb-Autorentext als nicht verwendbar.
+- §13: Plan-Impact-Punkte 10-16 neu formuliert, Punkt 17 NEU fuer Discovery-Mechanismus.
+- §14 NEU mit 8 Subsektionen: §14.1 Registry-Schema, §14.2 Discovery-Agent-Spec, §14.3 User-Gate, §14.4 Stage 4, §14.5 ASCII-Flow, §14.6 Registry-PM-Task, §14.7 warum nicht reine User-Abfrage, §14.8 warum nicht automatisch.
+
+**STATUS.md-Edits:**
+- Header-R0.7-Zusammenfassung (Zeile 14): "zweiten Sub-Agent" entfernt, "genau einen Sub-Agent" eingesetzt, dreistufig-hybrid-Verweis auf §14 ergaenzt.
+- Plan-Impact Punkte 10, 13, 14, 16 refaktoriert. Punkt 17 NEU fuer Discovery-Mechanismus.
+
+**Artefakte:**
+- `docs/befunde/TESTRUN_BPB_DOSSIER_2026-04-11.md` (refaktoriert)
+- `docs/projekt/STATUS.md` (Plan-Impact 10/13/14/16 refaktoriert, 17 NEU)
+- `docs/projekt/CHANGELOG.md` (dieser Eintrag)
+
+**Implementierungs-Bezug:**
+- `bpb_discovery_agent` + `bpb_primaerquellen_extraktor` + `bpb_dossier_registry.json` gehoeren in **Runde 2 Arbeitspaket 2b** (Phase 0.2-Generalisierung), nicht jetzt. Aktueller kritischer Pfad bleibt R1 (v3.11.1 Bugfix-Bundle).
+
+**Gate-Status:** R0.7 FINAL. R0 FINAL+ abgeschlossen. R1 startbereit.
+
+---
+
 ## 2026-04-11 — R0.7-Erweiterung §12: Vier alternative bpb-Nutzungs-Muster, inkl. PD-Primaerquellen-Hebel
 
 **Phase:** Nachtrag zu R0.7 nach PM-Feedback ("bpb-Volltext ohnehin zu komplex fuer SuS, also muessen andere Einsatz-Muster gefunden werden")

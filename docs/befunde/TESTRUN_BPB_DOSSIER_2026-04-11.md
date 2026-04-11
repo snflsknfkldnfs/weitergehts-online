@@ -176,53 +176,24 @@ Aus dem Test-Unterartikel Kap. 2 (Kruse, Ausloesung und Beginn):
 
 ---
 
-## §7 — Integrationsvorschlag: Phase 0.2.Z Zitat-Baustein-Kuratierung
+## §7 — Integrationsvorschlag: Phase 0.2.Z bpb-Quell-Integration
 
-### 7.1 — Architektur-Einordnung
+**HINWEIS (Session 29, Nachtrag):** §7.2/§7.3/§7.4 im Original-Entwurf sahen einen `bpb_zitat_kurator` fuer wortgetreue Zitate aus bpb-Autorentext vor. Dieser Sub-Agent wird **GESTRICHEN**. Begruendung: die Grenze zwischen "zitatrechtliches Kurzzitat" und "Derivat durch selektive Rahmung im Schulmaterial-Kontext" ist juristisch unscharf. Verzicht auf bpb-Autorentext komplett. Stattdessen:
+- Medien-Kuratierung als Qualitaetsstempel (§12.2 Muster B)
+- PD-Primaerquellen-Extraktion (§12.3-§12.4 Muster C) — der eigentliche Hebel
+- Dossier-Struktur als Q-Gate-Raster (§12.1 Muster A)
+
+Die entscheidenden Spezifikationen stehen in §12 (Nutzungs-Muster), §13 (Plan-Impact-Konsolidierung) und §14 (Discovery-Mechanismus).
+
+### 7.1 — Architektur-Einordnung (aktualisiert nach Streichung)
 | Quell-Kanal | Lizenz-Basis | Bearbeitungs-Erlaubnis | Ingest-Phase | Volltext-fuer-Sub-Agent |
 |---|---|---|---|---|
 | Wikipedia Kern-Artikel | CC-BY-SA 4.0 | JA (Share-Alike) | Phase 0.1 | JA |
 | Wikimedia Commons Medien | div. frei (CC-BY, CC-BY-SA, PD) | JA (je nach Einzel-Lizenz) | Phase 0.2.M | JA (Bild-Nutzung) |
-| **bpb.de (NEU)** | **CC BY-NC-ND 4.0** | **NEIN** | **Phase 0.2.Z (NEU)** | **NEIN — nur Zitat-Modus** |
-
-### 7.2 — Phase 0.2.Z Sub-Agent-Kontrakt (Entwurf)
-**Name:** `bpb_zitat_kurator`
-**Input:** Liste von bpb-URLs (Dossier-Unterartikel), thematischer Fokus, max. Zitat-Anzahl pro Unterartikel.
-**Output:** `zitat_katalog_game.json` mit Eintraegen:
-```
-{
-  "id": "Z001",
-  "quelle_url": "https://www.bpb.de/themen/erster-weltkrieg-weimar/ersterweltkrieg/155302/ausloesung-und-beginn-des-krieges/",
-  "autor": "Wolfgang Kruse",
-  "veroeffentlicht": "2013-02-18",
-  "letzte_aenderung": "2026-02-26",
-  "lizenz": "CC-BY-NC-ND-4.0",
-  "lizenz_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/deed.de",
-  "zitat_wortgetreu": "...1-3 Saetze wortgetreu...",
-  "wortanzahl": 42,
-  "kontext_kapitel": "Julikrise 1914",
-  "empfohlener_puzzle_typ": "quellenanalyse | textverstaendnis | historiker_zitat",
-  "attribution_block": "Kruse, Wolfgang: Ausloesung und Beginn des Krieges, bpb.de 2013/2026, CC BY-NC-ND 4.0."
-}
-```
-**Invarianten:**
-- I1 PFLICHT wortgetreue Uebernahme, keine Paraphrase.
-- I2 PFLICHT Zitat-Laenge 1-5 Saetze, max. 1 Absatz. Groessere Uebernahmen nur bei juristisch klarer Zitatzweck-Begruendung.
-- I3 PFLICHT `attribution_block` vollstaendig, inkl. Lizenz und Lizenz-URL.
-- I4 VERBOT automatische LLM-Neuformulierung des Zitats.
-- I5 Dual-Kanal: markdownify fuer Volltext-Scan, WebFetch fuer Kontext/Gliederung.
-- I6 Pre-Ingest-URL-Validierung analog zu R0.6 Wikipedia-Titel-Validierung: 404/Redirect/Formatfehler vor Zitat-Extraktion erkennen.
-
-**Tool-Anforderungen:** markdownify `webpage-to-markdown` + WebFetch. Beide bereits verfuegbar, keine neue MCP-Installation noetig.
-
-### 7.3 — Game-Einsatz-Muster
-- **Station "Quellenanalyse":** Spieler liest bpb-Zitat (Kruse ueber Julikrise-Eskalation), beantwortet Fragen zur Argumentationsstruktur. Zitat im Footer mit Attribution sichtbar.
-- **Station "Historiker-Vergleich":** Zwei bpb-Zitate aus unterschiedlichen Unterartikeln gegenueberstellen. Spieler identifiziert Perspektiv-Unterschiede.
-- **Station "Fakten-Check":** Spieler hat eine Schueler-Behauptung. Soll sie durch ein bpb-Kurzzitat bestaetigen oder widerlegen.
-- NICHT-Einsatz: "bpb-Text in Schuelersprache umformuliert" — verbotene Derivat-Bildung.
-
-### 7.4 — Scope-Schaetzung
-Dossier Erster Weltkrieg: 13 Fach-Unterartikel, angenommen je 2-4 kuratierte Zitate pro Artikel → 30-50 Zitate pro Dossier. Arbeitsaufwand fuer Sub-Agent unter 1h bei klarer Kapitel-Einordnung.
+| **bpb.de Autorentext (Kruse etc.)** | **CC BY-NC-ND 4.0** | **NEIN** | **AUSGESCHLOSSEN aus Pipeline** | **NEIN** |
+| **bpb.de kuratierte Commons-Medien** | Commons (eigen) | JA | Phase 0.2.M + bpb-Tag | JA |
+| **bpb.de zitierte Primaerquellen (PD)** | PD (nach Pruefung) | JA | Phase 0.2.Z → 0.1 | JA |
+| **bpb.de Dossier-Gliederung** | Idee, urheberrechtsfrei | N/A | Phase 0.1 Handschritt | N/A |
 
 ---
 
@@ -338,9 +309,9 @@ Primaerquellen-Texte sind nach PD-Verifikation **im vollen Wikipedia-artigen Vol
 
 Damit wird bpb paradoxerweise zu einem **staerkeren** Quell-Kanal als nur Zitat-Baustein-Lieferant: bpb ist in dieser Rolle ein **Discovery-Mechanismus fuer gemeinfreie, didaktisch bereits vorqualifizierte Primaerquellen**, deren Text unbeschraenkt verarbeitet werden kann.
 
-### 12.4 — Erweiterung Phase 0.2.Z: zweiter Sub-Agent
+### 12.4 — Phase 0.2.Z Sub-Agent-Spezifikation
 
-Der in §7.2 entworfene Sub-Agent `bpb_zitat_kurator` (Modus Zitat aus bpb-Autorentext) wird um einen zweiten Sub-Agent ergaenzt:
+Phase 0.2.Z enthaelt **genau einen** Sub-Agent. Der urspruenglich in §7.2 entworfene `bpb_zitat_kurator` (bpb-Autorentext-Zitate) wurde nach PM-Entscheidung Session 29 vollstaendig gestrichen (Lizenzrisiko). Uebrig bleibt:
 
 **Name:** `bpb_primaerquellen_extraktor`
 **Input:** Liste von bpb-URLs (Dossier-Unterartikel), thematischer Fokus.
@@ -386,41 +357,204 @@ Der in §7.2 entworfene Sub-Agent `bpb_zitat_kurator` (Modus Zitat aus bpb-Autor
 - PQI5 Amtliche Werke (§5 UrhG) werden ohne Todesjahr-Check als PD markiert (pd_grundlage: "§5 UrhG").
 - PQI6 Original-Archiv-URL wird nach Fundort priorisiert: Wikisource > Deutsches Textarchiv > Bundesarchiv-Digitalisat > Europeana > nur bpb. Nur-bpb-Fund = Warnung, manueller Review-Schritt.
 
-### 12.5 — Konsolidierte Drei-Kanal-Architektur
-
-Nach R0.7-Erweiterung ergibt sich folgende Quell-Kanal-Matrix fuer Escape-Game-Generierung:
+### 12.5 — Konsolidierte Quell-Kanal-Matrix (nach Streichung Modus A)
 
 | Kanal | Quelle | Lizenz | Phase | Volltext-Ingest | Paraphrase erlaubt | Typische Nutzung |
 |---|---|---|---|---|---|---|
 | 1 | Wikipedia Kern-Artikel | CC-BY-SA 4.0 | 0.1 | JA | JA | Fach-Grundlage, Faktenbasis |
 | 2 | Wikimedia Commons Medien | div. frei | 0.2.M | JA (Bild) | JA (Bild-Nutzung) | Bilder, Karten, Grafiken |
-| 3a | bpb Autoren-Text (Zitat) | CC BY-NC-ND | 0.2.Z | NEIN | NEIN | Wortgetreue Kurzzitate als Puzzle-Material |
+| ~~3a~~ | ~~bpb Autoren-Text (Zitat)~~ | ~~CC BY-NC-ND~~ | **GESTRICHEN** | — | — | — |
 | 3b | bpb-kuratierte Commons-Medien | Commons-Lizenz | 0.2.M + bpb-Tag | JA | JA | Didaktisch vorqualifizierte Bilder |
-| 3c | bpb-entdeckte Primaerquellen | PD (nach Pruefung) | 0.2.Z → 0.1 | JA | JA | Reden, Erlasse, Tagebuecher als Volltext-Ingest |
+| 3c | bpb-entdeckte Primaerquellen | PD (nach Pruefung) | 0.2.Z → 0.1 | JA | JA | Reden, Erlasse, Tagebuecher, Gedichte als Volltext-Ingest |
 | 3d | Dossier-Strukturreferenz | frei (Idee, nicht Ausdruck) | 0.1-Handschritt | (N/A) | (N/A) | Q-Gate-Coverage-Check |
 
-Die drei Sub-Kanaele 3a-3d sind operativ getrennt, aber alle ueber denselben Discovery-Mechanismus (markdownify + WebFetch auf bpb-URL) adressierbar. Der Unterschied liegt im Extraktions-Filter und im nachfolgenden Rechtsstatus.
+Die drei Sub-Kanaele 3b-3d sind operativ getrennt, aber alle ueber denselben Discovery-Mechanismus (§14) adressierbar. Der Unterschied liegt im Extraktions-Filter und im nachfolgenden Rechtsstatus. bpb-Autorentext verlaesst die Pipeline nicht mehr, ausser als interne Heuristik fuer den Primaerquellen-Extraktor (Regex-Kontext, nicht Ausgabe).
 
 ### 12.6 — Didaktischer Hebel gegenueber "ohnehin zu komplex fuer SuS"
 
-Das urspruengliche PM-Argument war: bpb-Texte sind sprachlich zu komplex fuer Mittelstufen-SuS, ND verbietet Vereinfachung, also bpb sinnlos. R0.7-Erweiterung kehrt das um:
+Das urspruengliche PM-Argument war: bpb-Texte sind sprachlich zu komplex fuer Mittelstufen-SuS, ND verbietet Vereinfachung, also bpb sinnlos. R0.7-Erweiterung kehrt das um, und die Modus-A-Streichung schaerft die Argumentation:
 - **Muster A (Struktur)**: nutzt bpb-Denkleistung ohne Text-Verwendung.
-- **Muster B (Medien-Kuratierung)**: nutzt bpb-Didaktik-Vorarbeit am Bild-Scope.
-- **Muster C (Primaerquellen)**: nutzt bpb als **Such-Maschine** fuer gemeinfreie Originaltexte, die dann **unter Wikipedia-Lizenz-Regeln** von der normalen Sub-Agent-Pipeline schueler-sprachlich umgeschrieben werden duerfen.
+- **Muster B (Medien-Kuratierung)**: nutzt bpb-Didaktik-Vorarbeit am Bild-Scope, ohne Autorentext zu verwenden.
+- **Muster C (Primaerquellen)**: nutzt bpb als Such-Maschine fuer gemeinfreie Originaltexte, die dann unter PD-Regeln von der normalen Sub-Agent-Pipeline schueler-sprachlich umgeschrieben werden duerfen.
 
-Damit wird der eigentliche Wert eines bpb-Dossiers in der Escape-Game-Pipeline **nicht der Autorentext**, sondern die darunterliegenden didaktisch kuratierten Commons-Medien und Primaerquellen-Verweise, plus die Gliederungs-Struktur als Q-Gate-Raster.
+Damit wird der eigentliche Wert eines bpb-Dossiers in der Escape-Game-Pipeline **nicht der Autorentext** (der wird in keinerlei Form uebernommen), sondern die darunterliegenden didaktisch kuratierten Commons-Medien und Primaerquellen-Verweise, plus die Gliederungs-Struktur als Q-Gate-Raster. bpb wird zu **Discovery-Infrastruktur**, nicht zu einer Sekundaerquelle.
 
 ---
 
-## §13 — Konsolidierte Plan-Impact-Punkte (ersetzt §8.1)
+## §13 — Konsolidierte Plan-Impact-Punkte (ersetzt §8.1, nach Modus-A-Streichung)
 
-Die in §8.1 vorgeschlagenen Punkte 10-12 werden um §12-Erweiterungen ergaenzt:
-
-- **Punkt 10**: Phase 0.2.Z "Zitat-Baustein-Kuratierung" mit **zwei** Sub-Agenten (`bpb_zitat_kurator` fuer Modus A + `bpb_primaerquellen_extraktor` fuer Modus C).
+- **Punkt 10 (REFAKTORIERT)**: Phase 0.2.Z enthaelt **genau einen** Sub-Agent: `bpb_primaerquellen_extraktor` (Modus C). Kein bpb-Autorentext-Zitat-Kurator. Kein Artefakt `zitat_katalog_game.json`. Phase-0.2.Z-Zweck ist ausschliesslich PD-Primaerquellen-Extraktion aus bpb-Discovery.
 - **Punkt 11**: Wiki-Scope-Katalog-Luecken-Pruefung (Kriegsoekonomie, Frauen-Heimatfront, Kulturkrise).
-- **Punkt 12**: Sub-Agenten-Invariante "Lizenz-Pre-Check" fuer alle Nicht-Wikipedia-Quellen.
-- **Punkt 13 (NEU)**: medien_katalog_game.json Schema-Erweiterung um Felder `bpb_verifiziert`, `bpb_discovery_url`, `bpb_bildunterschrift_zitat`, `bpb_didaktische_einordnung`. Sub-Agent 0.2.M ergaenzt um bpb-Dual-Kanal-Abfrage.
-- **Punkt 14 (NEU)**: Neues Artefakt `primaerquellen_katalog_game.json` mit Schema aus §12.4. Paralleler Katalog-Typ zu medien_katalog_game.json und zitat_katalog_game.json.
-- **Punkt 15 (NEU)**: Q-Gate "Q-STRUKTUR-bpb-Coverage" (Runde 4 oder Phase 0.1): Pflicht-Mapping jeder bpb-Dossier-Kapitel auf Mappen-Zuordnung oder Ausschluss-Begruendung.
-- **Punkt 16 (NEU)**: PD-Pruef-Workflow `bpb_primaerquellen_extraktor`: Invarianten PQI1-PQI6 aus §12.4, Autor-Todesjahr via `mcp__wikipedia__get_summary`, amtliche Werke per §5 UrhG-Regel auto-PD. Bei Unsicherheit konservativer Abbruch.
+- **Punkt 12**: Sub-Agenten-Invariante "Lizenz-Pre-Check" fuer alle Nicht-Wikipedia-Quellen. Bei CC-BY-NC-ND-Quellen darf der Sub-Agent den Autorentext nur als **interne Regex-Kontextsuche** verwenden, nicht als Ausgabe.
+- **Punkt 13**: medien_katalog_game.json Schema-Erweiterung um Felder `bpb_verifiziert`, `bpb_discovery_url`, `bpb_didaktische_einordnung` (NICHT mehr `bpb_bildunterschrift_zitat` — auch Bildunterschriften werden nach Modus-A-Streichung nicht mehr uebernommen). bpb-Kontext wird als interne Qualitaetsreferenz gespeichert, nicht als dargestellter Text.
+- **Punkt 14**: Neues Artefakt `primaerquellen_katalog_game.json` mit Schema aus §12.4.
+- **Punkt 15**: Q-Gate "Q-STRUKTUR-bpb-Coverage" (Runde 4 oder Phase 0.1).
+- **Punkt 16**: PD-Pruef-Workflow `bpb_primaerquellen_extraktor`: Invarianten PQI1-PQI6, Autor-Todesjahr via `mcp__wikipedia__get_summary`, amtliche Werke per §5 UrhG-Regel auto-PD. Bei Unsicherheit konservativer Abbruch.
+- **Punkt 17 (NEU)**: bpb-Discovery-Mechanismus mit dreistufigem Hybrid-Modell (§14). Statische Registry + Discovery-Sub-Agent + User-Bestaetigungsschritt. Pflicht-User-Bestaetigung vor jedem Phase-0.2.Z-Start.
+
+---
+
+## §14 — bpb-Discovery-Mechanismus (Spezifikation)
+
+**Problem:** Wie weiss die Pipeline, welche bpb-Dossiers fuer ein gegebenes Game-Thema relevant sind? Reine User-Abfrage ueberlastet den Lehrer, reine Auto-Suche produziert false-positives.
+
+**Loesung:** Dreistufiges Hybrid-Modell mit Pflicht-User-Bestaetigung als Sicherheitsanker.
+
+### 14.1 — Stufe 1: Statische Registry `bpb_dossier_registry.json`
+
+**Ort:** `escape-game-generator/data/bpb_dossier_registry.json` (Generator-Repo, nicht weitergehts-online/)
+**Pflege:** PM-Handarbeit, einmaliger Aufbau + gelegentliche Updates
+**Umfang Initial:** 10-20 Dossiers fuer die GPG-Lehrplan-Schwerpunkte Mittelschule 7-10 (Erster Weltkrieg, Weimarer Republik, NS-Zeit, 2. Weltkrieg, Kalter Krieg, Mauerbau/Wiedervereinigung, EU, Menschenrechte, Demokratie-Grundlagen, Migration, Klima).
+**Schema:**
+```
+{
+  "registry_version": "1.0",
+  "last_updated": "2026-04-11",
+  "entries": [
+    {
+      "id": "bpb-dossier-erster-weltkrieg",
+      "titel": "Der Erste Weltkrieg",
+      "url_root": "https://www.bpb.de/themen/erster-weltkrieg-weimar/ersterweltkrieg/",
+      "thema_tags": ["erster-weltkrieg", "wk1", "1914", "julikrise", "kaiserreich-ende"],
+      "lehrplan_bezug_gpg": ["M7_L5", "R9_G3"],
+      "autor_primaer": "Wolfgang Kruse",
+      "unterartikel_anzahl": 13,
+      "qualitaet_pm_note": "Fachautor WBG-Standard, dichte Primaerquellenzitate",
+      "zuletzt_pm_geprueft": "2026-04-11"
+    }
+  ]
+}
+```
+
+**Verantwortung:** PM pflegt und erweitert. Jede neue Generierung eines Games zu einem Thema, fuer das noch kein Registry-Eintrag existiert, triggert einen manuellen Registry-Pflege-Schritt (alternativ Stufe 2).
+
+### 14.2 — Stufe 2: Discovery-Sub-Agent `bpb_discovery_agent`
+
+**Phase:** Phase 0.0 (vor Phase 0.1 Kern-Artikel-Ingest), optional aktivierbar per Game-Metadaten-Flag `nutze_bpb_quelle: true`.
+
+**Input:**
+- `thema_lehrplan`: Klartext-Thema des Games (z.B. "Erster Weltkrieg — Ursachen und Ausbruch")
+- `tag_set`: aus Game-Metadaten, z.B. ["erster-weltkrieg", "julikrise", "kaiserreich"]
+- `lehrplan_code`: z.B. "M7_L5" (optional)
+
+**Workflow:**
+1. **Registry-Lookup (primaer):** Match gegen `thema_tags` und `lehrplan_bezug_gpg` in Registry. Bei Treffer: Kandidat mit `quelle: "registry"`, `relevanz_score: 1.0`.
+2. **WebSearch-Fallback (sekundaer, nur bei Registry-Miss oder unvollstaendigem Treffer):** Query `site:bpb.de dossier [thema_lehrplan]`. Heuristik auf URL-Pattern `/themen/[bereich]/[dossier-slug]/` oder `/shop/zeitschriften/[izpb|apuz]/[dossier-slug]/`. Ausschluss: Shop-Produkt-Seiten ohne Volltext, Video-Only-Seiten.
+3. **Kandidaten-Scoring:** Titel-Keyword-Match + URL-Pattern-Match + PM-gepflegte Quality-Note (wenn aus Registry). Score 0.0-1.0.
+4. **Ausgabe:** sortierte Kandidaten-Liste, top 3-5.
+
+**Output-Schema:**
+```
+{
+  "game_id": "gpg-erster-weltkrieg-ursachen",
+  "thema_lehrplan": "Erster Weltkrieg — Ursachen und Ausbruch",
+  "kandidaten": [
+    {
+      "id": "bpb-dossier-erster-weltkrieg",
+      "titel": "Der Erste Weltkrieg",
+      "url_root": "https://www.bpb.de/themen/erster-weltkrieg-weimar/ersterweltkrieg/",
+      "summary_1_satz": "13-teiliges Fach-Dossier zum WK1 von Wolfgang Kruse (Univ. Hagen), CC BY-NC-ND, enthaelt zentrale Primaerquellen (Thronrede, Blankoscheck, Schlieffen-Plan).",
+      "quelle": "registry",
+      "relevanz_score": 1.0,
+      "pm_geprueft": true,
+      "unterartikel_relevant": [
+        "/155302/ausloesung-und-beginn-des-krieges/",
+        "/155304/kriegsverlauf-und-aussenpolitik/"
+      ]
+    }
+  ]
+}
+```
+
+**Tools:** Registry-Datei-Lookup + WebSearch. Kein markdownify, kein WebFetch in Stufe 2 (Inhalt wird erst in Stufe 4 geladen). Stufe 2 ist bewusst leichtgewichtig.
+
+### 14.3 — Stufe 3: User-Bestaetigung (PFLICHT-Gate)
+
+**Prinzip:** Kein Auto-Ingest. Der Lehrer sieht die Kandidaten, markiert was er verwenden will, und bestaetigt. Das ist der Qualitaets-Sicherheitsanker.
+
+**Darstellung (PM-Prompt-Format fuer Claude-Code-Uebergabe):**
+```
+bpb-Discovery fuer Game "[thema]" hat folgende Kandidaten gefunden:
+
+1. [titel]
+   URL: [url_root]
+   [summary_1_satz]
+   Quelle: [registry|websearch]  Relevanz: [score]
+   Empfohlene Unterartikel fuer diesen Game-Scope:
+     a) [unterartikel_relevant_1]
+     b) [unterartikel_relevant_2]
+
+   [ ] Diesen Dossier verwenden?   [ja/nein]
+   [ ] Welche Unterartikel?         [alle/keine/a,b,...]
+
+2. [naechster Kandidat]
+...
+
+Bitte bestaetigen und fortfahren.
+```
+
+**User-Entscheidungen sind persistent:** werden in `docs/agents/artefakte/[game-id]/bpb_discovery_bestaetigung.json` abgelegt mit Zeitstempel. Bei spaeterer Re-Generierung wird die Bestaetigung wiederverwendet (ausser explizit invalidiert).
+
+**Fallback bei "nein" fuer alle Kandidaten:** Phase 0.2.Z wird uebersprungen, Game laeuft wie bisher ueber Wikipedia-Pipeline allein. bpb ist und bleibt optional.
+
+### 14.4 — Stufe 4: `bpb_primaerquellen_extraktor` auf bestaetigten URLs
+
+Der in §12.4 spezifizierte Sub-Agent erhaelt als Input ausschliesslich die vom User in Stufe 3 bestaetigten Unterartikel-URLs. Er arbeitet auf jedem Unterartikel den vollen PD-Pruef-Workflow ab (markdownify → Regex auf Primaerquellen-Zitate → Autor-Todesjahr-Lookup → Original-Archiv-Suche → primaerquellen_katalog_game.json).
+
+**Parallel dazu:** der Medien-Kuratierungs-Hook (§12.2 Muster B) in Sub-Agent 0.2.M wird aktiviert. 0.2.M liest die bestaetigten bpb-Unterartikel, inventarisiert Medien, matcht gegen Commons-Funde, markiert Treffer als `bpb_verifiziert: true`.
+
+### 14.5 — Diagramm Discovery-Flow
+
+```
+Game-Metadaten (thema_lehrplan, tag_set, nutze_bpb_quelle)
+        │
+        ▼
+┌────────────────────────┐
+│ Stufe 1: Registry      │◄──── bpb_dossier_registry.json (PM-gepflegt)
+│ Lookup nach Tag/Lehrpl.│
+└────────────────────────┘
+        │
+        ▼ (Treffer/Miss)
+┌────────────────────────┐
+│ Stufe 2: Fallback      │◄──── WebSearch site:bpb.de
+│ Nur bei Miss           │
+└────────────────────────┘
+        │
+        ▼
+   Kandidaten-Liste
+        │
+        ▼
+┌────────────────────────┐
+│ Stufe 3: User-Bestaet. │◄──── Lehrer markiert verwenden/nicht
+│ PFLICHT-Gate           │      bpb_discovery_bestaetigung.json
+└────────────────────────┘
+        │
+        ▼ (nur bestaetigte URLs)
+┌────────────────────────┐
+│ Stufe 4: Ingest        │
+│ - bpb_primaerquellen_  │
+│   extraktor            │
+│ - 0.2.M Medien-bpb-Tag │
+└────────────────────────┘
+        │
+        ▼
+   primaerquellen_katalog_game.json
+   medien_katalog_game.json (mit bpb_verifiziert=true)
+```
+
+### 14.6 — Registry-Initial-Befuellung als separater PM-Task
+
+Der Aufbau der ersten Registry-Version ist ein **eigenstaendiger PM-Task**, nicht Teil dieses R0.7-Befunds. Vorschlag: Nach R1 (v3.11.1 Bugfix-Bundle) abgeschlossen, in Runde 2 als Arbeitspaket 2b "bpb-Registry Initial-Aufbau" einziehen. Scope: 10-20 Dossiers fuer die tatsaechlich geplanten Games 2026-2027 (Erster Weltkrieg, Weimar, NS-Zeit als Priositaet 1; Kalter Krieg, EU, Demokratie als Prioritaet 2).
+
+### 14.7 — Warum nicht reine User-Abfrage
+
+- Lehrer-Workload: URL-Recherche fuer jedes Game ist keine PM-skalierbare Praxis.
+- Registry ist einmal-gepflegt, dann stabil. 10 Dossiers decken 80 % der Lehrplan-Themen.
+- Stufe-3-Bestaetigung garantiert, dass der Lehrer trotzdem die Kontrolle hat.
+
+### 14.8 — Warum nicht rein automatisch
+
+- WebSearch-Treffer sind nicht didaktisch qualifiziert. Ein bpb-APuZ-Fachbeitrag fuer Oberstufen-Politik-LK ist URL-relevant, aber fuer Mittelstufen-GPG-Game niveau-ungeeignet.
+- Der Lehrer hat Lehrplan- und Lerngruppen-Wissen, das der Agent nicht hat.
+- Ein falsch ingestierter bpb-Dossier-Inhalt verschwendet Pipeline-Zeit (PD-Pruefung, Original-Archiv-Suche, Katalog-Bau) — die Kosten eines false-positive sind hoch genug, um Stufe 3 zu rechtfertigen.
 
