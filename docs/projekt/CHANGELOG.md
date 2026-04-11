@@ -4,6 +4,44 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-11 — R0.6 Titel-Verifikation post-MCP-Config: 9 von 28 Titel ungueltig
+
+**Phase:** Zwischenschritt nach User-Push Session 29 (wikipedia-mcp Config-Fix aktiviert)
+**Modus:** EXECUTE (PM)
+**Zweck:** Autoritative Titel-Verifikation des R0.4-Katalogs gegen de.wikipedia.org, jetzt wo der MCP-Server korrekt auf Deutsch zeigt. Keine Game-Daten beruehrt.
+
+**Vorgehen:** Pro Kern- und Scope-Artikel ein `mcp__wikipedia__get_summary`-Call + bei 404 ein `search_wikipedia`-Call zur Findung des korrekten Titels.
+
+**Verifikations-Ergebnis (9 ungueltig von 28 Titeln, 32 % Fehlerrate):**
+
+| Original (R0.4) | Status | Korrektur |
+|---|---|---|
+| `Juli-Krise` | 404 | → `Julikrise` (ohne Bindestrich) |
+| `Europaeische_Buendnisse_vor_dem_Ersten_Weltkrieg` | 404 (kein Sammelartikel) | → Split `Dreibund` + `Triple_Entente` |
+| `Wilhelm_II_Aussenpolitik` / Sektions-Deeplink | fragil | → `Weltpolitik` + `Wilhelm_II._(Deutsches_Reich)` |
+| `Britisch-deutsches_Wettruesten_zur_See` | 404 | → `Flottengesetze` (Hauptartikel) |
+| `Kriegsbegeisterung_1914` | 404 (redundant) | ENTFERNEN (Inhalt in `Augusterlebnis`) |
+| `Ultimatum_an_Serbien` | 404 | → `Kriegserklaerung_Oesterreich-Ungarns_an_Serbien` |
+| `Deutscher_Einmarsch_in_Belgien_1914` | 404 (kein Sammelartikel) | → Split `Deutsches_Ultimatum_an_Belgien` + `Eroberung_von_Luettich_(1914)` |
+| `Taxis_von_der_Marne` | 404 (R0.5 bereits) | ENTFERNT (Ersatz: Taxi-Sektion in `Erste_Schlacht_an_der_Marne`) |
+| ~(Verifikation bestanden fuer 19 Bestandsartikel)~ | PASS | `Attentat_von_Sarajevo`, `Julikrise` (auch M2), `Augusterlebnis`, `Burgfriedenspolitik`, `Schlieffen-Plan`, `Erste_Schlacht_an_der_Marne`, `Westfront_(Erster_Weltkrieg)`, `Alfred_von_Schlieffen`, `Wilhelm_II._(Deutsches_Reich)` u.a. |
+
+**Katalog-Status post-R0.6:**
+- Neue Game-Gesamtzahl: 14 Kern-Artikel (vorher 13) + 16 erweiterter Medien-Scope (vorher 15).
+- Budget Option A (15 Artikel/Game) minimal ueberschritten in M4 (mit optionalem Moltke auf 16). Empfehlung: Moltke optional halten.
+- Alle neuen Titel per Live-Call verifiziert.
+
+**Artefakt:** `docs/befunde/WIKI_SCOPE_KATALOG_v3-12_PILOT_2026-04-11.md` §8 "Titel-Verifikation post-MCP-Config (R0.6)" neu eingefuegt. §8.1 verifizierter Katalog (ueberschreibt §2/§3). §8.2 Korrektur-Prinzipien. §8.3 Budget-Impact. §8.4 Sub-Agent-Kontrakt-Invariante.
+
+**Neuer Plan-Impact Punkt 9 (in STATUS.md eingetragen):**
+9. R2 A2 Phase-0.2.M: Pre-Ingest-Titel-Validierung via `mcp__wikipedia__get_summary` PFLICHT. Harter Abbruch bei ungueltigem Titel, kein Auto-Swap.
+
+**Begruendung der Pflicht-Invariante:** Ein per Hand kuratierter Katalog hatte 32 % ungueltige Titel. Automatische Pre-Validierung ist guenstiger als manuelle Re-Kuration nach Fehllauf. Die Phase-0.2.M-Pipeline muss diesen Guard tragen.
+
+**Commit:** folgt als naechster.
+
+---
+
 ## 2026-04-11 — R0.5 Testrun Medien-Extraktion M4 + Katalog-Update
 
 **Phase:** Zwischenschritt R0.4 → Runde 2 (User-Auftrag Session 29)

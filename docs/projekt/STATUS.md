@@ -1,7 +1,7 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-11 (R0 Audit-Track COMPLETE + R0.5 Testrun Medien-Extraktion M4. Fuenf Befunde. User-Entscheidungen Session 29: Budget Option A, M3 neu generieren, M4 neueste Infrastruktur.)
-**Modus:** R0-COMPLETE → R1/R2-BEREIT (wikipedia-mcp Config-Fix vor Runde 2 Arbeitspaket 2 einspielen)
+**Letzte Aktualisierung:** 2026-04-11 (R0 FINAL: R0.1-R0.6 abgeschlossen. wikipedia-mcp Config-Fix VERIFIZIERT durch User. R0.6 Titel-Verifikation: 9/28 Original-Titel ungueltig, verifizierter Katalog in WIKI_SCOPE_KATALOG §8.)
+**Modus:** R0-FINAL → R1 bereit zum Start
 **Aktiver Upgrade-Plan:** `docs/architektur/UPGRADE_PLAN_v3-12_ESCAPE_GAME_QUALITAET.md` v1.2 (Runden R0-R8: Audits → v3.11.1 Bugfix → 0.2.M Infrastruktur → Stundenfrage-Dualismus → Quellen-Integritaet → Medien-Diversitaet → Feedback-First → Enforcement → Sichtungs-Stops). R0-R8 = reine Generator-/Engine-Infrastruktur, keine Live-Game-Beruehrung. 13 neue Q-Gates. Alle 11 Detail-Fragen in §15.1 entschieden. v3.12-Pilot = Neu-Regeneration G1 (Ursachen-und-Ausbruch) nach R8. Archivierung bestehendes Live-G1 ist Pre-Pilotlauf-Task nach R8-Abschluss. Vorgaenger v3.11 COMPLETE + gepusht.
 
 **R0-Befunde (Gate-Status):**
@@ -10,6 +10,7 @@
 - **G-0-3** (G1/G2-Vergleich): ERFUELLT. `docs/befunde/VERGLEICH_G1_G2_SICHTUNG_2026-04-11.md`. 5 von 8 Findings systemisch bestaetigt, 2 v3.6-Policy-spezifisch (G2-exklusiv, Policy-Defekt), G1→G2-Umlaut-Regression dokumentiert.
 - **R0.4 Wiki-Scope-Katalog:** LIEGT VOR + aktualisiert mit User-Entscheidungen. `docs/befunde/WIKI_SCOPE_KATALOG_v3-12_PILOT_2026-04-11.md`. Budget Option A (15 Artikel/Game) CONFIRMED. M3 neu generieren CONFIRMED. M4 neueste Infrastruktur CONFIRMED. Drei Katalog-Korrekturen aus R0.5 eingepflegt (Taxis-Titel entfernt, Schlieffen-Denkschrift + Marne-Generale-Cluster + IWM-Belgien-Reportage aufgenommen).
 - **R0.5 Testrun Medien-Extraktion M4:** LIEGT VOR. `docs/befunde/TESTRUN_MEDIEN_EXTRAKTION_M4_2026-04-11.md`. Viability POSITIV. Dual-Kanal-Pflicht (WebFetch + Commons) bestaetigt. Drei Korrekturen: (a) wikipedia-mcp Config-Fix `--language de`, (b) Katalog-Ersatz fuer Taxis_von_der_Marne, (c) Medien-Erweiterung um 3 Cluster. Alle 21 inventarisierten Medien lizenzkonform (15 PD, 6 CC BY-SA, 0 Blocker).
+- **R0.6 Titel-Verifikation (MCP-gestuetzt):** LIEGT VOR. Im WIKI_SCOPE_KATALOG §8 eingepflegt. **9 von 28 Original-Titeln ungueltig.** Korrekturen: `Juli-Krise`→`Julikrise`, `Europaeische_Buendnisse`→`Dreibund`+`Triple_Entente`, `Wilhelm_II_Aussenpolitik`→`Weltpolitik`+`Wilhelm_II._(Deutsches_Reich)`, `Britisch-deutsches_Wettruesten_zur_See`→`Flottengesetze`, `Kriegsbegeisterung_1914`→ENTFERNT (redundant zu Augusterlebnis), `Ultimatum_an_Serbien`→`Kriegserklaerung_Oesterreich-Ungarns_an_Serbien`, `Deutscher_Einmarsch_in_Belgien_1914`→`Deutsches_Ultimatum_an_Belgien`+`Eroberung_von_Luettich_(1914)`, `Taxis_von_der_Marne`→ENTFERNT (R0.5). Neue Game-Gesamtzahl: 14 Kern-Artikel + 16 Scope-Artikel. Pflicht-Invariante fuer Phase-0.2.M Sub-Agent: Pre-Ingest-Titel-Validierung via `get_summary`.
 
 **Plan-Impact R0-Befunde (muss in UPGRADE_PLAN v1.3 nachgezogen werden):**
 1. Runde 1 Arbeitspaket 1 Umlaut-Retrofit: Scope **drei** Fragetypen (nicht zwei).
@@ -20,6 +21,7 @@
 6. Runde 2 Arbeitspaket 2 Phase-0.2.M: Dual-Kanal-Pflicht fuer Medien-Sub-Agent (WebFetch-Artikel-Inventur + Commons-Suche, R0.5 §8.2). Pre-Requisite: wikipedia-mcp Config-Fix `--language de` (R0.5 §7).
 7. Runde 2 Arbeitspaket 5 Plan-vs-Wirklichkeit-Matrix: M4-Vergleich-Aufgabe wird darueber neu gebaut (User-Entscheidung Session 29), nicht aus G1 v3.11 uebernommen.
 8. Runde 2 Arbeitspaket 5 QuellentextMehrstimmen: M3-Pilot-Fall = komplette Neu-Generierung (User-Entscheidung Session 29).
+9. Runde 2 Arbeitspaket 2 Phase-0.2.M: Pre-Ingest-Titel-Validierung via `mcp__wikipedia__get_summary` PFLICHT (R0.6). Kein Auto-Swap, kein Fallback-Heuristik — harter Abbruch bei ungueltigem Titel.
 **Offene Folgetickets:**
 - ~~**P1-NEU Ursachen-Titel-Drift**~~ **CLOSED 2026-04-10**: Richtung A umgesetzt. Landing-Page `<li id="game-gpg-erster-weltkrieg-ursachen">`-Text geaendert von "Pulverfass Europa – Der Erste Weltkrieg (GPG R7)" zu "Der Erste Weltkrieg — Ursachen und Ausbruch (GPG R7)". `data.json.meta.titel` unveraendert als Single-Source. Regression-Check via `./tools/deploy-check.sh gpg-erster-weltkrieg-ursachen` + Marne-Regression: beide PASS. Marketing-Framing "Pulverfass Europa" entfallen — ggf. in Folgeprojekt als separater Untertitel-Block nachziehen falls pedagogisch gewuenscht.
 - **P1 v3.10-Folgearbeiten** (zurueckgestellt per Q5=c waehrend v3.11 lief): T2.F (typ-spezifische Meta-Sub-Schemata via oneOf-Discriminator), 21 mat-*.json Migrations-Backlog (Q4 vorwaertsgetrieben, siehe `docs/projekt/berichte/BERICHT_SCHEMA_MIGRATION_2026-04-10.md`).

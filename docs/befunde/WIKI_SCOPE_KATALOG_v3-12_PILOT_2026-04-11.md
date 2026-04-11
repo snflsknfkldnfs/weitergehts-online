@@ -190,7 +190,86 @@ Zusaetzlich zu den User-Entscheidungen hat der Testrun R0.5 (TESTRUN_MEDIEN_EXTR
 
 ---
 
-## 8. Quellen
+## 8. Titel-Verifikation post-MCP-Config (Session 29, R0.6)
+
+Nach dem wikipedia-mcp Config-Fix (`args: ["--language", "de"]` aktiv) wurden alle Kern-Artikel + erweiterter-Scope-Artikel per `mcp__wikipedia__get_summary` gegen de.wikipedia.org verifiziert. **Sieben Titel waren ungueltig** (aus §2 und §3 oben). Neun der 28 Titel des Original-Katalogs §2/§3 haben keinen 1:1-Artikel auf der dt. Wikipedia.
+
+### 8.1 Verifizierter Katalog (autoritative Fassung fuer Runde 2 Arbeitspaket 2)
+
+Diese Fassung ueberschreibt die Titel in §2/§3 und ist ab sofort verbindlich.
+
+**Mappe 1 — Pulverfass Europa**
+
+Kern-Artikel:
+1. `Julikrise` — **ersetzt** Original `Juli-Krise` (404).
+2. `Dreibund` + `Triple_Entente` — **ersetzen** Original `Europaeische_Buendnisse_vor_dem_Ersten_Weltkrieg` (404). Split auf zwei separate Artikel. Didaktisch besser, weil die beiden Lager direkt benannt werden.
+3. `Weltpolitik` + `Wilhelm_II._(Deutsches_Reich)` (Sektion: Weltpolitik-Aussenpolitik) — **ersetzen** Original `Deutsches_Kaiserreich#Aussenpolitik_Wilhelms_II.` / `Wilhelm_II_Aussenpolitik`. `Weltpolitik` ist der Sachbegriff, `Wilhelm_II. (Deutsches_Reich)` der Personen-Artikel.
+4. `Flottengesetze` — **ersetzt** Original `Britisch-deutsches_Wettruesten_zur_See` (404). `Flottengesetze` ist der Hauptartikel und enthaelt explizit den Begriff "Deutsch-Britisches Marine-Wettruesten" + Link-Struktur.
+
+**Mappe 2 — Das Attentat von Sarajevo**
+
+Kern-Artikel:
+1. `Attentat_von_Sarajevo` (unveraendert, Bestandsartikel bestaetigt).
+2. `Julikrise` (unveraendert, ersetzt Juli-Krise-Schreibweise).
+3. `Kriegserklärung_Österreich-Ungarns_an_Serbien` — **ersetzt** Original `Ultimatum_an_Serbien` (kein eigener Artikel). Enthaelt als Bestandsartikel den unmittelbaren Ultimatum-Kontext.
+
+**Mappe 3 — Kriegsbegeisterung 1914**
+
+Kern-Artikel:
+1. `Augusterlebnis` (unveraendert, Bestandsartikel bestaetigt; enthaelt laut Suche die aktuelle Historiografie-Debatte zur "angeblichen" Kriegsbegeisterung).
+2. `Burgfriedenspolitik` (unveraendert, Bestandsartikel bestaetigt).
+3. **ENTFERNEN** Original `Kriegsbegeisterung_1914`. Kein eigener Artikel. Inhalt ist bereits in `Augusterlebnis` enthalten. Redundanz behoben.
+4. *(neu)* `Ideen_von_1914` — im Suchtreffer prominent, deckt den ideologischen Ueberbau zur Kriegsbegeisterung ab. Optional als dritter Kern-Artikel aufnehmen, um die Mappe breiter zu machen (Augusterlebnis = Verhalten, Ideen_von_1914 = Deutung, Burgfriedenspolitik = Politik-Rahmen).
+
+**Mappe 4 — Der Schlieffen-Plan**
+
+Kern-Artikel:
+1. `Schlieffen-Plan` (unveraendert, Bestandsartikel bestaetigt).
+2. `Erste_Schlacht_an_der_Marne` (unveraendert, Bestandsartikel bestaetigt).
+3. `Westfront_(Erster_Weltkrieg)` (unveraendert, Bestandsartikel bestaetigt).
+
+**Erweiterter Medien-Scope M4 (post-R0.5 + post-R0.6):**
+1. `Alfred_von_Schlieffen` (unveraendert, Bestandsartikel bestaetigt).
+2. `Deutsches_Ultimatum_an_Belgien` + `Eroberung_von_Lüttich_(1914)` — **ersetzen** Original `Deutscher_Einmarsch_in_Belgien_1914` (404). Split auf zwei spezifische Artikel. `Deutsches_Ultimatum_an_Belgien` liefert den Auslser, `Eroberung_von_Lüttich` die erste grosse Gefechts-Dokumentation.
+3. `Erste_Schlacht_an_der_Marne` (Dopplung zu Kern — bereits in R0.5 als Medien-Kanal bestaetigt).
+4. **ENTFERNT** `Pariser_Taxis_von_der_Marne` / `Taxis_von_der_Marne` (404, R0.5 §8.1). Ersatz: Taxi-Sektion in `Erste_Schlacht_an_der_Marne` + Commons-Suche "Taxis Marne 1914".
+
+### 8.2 Durchgaengige Prinzipien der Korrekturen
+
+1. **Umlaut-Schreibweise:** Alle Artikel-Titel im Katalog ab sofort mit echten Umlauten (`ä/ö/ü`), weil der MCP-Server sie korrekt aufloest. Das Katalog-Dokument selbst nutzt trotzdem ASCII-Transliteration im Fliesstext (ae/oe/ue), weil UTF-8-Defekt in Schreibumgebung nicht geklaert ist — dies ist eine Wartungs-Inkonsistenz, die in Runde 1 Arbeitspaket 1 (Umlaut-Retrofit) nicht beruehrt wird.
+
+2. **Split statt Sammelartikel:** Wo die dt. WP keinen Sammelartikel hat, splittet der Katalog auf zwei bis drei spezifische Artikel. Beispiele: `Europaeische_Buendnisse` → `Dreibund` + `Triple_Entente`; `Deutscher_Einmarsch_in_Belgien_1914` → `Deutsches_Ultimatum_an_Belgien` + `Eroberung_von_Lüttich`.
+
+3. **Kein Sektions-Deeplink als Kern-Artikel:** Das Original nutzte `Deutsches_Kaiserreich#Aussenpolitik_Wilhelms_II.` als Kern-Artikel. Solche Sektions-Deeplinks sind fuer die Phase-0.2.M-Ingest-Logik fragiler als ganze Artikel (Sektions-IDs koennen sich durch Artikel-Bearbeitung aendern). Der Katalog ersetzt sie durch stabilere Haupt-Artikel (`Weltpolitik`, `Wilhelm II. (Deutsches_Reich)`).
+
+4. **Redundanz-Bereinigung:** `Kriegsbegeisterung_1914` war redundant zu `Augusterlebnis`. Entfernt.
+
+### 8.3 Auswirkungen auf §5 Scope-Tabelle und §6 Budget
+
+| Mappe | Kern-Artikel neu | Erweiterter Medien-Scope neu |
+|---|---|---|
+| M1 | 5 (Julikrise, Dreibund, Triple_Entente, Weltpolitik, Flottengesetze) | unveraendert 4 |
+| M2 | 3 (Attentat_von_Sarajevo, Julikrise-Dopplung, Kriegserklaerung_OeUng_an_Serbien) | unveraendert 4 |
+| M3 | 3 (Augusterlebnis, Burgfriedenspolitik, Ideen_von_1914 optional) | unveraendert 3 |
+| M4 | 3 (Schlieffen-Plan, Erste_Schlacht_an_der_Marne, Westfront) | 5 (Alfred_von_Schlieffen, Deutsches_Ultimatum_an_Belgien, Eroberung_Luettich, Marne-Dopplung, Moltke-optional) |
+
+**Game-Gesamt neu:**
+- Kern-Artikel: **14** (vorher 13, +1 durch M1-Split und M3-Ergaenzung trotz Kriegsbegeisterung-Streichung)
+- Erweiterter Medien-Scope: **16** (vorher 15, +1 durch M4-Split Belgien)
+- Budget Option A (15 Artikel/Game) um 1 ueberschritten in M4. **Empfehlung:** `Moltke` in M4 optional halten und nur nutzen, wenn ein Marne-Scheiter-Narrativ mit Personen-Fokus gewuenscht ist. Sonst bleibt M4 bei 4 Scope-Artikeln und Budget haelt.
+
+### 8.4 Impact auf Phase-0.2.M Sub-Agent-Kontrakt
+
+Die Sub-Agent-Instruktion muss ab Runde 2 Arbeitspaket 2 folgende Invariante tragen:
+
+> **Pre-Ingest-Titel-Validierung (Pflicht):**
+> Bevor der Volltext-Ingest eines Kern-Artikels startet, pruefe die Existenz per `mcp__wikipedia__get_summary({title: <Titel>})`. Bei "No Wikipedia article found" bricht der Lauf ab und meldet den Titel als Katalog-Defekt. Keine Fallback-Heuristik, kein Auto-Swap.
+
+Begruendung: Der R0.6-Befund zeigt, dass selbst ein per Hand kuratierter Katalog 9 von 28 ungueltige Titel enthalten konnte. Automatische Pre-Validierung ist guenstiger als manuelle Re-Kuration nach Fehllauf.
+
+---
+
+## 9. Quellen
 
 - `weitergehts-online/escape-games/gpg-erster-weltkrieg-ursachen/data.json` (G1 v3.11 als inhaltliche Referenz)
 - `weitergehts-online/docs/architektur/UPGRADE_PLAN_v3-12_ESCAPE_GAME_QUALITAET.md` §4 Runde 2 Arbeitspaket 2 (Dual-Scope-Definition), §15.1 F18 (Budget-Default)
