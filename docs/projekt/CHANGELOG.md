@@ -4,6 +4,36 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-11 — Upgrade-Plan v3.12 v1.1: 11 Detail-Fragen entschieden
+
+**Phase:** Plan-Freigabe v1 -> v1.1
+**Modus:** EXECUTE (PM)
+
+**Ausloeser:** User-Antworten auf alle 11 in §15 offenen Detail-Fragen. Integration in den Plan via neuer §15.1-Sektion.
+
+**Entscheidungen (Kurzfassung):**
+- F11 v3.12-Pilot: **Neu-Regeneration G1 Ursachen-und-Ausbruch.** Bestehendes G1 wird vor R0-Start archiviert (neuer Arbeitspaket R0.ARCHIV-G1, Gate G-0-0).
+- F1 SUB_MEDIEN_EXTRAKTION: **Eigenstaendige Phase 0.2.M** als Konsument des SUB_RECHERCHE-Outputs, nicht Erweiterung. Drei Gruende: unterschiedliche Quali-Kriterien, Token-Oekonomie, Wiederverwendbarkeit.
+- F2 Dual-Scope: **Hierarchie (a) > (b) > (c)** mit Limits fuer (b) (Wikilinks-Tiefe 1, max 5 Medien/Artikel, max 10 erweiterte Artikel/Game) und (c) als Notfall mit fallback_begruendung.
+- F3 Scope-Klarstellung: **Game-weite Extraktion, per Mappe Read-Filter.** Umbenennung `medien_katalog_mappe.json` -> `medien_katalog_game.json`. Phase 0.2.M laeuft einmal pro Game.
+- F4 F-08 Schema: **Engine rendert nur sicht_fragestamm**, Tiefenstruktur in `aufgabe.planung.*` als Planungs-Feld.
+- F7 Beutelsbach-Judge: **Regel-Modul in SUB_AUFGABE_FREITEXT**, keine eigene Agenten-Instanz. Dualer Input: Eigenstruktur-Thema + antizipierte User-Interessenstruktur, beide transparent getrennt.
+- F8 Fiktions-Klausel B1/B2/B3: **alternativ (ODER)**, eine Bedingung genuegt.
+- F14 `_meta.fiktiv`: **Generell erlaubt fuer Quellentext-Elemente** + neues Pflicht-Feld `_meta.fiktiv_label` fuer sichtbare Kennzeichnung.
+- F15 Themen-Medien-Matrix: **Separates Katalog-Dokument** `architektur/kataloge/MEDIEN_THEMA_MATRIX.md`, nicht in Vertrag eingebettet. Begruendung: iterative Erweiterung ohne Vertrag-Bumps.
+- F18 Denkmal-Bruecke: **Tag `bildquelle.rolle: "denkmal_bruecke"`**, kein neuer Medientyp. Kein Schema-Breakage.
+- F9 feedback_first_mode: **default true**, Legacy-Games explizit `false`.
+
+**Umbenennung konsistent durchgefuehrt:** `medien_katalog_mappe.json` -> `medien_katalog_game.json` im gesamten Plan.
+
+**Neue R0-Task:** `R0.ARCHIV-G1` als erstes Arbeitspaket vor allen Audits. Default-Variante: Verschiebung nach `archiv/g1-v3-11-*` Unterordner ausserhalb Deploy-Scope. Variante-Wahl (a Branch / b Unterordner / c Hard-Remove) benoetigt User-Bestaetigung. Q-Gate G-0-0 ergaenzt.
+
+**Status:** Plan v1.1 freigegeben. Start-Vorbedingung: User bestaetigt Archivierungs-Variante und fuehrt nach R0.ARCHIV-G1-Commit den Host-Push durch.
+
+**Commit:** `a0aa064` (Sandbox, push durch User).
+
+---
+
 ## 2026-04-11 — Upgrade-Plan v3.12 Runden-Architektur (R0-R8) erstellt
 
 **Phase:** Scoping -> Operativer Plan (v3.12)

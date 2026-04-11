@@ -1,8 +1,8 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-11 (Upgrade-Plan v3.12 Runden-Architektur R0-R8 geschrieben + committed 237b899 in Sandbox. Wartet auf User-Push + Freigabe + Antworten auf 11 offene Detail-Fragen vor Runden-Start.)
-**Modus:** EXECUTE → PLAN-FREIGABE
-**Aktiver Upgrade-Plan:** `docs/architektur/UPGRADE_PLAN_v3-12_ESCAPE_GAME_QUALITAET.md` (Runden R0-R8: Audits → v3.11.1 Bugfix → 0.2.M Infrastruktur → Stundenfrage-Dualismus → Quellen-Integritaet → Medien-Diversitaet → Feedback-First → Enforcement → Sichtungs-Stops). 13 neue Q-Gates. 11 offene Detail-Fragen pro Runde dokumentiert. Vorgaenger v3.11 COMPLETE + gepusht.
+**Letzte Aktualisierung:** 2026-04-11 (Upgrade-Plan v3.12 v1.1: Alle 11 Detail-Fragen entschieden, committed a0aa064. Plan freigegeben. Naechster Stop: R0.ARCHIV-G1 Variante-Wahl + User-Push.)
+**Modus:** PLAN-FREIGEGEBEN → R0-VORBEREITUNG
+**Aktiver Upgrade-Plan:** `docs/architektur/UPGRADE_PLAN_v3-12_ESCAPE_GAME_QUALITAET.md` v1.1 (Runden R0-R8: Audits → v3.11.1 Bugfix → 0.2.M Infrastruktur → Stundenfrage-Dualismus → Quellen-Integritaet → Medien-Diversitaet → Feedback-First → Enforcement → Sichtungs-Stops). 13 neue Q-Gates. Alle 11 Detail-Fragen in §15.1 entschieden. v3.12-Pilot = Neu-Regeneration G1 (Ursachen-und-Ausbruch), bestehendes G1 wird archiviert (R0.ARCHIV-G1 Vorbedingung). Vorgaenger v3.11 COMPLETE + gepusht.
 **Offene Folgetickets:**
 - ~~**P1-NEU Ursachen-Titel-Drift**~~ **CLOSED 2026-04-10**: Richtung A umgesetzt. Landing-Page `<li id="game-gpg-erster-weltkrieg-ursachen">`-Text geaendert von "Pulverfass Europa – Der Erste Weltkrieg (GPG R7)" zu "Der Erste Weltkrieg — Ursachen und Ausbruch (GPG R7)". `data.json.meta.titel` unveraendert als Single-Source. Regression-Check via `./tools/deploy-check.sh gpg-erster-weltkrieg-ursachen` + Marne-Regression: beide PASS. Marketing-Framing "Pulverfass Europa" entfallen — ggf. in Folgeprojekt als separater Untertitel-Block nachziehen falls pedagogisch gewuenscht.
 - **P1 v3.10-Folgearbeiten** (zurueckgestellt per Q5=c waehrend v3.11 lief): T2.F (typ-spezifische Meta-Sub-Schemata via oneOf-Discriminator), 21 mat-*.json Migrations-Backlog (Q4 vorwaertsgetrieben, siehe `docs/projekt/berichte/BERICHT_SCHEMA_MIGRATION_2026-04-10.md`).
