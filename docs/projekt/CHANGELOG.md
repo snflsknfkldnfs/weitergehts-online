@@ -4,6 +4,47 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-11 — Upgrade-Plan v3.12 Runden-Architektur (R0-R8) erstellt
+
+**Phase:** Scoping -> Operativer Plan (v3.12)
+**Modus:** EXECUTE (PM)
+**Session:** Fortsetzung Session 30 nach Kontextkompaktierung
+
+**Ausloeser:** User-Entscheidungen zu 18 offenen Fragen aus SCOPING v2.1. Synthese der Positionen in ein durchfuehrbares, runden-basiertes Upgrade-Dokument.
+
+**Artefakt:**
+- NEU: `docs/architektur/UPGRADE_PLAN_v3-12_ESCAPE_GAME_QUALITAET.md` (625 Zeilen, 18 Sektionen)
+
+**Kernentscheidungen integriert:**
+- Keine Retrograd-Fixes an bestehenden Artefakten (S1-Blocker entfaellt)
+- Fiktions-Klausel (B1/B2/B3) statt reinem C-ABSCHAFFEN als Quellen-Integritaets-Loesung
+- Funktionale Medien-Klassifikation (analytisch/atmospherisch/evokativ/strukturierend) ersetzt Alibi-Medien-FAIL
+- Sichtstruktur/Tiefenstruktur-Pattern uebertragbar auf F-01, F-08 und Operator-Nennung
+- Beutelsbach §3 als non-blocking konstruktiver Judge
+- Feedback-First Variante (a): Antwort-Abgabe genuegt, Musterloesung danach
+- Dual-Scope fuer Phase 0.2.M: Kern-Artikel + erweiterter Medien-Scope
+
+**Runden-Architektur (9 Runden):**
+- R0: Audits (M-03 Reife, Umlaut-ID, G1/G2-Vergleich, Wiki-Scope-Katalog)
+- R1: v3.11.1 Bugfix-Bundle (Umlaut-Retrofit + F-05-Varianten + F-04-Varianten)
+- R2: v3.12a Infrastruktur-Basis (Phase 0.2.M + Schema-Erweiterung + Engine-Rendering + M-03-Reife-Programm)
+- R3: v3.12b Stundenfrage + Operator-Dualismus
+- R4: v3.12c Quellen-Integritaet (Fiktions-Klausel B1/B2/B3)
+- R5: v3.12d Medien-Diversitaet (funktionale Klassifikation + themenspezifische Matrix)
+- R6: v3.12e Feedback-First Engine-Umbau (feedback_first_mode Flag)
+- R7: v3.12f Enforcement-Framework (M-01, tools/q-gate-audit.sh)
+- R8: v3.12g Optionale Sichtungs-Stops (M-02 abgeschwaecht)
+
+**Neue Q-Gates definiert (13):**
+G-SF-DUAL-01/02, G-BEUTELSBACH-CONSTR, G-AUFG-7-OPT, G-QUELL-INTEGRITAET, G-FIKTIV-META, G-MED-FUNKTION, G-MED-TYP-THEMA, G-MED-FALLBACK, G-KATALOG-MIN, G-PORTRAET-COMMONS, G-INFO-BOX-ZWECK, G-FEEDBACK-MUSTER.
+
+**Offen (11 Detail-Fragen):**
+Gruppiert vor R0/R2/R3/R4/R5/R6. Blockieren Gesamtplan nicht, muessen aber vor jeweiligem Runden-Start geklaert werden. Kritisch vor R0: Frage 11 (v3.12-Erst-Game-Wahl). Vor R2: Fragen 1-3 (Sub-Agent-Architektur + Dual-Scope-Pflicht).
+
+**Commit:** `237b899` (Sandbox, push durch User)
+
+---
+
 ## 2026-04-10 — v3.11 Deploy-State-Machine UMGESETZT (T1/T2/T3/T4 + Smoketests D1/D2/D3)
 
 **Phase:** Deploy-State-Machine-Binding Umsetzung (v3.11)
