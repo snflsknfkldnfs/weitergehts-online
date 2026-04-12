@@ -176,7 +176,7 @@ Alle Texte im `inhalt`-Feld muessen JSON-kompatibel sein. **VERBOTEN** in JSON-S
 - Zeilenumbrueche → `\n` oder HTML `<br>`
 - Tabs → Leerzeichen
 
-Fiktions-Kennzeichnung + Quellenangabe als `<cite>` am Ende: `<cite>Fiktiver Tagebucheintrag, historisch plausibel. Kontext: [Wikipedia-Artikel]</cite>`
+**KEINE Quellenangabe im `inhalt`-Feld.** Fiktions-Kennzeichnung und Quellenangabe gehoeren ausschliesslich in das `quelle`-Feld. KEIN `<cite>`-Tag im `inhalt`. Die Engine rendert `quelle` separat im ausblendbaren Quellenbereich. Dopplung fuehrt zu Q-Gate FAIL (Q6b).
 
 ### Trigger-Metadaten (STR-12)
 

@@ -2251,7 +2251,9 @@ footer a:hover {
    -------------------------------------------------------------------------- */
 
 body.quellen-hidden .material__quelle,
-body.quellen-hidden figcaption .material__quelle-teil {
+body.quellen-hidden figcaption .material__quelle-teil,
+body.quellen-hidden .material__inhalt > cite,
+body.quellen-hidden .material__inhalt cite {
   display: none;
 }
 

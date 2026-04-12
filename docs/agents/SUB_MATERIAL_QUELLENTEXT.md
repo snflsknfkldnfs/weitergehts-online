@@ -189,7 +189,7 @@ Alle Texte im `inhalt`-Feld muessen JSON-kompatibel sein. **VERBOTEN** in JSON-S
 - Zeilenumbrueche → `\n` oder HTML `<br>`
 - Tabs → Leerzeichen
 
-Quellenangabe als `<cite>` am Ende des `inhalt`-HTML einbetten: `<cite>Quelle: [Sprecher], [Kontext]</cite>`
+**KEINE Quellenangabe im `inhalt`-Feld.** Quellenangaben (Autor, Titel, Jahr, Fundstelle, Aufbereitungsvermerk) gehoeren ausschliesslich in das `quelle`-Feld. KEIN `<cite>`-Tag im `inhalt`. Die Engine rendert `quelle` separat im ausblendbaren Quellenbereich. Dopplung fuehrt zu Q-Gate FAIL (Q6b).
 
 ### Trigger-Metadaten (STR-12)
 

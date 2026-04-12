@@ -274,6 +274,7 @@ Zusaetzlich zu M1-M12 gelten ab v3.8 folgende Constraints. Sie sind in den SUB_M
 | C4 | Didaktische Bildunterschriften | Bildunterschriften beschreibend/anleitend, keine Quellenangaben | SUB_MATERIAL_BILDQUELLE/KARTE MQ4 |
 | C5 | Abschluss-Impuls | Variante A (Ueberleitung, nicht-letzte Mappen) / Variante B (Reflexion, letzte Mappe) | AGENT_SKRIPT MQ5 |
 | C6 | Erarbeitbarkeits-Plausibilitaet (MQ6) | Der zentrale Inhalt des Materials muss den zugehoerigen SCPL-Schritt (Fachbegriff + Kernaussage) so behandeln, dass SuS ihn nach Bearbeitung eigenstaendig formulieren koennten. Formale Abdeckung (Fachbegriff kommt vor) reicht nicht — das Material muss den Schritt erarbeitbar machen, nicht nur erwaehnen. **SOLL-Kriterium** (qualitative Pruefung mit Ermessensspielraum) | SUB_MATERIAL_* MQ6, Audit Sicherungskette M5/PF-13 |
+| C7 | Quellenangaben-Separation (Q6b) | `inhalt`-Feld enthaelt KEINE `<cite>`-Tags und KEINE bibliographischen Angaben (Autor, Titel, Jahr, Fundstelle). Quellenangaben gehoeren ausschliesslich in das `quelle`-Feld. Pruefung: `<cite` in `inhalt` → FAIL. Engine rendert `quelle` separat im ausblendbaren Quellenbereich; Dopplung verfaelscht die Sichtstruktur. | SUB_MATERIAL_* Q6b |
 
 ---
 
