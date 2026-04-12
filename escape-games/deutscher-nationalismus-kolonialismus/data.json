@@ -992,6 +992,796 @@
         "ueberleitungssatz": "Das Volk hatte versucht, Deutschland von unten zu einen. Es war gescheitert. Doch die Idee der Einheit verschwand nicht — nur der Weg dorthin sollte ein völlig anderer werden.",
         "_variante": "A"
       }
+    },
+    {
+      "id": "mappe-2",
+      "titel": "Einheit von oben",
+      "beschreibung": "Von Bismarcks »Blut und Eisen«-Rede über die drei Einigungskriege bis zur Kaiserproklamation in Versailles 1871 — Einheit ohne Freiheit.",
+      "freischalt_code": "EISEN",
+      "einstieg": {
+        "narrativ": "<p>In der Dokumentenmappe liegt ein Zeitungsausschnitt von 1862. Ein preußischer Politiker hält eine Rede, die alles verändern wird. Seine Worte klingen nach Krieg — nicht nach Parlament.</p>",
+        "problemstellung": "Warum wurde Deutschland 1871 nicht durch das Volk, sondern durch Kriege geeint?"
+      },
+      "materialien": [
+        {
+          "id": "mat-2-1",
+          "typ": "quellentext",
+          "titel": "Was meinte Bismarck mit »Blut und Eisen«?",
+          "inhalt": "<p><em>Otto von Bismarck war seit 1862 Ministerpräsident von Preußen. Er verachtete den parlamentarischen Weg und setzte auf militärische Macht.</em></p>\n<blockquote><p>»Nicht durch Reden und Mehrheitsbeschlüsse werden die großen Fragen der Zeit entschieden — sondern durch Blut und Eisen.«</p></blockquote>\n<p><em>Otto von Bismarck, Rede vor der Budgetkommission des preußischen Landtags, 30. September 1862.</em></p>\n<cite>Otto von Bismarck, Rede im preußischen Landtag 1862. Sprachlich vereinfacht für Jahrgang 7.</cite>",
+          "quelle": "Otto von Bismarck, Rede vor der Budgetkommission des preußischen Landtags, 30. September 1862. Vgl. Wikipedia, Otto von Bismarck. Sprachlich vereinfacht für Jahrgang 7.",
+          "position": 1,
+          "didaktische_funktion": "einstieg",
+          "voraussetzung": [],
+          "ueberleitung_von": null,
+          "sequenz_kontext": {
+            "vorher": null,
+            "nachher": {
+              "id": "mat-2-2",
+              "typ": "darstellungstext",
+              "kerninhalt": "Drei Einigungskriege"
+            }
+          },
+          "_meta": {
+            "wortanzahl": 58,
+            "quellentyp": "sonstiges",
+            "aufbereitung": "vereinfacht",
+            "rekonstruktions_begruendung": "Originalwortlaut 'Majoritätsbeschlüsse' ersetzt durch 'Mehrheitsbeschlüsse' für R7-Verständlichkeit. Wortfolge 'Eisen und Blut' in populäre Form 'Blut und Eisen' geändert.",
+            "artefakt_ref": [
+              "pq-2-1"
+            ],
+            "tafelbild_knoten_abgedeckt": [
+              "k2-1",
+              "k2-2"
+            ],
+            "quellenkritische_impulse": [
+              "Was will Bismarck mit seiner Rede erreichen?",
+              "Wie hätten die Abgeordneten der Nationalversammlung von 1848 auf diese Worte reagiert?"
+            ],
+            "perspektive": "P1: Bismarck/Machtelite",
+            "erarbeitbarkeits_check": "PASS — k2-1 (Bismarck als Ministerpräsident) und k2-2 (Blut und Eisen als Strategie) sind durch Quellentext direkt erschließbar.",
+            "trigger_flags": []
+          }
+        },
+        {
+          "id": "mat-2-2",
+          "typ": "darstellungstext",
+          "titel": "Wie setzte Bismarck seine Ankündigung in die Tat um?",
+          "inhalt": "<p>Bismarck machte ernst. In nur sechs Jahren führte er drei Kriege — und schmiedete die deutschen Staaten zusammen.</p>\n<p>1864 besiegte Preußen zusammen mit Österreich das kleine Dänemark. Zwei Jahre später wandte sich Bismarck gegen den eigenen Verbündeten: 1866 schlug Preußen Österreich in nur sieben Wochen. Damit war klar — Preußen, nicht Österreich, würde Deutschland führen. Das nennt man die <strong>kleindeutsche Lösung</strong> (ein Deutschland ohne Österreich, unter preußischer Führung).</p>\n<p>Der entscheidende Krieg begann 1870. Bismarck provozierte Frankreich gezielt zum Krieg. Gegen alle Erwartungen stellten sich Bayern, Württemberg und Baden auf Preußens Seite. Der gemeinsame Kampf erzeugte etwas Neues: ein Gefühl der Zusammengehörigkeit unter Soldaten aus verschiedenen deutschen Staaten.</p>\n<cite>Eigene Darstellung auf Basis der Sachanalyse.</cite>",
+          "quelle": "Eigene Darstellung auf Basis der Sachanalyse. Vgl. Wikipedia: Deutsch-Französischer Krieg, Deutsche Reichsgründung.",
+          "position": 2,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [
+            "mat-2-1"
+          ],
+          "ueberleitung_von": "Bismarck war klar: Nicht Reden, sondern Waffen sollten Deutschland einen. Doch wie machte er seine Ankündigung wahr?",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-2-1",
+              "typ": "quellentext",
+              "kerninhalt": "Bismarcks »Blut und Eisen«-Rede"
+            },
+            "nachher": {
+              "id": "mat-2-3",
+              "typ": "tagebuch",
+              "kerninhalt": "Soldat im Deutsch-Französischen Krieg"
+            }
+          },
+          "_meta": {
+            "wortanzahl": 120,
+            "aufbereitung": "rekonstruiert",
+            "rekonstruktions_begruendung": "Darstellungstext ist agent-generiert auf Basis von SKRIPT §2-§4 und INHALTSBASIS. Keine wörtliche Originalquelle, da Sachtext-Synthese.",
+            "artefakt_ref": [],
+            "tafelbild_knoten_abgedeckt": [
+              "k2-3",
+              "k2-4"
+            ],
+            "perspektive": "uebergreifend (P1: Bismarck/Machtelite)",
+            "erarbeitbarkeits_check": "PASS — k2-3 (Drei Einigungskriege mit Jahreszahlen 1864/66/70) und k2-4 (kleindeutsche Lösung = Deutschland ohne Österreich) sind explizit im Text formuliert und eigenständig erschließbar.",
+            "trigger_flags": [
+              "krieg"
+            ]
+          }
+        },
+        {
+          "id": "mat-2-3",
+          "typ": "tagebuch",
+          "titel": "Wie erlebte ein Soldat den Krieg gegen Frankreich?",
+          "inhalt": "<p><em>Im Sommer 1870 erklärte Frankreich Preußen den Krieg. Doch diesmal kämpften nicht nur Preußen — auch Bayern, Württemberger und Sachsen zogen gemeinsam ins Feld. Der folgende Eintrag ist nachempfunden.</em></p>\n<p><em>Sedan, 3. September 1870</em></p>\n<p>Gestern ist es vorbei gegangen. Der französische Kaiser hat sich ergeben. Ich kann es kaum glauben. Meine Hände zittern noch, als ich das hier schreibe. Seit Wochen marschierten wir durch Regen und Schlamm. Neben mir lief ein Bayer — wir verstanden uns kaum, aber wir teilten unser Brot. Heute Morgen standen wir zusammen auf dem Hügel und sahen die weißen Fahnen. Ein Württemberger neben mir weinte. Nicht vor Trauer — vor Erleichterung. Da oben auf dem Hügel war es egal, woher wir kamen.</p>\n<cite>Fiktiver Tagebucheintrag, historisch plausibel. Kontext: Wikipedia, Deutsch-Französischer Krieg.</cite>",
+          "quelle": "Fiktiver Tagebucheintrag, basierend auf typischen Erfahrungsberichten deutscher Soldaten 1870/71. Figur und Erlebnisse sind erfunden, historischer Kontext ist belegt. Vgl. Wikipedia: Deutsch-Französischer Krieg, Schlacht bei Sedan.",
+          "position": 3,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [
+            "mat-2-2"
+          ],
+          "ueberleitung_von": "In sechs Jahren führte Bismarck drei Kriege. Aber wie erlebten die Soldaten, die dort kämpfen mussten, den Krieg?",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-2-2",
+              "typ": "darstellungstext",
+              "kerninhalt": "Drei Einigungskriege"
+            },
+            "nachher": {
+              "id": "mat-2-4",
+              "typ": "bildquelle",
+              "kerninhalt": "Kaiserproklamation im Spiegelsaal"
+            }
+          },
+          "_meta": {
+            "wortanzahl": 104,
+            "quellentyp": "tagebuch",
+            "aufbereitung": "rekonstruiert",
+            "rekonstruktions_begruendung": "Fiktiver Tagebucheintrag. Kein Originaltagebuch eines Soldaten von 1870 frei verfügbar und für R7 zumutbar. Figur ist didaktische Konstruktion, historischer Kontext belegt in Wikipedia: Deutsch-Französischer Krieg.",
+            "artefakt_ref": [
+              "pt-2-1"
+            ],
+            "tafelbild_knoten_abgedeckt": [
+              "k2-3"
+            ],
+            "perspektive": "P2: Soldat — preußischer Gefreiter, Sedan 1870",
+            "erarbeitbarkeits_check": "PASS — k2-3 (Einigungskriege) wird durch das Erleben des Deutsch-Französischen Krieges und das Zusammengehörigkeitsgefühl der Soldaten verschiedener Staaten erarbeitbar.",
+            "trigger_flags": [
+              "krieg"
+            ]
+          }
+        },
+        {
+          "id": "mat-2-4",
+          "typ": "bildquelle",
+          "titel": "Wer bestimmt im Spiegelsaal — Kaiser oder Kanzler?",
+          "inhalt": "../../assets/img/deutscher-nationalismus-kolonialismus/img-2-1.jpg",
+          "quelle": "Anton von Werner: Die Proklamierung des Deutschen Kaiserreiches (3. Fassung, 1885). Öl auf Leinwand. Original im Auftrag Bismarcks gemalt. Wikimedia Commons.",
+          "bildunterschrift": "Anton von Werner malte dieses Gemälde 1885 im Auftrag Bismarcks. Es zeigt die Kaiserproklamation am 18. Januar 1871 im Spiegelsaal von Versailles. Auf dem Podest steht Kaiser Wilhelm I., umgeben von Fürsten und Generälen in Uniform. Achte genau darauf, wer im Bild am meisten auffällt — und wo er steht.",
+          "lizenz": "Public Domain",
+          "position": 4,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [
+            "mat-2-3"
+          ],
+          "ueberleitung_von": "Auf dem Hügel bei Sedan war es den Soldaten egal, woher sie kamen — sie waren zusammen. Doch wer bestimmte, was aus diesem Zusammenhalt wurde?",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-2-3",
+              "typ": "tagebuch",
+              "kerninhalt": "Soldat im Deutsch-Französischen Krieg"
+            },
+            "nachher": {
+              "id": "mat-2-5",
+              "typ": "bildquelle",
+              "kerninhalt": "Karikatur: Bismarcks Reichsgründung"
+            }
+          },
+          "_meta": {
+            "wortanzahl": 49,
+            "quellentyp": "sonstiges",
+            "aufbereitung": "echt",
+            "artefakt_ref": [
+              "pb-2-1"
+            ],
+            "tafelbild_knoten_abgedeckt": [
+              "k2-5"
+            ],
+            "perspektive": "P1: Bismarck/Machtelite — offizielle Auftragsdarstellung",
+            "erarbeitbarkeits_check": "PASS — k2-5 (Kaiserproklamation Versailles 1871) ist durch Bildunterschrift und Bildanalyse direkt erarbeitbar. Bismarck im Zentrum (nicht Wilhelm) macht Machtverhältnisse sichtbar.",
+            "trigger_flags": []
+          }
+        },
+        {
+          "id": "mat-2-5",
+          "typ": "bildquelle",
+          "titel": "Wie sahen die Nachbarn die Reichsgründung?",
+          "inhalt": "../../assets/img/deutscher-nationalismus-kolonialismus/img-2-2.jpg",
+          "quelle": "Niederländische Karikatur zur deutschen Reichsgründung (1871). Spotprent over de Duitse eenwording, RP-P-1914-4565. Rijksmuseum Amsterdam, via Wikimedia Commons.",
+          "bildunterschrift": "Niederländische Karikatur zur Reichsgründung, 1871. Ein feierlicher Zug bewegt sich durch den Spiegelsaal von Versailles: Wilhelm I. an der Spitze, gefolgt von Fürsten und Militärs. Auch Bismarck ist im Zug zu sehen. Beachte: Diese Karikatur stammt aus den Niederlanden — also aus der Sicht eines Nachbarlandes.",
+          "lizenz": "CC0 (Public Domain Dedication)",
+          "position": 5,
+          "didaktische_funktion": "vertiefung",
+          "voraussetzung": [
+            "mat-2-4"
+          ],
+          "ueberleitung_von": "Das Gemälde feiert die Kaiserproklamation als großen Moment. Aber sahen alle Länder das genauso?",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-2-4",
+              "typ": "bildquelle",
+              "kerninhalt": "Kaiserproklamation im Spiegelsaal"
+            },
+            "nachher": {
+              "id": "mat-2-6",
+              "typ": "tagebuch",
+              "kerninhalt": "Enttäuschter Demokrat erlebt 1871"
+            }
+          },
+          "_meta": {
+            "wortanzahl": 46,
+            "quellentyp": "sonstiges",
+            "aufbereitung": "echt",
+            "artefakt_ref": [
+              "pb-2-2"
+            ],
+            "tafelbild_knoten_abgedeckt": [
+              "k2-5"
+            ],
+            "perspektive": "P3: Außenperspektive — niederländische Karikatur, kritisch-satirisch",
+            "erarbeitbarkeits_check": "PASS — k2-5 (Kaiserproklamation) wird durch kontrastive Bildanalyse vertieft. Karikatur liefert kritische Außensicht auf dasselbe Ereignis wie mat-2-4, ermöglicht Perspektivvergleich.",
+            "trigger_flags": []
+          }
+        },
+        {
+          "id": "mat-2-6",
+          "typ": "tagebuch",
+          "titel": "War die Reichsgründung das, wofür man 1848 gekämpft hatte?",
+          "inhalt": "<p><em>Am 18. Januar 1871 wurde im Spiegelsaal von Versailles das Deutsche Reich ausgerufen. Nicht alle Deutschen feierten. Der folgende Eintrag ist nachempfunden — er zeigt, wie ein ehemaliger Revolutionär von 1848 die Reichsgründung erlebt haben könnte.</em></p>\n<p><em>Berlin, 20. Januar 1871</em></p>\n<p>Gestern hörte ich die Nachricht: Deutschland ist geeint. Ein Kaiser, ein Reich. Überall Jubel auf den Straßen. Ich stand am Fenster und dachte an die Barrikaden von 1848. Damals kämpften wir für eine Verfassung — dafür, dass das Volk mitentscheiden darf. Und jetzt? Die Fürsten und Generäle haben entschieden. Kein Parlament hat abgestimmt. Draußen feiern sie. Ich stehe hier und weiß nicht, ob ich mitfeiern soll.</p>\n<cite>Fiktiver Tagebucheintrag, historisch plausibel. Kontext: Wikipedia, Deutsche Reichsgründung.</cite>",
+          "quelle": "Fiktiver Tagebucheintrag, basierend auf typischen Reaktionen liberaler 1848er-Demokraten auf die Reichsgründung 1871. Figur und Erlebnisse sind erfunden, historischer Kontext ist belegt. Vgl. Wikipedia: Deutsche Reichsgründung.",
+          "position": 6,
+          "didaktische_funktion": "sicherung",
+          "voraussetzung": [
+            "mat-2-5"
+          ],
+          "ueberleitung_von": "Von außen wurde die Reichsgründung mit Skepsis betrachtet. Doch wie erlebte jemand in Deutschland die Reichsgründung, der 1848 für Freiheit gekämpft hatte?",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-2-5",
+              "typ": "bildquelle",
+              "kerninhalt": "Karikatur: Bismarcks Reichsgründung"
+            },
+            "nachher": null
+          },
+          "_meta": {
+            "wortanzahl": 100,
+            "quellentyp": "tagebuch",
+            "aufbereitung": "rekonstruiert",
+            "rekonstruktions_begruendung": "Fiktiver Tagebucheintrag eines enttäuschten 1848er-Demokraten. Kein Originaltagebuch mit dieser spezifischen Perspektive frei verfügbar und für R7 zumutbar. Figur ist didaktische Konstruktion, historischer Kontext belegt in Wikipedia: Deutsche Reichsgründung.",
+            "artefakt_ref": [
+              "pt-2-2"
+            ],
+            "tafelbild_knoten_abgedeckt": [
+              "k2-6"
+            ],
+            "perspektive": "P2: Enttäuschter Demokrat — ehemaliger 1848er-Revolutionär, Berlin 1871",
+            "erarbeitbarkeits_check": "PASS — k2-6 (Einheit ohne Freiheit) wird erarbeitbar: der Demokrat zeigt Fakten (1848 = Verfassung/Volk vs. 1871 = Fürsten/kein Parlament) und persönliche Ambivalenz. SuS müssen den Widerspruch selbst benennen.",
+            "trigger_flags": []
+          }
+        }
+      ],
+      "aufgaben": [
+        {
+          "id": "aufgabe-2-1",
+          "typ": "zuordnung",
+          "frage": "Ordne die Merkmale der Einigung von unten und von oben zu.",
+          "material_referenz": [
+            "mat-2-1"
+          ],
+          "elemente": [
+            {
+              "begriff": "Reden und Mehrheitsbeschlüsse",
+              "zuordnung": "Einigung von unten"
+            },
+            {
+              "begriff": "Blut und Eisen",
+              "zuordnung": "Einigung von oben"
+            },
+            {
+              "begriff": "Parlamentarischer Weg",
+              "zuordnung": "Einigung von unten"
+            },
+            {
+              "begriff": "Militärische Macht",
+              "zuordnung": "Einigung von oben"
+            },
+            {
+              "begriff": "Der Ministerpräsident entscheidet",
+              "zuordnung": "Einigung von oben"
+            }
+          ],
+          "loesung": {
+            "Reden und Mehrheitsbeschlüsse": "Einigung von unten",
+            "Blut und Eisen": "Einigung von oben",
+            "Parlamentarischer Weg": "Einigung von unten",
+            "Militärische Macht": "Einigung von oben",
+            "Der Ministerpräsident entscheidet": "Einigung von oben"
+          },
+          "tipps": [
+            {
+              "stufe": 1,
+              "haertegrad": "kognitiv",
+              "text": "Lies [[mat-2-1|Bismarcks Rede von 1862]] (M1). Was lehnt er ab — und was will er stattdessen?"
+            },
+            {
+              "stufe": 2,
+              "haertegrad": "strukturierend",
+              "text": "Reden und Mehrheitsbeschlüsse gehören zur Einigung von unten — das war der Weg der Paulskirche 1848."
+            },
+            {
+              "stufe": 3,
+              "haertegrad": "heuristisch",
+              "text": "Die Nationalversammlung setzte auf Parlament und Abstimmungen — Bismarck auf Krieg und Macht. Alles, was mit gewählten Vertretern zu tun hat, gehört zur Einigung von unten. Alles, was mit Militär und Machtpolitik zu tun hat, zur Einigung von oben."
+            }
+          ],
+          "feedback": [
+            {
+              "typ": "bestaetigung",
+              "text": "Richtig. Reden und Mehrheitsbeschlüsse waren das Mittel der Nationalversammlung 1848 — der Weg der Demokratie.",
+              "ebene": "wissen"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "Genau. Blut und Eisen steht für Bismarcks Strategie: Einigung durch Kriege statt durch Debatten.",
+              "ebene": "wissen"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "Richtig. Der parlamentarische Weg war der Versuch, Deutschland durch gewählte Vertreter zu einen.",
+              "ebene": "wissen"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "Genau. Bismarck setzte auf militärische Macht, um die deutschen Staaten zusammenzuschweißen.",
+              "ebene": "wissen"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "Richtig. Bismarck handelte als Ministerpräsident — nicht als gewählter Vertreter des Volkes. Das ist der Kern der Einigung von oben.",
+              "ebene": "verstaendnis"
+            }
+          ],
+          "punkte": 10,
+          "afb": "I",
+          "position": 1,
+          "_meta": {
+            "bloom_level": 2,
+            "bloom_begruendung": "Kategorisierung von Merkmalen in zwei Konzeptkategorien (L2 Verstehen) — SuS müssen die Zugehörigkeitslogik erkennen, nicht nur Begriffe erinnern.",
+            "tafelbild_knoten": [
+              "k2-1",
+              "k2-2"
+            ]
+          }
+        },
+        {
+          "id": "aufgabe-2-2",
+          "typ": "reihenfolge",
+          "frage": "Bringe Bismarcks Einigungskriege in die richtige Reihenfolge.",
+          "material_referenz": [
+            "mat-2-2"
+          ],
+          "optionen": [
+            "Bismarck provoziert Frankreich gezielt zum Krieg",
+            "Im gemeinsamen Kampf entsteht ein deutsches Zusammengehörigkeitsgefühl",
+            "Preußen und Österreich besiegen gemeinsam Dänemark",
+            "Süddeutsche Staaten kämpfen an Preußens Seite",
+            "Preußen schlägt den früheren Verbündeten Österreich"
+          ],
+          "loesung": [
+            "Preußen und Österreich besiegen gemeinsam Dänemark",
+            "Preußen schlägt den früheren Verbündeten Österreich",
+            "Bismarck provoziert Frankreich gezielt zum Krieg",
+            "Süddeutsche Staaten kämpfen an Preußens Seite",
+            "Im gemeinsamen Kampf entsteht ein deutsches Zusammengehörigkeitsgefühl"
+          ],
+          "tipps": [
+            {
+              "stufe": 1,
+              "haertegrad": "kognitiv",
+              "text": "Lies [[mat-2-2|den Text über die drei Einigungskriege]] (M2). Welcher Krieg war der erste?"
+            },
+            {
+              "stufe": 2,
+              "haertegrad": "strukturierend",
+              "text": "Preußen und Österreich besiegten zuerst gemeinsam Dänemark. Am Ende der Kette steht das neue Zusammengehörigkeitsgefühl."
+            },
+            {
+              "stufe": 3,
+              "haertegrad": "heuristisch",
+              "text": "Bismarck ging strategisch vor: Erst ein gemeinsamer Gegner, dann der Machtkampf mit Österreich, schließlich der entscheidende Krieg gegen Frankreich. Jeder Schritt baute auf dem vorherigen auf."
+            }
+          ],
+          "feedback": [
+            {
+              "typ": "bestaetigung",
+              "text": "Richtig. Der Krieg gegen Dänemark war Bismarcks erster Schritt — Preußen und Österreich kämpften noch gemeinsam.",
+              "ebene": "wissen"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "Genau. Danach wandte sich Bismarck gegen den eigenen Verbündeten. Der Sieg über Österreich machte Preußen zur Führungsmacht — die kleindeutsche Lösung.",
+              "ebene": "wissen"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "Richtig. Bismarck provozierte Frankreich bewusst zum Krieg — der entscheidende Schritt zur Reichsgründung.",
+              "ebene": "wissen"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "Genau. Bayern, Württemberg und Baden stellten sich auf Preußens Seite — gegen alle Erwartungen.",
+              "ebene": "wissen"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "Richtig. Der gemeinsame Kampf erzeugte ein Zusammengehörigkeitsgefühl unter Soldaten aus verschiedenen deutschen Staaten.",
+              "ebene": "verstaendnis"
+            }
+          ],
+          "punkte": 10,
+          "afb": "I-II",
+          "position": 2,
+          "_meta": {
+            "bloom_level": 2,
+            "bloom_begruendung": "Chronologische Rekonstruktion der Einigungskriege aus dem Darstellungstext (L2 Verstehen) — zeitliche Abfolge mit kausaler Verkettung.",
+            "tafelbild_knoten": [
+              "k2-3",
+              "k2-4"
+            ]
+          }
+        },
+        {
+          "id": "aufgabe-2-3",
+          "typ": "multiple-choice",
+          "frage": "Warum fühlte sich der Soldat nach der Schlacht zum ersten Mal als Deutscher?",
+          "material_referenz": [
+            "mat-2-3"
+          ],
+          "optionen": [
+            "Weil der König von Preußen es befohlen hatte.",
+            "Weil Soldaten aus verschiedenen Staaten gemeinsam gekämpft und gelitten hatten.",
+            "Weil Frankreich den Krieg verloren hatte und Deutschland stärker war.",
+            "Weil alle Soldaten dieselbe Sprache gesprochen hatten."
+          ],
+          "loesung": "Weil Soldaten aus verschiedenen Staaten gemeinsam gekämpft und gelitten hatten.",
+          "tipps": [
+            {
+              "stufe": 1,
+              "haertegrad": "kognitiv",
+              "text": "Lies [[mat-2-3|den Tagebucheintrag des Soldaten]] (M3). Achte darauf, was er über die anderen Soldaten schreibt."
+            },
+            {
+              "stufe": 2,
+              "haertegrad": "strukturierend",
+              "text": "Es liegt nicht an der Sprache — der Soldat schreibt, dass er den Bayern kaum verstanden hat. Eine Antwort kannst du also ausschließen."
+            },
+            {
+              "stufe": 3,
+              "haertegrad": "heuristisch",
+              "text": "Der Soldat beschreibt, wie er trotz aller Unterschiede etwas mit den anderen teilte — Brot, Leid, Erleichterung. Frage dich: Was verbindet Menschen, die sich kaum verstehen?"
+            }
+          ],
+          "feedback": [
+            {
+              "typ": "korrektur",
+              "text": "Nicht ganz. Natürlich gab es Befehle — aber der Soldat beschreibt ein Gefühl, nicht einen Befehl. Er spürte Verbundenheit beim gemeinsamen Kampf.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "Genau. Das gemeinsame Erleben — der Marsch, das geteilte Brot, die Erleichterung nach der Schlacht — schuf ein neues Zusammengehörigkeitsgefühl.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "korrektur",
+              "text": "Der Sieg spielte eine Rolle, aber der Soldat beschreibt etwas anderes: nicht Stärke, sondern die Verbundenheit mit den anderen Soldaten.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "korrektur",
+              "text": "Im Gegenteil — der Soldat schreibt, dass er den Bayern kaum verstanden hat. Trotzdem fühlte er sich verbunden. Es war nicht die Sprache, die sie einte.",
+              "ebene": "verstaendnis"
+            }
+          ],
+          "punkte": 10,
+          "afb": "II",
+          "position": 3,
+          "_meta": {
+            "bloom_level": 3,
+            "bloom_begruendung": "Transfer-MC (L3 Anwenden): SuS müssen aus dem Tagebuchtext ableiten, welcher Mechanismus das Zusammengehörigkeitsgefühl erzeugte — nicht bloß Fakten wiedergeben.",
+            "tafelbild_knoten": [
+              "k2-3"
+            ]
+          }
+        },
+        {
+          "id": "aufgabe-2-4",
+          "typ": "vergleich",
+          "frage": "Vergleiche das Gemälde und die Karikatur der Reichsgründung.",
+          "material_referenz": [
+            "mat-2-4",
+            "mat-2-5"
+          ],
+          "loesung": {
+            "dimensionen": [
+              "Wer fällt am meisten auf?",
+              "Stimmung",
+              "Absicht des Bildes"
+            ],
+            "objekte": [
+              "Gemälde (Anton von Werner)",
+              "Karikatur (Niederlande)"
+            ],
+            "zellen": {
+              "Gemälde (Anton von Werner)": {
+                "Wer fällt am meisten auf?": "Bismarck in Weiß, im Zentrum",
+                "Stimmung": "feierlich, patriotisch",
+                "Absicht des Bildes": "Verherrlichung der Reichsgründung"
+              },
+              "Karikatur (Niederlande)": {
+                "Wer fällt am meisten auf?": "Wilhelm I. an der Spitze des Zuges",
+                "Stimmung": "spöttisch, übertrieben",
+                "Absicht des Bildes": "Kritik an der Reichsgründung"
+              }
+            }
+          },
+          "tipps": [
+            {
+              "stufe": 1,
+              "haertegrad": "kognitiv",
+              "text": "Schau dir [[mat-2-4|das Gemälde der Kaiserproklamation]] (M4) und [[mat-2-5|die niederländische Karikatur]] (M5) genau an. Fülle die Tabelle Zeile für Zeile."
+            },
+            {
+              "stufe": 2,
+              "haertegrad": "strukturierend",
+              "text": "Im Gemälde steht Bismarck in weißer Uniform im Zentrum — obwohl es die Kaiserproklamation ist. Was sagt das über die Absicht des Bildes?"
+            },
+            {
+              "stufe": 3,
+              "haertegrad": "heuristisch",
+              "text": "Frage dich bei jedem Bild: Wer wird groß dargestellt? Wie soll ich mich dabei fühlen? Und warum wurde dieses Bild gemacht — um zu feiern oder um zu kritisieren?"
+            }
+          ],
+          "feedback": [
+            {
+              "typ": "bestaetigung",
+              "text": "Der entscheidende Unterschied liegt in der Absicht: Das Gemälde wurde im Auftrag Bismarcks gemalt und verherrlicht die Reichsgründung — die Karikatur aus den Niederlanden zeigt Spott und Skepsis.",
+              "ebene": "anwendung"
+            },
+            {
+              "typ": "korrektur",
+              "text": "Beim Mittelpunkt wird oft verwechselt: Im Gemälde steht nicht der Kaiser im Zentrum, sondern Bismarck in Weiß — obwohl es seine Proklamation ist. Schau dir mat-2-4 nochmal an.",
+              "ebene": "anwendung"
+            },
+            {
+              "typ": "verknuepfung",
+              "text": "Dasselbe Ereignis, zwei völlig verschiedene Bilder: Das zeigt, dass jede Darstellung eine Perspektive hat — und dass Quellen immer kritisch hinterfragt werden müssen.",
+              "ebene": "anwendung"
+            }
+          ],
+          "punkte": 10,
+          "afb": "II",
+          "position": 4,
+          "_meta": {
+            "bloom_level": 4,
+            "bloom_begruendung": "Dimensionen-Analyse (L4 Analysieren): SuS zerlegen zwei Bildquellen entlang dreier Dimensionen und erkennen systematisch Unterschiede in Darstellung, Stimmung und Intention.",
+            "tafelbild_knoten": [
+              "k2-5"
+            ],
+            "akzeptierte_varianten": {
+              "Gemälde (Anton von Werner)__Wer fällt am meisten auf?": [
+                "Bismarck",
+                "Bismarck im Zentrum"
+              ],
+              "Karikatur (Niederlande)__Wer fällt am meisten auf?": [
+                "Wilhelm I.",
+                "der Kaiser"
+              ],
+              "Gemälde (Anton von Werner)__Stimmung": [
+                "feierlich",
+                "patriotisch",
+                "stolz"
+              ],
+              "Karikatur (Niederlande)__Stimmung": [
+                "spöttisch",
+                "satirisch",
+                "kritisch"
+              ]
+            }
+          }
+        },
+        {
+          "id": "aufgabe-2-5",
+          "typ": "freitext-code",
+          "frage": "Beurteile, ob die Reichsgründung 1871 das war, wofür 1848 gekämpft wurde.",
+          "material_referenz": [
+            "mat-2-1",
+            "mat-2-6"
+          ],
+          "loesung": [
+            "Einheit",
+            "Verfassung"
+          ],
+          "tipps": [
+            {
+              "stufe": 1,
+              "haertegrad": "kognitiv",
+              "text": "Lies [[mat-2-6|den Tagebucheintrag des enttäuschten Demokraten]] (M6). Was schreibt er über 1848 — und was stört ihn an 1871?"
+            },
+            {
+              "stufe": 2,
+              "haertegrad": "strukturierend",
+              "text": "Der Demokrat erinnert sich: 1848 ging es um eine Verfassung und Mitbestimmung. 1871 haben die Fürsten entschieden, nicht das Volk. Was wurde also erreicht — und was fehlt?"
+            },
+            {
+              "stufe": 3,
+              "haertegrad": "heuristisch",
+              "text": "Musterantwort: 1848 kämpften die Menschen für Einheit und Freiheit — für eine Verfassung und Mitbestimmung. 1871 wurde die Einheit erreicht, aber durch Kriege und Fürsten, nicht durch das Volk. Die Verfassung fehlte. Deine Antwort sollte ‚Einheit‘ und ‚Verfassung‘ verwenden und zeigen, was erreicht wurde und was fehlte."
+            }
+          ],
+          "feedback": [
+            {
+              "typ": "bestaetigung",
+              "text": "Genau — die Reichsgründung brachte Einheit, aber nicht die Freiheit und Mitbestimmung, für die 1848 gekämpft wurde. Einheit ohne Verfassung: Das ist der zentrale Widerspruch.",
+              "ebene": "analyse"
+            },
+            {
+              "typ": "korrektur",
+              "text": "Häufig fehlt der Bezug zu 1848: Es reicht nicht zu sagen, dass 1871 ‚nicht demokratisch‘ war — du musst erklären, was die Menschen 1848 wollten (Verfassung, Mitbestimmung) und warum 1871 das nicht erfüllte. Lies mat-2-6 nochmal.",
+              "ebene": "analyse"
+            },
+            {
+              "typ": "verknuepfung",
+              "text": "In Aufgabe 1 hast du ‚Einigung von unten‘ und ‚von oben‘ unterschieden. Hier zeigt sich das Ergebnis: Die Einigung von oben brachte Einheit — aber eben nicht die Freiheit der Einigung von unten.",
+              "ebene": "analyse"
+            }
+          ],
+          "punkte": 10,
+          "afb": "III",
+          "position": 5,
+          "_meta": {
+            "bloom_level": 5,
+            "bloom_begruendung": "Bewertung mit Begründung (L5 Evaluieren): SuS beurteilen die Reichsgründung anhand des Massstabs der 1848er-Forderungen und formulieren eine eigenständige Stellungnahme.",
+            "tafelbild_knoten": [
+              "k2-6"
+            ],
+            "teilfragen": [
+              "Was wollten die Menschen 1848 erreichen?",
+              "Was war 1871 anders als 1848 erhofft?",
+              "War die Reichsgründung trotzdem ein Erfolg — oder eine Enttäuschung?"
+            ],
+            "erwartete_begriffe": [
+              "Einheit",
+              "Verfassung",
+              "Freiheit",
+              "Reichsgründung"
+            ],
+            "validierung_schwelle": 2,
+            "musterantwort": "Die Menschen kämpften 1848 für Einheit und Freiheit — sie wollten ein geeintes Deutschland mit einer Verfassung, in der das Volk mitentscheiden darf. 1871 wurde die Einheit erreicht, aber nicht durch das Volk, sondern durch Bismarck und die Fürsten. Es gab keine Verfassung, die vom Volk beschlossen wurde. Die Reichsgründung brachte also Einheit, aber nicht die Freiheit, für die 1848 gekämpft worden war."
+          }
+        }
+      ],
+      "hefteintrag": {
+        "stundenfrage": "Warum wurde Deutschland 1871 nicht durch das Volk, sondern durch Kriege geeint?",
+        "ordnungsmuster": "kontrastierend",
+        "scpl": {
+          "situation": {
+            "kontextsatz": "Nach dem Scheitern von 1848 übernahm Preußen die Führung im Streben nach deutscher Einheit.",
+            "fachbegriffe": []
+          },
+          "complication": [
+            {
+              "schritt": "Das Volk wollte 1848 Einigung durch Parlament — Bismarck erklärte 1862: »Durch Blut und Eisen.«",
+              "fachbegriff": "Blut und Eisen",
+              "darstellung": {
+                "typ": "gegenueberstellung",
+                "links": {
+                  "titel": "Einigung von unten (1848)",
+                  "punkte": [
+                    "Reden und Parlament",
+                    "Verfassung und Grundrechte",
+                    "Gescheitert"
+                  ]
+                },
+                "rechts": {
+                  "titel": "Einigung von oben (1871)",
+                  "punkte": [
+                    "Kriege und Militär",
+                    "Macht und Diplomatie",
+                    "Erfolgreich"
+                  ]
+                }
+              }
+            },
+            {
+              "schritt": "Drei Kriege gegen Dänemark, Österreich und Frankreich schmiedeten die Staaten zusammen: kleindeutsche Lösung.",
+              "fachbegriff": "kleindeutsche Lösung",
+              "darstellung": null
+            }
+          ],
+          "problem": {
+            "satz": "Reichsgründung in Versailles 1871 — nicht durch das Volk, sondern durch Fürsten und Militär: Kaiserproklamation.",
+            "fachbegriff": "Kaiserproklamation"
+          },
+          "loesung": [
+            "Bismarck einte Deutschland durch drei Kriege — Einigung »von oben«, nicht »von unten«.",
+            "Das Deutsche Reich von 1871 brachte Einheit, aber keine Freiheit."
+          ]
+        },
+        "knoten": [
+          {
+            "id": "k2-1",
+            "text": "Bismarck — Ministerpräsident 1862",
+            "typ": "person"
+          },
+          {
+            "id": "k2-2",
+            "text": "Blut und Eisen",
+            "typ": "kernbegriff",
+            "merksatz": "Einigung durch Militär statt durch Parlament"
+          },
+          {
+            "id": "k2-3",
+            "text": "Drei Einigungskriege 1864/66/70",
+            "typ": "ereignis"
+          },
+          {
+            "id": "k2-4",
+            "text": "Kleindeutsche Lösung",
+            "typ": "kernbegriff",
+            "merksatz": "Deutschland ohne Österreich unter Preußens Führung"
+          },
+          {
+            "id": "k2-5",
+            "text": "Kaiserproklamation Versailles 1871",
+            "typ": "ereignis",
+            "merksatz": "Feierliche Ausrufung Wilhelms I. zum Kaiser"
+          },
+          {
+            "id": "k2-6",
+            "text": "Einheit ohne Freiheit",
+            "typ": "wirkung",
+            "merksatz": "Einheit erreicht, aber keine Demokratie"
+          }
+        ],
+        "verbindungen": [
+          {
+            "von": "k2-1",
+            "nach": "k2-2",
+            "label": "verkündet",
+            "typ": "kausal"
+          },
+          {
+            "von": "k2-2",
+            "nach": "k2-3",
+            "label": "setzt um",
+            "typ": "kausal"
+          },
+          {
+            "von": "k2-3",
+            "nach": "k2-4",
+            "label": "bedeutet",
+            "typ": "schlussfolgerung"
+          },
+          {
+            "von": "k2-3",
+            "nach": "k2-5",
+            "label": "führt zu",
+            "typ": "temporal"
+          },
+          {
+            "von": "k2-5",
+            "nach": "k2-6",
+            "label": "Ergebnis",
+            "typ": "schlussfolgerung"
+          }
+        ],
+        "voraussetzungen": [
+          "k1-6"
+        ]
+      },
+      "sicherung": {
+        "reflexionsimpuls": "War Einheit den Preis wert, wenn Freiheit fehlte? Hätte es einen anderen Weg gegeben?",
+        "hefteintrag_verweis": "Übertrage das Schaubild in dein Heft. Achte besonders auf die Gegenüberstellung »von unten« und »von oben«.",
+        "zusammenfassung": "Bismarck setzte auf Militärmacht statt Parlament. Drei Kriege gegen Dänemark, Österreich und Frankreich schmiedeten die deutschen Staaten zusammen. Die Kaiserproklamation 1871 in Versailles brachte die Einheit — aber das Volk hatte nicht mitentschieden.",
+        "ueberleitung": "Das Deutsche Reich war gegründet — doch was machten die neuen Machthaber mit ihrer Stärke? In der nächsten Mappe erfahrt ihr, wie Deutschland seinen Platz in der Welt suchte.",
+        "zitat": {
+          "text": "Nicht durch Reden und Majoritätsbeschlüsse werden die großen Fragen der Zeit entschieden, sondern durch Eisen und Blut.",
+          "urheber": "Otto von Bismarck",
+          "kontext": "Rede vor der Budgetkommission des preußischen Abgeordnetenhauses, 30. September 1862"
+        }
+      },
+      "mappenabschluss_zone": {
+        "reflexion_fragen": [
+          "Bismarck hat die Einheit durch Kriege erreicht. Gibt es auch heute noch Situationen, in denen Staaten mit Gewalt statt mit Verhandlungen Ziele durchsetzen?",
+          "Einheit ohne Freiheit — kann ein Staat auf Dauer stabil sein, wenn die Bürger nicht mitentscheiden dürfen?"
+        ],
+        "ueberleitungssatz": "Deutschland war nun eine Großmacht in der Mitte Europas. Doch während andere Staaten längst Kolonien besaßen, hatte das neue Deutsche Reich noch keine. Das sollte sich ändern.",
+        "_variante": "A"
+      }
     }
   ]
 }
