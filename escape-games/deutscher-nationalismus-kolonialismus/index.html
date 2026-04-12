@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deutscher Nationalismus und Kolonialismus</title>
+  <link rel="stylesheet" href="../../assets/css/base.css?v=4.4">
+  <link rel="stylesheet" href="../../assets/css/themes/theme-gpg.css?v=3.9.3">
+</head>
+<body>
+
+  <header>
+    <h1 id="game-titel">Deutscher Nationalismus und Kolonialismus</h1>
+    <div class="header__meta">
+      <span id="game-fach">GPG</span> |
+      <span id="game-jahrgangsstufe">R7 Mittelschule Bayern</span> |
+      <span id="game-schwierigkeit">Basis</span>
+    </div>
+  </header>
+
+  <main>
+    <!-- Narrativ / Rahmengeschichte -->
+    <section class="narrativ" id="narrativ" aria-label="Rahmengeschichte">
+      <p id="narrativ-text">Die Rahmengeschichte wird geladen...</p>
+    </section>
+
+    <!-- Mappen-Uebersicht -->
+    <section class="mappen-uebersicht" id="mappen-uebersicht" aria-label="Mappen-Uebersicht">
+      <!-- Wird dynamisch durch JavaScript befuellt -->
+      <p class="text-center" id="lade-hinweis">Mappen werden geladen...</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      <a href="lehrkraft.html" aria-label="Zum Lehrkraft-Zugang">&#128273; Lehrkraft-Zugang</a>
+    </p>
+  </footer>
+
+  <script src="../../assets/js/core.js?v=4.4"></script>
+  <script src="../../assets/js/escape-engine.js?v=3.9.3"></script>
+  <script>
+    /**
+     * Startseite: Laedt data.json und rendert die Mappen-Uebersicht.
+     */
+    (function () {
+      'use strict';
+
+      // data.json laden
+      fetch('data.json')
+        .then(function (response) {
+          if (!response.ok) throw new Error('HTTP ' + response.status);
+          return response.json();
+        })
+        .then(function (data) {
+          renderStartseite(data);
+        })
+        .catch(function (err) {
+          console.error('[Startseite] Fehler beim Laden:', err);
+          var hinweis = document.getElementById('lade-hinweis');
+          if (hinweis) {
+            hinweis.textContent = 'Keine data.json gefunden. Dieses Template muss erst durch den AGENT_RAETSEL mit Inhalten befuellt werden.';
+            hinweis.className = 'aufgabe__feedback aufgabe__feedback--visible aufgabe__feedback--info';
+          }
+        });
+
+      /**
+       * Rendert die Startseite mit Daten aus data.json.
+       * @param {Object} data – Geladene Spieldaten
+       */
+      function renderStartseite(data) {
+        // Meta-Daten setzen
+        var meta = data.meta || {};
+        document.title = (meta.titel || 'Escape-Game') + ' – Startseite';
+        setText('game-titel', meta.titel || 'Escape-Game');
+        setText('game-fach', meta.fach || '');
+        setText('game-jahrgangsstufe', meta.jahrgangsstufe || '');
+        setText('game-schwierigkeit', meta.schwierigkeit || '');
+
+        // Narrativ setzen
+        setText('narrativ-text', meta.narrativ || 'Willkommen zum Escape-Game!');
+
+        // Storage-Key fuer Fortschritt
+        var thema = (meta.titel || 'unbenannt').toLowerCase().replace(/\s+/g, '-');
+        var storageKey = 'escape-' + thema;
+        var allProgress = Core.storage.get(storageKey) || { mappen: {} };
+
+        // Mappen rendern
+        var container = document.getElementById('mappen-uebersicht');
+        if (!container) return;
+        container.innerHTML = '';
+
+        var mappen = data.mappen || [];
+        if (mappen.length === 0) {
+          container.innerHTML = '<p class="text-center">Noch keine Mappen vorhanden.</p>';
+          return;
+        }
+
+        for (var i = 0; i < mappen.length; i++) {
+          var mappe = mappen[i];
+          var mappeProgress = (allProgress.mappen && allProgress.mappen[mappe.id]) || null;
+          var karte = renderMappeKarte(mappe, i, mappeProgress, allProgress);
+          container.appendChild(karte);
+        }
+      }
+
+      /**
+       * Rendert eine einzelne Mappe-Karte.
+       * @param {Object} mappe – Mappe-Daten
+       * @param {number} index – 0-basierter Index
+       * @param {Object|null} progress – Fortschritt dieser Mappe
+       * @param {Object} allProgress – Gesamter Fortschritt
+       * @returns {HTMLElement}
+       */
+      function renderMappeKarte(mappe, index, progress, allProgress) {
+        var article = document.createElement('article');
+        article.className = 'mappe-karte';
+
+        // Status bestimmen
+        var isCompleted = progress && progress.abgeschlossen;
+        var isLocked = false;
+
+        // Erste Mappe ist immer offen, weitere erst nach Abschluss der vorherigen
+        if (index > 0) {
+          var prevMappeId = 'mappe-' + index; // mappe-1 fuer index=1, etc.
+          var prevProgress = (allProgress.mappen && allProgress.mappen[prevMappeId]) || null;
+          isLocked = !(prevProgress && prevProgress.abgeschlossen);
+        }
+
+        if (isCompleted) {
+          article.classList.add('mappe-karte--completed');
+        } else if (isLocked) {
+          article.classList.add('mappe-karte--locked');
+        } else {
+          article.classList.add('mappe-karte--current');
+        }
+
+        // Titel
+        var titel = document.createElement('h2');
+        titel.className = 'mappe-karte__titel';
+        titel.textContent = (mappe.titel || 'Mappe ' + (index + 1));
+        article.appendChild(titel);
+
+        // Beschreibung
+        var beschreibung = document.createElement('p');
+        beschreibung.className = 'mappe-karte__beschreibung';
+        beschreibung.textContent = mappe.beschreibung || '';
+        article.appendChild(beschreibung);
+
+        // Link (nur wenn nicht gesperrt)
+        if (!isLocked) {
+          var link = document.createElement('a');
+          link.className = 'mappe-karte__link';
+          link.href = mappe.id + '.html';
+          link.textContent = isCompleted ? 'Abgeschlossen' : 'Starten';
+          link.setAttribute('aria-label', (isCompleted ? 'Abgeschlossene Mappe: ' : 'Mappe starten: ') + (mappe.titel || ''));
+          article.appendChild(link);
+        }
+
+        return article;
+      }
+
+      /**
+       * Setzt den Textinhalt eines Elements per ID.
+       * @param {string} id – Element-ID
+       * @param {string} text – Zu setzender Text
+       */
+      function setText(id, text) {
+        var el = document.getElementById(id);
+        if (el) el.textContent = text;
+      }
+    })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deutscher Nationalismus und Kolonialismus – Lehrkraft-Zugang</title>
+  <link rel="stylesheet" href="../../assets/css/base.css?v=4.4">
+  <link rel="stylesheet" href="../../assets/css/themes/theme-gpg.css?v=3.9.3">
+</head>
+<body>
+
+  <header>
+    <h1>&#128273; Lehrkraft-Zugang</h1>
+    <div class="header__meta">Deutscher Nationalismus und Kolonialismus – Loesungen, Codes und Steuerung</div>
+  </header>
+
+  <main>
+
+    <!-- Passwort-Gate (clientseitig, kein echter Schutz – nur Convenience) -->
+    <section class="lehrkraft__gate" id="gate" aria-label="Zugangsschutz">
+      <p class="lehrkraft__gate-label">Bitte Passwort eingeben:</p>
+      <div>
+        <input
+          type="password"
+          id="gate-password"
+          class="code__input"
+          placeholder="Passwort"
+          autocomplete="off"
+          aria-label="Lehrkraft-Passwort"
+        >
+      </div>
+      <button type="button" class="code__submit" id="gate-submit" aria-label="Passwort pruefen">
+        Zugang pruefen
+      </button>
+      <div id="gate-feedback" class="aufgabe__feedback" role="alert" aria-live="polite"></div>
+      <p class="lehrkraft__gate-hinweis">
+        Hinweis: Dies ist ein einfacher clientseitiger Schutz und bietet keine echte Sicherheit.
+        Das Standard-Passwort lautet &bdquo;lehrkraft&ldquo;.
+      </p>
+    </section>
+
+    <!-- Inhalt (standardmaessig versteckt, wird nach Passwort-Eingabe angezeigt) -->
+    <div id="lehrkraft-inhalt" class="lehrkraft__inhalt--hidden">
+
+      <!-- Loesungsuebersicht -->
+      <section class="lehrkraft__loesungen" id="loesungen" aria-label="Loesungsuebersicht">
+        <h2>Loesungsuebersicht</h2>
+        <p id="lade-hinweis" class="text-center">Spieldaten werden geladen...</p>
+        <!-- Wird dynamisch befuellt -->
+      </section>
+
+      <!-- Didaktische Hinweise -->
+      <section class="lehrkraft__loesungen" aria-label="Didaktische Hinweise">
+        <h2>Didaktische Hinweise</h2>
+        <div id="didaktische-hinweise">
+          <p><strong>Stundenziel (AFB II):</strong> Die SuS erklaeren den Zusammenhang zwischen deutschem Nationalismus und Kolonialismus, indem sie die Entwicklung vom Nationalgedanken ueber die Reichsgruendung bis zum imperialistischen Wettlauf um Kolonien nachvollziehen.</p>
+          <p><strong>Kompetenzerwartungen:</strong></p>
+          <ul>
+            <li>GPG7_LB2_K_04: Die SuS beschreiben die nationalstaatlichen Einigungsbestrebungen und die deutsche Reichsgruendung.</li>
+            <li>GPG7_LB2_K_05: Die SuS erklaeren, dass die traditionellen europaeischen Maechterivalitaeten und der imperialistische Wettlauf um Kolonien in den Ersten Weltkrieg muendeten.</li>
+          </ul>
+          <p><strong>Ethische Leitlinien:</strong></p>
+          <ul>
+            <li><strong>Multiperspektivitaet:</strong> Mappe 4 erfordert zwingend die Perspektive der kolonisierten Bevoelkerung. Afrikanische Gesellschaften vor der Kolonialisierung als eigenstaendige Gemeinschaften zeigen.</li>
+            <li><strong>Ueberwaetigungsverbot:</strong> Voelkermord an Herero und Nama sachlich, nicht reisserisch darstellen. Keine Schockbilder. Fakten statt Emotionalisierung.</li>
+            <li><strong>Sensibilitaet:</strong> Rassistische Terminologie der Kolonialzeit (&bdquo;Schutzgebiet&ldquo;, &bdquo;Eingeborene&ldquo;) als historische Quelle einordnen, nicht als neutralen Sprachgebrauch.</li>
+          </ul>
+          <p><strong>Mappen-Codes:</strong> EINHEIT (Mappe 1) — weitere Codes folgen mit Mappen 2-4</p>
+          <p><strong>Geschaetzte Dauer:</strong> ca. 30 Minuten pro Mappe (4 Unterrichtsstunden gesamt)</p>
+        </div>
+      </section>
+
+      <!-- Steuerung -->
+      <section class="lehrkraft__controls" id="controls" aria-label="Steuerung">
+        <button type="button" class="lehrkraft__btn" id="btn-unlock-all" aria-label="Alle Mappen freischalten">
+          Alle Mappen freischalten
+        </button>
+        <button type="button" class="lehrkraft__btn lehrkraft__btn--danger" id="btn-reset" aria-label="Gesamten Fortschritt zuruecksetzen">
+          Fortschritt zuruecksetzen
+        </button>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>
+      <a href="index.html">&larr; Zurueck zur Uebersicht</a>
+    </p>
+  </footer>
+
+  <script src="../../assets/js/core.js?v=4.4"></script>
+  <script src="../../assets/js/escape-engine.js?v=3.9.3"></script>
+  <script>
+    /**
+     * Lehrkraft-Seite:
+     * - Einfaches Passwort-Gate
+     * - Loesungen und Codes aus data.json anzeigen
+     * - Buttons zum Freischalten und Zuruecksetzen
+     */
+    (function () {
+      'use strict';
+
+      // Standard-Passwort (clientseitig, kein echter Schutz)
+      var PASSWORT = 'lehrkraft';
+
+      // State
+      var gameData = null;
+
+      // ====================================================================
+      // Passwort-Gate
+      // ====================================================================
+
+      var gatePassword = document.getElementById('gate-password');
+      var gateSubmit = document.getElementById('gate-submit');
+      var gateFeedback = document.getElementById('gate-feedback');
+      var gate = document.getElementById('gate');
+      var inhalt = document.getElementById('lehrkraft-inhalt');
+
+      if (gateSubmit) {
+        gateSubmit.addEventListener('click', function () {
+          pruefePasswort();
+        });
+      }
+
+      if (gatePassword) {
+        gatePassword.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            pruefePasswort();
+          }
+        });
+      }
+
+      function pruefePasswort() {
+        var eingabe = (gatePassword.value || '').trim().toLowerCase();
+
+        if (eingabe === PASSWORT) {
+          // Zugang gewaehren
+          gate.classList.add('lehrkraft__gate--hidden');
+          inhalt.classList.remove('lehrkraft__inhalt--hidden');
+          ladeDaten();
+        } else {
+          // Fehlermeldung
+          gateFeedback.className = 'aufgabe__feedback aufgabe__feedback--visible aufgabe__feedback--error';
+          gateFeedback.textContent = 'Falsches Passwort. Bitte versuche es erneut.';
+          gatePassword.value = '';
+          gatePassword.focus();
+        }
+      }
+
+      // ====================================================================
+      // Daten laden und Loesungen anzeigen
+      // ====================================================================
+
+      function ladeDaten() {
+        fetch('data.json')
+          .then(function (response) {
+            if (!response.ok) throw new Error('HTTP ' + response.status);
+            return response.json();
+          })
+          .then(function (data) {
+            gameData = data;
+            renderLoesungen(data);
+            initSteuerung(data);
+          })
+          .catch(function (err) {
+            console.error('[Lehrkraft] Fehler beim Laden:', err);
+            var hinweis = document.getElementById('lade-hinweis');
+            if (hinweis) {
+              hinweis.textContent = 'Spieldaten konnten nicht geladen werden.';
+              hinweis.className = 'aufgabe__feedback aufgabe__feedback--visible aufgabe__feedback--error';
+            }
+          });
+      }
+
+      /**
+       * Rendert alle Loesungen und Codes.
+       * @param {Object} data – data.json
+       */
+      function renderLoesungen(data) {
+        var container = document.getElementById('loesungen');
+        if (!container) return;
+
+        // Lade-Hinweis entfernen
+        var hinweis = document.getElementById('lade-hinweis');
+        if (hinweis) hinweis.remove();
+
+        var mappen = data.mappen || [];
+        if (mappen.length === 0) {
+          var p = document.createElement('p');
+          p.textContent = 'Noch keine Mappen vorhanden.';
+          container.appendChild(p);
+          return;
+        }
+
+        for (var i = 0; i < mappen.length; i++) {
+          var mappe = mappen[i];
+          var block = renderMappeBlock(mappe, i);
+          container.appendChild(block);
+        }
+      }
+
+      /**
+       * Rendert einen Mappe-Block mit Code und Aufgaben-Loesungen.
+       * @param {Object} mappe
+       * @param {number} index
+       * @returns {HTMLElement}
+       */
+      function renderMappeBlock(mappe, index) {
+        var block = document.createElement('div');
+        block.className = 'lehrkraft__mappe-block';
+
+        // Titel
+        var titel = document.createElement('h3');
+        titel.textContent = (mappe.titel || 'Mappe ' + (index + 1));
+        block.appendChild(titel);
+
+        // Freischalt-Code
+        if (mappe.freischalt_code) {
+          var codeLabel = document.createElement('p');
+          codeLabel.innerHTML = '<strong>Freischalt-Code:</strong> ';
+          var codeSpan = document.createElement('span');
+          codeSpan.className = 'lehrkraft__code-display';
+          codeSpan.textContent = mappe.freischalt_code;
+          codeLabel.appendChild(codeSpan);
+          block.appendChild(codeLabel);
+        }
+
+        // Einzelne Mappe freischalten
+        var unlockBtn = document.createElement('button');
+        unlockBtn.type = 'button';
+        unlockBtn.className = 'lehrkraft__btn';
+        unlockBtn.textContent = 'Diese Mappe freischalten';
+        unlockBtn.classList.add('lehrkraft__btn--unlock');
+        unlockBtn.addEventListener('click', function () {
+          var mid = mappe.id;
+          EscapeEngine.unlockMappe(mid);
+          Core.feedback.showSuccess(block, 'Mappe "' + mappe.titel + '" freigeschaltet.');
+        });
+        block.appendChild(unlockBtn);
+
+        // Aufgaben-Loesungen
+        var aufgaben = mappe.aufgaben || [];
+        for (var j = 0; j < aufgaben.length; j++) {
+          var aufgabe = aufgaben[j];
+          var aufgabeDiv = document.createElement('div');
+          aufgabeDiv.className = 'lehrkraft__aufgabe-detail';
+
+          var aufgabeTitel = document.createElement('p');
+          aufgabeTitel.innerHTML =
+            '<strong>Aufgabe ' + (j + 1) + '</strong> (' +
+            Core.utils.sanitizeHTML(aufgabe.typ) + '): ' +
+            Core.utils.sanitizeHTML(aufgabe.frage || '');
+          aufgabeDiv.appendChild(aufgabeTitel);
+
+          var loesungP = document.createElement('p');
+          loesungP.innerHTML = '<strong>Loesung:</strong> ';
+          var loesungText = '';
+          if (typeof aufgabe.loesung === 'object') {
+            loesungText = JSON.stringify(aufgabe.loesung);
+          } else {
+            loesungText = String(aufgabe.loesung || '');
+          }
+          loesungP.appendChild(document.createTextNode(loesungText));
+          aufgabeDiv.appendChild(loesungP);
+
+          // Tipps anzeigen
+          if (aufgabe.tipps && aufgabe.tipps.length > 0) {
+            var tippsP = document.createElement('p');
+            tippsP.innerHTML = '<strong>Tipps:</strong>';
+            aufgabeDiv.appendChild(tippsP);
+
+            var tippsList = document.createElement('ul');
+            tippsList.className = 'lehrkraft__tipp-liste';
+            for (var k = 0; k < aufgabe.tipps.length; k++) {
+              var li = document.createElement('li');
+              li.textContent = 'Stufe ' + aufgabe.tipps[k].stufe + ': ' + (aufgabe.tipps[k].text || '');
+              tippsList.appendChild(li);
+            }
+            aufgabeDiv.appendChild(tippsList);
+          }
+
+          block.appendChild(aufgabeDiv);
+        }
+
+        return block;
+      }
+
+      // ====================================================================
+      // Steuerung (Alle freischalten / Zuruecksetzen)
+      // ====================================================================
+
+      function initSteuerung(data) {
+        // Storage-Key aus Thema ableiten und EscapeEngine initialisieren
+        var thema = (data.meta && data.meta.titel)
+          ? data.meta.titel.toLowerCase().replace(/\s+/g, '-')
+          : 'unbenannt';
+        var storageKey = 'escape-' + thema;
+
+        // EscapeEngine mit data und storageKey initialisieren (ohne DOM-Rendering)
+        EscapeEngine.setStorageKey(storageKey, data);
+
+        // Alle Mappen freischalten
+        var btnUnlockAll = document.getElementById('btn-unlock-all');
+        if (btnUnlockAll) {
+          btnUnlockAll.addEventListener('click', function () {
+            var mappen = data.mappen || [];
+            for (var i = 0; i < mappen.length; i++) {
+              EscapeEngine.unlockMappe(mappen[i].id);
+            }
+            Core.feedback.showSuccess(
+              document.getElementById('controls'),
+              'Alle ' + mappen.length + ' Mappen wurden freigeschaltet.'
+            );
+          });
+        }
+
+        // Fortschritt zuruecksetzen
+        var btnReset = document.getElementById('btn-reset');
+        if (btnReset) {
+          btnReset.addEventListener('click', function () {
+            if (window.confirm('Soll der gesamte Fortschritt wirklich zurueckgesetzt werden?')) {
+              Core.storage.remove(storageKey);
+              Core.feedback.showSuccess(
+                document.getElementById('controls'),
+                'Der Fortschritt wurde zurueckgesetzt.'
+              );
+            }
+          });
+        }
+      }
+
+    })();
+  </script>
+
+</body>
+</html>

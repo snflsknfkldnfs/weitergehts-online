@@ -1,0 +1,881 @@
+{
+  "meta": {
+    "titel": "Deutscher Nationalismus und Kolonialismus",
+    "fach": "GPG",
+    "jahrgangsstufe": "R7 Mittelschule Bayern",
+    "lehrplanbezug": "LB2 Zeit und Wandel (K_04, K_05); sekundaer LB1 Lebensraum Erde (K_01)",
+    "schwierigkeit": "Basis",
+    "geschaetzte_dauer_min": 30,
+    "narrativ": "In einer alten Dokumentenmappe finden sich Zeugnisse aus verschiedenen Epochen der deutschen Geschichte — vom Traum der Einheit bis zur Realität der Kolonien. Als Historikerinnen und Historiker ist es eure Aufgabe, die Dokumente zu sichten, einzuordnen und die Zusammenhänge aufzudecken."
+  },
+  "mappen": [
+    {
+      "id": "mappe-1",
+      "titel": "Der Traum von der Einheit",
+      "beschreibung": "Von der Nationalbewegung über das Hambacher Fest und die Märzrevolution bis zum Scheitern der Paulskirche 1849.",
+      "freischalt_code": "EINHEIT",
+      "einstieg": {
+        "narrativ": "<p>In der Dokumentenmappe liegt ein vergilbtes Tagebuch. Es gehörte einem jungen Studenten, der 1817 auf die Wartburg reiste — voller Hoffnung auf ein geeintes Deutschland. Was er dort erlebte, war der Anfang einer Bewegung, die ganz Deutschland verändern sollte.</p>",
+        "problemstellung": "Warum kämpften Menschen 1848 für ein geeintes Deutschland?"
+      },
+      "materialien": [
+        {
+          "id": "mat-1-1",
+          "typ": "tagebuch",
+          "titel": "Ein Student auf dem Wartburgfest",
+          "inhalt": "<p><strong>Wartburg bei Eisenach, 18. Oktober 1817</strong></p><p>Ich kann es kaum fassen — ich bin auf der Wartburg. Seit Wochen sprach man in Jena von nichts anderem.</p><p>Wir waren Hunderte von Studenten, aus Preußen, Bayern, Sachsen. Viele trugen schwarz-rot-goldene Kokarden an der Brust. Mein Freund Heinrich hatte gegen Napoleon gekämpft. „Dort habe ich begriffen, dass wir ein Volk sind“, sagte er. Wir hörten Reden über Freiheit und Einheit. Am Abend brannten Feuer — Bücher der alten Ordnung gingen in Flammen auf.</p><p>Vielleicht ist das der Anfang von etwas Größerem.</p><p><em>In den deutschen Ländern entstand nach den Befreiungskriegen ein neuer Gedanke. Alle Deutschen sollten in einem gemeinsamen Staat leben — der Nationalgedanke.</em></p>",
+          "quelle": "Fiktiver Tagebucheintrag eines Studenten namens Friedrich W. aus Jena. Historische Grundlage: ca. 500 Studenten versammelten sich am 18. Oktober 1817 auf der Wartburg bei Eisenach (Wikipedia DE: Wartburgfest). Figur und Wortlaut frei rekonstruiert.",
+          "position": 1,
+          "didaktische_funktion": "einstieg",
+          "voraussetzung": [],
+          "ueberleitung_von": null,
+          "sequenz_kontext": {
+            "vorher": null,
+            "nachher": {
+              "id": "mat-1-2",
+              "typ": "bildquelle",
+              "kerninhalt": "Hambacher Fest als Massenphänomen"
+            }
+          },
+          "_meta": {
+            "wortanzahl": 104,
+            "quellentyp": "tagebuch",
+            "aufbereitung": "rekonstruiert",
+            "rekonstruktions_begruendung": "Keine authentischen Tagebücher von Wartburgfest-Teilnehmern für Schulniveau verfügbar. Fiktiver Eintrag auf Basis gesicherter Fakten (Teilnehmerzahl, Kokarden, Reden, Bücherverbrennung) aus Wikipedia DE: Wartburgfest.",
+            "perspektive": "P1 Student/Burschenschaftler",
+            "artefakt_ref": [
+              "pt-1-1"
+            ],
+            "tafelbild_knoten_abgedeckt": [
+              "k1-1"
+            ],
+            "trigger_flags": [],
+            "erarbeitbarkeits_check": "PASS — SuS erleben durch Ich-Perspektive des Studenten die Befreiungskriege als Auslöser des Nationalgedankens (k1-1). Erzählerstimme benennt den Fachbegriff explizit."
+          }
+        },
+        {
+          "id": "mat-1-2",
+          "typ": "bildquelle",
+          "titel": "Das Hambacher Fest — Zug zum Schloss",
+          "inhalt": "../../assets/img/deutscher-nationalismus-kolonialismus/img-1-1.jpg",
+          "bildunterschrift": "Kolorierte Federlithographie des Hambacher Festes, 27. Mai 1832. Zwischen 20.000 und 30.000 Menschen zogen mit schwarz-rot-goldenen Fahnen zum Hambacher Schloss in der Rheinpfalz — ein Zeichen der wachsenden Nationalbewegung. Es war eine der größten politischen Versammlungen in Deutschland. Die Teilnehmer forderten nationale Einheit, Freiheit und das Recht, sich selbst zu regieren. Die Original-Fahne mit der Aufschrift „Deutschlands Wiedergeburt“ wird heute im Hambacher Schloss aufbewahrt.",
+          "lizenz": "Public Domain (img-1-1); GFDL (img-1-4)",
+          "quelle": "Kolorierte Federlithographie, 1832. Darstellung des Festzugs zum Hambacher Schloss am 27. Mai 1832. Wikimedia Commons: Hambacher_Fest_1832.jpg. Ergänzend: Original-Fahne des Hambacher Festes, Wikimedia Commons: Hambach_Fest_4_Fahne.JPG.",
+          "position": 2,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [
+            "mat-1-1"
+          ],
+          "ueberleitung_von": "Der Tagebucheintrag zeigte: Nach den Befreiungskriegen träumten Studenten auf der Wartburg von einem geeinten Deutschland. Fünfzehn Jahre später wurde aus diesem Traum eine Massenbewegung — was geschah auf dem Hambacher Fest?",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-1-1",
+              "typ": "tagebuch",
+              "kerninhalt": "Wartburgfest-Erlebnis eines Studenten"
+            },
+            "nachher": {
+              "id": "mat-1-3",
+              "typ": "quellentext",
+              "kerninhalt": "Forderungen der Festredner"
+            }
+          },
+          "_meta": {
+            "wortanzahl": 66,
+            "perspektive": "P1 Bürger/Nationalbewegung",
+            "artefakt_ref": [
+              "pb-1-1",
+              "pb-1-4"
+            ],
+            "tafelbild_knoten_abgedeckt": [
+              "k1-2",
+              "k1-3"
+            ],
+            "trigger_flags": [],
+            "erarbeitbarkeits_check": "PASS — SuS erkennen am Bild die Größe der Versammlung (k1-2) und die Farben Schwarz-Rot-Gold als Symbol der Nationalbewegung (k1-3). Bildunterschrift benennt den Fachbegriff."
+          }
+        },
+        {
+          "id": "mat-1-3",
+          "typ": "quellentext",
+          "titel": "Hoch lebe das freie, das einige Deutschland!",
+          "inhalt": "<p><em>Auf dem Hambacher Fest am 27. Mai 1832 hielten mehrere Redner Ansprachen vor Tausenden. Die folgende Parole wurde zum Schlachtruf der Nationalbewegung:</em></p><blockquote>„Hoch! Dreimal hoch lebe das freie, das einige Deutschland! Hoch! Dreimal hoch leben die vereinigten Freistaaten Deutschlands!“</blockquote><p><em>Die Redner forderten nicht nur Einheit und Freiheit, sondern auch Volkssouveränität — das Recht des Volkes, sich selbst zu regieren.</em></p>",
+          "quelle": "Festredner auf dem Hambacher Fest, 27. Mai 1832. Zitiert nach Wikipedia DE: Hambacher Fest, Abschnitt Reden. Wortlaut leicht vereinfacht.",
+          "position": 3,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [
+            "mat-1-2"
+          ],
+          "ueberleitung_von": "Das Bild zeigte Tausende mit schwarz-rot-goldenen Fahnen auf dem Weg zum Hambacher Schloss. Doch was genau forderten die Menschen dort?",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-1-2",
+              "typ": "bildquelle",
+              "kerninhalt": "Hambacher Fest als Massenphänomen"
+            },
+            "nachher": {
+              "id": "mat-1-4",
+              "typ": "bildquelle",
+              "kerninhalt": "Barrikadenkämpfe Berlin 1848"
+            }
+          },
+          "_meta": {
+            "wortanzahl": 55,
+            "quellentyp": "sonstiges",
+            "aufbereitung": "vereinfacht",
+            "rekonstruktions_begruendung": "Originalwortlaut aus Wikipedia DE (Hambacher Fest, Reden) für R7-Niveau leicht angepasst: Groß-/Kleinschreibung normalisiert, Auslassungsklammern entfernt. Kernaussage unverändert.",
+            "perspektive": "P1 Bürger/Nationalbewegung",
+            "artefakt_ref": [
+              "pq-1-1"
+            ],
+            "tafelbild_knoten_abgedeckt": [
+              "k1-2"
+            ],
+            "trigger_flags": [],
+            "erarbeitbarkeits_check": "PASS — SuS erschließen aus dem Zitat die Forderungen der Nationalbewegung (k1-2). Volkssouveränität wird als Begriff eingeführt (Vorentlastung für k1-7 in mat-1-6)."
+          }
+        },
+        {
+          "id": "mat-1-4",
+          "typ": "bildquelle",
+          "titel": "Barrikadenkampf in Berlin — März 1848",
+          "inhalt": "../../assets/img/deutscher-nationalismus-kolonialismus/img-1-5.png",
+          "bildunterschrift": "Kreidelithographie: Barrikadenkampf in der Breiten Straße in Berlin, Nacht vom 18. auf den 19. März 1848. Arbeiter und Handwerker errichteten Barrikaden und kämpften gegen die königliche Armee. Im Hintergrund ist das Berliner Schloss zu erkennen. Dieser Aufstand war Teil der Märzrevolution, die in ganz Deutschland Verfassungen und Freiheitsrechte erzwingen wollte.",
+          "lizenz": "Public Domain",
+          "quelle": "Zeitgenössische Kreidelithographie, 1848. Darstellung des Barrikadenkampfes in der Breiten Straße, Berlin. Wikimedia Commons: Erinnerung_an_den_Befreiungskampf_(Märzrevolution)_1848.png.",
+          "position": 4,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [
+            "mat-1-3"
+          ],
+          "ueberleitung_von": "Die Festredner forderten Einheit, Freiheit und Volkssouveränität — doch die Fürsten antworteten mit Verboten. Sechzehn Jahre später griffen die Menschen zu den Waffen.",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-1-3",
+              "typ": "quellentext",
+              "kerninhalt": "Forderungen der Festredner"
+            },
+            "nachher": {
+              "id": "mat-1-5",
+              "typ": "darstellungstext",
+              "kerninhalt": "Paulskirche und Verfassung"
+            }
+          },
+          "_meta": {
+            "wortanzahl": 55,
+            "perspektive": "P3 Arbeiter/Handwerker",
+            "artefakt_ref": [
+              "pb-1-5"
+            ],
+            "tafelbild_knoten_abgedeckt": [
+              "k1-4"
+            ],
+            "trigger_flags": [],
+            "erarbeitbarkeits_check": "PASS — SuS erkennen am Bild die Eskalation: Bürger kämpfen bewaffnet gegen die Armee (k1-4). Bildunterschrift benennt Märzrevolution."
+          }
+        },
+        {
+          "id": "mat-1-5",
+          "typ": "darstellungstext",
+          "titel": "Die Nationalversammlung in der Paulskirche",
+          "inhalt": "<p>Die <strong>Märzrevolution</strong> erzwang Zugeständnisse. Am 18. Mai 1848 trat in der Frankfurter Paulskirche das erste frei gewählte gesamtdeutsche Parlament zusammen: die <strong>Nationalversammlung</strong>.</p><p>Etwa 800 Abgeordnete — Juristen, Professoren, Beamte — erarbeiteten eine Verfassung für ein geeintes Deutschland. Sie enthielt einen Grundrechtekatalog: Pressefreiheit, Versammlungsfreiheit, Gleichheit vor dem Gesetz. Über dem Präsidentenstuhl hing das Gemälde „Germania“ von Philipp Veit — eine Frauenfigur mit Schwert und Eichenkranz als Symbol der deutschen Nation.</p><p>Die Nationalversammlung bot dem preußischen König Friedrich Wilhelm IV. die Kaiserkrone an. Doch er lehnte ab. Eine Krone, die vom Volk kam, wollte er nicht annehmen. Im Mai 1849 wurde die Nationalversammlung aufgelöst. Die <strong>Volkssouveränität</strong> — die Idee, dass alle Macht vom Volk ausgeht — hatte sich nicht durchgesetzt.</p>",
+          "quelle": "Eigene Darstellung auf Basis von Wikipedia DE: Frankfurter Nationalversammlung, Deutsche Revolution 1848/1849.",
+          "position": 5,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [
+            "mat-1-4"
+          ],
+          "ueberleitung_von": "Die Barrikadenkämpfe in Berlin zeigten: Arbeiter und Handwerker waren bereit, für ihre Rechte zu kämpfen. Die Revolution erzwang Zugeständnisse — zum ersten Mal durfte das Volk ein gesamtdeutsches Parlament wählen.",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-1-4",
+              "typ": "bildquelle",
+              "kerninhalt": "Barrikadenkämpfe Berlin 1848"
+            },
+            "nachher": {
+              "id": "mat-1-6",
+              "typ": "quellentext",
+              "kerninhalt": "König lehnt Kaiserkrone ab"
+            }
+          },
+          "_meta": {
+            "wortanzahl": 118,
+            "perspektive": "P2 Abgeordnete/Parlament",
+            "artefakt_ref": [
+              "pd-1-2",
+              "pd-1-3"
+            ],
+            "tafelbild_knoten_abgedeckt": [
+              "k1-5",
+              "k1-6",
+              "k1-7"
+            ],
+            "trigger_flags": [],
+            "erarbeitbarkeits_check": "PASS — SuS lesen über Paulskirche (k1-5), Scheitern (k1-6) und Volkssouveränität (k1-7). Alle drei Knoten werden durch den Text erarbeitbar."
+          }
+        },
+        {
+          "id": "mat-1-6",
+          "typ": "quellentext",
+          "titel": "Eine Krone aus der Gosse — Der König lehnt ab",
+          "inhalt": "<p><em>Im April 1849 bot die Nationalversammlung dem preußischen König Friedrich Wilhelm IV. die Kaiserkrone an. Seine Antwort wurde berühmt:</em></p><blockquote>„Eine solche imaginäre Krone, aus Dreck und Letten gebacken, soll ein legitimer König von Gottes Gnaden annehmen?“</blockquote><p><em>Der König nannte die vom Volk angebotene Krone verächtlich eine „Krone aus der Gosse“. Für ihn zählte nur eine Krone, die von Fürsten verliehen wurde — nicht vom Volk. Damit war die Revolution gescheitert.</em></p>",
+          "quelle": "Friedrich Wilhelm IV. von Preußen, 1849 (zugeschrieben). Zitiert nach Wikipedia DE: Deutsche Revolution 1848/1849. Wortlaut leicht gekürzt.",
+          "position": 6,
+          "didaktische_funktion": "sicherung",
+          "voraussetzung": [
+            "mat-1-5"
+          ],
+          "ueberleitung_von": "Die Nationalversammlung hatte eine Verfassung erarbeitet und dem König die Kaiserkrone angeboten. Doch was antwortete der König?",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-1-5",
+              "typ": "darstellungstext",
+              "kerninhalt": "Paulskirche und Verfassung"
+            },
+            "nachher": null
+          },
+          "_meta": {
+            "wortanzahl": 62,
+            "quellentyp": "sonstiges",
+            "aufbereitung": "vereinfacht",
+            "rekonstruktions_begruendung": "Originalwortlaut aus Wikipedia DE (Deutsche Revolution 1848/1849) für R7-Niveau gekürzt. Kernaussage und Schlüsselformulierung erhalten.",
+            "perspektive": "P2 König/Fürsten (Gegenperspektive)",
+            "artefakt_ref": [
+              "pq-1-2"
+            ],
+            "tafelbild_knoten_abgedeckt": [
+              "k1-6",
+              "k1-7"
+            ],
+            "trigger_flags": [],
+            "erarbeitbarkeits_check": "PASS — SuS erschließen aus dem Zitat die Verachtung des Königs für die Volkssouveränität (k1-7) und das Scheitern der Revolution (k1-6)."
+          }
+        }
+      ],
+      "aufgaben": [
+        {
+          "id": "aufgabe-1-1",
+          "typ": "lueckentext",
+          "frage": "Ergänze die fehlenden Fachbegriffe.",
+          "material_referenz": [
+            "mat-1-1"
+          ],
+          "text_mit_luecken": "Nach den ___ gegen Napoleon wuchs in den deutschen Ländern ein neues Gefühl der Zusammengehörigkeit. Im Oktober 1817 trafen sich Hunderte Studenten auf der ___. Sie forderten ___ und Freiheit für alle Deutschen. Dieser Wunsch nach einem gemeinsamen Staat heißt ___.",
+          "loesung": [
+            "Befreiungskriegen",
+            "Wartburg",
+            "Einheit",
+            "Nationalgedanke"
+          ],
+          "antwortpool": [
+            "Befreiungskriegen",
+            "Einheit",
+            "Nationalgedanke",
+            "Revolution",
+            "Wartburg"
+          ],
+          "tipps": [
+            {
+              "stufe": 1,
+              "haertegrad": "kognitiv",
+              "text": "Lies das [[mat-1-1|Tagebuch des Studenten]] (M1) noch einmal. Alle gesuchten Begriffe stehen im Text."
+            },
+            {
+              "stufe": 2,
+              "haertegrad": "strukturierend",
+              "text": "Der letzte Begriff beschreibt den Wunsch nach einem gemeinsamen Staat. „Revolution“ gehört nicht dazu — sie kam erst 30 Jahre später."
+            },
+            {
+              "stufe": 3,
+              "haertegrad": "heuristisch",
+              "text": "Befreiungskriegen — Wartburg — Einheit — Nationalgedanke. Nach den Kriegen gegen Napoleon trafen sich Studenten auf der Wartburg und forderten Einheit. Dieser Wunsch heißt Nationalgedanke."
+            }
+          ],
+          "feedback": [
+            {
+              "typ": "bestaetigung",
+              "text": "Richtig! Nach den Befreiungskriegen entstand auf der Wartburg der Wunsch nach Einheit — der Nationalgedanke.",
+              "ebene": "wissen"
+            },
+            {
+              "typ": "korrektur",
+              "text": "„Revolution“ passt hier nicht — die Revolution kam erst 1848, über 30 Jahre nach dem Wartburgfest.",
+              "ebene": "wissen"
+            },
+            {
+              "typ": "verknuepfung",
+              "text": "Der Nationalgedanke wurde wenig später auf dem Hambacher Fest 1832 zur Massenbewegung.",
+              "ebene": "wissen"
+            }
+          ],
+          "punkte": 10,
+          "afb": "I",
+          "position": 1,
+          "_meta": {
+            "bloom_level": 1,
+            "bloom_begruendung": "Reiner Fachbegriff-Recall: SuS erinnern Schlüsselbegriffe (Befreiungskriege, Wartburg, Einheit, Nationalgedanke) aus dem Tagebuch."
+          }
+        },
+        {
+          "id": "aufgabe-1-2",
+          "typ": "zuordnung",
+          "frage": "Ordne die Zeichen des Hambacher Festes der richtigen Forderung zu.",
+          "material_referenz": [
+            "mat-1-2"
+          ],
+          "elemente": [
+            {
+              "begriff": "Schwarz-rot-goldene Fahnen",
+              "zuordnung": "Einheit"
+            },
+            {
+              "begriff": "Reden gegen die Macht der Fürsten",
+              "zuordnung": "Freiheit"
+            },
+            {
+              "begriff": "Forderung: sich selbst regieren",
+              "zuordnung": "Volkssouveränität"
+            },
+            {
+              "begriff": "Aufschrift: Deutschlands Wiedergeburt",
+              "zuordnung": "Einheit"
+            }
+          ],
+          "loesung": {
+            "Schwarz-rot-goldene Fahnen": "Einheit",
+            "Reden gegen die Macht der Fürsten": "Freiheit",
+            "Forderung: sich selbst regieren": "Volkssouveränität",
+            "Aufschrift: Deutschlands Wiedergeburt": "Einheit"
+          },
+          "tipps": [
+            {
+              "stufe": 1,
+              "haertegrad": "kognitiv",
+              "text": "Schau dir das [[mat-1-2|Bild des Hambacher Festes]] (M2) genau an. Die Bildunterschrift nennt drei Forderungen — überlege, welches Zeichen zu welcher Forderung passt."
+            },
+            {
+              "stufe": 2,
+              "haertegrad": "strukturierend",
+              "text": "Die schwarz-rot-goldenen Fahnen stehen für den Wunsch nach einem gemeinsamen Staat. Überlege: Was bedeutet es, die Macht der Fürsten zu kritisieren?"
+            },
+            {
+              "stufe": 3,
+              "haertegrad": "heuristisch",
+              "text": "Die Farben Schwarz-Rot-Gold symbolisieren ein gemeinsames Deutschland — Einheit. Wer die Fürsten kritisiert, fordert Freiheit. Wer sich selbst regieren will, meint Volkssouveränität. Auch die Aufschrift „Deutschlands Wiedergeburt“ drückt den Einheits-Wunsch aus."
+            }
+          ],
+          "feedback": [
+            {
+              "typ": "bestaetigung",
+              "text": "Richtig! Die Farben Schwarz-Rot-Gold stehen seit dem Hambacher Fest für den Wunsch nach einem geeinten Deutschland.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "Genau — wer die Herrschaft der Fürsten kritisiert, fordert Freiheit von ihrer Macht.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "Ja — sich selbst regieren bedeutet Volkssouveränität: Alle Macht soll vom Volk ausgehen.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "korrektur",
+              "text": "Die Wiedergeburt Deutschlands meint ein neues, geeintes Land — also Einheit, nicht Freiheit. Freiheit wäre die Forderung gegen die Fürstenherrschaft.",
+              "ebene": "verstaendnis"
+            }
+          ],
+          "punkte": 10,
+          "afb": "I",
+          "position": 2,
+          "_meta": {
+            "bloom_level": 3,
+            "bloom_begruendung": "Transfer-Zuordnung: SuS übertragen visuelle Symbole und Textfragmente des Bildes auf abstrakte politische Forderungen (Anwenden)."
+          }
+        },
+        {
+          "id": "aufgabe-1-3",
+          "typ": "multiple-choice",
+          "frage": "Was forderten die Redner auf dem Hambacher Fest?",
+          "material_referenz": [
+            "mat-1-3"
+          ],
+          "optionen": [
+            "Einheit, Freiheit und Volkssouveränität für alle Deutschen",
+            "Eine Rückkehr zur Herrschaft Napoleons über Europa",
+            "Die Gründung eines Kaiserreichs unter preußischer Führung",
+            "Frieden mit den Fürsten und Beibehaltung der Einzelstaaten"
+          ],
+          "loesung": "Einheit, Freiheit und Volkssouveränität für alle Deutschen",
+          "tipps": [
+            {
+              "stufe": 1,
+              "haertegrad": "kognitiv",
+              "text": "Lies den [[mat-1-3|Ausruf der Festredner]] (M3) noch einmal. Achte auf die Wörter „frei“ und „einig“."
+            },
+            {
+              "stufe": 2,
+              "haertegrad": "strukturierend",
+              "text": "Zwei Optionen beschreiben das Gegenteil der Forderungen — die Redner wollten weder die alte Ordnung behalten noch einen Kaiser."
+            },
+            {
+              "stufe": 3,
+              "haertegrad": "heuristisch",
+              "text": "Die Redner riefen „Das freie, das einige Deutschland“ und „vereinigte Freistaaten“ — das bedeutet: ein gemeinsamer Staat (Einheit), ohne Fürstenherrschaft (Freiheit), in dem das Volk regiert (Volkssouveränität)."
+            }
+          ],
+          "feedback": [
+            {
+              "typ": "bestaetigung",
+              "text": "Richtig! Die Festredner forderten ein freies und geeintes Deutschland, in dem das Volk sich selbst regiert.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "korrektur",
+              "text": "Napoleon hatte die deutschen Länder besetzt — die Nationalbewegung kämpfte gerade gegen fremde Herrschaft, nicht für sie.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "korrektur",
+              "text": "Ein Kaiserreich unter Preußen entstand erst 1871 — auf dem Hambacher Fest wollten die Redner Freistaaten, also Republiken.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "korrektur",
+              "text": "Die Redner kritisierten die Fürsten gerade — sie wollten deren Macht einschränken, nicht Frieden mit ihnen schließen.",
+              "ebene": "verstaendnis"
+            }
+          ],
+          "punkte": 10,
+          "afb": "I-II",
+          "position": 3,
+          "_meta": {
+            "bloom_level": 3,
+            "bloom_begruendung": "Transfer-MC: SuS übertragen historische Quellensprache („frei“, „einig“, „vereinigt“) auf moderne politische Begriffe (Einheit, Freiheit, Volkssouveränität)."
+          }
+        },
+        {
+          "id": "aufgabe-1-4",
+          "typ": "reihenfolge",
+          "frage": "Bringe die Schritte zur Märzrevolution in die richtige Reihenfolge.",
+          "material_referenz": [
+            "mat-1-4"
+          ],
+          "optionen": [
+            "Arbeiter und Handwerker kämpfen auf Barrikaden gegen die königliche Armee.",
+            "In vielen Städten brechen Unruhen aus — Bürger fordern Verfassungen.",
+            "Tausende fordern auf dem Hambacher Fest Einheit und Freiheit.",
+            "Die Fürsten verbieten politische Versammlungen und Vereine."
+          ],
+          "loesung": [
+            "Tausende fordern auf dem Hambacher Fest Einheit und Freiheit.",
+            "Die Fürsten verbieten politische Versammlungen und Vereine.",
+            "In vielen Städten brechen Unruhen aus — Bürger fordern Verfassungen.",
+            "Arbeiter und Handwerker kämpfen auf Barrikaden gegen die königliche Armee."
+          ],
+          "tipps": [
+            {
+              "stufe": 1,
+              "haertegrad": "kognitiv",
+              "text": "Schau dir den [[mat-1-4|Barrikadenkampf in Berlin]] (M4) an — das ist der letzte Schritt. Was muss vorher passiert sein?"
+            },
+            {
+              "stufe": 2,
+              "haertegrad": "strukturierend",
+              "text": "Die Kette beginnt mit einer friedlichen Forderung und endet mit bewaffnetem Kampf. Die Fürsten reagierten zuerst — dann eskalierte die Lage."
+            },
+            {
+              "stufe": 3,
+              "haertegrad": "heuristisch",
+              "text": "Die Eskalation lief so: Friedliche Forderungen blieben unerhört, die Fürsten verboten Versammlungen, daraus wuchsen Unruhen, und am Ende standen Barrikaden. Jeder Schritt folgt aus dem vorherigen."
+            }
+          ],
+          "feedback": [
+            {
+              "typ": "bestaetigung",
+              "text": "Am Anfang stand die friedliche Forderung nach Einheit und Freiheit auf dem Hambacher Fest 1832.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "Die Fürsten reagierten mit Verboten — das machte die Situation schlimmer statt besser.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "Die Unterdrückung führte zu Unruhen in vielen Städten Anfang 1848.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "Der Höhepunkt: Im März 1848 kämpften Bürger auf Barrikaden gegen die Armee.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "korrektur",
+              "text": "Schritt 2 und 3 werden oft vertauscht — die Verbote der Fürsten kamen vor den Unruhen, nicht danach.",
+              "ebene": "verstaendnis"
+            }
+          ],
+          "punkte": 10,
+          "afb": "II",
+          "position": 4,
+          "_meta": {
+            "bloom_level": 3,
+            "bloom_begruendung": "Ursache-Wirkung-Ordnung: SuS wenden das Prinzip der Eskalation an, um vier Schritte kausal zu ordnen (Anwenden)."
+          }
+        },
+        {
+          "id": "aufgabe-1-5",
+          "typ": "multiple-choice",
+          "frage": "Welche Aufgabe hatte die Nationalversammlung in der Paulskirche?",
+          "material_referenz": [
+            "mat-1-5"
+          ],
+          "optionen": [
+            "Eine Verfassung mit Grundrechten für ein geeintes Deutschland erarbeiten",
+            "Die deutschen Fürsten absetzen und eine Republik ausrufen",
+            "Einen Friedensvertrag mit Frankreich aushandeln",
+            "Die Grenzen der deutschen Einzelstaaten neu festlegen"
+          ],
+          "loesung": "Eine Verfassung mit Grundrechten für ein geeintes Deutschland erarbeiten",
+          "tipps": [
+            {
+              "stufe": 1,
+              "haertegrad": "kognitiv",
+              "text": "Lies den [[mat-1-5|Text über die Nationalversammlung]] (M5) noch einmal. Achte darauf, was die 800 Abgeordneten erarbeiteten."
+            },
+            {
+              "stufe": 2,
+              "haertegrad": "strukturierend",
+              "text": "Die Abgeordneten erarbeiteten ein bestimmtes Dokument — es enthielt unter anderem Pressefreiheit und Gleichheit vor dem Gesetz."
+            },
+            {
+              "stufe": 3,
+              "haertegrad": "heuristisch",
+              "text": "Die Nationalversammlung sollte eine Verfassung für ein geeintes Deutschland schaffen. Diese Verfassung enthielt Grundrechte wie Pressefreiheit und Versammlungsfreiheit — zum ersten Mal für alle Deutschen."
+            }
+          ],
+          "feedback": [
+            {
+              "typ": "bestaetigung",
+              "text": "Richtig! Die Nationalversammlung erarbeitete eine Verfassung mit Grundrechten — das erste gesamtdeutsche Parlament.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "korrektur",
+              "text": "Die Abgeordneten wollten keine Republik — sie boten dem preußischen König sogar die Kaiserkrone an.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "korrektur",
+              "text": "Ein Friedensvertrag mit Frankreich war nicht Thema der Paulskirche — es ging um die innere Ordnung Deutschlands.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "korrektur",
+              "text": "Die Nationalversammlung wollte die Einzelstaaten gerade überwinden, nicht ihre Grenzen neu ziehen.",
+              "ebene": "verstaendnis"
+            }
+          ],
+          "punkte": 10,
+          "afb": "II",
+          "position": 5,
+          "_meta": {
+            "bloom_level": 3,
+            "bloom_begruendung": "Transfer-MC: SuS erkennen aus dem Darstellungstext die Kernfunktion des Parlaments und wählen die treffende Zusammenfassung (Anwenden)."
+          }
+        },
+        {
+          "id": "aufgabe-1-6",
+          "typ": "quellenkritik",
+          "frage": "Untersuche das Zitat des Königs genauer.",
+          "w_fragen": [
+            {
+              "schluessel": "wer",
+              "frage": "Wer hat diesen Text geschrieben und welche Stellung hatte er?"
+            },
+            {
+              "schluessel": "wann",
+              "frage": "Wann ist dieses Zitat entstanden und was passierte zu dieser Zeit?"
+            },
+            {
+              "schluessel": "warum",
+              "frage": "Warum lehnte der König die Kaiserkrone ab?"
+            },
+            {
+              "schluessel": "bedeutung",
+              "frage": "Was meint der König mit „Krone aus der Gosse“?"
+            },
+            {
+              "schluessel": "was_fehlt",
+              "frage": "Welche Sichtweise fehlt in diesem Zitat?"
+            }
+          ],
+          "loesung": {
+            "wer": "Friedrich Wilhelm IV., König von Preußen. Er war der mächtigste deutsche Fürst und verstand sich als König von Gottes Gnaden.",
+            "wann": "April 1849. Die Nationalversammlung hatte gerade eine Verfassung erarbeitet und bot dem König die Kaiserkrone an.",
+            "warum": "Der König wollte keine Krone, die vom Volk kam. Für ihn durfte nur Gott oder andere Fürsten einem König die Krone verleihen.",
+            "bedeutung": "Der König verachtete die vom Volk angebotene Krone — er nannte sie „imaginaer“ und „aus Dreck gebacken“, also wertlos und schmutzig. Damit zeigte er seine Verachtung für die Volkssouveränität.",
+            "was_fehlt": "Die Sichtweise der Abgeordneten und Bürger fehlt. Sie hatten für Einheit und Freiheit gekämpft und sahen die Krone als Zeichen der Volkssouveränität."
+          },
+          "material_referenz": [
+            "mat-1-6"
+          ],
+          "tipps": [
+            {
+              "stufe": 1,
+              "haertegrad": "kognitiv",
+              "text": "Lies den [[mat-1-6|Text des Königs]] (M6) noch einmal. Im Einleitungssatz steht, wer sprach und wann."
+            },
+            {
+              "stufe": 2,
+              "haertegrad": "strukturierend",
+              "text": "Achte auf die Wortwahl des Königs: „Dreck und Letten“, „imaginaer“, „aus der Gosse“ — das sind keine sachlichen Wörter. Was verrät das über seine Haltung zur Volkssouveränität?"
+            },
+            {
+              "stufe": 3,
+              "haertegrad": "heuristisch",
+              "text": "Der König sprach als „König von Gottes Gnaden“ — er glaubte, seine Macht komme von Gott, nicht vom Volk. Überlege: Wessen Stimme hörst du hier, und wessen Stimme fehlt?"
+            }
+          ],
+          "feedback": [
+            {
+              "typ": "bestaetigung",
+              "text": "Richtig erkannt: Friedrich Wilhelm IV. war König von Preußen und lehnte die Krone ab, weil sie vom Volk kam.",
+              "ebene": "analyse"
+            },
+            {
+              "typ": "hinweis",
+              "text": "Bei der Frage nach dem Verfasser reicht nicht nur der Name — wichtig ist auch seine Stellung als König von Gottes Gnaden.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "„Krone aus der Gosse“ zeigt die Verachtung des Königs für alles, was vom Volk ausgeht.",
+              "ebene": "analyse"
+            },
+            {
+              "typ": "korrektur",
+              "text": "Die fehlende Sichtweise ist die der Abgeordneten und Bürger — sie sahen die Krone als Zeichen der Volkssouveränität, nicht als Schmutz.",
+              "ebene": "analyse"
+            },
+            {
+              "typ": "verknuepfung",
+              "text": "Vergleiche die Haltung des Königs mit den Forderungen auf dem Hambacher Fest (M2/M3) — dort riefen die Menschen nach Volkssouveränität, genau das, was der König ablehnte.",
+              "ebene": "analyse"
+            }
+          ],
+          "punkte": 10,
+          "afb": "II-III",
+          "position": 6,
+          "_meta": {
+            "bloom_level": 5,
+            "bloom_begruendung": "Quellenkritik mit Perspektiv-Bewertung: SuS analysieren Wortwahl und Intention des Königs und bewerten seine Haltung zur Volkssouveränität (Bewerten, L5).",
+            "w_fragen_auswahl": "Quellentext/Rede → Wer + Wann + Warum + Bedeutung (F2-Paraphrase) + Was fehlt",
+            "quellentyp": "tradition"
+          }
+        },
+        {
+          "id": "aufgabe-1-7",
+          "typ": "freitext-code",
+          "frage": "Beurteile, warum die Revolution von 1848 scheiterte.",
+          "material_referenz": [
+            "mat-1-5",
+            "mat-1-6"
+          ],
+          "loesung": [
+            "Volkssouveränität",
+            "Kaiserkrone"
+          ],
+          "tipps": [
+            {
+              "stufe": 1,
+              "haertegrad": "kognitiv",
+              "text": "Lies den [[mat-1-5|Text über die Nationalversammlung]] (M5) und den [[mat-1-6|Text des Königs]] (M6) noch einmal. Fasse zuerst zusammen, was die Nationalversammlung erreichte."
+            },
+            {
+              "stufe": 2,
+              "haertegrad": "strukturierend",
+              "text": "Die Nationalversammlung bot dem König die Kaiserkrone an — aber er lehnte ab. Überlege: Was bedeutete diese Ablehnung für die Idee der Volkssouveränität?"
+            },
+            {
+              "stufe": 3,
+              "haertegrad": "heuristisch",
+              "text": "Musterantwort: Die Nationalversammlung erarbeitete eine Verfassung und bot dem König die Kaiserkrone an. Er lehnte ab, weil die Krone vom Volk kam. Damit scheiterte die Revolution — die Fürsten behielten ihre Macht, die Volkssouveränität setzte sich nicht durch. Deine Antwort sollte die Begriffe „Volkssouveränität“ und „Kaiserkrone“ verwenden."
+            }
+          ],
+          "feedback": [
+            {
+              "typ": "bestaetigung",
+              "text": "Du hast erkannt, dass die Ablehnung der Kaiserkrone die Revolution scheitern ließ und die Volkssouveränität sich nicht durchsetzte.",
+              "ebene": "analyse"
+            },
+            {
+              "typ": "korrektur",
+              "text": "Häufig fehlt der Bezug zur Volkssouveränität — der König lehnte nicht einfach ab, sondern verachtete die Idee, dass Macht vom Volk ausgehen soll.",
+              "ebene": "analyse"
+            },
+            {
+              "typ": "verknuepfung",
+              "text": "Die Forderungen auf dem Hambacher Fest (M2/M3) — Einheit, Freiheit, Volkssouveränität — wurden durch die Ablehnung des Königs zunächst zunichte gemacht.",
+              "ebene": "analyse"
+            }
+          ],
+          "punkte": 10,
+          "afb": "III",
+          "position": 7,
+          "_meta": {
+            "bloom_level": 5,
+            "bloom_begruendung": "Stellungnahme-Freitext: SuS beurteilen das Scheitern der Revolution und bewerten die Konsequenzen für die Volkssouveränität (Bewerten, L5).",
+            "teilfragen": [
+              "Was hatte die Nationalversammlung erreicht, bevor der König die Krone ablehnte?",
+              "Warum lehnte der König die Kaiserkrone ab?",
+              "Was bedeutete das Scheitern für die Idee, dass alle Macht vom Volk ausgehen soll?"
+            ],
+            "erwartete_begriffe": [
+              "Volkssouveränität",
+              "Kaiserkrone",
+              "Nationalversammlung",
+              "Verfassung",
+              "Fürsten"
+            ],
+            "validierung_schwelle": 2,
+            "musterantwort": "Die Nationalversammlung hatte eine Verfassung mit Grundrechten erarbeitet und dem preußischen König die Kaiserkrone angeboten. Der König lehnte ab, weil die Krone vom Volk kam — er sah sich als König von Gottes Gnaden. Damit scheiterte die Revolution: Die Fürsten behielten ihre Macht und die Idee der Volkssouveränität setzte sich nicht durch. Die Menschen hatten für Einheit und Freiheit gekämpft, aber die alten Machthaber waren stärker."
+          }
+        }
+      ],
+      "hefteintrag": {
+        "stundenfrage": "Warum kämpften Menschen 1848 für ein geeintes Deutschland?",
+        "ordnungsmuster": "sequenziell",
+        "scpl": {
+          "situation": {
+            "kontextsatz": "Anfang des 19. Jahrhunderts gab es kein 'Deutschland' — nur Dutzende Einzelstaaten. Nach den Kriegen gegen Napoleon entstand ein neuer Wunsch — der Nationalgedanke.",
+            "fachbegriffe": [
+              "Nationalgedanke"
+            ]
+          },
+          "complication": [
+            {
+              "schritt": "Auf dem Wartburgfest 1817 und dem Hambacher Fest 1832 forderten Tausende Einheit und Verfassung — die Fürsten antworteten mit Verboten: Nationalbewegung.",
+              "typ": "kontrastiv",
+              "fachbegriff": "Nationalbewegung",
+              "darstellung": null,
+              "erarbeitbarkeit": "DIRECT"
+            },
+            {
+              "schritt": "Im März 1848 kämpften Arbeiter und Handwerker auf Barrikaden gegen die Armeen der Fürsten: Märzrevolution.",
+              "typ": "narrativ",
+              "fachbegriff": "Märzrevolution",
+              "darstellung": null,
+              "erarbeitbarkeit": "DIRECT"
+            },
+            {
+              "schritt": "In der Paulskirche erarbeiteten Abgeordnete eine Verfassung mit Grundrechten — der König lehnte die Kaiserkrone ab: Nationalversammlung.",
+              "typ": "narrativ",
+              "fachbegriff": "Nationalversammlung",
+              "darstellung": null,
+              "erarbeitbarkeit": "DIRECT"
+            }
+          ],
+          "problem": {
+            "satz": "Der Traum von Einheit und Freiheit scheiterte 1849 — das Volk konnte sich gegen die Fürsten nicht durchsetzen: Volkssouveränität.",
+            "fachbegriff": "Volkssouveränität"
+          },
+          "loesung": [
+            "Die Nationalbewegung forderte Einheit, Freiheit und eine Verfassung für alle Deutschen.",
+            "Die Revolution von 1848 scheiterte — die Fürsten behielten ihre Macht."
+          ]
+        },
+        "knoten": [
+          {
+            "id": "k1-1",
+            "text": "Befreiungskriege gegen Napoleon",
+            "typ": "ereignis"
+          },
+          {
+            "id": "k1-2",
+            "text": "Wartburgfest 1817 / Hambacher Fest 1832",
+            "typ": "ereignis"
+          },
+          {
+            "id": "k1-3",
+            "text": "Nationalbewegung",
+            "typ": "kernbegriff",
+            "merksatz": "Bürger fordern einen gemeinsamen Staat mit Verfassung"
+          },
+          {
+            "id": "k1-4",
+            "text": "Märzrevolution 1848",
+            "typ": "ereignis"
+          },
+          {
+            "id": "k1-5",
+            "text": "Nationalversammlung Paulskirche",
+            "typ": "ereignis"
+          },
+          {
+            "id": "k1-6",
+            "text": "Scheitern 1849",
+            "typ": "wirkung",
+            "merksatz": "König lehnt Kaiserkrone ab — Fürsten behalten Macht"
+          },
+          {
+            "id": "k1-7",
+            "text": "Volkssouveränität",
+            "typ": "kernbegriff",
+            "merksatz": "Alle Macht soll vom Volk ausgehen"
+          }
+        ],
+        "verbindungen": [
+          {
+            "von": "k1-1",
+            "nach": "k1-2",
+            "label": "weckt",
+            "typ": "kausal"
+          },
+          {
+            "von": "k1-2",
+            "nach": "k1-3",
+            "label": "wächst zu",
+            "typ": "kausal"
+          },
+          {
+            "von": "k1-3",
+            "nach": "k1-4",
+            "label": "mündet in",
+            "typ": "temporal"
+          },
+          {
+            "von": "k1-4",
+            "nach": "k1-5",
+            "label": "führt zu",
+            "typ": "temporal"
+          },
+          {
+            "von": "k1-5",
+            "nach": "k1-6",
+            "label": "scheitert",
+            "typ": "kausal"
+          }
+        ],
+        "voraussetzungen": []
+      },
+      "sicherung": {
+        "reflexionsimpuls": "Gibt es heute noch Menschen, die für Demokratie und Freiheit kämpfen — und dabei auf Widerstand stoßen?",
+        "hefteintrag_verweis": "Übertrage das Tafelbild in dein Heft. Zeichne die Verbindungen zwischen den Stationen der Nationalbewegung nach.",
+        "zusammenfassung": "Vom Wartburgfest 1817 über das Hambacher Fest bis zur Paulskirche 1849 — die Nationalbewegung wuchs, wurde zur Revolution und scheiterte an der Macht der Fürsten. Die Forderungen nach Einheit, Freiheit und Volkssouveränität blieben unerfüllt.",
+        "ueberleitung": "Die Einheit von unten war gescheitert. Doch ein Mann betrat die Bühne, der Deutschland auf ganz anderem Weg einen wollte — nicht durch Reden und Parlamente, sondern durch Kriege.",
+        "zitat": null
+      },
+      "mappenabschluss_zone": {
+        "reflexion_fragen": [
+          "Was unterscheidet den Kampf für Einheit und Freiheit 1848 von heutigen Demokratiebewegungen?",
+          "Warum ist es wichtig, dass Macht vom Volk ausgeht — und was passiert, wenn das nicht der Fall ist?"
+        ],
+        "ueberleitungssatz": "Das Volk hatte versucht, Deutschland von unten zu einen. Es war gescheitert. Doch die Idee der Einheit verschwand nicht — nur der Weg dorthin sollte ein völlig anderer werden.",
+        "_variante": "A"
+      }
+    }
+  ]
+}
