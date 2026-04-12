@@ -286,6 +286,82 @@ else
 fi
 
 # ------------------------------------------------------------------
+# DEPLOY-06: Mappe-Struktur-Vollstaendigkeit (sicherung.hefteintrag)
+# Prueft, dass jede Mappe die Engine-kritischen Substrukturen enthaelt.
+# Eingefuehrt nach Assembly-Defekt: hefteintrag fehlte in sicherung.
+# ------------------------------------------------------------------
+if [ ! -f "$DATA_JSON" ]; then
+  report "DEPLOY-06" "FAIL" "data.json fehlt (vgl. DEPLOY-01)"
+else
+  DEPLOY_06_OUT="$(python3 - "$DATA_JSON" <<'PY' 2>&1
+import json, sys
+
+data_json_path = sys.argv[1]
+try:
+    with open(data_json_path, 'r', encoding='utf-8') as f:
+        d = json.load(f)
+except Exception as e:
+    print(f"FAIL data.json unlesbar: {e}")
+    sys.exit(1)
+
+errors = []
+mappen = d.get("mappen", [])
+for i, mappe in enumerate(mappen):
+    m_id = mappe.get("id", f"mappen[{i}]")
+
+    # 1. einstieg vorhanden
+    if not isinstance(mappe.get("einstieg"), dict):
+        errors.append(f"{m_id}: einstieg fehlt oder kein Objekt")
+
+    # 2. materialien vorhanden und nicht leer
+    mats = mappe.get("materialien", [])
+    if not isinstance(mats, list) or len(mats) == 0:
+        errors.append(f"{m_id}: materialien fehlt oder leer")
+
+    # 3. aufgaben vorhanden und nicht leer
+    aufs = mappe.get("aufgaben", [])
+    if not isinstance(aufs, list) or len(aufs) == 0:
+        errors.append(f"{m_id}: aufgaben fehlt oder leer")
+
+    # 4. sicherung.hefteintrag als Objekt mit knoten[] und stundenfrage
+    sich = mappe.get("sicherung", {})
+    if not isinstance(sich, dict):
+        errors.append(f"{m_id}: sicherung fehlt oder kein Objekt")
+        continue
+
+    he = sich.get("hefteintrag")
+    if not isinstance(he, dict):
+        errors.append(f"{m_id}: sicherung.hefteintrag fehlt oder kein Objekt")
+        continue
+
+    knoten = he.get("knoten", [])
+    if not isinstance(knoten, list) or len(knoten) == 0:
+        errors.append(f"{m_id}: sicherung.hefteintrag.knoten fehlt oder leer")
+
+    sf = he.get("stundenfrage", "")
+    if not isinstance(sf, str) or not sf.strip():
+        errors.append(f"{m_id}: sicherung.hefteintrag.stundenfrage fehlt oder leer")
+
+    scpl = he.get("scpl")
+    if scpl is None:
+        errors.append(f"{m_id}: sicherung.hefteintrag.scpl fehlt")
+
+if errors:
+    print("FAIL " + "; ".join(errors[:5]))
+    sys.exit(1)
+
+print(f"PASS {len(mappen)} Mappe(n) strukturell vollstaendig (einstieg, materialien, aufgaben, sicherung.hefteintrag)")
+PY
+  )"
+  DEPLOY_06_RC=$?
+  if [ "$DEPLOY_06_RC" -eq 0 ]; then
+    report "DEPLOY-06" "PASS" "${DEPLOY_06_OUT#PASS }"
+  else
+    report "DEPLOY-06" "FAIL" "${DEPLOY_06_OUT#FAIL }"
+  fi
+fi
+
+# ------------------------------------------------------------------
 # Gesamt-Urteil
 # ------------------------------------------------------------------
 echo "---"
