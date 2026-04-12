@@ -1,0 +1,30 @@
+{
+  "id": "mat-1-1",
+  "typ": "tagebuch",
+  "titel": "Ein Student auf dem Wartburgfest",
+  "inhalt": "<p><strong>Wartburg bei Eisenach, 18. Oktober 1817</strong></p><p>Ich kann es kaum fassen — ich bin auf der Wartburg. Seit Wochen sprach man in Jena von nichts anderem.</p><p>Wir waren Hunderte von Studenten, aus Preußen, Bayern, Sachsen. Viele trugen schwarz-rot-goldene Kokarden an der Brust. Mein Freund Heinrich hatte gegen Napoleon gekämpft. \u201EDort habe ich begriffen, dass wir ein Volk sind\u201C, sagte er. Wir hörten Reden über Freiheit und Einheit. Am Abend brannten Feuer — Bücher der alten Ordnung gingen in Flammen auf.</p><p>Vielleicht ist das der Anfang von etwas Größerem.</p><p><em>In den deutschen Ländern entstand nach den Befreiungskriegen ein neuer Gedanke. Alle Deutschen sollten in einem gemeinsamen Staat leben — der Nationalgedanke.</em></p>",
+  "quelle": "Fiktiver Tagebucheintrag eines Studenten namens Friedrich W. aus Jena. Historische Grundlage: ca. 500 Studenten versammelten sich am 18. Oktober 1817 auf der Wartburg bei Eisenach (Wikipedia DE: Wartburgfest). Figur und Wortlaut frei rekonstruiert.",
+  "position": 1,
+  "didaktische_funktion": "einstieg",
+  "voraussetzung": [],
+  "ueberleitung_von": null,
+  "sequenz_kontext": {
+    "vorher": null,
+    "nachher": {
+      "id": "mat-1-2",
+      "typ": "bildquelle",
+      "kerninhalt": "Hambacher Fest als Massenphänomen"
+    }
+  },
+  "_meta": {
+    "wortanzahl": 104,
+    "quellentyp": "tagebuch",
+    "aufbereitung": "rekonstruiert",
+    "rekonstruktions_begruendung": "Keine authentischen Tagebücher von Wartburgfest-Teilnehmern für Schulniveau verfügbar. Fiktiver Eintrag auf Basis gesicherter Fakten (Teilnehmerzahl, Kokarden, Reden, Bücherverbrennung) aus Wikipedia DE: Wartburgfest.",
+    "perspektive": "P1 Student/Burschenschaftler",
+    "artefakt_ref": ["pt-1-1"],
+    "tafelbild_knoten_abgedeckt": ["k1-1"],
+    "trigger_flags": [],
+    "erarbeitbarkeits_check": "PASS — SuS erleben durch Ich-Perspektive des Studenten die Befreiungskriege als Auslöser des Nationalgedankens (k1-1). Erzählerstimme benennt den Fachbegriff explizit."
+  }
+}

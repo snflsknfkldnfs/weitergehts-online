@@ -1,0 +1,40 @@
+{
+  "id": "mat-1-3",
+  "typ": "quellentext",
+  "titel": "Hoch lebe das freie, das einige Deutschland!",
+  "inhalt": "<p><em>Auf dem Hambacher Fest am 27. Mai 1832 hielten mehrere Redner Ansprachen vor Tausenden. Die folgende Parole wurde zum Schlachtruf der Nationalbewegung:</em></p><blockquote>„Hoch! Dreimal hoch lebe das freie, das einige Deutschland! Hoch! Dreimal hoch leben die vereinigten Freistaaten Deutschlands!“</blockquote><p><em>Die Redner forderten nicht nur Einheit und Freiheit, sondern auch Volkssouveränität — das Recht des Volkes, sich selbst zu regieren.</em></p>",
+  "quelle": "Festredner auf dem Hambacher Fest, 27. Mai 1832. Zitiert nach Wikipedia DE: Hambacher Fest, Abschnitt Reden. Wortlaut leicht vereinfacht.",
+  "position": 3,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": [
+    "mat-1-2"
+  ],
+  "ueberleitung_von": "Das Bild zeigte die Größe der Versammlung — doch was genau forderten die Menschen auf dem Hambacher Fest?",
+  "sequenz_kontext": {
+    "vorher": {
+      "id": "mat-1-2",
+      "typ": "bildquelle",
+      "kerninhalt": "Hambacher Fest als Massenphänomen"
+    },
+    "nachher": {
+      "id": "mat-1-4",
+      "typ": "bildquelle",
+      "kerninhalt": "Barrikadenkämpfe Berlin 1848"
+    }
+  },
+  "_meta": {
+    "wortanzahl": 55,
+    "quellentyp": "sonstiges",
+    "aufbereitung": "vereinfacht",
+    "rekonstruktions_begruendung": "Originalwortlaut aus Wikipedia DE (Hambacher Fest, Reden) für R7-Niveau leicht angepasst: Groß-/Kleinschreibung normalisiert, Auslassungsklammern entfernt. Kernaussage unverändert.",
+    "perspektive": "P1 Bürger/Nationalbewegung",
+    "artefakt_ref": [
+      "pq-1-1"
+    ],
+    "tafelbild_knoten_abgedeckt": [
+      "k1-2"
+    ],
+    "trigger_flags": [],
+    "erarbeitbarkeits_check": "PASS — SuS erschließen aus dem Zitat die Forderungen der Nationalbewegung (k1-2). Volkssouveränität wird als Begriff eingeführt (Vorentlastung für k1-7 in mat-1-6)."
+  }
+}

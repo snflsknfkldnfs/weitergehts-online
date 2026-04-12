@@ -1,0 +1,37 @@
+{
+  "id": "mat-1-6",
+  "typ": "quellentext",
+  "titel": "Eine Krone aus der Gosse — Der König lehnt ab",
+  "inhalt": "<p><em>Im April 1849 bot die Nationalversammlung dem preußischen König Friedrich Wilhelm IV. die Kaiserkrone an. Seine Antwort wurde berühmt:</em></p><blockquote>„Eine solche imaginäre Krone, aus Dreck und Letten gebacken, soll ein legitimer König von Gottes Gnaden annehmen?“</blockquote><p><em>Der König nannte die vom Volk angebotene Krone verächtlich eine „Krone aus der Gosse“. Für ihn zählte nur eine Krone, die von Fürsten verliehen wurde — nicht vom Volk. Damit war die Revolution gescheitert.</em></p>",
+  "quelle": "Friedrich Wilhelm IV. von Preußen, 1849 (zugeschrieben). Zitiert nach Wikipedia DE: Deutsche Revolution 1848/1849. Wortlaut leicht gekürzt.",
+  "position": 6,
+  "didaktische_funktion": "sicherung",
+  "voraussetzung": [
+    "mat-1-5"
+  ],
+  "ueberleitung_von": "Die Nationalversammlung hatte eine Verfassung erarbeitet und dem König die Kaiserkrone angeboten. Doch seine Antwort war vernichtend.",
+  "sequenz_kontext": {
+    "vorher": {
+      "id": "mat-1-5",
+      "typ": "darstellungstext",
+      "kerninhalt": "Paulskirche und Verfassung"
+    },
+    "nachher": null
+  },
+  "_meta": {
+    "wortanzahl": 62,
+    "quellentyp": "sonstiges",
+    "aufbereitung": "vereinfacht",
+    "rekonstruktions_begruendung": "Originalwortlaut aus Wikipedia DE (Deutsche Revolution 1848/1849) für R7-Niveau gekürzt. Kernaussage und Schlüsselformulierung erhalten.",
+    "perspektive": "P2 König/Fürsten (Gegenperspektive)",
+    "artefakt_ref": [
+      "pq-1-2"
+    ],
+    "tafelbild_knoten_abgedeckt": [
+      "k1-6",
+      "k1-7"
+    ],
+    "trigger_flags": [],
+    "erarbeitbarkeits_check": "PASS — SuS erschließen aus dem Zitat die Verachtung des Königs für die Volkssouveränität (k1-7) und das Scheitern der Revolution (k1-6)."
+  }
+}

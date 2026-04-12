@@ -1,0 +1,40 @@
+{
+  "id": "mat-1-5",
+  "typ": "darstellungstext",
+  "titel": "Die Nationalversammlung in der Paulskirche",
+  "inhalt": "<p>Die <strong>Märzrevolution</strong> erzwang Zugeständnisse. Am 18. Mai 1848 trat in der Frankfurter Paulskirche das erste frei gewählte gesamtdeutsche Parlament zusammen: die <strong>Nationalversammlung</strong>.</p><p>Etwa 800 Abgeordnete — Juristen, Professoren, Beamte — erarbeiteten eine Verfassung für ein geeintes Deutschland. Sie enthielt einen Grundrechtekatalog: Pressefreiheit, Versammlungsfreiheit, Gleichheit vor dem Gesetz. Über dem Präsidentenstuhl hing das Gemälde „Germania“ von Philipp Veit — eine Frauenfigur mit Schwert und Eichenkranz als Symbol der deutschen Nation.</p><p>Die Nationalversammlung bot dem preußischen König Friedrich Wilhelm IV. die Kaiserkrone an. Doch er lehnte ab. Eine Krone, die vom Volk kam, wollte er nicht annehmen. Im Mai 1849 wurde die Nationalversammlung aufgelöst. Die <strong>Volkssouveränität</strong> — die Idee, dass alle Macht vom Volk ausgeht — hatte sich nicht durchgesetzt.</p>",
+  "quelle": "Eigene Darstellung auf Basis von Wikipedia DE: Frankfurter Nationalversammlung, Deutsche Revolution 1848/1849.",
+  "position": 5,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": [
+    "mat-1-4"
+  ],
+  "ueberleitung_von": "Die Barrikadenkämpfe erzwangen Zugeständnisse — die Fürsten erlaubten Wahlen zu einem gesamtdeutschen Parlament.",
+  "sequenz_kontext": {
+    "vorher": {
+      "id": "mat-1-4",
+      "typ": "bildquelle",
+      "kerninhalt": "Barrikadenkämpfe Berlin 1848"
+    },
+    "nachher": {
+      "id": "mat-1-6",
+      "typ": "quellentext",
+      "kerninhalt": "König lehnt Kaiserkrone ab"
+    }
+  },
+  "_meta": {
+    "wortanzahl": 118,
+    "perspektive": "P2 Abgeordnete/Parlament",
+    "artefakt_ref": [
+      "pd-1-2",
+      "pd-1-3"
+    ],
+    "tafelbild_knoten_abgedeckt": [
+      "k1-5",
+      "k1-6",
+      "k1-7"
+    ],
+    "trigger_flags": [],
+    "erarbeitbarkeits_check": "PASS — SuS lesen über Paulskirche (k1-5), Scheitern (k1-6) und Volkssouveränität (k1-7). Alle drei Knoten werden durch den Text erarbeitbar."
+  }
+}

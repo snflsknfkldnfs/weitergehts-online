@@ -1,0 +1,31 @@
+{
+  "id": "aufgabe-1-3",
+  "typ": "multiple-choice",
+  "frage": "Was forderten die Redner auf dem Hambacher Fest?",
+  "material_referenz": ["mat-1-3"],
+  "optionen": [
+    "Einheit, Freiheit und Volkssouver\u00e4nit\u00e4t f\u00fcr alle Deutschen",
+    "Eine R\u00fcckkehr zur Herrschaft Napoleons \u00fcber Europa",
+    "Die Gr\u00fcndung eines Kaiserreichs unter preu\u00dfischer F\u00fchrung",
+    "Frieden mit den F\u00fcrsten und Beibehaltung der Einzelstaaten"
+  ],
+  "loesung": "Einheit, Freiheit und Volkssouver\u00e4nit\u00e4t f\u00fcr alle Deutschen",
+  "tipps": [
+    {"stufe": 1, "haertegrad": "kognitiv", "text": "Lies den [[mat-1-3|Ausruf der Festredner]] (M3) noch einmal. Achte auf die W\u00f6rter \u201Efrei\u201C und \u201Eeinig\u201C."},
+    {"stufe": 2, "haertegrad": "strukturierend", "text": "Zwei Optionen beschreiben das Gegenteil der Forderungen \u2014 die Redner wollten weder die alte Ordnung behalten noch einen Kaiser."},
+    {"stufe": 3, "haertegrad": "heuristisch", "text": "Die Redner riefen \u201EDas freie, das einige Deutschland\u201C und \u201Evereinigte Freistaaten\u201C \u2014 das bedeutet: ein gemeinsamer Staat (Einheit), ohne F\u00fcrstenherrschaft (Freiheit), in dem das Volk regiert (Volkssouver\u00e4nit\u00e4t)."}
+  ],
+  "feedback": [
+    {"typ": "bestaetigung", "text": "Richtig! Die Festredner forderten ein freies und geeintes Deutschland, in dem das Volk sich selbst regiert.", "ebene": "verstaendnis"},
+    {"typ": "korrektur", "text": "Napoleon hatte die deutschen L\u00e4nder besetzt \u2014 die Nationalbewegung k\u00e4mpfte gerade gegen fremde Herrschaft, nicht f\u00fcr sie.", "ebene": "verstaendnis"},
+    {"typ": "korrektur", "text": "Ein Kaiserreich unter Preu\u00dfen entstand erst 1871 \u2014 auf dem Hambacher Fest wollten die Redner Freistaaten, also Republiken.", "ebene": "verstaendnis"},
+    {"typ": "korrektur", "text": "Die Redner kritisierten die F\u00fcrsten gerade \u2014 sie wollten deren Macht einschr\u00e4nken, nicht Frieden mit ihnen schlie\u00dfen.", "ebene": "verstaendnis"}
+  ],
+  "punkte": 10,
+  "afb": "I-II",
+  "position": 3,
+  "_meta": {
+    "bloom_level": 3,
+    "bloom_begruendung": "Transfer-MC: SuS \u00fcbertragen historische Quellensprache (\u201Efrei\u201C, \u201Eeinig\u201C, \u201Evereinigt\u201C) auf moderne politische Begriffe (Einheit, Freiheit, Volkssouver\u00e4nit\u00e4t)."
+  }
+}

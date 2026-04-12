@@ -1,0 +1,26 @@
+{
+  "id": "aufgabe-1-1",
+  "typ": "lueckentext",
+  "frage": "Erg\u00e4nze die fehlenden Fachbegriffe.",
+  "material_referenz": ["mat-1-1"],
+  "text_mit_luecken": "Nach den ___ gegen Napoleon wuchs in den deutschen L\u00e4ndern ein neues Gef\u00fchl der Zusammengeh\u00f6rigkeit. Im Oktober 1817 trafen sich Hunderte Studenten auf der ___. Sie forderten ___ und Freiheit f\u00fcr alle Deutschen. Dieser Wunsch nach einem gemeinsamen Staat hei\u00dft ___.",
+  "loesung": ["Befreiungskriegen", "Wartburg", "Einheit", "Nationalgedanke"],
+  "antwortpool": ["Befreiungskriegen", "Einheit", "Nationalgedanke", "Revolution", "Wartburg"],
+  "tipps": [
+    {"stufe": 1, "haertegrad": "kognitiv", "text": "Lies das [[mat-1-1|Tagebuch des Studenten]] (M1) noch einmal. Alle gesuchten Begriffe stehen im Text."},
+    {"stufe": 2, "haertegrad": "strukturierend", "text": "Der letzte Begriff beschreibt den Wunsch nach einem gemeinsamen Staat. \u201ERevolution\u201C geh\u00f6rt nicht dazu \u2014 sie kam erst 30 Jahre sp\u00e4ter."},
+    {"stufe": 3, "haertegrad": "heuristisch", "text": "Befreiungskriegen \u2014 Wartburg \u2014 Einheit \u2014 Nationalgedanke. Nach den Kriegen gegen Napoleon trafen sich Studenten auf der Wartburg und forderten Einheit. Dieser Wunsch hei\u00dft Nationalgedanke."}
+  ],
+  "feedback": [
+    {"typ": "bestaetigung", "text": "Richtig! Nach den Befreiungskriegen entstand auf der Wartburg der Wunsch nach Einheit \u2014 der Nationalgedanke.", "ebene": "wissen"},
+    {"typ": "korrektur", "text": "\u201ERevolution\u201C passt hier nicht \u2014 die Revolution kam erst 1848, \u00fcber 30 Jahre nach dem Wartburgfest.", "ebene": "wissen"},
+    {"typ": "verknuepfung", "text": "Der Nationalgedanke wurde wenig sp\u00e4ter auf dem Hambacher Fest 1832 zur Massenbewegung.", "ebene": "wissen"}
+  ],
+  "punkte": 10,
+  "afb": "I",
+  "position": 1,
+  "_meta": {
+    "bloom_level": 1,
+    "bloom_begruendung": "Reiner Fachbegriff-Recall: SuS erinnern Schl\u00fcsselbegriffe (Befreiungskriege, Wartburg, Einheit, Nationalgedanke) aus dem Tagebuch."
+  }
+}

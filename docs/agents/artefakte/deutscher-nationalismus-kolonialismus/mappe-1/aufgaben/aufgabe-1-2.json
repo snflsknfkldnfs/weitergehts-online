@@ -1,0 +1,36 @@
+{
+  "id": "aufgabe-1-2",
+  "typ": "zuordnung",
+  "frage": "Ordne die Zeichen des Hambacher Festes der richtigen Forderung zu.",
+  "material_referenz": ["mat-1-2"],
+  "elemente": [
+    {"begriff": "Schwarz-rot-goldene Fahnen", "zuordnung": "Einheit"},
+    {"begriff": "Reden gegen die Macht der F\u00fcrsten", "zuordnung": "Freiheit"},
+    {"begriff": "Forderung: sich selbst regieren", "zuordnung": "Volkssouver\u00e4nit\u00e4t"},
+    {"begriff": "Aufschrift: Deutschlands Wiedergeburt", "zuordnung": "Einheit"}
+  ],
+  "loesung": {
+    "Schwarz-rot-goldene Fahnen": "Einheit",
+    "Reden gegen die Macht der F\u00fcrsten": "Freiheit",
+    "Forderung: sich selbst regieren": "Volkssouver\u00e4nit\u00e4t",
+    "Aufschrift: Deutschlands Wiedergeburt": "Einheit"
+  },
+  "tipps": [
+    {"stufe": 1, "haertegrad": "kognitiv", "text": "Schau dir das [[mat-1-2|Bild des Hambacher Festes]] (M2) genau an. Die Bildunterschrift nennt drei Forderungen \u2014 \u00fcberlege, welches Zeichen zu welcher Forderung passt."},
+    {"stufe": 2, "haertegrad": "strukturierend", "text": "Die schwarz-rot-goldenen Fahnen stehen f\u00fcr den Wunsch nach einem gemeinsamen Staat. \u00dcberlege: Was bedeutet es, die Macht der F\u00fcrsten zu kritisieren?"},
+    {"stufe": 3, "haertegrad": "heuristisch", "text": "Die Farben Schwarz-Rot-Gold symbolisieren ein gemeinsames Deutschland \u2014 Einheit. Wer die F\u00fcrsten kritisiert, fordert Freiheit. Wer sich selbst regieren will, meint Volkssouver\u00e4nit\u00e4t. Auch die Aufschrift \u201EDeutschlands Wiedergeburt\u201C dr\u00fcckt den Einheits-Wunsch aus."}
+  ],
+  "feedback": [
+    {"typ": "bestaetigung", "text": "Richtig! Die Farben Schwarz-Rot-Gold stehen seit dem Hambacher Fest f\u00fcr den Wunsch nach einem geeinten Deutschland.", "ebene": "verstaendnis"},
+    {"typ": "bestaetigung", "text": "Genau \u2014 wer die Herrschaft der F\u00fcrsten kritisiert, fordert Freiheit von ihrer Macht.", "ebene": "verstaendnis"},
+    {"typ": "bestaetigung", "text": "Ja \u2014 sich selbst regieren bedeutet Volkssouver\u00e4nit\u00e4t: Alle Macht soll vom Volk ausgehen.", "ebene": "verstaendnis"},
+    {"typ": "korrektur", "text": "Die Wiedergeburt Deutschlands meint ein neues, geeintes Land \u2014 also Einheit, nicht Freiheit. Freiheit w\u00e4re die Forderung gegen die F\u00fcrstenherrschaft.", "ebene": "verstaendnis"}
+  ],
+  "punkte": 10,
+  "afb": "I",
+  "position": 2,
+  "_meta": {
+    "bloom_level": 3,
+    "bloom_begruendung": "Transfer-Zuordnung: SuS \u00fcbertragen visuelle Symbole und Textfragmente des Bildes auf abstrakte politische Forderungen (Anwenden)."
+  }
+}

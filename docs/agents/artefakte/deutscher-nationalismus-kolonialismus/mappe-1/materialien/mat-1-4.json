@@ -1,0 +1,39 @@
+{
+  "id": "mat-1-4",
+  "typ": "bildquelle",
+  "titel": "Barrikadenkampf in Berlin — März 1848",
+  "inhalt": "../../assets/img/deutscher-nationalismus-kolonialismus/img-1-5.png",
+  "bildunterschrift": "Kreidelithographie: Barrikadenkampf in der Breiten Straße in Berlin, Nacht vom 18. auf den 19. März 1848. Arbeiter und Handwerker errichteten Barrikaden und kämpften gegen die königliche Armee. Im Hintergrund ist das Berliner Schloss zu erkennen. Dieser Aufstand war Teil der Märzrevolution, die in ganz Deutschland Verfassungen und Freiheitsrechte erzwingen wollte.",
+  "lizenz": "Public Domain",
+  "quelle": "Zeitgenössische Kreidelithographie, 1848. Darstellung des Barrikadenkampfes in der Breiten Straße, Berlin. Wikimedia Commons: Erinnerung_an_den_Befreiungskampf_(Märzrevolution)_1848.png.",
+  "position": 4,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": [
+    "mat-1-3"
+  ],
+  "ueberleitung_von": "Die Forderungen auf dem Hambacher Fest blieben unerhört — sechzehn Jahre später griffen die Menschen zu den Waffen.",
+  "sequenz_kontext": {
+    "vorher": {
+      "id": "mat-1-3",
+      "typ": "quellentext",
+      "kerninhalt": "Forderungen der Festredner"
+    },
+    "nachher": {
+      "id": "mat-1-5",
+      "typ": "darstellungstext",
+      "kerninhalt": "Paulskirche und Verfassung"
+    }
+  },
+  "_meta": {
+    "wortanzahl": 55,
+    "perspektive": "P3 Arbeiter/Handwerker",
+    "artefakt_ref": [
+      "pb-1-5"
+    ],
+    "tafelbild_knoten_abgedeckt": [
+      "k1-4"
+    ],
+    "trigger_flags": [],
+    "erarbeitbarkeits_check": "PASS — SuS erkennen am Bild die Eskalation: Bürger kämpfen bewaffnet gegen die Armee (k1-4). Bildunterschrift benennt Märzrevolution."
+  }
+}

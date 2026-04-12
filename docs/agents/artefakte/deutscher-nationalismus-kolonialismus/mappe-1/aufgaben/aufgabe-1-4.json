@@ -1,0 +1,37 @@
+{
+  "id": "aufgabe-1-4",
+  "typ": "reihenfolge",
+  "frage": "Bringe die Schritte zur M\u00e4rzrevolution in die richtige Reihenfolge.",
+  "material_referenz": ["mat-1-4"],
+  "optionen": [
+    "Arbeiter und Handwerker k\u00e4mpfen auf Barrikaden gegen die k\u00f6nigliche Armee.",
+    "In vielen St\u00e4dten brechen Unruhen aus \u2014 B\u00fcrger fordern Verfassungen.",
+    "Tausende fordern auf dem Hambacher Fest Einheit und Freiheit.",
+    "Die F\u00fcrsten verbieten politische Versammlungen und Vereine."
+  ],
+  "loesung": [
+    "Tausende fordern auf dem Hambacher Fest Einheit und Freiheit.",
+    "Die F\u00fcrsten verbieten politische Versammlungen und Vereine.",
+    "In vielen St\u00e4dten brechen Unruhen aus \u2014 B\u00fcrger fordern Verfassungen.",
+    "Arbeiter und Handwerker k\u00e4mpfen auf Barrikaden gegen die k\u00f6nigliche Armee."
+  ],
+  "tipps": [
+    {"stufe": 1, "haertegrad": "kognitiv", "text": "Schau dir den [[mat-1-4|Barrikadenkampf in Berlin]] (M4) an \u2014 das ist der letzte Schritt. Was muss vorher passiert sein?"},
+    {"stufe": 2, "haertegrad": "strukturierend", "text": "Die Kette beginnt mit einer friedlichen Forderung und endet mit bewaffnetem Kampf. Die F\u00fcrsten reagierten zuerst \u2014 dann eskalierte die Lage."},
+    {"stufe": 3, "haertegrad": "heuristisch", "text": "Die Eskalation lief so: Friedliche Forderungen blieben unerh\u00f6rt, die F\u00fcrsten verboten Versammlungen, daraus wuchsen Unruhen, und am Ende standen Barrikaden. Jeder Schritt folgt aus dem vorherigen."}
+  ],
+  "feedback": [
+    {"typ": "bestaetigung", "text": "Am Anfang stand die friedliche Forderung nach Einheit und Freiheit auf dem Hambacher Fest 1832.", "ebene": "verstaendnis"},
+    {"typ": "bestaetigung", "text": "Die F\u00fcrsten reagierten mit Verboten \u2014 das machte die Situation schlimmer statt besser.", "ebene": "verstaendnis"},
+    {"typ": "bestaetigung", "text": "Die Unterdr\u00fcckung f\u00fchrte zu Unruhen in vielen St\u00e4dten Anfang 1848.", "ebene": "verstaendnis"},
+    {"typ": "bestaetigung", "text": "Der H\u00f6hepunkt: Im M\u00e4rz 1848 k\u00e4mpften B\u00fcrger auf Barrikaden gegen die Armee.", "ebene": "verstaendnis"},
+    {"typ": "korrektur", "text": "Schritt 2 und 3 werden oft vertauscht \u2014 die Verbote der F\u00fcrsten kamen vor den Unruhen, nicht danach.", "ebene": "verstaendnis"}
+  ],
+  "punkte": 10,
+  "afb": "II",
+  "position": 4,
+  "_meta": {
+    "bloom_level": 3,
+    "bloom_begruendung": "Ursache-Wirkung-Ordnung: SuS wenden das Prinzip der Eskalation an, um vier Schritte kausal zu ordnen (Anwenden)."
+  }
+}

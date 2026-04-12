@@ -1,0 +1,41 @@
+{
+  "id": "aufgabe-1-6",
+  "typ": "quellenkritik",
+  "frage": "Untersuche das Zitat des K\u00f6nigs genauer.",
+  "w_fragen": [
+    {"schluessel": "wer", "frage": "Wer hat diesen Text geschrieben und welche Stellung hatte er?"},
+    {"schluessel": "wann", "frage": "Wann ist dieses Zitat entstanden und was passierte zu dieser Zeit?"},
+    {"schluessel": "warum", "frage": "Warum lehnte der K\u00f6nig die Kaiserkrone ab?"},
+    {"schluessel": "bedeutung", "frage": "Was meint der K\u00f6nig mit \u201EKrone aus der Gosse\u201C?"},
+    {"schluessel": "was_fehlt", "frage": "Welche Sichtweise fehlt in diesem Zitat?"}
+  ],
+  "loesung": {
+    "wer": "Friedrich Wilhelm IV., K\u00f6nig von Preu\u00dfen. Er war der m\u00e4chtigste deutsche F\u00fcrst und verstand sich als K\u00f6nig von Gottes Gnaden.",
+    "wann": "April 1849. Die Nationalversammlung hatte gerade eine Verfassung erarbeitet und bot dem K\u00f6nig die Kaiserkrone an.",
+    "warum": "Der K\u00f6nig wollte keine Krone, die vom Volk kam. F\u00fcr ihn durfte nur Gott oder andere F\u00fcrsten einem K\u00f6nig die Krone verleihen.",
+    "bedeutung": "Der K\u00f6nig verachtete die vom Volk angebotene Krone \u2014 er nannte sie \u201Eimaginaer\u201C und \u201Eaus Dreck gebacken\u201C, also wertlos und schmutzig. Damit zeigte er seine Verachtung f\u00fcr die Volkssouver\u00e4nit\u00e4t.",
+    "was_fehlt": "Die Sichtweise der Abgeordneten und B\u00fcrger fehlt. Sie hatten f\u00fcr Einheit und Freiheit gek\u00e4mpft und sahen die Krone als Zeichen der Volkssouver\u00e4nit\u00e4t."
+  },
+  "material_referenz": ["mat-1-6"],
+  "tipps": [
+    {"stufe": 1, "haertegrad": "kognitiv", "text": "Lies den [[mat-1-6|Text des K\u00f6nigs]] (M6) noch einmal. Im Einleitungssatz steht, wer sprach und wann."},
+    {"stufe": 2, "haertegrad": "strukturierend", "text": "Achte auf die Wortwahl des K\u00f6nigs: \u201EDreck und Letten\u201C, \u201Eimaginaer\u201C, \u201Eaus der Gosse\u201C \u2014 das sind keine sachlichen W\u00f6rter. Was verr\u00e4t das \u00fcber seine Haltung zur Volkssouver\u00e4nit\u00e4t?"},
+    {"stufe": 3, "haertegrad": "heuristisch", "text": "Der K\u00f6nig sprach als \u201EK\u00f6nig von Gottes Gnaden\u201C \u2014 er glaubte, seine Macht komme von Gott, nicht vom Volk. \u00dcberlege: Wessen Stimme h\u00f6rst du hier, und wessen Stimme fehlt?"}
+  ],
+  "feedback": [
+    {"typ": "bestaetigung", "text": "Richtig erkannt: Friedrich Wilhelm IV. war K\u00f6nig von Preu\u00dfen und lehnte die Krone ab, weil sie vom Volk kam.", "ebene": "analyse"},
+    {"typ": "hinweis", "text": "Bei der Frage nach dem Verfasser reicht nicht nur der Name \u2014 wichtig ist auch seine Stellung als K\u00f6nig von Gottes Gnaden.", "ebene": "verstaendnis"},
+    {"typ": "bestaetigung", "text": "\u201EKrone aus der Gosse\u201C zeigt die Verachtung des K\u00f6nigs f\u00fcr alles, was vom Volk ausgeht.", "ebene": "analyse"},
+    {"typ": "korrektur", "text": "Die fehlende Sichtweise ist die der Abgeordneten und B\u00fcrger \u2014 sie sahen die Krone als Zeichen der Volkssouver\u00e4nit\u00e4t, nicht als Schmutz.", "ebene": "analyse"},
+    {"typ": "verknuepfung", "text": "Vergleiche die Haltung des K\u00f6nigs mit den Forderungen auf dem Hambacher Fest (M2/M3) \u2014 dort riefen die Menschen nach Volkssouver\u00e4nit\u00e4t, genau das, was der K\u00f6nig ablehnte.", "ebene": "analyse"}
+  ],
+  "punkte": 10,
+  "afb": "II-III",
+  "position": 6,
+  "_meta": {
+    "bloom_level": 5,
+    "bloom_begruendung": "Quellenkritik mit Perspektiv-Bewertung: SuS analysieren Wortwahl und Intention des K\u00f6nigs und bewerten seine Haltung zur Volkssouver\u00e4nit\u00e4t (Bewerten, L5).",
+    "w_fragen_auswahl": "Quellentext/Rede \u2192 Wer + Wann + Warum + Bedeutung (F2-Paraphrase) + Was fehlt",
+    "quellentyp": "tradition"
+  }
+}

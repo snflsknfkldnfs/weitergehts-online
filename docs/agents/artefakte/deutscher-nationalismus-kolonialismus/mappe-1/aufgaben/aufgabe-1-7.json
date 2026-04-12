@@ -1,0 +1,32 @@
+{
+  "id": "aufgabe-1-7",
+  "typ": "freitext-code",
+  "frage": "Beurteile, warum die Revolution von 1848 scheiterte.",
+  "material_referenz": ["mat-1-5", "mat-1-6"],
+  "loesung": ["Volkssouver\u00e4nit\u00e4t", "Kaiserkrone"],
+  "tipps": [
+    {"stufe": 1, "haertegrad": "kognitiv", "text": "Lies den [[mat-1-5|Text \u00fcber die Nationalversammlung]] (M5) und den [[mat-1-6|Text des K\u00f6nigs]] (M6) noch einmal. Fasse zuerst zusammen, was die Nationalversammlung erreichte."},
+    {"stufe": 2, "haertegrad": "strukturierend", "text": "Die Nationalversammlung bot dem K\u00f6nig die Kaiserkrone an \u2014 aber er lehnte ab. \u00dcberlege: Was bedeutete diese Ablehnung f\u00fcr die Idee der Volkssouver\u00e4nit\u00e4t?"},
+    {"stufe": 3, "haertegrad": "heuristisch", "text": "Musterantwort: Die Nationalversammlung erarbeitete eine Verfassung und bot dem K\u00f6nig die Kaiserkrone an. Er lehnte ab, weil die Krone vom Volk kam. Damit scheiterte die Revolution \u2014 die F\u00fcrsten behielten ihre Macht, die Volkssouver\u00e4nit\u00e4t setzte sich nicht durch. Deine Antwort sollte die Begriffe \u201EVolkssouver\u00e4nit\u00e4t\u201C und \u201EKaiserkrone\u201C verwenden."}
+  ],
+  "feedback": [
+    {"typ": "bestaetigung", "text": "Du hast erkannt, dass die Ablehnung der Kaiserkrone die Revolution scheitern lie\u00df und die Volkssouver\u00e4nit\u00e4t sich nicht durchsetzte.", "ebene": "analyse"},
+    {"typ": "korrektur", "text": "H\u00e4ufig fehlt der Bezug zur Volkssouver\u00e4nit\u00e4t \u2014 der K\u00f6nig lehnte nicht einfach ab, sondern verachtete die Idee, dass Macht vom Volk ausgehen soll.", "ebene": "analyse"},
+    {"typ": "verknuepfung", "text": "Die Forderungen auf dem Hambacher Fest (M2/M3) \u2014 Einheit, Freiheit, Volkssouver\u00e4nit\u00e4t \u2014 wurden durch die Ablehnung des K\u00f6nigs zun\u00e4chst zunichte gemacht.", "ebene": "analyse"}
+  ],
+  "punkte": 10,
+  "afb": "III",
+  "position": 7,
+  "_meta": {
+    "bloom_level": 5,
+    "bloom_begruendung": "Stellungnahme-Freitext: SuS beurteilen das Scheitern der Revolution und bewerten die Konsequenzen f\u00fcr die Volkssouver\u00e4nit\u00e4t (Bewerten, L5).",
+    "teilfragen": [
+      "Was hatte die Nationalversammlung erreicht, bevor der K\u00f6nig die Krone ablehnte?",
+      "Warum lehnte der K\u00f6nig die Kaiserkrone ab?",
+      "Was bedeutete das Scheitern f\u00fcr die Idee, dass alle Macht vom Volk ausgehen soll?"
+    ],
+    "erwartete_begriffe": ["Volkssouver\u00e4nit\u00e4t", "Kaiserkrone", "Nationalversammlung", "Verfassung", "F\u00fcrsten"],
+    "validierung_schwelle": 2,
+    "musterantwort": "Die Nationalversammlung hatte eine Verfassung mit Grundrechten erarbeitet und dem preu\u00dfischen K\u00f6nig die Kaiserkrone angeboten. Der K\u00f6nig lehnte ab, weil die Krone vom Volk kam \u2014 er sah sich als K\u00f6nig von Gottes Gnaden. Damit scheiterte die Revolution: Die F\u00fcrsten behielten ihre Macht und die Idee der Volkssouver\u00e4nit\u00e4t setzte sich nicht durch. Die Menschen hatten f\u00fcr Einheit und Freiheit gek\u00e4mpft, aber die alten Machthaber waren st\u00e4rker."
+  }
+}

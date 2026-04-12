@@ -1,0 +1,30 @@
+{
+  "mappe": "1",
+  "ueberleitungen": [
+    {
+      "von": "mat-1-1",
+      "nach": "mat-1-2",
+      "text": "Der Tagebucheintrag zeigte: Nach den Befreiungskriegen träumten Studenten auf der Wartburg von einem geeinten Deutschland. Fünfzehn Jahre später wurde aus diesem Traum eine Massenbewegung — was geschah auf dem Hambacher Fest?"
+    },
+    {
+      "von": "mat-1-2",
+      "nach": "mat-1-3",
+      "text": "Das Bild zeigte Tausende mit schwarz-rot-goldenen Fahnen auf dem Weg zum Hambacher Schloss. Doch was genau forderten die Menschen dort?"
+    },
+    {
+      "von": "mat-1-3",
+      "nach": "mat-1-4",
+      "text": "Die Festredner forderten Einheit, Freiheit und Volkssouveränität — doch die Fürsten antworteten mit Verboten. Sechzehn Jahre später griffen die Menschen zu den Waffen."
+    },
+    {
+      "von": "mat-1-4",
+      "nach": "mat-1-5",
+      "text": "Die Barrikadenkämpfe in Berlin zeigten: Arbeiter und Handwerker waren bereit, für ihre Rechte zu kämpfen. Die Revolution erzwang Zugeständnisse — zum ersten Mal durfte das Volk ein gesamtdeutsches Parlament wählen."
+    },
+    {
+      "von": "mat-1-5",
+      "nach": "mat-1-6",
+      "text": "Die Nationalversammlung hatte eine Verfassung erarbeitet und dem König die Kaiserkrone angeboten. Doch was antwortete der König?"
+    }
+  ]
+}

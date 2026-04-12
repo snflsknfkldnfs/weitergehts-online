@@ -1,0 +1,58 @@
+{
+  "stundenfrage": "Warum kämpften Menschen 1848 für ein geeintes Deutschland?",
+  "ordnungsmuster": "sequenziell",
+  "scpl": {
+    "situation": {
+      "kontextsatz": "Anfang des 19. Jahrhunderts gab es kein 'Deutschland' — nur Dutzende Einzelstaaten. Nach den Kriegen gegen Napoleon entstand ein neuer Wunsch — der Nationalgedanke.",
+      "fachbegriffe": ["Nationalgedanke"]
+    },
+    "complication": [
+      {
+        "schritt": "Auf dem Wartburgfest 1817 und dem Hambacher Fest 1832 forderten Tausende Einheit und Verfassung — die Fürsten antworteten mit Verboten: Nationalbewegung.",
+        "typ": "kontrastiv",
+        "fachbegriff": "Nationalbewegung",
+        "darstellung": null,
+        "erarbeitbarkeit": "DIRECT"
+      },
+      {
+        "schritt": "Im März 1848 kämpften Arbeiter und Handwerker auf Barrikaden gegen die Armeen der Fürsten: Märzrevolution.",
+        "typ": "narrativ",
+        "fachbegriff": "Märzrevolution",
+        "darstellung": null,
+        "erarbeitbarkeit": "DIRECT"
+      },
+      {
+        "schritt": "In der Paulskirche erarbeiteten Abgeordnete eine Verfassung mit Grundrechten — der König lehnte die Kaiserkrone ab: Nationalversammlung.",
+        "typ": "narrativ",
+        "fachbegriff": "Nationalversammlung",
+        "darstellung": null,
+        "erarbeitbarkeit": "DIRECT"
+      }
+    ],
+    "problem": {
+      "satz": "Der Traum von Einheit und Freiheit scheiterte 1849 — das Volk konnte sich gegen die Fürsten nicht durchsetzen: Volkssouveränität.",
+      "fachbegriff": "Volkssouveränität"
+    },
+    "loesung": [
+      "Die Nationalbewegung forderte Einheit, Freiheit und eine Verfassung für alle Deutschen.",
+      "Die Revolution von 1848 scheiterte — die Fürsten behielten ihre Macht."
+    ]
+  },
+  "knoten": [
+    {"id": "k1-1", "text": "Befreiungskriege gegen Napoleon", "typ": "ereignis"},
+    {"id": "k1-2", "text": "Wartburgfest 1817 / Hambacher Fest 1832", "typ": "ereignis"},
+    {"id": "k1-3", "text": "Nationalbewegung", "typ": "kernbegriff", "merksatz": "Bürger fordern einen gemeinsamen Staat mit Verfassung"},
+    {"id": "k1-4", "text": "Märzrevolution 1848", "typ": "ereignis"},
+    {"id": "k1-5", "text": "Nationalversammlung Paulskirche", "typ": "ereignis"},
+    {"id": "k1-6", "text": "Scheitern 1849", "typ": "wirkung", "merksatz": "König lehnt Kaiserkrone ab — Fürsten behalten Macht"},
+    {"id": "k1-7", "text": "Volkssouveränität", "typ": "kernbegriff", "merksatz": "Alle Macht soll vom Volk ausgehen"}
+  ],
+  "verbindungen": [
+    {"von": "k1-1", "nach": "k1-2", "label": "weckt", "typ": "kausal"},
+    {"von": "k1-2", "nach": "k1-3", "label": "wächst zu", "typ": "kausal"},
+    {"von": "k1-3", "nach": "k1-4", "label": "mündet in", "typ": "temporal"},
+    {"von": "k1-4", "nach": "k1-5", "label": "führt zu", "typ": "temporal"},
+    {"von": "k1-5", "nach": "k1-6", "label": "scheitert", "typ": "kausal"}
+  ],
+  "voraussetzungen": []
+}

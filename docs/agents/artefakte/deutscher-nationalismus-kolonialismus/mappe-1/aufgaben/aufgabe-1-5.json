@@ -1,0 +1,31 @@
+{
+  "id": "aufgabe-1-5",
+  "typ": "multiple-choice",
+  "frage": "Welche Aufgabe hatte die Nationalversammlung in der Paulskirche?",
+  "material_referenz": ["mat-1-5"],
+  "optionen": [
+    "Eine Verfassung mit Grundrechten f\u00fcr ein geeintes Deutschland erarbeiten",
+    "Die deutschen F\u00fcrsten absetzen und eine Republik ausrufen",
+    "Einen Friedensvertrag mit Frankreich aushandeln",
+    "Die Grenzen der deutschen Einzelstaaten neu festlegen"
+  ],
+  "loesung": "Eine Verfassung mit Grundrechten f\u00fcr ein geeintes Deutschland erarbeiten",
+  "tipps": [
+    {"stufe": 1, "haertegrad": "kognitiv", "text": "Lies den [[mat-1-5|Text \u00fcber die Nationalversammlung]] (M5) noch einmal. Achte darauf, was die 800 Abgeordneten erarbeiteten."},
+    {"stufe": 2, "haertegrad": "strukturierend", "text": "Die Abgeordneten erarbeiteten ein bestimmtes Dokument \u2014 es enthielt unter anderem Pressefreiheit und Gleichheit vor dem Gesetz."},
+    {"stufe": 3, "haertegrad": "heuristisch", "text": "Die Nationalversammlung sollte eine Verfassung f\u00fcr ein geeintes Deutschland schaffen. Diese Verfassung enthielt Grundrechte wie Pressefreiheit und Versammlungsfreiheit \u2014 zum ersten Mal f\u00fcr alle Deutschen."}
+  ],
+  "feedback": [
+    {"typ": "bestaetigung", "text": "Richtig! Die Nationalversammlung erarbeitete eine Verfassung mit Grundrechten \u2014 das erste gesamtdeutsche Parlament.", "ebene": "verstaendnis"},
+    {"typ": "korrektur", "text": "Die Abgeordneten wollten keine Republik \u2014 sie boten dem preu\u00dfischen K\u00f6nig sogar die Kaiserkrone an.", "ebene": "verstaendnis"},
+    {"typ": "korrektur", "text": "Ein Friedensvertrag mit Frankreich war nicht Thema der Paulskirche \u2014 es ging um die innere Ordnung Deutschlands.", "ebene": "verstaendnis"},
+    {"typ": "korrektur", "text": "Die Nationalversammlung wollte die Einzelstaaten gerade \u00fcberwinden, nicht ihre Grenzen neu ziehen.", "ebene": "verstaendnis"}
+  ],
+  "punkte": 10,
+  "afb": "II",
+  "position": 5,
+  "_meta": {
+    "bloom_level": 3,
+    "bloom_begruendung": "Transfer-MC: SuS erkennen aus dem Darstellungstext die Kernfunktion des Parlaments und w\u00e4hlen die treffende Zusammenfassung (Anwenden)."
+  }
+}
