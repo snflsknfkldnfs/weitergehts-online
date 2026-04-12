@@ -1,0 +1,52 @@
+{
+  "id": "aufgabe-2-1",
+  "typ": "zuordnung",
+  "frage": "Ordne die Merkmale der Einigung von unten und von oben zu.",
+  "material_referenz": ["mat-2-1"],
+  "elemente": [
+    {"begriff": "Reden und Mehrheitsbeschl\u00fcsse", "zuordnung": "Einigung von unten"},
+    {"begriff": "Blut und Eisen", "zuordnung": "Einigung von oben"},
+    {"begriff": "Parlamentarischer Weg", "zuordnung": "Einigung von unten"},
+    {"begriff": "Milit\u00e4rische Macht", "zuordnung": "Einigung von oben"},
+    {"begriff": "Der Ministerpr\u00e4sident entscheidet", "zuordnung": "Einigung von oben"}
+  ],
+  "loesung": {
+    "Reden und Mehrheitsbeschl\u00fcsse": "Einigung von unten",
+    "Blut und Eisen": "Einigung von oben",
+    "Parlamentarischer Weg": "Einigung von unten",
+    "Milit\u00e4rische Macht": "Einigung von oben",
+    "Der Ministerpr\u00e4sident entscheidet": "Einigung von oben"
+  },
+  "tipps": [
+    {
+      "stufe": 1,
+      "haertegrad": "kognitiv",
+      "text": "Lies [[mat-2-1|Bismarcks Rede von 1862]] (M1). Was lehnt er ab \u2014 und was will er stattdessen?"
+    },
+    {
+      "stufe": 2,
+      "haertegrad": "strukturierend",
+      "text": "Reden und Mehrheitsbeschl\u00fcsse geh\u00f6ren zur Einigung von unten \u2014 das war der Weg der Paulskirche 1848."
+    },
+    {
+      "stufe": 3,
+      "haertegrad": "heuristisch",
+      "text": "Die Nationalversammlung setzte auf Parlament und Abstimmungen \u2014 Bismarck auf Krieg und Macht. Alles, was mit gew\u00e4hlten Vertretern zu tun hat, geh\u00f6rt zur Einigung von unten. Alles, was mit Milit\u00e4r und Machtpolitik zu tun hat, zur Einigung von oben."
+    }
+  ],
+  "feedback": [
+    {"typ": "bestaetigung", "text": "Richtig. Reden und Mehrheitsbeschl\u00fcsse waren das Mittel der Nationalversammlung 1848 \u2014 der Weg der Demokratie.", "ebene": "wissen"},
+    {"typ": "bestaetigung", "text": "Genau. Blut und Eisen steht f\u00fcr Bismarcks Strategie: Einigung durch Kriege statt durch Debatten.", "ebene": "wissen"},
+    {"typ": "bestaetigung", "text": "Richtig. Der parlamentarische Weg war der Versuch, Deutschland durch gew\u00e4hlte Vertreter zu einen.", "ebene": "wissen"},
+    {"typ": "bestaetigung", "text": "Genau. Bismarck setzte auf milit\u00e4rische Macht, um die deutschen Staaten zusammenzuschwei\u00dfen.", "ebene": "wissen"},
+    {"typ": "bestaetigung", "text": "Richtig. Bismarck handelte als Ministerpr\u00e4sident \u2014 nicht als gew\u00e4hlter Vertreter des Volkes. Das ist der Kern der Einigung von oben.", "ebene": "verstaendnis"}
+  ],
+  "punkte": 10,
+  "afb": "I",
+  "position": 1,
+  "_meta": {
+    "bloom_level": 2,
+    "bloom_begruendung": "Kategorisierung von Merkmalen in zwei Konzeptkategorien (L2 Verstehen) \u2014 SuS m\u00fcssen die Zugeh\u00f6rigkeitslogik erkennen, nicht nur Begriffe erinnern.",
+    "tafelbild_knoten": ["k2-1", "k2-2"]
+  }
+}

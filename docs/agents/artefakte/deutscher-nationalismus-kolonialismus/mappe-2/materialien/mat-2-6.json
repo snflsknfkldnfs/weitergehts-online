@@ -1,0 +1,26 @@
+{
+  "id": "mat-2-6",
+  "typ": "tagebuch",
+  "titel": "War die Reichsgründung das, wofür man 1848 gekämpft hatte?",
+  "inhalt": "<p><em>Am 18. Januar 1871 wurde im Spiegelsaal von Versailles das Deutsche Reich ausgerufen. Nicht alle Deutschen feierten. Der folgende Eintrag ist nachempfunden — er zeigt, wie ein ehemaliger Revolutionär von 1848 die Reichsgründung erlebt haben könnte.</em></p>\n<p><em>Berlin, 20. Januar 1871</em></p>\n<p>Gestern hörte ich die Nachricht: Deutschland ist geeint. Ein Kaiser, ein Reich. Überall Jubel auf den Straßen. Ich stand am Fenster und dachte an die Barrikaden von 1848. Damals kämpften wir für eine Verfassung — dafür, dass das Volk mitentscheiden darf. Und jetzt? Die Fürsten und Generäle haben entschieden. Kein Parlament hat abgestimmt. Draußen feiern sie. Ich stehe hier und weiß nicht, ob ich mitfeiern soll.</p>\n<cite>Fiktiver Tagebucheintrag, historisch plausibel. Kontext: Wikipedia, Deutsche Reichsgründung.</cite>",
+  "quelle": "Fiktiver Tagebucheintrag, basierend auf typischen Reaktionen liberaler 1848er-Demokraten auf die Reichsgründung 1871. Figur und Erlebnisse sind erfunden, historischer Kontext ist belegt. Vgl. Wikipedia: Deutsche Reichsgründung.",
+  "position": 6,
+  "didaktische_funktion": "sicherung",
+  "voraussetzung": ["mat-2-5"],
+  "ueberleitung_von": "Die Karikatur zeigte, dass die Reichsgründung nicht überall begeistert aufgenommen wurde. Wie erlebten die Menschen in Deutschland selbst die Reichsgründung — war sie das, wofür sie gekämpft hatten?",
+  "sequenz_kontext": {
+    "vorher": {"id": "mat-2-5", "typ": "bildquelle", "kerninhalt": "Karikatur: Bismarcks Reichsgründung"},
+    "nachher": null
+  },
+  "_meta": {
+    "wortanzahl": 100,
+    "quellentyp": "tagebuch",
+    "aufbereitung": "rekonstruiert",
+    "rekonstruktions_begruendung": "Fiktiver Tagebucheintrag eines enttäuschten 1848er-Demokraten. Kein Originaltagebuch mit dieser spezifischen Perspektive frei verfügbar und für R7 zumutbar. Figur ist didaktische Konstruktion, historischer Kontext belegt in Wikipedia: Deutsche Reichsgründung.",
+    "artefakt_ref": ["pt-2-2"],
+    "tafelbild_knoten_abgedeckt": ["k2-6"],
+    "perspektive": "P2: Enttäuschter Demokrat — ehemaliger 1848er-Revolutionär, Berlin 1871",
+    "erarbeitbarkeits_check": "PASS — k2-6 (Einheit ohne Freiheit) wird erarbeitbar: der Demokrat zeigt Fakten (1848 = Verfassung/Volk vs. 1871 = Fürsten/kein Parlament) und persönliche Ambivalenz. SuS müssen den Widerspruch selbst benennen.",
+    "trigger_flags": []
+  }
+}

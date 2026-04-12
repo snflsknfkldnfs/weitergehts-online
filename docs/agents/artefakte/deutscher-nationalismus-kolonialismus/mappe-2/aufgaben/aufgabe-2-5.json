@@ -1,0 +1,45 @@
+{
+  "id": "aufgabe-2-5",
+  "typ": "freitext-code",
+  "frage": "Beurteile, ob die Reichsgr\u00fcndung 1871 das war, wof\u00fcr 1848 gek\u00e4mpft wurde.",
+  "material_referenz": ["mat-2-1", "mat-2-6"],
+  "loesung": ["Einheit", "Verfassung"],
+  "tipps": [
+    {
+      "stufe": 1,
+      "haertegrad": "kognitiv",
+      "text": "Lies [[mat-2-6|den Tagebucheintrag des entt\u00e4uschten Demokraten]] (M6). Was schreibt er \u00fcber 1848 \u2014 und was st\u00f6rt ihn an 1871?"
+    },
+    {
+      "stufe": 2,
+      "haertegrad": "strukturierend",
+      "text": "Der Demokrat erinnert sich: 1848 ging es um eine Verfassung und Mitbestimmung. 1871 haben die F\u00fcrsten entschieden, nicht das Volk. Was wurde also erreicht \u2014 und was fehlt?"
+    },
+    {
+      "stufe": 3,
+      "haertegrad": "heuristisch",
+      "text": "Musterantwort: 1848 k\u00e4mpften die Menschen f\u00fcr Einheit und Freiheit \u2014 f\u00fcr eine Verfassung und Mitbestimmung. 1871 wurde die Einheit erreicht, aber durch Kriege und F\u00fcrsten, nicht durch das Volk. Die Verfassung fehlte. Deine Antwort sollte \u201aEinheit\u2018 und \u201aVerfassung\u2018 verwenden und zeigen, was erreicht wurde und was fehlte."
+    }
+  ],
+  "feedback": [
+    {"typ": "bestaetigung", "text": "Genau \u2014 die Reichsgr\u00fcndung brachte Einheit, aber nicht die Freiheit und Mitbestimmung, f\u00fcr die 1848 gek\u00e4mpft wurde. Einheit ohne Verfassung: Das ist der zentrale Widerspruch.", "ebene": "analyse"},
+    {"typ": "korrektur", "text": "H\u00e4ufig fehlt der Bezug zu 1848: Es reicht nicht zu sagen, dass 1871 \u201anicht demokratisch\u2018 war \u2014 du musst erkl\u00e4ren, was die Menschen 1848 wollten (Verfassung, Mitbestimmung) und warum 1871 das nicht erf\u00fcllte. Lies mat-2-6 nochmal.", "ebene": "analyse"},
+    {"typ": "verknuepfung", "text": "In Aufgabe 1 hast du \u201aEinigung von unten\u2018 und \u201avon oben\u2018 unterschieden. Hier zeigt sich das Ergebnis: Die Einigung von oben brachte Einheit \u2014 aber eben nicht die Freiheit der Einigung von unten.", "ebene": "analyse"}
+  ],
+  "punkte": 10,
+  "afb": "III",
+  "position": 5,
+  "_meta": {
+    "bloom_level": 5,
+    "bloom_begruendung": "Bewertung mit Begr\u00fcndung (L5 Evaluieren): SuS beurteilen die Reichsgr\u00fcndung anhand des Massstabs der 1848er-Forderungen und formulieren eine eigenst\u00e4ndige Stellungnahme.",
+    "tafelbild_knoten": ["k2-6"],
+    "teilfragen": [
+      "Was wollten die Menschen 1848 erreichen?",
+      "Was war 1871 anders als 1848 erhofft?",
+      "War die Reichsgr\u00fcndung trotzdem ein Erfolg \u2014 oder eine Entt\u00e4uschung?"
+    ],
+    "erwartete_begriffe": ["Einheit", "Verfassung", "Freiheit", "Reichsgr\u00fcndung"],
+    "validierung_schwelle": 2,
+    "musterantwort": "Die Menschen k\u00e4mpften 1848 f\u00fcr Einheit und Freiheit \u2014 sie wollten ein geeintes Deutschland mit einer Verfassung, in der das Volk mitentscheiden darf. 1871 wurde die Einheit erreicht, aber nicht durch das Volk, sondern durch Bismarck und die F\u00fcrsten. Es gab keine Verfassung, die vom Volk beschlossen wurde. Die Reichsgr\u00fcndung brachte also Einheit, aber nicht die Freiheit, f\u00fcr die 1848 gek\u00e4mpft worden war."
+  }
+}

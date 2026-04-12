@@ -1,0 +1,27 @@
+{
+  "id": "mat-2-4",
+  "typ": "bildquelle",
+  "titel": "Wer bestimmt im Spiegelsaal — Kaiser oder Kanzler?",
+  "inhalt": "../../assets/img/deutscher-nationalismus-kolonialismus/img-2-1.jpg",
+  "quelle": "Anton von Werner: Die Proklamierung des Deutschen Kaiserreiches (3. Fassung, 1885). Öl auf Leinwand. Original im Auftrag Bismarcks gemalt. Wikimedia Commons.",
+  "bildunterschrift": "Anton von Werner malte dieses Gemälde 1885 im Auftrag Bismarcks. Es zeigt die Kaiserproklamation am 18. Januar 1871 im Spiegelsaal von Versailles. Auf dem Podest steht Kaiser Wilhelm I., umgeben von Fürsten und Generälen in Uniform. Achte genau darauf, wer im Bild am meisten auffällt — und wo er steht.",
+  "lizenz": "Public Domain",
+  "position": 4,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": ["mat-2-3"],
+  "ueberleitung_von": "Der Soldat erlebte im gemeinsamen Kampf ein neues Nationalgefühl. Was wurde aus diesem Zusammengehörigkeitsgefühl — und wer bestimmte die neue Ordnung?",
+  "sequenz_kontext": {
+    "vorher": {"id": "mat-2-3", "typ": "tagebuch", "kerninhalt": "Soldat im Deutsch-Französischen Krieg"},
+    "nachher": {"id": "mat-2-5", "typ": "bildquelle", "kerninhalt": "Karikatur: Bismarcks Reichsgründung"}
+  },
+  "_meta": {
+    "wortanzahl": 49,
+    "quellentyp": "sonstiges",
+    "aufbereitung": "echt",
+    "artefakt_ref": ["pb-2-1"],
+    "tafelbild_knoten_abgedeckt": ["k2-5"],
+    "perspektive": "P1: Bismarck/Machtelite — offizielle Auftragsdarstellung",
+    "erarbeitbarkeits_check": "PASS — k2-5 (Kaiserproklamation Versailles 1871) ist durch Bildunterschrift und Bildanalyse direkt erarbeitbar. Bismarck im Zentrum (nicht Wilhelm) macht Machtverhältnisse sichtbar.",
+    "trigger_flags": []
+  }
+}

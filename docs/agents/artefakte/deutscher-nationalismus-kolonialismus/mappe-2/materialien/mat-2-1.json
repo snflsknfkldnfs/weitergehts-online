@@ -1,0 +1,30 @@
+{
+  "id": "mat-2-1",
+  "typ": "quellentext",
+  "titel": "Was meinte Bismarck mit »Blut und Eisen«?",
+  "inhalt": "<p><em>Otto von Bismarck war seit 1862 Ministerpräsident von Preußen. Er verachtete den parlamentarischen Weg und setzte auf militärische Macht.</em></p>\n<blockquote><p>»Nicht durch Reden und Mehrheitsbeschlüsse werden die großen Fragen der Zeit entschieden — sondern durch Blut und Eisen.«</p></blockquote>\n<p><em>Otto von Bismarck, Rede vor der Budgetkommission des preußischen Landtags, 30. September 1862.</em></p>\n<cite>Otto von Bismarck, Rede im preußischen Landtag 1862. Sprachlich vereinfacht für Jahrgang 7.</cite>",
+  "quelle": "Otto von Bismarck, Rede vor der Budgetkommission des preußischen Landtags, 30. September 1862. Vgl. Wikipedia, Otto von Bismarck. Sprachlich vereinfacht für Jahrgang 7.",
+  "position": 1,
+  "didaktische_funktion": "einstieg",
+  "voraussetzung": [],
+  "ueberleitung_von": null,
+  "sequenz_kontext": {
+    "vorher": null,
+    "nachher": {"id": "mat-2-2", "typ": "darstellungstext", "kerninhalt": "Drei Einigungskriege"}
+  },
+  "_meta": {
+    "wortanzahl": 58,
+    "quellentyp": "sonstiges",
+    "aufbereitung": "vereinfacht",
+    "rekonstruktions_begruendung": "Originalwortlaut 'Majoritätsbeschlüsse' ersetzt durch 'Mehrheitsbeschlüsse' für R7-Verständlichkeit. Wortfolge 'Eisen und Blut' in populäre Form 'Blut und Eisen' geändert.",
+    "artefakt_ref": ["pq-2-1"],
+    "tafelbild_knoten_abgedeckt": ["k2-1", "k2-2"],
+    "quellenkritische_impulse": [
+      "Was will Bismarck mit seiner Rede erreichen?",
+      "Wie hätten die Abgeordneten der Nationalversammlung von 1848 auf diese Worte reagiert?"
+    ],
+    "perspektive": "P1: Bismarck/Machtelite",
+    "erarbeitbarkeits_check": "PASS — k2-1 (Bismarck als Ministerpräsident) und k2-2 (Blut und Eisen als Strategie) sind durch Quellentext direkt erschließbar.",
+    "trigger_flags": []
+  }
+}

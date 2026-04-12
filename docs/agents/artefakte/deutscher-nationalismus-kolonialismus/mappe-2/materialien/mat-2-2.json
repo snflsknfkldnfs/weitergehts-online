@@ -1,0 +1,25 @@
+{
+  "id": "mat-2-2",
+  "typ": "darstellungstext",
+  "titel": "Wie setzte Bismarck seine Ankündigung in die Tat um?",
+  "inhalt": "<p>Bismarck machte ernst. In nur sechs Jahren führte er drei Kriege — und schmiedete die deutschen Staaten zusammen.</p>\n<p>1864 besiegte Preußen zusammen mit Österreich das kleine Dänemark. Zwei Jahre später wandte sich Bismarck gegen den eigenen Verbündeten: 1866 schlug Preußen Österreich in nur sieben Wochen. Damit war klar — Preußen, nicht Österreich, würde Deutschland führen. Das nennt man die <strong>kleindeutsche Lösung</strong> (ein Deutschland ohne Österreich, unter preußischer Führung).</p>\n<p>Der entscheidende Krieg begann 1870. Bismarck provozierte Frankreich gezielt zum Krieg. Gegen alle Erwartungen stellten sich Bayern, Württemberg und Baden auf Preußens Seite. Der gemeinsame Kampf erzeugte etwas Neues: ein Gefühl der Zusammengehörigkeit unter Soldaten aus verschiedenen deutschen Staaten.</p>\n<cite>Eigene Darstellung auf Basis der Sachanalyse.</cite>",
+  "quelle": "Eigene Darstellung auf Basis der Sachanalyse. Vgl. Wikipedia: Deutsch-Französischer Krieg, Deutsche Reichsgründung.",
+  "position": 2,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": ["mat-2-1"],
+  "ueberleitung_von": "Bismarck erklärte, dass Einheit nur durch Militärmacht erreicht werden könne. Wie setzte er das um?",
+  "sequenz_kontext": {
+    "vorher": {"id": "mat-2-1", "typ": "quellentext", "kerninhalt": "Bismarcks »Blut und Eisen«-Rede"},
+    "nachher": {"id": "mat-2-3", "typ": "tagebuch", "kerninhalt": "Soldat im Deutsch-Französischen Krieg"}
+  },
+  "_meta": {
+    "wortanzahl": 120,
+    "aufbereitung": "rekonstruiert",
+    "rekonstruktions_begruendung": "Darstellungstext ist agent-generiert auf Basis von SKRIPT §2-§4 und INHALTSBASIS. Keine wörtliche Originalquelle, da Sachtext-Synthese.",
+    "artefakt_ref": [],
+    "tafelbild_knoten_abgedeckt": ["k2-3", "k2-4"],
+    "perspektive": "uebergreifend (P1: Bismarck/Machtelite)",
+    "erarbeitbarkeits_check": "PASS — k2-3 (Drei Einigungskriege mit Jahreszahlen 1864/66/70) und k2-4 (kleindeutsche Lösung = Deutschland ohne Österreich) sind explizit im Text formuliert und eigenständig erschließbar.",
+    "trigger_flags": ["krieg"]
+  }
+}

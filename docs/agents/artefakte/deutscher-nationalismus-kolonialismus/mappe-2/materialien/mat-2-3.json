@@ -1,0 +1,26 @@
+{
+  "id": "mat-2-3",
+  "typ": "tagebuch",
+  "titel": "Wie erlebte ein Soldat den Krieg gegen Frankreich?",
+  "inhalt": "<p><em>Im Sommer 1870 erklärte Frankreich Preußen den Krieg. Doch diesmal kämpften nicht nur Preußen — auch Bayern, Württemberger und Sachsen zogen gemeinsam ins Feld. Der folgende Eintrag ist nachempfunden.</em></p>\n<p><em>Sedan, 3. September 1870</em></p>\n<p>Gestern ist es vorbei gegangen. Der französische Kaiser hat sich ergeben. Ich kann es kaum glauben. Meine Hände zittern noch, als ich das hier schreibe. Seit Wochen marschierten wir durch Regen und Schlamm. Neben mir lief ein Bayer — wir verstanden uns kaum, aber wir teilten unser Brot. Heute Morgen standen wir zusammen auf dem Hügel und sahen die weißen Fahnen. Ein Württemberger neben mir weinte. Nicht vor Trauer — vor Erleichterung. Da oben auf dem Hügel war es egal, woher wir kamen.</p>\n<cite>Fiktiver Tagebucheintrag, historisch plausibel. Kontext: Wikipedia, Deutsch-Französischer Krieg.</cite>",
+  "quelle": "Fiktiver Tagebucheintrag, basierend auf typischen Erfahrungsberichten deutscher Soldaten 1870/71. Figur und Erlebnisse sind erfunden, historischer Kontext ist belegt. Vgl. Wikipedia: Deutsch-Französischer Krieg, Schlacht bei Sedan.",
+  "position": 3,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": ["mat-2-2"],
+  "ueberleitung_von": "In drei Kriegen besiegte Preußen Dänemark, Österreich und Frankreich. Wie erlebten die Soldaten den Krieg — und was verband sie?",
+  "sequenz_kontext": {
+    "vorher": {"id": "mat-2-2", "typ": "darstellungstext", "kerninhalt": "Drei Einigungskriege"},
+    "nachher": {"id": "mat-2-4", "typ": "bildquelle", "kerninhalt": "Kaiserproklamation im Spiegelsaal"}
+  },
+  "_meta": {
+    "wortanzahl": 104,
+    "quellentyp": "tagebuch",
+    "aufbereitung": "rekonstruiert",
+    "rekonstruktions_begruendung": "Fiktiver Tagebucheintrag. Kein Originaltagebuch eines Soldaten von 1870 frei verfügbar und für R7 zumutbar. Figur ist didaktische Konstruktion, historischer Kontext belegt in Wikipedia: Deutsch-Französischer Krieg.",
+    "artefakt_ref": ["pt-2-1"],
+    "tafelbild_knoten_abgedeckt": ["k2-3"],
+    "perspektive": "P2: Soldat — preußischer Gefreiter, Sedan 1870",
+    "erarbeitbarkeits_check": "PASS — k2-3 (Einigungskriege) wird durch das Erleben des Deutsch-Französischen Krieges und das Zusammengehörigkeitsgefühl der Soldaten verschiedener Staaten erarbeitbar.",
+    "trigger_flags": ["krieg"]
+  }
+}

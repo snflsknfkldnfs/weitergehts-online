@@ -1,0 +1,52 @@
+{
+  "id": "aufgabe-2-2",
+  "typ": "reihenfolge",
+  "frage": "Bringe Bismarcks Einigungskriege in die richtige Reihenfolge.",
+  "material_referenz": ["mat-2-2"],
+  "optionen": [
+    "Bismarck provoziert Frankreich gezielt zum Krieg",
+    "Im gemeinsamen Kampf entsteht ein deutsches Zusammengeh\u00f6rigkeitsgef\u00fchl",
+    "Preu\u00dfen und \u00d6sterreich besiegen gemeinsam D\u00e4nemark",
+    "S\u00fcddeutsche Staaten k\u00e4mpfen an Preu\u00dfens Seite",
+    "Preu\u00dfen schl\u00e4gt den fr\u00fcheren Verb\u00fcndeten \u00d6sterreich"
+  ],
+  "loesung": [
+    "Preu\u00dfen und \u00d6sterreich besiegen gemeinsam D\u00e4nemark",
+    "Preu\u00dfen schl\u00e4gt den fr\u00fcheren Verb\u00fcndeten \u00d6sterreich",
+    "Bismarck provoziert Frankreich gezielt zum Krieg",
+    "S\u00fcddeutsche Staaten k\u00e4mpfen an Preu\u00dfens Seite",
+    "Im gemeinsamen Kampf entsteht ein deutsches Zusammengeh\u00f6rigkeitsgef\u00fchl"
+  ],
+  "tipps": [
+    {
+      "stufe": 1,
+      "haertegrad": "kognitiv",
+      "text": "Lies [[mat-2-2|den Text \u00fcber die drei Einigungskriege]] (M2). Welcher Krieg war der erste?"
+    },
+    {
+      "stufe": 2,
+      "haertegrad": "strukturierend",
+      "text": "Preu\u00dfen und \u00d6sterreich besiegten zuerst gemeinsam D\u00e4nemark. Am Ende der Kette steht das neue Zusammengeh\u00f6rigkeitsgef\u00fchl."
+    },
+    {
+      "stufe": 3,
+      "haertegrad": "heuristisch",
+      "text": "Bismarck ging strategisch vor: Erst ein gemeinsamer Gegner, dann der Machtkampf mit \u00d6sterreich, schlie\u00dflich der entscheidende Krieg gegen Frankreich. Jeder Schritt baute auf dem vorherigen auf."
+    }
+  ],
+  "feedback": [
+    {"typ": "bestaetigung", "text": "Richtig. Der Krieg gegen D\u00e4nemark war Bismarcks erster Schritt \u2014 Preu\u00dfen und \u00d6sterreich k\u00e4mpften noch gemeinsam.", "ebene": "wissen"},
+    {"typ": "bestaetigung", "text": "Genau. Danach wandte sich Bismarck gegen den eigenen Verb\u00fcndeten. Der Sieg \u00fcber \u00d6sterreich machte Preu\u00dfen zur F\u00fchrungsmacht \u2014 die kleindeutsche L\u00f6sung.", "ebene": "wissen"},
+    {"typ": "bestaetigung", "text": "Richtig. Bismarck provozierte Frankreich bewusst zum Krieg \u2014 der entscheidende Schritt zur Reichsgr\u00fcndung.", "ebene": "wissen"},
+    {"typ": "bestaetigung", "text": "Genau. Bayern, W\u00fcrttemberg und Baden stellten sich auf Preu\u00dfens Seite \u2014 gegen alle Erwartungen.", "ebene": "wissen"},
+    {"typ": "bestaetigung", "text": "Richtig. Der gemeinsame Kampf erzeugte ein Zusammengeh\u00f6rigkeitsgef\u00fchl unter Soldaten aus verschiedenen deutschen Staaten.", "ebene": "verstaendnis"}
+  ],
+  "punkte": 10,
+  "afb": "I-II",
+  "position": 2,
+  "_meta": {
+    "bloom_level": 2,
+    "bloom_begruendung": "Chronologische Rekonstruktion der Einigungskriege aus dem Darstellungstext (L2 Verstehen) \u2014 zeitliche Abfolge mit kausaler Verkettung.",
+    "tafelbild_knoten": ["k2-3", "k2-4"]
+  }
+}

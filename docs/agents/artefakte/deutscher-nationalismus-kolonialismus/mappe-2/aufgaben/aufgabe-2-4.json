@@ -1,0 +1,58 @@
+{
+  "id": "aufgabe-2-4",
+  "typ": "vergleich",
+  "frage": "Vergleiche das Gem\u00e4lde und die Karikatur der Reichsgr\u00fcndung.",
+  "material_referenz": ["mat-2-4", "mat-2-5"],
+  "loesung": {
+    "dimensionen": ["Wer f\u00e4llt am meisten auf?", "Stimmung", "Absicht des Bildes"],
+    "objekte": ["Gem\u00e4lde (Anton von Werner)", "Karikatur (Niederlande)"],
+    "zellen": {
+      "Gem\u00e4lde (Anton von Werner)": {
+        "Wer f\u00e4llt am meisten auf?": "Bismarck in Wei\u00df, im Zentrum",
+        "Stimmung": "feierlich, patriotisch",
+        "Absicht des Bildes": "Verherrlichung der Reichsgr\u00fcndung"
+      },
+      "Karikatur (Niederlande)": {
+        "Wer f\u00e4llt am meisten auf?": "Wilhelm I. an der Spitze des Zuges",
+        "Stimmung": "sp\u00f6ttisch, \u00fcbertrieben",
+        "Absicht des Bildes": "Kritik an der Reichsgr\u00fcndung"
+      }
+    }
+  },
+  "tipps": [
+    {
+      "stufe": 1,
+      "haertegrad": "kognitiv",
+      "text": "Schau dir [[mat-2-4|das Gem\u00e4lde der Kaiserproklamation]] (M4) und [[mat-2-5|die niederl\u00e4ndische Karikatur]] (M5) genau an. F\u00fclle die Tabelle Zeile f\u00fcr Zeile."
+    },
+    {
+      "stufe": 2,
+      "haertegrad": "strukturierend",
+      "text": "Im Gem\u00e4lde steht Bismarck in wei\u00dfer Uniform im Zentrum \u2014 obwohl es die Kaiserproklamation ist. Was sagt das \u00fcber die Absicht des Bildes?"
+    },
+    {
+      "stufe": 3,
+      "haertegrad": "heuristisch",
+      "text": "Frage dich bei jedem Bild: Wer wird gro\u00df dargestellt? Wie soll ich mich dabei f\u00fchlen? Und warum wurde dieses Bild gemacht \u2014 um zu feiern oder um zu kritisieren?"
+    }
+  ],
+  "feedback": [
+    {"typ": "bestaetigung", "text": "Der entscheidende Unterschied liegt in der Absicht: Das Gem\u00e4lde wurde im Auftrag Bismarcks gemalt und verherrlicht die Reichsgr\u00fcndung \u2014 die Karikatur aus den Niederlanden zeigt Spott und Skepsis.", "ebene": "anwendung"},
+    {"typ": "korrektur", "text": "Beim Mittelpunkt wird oft verwechselt: Im Gem\u00e4lde steht nicht der Kaiser im Zentrum, sondern Bismarck in Wei\u00df \u2014 obwohl es seine Proklamation ist. Schau dir mat-2-4 nochmal an.", "ebene": "anwendung"},
+    {"typ": "verknuepfung", "text": "Dasselbe Ereignis, zwei v\u00f6llig verschiedene Bilder: Das zeigt, dass jede Darstellung eine Perspektive hat \u2014 und dass Quellen immer kritisch hinterfragt werden m\u00fcssen.", "ebene": "anwendung"}
+  ],
+  "punkte": 10,
+  "afb": "II",
+  "position": 4,
+  "_meta": {
+    "bloom_level": 4,
+    "bloom_begruendung": "Dimensionen-Analyse (L4 Analysieren): SuS zerlegen zwei Bildquellen entlang dreier Dimensionen und erkennen systematisch Unterschiede in Darstellung, Stimmung und Intention.",
+    "tafelbild_knoten": ["k2-5"],
+    "akzeptierte_varianten": {
+      "Gem\u00e4lde (Anton von Werner)__Wer f\u00e4llt am meisten auf?": ["Bismarck", "Bismarck im Zentrum"],
+      "Karikatur (Niederlande)__Wer f\u00e4llt am meisten auf?": ["Wilhelm I.", "der Kaiser"],
+      "Gem\u00e4lde (Anton von Werner)__Stimmung": ["feierlich", "patriotisch", "stolz"],
+      "Karikatur (Niederlande)__Stimmung": ["sp\u00f6ttisch", "satirisch", "kritisch"]
+    }
+  }
+}

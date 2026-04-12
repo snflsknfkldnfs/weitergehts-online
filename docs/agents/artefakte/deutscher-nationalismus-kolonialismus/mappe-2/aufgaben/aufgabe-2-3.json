@@ -1,0 +1,44 @@
+{
+  "id": "aufgabe-2-3",
+  "typ": "multiple-choice",
+  "frage": "Warum f\u00fchlte sich der Soldat nach der Schlacht zum ersten Mal als Deutscher?",
+  "material_referenz": ["mat-2-3"],
+  "optionen": [
+    "Weil der K\u00f6nig von Preu\u00dfen es befohlen hatte.",
+    "Weil Soldaten aus verschiedenen Staaten gemeinsam gek\u00e4mpft und gelitten hatten.",
+    "Weil Frankreich den Krieg verloren hatte und Deutschland st\u00e4rker war.",
+    "Weil alle Soldaten dieselbe Sprache gesprochen hatten."
+  ],
+  "loesung": "Weil Soldaten aus verschiedenen Staaten gemeinsam gek\u00e4mpft und gelitten hatten.",
+  "tipps": [
+    {
+      "stufe": 1,
+      "haertegrad": "kognitiv",
+      "text": "Lies [[mat-2-3|den Tagebucheintrag des Soldaten]] (M3). Achte darauf, was er \u00fcber die anderen Soldaten schreibt."
+    },
+    {
+      "stufe": 2,
+      "haertegrad": "strukturierend",
+      "text": "Es liegt nicht an der Sprache \u2014 der Soldat schreibt, dass er den Bayern kaum verstanden hat. Eine Antwort kannst du also ausschlie\u00dfen."
+    },
+    {
+      "stufe": 3,
+      "haertegrad": "heuristisch",
+      "text": "Der Soldat beschreibt, wie er trotz aller Unterschiede etwas mit den anderen teilte \u2014 Brot, Leid, Erleichterung. Frage dich: Was verbindet Menschen, die sich kaum verstehen?"
+    }
+  ],
+  "feedback": [
+    {"typ": "korrektur", "text": "Nicht ganz. Nat\u00fcrlich gab es Befehle \u2014 aber der Soldat beschreibt ein Gef\u00fchl, nicht einen Befehl. Er sp\u00fcrte Verbundenheit beim gemeinsamen Kampf.", "ebene": "verstaendnis"},
+    {"typ": "bestaetigung", "text": "Genau. Das gemeinsame Erleben \u2014 der Marsch, das geteilte Brot, die Erleichterung nach der Schlacht \u2014 schuf ein neues Zusammengeh\u00f6rigkeitsgef\u00fchl.", "ebene": "verstaendnis"},
+    {"typ": "korrektur", "text": "Der Sieg spielte eine Rolle, aber der Soldat beschreibt etwas anderes: nicht St\u00e4rke, sondern die Verbundenheit mit den anderen Soldaten.", "ebene": "verstaendnis"},
+    {"typ": "korrektur", "text": "Im Gegenteil \u2014 der Soldat schreibt, dass er den Bayern kaum verstanden hat. Trotzdem f\u00fchlte er sich verbunden. Es war nicht die Sprache, die sie einte.", "ebene": "verstaendnis"}
+  ],
+  "punkte": 10,
+  "afb": "II",
+  "position": 3,
+  "_meta": {
+    "bloom_level": 3,
+    "bloom_begruendung": "Transfer-MC (L3 Anwenden): SuS m\u00fcssen aus dem Tagebuchtext ableiten, welcher Mechanismus das Zusammengeh\u00f6rigkeitsgef\u00fchl erzeugte \u2014 nicht blo\u00df Fakten wiedergeben.",
+    "tafelbild_knoten": ["k2-3"]
+  }
+}

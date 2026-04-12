@@ -1,0 +1,30 @@
+{
+  "mappe": "2",
+  "ueberleitungen": [
+    {
+      "von": "mat-2-1",
+      "nach": "mat-2-2",
+      "text": "Bismarck war klar: Nicht Reden, sondern Waffen sollten Deutschland einen. Doch wie machte er seine Ankündigung wahr?"
+    },
+    {
+      "von": "mat-2-2",
+      "nach": "mat-2-3",
+      "text": "In sechs Jahren führte Bismarck drei Kriege. Aber wie erlebten die Soldaten, die dort kämpfen mussten, den Krieg?"
+    },
+    {
+      "von": "mat-2-3",
+      "nach": "mat-2-4",
+      "text": "Auf dem Hügel bei Sedan war es den Soldaten egal, woher sie kamen — sie waren zusammen. Doch wer bestimmte, was aus diesem Zusammenhalt wurde?"
+    },
+    {
+      "von": "mat-2-4",
+      "nach": "mat-2-5",
+      "text": "Das Gemälde feiert die Kaiserproklamation als großen Moment. Aber sahen alle Länder das genauso?"
+    },
+    {
+      "von": "mat-2-5",
+      "nach": "mat-2-6",
+      "text": "Von außen wurde die Reichsgründung mit Skepsis betrachtet. Doch wie erlebte jemand in Deutschland die Reichsgründung, der 1848 für Freiheit gekämpft hatte?"
+    }
+  ]
+}

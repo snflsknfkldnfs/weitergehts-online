@@ -1,0 +1,27 @@
+{
+  "id": "mat-2-5",
+  "typ": "bildquelle",
+  "titel": "Wie sahen die Nachbarn die Reichsgründung?",
+  "inhalt": "../../assets/img/deutscher-nationalismus-kolonialismus/img-2-2.jpg",
+  "quelle": "Niederländische Karikatur zur deutschen Reichsgründung (1871). Spotprent over de Duitse eenwording, RP-P-1914-4565. Rijksmuseum Amsterdam, via Wikimedia Commons.",
+  "bildunterschrift": "Niederländische Karikatur zur Reichsgründung, 1871. Ein feierlicher Zug bewegt sich durch den Spiegelsaal von Versailles: Wilhelm I. an der Spitze, gefolgt von Fürsten und Militärs. Auch Bismarck ist im Zug zu sehen. Beachte: Diese Karikatur stammt aus den Niederlanden — also aus der Sicht eines Nachbarlandes.",
+  "lizenz": "CC0 (Public Domain Dedication)",
+  "position": 5,
+  "didaktische_funktion": "vertiefung",
+  "voraussetzung": ["mat-2-4"],
+  "ueberleitung_von": "Das Gemälde zeigt Bismarck im Zentrum der Kaiserproklamation. Wie sahen andere Länder die Reichsgründung — war sie wirklich ein Grund zum Feiern?",
+  "sequenz_kontext": {
+    "vorher": {"id": "mat-2-4", "typ": "bildquelle", "kerninhalt": "Kaiserproklamation im Spiegelsaal"},
+    "nachher": {"id": "mat-2-6", "typ": "tagebuch", "kerninhalt": "Enttäuschter Demokrat erlebt 1871"}
+  },
+  "_meta": {
+    "wortanzahl": 46,
+    "quellentyp": "sonstiges",
+    "aufbereitung": "echt",
+    "artefakt_ref": ["pb-2-2"],
+    "tafelbild_knoten_abgedeckt": ["k2-5"],
+    "perspektive": "P3: Außenperspektive — niederländische Karikatur, kritisch-satirisch",
+    "erarbeitbarkeits_check": "PASS — k2-5 (Kaiserproklamation) wird durch kontrastive Bildanalyse vertieft. Karikatur liefert kritische Außensicht auf dasselbe Ereignis wie mat-2-4, ermöglicht Perspektivvergleich.",
+    "trigger_flags": []
+  }
+}
