@@ -390,171 +390,56 @@ Damit wird der eigentliche Wert eines bpb-Dossiers in der Escape-Game-Pipeline *
 - **Punkt 14**: Neues Artefakt `primaerquellen_katalog_game.json` mit Schema aus §12.4.
 - **Punkt 15**: Q-Gate "Q-STRUKTUR-bpb-Coverage" (Runde 4 oder Phase 0.1).
 - **Punkt 16**: PD-Pruef-Workflow `bpb_primaerquellen_extraktor`: Invarianten PQI1-PQI6, Autor-Todesjahr via `mcp__wikipedia__get_summary`, amtliche Werke per §5 UrhG-Regel auto-PD. Bei Unsicherheit konservativer Abbruch.
-- **Punkt 17 (NEU)**: bpb-Discovery-Mechanismus mit dreistufigem Hybrid-Modell (§14). Statische Registry + Discovery-Sub-Agent + User-Bestaetigungsschritt. Pflicht-User-Bestaetigung vor jedem Phase-0.2.Z-Start.
+- **Punkt 17 (NEU, refaktoriert 2026-04-12)**: bpb-Discovery = optionale URL-Eingabe durch Lehrkraft (§14). Kein Registry-Artefakt, kein Discovery-Sub-Agent. Wikipedia-only-Pipeline muss allein zu hinreichender Qualitaet fuehren. bpb ist optionale Anreicherung.
 
 ---
 
 ## §14 — bpb-Discovery-Mechanismus (Spezifikation)
 
-**Problem:** Wie weiss die Pipeline, welche bpb-Dossiers fuer ein gegebenes Game-Thema relevant sind? Reine User-Abfrage ueberlastet den Lehrer, reine Auto-Suche produziert false-positives.
+> **REFAKTORIERT 2026-04-12 (User-Direktive):** Dreistufiges Hybrid-Modell (Registry + Discovery-Agent + User-Gate) ersetzt durch einfache Lehrkraft-URL-Eingabe. Begruendung: Registry/Discovery-Agent steht in keinem Verhaeltnis zum Aufwand. URL-Recherche ist fuer Lehrkraft einfach. Wikipedia-only-Pipeline muss ohnehin zu hinreichenden qualitativen Ergebnissen fuehren. Originale §14.1-§14.8 sind obsolet.
 
-**Loesung:** Dreistufiges Hybrid-Modell mit Pflicht-User-Bestaetigung als Sicherheitsanker.
+**Gestrichene Artefakte:**
+- `bpb_dossier_registry.json` — entfaellt (keine statische Registry)
+- `bpb_discovery_agent` — entfaellt (kein Discovery-Sub-Agent)
+- `bpb_discovery_bestaetigung.json` — entfaellt (keine persistierte Bestaetigungslogik)
 
-### 14.1 — Stufe 1: Statische Registry `bpb_dossier_registry.json`
+### 14.1 — Mechanismus: Optionale URL-Eingabe durch Lehrkraft
 
-**Ort:** `escape-game-generator/data/bpb_dossier_registry.json` (Generator-Repo, nicht weitergehts-online/)
-**Pflege:** PM-Handarbeit, einmaliger Aufbau + gelegentliche Updates
-**Umfang Initial:** 10-20 Dossiers fuer die GPG-Lehrplan-Schwerpunkte Mittelschule 7-10 (Erster Weltkrieg, Weimarer Republik, NS-Zeit, 2. Weltkrieg, Kalter Krieg, Mauerbau/Wiedervereinigung, EU, Menschenrechte, Demokratie-Grundlagen, Migration, Klima).
-**Schema:**
+**Prinzip:** Die Lehrkraft gibt bei Game-Erstellung optional eine bpb-Dossier-URL an. Gibt sie keine an, laeuft die Pipeline ausschliesslich ueber Wikipedia. bpb ist und bleibt eine optionale Anreicherung, keine Voraussetzung.
+
+**Input-Feld in Game-Metadaten:**
 ```
 {
-  "registry_version": "1.0",
-  "last_updated": "2026-04-11",
-  "entries": [
-    {
-      "id": "bpb-dossier-erster-weltkrieg",
-      "titel": "Der Erste Weltkrieg",
-      "url_root": "https://www.bpb.de/themen/erster-weltkrieg-weimar/ersterweltkrieg/",
-      "thema_tags": ["erster-weltkrieg", "wk1", "1914", "julikrise", "kaiserreich-ende"],
-      "lehrplan_bezug_gpg": ["M7_L5", "R9_G3"],
-      "autor_primaer": "Wolfgang Kruse",
-      "unterartikel_anzahl": 13,
-      "qualitaet_pm_note": "Fachautor WBG-Standard, dichte Primaerquellenzitate",
-      "zuletzt_pm_geprueft": "2026-04-11"
-    }
-  ]
+  "bpb_dossier_url": "https://www.bpb.de/themen/erster-weltkrieg-weimar/ersterweltkrieg/"
+  // optional, kann null/leer sein
 }
 ```
 
-**Verantwortung:** PM pflegt und erweitert. Jede neue Generierung eines Games zu einem Thema, fuer das noch kein Registry-Eintrag existiert, triggert einen manuellen Registry-Pflege-Schritt (alternativ Stufe 2).
+**Validierung:** Einfacher URL-Pattern-Check (`bpb.de/themen/` oder `bpb.de/shop/zeitschriften/`). Kein inhaltlicher Pre-Check. Fehlschlag bei ungueltiger URL = Abbruch bpb-Kanal, kein Pipeline-Stopp.
 
-### 14.2 — Stufe 2: Discovery-Sub-Agent `bpb_discovery_agent`
-
-**Phase:** Phase 0.0 (vor Phase 0.1 Kern-Artikel-Ingest), optional aktivierbar per Game-Metadaten-Flag `nutze_bpb_quelle: true`.
-
-**Input:**
-- `thema_lehrplan`: Klartext-Thema des Games (z.B. "Erster Weltkrieg — Ursachen und Ausbruch")
-- `tag_set`: aus Game-Metadaten, z.B. ["erster-weltkrieg", "julikrise", "kaiserreich"]
-- `lehrplan_code`: z.B. "M7_L5" (optional)
-
-**Workflow:**
-1. **Registry-Lookup (primaer):** Match gegen `thema_tags` und `lehrplan_bezug_gpg` in Registry. Bei Treffer: Kandidat mit `quelle: "registry"`, `relevanz_score: 1.0`.
-2. **WebSearch-Fallback (sekundaer, nur bei Registry-Miss oder unvollstaendigem Treffer):** Query `site:bpb.de dossier [thema_lehrplan]`. Heuristik auf URL-Pattern `/themen/[bereich]/[dossier-slug]/` oder `/shop/zeitschriften/[izpb|apuz]/[dossier-slug]/`. Ausschluss: Shop-Produkt-Seiten ohne Volltext, Video-Only-Seiten.
-3. **Kandidaten-Scoring:** Titel-Keyword-Match + URL-Pattern-Match + PM-gepflegte Quality-Note (wenn aus Registry). Score 0.0-1.0.
-4. **Ausgabe:** sortierte Kandidaten-Liste, top 3-5.
-
-**Output-Schema:**
-```
-{
-  "game_id": "gpg-erster-weltkrieg-ursachen",
-  "thema_lehrplan": "Erster Weltkrieg — Ursachen und Ausbruch",
-  "kandidaten": [
-    {
-      "id": "bpb-dossier-erster-weltkrieg",
-      "titel": "Der Erste Weltkrieg",
-      "url_root": "https://www.bpb.de/themen/erster-weltkrieg-weimar/ersterweltkrieg/",
-      "summary_1_satz": "13-teiliges Fach-Dossier zum WK1 von Wolfgang Kruse (Univ. Hagen), CC BY-NC-ND, enthaelt zentrale Primaerquellen (Thronrede, Blankoscheck, Schlieffen-Plan).",
-      "quelle": "registry",
-      "relevanz_score": 1.0,
-      "pm_geprueft": true,
-      "unterartikel_relevant": [
-        "/155302/ausloesung-und-beginn-des-krieges/",
-        "/155304/kriegsverlauf-und-aussenpolitik/"
-      ]
-    }
-  ]
-}
-```
-
-**Tools:** Registry-Datei-Lookup + WebSearch. Kein markdownify, kein WebFetch in Stufe 2 (Inhalt wird erst in Stufe 4 geladen). Stufe 2 ist bewusst leichtgewichtig.
-
-### 14.3 — Stufe 3: User-Bestaetigung (PFLICHT-Gate)
-
-**Prinzip:** Kein Auto-Ingest. Der Lehrer sieht die Kandidaten, markiert was er verwenden will, und bestaetigt. Das ist der Qualitaets-Sicherheitsanker.
-
-**Darstellung (PM-Prompt-Format fuer Claude-Code-Uebergabe):**
-```
-bpb-Discovery fuer Game "[thema]" hat folgende Kandidaten gefunden:
-
-1. [titel]
-   URL: [url_root]
-   [summary_1_satz]
-   Quelle: [registry|websearch]  Relevanz: [score]
-   Empfohlene Unterartikel fuer diesen Game-Scope:
-     a) [unterartikel_relevant_1]
-     b) [unterartikel_relevant_2]
-
-   [ ] Diesen Dossier verwenden?   [ja/nein]
-   [ ] Welche Unterartikel?         [alle/keine/a,b,...]
-
-2. [naechster Kandidat]
-...
-
-Bitte bestaetigen und fortfahren.
-```
-
-**User-Entscheidungen sind persistent:** werden in `docs/agents/artefakte/[game-id]/bpb_discovery_bestaetigung.json` abgelegt mit Zeitstempel. Bei spaeterer Re-Generierung wird die Bestaetigung wiederverwendet (ausser explizit invalidiert).
-
-**Fallback bei "nein" fuer alle Kandidaten:** Phase 0.2.Z wird uebersprungen, Game laeuft wie bisher ueber Wikipedia-Pipeline allein. bpb ist und bleibt optional.
-
-### 14.4 — Stufe 4: `bpb_primaerquellen_extraktor` auf bestaetigten URLs
-
-Der in §12.4 spezifizierte Sub-Agent erhaelt als Input ausschliesslich die vom User in Stufe 3 bestaetigten Unterartikel-URLs. Er arbeitet auf jedem Unterartikel den vollen PD-Pruef-Workflow ab (markdownify → Regex auf Primaerquellen-Zitate → Autor-Todesjahr-Lookup → Original-Archiv-Suche → primaerquellen_katalog_game.json).
-
-**Parallel dazu:** der Medien-Kuratierungs-Hook (§12.2 Muster B) in Sub-Agent 0.2.M wird aktiviert. 0.2.M liest die bestaetigten bpb-Unterartikel, inventarisiert Medien, matcht gegen Commons-Funde, markiert Treffer als `bpb_verifiziert: true`.
-
-### 14.5 — Diagramm Discovery-Flow
+### 14.2 — Workflow bei vorhandener URL
 
 ```
-Game-Metadaten (thema_lehrplan, tag_set, nutze_bpb_quelle)
+Lehrkraft gibt bpb-URL an (oder nicht)
         │
         ▼
-┌────────────────────────┐
-│ Stufe 1: Registry      │◄──── bpb_dossier_registry.json (PM-gepflegt)
-│ Lookup nach Tag/Lehrpl.│
-└────────────────────────┘
-        │
-        ▼ (Treffer/Miss)
-┌────────────────────────┐
-│ Stufe 2: Fallback      │◄──── WebSearch site:bpb.de
-│ Nur bei Miss           │
-└────────────────────────┘
-        │
-        ▼
-   Kandidaten-Liste
-        │
-        ▼
-┌────────────────────────┐
-│ Stufe 3: User-Bestaet. │◄──── Lehrer markiert verwenden/nicht
-│ PFLICHT-Gate           │      bpb_discovery_bestaetigung.json
-└────────────────────────┘
-        │
-        ▼ (nur bestaetigte URLs)
-┌────────────────────────┐
-│ Stufe 4: Ingest        │
-│ - bpb_primaerquellen_  │
-│   extraktor            │
-│ - 0.2.M Medien-bpb-Tag │
-└────────────────────────┘
-        │
-        ▼
-   primaerquellen_katalog_game.json
-   medien_katalog_game.json (mit bpb_verifiziert=true)
+   URL vorhanden?
+   ├── NEIN → Pipeline laeuft Wikipedia-only (Standard)
+   └── JA  → URL-Validierung (Pattern-Check)
+              │
+              ▼
+         markdownify auf URL + Unterartikel
+              │
+              ├── bpb_primaerquellen_extraktor (Phase 0.2.Z)
+              │   → primaerquellen_katalog_game.json
+              │
+              └── Medien-Kuratierungs-Hook (Phase 0.2.M)
+                  → medien_katalog_game.json (bpb_verifiziert=true)
 ```
 
-### 14.6 — Registry-Initial-Befuellung als separater PM-Task
+### 14.3 — Design-Entscheidung
 
-Der Aufbau der ersten Registry-Version ist ein **eigenstaendiger PM-Task**, nicht Teil dieses R0.7-Befunds. Vorschlag: Nach R1 (v3.11.1 Bugfix-Bundle) abgeschlossen, in Runde 2 als Arbeitspaket 2b "bpb-Registry Initial-Aufbau" einziehen. Scope: 10-20 Dossiers fuer die tatsaechlich geplanten Games 2026-2027 (Erster Weltkrieg, Weimar, NS-Zeit als Priositaet 1; Kalter Krieg, EU, Demokratie als Prioritaet 2).
+Die Lehrkraft kennt ihr Thema, ihren Lehrplan-Bezug und die bpb-Angebotsstruktur besser als jede Heuristik. Die bpb-Recherche ist ein einmaliger Aufwand pro Thema (nicht pro Generierung) und trivial: `bpb.de → Themen → [Bereich]` oder Google `site:bpb.de [thema] dossier`.
 
-### 14.7 — Warum nicht reine User-Abfrage
-
-- Lehrer-Workload: URL-Recherche fuer jedes Game ist keine PM-skalierbare Praxis.
-- Registry ist einmal-gepflegt, dann stabil. 10 Dossiers decken 80 % der Lehrplan-Themen.
-- Stufe-3-Bestaetigung garantiert, dass der Lehrer trotzdem die Kontrolle hat.
-
-### 14.8 — Warum nicht rein automatisch
-
-- WebSearch-Treffer sind nicht didaktisch qualifiziert. Ein bpb-APuZ-Fachbeitrag fuer Oberstufen-Politik-LK ist URL-relevant, aber fuer Mittelstufen-GPG-Game niveau-ungeeignet.
-- Der Lehrer hat Lehrplan- und Lerngruppen-Wissen, das der Agent nicht hat.
-- Ein falsch ingestierter bpb-Dossier-Inhalt verschwendet Pipeline-Zeit (PD-Pruefung, Original-Archiv-Suche, Katalog-Bau) — die Kosten eines false-positive sind hoch genug, um Stufe 3 zu rechtfertigen.
+Wikipedia-Kern-Artikel sind die primaere Quelle und muessen allein zu hinreichender Qualitaet fuehren. bpb erweitert, ersetzt nicht.
 

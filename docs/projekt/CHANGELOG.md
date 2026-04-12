@@ -4,6 +4,28 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-12 — R0.7-Refaktor: Discovery-Mechanismus vereinfacht auf Lehrkraft-URL-Eingabe
+
+**Phase:** R0.7 Finale Vereinfachung nach User-Direktive
+**Modus:** EXECUTE (PM) — Spezifikations-Schaerfung
+
+**User-Direktive:** Discovery-Hybrid (Registry + Discovery-Agent + User-Gate) steht in keinem Verhaeltnis zum Aufwand. URL-Recherche ist fuer Lehrkraft einfach. Wikipedia-only-Pipeline muss ohnehin zu hinreichenden qualitativen Ergebnissen fuehren.
+
+**Gestrichene Artefakte:**
+- `bpb_dossier_registry.json` — entfaellt
+- `bpb_discovery_agent` (Sub-Agent) — entfaellt
+- `bpb_discovery_bestaetigung.json` — entfaellt
+
+**Neuer Mechanismus (§14 komplett ersetzt):**
+Lehrkraft gibt optional `bpb_dossier_url` in Game-Metadaten an. URL vorhanden → markdownify + `bpb_primaerquellen_extraktor` + Medien-Hook. Keine URL → Wikipedia-only (Standard).
+
+**Edits:**
+- Befund §14: 8 Subsektionen ersetzt durch §14.1 (URL-Eingabe), §14.2 (Workflow-Diagramm), §14.3 (Design-Entscheidung).
+- Befund §13 Punkt 17: refaktoriert.
+- STATUS.md Punkt 17 + R0.7-Header: refaktoriert.
+
+---
+
 ## 2026-04-11 — R0.7-Refaktor: Streichung `bpb_zitat_kurator` + Spezifikation bpb-Discovery-Mechanismus (§14)
 
 **Phase:** R0.7 Finale Refaktor nach User-Direktive
