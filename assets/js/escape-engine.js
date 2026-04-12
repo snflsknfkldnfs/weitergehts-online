@@ -3000,8 +3000,18 @@ var EscapeEngine = (function () {
   function _checkFreitextCode(section, aufgabe, index, textarea) {
     var userText = (textarea.value || '').trim();
 
+    // Leere Abgabe akzeptieren: Aufgabe gilt als erledigt, Musterantwort wird angezeigt
     if (!userText) {
-      Core.feedback.showInfo(section, 'Bitte gib eine Antwort ein.');
+      var muster = (aufgabe._meta && aufgabe._meta.musterantwort) || '';
+      var hinweis = muster
+        ? 'Du hast nichts eingegeben. Hier ist eine Musterantwort: ' + muster
+        : 'Du hast nichts eingegeben — die Aufgabe wird als erledigt gewertet.';
+      Core.feedback.showInfo(section, hinweis);
+      saveProgress(_state.mappeId, index, true);
+      _saveAntwortState(_state.mappeId, index, { text: '', skipped: true });
+      section.classList.add('aufgabe--solved');
+      textarea.disabled = true;
+      _updateFortschritt(_getMappe(_state.mappeId), loadProgress(_state.mappeId));
       return;
     }
 
@@ -3388,13 +3398,42 @@ var EscapeEngine = (function () {
     var wFragen = aufgabe.w_fragen || [];
     var loesung = aufgabe.loesung || {};
 
-    // Pruefen ob alle Felder ausgefuellt
-    var alleAusgefuellt = true;
+    // Pruefen ob alle Felder leer (= leere Abgabe → akzeptieren mit Musterantworten)
+    var alleeLeer = true;
+    var mindEinesAusgefuellt = false;
     for (var k in textareas) {
-      if (!(textareas[k].value || '').trim()) { alleAusgefuellt = false; break; }
+      if ((textareas[k].value || '').trim()) { alleeLeer = false; mindEinesAusgefuellt = true; break; }
+    }
+    if (alleeLeer) {
+      // Leere Abgabe: Musterantworten anzeigen, Aufgabe als erledigt werten
+      for (var sk in textareas) {
+        var musterText = String(loesung[sk] || '');
+        if (musterText) {
+          var hintEl = textareas[sk].parentElement.querySelector('.quellenkritik__muster');
+          if (!hintEl) {
+            hintEl = document.createElement('p');
+            hintEl.className = 'quellenkritik__muster';
+            textareas[sk].parentElement.appendChild(hintEl);
+          }
+          hintEl.textContent = 'Musterantwort: ' + musterText;
+        }
+        textareas[sk].disabled = true;
+      }
+      Core.feedback.showInfo(section, 'Du hast nichts eingegeben. Die Musterantworten werden angezeigt.');
+      saveProgress(_state.mappeId, index, true);
+      _saveAntwortState(_state.mappeId, index, { antworten: {}, skipped: true });
+      section.classList.add('aufgabe--solved');
+      _updateFortschritt(_getMappe(_state.mappeId), loadProgress(_state.mappeId));
+      return;
+    }
+
+    // Pruefen ob alle Felder ausgefuellt (bei teilweiser Eingabe)
+    var alleAusgefuellt = true;
+    for (var k2 in textareas) {
+      if (!(textareas[k2].value || '').trim()) { alleAusgefuellt = false; break; }
     }
     if (!alleAusgefuellt) {
-      Core.feedback.showInfo(section, 'Bitte beantworte alle Fragen.');
+      Core.feedback.showInfo(section, 'Bitte beantworte alle Fragen oder sende leer ab.');
       return;
     }
 
