@@ -14,6 +14,7 @@
       "titel": "Der Traum von der Einheit",
       "beschreibung": "Von der Nationalbewegung über das Hambacher Fest und die Märzrevolution bis zum Scheitern der Paulskirche 1849.",
       "freischalt_code": "EINHEIT",
+      "vorab_freigeschaltet": true,
       "einstieg": {
         "narrativ": "<p>In der Dokumentenmappe liegt ein vergilbtes Tagebuch. Es gehörte einem jungen Studenten, der 1817 auf die Wartburg reiste — voller Hoffnung auf ein geeintes Deutschland. Was er dort erlebte, war der Anfang einer Bewegung, die ganz Deutschland verändern sollte.</p>",
         "problemstellung": "Warum kämpften Menschen 1848 für ein geeintes Deutschland?"
