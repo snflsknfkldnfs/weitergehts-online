@@ -959,20 +959,23 @@ var EscapeEngine = (function () {
     figure.appendChild(img);
 
     // v3.8 U4: Bildunterschrift und Quellenangabe getrennt
+    // v3.12: innerHTML statt createTextNode — rendert <strong>, &bdquo; etc.
     var hasCaption = mat.bildunterschrift || mat.quelle || mat.lizenz;
     if (hasCaption) {
       var figcaption = document.createElement('figcaption');
       if (mat.bildunterschrift) {
-        figcaption.appendChild(document.createTextNode(mat.bildunterschrift));
+        var buSpan = document.createElement('span');
+        buSpan.innerHTML = mat.bildunterschrift;
+        figcaption.appendChild(buSpan);
       }
       var quellTeile = [];
       if (mat.quelle) quellTeile.push(mat.quelle);
       if (mat.lizenz) quellTeile.push(mat.lizenz);
       if (quellTeile.length > 0) {
-        if (mat.bildunterschrift) figcaption.appendChild(document.createTextNode(' — '));
+        if (mat.bildunterschrift) figcaption.appendChild(document.createTextNode(' \u2014 '));
         var quelleSpan = document.createElement('span');
         quelleSpan.className = 'material__quelle-teil';
-        quelleSpan.textContent = quellTeile.join(' — ');
+        quelleSpan.textContent = quellTeile.join(' \u2014 ');
         figcaption.appendChild(quelleSpan);
       }
       figure.appendChild(figcaption);
@@ -1003,14 +1006,17 @@ var EscapeEngine = (function () {
     figure.appendChild(inhaltDiv);
 
     // v3.8 U4: Bildunterschrift und Quellenangabe getrennt
+    // v3.12: innerHTML statt createTextNode — rendert <strong>, &bdquo; etc.
     var hasCaption = mat.bildunterschrift || mat.quelle;
     if (hasCaption) {
       var figcaption = document.createElement('figcaption');
       if (mat.bildunterschrift) {
-        figcaption.appendChild(document.createTextNode(mat.bildunterschrift));
+        var buSpan = document.createElement('span');
+        buSpan.innerHTML = mat.bildunterschrift;
+        figcaption.appendChild(buSpan);
       }
       if (mat.quelle) {
-        if (mat.bildunterschrift) figcaption.appendChild(document.createTextNode(' — '));
+        if (mat.bildunterschrift) figcaption.appendChild(document.createTextNode(' \u2014 '));
         var quelleSpan = document.createElement('span');
         quelleSpan.className = 'material__quelle-teil';
         quelleSpan.textContent = mat.quelle;

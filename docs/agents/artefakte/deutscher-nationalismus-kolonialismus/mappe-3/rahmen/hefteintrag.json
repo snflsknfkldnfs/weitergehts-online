@@ -1,28 +1,28 @@
 {
-  "stundenfrage": "Warum teilten europäische Mächte Afrika unter sich auf \u2014 ohne die Afrikaner zu fragen?",
+  "stundenfrage": "Warum teilten europ\u00e4ische M\u00e4chte Afrika unter sich auf \u2014 ohne die Afrikaner zu fragen?",
   "ordnungsmuster": "konzept-beispiel",
   "scpl": {
     "situation": {
-      "kontextsatz": "Nach der Reichsgründung 1871 wollte Deutschland als Großmacht auch Kolonien besitzen \u2014 wie Großbritannien und Frankreich.",
+      "kontextsatz": "Nach der Reichsgr\u00fcndung 1871 wollte Deutschland als Gro\u00dfmacht auch Kolonien besitzen \u2014 wie Gro\u00dfbritannien und Frankreich.",
       "fachbegriffe": []
     },
     "complication": [
       {
-        "schritt": "Kaufleute suchten Rohstoffe, die Presse forderte Prestige — Deutschland verlangte seinen 'Platz an der Sonne': Imperialismus.",
+        "schritt": "Deutschland wollte Kolonien \u2014 f\u00fcr Rohstoffe und Ansehen. Politiker forderten einen \u201ePlatz an der Sonne\u201c.",
         "typ": "konzeptuell",
-        "fachbegriff": "Imperialismus",
+        "fachbegriff": "Platz an der Sonne",
         "darstellung": null,
         "erarbeitbarkeit": "DIRECT"
       },
       {
-        "schritt": "Auf der Berliner Konferenz 1884/85 teilten 14 europäische Staaten Afrika auf \u2014 kein einziger Afrikaner saß am Tisch: Berliner Konferenz.",
+        "schritt": "Auf der Berliner Konferenz 1884/85 teilten 14 europ\u00e4ische Staaten Afrika unter sich auf \u2014 kein einziger Afrikaner sa\u00df am Tisch.",
         "typ": "kontrastiv",
         "fachbegriff": "Berliner Konferenz",
         "darstellung": null,
         "erarbeitbarkeit": "DIRECT"
       },
       {
-        "schritt": "Innerhalb weniger Jahrzehnte war fast ganz Afrika in europäischer Hand \u2014 nur Äthiopien und Liberia blieben frei: Wettlauf um Afrika.",
+        "schritt": "Innerhalb weniger Jahrzehnte war fast ganz Afrika in europ\u00e4ischer Hand \u2014 nur \u00c4thiopien und Liberia blieben frei: Wettlauf um Afrika.",
         "typ": "kausal",
         "fachbegriff": "Wettlauf um Afrika",
         "darstellung": null,
@@ -30,12 +30,12 @@
       }
     ],
     "problem": {
-      "satz": "Europäische Mächte unterwarfen einen ganzen Kontinent politisch und wirtschaftlich \u2014 ohne Rücksicht auf die dort lebenden Menschen: Kolonialisierung.",
+      "satz": "Europ\u00e4ische M\u00e4chte unterwarfen einen ganzen Kontinent politisch und wirtschaftlich \u2014 ohne R\u00fccksicht auf die dort lebenden Menschen: Kolonialisierung.",
       "fachbegriff": "Kolonialisierung"
     },
     "loesung": [
-      "Das Deutsche Reich wollte als Großmacht Kolonien \u2014 aus Wirtschaftsinteresse und nationalem Prestige.",
-      "Auf der Berliner Konferenz 1884 teilten Europäer Afrika auf \u2014 ohne einen Afrikaner zu fragen."
+      "Das Deutsche Reich wollte als Gro\u00dfmacht Kolonien \u2014 f\u00fcr Rohstoffe und Ansehen.",
+      "Auf der Berliner Konferenz 1884 teilten Europ\u00e4er Afrika auf \u2014 ohne einen Afrikaner zu fragen."
     ]
   },
   "transfer": {
@@ -43,23 +43,21 @@
   },
   "voraussetzungen": ["k2-6"],
   "knoten": [
-    {"id": "k3-1", "text": "Deutsches Kaiserreich als Großmacht", "typ": "kategorie"},
-    {"id": "k3-2", "text": "Imperialismus", "typ": "kernbegriff", "merksatz": "Streben eines Staates, andere Länder zu unterwerfen"},
-    {"id": "k3-3", "text": "'Platz an der Sonne'", "typ": "kernbegriff", "merksatz": "Deutschlands Forderung nach Kolonien und Weltgeltung"},
+    {"id": "k3-1", "text": "Deutsches Kaiserreich als Gro\u00dfmacht", "typ": "kategorie"},
+    {"id": "k3-3", "text": "\u201ePlatz an der Sonne\u201c", "typ": "kernbegriff", "merksatz": "Deutschlands Forderung nach Kolonien und Weltgeltung"},
     {"id": "k3-4", "text": "Berliner Konferenz 1884/85", "typ": "ereignis"},
     {"id": "k3-5", "text": "Wettlauf um Afrika", "typ": "prozess"},
-    {"id": "k3-6", "text": "Kolonialisierung Afrikas", "typ": "wirkung", "merksatz": "Fast ganz Afrika in europäischer Hand bis 1913"}
+    {"id": "k3-6", "text": "Kolonialisierung Afrikas", "typ": "wirkung", "merksatz": "Fast ganz Afrika in europ\u00e4ischer Hand bis 1913"}
   ],
   "verbindungen": [
-    {"von": "k3-1", "nach": "k3-2", "label": "treibt an", "typ": "kausal"},
-    {"von": "k3-2", "nach": "k3-3", "label": "fordert", "typ": "kausal"},
-    {"von": "k3-3", "nach": "k3-4", "label": "führt zu", "typ": "temporal"},
-    {"von": "k3-4", "nach": "k3-5", "label": "löst aus", "typ": "kausal"},
+    {"von": "k3-1", "nach": "k3-3", "label": "fordert", "typ": "kausal"},
+    {"von": "k3-3", "nach": "k3-4", "label": "f\u00fchrt zu", "typ": "temporal"},
+    {"von": "k3-4", "nach": "k3-5", "label": "l\u00f6st aus", "typ": "kausal"},
     {"von": "k3-5", "nach": "k3-6", "label": "Ergebnis", "typ": "schlussfolgerung"}
   ],
   "_q_gate": {
-    "G2": "3 C-Schritte (Limit 3), 2 Merksätze (Limit 2) \u2014 PASS",
-    "G5": "Längster Merksatz 14W \u2014 PASS (Limit 15W)",
-    "G6": "~106W \u2014 PASS (harte Grenze 120W)"
+    "G2": "3 C-Schritte (Limit 3), 1 Merksatz (Limit 2) \u2014 PASS",
+    "G5": "L\u00e4ngster Merksatz 8W \u2014 PASS (Limit 15W)",
+    "G6": "~85W \u2014 PASS (harte Grenze 120W)"
   }
 }
