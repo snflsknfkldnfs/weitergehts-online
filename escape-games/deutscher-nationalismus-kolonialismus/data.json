@@ -1880,14 +1880,14 @@
         {
           "id": "mat-3-4",
           "typ": "bildquelle",
-          "titel": "Karikatur: Das Festmahl der Herrscher — Kongo als Hauptgang",
+          "titel": "Karikatur: Das Festmahl der Herrscher \u2014 Kongo als Hauptgang",
           "position": 4,
           "didaktische_funktion": "vertiefung",
           "voraussetzung": "mat-3-3",
           "primary_scpl_zone": "C2",
           "inhalt": "../../assets/img/deutscher-nationalismus-kolonialismus/img-3-2.jpg",
-          "bildunterschrift": "Belgische Karikatur von Fran&ccedil;ois Mar&eacute;chal, erschienen im satirischen Blatt &bdquo;Le Frondeur&ldquo; am 20. Dezember 1884. Im Zentrum sitzt der belgische K&ouml;nig Leopold II., rechts der deutsche Kaiser Wilhelm I., links der russische B&auml;r. Vor ihnen auf dem Tisch: der Kongo als &bdquo;Hauptgericht&ldquo; eines Festmahls. Was stellen die Herrscher und das Essen dar? Was will der Zeichner damit sagen?",
-          "quelle": "Fran&ccedil;ois Mar&eacute;chal, Le Frondeur (Liege), 20. Dezember 1884. Wikimedia Commons.",
+          "bildunterschrift": "Belgische Karikatur von Fran\u00e7ois Mar\u00e9chal, erschienen im satirischen Blatt &bdquo;Le Frondeur&ldquo; am 20. Dezember 1884. Im Zentrum sitzt der belgische K\u00f6nig Leopold II., rechts der deutsche Kaiser Wilhelm I., links der russische B\u00e4r. Vor ihnen auf dem Tisch: der Kongo als &bdquo;Hauptgericht&ldquo; eines Festmahls. Was stellen die Herrscher und das Essen dar? Was will der Zeichner damit sagen?",
+          "quelle": "Fran\u00e7ois Mar\u00e9chal, Le Frondeur (Li\u00e8ge), 20. Dezember 1884. Wikimedia Commons.",
           "lizenz": "Public Domain",
           "_meta": {
             "wortanzahl": 50,
@@ -1913,7 +1913,7 @@
           "didaktische_funktion": "erarbeitung",
           "voraussetzung": "mat-3-4",
           "primary_scpl_zone": "C3",
-          "inhalt": "../../assets/img/deutscher-nationalismus-kolonialismus/img-3-4.png",
+          "inhalt": "../../assets/img/deutscher-nationalismus-kolonialismus/img-3-5.png",
           "bildunterschrift": "Karte des kolonialen Afrika 1913. Die europäischen Kolonialmächte sind farblich unterschieden. Innerhalb weniger Jahrzehnte nach der Berliner Konferenz hatten europäische Staaten fast den gesamten Kontinent unter sich aufgeteilt — der <strong>Wettlauf um Afrika</strong> (die schnelle Aufteilung des Kontinents durch europäische Kolonialmächte). Das Ergebnis: <strong>Kolonialisierung</strong> (Unterwerfung und Ausbeutung fremder Länder durch europäische Mächte). Welche zwei Staaten blieben unabhängig?",
           "quelle": "Wikimedia Commons, Colonial Africa 1913 map.",
           "lizenz": "CC BY-SA 3.0",
@@ -2082,90 +2082,57 @@
         },
         {
           "id": "aufgabe-3-3",
-          "typ": "vergleich",
-          "frage": "Vergleiche, wie die Gartenlaube und die Karikatur die Berliner Konferenz darstellen.",
+          "typ": "begruendung",
+          "frage": "Warum zeigen die Gartenlaube und die Karikatur die Berliner Konferenz so unterschiedlich?",
           "material_referenz": [
             "mat-3-3",
             "mat-3-4"
           ],
           "loesung": {
-            "dimensionen": [
-              "Darstellung der Konferenz",
-              "Tonalität",
-              "Perspektive"
-            ],
-            "objekte": [
-              "Gartenlaube",
-              "Karikatur"
-            ],
-            "zellen": {
-              "Gartenlaube": {
-                "Darstellung der Konferenz": "Diplomaten sitzen an einem Verhandlungstisch",
-                "Tonalität": "sachlich und ernst",
-                "Perspektive": "deutsche Innensicht, offizielle Darstellung"
-              },
-              "Karikatur": {
-                "Darstellung der Konferenz": "Europaeische Herrscher sitzen beim Festmahl, der Kongo wird als Hauptgang aufgetischt",
-                "Tonalität": "spöttisch und kritisch",
-                "Perspektive": "französische Außensicht, kritische Darstellung"
-              }
-            }
+            "these": "Beide Bilder zeigen dasselbe Ereignis, aber aus verschiedenen Blickwinkeln.",
+            "erwartete_begriffe": ["Gartenlaube", "Karikatur", "Perspektive"],
+            "musterantwort": "Die Gartenlaube zeigt die Konferenz als normales diplomatisches Treffen \u2014 sachlich und ernst. Sie will den deutschen Lesern die Konferenz als Erfolg pr\u00e4sentieren. Die franz\u00f6sische Karikatur zeigt dagegen Bismarck, der Afrika wie einen Kuchen verteilt \u2014 sp\u00f6ttisch und kritisch. Sie will zeigen, dass die Europ\u00e4er Afrika einfach unter sich aufteilen."
           },
           "feedback": [
             {
               "typ": "bestaetigung",
-              "text": "Du hast erkannt, dass beide Bilder dasselbe Ereignis zeigen, es aber völlig unterschiedlich bewerten. Das ist Quellenkritik: Bilder haben immer eine Absicht.",
+              "text": "Du hast erkannt, dass beide Bilder dasselbe Ereignis zeigen, es aber v\u00f6llig unterschiedlich bewerten. Das ist Quellenkritik: Bilder haben immer eine Absicht.",
               "ebene": "anwendung"
             },
             {
               "typ": "korrektur",
-              "text": "In der Dimension Tonalität wird oft übersehen, dass die Gartenlaube die Konferenz als normales diplomatisches Treffen zeigt — ohne Kritik. Die Karikatur in mat-3-4 will dagegen zeigen, dass Afrika von Europaeern wie ein Festmahl aufgeteilt wurde.",
+              "text": "Achte darauf, dass du nicht nur beschreibst, was du siehst, sondern auch erkl\u00e4rst, warum die Darstellungen unterschiedlich sind. Die Gartenlaube war eine deutsche Zeitschrift, die Karikatur stammt aus Frankreich \u2014 unterschiedliche L\u00e4nder, unterschiedliche Sichtweisen.",
               "ebene": "anwendung"
+            },
+            {
+              "typ": "hinweis",
+              "text": "Jede Quelle hat einen Urheber mit einer bestimmten Absicht. Das nennt man Perspektivit\u00e4t.",
+              "ebene": "transfer"
             }
           ],
           "tipps": [
             {
               "stufe": 1,
               "haertegrad": "kognitiv",
-              "text": "Schau dir [[mat-3-3|Gartenlaube-Darstellung]] (M3) und [[mat-3-4|Karikatur]] (M4) an. Fülle die Tabelle Zeile für Zeile."
+              "text": "Schau dir [[mat-3-3|Gartenlaube-Darstellung]] (M3) und [[mat-3-4|Karikatur]] (M4) genau an. Was f\u00e4llt dir als Erstes auf?"
             },
             {
               "stufe": 2,
               "haertegrad": "strukturierend",
-              "text": "Gartenlaube, Darstellung der Konferenz: Diplomaten sitzen an einem Verhandlungstisch. Fülle jetzt dieselbe Spalte für die Karikatur."
+              "text": "Vergleiche die Stimmung: Wirkt die Gartenlaube eher ernst oder lustig? Und die Karikatur?"
             },
             {
               "stufe": 3,
               "haertegrad": "heuristisch",
-              "text": "Überlege bei jedem Bild: Was will der Zeichner, dass du über die Konferenz denkst? Ist die Darstellung eher positiv oder kritisch?"
+              "text": "\u00dcberlege: Aus welchem Land stammt jedes Bild? Wie beeinflusst das die Darstellung?"
             }
           ],
-          "punkte": 8,
+          "punkte": 4,
           "_meta": {
             "bloom_level": 4,
-            "bloom_begruendung": "Analyse erfordert systematische Zerlegung zweier Bildquellen in Dimensionen und strukturierten Abgleich (L4 Analysieren).",
-            "akzeptierte_varianten": {
-              "Gartenlaube__Tonalität": [
-                "sachlich",
-                "ernst",
-                "neutral"
-              ],
-              "Karikatur__Tonalität": [
-                "spöttisch",
-                "kritisch",
-                "satirisch"
-              ],
-              "Gartenlaube__Perspektive": [
-                "deutsche Sicht",
-                "offizielle Sicht",
-                "Innensicht"
-              ],
-              "Karikatur__Perspektive": [
-                "französische Sicht",
-                "Außensicht",
-                "kritische Sicht"
-              ]
-            }
+            "bloom_begruendung": "SuS m\u00fcssen zwei Quellen vergleichen und die Gr\u00fcnde f\u00fcr unterschiedliche Darstellungen analysieren (L4 Analysieren), jedoch ohne komplexe Tabellenstruktur.",
+            "afb": "II-III",
+            "buchstabe": "N"
           }
         },
         {
@@ -2298,30 +2265,30 @@
         }
       ],
       "hefteintrag": {
-        "stundenfrage": "Warum teilten europaeische Maechte Afrika unter sich auf — ohne die Afrikaner zu fragen?",
+        "stundenfrage": "Warum teilten europ\u00e4ische M\u00e4chte Afrika unter sich auf \u2014 ohne die Afrikaner zu fragen?",
         "ordnungsmuster": "konzept-beispiel",
         "scpl": {
           "situation": {
-            "kontextsatz": "Nach der Reichsgruendung 1871 wollte Deutschland als Grossmacht auch Kolonien besitzen — wie Grossbritannien und Frankreich.",
+            "kontextsatz": "Nach der Reichsgr\u00fcndung 1871 wollte Deutschland als Gro\u00dfmacht auch Kolonien besitzen \u2014 wie Gro\u00dfbritannien und Frankreich.",
             "fachbegriffe": []
           },
           "complication": [
             {
-              "schritt": "Kaufleute suchten Rohstoffe, die Presse forderte Prestige — Deutschland verlangte seinen 'Platz an der Sonne': Imperialismus.",
+              "schritt": "Kaufleute suchten Rohstoffe, die Presse forderte Prestige \u2014 Deutschland verlangte seinen \u201ePlatz an der Sonne\u201c: Imperialismus.",
               "typ": "konzeptuell",
               "fachbegriff": "Imperialismus",
               "darstellung": null,
               "erarbeitbarkeit": "DIRECT"
             },
             {
-              "schritt": "Auf der Berliner Konferenz 1884/85 teilten 14 europaeische Staaten Afrika auf — kein einziger Afrikaner sass am Tisch: Berliner Konferenz.",
+              "schritt": "Auf der Berliner Konferenz 1884/85 teilten 14 europ\u00e4ische Staaten Afrika auf \u2014 kein einziger Afrikaner sa\u00df am Tisch: Berliner Konferenz.",
               "typ": "kontrastiv",
               "fachbegriff": "Berliner Konferenz",
               "darstellung": null,
               "erarbeitbarkeit": "DIRECT"
             },
             {
-              "schritt": "Innerhalb weniger Jahrzehnte war fast ganz Afrika in europaeischer Hand — nur Aethiopien und Liberia blieben frei: Wettlauf um Afrika.",
+              "schritt": "Innerhalb weniger Jahrzehnte war fast ganz Afrika in europ\u00e4ischer Hand \u2014 nur \u00c4thiopien und Liberia blieben frei: Wettlauf um Afrika.",
               "typ": "kausal",
               "fachbegriff": "Wettlauf um Afrika",
               "darstellung": null,
@@ -2329,12 +2296,12 @@
             }
           ],
           "problem": {
-            "satz": "Europaeische Maechte unterwarfen einen ganzen Kontinent politisch und wirtschaftlich — ohne Ruecksicht auf die dort lebenden Menschen: Kolonialisierung.",
+            "satz": "Europ\u00e4ische M\u00e4chte unterwarfen einen ganzen Kontinent politisch und wirtschaftlich \u2014 ohne R\u00fccksicht auf die dort lebenden Menschen: Kolonialisierung.",
             "fachbegriff": "Kolonialisierung"
           },
           "loesung": [
-            "Das Deutsche Reich wollte als Grossmacht Kolonien — aus Wirtschaftsinteresse und nationalem Prestige.",
-            "Auf der Berliner Konferenz 1884 teilten Europaeer Afrika auf — ohne einen Afrikaner zu fragen."
+            "Das Deutsche Reich wollte als Gro\u00dfmacht Kolonien \u2014 aus Wirtschaftsinteresse und nationalem Prestige.",
+            "Auf der Berliner Konferenz 1884 teilten Europ\u00e4er Afrika auf \u2014 ohne einen Afrikaner zu fragen."
           ]
         },
         "transfer": {
@@ -2346,18 +2313,18 @@
         "knoten": [
           {
             "id": "k3-1",
-            "text": "Deutsches Kaiserreich als Grossmacht",
+            "text": "Deutsches Kaiserreich als Gro\u00dfmacht",
             "typ": "kategorie"
           },
           {
             "id": "k3-2",
             "text": "Imperialismus",
             "typ": "kernbegriff",
-            "merksatz": "Streben eines Staates, andere Laender zu unterwerfen"
+            "merksatz": "Streben eines Staates, andere L\u00e4nder zu unterwerfen"
           },
           {
             "id": "k3-3",
-            "text": "'Platz an der Sonne'",
+            "text": "\u201ePlatz an der Sonne\u201c",
             "typ": "kernbegriff",
             "merksatz": "Deutschlands Forderung nach Kolonien und Weltgeltung"
           },
@@ -2375,7 +2342,7 @@
             "id": "k3-6",
             "text": "Kolonialisierung Afrikas",
             "typ": "wirkung",
-            "merksatz": "Fast ganz Afrika in europaeischer Hand bis 1913"
+            "merksatz": "Fast ganz Afrika in europ\u00e4ischer Hand bis 1913"
           }
         ],
         "verbindungen": [
@@ -2394,13 +2361,13 @@
           {
             "von": "k3-3",
             "nach": "k3-4",
-            "label": "fuehrt zu",
+            "label": "f\u00fchrt zu",
             "typ": "temporal"
           },
           {
             "von": "k3-4",
             "nach": "k3-5",
-            "label": "loest aus",
+            "label": "l\u00f6st aus",
             "typ": "kausal"
           },
           {
@@ -2411,28 +2378,142 @@
           }
         ],
         "_q_gate": {
-          "G2": "3 C-Schritte (Limit 3), 2 Merksaetze (Limit 2) — PASS",
-          "G5": "Laengster Merksatz 14W — PASS (Limit 15W)",
-          "G6": "~106W — PASS (harte Grenze 120W)"
+          "G2": "3 C-Schritte (Limit 3), 2 Merks\u00e4tze (Limit 2) \u2014 PASS",
+          "G5": "L\u00e4ngster Merksatz 14W \u2014 PASS (Limit 15W)",
+          "G6": "~106W \u2014 PASS (harte Grenze 120W)"
         }
       },
       "sicherung": {
-        "reflexionsimpuls": "Die Berliner Konferenz entschied ueber das Schicksal eines ganzen Kontinents. Was waere anders gelaufen, wenn Vertreter Afrikas am Tisch gesessen haetten?",
-        "hefteintrag_verweis": "Uebertrage den Hefteintrag in dein Heft. Achte besonders auf die drei Motive des Kolonialerwerbs und die Rolle der Berliner Konferenz.",
-        "zusammenfassung": "Das Deutsche Reich wollte Kolonien — aus Wirtschaftsinteresse und nationalem Prestige. Auf der Berliner Konferenz 1884 teilten Europaeer Afrika auf — ohne einen Afrikaner zu fragen.",
-        "ueberleitung": "Am gruenen Tisch in Berlin hatten Diplomaten Grenzen gezogen. Doch was bedeutete das fuer die Menschen, die in den neuen 'Schutzgebieten' lebten? In Deutsch-Suedwestafrika wurde die Antwort besonders brutal.",
+        "reflexionsimpuls": "Die Berliner Konferenz entschied \u00fcber das Schicksal eines ganzen Kontinents. Was w\u00e4re anders gelaufen, wenn Vertreter Afrikas am Tisch gesessen h\u00e4tten?",
+        "hefteintrag_verweis": "\u00dcbertrage den Hefteintrag in dein Heft. Achte besonders auf die drei Motive des Kolonialerwerbs und die Rolle der Berliner Konferenz.",
+        "zusammenfassung": "Das Deutsche Reich wollte Kolonien \u2014 aus Wirtschaftsinteresse und nationalem Prestige. Auf der Berliner Konferenz 1884 teilten Europ\u00e4er Afrika auf \u2014 ohne einen Afrikaner zu fragen.",
+        "ueberleitung": "Am gr\u00fcnen Tisch in Berlin hatten Diplomaten Grenzen gezogen. Doch was bedeutete das f\u00fcr die Menschen, die in den neuen \u201eSchutzgebieten\u201c lebten? In Deutsch-S\u00fcdwestafrika wurde die Antwort besonders brutal.",
         "zitat": {
           "text": "Wir wollen niemand in den Schatten stellen, aber wir verlangen auch unseren Platz an der Sonne.",
-          "urheber": "Bernhard von Buelow",
+          "urheber": "Bernhard von B\u00fclow",
           "kontext": "Rede vor dem Reichstag, 6. Dezember 1897"
+        },
+        "hefteintrag": {
+          "stundenfrage": "Warum teilten europ\u00e4ische M\u00e4chte Afrika unter sich auf \u2014 ohne die Afrikaner zu fragen?",
+          "ordnungsmuster": "konzept-beispiel",
+          "scpl": {
+            "situation": {
+              "kontextsatz": "Nach der Reichsgr\u00fcndung 1871 wollte Deutschland als Gro\u00dfmacht auch Kolonien besitzen \u2014 wie Gro\u00dfbritannien und Frankreich.",
+              "fachbegriffe": []
+            },
+            "complication": [
+              {
+                "schritt": "Kaufleute suchten Rohstoffe, die Presse forderte Prestige \u2014 Deutschland verlangte seinen \u201ePlatz an der Sonne\u201c: Imperialismus.",
+                "typ": "konzeptuell",
+                "fachbegriff": "Imperialismus",
+                "darstellung": null,
+                "erarbeitbarkeit": "DIRECT"
+              },
+              {
+                "schritt": "Auf der Berliner Konferenz 1884/85 teilten 14 europ\u00e4ische Staaten Afrika auf \u2014 kein einziger Afrikaner sa\u00df am Tisch: Berliner Konferenz.",
+                "typ": "kontrastiv",
+                "fachbegriff": "Berliner Konferenz",
+                "darstellung": null,
+                "erarbeitbarkeit": "DIRECT"
+              },
+              {
+                "schritt": "Innerhalb weniger Jahrzehnte war fast ganz Afrika in europ\u00e4ischer Hand \u2014 nur \u00c4thiopien und Liberia blieben frei: Wettlauf um Afrika.",
+                "typ": "kausal",
+                "fachbegriff": "Wettlauf um Afrika",
+                "darstellung": null,
+                "erarbeitbarkeit": "ARTIFACT"
+              }
+            ],
+            "problem": {
+              "satz": "Europ\u00e4ische M\u00e4chte unterwarfen einen ganzen Kontinent politisch und wirtschaftlich \u2014 ohne R\u00fccksicht auf die dort lebenden Menschen: Kolonialisierung.",
+              "fachbegriff": "Kolonialisierung"
+            },
+            "loesung": [
+              "Das Deutsche Reich wollte als Gro\u00dfmacht Kolonien \u2014 aus Wirtschaftsinteresse und nationalem Prestige.",
+              "Auf der Berliner Konferenz 1884 teilten Europ\u00e4er Afrika auf \u2014 ohne einen Afrikaner zu fragen."
+            ]
+          },
+          "transfer": {
+            "frage": "Welche Spuren hat die Aufteilung Afrikas bis heute hinterlassen?"
+          },
+          "voraussetzungen": [
+            "k2-6"
+          ],
+          "knoten": [
+            {
+              "id": "k3-1",
+              "text": "Deutsches Kaiserreich als Gro\u00dfmacht",
+              "typ": "kategorie"
+            },
+            {
+              "id": "k3-2",
+              "text": "Imperialismus",
+              "typ": "kernbegriff",
+              "merksatz": "Streben eines Staates, andere L\u00e4nder zu unterwerfen"
+            },
+            {
+              "id": "k3-3",
+              "text": "\u201ePlatz an der Sonne\u201c",
+              "typ": "kernbegriff",
+              "merksatz": "Deutschlands Forderung nach Kolonien und Weltgeltung"
+            },
+            {
+              "id": "k3-4",
+              "text": "Berliner Konferenz 1884/85",
+              "typ": "ereignis"
+            },
+            {
+              "id": "k3-5",
+              "text": "Wettlauf um Afrika",
+              "typ": "prozess"
+            },
+            {
+              "id": "k3-6",
+              "text": "Kolonialisierung Afrikas",
+              "typ": "wirkung",
+              "merksatz": "Fast ganz Afrika in europ\u00e4ischer Hand bis 1913"
+            }
+          ],
+          "verbindungen": [
+            {
+              "von": "k3-1",
+              "nach": "k3-2",
+              "label": "treibt an",
+              "typ": "kausal"
+            },
+            {
+              "von": "k3-2",
+              "nach": "k3-3",
+              "label": "fordert",
+              "typ": "kausal"
+            },
+            {
+              "von": "k3-3",
+              "nach": "k3-4",
+              "label": "f\u00fchrt zu",
+              "typ": "temporal"
+            },
+            {
+              "von": "k3-4",
+              "nach": "k3-5",
+              "label": "l\u00f6st aus",
+              "typ": "kausal"
+            },
+            {
+              "von": "k3-5",
+              "nach": "k3-6",
+              "label": "Ergebnis",
+              "typ": "schlussfolgerung"
+            }
+          ]
         }
       },
       "mappenabschluss_zone": {
         "reflexion_fragen": [
-          "Auf der Berliner Konferenz entschieden 14 europaeische Staaten ueber Afrika — ohne dass ein einziger Afrikaner dabei war. Was sagt das ueber die Denkweise der Europaeer?",
-          "Imperialismus bedeutet, andere Laender zu unterwerfen. Gibt es auch heute noch Situationen, in denen maechtige Staaten ueber das Schicksal anderer bestimmen?"
+          "Auf der Berliner Konferenz entschieden 14 europ\u00e4ische Staaten \u00fcber Afrika \u2014 ohne dass ein einziger Afrikaner dabei war. Was sagt das \u00fcber die Denkweise der Europ\u00e4er?",
+          "Imperialismus bedeutet, andere L\u00e4nder zu unterwerfen. Gibt es auch heute noch Situationen, in denen m\u00e4chtige Staaten \u00fcber das Schicksal anderer bestimmen?"
         ],
-        "ueberleitungssatz": "Am gruenen Tisch in Berlin hatten Diplomaten Grenzen gezogen. Doch was bedeutete das fuer die Menschen, die in den neuen 'Schutzgebieten' lebten? In Deutsch-Suedwestafrika wurde die Antwort besonders brutal.",
+        "ueberleitungssatz": "Am gr\u00fcnen Tisch in Berlin hatten Diplomaten Grenzen gezogen. Doch was bedeutete das f\u00fcr die Menschen, die in den neuen \u201eSchutzgebieten\u201c lebten? In Deutsch-S\u00fcdwestafrika wurde die Antwort besonders brutal.",
         "_variante": "A"
       }
     }
