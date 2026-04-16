@@ -85,6 +85,13 @@
         var storageKey = 'escape-' + thema;
         var allProgress = Core.storage.get(storageKey) || { mappen: {} };
 
+        // Mappen rendern
+        var container = document.getElementById('mappen-uebersicht');
+        if (!container) return;
+        container.innerHTML = '';
+
+        var mappen = data.mappen || [];
+
         // v3.12: Vorab freigeschaltete Mappen in localStorage seeden
         var seedChanged = false;
         for (var s = 0; s < mappen.length; s++) {
@@ -103,13 +110,6 @@
           allProgress.letzteAktivitaet = new Date().toISOString();
           Core.storage.set(storageKey, allProgress);
         }
-
-        // Mappen rendern
-        var container = document.getElementById('mappen-uebersicht');
-        if (!container) return;
-        container.innerHTML = '';
-
-        var mappen = data.mappen || [];
         if (mappen.length === 0) {
           container.innerHTML = '<p class="text-center">Noch keine Mappen vorhanden.</p>';
           return;
