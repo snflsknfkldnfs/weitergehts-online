@@ -2762,8 +2762,10 @@ var EscapeEngine = (function () {
             inputs[j].textContent = '';
             inputs[j].setAttribute('data-wort', '');
             inputs[j].classList.remove('aufgabe__luecke--filled');
+            inputs[j].classList.remove('aufgabe__luecke--incorrect');
           } else {
             inputs[j].value = '';
+            inputs[j].classList.remove('aufgabe__luecke--incorrect');
           }
         }
       }
@@ -3015,35 +3017,52 @@ var EscapeEngine = (function () {
       return;
     }
 
-    var isCorrect = false;
+    // v3.9: Gestufte Akzeptanz — jede nicht-leere Antwort wird angenommen
+    var muster = (aufgabe._meta && aufgabe._meta.musterantwort) || '';
+    var matchedKeywords = [];
+    var totalKeywords = 0;
 
     if (Array.isArray(aufgabe.loesung)) {
-      // Keyword-Modus: ALLE Keywords muessen im Eingabetext vorkommen
+      totalKeywords = aufgabe.loesung.length;
       var eingabeNorm = userText.toLowerCase();
-      isCorrect = aufgabe.loesung.every(function (keyword) {
-        var kwNorm = keyword.trim().toLowerCase();
-        return eingabeNorm.indexOf(kwNorm) !== -1 || _fuzzyMatch(eingabeNorm, kwNorm);
-      });
+      for (var k = 0; k < aufgabe.loesung.length; k++) {
+        var kwNorm = aufgabe.loesung[k].trim().toLowerCase();
+        if (eingabeNorm.indexOf(kwNorm) !== -1 || _fuzzyMatch(eingabeNorm, kwNorm)) {
+          matchedKeywords.push(aufgabe.loesung[k].trim());
+        }
+      }
     } else {
       // String-Modus (Rueckwaertskompatibilitaet)
+      totalKeywords = 1;
       var expected = (aufgabe.loesung || '').trim();
-      // Fuzzy-Match (Umlaute, Levenshtein, Leerzeichen)
-      isCorrect = _fuzzyMatch(userText, expected);
-      // Fallback: indexOf-Check (Antwort enthaelt Loesung)
-      if (!isCorrect && expected.length > 0) {
-        isCorrect = userText.toLowerCase().indexOf(expected.toLowerCase()) !== -1;
+      if (_fuzzyMatch(userText, expected) ||
+          (expected.length > 0 && userText.toLowerCase().indexOf(expected.toLowerCase()) !== -1)) {
+        matchedKeywords.push(expected);
       }
     }
 
-    if (isCorrect) {
+    // Immer akzeptieren — Feedback variiert nach Keyword-Trefferquote
+    saveProgress(_state.mappeId, index, true);
+    _saveAntwortState(_state.mappeId, index, { text: userText });
+    section.classList.add('aufgabe--solved');
+    textarea.disabled = true;
+
+    if (totalKeywords > 0 && matchedKeywords.length === totalKeywords) {
+      // Alle Keywords getroffen
       Core.feedback.showSuccess(section, 'Richtig! ✅');
-      saveProgress(_state.mappeId, index, true);
-      _saveAntwortState(_state.mappeId, index, { text: userText });
-      section.classList.add('aufgabe--solved');
-      textarea.disabled = true;
+    } else if (matchedKeywords.length > 0) {
+      // Teilweise getroffen
+      var teilMsg = 'Gut — du hast ' + matchedKeywords.join(', ') + ' erkannt.';
+      if (muster) {
+        teilMsg += ' Vergleiche mit der Musterantwort: ' + muster;
+      }
+      Core.feedback.showInfo(section, teilMsg);
     } else {
-      Core.feedback.showError(section, 'Leider falsch — versuche es nochmal! ❌');
-      _saveFehlversuch(_state.mappeId);
+      // Keine Keywords, aber nicht-leere Antwort
+      var vergleichMsg = muster
+        ? 'Vergleiche deine Antwort mit der Musterantwort: ' + muster
+        : 'Deine Antwort wurde gespeichert.';
+      Core.feedback.showInfo(section, vergleichMsg);
     }
 
     _updateFortschritt(_getMappe(_state.mappeId), loadProgress(_state.mappeId));
