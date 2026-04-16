@@ -1,0 +1,65 @@
+{
+  "stundenfrage": "Warum teilten europaeische Maechte Afrika unter sich auf — ohne die Afrikaner zu fragen?",
+  "ordnungsmuster": "konzept-beispiel",
+  "scpl": {
+    "situation": {
+      "kontextsatz": "Nach der Reichsgruendung 1871 wollte Deutschland als Grossmacht auch Kolonien besitzen — wie Grossbritannien und Frankreich.",
+      "fachbegriffe": []
+    },
+    "complication": [
+      {
+        "schritt": "Kaufleute suchten Rohstoffe, die Presse forderte Prestige — Deutschland verlangte seinen 'Platz an der Sonne': Imperialismus.",
+        "typ": "konzeptuell",
+        "fachbegriff": "Imperialismus",
+        "darstellung": null,
+        "erarbeitbarkeit": "DIRECT"
+      },
+      {
+        "schritt": "Auf der Berliner Konferenz 1884/85 teilten 14 europaeische Staaten Afrika auf — kein einziger Afrikaner sass am Tisch: Berliner Konferenz.",
+        "typ": "kontrastiv",
+        "fachbegriff": "Berliner Konferenz",
+        "darstellung": null,
+        "erarbeitbarkeit": "DIRECT"
+      },
+      {
+        "schritt": "Innerhalb weniger Jahrzehnte war fast ganz Afrika in europaeischer Hand — nur Aethiopien und Liberia blieben frei: Wettlauf um Afrika.",
+        "typ": "kausal",
+        "fachbegriff": "Wettlauf um Afrika",
+        "darstellung": null,
+        "erarbeitbarkeit": "ARTIFACT"
+      }
+    ],
+    "problem": {
+      "satz": "Europaeische Maechte unterwarfen einen ganzen Kontinent politisch und wirtschaftlich — ohne Ruecksicht auf die dort lebenden Menschen: Kolonialisierung.",
+      "fachbegriff": "Kolonialisierung"
+    },
+    "loesung": [
+      "Das Deutsche Reich wollte als Grossmacht Kolonien — aus Wirtschaftsinteresse und nationalem Prestige.",
+      "Auf der Berliner Konferenz 1884 teilten Europaeer Afrika auf — ohne einen Afrikaner zu fragen."
+    ]
+  },
+  "transfer": {
+    "frage": "Welche Spuren hat die Aufteilung Afrikas bis heute hinterlassen?"
+  },
+  "voraussetzungen": ["k2-6"],
+  "knoten": [
+    {"id": "k3-1", "text": "Deutsches Kaiserreich als Grossmacht", "typ": "kategorie"},
+    {"id": "k3-2", "text": "Imperialismus", "typ": "kernbegriff", "merksatz": "Streben eines Staates, andere Laender zu unterwerfen"},
+    {"id": "k3-3", "text": "'Platz an der Sonne'", "typ": "kernbegriff", "merksatz": "Deutschlands Forderung nach Kolonien und Weltgeltung"},
+    {"id": "k3-4", "text": "Berliner Konferenz 1884/85", "typ": "ereignis"},
+    {"id": "k3-5", "text": "Wettlauf um Afrika", "typ": "prozess"},
+    {"id": "k3-6", "text": "Kolonialisierung Afrikas", "typ": "wirkung", "merksatz": "Fast ganz Afrika in europaeischer Hand bis 1913"}
+  ],
+  "verbindungen": [
+    {"von": "k3-1", "nach": "k3-2", "label": "treibt an", "typ": "kausal"},
+    {"von": "k3-2", "nach": "k3-3", "label": "fordert", "typ": "kausal"},
+    {"von": "k3-3", "nach": "k3-4", "label": "fuehrt zu", "typ": "temporal"},
+    {"von": "k3-4", "nach": "k3-5", "label": "loest aus", "typ": "kausal"},
+    {"von": "k3-5", "nach": "k3-6", "label": "Ergebnis", "typ": "schlussfolgerung"}
+  ],
+  "_q_gate": {
+    "G2": "3 C-Schritte (Limit 3), 2 Merksaetze (Limit 2) — PASS",
+    "G5": "Laengster Merksatz 14W — PASS (Limit 15W)",
+    "G6": "~106W — PASS (harte Grenze 120W)"
+  }
+}

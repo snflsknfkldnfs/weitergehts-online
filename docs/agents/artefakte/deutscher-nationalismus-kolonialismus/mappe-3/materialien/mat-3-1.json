@@ -1,0 +1,25 @@
+{
+  "id": "mat-3-1",
+  "typ": "quellentext",
+  "titel": "Was forderte Deutschland als neue Großmacht?",
+  "position": 1,
+  "didaktische_funktion": "einstieg",
+  "voraussetzung": null,
+  "primary_scpl_zone": "C1",
+  "inhalt": "<p><em>Bernhard von Bülow war Staatssekretär des Äußeren im Deutschen Reich. Am 6. Dezember 1897 sprach er vor dem Reichstag über Deutschlands Zukunft als Kolonialmacht.</em></p><blockquote><p>&bdquo;Wir wollen niemand in den Schatten stellen, aber wir verlangen auch unseren Platz an der Sonne.&ldquo;</p></blockquote><p><em>Mit &bdquo;Platz an der Sonne&ldquo; meinte Bülow: Deutschland sollte wie Großbritannien und Frankreich Kolonien besitzen. Das Schlagwort wurde zum Symbol des deutschen Weltmachtanspruchs unter Kaiser Wilhelm II.</em></p>",
+  "quelle": "Bernhard von Bülow, Rede vor dem Reichstag, 6. Dezember 1897. Zitiert nach: Wikipedia, Deutsche Kolonien.",
+  "_meta": {
+    "wortanzahl": 58,
+    "quellentyp": "rede",
+    "aufbereitung": "echt",
+    "artefakt_ref": ["zit-3-1"],
+    "tafelbild_knoten_abgedeckt": ["k3-2", "k3-3"],
+    "quellenkritische_impulse": [
+      "Was fordert Bülow in seiner Rede?",
+      "Warum spricht Bülow wohl von einem 'Platz an der Sonne' — was könnte er damit meinen?"
+    ],
+    "perspektive": "P1: Deutsche Politik",
+    "erarbeitbarkeits_check": "PASS — Bülow-Zitat macht k3-3 ('Platz an der Sonne') direkt erarbeitbar; Kontext-Satz verbindet mit k3-2 (Imperialismus als Weltmachtanspruch).",
+    "trigger_flags": []
+  }
+}

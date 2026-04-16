@@ -1,0 +1,29 @@
+{
+  "id": "aufgabe-3-2",
+  "typ": "multiple-choice",
+  "frage": "Was meinte B\u00fclow mit \u201ePlatz an der Sonne\u201c?",
+  "material_referenz": ["mat-3-1"],
+  "optionen": [
+    "Deutschland sollte Auswanderer in sonnige L\u00e4nder schicken.",
+    "Deutschland beanspruchte Kolonien und Weltgeltung.",
+    "Deutschland wollte bessere Handelsbeziehungen mit S\u00fcdeuropa.",
+    "Deutschland forderte milit\u00e4rische St\u00fctzpunkte im Mittelmeer."
+  ],
+  "loesung": "Deutschland beanspruchte Kolonien und Weltgeltung.",
+  "feedback": [
+    {"typ": "korrektur", "text": "Auswanderung war nicht B\u00fclows Thema. Er sprach im Reichstag \u00fcber Kolonialpolitik und Deutschlands Anspruch als Weltmacht.", "ebene": "verstaendnis"},
+    {"typ": "bestaetigung", "text": "Richtig. B\u00fclow forderte, dass Deutschland wie Gro\u00dfbritannien und Frankreich Kolonien besitzen und als Weltmacht anerkannt werden sollte.", "ebene": "verstaendnis"},
+    {"typ": "korrektur", "text": "Handelsbeziehungen mit S\u00fcdeuropa waren nicht gemeint. \u201eSonne\u201c steht hier bildlich f\u00fcr Weltgeltung und Kolonialbesitz, nicht f\u00fcr ein bestimmtes Gebiet.", "ebene": "verstaendnis"},
+    {"typ": "korrektur", "text": "Milit\u00e4rische St\u00fctzpunkte im Mittelmeer waren kein Thema der Rede. B\u00fclow sprach von Deutschlands Recht auf Kolonien in \u00dcbersee.", "ebene": "verstaendnis"}
+  ],
+  "tipps": [
+    {"stufe": 1, "haertegrad": "kognitiv", "text": "Lies [[mat-3-1|B\u00fclows Rede von 1897]] (M1) nochmal. \u00dcberlege: Wor\u00fcber sprach B\u00fclow im Reichstag \u2014 was war sein Thema?"},
+    {"stufe": 2, "haertegrad": "strukturierend", "text": "Auswanderung und Mittelmeer-St\u00fctzpunkte kannst du ausschlie\u00dfen \u2014 beides kommt in der Rede nicht vor."},
+    {"stufe": 3, "haertegrad": "heuristisch", "text": "\u00dcberlege, was B\u00fclow mit \u201eSchatten\u201c und \u201eSonne\u201c bildlich meint. Wer stand im \u201eSonnenlicht\u201c? Welche L\u00e4nder hatten bereits das, was Deutschland wollte?"}
+  ],
+  "punkte": 10,
+  "_meta": {
+    "bloom_level": 3,
+    "bloom_begruendung": "Sinnverst\u00e4ndnis einer historischen Quelle: SuS m\u00fcssen das bildliche Schlagwort interpretieren, nicht blo\u00df wiedergeben (L3 Anwenden)."
+  }
+}

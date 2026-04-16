@@ -1,0 +1,38 @@
+{
+  "id": "aufgabe-3-4",
+  "typ": "reihenfolge",
+  "frage": "Bringe die Schritte von Deutschlands Kolonialstreben bis zur Aufteilung Afrikas in die richtige Reihenfolge.",
+  "material_referenz": ["mat-3-2", "mat-3-3", "mat-3-5"],
+  "optionen": [
+    "Europ\u00e4ische M\u00e4chte teilen Afrika in einem Wettlauf unter sich auf.",
+    "Das Deutsche Kaiserreich will als Gro\u00dfmacht anerkannt werden.",
+    "Fast der gesamte Kontinent Afrika ist in europ\u00e4ischer Hand.",
+    "Auf der Berliner Konferenz legen europ\u00e4ische Staaten Regeln f\u00fcr die Aufteilung Afrikas fest.",
+    "Deutsche Kaufleute fordern Kolonien f\u00fcr Rohstoffe und Prestige."
+  ],
+  "loesung": [
+    "Das Deutsche Kaiserreich will als Gro\u00dfmacht anerkannt werden.",
+    "Deutsche Kaufleute fordern Kolonien f\u00fcr Rohstoffe und Prestige.",
+    "Auf der Berliner Konferenz legen europ\u00e4ische Staaten Regeln f\u00fcr die Aufteilung Afrikas fest.",
+    "Europ\u00e4ische M\u00e4chte teilen Afrika in einem Wettlauf unter sich auf.",
+    "Fast der gesamte Kontinent Afrika ist in europ\u00e4ischer Hand."
+  ],
+  "feedback": [
+    {"typ": "bestaetigung", "text": "Position 1: Das Gro\u00dfmachtstreben des Kaiserreichs war der Ausgangspunkt \u2014 ohne diesen Anspruch h\u00e4tte es kein Kolonialstreben gegeben.", "ebene": "wissen"},
+    {"typ": "bestaetigung", "text": "Position 2: Die konkreten Forderungen nach Rohstoffen und Prestige folgten aus dem Gro\u00dfmachtanspruch.", "ebene": "wissen"},
+    {"typ": "bestaetigung", "text": "Position 3: Die Berliner Konferenz regelte die Aufteilung \u2014 sie war die politische Umsetzung der Forderungen.", "ebene": "wissen"},
+    {"typ": "bestaetigung", "text": "Position 4: Der Wettlauf um Afrika war das Ergebnis der Konferenz-Beschl\u00fcsse.", "ebene": "wissen"},
+    {"typ": "bestaetigung", "text": "Position 5: Das Endergebnis \u2014 fast ganz Afrika unter europ\u00e4ischer Kontrolle.", "ebene": "wissen"},
+    {"typ": "korrektur", "text": "Oft wird die Berliner Konferenz nach dem Wettlauf um Afrika eingeordnet. Aber die Konferenz legte die Regeln fest, nach denen der Wettlauf erst richtig begann.", "ebene": "wissen"}
+  ],
+  "tipps": [
+    {"stufe": 1, "haertegrad": "kognitiv", "text": "\u00dcberlege: Was kam zuerst \u2014 der Wunsch nach Kolonien oder die tats\u00e4chliche Aufteilung? Lies [[mat-3-2|Warum wollte Deutschland Kolonien?]] (M2) f\u00fcr den Anfang."},
+    {"stufe": 2, "haertegrad": "strukturierend", "text": "An Position 1 steht das Gro\u00dfmachtstreben, am Ende steht das Ergebnis: fast ganz Afrika in europ\u00e4ischer Hand. Ordne die drei Schritte dazwischen."},
+    {"stufe": 3, "haertegrad": "heuristisch", "text": "Denke in Ursache und Wirkung: Jeder Schritt l\u00f6ste den n\u00e4chsten aus. Beginne mit dem Grundwunsch und arbeite dich zum Endergebnis vor."}
+  ],
+  "punkte": 10,
+  "_meta": {
+    "bloom_level": 3,
+    "bloom_begruendung": "Anwendung einer Ursache-Wirkung-Logik auf die kausal-chronologische Sequenz der Mappe (L3 Anwenden)."
+  }
+}

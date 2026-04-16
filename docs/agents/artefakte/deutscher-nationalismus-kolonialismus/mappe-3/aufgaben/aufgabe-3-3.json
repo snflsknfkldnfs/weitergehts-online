@@ -1,0 +1,42 @@
+{
+  "id": "aufgabe-3-3",
+  "typ": "vergleich",
+  "frage": "Vergleiche, wie die Gartenlaube und die Karikatur die Berliner Konferenz darstellen.",
+  "material_referenz": ["mat-3-3", "mat-3-4"],
+  "loesung": {
+    "dimensionen": ["Darstellung der Konferenz", "Tonalit\u00e4t", "Perspektive"],
+    "objekte": ["Gartenlaube", "Karikatur"],
+    "zellen": {
+      "Gartenlaube": {
+        "Darstellung der Konferenz": "Diplomaten sitzen an einem Verhandlungstisch",
+        "Tonalit\u00e4t": "sachlich und ernst",
+        "Perspektive": "deutsche Innensicht, offizielle Darstellung"
+      },
+      "Karikatur": {
+        "Darstellung der Konferenz": "Bismarck schneidet einen Kuchen an und verteilt St\u00fccke",
+        "Tonalit\u00e4t": "sp\u00f6ttisch und kritisch",
+        "Perspektive": "franz\u00f6sische Au\u00dfensicht, kritische Darstellung"
+      }
+    }
+  },
+  "feedback": [
+    {"typ": "bestaetigung", "text": "Du hast erkannt, dass beide Bilder dasselbe Ereignis zeigen, es aber v\u00f6llig unterschiedlich bewerten. Das ist Quellenkritik: Bilder haben immer eine Absicht.", "ebene": "anwendung"},
+    {"typ": "korrektur", "text": "In der Dimension Tonalit\u00e4t wird oft \u00fcbersehen, dass die Gartenlaube die Konferenz als normales diplomatisches Treffen zeigt \u2014 ohne Kritik. Die Karikatur in mat-3-4 will dagegen zeigen, dass Afrika wie ein Kuchen verteilt wurde.", "ebene": "anwendung"}
+  ],
+  "tipps": [
+    {"stufe": 1, "haertegrad": "kognitiv", "text": "Schau dir [[mat-3-3|Gartenlaube-Darstellung]] (M3) und [[mat-3-4|Karikatur]] (M4) an. F\u00fclle die Tabelle Zeile f\u00fcr Zeile."},
+    {"stufe": 2, "haertegrad": "strukturierend", "text": "Gartenlaube, Darstellung der Konferenz: Diplomaten sitzen an einem Verhandlungstisch. F\u00fclle jetzt dieselbe Spalte f\u00fcr die Karikatur."},
+    {"stufe": 3, "haertegrad": "heuristisch", "text": "\u00dcberlege bei jedem Bild: Was will der Zeichner, dass du \u00fcber die Konferenz denkst? Ist die Darstellung eher positiv oder kritisch?"}
+  ],
+  "punkte": 8,
+  "_meta": {
+    "bloom_level": 4,
+    "bloom_begruendung": "Analyse erfordert systematische Zerlegung zweier Bildquellen in Dimensionen und strukturierten Abgleich (L4 Analysieren).",
+    "akzeptierte_varianten": {
+      "Gartenlaube__Tonalit\u00e4t": ["sachlich", "ernst", "neutral"],
+      "Karikatur__Tonalit\u00e4t": ["sp\u00f6ttisch", "kritisch", "satirisch"],
+      "Gartenlaube__Perspektive": ["deutsche Sicht", "offizielle Sicht", "Innensicht"],
+      "Karikatur__Perspektive": ["franz\u00f6sische Sicht", "Au\u00dfensicht", "kritische Sicht"]
+    }
+  }
+}

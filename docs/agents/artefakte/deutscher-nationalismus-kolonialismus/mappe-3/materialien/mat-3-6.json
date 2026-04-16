@@ -1,0 +1,21 @@
+{
+  "id": "mat-3-6",
+  "typ": "tagebuch",
+  "titel": "Mein Land auf einer fremden Karte",
+  "position": 6,
+  "didaktische_funktion": "sicherung",
+  "voraussetzung": "mat-3-5",
+  "primary_scpl_zone": "P",
+  "inhalt": "<p><em>Fiktiver Tagebucheintrag einer jungen Frau aus einer Gemeinschaft in Ostafrika, Ende der 1880er Jahre. Ihr Land wurde auf der Berliner Konferenz einem europäischen &bdquo;Schutzgebiet&ldquo; zugeordnet — ohne dass jemand die Menschen vor Ort gefragt hätte.</em></p><p>Unser Dorf, irgendwann in der Regenzeit</p><p>Heute kam ein Händler vom Markt zurück. Er erzählte, dass weiße Männer in einem fernen Land an einem Tisch gesessen hätten. Sie hätten Linien auf eine Karte gezeichnet — unsere Karte, unser Land. Niemand von uns war dabei. Niemand hat uns gefragt.</p><p>Mein Vater sagt, das sei nur Gerede. Aber die Alten im Dorf schweigen. Einer sagte leise: &bdquo;Wenn sie Linien ziehen, kommen bald Soldaten.&ldquo;</p><p>Ich verstehe nicht, wie jemand ein Land besitzen kann, in dem er nie gewesen ist. Unsere Felder, unsere Wege, der Fluss — das alles soll jetzt jemand anderem gehören?</p>",
+  "quelle": "Fiktiver Tagebucheintrag, basierend auf typischen Erfahrungen der afrikanischen Bevölkerung während der Kolonialisierung Ende des 19. Jahrhunderts. Figur und Erlebnisse sind erfunden, historischer Kontext ist belegt. Quellen: Wikipedia — Kongokonferenz, Kolonialismus.",
+  "_meta": {
+    "wortanzahl": 97,
+    "aufbereitung": "rekonstruiert",
+    "rekonstruktions_begruendung": "Fiktiver Tagebucheintrag. Keine Originalquelle einer afrikanischen Perspektive auf die Berliner Konferenz verfuegbar (Quellenlage duenn, s. Recherche-Hinweise). Rekonstruktion auf Basis historischer Belege zu Auswirkungen der Kongokonferenz auf lokale Bevoelkerungen.",
+    "artefakt_ref": ["rolle-3-2"],
+    "tafelbild_knoten_abgedeckt": ["k3-6"],
+    "perspektive": "P5: Afrikanische Betroffene",
+    "erarbeitbarkeits_check": "PASS — Tagebucheintrag macht k3-6 (Kolonialisierung Afrikas) aus der Perspektive der Betroffenen erarbeitbar; Ohnmacht und Fremdbestimmung direkt erlebbar.",
+    "trigger_flags": ["diskriminierung"]
+  }
+}

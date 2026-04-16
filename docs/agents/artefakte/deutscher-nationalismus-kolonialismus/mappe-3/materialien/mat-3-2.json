@@ -1,0 +1,21 @@
+{
+  "id": "mat-3-2",
+  "typ": "darstellungstext",
+  "titel": "Warum wollte Deutschland Kolonien?",
+  "position": 2,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": "mat-3-1",
+  "primary_scpl_zone": "C1",
+  "inhalt": "<p>Nach der Reichsgründung 1871 war das Deutsche Kaiserreich eine Großmacht in der Mitte Europas. Doch Großbritannien und Frankreich hatten etwas, das Deutschland fehlte: ein weltumspannendes Kolonialreich. Deutschland galt als &bdquo;verspätete Nation&ldquo;.</p><p>Ab den 1880er Jahren drängten deutsche Kaufleute und Händler auf Kolonien in Afrika. Sie suchten Rohstoffe und neue Absatzmärkte. Kolonialvereine und die Presse forderten lautstark, Deutschland müsse endlich mitmischen. Nationales Prestige spielte eine große Rolle: Wer Kolonien besaß, galt als Weltmacht.</p><p>Dieses Streben, andere Länder politisch und wirtschaftlich zu unterwerfen, nennt man <strong>Imperialismus</strong> (das Bestreben eines Staates, andere Länder zu beherrschen). Deutschland verlangte seinen Anteil an der Welt — und &bdquo;Anteil&ldquo; hieß: Kolonien, Einflusszonen, Macht über andere Völker.</p>",
+  "quelle": "Eigene Darstellung auf Basis der Sachanalyse. Quellen: Wikipedia — Deutsche Kolonien, Imperialismus.",
+  "_meta": {
+    "wortanzahl": 118,
+    "aufbereitung": "rekonstruiert",
+    "rekonstruktions_begruendung": "Darstellungstext ist agent-generiert auf Basis von SKRIPT Chunk 3 §1-§2 und Fakten F3-1, F3-3, F3-4. Keine woertliche Originalquelle, daher aufbereitung=rekonstruiert.",
+    "artefakt_ref": [],
+    "tafelbild_knoten_abgedeckt": ["k3-1", "k3-2"],
+    "perspektive": "uebergreifend (Deutsche Politik, Wirtschaft)",
+    "erarbeitbarkeits_check": "PASS — k3-1 (Kaiserreich als Großmacht) im ersten Absatz, k3-2 (Imperialismus) im dritten Absatz mit Definition eingeführt.",
+    "trigger_flags": []
+  }
+}

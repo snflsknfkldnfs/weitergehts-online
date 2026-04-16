@@ -1,0 +1,30 @@
+{
+  "mappe": "3",
+  "ueberleitungen": [
+    {
+      "von": "mat-3-1",
+      "nach": "mat-3-2",
+      "text": "Du hast gelesen, was B\u00fclow im Reichstag forderte: einen \u201ePlatz an der Sonne\u201c f\u00fcr Deutschland. Das klingt harmlos \u2014 doch welche konkreten Gr\u00fcnde steckten hinter dem Wunsch nach Kolonien?"
+    },
+    {
+      "von": "mat-3-2",
+      "nach": "mat-3-3",
+      "text": "Du hast erfahren, warum Deutschland Kolonien wollte: Rohstoffe, Prestige und Rivalit\u00e4t mit anderen Gro\u00dfm\u00e4chten. Doch wie setzten die europ\u00e4ischen M\u00e4chte ihren Anspruch auf Afrika in die Tat um?"
+    },
+    {
+      "von": "mat-3-3",
+      "nach": "mat-3-4",
+      "text": "Du hast die Darstellung aus der \u201eGartenlaube\u201c gesehen \u2014 Diplomaten am Verhandlungstisch, eine Afrika-Karte an der Wand. So stellte man die Konferenz offiziell dar. Doch wie sahen Kritiker dieses Treffen?"
+    },
+    {
+      "von": "mat-3-4",
+      "nach": "mat-3-5",
+      "text": "Die Karikatur hat dir gezeigt, was wirklich geschah: Bismarck verteilte Afrika wie einen Kuchen. Doch was war das Ergebnis dieser Aufteilung \u2014 wie sah Afrika danach tats\u00e4chlich aus?"
+    },
+    {
+      "von": "mat-3-5",
+      "nach": "mat-3-6",
+      "text": "Die Karte hat dir gezeigt: Bis 1913 war fast ganz Afrika in europ\u00e4ischer Hand \u2014 nur \u00c4thiopien und Liberia blieben frei. Doch was bedeutete das f\u00fcr die Menschen, deren Heimat pl\u00f6tzlich einem \u201eSchutzgebiet\u201c zugeordnet wurde?"
+    }
+  ]
+}

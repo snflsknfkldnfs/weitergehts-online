@@ -1,0 +1,23 @@
+{
+  "id": "aufgabe-3-1",
+  "typ": "lueckentext",
+  "frage": "Erg\u00e4nze die fehlenden Fachbegriffe.",
+  "material_referenz": ["mat-3-2"],
+  "text_mit_luecken": "Das Deutsche Kaiserreich wurde 1871 gegr\u00fcndet. Im Vergleich zu Gro\u00dfbritannien und Frankreich besa\u00df Deutschland jedoch keine Kolonien \u2014 es galt als ___. Deutsche Kaufleute dr\u00e4ngten auf Gebiete in Afrika, um ___ und neue Absatzm\u00e4rkte zu finden. Au\u00dferdem ging es um nationales ___: Wer Kolonien hatte, galt als Weltmacht. Das Streben eines Staates, andere L\u00e4nder zu beherrschen, nennt man ___.",
+  "loesung": ["versp\u00e4tete Nation", "Rohstoffe", "Prestige", "Imperialismus"],
+  "antwortpool": ["Absolutismus", "Imperialismus", "Prestige", "Rohstoffe", "versp\u00e4tete Nation"],
+  "feedback": [
+    {"typ": "bestaetigung", "text": "Alle Begriffe richtig eingesetzt. Du kennst jetzt die wichtigsten Gr\u00fcnde f\u00fcr Deutschlands Kolonialstreben.", "ebene": "wissen"},
+    {"typ": "korrektur", "text": "Oft wird Absolutismus mit Imperialismus verwechselt. Absolutismus beschreibt eine Herrschaftsform (ein K\u00f6nig regiert allein), Imperialismus das Streben nach Kolonien und Weltmacht.", "ebene": "wissen"}
+  ],
+  "tipps": [
+    {"stufe": 1, "haertegrad": "kognitiv", "text": "Alle L\u00fccken betreffen Begriffe aus dem Bereich Kolonialpolitik. Lies [[mat-3-2|Warum wollte Deutschland Kolonien?]] (M2) nochmal genau."},
+    {"stufe": 2, "haertegrad": "strukturierend", "text": "Die letzte L\u00fccke sucht den Oberbegriff f\u00fcr das Streben nach Kolonien. Absolutismus kannst du ausschlie\u00dfen \u2014 das geh\u00f6rt zur Herrschaftsform."},
+    {"stufe": 3, "haertegrad": "heuristisch", "text": "Lies den dritten Absatz von M2 \u2014 dort wird der zentrale Fachbegriff mit einer Erkl\u00e4rung in Klammern eingef\u00fchrt. Die anderen L\u00fccken findest du im zweiten Absatz."}
+  ],
+  "punkte": 10,
+  "_meta": {
+    "bloom_level": 2,
+    "bloom_begruendung": "Kontextgetriebener Begriffseinsatz: SuS m\u00fcssen L\u00fcckenkontext verstehen und passenden Fachbegriff zuordnen (L2 Verstehen)."
+  }
+}

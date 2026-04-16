@@ -1,0 +1,25 @@
+{
+  "id": "aufgabe-3-5",
+  "typ": "freitext-code",
+  "frage": "War es gerecht, dass Europ\u00e4er \u00fcber Afrika entschieden, ohne die Afrikaner zu fragen?",
+  "material_referenz": ["mat-3-6", "mat-3-3", "mat-3-5"],
+  "loesung": ["Berliner Konferenz", "Kolonialisierung"],
+  "tipps": [
+    {"stufe": 1, "haertegrad": "kognitiv", "text": "Lies [[mat-3-6|Tagebucheintrag]] (M6) nochmal. \u00dcberlege zuerst: Was geschah mit dem Land der jungen Frau? Dann formuliere deine Meinung."},
+    {"stufe": 2, "haertegrad": "strukturierend", "text": "Die Europ\u00e4er entschieden auf der Berliner Konferenz \u00fcber Afrika, ohne einen einzigen Afrikaner zu fragen. Was bedeutete das f\u00fcr die Menschen vor Ort?"},
+    {"stufe": 3, "haertegrad": "heuristisch", "text": "Musterantwort: Auf der Berliner Konferenz teilten europ\u00e4ische Staaten Afrika unter sich auf. Kein Afrikaner war beteiligt. Das Tagebuch zeigt, was Kolonialisierung f\u00fcr die Betroffenen bedeutete: Ihr Land wurde fremden M\u00e4chten zugesprochen, ohne dass jemand sie fragte. Das war nicht gerecht, weil \u00fcber die Lebensgrundlagen ganzer V\u00f6lker bestimmt wurde, ohne sie einzubeziehen. Deine Antwort sollte die Begriffe \u201eBerliner Konferenz\u201c und \u201eKolonialisierung\u201c verwenden."}
+  ],
+  "punkte": 10,
+  "_meta": {
+    "bloom_level": 5,
+    "bloom_begruendung": "Stellungnahme mit Begr\u00fcndung: SuS beurteilen die Berliner Konferenz aus Perspektive der Betroffenen (L5 Bewerten).",
+    "teilfragen": [
+      "Was passierte mit dem Land der jungen Frau im Tagebuch?",
+      "Warum wurden die Afrikaner bei der Aufteilung nicht gefragt?",
+      "War diese Entscheidung gerecht \u2014 begr\u00fcnde deine Meinung."
+    ],
+    "erwartete_begriffe": ["Berliner Konferenz", "Kolonialisierung", "Fremdbestimmung", "Aufteilung", "Afrika"],
+    "validierung_schwelle": 2,
+    "musterantwort": "Auf der Berliner Konferenz teilten europ\u00e4ische Staaten Afrika unter sich auf, ohne dass ein einziger Afrikaner dabei war. Die Kolonialisierung bedeutete f\u00fcr die Menschen vor Ort, dass ihre L\u00e4nder, Felder und Wege pl\u00f6tzlich fremden M\u00e4chten geh\u00f6rten. Die junge Frau im Tagebuch versteht nicht, wie jemand ein Land besitzen kann, in dem er nie gewesen ist. Das war nicht gerecht, weil \u00fcber ganze V\u00f6lker entschieden wurde, ohne sie zu fragen oder ihre Rechte zu achten."
+  }
+}

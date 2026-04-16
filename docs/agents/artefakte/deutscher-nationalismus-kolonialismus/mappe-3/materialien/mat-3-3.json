@@ -1,0 +1,23 @@
+{
+  "id": "mat-3-3",
+  "typ": "bildquelle",
+  "titel": "Die Kongokonferenz 1884 — Europäer teilen Afrika auf",
+  "position": 3,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": "mat-3-2",
+  "primary_scpl_zone": "C2",
+  "inhalt": "../../assets/img/deutscher-nationalismus-kolonialismus/img-3-1.jpg",
+  "bildunterschrift": "Darstellung der Kongokonferenz 1884 aus der Zeitschrift &bdquo;Die Gartenlaube&ldquo;. Vom 15. November 1884 bis zum 26. Februar 1885 verhandelten Vertreter von 14 Staaten in Berlin über die Aufteilung Afrikas — die <strong>Berliner Konferenz</strong> (internationales Treffen, auf dem europäische Staaten Afrika unter sich aufteilten). Wer sitzt am Tisch? Wer fehlt?",
+  "quelle": "Unbekannter Zeichner, Die Gartenlaube, 1884. Wikimedia Commons.",
+  "lizenz": "Public Domain",
+  "_meta": {
+    "wortanzahl": 52,
+    "aufbereitung": "echt",
+    "artefakt_ref": ["img-3-1"],
+    "tafelbild_knoten_abgedeckt": ["k3-4"],
+    "perspektive": "Europäische Diplomaten (offizielle Darstellung)",
+    "erschliessungsimpuls": "Wer sitzt am Tisch? Wer fehlt? Was liegt auf dem Tisch?",
+    "erarbeitbarkeits_check": "PASS — Bildunterschrift führt Berliner Konferenz (k3-4) als Fachbegriff ein; Erschließungsimpuls lenkt auf Abwesenheit afrikanischer Vertreter.",
+    "trigger_flags": []
+  }
+}

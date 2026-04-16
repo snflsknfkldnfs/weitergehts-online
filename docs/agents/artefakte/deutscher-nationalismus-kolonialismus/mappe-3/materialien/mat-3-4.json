@@ -1,0 +1,23 @@
+{
+  "id": "mat-3-4",
+  "typ": "bildquelle",
+  "titel": "Karikatur: Bismarck schneidet den Afrika-Kuchen an",
+  "position": 4,
+  "didaktische_funktion": "vertiefung",
+  "voraussetzung": "mat-3-3",
+  "primary_scpl_zone": "C2",
+  "inhalt": "../../assets/img/deutscher-nationalismus-kolonialismus/img-3-2.jpg",
+  "bildunterschrift": "Französische Karikatur von 1885 aus der Zeitschrift &bdquo;L'Illustration&ldquo;. Bismarck steht am Kopf eines Tisches und schneidet einen großen Kuchen an. Die anderen Konferenzteilnehmer sitzen und warten auf ihr Stück. Was stellt der Kuchen dar? Was will der Zeichner damit sagen?",
+  "quelle": "Unbekannter Karikaturist, L'Illustration, 1885. Wikimedia Commons.",
+  "lizenz": "Public Domain",
+  "_meta": {
+    "wortanzahl": 50,
+    "aufbereitung": "echt",
+    "artefakt_ref": ["img-3-2"],
+    "tafelbild_knoten_abgedeckt": ["k3-4"],
+    "perspektive": "Französischer Karikaturist (kritische Außensicht)",
+    "erschliessungsimpuls": "Was stellt der Kuchen dar? Was will der Zeichner damit sagen?",
+    "erarbeitbarkeits_check": "PASS — Karikatur vertieft k3-4 (Berliner Konferenz) aus kritischer Perspektive; kontrastiert mit der offiziellen Darstellung in mat-3-3.",
+    "trigger_flags": []
+  }
+}
