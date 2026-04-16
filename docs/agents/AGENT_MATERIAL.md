@@ -150,6 +150,17 @@ In v3 ist das SKRIPT die Primaerquelle fuer die Materialtyp-Zuordnung. Das fixie
 
 Minimum 4, idealerweise 5-6 Materialien.
 
+**Medienvielfalt-Ratio (MV1, v3.9):**
+Maximal 50% der Materialien einer Mappe duerfen textbasiert sein. Textbasierte Typen: `darstellungstext`, `quellentext`, `tagebuch`. Nicht-textbasierte Typen: `bildquelle`, `karte`, `zeitleiste`, `statistik`.
+
+| Materialien gesamt | Max. textbasiert | Min. nicht-textbasiert |
+|---|---|---|
+| 4 | 2 | 2 |
+| 5 | 2 | 3 |
+| 6 | 3 | 3 |
+
+**Begruendung:** Praxis-Learning — textlastige Mappen erzeugen Lesewiderstand bei R7-SuS. Nicht-textbasierte Materialien (Bilder, Karten, Diagramme, Zeitleisten) muessen eigenstaendig tragen, nicht nur illustrieren. Die Ueberleitungen leisten die narrative Einbettung.
+
 #### 1.3 Aufgaben-Skizze
 
 **ENTFAELLT in Phase 1 (v2).** Aufgaben werden erst nach Phase 2 entwickelt, wenn die Materialien final produziert und formatiert sind. Aufgaben muessen auf tatsaechlich existierende Material-Stellen referenzieren — das ist erst moeglich, wenn Material-Texte geschrieben und HTML-Fragmente vorhanden sind.
@@ -342,16 +353,15 @@ Jeder Subagent prueft MQ2 in seinem Q-Gate.
 
 **Gesamtes Wortbudget pro Mappe: max. 500 Woerter Lesetext.**
 
-**Quellenangaben-Format (cite-Einbettung, L6):**
+**Quellenangaben-Trennregel (Q6b, v3.3+):**
 
-Quellenangaben werden als `<cite>`-Elemente am Ende des Material-`inhalt`-HTML eingebettet (WORKFLOW_v4.md L6). Format: `<cite>Quelle: [Urheber], [Lizenz]</cite>`.
-
-**HINWEIS:** Ein separates `quellenangaben[]`-Array auf Mappe-Ebene wird von der Engine aktuell NICHT gerendert. Die `<cite>`-Einbettung in `inhalt` ist der verbindliche Workaround. Post-MVP: Engine-Erweiterung fuer separates Fussnoten-Rendering geplant.
+**KEINE Quellenangabe im `inhalt`-Feld.** Quellenangaben (Autor, Titel, Jahr, Fundstelle, Aufbereitungsvermerk) gehoeren ausschliesslich in das `quelle`-Feld des Material-JSON. KEIN `<cite>`-Tag im `inhalt`. Die Engine rendert `quelle` separat im ausblendbaren Quellenbereich. Dopplung fuehrt zu Q-Gate FAIL (Q6b).
 
 Regeln:
-- Pro Quellentext und Statistik: mindestens 1 `<cite>` im `inhalt`-HTML (Pflicht)
-- Darstellungstexte: `<cite>` wenn auf konkretem Schulbuch/Fachtext basierend
-- Tagebuch (fiktiv): keine Quellenangabe noetig, aber Vermerk "fiktiver Tagebucheintrag, historisch plausibel" im `quelle`-Feld
+- Pro Quellentext und Statistik: `quelle`-Feld MUSS befuellt sein (Pflicht)
+- Darstellungstexte: `quelle`-Feld wenn auf konkretem Schulbuch/Fachtext basierend
+- Tagebuch (fiktiv): `quelle`-Feld = "Fiktiver Tagebucheintrag, historisch plausibel"
+- Bildquellen: `quelle`-Feld = Urheber, Titel, Entstehungsjahr, Fundort, Lizenz
 
 #### 2.2 Tafelbild uebernehmen (v3: fixiert aus Phase 0.4)
 
@@ -483,9 +493,10 @@ Nach Rueckkehr aller Subagenten-Outputs:
 |----------|-----------|----------------------|
 | Wortbudget | Gesamter Lesetext ≤ 500 Woerter | Material kuerzen lassen (Re-Dispatch mit Wortbudget-Constraint) |
 | Typvielfalt | Mind. 4 Materialien (1 Text, 1 Quelle/Bild, 1 personifiziert, 1 visuell) | Typ im Blueprint tauschen |
+| Medienvielfalt-Ratio (MV1) | Max. 50% textbasierte Materialien (DT/QT/TB). Bei 5 Mat: max. 2 Text. Bei 6 Mat: max. 3 Text. | Textbasiertes Material in visuelles umwandeln (DT→Zeitleiste, QT→Bildquelle) oder ersetzen |
 | Sequenz-Kohaerenz | Keine vorgreifenden Fachbegriffe, narrative Bruecken vorhanden | SQ-1 bis SQ-4 pruefen (Subagenten-Q-Gate) |
 | TB-Abdeckung | Jeder Knoten durch mindestens 1 Material erarbeitbar | Fehlendes Material ergaenzen |
-| Quellenangaben | Pro QT/ST mind. 1 Fussnote, keine generischen Angaben | An Subagenten zurueckgeben |
+| Quellenangaben | Pro QT/ST `quelle`-Feld befuellt, keine generischen Angaben (Q6b) | An Subagenten zurueckgeben |
 
 **Phase 2.1c (v4): Material-Cross-Konsistenz + Ueberleitung-Produktion + Hefteintrag-Revision.** Nach Abschluss aller Material-Dispatches folgt ein separater Cross-Konsistenz-Dispatch (1 Dispatch, 6 Achsen). Achsen 1-4: Sequenz-Kohaerenz, Fachbegriff-Konsistenz, Ueberleitung-Kohaerenz, TB-Knoten-Gesamtabdeckung. Achse 5 (Q-M2-03): Ueberleitung-Produktion — formuliert die finalen Zwei-Vektoren-Bruecken zwischen Materialien auf Basis der konkreten mat-JSONs + GERUEST-Intentionen. Output: `ueberleitungen.json` (Assembly-Input fuer Phase 3). Achse 6 (M2): Hefteintrag-Revision — FORMULIERUNGS-OFFEN-Felder der SCPL-Texte auf Material-Kontext anpassen, zusammenfassung + ueberleitung erstmalig produzieren. GUETEKRITERIEN Stufe-2 Re-Evaluation (G3, G5, G10, G12, G14). Details: VERTRAG_PHASE_2-1c_CROSS.md.
 

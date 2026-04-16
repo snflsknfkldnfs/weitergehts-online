@@ -1,0 +1,45 @@
+{
+  "id": "aufgabe-1-2",
+  "typ": "lueckentext",
+  "frage": "Ergänze die fehlenden Begriffe.",
+  "material_referenz": ["mat-1-2"],
+  "text_mit_luecken": "Im Herbst 1914 gruben sich die Armeen an der Westfront in ___ ein. Die Soldaten lebten dort unter schlimmen Bedingungen: Wasser stand knietief, Ratten fraßen das Brot und Granaten töteten Kameraden. Die Frontlinie erstreckte sich über ___ Kilometer. Keine Seite konnte vorrücken — Fachleute nennen diese Lage ___.",
+  "loesung": ["Schützengräben", "700", "Stellungskrieg"],
+  "antwortpool": ["700", "Bewegungskrieg", "Schützengräben", "Stellungskrieg"],
+  "tipps": [
+    {
+      "stufe": 1,
+      "haertegrad": "kognitiv",
+      "text": "Alle drei Begriffe findest du in Karls Tagebuch und der Erzählerstimme darunter. [[mat-1-2|Tagebuch: Karl Meißner]] (M2)"
+    },
+    {
+      "stufe": 2,
+      "haertegrad": "strukturierend",
+      "text": "Der Distraktor im Pool beschreibt das Gegenteil der Lage an der Westfront. Die letzte Lücke betrifft einen Fachbegriff aus der Erzählerstimme."
+    },
+    {
+      "stufe": 3,
+      "haertegrad": "heuristisch",
+      "text": "Die Soldaten gruben sich in befestigte Gräben ein. Die Frontlinie war so lang wie die Strecke von München nach Hamburg. Und wenn keine Seite vorrücken kann, ist das das Gegenteil von Bewegung."
+    }
+  ],
+  "feedback": [
+    {
+      "typ": "bestaetigung",
+      "text": "Richtig. Die Soldaten lebten monatelang in Schützengräben, die Frontlinie war 700 Kilometer lang, und weil niemand vorrückte, nennt man das Stellungskrieg.",
+      "ebene": "wissen"
+    },
+    {
+      "typ": "korrektur",
+      "text": "Bewegungskrieg ist das Gegenteil — dabei rücken Armeen schnell vor. An der Westfront ab 1914 bewegte sich aber nichts mehr. Lies nochmal die Erzählerstimme in mat-1-2.",
+      "ebene": "wissen"
+    }
+  ],
+  "afb": "I",
+  "position": 2,
+  "punkte": 10,
+  "_meta": {
+    "bloom_level": 2,
+    "bloom_begruendung": "Kontextgetriebener Begriffseinsatz: SuS müssen den Kontext verstehen, um die Fachbegriffe an der richtigen Stelle einzusetzen (Operator: ergänzen, AFB I, Bloom L2)."
+  }
+}

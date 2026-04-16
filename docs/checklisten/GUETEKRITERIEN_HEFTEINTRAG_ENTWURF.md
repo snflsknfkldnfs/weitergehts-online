@@ -129,11 +129,11 @@ Gewichtete Kriterien fuer den AGENT_HEFTEINTRAG Q-Gate. Drei Prioritaetsstufen: 
 | # | Kriterium | Operationalisierung | Herkunft |
 |---|---|---|---|
 | G1 | **Lernziel-Kongruenz** | Jede relevante KE aus DIDAKTIK_RAHMEN hat min. 1 Element im Tafelbild | DG B2 Grundsatz 2 |
-| G2 | **Konsequente Reduktion** | Max. 10 Elemente (Knoten). Max. 3 Kernerkenntnisse (Merksaetze). | DG B2 Grundsatz 1 + Empirie (Durchschnitt 9,25) |
+| G2 | **Konsequente Reduktion** | Max. 10 Elemente (Knoten). Max. 3 C-Schritte (Ausnahme: 4 bei kausalem Muster mit >3 Ursachen). Max. 2 Kernerkenntnisse/Merksaetze (Ausnahme: 3 bei ≥3 KE aus DIDAKTIK_RAHMEN). Reduktion ist Qualitaet, nicht Verlust. | DG B2 Grundsatz 1 + Empirie (Durchschnitt 9,25) + Praxis-Learning: Weniger C-Schritte = bessere Uebertragbarkeit |
 | G3 | **Erarbeitbarkeit** | Jedes TB-Element ist durch ein geplantes Material erarbeitbar (Abgleich mit INHALTSBASIS) | Empirischer Befund: Material-TB-Korrespondenz |
 | G4 | **Strukturklarheit** | TB hat eine erkennbare Ordnung aus den 6 empirischen Typen: parallel-kausal, sequenziell, kontrastierend, metaphorisch, relational ODER konzept-beispiel. Ein TB darf EIN Primaermuster verwenden; Mischungen nur wenn Subsektionen klar getrennt. | DG B2 Grundsatz 5 + Empirie (8 Praxis-TBs, v2-Analyse 2026-04-03) |
 | G5 | **Sprachliches Niveau** | Merksaetze: max. 15 Woerter, R7-Lesbarkeit. Fachbegriffe nur wenn in Material eingefuehrt. | DG B2 Grundsatz 4 + AGENT_SKRIPT Constraints |
-| G6 | **Hefteintrag-Transferierbarkeit** | Hefteintrag-Repraesentation in max. 5 Minuten ins Heft uebertragbar (~80-120 Woerter) | Empirischer Befund: 5-7 min Uebertragungszeit |
+| G6 | **Hefteintrag-Transferierbarkeit** | Gesamter sichtbarer Text des Hefteintrags (situation.kontextsatz + alle complication[].schritt + problem.satz + alle loesung[] + alle fachbegriffe) **max. 120 Woerter** (harte Grenze). Uebertragung ins Heft in max. 5 Minuten. AGENT_HEFTEINTRAG zaehlt die Woerter explizit im Q-Gate und dokumentiert den Wert. Bei >120W: C-Schritte kuerzen, Elaborierung reduzieren, Merksaetze verdichten. | Empirischer Befund: 5-7 min Uebertragungszeit. Praxis-Learning: Hefteintraege >120W werden von R7-SuS nicht vollstaendig uebertragen. |
 
 ### SOLL-Kriterien
 

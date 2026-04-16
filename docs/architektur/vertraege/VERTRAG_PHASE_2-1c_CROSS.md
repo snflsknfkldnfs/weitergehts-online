@@ -48,11 +48,13 @@ Beide Vektoren muessen inhaltlich praezise auf die **konkreten produzierten Mate
 
 | ID | Kriterium | Operationalisierung |
 |---|---|---|
-| UE-1 | Rueckwaerts-Vektor | Benennt konkret, was SuS aus dem Vorgaenger-Material gelernt/gesehen/erfahren haben. Kein generisches "Du hast viel gelernt". |
-| UE-2 | Vorwaerts-Vektor | Macht die Relevanz des naechsten Materials plausibel. Weckt Neugier oder benennt eine offene Frage, die das naechste Material beantwortet. |
+| UE-1 | Rueckwaerts-Vektor | Benennt konkret, was SuS aus dem Vorgaenger-Material gelernt/gesehen/erfahren haben. Kein generisches "Du hast viel gelernt". Direkte Du-Ansprache bevorzugt (siehe UE-6). |
+| UE-2 | Vorwaerts-Vektor | Macht die Relevanz des naechsten Materials plausibel. Weckt Neugier oder benennt eine offene Frage, die das naechste Material aufgreift. Die Ueberleitung stellt die FRAGE — das Material liefert die ANTWORT. |
 | UE-3 | Sprachregister R7 | Schuelernahe Sprache, max. 2 Saetze, keine Fachbegriffe die noch nicht eingefuehrt sind. Keine didaktischen Metakommentare ("macht die Perspektiven erlebbar", "vertieft das Verstaendnis"). Stattdessen: direkte Ankuendigung ("Wie hat sich das angefuehlt? Zwei Menschen erzaehlen."). Klingt wie Moderation, nicht wie Lehrerhandreichung. |
-| UE-4 | Kein Spoiler | Ueberleitung nimmt NICHT die Kernerkenntnis des naechsten Materials vorweg. |
+| UE-4 | Kein Spoiler | Ueberleitung nimmt NICHT die Kernerkenntnis des naechsten Materials vorweg. Keine Sachverhalte entfalten, die das Folge-Material selbst erarbeiten soll. Die Grenze: Rueckbezug auf bereits Erarbeitetes = erlaubt. Vorgriff auf noch nicht Erarbeitetes = verboten. |
 | UE-5 | Sequenz-Passung | Ueberleitung passt zum tatsaechlichen Inhalt beider Materialien (nicht nur zum GERUEST-Plan). |
+| UE-6 | Du-Ansprache (v3.9) | Ueberleitungen sprechen den Lernenden direkt an. Der Rueckwaerts-Vektor referenziert die Material-Erfahrung als persoenlichen Lernakt: "Im Tagebuch des Soldaten hast du erfahren, dass...", "Die Karte hat dir gezeigt, dass...", "Du hast gesehen, wie...". Vermeidet passive Nacherzaehlung ("Der Text beschrieb...") und abstrakte Dritte-Person-Formulierungen ("Die Schueler erarbeiten..."). Die Du-Ansprache macht den Lernprozess explizit und verbindet Material-Evidenz mit persoenlicher Erkenntnis. |
+| UE-R1 | Funktions-Abgrenzung (v3.9) | Materialien stehen fuer sich — sie liefern Evidenz (Quellen, Bilder, Daten). Ueberleitungen operieren auf einer anderen Ebene: Sie leisten die didaktische Einbettung in den Gesamtzusammenhang. Je staerker Materialien nicht-textbasiert sind (Bildquellen, Karten, Statistiken), desto wichtiger wird die Ueberleitung als narratives Bindeglied. Die Ueberleitung darf daher NICHT gekuerzt werden, um Textvolumen zu sparen — ihre Funktion ist nicht redundant zum Material, sondern komplementaer. FAIL wenn: Ueberleitung entfaellt oder auf unter 1 Satz gekuerzt wird. |
 
 **Sonderfall mat-N-1 (Position 1):** Keine Ueberleitung (kein Vorgaenger). Die Problemstellung aus `rahmen/einstieg.json` uebernimmt diese Funktion.
 

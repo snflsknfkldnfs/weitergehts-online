@@ -85,6 +85,25 @@
         var storageKey = 'escape-' + thema;
         var allProgress = Core.storage.get(storageKey) || { mappen: {} };
 
+        // v3.12: Vorab freigeschaltete Mappen in localStorage seeden
+        var seedChanged = false;
+        for (var s = 0; s < mappen.length; s++) {
+          if (mappen[s].vorab_freigeschaltet) {
+            if (!allProgress.mappen) allProgress.mappen = {};
+            if (!allProgress.mappen[mappen[s].id]) {
+              allProgress.mappen[mappen[s].id] = { abgeschlossen: false, aufgaben: {} };
+            }
+            if (!allProgress.mappen[mappen[s].id].abgeschlossen) {
+              allProgress.mappen[mappen[s].id].abgeschlossen = true;
+              seedChanged = true;
+            }
+          }
+        }
+        if (seedChanged) {
+          allProgress.letzteAktivitaet = new Date().toISOString();
+          Core.storage.set(storageKey, allProgress);
+        }
+
         // Mappen rendern
         var container = document.getElementById('mappen-uebersicht');
         if (!container) return;

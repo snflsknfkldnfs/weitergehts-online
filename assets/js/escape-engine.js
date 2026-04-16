@@ -188,6 +188,9 @@ var EscapeEngine = (function () {
         var thema = (data.meta && data.meta.titel) ? data.meta.titel.toLowerCase().replace(/\s+/g, '-') : 'unbenannt';
         _state.storageKey = 'escape-' + thema;
 
+        // v3.12: Vorab freigeschaltete Mappen in localStorage seeden
+        _seedVorabFreigeschaltet(data);
+
         // Mappe finden
         var mappe = _getMappe(mappeId);
         if (!mappe) {
@@ -571,6 +574,39 @@ var EscapeEngine = (function () {
     allProgress.mappen[mappeId].abgeschlossen = abgeschlossen;
     allProgress.letzteAktivitaet = new Date().toISOString();
     Core.storage.set(_state.storageKey, allProgress);
+  }
+
+  /**
+   * v3.12: Seeded vorab freigeschaltete Mappen in localStorage.
+   * Prüft jede Mappe auf vorab_freigeschaltet === true und markiert
+   * sie als abgeschlossen, falls nicht bereits im Progress vorhanden.
+   * @param {Object} data – Geladene data.json-Daten
+   * @private
+   */
+  function _seedVorabFreigeschaltet(data) {
+    var mappen = (data && data.mappen) || [];
+    var allProgress = _getAllProgress();
+    var changed = false;
+
+    for (var i = 0; i < mappen.length; i++) {
+      var mappe = mappen[i];
+      if (!mappe.vorab_freigeschaltet) continue;
+
+      if (!allProgress.mappen) allProgress.mappen = {};
+      if (!allProgress.mappen[mappe.id]) {
+        allProgress.mappen[mappe.id] = { abgeschlossen: false, aufgaben: {} };
+      }
+      if (!allProgress.mappen[mappe.id].abgeschlossen) {
+        allProgress.mappen[mappe.id].abgeschlossen = true;
+        changed = true;
+      }
+    }
+
+    if (changed) {
+      allProgress.letzteAktivitaet = new Date().toISOString();
+      Core.storage.set(_state.storageKey, allProgress);
+      console.info('[EscapeEngine] Vorab freigeschaltete Mappen geseeded.');
+    }
   }
 
   /**
