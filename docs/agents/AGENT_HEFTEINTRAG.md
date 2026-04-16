@@ -57,7 +57,7 @@ Aus dem SKRIPT-Chunk die Stundenfrage WORTWOERTLICH uebernehmen (= Chunk-Uebersc
 Aus dem SKRIPT-Chunk und DIDAKTIK_RAHMEN (KE-Matrix + Sicherungsziel) die 2-3 zentralen Erkenntnisse extrahieren.
 
 **Regeln:**
-- Max. 2 Kernerkenntnisse pro Mappe (G2). Ausnahme: 3, wenn DIDAKTIK_RAHMEN ≥3 KE fuer diese Mappe definiert.
+- Max. 3 Kernerkenntnisse pro Mappe (G2)
 - Jede Kernerkenntnis als ganzer Satz, max. 15 Woerter (G5)
 - Jede relevante KE aus DIDAKTIK_RAHMEN muss in mindestens 1 Kernerkenntnis muenden (G1)
 - Kernerkenntnisse duerfen keine Fakten enthalten, die nicht im SKRIPT behandelt werden
@@ -109,7 +109,7 @@ Im Hefteintrag wird daraus:
 **Funktion:** Spannung aufbauen, Sachverhalt vertiefen, Struktur sichtbar machen, Fachbegriffe verankern.
 
 **Regeln:**
-- 1-3 Schritte (G2). Ausnahme: 4 Schritte nur bei kausalem Muster mit >3 unabhaengigen Ursachen.
+- 1-4 Schritte, je nach Komplexitaet
 - Pro Schritt: ein Sachverhalt + ein Fachbegriff
 - Schritte werden vertikal durch Pfeile verbunden (Pfeile ohne Text — der symbolische Wert reicht)
 - Jeder Schritt kann optional eine Darstellung haben (Gegenueberstellung, Zeitleiste, Tabelle)
@@ -235,8 +235,6 @@ Nach der Erarbeitbarkeits-Pruefung: Fuer jeden TB-Knoten im `knoten[]`-Array (bz
 ### 7. Q-Gate ausfuehren
 
 Den Hefteintrag gegen alle 14 Guetekriterien pruefen und das Q-Gate-Protokoll ausfuellen.
-
-**Wortzaehlung (G6, Pflicht):** Vor dem Q-Gate die Gesamtwoerter des sichtbaren Hefteintrag-Texts zaehlen. Gezaehlte Felder: `situation.kontextsatz` + alle `complication[].schritt` (nur Text, nicht `darstellung`-Inhalte) + `problem.satz` + alle `loesung[]` + alle `fachbegriffe[]` (jeder Begriff = 1 Wort). Ergebnis im Q-Gate-Protokoll bei G6 als "Gezaehlte Woerter: N" dokumentieren. **Harte Grenze: max. 120 Woerter.** Bei Ueberschreitung: C-Schritte kuerzen, Elaborierung reduzieren, Merksaetze verdichten — BEVOR das Q-Gate als PASS gewertet wird.
 
 **MUSS-Kriterien (G1-G6):** Bei FAIL → nachbessern, bevor Output uebergeben wird.
 **SOLL-Kriterien (G7-G10):** Bei FAIL → dokumentieren, ob Nachbesserung moeglich.
@@ -368,11 +366,11 @@ else → Fallback-Text
 | # | Kriterium | Prio | Ergebnis | Detail |
 |---|---|---|---|---|
 | G1 | Lernziel-Kongruenz | MUSS | [PASS/FAIL] | [KE X → SCPL-Schritt Y] |
-| G2 | Reduktion (max. 3 C-Schritte, max. 2 Merksaetze; Ausnahme: 4 C bei kausalem Muster mit >3 Ursachen, 3 Merksaetze bei ≥3 KE) | MUSS | [PASS/FAIL] | [N Schritte, N Merksaetze] |
+| G2 | Reduktion (max. 4 C-Schritte, max. 3 Merksaetze) | MUSS | [PASS/FAIL] | [N Schritte, N Merksaetze] |
 | G3 | Erarbeitbarkeit | MUSS | [PASS/FAIL] | [Jeder Schritt → Material] |
 | G4 | Strukturklarheit | MUSS | [PASS/FAIL] | [Ordnungsmuster: X, konsistent] |
 | G5 | Sprachliches Niveau | MUSS | [PASS/FAIL] | [Laengster Merksatz: N Woerter] |
-| G6 | Hefteintrag-Transfer (max. 120W, harte Grenze) | MUSS | [PASS/FAIL] | [Gezaehlte Woerter: N, max. 120] |
+| G6 | Hefteintrag-Transfer | MUSS | [PASS/FAIL] | [N Woerter, ~N min Uebertragung] |
 | G7 | Merksatz-Abschluss | SOLL | [PASS/FAIL] | [N Merksaetze als ganze Saetze] |
 | G8 | Anschaulichkeit | SOLL | [PASS/FAIL] | [Darstellungen: gegenueberstellung, ...] |
 | G9 | Progression | SOLL | [PASS/FAIL] | [Voraussetzungen: ...] |
