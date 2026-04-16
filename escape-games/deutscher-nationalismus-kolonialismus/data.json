@@ -1782,6 +1782,659 @@
         "ueberleitungssatz": "Deutschland war nun eine Großmacht in der Mitte Europas. Doch während andere Staaten längst Kolonien besaßen, hatte das neue Deutsche Reich noch keine. Das sollte sich ändern.",
         "_variante": "A"
       }
+    },
+    {
+      "id": "mappe-3",
+      "titel": "Deutschlands Griff nach der Welt",
+      "beschreibung": "Vom 'Platz an der Sonne' ueber die Berliner Konferenz 1884 bis zum Wettlauf um Afrika — Imperialismus und Kolonialisierung ohne Ruecksicht auf die Betroffenen.",
+      "freischalt_code": "SONNE",
+      "einstieg": {
+        "narrativ": "<p>In der Dokumentenmappe liegt ein Zeitungsausschnitt von 1897. Ein Politiker steht im Deutschen Reichstag und fordert etwas, das harmlos klingt — aber Folgen fuer einen ganzen Kontinent haben wird.</p>",
+        "problemstellung": "Warum teilten europaeische Maechte Afrika unter sich auf — ohne die Afrikaner zu fragen?"
+      },
+      "materialien": [
+        {
+          "id": "mat-3-1",
+          "typ": "quellentext",
+          "titel": "Was forderte Deutschland als neue Großmacht?",
+          "position": 1,
+          "didaktische_funktion": "einstieg",
+          "voraussetzung": null,
+          "primary_scpl_zone": "C1",
+          "inhalt": "<p><em>Bernhard von Bülow war Staatssekretär des Äußeren im Deutschen Reich. Am 6. Dezember 1897 sprach er vor dem Reichstag über Deutschlands Zukunft als Kolonialmacht.</em></p><blockquote><p>&bdquo;Wir wollen niemand in den Schatten stellen, aber wir verlangen auch unseren Platz an der Sonne.&ldquo;</p></blockquote><p><em>Mit &bdquo;Platz an der Sonne&ldquo; meinte Bülow: Deutschland sollte wie Großbritannien und Frankreich Kolonien besitzen. Das Schlagwort wurde zum Symbol des deutschen Weltmachtanspruchs unter Kaiser Wilhelm II.</em></p>",
+          "quelle": "Bernhard von Bülow, Rede vor dem Reichstag, 6. Dezember 1897. Zitiert nach: Wikipedia, Deutsche Kolonien.",
+          "_meta": {
+            "wortanzahl": 58,
+            "quellentyp": "rede",
+            "aufbereitung": "echt",
+            "artefakt_ref": [
+              "zit-3-1"
+            ],
+            "tafelbild_knoten_abgedeckt": [
+              "k3-2",
+              "k3-3"
+            ],
+            "quellenkritische_impulse": [
+              "Was fordert Bülow in seiner Rede?",
+              "Warum spricht Bülow wohl von einem 'Platz an der Sonne' — was könnte er damit meinen?"
+            ],
+            "perspektive": "P1: Deutsche Politik",
+            "erarbeitbarkeits_check": "PASS — Bülow-Zitat macht k3-3 ('Platz an der Sonne') direkt erarbeitbar; Kontext-Satz verbindet mit k3-2 (Imperialismus als Weltmachtanspruch).",
+            "trigger_flags": []
+          },
+          "ueberleitung_von": null
+        },
+        {
+          "id": "mat-3-2",
+          "typ": "darstellungstext",
+          "titel": "Warum wollte Deutschland Kolonien?",
+          "position": 2,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": "mat-3-1",
+          "primary_scpl_zone": "C1",
+          "inhalt": "<p>Nach der Reichsgründung 1871 war das Deutsche Kaiserreich eine Großmacht in der Mitte Europas. Doch Großbritannien und Frankreich hatten etwas, das Deutschland fehlte: ein weltumspannendes Kolonialreich. Deutschland galt als &bdquo;verspätete Nation&ldquo;.</p><p>Ab den 1880er Jahren drängten deutsche Kaufleute und Händler auf Kolonien in Afrika. Sie suchten Rohstoffe und neue Absatzmärkte. Kolonialvereine und die Presse forderten lautstark, Deutschland müsse endlich mitmischen. Nationales Prestige spielte eine große Rolle: Wer Kolonien besaß, galt als Weltmacht.</p><p>Dieses Streben, andere Länder politisch und wirtschaftlich zu unterwerfen, nennt man <strong>Imperialismus</strong> (das Bestreben eines Staates, andere Länder zu beherrschen). Deutschland verlangte seinen Anteil an der Welt — und &bdquo;Anteil&ldquo; hieß: Kolonien, Einflusszonen, Macht über andere Völker.</p>",
+          "quelle": "Eigene Darstellung auf Basis der Sachanalyse. Quellen: Wikipedia — Deutsche Kolonien, Imperialismus.",
+          "_meta": {
+            "wortanzahl": 118,
+            "aufbereitung": "rekonstruiert",
+            "rekonstruktions_begruendung": "Darstellungstext ist agent-generiert auf Basis von SKRIPT Chunk 3 §1-§2 und Fakten F3-1, F3-3, F3-4. Keine woertliche Originalquelle, daher aufbereitung=rekonstruiert.",
+            "artefakt_ref": [],
+            "tafelbild_knoten_abgedeckt": [
+              "k3-1",
+              "k3-2"
+            ],
+            "perspektive": "uebergreifend (Deutsche Politik, Wirtschaft)",
+            "erarbeitbarkeits_check": "PASS — k3-1 (Kaiserreich als Großmacht) im ersten Absatz, k3-2 (Imperialismus) im dritten Absatz mit Definition eingeführt.",
+            "trigger_flags": []
+          },
+          "ueberleitung_von": "Du hast gelesen, was Bülow im Reichstag forderte: einen „Platz an der Sonne“ für Deutschland. Das klingt harmlos — doch welche konkreten Gründe steckten hinter dem Wunsch nach Kolonien?"
+        },
+        {
+          "id": "mat-3-3",
+          "typ": "bildquelle",
+          "titel": "Die Kongokonferenz 1884 — Europäer teilen Afrika auf",
+          "position": 3,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": "mat-3-2",
+          "primary_scpl_zone": "C2",
+          "inhalt": "../../assets/img/deutscher-nationalismus-kolonialismus/img-3-1.jpg",
+          "bildunterschrift": "Darstellung der Kongokonferenz 1884 aus der Zeitschrift &bdquo;Die Gartenlaube&ldquo;. Vom 15. November 1884 bis zum 26. Februar 1885 verhandelten Vertreter von 14 Staaten in Berlin über die Aufteilung Afrikas — die <strong>Berliner Konferenz</strong> (internationales Treffen, auf dem europäische Staaten Afrika unter sich aufteilten). Wer sitzt am Tisch? Wer fehlt?",
+          "quelle": "Unbekannter Zeichner, Die Gartenlaube, 1884. Wikimedia Commons.",
+          "lizenz": "Public Domain",
+          "_meta": {
+            "wortanzahl": 52,
+            "aufbereitung": "echt",
+            "artefakt_ref": [
+              "img-3-1"
+            ],
+            "tafelbild_knoten_abgedeckt": [
+              "k3-4"
+            ],
+            "perspektive": "Europäische Diplomaten (offizielle Darstellung)",
+            "erschliessungsimpuls": "Wer sitzt am Tisch? Wer fehlt? Was liegt auf dem Tisch?",
+            "erarbeitbarkeits_check": "PASS — Bildunterschrift führt Berliner Konferenz (k3-4) als Fachbegriff ein; Erschließungsimpuls lenkt auf Abwesenheit afrikanischer Vertreter.",
+            "trigger_flags": []
+          },
+          "ueberleitung_von": "Du hast erfahren, warum Deutschland Kolonien wollte: Rohstoffe, Prestige und Rivalität mit anderen Großmächten. Doch wie setzten die europäischen Mächte ihren Anspruch auf Afrika in die Tat um?"
+        },
+        {
+          "id": "mat-3-4",
+          "typ": "bildquelle",
+          "titel": "Karikatur: Das Festmahl der Herrscher — Kongo als Hauptgang",
+          "position": 4,
+          "didaktische_funktion": "vertiefung",
+          "voraussetzung": "mat-3-3",
+          "primary_scpl_zone": "C2",
+          "inhalt": "../../assets/img/deutscher-nationalismus-kolonialismus/img-3-2.jpg",
+          "bildunterschrift": "Belgische Karikatur von Fran&ccedil;ois Mar&eacute;chal, erschienen im satirischen Blatt &bdquo;Le Frondeur&ldquo; am 20. Dezember 1884. Im Zentrum sitzt der belgische K&ouml;nig Leopold II., rechts der deutsche Kaiser Wilhelm I., links der russische B&auml;r. Vor ihnen auf dem Tisch: der Kongo als &bdquo;Hauptgericht&ldquo; eines Festmahls. Was stellen die Herrscher und das Essen dar? Was will der Zeichner damit sagen?",
+          "quelle": "Fran&ccedil;ois Mar&eacute;chal, Le Frondeur (Liege), 20. Dezember 1884. Wikimedia Commons.",
+          "lizenz": "Public Domain",
+          "_meta": {
+            "wortanzahl": 50,
+            "aufbereitung": "echt",
+            "artefakt_ref": [
+              "img-3-2"
+            ],
+            "tafelbild_knoten_abgedeckt": [
+              "k3-4"
+            ],
+            "perspektive": "Französischer Karikaturist (kritische Außensicht)",
+            "erschliessungsimpuls": "Was stellt der Kuchen dar? Was will der Zeichner damit sagen?",
+            "erarbeitbarkeits_check": "PASS — Karikatur vertieft k3-4 (Berliner Konferenz) aus kritischer Perspektive; kontrastiert mit der offiziellen Darstellung in mat-3-3.",
+            "trigger_flags": []
+          },
+          "ueberleitung_von": "Du hast die Darstellung aus der „Gartenlaube“ gesehen — Diplomaten am Verhandlungstisch, eine Afrika-Karte an der Wand. So stellte man die Konferenz offiziell dar. Doch wie sahen Kritiker dieses Treffen?"
+        },
+        {
+          "id": "mat-3-5",
+          "typ": "karte",
+          "titel": "Afrika 1913 — ein Kontinent in europäischer Hand",
+          "position": 5,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": "mat-3-4",
+          "primary_scpl_zone": "C3",
+          "inhalt": "../../assets/img/deutscher-nationalismus-kolonialismus/img-3-4.png",
+          "bildunterschrift": "Karte des kolonialen Afrika 1913. Die europäischen Kolonialmächte sind farblich unterschieden. Innerhalb weniger Jahrzehnte nach der Berliner Konferenz hatten europäische Staaten fast den gesamten Kontinent unter sich aufgeteilt — der <strong>Wettlauf um Afrika</strong> (die schnelle Aufteilung des Kontinents durch europäische Kolonialmächte). Das Ergebnis: <strong>Kolonialisierung</strong> (Unterwerfung und Ausbeutung fremder Länder durch europäische Mächte). Welche zwei Staaten blieben unabhängig?",
+          "quelle": "Wikimedia Commons, Colonial Africa 1913 map.",
+          "lizenz": "CC BY-SA 3.0",
+          "_meta": {
+            "wortanzahl": 61,
+            "aufbereitung": "echt",
+            "artefakt_ref": [
+              "img-3-4",
+              "img-3-5"
+            ],
+            "tafelbild_knoten_abgedeckt": [
+              "k3-5",
+              "k3-6"
+            ],
+            "perspektive": "uebergreifend (kartographisch-analytisch)",
+            "erschliessungsimpuls": "Welche zwei Staaten in Afrika blieben 1913 unabhängig? Welches Land hatte die meisten Kolonien?",
+            "erarbeitbarkeits_check": "PASS — Karte macht k3-5 (Wettlauf um Afrika) und k3-6 (Kolonialisierung Afrikas) visuell erarbeitbar; Erschließungsimpuls lenkt auf Äthiopien/Liberia als einzige freie Staaten.",
+            "trigger_flags": []
+          },
+          "ueberleitung_von": "Die Karikatur hat dir gezeigt, was wirklich geschah: Bismarck verteilte Afrika wie einen Kuchen. Doch was war das Ergebnis dieser Aufteilung — wie sah Afrika danach tatsächlich aus?"
+        },
+        {
+          "id": "mat-3-6",
+          "typ": "tagebuch",
+          "titel": "Mein Land auf einer fremden Karte",
+          "position": 6,
+          "didaktische_funktion": "sicherung",
+          "voraussetzung": "mat-3-5",
+          "primary_scpl_zone": "P",
+          "inhalt": "<p><em>Fiktiver Tagebucheintrag einer jungen Frau aus einer Gemeinschaft in Ostafrika, Ende der 1880er Jahre. Ihr Land wurde auf der Berliner Konferenz einem europäischen &bdquo;Schutzgebiet&ldquo; zugeordnet — ohne dass jemand die Menschen vor Ort gefragt hätte.</em></p><p>Unser Dorf, irgendwann in der Regenzeit</p><p>Heute kam ein Händler vom Markt zurück. Er erzählte, dass weiße Männer in einem fernen Land an einem Tisch gesessen hätten. Sie hätten Linien auf eine Karte gezeichnet — unsere Karte, unser Land. Niemand von uns war dabei. Niemand hat uns gefragt.</p><p>Mein Vater sagt, das sei nur Gerede. Aber die Alten im Dorf schweigen. Einer sagte leise: &bdquo;Wenn sie Linien ziehen, kommen bald Soldaten.&ldquo;</p><p>Ich verstehe nicht, wie jemand ein Land besitzen kann, in dem er nie gewesen ist. Unsere Felder, unsere Wege, der Fluss — das alles soll jetzt jemand anderem gehören?</p>",
+          "quelle": "Fiktiver Tagebucheintrag, basierend auf typischen Erfahrungen der afrikanischen Bevölkerung während der Kolonialisierung Ende des 19. Jahrhunderts. Figur und Erlebnisse sind erfunden, historischer Kontext ist belegt. Quellen: Wikipedia — Kongokonferenz, Kolonialismus.",
+          "_meta": {
+            "wortanzahl": 97,
+            "aufbereitung": "rekonstruiert",
+            "rekonstruktions_begruendung": "Fiktiver Tagebucheintrag. Keine Originalquelle einer afrikanischen Perspektive auf die Berliner Konferenz verfuegbar (Quellenlage duenn, s. Recherche-Hinweise). Rekonstruktion auf Basis historischer Belege zu Auswirkungen der Kongokonferenz auf lokale Bevoelkerungen.",
+            "artefakt_ref": [
+              "rolle-3-2"
+            ],
+            "tafelbild_knoten_abgedeckt": [
+              "k3-6"
+            ],
+            "perspektive": "P5: Afrikanische Betroffene",
+            "erarbeitbarkeits_check": "PASS — Tagebucheintrag macht k3-6 (Kolonialisierung Afrikas) aus der Perspektive der Betroffenen erarbeitbar; Ohnmacht und Fremdbestimmung direkt erlebbar.",
+            "trigger_flags": [
+              "diskriminierung"
+            ]
+          },
+          "ueberleitung_von": "Die Karte hat dir gezeigt: Bis 1913 war fast ganz Afrika in europäischer Hand — nur Äthiopien und Liberia blieben frei. Doch was bedeutete das für die Menschen, deren Heimat plötzlich einem „Schutzgebiet“ zugeordnet wurde?"
+        }
+      ],
+      "aufgaben": [
+        {
+          "id": "aufgabe-3-1",
+          "typ": "lueckentext",
+          "frage": "Ergänze die fehlenden Fachbegriffe.",
+          "material_referenz": [
+            "mat-3-2"
+          ],
+          "text_mit_luecken": "Das Deutsche Kaiserreich wurde 1871 gegründet. Im Vergleich zu Großbritannien und Frankreich besaß Deutschland jedoch keine Kolonien — es galt als ___. Deutsche Kaufleute drängten auf Gebiete in Afrika, um ___ und neue Absatzmärkte zu finden. Außerdem ging es um nationales ___: Wer Kolonien hatte, galt als Weltmacht. Das Streben eines Staates, andere Länder zu beherrschen, nennt man ___.",
+          "loesung": [
+            "verspätete Nation",
+            "Rohstoffe",
+            "Prestige",
+            "Imperialismus"
+          ],
+          "antwortpool": [
+            "Absolutismus",
+            "Imperialismus",
+            "Prestige",
+            "Rohstoffe",
+            "verspätete Nation"
+          ],
+          "feedback": [
+            {
+              "typ": "bestaetigung",
+              "text": "Alle Begriffe richtig eingesetzt. Du kennst jetzt die wichtigsten Gründe für Deutschlands Kolonialstreben.",
+              "ebene": "wissen"
+            },
+            {
+              "typ": "korrektur",
+              "text": "Oft wird Absolutismus mit Imperialismus verwechselt. Absolutismus beschreibt eine Herrschaftsform (ein König regiert allein), Imperialismus das Streben nach Kolonien und Weltmacht.",
+              "ebene": "wissen"
+            }
+          ],
+          "tipps": [
+            {
+              "stufe": 1,
+              "haertegrad": "kognitiv",
+              "text": "Alle Lücken betreffen Begriffe aus dem Bereich Kolonialpolitik. Lies [[mat-3-2|Warum wollte Deutschland Kolonien?]] (M2) nochmal genau."
+            },
+            {
+              "stufe": 2,
+              "haertegrad": "strukturierend",
+              "text": "Die letzte Lücke sucht den Oberbegriff für das Streben nach Kolonien. Absolutismus kannst du ausschließen — das gehört zur Herrschaftsform."
+            },
+            {
+              "stufe": 3,
+              "haertegrad": "heuristisch",
+              "text": "Lies den dritten Absatz von M2 — dort wird der zentrale Fachbegriff mit einer Erklärung in Klammern eingeführt. Die anderen Lücken findest du im zweiten Absatz."
+            }
+          ],
+          "punkte": 10,
+          "_meta": {
+            "bloom_level": 2,
+            "bloom_begruendung": "Kontextgetriebener Begriffseinsatz: SuS müssen Lückenkontext verstehen und passenden Fachbegriff zuordnen (L2 Verstehen)."
+          }
+        },
+        {
+          "id": "aufgabe-3-2",
+          "typ": "multiple-choice",
+          "frage": "Was meinte Bülow mit „Platz an der Sonne“?",
+          "material_referenz": [
+            "mat-3-1"
+          ],
+          "optionen": [
+            "Deutschland sollte Auswanderer in sonnige Länder schicken.",
+            "Deutschland beanspruchte Kolonien und Weltgeltung.",
+            "Deutschland wollte bessere Handelsbeziehungen mit Südeuropa.",
+            "Deutschland forderte militärische Stützpunkte im Mittelmeer."
+          ],
+          "loesung": "Deutschland beanspruchte Kolonien und Weltgeltung.",
+          "feedback": [
+            {
+              "typ": "korrektur",
+              "text": "Auswanderung war nicht Bülows Thema. Er sprach im Reichstag über Kolonialpolitik und Deutschlands Anspruch als Weltmacht.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "Richtig. Bülow forderte, dass Deutschland wie Großbritannien und Frankreich Kolonien besitzen und als Weltmacht anerkannt werden sollte.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "korrektur",
+              "text": "Handelsbeziehungen mit Südeuropa waren nicht gemeint. „Sonne“ steht hier bildlich für Weltgeltung und Kolonialbesitz, nicht für ein bestimmtes Gebiet.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "korrektur",
+              "text": "Militärische Stützpunkte im Mittelmeer waren kein Thema der Rede. Bülow sprach von Deutschlands Recht auf Kolonien in Übersee.",
+              "ebene": "verstaendnis"
+            }
+          ],
+          "tipps": [
+            {
+              "stufe": 1,
+              "haertegrad": "kognitiv",
+              "text": "Lies [[mat-3-1|Bülows Rede von 1897]] (M1) nochmal. Überlege: Worüber sprach Bülow im Reichstag — was war sein Thema?"
+            },
+            {
+              "stufe": 2,
+              "haertegrad": "strukturierend",
+              "text": "Auswanderung und Mittelmeer-Stützpunkte kannst du ausschließen — beides kommt in der Rede nicht vor."
+            },
+            {
+              "stufe": 3,
+              "haertegrad": "heuristisch",
+              "text": "Überlege, was Bülow mit „Schatten“ und „Sonne“ bildlich meint. Wer stand im „Sonnenlicht“? Welche Länder hatten bereits das, was Deutschland wollte?"
+            }
+          ],
+          "punkte": 10,
+          "_meta": {
+            "bloom_level": 3,
+            "bloom_begruendung": "Sinnverständnis einer historischen Quelle: SuS müssen das bildliche Schlagwort interpretieren, nicht bloß wiedergeben (L3 Anwenden)."
+          }
+        },
+        {
+          "id": "aufgabe-3-3",
+          "typ": "vergleich",
+          "frage": "Vergleiche, wie die Gartenlaube und die Karikatur die Berliner Konferenz darstellen.",
+          "material_referenz": [
+            "mat-3-3",
+            "mat-3-4"
+          ],
+          "loesung": {
+            "dimensionen": [
+              "Darstellung der Konferenz",
+              "Tonalität",
+              "Perspektive"
+            ],
+            "objekte": [
+              "Gartenlaube",
+              "Karikatur"
+            ],
+            "zellen": {
+              "Gartenlaube": {
+                "Darstellung der Konferenz": "Diplomaten sitzen an einem Verhandlungstisch",
+                "Tonalität": "sachlich und ernst",
+                "Perspektive": "deutsche Innensicht, offizielle Darstellung"
+              },
+              "Karikatur": {
+                "Darstellung der Konferenz": "Europaeische Herrscher sitzen beim Festmahl, der Kongo wird als Hauptgang aufgetischt",
+                "Tonalität": "spöttisch und kritisch",
+                "Perspektive": "französische Außensicht, kritische Darstellung"
+              }
+            }
+          },
+          "feedback": [
+            {
+              "typ": "bestaetigung",
+              "text": "Du hast erkannt, dass beide Bilder dasselbe Ereignis zeigen, es aber völlig unterschiedlich bewerten. Das ist Quellenkritik: Bilder haben immer eine Absicht.",
+              "ebene": "anwendung"
+            },
+            {
+              "typ": "korrektur",
+              "text": "In der Dimension Tonalität wird oft übersehen, dass die Gartenlaube die Konferenz als normales diplomatisches Treffen zeigt — ohne Kritik. Die Karikatur in mat-3-4 will dagegen zeigen, dass Afrika von Europaeern wie ein Festmahl aufgeteilt wurde.",
+              "ebene": "anwendung"
+            }
+          ],
+          "tipps": [
+            {
+              "stufe": 1,
+              "haertegrad": "kognitiv",
+              "text": "Schau dir [[mat-3-3|Gartenlaube-Darstellung]] (M3) und [[mat-3-4|Karikatur]] (M4) an. Fülle die Tabelle Zeile für Zeile."
+            },
+            {
+              "stufe": 2,
+              "haertegrad": "strukturierend",
+              "text": "Gartenlaube, Darstellung der Konferenz: Diplomaten sitzen an einem Verhandlungstisch. Fülle jetzt dieselbe Spalte für die Karikatur."
+            },
+            {
+              "stufe": 3,
+              "haertegrad": "heuristisch",
+              "text": "Überlege bei jedem Bild: Was will der Zeichner, dass du über die Konferenz denkst? Ist die Darstellung eher positiv oder kritisch?"
+            }
+          ],
+          "punkte": 8,
+          "_meta": {
+            "bloom_level": 4,
+            "bloom_begruendung": "Analyse erfordert systematische Zerlegung zweier Bildquellen in Dimensionen und strukturierten Abgleich (L4 Analysieren).",
+            "akzeptierte_varianten": {
+              "Gartenlaube__Tonalität": [
+                "sachlich",
+                "ernst",
+                "neutral"
+              ],
+              "Karikatur__Tonalität": [
+                "spöttisch",
+                "kritisch",
+                "satirisch"
+              ],
+              "Gartenlaube__Perspektive": [
+                "deutsche Sicht",
+                "offizielle Sicht",
+                "Innensicht"
+              ],
+              "Karikatur__Perspektive": [
+                "französische Sicht",
+                "Außensicht",
+                "kritische Sicht"
+              ]
+            }
+          }
+        },
+        {
+          "id": "aufgabe-3-4",
+          "typ": "reihenfolge",
+          "frage": "Bringe die Schritte von Deutschlands Kolonialstreben bis zur Aufteilung Afrikas in die richtige Reihenfolge.",
+          "material_referenz": [
+            "mat-3-2",
+            "mat-3-3",
+            "mat-3-5"
+          ],
+          "optionen": [
+            "Europäische Mächte teilen Afrika in einem Wettlauf unter sich auf.",
+            "Das Deutsche Kaiserreich will als Großmacht anerkannt werden.",
+            "Fast der gesamte Kontinent Afrika ist in europäischer Hand.",
+            "Auf der Berliner Konferenz legen europäische Staaten Regeln für die Aufteilung Afrikas fest.",
+            "Deutsche Kaufleute fordern Kolonien für Rohstoffe und Prestige."
+          ],
+          "loesung": [
+            "Das Deutsche Kaiserreich will als Großmacht anerkannt werden.",
+            "Deutsche Kaufleute fordern Kolonien für Rohstoffe und Prestige.",
+            "Auf der Berliner Konferenz legen europäische Staaten Regeln für die Aufteilung Afrikas fest.",
+            "Europäische Mächte teilen Afrika in einem Wettlauf unter sich auf.",
+            "Fast der gesamte Kontinent Afrika ist in europäischer Hand."
+          ],
+          "feedback": [
+            {
+              "typ": "bestaetigung",
+              "text": "Position 1: Das Großmachtstreben des Kaiserreichs war der Ausgangspunkt — ohne diesen Anspruch hätte es kein Kolonialstreben gegeben.",
+              "ebene": "wissen"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "Position 2: Die konkreten Forderungen nach Rohstoffen und Prestige folgten aus dem Großmachtanspruch.",
+              "ebene": "wissen"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "Position 3: Die Berliner Konferenz regelte die Aufteilung — sie war die politische Umsetzung der Forderungen.",
+              "ebene": "wissen"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "Position 4: Der Wettlauf um Afrika war das Ergebnis der Konferenz-Beschlüsse.",
+              "ebene": "wissen"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "Position 5: Das Endergebnis — fast ganz Afrika unter europäischer Kontrolle.",
+              "ebene": "wissen"
+            },
+            {
+              "typ": "korrektur",
+              "text": "Oft wird die Berliner Konferenz nach dem Wettlauf um Afrika eingeordnet. Aber die Konferenz legte die Regeln fest, nach denen der Wettlauf erst richtig begann.",
+              "ebene": "wissen"
+            }
+          ],
+          "tipps": [
+            {
+              "stufe": 1,
+              "haertegrad": "kognitiv",
+              "text": "Überlege: Was kam zuerst — der Wunsch nach Kolonien oder die tatsächliche Aufteilung? Lies [[mat-3-2|Warum wollte Deutschland Kolonien?]] (M2) für den Anfang."
+            },
+            {
+              "stufe": 2,
+              "haertegrad": "strukturierend",
+              "text": "An Position 1 steht das Großmachtstreben, am Ende steht das Ergebnis: fast ganz Afrika in europäischer Hand. Ordne die drei Schritte dazwischen."
+            },
+            {
+              "stufe": 3,
+              "haertegrad": "heuristisch",
+              "text": "Denke in Ursache und Wirkung: Jeder Schritt löste den nächsten aus. Beginne mit dem Grundwunsch und arbeite dich zum Endergebnis vor."
+            }
+          ],
+          "punkte": 10,
+          "_meta": {
+            "bloom_level": 3,
+            "bloom_begruendung": "Anwendung einer Ursache-Wirkung-Logik auf die kausal-chronologische Sequenz der Mappe (L3 Anwenden)."
+          }
+        },
+        {
+          "id": "aufgabe-3-5",
+          "typ": "freitext-code",
+          "frage": "War es gerecht, dass Europäer über Afrika entschieden, ohne die Afrikaner zu fragen?",
+          "material_referenz": [
+            "mat-3-6",
+            "mat-3-3",
+            "mat-3-5"
+          ],
+          "loesung": [
+            "Berliner Konferenz",
+            "Kolonialisierung"
+          ],
+          "tipps": [
+            {
+              "stufe": 1,
+              "haertegrad": "kognitiv",
+              "text": "Lies [[mat-3-6|Tagebucheintrag]] (M6) nochmal. Überlege zuerst: Was geschah mit dem Land der jungen Frau? Dann formuliere deine Meinung."
+            },
+            {
+              "stufe": 2,
+              "haertegrad": "strukturierend",
+              "text": "Die Europäer entschieden auf der Berliner Konferenz über Afrika, ohne einen einzigen Afrikaner zu fragen. Was bedeutete das für die Menschen vor Ort?"
+            },
+            {
+              "stufe": 3,
+              "haertegrad": "heuristisch",
+              "text": "Musterantwort: Auf der Berliner Konferenz teilten europäische Staaten Afrika unter sich auf. Kein Afrikaner war beteiligt. Das Tagebuch zeigt, was Kolonialisierung für die Betroffenen bedeutete: Ihr Land wurde fremden Mächten zugesprochen, ohne dass jemand sie fragte. Das war nicht gerecht, weil über die Lebensgrundlagen ganzer Völker bestimmt wurde, ohne sie einzubeziehen. Deine Antwort sollte die Begriffe „Berliner Konferenz“ und „Kolonialisierung“ verwenden."
+            }
+          ],
+          "punkte": 10,
+          "_meta": {
+            "bloom_level": 5,
+            "bloom_begruendung": "Stellungnahme mit Begründung: SuS beurteilen die Berliner Konferenz aus Perspektive der Betroffenen (L5 Bewerten).",
+            "teilfragen": [
+              "Was passierte mit dem Land der jungen Frau im Tagebuch?",
+              "Warum wurden die Afrikaner bei der Aufteilung nicht gefragt?",
+              "War diese Entscheidung gerecht — begründe deine Meinung."
+            ],
+            "erwartete_begriffe": [
+              "Berliner Konferenz",
+              "Kolonialisierung",
+              "Fremdbestimmung",
+              "Aufteilung",
+              "Afrika"
+            ],
+            "validierung_schwelle": 2,
+            "musterantwort": "Auf der Berliner Konferenz teilten europäische Staaten Afrika unter sich auf, ohne dass ein einziger Afrikaner dabei war. Die Kolonialisierung bedeutete für die Menschen vor Ort, dass ihre Länder, Felder und Wege plötzlich fremden Mächten gehörten. Die junge Frau im Tagebuch versteht nicht, wie jemand ein Land besitzen kann, in dem er nie gewesen ist. Das war nicht gerecht, weil über ganze Völker entschieden wurde, ohne sie zu fragen oder ihre Rechte zu achten."
+          }
+        }
+      ],
+      "hefteintrag": {
+        "stundenfrage": "Warum teilten europaeische Maechte Afrika unter sich auf — ohne die Afrikaner zu fragen?",
+        "ordnungsmuster": "konzept-beispiel",
+        "scpl": {
+          "situation": {
+            "kontextsatz": "Nach der Reichsgruendung 1871 wollte Deutschland als Grossmacht auch Kolonien besitzen — wie Grossbritannien und Frankreich.",
+            "fachbegriffe": []
+          },
+          "complication": [
+            {
+              "schritt": "Kaufleute suchten Rohstoffe, die Presse forderte Prestige — Deutschland verlangte seinen 'Platz an der Sonne': Imperialismus.",
+              "typ": "konzeptuell",
+              "fachbegriff": "Imperialismus",
+              "darstellung": null,
+              "erarbeitbarkeit": "DIRECT"
+            },
+            {
+              "schritt": "Auf der Berliner Konferenz 1884/85 teilten 14 europaeische Staaten Afrika auf — kein einziger Afrikaner sass am Tisch: Berliner Konferenz.",
+              "typ": "kontrastiv",
+              "fachbegriff": "Berliner Konferenz",
+              "darstellung": null,
+              "erarbeitbarkeit": "DIRECT"
+            },
+            {
+              "schritt": "Innerhalb weniger Jahrzehnte war fast ganz Afrika in europaeischer Hand — nur Aethiopien und Liberia blieben frei: Wettlauf um Afrika.",
+              "typ": "kausal",
+              "fachbegriff": "Wettlauf um Afrika",
+              "darstellung": null,
+              "erarbeitbarkeit": "ARTIFACT"
+            }
+          ],
+          "problem": {
+            "satz": "Europaeische Maechte unterwarfen einen ganzen Kontinent politisch und wirtschaftlich — ohne Ruecksicht auf die dort lebenden Menschen: Kolonialisierung.",
+            "fachbegriff": "Kolonialisierung"
+          },
+          "loesung": [
+            "Das Deutsche Reich wollte als Grossmacht Kolonien — aus Wirtschaftsinteresse und nationalem Prestige.",
+            "Auf der Berliner Konferenz 1884 teilten Europaeer Afrika auf — ohne einen Afrikaner zu fragen."
+          ]
+        },
+        "transfer": {
+          "frage": "Welche Spuren hat die Aufteilung Afrikas bis heute hinterlassen?"
+        },
+        "voraussetzungen": [
+          "k2-6"
+        ],
+        "knoten": [
+          {
+            "id": "k3-1",
+            "text": "Deutsches Kaiserreich als Grossmacht",
+            "typ": "kategorie"
+          },
+          {
+            "id": "k3-2",
+            "text": "Imperialismus",
+            "typ": "kernbegriff",
+            "merksatz": "Streben eines Staates, andere Laender zu unterwerfen"
+          },
+          {
+            "id": "k3-3",
+            "text": "'Platz an der Sonne'",
+            "typ": "kernbegriff",
+            "merksatz": "Deutschlands Forderung nach Kolonien und Weltgeltung"
+          },
+          {
+            "id": "k3-4",
+            "text": "Berliner Konferenz 1884/85",
+            "typ": "ereignis"
+          },
+          {
+            "id": "k3-5",
+            "text": "Wettlauf um Afrika",
+            "typ": "prozess"
+          },
+          {
+            "id": "k3-6",
+            "text": "Kolonialisierung Afrikas",
+            "typ": "wirkung",
+            "merksatz": "Fast ganz Afrika in europaeischer Hand bis 1913"
+          }
+        ],
+        "verbindungen": [
+          {
+            "von": "k3-1",
+            "nach": "k3-2",
+            "label": "treibt an",
+            "typ": "kausal"
+          },
+          {
+            "von": "k3-2",
+            "nach": "k3-3",
+            "label": "fordert",
+            "typ": "kausal"
+          },
+          {
+            "von": "k3-3",
+            "nach": "k3-4",
+            "label": "fuehrt zu",
+            "typ": "temporal"
+          },
+          {
+            "von": "k3-4",
+            "nach": "k3-5",
+            "label": "loest aus",
+            "typ": "kausal"
+          },
+          {
+            "von": "k3-5",
+            "nach": "k3-6",
+            "label": "Ergebnis",
+            "typ": "schlussfolgerung"
+          }
+        ],
+        "_q_gate": {
+          "G2": "3 C-Schritte (Limit 3), 2 Merksaetze (Limit 2) — PASS",
+          "G5": "Laengster Merksatz 14W — PASS (Limit 15W)",
+          "G6": "~106W — PASS (harte Grenze 120W)"
+        }
+      },
+      "sicherung": {
+        "reflexionsimpuls": "Die Berliner Konferenz entschied ueber das Schicksal eines ganzen Kontinents. Was waere anders gelaufen, wenn Vertreter Afrikas am Tisch gesessen haetten?",
+        "hefteintrag_verweis": "Uebertrage den Hefteintrag in dein Heft. Achte besonders auf die drei Motive des Kolonialerwerbs und die Rolle der Berliner Konferenz.",
+        "zusammenfassung": "Das Deutsche Reich wollte Kolonien — aus Wirtschaftsinteresse und nationalem Prestige. Auf der Berliner Konferenz 1884 teilten Europaeer Afrika auf — ohne einen Afrikaner zu fragen.",
+        "ueberleitung": "Am gruenen Tisch in Berlin hatten Diplomaten Grenzen gezogen. Doch was bedeutete das fuer die Menschen, die in den neuen 'Schutzgebieten' lebten? In Deutsch-Suedwestafrika wurde die Antwort besonders brutal.",
+        "zitat": {
+          "text": "Wir wollen niemand in den Schatten stellen, aber wir verlangen auch unseren Platz an der Sonne.",
+          "urheber": "Bernhard von Buelow",
+          "kontext": "Rede vor dem Reichstag, 6. Dezember 1897"
+        }
+      },
+      "mappenabschluss_zone": {
+        "reflexion_fragen": [
+          "Auf der Berliner Konferenz entschieden 14 europaeische Staaten ueber Afrika — ohne dass ein einziger Afrikaner dabei war. Was sagt das ueber die Denkweise der Europaeer?",
+          "Imperialismus bedeutet, andere Laender zu unterwerfen. Gibt es auch heute noch Situationen, in denen maechtige Staaten ueber das Schicksal anderer bestimmen?"
+        ],
+        "ueberleitungssatz": "Am gruenen Tisch in Berlin hatten Diplomaten Grenzen gezogen. Doch was bedeutete das fuer die Menschen, die in den neuen 'Schutzgebieten' lebten? In Deutsch-Suedwestafrika wurde die Antwort besonders brutal.",
+        "_variante": "A"
+      }
     }
   ]
 }
