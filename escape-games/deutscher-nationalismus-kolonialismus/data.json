@@ -1885,7 +1885,8 @@
         ],
         "ueberleitungssatz": "Deutschland war nun eine Großmacht in der Mitte Europas. Doch während andere Staaten längst Kolonien besaßen, hatte das neue Deutsche Reich noch keine. Das sollte sich ändern.",
         "_variante": "A"
-      }
+      },
+      "vorab_freigeschaltet": true
     },
     {
       "id": "mappe-3",
@@ -2182,65 +2183,6 @@
           "_meta": {
             "bloom_level": 3,
             "bloom_begruendung": "Sinnverständnis einer historischen Quelle: SuS müssen das bildliche Schlagwort interpretieren, nicht bloß wiedergeben (L3 Anwenden)."
-          }
-        },
-        {
-          "id": "aufgabe-3-3",
-          "typ": "begruendung",
-          "frage": "Warum zeigen die Gartenlaube und die Karikatur die Berliner Konferenz so unterschiedlich?",
-          "material_referenz": [
-            "mat-3-3",
-            "mat-3-4"
-          ],
-          "loesung": {
-            "these": "Beide Bilder zeigen dasselbe Ereignis, aber aus verschiedenen Blickwinkeln.",
-            "erwartete_begriffe": [
-              "Gartenlaube",
-              "Karikatur",
-              "Perspektive"
-            ],
-            "musterantwort": "Die Gartenlaube zeigt die Konferenz als normales diplomatisches Treffen — sachlich und ernst. Sie will den deutschen Lesern die Konferenz als Erfolg präsentieren. Die französische Karikatur zeigt dagegen Bismarck, der Afrika wie einen Kuchen verteilt — spöttisch und kritisch. Sie will zeigen, dass die Europäer Afrika einfach unter sich aufteilen."
-          },
-          "feedback": [
-            {
-              "typ": "bestaetigung",
-              "text": "Du hast erkannt, dass beide Bilder dasselbe Ereignis zeigen, es aber völlig unterschiedlich bewerten. Das ist Quellenkritik: Bilder haben immer eine Absicht.",
-              "ebene": "anwendung"
-            },
-            {
-              "typ": "korrektur",
-              "text": "Achte darauf, dass du nicht nur beschreibst, was du siehst, sondern auch erklärst, warum die Darstellungen unterschiedlich sind. Die Gartenlaube war eine deutsche Zeitschrift, die Karikatur stammt aus Frankreich — unterschiedliche Länder, unterschiedliche Sichtweisen.",
-              "ebene": "anwendung"
-            },
-            {
-              "typ": "hinweis",
-              "text": "Jede Quelle hat einen Urheber mit einer bestimmten Absicht. Das nennt man Perspektivität.",
-              "ebene": "transfer"
-            }
-          ],
-          "tipps": [
-            {
-              "stufe": 1,
-              "haertegrad": "kognitiv",
-              "text": "Schau dir [[mat-3-3|Gartenlaube-Darstellung]] (M3) und [[mat-3-4|Karikatur]] (M4) genau an. Was fällt dir als Erstes auf?"
-            },
-            {
-              "stufe": 2,
-              "haertegrad": "strukturierend",
-              "text": "Vergleiche die Stimmung: Wirkt die Gartenlaube eher ernst oder lustig? Und die Karikatur?"
-            },
-            {
-              "stufe": 3,
-              "haertegrad": "heuristisch",
-              "text": "Überlege: Aus welchem Land stammt jedes Bild? Wie beeinflusst das die Darstellung?"
-            }
-          ],
-          "punkte": 4,
-          "_meta": {
-            "bloom_level": 4,
-            "bloom_begruendung": "SuS müssen zwei Quellen vergleichen und die Gründe für unterschiedliche Darstellungen analysieren (L4 Analysieren), jedoch ohne komplexe Tabellenstruktur.",
-            "afb": "II-III",
-            "buchstabe": "N"
           }
         },
         {
@@ -2599,7 +2541,8 @@
         ],
         "ueberleitungssatz": "Am grünen Tisch in Berlin hatten Diplomaten Grenzen gezogen. Doch was bedeutete das für die Menschen, die in den neuen „Schutzgebieten“ lebten? In Deutsch-Südwestafrika wurde die Antwort besonders brutal.",
         "_variante": "A"
-      }
+      },
+      "vorab_freigeschaltet": true
     }
   ]
 }
