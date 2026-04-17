@@ -524,7 +524,8 @@ var EscapeEngine = (function () {
    */
   function _loadData() {
     // data.json liegt im selben Verzeichnis wie die HTML-Datei
-    return fetch('data.json')
+    // v3.12: Cache-Bust via Timestamp um Stale-Cache auf Endgeraeten zu vermeiden
+    return fetch('data.json?_=' + Date.now())
       .then(function (response) {
         if (!response.ok) {
           throw new Error('HTTP ' + response.status + ': ' + response.statusText);

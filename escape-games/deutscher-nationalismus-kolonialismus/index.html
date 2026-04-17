@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Deutscher Nationalismus und Kolonialismus</title>
-  <link rel="stylesheet" href="../../assets/css/base.css?v=4.4">
-  <link rel="stylesheet" href="../../assets/css/themes/theme-gpg.css?v=3.9.3">
+  <link rel="stylesheet" href="../../assets/css/base.css?v=4.5">
+  <link rel="stylesheet" href="../../assets/css/themes/theme-gpg.css?v=3.13">
 </head>
 <body>
 
@@ -37,8 +37,8 @@
     </p>
   </footer>
 
-  <script src="../../assets/js/core.js?v=4.4"></script>
-  <script src="../../assets/js/escape-engine.js?v=3.12"></script>
+  <script src="../../assets/js/core.js?v=4.5"></script>
+  <script src="../../assets/js/escape-engine.js?v=3.13"></script>
   <script>
     /**
      * Startseite: Laedt data.json und rendert die Mappen-Uebersicht.
@@ -47,7 +47,7 @@
       'use strict';
 
       // data.json laden
-      fetch('data.json')
+      fetch('data.json?_=' + Date.now())
         .then(function (response) {
           if (!response.ok) throw new Error('HTTP ' + response.status);
           return response.json();
