@@ -1480,35 +1480,19 @@
         },
         {
           "id": "aufgabe-2-4",
-          "typ": "vergleich",
+          "typ": "freitext-code",
           "frage": "Vergleiche das Gemälde und die Karikatur der Reichsgründung.",
           "material_referenz": [
             "mat-2-4",
             "mat-2-5"
           ],
-          "loesung": {
-            "dimensionen": [
-              "Wer fällt am meisten auf?",
-              "Stimmung",
-              "Absicht des Bildes"
-            ],
-            "objekte": [
-              "Gemälde (Anton von Werner)",
-              "Karikatur (Niederlande)"
-            ],
-            "zellen": {
-              "Gemälde (Anton von Werner)": {
-                "Wer fällt am meisten auf?": "Bismarck in Weiß, im Zentrum",
-                "Stimmung": "feierlich, patriotisch",
-                "Absicht des Bildes": "Verherrlichung der Reichsgründung"
-              },
-              "Karikatur (Niederlande)": {
-                "Wer fällt am meisten auf?": "Wilhelm I. an der Spitze des Zuges",
-                "Stimmung": "spöttisch, übertrieben",
-                "Absicht des Bildes": "Kritik an der Reichsgründung"
-              }
-            }
-          },
+          "loesung": [
+            "Bismarck",
+            "feierlich",
+            "Verherrlichung",
+            "spöttisch",
+            "Kritik"
+          ],
           "tipps": [
             {
               "stufe": 1,
@@ -1773,6 +1757,125 @@
           "text": "Nicht durch Reden und Majoritätsbeschlüsse werden die großen Fragen der Zeit entschieden, sondern durch Eisen und Blut.",
           "urheber": "Otto von Bismarck",
           "kontext": "Rede vor der Budgetkommission des preußischen Abgeordnetenhauses, 30. September 1862"
+        },
+        "hefteintrag": {
+          "stundenfrage": "Warum wurde Deutschland 1871 nicht durch das Volk, sondern durch Kriege geeint?",
+          "ordnungsmuster": "kontrastierend",
+          "scpl": {
+            "situation": {
+              "kontextsatz": "Nach dem Scheitern von 1848 übernahm Preußen die Führung im Streben nach deutscher Einheit.",
+              "fachbegriffe": []
+            },
+            "complication": [
+              {
+                "schritt": "Das Volk wollte 1848 Einigung durch Parlament — Bismarck erklärte 1862: »Durch Blut und Eisen.«",
+                "fachbegriff": "Blut und Eisen",
+                "darstellung": {
+                  "typ": "gegenueberstellung",
+                  "links": {
+                    "titel": "Einigung von unten (1848)",
+                    "punkte": [
+                      "Reden und Parlament",
+                      "Verfassung und Grundrechte",
+                      "Gescheitert"
+                    ]
+                  },
+                  "rechts": {
+                    "titel": "Einigung von oben (1871)",
+                    "punkte": [
+                      "Kriege und Militär",
+                      "Macht und Diplomatie",
+                      "Erfolgreich"
+                    ]
+                  }
+                }
+              },
+              {
+                "schritt": "Drei Kriege gegen Dänemark, Österreich und Frankreich schmiedeten die Staaten zusammen: kleindeutsche Lösung.",
+                "fachbegriff": "kleindeutsche Lösung",
+                "darstellung": null
+              }
+            ],
+            "problem": {
+              "satz": "Reichsgründung in Versailles 1871 — nicht durch das Volk, sondern durch Fürsten und Militär: Kaiserproklamation.",
+              "fachbegriff": "Kaiserproklamation"
+            },
+            "loesung": [
+              "Bismarck einte Deutschland durch drei Kriege — Einigung »von oben«, nicht »von unten«.",
+              "Das Deutsche Reich von 1871 brachte Einheit, aber keine Freiheit."
+            ]
+          },
+          "knoten": [
+            {
+              "id": "k2-1",
+              "text": "Bismarck — Ministerpräsident 1862",
+              "typ": "person"
+            },
+            {
+              "id": "k2-2",
+              "text": "Blut und Eisen",
+              "typ": "kernbegriff",
+              "merksatz": "Einigung durch Militär statt durch Parlament"
+            },
+            {
+              "id": "k2-3",
+              "text": "Drei Einigungskriege 1864/66/70",
+              "typ": "ereignis"
+            },
+            {
+              "id": "k2-4",
+              "text": "Kleindeutsche Lösung",
+              "typ": "kernbegriff",
+              "merksatz": "Deutschland ohne Österreich unter Preußens Führung"
+            },
+            {
+              "id": "k2-5",
+              "text": "Kaiserproklamation Versailles 1871",
+              "typ": "ereignis",
+              "merksatz": "Feierliche Ausrufung Wilhelms I. zum Kaiser"
+            },
+            {
+              "id": "k2-6",
+              "text": "Einheit ohne Freiheit",
+              "typ": "wirkung",
+              "merksatz": "Einheit erreicht, aber keine Demokratie"
+            }
+          ],
+          "verbindungen": [
+            {
+              "von": "k2-1",
+              "nach": "k2-2",
+              "label": "verkündet",
+              "typ": "kausal"
+            },
+            {
+              "von": "k2-2",
+              "nach": "k2-3",
+              "label": "setzt um",
+              "typ": "kausal"
+            },
+            {
+              "von": "k2-3",
+              "nach": "k2-4",
+              "label": "bedeutet",
+              "typ": "schlussfolgerung"
+            },
+            {
+              "von": "k2-3",
+              "nach": "k2-5",
+              "label": "führt zu",
+              "typ": "temporal"
+            },
+            {
+              "von": "k2-5",
+              "nach": "k2-6",
+              "label": "Ergebnis",
+              "typ": "schlussfolgerung"
+            }
+          ],
+          "voraussetzungen": [
+            "k1-6"
+          ]
         }
       },
       "mappenabschluss_zone": {
@@ -2379,7 +2482,7 @@
       "sicherung": {
         "reflexionsimpuls": "Die Berliner Konferenz entschied über das Schicksal eines ganzen Kontinents. Was wäre anders gelaufen, wenn Vertreter Afrikas am Tisch gesessen hätten?",
         "hefteintrag_verweis": "Übertrage den Hefteintrag in dein Heft. Achte besonders auf die drei Motive des Kolonialerwerbs und die Rolle der Berliner Konferenz.",
-        "zusammenfassung": "Das Deutsche Reich wollte als Gro\u00dfmacht Kolonien \u2014 f\u00fcr Rohstoffe und Ansehen. Auf der Berliner Konferenz 1884 teilten Europ\u00e4er Afrika auf \u2014 ohne einen Afrikaner zu fragen.",
+        "zusammenfassung": "Das Deutsche Reich wollte als Großmacht Kolonien — für Rohstoffe und Ansehen. Auf der Berliner Konferenz 1884 teilten Europäer Afrika auf — ohne einen Afrikaner zu fragen.",
         "ueberleitung": "Am grünen Tisch in Berlin hatten Diplomaten Grenzen gezogen. Doch was bedeutete das für die Menschen, die in den neuen „Schutzgebieten“ lebten? In Deutsch-Südwestafrika wurde die Antwort besonders brutal.",
         "zitat": {
           "text": "Wir wollen niemand in den Schatten stellen, aber wir verlangen auch unseren Platz an der Sonne.",
