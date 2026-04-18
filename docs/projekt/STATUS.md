@@ -1,8 +1,8 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-11 (R0 FINAL+: R0.1-R0.7 abgeschlossen. R0.7 bpb.de-Dossier Viability-Eval: PASS mit Lizenz-Einschraenkung (CC BY-NC-ND verbietet Volltext-Pipeline, nur Zitat-Modus). bpb = optionaler dritter Quell-Kanal via neuer Phase 0.2.Z. R1-Start nicht blockiert.)
-**Modus:** R0-FINAL+ → R1 bereit zum Start
-**Aktiver Upgrade-Plan:** `docs/architektur/UPGRADE_PLAN_v3-12_ESCAPE_GAME_QUALITAET.md` v1.2 (Runden R0-R8: Audits → v3.11.1 Bugfix → 0.2.M Infrastruktur → Stundenfrage-Dualismus → Quellen-Integritaet → Medien-Diversitaet → Feedback-First → Enforcement → Sichtungs-Stops). R0-R8 = reine Generator-/Engine-Infrastruktur, keine Live-Game-Beruehrung. 13 neue Q-Gates. Alle 11 Detail-Fragen in §15.1 entschieden. v3.12-Pilot = Neu-Regeneration G1 (Ursachen-und-Ausbruch) nach R8. Archivierung bestehendes Live-G1 ist Pre-Pilotlauf-Task nach R8-Abschluss. Vorgaenger v3.11 COMPLETE + gepusht.
+**Letzte Aktualisierung:** 2026-04-18 (R0-TESTRUN-AUDIT abgeschlossen: 5-RA-Multi-Agenten-Audit auf Testrun `deutscher-nationalismus-kolonialismus`. Gate ROT. 60 Findings (6 P0, 22 P1, 22 P2, 10 P3). UPGRADE_PLAN v1.3 eingepflegt (Section 19: 13 neue PI-Items + 4 neue Q-Gates + P0-Blocker-Kanon). v3.12-Pilot BLOCKIERT bis 6 P0 geschlossen. Verweis: `docs/projekt/testrun-nationalismus-kolonialismus/BEFUND_TESTRUN_N-K_KONSOLIDIERT.md`.)
+**Modus:** R0-TESTRUN-AUDIT COMPLETE → v3.12-Pilot BLOCKIERT (6 P0 offen) → Task #7 Verifikations-Gate
+**Aktiver Upgrade-Plan:** `docs/architektur/UPGRADE_PLAN_v3-12_ESCAPE_GAME_QUALITAET.md` v1.3 (Runden R0-R8 + v1.3 Delta Section 19 aus Testrun-Audit: 13 neue PI-Items in 4 Clustern Medien/Engine/Didaktik/PM + 4 neue Q-Gates Q-MEDIEN-PROSPEKTIV/Q-LIZENZ-COMPLIANCE/Q-SOURCE-DEPLOY-PARITY/Q-TYP-R7-KONFORMITAET + P0-Blocker-Kanon mit 6 Items). Total Plan-Impact-Count **30** (17 R0-FINAL+ + 13 v1.3 Delta). v3.12-Pilot-Start blockiert bis P0-1 bis P0-6 geschlossen. Vorgaenger v3.11 COMPLETE + gepusht.
 
 **R0-Befunde (Gate-Status):**
 - **G-0-1** (Reife-Matrix): ERFUELLT. `docs/befunde/M-03_REIFE_MATRIX_v3-12_2026-04-11.md`. STATISTIK + QUELLENKRITIK ROT; KARTE/ZEITLEISTE GELB (nicht ROT — Hypothese partiell falsifiziert); BEGRUENDUNG/VERGLEICH/FREITEXT GELB (Kopplung an R0.2).
@@ -12,6 +12,32 @@
 - **R0.5 Testrun Medien-Extraktion M4:** LIEGT VOR. `docs/befunde/TESTRUN_MEDIEN_EXTRAKTION_M4_2026-04-11.md`. Viability POSITIV. Dual-Kanal-Pflicht (WebFetch + Commons) bestaetigt. Drei Korrekturen: (a) wikipedia-mcp Config-Fix `--language de`, (b) Katalog-Ersatz fuer Taxis_von_der_Marne, (c) Medien-Erweiterung um 3 Cluster. Alle 21 inventarisierten Medien lizenzkonform (15 PD, 6 CC BY-SA, 0 Blocker).
 - **R0.6 Titel-Verifikation (MCP-gestuetzt):** LIEGT VOR. Im WIKI_SCOPE_KATALOG §8 eingepflegt. **9 von 28 Original-Titeln ungueltig.** Korrekturen: `Juli-Krise`→`Julikrise`, `Europaeische_Buendnisse`→`Dreibund`+`Triple_Entente`, `Wilhelm_II_Aussenpolitik`→`Weltpolitik`+`Wilhelm_II._(Deutsches_Reich)`, `Britisch-deutsches_Wettruesten_zur_See`→`Flottengesetze`, `Kriegsbegeisterung_1914`→ENTFERNT (redundant zu Augusterlebnis), `Ultimatum_an_Serbien`→`Kriegserklaerung_Oesterreich-Ungarns_an_Serbien`, `Deutscher_Einmarsch_in_Belgien_1914`→`Deutsches_Ultimatum_an_Belgien`+`Eroberung_von_Luettich_(1914)`, `Taxis_von_der_Marne`→ENTFERNT (R0.5). Neue Game-Gesamtzahl: 14 Kern-Artikel + 16 Scope-Artikel. Pflicht-Invariante fuer Phase-0.2.M Sub-Agent: Pre-Ingest-Titel-Validierung via `get_summary`.
 - **R0.7 bpb.de-Dossier Viability-Eval:** LIEGT VOR (inkl. §12-Erweiterung). `docs/befunde/TESTRUN_BPB_DOSSIER_2026-04-11.md`. PASS mit Einschraenkung + vier erweiterte Nutzungs-Muster. bpb-Dossiers sind standardisiert abrufbar via markdownify `webpage-to-markdown` (Volltext, 62KB/Artikel) + WebFetch (Medien-Inventur). Kein dedizierter MCP-Connector noetig. **Lizenz CC BY-NC-ND 4.0** verbietet bpb-Autorentext in Volltext-Ingest-Pipeline. **Aber**: §12 identifiziert vier Umgehungs-/Erweiterungs-Muster: (A) Dossier-Struktur als Q-Gate-Coverage-Raster (Ideen sind frei), (B) Medien-Kuratierung als Qualitaetsstempel (bpb-Commons-Medien laufen ueber Commons-Lizenz weiter, bpb-Bildunterschriften als Kurzzitat), (C) **Primaerquellen-Extraktion** (Reden/Erlasse/Tagebuecher, die bpb zitiert, haben eigenes Urheberrecht am Original-Autor; fuer WWI-Scope typisch PD: Wilhelm II. †1941 seit 2012, Bethmann Hollweg †1921 seit 1992, Tirpitz, Moltke d.J., Ludendorff, Hindenburg, Clemenceau alle PD; amtliche Werke §5 UrhG zeitlos gemeinfrei), (D) reine Struktur-Inspiration. **Architektonisch entscheidend**: PD-Primaerquellen duerfen in Phase 0.1 Volltext-Ingest mit Paraphrase/Kuerzung/Schueler-Vereinfachung — das hebelt die NC-ND-Beschraenkung systematisch aus. bpb wird damit zu einem Discovery-Mechanismus fuer didaktisch vorqualifizierte, gemeinfreie Primaerquellen. Drei Wiki-Scope-Luecken: Kriegsoekonomie, Frauen-Heimatfront, Kulturkrise. Phase 0.2.Z enthaelt nach User-Direktive 2026-04-11 (`bpb_zitat_kurator` streichen um kein Lizenz-Risiko einzugehen) **genau einen** Sub-Agent `bpb_primaerquellen_extraktor` mit PD-Pruefung via Wikipedia-Autor-Todesjahr-Lookup. Invarianten PQI1-PQI6 in §12.4. bpb-Autorentext ist vollstaendig aus der Pipeline ausgeschlossen. Discovery = optionale URL-Eingabe durch Lehrkraft (§14, refaktoriert 2026-04-12).
+
+**R0-TESTRUN-AUDIT (Stand 2026-04-18, Gate ROT):**
+- **Scope:** Retrospektive 5-RA-Multi-Agenten-Audit auf Testrun-Artefakt `deutscher-nationalismus-kolonialismus` (3 Sessions, 3337 Messages, 1153 Tool-Calls, 12 Auto-Kompaktionen, 5 Subagenten-Spawns). Verzeichnis: `docs/projekt/testrun-nationalismus-kolonialismus/`.
+- **5 RAs + Gate-Urteile:** RA1 Pipeline (GELB, 13 Findings), RA2 Didaktik/Material (GELB, 15 Findings), RA3 Engine/Assembly (AMBER, 9 Findings), RA4 Medien/Lizenz (ROT, 13 Findings), RA5 PM/Prozess/Meta (ROT, 11 Findings). Aggregat-Gate: ROT (durchgetrieben durch RA4 + RA5).
+- **Finding-Bilanz:** 60 Findings total — **6 P0**, 22 P1, 22 P2, 10 P3.
+- **P0-Blocker-Kanon (v3.12-Pilot blockierend):**
+  - P0-1 F-RA1-05 Phase 3.1 Deploy-Preparation uebersprungen (Pipeline-Defekt)
+  - P0-2 F-RA1-06 V13-Patch-Regression Hefteintrag-Verschachtelung
+  - P0-3 F-RA3-01 Lueckentext-Pool-Reset-Bug (escape-engine.js Z. 2814 single-line-fix)
+  - P0-4 F-RA4-04 Source-Deploy-Drift mat-3-4.json (Hallu-Caption persistiert in Source)
+  - P0-5 F-RA4-10 Mappe-4 Retro-Patch offen (img-4-1/-3/-4 Herero/Nama)
+  - P0-6 F-RA4-02 Keine prospektive Medien-Verifikation (MV2-Hallu-Rate 6/18)
+- **F-P1/F-P2-Wiederkehrpruefung:** F-P1 (ORCH als Router) **NEUTRALISIERT** durch v3.9 Steuerungsrefaktor. F-P2 (Phase 3 in Cowork) **TEILWEISE REZIDIV** in neuer Variante "CC→Cowork-Rueckmelde-Luecke" (RA5 F-RA5-11).
+- **Cross-RA-Muster:** MV2-Hallu-Rate 6/18 bestaetigt mit Typ-Klassen-Analyse (Hallus bei Archiv-Signaturen + Eigennamen + konstruierten Deskriptiven). R0.5 Dual-Kanal strukturell nicht implementiert. CC BY-SA Attribution unvollstaendig. Kompaktions-induzierte Regressionen bei Patch-Zyklen. Re-Flag-Pattern: User musste Umlaute 3x, Mappe-3-Status 2x melden.
+- **Plan-Impact v1.3 Delta (13 neue PI-Items):**
+  - Cluster Medien (4): PI-MV2-EXT1 Source-Deploy-Propagation, PI-MV2-EXT2 Mappe-4-Retro-Patch, PI-MV2-EXT3 CC BY-SA Attribution-Schema, PI-MV2-EXT4 Didaktisches Ersatz-Rueckkopplung
+  - Cluster Engine (3): PI-ENGINE-1 Hefteintrag-Dualstruktur, PI-ENGINE-2 Assembly-Validator, PI-ENGINE-3 Entity-Encoding-Pipeline-Hardening
+  - Cluster Didaktik (2): PI-DIDAKTIK-1 Typ-Selektions-Katalog R7, PI-DIDAKTIK-2 A18-Luecke
+  - Cluster PM (4): PI-PM-1 Post-Kompaktions-Re-Orientation, PI-PM-2 CC→Cowork-Handoff-Template, PI-PM-3 STATUS-Freeze bei Patch-Zyklen, PI-PM-4 Re-Flag-Pattern-Detektor
+  - zusätzlich PI-PIPELINE-1 Patch-Propagation-Check
+- **Neue Q-Gates (4):** Q-MEDIEN-PROSPEKTIV (MV2-Pre-Ingest-Verifikation via Commons-API), Q-LIZENZ-COMPLIANCE (CC BY-SA Attribution-Schema-Enforcement), Q-SOURCE-DEPLOY-PARITY (mat-*.json Source↔Deploy-Hash-Check), Q-TYP-R7-KONFORMITAET (Typ-Selektions-Katalog-Enforcement).
+- **Referenzen:**
+  - Konsolidierter Befund: `docs/projekt/testrun-nationalismus-kolonialismus/BEFUND_TESTRUN_N-K_KONSOLIDIERT.md`
+  - 5 Einzelberichte: `BERICHT_RA{1,2,3,4,5}_*.md` in `docs/projekt/testrun-nationalismus-kolonialismus/`
+  - UPGRADE_PLAN v1.3 Delta: `docs/architektur/UPGRADE_PLAN_v3-12_ESCAPE_GAME_QUALITAET.md` Section 19
+- **Naechster Schritt:** Task #7 Verifikations-Gate (Konsistenz-Check BEFUND ↔ 5 BERICHTE ↔ UPGRADE_PLAN ↔ STATUS ↔ CHANGELOG ↔ CHARTAS). Danach P0-Blocker-Abarbeitung als Pre-Pilotlauf-Task-Paket.
 
 **Plan-Impact R0-Befunde (muss in UPGRADE_PLAN v1.3 nachgezogen werden):**
 1. Runde 1 Arbeitspaket 1 Umlaut-Retrofit: Scope **drei** Fragetypen (nicht zwei).
@@ -51,10 +77,16 @@
 
 ### Offene Arbeitsstroeme nach Prioritaet
 
-**P0 — Blockiert naechste Produktion:**
+**P0 — Blockiert naechste Produktion (v3.12-Pilot-Start blockiert durch R0-TESTRUN-AUDIT P0-Kanon):**
 
 | ID | Aufgabe | Quelle | Naechster Schritt |
 |---|---|---|---|
+| **P0-A1** | **F-RA1-05 Phase 3.1 Deploy-Preparation Wiederaufnahme** | R0-TESTRUN-AUDIT (BEFUND §4) | Pipeline-Check-Patch + Re-Run auf deutscher-nationalismus-kolonialismus. Aufwand ~1h |
+| **P0-A2** | **F-RA1-06 V13-Patch-Regression beheben** | R0-TESTRUN-AUDIT (BEFUND §4) | Hefteintrag-Verschachtelung entflechten + Regression-Test. Aufwand 1-2h |
+| **P0-A3** | **F-RA3-01 Lueckentext-Pool-Reset-Bug fixen** | R0-TESTRUN-AUDIT (BEFUND §4) | escape-engine.js Z. 2814 single-line-fix: `&& allBtns[m].disabled` → `&& allBtns[m].classList.contains('aufgabe__pool-wort--used')`. Aufwand 15 min + QA |
+| **P0-A4** | **F-RA4-04 Source-Deploy-Drift mat-3-4.json beheben** | R0-TESTRUN-AUDIT (BEFUND §4) | Source-Korrektur + Re-Deploy + Source-Deploy-Hash-Check einfuehren (Q-SOURCE-DEPLOY-PARITY). Aufwand 30 min |
+| **P0-A5** | **F-RA4-10 Mappe-4 Retro-Patch Herero/Nama** | R0-TESTRUN-AUDIT (BEFUND §4) | img-4-1/-3/-4 neu kuratieren via Commons, Dual-Kanal-Verifikation. Aufwand 1-2h |
+| **P0-A6** | **F-RA4-02 Prospektive Medien-Verifikation implementieren** | R0-TESTRUN-AUDIT (BEFUND §4) | Q-MEDIEN-PROSPEKTIV Commons-API Pre-Ingest-Check in Phase 0.2.M Sub-Agent. Aufwand 2h |
 | ~~P0-1~~ | ~~SKRIPT-Persistenz im Repo~~ | ~~Session 23 Meta-Task~~ | **CLOSED** (Session 24): ORCHESTRATOR Persistenz-Checkpoint + VERTRAG_PHASE_0-3 Persistenz-PFLICHT |
 | P0-2 | Produktions-Testlauf v2.4 | Operationalisierungs-Audit v2 Abschluss | **Testlauf 5 PASS. VP-10/VP-11 gepatcht. VP-1r dokumentiert.** Naechst: Phase 0.4 AGENT_HEFTEINTRAG fortsetzen |
 | P0-3 | Zweiter Testfall Grenzfaelle | Operationalisierungs-Audit v2 P15 | Mappe mit quellentext + bildquelle heuristisch, Rahmen-Einstieg-Konflikt, oder <3 Mat |

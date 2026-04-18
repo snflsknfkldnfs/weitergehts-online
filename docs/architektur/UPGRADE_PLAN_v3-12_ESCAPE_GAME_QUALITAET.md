@@ -795,3 +795,78 @@ Siehe SCOPING v2.1 §9 fuer vollstaendige Referenzliste (Droysen, Pandel, Ruesen
 ---
 
 **Status:** v1.2, 2026-04-11. Alle 11 Detail-Fragen entschieden. R0 kann unmittelbar starten.
+
+---
+
+## 19. v1.3 Delta — Testrun-Audit `deutscher-nationalismus-kolonialismus` (2026-04-18)
+
+**Quelle:** `docs/projekt/testrun-nationalismus-kolonialismus/BEFUND_TESTRUN_N-K_KONSOLIDIERT.md`. Vollaudit 5 RAs, 60 Findings, **6 P0-Blocker**, Gate Overall **ROT**.
+
+**Pilot-Konsequenz:** v3.12-Pilot-Freigabe nicht moeglich ohne Abarbeitung der 6 P0 + mindestens CC BY-SA-Compliance + Mappe-4-Retro-Patch.
+
+### 19.1 P0-Blocker-Kanon (Pilot-blockierend)
+
+| ID | Finding-ID | Beschreibung | RA | Aufwand |
+|----|-----------|-------------|-----|--------|
+| P0-1 | F-RA1-05 | Phase 3.1 Deploy-Preparation Mappe 2+3 uebersprungen/unterdokumentiert | RA1 | 1h |
+| P0-2 | F-RA1-06 | V13-Patch-Regression Hefteintrag-Verschachtelung Mappe 3 | RA1 | 1-2h |
+| P0-3 | F-RA3-01 | Lueckentext-Pool-Reset-Bug `escape-engine.js` Z. 2814 (disabled-Check statt used-Klasse) | RA3 | 15 min + QA |
+| P0-4 | F-RA4-04 | Source-Deploy-Drift `mat-3-4.json` (Hallu-Caption in Source, Ersatz nur in data.json) | RA4 | 30 min + Vertrag |
+| P0-5 | F-RA4-10 | Mappe-4 Retro-Patch offen (img-4-1/-3/-4) blockt Wiederaufnahme | RA4 | 1-2h |
+| P0-6 | F-RA4-02 | Keine prospektive Verifikation in Phase 0.2 (erste API-Pruefung reaktiv) | RA4 | 2h |
+
+### 19.2 Neue Plan-Impact-Items (13, Ergaenzung zu den 17 aus R0-FINAL+)
+
+**Cluster Medien (4):**
+- **PI-MV2-EXT1** Source-Deploy-Propagation: Patches MUESSEN sowohl in Source-JSON (`docs/agents/artefakte/.../mat-*.json`) als auch in `data.json` erfolgen. Re-Assembly-Validator pruefen. Bezug: F-RA4-04, VERTRAG_PHASE_3-1 DEPLOY-06.
+- **PI-MV2-EXT2** Mappe-4-Retro-Patch Task: Verifikation img-4-1, img-4-3, img-4-4 (Herero/Nama) via API-Query. Ersatz dokumentiert im `medien_ersatz_log.md` je Game.
+- **PI-MV2-EXT3** CC BY-SA Attribution-Schema: `bildquelle`-Typ data.json-Felder erweitern um `urheber`, `commons_url`, `lizenz_deed_url`, `wikimedia_filename`, `urheberrecht_jahr`. Generalisierung O-02-E-Portrait-Subfelder auf alle bildquelle-Materialien.
+- **PI-MV2-EXT4** Didaktisches Ersatz-Rueckkopplung: Bei Medien-Ersatz via Fallback-Heuristik Mini-Review Phase 2.1b (Didaktik-Quickcheck: aendert Ersatz die Aussage des Tafelbild-Knotens?). F-RA4-12.
+
+**Cluster Engine (3):**
+- **PI-ENGINE-1** Hefteintrag-Dualstruktur bereinigen: `data.json` enthaelt sowohl `hefteintrag` als auch `sicherung.hefteintrag`. Schema-Normierung auf eine Quelle. F-RA3-03.
+- **PI-ENGINE-2** Assembly-Validator einfuehren: Post-Assembly-Pass, der (a) Entity-Encoding, (b) Hefteintrag-Struktur, (c) Aufgaben-Min-Count, (d) material_referenz-Rueckreferenzen, (e) Umlaut-Sanity prueft. F-RA3-04/07/08.
+- **PI-ENGINE-3** Entity-Encoding-Pipeline-Hardening: Source → Assembly → Deploy UTF-8 durchgehend, Entity-Scan als Hard-Gate. F-RA3-02.
+
+**Cluster Didaktik (2):**
+- **PI-DIDAKTIK-1** Typ-Selektions-Katalog R7: Jahrgangsstufen-Constraint fuer Aufgaben-Typen in `VERTRAG_PHASE_2-2a_PROGRESSIONSPLAN`. Typ `vergleich` (Matrix-Interface) erst ab R8/Gym7. F-RA2-13.
+- **PI-DIDAKTIK-2** A18-Luecke-Schliessung: Jede perspektivtragende Materialquelle MUSS als `material_referenz` in mindestens einer Aufgabe auftreten. Hard-Gate Phase 2.2. F-RA2-09.
+
+**Cluster PM/Prozess (4):**
+- **PI-PM-1** Post-Kompaktions-Re-Orientation-Protokoll: Nach Auto-Kompaktion obligatorischer Schritt "STATUS + aktueller Patch-Status + naechste Aktion lesen, dann erst weiterarbeiten". Verhindert Kompaktions-induzierte Constraint-Drift. F-RA1-10, F-RA5-02.
+- **PI-PM-2** CC→Cowork-Handoff-Template: Standardisiertes Rueckmeldungs-Schema fuer Claude-Code→Cowork-Transitionen (Phase 3.0/3.1/3.2). Pflicht-Felder: Commit-Hash, Push-Status, Patch-Inventar, Verifikations-Artefakte, Next-Action. F-RA5-11.
+- **PI-PM-3** STATUS-Freeze bei Patch-Zyklen: Bei Live-Defekt-Patches (Hotfix-Mode) PI-Zustandsblock nicht inkrementieren, bis Claude-Code-Rueckmeldung mit Verifikations-Artefakt eingegangen. Verhindert MAPPEN_ABGESCHLOSSEN-Drift. F-RA5-06.
+- **PI-PM-4** Re-Flag-Pattern-Detektor: Bei 2. User-Meldung desselben Problems innerhalb einer Session: PM stoppt neue Patches, erzwingt Verifikations-Gate (Live-Screenshot / Hard-Refresh-Beweis). F-RA5-10.
+
+### 19.3 Pipeline-Patch
+
+- **PI-PIPELINE-1** Patch-Propagation-Check im Deploy-Vertrag: VERTRAG_PHASE_3-1 DEPLOY-06 ergaenzen um Patch-Propagation-Regel: "Jede Source-JSON-Aenderung triggert Re-Assembly oder Assembly-Validator-Fail". F-RA1-07, F-RA4-04.
+
+### 19.4 Q-Gate-Revision
+
+Zusaetzliche Q-Gates fuer Pilot-Freigabe:
+- **Q-MEDIEN-PROSPEKTIV** Phase 0.2: Alle Wikimedia-/Archiv-Dateinamen vor Weiterverarbeitung via API verifiziert. Kein Pipeline-Forward bei 404.
+- **Q-LIZENZ-COMPLIANCE** Phase 2.1: Jedes bildquelle-Material mit vollstaendigem Attribution-Set (urheber, commons_url, deed_url).
+- **Q-SOURCE-DEPLOY-PARITY** Phase 3.1: Source-JSON und data.json sind inhaltsgleich fuer Material-Content. Hash-Check oder Re-Assembly-Drift-Detect.
+- **Q-TYP-R7-KONFORMITAET** Phase 2.2a: Aufgaben-Typ-Auswahl durch R7-Jahrgangs-Constraint gefiltert.
+
+### 19.5 Aktualisierter Status F-P1 / F-P2 (aus M1-Befund)
+
+- **F-P1** (ORCHESTRATOR nicht als Router): **NEUTRALISIERT** durch v3.9-Steuerungsrefaktor (PI=SSOT, ORCH=Referenz). Testrun-Evidenz: 20 ORCH-Reads vs. 107 PI-Reads vs. 74 VERTRAG_PHASE-Reads. Nicht wiederkehrend als Ursprungs-Defekt.
+- **F-P2** (Phase 3 in Cowork statt Claude-Code): **TEILWEISE REZIDIV** als neue Variante "CC→Cowork-Rueckmelde-Luecke" (F-RA5-11). Ursprungs-Root-Cause bleibt behoben, aber Handoff-Richtung CC→Cowork ohne strukturiertes Rueckmeldungs-Schema fuehrt zu Re-Flag-Pattern und PI-Zustandsblock-Drift. Adressierung via PI-PM-2.
+
+### 19.6 Neue Artefakte
+
+- `docs/projekt/testrun-nationalismus-kolonialismus/BEFUND_TESTRUN_N-K_KONSOLIDIERT.md` — Konsolidierter Audit-Befund.
+- `docs/projekt/testrun-nationalismus-kolonialismus/BERICHT_RA1_PIPELINE.md` bis `BERICHT_RA5_PM_PROZESS_META.md` — 5 RA-Teilberichte.
+- `docs/projekt/testrun-nationalismus-kolonialismus/EVIDENZ_BUNDLE.md` — Forensische Evidenz-Synthese.
+- `docs/projekt/testrun-nationalismus-kolonialismus/evidenz/*` — JSONL- und CSV-Extrakte.
+- `docs/projekt/testrun-nationalismus-kolonialismus/CHARTA_RA1_*.md` bis `CHARTA_RA5_*.md` — Auftrags-Chartas der 5 Review-Agenten.
+
+### 19.7 Total-Plan-Impact-Count
+
+**30 Plan-Impact-Items** total (17 R0-FINAL+ + 13 v1.3 Delta).
+
+---
+
+**Status:** v1.3, 2026-04-18. Testrun-Audit-Delta eingepflegt. v3.12-Pilot blockiert durch 6 P0.

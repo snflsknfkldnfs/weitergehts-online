@@ -14,3 +14,7 @@ docs/analyse/Evaluiation Testrun Mappe 4/
 # Testlauf-Transkripte (potentiell gross, PII-relevant)
 docs/analyse/transcript-*/
 docs/analyse/session-export-*/
+docs/analyse/Verlauf*/
+
+# Testrun-Audit-Evidenz (JSONL-Dumps aus Session-Transkripten, PII-relevant)
+docs/projekt/*/evidenz/

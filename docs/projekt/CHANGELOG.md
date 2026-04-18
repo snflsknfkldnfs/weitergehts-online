@@ -4,6 +4,73 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-18 — R0-TESTRUN-AUDIT abgeschlossen: 5-RA-Multi-Agenten-Audit `deutscher-nationalismus-kolonialismus` — Gate ROT, 60 Findings, UPGRADE_PLAN v1.3 Delta eingepflegt
+
+**Phase:** R0-TESTRUN-AUDIT (retrospektives PM-gesteuertes Qualitaets-Audit auf Testrun-Artefakt)
+**Modus:** AUDIT → EXECUTE (Plan-Impact-Integration)
+**Session:** PM-Cowork (Sessions 29+, mehrere Kompaktions-Zyklen, Task #1-#6 abgeschlossen, Task #7 ausstehend)
+
+**Scope:** Retrospektive 5-Review-Axis-Multi-Agenten-Audit auf Testrun `deutscher-nationalismus-kolonialismus` (3 Produktions-Sessions, 3337 Messages, 1153 Tool-Calls, 12 Auto-Kompaktionen, 5 Subagenten-Spawns). Audit-Verzeichnis: `docs/projekt/testrun-nationalismus-kolonialismus/`. Persistenz-Konvention nach ANLEITUNG v2.0 Abschnitt 3: CHARTAS + BERICHT_RA[N] + EVIDENZ_BUNDLE + Konsolidierter BEFUND.
+
+**Durchgefuehrte Tasks (7-Schritt-Workflow):**
+- Task #1 Scope-Definition + Audit-State-Bootstrap (AUDIT_STATE.md, CHECKPOINT_TASK4.md)
+- Task #2 Evidenz-Extraktion (JSONL-Dumps: user_messages, tool_calls, compaction_events, subagent_spawns, milestones, timeline.csv, session_handoffs.md; EVIDENZ_BUNDLE.md)
+- Task #3 Chartas (CHARTA_RA1 Pipeline, CHARTA_RA2 Didaktik/Material, CHARTA_RA3 Engine/Assembly, CHARTA_RA4 Medien/Lizenz, CHARTA_RA5 PM/Prozess/Meta)
+- Task #4 Parallel-RA-Spawn (5 general-purpose Subagenten in einem Message-Block, Compaction-Resistance-Protokoll: CHECKPOINT-Anker + Skeleton-first + Edit-iterativ)
+- Task #5 Konsolidierter Befund (`BEFUND_TESTRUN_N-K_KONSOLIDIERT.md`, 12 Sektionen, Cross-RA-Synthese, Plan-Impact-Matrix)
+- Task #6 UPGRADE_PLAN v1.3 Delta + STATUS + CHANGELOG (diese Aktualisierung)
+- Task #7 Verifikations-Gate — AUSSTEHEND
+
+**Gate-Urteile (5 RAs):**
+- RA1 Pipeline/Prozess: GELB — 13 Findings (2 P0, 3 P1, 6 P2, 2 P3) — BERICHT_RA1_PIPELINE.md (44.7 KB)
+- RA2 Didaktik/Material: GELB — 15 Findings (0 P0, 4 P1, 7 P2, 4 P3) — BERICHT_RA2_DIDAKTIK_MATERIAL.md (37.2 KB)
+- RA3 Engine/Assembly: AMBER — 9 Findings (1 P0, 3 P1, 3 P2, 2 P3) — BERICHT_RA3_ENGINE_ASSEMBLY.md (29.3 KB)
+- RA4 Medien/Lizenz: ROT — 13 Findings (3 P0, 5 P1, 3 P2, 1 P3) — BERICHT_RA4_MEDIEN_LIZENZ.md (42.7 KB)
+- RA5 PM/Prozess/Meta: ROT — 11 Findings (0 P0, 7 P1, 3 P2, 1 P3) — BERICHT_RA5_PM_PROZESS_META.md (37.0 KB)
+- **Aggregat:** ROT (durchgezogen von RA4 Medien + RA5 PM). 60 Findings total, davon 6 P0, 22 P1, 22 P2, 10 P3.
+
+**P0-Blocker-Kanon (v3.12-Pilot BLOCKIERT):**
+- P0-1 F-RA1-05 Phase 3.1 Deploy-Preparation uebersprungen
+- P0-2 F-RA1-06 V13-Patch-Regression Hefteintrag-Verschachtelung
+- P0-3 F-RA3-01 Lueckentext-Pool-Reset-Bug (escape-engine.js Z. 2814 single-line-fix)
+- P0-4 F-RA4-04 Source-Deploy-Drift mat-3-4.json
+- P0-5 F-RA4-10 Mappe-4 Retro-Patch offen (img-4-1/-3/-4 Herero/Nama)
+- P0-6 F-RA4-02 Keine prospektive Medien-Verifikation (MV2-Hallu-Rate 6/18)
+
+**F-P1 / F-P2 Wiederkehrpruefung (Cross-Check gegen BEFUND_TESTRUN_M1_KONSOLIDIERT):**
+- F-P1 (ORCH als Router) **NEUTRALISIERT** durch v3.9 Steuerungsrefaktor (PI=SSOT, ORCH=Referenz).
+- F-P2 (Phase 3 in Cowork) **TEILWEISE REZIDIV** in neuer Variante "CC→Cowork-Rueckmelde-Luecke" (F-RA5-11).
+
+**Cross-RA-Muster:**
+- MV2-Hallu-Rate 6/18 bestaetigt, Typ-Klassen-Analyse: Hallus ausschliesslich bei Archiv-Signaturen + Eigennamen + konstruierten Deskriptiven.
+- R0.5 Dual-Kanal (WebFetch + Commons cross-validation) strukturell **nicht implementiert** trotz R0.5-Befund-Vorgabe.
+- Lizenz-Attribution CC BY-SA strukturell unvollstaendig (Compliance-Risiko).
+- Kompaktions-induzierte Regressionen bei Patch-Zyklen (V13-Patch-Regression).
+- Re-Flag-Pattern: User musste gleiches Problem mehrfach melden (Umlaute 3x, Mappe-3-Status 2x).
+
+**UPGRADE_PLAN v1.3 Delta (Section 19 angehaengt):**
+- 13 neue PI-Items in 4 Clustern: Medien (4), Engine (3), Didaktik (2), PM (4) + PI-PIPELINE-1 Patch-Propagation-Check
+- 4 neue Q-Gates: Q-MEDIEN-PROSPEKTIV, Q-LIZENZ-COMPLIANCE, Q-SOURCE-DEPLOY-PARITY, Q-TYP-R7-KONFORMITAET
+- Total Plan-Impact-Count: 30 (17 R0-FINAL+ + 13 v1.3 Delta)
+
+**Neue Artefakte:**
+- `docs/projekt/testrun-nationalismus-kolonialismus/AUDIT_STATE.md` — Audit-Status-File mit Task-Tracker
+- `docs/projekt/testrun-nationalismus-kolonialismus/EVIDENZ_BUNDLE.md` — Konsolidierte Evidenz-Chronologie
+- `docs/projekt/testrun-nationalismus-kolonialismus/CHECKPOINT_TASK4.md` — Parallel-Spawn-Anker + Resume-Anweisung
+- `docs/projekt/testrun-nationalismus-kolonialismus/CHARTA_RA{1,2,3,4,5}_*.md` — 5 Chartas
+- `docs/projekt/testrun-nationalismus-kolonialismus/BERICHT_RA{1,2,3,4,5}_*.md` — 5 Einzelberichte
+- `docs/projekt/testrun-nationalismus-kolonialismus/BEFUND_TESTRUN_N-K_KONSOLIDIERT.md` — Konsolidierter Befund (12 Sektionen inkl. Anhang A/B)
+- `docs/projekt/testrun-nationalismus-kolonialismus/evidenz/` — JSONL + Extrakte
+
+**Edits:**
+- `docs/architektur/UPGRADE_PLAN_v3-12_ESCAPE_GAME_QUALITAET.md` — Section 19 v1.3 Delta angehaengt (7 Subsektionen 19.1-19.7)
+- `docs/projekt/STATUS.md` — Header + R0-TESTRUN-AUDIT-Block + P0-A1 bis P0-A6 in P0-Tabelle
+- `docs/projekt/CHANGELOG.md` — dieser Eintrag
+
+**Naechster Schritt:** Task #7 Verifikations-Gate — Konsistenz- und Vollstaendigkeits-Check ueber alle Audit-Artefakte (BEFUND ↔ 5 BERICHTE ↔ UPGRADE_PLAN v1.3 ↔ STATUS ↔ CHANGELOG ↔ CHARTAS). Danach P0-Blocker-Abarbeitung als Pre-Pilotlauf-Task-Paket (P0-A1 bis P0-A6) vor v3.12-Pilot-Start.
+
+---
+
 ## 2026-04-12 — R0.7-Refaktor: Discovery-Mechanismus vereinfacht auf Lehrkraft-URL-Eingabe
 
 **Phase:** R0.7 Finale Vereinfachung nach User-Direktive
