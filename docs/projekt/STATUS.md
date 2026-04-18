@@ -1,7 +1,7 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-18 (R0-TESTRUN-AUDIT abgeschlossen: 5-RA-Multi-Agenten-Audit auf Testrun `deutscher-nationalismus-kolonialismus`. Gate ROT. 60 Findings (6 P0, 22 P1, 22 P2, 10 P3). UPGRADE_PLAN v1.3 eingepflegt (Section 19: 13 neue PI-Items + 4 neue Q-Gates + P0-Blocker-Kanon). v3.12-Pilot BLOCKIERT bis 6 P0 geschlossen. Verweis: `docs/projekt/testrun-nationalismus-kolonialismus/BEFUND_TESTRUN_N-K_KONSOLIDIERT.md`.)
-**Modus:** R0-TESTRUN-AUDIT COMPLETE → v3.12-Pilot BLOCKIERT (6 P0 offen) → Task #7 Verifikations-Gate
+**Letzte Aktualisierung:** 2026-04-18 (P0-BATCH-1 CLOSED: P0-A3 Engine-Fix + Cache-Bust ?v=3.14 + P0-A4 Source-Sync mat-3-4.json + Q-SOURCE-DEPLOY-PARITY-Tool. Commits a4f8c19 + 2f841a3 gepusht. 4 P0 verbleiben: A1, A2, A5, A6. E2E-Validierung via Host-MCP Commit-Workflow + manuelles CC-Handoff-Durchspielen.)
+**Modus:** P0-BATCH-1 CLOSED (2/6) → Batch-2 (A5+A6 Medien-Infrastruktur) freischaltbar → v3.12-Pilot weiterhin BLOCKIERT
 **Aktiver Upgrade-Plan:** `docs/architektur/UPGRADE_PLAN_v3-12_ESCAPE_GAME_QUALITAET.md` v1.3 (Runden R0-R8 + v1.3 Delta Section 19 aus Testrun-Audit: 13 neue PI-Items in 4 Clustern Medien/Engine/Didaktik/PM + 4 neue Q-Gates Q-MEDIEN-PROSPEKTIV/Q-LIZENZ-COMPLIANCE/Q-SOURCE-DEPLOY-PARITY/Q-TYP-R7-KONFORMITAET + P0-Blocker-Kanon mit 6 Items). Total Plan-Impact-Count **30** (17 R0-FINAL+ + 13 v1.3 Delta). v3.12-Pilot-Start blockiert bis P0-1 bis P0-6 geschlossen. Vorgaenger v3.11 COMPLETE + gepusht.
 
 **R0-Befunde (Gate-Status):**
@@ -83,8 +83,8 @@
 |---|---|---|---|
 | **P0-A1** | **F-RA1-05 Phase 3.1 Deploy-Preparation Wiederaufnahme** | R0-TESTRUN-AUDIT (BEFUND §4) | Pipeline-Check-Patch + Re-Run auf deutscher-nationalismus-kolonialismus. Aufwand ~1h |
 | **P0-A2** | **F-RA1-06 V13-Patch-Regression beheben** | R0-TESTRUN-AUDIT (BEFUND §4) | Hefteintrag-Verschachtelung entflechten + Regression-Test. Aufwand 1-2h |
-| **P0-A3** | **F-RA3-01 Lueckentext-Pool-Reset-Bug fixen** | R0-TESTRUN-AUDIT (BEFUND §4) | escape-engine.js Z. 2814 single-line-fix: `&& allBtns[m].disabled` → `&& allBtns[m].classList.contains('aufgabe__pool-wort--used')`. Aufwand 15 min + QA |
-| **P0-A4** | **F-RA4-04 Source-Deploy-Drift mat-3-4.json beheben** | R0-TESTRUN-AUDIT (BEFUND §4) | Source-Korrektur + Re-Deploy + Source-Deploy-Hash-Check einfuehren (Q-SOURCE-DEPLOY-PARITY). Aufwand 30 min |
+| ~~P0-A3~~ | ~~F-RA3-01 Lueckentext-Pool-Reset-Bug fixen~~ | ~~R0-TESTRUN-AUDIT (BEFUND §4)~~ | **CLOSED** (2026-04-18, commit a4f8c19): escape-engine.js Z. 2798 gepatcht (`disabled` → `classList.contains('aufgabe__pool-wort--used')`). Cache-Bust `?v=3.13`→`?v=3.14` auf 4 Games + Template. Verifikation via Host-MCP |
+| ~~P0-A4~~ | ~~F-RA4-04 Source-Deploy-Drift mat-3-4.json beheben~~ | ~~R0-TESTRUN-AUDIT (BEFUND §4)~~ | **CLOSED** (2026-04-18, commit 2f841a3): mat-3-4.json mit Maréchal/Le-Frondeur-Content synchronisiert. Q-SOURCE-DEPLOY-PARITY-Tool `tools/source-deploy-parity.sh` (134 LOC, 18/18 SYNC PASS) implementiert |
 | **P0-A5** | **F-RA4-10 Mappe-4 Retro-Patch Herero/Nama** | R0-TESTRUN-AUDIT (BEFUND §4) | img-4-1/-3/-4 neu kuratieren via Commons, Dual-Kanal-Verifikation. Aufwand 1-2h |
 | **P0-A6** | **F-RA4-02 Prospektive Medien-Verifikation implementieren** | R0-TESTRUN-AUDIT (BEFUND §4) | Q-MEDIEN-PROSPEKTIV Commons-API Pre-Ingest-Check in Phase 0.2.M Sub-Agent. Aufwand 2h |
 | ~~P0-1~~ | ~~SKRIPT-Persistenz im Repo~~ | ~~Session 23 Meta-Task~~ | **CLOSED** (Session 24): ORCHESTRATOR Persistenz-Checkpoint + VERTRAG_PHASE_0-3 Persistenz-PFLICHT |

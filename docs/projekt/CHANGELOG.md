@@ -4,6 +4,50 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-18 — P0-BATCH-1 CLOSED: P0-A3 (Engine-Fix) + P0-A4 (Source-Sync) via Claude-Code-Handoff abgearbeitet
+
+**Phase:** R0-TESTRUN-AUDIT Remediation (Batch-1 von 3)
+**Modus:** HANDOFF → EXECUTE (CC) → VERIFY (PM-Cowork via Host-MCP)
+**Session:** PM-Cowork Session 30+, CC-Session manuell orchestriert
+
+**Scope:** Abarbeitung der zwei schnellsten P0-Blocker aus R0-TESTRUN-AUDIT via Claude-Code-Handoff (`HANDOFF_BATCH1_P0-A3_P0-A4.md`, commit 59ea219). E2E-Validierung des Host-MCP-Git-Workflows + manueller CC-Orchestrierung als Vorbereitung fuer Stufe-2-Automatisierung.
+
+**Durchgefuehrte Fixes:**
+- **P0-A3 (commit a4f8c19)** — F-RA3-01 Lueckentext-Pool-Reset-Bug
+  - `assets/js/escape-engine.js` Z. 2798 (vorher Z. 2814): `allBtns[m].disabled` → `allBtns[m].classList.contains('aufgabe__pool-wort--used')`
+  - Cache-Bust `?v=3.13` → `?v=3.14` auf 4 Games (`deutscher-nationalismus-kolonialismus`, `absolutismus-ludwig-xiv`, `franzoesische-revolution`, `industrialisierung`) + Template
+  - Verifikation via Host-MCP: Code-Diff bestaetigt, Cache-Bust auf 17 HTML-Dateien propagiert
+- **P0-A4 (commit 2f841a3)** — F-RA4-04 Source-Deploy-Drift mat-3-4.json
+  - `docs/agents/artefakte/deutscher-nationalismus-kolonialismus/mappe-3/materialien/mat-3-4.json` synchronisiert: Titel, Bildunterschrift, Quelle, Lizenz auf Maréchal/Le-Frondeur-Content (20.12.1884)
+  - Q-SOURCE-DEPLOY-PARITY implementiert: `tools/source-deploy-parity.sh` (134 LOC)
+  - Parity-Check-Ergebnis: **18/18 SYNC PASS**
+
+**E2E-Workflow-Validierung:**
+- 4 Commits + 2 Pushes ueber Host-MCP (`mcp__Control_your_Mac__osascript`) ohne virtiofs-Lock-Probleme
+- Handoff-Pfad-Annahme korrigiert: `docs/agents/artefakte/` liegt in `weitergehts-online` (nicht `escape-game-generator`); CC hat eigenstaendig korrekt lokalisiert
+
+**P0-Status nach Batch-1:**
+- 2/6 P0 CLOSED: A3 + A4
+- 4/6 P0 OPEN: A1 (Pipeline-Deploy), A2 (V13-Patch-Regression), A5 (Mappe-4 Retro-Patch), A6 (Prospektive Medien-Verifikation)
+- v3.12-Pilot weiterhin BLOCKIERT (4 P0 verbleiben)
+
+**Naechste Schritte:**
+- Batch-2: P0-A5 + P0-A6 (Medien-Infrastruktur-Cluster)
+- Batch-3: P0-A1 + P0-A2 (Pipeline-Regression)
+- Meta: Stufe-2-Entscheidung automatisierter CC-Call via osascript
+
+**Geaenderte Dateien (CC-Domaene):**
+- `assets/js/escape-engine.js` (1 Zeile)
+- `escape-games/*/index.html`, `lehrkraft.html`, `mappe-*.html` (17 Dateien, Cache-Bust)
+- `docs/agents/artefakte/deutscher-nationalismus-kolonialismus/mappe-3/materialien/mat-3-4.json`
+- `tools/source-deploy-parity.sh` (NEU)
+
+**Geaenderte Dateien (PM-Cowork-Domaene, dieses Update):**
+- `docs/projekt/STATUS.md` (Header + P0-Tabelle)
+- `docs/projekt/CHANGELOG.md` (dieser Eintrag)
+
+---
+
 ## 2026-04-18 — R0-TESTRUN-AUDIT abgeschlossen: 5-RA-Multi-Agenten-Audit `deutscher-nationalismus-kolonialismus` — Gate ROT, 60 Findings, UPGRADE_PLAN v1.3 Delta eingepflegt
 
 **Phase:** R0-TESTRUN-AUDIT (retrospektives PM-gesteuertes Qualitaets-Audit auf Testrun-Artefakt)
