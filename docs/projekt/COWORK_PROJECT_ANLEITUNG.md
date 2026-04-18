@@ -1,7 +1,7 @@
 # Cowork-Project Anleitung: weitergehts.online — Escape-Game-Infrastruktur
 
 **Zweck:** Dieser Text wird im "Instructions"-Feld des Cowork-Projects eingetragen und laedt bei jeder Session automatisch.
-**Version:** 2.0 (2026-04-08, Refaktor: Routing-Dokument statt State-Kopie)
+**Version:** 2.1 (2026-04-18, Git-Protokoll auf Host-MCP umgestellt)
 
 ---
 
@@ -33,10 +33,15 @@ FILE-OWNERSHIP:
 - docs/ = Deine Domaene. Direkt editierbar.
 - assets/, escape-games/, *.html (Root) = Claude-Code-Domaene. Nur via Uebergabe-Prompt aendern.
 
-GIT:
-- Cowork kann git status, git diff, git add und git commit selbst ausfuehren (via Bash-Tool).
-- git push erfordert User-Ausfuehrung. Push-Befehl als kopierbaren Block generieren.
-- Vor jeder inhaltlichen Arbeit: git pull --ff-only (User ausfuehren lassen).
+GIT (v2.1 — Host-MCP-Protokoll, PFLICHT):
+- Kanonisches Protokoll: docs/projekt/GIT_WORKFLOW_HOST_MCP.md (5-Stufen: Plan → User-Freigabe → Lock-Cleanup → Ausfuehrung → Verifikation).
+- Cowork fuehrt add/commit/push/pull NICHT mehr via Sandbox-Bash aus. Sandbox-Bash fuer git ist DEPRECATED (virtiofs-Lock-Problem).
+- Primaer-Kanal: mcp__Control_your_Mac__osascript mit Host-Pfad /Users/paulad/weitergehts.online/weitergehts-online.
+- Host-MCP-Calls laufen NUR nach expliziter User-Freigabe des Plans.
+- Stale-Lock-Cleanup (rm .git/index.lock) ist Pflicht-Vorschritt, wenn Lock vorhanden + kein laufender git-Prozess.
+- Push auf main/master: nach expliziter User-Freigabe via Host-MCP ausfuehrbar. Fallback Terminal-Block nur bei Credential-Prompt.
+- Explizite Dateinamen beim Staging. Niemals `git add .` oder `git add -A`.
+- Verbotene Operationen (reset --hard, force-push, amend gepushter Commits, config-Aenderungen): nur auf explizite User-Anweisung mit Begruendung.
 
 INTERAKTIONSMODUS:
 - Kein Filler, keine Emojis, keine Rueckfragen wenn der naechste Schritt eindeutig ist.
@@ -50,6 +55,7 @@ ABSCHNITT 2: SESSION-START (Routing auf lebende Dokumente)
 BEI JEDER SESSION — PFLICHT-LEKTUERE (in dieser Reihenfolge):
 1. docs/projekt/STATUS.md — Konsolidierter Projektstatus, offene Arbeitsstroeme nach Prioritaet, kritischer Pfad, naechster Schritt
 2. docs/projekt/CHANGELOG.md — Letzte 5 Eintraege fuer Kontext
+3. docs/projekt/GIT_WORKFLOW_HOST_MCP.md — Kanonisches Git-Protokoll (nur bei erster git-Operation der Session, sonst Referenz)
 
 Das genuegt fuer die Orientierung. STATUS.md ist die Single Source of Truth fuer den Projektzustand. Alle offenen Planungen, abgeschlossenen Grossprojekte und Blocker sind dort verankert.
 
@@ -116,5 +122,6 @@ NICHT hier aktualisieren:
 
 | Version | Datum | Aenderung |
 |---|---|---|
+| 2.1 | 2026-04-18 | GIT-Sektion refaktoriert auf Host-MCP-Protokoll (mcp__Control_your_Mac__osascript). Sandbox-Bash-git DEPRECATED. Neues kanonisches Dokument `docs/projekt/GIT_WORKFLOW_HOST_MCP.md` als Pflicht-Referenz. Pflichtlektuere um GIT_WORKFLOW erweitert (nur bei git-Operationen). Begruendung: virtiofs-Lock-Problem der Sandbox macht Sandbox-git unzuverlaessig. |
 | 2.0 | 2026-04-08 | Refaktor: Routing-Dokument statt State-Kopie. 6 drift-anfaellige Sektionen eliminiert (C+ Ausfuehrungsplan, Plugin-Infrastruktur, Strategischer Kontext, GRUNDSATZENTSCHEIDUNG-Verweis). Pflichtlektuere auf 2 Dateien reduziert (STATUS.md + CHANGELOG.md). Wartungs-Trigger explizit definiert. GIT-Sektion korrigiert (Cowork kann committen). |
 | 1.0 | 2026-04-02 | Erstversion mit vollstaendiger Projektsteuerungs-Logik. |
