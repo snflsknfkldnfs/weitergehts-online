@@ -24,6 +24,18 @@ Diese Datei konsolidiert operative Learnings zur Steuerung von Claude Code (CC) 
       print('MAX-OK' if not d.get('is_error') else 'AUTH-BROKEN: '+d.get('result',''))"
   ```
   Exit mit "AUTH-BROKEN: Credit balance is too low" → Abbruch, `/login` ausfuehren, erst dann Handoff-Batch starten.
+- **Kanonischer Wrapper:** `tools/cc-launch.sh` kapselt den Pre-Flight-Check + exec-claude in einem Aufruf. Fuer alle CC-Starts (interaktiv + headless) ab Batch-3 verpflichtend:
+  ```bash
+  # Headless-Start (mit Fallback-Abbruch bei Auth-Fehler):
+  ./tools/cc-launch.sh -p --dangerously-skip-permissions \
+    --add-dir /Users/paulad/escape-game-generator \
+    --output-format stream-json --verbose \
+    "$(cat /tmp/cc_batch_prompt.txt)"
+
+  # Interaktiv-Start (Pre-Flight-Check → TUI):
+  ./tools/cc-launch.sh
+  ```
+  Exit 2 bei AUTH-BROKEN, sonst exec claude mit User-Args. perl-alarm-Timeout (macOS-portabel, kein coreutils noetig).
 - **Misleading:** `total_cost_usd` in JSON-Output wird auch bei Max-Nutzung als API-Referenz-Preis geliefert (z.B. $0.07 fuer Hello-World-Run). Heisst NICHT dass API-Account abgerechnet wurde. Auth-Pfad-Unterscheidung sicher NUR ueber TUI-Header oder initialen `/login`-Status.
 - **Rate-Limit-Mechanik offen:** Wenn Max-5h-Fenster erschoepft, fallback auf API — dann wieder Credit-Fehler wenn API-Account leer. Verhalten nicht stichprobenartig getestet.
 - **`--bare`:** DEPRECATED fuer diesen Workflow. Verlangt `ANTHROPIC_API_KEY`, liest weder Keychain noch OAuth. Nur fuer Sandbox-Szenarien.
@@ -50,6 +62,27 @@ Diese Datei konsolidiert operative Learnings zur Steuerung von Claude Code (CC) 
 ---
 
 ## 2. Background-Launch-Pattern
+
+### 2.0 Ausfuehrungsmodi: Entscheidungsregel
+
+CC wird ab Batch-3 situativ in zwei Modi gestartet. Wahl liegt beim PM-Cowork:
+
+| Modus | Auslese | Dashboard? | Wann geeignet |
+|---|---|---|---|
+| **Interaktiv (TUI)** | `./tools/cc-launch.sh` (ohne Args) | TUI IST das Dashboard | Explorative Tasks, Live-Begleitung, Debug, Neustarts nach Stall, User-Interaction gewuenscht |
+| **Headless (non-interactive)** | `./tools/cc-launch.sh -p --dangerously-skip-permissions ... "$PROMPT"` | Separates tail/jq-Dashboard + metrics-sampler | Batch-Handoffs mit festem Prompt, parallele PM-Arbeit, Auditierbarkeit ueber stream-json-Transcript, Wiederholbarkeit |
+
+**Defaults:**
+- P0-Batch-Handoffs (klarer Auftrag, bekannter Scope) → headless + Dashboard.
+- Recovery-Runs nach Teil-Stall → headless + Dashboard (scope-enger Prompt).
+- Diagnose-Sessions / unklarer Scope → interaktiv.
+
+**Dashboard-Kombi fuer headless (3 osascript-Fenster bzw. -Tabs):**
+1. Transcript-Live: `tail -F ~/.claude/projects/<slug>/<uuid>.jsonl | jq -c '...'` (siehe §8.1)
+2. Metrics-Sampler: CSV-Schreiber, 3 s Intervall (siehe §8.2)
+3. Post-Run-Audit: `tools/cc-session-audit.py <jsonl>` am Ende (siehe §8.3)
+
+### 2.1 Background-Launch-Pattern (headless)
 
 **Problem:** Desktop-Commander `start_process` ist BLOCKIEREND bis zum eigenen `timeout_ms` oder Prozess-Exit. Nicht geeignet fuer Long-Running-CC-Runs (>60-120 s).
 
