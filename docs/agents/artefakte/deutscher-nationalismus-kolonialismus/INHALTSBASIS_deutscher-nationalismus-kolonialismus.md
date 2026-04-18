@@ -384,12 +384,49 @@ Legende: ● = Primaerquelle fuer Mappe, ○ = Sekundaer/Kontext
 
 | ID | Typ | Beschreibung | Wikimedia-Dateiname | Lizenz | Einbettungsvorschlag | Kontext |
 |---|---|---|---|---|---|---|
-| img-4-1 | foto | Historisches Foto der deutschen Kamelreiterkompanie der "Schutztruppe" waehrend des Herero-Aufstands 1904. Bundesarchiv-Foto. | Bundesarchiv_Bild_183-R24738,_Deutsch-Suedwestafrika,_Herero-Aufstand.jpg | CC BY-SA 3.0 DE | Quellenarbeit: "Was zeigt dieses Foto? Welche Seite des Konflikts wird dargestellt?" | DIREKT |
+| img-4-1 | foto | Historisches Foto der deutschen Kamelreiterkompanie der "Schutztruppe" waehrend des Herero-Aufstands 1904. Bundesarchiv-Foto. | Bundesarchiv_Bild_183-R24738,_Deutsch-Südwestafrika,_Herero-Aufstand.jpg | CC BY-SA 3.0 DE | Quellenarbeit: "Was zeigt dieses Foto? Welche Seite des Konflikts wird dargestellt?" | DIREKT |
 | img-4-2 | foto | Historisches Foto von Samuel Maharero, dem Anfuehrer der Herero. Portraetaufnahme ca. 1895-1905. | Photograph_of_Herero_chief_Samuel_Maharero.jpg | Public Domain | Personifizierung: "Das ist Samuel Maharero, der Anfuehrer der Herero. Was koennte er erlebt haben?" | DIREKT |
-| img-4-3 | karte | Karte des Landbesitzes und der Minengerechtsame in Deutsch-Suedwestafrika (1914). Zeigt die Aufteilung des Landes zwischen deutschen Siedlern, Minengesellschaften und einheimischer Bevoelkerung. | Karte_des_Landbesitzes_und_der_Minengerechtsame_in_Deutsch-Suedwestafrika.jpg | Public Domain | Kartenarbeit: "Wem gehoert das Land auf dieser Karte? Was faellt dir auf?" | DIREKT |
-| img-4-4 | foto | Historisches Foto: Hendrik Witbooi, einflussreichster Nama-Haeuptling. Retuschierte Postkarte. Traegt Armband in Reichsfarben (als ehemaliger Verbuendeter der Deutschen). | Hendrik_Wittboi,_der_einflussreichste_Nama-Haeuptling_in_Suedwestafrika.jpg | Public Domain | Vertiefung: "Witbooi war erst Verbuendeter, dann Gegner der Deutschen. Was koennte sich geaendert haben?" | DIREKT |
+| img-4-3 | karte | Karte des Landbesitzes und der Minengerechtsame in Deutsch-Suedwestafrika (1914). Zeigt die Aufteilung des Landes zwischen deutschen Siedlern, Minengesellschaften und einheimischer Bevoelkerung. | Karte_des_Landbesitzes_und_der_Minengerechtsame_in_Deutsch-Südwestafrika.jpg | Public Domain | Kartenarbeit: "Wem gehoert das Land auf dieser Karte? Was faellt dir auf?" | DIREKT |
+| img-4-4 | foto | Historisches Foto: Hendrik Witbooi, einflussreichster Nama-Haeuptling. Retuschierte Postkarte. Traegt Armband in Reichsfarben (als ehemaliger Verbuendeter der Deutschen). | Hendrik_Witbooi,_the_most_influential_Nama_chief_in_South-West_Africa.jpg | Public Domain | Vertiefung: "Witbooi war erst Verbuendeter, dann Gegner der Deutschen. Was koennte sich geaendert haben?" | DIREKT |
 | img-4-5 | foto | **[NACHRECHERCHE]** Historisches Foto: Herero in traditioneller Kleidung, Ende 19. Jahrhundert (vor dem Voelkermord). Zeigt Herero als selbstbestimmte Menschen in ihrer eigenen Kultur — NICHT als Opfer. | Hereros_ende_19_jahrhundert.jpg | Public Domain | Einstieg Mappe 4: "So lebten die Herero BEVOR die Deutschen kamen. Was siehst du?" Schliesst WORKAROUND-Luecke "vorkoloniale afrikanische Gesellschaften". Zentral fuer Multiperspektivitaet. | DIREKT |
 | img-4-6 | karte | **[NACHRECHERCHE]** Detailkarte Deutsch-Suedwestafrika. Zeigt die Kolonie mit Ortsnamen und Grenzen. | Deutsch-Sudwestafrika.png | CC BY-SA 3.0 | Kartenarbeit: "Finde Windhoek und das Omaheke-Sandfeld. Warum war die Flucht in diese Richtung so gefaehrlich?" Ergaenzt img-4-3 (Landbesitz) mit geographischer Orientierung. | DIREKT |
+
+#### _meta: Bild-Verifikation (Retro-Patch P0-A5, 2026-04-18)
+
+```yaml
+img-4-1:
+  wikimedia_filename: "Bundesarchiv_Bild_183-R24738,_Deutsch-Südwestafrika,_Herero-Aufstand.jpg"
+  commons_url: "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-R24738,_Deutsch-Südwestafrika,_Herero-Aufstand.jpg"
+  urheber: "Bundesarchiv / Unbekannt"
+  lizenz: "CC BY-SA 3.0 DE"
+  lizenz_deed_url: "https://creativecommons.org/licenses/by-sa/3.0/de/"
+  verified_via: ["kanal1-commons-category", "kanal2-commons-api"]
+  verified_ts: "2026-04-18T12:00:00Z"
+  didaktische_aequivalenz: "PASS"
+  fallback_begruendung: "Kein Drift. Hallu-Dateiname hatte ASCII-Transkription 'ue' statt Umlaut 'ü'. Identisches Bild: Kamelreiterkompanie Herero-Aufstand 1904."
+
+img-4-3:
+  wikimedia_filename: "Karte_des_Landbesitzes_und_der_Minengerechtsame_in_Deutsch-Südwestafrika.jpg"
+  commons_url: "https://commons.wikimedia.org/wiki/File:Karte_des_Landbesitzes_und_der_Minengerechtsame_in_Deutsch-Südwestafrika.jpg"
+  urheber: "Max Moisel / Paul Sprigade"
+  lizenz: "Public Domain"
+  lizenz_deed_url: "n/a"
+  verified_via: ["kanal1-commons-category", "kanal2-commons-api"]
+  verified_ts: "2026-04-18T12:00:00Z"
+  didaktische_aequivalenz: "PASS"
+  fallback_begruendung: "Kein Drift. Hallu-Dateiname hatte ASCII-Transkription 'ue' statt Umlaut 'ü'. Identisches Bild: Landbesitz-Karte DSWA."
+
+img-4-4:
+  wikimedia_filename: "Hendrik_Witbooi,_the_most_influential_Nama_chief_in_South-West_Africa.jpg"
+  commons_url: "https://commons.wikimedia.org/wiki/File:Hendrik_Witbooi,_the_most_influential_Nama_chief_in_South-West_Africa.jpg"
+  urheber: "Unbekannt"
+  lizenz: "Public Domain"
+  lizenz_deed_url: "n/a"
+  verified_via: ["kanal1-commons-opensearch", "kanal2-commons-api"]
+  verified_ts: "2026-04-18T12:00:00Z"
+  didaktische_aequivalenz: "PASS"
+  fallback_begruendung: "Kein Drift. Hallu-Dateiname war deutsche Titelversion + Typo ('Wittboi'). Echter Dateiname ist englische Titelversion desselben Bildes. Commons-Beschreibung bestaetigt Armband in Reichsfarben."
+```
 
 ### Primaerquellen
 
