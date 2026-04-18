@@ -384,7 +384,7 @@ Legende: ● = Primaerquelle fuer Mappe, ○ = Sekundaer/Kontext
 
 | ID | Typ | Beschreibung | Wikimedia-Dateiname | Lizenz | Einbettungsvorschlag | Kontext |
 |---|---|---|---|---|---|---|
-| img-4-1 | foto | Historisches Foto der deutschen Kamelreiterkompanie der "Schutztruppe" waehrend des Herero-Aufstands 1904. Bundesarchiv-Foto. | Bundesarchiv_Bild_183-R24738,_Deutsch-Südwestafrika,_Herero-Aufstand.jpg | CC BY-SA 3.0 DE | Quellenarbeit: "Was zeigt dieses Foto? Welche Seite des Konflikts wird dargestellt?" | DIREKT |
+| img-4-1 | foto | Historisches Foto einer Kamelreiterpatrouille der deutschen "Schutztruppe" in Deutsch-Suedwestafrika (Bundesarchiv-Foto, Walther Dobbertin, ca. 1906-1918). Zeigt koloniale Militaerpraesenz. | Bundesarchiv_Bild_105-DSWA0095,_Deutsch-Süd-Westafrika,_Kamelreiterpatrouille.jpg | CC BY-SA 3.0 DE | Quellenarbeit: "Was zeigt dieses Foto? Welche Seite des Konflikts wird dargestellt?" | DIREKT |
 | img-4-2 | foto | Historisches Foto von Samuel Maharero, dem Anfuehrer der Herero. Portraetaufnahme ca. 1895-1905. | Photograph_of_Herero_chief_Samuel_Maharero.jpg | Public Domain | Personifizierung: "Das ist Samuel Maharero, der Anfuehrer der Herero. Was koennte er erlebt haben?" | DIREKT |
 | img-4-3 | karte | Karte des Landbesitzes und der Minengerechtsame in Deutsch-Suedwestafrika (1914). Zeigt die Aufteilung des Landes zwischen deutschen Siedlern, Minengesellschaften und einheimischer Bevoelkerung. | Karte_des_Landbesitzes_und_der_Minengerechtsame_in_Deutsch-Südwestafrika.jpg | Public Domain | Kartenarbeit: "Wem gehoert das Land auf dieser Karte? Was faellt dir auf?" | DIREKT |
 | img-4-4 | foto | Historisches Foto: Hendrik Witbooi, einflussreichster Nama-Haeuptling. Retuschierte Postkarte. Traegt Armband in Reichsfarben (als ehemaliger Verbuendeter der Deutschen). | Hendrik_Witbooi,_the_most_influential_Nama_chief_in_South-West_Africa.jpg | Public Domain | Vertiefung: "Witbooi war erst Verbuendeter, dann Gegner der Deutschen. Was koennte sich geaendert haben?" | DIREKT |
@@ -395,15 +395,15 @@ Legende: ● = Primaerquelle fuer Mappe, ○ = Sekundaer/Kontext
 
 ```yaml
 img-4-1:
-  wikimedia_filename: "Bundesarchiv_Bild_183-R24738,_Deutsch-Südwestafrika,_Herero-Aufstand.jpg"
-  commons_url: "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-R24738,_Deutsch-Südwestafrika,_Herero-Aufstand.jpg"
-  urheber: "Bundesarchiv / Unbekannt"
+  wikimedia_filename: "Bundesarchiv_Bild_105-DSWA0095,_Deutsch-Süd-Westafrika,_Kamelreiterpatrouille.jpg"
+  commons_url: "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_105-DSWA0095,_Deutsch-Süd-Westafrika,_Kamelreiterpatrouille.jpg"
+  urheber: "Walther Dobbertin / Deutsches Bundesarchiv"
   lizenz: "CC BY-SA 3.0 DE"
   lizenz_deed_url: "https://creativecommons.org/licenses/by-sa/3.0/de/"
-  verified_via: ["kanal1-commons-category", "kanal2-commons-api"]
+  verified_via: ["websearch-schutztruppe-kategorie-kanal1", "commons-api-webfetch-kanal2"]
   verified_ts: "2026-04-18T12:00:00Z"
-  didaktische_aequivalenz: "PASS"
-  fallback_begruendung: "Kein Drift. Hallu-Dateiname hatte ASCII-Transkription 'ue' statt Umlaut 'ü'. Identisches Bild: Kamelreiterkompanie Herero-Aufstand 1904."
+  didaktische_aequivalenz: "DRIFT"
+  fallback_begruendung: "Hallu-Signatur Bild-183-R24738 existiert nicht auf Commons (erfundene Archiv-Signatur). Ersatz durch echtes Bundesarchiv-Bild Bild-105-DSWA0095 (Kamelreiterpatrouille, Walther Dobbertin, 1906-1918). Drift: Motiv ist Patrouille statt Kompanie; Datum 1906-1918 statt exakt 1904. Bundesarchiv-Authentizitaet und DSWA-Schutztruppe-Kontext vollstaendig erhalten. Didaktische Funktion (koloniale Militaerperspektive zeigen) unveraendert."
 
 img-4-3:
   wikimedia_filename: "Karte_des_Landbesitzes_und_der_Minengerechtsame_in_Deutsch-Südwestafrika.jpg"
