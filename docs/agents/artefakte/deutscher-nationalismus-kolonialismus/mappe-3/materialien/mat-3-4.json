@@ -1,14 +1,14 @@
 {
   "id": "mat-3-4",
   "typ": "bildquelle",
-  "titel": "Karikatur: Bismarck schneidet den Afrika-Kuchen an",
+  "titel": "Karikatur: Das Festmahl der Herrscher — Kongo als Hauptgang",
   "position": 4,
   "didaktische_funktion": "vertiefung",
   "voraussetzung": "mat-3-3",
   "primary_scpl_zone": "C2",
   "inhalt": "../../assets/img/deutscher-nationalismus-kolonialismus/img-3-2.jpg",
-  "bildunterschrift": "Französische Karikatur von 1885 aus der Zeitschrift &bdquo;L'Illustration&ldquo;. Bismarck steht am Kopf eines Tisches und schneidet einen großen Kuchen an. Die anderen Konferenzteilnehmer sitzen und warten auf ihr Stück. Was stellt der Kuchen dar? Was will der Zeichner damit sagen?",
-  "quelle": "Unbekannter Karikaturist, L'Illustration, 1885. Wikimedia Commons.",
+  "bildunterschrift": "Belgische Karikatur von François Maréchal, erschienen im satirischen Blatt &bdquo;Le Frondeur&ldquo; am 20. Dezember 1884. Im Zentrum sitzt der belgische König Leopold II., rechts der deutsche Kaiser Wilhelm I., links der russische Bär. Vor ihnen auf dem Tisch: der Kongo als &bdquo;Hauptgericht&ldquo; eines Festmahls. Was stellen die Herrscher und das Essen dar? Was will der Zeichner damit sagen?",
+  "quelle": "François Maréchal, Le Frondeur (Liège), 20. Dezember 1884. Wikimedia Commons.",
   "lizenz": "Public Domain",
   "_meta": {
     "wortanzahl": 50,
