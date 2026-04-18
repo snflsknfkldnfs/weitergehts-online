@@ -14,8 +14,9 @@
 set -u
 
 GAME_ID="${1:-}"
+MAPPE_SCOPE="${2:-ALL}"   # optional zweites Argument: konkrete Mappe-Nummer oder ALL (Default)
 if [ -z "$GAME_ID" ]; then
-  echo "usage: $0 <game-id>" >&2
+  echo "usage: $0 <game-id> [mappe-n|ALL]" >&2
   exit 2
 fi
 
@@ -29,8 +30,15 @@ DATA_JSON="$GAME_DIR/data.json"
 GAME_INDEX_HTML="$GAME_DIR/index.html"
 LANDING_HTML="index.html"
 
+# Q-GATE-LOG Infrastruktur (P0-A1 / F-RA1-05)
+Q_GATE_LOG_DIR="$SCRIPT_DIR/q-gate-log"
+Q_GATE_LOG_FILE="$Q_GATE_LOG_DIR/$GAME_ID.log"
+mkdir -p "$Q_GATE_LOG_DIR"
+SCRIPT_VERSION="$(git -C "$REPO_ROOT" rev-parse --short HEAD 2>/dev/null || echo 'unknown')"
+
 FAIL=0
 declare -a RESULTS
+declare -a FAILED_GATES
 
 report() {
   # $1 = ID, $2 = PASS|FAIL, $3 = diagnose
@@ -39,6 +47,7 @@ report() {
   echo "$line"
   if [ "$2" = "FAIL" ]; then
     FAIL=1
+    FAILED_GATES+=("$1")
   fi
 }
 
@@ -362,13 +371,22 @@ PY
 fi
 
 # ------------------------------------------------------------------
-# Gesamt-Urteil
+# Gesamt-Urteil + Q-GATE-LOG (P0-A1 / F-RA1-05)
 # ------------------------------------------------------------------
 echo "---"
+TS_UTC="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+
 if [ "$FAIL" -eq 0 ]; then
   echo "GESAMT: PASS"
+  Q_LINE="[Q-GATE-LOG] DEPLOY_CHECK=PASS GAME=$GAME_ID MAPPE=$MAPPE_SCOPE TS=$TS_UTC SCRIPT_VERSION=$SCRIPT_VERSION"
+  echo "$Q_LINE"
+  echo "$Q_LINE" >> "$Q_GATE_LOG_FILE"
   exit 0
 else
   echo "GESAMT: FAIL"
+  FAILED_STR="$(IFS=,; echo "${FAILED_GATES[*]}")"
+  Q_LINE="[Q-GATE-LOG] DEPLOY_CHECK=FAIL GAME=$GAME_ID MAPPE=$MAPPE_SCOPE TS=$TS_UTC SCRIPT_VERSION=$SCRIPT_VERSION FAILED_GATES=$FAILED_STR"
+  echo "$Q_LINE"
+  echo "$Q_LINE" >> "$Q_GATE_LOG_FILE"
   exit 1
 fi

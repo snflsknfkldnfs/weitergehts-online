@@ -18,3 +18,6 @@ docs/analyse/Verlauf*/
 
 # Testrun-Audit-Evidenz (JSONL-Dumps aus Session-Transkripten, PII-relevant)
 docs/projekt/*/evidenz/
+
+# Q-GATE-LOG runtime artifacts (deploy-check.sh append-only logs, game-spezifisch)
+tools/q-gate-log/*.log
