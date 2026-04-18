@@ -2795,7 +2795,7 @@ var EscapeEngine = (function () {
             if (falschesWort) {
               var allBtns = section.querySelectorAll('.aufgabe__pool-wort');
               for (var m = 0; m < allBtns.length; m++) {
-                if (allBtns[m].getAttribute('data-wort') === falschesWort && allBtns[m].disabled) {
+                if (allBtns[m].getAttribute('data-wort') === falschesWort && allBtns[m].classList.contains('aufgabe__pool-wort--used')) {
                   allBtns[m].classList.remove('aufgabe__pool-wort--used');
                   allBtns[m].disabled = false;
                   break;
