@@ -4,6 +4,69 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-18 — P0-BATCH-2 CLOSED: P0-A5 (Mappe-4 Retro-Patch) + P0-A6 (Q-MEDIEN-PROSPEKTIV) via CC-Headless + Recovery-Run abgearbeitet
+
+**Phase:** R0-TESTRUN-AUDIT Remediation (Batch-2 von 3)
+**Modus:** HANDOFF → EXECUTE (CC headless) → RECOVERY (Auth-Fehler Task B) → VERIFY (PM-Cowork via Host-MCP + Audit-Tool)
+**Session:** PM-Cowork Session 30+ (Compaction), CC-Session headless + Recovery
+
+**Scope:** Abarbeitung der zwei Medien-Infrastruktur-P0-Blocker aus R0-TESTRUN-AUDIT via headless `claude -p --dangerously-skip-permissions` (erstmals end-to-end headless statt interaktiv wie Batch-1). Task A im Repo `weitergehts-online`, Task B im Repo `escape-game-generator`. Validierung der CC-Cowork-Interop-Hypothesen + erstmaliger Einsatz des Recovery-Protokolls nach Auth-Fehler.
+
+**Durchgefuehrte Fixes:**
+- **P0-A5 (commit 2f41ca8 weitergehts-online)** — F-RA4-10 Mappe-4 Retro-Patch Herero/Nama
+  - `docs/agents/artefakte/deutscher-nationalismus-kolonialismus/mappe-4/materialien/mat-4-1.json` + `medien_katalog_game.json`: img-4-1 korrigiert von halluzinierter Bundesarchiv-Signatur `Bundesarchiv_Bild_183-R24738` auf verifiziertes `Bundesarchiv_Bild_105-DSWA0095,_Deutsch-Süd-Westafrika,_Kamelreiterpatrouille.jpg`
+  - `didaktische_aequivalenz: DRIFT` dokumentiert (neues Motiv, aber historisch/geographisch aequivalent, kuratorische Entscheidung festgehalten)
+  - Dual-Kanal-Verifikation (WebFetch + Commons) angewendet, Lizenz PD bestaetigt
+- **P0-A6 (commit bbac715 escape-game-generator)** — F-RA4-02 Q-MEDIEN-PROSPEKTIV Pflicht-Gate
+  - Q-MEDIEN-PROSPEKTIV in `PROJECT_INSTRUCTIONS.md` als Q-Gate verankert
+  - `agents/ORCHESTRATOR.md`: Phase 0.2.M Uebergang-Gate definiert
+  - `agents/AGENT_MEDIENRECHERCHE.md` (NEU): Sub-Agent fuer Commons-API Pre-Ingest-Check
+  - `agents/AGENT_MATERIAL.md` + `agents/AGENT_HEFTEINTRAG.md` + `agents/SUB_MATERIAL_DARSTELLUNGSTEXT.md`: Dual-Kanal-Spec integriert
+  - 6 Files committet + gepusht, alle Sanity-Checks PASS (Q-MEDIEN-PROSPEKTIV in VERTRAG, dual-kanal-spec in AGENT_MEDIENRECHERCHE, orchestrator-transition sichtbar)
+
+**CC-Headless-Workflow-Erkenntnisse (v0.2 Learnings):**
+- **Auth-Problem erkannt + dokumentiert:** Erstlauf Task B brach mit `api_error_status 400 "Credit balance is too low"` ab trotz aktivem Claude-Max-Abo. Ursache: CC CLI war silent auf API-Billing-Auth konfiguriert (Header-Zeile `Sonnet 4.6 · API Usage Billing`). Fix: `/login` in CC-TUI → Option 1 "Claude account with subscription" → OAuth-Flow → Header wechselt auf `Claude Max`.
+- **Pre-Flight-Check als Pflicht eingefuehrt** (LEARNINGS §1): `claude -p --output-format json 'say OK'` + JSON-Parse vor jedem Long-Run.
+- **Recovery-Protokoll erstmals erprobt** (LEARNINGS §7): Recovery-Run 11 Turns (statt Re-Run), strikte Whitelist/Blacklist im Prompt, "NICHT neu recherchieren" explizit. Ergebnis: 4:06 min Wall-Clock, 0 Errors, commit + push.
+- **Observability-Stack gebaut** (LEARNINGS §8, `tools/cc-session-audit.py` NEU): Live-Transcript-Viewer via `tail -F ... | jq`, Metrics-Sampler (CSV), Post-Run-Audit-Tool. Compliance-Matrix auf Recovery-Transcript: 0 Writes, 0 Edits, 0 WebFetch, 0 MCP, 10 Tool-Calls (7 Bash + 3 Grep), 4 Git-Ops → **PASS**.
+- **Pattern:** Background-Launch via `nohup claude -p ... &` + PID-File, Polling via osascript. `--dangerously-skip-permissions` erforderlich fuer Tool-Exec im Headless-Mode.
+
+**E2E-Workflow-Validierung:**
+- 2 Commits in 2 Repos (2f41ca8 weitergehts-online, bbac715 escape-game-generator) ohne virtiofs-Lock-Probleme
+- Host-MCP Git-Workflow bestaetigt robust fuer Push (authenticated)
+- CC war in der Lage, Dual-Repo-Scope via `--add-dir` zu verarbeiten
+
+**P0-Status nach Batch-2:**
+- 4/6 P0 CLOSED: A3, A4, A5, A6
+- 2/6 P0 OPEN: A1 (Pipeline-Deploy), A2 (V13-Patch-Regression)
+- v3.12-Pilot weiterhin BLOCKIERT (2 P0 verbleiben)
+
+**Naechste Schritte:**
+- Batch-3: P0-A1 + P0-A2 (Pipeline-Regression) — Handoff-Markdown ausstehend
+- Nach Batch-3: LEARNINGS v0.2 → v1.0 promoten + Verankerung in `COWORK_PROJECT_ANLEITUNG.md` als Pflichtlektuere
+
+**Geaenderte Dateien (CC-Domaene weitergehts-online):**
+- `docs/agents/artefakte/deutscher-nationalismus-kolonialismus/mappe-4/materialien/mat-4-1.json`
+- `docs/agents/artefakte/deutscher-nationalismus-kolonialismus/mappe-4/medien_katalog_game.json`
+
+**Geaenderte Dateien (CC-Domaene escape-game-generator):**
+- `PROJECT_INSTRUCTIONS.md`
+- `agents/AGENT_HEFTEINTRAG.md`
+- `agents/AGENT_MATERIAL.md`
+- `agents/AGENT_MEDIENRECHERCHE.md` (NEU)
+- `agents/ORCHESTRATOR.md`
+- `agents/SUB_MATERIAL_DARSTELLUNGSTEXT.md`
+
+**Neue Werkzeuge (PM-Cowork-Domaene, dieses Update):**
+- `tools/cc-session-audit.py` (NEU, ~215 LOC) — Post-Run-Audit-Tool fuer CC-Session-Transcripts (Markdown/JSON-Output)
+
+**Geaenderte Dateien (PM-Cowork-Domaene, dieses Update):**
+- `docs/projekt/CC_COWORK_INTEROP_LEARNINGS.md` (v0.1 → v0.2, +§7 Recovery-Protokoll, +§8 Observability-Stack, +§1 Auth-Korrektur)
+- `docs/projekt/STATUS.md` (Header + P0-Tabelle)
+- `docs/projekt/CHANGELOG.md` (dieser Eintrag)
+
+---
+
 ## 2026-04-18 — P0-BATCH-1 CLOSED: P0-A3 (Engine-Fix) + P0-A4 (Source-Sync) via Claude-Code-Handoff abgearbeitet
 
 **Phase:** R0-TESTRUN-AUDIT Remediation (Batch-1 von 3)

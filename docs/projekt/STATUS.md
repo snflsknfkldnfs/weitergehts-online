@@ -1,7 +1,7 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-18 (P0-BATCH-1 CLOSED: P0-A3 Engine-Fix + Cache-Bust ?v=3.14 + P0-A4 Source-Sync mat-3-4.json + Q-SOURCE-DEPLOY-PARITY-Tool. Commits a4f8c19 + 2f841a3 gepusht. 4 P0 verbleiben: A1, A2, A5, A6. E2E-Validierung via Host-MCP Commit-Workflow + manuelles CC-Handoff-Durchspielen.)
-**Modus:** P0-BATCH-1 CLOSED (2/6) → Batch-2 (A5+A6 Medien-Infrastruktur) freischaltbar → v3.12-Pilot weiterhin BLOCKIERT
+**Letzte Aktualisierung:** 2026-04-18 (P0-BATCH-2 CLOSED: P0-A5 Mappe-4 Retro-Patch + P0-A6 Q-MEDIEN-PROSPEKTIV via CC-Headless abgearbeitet. Commits 2f41ca8 [weitergehts-online, Task A] + bbac715 [escape-game-generator, Task B]. Task B via Recovery-Run nach Auth-Fehler abgeschlossen. 2 P0 verbleiben: A1, A2. Audit-Evidenz: `tools/cc-session-audit.py` neu. LEARNINGS v0.2 mit Recovery-Protokoll + Observability-Stack.)
+**Modus:** P0-BATCH-2 CLOSED (4/6) → Batch-3 (A1+A2 Pipeline-Regression) freischaltbar → v3.12-Pilot weiterhin BLOCKIERT
 **Aktiver Upgrade-Plan:** `docs/architektur/UPGRADE_PLAN_v3-12_ESCAPE_GAME_QUALITAET.md` v1.3 (Runden R0-R8 + v1.3 Delta Section 19 aus Testrun-Audit: 13 neue PI-Items in 4 Clustern Medien/Engine/Didaktik/PM + 4 neue Q-Gates Q-MEDIEN-PROSPEKTIV/Q-LIZENZ-COMPLIANCE/Q-SOURCE-DEPLOY-PARITY/Q-TYP-R7-KONFORMITAET + P0-Blocker-Kanon mit 6 Items). Total Plan-Impact-Count **30** (17 R0-FINAL+ + 13 v1.3 Delta). v3.12-Pilot-Start blockiert bis P0-1 bis P0-6 geschlossen. Vorgaenger v3.11 COMPLETE + gepusht.
 
 **R0-Befunde (Gate-Status):**
@@ -85,8 +85,8 @@
 | **P0-A2** | **F-RA1-06 V13-Patch-Regression beheben** | R0-TESTRUN-AUDIT (BEFUND §4) | Hefteintrag-Verschachtelung entflechten + Regression-Test. Aufwand 1-2h |
 | ~~P0-A3~~ | ~~F-RA3-01 Lueckentext-Pool-Reset-Bug fixen~~ | ~~R0-TESTRUN-AUDIT (BEFUND §4)~~ | **CLOSED** (2026-04-18, commit a4f8c19): escape-engine.js Z. 2798 gepatcht (`disabled` → `classList.contains('aufgabe__pool-wort--used')`). Cache-Bust `?v=3.13`→`?v=3.14` auf 4 Games + Template. Verifikation via Host-MCP |
 | ~~P0-A4~~ | ~~F-RA4-04 Source-Deploy-Drift mat-3-4.json beheben~~ | ~~R0-TESTRUN-AUDIT (BEFUND §4)~~ | **CLOSED** (2026-04-18, commit 2f841a3): mat-3-4.json mit Maréchal/Le-Frondeur-Content synchronisiert. Q-SOURCE-DEPLOY-PARITY-Tool `tools/source-deploy-parity.sh` (134 LOC, 18/18 SYNC PASS) implementiert |
-| **P0-A5** | **F-RA4-10 Mappe-4 Retro-Patch Herero/Nama** | R0-TESTRUN-AUDIT (BEFUND §4) | img-4-1/-3/-4 neu kuratieren via Commons, Dual-Kanal-Verifikation. Aufwand 1-2h |
-| **P0-A6** | **F-RA4-02 Prospektive Medien-Verifikation implementieren** | R0-TESTRUN-AUDIT (BEFUND §4) | Q-MEDIEN-PROSPEKTIV Commons-API Pre-Ingest-Check in Phase 0.2.M Sub-Agent. Aufwand 2h |
+| ~~P0-A5~~ | ~~F-RA4-10 Mappe-4 Retro-Patch Herero/Nama~~ | ~~R0-TESTRUN-AUDIT (BEFUND §4)~~ | **CLOSED** (2026-04-18, commit 2f41ca8 weitergehts-online): img-4-1 korrigiert von Hallu `Bundesarchiv_Bild_183-R24738` auf verifiziertes `Bundesarchiv_Bild_105-DSWA0095,_Deutsch-Süd-Westafrika,_Kamelreiterpatrouille.jpg` mit `didaktische_aequivalenz: DRIFT` dokumentiert. Dual-Kanal-Verifikation (WebFetch + Commons). Task A via CC-Headless |
+| ~~P0-A6~~ | ~~F-RA4-02 Prospektive Medien-Verifikation implementieren~~ | ~~R0-TESTRUN-AUDIT (BEFUND §4)~~ | **CLOSED** (2026-04-18, commit bbac715 escape-game-generator): Q-MEDIEN-PROSPEKTIV als Pflicht-Gate in Phase 0.2.M verankert (VERTRAG + ORCHESTRATOR + AGENT_MEDIENRECHERCHE + SUB_MATERIAL_DARSTELLUNGSTEXT). Task B via CC-Headless Recovery-Run nach Auth-Fehler. Audit via `tools/cc-session-audit.py` PASS |
 | ~~P0-1~~ | ~~SKRIPT-Persistenz im Repo~~ | ~~Session 23 Meta-Task~~ | **CLOSED** (Session 24): ORCHESTRATOR Persistenz-Checkpoint + VERTRAG_PHASE_0-3 Persistenz-PFLICHT |
 | P0-2 | Produktions-Testlauf v2.4 | Operationalisierungs-Audit v2 Abschluss | **Testlauf 5 PASS. VP-10/VP-11 gepatcht. VP-1r dokumentiert.** Naechst: Phase 0.4 AGENT_HEFTEINTRAG fortsetzen |
 | P0-3 | Zweiter Testfall Grenzfaelle | Operationalisierungs-Audit v2 P15 | Mappe mit quellentext + bildquelle heuristisch, Rahmen-Einstieg-Konflikt, oder <3 Mat |
