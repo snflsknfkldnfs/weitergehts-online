@@ -1,7 +1,7 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-18 (P0-BATCH-2 CLOSED: P0-A5 Mappe-4 Retro-Patch + P0-A6 Q-MEDIEN-PROSPEKTIV via CC-Headless abgearbeitet. Commits 2f41ca8 [weitergehts-online, Task A] + bbac715 [escape-game-generator, Task B]. Task B via Recovery-Run nach Auth-Fehler abgeschlossen. 2 P0 verbleiben: A1, A2. Audit-Evidenz: `tools/cc-session-audit.py` neu. LEARNINGS v0.2 mit Recovery-Protokoll + Observability-Stack.)
-**Modus:** P0-BATCH-2 CLOSED (4/6) → Batch-3 (A1+A2 Pipeline-Regression) freischaltbar → v3.12-Pilot weiterhin BLOCKIERT
+**Letzte Aktualisierung:** 2026-04-18 (P0-BATCH-3 CLOSED: P0-A1 Pipeline-Deploy-Preparation + P0-A2 V13-Patch-Regression via CC-Headless mit Dashboard abgearbeitet. 3 Commits: 79232f7 [escape-game-generator, Task A Pipeline-Hardening] + ad7df55 [weitergehts-online, Task A deploy-check.sh] + 4f33baf [escape-game-generator, Task B SUB_ASSEMBLY_VERIFY]. 67 Turns, 13:27 min, $5.78, 0 Errors. Acceptance A1-A3 + B1-B4 PASS inkl. B4-Regression auf N-K Mappe 3. **6/6 P0 CLOSED.** v3.12-Pilot entsperrt. Pre-Flight-Wrapper `tools/cc-launch.sh` erstmals produktiv. ANLEITUNG v2.2.)
+**Modus:** P0-BATCH-3 CLOSED (6/6) → v3.12-Pilot FREIGESCHALTET → Follow-ups: PI-Template LETZTE_DEPLOY_CHECK-Erweiterung, Interop-Learnings v1.0-Promotion, v3.12-Pilot-Validierung
 **Aktiver Upgrade-Plan:** `docs/architektur/UPGRADE_PLAN_v3-12_ESCAPE_GAME_QUALITAET.md` v1.3 (Runden R0-R8 + v1.3 Delta Section 19 aus Testrun-Audit: 13 neue PI-Items in 4 Clustern Medien/Engine/Didaktik/PM + 4 neue Q-Gates Q-MEDIEN-PROSPEKTIV/Q-LIZENZ-COMPLIANCE/Q-SOURCE-DEPLOY-PARITY/Q-TYP-R7-KONFORMITAET + P0-Blocker-Kanon mit 6 Items). Total Plan-Impact-Count **30** (17 R0-FINAL+ + 13 v1.3 Delta). v3.12-Pilot-Start blockiert bis P0-1 bis P0-6 geschlossen. Vorgaenger v3.11 COMPLETE + gepusht.
 
 **R0-Befunde (Gate-Status):**
@@ -77,12 +77,12 @@
 
 ### Offene Arbeitsstroeme nach Prioritaet
 
-**P0 — Blockiert naechste Produktion (v3.12-Pilot-Start blockiert durch R0-TESTRUN-AUDIT P0-Kanon):**
+**P0 — Alle CLOSED (R0-TESTRUN-AUDIT P0-Kanon 6/6 geschlossen, v3.12-Pilot-Start entsperrt):**
 
 | ID | Aufgabe | Quelle | Naechster Schritt |
 |---|---|---|---|
-| **P0-A1** | **F-RA1-05 Phase 3.1 Deploy-Preparation Wiederaufnahme** | R0-TESTRUN-AUDIT (BEFUND §4) | Pipeline-Check-Patch + Re-Run auf deutscher-nationalismus-kolonialismus. Aufwand ~1h |
-| **P0-A2** | **F-RA1-06 V13-Patch-Regression beheben** | R0-TESTRUN-AUDIT (BEFUND §4) | Hefteintrag-Verschachtelung entflechten + Regression-Test. Aufwand 1-2h |
+| ~~P0-A1~~ | ~~F-RA1-05 Phase 3.1 Deploy-Preparation Wiederaufnahme~~ | ~~R0-TESTRUN-AUDIT (BEFUND §4)~~ | **CLOSED** (2026-04-18, commits 79232f7 escape-game-generator + ad7df55 weitergehts-online): Pre-Live-BLOCK vor Phase 3 in PROJECT_INSTRUCTIONS verankert, PI-Felder `LETZTE_DEPLOY_CHECK_TS/RESULT/GAME` eingefuehrt, `tools/deploy-check.sh` um Q-GATE-LOG-Ausgabe + Log-File erweitert. Via CC-Headless (Batch-3, Task A). B4-Regression auf N-K Mappe 3 PASS. Abweichung v. HANDOFF: A1.1 §2.4 statt §3 positioniert, A1.2 PI-Template nicht modifiziert (Follow-up), A1.3 `.gitignore`-Zeile statt Pfad-Konvention |
+| ~~P0-A2~~ | ~~F-RA1-06 V13-Patch-Regression beheben~~ | ~~R0-TESTRUN-AUDIT (BEFUND §4)~~ | **CLOSED** (2026-04-18, commit 4f33baf escape-game-generator): `SUB_ASSEMBLY_VERIFY.md` als Post-Assembly MUST_VERIFY-Subagent, V13-Hefteintrag-Dualstruktur-Check integriert. Via CC-Headless (Batch-3, Task B). Abweichung v. HANDOFF: B1 Phase 3.4 statt Phase 3.3 Einhaengung. B4-Regression N-K Mappe 3 Hefteintrag-Verschachtelung PASS |
 | ~~P0-A3~~ | ~~F-RA3-01 Lueckentext-Pool-Reset-Bug fixen~~ | ~~R0-TESTRUN-AUDIT (BEFUND §4)~~ | **CLOSED** (2026-04-18, commit a4f8c19): escape-engine.js Z. 2798 gepatcht (`disabled` → `classList.contains('aufgabe__pool-wort--used')`). Cache-Bust `?v=3.13`→`?v=3.14` auf 4 Games + Template. Verifikation via Host-MCP |
 | ~~P0-A4~~ | ~~F-RA4-04 Source-Deploy-Drift mat-3-4.json beheben~~ | ~~R0-TESTRUN-AUDIT (BEFUND §4)~~ | **CLOSED** (2026-04-18, commit 2f841a3): mat-3-4.json mit Maréchal/Le-Frondeur-Content synchronisiert. Q-SOURCE-DEPLOY-PARITY-Tool `tools/source-deploy-parity.sh` (134 LOC, 18/18 SYNC PASS) implementiert |
 | ~~P0-A5~~ | ~~F-RA4-10 Mappe-4 Retro-Patch Herero/Nama~~ | ~~R0-TESTRUN-AUDIT (BEFUND §4)~~ | **CLOSED** (2026-04-18, commit 2f41ca8 weitergehts-online): img-4-1 korrigiert von Hallu `Bundesarchiv_Bild_183-R24738` auf verifiziertes `Bundesarchiv_Bild_105-DSWA0095,_Deutsch-Süd-Westafrika,_Kamelreiterpatrouille.jpg` mit `didaktische_aequivalenz: DRIFT` dokumentiert. Dual-Kanal-Verifikation (WebFetch + Commons). Task A via CC-Headless |

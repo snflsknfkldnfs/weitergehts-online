@@ -4,6 +4,68 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-18 — P0-BATCH-3 CLOSED: P0-A1 (Phase 3.1 Deploy-Preparation) + P0-A2 (V13-Patch-Regression) via CC-Headless mit Dashboard abgearbeitet → 6/6 P0 CLOSED, v3.12-Pilot entsperrt
+
+**Phase:** R0-TESTRUN-AUDIT Remediation (Batch-3, Finale)
+**Modus:** PRE-FLIGHT (cc-launch.sh, erstmals produktiv) → HANDOFF → EXECUTE (CC headless mit 3-Tier-Dashboard: Live-Viewer + Metrics-Sampler + Completion-Watcher) → VERIFY (PM-Cowork via Host-MCP)
+**Session:** PM-Cowork Session 31, CC-Session headless (PID-File + nohup)
+
+**Scope:** Abarbeitung der letzten beiden Pipeline-Regressions-P0-Blocker aus R0-TESTRUN-AUDIT. Task A (Pipeline-Hardening) betrifft beide Repos (`escape-game-generator` PROJECT_INSTRUCTIONS + `weitergehts-online` tools). Task B (V13-Assembly-Verify) rein in `escape-game-generator`. Erster Lauf mit dem neuen Pre-Flight-Wrapper `tools/cc-launch.sh` und dem vollstaendig visuellen Dashboard-Setup (User kann Verlauf + Abschluss-Signal ohne PM-Cowork-Polling beobachten).
+
+**CC-Session-Metriken:**
+- Wall-Clock: 13:27 min
+- Turns: 67
+- Kosten: $5.78
+- Errors: 0
+- Commits: 3 (79232f7 + 4f33baf EGG, ad7df55 WO)
+
+**Durchgefuehrte Fixes:**
+- **P0-A1 Task A (commits 79232f7 escape-game-generator + ad7df55 weitergehts-online)** — F-RA1-05 Phase 3.1 Deploy-Preparation Wiederaufnahme
+  - `PROJECT_INSTRUCTIONS.md` (EGG): Pre-Live-BLOCK als Pflicht-Gate vor Phase 3 verankert (§2.4). PI-Felder `LETZTE_DEPLOY_CHECK_TS` + `LETZTE_DEPLOY_CHECK_RESULT` + `LETZTE_DEPLOY_CHECK_GAME` eingefuehrt als Enforcement-Klammer.
+  - `tools/deploy-check.sh` (WO): Q-GATE-LOG-Ausgabe hinzugefuegt, Log-File-Persistenz (`.deploy-check.log`) eingefuehrt. Regression-Test Marne + deutscher-nationalismus-kolonialismus Mappe 3 PASS.
+  - Abweichungen von HANDOFF (dokumentiert im CC-Rueckmelde-Output): A1.1 §2.4 statt §3 (weniger invasiv), A1.2 PI-Template nicht modifiziert (Follow-up fuer naechste Iteration), A1.3 `.gitignore`-Zeile statt voller Pfad-Konvention.
+- **P0-A2 Task B (commit 4f33baf escape-game-generator)** — F-RA1-06 V13-Patch-Regression beheben
+  - `agents/SUB_ASSEMBLY_VERIFY.md` (NEU): Post-Assembly MUST_VERIFY-Subagent mit V13-Hefteintrag-Dualstruktur-Pruefung.
+  - Abweichung von HANDOFF: B1 Einhaengung in Phase 3.4 statt 3.3 (kompaktere Integration nach Assembly, bevor Deploy).
+  - **B4-Regression N-K Mappe 3:** Hefteintrag-Verschachtelung PASS, keine doppelte `<ul>`-Einbettung mehr.
+
+**CC-Headless-Workflow-Erkenntnisse (fuer v1.0-Promotion):**
+- **Pre-Flight-Wrapper `tools/cc-launch.sh` erstmals produktiv:** Perl-alarm-Timeout (macOS-portabel), `claude -p --output-format json 'say OK'` → Parse `is_error` + `subtype` → MAX-OK|AUTH-BROKEN. Auth-Incident aus Batch-2 konnte nicht rezidivieren — Wrapper greift vor jedem CC-Start. Ableitung aus LEARNINGS §1 + Trigger Batch-2-Incident 2026-04-18.
+- **Dashboard-Triade als Standard etabliert** (User-seitig beobachtbar): (1) `tail -F output.jsonl | jq` Live-Viewer, (2) `cc_batch3_metrics.sh` CSV-Sampler alle 3s (ts, elapsed_s, rss_kb, stat, jsonl_lines, err_lines), (3) `cc_batch3_watch.sh` Completion-Watcher mit 3x Terminal-Bell + ASCII-Banner "CC BATCH-3 ABGESCHLOSSEN" + macOS-Notification (Sound: Glass) + Auto-Audit via `cc-session-audit.py`.
+- **Design-Entscheidung:** PM-Cowork kann nicht live pollen → User-seitige visuelle + akustische Abschluss-Signale sind architektonisch kritisch fuer Headless-Modus.
+
+**E2E-Workflow-Validierung:**
+- 3 Commits in 2 Repos ohne virtiofs-Lock-Probleme
+- Push-Gap erkannt: CC committet, aber pusht nicht automatisch (HANDOFF instruiert push nicht explizit) → PM-Cowork pusht beide Repos nach User-Freigabe via Host-MCP
+- `cc-launch.sh` als Pflicht-Pre-Flight in ANLEITUNG v2.2 verankert (CC-HANDOFF-Block)
+
+**P0-Status nach Batch-3:**
+- **6/6 P0 CLOSED:** A1 (Batch-3), A2 (Batch-3), A3 (Batch-1), A4 (Batch-1), A5 (Batch-2), A6 (Batch-2)
+- **v3.12-Pilot-Start freigeschaltet** (alle R0-TESTRUN-AUDIT-P0-Blocker bearbeitet)
+
+**Follow-ups (CC-identifiziert, ausserhalb Batch-3-Scope):**
+1. PI-Template in PROJECT_INSTRUCTIONS.md um 3 `LETZTE_DEPLOY_CHECK_*`-Felder erweitern (Enforcement-Klammer komplettieren, aktuell nur Gate-Instanz, nicht Template).
+2. Interop-Learnings v0.2 → v1.0 promoten + in `COWORK_PROJECT_ANLEITUNG.md` als Pflichtlektuere (momentan nur im CC-HANDOFF-Block als Referenz).
+3. v3.12-Pilot-Freigabe-Entscheidung: Erneuter N-K-Run als Validierungs-Zyklus, oder direkter Start neuer Pilot-Sequenz?
+
+**Geaenderte Dateien (CC-Domaene weitergehts-online):**
+- `tools/deploy-check.sh`
+
+**Geaenderte Dateien (CC-Domaene escape-game-generator):**
+- `PROJECT_INSTRUCTIONS.md`
+- `agents/SUB_ASSEMBLY_VERIFY.md` (NEU)
+
+**Neue Werkzeuge (PM-Cowork-Domaene, dieses Update):**
+- `tools/cc-launch.sh` (Pre-Flight-Wrapper, produktiv getestet)
+- `/tmp/launch_cc_batch3.sh` + `/tmp/cc_batch3_metrics.sh` + `/tmp/cc_batch3_watch.sh` (Dashboard-Triade, Template fuer kuenftige Batches)
+
+**Commits (gepusht):**
+- `79232f7` escape-game-generator: `feat(pipeline): Pre-Live-BLOCK + PI-Felder LETZTE_DEPLOY_CHECK_*`
+- `4f33baf` escape-game-generator: `feat(contracts): SUB_ASSEMBLY_VERIFY + V13 als MUST_VERIFY Post-Assembly`
+- `ad7df55` weitergehts-online: `feat(tools): deploy-check.sh Q-GATE-LOG-Ausgabe + Log-File`
+
+---
+
 ## 2026-04-18 — P0-BATCH-2 CLOSED: P0-A5 (Mappe-4 Retro-Patch) + P0-A6 (Q-MEDIEN-PROSPEKTIV) via CC-Headless + Recovery-Run abgearbeitet
 
 **Phase:** R0-TESTRUN-AUDIT Remediation (Batch-2 von 3)
