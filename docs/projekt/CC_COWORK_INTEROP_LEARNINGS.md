@@ -1,9 +1,10 @@
-# CC-Cowork-Interop: Learnings (Draft v0.2)
+# CC-Cowork-Interop: Learnings (Kanon v1.0)
 
-**Status:** DRAFT — Evidenz-Basis n=2 (Batch-1 manuell + Batch-2 headless mit Recovery)
-**Erstellt:** 2026-04-18
-**Letzte Aktualisierung:** 2026-04-18 (+§7 Recovery-Protokoll, +§8 Observability-Stack, +§1 Auth-Korrektur)
-**Finalisierung:** nach Batch-3 → Promote zu v1.0 und Verankerung in COWORK_PROJECT_ANLEITUNG.md Pflichtlektuere
+**Status:** KANON v1.0 — Evidenz-Basis n=3 (Batch-1 manuell, Batch-2 headless mit Recovery, Batch-3 headless mit Pre-Flight-Wrapper + Dashboard-Triade)
+**Erstellt:** 2026-04-18 (v0.1)
+**Promoted:** 2026-04-19 (v0.2 → v1.0 nach Batch-3-Validierung, F2 aus P0-Follow-up-Kanon)
+**Letzte Aktualisierung:** 2026-04-19 (+§10 Batch-3-Evidenz, §9 Finalisierungs-Plan abgeloest durch §11 Offene Entscheidungspunkte)
+**Verankerung:** `COWORK_PROJECT_ANLEITUNG.md` v2.3 Abschnitt 2 Pflichtlektuere (bei CC-Operationen) + Abschnitt 1 HANDOFF-Modus-Verweis auf §4.
 
 Diese Datei konsolidiert operative Learnings zur Steuerung von Claude Code (CC) aus einer Cowork-PM-Session heraus via Host-MCP und Desktop-Commander-MCP. Ziel: reproduzierbarer Handoff-Workflow ohne stille Fehler.
 
@@ -297,13 +298,68 @@ python3 tools/cc-session-audit.py <transcript.jsonl> --json   # JSON
 
 ---
 
-## 9. Finalisierungs-Plan
+## 9. Versions-Historie + Kanon-Status
 
-**Promote zu v1.0 nach:** Batch-2 + Batch-3 Abschluss (n=3 E2E-Runs).
+| Version | Datum | Scope | Evidenz-Basis |
+|---|---|---|---|
+| v0.1 (Draft) | 2026-04-18 | Initial-Konsolidierung §1-§6 nach Batch-1 (6 Commits + 4 Pushes, manuelle osascript-Chains) | n=1 (Batch-1 manuell) |
+| v0.2 (Draft) | 2026-04-18 | §7 Recovery-Protokoll + §8 Observability-Stack nach Batch-2-Abbruch + Recovery (commit `bbac715`) | n=2 (Batch-1 + Batch-2-Recovery) |
+| v1.0 (Kanon) | 2026-04-19 | Promotion nach Batch-3-Abschluss (6/6 P0 Tasks A+B, 0 Errors, cc-launch.sh erstmals produktiv, Dashboard-Triade validiert) | n=3 (Batch-1 manuell, Batch-2 headless+Recovery, Batch-3 headless+Wrapper+Dashboard) |
 
-**Kanon-Verankerung:**
-- `COWORK_PROJECT_ANLEITUNG.md` Abschnitt 2 Vertiefungslektuere: Eintrag fuer dieses Dokument + `GIT_WORKFLOW_HOST_MCP.md`
-- `COWORK_PROJECT_ANLEITUNG.md` Abschnitt 1 Modi: HANDOFF-Modus verweist auf §4 dieses Dokuments als Template-Quelle
-- Neue Version bump auf v2.2 der ANLEITUNG
+**Kanon-Verankerung (v1.0, 2026-04-19):**
+- `COWORK_PROJECT_ANLEITUNG.md` v2.3 Abschnitt 2: Pflichtlektuere bei CC-Operationen (analog `GIT_WORKFLOW_HOST_MCP.md` bei Git-Operationen).
+- `COWORK_PROJECT_ANLEITUNG.md` v2.3 Abschnitt 1 HANDOFF-Modus: Verweist auf §4 (Handoff-Protokoll-Template) als Quelle.
+- `COWORK_PROJECT_ANLEITUNG.md` v2.3 Abschnitt 1 CC-HANDOFF: Verweist auf §1 (Pre-Flight + cc-launch.sh) + §2.0 (Ausfuehrungsmodi-Regel).
 
-**Entscheidung offen:** Ob Stufe-2-Automation (PM-Cowork triggert CC headless ohne User-Freigabe pro Call) als Default oder nur bei explizitem User-Flag. Evidenz aus Batch-2-Run liefert Entscheidungsgrundlage.
+**Fortschreibungs-Regel:** Neue Evidenz aus weiteren Batches (Batch-4+) wird in §10 angehaengt, neue Sektionen bei strukturellem Pattern-Zuwachs (>1 Wiederholung). Minor-Versionen (v1.1, v1.2) bei Praezisierungen; Major (v2.0) bei Bruch mit Host-MCP/osascript-Paradigma.
+
+---
+
+## 10. Batch-3-Evidenz (2026-04-18, P0-BATCH-3)
+
+**Run-Profil:**
+- Scope: 6/6 P0 Tasks (A1.1 Policy-Edit + A1.3 .gitignore, B1 Phase-3.4 + B2 Phase-4-Audit-Scope + B3 Capture-Scope + B4 YAML-Regression).
+- Dauer: 13:27 min Wall-Clock, 67 Turns, 0 Errors, $5.78 Kosten.
+- Commits: 3 (2x EGG `79232f7` + `ad7df55`, 1x WO `4f33baf`).
+
+**Erstmals produktiv:**
+- `tools/cc-launch.sh` Pre-Flight-Wrapper (perl-alarm-Timeout, Max-OK-Parse vor exec). 0 Auth-Fehler ueber gesamte Runtime.
+- Dashboard-Triade parallel: tail-F+jq Live-Viewer, metrics-sampler CSV (3s-Intervall, RSS-Kurve sauber), completion-watcher mit Bell+Banner+Notification.
+
+**Bestaetigte Patterns:**
+- §1 Pre-Flight-Check verhindert silent API-Billing-Fallback (Batch-2-Incident nicht-reproduzierbar in Batch-3).
+- §2.1 Background-Launch via nohup+PID-File: stabil ueber 13 min ohne osascript-Timeout.
+- §4 Handoff-Protokoll-Struktur (Kontext + Task-Blocks + JSON-Rueckmeldung + Nicht-Ziele): komplett befolgt von CC, strukturierter Report mit SHA-Refs + acceptance pro Task.
+- §8.1-§8.3 Observability-Stack: alle drei Kanaele live-nutzbar, keine Blinden Flecken mid-run.
+
+**Neue Erkenntnisse (nicht in §1-§8 abgedeckt):**
+- **Push-Gap-Risiko:** CC committet zuverlaessig, aber Push-Verifikation ist PM-Cowork-Pflicht. Batch-3 zeigte mehrere lokale Commits ohne Push — erfordert expliziten Push-Schritt im PM-Closeout. Fix: Handoff-Rueckmelde-Format muss `pushed: <remote>/<branch>` verlangen, nicht nur `commit: <sha>`.
+- **HANDOFF-Abweichungen als normale Klasse:** CC interpretiert Paragraph-Referenzen eigenstaendig (A1.1 fand §2.4 korrekter als vorgegebenen §3, A1.2 blieb ungetouched weil PI-Template nicht explizit im Handoff). Kein Fehler-Modus, aber muss im Rueckmelde-Format als `deviations:` Feld kanonisch sein. Bereits in §4 JSON-Struktur enthalten — bestaetigt.
+- **Regression-Tests inline:** B4 YAML-Regression im gleichen Run wie B1-B3 durchgefuehrt (kein separater Audit-Batch noetig). Sparte ca. 30% Setup-Overhead.
+
+**Metriken-Referenz (aus §8.2 CSV):**
+- Peak RSS: ~420 MB (Turn 45, waehrend Bash-heavy Multi-Grep-Phase).
+- Durchschnitt cpu_pct: 18% (nicht-CPU-bound, I/O-dominiert).
+- FD-Count: stabil zwischen 45-60, kein Leak.
+- Transcript-Lines/min: ~5 (gleichmaessige Generierung, keine Stalls).
+
+---
+
+## 11. Offene Entscheidungspunkte
+
+**E1: Stufe-2-Automation (PM triggert CC ohne Call-by-Call-Freigabe).**
+- Stand: Offen seit Batch-2. Batch-3-Evidenz stuetzt Machbarkeit (0 Errors, 0 Permission-Denials, Pre-Flight-Wrapper faengt Auth-Incidents ab).
+- Pro: 13:27 min Batch mit manueller Freigabe pro Turn waere faktisch doppelt so teuer an PM-Zeit. Wrapper + Dashboard decken die Beobachtbarkeit ab.
+- Contra: Scope-Drift-Risiko nur durch Prompt-Qualitaet gebremst. §7 Recovery-Pattern bleibt noetig als Fallback.
+- Empfehlung (zur User-Entscheidung): Default weiterhin Call-by-Call. Stufe-2 nur per explizitem Flag in Handoff-Prompt (`automation_mode: stufe-2-freigegeben`). Kein blanket-default.
+- Entscheidungstrigger: Naechster P0-Batch der klar scope-begrenzt ist + User-Freigabe → Stufe-2 einmalig testen und in §10 dokumentieren.
+
+**E2: Push-Gap-Kanonisierung im Handoff-Rueckmelde-Format.**
+- Stand: In Batch-3 aufgefallen, §10 dokumentiert. Noch nicht in §4 Handoff-Template-Struktur nachgezogen.
+- Aktion: §4 Rueckmelde-Format um Pflichtfeld `pushed: <remote>/<branch> | UNGEPUSHT` pro Task ergaenzen.
+- Aufwand: <5 min Edit. Nicht in v1.0-Promotion enthalten → v1.1 Kandidat.
+
+**E3: Parallele CC-Runs (aus §6 Risiken).**
+- Stand: Ungetestet. Dual-Root-Setup in Batch-3 validiert (WO + EGG via `--add-dir`), aber nur sequenziell ein CC-Prozess.
+- Relevanz: niedrig bis P1 (kein aktueller Use-Case mit Parallelitaetsbedarf).
+- Parking: in §6 belassen, keine aktive Klaerung.

@@ -1,7 +1,7 @@
 # Cowork-Project Anleitung: weitergehts.online — Escape-Game-Infrastruktur
 
 **Zweck:** Dieser Text wird im "Instructions"-Feld des Cowork-Projects eingetragen und laedt bei jeder Session automatisch.
-**Version:** 2.2 (2026-04-18, CC-Pre-Flight-Pflicht ergaenzt)
+**Version:** 2.3 (2026-04-19, CC-Interop-Learnings v1.0 als Pflichtlektuere bei CC-Operationen verankert)
 
 ---
 
@@ -56,15 +56,18 @@ BEI JEDER SESSION — PFLICHT-LEKTUERE (in dieser Reihenfolge):
 1. docs/projekt/STATUS.md — Konsolidierter Projektstatus, offene Arbeitsstroeme nach Prioritaet, kritischer Pfad, naechster Schritt
 2. docs/projekt/CHANGELOG.md — Letzte 5 Eintraege fuer Kontext
 3. docs/projekt/GIT_WORKFLOW_HOST_MCP.md — Kanonisches Git-Protokoll (nur bei erster git-Operation der Session, sonst Referenz)
+4. docs/projekt/CC_COWORK_INTEROP_LEARNINGS.md — Kanonisches CC-Interop-Protokoll (nur bei geplanter CC-Operation der Session, sonst Referenz). §1 Pre-Flight + §2.0 Modi-Regel + §4 Handoff-Template + §7 Recovery sind die operativen Blocks.
 
 Das genuegt fuer die Orientierung. STATUS.md ist die Single Source of Truth fuer den Projektzustand. Alle offenen Planungen, abgeschlossenen Grossprojekte und Blocker sind dort verankert.
 
-CC-HANDOFF (vor jedem CC-Start verpflichtend):
-- Kanonischer Launch-Wrapper: `tools/cc-launch.sh` (enthaelt Pre-Flight-Check gegen Max-Subscription, bricht bei API-Billing-Fallback ab).
+CC-HANDOFF (vor jedem CC-Start verpflichtend — siehe Pflichtlektuere #4):
+- Kanonischer Launch-Wrapper: `tools/cc-launch.sh` (enthaelt Pre-Flight-Check gegen Max-Subscription, bricht bei API-Billing-Fallback ab). Siehe LEARNINGS §1.
 - Interaktiv: `./tools/cc-launch.sh` (ohne Args).
 - Headless: `./tools/cc-launch.sh -p --dangerously-skip-permissions --add-dir <secondary> --output-format stream-json --verbose "$PROMPT"`.
-- Modi-Regel: P0-Batch-Handoffs + Recovery-Runs = headless + Dashboard (tail -F | jq + metrics-sampler + post-run-audit). Explorativ/Debug/Unklarer Scope = interaktiv. Details in `docs/projekt/CC_COWORK_INTEROP_LEARNINGS.md` §1 + §2.0.
+- Modi-Regel: P0-Batch-Handoffs + Recovery-Runs = headless + Dashboard (tail -F | jq + metrics-sampler + post-run-audit). Explorativ/Debug/Unklarer Scope = interaktiv. Details in LEARNINGS §2.0.
+- Handoff-Markdown-Struktur: Kontext-Block + Task-Blocks + JSON-kompatibles Rueckmelde-Protokoll + Nicht-Ziele. Template-Quelle: LEARNINGS §4.
 - Bei AUTH-BROKEN: `claude` interaktiv, `/login` → Option 1 (Claude-Subscription), dann erst Handoff fortsetzen.
+- Bei Mid-Run-Abbruch: Recovery-Protokoll aus LEARNINGS §7 (scope-eng, kein Re-Research).
 
 BEI BEDARF — VERTIEFUNGSLEKTUERE (nur wenn fuer die aktuelle Aufgabe relevant):
 - EXTERNES REPO `escape-game-generator/` — Eigenstaendiges Produkt-Repo mit Agenten, Vertraegen, Checklisten, PROJECT_INSTRUCTIONS.md (State Machine), ONBOARDING.md. Kanonische Quelle fuer Generierungsinfrastruktur. `weitergehts-online/infrastruktur/` ist geloescht.
@@ -129,6 +132,7 @@ NICHT hier aktualisieren:
 
 | Version | Datum | Aenderung |
 |---|---|---|
+| 2.3 | 2026-04-19 | Pflichtlektuere-Eintrag #4 fuer `CC_COWORK_INTEROP_LEARNINGS.md` (Kanon v1.0, conditional: bei geplanter CC-Operation). CC-HANDOFF-Block praezisiert: Verweis auf LEARNINGS §1 (Pre-Flight), §2.0 (Modi), §4 (Handoff-Template), §7 (Recovery) als Sektion-Level-Anker. Begruendung: F2-Promotion der LEARNINGS nach Batch-3-Validierung (n=3, cc-launch.sh + Dashboard-Triade produktiv bestaetigt) — LEARNINGS tritt als CC-Operations-Pendant zum GIT_WORKFLOW_HOST_MCP.md in die Kanonik ein. |
 | 2.2 | 2026-04-18 | CC-HANDOFF-Block neu: cc-launch.sh als verpflichtender Pre-Flight-Wrapper verankert, Ausfuehrungsmodi-Regel (headless vs interaktiv) mit Verweis auf LEARNINGS §1/§2.0. Begruendung: Batch-2-Auth-Incident (silent API-Billing-Fallback → Credit-Balance-Error). |
 | 2.1 | 2026-04-18 | GIT-Sektion refaktoriert auf Host-MCP-Protokoll (mcp__Control_your_Mac__osascript). Sandbox-Bash-git DEPRECATED. Neues kanonisches Dokument `docs/projekt/GIT_WORKFLOW_HOST_MCP.md` als Pflicht-Referenz. Pflichtlektuere um GIT_WORKFLOW erweitert (nur bei git-Operationen). Begruendung: virtiofs-Lock-Problem der Sandbox macht Sandbox-git unzuverlaessig. |
 | 2.0 | 2026-04-08 | Refaktor: Routing-Dokument statt State-Kopie. 6 drift-anfaellige Sektionen eliminiert (C+ Ausfuehrungsplan, Plugin-Infrastruktur, Strategischer Kontext, GRUNDSATZENTSCHEIDUNG-Verweis). Pflichtlektuere auf 2 Dateien reduziert (STATUS.md + CHANGELOG.md). Wartungs-Trigger explizit definiert. GIT-Sektion korrigiert (Cowork kann committen). |
