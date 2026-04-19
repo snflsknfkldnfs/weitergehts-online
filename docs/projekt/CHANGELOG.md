@@ -4,6 +4,39 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-19 — F0b.2b Prevent-First-Gate + Launcher-Kanon v2 + Interop-Doku v1.1
+
+**Ausloeser:** F0b.2b v1-Incident (argv-Hang via 5546-char-Prompt-argv + ENOENT auf nested-Pfad `/Users/paulad/weitergehts.online/escape-game-generator`). Protokoll-basierter Review reichte nicht; strukturelle Gates noetig.
+
+**Artefakte (alle committed + gepusht):**
+- `tools/cc-launch-preflight.sh` (92 Zeilen, executable) — 5 strukturelle Gates vor jedem CC-Handoff:
+  - Gate 1: `CC_PROMPT_FILE` existiert, lesbar, `<= CC_MAX_PROMPT_BYTES` (Default 32768 bytes)
+  - Gate 2: `CC_PRIMARY_DIR` existiert (+ WARN wenn kein `.git`)
+  - Gate 3: Alle `CC_ADDITIONAL_DIRS`-Eintraege existieren
+  - Gate 4: Nested-Pfad-Detektor `grep -c '/Users/paulad/weitergehts\.online/escape-game-generator'` → ROT bei Treffer (Host-Dual-Root-Regel)
+  - Gate 5: `cc-launch.sh` existiert + ausfuehrbar (delegierter Auth-Check)
+  - Exit 0 PASS / 2 FAIL
+- `tools/cc-launch-TEMPLATE.sh` (kanonisches Launcher-Geruest, executable) — Variablen-Block (LAUNCHER_LABEL, TASK_ID, REPO_ROOT, ADD_DIRS, PROMPT_FILE) + Preflight-Hookup + stdin-pipe-Pattern (`< "${PROMPT_FILE}"`) + tee-Logging. Kopier-Vorlage fuer alle neuen `cc_launch_*.sh` ab 2026-04-19.
+- `docs/projekt/CC_COWORK_INTEROP_LEARNINGS.md` v1.0 → v1.1:
+  - §1.1 Launcher-Kanon v2 (verpflichtend ab 2026-04-19): 3-Schichten-Sequenz Prevent-First-Gate → Auth-Pre-Flight → Exec CC. Regel: kein direkter `exec claude`/`cc-launch.sh` ohne vorherigen Preflight.
+  - §1.2 Host-Dual-Root-Layout + Pfad-Praeflight-Pflicht: Host ist `/Users/paulad/{escape-game-generator, weitergehts.online/weitergehts-online}` — Siblings, NICHT nested. Alle Launcher/Prompts muessen gegen Nested-Pfad-Drift gegreppt werden.
+  - §1.3 v1→v2-Incident F0b.2b: Full-Post-Mortem (argv-Hang, ENOENT, stdin-steal im Pre-Flight-Auth-Check) + 4 Fixes (stdin-pipe statt argv, Pre-Flight `< /dev/null`, Pfad-Korrektur, Prevent-First-Gate).
+
+**Self-Test (3/3 PASS vor Commit):**
+- TEST 1 valid-config → exit 0, 4 Gate-PASS-Lines
+- TEST 2 Nested-Pfad im Prompt (`/tmp/preflight_bad.txt` mit 1 Treffer) → exit 2, Fehlermeldung nennt Korrektur-Pfad
+- TEST 3 `CC_ADDITIONAL_DIRS=/Users/paulad/does-not-exist-ghost` → exit 2, Gate-3-FAIL
+
+**Bug-Fix waehrend Self-Test:** Gate-4 `NESTED_HITS=$(grep -c ... || echo 0)` konkatenierte bei 0-matches zu "0\n0\n" → Subshell-Capture "00" → Bash-Syntaxfehler `[[: 00: syntax error`. Ersetzt durch `NESTED_HITS=$(grep -c ... 2>/dev/null); NESTED_HITS=${NESTED_HITS:-0}`.
+
+**STATUS.md-Updates:** Modus-Zeile (Prevent-First-Gate DONE); F0b-Stream-Zeilen 129-131 (Push DONE + Gate DONE + A3.1 PENDING mit Dogfood-Hinweis); Naechster-Schritt-Block umnummeriert.
+
+**Wirkung:** Ab jetzt wird F0b.2b-Klasse-Fehler (argv-Hang + Nested-Pfad-ENOENT) maschinell abgefangen, nicht mehr durch Human-Review. Schritt 4 (A3.1 HANDOFF-Korrektur + CC-Mini-Rerun) nutzt das TEMPLATE als erster Dogfood-Lauf.
+
+**Commits:** `weitergehts-online` — feat(f0b-2b-gate) (3 Files: tools + interop-doc) + docs(f0b) (STATUS + CHANGELOG) bundled zu 1 Commit. Kein Generator-Repo-Churn (Gate ist Launcher-seitig, reines PM-Repo).
+
+---
+
 ## 2026-04-19 — F0b.2b CC-Handoff A1-A4 AUSGEFUEHRT (A1+A2+A4 DONE, A3.1 SKIPPED protokollkonform)
 
 **Phase:** F0b.2b — CC-Handoff-Ausfuehrung der A1-A4-Task-Blocks aus `HANDOFF_CC_F0b_v1.md` (headless CC via `tools/cc-launch.sh`, stream-json output).

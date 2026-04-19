@@ -1,9 +1,9 @@
-# CC-Cowork-Interop: Learnings (Kanon v1.0)
+# CC-Cowork-Interop: Learnings (Kanon v1.1)
 
-**Status:** KANON v1.0 — Evidenz-Basis n=3 (Batch-1 manuell, Batch-2 headless mit Recovery, Batch-3 headless mit Pre-Flight-Wrapper + Dashboard-Triade)
+**Status:** KANON v1.1 — Evidenz-Basis n=4 (Batch-1 manuell, Batch-2 headless mit Recovery, Batch-3 headless mit Pre-Flight-Wrapper + Dashboard-Triade, F0b.2b headless mit v1→v2-Incident-Recovery + Prevent-First-Gate).
 **Erstellt:** 2026-04-18 (v0.1)
 **Promoted:** 2026-04-19 (v0.2 → v1.0 nach Batch-3-Validierung, F2 aus P0-Follow-up-Kanon)
-**Letzte Aktualisierung:** 2026-04-19 (+§10 Batch-3-Evidenz, §9 Finalisierungs-Plan abgeloest durch §11 Offene Entscheidungspunkte)
+**Letzte Aktualisierung:** 2026-04-19 (v1.1: +§1.1 Launcher-Kanon v2, +§1.2 Host-Dual-Root + Pfad-Praeflight-Pflicht, +§1.3 v1→v2-Incident F0b.2b; vorherige Updates: +§10 Batch-3-Evidenz, §9 Finalisierungs-Plan abgeloest durch §11 Offene Entscheidungspunkte)
 **Verankerung:** `COWORK_PROJECT_ANLEITUNG.md` v2.3 Abschnitt 2 Pflichtlektuere (bei CC-Operationen) + Abschnitt 1 HANDOFF-Modus-Verweis auf §4.
 
 Diese Datei konsolidiert operative Learnings zur Steuerung von Claude Code (CC) aus einer Cowork-PM-Session heraus via Host-MCP und Desktop-Commander-MCP. Ziel: reproduzierbarer Handoff-Workflow ohne stille Fehler.
@@ -59,6 +59,69 @@ Diese Datei konsolidiert operative Learnings zur Steuerung von Claude Code (CC) 
 - Projekt-Start (weitergehts-online, volles Kontext-Load): 8 s
 - Multi-Tool-Chain klein: 8 s
 - Lang laufender Task mit WebFetch/MCP-Calls: min-Bereich (Stichprobe folgt aus Batch-2)
+
+### 1.1 Launcher-Kanon v2 (post-F0b.2b, verpflichtend ab 2026-04-19)
+
+Ein CC-Launcher-Skript (z.B. `docs/projekt/cc_prompts/cc_launch_<taskid>.sh`) muss **strukturell** drei Schichten hintereinander durchlaufen, jede mit expliziter Abbruch-Bedingung:
+
+1. **Prevent-First-Gate** (`tools/cc-launch-preflight.sh`) — prueft Pfade + Prompt-Groesse + Host-Dual-Root-Nested-Pfad-Hits VOR Auth-Check. Exit 2 bei rotem Gate. Verhindert F0b.2b-Klasse-Fehler (ENOENT, argv-Hang, Prompt-Oversize).
+2. **Auth-Pre-Flight** (`tools/cc-launch.sh`) — prueft Max-Subscription vs. API-Billing-Fallback. Exit 2 bei AUTH-BROKEN.
+3. **Exec CC** — via stdin-pipe (`< "${PROMPT_FILE}"`), **nicht** via argv, weil Bun-runtime claude-CLI bei grossen Multi-Line-Prompts auf argv `kevent64`-Hang zeigt.
+
+**Kanonisches Template:** `tools/cc-launch-TEMPLATE.sh` (v2). Fuer jeden neuen Launcher kopieren, Variablen-Block oben anpassen (LAUNCHER_LABEL, TASK_ID, REPO_ROOT, ADD_DIRS, PROMPT_FILE).
+
+**Regel:** Kein neuer CC-Launcher darf direkt `exec claude` oder direkt `cc-launch.sh` aufrufen, ohne zuvor `cc-launch-preflight.sh` durchlaufen zu haben. Bei Abweichung → Gate-Eintrag in STATUS.md mit Begruendung + Gegenzeichnung.
+
+**Gates in `cc-launch-preflight.sh`:**
+| Gate | Pruefung | Rot bedeutet |
+|---|---|---|
+| 1 | `CC_PROMPT_FILE` gesetzt, existiert, lesbar, `<= CC_MAX_PROMPT_BYTES` (Default 32768) | argv-Hang-Risiko oder fehlender Prompt |
+| 2 | `CC_PRIMARY_DIR` existiert (+ WARN wenn kein `.git`) | CC startet mit falschem CLAUDE.md-Discovery |
+| 3 | Alle `CC_ADDITIONAL_DIRS`-Eintraege existieren | `--add-dir ENOENT` → v1-Incident-Klasse |
+| 4 | Prompt enthaelt keinen Nested-Pfad `/Users/paulad/weitergehts.online/escape-game-generator` | Host-Dual-Root-Drift → ENOENT-Werte im Prompt |
+| 5 | `cc-launch.sh` existiert + ausfuehrbar | Auth-Check nicht delegierbar |
+
+### 1.2 Host-Dual-Root-Layout + Pfad-Praeflight-Pflicht
+
+**Host-Layout (Stand 2026-04-19):**
+```
+/Users/paulad/
+├── escape-game-generator/                          ← Repo 1 (Generator, Deploy-Source)
+└── weitergehts.online/
+    └── weitergehts-online/                         ← Repo 2 (PM-Working-Directory)
+```
+
+Die beiden Repos sind **SIBLINGS** auf `/Users/paulad/-Ebene`, **NICHT** nested unter `/Users/paulad/weitergehts.online/`. Letzterer ist ein Ordner-Zwischenpfad, der nur `weitergehts-online/` enthaelt — `escape-game-generator` liegt dort **nicht**.
+
+**Typischer Drift-Fehler (F0b.2b-v1-Run):** Launcher-Prompt oder Launcher-Script-Header referenziert `/Users/paulad/weitergehts.online/escape-game-generator/` (nested). Dieser Pfad existiert am Host nicht. CC erhaelt den String via `--add-dir` oder via Prompt-Inline-Referenz, sucht, findet nicht, gibt ENOENT zurueck oder scheitert an Schreib-Operationen mit halbherzigem Pfad-Default auf CWD. Ergebnis: v1-Run schrieb Artefakte ins falsche Repo oder brach silent ab.
+
+**Regel (verpflichtend):**
+- Jeder Launcher muss `CC_ADDITIONAL_DIRS` vor Exec via Preflight-Gate-3 pruefen (existenz-getestet).
+- Jeder Prompt muss vor Exec via Preflight-Gate-4 auf Nested-Pfad-Hits gegreppt werden (Regex `/Users/paulad/weitergehts\.online/escape-game-generator`).
+- Korrekturen im Prompt gehen an `/Users/paulad/escape-game-generator/` (ohne `weitergehts.online`-Zwischenpfad).
+
+**Warum Gate 4 kein Nice-to-have ist:** Der Nested-Pfad wirkt plausibel (Repo-Namen sind aehnlich, Ordner `weitergehts.online` existiert als Zwischenlage). Menschliche Review faellt dem reliable zum Opfer. Maschinelle Regex-Pruefung ist der einzige sichere Gegen-Mechanismus.
+
+### 1.3 v1→v2-Incident (F0b.2b, 2026-04-19)
+
+**Kontext:** F0b.2b CC-Handoff A1-A4 sollte 10 Scripts + 6 Schemata + Engine-Fix generieren. v1-Launcher scheiterte; v2-Launcher erfolgreich nach Infrastruktur-Fix.
+
+**v1-Symptome:**
+- **Argv-Hang (`kevent64`):** Prompt (5546 Zeichen) als argv an `claude -p "$PROMPT"` uebergeben → Bun-runtime hing beim Argument-Parsing im `kevent64`-Syscall. Keine Error-Message, kein Timeout-Exit, PID zombified nach ~3 s CPU-Time. Reproduzierbar ab ~3 KB argv-size auf macOS-ARM.
+- **ENOENT auf `--add-dir`:** Launcher referenzierte `/Users/paulad/weitergehts.online/escape-game-generator` (nested, existiert nicht). CC startete silent, fand den Pfad nicht, schrieb Artefakte in PM-Repo (`weitergehts-online`) statt Generator-Repo.
+- **Pre-Flight-Auth-Check frass stdin:** `cc-launch.sh`-Pre-Flight nutzte stdin fuer `claude -p 'say OK'` — wenn Launcher `< "${PROMPT_FILE}"` pipe-te, hat der Pre-Flight-Hello-World-Run den Haupt-Prompt stdin-stream konsumiert, bevor der Exec-Call ihn sah.
+
+**v2-Fixes (in Reihenfolge der Anwendung):**
+1. **stdin-pipe statt argv** fuer Prompts (`< "${PROMPT_FILE}"` vor dem Pipe an tee). Loest argv-Hang strukturell.
+2. **Pre-Flight stdin-Isolation** in `cc-launch.sh` → `perl -e 'alarm shift; exec @ARGV' ... claude -p ... < /dev/null`. Pre-Flight-Call bekommt eigenen leeren stdin, beruehrt den Haupt-Run-stdin nicht.
+3. **Nested-Pfad-Korrektur** im Launcher: `GENERATOR_DIR="/Users/paulad/escape-game-generator"` (flat, Sibling zu weitergehts-online).
+4. **Prevent-First-Gate** (`tools/cc-launch-preflight.sh`) — strukturell, nicht Protokoll-basiert. Siehe §1.1.
+
+**Ergebnis v2-Run:** 10 scripts + 6 schemata generiert, F0b.2b-Erfolg. 10 dry-runs der generierten Scripts dokumentiert, A3.1 protokollkonform geskippt (siehe STATUS).
+
+**Konsequenz fuer Kanon:** Launcher-Kanon v2 (§1.1) ist jetzt **verpflichtend** fuer alle neuen CC-Handoffs. Bestehende Launcher (Batch-1, Batch-2, Batch-3, F0b.2b-v2) bleiben Referenz-Artefakte — **nicht** rueckwirkend migrieren (Risk vs. Benefit: keine neue Ausfuehrung geplant).
+
+**Lesson:** Strukturelle Gates (Shell-Script, Exit-Code) schlagen Protokoll-Gates (Checklist im Markdown). Ein menschlicher Reviewer uebersieht einen Nested-Pfad; ein `grep -c` nicht.
 
 ---
 
