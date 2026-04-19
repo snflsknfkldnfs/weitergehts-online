@@ -1,0 +1,59 @@
+{
+  "id": "aufgabe-4-2",
+  "typ": "multiple-choice",
+  "frage": "Was will die Karikatur \u201EDer Lotse geht von Bord\u201C aussagen?",
+  "material_referenz": ["mat-4-1"],
+  "optionen": [
+    "Bismarck wurde zu alt für die Politik und ging freiwillig in den Ruhestand.",
+    "Wilhelm II. entließ Bismarck und änderte den Kurs der deutschen Außenpolitik.",
+    "Deutschland verlor seine Flotte und brauchte einen neuen Kapitän.",
+    "Bismarck wollte Kolonien, aber Wilhelm II. war dagegen."
+  ],
+  "loesung": "Wilhelm II. entließ Bismarck und änderte den Kurs der deutschen Außenpolitik.",
+  "feedback": [
+    {
+      "typ": "korrektur",
+      "text": "Bismarck ging nicht freiwillig — er wurde von Wilhelm II. entlassen. Die Karikatur zeigt genau diesen Machtwechsel: Der erfahrene Lotse muss das Schiff verlassen.",
+      "ebene": "verstaendnis"
+    },
+    {
+      "typ": "bestaetigung",
+      "text": "Richtig. Die Karikatur zeigt, dass Wilhelm II. Bismarck entließ und einen neuen Kurs einschlug — weg von vorsichtiger Diplomatie, hin zur aggressiven Weltpolitik.",
+      "ebene": "verstaendnis"
+    },
+    {
+      "typ": "korrektur",
+      "text": "Das Schiff steht bildlich für den Staat, nicht für eine echte Flotte. Der Lotse Bismarck verlässt das Schiff — also den Staat.",
+      "ebene": "verstaendnis"
+    },
+    {
+      "typ": "korrektur",
+      "text": "Es war genau umgekehrt: Bismarck war bei Kolonien zurückhaltend, Wilhelm II. wollte die aggressive Weltpolitik.",
+      "ebene": "verstaendnis"
+    }
+  ],
+  "tipps": [
+    {
+      "stufe": 1,
+      "haertegrad": "kognitiv",
+      "text": "Schau dir [[mat-4-1|die Karikatur]] (M1) nochmal genau an. Wer steht oben auf dem Schiff, wer geht die Treppe hinunter? Was bedeutet das bildlich?"
+    },
+    {
+      "stufe": 2,
+      "haertegrad": "strukturierend",
+      "text": "Ein Lotse steuert ein Schiff sicher durch gefährliche Gewässer. Bismarck war der Lotse des Kaiserreichs. Was passiert mit dem Schiff, wenn der Lotse es verlässt — und wer steuert dann?"
+    },
+    {
+      "stufe": 3,
+      "haertegrad": "heuristisch",
+      "text": "Zwei der vier Antworten drehen die historischen Rollen um (wer wollte was). Eine Antwort nimmt das Schiff wörtlich statt bildlich. Schließe diese drei aus."
+    }
+  ],
+  "afb": "II",
+  "position": 2,
+  "punkte": 10,
+  "_meta": {
+    "bloom_level": 3,
+    "bloom_begruendung": "Bildinterpretation: SuS müssen die Metapher (Lotse = Bismarck, Schiff = Staat) auf den historischen Kontext (Bismarck-Entlassung 1890, Kurswechsel zur Weltpolitik) anwenden — L3 Anwenden, nicht reines Verstehen."
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "id": "aufgabe-4-1",
+  "typ": "lueckentext",
+  "frage": "Ergänze die fehlenden Fachbegriffe.",
+  "material_referenz": ["mat-4-2"],
+  "text_mit_luecken": "Nach Bismarcks Entlassung 1890 verfolgte Kaiser Wilhelm II. eine aggressive Außenpolitik: die ___. Deutschland sollte überall auf der Welt mitreden. In Nordafrika stieß Deutschland mit Frankreich zusammen. Zweimal drohte wegen eines Kolonialstreits ein Krieg: die ___ von 1905 und 1911. Beide Male verhandelten die ___ am Ende und vermieden den Krieg. Doch das Misstrauen wuchs — aus Handelspartnern waren ___ geworden.",
+  "loesung": ["Weltpolitik", "Marokkokrisen", "Großmächte", "Rivalen"],
+  "antwortpool": ["Großmächte", "Imperialismus", "Marokkokrisen", "Rivalen", "Weltpolitik"],
+  "tipps": [
+    {
+      "stufe": 1,
+      "haertegrad": "kognitiv",
+      "text": "Alle Lücken betreffen Fachbegriffe aus [[mat-4-2|Weltpolitik und Marokkokrisen]] (M2). Lies den Text noch einmal genau und achte auf die fett gedruckten Wörter."
+    },
+    {
+      "stufe": 2,
+      "haertegrad": "strukturierend",
+      "text": "Imperialismus kennst du als Oberbegriff für das Streben nach Kolonien aus Mappe 3 — Wilhelm II. hatte für seinen eigenen Kurs aber einen anderen Namen. Eine Lücke fragt nach den mächtigen Staaten Europas, die am Ende verhandelten."
+    },
+    {
+      "stufe": 3,
+      "haertegrad": "heuristisch",
+      "text": "Lücke 1 steht im ersten Absatz fett markiert (Wilhelms II. neuer Kurs). Lücke 2 ist nach dem nordafrikanischen Land benannt, in das Wilhelm II. 1905 reiste — auch fett im dritten Absatz. Lücke 3 findest du in Absatz 3 (wer verhandelte am Ende?). Lücke 4 steht im letzten Absatz und beschreibt, was aus Handelspartnern wurde."
+    }
+  ],
+  "feedback": [
+    {
+      "typ": "bestaetigung",
+      "text": "Du hast die vier Fachbegriffe richtig eingeordnet. Damit kannst du Wilhelms II. Weltpolitik benennen, die beiden Marokkokrisen einordnen und beschreiben, wie aus Partnern Rivalen wurden.",
+      "ebene": "verstaendnis"
+    },
+    {
+      "typ": "korrektur",
+      "text": "Häufigster Fehler: Imperialismus statt Weltpolitik in Lücke 1. Imperialismus ist der Oberbegriff für das Streben nach Kolonien (Mappe 3). Weltpolitik bezeichnet Wilhelms II. besonders aggressive Variante davon.",
+      "ebene": "verstaendnis"
+    },
+    {
+      "typ": "verknuepfung",
+      "text": "Im letzten Absatz von [[mat-4-2|Weltpolitik und Marokkokrisen]] (M2) steht, wie aus dem Streit um Kolonien wachsendes Misstrauen wurde. Diese Spaltung Europas ist die zentrale Folge des Wettlaufs.",
+      "ebene": "verstaendnis"
+    }
+  ],
+  "afb": "I",
+  "position": 1,
+  "punkte": 10,
+  "_meta": {
+    "bloom_level": 2,
+    "bloom_begruendung": "Kontextgetriebener Fachbegriffs-Einsatz: SuS verstehen Lückenkontext (Apposition, Krisen-Datumsangabe, Verhandlungsrolle, Beziehungswandel) und wählen passenden Begriff aus Pool — L2 Verstehen, nicht reines Recall."
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "stundenfrage": "Welche Folgen hatte der Wettlauf um Kolonien — für Afrika und für Europa?",
+  "ordnungsmuster": "parallel-kausal",
+  "scpl": {
+    "situation": {
+      "kontextsatz": "Nach der Berliner Konferenz besaß Deutschland vier Kolonien in Afrika — doch Kaiser Wilhelm II. wollte noch mehr.",
+      "fachbegriffe": []
+    },
+    "complication": [
+      {
+        "schritt": "Wilhelm II. verfolgte eine aggressive Kolonialpolitik — Deutschland sollte überall mitbestimmen: Weltpolitik.",
+        "typ": "kausal",
+        "fachbegriff": "Weltpolitik",
+        "darstellung": null,
+        "erarbeitbarkeit": "DIRECT"
+      },
+      {
+        "schritt": "In Marokko stieß Deutschland mit Frankreich zusammen — zweimal drohte wegen eines Kolonialstreits ein Krieg: Marokkokrisen.",
+        "typ": "kausal",
+        "fachbegriff": "Marokkokrisen",
+        "darstellung": null,
+        "erarbeitbarkeit": "DIRECT"
+      },
+      {
+        "schritt": "In den Kolonien bedeutete der Wettlauf Landraub und Unterdrückung — Widerstand wurde brutal niedergeschlagen.",
+        "typ": "kausal",
+        "fachbegriff": "",
+        "darstellung": null,
+        "erarbeitbarkeit": "DIRECT"
+      }
+    ],
+    "problem": {
+      "satz": "Der Wettlauf um Kolonien brachte den Kolonisierten Gewalt — und den Großmächten wachsendes Misstrauen.",
+      "fachbegriff": ""
+    },
+    "loesung": [
+      "Unter Wilhelm II. betrieb Deutschland eine aggressive \u201eWeltpolitik\u201c und forderte immer neue Kolonien.",
+      "Der Wettlauf um Kolonien führte zu Konflikten zwischen den Großmächten und zu Gewalt gegen die kolonisierten Völker."
+    ]
+  },
+  "transfer": {
+    "frage": "Warum hörten die Großmächte nicht auf, um Kolonien zu streiten, obwohl es gefährlich wurde?"
+  },
+  "voraussetzungen": ["k3-6"],
+  "knoten": [
+    {"id": "k4-1", "text": "Weltpolitik Wilhelms II.", "typ": "kernbegriff", "merksatz": "Deutschland wollte Weltmacht werden und forderte überall Kolonien"},
+    {"id": "k4-2", "text": "Marokkokrisen 1905/1911", "typ": "ereignis"},
+    {"id": "k4-3", "text": "Koloniale Ausbeutung und Gewalt", "typ": "wirkung", "merksatz": "Kolonialmächte nahmen Land, erzwangen Arbeit und bestraften Widerstand brutal"},
+    {"id": "k4-4", "text": "Rivalität der Großmächte", "typ": "wirkung", "merksatz": "Kolonialstreit machte aus Partnern Rivalen"}
+  ],
+  "verbindungen": [
+    {"von": "k4-1", "nach": "k4-2", "label": "provoziert", "typ": "kausal"},
+    {"von": "k4-1", "nach": "k4-3", "label": "verursacht", "typ": "kausal"},
+    {"von": "k4-2", "nach": "k4-4", "label": "verschärft", "typ": "kausal"}
+  ]
+}

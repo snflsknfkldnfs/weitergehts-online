@@ -1,0 +1,38 @@
+{
+  "id": "mat-4-3",
+  "typ": "quellentext",
+  "titel": "Vernichtungsbefehl — was „Schutzgebiet“ wirklich bedeutete",
+  "position": 3,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": ["mat-4-2"],
+  "ueberleitung_von": "Der Wettlauf um Kolonien verschärfte die Rivalität zwischen den Großmächten. Doch was bedeutete er für die Menschen in den Kolonien?",
+  "sequenz_kontext": {
+    "vorher": {
+      "id": "mat-4-2",
+      "typ": "darstellungstext",
+      "kerninhalt": "Weltpolitik, Marokkokrisen, wachsende Rivalität zwischen Großmächten"
+    },
+    "nachher": {
+      "id": "mat-4-4",
+      "typ": "bildquelle",
+      "kerninhalt": "Foto gefangener Herero nach der Niederschlagung des Aufstands"
+    }
+  },
+  "inhalt": "<p><em>In Deutsch-Südwestafrika (heute Namibia) erhob sich 1904 das Hirtenvolk der Herero gegen die deutsche Kolonialherrschaft. Nach der militärischen Niederschlagung erließ Generalleutnant Lothar von Trotha diesen Befehl:</em></p><blockquote><p>„Die Herero sind nicht mehr Deutsche Untertanen. [...] Innerhalb der Deutschen Grenze wird jeder Herero mit oder ohne Gewehr, mit oder ohne Vieh erschossen, ich nehme keine Weiber und keine Kinder mehr auf, treibe sie zu ihrem Volke zurück oder lasse auch auf sie schießen.“</p></blockquote><p><em>Von rund 80.000 Herero überlebten nur 15.000 bis 20.000. Deutschland erkannte dieses Vorgehen 2021 offiziell als ersten Völkermord des 20. Jahrhunderts an.</em></p>",
+  "quelle": "Lothar von Trotha, Vernichtungsbefehl, 2. Oktober 1904. Zitiert nach: Wikipedia — Völkermord an den Herero und Nama. Gekürzt. Auslassungen mit [...] gekennzeichnet.",
+  "_meta": {
+    "wortanzahl": 93,
+    "quellentyp": "amtlich",
+    "aufbereitung": "gemischt",
+    "rekonstruktions_begruendung": "Original-Wortlaut des Vernichtungsbefehls vom 2. Oktober 1904 aus Wikipedia (Völkermord an den Herero und Nama) übernommen und gekürzt (Auslassungen mit [...]). Einleitung und historische Einordnung agent-generiert, um Kontextualisierung für R7 zu liefern.",
+    "artefakt_ref": ["pq-4-1"],
+    "tafelbild_knoten_abgedeckt": ["k4-3"],
+    "quellenkritische_impulse": [
+      "Woran erkennst du in Trothas Worten, dass er die Herero nicht als Menschen, sondern nur als Feinde sieht?",
+      "Wie hätten Herero-Frauen und -Kinder ihre Lage 1904 wohl selbst beschrieben?"
+    ],
+    "perspektive": "P1 Deutsche Reichsführung (Trotha) / P3 Kolonisierte (Herero als Opfer)",
+    "erarbeitbarkeits_check": "PASS — Vernichtungsbefehl macht koloniale Gewalt (k4-3) unmittelbar erschließbar. Wortlaut zeigt Entmenschlichung (nicht mehr Deutsche Untertanen), Gewaltandrohung (erschossen, schießen) und Einschluss von Frauen und Kindern. Einordnung quantifiziert Ausmaß (80.000 → 15.000–20.000 Überlebende).",
+    "trigger_flags": ["gewalt", "tod"]
+  }
+}

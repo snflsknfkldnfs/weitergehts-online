@@ -1,0 +1,59 @@
+{
+  "id": "aufgabe-4-6",
+  "typ": "freitext-code",
+  "frage": "Beurteile die Folgen des Wettlaufs für Afrika und für Europa.",
+  "material_referenz": ["mat-4-2", "mat-4-3", "mat-4-4", "mat-4-5"],
+  "loesung": ["Landraub", "Rivalität"],
+  "tipps": [
+    {
+      "stufe": 1,
+      "haertegrad": "kognitiv",
+      "text": "Öffne [[mat-4-5|das Tagebuch des Herero-Hirten]] (M5) für die Afrika-Seite und [[mat-4-2|Weltpolitik und Marokkokrisen]] (M2) für die Europa-Seite. Sammle zuerst die Fakten beider Seiten, bevor du beurteilst."
+    },
+    {
+      "stufe": 2,
+      "haertegrad": "strukturierend",
+      "text": "Die Folgen sind unterschiedlich, aber verbunden. In Afrika verloren Menschen Land, Arbeit und Leben ([[mat-4-5|Kavezeris Tagebuch]] M5 + [[mat-4-3|Trothas Befehl]] M3 + [[mat-4-4|das Foto]] M4). In Europa entstand durch den Streit um Kolonien Misstrauen zwischen den Großmächten ([[mat-4-2|Marokkokrisen]] M2). Dein Urteil soll beide Stränge nennen und miteinander verknüpfen."
+    },
+    {
+      "stufe": 3,
+      "haertegrad": "heuristisch",
+      "text": "Musterantwort: Der Wettlauf hatte zwei verbundene Folgen. In Afrika Landraub, Zwangsarbeit und Völkermord an den Herero. In Europa wurden Handelspartner zu Rivalen — die Marokkokrisen zeigten das Misstrauen. Deine Antwort sollte Begriffe wie Landraub/Völkermord (Afrika) und Rivalität/Marokkokrisen (Europa) verwenden und beide Seiten zusammen beurteilen, nicht gegeneinander."
+    }
+  ],
+  "feedback": [
+    {
+      "typ": "bestaetigung",
+      "text": "Beide Folgenstränge erkannt und miteinander verbunden. Der entscheidende analytische Schritt — Afrika und Europa nicht getrennt, sondern als zwei Gesichter derselben Weltpolitik zu sehen — ist die Kernerkenntnis der Mappe.",
+      "ebene": "analyse"
+    },
+    {
+      "typ": "korrektur",
+      "text": "Häufiger Fehler: Der Europa-Strang fehlt oder bleibt zu allgemein. Wer nur über Afrika schreibt, verpasst die zweite Folge. Prüfe [[mat-4-2|Weltpolitik und Marokkokrisen]] (M2) Absatz 4 — die Rivalität Deutschland-Frankreich ist die Europa-seitige Konsequenz.",
+      "ebene": "analyse"
+    },
+    {
+      "typ": "verknuepfung",
+      "text": "Dein Urteil baut auf allen vorherigen Aufgaben der Mappe auf: Pos 3 hat die Marokkokrisen in Reihenfolge gebracht (Europa-Eskalation), Pos 4 Trothas Befehl analysiert (Afrika-Gewalt auf dem Höhepunkt), Pos 5 Foto und Tagebuch verglichen (Afrika-Alltag und -Niederlage). Pos 6 zieht diese Stränge zu einem Urteil zusammen.",
+      "ebene": "analyse"
+    }
+  ],
+  "afb": "III",
+  "position": 6,
+  "punkte": 20,
+  "_meta": {
+    "bloom_level": 5,
+    "bloom_begruendung": "Beurteilen: SuS formulieren eine eigene Position zu zwei Folgensträngen (Afrika+Europa), stützen sie auf mindestens drei Materialien (mat-4-2/3/4/5) und beurteilen die analytische Verbindung der Stränge — L5 Bewerten mit Beleg und Stellungnahme, kein reines Zusammenfassen (L3) und kein Vergleich entlang Dimensionen (L4, bereits in Pos 5 abgedeckt).",
+    "teilfragen": [
+      "Was verlor die kolonisierte Bevölkerung in Afrika — und was geschah mit denen, die sich wehrten?",
+      "Warum wurden die europäischen Großmächte durch den Wettlauf um Kolonien zu Rivalen?",
+      "Wie hängen die Folgen in Afrika und Europa zusammen — ist der Wettlauf eine Geschichte oder zwei?"
+    ],
+    "erwartete_begriffe": ["Landraub", "Zwangsarbeit", "Völkermord", "Marokkokrisen", "Rivalität"],
+    "validierung_schwelle": 3,
+    "musterantwort": "Der Wettlauf um Kolonien hatte zwei Folgen, die zusammengehören. Für Afrika bedeutete er Landraub durch ungleiche Kaufverträge (siehe Kavezeris Tagebuch), Zwangsarbeit und schließlich den Völkermord an den Herero, den Trothas Vernichtungsbefehl 1904 auslöste. Für Europa bedeutete er, dass aus Handelspartnern Rivalen wurden: Die Marokkokrisen 1905 und 1911 zeigten, wie schnell Streit um Kolonien zu Misstrauen zwischen den Großmächten führte. Beide Folgen gehören zusammen, weil dieselbe Weltpolitik in Afrika Leid hinterließ und in Europa eine Rivalität, die bis zum Ersten Weltkrieg nachwirkte.",
+    "tb_knoten_aktiviert": ["k4-3", "k4-4"],
+    "k4_4_erstaktivierung": "Pos 6 ist die erste und einzige Aktivierung von k4-4 (Rivalität der Großmächte) als Primär-Knoten im gesamten Aufgabensatz. PROGRESSIONSPLAN-Intention: Pos 6 aktiviert k4-4 als Transfer nach vollständiger k4-1/k4-2/k4-3-Abdeckung.",
+    "trigger_flags_handling": "gewalt+tod+diskriminierung (Rückbezug auf mat-4-3/-4/-5) — Leitfrage sachlich (Beurteile die Folgen), keine Vergleichs-Heuristik Afrika-Leid-vs-Europa-Leid, Teilfrage 3 zielt auf analytische Verbindung statt auf Größenvergleich des Leids, Musterantwort schließt mit \u201Ezusammen beurteilen, nicht gegeneinander\u201C explizit gegen Aufrechnungs-Denken."
+  }
+}

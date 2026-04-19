@@ -1,0 +1,69 @@
+{
+  "id": "aufgabe-4-3",
+  "typ": "reihenfolge",
+  "frage": "Ordne die Schritte von der Weltpolitik zur Rivalität.",
+  "material_referenz": ["mat-4-2"],
+  "optionen": [
+    "Aus Handelspartnern sind Rivalen geworden.",
+    "Wilhelm II. reist nach Tanger und fordert Marokkos Unabhängigkeit.",
+    "Wilhelm II. ruft die Weltpolitik als neuen Kurs aus.",
+    "Deutschland schickt das Kanonenboot \u201EPanther\u201C vor Agadir."
+  ],
+  "loesung": [
+    "Wilhelm II. ruft die Weltpolitik als neuen Kurs aus.",
+    "Wilhelm II. reist nach Tanger und fordert Marokkos Unabhängigkeit.",
+    "Deutschland schickt das Kanonenboot \u201EPanther\u201C vor Agadir.",
+    "Aus Handelspartnern sind Rivalen geworden."
+  ],
+  "feedback": [
+    {
+      "typ": "bestaetigung",
+      "text": "Position 1: Die Weltpolitik ist das Programm — der Ausgangspunkt. Erst danach kommt der konkrete Streit mit Frankreich um Marokko.",
+      "ebene": "verstaendnis"
+    },
+    {
+      "typ": "bestaetigung",
+      "text": "Position 2: Die Tanger-Reise war die erste Marokkokrise. Wilhelm II. provozierte Frankreich direkt vor Ort.",
+      "ebene": "verstaendnis"
+    },
+    {
+      "typ": "bestaetigung",
+      "text": "Position 3: Der Panthersprung war die zweite Marokkokrise — sechs Jahre später und noch aggressiver (Kanonenboot statt Rede).",
+      "ebene": "verstaendnis"
+    },
+    {
+      "typ": "bestaetigung",
+      "text": "Position 4: Die Rivalität ist die Folge, nicht der Anfang. Sie entstand durch die beiden Krisen, nicht umgekehrt.",
+      "ebene": "verstaendnis"
+    },
+    {
+      "typ": "korrektur",
+      "text": "Häufige Vertauschung: Tanger-Reise und Panthersprung werden oft getauscht. Prüfe in [[mat-4-2|Weltpolitik und Marokkokrisen]] (M2) Absatz 2 — Tanger 1905, Panther 1911.",
+      "ebene": "verstaendnis"
+    }
+  ],
+  "tipps": [
+    {
+      "stufe": 1,
+      "haertegrad": "kognitiv",
+      "text": "Lies [[mat-4-2|Weltpolitik und Marokkokrisen]] (M2) noch einmal. Der Text ist chronologisch aufgebaut — Absatz 1 nennt den Kurswechsel, Absatz 2 die beiden Krisen, Absatz 4 die Folge."
+    },
+    {
+      "stufe": 2,
+      "haertegrad": "strukturierend",
+      "text": "Zwei Elemente nennen konkrete Orte (Tanger, Agadir). Eines davon gehört zu 1905, das andere zu 1911. Ein Element beschreibt den Ausgangspunkt (Programm), eines die Folge (Beziehungswandel)."
+    },
+    {
+      "stufe": 3,
+      "haertegrad": "heuristisch",
+      "text": "Frag dich bei jedem Paar: Was war Ursache, was Wirkung? Das Programm steht vor den Krisen. Die Beziehungs-Folge steht nach den Krisen."
+    }
+  ],
+  "afb": "II",
+  "position": 3,
+  "punkte": 10,
+  "_meta": {
+    "bloom_level": 3,
+    "bloom_begruendung": "Prozess-Reorganisation mit Ursache-Wirkung-Logik: SuS rekonstruieren die Kausalkette Programm → Eskalationskrise 1 → Eskalationskrise 2 → Beziehungswandel — L3 Anwenden einer Eskalations-Logik, nicht reines chronologisches Recall (Elemente tragen keine Jahreszahlen)."
+  }
+}

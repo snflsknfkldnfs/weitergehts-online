@@ -1,0 +1,39 @@
+{
+  "id": "mat-4-4",
+  "typ": "bildquelle",
+  "titel": "Gefangene Herero nach der Niederschlagung des Aufstands",
+  "position": 4,
+  "didaktische_funktion": "vertiefung",
+  "voraussetzung": ["mat-4-3"],
+  "ueberleitung_von": "Der Vernichtungsbefehl war kein leeres Wort. Ein Foto aus dieser Zeit zeigt, was er bedeutete.",
+  "sequenz_kontext": {
+    "vorher": {
+      "id": "mat-4-3",
+      "typ": "quellentext",
+      "kerninhalt": "Trothas Vernichtungsbefehl gegen die Herero"
+    },
+    "nachher": {
+      "id": "mat-4-5",
+      "typ": "tagebuch",
+      "kerninhalt": "Perspektive eines Herero-Hirten vor dem Aufstand"
+    }
+  },
+  "inhalt": "../../assets/img/deutscher-nationalismus-kolonialismus/img-4-2.jpg",
+  "bildunterschrift": "Foto aus Deutsch-Südwestafrika (heute Namibia), 1904 — nach der Niederschlagung des Herero-Aufstands durch deutsche Kolonialtruppen.",
+  "quelle": "Bundesarchiv / Wikimedia Commons. Historisches Foto, Deutsch-Südwestafrika, ca. 1904.",
+  "lizenz": "CC-BY-SA 3.0 DE",
+  "_meta": {
+    "wortanzahl": 15,
+    "aufbereitung": "echt",
+    "artefakt_ref": ["pb-4-2"],
+    "tafelbild_knoten_abgedeckt": ["k4-3"],
+    "perspektive": "P3 Kolonisierte Bevölkerung (Herero als Abgebildete) / P1 Deutsche Reichsführung (Fotograf = Täterperspektive)",
+    "quellenkritische_impulse": [
+      "Was siehst du auf dem Foto? Was sagt es über die Lage der Herero nach dem Aufstand?",
+      "Wer hat dieses Foto wohl aufgenommen — und wer sollte es sehen?",
+      "Welches Bild hätten die Herero selbst von sich gezeigt?"
+    ],
+    "erarbeitbarkeits_check": "PASS — Foto macht koloniale Gewalt (k4-3) visuell erfahrbar und konkretisiert mat-4-3 (Trothas Befehl) bildlich. Bildkritik-Impuls 2 fördert BQ-8 (Urheber + Adressat); Impuls 3 zwingt zur Gegen-Perspektive (P3 Herero). Bildunterschrift kontextualisiert Ort/Zeit/historischen Moment, beschreibt aber NICHT den sichtbaren Bildinhalt — SuS-Eigenleistung (Beschreiben → Deuten) bleibt intakt.",
+    "trigger_flags": ["gewalt"]
+  }
+}

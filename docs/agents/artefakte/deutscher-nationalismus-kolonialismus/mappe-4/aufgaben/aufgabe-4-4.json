@@ -1,0 +1,75 @@
+{
+  "id": "aufgabe-4-4",
+  "typ": "quellenkritik",
+  "frage": "Untersuche den Vernichtungsbefehl Schritt für Schritt.",
+  "material_referenz": ["mat-4-3"],
+  "w_fragen": [
+    {"schluessel": "wer", "frage": "Wer hat diesen Befehl verfasst?"},
+    {"schluessel": "wann_wo", "frage": "Wann und wo wurde der Befehl erlassen — und in welcher Lage?"},
+    {"schluessel": "quellengattung", "frage": "Was für eine Art Quelle ist dieser Text?"},
+    {"schluessel": "warum", "frage": "Warum hat Trotha den Befehl verfasst — was wollte er erreichen?"},
+    {"schluessel": "was_fehlt", "frage": "Welche Sichtweise fehlt in dieser Quelle?"}
+  ],
+  "loesung": {
+    "wer": "Generalleutnant Lothar von Trotha, Befehlshaber der deutschen Truppen in Deutsch-Südwestafrika.",
+    "wann_wo": "Am 2. Oktober 1904 in Deutsch-Südwestafrika (heute Namibia), nach der militärischen Niederschlagung des Herero-Aufstands.",
+    "quellengattung": "Eine amtliche Anordnung (Befehl) eines deutschen Militärführers — also eine Primärquelle aus der Täter-Perspektive.",
+    "warum": "Trotha wollte das Volk der Herero vernichten — der Befehl ordnete die Erschießung aller Herero an, auch von Frauen und Kindern.",
+    "was_fehlt": "Die Sicht der Herero selbst — Frauen, Kinder, Hirten kommen in dieser Quelle nicht zu Wort. Es ist die Sprache des Täters, nicht der Opfer."
+  },
+  "tipps": [
+    {
+      "stufe": 1,
+      "haertegrad": "kognitiv",
+      "text": "Lies [[mat-4-3|den Vernichtungsbefehl]] (M3) noch einmal. Schwierige Wörter: \u201EUntertanen\u201C = Bürger eines Reiches; \u201EWeiber\u201C = (veraltet) Frauen; \u201EVieh\u201C = Nutztiere (für die Herero damals Reichtum); \u201ESchutzgebiet\u201C (Titel) = amtliche Bezeichnung der deutschen Kolonie. Schreibe den Befehl in eigenen Worten auf, bevor du die fünf Fragen beantwortest."
+    },
+    {
+      "stufe": 2,
+      "haertegrad": "strukturierend",
+      "text": "Arbeite die Fragen der Reihe nach ab. Die ersten drei (Wer, Wann/Wo, Quellengattung) findest du in der Einleitung und der Quellenangabe. Die letzten beiden (Warum, Was fehlt) erschließt du aus dem Befehlstext selbst und aus den Zahlen am Ende."
+    },
+    {
+      "stufe": 3,
+      "haertegrad": "heuristisch",
+      "text": "Eine amtliche Quelle zeigt nur die Sicht der Handelnden. Frag dich bei jeder Antwort: Wer schreibt — und wer kommt nicht zu Wort? Diese Lücke ist selbst eine Information über die Quelle."
+    }
+  ],
+  "feedback": [
+    {
+      "typ": "bestaetigung",
+      "text": "Wer: Trotha als Generalleutnant + Befehlshaber benannt — beides wichtig. Der militärische Rang zeigt: Es war kein Einzelner, sondern die deutsche Kolonialmacht selbst, die so handelte.",
+      "ebene": "analyse"
+    },
+    {
+      "typ": "hinweis",
+      "text": "Wann/Wo: Datum (2. Oktober 1904) und Ort (Deutsch-Südwestafrika) sind das Mindeste. Der Anlass — die Niederschlagung des Aufstands — macht deutlich, dass der Befehl NACH dem militärischen Sieg kam, also kein Verteidigungsmittel war.",
+      "ebene": "analyse"
+    },
+    {
+      "typ": "hinweis",
+      "text": "Quellengattung: \u201EBefehl\u201C reicht nicht — die Einordnung als amtliche Primärquelle aus Täter-Perspektive ist entscheidend. Eine Statistik oder ein Bericht hätte einen anderen Quellenwert.",
+      "ebene": "analyse"
+    },
+    {
+      "typ": "bestaetigung",
+      "text": "Warum: Die Absicht steht im Wortlaut selbst — \u201Ejeder Herero ... erschossen\u201C, \u201Ekeine Weiber und keine Kinder\u201C. Das ist nicht Krieg, sondern systematische Vernichtung. Der Befehl spricht offen aus, was die Kolonialmacht plante.",
+      "ebene": "analyse"
+    },
+    {
+      "typ": "verknuepfung",
+      "text": "Was fehlt: Die Stimmen der Herero selbst. [[mat-4-5|Das Tagebuch von Kavezeri]] (M5) gibt diese Gegen-Perspektive — eine Quelle, in der ein Herero erzählt, wie er das Land erlebt. Erst beide Quellen zusammen ergeben das vollständige Bild.",
+      "ebene": "analyse"
+    }
+  ],
+  "afb": "II-III",
+  "position": 4,
+  "punkte": 15,
+  "_meta": {
+    "bloom_level": 4,
+    "bloom_begruendung": "Quellenanalyse: SuS bestimmen Urheber, Entstehungskontext und Quellengattung (äußere Quellenkritik) und analysieren systematisch Intention und Perspektivität (innere Quellenkritik) — L4 Analyse, vorbereitet auf L5-Bewertung in Pos 6.",
+    "w_fragen_auswahl": "Befehl/amtliche Anordnung → Wer + Wann/Wo + Quellengattung + Warum + Was fehlt (3 äußere + 2 innere, QK-2 ✓)",
+    "quellentyp": "ueberrest",
+    "finding_1_scaffolding": "Tipp 1 enthält Glossar (Untertanen/Weiber/Vieh/Schutzgebiet) + Paraphrase-Impuls VOR W-Fragen (PFLICHT laut PROGRESSIONSPLAN Konstruktionskontext 4)",
+    "trigger_flags_handling": "gewalt+tod — Fragestellungen sachlich, keine Identifikations-Impulse (\u201EStell dir vor, du wärst...\u201C), Wortlaut-Zitate in Feedback nur soweit für Analyse zwingend nötig"
+  }
+}

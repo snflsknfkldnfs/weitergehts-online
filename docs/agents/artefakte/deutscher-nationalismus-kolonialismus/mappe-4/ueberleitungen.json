@@ -1,0 +1,25 @@
+{
+  "mappe": "4",
+  "ueberleitungen": [
+    {
+      "von": "mat-4-1",
+      "nach": "mat-4-2",
+      "text": "Du hast in der Karikatur gesehen: 1890 übernahm Wilhelm II. das Steuer von Bismarck. Doch wohin steuerte er das Kaiserreich?"
+    },
+    {
+      "von": "mat-4-2",
+      "nach": "mat-4-3",
+      "text": "Du hast erfahren, wie der Wettlauf um Kolonien Deutschland und Frankreich in zwei Marokkokrisen führte. Doch was bedeutete dieser Wettlauf für die Menschen, die in den Kolonien lebten?"
+    },
+    {
+      "von": "mat-4-3",
+      "nach": "mat-4-4",
+      "text": "Du hast Trothas Befehl gelesen. Seine Worte waren kein Bluff — ein Foto aus dieser Zeit zeigt, was die Niederschlagung konkret bedeutete."
+    },
+    {
+      "von": "mat-4-4",
+      "nach": "mat-4-5",
+      "text": "Du hast auf dem Foto gesehen, was nach dem Aufstand aus den Herero wurde. Doch wie erlebten sie die Jahre davor — bevor sie keinen anderen Ausweg mehr sahen?"
+    }
+  ]
+}

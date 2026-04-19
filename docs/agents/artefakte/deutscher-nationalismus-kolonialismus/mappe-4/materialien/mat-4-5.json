@@ -1,0 +1,30 @@
+{
+  "id": "mat-4-5",
+  "typ": "tagebuch",
+  "titel": "Mein Land wird fremd — ein Herero-Hirte vor dem Aufstand",
+  "position": 5,
+  "didaktische_funktion": "sicherung",
+  "voraussetzung": ["mat-4-4"],
+  "ueberleitung_von": "Das Foto hat gezeigt, was nach dem Aufstand geschah. Doch wie erlebten die Herero die Jahre davor — bevor sie keinen anderen Ausweg mehr sahen?",
+  "sequenz_kontext": {
+    "vorher": {
+      "id": "mat-4-4",
+      "typ": "bildquelle",
+      "kerninhalt": "Foto gefangener Herero nach der Niederschlagung"
+    },
+    "nachher": null
+  },
+  "inhalt": "<p><em>Fiktiver Tagebucheintrag. Ein junger Herero-Hirte namens Kavezeri erzählt 1903 aus dem Gebiet um Okahandja — ein Jahr bevor sich die Herero gegen die deutsche Kolonialherrschaft erheben werden.</em></p><p><em>Unser Dorf bei Okahandja, zur Trockenzeit</em></p><p>Heute kam mein Vater vom Handelsposten zurück. Sein Gesicht war dunkel. Er sagte: Die Weißen haben den Zaun verschoben. Wieder.</p><p>Die Weide am Fluss gehört jetzt einem deutschen Siedler. Mein Vater sagt, sie haben ein Papier, das sagt: Das Land sei ihres.</p><p>Ich verstehe das nicht. Mein Großvater ist auf diesem Land geboren. Wir kennen jeden Baum, jede Wasserstelle. Die Deutschen kennen nichts davon.</p><p>Letzte Woche musste mein älterer Bruder für die Deutschen Steine schleppen. Er durfte nicht nein sagen. Seine Hände waren aufgerissen. Er sprach kein Wort.</p><p>Samuel Maharero hat gesprochen. Manche Ältere nicken. Andere schweigen. Mein Vater sagt: Wenn man einem Hirten alle Weiden nimmt, bleibt ihm nichts.</p><p><em>Was Kavezeri erlebte, wurde von deutschen Siedlern und Verwaltern systematisch vorangetrieben: Landraub durch ungleiche Kaufverträge und erzwungene Arbeit. Ein Jahr später, 1904, erhoben sich die Herero unter Samuel Maharero. Die Antwort der deutschen Kolonialmacht war der Vernichtungsbefehl Generalleutnant von Trothas.</em></p>",
+  "quelle": "Fiktiver Tagebucheintrag, basierend auf typischen Erfahrungen der Herero-Bevölkerung vor dem Aufstand 1904. Figur und Erlebnisse sind erfunden, historischer Kontext ist belegt. Quellen: Wikipedia — Völkermord an den Herero und Nama; Samuel Maharero; Geschichte Namibias.",
+  "_meta": {
+    "wortanzahl": 110,
+    "quellentyp": "tagebuch",
+    "aufbereitung": "rekonstruiert",
+    "rekonstruktions_begruendung": "Fiktiver Tagebucheintrag. Keine authentischen Ego-Dokumente von Herero-Hirten aus dieser Zeit überliefert. Rekonstruktion auf Basis historisch belegter Phänomene: Landraub durch ungleiche Siedler-Kaufverträge, Zwangsarbeit von Herero-Jugendlichen, Samuel Mahareros Rolle als politischer Anführer mit Sitz in Okahandja (1890–1904). Figur Kavezeri didaktisch konstruiert, Name Herero-lautlich plausibel.",
+    "artefakt_ref": ["pt-4-1"],
+    "tafelbild_knoten_abgedeckt": ["k4-3"],
+    "perspektive": "P3 Kolonisierte Bevölkerung (Herero-Hirte Kavezeri, Okahandja 1903 — vor dem Aufstand)",
+    "erarbeitbarkeits_check": "PASS — Tagebuch macht k4-3 (Koloniale Ausbeutung und Gewalt) aus Opferperspektive erfahrbar: Landraub + Zwangsarbeit als erlebte Entrechtung, Maharero-Figur als ankündigender Widerstand. Erzählerstimme-Rahmen v3.6-konform: Kavezeri spricht nur über Erlebtes (Vaters Bericht, Bruders Hände, Dorfstimmung). Systemisches Wissen (Strategie des Landraubs, Vernichtungsbefehl als spätere Antwort) wandert in die kursive Einordnung nach dem Figur-Text. SuS können die Logik des Aufstands 1904 aus Hirten-Perspektive nachvollziehen.",
+    "trigger_flags": ["diskriminierung", "gewalt"]
+  }
+}

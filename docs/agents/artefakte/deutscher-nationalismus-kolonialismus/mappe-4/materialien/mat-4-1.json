@@ -1,0 +1,34 @@
+{
+  "id": "mat-4-1",
+  "typ": "bildquelle",
+  "titel": "Der Lotse geht von Bord — ein neuer Kurs beginnt",
+  "position": 1,
+  "didaktische_funktion": "einstieg",
+  "voraussetzung": [],
+  "ueberleitung_von": null,
+  "sequenz_kontext": {
+    "vorher": null,
+    "nachher": {
+      "id": "mat-4-2",
+      "typ": "darstellungstext",
+      "kerninhalt": "Weltpolitik unter Wilhelm II. und die Marokkokrisen als Folge"
+    }
+  },
+  "inhalt": "../../assets/img/deutscher-nationalismus-kolonialismus/img-4-1.jpg",
+  "bildunterschrift": "Englische Karikatur aus der Zeitschrift <em>Punch</em>, 29. März 1890. Sie zeigt den alten Reichskanzler Otto von Bismarck, wie er ein Schiff verlässt — oben an der Reling steht der junge Kaiser Wilhelm II. und schaut zu. Der Titel lautet: <em>Dropping the Pilot</em> („Der Lotse geht von Bord\u201c). Bismarck hatte das Kaiserreich vorsichtig durch die europäische Politik gesteuert. Wilhelm II. wollte einen anderen Kurs: Deutschland sollte <strong>Weltpolitik</strong> (aggressive Außenpolitik mit dem Ziel, Deutschland zur Weltmacht zu machen) betreiben und überall auf der Welt mitbestimmen. Was könnte der Zeichner mit dem Bild des verlassenen Schiffs meinen?",
+  "quelle": "Sir John Tenniel, Punch, 29. März 1890. Wikimedia Commons.",
+  "lizenz": "Public Domain",
+  "_meta": {
+    "wortanzahl": 94,
+    "aufbereitung": "echt",
+    "artefakt_ref": ["pb-4-1"],
+    "tafelbild_knoten_abgedeckt": ["k4-1"],
+    "perspektive": "P1 Deutsche Reichsführung (Wilhelm II.)",
+    "quellenkritische_impulse": [
+      "Was könnte der Zeichner mit dem Bild des verlassenen Schiffs meinen?",
+      "Wer hat diese Karikatur gezeichnet — ein deutscher oder britischer Beobachter? Was sagt das über die Perspektive aus?"
+    ],
+    "erarbeitbarkeits_check": "PASS — Karikatur zeigt Machtwechsel Bismarck→Wilhelm II. und eröffnet den Begriff Weltpolitik. SuS können den Kurswechsel visuell erschließen.",
+    "trigger_flags": []
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "mat-4-2",
+  "typ": "darstellungstext",
+  "titel": "Weltpolitik und Marokkokrisen — Deutschland provoziert Europa",
+  "position": 2,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": ["mat-4-1"],
+  "ueberleitung_von": "Die Karikatur hat gezeigt: Nach Bismarcks Entlassung 1890 übernahm Kaiser Wilhelm II. das Steuer. Doch wohin steuerte er das Kaiserreich?",
+  "sequenz_kontext": {
+    "vorher": {
+      "id": "mat-4-1",
+      "typ": "bildquelle",
+      "kerninhalt": "Karikatur Dropping the Pilot: Machtwechsel Bismarck→Wilhelm II., Begriff Weltpolitik eingeführt"
+    },
+    "nachher": {
+      "id": "mat-4-3",
+      "typ": "quellentext",
+      "kerninhalt": "Vernichtungsbefehl von Trothas — was Kolonialherrschaft konkret bedeutete"
+    }
+  },
+  "inhalt": "<p>Wilhelm II. wollte einen neuen Kurs. Deutschland sollte überall mitreden — in Afrika, in Asien, auf den Meeren. Er nannte das <strong>Weltpolitik</strong> (aggressive Außenpolitik mit dem Ziel, Deutschland zur Weltmacht zu machen).</p><p>Das führte zu Streit mit Frankreich. Frankreich wollte Marokko in Nordafrika kontrollieren. Deutschland wollte das verhindern. 1905 reiste Wilhelm II. nach Tanger und forderte dort die Unabhängigkeit Marokkos. 1911 schickte Deutschland sogar das Kanonenboot „Panther“ vor die Küste von Agadir.</p><p>Zweimal drohte wegen eines Kolonialstreits ein Krieg: die <strong>Marokkokrisen</strong> (Konflikte 1905 und 1911 um Einfluss in Marokko). Beide Male verhandelten die Großmächte am Ende — ein Krieg wurde vermieden.</p><p>Doch das Misstrauen war gewachsen. Aus Handelspartnern waren Rivalen geworden. Der Streit um Kolonien spaltete Europa immer tiefer.</p>",
+  "quelle": "Eigene Darstellung auf Basis der Sachanalyse. Quellen: Wikipedia — Erste Marokkokrise, Zweite Marokkokrise, Weltpolitik (Deutsches Kaiserreich).",
+  "_meta": {
+    "wortanzahl": 119,
+    "aufbereitung": "rekonstruiert",
+    "rekonstruktions_begruendung": "Darstellungstext ist agent-generiert auf Basis der Sachanalyse (Weltpolitik Wilhelms II., Tanger-Krise 1905, Panthersprung 1911). Keine wörtliche Originalquelle, da Sachtext-Format.",
+    "artefakt_ref": [],
+    "tafelbild_knoten_abgedeckt": ["k4-1", "k4-2", "k4-4"],
+    "perspektive": "P1 Deutsche Reichsführung / P2 Frankreich (implizit als Gegenspieler)",
+    "erarbeitbarkeits_check": "PASS — Absatz 1 erarbeitet k4-1 Weltpolitik (Definition inline). Absätze 2+3 erarbeiten k4-2 Marokkokrisen (beide Krisen 1905/1911 benannt, Fachbegriff-Definition inline). Absatz 4 erarbeitet k4-4 Rivalität (Misstrauen, Rivalen, Spaltung Europas).",
+    "trigger_flags": []
+  }
+}
