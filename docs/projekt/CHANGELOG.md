@@ -4,6 +4,50 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-19 — F0e Didaktisches Audit ABGESCHLOSSEN (F0e.2 + F0e.2b + F0e.3 + F0e.4)
+
+**Phase:** F0e Didaktisches Audit — Ausfuehrungs-Chain (Dual-Spawn → Konsolidierung → Matrix v2 → Batch-4-Scope-Recommendation)
+**Modus:** PM-Cowork (Claude Opus) + 2 Subagent-Spawns (Alpha + Beta Dual-Auditor, `general-purpose`)
+**Session:** PM-Cowork Session 33 (Post-Compaction-Continuation)
+
+**Trigger:** User-Direktive "Full L2→L3→L4→F0e.5 commit chain" nach LP-QM-Fundamentartefakt-Build. Nach L4-Commit (ec3f971) vier sequentielle Go-Gates: F0e.2 Dual-Auditor-Spawn, F0e.2b Konsolidierung, F0e.3 Matrix v2, F0e.4 Batch-4-Scope-Recommendation.
+
+**Durchgefuehrt:**
+
+**F0e.2 Dual-Subagent-Audit-Run (Task #27/#28):**
+- Alpha-Auditor + Beta-Auditor parallel gespawnt (beide `general-purpose`, kein Cross-Reading).
+- Alpha-Output `F0e_BEFUND_DIDAKTIK_alpha.md` (302 Z.): 3 F-RA6-alpha-NN Findings, PQI-1-Schwerpunkt auf aufgabe-3-3 Deploy-Luecke (alpha-02), Mappe-4 nicht deployed (alpha-01), Register-Drift Mappe 3 (alpha-03). 9 A-Klasse-Items vorlaeufig.
+- Beta-Output `F0e_BEFUND_DIDAKTIK_beta.md` (371 Z.): 60 Findings re-klassifiziert (4 PQI-1, 14 PQI-2, 42 PQI-3), 4 neue F-RA6-beta Items, 13 v1.3-Delta re-mapped, 17 R0-FINAL+ re-mapped. Top-3 PQI-1: aufgabe-3-3-Luecke (beta-04 ≡ alpha-02 ≡ F-RA2-03), Genozid-Cliffhanger (beta-01), Pool-Reset-Bug (F-RA3-01). Beta-03 PQI-1: Ueberleitung mat-3-4→3-5 Bismarck-Falschaussage.
+
+**F0e.2b Befund-Konsolidierung Alpha+Beta (Task #32):**
+- 6 Verifikations-Stichproben in Source-Repo durchgefuehrt, 100% bestaetigt (Cliffhanger-Text, aufgabe-3-3-Luecke, Bismarck/Leopold-Inkonsistenz, erfundene Kompetenz-IDs GPG7_LB2_K_04/05, mat-3-6 als Primaer-Referenz, aufgabe-3-3 Source-Typ "begruendung").
+- Diskrepanz-Resolution: (a) F-RA1-05/06 Alpha PQI-1 vs Beta PQI-3 → Alpha uebernommen (LP-QM-Pflicht-Argument); (b) F-RA4-01 unterschiedliche Content-Interpretation → Split in Hallu-Lesart (PQI-1) + Wartburgfest-Lesart (PQI-2); (c) F-RA4-10 ID-Kollision geloest (Alpha-Hefteintrag behalten, Beta-M4-Retro als OOS); (d) F-RA5-09 Alpha streng (DaZ D6=1) uebernommen.
+- `F0e_BEFUND_DIDAKTIK.md` v1.0 geschrieben (8 Sektionen): Executive Summary, Konvergenz-Matrix, Diskrepanz-Resolution, Patterns, A-Klasse-Empfehlung A1-A9, OOS/Verify-Pending, Verankerungs-Hinweise, Meta.
+- **9 PQI-1 konsolidiert:** 3 KONV (F-RA6-01 Cliffhanger, F-RA6-02 aufgabe-3-3, F-RA3-01 Pool-Reset-Bug), 6 ALPHA-unique (F-RA1-05, F-RA1-06, F-RA4-02, F-RA4-04, F-RA4-10, F-RA5-09), 2 BETA-unique (F-RA6-05 Bismarck/Leopold, F-RA4-01-Hallu).
+
+**F0e.3 Matrix v2 PQI-Integration (Task #29):**
+- `PRE_PILOT_TRIAGE_MATRIX_v2.md` v2.0 geschrieben (10 Sektionen): 3-Achsen-Klassifikation (Triage × PQI × Konvergenz), 5 neue F-RA6-Findings, F-RA-bestehende Update-Inventur, OOS-Items, Verify-Pending-Items, Klasse-A-Konsolidierung PQI-sortiert (A1-A21), Entscheidungs-Matrix mit 4 Pfaden, Empfehlung, Delta zu v1, Naechste Schritte.
+- **Kritische Einsicht:** Matrix v1 Minimal-Pre-Pilot deckt nur 1 von 9 konsolidierten PQI-1 Items ab → didaktisch unzureichend. Neuer Pfad P-DIDAKTIK-MIN (1 Tag, 6 von 9 PQI-1) ersetzt v1-Minimal.
+
+**F0e.4 Batch-4-Scope-Recommendation v2 (Task #30):**
+- Matrix aktualisiert auf v2.1 durch Anhaengen §11-§13 (Pfad-Benennung F0a/F0b/F0c, Aufwand-Re-Kalibrierung, Trade-off-Tabelle mit 9 Dimensionen, Go/No-Go-Kriterien pro Pfad, Post-Pilot-Follow-up-Listen, Pflicht-Verankerung A1-A6 + A-PROZ 1-5 nicht-verhandelbar, Empfehlung, explicit User-Decision-Prompt mit 4 Fragen, Delta-Tabelle v1/v2.0/v2.1).
+- **Primaer-Empfehlung F0b Full-Didaktik** (2-3 Tage) ersetzt v2.0-Empfehlung P-DIDAKTIK-MIN. Begruendung: F0a laesst A8 Hallu-Hard-Gate offen (Assembly-Regressions-Risiko), A20 Sprach-Gate/Glossar offen (DaZ-Subgruppe unversorgt), A21 Coverage-Beleg offen (Pilot-Auswertung braucht auditierbares Perspektiv-Inventar).
+- **Fallback-Empfehlung: F0a + erzwungen A8** bei hartem Zeitdruck (~1.5 Tage).
+- **Nicht empfohlen: F0c** (over-invest; Pipeline-Items gehoeren in v3.12-Release-Konsolidierung, nicht Pre-Pilot).
+
+**Architektonische Konsequenzen:**
+- Pre-Pilot-Triage hat jetzt 2D-Klassifikations-System (Trigger × PQI). Blind-Spot "stabile didaktische Defekte shippen in jedem Run mit" geschlossen.
+- Didaktische Verantwortbarkeit des Pilots wird an konkrete PQI-1-Item-Liste (A1-A6 + optional A8/A20/A21) gebunden, nicht an Aufwand allein.
+- Matrix v2.1 ist User-Entscheidungs-ready: 4 Fragen → Pfad-Selektion in <5 Min.
+
+**Bewusst nicht durchgefuehrt:**
+- KEIN Matrix v1→v2.0 File-Rename — v2 als separates File, v1 bleibt als Historie-Referenz.
+- KEIN Pilot-Start in dieser Session — blockiert durch User-Entscheidung Batch-4-Scope.
+
+**Naechster Schritt:** F0e.5-Commit-Freigabe durch User (Host-MCP Git-Plan, 5-Stufen-Workflow). Bundle: 4 neue Artefakte (`F0e_BEFUND_DIDAKTIK.md`, `F0e_BEFUND_DIDAKTIK_alpha.md`, `F0e_BEFUND_DIDAKTIK_beta.md`, `PRE_PILOT_TRIAGE_MATRIX_v2.md`) + `STATUS.md` + `CHANGELOG.md`. Danach User-Entscheidung Batch-4-Scope F0a/F0b/F0c.
+
+---
+
 ## 2026-04-19 — LP-QM-Fundamentartefakt v1.0 erstellt + F0e-Chain auf LP-QM umgestellt (Phase LP-QM L1-L4)
 
 **Phase:** F0e Didaktisches Audit — Fundamentartefakt-Build (LP-QM L1 Framework → L2 Befuellung → L3 Review+Q-Gates+Matrix → L4 F0e-Integration)
