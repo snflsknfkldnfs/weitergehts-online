@@ -371,6 +371,41 @@ PY
 fi
 
 # ------------------------------------------------------------------
+# DEPLOY-07: Source-Deploy-Parity (Hash-Vergleich, F0b A1.9)
+# Ruft tools/source-deploy-parity.sh (Caption-Parity, lokal vorhanden).
+# Bei MATCH=no: FAIL mit Diagnose. Wenn ein optionaler Generator-Hash-Check
+# (escape-game-generator/tools/source-deploy-parity.sh) verfuegbar ist,
+# wird zusaetzlich ein SHA256-Vergleich zwischen Source und data.json gefahren.
+# ------------------------------------------------------------------
+PARITY_SCRIPT="$SCRIPT_DIR/source-deploy-parity.sh"
+if [ -x "$PARITY_SCRIPT" ]; then
+  PARITY_OUT="$("$PARITY_SCRIPT" "$GAME_ID" 2>&1 || true)"
+  PARITY_RC=$?
+  if echo "$PARITY_OUT" | grep -q "^✅ PASS"; then
+    report "DEPLOY-07" "PASS" "Caption/Quellen-Parity: ${PARITY_OUT##*$'\n'}"
+  elif echo "$PARITY_OUT" | grep -q "^❌ FAIL"; then
+    DRIFT_LINE="$(echo "$PARITY_OUT" | grep "^❌ DRIFT" | head -1)"
+    report "DEPLOY-07" "FAIL" "Source-Deploy-Drift: ${DRIFT_LINE:-siehe Output}"
+  else
+    report "DEPLOY-07" "FAIL" "Parity-Script unerwartet: ${PARITY_OUT##*$'\n'}"
+  fi
+else
+  report "DEPLOY-07" "FAIL" "tools/source-deploy-parity.sh nicht ausfuehrbar"
+fi
+
+# Optional: SHA256-Hash-Check via Generator-Repo-Tool
+GEN_HASH_TOOL="${ESCAPE_GAME_GENERATOR_ROOT:-$HOME/escape-game-generator}/tools/source-deploy-parity.sh"
+if [ -x "$GEN_HASH_TOOL" ]; then
+  HASH_OUT="$(WEITERGEHTS_ONLINE_ROOT="$REPO_ROOT" "$GEN_HASH_TOOL" "$GAME_ID" 2>&1 || true)"
+  if echo "$HASH_OUT" | grep -q "^MATCH=yes"; then
+    SRC_SHA="$(echo "$HASH_OUT" | awk -F= '/^SOURCE_SHA256/{print $2}')"
+    report "DEPLOY-07-SHA" "PASS" "SOURCE_SHA256=${SRC_SHA:0:12}..."
+  else
+    report "DEPLOY-07-SHA" "FAIL" "Hash-Drift: $(echo "$HASH_OUT" | tr '\n' ' ' | head -c 200)"
+  fi
+fi
+
+# ------------------------------------------------------------------
 # Gesamt-Urteil + Q-GATE-LOG (P0-A1 / F-RA1-05)
 # ------------------------------------------------------------------
 echo "---"
