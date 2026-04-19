@@ -1,0 +1,54 @@
+{
+  "batch": "F0b-CC-Handoff-v1",
+  "completed": {
+    "A1": [],
+    "A2": [],
+    "A3": [],
+    "A4": []
+  },
+  "failed": [
+    {
+      "task": "ALL",
+      "reason": "HANDOFF_STRUKTURFEHLER: Referenced escape-game-generator/ repo does not exist. Alle Pflicht-Dateien aus HANDOFF (F0B_PRIMING_INCLUDE.md, sprachniveau_include_registry.json, trigger_keywords.json, perspektiv_enum.json, kolonial_terminologie_blacklist.json, wortschatz_r7_core.json) sind nicht im Filesystem vorhanden. HANDOFF referenziert Pfade /Users/paulad/weitergehts.online/escape-game-generator/*, aber das Repo existiert nur als /Users/paulad/weitergehts.online/weitergehts-online/. Auch in weitergehts-online/docs/{agents,architektur}/ fehlen die genannten Dateien. Execution BLOCKED ohne PM-Clarification ueber korrekte Pfade + Status der Quellen-Artefakte."
+    }
+  ],
+  "skipped": [
+    {
+      "task": "A1.1-A1.10",
+      "reason": "Dependency missing: trigger_keywords.json, kolonial_terminologie_blacklist.json, wortschatz_r7_core.json, perspektiv_enum.json nicht vorhanden"
+    },
+    {
+      "task": "A2.1-A2.6",
+      "reason": "Dependency missing: perspektiv_enum.json nicht vorhanden fuer Schema-Validierung"
+    },
+    {
+      "task": "A3.1",
+      "reason": "Engine-File escape-engine.js nicht lokalisiert (kein escape-game-generator/ repo)"
+    },
+    {
+      "task": "A4.1-A4.2",
+      "reason": "F0B_PRIMING_INCLUDE.md + sprachniveau_include_registry.json nicht vorhanden"
+    }
+  ],
+  "notes": [
+    "HANDOFF v1.md Zeile 5-6 spezifiziert zwei Repos: '(A) Generator-Repo escape-game-generator/, (B) Live-Site-Repo weitergehts-online/' — (A) existiert physisch nicht.",
+    "Find-Scan ergab: /Users/paulad/weitergehts.online/ enthaelt kein escape-game-generator/ subdirectory.",
+    "Alternate-Search in weitergehts-online/docs/{agents,architektur}/ fand keine der 6 Pflicht-Config-Files aus HANDOFF §KONTEXT-BLOCK Zeile 13-18.",
+    "Annahme 1: PM hat Quellen-Artefakte noch nicht committed/pushed in weitergehts-online repo.",
+    "Annahme 2: HANDOFF-Pfade sind veraltet und referenzieren falsches Repo-Layout.",
+    "Recommended Recovery: PM klaert Repo-Layout + Status von F0B_PRIMING_INCLUDE.md / Registry / Configs, dann Re-Handoff mit korrigierten Pfaden.",
+    "Interop-Learnings §4 (Pfad-Assertion-Regel): 'Jeder Pfad im Handoff muss mit git ls-files | grep <path> verifiziert sein vor Handoff-Commit' — HANDOFF verletzt diese Regel."
+  ],
+  "artefakte": {
+    "tools": [],
+    "schemata": [],
+    "engine_patches": []
+  },
+  "commits": [],
+  "hash_check": {
+    "f0b_priming_include_sha256": "FILE_NOT_FOUND",
+    "matches_registry": false,
+    "registry_status": "FILE_NOT_FOUND"
+  },
+  "next_check": "PM-Clarification: Repo-Layout + Quellen-Artefakt-Status"
+}

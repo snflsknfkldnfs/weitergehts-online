@@ -1,0 +1,96 @@
+Du bist Claude Code (CC), Ausfuehrungs-Instanz. Dieser Run ist headless (-p) und soll
+die Task-Blocks A1-A4 aus HANDOFF_CC_F0b_v1.md strikt abarbeiten. PM-Ownership +
+Content-Generierung sind OUT OF SCOPE (siehe NICHT-ZIELE im HANDOFF).
+
+====================== PFLICHT-LEKTUERE (Vorab, in dieser Reihenfolge) ======================
+
+1. /Users/paulad/weitergehts.online/weitergehts-online/docs/projekt/HANDOFF_CC_F0b_v1.md
+   — kompletter Auftrag. DIESER PROMPT ist nur Begleit-Rahmen, der HANDOFF ist SSoT.
+2. /Users/paulad/weitergehts.online/weitergehts-online/docs/projekt/CC_COWORK_INTEROP_LEARNINGS.md
+   §1 Pre-Flight, §2.0 Modi, §4 Handoff-Template, §7 Recovery.
+3. /Users/paulad/escape-game-generator/agents/_includes/F0B_PRIMING_INCLUDE.md
+   — inhaltliche Spezifikation aller Invarianten.
+4. /Users/paulad/escape-game-generator/architektur/sprachniveau_include_registry.json
+   — canonical_hash_sha256 + Konsumenten-Liste (22 Agent-Prompts).
+5. /Users/paulad/escape-game-generator/architektur/trigger_keywords.json
+6. /Users/paulad/escape-game-generator/architektur/perspektiv_enum.json
+7. /Users/paulad/escape-game-generator/architektur/kolonial_terminologie_blacklist.json
+8. /Users/paulad/escape-game-generator/architektur/wortschatz_r7_core.json
+
+====================== ARBEITSSCOPE ======================
+
+Generator-Repo (Primaer-Ablage fuer A1 + A2 + A3 + A4):
+  /Users/paulad/escape-game-generator/
+
+Live-Site-Repo (Sekundaer, nur wo HANDOFF explizit nennt — A1.9 tools/deploy-check.sh
+Erweiterung liegt bereits in weitergehts-online/tools/deploy-check.sh):
+  /Users/paulad/weitergehts.online/weitergehts-online/
+
+Scripts: chmod +x + Shebang + Exit-Code 0 PASS / 1 FAIL / 2 Script-Bug.
+Schemata: JSON-Schema Draft 2020-12, Backwards-Compatible wo moeglich.
+Engine-Fix: escape-engine.js:2814 + tests/engine.hefteintrag-nested.test.js.
+Marker-Tag-Kanon A4: nur Pruefen + Berichten, NICHT Prompts editieren.
+
+====================== AUSFUEHRUNGS-PROTOKOLL ======================
+
+Pro Task-Block:
+1) Artefakt(e) erzeugen / editieren. Bei Schemata: `ajv compile`-Rauschtest
+   oder aequivalent, Syntax-Validierung vor Abschluss.
+2) Script-Dry-Run gegen vorhandenen Beispiel-Scope aus Repo
+   (empfohlen: `escape-games/deutscher-nationalismus-kolonialismus` — existiert,
+   Testrun-Artefakt, bietet realistische Fixture). Bei Tool ohne
+   Lauffaehigkeit wegen fehlender Input-Daten: Dry-Run ueberspringen + in
+   Rueckmeldung.notes[] vermerken.
+3) Kurzer Self-Check (Zeilen-Zaehler, Schema-Validitaet, rauscharm).
+4) In JSON-Rueckmeldung eintragen (siehe Rueckmelde-Schema unten).
+
+Bei Hindernissen (fehlende Abhaengigkeiten, unklare Vertrags-Spec, Konflikt mit
+bestehender Infrastruktur): STOP, kein Workaround. Trag den Block als `failed`
+oder `skipped` in die Rueckmeldung + `notes[]` mit Begruendung. Kein stiller
+Patch an PM-Ownership-Artefakten (Vertraege, Registry, Priming-Include).
+
+Git-Commits: Nutze den etablierten Commit-Workflow (GIT_WORKFLOW_HOST_MCP.md).
+Ein sauberer tranchenweiser Commit pro Task-Block (A1, A2, A3, A4) oder eine
+konsolidierte Tranche ist akzeptabel — entscheide pragmatisch.
+
+====================== JSON-RUECKMELDE-PROTOKOLL (final) ======================
+
+Am Ende des Runs: Schreibe EINE Datei
+  /Users/paulad/weitergehts.online/weitergehts-online/docs/projekt/cc_responses/response_f0b_a1-a4.json
+mit folgendem Schema (siehe HANDOFF §RUECKMELDE-PROTOKOLL):
+
+{
+  "batch": "F0b-CC-Handoff-v1",
+  "completed":  { "A1": [...], "A2": [...], "A3": [...], "A4": [...] },
+  "failed":     [ { "task": "A?.?", "reason": "..." } ],
+  "skipped":    [ { "task": "A?.?", "reason": "..." } ],
+  "notes":      [ "..." ],
+  "artefakte":  {
+    "tools":          [ "scripts/source-deploy-parity.sh", ... ],
+    "schemata":       [ "architektur/schemata/material_source.json", ... ],
+    "engine_patches": [ "escape-engine.js (Line 2814)",
+                        "tests/engine.hefteintrag-nested.test.js" ]
+  },
+  "commits":    [ { "repo": "escape-game-generator", "sha": "...", "tranche": "A1" }, ... ],
+  "hash_check": {
+     "f0b_priming_include_sha256": "....",
+     "matches_registry":           true|false
+  },
+  "next_check": "Cowork E2E-Pilot-Checklist v3.12 Pre-Flight"
+}
+
+Falls `cc_responses/` nicht existiert: Verzeichnis anlegen.
+
+====================== NICHT-ZIELE ======================
+
+- KEINE Content-Produktion (keine Materialien, keine Aufgaben-Generierung).
+- KEINE Vertrags-Aenderungen — Vertraege sind PM-Ownership.
+- KEINE Registry-Aenderungen (sprachniveau_include_registry.json).
+- KEINE Priming-Include-Edits (F0B_PRIMING_INCLUDE.md) — falls Drift auffaellt,
+  nur Bericht, kein Fix.
+- KEINE E2E-Pilot-Starts, keine Assembly-Test-Runs auf Content-Ebene.
+
+====================== START ======================
+
+Lies zuerst HANDOFF_CC_F0b_v1.md vollstaendig, dann arbeite Block fuer Block ab.
+Am Ende: response_f0b_a1-a4.json schreiben + Exit.

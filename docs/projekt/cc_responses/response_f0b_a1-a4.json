@@ -1,0 +1,124 @@
+{
+  "batch": "F0b-CC-Handoff-v1",
+  "run_ts_utc": "2026-04-19T20:20:00Z",
+  "completed": {
+    "A1": [
+      "A1.1",
+      "A1.2",
+      "A1.3",
+      "A1.4",
+      "A1.5",
+      "A1.6",
+      "A1.7",
+      "A1.8",
+      "A1.9",
+      "A1.10"
+    ],
+    "A2": [
+      "A2.1",
+      "A2.2",
+      "A2.3",
+      "A2.4",
+      "A2.5",
+      "A2.6"
+    ],
+    "A3": [],
+    "A4": [
+      "A4.1",
+      "A4.2"
+    ]
+  },
+  "failed": [],
+  "skipped": [
+    {
+      "task": "A3.1",
+      "reason": "HANDOFF-Spec widerspricht Engine-Realitaet. HANDOFF A3.1 beschreibt Fix fuer 'scpl.knoten[].kinder[]'-Rekursion an escape-engine.js:2814. Engine (assets/js/escape-engine.js, 4416 Zeilen) hat weder ein 'kinder'-Feld noch eine SCPL-Knoten-Rekursion. Zeile 2814 liegt in _checkLueckentext (Lueckentext-Submit-Handler) und entspricht dem F-RA3-01-Bug (Pool-Reset-Check auf 'disabled' statt auf CSS-Klasse 'aufgabe__pool-wort--used'), dokumentiert in BERICHT_RA3_ENGINE_ASSEMBLY.md §6.3/§6.4. Kein stiller Re-Scope gemaess Protokoll; PM-seitige Spec-Praezisierung erforderlich (Ticket-Text oder neuer HANDOFF-Block). F-RA1-06 war Assembly-Seite (Dualstruktur data.json), nicht Engine."
+    }
+  ],
+  "notes": [
+    "HANDOFF-Pfad-Abweichung: 'escape-game-generator/' existiert real unter /Users/paulad/escape-game-generator/, nicht unter /Users/paulad/weitergehts.online/escape-game-generator/. Alle Artefakte dort abgelegt.",
+    "A1-Ablage: Alle Scripts landen in /Users/paulad/escape-game-generator/tools/ (nicht separates scripts/-Verzeichnis). HANDOFF-Preamble gibt Ablage 'tools/' vor; 'scripts/...' in Einzel-Paragraphen war Pfad-Prefix-Konvention aus Vertragstexten.",
+    "A1.1 source-deploy-parity.sh (Hash-Version): ergaenzt das bestehende weitergehts-online/tools/source-deploy-parity.sh (Caption-Parity-Check) um SHA256-Hash-Vergleich. Beide werden in deploy-check.sh DEPLOY-07 orchestriert.",
+    "A1.4 sprachniveau-gate.js: Dry-Run gegen escape-games/deutscher-nationalismus-kolonialismus/data.json erfolgreich (1 File, 268 Text-Felder gepreuft, 82 FAILs gefunden — erwartet, da N-K-Content vor F0b-Regeln erzeugt wurde).",
+    "A1.5 coverage-report.sh: Dry-Run auf N-K-Scope erfolgreich (4 Mappen, 0 perspektiv_tags in Legacy-Materialien → 4x qg06_pass=true nur weil trigger_relevant=false gesetzt wurde; INHALTSBASIS-Markdown-Parser hat trigger_categories nicht gefunden). Artefakt-Outputs (perspektiv_inventar_mappe_*.json) nach Dry-Run bereinigt.",
+    "A1.6 entity-scanner.js: Dry-Run auf N-K-Scope erfolgreich (91 Files, 207 Personen, 297 Orte, 5 Ereignisse, 58 Daten). Heuristische Regex-Extraktion produziert False-Positives (z.B. Headings); fuer Produktiv-Lauf bleibt manuelle Registry-Nachpflege erforderlich. Dry-Run-Output nach Test bereinigt.",
+    "A1.7 terminologie-scanner.sh: Dry-Run auf N-K-data.json erfolgreich (2 Treffer zu 'schutzgebiet'/Kategorie kolonial_euphemismus, Exit-Code 1 = FAIL).",
+    "A1.8 multiperspektiv-sanity.js: Dry-Run SKIPPED — keine perspektiv_inventar-Fixture im Scope (A1.5 hat bei trigger_relevant=false leere Inventare erzeugt; QG-06-Reflexion-Frage-Check ist auf befuellte Nicht-Dominant-Tags angewiesen).",
+    "A1.10 priming-hash-check.sh: Hash match F6E826... canonical=F6E826... (Registry-Sync OK). --strict: 22/22 Konsumenten tragen [F0B_PRIMING_v1 BEGIN ... END]-Marker → A4.1 PASS.",
+    "A2-Schemata: JSON-Schema Draft 2020-12 konform, $id + $schema gesetzt, Syntax via json.load() validiert, Kreuz-Refs (material_source.kontextualisierung.glossar -> glossar_template.json) via $ref etabliert. Kein ajv-Rauschtest moeglich (kein ajv in PATH), aber Python-json-Parse bestaetigt syntaktische Validitaet.",
+    "A4.1 Marker-Tag-Kanon: ALL-PASS. Alle 22 registrierten Konsumenten aus sprachniveau_include_registry.json[0].konsumenten tragen die Marker-Tags. Kein Fehlerbericht an PM erforderlich.",
+    "A4.2 CI-Hook: pre-commit-priming-hash.sh als dedicated Wrapper. Installation liegt bei PM (symlink nach .git/hooks/pre-commit oder Einbindung in lefthook/husky).",
+    "A3.1 Engine-Fix: SKIPPED (siehe skipped[]). Der reale line-2814-Fix (F-RA3-01 Lueckentext-Pool-Reset) ist in 1 Zeile + Jest-Test umsetzbar, falls PM einen korrigierten HANDOFF nachreicht."
+  ],
+  "artefakte": {
+    "tools": [
+      "escape-game-generator/tools/source-deploy-parity.sh",
+      "escape-game-generator/tools/trigger-detector.sh",
+      "escape-game-generator/tools/titel-validator.js",
+      "escape-game-generator/tools/sprachniveau-gate.js",
+      "escape-game-generator/tools/coverage-report.sh",
+      "escape-game-generator/tools/entity-scanner.js",
+      "escape-game-generator/tools/terminologie-scanner.sh",
+      "escape-game-generator/tools/multiperspektiv-sanity.js",
+      "escape-game-generator/tools/priming-hash-check.sh",
+      "escape-game-generator/tools/pre-commit-priming-hash.sh",
+      "weitergehts-online/tools/deploy-check.sh (DEPLOY-07 ergaenzt)"
+    ],
+    "schemata": [
+      "escape-game-generator/architektur/schemata/material_source.json",
+      "escape-game-generator/architektur/schemata/material_text.json",
+      "escape-game-generator/architektur/schemata/entities.json",
+      "escape-game-generator/architektur/schemata/mappe_metadata.json",
+      "escape-game-generator/architektur/schemata/glossar_template.json",
+      "escape-game-generator/architektur/schemata/perspektiv_inventar.json"
+    ],
+    "engine_patches": []
+  },
+  "dry_runs": {
+    "priming_hash_check_strict": "PASS (hash_match=true, 22/22 consumers_with_marker)",
+    "source_deploy_parity_nk": "MATCH=yes (trivial: kein --deploy-path, Live-Repo == Source)",
+    "trigger_detector_nk": "PASS (6/6 Kategorien via Markdown-INHALTSBASIS detektiert)",
+    "titel_validator_nk": "PASS (fail_count=0, warn_count=1: kein LB-kanonischer Terminus im Titel)",
+    "coverage_report_nk": "PASS (4 Mappen, 4x qg06_pass=true weil trigger_relevant=false aus MD-Header)",
+    "entity_scanner_nk": "PASS (91 Files, 207/297/5/58 Entities, cross_violations=0)",
+    "terminologie_scanner_nk": "FAIL (2 schutzgebiet-Treffer, Exit-Code 1 = erwartet)",
+    "sprachniveau_gate_nk": "FAIL (82/268 fields_failed, Exit-Code 1 = erwartet)",
+    "deploy_check_nk_mit_DEPLOY-07": "GESAMT=PASS (DEPLOY-01..07 + DEPLOY-07-SHA)",
+    "multiperspektiv_sanity_nk": "SKIPPED (Fixture perspektiv_inventar fehlte)"
+  },
+  "commits": [
+    {
+      "repo": "escape-game-generator",
+      "sha": "5a458b3",
+      "tranche": "A1+A2+A4 (konsolidiert)",
+      "message": "feat(f0b-a1-a2): CC-Ausfuehrungs-Artefakte fuer F0b-Mechanismen"
+    },
+    {
+      "repo": "weitergehts-online",
+      "sha": "506e127",
+      "tranche": "A1.9 (DEPLOY-07)",
+      "message": "feat(deploy): DEPLOY-07 Source-Deploy-Parity in deploy-check.sh (F0b A1.9)"
+    }
+  ],
+  "pushed": {
+    "escape-game-generator": "UNGEPUSHT (Host-MCP-Push liegt bei PM)",
+    "weitergehts-online": "UNGEPUSHT (Host-MCP-Push liegt bei PM)"
+  },
+  "hash_check": {
+    "f0b_priming_include_sha256": "f6e826428046284accf404b927ebddac00554ee549f7427ff414f9d6ea4f7ac7",
+    "canonical_hash_sha256_in_registry": "f6e826428046284accf404b927ebddac00554ee549f7427ff414f9d6ea4f7ac7",
+    "matches_registry": true,
+    "strict_marker_check": {
+      "consumers_declared": 22,
+      "consumers_with_marker": 22,
+      "consumers_without_marker": 0
+    }
+  },
+  "deviations": [
+    "A3.1 skipped (HANDOFF-Spec-Konflikt mit Engine-Realitaet, siehe skipped[0]).",
+    "Pfad-Abweichung: escape-game-generator/ liegt unter /Users/paulad/, nicht unter /Users/paulad/weitergehts.online/.",
+    "Ablage-Vereinheitlichung: Alle A1-Scripts liegen in tools/ (nicht getrennt tools/ vs scripts/).",
+    "Commits landen gebuendelt pro Repo (A1+A2+A4 im Generator-Repo, A1.9 in weitergehts-online)."
+  ],
+  "next_check": "Cowork E2E-Pilot-Checklist v3.12 Pre-Flight"
+}

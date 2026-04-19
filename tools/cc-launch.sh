@@ -25,7 +25,7 @@ PREFLIGHT_TIMEOUT="${PREFLIGHT_TIMEOUT:-30}"
 # Minimaler Prompt → JSON → parsen: is_error=false, subtype=success → MAX-OK
 # is_error=true + "API" in result → AUTH-BROKEN
 # macOS hat kein coreutils-timeout → perl alarm als portabler Fallback
-PREFLIGHT_RAW=$(perl -e 'alarm shift; exec @ARGV' "$PREFLIGHT_TIMEOUT" "$CLAUDE_BIN" -p --output-format json 'say OK' 2>&1 || echo '{"is_error":true,"result":"preflight-timeout-or-exec-failure"}')
+PREFLIGHT_RAW=$(perl -e 'alarm shift; exec @ARGV' "$PREFLIGHT_TIMEOUT" "$CLAUDE_BIN" -p --output-format json 'say OK' < /dev/null 2>&1 || echo '{"is_error":true,"result":"preflight-timeout-or-exec-failure"}')
 
 PREFLIGHT_STATUS=$(echo "$PREFLIGHT_RAW" | python3 -c "
 import sys, json
