@@ -129,11 +129,33 @@ Erzeugt durch coverage-report.sh.
 
 ## TASK-BLOCK A3 — Engine-Fix
 
-### A3.1 `escape-engine.js:2814` + Jest-Test
-Ausgangspunkt: Issue aus N-K-Testrun (Mappe 3 Hefteintrag-Verschachtelung, F-RA1-06). Engine rendert `scpl.knoten[].kinder[]` nicht, wenn Parent-Knoten selbst `merksatz`-Feld fehlt. Fix:
-- Line 2814 — Rekursions-Logik so anpassen, dass fehlende merksatz-Felder kein `return null` ausloesen, sondern Parent-Knoten als Container gerendert wird und kinder[] trotzdem iteriert werden.
-- Regressionsweg: Check in SUB_ASSEMBLY_VERIFY V13 bleibt bestehen (Verschachtelung bleibt Vertragsdefekt), ABER die Engine rendert nicht ins Leere wenn V13 irrtuemlich leakt.
-- Jest-Test: `tests/engine.hefteintrag-nested.test.js` — fixture mit 2-Ebenen-SCPL, Assertions gegen DOM-Output (beide Ebenen sichtbar).
+### A3.1 `escape-engine.js:2814` + Jest-Test — **WITHDRAWN (2026-04-19)**
+
+**Status:** WITHDRAWN — kein CC-Handoff-Fix noetig. Block bleibt als historische Referenz.
+
+**Grund fuer WITHDRAWN:**
+Die urspruengliche HANDOFF-Spec (unten) beschreibt `scpl.knoten[].kinder[]`-Rekursion mit `merksatz`-Feld an Zeile 2814. Reale Engine (4416 Zeilen, `assets/js/escape-engine.js`) hat **weder** ein `kinder`-Feld **noch** eine SCPL-Knoten-Rekursion. Zeile 2814 liegt in `_checkLueckentext` (Lueckentext-Submit-Handler, Pool-Reset-Logik im error-branch).
+
+Der real existierende Pool-Reset-Bug an dieser Stelle (F-RA3-01: Check auf `.disabled` statt CSS-Klasse `aufgabe__pool-wort--used`) wurde **bereits am 2026-04-18 in Commit `a4f8c19`** behoben:
+```
+fix(engine): Lueckentext-Pool-Reset verwendet Klasse statt disabled-Attribut
+P0-A3 / F-RA3-01 aus R0-TESTRUN-AUDIT.
+escape-engine.js Z. 2798: Reset-Check prueft jetzt
+classList.contains('aufgabe__pool-wort--used') statt .disabled.
+```
+
+Verifiziert 2026-04-19: `assets/js/escape-engine.js:2798` prueft CSS-Klasse, nicht `.disabled`. Kein Residual-Bug.
+
+**Konsequenz:**
+- A3.1 ist DOPPELT obsolet (Spec-Phantom + historischer Fix existiert).
+- Kein CC-Mini-Rerun fuer A3.1. F0b.2b-Engine-Fix-Track geschlossen.
+- F-RA1-06 Hefteintrag-Verschachtelung (die urspruengliche F0b.1-Quelle) bleibt als separates Issue offen; betrifft aber nicht `escape-engine.js:2814`, sondern das Schema-/Rendering-Verhalten von `hefteintrag`-Subtype-Knoten. Re-Triage bei F0b.3b Drift-Audit.
+
+**Historische Original-Spec (NICHT umsetzen — Phantom):**
+~~Ausgangspunkt: Issue aus N-K-Testrun (Mappe 3 Hefteintrag-Verschachtelung, F-RA1-06). Engine rendert `scpl.knoten[].kinder[]` nicht, wenn Parent-Knoten selbst `merksatz`-Feld fehlt.~~
+~~- Line 2814 — Rekursions-Logik so anpassen, dass fehlende merksatz-Felder kein `return null` ausloesen, sondern Parent-Knoten als Container gerendert wird und kinder[] trotzdem iteriert werden.~~
+~~- Regressionsweg: Check in SUB_ASSEMBLY_VERIFY V13 bleibt bestehen (Verschachtelung bleibt Vertragsdefekt), ABER die Engine rendert nicht ins Leere wenn V13 irrtuemlich leakt.~~
+~~- Jest-Test: `tests/engine.hefteintrag-nested.test.js` — fixture mit 2-Ebenen-SCPL, Assertions gegen DOM-Output (beide Ebenen sichtbar).~~
 
 ---
 

@@ -4,6 +4,27 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-19 — F0b.2b A3.1 WITHDRAWN (Bug bereits in a4f8c19 2026-04-18 gefixt, Rerun obsolet)
+
+**Befund bei Spec-Verifikation gegen Engine-Code:**
+Vor geplantem A3.1-HANDOFF-Rewrite + CC-Mini-Rerun: Inspektion von `assets/js/escape-engine.js:2744-2820` (`_checkLueckentext`). Ergebnis: Zeile 2798 prueft BEREITS `classList.contains('aufgabe__pool-wort--used')`, **nicht** `.disabled`. Git-History-Check: Commit `a4f8c19` vom 2026-04-18 (`fix(engine): Lueckentext-Pool-Reset verwendet Klasse statt disabled-Attribut`) hat F-RA3-01 als P0-A3 bereits als 1-Zeilen-Fix (2798) + Cache-Bust ?v=3.13→?v=3.14 (17 Dateien) behoben. Verifikationsnachweis existierte in STATUS.md Zeile 205 (CLOSED-Marker).
+
+**Konsequenz:** A3.1 ist DOPPELT obsolet:
+1. HANDOFF-Spec beschrieb Phantom-SCPL-`kinder[]`-Rekursion mit `merksatz`-Feld. Reale Engine hat weder Feld noch Rekursion.
+2. Der real existierende Pool-Reset-Bug an Z. 2798 wurde bereits gefixt.
+
+Kein CC-Mini-Rerun. Kein Fake-Dogfood-Lauf. Gate-Dogfood folgt natuerlich bei F0b.3 E2E-Pilot-Launch.
+
+**Artefakte:**
+- `docs/projekt/HANDOFF_CC_F0b_v1.md`: A3.1-Block auf **WITHDRAWN** gesetzt mit (a) Post-Mortem der Phantom-Spec, (b) Referenz auf Commit `a4f8c19`, (c) Original-Spec als historisches Strikethrough. Kein loeschen — Spec-Drift-Lesson bleibt sichtbar.
+- `docs/projekt/STATUS.md`: A3.1-Zeile SKIPPED → WITHDRAWN mit Grund-Detail; PENDING-Zeile → CANCELLED; Modus + Naechster-Schritt aktualisiert (E2E-Pilot direkt).
+
+**Lesson:** Fake-Dogfoods fuer den Sake of Dogfood sind Theater. Wenn der naechste natuerliche CC-Handoff (E2E-Pilot) ansteht, wird das Gate dort real getestet. Ein synthetischer Mini-Rerun auf einen nicht-existenten Bug haette Laufzeit + Artefakt-Muell ohne Erkenntnis erzeugt. Das F0b.2b-v1-Incident war bereits ein realer Stress-Test des alten Launcher-Pfads; Gate v2 hat strukturell-ausreichend Evidenz aus dem v2-Exec (F0b.2b-DONE-Run selbst ist de-facto erster TEMPLATE-Vorlaeufer, auch wenn TEMPLATE erst danach materialisiert wurde).
+
+**Naechster Schritt:** F0b.3 E2E-Pilot-Checklist v3.12 ausfuehren — Thema-Wahl LB2 oder LB4 — Launcher via Kopie `tools/cc-launch-TEMPLATE.sh`.
+
+---
+
 ## 2026-04-19 — F0b.2b Prevent-First-Gate + Launcher-Kanon v2 + Interop-Doku v1.1
 
 **Ausloeser:** F0b.2b v1-Incident (argv-Hang via 5546-char-Prompt-argv + ENOENT auf nested-Pfad `/Users/paulad/weitergehts.online/escape-game-generator`). Protokoll-basierter Review reichte nicht; strukturelle Gates noetig.
