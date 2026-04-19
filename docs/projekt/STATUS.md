@@ -1,7 +1,7 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-19 (F0e Didaktisches Audit ABGESCHLOSSEN: Dual-Auditor-Spawn Alpha+Beta DONE → Befund-Konsolidierung F0e_BEFUND_DIDAKTIK.md v1.0 mit 9 konsolidierten PQI-1 Items → Matrix v2.1 mit 3-Achsen-Klassifikation + Batch-4-Scope-Recommendation F0a/F0b/F0c + Trade-off-Tabelle + expliziter User-Decision-Prompt. Primaer-Empfehlung **F0b Full-Didaktik** (2-3 Tage, 9 von 9 PQI-1 Coverage). Blockiert: User-Entscheidung Batch-4-Scope + F0e.5-Commit-Freigabe. Vorgaenger-Kontext: P0-BATCH-3 CLOSED 6/6 + LP-QM v1.0 Fundamentartefakt committed ec3f971.)
-**Modus:** F0e COMPLETE → User-Entscheidung Batch-4-Scope (F0a/F0b/F0c) → Batch-4-Umsetzung → v3.12-Pilot
+**Letzte Aktualisierung:** 2026-04-19 (F0b.2b CC-Handoff A1-A4 AUSGEFUEHRT: A1 10/10 Scripts (source-deploy-parity Hash-Version, trigger-detector, titel-validator, sprachniveau-gate, coverage-report, entity-scanner, terminologie-scanner, multiperspektiv-sanity, priming-hash-check, pre-commit-priming-hash + DEPLOY-07-Ergaenzung), A2 6/6 Schemata (material_source/material_text/entities/mappe_metadata/glossar_template/perspektiv_inventar JSON-Schema Draft 2020-12), A4 2/2 (Marker-Tag-Kanon 22/22 consumers_with_marker + CI-Hook). A3.1 SKIPPED per Protokoll — HANDOFF-Spec widerspricht Engine-Realitaet (escape-engine.js:2814 ist _checkLueckentext nicht SCPL-Rekursion; entspricht F-RA3-01 Lueckentext-Pool-Reset), kein stiller Re-Scope → PM-seitige Spec-Praezisierung erforderlich. Hash-Check MATCH f6e826...; Priming-Registry-Integritaet bestaetigt. 2 Commits lokal (escape-game-generator 5a458b3, weitergehts-online 506e127), beide UNGEPUSHT. Pfad-Drift-Learning: Dual-Root /Users/paulad/{escape-game-generator,weitergehts.online/weitergehts-online} — keine Nested-Struktur. Naechstes Gate: Push + Prevent-First-Gate (cc-launch-preflight/TEMPLATE/Doku-Verankerung) + A3.1 HANDOFF-Korrektur + CC-Mini-Rerun → E2E-Pilot v3.12. Vorgaenger-Kontext: F0b.2 B1-B7 infrastruktur-seitig, F0e COMPLETE 9/9 PQI-1, P0-BATCH-3 CLOSED 6/6, LP-QM v1.0 ec3f971.)
+**Modus:** F0b.2b DONE (A1+A2+A4 ausgefuehrt, A3.1 SKIPPED protokollkonform) → Push beider Repos → Prevent-First-Gate (§3+§2+§5) → A3.1 HANDOFF-Korrektur + Mini-Rerun → E2E-Pilot v3.12 (Thema LB2 oder LB4) → F0b.3b Drift-Audit → F0b.4 Close + Commit
 **Aktiver Upgrade-Plan:** `docs/architektur/UPGRADE_PLAN_v3-12_ESCAPE_GAME_QUALITAET.md` v1.3 (Runden R0-R8 + v1.3 Delta Section 19 aus Testrun-Audit: 13 neue PI-Items in 4 Clustern Medien/Engine/Didaktik/PM + 4 neue Q-Gates Q-MEDIEN-PROSPEKTIV/Q-LIZENZ-COMPLIANCE/Q-SOURCE-DEPLOY-PARITY/Q-TYP-R7-KONFORMITAET + P0-Blocker-Kanon mit 6 Items). Total Plan-Impact-Count **30** (17 R0-FINAL+ + 13 v1.3 Delta). v3.12-Pilot-Start blockiert bis P0-1 bis P0-6 geschlossen. Vorgaenger v3.11 COMPLETE + gepusht.
 
 **R0-Befunde (Gate-Status):**
@@ -109,6 +109,76 @@
 **Offene Folgetickets:**
 - ~~**P1-NEU Ursachen-Titel-Drift**~~ **CLOSED 2026-04-10**: Richtung A umgesetzt. Landing-Page `<li id="game-gpg-erster-weltkrieg-ursachen">`-Text geaendert von "Pulverfass Europa – Der Erste Weltkrieg (GPG R7)" zu "Der Erste Weltkrieg — Ursachen und Ausbruch (GPG R7)". `data.json.meta.titel` unveraendert als Single-Source. Regression-Check via `./tools/deploy-check.sh gpg-erster-weltkrieg-ursachen` + Marne-Regression: beide PASS. Marketing-Framing "Pulverfass Europa" entfallen — ggf. in Folgeprojekt als separater Untertitel-Block nachziehen falls pedagogisch gewuenscht.
 - **P1 v3.10-Folgearbeiten** (zurueckgestellt per Q5=c waehrend v3.11 lief): T2.F (typ-spezifische Meta-Sub-Schemata via oneOf-Discriminator), 21 mat-*.json Migrations-Backlog (Q4 vorwaertsgetrieben, siehe `docs/projekt/berichte/BERICHT_SCHEMA_MIGRATION_2026-04-10.md`).
+
+---
+
+## F0b Full-Didaktik (Work-Stream, Stand 2026-04-19 — B1-B7 + CC-Handoff A1-A4 AUSGEFUEHRT)
+
+**Grund:** F0e-Primaer-Empfehlung. 11 Mechanismen M1-M11 aus PQI-1 Findings + LP-QM-Koppelung in 7 Bundles (B1-B7) umgesetzt. Prevent-first-Architektur: Priming > Schema > Q-Gate > Template > Prosa-Checkliste. Ebenen-Trennung strikt: Content (Testrun-Befunde) ist Grundlage, Ausfuehrung bleibt themen-unspezifisch.
+
+**Bundle-Fortschritt:**
+- B1 F0B_PRIMING_INCLUDE.md SSoT + Hash-kanonisierung — **DONE**
+- B2 4 Config-JSONs (themen-unspezifisch) — **DONE**
+- B3 VERTRAG + Sub-Agent-Ebene-0 + ORCH Q-Gate-Taxonomie — **DONE**
+- B4 22 Sub-Agent-Prompt-Edits (Marker-Block-Verweise auf SSoT + agent-spezifische Zusatzinvarianten) — **DONE**
+- B5 Config-JSONs in architektur/ platziert + Registry mit sha256-Hash + scope_nutzung — **DONE**
+- B6 E2E-Pilot-Checklist v3.12 (Pre-Flight bis Post-Pilot-Drift-Audit, 11 Sektionen, themen-unspezifisch) — **DONE**
+- B7 CC-Handoff-Paket HANDOFF_CC_F0b_v1.md (A1-A4, JSON-Rueckmelde-Protokoll) — **DONE**
+- F0b.2b CC-Handoff-Ausfuehrung A1+A2+A4 — **DONE** (2026-04-19 Run-ts 20:20 UTC; Rueckmeldung `docs/projekt/cc_responses/response_f0b_a1-a4.json` 7818 Bytes; Hash-Check MATCH f6e826..., 22/22 consumers_with_marker; 2 Commits lokal escape-game-generator `5a458b3` + weitergehts-online `506e127`, UNGEPUSHT)
+- F0b.2b CC-Handoff A3.1 Engine-Fix — **SKIPPED** (protokollkonform; HANDOFF-Spec widerspricht Engine-Realitaet — escape-engine.js:2814 liegt in `_checkLueckentext` (F-RA3-01 Pool-Reset-Check auf `disabled` statt CSS-Klasse `aufgabe__pool-wort--used`), keine SCPL-`kinder[]`-Rekursion; 1-Zeilen-Fix + Jest-Test moeglich sobald PM korrigierten HANDOFF nachreicht)
+- Push beider Repos via Host-MCP — **PENDING**
+- Prevent-First-Gate §3+§2+§5 (tools/cc-launch-preflight.sh + tools/cc-launch-TEMPLATE.sh + CC_COWORK_INTEROP_LEARNINGS.md §1.x) — **PENDING**
+- A3.1 HANDOFF-Korrektur + CC-Mini-Rerun — **PENDING**
+- E2E-Pilot v3.12 Durchfuehrung — **PENDING** (braucht A3.1-Rerun-PASS + Thema-Wahl)
+- F0b.3b Drift-Audit nach Pilot — **PENDING**
+- F0b.4 Close + Commit — **PENDING**
+
+**SSoT-Artefakte F0b (final):**
+- `escape-game-generator/agents/_includes/F0B_PRIMING_INCLUDE.md` (Priming-Kanon, sha256 `f6e826428046284accf404b927ebddac00554ee549f7427ff414f9d6ea4f7ac7`)
+- `escape-game-generator/architektur/sprachniveau_include_registry.json` (22 Konsumenten + Marker-Tags + scope_nutzung + Aktualisierungs-Protokoll)
+- `escape-game-generator/architektur/trigger_keywords.json` (6 Kategorien, scan_ziel, aktiviert_gates)
+- `escape-game-generator/architektur/perspektiv_enum.json` (10 Werte, harte Pool-Trennung dominant/nicht_dominant, coverage_regel_qg06)
+- `escape-game-generator/architektur/kolonial_terminologie_blacklist.json` (11 Muster + Alternativen + Primaerquellen-Ausnahme-Kontext)
+- `escape-game-generator/architektur/wortschatz_r7_core.json` (R7-Fachwort-Lexikon LB1-LB4, Morphem/Nominalstil/Konjunktiv-Heuristiken, DaZ-Regeln)
+- 22 Agent-Prompt-Edits in `escape-game-generator/agents/` (AGENT_MATERIAL/HEFTEINTRAG/RAETSEL/SKRIPT/INHALT, SUB_TEMPLATE_MAPPENABSCHLUSS, SUB_ASSEMBLY_VERIFY, 7 SUB_MATERIAL_*, 8 SUB_AUFGABE_*)
+- `weitergehts-online/docs/projekt/E2E_PILOT_CHECKLIST_v3-12.md` (11 Sektionen Pre-Flight → Post-Pilot)
+- `weitergehts-online/docs/projekt/HANDOFF_CC_F0b_v1.md` (Task-Block A1 8 primaere + 2 Ergaenzungs-Scripts, A2 6 Schemata, A3 Engine-Fix escape-engine.js:2814 + Jest-Test, A4 Marker-Tag-Kanon + CI-Hook)
+- VERTRAG-Updates in Sub-Agent-Dateien (Ebene-0-Invarianten + Q-Gate-Taxonomie in ORCH bereits in B3 committed)
+
+**Mechanismen-Abdeckung M1-M11:**
+- M1 R7-Sprachniveau-Gate (Ø≤15, max≤25, Fachwort-Dichte ≤12%, Nominalstil ≤20%, Konjunktiv ≤5%, Morpheme ≤4) → Priming §2 + `wortschatz_r7_core.json` + V17 Runtime-Metrik (Script-Target Batch A1)
+- M2 Titel-Validierung R-TITEL-1..3 + `trigger_categories[]` Pflichtfeld → Phase 0.2.M Invariante in AGENT_INHALT.md + `trigger_keywords.json` (Script-Target Batch A1)
+- M3 Perspektiv-Enum mit harter Pool-Trennung → `perspektiv_enum.json` + SUB_MATERIAL_* Invarianten + QG-06 Durchsetzung (Script-Target coverage-report.sh)
+- M4 Trigger-Kategorien-Gate-Aktivierung → `trigger_keywords.json` + Sub-Agent-Prompt-§3 in allen 22 Dateien
+- M5 Kolonial-Terminologie-Blacklist mit Primaerquellen-Ausnahme → `kolonial_terminologie_blacklist.json` + SUB_MATERIAL_QUELLENTEXT-Sonderregel (Script-Target terminologie-scanner.sh V18)
+- M6 Entity-Konsistenz-Scan V14 → AGENT_SKRIPT §4 + AGENT_MATERIAL + SUB_AUFGABE_* (Script-Target entity-scanner.js)
+- M7 Assembly-Verify-Kette V14-V20 → SUB_ASSEMBLY_VERIFY.md Hook-Dokumentation
+- M8 Priming-Include-Hash-Drift-Check V16 → `sprachniveau_include_registry.json` + priming-hash-check.sh (Script-Target A1 Ergaenzung)
+- M9 Multiperspektiv-Synthese-Rubrik → SUB_TEMPLATE_MAPPENABSCHLUSS §5 (Script-Target multiperspektiv-sanity.js V19)
+- M10 Source-Deploy-Parity-Referenz V20 → bereits P0-A4 (tools/source-deploy-parity.sh) + Verlinkung in SUB_ASSEMBLY_VERIFY
+- M11 Pflicht-Marker-Tag-Kanon `[F0B_PRIMING_v1 BEGIN ... END]` → durchgezogen in allen 22 Prompts + CI-Hook priming-hash-check.sh (Script-Target A4)
+
+**Naechster Schritt F0b:** (1) Push beider Repos via Host-MCP (User-Go offen). (2) Prevent-First-Gate einbauen (tools/cc-launch-preflight.sh ENV-Gate, tools/cc-launch-TEMPLATE.sh stdin-Pattern + Pfad-Validierung, CC_COWORK_INTEROP_LEARNINGS.md §1.x Dual-Root-Doku). (3) A3.1 HANDOFF-Korrektur (F-RA3-01 Lueckentext-Pool-Reset als realer Ticket-Text) + CC-Mini-Rerun. (4) Nach A3.1-PASS: E2E-Pilot v3.12 mit Thema-Wahl LB2 (Absolutismus/Revolution, mittlere Trigger-Aktivierung) oder LB4 (Imperialismus/Kolonialismus, hohe Trigger-Aktivierung, Stress-Test Nicht-Dominant-Perspektiven + Blacklist).
+
+**F0b.2b-Ausfuehrungs-Nachweis (Dry-Runs, alle auf Fixture `escape-games/deutscher-nationalismus-kolonialismus`):**
+- priming_hash_check --strict: PASS (hash_match=true, 22/22 Konsumenten mit Marker-Tag)
+- source_deploy_parity_nk: MATCH (Live-Repo = Source)
+- trigger_detector_nk: PASS (6/6 Kategorien via Markdown-INHALTSBASIS)
+- titel_validator_nk: PASS (fail=0, warn=1 kein LB-kanonischer Terminus)
+- coverage_report_nk: PASS (4 Mappen, 4x qg06_pass=true via trigger_relevant=false)
+- entity_scanner_nk: PASS (91 Files, 207/297/5/58 Entities, cross_violations=0)
+- terminologie_scanner_nk: FAIL erwartet (2 schutzgebiet-Treffer = Legacy-N-K-Content vor F0b-Regeln)
+- sprachniveau_gate_nk: FAIL erwartet (82/268 fields_failed = Legacy-N-K-Content)
+- deploy_check_nk inkl. DEPLOY-07: GESAMT=PASS (DEPLOY-01..07 + DEPLOY-07-SHA)
+- multiperspektiv_sanity_nk: SKIPPED (perspektiv_inventar-Fixture fehlt — A1.5 hat bei trigger_relevant=false leeres Inventar erzeugt)
+
+**Pfad-Drift-Learning (F0b.2b):** Host-Layout ist **dual-root** auf `/Users/paulad/`-Ebene — `escape-game-generator/` und `weitergehts.online/weitergehts-online/` sind Geschwister, nicht verschachtelt. HANDOFF nutzte relative Pfade (korrekt); v1-Launcher + v1-Prompt hatten fehlerhafte Nested-Pfade, v2 korrigiert. Invariante: Alle CC-Handoff-Launcher + -Prompts MUESSEN absolute Pfade gegen den Host-Dual-Root pruefen (Prevent-First-Gate §2).
+
+**Ablage-Vereinheitlichung (F0b.2b):** Alle A1-Scripts liegen in `escape-game-generator/tools/` (nicht separates `scripts/`-Verzeichnis). HANDOFF-Preamble hatte `tools/` vorgegeben; `scripts/...`-Einzelparagraphen war Pfad-Prefix-Konvention aus Vertragstexten. Entscheidung: Single-Location `tools/` kanonisch fuer alle F0b-Utilities.
+
+**Compaction-Protokoll F0b:** Bei Kontext-Verlust liest naechster Claude (1) `F0b/F0B_PRIMING_INCLUDE.md` SSoT, (2) `sprachniveau_include_registry.json` Registry, (3) `HANDOFF_CC_F0b_v1.md` CC-Task-Block-Liste, (4) `E2E_PILOT_CHECKLIST_v3-12.md`, (5) `docs/projekt/cc_responses/response_f0b_a1-a4.json` F0b.2b-Rueckmeldung, (6) diesen STATUS-F0b-Block. Rekonstruiert Zustand vollstaendig.
+
+**Nicht-Ziele F0b.2:** kein Content-Artefakt generiert, keine VERTRAG-Scope-Erweiterungen ausserhalb Ebene-0-Invarianten, keine Testrun-Starts, keine Git-Write-Operations ohne User-Freigabe.
 
 ---
 
