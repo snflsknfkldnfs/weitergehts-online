@@ -1,7 +1,7 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-18 (P0-BATCH-3 CLOSED: P0-A1 Pipeline-Deploy-Preparation + P0-A2 V13-Patch-Regression via CC-Headless mit Dashboard abgearbeitet. 3 Commits: 79232f7 [escape-game-generator, Task A Pipeline-Hardening] + ad7df55 [weitergehts-online, Task A deploy-check.sh] + 4f33baf [escape-game-generator, Task B SUB_ASSEMBLY_VERIFY]. 67 Turns, 13:27 min, $5.78, 0 Errors. Acceptance A1-A3 + B1-B4 PASS inkl. B4-Regression auf N-K Mappe 3. **6/6 P0 CLOSED.** v3.12-Pilot entsperrt. Pre-Flight-Wrapper `tools/cc-launch.sh` erstmals produktiv. ANLEITUNG v2.2.)
-**Modus:** P0-BATCH-3 CLOSED (6/6) → v3.12-Pilot FREIGESCHALTET → Follow-ups: PI-Template LETZTE_DEPLOY_CHECK-Erweiterung, Interop-Learnings v1.0-Promotion, v3.12-Pilot-Validierung
+**Letzte Aktualisierung:** 2026-04-19 (F0e Didaktisches Audit GESTARTET: Triage-Matrix v1 auf Trigger-Probability beschraenkt, Produkt-Qualitaets-Impact (PQI) fehlte. F0e schliesst Luecke via evidenz-basiertes didaktisches Audit der N-K-Output-Artefakte. Plan-Artefakt `testrun-nationalismus-kolonialismus/F0e_DIDAKTISCHES_AUDIT_PLAN.md` v1.0 geschrieben. 6-Dimensionen-Rubric (Lernziel/Fachlich/Didaktisch/Schwierigkeit/Narrativ/Register) × PQI-Skala 1-3. Phasen F0e.0-F0e.5 definiert, Tasks #23-#31 aufgesetzt. Blockiert: User-Go fuer F0e.1. Vorgaenger: P0-BATCH-3 CLOSED 6/6 [Commits 79232f7 + ad7df55 + 4f33baf + a4f8c19 + 2f841a3 + 2f41ca8 + bbac715]. Matrix-v1-Commit noch nicht erfolgt — wird durch F0e.5 Matrix-v2-Commit substituiert.)
+**Modus:** F0e PHASE LP-QM-L4 LAUFEND (LP-QM v1.0 Fundamentartefakt erstellt, F0e.1 FERTIG mit LP-QM-Primaer-Ankopplung, F0e.2 bereit fuer Spawn) → Nach F0e: Batch-4-Scope-Entscheidung → v3.12-Pilot
 **Aktiver Upgrade-Plan:** `docs/architektur/UPGRADE_PLAN_v3-12_ESCAPE_GAME_QUALITAET.md` v1.3 (Runden R0-R8 + v1.3 Delta Section 19 aus Testrun-Audit: 13 neue PI-Items in 4 Clustern Medien/Engine/Didaktik/PM + 4 neue Q-Gates Q-MEDIEN-PROSPEKTIV/Q-LIZENZ-COMPLIANCE/Q-SOURCE-DEPLOY-PARITY/Q-TYP-R7-KONFORMITAET + P0-Blocker-Kanon mit 6 Items). Total Plan-Impact-Count **30** (17 R0-FINAL+ + 13 v1.3 Delta). v3.12-Pilot-Start blockiert bis P0-1 bis P0-6 geschlossen. Vorgaenger v3.11 COMPLETE + gepusht.
 
 **R0-Befunde (Gate-Status):**
@@ -38,6 +38,45 @@
   - 5 Einzelberichte: `BERICHT_RA{1,2,3,4,5}_*.md` in `docs/projekt/testrun-nationalismus-kolonialismus/`
   - UPGRADE_PLAN v1.3 Delta: `docs/architektur/UPGRADE_PLAN_v3-12_ESCAPE_GAME_QUALITAET.md` Section 19
 - **Naechster Schritt:** Task #7 Verifikations-Gate (Konsistenz-Check BEFUND ↔ 5 BERICHTE ↔ UPGRADE_PLAN ↔ STATUS ↔ CHANGELOG ↔ CHARTAS). Danach P0-Blocker-Abarbeitung als Pre-Pilotlauf-Task-Paket.
+
+---
+
+## F0e Didaktisches Audit (Work-Stream, Stand 2026-04-19 Phase LP-QM-L4 LAUFEND)
+
+**Grund:** Pre-Pilot-Triage v1 klassifiziert nur nach Pipeline-Trigger-Wahrscheinlichkeit. Blind-Spot: Produkt-Qualitaets-Impact (PQI) stabiler didaktischer Defekte, die in jedem Run mitshippen. F0e integriert PQI als 2. Klassifikations-Achse.
+
+**SSoT-Artefakte:**
+- `docs/projekt/testrun-nationalismus-kolonialismus/F0e_DIDAKTISCHES_AUDIT_PLAN.md` v1.2 (Master-Plan; State-Marker §10 LP-QM-L1-L3 DONE / L4 LAUFEND).
+- `docs/fachdidaktik/LEHRPLAN_QM_GPG7_MITTELSCHULE.md` v1.0 (Fundamentartefakt LehrplanPlus Bayern R7 GPG Mittelschule, Single-Source-of-Truth fuer LP-Setzungen, Kompetenzstrukturmodell, Fachprofil, BuE+UebZ-Matrix, LB1-LB4 mit Kompetenzen/Inhalte/Operationalisierung/Coverage/Beispiele/UebZ-Verknuepfung/Anti-Patterns + 5 Q-Gates + Anwendungs-Matrix).
+- `docs/fachdidaktik/LP_QM_AUFBAU_PLAN.md` (Build-Plan + State-Marker LP-QM L1-L3 FERTIG, L4 LAUFEND).
+
+**Phasen-Fortschritt:**
+- F0e.0 Plan geschrieben — **DONE** (Task #23)
+- F0e.0 STATUS + CHANGELOG — **DONE** (Task #24)
+- F0e.1 Rubric + Handoff — **DONE** (Task #25/#26) mit LP-QM-Primaer-Ankopplung
+- LP-QM L1 Framework — **DONE** (Task #33)
+- LP-QM L2 Subagent-Befuellung — **DONE** (Task #34, Output `LEHRPLAN_QM_GPG7_L2_BEFUELLUNG.md`)
+- LP-QM L3 Review + §7-9 Integration — **DONE** (Task #35, LEHRPLAN_QM_GPG7_MITTELSCHULE.md v1.0)
+- LP-QM L4 F0e-Integration — **IN_PROGRESS** (Task #36, dieser Block + CHANGELOG-Append)
+- F0e.2 Subagent-Audit-Run — **READY** (Task #27/#28, entsperrt nach L4-Commit)
+- F0e.2b Befund-Konsolidierung Alpha+Beta — **PENDING** (Task #32)
+- F0e.3 Matrix v2 — **PENDING** (Task #29)
+- F0e.4 Batch-4-Scope v2 — **PENDING** (Task #30)
+- F0e.5 PM-Close + Commit — **PENDING** (Task #31, gebundelter LP-QM + F0e-Commit via Host-MCP)
+
+**Artefakt-Inventar F0e (aktuell):**
+- `F0e_DIDAKTISCHES_AUDIT_PLAN.md` v1.2 (Master-SSoT)
+- `F0e_AUDIT_RUBRIKEN.md` v2 (D1 LP-QM-fokussiert, §6 LP-QM-Referenz-Protokoll v2)
+- `F0e_HANDOFF_DIDAKTIK_AUDITOR.md` v2 (§6 LP-QM Primaer-Quelle, WebSearch Backup)
+- `LEHRPLAN_QM_GPG7_MITTELSCHULE.md` v1.0 (Fundamentartefakt, kanonisch, in `docs/fachdidaktik/`)
+- `LP_QM_AUFBAU_PLAN.md` (Build-Plan + State-Marker, in `docs/fachdidaktik/`)
+- `LEHRPLAN_QM_GPG7_L2_BEFUELLUNG.md` (Subagent-Output L2, Rohdaten in `docs/fachdidaktik/`)
+- `PRE_PILOT_TRIAGE_MATRIX.md` v1 (Input fuer F0e.3 Re-Klassifikation)
+- **PENDING:** `F0e_BEFUND_DIDAKTIK.md` (entsteht in F0e.2), `PRE_PILOT_TRIAGE_MATRIX.md` v2.x (entsteht in F0e.3)
+
+**Naechster Schritt F0e:** F0e.5 PM-Close + Git-Commit via Host-MCP (Task #31): Bundle = LP-QM v1.0 + LP_QM_AUFBAU_PLAN + L2_BEFUELLUNG + F0e_HANDOFF v2 + F0e_AUDIT_RUBRIKEN v2 + F0e_DIDAKTISCHES_AUDIT_PLAN v1.2 + STATUS + CHANGELOG. Danach F0e.2 Dual-Subagent-Spawn (Alpha + Beta, je `general-purpose`).
+
+**Compaction-Protokoll:** Bei Kontext-Verlust liest naechster Claude (1) `F0e_DIDAKTISCHES_AUDIT_PLAN.md` §10 State-Marker, (2) `LP_QM_AUFBAU_PLAN.md` §6 State-Marker, (3) diesen STATUS-Block — rekonstruiert Zustand vollstaendig.
 
 **Plan-Impact R0-Befunde (muss in UPGRADE_PLAN v1.3 nachgezogen werden):**
 1. Runde 1 Arbeitspaket 1 Umlaut-Retrofit: Scope **drei** Fragetypen (nicht zwei).

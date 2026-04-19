@@ -4,6 +4,70 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-19 — LP-QM-Fundamentartefakt v1.0 erstellt + F0e-Chain auf LP-QM umgestellt (Phase LP-QM L1-L4)
+
+**Phase:** F0e Didaktisches Audit — Fundamentartefakt-Build (LP-QM L1 Framework → L2 Befuellung → L3 Review+Q-Gates+Matrix → L4 F0e-Integration)
+**Modus:** PM-Cowork (Claude Opus) + 1 Subagent-Spawn (L2-Befuellung, `general-purpose`)
+**Session:** PM-Cowork Session 32 Continuation (Post-Compaction)
+
+**Trigger:** User-Direktive "themenbezogene deep-dives erst in weiteren prozessen noetig. ziel ist erst mal ein kanonisch actionables fundamentartefakt welche die lehrplansetzungen entsprechend intelligent exzerpiert und formatiert enthaelt." + "option a" (Full L2→L3→L4-Chain). Motivation: F0e-Audit-D1 (Lernziel-Alignment) braucht kanonische, verbatim-treue LehrplanPlus-Referenz, die nicht per WebFetch fragil ist. Statt WebSearch-Runtime-Calls pro Audit-Durchlauf wird einmalig ein Fundamentartefakt gebaut, das als SSoT fuer F0e + Generator-Agenten + Schriftwesen-Skills + zukuenftige Escape-Games dient.
+
+**Durchgefuehrt:**
+- **LP_QM_AUFBAU_PLAN.md erstellt:** Build-Plan mit 4-Phasen-Schema (L1/L2/L3/L4), Scope, Compaction-Resistance, State-Marker, Task-IDs #33-#36.
+- **L1 Framework (Task #33):** `docs/fachdidaktik/LEHRPLAN_QM_GPG7_MITTELSCHULE.md` v0.1 Skeleton geschrieben — §1 Zweck, §2 Quellen-Kanon, §3 Kompetenzstrukturmodell GPG (5 Gegenstandsbereiche G1-G5, 3 prozessbezogene Kompetenzen P1-P3, 3 Perspektiven PE1-PE3), §4 Fachprofil GPG Mittelschule (WebSearch-basiert), §5 BuE+UebZ-Matrix (15 UebZ U01-U15, Kern-Klassifikation fuer GPG 7: U03/U06/U10/U15), §6.1-§6.4 Skeleton je LB1-LB4 mit Kompetenzerwartungen + Inhalte verbatim aus `assets/Lehrplan_GPG7.md`.
+- **L2 Subagent-Befuellung (Task #34):** Subagent `general-purpose` mit Handoff-Prompt gespawnt. Output `LEHRPLAN_QM_GPG7_L2_BEFUELLUNG.md` (313 Z.): je LB1-LB4 Operationalisierungs-Hinweise + Coverage-Pruefpunkte + Beispiele kompetent vs. nicht-kompetent + UebZ-Verknuepfung + Anti-Patterns, jeweils actionable fuer Auditor + Generator.
+- **L3 Review + Integration (Task #35):** Merge L2-Output in LP-QM v1.0. §6.2.4-8 (LB2), §6.3.4-8 (LB3), §6.4.4-8 (LB4) vollstaendig, alle PENDING-Stubs entfernt. §7 Q-Gates neu: 5 Gates (QG-01 Verbatim-Treue / QG-02 4-fach-Kompetenz / QG-03 Kern-UebZ-Coverage / QG-04 Anti-Pattern-Screen / QG-05 Jahrgangsstufenprofil-Alignment+Schwelle) mit Operationalisierung/Trigger/Fix + Gate-Matrix pro LB. §8 Anwendungs-Matrix: 8.1 Rolle×Use-Case (10 Rollen: Auditor, Generator, gpg7b/7c-Skills, Escape-Game-Entwickler, ...) + 8.2 Lookup-Pfad (8 typische Fragen). §9 Changelog v0.2 + v1.0 + geplant v1.1. §10 State-Marker aktualisiert.
+- **L4 F0e-Integration (Task #36):**
+  - `F0e_HANDOFF_DIDAKTIK_AUDITOR.md` §6 komplett rewritten: LP-QM als PRIMAER-QUELLE (Fundamentartefakt, kanonisch, verbatim), WebSearch als BACKUP (nur wenn LP-QM eine Frage nicht beantwortet).
+  - `F0e_AUDIT_RUBRIKEN.md` D1-Definition auf LP-QM-Fokussektionen umgestellt (§6.2.1/4/5/6/7/8 je LB). §5 Evidenz-Standards: LP-QM-Sektion neue Primaer-Zeile, WebSearch → Backup. §6 "LP-QM-Referenz-Protokoll v2" mit 6-Step-Usage-Procedure. Alle "LehrplanPlus-Verify-PENDING"-Tags → "LP-QM-Verify-PENDING".
+  - `F0e_DIDAKTISCHES_AUDIT_PLAN.md` v1.2: Header-Status auf PHASE-LP-QM-L4 LAUFEND, §10 State-Marker + Artefakt-Inventar ergaenzt.
+  - `STATUS.md` F0e-Block: SSoT-Artefakte um LP-QM v1.0 + LP_QM_AUFBAU_PLAN ergaenzt, Phasen-Fortschritt erweitert um LP-QM L1-L3 DONE / L4 IN_PROGRESS, Artefakt-Inventar 3 neue Entries, Naechster-Schritt auf F0e.5 Git-Commit via Host-MCP + dann F0e.2 Dual-Spawn.
+
+**Architektonische Konsequenzen:**
+- F0e-Audit-D1-Dimension ist nicht mehr WebFetch-abhaengig — Audit kann ohne Live-Netz-Call durchgefuehrt werden.
+- Risiko R1 (WebFetch-Restriction bei LehrplanPlus-URLs) aus LP_QM_AUFBAU_PLAN §7 ist damit fuer F0e-Audit-Chain **aufgehoben** (LP-QM ist self-contained).
+- gpg7b-schriftwesen + gpg7c-schriftwesen Skills koennen LP-QM als TUV-Lernziel-Quelle nutzen (Anwendungs-Matrix §8.1 Zeile 3+4).
+- Zukuenftige Generator-Agenten-Prompts (PROJEKT_INHALTLICH) koennen LP-QM-Sektionen direkt referenzieren statt WebSearch-Runtime-Calls.
+- Scope-Disziplin eingehalten: KEINE themen-spezifischen Deep-Dives (Nationalismus/Kolonialismus/Industrialisierung/Jugendstrafrecht/Absolutismus/Franz.Revolution/1.WK) aufgenommen — verschoben auf "weitere Prozesse" (Deep-Dive-Artefakte nach Bedarf).
+
+**Bewusst nicht durchgefuehrt:**
+- KEIN Zwischen-Commit fuer LP-QM L1-L3 — gebuendelt mit L4 + F0e.5-Commit in einer Git-Operation (Host-MCP) um Repo-Rauschen zu vermeiden und atomaren Zustand "F0e.1 abgeschlossen, F0e.2 entsperrt" zu persistieren.
+- KEINE LehrplanPlus-WebFetch-Versuche unternommen — WebFetch fuer `lehrplanplus.bayern.de` blockiert (Memory: R1-Risiko); stattdessen konsequent WebSearch + assets/Lehrplan_GPG7.md-Basis genutzt.
+
+**Naechster Schritt:** F0e.5 PM-Close + Git-Commit via Host-MCP (Task #31, 5-Stufen-osascript-MCP-Workflow per `docs/projekt/GIT_WORKFLOW_HOST_MCP.md`). Commit-Bundle: LP-QM v1.0 + LP_QM_AUFBAU_PLAN + L2_BEFUELLUNG + F0e_HANDOFF v2 + F0e_AUDIT_RUBRIKEN v2 + F0e_DIDAKTISCHES_AUDIT_PLAN v1.2 + STATUS + CHANGELOG. Danach F0e.2 Dual-Subagent-Spawn (Alpha + Beta, je `general-purpose`) auf Audit-Input-Inventur.
+
+---
+
+## 2026-04-19 — F0e Didaktisches Audit GESTARTET (Phase F0e.0): Plan-Artefakt v1.0 + PM-Integration
+
+**Phase:** Pre-Pilot-Triage v2 — Erweiterung um Produkt-Qualitaets-Impact (PQI)
+**Modus:** PM-Cowork (Claude Opus), keine CC-Operationen
+**Session:** PM-Cowork Session 32 (Post-Compaction-Continuation)
+
+**Trigger:** User-Challenge: "müssen wir das ganze nicht noch mal von der qualität des produkts her denken?". Pre-Pilot-Triage-Matrix v1 klassifizierte nur nach Pipeline-Trigger-Wahrscheinlichkeit. Blind-Spot identifiziert: stabile didaktische Defekte werden in Klasse B/C einsortiert ("Pilot-tolerabel"), shippen aber in jedem produktiven Run mit. F0e schliesst Luecke via 2D-Klassifikation `(Trigger × PQI)`.
+
+**Durchgefuehrt (F0e.0 Plan-Phase):**
+- **Plan-Artefakt erstellt:** `docs/projekt/testrun-nationalismus-kolonialismus/F0e_DIDAKTISCHES_AUDIT_PLAN.md` v1.0 als SSoT-Master fuer alle Phasen F0e.0-F0e.5.
+  - §1 Scope/Non-Scope: Produkt-Audit der N-K-Output-Artefakte, KEIN Re-Audit der Pipeline, KEIN Schueler-Test, KEIN Re-Bau.
+  - §2 Audit-Input-Inventur: Deployed Game (data.json + 3 mappe-*.html + lehrkraft.html), Source-Artefakte (mat-*.json + aufgaben + rahmen + PROGRESSIONSPLAN + DIDAKTIK_REVIEW_LOG + Q-GATE-LOG), Sekundaer-Input (RA2-Bericht, Matrix v1).
+  - §3 Methodik: PQI-Skala (1 Fundamental / 2 Ernsthaft / 3 Kosmetisch). 6 orthogonale Dimensionen D1-D6 (Lernziel-Alignment / Fachliche Korrektheit / Didaktische Strukturierung / Schwierigkeits-Kalibrierung / Narrativ-Immersion / Register-Inklusion-Diversitaet). PQI-Score = Max ueber Dimensionen (strengster Punkt entscheidet).
+  - §4 Phasen-Plan F0e.0-F0e.5 mit INPUT/AKTION/OUTPUT/VERIFY/NEXT pro Phase.
+  - §5 Compaction-Resistance-Protokoll (3-Step-Readin: Plan + letztes Phasen-Output + STATUS-Block).
+  - §6 Task-ID-Schema (#23-#31 mit Dependencies).
+  - §7 Risiken + Mitigationen (LLM-Hallu, Tool-Call-Limit, Dedup, Verteilungs-Plausibilitaet).
+  - §8 Open Decisions (Subagent-Typ, LehrplanPlus-Quelle, F3-Entkoppelung, F0e.1-Start-Freigabe).
+  - §9 DoD (5 Erfolgskriterien).
+- **STATUS.md aktualisiert:** Header umgeschrieben auf F0e PHASE-0, neuer F0e-Block mit Phasen-Fortschritt + Artefakt-Inventar + Compaction-Protokoll-Verweis.
+- **Tasks #23-#31 erstellt** mit Dependency-Chain (#23 done, #24 in_progress, #25-#31 pending mit blockedBy-Kette).
+
+**Bewusst nicht durchgefuehrt:**
+- KEIN Commit jetzt — F0e-Commits werden in F0e.5 gebuendelt (Plan + STATUS + CHANGELOG + alle nachfolgenden F0e-Artefakte + Matrix v2.1 = 1 Commit). Zwischen-Commits vermeiden Repo-Rauschen.
+- Matrix-v1-Commit faellt aus, wird durch Matrix-v2-Commit substituiert (v1 nie eigenstaendig produktiv).
+
+**Naechster Schritt:** User-Go-Entscheidung fuer Phase F0e.1 (Rubric-Dokument + Handoff-Markdown fuer Subagent, ~1h Claude-Arbeit). Plan-Artefakt §8 fuer 4 Open Decisions.
+
+---
+
 ## 2026-04-18 — P0-BATCH-3 CLOSED: P0-A1 (Phase 3.1 Deploy-Preparation) + P0-A2 (V13-Patch-Regression) via CC-Headless mit Dashboard abgearbeitet → 6/6 P0 CLOSED, v3.12-Pilot entsperrt
 
 **Phase:** R0-TESTRUN-AUDIT Remediation (Batch-3, Finale)
