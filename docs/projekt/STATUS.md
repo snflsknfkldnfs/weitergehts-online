@@ -184,37 +184,55 @@
 
 ---
 
-## F0d Dispatch-Spike (Work-Stream, Stand 2026-04-20 PENDING)
+## F0d Dispatch-Spike (Work-Stream, Stand 2026-04-20 — P0 DONE / P1 FREEZE PENDING)
 
 **Grund:** Sub-Agenten werden aktuell nicht via Agent-Tool technisch dispatched; Generierung und Q-Gate-Pruefung laufen im selben linearen Orchestrator-Kontext → struktureller Self-Check-Bias + Rueckmelde-Luecke (RA5 F-RA5-11). Architektur-Hypothese: Kontext-isolierte Cowork-Agent-Tool-Dispatches liefern geringere strukturelle Varianz + hoehere Q-Gate-Fail-Detection. Spike evaluiert Hypothese empirisch an minimalem Scope.
 
-**SSoT-Artefakt:** `docs/projekt/F0d_DISPATCH_SPIKE_PLAN.md` v1.0 (Hypothese, A/B-Methodik, Input/Output-Schemata, Metriken, Gating).
+**SSoT-Artefakte:**
+- `docs/projekt/F0d_DISPATCH_SPIKE_PLAN.md` **v2.0** (Realitaets-Refaktor, 11-Artefakte-Bundle, Priming-Paket pro Arm, M1-M8, §12 Realitaetsnaehe-Checkliste).
+- `docs/projekt/testrun-dispatch-spike/RUN_LOG.md` — Compaction-safe Run-State-SSOT (Bundle-Hashes, Run-Plan-Matrix, P-Block-Checkpoints, Metriken-Tabelle).
+- `docs/projekt/testrun-dispatch-spike/input_bundle/` — FROZEN Bundle (4 Files).
 
-**Scope:** 1 Sub-Agent (`SUB_MATERIAL_QUELLENTEXT`) + 1 Q-Gate (`QG-06 MULTIPERSPEKTIV`) + 1 Thema (Ausschnitt Nationalismus-Kolonialismus). Keine vollstaendige Mappe, kein Deploy.
+**Scope:** 1 Sub-Agent (`SUB_MATERIAL_QUELLENTEXT`) + Q-Gates (`QG-06 MULTIPERSPEKTIV` + `SCHEMA-01` + `MQ-STRICT` + MQ1-MQ6 + M1-M12 + TYP-QUELLENTEXT). 1 realer Fall `deutscher-nationalismus-kolonialismus/mappe-4/mat-4-3` (Trotha-Vernichtungsbefehl, Jgst 9 R7, konflikttyp=true, Trigger Kolonisierung/Gewalt/Macht-Asymmetrie/Unterdrueckung). Keine vollstaendige Mappe, kein Deploy.
 
-**A/B-Methodik:** 3x Arm A (Baseline linear im Chat) vs 3x Arm B (Cowork Agent-Tool Dispatch mit Kontext-Isolation). 2 von 3 Input-Sets mit Fehler-Injektion (Mono-Perspektive) fuer Q-Gate-Fail-Detection-Messung.
+**A/B-Methodik:** 3x Arm A (Baseline linear im Chat) vs 3x Arm B (Cowork Agent-Tool Dispatch mit Kontext-Isolation). 2/3 Runs pro Arm mit Fehler-Injektion (`bundle_injected.md` — nur `perspektiven_policy` mono-perspektivisch; Zitat + Trigger + DIDAKTIK-Ethik unveraendert, R3-Mitigation).
 
-**Metriken M1-M5:**
-- M1 Strukturelle Varianz (B ≤ A)
-- M2 Inhaltliche Varianz (informativ)
-- M3 Q-Gate-Fail-Detection (B ≥ A + 20 pp) — Gating-Kriterium
-- M4 Token-Verbrauch (B ≤ 1.3 × A) — Gating-Kriterium
-- M5 Rueckmelde-Luecken (B ≤ A)
+**Bundle-Freeze (P0 completed 2026-04-20):**
+- `bundle.md` SHA-256 `419c6440a4ebcf9959fc0eca59974f493d2a95104a72dfc5ab96a5533c417658` (18913 B, 11 Artefakte).
+- `bundle_injected.md` SHA-256 `f44fb3d0fd924adb02230089b6f0e55744e19873f197ebcfbcd68bc1d085a174` (2571 B, Delta §11).
+- Pre-Run-Integritaetscheck via `sha256sum -c bundle_hash.txt` Pflicht.
 
-**Gating:** PASS = M1 + M3 + M4. FAIL = keine Architektur-Investition F0g. MIXED (M1+M3 ja, M4 nein) = F0g mit Budget-Restriktion.
+**Metriken M1-M8:**
+- M1 Strukturelle Varianz (B ≤ A) — Gating.
+- M2 Inhaltliche Varianz (informativ).
+- M3 Q-Gate-Fail-Detection (B ≥ A + 20 pp) — Gating.
+- M4 Token-Verbrauch (B ≤ 1.3 × A) — Gating.
+- M5 Rueckmelde-Luecken (B ≤ A).
+- M6 Schema-Konformitaet Draft7 strict (3/3 pro Arm) — Gating (neu v2.0).
+- M7 Q-Gate-Coverage (alle Gates vs nur QG-06) — informativ.
+- M8 Realitaetsnaehe (§12-Checkliste ≥ 6/7) — Gating (neu v2.0).
 
-**Dispatch-Layer:** Cowork Agent-Tool. CC-Handoff ausgeschlossen (vermeidet Prevent-First-Gate-Klasse an Fehlern).
+**Gating (v2.0 verschaerft):** PASS = M1 + M3 + M4 + M6 + M8. MIXED = M1+M3 ja, M4 nein. FAIL sonst. M6=FAIL → Arm-Ergebnis inhaltlich nicht auswertbar.
 
-**Ablauf (1 Arbeitstag):** P1 Input-Kit → P2 Arm A 3 Laufe → P3 Arm B 3 Laufe → P4 Metriken → P5 PASS/FAIL-Befund `docs/projekt/F0d_BEFUND.md` → P6 STATUS/CHANGELOG.
+**Dispatch-Layer:** Cowork Agent-Tool. CC-Handoff ausgeschlossen (vermeidet Prevent-First-Gate-Klasse).
 
-**Deliverables:** 6 Run-Logs `docs/projekt/testrun-dispatch-spike/` + F0d_BEFUND.md + STATUS/CHANGELOG-Updates.
+**Ablauf P0-P6 (Tasks #50-#60):**
+- P0 Bundle-Beschaffung + Hashing (#50) — **completed 2026-04-20**.
+- P1 Freeze (atomic Host-MCP Commit: Bundle + RUN_LOG + STATUS + CHANGELOG + auto-memory) (#51) — **in_progress**.
+- P2 Arm A Runs 1-3 (#52 bundle.md PASS → #53 injected FAIL → #54 injected FAIL).
+- P3 Arm B Runs 1-3 (#55 bundle.md PASS → #56 injected FAIL → #57 injected FAIL).
+- P4 Metriken M1-M8 (#58, blockedBy #54 + #57).
+- P5 BEFUND PASS/FAIL/MIXED `docs/projekt/F0d_BEFUND.md` (#59).
+- P6 Close: STATUS + CHANGELOG + Task #46 completed (#60).
+
+**Deliverables:** 6 Run-Ordner `docs/projekt/testrun-dispatch-spike/runs/<arm>/<run_id>/` (INPUT_MANIFEST + GENERATOR_OUTPUT + QGATE_RETURN + RUN_META) + `METRICS.md` + `F0d_BEFUND.md` + STATUS/CHANGELOG-Updates.
 
 **Folgeschritte:**
 - PASS → Task #48 F0g entblockt (PI-DISPATCH-1/2/3 Refaktor).
 - FAIL → PI-DISPATCH-Items auf DEFERRED, UPGRADE_PLAN §20 Nachtrag.
 - MIXED → F0g reduziert (nur Q-Gates).
 
-**Kopplung:** Task #46. Unabhaengig von F0f, entkoppelt, parallel lauffaehig.
+**Kopplung:** Task #46 (parent), blockedBy [#60]. Unabhaengig von F0f, entkoppelt, parallel lauffaehig.
 
 ---
 

@@ -4,6 +4,50 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-20 — F0d P0 Bundle-Freeze + PM-Verankerungs-Paket (compaction-safe Snapshot)
+
+**Ausloeser — User-Direktive:** *"achte auf extrem praezises PM waehrend diesem prozess, sodass selbst durch compaction oder memory-loss alles praezise verankert ist"*. Mandat: vor P1-Freeze-Commit komplette PM-Verankerung als atomic-resumable Snapshot (Tasks + RUN_LOG + STATUS + CHANGELOG + auto-memory).
+
+**P0 Bundle-Beschaffung (abgeschlossen):** 11 Artefakte aus produktiven Testrun-Quellen (`docs/agents/artefakte/deutscher-nationalismus-kolonialismus/` + `escape-game-generator/agents/_includes/F0B_PRIMING_INCLUDE.md` + `escape-game-generator/architektur/vertraege/VERTRAG_PHASE_2-1_MATERIAL.md`) zu zwei FROZEN Input-Bundles komponiert:
+
+- `docs/projekt/testrun-dispatch-spike/input_bundle/bundle.md` — 18913 B, SHA-256 `419c6440a4ebcf9959fc0eca59974f493d2a95104a72dfc5ab96a5533c417658`. 12 Abschnitte (§0 Lese-Orientierung 8-Step-Read-Mapping, §1 MATERIAL_GERUEST-Row mat-4-3, §2 SEQUENZKONTEXT mat-4-2 → mat-4-4, §3 hefteintrag-Slice, §4 SUB_MATERIAL_QUELLENTEXT-Systemprompt-Ref, §5 F0B_PRIMING_v1 §1+§2+§3 wortgleich mit BEGIN/END-Markern, §6 SKRIPT §4+§5, §7 INHALTSBASIS F4-4..F4-9 + A4-1/A4-2/A4-3, §8 einstieg-Slice, §9 ARTEFAKT_INVENTAR pq-4-1, §10 DIDAKTIK_RAHMEN, §11 perspektiven_policy P1|P2|P3).
+- `docs/projekt/testrun-dispatch-spike/input_bundle/bundle_injected.md` — 2571 B, SHA-256 `f44fb3d0fd924adb02230089b6f0e55744e19873f197ebcfbcd68bc1d085a174`. Delta-only: §11 manipuliert auf `P1: Deutsche Reichsfuehrung (Trotha, Kolonialverwaltung)` (mono-perspektivisch). §0-§10 byte-identisch zu `bundle.md` (referenziert via Hash). R3-Mitigation: Zitat pq-4-1, Trigger-Kategorien Kolonisierung/Gewalt, DIDAKTIK_RAHMEN-Ethik bleiben unveraendert.
+- `docs/projekt/testrun-dispatch-spike/input_bundle/bundle_hash.txt` — SHA-256-Manifest beider Bundles.
+- `docs/projekt/testrun-dispatch-spike/input_bundle/README.md` — Run-Plan-Tabelle (6 Runs mit Bundle-Zuweisung + erwartetem QG-06) + Verifikations-Befehl + Inhaltsverzeichnis + Schema-Referenz.
+
+**PM-Verankerung (vor P1-Freeze abgeschlossen):**
+
+- **Tasks #50-#60 in TaskList angelegt + verkettet:** #50 P0 (completed), #51 P1 Freeze (in_progress, blockedBy [#50]), #52-#54 Arm A Runs 1-3 (blockedBy-Kette #51 → #52 → #53 → #54, expected_qgate PASS/FAIL/FAIL), #55-#57 Arm B Runs 1-3 (blockedBy-Kette #51 → #55 → #56 → #57, gleiche expected_qgates), #58 Metriken M1-M8 (blockedBy [#54, #57]), #59 BEFUND (blockedBy [#58]), #60 Close (blockedBy [#59]). Parent #46 bleibt in_progress bis #60 done.
+- **RUN_LOG.md neu:** `docs/projekt/testrun-dispatch-spike/RUN_LOG.md` als Compaction-safe SSOT fuer Run-State. 7 Abschnitte: Kontext-Reset, Bundle-Manifest mit Hashes, Run-Plan-Matrix (6 Runs mit Status/Actual/Schema/Tokens), P-Block-Checkpoints, Metriken-Matrix (M1-M8 leer-vorbereitet), Risiken R1-R5-Status, Befund-Platzhalter, Event-Log.
+- **STATUS.md F0d-Section aktualisiert** (Zeilen 187-217 ersetzt): v2.0 statt v1.0, P0 DONE + Bundle-Hashes dokumentiert, P1 FREEZE PENDING, M-Metriken auf M1-M8 erweitert, Gating auf M1+M3+M4+M6+M8 verschaerft, Ablauf P0-P6 mit Task-IDs referenziert, Deliverables erweitert (Run-Ordner-Layout + METRICS.md + F0d_BEFUND.md).
+- **auto-memory `project_f0d_spike_state.md` neu** + Index-Zeile in `MEMORY.md`: Snapshot aktueller F0d-State fuer Post-Compaction-Wiederaufnahme (Plan v2.0, Bundle-Pfad, Hashes, Task-IDs #50-#60, naechster Schritt P1-Freeze).
+
+**Plan-Bezug:** `F0d_DISPATCH_SPIKE_PLAN.md` v2.0 §4.1 Input-Bundle komplett beschafft; §5 Metriken M6/M7/M8 im RUN_LOG als auswertbare Matrix vorbereitet; §11 R5 (Bundle-Drift) aktiv mitigiert durch SHA-256-Manifest + pre-P1-Freeze-Step; §12 Realitaetsnaehe-Checkliste als Pflicht-Filter im RUN_LOG §6 verankert.
+
+**Geaenderte Dateien (9 in P0+P1-Verankerung, Freeze-Commit-Scope):**
+- NEU `docs/projekt/testrun-dispatch-spike/input_bundle/bundle.md`
+- NEU `docs/projekt/testrun-dispatch-spike/input_bundle/bundle_injected.md`
+- NEU `docs/projekt/testrun-dispatch-spike/input_bundle/bundle_hash.txt`
+- NEU `docs/projekt/testrun-dispatch-spike/input_bundle/README.md`
+- NEU `docs/projekt/testrun-dispatch-spike/RUN_LOG.md`
+- MOD `docs/projekt/STATUS.md` (F0d-Section v1.0 → v2.0 / P0 DONE / P1 PENDING)
+- MOD `docs/projekt/CHANGELOG.md` (dieser Eintrag)
+- NEU `/sessions/admiring-optimistic-cerf/mnt/.auto-memory/project_f0d_spike_state.md` (ausserhalb Repo — nicht Bestandteil Freeze-Commit, separater Kanal)
+- MOD `/sessions/admiring-optimistic-cerf/mnt/.auto-memory/MEMORY.md` (Index-Zeile — ebenfalls ausserhalb Repo)
+
+**Freeze-Commit-Scope (nur Repo-interne Dateien, 7 Dateien):** bundle.md + bundle_injected.md + bundle_hash.txt + README.md + RUN_LOG.md + STATUS.md + CHANGELOG.md.
+
+**Naechster Schritt:** Freeze-Commit-Plan (Host-MCP v2.1, 5-Stufen) dem User vorlegen, nach Go: Stufe 3 Lock-Check, Stufe 4 Exec via `mcp__Control_your_Mac__osascript`, Stufe 5 Verify (git log -1 --stat + rev-parse HEAD + push-Bestaetigung). Danach Freigabe der Arm-A-Runs (#52 zuerst, bundle.md, PASS-Referenz).
+
+**Referenzen:**
+- Parent-Plan: `docs/projekt/F0d_DISPATCH_SPIKE_PLAN.md` v2.0.
+- Referenz-Exemplar: `docs/agents/artefakte/deutscher-nationalismus-kolonialismus/mappe-4/materialien/mat-4-3.json`.
+- Vertrag: `escape-game-generator/architektur/vertraege/VERTRAG_PHASE_2-1_MATERIAL.md` (8-Step-Read-Protokoll).
+- Priming: `escape-game-generator/agents/_includes/F0B_PRIMING_INCLUDE.md` v1 (`F0B_PRIMING_v1`).
+- Schema: `escape-game-generator/architektur/schemata/material-output-schema.json` (Draft7 strict).
+
+---
+
 ## 2026-04-20 — F0d Dispatch-Spike Plan v2.0 Realitaets-Refaktor (Prozess-Artefakt-Treue, realer mat-4-3-Fall)
 
 **Ausloeser — User-Direktive:** *"wir sollten F0d praxisnaeher testen. identifiziere, welche artefakte der agent gemaess prozesstruktur uebergeben bekommt, und welcher output genau in welcher form erwartet wird. dann sollten wir den agenten entsprechend praezise primen/in seiner arbeit strukturieren, sodass wir einen moeglichst realgetreuen test einer materialerstellung im kontext unserer bestehenden prozesstruktur bekommen."*
