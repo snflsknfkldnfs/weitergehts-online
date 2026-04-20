@@ -83,3 +83,27 @@ GESAMT: PASS
 - Materialien gesamt: 6 (M1) + 6 (M2) + 6 (M3) + 5 (M4) = 23
 - Aufgaben gesamt: 7 (M1) + 5 (M2) + 4 (M3) + 6 (M4) = 22
 - Tafelbild-Knoten gesamt: k1-* + k2-* + k3-* + k4-1..k4-4 → Sequenz-weites Concept-Map
+
+---
+
+## Phase 3.2 Live-Go (Mappe 4 — Game-Abschluss)
+
+**Datum:** 2026-04-20
+**Gesamturteil:** PASS
+
+| Schritt | Aktion | Ergebnis |
+|---|---|---|
+| 1 | USER-VALIDIERUNG (PI-Zeile 21): User hat Mappe 4 live im Browser geprueft | PASS ("browser check pass", 2026-04-20) |
+| 2 | STAGING-FLAG-ENTFERNT | n.a. — Game seit Mappe 1 Phase 3.2 (2026-04-12) bereits live; kein `data-status="staging"` mehr am `<li>`. Mappe 4 wurde durch Phase-3.1-Commit `df6378e` direkt unter bestehendem Live-Listeneintrag sichtbar. |
+| 3 | Commit `v3.12 deutscher-nationalismus-kolonialismus Mappe 4 live + Game ABGESCHLOSSEN` (PI-Update + Snapshot + Q-GATE-LOG-Ergaenzung) | PASS |
+| 4 | MAPPEN_ABGESCHLOSSEN: 3 → 4 | PASS |
+| 5 | POST-DEPLOY-SMOKETEST | n.a. (Q2=b, optional) |
+
+**Game-Status nach Phase 3.2:** ABGESCHLOSSEN. Alle 4 Mappen live unter `https://weitergehts.online/escape-games/deutscher-nationalismus-kolonialismus/`. PROJECT_INSTRUCTIONS_SNAPSHOT.md persistiert unter `docs/agents/artefakte/deutscher-nationalismus-kolonialismus/PROJECT_INSTRUCTIONS_SNAPSHOT.md`.
+
+**Kumulative Game-Bilanz (final):**
+- Phase 0 (Didaktik/Inhalt/Skript/Hefteintrag): PASS
+- Phase 1 (Material-Geruest): PASS
+- Phase 2 Mappen 1–4 (2.0 bis 2.2c, je Mappe): alle PASS
+- Phase 3.1 Deploy-Prep (Mappe 1 + Mappe 4 ALL-Scope): PASS
+- Phase 3.2 Live-Go (Mappe 1 + Mappe 4): PASS
