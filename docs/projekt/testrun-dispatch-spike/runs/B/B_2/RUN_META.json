@@ -1,0 +1,33 @@
+{
+  "run_id": "run_B_2",
+  "task_id": "#56",
+  "arm": "B",
+  "dispatch_mode": "general-purpose Agent-Tool, 2 getrennte Task-Calls (Generator isoliert | QG-06-Checker isoliert)",
+  "input_bundle": "docs/projekt/testrun-dispatch-spike/input_bundle/bundle_injected.md",
+  "input_bundle_sha256": "f44fb3d0fd924adb02230089b6f0e55744e19873f197ebcfbcd68bc1d085a174",
+  "envelope_version": "v2.1 §4.2 Arm-B-Schema (Isolation-Boundary zwischen Gen + Check)",
+  "priming_include": "F0B_PRIMING_v1 §1+§2+§3 (inline im Call-1-Generator-Prompt; Checker erhielt nur Bundle-Regeln + Schema + Policy + DIDAKTIK + Material-JSON)",
+  "fehler_injektion": "§11 perspektiven_policy reduziert auf mono-perspektivisch 'P1: Deutsche Reichsfuehrung (Trotha, Kolonialverwaltung)' (kein P2, kein P3). Zitat + Trigger + DIDAKTIK-Ethik unveraendert.",
+  "call_1_generator": {
+    "agent_id_returned": "a2bb52ec15c150211",
+    "total_tokens": 19457,
+    "duration_ms": 26079,
+    "tool_uses": 0
+  },
+  "call_2_qgate_checker": {
+    "agent_id_returned": "a67b71f584111c677",
+    "total_tokens": 19369,
+    "duration_ms": 35123,
+    "tool_uses": 0
+  },
+  "total_tokens": 38826,
+  "total_duration_ms": 61202,
+  "start_ts": "2026-04-20T22:34+02:00",
+  "end_ts": "2026-04-20T22:35+02:00",
+  "expected_qgate_result": "FAIL (mono-perspektivisch, nur P1)",
+  "actual_qgate_result": "FAIL",
+  "fail_detection_hit": true,
+  "schema_validation_self_declared": true,
+  "schema_validation_formal": "pending (P4 batch)",
+  "notes": "FAIL-DETECTION-HIT fuer Arm B. Generator folgte Policy literal (perspektiv_tags nur Dominant-Pool, _meta.perspektive nur P1). Isolierter Checker produzierte 2 Blocker-Findings (MQ-M4-COVERAGE-FAIL + MQ-POLICY-DIDAKTIK-KONFLIKT) + 1 Warn-Finding (MQ-M4-TAG-INKONSISTENZ, Tag-vs-Inhalt) + 1 Info-Finding (MQ-M6-TERMINOLOGIE-01 PASS). Kontrast zu A_2 stark: A_2 dasselbe Bundle lieferte PASS-Miss (Generator produzierte multiperspektivisch trotz Policy, Self-Check bestaetigte intra-call). B_2 Isolation zwingt Checker zu struktureller Policy/Ethik-Abwaegung. Policy-Didaktik-Konflikt wurde in B_2 als eigenstaendiger Blocker markiert (in A_3 war er nur Teil des MQ-POLICY-DIDAKTIK-KONFLIKT-Findings mit gleichem Code). Token-Overhead Run B_2 gesamt 38826 = 1.83x run_A_1 (21254) bzw. 1.89x run_A_2 (20574) bzw. 1.97x run_A_3 (19693). Arm-B-Overhead-Schwelle 1.3x weiterhin deutlich ueberschritten. Shape-Drift Material-JSON: B_2 liefert flat-Top-Level (id/typ/titel/didaktische_funktion/inhalt HTML-String/aufgabenstellung/perspektiv_tags/_meta) — simpler als B_1 (Objekt inhalt mit Sub-Keys). Gesamt-Runs-Instabilitaet M1 inhaltlich bleibt bestehen. Spike-Arm-A/B-Delta in Fail-Detection: Arm A 1/2 Hit (A_3), Arm B 1/1 Hit (B_2) bislang."
+}

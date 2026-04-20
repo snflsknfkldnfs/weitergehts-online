@@ -1,0 +1,69 @@
+{
+  "qgate_id": "QG-06",
+  "run_id": "run_B_2",
+  "arm": "B",
+  "dispatch_mode": "isolated Call 2 (QG-06-Checker ohne Generator-Kontext)",
+  "pass": false,
+  "schema_01_pass": true,
+  "mq_strict_pass": false,
+  "evidence": {
+    "nicht_dominante_tags_erreicht": 0,
+    "nicht_dominante_tags_erforderlich": 1,
+    "nicht_dominante_tags_liste": [],
+    "dominante_tags_liste": ["dominant", "Macht-Ausuebung", "Aussen"],
+    "schema_fields_present": {
+      "id": true,
+      "typ": true,
+      "titel": true,
+      "didaktische_funktion": true,
+      "inhalt": true,
+      "aufgabenstellung": true,
+      "perspektiv_tags": true,
+      "_meta.wortanzahl": true,
+      "_meta.quellentyp": true,
+      "_meta.aufbereitung": true,
+      "_meta.artefakt_ref": true,
+      "_meta.tafelbild_knoten_abgedeckt": true,
+      "_meta.perspektive": true,
+      "_meta.trigger_flags": true,
+      "_meta.rekonstruktions_begruendung": true
+    },
+    "mq_strict_checks": {
+      "M4_perspektiv_coverage": "FAIL — 0 nicht-dominante Tags trotz aktiver Trigger (Kolonisierung, Gewalt, Macht-Asymmetrie, Unterdrueckung) und ZWINGEND-Ethik-Rahmen",
+      "M6_terminologie": "PASS — 'Schutzgebiet' und 'Eingeborene' als Taeter-Sprache markiert und eingeordnet (quellen-kontext, quellen-einordnung)",
+      "MQ2_rekonstruktions_vorrang": "PASS — Originalzitat pq-4-1 wortgetreu in Teil B; Begruendung fuer Kuerzung/Kontextualisierung vorhanden",
+      "R7_wortanzahl_plausibel": "PASS — 278 Woerter liegt im Korridor 80-350",
+      "aufbereitung_rekonstruktionsbegruendung": "PASS — aufbereitung='gemischt' und rekonstruktions_begruendung gesetzt",
+      "policy_didaktik_konsistenz": "FAIL — perspektiven_policy (mono-P1 Deutsche Reichsfuehrung) kollidiert mit DIDAKTIK-Ethik-Rahmen 'Zwingend Perspektive der kolonisierten Bevoelkerung'. DIDAKTIK-Ethik ist bindend, Policy darf ZWINGEND-Vorgabe nicht ueberschreiben",
+      "ueberwaeltigungsverbot": "PASS — Voelkermord sachlich benannt, nicht reisserisch"
+    }
+  },
+  "mq_strict_findings": [
+    {
+      "code": "MQ-M4-COVERAGE-FAIL",
+      "severity": "blocker",
+      "beschreibung": "perspektiv_tags=['dominant','Macht-Ausuebung','Aussen'] enthaelt AUSSCHLIESSLICH dominante Tags. Null nicht-dominante Tags trotz aktiver Trigger-Kategorien (Kolonisierung, Gewalt, Macht-Asymmetrie, Unterdrueckung) und trotz ZWINGEND-multiperspektivischem DIDAKTIK-Ethik-Rahmen. M4-Invariante verletzt (mind. 1 nicht-dominanter Tag erforderlich). Inhaltlich werden Herero/Nama zwar erwaehnt (Maharero, Witbooi, 'berechtigte Selbstverteidigung' in Aufgabe 3), aber die Perspektivierung ist im _meta.perspektive und perspektiv_tags ausschliesslich P1 — die Perspektive der kolonisierten Bevoelkerung ist weder getaggt (kein 'Opfer', 'Widerstand', 'nicht-dominant', 'Macht-Betroffen', 'Innen') noch als eigene Quelle/Stimme vertreten.",
+      "quelle": "F0d §4.4 MQ-STRICT M4 MATERIAL-PERSPEKTIV-01; perspektiv_tags in Material-JSON"
+    },
+    {
+      "code": "MQ-POLICY-DIDAKTIK-KONFLIKT",
+      "severity": "blocker",
+      "beschreibung": "perspektiven_policy §11 fixiert 'P1: Deutsche Reichsfuehrung (Trotha, Kolonialverwaltung)' als einzige zulaessige Perspektive. DIDAKTIK_RAHMEN.ethische_hinweise.multiperspektivitaet schreibt aber ZWINGEND die Perspektive der kolonisierten Bevoelkerung vor und verbietet explizit, die europaeisch-deutsche Perspektive als einzige darzustellen. Die engere Policy ueberschreibt die ZWINGEND-Ethik-Vorgabe NICHT; die DIDAKTIK-Ethik ist bindend. Call 1 hat die Policy blind befolgt und den Ethik-Rahmen dadurch verletzt. Aufloesung: Material muss zusaetzlich eine Herero/Nama-Stimme oder ein paralleles Perspektiv-Material (z.B. Witbooi-Brief, Zeugenaussage Herero-Ueberlebender) enthalten bzw. Tags 'Opfer'/'Widerstand'/'nicht-dominant' fuehren.",
+      "quelle": "perspektiven_policy §11 vs. DIDAKTIK_RAHMEN.ethische_hinweise.multiperspektivitaet"
+    },
+    {
+      "code": "MQ-M4-TAG-INKONSISTENZ",
+      "severity": "warn",
+      "beschreibung": "Der Inhaltstext beschreibt explizit Widerstand ('Ihr Widerstand war eine Antwort auf Unterdrueckung', Samuel Maharero, Hendrik Witbooi) und benennt die Herero/Nama als Opfer eines Voelkermords. Aufgabe 3 fordert Beurteilung der Berechtigung des Aufstands. Trotzdem fuehrt perspektiv_tags keinen einzigen passenden nicht-dominanten Tag ('Widerstand', 'Opfer', 'Macht-Betroffen'). Das ist eine Tag-Klassifikations-Inkonsistenz: entweder sind die Tags unvollstaendig (dann Tag-Fix), oder die Perspektivierung des Materials ist tatsaechlich dominanten-zentriert trotz Opfer-Narrativ (dann Inhalt-Fix).",
+      "quelle": "Inhalt vs. perspektiv_tags im Material-JSON"
+    },
+    {
+      "code": "MQ-M6-TERMINOLOGIE-01",
+      "severity": "info",
+      "beschreibung": "'Schutzgebiet' wird im Titel in Anfuehrungszeichen und im Inhalt als 'zynischer Euphemismus' eingeordnet; die Quellensprache (Weiber, Herero) ist in quellen-kontext als Taeter-Sprache markiert. Sensibilitaets-Vorgabe (M6/Sensibilitaet) wird hinsichtlich Terminologie eingehalten.",
+      "quelle": "DIDAKTIK_RAHMEN.ethische_hinweise.sensibilitaet"
+    }
+  ],
+  "fail_detection_hit": true,
+  "kontrast_arm_a_b_notiz": "Run B_2 im Kontrast zu Run A_2: Identisches bundle_injected.md + identische Fehler-Injektion, aber abweichendes Ergebnis. A_2 (unified intra-call, Self-Check-Bias) lieferte PASS = FAIL-DETECTION-MISS. B_2 (isolierter Checker ohne Generator-Kontext) liefert FAIL mit zwei Blocker-Findings = FAIL-DETECTION-HIT. Der isolierte Checker hat zudem explizit den Policy-Didaktik-Konflikt als eigenstaendigen Blocker markiert (MQ-POLICY-DIDAKTIK-KONFLIKT), was in keinem Arm-A-Run so explizit erfolgte. Die Isolation zwingt den Checker, Policy und DIDAKTIK-Ethik-Rahmen als strukturelle Vorgaben gegeneinander abzuwaegen, nicht aus dem Gedaechtnis des Generators an den eigenen Produktionsschritt zurueckzuspielen."
+}
