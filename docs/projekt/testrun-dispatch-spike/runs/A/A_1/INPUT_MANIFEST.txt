@@ -1,0 +1,13 @@
+Run-ID: run_A_1
+Arm: A (Baseline linear-Simulation via Cowork Agent-Tool)
+Task-ID: #52
+Erwartetes QG-06: PASS (3-perspektivisch, P1+P2+P3)
+Input-Bundle: docs/projekt/testrun-dispatch-spike/input_bundle/bundle.md
+Bundle SHA-256: 419c6440a4ebcf9959fc0eca59974f493d2a95104a72dfc5ab96a5533c417658
+Bundle Bytes: 18913
+Pre-Run-Hash-Check: OK (2026-04-20 post-commit ec5115d)
+Dispatch-Mode: general-purpose Agent-Tool, 1 vereinigter Task-Call (Generator+Self-Check intra-call)
+Envelope-Fingerprint: v2.1 §4.2 Arm-A-Schema
+Priming-Include: F0B_PRIMING_v1 §1+§2+§3 (wortgleich in bundle.md §5)
+Plan-Ref: docs/projekt/F0d_DISPATCH_SPIKE_PLAN.md v2.1 (commit ec5115d)
+Bundle-Freeze-Commit: 7968f5a

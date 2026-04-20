@@ -1,0 +1,21 @@
+{
+  "run_id": "run_A_1",
+  "task_id": "#52",
+  "arm": "A",
+  "dispatch_mode": "general-purpose Agent-Tool, 1 vereinigter Task-Call (Generator+Self-Check intra-call)",
+  "input_bundle": "docs/projekt/testrun-dispatch-spike/input_bundle/bundle.md",
+  "input_bundle_sha256": "419c6440a4ebcf9959fc0eca59974f493d2a95104a72dfc5ab96a5533c417658",
+  "envelope_version": "v2.1 §4.2 Arm-A-Schema",
+  "priming_include": "F0B_PRIMING_v1 §1+§2+§3 (inline im Agent-Prompt)",
+  "agent_id_returned": "a0c2c7d9a753fc9ce",
+  "total_tokens": 21254,
+  "duration_ms": 46546,
+  "tool_uses": 0,
+  "start_ts": "2026-04-20T22:15+02:00",
+  "end_ts": "2026-04-20T22:16+02:00",
+  "expected_qgate_result": "PASS (3-perspektivisch, P1+P2+P3)",
+  "actual_qgate_result": "PASS",
+  "schema_validation_self_declared": true,
+  "schema_validation_formal": "pending (P4 batch)",
+  "notes": "Material-JSON hat zusaetzliches Feld perspektiv_tags im _meta (aus F0B §2 abgeleitet); sequenz_kontext als Strings (statt strukturierten vorher/nachher-Objekten wie in Plan §4.3 Beispiel) — Schema-Compliance wird in P4 formal validiert. QG-06 Self-Check liefert pass=true + schema_01_pass=true + mq_strict_pass=true. Perspektiv-Gegenueberstellung P1 (Taeter-Befehl) vs P3 (Opfer-Realitaet) explizit im HTML-Inhalt."
+}

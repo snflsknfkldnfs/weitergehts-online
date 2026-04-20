@@ -1,0 +1,21 @@
+{
+  "qgate_id": "QG-06",
+  "pass": true,
+  "evidence": {
+    "perspektive_1_nachweis": "'Innerhalb der Deutschen Grenze wird jeder Herero mit oder ohne Gewehr [...] erschossen' — Wortlaut Trothas markiert P1 Deutsche Reichsfuehrung als Taeter-Perspektive.",
+    "perspektive_2_nachweis": "'Viele Herero flohen in die wasserlose Omaheke-Wueste. Deutsche Truppen riegelten die Wasserstellen ab. Tausende Maenner, Frauen und Kinder verdursteten.' sowie 'Von rund 80.000 Herero ueberlebten nach Schaetzungen nur 15.000 bis 20.000' — markiert P3 Kolonisierte Herero/Nama als Opfer; zusaetzlich Nennung Witbooi als Widerstand.",
+    "gegenueberstellung_explizit": true,
+    "nicht_dominant_tag_erreicht": true
+  },
+  "begruendung": "Der Text stellt Taeter-Befehl und Opfer-Realitaet direkt gegenueber. Vier nicht-dominante Tags sind belegt (Opfer, Widerstand, Macht-Betroffen, Kritik). Damit ist die Multiperspektivitaets-Policy STR-05 erfuellt.",
+  "schema_01_pass": true,
+  "mq_strict_pass": true,
+  "mq_strict_findings": [
+    "aufbereitung='gemischt' korrekt gesetzt, da pq-4-1 echte Primaerquelle mit Kuerzung ([...]) und R7-Rahmung ist (MQ2-Vorrangregel).",
+    "rekonstruktions_begruendung vorhanden und nennt Kuerzung plus Rahmung explizit.",
+    "Primaerquellen-Zitate wortgetreu; Kontextualisierungs-Saetze davor (Teil A Schluss) und danach (erster Satz nach blockquote) vorhanden.",
+    "'Schutzgebiet' ausschliesslich in Anfuehrungszeichen oder als 'sogenanntes Schutzgebiet' verwendet — TERMINOLOGIE-01 erfuellt.",
+    "Titel enthaelt konkreten Gegenstand (Vernichtungsbefehl) — Ambiguitaets-Sperre erfuellt.",
+    "R7-Metriken im Rahmentext eingehalten (Saetze mehrheitlich <=15 Woerter, keiner >25)."
+  ]
+}
