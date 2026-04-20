@@ -6,7 +6,12 @@
     "lehrplanbezug": "LB2 Zeit und Wandel (K_04, K_05); sekundaer LB1 Lebensraum Erde (K_01)",
     "schwierigkeit": "Basis",
     "geschaetzte_dauer_min": 30,
-    "narrativ": "In einer alten Dokumentenmappe finden sich Zeugnisse aus verschiedenen Epochen der deutschen Geschichte — vom Traum der Einheit bis zur Realität der Kolonien. Als Historikerinnen und Historiker ist es eure Aufgabe, die Dokumente zu sichten, einzuordnen und die Zusammenhänge aufzudecken."
+    "narrativ": "In einer alten Dokumentenmappe finden sich Zeugnisse aus verschiedenen Epochen der deutschen Geschichte — vom Traum der Einheit bis zur Realität der Kolonien. Als Historikerinnen und Historiker ist es eure Aufgabe, die Dokumente zu sichten, einzuordnen und die Zusammenhänge aufzudecken.",
+    "_hotfix_reset": {
+      "build_id": "v3.16-hotfix-2026-04-20-m4-reset",
+      "reset_mappen_aufgaben": ["mappe-4"],
+      "grund": "Mappe 4 Struktur-Hotfix: Aufgabe 5 entfernt, Aufgabe 4 akzeptiere_jede_antwort — User sollen M4 frisch beginnen."
+    }
   },
   "mappen": [
     {

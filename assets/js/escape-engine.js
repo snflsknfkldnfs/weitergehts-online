@@ -188,6 +188,9 @@ var EscapeEngine = (function () {
         var thema = (data.meta && data.meta.titel) ? data.meta.titel.toLowerCase().replace(/\s+/g, '-') : 'unbenannt';
         _state.storageKey = 'escape-' + thema;
 
+        // v3.16: Hotfix-Reset-Check (data-driven via meta._hotfix_reset)
+        _checkHotfixReset(data);
+
         // v3.12: Vorab freigeschaltete Mappen in localStorage seeden
         _seedVorabFreigeschaltet(data);
 
@@ -575,6 +578,59 @@ var EscapeEngine = (function () {
     allProgress.mappen[mappeId].abgeschlossen = abgeschlossen;
     allProgress.letzteAktivitaet = new Date().toISOString();
     Core.storage.set(_state.storageKey, allProgress);
+  }
+
+  /**
+   * v3.16: Einmal-Hotfix-Reset fuer Mappen-Aufgaben basierend auf build_id.
+   * Wird via data.meta._hotfix_reset gesteuert. Bei Build-ID-Mismatch wird
+   * der Aufgaben-Progress der konfigurierten Mappen zurueckgesetzt —
+   * idempotent: fuer jede build_id genau einmal pro Browser.
+   *
+   * Config in data.json:
+   *   meta._hotfix_reset = {
+   *     build_id: "v3.16-hotfix-...",
+   *     reset_mappen_aufgaben: ["mappe-4"],
+   *     grund: "..."
+   *   }
+   *
+   * @param {Object} data - Geladene data.json-Daten
+   * @private
+   */
+  function _checkHotfixReset(data) {
+    var hotfix = data && data.meta && data.meta._hotfix_reset;
+    if (!hotfix || !hotfix.build_id) return;
+
+    var mappenIds = hotfix.reset_mappen_aufgaben || [];
+    if (!mappenIds.length) return;
+
+    var buildKey = _state.storageKey + '::hotfix_build';
+    var storedBuild = null;
+    try { storedBuild = localStorage.getItem(buildKey); } catch (e) { return; }
+
+    if (storedBuild === hotfix.build_id) return; // bereits angewendet
+
+    var allProgress = _getAllProgress();
+    var changed = false;
+    if (allProgress.mappen) {
+      for (var i = 0; i < mappenIds.length; i++) {
+        var mid = mappenIds[i];
+        if (allProgress.mappen[mid]) {
+          allProgress.mappen[mid].aufgaben = {};
+          allProgress.mappen[mid].abgeschlossen = false;
+          allProgress.mappen[mid].fehlversuche = 0;
+          allProgress.mappen[mid].tipp_punkte = 0;
+          changed = true;
+        }
+      }
+    }
+
+    if (changed) {
+      allProgress.letzteAktivitaet = new Date().toISOString();
+      Core.storage.set(_state.storageKey, allProgress);
+    }
+
+    try { localStorage.setItem(buildKey, hotfix.build_id); } catch (e) {}
+    console.info('[EscapeEngine] Hotfix-Reset angewendet:', hotfix.build_id, '→ Mappen:', mappenIds.join(','), '| Grund:', hotfix.grund || '-');
   }
 
   /**
