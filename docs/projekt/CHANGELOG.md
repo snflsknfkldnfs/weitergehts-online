@@ -4,6 +4,84 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-20 — Pilot-Zurueckstellung + F0d Dispatch-Spike + F0f Feld-Evidenz + UPGRADE_PLAN v1.4-Delta
+
+**Ausloeser — zwei strukturelle Befunde zum geplanten v3.12-Pilot-Launch:**
+
+1. **T1 Feld-Evidenz (Paul, Unterricht 2026-04):** Generierte Mappen sind im praktischen Einsatz zu schwer bzw. didaktisch zu wenig praezise. F0b deckt 9/9 PQI-1, aber nicht den vollen 21er A-CODE + 6 A-PROZ Katalog aus `PRE_PILOT_TRIAGE_MATRIX_v2 §6.1/§6.2`.
+2. **T2 Dispatch-Architektur-Diagnose (Paul + PM-Reflexion):** Sub-Agenten werden aktuell nicht technisch via Task/Agent-Tool dispatched, sondern als lineare Prompt-Interpolation im Orchestrator-Kontext abgearbeitet. Q-Gates pruefen sich teils selbst (Self-Check-Bias). Empirisch korreliert mit RA5 F-RA5-11 "CC→Cowork-Rueckmelde-Luecke" und 12 Auto-Kompaktionen im Testrun.
+
+**Entscheidung:** Pilot-Zurueckstellung statt Launch. Task #39 (F0b.3 E2E-Pilot) wird blockiert durch #46 (F0d Dispatch-Spike) + #47 (F0f Feld-Evidenz).
+
+**Neue Plan-Artefakte:**
+
+- `docs/projekt/F0d_DISPATCH_SPIKE_PLAN.md` v1.0 — Spike-Methodik:
+  - Hypothese H1 (Varianz), H2 (Q-Gate-Fail-Detection), H3 (Token-Budget)
+  - Scope: 1 Sub-Agent (`SUB_MATERIAL_QUELLENTEXT`) + 1 Q-Gate (`QG-06 MULTIPERSPEKTIV`)
+  - A/B-Methodik: 3x Baseline linear vs 3x Cowork-Agent-Tool Dispatch, 2/3 mit Fehler-Injektion
+  - Metriken M1-M5, Gating M1+M3+M4
+  - Dispatch-Layer: Cowork Agent-Tool (kein CC-Handoff)
+  - Deliverables: 6 Run-Logs + `F0d_BEFUND.md`
+  - Ablauf: 1 Arbeitstag (P1-P6)
+
+- `docs/projekt/F0f_FELD_EVIDENZ_PLAN.md` v1.0 — Erhebungs- und Mapping-Methodik:
+  - Erhebungsbogen-Schema (Datum/Klasse/Mappe-ID/Beobachtung/Schueler-Reaktion/Intervention/Matrix-Kandidat)
+  - Matrix-Mapping-Workflow gegen Matrix v2.1 §6.1/§6.2
+  - Klassifikation C1/C2/C3 (abgedeckt / teilweise / nicht abgedeckt)
+  - Gap-Report-Template `FELD_EVIDENZ_REGISTER.md`
+  - Scope: mind. 3 Mappen, mind. 8 Beobachtungen
+  - Ablauf: 0.5 Arbeitstag (P1-P6)
+
+**UPGRADE_PLAN v1.4-Delta (neue Section 20):**
+
+- §20.1 Trigger T1 + T2
+- §20.2 Vier neue PI-Items:
+  - PI-DISPATCH-1 Sub-Agent-Dispatch-Refaktor
+  - PI-DISPATCH-2 Q-Gate-Dispatch-Separation
+  - PI-DISPATCH-3 Return-Schema-Vertraege
+  - PI-FELDEVIDENZ-1 A-CODE-Coverage-Gap
+- §20.3 Neues Q-Gate Q-DISPATCH-ISOLATION (Kontext-Isolation-Check, bedingt an F0d-PASS)
+- §20.4 Pilot-Re-Gating-Regel: #39 blockedBy [#46, #47]
+- §20.5 Dispatch-Layer-Wahl: Cowork Agent-Tool = Default. CC-Handoff reserviert fuer Batch-Mass-Runs.
+- §20.6 Neue Artefakte-Inventar
+- §20.7 Total-Plan-Impact-Count 30 → **34** (17 R0-FINAL+ + 13 v1.3 Delta + 4 v1.4 Delta)
+- §20.8 Task-Kopplung tabelliert
+
+**STATUS.md-Aenderungen:**
+
+- Header Letzte-Aktualisierung + Modus auf Pivot umgestellt
+- Aktiver-Upgrade-Plan-Zeile auf v1.4 + Total-Plan-Impact-Count 34
+- Neuer Work-Stream-Block "F0d Dispatch-Spike" (SSoT, Scope, A/B-Methodik, Metriken, Gating, Deliverables, Folgeschritte)
+- Neuer Work-Stream-Block "F0f Feld-Evidenz" (SSoT, Scope, Klassifikation, Deliverables, Pilot-Re-Gating)
+- F0b-Block: Pilot-Zurueckstellung-Marker ergaenzt
+- Offene-Arbeitsstroeme: Neue "AKTIV 2026-04-20"-Tabelle (#46/#47/#48/#49/#39/#40/#41 mit blockedBy-Ketten)
+
+**Task-Refaktor:**
+
+- TaskCreate #46 F0d Dispatch-Spike (pending)
+- TaskCreate #47 F0f Feld-Evidenz (pending)
+- TaskCreate #48 F0g Agent-Dispatch-Refaktor (pending, blockedBy #46)
+- TaskCreate #49 UPGRADE_PLAN v1.4-Delta + STATUS/CHANGELOG (in_progress)
+- TaskUpdate #39 addBlockedBy [#46, #47] + Description aktualisiert
+
+**Architektonische Entscheidungen:**
+
+- Dispatch-Default = Cowork Agent-Tool. CC-Handoff wird ausschliesslich fuer Batch-Mass-Runs (20+ Mappen) reserviert. Vorteil: vermeidet Prevent-First-Gate-Klasse an Fehlern (argv-Hang, ENOENT, Auth-Gate) vollstaendig.
+- Q-Gates werden als eigenstaendige Agenten dispatched, NICHT im selben Kontext wie der erzeugende Agent — eliminiert Self-Check-Bias.
+- Return-Schema-Vertraege sind Pflicht: strukturiertes JSON, versioniert, Mismatch = Hard-Fail.
+- Feld-Evidenz-Register wird neue SSoT fuer Pilot-Gating (A-CODE-Coverage-Transparenz).
+
+**Referenzen:**
+
+- `docs/projekt/F0d_DISPATCH_SPIKE_PLAN.md`
+- `docs/projekt/F0f_FELD_EVIDENZ_PLAN.md`
+- `docs/architektur/UPGRADE_PLAN_v3-12_ESCAPE_GAME_QUALITAET.md` §20
+- `docs/projekt/testrun-nationalismus-kolonialismus/PRE_PILOT_TRIAGE_MATRIX_v2.md` §6.1/§6.2
+
+**Naechster Schritt:** Commit-Plan vorlegen (Host-MCP 5-Stufen), nach User-Freigabe stagen + committen beider Repos. Anschliessend Task #46 (F0d) und #47 (F0f) parallel starten.
+
+---
+
 ## 2026-04-19 — F0b.2b A3.1 WITHDRAWN (Bug bereits in a4f8c19 2026-04-18 gefixt, Rerun obsolet)
 
 **Befund bei Spec-Verifikation gegen Engine-Code:**

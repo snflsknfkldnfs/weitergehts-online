@@ -1,8 +1,8 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-19 (F0b.2b CC-Handoff A1-A4 AUSGEFUEHRT: A1 10/10 Scripts (source-deploy-parity Hash-Version, trigger-detector, titel-validator, sprachniveau-gate, coverage-report, entity-scanner, terminologie-scanner, multiperspektiv-sanity, priming-hash-check, pre-commit-priming-hash + DEPLOY-07-Ergaenzung), A2 6/6 Schemata (material_source/material_text/entities/mappe_metadata/glossar_template/perspektiv_inventar JSON-Schema Draft 2020-12), A4 2/2 (Marker-Tag-Kanon 22/22 consumers_with_marker + CI-Hook). A3.1 WITHDRAWN — doppelt obsolet: HANDOFF-Spec beschrieb Phantom-SCPL-Rekursion; der reale F-RA3-01 Pool-Reset-Bug wurde bereits 2026-04-18 in Commit a4f8c19 gefixt. Kein CC-Rerun. Hash-Check MATCH f6e826...; Priming-Registry-Integritaet bestaetigt. Beide Repos inzwischen 3-Tranchen-gepusht. Pfad-Drift-Learning: Dual-Root /Users/paulad/{escape-game-generator,weitergehts.online/weitergehts-online} — keine Nested-Struktur. Prevent-First-Gate DONE: tools/cc-launch-preflight.sh (5 Gates, Self-Test 3/3 PASS) + tools/cc-launch-TEMPLATE.sh + CC_COWORK_INTEROP_LEARNINGS.md v1.1 (§1.1+§1.2+§1.3). Naechstes Gate: A3.1 HANDOFF-Korrektur + CC-Mini-Rerun (Dogfood ueber TEMPLATE) → E2E-Pilot v3.12. Vorgaenger-Kontext: F0b.2 B1-B7 infrastruktur-seitig, F0e COMPLETE 9/9 PQI-1, P0-BATCH-3 CLOSED 6/6, LP-QM v1.0 ec3f971.)
-**Modus:** F0b.2b DONE (A1+A2+A4 ausgefuehrt, A3.1 WITHDRAWN — Bug bereits in a4f8c19 2026-04-18 gefixt, Rerun obsolet, Push beider Repos DONE, Prevent-First-Gate DONE) → E2E-Pilot v3.12 (Thema LB2 oder LB4, erster Gate-Dogfood ueber TEMPLATE) → F0b.3b Drift-Audit → F0b.4 Close + Commit
-**Aktiver Upgrade-Plan:** `docs/architektur/UPGRADE_PLAN_v3-12_ESCAPE_GAME_QUALITAET.md` v1.3 (Runden R0-R8 + v1.3 Delta Section 19 aus Testrun-Audit: 13 neue PI-Items in 4 Clustern Medien/Engine/Didaktik/PM + 4 neue Q-Gates Q-MEDIEN-PROSPEKTIV/Q-LIZENZ-COMPLIANCE/Q-SOURCE-DEPLOY-PARITY/Q-TYP-R7-KONFORMITAET + P0-Blocker-Kanon mit 6 Items). Total Plan-Impact-Count **30** (17 R0-FINAL+ + 13 v1.3 Delta). v3.12-Pilot-Start blockiert bis P0-1 bis P0-6 geschlossen. Vorgaenger v3.11 COMPLETE + gepusht.
+**Letzte Aktualisierung:** 2026-04-20 (PIVOT: Pilot #39 zurueckgestellt. Zwei neue Ursachen: (T1) Feld-Evidenz Paul Unterricht 2026-04 — Mappen zu schwer / didaktisch zu wenig praezise, F0b deckt 9/9 PQI-1 aber nicht vollen 21er A-CODE + 6 A-PROZ Katalog. (T2) Dispatch-Architektur-Diagnose — Sub-Agenten werden nicht technisch via Task/Agent-Tool dispatched, Q-Gates leiden unter Self-Check-Bias, korreliert mit RA5 F-RA5-11 + 12 Auto-Kompaktionen. Antwort: F0d Dispatch-Spike (#46, 1d, A/B Baseline vs Cowork-Agent-Tool, 1 Sub-Agent + 1 Q-Gate) parallel zu F0f Feld-Evidenz (#47, 0.5d, Erhebung + Matrix-Mapping + Gap-Report FELD_EVIDENZ_REGISTER.md). UPGRADE_PLAN §20 v1.4-Delta eingepflegt: 4 neue PI-Items (PI-DISPATCH-1/2/3 + PI-FELDEVIDENZ-1), 1 neues Q-Gate Q-DISPATCH-ISOLATION, Pilot-Re-Gating-Regel, Total-Plan-Impact-Count 34. F0g Refaktor (#48) bedingt an F0d-PASS. Dispatch-Default: Cowork Agent-Tool (nicht CC-Handoff). Vorgaenger-Kontext: F0b.2b DONE A1+A2+A4, A3.1 WITHDRAWN, Prevent-First-Gate DONE, F0e COMPLETE 9/9 PQI-1, P0-BATCH-3 CLOSED 6/6, LP-QM v1.0 ec3f971.)
+**Modus:** F0d + F0f PARALLEL → Pilot-Re-Gating-Entscheidung → ggf. F0g Dispatch-Refaktor → F0b.3 E2E-Pilot entblocken → F0b.3b Drift-Audit → F0b.4 Close + Commit. F0b.2b (A1+A2+A4+Prevent-First-Gate+Push) bleibt DONE.
+**Aktiver Upgrade-Plan:** `docs/architektur/UPGRADE_PLAN_v3-12_ESCAPE_GAME_QUALITAET.md` v1.4 (Runden R0-R8 + v1.3 Delta §19 + v1.4 Delta §20). **v1.4 Delta:** Trigger T1 Feld-Evidenz + T2 Dispatch-Diagnose. 4 neue PI-Items (PI-DISPATCH-1 Sub-Agent-Dispatch-Refaktor, PI-DISPATCH-2 Q-Gate-Dispatch-Separation, PI-DISPATCH-3 Return-Schema-Vertraege, PI-FELDEVIDENZ-1 A-CODE-Coverage-Gap). 1 neues Q-Gate Q-DISPATCH-ISOLATION (bedingt an F0d-PASS). Pilot-Re-Gating: #39 blockedBy [#46, #47]. Total Plan-Impact-Count **34** (17 R0-FINAL+ + 13 v1.3 Delta + 4 v1.4 Delta). Vorgaenger v3.11 COMPLETE + gepusht. v1.3 Delta §19 Historie unveraendert.
 
 **R0-Befunde (Gate-Status):**
 - **G-0-1** (Reife-Matrix): ERFUELLT. `docs/befunde/M-03_REIFE_MATRIX_v3-12_2026-04-11.md`. STATISTIK + QUELLENKRITIK ROT; KARTE/ZEITLEISTE GELB (nicht ROT — Hypothese partiell falsifiziert); BEGRUENDUNG/VERGLEICH/FREITEXT GELB (Kopplung an R0.2).
@@ -180,6 +180,68 @@
 
 **Nicht-Ziele F0b.2:** kein Content-Artefakt generiert, keine VERTRAG-Scope-Erweiterungen ausserhalb Ebene-0-Invarianten, keine Testrun-Starts, keine Git-Write-Operations ohne User-Freigabe.
 
+**Pilot-Zurueckstellung 2026-04-20:** F0b.3 E2E-Pilot (Task #39) ist blockiert durch Task #46 (F0d Dispatch-Spike) + Task #47 (F0f Feld-Evidenz). Siehe F0d + F0f Work-Stream-Bloecke unten und UPGRADE_PLAN §20.
+
+---
+
+## F0d Dispatch-Spike (Work-Stream, Stand 2026-04-20 PENDING)
+
+**Grund:** Sub-Agenten werden aktuell nicht via Agent-Tool technisch dispatched; Generierung und Q-Gate-Pruefung laufen im selben linearen Orchestrator-Kontext → struktureller Self-Check-Bias + Rueckmelde-Luecke (RA5 F-RA5-11). Architektur-Hypothese: Kontext-isolierte Cowork-Agent-Tool-Dispatches liefern geringere strukturelle Varianz + hoehere Q-Gate-Fail-Detection. Spike evaluiert Hypothese empirisch an minimalem Scope.
+
+**SSoT-Artefakt:** `docs/projekt/F0d_DISPATCH_SPIKE_PLAN.md` v1.0 (Hypothese, A/B-Methodik, Input/Output-Schemata, Metriken, Gating).
+
+**Scope:** 1 Sub-Agent (`SUB_MATERIAL_QUELLENTEXT`) + 1 Q-Gate (`QG-06 MULTIPERSPEKTIV`) + 1 Thema (Ausschnitt Nationalismus-Kolonialismus). Keine vollstaendige Mappe, kein Deploy.
+
+**A/B-Methodik:** 3x Arm A (Baseline linear im Chat) vs 3x Arm B (Cowork Agent-Tool Dispatch mit Kontext-Isolation). 2 von 3 Input-Sets mit Fehler-Injektion (Mono-Perspektive) fuer Q-Gate-Fail-Detection-Messung.
+
+**Metriken M1-M5:**
+- M1 Strukturelle Varianz (B ≤ A)
+- M2 Inhaltliche Varianz (informativ)
+- M3 Q-Gate-Fail-Detection (B ≥ A + 20 pp) — Gating-Kriterium
+- M4 Token-Verbrauch (B ≤ 1.3 × A) — Gating-Kriterium
+- M5 Rueckmelde-Luecken (B ≤ A)
+
+**Gating:** PASS = M1 + M3 + M4. FAIL = keine Architektur-Investition F0g. MIXED (M1+M3 ja, M4 nein) = F0g mit Budget-Restriktion.
+
+**Dispatch-Layer:** Cowork Agent-Tool. CC-Handoff ausgeschlossen (vermeidet Prevent-First-Gate-Klasse an Fehlern).
+
+**Ablauf (1 Arbeitstag):** P1 Input-Kit → P2 Arm A 3 Laufe → P3 Arm B 3 Laufe → P4 Metriken → P5 PASS/FAIL-Befund `docs/projekt/F0d_BEFUND.md` → P6 STATUS/CHANGELOG.
+
+**Deliverables:** 6 Run-Logs `docs/projekt/testrun-dispatch-spike/` + F0d_BEFUND.md + STATUS/CHANGELOG-Updates.
+
+**Folgeschritte:**
+- PASS → Task #48 F0g entblockt (PI-DISPATCH-1/2/3 Refaktor).
+- FAIL → PI-DISPATCH-Items auf DEFERRED, UPGRADE_PLAN §20 Nachtrag.
+- MIXED → F0g reduziert (nur Q-Gates).
+
+**Kopplung:** Task #46. Unabhaengig von F0f, entkoppelt, parallel lauffaehig.
+
+---
+
+## F0f Feld-Evidenz (Work-Stream, Stand 2026-04-20 PENDING)
+
+**Grund:** Paul beobachtet im Unterricht Jgst 7-9, dass generierte Mappen zu schwer / didaktisch zu wenig praezise sind. F0b deckt 9/9 PQI-1, aber nicht den vollen 21er A-CODE + 6 A-PROZ Katalog. Feld-Evidenz wird strukturiert erhoben und gegen Matrix v2.1 gemappt, um Coverage-Gap zu beziffern und als Pilot-Re-Gating-Input zu liefern.
+
+**SSoT-Artefakt:** `docs/projekt/F0f_FELD_EVIDENZ_PLAN.md` v1.0 (Erhebungsbogen, Matrix-Mapping-Workflow, Gap-Report-Template).
+
+**Scope:** Mindestens 3 Mappen retrospektiv auswerten, mindestens 8 Beobachtungen. Fokus: Schwere + Didaktisierung, nicht Technik-Bugs. Coverage-Check gegen alle 21 A-CODE + 6 A-PROZ.
+
+**Klassifikation pro Beobachtung:**
+- **C1 (abgedeckt):** F0b adressiert, greift aber nicht → Ueberweisung an Task #40 F0b.3b Drift-Audit.
+- **C2 (teilweise):** F0b formal adressiert, didaktische Tiefe fehlt → Neuer PI-Vorschlag UPGRADE_PLAN §20.
+- **C3 (nicht abgedeckt):** Kein F0b-Bezug → Neuer PI-Vorschlag (meist A-PROZ oder A-CODE ausserhalb der 9/9 PQI-1).
+
+**Ablauf (0.5 Arbeitstag):** P1 Erhebungsbogen instantiieren → P2 Beobachtungen retrospektiv erfassen → P3 Matrix-Lookup + Klassifikation → P4 Gap-Report + PI-Vorschlaege → P5 UPGRADE_PLAN §20.2 fuellen → P6 STATUS/CHANGELOG.
+
+**Deliverables:**
+- `docs/projekt/testrun-feld-evidenz/ERHEBUNG_<datum>_<klasse>.md` — mind. 1 Bogen pro Mappe
+- `docs/projekt/FELD_EVIDENZ_REGISTER.md` — SSoT Gap-Report
+- PI-Vorschlaege in UPGRADE_PLAN §20.2 PI-FELDEVIDENZ-1 integriert
+
+**Pilot-Re-Gating:** Gap-Report ist Pflicht-Input fuer #39. Pilot-Start erst wieder zulaessig wenn alle C3-Gaps entweder geschlossen oder explizit pilot-unkritisch markiert + alle C2-Gaps gefixt oder unter Beobachtung deklariert.
+
+**Kopplung:** Task #47. Unabhaengig von F0d, entkoppelt, parallel lauffaehig.
+
 ---
 
 ## Konsolidierter Projektstatus (Stand 2026-04-08)
@@ -196,7 +258,19 @@
 
 ### Offene Arbeitsstroeme nach Prioritaet
 
-**P0 — Alle CLOSED (R0-TESTRUN-AUDIT P0-Kanon 6/6 geschlossen, v3.12-Pilot-Start entsperrt):**
+**AKTIV 2026-04-20 (Dispatch + Feld-Evidenz Pivot):**
+
+| Task | Subjekt | Status | blockedBy | SSoT |
+|---|---|---|---|---|
+| #46 | F0d Dispatch-Spike | pending | — | `docs/projekt/F0d_DISPATCH_SPIKE_PLAN.md` |
+| #47 | F0f Feld-Evidenz | pending | — | `docs/projekt/F0f_FELD_EVIDENZ_PLAN.md` |
+| #49 | UPGRADE_PLAN v1.4-Delta + STATUS/CHANGELOG | in_progress | — | UPGRADE_PLAN §20 |
+| #48 | F0g Agent-Dispatch-Refaktor (bedingt) | pending | #46 (PASS) | UPGRADE_PLAN §20.2 PI-DISPATCH-1/2/3 |
+| #39 | F0b.3 E2E-Pilot v3.12 | pending (BLOCKED) | #46, #47 | `docs/projekt/E2E_PILOT_CHECKLIST_v3-12.md` |
+| #40 | F0b.3b Qualitaets-Drift-Audit | pending | #39 | — |
+| #41 | F0b.4 F0b-Close + Commit | pending | #39, #40 | — |
+
+**P0 — Alle CLOSED (R0-TESTRUN-AUDIT P0-Kanon 6/6 geschlossen, v3.12-Pilot-Start entsperrt durch P0-Kanon, aber v1.4-Delta Re-Gating durch #46+#47 aktiv):**
 
 | ID | Aufgabe | Quelle | Naechster Schritt |
 |---|---|---|---|

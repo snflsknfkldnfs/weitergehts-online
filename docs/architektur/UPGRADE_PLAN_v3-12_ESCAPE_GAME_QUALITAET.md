@@ -869,4 +869,75 @@ Zusaetzliche Q-Gates fuer Pilot-Freigabe:
 
 ---
 
-**Status:** v1.3, 2026-04-18. Testrun-Audit-Delta eingepflegt. v3.12-Pilot blockiert durch 6 P0.
+## 20. v1.4 Delta — Agent-Dispatch-Architektur + Feld-Evidenz (2026-04-20)
+
+### 20.1 Trigger
+
+Zwei neue Befunde zum geplanten v3.12-Pilot-Launch machen ein Re-Gating erforderlich:
+
+- **T1 — Feld-Evidenz (Paul, Unterricht 2026-04):** Generierte Mappen sind **zu schwer** bzw. **didaktisch zu wenig praezise**. F0b deckt 9/9 PQI-1, aber nicht den vollen 21er-A-CODE-Katalog und keine der 6 A-PROZ-Items.
+- **T2 — Dispatch-Architektur-Diagnose:** Sub-Agenten werden aktuell nicht technisch via Task/Agent-Tool dispatched, sondern als lineare Prompt-Interpolation im Orchestrator-Kontext abgearbeitet. Q-Gates pruefen sich teils selbst (Self-Check-Bias). Empirisch korreliert mit RA5 F-RA5-11 "CC→Cowork-Rueckmelde-Luecke" und 12 Auto-Kompaktionen im Testrun.
+
+Konsequenz: **v3.12-Pilot (Task #39) wird zurueckgestellt** bis F0d und F0f PASS/FAIL liefern.
+
+### 20.2 Neue PI-Items
+
+Cluster "Agent-Dispatch-Architektur":
+
+- **PI-DISPATCH-1** Sub-Agent-Dispatch-Refaktor: Alle Sub-Agent-Rollen (`SUB_AUFGABE_GENERATOR`, `SUB_MATERIAL_QUELLENTEXT`, `SUB_MATERIAL_BILD`, etc.) werden als eigenstaendige Cowork-Agent-Calls mit isoliertem Kontext implementiert. Kein geteilter Orchestrator-Kontext. Vertrags-Definition: Input-JSON-Schema + Output-JSON-Schema je Rolle.
+- **PI-DISPATCH-2** Q-Gate-Dispatch-Separation: Q-Gate-Agenten werden separat vom erzeugenden Agenten dispatched. Q-Gate-Agent kennt Generator-Chain-of-Thought **nicht**. Pruefer-Bias eliminiert.
+- **PI-DISPATCH-3** Return-Schema-Vertraege: Jeder Agent-Call liefert strukturiertes JSON (kein Freitext), damit Orchestrator deterministisch weiterrouten kann. Schema versioniert, Mismatch = Hard-Fail.
+
+Cluster "Feld-Evidenz":
+
+- **PI-FELDEVIDENZ-1** A-CODE-Coverage-Gap: Feld-Evidenz-Register `docs/projekt/FELD_EVIDENZ_REGISTER.md` als neue SSOT fuer Pilot-Gating. Klassifikation C1/C2/C3 der Beobachtungen gegen Matrix v2.1. C3-Gaps muessen entweder geschlossen oder als pilot-unkritisch gekennzeichnet sein. Detaillierte Methodik: `docs/projekt/F0f_FELD_EVIDENZ_PLAN.md`.
+
+### 20.3 Neues Q-Gate
+
+- **Q-DISPATCH-ISOLATION** (Phase 2.1 und 2.2a): Jeder Sub-Agent-Output + jeder Q-Gate-Pass wird durch Kontext-Isolation-Check validiert: Agent hatte keinen Zugriff auf fremde Chain-of-Thought. Nachweis-Artefakt pro Run: Agent-ID + Dispatch-Kontext-Hash. Aktivierung bedingt an F0d PASS.
+
+### 20.4 Pilot-Re-Gating-Regel
+
+v3.12-Pilot (Task #39) ist **blocked_by**:
+
+- Task #46 (F0d Dispatch-Spike) muss PASS oder MIXED liefern, oder explizit FAIL + UPGRADE_PLAN-Nachtrag (PI-DISPATCH-1/2/3 auf DEFERRED).
+- Task #47 (F0f Feld-Evidenz) muss Gap-Report liefern, alle C3-Gaps klassifiziert (geschlossen oder pilot-unkritisch).
+
+Erst danach entscheidet Paul ueber Pilot-Fortsetzung (Task #39 entblockt).
+
+### 20.5 Dispatch-Layer-Wahl
+
+**Default:** Cowork Agent-Tool (Task-Call mit isoliertem Kontext). Vorteil: vermeidet Prevent-First-Gate-Klasse an Fehlern (argv-Hang, ENOENT, Auth-Gate) vollstaendig, da kein Cross-Process-Handoff.
+
+**Reserviert fuer CC-Handoff:** Ausschliesslich Batch-Mass-Runs (z.B. 20+ Mappen parallel fuer Evaluierungs-Korpus). CC-Handoff bleibt dokumentiert, aber nicht mehr Standard-Pfad der Mappen-Generierung.
+
+### 20.6 Neue Artefakte
+
+- `docs/projekt/F0d_DISPATCH_SPIKE_PLAN.md` — Spike-Methodik (Hypothese, A/B, Metriken, Gating).
+- `docs/projekt/F0f_FELD_EVIDENZ_PLAN.md` — Erhebungsbogen, Matrix-Mapping, Gap-Report-Template.
+- `docs/projekt/FELD_EVIDENZ_REGISTER.md` — **zu erstellen** im Rahmen Task #47.
+- `docs/projekt/F0d_BEFUND.md` — **zu erstellen** im Rahmen Task #46.
+- `docs/projekt/testrun-dispatch-spike/` — Run-Logs (3 A + 3 B).
+- `docs/projekt/testrun-feld-evidenz/` — Erhebungsboegen.
+
+### 20.7 Aktualisierter Total-Plan-Impact-Count
+
+**34 Plan-Impact-Items** total (17 R0-FINAL+ + 13 v1.3 Delta + 4 v1.4 Delta).
+
+v1.4 Delta = 4 Items: PI-DISPATCH-1, PI-DISPATCH-2, PI-DISPATCH-3, PI-FELDEVIDENZ-1.
+(Q-DISPATCH-ISOLATION ist Q-Gate, nicht PI-Item im Zaehler.)
+
+### 20.8 Task-Kopplung
+
+| Task | Subjekt | Status | blockedBy |
+|---|---|---|---|
+| #46 | F0d Dispatch-Spike | pending | — |
+| #47 | F0f Feld-Evidenz | pending | — |
+| #48 | F0g Agent-Dispatch-Refaktor | pending (conditional) | #46 (PASS) |
+| #49 | UPGRADE_PLAN v1.4 eingearbeitet | in_progress | — |
+| #39 | F0b.3 E2E-Pilot v3.12 | pending | #46, #47 |
+| #40 | F0b.3b Qualitaets-Drift-Audit | pending | #39 |
+
+---
+
+**Status:** v1.4, 2026-04-20. Pilot-Re-Gating aktiviert. Dispatch-Architektur + Feld-Evidenz parallel priorisiert.
