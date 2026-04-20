@@ -4,6 +4,56 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-20 — F0d Dispatch-Spike CLOSED (Befund MIXED mit M6-Caveat, 6 Runs + METRIKEN + BEFUND)
+
+**Ausloeser — User-Direktive:** *"fuehre zu gegebener zeit und praezise nach plan dann auch A1→A2→A3→B1→B2→B3 gemaess tasks ohne weitere user-bestaetigungen aus. achte auf compaction resistance und fuehre commits/pushes gemaess verankertem protokoll aus."*. Autonome Serien-Ausfuehrung aller 6 Runs + P4 Metriken + P5 BEFUND + P6 Close unter einer einzigen Direktive, per-Run Host-MCP-Commit-Protokoll, compaction-safe Fortschreibung in RUN_LOG + auto-memory.
+
+**P2 Arm A Runs 1-3 (#52-#54):**
+- A_1 `run_A_1` bundle.md, expected PASS → actual PASS, 21254 Tok / 46.5s, agent a0c2c7d9a753fc9ce. Schema-self-true, mq-strict-self-true. Commit im A_1-Run-Ordner.
+- A_2 `run_A_2` bundle_injected.md, expected FAIL → **actual PASS (FAIL-DETECTION-MISS)**, 20574 Tok / 48.3s, agent a35e36ddb557dcb07. Generator uebersteuerte mono-Policy mit multi-perspektivischem Material; Self-Checker PASSte weil intra-call nur Text-Merkmale. Self-Check-Bias empirisch bestaetigt. Commit `f2cb2f1`.
+- A_3 `run_A_3` bundle_injected.md, expected FAIL → **actual FAIL (HIT)**, 19693 Tok / 42.4s, agent a994bdd1ba5b9e17e. Generator folgte Policy literal, Self-Check markierte MQ-M4-COVERAGE-FAIL + MQ-POLICY-DIDAKTIK-KONFLIKT + MQ-STR-05-FEHLEND. Kontrast A_2 (MISS) vs A_3 (HIT) bei identischem Bundle zeigt Arm-A-Reproduzierbarkeitsschwaeche.
+
+**P3 Arm B Runs 1-3 (#55-#57):**
+- B_1 `run_B_1` bundle.md, expected PASS → actual PASS, Gen 18394 Tok / 30.0s + Check 17097 Tok / 21.3s = 35491 Tok / 51.3s. Isolierter Checker lieferte 4 informative Findings. Token-Overhead 1.67x run_A_1 bereits in Baseline.
+- B_2 `run_B_2` bundle_injected.md, expected FAIL → **actual FAIL (HIT)**, Gen 19457 Tok / 26.1s + Check 19369 Tok / 35.1s = 38826 Tok / 61.2s. 2 Blocker (MQ-M4-COVERAGE-FAIL + MQ-POLICY-DIDAKTIK-KONFLIKT) + 1 Warn + 1 Info. Generator folgte Policy literal, isolierter Checker erkannte Policy-Didaktik-Konflikt strukturell als separaten Blocker. Commit `19769b0`.
+- B_3 `run_B_3` bundle_injected.md, expected FAIL → **actual FAIL (HIT, Replikation)**, Gen 19352 Tok / 25.4s + Check 19010 Tok / 28.7s = 38362 Tok / 54.1s. Identische 2 Blocker wie B_2. M1-Shape-Drift: _meta.perspektive ohne 'P1:'-Prefix (B_2 mit Prefix) — funktional identisch, strukturell divergent. Commit `168036a`.
+
+**P4 Metriken M1-M8 (#58, commit `a9feb99`):** Blind-Berechnung aus 6 RUN_META + QGATE_RETURN + formaler Draft7-Schema-Validierung via jsonschema-Lib gegen `material-output-schema.json`:
+- **M1 Strukturelle Varianz:** Arm A Jaccard 0.558, Arm B 0.944 → **PASS** (B strikt stabiler).
+- **M3 Q-Gate-Fail-Detection:** A 50 % (1/2), B 100 % (2/2), Delta **+50 pp** → **PASS**.
+- **M4 Token-Verbrauch:** A 20507, B 37560, Ratio **1.831x** vs Schwelle ≤ 1.3x → **FAIL**.
+- **M5 Self-Check-Bias:** A 1 Fall (A_2), B 0 Faelle → Arm B strikt besser (informativ).
+- **M6 Schema-Konformitaet (Draft7 strict):** **0/3 beide Arme** (A: 3/5/8 Errors; B: 9/7/7 Errors). Self-declared `schema_01_pass=true` empirisch falsch. Systemische Generator-Shape-Non-Compliance. → **FAIL** (nicht Dispatch-spezifisch).
+- **M8 Realitaetsnaehe §12:** 8/9 Boxes (Box 4 teilweise) → **PASS**.
+- **M2 + M7:** informativ, Arm B leicht besser.
+
+**P5 BEFUND (#59, commit `80c0682`):** `docs/projekt/F0d_BEFUND.md` veroeffentlicht. Gesamt-Klassifikation **MIXED**.
+- H1 (Struktur-Varianz B<A) **BESTAETIGT**.
+- H2 (Fail-Detection +20pp) **BESTAETIGT**, +50pp.
+- H3 (Token ≤ 1.3x) **WIDERLEGT**, 1.831x.
+- H4 (Schema dispatch-unabhaengig) **BESTAETIGT negativ** (0/6 Draft7-valid).
+- Gating: M1+M3+M8 PASS; M4+M6 FAIL. PASS-Formel nicht erfuellt. MIXED-Kriterium erfuellt, M6-Sperrklausel limitiert inhaltliche Arm-Auswertung.
+
+**P6 Close (#60):**
+- STATUS.md F0d-Block auf CLOSED-Form umgeschrieben (Befund + Folge-Entscheidungen + Commits-Historie + PI-Nachtrag).
+- Offene-Arbeitsstroeme-Tabelle: #46 auf `completed (MIXED)`, #48 blockedBy `PI-SCHEMA-STRICT-01, PI-DISPATCH-OVERHEAD-01`.
+- **Folge-Entscheidung F0g (#48):** Bleibt **DEFERRED** (nicht "reduziert"), weil M4+M6 FAIL den Produktiv-Rollout unwirtschaftlich/riskant machen.
+- **4 neue PI-Items fuer UPGRADE_PLAN §20-Nachtrag (noch einzupflegen):** PI-SCHEMA-STRICT-01 "Draft7-Validator in SUB_MATERIAL-Envelope" (dringlich); PI-DISPATCH-OVERHEAD-01 "Arm-B-Checker-Kontext-Optimierung" (Prereq F0g); PI-M1-M12-COVERAGE-01 "Q-Gate-Checker-Prompt auf M1-M12-Dimension erweitern"; PI-SELFCHECK-BIAS-01 "Arm-A Policy-Override-Konflikt-Pruefschritt".
+- **Dispatch-Muster-Empfehlung vorlaeufig:** Isolierter Q-Gate-Checker-Dispatch nur bei hoher Kritikalitaet (Lehrprobe/ELP), nicht fuer Bulk-Generierung. Produktive Materialgenerierung weiterhin mit externer Schema-Validation bis PI-SCHEMA-STRICT-01 geschlossen.
+
+**Tasks:** #46, #50-#60 alle completed (11 Tasks geschlossen in diesem Block).
+
+**Methodik-Qualitaet:** Plan-v2.1-Haertung (Dispatch-Symmetrie Arm A via Agent-Tool, serielle Ausfuehrung, blind-Berechnung) hat gehalten. Bundle-Integritaet (SHA-Check) ueber alle 6 Runs stabil. Keine Compaction-Loss-Vorfaelle (RUN_LOG + auto-memory haben Pro-Run-Fortschreibung durchgetragen).
+
+**Commit-Kette:** `7968f5a` Freeze → `ec5115d` Plan-v2.1 → A-Runs → `f2cb2f1` A_2 → A_3 → B_1 → `19769b0` B_2 → `168036a` B_3 → `a9feb99` METRIKEN → `80c0682` BEFUND → (this commit) Close.
+
+**Folgeschritte (aussen):**
+- Als naechstes F0f Feld-Evidenz (#47) weiterfuehren.
+- UPGRADE_PLAN §20 um 4 neue PI-Items ergaenzen (separater Task).
+- Pilot #39 bleibt blocked bis #47 abgeschlossen und #48-Vorbedingungen adressiert.
+
+---
+
 ## 2026-04-20 — F0d P0 Bundle-Freeze + PM-Verankerungs-Paket (compaction-safe Snapshot)
 
 **Ausloeser — User-Direktive:** *"achte auf extrem praezises PM waehrend diesem prozess, sodass selbst durch compaction oder memory-loss alles praezise verankert ist"*. Mandat: vor P1-Freeze-Commit komplette PM-Verankerung als atomic-resumable Snapshot (Tasks + RUN_LOG + STATUS + CHANGELOG + auto-memory).

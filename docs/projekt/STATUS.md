@@ -1,7 +1,7 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-20 (PIVOT: Pilot #39 zurueckgestellt. Zwei neue Ursachen: (T1) Feld-Evidenz Paul Unterricht 2026-04 — Mappen zu schwer / didaktisch zu wenig praezise, F0b deckt 9/9 PQI-1 aber nicht vollen 21er A-CODE + 6 A-PROZ Katalog. (T2) Dispatch-Architektur-Diagnose — Sub-Agenten werden nicht technisch via Task/Agent-Tool dispatched, Q-Gates leiden unter Self-Check-Bias, korreliert mit RA5 F-RA5-11 + 12 Auto-Kompaktionen. Antwort: F0d Dispatch-Spike (#46, 1d, A/B Baseline vs Cowork-Agent-Tool, 1 Sub-Agent + 1 Q-Gate) parallel zu F0f Feld-Evidenz (#47, 0.5d, Erhebung + Matrix-Mapping + Gap-Report FELD_EVIDENZ_REGISTER.md). UPGRADE_PLAN §20 v1.4-Delta eingepflegt: 4 neue PI-Items (PI-DISPATCH-1/2/3 + PI-FELDEVIDENZ-1), 1 neues Q-Gate Q-DISPATCH-ISOLATION, Pilot-Re-Gating-Regel, Total-Plan-Impact-Count 34. F0g Refaktor (#48) bedingt an F0d-PASS. Dispatch-Default: Cowork Agent-Tool (nicht CC-Handoff). Vorgaenger-Kontext: F0b.2b DONE A1+A2+A4, A3.1 WITHDRAWN, Prevent-First-Gate DONE, F0e COMPLETE 9/9 PQI-1, P0-BATCH-3 CLOSED 6/6, LP-QM v1.0 ec3f971.)
-**Modus:** F0d + F0f PARALLEL → Pilot-Re-Gating-Entscheidung → ggf. F0g Dispatch-Refaktor → F0b.3 E2E-Pilot entblocken → F0b.3b Drift-Audit → F0b.4 Close + Commit. F0b.2b (A1+A2+A4+Prevent-First-Gate+Push) bleibt DONE.
+**Letzte Aktualisierung:** 2026-04-20 (F0d Dispatch-Spike CLOSED mit Befund **MIXED (M6-Caveat)**. Commits: Freeze `7968f5a`, Plan-v2.1 `ec5115d`, Runs `f2cb2f1/19769b0/168036a` u.a., METRIKEN `a9feb99`, BEFUND `80c0682`. H1 Struktur-Varianz B<A BESTAETIGT (Jaccard 0.944 vs 0.558), H2 Fail-Detection +50pp BESTAETIGT, H3 Token ≤1.3x WIDERLEGT (1.83x), H4 Schema dispatch-unabhaengig BESTAETIGT negativ (0/6 Draft7-valid). F0g (#48) bleibt DEFERRED bis PI-SCHEMA-STRICT-01 + PI-DISPATCH-OVERHEAD-01 geschlossen sind. 4 neue PI-Items fuer UPGRADE_PLAN §20-Nachtrag. Tasks #46+#50-#60 completed. F0f Feld-Evidenz (#47) bleibt aktiv. Pilot #39 bleibt BLOCKED durch #47 (und #48-Vorbedingungen). Vorgaenger-Kontext unveraendert.)
+**Modus:** F0d CLOSED → F0f Feld-Evidenz (#47) → Pilot-Re-Gating → PI-SCHEMA-STRICT-01 + PI-DISPATCH-OVERHEAD-01 als Vorbedingung fuer #48 → F0b.3 E2E-Pilot entblocken → F0b.3b Drift-Audit → F0b.4 Close + Commit. F0b.2b (A1+A2+A4+Prevent-First-Gate+Push) bleibt DONE.
 **Aktiver Upgrade-Plan:** `docs/architektur/UPGRADE_PLAN_v3-12_ESCAPE_GAME_QUALITAET.md` v1.4 (Runden R0-R8 + v1.3 Delta §19 + v1.4 Delta §20). **v1.4 Delta:** Trigger T1 Feld-Evidenz + T2 Dispatch-Diagnose. 4 neue PI-Items (PI-DISPATCH-1 Sub-Agent-Dispatch-Refaktor, PI-DISPATCH-2 Q-Gate-Dispatch-Separation, PI-DISPATCH-3 Return-Schema-Vertraege, PI-FELDEVIDENZ-1 A-CODE-Coverage-Gap). 1 neues Q-Gate Q-DISPATCH-ISOLATION (bedingt an F0d-PASS). Pilot-Re-Gating: #39 blockedBy [#46, #47]. Total Plan-Impact-Count **34** (17 R0-FINAL+ + 13 v1.3 Delta + 4 v1.4 Delta). Vorgaenger v3.11 COMPLETE + gepusht. v1.3 Delta §19 Historie unveraendert.
 
 **R0-Befunde (Gate-Status):**
@@ -184,7 +184,29 @@
 
 ---
 
-## F0d Dispatch-Spike (Work-Stream, Stand 2026-04-20 — P0 DONE / P1 FREEZE PENDING)
+## F0d Dispatch-Spike (Work-Stream, Stand 2026-04-20 — **CLOSED, Befund MIXED mit M6-Caveat**)
+
+**Befund-SSOT:** `docs/projekt/F0d_BEFUND.md` (commit `80c0682`).
+**Metriken-SSOT:** `docs/projekt/testrun-dispatch-spike/METRICS.md` (commit `a9feb99`).
+**6 Run-Artefakte:** `docs/projekt/testrun-dispatch-spike/runs/A/{A_1,A_2,A_3}/*` + `runs/B/{B_1,B_2,B_3}/*`.
+
+**Gesamt-Ergebnis: MIXED.** H1 (Struktur-Varianz B<A) + H2 (Fail-Detection +20pp) empirisch BESTAETIGT. H3 (Token <=1.3x) WIDERLEGT (1.83x). H4 (Schema dispatch-unabhaengig) BESTAETIGT negativ: 0/6 Draft7-valid, systemisches Generator-Shape-Problem. Gating: M1+M3+M8 PASS, M4+M6 FAIL. PASS ausgeschlossen. MIXED-Kriterium (M1+M3 ja, M4 nein) erfuellt, M6-Sperrklausel limitiert inhaltliche Arm-Auswertung.
+
+**Folge-Entscheidung F0g (#48):** Bleibt **DEFERRED** statt "reduziert". Begruendung: M4 FAIL (1.83x Token-Overhead) + M6 FAIL (Generator-Shape-Non-Compliance) machen Produktiv-Rollout unwirtschaftlich/riskant. Entblockung erst nach Abschluss PI-SCHEMA-STRICT-01 + PI-DISPATCH-OVERHEAD-01.
+
+**Neue PI-Items fuer UPGRADE_PLAN §20-Nachtrag:**
+- PI-SCHEMA-STRICT-01 "Draft7-Validator in SUB_MATERIAL-Envelope" (dringlich).
+- PI-DISPATCH-OVERHEAD-01 "Arm-B-Checker-Kontext-Optimierung" (Prereq F0g).
+- PI-M1-M12-COVERAGE-01 "Q-Gate-Checker-Prompt auf M1-M12-Dimension erweitern".
+- PI-SELFCHECK-BIAS-01 "Arm-A Policy-Override-Konflikt-Pruefschritt".
+
+**Dispatch-Muster-Empfehlung (vorlaeufig):** Isolierter Q-Gate-Checker-Dispatch nur bei hoher Kritikalitaet (Lehrprobe/ELP), nicht fuer Bulk-Generierung. Produktive Materialgenerierung weiterhin mit externer Schema-Validation bis PI-SCHEMA-STRICT-01 geschlossen ist.
+
+**Tasks #46 + #50-#60 alle completed.** Closing-Commit Historie: `7968f5a` Freeze / `ec5115d` Plan-v2.1 / per-Run-Commits A_1..A_3+B_1 / `f2cb2f1` A_2 / `19769b0` B_2 / `168036a` B_3 / `a9feb99` METRIKEN / `80c0682` BEFUND.
+
+**Historische Beschreibung (archiviert):**
+
+## F0d Dispatch-Spike (Historie, Plan-Ausgangslage 2026-04-20)
 
 **Grund:** Sub-Agenten werden aktuell nicht via Agent-Tool technisch dispatched; Generierung und Q-Gate-Pruefung laufen im selben linearen Orchestrator-Kontext → struktureller Self-Check-Bias + Rueckmelde-Luecke (RA5 F-RA5-11). Architektur-Hypothese: Kontext-isolierte Cowork-Agent-Tool-Dispatches liefern geringere strukturelle Varianz + hoehere Q-Gate-Fail-Detection. Spike evaluiert Hypothese empirisch an minimalem Scope.
 
@@ -280,10 +302,10 @@
 
 | Task | Subjekt | Status | blockedBy | SSoT |
 |---|---|---|---|---|
-| #46 | F0d Dispatch-Spike | pending | — | `docs/projekt/F0d_DISPATCH_SPIKE_PLAN.md` |
+| #46 | F0d Dispatch-Spike | **completed (MIXED)** | — | `docs/projekt/F0d_BEFUND.md` (commit `80c0682`) |
 | #47 | F0f Feld-Evidenz | pending | — | `docs/projekt/F0f_FELD_EVIDENZ_PLAN.md` |
-| #49 | UPGRADE_PLAN v1.4-Delta + STATUS/CHANGELOG | in_progress | — | UPGRADE_PLAN §20 |
-| #48 | F0g Agent-Dispatch-Refaktor (bedingt) | pending | #46 (PASS) | UPGRADE_PLAN §20.2 PI-DISPATCH-1/2/3 |
+| #49 | UPGRADE_PLAN v1.4-Delta + STATUS/CHANGELOG | in_progress | — | UPGRADE_PLAN §20 (F0d-Nachtrag: 4 neue PI-Items) |
+| #48 | F0g Agent-Dispatch-Refaktor (bedingt) | pending | PI-SCHEMA-STRICT-01, PI-DISPATCH-OVERHEAD-01 | UPGRADE_PLAN §20.2 PI-DISPATCH-1/2/3 + F0d-BEFUND §5.1 |
 | #39 | F0b.3 E2E-Pilot v3.12 | pending (BLOCKED) | #46, #47 | `docs/projekt/E2E_PILOT_CHECKLIST_v3-12.md` |
 | #40 | F0b.3b Qualitaets-Drift-Audit | pending | #39 | — |
 | #41 | F0b.4 F0b-Close + Commit | pending | #39, #40 | — |
