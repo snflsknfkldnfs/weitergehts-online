@@ -1,0 +1,31 @@
+{
+  "run_id": "run_B_1",
+  "task_id": "#55",
+  "arm": "B",
+  "dispatch_mode": "general-purpose Agent-Tool, 2 getrennte Task-Calls (Generator isoliert | QG-06-Checker isoliert)",
+  "input_bundle": "docs/projekt/testrun-dispatch-spike/input_bundle/bundle.md",
+  "input_bundle_sha256": "419c6440a4ebcf9959fc0eca59974f493d2a95104a72dfc5ab96a5533c417658",
+  "envelope_version": "v2.1 §4.2 Arm-B-Schema (Isolation-Boundary zwischen Gen + Check)",
+  "priming_include": "F0B_PRIMING_v1 §1+§2+§3 (inline im Call-1-Generator-Prompt; Checker erhielt nur Bundle-Regeln + Material-JSON)",
+  "call_1_generator": {
+    "agent_id_returned": "a15661009d5302d00",
+    "total_tokens": 18394,
+    "duration_ms": 30007,
+    "tool_uses": 0
+  },
+  "call_2_qgate_checker": {
+    "agent_id_returned": "a145f41d8f1c3c590",
+    "total_tokens": 17097,
+    "duration_ms": 21341,
+    "tool_uses": 0
+  },
+  "total_tokens": 35491,
+  "total_duration_ms": 51348,
+  "start_ts": "2026-04-20T22:23+02:00",
+  "end_ts": "2026-04-20T22:24+02:00",
+  "expected_qgate_result": "PASS (3-perspektivisch, P1+P2+P3)",
+  "actual_qgate_result": "PASS",
+  "schema_validation_self_declared": true,
+  "schema_validation_formal": "pending (P4 batch)",
+  "notes": "Baseline Arm-B-Lauf ohne Fehler-Injektion. Generator produzierte 5 perspektiv_tags (4 nicht-dominant + 1 dominant) + expliziten perspektiven_kontext-Array mit P1/P2/P3. Isolierter Checker bestaetigte PASS mit 4 informativen Findings (keine Blocker). Token-Verbrauch 35491 = 1.67x run_A_1 (21254) → M4-Token-Overhead-Indikator deutlich ueber 1.3x-Schwelle. Material-JSON-Shape wieder anders als A_1/A_2/A_3: flach-inhalt-Objekt mit einleitung/quellenwortlaut/nachkontext/perspektiven_kontext/quellenkritische_impulse als Sub-Keys + separates Top-Level-Feld aufgabenstellung. Checker-Summary enthielt kleine Diskrepanz (nicht_dominante_tags_erreicht=3 vs Liste mit 4) — dokumentiert, aber Schwelle deutlich ueberschritten, nicht ergebnisrelevant."
+}

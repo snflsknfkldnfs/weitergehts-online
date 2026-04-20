@@ -1,0 +1,69 @@
+{
+  "qgate_id": "QG-06",
+  "run_id": "run_B_1",
+  "arm": "B",
+  "dispatch_mode": "isolated Call 2 (QG-06-Checker ohne Generator-Kontext)",
+  "pass": true,
+  "schema_01_pass": true,
+  "mq_strict_pass": true,
+  "evidence": {
+    "nicht_dominante_tags_erreicht": 3,
+    "nicht_dominante_tags_erforderlich": 2,
+    "nicht_dominante_tags_liste": ["Opfer", "Widerstand", "Macht-Betroffen", "Innen"],
+    "dominante_tags_ignoriert": ["Macht-Ausuebung"],
+    "hinweis_tags_gezaehlt": "Checker listete 4 nicht-dominante Tag-Eintraege in der Liste (Opfer/Widerstand/Macht-Betroffen/Innen), berichtete nicht_dominante_tags_erreicht=3 in Summary — Diskrepanz informativ dokumentiert",
+    "schema_fields_present": {
+      "id": true,
+      "typ": true,
+      "titel": true,
+      "didaktische_funktion": true,
+      "_meta.wortanzahl": true,
+      "_meta.quellentyp": true,
+      "_meta.aufbereitung": true,
+      "_meta.artefakt_ref": true,
+      "_meta.tafelbild_knoten_abgedeckt": true,
+      "_meta.perspektive": true,
+      "_meta.trigger_flags": true,
+      "_meta.rekonstruktions_begruendung": true
+    },
+    "mq_strict_checks": {
+      "aufbereitung_wert_korrekt": true,
+      "aufbereitung_gemischt_begruendet": true,
+      "wortanzahl_plausibel_r7": true,
+      "wortanzahl_range_check": "312 in [80, 350]",
+      "quellentyp_enum_konform": "UNSICHER (Checker konnte Schema-File nicht einsehen)",
+      "rekonstruktions_begruendung_mq2_vorhanden": true,
+      "artefakt_ref_konsistent": true,
+      "tafelbild_knoten_konsistent": true,
+      "terminologie_01_schutzgebiet_in_anfuehrungszeichen": true,
+      "terminologie_01_taetersprache_markiert": true,
+      "terminologie_01_passivtilgung_vermieden": true
+    }
+  },
+  "mq_strict_findings": [
+    {
+      "code": "SCHEMA-ENUM-ANNOTATION",
+      "severity": "info",
+      "beschreibung": "Der Wert quellentyp='primaerquelle' ist ggf. nicht exakt ENUM-konform, falls das Schema einen spezifischeren Wert wie 'primaerquelle_erlass' oder 'amtlich' erwartet. Ohne direkten Schema-File-Zugriff nicht final entscheidbar. Empfehlung: Schema-Resolver-Check in nachgelagerter QA.",
+      "quelle": "Bundle-Hinweis auf ENUM-Annotation; material-output-schema.json _meta.quellentyp"
+    },
+    {
+      "code": "TERMINOLOGIE-01-POSITIV",
+      "severity": "info",
+      "beschreibung": "'Schutzgebiet' durchgaengig in Anfuehrungszeichen und kontextualisiert ('sogenannte', 'zynischer Euphemismus'). Taetersprache der Primaerquelle durch Einleitung ('Sprache der Taeter') und Nachkontext explizit markiert. Handelnde (Trotha, Soldaten, Deutsches Reich) aktiv benannt, kein Passiv-Tilgen.",
+      "quelle": "TERMINOLOGIE-01 (M6)"
+    },
+    {
+      "code": "MQ2-REKONSTRUKTIONSBEGRUENDUNG",
+      "severity": "info",
+      "beschreibung": "aufbereitung='gemischt' korrekt gewaehlt (wortgetreuer Kernwortlaut + gekuerzt [...] + Eigenformulierungen fuer Einleitung/Nachkontext). rekonstruktions_begruendung nennt Herkunft (pq-4-1, §9 ARTEFAKT_INVENTAR), Kuerzungsart und TERMINOLOGIE-01-Ausnahme — MQ2-konform.",
+      "quelle": "MQ-STRICT MQ2 / Bundle §1 pq-4-1"
+    },
+    {
+      "code": "M4-MULTIPERSPEKTIV",
+      "severity": "info",
+      "beschreibung": "perspektiv_tags liefert 4 nicht-dominante Tags (Opfer, Widerstand, Macht-Betroffen, Innen) plus 1 dominanten Tag (Macht-Ausuebung). Schwelle >=2 deutlich erreicht. perspektiven_kontext deckt alle drei §11-Perspektiven P1/P2/P3 ab, mit P3 (Herero/Nama) sichtbar als eigenstaendige Stimme (nicht nur als Objekt).",
+      "quelle": "MATERIAL-PERSPEKTIV-01 (M4) / perspektiven_policy §11"
+    }
+  ]
+}

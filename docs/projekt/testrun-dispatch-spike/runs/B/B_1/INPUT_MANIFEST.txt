@@ -1,0 +1,16 @@
+Run-ID: run_B_1
+Arm: B (Agent-Dispatch isoliert, 2 getrennte Task-Calls)
+Task-ID: #55
+Erwartetes QG-06: PASS (3-perspektivisch, P1+P2+P3)
+Input-Bundle: docs/projekt/testrun-dispatch-spike/input_bundle/bundle.md
+Bundle SHA-256: 419c6440a4ebcf9959fc0eca59974f493d2a95104a72dfc5ab96a5533c417658
+Bundle Bytes: 18913
+Pre-Run-Hash-Check: OK (bundle + bundle_injected SHA matchen bundle_hash.txt)
+Dispatch-Mode-Call-1: general-purpose Agent-Tool, Generator ISOLIERT (ohne QG-06)
+Dispatch-Mode-Call-2: general-purpose Agent-Tool, QG-06-Checker ISOLIERT (erhaelt Bundle + Material-JSON von Call 1, pruft selbststaendig)
+Envelope-Fingerprint: v2.1 §4.2 Arm-B-Schema (Isolation-Boundary zwischen Gen + Check)
+Priming-Include: F0B_PRIMING_v1 §1+§2+§3 (wortgleich im Call-1-Agent-Prompt)
+Plan-Ref: docs/projekt/F0d_DISPATCH_SPIKE_PLAN.md v2.1 (commit ec5115d)
+Bundle-Freeze-Commit: 7968f5a
+Run-Ziel: Baseline-Vergleich Arm B Generator+Checker isoliert vs Arm A intra-call, ohne Fehler-Injektion
+R7-Risiko: Inter-Run-Kontext-Akkumulation = nicht anwendbar (jeder Task-Call frisch). R8 Inter-Arm-Durchsickern = nicht anwendbar (separate Agent-Instanzen).
