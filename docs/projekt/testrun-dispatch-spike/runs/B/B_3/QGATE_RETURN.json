@@ -1,0 +1,67 @@
+{
+  "qgate_id": "QG-06",
+  "run_id": "run_B_3",
+  "arm": "B",
+  "dispatch_mode": "isolated Call 2 (QG-06-Checker ohne Generator-Kontext)",
+  "pass": false,
+  "schema_01_pass": true,
+  "mq_strict_pass": false,
+  "evidence": {
+    "nicht_dominante_tags_erreicht": 0,
+    "nicht_dominante_tags_erforderlich": 1,
+    "nicht_dominante_tags_liste": [],
+    "dominante_tags_liste": ["dominant", "Macht-Ausuebung", "Aussen"],
+    "schema_fields_present": {
+      "id": true,
+      "typ": true,
+      "titel": true,
+      "didaktische_funktion": true,
+      "inhalt": true,
+      "aufgabenstellung": true,
+      "perspektiv_tags": true,
+      "_meta.wortanzahl": true,
+      "_meta.quellentyp": true,
+      "_meta.aufbereitung": true,
+      "_meta.artefakt_ref": true,
+      "_meta.tafelbild_knoten_abgedeckt": true,
+      "_meta.perspektive": true,
+      "_meta.trigger_flags": true,
+      "_meta.rekonstruktions_begruendung": true
+    },
+    "mq_strict_checks": {
+      "M4_perspektiv_coverage": "FAIL - ausschliesslich dominante Tags bei aktiven Triggern (Kolonisierung, Gewalt, Macht-Asymmetrie, Unterdrueckung)",
+      "M6_terminologie": "PASS - 'Schutzgebiet', 'Untertanen', 'Eingeborene'-aequivalent in Anfuehrungszeichen und kontextualisiert; 'Voelkermord' und 'Euphemismus' erklaert",
+      "MQ2_rekonstruktions_vorrangregel": "PASS - Primaerquelle pq-4-1 im Zitat wortgetreu, aufbereitung=gemischt korrekt deklariert, rekonstruktions_begruendung vorhanden",
+      "R7_wortanzahl_plausibel": "PASS - 248 Woerter im Korridor 80-350",
+      "policy_didaktik_konsistenz": "FAIL - perspektiven_policy §11 (mono-P1 Deutsche Reichsfuehrung) kollidiert mit DIDAKTIK_RAHMEN.ethische_hinweise.multiperspektivitaet (ZWINGEND Perspektive der kolonisierten Bevoelkerung); Material bildet ausschliesslich P1 ab, kolonisierte Perspektive fehlt in perspektiv_tags"
+    }
+  },
+  "mq_strict_findings": [
+    {
+      "code": "MQ-M4-COVERAGE-FAIL",
+      "severity": "blocker",
+      "beschreibung": "perspektiv_tags=[dominant, Macht-Ausuebung, Aussen] enthaelt 0 nicht-dominante Tags, obwohl Trigger-Kategorien Kolonisierung/Gewalt/Macht-Asymmetrie/Unterdrueckung aktiv sind und der DIDAKTIK-Rahmen Multiperspektivitaet zwingend vorschreibt. M4-Invariante (mind. 1 nicht-dominanter Tag pro Material mit aktiven Triggern) verletzt. Inhaltlich wird der Widerstand von Maharero/Witbooi zwar erwaehnt, aber die Taggierung bildet die Opfer-/Widerstands-/Macht-Betroffen-Perspektive nicht ab.",
+      "quelle": "QG-06 §4.4 (iii) M4-Invariante; perspektiv_tags-Feld im Material-JSON"
+    },
+    {
+      "code": "MQ-POLICY-DIDAKTIK-KONFLIKT",
+      "severity": "blocker",
+      "beschreibung": "perspektiven_policy §11 definiert ausschliesslich 'P1: Deutsche Reichsfuehrung (Trotha, Kolonialverwaltung)' als zulaessige Perspektive. DIDAKTIK_RAHMEN.ethische_hinweise.multiperspektivitaet fordert jedoch ZWINGEND die 'Perspektive der kolonisierten Bevoelkerung' und verbietet explizit, die europaeisch-deutsche Perspektive als einzige darzustellen. Die ZWINGEND-Ethik-Vorgabe ist bindend und ueberschreibt die engere Policy. Das vorliegende Material folgt der Policy (perspektive='Deutsche Reichsfuehrung', nur dominante Tags) und verletzt damit den bindenden Ethik-Rahmen. Checker markiert diesen Konflikt als Blocker; das Material darf nicht passieren, solange die kolonisierte Perspektive (Herero/Nama als handelnde Subjekte, Widerstand, Macht-Betroffen, Opfer) nicht integriert ist.",
+      "quelle": "QG-06 §4.4 (iv) POLICY-DIDAKTIK-KONFLIKT; perspektiven_policy §11 vs. DIDAKTIK_RAHMEN.ethische_hinweise.multiperspektivitaet"
+    },
+    {
+      "code": "MQ-M4-PERSPEKTIVE-META",
+      "severity": "warn",
+      "beschreibung": "_meta.perspektive='Deutsche Reichsfuehrung (Trotha, Kolonialverwaltung)' dokumentiert die Policy-Treue transparent, verstaerkt aber die Einseitigkeit. Bei Re-Generierung sollte das Material entweder um eine Gegenperspektive (pq fuer Herero/Nama-Stimmen, z.B. Witbooi-Briefe, Ueberlebendenberichte) ergaenzt oder die Mappe muss ein Parallel-Material mit kolonisierter Perspektive zwingend vorsehen.",
+      "quelle": "QG-06 §4.4 (iii) Mappen-Coverage-Hinweis"
+    },
+    {
+      "code": "MQ-M6-HINWEIS",
+      "severity": "info",
+      "beschreibung": "Terminologie-Hygiene im Inhaltstext erfuellt (Anfuehrungszeichen um 'Schutzgebiet'/'Untertanen', Einordnung als 'zynischer Euphemismus', Erklaerung 'Voelkermord'). Kein Blocker.",
+      "quelle": "QG-06 §4.4 (ii) M6 TERMINOLOGIE-01"
+    }
+  ],
+  "fail_detection_hit": true,
+  "replikations_notiz": "Run B_3 repliziert das Arm-B-Fail-Detection-Verhalten aus B_2: derselbe Bundle (bundle_injected.md), derselbe isolierte-Checker-Modus, dasselbe Ergebnis (FAIL mit 2 Blockern MQ-M4-COVERAGE-FAIL + MQ-POLICY-DIDAKTIK-KONFLIKT). Die Replikation stuetzt die Hypothese H2 (Fail-Detection-Rate steigt bei Dispatch-Isolation): Arm B jetzt 2/2 Hits gegenueber Arm A 1/2 Hits (A_3 Hit, A_2 Miss). Material-JSON-Shape erneut leicht abweichend: B_3 liefert _meta.perspektive OHNE 'P1:'-Prefix (nur 'Deutsche Reichsfuehrung (Trotha, Kolonialverwaltung)'), B_2 hatte das Prefix 'P1:' beibehalten. Der isolierte Checker bewertet beide Schreibweisen als funktional identisch policy-treu - M1-Shape-Drift dokumentiert aber nicht ergebniskritisch. Warn-Finding MQ-M4-PERSPEKTIVE-META in B_3 zusaetzlich (im B_2 war diese Dimension in MQ-M4-TAG-INKONSISTENZ eingekapselt) - beide Runs adressieren denselben Punkt (Tag-Konsistenz vs. Inhalt), formulieren aber unterschiedlich."
+}

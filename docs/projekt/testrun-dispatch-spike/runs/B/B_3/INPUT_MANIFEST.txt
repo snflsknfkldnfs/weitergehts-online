@@ -1,0 +1,18 @@
+Run-ID: run_B_3
+Arm: B (Agent-Dispatch isoliert, 2 getrennte Task-Calls)
+Task-ID: #57
+Erwartetes QG-06: FAIL (mono-perspektivisch, nur P1)
+Input-Bundle: docs/projekt/testrun-dispatch-spike/input_bundle/bundle_injected.md
+Bundle SHA-256: f44fb3d0fd924adb02230089b6f0e55744e19873f197ebcfbcd68bc1d085a174
+Bundle Bytes: 2571 (Delta-only)
+Effektiver Inhalt: bundle.md §0-10 identisch + bundle_injected.md §11 (nur P1)
+Pre-Run-Hash-Check: OK (Integrity vor B_2 bestaetigt, keine Mutation dazwischen)
+Dispatch-Mode-Call-1: general-purpose Agent-Tool, Generator ISOLIERT (ohne QG-06)
+Dispatch-Mode-Call-2: general-purpose Agent-Tool, QG-06-Checker ISOLIERT (erhaelt Bundle + Material-JSON von Call 1, prueft selbststaendig)
+Envelope-Fingerprint: v2.1 §4.2 Arm-B-Schema (Isolation-Boundary)
+Priming-Include: F0B_PRIMING_v1 §1+§2+§3 (wortgleich im Call-1-Agent-Prompt)
+Plan-Ref: docs/projekt/F0d_DISPATCH_SPIKE_PLAN.md v2.1 (commit ec5115d)
+Bundle-Freeze-Commit: 7968f5a
+Fehler-Injektion: §11 perspektiven_policy reduziert auf "P1: Deutsche Reichsfuehrung (Trotha, Kolonialverwaltung)" (kein P2, kein P3). Zitat + Trigger + DIDAKTIK-Ethik unveraendert.
+Run-Ziel: Reproduzierbarkeit Arm-B-Fail-Detection bei identischem Bundle (replikations-Kontrolle zu B_2). M5-Varianz-Datenpunkt.
+Vorgaenger: B_2 = FAIL-HIT mit 2 Blockern. B_3 pruft, ob die Hit-Rate replizierbar ist.
