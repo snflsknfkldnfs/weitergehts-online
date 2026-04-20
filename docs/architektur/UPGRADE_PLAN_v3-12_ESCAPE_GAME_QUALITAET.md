@@ -913,11 +913,11 @@ Erst danach entscheidet Paul ueber Pilot-Fortsetzung (Task #39 entblockt).
 
 ### 20.6 Neue Artefakte
 
-- `docs/projekt/F0d_DISPATCH_SPIKE_PLAN.md` — Spike-Methodik (Hypothese, A/B, Metriken, Gating).
+- `docs/projekt/F0d_DISPATCH_SPIKE_PLAN.md` — Spike-Methodik (Hypothese, A/B, Metriken, Gating). **v2.0 (2026-04-20) Realitaets-Refaktor:** Scope auf realen Fall `mat-4-3 Vernichtungsbefehl` Mappe 4 Nationalismus-Kolonialismus, Input-Bundle aus 11 produktiven Artefakten (MATERIAL_GERUEST-Row / SEQUENZKONTEXT / hefteintrag.json / SUB_MATERIAL_QUELLENTEXT.md / F0B_PRIMING_INCLUDE §1-§3 / SKRIPT §4+§5 / INHALTSBASIS F4-4 bis F4-9 / einstieg.json / ARTEFAKT_INVENTAR pq-4-1 / DIDAKTIK_RAHMEN / perspektiven_policy), Priming-Paket pro Arm explizit, Output gegen `material-output-schema.json` strict-validiert. Neue Metriken M6 Schema-Konformitaet, M7 Q-Gate-Coverage, M8 didaktische Realitaetsnaehe.
 - `docs/projekt/F0f_FELD_EVIDENZ_PLAN.md` — Erhebungsbogen, Matrix-Mapping, Gap-Report-Template.
 - `docs/projekt/FELD_EVIDENZ_REGISTER.md` — **zu erstellen** im Rahmen Task #47.
 - `docs/projekt/F0d_BEFUND.md` — **zu erstellen** im Rahmen Task #46.
-- `docs/projekt/testrun-dispatch-spike/` — Run-Logs (3 A + 3 B).
+- `docs/projekt/testrun-dispatch-spike/` — Run-Logs (3 A + 3 B) + `input_bundle/` (Pre-Run-Fixierung + SHA-256-Hash).
 - `docs/projekt/testrun-feld-evidenz/` — Erhebungsboegen.
 
 ### 20.7 Aktualisierter Total-Plan-Impact-Count

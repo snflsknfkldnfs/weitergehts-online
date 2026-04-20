@@ -4,6 +4,56 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-20 — F0d Dispatch-Spike Plan v2.0 Realitaets-Refaktor (Prozess-Artefakt-Treue, realer mat-4-3-Fall)
+
+**Ausloeser — User-Direktive:** *"wir sollten F0d praxisnaeher testen. identifiziere, welche artefakte der agent gemaess prozesstruktur uebergeben bekommt, und welcher output genau in welcher form erwartet wird. dann sollten wir den agenten entsprechend praezise primen/in seiner arbeit strukturieren, sodass wir einen moeglichst realgetreuen test einer materialerstellung im kontext unserer bestehenden prozesstruktur bekommen."*
+
+**Problem mit v1.0:** Minimal-synthetisches Input/Output-JSON. Keine Bindung an `VERTRAG_PHASE_2-1_MATERIAL.md` 8-Step-Read-Protokoll. Keine Bindung an `F0B_PRIMING_INCLUDE.md` v1. Kein schema-konformer Output gegen `material-output-schema.json`. → Spike haette nicht den realen Cowork/linearen-Dispatch-Vertrag getestet, sondern ein Strohmann-Szenario.
+
+**Refaktor v2.0 — Realitaets-Anker:**
+
+- **Scope-Wechsel:** Von synthetisch → realer Fall `deutscher-nationalismus-kolonialismus/mappe-4/mat-4-3` (quellentext, TB-Knoten k4-3, artefakt_ref pq-4-1, Trotha Vernichtungsbefehl, Jgst 9, R7, konflikttyp=true, Trigger-Kategorien Kolonisierung/Gewalt/Macht-Asymmetrie/Unterdrueckung).
+- **Input-Bundle (§4.1) mit 11 Eintraegen aus produktiven Quellen:**
+  1. MATERIAL_GERUEST-Row fuer mat-4-3 (typ/titel/skript_chunk/tafelbild_knoten/artefakt_ref/didaktische_funktion)
+  2. SEQUENZKONTEXT (position/vorher/nachher/VORAUSGESETZTES_WISSEN/NOCH_NICHT_EINGEFUEHRT)
+  3. `hefteintrag.json` Mappe-4 (stundenfrage + KNOTEN_DETAILS + SCPL_KONTEXT via SCPL-Zone-Mapping)
+  4. `SUB_MATERIAL_QUELLENTEXT.md` (vollstaendig aus agents/sub/)
+  5. `F0B_PRIMING_INCLUDE.md` §1 SPRACHNIVEAU-R7 + §2 MATERIAL-PERSPEKTIV-01 + §3 TERMINOLOGIE-01 (Hash-Kennung `F0B_PRIMING_v1`)
+  6. SKRIPT §4+§5 Mappe 4 (nur CHUNKS-Abschnitte mit [ARTEFAKT: pq-4-1 | quellentext | ...])
+  7. INHALTSBASIS §F4-4 bis §F4-9 (Trotha-Zitate + A4-1/A4-2/A4-3 Maharero/Trotha/Witbooi)
+  8. `einstieg.json` Mappe-4 (problemstellung)
+  9. ARTEFAKT_INVENTAR pq-4-1-Entry
+  10. DIDAKTIK_RAHMEN (Jgst 9, R7, SCPL-Zone, konflikttyp, Trigger-Kategorien)
+  11. perspektiven_policy STR-05-String ("P1: ... | P2: ... | P3: ...")
+- **Priming-Paket (§4.2) pro Arm explizit:**
+  - Arm A (linear/shared): Prompt-Envelope innerhalb eines Orchestrator-Kontextes, 11 Artefakte inline interpoliert, QG-06-Selbst-Check im selben Kontext.
+  - Arm B (Cowork Agent-Tool, isoliert): Task-Call 1 Generator mit exakt den 11 Artefakten via structured prompt, Task-Call 2 QG-06-Checker mit separatem/frischem Kontext + Return-JSON-Schema.
+- **Output-JSON (§4.3):** schema-konform gegen `material-output-schema.json` Draft7 strict, inklusive `_meta` Block (aufbereitung=gemischt, rekonstruktions_begruendung ≥30 Chars, artefakt_ref=[pq-4-1], tafelbild_knoten_abgedeckt=[k4-3], perspektive=P1/P3, trigger_flags=[gewalt, tod]).
+- **Q-Gate-Return-JSON (§4.4):** QG-06 MULTIPERSPEKTIV + SCHEMA-01 + MQ-STRICT + MQ1-MQ6 + M1-M12 + TYP-QUELLENTEXT als strukturierte Pass/Fail-Matrix.
+- **Neue Metriken:** M6 Schema-Konformitaet (Draft7-Validation ohne Patch/Strip), M7 Q-Gate-Coverage (alle Gates vs nur QG-06), M8 Realitaetsnaehe (Bundle-Treue gegen Vertrag).
+- **Gating verschaerft:** PASS benoetigt M6 (Schema-Konformitaet) + MATERIAL-PERSPEKTIV-01-Coverage. M6=FAIL → Arm-Ergebnis ist inhaltlich nicht auswertbar.
+- **Ablauf erweitert:** Neuer P0-Block (30 min) fuer Bundle-Beschaffung + SHA-256-Hashing aller 11 Artefakte vor Run-Start.
+- **§12 Realitaetsnaehe-Checkliste** (7 Boxes) vor PASS/FAIL-Entscheidung.
+
+**UPGRADE_PLAN §20.6 Artefakte-Eintrag:** `F0d_DISPATCH_SPIKE_PLAN.md`-Zeile um v2.0-Vermerk erweitert (11-Artefakte-Bundle, Priming-Paket, M6/M7/M8, input_bundle/ + SHA-256-Hash).
+
+**Unveraenderte v1.0-Substanz:** Hypothesen H1-H3 (Varianz / Q-Gate-Fail-Detection / Token-Budget) bleiben; H4 schema-konformitaet neu ergaenzt. Dispatch-Default Cowork-Agent-Tool bleibt. 6 Runs (3 Arm A + 3 Arm B, 2/3 mit Fehler-Injektion) bleiben. Task-Kopplung #46→#48→#39 bleibt. 1 Arbeitstag Ablauf bleibt (jetzt P0-P6 statt P1-P6).
+
+**Geaenderte Dateien:**
+- `docs/projekt/F0d_DISPATCH_SPIKE_PLAN.md` (+183 / -65) — v1.0 → v2.0 komplett ersetzt.
+- `docs/architektur/UPGRADE_PLAN_v3-12_ESCAPE_GAME_QUALITAET.md` (+4 / -2) — §20.6 Artefakte-Zeile erweitert.
+- `docs/projekt/CHANGELOG.md` (dieser Eintrag).
+
+**Referenzen:**
+- `escape-game-generator/architektur/vertraege/VERTRAG_PHASE_2-1_MATERIAL.md` (8-Step-Read-Protokoll, Kanon-Dispatch-Vertrag)
+- `escape-game-generator/agents/_includes/F0B_PRIMING_INCLUDE.md` v1 (SPRACHNIVEAU-R7 + MATERIAL-PERSPEKTIV-01 + TERMINOLOGIE-01)
+- `escape-game-generator/architektur/schemata/material-output-schema.json` (Draft7 strict)
+- `docs/agents/artefakte/deutscher-nationalismus-kolonialismus/mappe-4/materialien/mat-4-3.json` (Referenz-Exemplar Trotha-Vernichtungsbefehl)
+
+**Naechster Schritt:** Commit-Plan (Host-MCP 5-Stufen) fuer 3 Dateien [F0d-Plan + UPGRADE_PLAN + CHANGELOG] dem User vorlegen. Nach Freigabe: stage + commit + push. Anschliessend P0-Block (Bundle-Beschaffung + Hashing) als erster Schritt der F0d-Ausfuehrung — erfordert eigenes User-Go.
+
+---
+
 ## 2026-04-20 — Pilot-Zurueckstellung + F0d Dispatch-Spike + F0f Feld-Evidenz + UPGRADE_PLAN v1.4-Delta
 
 **Ausloeser — zwei strukturelle Befunde zum geplanten v3.12-Pilot-Launch:**
