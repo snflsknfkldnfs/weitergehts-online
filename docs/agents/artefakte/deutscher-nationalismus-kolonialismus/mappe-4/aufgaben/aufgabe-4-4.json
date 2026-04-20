@@ -1,6 +1,7 @@
 {
   "id": "aufgabe-4-4",
   "typ": "quellenkritik",
+  "akzeptiere_jede_antwort": true,
   "frage": "Untersuche den Vernichtungsbefehl Schritt für Schritt.",
   "material_referenz": ["mat-4-3"],
   "w_fragen": [

@@ -2964,6 +2964,7 @@
         {
           "id": "aufgabe-4-4",
           "typ": "quellenkritik",
+          "akzeptiere_jede_antwort": true,
           "frage": "Untersuche den Vernichtungsbefehl Schritt für Schritt.",
           "material_referenz": [
             "mat-4-3"
@@ -3051,117 +3052,6 @@
             "quellentyp": "ueberrest",
             "finding_1_scaffolding": "Tipp 1 enthält Glossar (Untertanen/Weiber/Vieh/Schutzgebiet) + Paraphrase-Impuls VOR W-Fragen (PFLICHT laut PROGRESSIONSPLAN Konstruktionskontext 4)",
             "trigger_flags_handling": "gewalt+tod — Fragestellungen sachlich, keine Identifikations-Impulse („Stell dir vor, du wärst...“), Wortlaut-Zitate in Feedback nur soweit für Analyse zwingend nötig"
-          }
-        },
-        {
-          "id": "aufgabe-4-5",
-          "typ": "vergleich",
-          "frage": "Vergleiche Foto und Tagebuch entlang Perspektive, Zeitpunkt und sichtbarer Realität.",
-          "material_referenz": [
-            "mat-4-4",
-            "mat-4-5"
-          ],
-          "loesung": {
-            "dimensionen": [
-              "Perspektive",
-              "Zeitpunkt",
-              "Sichtbare Realität"
-            ],
-            "objekte": [
-              "Foto (M4)",
-              "Tagebuch (M5)"
-            ],
-            "zellen": {
-              "Foto (M4)": {
-                "Perspektive": "Deutscher Fotograf — Täter-Blick",
-                "Zeitpunkt": "Nach der Niederschlagung 1904",
-                "Sichtbare Realität": "Gefangene, besiegte Herero"
-              },
-              "Tagebuch (M5)": {
-                "Perspektive": "Herero-Hirte Kavezeri — Opfer-Blick",
-                "Zeitpunkt": "Vor dem Aufstand 1903",
-                "Sichtbare Realität": "Landraub und Zwangsarbeit"
-              }
-            }
-          },
-          "tipps": [
-            {
-              "stufe": 1,
-              "haertegrad": "kognitiv",
-              "text": "Öffne [[mat-4-4|das Foto]] (M4) und [[mat-4-5|das Tagebuch]] (M5). Fülle die Tabelle Zeile für Zeile — erst alle drei Dimensionen für das Foto, dann alle drei für das Tagebuch."
-            },
-            {
-              "stufe": 2,
-              "haertegrad": "strukturierend",
-              "text": "Perspektive beim Foto: Der Fotograf war Deutscher, also Täter-Blick (M4 Bildunterschrift + Quellenangabe Bundesarchiv). Jetzt überleg für das Tagebuch — wer schreibt in M5, und aus welcher Position heraus?"
-            },
-            {
-              "stufe": 3,
-              "haertegrad": "heuristisch",
-              "text": "Frag dich bei jeder Zeile: Was zeigt jedes Material — und was zeigt es NICHT? Die Lücken sind selbst ein Hinweis auf die Perspektive des Urhebers."
-            }
-          ],
-          "feedback": [
-            {
-              "typ": "bestaetigung",
-              "text": "Perspektive und Zeitpunkt richtig erkannt. Das Foto zeigt die Niederlage aus Täter-Sicht, das Tagebuch das Leben davor aus Opfer-Sicht. Erst beide zusammen ergeben das vollständige Bild der kolonialen Gewalt — die wichtigste Differenzierungs-Dimension ist die Urheber-Perspektive.",
-              "ebene": "anwendung"
-            },
-            {
-              "typ": "korrektur",
-              "text": "In der Dimension Zeitpunkt werden die beiden Quellen oft vertauscht: Das Tagebuch stammt von 1903 (VOR dem Aufstand), das Foto von 1904 (NACH der Niederschlagung). Prüfe [[mat-4-5|das Tagebuch]] (M5) Einleitung und [[mat-4-4|die Bildunterschrift]] (M4) — die Zeitangaben stehen direkt dort.",
-              "ebene": "anwendung"
-            },
-            {
-              "typ": "verknuepfung",
-              "text": "Der Vergleich zeigt: Die koloniale Gewalt hatte zwei Gesichter — die schleichende Entrechtung vor dem Aufstand (M5) und die offene militärische Zerschlagung danach (M4 plus [[mat-4-3|Trothas Befehl]] aus der vorigen Aufgabe). Beides ist derselbe Knoten k4-3, aus zwei Zeitpunkten und zwei Perspektiven gesehen.",
-              "ebene": "anwendung"
-            }
-          ],
-          "afb": "II-III",
-          "position": 5,
-          "punkte": 12,
-          "_meta": {
-            "bloom_level": 4,
-            "bloom_begruendung": "Analyse entlang Dimensionen: SuS zerlegen zwei Zeugnisse derselben Kategorienebene (koloniale Gewalt, k4-3) in drei trennscharfe Merkmale (Perspektive, Zeitpunkt, sichtbare Realität) und vergleichen systematisch — L4 Analyse, kein Lookup, kein reiner Abgleich, sondern Dimensions-Zerlegung mit differenzierender Dimension (Perspektive Täter vs. Opfer).",
-            "dimensionen_auswahl": "3 von 4 möglichen (D1 Medium weggelassen — strukturell ähnlich zu D1 Perspektive, würde Redundanz erzeugen; gewählt: Perspektive [Urheber-Achse], Zeitpunkt [Chronologie-Achse], Sichtbare Realität [Inhalts-Achse]). Alle drei trennscharf, alle drei aus Material direkt ableitbar, mind. eine differenzierende Dimension (Perspektive Täter vs. Opfer).",
-            "akzeptierte_varianten": {
-              "Foto (M4)__Perspektive": [
-                "Deutscher Fotograf, Täter-Perspektive",
-                "deutsche Kolonialtruppen",
-                "Täter-Sicht"
-              ],
-              "Foto (M4)__Zeitpunkt": [
-                "1904",
-                "1904/05",
-                "nach dem Aufstand",
-                "nach der Niederschlagung"
-              ],
-              "Foto (M4)__Sichtbare Realität": [
-                "gefangene Herero",
-                "besiegte Herero",
-                "Herero in Gewahrsam"
-              ],
-              "Tagebuch (M5)__Perspektive": [
-                "Herero-Hirte",
-                "Kavezeri",
-                "Opfer-Perspektive",
-                "Opfer-Sicht",
-                "Herero aus Okahandja"
-              ],
-              "Tagebuch (M5)__Zeitpunkt": [
-                "1903",
-                "vor dem Aufstand",
-                "ein Jahr vor dem Aufstand"
-              ],
-              "Tagebuch (M5)__Sichtbare Realität": [
-                "Landraub",
-                "Zwangsarbeit",
-                "Entrechtung",
-                "Landraub und erzwungene Arbeit"
-              ]
-            },
-            "trigger_flags_handling": "gewalt (mat-4-4+mat-4-5) + diskriminierung (mat-4-5) — Fragestellung sachlich, Vergleichs-Raster strukturiert (keine Gefühls-Heuristik „Welches bewegt dich mehr?“), Zell-Formulierungen analytisch (nicht sensationalisiert)."
           }
         },
         {

@@ -3489,6 +3489,24 @@ var EscapeEngine = (function () {
       return;
     }
 
+    // v3.15: Flag akzeptiere_jede_antwort — jede nicht-leere Eingabe wird akzeptiert
+    // (leere Abgabe wurde bereits oben via alleeLeer-Branch behandelt)
+    if (aufgabe.akzeptiere_jede_antwort === true) {
+      var antwortenAny = {};
+      for (var kAny in textareas) {
+        textareas[kAny].style.borderColor = '#5f7a3d';
+        textareas[kAny].style.backgroundColor = '#f0f7e6';
+        antwortenAny[kAny] = (textareas[kAny].value || '').trim();
+        textareas[kAny].disabled = true;
+      }
+      Core.feedback.showSuccess(section, 'Antwort akzeptiert. ✅');
+      saveProgress(_state.mappeId, index, true);
+      _saveAntwortState(_state.mappeId, index, { antworten: antwortenAny });
+      section.classList.add('aufgabe--solved');
+      _updateFortschritt(_getMappe(_state.mappeId), loadProgress(_state.mappeId));
+      return;
+    }
+
     // Pruefen ob alle Felder ausgefuellt (bei teilweiser Eingabe)
     var alleAusgefuellt = true;
     for (var k2 in textareas) {
