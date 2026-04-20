@@ -1,9 +1,9 @@
 # F0d — DISPATCH-SPIKE-PLAN
 
 **Datei:** `docs/projekt/F0d_DISPATCH_SPIKE_PLAN.md`
-**Status:** AKTIV (geplant, v2.0 Realitaets-Refaktor)
+**Status:** AKTIV (geplant, v2.1 Methodik-Haertung)
 **Erstellt:** 2026-04-20
-**Refaktorisiert:** 2026-04-20 (Realitaets-Refaktor auf echte Artefakt-Basis)
+**Refaktorisiert:** 2026-04-20 v2.0 (Realitaets-Refaktor auf echte Artefakt-Basis), 2026-04-20 v2.1 (Arm-A-Dispatch-Symmetrie, R6 PM-Overhead, fresh-envelope pro Run)
 **Modus:** Spike (zeitlich begrenzt, evidenzbasiert, nicht produktiv)
 **Owner:** Paul (Execution) + Cowork-PM (Orchestrierung)
 **Bezug:** UPGRADE_PLAN_v3-12 §20 (v1.4-Delta), PRE_PILOT_TRIAGE_MATRIX_v2 §6.1, RA5 F-RA5-11, VERTRAG_PHASE_2-1_MATERIAL, SUB_MATERIAL_QUELLENTEXT.md, F0B_PRIMING_INCLUDE.md, material-output-schema.json
@@ -57,8 +57,10 @@ Drei Wiederholungen pro Arm, identischer Input-Bundle (identische Dateien, ident
 
 | Arm | Dispatch | Q-Gate | Kontext |
 |---|---|---|---|
-| **A (Baseline)** | Linear im Chat (Ist-Zustand): System- + User-Prompt werden vom Orchestrator-Chat zusammengebaut und inline ausgefuehrt. | Linear im Chat nach Output (Self-Check im gleichen Kontext). | geteilter Orchestrator-Kontext — Generator sieht Q-Gate-Prompt, Q-Gate sieht Generator-Chain-of-Thought |
-| **B (Agent-Dispatch)** | Cowork Agent-Tool (Task-Call) mit isoliertem Kontext — Systemprompt = SUB_MATERIAL_QUELLENTEXT.md + F0B_PRIMING_INCLUDE §1+§2+§3, User-Prompt = Input-Bundle (§4.1). | Cowork Agent-Tool zweiter Call: separater Agent, Systemprompt = QG-06-Checker, Input = nur das generierte Material. | getrennt: Generator-Agent kennt Q-Gate-Prompt nicht; Q-Gate-Agent kennt Generator-Chain-of-Thought nicht. |
+| **A (Baseline, linear-Simulation)** | Cowork Agent-Tool (Task-Call) mit **frischem Agent-Kontext**. Der Agent bekommt explizit die Rolle "linearer Orchestrator": Generator + QG-06-Selbst-Check werden **im selben Agent-Aufruf** ausgefuehrt (intra-call geteilter Kontext). **Pro Run ein eigener Task-Call** (inter-run kontext-frisch). Dispatch via Agent-Tool statt im PM-Chat verhindert R6 PM-Overhead-Kontamination. | Inline im selben Agent-Aufruf nach Output (Self-Check im geteilten intra-call-Kontext). | intra-call geteilt (Generator sieht Q-Gate-Prompt, Q-Gate sieht Generator-Chain-of-Thought). Inter-run kontext-frisch. Inter-Arm unabhaengig (isolierter Agent-Kontext, kein Durchsickern aus B oder aus PM-Historie). |
+| **B (Agent-Dispatch)** | Cowork Agent-Tool **zwei getrennte Task-Calls**: Call 1 Generator, Call 2 QG-06-Checker. Pro Run beide Calls frisch. Systemprompt Call 1 = SUB_MATERIAL_QUELLENTEXT.md + F0B_PRIMING_INCLUDE §1+§2+§3, User-Prompt = Input-Bundle (§4.1). | Call 2: separater Agent, Systemprompt = QG-06-Checker, Input = nur das generierte Material + perspektiven_policy. | intra-call getrennt (Generator-Agent kennt Q-Gate-Prompt nicht; Q-Gate-Agent kennt Generator-Chain-of-Thought nicht). Inter-run kontext-frisch. Inter-Arm unabhaengig. |
+
+**Invariante der Asymmetrie (v2.1):** Beide Arme starten aus frischem Agent-Kontext. Der **einzige** getestete Unterschied ist die **Intra-Run-Call-Struktur**: 1 vereinigter Call (A) vs 2 getrennte Calls (B). Dispatch-Kanal ist in beiden Faellen Cowork Agent-Tool. PM-Chat-Kontext (diese Session) ist fuer keinen der 6 Runs Produktions-Kontext.
 
 ## 4. Input-/Output-Schema (real, Prozessstruktur-konform)
 
@@ -85,17 +87,29 @@ Persistierung: `docs/projekt/testrun-dispatch-spike/input_bundle/` (read-only fu
 
 ### 4.2 Priming-Paket pro Arm (neu in v2.0)
 
-**Arm A — Baseline (linear im Orchestrator-Chat):**
+**Arm A — Baseline (linear-Simulation via Agent-Tool, v2.1):**
 
 ```
-[Orchestrator-System-Prompt: du bist AGENT_MATERIAL, produziere ein quellentext-Material, halte dich an VERTRAG_PHASE_2-1_MATERIAL, bette SUB_MATERIAL_QUELLENTEXT.md wortgleich ein, halte F0B_PRIMING_v1 ein.]
-
-[User-Prompt: <kompletter Input-Bundle §4.1 als Markdown>]
-
-[AFTER-OUTPUT: Q-Gate QG-06 inline pruefen — Perspektiv-Gegenueberstellung vorhanden? ja/nein + Begruendung.]
+Task-Call (1 Call, vereinigt, simuliert linearen Orchestrator-Modus):
+  subagent_type: "general-purpose"
+  system_prompt:  "Du bist AGENT_MATERIAL im linearen Orchestrator-Modus.
+                   Du produzierst EIN quellentext-Material gemaess VERTRAG_PHASE_2-1_MATERIAL.
+                   SUB_MATERIAL_QUELLENTEXT.md ist wortgleich eingebettet.
+                   F0B_PRIMING_v1 §1+§2+§3 ist wortgleich eingebettet.
+                   NACH der Material-Erzeugung fuehrst DU SELBST im gleichen
+                   Aufruf-Kontext QG-06 MULTIPERSPEKTIV + SCHEMA-01 + MQ-STRICT
+                   als Self-Check aus und lieferst den QG-06-Return-JSON.
+                   Du hast KEINE PM-Historie, KEINEN Cowork-Session-Kontext,
+                   KEINE Kenntnis paralleler Laufe."
+                  + <SUB_MATERIAL_QUELLENTEXT.md vollstaendig>
+                  + [F0B_PRIMING_v1 BEGIN ... END]-Block
+  user_prompt:    <Input-Bundle §4.1 als Markdown>
+  expected_output: Zwei JSON-Bloecke in dieser Reihenfolge:
+                   1. Material-JSON konform material-output-schema.json (Draft7 strict)
+                   2. QG-06-Return-JSON gemaess §4.4 (Self-Check im gleichen Aufruf)
 ```
 
-Die lineare Variante simuliert den heutigen Ist-Zustand: ein einziger langer Chat-Thread mit geteiltem Kontext zwischen Generator, Orchestrator und Q-Gate.
+Die lineare-Simulation testet den Ist-Zustand **strukturell**: Generator und Q-Gate teilen Kontext innerhalb eines Aufrufs (Self-Check-Bias). Dispatch via Agent-Tool statt im PM-Chat-Kontext verhindert R6 (PM-Overhead-Kontamination) und garantiert Inter-Arm-Unabhaengigkeit. **Pro Run ein eigener Task-Call** — inter-run keine Kontext-Akkumulation (fresh envelope).
 
 **Arm B — Agent-Dispatch (Cowork Agent-Tool):**
 
@@ -201,7 +215,7 @@ Sonst **FAIL** → keine Architektur-Investition in F0g, Fokus zurueck auf linea
 
 ## 7. Tools
 
-- **Dispatch-Layer:** Cowork Agent-Tool (`general-purpose` oder spezialisierter Subagent). Parent-Claude wickelt Orchestrierung in Cowork-Session ab.
+- **Dispatch-Layer:** Cowork Agent-Tool (`general-purpose`) fuer **beide Arme** (v2.1-Symmetrie). Arm A = 1 Task-Call vereinigt (Generator+Self-Check), Arm B = 2 Task-Calls getrennt (Generator | Checker). Parent-Claude (diese Session) orchestriert, fuehrt aber keinen der 6 Runs im eigenen Kontext aus. Pro Run ein frischer Agent-Envelope.
 - **Kein CC-Handoff:** Cowork-native Dispatch vermeidet Prevent-First-Gate-Narben (argv-Hang, Auth-Gate). CC-Handoff nur reserviert fuer Batch-Mass-Runs ausserhalb F0d-Scope.
 - **Logging:** Prompts + Outputs je Lauf in `docs/projekt/testrun-dispatch-spike/` persistieren. Dateinamen:
   - `input_bundle/bundle.md` (einmalig)
@@ -215,8 +229,8 @@ Sonst **FAIL** → keine Architektur-Investition in F0g, Fokus zurueck auf linea
 |---|---|---|
 | **P0 neu** | 30 min | **Input-Bundle-Beschaffung** — Artefakt-Extrakte aus produktiven Testrun-Quellen + perspektiven_policy + F0B_PRIMING_INCLUDE §1-§3 wortgleich + DIDAKTIK_RAHMEN-Ausschnitt + hefteintrag.json-Slice + einstieg.json-Slice zusammenstellen. Persistierung unter `testrun-dispatch-spike/input_bundle/`. Fehler-Injektions-Variante (mono-perspektivisch) als `bundle_injected.md` zusaetzlich. |
 | P1 | 20 min | Input-Kit fixieren (A+B identisch, plus 1 Fehler-Injektions-Variante, Hash-Check) |
-| P2 | 60 min | Arm A (Baseline, linear im Orchestrator-Chat) — 3 Laufe, Logs + schema-validate + QG-06-inline |
-| P3 | 60 min | Arm B (Agent-Dispatch) — 3 Laufe, Logs + schema-validate + QG-06-isoliert |
+| P2 | 60 min | Arm A (Baseline, linear-Simulation via Agent-Tool, 1 Task-Call vereinigt) — 3 seriell Laufe, pro Run frischer Envelope, Logs + schema-validate + QG-06-inline im selben Agent-Call |
+| P3 | 60 min | Arm B (Agent-Dispatch, 2 Task-Calls getrennt) — 3 seriell Laufe, pro Run frischer Envelope fuer beide Calls, Logs + schema-validate + QG-06-isoliert |
 | P4 | 45 min | Metriken berechnen M1-M8, Vergleichstabelle |
 | P5 | 30 min | PASS/FAIL-Entscheidung + Entscheidungsnotiz `docs/projekt/F0d_BEFUND.md` |
 | P6 | 15 min | STATUS + CHANGELOG Update + TaskUpdate |
@@ -244,6 +258,9 @@ Sonst **FAIL** → keine Architektur-Investition in F0g, Fokus zurueck auf linea
 | R3 | Fehler-Injektion zu offensichtlich → Q-Gate faengt zu leicht | Injektion subtil: nur `perspektiven_policy` beschneiden, Zitat bleibt identisch — Q-Gate muss Fehlen der nicht-dominanten Perspektive im Output eigenstaendig feststellen |
 | R4 | Subagent-Output divergiert vom Schema nicht wegen Dispatch-Typ, sondern wegen unklarem Priming | F0B_PRIMING_INCLUDE §1-§3 + SUB_MATERIAL_QUELLENTEXT.md wortgleich in beiden Armen. Differenz nur in Kontext-Isolation, nicht in Prompt-Inhalt |
 | R5 | Bundle-Dateien koennten zwischen Runs mutieren | Bundle wird vor Run-Start eingefroren (Git-Commit auf testrun-dispatch-spike/input_bundle/) und SHA-256-Hash in `bundle_hash.txt` hinterlegt. Jeder Run-Log referenziert diesen Hash. |
+| **R6 (neu v2.1)** | **PM-Overhead-Kontamination bei Arm A (Orchestrator-Kontext enthaelt PM-Historie, Plan-Lektuere, Bundle-Erstellung etc.)** | **Arm A wird nicht im PM-Chat-Kontext ausgefuehrt, sondern ebenfalls via Cowork Agent-Tool-Dispatch mit Rolle "linearer Orchestrator-Modus: Generator + Self-Check im selben Agent-Aufruf". Beide Arme starten aus frischem Agent-Kontext, einzige getestete Asymmetrie ist die Intra-Run-Call-Struktur (1 vereinigt vs 2 getrennt).** |
+| **R7 (neu v2.1)** | **Inter-Run-Kontext-Akkumulation innerhalb eines Arms (Runs 2+3 sehen Run-1-Output und passen an, kuenstlich niedrige Varianz zugunsten Arm A)** | **Pro Run ein eigener Task-Call mit frischem Envelope. Kein Chain-of-Call innerhalb desselben Agent-Kontextes. Run-IDs seriell in getrennten Agent-Dispatches.** |
+| **R8 (neu v2.1)** | **Inter-Arm-Durchsickern (Arm-B-Returns kontaminieren Arm-A-Entscheidung falls parallel oder A nach B)** | **Strikte Reihenfolge A1 → A2 → A3 → B1 → B2 → B3 seriell. Metriken-Berechnung (P4 #58) erst nach allen 6 Runs (blind).** |
 
 ## 12. Realitaetsnaehe-Checkliste (v2.0)
 
@@ -256,14 +273,17 @@ Dieser Plan ist realitaetsnah nur, wenn:
 - [ ] `perspektiven_policy` korrekt als 3-Eintrag-String uebergeben (STR-05).
 - [ ] Trigger-Kategorien aktivieren MATERIAL-PERSPEKTIV-01 + TERMINOLOGIE-01 tatsaechlich im Priming-Block.
 - [ ] Fehler-Injektion auf `perspektiven_policy` und nicht auf Zitat (sonst Quellen-Korrumpierung).
+- [ ] **(v2.1) Arm A nicht im PM-Chat-Kontext, sondern via Agent-Tool-Dispatch mit Rolle "linearer Orchestrator" ausgefuehrt (R6-Mitigation).**
+- [ ] **(v2.1) Runs seriell A1→A2→A3→B1→B2→B3, pro Run frischer Agent-Envelope, Metriken-Berechnung blind nach allen 6 Runs (R7+R8-Mitigation).**
 
 ---
 
-**Status:** v2.0, 2026-04-20 (Realitaets-Refaktor)
+**Status:** v2.1, 2026-04-20 (Methodik-Haertung, R6+R7+R8, Dispatch-Symmetrie)
 
 ## Aenderungshistorie
 
 | Version | Datum | Aenderung |
 |---|---|---|
+| 2.1 | 2026-04-20 | **Methodik-Haertung vor P2-Eintritt.** Arm A wird nicht mehr im PM-Chat-Kontext (diese Session), sondern ebenfalls via Cowork Agent-Tool-Dispatch ausgefuehrt, mit Rolle "linearer Orchestrator-Modus: Generator + QG-06-Self-Check im selben Agent-Aufruf". Dadurch Dispatch-Symmetrie beider Arme (einzige getestete Asymmetrie ist die Intra-Run-Call-Struktur 1-vereinigt vs 2-getrennt). Neue Risiken R6 (PM-Overhead-Kontamination) + R7 (Inter-Run-Kontext-Akkumulation) + R8 (Inter-Arm-Durchsickern). Neue Checkliste-Boxes (R6-Mitigation + serielle R7+R8-Mitigation). §3 A/B-Tabelle umgeschrieben mit Kontext-Spalte je Intra-Call / Inter-Run / Inter-Arm. §4.2 Arm A Prompt-Envelope neu als Task-Call-Schema. §7 Tools-Eintrag auf Dispatch-Symmetrie aktualisiert. §8 P2+P3 Beschreibung auf Agent-Tool-Dispatch + fresh-envelope pro Run aktualisiert. Ausfuehrungsreihenfolge A1→A2→A3→B1→B2→B3 seriell festgeschrieben, Metriken-Berechnung blind nach allen 6 Runs. |
 | 2.0 | 2026-04-20 | Realitaets-Refaktor. Scope auf realen Fall `mat-4-3 Vernichtungsbefehl` Mappe 4 Nationalismus-Kolonialismus. Input-Bundle aus 11 produktiven Artefakten (MATERIAL_GERUEST-Row, SEQUENZKONTEXT, hefteintrag.json, SUB_MATERIAL_QUELLENTEXT.md, F0B_PRIMING_INCLUDE §1-§3, SKRIPT §4+§5, INHALTSBASIS F4-4 bis F4-9, einstieg.json, ARTEFAKT_INVENTAR pq-4-1, DIDAKTIK_RAHMEN, perspektiven_policy). Priming-Paket §4.2 pro Arm explizit. Output-Schema §4.3 gegen material-output-schema.json (Draft7, strict, _meta Pflichtfeld). Neue Metriken M6 Schema-Konformitaet, M7 Q-Gate-Coverage, M8 didaktische Realitaetsnaehe. Gating-Verschaerfung: M6 PASS + MATERIAL-PERSPEKTIV-01-Coverage bei aktiver Trigger-Kategorie. Neuer Block P0 Bundle-Beschaffung (30 min) im Ablaufplan. §12 Realitaetsnaehe-Checkliste. |
 | 1.0 | 2026-04-20 | Initial (minimal-synthetisch). |
