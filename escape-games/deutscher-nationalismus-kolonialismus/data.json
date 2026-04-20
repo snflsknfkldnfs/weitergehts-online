@@ -1893,6 +1893,7 @@
       "titel": "Deutschlands Griff nach der Welt",
       "beschreibung": "Vom „Platz an der Sonne“ über die Berliner Konferenz 1884 bis zum Wettlauf um Afrika — Imperialismus und Kolonialisierung ohne Rücksicht auf die Betroffenen.",
       "freischalt_code": "SONNE",
+      "vorab_freigeschaltet": true,
       "einstieg": {
         "narrativ": "<p>In der Dokumentenmappe liegt ein Zeitungsausschnitt von 1897. Ein Politiker steht im Deutschen Reichstag und fordert etwas, das harmlos klingt — aber Folgen für einen ganzen Kontinent haben wird.</p>",
         "problemstellung": "Warum teilten europäische Mächte Afrika unter sich auf — ohne die Afrikaner zu fragen?"
