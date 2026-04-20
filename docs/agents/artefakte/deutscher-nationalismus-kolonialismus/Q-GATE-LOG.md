@@ -43,3 +43,43 @@ GESAMT: PASS
 | 2 | `data-status="staging"` aus `<li id="game-deutscher-nationalismus-kolonialismus">` entfernt | PASS |
 | 3 | Commit `v3.11 deutscher-nationalismus-kolonialismus Mappe 1 live` | PASS |
 | 4 | MAPPEN_ABGESCHLOSSEN: 0 → 1 | PASS |
+
+---
+
+## Phase 3.1 Deploy-Preparation (Mappe 4 — Game-Abschluss)
+
+**Datum:** 2026-04-20
+**Gesamturteil:** PASS
+**Script-Aufruf:** `./tools/deploy-check.sh deutscher-nationalismus-kolonialismus`
+
+```
+DEPLOY-01: PASS titel="Deutscher Nationalismus und Kolonialismus" mappen.len=4
+DEPLOY-02: PASS 9 Asset-Refs geprueft, alle vorhanden
+DEPLOY-03: PASS Titel 'Deutscher Nationalismus und Kolonialismus' im <li> enthalten
+DEPLOY-04: PASS data.json.mappen=4, mappe-*.html=4
+DEPLOY-05: PASS index.html referenziert escape-engine + data.json
+DEPLOY-06: PASS 4 Mappe(n) strukturell vollstaendig (einstieg, materialien, aufgaben, sicherung.hefteintrag)
+DEPLOY-07: PASS Caption/Quellen-Parity: ✅ PASS: Alle Source-JSONs synchron mit data.json
+DEPLOY-07-SHA: PASS SOURCE_SHA256=f5a167cc2a22...
+---
+GESAMT: PASS
+[Q-GATE-LOG] DEPLOY_CHECK=PASS GAME=deutscher-nationalismus-kolonialismus MAPPE=ALL TS=2026-04-20T04:33:38Z SCRIPT_VERSION=c22a340
+```
+
+| Gate | Kriterium | Ergebnis |
+|---|---|---|
+| DEPLOY-01 | data.json valide; meta.titel + mappen[] vorhanden (mappen.len=4) | PASS |
+| DEPLOY-02 | 9 Asset-Refs aus data.json geprüft, alle vorhanden (inkl. neuer img-4-1.jpg + img-4-2.jpg) | PASS |
+| DEPLOY-03 | titel-String byte-identisch mit Landing-Page-`<li>`-Eintrag | PASS |
+| DEPLOY-04 | data.json.mappen=4 == mappe-*.html=4 | PASS |
+| DEPLOY-05 | index.html referenziert escape-engine + data.json | PASS |
+| DEPLOY-06 | 4 Mappen strukturell vollständig (einstieg, materialien, aufgaben, sicherung.hefteintrag) | PASS |
+| DEPLOY-07 | Source-Deploy-Parity: alle Source-JSONs synchron mit data.json (Captions/Quellen) | PASS |
+
+**Staging-Hinweis:** Game ist seit Mappe 1 Phase 3.2 bereits live (`data-status="staging"` wurde dort entfernt). Mappe 4 wird durch Commit+Push direkt unter bestehendem live-Listeneintrag verfügbar — kein separater Staging-Flag-Toggle nötig.
+
+**Game-Gesamt-Metriken (4/4 Mappen):**
+- Phase-2-Q-Gates kumuliert: 16 Gates (2.0, 2.1, 2.1b, 2.1c, 2.2a, 2.2b, 2.2c × 4 Mappen, teils geteilt) — alle PASS
+- Materialien gesamt: 6 (M1) + 6 (M2) + 6 (M3) + 5 (M4) = 23
+- Aufgaben gesamt: 7 (M1) + 5 (M2) + 4 (M3) + 6 (M4) = 22
+- Tafelbild-Knoten gesamt: k1-* + k2-* + k3-* + k4-1..k4-4 → Sequenz-weites Concept-Map

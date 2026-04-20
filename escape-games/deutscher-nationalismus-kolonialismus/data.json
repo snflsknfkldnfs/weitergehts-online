@@ -2542,6 +2542,911 @@
         "ueberleitungssatz": "Am grünen Tisch in Berlin hatten Diplomaten Grenzen gezogen. Doch was bedeutete das für die Menschen, die in den neuen „Schutzgebieten“ lebten? In Deutsch-Südwestafrika wurde die Antwort besonders brutal.",
         "_variante": "A"
       }
+    },
+    {
+      "id": "mappe-4",
+      "titel": "Wettlauf um die Welt",
+      "beschreibung": "Weltpolitik, Marokkokrisen und koloniale Gewalt — wie der Wettlauf um Kolonien Afrika und Europa veränderte.",
+      "freischalt_code": "AFRIKA",
+      "einstieg": {
+        "narrativ": "In der Dokumentenmappe liegt eine englische Karikatur von 1890: Der erfahrene Lotse Bismarck geht von Bord, der junge Kaiser Wilhelm II. schaut ihm nach. Ein neuer Kurs beginnt — und Deutschland will mehr als nur vier Kolonien in Afrika.",
+        "problemstellung": "Welche Folgen hatte der Wettlauf um Kolonien — für Afrika und für Europa?"
+      },
+      "materialien": [
+        {
+          "id": "mat-4-1",
+          "typ": "bildquelle",
+          "titel": "Der Lotse geht von Bord — ein neuer Kurs beginnt",
+          "position": 1,
+          "didaktische_funktion": "einstieg",
+          "voraussetzung": [],
+          "ueberleitung_von": null,
+          "sequenz_kontext": {
+            "vorher": null,
+            "nachher": {
+              "id": "mat-4-2",
+              "typ": "darstellungstext",
+              "kerninhalt": "Weltpolitik unter Wilhelm II. und die Marokkokrisen als Folge"
+            }
+          },
+          "inhalt": "../../assets/img/deutscher-nationalismus-kolonialismus/img-4-1.jpg",
+          "bildunterschrift": "Englische Karikatur aus der Zeitschrift <em>Punch</em>, 29. März 1890. Sie zeigt den alten Reichskanzler Otto von Bismarck, wie er ein Schiff verlässt — oben an der Reling steht der junge Kaiser Wilhelm II. und schaut zu. Der Titel lautet: <em>Dropping the Pilot</em> („Der Lotse geht von Bord“). Bismarck hatte das Kaiserreich vorsichtig durch die europäische Politik gesteuert. Wilhelm II. wollte einen anderen Kurs: Deutschland sollte <strong>Weltpolitik</strong> (aggressive Außenpolitik mit dem Ziel, Deutschland zur Weltmacht zu machen) betreiben und überall auf der Welt mitbestimmen. Was könnte der Zeichner mit dem Bild des verlassenen Schiffs meinen?",
+          "quelle": "Sir John Tenniel, Punch, 29. März 1890. Wikimedia Commons.",
+          "lizenz": "Public Domain",
+          "_meta": {
+            "wortanzahl": 94,
+            "aufbereitung": "echt",
+            "artefakt_ref": [
+              "pb-4-1"
+            ],
+            "tafelbild_knoten_abgedeckt": [
+              "k4-1"
+            ],
+            "perspektive": "P1 Deutsche Reichsführung (Wilhelm II.)",
+            "quellenkritische_impulse": [
+              "Was könnte der Zeichner mit dem Bild des verlassenen Schiffs meinen?",
+              "Wer hat diese Karikatur gezeichnet — ein deutscher oder britischer Beobachter? Was sagt das über die Perspektive aus?"
+            ],
+            "erarbeitbarkeits_check": "PASS — Karikatur zeigt Machtwechsel Bismarck→Wilhelm II. und eröffnet den Begriff Weltpolitik. SuS können den Kurswechsel visuell erschließen.",
+            "trigger_flags": []
+          }
+        },
+        {
+          "id": "mat-4-2",
+          "typ": "darstellungstext",
+          "titel": "Weltpolitik und Marokkokrisen — Deutschland provoziert Europa",
+          "position": 2,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [
+            "mat-4-1"
+          ],
+          "ueberleitung_von": "Du hast in der Karikatur gesehen: 1890 übernahm Wilhelm II. das Steuer von Bismarck. Doch wohin steuerte er das Kaiserreich?",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-4-1",
+              "typ": "bildquelle",
+              "kerninhalt": "Karikatur Dropping the Pilot: Machtwechsel Bismarck→Wilhelm II., Begriff Weltpolitik eingeführt"
+            },
+            "nachher": {
+              "id": "mat-4-3",
+              "typ": "quellentext",
+              "kerninhalt": "Vernichtungsbefehl von Trothas — was Kolonialherrschaft konkret bedeutete"
+            }
+          },
+          "inhalt": "<p>Wilhelm II. wollte einen neuen Kurs. Deutschland sollte überall mitreden — in Afrika, in Asien, auf den Meeren. Er nannte das <strong>Weltpolitik</strong> (aggressive Außenpolitik mit dem Ziel, Deutschland zur Weltmacht zu machen).</p><p>Das führte zu Streit mit Frankreich. Frankreich wollte Marokko in Nordafrika kontrollieren. Deutschland wollte das verhindern. 1905 reiste Wilhelm II. nach Tanger und forderte dort die Unabhängigkeit Marokkos. 1911 schickte Deutschland sogar das Kanonenboot „Panther“ vor die Küste von Agadir.</p><p>Zweimal drohte wegen eines Kolonialstreits ein Krieg: die <strong>Marokkokrisen</strong> (Konflikte 1905 und 1911 um Einfluss in Marokko). Beide Male verhandelten die Großmächte am Ende — ein Krieg wurde vermieden.</p><p>Doch das Misstrauen war gewachsen. Aus Handelspartnern waren Rivalen geworden. Der Streit um Kolonien spaltete Europa immer tiefer.</p>",
+          "quelle": "Eigene Darstellung auf Basis der Sachanalyse. Quellen: Wikipedia — Erste Marokkokrise, Zweite Marokkokrise, Weltpolitik (Deutsches Kaiserreich).",
+          "_meta": {
+            "wortanzahl": 119,
+            "aufbereitung": "rekonstruiert",
+            "rekonstruktions_begruendung": "Darstellungstext ist agent-generiert auf Basis der Sachanalyse (Weltpolitik Wilhelms II., Tanger-Krise 1905, Panthersprung 1911). Keine wörtliche Originalquelle, da Sachtext-Format.",
+            "artefakt_ref": [],
+            "tafelbild_knoten_abgedeckt": [
+              "k4-1",
+              "k4-2",
+              "k4-4"
+            ],
+            "perspektive": "P1 Deutsche Reichsführung / P2 Frankreich (implizit als Gegenspieler)",
+            "erarbeitbarkeits_check": "PASS — Absatz 1 erarbeitet k4-1 Weltpolitik (Definition inline). Absätze 2+3 erarbeiten k4-2 Marokkokrisen (beide Krisen 1905/1911 benannt, Fachbegriff-Definition inline). Absatz 4 erarbeitet k4-4 Rivalität (Misstrauen, Rivalen, Spaltung Europas).",
+            "trigger_flags": []
+          }
+        },
+        {
+          "id": "mat-4-3",
+          "typ": "quellentext",
+          "titel": "Vernichtungsbefehl — was „Schutzgebiet“ wirklich bedeutete",
+          "position": 3,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [
+            "mat-4-2"
+          ],
+          "ueberleitung_von": "Du hast erfahren, wie der Wettlauf um Kolonien Deutschland und Frankreich in zwei Marokkokrisen führte. Doch was bedeutete dieser Wettlauf für die Menschen, die in den Kolonien lebten?",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-4-2",
+              "typ": "darstellungstext",
+              "kerninhalt": "Weltpolitik, Marokkokrisen, wachsende Rivalität zwischen Großmächten"
+            },
+            "nachher": {
+              "id": "mat-4-4",
+              "typ": "bildquelle",
+              "kerninhalt": "Foto gefangener Herero nach der Niederschlagung des Aufstands"
+            }
+          },
+          "inhalt": "<p><em>In Deutsch-Südwestafrika (heute Namibia) erhob sich 1904 das Hirtenvolk der Herero gegen die deutsche Kolonialherrschaft. Nach der militärischen Niederschlagung erließ Generalleutnant Lothar von Trotha diesen Befehl:</em></p><blockquote><p>„Die Herero sind nicht mehr Deutsche Untertanen. [...] Innerhalb der Deutschen Grenze wird jeder Herero mit oder ohne Gewehr, mit oder ohne Vieh erschossen, ich nehme keine Weiber und keine Kinder mehr auf, treibe sie zu ihrem Volke zurück oder lasse auch auf sie schießen.“</p></blockquote><p><em>Von rund 80.000 Herero überlebten nur 15.000 bis 20.000. Deutschland erkannte dieses Vorgehen 2021 offiziell als ersten Völkermord des 20. Jahrhunderts an.</em></p>",
+          "quelle": "Lothar von Trotha, Vernichtungsbefehl, 2. Oktober 1904. Zitiert nach: Wikipedia — Völkermord an den Herero und Nama. Gekürzt. Auslassungen mit [...] gekennzeichnet.",
+          "_meta": {
+            "wortanzahl": 93,
+            "quellentyp": "amtlich",
+            "aufbereitung": "gemischt",
+            "rekonstruktions_begruendung": "Original-Wortlaut des Vernichtungsbefehls vom 2. Oktober 1904 aus Wikipedia (Völkermord an den Herero und Nama) übernommen und gekürzt (Auslassungen mit [...]). Einleitung und historische Einordnung agent-generiert, um Kontextualisierung für R7 zu liefern.",
+            "artefakt_ref": [
+              "pq-4-1"
+            ],
+            "tafelbild_knoten_abgedeckt": [
+              "k4-3"
+            ],
+            "quellenkritische_impulse": [
+              "Woran erkennst du in Trothas Worten, dass er die Herero nicht als Menschen, sondern nur als Feinde sieht?",
+              "Wie hätten Herero-Frauen und -Kinder ihre Lage 1904 wohl selbst beschrieben?"
+            ],
+            "perspektive": "P1 Deutsche Reichsführung (Trotha) / P3 Kolonisierte (Herero als Opfer)",
+            "erarbeitbarkeits_check": "PASS — Vernichtungsbefehl macht koloniale Gewalt (k4-3) unmittelbar erschließbar. Wortlaut zeigt Entmenschlichung (nicht mehr Deutsche Untertanen), Gewaltandrohung (erschossen, schießen) und Einschluss von Frauen und Kindern. Einordnung quantifiziert Ausmaß (80.000 → 15.000–20.000 Überlebende).",
+            "trigger_flags": [
+              "gewalt",
+              "tod"
+            ]
+          }
+        },
+        {
+          "id": "mat-4-4",
+          "typ": "bildquelle",
+          "titel": "Gefangene Herero nach der Niederschlagung des Aufstands",
+          "position": 4,
+          "didaktische_funktion": "vertiefung",
+          "voraussetzung": [
+            "mat-4-3"
+          ],
+          "ueberleitung_von": "Du hast Trothas Befehl gelesen. Seine Worte waren kein Bluff — ein Foto aus dieser Zeit zeigt, was die Niederschlagung konkret bedeutete.",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-4-3",
+              "typ": "quellentext",
+              "kerninhalt": "Trothas Vernichtungsbefehl gegen die Herero"
+            },
+            "nachher": {
+              "id": "mat-4-5",
+              "typ": "tagebuch",
+              "kerninhalt": "Perspektive eines Herero-Hirten vor dem Aufstand"
+            }
+          },
+          "inhalt": "../../assets/img/deutscher-nationalismus-kolonialismus/img-4-2.jpg",
+          "bildunterschrift": "Foto aus Deutsch-Südwestafrika (heute Namibia), 1904 — nach der Niederschlagung des Herero-Aufstands durch deutsche Kolonialtruppen.",
+          "quelle": "Bundesarchiv / Wikimedia Commons. Historisches Foto, Deutsch-Südwestafrika, ca. 1904.",
+          "lizenz": "CC-BY-SA 3.0 DE",
+          "_meta": {
+            "wortanzahl": 15,
+            "aufbereitung": "echt",
+            "artefakt_ref": [
+              "pb-4-2"
+            ],
+            "tafelbild_knoten_abgedeckt": [
+              "k4-3"
+            ],
+            "perspektive": "P3 Kolonisierte Bevölkerung (Herero als Abgebildete) / P1 Deutsche Reichsführung (Fotograf = Täterperspektive)",
+            "quellenkritische_impulse": [
+              "Was siehst du auf dem Foto? Was sagt es über die Lage der Herero nach dem Aufstand?",
+              "Wer hat dieses Foto wohl aufgenommen — und wer sollte es sehen?",
+              "Welches Bild hätten die Herero selbst von sich gezeigt?"
+            ],
+            "erarbeitbarkeits_check": "PASS — Foto macht koloniale Gewalt (k4-3) visuell erfahrbar und konkretisiert mat-4-3 (Trothas Befehl) bildlich. Bildkritik-Impuls 2 fördert BQ-8 (Urheber + Adressat); Impuls 3 zwingt zur Gegen-Perspektive (P3 Herero). Bildunterschrift kontextualisiert Ort/Zeit/historischen Moment, beschreibt aber NICHT den sichtbaren Bildinhalt — SuS-Eigenleistung (Beschreiben → Deuten) bleibt intakt.",
+            "trigger_flags": [
+              "gewalt"
+            ]
+          }
+        },
+        {
+          "id": "mat-4-5",
+          "typ": "tagebuch",
+          "titel": "Mein Land wird fremd — ein Herero-Hirte vor dem Aufstand",
+          "position": 5,
+          "didaktische_funktion": "sicherung",
+          "voraussetzung": [
+            "mat-4-4"
+          ],
+          "ueberleitung_von": "Du hast auf dem Foto gesehen, was nach dem Aufstand aus den Herero wurde. Doch wie erlebten sie die Jahre davor — bevor sie keinen anderen Ausweg mehr sahen?",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-4-4",
+              "typ": "bildquelle",
+              "kerninhalt": "Foto gefangener Herero nach der Niederschlagung"
+            },
+            "nachher": null
+          },
+          "inhalt": "<p><em>Fiktiver Tagebucheintrag. Ein junger Herero-Hirte namens Kavezeri erzählt 1903 aus dem Gebiet um Okahandja — ein Jahr bevor sich die Herero gegen die deutsche Kolonialherrschaft erheben werden.</em></p><p><em>Unser Dorf bei Okahandja, zur Trockenzeit</em></p><p>Heute kam mein Vater vom Handelsposten zurück. Sein Gesicht war dunkel. Er sagte: Die Weißen haben den Zaun verschoben. Wieder.</p><p>Die Weide am Fluss gehört jetzt einem deutschen Siedler. Mein Vater sagt, sie haben ein Papier, das sagt: Das Land sei ihres.</p><p>Ich verstehe das nicht. Mein Großvater ist auf diesem Land geboren. Wir kennen jeden Baum, jede Wasserstelle. Die Deutschen kennen nichts davon.</p><p>Letzte Woche musste mein älterer Bruder für die Deutschen Steine schleppen. Er durfte nicht nein sagen. Seine Hände waren aufgerissen. Er sprach kein Wort.</p><p>Samuel Maharero hat gesprochen. Manche Ältere nicken. Andere schweigen. Mein Vater sagt: Wenn man einem Hirten alle Weiden nimmt, bleibt ihm nichts.</p><p><em>Was Kavezeri erlebte, wurde von deutschen Siedlern und Verwaltern systematisch vorangetrieben: Landraub durch ungleiche Kaufverträge und erzwungene Arbeit. Ein Jahr später, 1904, erhoben sich die Herero unter Samuel Maharero. Die Antwort der deutschen Kolonialmacht war der Vernichtungsbefehl Generalleutnant von Trothas.</em></p>",
+          "quelle": "Fiktiver Tagebucheintrag, basierend auf typischen Erfahrungen der Herero-Bevölkerung vor dem Aufstand 1904. Figur und Erlebnisse sind erfunden, historischer Kontext ist belegt. Quellen: Wikipedia — Völkermord an den Herero und Nama; Samuel Maharero; Geschichte Namibias.",
+          "_meta": {
+            "wortanzahl": 110,
+            "quellentyp": "tagebuch",
+            "aufbereitung": "rekonstruiert",
+            "rekonstruktions_begruendung": "Fiktiver Tagebucheintrag. Keine authentischen Ego-Dokumente von Herero-Hirten aus dieser Zeit überliefert. Rekonstruktion auf Basis historisch belegter Phänomene: Landraub durch ungleiche Siedler-Kaufverträge, Zwangsarbeit von Herero-Jugendlichen, Samuel Mahareros Rolle als politischer Anführer mit Sitz in Okahandja (1890–1904). Figur Kavezeri didaktisch konstruiert, Name Herero-lautlich plausibel.",
+            "artefakt_ref": [
+              "pt-4-1"
+            ],
+            "tafelbild_knoten_abgedeckt": [
+              "k4-3"
+            ],
+            "perspektive": "P3 Kolonisierte Bevölkerung (Herero-Hirte Kavezeri, Okahandja 1903 — vor dem Aufstand)",
+            "erarbeitbarkeits_check": "PASS — Tagebuch macht k4-3 (Koloniale Ausbeutung und Gewalt) aus Opferperspektive erfahrbar: Landraub + Zwangsarbeit als erlebte Entrechtung, Maharero-Figur als ankündigender Widerstand. Erzählerstimme-Rahmen v3.6-konform: Kavezeri spricht nur über Erlebtes (Vaters Bericht, Bruders Hände, Dorfstimmung). Systemisches Wissen (Strategie des Landraubs, Vernichtungsbefehl als spätere Antwort) wandert in die kursive Einordnung nach dem Figur-Text. SuS können die Logik des Aufstands 1904 aus Hirten-Perspektive nachvollziehen.",
+            "trigger_flags": [
+              "diskriminierung",
+              "gewalt"
+            ]
+          }
+        }
+      ],
+      "aufgaben": [
+        {
+          "id": "aufgabe-4-1",
+          "typ": "lueckentext",
+          "frage": "Ergänze die fehlenden Fachbegriffe.",
+          "material_referenz": [
+            "mat-4-2"
+          ],
+          "text_mit_luecken": "Nach Bismarcks Entlassung 1890 verfolgte Kaiser Wilhelm II. eine aggressive Außenpolitik: die ___. Deutschland sollte überall auf der Welt mitreden. In Nordafrika stieß Deutschland mit Frankreich zusammen. Zweimal drohte wegen eines Kolonialstreits ein Krieg: die ___ von 1905 und 1911. Beide Male verhandelten die ___ am Ende und vermieden den Krieg. Doch das Misstrauen wuchs — aus Handelspartnern waren ___ geworden.",
+          "loesung": [
+            "Weltpolitik",
+            "Marokkokrisen",
+            "Großmächte",
+            "Rivalen"
+          ],
+          "antwortpool": [
+            "Großmächte",
+            "Imperialismus",
+            "Marokkokrisen",
+            "Rivalen",
+            "Weltpolitik"
+          ],
+          "tipps": [
+            {
+              "stufe": 1,
+              "haertegrad": "kognitiv",
+              "text": "Alle Lücken betreffen Fachbegriffe aus [[mat-4-2|Weltpolitik und Marokkokrisen]] (M2). Lies den Text noch einmal genau und achte auf die fett gedruckten Wörter."
+            },
+            {
+              "stufe": 2,
+              "haertegrad": "strukturierend",
+              "text": "Imperialismus kennst du als Oberbegriff für das Streben nach Kolonien aus Mappe 3 — Wilhelm II. hatte für seinen eigenen Kurs aber einen anderen Namen. Eine Lücke fragt nach den mächtigen Staaten Europas, die am Ende verhandelten."
+            },
+            {
+              "stufe": 3,
+              "haertegrad": "heuristisch",
+              "text": "Lücke 1 steht im ersten Absatz fett markiert (Wilhelms II. neuer Kurs). Lücke 2 ist nach dem nordafrikanischen Land benannt, in das Wilhelm II. 1905 reiste — auch fett im dritten Absatz. Lücke 3 findest du in Absatz 3 (wer verhandelte am Ende?). Lücke 4 steht im letzten Absatz und beschreibt, was aus Handelspartnern wurde."
+            }
+          ],
+          "feedback": [
+            {
+              "typ": "bestaetigung",
+              "text": "Du hast die vier Fachbegriffe richtig eingeordnet. Damit kannst du Wilhelms II. Weltpolitik benennen, die beiden Marokkokrisen einordnen und beschreiben, wie aus Partnern Rivalen wurden.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "korrektur",
+              "text": "Häufigster Fehler: Imperialismus statt Weltpolitik in Lücke 1. Imperialismus ist der Oberbegriff für das Streben nach Kolonien (Mappe 3). Weltpolitik bezeichnet Wilhelms II. besonders aggressive Variante davon.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "verknuepfung",
+              "text": "Im letzten Absatz von [[mat-4-2|Weltpolitik und Marokkokrisen]] (M2) steht, wie aus dem Streit um Kolonien wachsendes Misstrauen wurde. Diese Spaltung Europas ist die zentrale Folge des Wettlaufs.",
+              "ebene": "verstaendnis"
+            }
+          ],
+          "afb": "I",
+          "position": 1,
+          "punkte": 10,
+          "_meta": {
+            "bloom_level": 2,
+            "bloom_begruendung": "Kontextgetriebener Fachbegriffs-Einsatz: SuS verstehen Lückenkontext (Apposition, Krisen-Datumsangabe, Verhandlungsrolle, Beziehungswandel) und wählen passenden Begriff aus Pool — L2 Verstehen, nicht reines Recall."
+          }
+        },
+        {
+          "id": "aufgabe-4-2",
+          "typ": "multiple-choice",
+          "frage": "Was will die Karikatur „Der Lotse geht von Bord“ aussagen?",
+          "material_referenz": [
+            "mat-4-1"
+          ],
+          "optionen": [
+            "Bismarck wurde zu alt für die Politik und ging freiwillig in den Ruhestand.",
+            "Wilhelm II. entließ Bismarck und änderte den Kurs der deutschen Außenpolitik.",
+            "Deutschland verlor seine Flotte und brauchte einen neuen Kapitän.",
+            "Bismarck wollte Kolonien, aber Wilhelm II. war dagegen."
+          ],
+          "loesung": "Wilhelm II. entließ Bismarck und änderte den Kurs der deutschen Außenpolitik.",
+          "feedback": [
+            {
+              "typ": "korrektur",
+              "text": "Bismarck ging nicht freiwillig — er wurde von Wilhelm II. entlassen. Die Karikatur zeigt genau diesen Machtwechsel: Der erfahrene Lotse muss das Schiff verlassen.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "Richtig. Die Karikatur zeigt, dass Wilhelm II. Bismarck entließ und einen neuen Kurs einschlug — weg von vorsichtiger Diplomatie, hin zur aggressiven Weltpolitik.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "korrektur",
+              "text": "Das Schiff steht bildlich für den Staat, nicht für eine echte Flotte. Der Lotse Bismarck verlässt das Schiff — also den Staat.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "korrektur",
+              "text": "Es war genau umgekehrt: Bismarck war bei Kolonien zurückhaltend, Wilhelm II. wollte die aggressive Weltpolitik.",
+              "ebene": "verstaendnis"
+            }
+          ],
+          "tipps": [
+            {
+              "stufe": 1,
+              "haertegrad": "kognitiv",
+              "text": "Schau dir [[mat-4-1|die Karikatur]] (M1) nochmal genau an. Wer steht oben auf dem Schiff, wer geht die Treppe hinunter? Was bedeutet das bildlich?"
+            },
+            {
+              "stufe": 2,
+              "haertegrad": "strukturierend",
+              "text": "Ein Lotse steuert ein Schiff sicher durch gefährliche Gewässer. Bismarck war der Lotse des Kaiserreichs. Was passiert mit dem Schiff, wenn der Lotse es verlässt — und wer steuert dann?"
+            },
+            {
+              "stufe": 3,
+              "haertegrad": "heuristisch",
+              "text": "Zwei der vier Antworten drehen die historischen Rollen um (wer wollte was). Eine Antwort nimmt das Schiff wörtlich statt bildlich. Schließe diese drei aus."
+            }
+          ],
+          "afb": "II",
+          "position": 2,
+          "punkte": 10,
+          "_meta": {
+            "bloom_level": 3,
+            "bloom_begruendung": "Bildinterpretation: SuS müssen die Metapher (Lotse = Bismarck, Schiff = Staat) auf den historischen Kontext (Bismarck-Entlassung 1890, Kurswechsel zur Weltpolitik) anwenden — L3 Anwenden, nicht reines Verstehen."
+          }
+        },
+        {
+          "id": "aufgabe-4-3",
+          "typ": "reihenfolge",
+          "frage": "Ordne die Schritte von der Weltpolitik zur Rivalität.",
+          "material_referenz": [
+            "mat-4-2"
+          ],
+          "optionen": [
+            "Aus Handelspartnern sind Rivalen geworden.",
+            "Wilhelm II. reist nach Tanger und fordert Marokkos Unabhängigkeit.",
+            "Wilhelm II. ruft die Weltpolitik als neuen Kurs aus.",
+            "Deutschland schickt das Kanonenboot „Panther“ vor Agadir."
+          ],
+          "loesung": [
+            "Wilhelm II. ruft die Weltpolitik als neuen Kurs aus.",
+            "Wilhelm II. reist nach Tanger und fordert Marokkos Unabhängigkeit.",
+            "Deutschland schickt das Kanonenboot „Panther“ vor Agadir.",
+            "Aus Handelspartnern sind Rivalen geworden."
+          ],
+          "feedback": [
+            {
+              "typ": "bestaetigung",
+              "text": "Position 1: Die Weltpolitik ist das Programm — der Ausgangspunkt. Erst danach kommt der konkrete Streit mit Frankreich um Marokko.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "Position 2: Die Tanger-Reise war die erste Marokkokrise. Wilhelm II. provozierte Frankreich direkt vor Ort.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "Position 3: Der Panthersprung war die zweite Marokkokrise — sechs Jahre später und noch aggressiver (Kanonenboot statt Rede).",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "Position 4: Die Rivalität ist die Folge, nicht der Anfang. Sie entstand durch die beiden Krisen, nicht umgekehrt.",
+              "ebene": "verstaendnis"
+            },
+            {
+              "typ": "korrektur",
+              "text": "Häufige Vertauschung: Tanger-Reise und Panthersprung werden oft getauscht. Prüfe in [[mat-4-2|Weltpolitik und Marokkokrisen]] (M2) Absatz 2 — Tanger 1905, Panther 1911.",
+              "ebene": "verstaendnis"
+            }
+          ],
+          "tipps": [
+            {
+              "stufe": 1,
+              "haertegrad": "kognitiv",
+              "text": "Lies [[mat-4-2|Weltpolitik und Marokkokrisen]] (M2) noch einmal. Der Text ist chronologisch aufgebaut — Absatz 1 nennt den Kurswechsel, Absatz 2 die beiden Krisen, Absatz 4 die Folge."
+            },
+            {
+              "stufe": 2,
+              "haertegrad": "strukturierend",
+              "text": "Zwei Elemente nennen konkrete Orte (Tanger, Agadir). Eines davon gehört zu 1905, das andere zu 1911. Ein Element beschreibt den Ausgangspunkt (Programm), eines die Folge (Beziehungswandel)."
+            },
+            {
+              "stufe": 3,
+              "haertegrad": "heuristisch",
+              "text": "Frag dich bei jedem Paar: Was war Ursache, was Wirkung? Das Programm steht vor den Krisen. Die Beziehungs-Folge steht nach den Krisen."
+            }
+          ],
+          "afb": "II",
+          "position": 3,
+          "punkte": 10,
+          "_meta": {
+            "bloom_level": 3,
+            "bloom_begruendung": "Prozess-Reorganisation mit Ursache-Wirkung-Logik: SuS rekonstruieren die Kausalkette Programm → Eskalationskrise 1 → Eskalationskrise 2 → Beziehungswandel — L3 Anwenden einer Eskalations-Logik, nicht reines chronologisches Recall (Elemente tragen keine Jahreszahlen)."
+          }
+        },
+        {
+          "id": "aufgabe-4-4",
+          "typ": "quellenkritik",
+          "frage": "Untersuche den Vernichtungsbefehl Schritt für Schritt.",
+          "material_referenz": [
+            "mat-4-3"
+          ],
+          "w_fragen": [
+            {
+              "schluessel": "wer",
+              "frage": "Wer hat diesen Befehl verfasst?"
+            },
+            {
+              "schluessel": "wann_wo",
+              "frage": "Wann und wo wurde der Befehl erlassen — und in welcher Lage?"
+            },
+            {
+              "schluessel": "quellengattung",
+              "frage": "Was für eine Art Quelle ist dieser Text?"
+            },
+            {
+              "schluessel": "warum",
+              "frage": "Warum hat Trotha den Befehl verfasst — was wollte er erreichen?"
+            },
+            {
+              "schluessel": "was_fehlt",
+              "frage": "Welche Sichtweise fehlt in dieser Quelle?"
+            }
+          ],
+          "loesung": {
+            "wer": "Generalleutnant Lothar von Trotha, Befehlshaber der deutschen Truppen in Deutsch-Südwestafrika.",
+            "wann_wo": "Am 2. Oktober 1904 in Deutsch-Südwestafrika (heute Namibia), nach der militärischen Niederschlagung des Herero-Aufstands.",
+            "quellengattung": "Eine amtliche Anordnung (Befehl) eines deutschen Militärführers — also eine Primärquelle aus der Täter-Perspektive.",
+            "warum": "Trotha wollte das Volk der Herero vernichten — der Befehl ordnete die Erschießung aller Herero an, auch von Frauen und Kindern.",
+            "was_fehlt": "Die Sicht der Herero selbst — Frauen, Kinder, Hirten kommen in dieser Quelle nicht zu Wort. Es ist die Sprache des Täters, nicht der Opfer."
+          },
+          "tipps": [
+            {
+              "stufe": 1,
+              "haertegrad": "kognitiv",
+              "text": "Lies [[mat-4-3|den Vernichtungsbefehl]] (M3) noch einmal. Schwierige Wörter: „Untertanen“ = Bürger eines Reiches; „Weiber“ = (veraltet) Frauen; „Vieh“ = Nutztiere (für die Herero damals Reichtum); „Schutzgebiet“ (Titel) = amtliche Bezeichnung der deutschen Kolonie. Schreibe den Befehl in eigenen Worten auf, bevor du die fünf Fragen beantwortest."
+            },
+            {
+              "stufe": 2,
+              "haertegrad": "strukturierend",
+              "text": "Arbeite die Fragen der Reihe nach ab. Die ersten drei (Wer, Wann/Wo, Quellengattung) findest du in der Einleitung und der Quellenangabe. Die letzten beiden (Warum, Was fehlt) erschließt du aus dem Befehlstext selbst und aus den Zahlen am Ende."
+            },
+            {
+              "stufe": 3,
+              "haertegrad": "heuristisch",
+              "text": "Eine amtliche Quelle zeigt nur die Sicht der Handelnden. Frag dich bei jeder Antwort: Wer schreibt — und wer kommt nicht zu Wort? Diese Lücke ist selbst eine Information über die Quelle."
+            }
+          ],
+          "feedback": [
+            {
+              "typ": "bestaetigung",
+              "text": "Wer: Trotha als Generalleutnant + Befehlshaber benannt — beides wichtig. Der militärische Rang zeigt: Es war kein Einzelner, sondern die deutsche Kolonialmacht selbst, die so handelte.",
+              "ebene": "analyse"
+            },
+            {
+              "typ": "hinweis",
+              "text": "Wann/Wo: Datum (2. Oktober 1904) und Ort (Deutsch-Südwestafrika) sind das Mindeste. Der Anlass — die Niederschlagung des Aufstands — macht deutlich, dass der Befehl NACH dem militärischen Sieg kam, also kein Verteidigungsmittel war.",
+              "ebene": "analyse"
+            },
+            {
+              "typ": "hinweis",
+              "text": "Quellengattung: „Befehl“ reicht nicht — die Einordnung als amtliche Primärquelle aus Täter-Perspektive ist entscheidend. Eine Statistik oder ein Bericht hätte einen anderen Quellenwert.",
+              "ebene": "analyse"
+            },
+            {
+              "typ": "bestaetigung",
+              "text": "Warum: Die Absicht steht im Wortlaut selbst — „jeder Herero ... erschossen“, „keine Weiber und keine Kinder“. Das ist nicht Krieg, sondern systematische Vernichtung. Der Befehl spricht offen aus, was die Kolonialmacht plante.",
+              "ebene": "analyse"
+            },
+            {
+              "typ": "verknuepfung",
+              "text": "Was fehlt: Die Stimmen der Herero selbst. [[mat-4-5|Das Tagebuch von Kavezeri]] (M5) gibt diese Gegen-Perspektive — eine Quelle, in der ein Herero erzählt, wie er das Land erlebt. Erst beide Quellen zusammen ergeben das vollständige Bild.",
+              "ebene": "analyse"
+            }
+          ],
+          "afb": "II-III",
+          "position": 4,
+          "punkte": 15,
+          "_meta": {
+            "bloom_level": 4,
+            "bloom_begruendung": "Quellenanalyse: SuS bestimmen Urheber, Entstehungskontext und Quellengattung (äußere Quellenkritik) und analysieren systematisch Intention und Perspektivität (innere Quellenkritik) — L4 Analyse, vorbereitet auf L5-Bewertung in Pos 6.",
+            "w_fragen_auswahl": "Befehl/amtliche Anordnung → Wer + Wann/Wo + Quellengattung + Warum + Was fehlt (3 äußere + 2 innere, QK-2 ✓)",
+            "quellentyp": "ueberrest",
+            "finding_1_scaffolding": "Tipp 1 enthält Glossar (Untertanen/Weiber/Vieh/Schutzgebiet) + Paraphrase-Impuls VOR W-Fragen (PFLICHT laut PROGRESSIONSPLAN Konstruktionskontext 4)",
+            "trigger_flags_handling": "gewalt+tod — Fragestellungen sachlich, keine Identifikations-Impulse („Stell dir vor, du wärst...“), Wortlaut-Zitate in Feedback nur soweit für Analyse zwingend nötig"
+          }
+        },
+        {
+          "id": "aufgabe-4-5",
+          "typ": "vergleich",
+          "frage": "Vergleiche Foto und Tagebuch entlang Perspektive, Zeitpunkt und sichtbarer Realität.",
+          "material_referenz": [
+            "mat-4-4",
+            "mat-4-5"
+          ],
+          "loesung": {
+            "dimensionen": [
+              "Perspektive",
+              "Zeitpunkt",
+              "Sichtbare Realität"
+            ],
+            "objekte": [
+              "Foto (M4)",
+              "Tagebuch (M5)"
+            ],
+            "zellen": {
+              "Foto (M4)": {
+                "Perspektive": "Deutscher Fotograf — Täter-Blick",
+                "Zeitpunkt": "Nach der Niederschlagung 1904",
+                "Sichtbare Realität": "Gefangene, besiegte Herero"
+              },
+              "Tagebuch (M5)": {
+                "Perspektive": "Herero-Hirte Kavezeri — Opfer-Blick",
+                "Zeitpunkt": "Vor dem Aufstand 1903",
+                "Sichtbare Realität": "Landraub und Zwangsarbeit"
+              }
+            }
+          },
+          "tipps": [
+            {
+              "stufe": 1,
+              "haertegrad": "kognitiv",
+              "text": "Öffne [[mat-4-4|das Foto]] (M4) und [[mat-4-5|das Tagebuch]] (M5). Fülle die Tabelle Zeile für Zeile — erst alle drei Dimensionen für das Foto, dann alle drei für das Tagebuch."
+            },
+            {
+              "stufe": 2,
+              "haertegrad": "strukturierend",
+              "text": "Perspektive beim Foto: Der Fotograf war Deutscher, also Täter-Blick (M4 Bildunterschrift + Quellenangabe Bundesarchiv). Jetzt überleg für das Tagebuch — wer schreibt in M5, und aus welcher Position heraus?"
+            },
+            {
+              "stufe": 3,
+              "haertegrad": "heuristisch",
+              "text": "Frag dich bei jeder Zeile: Was zeigt jedes Material — und was zeigt es NICHT? Die Lücken sind selbst ein Hinweis auf die Perspektive des Urhebers."
+            }
+          ],
+          "feedback": [
+            {
+              "typ": "bestaetigung",
+              "text": "Perspektive und Zeitpunkt richtig erkannt. Das Foto zeigt die Niederlage aus Täter-Sicht, das Tagebuch das Leben davor aus Opfer-Sicht. Erst beide zusammen ergeben das vollständige Bild der kolonialen Gewalt — die wichtigste Differenzierungs-Dimension ist die Urheber-Perspektive.",
+              "ebene": "anwendung"
+            },
+            {
+              "typ": "korrektur",
+              "text": "In der Dimension Zeitpunkt werden die beiden Quellen oft vertauscht: Das Tagebuch stammt von 1903 (VOR dem Aufstand), das Foto von 1904 (NACH der Niederschlagung). Prüfe [[mat-4-5|das Tagebuch]] (M5) Einleitung und [[mat-4-4|die Bildunterschrift]] (M4) — die Zeitangaben stehen direkt dort.",
+              "ebene": "anwendung"
+            },
+            {
+              "typ": "verknuepfung",
+              "text": "Der Vergleich zeigt: Die koloniale Gewalt hatte zwei Gesichter — die schleichende Entrechtung vor dem Aufstand (M5) und die offene militärische Zerschlagung danach (M4 plus [[mat-4-3|Trothas Befehl]] aus der vorigen Aufgabe). Beides ist derselbe Knoten k4-3, aus zwei Zeitpunkten und zwei Perspektiven gesehen.",
+              "ebene": "anwendung"
+            }
+          ],
+          "afb": "II-III",
+          "position": 5,
+          "punkte": 12,
+          "_meta": {
+            "bloom_level": 4,
+            "bloom_begruendung": "Analyse entlang Dimensionen: SuS zerlegen zwei Zeugnisse derselben Kategorienebene (koloniale Gewalt, k4-3) in drei trennscharfe Merkmale (Perspektive, Zeitpunkt, sichtbare Realität) und vergleichen systematisch — L4 Analyse, kein Lookup, kein reiner Abgleich, sondern Dimensions-Zerlegung mit differenzierender Dimension (Perspektive Täter vs. Opfer).",
+            "dimensionen_auswahl": "3 von 4 möglichen (D1 Medium weggelassen — strukturell ähnlich zu D1 Perspektive, würde Redundanz erzeugen; gewählt: Perspektive [Urheber-Achse], Zeitpunkt [Chronologie-Achse], Sichtbare Realität [Inhalts-Achse]). Alle drei trennscharf, alle drei aus Material direkt ableitbar, mind. eine differenzierende Dimension (Perspektive Täter vs. Opfer).",
+            "akzeptierte_varianten": {
+              "Foto (M4)__Perspektive": [
+                "Deutscher Fotograf, Täter-Perspektive",
+                "deutsche Kolonialtruppen",
+                "Täter-Sicht"
+              ],
+              "Foto (M4)__Zeitpunkt": [
+                "1904",
+                "1904/05",
+                "nach dem Aufstand",
+                "nach der Niederschlagung"
+              ],
+              "Foto (M4)__Sichtbare Realität": [
+                "gefangene Herero",
+                "besiegte Herero",
+                "Herero in Gewahrsam"
+              ],
+              "Tagebuch (M5)__Perspektive": [
+                "Herero-Hirte",
+                "Kavezeri",
+                "Opfer-Perspektive",
+                "Opfer-Sicht",
+                "Herero aus Okahandja"
+              ],
+              "Tagebuch (M5)__Zeitpunkt": [
+                "1903",
+                "vor dem Aufstand",
+                "ein Jahr vor dem Aufstand"
+              ],
+              "Tagebuch (M5)__Sichtbare Realität": [
+                "Landraub",
+                "Zwangsarbeit",
+                "Entrechtung",
+                "Landraub und erzwungene Arbeit"
+              ]
+            },
+            "trigger_flags_handling": "gewalt (mat-4-4+mat-4-5) + diskriminierung (mat-4-5) — Fragestellung sachlich, Vergleichs-Raster strukturiert (keine Gefühls-Heuristik „Welches bewegt dich mehr?“), Zell-Formulierungen analytisch (nicht sensationalisiert)."
+          }
+        },
+        {
+          "id": "aufgabe-4-6",
+          "typ": "freitext-code",
+          "frage": "Beurteile die Folgen des Wettlaufs für Afrika und für Europa.",
+          "material_referenz": [
+            "mat-4-2",
+            "mat-4-3",
+            "mat-4-4",
+            "mat-4-5"
+          ],
+          "loesung": [
+            "Landraub",
+            "Rivalität"
+          ],
+          "tipps": [
+            {
+              "stufe": 1,
+              "haertegrad": "kognitiv",
+              "text": "Öffne [[mat-4-5|das Tagebuch des Herero-Hirten]] (M5) für die Afrika-Seite und [[mat-4-2|Weltpolitik und Marokkokrisen]] (M2) für die Europa-Seite. Sammle zuerst die Fakten beider Seiten, bevor du beurteilst."
+            },
+            {
+              "stufe": 2,
+              "haertegrad": "strukturierend",
+              "text": "Die Folgen sind unterschiedlich, aber verbunden. In Afrika verloren Menschen Land, Arbeit und Leben ([[mat-4-5|Kavezeris Tagebuch]] M5 + [[mat-4-3|Trothas Befehl]] M3 + [[mat-4-4|das Foto]] M4). In Europa entstand durch den Streit um Kolonien Misstrauen zwischen den Großmächten ([[mat-4-2|Marokkokrisen]] M2). Dein Urteil soll beide Stränge nennen und miteinander verknüpfen."
+            },
+            {
+              "stufe": 3,
+              "haertegrad": "heuristisch",
+              "text": "Musterantwort: Der Wettlauf hatte zwei verbundene Folgen. In Afrika Landraub, Zwangsarbeit und Völkermord an den Herero. In Europa wurden Handelspartner zu Rivalen — die Marokkokrisen zeigten das Misstrauen. Deine Antwort sollte Begriffe wie Landraub/Völkermord (Afrika) und Rivalität/Marokkokrisen (Europa) verwenden und beide Seiten zusammen beurteilen, nicht gegeneinander."
+            }
+          ],
+          "feedback": [
+            {
+              "typ": "bestaetigung",
+              "text": "Beide Folgenstränge erkannt und miteinander verbunden. Der entscheidende analytische Schritt — Afrika und Europa nicht getrennt, sondern als zwei Gesichter derselben Weltpolitik zu sehen — ist die Kernerkenntnis der Mappe.",
+              "ebene": "analyse"
+            },
+            {
+              "typ": "korrektur",
+              "text": "Häufiger Fehler: Der Europa-Strang fehlt oder bleibt zu allgemein. Wer nur über Afrika schreibt, verpasst die zweite Folge. Prüfe [[mat-4-2|Weltpolitik und Marokkokrisen]] (M2) Absatz 4 — die Rivalität Deutschland-Frankreich ist die Europa-seitige Konsequenz.",
+              "ebene": "analyse"
+            },
+            {
+              "typ": "verknuepfung",
+              "text": "Dein Urteil baut auf allen vorherigen Aufgaben der Mappe auf: Pos 3 hat die Marokkokrisen in Reihenfolge gebracht (Europa-Eskalation), Pos 4 Trothas Befehl analysiert (Afrika-Gewalt auf dem Höhepunkt), Pos 5 Foto und Tagebuch verglichen (Afrika-Alltag und -Niederlage). Pos 6 zieht diese Stränge zu einem Urteil zusammen.",
+              "ebene": "analyse"
+            }
+          ],
+          "afb": "III",
+          "position": 6,
+          "punkte": 20,
+          "_meta": {
+            "bloom_level": 5,
+            "bloom_begruendung": "Beurteilen: SuS formulieren eine eigene Position zu zwei Folgensträngen (Afrika+Europa), stützen sie auf mindestens drei Materialien (mat-4-2/3/4/5) und beurteilen die analytische Verbindung der Stränge — L5 Bewerten mit Beleg und Stellungnahme, kein reines Zusammenfassen (L3) und kein Vergleich entlang Dimensionen (L4, bereits in Pos 5 abgedeckt).",
+            "teilfragen": [
+              "Was verlor die kolonisierte Bevölkerung in Afrika — und was geschah mit denen, die sich wehrten?",
+              "Warum wurden die europäischen Großmächte durch den Wettlauf um Kolonien zu Rivalen?",
+              "Wie hängen die Folgen in Afrika und Europa zusammen — ist der Wettlauf eine Geschichte oder zwei?"
+            ],
+            "erwartete_begriffe": [
+              "Landraub",
+              "Zwangsarbeit",
+              "Völkermord",
+              "Marokkokrisen",
+              "Rivalität"
+            ],
+            "validierung_schwelle": 3,
+            "musterantwort": "Der Wettlauf um Kolonien hatte zwei Folgen, die zusammengehören. Für Afrika bedeutete er Landraub durch ungleiche Kaufverträge (siehe Kavezeris Tagebuch), Zwangsarbeit und schließlich den Völkermord an den Herero, den Trothas Vernichtungsbefehl 1904 auslöste. Für Europa bedeutete er, dass aus Handelspartnern Rivalen wurden: Die Marokkokrisen 1905 und 1911 zeigten, wie schnell Streit um Kolonien zu Misstrauen zwischen den Großmächten führte. Beide Folgen gehören zusammen, weil dieselbe Weltpolitik in Afrika Leid hinterließ und in Europa eine Rivalität, die bis zum Ersten Weltkrieg nachwirkte.",
+            "tb_knoten_aktiviert": [
+              "k4-3",
+              "k4-4"
+            ],
+            "k4_4_erstaktivierung": "Pos 6 ist die erste und einzige Aktivierung von k4-4 (Rivalität der Großmächte) als Primär-Knoten im gesamten Aufgabensatz. PROGRESSIONSPLAN-Intention: Pos 6 aktiviert k4-4 als Transfer nach vollständiger k4-1/k4-2/k4-3-Abdeckung.",
+            "trigger_flags_handling": "gewalt+tod+diskriminierung (Rückbezug auf mat-4-3/-4/-5) — Leitfrage sachlich (Beurteile die Folgen), keine Vergleichs-Heuristik Afrika-Leid-vs-Europa-Leid, Teilfrage 3 zielt auf analytische Verbindung statt auf Größenvergleich des Leids, Musterantwort schließt mit „zusammen beurteilen, nicht gegeneinander“ explizit gegen Aufrechnungs-Denken."
+          }
+        }
+      ],
+      "hefteintrag": {
+        "stundenfrage": "Welche Folgen hatte der Wettlauf um Kolonien — für Afrika und für Europa?",
+        "ordnungsmuster": "parallel-kausal",
+        "scpl": {
+          "situation": {
+            "kontextsatz": "Nach der Berliner Konferenz besaß Deutschland vier Kolonien in Afrika — doch Kaiser Wilhelm II. wollte noch mehr.",
+            "fachbegriffe": []
+          },
+          "complication": [
+            {
+              "schritt": "Wilhelm II. verfolgte eine aggressive Kolonialpolitik — Deutschland sollte überall mitbestimmen: Weltpolitik.",
+              "typ": "kausal",
+              "fachbegriff": "Weltpolitik",
+              "darstellung": null,
+              "erarbeitbarkeit": "DIRECT"
+            },
+            {
+              "schritt": "In Marokko stieß Deutschland mit Frankreich zusammen — zweimal drohte wegen eines Kolonialstreits ein Krieg: Marokkokrisen.",
+              "typ": "kausal",
+              "fachbegriff": "Marokkokrisen",
+              "darstellung": null,
+              "erarbeitbarkeit": "DIRECT"
+            },
+            {
+              "schritt": "In den Kolonien bedeutete der Wettlauf Landraub und Unterdrückung — Widerstand wurde brutal niedergeschlagen.",
+              "typ": "kausal",
+              "fachbegriff": "",
+              "darstellung": null,
+              "erarbeitbarkeit": "DIRECT"
+            }
+          ],
+          "problem": {
+            "satz": "Der Wettlauf um Kolonien brachte den Kolonisierten Gewalt — und den Großmächten wachsendes Misstrauen.",
+            "fachbegriff": ""
+          },
+          "loesung": [
+            "Unter Wilhelm II. betrieb Deutschland eine aggressive „Weltpolitik“ und forderte immer neue Kolonien.",
+            "Der Wettlauf um Kolonien führte zu Konflikten zwischen den Großmächten und zu Gewalt gegen die kolonisierten Völker."
+          ]
+        },
+        "transfer": {
+          "frage": "Warum hörten die Großmächte nicht auf, um Kolonien zu streiten, obwohl es gefährlich wurde?"
+        },
+        "voraussetzungen": [
+          "k3-6"
+        ],
+        "knoten": [
+          {
+            "id": "k4-1",
+            "text": "Weltpolitik Wilhelms II.",
+            "typ": "kernbegriff",
+            "merksatz": "Deutschland wollte Weltmacht werden und forderte überall Kolonien"
+          },
+          {
+            "id": "k4-2",
+            "text": "Marokkokrisen 1905/1911",
+            "typ": "ereignis"
+          },
+          {
+            "id": "k4-3",
+            "text": "Koloniale Ausbeutung und Gewalt",
+            "typ": "wirkung",
+            "merksatz": "Kolonialmächte nahmen Land, erzwangen Arbeit und bestraften Widerstand brutal"
+          },
+          {
+            "id": "k4-4",
+            "text": "Rivalität der Großmächte",
+            "typ": "wirkung",
+            "merksatz": "Kolonialstreit machte aus Partnern Rivalen"
+          }
+        ],
+        "verbindungen": [
+          {
+            "von": "k4-1",
+            "nach": "k4-2",
+            "label": "provoziert",
+            "typ": "kausal"
+          },
+          {
+            "von": "k4-1",
+            "nach": "k4-3",
+            "label": "verursacht",
+            "typ": "kausal"
+          },
+          {
+            "von": "k4-2",
+            "nach": "k4-4",
+            "label": "verschärft",
+            "typ": "kausal"
+          }
+        ],
+        "_q_gate": {
+          "G2": "3 C-Schritte (Limit 3), 3 Merksätze — PASS",
+          "G5": "Längster Merksatz 9W — PASS (Limit 15W)",
+          "G6": "~118W — PASS (harte Grenze 120W)"
+        }
+      },
+      "sicherung": {
+        "reflexionsimpuls": "Deutschland wollte „seinen Platz an der Sonne“. Wer musste dafür in den Schatten treten?",
+        "hefteintrag_verweis": "Übertrage den Hefteintrag in dein Heft. Achte besonders auf die zwei Folgestränge: Folgen für Europa und Folgen für Afrika.",
+        "zusammenfassung": "In dieser Mappe hast du gesehen, wie Kaiser Wilhelm II. nach 1890 eine aggressive „Weltpolitik“ verfolgte und Deutschland in den beiden Marokkokrisen 1905 und 1911 zweimal an den Rand eines Krieges mit Frankreich führte. Der Trotha-Befehl und das Foto der überlebenden Herero haben gezeigt, was dieser Wettlauf für die Kolonisierten bedeutete: Landraub, Zwangsarbeit und — nach dem Aufstand 1904 — einen Vernichtungskrieg. Aus dem Streit um Kolonien wurde wachsendes Misstrauen zwischen den Großmächten.",
+        "ueberleitung": "Damit schließt die Sequenz zum deutschen Nationalismus und Kolonialismus: Vom Traum der nationalen Einheit über Bismarcks Bündnissystem bis zum Wettlauf um die Welt hat sich ein Bogen gespannt. Wilhelms „Weltpolitik“ hinterließ Gewalt in den Kolonien und Misstrauen in Europa — beides wird im Folge-Game zum Ersten Weltkrieg wieder auftauchen.",
+        "zitat": {
+          "text": "Wir wollen niemand in den Schatten stellen, aber wir verlangen auch unseren Platz an der Sonne.",
+          "urheber": "Bernhard von Bülow",
+          "kontext": "Rede vor dem Reichstag, 6. Dezember 1897 — Symbol des deutschen Weltmachtanspruchs"
+        },
+        "hefteintrag": {
+          "stundenfrage": "Welche Folgen hatte der Wettlauf um Kolonien — für Afrika und für Europa?",
+          "ordnungsmuster": "parallel-kausal",
+          "scpl": {
+            "situation": {
+              "kontextsatz": "Nach der Berliner Konferenz besaß Deutschland vier Kolonien in Afrika — doch Kaiser Wilhelm II. wollte noch mehr.",
+              "fachbegriffe": []
+            },
+            "complication": [
+              {
+                "schritt": "Wilhelm II. verfolgte eine aggressive Kolonialpolitik — Deutschland sollte überall mitbestimmen: Weltpolitik.",
+                "typ": "kausal",
+                "fachbegriff": "Weltpolitik",
+                "darstellung": null,
+                "erarbeitbarkeit": "DIRECT"
+              },
+              {
+                "schritt": "In Marokko stieß Deutschland mit Frankreich zusammen — zweimal drohte wegen eines Kolonialstreits ein Krieg: Marokkokrisen.",
+                "typ": "kausal",
+                "fachbegriff": "Marokkokrisen",
+                "darstellung": null,
+                "erarbeitbarkeit": "DIRECT"
+              },
+              {
+                "schritt": "In den Kolonien bedeutete der Wettlauf Landraub und Unterdrückung — Widerstand wurde brutal niedergeschlagen.",
+                "typ": "kausal",
+                "fachbegriff": "",
+                "darstellung": null,
+                "erarbeitbarkeit": "DIRECT"
+              }
+            ],
+            "problem": {
+              "satz": "Der Wettlauf um Kolonien brachte den Kolonisierten Gewalt — und den Großmächten wachsendes Misstrauen.",
+              "fachbegriff": ""
+            },
+            "loesung": [
+              "Unter Wilhelm II. betrieb Deutschland eine aggressive „Weltpolitik“ und forderte immer neue Kolonien.",
+              "Der Wettlauf um Kolonien führte zu Konflikten zwischen den Großmächten und zu Gewalt gegen die kolonisierten Völker."
+            ]
+          },
+          "transfer": {
+            "frage": "Warum hörten die Großmächte nicht auf, um Kolonien zu streiten, obwohl es gefährlich wurde?"
+          },
+          "voraussetzungen": [
+            "k3-6"
+          ],
+          "knoten": [
+            {
+              "id": "k4-1",
+              "text": "Weltpolitik Wilhelms II.",
+              "typ": "kernbegriff",
+              "merksatz": "Deutschland wollte Weltmacht werden und forderte überall Kolonien"
+            },
+            {
+              "id": "k4-2",
+              "text": "Marokkokrisen 1905/1911",
+              "typ": "ereignis"
+            },
+            {
+              "id": "k4-3",
+              "text": "Koloniale Ausbeutung und Gewalt",
+              "typ": "wirkung",
+              "merksatz": "Kolonialmächte nahmen Land, erzwangen Arbeit und bestraften Widerstand brutal"
+            },
+            {
+              "id": "k4-4",
+              "text": "Rivalität der Großmächte",
+              "typ": "wirkung",
+              "merksatz": "Kolonialstreit machte aus Partnern Rivalen"
+            }
+          ],
+          "verbindungen": [
+            {
+              "von": "k4-1",
+              "nach": "k4-2",
+              "label": "provoziert",
+              "typ": "kausal"
+            },
+            {
+              "von": "k4-1",
+              "nach": "k4-3",
+              "label": "verursacht",
+              "typ": "kausal"
+            },
+            {
+              "von": "k4-2",
+              "nach": "k4-4",
+              "label": "verschärft",
+              "typ": "kausal"
+            }
+          ]
+        }
+      },
+      "mappenabschluss_zone": {
+        "reflexion_fragen": [
+          "Der Wettlauf um Kolonien brachte den Großmächten Prestige — aber auch Konflikte. Hat sich das „gelohnt“?",
+          "Vom Traum von der Einheit bis zum Wettlauf um die Welt — wie hat sich Deutschland in rund 80 Jahren verändert?"
+        ],
+        "_variante": "B"
+      }
     }
   ]
 }
