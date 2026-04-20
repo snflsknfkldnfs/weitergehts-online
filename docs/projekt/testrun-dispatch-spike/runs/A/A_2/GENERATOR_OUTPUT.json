@@ -1,0 +1,47 @@
+{
+  "id": "mat-4-3",
+  "typ": "quellentext",
+  "titel": "Vernichtungsbefehl — was 'Schutzgebiet' wirklich bedeutete",
+  "inhalt": "<div class='material-quellentext'><p class='einleitung'>Im Januar 1904 erhoben sich die Herero im sogenannten Schutzgebiet Deutsch-Suedwestafrika. Sie wehrten sich gegen Landraub und Unterdrueckung. Das Deutsche Reich schickte etwa 15.000 Soldaten. Befehlshaber war Generalleutnant Lothar von Trotha. Im Oktober 1904 erliess Trotha den folgenden Befehl. Historiker nennen ihn heute den 'Vernichtungsbefehl'.</p><blockquote class='primaerquelle'><p>'Die Herero sind nicht mehr Deutsche Untertanen. [...] Innerhalb der Deutschen Grenze wird jeder Herero mit oder ohne Gewehr, mit oder ohne Vieh erschossen, ich nehme keine Weiber und keine Kinder mehr auf, treibe sie zu ihrem Volke zurueck oder lasse auch auf sie schiessen.'</p><p class='zitat-zusatz'>Trotha erklaerte zudem: 'Ich glaube, dass die Nation als solche vernichtet werden muss.'</p><cite>Generalleutnant Lothar von Trotha, Befehl vom Oktober 1904</cite></blockquote><p class='kontext-folgen'>Die Folgen waren verheerend. Trotha liess die Wasserstellen am Omaheke-Sandfeld abriegeln. Tausende Herero verdursteten dort. Von etwa 80.000 Herero ueberlebten nur 15.000 bis 20.000 Menschen. Auch die Nama unter Hendrik Witbooi wehrten sich. Sie verloren 1904 etwa die Haelfte ihres Volkes. Samuel Maharero, der Anfuehrer der Herero, hatte den Aufstand als Selbstverteidigung begruendet. Fuer die Ueberlebenden bedeutete die deutsche Herrschaft Konzentrationslager und Zwangsarbeit. Wissenschaftler bezeichnen dieses Vorgehen heute als den ersten Voelkermord des 20. Jahrhunderts. Im Mai 2021 erkannte die Bundesregierung den Voelkermord offiziell an.</p><div class='quellenkritische-impulse'><h4>Quellenkritische Impulse</h4><ul><li>Wer spricht im Befehl — und wer kommt nicht zu Wort?</li><li>Welche Sicht auf die Herero zeigt die Sprache Trothas ('Nation als solche vernichtet')?</li><li>Warum ist der Begriff 'Schutzgebiet' ein zynischer Euphemismus?</li><li>Wie wuerde ein Ueberlebender der Herero den gleichen Vorgang beschreiben?</li></ul></div></div>",
+  "quelle": "Befehl Generalleutnant Lothar von Trotha, Oktober 1904 (Wortlaut nach Wikipedia DE, gekuerzt); Kontextualisierung auf Basis SKRIPT-Chunk Mappe 4 §4+§5",
+  "position": 3,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": ["mat-4-2"],
+  "ueberleitung_von": "Der Wettlauf um Kolonien verschaerfte die Rivalitaet zwischen den Grossmaechten. Doch was bedeutete er fuer die Menschen in den Kolonien?",
+  "sequenz_kontext": {
+    "vorher": {
+      "id": "mat-4-2",
+      "typ": "darstellungstext",
+      "titel": "Weltpolitik und Marokkokrisen",
+      "tafelbild_knoten_abgedeckt": ["k4-1", "k4-2", "k4-4"]
+    },
+    "nachher": {
+      "id": "mat-4-4",
+      "typ": "bildquelle",
+      "titel": "Gefangene Herero nach Niederschlagung",
+      "tafelbild_knoten_abgedeckt": ["k4-3"]
+    }
+  },
+  "quellenkritische_impulse": [
+    "Wer spricht im Befehl — und wer kommt nicht zu Wort?",
+    "Welche Sicht auf die Herero zeigt Trothas Sprache?",
+    "Warum ist 'Schutzgebiet' ein zynischer Euphemismus?",
+    "Wie wuerde ein Ueberlebender den Vorgang beschreiben?"
+  ],
+  "erarbeitbarkeits_check": {
+    "kontext_vorhanden": true,
+    "fachbegriffe_erklaert": ["Vernichtungsbefehl", "Schutzgebiet (als Euphemismus markiert)", "Voelkermord"],
+    "afb_niveau": "II-III"
+  },
+  "_meta": {
+    "wortanzahl": 248,
+    "quellentyp": "amtlich",
+    "aufbereitung": "gemischt",
+    "rekonstruktions_begruendung": "pq-4-1 ist echte Primaerquelle. Der Original-Wortlaut Trothas wurde gekuerzt (mit [...] markiert) und durch R7-konformen Einleitungs- und Folgen-Kontext gerahmt. Wortlaut selbst wortgetreu (Primaerquellen-Ausnahme R7). MQ2-Vorrangregel: gekuerzter Original-Wortlaut + Aufbereitungsrahmen = 'gemischt'.",
+    "artefakt_ref": ["pq-4-1"],
+    "tafelbild_knoten_abgedeckt": ["k4-3"],
+    "perspektive": ["dominant-Taeter", "nicht-dominant", "Opfer", "Widerstand", "Macht-Betroffen"],
+    "perspektiv_tags": ["nicht-dominant", "Opfer", "Widerstand", "Macht-Betroffen"],
+    "trigger_flags": ["Kolonisierung", "Gewalt", "Macht-Asymmetrie", "Unterdrueckung"]
+  }
+}

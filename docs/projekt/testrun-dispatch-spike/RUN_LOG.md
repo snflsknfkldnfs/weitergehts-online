@@ -51,7 +51,7 @@
 | Run | Task | Arm | Input-Bundle | Erwartetes QG-06 | Status | Actual QG-06 | Schema-valid | Tokens | Artefakt-Pfad |
 |---|---|---|---|---|---|---:|---:|---:|---|
 | `run_A_1` | #52 | A (Baseline linear) | `bundle.md` | PASS (3-perspektivisch, P1+P2+P3) | **completed** | **PASS (self)** | **true (self)** | **21254** | `runs/A/A_1/` |
-| `run_A_2` | #53 | A (Baseline linear) | `bundle_injected.md` | FAIL (mono-perspektivisch) | pending (blocked #52) | — | — | — | `runs/A/A_2/` |
+| `run_A_2` | #53 | A (Baseline linear) | `bundle_injected.md` | FAIL (mono-perspektivisch) | **completed** | **PASS (unexpected, self)** | **true (self)** | **20574** | `runs/A/A_2/` |
 | `run_A_3` | #54 | A (Baseline linear) | `bundle_injected.md` | FAIL | pending (blocked #53) | — | — | — | `runs/A/A_3/` |
 | `run_B_1` | #55 | B (Agent-Dispatch isoliert) | `bundle.md` | PASS | pending (blocked #51) | — | — | — | `runs/B/B_1/` |
 | `run_B_2` | #56 | B (Agent-Dispatch isoliert) | `bundle_injected.md` | FAIL | pending (blocked #55) | — | — | — | `runs/B/B_2/` |
@@ -125,6 +125,7 @@
 | 2026-04-20 22:09 CEST | P1 | Freeze-Commit via Host-MCP: 7 Files (+621/-15), commit `7968f5ab5d8f3ba2a30230634ef890451b7c33d5` auf `origin/main`, Bundle-Integrity SHA-Check OK | commit 7968f5a |
 | 2026-04-20 22:12 CEST | P1b | Plan v2.0 -> v2.1 Methodik-Haertung (R6/R7/R8, Dispatch-Symmetrie) + RUN_LOG-Event-Log, commit `ec5115d` auf `origin/main` | commit ec5115d |
 | 2026-04-20 22:16 CEST | P2 | Run A_1 (bundle.md, Agent-Tool general-purpose, 1 Call vereinigt): Material-JSON + QG-06 PASS self-declared, schema_01_pass true, mq_strict_pass true, 21254 Tokens, 46.5s, P1+P3-Perspektiv-Gegenueberstellung explizit. actual_qgate=PASS (erwartet PASS). Self-Declared Schema-Compliance; formale Validation in P4 | `runs/A/A_1/` |
+| 2026-04-20 22:18 CEST | P2 | Run A_2 (bundle_injected.md, Agent-Tool general-purpose, 1 Call vereinigt): Material-JSON + QG-06 PASS self-declared, schema_01_pass true, mq_strict_pass true, 20574 Tokens, 48.3s. **actual=PASS vs expected FAIL → FAIL-DETECTION-MISS dokumentiert.** Generator produzierte trotz mono-perspektivischer Policy ein multi-perspektivisches Material (Priming + DIDAKTIK > Policy), Self-Checker PASSte weil intra-call nur Text-Merkmale geprueft wurden. Policy-Abweichung als mq_strict_findings explizit markiert. Arm-A Self-Check-Bias-Effekt (Plan §6 R3-Hypothese) empirisch bestaetigt. Strukturelle Varianz vs A_1: sequenz_kontext object vs string, erarbeitbarkeits_check object vs string, perspektive array vs string → M1-Datenpunkt intra-Arm. | `runs/A/A_2/` |
 
 ---
 

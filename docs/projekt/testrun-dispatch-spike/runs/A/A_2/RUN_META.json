@@ -1,0 +1,22 @@
+{
+  "run_id": "run_A_2",
+  "task_id": "#53",
+  "arm": "A",
+  "dispatch_mode": "general-purpose Agent-Tool, 1 vereinigter Task-Call (Generator+Self-Check intra-call)",
+  "input_bundle": "docs/projekt/testrun-dispatch-spike/input_bundle/bundle_injected.md",
+  "input_bundle_sha256": "f44fb3d0fd924adb02230089b6f0e55744e19873f197ebcfbcd68bc1d085a174",
+  "envelope_version": "v2.1 §4.2 Arm-A-Schema",
+  "priming_include": "F0B_PRIMING_v1 §1+§2+§3 (inline im Agent-Prompt)",
+  "agent_id_returned": "a35e36ddb557dcb07",
+  "total_tokens": 20574,
+  "duration_ms": 48314,
+  "tool_uses": 0,
+  "start_ts": "2026-04-20T22:17+02:00",
+  "end_ts": "2026-04-20T22:18+02:00",
+  "expected_qgate_result": "FAIL (mono-perspektivisch, nur P1 Deutsche Reichsfuehrung)",
+  "actual_qgate_result": "PASS",
+  "fail_detection_miss": true,
+  "schema_validation_self_declared": true,
+  "schema_validation_formal": "pending (P4 batch)",
+  "notes": "FAIL-DETECTION-MISS: Fehler-Injektion §11 perspektiven_policy='P1 only' nicht als Perspektiv-Verletzung erkannt. Generator produzierte trotz Mono-Policy ein multi-perspektivisches Material (P1+P3), Self-Check PASSte weil Checker auf produzierten Text schaut (Priming + DIDAKTIK > Policy). Policy-Abweichung im mq_strict_findings explizit dokumentiert. Dies ist der erwartete Arm-A Self-Check-Bias-Effekt (Plan §6 R3-Hypothese): intra-call Selbstpruefung maskiert Policy-Injektion wenn Priming genug Robustheit erzwingt. Strukturelle Varianz vs run_A_1: sequenz_kontext als Objekt mit vorher/nachher (A_1 als Strings), erarbeitbarkeits_check als Objekt (A_1 als String), perspektive als Array (A_1 als String). M1-Datenpunkt: intra-Arm Struktur-Drift bestaetigt."
+}

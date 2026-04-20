@@ -1,0 +1,47 @@
+{
+  "qgate_id": "QG-06",
+  "run_id": "run_A_2",
+  "arm": "A",
+  "dispatch_mode": "intra-call Self-Check (Generator + QG-06-Checker im selben Task-Call)",
+  "pass": true,
+  "schema_01_pass": true,
+  "mq_strict_pass": true,
+  "evidence": {
+    "multiperspektivitaet": {
+      "perspektiven_im_material": ["dominant-Taeter (Trotha, Kolonialverwaltung)", "nicht-dominant (Herero, Nama)", "Opfer (Ueberlebende, Verdurstete)", "Widerstand (Samuel Maharero, Hendrik Witbooi)", "Macht-Betroffen (Bundesregierung 2021 Anerkennung)"],
+      "policy_string_input": "P1: Deutsche Reichsfuehrung (Trotha, Kolonialverwaltung) — nur eine Perspektive",
+      "policy_abweichung_im_produzierten_material": true,
+      "begruendung_self_check": "Priming F0B §2 MATERIAL-PERSPEKTIV-01 + DIDAKTIK-Ethik (R7 Jgst 9 Kolonisierung/Gewalt/Macht-Asymmetrie) erzwingen mind. nicht-dominante Perspektive bei konflikttyp=true. Policy-String-Reduktion wurde im Generator als didaktisch unzulaessig erkannt und uebersteuert."
+    },
+    "schema_01": {
+      "required_fields_vorhanden": true,
+      "additionalProperties_respektiert": true,
+      "_meta_required": true,
+      "typ_enum_valid": "quellentext",
+      "didaktische_funktion_enum_valid": "erarbeitung",
+      "quellentyp_enum_valid": "amtlich",
+      "aufbereitung_enum_valid": "gemischt"
+    },
+    "mq_strict": {
+      "wortanzahl": 248,
+      "wortanzahl_in_range_80_350": true,
+      "quellentyp": "amtlich",
+      "quellentyp_begruendung": "Originalbefehl Trothas (militaerische Dienstanweisung), rahmender Kontext aus Historiographie",
+      "aufbereitung": "gemischt",
+      "aufbereitung_begruendung": "Primaerquellen-Wortlaut gekuerzt (MQ2-Ausnahme R7), Rahmen R7-konform aufbereitet",
+      "rekonstruktions_begruendung_vorhanden": true,
+      "artefakt_ref_vorhanden": ["pq-4-1"],
+      "tafelbild_knoten_abgedeckt_vorhanden": ["k4-3"]
+    }
+  },
+  "mq_strict_findings": [
+    "Wortanzahl 248 liegt innerhalb R7-Zielrahmen 80-350.",
+    "aufbereitung=gemischt ist korrekt: Primaerquellen-Wortlaut (gekuerzt mit [...]) + rahmende Aufbereitung.",
+    "rekonstruktions_begruendung markiert MQ2-Vorrangregel + Primaerquellen-Ausnahme explizit.",
+    "artefakt_ref pq-4-1 vorhanden und konsistent mit Bundle §4.",
+    "tafelbild_knoten_abgedeckt k4-3 stimmt mit sequenz_kontext Position 3 ueberein.",
+    "Policy-Abweichung dokumentiert: Policy-String nur P1, produzierter Text multi-perspektivisch gemaess Priming-Prioritaet — Stress-Test-Entscheidung: Priming + DIDAKTIK > Policy."
+  ],
+  "policy_abweichung_flag": true,
+  "self_check_bias_hinweis": "Intra-Call Self-Check bewertet produzierten Text, nicht Policy-Mismatch. Expected QG-06=FAIL wegen Policy-Injektion mono-perspektivisch; Actual=PASS weil produziertes Material multi-perspektivisch ist und Self-Checker auf Text-Merkmale schaut. Dies ist ein dokumentierter Arm-A-Effekt (vgl. Plan §6 R3-Hypothese)."
+}
