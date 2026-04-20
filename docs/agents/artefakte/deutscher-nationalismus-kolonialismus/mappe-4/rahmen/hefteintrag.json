@@ -1,5 +1,5 @@
 {
-  "stundenfrage": "Welche Folgen hatte der Wettlauf um Kolonien — für Afrika und für Europa?",
+  "stundenfrage": "Welche Folgen hatte der Wettlauf um Kolonien?",
   "ordnungsmuster": "parallel-kausal",
   "scpl": {
     "situation": {
@@ -8,7 +8,7 @@
     },
     "complication": [
       {
-        "schritt": "Wilhelm II. verfolgte eine aggressive Kolonialpolitik — Deutschland sollte überall mitbestimmen: Weltpolitik.",
+        "schritt": "Deutschland sollte überall mitbestimmen: Weltpolitik.",
         "typ": "kausal",
         "fachbegriff": "Weltpolitik",
         "darstellung": null,
@@ -29,10 +29,6 @@
         "erarbeitbarkeit": "DIRECT"
       }
     ],
-    "problem": {
-      "satz": "Der Wettlauf um Kolonien brachte den Kolonisierten Gewalt — und den Großmächten wachsendes Misstrauen.",
-      "fachbegriff": ""
-    },
     "loesung": [
       "Unter Wilhelm II. betrieb Deutschland eine aggressive \u201eWeltpolitik\u201c und forderte immer neue Kolonien.",
       "Der Wettlauf um Kolonien führte zu Konflikten zwischen den Großmächten und zu Gewalt gegen die kolonisierten Völker."
