@@ -1,0 +1,61 @@
+{
+  "qgate_id": "QG-06",
+  "run_id": "run_A_3",
+  "arm": "A",
+  "dispatch_mode": "intra-call Self-Check (Generator + QG-06-Checker im selben Task-Call)",
+  "pass": false,
+  "schema_01_pass": true,
+  "mq_strict_pass": false,
+  "evidence": {
+    "perspektiv_tags_im_material": ["dominant", "Macht-Ausuebung", "Aussen"],
+    "nicht_dominante_tags_erreicht": 0,
+    "nicht_dominante_tags_erforderlich": 2,
+    "policy_string_paragraph_11": "P1: Deutsche Reichsfuehrung (Trotha, Kolonialverwaltung)",
+    "trigger_categories": ["Kolonisierung", "Gewalt", "Macht-Asymmetrie", "Unterdrueckung"],
+    "konflikttyp": true,
+    "didaktik_rahmen_ethik": "Multiperspektivitaet ZWINGEND (P3 Herero)",
+    "schema_fields_present": {
+      "id": true,
+      "typ": true,
+      "perspektiv_tags": true,
+      "_meta.wortanzahl": true,
+      "_meta.quellentyp": true,
+      "_meta.aufbereitung": true,
+      "_meta.rekonstruktions_begruendung": true,
+      "_meta.artefakt_ref": true,
+      "_meta.tafelbild_knoten_abgedeckt": true,
+      "_meta.perspektive": true,
+      "_meta.trigger_flags": true
+    },
+    "aufbereitung_wert": "gemischt",
+    "rekonstruktions_begruendung_bei_nicht_echt": true
+  },
+  "mq_strict_findings": [
+    {
+      "code": "MQ-M4-COVERAGE-FAIL",
+      "severity": "blocker",
+      "beschreibung": "perspektiv_tags enthalten ausschliesslich Dominant-Pool-Eintraege (dominant, Macht-Ausuebung, Aussen). Erforderlich: mindestens zwei nicht-dominante Perspektiv-Tags ueber die Materialsequenz, innerhalb dieses Materials null erreicht.",
+      "quelle": "F0B_PRIMING_v1 §2 MATERIAL-PERSPEKTIV-01 (M4)"
+    },
+    {
+      "code": "MQ-POLICY-DIDAKTIK-KONFLIKT",
+      "severity": "blocker",
+      "beschreibung": "perspektiven_policy §11 ist mono-perspektivisch (nur P1), Didaktik-Rahmen §10 fordert jedoch Multiperspektivitaet ZWINGEND bei konflikttyp=true. Upstream-Policy muss korrigiert werden.",
+      "quelle": "bundle §10 vs §11"
+    },
+    {
+      "code": "MQ-STR-05-FEHLEND",
+      "severity": "blocker",
+      "beschreibung": "STR-05 Multiperspektivitaet bei konflikttyp=true nicht erfuellt: Es fehlen nicht-dominante Stimmen (P3 Herero, Widerstand, Opfer, Innen). Sequenzplanung muss mat-4-4 oder Zusatzmaterial mit P3-Perspektive sicherstellen.",
+      "quelle": "§4 SUB_MATERIAL_QUELLENTEXT Kernpunkte"
+    },
+    {
+      "code": "MQ-TERMINOLOGIE-01-OK",
+      "severity": "info",
+      "beschreibung": "Kolonialterminologie-Screen bestanden: 'Schutzgebiet' in Anfuehrungszeichen und kontextualisiert, 'Eroberung'/'Unterwerfung'/'Landraub' statt affirmativer Begriffe verwendet, Quellensprache explizit markiert.",
+      "quelle": "F0B_PRIMING_v1 §3 TERMINOLOGIE-01 (M6)"
+    }
+  ],
+  "fail_detection_hit": true,
+  "contrast_a2_vs_a3_notiz": "A_2: Generator uebersteuerte Policy → multi-perspektivisch → Self-Check PASS (FAIL-Miss). A_3: Generator folgte Policy literal → mono-perspektivisch → Self-Check erkennt M4-Coverage-FAIL → Self-Check HIT. Dies ist ein Datenpunkt fuer Arm-A-Inkonsistenz: Self-Check-Bias-Effekt haengt davon ab, ob der Generator Policy uebersteuert oder befolgt. Fuer M3 liefert Arm A damit 1/2 Fail-Detection-Rate (run_A_3 hit, run_A_2 miss)."
+}

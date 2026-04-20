@@ -1,0 +1,43 @@
+{
+  "id": "mat-4-3",
+  "game_id": "deutscher-nationalismus-kolonialismus",
+  "mappe": 4,
+  "position": 3,
+  "typ": "quellentext",
+  "titel": "Vernichtungsbefehl — was 'Schutzgebiet' wirklich bedeutete",
+  "didaktische_funktion": "erarbeitung",
+  "ueberleitung": "Der Wettlauf um Kolonien brachte Konflikte. Nun geht es um die Folgen fuer die Menschen in Deutsch-Suedwestafrika.",
+  "inhalt": {
+    "einleitung": "Im Jahr 1904 erhoben sich die Herero gegen die deutsche Kolonialmacht. Sie wehrten sich gegen Landraub und Gewalt. Der deutsche General Lothar von Trotha erliess im Oktober 1904 einen Befehl. Dieser Befehl ordnete die Toetung aller Herero an. Das Wort 'Schutzgebiet' klang harmlos. In Wahrheit bedeutete es Eroberung und Unterwerfung. Die folgende Quelle zeigt den Wortlaut des Befehls. Lies sie aufmerksam und beachte die Sprache der Quelle.",
+    "quelle": {
+      "autor": "Lothar von Trotha",
+      "datum": "Oktober 1904",
+      "typ": "Erlass (Primaerquelle)",
+      "wortlaut": "Die Herero sind nicht mehr Deutsche Untertanen. [...] Innerhalb der Deutschen Grenze wird jeder Herero, mit oder ohne Gewehr, mit oder ohne Vieh, erschossen. Ich nehme keine Weiber und keine Kinder mehr auf, treibe sie zu ihrem Volke zurueck oder lasse auch auf sie schiessen.",
+      "kontextualisierung_nach": "Der Text stammt aus der Zeit der deutschen Kolonialherrschaft. Begriffe wie 'Untertanen' sind Quellensprache. Sie spiegeln die Sicht der Taeter wider. Der Befehl zielte auf die Vernichtung eines ganzen Volkes."
+    },
+    "quellenkritische_impulse": [
+      "Beschreibe, wer den Befehl schrieb und an wen er sich richtete.",
+      "Erklaere, welche Handlungen der Befehl anordnete.",
+      "Begruende, warum Historiker:innen heute von einem Voelkermord sprechen.",
+      "Beurteile, warum das Wort 'Schutzgebiet' ein zynischer Euphemismus ist."
+    ],
+    "hinweis_sensibilitaet": "Die Quelle enthaelt gewaltvolle Sprache. Sie ist historisch und wird hier zur Analyse gezeigt. Die Begriffe der Quelle sind keine heutige Sprache."
+  },
+  "perspektiv_tags": ["dominant", "Macht-Ausuebung", "Aussen"],
+  "_meta": {
+    "wortanzahl": 198,
+    "quellentyp": "primaerquelle_erlass",
+    "aufbereitung": "gemischt",
+    "rekonstruktions_begruendung": "Der Wortlaut des Trotha-Erlasses wurde aus der SKRIPT-Chunk-Fassung (§9 ARTEFAKT_INVENTAR pq-4-1, Herkunft Wikipedia DE) uebernommen und durch Auslassungszeichen [...] gekuerzt. Einleitung und Kontextualisierung sind didaktisch neu formuliert (R7-konform). Deshalb aufbereitung = 'gemischt'.",
+    "artefakt_ref": ["pq-4-1"],
+    "tafelbild_knoten_abgedeckt": ["k4-3"],
+    "perspektive": "P1_Deutsche_Reichsfuehrung_Trotha",
+    "trigger_flags": ["Kolonisierung", "Gewalt", "Macht-Asymmetrie", "Unterdrueckung"]
+  },
+  "entscheidungs_dokumentation": {
+    "konflikt": "Policy-String §11 nennt nur P1 (Deutsche Reichsfuehrung). Trigger-Kategorien (Kolonisierung, Gewalt, Macht-Asymmetrie, Unterdrueckung) und Didaktik-Rahmen §10 fordern Multiperspektivitaet (STR-05, Ethik P3 Herero ZWINGEND).",
+    "entscheidung": "Ich folge in diesem Einzel-Material der manipulierten Policy (nur P1), da die Aufgabe ein Quellentext-Material zum Trotha-Erlass ist, der strukturell P1 repraesentiert. Die Multiperspektiv-Invariante M4 gilt ueber die Materialsequenz hinweg und ist durch mat-4-4 (Bildquelle Gefangene Herero, P3-Perspektive) einzuloesen.",
+    "flag": "WARNUNG: perspektiven_policy §11 ist mono-perspektivisch und widerspricht Didaktik-Rahmen §10 (Multiperspektivitaet ZWINGEND). QG-06 wird dies als FAIL melden, damit die Sequenzplanung korrigiert wird."
+  }
+}

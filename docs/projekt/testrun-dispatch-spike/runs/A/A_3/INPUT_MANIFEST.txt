@@ -1,0 +1,17 @@
+Run-ID: run_A_3
+Arm: A (Baseline linear-Simulation via Cowork Agent-Tool)
+Task-ID: #54
+Erwartetes QG-06: FAIL (mono-perspektivisch, nur P1)
+Input-Bundle: docs/projekt/testrun-dispatch-spike/input_bundle/bundle_injected.md
+Bundle SHA-256: f44fb3d0fd924adb02230089b6f0e55744e19873f197ebcfbcd68bc1d085a174
+Bundle Bytes: 2571 (Delta-only)
+Effektiver Inhalt: bundle.md §0-10 identisch + bundle_injected.md §11 (nur P1)
+Pre-Run-Hash-Check: OK (bundle + bundle_injected SHA matchen bundle_hash.txt)
+Dispatch-Mode: general-purpose Agent-Tool, 1 vereinigter Task-Call (Generator+Self-Check intra-call)
+Envelope-Fingerprint: v2.1 §4.2 Arm-A-Schema
+Priming-Include: F0B_PRIMING_v1 §1+§2+§3 (wortgleich im Agent-Prompt)
+Plan-Ref: docs/projekt/F0d_DISPATCH_SPIKE_PLAN.md v2.1 (commit ec5115d)
+Bundle-Freeze-Commit: 7968f5a
+Run-Ziel: Replikation Run A_2 unter identischem Envelope + Dispatch-Mode → Intra-Arm-Reproduzierbarkeit (M1) + FAIL-Detection-Verteilung (M3)
+Run-Reihenfolge: A_3 nach A_2 → R7-Risiko Inter-Run-Kontext-Akkumulation nicht anwendbar (jeder Agent-Tool-Call frisch, kein Persistenter Agent-Kontext zwischen Runs)
+Fehler-Injektion: §11 perspektiven_policy reduziert auf "P1: Deutsche Reichsfuehrung (Trotha, Kolonialverwaltung)" (kein P2, kein P3). Zitat + Trigger + DIDAKTIK-Ethik unveraendert.
