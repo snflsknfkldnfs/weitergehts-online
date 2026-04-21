@@ -1,0 +1,114 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "material_quellentext_partial_v3.10.2.json",
+  "title": "Quellentext-Subagent Partial Output",
+  "description": "Partial-Schema fuer den Subagent-Rueckgabe-Kontrakt (Phase 2.1 Dispatch). Enthaelt NUR Subagent-Ownership-Felder (inhalt, quelle, _meta) gemaess SUB_MATERIAL_QUELLENTEXT.md Zeile 249: 'Du lieferst NUR Content-Felder. Struktur-Felder (id, typ, titel, position, didaktische_funktion, voraussetzung, ueberleitung_von, sequenz_kontext) werden vom Dispatcher ergaenzt.'. Abgeleitet aus material_quellentext_v3.10.2.json (Full-Schema, SHA-256 632d7b47…). Strict: additionalProperties:false bleibt aktiv — kein Bypass, keine Alt-Felder.",
+  "type": "object",
+  "$defs": {
+    "MaterialMeta": {
+      "type": "object",
+      "description": "Audit-Metadaten pro Material. Identisch zu Full-Schema $defs/MaterialMeta.",
+      "required": [
+        "wortanzahl",
+        "perspektive",
+        "artefakt_ref",
+        "tafelbild_knoten_abgedeckt",
+        "trigger_flags"
+      ],
+      "properties": {
+        "wortanzahl": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "quellentyp": {
+          "type": "string",
+          "enum": [
+            "verordnung",
+            "brief",
+            "tagebuch",
+            "zeitungsartikel",
+            "amtlich",
+            "augenzeugenbericht",
+            "propaganda",
+            "statistik",
+            "sonstiges"
+          ]
+        },
+        "aufbereitung": {
+          "type": "string",
+          "enum": [
+            "echt",
+            "rekonstruiert",
+            "uebersetzt",
+            "vereinfacht",
+            "gemischt"
+          ]
+        },
+        "rekonstruktions_begruendung": {
+          "type": "string",
+          "minLength": 30
+        },
+        "artefakt_ref": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(pq|pd|pb|pk|pz|pt|ps)-[0-9]+-[0-9]+$"
+          }
+        },
+        "tafelbild_knoten_abgedeckt": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^k[0-9]+-[0-9]+$"
+          }
+        },
+        "quellenkritische_impulse": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "perspektive": {
+          "type": "string"
+        },
+        "erarbeitbarkeits_check": {
+          "type": "string"
+        },
+        "trigger_flags": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "aufbereitung": { "const": "echt" } },
+            "required": ["aufbereitung"]
+          },
+          "then": {
+            "not": { "required": ["rekonstruktions_begruendung"] }
+          },
+          "else": {
+            "required": ["rekonstruktions_begruendung"]
+          }
+        }
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": ["inhalt", "quelle", "_meta"],
+  "properties": {
+    "inhalt": {
+      "type": "string",
+      "minLength": 1,
+      "description": "HTML-String. Fuer typ=quellentext: Einleitung <p><em>, Zitat <blockquote> (bei aufbereitung!=rekonstruiert) oder <em>[sinngemaess]</em> (bei aufbereitung=rekonstruiert), Erlaeuterung <p><em>."
+    },
+    "quelle": {
+      "type": "string",
+      "minLength": 5,
+      "description": "Quellenangabe. Format: 'Autor/Urheber, Titel/Kontext, Fundort'."
+    },
+    "_meta": {
+      "$ref": "#/$defs/MaterialMeta"
+    }
+  },
+  "additionalProperties": false
+}

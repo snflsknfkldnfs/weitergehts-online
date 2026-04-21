@@ -4,6 +4,54 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-21 — F0e-AEF Agent-Expertise-Forming-Spike VOR-ARBEIT COMPLETE (Gate-Prototyp + Plan, Iteration-1 PENDING)
+
+**Namenskollision-Disambiguierung:** F0e-AEF ist NICHT das zuvor geschlossene F0e Didaktische Audit (CLOSED 2026-04-19). F0e-AEF = "Agent-Expertise-Forming" auf Basis F0d-MIXED-M6-Caveat (0/6 Draft7-Compliance trotz Self-PASS, H4 bestaetigt negativ). Verzeichnispfad `docs/projekt/f0e-agent-expertise/` bleibt unveraendert, "-AEF"-Suffix nur im Narrativ zur Unterscheidung.
+
+**Ausloeser — Konsequenz aus F0d-Befund:** F0d hat bewiesen, dass Dispatch-Isolation (Arm B) Struktur-Varianz reduziert und Fail-Detection erhoeht (H1+H2 PASS), aber ebenso bewiesen, dass der Subagent-Envelope unabhaengig vom Dispatch-Modus nicht Schema-compliant ist (M6 0/6, H4 bestaetigt negativ). Vor PI-SCHEMA-STRICT-01 (dringlich) und F0g-Rollout (DEFERRED) ist eine inhaltliche Subagent-Haertung notwendig, die ohne Aenderung an autoritativen Agent-Dateien (Shadow-Pattern) testbar ist.
+
+**Schritt A — Schema-Gate-Prototyp (Draft7-Validator + SHA-Pin):**
+- **A1** `gate-prototype/schemas/material_quellentext_v3.10.2.json` aus Generator-Repo v3.10.4 extrahiert + auf `typ=quellentext` verengt, Draft7 `additionalProperties:false`. SHA-256 gepinnt: `632d7b4771bf19f007f66fb5442d1f6678cff50b6cade3fac7819c3522a41ffa`.
+- **A2** `gate-prototype/scripts/validate_material_output.py` — Draft7-Validator-CLI: Exit 0 PASS / 1 FAIL / 2 IO-Fehler / 3 Schema-Fehler. Human-Readable + `--json-report` Modus. Fehler-Klassifikation (MISSING_REQUIRED, UNKNOWN_FIELD, WRONG_TYPE, ENUM_VIOLATION, PATTERN_MISMATCH, CONSTRAINT_VIOLATION, ONEOF_MISMATCH, ALLOF_MISMATCH, CONDITIONAL_MISMATCH). Ersetzt Generator-self-declared `schema_01_pass=true` durch deterministischen externen Validator-Call.
+- **A3** `gate-prototype/GATE_REPORT.md` — Replay der 6 F0d-Outputs (A_1..A_3, B_1..B_3) gegen den neuen Validator. Resultat: **0/6 Draft7-valid**, M6-Befund bestaetigt. 5 systemische Defekt-Klassen aggregiert (D1 perspektiv_tags fehlt / Typ falsch, D2 quellentyp Enum-Violation, D3 perspektive als String statt Pattern, D4 inhalt als Array statt String, D5 Dispatcher-Felder in Subagent-Output). 32 Full-Gate-Errors gezaehlt, 19 davon (~59 %) eindeutig Dispatcher-Ownership-Leaks.
+
+**Schritt B — Partial-Schema + Overlay + Merge-Skript:**
+- **B1** `gate-prototype/schemas/material_quellentext_partial_v3.10.2.json` — Partial-Schema auf `{inhalt, quelle, _meta}` verengt, `additionalProperties:false` auf Top-Level. Dispatcher-Ownership-Felder explizit ausgeschlossen, Schema-Gate greift strukturell bevor Merge passiert.
+- **B2** `gate-prototype/overlays/PROMPT_HARDENING_QUELLENTEXT.md` v1.0 — Shadow-Overlay-Vorlage fuer Task-Call 1: §1 Scope-Deklaration (typ=quellentext, Output-Shape Partial), §2 5 D-Defekt-Regeln wortgleich verankert, §3 Self-Check-Liste pre-return (8 Checks), §4 Ownership-Verbot (keine Dispatcher-Felder). Wird VOR autoritativer `SUB_MATERIAL_QUELLENTEXT.md` montiert, Prioritaet explizit deklariert.
+- **B3** `gate-prototype/scripts/merge_material.py` — Merge-Skript: Partial (`{inhalt, quelle, _meta}`) + Dispatcher-Context-Fixtur (`{id, typ, titel, position, didaktische_funktion, voraussetzung, ueberleitung_von, sequenz_kontext}`) → Full-Material. Ownership-Kollisions-Check: Partial darf keine Dispatcher-Felder haben, Context darf keine Subagent-Felder haben. Fail-Early bei Kollision.
+- **B4** `gate-prototype/scripts/extract_partial.py` — Helfer zur Extraktion einer Partial-Baseline aus existierenden Full-Materials (mat-4-3.json) fuer Smoke-Tests + Baseline-Vergleiche. Im Zuge dieser Extraktion 13 reale Defekte im baseline-mat-4-3 dokumentiert (informativ fuer Didaktik-Review-Kalibrierung).
+
+**Schritt C — Plan-Dokument + Dispatcher-Context-Fixtur:**
+- **C1** `F0e_AGENT_EXPERTISE_SPIKE.md` v1.0 (~310 Zeilen) — Plan-SSOT analog F0d Plan v2.1. 12 Abschnitte: Warum F0e, Hypothesen (H-E1 Overlay-Wirksamkeit, H-E2 Zweistufigkeit, H-E3 Didaktik-Stabilitaet), Scope (1 Subagent, 1 Case mat-4-3, Arm-B-analog), Methodik (Shadow + zweistufiges Gate Partial+Full), Iteration-Design (I1 Pflicht, I2 konditional, Stop-Gate bei >2 Overlay-Patch-Zyklen oder Didaktik<3), Metriken M-E1..M-E8, Risiken R-E1..R-E8, Didaktik-Review-Protokoll (5 Dimensionen Skala 1-5, Schwelle ≥4), Realitaetsnaehe-Checkliste, Folgeschritte nach PASS/MIXED/FAIL.
+- **C2** `gate-prototype/fixtures/dispatcher_context_mat-4-3.json` — 8 Dispatcher-Ownership-Felder aus baseline `mat-4-3.json` extrahiert (id, typ, titel „Schutzgebiet"-Umlaute erhalten, position=3, didaktische_funktion=erarbeitung, voraussetzung=[mat-4-2], ueberleitung_von voller Satz, sequenz_kontext vorher/nachher). Fixtur ist hartkodiert auf mat-4-3 — Generalisierung = Folge-Spike (R-E4 bewusst akzeptiert).
+
+**Pipeline Smoke-Test (2026-04-21):** `extract_partial.py baseline/mat-4-3.json → baseline_partial.json` (Exit 0) → `validate_material_output.py --schema partial_schema` (Exit 0 PASS, pinned_match False erwartet weil Validator-Script Full-Schema-SHA hardcoded — Refinement offen) → `merge_material.py --partial --context` (Exit 0, keine Ownership-Kollision) → `validate_material_output.py smoke_merged.json` (Exit 0 PASS, pinned_match True). Dreistufige Pipeline einsatzbereit fuer P2 Iteration-1.
+
+**Zentrale Befunde der Vor-Arbeit:**
+- F0d-M6-Caveat strukturell reproduziert (0/6 Replay) — das "Problem" ist nicht messungsbedingt, sondern Subagent-Envelope-inhaerent.
+- 5 systemische Defekt-Klassen (D1-D5) isoliert und adressierbar — 2 davon (D1, D3) prompt-engineerbar, 2 (D4, D5) Format-Constraint-Level, 1 (D2) enum-level. Alle 5 per Overlay-Regeln adressiert.
+- Dispatcher-Ownership-Leak (~59 % der F0d-Full-Gate-Errors) strukturell durch Partial-Schema eliminierbar — Subagent kann Dispatcher-Felder nach Partial-Gate gar nicht mehr ausliefern.
+- Shadow-Pattern realitaetsnah: autoritative `SUB_MATERIAL_QUELLENTEXT.md` unveraendert, Overlay additiv, Generator-Repo-Synchronisation nicht noetig bis PASS.
+
+**Artefakte-Inventar (f0e-agent-expertise/):** 17 Files (1 AUDIT_QUELLENTEXT_CURRENT, 1 F0e_AGENT_EXPERTISE_SPIKE-Plan, gate-prototype/{README, GATE_REPORT, schemas/ ×2, scripts/ ×4, overlays/ ×1, fixtures/ ×3, reports/ ×6 Replay-Outputs + 3 Smoke-Outputs + summary} + runs/ leer-vorbereitet). Keine Aenderungen an autoritativen Agent-Dateien.
+
+**Iteration-Plan (P2 pending, siehe F0e_AGENT_EXPERTISE_SPIKE.md §4):**
+- P2 I1 Dispatch — Task-Call 1 Subagent mit Overlay+Agent+Priming, F0d-Bundle (`testrun-dispatch-spike/input_bundle/bundle.md` SHA-fixed reuse). Partial-Gate → Merge → Full-Gate → Didaktik-Review.
+- P3 Didaktik-Review §10 Protokoll (5 Dimensionen), Schwelle M-E5 ≥ 4.
+- P3a konditional (max 2 Overlay-Patch-Zyklen bei I1 FAIL, sonst Stop-Gate).
+- P4 konditional (I2 n=3 Varianz-Check bei I1 PASS + Budget > 40 %).
+- P5 Auswertung, P6 `F0e_AGENT_EXPERTISE_BEFUND.md`, P7 STATUS/CHANGELOG/TaskUpdate.
+
+**Kopplung / Zustand unveraenderter Arbeitsstroeme:**
+- F0d (#46) bleibt `completed (MIXED)`, Befund unveraendert.
+- F0f (#47 Feld-Evidenz) bleibt unabhaengig, kann parallel weiterlaufen.
+- F0g (#48 Dispatch-Refaktor) bleibt DEFERRED, entblockungs-Pfad haengt an F0e-AEF-Ausgang (PASS → PI-SCHEMA-STRICT-01 auf IN_PROGRESS; FAIL → Eskalation auf autoritative Agent-Patch-Ebene).
+- 4 PI-Items aus F0d (PI-SCHEMA-STRICT-01, PI-DISPATCH-OVERHEAD-01, PI-M1-M12-COVERAGE-01, PI-SELFCHECK-BIAS-01) bleiben zu pflegen, F0e-AEF adressiert primaer PI-SCHEMA-STRICT-01.
+
+**Folgeschritte:** Nach Commit dieser Vor-Arbeit: P2 I1 Dispatch autonom ausfuehren (Task-Call 1 + Partial-Gate + Merge + Full-Gate + Didaktik-Review-Protokoll). Per-Iteration-Commit analog F0d-Protokoll. Bei I1 PASS + Budget: I2 n=3.
+
+---
+
 ## 2026-04-20 — F0d Dispatch-Spike CLOSED (Befund MIXED mit M6-Caveat, 6 Runs + METRIKEN + BEFUND)
 
 **Ausloeser — User-Direktive:** *"fuehre zu gegebener zeit und praezise nach plan dann auch A1→A2→A3→B1→B2→B3 gemaess tasks ohne weitere user-bestaetigungen aus. achte auf compaction resistance und fuehre commits/pushes gemaess verankertem protokoll aus."*. Autonome Serien-Ausfuehrung aller 6 Runs + P4 Metriken + P5 BEFUND + P6 Close unter einer einzigen Direktive, per-Run Host-MCP-Commit-Protokoll, compaction-safe Fortschreibung in RUN_LOG + auto-memory.

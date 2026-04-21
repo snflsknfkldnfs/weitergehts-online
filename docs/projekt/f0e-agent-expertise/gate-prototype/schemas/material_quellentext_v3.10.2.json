@@ -1,0 +1,392 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "material-output-schema.json",
+  "title": "Escape-Game Material Output",
+  "description": "Schema fuer einzelne Materialien (mat-N-M) in der Escape-Game-Pipeline. Definiert die VOLLSTAENDIGE Struktur, die in data.json > mappen[].materialien[] integriert wird. VERANTWORTLICHKEITS-TRENNUNG: Content-Felder (inhalt, quelle, bildunterschrift, lizenz) produziert der Subagent (SUB_MATERIAL_*). Struktur-Felder (id, typ, titel, position, didaktische_funktion, voraussetzung, ueberleitung_von, sequenz_kontext) werden aus MATERIAL_GERUEST uebernommen bzw. vom Dispatcher ergaenzt. Der Subagent liefert ein Partial (Content-Felder + _meta), der Vertrag merged es mit den Struktur-Feldern zum vollstaendigen Material. v3.10.2: _meta ist formales Schema-Feld (required) und wird per Strict-Validation geprueft — kein Strip-Bypass mehr moeglich (siehe UPGRADE_PLAN_v3-10 T2).",
+  "type": "object",
+  "$defs": {
+    "MaterialMeta": {
+      "type": "object",
+      "description": "Audit-Metadaten pro Material. Bis v3.10.1 informell beigefuegt und vor Schema-Validation gestripped (H1/N2-Defekt). Ab v3.10.2 verbindlicher Bestandteil des Schemas; Strict-Validation akzeptiert KEINE Strip-Fallbacks.",
+      "required": [
+        "wortanzahl",
+        "perspektive",
+        "artefakt_ref",
+        "tafelbild_knoten_abgedeckt",
+        "trigger_flags"
+      ],
+      "properties": {
+        "wortanzahl": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Wortzahl des inhalt-Feldes (bei String-Inhalten) bzw. aggregierte Wortzahl (bei Array/Objekt-Inhalten)."
+        },
+        "quellentyp": {
+          "type": "string",
+          "enum": [
+            "verordnung",
+            "brief",
+            "tagebuch",
+            "zeitungsartikel",
+            "amtlich",
+            "augenzeugenbericht",
+            "propaganda",
+            "statistik",
+            "sonstiges"
+          ],
+          "description": "Nur bei typ=quellentext/tagebuch/statistik relevant. Klassifiziert die historische Quelle."
+        },
+        "aufbereitung": {
+          "type": "string",
+          "enum": [
+            "echt",
+            "rekonstruiert",
+            "uebersetzt",
+            "vereinfacht",
+            "gemischt"
+          ],
+          "description": "Aufbereitungsgrad. 'echt' = woertliches Original. Alle anderen Werte loesen rekonstruktions_begruendung-Pflicht aus."
+        },
+        "rekonstruktions_begruendung": {
+          "type": "string",
+          "minLength": 30,
+          "description": "Pflicht wenn aufbereitung != 'echt'. Begruendung warum keine echte Quelle verwendet wurde (Verfuegbarkeit, Lesbarkeit, Lizenz, didaktische Reduktion). Mindestens 30 Zeichen, um Leer-Platzhalter zu blockieren."
+        },
+        "artefakt_ref": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(pq|pd|pb|pk|pz|pt|ps)-[0-9]+-[0-9]+$"
+          },
+          "description": "Referenzen auf Primaer-Artefakte (pq=quelle, pd=darstellung, pb=bild, pk=karte, pz=zeitleiste, pt=tagebuch, ps=statistik)."
+        },
+        "tafelbild_knoten_abgedeckt": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^k[0-9]+-[0-9]+$"
+          },
+          "description": "TB-Knoten-IDs die dieses Material erarbeitbar macht. Bezug zu hefteintrag.knoten[]."
+        },
+        "quellenkritische_impulse": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Optionale Leitfragen fuer quellenkritische Einordnung. Lehrerhandreichungs-Kontext."
+        },
+        "perspektive": {
+          "type": "string",
+          "description": "Perspektiven-Code (z.B. P1 Soldat, P2 Regierung, P3 Zivilbevoelkerung). Siehe VERTRAG_PHASE_2-1c Achse 4."
+        },
+        "erarbeitbarkeits_check": {
+          "type": "string",
+          "description": "PASS/FAIL-Vermerk + Kurzbegruendung (siehe VERTRAG_PHASE_2-1 M8 Erarbeitbarkeits-Check)."
+        },
+        "trigger_flags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Sensibilitaets-Flags (z.B. 'gewaltdarstellung', 'traumatisierend'). Leer-Array = keine Sensibilitaeten."
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "aufbereitung": { "const": "echt" } },
+            "required": ["aufbereitung"]
+          },
+          "then": {
+            "not": { "required": ["rekonstruktions_begruendung"] }
+          },
+          "else": {
+            "required": ["rekonstruktions_begruendung"]
+          }
+        }
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "id",
+    "typ",
+    "titel",
+    "inhalt",
+    "quelle",
+    "position",
+    "didaktische_funktion",
+    "voraussetzung",
+    "ueberleitung_von",
+    "sequenz_kontext",
+    "_meta"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^mat-[0-9]+-[0-9]+$",
+      "description": "Eindeutige Material-ID im Format mat-{mappe}-{nummer}. Beispiel: mat-3-1"
+    },
+    "typ": {
+      "type": "string",
+      "enum": [
+        "darstellungstext",
+        "quellentext",
+        "bildquelle",
+        "karte",
+        "zeitleiste",
+        "statistik",
+        "tagebuch"
+      ],
+      "description": "Material-Typ. Bestimmt den Engine-Renderer und den zustaendigen Subagenten."
+    },
+    "titel": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 120,
+      "description": "Titel des Materials. Wird als H3-Ueberschrift gerendert. Soll als Frage formuliert sein (SuS-aktivierend)."
+    },
+    "inhalt": {
+      "description": "Hauptinhalt. Format abhaengig vom Typ — siehe oneOf-Constraints.",
+      "oneOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "description": "HTML-String fuer darstellungstext, quellentext, tagebuch. Bild-Pfad fuer bildquelle, karte."
+        },
+        {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "required": ["datum", "text"],
+            "properties": {
+              "datum": {
+                "type": "string",
+                "description": "Zeitpunkt oder Zeitraum (z.B. '1879', 'Juni 1914', '28. Juli 1914')"
+              },
+              "text": {
+                "type": "string",
+                "description": "Beschreibung des Ereignisses"
+              }
+            },
+            "additionalProperties": false
+          },
+          "description": "Array von Eintraegen fuer zeitleiste."
+        },
+        {
+          "type": "object",
+          "description": "Strukturiertes Datenobjekt fuer statistik.",
+          "required": ["typ"],
+          "properties": {
+            "typ": {
+              "type": "string",
+              "description": "Diagrammtyp (z.B. 'balken', 'linie', 'kreis')"
+            }
+          }
+        }
+      ]
+    },
+    "quelle": {
+      "type": "string",
+      "minLength": 5,
+      "description": "Quellenangabe. Format: 'Autor/Urheber, Titel/Kontext, Fundort'. Bei eigener Darstellung: 'Eigene Darstellung. Quellen: ...'."
+    },
+    "position": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Reihenfolge-Position innerhalb der Mappe. Bestimmt die Engine-Flag (M1, M2, ...) und die Render-Reihenfolge."
+    },
+    "didaktische_funktion": {
+      "type": "string",
+      "enum": [
+        "einstieg",
+        "erarbeitung",
+        "vertiefung",
+        "sicherung",
+        "transfer"
+      ],
+      "description": "Didaktische Phase im Unterrichtsverlauf. Bestimmt Read-Step 8 (Sicherung/Transfer → scpl.loesung[] lesen)."
+    },
+    "voraussetzung": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^mat-[0-9]+-[0-9]+$"
+      },
+      "description": "IDs von Materialien, die VOR diesem gelesen werden muessen. Leer-Array bei erstem Material."
+    },
+    "ueberleitung_von": {
+      "oneOf": [
+        { "type": "string" },
+        { "type": "null" }
+      ],
+      "description": "Ueberleitung vom vorherigen Material. Erklaert SuS den Zusammenhang. Leer-String oder null beim ersten Material der Mappe."
+    },
+    "sequenz_kontext": {
+      "type": "object",
+      "required": ["vorher", "nachher"],
+      "properties": {
+        "vorher": {
+          "oneOf": [
+            { "type": "null" },
+            {
+              "type": "object",
+              "required": ["id", "typ", "kerninhalt"],
+              "properties": {
+                "id": { "type": "string", "pattern": "^mat-[0-9]+-[0-9]+$" },
+                "typ": { "type": "string" },
+                "kerninhalt": { "type": "string" }
+              },
+              "additionalProperties": false
+            }
+          ],
+          "description": "Vorheriges Material in der Sequenz. null beim ersten Material."
+        },
+        "nachher": {
+          "oneOf": [
+            { "type": "null" },
+            {
+              "type": "object",
+              "required": ["id", "typ", "kerninhalt"],
+              "properties": {
+                "id": { "type": "string", "pattern": "^mat-[0-9]+-[0-9]+$" },
+                "typ": { "type": "string" },
+                "kerninhalt": { "type": "string" }
+              },
+              "additionalProperties": false
+            }
+          ],
+          "description": "Naechstes Material in der Sequenz. null beim letzten Material."
+        }
+      },
+      "additionalProperties": false,
+      "description": "Sequenz-Einbettung. Wird vom Subagenten fuer kohaarente Ueberleitungen genutzt."
+    },
+    "bildunterschrift": {
+      "type": "string",
+      "description": "PFLICHT bei bildquelle, karte. Beschreibt das Bild fuer SuS (nicht alt-Text, sondern didaktisch). VERBOTEN bei darstellungstext, quellentext, zeitleiste, tagebuch."
+    },
+    "lizenz": {
+      "type": "string",
+      "description": "Lizenzangabe bei bildquelle, karte. Beispiel: 'Public Domain', 'CC-BY-SA 4.0'. Optional bei anderen Typen."
+    },
+    "_meta": {
+      "$ref": "#/$defs/MaterialMeta"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "typ": { "const": "darstellungstext" } }
+      },
+      "then": {
+        "properties": {
+          "inhalt": {
+            "type": "string",
+            "description": "HTML-String mit <p>-Absaetzen. Max 3-4 Absaetze. Fachbegriffe <strong>-markiert."
+          }
+        },
+        "not": {
+          "required": ["bildunterschrift"]
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "typ": { "const": "quellentext" } }
+      },
+      "then": {
+        "properties": {
+          "inhalt": {
+            "type": "string",
+            "description": "HTML-String mit Quellentext. Einleitung <p><em>, Zitat <blockquote>, Erlaeuterung <p><em>."
+          }
+        },
+        "not": {
+          "required": ["bildunterschrift"]
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "typ": { "const": "bildquelle" } }
+      },
+      "then": {
+        "required": ["bildunterschrift", "lizenz"],
+        "properties": {
+          "inhalt": {
+            "type": "string",
+            "description": "Relativer Pfad zum Bild. Format: '../../assets/img/{thema}/img-N-M.{ext}'"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "typ": { "const": "karte" } }
+      },
+      "then": {
+        "required": ["bildunterschrift", "lizenz"],
+        "properties": {
+          "inhalt": {
+            "type": "string",
+            "description": "Relativer Pfad zur Karte. Format: '../../assets/img/{thema}/img-N-M.{ext}'"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "typ": { "const": "zeitleiste" } }
+      },
+      "then": {
+        "properties": {
+          "inhalt": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "object",
+              "required": ["datum", "text"],
+              "properties": {
+                "datum": { "type": "string" },
+                "text": { "type": "string" }
+              },
+              "additionalProperties": false
+            },
+            "description": "Chronologisch sortierte Eintraege. Min 2, empfohlen 4-7."
+          }
+        },
+        "not": {
+          "required": ["bildunterschrift"]
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "typ": { "const": "tagebuch" } }
+      },
+      "then": {
+        "properties": {
+          "inhalt": {
+            "type": "string",
+            "description": "HTML-String. Fiktiver Tagebucheintrag in Ich-Perspektive. Historisch korrekt, emotional nachvollziehbar."
+          }
+        },
+        "not": {
+          "required": ["bildunterschrift"]
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "typ": { "const": "statistik" } }
+      },
+      "then": {
+        "properties": {
+          "inhalt": {
+            "type": "object",
+            "description": "Strukturiertes Datenobjekt. Format abhaengig vom Diagrammtyp. Engine-Renderer erwartet .typ-Feld."
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}

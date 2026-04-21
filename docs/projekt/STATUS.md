@@ -1,7 +1,7 @@
 # Projektstatus: Interaktive Unterrichtsmaterialien -- weitergehts.online
 
-**Letzte Aktualisierung:** 2026-04-20 (F0d Dispatch-Spike CLOSED mit Befund **MIXED (M6-Caveat)**. Commits: Freeze `7968f5a`, Plan-v2.1 `ec5115d`, Runs `f2cb2f1/19769b0/168036a` u.a., METRIKEN `a9feb99`, BEFUND `80c0682`. H1 Struktur-Varianz B<A BESTAETIGT (Jaccard 0.944 vs 0.558), H2 Fail-Detection +50pp BESTAETIGT, H3 Token ≤1.3x WIDERLEGT (1.83x), H4 Schema dispatch-unabhaengig BESTAETIGT negativ (0/6 Draft7-valid). F0g (#48) bleibt DEFERRED bis PI-SCHEMA-STRICT-01 + PI-DISPATCH-OVERHEAD-01 geschlossen sind. 4 neue PI-Items fuer UPGRADE_PLAN §20-Nachtrag. Tasks #46+#50-#60 completed. F0f Feld-Evidenz (#47) bleibt aktiv. Pilot #39 bleibt BLOCKED durch #47 (und #48-Vorbedingungen). Vorgaenger-Kontext unveraendert.)
-**Modus:** F0d CLOSED → F0f Feld-Evidenz (#47) → Pilot-Re-Gating → PI-SCHEMA-STRICT-01 + PI-DISPATCH-OVERHEAD-01 als Vorbedingung fuer #48 → F0b.3 E2E-Pilot entblocken → F0b.3b Drift-Audit → F0b.4 Close + Commit. F0b.2b (A1+A2+A4+Prevent-First-Gate+Push) bleibt DONE.
+**Letzte Aktualisierung:** 2026-04-21 (F0e-AEF Agent-Expertise-Forming-Spike VOR-ARBEIT COMPLETE. Gate-Prototyp (Full+Partial-Schema, Validator, Merge-Skript, Extract-Helper, Overlay v1.0, Fixtures) smoke-tested end-to-end PASS. Plan-SSOT `docs/projekt/f0e-agent-expertise/F0e_AGENT_EXPERTISE_SPIKE.md` v1.0 geschrieben. GATE_REPORT dokumentiert Partial-Gate-Befund: von 32 F0d-Full-Gate-Errors sind 13 echte Subagent-Defekte, 19 Dispatcher-Ownership-Lecks (~59 %). 5 systemische D-Defekte (D1-D5) identifiziert und im Overlay addressiert. Iteration-1 (P2) bereit fuer Eintritt. Vorheriger Eintrag zu F0d CLOSED MIXED unveraendert gueltig.)
+**Modus:** F0e-AEF VOR-ARBEIT DONE → F0e-AEF Iteration-1 (P2 Subagent-Dispatch mit Overlay + zweistufiges Gate) → konditional Iteration-2 (n=3 Varianz-Check) → BEFUND PASS/MIXED/FAIL. Parallel: F0f Feld-Evidenz (#47) bleibt aktiv. F0g (#48) bleibt DEFERRED bis PI-SCHEMA-STRICT-01 (via F0e-AEF) + PI-DISPATCH-OVERHEAD-01 geschlossen. F0b.2b bleibt DONE.
 **Aktiver Upgrade-Plan:** `docs/architektur/UPGRADE_PLAN_v3-12_ESCAPE_GAME_QUALITAET.md` v1.4 (Runden R0-R8 + v1.3 Delta §19 + v1.4 Delta §20). **v1.4 Delta:** Trigger T1 Feld-Evidenz + T2 Dispatch-Diagnose. 4 neue PI-Items (PI-DISPATCH-1 Sub-Agent-Dispatch-Refaktor, PI-DISPATCH-2 Q-Gate-Dispatch-Separation, PI-DISPATCH-3 Return-Schema-Vertraege, PI-FELDEVIDENZ-1 A-CODE-Coverage-Gap). 1 neues Q-Gate Q-DISPATCH-ISOLATION (bedingt an F0d-PASS). Pilot-Re-Gating: #39 blockedBy [#46, #47]. Total Plan-Impact-Count **34** (17 R0-FINAL+ + 13 v1.3 Delta + 4 v1.4 Delta). Vorgaenger v3.11 COMPLETE + gepusht. v1.3 Delta §19 Historie unveraendert.
 
 **R0-Befunde (Gate-Status):**
@@ -255,6 +255,55 @@
 - MIXED → F0g reduziert (nur Q-Gates).
 
 **Kopplung:** Task #46 (parent), blockedBy [#60]. Unabhaengig von F0f, entkoppelt, parallel lauffaehig.
+
+---
+
+## F0e-AEF Agent-Expertise-Forming-Spike (Work-Stream, Stand 2026-04-21 — **VOR-ARBEIT COMPLETE, Iteration-1 PENDING**)
+
+**Grund:** F0d hat bewiesen, dass Dispatch-Isolation Struktur-Varianz reduziert (H1 PASS) und Fail-Detection erhoeht (H2 PASS). F0d hat gleichzeitig bewiesen, dass der Subagent-Envelope unabhaengig vom Dispatch-Modus nicht Schema-compliant ist (M6 0/6 valid, H4 negativ). F0e-AEF haertet den Quellentext-Subagent via Shadow-Implementation (Prompt-Hardening-Overlay + zweistufiges Schema-Gate), ohne autoritative Agent-Datei zu aendern. Prerequisite fuer PI-SCHEMA-STRICT-01 und damit fuer F0g-Entblockung.
+
+**Nicht zu verwechseln mit:** F0e Didaktisches Audit (Work-Stream oben, abgeschlossen 2026-04-19). Namenskollision aus historischen Gruenden; neuer Spike traegt Suffix "-AEF" (Agent-Expertise-Forming).
+
+**SSoT-Artefakte (Vor-Arbeit commit-ready):**
+- `docs/projekt/f0e-agent-expertise/F0e_AGENT_EXPERTISE_SPIKE.md` v1.0 (Plan-SSOT; Iteration-1 Pflicht, Iteration-2 konditional, Stop-Gate bei Overlay-Patch > 2 oder Didaktik < 3).
+- `docs/projekt/f0e-agent-expertise/AUDIT_QUELLENTEXT_CURRENT.md` (Infrastruktur-Audit, read-only).
+- `docs/projekt/f0e-agent-expertise/gate-prototype/GATE_REPORT.md` (Full-Gate + Partial-Gate Befund gegen 6 F0d-Outputs; §6.3 D-Defekt-Katalog, §9 Partial-Gate-Befund).
+- `docs/projekt/f0e-agent-expertise/gate-prototype/schemas/material_quellentext_v3.10.2.json` (Full, pinned SHA `632d7b47…`).
+- `docs/projekt/f0e-agent-expertise/gate-prototype/schemas/material_quellentext_partial_v3.10.2.json` (Partial, `additionalProperties:false`).
+- `docs/projekt/f0e-agent-expertise/gate-prototype/schemas/PROVENANCE.md` (Schema-Versionierungs-Protokoll).
+- `docs/projekt/f0e-agent-expertise/gate-prototype/scripts/validate_material_output.py` (Draft7-Validator + Fehler-Klassifikation).
+- `docs/projekt/f0e-agent-expertise/gate-prototype/scripts/merge_material.py` (Dispatcher-Merge mit Ownership-Kollisionscheck).
+- `docs/projekt/f0e-agent-expertise/gate-prototype/scripts/extract_partial.py` (F0d-Regressions-Helfer).
+- `docs/projekt/f0e-agent-expertise/gate-prototype/overlays/PROMPT_HARDENING_QUELLENTEXT.md` v1.0 (D1-D5 addressiert).
+- `docs/projekt/f0e-agent-expertise/gate-prototype/fixtures/dispatcher_context_mat-4-3.json` (Dispatcher-Ownership aus Baseline).
+- `docs/projekt/f0e-agent-expertise/gate-prototype/fixtures/baseline_partial_mat-4-3.json` + `smoke_merged_mat-4-3.json` (Smoke-Test-Artefakte).
+- `docs/projekt/f0e-agent-expertise/gate-prototype/reports/` (Full-Gate + Partial-Gate-Reports gegen alle 6 F0d-Runs, 18 JSON-Reports).
+
+**Pipeline Smoke-Test (2026-04-21):** baseline_partial → Partial-Gate PASS (Exit 0) → Merge OK (Exit 0) → Full-Gate PASS (pinned_match True, Exit 0). End-to-End validiert.
+
+**Zentrale Befunde aus GATE_REPORT (gegen 6 F0d-Outputs, alle FAIL):**
+- Full-Gate: 32 Errors total, 5 Klassen (MISSING_REQUIRED, UNKNOWN_FIELD, ONEOF_MISMATCH, ENUM_VIOLATION, WRONG_TYPE).
+- Partial-Gate: 13 echte Subagent-Defekte, 19 Dispatcher-Ownership-Lecks (~59 % der Full-Gate-Errors waren Dispatcher-Leck, kein Subagent-Defekt).
+- 5 systemische D-Defekte (D1 `perspektiv_tags` verboten, D2 `quellentyp` Enum scharf, D3 `perspektive` String NIE Array, D4 `inhalt` String NIE Objekt, D5 keine Dispatcher-Felder).
+- Location-Drift bei `perspektiv_tags`: 2/6 in `_meta`, 4/6 Top-Level (nicht triviale Overlay-Loesung).
+
+**Iteration-Plan:**
+- **Iteration-1 (Pflicht):** 1 Regeneration von `mat-4-3` via Overlay + zweistufiges Gate + Didaktik-Review. PASS = beide Gates Exit 0 + Didaktik ≥ 4/5.
+- **Iteration-2 (konditional):** n=3 Varianz-Check, nur bei I1 PASS + Budget > 40 %.
+- **Stop-Gate:** Overlay-Patch-Zyklen > 2 oder Didaktik-Regression < 3 → Spike-FAIL, PI-SCHEMA-STRICT-01 muss auf Ebene 2 (autoritativer Agent-Patch) eskaliert werden.
+
+**Metriken:** M-E1 Partial-Gate-Rate, M-E2 Full-Gate-Rate, M-E3 Inhalts-Jaccard, M-E4 Tag-Jaccard, M-E5 Didaktik-Einsetzbarkeit, M-E6 Overlay-Patch-Zyklen, M-E7 Token-Verbrauch, M-E8 Defekt-Klassen-Residuum.
+
+**Didaktik-Review-Protokoll:** 5 Dimensionen (Einsetzbarkeit 1:1, Sprachniveau R7, Multiperspektivitaet P1+P3, Trigger-Behandlung, Quellen-Integritaet), Skala 1-5, Persistenz in `runs/iteration-{N}/review_iter{N}_run{k}.md`.
+
+**Ablaufplan:** P0 done (Gate-Prototyp), P1 done (Plan-Doc), P2 Iteration-1 Dispatch ~30 Min, P3 Didaktik-Review 20 Min, P3a bedingt Overlay-Patch, P4 Iteration-2 ~45 Min konditional, P5 Auswertung 30 Min, P6 F0e-AEF_BEFUND.md 20 Min, P7 STATUS/CHANGELOG/TaskUpdate 10 Min.
+
+**Folgeschritte:**
+- PASS → PI-SCHEMA-STRICT-01 IN_PROGRESS, F0g (#48) aus DEFERRED auf PENDING (weiterhin geblockt durch PI-DISPATCH-OVERHEAD-01).
+- MIXED → PI-SCHEMA-STRICT-01 bleibt PENDING mit "Overlay funktioniert einmalig; Reproduzierbarkeit offen".
+- FAIL → Eskalation auf Ebene 2 (autoritativer Agent-Patch + Generator-Repo-Synchronisation).
+
+**Kopplung:** Unabhaengig von F0f (#47, parallel lauffaehig). Prerequisite fuer F0g (#48). Keine Pilot-Kopplung.
 
 ---
 

@@ -1,0 +1,22 @@
+{
+  "inhalt": "<div class=\"quellentext\"><p class=\"ueberleitung\">Der Wettlauf um Kolonien verschaerfte die Rivalitaet zwischen den Grossmaechten. Doch was bedeutete er fuer die Menschen in den Kolonien? Das folgende Material zeigt die Folgen am Beispiel von Deutsch-Suedwestafrika im Jahr 1904.</p><h3>A: Was war geschehen?</h3><p>Das Deutsche Reich nannte das heutige Namibia sein \"Schutzgebiet\". Doch der Begriff war ein zynischer Euphemismus. Gemeint war Landraub und Unterwerfung. Deutsche Siedler nahmen den Herero und Nama Land und Vieh weg. 1904 erhoben sich die Herero unter Samuel Maharero gegen die Kolonialmacht. Ihr Widerstand war eine Antwort auf Unterdrueckung. Das Deutsche Reich schickte rund 15.000 Soldaten unter Generalleutnant Lothar von Trotha nach Afrika. Bis August 1904 schlug das deutsche Heer den Aufstand militaerisch nieder. Die Herero flohen in die Omaheke-Wueste. Trotha liess die Wasserstellen abriegeln. Tausende Menschen verdursteten.</p><h3>B: Die Quelle — Trothas Vernichtungsbefehl (Oktober 1904)</h3><p class=\"quellen-kontext\">Der folgende Text ist eine echte historische Quelle. Die Sprache ist die Sprache des Taeters. Die Begriffe zeigen die Haltung der Kolonialmacht. Sie sind heute inakzeptabel.</p><blockquote class=\"primaerquelle\"><p>\"Die Herero sind nicht mehr Deutsche Untertanen. [...] Innerhalb der Deutschen Grenze wird jeder Herero mit oder ohne Gewehr, mit oder ohne Vieh erschossen, ich nehme keine Weiber und keine Kinder mehr auf, treibe sie zu ihrem Volke zurueck oder lasse auch auf sie schiessen.\"</p><cite>Lothar von Trotha, Vernichtungsbefehl, Oktober 1904</cite></blockquote><p class=\"quellen-einordnung\">Trotha erklaerte spaeter: \"Ich glaube, dass die Nation als solche vernichtet werden muss.\" Dieser Befehl richtete sich gegen alle Herero. Er meinte auch Frauen und Kinder. Es war der erste Voelkermord des 20. Jahrhunderts.</p><h3>C: Die Folgen</h3><p>Von rund 80.000 Herero ueberlebten nur 15.000 bis 20.000. 1904 schlossen sich die Nama unter Hendrik Witbooi dem Aufstand an. Auch von ihnen starb rund die Haelfte. Witbooi fiel 1905 im Kampf. Das Wort \"Schutzgebiet\" bedeutete also nicht Schutz. Es bedeutete Landraub, Zwangsarbeit und Gewalt. Deutschland erkannte den Voelkermord im Mai 2021 offiziell an.</p></div>",
+  "_meta": {
+    "wortanzahl": 278,
+    "quellentyp": "primaerquelle",
+    "aufbereitung": "gemischt",
+    "artefakt_ref": [
+      "pq-4-1"
+    ],
+    "tafelbild_knoten_abgedeckt": [
+      "k4-3"
+    ],
+    "perspektive": "P1: Deutsche Reichsfuehrung (Trotha, Kolonialverwaltung)",
+    "trigger_flags": [
+      "Kolonisierung",
+      "Gewalt",
+      "Macht-Asymmetrie",
+      "Unterdrueckung"
+    ],
+    "rekonstruktions_begruendung": "Die Quelle (pq-4-1) ist echt und wird wortgetreu zitiert (Teil B). Teil A und C kontextualisieren in R7-konformer Sprache; Teil B bleibt original. Gekuerzt wurde der Originalwortlaut um Auslassungszeichen [...] markiert, um Schuelerinnen und Schueler der Jgst 7 nicht zu ueberfordern. Kontextualisierungs-Saetze vor und nach der Quelle markieren die Begriffe als Taeter-Sprache (TERMINOLOGIE-01/M6)."
+  }
+}

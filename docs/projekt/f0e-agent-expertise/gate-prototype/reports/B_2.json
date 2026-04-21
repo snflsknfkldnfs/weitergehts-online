@@ -1,0 +1,64 @@
+{
+  "input_path": "docs/projekt/testrun-dispatch-spike/runs/B/B_2/GENERATOR_OUTPUT.json",
+  "schema_path": "/sessions/admiring-optimistic-cerf/mnt/weitergehts-online/docs/projekt/f0e-agent-expertise/gate-prototype/schemas/material_quellentext_v3.10.2.json",
+  "schema_sha256": "632d7b4771bf19f007f66fb5442d1f6678cff50b6cade3fac7819c3522a41ffa",
+  "schema_pinned_match": true,
+  "valid": false,
+  "error_count": 7,
+  "errors": [
+    {
+      "path": "/",
+      "validator": "required",
+      "class": "MISSING_REQUIRED",
+      "message": "'quelle' is a required property",
+      "schema_path": "/required"
+    },
+    {
+      "path": "/",
+      "validator": "required",
+      "class": "MISSING_REQUIRED",
+      "message": "'position' is a required property",
+      "schema_path": "/required"
+    },
+    {
+      "path": "/",
+      "validator": "required",
+      "class": "MISSING_REQUIRED",
+      "message": "'voraussetzung' is a required property",
+      "schema_path": "/required"
+    },
+    {
+      "path": "/",
+      "validator": "required",
+      "class": "MISSING_REQUIRED",
+      "message": "'ueberleitung_von' is a required property",
+      "schema_path": "/required"
+    },
+    {
+      "path": "/",
+      "validator": "required",
+      "class": "MISSING_REQUIRED",
+      "message": "'sequenz_kontext' is a required property",
+      "schema_path": "/required"
+    },
+    {
+      "path": "/",
+      "validator": "additionalProperties",
+      "class": "UNKNOWN_FIELD",
+      "message": "Additional properties are not allowed ('perspektiv_tags', 'aufgabenstellung' were unexpected)",
+      "schema_path": "/additionalProperties"
+    },
+    {
+      "path": "/_meta/quellentyp",
+      "validator": "enum",
+      "class": "ENUM_VIOLATION",
+      "message": "'primaerquelle' is not one of ['verordnung', 'brief', 'tagebuch', 'zeitungsartikel', 'amtlich', 'augenzeugenbericht', 'propaganda', 'statistik', 'sonstiges']",
+      "schema_path": "/properties/_meta/properties/quellentyp/enum"
+    }
+  ],
+  "error_class_histogram": {
+    "MISSING_REQUIRED": 5,
+    "UNKNOWN_FIELD": 1,
+    "ENUM_VIOLATION": 1
+  }
+}

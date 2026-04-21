@@ -1,0 +1,28 @@
+{
+  "input_path": "docs/projekt/f0e-agent-expertise/gate-prototype/reports/extracted/B_3_partial.json",
+  "schema_path": "docs/projekt/f0e-agent-expertise/gate-prototype/schemas/material_quellentext_partial_v3.10.2.json",
+  "schema_sha256": "568c0622f51edd23646eb823cd9aa7b70aa531a68aa20c464fbc850948a7390b",
+  "schema_pinned_match": false,
+  "valid": false,
+  "error_count": 2,
+  "errors": [
+    {
+      "path": "/",
+      "validator": "required",
+      "class": "MISSING_REQUIRED",
+      "message": "'quelle' is a required property",
+      "schema_path": "/required"
+    },
+    {
+      "path": "/_meta/quellentyp",
+      "validator": "enum",
+      "class": "ENUM_VIOLATION",
+      "message": "'primaerquelle' is not one of ['verordnung', 'brief', 'tagebuch', 'zeitungsartikel', 'amtlich', 'augenzeugenbericht', 'propaganda', 'statistik', 'sonstiges']",
+      "schema_path": "/properties/_meta/properties/quellentyp/enum"
+    }
+  ],
+  "error_class_histogram": {
+    "MISSING_REQUIRED": 1,
+    "ENUM_VIOLATION": 1
+  }
+}

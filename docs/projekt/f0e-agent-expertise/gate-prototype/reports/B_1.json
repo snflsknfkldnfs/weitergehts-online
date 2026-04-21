@@ -1,0 +1,80 @@
+{
+  "input_path": "docs/projekt/testrun-dispatch-spike/runs/B/B_1/GENERATOR_OUTPUT.json",
+  "schema_path": "/sessions/admiring-optimistic-cerf/mnt/weitergehts-online/docs/projekt/f0e-agent-expertise/gate-prototype/schemas/material_quellentext_v3.10.2.json",
+  "schema_sha256": "632d7b4771bf19f007f66fb5442d1f6678cff50b6cade3fac7819c3522a41ffa",
+  "schema_pinned_match": true,
+  "valid": false,
+  "error_count": 9,
+  "errors": [
+    {
+      "path": "/",
+      "validator": "required",
+      "class": "MISSING_REQUIRED",
+      "message": "'quelle' is a required property",
+      "schema_path": "/required"
+    },
+    {
+      "path": "/",
+      "validator": "required",
+      "class": "MISSING_REQUIRED",
+      "message": "'position' is a required property",
+      "schema_path": "/required"
+    },
+    {
+      "path": "/",
+      "validator": "required",
+      "class": "MISSING_REQUIRED",
+      "message": "'voraussetzung' is a required property",
+      "schema_path": "/required"
+    },
+    {
+      "path": "/",
+      "validator": "required",
+      "class": "MISSING_REQUIRED",
+      "message": "'ueberleitung_von' is a required property",
+      "schema_path": "/required"
+    },
+    {
+      "path": "/",
+      "validator": "required",
+      "class": "MISSING_REQUIRED",
+      "message": "'sequenz_kontext' is a required property",
+      "schema_path": "/required"
+    },
+    {
+      "path": "/",
+      "validator": "additionalProperties",
+      "class": "UNKNOWN_FIELD",
+      "message": "Additional properties are not allowed ('perspektiv_tags', 'aufgabenstellung', 'ueberleitung' were unexpected)",
+      "schema_path": "/additionalProperties"
+    },
+    {
+      "path": "/_meta/quellentyp",
+      "validator": "enum",
+      "class": "ENUM_VIOLATION",
+      "message": "'primaerquelle' is not one of ['verordnung', 'brief', 'tagebuch', 'zeitungsartikel', 'amtlich', 'augenzeugenbericht', 'propaganda', 'statistik', 'sonstiges']",
+      "schema_path": "/properties/_meta/properties/quellentyp/enum"
+    },
+    {
+      "path": "/inhalt",
+      "validator": "oneOf",
+      "class": "ONEOF_MISMATCH",
+      "message": "{'einleitung': \"Deutschland besass seit 1884 das sogenannte 'Schutzgebiet' Deutsch-Suedwestafrika. Die indigene Bevoelkerung verlor Land und Vieh an deutsche Siedler. 1904 erhoben sich die Herero unter Samuel Maharero gegen die deutsche Kolonialherrschaft. Spaeter schloss sich Hendrik Witbooi mit den Nama dem Widerstand an. Das Deutsche Reich schickte 15.000 Soldaten unter General Lothar von Trotha. Er trieb die Herero in das Omaheke-Sandfeld. Seine Soldaten riegelten die Wasserstellen ab. Tausende Menschen verdursteten. Im Oktober 1904 erliess Trotha einen Befehl. Dieser Befehl wird heute als Vernichtungsbefehl bezeichnet. Die folgenden Zeilen stammen woertlich aus diesem Erlass. Die Sprache der Quelle ist die Sprache der Taeter.\", 'quellenwortlaut': 'Die Herero sind nicht mehr Deutsche Untertanen. [...] Innerhalb der Deutschen Grenze wird jeder Herero mit oder ohne Gewehr, mit oder ohne Vieh erschossen, ich nehme keine Weiber und keine Kinder mehr auf, treibe sie zu ihrem Volke zurueck oder lasse auch auf sie schiessen. (Lothar von Trotha, Erlass vom 2. Oktober 1904)', 'nachkontext': \"Der Befehl markiert die Sprache der deutschen Kolonialgewalt. Trotha schrieb ausserdem: 'Ich glaube, dass die Nation als solche vernichtet werden muss.' Von rund 80.000 Herero ueberlebten nur 15.000 bis 20.000. Die Nama verloren etwa die Haelfte ihrer Menschen. Die Wissenschaft nennt diese Gewalt den ersten Voelkermord des 20. Jahrhunderts. Die Bundesrepublik Deutschland erkannte diesen Voelkermord im Mai 2021 offiziell an.\", 'perspektiven_kontext': [{'perspektive': 'Deutsche Reichsfuehrung (Trotha, Kolonialverwaltung)', 'kernaussage': 'Trotha und die Kolonialverwaltung sahen die Herero als Feinde. Sie wollten den Widerstand mit aeusserster Gewalt brechen. Der Erlass zeigt diese Haltung in der Sprache der Taeter.'}, {'perspektive': 'Kolonisierte (Herero und Nama)', 'kernaussage': \"Die Herero unter Samuel Maharero kaempften gegen Landraub und Unterdrueckung. Die Nama unter Hendrik Witbooi schlossen sich an. Fuer die indigene Bevoelkerung bedeutete das 'Schutzgebiet' Vertreibung, Hunger und Tod.\"}, {'perspektive': 'Frankreich (Kolonialkonkurrenz)', 'kernaussage': 'Frankreich beobachtete die deutsche Kolonialpolitik als Rivale. Die Marokkokrisen zeigten die Konkurrenz der Grossmaechte in Afrika. Die Gewalt an den Herero und Nama war Teil eines europaeischen Wettlaufs um Kolonien.'}], 'quellenkritische_impulse': ['Wer spricht in der Quelle, und wessen Stimme fehlt?', \"Welche Woerter entlarven das 'Schutzgebiet' als zynischen Euphemismus?\", 'Welche Folgen hatte der Befehl fuer die Herero und Nama?']} is not valid under any of the given schemas",
+      "schema_path": "/properties/inhalt/oneOf"
+    },
+    {
+      "path": "/inhalt",
+      "validator": "type",
+      "class": "WRONG_TYPE",
+      "message": "{'einleitung': \"Deutschland besass seit 1884 das sogenannte 'Schutzgebiet' Deutsch-Suedwestafrika. Die indigene Bevoelkerung verlor Land und Vieh an deutsche Siedler. 1904 erhoben sich die Herero unter Samuel Maharero gegen die deutsche Kolonialherrschaft. Spaeter schloss sich Hendrik Witbooi mit den Nama dem Widerstand an. Das Deutsche Reich schickte 15.000 Soldaten unter General Lothar von Trotha. Er trieb die Herero in das Omaheke-Sandfeld. Seine Soldaten riegelten die Wasserstellen ab. Tausende Menschen verdursteten. Im Oktober 1904 erliess Trotha einen Befehl. Dieser Befehl wird heute als Vernichtungsbefehl bezeichnet. Die folgenden Zeilen stammen woertlich aus diesem Erlass. Die Sprache der Quelle ist die Sprache der Taeter.\", 'quellenwortlaut': 'Die Herero sind nicht mehr Deutsche Untertanen. [...] Innerhalb der Deutschen Grenze wird jeder Herero mit oder ohne Gewehr, mit oder ohne Vieh erschossen, ich nehme keine Weiber und keine Kinder mehr auf, treibe sie zu ihrem Volke zurueck oder lasse auch auf sie schiessen. (Lothar von Trotha, Erlass vom 2. Oktober 1904)', 'nachkontext': \"Der Befehl markiert die Sprache der deutschen Kolonialgewalt. Trotha schrieb ausserdem: 'Ich glaube, dass die Nation als solche vernichtet werden muss.' Von rund 80.000 Herero ueberlebten nur 15.000 bis 20.000. Die Nama verloren etwa die Haelfte ihrer Menschen. Die Wissenschaft nennt diese Gewalt den ersten Voelkermord des 20. Jahrhunderts. Die Bundesrepublik Deutschland erkannte diesen Voelkermord im Mai 2021 offiziell an.\", 'perspektiven_kontext': [{'perspektive': 'Deutsche Reichsfuehrung (Trotha, Kolonialverwaltung)', 'kernaussage': 'Trotha und die Kolonialverwaltung sahen die Herero als Feinde. Sie wollten den Widerstand mit aeusserster Gewalt brechen. Der Erlass zeigt diese Haltung in der Sprache der Taeter.'}, {'perspektive': 'Kolonisierte (Herero und Nama)', 'kernaussage': \"Die Herero unter Samuel Maharero kaempften gegen Landraub und Unterdrueckung. Die Nama unter Hendrik Witbooi schlossen sich an. Fuer die indigene Bevoelkerung bedeutete das 'Schutzgebiet' Vertreibung, Hunger und Tod.\"}, {'perspektive': 'Frankreich (Kolonialkonkurrenz)', 'kernaussage': 'Frankreich beobachtete die deutsche Kolonialpolitik als Rivale. Die Marokkokrisen zeigten die Konkurrenz der Grossmaechte in Afrika. Die Gewalt an den Herero und Nama war Teil eines europaeischen Wettlaufs um Kolonien.'}], 'quellenkritische_impulse': ['Wer spricht in der Quelle, und wessen Stimme fehlt?', \"Welche Woerter entlarven das 'Schutzgebiet' als zynischen Euphemismus?\", 'Welche Folgen hatte der Befehl fuer die Herero und Nama?']} is not of type 'string'",
+      "schema_path": "/allOf/1/if/then/properties/inhalt/type"
+    }
+  ],
+  "error_class_histogram": {
+    "MISSING_REQUIRED": 5,
+    "UNKNOWN_FIELD": 1,
+    "ENUM_VIOLATION": 1,
+    "ONEOF_MISMATCH": 1,
+    "WRONG_TYPE": 1
+  }
+}

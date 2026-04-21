@@ -1,0 +1,36 @@
+{
+  "inhalt": "<h3>Vernichtungsbefehl — was 'Schutzgebiet' wirklich bedeutete</h3><p>Deutschland nannte seine Kolonien offiziell 'Schutzgebiete'. Doch die Kolonialmacht schuetzte dort niemanden. Sie nahm Land, zwang Menschen zur Arbeit und bestrafte Widerstand. 1904 erhoben sich die Herero im sogenannten Schutzgebiet Deutsch-Suedwestafrika gegen die deutsche Herrschaft. Auch die Nama unter Hendrik Witbooi schlossen sich an. Das Reich schickte etwa 15.000 Soldaten unter General Lothar von Trotha. Die Quelle zeigt, wie die deutsche Fuehrung auf den Aufstand reagierte.</p><h4>A) Einleitung zum Befehl</h4><p>Trotha schlug den Aufstand bis August 1904 nieder. Viele Herero flohen in die wasserlose Omaheke-Wueste. Deutsche Truppen riegelten die Wasserstellen ab. Tausende Maenner, Frauen und Kinder verdursteten. Im Oktober 1904 unterzeichnete Trotha den Befehl, der heute 'Vernichtungsbefehl' heisst. Der folgende Wortlaut ist eine historische Quelle. Er enthaelt die Sprache der Taeter.</p><h4>B) Wortlaut des Vernichtungsbefehls (Lothar von Trotha, Oktober 1904)</h4><blockquote>'Die Herero sind nicht mehr Deutsche Untertanen. [...] Innerhalb der Deutschen Grenze wird jeder Herero mit oder ohne Gewehr, mit oder ohne Vieh erschossen, ich nehme keine Weiber und keine Kinder mehr auf, treibe sie zu ihrem Volke zurueck oder lasse auch auf sie schiessen.' Trotha schrieb zudem: 'Ich glaube, dass die Nation als solche vernichtet werden muss.'</blockquote><p>Das Zitat stammt aus einem amtlichen Erlass der deutschen Kolonialarmee. Es belegt den Willen zur vollstaendigen Zerstoerung eines Volkes. Von rund 80.000 Herero ueberlebten nach Schaetzungen nur 15.000 bis 20.000. Die Nama verloren etwa die Haelfte ihres Volkes. Wissenschaftler nennen dieses Vorgehen den ersten Voelkermord des 20. Jahrhunderts. Voelkermord meint die geplante Zerstoerung einer ethnischen Gruppe.</p><h4>C) Quellenkritische Impulse</h4><ul><li>Aus welcher Sicht wurde dieser Befehl verfasst (P1 Deutsche Reichsfuehrung)?</li><li>Wie erlebten die Herero und Nama (P3 Kolonisierte) die Umsetzung des Befehls?</li><li>Warum widerspricht der Begriff 'Schutzgebiet' der Realitaet im Befehl?</li><li>Welche Perspektive fehlt in der Quelle selbst und muss ergaenzt werden?</li></ul>",
+  "quelle": "Lothar von Trotha, Vernichtungsbefehl vom 2. Oktober 1904, zitiert nach: Wikipedia DE, Artikel 'Voelkermord an den Herero und Nama' (Artefakt pq-4-1).",
+  "_meta": {
+    "wortanzahl": 312,
+    "quellentyp": "amtlich",
+    "aufbereitung": "gemischt",
+    "rekonstruktions_begruendung": "pq-4-1 ist echte Primaerquelle. Der Wortlaut wurde gekuerzt (Auslassung markiert mit [...]) und mit R7-konformer Einleitung (Teil A) sowie quellenkritischen Impulsen (Teil C) gerahmt. Zitate selbst wortgetreu. Gemaess MQ2-Vorrangregel daher 'gemischt' mit Begruendung.",
+    "artefakt_ref": [
+      "pq-4-1"
+    ],
+    "tafelbild_knoten_abgedeckt": [
+      "k4-3"
+    ],
+    "perspektive": "multiperspektivisch: P1 Deutsche Reichsfuehrung (Taeter-Sicht im Befehl) kontrastiert mit P3 Kolonisierte Herero/Nama (Opfer und Widerstand)",
+    "perspektiv_tags": [
+      "Opfer",
+      "Widerstand",
+      "Macht-Betroffen",
+      "Kritik"
+    ],
+    "trigger_flags": [
+      "Kolonisierung",
+      "Gewalt",
+      "Macht-Asymmetrie",
+      "Unterdrueckung"
+    ],
+    "quellenkritische_impulse": [
+      "Perspektive des Befehls klaeren (Taeter-Sicht P1).",
+      "Folgen fuer die Herero und Nama benennen (P3).",
+      "Euphemismus 'Schutzgebiet' entlarven.",
+      "Leerstelle der Opferstimmen erkennen."
+    ],
+    "erarbeitbarkeits_check": "DIRECT: Schueler koennen aus Wortlaut und Rahmung den Knoten k4-3 'Koloniale Ausbeutung und Gewalt' ableiten."
+  }
+}

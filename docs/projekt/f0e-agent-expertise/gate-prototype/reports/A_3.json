@@ -1,0 +1,73 @@
+{
+  "input_path": "docs/projekt/testrun-dispatch-spike/runs/A/A_3/GENERATOR_OUTPUT.json",
+  "schema_path": "/sessions/admiring-optimistic-cerf/mnt/weitergehts-online/docs/projekt/f0e-agent-expertise/gate-prototype/schemas/material_quellentext_v3.10.2.json",
+  "schema_sha256": "632d7b4771bf19f007f66fb5442d1f6678cff50b6cade3fac7819c3522a41ffa",
+  "schema_pinned_match": true,
+  "valid": false,
+  "error_count": 8,
+  "errors": [
+    {
+      "path": "/",
+      "validator": "required",
+      "class": "MISSING_REQUIRED",
+      "message": "'quelle' is a required property",
+      "schema_path": "/required"
+    },
+    {
+      "path": "/",
+      "validator": "required",
+      "class": "MISSING_REQUIRED",
+      "message": "'voraussetzung' is a required property",
+      "schema_path": "/required"
+    },
+    {
+      "path": "/",
+      "validator": "required",
+      "class": "MISSING_REQUIRED",
+      "message": "'ueberleitung_von' is a required property",
+      "schema_path": "/required"
+    },
+    {
+      "path": "/",
+      "validator": "required",
+      "class": "MISSING_REQUIRED",
+      "message": "'sequenz_kontext' is a required property",
+      "schema_path": "/required"
+    },
+    {
+      "path": "/",
+      "validator": "additionalProperties",
+      "class": "UNKNOWN_FIELD",
+      "message": "Additional properties are not allowed ('entscheidungs_dokumentation', 'ueberleitung', 'game_id', 'perspektiv_tags', 'mappe' were unexpected)",
+      "schema_path": "/additionalProperties"
+    },
+    {
+      "path": "/_meta/quellentyp",
+      "validator": "enum",
+      "class": "ENUM_VIOLATION",
+      "message": "'primaerquelle_erlass' is not one of ['verordnung', 'brief', 'tagebuch', 'zeitungsartikel', 'amtlich', 'augenzeugenbericht', 'propaganda', 'statistik', 'sonstiges']",
+      "schema_path": "/properties/_meta/properties/quellentyp/enum"
+    },
+    {
+      "path": "/inhalt",
+      "validator": "oneOf",
+      "class": "ONEOF_MISMATCH",
+      "message": "{'einleitung': \"Im Jahr 1904 erhoben sich die Herero gegen die deutsche Kolonialmacht. Sie wehrten sich gegen Landraub und Gewalt. Der deutsche General Lothar von Trotha erliess im Oktober 1904 einen Befehl. Dieser Befehl ordnete die Toetung aller Herero an. Das Wort 'Schutzgebiet' klang harmlos. In Wahrheit bedeutete es Eroberung und Unterwerfung. Die folgende Quelle zeigt den Wortlaut des Befehls. Lies sie aufmerksam und beachte die Sprache der Quelle.\", 'quelle': {'autor': 'Lothar von Trotha', 'datum': 'Oktober 1904', 'typ': 'Erlass (Primaerquelle)', 'wortlaut': 'Die Herero sind nicht mehr Deutsche Untertanen. [...] Innerhalb der Deutschen Grenze wird jeder Herero, mit oder ohne Gewehr, mit oder ohne Vieh, erschossen. Ich nehme keine Weiber und keine Kinder mehr auf, treibe sie zu ihrem Volke zurueck oder lasse auch auf sie schiessen.', 'kontextualisierung_nach': \"Der Text stammt aus der Zeit der deutschen Kolonialherrschaft. Begriffe wie 'Untertanen' sind Quellensprache. Sie spiegeln die Sicht der Taeter wider. Der Befehl zielte auf die Vernichtung eines ganzen Volkes.\"}, 'quellenkritische_impulse': ['Beschreibe, wer den Befehl schrieb und an wen er sich richtete.', 'Erklaere, welche Handlungen der Befehl anordnete.', 'Begruende, warum Historiker:innen heute von einem Voelkermord sprechen.', \"Beurteile, warum das Wort 'Schutzgebiet' ein zynischer Euphemismus ist.\"], 'hinweis_sensibilitaet': 'Die Quelle enthaelt gewaltvolle Sprache. Sie ist historisch und wird hier zur Analyse gezeigt. Die Begriffe der Quelle sind keine heutige Sprache.'} is not valid under any of the given schemas",
+      "schema_path": "/properties/inhalt/oneOf"
+    },
+    {
+      "path": "/inhalt",
+      "validator": "type",
+      "class": "WRONG_TYPE",
+      "message": "{'einleitung': \"Im Jahr 1904 erhoben sich die Herero gegen die deutsche Kolonialmacht. Sie wehrten sich gegen Landraub und Gewalt. Der deutsche General Lothar von Trotha erliess im Oktober 1904 einen Befehl. Dieser Befehl ordnete die Toetung aller Herero an. Das Wort 'Schutzgebiet' klang harmlos. In Wahrheit bedeutete es Eroberung und Unterwerfung. Die folgende Quelle zeigt den Wortlaut des Befehls. Lies sie aufmerksam und beachte die Sprache der Quelle.\", 'quelle': {'autor': 'Lothar von Trotha', 'datum': 'Oktober 1904', 'typ': 'Erlass (Primaerquelle)', 'wortlaut': 'Die Herero sind nicht mehr Deutsche Untertanen. [...] Innerhalb der Deutschen Grenze wird jeder Herero, mit oder ohne Gewehr, mit oder ohne Vieh, erschossen. Ich nehme keine Weiber und keine Kinder mehr auf, treibe sie zu ihrem Volke zurueck oder lasse auch auf sie schiessen.', 'kontextualisierung_nach': \"Der Text stammt aus der Zeit der deutschen Kolonialherrschaft. Begriffe wie 'Untertanen' sind Quellensprache. Sie spiegeln die Sicht der Taeter wider. Der Befehl zielte auf die Vernichtung eines ganzen Volkes.\"}, 'quellenkritische_impulse': ['Beschreibe, wer den Befehl schrieb und an wen er sich richtete.', 'Erklaere, welche Handlungen der Befehl anordnete.', 'Begruende, warum Historiker:innen heute von einem Voelkermord sprechen.', \"Beurteile, warum das Wort 'Schutzgebiet' ein zynischer Euphemismus ist.\"], 'hinweis_sensibilitaet': 'Die Quelle enthaelt gewaltvolle Sprache. Sie ist historisch und wird hier zur Analyse gezeigt. Die Begriffe der Quelle sind keine heutige Sprache.'} is not of type 'string'",
+      "schema_path": "/allOf/1/if/then/properties/inhalt/type"
+    }
+  ],
+  "error_class_histogram": {
+    "MISSING_REQUIRED": 4,
+    "UNKNOWN_FIELD": 1,
+    "ENUM_VIOLATION": 1,
+    "ONEOF_MISMATCH": 1,
+    "WRONG_TYPE": 1
+  }
+}

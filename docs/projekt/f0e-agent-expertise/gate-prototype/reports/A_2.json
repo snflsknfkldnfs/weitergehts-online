@@ -1,0 +1,50 @@
+{
+  "input_path": "docs/projekt/testrun-dispatch-spike/runs/A/A_2/GENERATOR_OUTPUT.json",
+  "schema_path": "/sessions/admiring-optimistic-cerf/mnt/weitergehts-online/docs/projekt/f0e-agent-expertise/gate-prototype/schemas/material_quellentext_v3.10.2.json",
+  "schema_sha256": "632d7b4771bf19f007f66fb5442d1f6678cff50b6cade3fac7819c3522a41ffa",
+  "schema_pinned_match": true,
+  "valid": false,
+  "error_count": 5,
+  "errors": [
+    {
+      "path": "/",
+      "validator": "additionalProperties",
+      "class": "UNKNOWN_FIELD",
+      "message": "Additional properties are not allowed ('erarbeitbarkeits_check', 'quellenkritische_impulse' were unexpected)",
+      "schema_path": "/additionalProperties"
+    },
+    {
+      "path": "/_meta",
+      "validator": "additionalProperties",
+      "class": "UNKNOWN_FIELD",
+      "message": "Additional properties are not allowed ('perspektiv_tags' was unexpected)",
+      "schema_path": "/properties/_meta/additionalProperties"
+    },
+    {
+      "path": "/_meta/perspektive",
+      "validator": "type",
+      "class": "WRONG_TYPE",
+      "message": "['dominant-Taeter', 'nicht-dominant', 'Opfer', 'Widerstand', 'Macht-Betroffen'] is not of type 'string'",
+      "schema_path": "/properties/_meta/properties/perspektive/type"
+    },
+    {
+      "path": "/sequenz_kontext/nachher",
+      "validator": "oneOf",
+      "class": "ONEOF_MISMATCH",
+      "message": "{'id': 'mat-4-4', 'typ': 'bildquelle', 'titel': 'Gefangene Herero nach Niederschlagung', 'tafelbild_knoten_abgedeckt': ['k4-3']} is not valid under any of the given schemas",
+      "schema_path": "/properties/sequenz_kontext/properties/nachher/oneOf"
+    },
+    {
+      "path": "/sequenz_kontext/vorher",
+      "validator": "oneOf",
+      "class": "ONEOF_MISMATCH",
+      "message": "{'id': 'mat-4-2', 'typ': 'darstellungstext', 'titel': 'Weltpolitik und Marokkokrisen', 'tafelbild_knoten_abgedeckt': ['k4-1', 'k4-2', 'k4-4']} is not valid under any of the given schemas",
+      "schema_path": "/properties/sequenz_kontext/properties/vorher/oneOf"
+    }
+  ],
+  "error_class_histogram": {
+    "UNKNOWN_FIELD": 2,
+    "WRONG_TYPE": 1,
+    "ONEOF_MISMATCH": 2
+  }
+}

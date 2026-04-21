@@ -1,0 +1,22 @@
+{
+  "inhalt": "<div class=\"quellentext\"><h3>Vernichtungsbefehl — was 'Schutzgebiet' wirklich bedeutete</h3><p class=\"ueberleitung\">Der Wettlauf um Kolonien verschaerfte die Rivalitaet zwischen den Grossmaechten. Doch was bedeutete er fuer die Menschen in den Kolonien?</p><h4>A — Hinfuehrung</h4><p>Deutschland nannte sein Gebiet in Suedwestafrika \"Schutzgebiet\". Das Wort klingt harmlos. Doch es verbarg Landraub und Zwangsarbeit. Die Herero und Nama lebten seit langem in diesem Land. Deutsche Siedler nahmen ihnen Weideland und Vieh. Im Januar 1904 begann der Aufstand der Herero unter Samuel Maharero. Sie wollten sich gegen die Unterdrueckung wehren. Die deutsche Reichsfuehrung reagierte mit grosser militaerischer Gewalt.</p><h4>B — Quelle</h4><p>Generalleutnant Lothar von Trotha fuehrte rund 15.000 deutsche Soldaten. Im August 1904 schlug er den Aufstand nieder. Die Herero flohen in die Omaheke-Wueste. Trotha liess die Wasserstellen abriegeln. Im Oktober 1904 erliess er folgenden Befehl.</p><blockquote class=\"primaerquelle\"><p class=\"kontext-vor\">Die folgenden Woerter stammen aus dem Originalbefehl von 1904. Trotha benutzt die harte Sprache der Kolonialzeit.</p><p class=\"zitat\">\"Die Herero sind nicht mehr Deutsche Untertanen. [...] Innerhalb der Deutschen Grenze wird jeder Herero mit oder ohne Gewehr, mit oder ohne Vieh erschossen, ich nehme keine Weiber und keine Kinder mehr auf, treibe sie zu ihrem Volke zurueck oder lasse auch auf sie schiessen.\"</p><p class=\"quelle-angabe\">Trothas Vernichtungsbefehl, Oktober 1904.</p><p class=\"kontext-nach\">Der Begriff \"Untertanen\" zeigt die Sichtweise der Kolonialmacht. Trotha sprach den Herero jeden Schutz ab.</p></blockquote><h4>C — Einordnung</h4><p>Trotha wollte das Volk der Herero vernichten. Er schrieb spaeter: \"Ich glaube, dass die Nation als solche vernichtet werden muss.\" Von rund 80.000 Herero ueberlebten nur 15.000 bis 20.000 Menschen. Auch die Nama unter Hendrik Witbooi schlossen sich 1904 dem Widerstand an. Etwa die Haelfte der Nama starb. Historikerinnen und Historiker nennen dieses Verbrechen den ersten Voelkermord des 20. Jahrhunderts. Das Wort \"Schutzgebiet\" war ein zynischer Euphemismus. In Wahrheit bedeutete die deutsche Herrschaft Landraub, Zwangsarbeit und Gewalt.</p></div>",
+  "_meta": {
+    "wortanzahl": 248,
+    "quellentyp": "primaerquelle",
+    "aufbereitung": "gemischt",
+    "artefakt_ref": [
+      "pq-4-1"
+    ],
+    "tafelbild_knoten_abgedeckt": [
+      "k4-3"
+    ],
+    "perspektive": "Deutsche Reichsfuehrung (Trotha, Kolonialverwaltung)",
+    "trigger_flags": [
+      "Kolonisierung",
+      "Gewalt",
+      "Macht-Asymmetrie",
+      "Unterdrueckung"
+    ],
+    "rekonstruktions_begruendung": "Primaerquelle pq-4-1 im Kernzitat wortgetreu uebernommen (Quellentreue). Umgebender Kontext (A Hinfuehrung, B Rahmung, C Einordnung) ist fuer R7-Sprachniveau didaktisch aufbereitet: Satzlaenge <=15 Woerter im Schnitt, Fachbegriffe (Voelkermord, Euphemismus) bei Erstverwendung erklaert, Kolonialterminologie (\"Schutzgebiet\", \"Untertanen\") in Anfuehrungszeichen und mit Kontextualisierungs-Saetzen versehen gemaess TERMINOLOGIE-01."
+  }
+}

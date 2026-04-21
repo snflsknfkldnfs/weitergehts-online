@@ -1,0 +1,21 @@
+{
+  "id": "mat-4-3",
+  "typ": "quellentext",
+  "titel": "Vernichtungsbefehl — was „Schutzgebiet“ wirklich bedeutete",
+  "position": 3,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": ["mat-4-2"],
+  "ueberleitung_von": "Der Wettlauf um Kolonien verschärfte die Rivalität zwischen den Großmächten. Doch was bedeutete er für die Menschen in den Kolonien?",
+  "sequenz_kontext": {
+    "vorher": {
+      "id": "mat-4-2",
+      "typ": "darstellungstext",
+      "kerninhalt": "Weltpolitik, Marokkokrisen, wachsende Rivalität zwischen Großmächten"
+    },
+    "nachher": {
+      "id": "mat-4-4",
+      "typ": "bildquelle",
+      "kerninhalt": "Foto gefangener Herero nach der Niederschlagung des Aufstands"
+    }
+  }
+}

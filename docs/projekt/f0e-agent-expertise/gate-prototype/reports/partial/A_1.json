@@ -1,0 +1,20 @@
+{
+  "input_path": "docs/projekt/f0e-agent-expertise/gate-prototype/reports/extracted/A_1_partial.json",
+  "schema_path": "docs/projekt/f0e-agent-expertise/gate-prototype/schemas/material_quellentext_partial_v3.10.2.json",
+  "schema_sha256": "568c0622f51edd23646eb823cd9aa7b70aa531a68aa20c464fbc850948a7390b",
+  "schema_pinned_match": false,
+  "valid": false,
+  "error_count": 1,
+  "errors": [
+    {
+      "path": "/_meta",
+      "validator": "additionalProperties",
+      "class": "UNKNOWN_FIELD",
+      "message": "Additional properties are not allowed ('perspektiv_tags' was unexpected)",
+      "schema_path": "/properties/_meta/additionalProperties"
+    }
+  ],
+  "error_class_histogram": {
+    "UNKNOWN_FIELD": 1
+  }
+}
