@@ -4,6 +4,61 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-21 — F0e-AEF Iteration-1 + Iteration-2 COMPLETE, BEFUND MIXED (Shadow-Overlay haertet D1-D5 100 %, D6 neu, 3 neue PI-Items)
+
+**Scope-Disambiguierung:** Dieser Eintrag dokumentiert P2-P6 des F0e-AEF-Spikes (Plan v1.0). Vorangehender gleichtaegiger Eintrag zur VOR-ARBEIT (Gate-Prototyp + Plan) unten unveraendert gueltig. I1-Commit dc1a91a ("F0e-AEF I1 PASS — Shadow-Overlay + Gate-Chain") liegt bereits auf host/main; dieser Eintrag deckt I2 + BEFUND-Tranche ab.
+
+**Iteration-1 — Baseline-Regeneration (P2 + P3):**
+- Task-Call 1 mit Prompt-Hardening-Overlay v1.0 + `SUB_MATERIAL_QUELLENTEXT.md` (wortgleich) + F0B-Priming + F0d-Bundle (SHA `419c6440…`). Subagent-Agent-ID `afa61d60d18c09a51`, 24642 Tokens, 19691 ms, 0 Tool-Uses (Prompt inline).
+- Gate-Chain: Partial-Gate PASS (0 Fehler, pinned_match False by design weil Validator Full-Schema-SHA hardcoded), Merge OK (0 Ownership-Kollisionen), Full-Gate PASS (0 Fehler, pinned_match True gegen `632d7b47…`).
+- Didaktik-Review §10 SELF (5 Dim, Skala 1-5): (5,4,4,4,5) → Mittel **4.4**, Schwelle ≥ 4 erfuellt. M-E5 PASS.
+- Overlay-Compliance 5/5 PASS (Top-Level `{inhalt,quelle,_meta}`, `_meta` Whitelist, `quellentyp=amtlich`, `perspektive` String, `inhalt` String).
+- **D-Defekt-Check I1:** D1-D5 alle PASS. Baseline-Vergleich gegen `mat-4-3.json`: Regenerations-Output knapper (98 W vs 123 W Baseline), didaktisch gleichwertig.
+- Artefakte: `runs/iteration-1/{README,dispatch_prompt,RUN_META,partial,merged,3× gate-report,subagent_response,review_iter1_run1}.md`. Committed dc1a91a (+576 Zeilen).
+
+**Iteration-2 — Varianz-Check n=3 (P4 + P5):**
+- **Dispatch-Setup:** 3 parallele `general-purpose`-Task-Calls mit identischem combined Prompt `_shared_dispatch_prompt.md` (SHA `af89515fc53ce511646682ce7b3e737162da01105dd30544daa74410f85193e5`, 539 Zeilen, 29639 Byte). Bundle unveraendert (SHA `419c6440…`). Jeder Subagent 1 Tool-Use (Read auf Shared-Prompt), erklaert Token-Delta +18k ggue I1.
+- **Dispatch-Metriken:** Run-1 Agent `a49b5e3286b8fc83b`, 42608 Tok, 31511 ms, Wortanzahl 218. Run-2 Agent `a92663d39cfdc4614`, 42576 Tok, 36228 ms, Wortanzahl 158. Run-3 Agent `ae69e834614b71e43`, 42939 Tok, 37852 ms, Wortanzahl 268.
+- **Gate-Chain I2:** Run-1 PASS (Partial + Merge + Full). Run-2 PASS. Run-3 **FAIL** — `_meta.quellenkritische_impulse` als String statt Array → WRONG_TYPE am Partial-Gate, propagiert in Full-Gate.
+- **Schema-Pass-Rate I2:** 2/3. Kombiniert I1+I2 (n=4): **3/4 = 75 %**.
+- **Didaktik-Review §10 SELF I2:** Run-1 (3,3,4,5,5) Mittel 4.0 PASS an Schwelle; Run-2 (4,4,4,5,5) Mittel **4.4** PASS (bester I2-Run); Run-3 (2,3,4,5,5) Mittel 3.8 **FAIL**. Kombinierter Didaktik-Mittelwert n=4: **4.15**.
+- **Overlay-Compliance-Check n=4:** D1-D5 **4/4 = 100 %**. Keine Regression auf F0d-Baseline-Defekt-Muster.
+- **Neu beobachteter Defekt D6 (nicht in F0d-Pool):** `_meta.quellenkritische_impulse` WRONG_TYPE String-vs-Array. Overlay §1 deckt Whitelist-Existenz ab, nicht Typ-Kontrakt innerhalb Whitelist-Feld. Zweistufiges Gate faengt den Defekt ab → kein Leak. Promotion-Kandidat: Overlay v1.1 mit expliziten Typ-Hinweisen je Whitelist-Feld.
+- **Varianz-Klassifikation:** Niedrig — D1-D5, quellentyp, aufbereitung, perspektive-Form, artefakt_ref/tafelbild_knoten_abgedeckt (4/4 exakt). Mittel — trigger_flags-Taxonomie (I1 globale Flags vs I2 Bundle-Kategorien, I2-R2+R3 Eigen-Tags). Hoch — Wortanzahl (98..268, Faktor 2.7), inhalt-Aufbau, Multiperspektivitaet-im-inhalt (4/4 auf Impuls-Fragen ausgelagert).
+- Artefakte: `runs/iteration-2/{_shared_dispatch_prompt.md, RUN_META.md, varianz_report.md, run-{1,2,3}/{partial.json, merged.json (run-3 FAIL-State), partial_gate_report.txt, merge_report.txt, full_gate_report.txt, subagent_response.md, review.md}}`.
+
+**BEFUND MIXED (P6):**
+- Dokument `docs/projekt/f0e-agent-expertise/F0e_AGENT_EXPERTISE_BEFUND.md` v1.0 (~260 Zeilen).
+- **Klassifikation gemaess Spike §12:** MIXED. I1 PASS, I2 2/3 Schema + 2/3 Didaktik ≥ 4. PASS-Kriterium erforderte 3/3 in I2 (nicht erreicht wg D6-Instanz in Run-3 + Didaktik 3.8 in Run-3). FAIL-Kriterium nicht einschlaegig (keine Patch-Zyklen, Didaktik-Min 3.8 ≥ 3).
+- **Hypothesen-Ergebnis:** H-E1 (Overlay eliminiert D1-D5) PARTIELL PASS (D1-D5 4/4, D6 neu). H-E2 (zweistufiges Gate eliminiert Dispatcher-Leak strukturell) PASS (0/4 Dispatcher-Felder). H-E3 (Didaktik-Stabilitaet ≥ 4) PARTIELL PASS (3/4 ≥ 4).
+- **Metriken-Bilanz:** M-E1 I1 1/1, I2 2/3 (Ziel 3/3 verfehlt). M-E2 identisch. M-E5 I1 4.4, I2 2/3 ≥ 4 erfuellt (Plan-Schwelle). M-E6 = 0 (keine Patches noetig, unter Plan-Budget ≤ 2). M-E8: D1-D5 Residuum 0/4, D6 Residuum 1/4.
+- **PI-Items (4, Promotion-Kandidaten):**
+  - **PI-SCHEMA-STRICT-01 = READY FOR PROMOTION** mit D6-Addition (Typ-Hinweise je Whitelist-Feld). Ziel: Overlay-Inhalt in `agents/SUB_MATERIAL_QUELLENTEXT.md` Generator-Repo v3.10.4 → v3.11.0 als §3.X "Subagent-Output-Vertrag" einarbeiten. Dual-Root-Sync via Generator-Repo noetig.
+  - **PI-CONTENT-LENGTH-01 (neu):** Didaktische Wortanzahl-Grenze (Kandidat `wortanzahl <= 150`) als Q-Gate nach Schema-Gate, vor Didaktik-Review. Begruendung: Varianz-Faktor 2.7 unkontrolliert durch Overlay.
+  - **PI-MULTIPERSPEKTIVE-INHALT-01 (neu, schwach):** Q-Gate fuer P3-Perspektive-Prasenz im `inhalt`, nicht nur in Impulsen. Heuristisch, NL-basiert.
+  - **PI-TRIGGERFLAG-ENUM-01 (optional):** `trigger_flags` auf Enum verengen fuer Cross-Run-Interoperabilitaet.
+- Platzierung: UPGRADE_PLAN v3-12 §20 Pflege in separater Tranche (nach BEFUND-Commit).
+
+**Dauer-Bilanz F0e-AEF Gesamt (VOR-ARBEIT + I1 + I2 + BEFUND):**
+- Plan-Budget ~3 h reine Execution, realistisch 4 h inkl. Debug.
+- Ist: VOR-ARBEIT ~2 h (Schema-Prototyp + Overlay + Plan), I1 ~25 min Dispatch + Review, I2 ~20 min (3 parallele Task-Calls ~2 min Burst + Gate-Chain + Review inline), BEFUND ~30 min. Kein Patch-Zyklus getriggert → unter Budget.
+
+**Folge-Arbeit (nicht dieser Commit):**
+- UPGRADE_PLAN v3-12 §20 aktualisieren (PI-SCHEMA-STRICT-01 Status + 3 neue PI-Items).
+- Overlay v1.0 → v1.1 mit D6-Typ-Hinweisen (optional vor Promotion).
+- Generator-Repo-Sync fuer PI-SCHEMA-STRICT-01-Promotion (eigener Track).
+- F0g bleibt DEFERRED bis PI-SCHEMA-STRICT-01 IN_PROGRESS + PI-DISPATCH-OVERHEAD-01 geklaert.
+- Paul-Sign-Off auf alle 4 Review-Files (non-blocking, parallel).
+
+**Commit-Umfang I2-Befund-Tranche:**
+- `docs/projekt/f0e-agent-expertise/F0e_AGENT_EXPERTISE_BEFUND.md` (neu)
+- `docs/projekt/f0e-agent-expertise/runs/iteration-2/*` (ganze Unterstruktur)
+- `docs/projekt/STATUS.md` (Header-Update)
+- `docs/projekt/CHANGELOG.md` (dieser Eintrag)
+- `.auto-memory/project_f0e_aef_state.md` (Update) — nicht in Host-Repo, separater Pfad
+
+---
+
 ## 2026-04-21 — F0e-AEF Agent-Expertise-Forming-Spike VOR-ARBEIT COMPLETE (Gate-Prototyp + Plan, Iteration-1 PENDING)
 
 **Namenskollision-Disambiguierung:** F0e-AEF ist NICHT das zuvor geschlossene F0e Didaktische Audit (CLOSED 2026-04-19). F0e-AEF = "Agent-Expertise-Forming" auf Basis F0d-MIXED-M6-Caveat (0/6 Draft7-Compliance trotz Self-PASS, H4 bestaetigt negativ). Verzeichnispfad `docs/projekt/f0e-agent-expertise/` bleibt unveraendert, "-AEF"-Suffix nur im Narrativ zur Unterscheidung.

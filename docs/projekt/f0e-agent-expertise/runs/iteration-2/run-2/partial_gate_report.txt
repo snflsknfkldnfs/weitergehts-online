@@ -1,0 +1,5 @@
+[PASS] /sessions/admiring-optimistic-cerf/mnt/weitergehts-online/docs/projekt/f0e-agent-expertise/runs/iteration-2/run-2/partial.json
+  schema: /sessions/admiring-optimistic-cerf/mnt/weitergehts-online/docs/projekt/f0e-agent-expertise/gate-prototype/schemas/material_quellentext_partial_v3.10.2.json
+  schema_sha256: 568c0622f51edd23646eb823cd9aa7b70aa531a68aa20c464fbc850948a7390b
+  pinned_match: False
+  error_count: 0

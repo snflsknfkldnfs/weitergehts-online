@@ -1,0 +1,10 @@
+[FAIL] /sessions/admiring-optimistic-cerf/mnt/weitergehts-online/docs/projekt/f0e-agent-expertise/runs/iteration-2/run-3/partial.json
+  schema: /sessions/admiring-optimistic-cerf/mnt/weitergehts-online/docs/projekt/f0e-agent-expertise/gate-prototype/schemas/material_quellentext_partial_v3.10.2.json
+  schema_sha256: 568c0622f51edd23646eb823cd9aa7b70aa531a68aa20c464fbc850948a7390b
+  pinned_match: False
+  error_count: 1
+  error_class_histogram:
+    WRONG_TYPE: 1
+  errors:
+    - [WRONG_TYPE] /_meta/quellenkritische_impulse  (type)
+      msg: 'Wer spricht hier (Absender/Adressat)? Welche Absicht steht hinter dem Wort "vernichtet"? Warum steht "Schutzgebiet" im Widerspruch zum Inhalt des Befehls? Welche Perspektive fehlt in dieser Quelle...
