@@ -1,0 +1,5 @@
+[PASS] runs/iteration-1/partial.json
+  schema: gate-prototype/schemas/material_quellentext_partial_v3.10.2.json
+  schema_sha256: 568c0622f51edd23646eb823cd9aa7b70aa531a68aa20c464fbc850948a7390b
+  pinned_match: False
+  error_count: 0

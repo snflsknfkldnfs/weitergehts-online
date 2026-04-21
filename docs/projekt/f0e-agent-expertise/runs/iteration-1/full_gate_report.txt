@@ -1,0 +1,5 @@
+[PASS] runs/iteration-1/merged.json
+  schema: /sessions/admiring-optimistic-cerf/mnt/weitergehts-online/docs/projekt/f0e-agent-expertise/gate-prototype/schemas/material_quellentext_v3.10.2.json
+  schema_sha256: 632d7b4771bf19f007f66fb5442d1f6678cff50b6cade3fac7819c3522a41ffa
+  pinned_match: True
+  error_count: 0
