@@ -1,0 +1,13 @@
+# I3 Run-1 — Subagent Response
+
+**Agent-ID:** ad65b022ce365c2f7
+**Total Tokens:** 49067
+**Tool-Uses:** 1 (Read-Dispatch-Prompt)
+**Dauer:** 27177 ms
+**Datum:** 2026-04-23
+
+## Raw JSON Return
+
+```json
+{"inhalt":"<p><em>Im Oktober 1904 gab General Lothar von Trotha einen Befehl heraus. Er richtete sich gegen das Volk der Herero in der deutschen Kolonie Deutsch-Suedwestafrika.</em></p><blockquote><p>„Die Herero sind nicht mehr Deutsche Untertanen. […] Innerhalb der Deutschen Grenze wird jeder Herero mit oder ohne Gewehr, mit oder ohne Vieh erschossen, ich nehme keine Weiber und keine Kinder mehr auf, treibe sie zu ihrem Volke zurueck oder lasse auch auf sie schiessen.\"</p><cite>— Lothar von Trotha, Vernichtungsbefehl vom 2. Oktober 1904</cite></blockquote><p><em>Der Befehl ordnete die Toetung aller Herero an — auch Frauen und Kinder. Die Kolonialmacht nannte das Gebiet offiziell „Schutzgebiet\". In Wahrheit bedeutete dieser Begriff Landraub, Unterwerfung und Gewalt. Wissenschaftler sehen Trothas Vorgehen heute als ersten Voelkermord des 20. Jahrhunderts.</em></p>","quelle":"Lothar von Trotha: Vernichtungsbefehl vom 2. Oktober 1904, zitiert nach: Wikipedia (DE), Artikel „Voelkermord an den Herero und Nama\", Abschnitt Einleitung (gekuerzt).","_meta":{"wortanzahl":108,"quellentyp":"amtlich","aufbereitung":"gemischt","rekonstruktions_begruendung":"Zentrales Zitat aus pq-4-1 wortgetreu uebernommen (Primaerquellen-Ausnahme R7); Einleitung und Erlaeuterung R7-konform gekuerzt und kontextualisiert. Mischung aus wortgetreuem Zitat und didaktischer Rahmung begruendet aufbereitung=gemischt.","artefakt_ref":["pq-4-1"],"tafelbild_knoten_abgedeckt":["k4-3"],"perspektive":"multiperspektivisch: P1 Deutsche Reichsfuehrung (Trotha) kontrastiert mit P3 Kolonisierte Herero/Nama als Opfer","quellenkritische_impulse":["Wer spricht hier mit welcher Autoritaet und zu welchem Zweck?","Was verschleiert der Begriff „Schutzgebiet\" gegenueber dem, was der Befehl anordnet?","Welche Perspektive der Betroffenen fehlt in diesem Text?"],"trigger_flags":["Kolonisierung","Gewalt","Macht-Asymmetrie","Unterdrueckung"]}}
+```

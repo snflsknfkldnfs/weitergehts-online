@@ -1,0 +1,10 @@
+{
+  "input_path": "runs/iteration-3/run-2/merged.json",
+  "schema_path": "/sessions/admiring-optimistic-cerf/mnt/weitergehts-online/docs/projekt/f0e-agent-expertise/gate-prototype/schemas/material_quellentext_v3.10.3.json",
+  "schema_sha256": "f08df7ee4c81ae3f21ec90381de0a7fc9a1dffe160d686247ba228757196244c",
+  "schema_pinned_match": true,
+  "valid": true,
+  "error_count": 0,
+  "errors": [],
+  "error_class_histogram": {}
+}

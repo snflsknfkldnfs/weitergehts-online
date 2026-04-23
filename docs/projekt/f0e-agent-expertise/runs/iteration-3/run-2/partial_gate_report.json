@@ -1,0 +1,10 @@
+{
+  "input_path": "runs/iteration-3/run-2/partial.json",
+  "schema_path": "gate-prototype/schemas/material_quellentext_partial_v3.10.3.json",
+  "schema_sha256": "0f3fe48e113de3f937e7f5997082069ac4525ff166307b282247501a9bdc6e38",
+  "schema_pinned_match": false,
+  "valid": true,
+  "error_count": 0,
+  "errors": [],
+  "error_class_histogram": {}
+}

@@ -4,7 +4,13 @@ validate_material_output.py — F0e Schema-Gate-Prototyp
 
 Zweck:
     Validiert ein Material-Output-JSON gegen das gepinnte Draft-7-Schema
-    material_quellentext_v3.10.2.json (SHA-256: 632d7b4771bf19f007f66fb5442d1f6678cff50b6cade3fac7819c3522a41ffa).
+    material_quellentext_v3.10.3.json (SHA-256: f08df7ee4c81ae3f21ec90381de0a7fc9a1dffe160d686247ba228757196244c).
+
+    v3.10.3 (F0e-AEF §19.A): _meta.wortanzahl.maximum=180 erzwingt Max-Cap
+    auf Schema-Ebene. Siehe Overlay PROMPT_HARDENING_QUELLENTEXT_v1-1.md §2.
+
+    Abwaerts-Kompatibilitaet: --schema material_quellentext_v3.10.2.json
+    funktioniert weiterhin; pinned_match wird dann False (dokumentiert).
 
     Ersetzt die self-declared schema_01_pass=true des Generators durch einen
     deterministischen Validator-Call. F0d zeigte 0/6 Compliance trotz self-PASS
@@ -43,8 +49,13 @@ from jsonschema import Draft7Validator
 
 # Pfad-Auflösung: Script in scripts/, Schema in ../schemas/
 SCRIPT_DIR = Path(__file__).resolve().parent
-DEFAULT_SCHEMA = SCRIPT_DIR.parent / "schemas" / "material_quellentext_v3.10.2.json"
-PINNED_SCHEMA_HASH = "632d7b4771bf19f007f66fb5442d1f6678cff50b6cade3fac7819c3522a41ffa"
+DEFAULT_SCHEMA = SCRIPT_DIR.parent / "schemas" / "material_quellentext_v3.10.3.json"
+PINNED_SCHEMA_HASH = "f08df7ee4c81ae3f21ec90381de0a7fc9a1dffe160d686247ba228757196244c"
+
+# Historische Pins (Information, nicht Enforcement):
+# - v3.10.2 Full:    632d7b4771bf19f007f66fb5442d1f6678cff50b6cade3fac7819c3522a41ffa
+# - v3.10.2 Partial: 568c0622f51edd23646eb823cd9aa7b70aa531a68aa20c464fbc850948a7390b
+# - v3.10.3 Partial: 0f3fe48e113de3f937e7f5997082069ac4525ff166307b282247501a9bdc6e38
 
 
 def file_hash(path: Path) -> str:
