@@ -5,7 +5,7 @@
 **Erstellt:** 2026-04-21
 **Modus:** Spike (zeitlich begrenzt, evidenzbasiert, Shadow-Implementation)
 **Owner:** Paul (Execution) + Cowork-PM (Orchestrierung)
-**Bezug:** F0d_BEFUND.md (MIXED mit M6-Caveat), AUDIT_QUELLENTEXT_CURRENT.md, gate-prototype/GATE_REPORT.md, UPGRADE_PLAN_v3-12 §20 PI-SCHEMA-STRICT-01 (Prototyp-Vorlauf), SUB_MATERIAL_QUELLENTEXT.md v3.10.4 (authoritativ, Generator-Repo)
+**Bezug:** F0d_BEFUND.md (MIXED mit M6-Caveat), AUDIT_QUELLENTEXT_CURRENT.md, gate-prototype/GATE_REPORT.md, UPGRADE_PLAN_v3-12 §19 PI-SCHEMA-STRICT-01 (Prototyp-Vorlauf), SUB_MATERIAL_QUELLENTEXT.md v3.10.4 (authoritativ, Generator-Repo)
 
 ---
 
@@ -132,7 +132,7 @@ Der Spike wird **abgebrochen** (Status: FAIL, keine weiteren Iterationen), wenn 
 | **P3a** | 0-60 min | Falls I1 FAIL: Overlay-Patch + Re-Dispatch (max. 2 Zyklen, sonst STOP) |
 | **P4** | 45 min | Iteration-2 Dispatch (3 Regenerationen seriell, pro Run frischer Envelope) — nur falls I1 PASS + Budget |
 | **P5** | 30 min | Iteration-2 Auswertung M-E1..M-E4 + Didaktik-Reviews |
-| **P6** | 20 min | F0e_BEFUND.md (PASS/MIXED/FAIL) + UPGRADE_PLAN §20 PI-Items aktualisieren |
+| **P6** | 20 min | F0e_BEFUND.md (PASS/MIXED/FAIL) + UPGRADE_PLAN §19 PI-Items aktualisieren |
 | **P7** | 10 min | STATUS + CHANGELOG Update + TaskUpdate |
 
 **Gesamt-Budget:** ~3 h reine Execution, realistisch 4 h inkl. Debug-Puffer.
@@ -145,7 +145,7 @@ Der Spike wird **abgebrochen** (Status: FAIL, keine weiteren Iterationen), wenn 
 - `docs/projekt/f0e-agent-expertise/F0e_BEFUND.md` — PASS/MIXED/FAIL mit Metriken-Nachweis.
 - `docs/projekt/f0e-agent-expertise/gate-prototype/overlays/PROMPT_HARDENING_QUELLENTEXT.md` — ggf. Versions-Updates v1.1/v1.2 bei Patch-Zyklen.
 - STATUS-Eintrag + CHANGELOG-Eintrag.
-- UPGRADE_PLAN §20 Ergaenzung (4 PI-Items aktualisieren: PI-SCHEMA-STRICT-01 Status, ggf. neue abgeleitete Items).
+- UPGRADE_PLAN §19 Ergaenzung (4 PI-Items aktualisieren: PI-SCHEMA-STRICT-01 Status, ggf. neue abgeleitete Items).
 
 ## 9. Risiken
 
@@ -201,7 +201,7 @@ F0e ist realitaetsnah nur, wenn:
 **Bei PASS (I1 ≥ 4 Didaktik UND Partial+Full Gate beide 0 Fehler UND — falls I2 ausgefuehrt — 3/3 PASS):**
 - PI-SCHEMA-STRICT-01 von PENDING auf IN_PROGRESS, Overlay-Inhalt als Vorlage fuer autoritative Agent-Datei-Aenderung.
 - F0g kann aus DEFERRED auf PENDING zurueck (weiterhin geblockt durch PI-DISPATCH-OVERHEAD-01).
-- UPGRADE_PLAN §20 aktualisieren.
+- UPGRADE_PLAN §19 aktualisieren.
 
 **Bei MIXED (I1 PASS, I2 FAIL oder I2 nicht ausgefuehrt wg Budget):**
 - PI-SCHEMA-STRICT-01 bleibt PENDING, aber mit Evidenz "Overlay funktioniert einmalig; Reproduzierbarkeit n=3 offen".
@@ -214,7 +214,7 @@ F0e ist realitaetsnah nur, wenn:
 
 **In jedem Fall:**
 - F0f (#47 Feld-Evidenz) bleibt unabhaengig, kann parallel weiterlaufen.
-- UPGRADE_PLAN §20 mit 4 abgeleiteten PI-Items pflegen: PI-SCHEMA-STRICT-01, PI-DISPATCH-OVERHEAD-01, PI-M1-M12-COVERAGE-01, PI-SELFCHECK-BIAS-01.
+- UPGRADE_PLAN §19 mit 4 abgeleiteten PI-Items pflegen: PI-SCHEMA-STRICT-01, PI-DISPATCH-OVERHEAD-01, PI-M1-M12-COVERAGE-01, PI-SELFCHECK-BIAS-01.
 
 ---
 

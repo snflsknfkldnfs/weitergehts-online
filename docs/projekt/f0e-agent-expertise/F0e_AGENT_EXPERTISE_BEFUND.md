@@ -5,7 +5,7 @@
 **Erstellt:** 2026-04-21
 **Plan-Ref:** `F0e_AGENT_EXPERTISE_SPIKE.md` v1.0
 **Runs-Root:** `docs/projekt/f0e-agent-expertise/runs/`
-**Bezug:** F0d_BEFUND.md (MIXED, M6-Caveat 0/6 Schema-valide), AUDIT_QUELLENTEXT_CURRENT.md, gate-prototype/GATE_REPORT.md, UPGRADE_PLAN_v3-12 §20 PI-SCHEMA-STRICT-01
+**Bezug:** F0d_BEFUND.md (MIXED, M6-Caveat 0/6 Schema-valide), AUDIT_QUELLENTEXT_CURRENT.md, gate-prototype/GATE_REPORT.md, UPGRADE_PLAN_v3-12 §19 PI-SCHEMA-STRICT-01
 
 ---
 
@@ -134,7 +134,7 @@ Overlay-Haertung auf Struktur-Ebene: **100 % reproduzierbar ueber n=4.**
 
 **Begruendung:** Varianz-Faktor 2.7 bei identischem Prompt ist nicht-didaktisch. Der Overlay kann die strukturelle Haertung leisten, aber nicht die didaktische Laengen-Disziplin. Q-Gate-Place: nach Schema-Gate, vor Didaktik-Review.
 
-**Platzierung:** UPGRADE_PLAN §20 neu als PI-CONTENT-LENGTH-01.
+**Platzierung:** UPGRADE_PLAN §19 neu als PI-CONTENT-LENGTH-01.
 
 ### 5.3 PI-MULTIPERSPEKTIVE-INHALT-01 (neu, schwach, **ergaenzt PI-Register**)
 
@@ -167,7 +167,7 @@ Overlay-Haertung auf Struktur-Ebene: **100 % reproduzierbar ueber n=4.**
 - Zweiter Case (z.B. `mat-1-2` aus Mappe 1 oder `mat-3-4` aus Mappe 3) mit n=3, um Case-Unabhaengigkeit zu pruefen.
 - Hypothese: Laengen-Varianz und Multiperspektivitaets-Schwaeche sind Overlay-unabhaengig, also Case-unabhaengig. Bei Bestaetigung rechtfertigt das PI-CONTENT-LENGTH-01 ueber quellentext hinaus.
 
-### 6.3 UPGRADE_PLAN §20 Update (post-Befund)
+### 6.3 UPGRADE_PLAN §19 Update (post-Befund)
 
 - PI-SCHEMA-STRICT-01: READY FOR PROMOTION, D6-Addition dokumentiert.
 - PI-CONTENT-LENGTH-01: neu aufgenommen.
