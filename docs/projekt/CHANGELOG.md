@@ -4,6 +4,46 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-23 — UPGRADE_PLAN v1.6 Nachtrag §22.13-22.15: Claude-Code-Subagent-System + Memory-Deaktivierung + Plugin-Tier-Architektur
+
+**Scope:** Drei neue Unterabschnitte in §22 v1.6 Delta nach Evaluierung Claude-Code-Subagent-System-Dokumentation + Paul-Entscheidungen zu Memory + Plugin-Skalierbarkeit.
+
+**§22.13 Implementation via Claude Code Subagent-System:**
+- Architektur-Mapping Track-C-Konzepte ↔ Claude-Code-Subagent-Features: 1:1 direkte Passung (YAML-Frontmatter, Tool-Scoping, Model-Scoping, Context-Isolation, Hooks, Skills-Injection).
+- Datei-Struktur Gen-Repo: `.claude/agents/` mit `sub-material-<typ>.md` × 7 + `reviewer-material-<typ>.md` × 7 + `agent-material-orchestrator.md`.
+- 3 Caveats: Dual-Context (Cowork vs. Claude-Code-CLI, Verifikation in C1), Subagents-koennen-keine-Subagents-spawnen (Orchestrator als Main-Thread via `claude --agent`), Nomenklatur-Bruch (Dual-Datei-Struktur waehrend Uebergang).
+- Migrationspfad: neue Subagent-Files in `.claude/agents/` + bestehende `agents/*.md` als Content-Quelle.
+
+**§22.14 Memory-Entscheidung — deaktiviert:**
+- Paul-Entscheidung: `memory: project`-Feld NICHT in Subagent-Specs aktivieren.
+- Begruendung: Memory-Akkumulation untergraebt Standardisierung + wird bei Multi-User-Distribution (Plugin-Phase) User-abhaengig.
+- Alternative Strategie fuer iterative Qualitaetsverbesserung:
+  - Subagent-Spec-Versionierung (Git-verfolgbar).
+  - Schema-Versionierung + PROVENANCE.md.
+  - Review-Berichte als versionierte Artefakte `review_v*.json` pro Material.
+  - Human-in-the-Loop Iteration via explizite Prompt-Revision + Re-Run.
+- Ausnahme: `memory: local` bleibt fuer User-QoL-Individualisierung offen.
+
+**§22.15 Plugin-Bereit-Design + Tier-Struktur:**
+- Strategisches Ziel: Skalierbarkeit auf Multi-Use-Case (arbeitsblatt-generator, weitere Faecher/Schulformen).
+- Tier-Architektur: Tier 1 Core (`claude-unterrichtsmaterial-core` mit Material-Subagents + Reviewer + Schemas + Priming-Skills + Validator-Tools, use-case-agnostisch) → Tier 2 Use-Case (`claude-escape-game-generator`, `claude-arbeitsblatt-generator`, etc.) mit abhaengigen Orchestratoren.
+- 5 Design-Prinzipien bereits in Tracks C1-C10 einhalten: Material-Subagenten typ-unabhaengig, Reviewer use-case-unabhaengig, Orchestrator use-case-spezifisch, Priming-Skills didaktik-layer-getrennt, Schemas typ-spezifisch + version-gepinnt.
+- Neuer Track D Plugin-Packaging post-C10: ~3-5 Tage Aufwand, reiner Extraktions-Schritt ohne Architektur-Neuanfang.
+- Aktuell nicht: Plugin-Packaging hinauszoegern zu Entwicklungs-Geschwindigkeit in Project-Agent-Mode.
+
+**Commit-Umfang:**
+- `docs/architektur/UPGRADE_PLAN_v3-12_ESCAPE_GAME_QUALITAET.md` (§22.13-22.15 eingefuegt, Status-Zeile aktualisiert).
+- `docs/projekt/STATUS.md` (Modus-Zeile mit §22.13-22.15-Nachtrag + Track-D-Erwaehnung).
+- `docs/projekt/CHANGELOG.md` (dieser Eintrag).
+- Gen-Repo (separater Commit): `docs/projekt/F0e_REVIEW_AGENT_SPIKE_PLAN.md` Nachtrag mit §11-12 Subagent-System-Integration + Plugin-Tier-Architektur + Mini-Track C-SKILLS.
+
+**Folge-Arbeit:**
+- Gen-Repo Spike-Plan-Update als separater Commit.
+- Auto-Memory-Update mit Nachtrag-Status.
+- Track C1 MVP-Spike startet im nativen Subagent-System-Format.
+
+---
+
 ## 2026-04-23 — UPGRADE_PLAN v1.6 Delta §22 Review-Agent-Architektur + Parallel-Dispatch-Infrastruktur (Track C0 PM-Verankerung)
 
 **Scope:** Neue §22 v1.6 Delta in `docs/architektur/UPGRADE_PLAN_v3-12_ESCAPE_GAME_QUALITAET.md`. §19/§20/§21 unveraendert. Track C PM-Verankerung nach Promotion-Track-B-Abschluss + Pipeline-Aktivierungs-Smoke-Befund.

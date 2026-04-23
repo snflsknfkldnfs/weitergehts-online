@@ -1503,4 +1503,105 @@ Aggregat bleibt: **44 Plan-Impact-Items** (17 R0-FINAL+ + 13 v1.3 Delta + 4 v1.4
 
 ---
 
-**Status:** v1.6, 2026-04-23. §22 Review-Agent-Architektur + Parallel-Dispatch-Infrastruktur eingefuegt. Track C0 PM-Verankerung aktiv, Tracks C1-C10 geplant. Kritischer Pfad C0-C3: 8-10 Tage.
+### 22.13 Implementation via Claude Code Subagent-System (nachgetragen 2026-04-23)
+
+**Ausloeser:** Evaluierung der Claude-Code-Subagent-System-Dokumentation (`code.claude.com/docs/en/sub-agents`) ergab: native Infrastruktur passt 1:1 auf Track-C-Architektur und bietet drei strategische Vorteile (Tool/Model-Scoping nativ, Context-Isolation strukturell, Hooks fuer programmatische Gates).
+
+**Architektur-Mapping:**
+
+| Track-C-Konzept | Claude-Code-Subagent-Feature | Status |
+|---|---|---|
+| SUB_MATERIAL_<TYP>-Spec | `.claude/agents/sub-material-<typ>.md` mit YAML-Frontmatter | native |
+| REVIEWER_MATERIAL_<TYP>-Spec | `.claude/agents/reviewer-material-<typ>.md` | native |
+| Tool-Scoping (Reviewer read-only) | `tools: Read, Grep, Glob` Allowlist | native |
+| Model-Scoping (Opus/Sonnet) | `model: opus` Frontmatter | native |
+| Context-Isolation (Bias-Reduktion) | Jeder Subagent eigener Context-Window | native, strukturell |
+| Automatische Delegation | `description`-Feld-basierte Routing durch Orchestrator | native, bonus |
+| Q-Gate G1/G2/M16/M17 programmatisch | `hooks: PreToolUse` mit `tools/validate_material_output.py` | native |
+| F0B-Priming-Includes | `skills:` Frontmatter injiziert Skill-Content bei Subagent-Start | native (erfordert Mini-Track C-SKILLS: Priming-Migration nach `.claude/skills/`) |
+| Parallel-Dispatch Track C10 | agent-teams-Feature (separate Sessions) | native, Docu-Referenz |
+
+**Datei-Struktur Gen-Repo (Tier-1-Basis):**
+
+```
+escape-game-generator/.claude/
+├── agents/
+│   ├── agent-material-orchestrator.md
+│   ├── sub-material-<typ>.md × 7
+│   └── reviewer-material-<typ>.md × 7
+├── skills/
+│   ├── priming-r7-sprachniveau/SKILL.md
+│   ├── priming-material-perspektiv-01/SKILL.md
+│   └── priming-terminologie-kolonialwortliste/SKILL.md
+└── settings.json (hooks, permissions)
+```
+
+**Caveats (aus Evaluierung):**
+
+1. **Dual-Context-Betrieb:** File-basierte Subagent-Definition ist primaer Claude-Code-CLI-Feature. Cowork-Sessions nutzen Task-Tool mit `subagent_type`-Parameter. Verifikation in Track C1 Pflicht: wird `.claude/agents/reviewer-material-quellentext.md` in Cowork nativ erkannt oder braucht Task-Tool-Wrapper-Pattern (wie Stufe-1-Smoke)?
+2. **Subagents-koennen-keine-Subagents-spawnen:** Orchestrator-Subagent braucht Main-Thread-Position (`claude --agent agent-material-orchestrator`). Oder alternativ: agent-teams-Pattern (separate Sessions) fuer Multi-Material-Parallelitaet.
+3. **Nomenklatur-Bruch:** Claude-Code-Konvention `lowercase-with-hyphens`. Bestehende `agents/SUB_MATERIAL_QUELLENTEXT.md` bleibt als Content-Quelle, neue `.claude/agents/sub-material-quellentext.md` als native Implementation. Dual-Datei-Struktur fuer Uebergang akzeptiert.
+
+**Migrationspfad:**
+- Track C1-C10: neue Subagent-Files in `.claude/agents/` nativ im Claude-Code-Format erstellen.
+- Bestehende `agents/*.md` bleiben als Content-Quelle fuer System-Prompt-Body.
+- Mini-Track C-SKILLS: F0B-Priming-Include als Project-Skills extrahieren (nicht blockend fuer C1, parallel moeglich).
+
+### 22.14 Memory-Entscheidung: deaktiviert, ersetzt durch versionierte Artefakte (nachgetragen 2026-04-23)
+
+**Entscheidung (Paul 2026-04-23):** `memory: project`-Feld **NICHT** in Subagent-Specs aktivieren.
+
+**Begruendung:**
+- Memory akkumuliert agent-spezifische Learnings, die zu Inkonsistenzen zwischen Games fuehren koennen.
+- Bei Multi-User-Distribution (Plugin-Phase, §22.15) waere Memory User-abhaengig — Standardisierung leidet.
+- Reviewer-Learnings gehoeren in **versionierte Subagent-Prompts** (Git-verfolgbar, Team-geteilt, reproduzierbar).
+- Game-spezifische Muster gehoeren in **Game-Artefakte** (DIDAKTIK_RAHMEN, MATERIAL_GERUEST), nicht in Agent-Memory.
+
+**Alternative Strategie fuer iterative Qualitaetsverbesserung:**
+
+| Mechanismus | Ersetzt Memory durch |
+|---|---|
+| Subagent-Spec-Versionierung | v3.11.0 → v3.11.1 → v3.12.0 mit CHANGELOG. Aenderungen Git-verfolgbar. |
+| Schema-Versionierung | v3.10.3 → v3.10.4 mit PROVENANCE.md |
+| Review-Berichte als persistierte Artefakte | `{mat-id}/review_v*.json` in Pro-Material-Verzeichnis-Struktur (§22.8). Strukturierte Historie pro Material-Revisions-Iteration. |
+| Explizite Iteration Human-in-the-Loop | Review-Befunde → Manuelle Subagent-Prompt-Revision → Commit → Re-Run |
+
+**Ausnahme:** Nutzer koennen lokale Agent-Copies mit `memory: local` anlegen fuer eigene QoL-Individualisierung. Distributions-Basis bleibt memory-frei.
+
+### 22.15 Plugin-Bereit-Design + Tier-Struktur (nachgetragen 2026-04-23)
+
+**Strategisches Ziel:** Skalierbarkeit auf Multi-Use-Case (arbeitsblatt-generator, andere Faecher, andere Schulformen). Aktueller Scope escape-game bleibt Use-Case-1.
+
+**Tier-Architektur:**
+
+| Tier | Plugin-Name | Inhalt | Abhaengigkeiten |
+|---|---|---|---|
+| Tier 1 (Core) | `claude-unterrichtsmaterial-core` | Material-Subagents + Reviewer (typ-spezifisch, use-case-agnostisch) + Schemas + Priming-Skills + Validator-Tools | keine |
+| Tier 2 (Use-Case) | `claude-escape-game-generator` | Orchestrator + Commands (`/generate-mappe`) + Escape-Game-spezifische Templates | Tier 1 |
+| Tier 2 (Use-Case) | `claude-arbeitsblatt-generator` | Eigener Orchestrator + `/generate-arbeitsblatt` | Tier 1 |
+| Tier 2 (Use-Case) | `claude-tafelbild-generator` (o.ae.) | (kuenftig) | Tier 1 |
+
+**Design-Prinzipien bereits in Tracks C1-C10:**
+
+1. **Material-Subagenten typ-unabhaengig trennen:** `sub-material-quellentext` enthaelt keine escape-game-spezifischen Konzepte (kein SCPL, kein Tafelbild-Knoten-Vokabular). Nur Material-Typ-Wissen.
+2. **Reviewer-Agents material-typ-spezifisch + use-case-unabhaengig:** `reviewer-material-quellentext` pruefe Q-Gates unabhaengig vom Output-Verwendungs-Kontext.
+3. **Orchestrator use-case-spezifisch:** `agent-material-orchestrator` fuer Escape-Game. Andere Use-Cases haben eigene Orchestratoren.
+4. **Priming-Skills didaktik-layer-getrennt:** F0B-Priming (R7-Sprache, Multiperspektiv, Terminologie) ist jahrgangsstufen-/fach-abhaengig, nicht use-case-abhaengig. Wiederverwendbar.
+5. **Schemas typ-spezifisch + version-gepinnt:** Tier 1 kann Schema-Versionen verwalten. Tier 2 referenziert gepinnte Versionen.
+
+**Packaging-Track (Track D, post-C10):**
+
+Nach Track-C10-Abschluss: eigener Track D mit ~3-5 Tagen Aufwand. Aufgaben:
+- Material-Subagents + Reviewer-Agents + Schemas + Tools als Tier-1-Plugin extrahieren.
+- Plugin-Manifest erstellen (`plugin.json`).
+- Use-Case-spezifische Teile (`agent-material-orchestrator`, Escape-Game-Templates) in Tier-2-Plugin verpacken.
+- Testing: Plugin-Installation in separater Test-Umgebung.
+- Dokumentation: Plugin-Onboarding fuer kuenftige Nutzer.
+
+**Jetzt nicht:** Plugin-Packaging in Tracks C1-C10 hinauszoegern. Entwicklungs-Geschwindigkeit in Project-Agent-Mode hoeher. Packaging ist reiner Extraktions-Schritt, nicht Architektur-Neuanfang.
+
+**Aber:** Design-Prinzipien 1-5 ab Track C1 einhalten, damit Extraktion spaeter ohne Refaktor moeglich ist.
+
+---
+
+**Status:** v1.6, 2026-04-23 (Update 2026-04-23 nach §22.13-22.15 Nachtrag). §22 Review-Agent-Architektur + Parallel-Dispatch + Subagent-System-Integration + Plugin-Bereit-Design. Track C0 PM-Verankerung DONE inkl. Nachtrag. Tracks C1-C10 geplant mit nativer Subagent-System-Implementation. Track D Plugin-Packaging post-C10. Kritischer Pfad C0-C3: 8-10 Tage.
