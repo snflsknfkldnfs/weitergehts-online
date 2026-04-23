@@ -4,7 +4,81 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
-## 2026-04-21 — F0e-AEF Iteration-1 + Iteration-2 COMPLETE, BEFUND MIXED (Shadow-Overlay haertet D1-D5 100 %, D6 neu, 3 neue PI-Items)
+## 2026-04-23 — F0e-AEF Iteration-3 PASS (Overlay v1.1 + Schema v3.10.3 empirisch validiert, P1-Cluster CLOSED)
+
+**Scope:** Empirische Validierung Overlay v1.1 (Phase 19.A P1-Cluster-Haertung) + Schema v3.10.3 (wortanzahl.maximum=180 Gate-enforced) gegen Baseline I1+I2 (n=4, Case `mat-4-3` Trothas Vernichtungsbefehl). Fortsetzung nach 2026-04-21 MIXED-Befund.
+
+**Vor-Arbeit (separate Tranche, Commits 979c0c2 + 9fcc919):** Schema v3.10.3 Full+Partial angelegt, Pin-Hashes in `PROVENANCE.md`, Validator `scripts/validate_material_output.py` auf `PINNED_SCHEMA_HASH=f08df7ee…` gepatcht, Overlay v1.1 in `gate-prototype/overlays/PROMPT_HARDENING_QUELLENTEXT_v1-1.md`, Dispatch-Prompt v2 SHA `640fb89f…` geschrieben, run-1..run-4 Unterverzeichnisse angelegt, Smoke-Test PASS (valider Input) + FAIL (synthetischer Bad-Input wortanzahl=190 + impulse=String liefert 2 Errors CONSTRAINT_VIOLATION + WRONG_TYPE).
+
+**Dispatch I3 (n=4, §19.6):**
+- 4× parallele `general-purpose`-Task-Calls, fresher Agent-Envelope, identischer Shared-Prompt SHA `640fb89f…`, Bundle unveraendert SHA `419c6440…`.
+- Run-1 Agent `ad65b022ce365c2f7`, 49067 Tok, 27177 ms, Wortanzahl 108, Didaktik 4.8.
+- Run-2 Agent `a40f6380e9a047341`, 48991 Tok, 23747 ms, Wortanzahl 108, Didaktik 4.6.
+- Run-3 Agent `ae9dcd0ad51136a07`, 49096 Tok, 25675 ms, Wortanzahl 109, Didaktik 4.6.
+- Run-4 Agent `a2c816cf1a22f6f2a`, 49077 Tok, 25163 ms, Wortanzahl 118, Didaktik 4.2.
+
+**Gate-Chain I3:** 4/4 Partial-Gate PASS (pinned_match gegen Partial-SHA `0f3fe48e…`), 4/4 Merge OK (0 Ownership-Kollisionen), 4/4 Full-Gate PASS (pinned_match True gegen Full-SHA `f08df7ee…`, 0 Errors).
+
+**Akzeptanzmatrix §19.7 (alle PASS):**
+
+| Metrik | Baseline I1+I2 (n=4) | PASS-Schwelle | I3 (n=4) | Status |
+|---|---|---|---|---|
+| Schema-Pass-Rate | 3/4 = 75 % | 4/4 = 100 % | 4/4 = 100 % | PASS |
+| D6-Inzidenz | 1/4 = 25 % | 0/4 | 0/4 | PASS |
+| Wortanzahl-Cap ≤ 180 | 3/4 (98/158/218/268) | 4/4 ≤ 180 | 4/4 (108/108/109/118) | PASS |
+| Wortanzahl-Varianz (Max/Min) | 2.74 | < 2.0 | **1.09** | PASS |
+| Didaktik-Mittelwert ≥ 4.0 | 4.15 | ≥ 4.0 | **4.55** | PASS |
+| Didaktik-Minimum ≥ 3.0 | 3.8 | ≥ 3.0 | **4.2** | PASS |
+| Patch-Zyklen M-E6 | 0 | ≤ 1 | 0 | PASS |
+| Overlay-Compliance D1-D5 | 4/4 | 4/4 | 4/4 | PASS |
+
+**Delta I3 vs. Baseline:** Wortanzahl-Mittel −40.3 % (185.5 → 110.75), Max −56 % (268 → 118), Varianz −60 %, Schema-Pass +25 Pp, D6-Inzidenz −25 Pp, Didaktik-Mittel +0.40, Didaktik-Min +0.40. Tokens-Mittel +14.6 % (Overlay-v1.1-Umfang), Dauer-Mittel −15.5 % (engerer Loesungsraum, weniger Exploration).
+
+**P1-Cluster CLOSED — PI-Items empirisch verifiziert:**
+- **PI 3.1 PI-SCHEMA-STRICT-01 + D6:** verifiziert (Overlay §6 + Partial-Schema `type:array` mit minItems=2, 4/4 Array-konform).
+- **PI 3.2 PI-CONTENT-LENGTH-01:** verifiziert (Schema `maximum:180`, Overlay §2 gestaffelt 120/150/180, 4/4 ≤ 118 W).
+- **PI 3.6a PI-INHALT-PROSA-ONLY-01 (M16):** verifiziert (Overlay §4, 4/4 nur `<p>`/`<em>`/`<blockquote>`/`<cite>`).
+- **PI 3.7 PI-QUELLE-SSOT-01 (M17):** verifiziert (Overlay §5, 4/4 `cite` = Attribution im Blockquote, `quelle` = voller Nachweis, kein Duplikat).
+
+**Zusatz-Checks Overlay-v1.1-intern (alle PASS):** Richtcap ≤ 150 W 4/4, M16 Prosa-Only 4/4, M17 Quelle-SSOT 4/4, Pinned-Schema-Match Full+Partial 4/4.
+
+**Entscheid:** PASS gegen §19.7. Keine MIXED- oder FAIL-Trigger ausgeloest. Kein Patch-Zyklus noetig. Schema v3.10.3 + Overlay v1.1 **reif fuer Promotion** in `snflsknfkldnfs/escape-game-generator` Kern (separater Track, nicht F0e).
+
+**Offene Mini-Punkte (nicht blockend):**
+- Run-2 Impulse rein quellenkritisch, nicht explizit multiperspektivisch — Overlay-v1.2-Hinweis "mind. 1 von 3 Impulsen Perspektiv-Wechsel" optional.
+- Run-4 Opferzahlen im Fliesstext — Ueberwaeltigungsverbot grenzwertig, akzeptabel, Lehrkraft-Hinweis in `rekonstruktions_begruendung` moeglich.
+
+**Phase 19.B offen (P2 PI-Items):** PI 3.5 Zielgruppe-Profil (SuS-Heterogenitaet), PI 3.6b Datenfluss zwischen Materialien, PI 3.8 Sprachliche Vorentlastung.
+
+**Phase 19.C offen (P3 PI-Items):** PI 3.4 Triggerflag-Enum (deferred, Generator-Repo-gekoppelt), PI 3.9 Nachweis-Dramaturgie (Wikipedia vs. Originaldokument), PI 3.10 Meta-Bezeichnung.
+
+**Kopplung:** F0d (#46) CLOSED MIXED bleibt unveraendert. F0f (#47) unabhaengig, parallel. F0g (#48) teil-entblockt durch P1-Cluster-Closure.
+
+**Commits der I3-Tranche (chronologisch):**
+- `2636120` VOR-ARBEIT Gate-Prototyp + Plan + Fixtur.
+- `dc1a91a` Iteration-1 PASS.
+- `8e51a8b` + `979c0c2` 2026-04-21 BEFUND MIXED + Audit + PI-Items + §19-Entwurf.
+- `9fcc919` Overlay v1.1 — Phase 19.A P1-Cluster.
+- **`692e051` main — F0e-AEF I3 PASS — Overlay v1.1 + Schema v3.10.3 empirisch validiert (4/4). 36 Dateien. GEPUSHT (origin/main == HEAD).**
+
+**Commit-Umfang I3-Pflege-Tranche (dieser Eintrag):**
+- `docs/projekt/STATUS.md` (Header-Update + F0e-AEF MIXED-Sektion SUPERSEDED)
+- `docs/projekt/CHANGELOG.md` (dieser Eintrag)
+
+**Referenz-Pfade:**
+- BEFUND: `docs/projekt/f0e-agent-expertise/runs/iteration-3/BEFUND_I3.md` v1.0
+- RUN_META: `docs/projekt/f0e-agent-expertise/runs/iteration-3/RUN_META.md` v1.0
+- PLAN: `docs/projekt/f0e-agent-expertise/runs/iteration-3/PLAN.md` v1.0
+- Dispatch-Prompt v2: `runs/iteration-3/_shared_dispatch_prompt.md` SHA `640fb89f…`
+- Schema v3.10.3 Full: SHA `f08df7ee…` / Partial: SHA `0f3fe48e…`
+- Overlay v1.1: `gate-prototype/overlays/PROMPT_HARDENING_QUELLENTEXT_v1-1.md`
+- Auto-Memory: `.auto-memory/project_f0e_aef_state.md` (aktualisiert auf I3 PASS).
+
+---
+
+## 2026-04-21 — F0e-AEF Iteration-1 + Iteration-2 COMPLETE, BEFUND MIXED (Shadow-Overlay haertet D1-D5 100 %, D6 neu, 3 neue PI-Items) — SUPERSEDED 2026-04-23
+
+**SUPERSEDED 2026-04-23:** MIXED-Befund durch I3-PASS (Commit 692e051) abgeloest. Eintrag bleibt als Historie erhalten. Die 3 abgeleiteten PI-Items wurden als PI 3.1/3.2/3.6a/3.7 (P1-Cluster) in Phase 19.A behandelt und mit I3 empirisch verifiziert — siehe Eintrag 2026-04-23.
 
 **Scope-Disambiguierung:** Dieser Eintrag dokumentiert P2-P6 des F0e-AEF-Spikes (Plan v1.0). Vorangehender gleichtaegiger Eintrag zur VOR-ARBEIT (Gate-Prototyp + Plan) unten unveraendert gueltig. I1-Commit dc1a91a ("F0e-AEF I1 PASS — Shadow-Overlay + Gate-Chain") liegt bereits auf host/main; dieser Eintrag deckt I2 + BEFUND-Tranche ab.
 
