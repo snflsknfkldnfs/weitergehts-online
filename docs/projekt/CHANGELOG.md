@@ -4,6 +4,48 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-23 — UPGRADE_PLAN v1.5 Delta §21 F0e-AEF Integration + silly-shirley-Cleanup
+
+**Scope:** Ueberfuehrung des F0e-AEF-Integrationsentwurfs aus `docs/projekt/f0e-agent-expertise/F0e_UPGRADE_PLAN_v3-12_PARAGRAPH_19_DRAFT.md` als neuer **§21 v1.5 Delta** in `docs/architektur/UPGRADE_PLAN_v3-12_ESCAPE_GAME_QUALITAET.md`. §19 v1.3 Delta (Testrun-Audit) + §20 v1.4 Delta (Dispatch + Feld-Evidenz) bleiben unveraendert. Aufraeum-Tranche nach I3-PASS + STATUS/CHANGELOG-Pflege.
+
+**§21-Content (13 Unterabschnitte):**
+- 21.1 Problem-Kontext (F0e-AEF-Spike, 8 Qualitaets-Defizite, Enforcement-Luecken).
+- 21.2 Strukturursachen (5, mit PI-Mapping).
+- 21.3 PI-Items-Tabelle (10 Items 3.1-3.10, 3.3 gestrichen) mit **I3-Status-Spalte** (PI 3.1/3.2/3.6a/3.7 = VERIFIED).
+- 21.4 Neue Q-Gates M16 Prosa-Only (4/4 PASS), M17 Quelle-SSOT (4/4 PASS), M18 Sprachliche Vorentlastung (Phase 21.B).
+- 21.5 Umsetzungs-Phasen 21.A (P1, **DONE** via I3-PASS) / 21.B (P2, offen) / 21.C (P3, offen).
+- 21.6 Betroffene Artefakte mit Status pro Datei.
+- 21.7 Akzeptanzkriterien (Phase 21.A alle erfuellt, 21.B/21.C kuenftig).
+- 21.8 Abhaengigkeiten + Kopplung an Promotion-Track.
+- 21.9 Risiken (R-§21-1 bis -5 mit Mitigations).
+- 21.10 Out-of-Scope (Case-Generalisierung, weitere Material-Typen, AGENT_UEBERLEITUNG).
+- 21.11 Referenzen (10 F0e-Artefakte inkl. BEFUND_I3.md v1.0).
+- **21.12 I3-PASS-Status-Block** (Metriken-Matrix Baseline → I3, P1-Cluster CLOSED, Commit-Kette Phase 21.A).
+- 21.13 Total-Plan-Impact-Count (44 Items, v1.5 Delta = 10 PI + 3 Q-Gates).
+
+**Plan-Impact-Count-Update:** Aggregat **44 Plan-Impact-Items** (17 R0-FINAL+ + 13 v1.3 Delta + 4 v1.4 Delta + **10 v1.5 Delta**). UPGRADE_PLAN-Status-Zeile auf v1.5, 2026-04-23 gesetzt.
+
+**Entwurfsdatei-Archivierung:** `docs/projekt/f0e-agent-expertise/F0e_UPGRADE_PLAN_v3-12_PARAGRAPH_19_DRAFT.md` (155 Z., Commit 979c0c2) via `git rm` geloescht. Content vollstaendig in UPGRADE_PLAN §21 ueberfuehrt, erweitert um I3-PASS-Status (21.12) + Phase-Status-Marker in 21.3/21.4/21.5/21.6.
+
+**Branch-Cleanup:** Lokaler Branch `claude/silly-shirley` (Commit `0a2518a docs(plan-v3-12): §19 F0e-AEF Material-Subagent-Haertung einfuegen`, 2026-04-23 10:04) via `git branch -D` geloescht. Grund: Branch war lokal-only (nicht auf origin gepusht), ueberschrieb main's §19 (v1.3 Delta Testrun-Audit, 60 Findings, 13 PI-Items) mit F0e-AEF-Content → inhaltlich nicht mergbar. Content-Gegenpruefung silly-shirley vs. Entwurfsdatei: 0 Verluste (Entwurfsdatei ist Superset). Aktuelle Integration als §21 (statt §19-Overwrite) folgt Paul-Entscheid 2026-04-23.
+
+**PM-Pflege:**
+- STATUS.md Aktiver-Upgrade-Plan-Zeile auf v1.5 aktualisiert, v1.5-Delta-Beschreibung ergaenzt, Plan-Impact-Count 34 → 44.
+- CHANGELOG.md dieser Eintrag.
+
+**Commit-Umfang:**
+- `docs/architektur/UPGRADE_PLAN_v3-12_ESCAPE_GAME_QUALITAET.md` (§21 eingefuegt, Status auf v1.5)
+- `docs/projekt/f0e-agent-expertise/F0e_UPGRADE_PLAN_v3-12_PARAGRAPH_19_DRAFT.md` (geloescht)
+- `docs/projekt/STATUS.md` (Aktiver-Upgrade-Plan-Zeile)
+- `docs/projekt/CHANGELOG.md` (dieser Eintrag)
+
+**Folge-Arbeit (nicht dieser Commit):**
+- Promotion-Track B starten: Schema v3.10.3 + Overlay v1.1 in Generator-Repo-Kern.
+- Phase 21.B (PI 3.5/3.6b/3.8) Planung + Overlay v1.2-Entwurf.
+- Phase 21.C (PI 3.9/3.10) Planung (PI 3.4 deferred an Promotion-Track).
+
+---
+
 ## 2026-04-23 — F0e-AEF Iteration-3 PASS (Overlay v1.1 + Schema v3.10.3 empirisch validiert, P1-Cluster CLOSED)
 
 **Scope:** Empirische Validierung Overlay v1.1 (Phase 19.A P1-Cluster-Haertung) + Schema v3.10.3 (wortanzahl.maximum=180 Gate-enforced) gegen Baseline I1+I2 (n=4, Case `mat-4-3` Trothas Vernichtungsbefehl). Fortsetzung nach 2026-04-21 MIXED-Befund.

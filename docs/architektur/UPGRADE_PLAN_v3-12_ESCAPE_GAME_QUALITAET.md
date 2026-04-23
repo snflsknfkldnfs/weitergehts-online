@@ -941,3 +941,184 @@ v1.4 Delta = 4 Items: PI-DISPATCH-1, PI-DISPATCH-2, PI-DISPATCH-3, PI-FELDEVIDEN
 ---
 
 **Status:** v1.4, 2026-04-20. Pilot-Re-Gating aktiviert. Dispatch-Architektur + Feld-Evidenz parallel priorisiert.
+
+---
+
+## 21. v1.5 Delta — F0e-AEF Material-Subagent-Haertung (2026-04-23)
+
+### 21.1 Problem-Kontext
+
+F0e-AEF-Spike (Agent-Expertise-Forming) hat am Fallstudien-Material `mat-4-3` (Trothas Vernichtungsbefehl 1904, Mappe 4 Kolonialismus) den Shadow-Overlay + zweistufiges Schema-Gate-Mechanismus validiert. Paul-Review der 4 Generierungs-Runs (I1 + I2 n=3) identifizierte 8 wiederkehrende Qualitaets-Defizite, deren Strukturanalyse ergab: ueberwiegend **Enforcement-Luecken** zwischen bestehenden authoritative Regeln (ENUM_TRIGGER_FLAGS, Phase 2.1c `ueberleitungen.json`, SUB_AUFGABE_QUELLENKRITIK W-Fragen-Schema) und dem Material-Subagent-Overlay v1.0.
+
+**Spike-Artefakte:**
+- `docs/projekt/f0e-agent-expertise/F0e_VERGLEICHS_REVIEW.md` (Paul-Sign-Off 2026-04-21)
+- `docs/projekt/f0e-agent-expertise/F0e_PI_AUDIT_REPORT.md` (architect-review, 2026-04-23)
+- `docs/projekt/f0e-agent-expertise/F0e_PI_AUDIT_DECISIONS.md` (Paul-Entscheidungen, 2026-04-23)
+- `docs/projekt/f0e-agent-expertise/F0e_PI_ITEMS_FINAL.md` (finalisierte PI-Liste)
+- `docs/projekt/f0e-agent-expertise/runs/iteration-3/BEFUND_I3.md` (I3 PASS, 2026-04-23)
+
+### 21.2 Strukturursachen (5, aus Paul-Feedback + Audit-Revision)
+
+1. **Lerngruppen-Profil fehlt im Dispatcher-Priming.** Subagent kennt Jahrgangsstufe/Schulart/DaZ-Anteil nicht explizit. → Kategorie C (neue Regel). PI 3.5.
+
+2. **Material vs. Aufgaben-Phasen-Trennung nicht durchgesetzt.** Phase 2.1c (`ueberleitungen.json`) + `SUB_AUFGABE_QUELLENKRITIK` existieren. Overlay v1.0 verweist nicht darauf, Material-Subagent erzeugt "Denk nach:"-Bloecke und Fragestellungen im `inhalt`. → Kategorie A (Enforcement). PI 3.6a + 3.6b.
+
+3. **SSOT-Quellenangabe nicht durchgesetzt.** Feld `quelle` ist SSOT laut Schema, aber `inhalt` enthaelt Duplikate/Fussnoten. → Kategorie A + C. PI 3.7.
+
+4. **Wortanzahl-Obergrenze fehlt kalibriert.** Runs variierten zwischen 98 und 268 Woertern. → Kategorie C. PI 3.2.
+
+5. **Nachweis-Dramaturgie + Titel-Funktion nicht spezifiziert.** Meta-Bewertung in Einleitungs-Prosa, inhaltsleere Titel-Formulierung. → Kategorie C. PI 3.9 + 3.10.
+
+Zusaetzliche abgeleitete Regeln: D6-Typ-Haertung (Array vs. String) PI 3.1, Sprachliche Vorentlastung via Priming PI 3.8, ENUM_TRIGGER_FLAGS-Compliance PI 3.4.
+
+### 21.3 PI-Items (Referenz)
+
+Vollstaendige Spezifikation: `docs/projekt/f0e-agent-expertise/F0e_PI_ITEMS_FINAL.md`.
+
+| ID | Titel | Kategorie | Prio | I3-Status |
+|---|---|---|---|---|
+| 3.1 | PI-SCHEMA-STRICT-01 (+D6) | A+E | P1 | **VERIFIED** |
+| 3.2 | PI-CONTENT-LENGTH-01 | C | P1 | **VERIFIED** |
+| 3.4 | PI-TRIGGERFLAG-ENUM-01 | A | P3 (deferred) | offen |
+| 3.5 | PI-ZIELGRUPPE-PROFIL-01 | C | P2 | offen |
+| 3.6a | PI-INHALT-PROSA-ONLY-01 | A | P1 | **VERIFIED** |
+| 3.6b | PI-DATENFLUSS-IMPULSE-AUFGABE-01 | B | P2 | offen |
+| 3.7 | PI-QUELLE-SSOT-01 | A+C | P1 | **VERIFIED** |
+| 3.8 | PI-SPRACHLICHE_VORENTLASTUNG-01 | C | P2 | offen |
+| 3.9 | PI-NACHWEIS-DRAMATURGIE-01 | C | P3 | offen |
+| 3.10 | PI-META-BEZEICHNUNG-01 | C | P3 | offen |
+
+Gestrichen: 3.3 PI-MULTIPERSPEKTIVE-INHALT-01 (redundant mit MATERIAL-PERSPEKTIV-01 im Overlay).
+
+### 21.4 Neue Q-Gates
+
+Zusaetzlich zu M1-M15 aus `QUALITAETSKRITERIEN_MATERIALPRODUKTION.md`:
+
+- **M16 Prosa-Only:** `quellentext.inhalt` enthaelt keine "Denk nach:", keine isolierten Fragestellungen, keine Aufgaben-Operatoren (Heuristik-Regex). Owner: PI 3.6a. **I3-Status:** 4/4 PASS.
+- **M17 Quelle-SSOT:** Keine Quellenangabe-Duplikate im `inhalt`-Feld (Regex mit `<p>`-Scope, `<blockquote>`-Attributionen ausgenommen). Owner: PI 3.7. **I3-Status:** 4/4 PASS.
+- **M18 Sprachliche Vorentlastung:** weich. Priming-Compliance-Check im Material-Subagent-Output (keine Glossar-Bloecke, Prosa-Fluss mit Appositionen). Owner: PI 3.8. Aktivierung in Phase 21.B.
+
+### 21.5 Umsetzungs-Phasen
+
+**Phase 21.A (P1, Overlay v1.1 + Schema-Gate-Promotion) — DONE 2026-04-23:**
+- PI 3.1 Schema-Gate-Promotion (Pinned SHA + D6-Typ-Haertung) — verified via I3 (Partial-Schema `type:array` minItems=2).
+- PI 3.2 Cap-Staffelung + Priming-Direktive — verified via I3 (Schema `maximum:180`, 4/4 ≤ 118 W).
+- PI 3.6a Prosa-Only-Regel mit Phase-2.1c-Verweis — verified via I3 (Overlay §4, 4/4 konform).
+- PI 3.7 Quelle-SSOT-Regel mit `<p>`-Scope — verified via I3 (Overlay §5, 4/4 `cite`=Attribution).
+- Deliverable: Overlay v1.1 + Schema v3.10.3 Full+Partial + Validator mit PINNED_SCHEMA_HASH `f08df7ee…` produktiv.
+- Commit-Kette: `9fcc919` Overlay v1.1, `692e051` I3 PASS Empirie, `9d94ca8` STATUS/CHANGELOG-Pflege.
+
+**Phase 21.B (P2, Datenfluss-Vertraege + Zielgruppe) — offen:**
+- PI 3.5 Zielgruppen-Profil-Priming.
+- PI 3.6b `VERTRAG_PHASE_2-2b` + `SUB_AUFGABE_QUELLENKRITIK` + `SUB_MATERIAL_QUELLENTEXT` Vertrags-Update.
+- PI 3.8 Sprachliche Vorentlastung (Priming, M18-Aktivierung).
+- Deliverable: Vertrags-Revision + Overlay-Ergaenzung v1.2 + I4-Validierung (n=4, `mat-4-3` + ggf. Case-Erweiterung).
+
+**Phase 21.C (P3, Enum-Enforcement + Stil-Regeln) — offen, PI 3.4 gekoppelt an Promotion-Track:**
+- PI 3.4 ENUM_TRIGGER_FLAGS als separate Datei + Schema-Gate-Enforcement (deferred an Generator-Repo-Promotion).
+- PI 3.9 Nachweis-Dramaturgie.
+- PI 3.10 Meta-Bezeichnung + Positiv-Beispiel-Bibliothek.
+- Deliverable: Enum-SSOT-Datei + Overlay-Ergaenzung.
+
+### 21.6 Betroffene Artefakte
+
+| Datei | Phase | Aenderungs-Typ |
+|---|---|---|
+| `docs/projekt/f0e-agent-expertise/gate-prototype/schemas/material_quellentext_v3.10.3.json` (Full+Partial) | 21.A (DONE) | Neu, pinned SHA |
+| `docs/projekt/f0e-agent-expertise/gate-prototype/overlays/PROMPT_HARDENING_QUELLENTEXT_v1-1.md` | 21.A (DONE) | Neu, loest v1.0 ab |
+| `docs/projekt/f0e-agent-expertise/gate-prototype/scripts/validate_material_output.py` | 21.A (DONE) | PIN-Update |
+| `docs/agents/SUB_MATERIAL_QUELLENTEXT.md` (Generator-Repo v3.10.4) | Promotion-Track | Regel-Ergaenzungen v3.11.0 |
+| `docs/agents/SUB_AUFGABE_QUELLENKRITIK.md` | 21.B | Auswahl-Heuristik + Trigger-Priming |
+| `docs/architektur/vertraege/VERTRAG_PHASE_2-2b_AUFGABE.md` | 21.B | Eingabe-Definition erweitern |
+| `docs/checklisten/QUALITAETSKRITERIEN_MATERIALPRODUKTION.md` | 21.A/B/C | M16 (DONE) / M17 (DONE) / M18 (21.B) hinzufuegen |
+| `docs/agents/ENUM_TRIGGER_FLAGS.md` (neu, Generator-Repo) | 21.C | SSOT-Datei ausgliedern |
+
+### 21.7 Akzeptanzkriterien
+
+Phase 21.A (I3) — ALLE ERFUELLT:
+- Schema-Pass-Rate 4/4 = 100 % (Baseline 3/4).
+- D6-Inzidenz 0/4 (Baseline 1/4).
+- Wortanzahl-Cap ≤ 180 4/4 (Max 118, Varianz Max/Min 1.09 vs. Baseline 2.74).
+- Didaktik-Mittel 4.55 (Baseline 4.15), Didaktik-Min 4.2 (Baseline 3.8).
+- Patch-Zyklen 0. Overlay-Compliance D1-D5 4/4.
+
+Phase 21.B (kuenftig): M18 aktiv, I4 n=4 gegen P2-Cluster mit Didaktik-Mittel ≥ 4.2, Zielgruppen-Profil sichtbar im Output.
+
+Phase 21.C (kuenftig): ENUM_TRIGGER_FLAGS-Compliance 100 % in Re-Run, Nachweis-Dramaturgie + Meta-Bezeichnung in Paul-Review ≥ 4.0.
+
+### 21.8 Abhaengigkeiten und Reihenfolge
+
+**Vorbedingung Phase 21.A:** Schema-Prototyp + Gate-Chain (Commit `2636120`), Overlay v1.0-Shadow (Commit `dc1a91a`).
+**Durchgefuehrt:** Phase 21.A = DONE via I3-PASS (Commit-Kette bis `9d94ca8`).
+**Kopplung Phase 21.C PI 3.4:** Promotion-Track Schema v3.10.3 + Overlay v1.1 in `snflsknfkldnfs/escape-game-generator` Kern (separater Track, nicht F0e-Scope). ENUM_TRIGGER_FLAGS-Ausgliederung ist Teil dieses Promotion-Tracks.
+**Optional synergetisch:** v3.6 AGENT_DIFFERENZIERUNG uebernimmt langfristig `erklaerungen[]` und `aufgabenstellung_daz` (PI 3.8 Langfrist-Pfad).
+
+### 21.9 Risiken
+
+- **R-§21-1 Overlay-Drift bei erweiterten Cases:** I3 nur gegen `mat-4-3` validiert. Andere Cases (mat-3-2, mat-5-1, karte, bildquelle) nicht getestet. Mitigation: Phase 21.B I4-Validierung mit Case-Erweiterung, oder separater Case-Generalisierungs-Track.
+- **R-§21-2 Schema-Gate-Drift:** Pinned SHA `f08df7ee…` muss gegen Stille-Updates abgesichert werden. Mitigation: SHA-Hash in `PROVENANCE.md` eingecheckt, Validator enforcet PIN.
+- **R-§21-3 Cap 180W-Restriktion:** kann bei komplexen Quellen zu Kontextverlust fuehren. Mitigation: Overlay v1.1 §2 gestaffelt 120/150/180 mit Begruendungs-Pflicht, I3 zeigt 4/4 ≤ 118 W ohne Qualitaets-Verlust.
+- **R-§21-4 Enum-Promotion-Coupling:** ENUM_TRIGGER_FLAGS-Ausgliederung betrifft 7 Subagent-Specs. Mitigation: Single-Commit im Promotion-Track, alle Dateien gleichzeitig.
+- **R-§21-5 Regression Bestands-Mappen:** M16/M17 koennten Bestands-Materialien retrogressiv invalidieren. Mitigation: Warn-Gate statt Fail-Gate in der ersten 2 Wochen nach Promotion, gefolgt von Fix-Wave.
+
+### 21.10 Out-of-Scope
+
+- **AGENT_UEBERLEITUNG** (F-A5 Szenario B): optional fuer v4.1.
+- **v3.6 AGENT_DIFFERENZIERUNG**: langfristig, nicht F0e-PI.
+- **F-A2 offene Fragen** (Schweregrad-Mapping / Alternative-Material-Katalog / Over-Flagging-Schwelle): separater Task.
+- **Weitere Material-Typen** (bildquelle, darstellungstext, karte, zeitleiste, statistik, tagebuch): F0e-PI fokussiert auf quellentext. Uebertragung nach Phase 21.A-Promotion (Promotion-Track B-Scope).
+- **Case-Generalisierung**: Nur `mat-4-3` getestet in I3. Andere Cases offen fuer separates Replikat.
+
+### 21.11 Referenzen
+
+- `docs/projekt/f0e-agent-expertise/F0e_VERGLEICHS_REVIEW.md`
+- `docs/projekt/f0e-agent-expertise/F0e_PI_AUDIT_REPORT.md`
+- `docs/projekt/f0e-agent-expertise/F0e_PI_AUDIT_DECISIONS.md`
+- `docs/projekt/f0e-agent-expertise/F0e_PI_IMPULSE_OWNERSHIP_IMPL_CHECK.md`
+- `docs/projekt/f0e-agent-expertise/F0e_FA2_TRIGGER_FLAGS_KONSUMENTEN_SCAN.md`
+- `docs/projekt/f0e-agent-expertise/F0e_FA5_MAPPEN_NARRATIV_LUECKEN_CHECK.md`
+- `docs/projekt/f0e-agent-expertise/F0e_PI_ITEMS_FINAL.md`
+- `docs/projekt/f0e-agent-expertise/gate-prototype/overlays/PROMPT_HARDENING_QUELLENTEXT_v1-1.md`
+- `docs/projekt/f0e-agent-expertise/gate-prototype/schemas/material_quellentext_v3.10.3.json` + Partial + `PROVENANCE.md`
+- `docs/projekt/f0e-agent-expertise/runs/iteration-3/BEFUND_I3.md` v1.0 (I3-PASS-Dokumentation)
+
+### 21.12 I3-PASS-Status (2026-04-23)
+
+**Entscheid:** Phase 21.A **DONE**. Overlay v1.1 + Schema v3.10.3 empirisch validiert (n=4, `mat-4-3`), §19.7-Akzeptanzkriterien der Iteration-3 vollstaendig erfuellt (Kreuzref: `runs/iteration-3/BEFUND_I3.md` v1.0).
+
+**Metriken-Matrix (Baseline I1+I2 → I3):**
+
+| Metrik | Baseline (n=4) | I3 (n=4) | Delta |
+|---|---|---|---|
+| Schema-Pass-Rate | 3/4 = 75 % | 4/4 = 100 % | +25 Pp |
+| D6-Inzidenz | 1/4 = 25 % | 0/4 | −25 Pp |
+| Wortanzahl-Max (W) | 268 | 118 | −56 % |
+| Wortanzahl-Varianz (Max/Min) | 2.74 | 1.09 | −60 % |
+| Didaktik-Mittel | 4.15 | 4.55 | +0.40 |
+| Didaktik-Minimum | 3.8 | 4.2 | +0.40 |
+| Patch-Zyklen | 0 | 0 | — |
+
+**P1-Cluster CLOSED:** PI 3.1 / 3.2 / 3.6a / 3.7 empirisch verifiziert. M16 + M17 4/4 PASS.
+
+**Commit-Kette Phase 21.A:**
+- `2636120` Vor-Arbeit Gate-Prototyp + Plan + Fixtur.
+- `dc1a91a` Iteration-1 PASS Shadow-Overlay + Gate-Chain.
+- `8e51a8b` + `979c0c2` Iteration-2 BEFUND MIXED + Audit + PI-Items final.
+- `9fcc919` Overlay v1.1 Phase 21.A P1-Cluster-Haertung.
+- `692e051` I3 PASS Empirie (4/4, Schema v3.10.3 + Overlay v1.1).
+- `9d94ca8` STATUS/CHANGELOG-Pflege-Commit.
+
+**Naechste Schritte:**
+- **Promotion-Track B** (separat, nicht F0e): Schema v3.10.3 + Overlay v1.1 in `snflsknfkldnfs/escape-game-generator` Kern uebernehmen. Voraussetzungen: v3.10.2 als Lese-Schema behalten, `AGENT_MATERIAL.md` Phase 2.1 um zweistufiges Gate-Pattern erweitern, Rueckwaerts-Test Alt-Materialien.
+- **Phase 21.B** (P2, offen): PI 3.5/3.6b/3.8, Overlay v1.2, I4-Validierung.
+- **Phase 21.C** (P3, offen, PI 3.4 gekoppelt an Promotion-Track): Nachweis-Dramaturgie + Meta-Bezeichnung.
+
+### 21.13 Total-Plan-Impact-Count
+
+**v1.5 Delta = 10 neue PI-Items** (3.1, 3.2, 3.4, 3.5, 3.6a, 3.6b, 3.7, 3.8, 3.9, 3.10) + 3 neue Q-Gates (M16, M17, M18). 3.3 gestrichen.
+
+Aggregat: **44 Plan-Impact-Items** total (17 R0-FINAL+ + 13 v1.3 Delta + 4 v1.4 Delta + 10 v1.5 Delta).
+
+---
+
+**Status:** v1.5, 2026-04-23. §21 F0e-AEF Integration eingefuegt, Phase 21.A DONE via I3-PASS. Phase 21.B/21.C + Promotion-Track B offen.
