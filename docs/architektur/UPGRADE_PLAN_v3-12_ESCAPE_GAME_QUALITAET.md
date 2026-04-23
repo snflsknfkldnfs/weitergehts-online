@@ -1604,4 +1604,62 @@ Nach Track-C10-Abschluss: eigener Track D mit ~3-5 Tagen Aufwand. Aufgaben:
 
 ---
 
-**Status:** v1.6, 2026-04-23 (Update 2026-04-23 nach §22.13-22.15 Nachtrag). §22 Review-Agent-Architektur + Parallel-Dispatch + Subagent-System-Integration + Plugin-Bereit-Design. Track C0 PM-Verankerung DONE inkl. Nachtrag. Tracks C1-C10 geplant mit nativer Subagent-System-Implementation. Track D Plugin-Packaging post-C10. Kritischer Pfad C0-C3: 8-10 Tage.
+### 22.16 Dev-Workflow via Host-CLI + osascript-MCP (empirisch bestaetigt 2026-04-23)
+
+**Verifikations-Test-Ergebnis:**
+
+Zwei Mini-Tests durchgefuehrt via `mcp__Control_your_Mac__osascript`:
+
+| Test | Aufruf | Ergebnis |
+|---|---|---|
+| T1 Plugin-Load + Auth | `claude --plugin-dir /tmp/test-plugin-host --print "Was ist 2+2?"` | **PASS** — Output "4", CLI authentifiziert via Claude Max Subscription, Plugin-Load fehlerfrei |
+| T2 Plugin-Subagent-Dispatch | `claude --plugin-dir ... --print "Use the test-agent from the host-plugin-test plugin"` | **PASS** — Rueckgabe "HOST_AGENT_MARKER" exakt wie in Agent-Spec definiert |
+
+**Bestaetigt funktionierend:**
+- Host-`claude`-CLI ist authentifiziert via Claude Max Subscription (kein API-Key noetig).
+- `--plugin-dir`-Flag akzeptiert Plugin-Ordner.
+- Plugin-native Features (Skill-Load, Subagent-Dispatch mit Tool-Scoping + Model-Scoping + eigenen Context-Window) funktionieren.
+- Transport via `mcp__Control_your_Mac__osascript` — analog zum etablierten Git-Workflow (`GIT_WORKFLOW_HOST_MCP.md`).
+
+**Konsequenz:** Plugin-Dev im Gen-Repo ist **komplett in Cowork-Session durchfuehrbar**, ohne Host-Terminal-Wechsel, ohne API-Key-Setup, ohne Cowork-Session-Auth-Konfiguration. Transport via bereits etabliertes osascript-Muster.
+
+**Downsides + Mitigations:**
+
+| # | Downside | Mitigation |
+|---|---|---|
+| 1 | osascript blockierend waehrend CLI-Run | Kurze Test-Runs fuer Dev. Lange Runs in separatem Host-Terminal ausserhalb Cowork. |
+| 2 | osascript-stdout-Truncation bei grossem Output | Output in File schreiben: `claude --print ... > /tmp/output.json`, dann `cat /tmp/output.json` |
+| 3 | Kein Hot-Reload zwischen CLI-Calls | Entspricht `--print`-Semantik. Nicht blockend. |
+| 4 | Claude Max 5h-Rate-Limits | Mix Opus (fuer kritische Tests) + Sonnet (fuer Volume-Iteration) |
+| 5 | Host-Filesystem-Zugriff durch Plugin-Code | Paul's eigener Plugin-Code, normale Dev-Disziplin |
+| 6 | Non-interactive `--print` (Permission-Prompts haengen) | `--permission-mode bypassPermissions` fuer Dev. Nie in Produktion. |
+| 7 | Dev-Iteration-Overhead ~3-5s Startup | Akzeptabel, Bash-CLI-Natur |
+| 8 | Host-vs-Sandbox-Pfad-Divergenz | Plugin im Gen-Repo (`/Users/paulad/escape-game-generator/`) ist Host-sichtbar + Sandbox-gemountet. Dispatch-Prompts nutzen Host-Pfade. |
+
+**Kein blockierender Downside.** Alle betrieblichen Herausforderungen mit dokumentierten Mitigations.
+
+**Oekonomische Wirkung:**
+Host-CLI via osascript nutzt **Claude Max Subscription-Kontingent** — kein zusaetzlicher API-Pay-per-use-Cost. Oekonomisch optimal fuer Plugin-Dev-Iteration.
+
+**Hybrid-Dev-Workflow fuer Tracks C1-C10:**
+
+| Phase | Anteil | Dev-Modus |
+|---|---|---|
+| Spec-Arbeit (Agent-Files, Skills, Hooks schreiben) | ~80 % | Cowork-Session direkt (File-Edit-Tools) |
+| Plugin-native Feature-Tests (Skill-Load, Subagent-Dispatch, Hook-Execution) | ~15 % | Host-CLI via osascript-MCP |
+| Long-Running Integration-Tests (Multi-Material-Batch) | ~5 % | Host-Terminal direkt (ausserhalb Cowork-Session) |
+
+**Produktion unveraendert:** Plugin wird via Cowork-Plugin-Install-Mechanismus an End-User verteilt. End-User brauchen weder Host-CLI noch API-Key. Paul's Self-Sustaining-in-Cowork-Vision bleibt intakt.
+
+**Plugin-Skelett-Strategie:**
+Gen-Repo (`escape-game-generator`) wird direkt zum Plugin via `.claude-plugin/plugin.json` im Root. Bestehende `agents/` + `tools/` + `architektur/schemata/` bleiben an Ort und Stelle; Plugin-Manifest registriert sie. Kein separater Plugin-Sub-Ordner noetig.
+
+**Impact auf Track-C-Implementation:**
+
+- Track C1 Subagent-Files in `.claude/agents/` (Project-level) oder `agents/` (Plugin-root). Plugin-Format-Entscheidung: **Plugin-root**, da Gen-Repo selbst das Plugin wird.
+- Track C1 Test-Dispatch: Cowork-Task-Tool-Pattern fuer schnelle Iteration (~80 %) + Host-CLI via osascript fuer Plugin-native Verifikation (~15 %).
+- Track D (Plugin-Packaging) reduziert zu **Plugin-Publikation-Track** post-C10 (Marketplace-Entry, Versionierung, Onboarding-Doku).
+
+---
+
+**Status:** v1.6, 2026-04-23 (Update 2026-04-23 nach §22.13-22.16 Nachtraegen). §22 Review-Agent-Architektur + Parallel-Dispatch + Subagent-System-Integration + Plugin-Bereit-Design + Dev-Workflow-Verifikation (Host-CLI via osascript). Track C0 PM-Verankerung DONE inkl. alle Nachtraege. Tracks C1-C10 geplant mit Hybrid-Dev-Workflow + Plugin-nativer Implementation (Gen-Repo wird Plugin). Track D Plugin-Publikation post-C10. Kritischer Pfad C0-C3: 8-10 Tage.

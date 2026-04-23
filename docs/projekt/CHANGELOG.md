@@ -4,6 +4,49 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-23 — UPGRADE_PLAN v1.6 Nachtrag §22.16: Dev-Workflow Host-CLI via osascript-MCP empirisch verifiziert
+
+**Scope:** Neuer Unterabschnitt §22.16 in §22 v1.6 Delta. Dokumentiert empirisch verifizierten Dev-Workflow: Plugin-Dev komplett in Cowork-Session via osascript-MCP-Transport zum Host-`claude`-CLI.
+
+**Verifikations-Tests (2 Mini-Tests im Anschluss an Paul's F2-Korrektur):**
+
+T1 Plugin-Load + Auth: `claude --plugin-dir /tmp/test-plugin-host --print "Was ist 2+2?"` → **PASS** (Output "4", CLI via Claude Max Subscription authentifiziert, Plugin-Load fehlerfrei).
+
+T2 Plugin-Subagent-Dispatch: `claude --plugin-dir ... --print "Use the test-agent..."` → **PASS** (Rueckgabe exakt "HOST_AGENT_MARKER", Agent-Spec mit Tool-Scoping + Model-Scoping + eigenem Context-Window funktioniert).
+
+**Kernbefund:**
+- Host-`claude`-CLI authentifiziert via Claude Max Subscription (**kein API-Key noetig**, kein Pay-per-use).
+- osascript-Transport analog zum etablierten Git-Workflow (`GIT_WORKFLOW_HOST_MCP.md`).
+- Plugin-native Features (Skill-Load, Subagent-Dispatch) funktionieren komplett.
+- Paul's "Self-Sustaining-in-Cowork"-Vision bleibt intakt — End-User brauchen weder Host-CLI noch API-Key, Plugin geht via Cowork-Plugin-Install.
+
+**Hybrid-Dev-Workflow fuer Tracks C1-C10:**
+- Spec-Arbeit (~80 %): Cowork-Session direkt (File-Edit).
+- Plugin-native Feature-Tests (~15 %): Host-CLI via osascript-MCP.
+- Long-Running Integration-Tests (~5 %): Host-Terminal direkt.
+
+**8 Downsides dokumentiert mit Mitigations** (blockierend: keiner). Wichtigste:
+- osascript blockierend bei langen Runs → separates Host-Terminal fuer Multi-Material-Batch.
+- osascript-stdout-Truncation bei grossem Output → Output-in-File-Pattern.
+- Claude Max Rate-Limits → Opus/Sonnet-Mix.
+
+**Oekonomische Wirkung:** Nutzung Claude Max Subscription-Kontingent statt API-Abrechnung.
+
+**Plugin-Skelett-Strategie:**
+Gen-Repo (`escape-game-generator`) wird direkt zum Plugin via `.claude-plugin/plugin.json` im Root. Bestehende `agents/` + `tools/` + `architektur/schemata/` bleiben unberuehrt, werden per Plugin-Manifest registriert. Kein separater Plugin-Sub-Ordner noetig.
+
+**Impact auf Track-C:**
+- Track D (Plugin-Packaging) reduziert zu **Plugin-Publikation-Track** post-C10 (Marketplace-Entry, Versionierung, Onboarding-Doku).
+- Track C1 ab Tag 1 im Plugin-Format.
+- Dev-Test-Pattern dual: Cowork-Task-Tool (Geschwindigkeit) + Host-CLI-osascript (Plugin-Nativitaet).
+
+**Commit-Umfang:**
+- `docs/architektur/UPGRADE_PLAN_v3-12_ESCAPE_GAME_QUALITAET.md` (§22.16 eingefuegt, Status-Zeile aktualisiert).
+- `docs/projekt/CHANGELOG.md` (dieser Eintrag).
+- Gen-Repo (separater Commit): Spike-Plan-Update mit Dev-Workflow + cleanup Test-Plugins.
+
+---
+
 ## 2026-04-23 — UPGRADE_PLAN v1.6 Nachtrag §22.13-22.15: Claude-Code-Subagent-System + Memory-Deaktivierung + Plugin-Tier-Architektur
 
 **Scope:** Drei neue Unterabschnitte in §22 v1.6 Delta nach Evaluierung Claude-Code-Subagent-System-Dokumentation + Paul-Entscheidungen zu Memory + Plugin-Skalierbarkeit.
