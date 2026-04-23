@@ -1122,3 +1122,385 @@ Aggregat: **44 Plan-Impact-Items** total (17 R0-FINAL+ + 13 v1.3 Delta + 4 v1.4 
 ---
 
 **Status:** v1.5, 2026-04-23. §21 F0e-AEF Integration eingefuegt, Phase 21.A DONE via I3-PASS. Phase 21.B/21.C + Promotion-Track B offen.
+
+---
+
+## 22. v1.6 Delta — Review-Agent-Architektur + Parallel-Dispatch-Infrastruktur (2026-04-23)
+
+### 22.1 Problem-Kontext + Motivation
+
+**Empirischer Ausloeser:** Nach Promotion-Track B FF-Merge (Gen-Repo `9b24b39`) wurde ein Pipeline-Aktivierungs-Smoke mit v3.11.0 quellentext durchgefuehrt (Task-Tool-Dispatch, Case `mat-4-3`). Akzeptanzmatrix 6/6 hart PASS: Partial-Gate + Full-Gate + Schema-PIN + Didaktik-Mittel 4.6. Paul-Review des generierten Outputs identifizierte **zwei strukturelle Defekt-Klassen, die Schema-Gates nicht gefunden haben**:
+
+1. **Sequenz-Kohaerenz-Verletzung:** Einleitungssatz referenziert "Schlacht am Waterberg" — historisch korrekt, aber NICHT im "Vorausgesetzten Wissen" des Sequenzkontexts. Verletzt bestehende Stilregel SQ-1/SQ-2 (seit v3.3 dokumentiert, Self-Check enforcet nicht).
+2. **Fakten-Fehler:** "Befehl an die Herero" — der Vernichtungsbefehl war formal an die deutsche Schutztruppe adressiert, die Herero waren Objekt. Grammatikalische Fehlinterpretation der Proklamations-Struktur unter didaktischem Vereinfachungs-Druck.
+
+**Strukturelle Ursache:** Schema-Gates (G1/G2) sind deterministisch fuer strukturelle Regel-Verletzungen, **nicht** fuer semantische/didaktische Defekte. Subagent-Self-Check hat Confirmation-Bias (F0d-Evidenz: 0/6 Compliance trotz self-PASS).
+
+**Loesungs-Ansatz:** Externalisierte Q-Gate-Pruefung via separater Review-Agent-Dispatch (PI-DISPATCH-2 aus §20 v1.4 Delta, jetzt konkretisiert mit Revisor-Modus und Parallel-Dispatch-Infrastruktur).
+
+### 22.2 Architektur — Komponenten-Uebersicht
+
+**Phasen-Diagramm (erweitert):**
+
+```
+Phase 2.0  Rahmen-Dateien (hefteintrag.json, einstieg.json, sicherung.json)
+Phase 2.0b NEU Sequenzkontext-Pre-Computation (tools/compute_sequenzkontext.py)
+           - Pro Material: sequenzkontext_{mat-id}.json mit
+             - "Vorausgesetztes Wissen" (Union Vorgaenger fachbegriffe_eingefuehrt)
+             - "Noch nicht eingefuehrt" (Union Nachfolger fachbegriffe_eingefuehrt)
+             - dispatch-ready BEVOR Parallel-Dispatch startet
+Phase 2.1  SUB_MATERIAL_<TYP> Dispatch (parallel oder sequentiell)
+           Pre-Flight-Check: existiert material.json + review_v*.json(FAIL)?
+             JA → Revisor-Modus (liest Vorlage + Review-Bericht, korrigiert gezielt)
+             NEIN → Generator-Modus
+Phase 2.1.G1  Partial-Gate (Python, deterministisch, 0 Token)
+Phase 2.1.M   Dispatcher-Merge (mechanisch)
+Phase 2.1.G2  Full-Gate (Python, deterministisch, 0 Token)
+Phase 2.1.M16 Regex Prosa-Only (Python, deterministisch, 0 Token)
+Phase 2.1.M17 Regex Quelle-SSOT (Python, deterministisch, 0 Token)
+Phase 2.1.G3  NEU REVIEWER_MATERIAL_<TYP> Dispatch (LLM, semantisch)
+           - Input: merged.json + sequenzkontext-Auszug + Q-Gate-Set + Spec-Auszuege
+           - Output: strukturierter Review-JSON mit Findings
+           - Persistiert: {mat-id}/review_v{N}.json
+FAIL-Loop   → zurueck zu Phase 2.1 Revisor-Modus (max 1 Revisions-Iteration)
+PASS        → Material persistiert in {mat-id}/material.json
+Phase 2.1c  Cross-Material-Konsistenz (unveraendert)
+Phase 2.2-3 unveraendert
+```
+
+**Komponenten:**
+
+| Komponente | Typ | Neu/Bestehend |
+|---|---|---|
+| `tools/compute_sequenzkontext.py` | Python-Tool | **neu** |
+| `tools/validate_material_output.py` | Python-Tool (Schema-Gate) | bestehend (Track B1) |
+| `tools/check_prosa_only.py` (M16-Regex) | Python-Tool | **neu** |
+| `tools/check_quelle_ssot.py` (M17-Regex) | Python-Tool | **neu** |
+| `agents/REVIEWER_MATERIAL_BASE.md` | Agent-Spec | **neu** |
+| `agents/REVIEWER_MATERIAL_<TYP>.md` × 7 | Agent-Spec pro Material-Typ | **neu** |
+| `agents/SUB_MATERIAL_<TYP>.md` | Subagent-Spec | bestehend, Revisor-Modus-Ergaenzung |
+| `agents/AGENT_MATERIAL.md` | Dispatcher-Spec | bestehend, §2.1.G3 + Revisor-Integration neu |
+| Pro-Material-Verzeichnis | File-Struktur | **neu** (Breaking-Change ab v3.11.0) |
+
+### 22.3 Sub-Agent-Modus-Erweiterung (Generator + Revisor)
+
+**Architektur-Entscheidung:** Gleicher Agent-Typ (`SUB_MATERIAL_<TYP>`), Modus-Bestimmung via **Pre-Flight-File-Check** (nicht via Dispatch-Parameter).
+
+**Pre-Flight-Logik:**
+
+```
+1. Arbeits-Verzeichnis: {game-id}/mappe-{N}/materialien/{mat-id}/
+2. Pruefe:
+   - material.json vorhanden?
+   - review_v*.json vorhanden? Welcher hoechste Index?
+   - Letzter Review-Status?
+3. Entscheidungs-Tabelle:
+
+| material.json | review_v*.json | Letzter Review | Modus |
+|---|---|---|---|
+| nein | — | — | GENERATOR |
+| ja | nein | — | (inkonsistent, Warn) |
+| ja | ja | FAIL | REVISOR |
+| ja | ja | PASS | (bereits fertig, Skip) |
+```
+
+**Revisor-Modus-Pflicht-Lektuere:**
+1. Vorherige material.json (Vorlage).
+2. Hoechster review_v{N}.json (Findings).
+3. sequenzkontext_{mat-id}.json (Kontext).
+4. Eigene Subagent-Spec (inkl. v3.11.0-Ausgabe-Haertung).
+
+**Revisor-Modus-Direktive:**
+- Verstehe **jedes** Finding im Review-Bericht.
+- Korrigiere **PRAEZISE** die Stellen, die im Bericht adressiert sind.
+- Aendere **NICHT** andere Teile des Materials (keine Re-Generierung).
+- Dokumentiere Korrektur-Entscheidungen implizit im Output.
+
+**Modus-Gleichheit:** Q-Gate-Kriterien, Sprachregeln, Schema-Konformitaet identisch. Nur Ausgangspunkt (leeres Template vs. Vorlage + Bericht) unterscheidet sich.
+
+### 22.4 Reviewer-Agent-Spec-Standard
+
+**Architektur: Hybrid-Template-Pattern (BASE + 7 Typ-Specializations).**
+
+**BASE (`REVIEWER_MATERIAL_BASE.md`):**
+- Generic Q-Gates: SQ-1/SQ-2 (Sequenz-Kohaerenz), Q8 (Perspektivitaet), Q10 (Fakten-Plausibilitaet), KONTEXT-DRIFT.
+- Input-Vertrag: merged.json + sequenzkontext-Auszug + Q-Gate-Set + Spec-Auszuege.
+- Output-Vertrag: strukturiertes Review-JSON (siehe unten).
+- **Adversarial-Prompt:** "Finde Schwaechen. Liste jede Kritik, die ein strenger Geschichtslehrer vorbringen kann. Keine PASS-Bestaetigung ohne strenge Pruefung."
+- Model-Default: Opus (Fallback Sonnet), Haiku ausgeschlossen.
+
+**Typ-Specializations:**
+- `REVIEWER_MATERIAL_QUELLENTEXT.md` — BASE + QT-1..QT-6 (Originalnaehe, Dreischritt-Aufbereitung, Rekonstruktions-Vorrangregel v3.10.4).
+- `REVIEWER_MATERIAL_DARSTELLUNGSTEXT.md` — BASE + DT-1..DT-6 (Narrative Kohaerenz, Fachbegriff-Progression).
+- `REVIEWER_MATERIAL_BILDQUELLE.md` — BASE + BQ-1..BQ-6 (3-Funktions-Bildunterschrift, Lizenz, MV2-Hallu-Check).
+- `REVIEWER_MATERIAL_KARTE.md` — BASE + KA-1..KA-6 (Legende, Orientierung, topographische Korrektheit).
+- `REVIEWER_MATERIAL_ZEITLEISTE.md` — BASE + ZL-1..ZL-5 (Leitfrage, Eintragskount ≤ 8).
+- `REVIEWER_MATERIAL_STATISTIK.md` — BASE + ST-1..ST-6 (Diagrammtyp R7, Datenquellen-Nachweis).
+- `REVIEWER_MATERIAL_TAGEBUCH.md` — BASE + TB-1..TB-6 (Figurkonstruktion, historische Plausibilitaet).
+
+**Output-Vertrag (JSON-Schema):**
+
+```json
+{
+  "reviewer_id": "REVIEWER_MATERIAL_QUELLENTEXT_v1.0",
+  "review_iteration": 1,
+  "material_id": "mat-4-3",
+  "reviewed_at": "2026-04-23T14:00:00Z",
+  "overall": "PASS | WARN | FAIL",
+  "gate_results": [
+    {
+      "gate": "SQ-1",
+      "category": "Sequenz-Kohaerenz",
+      "result": "FAIL",
+      "findings": [
+        {
+          "severity": "FAIL | WARN",
+          "location": "inhalt/einleitung/satz-2",
+          "quote": "nach der Schlacht am Waterberg",
+          "description": "Waterberg nicht im Vorausgesetzten Wissen dieser Position (mat-4-3).",
+          "recommendation": "Kontext auf Oktober-1904-Situation ohne Militaer-Detail, z.B. 'waehrend des Herero-Aufstands in Deutsch-Suedwestafrika'."
+        }
+      ]
+    },
+    {
+      "gate": "Q10",
+      "category": "Fakten-Korrektheit",
+      "result": "FAIL",
+      "findings": [
+        {
+          "severity": "FAIL",
+          "location": "inhalt/einleitung/satz-2",
+          "quote": "einen Befehl an die Herero",
+          "description": "Befehl war formal an deutsche Schutztruppe adressiert, Herero waren Objekt. Grammatikalische Fehlinterpretation der Proklamations-Struktur.",
+          "recommendation": "Formulierung: 'erliess er einen Befehl zur Vernichtung der Herero'."
+        }
+      ]
+    }
+  ],
+  "warnings_for_meta": ["Opferzahlen im Fliesstext grenzwertig Ueberwaeltigungsverbot — Lehrkraft-Hinweis empfohlen"],
+  "confidence": 0.92
+}
+```
+
+### 22.5 Dispatcher-Kontrakt-Erweiterung (G3 + Re-Dispatch-Loop)
+
+**AGENT_MATERIAL.md §2.1-Gates wird erweitert:**
+
+```
+Phase 2.1 Dispatch (Generator- oder Revisor-Modus via Pre-Flight)
+  ↓
+Phase 2.1.G1 Partial-Gate (Python-Validator, v3.10.3 Partial)
+  ↓ PASS (bei FAIL: Re-Dispatch an Subagent, max 2×)
+Phase 2.1.M  Dispatcher-Merge
+  ↓
+Phase 2.1.G2 Full-Gate (Python-Validator, v3.10.3 Full)
+  ↓ PASS (bei FAIL: Eskalation User, Dispatcher-Bug-Signal, max 1 Re-Dispatch)
+Phase 2.1.M16 Regex Prosa-Only (Python-Tool)
+  ↓ PASS (bei FAIL: Re-Dispatch, zaehlt zu G1-Budget)
+Phase 2.1.M17 Regex Quelle-SSOT (Python-Tool)
+  ↓ PASS (bei FAIL: idem)
+Phase 2.1.G3 REVIEWER_MATERIAL_<TYP>-Dispatch
+  - Model: Opus (default), Sonnet (fallback)
+  - Input: merged.json + sequenzkontext-Auszug + Q-Gate-Set + Spec-Auszuege
+  - Output: review_v{N}.json strukturiert
+  ↓
+  Auswertung:
+    overall=PASS → Material persistiert in {mat-id}/material.json
+    overall=FAIL → Re-Dispatch an Subagent im Revisor-Modus (max 1 Iteration)
+                   Nach 2. G3-FAIL: Eskalation User
+    overall=WARN → Persistierung mit review_warnings[] in _meta
+```
+
+**Re-Dispatch-Budget (Konsolidiert):**
+
+| Gate | Budget | Grund |
+|---|---|---|
+| G1 Partial | max 2 Re-Dispatch | Schema-Verletzungen korrigierbar, Subagent lernt aus Validator-Report |
+| G2 Full | max 1 Re-Dispatch | Dispatcher-Bug-Signal, nach 1 FAIL Eskalation User |
+| M16/M17 | zaehlen zu G1-Budget | Regex-Verletzungen sind strukturell, mit G1 behandelt |
+| G3 Reviewer | max 1 Revisions-Iteration | Semantische Revisions koennen endlos loopen, Hard-Budget verhindert Perfektions-Spirale |
+
+### 22.6 Q-Gate-Split + Gate-Verzahnung
+
+**Aufteilung Deterministik vs. LLM:**
+
+| Gate | Executor | Typ | Kosten |
+|---|---|---|---|
+| G1 Partial-Schema | Python-Validator | deterministisch | 0 Token, <1s |
+| G2 Full-Schema | Python-Validator | deterministisch | 0 Token, <1s |
+| M16 Prosa-Only | Python-Regex | deterministisch | 0 Token, <0.1s |
+| M17 Quelle-SSOT | Python-Regex | deterministisch | 0 Token, <0.1s |
+| G3 SQ-1 Sequenz-Kohaerenz | LLM-Reviewer | semantisch | ~25k Tokens |
+| G3 SQ-2 Nicht-eingefuehrte Begriffe | LLM-Reviewer | semantisch | idem |
+| G3 Q8 Perspektivitaet | LLM-Reviewer | semantisch | idem |
+| G3 Q10 Fakten-Korrektheit | LLM-Reviewer | semantisch | idem |
+| G3 KONTEXT-DRIFT (neu) | LLM-Reviewer | semantisch | idem |
+| G3 Typ-spezifisch QT-/DT-/BQ-/... | LLM-Reviewer | semantisch | idem |
+
+**Reihenfolge-Begruendung (G1/G2/M16/M17 → G3):**
+- Deterministische Gates sind 0-Token, 0-Latenz — keine Einsparung bei Reihenfolge-Umkehr.
+- Schema-FAIL macht semantisches Review unsinnig (struktur-kaputter Input → unbrauchbare Findings).
+- Fehler-Klassen-Trennung: strukturell (G1/G2/M16/M17) vs. semantisch (G3) mit unterschiedlichen Handler-Pfaden.
+
+**Material-Status:** Material ist **nicht endgueltig** bis G3 PASS. G1-M17 sind **notwendig**, G3 ist **hinreichend**. Persistierung in `material.json` erst nach G3 PASS.
+
+### 22.7 Phase 2.0b Sequenzkontext-Pre-Computation (NEU — Parallel-Dispatch-Voraussetzung)
+
+**Problem:** Parallel-Dispatch von N Material-Subagenten bricht Sequenz-Kohaerenz, weil jeder Subagent die Outputs der Vorgaenger noch nicht kennt.
+
+**Loesung:** Dispatcher pre-computiert vor Parallel-Dispatch den vollstaendigen Sequenzkontext-Block pro Material aus bereits verfuegbaren Quellen:
+- Sequenzplan §1.9 mit `fachbegriffe_eingefuehrt` + `fachbegriffe_referenziert` pro Material.
+- MATERIAL_GERUEST mit `voraussetzung`-Kette.
+- Topologische Sortierung der Material-Abhaengigkeiten.
+
+**Output-Struktur:**
+
+```json
+// {mat-id}/sequenzkontext.json
+{
+  "mat_id": "mat-4-3",
+  "position_in_mappe": "3 von 6",
+  "didaktische_funktion": "erarbeitung",
+  "vorausgesetztes_wissen": {
+    "fachbegriffe": ["Kolonie", "Weltpolitik", "Marokkokrise", "Schutzgebiet"],
+    "source_materialien": ["mat-4-1", "mat-4-2"]
+  },
+  "noch_nicht_eingefuehrt": {
+    "fachbegriffe": ["Konzentrationslager", "Reparationszahlungen", "Genfer Konvention"],
+    "source_materialien": ["mat-4-4", "mat-4-5", "mat-4-6"]
+  },
+  "vorheriges_material": {"id": "mat-4-2", "typ": "darstellungstext", "kerninhalt": "..."},
+  "naechstes_material": {"id": "mat-4-4", "typ": "bildquelle", "kerninhalt": "..."},
+  "zugeordneter_tb_knoten": {"id": "k4-3", "text": "Koloniale Ausbeutung und Gewalt"},
+  "dominante_perspektive": "P1: Deutsche Reichsfuehrung"
+}
+```
+
+**Tool:** `tools/compute_sequenzkontext.py` (neu in Track C).
+
+**Benefit auch fuer sequentielle Generierung:** Pre-Computation ist deterministisch + fehlerfrei. Ersetzt LLM-Ableitung des Sequenzkontexts durch den Subagenten aus unstrukturiertem MATERIAL_GERUEST-Text.
+
+### 22.8 Persistenz-Modell (Pro-Material-Verzeichnis)
+
+**Breaking-Change ab v3.11.0:** Neue Verzeichnis-Struktur pro Material.
+
+```
+docs/agents/artefakte/{game-id}/mappe-{N}/materialien/
+├── {mat-id}/
+│   ├── sequenzkontext.json    (Pre-Computation-Output Phase 2.0b)
+│   ├── partial.json           (Subagent-Output vor Merge, Audit)
+│   ├── material.json          (Final-Output nach G3 PASS — das eigentliche Material)
+│   ├── review_v1.json         (erste Review-Iteration)
+│   ├── review_v2.json         (falls Revisor-Modus erneut gelaufen, max 1 Iteration)
+│   └── dispatch_meta.json     (Agent-IDs, Tokens, Dauer, Gate-Reports)
+├── {mat-id-naechstes}/
+│   └── ...
+```
+
+**Migration-Strategie:**
+- **Cut-over:** Neue Struktur ab v3.11.0-Produktion (naechste Mappe-Generierung). Alt-Materialien bleiben flat.
+- **Alt-Materialien:** unveraendert in v3.10.2-Reader-Route (Fallback-Tabelle aus §21.6 B2 unveraendert).
+- **Optional-Migration-Track:** separater Track (nicht MVP), migriert 168 Alt-Materialien. Niedrig-Prio.
+
+**Dispatcher-Impact:**
+- AGENT_MATERIAL.md Phase 2.4 Output-Pfad: `{mat-id}/material.json` statt `{mat-id}.json`.
+- Phase 3 Assembly-Read-Pfad entsprechend angepasst.
+
+### 22.9 Implementation-Phasen-Plan (Track C)
+
+**Track C0 PM-Verankerung (1-1.5 Tage) — aktiv:**
+- §22 v1.6 Delta (dieses Dokument).
+- `F0e_REVIEW_AGENT_SPIKE_PLAN.md` in Gen-Repo.
+- STATUS + CHANGELOG + Auto-Memory-Pflege.
+
+**Track C1 REVIEWER_MATERIAL_BASE + QUELLENTEXT (3-5 Tage):**
+- `agents/REVIEWER_MATERIAL_BASE.md` schreiben.
+- `agents/REVIEWER_MATERIAL_QUELLENTEXT.md` als erste Specialization.
+- Model-A/B-Test Opus vs. Sonnet auf Stufe-1-Output.
+- Akzeptanz: Reviewer findet die 2 Pauls-Defekte (Waterberg + Adressat) = 2/2 Detection-Rate.
+
+**Track C2 Revisor-Modus in SUB_MATERIAL_QUELLENTEXT (2-3 Tage):**
+- Pre-Flight-File-Check-Spec in Subagent-Doku.
+- Revisor-Modus-Kapitel.
+- End-to-End-Test: Generate → Review FAIL → Revise → Re-Review PASS.
+
+**Track C3 Dispatcher-Integration G3 + Phase 2.0b + Verzeichnis-Struktur (3-5 Tage):**
+- AGENT_MATERIAL.md §2.1-Gates um G3 erweitern.
+- Phase 2.0b Sequenzkontext-Pre-Computation dokumentiert.
+- Neue Verzeichnis-Struktur spec-konform.
+- `tools/compute_sequenzkontext.py` implementieren.
+- `tools/check_prosa_only.py` (M16) + `tools/check_quelle_ssot.py` (M17) implementieren.
+
+**Tracks C4-C9 Template-Replikation (je 2-3 Tage, parallel moeglich):**
+- C4 REVIEWER_MATERIAL_BILDQUELLE (hoechste Prio wegen MV2-Hallu-Problem bekannt)
+- C5 REVIEWER_MATERIAL_DARSTELLUNGSTEXT
+- C6 REVIEWER_MATERIAL_KARTE
+- C7 REVIEWER_MATERIAL_TAGEBUCH
+- C8 REVIEWER_MATERIAL_ZEITLEISTE
+- C9 REVIEWER_MATERIAL_STATISTIK
+
+**Track C10 Abschluss + Parallel-Dispatch-Aktivierung (2-3 Tage):**
+- Agent-Teams-Integration fuer parallele Dispatches.
+- Gesamt-BEFUND mit Kosten/Latenz-Messung.
+- §22 v1.6 → v1.7 Finalisierung.
+
+**Track C-OPT Alt-Material-Migration (2-3 Tage, niedrig-Prio):**
+- 168 Alt-Materialien in Neu-Verzeichnis-Struktur migrieren.
+
+**Gesamt-Aufwand:** 25-35 Tage fuer vollstaendige Architektur. Kritischer Pfad C0-C3: 8-10 Tage. C4-C9 parallelisierbar.
+
+### 22.10 Kosten-Modell + Model-Wahl
+
+**Model-Default:**
+- **Generator:** Opus (komplexer CREATE-Task, didaktische Tiefe).
+- **Reviewer:** Opus (bevorzugt). Sonnet Fallback bei Token-Budget-Constraint. Haiku **ausgeschlossen** (nicht nuancenfaehig genug fuer akademische Review-Tasks).
+
+**A/B-Test-Protokoll (Track C1.4):**
+
+| Reviewer | Model | Messung |
+|---|---|---|
+| R-Opus | claude-opus-4-6 | Defekt-Detection-Rate, Tokens, Latenz |
+| R-Sonnet | claude-sonnet-4-6 | idem |
+| R-Haiku | — | ausgeschlossen |
+
+Input: Stufe-1-Output (Agent `a45565508c7f8f3c6`) mit bekannten 2 Defekten (Waterberg, Adressat).
+
+Akzeptanz-Schwelle: Reviewer findet 2/2 Defekte mit Severity FAIL.
+
+Default-Entscheidung:
+- Opus 2/2 + Sonnet 2/2 mit >95% Parity → Sonnet (Kosten-Optimierung).
+- Opus 2/2, Sonnet <2/2 → **Opus Default**, Sonnet Fallback.
+
+**Token-Budget-Schaetzung:**
+
+| Dispatch | Input-Tokens | Output-Tokens | Total |
+|---|---|---|---|
+| Generator (Opus) | ~50k | ~2-3k | ~52-53k |
+| Reviewer (Opus, minimal) | ~15k | ~3-5k | ~18-20k |
+| Pro Material | Generator + Reviewer | | **~70-73k** |
+| Pro Mappe (6 Materialien) | | | **~420-440k** |
+| Pro Game (4 Mappen) | | | **~1.7M** |
+
+**Overhead vs. Status Quo:** +30-40% Token-Kosten durch Reviewer-Dispatches. Rechtfertigt sich durch Qualitaets-Gain (Confirmation-Bias-Elimination, 2/2 Defekt-Detection).
+
+### 22.11 Risiken + Mitigations
+
+| Risiko | Impact | Mitigation |
+|---|---|---|
+| R-§22-1 Reviewer-Confirmation-Bias 2. Art (LLM-Reviewer produziert selbst PASS-biased Output) | hoch | Adversarial-Prompt: "Finde Schwaechen, nicht Bestaetigungen." + Optional Dual-Review als Spike-Option in C1.5 |
+| R-§22-2 Parallel-Dispatch bricht Sequenz-Kohaerenz ohne Pre-Computation | hoch | Phase 2.0b vor Parallel-Dispatch Pflicht (22.7) |
+| R-§22-3 Re-Dispatch-Endlos-Loop bei semantischen FAILs | mittel | Hard-Budget G3 = max 1 Revisions-Iteration, dann Eskalation |
+| R-§22-4 Breaking-Change Verzeichnis-Struktur bricht bestehende Read-Pfade | mittel | Cut-over ab v3.11.0, Alt-Materialien unveraendert in Fallback-Route |
+| R-§22-5 Reviewer-Kosten-Eskalation bei Mass-Gen-Szenarien | mittel | Sonnet-Fallback auf A/B-Test-Basis, Kosten-Monitoring pro Game |
+| R-§22-6 Reviewer-Spec-Pflege-Overhead bei 7 Typ-Specializations | niedrig | Hybrid-Template BASE + Extension, Aenderung Universal-Gate nur in BASE |
+| R-§22-7 Typ-spezifische Reviewer finden typ-spezifische Defekte nicht (QT-/DT-/BQ-Kriterien zu allgemein) | mittel | Iterative Verfeinerung via empirische Replikations-Tests pro Typ (C1-C9) |
+
+### 22.12 Aktualisierter Total-Plan-Impact-Count
+
+**v1.6 Delta = 0 neue PI-Items** (v1.6 ist Architektur-Vertiefung bestehender PI-DISPATCH-1 + PI-DISPATCH-2 aus §20, plus neu Phase 2.0b als Infrastruktur-Baustein). Keine Neu-PI-Nummerierung.
+
+Aggregat bleibt: **44 Plan-Impact-Items** (17 R0-FINAL+ + 13 v1.3 Delta + 4 v1.4 Delta + 10 v1.5 Delta). v1.6 Delta erweitert v1.4 Delta PI-DISPATCH-1/2 um Implementation-Details + fuegt Phase 2.0b als Infrastruktur hinzu.
+
+---
+
+**Status:** v1.6, 2026-04-23. §22 Review-Agent-Architektur + Parallel-Dispatch-Infrastruktur eingefuegt. Track C0 PM-Verankerung aktiv, Tracks C1-C10 geplant. Kritischer Pfad C0-C3: 8-10 Tage.

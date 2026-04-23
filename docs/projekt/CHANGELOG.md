@@ -4,6 +4,64 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-23 — UPGRADE_PLAN v1.6 Delta §22 Review-Agent-Architektur + Parallel-Dispatch-Infrastruktur (Track C0 PM-Verankerung)
+
+**Scope:** Neue §22 v1.6 Delta in `docs/architektur/UPGRADE_PLAN_v3-12_ESCAPE_GAME_QUALITAET.md`. §19/§20/§21 unveraendert. Track C PM-Verankerung nach Promotion-Track-B-Abschluss + Pipeline-Aktivierungs-Smoke-Befund.
+
+**Empirischer Ausloeser:** Pipeline-Aktivierungs-Smoke mit v3.11.0 quellentext (Gen-Repo post-Merge `9b24b39`, Task-Tool-Dispatch Agent `a45565508c7f8f3c6`, Case `mat-4-3`) bestand alle 6 harten Schema-Akzeptanzkriterien. Paul-Review identifizierte zwei strukturelle Defekte, die die Schema-Gates nicht fassen koennen:
+- **Sequenz-Kohaerenz-Verletzung:** "Schlacht am Waterberg" als Referenz in Einleitung, nicht im Vorausgesetzten Wissen dieses Materials. Verletzt SQ-1/SQ-2 (Self-Check wirkungslos).
+- **Fakten-Fehler:** "Befehl an die Herero" — Adressat-Fehlinterpretation. Der Befehl war formal an deutsche Schutztruppe adressiert, Herero waren Objekt. Grammatikalische Fehlinterpretation unter Vereinfachungsdruck.
+
+F0d-Evidenz bestaetigt: Subagent-Self-Check eliminiert Confirmation-Bias nicht. Strukturelle Loesung via externe Review-Agenten notwendig (PI-DISPATCH-2 aus §20 v1.4, jetzt konkretisiert).
+
+**§22-Content (12 Unterabschnitte):**
+- 22.1 Problem-Kontext + Motivation (empirischer Ausloeser)
+- 22.2 Architektur-Komponenten-Uebersicht mit erweitertem Phasen-Diagramm (inkl. Phase 2.0b + G3)
+- 22.3 Sub-Agent-Modus-Erweiterung: Generator + Revisor via Pre-Flight-File-Check (kein Dispatch-Parameter noetig)
+- 22.4 Reviewer-Agent-Spec-Standard: Hybrid-Template-Pattern BASE + 7 Typ-Specializations, Adversarial-Prompt, strukturierter Output-Vertrag JSON
+- 22.5 Dispatcher-Kontrakt-Erweiterung: §2.1.G3 REVIEWER-Dispatch + Re-Dispatch-Loop mit differenziertem Budget
+- 22.6 Q-Gate-Split: Deterministik (Python G1/G2/M16/M17) vor LLM-Review (G3). Kosten-Optimierung + Fehler-Klassen-Trennung.
+- 22.7 **NEU Phase 2.0b Sequenzkontext-Pre-Computation** (Parallel-Dispatch-Voraussetzung). Dispatcher pre-computiert Vorwissen vor Parallel-Start.
+- 22.8 Persistenz-Modell: Pro-Material-Verzeichnis ({mat-id}/material.json + review_v*.json + sequenzkontext.json + dispatch_meta.json). Breaking-Change ab v3.11.0.
+- 22.9 Implementation-Phasen-Plan Track C0-C10 (25-35 Tage gesamt, kritischer Pfad C0-C3: 8-10 Tage).
+- 22.10 Kosten-Modell + A/B-Test-Protokoll (Opus vs. Sonnet, Haiku ausgeschlossen).
+- 22.11 7 Risiken R-§22-1 bis -7 mit Mitigations.
+- 22.12 Plan-Impact-Count unveraendert 44 (v1.6 Delta ist Architektur-Vertiefung bestehender PI-DISPATCH-1/2).
+
+**Architektur-Entscheidungen fixiert (10 Caveats):**
+- Reviewer-Architektur: Hybrid-Template BASE + 7 Typ-Specializations (ermoeglicht Parallel-Dispatch via agent-teams).
+- Ueberarbeitungs-Modus: gleicher Sub-Agent, Pre-Flight-File-Check bestimmt Modus.
+- Gate-Reihenfolge: G1→G2→M16→M17→G3 (Kosten-Optimierung, semantisches Review nur bei Schema-PASS).
+- Re-Dispatch-Budget differenziert: G1 max 2, G2 max 1, G3 max 1 Revisions-Iteration.
+- WARN-Findings: persistiert in `_meta.review_warnings[]`, nicht blockend.
+- Pro-Material-Verzeichnis-Struktur (Cut-over v3.11.0).
+- Model-Default: Opus bevorzugt, Sonnet Fallback, Haiku ausgeschlossen.
+- Phase 2.0b Pre-Computation fuer Parallel-Dispatch-Integritaet.
+- A/B-Test Opus vs. Sonnet in Track C1 zwingend vor Model-Default-Fixierung.
+
+**Track-C-Plan:**
+- C0 PM-Verankerung (aktiv, dieser Commit).
+- C1 REVIEWER_MATERIAL_BASE + QUELLENTEXT MVP + A/B-Model-Test.
+- C2 Revisor-Modus in SUB_MATERIAL_QUELLENTEXT.
+- C3 Dispatcher-Integration G3 + Phase 2.0b + Verzeichnis-Struktur.
+- C4-C9 Typ-Specializations (bildquelle, darstellungstext, karte, tagebuch, zeitleiste, statistik).
+- C10 Abschluss + Parallel-Dispatch-Aktivierung.
+- C-OPT Alt-Material-Migration (niedrig-Prio).
+
+**Commit-Umfang:**
+- `docs/architektur/UPGRADE_PLAN_v3-12_ESCAPE_GAME_QUALITAET.md` (§22 eingefuegt, Status auf v1.6).
+- `docs/projekt/STATUS.md` (Aktiver-Upgrade-Plan-Zeile auf v1.6 + v1.6-Delta-Beschreibung + Track-C-Status + Empirischer-Ausloeser-Block).
+- `docs/projekt/CHANGELOG.md` (dieser Eintrag).
+- Gen-Repo (separater Commit): `docs/projekt/F0e_REVIEW_AGENT_SPIKE_PLAN.md` (neu, C0-C10-Phasenplan).
+
+**Folge-Arbeit (Track C1-C10 nach diesem Commit):**
+- C1 MVP-Spike mit REVIEWER_MATERIAL_QUELLENTEXT auf Stufe-1-Output. Akzeptanz: 2/2 Paul-Defekt-Detection (Waterberg + Adressat).
+- C2/C3 Integration Revisor + Dispatcher.
+- C4-C9 Template-Replikation.
+- Gesamt-Aufwand 25-35 Tage, 8-10 Tage kritischer Pfad.
+
+---
+
 ## 2026-04-23 — UPGRADE_PLAN v1.5 Delta §21 F0e-AEF Integration + silly-shirley-Cleanup
 
 **Scope:** Ueberfuehrung des F0e-AEF-Integrationsentwurfs aus `docs/projekt/f0e-agent-expertise/F0e_UPGRADE_PLAN_v3-12_PARAGRAPH_19_DRAFT.md` als neuer **§21 v1.5 Delta** in `docs/architektur/UPGRADE_PLAN_v3-12_ESCAPE_GAME_QUALITAET.md`. §19 v1.3 Delta (Testrun-Audit) + §20 v1.4 Delta (Dispatch + Feld-Evidenz) bleiben unveraendert. Aufraeum-Tranche nach I3-PASS + STATUS/CHANGELOG-Pflege.
