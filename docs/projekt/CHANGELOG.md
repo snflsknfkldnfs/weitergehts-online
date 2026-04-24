@@ -4,6 +4,92 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-24 — C-ARCHI-AUDIT S0+S1 DONE: Plugin-Architektur-Recon + Audit-Plan-Charta
+
+**Scope:** Vor-Audit-Recon des Ist-Zustands + Audit-Charta-Finalisierung. Neuer Track C-ARCHI-AUDIT initiiert. C4-bildquelle vertagt bis Audit-Pfad-Entscheidung.
+
+**Anlass:** Paul-Frage ob Plugin-Struktur verankert + realgetreu getestet. Ehrliche Antwort: Nein. Folgefragen fuehrten zur Einsicht dass Plugin-Architektur-Audit als SSoT fuer Folge-Tracks noetig ist.
+
+**Gen-Repo Commit `62e550c` (beide Dokumente neu, +928 Zeilen):**
+
+**F0e_PLUGIN_ARCHI_RECON.md v1.0 — Recon-Summary als Input-Bundle fuer alle Audit-RAs:**
+
+Zentrale Erkenntnisse:
+- **Plugin-Readiness aktuell nur ~3 %** (1 von 30 Subagents plugin-nativ — nur reviewer-material-quellentext aus Track C1).
+- **Der eigentliche Orchestrator ist `PROJECT_INSTRUCTIONS.md`** — eine text-basierte State-Machine (423 Z.), kein Plugin-Subagent. Wird bei jeder Cowork-Session auto-geladen + steuert Lebenszyklus via Zustandsblock + Uebergangstabelle + Self-Update-Protokoll + State-Advance-Vertrag.
+- **Dual-Root-Architektur** (GENERATOR `escape-game-generator/` + TARGET `weitergehts-online/`) ist fundamentale Plugin-Architektur-Herausforderung. Plugin hat normalerweise Single-Repo-Scope.
+- **5 Phasen-Architektur** mit ~17 Sub-Phasen: Phase 0 (5 Agents), Phase 1 (Design-Modus), Phase 2 (Production inkl. Materialien + Aufgaben), Phase 3 (Assembly in Claude-Code), ABGESCHLOSSEN.
+- **16 Phase-Vertraege** (`architektur/vertraege/VERTRAG_PHASE_*.md`) als Pflicht-Lektuere pro Phase-Agent.
+- **Track C1-C3.5 adressierte nur ~5-8 %** der Gesamt-Architektur: nur Material-Production-Phase 2.1, nur 1 von 7 Typ-Specs vollstaendig refactored, 0 von 16 Vertraegen touched.
+
+Recon-Inhalt (~430 Zeilen):
+- Vollstaendiges Repo-Inventar (Verzeichnisstruktur + LOC pro File).
+- Plugin-Readiness-Matrix pro Artefakt-Typ (agents/, vertraege/, checklisten/, tools/, PROJECT_INSTRUCTIONS.md, ORCHESTRATOR.md, plugin.json, hooks.json, commands/=fehlt, skills/=fehlt).
+- Komplette Phasen-Architektur (5 Phasen, 17 Sub-Phasen).
+- PROJECT_INSTRUCTIONS.md-Analyse (State-Persistenz-Mechanik, Self-Update, Session-Split, Uebergangstabelle).
+- Dual-Root-Architektur-Diagramm (ASCII) + 4 Loesungs-Optionen A-D.
+- Orchestrierungs-Mechanik (Dispatch-Flow, Inter-Agent-Kommunikation, Session-Split nach 2.1c).
+- Dispatch-Isolation P1-P4 (aus VERTRAG_ATOM_UNITS.md).
+- Output-File-Struktur TARGET-Repo.
+- Dependency-Graph (grob) zwischen Orchestratoren + Workers.
+- **4 Migrations-Hypothesen:**
+  - **H1 Inkrementelle Migration** (alle 30 Agents bekommen YAML-Frontmatter, PI bleibt Text)
+  - **H2 Tiefe Plugin-Refactor** (PI → JSON-State, Vertraege → Skills, Orchestrator-Subagent als State-Machine-Runner)
+  - **H3 Scratch-MVP** (neues Repo `escape-game-generator-v2/`, saubere Plugin-Architektur ab Tag 1)
+  - **H4 Hybrid-Architektur** (Plugin fuer UI + Subagent-Definitions + Commands, Python-Glue-Code-Orchestrator als Runtime-Layer)
+- 10 offene Architektur-Fragen fuer Multi-RA-Audit.
+- Input-Bundle-Liste fuer alle RAs.
+
+**F0e_PLUGIN_ARCHI_AUDIT_PLAN.md v1.0 — Finalisierte Audit-Charta:**
+
+Audit-Struktur (~450 Zeilen):
+- **12 Audit-Dimensionen** (D1-D12):
+  - D1-D8 aus initial-Plan (Plugin-Readiness, Orchestration-Fitness, Prompt-Scope, Tool-Security, State-Management, Testbarkeit, Skill/Command/Hook-Alternativen, Migration-Aufwand)
+  - **D9 Dual-Root-Kompatibilitaet (NEU)**
+  - **D10 State-Machine-Migration (NEU)**
+  - **D11 Phasen-Vertrag-Integration (NEU)**
+  - **D12 Cowork-vs-Code-Mode-Split (NEU)**
+- **7-RA-Kanon (P1-P7):**
+  - RA-P1 Plugin-Struktur + Tool-Security (D1+D4)
+  - RA-P2 Subagent-Orchestration + Parallel-Dispatch (D2)
+  - RA-P3 Prompt-Scope + Content-Design (D3+D6)
+  - RA-P4 State + Inter-Subagent-Kommunikation (D5)
+  - RA-P5 Skills/Commands/Hooks-Potential (D7)
+  - **RA-P6 Phasen-Architektur + State-Machine-Migration (NEU, D10+D11+D12)**
+  - **RA-P7 Cross-Repo + Infrastruktur (NEU, D9)**
+- Strukturiertes JSON-Output-Format pro RA (per_subagent_findings + cross_subagent_patterns + architecture_gaps + hypothesis_evaluation H1-H4 + recommendation + confidence).
+- Konsolidierungs-Methode (Cross-RA-Aggregation + Gap-Analyse + Entscheidungs-Matrix).
+- **Entscheidungs-Matrix:** Kriterien-Tabelle fuer Scratch (H3) vs. Inkrementell (H1) vs. Hybrid (H4) mit 8 Dimensionen.
+- **7 Sub-Steps S0-S7 operativ:**
+  - S0 Recon (DONE, 2-3h)
+  - S1 Audit-Charta (DONE, 2-3h)
+  - S2 Inventarisierung-Detail + Dependency-Graph-Mermaid (pending, 2-3h)
+  - S3 7-RA-Dispatch parallel + Persistierung (pending, 6-8h wall-clock)
+  - S4 Konsolidierung + Cross-RA-Aggregation (pending, 3-4h)
+  - S5 BEFUND schreiben + Entscheidungs-Matrix + Hypothesen-Bewertung (pending, 3-4h)
+  - S6 Roadmap v2.0-Revision + Erste-Sub-Track-Plan-Kandidat (pending, 2-3h)
+  - S7 PM-Pflege + Commit + Push (pending, 1-2h)
+- **Gesamt-Aufwand: 21-30h = 3-4 Session-Tage. Nach S0+S1 heute: 17-24h verbleibend.**
+- Risiko-Matrix fuer Audit selbst.
+- 9 Entscheidungen die aus Audit folgen (Pfad + Architektur-Luecken-Priorisierung + Skill/Command/Hook-Transformation-Prio + Code-Mode-Runtime-Verankerung + C4-C9-Scope-Revision + PROJECT_INSTRUCTIONS.md-Zukunft + Dual-Root-Loesung + Session-Split-Pflicht).
+
+**TEST_AUDIT_ROADMAP v1.3 → v1.4:**
+- C-ARCHI-AUDIT-Track hinzugefuegt.
+- Kritische Recon-Erkenntnisse-Summary.
+- C4-bildquelle vertagt bis Audit-Pfad-Entscheidung.
+- Plugin-Architektur-Migration-Track als Top-Level-Track fuer Roadmap v2.0 angekuendigt.
+
+**Gen-Repo main HEAD:** `60b125a` → `62e550c`.
+
+**Naechste Aktion (naechste Session):** User-Review der beiden Audit-Dokumente + Go fuer S2 (Inventarisierung-Detail + Dependency-Graph-Mermaid).
+
+**Konsequenz fuer kritischen Pfad:**
+- C4-bildquelle verschoben bis nach Audit-Entscheidung (Pfad-Wahl koennte C4-Design fundamental veraendern).
+- T-Full-Game + 5-RA-Multi-RA-Audit weiter in spaeter Roadmap-Phase.
+- Plugin-Publication-Track-D neu ausgerichtet auf gewaehlten Architektur-Pfad.
+
+---
+
 ## 2026-04-24 — C3.5 Legacy-Migration-Tool DONE: v3.10.2 → v3.10.4 auf N-K-quellentext-Baseline
 
 **Scope:** Sub-Track C3.5 umgesetzt laut BEFUND_T_C3_SMOKE.md §6. Migration-Tool + Batch-Run auf Testrun-N-K als C4-Regression-Baseline.
