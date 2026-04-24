@@ -4,6 +4,45 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-24 — T-Pin-Hash DONE + T-C3-Smoke DONE mit 4 empirischen Findings
+
+**Scope:** Erste beiden Test-Ebenen aus TEST_AUDIT_ROADMAP v1.x ausgefuehrt.
+
+**T-Pin-Hash (Gen-Repo Commit `f51d8bc`):**
+- Validator Default-PIN v3.10.3 `f08df7ee…` → v3.10.4 `2125508a…`.
+- PROVENANCE v1.1 → v1.2 mit Transitions-Dokumentation.
+- 4/4 Smoke-Tests PASS: Default-pinned-match, Abwaertskompat, Legacy-Flag, Partial-Revisor-Feld-Acceptance.
+
+**T-C3-Smoke (Gen-Repo Commit `a2141b9`):**
+Dispatcher-Kette auf echtem Legacy-Material `mat-3-1` aus `escape-games/deutscher-nationalismus-kolonialismus/data.json` (Bismarck Reichstagsrede 1888).
+
+**4 Empirische Findings (siehe `BEFUND_T_C3_SMOKE.md` v1.0):**
+
+| Finding | Severity | Status |
+|---|---|---|
+| Tool-Bug `voraussetzung` als String/null (Legacy v3.10.2-Format) | Mittel | **Gefixed** via `normalize_voraussetzung()`-Helper |
+| Legacy-Manifest ohne `fachbegriffe_eingefuehrt` → Sequenzkontext leer | Low (erwartet) | Keine Aktion — v3.11.0+-Dispatch-Voraussetzung |
+| Legacy-Material v3.10.2-Format FAIL gegen v3.10.4-Schema (artefakt_ref-Pattern, quellentyp-Enum, sequenz_kontext-Missing, primary_scpl_zone-Unknown) | **Erwartet** per AGENT_MATERIAL.md-Fallback-Tabelle | Legacy-Migration-Tool-Scope |
+| M16 + M17 Regex-Gates schema-unabhaengig robust | Positiv | Keine Aktion |
+
+**Akzeptanz:** T-C3-Smoke PASS mit Caveats.
+- Pipeline fuer Zielzustand (v3.10.4-Material) funktional (empirisch durch C3 S6 + T-C3-Smoke).
+- Legacy-Material-Migration erfordert separaten Sub-Track.
+
+**Neuer empfohlener Sub-Track: C3.5 Legacy-Migration-Tool** (2-3h vor C4-bildquelle)
+- Transformations: artefakt_ref-Prefix-Map + quellentyp-Enum-Map + sequenz_kontext-Backfill + primary_scpl_zone-Entfernung.
+- Begruendung: C4-bildquelle testet MV2-Hallu-Fokus gegen RA4-Baseline (N-K-Bildquellen, 6/18-Hallu-Rate). Baseline muss v3.10.4-konform sein fuer Gate-Chain-Pruefung.
+
+**TEST_AUDIT_ROADMAP Updates:**
+- v1.0 → v1.1 (T-Pin-Hash DONE)
+- v1.1 → v1.2 (T-C3-Smoke DONE mit Findings-Zusammenfassung, Naechste-Aktion C3.5)
+
+**Gen-Repo main HEAD:** `07b58dc` (C3+Roadmap) → `f51d8bc` (T-Pin-Hash) → `a2141b9` (T-C3-Smoke).
+
+**Naechste Entscheidung (User):** C3.5 Legacy-Migration-Tool (2-3h, empfohlen) oder C4-bildquelle-Direkt auf synthetischem Material (weniger Regression-Test-Wert).
+
+---
+
 ## 2026-04-24 — Track C3 FF-Merge Gen-Repo main + TEST_AUDIT_ROADMAP v1.0 etabliert
 
 **Scope:** User-Review BEFUND_C3 abgeschlossen. FF-Merge C3 Feature-Branch (5 Commits) in Gen-Repo main. Zusaetzlich: strategische Test-/Audit-Roadmap als SSOT-Dokument etabliert.
