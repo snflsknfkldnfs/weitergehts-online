@@ -4,6 +4,75 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-24 — C3.5 Legacy-Migration-Tool DONE: v3.10.2 → v3.10.4 auf N-K-quellentext-Baseline
+
+**Scope:** Sub-Track C3.5 umgesetzt laut BEFUND_T_C3_SMOKE.md §6. Migration-Tool + Batch-Run auf Testrun-N-K als C4-Regression-Baseline.
+
+**Gen-Repo Commit `60b125a`:**
+- `tools/migrate_material_v3_10_2_to_v3_10_4.py` v1.0 (neu, ~340 LOC).
+- `docs/projekt/BEFUND_C3_5_MIGRATION.md` v1.0 (neu).
+- `docs/projekt/TEST_AUDIT_ROADMAP.md` v1.2 → v1.3.
+
+**Transformations-Scope:**
+- `artefakt_ref`-Prefix-Mapping: `zit-` → `pq-`, `img-` → `pb-`, `rolle-` → `pt-`, `dok-` → `pq-`, v3.10.4-konform durchgeleitet.
+- `quellentyp`-Enum-Mapping gemaess SUB_MATERIAL_QUELLENTEXT §B D2: `vertrag/edikt/gesetz/erlass` → `amtlich`, `zeugnis` → `augenzeugenbericht`, `primaerquelle/dokument` → `sonstiges`, `rede` → `sonstiges` (Default) ODER `propaganda` (Hint-Heuristik).
+- `rede`-Heuristik mit Propaganda-Detection: Hint-Patterns "Platz an der Sonne", "Blut und Eisen", "Weltpolitik", etc. triggern `propaganda`-Klassifikation.
+- `voraussetzung`-Normalisierung: `None` → `[]`, `"string"` → `["string"]`, Array unveraendert.
+- `sequenz_kontext`-Backfill aus Sibling-Materialien (position-sortiert, HTML-strip + 100-char-kerninhalt-truncate).
+- `primary_scpl_zone`-Drop (v3.10.2-Top-Level-Feld, nicht in v3.10.4).
+- `_meta` Pflichtfeld-Backfill mit Defaults (wortanzahl/perspektive/artefakt_ref/tafelbild_knoten_abgedeckt/trigger_flags).
+- Unknown `_meta`-Felder-Drop mit WARN (z.B. `erschliessungsimpuls` bei bildquelle — typ-spezifische Felder).
+- **`inhalt` + `quelle` byte-identisch** (Content-Preservation garantiert).
+
+**CLI-Modi:**
+- `--batch-data <data.json> --output-dir <dir>` fuer Batch-Migration.
+- `--input <single> --output <single>` fuer Single-Material.
+- `--dry-run` fuer Plannung ohne Write.
+- `--quellentext-only` fuer Typ-Filter (Legacy-Route fuer non-quellentext).
+
+**Test-Ergebnisse N-K-Batch (`--quellentext-only`):**
+
+| Metrik | Wert |
+|---|---|
+| Total Materialien | 23 |
+| Quellentext migriert | 5 |
+| PASS gegen v3.10.4-Default-Schema | **5/5 (100 %)** |
+| Non-Quellentext geskippt (Fallback-Route) | 18 |
+| Failed | 0 |
+| Errors | 0 |
+
+**Migrierte quellentext-Artefakte mit Transformations:**
+
+| Material | Prefix-Transform | Quellentyp-Transform |
+|---|---|---|
+| mat-1-3 | zit-1-1 → pq-1-1 | — |
+| mat-1-6 | zit-1-2 → pq-1-2 | — |
+| mat-2-1 | zit-2-1 → pq-2-1 | **rede → propaganda** (Hint: Blut und Eisen) |
+| mat-3-1 | zit-3-1 → pq-3-1 | **rede → propaganda** (Hint: Weltpolitik) |
+| mat-4-3 | zit-4-1 → pq-4-1 | — |
+
+**Geskippte Typen (18, erwartungsgemaess per AGENT_MATERIAL.md Fallback-Tabelle):**
+- tagebuch (5 Materialien) → C7-Scope
+- bildquelle (8 Materialien) → **C4-Scope** (HOCHPRIO MV2-Hallu RA4-P0)
+- darstellungstext (4 Materialien) → C5-Scope
+- karte (1 Material) → C6-Scope
+
+**Akzeptanzkriterien C3.5 (alle PASS):**
+- Single-Migration auf mat-3-1 PASS gegen v3.10.4 ✓
+- Batch-Migration alle quellentext durchgelaufen, Report komplett ✓
+- `inhalt` + `quelle` byte-identisch ✓
+- Dry-Run-Modus implementiert ✓
+
+**Konsequenzen fuer kritischen Pfad:**
+- **N-K-quellentext-Baseline v3.10.4-konform verfuegbar** fuer C4-C9-Regression-Tests.
+- Non-quellentext-Typen benoetigen pro Typ eigene `material_<typ>_v3.10.4.json`-Schema-Erweiterung (z.B. `erschliessungsimpuls` fuer bildquelle) — Scope jeweiliger C4-C9-Track.
+
+**Gen-Repo main HEAD:** `a2141b9` → `60b125a`.
+
+**Naechste Aktion:** Track C4-bildquelle (2-3d, Prio MV2-Hallu-P0). Pattern analog C1-C3: Schema-Erweiterung + Reviewer-Plugin + Subagent-Revisor-Modus + End-to-End-Test gegen N-K-Baseline.
+
+---
+
 ## 2026-04-24 — T-Pin-Hash DONE + T-C3-Smoke DONE mit 4 empirischen Findings
 
 **Scope:** Erste beiden Test-Ebenen aus TEST_AUDIT_ROADMAP v1.x ausgefuehrt.
