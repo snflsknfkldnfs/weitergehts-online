@@ -1662,4 +1662,111 @@ Gen-Repo (`escape-game-generator`) wird direkt zum Plugin via `.claude-plugin/pl
 
 ---
 
-**Status:** v1.6, 2026-04-23 (Update 2026-04-23 nach §22.13-22.16 Nachtraegen). §22 Review-Agent-Architektur + Parallel-Dispatch + Subagent-System-Integration + Plugin-Bereit-Design + Dev-Workflow-Verifikation (Host-CLI via osascript). Track C0 PM-Verankerung DONE inkl. alle Nachtraege. Tracks C1-C10 geplant mit Hybrid-Dev-Workflow + Plugin-nativer Implementation (Gen-Repo wird Plugin). Track D Plugin-Publikation post-C10. Kritischer Pfad C0-C3: 8-10 Tage.
+### 22.17 Dev-Workflow-Revision + Endprodukt-Implikationen (empirische Anpassung 2026-04-24)
+
+**Ausloeser:** Track C1 Schritt 2 A/B-Test-Vorbereitung deckte zwei strukturelle Probleme des osascript-MCP-Transports auf, die §22.16 nicht antizipiert hatte.
+
+#### 22.17.1 Problem-Befund (empirisch)
+
+**Problem 1 — osascript-Shell-Escape-Fragilitaet bei komplexen Prompts:**
+
+Zweischicht-Quoting (AppleScript-String → bash-Argument) bricht bei:
+- `$(...)`-Subshell-Expansions in Prompts
+- `<`/`>`/`|`-Redirects/Pipes in osascript-Shell-Commands
+- Multi-line-Heredocs mit escape-intensivem Content
+- Komplexe Prompts mit Slashes, Dashes, Pfaden, Sonderzeichen
+
+**Mitigation erfolgreich:** Python-subprocess-Wrapper umgeht Shell-Escape-Layer. Bei einfachen Prompts funktioniert Python-Wrapper + osascript zuverlaessig.
+
+**Problem 2 — MCP-Request-Timeout < Opus-Dispatch-Laufzeit (HART):**
+
+`mcp__Control_your_Mac__osascript`-Tool hat Request-Timeout deutlich unter 600s (empirisch: AppleScript-`with timeout of 600 seconds`-Wrapper timed trotzdem out). Konkret:
+- Haiku + kurzer Prompt via Python-Wrapper: PASS (wenige Sekunden)
+- Haiku + 929-Byte-Prompt-File via Python-Wrapper: FAIL (MCP-Timeout, nicht Python-Timeout)
+- Opus + Reviewer-Dispatch (mit Plugin-Load + Subagent-Spawning): scheitert an MCP-Timeout deutlich vor Python-Timeout=300s
+
+Dies ist ein Hard-Blocker fuer synchrone Opus-Dispatches via osascript-MCP.
+
+#### 22.17.2 Dev-Workflow-Revision
+
+**Revidierter Dev-Workflow-Default (ersetzt §22.16-Aufteilung):**
+
+| Phase | Anteil | Modus | Begruendung |
+|---|---|---|---|
+| Spec-Arbeit (Agent-Files, Skills, Hooks, Schemas) | ~85 % | Cowork-Session direkt (File-Edit-Tools) | unveraendert |
+| Plugin-Load-Smoke-Tests (Skelett-Verifikation, Subagent-Erkennung via Haiku) | ~5 % | Host-CLI via osascript-MCP, Haiku-only, kurze Prompts < 30s | Plugin-Struktur-Verifikation ausreichend |
+| Funktionale Tests (Reviewer-Logik, Subagent-Output-Qualitaet, A/B-Modelle) | ~10 % | **Cowork-Task-Tool-Pattern** (`general-purpose`-Agent liest Subagent-Spec-File + simuliert Rolle, analog Stufe-1-Smoke) | Plugin-native Features werden NICHT getestet, aber Funktions-Aequivalenz bewiesen. Hauptvorteil: volle Opus/Sonnet-Nutzung ohne MCP-Timeout. |
+
+**Plugin-native Feature-Tests (Tool-Scoping-Enforcement, Model-Scoping-Enforcement, auto-Delegation via `description`-Field, Plugin-globale Hooks-Execution) sind in Cowork-Dev-Kontext NICHT nativ testbar.** Diese werden verschoben auf Track D Plugin-Install-Tests.
+
+**Alternatives Muster fuer Plugin-native Tests (zukuenftig moeglich, nicht MVP):**
+- Async-Background-Run mit Polling: Python-Wrapper startet `claude --plugin-dir` im Background via `nohup`, spaeterer osascript-Poll auf Output-File. Komplex, reserviert fuer kritische Plugin-native-Dev-Tests.
+
+#### 22.17.3 Endprodukt-Implikationen (indirekt, 5 Punkte)
+
+**Fundamentale Differenzierung:** Endprodukt-Ausfuehrungs-Pfad ist **Cowork-Runtime → Plugin-Subagent-Dispatch → LLM direkt**. MCP-Request-Timeout betrifft NUR den Dev-Workflow (Cowork→osascript→Host-CLI→LLM). Cowork-interne Timeouts sind hoeher (empirisch belegt durch existierende Plugins wie agent-teams, comprehensive-review, conductor mit langen LLM-Dispatches).
+
+**5 Indirekt-Implikationen fuer Endprodukt:**
+
+**I1 Dev-Tests nicht repraesentativ fuer Produktions-Timing.** Cowork-Task-Tool-Pattern simuliert Plugin-Verhalten, erfasst nicht echte Plugin-Install-Performance. Konsequenz: E2E-Performance-Messung erst in Track D moeglich.
+
+**I2 Long-Running Batch-Runs empirisch nicht validiert.** Volles Mappe-Generierung (6 Material-Dispatches + 6 Reviewer-Dispatches + bis zu 6 Revisor-Iterationen + 1 Cross-Konsistenz) = bis ~19 LLM-Calls, geschaetzt 5-15 Min Wall-Clock. Cowork-Runtime-Limits fuer diese Dauer unbekannt. Max-Subscription 5h-Rate-Windows, Single-Session-Dauer-Limits offen.
+
+**I3 Parallelitaet via agent-teams-Feature als Timeout-Mitigation.** Phase 2.0b Sequenzkontext-Pre-Computation (§22.7) war ohnehin auf Parallel-Dispatch ausgelegt. Architektur ist damit bereits timeout-resilient designed.
+
+**I4 Background-Tasks-Feature.** Cowork-ENV `CLAUDE_CODE_DISABLE_BACKGROUND_TASKS` kontrolliert das. Aktuelle Dev-Session hat Background-Tasks deaktiviert. End-User-Produktions-Session moeglicherweise aktiviert — Dispatcher koennte im Hintergrund laufen, User kann weiterarbeiten.
+
+**I5 Plugin-Testing-Strategie-Anpassung.** Tracks C1-C10 Tests sind Funktions-Tests (Gibt Reviewer erwartete Findings? Erkennt Subagent Revisor-Modus? A/B-Ergebnis Opus vs. Sonnet? Defekt-Detection-Rate?). Performance-/Timeout-/E2E-Tests sind separate Kategorie, fallen in Track D.
+
+#### 22.17.4 Track-D-Scope-Erweiterung
+
+**Track D (ex Plugin-Publikation post-C10)** wird erweitert zu **Plugin-Publikation + E2E-Performance-Validierung + Checkpoint/Resume-Feature**:
+
+**Neue Track-D-Aufgaben:**
+
+1. Plugin-Install in echter Cowork-Session testen (via Marketplace-Entry oder Cowork-Plugin-Install-Mechanismus).
+2. **E2E-Performance-Messung:**
+   - Einzel-Material-Dispatch Wall-Clock.
+   - Komplette Mappe-Generierung (6 Materialien + Reviews + Cross-Konsistenz) Wall-Clock.
+   - Komplette Game-Generierung (4 Mappen) Wall-Clock.
+   - Cowork-Timeout-Verhalten beobachten.
+   - Background-Tasks-Wirkung testen.
+3. **Checkpoint/Resume-Feature als Tier-2-Orchestrator-Funktionalitaet** (falls E2E-Tests Timeout-Probleme zeigen):
+   - Zwischen-States pro Material in Pro-Material-Verzeichnis persistiert (§22.8 bereits gegeben).
+   - Orchestrator erkennt vorhandene Artefakte und setzt fort.
+   - User kann Session unterbrechen, spaeter fortsetzen ohne Arbeitsverlust.
+4. **User-Doku:**
+   - "Erwartete Generierungs-Dauer: 20-40 Min pro Game" in Onboarding.
+   - Empfehlung: langlaufende Runs im Background starten.
+5. **Versioning + Marketplace-Entry:**
+   - Plugin-Version-Bump auf 1.0.0 bei Release.
+   - Marketplace-Submission falls angestrebt.
+   - Changelog-Management.
+
+**Aufwand Track D neu:** 5-8 Tage (vorher 3-5 Tage). Plugin-Install-Test-Zyklen + Performance-Messung sind neu.
+
+#### 22.17.5 Risiko-Assessment Endprodukt
+
+| Szenario | Risiko | Status |
+|---|---|---|
+| Einzel-Material-Dispatch (1 Generator + 1 Reviewer) | niedrig | Cowork handhabt seit langem single-LLM-Calls |
+| 6-Material-Batch-Mappe-Generierung | mittel | Mitigation: Parallel-Dispatch via agent-teams + Checkpoint-Mechanismus + Background-Tasks |
+| 4-Mappen-Game-Generierung | mittel-hoch | Progressive Batch-Verarbeitung, pro-Mappe-Checkpoints, User-Doku |
+
+**Existierende Architektur-Elemente als Mitigation bereits im Plan:**
+- §22.8 Pro-Material-Verzeichnis-Struktur → Checkpoints.
+- §22.5 Re-Dispatch-Budget-Management → kontrollierte Retries.
+- §22.7 Phase 2.0b Parallel-Dispatch-Vorbereitung → Wall-Clock-Reduktion.
+- §22.15 Tier-1+Tier-2-Design → modulare Ausfuehrung.
+
+#### 22.17.6 Konsequenz fuer laufenden Track C1
+
+**Track C1 Schritt 3 A/B-Test Opus vs. Sonnet:** wird via Cowork-Task-Tool-Pattern durchgefuehrt (nicht Host-CLI via osascript). `general-purpose`-Agent liest Reviewer-Spec-File und simuliert Rolle. Input: Stufe-1-Output mit 2 bekannten Defekten. Akzeptanz: 2/2 Defekt-Detection.
+
+**Tracks C2-C10:** ebenfalls primaer via Cowork-Task-Tool-Pattern. Host-CLI-Smoke-Tests nur fuer Plugin-Skelett-Struktur-Verifikation.
+
+**Kein Track-C-Roadmap-Umwurf.** Funktionale Ziele aller Tracks bleiben. Dev-Werkzeuge werden praezisiert.
+
+---
+
+**Status:** v1.6, 2026-04-23 (Update 2026-04-24 nach §22.13-22.17 Nachtraegen). §22 Review-Agent-Architektur + Parallel-Dispatch + Subagent-System-Integration + Plugin-Bereit-Design + Dev-Workflow-Verifikation + Dev-Workflow-Revision + Endprodukt-Implikationen. Track C0 PM-Verankerung DONE inkl. alle Nachtraege. Tracks C1-C10 mit Cowork-Task-Tool-Dev-Pattern-Default. Track D erweitert zu Plugin-Publikation + E2E-Performance-Validierung + Checkpoint/Resume (5-8 Tage). Kritischer Pfad C0-C3: 8-10 Tage unveraendert.

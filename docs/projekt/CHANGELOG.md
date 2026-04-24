@@ -4,6 +4,40 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-24 — UPGRADE_PLAN v1.6 Nachtrag §22.17: Dev-Workflow-Revision + Endprodukt-Implikationen + Track-D-Scope-Erweiterung
+
+**Scope:** Korrektur-Nachtrag zu §22.16 nach empirischer Entdeckung von zwei strukturellen Problemen des osascript-MCP-Transports bei Track C1 Schritt 2 A/B-Test-Vorbereitung.
+
+**Empirische Befunde:**
+
+Problem 1 — osascript-Shell-Escape-Fragilitaet bei komplexen Prompts: Zweischicht-Quoting (AppleScript→bash) bricht bei `$(...)`-Subshells, `<`/`>`-Redirects, Multi-line-Heredocs, Sonderzeichen-Prompts. Mitigation: Python-subprocess-Wrapper umgeht Shell-Escape-Layer erfolgreich.
+
+Problem 2 (Hard-Blocker) — MCP-Request-Timeout < Opus-Dispatch-Laufzeit: `mcp__Control_your_Mac__osascript` hat Request-Timeout deutlich unter 600s (AppleScript `with timeout of 600 seconds` wurde trotzdem von MCP abgebrochen). Haiku + 929-Byte-Prompt-File FAIL. Opus + Reviewer-Dispatch (Plugin-Load + Subagent-Spawn + LLM-Inferenz) strukturell nicht synchron dispatchbar via osascript.
+
+**§22.17-Inhalte:**
+
+- 22.17.1 Problem-Befund mit empirischen Daten zu beiden Problemen.
+- 22.17.2 Dev-Workflow-Revision: Cowork-Task-Tool-Pattern wird Default (~85% Spec-Arbeit Cowork direkt, ~5% Host-CLI-Haiku-Smoke-Tests, ~10% Cowork-Task-Tool-Pattern fuer Funktions-Tests). Plugin-native Feature-Tests in Dev-Kontext verschoben auf Track D.
+- 22.17.3 Endprodukt-Indirekt-Implikationen (5 Punkte): Dev-Tests sind nicht Produktions-Timing-repraesentativ. Long-Running Batch-Runs noch nicht empirisch validiert. Parallelitaet via agent-teams als Mitigation. Background-Tasks-Feature ermoeglicht Hintergrund-Runs. Plugin-Testing-Strategie angepasst.
+- 22.17.4 Track-D-Scope-Erweiterung: statt reine Plugin-Publikation nun auch E2E-Performance-Validierung + Checkpoint/Resume-Feature (falls Timeout-Probleme auftreten). Aufwand 3-5 → 5-8 Tage.
+- 22.17.5 Risiko-Assessment Endprodukt mit existierenden Architektur-Mitigations.
+- 22.17.6 Konsequenz fuer laufenden Track C1: A/B-Test via Cowork-Task-Tool statt Host-CLI. Track-C-Funktionsziele unveraendert.
+
+**Kritische Differenzierung:** Das osascript-MCP-Timeout-Problem betrifft Dev-Workflow (Cowork→osascript→Host-CLI), NICHT Endprodukt (Cowork-Runtime → Plugin-Subagent-Dispatch → LLM direkt). Existierende Cowork-Plugins mit langen LLM-Dispatches beweisen: Cowork-interne Timeouts sind hoeher als MCP-Bridge-Timeout. Kein direkter Endprodukt-Blocker.
+
+**Paul's Produkt-Vision unveraendert:** End-User-Plugin-Install in Cowork, `/generate-mappe`-Command-Aufruf. Nur Dev-Werkzeuge werden praezisiert.
+
+**Commit-Umfang:**
+- `docs/architektur/UPGRADE_PLAN_v3-12_ESCAPE_GAME_QUALITAET.md` (§22.17 eingefuegt, Status-Zeile aktualisiert).
+- `docs/projekt/CHANGELOG.md` (dieser Eintrag).
+- Gen-Repo (separater Commit): Spike-Plan-v1.3-Update mit §14 Dev-Workflow-Revision + §15 Track-D-Scope-Erweiterung.
+
+**Folge-Arbeit:**
+- Track C1 Schritt 3 A/B-Test via Cowork-Task-Tool-Pattern starten.
+- Track D Aufwand-Reschedule (5-8 Tage statt 3-5).
+
+---
+
 ## 2026-04-23 — UPGRADE_PLAN v1.6 Nachtrag §22.16: Dev-Workflow Host-CLI via osascript-MCP empirisch verifiziert
 
 **Scope:** Neuer Unterabschnitt §22.16 in §22 v1.6 Delta. Dokumentiert empirisch verifizierten Dev-Workflow: Plugin-Dev komplett in Cowork-Session via osascript-MCP-Transport zum Host-`claude`-CLI.
