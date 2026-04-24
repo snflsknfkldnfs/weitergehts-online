@@ -4,6 +4,76 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-24 — Track C3 DONE: Dispatcher-Integration G3 + Phase 2.0b + Verzeichnis-Cut-over — Feature-Branch pushed, KEIN Merge zu main (User-Review pending)
+
+**Scope:** Track C3 Sub-Steps S1-S8 ausgefuehrt. Schema v3.10.4-Erweiterung + 3 Python-Tools + AGENT_MATERIAL.md Dispatcher-Spec + Spec-Refinements v3.12.1/v0.1.2 + End-to-End-Volllauf + BEFUND. Feature-Branch `c3/dispatcher-integration-g3-phase-2-0b` mit 4 Commits (+S8 pending).
+
+**Gen-Repo-Feature-Branch-Commits:**
+
+| Commit | File(s) | Aenderung |
+|---|---|---|
+| `b5c6578` | `architektur/schemata/material_quellentext_v3.10.4.json` + Partial + `PROVENANCE.md` | Schema v3.10.4 additive Erweiterung um 5 Revisor-`_meta`-Felder (review_iteration, review_warnings, revisor_notes, revisor_error, material_id). Full + Partial, Pin-Hashes Full `2125508a…` / Partial `8930a8cf…`. Abwaertskompatibel zu v3.10.3. +587/-2. |
+| `127cf22` | `tools/compute_sequenzkontext.py` + `check_prosa_only.py` + `check_quelle_ssot.py` | 3 Python-Tools: Phase 2.0b Pre-Computation (topologische Sortierung + Fachbegriffe-Union), M16 Prosa-Only Regex, M17 Quelle-SSOT Regex (mit `<blockquote>`-Scope-Ausschluss). Smoke-Tests PASS (T3.1+T3.2 erfuellt). +580/-0. |
+| `cdc29a8` | `agents/AGENT_MATERIAL.md` | Dispatcher-Spec-Erweiterung: §2.0b NEU (Sequenzkontext-Pre-Computation mit Mappen-Manifest-Minimal-Schema), §Q-M2-M16 + §Q-M2-M17 + §Q-M2-G3 NEU (LLM-Review via reviewer-Plugin), §Revisor-Modus-Loop, §Re-Dispatch-Budget (G1 max 2, G2 max 1, G3 max 1 Revisor), §Gate-Chain-Flow-Diagramm, §Verzeichnis-Struktur v3.11.0+-Route (Pro-Material-Verzeichnis-Cut-over). +180/-9. |
+| `6bfdc22` | `agents/SUB_MATERIAL_QUELLENTEXT.md` + `agents/reviewer-material-quellentext.md` | C2-Opportunistische Spec-Refinements: SUB_MATERIAL v3.12.0 → v3.12.1 (material_id offiziell im Revisor-Output-Kontrakt legitimiert, Schema-Verankerung v3.10.4 referenziert) + reviewer v0.1.1 → v0.1.2 (Neue §Recommendations-Priorisierung: neutrale Alternative vor fachsprachlicher bei Schritt-A-Vorgriff-Risiko). Abwaertskompatibel. +44/-6. |
+| TBD (S7+S8) | `docs/projekt/F0e_REVIEW_AGENT_BEFUND_C3.md` + `F0e_REVIEW_AGENT_SPIKE_PLAN.md` | BEFUND_C3 v1.0 neu + Spike-Plan v1.5 → v1.6 (§C3-Header DONE, §18 Nachtrag). |
+
+**End-to-End-Test (S6) T3.3-Ergebnis:**
+
+- **Phase 2.0b:** compute_sequenzkontext.py auf 6-Material-Mappen-Manifest → 6 sequenzkontext-Files. Deterministic verifiziert (2-Run byte-identisch).
+- **G1 Partial + G2 Full + M16 + M17** auf mat-4-3: alle PASS (error_count=0).
+- **G3 Initial-Review** (reviewer v0.1.2 opus via Cowork-Task-Tool): FAIL. FAIL-Gates: SQ-2 Waterberg (exakter Match), Q10 Herero-Adressat. 49 404 Tokens / 85 s.
+- **Revisor-Modus** (SUB_MATERIAL v3.12.1 REVISOR opus): adressiert beide FAILs + 1 WARN (KONTEXT-DRIFT Nation-als-solche), persistiert 2 WARN in `review_warnings[]`. Revisor waehlte **neutrale Varianten** ("Befehl gegen die Herero" / "militaerische Auseinandersetzungen im Schutzgebiet") vor fachsprachlichen ("vernichten"-Variante aus C2-Test abgelehnt). material_v2, 57 532 Tokens / 63 s.
+- **Re-G3 Review** (reviewer v0.1.2 opus): overall=WARN (0 FAIL, 2 WARN persistent = Voelkermord-Teilmatch + Historiker-Einordnung). 47 116 Tokens / 57 s.
+- **Gesamt:** 154 052 Tokens / 206 s / 7 Tool-Runs / 1 Revisor-Iteration (innerhalb Budget).
+- **Persistierung:** Pro-Material-Verzeichnis `scratch/c3/mat-4-3/` mit 7 Artefakten inkl. `dispatch_meta.json`.
+
+**v0.1.2-Regression-Test gegen BEFUND_C2 §7.2:** Severity-Emergenz-Klasse "Schritt-A-Vorgriff via Vernichten-Terminologie" aus C2-Test **eliminiert**. Re-G3 Q10 = PASS (C2-Test: WARN). WARN-Count halbiert: C2 = 4 WARN, C3 = 2 WARN.
+
+**Akzeptanzkriterien C3 (Spike-Plan §C3):**
+
+| Kriterium | Urteil |
+|---|---|
+| Phase 2.0b Output deterministisch + korrekt | PASS |
+| End-to-End-Volllauf: alle Gates bestanden (ggf. nach Revisor-Iteration) | PASS |
+| Keine Regression an Alt-Material-Lese-Pfad | PASS |
+
+**Alle 3 C3-Akzeptanzkriterien erfuellt. Sub-Status PASS (kein MIXED).**
+
+**Offene Punkte (nicht blockend, Enhancements):**
+1. Pin-Hash-Transition Default-Validator-PIN v3.10.3 → v3.10.4 (vor C4).
+2. Parallel-Dispatch-Skalierung (Track C10-Scope).
+3. Pipeline-Glue-Code-Implementation (Track D oder separater Track).
+4. Session-Scratch-Path-Zugriff fuer Cowork-Task-Agents.
+5. G3-Titel-Uebergabe im Dispatcher-Prompt.
+
+**Track-Status nach C3:**
+- C0-C2 DONE + gemerged in Gen-Repo main.
+- **C3 DONE, Feature-Branch gepusht, Merge PENDING User-Review BEFUND_C3.**
+- C4-C9 Typ-Specializations entblockt (Template-Replikation fuer bildquelle, darstellungstext, karte, tagebuch, zeitleiste, statistik).
+- C10 Parallel-Dispatch via agent-teams (post-C4-C9).
+
+**Gen-Repo-Status:** Feature-Branch `c3/dispatcher-integration-g3-phase-2-0b` mit 4 Commits gepusht, 5. Commit (S7+S8 BEFUND + PM-Pflege) pending. Gen-Repo main unveraendert `1c86806` (post-C2-Merge). FF-Merge pending User-Review.
+
+**weitergehts-online-Status:** main gebumpt (STATUS + CHANGELOG + Auto-Memory). `UPGRADE_PLAN_v3-12 §22` unveraendert (C3 ist Track-intern, kein §22-Delta).
+
+**Artefakte (session-scratch, nicht committed):**
+- `scratch/c3/manifest/mappe-4-manifest.json`
+- `scratch/c3/seqkontext/sequenzkontext-mat-4-{1..6}.json`
+- `scratch/c3/mat-4-3/{material.json, merged.json, sequenzkontext.json, review_v1.json, material_v2.json, review_v2.json, dispatch_meta.json}`
+- `scratch/c3/gate-logs/{g1,g2,m16,m17}-result.json`
+
+**Referenzen:**
+- Gen-Repo BEFUND: `docs/projekt/F0e_REVIEW_AGENT_BEFUND_C3.md` v1.0.
+- Gen-Repo Spike-Plan: v1.5 → v1.6 (§C3-Header DONE, §18 Nachtrag).
+
+**Folge-Arbeit:**
+- User-Review BEFUND_C3. Entscheidung: FF-Merge Feature → main ODER weitere Iterationen vor Merge.
+- Nach Merge: Track C4-C9 startbar (Typ-Specializations).
+- Pin-Hash-Transition v3.10.4 vor C4 empfohlen (kleiner Sub-Track).
+
+---
+
 ## 2026-04-24 — Track C2 FF-Merge Gen-Repo main + Track C3 Dispatcher-Integration STARTEND
 
 **Scope:** User-Review BEFUND_C2 abgeschlossen, Option A gewaehlt (Direkt-Merge, C3 starten, Spec-Refinements opportunistisch in C3 gebuendelt).
