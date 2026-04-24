@@ -4,6 +4,44 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-24 — Track C3 FF-Merge Gen-Repo main + TEST_AUDIT_ROADMAP v1.0 etabliert
+
+**Scope:** User-Review BEFUND_C3 abgeschlossen. FF-Merge C3 Feature-Branch (5 Commits) in Gen-Repo main. Zusaetzlich: strategische Test-/Audit-Roadmap als SSOT-Dokument etabliert.
+
+**Gen-Repo Merge:**
+- main `1c86806` → `19cc194` (FF-merge von `c3/dispatcher-integration-g3-phase-2-0b` mit 5 Commits):
+  - `b5c6578` Schema v3.10.4 (S1)
+  - `127cf22` 3 Python-Tools (S2)
+  - `cdc29a8` AGENT_MATERIAL.md Dispatcher-Spec (S3)
+  - `6bfdc22` Specs v3.12.1 + v0.1.2 (S4)
+  - `19cc194` BEFUND_C3 + Spike-Plan v1.6 (S7+S8)
+- Feature-Branch lokal + remote geloescht.
+- Kein Merge-Commit (fast-forward).
+
+**Roadmap-Artefakt (zusaetzlicher Commit auf main `07b58dc`):**
+- `docs/projekt/TEST_AUDIT_ROADMAP.md` v1.0 (179 Zeilen, neu):
+  - **Test-Ebenen-Matrix** (6 Ebenen): T-Pin-Hash → T-C3-Smoke → T-Typ-Smoke (C4-C9) → T-Parallel (C10) → T-Full-Game → T-Stress.
+  - **Audit-Ebenen-Matrix** (8 Audit-Typen, Cost-Class S/M/L): A-C3-Retro → A-Typ-Retro → A-Pre-Pilot → A-Full-Game-Multi-RA (5-RA-Parallel) → A-Paul-Didaktik → A-Lehrkraft-Extern → A-Didaktik-per-Game → A-Medien-Lizenz-Batch.
+  - **Kritischer Pfad:** Happy-Path ~4-6 Wochen bis Pilot-Freigabe; mit FAIL-Rework-Zyklen 6-10 Wochen.
+  - **RA-Kanon** fuer Multi-RA-Audits (RA1 Pipeline, RA2 Didaktik, RA3 Engine, RA4 Medien, RA5 PM) analog Testrun-N-K-Audit 2026-04-18.
+  - **BEFUND-Pattern** konsistent zu C1/C2/C3.
+  - **Offene strategische Fragen** dokumentiert (Multi-RA-Dispatch-Mechanik, Audit-Persistenz, Retro-Batch auf Testrun-N-K-Items, externe Test-User).
+
+**Track-Status nach C3-Merge + Roadmap:**
+- C0-C3 alle DONE + gemerged in Gen-Repo main.
+- **TEST_AUDIT_ROADMAP v1.0 als SSOT fuer empirische Validation etabliert.**
+- **Next (laut Roadmap):** T-Pin-Hash (30 min Sub-Task) → T-C3-Smoke (1-2h) → C4-bildquelle (2-3d, Prio wegen MV2-Hallu-P0).
+- C4-C9 Typ-Specializations + C10 Parallel-Dispatch weiter offen.
+- Pilot-Freigabe erfordert T-Full-Game + A-Full-Game-Multi-RA + A-Paul-Didaktik.
+
+**Gen-Repo-Status:** main HEAD `07b58dc` (C3 gemerged + Roadmap), mit origin/main synchron. Keine offenen Feature-Branches.
+
+**Roadmap-Nutzung:** Dieses Dokument wird bei jedem abgeschlossenen Test/Audit aktualisiert (Status-Update in Sektion 2/3). STATUS.md + CHANGELOG.md referenzieren es via Link.
+
+**Naechster Schritt:** T-Pin-Hash sofort moeglich (kleiner Sub-Task): Default-PIN in `tools/validate_material_output.py` von v3.10.3 `f08df7ee…` auf v3.10.4 `2125508a…` bumpen + Smoke-Validate gegen Regression.
+
+---
+
 ## 2026-04-24 — Track C3 DONE: Dispatcher-Integration G3 + Phase 2.0b + Verzeichnis-Cut-over — Feature-Branch pushed, KEIN Merge zu main (User-Review pending)
 
 **Scope:** Track C3 Sub-Steps S1-S8 ausgefuehrt. Schema v3.10.4-Erweiterung + 3 Python-Tools + AGENT_MATERIAL.md Dispatcher-Spec + Spec-Refinements v3.12.1/v0.1.2 + End-to-End-Volllauf + BEFUND. Feature-Branch `c3/dispatcher-integration-g3-phase-2-0b` mit 4 Commits (+S8 pending).
