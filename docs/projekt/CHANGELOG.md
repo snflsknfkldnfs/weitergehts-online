@@ -4,6 +4,89 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-24 — Track C2 DONE: Revisor-Modus-Integration (SUB_MATERIAL_QUELLENTEXT v3.12.0 + reviewer v0.1.1) — Feature-Branch pushed, KEIN Merge zu main (User-Review pending)
+
+**Scope:** Track C2 Sub-Steps S1-S5 ausgefuehrt. Spec-Updates + End-to-End-Test + T2.2 Diff-Check + BEFUND. Feature-Branch `c2/revisor-modus-quellentext` (Gen-Repo) mit 3 Commits, kein FF-Merge zu main vor User-Review.
+
+**Spec-Aenderungen (Gen-Repo Feature-Branch):**
+
+| Commit | File | Aenderung |
+|---|---|---|
+| `c696196` | `agents/reviewer-material-quellentext.md` | v0.1.0 → v0.1.1. BEFUND_C1 §6 Klarstellungen: SQ-2 Severity-Kalibrierung (FAIL exakt, WARN Teilmatch), KONTEXT-DRIFT Severity + SQ-2-Abgrenzung, MQ-HARD-STOP Scope-Klarstellung (WARN bei merged Input), neuer §Prompt-Strictness (Dispatcher-Parsing-Kontrakt). +51/-7. Frontmatter + Rubric-Regeln + Output-Vertrag-Struktur unveraendert abwaertskompatibel. |
+| `7e9c3b8` | `agents/SUB_MATERIAL_QUELLENTEXT.md` | v3.11.0 → v3.12.0. §0 Dispatch-Modus-Bestimmung (Pre-Flight-File-Check GENERATOR/REVISOR). §J Revisor-Modus mit 8 Sub-Abschnitten (J.1 Lektuere-Pflicht, J.2 Finding-Triage, J.3 Praezise-Stellen-Aenderung, J.4 Verbot Re-Generierung, J.5 WARN-Behandlung, J.6 Output-Vertrag identisch §A HARD-STOP, J.7 Revisor-3-Punkte-Selbstpruefung, J.8 Konflikt-Triage Dominanz-Hierarchie). §H Changelog-Block v3.11.0→v3.12.0. +174/-1 (Insertion-only). GENERATOR-Pfad unveraendert, default bei File-Absenz. |
+| TBD (S5) | `docs/projekt/F0e_REVIEW_AGENT_BEFUND_C2.md` + `docs/projekt/F0e_REVIEW_AGENT_SPIKE_PLAN.md` | BEFUND_C2 v1.0 neu + Spike-Plan v1.4→v1.5 (§C2-Header DONE, §17 Nachtrag). |
+
+**End-to-End-Test (T2.1):**
+
+- **Dispatch 1** (Opus, reviewer v0.1.1 auf material.json): overall=FAIL, FAIL-Gates = SQ-2 Waterberg + Q10 Herero-Adressat. 52 984 Tokens / 145 s / 8 tool-uses. v0.1.1-Kalibrierung greift wie designed (SQ-2 exakter Match = FAIL, Voelkermord-Teilmatch = WARN, KONTEXT-DRIFT Default WARN, MQ-HARD-STOP PASS bei Direkt-Output).
+- **Dispatch 2** (Opus, Revisor-Modus v3.12.0 auf material.json + review_v1.json + sequenzkontext.json): 2/2 FAIL-Findings adressiert. 2/5 WARN adressiert (KONTEXT-DRIFT "Nation als solche" entfernt, QT-5 Herero-Perspektiv-Impuls ergaenzt). 3/5 WARN persistiert in `_meta.review_warnings[]`. 76 505 Tokens / 123 s / 16 tool-uses. Output 3-Top-Level, `_meta.review_iteration` 1→2.
+- **Dispatch 3** (Opus, Re-Review v0.1.1 auf material_v2): overall=WARN (0 FAIL, 4 WARN). Beide urspruengliche FAILs (SQ-2 Waterberg, Q10 Herero-Adressat) auf PASS. 72 748 Tokens / 127 s / 10 tool-uses.
+- **Gesamt:** 202 237 Tokens / 395 s / 34 tool-uses fuer kompletten Zyklus.
+
+**T2.2 Diff-Check (material.json → material_v2.json):**
+
+- Word-Level-Similarity `inhalt`: 86% (14% Aenderung).
+- 5 inhalt-Aenderungen, alle Findings-adressierend (4× FAIL, 1× WARN).
+- 5 _meta-Aenderungen: 1× Findings-adressierend (Impuls[2] → QT-5 WARN), 4× J.3-Ausnahmeliste-legitimiert (wortanzahl auto-recomputed, review_iteration inkrementiert, review_warnings befuellt, revisor_notes dokumentiert).
+- **Kollaterale Aenderungen: 0.**
+- **Diff-Lokalisierung-Ratio: 100% (>=95% Kriterium erfuellt mit Puffer).**
+- Byte-identisch zur Vorlage: Zitat-Blockquote, quelle, HTML-Struktur, einleitungs-satz-1, 8/10 _meta-Felder, Impulse 1+2.
+
+**Akzeptanzkriterien C2 (Spike-Plan §C2):**
+
+| Kriterium | Urteil |
+|---|---|
+| End-to-End-Zyklus Generate→FAIL→Revise→Re-Review funktional | PASS (FAIL→Revise→WARN, beide empirische FAILs behoben; WARN-Schwelle-Semantik in C3 zu klaeren) |
+| Revisor keine nicht-adressierten Aenderungen (>=95% Diff auf Findings-Stellen) | PASS (100%) |
+
+**Beide Akzeptanzkriterien erfuellt.** Sub-Status MIXED wegen Severity-Emergenz "vernichten"-WARN im Re-Review (Revisor-Recommendation-Qualitaets-Frage, nicht blockend).
+
+**Severity-Emergenz-Befund:**
+
+Der Revisor waehlte als Q10-Korrektur die Formulierung "einen Befehl an seine Soldaten, die Herero zu vernichten" (aus 2 review_v1-Empfehlungen). Re-Reviewer klassifiziert "vernichten" als WARN (didaktische Vorweginterpretation — Verb nicht im Zitat-Wortlaut). Kein Datei-Aenderungs-Kollateralschaden, sondern Severity-Emergenz: neue WARN-Klasse durch FAIL-Korrektur. Mitigation: Reviewer-v0.1.2-Kandidat koennte Recommendations priorisieren (neutrale vor fachsprachlichen Formulierungen). Nicht blockend fuer C3.
+
+**Offene Spec-Refinements (nicht in C2-Scope, Kandidaten fuer v3.12.1 oder C3):**
+
+1. §J.6 `material_id` offiziell in Revisor-Output-Kontrakt aufnehmen.
+2. Reviewer-Spec v0.1.2 — Recommendations-Priorisierung.
+3. Schema-Erweiterung fuer `review_iteration` / `review_warnings` / `revisor_notes` (C3-Dispatcher-Scope → Schema v3.10.4).
+
+**Track-Status nach C2:**
+
+- C0 PM-Verankerung DONE.
+- C1 REVIEWER_MATERIAL MVP DONE (2026-04-24 frueher Tag).
+- **C2 Revisor-Modus-Integration DONE (2026-04-24 gleicher Tag, Feature-Branch pushed, Merge pending).**
+- C3 Dispatcher-Integration (G3 + Phase 2.0b + Verzeichnis-Struktur + Schema v3.10.4) offen. Trigger jetzt entblockt.
+- C4-C9 Typ-Specializations offen.
+- C10 Parallel-Dispatch via agent-teams offen.
+
+**Gen-Repo-Status:** Feature-Branch `c2/revisor-modus-quellentext` mit 3 Commits pushed. Gen-Repo main HEAD unveraendert `16b2e21` (post-C1-Merge). FF-Merge zu main pending User-Review von BEFUND_C2 + Entscheidung zu Severity-Emergenz-Mitigation.
+
+**weitergehts-online-Status:** main gebumpt (STATUS + CHANGELOG + Auto-Memory). `UPGRADE_PLAN_v3-12 §22` unveraendert (C2 ist Track-intern, kein §22-Delta).
+
+**Artefakte (session-scratch, nicht committed):**
+
+- `scratch/c2/material.json` — Test-Vorlage (3-Top-Level aus C1-Fixture extrahiert).
+- `scratch/c2/sequenzkontext.json` — Sequenzkontext-Fixture.
+- `scratch/c2/review_v1.json` — Initial-Review-Output (FAIL).
+- `scratch/c2/material_v2.json` — Revisor-Output (3-Top-Level).
+- `scratch/c2/review_v2.json` — Re-Review-Output (WARN).
+- `scratch/c2/c2-diff-analysis.md` — T2.2 Detailanalyse.
+
+**Referenzen:**
+
+- Gen-Repo Feature-Branch: `c2/revisor-modus-quellentext` Commits `c696196` + `7e9c3b8` + TBD (S5).
+- Gen-Repo BEFUND: `docs/projekt/F0e_REVIEW_AGENT_BEFUND_C2.md` v1.0.
+- Gen-Repo Spike-Plan: v1.4 → v1.5 (§C2-Header DONE, §17 Nachtrag).
+
+**Folge-Arbeit:**
+
+- User-Review BEFUND_C2. Entscheidung: FF-Merge Feature→main ODER zweite Revisor-Runde fuer "vernichten"-Neutralisierung ODER Reviewer-v0.1.2-Refinement vor Merge.
+- Optional: Spec-Refinement-Commit auf Feature-Branch vor Merge (material_id in §J.6 legitimiert).
+- Nach Merge: Track C3 Dispatcher-Integration startbar.
+
+---
+
 ## 2026-04-24 — Track C1 MVP DONE: Reviewer-Material-Quellentext A/B-Test Opus/Sonnet + BEFUND + FF-Merge Gen-Repo main
 
 **Scope:** Track C1 Schritt 3 — A/B-Test `reviewer-material-quellentext` Plugin-Subagent via Cowork-Task-Tool-Pattern, BEFUND-Persistierung, FF-Merge Feature-Branch in Gen-Repo main, Abschluss Track C1.
