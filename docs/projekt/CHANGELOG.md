@@ -4,6 +4,63 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-24 — Track C1 MVP DONE: Reviewer-Material-Quellentext A/B-Test Opus/Sonnet + BEFUND + FF-Merge Gen-Repo main
+
+**Scope:** Track C1 Schritt 3 — A/B-Test `reviewer-material-quellentext` Plugin-Subagent via Cowork-Task-Tool-Pattern, BEFUND-Persistierung, FF-Merge Feature-Branch in Gen-Repo main, Abschluss Track C1.
+
+**Methode:** Cowork-Task-Tool parallel-Dispatch mit `subagent_type="general-purpose"`, Variante A (model=opus) + Variante B (model=sonnet). Test-Fixture `stufe-1-merged.json` rekonstruiert aus Stufe-1-Smoke-Session mit 2 empirisch bekannten Defekten (Waterberg SQ-1 + Herero-Adressat Q10). Sequenzkontext-Fixture mit explizitem `noch_nicht_eingefuehrt.fachbegriffe` fuer SQ-1/SQ-2-Detection-Validierung.
+
+**Akzeptanzkriterien (HANDOVER §2.2 hart):**
+
+| Kriterium | Opus (A) | Sonnet (B) |
+|---|---|---|
+| Waterberg-Referenz als SQ-1 FAIL | JA | JA |
+| "Befehl an die Herero" als Q10 FAIL | JA | JA |
+| overall = FAIL | JA | JA |
+| confidence >= 0.8 | 0.92 | 0.91 |
+| JSON parsbar | JA | JA |
+
+**Beide Varianten 5/5 hart bestanden.** Sub-Status MIXED wegen divergenter Severity-Kalibrierung (keine FAIL-Klassen-Inversion): Opus strenger auf semantisch-didaktische Grenzen (Voelkermord-Vorgriff FAIL, KONTEXT-DRIFT FAIL), Sonnet strenger auf strukturell-schema-formale Grenzen (MQ-HARD-STOP FAIL auf Dispatcher-Felder). False-Positive-Rate 0/0 beide Varianten.
+
+**Messgroessen:** Opus 48 254 tok / 124 s / 5 tool-uses. Sonnet 46 755 tok / 432 s / 9 tool-uses. Laufzeit-Anomalie (Sonnet 3.5x langsamer) in n=1 auffaellig, nicht aussagekraeftig fuer Dauer-Kalibrierung.
+
+**Model-Default-Entscheidung:** Opus beibehalten (Spec-Frontmatter `model: opus` unveraendert). Sonnet-Default-Wechsel erfordert n>=3 Retest wegen Laufzeit-Varianz — opportunistisch in C2/C10 integrierbar, kein eigenes Track-Item.
+
+**Offene Spec-v0.1.1-Klarstellungen (C2 zugeordnet):**
+1. MQ-HARD-STOP-Scope: "Reviewer prueft Subagent-Direkt-Output, nicht post-dispatcher-merged. Bei merged-Input: MQ-HARD-STOP → Dispatcher-Drift-Alarm, nicht Revisor-Iteration."
+2. Voelkermord-Severity-Rulebook: "Begriff != Definition → WARN. FAIL nur bei expliziter Definitionsnahme-Vorwegnahme."
+3. Prompt-Strictness: Dispatcher-JSON-Extraktor muss robust gegen Vor-Narration sein (optional Sentinel).
+
+**Gen-Repo-Commits (Feature-Branch `c1/plugin-skelett-und-reviewer-material-quellentext` → main FF-merged):**
+- `16b2e21` docs(f0e): Track C1 DONE — A/B-Test Opus/Sonnet + BEFUND (210 Z. +/-3 / 2 Dateien).
+- Inhalt: `docs/projekt/F0e_REVIEW_AGENT_BEFUND_C1.md` v1.0 (neu) + Spike-Plan v1.3 → v1.4 (Status-Zeile, §C1-Header DONE, §16 Nachtrag).
+- FF-Merge auf main: `bc41627..16b2e21` fast-forward, kein Merge-Commit.
+- Feature-Branch lokal + remote geloescht (Historie auf main erhalten).
+- **Gen-Repo main HEAD: `16b2e21`**.
+
+**Track-Status nach C1:**
+- C0 PM-Verankerung DONE (siehe Vorgaenger-Eintraege).
+- **C1 REVIEWER_MATERIAL + QUELLENTEXT MVP DONE (2026-04-24).**
+- C2 Revisor-Modus-Integration offen (Trigger jetzt entblockt). Start mit Spec v0.1.1-Klarstellungen als C2-Auftakt-Commit vor Revisor-Modus-Integration.
+- C3-C10 unveraendert offen.
+
+**Artefakte (session-scratch, nicht committed):**
+- `scratch/c1-3-review-opus.json` (Opus-Review-Output, 4 FAILs).
+- `scratch/c1-3-review-sonnet.json` (Sonnet-Review-Output, 3 FAILs).
+- `scratch/stufe-1-merged.json` (Test-Fixture).
+- `scratch/sequenzkontext-mat-4-3.json` (Sequenzkontext-Fixture).
+- `scratch/c1-3-befund.md` (BEFUND-Spiegel).
+
+**Referenzen:**
+- Gen-Repo: `docs/projekt/F0e_REVIEW_AGENT_BEFUND_C1.md` v1.0, `docs/projekt/F0e_REVIEW_AGENT_SPIKE_PLAN.md` v1.4 (§16 Nachtrag).
+- Vorgaenger-HANDOVER: Gen-Repo `docs/projekt/HANDOVER_C1_STEP3.md` (deprecated nach Ausfuehrung, Historie-Anker).
+
+**Folge-Arbeit:**
+- C2 Revisor-Modus-Integration: Spec v0.1.1-Klarstellungen + Pre-Flight-File-Check + Revisor-Modus-Kapitel in `SUB_MATERIAL_QUELLENTEXT.md` + End-to-End-Test (Generate→FAIL→Revise→PASS).
+- UPGRADE_PLAN §22 unveraendert (C1 ist Track-intern, kein §22-Delta).
+
+---
+
 ## 2026-04-24 — UPGRADE_PLAN v1.6 Nachtrag §22.17: Dev-Workflow-Revision + Endprodukt-Implikationen + Track-D-Scope-Erweiterung
 
 **Scope:** Korrektur-Nachtrag zu §22.16 nach empirischer Entdeckung von zwei strukturellen Problemen des osascript-MCP-Transports bei Track C1 Schritt 2 A/B-Test-Vorbereitung.
