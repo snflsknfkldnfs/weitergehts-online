@@ -4,6 +4,38 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-24 — Track C2 FF-Merge Gen-Repo main + Track C3 Dispatcher-Integration STARTEND
+
+**Scope:** User-Review BEFUND_C2 abgeschlossen, Option A gewaehlt (Direkt-Merge, C3 starten, Spec-Refinements opportunistisch in C3 gebuendelt).
+
+**Gen-Repo Merge:**
+- main `16b2e21` → `1c86806` (FF-Merge von Feature-Branch `c2/revisor-modus-quellentext` mit 3 Commits: `c696196` reviewer v0.1.1 + `7e9c3b8` SUB_MATERIAL_QUELLENTEXT v3.12.0 + `1c86806` BEFUND_C2 + Spike-Plan v1.5).
+- Feature-Branch lokal + remote geloescht (Historie auf main erhalten).
+- Kein Merge-Commit (fast-forward).
+
+**Track-Status nach C2-Merge:**
+- C0-C2 alle DONE + gemerged.
+- **C3 Dispatcher-Integration (G3-Phase + Phase 2.0b Sequenzkontext-Pre-Computation + Pro-Material-Verzeichnis-Struktur + Schema v3.10.4) STARTEND.** Aufwand laut Spike-Plan §C3: 3-5 Tage. Kritischer Pfad fuer Track-C-Abschluss.
+- C4-C9 Typ-Specializations offen.
+- C10 Parallel-Dispatch via agent-teams offen.
+
+**C3-Scope (laut Spike-Plan §C3):**
+
+- `agents/AGENT_MATERIAL.md`: §2.1-Gates um G3-Phase erweitern + Phase 2.0b als Pre-Computation dokumentieren.
+- `tools/compute_sequenzkontext.py` implementieren (topologische Sortierung + Fachbegriffe-Union).
+- `tools/check_prosa_only.py` (M16-Regex) + `tools/check_quelle_ssot.py` (M17-Regex) implementieren.
+- Verzeichnis-Struktur `{mat-id}/material.json + review_v*.json + sequenzkontext.json + dispatch_meta.json` dokumentieren.
+- Phase 3 Assembly-Read-Pfad aktualisieren.
+- Schema v3.10.4: Erweiterung fuer Revisor-`_meta`-Felder (review_iteration, review_warnings, revisor_notes, revisor_error, material_id).
+
+**Opportunistische C2-Spec-Refinements in C3:**
+1. `SUB_MATERIAL_QUELLENTEXT.md` v3.12.0 → v3.12.1: §J.6 `material_id` offiziell in Revisor-Output-Kontrakt.
+2. `reviewer-material-quellentext.md` v0.1.1 → v0.1.2: Recommendations-Priorisierung (neutrale vor fachsprachlichen Formulierungen).
+
+**Naechster Schritt:** C3-Diagnose-Phase (AGENT_MATERIAL.md, Schema-Pfade, tools/-Infrastruktur, Verzeichnis-Struktur-Cut-over-Planung). Strategie-Entscheidung (vertikaler Ansatz vs. horizontaler Ansatz) vor S1-Start.
+
+---
+
 ## 2026-04-24 — Track C2 DONE: Revisor-Modus-Integration (SUB_MATERIAL_QUELLENTEXT v3.12.0 + reviewer v0.1.1) — Feature-Branch pushed, KEIN Merge zu main (User-Review pending)
 
 **Scope:** Track C2 Sub-Steps S1-S5 ausgefuehrt. Spec-Updates + End-to-End-Test + T2.2 Diff-Check + BEFUND. Feature-Branch `c2/revisor-modus-quellentext` (Gen-Repo) mit 3 Commits, kein FF-Merge zu main vor User-Review.
