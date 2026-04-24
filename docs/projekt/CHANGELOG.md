@@ -4,6 +4,52 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-25 — C-ARCHI-AUDIT S2-S4 DONE: Inventar-Detail + 7-RA-Multi-Audit + Cross-RA-Aggregation
+
+**Scope:** S2-S4 in einer Cowork-Session (Y1-Split-Strategie umgesetzt: Review-Revisionen R1-R11 in v1.1 → S2 Inventar-Detail in v1.2 → S3 7-RA-Dispatch via 3×3+1-Sequential-Staging → S4 Cross-RA-Aggregation + Gap-Analyse). Pfad-Entscheidung H1/H2/H3/H4/H5 noch offen — folgt in S5 BEFUND.
+
+**Gen-Repo Commits:**
+- `d25a627` — Recon v1.0→v1.1 + Audit-Plan v1.0→v1.1 mit 11 Review-Revisionen.
+- `59575a2` — S2 Inventarisierung-Detail DONE + Recon v1.1→v1.2.
+- `7d00253` — S3 7-RA-Multi-Audit-Dispatch DONE (3×3+1 Sequential-Staging).
+- (ausstehend) — S4 Aggregation-Artefakt + STATUS/CHANGELOG-Pflege.
+
+**Phase 1 (Y1-Split-Revisionen R1-R11, Commit d25a627):**
+- Recon-Revisionen: H5 Parallel-Migration als 5. Hypothese mit Label-Praefixen H1-H5; Frage 11 Tools-Integration mit Prio HIGH/MEDIUM/LOW; Input-Bundle-Erweiterung um Checklisten (9) + Configs (5) + Tools-Source (16) + hooks.json.
+- Audit-Plan-Revisionen: Prio-Gewichtung 12 Dimensionen; Grenzen-zu-anderen-RAs pro RA-Charta; S3-Aufwand konkretisiert (1.5-2.5h Parallel-7 / 4-5h Sequential-3×3+1); Entscheidung 10 Tools-Integration + Entscheidung 11 Versionsstrategie (optional); Severity-Enum; §5.3-Matrix auf 5 Spalten H1-H5; hypothesis_evaluation-Keys H1-H5 synchron.
+- Token-Budget-Note: pro RA ~90k (vs ~70k v1.0) durch Input-Bundle-Erweiterung.
+
+**Phase 2 (S2 Inventar-Detail, Commit 59575a2):**
+- `scratch/archi-audit/token-inventar.md` (32 Files, 9495 LOC, ~142k Tokens gesamt). AGENT_MATERIAL groesster Orchestrator (1098 LOC / 16470 t = 12 % Gesamt-Volumen). SUB_MATERIAL_QUELLENTEXT groesster Worker (711 LOC / 10665 t).
+- `scratch/archi-audit/dependency-graph.mermaid` (grep-basiert). F0B_PRIMING_INCLUDE → 22 Konsumenten. AGENT_MATERIAL 5 Cross-Refs. VERTRAG_PHASE_3_ASSEMBLY am meisten referenziert (6×). Legacy-Refs AGENT_DESIGN/TECHNIK identifiziert (v3.9 obsolet).
+- `scratch/archi-audit/subagent-klassifikation.md` (Typ-Verteilung: 8 Orchestratoren / 18 Worker / 4 Referenz-Docs / 1 Include / 1 Plugin-nativ).
+- Recon v1.1 → v1.2: §2.2.S2 Detail-Tabelle, §7.3 Drift-Korrektur 3/32 statt 3/30, §9.3 Dependency-Graph-Referenz.
+- Drift-Befund: 32 Files Total (vs 30 in v1.0-Summary).
+
+**Phase 3 (S3 7-RA-Dispatch, Commit 7d00253):**
+- Strategie: 3×3+1 Sequential-Staging (Audit-Plan v1.1 §3 Default).
+- Batch 1 (Kern-Dimensionen): RA-P1 D1+D4 → H2 conf=0.72 / RA-P2 D2 → H4 conf=0.65 / RA-P3 D3+D6 → H2 conf=0.80. Wall-Clock ~13 min.
+- Batch 2 (Sekundaer-Dimensionen): RA-P4 D5 → H2 conf=0.72 / RA-P5 D7 → H2 conf=0.75 / RA-P6 D10+D11+D12 → H1 conf=0.65. Wall-Clock ~6 min.
+- Batch 3 (solo): RA-P7 D9 → H1 conf=0.82 (hoechste Confidence). Wall-Clock ~7 min.
+- Output-Format: alle 7 valid JSON gemaess Audit-Plan §4. Enum-Konformitaet 7/7 PASS. H-Labels-Konsistenz 7/7. Findings-Coverage: 5/7 mit 32/32 Subagents, 2/7 RA-Scope-beschraenkt (RA-P5 6/32 Skill-Kandidaten-Scope, RA-P6 18/32 Phase-relevant-Scope) — fuer S4-Aggregation dokumentiert.
+- Empfehlungs-Verteilung: H2=4 (RA-P1/P3/P4/P5), H1=2 (RA-P6/P7), H4=1 (RA-P2). Confidence-gewichtet H2=2.99, H1=1.47, H4=0.65.
+
+**Phase 4 (S4 Cross-RA-Aggregation, ausstehender Commit):**
+- `docs/projekt/F0e_PLUGIN_ARCHI_AUDIT_AGGREGATION.md` v1.0 — Konsolidierung aller 7 RA-Reports.
+- Per-Subagent-Klassifikation: STARK-konvergent fuer alle 18 Worker (direkt-portierbar 4-5×) + 5 Skill-Kandidaten (als-skill 6/6) + AGENT_MATERIAL (refactor 6/6 Konsens). MITTEL-Konvergenz nur bei AGENT_QUALITAET (Drift-Konflikt).
+- Hypothesen-Aggregat: Effort_weeks-Median H1=3, H2=8, H3=8, H4=6, H5=12. Feasibility-Verteilung favorisiert H1+H2+H3+H4 (3-4× HIGH), H5 abgelehnt (1× HIGH / 6× MEDIUM).
+- Architecture-Gaps: 42 dedupliziert zu ~28 unique. 14 HIGH-Severity (Plugin-Stub-Widerspruch + Monolithische Orchestratoren + Skill-Hebel-Ungenutzt + State-Asymmetrie + Test-Fixture-Defizit).
+- Cross-RA-Patterns: 8 deduplizierte Kern-Patterns.
+- **Neuer Befund S4 (G-NEU-1, HIGH):** 3.-Root-Topologie entdeckt (`Unterrichtseinwicklung/`, ~1000+ Files, Host-lokal, Nicht-Git). Recon v1.3-Drift-Korrektur empfohlen.
+
+**Vorlaeufige Empfehlung (nicht final, fuer S5 BEFUND zu pruefen):** **H2 mit H1-Vorstufe (gestaffelt)**. Phase 1 = H1-aequivalent (3 Wochen, ~90 % Plugin-Readiness, niedriges Risiko). Phase 2 = H2-spezifisch (+5 Wochen fuer AGENT_MATERIAL-Refactor + Skill-Transformation + State-JSON + Hooks). Total ~8 Wochen. Begruendung: H2-Mehrheit + HIGH-Prio-Beruhigung durch Staffelung.
+
+**9 offene Fragen fuer User-Review nach S5 BEFUND** dokumentiert in Aggregation-Artefakt §9: Staffelungs-Akzeptanz, 3.-Root-Behandlung, AGENT_MATERIAL-Aufspaltungs-Granularitaet, PI-Zukunft, Vertrags-Skill-Granularitaet, Test-Fixture-Phase-Scope, Code-Mode-Verankerung, Recon-Drift-Korrekturen v1.3, Roadmap-v2.0-Scope.
+
+**Naechste Schritte:** S5 BEFUND-Schreibung + Entscheidungs-Matrix-Auswertung + User-Review-Vorbereitung. Aufwand-Schaetzung: 3-4h. S6 Roadmap v2.0-Revision, S7 PM-Pflege follow-up.
+
+---
+
 ## 2026-04-24 — C-ARCHI-AUDIT S0+S1 DONE: Plugin-Architektur-Recon + Audit-Plan-Charta
 
 **Scope:** Vor-Audit-Recon des Ist-Zustands + Audit-Charta-Finalisierung. Neuer Track C-ARCHI-AUDIT initiiert. C4-bildquelle vertagt bis Audit-Pfad-Entscheidung.
