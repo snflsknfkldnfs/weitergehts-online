@@ -4,6 +4,57 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-25 — Track P.1 Block A+C DONE: 24 Frontmatter + Plugin-Manifest v0.2.0
+
+**Scope:** Plugin-Phase-1 mechanische Migration Bloecke A.1-A.4 (24 Subagent-Frontmatter-Adds) + Block C (Plugin-Manifest-Erweiterung). Daily-Rhythm-Plan §6 Tag 1-2 (A.1+A.2) + Tag 3 (A.3+A.4+C) in einer Cowork-Session zusammengezogen, ca. 5 Min Wall-Clock netto.
+
+**Block A.1 (7 SUB_MATERIAL_*, 1.5 PT):** BILDQUELLE, DARSTELLUNGSTEXT, KARTE, QUELLENTEXT, STATISTIK, TAGEBUCH, ZEITLEISTE. Dispatch via Cowork-Task-Tool-Agent (general-purpose). 7/7 PASS.
+
+**Block A.2 (8 SUB_AUFGABE_*, 1.5 PT):** MC, ZUORDNUNG, LUECKENTEXT, REIHENFOLGE, FREITEXT, BEGRUENDUNG, VERGLEICH, QUELLENKRITIK. Dispatch via zweiter Cowork-Task-Tool-Agent parallel zu A.1. 8/8 PASS. Wall-Clock A.1+A.2 ca. 70s.
+
+**Block A.3 (5 Phase-0-Orchestratoren, 1 PT):** AGENT_DIDAKTIK, AGENT_INHALT, AGENT_MEDIENRECHERCHE, AGENT_SKRIPT, AGENT_HEFTEINTRAG. Cowork-Task-Tool-Agents 529-overloaded → Self-Edit Fallback (Read parallel + Edit parallel im selben Message-Block). 5/5 PASS.
+
+**Block A.4 (4 Cross-Concern, 1 PT):** SUB_ASSEMBLY_VERIFY, AGENT_QUALITAET, SUB_TEMPLATE_MAPPENABSCHLUSS, AGENT_ARTEFAKT. Self-Edit Fallback. 4/4 PASS. Note: AGENT_QUALITAET-Drift-Cleanup (Legacy AGENT_DESIGN/TECHNIK-Refs) bleibt fuer Block F separat (Tag 11-12).
+
+**Block C (Plugin-Manifest, 1 PT):** `.claude-plugin/plugin.json` v0.1.0 → v0.2.0:
+- Top-Level-Keys-Erweiterung: `license: MIT`, `repository`, `keywords`, `agents`/`commands`/`skills`-Globs, `hooks`-Pfad, `tools`-Liste (5 Plan-spezifizierte Tools).
+- `description` aktualisiert auf 24-Subagent-Inventar mit Cowork-Dev/Code-Mode-Prod-Konvention-Verweis.
+- `author` Format Object → String (Plan §2.3 explizit so spezifiziert).
+- `commands/` + `skills/` Stub-Verzeichnisse angelegt (.gitkeep + README mit Plan-§-Verweisen) damit Plugin-Loader-Glob-Resolution nicht fail-fast bei leerem Match.
+
+**Frontmatter-Konvention (alle 24 einheitlich):**
+```yaml
+---
+name: <kebab-case>
+description: <Phase-Trigger + Q-Gate-Stack + Use-Trigger>
+tools: Read, Grep, Glob, Write
+model: opus
+---
+```
+
+**Smoke-Tests PASS:**
+- 24/24 Frontmatter (z.1=`---`, z.6=`---`, z.7=leer, z.8=Original-H1) verifiziert via sed.
+- JSON-Validitaet plugin.json via `python3 -c "import json; json.load(open(...))"`.
+- 5/5 Plan-spezifizierte Tools existieren in `tools/`.
+- agents-Glob matched 32 Files (24 Frontmatter + reviewer-material-quellentext.md C1-Plugin-nativ + 7 Phase-2-pending: ORCHESTRATOR, PFAD_MANIFEST, POLICY_TRIGGER_SICHTBARKEIT, ROLLEN_KATALOG, AGENT_MATERIAL, AGENT_RAETSEL, _includes/F0B_PRIMING_INCLUDE.md). Plugin-Loader-Verhalten bei Phase-2-pending Files = empirische Verifikation beim ersten Reload-Cycle.
+
+**git diff Stat (Block A+C-Scope):** 25 modified + 4 new = 29 Files. 168 insertions Frontmatter (24 × 7 = 6 FM-Zeilen + 1 Leerzeile) + 20 insertions Manifest-Replace + 0 deletions Body (24 Files) + 5 deletions Manifest-Replace.
+
+**Akzeptanzkriterium A+C teilweise erfuellt:**
+- 24/24 Frontmatter vorhanden ✓
+- Manifest v0.2.0 SDK-konform (statisch validiert) ✓
+- Empirischer Plugin-Reload-Discovery-Test PENDING (braucht Cowork-Plugin-Reload-Cycle in naechster Session).
+
+**Mid-Block-Befund:** Block A.3+A.4 Self-Edit-Fallback nach API-529-Overload zeigt: Mechanische 9-File-Edits sind via Read-parallel + Edit-parallel im selben Message-Block in <30s ohne Subagent-Spawn machbar. Fuer kuenftige Mechanik-Bloecke (B Skill-Edits + F Drift-Cleanup) gleicher Pattern moeglich. Subagent-Dispatch (User-Default fuer A.1+A.2) bleibt sinnvoll fuer File-Inventare ueber 10 Files.
+
+**Pre-existing Untracked-Files (out-of-scope):** `FORTSETZUNG_PHASE_2-2_MAPPE_2.md`, `docs/uebergabe/`, `tools/lemma_duplicate_check.py` — bewusst NICHT in Block-A+C-Commit, getrennter Commit oder eigene Scope-Entscheidung.
+
+**Naechste Schritte:**
+- Final-Commits Block A+C via 5-Stufen-Host-MCP (Plan → User-Freigabe → Lock-Cleanup → Exec → Verify) — pending User-Freigabe.
+- Block B.1+B.2 (F0B-Priming-Skill + escape-game-schema-Skill, 1.5 PT, Tag 4-5) startet danach. Manuelle Iteration empfohlen wg. Architektur-Entscheidungen pro Skill (Auto-Trigger-Bedingungen + Token-Einsparungs-Mess-Methode).
+
+---
+
 ## 2026-04-25 — C-ARCHI-AUDIT User-Review-Gate DONE + Track-P.1-Ready
 
 **Scope:** User-Review-Gate auf 9 offene Fragen aus BEFUND v1.0 §10 abgeschlossen. User-Decisions Q1-Q9 integriert in Folge-Artefakte. Track P.1 (Plugin-Phase 1, mechanische Migration, ~3 Wochen) ready zum Start.
