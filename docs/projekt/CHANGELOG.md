@@ -4,6 +4,61 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-25 — STRICT-SEPARATION verankert: Cowork = Plugin-Dev / Code-Mode = Plugin-Prod (self-sustained)
+
+**Scope:** User-Architektur-Direktive 2026-04-25 (post-T-P.1-Smoke). Verschaerfung von Q7 "Code-Mode = Prod" zu "Code-Mode = AUSSCHLIESSLICH Prod (self-sustained)". Cowork = AUSSCHLIESSLICH Plugin-Development. Plugin-Install in Cowork = Anti-Pattern.
+
+**User-Reasoning:**
+- Cowork = Plugin-Pflege/Optimierung (Source-Files-Editing).
+- Code-Mode = Plugin-Ausfuehrung (Game-Generierung autonom).
+- Plugin in Cowork installiert wuerde Skills/Hooks bei Source-Editing unerwuenscht triggern -> kontraproduktiv.
+
+**5 Doku-Updates:**
+
+1. **`escape-game-generator/docs/projekt/PLUGIN_ARCHITEKTUR_TRIPLE_ROOT.md` §3 verschaerft:**
+   - Header "STRICT-SEPARATION Cowork = Dev / Code-Mode = Prod".
+   - Strict-Separation-Pflicht-Statement praezisiert.
+   - §3.3 Konsequenzen erweitert: Self-Sustained-Plugin-in-Code-Mode + Phase-3-Vereinheitlichung-Code-Mode + Pilot-Einsatz-Code-Mode.
+   - **Neue §3.4 Anti-Pattern: Plugin-in-Cowork-Loaded (FORBIDDEN)** mit 5 Begruendungen (Skill-Trigger / Hook-Block / Command-Kollision / Cache-Invalidation / Audit-Workflow-Stoerung).
+   - **Neue §3.5 Empirie-Verifikations-Pfad-Tabelle** (5 Stufen Cowork-Shell vs Code-Mode-only).
+
+2. **`escape-game-generator/PROJECT_INSTRUCTIONS.md` RUNTIME-KONVENTION-Sektion verschaerft:**
+   - Tabelle erweitert um Spalte "Plugin-geladen?": Cowork=NEIN/Anti-Pattern, Code-Mode=JA via `claude plugin install`.
+   - Anti-Pattern-Begruendung explizit dokumentiert.
+   - Konsequenzen-Block erweitert mit Self-Sustained-Plugin-in-Code-Mode.
+   - Empirie-Verifikations-Pfad-Liste hinzugefuegt.
+
+3. **`escape-game-generator/docs/projekt/BEFUND_T_P1_SMOKE.md` §5 praezisiert:**
+   - Architektur-Anker-Hinweis verschaerft (Strict-Separation).
+   - S3-S7 explizit als Code-Mode-Pflicht (KEIN Cowork-Install).
+   - `claude --add-dir`-Beispiel-Command fuer Code-Mode-Smoke-Session.
+
+4. **`escape-game-generator/docs/projekt/TEST_AUDIT_ROADMAP.md` v2.1 -> v2.2:**
+   - Aenderungshistorie-Eintrag v2.2 mit Strict-Separation-Klarstellung.
+   - T-Full-Game + Pilot-Einsatz + State-Machine-Migration als Code-Mode-only.
+   - T-State-Recovery-Test: Code-Mode `/resume-state` post-Compaction ohne Cowork-Interaktion.
+   - S3-S7 als Code-Mode-Pflicht.
+
+5. **NEUE Auto-Memory `feedback_runtime_strict_separation.md`:**
+   - Pattern-Beschreibung: Cowork-only-Dev / Code-Mode-only-Prod.
+   - 5 Begruendungen (Anti-Pattern-Liste).
+   - 5-Stufen-Verifikations-Pfad-Tabelle.
+
+**Cleanup ausgefuehrt:**
+- `claude plugin uninstall escape-game-generator` -> Successfully uninstalled.
+- `claude plugin marketplace remove escape-game-generator-local` -> Successfully removed.
+- `claude plugin list` -> No plugins installed.
+- Cowork-Mode operiert ab jetzt strict-separation-konform: nur Source-Files via Read/Edit-Tools, kein Plugin-Loader-Interaktion.
+
+**Implikationen fuer naechste Schritte:**
+- T-P.1-Smoke S3-S7 (Skill-Auto-Trigger / Hook-Aktivierung / Command-Aufruf / E2E) sind Code-Mode-Pflicht. User fuehrt sie in dedizierter Code-Mode-Session aus via `claude plugin install` + `claude --add-dir <target> --add-dir <unterricht>` + Test-Prompts.
+- Audit (A-Plugin-Phase-1) jetzt durchfuehrbar in Cowork — Read-Only auf Source-Files, kein Plugin-Loader-Bedarf.
+- Track P.2 / Phase 2 muss Self-Sustained-Code-Mode-Anforderung formalisieren (State-Machine-Migration Q4 Option-C+, Pilot-Einsatz-Definition).
+
+**Aufwand:** ~20 Min Wall-Clock fuer 5 Doku-Updates + Plugin-Cleanup + STATUS+CHANGELOG.
+
+---
+
 ## 2026-04-25 — T-P.1-Smoke S2 PASS post-Fix-Cycle: Plugin Status enabled, 4 HIGH-Loader-Errors gefixt
 
 **Scope:** Plan §4 Akzeptanz-Test T-P.1-Smoke. Mechanische Plugin-Loader-Akzeptanz (S2). Empirische LLM-Aktivierungs-Tests (S3-S7) DEFERRED.
