@@ -4,6 +4,81 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-25 — T-P.1-Smoke S3+S4+S5 Empirie DONE: 3/4 PASS + 1 KRITISCHES FINDING jsonschema-Dependency
+
+**Scope:** Limited-Smoke-Suite via Code-Mode-CLI headless. Empirische Verifikation der Plugin-Aktivierung (Skill-Auto-Trigger / Command-Aufruf / Hook-Aktivierung). Plan §4 S3-S5-Akzeptanzkriterien.
+
+**Test-Methode:** Plugin in Code-Mode (Strict-Separation-konform) re-installiert, `claude -p` headless mit gezielten Prompts, Output via Host-MCP osascript zu Datei umgeleitet (osascript output-size-Limit). Plugin nach Tests uninstalled (Strict-Separation-Restore).
+
+**Empirisches Ergebnis Test-Suite:**
+
+**T-A Plugin-Install (Re-Install): PASS**
+- `claude plugin marketplace add https://github.com/snflsknfkldnfs/escape-game-generator.git` -> Successfully added.
+- `claude plugin install escape-game-generator@escape-game-generator-local` -> Status: ✔ enabled. v0.3.1.
+
+**T-B Command-Aufruf `/escape-game-generator:resume-state`: PASS**
+- `claude -p '/escape-game-generator:resume-state'` headless.
+- Plugin-Prefix-Konvention `/escape-game-generator:<name>` (NICHT `/<name>` plain).
+- Command-Body geladen, LLM las PROJECT_INSTRUCTIONS.md Zustandsblock, generierte korrekten State-Bericht (n-k Game ABGESCHLOSSEN, 4/4 Mappen, Deploy-Check PASS, Naechste-Aktions-Optionen mit Plugin-Slash-Command-Verweisen).
+- 11 Slash-Commands sichtbar: 6 Block-E + 5 Skills (auch invokable) + 1 README (INTERNAL DOC).
+- Exit 0.
+
+**T-C Skill-Auto-Trigger `f0b-priming`: PASS**
+- Prompt: "Ich arbeite in Phase 2.1 Material-Generierung fuer ein Quellentext-Material zu Bismarck. Welche Sprachniveau-R7-Regeln gelten fuer SuS-sichtbare Texte?"
+- Skill auto-getriggert. Output enthaelt:
+  - Alle 6 Sprachniveau-R7-Grenzen (Satzlaenge ≤15/≤25, Fachwort-Dichte ≤12%, Kompositum ≤4, Nominalstil ≤20%, Konjunktiv ≤5%).
+  - Strukturelle Direktiven (Hauptsatz-dominant, LP-QM-OH-Operatoren).
+  - DaZ-Pflicht (Tempus-Konsistenz, Genitiv sparsam).
+  - Quellentext-Ausnahme (wortgetreues Zitat + Kontextualisierungs-Satz).
+  - Konfig-SSoT-Referenzen (`architektur/wortschatz_r7_core.json`, `VERTRAG_SPRACHNIVEAU_R7.md`).
+- Skill-Description-Trigger empirisch praezise.
+
+**T-D Hook D.1 pre-write-material: MIXED — KRITISCHES FINDING F-S-01**
+- Test-Setup: `mkdir -p /tmp/test-game/materialien && claude --add-dir /tmp/test-game -p 'Schreibe invaliden Material-JSON nach /tmp/test-game/materialien/test-invalid.json'`
+- **Hook-Mechanik PASS:**
+  - D.1 PreToolUse Write triggerte korrekt bei Pfad `*materialien/*.json`.
+  - file-path-Filter via case-Pattern funktioniert.
+  - Hook-Command Bash + jq + temp-File + Tool-Call funktioniert.
+  - LLM bekam Hook-Output zurueck und reportete Block-Effekt.
+  - Test-File NICHT geschrieben (Block effektiv).
+- **Tool-Dependency-FAIL (HIGH-Finding):**
+  ```
+  ModuleNotFoundError: No module named 'jsonschema'
+  ```
+  `tools/validate_material_output.py` braucht `jsonschema`-Python-Modul, das auf User-Host nicht installiert ist. Tool exitet non-zero (Module-Fail), Hook interpretiert das korrekt als FAIL und blockt Write.
+
+**T-E Cleanup: PASS**
+- `claude plugin uninstall + marketplace remove` -> Successfully.
+- Strict-Separation-Restore: Cowork-Mode wieder Plugin-frei.
+
+**NEUER HIGH-Finding F-S-01: Tool-Dependency `jsonschema` undokumentiert.**
+
+| Finding | Severity | Detail |
+|---|---|---|
+| F-S-01 | HIGH | `tools/validate_material_output.py` braucht `jsonschema`-Python-Modul. Plugin-Doku erwaehnt das nicht. Bei User-Pilot-Use-Case wuerde Hook-Setup unbeabsichtigt alle Material-Writes blocken bis Module installiert. |
+
+**Pflicht-Fix vor Pilot-Einsatz:**
+1. **Plugin-README** erweitern um Setup-Sektion mit Python-Dependencies-Liste (`pip install jsonschema --break-system-packages`).
+2. **Optional:** `validate_material_output.py` resilient machen mit graceful-degrade-Pfad bei `jsonschema`-Missing (Warning statt FAIL).
+3. **Optional:** `tools/setup-deps.sh`-Skript fuer One-Shot-Dependency-Install.
+
+**Updates DONE:**
+- `BEFUND_T_P1_SMOKE.md` v1.0 erweitert mit S3+S4+S5 Empirie-Befunden + F-S-01 dokumentiert.
+
+**Akzeptanz-Update Plan §4:**
+- Plugin-Loader + Skill-Trigger + Command-Aufruf + Hook-Mechanik empirisch verifiziert. ✓
+- Pilot-Einsatz BLOCKIERT bis F-S-01 gefixt.
+- Akzeptanz-Status: PASS-mit-Pflicht-Fix-Pilot-Block.
+
+**Aufwand:** ~25 Min Wall-Clock fuer 4 Tests + Cleanup + BEFUND-Erweiterung. Token-Cost ~25-30k (3 LLM-Run-Aufrufe T-B+T-C+T-D).
+
+**Naechste Schritte:**
+1. **F-S-01 Pflicht-Fix:** Plugin-README Setup-Sektion mit Python-Dependencies. Optional Tool-resilient.
+2. **Track P.2-Plan-Doku** post-F-S-01-Fix.
+3. **User-empirischer Pilot-Test** in Code-Mode mit echtem Material-Run.
+
+---
+
 ## 2026-04-25 — A-Plugin-Phase-1 AUDIT DONE: PASS-mit-Pflicht-Fix, Plugin-Readiness 88%
 
 **Scope:** Statisches Phase-1-Akzeptanz-Audit gemaess Plan §4 (1-2h, Cowork-konform). 3 Dimensions: Block-Konformitaet + Cross-Repo+Doku-Konsistenz + Phase-1-Akzeptanz-Komplettheit. Auditor: Cowork-Task-Tool-Subagent (general-purpose). Aufwand: ~25 Min.
