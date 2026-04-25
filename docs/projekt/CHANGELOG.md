@@ -4,6 +4,66 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-25 — A-Plugin-Phase-1 AUDIT DONE: PASS-mit-Pflicht-Fix, Plugin-Readiness 88%
+
+**Scope:** Statisches Phase-1-Akzeptanz-Audit gemaess Plan §4 (1-2h, Cowork-konform). 3 Dimensions: Block-Konformitaet + Cross-Repo+Doku-Konsistenz + Phase-1-Akzeptanz-Komplettheit. Auditor: Cowork-Task-Tool-Subagent (general-purpose). Aufwand: ~25 Min.
+
+**BEFUND_A_PLUGIN_PHASE_1.md v1.0 persistiert** in `escape-game-generator/docs/projekt/`.
+
+**Aggregat:**
+- **HIGH:** 1 (F-DIM-B-01: BEFUND v1.1 §13 KORREKTUR-PFLICHT — F-B-01 + F-B-02 RE-BESTAETIGT-HIGH nach Plugin-Loader-Empirie).
+- **MED:** 3 (F-DIM-A-02 Plan-Doku §2.3 v0.2.1-Drift / F-DIM-A-03 F0B-Marker-Removal Phase 2 / F-DIM-A-04 D.3/D.4 Helper-Tools Phase 2).
+- **LOW:** 3 (F-A1-01 description-Stil-Drift / F-DIM-B-02 skills/README.md veraltet / 1 weitere).
+- **TOTAL: 7 Findings.**
+
+**Phase-1-Akzeptanz-Empfehlung:** **PASS-mit-Pflicht-Fix.**
+
+**Plan §4 Akzeptanz-Tabelle (8/8 Hart strukturell erfuellt):**
+- 24 Subagents Frontmatter PASS / 5 Skills PASS / Plugin-Manifest v0.3.1 PASS (Validator + Loader) / 4 Hooks PASS-Reduziert (2 aktiv + 2 Stubs) / 6 Commands PASS / AGENT_QUALITAET drift-frei PASS / 5 Test-Fixtures PASS / Cross-Repo-Doku + Code-Mode-Anker PASS.
+- T-P.1-Smoke S2 PASS. S3-S7 deferred Code-Mode (Strict-Separation-konform).
+- A-Plugin-Phase-1 (dieses Audit) DONE.
+
+**Plugin-Readiness-Metrik:**
+- Vor Track P.1: 3% (1/30 Subagents Plugin-formatiert).
+- Nach Track P.1: **~88%** (gewichtet aus 7 Komponenten: Subagent-Frontmatter 78% + Skills 100% + Commands 100% + Hooks 75% reg. + Manifest 100% + Loader-enabled 100% + Cross-Repo-Doku 100%, konservativer Abzug fuer 7 Phase-2-pending Subagents + Token-Einsparung-Deferral).
+- **Plan §4-Threshold ≥85% UEBERSCHRITTEN.**
+
+**HIGH-Pflicht-Fix DONE post-Audit:**
+
+1. **`F0e_PLUGIN_ARCHI_AUDIT_BEFUND.md` v1.1 -> v1.2:**
+   - Aenderungshistorie v1.2-Eintrag.
+   - **Status-Korrektur-Tabelle** F-B-01 + F-B-02 RE-BESTAETIGT-HIGH nach Plugin-Loader-Empirie. F-B-05 WIDERLEGT-final via Validator-CLI.
+   - Lesson-Learned-Block: Validator-CLI ist NOTWENDIG aber NICHT HINREICHEND. Pflicht-Reihenfolge `validate -> install + list -> Audit-Subagent`.
+   - Quelle: BEFUND_T_P1_SMOKE.md v1.0 §3 + Auto-Memory feedback_validator_cli_primary.md.
+
+**MED-Pflicht-Fix DONE post-Audit:**
+
+2. **`C-INKREMENTELL-MIGRATION-PLAN.md` §2.3:**
+   - Ziel-Manifest auf v0.3.1-Stand aktualisiert (minimal, ohne agents/commands/hooks/skills-Globs).
+   - Format-Regeln-Block erweitert um Plugin-Loader-Empirie-Findings (Anti-Pattern fuer agents/commands/hooks).
+   - Lesson-Learned-Statement: Validator-CLI not sufficient + 3-Schritt-Pflicht-Reihenfolge.
+
+**Findings deferred (Plan-konform):**
+
+- F-DIM-A-03 F0B-Marker-Removal in 22 Subagents -> Sub-Block-B.1b (Phase 2, V16-Refactor + sprachniveau_include_registry-Sync).
+- F-DIM-A-04 D.3 dispatch_meta_helper.py + D.4 check_q_gate_log.py -> Sub-Block-D-Phase-2.
+- F-DIM-B-02 skills/README.md Update -> opportunistisch.
+- F-A1-01 description-Stil-Drift -> opportunistisch.
+
+**Plan-Stand Track P.1:**
+- 21.5 PT / 21.5 PT (100% Implementations-Akzeptanz).
+- Pflicht-Fixes alle DONE.
+- **TRACK P.1 STATUS: COMPLETE + AKZEPTANZ-AUDITIERT.**
+
+**Naechste Schritte:**
+1. Empirische S3-S7 in Code-Mode-Session (User-Aktion).
+2. Track P.2-Plan-Doku `C-TIEFE-REFACTOR-PLAN.md` als naechstes Deliverable.
+3. Phase-2-Pre-View aus PLUGIN_ARCHITEKTUR_TRIPLE_ROOT.md §6 als Plan-Grundlage.
+
+**Aufwand:** ~30 Min Wall-Clock fuer Audit-Subagent-Run + 2 Pflicht-Fixes (BEFUND v1.2 + Plan-Doku §2.3) + STATUS+CHANGELOG.
+
+---
+
 ## 2026-04-25 — STRICT-SEPARATION verankert: Cowork = Plugin-Dev / Code-Mode = Plugin-Prod (self-sustained)
 
 **Scope:** User-Architektur-Direktive 2026-04-25 (post-T-P.1-Smoke). Verschaerfung von Q7 "Code-Mode = Prod" zu "Code-Mode = AUSSCHLIESSLICH Prod (self-sustained)". Cowork = AUSSCHLIESSLICH Plugin-Development. Plugin-Install in Cowork = Anti-Pattern.
