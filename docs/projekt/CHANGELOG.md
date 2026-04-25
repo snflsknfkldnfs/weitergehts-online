@@ -4,6 +4,40 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-25 — Pilot-Run gestartet game-weimar-pilot-20260425 (Pilot-Roadmap Schritt 1 aktiv)
+
+**Scope:** Code-Mode-Uebergang vollzogen, Plugin-Production-Pilot laeuft.
+
+**Modus:** EXECUTE (Code-Mode, ausserhalb Cowork).
+
+**Setup-Sequenz (User-Terminal):**
+1. `claude plugin marketplace add /Users/paulad/escape-game-generator` → marketplace `escape-game-generator-local` registriert.
+2. `claude plugin install escape-game-generator@escape-game-generator-local` → Plugin geclont von GitHub (HEAD `80e03f6` post B.7b).
+3. CC-Update via `npm i -g @anthropic-ai/claude-code@latest` (v2.0.31 → v2.1.119) — erst danach Opus 4.7 (1M context) im /model-Picker verfuegbar.
+4. `./tools/code-mode-launch.sh /Users/paulad/escape-game-generator /Users/paulad/weitergehts.online/weitergehts-online /Users/paulad/weitergehts.online/Unterrichtseinwicklung` (explizite Pfad-Args wegen F-PB-15).
+5. CC-Welcome bestaetigt: Opus 4.7 (1M context), Claude Max, paulcebulla@gmx.de's Organization.
+6. Slash-Command (mit Namespace-Prefix wegen F-PB-17): `/escape-game-generator:generate-game weimarer-republik-anfangsphase 7c 4` → "ist angelaufen".
+
+**Test-Methodik-Sauberheit:**
+- Modell: Opus 4.7 (1M context) — top-of-line, schliesst Modell-Fehler weitgehend aus, jeder Drift auf Architektur/Infrastruktur zurueckfuehrbar.
+- Subscription: Claude Max (kein API-Billing-Fallback, Limit-Risiko nur durch Usage-Limits).
+- Triple-Root: korrekt (TARGET + UEW + GENERATOR alle add-dir-mounted).
+- Plugin: aktiv (CC v2.1.119 erkennt Namespace-Prefix).
+- Wrapper-Bypass: F-PB-15 via expliziter Args umgangen.
+
+**3 neue Pilot-Handoff-Findings (Audit-Erweiterung in BEFUND_PHASE_B_BUNDLE_AUDIT.md §9):**
+- F-PB-15 HIGH: Wrapper-Pfad-Heuristik bricht bei realem Punkt-Verzeichnis-Layout (`weitergehts.online/`-Zwischenebene). Workaround durch explizite Args. Dauerhafter Fix Backlog.
+- F-PB-16 MED: CC-CLI-Version-Lag — code-mode-launch.sh sollte Version-Check ergaenzen, Update-Empfehlung bei < v2.1.
+- F-PB-17 LOW: Plugin-Slash-Command-Namespace-Prefix in CC v2.1.x Pflicht. commands-Doku ergaenzen.
+
+**Aggregat post-Pilot-Handoff:** 17 Findings total. Davon 3H closed in B.7b + 1H neu (F-PB-15) + 6 MED + 7 LOW. Phase-B-Closure: PASS-mit-1-HIGH-Backlog.
+
+**Aufwand-Ist Cowork-Side:** ~5 Min Wall-Clock Diagnose-Hilfe waehrend User-Terminal-Sequenz.
+
+**Naechster Schritt:** Pilot-Run-Beobachtung. User berichtet Phase-Outputs / Hook-Aktivierung / Q-Gate-Ergebnisse. Cowork-Mode bleibt fuer Recovery-Patches verfuegbar (z.B. wenn mid-Run Hook-Failure auftritt). Bei Phase-0.1-PASS: Bilanz + Phase-0.2-Beobachtung. Bei FAIL: Recovery-Cycle (Cowork-Patch + Re-Run-Vorbereitung).
+
+---
+
 ## 2026-04-25 — Pilot-Setup TARGET-Init game-weimar-pilot-20260425 (Pilot-Vorbereitung Schritt 3)
 
 **Scope:** Pilot-Roadmap §23.3 Schritt 3 — Game-Verzeichnis-Skelett + Pre-Conditions fuer Phase-0.1-Start. Saubere Test-Umgebung ohne Vor-Erfahrung.
