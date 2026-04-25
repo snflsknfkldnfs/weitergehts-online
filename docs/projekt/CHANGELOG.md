@@ -4,6 +4,46 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-25 — Track P.1 Block F DONE: AGENT_QUALITAET Drift-Cleanup
+
+**Scope:** Plan §2.6 (0.5 PT). Legacy AGENT_DESIGN/AGENT_TECHNIK-Refs in `agents/AGENT_QUALITAET.md` mit Legacy-Marker aktualisieren (analog v3.9.1-Refaktor in PFAD_MANIFEST.md).
+
+**4 Edits in agents/AGENT_QUALITAET.md:**
+- Z.20: `(Output von AGENT_DESIGN)` -> `(Output von Engine-Assembly Phase 3, ehem. AGENT_DESIGN — Legacy ab v3.9)`
+- Z.116: `agents/AGENT_DESIGN.md – Erwartete Farben...` -> Strikethrough + Verweis auf `assets/css/theme-*.css` + Engine-Assembly Phase 3
+- Z.155: Issues-Tabelle `AGENT_TECHNIK` -> `Engine/Claude-Code-Assembly (ehem. AGENT_TECHNIK — Legacy ab v3.9)`
+- Z.156: Issues-Tabelle `AGENT_DESIGN` -> `Engine/Claude-Code-Assembly (ehem. AGENT_DESIGN — Legacy ab v3.9)`
+
+**grep-Smoke-Test post-Cleanup:**
+```bash
+grep -nE "AGENT_DESIGN|AGENT_TECHNIK" agents/AGENT_QUALITAET.md | grep -v -i "legacy\|ehem\."
+```
+Output: leer. Alle 4 Refs Legacy-markiert.
+
+**Validator-Smoke-Test:**
+- `claude plugin validate` -> `✔ Validation passed with warnings`. 0 Errors.
+
+**Akzeptanzkriterium F Plan §2.6 erfuellt:** AGENT_QUALITAET.md frei von unmarkierten Legacy-Refs.
+
+**Aufwand:** ~5 Min Wall-Clock fuer 3 Edits + Smoke + STATUS+CHANGELOG.
+
+**Plan-Stand Track P.1:**
+| Block | PT | Status |
+|---|---|---|
+| A (24 Frontmatter) | 5 | DONE |
+| C (Manifest v0.3.0) | 1 | DONE |
+| B (5 Skills) | 3 | DONE Konservativ-Layer |
+| D (4 Hooks) | 3 | DONE Reduziert |
+| E (6 Commands) | 4 | DONE Konservativ-Layer |
+| F (Drift-Cleanup) | 0.5 | DONE |
+| **DONE** | **16.5 PT / 21.5 PT (~77%)** | |
+| G (5 Test-Fixtures) | 4 | NEXT |
+| H (Cross-Repo-Doku + Code-Mode-Anker) | 1 | PENDING |
+
+**Naechster Block:** G (4 PT, Tag 13-14 laut Plan §6): 5 Test-Fixtures Top-5 Worker (G.1 SUB_MATERIAL_QUELLENTEXT exist via C1-C3, G.2 SUB_MATERIAL_BILDQUELLE MV2-Hallu, G.3 SUB_AUFGABE_MC Distraktor-Implausibilitaet, G.4 SUB_AUFGABE_LUECKENTEXT Pool-Reset, G.5 SUB_ASSEMBLY_VERIFY V14 Entity-Encoding).
+
+---
+
 ## 2026-04-25 — Track P.1 Block E DONE: 6/6 Slash-Commands
 
 **Scope:** Block E gemaess Plan §2.5: 6 Slash-Commands fuer Plugin-Aufruf-Schnittstelle.
