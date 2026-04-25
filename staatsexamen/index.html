@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Staatsexamen — Mündliche Prüfungen | weitergehts.online</title>
+<link rel="stylesheet" href="../assets/css/base.css">
+<style>
+li[data-status="staging"]{display:none;}
+li[data-status="planned"]{opacity:0.5;}
+li[data-status="planned"]::after{content:" — in Vorbereitung";color:#94a3b8;font-size:0.85em;font-weight:400;}
+.crumb{font-size:0.85em;color:#475569;margin-bottom:8px;}
+.crumb a{color:#c2410c;text-decoration:none;}
+.crumb a:hover{text-decoration:underline;}
+</style>
+</head>
+<body>
+<main>
+  <div class="crumb"><a href="../">Startseite</a> › Staatsexamen</div>
+  <h1>Staatsexamen — Mündliche Prüfungen</h1>
+  <p>Vorbereitungsmaterialien für das 2. Staatsexamen Lehramt Mittelschule Bayern.</p>
+
+  <h2>Prüfungsteile</h2>
+  <ul>
+    <li id="staatsexamen-schulrecht">
+      <a href="schulrecht/index.html">Schulrecht</a>
+    </li>
+    <li id="staatsexamen-paedagogik" data-status="planned">
+      Pädagogik
+    </li>
+    <li id="staatsexamen-psychologie" data-status="planned">
+      Psychologie
+    </li>
+    <li id="staatsexamen-fachdidaktik" data-status="planned">
+      Fachdidaktik
+    </li>
+  </ul>
+</main>
+<script src="../assets/js/core.js"></script>
+</body>
+</html>
