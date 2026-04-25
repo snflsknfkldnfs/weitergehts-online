@@ -4,6 +4,51 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-25 — Track P.1 Block B.1+B.2 DONE: 2 Skills + Manifest v0.3.0
+
+**Scope:** Block B.1 (f0b-priming-Skill) + Block B.2 (escape-game-schema-Skill) gemaess C-INKREMENTELL-MIGRATION-PLAN.md §2.2. Konservativ-Layer-Strategie nach User-Decision (Risiko-Mitigation Hash-Pruef-Mechanismus + Cross-Ref-Stabilitaet).
+
+**Pre-Block-Recherche:**
+- Skill-Format empirisch verifiziert via `~/.claude/plugins/marketplaces/claude-code-workflows/plugins/ui-design/skills/`: `skills/<name>/SKILL.md` (Subdirectory mit fixem Filename), Frontmatter `name`+`description` (keine `tools`/`model` — Skills sind LLM-Auto-Trigger-Prompts, keine Subagents).
+- ui-design-Plugin-Manifest hat KEIN `skills`-Feld + KEIN `agents`-Feld -> Auto-Discovery-Konvention.
+- Plan-Manifest-Glob `./skills/*.md` flat-pattern matched NICHT skills/<name>/SKILL.md -> Korrektur via Feld-Entfernung.
+
+**Block B.1 — f0b-priming-Skill (1 PT, Konservativ-Layer):**
+- `skills/f0b-priming/SKILL.md` mit Frontmatter `name=f0b-priming` + Auto-Trigger-description (Material-/Aufgaben-/Hefteintrag-/Skript-/Mappenabschluss-Phasen).
+- Body: F0B_PRIMING_INCLUDE.md §1-§5 als Skill-Inhalt (SPRACHNIVEAU-R7 + MATERIAL-PERSPEKTIV + KOLONIALTERMINOLOGIE + ENTITY-INTEGRITAET + MULTIPERSPEKTIV-SYNTHESE) + Konfig-JSON-Verweise + Cross-Refs zu 22 Konsumenten + Phase-1-Hinweis "ZUSATZ-Layer, Marker-Block-Removal Phase 2".
+- F0B_PRIMING_INCLUDE.md UNVERAENDERT (Hash-Pruef-Mechanismus V16 + Assembly-Validator-Pflicht stabil).
+- 22 Sub-Agent-Marker-Bloecke UNVERAENDERT (Hash-Pruef-Backward-Kompatibilitaet).
+- Konfig-JSONs in `architektur/` UNVERAENDERT.
+
+**Block B.2 — escape-game-schema-Skill (0.5 PT, Konservativ-Layer):**
+- `skills/escape-game-schema/SKILL.md` mit Frontmatter `name=escape-game-schema` + Auto-Trigger-description (Phase-Start, data.json-Strukturfragen, Material-/Aufgaben-/Hefteintrag-Konstruktion, Assembly).
+- Body: data.json-Schema-Kanon + Loesungs-Typen-Mapping + ID-Konventionen + freischalt_code + Konventionen + Read-Pfad-Verweise zu ORCHESTRATOR.md fuer Tieferanalyse (Mappe-Anhang-Prozedur, UEBERGABE-TEMPLATE, Session-Split-Template, MUST_VERIFY-Workflow, Deploy-State-Machine).
+- ORCHESTRATOR.md (408 Zeilen) UNVERAENDERT (Cross-Refs in PI + 7+ agents-Files stabil).
+
+**Manifest-Update v0.2.1 -> v0.3.0:**
+- `skills`-Feld ENTFERNT (Auto-Discovery-Konvention analog ui-design-Plugin).
+- `agents` + `commands` + `hooks` Felder behalten (Validator akzeptiert).
+
+**Validator-Smoke-Test post-Block-B:**
+- `claude plugin validate /Users/paulad/escape-game-generator` -> `✔ Validation passed with warnings`.
+- 0 Errors.
+- 8 Warnings unveraendert: 4 Phase-2-pending Skill-Kandidaten (F0B_PRIMING_INCLUDE.md + ORCHESTRATOR.md + PFAD_MANIFEST.md + ROLLEN_KATALOG.md + POLICY_TRIGGER_SICHTBARKEIT.md), 2 Phase-2-deferred (AGENT_MATERIAL + AGENT_RAETSEL), 1 commands/README.md Stub.
+- Skills wurden vom Validator NICHT explizit gelistet -> Skills sind eigenes Subsystem (Auto-Discovery beim Plugin-Reload-Cycle).
+
+**Akzeptanzkriterien B Plan §2.2 — Phase-1-Stand:**
+- [x] Skill-Dateien angelegt: 2/5 (B.1+B.2). B.3-B.5 spaeter.
+- [ ] Auto-Trigger getestet: deferred zu Cowork-Plugin-Reload-Cycle (nicht aus Sandbox testbar).
+- [ ] Marker-Block-Verweise ersetzt: DEFERRED zu Sub-Block-B.1b (separater Cycle mit V16-Refactor + sprachniveau_include_registry-Sync). Plan-Doku-Update vorgesehen.
+
+**Aufwand:** ~10 Min Wall-Clock fuer 2 Skill-Files + Manifest + Validator-Smoke + STATUS+CHANGELOG.
+
+**Naechste Schritte:**
+- Final-Commit Block B.1+B.2 via 5-Stufen-Host-MCP.
+- Block B.3+B.4+B.5 (3 weitere Skills, 1.5 PT, Tag 6 Plan §6) als naechster Cycle: pfad-manifest, trigger-sichtbarkeit, rollen-katalog.
+- Sub-Block B.1b (Token-Einsparung-Cycle) als separater Track mit V16-Refactor und Plan-Doku-Update zu Token-Einsparungs-Strategie.
+
+---
+
 ## 2026-04-25 — Track P.1 Block A+C Validator-Fix-Cycle DONE: Validator PASS
 
 **Scope:** Light-Audit-Folge-Cycle nach BEFUND v1.0. Empirischer `claude plugin validate /Users/paulad/escape-game-generator`-Run revidierte 3 Audit-Befunde (Sekundaerquelle widerlegt) + fand 3 zusaetzliche HIGH-Errors. Validator-Fix-Cycle umgesetzt; Validator-Smoke-Test PASS.
