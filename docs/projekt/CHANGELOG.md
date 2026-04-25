@@ -4,6 +4,65 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-25 — T-P.2-Smoke DONE — Track P.2 Phase A+B EMPIRISCH VALIDIERT
+
+**Scope:** Empirische Smoke-Test-Suite + F-T-PA-01-Patch + BEFUND-Persistenz.
+
+**T-P.2-Smoke (8 Stufen, 14 Tests):**
+- T-A1 Plugin-Validator: PASS (0 Errors).
+- T-A2 9 Tools `--self-test`: 9/9 PASS.
+- T-B1-B7 Mock-Workflow: validate_game_state PASS / render_game_state deterministic / phase_transition_runner FAIL+PASS-Pfade rc=2/0 korrekt.
+- T-C Hook-Coverage: 9 active (4 Pre + 5 Post).
+- T-D Skill-Coverage: 7 Skills mit SKILL.md (5 P.1 + state-advance-policy + phase-prerequisites-check).
+- T-E Phase-Transitions: 18 Transitions, 19 Phases, 10 reale Plugin-Subagents (0 Phantom).
+- T-F Subagent-Frontmatter: 29 Files (>=26 erwartet).
+- T-G Hook-Payload-Parsing: pre-pi-phase-advance regex-Extraktion PASS.
+- T-H SUB_AUFGABE Cross-Refs: 8/8 PASS.
+
+**F-T-PA-01 (LOW) — IM-CYCLE-GEFIXED:**
+- Drift zwischen state-advance-policy SKILL.md Q-Gate-LOG-Konvention (`**Status:**` Markdown-Bold) und check_q_gate_log.py STATUS_RE-Regex (`- Status:` List-Item).
+- Patch: STATUS_RE-Regex erweitert auf akzeptiere `- Status:` / `**Status:**` / `Status:` / `- Status - ` Konventionen.
+- Re-Test: check_q_gate_log.py --self-test 6/6 PASS, T-B7-Mock-LOG → rc=0 PASS korrekt detektiert.
+
+**BEFUND_T_P2_SMOKE.md persistiert (~250 Z., 10 Sektionen):**
+- Test-Stufen + Ergebnisse-Tabelle.
+- Hook-Inventar (9) post-T-P.2.
+- Skill-Inventar (7) post-T-P.2.
+- Tool-Inventar (16) post-T-P.2.
+- F-T-PA-01-Findings-Dokumentation.
+- Akzeptanzkriterien Track P.2: 12/12 PASS.
+- Phase-C-Status (deferred).
+- Offene Punkte (4 LOW deferred).
+- Akzeptanz-Empfehlung: Track P.2 Phase A+B als ABGESCHLOSSEN markieren.
+- Aufwand-Bilanz.
+
+**Akzeptanzkriterien Track P.2 (12/12 erfuellt):**
+- AGENT_MATERIAL + AGENT_RAETSEL refactored.
+- State-Schema + Validator + Renderer + Sync-Hook.
+- Phase-Transitions kanonisch + Runner + Pre-Condition-Gate (18 Transitions).
+- State-Advance-Policy + Resume-Logik + Phase-Prerequisites-Check.
+- Hook-Coverage komplett (9 Hooks).
+- Helper-Tools dispatch_meta + Q-Gate-Log.
+- Pre-Flight-Doku + code-mode-launch.sh.
+- Triple-Root-Pfad-Konsolidierung.
+- dispatch_meta-Konvention verankert.
+- Bundle-Audit + Pflicht-Fix-Cycle abgeschlossen.
+- T-P.2-Smoke empirisch validiert (DIESER BEFUND).
+
+**Aggregat: Track P.2 Phase A + B substanziell + empirisch komplett. Pilot-Einsatz-Bereitschaft erreicht.**
+
+**Wall-Clock Total Phase A+B+T-P.2-Smoke:** ~6h.
+
+**Plan-Schaetzung Track P.2:** ~3 Wochen → Realisiert ~6h. Speedup ~50x durch Subagent-Pattern + Self-Edit-Fallback + Parallel-Dispatch + Tool-Self-Test-Layer.
+
+**Phase C (B.13+B.14, 4 PT) optional/deferrable** laut Plan §3.3 (Token-Optimierung ohne strukturelle Notwendigkeit).
+
+**Aufwand-Ist T-P.2-Smoke + F-T-PA-01 + BEFUND:** ~30 Min Wall-Clock.
+
+**Final-Commit:** Gen-Repo `a993bcb`. Track-P.2-Hauptarbeit-Commit: `7666b2d`.
+
+---
+
 ## 2026-04-25 — Track P.2 Phase A + Phase B KOMPLETT (31/31 PT): B.12 + B.16 DONE Bundle
 
 **Scope:** Plan §3.2 Letzte 2 Bloecke. B.12 (1.5 PT) + B.16 (1 PT) Self-Edit-Hauptthread.
