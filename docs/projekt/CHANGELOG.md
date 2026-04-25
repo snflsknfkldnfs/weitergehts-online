@@ -4,6 +4,88 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-25 — Track P.2 Block B.1 DONE: AGENT_MATERIAL 3-way-Split
+
+**Scope:** Plan §3.1 B.1 (5 PT). 3-way-Split der monolithischen AGENT_MATERIAL.md (1098 Z., ~38000 Token) in 2 Plugin-Subagent-Files + Gate-Runner-Verteilung auf existing Hooks/Reviewer. Adressiert F-D5-01 + F-D6-01 (HARTE BRUECHE Phase 2.1).
+
+**Implementations-Strategie:** 1 Cowork-Task-Tool-Subagent (general-purpose, ~25 Min Wall-Clock).
+
+**Aktion 1: AGENT_MATERIAL.md komplett gelesen (1098 Z., 4 Reads).**
+
+**Aktion 2: 2 neue Plugin-Subagent-Files angelegt:**
+
+1. `agents/agent-material-design.md` (~31 kB, Frontmatter + Body Z. 1-461 + 990-1042 + 1043-1049 + 1063-1073 + 1086-1098 + Cross-Ref-Block):
+   - Frontmatter: name=agent-material-design, description Phase-1-Design-Modus, tools `Read,Grep,Glob,Write`, model opus.
+   - Body: Modus 1 Design (MATERIAL_GERUEST + Erarbeitbarkeits-Nachweis + Sequenzplanung + Perspektiven-Matrix + Q-Gate Self-Check). H1 angepasst.
+
+2. `agents/agent-material-dispatcher.md` (~47 kB, Frontmatter + Body Z. 41-90 + 462-988 + 990-1042 + 1050-1060 + 1074-1085 + 1086-1098 + Cross-Ref-Block):
+   - Frontmatter: name=agent-material-dispatcher, description Phase-2.0b-2.1-Produktions-Modus, tools `Read,Grep,Glob,Task,Write` (PLUS Task-Tool fuer Subagent-Dispatch), model opus.
+   - Body: Modus 2 Produktion (Subagenten-Referenz + Produktionskontext + MCP-Tool-Nutzung + Workflows + Quellenrecherche + Einstieg-Illustration). H1 angepasst.
+
+**Aktion 3: Legacy-Marker in `agents/AGENT_MATERIAL.md`:**
+- H1 ersetzt durch `# AGENT_MATERIAL — Material-Orchestrator (DEPRECATED post-B.1 2026-04-25)`.
+- Header-Marker-Block (Z. 1-18) mit DEPRECATED-Hinweis + Verweis auf agent-material-design + agent-material-dispatcher + Migration-Anker-Status fuer Rollback.
+- Body bleibt unveraendert fuer Rollback-Sicherheit.
+- Plugin-Validator-Warning erwartet (kein Frontmatter, NICHT-aktiv-im-Workflow).
+
+**Aktion 4: Cross-Ref-Update in 18 Files (von 20 Pflicht-Scope, 2 ohne Erwaehnung):**
+
+Update-Pattern (kontextabhaengig):
+- Phase-1-Design-Bezug -> `agent-material-design`.
+- Phase-2.0b/2.1-Produktion-Bezug -> `agent-material-dispatcher`.
+- Mehrdeutigkeit/generisch -> `agent-material-design + agent-material-dispatcher (ehem. AGENT_MATERIAL)`.
+- Historische Erwaehnungen (z.B. Audit-Befunde) -> NICHT updaten (Doku-Anker).
+
+| File | Edits | Pattern |
+|---|---|---|
+| `agents/ORCHESTRATOR.md` | 3 | both + design + both |
+| `agents/AGENT_DIDAKTIK.md` | 1 | design |
+| `agents/AGENT_SKRIPT.md` | 4 | both + design (3×) |
+| `agents/AGENT_HEFTEINTRAG.md` | 5 | design (4×) + both |
+| `agents/AGENT_ARTEFAKT.md` | 1 | both |
+| `agents/SUB_MATERIAL_BILDQUELLE.md` | 3 | dispatcher (2×) + design |
+| `agents/SUB_MATERIAL_DARSTELLUNGSTEXT.md` | 2 | dispatcher + design |
+| `agents/SUB_MATERIAL_KARTE.md` | 2 | dispatcher + design |
+| `agents/SUB_MATERIAL_QUELLENTEXT.md` | 5 | dispatcher (4×) + design (Z. 501 Doku-Anker bewusst gelassen) |
+| `agents/SUB_MATERIAL_STATISTIK.md` | 2 | dispatcher + design |
+| `agents/SUB_MATERIAL_TAGEBUCH.md` | 2 | dispatcher + design |
+| `agents/SUB_MATERIAL_ZEITLEISTE.md` | 3 | dispatcher + design (2×) |
+| `agents/_includes/F0B_PRIMING_INCLUDE.md` | 2 | both (Listen) |
+| `agents/PFAD_MANIFEST.md` | 1 (->2 Zeilen) | Pfad-Tabelle aufgeteilt |
+| `architektur/WORKFLOW_v4.md` | 7 | design (5×) + both (2×) |
+| `checklisten/MCP_TOOLS.md` | 10 | dispatcher (8×) + design (2×) + both |
+| `checklisten/GUETEKRITERIEN_SEQUENZIERUNG.md` | 10 | design (alle) |
+| `PROJECT_INSTRUCTIONS.md` | 3 | both + design + dispatcher |
+
+**Total Cross-Ref-Edits:** ~66 Edits ueber 18 Files.
+
+**docs/projekt/-Files unberuehrt:** 18 Files (BEFUNDe, Plan-Doku, Audit-Doku) sind Doku-Anker, behalten ihre AGENT_MATERIAL-Refs als historische Doku.
+
+**Bonus-Validator-Fix (post-Subagent-Run):**
+
+Validator-CLI strict gegen `$schema` + `_note` Top-Level-Keys. Pflicht-Fix:
+- `.claude-plugin/marketplace.json`: `$schema` + `_note` entfernt + Plugin-Version v0.3.0 -> v0.3.1 synchronisiert.
+- `hooks/hooks.json`: `$schema` + `_note` entfernt (Praeventiv).
+
+**Validator-Smoke-Test post-B.1:**
+- `claude plugin validate` -> `✔ Validation passed with warnings`.
+- 0 Errors. 1 Warning (marketplace.metadata.description Hint, ignorierbar).
+
+**Akzeptanzkriterien Plan §3.1 B.1 erfuellt:**
+- [x] 2 neue Plugin-Subagent-Files mit Frontmatter + Body angelegt.
+- [x] Validator + Plugin-Loader-Smoke (statisch, Plugin-Loader-Run nicht aus Cowork).
+- [x] Cross-Refs aktualisiert (grep-Smoke-Test).
+
+**Aufwand:** ~25 Min Wall-Clock (Subagent) + ~5 Min Validator-Fix + STATUS+CHANGELOG. Plan-Soll: 5 PT (~3 Tage). Hinweis: Subagent-Effizienz dramatisch unter Plan-Schaetzung — Plan ging von manueller Iteration aus.
+
+**Track-P.2-Phase-A-Stand:** 5/17 PT (~29%). 5 weitere Phase-A-Bloecke pending: B.2 AGENT_RAETSEL (3 PT) -> B.3 phase-transition-runner (3 PT) -> B.4 game_state.json (3 PT) -> B.5 /resume-state-Erweiterung (1 PT) -> B.6 state-advance-policy-Skill (2 PT).
+
+**Naechste Schritte:**
+- B.2 AGENT_RAETSEL 3-way-Split analog B.1 (3 PT, ~20 Min Subagent).
+- Sequenziell weiter Phase A.
+
+---
+
 ## 2026-04-25 — Architektur-Refresh-Audit DONE + Track-P.2-Plan-Doku v1.0
 
 **Scope:** User-Reasoning ("muss die Architektur nicht erst noch weiter praezisiert, optimiert und per audits ueberprueft werden?") empirisch bestaetigt durch Multi-Dim-Audit. Track-P.2-Plan-Doku als Eingabe fuer ~5-Wochen-Implementation persistiert.
