@@ -4,6 +4,59 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-25 — Track P.2 Block B.4 DONE: game_state.json Schema + Validator + Render + Hook D.3
+
+**Scope:** Plan §3.1 B.4 (3 PT). Operationalisierung der Q4-Decision Option-C+ (JSON-authoritativ + PI-Mirror + Sync-Hook). game_state.json wird SSoT, PROJECT_INSTRUCTIONS-Zustandsblock wird abgeleitete Markdown-Mirror-Sektion.
+
+**Implementations-Strategie:** 1 Cowork-Task-Tool-Subagent (general-purpose, ~25 Min Wall-Clock).
+
+**4 Deliverables:**
+
+1. NEU `schemas/game_state.schema.json` (128 Z., JSON-Schema draft 2020-12):
+   - Top-Level: $schema + $id + type:object + additionalProperties:false + required.
+   - Property-Set: game_id (^game-[a-z0-9-]+$), version, phase (12-enum incl DONE), mappen[{id ^mappe-[0-9]+$, status enum, q_gate_log_path, materials[], aufgaben[]}], current_subagent, last_transition, q_gate_aggregate, _meta.
+   - Strict additionalProperties:false auf allen Object-Levels.
+
+2. NEU `tools/validate_game_state.py` (241 LOC):
+   - CLI analog tools/validate_material_output.py (graceful-degrade-Pattern).
+   - Args: state-file (positional), --schema, --json, --quiet, --self-test.
+   - Exit-Codes: 0=PASS / 1=Schema-FAIL / 2=Tool-Error.
+   - --self-test: Mock-State PASS rc=0 + FAIL-Mock rc=1 mit 2 Errors.
+
+3. NEU `tools/render_game_state.py` (244 LOC):
+   - Deterministic JSON->Markdown-PI-Mirror-Renderer.
+   - Footer-Timestamp ausschliesslich aus `_meta.last_updated` (kein datetime.now()), idempotent.
+   - Args: state-file, --output, --self-test.
+   - --self-test: 8/8 Checks PASS (idempotent, phase-marker, mappe-1, transition-arrow, q_gate, meta-timestamp, schema_version, file-roundtrip).
+
+4. MODIFIED `hooks/hooks.json` D.3:
+   - D.3 `post-state-update` aktiviert (PostToolUse Write|Edit|NotebookEdit).
+   - jq-Pfad-Filter: matched `*game_state.json`.
+   - Workflow: validate -> render -> Cache-Write `.cache/last_pi_mirror.md`.
+   - Timeout 5s. Exit 1 bei FAIL als Warning (nicht-blockierend).
+   - `_planned_hooks_phase_2`-Stub-Block entfernt.
+
+**Zusatz:** NEU `.cache/.gitignore` (`*`-Pattern, verhindert Cache-Commits).
+
+**Smoke-Verifikation:**
+- jsonschema-Library: schema valide draft 2020-12 (Draft202012Validator.check_schema OK).
+- validate_game_state.py --self-test → exit 0 + PASS+FAIL beide korrekt.
+- render_game_state.py --self-test → 8/8 Checks PASS.
+- End-to-end Mock-State: validate `[PASS]` + render mit `**phase:** 0.4`.
+- Hook-Smoke-Test: bash-inline mit `*game_state.json`-Filter → validate → render → .cache/last_pi_mirror.md (455 B).
+- Validator (`claude plugin validate .`): 0 Errors.
+
+**Adressierte Findings:**
+- F-B3-02 (mappe-[N]-Resolver, B.3-deferred): IMPLIZIT GELOEST via schema mappen[i].id `^mappe-[0-9]+$` als kanonische Quelle. Subagents/Tools koennen mappen[i].id als SSoT zur Mappen-Aufloesung nutzen.
+
+**Track-P.2-Phase-A-Stand:** **14/17 PT (82 %)**. B.1+B.2+B.3+B.4 DONE. Naechster Block: B.5 `/resume-state` JSON-Pfad-Erweiterung (1 PT).
+
+**Aufwand-Ist:** ~25 Min Wall-Clock unter Plan-Schaetzung 3 PT.
+
+**Final-Commit:** Gen-Repo `2352234`.
+
+---
+
 ## 2026-04-25 — Track P.2 Block B.3 DONE: phase-transition-runner + phase_transitions.json
 
 **Scope:** Plan §3.1 B.3 (3 PT). Operationalisierung der Phase-Transitions als auswertbares Pre-Condition-Gate. Adressiert F-D7-* (State-Sync) + F-D8-* (Hook-Coverage Phase-Advance).
