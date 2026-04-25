@@ -4,6 +4,69 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-25 — Track P.1 Block D DONE Reduziert: D.1+D.2 aktiv, D.3+D.4 Stubs
+
+**Scope:** Block D Minimal-Hooks gemaess Plan §2.4 mit Reduzier-Strategie (User-Decision 2026-04-25, MED-Risiko-Mitigation): D.1+D.2 aktiv (Tools 4/5 existieren), D.3+D.4 als _planned_hooks_phase_2-Stubs (Helper-Tools dispatch_meta_helper.py + check_q_gate_log.py NEU anzulegen, Phase 2).
+
+**Pre-Block-Recherche:**
+- Hook-Format empirisch verifiziert via WebFetch von `github.com/affaan-m/everything-claude-code/hooks/hooks.json`. Schema: `{"$schema": "...", "hooks": {"PreToolUse|PostToolUse|...": [{"id, description, matcher, hooks: [{type, command, async, timeout}]}]}}`.
+- Matcher ist Tool-Name-Regex (Write, Edit|Write|MultiEdit, Bash, *) — KEIN file_path-Matcher. Hook-Command muss intern file_path filtern.
+- Tool-Schnittstellen verifiziert: validate_material_output.py (--schema-pin v3.10.4 + Input-File, Exit 0/1), check_prosa_only.py + check_quelle_ssot.py (Input-File, Exit 0=PASS/WARN bzw. 0=PASS, 1=FAIL).
+- check_q_gate_log.py existiert NICHT — Plan-Doku §2.4 sagt "NEU".
+
+**hooks/hooks.json v3 (Block D):**
+
+D.1 pre-write-material (PreToolUse Write, blockierend):
+- matcher: "Write"
+- Hook-Command (inline-bash + jq): liest stdin-JSON, extrahiert tool_input.file_path, prueft `*materialien/*.json`-Pattern. Bei Match: schreibt tool_input.content in temp-File, ruft `validate_material_output.py --schema architektur/schemata/material_quellentext_v3.10.4.json <tmp>`. Exit 2 bei FAIL = Block.
+- timeout: 15s.
+
+D.2 post-write-material (PostToolUse Write, FAIL-Warning):
+- matcher: "Write"
+- Hook-Command: prueft file_path, ruft `check_prosa_only.py` (M16) + `check_quelle_ssot.py` (M17). Exit 1 bei einem der beiden FAIL = Warning (Write bereits ausgefuehrt, Revisor-Modus empfohlen).
+- timeout: 15s.
+
+D.3 post-subagent-stop-dispatcher: STUB in `_planned_hooks_phase_2`. _matcher_planned: `sub-material-*`. _blocked_by: `tools/dispatch_meta_helper.py` muss neu angelegt werden (Schnittstelle: SubagentStop-Context von stdin -> agent-id + material-id + status -> atomic-write zu dispatch_meta.json).
+
+D.4 pre-phase-advance: STUB in `_planned_hooks_phase_2`. _matcher_planned: `Edit` mit Filter `tool_input.file_path matched PROJECT_INSTRUCTIONS.md UND new_string enthaelt PRODUKTION_PHASE_-Pattern`. _blocked_by: `tools/check_q_gate_log.py` muss neu angelegt werden + komplexe Phase-Pattern-Detection im Edit-Diff.
+
+**Hook-Command-Implementations-Pattern:**
+- `INPUT=$(cat); FP=$(echo "$INPUT" | jq -r '.tool_input.file_path // "")` — extrahiert file_path aus stdin-JSON.
+- `case "$FP" in *materialien/*.json) ... esac` — file-path-Filter.
+- `${CLAUDE_PLUGIN_ROOT:-/Users/paulad/escape-game-generator}` — Plugin-Root-Variable mit Fallback.
+- Tool-Calls per `python3 <abs-path> <args>` mit stderr-Output fuer Fehlerdiagnose.
+
+**Validator-Smoke-Test:**
+- JSON valid (Python json.load PASS, 1 PreToolUse + 1 PostToolUse aktiv).
+- `claude plugin validate /Users/paulad/escape-game-generator` -> `✔ Validation passed with warnings`.
+- 0 Errors. 8 Warnings unveraendert (5 Phase-2-pending Source-Files + 1 commands/README + 2 Phase-2-deferred).
+
+**Akzeptanzkriterien D Plan §2.4 — Phase-1-Stand:**
+- [x] 4 Hooks in hooks.json registriert (2 aktiv, 2 als Stubs dokumentiert).
+- [x] D.1 + D.2 Smoke-statisch validiert (JSON-Validitaet, Validator-PASS).
+- [ ] Empirischer Plugin-Reload-Smoke-Test (Hook-Trigger-Aktivierung) deferred zu erster Cowork-Plugin-Reload-Cycle (nicht aus Sandbox testbar).
+- [ ] D.3+D.4 funktional aktiv: deferred zu Phase 2 (Helper-Tools-Anlage + Phase-Pattern-Detection-Komplexitaet).
+
+**Aufwand-Ist:** ~10 Min Wall-Clock fuer Hook-Format-Recherche + JSON-Schreibung + Validator-Smoke + STATUS+CHANGELOG. Reduzier-Strategie sparte ~1.5 PT vs Plan §2.4 Vollumfang.
+
+**Plan-Stand Track P.1:**
+| Block | Status |
+|---|---|
+| A (24 Frontmatter) | DONE |
+| C (Manifest v0.3.0) | DONE inkl. Validator-Fix |
+| B (5 Skills) | DONE Konservativ-Layer |
+| D (4 Hooks) | DONE Reduziert (D.1+D.2 aktiv, D.3+D.4 Stubs) |
+| E (6 Slash-Commands) | PENDING (4 PT, Tag 9-12) |
+| F (Drift-Cleanup) | PENDING (0.5 PT, Tag 11-12) |
+| G (5 Test-Fixtures) | PENDING (4 PT, Tag 13-14) |
+| H (Cross-Repo-Doku + Code-Mode-Anker) | PENDING (1 PT, Tag 14) |
+| Sub-D-Phase-2 (D.3+D.4 Activation) | DEFERRED |
+| Sub-B.1b (Token-Einsparung 47k) | DEFERRED |
+
+**Naechster Block:** Block E (4 PT, Tag 9-12 laut Plan §6): 6 Slash-Commands (/generate-game, /generate-mappe, /resume-state, /validate-game, /audit-game, /migrate-legacy). Hoehere Komplexitaet (Argumente + Subagent-Dispatch).
+
+---
+
 ## 2026-04-25 — Track P.1 Block B.3+B.4+B.5 DONE: 5/5 Skills komplett
 
 **Scope:** 3 weitere Konservativ-Layer-Skills laut Plan §2.2: pfad-manifest, trigger-sichtbarkeit, rollen-katalog. Block B vollstaendig (5/5 Skills).
