@@ -23,6 +23,11 @@ body{background:#f8fafc;color:var(--c-text);font-family:-apple-system,BlinkMacSy
 .lerndeck-wrap h1{font-size:1.4em;margin-bottom:6px;color:var(--c-text);}
 .lerndeck-wrap header p{color:var(--c-muted);font-size:0.95em;}
 .lerndeck-wrap header a{color:var(--c-gesetz);text-decoration:none;font-size:0.9em;}
+.downloads{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 20px;}
+.downloads a{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:#ffffff;color:var(--c-gesetz-dark);text-decoration:none;border:1px solid var(--c-border);border-radius:6px;font-size:0.88em;font-weight:600;transition:all 0.15s;}
+.downloads a:hover{background:var(--c-gesetz-bg);border-color:var(--c-gesetz);}
+.downloads a .dl-icon{font-size:1.1em;}
+.downloads a .dl-meta{font-weight:400;color:var(--c-muted);font-size:0.88em;}
 .controls{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;align-items:center;background:#ffffff;padding:12px;border-radius:8px;border:1px solid var(--c-border);}
 .controls select,.controls input[type=search]{padding:6px 10px;border:1px solid var(--c-border);border-radius:4px;font-size:0.9em;background:#ffffff;color:var(--c-text);}
 .controls label{font-size:0.9em;color:var(--c-text);display:flex;align-items:center;gap:4px;cursor:pointer;}
@@ -120,6 +125,19 @@ table.data-tbl td.center{text-align:center;font-weight:700;color:var(--c-good);}
     <h1>Schulrecht — Gliederung des Bildungssystems</h1>
     <p>2. Staatsexamen Mittelschule Bayern · Sub-Aspekt 2 (ZALGM § 16) · 38 Karten</p>
   </header>
+
+  <div class="downloads">
+    <a href="MP_03_Bildungssystem_v4.apkg" download>
+      <span class="dl-icon">📥</span>
+      <span>Anki-Deck (.apkg)</span>
+      <span class="dl-meta">· für <a href="https://apps.ankiweb.net/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Anki Desktop</a></span>
+    </a>
+    <a href="MP_03_Bildungssystem_v4.pdf" download>
+      <span class="dl-icon">🖨</span>
+      <span>Faltkarten-PDF</span>
+      <span class="dl-meta">· A4 quer · 4 Karten/Seite</span>
+    </a>
+  </div>
 
   <section class="controls" aria-label="Filter">
     <input type="search" id="search" placeholder="🔍 Suche im Inhalt …">
