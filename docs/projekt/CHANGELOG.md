@@ -4,6 +4,49 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-25 — Track P.2 Block B.3 DONE: phase-transition-runner + phase_transitions.json
+
+**Scope:** Plan §3.1 B.3 (3 PT). Operationalisierung der Phase-Transitions als auswertbares Pre-Condition-Gate. Adressiert F-D7-* (State-Sync) + F-D8-* (Hook-Coverage Phase-Advance).
+
+**Implementations-Strategie:** 1 Cowork-Task-Tool-Subagent (general-purpose, ~50 Min Wall-Clock).
+
+**3 Deliverables:**
+
+1. NEU `agents/phase_transitions.json` (4.9 kB, 134 Z.):
+   - `version: 1.0`, 10 Transitions: ONBOARDING→0.1, 0.1→0.2, 0.2→0.3, 0.3→0.4, 0.4→1, 1→2.0b, 2.0b→2.1, 2.1→2.2a, 2.2a→2.2b, 2.2b→2.2c.
+   - Pro Entry: `from_phase`, `to_phase`, `pre_conditions[{type, target, gate_id?, schema?}]`, `post_conditions[{produces}]`, `responsible_agent`, `description`.
+   - 4 condition-types: file_exists, directory_populated, q_gate_log_pass, json_schema_valid.
+   - Kein Top-Level $schema-Key (Validator strict).
+
+2. NEU `tools/phase_transition_runner.py` (17.1 kB, 445 LOC):
+   - Python-3-CLI: --transitions-file / --from-phase / --to-phase / --state-root / --json / --verbose / --self-test.
+   - Funktionen: load_transitions / find_transition / check_pre_condition / run.
+   - Exit-Codes: 0=PASS / 2=FAIL / 1=Tool-Error.
+   - Graceful-degrade-Pattern bei jsonschema-Missing (analog tools/validate_material_output.py).
+
+3. MODIFIED `hooks/hooks.json`:
+   - D.4 `pre-phase-transition-gate` aktiviert (PreToolUse, matcher Task|Write).
+   - Opt-in-Variante: triggert nur bei Write von *.phase_transition_hint.json (Konvention {from, to}).
+   - Dispatch zum Runner, blockt Tool-Call bei FAIL via exit 2.
+   - D.3 bleibt Stub fuer B.4.
+
+**Smoke-Verifikation:**
+- `python3 tools/phase_transition_runner.py --self-test` → exit 0, 10 Transitions gelistet.
+- `python3 tools/phase_transition_runner.py --from-phase 0.1 --to-phase 0.2 --state-root /tmp/test_phase_b3` → exit 2, 2 Pre-Conditions FAIL korrekt detektiert.
+- Validator (`claude plugin validate .`): 0 Errors.
+
+**Deferred Findings (LOW, nicht-blockend):**
+- F-B3-01: `responsible_agent: "agent-recon"` Placeholder fuer Phase 0.1-0.4. PI nennt AGENT_DIDAKTIK/INHALT/SKRIPT/HEFTEINTRAG. 1-Min-Patch oder B.7-Cleanup.
+- F-B3-02: Mappen-Platzhalter `mappe-[N]/rahmen` literal in JSON. State-Root-Konvention klaeren — Runner mit konkretem `mappe-1/`-Pfad oder Resolver-Logik. B.4 Game-State-Schema-Block.
+
+**Track-P.2-Phase-A-Stand:** **11/17 PT (65 %)**. B.1 (5) + B.2 (3) + B.3 (3) DONE. Naechster Block: B.4 game_state.json Schema + Validator + Sync-Hook + Render-Tool (3 PT).
+
+**Aufwand-Ist:** ~50 Min Wall-Clock laut Plan-Schaetzung 3 PT (im Plan-Korridor).
+
+**Final-Commit:** Gen-Repo `6511439`.
+
+---
+
 ## 2026-04-25 — Track P.2 Block B.2 DONE: AGENT_RAETSEL 3-way-Split
 
 **Scope:** Plan §3.1 B.2 (3 PT). 3-way-Split der monolithischen AGENT_RAETSEL.md (~25.7 kB) in 2 Plugin-Subagent-Files. Adressiert F-D5-02 + F-D6-02 (HARTE BRUECHE Phase 2.2a).
