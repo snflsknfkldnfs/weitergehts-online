@@ -4,6 +4,39 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-25 — Pilot-Setup TARGET-Init game-weimar-pilot-20260425 (Pilot-Vorbereitung Schritt 3)
+
+**Scope:** Pilot-Roadmap §23.3 Schritt 3 — Game-Verzeichnis-Skelett + Pre-Conditions fuer Phase-0.1-Start. Saubere Test-Umgebung ohne Vor-Erfahrung.
+
+**Modus:** EXECUTE (Cowork-Plugin-Dev).
+
+**Game-Parameters (User-Entscheidung 2026-04-25):**
+- game_id: `game-weimar-pilot-20260425` (Schema-Prefix `game-` zwingend, Datum-Suffix fuer Pfad-Isolation)
+- thema: `weimarer-republik-anfangsphase`
+- jgst: `7c` (technisch — Klassen-Identitaet 7b/7c als Metadata, Lehrplan-Anker nur unter `7c/`)
+- mappen_anzahl: `4`
+
+**Begruendung Thema-Wahl:** Industrialisierung (urspruengliche Empfehlung) verworfen wegen Interferenz-Risiken (Vorerfahrung + bestehende Identifikationsfiguren Johann/Anna/Peter + Pfad-Kollisions-Surface). Weimarer Republik Anfangsphase: keine bestehenden Artefakte im UEW-Repo (User-bestaetigt), Lehrplan-Anker R7-GPG vorhanden, didaktisch praxisrelevant.
+
+**TARGET-Init (3 Files unter `weitergehts-online/docs/agents/artefakte/game-weimar-pilot-20260425/`):**
+- `GAME_PARAMETERS.md` (3007 B) — Phase 0.1 Pre-Condition. Pflicht-Felder + Pilot-Kontext + Klassen-Identitaet-Hinweis + thematischer Scope (1918-1923) + advisory Eingangs-Hinweise + Output-Erwartungen.
+- `game_state.json` (271 B) — schema-konform (game_state.schema.json B.4), phase=ONBOARDING, leeres mappen[]-Array, _meta initialisiert.
+- `Q-GATE-LOG.md` (440 B) — initial-leer mit Konvention-Header (4 Status-Marker-Konventionen via check_q_gate_log.py STATUS_RE).
+
+**Pre-Flight-Verifikation:**
+- Code-Mode-Launch-Wrapper Syntax-Check: PASS.
+- MCP-Pre-Flight Cowork-Side: wikipedia PASS, wikimedia-image-search PASS (Caveat: Code-Mode-MCP-Konfig separat, Vollvalidierung erst in Schritt 1 Code-Mode-Empirie).
+- Lehrplan-Anker existiert: `Unterrichtseinwicklung/7c/Input_Artefake/Lehrplan/GPG_R7/Fachlehrplan_GPG_R7.md`.
+- game_state.json Schema-Konformitaet: manuell verifiziert (game_id-Pattern + phase-enum + _meta-Schema). Sandbox-jsonschema-Install nicht persistent — Code-Mode-CLI uebernimmt.
+
+**Strict-Separation-Konsequenz:** Eigentlicher Pilot-Run (Plugin-Marketplace-Add + `/generate-game`) ist Code-Mode-Aufgabe. Cowork-Session endet als Setup-Vorbereitung.
+
+**Aufwand-Ist:** ~6 Min Wall-Clock (Pre-Flight-Checks + Skelett-Anlage).
+
+**Naechster Schritt:** Code-Mode-Uebergang (Pilot-Roadmap Schritt 1: T-P.2-Empirie via Code-Mode-CLI mit konkretem Pilot-Game-Run). User wechselt zu Terminal, ruft `tools/code-mode-launch.sh` auf, installiert Plugin via Marketplace, startet `/generate-game weimarer-republik-anfangsphase 7c 4` mit dem vorbereiteten TARGET-Skelett.
+
+---
+
 ## 2026-04-25 — Phase-B-Bundle-Audit + B.7b-Patch-Cycle (Pilot-Vorbereitung Schritt 2)
 
 **Scope:** Pilot-Roadmap §23.3 Schritt 2 ausgefuehrt — Bundle-Audit Phase B (B.7-B.16) als Risiko-Reduktion-First-Step vor Code-Mode-Empirie. 3 HIGH-Findings entdeckt + im selben Cycle gefixed.
