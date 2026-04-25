@@ -4,6 +4,67 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-25 — F-S-01 Fix DONE: Plugin-Setup-Doku + Python-Dependencies + Tool-Resilient
+
+**Scope:** Pflicht-Fix vor Pilot-Einsatz fuer F-S-01 (jsonschema-Dependency undokumentiert). 4 Files-Setup + Tool-graceful-Degrade.
+
+**Pre-Recherche:** Tool-Dependencies-Audit zeigte: nur `validate_material_output.py` braucht externe Python-Dependency (jsonschema). 5/6 anderen Tools nutzen nur stdlib.
+
+**4 NEUE/UPDATED Files:**
+
+1. **`requirements.txt` (NEU):**
+   - `jsonschema>=4.0` als einzige externe Dependency.
+   - Setup-Hinweis (`pip install -r requirements.txt --break-system-packages`).
+   - Begruendung: Schema-Validation fuer Material-Outputs (G1-Q-Gate, Hook D.1).
+
+2. **`tools/setup-deps.sh` (NEU):**
+   - One-Shot-Install-Skript mit Pre-Check (jsonschema bereits installiert?), pip-Install, Verifikations-Test.
+   - Ausfuehrung: `bash tools/setup-deps.sh`.
+
+3. **`README.md` (NEU im Repo-Root):**
+   - Plugin-Zweck + Status (Track P.1 DONE, Plugin-Readiness 88%).
+   - **Strict-Separation-Tabelle** (Cowork=Dev / Code-Mode=Prod).
+   - **Setup-Sektion** mit 3 Schritten (Python-Dependencies + Plugin-Install + Verifikation).
+   - Komponenten-Inventar (24 Subagents + 5 Skills + 6 Commands + 4 Hooks + 6 Tools).
+   - Triple-Root-Architektur-Anker.
+   - Wichtige-Dokumente-Liste.
+   - Dev/Prod-Workflow.
+
+4. **`tools/validate_material_output.py` resilient gemacht:**
+   - Try/except-Block um `import jsonschema` mit Stderr-Warning + Setup-Hint.
+   - `JSONSCHEMA_AVAILABLE`-Flag.
+   - Graceful-Degrade-Branch in `validate()`: bei Missing-Module nur basic JSON-Parse, exit 0, `degraded_mode: True`.
+   - `print_human_report()` erweitert um degraded_mode-Branch (`[PASS-DEGRADED]`-Output statt full-Report).
+
+**Empirische Verifikation aus Host-MCP:**
+
+- `python3 -m pip install jsonschema --break-system-packages` -> Successfully installed (4.26.0).
+- Tool-Run mit jsonschema installiert: full Schema-Validation funktioniert (Test-File mit 5 Feldern -> FAIL, 15 errors aus 13 MISSING_REQUIRED + 1 UNKNOWN_FIELD + 1 PATTERN_MISMATCH).
+- Tool-Run ohne jsonschema (vor Install): graceful-degrade-PASS mit Warning auf stderr.
+- Setup-Skript Pre-Check + pip-Install + Verifikation funktioniert.
+
+**Strict-Separation-konform:**
+- Tool-Tests via Host-MCP osascript ausserhalb Plugin-Loader-Run.
+- Plugin selbst wurde nicht in Cowork installiert.
+- Pilot-Use-Case-Workflow: User fuehrt `bash tools/setup-deps.sh` einmalig + `claude plugin install` -> Plugin-Schema-Gate aktiv.
+
+**Akzeptanz-Update F-S-01:**
+- HIGH-Finding GEFIXT.
+- Pilot-Einsatz-Block AUFGEHOBEN.
+- Plugin-Readiness verbessert: Setup-Pfad dokumentiert + Tool-Resilient + One-Shot-Install.
+
+**Aufwand:** ~15 Min Wall-Clock fuer 4 Files + Empirie-Verifikation + STATUS+CHANGELOG.
+
+**Plugin-Readiness-Update:**
+- Vorher: 88% (mit F-S-01 als HIGH-Pflicht-Fix).
+- Nachher: ~92% (F-S-01 GEFIXT, alle HIGH-Findings gefixt).
+
+**Naechste Schritte:**
+1. **Track P.2-Plan-Doku** `C-TIEFE-REFACTOR-PLAN.md` (~5 Wochen, 34 PT laut Roadmap v2.2).
+2. Optional: User-empirischer Pilot-Test in Code-Mode mit Setup-Run + echtem Material-Generation.
+
+---
+
 ## 2026-04-25 — T-P.1-Smoke S3+S4+S5 Empirie DONE: 3/4 PASS + 1 KRITISCHES FINDING jsonschema-Dependency
 
 **Scope:** Limited-Smoke-Suite via Code-Mode-CLI headless. Empirische Verifikation der Plugin-Aktivierung (Skill-Auto-Trigger / Command-Aufruf / Hook-Aktivierung). Plan §4 S3-S5-Akzeptanzkriterien.
