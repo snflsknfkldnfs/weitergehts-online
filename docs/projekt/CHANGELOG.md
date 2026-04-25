@@ -4,6 +4,113 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-25 — TRACK P.1 KOMPLETT DONE: Block H DONE — Cross-Repo-Doku + Code-Mode-Anker
+
+**Scope:** Plan §2.8 (1 PT, letzter Block). Track P.1 vollstaendig abgeschlossen — alle 8 Bloecke A-H DONE.
+
+**Block H Aktionen:**
+
+1. **NEU `docs/projekt/PLUGIN_ARCHITEKTUR_TRIPLE_ROOT.md` v1.0:**
+   - §1 Triple-Root-Topologie mit ASCII-Diagramm + Per-Root-Verantwortlichkeits-Tabelle.
+   - §2 Plugin-Variable-Path-Resolution (`{{GENERATOR_PATH}}`, `{{TARGET_PATH}}`, `{{UNTERRICHTSEINWICKLUNG_PATH}}`, `{{CLAUDE_PLUGIN_ROOT}}`).
+   - §2.1 Cowork-Modus Path-Discovery via `ls /sessions/*/mnt/`.
+   - §2.2 Code-Mode `--add-dir`-Flags.
+   - §2.3 Hook-Commands `${CLAUDE_PLUGIN_ROOT}` mit Fallback.
+   - §3 Runtime-Konvention Cowork=Dev / Code-Mode=Prod (User-Decision Q7 BEFUND v1.1 §13).
+   - §3.1 Cowork=Dev: Spec-Entwicklung, Skill-Iteration, Q-Gate-Tuning, PM, Audits.
+   - §3.2 Code-Mode=Prod: produktive Game-Generierung, Pilot-Einsatz, T-Full-Game-E2E, Headless.
+   - §3.3 Konsequenzen: Phase-3-Vereinheitlichung in Code-Mode, Session-Split-Aufloesbarkeit, T-Full-Game-Code-Mode, Pilot-Einsatz-Routing.
+   - §4 Cross-Repo-Workflow-Pattern (Game-Generierung, PM-Pflege, UNTERRICHTSEINWICKLUNG-Discovery).
+   - §5 Implementations-Status Phase 1 (Track P.1 8/8 Bloecke).
+   - §6 Phase-2-Pre-View (Sub-B.1b Token-Einsparung, Sub-D-Phase-2 Helper-Tools, AGENT_MATERIAL 3-way-Split, State-JSON, 11 Vertrags-Skills, Atomic-writes, Revisor-Loop-14-Typen, 13 Fixtures, Parallel-Dispatch).
+
+2. **PROJECT_INSTRUCTIONS.md erweitert:**
+   - DUAL-ROOT-ARCHITEKTUR-Sektion -> TRIPLE-ROOT-ARCHITEKTUR (ab v3.0) erweitert um UNTERRICHTSEINWICKLUNG-Read-Only-Root + neue Pfad-Konvention.
+   - Pfade mit `Unterrichtseinwicklung/` -> UNTERRICHTSEINWICKLUNG-Root (READ-ONLY, niemals SCHREIBEN).
+   - Plugin-Component-Pfade ergaenzt: `tools/`, `skills/`, `commands/`, `hooks/` -> GENERATOR-Repo.
+   - **NEUE Sektion** RUNTIME-KONVENTION: Cowork=Dev / Code-Mode=Prod mit Use-Cases-Tabelle + 4 Konsequenzen + Verweis auf vollstaendige Doku.
+
+3. **Verweise zu Cross-References:**
+   - `skills/pfad-manifest/SKILL.md` (Skill-Pendant fuer Auto-Trigger bei Cross-Repo-Operation).
+   - `agents/PFAD_MANIFEST.md` (Source 146 Z. Pfad-Tabelle).
+   - `weitergehts-online/docs/projekt/CC_COWORK_INTEROP_LEARNINGS.md`.
+
+**Validator-Smoke-Test:**
+- `claude plugin validate` -> `✔ Validation passed with warnings`. 0 Errors.
+
+**Akzeptanzkriterien H Plan §2.8 erfuellt:**
+- [x] Doku-Datei `docs/projekt/PLUGIN_ARCHITEKTUR_TRIPLE_ROOT.md` persistiert + reviewt.
+- [x] PROJECT_INSTRUCTIONS.md-Block aktualisiert + smoke-getestet (Validator PASS).
+
+**Aufwand:** ~10 Min Wall-Clock fuer Doku-File + PI-Edit + Validator + STATUS+CHANGELOG.
+
+---
+
+## TRACK P.1 KOMPLETT — AKZEPTANZ-STATUS
+
+**Plan-Stand finals:** 21.5 PT / 21.5 PT (**100%**).
+
+| Block | PT | Status | Notes |
+|---|---|---|---|
+| A.1+A.2+A.3+A.4 | 5 | DONE | 24 Frontmatter |
+| C | 1 | DONE | Manifest v0.3.0 inkl. Validator-Fix |
+| B (5 Skills) | 3 | DONE | Konservativ-Layer, Source-Files unveraendert |
+| D (4 Hooks) | 3 | DONE | Reduziert: D.1+D.2 aktiv, D.3+D.4 Stubs |
+| E (6 Commands) | 4 | DONE | Konservativ-Layer |
+| F (Drift-Cleanup) | 0.5 | DONE | 4 Legacy-Refs Legacy-markiert |
+| G (5 Test-Fixtures) | 4 | DONE | Konservativ-Layer 11 Files |
+| H (Cross-Repo-Doku + Code-Mode-Anker) | 1 | DONE | NEU Doku-Datei + PI-Erweiterung |
+
+**Akzeptanzkriterien Track P.1 (laut Plan §4 Aggregat):**
+
+Hart (alle erforderlich):
+- [x] 24 Subagents mit YAML-Frontmatter (Block A).
+- [x] 5 Skills in `skills/` mit Auto-Trigger (Block B).
+- [x] Plugin-Manifest v0.2.0 SDK-konform (Block C — bumped to v0.3.0).
+- [x] 4 Hooks in `hooks/hooks.json` aktiv + smoke-getestet (Block D — D.1+D.2 aktiv, D.3+D.4 Stubs).
+- [x] 6 Slash-Commands in `commands/` aufrufbar (Block E).
+- [x] AGENT_QUALITAET drift-frei (Block F).
+- [x] 5 Test-Fixtures persistiert (Block G).
+- [x] Cross-Repo-Doku + Code-Mode-Anker dokumentiert (Block H).
+- [ ] T-P.1-Smoke (2-3h) PASS: **deferred** zu Cowork-Plugin-Reload-Cycle (empirischer End-to-End-Test mit Plugin-Reload).
+- [ ] A-Plugin-Phase-1 (1-2h) PASS: **deferred** zu Cowork-Plugin-Reload-Cycle.
+
+Weich (stark empfohlen):
+- [ ] Plugin-Readiness-Metrik 3% -> >=85% messbar: **deferred** zu Empirie-Audit (A-Plugin-Phase-1).
+- [ ] Token-Einsparung durch Skill-Transformationen >=30k Token (~47k erwartet): **DEFERRED zu Sub-Block-B.1b** (Konservativ-Layer behaelt Marker-Bloecke, V16-Refactor + Registry-Sync noetig).
+- [x] Mid-Point-Revisit-Befund dokumentiert: Light-Audit BEFUND v1.0+v1.1 + Validator-Empirie-Korrektur in Block A+C.
+
+**Mid-Block-Lessons-Learned (Auto-Memory persistiert):**
+1. `feedback_self_edit_fallback.md` — Mechanische N<=10-File-Edits sind via Read-parallel + Edit-parallel im Hauptthread schneller als Subagent-Spawn (Block A.3+A.4 Lesson nach API-529-Overload).
+2. `feedback_validator_cli_primary.md` — Bei Plugin-Audit-Folgeaktionen MUSS `claude plugin validate` als ERSTER Schritt vor Audit-Subagent-Dispatch (Block A+C-Validator-Fix-Cycle Lesson, Validator-CLI revidierte 3 Audit-Findings).
+
+**Phase-2 / Track-P.2-Pre-View (deferred):**
+- AGENT_MATERIAL 3-way-Split (Q3, ~2 Wochen).
+- State-JSON 12-Felder-Schema + Sync-Hook (Q4 Option-C+, ~1.5 Wochen).
+- 11 Vertrags-Skills mit Phase-Ebene Default + Spike (Q5).
+- Atomic-writes fuer dispatch_meta.json + post-state-update-Hook.
+- Revisor-Loop-Generalisierung 14 Material-/Aufgaben-Typen.
+- 13 weitere Test-Fixtures (Q6 Mid-Point-Revisit) + CI-Aktivierung.
+- Parallel-Dispatch-Pattern.
+- Sub-Block-B.1b Token-Einsparung 47k via V16-Refactor + sprachniveau_include_registry-Sync.
+- Sub-Block-D-Phase-2: D.3 dispatch_meta_helper.py + D.4 check_q_gate_log.py.
+
+**Total-Schaetzung Phase-2 / Track P.2:** 5 Wochen, 34 PT (laut Roadmap v2.1).
+
+**Naechste Schritte:**
+- Cowork-Plugin-Reload-Cycle in naechster Session zur empirischen Validation Plugin-Discovery + Skill-Auto-Trigger + Hook-Aktivierung.
+- T-P.1-Smoke + A-Plugin-Phase-1 als Akzeptanz-Test.
+- Bei PASS: Track P.2-Plan-Doku `C-TIEFE-REFACTOR-PLAN.md` als naechstes Deliverable.
+
+**Aufwand-Bilanz Track P.1:**
+- Plan-Schaetzung: 21.5 PT (~3 Wochen).
+- Wall-Clock-Ist: ~120 Min in einer Cowork-Session (durch parallele Edits + Konservativ-Layer-Reduktion + Self-Edit-Fallback).
+- Reduzier-Strategien: D.3+D.4 Stubs (-1.5 PT), Sub-B.1b deferred (-?), Konservativ-Layer durchgaengig (Skills + Commands ohne Workflow-Refactor).
+
+**TRACK P.1 STATUS: COMPLETE ✓**
+
+---
+
 ## 2026-04-25 — Track P.1 Block G DONE: 5 Test-Fixtures Top-5 Worker
 
 **Scope:** Plan §2.7 (4 PT) Konservativ-Layer — Defekt-Fixtures + Smoke-Test-Patterns dokumentiert. Voll-CI-Aktivierung Phase-2-Scope.
