@@ -4,6 +4,43 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-25 — B.7c-Hook-Refactor (Pilot-Mid-Run, F-PB-24/26/27 + 2 RETRACTED)
+
+**Scope:** Hook-System-Refactor nach Pilot-Mid-Run-Empirie. CC-Debug-Log-Analyse zeigte: 9 von 10 Hooks effektiv stumm in CC v2.1.x.
+
+**Modus:** EXECUTE (Cowork-Plugin-Dev, parallel zu laufendem Pilot-Run im CC).
+
+**Empirie-Quelle:** `~/.claude/debug/55a065d3-...txt` (71 KB Pilot-Run-Log). Hook-Engine-Trigger ausschliesslich fuer Bash + Read tool_names. Plugin-interne Edit/Write/Task/MultiEdit-Calls erscheinen NICHT als Hook-Events.
+
+**5 strukturelle Patches in `escape-game-generator/hooks/hooks.json`:**
+
+1. **Matcher-Pattern-Erweiterung um MultiEdit** (7 Hooks): `Write` → `Write|MultiEdit`, `Edit` → `Edit|MultiEdit`, `Task|Write` → `Task|Write|MultiEdit`. CC v2.1.x kanonische Tool-Names sind Bash/Edit/Write/MultiEdit (verifiziert via offiziellem hookify-Plugin).
+2. **NotebookEdit-Removal:** `Write|Edit|NotebookEdit` → `Write|Edit|MultiEdit` in post-state-update (NotebookEdit existiert nicht in CC v2.1.x).
+3. **pre-pi-phase-advance regex-Refactor (F-PB-26-Fix):** Pattern um optional `[:=]?`-separator + case-insensitive sed-Flag. Matcht jetzt Plugin-Notation `Phase 0.2 AGENT_NAME` (Whitespace) UND alte `phase: 0.2`.
+4. **SubagentStop-Refactor (F-PB-27-Fix):** `post-material/aufgabe-subagent-stop` von PostToolUse-mit-matcher=Task in dedizierte SubagentStop-Sektion. CC v2.1.x kanonisches Event-System.
+5. **Diagnostik-Hooks (F-PB-24-Verifikation):** 2 matcher-less Hooks (PreToolUse + PostToolUse) loggen `tool_name + file_path` in stderr. Hilft naechsten Pilot-Run mit Empirie ueber CC-v2.1.x-Hook-Trigger-Coverage.
+
+**Hook-Inventar post-B.7c:** 12 (5 Pre + 5 Post + 2 SubagentStop). JSON-Syntax PASS.
+
+**3 Findings-Status-Updates:**
+- **F-PB-21 RETRACTED:** LB-Code-Drift war Terminal-Render-Artefakt im User-Output, nicht echter Plugin-Bug. Verlauf-Export bestaetigt korrekte LB3-Verortung.
+- **F-PB-22 RETRACTED:** Subagent-Modell `model: opus` mappt in CC v2.1.119 auf Opus 4.7 (1M context). `/agents`-Liste bestaetigt 16 Plugin-Subagents auf `opus`. Test-Methodik-Sauberheit gegeben.
+- **F-PB-24 BESTAETIGT HIGH (Verifikation pending):** 9/10 Hooks stumm im Pilot-Run. Diagnostik-Hooks im naechsten Pilot-Run liefern endgueltige Empirie.
+
+**3 Findings closed in B.7c-Cycle:**
+- F-PB-26 HIGH: Hook-Pattern-Drift Plugin-Notation → regex erweitert.
+- F-PB-27 HIGH: SubagentStop-Event-Refactor durchgefuehrt.
+
+**STOP-Pflicht-Punkt vor Phase 1:** Plugin-Update im CC (`claude plugin update escape-game-generator`) erforderlich, damit B.7c-Hooks aktiv werden. Bis dahin: Phase 0.2/0.2.M/0.3/0.4 laufen weiterhin ohne Hook-Sicherheit (akzeptabel weil keine Material/Aufgabe-Outputs kritisch).
+
+**Aggregat post-B.7c:** 17 Findings (3H closed B.7b + 2H closed B.7c + 1H neu offen F-PB-15 + 1H pending-Verifikation F-PB-24 + 5 MED + 6 LOW). 2 RETRACTED.
+
+**Aufwand-Ist:** ~15 Min Wall-Clock (Edits + JSON-Verifikation).
+
+**Naechster Schritt:** Phase 0.2/0.2.M/0.3/0.4 im aktuellen Pilot-Run beobachten. Vor Phase 1: Plugin-Update + Diagnostik-Hook-Output-Analyse fuer F-PB-24-finale-Verifikation.
+
+---
+
 ## 2026-04-25 — Pilot-Run gestartet game-weimar-pilot-20260425 (Pilot-Roadmap Schritt 1 aktiv)
 
 **Scope:** Code-Mode-Uebergang vollzogen, Plugin-Production-Pilot laeuft.
