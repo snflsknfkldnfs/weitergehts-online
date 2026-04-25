@@ -4,6 +4,55 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-25 — Track P.1 Block B.3+B.4+B.5 DONE: 5/5 Skills komplett
+
+**Scope:** 3 weitere Konservativ-Layer-Skills laut Plan §2.2: pfad-manifest, trigger-sichtbarkeit, rollen-katalog. Block B vollstaendig (5/5 Skills).
+
+**Block B.3 — skills/pfad-manifest/SKILL.md (0.5 PT):**
+- Frontmatter `name=pfad-manifest` + Auto-Trigger-description (Cross-Repo-Operation, Pfad-Resolution, Lehrplan-/Didaktik-/Material-Quellpfad-Lookup, Cowork-vs-Code-Mode-Discovery).
+- Body: Triple-Root-Architektur (GENERATOR + TARGET + UNTERRICHTSEINWICKLUNG-Read-Only) + Pfad-Konvention-Tabelle + Discovery-Mechanismen (Cowork: ls /sessions/*/mnt/, Code-Mode: --add-dir-Flags) + Quellpfad-Highlights (Lehrplan + Didaktik) + Read-Pfad-Verweise zu agents/PFAD_MANIFEST.md fuer Tiefe.
+- Source agents/PFAD_MANIFEST.md (146 Zeilen) UNVERAENDERT.
+
+**Block B.4 — skills/trigger-sichtbarkeit/SKILL.md (0.5 PT):**
+- Frontmatter `name=trigger-sichtbarkeit` + Auto-Trigger-description (Aufgaben-/Material-/Mappen-Konstruktion mit Trigger-Inhalten, Phase-3-Assembly-Split, _meta.trigger_flags-Setzung, Validator-Lauf).
+- Body: STR-12 Definition + 4-Saetze-Regel (nicht in Schueler-HTML/JSON, ausschliesslich Lehrkraft-Route, CSS-Ausblendung KEINE Implementation) + Technische Umsetzung (Produktions-JSON-Struktur, Assembly-Split, Validator-Schritt, Pre-Commit-Hook) + _meta.trigger_flags Pattern (6 erlaubte Werte: gewalt, tod, krieg, diskriminierung, trauma, sexualisierte_gewalt).
+- Source agents/POLICY_TRIGGER_SICHTBARKEIT.md (116 Zeilen) UNVERAENDERT.
+
+**Block B.5 — skills/rollen-katalog/SKILL.md (0.5 PT):**
+- Frontmatter `name=rollen-katalog` + Auto-Trigger-description (Rollen-Bezug, Sichtbarkeits-Entscheidungen, Rollen-Matrix-Implementation, lehrkraft.html-Konstruktion, Differenzierungs-Routing).
+- Body: 3 Rollen Kompakt (R1 SuS / R2 LK / R3 AUT) + Rollen-Matrix-Tabelle (12 Asset-Typen × 3 Rollen) + Per-Rollen-Detail (Rechte, Sichtbarkeiten, Pflichten) + Implementations-Hinweise (Schueler-Assembly-Loescher, Lehrkraft-Assembly, Validator-Pflicht).
+- Source agents/ROLLEN_KATALOG.md (124 Zeilen) UNVERAENDERT.
+
+**Validator-Smoke-Test:**
+- `claude plugin validate /Users/paulad/escape-game-generator` -> `✔ Validation passed with warnings`.
+- 0 Errors. 8 Warnings unveraendert (5 Phase-2-pending Source-Files + 1 commands-README Stub + 2 Phase-2-deferred AGENT_MATERIAL/AGENT_RAETSEL).
+
+**Block B komplett 5/5 Skills:**
+- skills/f0b-priming/SKILL.md (B.1 DONE in vorherigem Cycle)
+- skills/escape-game-schema/SKILL.md (B.2 DONE in vorherigem Cycle)
+- skills/pfad-manifest/SKILL.md (B.3 DONE)
+- skills/trigger-sichtbarkeit/SKILL.md (B.4 DONE)
+- skills/rollen-katalog/SKILL.md (B.5 DONE)
+
+**Aufwand B.3+B.4+B.5:** ~10 Min Wall-Clock fuer 3 Skill-Files + Validator + STATUS+CHANGELOG.
+
+**Plan-Stand Track P.1:**
+| Block | Status |
+|---|---|
+| A.1+A.2+A.3+A.4 | DONE |
+| C | DONE inkl. Validator-Fix-Cycle |
+| B.1+B.2+B.3+B.4+B.5 | DONE Konservativ-Layer (5/5 Skills) |
+| D (4 Hooks) | PENDING (3 PT, Tag 7-8) |
+| E (6 Slash-Commands) | PENDING (4 PT, Tag 9-12) |
+| F (AGENT_QUALITAET-Drift-Cleanup) | PENDING (0.5 PT, Tag 11-12) |
+| G (5 Test-Fixtures) | PENDING (4 PT, Tag 13-14) |
+| H (Cross-Repo-Doku + Code-Mode-Anker) | PENDING (1 PT, Tag 14) |
+| Sub-B.1b (Token-Einsparung 47k) | DEFERRED (V16-Refactor) |
+
+**Naechster Block:** Block D (4 Minimal-Hooks, 3 PT) gemaess Plan §2.4. Hooks fuer pre-write-material (G1 Schema-Gate), post-write-material (M16+M17 Regex-Gates), post-subagent-stop-dispatcher (dispatch_meta Persistenz), pre-phase-advance (Q-GATE-LOG Validation). Hoehere Komplexitaet als B (Hook-Tool-Calls + Tool-Skripte vorhanden).
+
+---
+
 ## 2026-04-25 — Track P.1 Block B.1+B.2 DONE: 2 Skills + Manifest v0.3.0
 
 **Scope:** Block B.1 (f0b-priming-Skill) + Block B.2 (escape-game-schema-Skill) gemaess C-INKREMENTELL-MIGRATION-PLAN.md §2.2. Konservativ-Layer-Strategie nach User-Decision (Risiko-Mitigation Hash-Pruef-Mechanismus + Cross-Ref-Stabilitaet).
