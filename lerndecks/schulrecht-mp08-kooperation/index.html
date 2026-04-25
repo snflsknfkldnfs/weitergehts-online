@@ -6,46 +6,46 @@
 <title>Schulrecht MP_08 — Kooperation Bildungsdienste · Lerndeck</title>
 <link rel="stylesheet" href="../../assets/css/base.css">
 <style>
-:root {{
+:root {
   --c-bund:#1e3a8a; --c-bund-dark:#1e40af; --c-bund-bg:#eff6ff;
   --c-gesetz:#c2410c; --c-gesetz-dark:#9a3412; --c-gesetz-bg:#fff7ed;
   --c-vo:#ca8a04; --c-vo-dark:#854d0e; --c-vo-bg:#fefce8;
   --c-bek:#65a30d; --c-bek-dark:#3f6212; --c-bek-bg:#f7fee7;
   --c-falle:#dc2626;
   --c-text:#1f2937; --c-muted:#475569; --c-faint:#94a3b8; --c-border:#cbd5e1;
-}}
-body {{ background:#f8fafc; color:var(--c-text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }}
-.wrap {{ max-width:900px; margin:0 auto; padding:24px 16px; }}
-header {{ margin-bottom:20px; border-bottom:1px solid var(--c-border); padding-bottom:14px; }}
-h1 {{ font-size:1.4em; margin-bottom:6px; }}
-.crumb {{ font-size:0.85em; color:var(--c-muted); margin-bottom:10px; }}
-.crumb a {{ color:var(--c-gesetz); text-decoration:none; }}
-.crumb a:hover {{ text-decoration:underline; }}
-.intro {{ color:var(--c-muted); font-size:0.95em; }}
-.downloads {{ display:flex; flex-wrap:wrap; gap:8px; margin:14px 0 20px; }}
-.downloads a {{ display:inline-flex; align-items:center; gap:6px; padding:8px 14px; background:#fff; color:var(--c-gesetz-dark); text-decoration:none; border:1px solid var(--c-border); border-radius:6px; font-size:0.88em; font-weight:600; }}
-.downloads a:hover {{ background:var(--c-gesetz-bg); border-color:var(--c-gesetz); }}
-.controls {{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px; align-items:center; background:#fff; padding:10px; border-radius:8px; border:1px solid var(--c-border); }}
-.controls select, .controls input[type=search] {{ padding:5px 10px; border:1px solid var(--c-border); border-radius:4px; font-size:0.9em; background:#fff; color:var(--c-text); }}
-.controls label {{ font-size:0.88em; display:flex; align-items:center; gap:4px; cursor:pointer; }}
-.controls button {{ padding:5px 12px; background:var(--c-gesetz); color:#fff; border:none; border-radius:4px; font-size:0.88em; cursor:pointer; }}
-.controls button:hover {{ background:var(--c-gesetz-dark); }}
-.counter {{ font-size:0.85em; color:var(--c-muted); margin-bottom:12px; text-align:center; }}
-.counter strong {{ color:var(--c-text); }}
-.card-frame {{ background:#fff; border-radius:8px; padding:6px; border:1px solid var(--c-border); cursor:pointer; min-height:380px; }}
-.card-frame:hover {{ box-shadow:0 4px 12px rgba(0,0,0,0.05); }}
-.card-frame.is-falle {{ border-top:3px solid var(--c-falle); }}
-.flip-hint {{ text-align:center; color:var(--c-faint); font-size:0.78em; margin-top:6px; }}
-.card-nav {{ display:flex; justify-content:space-between; align-items:center; margin-top:14px; gap:8px; }}
-.card-nav button {{ padding:8px 16px; background:#fff; color:var(--c-gesetz-dark); border:1px solid var(--c-border); border-radius:4px; cursor:pointer; font-size:0.9em; }}
-.card-nav button:hover {{ background:var(--c-gesetz-bg); border-color:var(--c-gesetz); }}
-.card-nav button:disabled {{ opacity:0.4; cursor:not-allowed; }}
-.review-buttons {{ display:flex; gap:8px; margin-top:10px; }}
-.review-buttons button {{ flex:1; padding:8px; border-radius:4px; cursor:pointer; font-size:0.85em; font-weight:600; border:none; color:#fff; }}
-.btn-fail {{ background:#dc2626; }}
-.btn-meh {{ background:#f59e0b; }}
-.btn-good {{ background:#16a34a; }}
-.empty-msg {{ text-align:center; color:var(--c-faint); padding:40px 20px; font-size:0.95em; }}
+}
+body { background:#f8fafc; color:var(--c-text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+.wrap { max-width:900px; margin:0 auto; padding:24px 16px; }
+header { margin-bottom:20px; border-bottom:1px solid var(--c-border); padding-bottom:14px; }
+h1 { font-size:1.4em; margin-bottom:6px; }
+.crumb { font-size:0.85em; color:var(--c-muted); margin-bottom:10px; }
+.crumb a { color:var(--c-gesetz); text-decoration:none; }
+.crumb a:hover { text-decoration:underline; }
+.intro { color:var(--c-muted); font-size:0.95em; }
+.downloads { display:flex; flex-wrap:wrap; gap:8px; margin:14px 0 20px; }
+.downloads a { display:inline-flex; align-items:center; gap:6px; padding:8px 14px; background:#fff; color:var(--c-gesetz-dark); text-decoration:none; border:1px solid var(--c-border); border-radius:6px; font-size:0.88em; font-weight:600; }
+.downloads a:hover { background:var(--c-gesetz-bg); border-color:var(--c-gesetz); }
+.controls { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px; align-items:center; background:#fff; padding:10px; border-radius:8px; border:1px solid var(--c-border); }
+.controls select, .controls input[type=search] { padding:5px 10px; border:1px solid var(--c-border); border-radius:4px; font-size:0.9em; background:#fff; color:var(--c-text); }
+.controls label { font-size:0.88em; display:flex; align-items:center; gap:4px; cursor:pointer; }
+.controls button { padding:5px 12px; background:var(--c-gesetz); color:#fff; border:none; border-radius:4px; font-size:0.88em; cursor:pointer; }
+.controls button:hover { background:var(--c-gesetz-dark); }
+.counter { font-size:0.85em; color:var(--c-muted); margin-bottom:12px; text-align:center; }
+.counter strong { color:var(--c-text); }
+.card-frame { background:#fff; border-radius:8px; padding:6px; border:1px solid var(--c-border); cursor:pointer; min-height:380px; }
+.card-frame:hover { box-shadow:0 4px 12px rgba(0,0,0,0.05); }
+.card-frame.is-falle { border-top:3px solid var(--c-falle); }
+.flip-hint { text-align:center; color:var(--c-faint); font-size:0.78em; margin-top:6px; }
+.card-nav { display:flex; justify-content:space-between; align-items:center; margin-top:14px; gap:8px; }
+.card-nav button { padding:8px 16px; background:#fff; color:var(--c-gesetz-dark); border:1px solid var(--c-border); border-radius:4px; cursor:pointer; font-size:0.9em; }
+.card-nav button:hover { background:var(--c-gesetz-bg); border-color:var(--c-gesetz); }
+.card-nav button:disabled { opacity:0.4; cursor:not-allowed; }
+.review-buttons { display:flex; gap:8px; margin-top:10px; }
+.review-buttons button { flex:1; padding:8px; border-radius:4px; cursor:pointer; font-size:0.85em; font-weight:600; border:none; color:#fff; }
+.btn-fail { background:#dc2626; }
+.btn-meh { background:#f59e0b; }
+.btn-good { background:#16a34a; }
+.empty-msg { text-align:center; color:var(--c-faint); padding:40px 20px; font-size:0.95em; }
 </style>
 </head>
 <body>
@@ -112,33 +112,33 @@ let showBack = false;
 
 const $ = id => document.getElementById(id);
 
-function applyFilter() {{
+function applyFilter() {
   const sb = $('filter-subblock').value;
   const norm = $('filter-norm').value;
   const hp = $('filter-hochprior').checked;
   const fa = $('filter-falle').checked;
   const q = $('search').value.toLowerCase().trim();
-  filtered = CARDS.filter(c => {{
+  filtered = CARDS.filter(c => {
     if (sb && c.subblock !== sb) return false;
     if (norm && c.norm !== norm) return false;
     if (hp && !c.hochprior) return false;
     if (fa && !c.falle) return false;
     if (q && !(c.front + c.back).toLowerCase().includes(q)) return false;
     return true;
-  }});
+  });
   curIdx = 0;
   showBack = false;
   render();
-}}
+}
 
-function render() {{
+function render() {
   const container = $('card-container');
-  if (!filtered.length) {{
+  if (!filtered.length) {
     container.innerHTML = '<div class="empty-msg">Keine Karten mit diesen Filtern.</div>';
     $('cur-idx').textContent = 0;
     $('cur-total').textContent = 0;
     return;
-  }}
+  }
   $('cur-idx').textContent = curIdx + 1;
   $('cur-total').textContent = filtered.length;
   const filters = [];
@@ -152,46 +152,46 @@ function render() {{
   const falleClass = c.falle ? 'is-falle' : '';
   const html = showBack ? c.back : c.front;
   container.innerHTML = `
-    <div class="card-frame ${{falleClass}}" onclick="flip()">${{html}}</div>
-    <div class="flip-hint">${{showBack ? '↑ Klick für Vorderseite' : '↓ Klick zum Umdrehen'}}</div>
+    <div class="card-frame ${falleClass}" onclick="flip()">${html}</div>
+    <div class="flip-hint">${showBack ? '↑ Klick für Vorderseite' : '↓ Klick zum Umdrehen'}</div>
   `;
   $('prev').disabled = curIdx === 0;
   $('next').disabled = curIdx === filtered.length - 1;
-}}
+}
 
-function flip() {{ showBack = !showBack; render(); }}
+function flip() { showBack = !showBack; render(); }
 window.flip = flip;
 
-$('prev').onclick = () => {{ if (curIdx > 0) {{ curIdx--; showBack = false; render(); }} }};
-$('next').onclick = () => {{ if (curIdx < filtered.length - 1) {{ curIdx++; showBack = false; render(); }} }};
+$('prev').onclick = () => { if (curIdx > 0) { curIdx--; showBack = false; render(); } };
+$('next').onclick = () => { if (curIdx < filtered.length - 1) { curIdx++; showBack = false; render(); } };
 $('filter-subblock').onchange = applyFilter;
 $('filter-norm').onchange = applyFilter;
 $('filter-hochprior').onchange = applyFilter;
 $('filter-falle').onchange = applyFilter;
 $('search').oninput = applyFilter;
-$('shuffle').onclick = () => {{
-  for (let i = filtered.length - 1; i > 0; i--) {{
+$('shuffle').onclick = () => {
+  for (let i = filtered.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [filtered[i], filtered[j]] = [filtered[j], filtered[i]];
-  }}
+  }
   curIdx = 0; showBack = false; render();
-}};
-$('reset').onclick = () => {{
+};
+$('reset').onclick = () => {
   $('filter-subblock').value = '';
   $('filter-norm').value = '';
   $('filter-hochprior').checked = false;
   $('filter-falle').checked = false;
   $('search').value = '';
   applyFilter();
-}};
+};
 
 // Keyboard nav
-document.addEventListener('keydown', e => {{
+document.addEventListener('keydown', e => {
   if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
-  if (e.key === 'ArrowLeft' && curIdx > 0) {{ curIdx--; showBack = false; render(); }}
-  else if (e.key === 'ArrowRight' && curIdx < filtered.length - 1) {{ curIdx++; showBack = false; render(); }}
-  else if (e.key === ' ') {{ e.preventDefault(); flip(); }}
-}});
+  if (e.key === 'ArrowLeft' && curIdx > 0) { curIdx--; showBack = false; render(); }
+  else if (e.key === 'ArrowRight' && curIdx < filtered.length - 1) { curIdx++; showBack = false; render(); }
+  else if (e.key === ' ') { e.preventDefault(); flip(); }
+});
 
 render();
 </script>
