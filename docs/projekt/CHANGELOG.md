@@ -4,6 +4,76 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-25 — Track P.1 Block E DONE: 6/6 Slash-Commands
+
+**Scope:** Block E gemaess Plan §2.5: 6 Slash-Commands fuer Plugin-Aufruf-Schnittstelle.
+
+**Pre-Block-Recherche:**
+- Command-Format empirisch verifiziert via `~/.claude/plugins/marketplaces/claude-code-workflows/plugins/ui-design/commands/`. Schema: Frontmatter `description` + `argument-hint` + Body-Markdown-Prompt mit `$ARGUMENTS`-Placeholder. Filename = Command-Name (kein `name`-Field).
+
+**6 Slash-Commands erzeugt:**
+
+E.1 `commands/generate-game.md` (1 PT):
+- `description`: Phase 0+1+2 vollstaendig fuer neues Escape-Game.
+- `argument-hint`: `[thema] [jgst] [mappen-anzahl]`.
+- Body: Pre-Flight (PI-Auto-Load, State-Pruefung, Pfad-Discovery via pfad-manifest-Skill, Lehrplan-Anker-Pfad fuer jgst) + Workflow Phase 0.1 Didaktik / 0.2 Inhalt / 0.2.M Medien / 0.3 Skript+Artefakt / 0.4 Hefteintrag / 1 Rahmen + 2.0b Sequenzkontext / 2.1 Material / 2.2 Aufgaben / 2.2c Mappenabschluss + Stop-Marker (2.1c Session-Split, 2.2c UEBERGABE).
+
+E.2 `commands/generate-mappe.md` (0.5 PT):
+- `description`: Phase 2.0+ fuer eine Mappe eines bestehenden Games.
+- `argument-hint`: `[game-id] [mappe-n]`.
+- Body: Pre-Flight (Vorgaenger-Mappen abgeschlossen, Phase-0-Artefakte vorhanden) + Workflow 2.0/2.0b/2.1/2.1c/2.2a/2.2b/2.2c. Q-Gates auto-aktiv via Block-D-Hooks.
+
+E.3 `commands/resume-state.md` (0.5 PT, keine Args):
+- `description`: State-Recovery aus PI/JSON nach Compaction.
+- Body: Auto-Load PI -> State-Block-Parse (12 Felder gemaess Q4-Option-C+) -> Q4-Phase-2-Hinweis (game_state.json authoritativ + Sync-Hook) -> State-Recovery-Output -> Compaction-Anchor-Re-Read.
+
+E.4 `commands/validate-game.md` (0.5 PT):
+- `description`: Q-Gate-Lauf gegen existierendes Spiel.
+- `argument-hint`: `[game-id]`.
+- Body: Pfad-Resolution -> Schema-Gate G1 (alle materialien) -> Regex-Gates M16+M17 -> Source-Deploy-Parity -> Sequenzkontext-Coverage -> Trigger-Sichtbarkeit-Validator -> V13-V20 Hefteintrag-Dualstruktur. Aggregat-Bericht.
+
+E.5 `commands/audit-game.md` (0.5 PT):
+- `description`: Multi-RA-Audit auf existierendes Spiel.
+- `argument-hint`: `[game-id] [ra-set]`.
+- Body: RA1-RA5-Kanon (Pipeline / Didaktik / Engine / Medien / PM) analog Testrun-N-K + Per-RA-Subagent-Dispatch (general-purpose) + Cross-RA-Aggregation + Plan-Impact + Audit-Persistenz-Best-Practice (`docs/projekt/{game-id}-audit/BERICHT_RA{N}_{DIM}.md`).
+
+E.6 `commands/migrate-legacy.md` (1 PT):
+- `description`: Legacy-Material-Migration v3.10.x -> v3.10.4.
+- `argument-hint`: `[path] [--dry-run]`.
+- Body: Pfad-Resolution + Tool-Aufruf `tools/migrate_material_v3_10_2_to_v3_10_4.py` (Track C3.5 v1.0) + Migrations-Tabelle (artefakt_ref-Prefix-Map, quellentyp-Enum-Map, voraussetzung-Normalisierung, sequenz_kontext-Backfill, primary_scpl_zone-Drop, _meta-Required-Default-Backfill, Unknown-_meta-Drop) + Modi-Doku (--quellentext-only / --dry-run / --batch-data) + Validation-post-Migration.
+
+**Bonus: commands/README.md Frontmatter ergaenzt:**
+- Frontmatter mit description "INTERNAL DOC" (Filename README.md sollte nicht als Command behandelt werden, aber Validator akzeptiert mit Frontmatter).
+- 1 Validator-Warning behoben.
+
+**Validator-Smoke-Test:**
+- `claude plugin validate` -> `✔ Validation passed with warnings`.
+- 0 Errors. **7 Warnings** (1 weniger als vorher: 5 Phase-2-pending Source-Files + 2 Phase-2-deferred AGENT_MATERIAL/AGENT_RAETSEL).
+
+**Akzeptanzkriterien E Plan §2.5 — Phase-1-Stand:**
+- [x] 6 Command-Files in `commands/` angelegt.
+- [x] Statische Validation PASS.
+- [ ] Empirischer Plugin-Reload-Smoke-Test pro Command (aufrufbar + erwartete Argumente + Initialer Subagent-Dispatch laeuft): deferred zu Cowork-Plugin-Reload-Cycle.
+
+**Aufwand:** ~15 Min Wall-Clock fuer 6 Commands + README-Update + Validator-Smoke + STATUS+CHANGELOG.
+
+**Plan-Stand Track P.1:**
+| Block | PT | Status |
+|---|---|---|
+| A (24 Frontmatter) | 5 | DONE |
+| C (Manifest v0.3.0) | 1 | DONE |
+| B (5 Skills) | 3 | DONE Konservativ-Layer |
+| D (4 Hooks) | 3 | DONE Reduziert (D.1+D.2 aktiv, D.3+D.4 Stubs) |
+| E (6 Commands) | 4 | DONE |
+| **DONE** | **16 PT / 21.5 PT (~74%)** | |
+| F (Drift-Cleanup) | 0.5 | NEXT |
+| G (5 Test-Fixtures) | 4 | PENDING |
+| H (Cross-Repo-Doku + Code-Mode-Anker) | 1 | PENDING |
+
+**Naechster Block:** F (0.5 PT) AGENT_QUALITAET-Drift-Cleanup (Legacy AGENT_DESIGN/TECHNIK-Refs). Dann G (4 PT) Test-Fixtures + H (1 PT) Cross-Repo-Doku.
+
+---
+
 ## 2026-04-25 — Track P.1 Block D DONE Reduziert: D.1+D.2 aktiv, D.3+D.4 Stubs
 
 **Scope:** Block D Minimal-Hooks gemaess Plan §2.4 mit Reduzier-Strategie (User-Decision 2026-04-25, MED-Risiko-Mitigation): D.1+D.2 aktiv (Tools 4/5 existieren), D.3+D.4 als _planned_hooks_phase_2-Stubs (Helper-Tools dispatch_meta_helper.py + check_q_gate_log.py NEU anzulegen, Phase 2).
