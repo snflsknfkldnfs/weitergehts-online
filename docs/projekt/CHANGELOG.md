@@ -4,6 +4,38 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-25 — C-ARCHI-AUDIT S5+S6 DONE: BEFUND v1.0 + Roadmap v1.4→v2.0 Major-Bump
+
+**Scope:** S5 finales konsolidiertes Audit-BEFUND-Dokument + S6 Major-Bump der Test+Audit-Roadmap. Pfad-Empfehlung **H1→H2-Staffel** (gewichteter Entscheidungs-Matrix-Score 138 vs naechster H2 mono 110).
+
+**Gen-Repo Commits:**
+- `17edf2b` — S5 BEFUND v1.0 DONE — Pfad-Empfehlung H1→H2-Staffel.
+- `c0600f9` — S6 Roadmap v1.4→v2.0 Major-Bump nach C-ARCHI-AUDIT-BEFUND.
+
+**S5 BEFUND v1.0 (`docs/projekt/F0e_PLUGIN_ARCHI_AUDIT_BEFUND.md`):**
+- 12 Standard-Sektionen (Methode + Per-RA-Summary + Cross-RA-Aggregation + Gap-Analyse + Hypothesen-Bewertung + Entscheidungs-Matrix mit Punkt-Vergabe + Migration-Roadmap pro Pfad + Risiko-Register + Offene Fragen + Akzeptanzkriterien-Check + Artefakte-Referenzen).
+- **Entscheidungs-Matrix:** 10 Kriterien × 6 Pfade. Punkt-Vergabe-Score: H1=106, H2=110, H3=109, H4=101, H5=94, **H1→H2-Staffel=138**.
+- **Phase 1 (3W, 21 PT):** YAML-Frontmatter 24 Workers + 5 Skill-Transformationen + Plugin-Manifest + 4 Hooks + 6 Slash-Commands + AGENT_QUALITAET Drift-Cleanup + 5 Test-Fixtures Top-5 Worker + Cross-Repo-Architektur-Doc.
+- **Phase 2 (5W, 34 PT):** AGENT_MATERIAL 3-way-Split + State-JSON 11-Felder-Schema + 11 Vertrags-Skills + Atomic-Writes + Revisor-Loop-Generalisierung 14 Typen + 13 weitere Fixtures + AGENT_RAETSEL-Aufspaltung + Parallel-Dispatch-Pattern.
+- **Total Plugin-Migration:** ~55 PT = ~8 Wochen. Risiko-Profil niedrig in Phase 1 / mittel in Phase 2 (gemildert durch H1-Stabilitaets-Stufe).
+- **9 offene Fragen** dokumentiert in §10 fuer User-Review-Gate vor finaler Roadmap-Festlegung.
+- **11 Audit-Entscheidungen** empfohlen (siehe §10 Entscheidungs-Tabelle).
+- **Akzeptanzkriterien:** 5/6 Hart erfuellt + 5/5 Weich erfuellt. Letztes Hart-Kriterium (Roadmap v2.0) durch S6 erfuellt.
+
+**S6 Roadmap v2.0 Major-Bump (`docs/projekt/TEST_AUDIT_ROADMAP.md`):**
+- Plugin-Architektur-Migration als neuer Top-Level-Track P (Phase 1 + Phase 2).
+- C4-C9 typenspezifische Tracks subsumiert in Track P.2 als "Material-Typ-Specializations" (14 Reviewer-Templates + Revisor-Modus pro Typ).
+- Kritischer Pfad revidiert: User-Review-Gate → P.1 (3W) → Phase-1-Gate → P.2 (5W) → Phase-2-Gate → Pre-Pilot → T-Full-Game → Multi-RA-Audit → Pilot-Freigabe → Track D → Lehrkraft-Extern → Production-Readiness.
+- 3 neue Test-Ebenen: T-P.1-Smoke (2-3h), T-P.2-Smoke (3-5h), T-State-Recovery (2-3h).
+- 2 neue Audit-Ebenen: A-Plugin-Phase-{1,2} (1-2h), A-Recon-Refresh (2-3h).
+- Quick-Reference §0 NEU mit aktuellem Pfad-Stand + verworfenen Alternativen.
+- Aenderungshistorie v1.0-v2.0 dokumentiert.
+- Total-Schaetzung bis Pilot-Freigabe: **~10-12 Wochen** (vs v1.4 4-6 Wochen). Plus 8 Wochen Plugin-Architektur-Migration, dafuer C4-C9 effizienter unter P.2 subsumiert.
+
+**Naechste Schritte:** S7 finale PM-Pflege (STATUS + CHANGELOG + Auto-Memory) DONE in diesem Eintrag. **C-ARCHI-AUDIT-Track komplett DONE (S0-S7)**. User-Review-Gate aktiv: BEFUND v1.0 + 9 offene Fragen. Bei User-Go: Track P.1 startet.
+
+---
+
 ## 2026-04-25 — C-ARCHI-AUDIT S2-S4 DONE: Inventar-Detail + 7-RA-Multi-Audit + Cross-RA-Aggregation
 
 **Scope:** S2-S4 in einer Cowork-Session (Y1-Split-Strategie umgesetzt: Review-Revisionen R1-R11 in v1.1 → S2 Inventar-Detail in v1.2 → S3 7-RA-Dispatch via 3×3+1-Sequential-Staging → S4 Cross-RA-Aggregation + Gap-Analyse). Pfad-Entscheidung H1/H2/H3/H4/H5 noch offen — folgt in S5 BEFUND.
