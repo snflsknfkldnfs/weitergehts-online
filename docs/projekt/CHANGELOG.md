@@ -4,6 +4,65 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-25 — Track P.2 Phase A Bundle-Audit + B.3b Pflicht-Fix-Cycle DONE
+
+**Scope:** Bundle-Audit B.2-B.6 (B.1 separat audited) + Pflicht-Fix-Cycle der 3 HIGH + 1 MED Findings vor Phase B.
+
+**Bundle-Audit-Bilanz (3 HIGH / 4 MED / 8 LOW Aggregat):**
+- 1 Cowork-Task-Tool-Subagent (general-purpose, ~50 Min Wall-Clock).
+- BEFUND_PHASE_A_BUNDLE_AUDIT.md persistiert (~180 Z.).
+- Aggregat-Urteil: PASS-mit-Pflicht-Fix.
+
+**B.3b Pflicht-Fix-Cycle (3 HIGH + 1 MED):**
+
+**F-PA-01 (HIGH) — agent-recon-Phantom-Replacement:**
+4 Refs in phase_transitions.json ersetzt durch reale Plugin-Subagents:
+- ONBOARDING -> 0.1: agent-recon -> agent-didaktik
+- 0.1 -> 0.2: agent-recon -> agent-inhalt
+- 0.2 -> 0.2.M: agent-recon -> agent-medienrecherche (NEU)
+- 0.2.M -> 0.3: agent-recon -> agent-skript
+- 0.3 -> 0.4: agent-recon -> agent-hefteintrag
+
+**F-PA-02 (HIGH) — Schema-Override-Sync:**
+- game_state.schema.json `_meta.properties.override_reason` als optionaler String ergaenzt.
+- SKILL.md Override-Mechanismus auf Schema-Realitaet abgeglichen: override_reason ist optional+empfohlen (nicht Schema-Pflicht); Audit-Trail-Empfehlung explizit als Operator-Konvention.
+
+**F-PA-03 (HIGH) — Phase-Coverage-Erweiterung 10 -> 18 Transitions:**
+8 NEUE Transitions:
+- 0.2 -> 0.2.M (Medien-Recherche, Q-MEDIEN-PROSPEKTIV)
+- 0.2.M -> 0.3 (re-route nach Medien-PASS)
+- 1 -> 2.0 (Rahmen-Produktion)
+- 2.0 -> 2.0b (Sequenzkontext-Pre-Computation, re-route)
+- 2.1 -> 2.1b (Didaktik-Review-Batch)
+- 2.1b -> 2.1c (Cross-Konsistenz Q-M2-FINALIZE)
+- 2.1c -> 2.2a (re-route)
+- 2.2c -> 3.0 (Game-Assembly)
+- 3.0 -> 3.1 (Deploy-Preparation)
+- 3.1 -> 3.2 (Live-Go GitHub Pages)
+- 3.2 -> DONE (Game-Komplett)
+
+Schema phase-enum erweitert 12 -> 19 Werte inkl. 0.2.M / 2.0 / 2.1b / 2.1c / 3.0 / 3.1 / 3.2. SKILL.md Phase-Reihenfolge-Doku aktualisiert.
+
+**F-PA-04 (MED) — tafelbilder-Pre-Cond Realismus:**
+Phase 0.4 -> 1 Pre-Condition geaendert von `directory_populated:tafelbilder/` zu `file_exists:TAFELBILD_Mappe1.md`. Matched reale AGENT_HEFTEINTRAG-Output-Konvention (PI Z.229).
+
+**Smoke-Verifikation:**
+- phase_transition_runner.py --self-test → exit 0 mit 18 Transitions korrekt gelistet.
+- Validator (`claude plugin validate .`) → 0 Errors.
+
+**Phase-B-Risiko-Status nach B.3b:**
+- B.7 Helper-Tools (HIGH-blockiert vor B.3b) → ENTBLOCKT.
+- B.10/B.11/B.12 (HIGH-blockiert) → ENTBLOCKT.
+- Verbleibende offene Findings: 4 MED + 8 LOW (nicht-blockend, opportunistisch in B.7+ Cleanup).
+
+**Aufwand-Ist B.3b:** ~30 Min Wall-Clock im Schaetz-Korridor 1-1.5 PT.
+
+**Track-P.2-Phase-A-Stand (post-B.3b):** 17 + 1.5 = **18.5 / 18.5 PT (100 %)** inkl. Audit-Net + Pflicht-Fix.
+
+**Final-Commit:** Gen-Repo `59636aa`.
+
+---
+
 ## 2026-04-25 — Track P.2 Phase A KOMPLETT (17/17 PT): B.5 + B.6 DONE
 
 **Scope:** Plan §3.1 Bloecke B.5 (1 PT) + B.6 (2 PT). Letzte 3 PT von Phase A. Bundle-Commit.
