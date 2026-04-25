@@ -4,6 +4,59 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-25 — Track P.2 Phase A KOMPLETT (17/17 PT): B.5 + B.6 DONE
+
+**Scope:** Plan §3.1 Bloecke B.5 (1 PT) + B.6 (2 PT). Letzte 3 PT von Phase A. Bundle-Commit.
+
+**Implementations-Strategie:** Beide Bloecke direkt im Hauptthread (Self-Edit-Pattern), kein Subagent (B.5 = 1 File-Edit, B.6 = 1 Skill-File ~6 kB).
+
+**B.5 — `/resume-state` JSON-Pfad-Erweiterung:**
+
+MODIFIED `commands/resume-state.md` (Body komplett refactored):
+- NEU Schritt 1: JSON-First-Probe via Glob `game-*/game_state.json`. Pfad-Selektion via `_meta.last_updated`-Maximum.
+- NEU Schritte 2a-4a: JSON-State-Lesen + validate_game_state.py + render_game_state.py + 6-Felder-Extraktion (game_id, phase 12-enum, current_subagent, mappen[], last_transition, q_gate_aggregate) + phase_transitions.json-Lookup fuer Naechster-Schritt.
+- BEHALTEN Schritte 2b-4b: PI-Fallback-Logik (Legacy-Pfad, greift wenn keine JSON gefunden).
+- NEU Schritt 6: Konsistenz-Check JSON vs PI mit Divergenz-Warning + Render-Hint.
+- Cross-Refs aktualisiert auf alle B.3+B.4-Artefakte.
+
+**B.6 — state-advance-policy-Skill:**
+
+NEU `skills/state-advance-policy/SKILL.md` (~6 kB):
+- Auto-Trigger-Description: bei Phase-Advance / State-Write / Resume / Q-Gate / Konsistenz-Checks.
+- Body-Sektionen:
+  * 10-Phasen-Reihenfolge kanonisch (ONBOARDING -> 0.1 -> ... -> 2.2c -> DONE).
+  * 4 Pre-Condition-Types mit Beispielen: file_exists, directory_populated, q_gate_log_pass, json_schema_valid.
+  * 6 Wann-Verboten-Conditions: Q-Gate-FAIL, fehlende Output-Files, Schema-Violation, inkonsistenter game_state.json, Phase-Skip-Versuch, Backward-Transition.
+  * Q4 Option-C+ Konfliktloesung (JSON SSoT, PI Mirror).
+  * Hook D.3+D.4-Integration mit Workflow-Beschreibung.
+  * Override-Mechanismus via `_meta.override_reason` mit Begruendungs-Pflicht.
+  * Q-Gate-LOG-Konvention (Markdown-Pattern fuer Regex-Lookup).
+  * 11 Cross-Refs zu B.1-B.6-Artefakten.
+
+**Smoke-Verifikation:**
+- Validator (`claude plugin validate .`): 0 Errors.
+- Skill-Discovery: Plugin-Auto-Discovery sieht skills/state-advance-policy/SKILL.md (Konvention skills/<name>/SKILL.md).
+- Cross-Ref-Konsistenz: alle Referenzen zu phase_transitions.json + game_state.schema.json + Tools + Hooks korrekt.
+
+**Track-P.2-Phase-A-Stand:** **17/17 PT (100 %) KOMPLETT.**
+
+| Block | PT | Status |
+|---|---|---|
+| B.1 AGENT_MATERIAL Split | 5 | DONE |
+| B.2 AGENT_RAETSEL Split | 3 | DONE |
+| B.3 phase-transition-runner | 3 | DONE |
+| B.4 game_state.json Infra | 3 | DONE |
+| B.5 /resume-state JSON-Erweiterung | 1 | DONE |
+| B.6 state-advance-policy-Skill | 2 | DONE |
+
+**Aufwand-Ist Phase A gesamt:** ~2.5h Wall-Clock unter Plan-Schaetzung 17 PT (~8.5 PT in 2.5h, durch Subagent-Pattern + Self-Edit-Fallback massiv beschleunigt).
+
+**Naechste Phase:** Phase B (8 parallele Bloecke, 12.5 PT, ~1.5 Wochen): B.7 Hook-Coverage + B.8 Pre-Flight + B.9 Pfad-Resolution + B.10 Atomic-Writes + B.11 Test-Fixtures-Erweiterung + B.12 Parallel-Dispatch.
+
+**Final-Commit:** Gen-Repo `4e5a16d`.
+
+---
+
 ## 2026-04-25 — Track P.2 Block B.4 DONE: game_state.json Schema + Validator + Render + Hook D.3
 
 **Scope:** Plan §3.1 B.4 (3 PT). Operationalisierung der Q4-Decision Option-C+ (JSON-authoritativ + PI-Mirror + Sync-Hook). game_state.json wird SSoT, PROJECT_INSTRUCTIONS-Zustandsblock wird abgeleitete Markdown-Mirror-Sektion.
