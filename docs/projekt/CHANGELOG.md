@@ -4,6 +4,61 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-25 — Track P.2 Phase B Start: B.15 + B.7 DONE (Hook-Refinement + Helper-Tools)
+
+**Scope:** Plan §3.2 B.15 (1 PT) + B.7 (3 PT) Bundle. Phase B Start.
+
+**B.15 — Hook-Pattern v3.11.0+-Route:**
+
+MODIFIED `hooks/hooks.json` D.1 (pre-write-material) + D.2 (post-write-material):
+- Differenziert primary-Route (material.json: blockt bei Schema-FAIL via exit 2) vs revisor-Route (material_v*.json: loggt FAIL als Warning via exit 1, blockt nicht).
+- Iterations-Awareness in Body via Pattern-Match.
+- Smoke: primary-Pattern → ROUTE=primary, revisor-Pattern → ROUTE=revisor.
+
+**B.7 — D.3+D.4-Plan-Hooks + Helper-Tools (Cowork-Task-Tool-Subagent ~25 Min):**
+
+3 Deliverables:
+
+1. NEU `architektur/schemata/dispatch_meta_v1.json` (80 Z., JSON-Schema draft-2020-12):
+   - Top-Level: additionalProperties:false, required: material_id/subagent_name/phase/started_at.
+   - Properties: stopped_at, iteration (min 1), route (primary|revisor), q_gate_log_path, q_gate_findings[{gate_id, status, severity, detail}], output_path, _meta.
+
+2. NEU `tools/dispatch_meta_helper.py` (380 LOC):
+   - CLI: --update field=value (multi, type-coerced int/bool/string), --append-finding (multi), --material-id/--subagent-name/--phase fuer Init, positional output_file, --self-test.
+   - Atomic-Write: tempfile.mkstemp + os.rename + fsync. fcntl.flock-Lockfile mit graceful-degrade.
+   - Validate via jsonschema mit graceful-degrade.
+   - Exit 0/1/2.
+
+3. NEU `tools/check_q_gate_log.py` (238 LOC):
+   - CLI: --phase/--mappe/--game-id, positional log_path, --edit-diff stdin-Modus fuer tool_input-JSON, --self-test.
+   - Regex matched ### Phase X.Y / ### G1 — Phase X.Y / ### Phase X.Y Mappe N.
+   - Status-Marker PASS/FAIL/WARN, missing → WARN.
+   - Exit 0=PASS / 1=FAIL/WARN / 2=NOT_FOUND / 3=Tool-Error.
+
+4. MODIFIED `hooks/hooks.json` — 2 NEUE Hook-Entries:
+   - **pre-pi-phase-advance** (PreToolUse Edit, timeout 10): regex-extrahiert Phase-Pattern aus old/new_string, prueft Q-GATE-LOG der old-Phase via check_q_gate_log.py. PASS=allow / FAIL/WARN=block (exit 2) / NOT_FOUND=skip.
+   - **post-material-subagent-stop** (PostToolUse Task, timeout 5): Filter auf subagent_type sub-material-* + dispatch_meta=<path>-Konvention im Task-Description, ruft helper mit --update stopped_at=<TS>.
+
+**Naming-Rationale:** Plan §3.2 §B.7 spricht von "D.3+D.4" — diese IDs sind durch B.3 (pre-phase-transition-gate) + B.4 (post-state-update) belegt. Daher beschreibende IDs verwendet.
+
+**Smoke-Verifikation:**
+- python3 tools/dispatch_meta_helper.py --self-test → exit 0, 4/4 PASS (init, update+coercion, append-finding x2, validate-fail).
+- python3 tools/check_q_gate_log.py --self-test → exit 0, 6/6 PASS (4 Phase-Lookup + edit-diff parse).
+- Hook-Smoke pre-pi-phase-advance: PASS-Phase→allow, FAIL-Phase→block exit 2, non-PI-File→skip.
+- Hook-Smoke post-material-subagent-stop: sub-material+hint→stopped_at, non-material→skip.
+- Validator (`claude plugin validate .`): 0 Errors.
+
+**Open Convention-Gap:**
+- F-PB7-01 (LOW): `dispatch_meta=<path>`-Konvention fuer post-material-subagent-stop muss in AGENT_MATERIAL_DISPATCHER (Plugin-Subagent agent-material-dispatcher.md) spezifiziert werden. Separate B.1-Erweiterung, opportunistisch in B.11 (Pfad-Resolution-Cleanup).
+
+**Track-P.2-Phase-B-Stand:** Phase A komplett-net 18.5 PT + Phase B 4/12.5 PT = **22.5 / 31 PT (73 %)**. Naechster Block: B.8 D.5+D.6 Aufgaben-Hooks (2 PT) ODER B.10 Pre-Flight-Doku (1 PT) ODER B.9 SUB_ASSEMBLY_VERIFY-Hook (1 PT) — alle parallelisierbar.
+
+**Aufwand-Ist B.15+B.7:** ~30 Min Wall-Clock unter Plan-Schaetzung 4 PT.
+
+**Final-Commit:** Gen-Repo `bead357`.
+
+---
+
 ## 2026-04-25 — Track P.2 Phase A Bundle-Audit + B.3b Pflicht-Fix-Cycle DONE
 
 **Scope:** Bundle-Audit B.2-B.6 (B.1 separat audited) + Pflicht-Fix-Cycle der 3 HIGH + 1 MED Findings vor Phase B.
