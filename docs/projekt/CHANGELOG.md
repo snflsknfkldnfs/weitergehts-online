@@ -4,6 +4,61 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-25 — Track P.1 Block A+C Validator-Fix-Cycle DONE: Validator PASS
+
+**Scope:** Light-Audit-Folge-Cycle nach BEFUND v1.0. Empirischer `claude plugin validate /Users/paulad/escape-game-generator`-Run revidierte 3 Audit-Befunde (Sekundaerquelle widerlegt) + fand 3 zusaetzliche HIGH-Errors. Validator-Fix-Cycle umgesetzt; Validator-Smoke-Test PASS.
+
+**Audit-Korrekturen (BEFUND v1.0 → v1.1):**
+
+| Finding | Status v1.0 | Status v1.1 | Validator-Output |
+|---|---|---|---|
+| F-B-01 `agents`-Feld Anti-Pattern | HIGH | WIDERLEGT | klaglos akzeptiert |
+| F-B-02 `hooks`-Feld Anti-Pattern | HIGH | WIDERLEGT | klaglos akzeptiert |
+| F-B-05 `author` String OK | LOW | WIDERLEGT | erwartet Object |
+| F-B-06 `repository` Object Anti-Pattern | (NEU) | HIGH | erwartet String |
+| F-B-07 `tools`-Feld Top-Level Anti-Pattern | (NEU) | HIGH | `Unrecognized key: tools` |
+| F-B-08 description-YAML-Quoting Pflicht | (NEU) | HIGH | 25/25 `Unexpected token`-Errors |
+
+**Validator-Fix-Cycle Aenderungen:**
+
+1. **plugin.json v0.2.0 → v0.2.1:**
+   - `author`: String "Paul Cebulla" → Object `{"name": "Paul Cebulla"}`.
+   - `repository`: Object `{type, url}` → String URL.
+   - `tools`-Feld komplett entfernt (Top-Level-Anti-Pattern; tools werden via Konvention aus `tools/` auto-discovered).
+
+2. **25 Frontmatter-description-Quoting:** 24 Block-A-Files + `reviewer-material-quellentext.md` (C1-merged, hatte SDK-Strict-Verschaerfung-FAIL durch unquoted description). Single-quote-YAML-Format.
+
+3. **4 MED-Findings opportunistisch mit-gefixed (im Quoting-Edit-Touch):**
+   - F-A-14 AGENT_INHALT Phase 0.1 → Phase 0.2 (VERTRAG_PHASE_0-2_INHALT-Verankerung).
+   - F-A-19 AGENT_ARTEFAKT Use-Trigger "nach Material-/Aufgaben-Produktion" → "in Phase 0.3 nach AGENT_INHALT-Output" (Body-Z.24-Empirie).
+   - F-A-12 SUB_AUFGABE_QUELLENKRITIK Q-Gate-Set "A1+A21+A25-A27" → "A1-A26 als Basisschicht + A27 typ-spezifisch" (Body-Z.10-Konsistenz).
+   - F-A-08 SUB_AUFGABE_LUECKENTEXT escape-engine.js-Z.2798 → "Pool-Reset-Vertrag der escape-engine (pool[]-Zustand persistent bei Re-Render)" (Zeilennummer-Fragilitaet entfernt).
+
+4. **2 LOW-Findings opportunistisch mit-gefixed:**
+   - F-A-10 SUB_AUFGABE_BEGRUENDUNG description um "Bloom-Ziel-Zone L5 Bewerten" erweitert.
+   - F-A-11 SUB_AUFGABE_VERGLEICH description um "Bloom-Ziel-Zone L4 Analysieren" erweitert.
+
+5. **Plan-Doku §2.3 (`docs/projekt/C-INKREMENTELL-MIGRATION-PLAN.md`):** Ziel-Manifest-Wortlaut auf Validator-empirisch korrigierte Form aktualisiert + neuer Block "Format-Regeln (Validator-empirisch verifiziert)" + Akzeptanzkriterium-Praezision (`claude plugin validate ✔ Validation passed`).
+
+6. **BEFUND v1.0 → v1.1 (`docs/projekt/BEFUND_TRACK_P1_BLOCK_A_C_LIGHT.md`):** Aenderungshistorie-Sektion + Tabelle WIDERLEGT-Markers + 3 NEUE Findings (F-B-06/07/08) + Lesson-Learned-Block (Validator-CLI > community-Sekundaerquelle).
+
+**Validator-Smoke-Test post-Fix:**
+- Manifest-Errors: 3 → 0.
+- Frontmatter-Parse-Errors: 25 → 0.
+- Outcome: `✔ Validation passed with warnings`.
+- Remaining 8 warnings:
+  - 4 Files Block-B Skill-Transformation pending (F0B_PRIMING_INCLUDE, ORCHESTRATOR, PFAD_MANIFEST, ROLLEN_KATALOG, POLICY_TRIGGER_SICHTBARKEIT — addresses by Block B.1-B.5).
+  - 2 Files Phase-2-deferred (AGENT_MATERIAL Phase-2 3-way-Split, AGENT_RAETSEL Phase-2 Aufspaltung).
+  - 1 Stub `commands/README.md` (kein Frontmatter — Block H Stub-Cleanup oder Frontmatter-Add).
+
+**Lesson-Learned:** Bei Plugin-Audit-Folgeaktionen MUSS empirischer Validator-CLI-Run als ERSTER Schritt vor Audit-Subagent-Dispatch durchgefuehrt werden. Validator-Output ist autoritativ; community-Sekundaerquellen (PLUGIN_SCHEMA_NOTES.md etc.) koennen veraltet sein. Aufnahme als feedback-Memory.
+
+**Aufwand:** ~15 Min Wall-Clock fuer Manifest + 25 Edits + Plan-Doku + BEFUND-Update + STATUS+CHANGELOG.
+
+**Naechste Schritte:** Final-Commits Validator-Fix-Cycle via 5-Stufen-Host-MCP (separate Commits Code vs. Doku). Dann Block B.1+B.2 startbar.
+
+---
+
 ## 2026-04-25 — Track P.1 Block A+C DONE: 24 Frontmatter + Plugin-Manifest v0.2.0
 
 **Scope:** Plugin-Phase-1 mechanische Migration Bloecke A.1-A.4 (24 Subagent-Frontmatter-Adds) + Block C (Plugin-Manifest-Erweiterung). Daily-Rhythm-Plan §6 Tag 1-2 (A.1+A.2) + Tag 3 (A.3+A.4+C) in einer Cowork-Session zusammengezogen, ca. 5 Min Wall-Clock netto.
