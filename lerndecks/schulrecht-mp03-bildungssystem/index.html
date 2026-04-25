@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schulrecht — Gliederung des Bildungssystems · Lerndeck</title>
+<link rel="stylesheet" href="../../assets/css/base.css">
+<style>
+:root{
+  --c-bv:#9f1239; --c-bv-dark:#881337; --c-bv-bg:#fef2f2;
+  --c-gesetz:#c2410c; --c-gesetz-dark:#9a3412; --c-gesetz-bg:#fff7ed;
+  --c-vo:#ca8a04; --c-vo-dark:#854d0e; --c-vo-bg:#fefce8;
+  --c-bek:#65a30d; --c-bek-dark:#3f6212; --c-bek-bg:#f7fee7;
+  --c-haus:#475569; --c-haus-dark:#334155; --c-haus-bg:#f8fafc;
+  --c-falle:#dc2626; --c-falle-dark:#991b1b; --c-falle-bg:#fee2e2;
+  --c-good:#15803d; --c-good-bg:#dcfce7;
+  --c-highlight:#fef3c7; --c-highlight-text:#854d0e;
+  --c-text:#1f2937; --c-muted:#475569; --c-faint:#94a3b8; --c-border:#cbd5e1;
+}
+body{background:#f8fafc;color:var(--c-text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;}
+.lerndeck-wrap{max-width:900px;margin:0 auto;padding:24px 16px;}
+.lerndeck-wrap header{margin-bottom:24px;border-bottom:1px solid var(--c-border);padding-bottom:16px;}
+.lerndeck-wrap h1{font-size:1.4em;margin-bottom:6px;color:var(--c-text);}
+.lerndeck-wrap header p{color:var(--c-muted);font-size:0.95em;}
+.lerndeck-wrap header a{color:var(--c-gesetz);text-decoration:none;font-size:0.9em;}
+.controls{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;align-items:center;background:#ffffff;padding:12px;border-radius:8px;border:1px solid var(--c-border);}
+.controls select,.controls input[type=search]{padding:6px 10px;border:1px solid var(--c-border);border-radius:4px;font-size:0.9em;background:#ffffff;color:var(--c-text);}
+.controls label{font-size:0.9em;color:var(--c-text);display:flex;align-items:center;gap:4px;cursor:pointer;}
+.controls button{padding:6px 12px;background:var(--c-gesetz);color:#ffffff;border:none;border-radius:4px;font-size:0.9em;cursor:pointer;}
+.controls button:hover{background:var(--c-gesetz-dark);}
+.counter{font-size:0.85em;color:var(--c-muted);margin-bottom:12px;text-align:center;}
+.counter strong{color:var(--c-text);}
+.card-frame{background:#ffffff;border-radius:8px;padding:12px;border:1px solid var(--c-border);min-height:380px;cursor:pointer;transition:transform 0.15s;color:var(--c-text);}
+.card-frame:hover{box-shadow:0 4px 12px rgba(0,0,0,0.05);}
+.card-frame.is-falle{border-top:3px solid var(--c-falle);}
+.flip-hint{text-align:center;color:var(--c-faint);font-size:0.78em;margin-top:8px;}
+.card-grid{display:grid;grid-template-columns:78px 1fr;gap:12px;}
+.hier-col{display:flex;flex-direction:column;gap:2px;}
+.hier-cell{background:#f1f5f9;color:#cbd5e1;padding:8px 4px;text-align:center;border-radius:3px;font-size:0.72em;font-weight:700;}
+.hier-cell.active.bv{background:var(--c-bv);color:#ffffff;box-shadow:0 0 0 2px var(--c-bv-dark);}
+.hier-cell.active.gesetz{background:var(--c-gesetz);color:#ffffff;box-shadow:0 0 0 2px var(--c-gesetz-dark);}
+.hier-cell.active.vo{background:var(--c-vo);color:#ffffff;box-shadow:0 0 0 2px var(--c-vo-dark);}
+.hier-cell.active.bek{background:var(--c-bek);color:#ffffff;box-shadow:0 0 0 2px var(--c-bek-dark);}
+.hier-cell.active.haus{background:var(--c-haus);color:#ffffff;box-shadow:0 0 0 2px var(--c-haus-dark);}
+.tag-label{font-size:0.62em;color:var(--c-faint);font-weight:600;letter-spacing:1.5px;margin-bottom:10px;text-transform:uppercase;}
+.tag-label.falle{color:var(--c-falle);}
+.front-q{font-size:1.1em;line-height:1.55;color:var(--c-text);}
+.front-q-context{font-size:0.95em;line-height:1.5;color:var(--c-muted);padding:10px 14px;background:#f8fafc;border-radius:6px;border-left:3px solid var(--c-border);margin-bottom:14px;}
+.front-q-context b{color:var(--c-text);}
+.answer-divider{display:flex;align-items:center;gap:8px;color:var(--c-faint);font-size:0.7em;margin:6px 0 12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;}
+.answer-divider::before,.answer-divider::after{content:"";flex:1;height:1px;background:var(--c-border);}
+.main-box{border-left:5px solid;padding:14px 18px;border-radius:4px;margin-bottom:10px;color:var(--c-text);}
+.main-box.bv{border-color:var(--c-bv);background:var(--c-bv-bg);}
+.main-box.gesetz{border-color:var(--c-gesetz);background:var(--c-gesetz-bg);}
+.main-box.vo{border-color:var(--c-vo);background:var(--c-vo-bg);}
+.main-box.bek{border-color:var(--c-bek);background:var(--c-bek-bg);}
+.main-box.haus{border-color:var(--c-haus);background:var(--c-haus-bg);}
+.norm-header{font-weight:700;font-size:1.1em;margin-bottom:10px;}
+.norm-header.bv{color:var(--c-bv-dark);}
+.norm-header.gesetz{color:var(--c-gesetz-dark);}
+.norm-header.vo{color:var(--c-vo-dark);}
+.norm-header.bek{color:var(--c-bek-dark);}
+.norm-header.haus{color:var(--c-haus-dark);}
+.subbox{background:#ffffff;padding:10px 14px;border-radius:4px;margin-bottom:8px;border:1px solid var(--c-border);color:var(--c-text);}
+.subbox .sub-h{font-weight:700;margin-bottom:6px;}
+.subbox .sub-h.bv{color:var(--c-bv-dark);}
+.subbox .sub-h.gesetz{color:var(--c-gesetz-dark);}
+.subbox .sub-h.vo{color:var(--c-vo-dark);}
+.subbox .sub-h.bek{color:var(--c-bek-dark);}
+.subbox .sub-h.good{color:var(--c-good);}
+.subbox .sub-h.falle{color:var(--c-falle-dark);}
+.body-text{margin-bottom:10px;color:var(--c-text);}
+.body-text:last-child{margin-bottom:0;}
+.body-text ul,.body-text ol{margin:6px 0 0 0;padding-left:20px;}
+.body-text li{color:var(--c-text);margin-bottom:2px;}
+.hl-yellow{background:var(--c-highlight);color:var(--c-highlight-text);padding:2px 6px;border-radius:3px;font-weight:700;}
+.hl-green{background:var(--c-good-bg);color:var(--c-good);padding:2px 6px;border-radius:3px;font-weight:700;}
+.hl-strike{text-decoration:line-through;color:var(--c-falle);}
+.falle-box{background:var(--c-falle-bg);border-left:4px solid var(--c-falle);padding:10px 14px;border-radius:4px;font-size:0.92em;color:var(--c-text);margin-top:8px;}
+.falle-box b.warn{color:var(--c-falle-dark);}
+.hinweis-box{background:var(--c-good-bg);border-left:4px solid var(--c-good);padding:10px 14px;border-radius:4px;font-size:0.92em;color:var(--c-text);margin-top:8px;}
+.tip-box{background:var(--c-highlight);border-left:3px solid var(--c-vo);padding:8px 12px;border-radius:3px;color:var(--c-text);margin-top:8px;font-size:0.93em;}
+table.data-tbl{width:100%;border-collapse:collapse;background:#ffffff;border-radius:4px;overflow:hidden;border:1px solid var(--c-border);color:var(--c-text);font-size:0.95em;}
+table.data-tbl th{padding:6px 10px;text-align:left;color:#ffffff;}
+table.data-tbl th.center{text-align:center;}
+table.data-tbl.bv th{background:var(--c-bv-dark);}
+table.data-tbl.gesetz th{background:var(--c-gesetz-dark);}
+table.data-tbl.vo th{background:var(--c-vo-dark);}
+table.data-tbl.bek th{background:var(--c-bek-dark);}
+table.data-tbl tr:nth-child(even){background:#f8fafc;}
+table.data-tbl td{padding:6px 10px;color:var(--c-text);}
+table.data-tbl td.center{text-align:center;font-weight:700;color:var(--c-good);}
+.quelle-box{font-size:0.78em;color:var(--c-faint);padding:6px 10px;border-top:1px solid var(--c-border);margin-top:6px;}
+.quelle-box b{color:var(--c-muted);}
+.card-nav{display:flex;justify-content:space-between;align-items:center;margin-top:16px;gap:8px;}
+.card-nav button{padding:10px 16px;background:var(--c-gesetz);color:#ffffff;border:none;border-radius:6px;font-size:0.95em;cursor:pointer;flex:1;}
+.card-nav button.flip-btn{background:var(--c-bv);}
+.card-nav button:disabled{opacity:0.4;cursor:default;}
+.card-nav button:hover:not(:disabled){opacity:0.85;}
+.progress-row{display:flex;gap:8px;margin-top:12px;}
+.progress-row button{flex:1;padding:8px;background:#ffffff;border:1px solid var(--c-border);color:var(--c-text);border-radius:6px;cursor:pointer;font-size:0.85em;}
+.progress-row button.missed{border-color:var(--c-falle);color:var(--c-falle-dark);}
+.progress-row button.hard{border-color:var(--c-vo);color:var(--c-vo-dark);}
+.progress-row button.good{border-color:var(--c-good);color:var(--c-good);}
+.progress-row button:hover{background:#f8fafc;}
+.empty-state{text-align:center;padding:40px;color:var(--c-faint);}
+@media (max-width:600px){
+  .controls{flex-direction:column;align-items:stretch;}
+  .controls select,.controls input{width:100%;}
+  .card-grid{grid-template-columns:60px 1fr;gap:8px;}
+  .hier-cell{font-size:0.62em;padding:6px 2px;}
+  .lerndeck-wrap h1{font-size:1.15em;}
+}
+</style>
+</head>
+<body>
+<div class="lerndeck-wrap">
+  <header>
+    <a href="../../">← Startseite</a>
+    <h1>Schulrecht — Gliederung des Bildungssystems</h1>
+    <p>2. Staatsexamen Mittelschule Bayern · Sub-Aspekt 2 (ZALGM § 16) · 38 Karten</p>
+  </header>
+
+  <section class="controls" aria-label="Filter">
+    <input type="search" id="search" placeholder="🔍 Suche im Inhalt …">
+    <select id="filter-norm" aria-label="Norm-Ebene">
+      <option value="">Alle Norm-Ebenen</option>
+      <option value="BV">Verfassung</option>
+      <option value="Gesetz">Gesetz</option>
+      <option value="VO">Verordnung</option>
+      <option value="KMBek">Richtlinie/KMBek</option>
+    </select>
+    <select id="filter-block" aria-label="Block">
+      <option value="">Alle Blöcke</option>
+      <option value="BV">Verfassung</option>
+      <option value="Schularten">Schularten</option>
+      <option value="Schulpflicht">Schulpflicht</option>
+      <option value="Schwellen">Schwellen</option>
+      <option value="Durchlaessigkeit">Durchlässigkeit</option>
+      <option value="Synthese">Synthese</option>
+      <option value="Vorruecken">Vorrücken</option>
+    </select>
+    <label><input type="checkbox" id="only-falle"> ⚠ Nur Fallen</label>
+    <label><input type="checkbox" id="only-hochprior"> ★ Nur Hochprior</label>
+    <button id="shuffle">🔀 Mischen</button>
+    <button id="reset">↺ Reset</button>
+  </section>
+
+  <div class="counter">Karte <strong id="cur-idx">1</strong> von <strong id="total">38</strong> · <span id="filter-info"></span></div>
+
+  <div class="card-frame" id="card-frame">
+    <div id="card-content"></div>
+    <div class="flip-hint" id="flip-hint">→ Tippen oder Leertaste zum Umdrehen</div>
+  </div>
+
+  <nav class="card-nav">
+    <button id="prev">← Zurück</button>
+    <button class="flip-btn" id="flip">Karte umdrehen</button>
+    <button id="next">Weiter →</button>
+  </nav>
+
+  <div class="progress-row" id="rating-row" style="display:none">
+    <button class="missed" data-rating="0">Nicht gewusst</button>
+    <button class="hard" data-rating="1">Schwer</button>
+    <button class="good" data-rating="2">Gewusst</button>
+  </div>
+</div>
+
+<script>
+const CARDS = [
+{id:1,block:"BV",norm:"BV",ebene:"BV",vo:"BaySchO",tags:[],falle:false,hochprior:false,
+ front:"Worauf hat jeder Bewohner Bayerns einen verfassungsrechtlichen <b>Bildungsanspruch</b>?",
+ header:"Art. 128/1",sub:"",
+ body:[{t:"text",c:"Anspruch auf eine den erkennbaren <b>Fähigkeiten</b> und der inneren <b>Berufung</b> entsprechende <b>Ausbildung</b>."}],
+ quelle:"Art. 128/1."},
+{id:2,block:"BV",norm:"BV",ebene:"BV",vo:"BaySchO",tags:[],falle:false,hochprior:false,
+ front:"Welche zwei zentralen verfassungsrechtlichen <b>Garantien</b> gibt es für die schulische Ausbildung?",
+ header:"Art. 129",sub:"",
+ body:[{t:"text",c:"<b class='nh'>/1:</b> <b>Schulpflicht</b> in Volks- und Berufsschule."},{t:"text",c:"<b class='nh'>/2:</b> <b>Unentgeltlichkeit</b> des Unterrichts an diesen Schulen."}],
+ quelle:"Art. 129/1, /2."},
+{id:3,block:"BV",norm:"BV",ebene:"BV",vo:"BaySchO",tags:[],falle:false,hochprior:false,
+ front:"Welcher <b>Maßstab</b> gilt für Schullaufbahn-Entscheidungen, und welcher Faktor ist <b>explizit ausgeschlossen</b>?",
+ header:"Art. 132",sub:"„Mannigfaltigkeit der Lebensberufe\"",
+ body:[{t:"text",c:"<b class='nh'>Maßstab</b> der Schullaufbahn-Entscheidung:"},{t:"list",c:["<b>Anlagen</b>","<b>Neigungen</b>","<b>Leistung</b>","<b>innere Berufung</b>"]},{t:"falle",h:"Ausgeschlossen:",c:"<b>wirtschaftliche oder gesellschaftliche Stellung der Eltern</b>."}],
+ quelle:"Art. 132. Anti-Diskriminierungs-Klausel."},
+{id:4,block:"BV",norm:"BV",ebene:"BV",vo:"BaySchO",tags:[],falle:false,hochprior:false,
+ front:"Wer ist <b>Träger der Bildung</b> in Bayern?",
+ header:"Art. 133/1",sub:"",
+ body:[{t:"text",c:"Bildung erfolgt durch <b>öffentliche Anstalten</b>:"},{t:"list",c:["<b>Staat</b>","<b>Gemeinde</b>"]},{t:"text",c:"Zusätzlich Bildungsträger sein können: anerkannte <b>Religions- und Weltanschauungsgemeinschaften</b>."}],
+ quelle:"Art. 133/1."},
+{id:5,block:"BV",norm:"BV",ebene:"BV",vo:"BaySchO",tags:[],falle:false,hochprior:false,
+ front:"Welche Voraussetzung müssen <b>Privatschulen</b> in Bayern erfüllen?",
+ header:"Art. 134/1",sub:"",
+ body:[{t:"text",c:"Privatschulen müssen den im bayerischen Recht festgelegten <b>Anforderungen entsprechen</b>."},{t:"text",c:"Sie bedürfen einer <b>staatlichen Genehmigung</b> für Errichtung und Betrieb."}],
+ quelle:"Art. 134/1. Konkretisierung: BayEUG Art. 90 ff."},
+{id:6,block:"Schularten",norm:"Gesetz",ebene:"Gesetz",vo:"BaySchO",tags:[],falle:false,hochprior:false,
+ front:"Wie gliedert sich das <b>bayerische Schulwesen</b>?",
+ header:"Art. 6",sub:"Dreigliedriges System",
+ body:[{t:"text",c:"<b class='nh'>Allgemein bildend:</b> <b>GS · MS · RS · Gym</b><br><span style='font-size:0.88em;color:#475569'>(+ Abendrealschule, Abendgymnasium, Kolleg)</span>"},{t:"text",c:"<b class='nh'>Beruflich:</b> <b>BS · BFS · WS · FS · FOS · BOS</b>"},{t:"text",c:"<b class='nh'>Sonderformen:</b> <b>Förderschulen · Schulen für Kranke · Privatschulen</b>"}],
+ quelle:"Art. 6."},
+{id:7,block:"Schularten",norm:"Gesetz",ebene:"Gesetz",vo:"BaySchO",tags:[],falle:false,hochprior:false,
+ front:"Welche <b>Klassenstufen</b> umfassen Grundschule, Mittelschule, Realschule und Gymnasium?",
+ header:"Art. 7, 7a, 8, 9",sub:"",
+ body:[{t:"table",cls:"gesetz",headers:["Schulart","Art.","Jgst."],rows:[["<b>Grundschule</b>","Art. 7","1–4"],["<b>Mittelschule</b>","Art. 7a","5–9, M-Zug bis 10"],["<b>Realschule</b>","Art. 8","5–10"],["<b>Gymnasium</b>","Art. 9","5–13 (G9)"]],centerCol:2}],
+ quelle:"Sek I = Jgst. 5–10 · Sek II ab Jgst. 11."},
+{id:8,block:"Schularten",norm:"Gesetz",ebene:"Gesetz",vo:"BaySchO",tags:[],falle:false,hochprior:false,
+ front:"Welche <b>Förderschwerpunkte</b> kennt das bayerische Schulrecht?",
+ header:"Art. 20/1",sub:"<span class='hl-yellow'>7 Förderschwerpunkte</span>",
+ body:[{t:"olist",c:["<b>Sehen</b>","<b>Hören</b>","<b>körperlich-motorische Entwicklung</b>","<b>geistige Entwicklung</b>","<b>Sprache</b>","<b>Lernen</b>","<b>emotionale-soziale Entwicklung</b>"]},{t:"tip",c:"<b>Aufbau:</b> Grundschulstufe (1–4) · Mittelschulstufe (5–9/10) · Berufsschulstufe."}],
+ quelle:"Art. 19–24, insb. Art. 20/1."},
+{id:9,block:"Schularten",norm:"Gesetz",ebene:"Gesetz",vo:"BaySchO",tags:[],falle:false,hochprior:false,
+ front:"Welche <b>beruflichen Schularten</b> existieren in Bayern und was bedeuten ihre Abkürzungen?",
+ header:"Art. 11–18",sub:"",
+ body:[{t:"table",cls:"gesetz",headers:["Kürzel","Bedeutung"],rows:[["<b>BS</b>","<b>Berufsschule</b>"],["<b>BFS</b>","<b>Berufsfachschule</b>"],["<b>WS</b>","<b>Wirtschaftsschule</b>"],["<b>FS</b>","<b>Fachschule</b> (Meister)"],["<b>FOS</b>","<b>Fachoberschule</b>"],["<b>BOS</b>","<b>Berufsoberschule</b>"]]}],
+ quelle:"FOS+13 / BOS+13 → allg. Hochschulreife mit 2. FS."},
+{id:10,block:"Schularten",norm:"Gesetz",ebene:"Gesetz",vo:"BaySchO",tags:[],falle:false,hochprior:false,
+ front:"Wie unterscheiden sich <b>Ersatz- und Ergänzungsschulen</b> hinsichtlich Schulpflicht-Erfüllung?",
+ header:"Art. 90–105 — Privatschulen",sub:"",
+ body:[{t:"subbox",cls:"good",h:"Ersatzschulen (Art. 91–101)",c:"Entsprechen öff. Schulen → <span class='hl-green'>Schulpflicht erfüllbar</span>.<ul><li><i>staatlich genehmigt:</i> Lehrplan-konform; Abschluss als externer Prüfling</li><li><i>staatlich anerkannt:</i> gleiche Zeugnisberechtigungen</li></ul>"},{t:"subbox",cls:"falle",h:"Ergänzungsschulen (Art. 102–104)",c:"Entsprechen <b>NICHT</b> öff. Schulen → idR keine Schulpflicht-Erfüllung.<br><span style='font-size:0.9em;color:#475569'><i>Beispiele:</i> Dolmetscher-, Schauspielschule.</span>"}],
+ quelle:"Beispiele Ersatz: Montessori, Waldorf."},
+{id:11,block:"Schulpflicht",norm:"Gesetz",ebene:"Gesetz",vo:"BaySchO",tags:[],falle:false,hochprior:false,
+ front:"Wann <b>beginnt</b> die Schulpflicht in Bayern, und wie lange <b>dauert</b> sie insgesamt?",
+ header:"Art. 35",sub:"",
+ body:[{t:"text",c:"<b class='nh'>Beginn:</b> Vollendung des <b>6. Lebensjahres</b> · Stichtag <span class='hl-yellow'>30.09.</span>"},{t:"text",c:"<b class='nh'>Gesamtdauer:</b> <span class='hl-yellow'>12 Jahre</span> = <b>9 J. Vollzeit</b> + <b>3 J. Berufsschule</b>"}],
+ quelle:"Art. 35 i.V.m. BV Art. 129. Ohne Rücksicht auf Staatsangehörigkeit."},
+{id:12,block:"Schulpflicht",norm:"Gesetz",ebene:"Gesetz",vo:"BaySchO",tags:[],falle:false,hochprior:false,
+ front:"Wie ist der <b>Einschulungskorridor</b> geregelt, und welche Sondervoraussetzung gilt für <b>Spätgeborene</b>?",
+ header:"Art. 37 — Einschulungskorridor",sub:"",
+ body:[{t:"subbox",cls:"gesetz",h:"Korridor-Kinder",c:"6. Lj. zwischen <span class='hl-yellow'>01.07.</span> und <span class='hl-yellow'>30.09.</span><br>→ <i>Eltern entscheiden:</i> Einschulung oder <b>Zurückstellung um 1 Jahr</b>."},{t:"subbox",cls:"gesetz",h:"„Kann-Kinder\"",c:"nach <span class='hl-yellow'>31.12.</span> Geborene<br>→ Einschulung nur mit <b>schulpsychologischem Gutachten</b>."}],
+ quelle:"seit SJ 2019/20."},
+{id:13,block:"Schulpflicht",norm:"Gesetz",ebene:"Gesetz",vo:"BaySchO",tags:[],falle:false,hochprior:false,
+ front:"Wann beginnt die Schulpflicht bei <b>Migrationshintergrund</b>, und wie weit darf von der altersgleichen Jahrgangsstufe abgewichen werden?",
+ header:"Art. 35 (B9.2.1)",sub:"",
+ body:[{t:"text",c:"<b class='nh'>Beginn:</b> <span class='hl-yellow'>3 Monate nach Zuzug</span><br><span style='font-size:0.9em;color:#475569'>(Aufenthaltsgestattung/-erlaubnis/Duldung/vollziehbare Ausreisepflicht)</span>"},{t:"text",c:"<b class='nh'>Einweisung:</b> idR <b>altersgleich</b><br>Abweichung um bis zu <b>2 Jgst. tiefer</b> nur bei <b>allgemein mangelndem Bildungsstand</b>"},{t:"falle",h:"⚠ NICHT",c:"bei reinem Sprachdefizit tiefer einweisen."}],
+ quelle:"Keine Verlängerung der Schulpflicht durch tiefere Einweisung."},
+{id:14,block:"Schulpflicht",norm:"Gesetz",ebene:"Gesetz",vo:"BaySchO",tags:[],falle:false,hochprior:false,
+ front:"Wie ist die <b>Berufsschulpflicht</b> zeitlich befristet, und welche Altersgrenze gilt absolut?",
+ header:"Art. 39",sub:"",
+ body:[{t:"text",c:"<b class='nh'>Beginn:</b> nach Ende der Vollzeitschulpflicht."},{t:"text",c:"<b class='nh'>Dauer:</b> <span class='hl-yellow'>3 BS-Jahre</span> (Spanne 2–3½)."},{t:"text",c:"<b class='nh'>Absolute Grenze:</b> spätestens Ende des Schuljahres, in dem SuS das <span class='hl-yellow'>21. Lebensjahr</span> vollendet."},{t:"tip",c:"<b>Wiederaufleben:</b> bei Auszubildenden mit MSA, sobald Ausbildung beginnt."}],
+ quelle:"Art. 39, insb. /3."},
+{id:15,block:"Schulpflicht",norm:"Gesetz",ebene:"Gesetz",vo:"BaySchO",tags:["Falle"],falle:true,hochprior:false,
+ front:"Worin unterscheiden sich <b>Schulpflicht</b> und <b>Schulzwang</b> rechtlich?",
+ header:"Art. 76, 118, 119",sub:"",
+ body:[{t:"subbox",cls:"gesetz",h:"Schulpflicht-Überwachung",c:"<b>Art. 76 i.V.m. § 20 BaySchO</b> · Eltern + Schule überwachen gemeinsam.<br><i>Grundpflicht aller SuS.</i>"},{t:"subbox",cls:"gesetz",h:"Schulzwang",c:"<b>Art. 118</b> · Antrag SL bei <b>Kreisverwaltungsbehörde</b> → zwangsweise Zuführung.<br><i>Sanktionsmechanismus.</i>"},{t:"subbox",cls:"gesetz",h:"Ordnungswidrigkeit",c:"<b>Art. 119</b> — Geldbuße bei Unterlassung der Anmeldung."},{t:"falle",h:"⚠ FALLE:",c:"Schulpflicht und Schulzwang sind <b>KEINE Synonyme</b>."}],
+ quelle:"Art. 76, 118, 119 + § 20 BaySchO."},
+{id:16,block:"Schwellen",norm:"VO",ebene:"VO",vo:"GrSO",tags:[],falle:false,hochprior:false,
+ front:"Welche <b>Schwellenwerte</b> gelten beim Übertritt von der Grundschule in die Sek I, und welche <b>Fächer</b> zählen für den Schnitt?",
+ header:"Übertritt GS → Sek I",sub:"Mai-Übertrittszeugnis · § 6",
+ body:[{t:"text",c:"<b>Fächer:</b> <span class='hl-yellow'>D / M / HSU</span> <span style='color:#dc2626;font-size:0.92em'>— NICHT alle Fächer</span>"},{t:"table",cls:"vo",headers:["Ziel-Schulart","Schwelle"],rows:[["<b>Gymnasium</b>","≤ 2,33"],["<b>Realschule</b>","≤ 2,66"],["<b>Mittelschule</b>","alle übrigen"]],centerCol:1}],
+ quelle:"§ 6 + B9.2.3 (Schularten/Bildungswege)."},
+{id:17,block:"Schwellen",norm:"VO",ebene:"VO",vo:"GSO",tags:[],falle:false,hochprior:false,
+ front:"Wie funktioniert der <b>Probeunterricht</b> beim Übertritt von der Grundschule, und welche <b>Sonderregel</b> greift bei knappem Ergebnis?",
+ header:"Probeunterricht GS → Gym/RS",sub:"",
+ body:[{t:"subbox",cls:"vo",h:"Dauer + Fächer",c:"<span class='hl-yellow'>3 Tage</span> schriftlich + mündlich · Fächer <b>D und M</b>"},{t:"subbox",cls:"good",h:"Bestanden",c:"mind. <span class='hl-green'>1×3 + 1×4</span> in D/M"},{t:"tip",c:"<b>Elternwillen-Regel:</b> Bei <b>2× Note 4</b> können Eltern entscheiden, dass das Kind <b>trotzdem aufgenommen</b> wird."}],
+ quelle:"Eltern können Probeunterricht auch unabhängig vom Schnitt beantragen."},
+{id:18,block:"Schwellen",norm:"VO",ebene:"VO",vo:"MSO",tags:[],falle:false,hochprior:false,
+ front:"Welche <b>Übertrittsschwellen</b> gelten in der <b>Gelenkklasse</b> Jgst. 5 der Mittelschule?",
+ header:"§ 6 — MS Jgst. 5 → Sek I",sub:"Gelenkklasse · Jahreszeugnis",
+ body:[{t:"text",c:"<b>Fächer:</b> <span class='hl-yellow'>D + M</span> <span style='color:#dc2626;font-size:0.92em'>— NICHT D/M/HSU wie GS!</span>"},{t:"table",cls:"vo",headers:["Ziel","D + M"],rows:[["<b>Gymnasium</b>","≤ 2,0"],["<b>Realschule</b>","≤ 2,5"]],centerCol:1},{t:"tip",c:"<b>Härtefall:</b> <b>LK-Konferenz</b> bei nachgewiesenen persönlichen Beeinträchtigungen."}],
+ quelle:"§ 6."},
+{id:19,block:"Schwellen",norm:"VO",ebene:"VO",vo:"MSO",tags:[],falle:false,hochprior:false,
+ front:"Welche <b>Notenschnitte</b> qualifizieren für die einzelnen Stufen des <b>M-Zugs</b>?",
+ header:"§ 7 — M-Zug-Aufnahme",sub:"Schnitt aus <b>D + M + E</b>",
+ body:[{t:"table",cls:"vo",headers:["M-Stufe","Schnitt","Zusatz"],rows:[["<b>M7</b>","≤ 2,66","—"],["<b>M8 / M9</b>","≤ 2,33","—"],["<b>M10</b>","≤ 2,33","+ <b>Quali</b>"]],centerCol:1},{t:"tip",c:"<b>Sonst:</b> <b>Aufnahmeprüfung</b> in letzter Sommerferienwoche."}],
+ quelle:"Rückkehr MS ↔ M-Zug jederzeit (§ 8/3)."},
+{id:20,block:"Schwellen",norm:"VO",ebene:"VO",vo:"WSO",tags:[],falle:false,hochprior:false,
+ front:"Welche Voraussetzung gilt für den Wechsel von der Mittelschule auf die <b>4-stufige Wirtschaftsschule</b>?",
+ header:"MS Jgst. 6./7. → 4-stufige WS",sub:"",
+ body:[{t:"subbox",cls:"good",h:"Direktaufnahme",c:"Schnitt <b>D + M + E</b> ≤ <span class='hl-green'>2,66</span> im Zwischen-/Jahreszeugnis → uneingeschränkt."},{t:"subbox",cls:"vo",h:"Alternative",c:"<b>M-Zug-Vorrückungserlaubnis</b> aus 7. Klasse."},{t:"tip",c:"<b>Sonst:</b> Probeunterricht (3 Tage)."}],
+ quelle:"WS-Hürde unter Gym/RS — wichtige Beratungs-Option."},
+{id:21,block:"Schwellen",norm:"VO",ebene:"VO",vo:"GrSO",tags:[],falle:false,hochprior:false,
+ front:"Welche besondere Regelung gilt für <b>Probearbeiten</b> im 4. Jahrgang vor dem Übertrittszeugnis?",
+ header:"§ 10/1, /3 — Sondernorm Jgst. 4",sub:"",
+ body:[{t:"subbox",cls:"vo",h:"Vor dem ÜZ",c:"Mindestens <span class='hl-yellow'>4 Unterrichtswochen probearbeitenfrei</span> pro Fach D/M/HSU."},{t:"subbox",cls:"vo",h:"Bis zum ÜZ",c:"Insgesamt <span class='hl-yellow'>18 Probearbeiten</span> in D/M/HSU."},{t:"subbox",cls:"vo",h:"Verteilung",c:"Durch <b>LK-Konferenz</b> festgelegt.<br><span style='font-size:0.9em;color:#475569'>Typisch: <b>10 D / 4 M / 4 HSU</b> (kann abweichen).</span>"}],
+ quelle:"§ 10/1, /3. Gesamtzahl 18 normiert."},
+{id:22,block:"Durchlaessigkeit",norm:"Gesetz",ebene:"Gesetz",vo:"BaySchO",tags:[],falle:false,hochprior:false,
+ front:"Wie weit reicht das <b>Elternwahlrecht</b> im bayerischen Schulwesen, und welche Grenze setzt das Gesetz?",
+ header:"Art. 44 — Elternwahlrecht",sub:"",
+ body:[{t:"subbox",cls:"good",h:"Wahlrecht",c:"Eltern wählen <b>Schulart, Ausbildungs- und Fachrichtung</b>."},{t:"subbox",cls:"falle",h:"Aufnahmekriterium",c:"<span class='hl-green'>Eignung und Leistung</span>"},{t:"falle",h:"⚠ FALLE:",c:"Wahlrecht ist <b>nicht absolut</b>. Schwellen + Probeunterricht bleiben zentral."}],
+ quelle:"Art. 44."},
+{id:23,block:"Durchlaessigkeit",norm:"Gesetz",ebene:"Gesetz",vo:"BaySchO",tags:[],falle:false,hochprior:false,
+ front:"Auf welcher gesetzlichen Grundlage beruht der <b>Wechsel zwischen Schularten</b>, und wo finden sich die konkreten Regelungen?",
+ header:"Art. 43 — Schulartwechsel",sub:"",
+ body:[{t:"subbox",cls:"gesetz",h:"Gesetzesebene",c:"<b>Art. 43</b> regelt den Wechsel als <b>Durchlässigkeits-Grundsatz</b>."},{t:"subbox",cls:"gesetz",h:"Verordnungsebene",c:"<ul><li><b>BaySchO</b> — schulartübergreifend</li><li><b>GrSO · MSO · RSO · GSO</b> — schulartspezifisch</li></ul>"}],
+ quelle:"Grundsatz auf Gesetzesebene · Mechanik auf Verordnungsebene."},
+{id:24,block:"Durchlaessigkeit",norm:"VO",ebene:"VO",vo:"MSO",tags:[],falle:false,hochprior:false,
+ front:"Nennen Sie die drei wichtigsten <b>Aufstiegswege</b> ab Mittelschule bis zur Hochschulreife.",
+ header:"3 Aufstiegswege ab MS",sub:"",
+ body:[{t:"subbox",cls:"good",h:"(A) M-Zug",c:"M7 → M8 → M9 → <b>M10</b><br>→ <b>mittlerer Schulabschluss</b>"},{t:"subbox",cls:"good",h:"(B) Quali + Berufsausbildung + FOS",c:"Quali → BS → MSA bzw. <b>Quabi</b> → FOS 11/12 → <b>Fachabi</b><br>→ ggf. FOS 13 / BOS → <b>allg. Hochschulreife</b>"},{t:"subbox",cls:"good",h:"(C) Wirtschaftsschule",c:"ab Jgst. 6./7. (Schnitt 2,66 D+M+E)<br>→ <b>mittlerer Schulabschluss</b>"}],
+ quelle:"§§ 7, 8, 19–34."},
+{id:25,block:"Durchlaessigkeit",norm:"VO",ebene:"VO",vo:"MSO",tags:[],falle:false,hochprior:false,
+ front:"Wie setzt sich die <b>Notenbildung</b> beim qualifizierenden Mittelschulabschluss zusammen, und welche <b>Fächer</b> werden geprüft?",
+ header:"§§ 19–34 — Quali",sub:"Ende Jgst. 9 · freiwillige externe Prüfung",
+ body:[{t:"subbox",cls:"vo",h:"Notenzusammensetzung",c:"<table style='width:100%'><tr><td><span class='hl-green'>50 % Jahresfortgang</span></td><td><span class='hl-green'>50 % Prüfung</span></td></tr></table>"},{t:"subbox",cls:"vo",h:"Prüfungsfächer",c:"<b>Schriftlich:</b> D · M · E · PCB · GSE · Arbeitslehre<br><b>Projektprüfung:</b> Berufsorientierung (BO)"}],
+ quelle:"Quabi (§ 34): Quali + Berufsausbildungsabschluss → mittlerer Schulabschluss."},
+{id:26,block:"Durchlaessigkeit",norm:"VO",ebene:"VO",vo:"MSO",tags:[],falle:false,hochprior:false,
+ front:"Welche drei <b>Abschlüsse</b> bietet die bayerische Mittelschule?",
+ header:"§§ 19–34 — 3 MS-Abschlüsse",sub:"",
+ body:[{t:"subbox",cls:"good",h:"1. Erfolgreicher MS-Abschluss",c:"Jgst. 9 · Durchschnitt Vorrückungsfächer <span class='hl-green'>≥ 4,00</span> + max. <b>3 Fächer</b> schlechter als 4 (Note 6 zählt 2× Note 5)"},{t:"subbox",cls:"good",h:"2. Quali",c:"freiwillig Ende Jgst. 9 · 50 % Jahresfortgang + 50 % Prüfung"},{t:"subbox",cls:"good",h:"3. Mittlerer Schulabschluss in M10",c:"M-Zug · schriftliche, mündliche, praktische Prüfungen"}],
+ quelle:"Sonderform: Praxisklasse-Abschluss (§ 22)."},
+{id:27,block:"Schwellen",norm:"VO",ebene:"VO",vo:"GrSO",tags:["Falle","Hochprior"],falle:true,hochprior:true,
+ front:"Welche <b>Schwellen</b> und <b>Fächer</b> gelten beim Übertritt GS → Sek I — und welche Werte sind häufige Verwechslungen?",
+ header:"§ 6 — Schwellen-Verwechslung",sub:"Hochfrequenz-Falle der Schulrätin",
+ body:[{t:"table",cls:"vo",headers:["Schulart","RICHTIG","FALSCH"],rows:[["<b>Gymnasium</b>","<span class='hl-green'>2,33</span>","<span class='hl-strike'>2,5</span>"],["<b>Realschule</b>","<span class='hl-green'>2,66</span>","<span class='hl-strike'>3,0</span>"]]},{t:"subbox",cls:"vo",h:"Fächer",c:"<span class='hl-green'>D / M / HSU</span> <span class='hl-strike'>— alle Fächer</span>"}],
+ quelle:"§ 6 + B9.2.3."},
+{id:28,block:"Schularten",norm:"Gesetz",ebene:"Gesetz",vo:"BaySchO",tags:["Falle"],falle:true,hochprior:false,
+ front:"Gilt die Aussage „Die Grundschule ist die <b>erste und gemeinsame Schule</b>\" absolut?",
+ header:"Antwort: NEIN — nicht absolut",sub:"",
+ body:[{t:"subbox",cls:"gesetz",h:"Ausnahmen",c:"<ul><li><b>Förderschule</b> ab Jgst. 1</li><li><b>Vorschulische Einrichtungen (SVE)</b> als Teil der Förderschule</li></ul>"},{t:"falle",h:"⚠ Falle:",c:"Wer GS als ausnahmslos darstellt, fällt in die Falle."}],
+ quelle:"Art. 7, 19. Kompendium S. 30 (Fall Sildi)."},
+{id:29,block:"Schularten",norm:"KMBek",ebene:"KMBek",vo:"BaySchO",tags:["Falle","Hochprior"],falle:true,hochprior:true,
+ front:"Wie ist der <b>Vorkurs Deutsch 240</b> zeitlich strukturiert, und welche Verteilung gilt zwischen den Institutionen?",
+ header:"Vorkurs Deutsch 240",sub:"",
+ body:[{t:"table",cls:"bek",headers:["Parameter","Wert"],rows:[["<b>Stundenanzahl</b>","<span class='hl-green'>240 Stunden</span>"],["<b>Dauer</b>","<span class='hl-green'>1,5 Schuljahre</span><br><span style='font-size:0.88em;color:#475569'>(vorletztes + letztes KiTa-Jahr)</span>"],["<b>Aufteilung</b>","<b>je hälftig</b> in <b>KiGa und Grundschule</b>"]]},{t:"falle",h:"⚠ FALLE:",c:"Häufig verwechselt — <span class='hl-strike'>1 Jahr</span> · <span class='hl-strike'>2 Jahre</span> · sondern exakt <b>1,5 Jahre</b>."}],
+ quelle:"KMBek Vorkurs Deutsch 240."},
+{id:30,block:"Durchlaessigkeit",norm:"Gesetz",ebene:"Gesetz",vo:"BaySchO",tags:[],falle:false,hochprior:false,
+ front:"Welche <b>Beratungspflicht</b> haben Schule und Lehrkraft gegenüber Eltern und Schülern in Schullaufbahn-Fragen?",
+ header:"Art. 78 — Beratungspflicht",sub:"",
+ body:[{t:"subbox",cls:"gesetz",h:"Wer berät?",c:"Schule und <span class='hl-yellow'>jede Lehrkraft</span>"},{t:"subbox",cls:"gesetz",h:"Worüber?",c:"<ul><li><b>Schullaufbahn</b></li><li><b>Wahl der Bildungsmöglichkeiten</b><br><span style='font-size:0.88em;color:#475569'>entsprechend Anlagen + Fähigkeiten</span></li></ul>"},{t:"hinweis",h:"Hinweis:",c:"<b>Muss-Vorschrift</b>, nicht Kann-Vorschrift."}],
+ quelle:"Art. 78. Praxis: KL muss bei ÜZ-Konflikten objektiv beraten."},
+{id:31,block:"Synthese",norm:"BV",ebene:"BV",vo:"BaySchO",tags:["Hochprior"],falle:false,hochprior:true,
+ front:"Skizzieren Sie das <b>bayerische Schulsystem</b> in seiner Norm-Hierarchie: auf welcher <b>Ebene</b> ist was geregelt?",
+ header:"Schulsystem über alle 4 Norm-Ebenen",sub:"",
+ body:[{t:"subbox-line",cls:"bv",c:"<b>BV (Verfassung):</b> Art. 128/132 (Bildungsanspruch + Maßstab) · Art. 133/134 (öff. Anstalten + Privatschul-Genehmigung)"},{t:"subbox-line",cls:"gesetz",c:"<b>BayEUG (Gesetz):</b> Art. 6 (Schularten-Katalog) · Art. 35/37/39 (Schulpflicht) · Art. 43/44 (Wechsel + Elternwahlrecht)"},{t:"subbox-line",cls:"vo",c:"<b>BaySchO/GrSO/MSO/RSO/GSO (VO):</b> Schwellen, Probearbeiten, Aufnahmeverfahren — Konkretisierung des Gesetzes"},{t:"subbox-line",cls:"bek",c:"<b>KMBek (Richtlinie):</b> Vorkurs Deutsch 240, Aufnahme-Bek — operative Detailregelung"},{t:"tip",c:"<b>Kernsatz:</b> <b>gegliedert</b> (jede Schulart eigenes Profil) + <b>durchlässig</b> (Wechsel an jeder Schnittstelle)."}],
+ quelle:"Methodik: Verfassungsanker → Gesetzesrahmen → Verordnungs-Mechanik → Richtlinien-Detail."},
+{id:32,block:"Vorruecken",norm:"VO",ebene:"VO",vo:"MSO",tags:[],falle:false,hochprior:false,
+ front:"Welche <b>Optionen</b> kennt die Mittelschule am Schuljahres-Ende, wenn ein SuS knapp scheitert oder herausragt?",
+ header:"3 Optionen am Schuljahres-Ende",sub:"",
+ body:[{t:"subbox",cls:"vo",h:"1. Vorrücken auf Probe",c:"Bei <b>knappem Notenbild</b> · Bestätigung am Halbjahr."},{t:"subbox",cls:"vo",h:"2. Wiederholen",c:"<b>Freiwillig</b> (Antrag) oder <b>Pflicht</b> bei Nicht-Vorrücken. Wiederholungsfrist beachten."},{t:"subbox",cls:"vo",h:"3. Überspringen",c:"Auf <b>Antrag</b> + <b>Leistungsnachweis</b> + <b>SL-Genehmigung</b>. Verkürzt Vollzeitschulpflicht (keine Streckung)."}],
+ quelle:"Vorrückungsfächer MS: D · M · E + Pflichtfach nach Jgst."},
+{id:33,block:"Schulpflicht",norm:"Gesetz",ebene:"Gesetz",vo:"BaySchO",tags:["Hochprior"],falle:false,hochprior:true,
+ front:"Welche <b>Eskalationsstufen</b> folgen, wenn Eltern ihr Kind nicht zur Schule schicken?",
+ header:"Schulzwang-Eskalation Art. 76 → 119 → 118 → 120",sub:"",
+ body:[{t:"subbox",cls:"gesetz",h:"Stufe 1 — Überwachung",c:"<b>Art. 76 i.V.m. § 20 BaySchO</b> · Eltern + Schule überwachen gemeinsam."},{t:"subbox",cls:"gesetz",h:"Stufe 2 — Ordnungswidrigkeit",c:"<b>Art. 119</b> · <b>Geldbuße</b> bei Unterlassung der Anmeldung."},{t:"subbox",cls:"gesetz",h:"Stufe 3 — Schulzwang",c:"<b>Art. 118</b> · SL-Antrag bei <b>Kreisverwaltungsbehörde</b> → <b>zwangsweise Zuführung</b>."},{t:"subbox",cls:"gesetz",h:"Stufe 4 — Grundrechtseinschränkung",c:"<b>Art. 120</b> · Einschränkung der Grundrechte <b>Freiheit der Person</b> + <b>Unverletzlichkeit der Wohnung</b>."}],
+ quelle:"Art. 76, 118, 119, 120 + § 20 BaySchO."},
+{id:34,block:"Schulpflicht",norm:"Gesetz",ebene:"Gesetz",vo:"BaySchO",tags:["Hochprior"],falle:false,hochprior:true,
+ front:"Welche <b>Schritte</b> umfasst das Schulaufnahmeverfahren in Bayern, und welches <b>Prinzip</b> regelt die Schulwahl?",
+ header:"Schulaufnahmeverfahren — 4 Schritte",sub:"",
+ body:[{t:"subbox",cls:"gesetz",h:"1. Schuleingangsuntersuchung",c:"Durch das <b>Gesundheitsamt</b> · <b>Pflicht</b> für alle einzuschulenden Kinder."},{t:"subbox",cls:"gesetz",h:"2. Aufnahmeentscheidung",c:"Durch die <b>Schulleitung</b>."},{t:"subbox",cls:"gesetz",h:"3. Sprengelprinzip",c:"SuS besucht <b>Schule des Wohnsprengels</b>. Ausnahme nur via <b>Gastschulantrag</b>."},{t:"subbox",cls:"gesetz",h:"4. Zurückstellung (alternativ)",c:"Bei körperlich/geistig/sozial fehlender <b>Schulreife</b> · SL-Entscheid nach <b>ärztlicher / schulpsychologischer Begutachtung</b>."}],
+ quelle:"Art. 35, 37 + Schul-VO."},
+{id:35,block:"Durchlaessigkeit",norm:"VO",ebene:"VO",vo:"MSO",tags:["Hochprior"],falle:false,hochprior:true,
+ front:"Welche <b>Sonderabschlüsse</b> bietet die Mittelschule über ESA, Quali und MSA hinaus?",
+ header:"2 zusätzliche MS-Abschlüsse",sub:"",
+ body:[{t:"subbox",cls:"vo",h:"Praxisklasse-Abschluss · § 22",c:"<b>Theorieentlastete Prüfung</b>:<br>D/DaZ 90 Min · M 60 Min · Fächerverbund 45 Min · Projekt AWT"},{t:"subbox",cls:"vo",h:"Quabi · § 34",c:"<b>Quali</b> + <b>Berufsausbildungsabschluss</b> → erzielt <span class='hl-green'>MSA-Wirkung</span> (mittlerer Schulabschluss)."}],
+ quelle:"§§ 22, 34. MS-Gesamt: ESA · Quali · MSA · Praxis · Quabi."},
+{id:36,block:"Schulpflicht",norm:"Gesetz",ebene:"Gesetz",vo:"BaySchO",tags:["Falle"],falle:true,hochprior:false,
+ front:"Welche Voraussetzungen + <b>Falle</b> gelten bei Schulpflicht von zugezogenen SuS?",
+ header:"Migration — Schulpflicht-Voraussetzungen",sub:"",
+ body:[{t:"subbox",cls:"gesetz",h:"Beginn",c:"<span class='hl-yellow'>3 Monate nach Zuzug</span> bei Aufenthaltsstatus: <b>Gestattung · Erlaubnis · Duldung · vollziehbare Ausreisepflicht</b>."},{t:"subbox",cls:"gesetz",h:"Einweisung",c:"idR <b>altersgleich</b>; Abweichung max. <b>2 Jgst. tiefer</b>."},{t:"falle",h:"⚠ FALLE:",c:"Tiefereinweisung NUR bei <b>allgemein mangelndem Bildungsstand</b>. <b>NICHT</b> bei reinem Sprachdefizit. Keine <b>Schulpflicht-Verlängerung</b>."}],
+ quelle:"Art. 35 + B9.2.1."},
+{id:37,block:"Schulpflicht",norm:"VO",ebene:"VO",vo:"BaySchO",tags:[],falle:false,hochprior:false,
+ front:"Welche <b>Teilnahmepflichten</b> gelten im Distanzunterricht?",
+ header:"§ 19/4 BaySchO + Art. 56/4 S. 3 BayEUG",sub:"verpflichtender Charakter seit SJ 2020/21",
+ body:[{t:"subbox",cls:"vo",h:"SuS-Pflicht",c:"<b>Aktive Teilnahmepflicht</b> · „virtueller Startschuss\" + Rückmeldung auf Arbeitsaufträge."},{t:"subbox",cls:"vo",h:"Eltern-Pflicht",c:"<b>Meldepflicht</b> bei Verhinderung (§ 20/1 BaySchO)."},{t:"subbox",cls:"vo",h:"Bei Verweigerung",c:"Beratungs-/Unterstützungs-Plan (Schulpsych. · Beratungs-LK · Sozialpäd. · KL-Kontrollanrufe) → ggf. <b>Erziehungs-/Ordnungsmaßnahmen</b>."}],
+ quelle:"Mündl. LNW im Distanz-U. grundsätzlich möglich."},
+{id:38,block:"Schulpflicht",norm:"VO",ebene:"VO",vo:"BaySchO",tags:[],falle:false,hochprior:false,
+ front:"Welche <b>3 Stufen</b> kennt das Recht, dem Unterricht fernzubleiben oder von einem Fach befreit zu werden?",
+ header:"3 Stufen — aufsteigende Eingriffstiefe",sub:"",
+ body:[{t:"subbox",cls:"vo",h:"1. Verhinderung",c:"Bei <b>zwingenden Gründen</b> (z. B. Krankheit). Eltern-Meldepflicht."},{t:"subbox",cls:"vo",h:"2. Beurlaubung",c:"In <b>dringenden Ausnahmefällen</b>: religiöse Pflichten · Erholungsaufenthalt · Schwangerschaft."},{t:"subbox",cls:"vo",h:"3. Befreiung",c:"<b>Einzelne Fächer</b> (ganz oder teilweise) · zeitlich begrenzt."}],
+ quelle:"BaySchO + B9.2.1."}
+];
+
+const norm2cls = {BV:"bv",Gesetz:"gesetz",VO:"vo",KMBek:"bek",Schulintern:"haus"};
+const HIER = [
+  {key:"BV",label:"BV"},
+  {key:"Gesetz",label:"BayEUG"},
+  {key:"VO",label:""}, // wird dynamisch ersetzt
+  {key:"KMBek",label:"KMBek"},
+  {key:"Schulintern",label:"Haus."}
+];
+
+let pool = [...CARDS];
+let idx = 0;
+let flipped = false;
+let progress = JSON.parse(localStorage.getItem("mp03_progress") || "{}");
+
+const $ = (s) => document.querySelector(s);
+const $$ = (s) => document.querySelectorAll(s);
+
+function renderHier(card){
+  return HIER.map(h => {
+    const isVo = h.key === "VO";
+    const lbl = isVo ? card.vo : h.label;
+    const isActive = card.ebene === h.key;
+    const cls = isActive ? `hier-cell active ${norm2cls[h.key]}` : "hier-cell";
+    return `<div class="${cls}">${lbl}</div>`;
+  }).join("");
+}
+
+function renderBody(items){
+  return items.map(it => {
+    if (it.t === "text") return `<div class="body-text">${it.c}</div>`;
+    if (it.t === "list") return `<div class="body-text"><ul>${it.c.map(x=>`<li>${x}</li>`).join("")}</ul></div>`;
+    if (it.t === "olist") return `<div class="body-text"><ol>${it.c.map(x=>`<li>${x}</li>`).join("")}</ol></div>`;
+    if (it.t === "subbox") return `<div class="subbox"><div class="sub-h ${it.cls||""}">${it.h}</div><div>${it.c}</div></div>`;
+    if (it.t === "subbox-line") return `<div class="subbox" style="border-left:3px solid var(--c-${it.cls});padding-left:10px;">${it.c}</div>`;
+    if (it.t === "falle") return `<div class="falle-box"><b class="warn">${it.h||"⚠ FALLE:"}</b> ${it.c}</div>`;
+    if (it.t === "hinweis") return `<div class="hinweis-box"><b style="color:var(--c-good)">${it.h||"Hinweis:"}</b> ${it.c}</div>`;
+    if (it.t === "tip") return `<div class="tip-box">${it.c}</div>`;
+    if (it.t === "table") {
+      const head = `<tr>${it.headers.map((h,i)=>`<th${i===it.centerCol?" class='center'":""}>${h}</th>`).join("")}</tr>`;
+      const rows = it.rows.map(r => `<tr>${r.map((c,i)=>`<td${i===it.centerCol?" class='center'":""}>${c}</td>`).join("")}</tr>`).join("");
+      return `<table class="data-tbl ${it.cls||""}">${head}${rows}</table>`;
+    }
+    return "";
+  }).join("");
+}
+
+function renderCard(card){
+  const cls = norm2cls[card.ebene];
+  const blockLabel = card.falle ? `⚠ FALLE · ${card.block.toUpperCase()}` : card.block.toUpperCase();
+  const tagCls = card.falle ? "tag-label falle" : "tag-label";
+  const subInfo = card.sub ? `<div style="font-style:italic;color:var(--c-${cls}-dark);font-size:0.88em;margin-bottom:10px;">${card.sub}</div>` : "";
+  if (!flipped) {
+    // Front: Frage groß und prominent
+    return `<div class="card-grid"><div class="hier-col">${renderHier(card)}</div><div><div class="${tagCls}">${blockLabel}</div><div class="front-q">${card.front}</div></div></div>`;
+  } else {
+    // Back: Frage als Kontext oben (dezenter), Antwort prominent darunter
+    const questionContext = `<div class="${tagCls}">${blockLabel}</div><div class="front-q-context">${card.front}</div><div class="answer-divider">Antwort</div>`;
+    const answerBlock = `<div class="main-box ${cls}"><div class="norm-header ${cls}">${card.header}</div>${subInfo}${renderBody(card.body)}</div><div class="quelle-box"><b>Quelle:</b> ${card.quelle}</div>`;
+    return `<div class="card-grid"><div class="hier-col">${renderHier(card)}</div><div>${questionContext}${answerBlock}</div></div>`;
+  }
+}
+
+function applyFilters(){
+  const norm = $("#filter-norm").value;
+  const block = $("#filter-block").value;
+  const onlyFalle = $("#only-falle").checked;
+  const onlyHoch = $("#only-hochprior").checked;
+  const search = $("#search").value.toLowerCase().trim();
+  pool = CARDS.filter(c => {
+    if (norm && c.norm !== norm) return false;
+    if (block && c.block !== block) return false;
+    if (onlyFalle && !c.falle) return false;
+    if (onlyHoch && !c.hochprior) return false;
+    if (search) {
+      const hay = (c.front + " " + c.header + " " + JSON.stringify(c.body)).toLowerCase();
+      if (!hay.includes(search)) return false;
+    }
+    return true;
+  });
+  idx = 0; flipped = false;
+  render();
+}
+
+function render(){
+  const total = pool.length;
+  $("#total").textContent = total;
+  if (total === 0) {
+    $("#card-content").innerHTML = `<div class="empty-state">Keine Karten passen zu diesen Filtern.</div>`;
+    $("#cur-idx").textContent = 0;
+    $("#flip-hint").style.display = "none";
+    return;
+  }
+  $("#flip-hint").style.display = flipped ? "none" : "block";
+  $("#cur-idx").textContent = idx + 1;
+  const card = pool[idx];
+  $("#card-frame").className = "card-frame" + (card.falle ? " is-falle" : "");
+  $("#card-content").innerHTML = renderCard(card);
+  $("#prev").disabled = (idx === 0);
+  $("#next").disabled = (idx === total - 1);
+  $("#flip").textContent = flipped ? "Zurück zur Frage" : "Antwort zeigen";
+  $("#rating-row").style.display = flipped ? "flex" : "none";
+}
+
+function shuffle(){
+  for (let i = pool.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [pool[i], pool[j]] = [pool[j], pool[i]];
+  }
+  idx = 0; flipped = false; render();
+}
+
+$("#flip").onclick = $("#card-frame").onclick = () => { flipped = !flipped; render(); };
+$("#prev").onclick = (e) => { e.stopPropagation(); if (idx > 0) { idx--; flipped = false; render(); } };
+$("#next").onclick = (e) => { e.stopPropagation(); if (idx < pool.length - 1) { idx++; flipped = false; render(); } };
+$("#shuffle").onclick = shuffle;
+$("#reset").onclick = () => { pool = [...CARDS]; idx = 0; flipped = false; ["#search","#filter-norm","#filter-block"].forEach(s=>$(s).value=""); ["#only-falle","#only-hochprior"].forEach(s=>$(s).checked=false); render(); };
+["#filter-norm","#filter-block"].forEach(s=>$(s).addEventListener("change", applyFilters));
+["#only-falle","#only-hochprior"].forEach(s=>$(s).addEventListener("change", applyFilters));
+$("#search").addEventListener("input", () => { clearTimeout(window._searchTimeout); window._searchTimeout = setTimeout(applyFilters, 200); });
+$$(".progress-row button").forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const rating = btn.dataset.rating;
+    const card = pool[idx];
+    progress[card.id] = { rating: rating, ts: Date.now() };
+    localStorage.setItem("mp03_progress", JSON.stringify(progress));
+    if (idx < pool.length - 1) { idx++; flipped = false; render(); }
+  });
+});
+document.addEventListener("keydown", (e) => {
+  if (e.target.tagName === "INPUT") return;
+  if (e.key === " " || e.key === "Enter") { e.preventDefault(); flipped = !flipped; render(); }
+  if (e.key === "ArrowLeft" && idx > 0) { idx--; flipped = false; render(); }
+  if (e.key === "ArrowRight" && idx < pool.length - 1) { idx++; flipped = false; render(); }
+});
+render();
+</script>
+</body>
+</html>
