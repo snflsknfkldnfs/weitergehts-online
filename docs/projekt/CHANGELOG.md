@@ -4,6 +4,67 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-25 — C-ARCHI-AUDIT User-Review-Gate DONE + Track-P.1-Ready
+
+**Scope:** User-Review-Gate auf 9 offene Fragen aus BEFUND v1.0 §10 abgeschlossen. User-Decisions Q1-Q9 integriert in Folge-Artefakte. Track P.1 (Plugin-Phase 1, mechanische Migration, ~3 Wochen) ready zum Start.
+
+**Pflicht-Deliverables fuer Track-P.1-Start (alle DONE):**
+- BEFUND v1.0 → v1.1 (User-Decisions + Q4-Architektur-Empfehlung Option C+).
+- Recon v1.2 → v1.3 (Triple-Root-Drift-Korrektur + Read-Only-Scope 3.-Root).
+- Roadmap v2.0 → v2.1 (User-Decision-Markers).
+- C-INKREMENTELL-MIGRATION-PLAN.md v1.0 (Track-P.1-Detail-Plan, 8 Bloecke A-H, 21.5 PT).
+
+**User-Decisions im Detail (BEFUND v1.1 §13):**
+
+| # | Frage | User-Antwort | Status |
+|---|---|---|---|
+| Q1 | Pfad H1→H2-Staffel | "ja...sinnvoll" | bestaetigt |
+| Q2 | 3.-Root Read-Only-Scope | "read only macht sinn" | bestaetigt |
+| Q3 | AGENT_MATERIAL 3-way Default | "erst mal 3-way, dann ggf evaluieren" | bestaetigt |
+| Q4 | PI-Zukunft | "evaluieren...elementar fuer Erfolg" → **Option C+** (JSON-authoritativ + PI-Mirror + Sync-Hook) | entschieden |
+| Q5 | Vertrags-Skill-Granularitaet | "evaluieren" → Phase-Ebene Default + Spike P.2.1 | entschieden |
+| Q6 | Test-Fixture-Phase-Scope | "evaluieren" → Top-5 P.1 + Mid-Point-Revisit | entschieden |
+| Q7 | Code-Mode-Verankerung | "weiß nicht was das bedeutet" → erklaert + offiziell verankert | entschieden |
+| Q8 | Recon v1.3-Korrekturen | "professionelles PM" | bestaetigt + DONE |
+| Q9 | Roadmap v2.x mit Markers | "optimales PM" | bestaetigt + DONE |
+
+**Q4-Architektur-Spezifikation (Option C+):**
+- Maschine-Truth: `game_state.json` (12-Felder strukturiertes Schema).
+- Human-Truth: `PROJECT_INSTRUCTIONS.md` (auto-rendered Block durch deterministisches Template).
+- Sync-Mechanismus: `post-state-update`-Hook re-renderiert PI nach State-Mutation.
+- User-Edit-Regel dokumentiert (PI-Edits NICHT persistent, JSON-Authoritaet).
+- Funktionale Garantien (Recovery, Auto-Load, Compaction-Anchor, State-Advance-Vertrag, Uebergangstabelle, Self-Update) explizit gemappt auf neue Mechanismen.
+- Migrations-Pfad: Phase 1 PI bleibt unveraendert (Stabilitaets-Stufe), Phase 2 JSON authoritativ + Sync-Hook.
+
+**Q7-Code-Mode-Erklaerung (Anker fuer PROJECT_INSTRUCTIONS.md in Track P.1):**
+- Cowork = Dev-Umgebung (Spec-Iteration, Plugin-Skill-Tuning, PM, Audits).
+- Code-Mode (CLI-Tool) = Prod-Umgebung (Game-Generierung, hoehere Token-Budgets, headless-faehig).
+- Phase 0-3 vereinheitlicht in Code-Mode (Prod). Cowork bleibt Dev.
+- Session-Split-Pflicht ist Cowork-Constraint, durch Code-Mode-Checkpoint/Resume aufloesbar (Track-D-Feature).
+- Pilot-Einsatz: Code-Mode.
+
+**Recon v1.3-Aenderungen:**
+- §6 Dual-Root → Triple-Root (Unterrichtseinwicklung/ als 3.-Root mit Read-Only-Scope).
+- §6.3 Optionen A-D → A'-D' mit Triple-Root-Konsequenzen. Option A' (Plugin in GENERATOR + absolute TARGET-Pfade + Read-Only 3.-Root) bestaetigt.
+- §2.2 Total-Files 32 stabilisiert.
+- AGENT_QUALITAET-Drift explizit als G-H7 dokumentiert (Cleanup in Track P.1 Block F).
+
+**Roadmap v2.1-Aenderungen:**
+- Quick-Reference §0 erweitert um User-Decision-Tabelle Q1-Q9.
+- Verworfene Pfade explizit gelistet.
+- Pflicht-Deliverables fuer Track-P.1-Start dokumentiert.
+- Track-P.1-Plan-Doku als kanonische Detail-Referenz.
+
+**Gen-Repo Commits (folgen in Final-Commits):**
+- BEFUND v1.0 → v1.1.
+- Recon v1.2 → v1.3.
+- Roadmap v2.0 → v2.1.
+- C-INKREMENTELL-MIGRATION-PLAN.md v1.0 (NEU).
+
+**Naechste Schritte:** Final-Commits (1-2 Commits via Host-MCP). Dann Track-P.1-Start ready. Implementations-Modus-Wahl (Cowork-Task-Tool / Code-Mode-Plugin-Subagent / manuelle Iteration) bei naechster Cowork-Session.
+
+---
+
 ## 2026-04-25 — C-ARCHI-AUDIT S5+S6 DONE: BEFUND v1.0 + Roadmap v1.4→v2.0 Major-Bump
 
 **Scope:** S5 finales konsolidiertes Audit-BEFUND-Dokument + S6 Major-Bump der Test+Audit-Roadmap. Pfad-Empfehlung **H1→H2-Staffel** (gewichteter Entscheidungs-Matrix-Score 138 vs naechster H2 mono 110).
