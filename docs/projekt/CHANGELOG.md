@@ -4,6 +4,64 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-25 — Track P.1 Block G DONE: 5 Test-Fixtures Top-5 Worker
+
+**Scope:** Plan §2.7 (4 PT) Konservativ-Layer — Defekt-Fixtures + Smoke-Test-Patterns dokumentiert. Voll-CI-Aktivierung Phase-2-Scope.
+
+**11 Files in scratch/fixtures/:**
+
+G.1 sub-material-quellentext/README.md — Re-Doku (existing C1-C3-Fixtures):
+- SQ-1 Waterberg-Sequenz-Kohaerenz-Defekt (mat-3-1 N-K-Material).
+- Q10 Herero-Adressat-Fakten-Drift.
+- Empirisch validiert via C1 A/B-Test (Opus + Sonnet 5/5).
+
+G.2 sub-material-bildquelle/ (NEU 0.5 MED-Aufwand):
+- README.md mit MV2-Hallu-Defekt-Spec.
+- fixture_mv2_hallu.json: Synthetisches Material mit halluzinierter Bundesarchiv-ID `Bundesarchiv_Bild_999-XYZ12345_FIKTIV.jpg`.
+- _meta.expected_q_medien_prospektiv_outcome=FAIL mit 3 Begruendungen (WebFetch 404 + Commons-API 0 Hits + Pattern-Heuristik).
+
+G.3 sub-aufgabe-mc/ (NEU):
+- README.md mit Distraktor-Implausibilitaet-Defekt-Spec + Smoke-Test-Pattern (Lange-Asymmetrie-Ratio).
+- fixture_distraktor_implausibel.json: 4 Optionen, Loesung A (347 chars), B="Wegen WLAN" (Anachronismus), C="Buendnissysteme" (Verraeter-Hint), D="Napoleon" (Anachronismus). Lange-Ratio 23x (FAIL >2.0).
+- _meta.expected_review_findings: 3x FAIL (Anachronismus B, Anachronismus D, Lange-Asymmetrie) + 1x WARN (C Verraeter).
+
+G.4 sub-aufgabe-lueckentext/ (NEU, Defekt historisch):
+- README.md mit Pool-Reset-Bug-Spec (F-RA3-01, GEFIXED 2026-04-18 commit a4f8c19).
+- fixture_pool_reset_bug.json: Lueckentext "Erster Weltkrieg 1914-1918".
+- _meta.expected_engine_behavior: pre_fix_v3.13 4-Step-Bug-Pattern + post_fix_v3.14 Pool-Konsistenz-PASS.
+
+G.5 sub-assembly-verify/ (NEU):
+- README.md mit V14-Entity-Encoding-Spec (PI-ENGINE-3 aus N-K-Audit).
+- fixture_v14_entity_hallu.json: Synthetische Mappe-Sicherung mit halluzinierter Entity "General XYZ" + "Vertrag von Foobar".
+- entities_reference.json: Minimaler entities.json-Snapshot mit 24 legitimen Entities.
+- _meta.expected_v14_findings: 2x FAIL Halluzination + Re-Generation-Trigger.
+
+**JSON-Validitaet:** 5/5 OK via `python3 -c json.load`.
+
+**Akzeptanzkriterien G Plan §2.7 — Phase-1-Stand:**
+- [x] 5 Fixtures in `scratch/fixtures/{worker}/` persistiert.
+- [x] Pro Fixture Smoke-Test-Skript-Pattern + erwartetes Ergebnis dokumentiert.
+- [ ] CI-Smoke-Test-Run pro PR: deferred zu Phase 2 (Voll-Aktivierung).
+
+**Aufwand:** ~15 Min Wall-Clock fuer 11 Files (5 READMEs + 5 JSON-Fixtures + 1 Master-README).
+
+**Plan-Stand Track P.1:**
+| Block | PT | Status |
+|---|---|---|
+| A (24 Frontmatter) | 5 | DONE |
+| C (Manifest v0.3.0) | 1 | DONE |
+| B (5 Skills) | 3 | DONE Konservativ-Layer |
+| D (4 Hooks) | 3 | DONE Reduziert |
+| E (6 Commands) | 4 | DONE Konservativ-Layer |
+| F (Drift-Cleanup) | 0.5 | DONE |
+| G (5 Test-Fixtures) | 4 | DONE Konservativ-Layer |
+| **DONE** | **20.5 PT / 21.5 PT (~95%)** | |
+| H (Cross-Repo-Doku + Code-Mode-Anker) | 1 | NEXT (letzter Block) |
+
+**Naechster Block:** H (1 PT, Tag 14 laut Plan §6) — neue Doku-Datei `docs/projekt/PLUGIN_ARCHITEKTUR_TRIPLE_ROOT.md` (Triple-Root + Plugin-Variable-Path-Resolution + Cowork-vs-Code-Mode + Read-Only-3.-Root) + PROJECT_INSTRUCTIONS.md-Erweiterung (Runtime-Konvention Cowork=Dev/Code-Mode=Prod + Phase-3-Code-Mode-Verankerung). Letzter Block vor Track-P.1-Akzeptanz-Test.
+
+---
+
 ## 2026-04-25 — Track P.1 Block F DONE: AGENT_QUALITAET Drift-Cleanup
 
 **Scope:** Plan §2.6 (0.5 PT). Legacy AGENT_DESIGN/AGENT_TECHNIK-Refs in `agents/AGENT_QUALITAET.md` mit Legacy-Marker aktualisieren (analog v3.9.1-Refaktor in PFAD_MANIFEST.md).
