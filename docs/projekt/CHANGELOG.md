@@ -4,6 +4,45 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-25 — Track P.2 Block B.2 DONE: AGENT_RAETSEL 3-way-Split
+
+**Scope:** Plan §3.1 B.2 (3 PT). 3-way-Split der monolithischen AGENT_RAETSEL.md (~25.7 kB) in 2 Plugin-Subagent-Files. Adressiert F-D5-02 + F-D6-02 (HARTE BRUECHE Phase 2.2a).
+
+**Implementations-Strategie:** 1 Cowork-Task-Tool-Subagent (general-purpose, analog B.1 ~20 Min Wall-Clock). Pattern empirisch validiert via B.1 → kein Audit-Subagent erforderlich (Mini-Smoke ausreichend).
+
+**Aktion 1: 2 neue Plugin-Subagent-Files angelegt:**
+
+1. `agents/agent-raetsel-progressionsplan.md` (10.5 kB):
+   - Frontmatter: name=agent-raetsel-progressionsplan, description Phase-2.2a-Progressionsplan-Erstellung, tools `Read,Grep,Glob,Write`, model opus.
+   - Body: F0b-Priming-Include + Rolle + Eingabe + Aufgaben (### 1 Progressionsplan inhaltsgesteuert mit 1a Aufgabenzahl-Ableitung + 1b SCPL-Zonen-Mapping + 1c Inhaltsgesteuerte Typauswahl) + (### 2 Operationalisierungsziel-Herleitung) + Q-Gate-Self-Check + Cross-Refs.
+
+2. `agents/agent-raetsel-dispatcher.md` (20.3 kB):
+   - Frontmatter: name=agent-raetsel-dispatcher, description Phase-2.2b-Aufgaben-Dispatcher, tools `Read,Grep,Glob,Task,Write` (PLUS Task-Tool), model opus.
+   - Body: F0b-Priming-Include + Rolle + Eingabe + Subagenten-Referenz + Aufgaben (### 3 Konstruktionskontext + 3b Erarbeitbarkeits-Gegenpruefung + 3c Fragestamm-Kurzregel + ### 4 Dispatch + ### 5 Cross-Aufgaben-Konsistenz + ### 6 Freischalt-Code + ### 7 Narrative Rahmung + ### 8 Assembly v4) + data.json-Schema + Q-Gate + Encoding-Regel + Ausgabe + Quellen + Cross-Refs.
+
+**Aktion 2: Legacy-Marker in `agents/AGENT_RAETSEL.md`:**
+- H1 ersetzt durch `# AGENT_RAETSEL — Aufgaben-Orchestrator (DEPRECATED post-B.2 2026-04-25)`.
+- Header-Marker-Block mit Verweis auf agent-raetsel-progressionsplan + agent-raetsel-dispatcher.
+
+**Aktion 3: Cross-Ref-Update in 21 Files (~42 Edits):**
+- 8 SUB_AUFGABE_*.md: alle referenzieren agent-raetsel-dispatcher (5/8 mit historischem-Kontext-Pattern "agent-raetsel-dispatcher, ehem. AGENT_RAETSEL").
+- AGENT_DIDAKTIK + AGENT_INHALT + AGENT_SKRIPT + AGENT_HEFTEINTRAG + AGENT_ARTEFAKT + PROJECT_INSTRUCTIONS.md.
+
+**Smoke-Verifikation (B.2-Mini-Audit):**
+- Validator (`claude plugin validate .`): PASS (1 unrelated Warnung).
+- Beide neuen Files: YAML-Frontmatter single-quoted, Outline `## Aufgaben`-Parent vorhanden (kein analoges F-D1-01).
+- 8/8 SUB_AUFGABE_*-Files referenzieren `agent-raetsel-dispatcher`.
+- AGENT_RAETSEL.md DEPRECATED-Header gesetzt.
+- Risk RP2-1 (Cross-Ref-Verlust) NICHT eingetreten.
+
+**Track-P.2-Phase-A-Stand:** **8/17 PT (47 %)**. B.1 (5) + B.2 (3) DONE. Naechster Block: B.3 phase-transition-runner + phase_transitions.json (3 PT, Plan §3.1).
+
+**Aufwand-Ist:** ~20 Min Wall-Clock (Subagent) statt 3 PT laut Plan-Schaetzung.
+
+**Final-Commit pending User-Freigabe.**
+
+---
+
 ## 2026-04-25 — Track P.2 Block B.1 DONE: AGENT_MATERIAL 3-way-Split
 
 **Scope:** Plan §3.1 B.1 (5 PT). 3-way-Split der monolithischen AGENT_MATERIAL.md (1098 Z., ~38000 Token) in 2 Plugin-Subagent-Files + Gate-Runner-Verteilung auf existing Hooks/Reviewer. Adressiert F-D5-01 + F-D6-01 (HARTE BRUECHE Phase 2.1).
