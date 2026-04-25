@@ -1770,3 +1770,133 @@ Dies ist ein Hard-Blocker fuer synchrone Opus-Dispatches via osascript-MCP.
 ---
 
 **Status:** v1.6, 2026-04-23 (Update 2026-04-24 nach §22.13-22.17 Nachtraegen). §22 Review-Agent-Architektur + Parallel-Dispatch + Subagent-System-Integration + Plugin-Bereit-Design + Dev-Workflow-Verifikation + Dev-Workflow-Revision + Endprodukt-Implikationen. Track C0 PM-Verankerung DONE inkl. alle Nachtraege. Tracks C1-C10 mit Cowork-Task-Tool-Dev-Pattern-Default. Track D erweitert zu Plugin-Publikation + E2E-Performance-Validierung + Checkpoint/Resume (5-8 Tage). Kritischer Pfad C0-C3: 8-10 Tage unveraendert.
+
+---
+
+## 23. v1.7 Delta — Track-P.2-Closure + Track-C-Subsumption + Pilot-Roadmap (2026-04-25)
+
+**Anlass:** Track P.2 Phase A + B KOMPLETT (31/31 PT, 100 %) + T-P.2-Smoke PASS am 2026-04-25 (siehe `docs/projekt/BEFUND_T_P2_SMOKE.md`). Plugin-Architektur-Refactor abgeschlossen. Tracks C0-C10 wurden waehrend Track-P.1-Phase und Track-P.2-Architektur-Audit (`F0e_PLUGIN_ARCHI_AUDIT_BEFUND.md`, `BEFUND_ARCHITEKTUR_REFRESH_PRE_P2.md`) in Track P.1 + Track P.2 subsumiert. Plan-Doku braucht Konsolidierung gegen Drift.
+
+### 23.1 Track-P.2-Closure-Status
+
+**Phase A (18.5/18.5 PT):**
+
+| Block | Aufgabe | PT | Commit |
+|---|---|---|---|
+| B.1 | AGENT_MATERIAL 3-way-Split (agent-material-design + agent-material-dispatcher + Gate-Runner-verteilt) | 5 | `8a46f0c` |
+| B.2 | AGENT_RAETSEL 3-way-Split (agent-raetsel-progressionsplan + agent-raetsel-dispatcher) | 3 | `3582b8b` |
+| B.3 | phase-transition-runner + phase_transitions.json (initial 10 Transitions) | 3 | `6511439` |
+| B.4 | game_state.json Schema + Validator + Render + Hook D.3 (Q4 Option-C+ JSON-authoritativ) | 3 | `2352234` |
+| B.5 | /resume-state JSON-Pfad-Erweiterung (JSON-First + PI-Fallback) | 1 | `4e5a16d` |
+| B.6 | state-advance-policy-Skill (Phase-Wechsel-Regeln + Override-Mechanismus) | 2 | `4e5a16d` |
+| B.3b | Phase-A-HIGH-Pflicht-Fix-Cycle (F-PA-01/02/03/04, 10→18 Transitions, agent-recon-Phantom-Fix, Schema-Override-Erweiterung) | 1.5 | `59636aa` |
+
+**Phase B (12.5/12.5 PT):**
+
+| Block | Aufgabe | PT | Commit |
+|---|---|---|---|
+| B.7 | D.3+D.4-Plan-Hooks (post-material-subagent-stop + pre-pi-phase-advance) + Helper-Tools (dispatch_meta_helper.py + check_q_gate_log.py + dispatch_meta_v1.json) | 3 | `bead357` |
+| B.8 | D.5+D.6 Aufgaben-Hooks (pre-write-aufgabe + post-write-aufgabe + aufgabe_v1.json + validate_aufgabe_output.py + check_aufgabe_regex.py) | 2 | `a6d354d` |
+| B.9 | D.7 SUB_ASSEMBLY_VERIFY-Hook (post-assembly-verify + assembly_verify_runner.py V13-V20-Batch) | 1 | `cb37601` |
+| B.10 | Pre-Flight-Doku (commands/generate-game.md erweitert) + tools/code-mode-launch.sh + README.md Schritt 4 | 1 | `cb37601` |
+| B.11 | Pfad-Resolution Triple-Root in Subagent-Specs (8 File-Edits, F-PA-05+F-PA-10+F-PB7-01 GESCHLOSSEN, dispatch_meta-Konvention verankert) | 2 | `a6d354d` |
+| B.12 | phase-prerequisites-check-Skill (Pre-Flight-Skill mit 6-Schritte-Prozedur + 3 Beispiel-Pflicht-Szenarien) | 1.5 | `7666b2d` |
+| B.15 | Hook-Pattern v3.11.0+-Route (D.1+D.2 differenzieren primary/revisor) | 1 | `bead357` |
+| B.16 | promote_sequenzkontext.py-Tool (sequenzkontext-Promotion in Pro-Material-Ordner) | 1 | `7666b2d` |
+
+**T-P.2-Smoke (8 Stufen, 14 Tests, ~30 Min):**
+
+12/12 Akzeptanzkriterien PASS. 1 LOW-Finding F-T-PA-01 IM-CYCLE-GEFIXED (check_q_gate_log STATUS_RE-Regex erweitert). BEFUND_T_P2_SMOKE.md persistiert.
+
+**Aggregat:** Phase A + Phase B substanziell + empirisch komplett. Wall-Clock ~6h (Plan-Schaetzung ~3 Wochen, Speedup ~50x).
+
+**Plugin-Inventar nach Track P.2:**
+- 9 aktive Hooks (4 PreToolUse + 5 PostToolUse).
+- 7 Skills mit SKILL.md (5 Track-P.1 + state-advance-policy + phase-prerequisites-check).
+- 16 Tools (alle mit `--self-test` PASS, graceful-degrade-Pattern fuer jsonschema).
+- 18 Phase-Transitions (10 reale Plugin-Subagents als responsible_agent, 19 Phase-Werte inkl. ONBOARDING/0.1-3.2/DONE).
+- 29 Subagent-Frontmatter-Files (kebab-case names).
+
+**Phase C (deferred, 4 PT optional):** B.13 (11 Vertrags-Skills) + B.14 (V16-Refactor 47k Token-Einsparung). Token-Optimierung ohne strukturelle Notwendigkeit. Empfohlen post-Pilot wenn Token-Budget operatives Problem wird.
+
+### 23.2 Track-C0-C10-Subsumption
+
+Tracks C0-C10 aus §22 (v1.6) werden durch Track P.1 + Track P.2 SUBSUMIERT:
+
+| Track-C-Spec (v1.6) | Subsumiert durch | Status |
+|---|---|---|
+| C0 PM-Verankerung | Track P.1 Block H + Track P.2 Plan-Doku | DONE |
+| C1 Reviewer-Material-Quellentext | Track P.1 Block A.1 (Frontmatter) + B.1 (Plugin-Subagent-Split) | DONE |
+| C2 Revisor-Modus-Integration | Track P.2 B.15 (primary/revisor-Pattern in D.1+D.2 Hooks) | DONE |
+| C3 Dispatcher-Integration G3-Phase | Track P.2 B.1 (agent-material-dispatcher Phase 2.0b/2.1 mit G3-Gate-Runner-verteilt auf D.1+D.2-Hooks + reviewer-material-quellentext) | DONE |
+| C3.5 Legacy-Migration-Tool | (separat, pre-P.1: tools/migrate_material_v3_10_2_to_v3_10_4.py) | DONE |
+| C4-C9 Typ-Specializations | Track P.2 B.7 + B.8 (D.3-D.6 Hooks fuer Material+Aufgaben + dispatch_meta-Tracking) | DONE (Reviewer-Specialization-Erweiterung opportunistisch) |
+| C10 Parallel-Dispatch | Track P.2 B.16 (promote_sequenzkontext.py) + B.11 (dispatch_meta-Konvention) | TEILWEISE — agent-teams-Feature deferred bis Pilot empirisch zeigt Bedarf |
+| Track D Plugin-Publikation | Track P.1 + Track P.2 (Plugin-Architektur komplett, ggf. Marketplace-Distribution post-Pilot) | TEILWEISE — Plugin-Architektur DONE, Multi-Use-Case-Tier-Splitting deferred |
+
+**Resultat:** Alle Tracks C1-C9 + C0 + Teile von C10 + Teile von Track D sind via P.1+P.2 abgedeckt. Verbleibende offene Items aus §22:
+- §22.15 Tier-1/Tier-2-Plugin-Splitting (post-Pilot, andere Use-Cases relevant erst wenn Escape-Game-Use-Case empirisch validiert).
+- agent-teams-Feature fuer Multi-Material-Parallel-Sessions (post-Pilot, opportunistisch wenn Token-Budget zwingt).
+
+### 23.3 Pilot-Roadmap (post-P.2)
+
+Aktualisiert nach Track-P.2-Closure. **Total bis Pilot-Freigabe: ~3-4 Wochen** (vorher Plan v1.6: ~10-12 Wochen, durch P.1+P.2-Speedup massiv reduziert).
+
+**Schritt 1 — T-P.2-Empirie via Code-Mode-CLI (~1 Tag, 1 Cowork-Session):**
+Ziel: Plugin-Loader-Empirie unter Code-Mode-CLI verifizieren (analog T-P.1-Smoke-Empirie). Test-Set: Plugin-Install via Marketplace + headless run mit minimalem Token-Budget + Skill-Auto-Trigger + Hook-Aktivierung.
+Akzeptanzkriterien:
+- `claude plugin install` PASS.
+- `claude -p '/escape-game-generator:resume-state'` PASS mit JSON-First-Pfad.
+- Skill-Auto-Trigger fuer phase-prerequisites-check + state-advance-policy.
+- Hook-Aktivierung bei Mock-Material-Write + Mock-game_state.json-Write.
+
+**Schritt 2 — Audit Phase B (~30 Min Subagent):**
+Bundle-Audit B.7-B.12+B.15+B.16 analog Phase-A-Bundle-Audit. Findet potenzielle HIGH-Findings im Hook-Coverage + Tool-Konsistenz. Pflicht-Fix-Cycle bei Findings.
+
+**Schritt 3 — Pilot-Setup (~3 Tage):**
+- Game-Parameters-Konfiguration: erstes Pilot-Thema (Vorschlag aus Roadmap v2.3: GPG-Sequenz fuer 7c, naechste Sequenz nach Industrialisierung).
+- Code-Mode-Launch via `tools/code-mode-launch.sh` mit Triple-Root-Setup.
+- MCP-Pre-Flight: wikipedia + wikimedia-image-search verbinden.
+- TARGET-Repo Game-Verzeichnis-Initialisierung.
+
+**Schritt 4 — T-Full-Game-Pilot (~5-7 Tage):**
+Kompletter Game-Erstellungs-Run E2E ueber Phase 0-3:
+- Phase 0.1-0.4: agent-didaktik → agent-inhalt → agent-medienrecherche → agent-skript → agent-hefteintrag.
+- Phase 1: agent-material-design fuer alle Mappen.
+- Phase 2.0-2.1c: agent-material-dispatcher fuer Mappe 1-N (Material-Produktion + Sequenzkontext + Cross-Konsistenz).
+- Phase 2.2a-2.2c: agent-raetsel-progressionsplan + agent-raetsel-dispatcher fuer alle Aufgaben.
+- Phase 3.0-3.2: agent-qualitaet (Assembly + Deploy + Live-Go).
+Akzeptanzkriterien: alle Q-Gates PASS, Hooks-Aktivierung-Logs zeigen erwartete Validate-Ergebnisse, Game lokal funktional.
+
+**Schritt 5 — 5-RA-Multi-RA-Audit (~3 Tage):**
+Pilot-Game wird ueber 5-RA-Multi-RA-Pattern (RA1 Pipeline / RA2 Didaktik / RA3 Engine / RA4 Medien / RA5 PM) audited (analog Testrun-N-K-Audit). Findet ggf. neue P0/P1-Blocker.
+
+**Schritt 6 — Pflicht-Fix-Cycle (~3-7 Tage je nach Findings):**
+P0-Blocker-Behebung. P1-MED-Findings opportunistisch. Zweite Iteration falls noetig.
+
+**Schritt 7 — Lehrkraft-Review-Cycle (~3-5 Tage):**
+Pilot-Game wird im Pilot-Klassenraum eingesetzt (Geographie-Recht-Sequenz oder ueberlappend). Feldnotizen + SuS-Reaktion + Lehrkraft-Bewertung. Ggf. Iteration 2 mit Korrekturen.
+
+**Schritt 8 — Pilot-Freigabe-Entscheidung (~1 Tag):**
+Aggregat-Bilanz: Akzeptanz / Pivot / Re-Iteration. Bei Akzeptanz → Pilot-Freigabe + Phase C optional + Plugin-Distribution-Phase.
+
+**Total Schritt 1-8: ~3-4 Wochen.** Aufwands-Schaetzung kann durch Findings + Iterationen variieren.
+
+### 23.4 v1.7 Delta = 0 neue PI-Items
+
+v1.7 ist Status-Konsolidierung + Roadmap-Update. Keine neuen Plan-Impact-Items.
+
+Aggregat bleibt: **44 Plan-Impact-Items.** Davon **alle 44 Items addressed durch Track P.1 + Track P.2** (mechanische Migration + strukturelle Refactor + State-Schema + Hook-Coverage + Skill-Layer + Pre-Flight + Audit-Net). Verbleibende offene Items in F-PA-04+F-PA-06 + 8 LOW (alle nicht-blockend, opportunistisch).
+
+### 23.5 Roadmap-Updates Post-§23
+
+Roadmap v2.3 wird auf v2.4 aktualisiert (separates Dokument-Update):
+- Track P.1 + Track P.2 als ABGESCHLOSSEN (Statusmarker).
+- Tracks C0-C10 als SUBSUMIERT (Verweis auf §23.2-Tabelle).
+- Pilot-Roadmap-Schritte 1-8 als neuen kritischen Pfad.
+- Phase C als optional/post-Pilot markieren.
+- Total-Aufwand bis Pilot-Freigabe ~3-4 Wochen (revidiert).
+
+### 23.6 Status-Marker
+
+**Status:** v1.7, 2026-04-25. Track-P.2-Closure-Verankerung + Track-C-Subsumption-Tabelle + Pilot-Roadmap mit 8-Schritte-Pfad + Aufwands-Schaetzung-Revision (10-12W → 3-4W). Track P.1 + P.2 substanziell + empirisch komplett. Pilot-Bereitschaft erreicht.

@@ -4,6 +4,52 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-25 — Plan-Konsolidierung UPGRADE_PLAN v3-12 v1.6 → v1.7
+
+**Scope:** Plan-Doku-Konsolidierung post-Track-P.2-Closure. Drift-Reduktion vor Pilot-Pfad.
+
+**§23 NEU (~120 Z., 6 Sub-Sektionen):**
+
+**§23.1 Track-P.2-Closure-Status:**
+- Phase A 18.5/18.5 PT (B.1-B.6 + B.3b) mit Commit-Tabelle.
+- Phase B 12.5/12.5 PT (B.7-B.12 + B.15-B.16) mit Commit-Tabelle.
+- T-P.2-Smoke 12/12 Akzeptanzkriterien PASS, BEFUND_T_P2_SMOKE.md persistiert.
+- Plugin-Inventar: 9 Hooks + 7 Skills + 16 Tools + 18 Phase-Transitions + 29 Subagent-Frontmatter.
+- Phase C (4 PT) deferred/optional.
+
+**§23.2 Track-C0-C10-Subsumption-Tabelle:**
+- C0 → P.1 Block H + P.2 Plan-Doku DONE.
+- C1 → P.1 A.1 + P.2 B.1 DONE.
+- C2 → P.2 B.15 (primary/revisor in Hooks) DONE.
+- C3 → P.2 B.1 (agent-material-dispatcher) DONE.
+- C3.5 → separater Pre-P.1-Commit DONE.
+- C4-C9 → P.2 B.7+B.8 (Hook-Coverage Material+Aufgaben + dispatch_meta) DONE.
+- C10 → P.2 B.16 + B.11 TEILWEISE (agent-teams-Feature deferred bis Pilot zwingt).
+- Track D Plugin-Publikation → P.1+P.2 TEILWEISE (Multi-Use-Case-Tier-Splitting deferred post-Pilot).
+- Verbleibend offen: §22.15 Tier-1/Tier-2 + agent-teams-Multi-Material — beide post-Pilot.
+
+**§23.3 Pilot-Roadmap (post-P.2, 8-Schritte-Pfad, ~3-4 Wochen):**
+1. T-P.2-Empirie via Code-Mode-CLI (~1 Tag, Plugin-Loader-Empirie analog T-P.1-Empirie).
+2. Audit Phase B (~30 Min Subagent, Bundle-Audit B.7-B.16 analog Phase-A).
+3. Pilot-Setup (~3 Tage, Game-Parameters + Code-Mode-Launch + MCP-Pre-Flight + TARGET-Init).
+4. T-Full-Game-Pilot (~5-7 Tage, E2E Phase 0-3 inkl. Hook-Aktivierung-Logs).
+5. 5-RA-Multi-RA-Audit (~3 Tage, RA1-RA5 analog Testrun-N-K).
+6. Pflicht-Fix-Cycle (~3-7 Tage je nach Findings).
+7. Lehrkraft-Review-Cycle (~3-5 Tage, Pilot-Klassenraum-Einsatz + Feldnotizen).
+8. Pilot-Freigabe-Entscheidung (~1 Tag, Akzeptanz/Pivot/Re-Iteration).
+
+**§23.4 v1.7 Delta = 0 neue PI-Items.** Aggregat 44 Plan-Impact-Items, alle durch P.1+P.2 abgedeckt. Verbleibende offene Items in F-PA-04+F-PA-06 + 8 LOW (alle nicht-blockend).
+
+**§23.5 Roadmap-Updates Post-§23:** Roadmap v2.3 → v2.4 separates Dokument-Update (P.1+P.2 als ABGESCHLOSSEN, Tracks C als SUBSUMIERT, Pilot-8-Schritte als neuer kritischer Pfad, Phase C als optional, Total-Aufwand bis Pilot-Freigabe revidiert auf ~3-4 Wochen).
+
+**§23.6 Status-Marker v1.7, 2026-04-25.**
+
+**Aufwand-Ist:** ~25 Min Wall-Clock fuer Plan-Update.
+
+**Final-Commit:** WGO-Repo (separates Commit fuer Plan-Doku).
+
+---
+
 ## 2026-04-25 — T-P.2-Smoke DONE — Track P.2 Phase A+B EMPIRISCH VALIDIERT
 
 **Scope:** Empirische Smoke-Test-Suite + F-T-PA-01-Patch + BEFUND-Persistenz.
