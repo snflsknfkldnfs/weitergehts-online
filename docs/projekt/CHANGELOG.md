@@ -4,6 +4,59 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-25 — Track P.2 Phase B Continue: B.9 + B.10 DONE Bundle (Self-Edit)
+
+**Scope:** Plan §3.2 B.9 (1 PT) + B.10 (1 PT) Bundle, beide Self-Edit-Hauptthread (kein Subagent).
+
+**B.9 — D.7 SUB_ASSEMBLY_VERIFY-Hook:**
+
+NEU `tools/assembly_verify_runner.py` (~280 LOC, V13-V20-Batch lightweight):
+- V13 JSON-Syntax + Top-Level-Object valide.
+- V14 Required-Keys (game_id, mappen, version) vorhanden.
+- V15 mappen ist non-empty Array.
+- V16 jede Mappe hat id + materials + aufgaben.
+- V17 freischalt_codes-Count == mappen-Count (falls vorhanden).
+- V18 keine duplicate Mappen-IDs.
+- V19+V20 Aufgaben/Materials-Counts non-zero (Warning).
+- Exit 0=PASS / 1=FAIL / 2=WARN / 3=Tool-Error.
+- --self-test 4/4 PASS.
+
+NEU Hook `post-assembly-verify` (PostToolUse Write):
+- Filter: `*escape-games/*/data.json` + `*games/*/data.json`.
+- Ruft assembly_verify_runner.py.
+- Exit 1 bei FAIL/WARN als Warning (PostToolUse blockt nicht).
+
+**B.10 — Pre-Flight-Doku + Wrapper:**
+
+NEU `tools/code-mode-launch.sh` (~60 Z. Bash-Wrapper):
+- Args: [generator-pfad] [target-pfad] [uew-pfad] (alle optional, Defaults via Sibling-Konvention).
+- Pre-Flight-Pruefungen: GENERATOR/TARGET/UEW-Pfade Existenz.
+- Plugin-Install-Pruefung via `claude plugin list`.
+- MCP-Pflicht-Reminder (wikipedia, wikimedia-image-search).
+- Setzt --add-dir fuer TARGET (Schreibrechte) + UEW (read-only).
+- Startet Claude Code interaktiv.
+
+MODIFIED `commands/generate-game.md` Pre-Flight-Sektion:
+- NEU Code-Mode-Launch-Konvention mit Wrapper-Aufruf-Beispiel.
+- NEU MCP-Pflicht-Connectoren-Block mit Pre-Flight-Pruefung.
+- NEU 6-Schritte-Pre-Flight (von 4 erweitert): MCP-Pruefung + Triple-Root-Verifikation.
+
+MODIFIED `README.md` Setup-Sektion:
+- NEU Schritt 4 "Code-Mode-Launch (Track P.2 B.10)" mit zwei Wrapper-Aufruf-Optionen + MCP-Pflicht-Connectoren-Hinweis.
+
+**Smoke-Verifikation:**
+- assembly_verify_runner.py --self-test → 4/4 PASS (PASS-Mock + WARN-Mock + 2 FAIL-Mocks).
+- code-mode-launch.sh `bash -n` syntax-Pruefung PASS.
+- Validator (`claude plugin validate .`): 0 Errors.
+
+**Track-P.2-Phase-B-Stand:** Phase A 18.5 + Phase B 6/12.5 = **24.5 / 31 PT (79 %)**. Verbleibend Phase B: B.8 (2 PT) + B.11 (2 PT) + B.12 (1.5 PT) + B.16 (1 PT) = 6.5 PT. Phase C: B.13 (3 PT) + B.14 (1 PT).
+
+**Aufwand-Ist B.9+B.10:** ~25 Min Wall-Clock im Plan-Korridor 2 PT.
+
+**Final-Commit:** Gen-Repo `cb37601`.
+
+---
+
 ## 2026-04-25 — Track P.2 Phase B Start: B.15 + B.7 DONE (Hook-Refinement + Helper-Tools)
 
 **Scope:** Plan §3.2 B.15 (1 PT) + B.7 (3 PT) Bundle. Phase B Start.
