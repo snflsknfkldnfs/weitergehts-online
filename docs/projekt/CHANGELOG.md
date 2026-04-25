@@ -4,6 +4,68 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-25 — Track P.2 Phase A + Phase B KOMPLETT (31/31 PT): B.12 + B.16 DONE Bundle
+
+**Scope:** Plan §3.2 Letzte 2 Bloecke. B.12 (1.5 PT) + B.16 (1 PT) Self-Edit-Hauptthread.
+
+**B.12 — phase-prerequisites-check-Skill (F-D2-03 + F-D1-02):**
+
+NEU `skills/phase-prerequisites-check/SKILL.md` (~7 kB):
+- Auto-Trigger bei /generate-game / /generate-mappe / /resume-state / Phase-Wechsel / Konsistenz-Check.
+- 6-Schritte-Pre-Flight-Prozedur:
+  1. Aktueller Phase-Stand (game_state.json primaer / PI-Fallback / ONBOARDING-Default).
+  2. Ziel-Phase-Ableitung (Slash-Command-Context oder explizit).
+  3. Transition-Lookup in phase_transitions.json (FAIL bei Phase-Skip-Versuch).
+  4. Pre-Conditions auswerten (4 condition-types: file_exists / directory_populated / q_gate_log_pass / json_schema_valid).
+  5. Aggregation + Decision PASS/FAIL/WARN.
+  6. Output-Format mit Naechster-Aktion.
+- 3 Beispiel-Pflicht-Szenarien: frischer Start / fehlende Q-Gate-PASS / Phase-Skip-Versuch.
+- Override-Mechanismus via `_meta.override_reason` verankert.
+- 11 Cross-Refs zu Phase-A+B-Artefakten.
+
+**B.16 — promote_sequenzkontext.py-Tool (F-D2-04 + F-PA-05):**
+
+NEU `tools/promote_sequenzkontext.py` (~210 LOC):
+- CLI: --mappe-root <path> / --dry-run / --verbose / --self-test.
+- Pattern: `sequenzkontext-mat-N-M.json` im Mappe-Root → `mappe_root/materialien/mat-N-M/sequenzkontext.json`.
+- Idempotent: wiederholter Run skipped + entfernt Source bei content-identischem Target.
+- Self-Test 3/3 PASS + Idempotenz-Run rc=0.
+
+**F-PA-05 (mappe-[N]-Resolver, MED-deferred seit B.3)** IMPLIZIT GESCHLOSSEN durch konkrete Mappen-Index-Konvention im Tool (mappe-1 statt literal mappe-[N]).
+
+**Smoke-Verifikation:**
+- Validator (`claude plugin validate .`): 0 Errors.
+- promote_sequenzkontext.py --self-test → 3/3 Files promoted + Idempotenz-Run rc=0.
+- Skill-Discovery: Plugin-Auto-Discovery sieht skills/phase-prerequisites-check/SKILL.md.
+
+**Track-P.2-Endstand: 31/31 PT (100 %) inkl. B.3b Audit-Net.**
+
+| Phase | PT | Status |
+|---|---|---|
+| Phase A (B.1-B.6 + B.3b Pflicht-Fix) | 18.5 | DONE |
+| Phase B (B.7-B.12 + B.15-B.16) | 12.5 | DONE |
+| Phase C (B.13+B.14, optional) | 4 | deferred |
+
+**Aufwand-Ist Phase A + B Total:** ~5.5h Wall-Clock fuer 31 PT (Plan-Schaetzung ~3 Wochen statt ~5.5h durch Subagent-Pattern + Self-Edit-Fallback + Parallel-Dispatch).
+
+**Phase C (B.13 11 Vertrags-Skills + B.14 V16-Refactor) ist optional/deferrable** laut Plan §3.3 — Token-Optimierung ohne strukturelle Notwendigkeit.
+
+**Akzeptanzkriterien Track P.2:**
+- [x] AGENT_MATERIAL + AGENT_RAETSEL refactored zu Plugin-Subagent-Splits.
+- [x] State-Schema + Validator + Renderer + Sync-Hook.
+- [x] Phase-Transitions kanonisch + Runner + Pre-Condition-Gate.
+- [x] State-Advance-Policy + Resume-Logik + Phase-Prerequisites-Check.
+- [x] Hook-Coverage Material + Aufgaben + State + Assembly + Phase-Advance.
+- [x] Helper-Tools dispatch_meta + Q-Gate-Log.
+- [x] Pre-Flight-Doku + code-mode-launch.sh.
+- [x] Triple-Root-Pfad-Konsolidierung in Plugin-Subagent-Specs.
+- [x] dispatch_meta-Konvention in Dispatchern verankert.
+- [x] Bundle-Audit + Pflicht-Fix-Cycle abgeschlossen.
+
+**Final-Commit:** Gen-Repo `7666b2d`.
+
+---
+
 ## 2026-04-25 — Track P.2 Phase B B.8 + B.11 DONE (parallele Subagent-Dispatch, 4 PT)
 
 **Scope:** Plan §3.2 B.8 (2 PT) + B.11 (2 PT) Bundle. Parallele Subagent-Dispatch im selben Message-Block (zwei general-purpose Subagents, kein File-Ownership-Konflikt).
