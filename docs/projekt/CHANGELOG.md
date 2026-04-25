@@ -4,6 +4,79 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-25 — Architektur-Refresh-Audit DONE + Track-P.2-Plan-Doku v1.0
+
+**Scope:** User-Reasoning ("muss die Architektur nicht erst noch weiter praezisiert, optimiert und per audits ueberprueft werden?") empirisch bestaetigt durch Multi-Dim-Audit. Track-P.2-Plan-Doku als Eingabe fuer ~5-Wochen-Implementation persistiert.
+
+**Audit-Befund BEFUND_ARCHITEKTUR_REFRESH_PRE_P2.md v1.0:**
+
+29 Findings (13 HIGH + 16 MED + 0 LOW) in 6 Dimensions:
+- D1 Subagent-Dispatch: 3 HIGH + 1 MED — kein autonomer Phase-Sequenz-Runner. /generate-game ist deklarativ-narrativ. ORCHESTRATOR ist Referenz-Doku ohne Plugin-Subagent-Wrapper.
+- D2 File-Pass-Through: 2 HIGH + 2 MED — Plugin schreibt nicht autonom in TARGET. {{TARGET_PATH}}-Variable ungenutzt. --add-dir-Flag User-Anweisung ohne Plugin-Manifest-Anker.
+- D3 State-Sync (Q4): 4 HIGH + 1 MED — game_state.json-Schema fehlt. post-state-update-Hook nicht geplant. State-Mutation-Punkte nicht enumeriert.
+- D4 Hook-Coverage: 2 HIGH + 4 MED — Pattern matcht nicht v3.11.0+-Route komplett. Aufgaben/Hefteintrag/Assembly-Hooks fehlen.
+- D5 Cross-Subagent-Komm: 0 HIGH + 4 MED — AGENT_MATERIAL/AGENT_RAETSEL Phase-2-deferred ohne 3-way-Split.
+- D6 Self-Sustained-Run: 2 HIGH + 4 MED — HARTE BRUECHE in Phase 1+2.1+2.1c+2.2a. Empirisch wuerde Pilot dort scheitern.
+
+**Kritische HARTE BRUECHE bestaetigen User-Reasoning:**
+- Phase 1 Rahmen: AGENT_MATERIAL Phase-2-deferred -> kein Plugin-Subagent baut data.json-Skelett.
+- Phase 2.1 Material: AGENT_MATERIAL Phase-2-deferred -> Workflow stoppt komplett.
+- Phase 2.1c Cross-Konsistenz: kein Plugin-Subagent.
+- Phase 2.2a Progressionsplan: AGENT_RAETSEL Phase-2-deferred -> Workflow stoppt.
+
+**Track-P.2-Plan-Doku C-TIEFE-REFACTOR-PLAN.md v1.0:**
+
+16 Bloecke, 33.5 PT Total, ~5 Wochen, konsistent mit Roadmap v2.2-Schaetzung.
+
+**Phase A — Kritischer Pfad (sequenziell, ~17 PT, 3 Wochen):**
+- B.1 (5 PT) AGENT_MATERIAL 3-way-Split: agent-material-design + agent-material-dispatcher + Gate-Runner-Verteilung.
+- B.2 (3 PT) AGENT_RAETSEL 3-way-Split: agent-raetsel-progressionsplan + agent-raetsel-dispatcher.
+- B.3 (3 PT) phase-transition-runner-Plugin-Subagent + phase_transitions.json Config (23 Uebergangstabellen-Zeilen).
+- B.4 (3 PT) game_state.json Schema + Validator + render_pi_state_block.py + post-state-update-Hook.
+- B.5 (1 PT) /resume-state JSON-Pfad-Erweiterung mit Konflikt-Resolution.
+- B.6 (2 PT) state-advance-policy-Skill mit Auto-Trigger.
+
+**Phase B — Coverage + Pre-Flight (parallel, ~12.5 PT, 1.5 Wochen):**
+- B.7 (3 PT) D.3+D.4 Hook-Aktivierung mit dispatch_meta_helper.py + check_q_gate_log.py.
+- B.8 (2 PT) D.5+D.6 Aufgaben-Hooks + aufgabe_v1.json Schema.
+- B.9 (1 PT) D.7 SUB_ASSEMBLY_VERIFY-Hook fuer data.json.
+- B.10 (1 PT) Pre-Flight-Doku TARGET + MCP + code-mode-launch.sh.
+- B.11 (2 PT) Pfad-Resolution Triple-Root in 24 Subagent-Specs.
+- B.12 (1.5 PT) phase-prerequisites-check-Skill.
+- B.15 (1 PT) Hook-Pattern v3.11.0+-Route + material_v*.json.
+- B.16 (1 PT) promote_sequenzkontext.py-Tool.
+
+**Phase C — Token-Optimierung + Vertraege (~4 PT, 0.5 Woche):**
+- B.13 (3 PT) 11 Vertrags-Skills (8 Skills + 2 Commands + 1 Hook).
+- B.14 (1 PT) Sub-B.1b V16-Refactor Token-Einsparung 47k.
+
+**Akzeptanzkriterien Track P.2:**
+- Hart: 11 Bloecke A+B-strukturell-DONE + Plugin-Validator + Plugin-Loader-Status enabled.
+- T-P.2-Smoke (3-5h) PASS — Self-Sustained-Run (1 Mappe Mini-Game).
+- T-State-Recovery (2-3h) PASS — Compaction-Simulation.
+- A-Plugin-Phase-2 (2-3h) PASS — Akzeptanz-Audit analog A-Plugin-Phase-1.
+- Weich: Plugin-Readiness >=95%.
+
+**Risiko-Register: 8 Risiken** (RP2-1 bis RP2-8) inkl. AGENT_MATERIAL-Cross-Ref-Verlust + phase-transition-runner-23-Zeilen-Vollstaendigkeit + game_state.json-Sync-Hook-Edge-Cases + F0B-Priming-Auto-Trigger-Zuverlaessigkeit + Phase-2-Refactor-Regression-Risiko.
+
+**Daily-Rhythm 5-Wochen-Plan:** detailliert in Plan-Doku §7.
+
+**Updates:**
+- `escape-game-generator/docs/projekt/C-TIEFE-REFACTOR-PLAN.md` v1.0 (NEU).
+- `escape-game-generator/docs/projekt/BEFUND_ARCHITEKTUR_REFRESH_PRE_P2.md` v1.0 (NEU).
+- `escape-game-generator/docs/projekt/TEST_AUDIT_ROADMAP.md` v2.2 -> v2.3.
+
+**Implikation:** Pilot-Test-Block bleibt aufgehoben, aber neuer Block: T-Full-Game-Pilot ist NACH Track P.2. Phase-A-Kritischer-Pfad ist Pflicht-Vorbedingung.
+
+**Aufwand:** ~80 Min Wall-Clock fuer Audit-Subagent-Run + Plan-Doku-Schreibung + Roadmap-Update + STATUS+CHANGELOG.
+
+**Naechste Schritte:**
+1. **B.1 Start: AGENT_MATERIAL 3-way-Split** (5 PT, ~3 Tage). Plan-Stufe + Cross-Ref-Inventar + 3-way-Split + Cross-Ref-Update. Implementations-Modus: Cowork-Task-Tool-Subagent oder Code-Mode-Plugin-Subagent (Strict-Separation-Wahl).
+2. **B.2 Start: AGENT_RAETSEL** analog.
+3. Phase-A-Bloecke B.3-B.6 manuell wegen Architektur-Entscheidungen.
+
+---
+
 ## 2026-04-25 — F-S-01 Fix DONE: Plugin-Setup-Doku + Python-Dependencies + Tool-Resilient
 
 **Scope:** Pflicht-Fix vor Pilot-Einsatz fuer F-S-01 (jsonschema-Dependency undokumentiert). 4 Files-Setup + Tool-graceful-Degrade.
