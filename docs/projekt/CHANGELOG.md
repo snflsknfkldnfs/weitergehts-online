@@ -4,6 +4,61 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-25 — Track P.2 Phase B B.8 + B.11 DONE (parallele Subagent-Dispatch, 4 PT)
+
+**Scope:** Plan §3.2 B.8 (2 PT) + B.11 (2 PT) Bundle. Parallele Subagent-Dispatch im selben Message-Block (zwei general-purpose Subagents, kein File-Ownership-Konflikt).
+
+**B.8 — D.5+D.6 Aufgaben-Hooks (Subagent ~35 Min, F-D4-02):**
+
+3 Deliverables:
+1. NEU `architektur/schemata/aufgabe_v1.json` (95 Z., JSON-Schema draft-2020-12):
+   - $id=aufgabe_v1, additionalProperties:false, required: id/type/fragestamm/loesung/_meta.
+   - 8 type-enums (mc/zuordnung/lueckentext/reihenfolge/freitext/begruendung/vergleich/quellenkritik).
+   - bloom_stufe L1-L6, afb I-III, _meta-Konsistenz mit dispatch_meta_v1.json.
+
+2. NEU `tools/validate_aufgabe_output.py` (250 LOC):
+   - CLI analog validate_material_output.py (graceful-degrade-Pattern).
+   - Args: aufgabe_file (positional), --schema, --json, --quiet, --self-test.
+   - Self-Test: PASS-Variante rc=0, FAIL-Variante rc=1 mit MISSING_REQUIRED.
+
+3. NEU `tools/check_aufgabe_regex.py` (305 LOC):
+   - 4 Regex-Checks: A-M16 (Prosa-Only fragestamm), A-M17 (material_refs Pattern), Bloom-Konsistenz, Loesung-Format-Konsistenz.
+   - Self-Test 4/4 PASS (PASS / Markdown-FAIL / Ref-FAIL / Bloom-WARN).
+
+4. MODIFIED `hooks/hooks.json` — 2 NEUE Hook-Entries:
+   - pre-write-aufgabe (D.5, PreToolUse Write, primary blockt exit 2 / revisor warnt exit 1, timeout 15).
+   - post-write-aufgabe (D.6, PostToolUse Write, exit 1 als Warning, timeout 15).
+
+**B.11 — Pfad-Resolution Triple-Root in Subagent-Specs (Subagent ~25 Min, F-D2-02 + F-PA-05 + F-PA-10 + F-PB7-01):**
+
+8 File-Edits:
+- `agents/agent-material-dispatcher.md`: 5 Pfad-Edits + neue Sektion "Subagenten-Dispatch-Konvention" mit `dispatch_meta=<absolute-path>`-Pflicht-Format + Beispiel-Task-Aufruf.
+- `agents/agent-raetsel-dispatcher.md`: 3 Pfad-Edits + analog Subagenten-Dispatch-Konvention-Sektion fuer 8 SUB_AUFGABE_*-Subagents.
+- `agents/SUB_ASSEMBLY_VERIFY.md`: 2 Pfad-Edits ({{TARGET_PATH}}-Konvention).
+- `commands/resume-state.md`: F-PA-10 Fix — 3-stufiger Glob-Pattern (Triple-Root primaer + generischer Fallback `**/docs/agents/artefakte/*/game_state.json` + Legacy `game-*/game_state.json`). Layout-Hinweis ergaenzt.
+- `commands/audit-game.md` + `commands/generate-mappe.md` + `commands/validate-game.md` + `commands/migrate-legacy.md`: je 1 Pfad-Edit auf {{TARGET_PATH}}-Konvention.
+
+**Verifikations-Greps:**
+- grep -r `/Users/paulad/` agents/ commands/ → 0 Treffer (PASS).
+- grep -rn `mappe-\[N\]` agents/ → nur phase_transitions.json (B.4-Schema) + ORCHESTRATOR (Legacy) — keine Plugin-Subagent-Spec mit literal mappe-[N] (PASS).
+- grep -l `{{TARGET_PATH}}` agents/ → 3 Plugin-Subagent-Specs (Output-Schreiber).
+
+**F-PB7-01 (LOW, dispatch_meta-Konvention)** GESCHLOSSEN durch B.11 — beide Dispatcher-Specs dokumentieren explizit das Pflicht-Format in Task-Description.
+
+**Smoke-Verifikation:**
+- Validator (`claude plugin validate .`): 0 Errors.
+- validate_aufgabe_output.py --self-test: PASS.
+- check_aufgabe_regex.py --self-test: 4/4 PASS.
+- Hook-Smoke 6/6 PASS (pre-write-aufgabe primary VALID/INVALID + revisor + non-aufgabe + post-write-aufgabe primary PASS/FAIL).
+
+**Track-P.2-Phase-B-Stand:** Phase A 18.5 + Phase B 10/12.5 = **28.5 / 31 PT (92 %)**. Verbleibend Phase B: B.12 (1.5 PT) + B.16 (1 PT) = 2.5 PT. Phase C: B.13 + B.14 = 4 PT.
+
+**Aufwand-Ist B.8+B.11 parallel:** ~35 Min Wall-Clock total (parallele Subagent-Dispatch) statt sequenziell ~60 Min — 40 % Speedup.
+
+**Final-Commit:** Gen-Repo `a6d354d`.
+
+---
+
 ## 2026-04-25 — Track P.2 Phase B Continue: B.9 + B.10 DONE Bundle (Self-Edit)
 
 **Scope:** Plan §3.2 B.9 (1 PT) + B.10 (1 PT) Bundle, beide Self-Edit-Hauptthread (kein Subagent).
