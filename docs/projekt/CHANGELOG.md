@@ -4,6 +4,46 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-25 — Phase-B-Bundle-Audit + B.7b-Patch-Cycle (Pilot-Vorbereitung Schritt 2)
+
+**Scope:** Pilot-Roadmap §23.3 Schritt 2 ausgefuehrt — Bundle-Audit Phase B (B.7-B.16) als Risiko-Reduktion-First-Step vor Code-Mode-Empirie. 3 HIGH-Findings entdeckt + im selben Cycle gefixed.
+
+**Modus:** AUDIT + EXECUTE (Cowork-Plugin-Dev).
+
+**Audit (Hauptthread Read-parallel statt Subagent, da erster Subagent-Spawn unzuverlaessig):**
+- 12 Phase-B-Artefakte gelesen: dispatch_meta_helper.py / check_q_gate_log.py / validate_aufgabe_output.py / check_aufgabe_regex.py / assembly_verify_runner.py / code-mode-launch.sh / promote_sequenzkontext.py / hooks.json / generate-game.md / phase-prerequisites-check SKILL.md / agent-material-dispatcher.md / agent-raetsel-dispatcher.md.
+- Methodik 1:1 analog Phase-A-Bundle-Audit (5 Dimensionen D1-D5).
+- Aggregat: 14 Findings (3 HIGH / 5 MED / 6 LOW). Vergleich Phase A: 15 Findings (3H/4M/8L) — vergleichbares Risiko-Profil.
+
+**3 HIGH-Findings (alle Hook-Pattern-Brueche):**
+- **F-PB-01:** Hooks `pre/post-write-material` Pattern `*materialien/*.json` decken v3.11.0+-Pro-Material-Layout NICHT ab (Bash-glob `*` matcht keine `/`). Quellentexte (v3.11.0+) entgehen G1+M16+M17 komplett.
+- **F-PB-02:** Phantom-Hook in agent-raetsel-dispatcher.md Z.155 — `post-aufgabe-subagent-stop` referenziert aber in hooks.json nicht definiert. Aufgaben-Subagent-Lifecycle nicht getrackt.
+- **F-PB-03:** Pattern `*aufgaben/aufgabe-*-*.json` in D.5+D.6 matcht faelschlich auch `aufgabe-N-M.dispatch_meta.json` → pre-Hook BLOCKT dispatch_meta-Write mit Schema-FAIL gegen aufgabe_v1.json.
+
+**B.7b-Patch-Cycle (5 mechanische hooks.json-Edits):**
+1. `pre-write-material` case erweitert um `*materialien/*/material.json` + `*materialien/*/material_v*.json` + early-out `*materialien/*/dispatch_meta.json` (4 → 6 cases).
+2. `post-write-material` case analog erweitert.
+3. Neuer Hook `post-aufgabe-subagent-stop` (PostToolUse Task, Filter `subagent_type=sub-aufgabe-*`) analog `post-material-subagent-stop`.
+4. `pre-write-aufgabe` case mit early-out `*aufgaben/aufgabe-*-*.dispatch_meta.json` (3 → 4 cases).
+5. `post-write-aufgabe` case analog.
+
+**Re-Smoke-Verifikation:**
+- JSON-Syntax PASS (`python3 -c json.load`).
+- Hook-Inventar 9 → **10 aktiv** (4 Pre + 6 Post).
+- Bash-glob-Pattern-Test **12/12 PASS** (Material 7/7, Aufgabe 5/5).
+
+**Status post-Patch:** 3 HIGH GESCHLOSSEN. 5 MED + 6 LOW non-blocking offen (code-mode-launch Pre-Flight + Schema-Verzeichnis-Drift + Tool-Exit-Code-Inkonsistenz + LOWs). Phase-B Pilot-Bereitschaft erreicht (Hook-Coverage-Brueche behoben).
+
+**Artefakte (Generator-Repo, escape-game-generator):**
+- `docs/projekt/BEFUND_PHASE_B_BUNDLE_AUDIT.md` (NEU, ~14 Findings + B.7b-Patch-Bilanz §8).
+- `hooks/hooks.json` (5 Edits + 1 neuer Hook-Block).
+
+**Aufwand-Ist:** ~70 Min Wall-Clock (40 Min Audit-Read-parallel + Befund-Persistenz, 25 Min Patch+Re-Smoke, 5 Min Subagent-Mis-Spawn-Recovery).
+
+**Naechster Schritt (Pilot-Roadmap §23.3):** Schritt 1 (T-P.2-Empirie via Code-Mode-CLI) ODER Schritt 3 (Pilot-Setup-Vorbereitung) — beide entsperrt durch HIGH-Closure.
+
+---
+
 ## 2026-04-25 — Plan-Konsolidierung UPGRADE_PLAN v3-12 v1.6 → v1.7
 
 **Scope:** Plan-Doku-Konsolidierung post-Track-P.2-Closure. Drift-Reduktion vor Pilot-Pfad.
