@@ -4,6 +4,70 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-25 — T-P.1-Smoke S2 PASS post-Fix-Cycle: Plugin Status enabled, 4 HIGH-Loader-Errors gefixt
+
+**Scope:** Plan §4 Akzeptanz-Test T-P.1-Smoke. Mechanische Plugin-Loader-Akzeptanz (S2). Empirische LLM-Aktivierungs-Tests (S3-S7) DEFERRED.
+
+**Smoke-Setup:**
+
+1. **Marketplace-Wrapper:** `.claude-plugin/marketplace.json` v1.0 (commit `db72014` + `f36ff5f`).
+   - Owner: Paul Cebulla.
+   - Plugin-Source-Format: `{source: "url", url: "https://github.com/snflsknfkldnfs/escape-game-generator.git"}` (HTTPS-URL fuer privat-Repo, nicht github-default-SSH).
+   - `claude plugin marketplace add https://github.com/snflsknfkldnfs/escape-game-generator.git` -> ✔ Successfully added.
+
+2. **S2-Run-1 (FAIL Plugin-Loader):**
+   - Plugin installiert mit Status `✘ failed to load`. 4 HIGH-Errors:
+     - `agents` Glob `./agents/*.md` -> `Path not found`.
+     - `agents` Glob `./agents/_includes/*.md` -> `Path not found`.
+     - `commands` Glob `./commands/*.md` -> `Path not found`.
+     - `hooks` String `./hooks/hooks.json` -> `Duplicate hooks file detected: standard hooks/hooks.json is loaded automatically`.
+
+**KRITISCHE Lessons-Learned:**
+
+- **Validator-CLI ist NICHT voll-empirisch.** Light-Audit-BEFUND v1.1 §13 hatte F-B-01 (`agents` Anti-Pattern) + F-B-02 (`hooks` Anti-Pattern) als WIDERLEGT markiert weil `claude plugin validate` keine Errors gemeldet hat. Plugin-Loader-Run hat empirisch das Gegenteil gezeigt.
+- **community-Sekundaerquelle PLUGIN_SCHEMA_NOTES.md hatte KORREKT die Anti-Patterns markiert.** Audit-v1.1-WIDERLEGUNG ist falsch und muss korrigiert werden.
+- **Pflicht-Verifikations-Reihenfolge:** (1) `claude plugin validate` statisch, (2) `claude plugin install` + `plugin list` empirisch, (3) Audit-Subagent.
+
+3. **Smoke-Fix-Cycle (commit `b6bf35f`):**
+   - Manifest v0.3.0 -> v0.3.1.
+   - `agents`-, `commands`-, `hooks`-Felder ENTFERNT.
+   - Auto-Discovery via Konvention uebernimmt: `agents/*.md`, `commands/*.md`, `skills/<name>/SKILL.md`, `hooks/hooks.json`.
+
+4. **S2-Run-2 (PASS):**
+   - `claude plugin uninstall` + `marketplace update` + `plugin install`.
+   - `claude plugin list` -> `Status: ✔ enabled`. Version 0.3.1.
+
+**Cache-Inventar verifiziert (Auto-Discovery):**
+- 5 Skills: `escape-game-schema/`, `f0b-priming/`, `pfad-manifest/`, `rollen-katalog/`, `trigger-sichtbarkeit/`.
+- 6 Commands: `audit-game.md`, `generate-game.md`, `generate-mappe.md`, `migrate-legacy.md`, `resume-state.md`, `validate-game.md`.
+- 10 Agents im Cache (24 Frontmatter-validierte + Phase-2-pending wie ORCHESTRATOR, AGENT_MATERIAL, AGENT_RAETSEL).
+
+**BEFUND-Datei:** `escape-game-generator/docs/projekt/BEFUND_T_P1_SMOKE.md` v1.0 persistiert mit 4-Lessons-Learned.
+
+**Auto-Memory-Update:** `feedback_validator_cli_primary.md` erweitert um Plugin-Loader-Run-Pflicht + url-source-Format-Hinweis + Manifest-Minimal-Form-Empfehlung.
+
+**S3-S7 DEFERRED (LLM-Token-Run noetig):**
+- S3 Skill-Auto-Trigger via `claude -p "<material-phase-prompt>"`.
+- S4 Command-Aufruf via `claude -p "/resume-state"`.
+- S5 Hook-Aktivierung via Material-Write-Test (D.1 PreToolUse Block? D.2 PostToolUse Warning?).
+- S6 E2E `/generate-game test-game 7c 1` (Wochen-Aufwand, deferred zu T-Full-Game Phase-2-Gate).
+- S7 Plugin-internal-Discovery-Listing.
+
+**Akzeptanzkriterien T-P.1-Smoke (Plan §4):**
+- [x] Mechanische Plugin-Loader-Akzeptanz `Status: ✔ enabled`.
+- [x] Plugin-Manifest SDK-konform (v0.3.1, ohne Anti-Patterns).
+- [x] Skills/Commands/Agents Discovery via Konvention.
+- [ ] Empirische LLM-Aktivierungs-Tests S3-S7 DEFERRED.
+
+**Aufwand:** ~30 Min Wall-Clock fuer Smoke-Setup + Fix-Cycle + BEFUND + STATUS+CHANGELOG.
+
+**Naechste Schritte:**
+1. **Audit A-Plugin-Phase-1** statisch (User-Wunsch nach Smoke). Cross-Repo-Konsistenz + Plan-Compliance + Block-A-H-Konsolidierung. **Empfohlene Korrektur des Light-Audit-BEFUND v1.1: F-B-01 + F-B-02 RE-WIDERRUFEN (Anti-Patterns bestaetigt empirisch).**
+2. Empirische S3-S7 in dedizierter Code-Mode-Session.
+3. Track P.2-Plan-Doku post-Audit + post-Empirie.
+
+---
+
 ## 2026-04-25 — TRACK P.1 KOMPLETT DONE: Block H DONE — Cross-Repo-Doku + Code-Mode-Anker
 
 **Scope:** Plan §2.8 (1 PT, letzter Block). Track P.1 vollstaendig abgeschlossen — alle 8 Bloecke A-H DONE.
