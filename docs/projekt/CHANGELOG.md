@@ -4,6 +4,44 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-26 — Plugin-Dev-Learnings PM-Verankerung (8 strukturelle Lessons aus v0.4.x-Cycle)
+
+**Scope:** Cross-Session-Persistierung der Plugin-Entwicklungs-Lessons fuer zukuenftige Plugin-Dev-Cycles. Empirie aus Track-P.2 + B.7c-Hooks + v0.4.0/v0.4.1-Schema-Hotfix.
+
+**Modus:** EXECUTE (Cowork-PM, parallel zu Plugin-Install-Verifikation im Code-Mode).
+
+**Drei Verankerungs-Layer:**
+
+1. **Memory `feedback_plugin_dev_workflow.md` (NEU):** Cross-Session-Cowork-Layer. 8 Learnings konsolidiert mit Why/How-to-Apply-Block.
+2. **`escape-game-generator/docs/projekt/PLUGIN_DEV_LEARNINGS.md` (NEU):** Kanonisches Lessons-Learned-Doku (10 Sektionen). SSoT fuer Plugin-Dev. Cross-Ref auf BEFUND + PLUGIN_DEPENDENCIES + Memory.
+3. **`PLUGIN_DEPENDENCIES.md` §13 (NEU):** Schema-Restriktionen + Custom-Felder-Convention + Pre-Push-Test-Pflicht.
+
+**8 verankerte Learnings:**
+
+1. CC-Plugin-Schema-Restriktionen — `dependencies` ist Array-Type-reserviert. Empirisch entdeckt via v0.4.0-Install-Failure.
+2. Custom-Felder-Convention — Underscore-Prefix (`_xxx`) fuer Plugin-spezifische Strukturen.
+3. Plugin-Update-Workflow — `claude plugin update` greift NICHT bei Custom-Marketplace. Pflicht: uninstall + marketplace update + install.
+4. Plugin-Cache-Layout — `~/.claude/plugins/cache/<marketplace>/<plugin>/<version>/` + temp_git_*. Cache-Cleanup-Pflicht bei Failed-Install.
+5. `claude mcp add`-Syntax — `--transport stdio <name> -- <command>` mit double-dash.
+6. TARGET-Verzeichnis-Naming-Konvention — Plugin nutzt `<thema-slug>/`, NICHT `<game-id>/`. Setup-Skelette mit alternativer Naming werden ignoriert.
+7. PM-Pflicht-Reset bei abgebrochenem Run — Plugin macht keinen Auto-Reset; manuelle PI-Reset + TARGET-Archivierung Pflicht.
+8. Vergleichs-Empirie Pre-/Post-Patch-Run — identische Game-Parameter + Versions-Variablen-Matrix als BEFUND-Doku.
+
+**Cross-Refs MEMORY-Index aktualisiert** mit `feedback_plugin_dev_workflow` (Cowork-Memory).
+
+**Backlog fuer Plugin-Dev-Process-Optimierung (5 Items):**
+- MED: Pre-Push-Schema-Test-Tool
+- MED: Plugin-Cache-Cleanup-Tool
+- LOW: Plugin-Test-Suite (CI-Pflicht)
+- LOW: Plugin-Dependency-Graph-Visualizer
+- LOW: Marketplace-Source-Switcher (file ↔ url Toggling)
+
+**Aufwand:** ~15 Min Wall-Clock (3 neue/erweiterte Files).
+
+**Naechster Schritt:** User-Terminal Pilot-Re-Run-Sequenz fortsetzen: Wikipedia-MCP-Setup + Wrapper-Launch + `/escape-game-generator:generate-game`.
+
+---
+
 ## 2026-04-26 — Run-1-Archivierung + PI-Reset (Pre-Run-2-Vorbereitung)
 
 **Scope:** Sauberer Pilot-Re-Run-State herstellen. Run-1-Output 1:1 erhalten als Vergleichs-Referenz, Run-2 ohne Interferenz starten lassen.
