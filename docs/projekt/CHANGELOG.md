@@ -4,6 +4,54 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-26 — Plugin v0.4.0 Dependency-Architektur (F-PB-15+16+28-Cluster CLOSED, 5 HIGH closed)
+
+**Scope:** Vollstaendige Plugin-Dependency-Architektur als Antwort auf Pilot-Empirie (MCP-Gap Phase 0.2). Variante C der Re-Run-Strategie. 8-Schritte-Cycle, ~95 Min Wall-Clock.
+
+**Modus:** EXECUTE (Cowork-Plugin-Dev), Pilot-Re-Run-Vorbereitung.
+
+**Architektur-Erweiterung Plugin v0.3.3 → v0.4.0:**
+
+1. **plugin.json `dependencies`-Sektion (NEU):** 4-Schicht-Manifest. requiredMcpServers (wikipedia PFLICHT) / optionalMcpServers (wikimedia-commons + wayback) / useCaseMcpServers (deutsche-gesetze + european-parliament thematisch) / webFetchFallbackSources (bpb/DDB/Europeana/Bundesarchiv/Destatis/LeMO als WebFetch). Plus requiredCliTools + requiredPythonPackages.
+2. **PLUGIN_DEPENDENCIES.md (NEU, ~250 Z):** Vollstaendige Setup-Anleitung mit konkreten Server-Strings, Fallback-Logik, Architektur-Schichten, Quellen-Referenzen.
+3. **tools/setup-mcp.sh (NEU):** Idempotenter Bash-Wrapper. Liest plugin.json dependencies, prueft via `claude mcp list`, listet missing PFLICHT/EMPFOHLEN/USE-CASE-MCPs + CLI-Tools + Python-Packages.
+4. **tools/check_mcp_availability.py (NEU):** Python-CLI fuer Phase-spezifischen Pre-Flight-Check. PASS/WARN/FAIL pro Phase mit konkreten Fix-Anweisungen. self-test PASS.
+5. **phase-prerequisites-check Skill Schritt 4b (NEU):** MCP-Pre-Flight-Check vor jeder Phase mit MCP-Dependency. Phase-MCP-Pflicht-Matrix. Override-Mechanismus.
+6. **AGENT_INHALT Daten-Quellen-Strategie (NEU):** Vorrang-Ordnung MCP > WebFetch > LLM-Memory. data_source-Annotation Pflicht pro Daten-Punkt. KEIN silent-graceful-degrade. E-D3-DATA-DEGRADED-Eskalation explizit.
+7. **code-mode-launch.sh v0.4.0:** 5-Stage-Pfad-Resolution (Args > ENV > Config > Glob > Default). CC-Version-Check >= 2.1.119. MCP-Pre-Flight-Integration via setup-mcp.sh.
+8. **~/.escape-game.env:** User-Setup-Persistenz fuer Triple-Root-Pfade. Auf User-Mac angelegt.
+
+**Empirisch-Cowork-Recherche (C.1):**
+- Wikipedia: Rudra-ravi/wikipedia-mcp via pipx (PFLICHT-Pfad)
+- Wikimedia: ProfessionalWiki/MediaWiki-MCP-Server (optional, generisch)
+- Bonus: deutsche-gesetze + european-parliament + wayback-machine (use-case)
+- bpb/DDB/Europeana/Bundesarchiv: KEIN MCP — WebFetch-Fallback Pflicht
+
+**5 Findings CLOSED in v0.4.0:**
+- F-PB-15 HIGH (Wrapper-Pfad-Heuristik) → CLOSED via 5-Stage-Resolution
+- F-PB-16 MED (CC-Version-Check fehlt) → CLOSED via Wrapper-Check
+- F-PB-28 HIGH (MCP-Pre-Flight-Pflicht-Verifikation) → CLOSED via 4-Schicht-Manifest + Pre-Flight-Skill + Setup-Tool + Check-Tool
+- F-PB-30 LOW (E-D-Granularitaet) → CLOSED via E-D3-DATA-DEGRADED-Marker
+- F-PB-32 HIGH (Wikimedia-MCP-Pflicht) → CLOSED-mit-WebFetch-Fallback (optional + WebFetch-Pfad)
+- F-PB-07 MED (Plugin-Install nur Warning) → CLOSED via MCP-Pre-Flight-Sichtbarkeit
+
+**Aggregat post-v0.4.0:** 22 Findings total. **Nur 2 HIGH offen** (F-PB-24 pending Verifikation via Diagnostik-Hooks im naechsten Pilot-Run, F-PB-32 closed-with-fallback). 5 MED + 6 LOW non-blocking. **Pilot-Re-Run-Bereitschaft erreicht.**
+
+**Plugin-Version:** 0.3.3 → 0.4.0 (Minor-Bump fuer Architektur-Erweiterung).
+
+**Pilot-Re-Run-Sequenz fuer User:**
+1. CC `/exit`
+2. `claude plugin update escape-game-generator` (zieht v0.4.0)
+3. `pipx install wikipedia-mcp` + `claude mcp add --transport stdio wikipedia -- wikipedia-mcp`
+4. `./tools/code-mode-launch.sh` (mit ~/.escape-game.env: keine expliziten Args mehr noetig!)
+5. CC: `/escape-game-generator:resume-state` ODER `/escape-game-generator:generate-game weimarer-republik-anfangsphase 7c 4` (fresh)
+
+**Aufwand:** ~95 Min Wall-Clock (Schaetzung Variante C 45-60 Min unter-erfuellt durch tiefere Manifest-Doku + Tool-Implementation).
+
+**Naechster Schritt nach Plugin-Update + MCP-Setup:** Pilot-Re-Run mit MCP-aktiv. Phase 0.1 (sollte gleich oder besser sein, R-TITEL-3 jetzt verschaerft) → Phase 0.2 mit echten Wikipedia-MCP-Calls (statt LLM-Memory) → Phase 0.2.M mit WebFetch-Fallback fuer Wikimedia. Vergleichs-Empirie zwischen Pre-MCP-Pilot (Phase 0.1+0.2) und Post-MCP-Pilot.
+
+---
+
 ## 2026-04-26 — Phase-0.2-Empirie + MCP-Pre-Flight-Gap (5 neue Findings F-PB-28/29/30/31/32)
 
 **Scope:** Phase-0.2-Tiefen-Eval + MCP-Verifikation via CC-Config-Read. 5 neue Backlog-Findings.
