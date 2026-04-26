@@ -4,6 +4,52 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-26 — Phase-0.2-Empirie + MCP-Pre-Flight-Gap (5 neue Findings F-PB-28/29/30/31/32)
+
+**Scope:** Phase-0.2-Tiefen-Eval + MCP-Verifikation via CC-Config-Read. 5 neue Backlog-Findings.
+
+**Modus:** AUDIT (Cowork, parallel zu pausiertem Pilot-Run vor Phase 0.2.M).
+
+**Phase 0.2 Output (agent-inhalt, 11m 2s · 88.7k tokens · 4 tool uses):**
+- INHALTSBASIS_weimarer-republik-anfangsphase.md mit 26 Wikipedia-Quellen + 17 Wikimedia-Kandidaten + 4 Primaerquellen.
+- Q-Gates: 9 PASS + 2 BLOCKER (QI-MV verschoben auf 0.2.M, QI-TV M3-Titel User-Entscheidung).
+- trigger_categories: [Konflikt, Macht-Asymmetrie, Revolution, Gewalt, Trauma, Demokratie-Gefaehrdung].
+- M3-Titel-Drift selbst-detektiert (R-TITEL-3-Verletzung "Schandfrieden") — Plugin-Reasoning-Pluspunkt.
+
+**KRITISCHER ARCHITEKTUR-GAP:**
+
+CC-Config-Read via osascript (`~/.claude.json`): `mcpServers keys: []` — **User hat KEINE MCPs in CC v2.1.119 konfiguriert.** Phase 0.2 lief vollstaendig ohne wikipedia/wikimedia-MCP. Plugin-graceful-degrade auf LLM-Wissensbasis (Cutoff 2024).
+
+**Plugin-Verhalten:** Caveat-Header statt FAIL. Kein E-D-Marker fuer DATA-RELIABILITY-DEGRADED.
+
+**Inhaltliche Konsequenz:**
+- 26 Wikipedia-"Quellen" sind LLM-Memory, nicht MCP-fetched.
+- 17 Wikimedia-Kandidaten ohne Commons-API-Verifikation.
+- Faktische Daten unverifiziert (Reparationssumme 132 Mrd. Goldmark, Hyperinflation 4,2 Bio. Mark, Tote-Spannweiten Spartakus/Raeterepublik).
+- Lehrkraft-Stichprobe vor Deploy Pflicht.
+
+**5 NEUE Findings:**
+
+- **F-PB-28 HIGH:** MCP-Pre-Flight-Pflicht-Verifikation fehlt im Plugin. phase-prerequisites-check-Skill prueft nicht MCP-Erreichbarkeit. Empirisch bestaetigt.
+- **F-PB-29 MED:** R-TITEL-3 Cross-Phase-Inkonsistenz. Multiperspektiv-Check erst Phase 0.2 (QI-TV) statt Phase 0.1 (QD-Gate). Doku-Patch-Aufwand 3 Files.
+- **F-PB-30 LOW:** E-D-Eskalations-Granularitaet — MCP-Missing nur Caveat, kein State-Eskalations-Marker.
+- **F-PB-31 LOW:** Token-Budget-Tracking pro Phase fehlt. Hochrechnung Pilot ~2.3M Tokens.
+- **F-PB-32 HIGH:** Wikimedia-MCP-Pflicht fuer Phase 0.2.M nicht verifiziert. Folge-Risk von F-PB-28. Empirisch bestaetigt — Phase 0.2.M wuerde graceful-degrade gehen.
+
+**Aggregat post-Phase-0.2:** 22 Findings total. 4 HIGH offen (F-PB-15 + F-PB-24 + F-PB-28 + F-PB-32), 5 HIGH closed (B.7b + B.7c), 6 MED offen, 8 LOW offen, 2 RETRACTED.
+
+**Pilot-Entscheidung User:** Option B — Phase 0.2.M mit graceful-degrade laufen lassen, Lehrkraft-Manual-Verifikation der 17 Wikimedia-Kandidaten vor Deploy. Architektur-Lerneffekt > Inhalts-Validitaet fuer Test-Pilot.
+
+**M3-Titel-Entscheidung:** User pending zwischen A (sachlich) / B (multiperspektivisch) / C (Reportage-Headline, Plugin-Empfehlung).
+
+**Architektur-Eval Phase 0.2:** PASS-mit-2-HIGH-Backlog (F-PB-28 + F-PB-32 nicht-blockend fuer Phase-0.2-PASS, aber Pflicht-Fix vor produktivem Pilot-Einsatz).
+
+**Aufwand Eval + PM-Update:** ~10 Min Wall-Clock.
+
+**Naechster Schritt:** User-Antwort M3-Titel → Plugin patcht 3 Files + dispatcht Phase 0.2.M agent-medienrecherche. Beobachtung Wikimedia-graceful-degrade-Verhalten.
+
+---
+
 ## 2026-04-25 — B.7c-Hook-Refactor (Pilot-Mid-Run, F-PB-24/26/27 + 2 RETRACTED)
 
 **Scope:** Hook-System-Refactor nach Pilot-Mid-Run-Empirie. CC-Debug-Log-Analyse zeigte: 9 von 10 Hooks effektiv stumm in CC v2.1.x.
