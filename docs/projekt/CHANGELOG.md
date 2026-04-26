@@ -4,6 +4,83 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-26 — Plugin v0.4.2 + Run-2-Archivierung + Pre-Run-3-Vorbereitung
+
+**Scope:** Run-2-Phase-0.1 abgeschlossen + evaluiert + archiviert. Subagent-Frontmatter-Fix (F-PB-35) + Parser-Fix (F-PB-33) eingezogen. Plugin v0.4.2 push. Run-3 entkoppelt vorbereitet.
+
+**Modus:** EXECUTE (Cowork-Plugin-Dev), Pilot-Mid-Run-Evaluation + Pre-Run-3-Setup.
+
+**Run-2-Phase-0.1-Evaluation:**
+
+Run-2 (v0.4.1, Phase 0.1 only) zeigte substantielle Architektur-Verbesserung gegenueber Run-1:
+
+| Aspekt | Run-1 (v0.3.1) | Run-2 (v0.4.1) |
+|---|---|---|
+| Q-Gates | 10 PASS | 10 PASS + 1 PASS_WARN |
+| QD-TITEL (NEU B.7d) | nicht existent | **4/4 PASS** |
+| M3-Titel | "Schandfrieden" R-TITEL-3-VIOLATION | "Wie reagieren die Menschen?" fragend ✓ |
+| Lehrplan-Eskalation | E-D2 separate Stufe | QD2 PASS_WARN integriert |
+| KE-Mapping | implizit | explizit Tabelle pro Mappe |
+| Wall-Clock | 4m 56s | 6m 50s (+38%) |
+| Tokens | 66.5k | 73.7k (+11%) |
+
+→ **F-PB-29 EMPIRISCH-VERIFIED-CLOSED.** R-TITEL-3-Verschaerfung wirkt.
+
+**KRITISCHER FUND vor Phase 0.2:**
+
+→ **F-PB-35 HIGH NEU:** 9 Subagent-Frontmatter haben nur `tools: Read, Grep, Glob, Write` — **KEINE MCP-Tools, kein WebFetch.** Phase 0.2 wuerde mit dispatched Subagent (agent-inhalt) ohne Wikipedia-MCP-Zugriff laufen → graceful-degrade auf LLM-Memory **wie Run-1**. Inhalts-Empirie waere identisch.
+
+**Cowork-Fix-Cycle (Schritte 4-6 aus User-Strategie):**
+
+1. **F-PB-35-Fix (9 Subagent-Frontmatter erweitert):**
+   - AGENT_INHALT: + WebFetch + 11 mcp__wikipedia__*-Tools (16 total)
+   - AGENT_MEDIENRECHERCHE: + WebFetch + 7 mcp__wikipedia__*-Tools (12 total)
+   - SUB_MATERIAL_DARSTELLUNGSTEXT: + WebFetch + 8 mcp__wikipedia__*-Tools (13 total)
+   - SUB_MATERIAL_QUELLENTEXT: + WebFetch + 8 mcp__wikipedia__*-Tools (13 total)
+   - SUB_MATERIAL_BILDQUELLE: + WebFetch + 5 mcp__wikipedia__*-Tools (10 total)
+   - SUB_MATERIAL_KARTE: + WebFetch + 5 mcp__wikipedia__*-Tools (10 total)
+   - SUB_MATERIAL_TAGEBUCH: + WebFetch + 6 mcp__wikipedia__*-Tools (11 total)
+   - SUB_MATERIAL_STATISTIK: + WebFetch + 5 mcp__wikipedia__*-Tools (10 total)
+   - SUB_MATERIAL_ZEITLEISTE: + WebFetch + 6 mcp__wikipedia__*-Tools (11 total)
+
+2. **F-PB-33-Fix (check_mcp_availability.py Parser-Robustheit):** Erweiterter Parser mit SKIP_PREFIXES + SKIP_KEYWORDS-Filter + strikte Name-Pattern-Validation. Self-Test PASS post-Fix.
+
+3. **Run-2-Archivierung:** TARGET-Verzeichnis `weimarer-republik-anfangsphase/` umbenannt zu `weimarer-republik-anfangsphase-run2-phase-0.1-only-20260426/`. PROJECT_INSTRUCTIONS_SNAPSHOT_run2.md persistiert.
+
+4. **PI-Reset auf ONBOARDING:** Game-Parameter-Tabelle leer + SPEICHERSTAND-Block um Run-2-Archiv-Pfad erweitert.
+
+5. **Plugin-Version-Bump:** 0.4.1 → 0.4.2 (Patch-Bump fuer Subagent-Frontmatter + Parser-Fixes).
+
+**Aggregat post-v0.4.2:**
+
+- **F-PB-29 CLOSED-VERIFIED** (R-TITEL-3 empirisch wirksam in Run-2-Phase-0.1)
+- **F-PB-33 CLOSED** (Parser-Fix mit Self-Test PASS)
+- **F-PB-35 CLOSED** (9 Subagent-Frontmatter erweitert)
+- 22 Findings total → 6 HIGH closed (war 5) + 5 MED + 6 LOW + 2 RETRACTED
+- **Nur 1 HIGH offen** (F-PB-24 pending Verifikation via Diagnostik-Hooks im Run-3)
+
+**Pilot-Re-Run-3-Bereitschaft erreicht.** Frischer Start mit:
+- R-TITEL-3-Konvention verifiziert wirksam
+- Subagent-Frontmatter MCP-aktiviert
+- check_mcp_availability robust
+- TARGET-Pfad clean (Run-2 archiviert)
+- PI-State ONBOARDING
+
+**Aufwand:** ~30 Min Wall-Clock (9 Frontmatter-Edits + 1 Parser-Fix + Plugin-Version-Bump + PM-Doku + Archivierung).
+
+**Naechster Schritt fuer User:**
+```bash
+claude plugin uninstall escape-game-generator
+claude plugin marketplace update escape-game-generator-local
+claude plugin install escape-game-generator@escape-game-generator-local
+./tools/code-mode-launch.sh
+# Im CC: /escape-game-generator:generate-game weimarer-republik-anfangsphase 7c 4
+```
+
+Run-3 wird Phase 0.1 (vergleichbar Run-2) + Phase 0.2 (mit echten Wikipedia-MCP-Calls) + ggf. weitere Phasen liefern.
+
+---
+
 ## 2026-04-26 — Plugin-Dev-Learnings PM-Verankerung (8 strukturelle Lessons aus v0.4.x-Cycle)
 
 **Scope:** Cross-Session-Persistierung der Plugin-Entwicklungs-Lessons fuer zukuenftige Plugin-Dev-Cycles. Empirie aus Track-P.2 + B.7c-Hooks + v0.4.0/v0.4.1-Schema-Hotfix.
