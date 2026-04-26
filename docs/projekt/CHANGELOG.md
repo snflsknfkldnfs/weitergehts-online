@@ -4,6 +4,55 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-26 — Plugin v0.5.0 Phase B HIGH-Findings KOMPLETT (Generator-Repo)
+
+**Scope:** Phase B Sessions B.1 + B.2 + B.3 fuer Plugin v0.5.0 Hardening (11.5 PT Plan, 9 HIGH-Findings F-PB-36/37/38/40/41/42/43/45/46).
+
+**Modus:** EXECUTE (Cowork-Plugin-Dev), Variante B 3-Sessions, Variante 1 Commit-Strategie (3 Commits Phase B), Self-Edit fuer AGENT-Patches + Subagent-Pattern fuer 2 Tools (B.3).
+
+**3 Commits Generator-Repo:**
+
+1. **B.1 Phase-0.2-Schicht F-PB-37+38+41** (Commit `3009ce2`):
+   - VERTRAG_PHASE_0-2_INHALT: 5 Patches (material_kandidaten formal + event_date + aeusserungs_datum + QI-MV quellenkritik + neuer QI-MK)
+   - AGENT_INHALT: 3 Patches (Output-Template schluessel_fakten + Zitate + Material-Kandidaten)
+   - AGENT_MEDIENRECHERCHE: 2 Patches (§3 Kanal-2-Auswertung + §5 Output-Schema quellenkritik-Block)
+   - AGENT_ARTEFAKT: 3 Patches (Q11 + Q12 + aeusserungs_datum-Spalte)
+   - 4 Files / 44 Insertions / 11 Patches
+
+2. **B.2 Phase-0.3-Schicht F-PB-36+40-rest+42** (Commit `f70d69a`):
+   - VERTRAG_PHASE_0-3_SKRIPT: 3 Patches (Eingabe Q-GATE-LOG + medien_katalog._meta + Tafelbild-Pflicht-Felder + QS-DRIFT)
+   - AGENT_ARTEFAKT: 3 Patches (Eingabe medien_katalog + Output-Pflicht-Felder + Q13)
+   - AGENT_SKRIPT: 2 Patches (Eingabe-Erweiterung + Qualitaets-Gate QS-DRIFT)
+   - 3 Files / 33 Insertions / 8 Patches
+
+3. **B.3 Phase-0.1 + Tools F-PB-43+45+46** (Commit `b305207`):
+   - VERTRAG_PHASE_0-1_DIDAKTIK: 1 Patch (neuer QD-SCHULART BLOCKER)
+   - AGENT_DIDAKTIK: 1 Patch (QD-SCHULART Self-Check)
+   - AGENT_SKRIPT: 1 Patch (Qualitaets-Gate Stufe 3 SK-Validator)
+   - hooks/hooks.json: 1 Patch (neuer post-assemble-math-check Hook)
+   - NEU tools/validate_skript_sk.py (~430 Z., SK1/4/5/7/14/18-Validator)
+   - NEU tools/check_math_consistency.py (~440 Z., Header-vs-Body-Counts)
+   - 6 Files / 1319 Insertions / 8 Patches (inkl. 2 NEW Tools)
+
+**Aufwand-Ist Phase B:** ~2-3h Wall-Clock kumuliert (Plan 11.5 PT ~5-7h).
+
+**F-PB-Coverage post-Phase-B:**
+- AGENT-Layer: alle 9 HIGH-Findings strukturell verankert (Subagent-Prompt-Erzwingung)
+- Validator-Layer: 6 Domain-Logic-Validatoren (4 Foundation A4 + 2 Phase B.3)
+- Hook-Layer: 5 Phase-0-Hooks (4 Foundation A3 + 1 Phase B.3)
+- Schema-Layer: 4 Phase-0-Schemas (Foundation A2)
+
+**Plus 1 weiterer empirischer Befund (post-B.3):**
+SKRIPTE haben systematisch SK4-Drift (kein §N-Markierung) + SK7-Drift (keine Multikausal-Konnektoren). Run-3 erfuellt wortwoertliche VERTRAG_PHASE_0-3 §3.4-Konvention nicht. Empfehlung: Phase C oder Run-4-Vorbereitung — Vertrag-Schwellwert lockern ODER agent-skript-Prompt um explizite §N-Markierung + Konnektor-Pflicht ergaenzen.
+
+**Hook-Inventar:** PreToolUse 5, PostToolUse 9 → 10, SubagentStop 2 (total 17).
+
+**v0.5.0-Coverage:** Foundation (10.5 PT) + Phase B (11.5 PT) = 22 PT / 26 PT. F-PB-04 + 9 HIGH adressiert.
+
+**Verbleibend:** Phase C MED (F-PB-39/44/47/49) + Phase D LOW (F-PB-48) = 5 Findings, ~4 PT, separater Stufe-1-Plan in Folgesession.
+
+---
+
 ## 2026-04-26 — Plugin v0.5.0 Foundation Phase A KOMPLETT (Generator-Repo)
 
 **Scope:** Foundation A1+A2+A3+A4+A5 fuer Plugin v0.5.0 Hardening (10.5 PT Plan, F-PB-04+S1+S2+S3 strukturelle Grundinvestitionen).
