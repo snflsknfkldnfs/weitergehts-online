@@ -4,6 +4,31 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-26 — Run-1-Archivierung + PI-Reset (Pre-Run-2-Vorbereitung)
+
+**Scope:** Sauberer Pilot-Re-Run-State herstellen. Run-1-Output 1:1 erhalten als Vergleichs-Referenz, Run-2 ohne Interferenz starten lassen.
+
+**Modus:** EXECUTE (Cowork-PM, vor Plugin-Update + MCP-Setup im User-Terminal).
+
+**Drei Aktionen:**
+
+1. **PROJECT_INSTRUCTIONS_SNAPSHOT_run1.md** im Run-1-Verzeichnis erstellt (kopiert PI-State zum Run-1-Ende: Phase 0.2 FAIL-pending-0.2.M, M3-Titel-Drift, Q-Gates-Bilanz).
+2. **Verzeichnis-Umbenennung:** `artefakte/weimarer-republik-anfangsphase/` → `artefakte/weimarer-republik-anfangsphase-run1-pre-mcp-20260426/`. Inhalt: DIDAKTIK_RAHMEN + INHALTSBASIS + Snapshot.
+3. **PROJECT_INSTRUCTIONS.md PI-Reset:** STATUS → ONBOARDING, GAME_ID leer, LETZTE_PHASE → ONBOARDING-Reset-Hinweis, GAME-PARAMETER-Tabelle alle Werte auf "(zu setzen)". SPEICHERSTAND-Block um Run-1-Archiv-Pfad erweitert.
+
+**Konsequenz:** TARGET-Pfad `weimarer-republik-anfangsphase/` ist nun leer. Plugin findet Clean-Slate-State + ONBOARDING-PI bei Run-2-Start.
+
+**Vergleichs-Empirie-Konvention:**
+- Run-1 (pre-MCP, v0.3.1): `artefakte/weimarer-republik-anfangsphase-run1-pre-mcp-20260426/`
+- Run-2 (post-MCP, v0.4.0): `artefakte/weimarer-republik-anfangsphase/` (Standard-Pfad)
+- Beide unter Versions-Kontrolle, identische Game-Parameter (thema/jgst/4 Mappen).
+
+**Aufwand:** ~3 Min Wall-Clock (Snapshot + mv + PI-Reset).
+
+**Naechster Schritt:** User-Terminal: `/exit` + `claude plugin update escape-game-generator` + `pipx install wikipedia-mcp` + `claude mcp add` + `./tools/code-mode-launch.sh` + `/escape-game-generator:generate-game weimarer-republik-anfangsphase 7c 4`.
+
+---
+
 ## 2026-04-26 — Plugin v0.4.0 Dependency-Architektur (F-PB-15+16+28-Cluster CLOSED, 5 HIGH closed)
 
 **Scope:** Vollstaendige Plugin-Dependency-Architektur als Antwort auf Pilot-Empirie (MCP-Gap Phase 0.2). Variante C der Re-Run-Strategie. 8-Schritte-Cycle, ~95 Min Wall-Clock.
