@@ -4,6 +4,57 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-26 — Plugin v0.5.0 Foundation Phase A KOMPLETT (Generator-Repo)
+
+**Scope:** Foundation A1+A2+A3+A4+A5 fuer Plugin v0.5.0 Hardening (10.5 PT Plan, F-PB-04+S1+S2+S3 strukturelle Grundinvestitionen).
+
+**Modus:** EXECUTE (Cowork-Plugin-Dev), Variante C Hybrid (Subagent + Self-Edit), Variante 3 Commit-Strategie (3 Commits Foundation).
+
+**3 Commits Generator-Repo (escape-game-generator/):**
+
+1. **A1 Schema-Verzeichnis-Konsolidierung F-PB-04** (Commit `3eb7d7a`):
+   - `git mv schemas/game_state.schema.json -> architektur/schemata/`
+   - `schemas/` Verzeichnis entfernt
+   - 5 Files Pfad-Updates (validate_game_state.py + commands/resume-state.md + 2 SKILL.md mit 5 Refs)
+   - VERTRAG_SPRACHNIVEAU_R7.md Pre-Drift mit-gefixed (3 Refs auf glossar_template.json + material_text.json zeigten faelschlich auf nicht-existentes schemas/)
+   - DEFAULT_SCHEMA-Konstante in validate_game_state.py korrigiert
+   - 6 Files / 11 Insertions / 1 Rename mit Git-History-Preservation
+
+2. **A2+A3 4 Phase-0-Schemas + 4 PostToolUse-Hooks** (Commit `54c7e95`):
+   - 4 neue JSON-Schemas in architektur/schemata/ (didaktik_rahmen, inhalts_briefing, medien_katalog, artefakt_inventar)
+   - JSON-Schema Draft 2020-12, additionalProperties:false strict, _meta-Sektion, Cross-Reference-Tabelle
+   - 4 neue PostToolUse-Hooks in hooks/hooks.json (Wrapper-Variante mit Validator-Existenz-Check, dormant bis A4)
+   - Hook-Inventar 12 → 16 (PreToolUse 5, PostToolUse 5→9, SubagentStop 2)
+   - Schema-Coverage F-PB-37/38/39/40/41/42/45/46/48/49 (10 von 14)
+   - 5 Files / 1301 Insertions
+
+3. **A4+A5 4 Validatoren + Doku + .gitignore-Hardening** (Commit `45a2502`):
+   - 4 neue Python-Validatoren in tools/ (validate_didaktik_rahmen.py + validate_inhalts_briefing.py + validate_medien_katalog.py + validate_artefakt_inventar.py)
+   - Konvention 1:1 aus validate_game_state.py: graceful-degrade jsonschema, --self-test, Severity 0/1/2
+   - Domain-Logic-Checks pro Validator (F-PB-Hardening) + Cross-Checks (medien_katalog ↔ artefakt_inventar, briefing ↔ artefakt_inventar)
+   - Self-Test x4 alle PASS
+   - README.md erweitert um neuen Abschnitt "Phase-0 Validation Layer (v0.5.0 Foundation)"
+   - .gitignore um __pycache__/ + *.pyc + *.pyo erweitert (opportunistisches Hardening)
+   - 6 Files / 2113 Insertions / 1 Deletion
+
+**Aufwand-Ist:** ~70 Min Wall-Clock (Plan 10.5 PT ~5h, Speedup ~50%+ via Subagent-Pattern).
+
+**F-PB-Coverage post-Foundation:**
+- Schema-Layer: F-PB-37/38/39/40/41/42/45/46/48/49 strukturell adressiert (10 von 14)
+- Hook-Layer: 4 PostToolUse-Hooks aktiv via Wrapper-Existenz-Check
+- Validator-Layer: Domain-Logic-Checks alle 10 Schema-Layer-Findings + Cross-Checks
+- Verbleibend Phase B: F-PB-36 (Drift-Pipeline AGENT_SKRIPT) + F-PB-43 (SK1-SK18-Validator) + F-PB-44 (Komposita-Erstgebrauch) + F-PB-47 (SK5-Wortzahl)
+
+**Run-3-Empirie gegen Foundation-Validatoren (Hardening-strictness wirksam):**
+- DIDAKTIK_RAHMEN.md: rc=1 WARN (Schulart heuristisch detect, Header-Marker abweichend)
+- inhalts_briefing.json: rc=2 FAIL (23 schluessel_fakten ohne event_date — F-PB-38)
+- medien_katalog_game.json: rc=2 FAIL (lizenz_summary statt lizenz_inventar F-PB-48; fehlende quellenkritik 16/16 F-PB-37; aufnahme_datum-Coverage 6.2% F-PB-39)
+- artefakt_inventar.json: rc=1 WARN (Cowork-Patch v0.4.3 wirksam — alle 25 Materialien Pflicht-Felder erfuellt; 3/7 verified-Bilder unreferenziert F-PB-40 + 1 Kandidat unabgedeckt F-PB-41)
+
+**Naechster Schritt:** Phase B HIGH-Findings als separater Stufe-1-Plan (11.5 PT, mehrere Cowork-Sessions, AGENT_SKRIPT-Patches + 2 neue spezialisierte Validatoren + Run-4-Setup).
+
+---
+
 ## 2026-04-26 — Run-3 Phase 0.3 Continuation + Audit + Phase-5-Forensik Plugin v0.4.3
 
 **Scope:** Run-3-Pilot Phase-0.3-Defekt-Klaerung + 6-File-Continuation + 4-Reviewer-Audit + 12-File-Cowork-Patches + Phase-5-Hardening-Diagnose.
