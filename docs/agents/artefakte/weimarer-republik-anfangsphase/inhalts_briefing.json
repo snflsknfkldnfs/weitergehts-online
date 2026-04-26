@@ -1,0 +1,224 @@
+{
+  "schema_version": "1.0",
+  "vertrag": "VERTRAG_PHASE_0-2_INHALT",
+  "game_id": "weimarer-republik-anfangsphase",
+  "run_id": "run-3-2026-04-26",
+  "erstellt_am": "2026-04-26",
+  "agent": "agent-inhalt",
+
+  "_meta": {
+    "trigger_flags": [
+      "politische_gewalt_putsche_1919_1923",
+      "ermordung_liebknecht_luxemburg_jan_1919",
+      "tote_bei_kapp_putsch_und_hitler_putsch",
+      "hyperinflation_existenznot_familien"
+    ],
+    "trigger_handling_hinweis": "Im Skript altersgemaess + sachlich behandeln, ohne Schock-Effekte. Keine Verherrlichung von Putschisten, keine Banalisierung der Opfer. Lehrkraft-Sichtbarkeit gemaess agent-didaktik Sektion 6.",
+    "data_source_legend": "wiki = MCP wikipedia (verified); webfetch = WebFetch Live-Quelle (webfetch); legacy = LLM-Memory (degraded — falls vorhanden eskalation_pflicht).",
+    "e_d3_status": "NICHT_AKTIV — alle Kernfakten via mcp_wikipedia oder webfetch verifiziert.",
+    "mappen_anzahl": 4
+  },
+
+  "mappen": [
+    {
+      "mappe_id": "M1",
+      "titel": "November 1918 — Eine neue Ordnung",
+      "kerninhalt": [
+        "Matrosenaufstand Kiel (3. November 1918) als Funke der Novemberrevolution.",
+        "Abdankung Kaiser Wilhelms II. am 9. November 1918, Flucht in die Niederlande.",
+        "Doppelausrufung der Republik am 9. November 1918 in Berlin: Scheidemann (parlamentarische Republik) vom Reichstagsfenster, Liebknecht (Freie Sozialistische Republik) vom Berliner Stadtschloss.",
+        "Bildung des Rats der Volksbeauftragten unter Friedrich Ebert (10. November 1918).",
+        "Erste sofortige Reformen: Ankuendigung Acht-Stunden-Tag, Frauenwahlrecht, Aufhebung Zensur."
+      ],
+      "schluessel_fakten": [
+        {"fakt": "Matrosenaufstand Kiel beginnt am 3. November 1918, breitet sich binnen einer Woche reichsweit aus", "data_source": "wiki:Kiel_mutiny", "reliability": "verified", "quellen_hash": "wiki-kielmutiny-2026-04-26"},
+        {"fakt": "Wilhelm II. abdankt am 9. November 1918; Hohenzollern-Dynastie endet nach 500 Jahren Brandenburg / 400 Jahren Preussen", "data_source": "wiki:Wilhelm_II_German_Emperor", "reliability": "verified", "quellen_hash": "wiki-wilhelm2-2026-04-26"},
+        {"fakt": "Scheidemann ruft Republik aus dem Westfenster des Reichstags aus, Liebknecht etwa 2 Stunden spaeter vom Berliner Stadtschloss die Freie Sozialistische Republik", "data_source": "wiki:Philipp_Scheidemann + wiki:Karl_Liebknecht", "reliability": "verified", "quellen_hash": "wiki-doppel-ausrufung-2026-04-26"},
+        {"fakt": "Rat der Volksbeauftragten formiert sich am 10. November 1918, MSPD und USPD je 3 Mitglieder; Ebert als Vorsitzender de facto", "data_source": "wiki:Novemberrevolution", "reliability": "verified", "quellen_hash": "wiki-novemberrevolution-2026-04-26"},
+        {"fakt": "Erste Reformen des Rats: Acht-Stunden-Tag, Aufhebung Pressezensur, Wahlrecht fuer Frauen ab 20 angekuendigt", "data_source": "wiki:Novemberrevolution", "reliability": "verified", "quellen_hash": "wiki-novemberrevolution-2026-04-26"}
+      ],
+      "perspektiven_kandidaten": [
+        {"perspektive": "Sozialdemokratisch-parlamentarisch (Scheidemann/MSPD)", "rolle": "Will parlamentarische Republik, Stabilisierung durch Wahlen + Verfassung"},
+        {"perspektive": "Raete-revolutionaer (Liebknecht/Spartakusbund)", "rolle": "Will sozialistische Raeterepublik nach russischem Vorbild"},
+        {"perspektive": "Monarchisch-konservativ (Anhaenger Wilhelms II.)", "rolle": "Sieht Abdankung als nationale Demuetigung, Heimatfront als 'Verraeter'"},
+        {"perspektive": "Matrose / Arbeiterin in der Heimat", "rolle": "Erschoepft von Krieg + Hunger, traegt Revolution mit, sucht Frieden + Brot"}
+      ],
+      "material_kandidaten": [
+        {"typ": "bildquelle", "inhalt": "Scheidemann am Reichstagsfenster 9. Nov 1918", "quelle_kandidat": "Wikimedia Commons — Datei zu verifizieren in Phase 0.2.M"},
+        {"typ": "darstellungstext", "inhalt": "Kurz-Steckbrief 9. November 1918 (Datum, Orte, Akteure)", "quelle_kandidat": "Eigenkomposition basierend auf wiki:Novemberrevolution"},
+        {"typ": "zeitleiste", "inhalt": "Mini-Zeitleiste 28. Okt — 11. Nov 1918 (Marinebefehl → Kiel → Berlin → Waffenstillstand)", "quelle_kandidat": "Eigenkomposition + DHM-LeMO Revolution"},
+        {"typ": "quellentext", "inhalt": "Auszug Aufruf Rat der Volksbeauftragten 12. Nov 1918 (Acht-Stunden-Tag + Wahlrecht)", "quelle_kandidat": "DHM-LeMO + wiki:Novemberrevolution"},
+        {"typ": "bildquelle", "inhalt": "Karikatur oder Foto 'Wilhelm II. flieht ins Exil'", "quelle_kandidat": "Wikimedia Commons — zu verifizieren"}
+      ],
+      "ke_anker": ["GPG7_LB2_K_08", "GPG7_LB2_K_01"],
+      "sprachniveau_marker": {
+        "fachbegriffe_einfuehren": ["Republik", "Abdankung", "Rat der Volksbeauftragten"],
+        "satzlaenge_max_woerter": 14,
+        "kompositum_warnungen": ["Volksbeauftragten — bei Erstnennung umschreiben: 'Vertreter des Volkes'", "Doppelausrufung — beim Erstgebrauch erklaeren"],
+        "anrede": "Du-Form oder neutrale Aufgabenformulierung"
+      },
+      "kontroversitaets_hinweise": [
+        "Doppelausrufung NICHT als Sieg der MSPD darstellen, sondern als historisches Nebeneinander zweier Republik-Visionen.",
+        "Spartakusaufstand Januar 1919 + Ermordung Liebknecht/Luxemburg sind zeitlich knapp ausserhalb der Mappen-Szene; falls Mikro-Erwaehnung noetig: streng als folgendes Ereignis kontextualisieren, NICHT als Bewertung der Doppelausrufung.",
+        "'Dolchstoss-Legende' (Vorwurf, Heimatfront habe Front 'verraten') als zeitgenoessische Propaganda kennzeichnen — nicht als Tatsache."
+      ]
+    },
+
+    {
+      "mappe_id": "M2",
+      "titel": "Eine Verfassung fuer eine Demokratie — Weimar 1919",
+      "kerninhalt": [
+        "Wahl zur Weimarer Nationalversammlung am 19. Januar 1919 — erstmals duerfen Frauen reichsweit waehlen.",
+        "Tagung der Nationalversammlung in Weimar (Deutsches Nationaltheater) ab 6. Februar 1919.",
+        "Verabschiedung der Weimarer Reichsverfassung am 11. August 1919 — Inkrafttreten 14. August 1919.",
+        "Kernprinzipien: Volkssouveraenitaet (Art. 1), allgemeines + gleiches + geheimes Wahlrecht ab 20 Jahren fuer Maenner und Frauen (Art. 22), grundsaetzliche Gleichheit von Frauen und Maennern (Art. 109).",
+        "Vergleich mit absolutistischem Selbstverstaendnis: Ludwig XIV. 'L'etat c'est moi' vs. Reichspraesident-Eid auf die Verfassung."
+      ],
+      "schluessel_fakten": [
+        {"fakt": "Wahl zur Nationalversammlung 19. Januar 1919, Wahlbeteiligung ~83%, erstmals Frauen wahlberechtigt + waehlbar (37 Frauen gewaehlt von 423 Abgeordneten)", "data_source": "wiki:Weimar_National_Assembly", "reliability": "verified", "quellen_hash": "wiki-weimarna-2026-04-26"},
+        {"fakt": "Verfassung verabschiedet 11. August 1919, in Kraft 14. August 1919, von Reichspraesident Ebert unterzeichnet", "data_source": "wiki:Weimarer_Verfassung", "reliability": "verified", "quellen_hash": "wiki-wrv-2026-04-26"},
+        {"fakt": "Art. 1 WRV: 'Das Deutsche Reich ist eine Republik. Die Staatsgewalt geht vom Volke aus.'", "data_source": "webfetch:verfassungen.de WRV Art. 1", "reliability": "webfetch", "quellen_hash": "wf-verfde-art1-2026-04-26"},
+        {"fakt": "Art. 22 WRV: 'Die Abgeordneten werden in allgemeiner, gleicher, unmittelbarer und geheimer Wahl von den ueber zwanzig Jahre alten Maennern und Frauen nach den Grundsaetzen der Verhaeltniswahl gewaehlt.'", "data_source": "webfetch:verfassungen.de WRV Art. 22", "reliability": "webfetch", "quellen_hash": "wf-verfde-art22-2026-04-26"},
+        {"fakt": "Art. 109 WRV: 'Alle Deutschen sind vor dem Gesetze gleich. Maenner und Frauen haben grundsaetzlich dieselben staatsbuergerlichen Rechte und Pflichten.'", "data_source": "webfetch:verfassungen.de WRV Art. 109", "reliability": "webfetch", "quellen_hash": "wf-verfde-art109-2026-04-26"},
+        {"fakt": "Reichspraesident: vom Volk direkt gewaehlt, Oberbefehl ueber das Militaer, Notverordnungsrecht (Art. 48), ernennt Reichskanzler", "data_source": "wiki:Weimarer_Verfassung", "reliability": "verified", "quellen_hash": "wiki-wrv-2026-04-26"}
+      ],
+      "perspektiven_kandidaten": [
+        {"perspektive": "Verfassungsgeber (z.B. Hugo Preuss, MSPD)", "rolle": "Will moderne, parlamentarisch-demokratische Reichsordnung mit starkem Praesidenten als Notreserve"},
+        {"perspektive": "Erstwaehlerin 1919 (Frau, ueber 20)", "rolle": "Erstmals Wahlrecht — historische Premiere, Lebensweltbezug"},
+        {"perspektive": "Konservativer Beamter aus dem Kaiserreich", "rolle": "Misstrauen gegen Volkssouveraenitaet, Vergleich zu Wilhelm II. wirkt fremd"},
+        {"perspektive": "Vergleichs-Stimme Ludwig XIV. (historisch)", "rolle": "Absolutistischer Kontrast: 'L'etat c'est moi' — Macht beim Herrscher, nicht beim Volk"}
+      ],
+      "material_kandidaten": [
+        {"typ": "quellentext", "inhalt": "Kurzauszuege WRV Art. 1, 22, 109 (R7-passend kuerzen, Originalsprache moeglich)", "quelle_kandidat": "verfassungen.de"},
+        {"typ": "quellentext", "inhalt": "Ludwig-XIV.-Zitat 'L'etat c'est moi' mit knapper Erklaerung", "quelle_kandidat": "Standard-Schulbuch / wikipedia:Louis_XIV"},
+        {"typ": "bildquelle", "inhalt": "Eroeffnung Nationalversammlung Weimar 6. Februar 1919, Deutsches Nationaltheater", "quelle_kandidat": "Wikimedia Commons — zu verifizieren"},
+        {"typ": "darstellungstext", "inhalt": "Vergleichstabelle Absolutismus vs. Demokratie (Mitbestimmung, Wahlrecht, Begrenzung der Macht)", "quelle_kandidat": "Eigenkomposition"},
+        {"typ": "statistik", "inhalt": "Wahlbeteiligung 19. Januar 1919 + Frauenanteil im Parlament", "quelle_kandidat": "wiki:Weimar_National_Assembly"}
+      ],
+      "ke_anker": ["GPG7_LB2_K_01"],
+      "sprachniveau_marker": {
+        "fachbegriffe_einfuehren": ["Verfassung", "Reichspraesident", "Volkssouveraenitaet", "Nationalversammlung"],
+        "satzlaenge_max_woerter": 14,
+        "kompositum_warnungen": ["Volkssouveraenitaet — Definition: 'Macht geht vom Volk aus'", "Verhaeltniswahl — fuer R7 vereinfachen: 'jede Stimme zaehlt anteilig'"],
+        "anrede": "Du-Form oder neutrale Aufgabenformulierung"
+      },
+      "kontroversitaets_hinweise": [
+        "Wahlrecht: 1919 ab 20 Jahren — bewusst nicht ab 18, das ist erst BRD-Reform; historisch genau bleiben.",
+        "Notverordnungsrecht des Reichspraesidenten (Art. 48) im R7-Kontext NICHT vertiefen (Stoffdichte-Schutz, Vorgriff 1933 vermeiden).",
+        "Vergleich mit Bundesrepublik heute: Lehrplan-Anker LB2_K_01 erlaubt + verlangt Bezug, aber im Skript NEUTRAL halten — keine BRD-Wertung als 'besser/schlechter'."
+      ]
+    },
+
+    {
+      "mappe_id": "M3",
+      "titel": "Versailles 1919 — Wie reagieren die Menschen?",
+      "kerninhalt": [
+        "Unterzeichnung des Friedensvertrags am 28. Juni 1919 im Spiegelsaal von Versailles, genau 5 Jahre nach dem Attentat von Sarajevo.",
+        "Militaerische Bestimmungen: Reichswehr auf 100.000 Mann begrenzt, keine Wehrpflicht, keine Panzer + Luftwaffe + U-Boote, Generalstab aufgeloest.",
+        "Territoriale Bestimmungen: Verlust Elsass-Lothringen (an Frankreich), Westpreussen + Posen (an Polen), Eupen-Malmedy (an Belgien), Nordschleswig (Volksabstimmung → an Daenemark), alle Kolonien als Voelkerbundmandate verteilt.",
+        "Wirtschaftliche Bestimmungen: Reparationen (Hoehe 1921 auf 132 Mrd. Goldmark festgesetzt), Verlust Saargebiet-Bergwerke, Handelsflotten-Auslieferung.",
+        "Artikel 231 ('Kriegsschuldartikel') als Begruendung der Reparationen — wird in Deutschland als 'Schandfrieden' / 'Diktat' empfunden.",
+        "Multiperspektivische Reaktionen verschiedener gesellschaftlicher Schichten."
+      ],
+      "schluessel_fakten": [
+        {"fakt": "Vertrag unterzeichnet 28. Juni 1919, Spiegelsaal Versailles, Deutschland nicht zu Verhandlungen zugelassen", "data_source": "wiki:Treaty_of_Versailles", "reliability": "verified", "quellen_hash": "wiki-treaty-2026-04-26"},
+        {"fakt": "Heeresreduktion auf 100.000 Mann, keine Wehrpflicht, Verbot schwerer Waffen", "data_source": "wiki:Treaty_of_Versailles", "reliability": "verified", "quellen_hash": "wiki-treaty-2026-04-26"},
+        {"fakt": "Gebietsabtretungen: Elsass-Lothringen → FR; Posen + Westpreussen → PL (Polnischer Korridor); alle Kolonien → Voelkerbund", "data_source": "wiki:Treaty_of_Versailles", "reliability": "verified", "quellen_hash": "wiki-treaty-2026-04-26"},
+        {"fakt": "Reparationen 1921 auf 132 Mrd. Goldmark festgelegt (Londoner Zahlungsplan)", "data_source": "wiki:Hyperinflation_in_the_Weimar_Republic + wiki:Treaty_of_Versailles", "reliability": "verified", "quellen_hash": "wiki-londonschedule-2026-04-26"},
+        {"fakt": "Art. 231 ('Kriegsschuldartikel') schreibt Deutschland + Verbuendeten Verantwortung fuer alle Kriegsschaeden zu — Begruendung der Reparationen", "data_source": "wiki:Article_231_of_the_Treaty_of_Versailles", "reliability": "verified", "quellen_hash": "wiki-art231-2026-04-26"},
+        {"fakt": "Reichsministerpraesident Scheidemann lehnt den Vertragsentwurf in seiner Rede vor der Nationalversammlung am 12. Mai 1919 oeffentlich ab ('Welche Hand muesste nicht verdorren, die sich und uns in diese Fessel legt?')", "data_source": "wiki:Philipp_Scheidemann", "reliability": "verified", "quellen_hash": "wiki-scheidemann-2026-04-26", "event_date": "1919-05-12", "zitat_kontext": "Rede in der Weimarer Nationalversammlung, NICHT Ruecktrittserklaerung"},
+        {"fakt": "Scheidemann tritt am 20. Juni 1919 als Reichsministerpraesident zurueck statt den Vertrag zu unterzeichnen; Bauer-Regierung unterzeichnet schliesslich am 28. Juni 1919", "data_source": "wiki:Philipp_Scheidemann", "reliability": "verified", "quellen_hash": "wiki-scheidemann-2026-04-26", "event_date": "1919-06-20"}
+      ],
+      "perspektiven_kandidaten": [
+        {"perspektive": "Heimkehrender Frontsoldat", "rolle": "Heeresabbau bedroht Lebensgrundlage; Vertragsbedingungen fuehlen sich wie persoenliche Demuetigung an"},
+        {"perspektive": "Berliner Arbeiterfamilie", "rolle": "Reparationen + Versorgungsknappheit treffen Lebensstandard; sucht zugleich Frieden"},
+        {"perspektive": "SPD-Reichstagsabgeordneter (Politiker)", "rolle": "Sieht Vertrag als Belastung, MUSS aber unterzeichnen (Alternative: Krieg fortsetzen) — bittere Pflicht"},
+        {"perspektive": "Industrieller / Unternehmer im Saargebiet", "rolle": "Wirtschaftlicher Verlust durch Saar-Abtretung, Reparationen als Belastung der Wirtschaft"},
+        {"perspektive": "Junge Frau im Elsass (jetzt Frankreich)", "rolle": "Identitaetswechsel, Sprache + Buergerschaft veraendern sich — Lebenswelt-Bezug"}
+      ],
+      "material_kandidaten": [
+        {"typ": "karte", "inhalt": "Karte Gebietsabtretungen Deutschland 1919 (Elsass-Lothringen, Polnischer Korridor, Saargebiet, Nordschleswig, Eupen-Malmedy)", "quelle_kandidat": "Wikimedia Commons — zu verifizieren"},
+        {"typ": "quellentext", "inhalt": "Kurzauszug Art. 231 (Kriegsschuldartikel) — gekuerzt + erlaeutert", "quelle_kandidat": "wiki:Article_231"},
+        {"typ": "darstellungstext", "inhalt": "Drei Perspektiv-Karten (Frontheimkehrer, Arbeiterfamilie Berlin, SPD-Abgeordneter) mit je 3-4 Saetzen Reaktion", "quelle_kandidat": "Eigenkomposition basierend auf bpb + wiki"},
+        {"typ": "statistik", "inhalt": "Reparationen-Zahl 132 Mrd. Goldmark + Heeresgroesse 100.000 (vs. ca. 800.000 vor 1914)", "quelle_kandidat": "wiki:Treaty_of_Versailles"},
+        {"typ": "bildquelle", "inhalt": "Foto Spiegelsaal Versailles 28. Juni 1919 (Unterzeichnungszeremonie)", "quelle_kandidat": "Wikimedia Commons — zu verifizieren"}
+      ],
+      "ke_anker": ["GPG7_LB3_K_04", "GPG7_LB2_K_08"],
+      "sprachniveau_marker": {
+        "fachbegriffe_einfuehren": ["Reparationen", "Bestimmungen", "Schichten", "Kriegsschuldartikel"],
+        "satzlaenge_max_woerter": 14,
+        "kompositum_warnungen": ["Heeresreduktion → 'Verkleinerung des Heeres'", "Kriegsschuldartikel → erst erklaeren, dann verwenden"],
+        "anrede": "Du-Form oder neutrale Aufgabenformulierung"
+      },
+      "kontroversitaets_hinweise": [
+        "Kriegsschuldfrage: Forschungsstand 'geteilte Verantwortung' aller Grossmaechte muss erkennbar sein, ohne SuS in der R7 zu ueberfordern. Art. 231 als zeitgenoessische Position der Sieger benennen, nicht als historische Wahrheit.",
+        "'Diktat'/'Schandfrieden' als zeitgenoessische deutsche Wahrnehmung kennzeichnen, NICHT als objektive Bewertung uebernehmen.",
+        "Multiperspektivitaet PFLICHT: mind. 3 Perspektiven nebeneinander, KEINE der drei privilegieren.",
+        "Vorsicht bei 'Polnischer Korridor': nicht revisionistisch konnotieren — neutrale Bezeichnung 'Gebietsabtretung an Polen' alternativ verwenden."
+      ]
+    },
+
+    {
+      "mappe_id": "M4",
+      "titel": "1920-1923 — Die Republik unter Druck",
+      "kerninhalt": [
+        "Kapp-Luettwitz-Putsch am 13. Maerz 1920 in Berlin: Marinebrigade Ehrhardt besetzt Regierungsviertel, Kapp ruft sich zum Reichskanzler aus.",
+        "Generalstreik (von Reichsregierung + Gewerkschaften ausgerufen) bricht den Putsch nach 4 Tagen — die Republik wird durch zivilen Widerstand gerettet.",
+        "Ruhrbesetzung Januar 1923: Frankreich + Belgien besetzen das Ruhrgebiet wegen Reparationsrueckstaenden; Reichsregierung ruft passiven Widerstand aus.",
+        "Hyperinflation 1923: Geldentwertung erreicht Hoehepunkt November 1923 (1 US-Dollar = 4,2 Billionen Mark); Loehne werden taeglich ausgezahlt + sofort ausgegeben.",
+        "Hitler-Putsch 8.-9. November 1923 in Muenchen: Hitler + Ludendorff versuchen Marsch auf Berlin; gestoppt am Marsch zur Feldherrnhalle (15 Tote auf Putschisten-Seite, 4 Polizisten, 1 Passant); Putsch scheitert.",
+        "Stuetzen der Republik in der Krise: demokratische Institutionen, Gewerkschaften, ziviler Widerstand der Bevoelkerung."
+      ],
+      "schluessel_fakten": [
+        {"fakt": "Kapp-Putsch beginnt 13. Maerz 1920, Reichsregierung flieht aus Berlin nach Dresden + Stuttgart", "data_source": "wiki:Kapp_Putsch", "reliability": "verified", "quellen_hash": "wiki-kapp-2026-04-26"},
+        {"fakt": "Generalstreik gegen Kapp ist groesster in deutscher Geschichte; Beamte verweigern Zusammenarbeit; Putsch endet nach 4 Tagen (17. Maerz 1920)", "data_source": "wiki:Kapp_Putsch", "reliability": "verified", "quellen_hash": "wiki-kapp-2026-04-26"},
+        {"fakt": "Ruhrbesetzung 11. Januar 1923 durch Frankreich + Belgien; Reichsregierung ruft passiven Widerstand aus, finanziert mit gedrucktem Geld", "data_source": "wiki:Ruhrbesetzung", "reliability": "verified", "quellen_hash": "wiki-ruhr-2026-04-26"},
+        {"fakt": "Hyperinflation Hoehepunkt November 1923: 1 US-Dollar = 4,2 Billionen Mark; Brot kostet Milliarden", "data_source": "wiki:Hyperinflation_in_the_Weimar_Republic", "reliability": "verified", "quellen_hash": "wiki-hyperinfl-2026-04-26"},
+        {"fakt": "Stabilisierung der Waehrung durch Einfuehrung der Rentenmark am 15. November 1923 (1 Rentenmark = 1 Billion Papiermark)", "data_source": "wiki:Hyperinflation_in_the_Weimar_Republic", "reliability": "verified", "quellen_hash": "wiki-hyperinfl-2026-04-26"},
+        {"fakt": "Hitler-Putsch beginnt 8. November 1923 abends im Buergerbraeukeller (Muenchen) mit ca. 600 SA-Maennern; scheitert am 9. November 1923 vor der Feldherrnhalle (15+4+1 Tote)", "data_source": "wiki:Beer_Hall_Putsch", "reliability": "verified", "quellen_hash": "wiki-beerhall-2026-04-26"},
+        {"fakt": "Hitler wird zu 5 Jahren Festungshaft verurteilt, nach 9 Monaten freigelassen (Landsberg)", "data_source": "wiki:Beer_Hall_Putsch", "reliability": "verified", "quellen_hash": "wiki-beerhall-2026-04-26"}
+      ],
+      "perspektiven_kandidaten": [
+        {"perspektive": "Konservativ-monarchistische Putschisten von rechts (Kapp, Luettwitz)", "rolle": "Republik-Gegner von rechts, Restauration der Monarchie / Militaerregierung als Ziel"},
+        {"perspektive": "Gewerkschafter / Streikender Arbeiter im Maerz 1920", "rolle": "Verteidigt Republik durch Generalstreik — Lebenswelt-Anker fuer 'Demokratie wirkt durch Buerger'"},
+        {"perspektive": "Berliner Arbeiterfamilie 1923", "rolle": "Erlebt Inflation existentiell: Lohn schmilzt waehrend des Tages, Brot nicht mehr bezahlbar"},
+        {"perspektive": "Voelkisch-nationalistischer Putschist 1923 (Hitler, Ludendorff)", "rolle": "Republik-Gegner von rechts, Marsch auf Berlin als Ziel"},
+        {"perspektive": "Staatsanwalt im Hitler-Putsch-Prozess", "rolle": "Justiz-Perspektive: Festungshaft statt Hochverrats-Hoechststrafe — zeigt 'auf rechtem Auge blind'-Tendenz der Justiz"}
+      ],
+      "material_kandidaten": [
+        {"typ": "bildquelle", "inhalt": "Geldscheine 1923 (Reichsbanknoten Millionen / Milliarden / Billionen Mark)", "quelle_kandidat": "Wikimedia Commons — zu verifizieren"},
+        {"typ": "statistik", "inhalt": "Brotpreis-Tabelle 1923 (Januar — November) — Anschauungsbeispiel Inflation", "quelle_kandidat": "wiki:Hyperinflation + DHM-LeMO Inflation"},
+        {"typ": "quellentext", "inhalt": "Aufruf zum Generalstreik gegen Kapp (Maerz 1920) — Auszug", "quelle_kandidat": "DHM-LeMO Kapp-Putsch"},
+        {"typ": "darstellungstext", "inhalt": "Kurzbericht Hitler-Putsch 8.-9. November 1923, sachlich + ohne Verherrlichung", "quelle_kandidat": "wiki:Beer_Hall_Putsch + DHM-LeMO"},
+        {"typ": "tagebuch", "inhalt": "Fiktiver / quellengestuetzter Tagebucheintrag Berliner Arbeiterfamilie November 1923 (Inflations-Erleben)", "quelle_kandidat": "Eigenkomposition basierend auf zeitgenoessischen Quellen"},
+        {"typ": "zeitleiste", "inhalt": "Krisen-Zeitleiste 1920-1923 mit 4 Knoten (Kapp Maerz 1920, Ruhr Jan 1923, Inflation Nov 1923, Hitler-Putsch Nov 1923)", "quelle_kandidat": "Eigenkomposition"}
+      ],
+      "ke_anker": ["GPG7_LB2_K_01", "GPG7_LB3_K_04"],
+      "sprachniveau_marker": {
+        "fachbegriffe_einfuehren": ["Putsch", "Inflation", "Generalstreik", "Hyperinflation"],
+        "satzlaenge_max_woerter": 14,
+        "kompositum_warnungen": ["Hyperinflation → 'sehr starke Inflation' beim Erstgebrauch", "Reichsbanknoten → 'Geldscheine'"],
+        "anrede": "Du-Form oder neutrale Aufgabenformulierung"
+      },
+      "kontroversitaets_hinweise": [
+        "Hitler-Putsch STRENG als gescheiterter Putsch 1923 darstellen — KEIN Vorgriff auf Machtuebernahme 1933 (Ueberwaeltigungsverbot, Stoffdichte-Schutz).",
+        "Politische Gewalt: Tote bei Feldherrnhalle benennen, ohne Putschisten zu heroisieren oder Polizisten zu instrumentalisieren.",
+        "'Auf dem rechten Auge blind' (Justiz-Kritik): nur in Lehrkraft-Hinweis, nicht im Schueler-Material in Mappe 4 ausweiten.",
+        "Inflation NICHT als Kuriositaet (nur grosse Zahlen) darstellen — existentielle Not + Verlust von Ersparnissen ('Mittelstand-Verlust') benennen.",
+        "Krisenresilienz-Frage darf nicht in 'Republik war stabil — alles gut'-Lesart kippen. Antwort offen halten: Stabilitaet UND Bedrohung gemeinsam."
+      ]
+    }
+  ],
+
+  "multiperspektiv_zusammenfassung": {
+    "ziel_min_3_perspektiven_pro_mappe": "ERFUELLT (M1: 4, M2: 4, M3: 5, M4: 5)",
+    "ziel_5_perspektiven_gesamt": "ERFUELLT — Reformer (Scheidemann), Revolutionaer (Liebknecht), Konservativ-Anti-Republikanisch (Kapp/Hitler), Alltags-Buerger (Arbeiterfamilie), Erstwaehlerin / Frontheimkehrer / Justiz-Akteur"
+  },
+
+  "scope_einhaltung": {
+    "stresemann_aera_ab_1924": "AUSGESCHLOSSEN — wie verlangt",
+    "machtuebernahme_1933": "AUSGESCHLOSSEN — Hitler-Putsch nur als gescheitertes Ereignis 1923",
+    "spartakusaufstand_jan_1919": "Mikro-Erwaehnung in M1 als kontroversitaets-hinweis erlaubt; KEIN eigenes Mappen-Element (Stoffdichte-Schutz)",
+    "raete_alternative_als_eigene_mappe": "AUSGESCHLOSSEN — Komplexitaet uebersteigt R7"
+  }
+}

@@ -4,6 +4,63 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-26 — Run-3 Phase 0.3 Continuation + Audit + Phase-5-Forensik Plugin v0.4.3
+
+**Scope:** Run-3-Pilot Phase-0.3-Defekt-Klaerung + 6-File-Continuation + 4-Reviewer-Audit + 12-File-Cowork-Patches + Phase-5-Hardening-Diagnose.
+
+**Modus:** EXECUTE (Cowork-Audit + PM-Forensik), Pfad-B sequenziell.
+
+**Stufe 1 — Run-3-Phase-0.3-Audit (4 parallel Reviews A/B/C/D):**
+- Review-A DIDAKTIK_RAHMEN: PASS_MIT_WARN (1 HIGH Schulart-Mismatch, 3 LOW)
+- Review-B Inhalts+Medien-Stichprobe: PASS_MIT_WARN (Scheidemann-Zitat-Datum-Drift, Ebert-Aufnahmedatum 1925, 132-Mrd-Bond-Nuance)
+- Review-C SKRIPTE vs SK1-SK18 + Drift: FAIL_PARTIELL (M4-Skript fehlt, img-m1-02 Drift nicht umgesetzt, img-m3-02 Quellenkritik unvollstaendig)
+- Review-D ARTEFAKT_INVENTAR: FAIL_PARTIELL (3 Bilder ohne Material-Zuordnung, M2-Statistik fehlt, Schema-Luecken)
+
+**Stufe 2 — Forensik M4-Defekt (general-purpose Subagent):**
+- H2 USER-INTERRUPT-IM-SUBAGENT-STREAMING CONFIRMED (~99%)
+- F1 (M4-Skript fehlt) re-klassifiziert von SYSTEMISCH zu USER-INDUZIERT
+- 3 Subagents im selben ESC gekillt (10:15:56.623Z), 21-Sekunden-Gap M3-Result-zu-Interrupt deckt Streaming-Latenz fuer M4-Block
+
+**Stufe 3 — Cowork-Patch-Block (12 Patches Self-Edit):**
+- Schulart Realschule → Mittelschule (3 Files)
+- Scheidemann-Zitat-Datum-Entkopplung (12.5.1919 vs 20.6.1919)
+- Ebert-Aufnahmedatum 15.2.1925 + Pflicht-BU
+- Q-GATE-LOG_phase_0_2_m: 4. Drift-Hinweis nachgezogen
+- SKRIPT_M1 img-m1-02-Slot, SKRIPT_M3 Auftragskunst-Quellenkritik + Reparationen-Erstgebrauch
+- ARTEFAKT_INVENTAR: m1-mat-06 + m2-mat-07 + Schema-Erweiterung anker_briefing/tafelbild_knoten/tipp_stufen_slot + Cross-Reference-Tabellen + Tipp-Geruest
+
+**Stufe 4 — Phase 0.3 Continuation (CC live, beide Subagents):**
+- agent-skript Continuation: SKRIPT_MAPPE_M4.md + chunk_architektur.json + Q-GATE-LOG_phase_0_3_skript.md
+- agent-artefakt Continuation: ARTEFAKT_QUALIFIZIERUNG.md + artefakt_inventar.json + Q-GATE-LOG_phase_0_3_artefakt.md
+- game_state.json status: PRODUKTION_PHASE_0_3_DONE
+
+**Stufe 5 — Continuation-Audit (Reviews E+F):**
+- Review-E Skript-Continuation: PASS_MIT_WARN (R7-Wortzahl-Verletzung Z.16 15 Woerter, Erstgebrauch-Definitionen Lehrkraft-Schicht statt SuS-Slot, Komposita-Dichte M4.6)
+- Review-F Artefakt-Continuation: PASS_MIT_WARN (24-vs-25-Mathematik-Diskrepanz HIGH, lizenz_summary 5 statt 4 Bundesarchiv)
+- 5 weitere Patches (P8-P12) Self-Edit appliziert
+
+**Stufe 6 — Phase-5-Forensik (Stufe-1-Plan + 5-Stufen-Freigabe, Pfad B sequenziell):**
+- Phase 5A Backlog-Cross-Check: F2-F16 → neue F-PB-36 bis F-PB-49 (kein Doppel-Tracking)
+- Phase 5B Subagent-Forensik Variante B: 13 CONFIRMED + 0 REJECTED + 1 INKONKLUSIV
+- Phase 5C Akzeptanzkorridor PASS
+
+**Aggregat Run-3 Empirie:**
+- Phase 0.1 + 0.2 + 0.2.M + 0.3 alle PASS
+- 12 Cowork-Patches (deterministisch, dokumentiert)
+- 14 systemische Plugin-Defizite (9 HIGH + 4 MED + 1 LOW) als F-PB-36 bis F-PB-49 in Backlog
+- 4 strukturelle Architektur-Befunde S1-S4 (Phase-0 Schema-Vakuum, LLM-Self-Check-Dominanz, Hook-Phase-0-Luecke, Vertrag-Naming)
+
+**Artefakte:**
+- `docs/agents/artefakte/weimarer-republik-anfangsphase/` (12 Files Phase 0.1-0.3 inkl. Continuation)
+- `docs/projekt/BEFUND_FORENSIK_PHASE5_RUN3.md` (~280 Zeilen, 14 Hypothesen + Phase E Hardening-Pointer)
+- Auto-Memory `project_run3_forensik.md` (NEU)
+
+**Naechster Schritt:** v0.5.0-Hardening-Spec ableiten (separater Stufe-1-Plan), DANACH Phase 0.4 in CC.
+
+**Aufwand-Ist:** Pfad B Forensik ~30-40 Min Cowork (3 Plan + 6 Subagent + 5 Reviews-Calls + Patch-Block-Cowork). Continuation in CC ~12 Min Wall-Clock.
+
+---
+
 ## 2026-04-26 — Plugin v0.4.2 + Run-2-Archivierung + Pre-Run-3-Vorbereitung
 
 **Scope:** Run-2-Phase-0.1 abgeschlossen + evaluiert + archiviert. Subagent-Frontmatter-Fix (F-PB-35) + Parser-Fix (F-PB-33) eingezogen. Plugin v0.4.2 push. Run-3 entkoppelt vorbereitet.

@@ -1,0 +1,179 @@
+{
+  "schema_version": "1.0",
+  "vertrag": "VERTRAG_PHASE_0-1_DIDAKTIK_v1.2",
+  "game_id": "weimarer-republik-anfangsphase",
+  "run_id": "run-3-2026-04-26",
+  "erstellt_am": "2026-04-26",
+  "mappen_anzahl": 4,
+  "ordnungs_typ": "hybrid_chronologisch_thematisch",
+  "drei_akt_struktur": {
+    "akt_1_setup": ["M1", "M2"],
+    "akt_2_konfrontation": ["M3"],
+    "akt_3_bewaehrungsprobe": ["M4"]
+  },
+
+  "mappen": [
+    {
+      "mappe_id": "M1",
+      "position": 1,
+      "titel": "November 1918 — Eine neue Ordnung",
+      "didaktische_funktion": "Hinfuehren",
+      "geschaetzte_bearbeitungszeit_min": 12,
+      "kerninhalt": "Doppelausrufung der Republik am 9. November 1918 (Scheidemann vom Reichstag, Liebknecht vom Stadtschloss). Abdankung Wilhelms II., Ende der Monarchie, Uebergang zur Republik in militaerischer Niederlagephase.",
+      "titel_stil_r_titel_3": "deskriptiv",
+      "titel_pruefung": {
+        "wertende_adjektive": false,
+        "konflikt_seite_privilegiert": false,
+        "spoiler_loesung": false,
+        "wortketten": 5,
+        "qd_titel_status": "PASS"
+      },
+      "thematischer_schwerpunkt": "Doppelausrufung der Republik am 9. November 1918 (Scheidemann vom Reichstag, Liebknecht vom Stadtschloss). Abdankung Wilhelms II., Ende der Monarchie, Uebergang zur Republik in militaerischer Niederlagephase.",
+      "zentrale_erkenntnis": "Am 9. November 1918 wurde aus Deutschland eine Republik — und zwar gleich zweimal an einem Tag, mit unterschiedlichen Vorstellungen davon, wie diese Republik aussehen soll.",
+      "ke_hauptzuordnung": ["GPG7_LB2_K_08"],
+      "ke_nebenzuordnung": ["GPG7_LB2_K_01"],
+      "gegenstandsbereich": ["Ordnungssysteme", "Werte"],
+      "operationalisierungsziel": "Die SuS beschreiben die Ausrufung der Republik im November 1918, indem sie die Doppelausrufung Scheidemann/Liebknecht mit der vorherigen Monarchie vergleichen, was daran erkennbar wird, dass sie zwei zentrale Veraenderungen (Wahlrecht, Staatsoberhaupt) benennen koennen.",
+      "afb_verteilung_vorschlag": {
+        "afb_I": 0.5,
+        "afb_II": 0.4,
+        "afb_III": 0.1
+      },
+      "bloom_primaer": "L1_Erinnern",
+      "bloom_sekundaer": "L2_Verstehen",
+      "bloom_schwerpunkt": "L1-L2",
+      "scpl_position": "Akt 1 (Setup) — Eroeffnungsereignis",
+      "konkrete_anker": ["9. November 1918", "Berlin (Reichstag, Stadtschloss)", "Philipp Scheidemann", "Karl Liebknecht", "Wilhelm II."],
+      "stoffdichte_kernkonzepte": 4,
+      "stoffdichte_bewertung": "im_zielkorridor"
+    },
+    {
+      "mappe_id": "M2",
+      "position": 2,
+      "titel": "Eine Verfassung fuer eine Demokratie — Weimar 1919",
+      "didaktische_funktion": "Erarbeiten",
+      "geschaetzte_bearbeitungszeit_min": 13,
+      "kerninhalt": "Wahl zur Nationalversammlung 19. Januar 1919 (erstmals Frauenwahlrecht), Tagung in Weimar, Verabschiedung der Weimarer Reichsverfassung 11. August 1919. Vergleich Selbstverstaendnis-Texte: Ludwig XIV. vs. Reichspraesident-Eid.",
+      "titel_stil_r_titel_3": "deskriptiv",
+      "titel_pruefung": {
+        "wertende_adjektive": false,
+        "konflikt_seite_privilegiert": false,
+        "spoiler_loesung": false,
+        "wortketten": 6,
+        "qd_titel_status": "PASS"
+      },
+      "thematischer_schwerpunkt": "Wahl zur Nationalversammlung 19. Januar 1919 (erstmals Frauenwahlrecht), Tagung in Weimar, Verabschiedung der Weimarer Reichsverfassung 11. August 1919. Vergleich Selbstverstaendnis-Texte: Ludwig XIV. vs. Reichspraesident-Eid.",
+      "zentrale_erkenntnis": "Die Weimarer Verfassung gab den Buergerinnen und Buergern erstmals echte Mitbestimmungsrechte — Wahlrecht ab 20 Jahren, fuer Frauen und Maenner, mit garantierten Grundrechten.",
+      "ke_hauptzuordnung": ["GPG7_LB2_K_01"],
+      "ke_nebenzuordnung": [],
+      "gegenstandsbereich": ["Ordnungssysteme", "Werte"],
+      "operationalisierungsziel": "Die SuS erklaeren die Grundzuege der Weimarer Reichsverfassung 1919, indem sie zentrale Rechte und Institutionen den Selbstverstaendnis-Texten eines absolutistischen und eines demokratischen Amtsinhabers gegenueberstellen, was daran erkennbar wird, dass sie drei demokratische Mitbestimmungs-Wege im Vergleich zum Absolutismus markieren koennen.",
+      "afb_verteilung_vorschlag": {
+        "afb_I": 0.3,
+        "afb_II": 0.6,
+        "afb_III": 0.1
+      },
+      "bloom_primaer": "L2_Verstehen",
+      "bloom_sekundaer": "L3_Anwenden",
+      "bloom_schwerpunkt": "L2-L3",
+      "scpl_position": "Akt 1 (Setup) — Konstituierung Ordnung",
+      "konkrete_anker": ["19. Januar 1919", "11. August 1919", "Weimar Nationaltheater", "Weimarer Verfassung Art. 1, 22, 109", "Ludwig XIV. Selbstverstaendnis-Zitat"],
+      "stoffdichte_kernkonzepte": 4,
+      "stoffdichte_bewertung": "im_zielkorridor"
+    },
+    {
+      "mappe_id": "M3",
+      "position": 3,
+      "titel": "Versailles 1919 — Wie reagieren die Menschen?",
+      "didaktische_funktion": "Vertiefen",
+      "geschaetzte_bearbeitungszeit_min": 14,
+      "kerninhalt": "Wesentliche Bestimmungen Versailler Vertrag (28. Juni 1919): militaerisch (100.000-Mann-Heer), territorial (Elsass-Lothringen, Westpreussen, Kolonien), wirtschaftlich (Reparationen). Multiperspektivische Reaktion gesellschaftlicher Schichten.",
+      "titel_stil_r_titel_3": "fragend",
+      "titel_pruefung": {
+        "wertende_adjektive": false,
+        "konflikt_seite_privilegiert": false,
+        "spoiler_loesung": false,
+        "wortketten": 6,
+        "qd_titel_status": "PASS"
+      },
+      "thematischer_schwerpunkt": "Wesentliche Bestimmungen Versailler Vertrag (28. Juni 1919): militaerisch (100.000-Mann-Heer), territorial (Elsass-Lothringen, Westpreussen, Kolonien), wirtschaftlich (Reparationen). Multiperspektivische Reaktion gesellschaftlicher Schichten.",
+      "zentrale_erkenntnis": "Der Versailler Vertrag belastete die junge Republik schwer — und unterschiedliche gesellschaftliche Gruppen reagierten unterschiedlich auf seine Bestimmungen.",
+      "ke_hauptzuordnung": ["GPG7_LB3_K_04"],
+      "ke_nebenzuordnung": ["GPG7_LB2_K_08"],
+      "gegenstandsbereich": ["Interessen"],
+      "operationalisierungsziel": "Die SuS erlaeutern die wesentlichen militaerischen, territorialen und wirtschaftlichen Bestimmungen des Versailler Vertrags, indem sie aus drei Perspektiven (Frontsoldat, Buergerin, Politiker) die Reaktionen pruefen, was daran erkennbar wird, dass sie begruenden koennen, warum unterschiedliche Schichten unterschiedlich reagierten.",
+      "afb_verteilung_vorschlag": {
+        "afb_I": 0.2,
+        "afb_II": 0.6,
+        "afb_III": 0.2
+      },
+      "bloom_primaer": "L3_Anwenden",
+      "bloom_sekundaer": "L4_Analysieren",
+      "bloom_schwerpunkt": "L3-L4",
+      "scpl_position": "Akt 2 (Konfrontation) — Aussen-Belastung",
+      "konkrete_anker": ["28. Juni 1919", "Versailles Spiegelsaal", "100.000-Mann-Heer", "Reparationen", "3 Schichten-Perspektiven (Frontheimkehrer, Arbeiterfamilie Berlin, Reichstagsabgeordneter)"],
+      "stoffdichte_kernkonzepte": 5,
+      "stoffdichte_bewertung": "im_zielkorridor_oberer_rand"
+    },
+    {
+      "mappe_id": "M4",
+      "position": 4,
+      "titel": "1920-1923 — Die Republik unter Druck",
+      "didaktische_funktion": "Sichern",
+      "geschaetzte_bearbeitungszeit_min": 15,
+      "kerninhalt": "Drei Krisen-Schlaglichter: Kapp-Putsch (Maerz 1920, Putsch von rechts, gestoppt durch Generalstreik), Hyperinflation (1923), Hitler-Putsch (8.-9. November 1923 Muenchen, gescheitert). Pruefung Krisenresilienz.",
+      "titel_stil_r_titel_3": "deskriptiv",
+      "titel_pruefung": {
+        "wertende_adjektive": false,
+        "konflikt_seite_privilegiert": false,
+        "spoiler_loesung": false,
+        "wortketten": 5,
+        "qd_titel_status": "PASS",
+        "begruendung": "Wort 'Druck' beschreibt sachlich Belastung, ohne Wertung der Akteure oder Ausgang. KEIN 'Untergang' / 'Endzeit' / 'Niedergang'."
+      },
+      "thematischer_schwerpunkt": "Drei Krisen-Schlaglichter: Kapp-Putsch (Maerz 1920, Putsch von rechts, gestoppt durch Generalstreik), Hyperinflation (1923), Hitler-Putsch (8.-9. November 1923 Muenchen, gescheitert). Pruefung Krisenresilienz.",
+      "zentrale_erkenntnis": "Zwischen 1920 und 1923 erlebte die Republik mehrere schwere Krisen — sie ueberstand sie durch das Engagement von Buergern, Gewerkschaften und demokratischen Institutionen.",
+      "ke_hauptzuordnung": ["GPG7_LB2_K_01"],
+      "ke_nebenzuordnung": ["GPG7_LB3_K_04"],
+      "gegenstandsbereich": ["Ordnungssysteme", "Werte"],
+      "operationalisierungsziel": "Die SuS beurteilen die Krisen 1920-1923 (Kapp-Putsch, Hyperinflation, Hitler-Putsch) als Bedrohungen der jungen Demokratie, indem sie pruefen, welche Stuetzen die Republik trotz dieser Krisen trugen, was daran erkennbar wird, dass sie ein begruendetes Urteil zur Krisenresilienz formulieren koennen.",
+      "afb_verteilung_vorschlag": {
+        "afb_I": 0.1,
+        "afb_II": 0.5,
+        "afb_III": 0.4
+      },
+      "bloom_primaer": "L4_Analysieren",
+      "bloom_sekundaer": "L5_Bewerten",
+      "bloom_schwerpunkt": "L4-L5",
+      "scpl_position": "Akt 3 (Bewaehrungsprobe) — Synthese + Urteil",
+      "konkrete_anker": ["13. Maerz 1920 Kapp-Putsch", "November 1923 Inflation Hoehepunkt", "8.-9. November 1923 Hitler-Putsch Muenchen", "Buergerbraeukeller", "Generalstreik-Aufruf 1920"],
+      "stoffdichte_kernkonzepte": 4,
+      "stoffdichte_bewertung": "im_zielkorridor_unterer_rand_bewusst"
+    }
+  ],
+
+  "scpl_choreographie_zusammenfassung": {
+    "ordnungs_typ": "hybrid",
+    "chronologisch": "1918 -> 1919 -> 1919 -> 1920-1923",
+    "thematisch": "Ereignis -> Innen-Ordnung -> Aussen-Belastung -> Bewaehrungsprobe",
+    "schnitt_pruefung": "alle 3 Schnitte trennscharf, keine Ordnungs-Verschraenkung (QD9 PASS)"
+  },
+
+  "narrativ_rahmen_verweis": {
+    "setting": "Berliner Zeitungsredaktion 1923",
+    "sus_rolle": "Recherche-Team Sonderausgabe 'Fuenf Jahre Republik'",
+    "figuren_frei": true,
+    "begruendung_verweis": "DIDAKTIK_RAHMEN.md Sektion 7 'Narrativ-Rahmen'"
+  },
+
+  "q_gate_titel_pruefung_zusammenfassung": {
+    "alle_4_mappen_pass": true,
+    "stil_verteilung": {
+      "deskriptiv": ["M1", "M2", "M4"],
+      "fragend": ["M3"],
+      "explizit_multiperspektivisch": []
+    },
+    "fail_pattern_vermieden": ["wertende_adjektive", "konflikt_seite_privilegierung", "spoiler", "teleologische_falle"],
+    "wortketten_max_pruefung": "alle Mappen-Titel <= 6 Wortketten (R-TITEL-3-Limit eingehalten)"
+  }
+}

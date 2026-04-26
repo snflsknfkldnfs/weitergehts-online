@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0",
+  "vertrag": "VERTRAG_PHASE_0-3_SKRIPT",
+  "game_id": "weimarer-republik-anfangsphase",
+  "run_id": "run-3-2026-04-26",
+  "erstellt_am": "2026-04-26",
+  "agent": "agent-skript",
+  "mappen_anzahl": 4,
+  "sprachvertrag": "R7 (max. 14 Wörter/Satz, max. 2 Komposita/Satz, Hauptsatz-Dominanz, Du-Form für Aufgaben, neutral für Texte)",
+  "rahmenhandlung": "Sonderausgabe Fünf Jahre Republik — Aktenrecherche in Berliner Redaktion 1923",
+
+  "mappen": [
+    {
+      "mappe_id": "M1",
+      "titel": "November 1918: Eine neue Ordnung",
+      "aktenkarton_titel": "Akte 1918 — Wie wurde aus dem Kaiserreich eine Republik?",
+      "funktion": "Hinführen",
+      "bloom": "L1-L2",
+      "afb": "I-II",
+      "leitfrage": "An einem einzigen Tag wurde Deutschland zweimal zur Republik ausgerufen. Wie konnte das passieren — und was bedeutete es?",
+      "ke_anker_haupt": "GPG7_LB2_K_08",
+      "material_anzahl": 6,
+      "material_sequenz": [
+        "M1.1 Foto Scheidemann (img-m1-01)",
+        "M1.2 Mini-Zeitleiste 28.10.-11.11.1918",
+        "M1.3 Steckbrief 9.11.1918",
+        "M1.4 Auszug Aufruf RdV 12.11.1918",
+        "M1.5 Foto Wilhelm II. Exil (img-m1-03)",
+        "M1.6 Portrait Scheidemann (img-m1-02) — Pflicht-BU 'Philipp Scheidemann (Portrait, undatiert)'"
+      ],
+      "aufgaben_anker": ["A1 Reihenfolge", "A2 Doppelausrufung erklären", "A3 Vergleich Kaiserreich/Republik"],
+      "tafelbild_saat": "Steckbrief 9.11.1918 (Datum / Ort / Akteure / Was änderte sich)",
+      "sicherungs_erkenntnis": "9.11.1918 endete die Monarchie. Eine Republik begann. Zwei Vorstellungen — beide einig: Das alte System ist vorbei.",
+      "uebergang_zu_naechster_mappe": "Die Republik war ausgerufen. Aber wie sollte sie funktionieren? Eine neue Ordnung braucht Regeln. Die Antwort kam wenige Monate später aus Weimar.",
+      "abschluss_typ": "UEBERLEITUNG",
+      "trigger_flags": ["politische Umwälzung", "Spartakus-Folgen Jan 1919 (nicht vertieft)", "Doppelausrufung Privilegierungs-Risiko", "Dolchstoss-Legende falls SuS-Frage"],
+      "multiperspektive": ["Scheidemann/MSPD", "Liebknecht/Spartakusbund", "Wilhelm II.", "Volk/Arbeiter/Matrose"],
+      "drift_hinweise_compliance": ["img-m1-02 BU 'undatiert' umgesetzt in M1.6"],
+      "skript_datei": "SKRIPT_MAPPE_M1.md"
+    },
+    {
+      "mappe_id": "M2",
+      "titel": "Eine Verfassung für eine Demokratie: Weimar 1919",
+      "aktenkarton_titel": "Akte 1919/I — Wie sieht die neue Ordnung aus?",
+      "funktion": "Erarbeiten",
+      "bloom": "L2-L3",
+      "afb": "II",
+      "leitfrage": "Zwei Sätze — und ein ganzes Land verändert sich. Was ist jetzt anders?",
+      "ke_anker_haupt": "GPG7_LB2_K_01",
+      "material_anzahl": 7,
+      "material_sequenz": [
+        "M2.1 Quellen-Paar Ludwig XIV. ↔ WRV Art. 1",
+        "M2.2 Portrait Ludwig XIV. (img-m2-04)",
+        "M2.3 Foto Nationalversammlung Weimar (img-m2-01)",
+        "M2.4 Verfassungsartikel Art. 22 + Art. 109",
+        "M2.5 Vergleichstabelle Absolutismus/Demokratie",
+        "M2.6 Portrait Ebert (img-m2-03) — Pflicht-BU '1925'",
+        "M2.7 Statistik Wahlbeteiligung 19.1.1919 (83%, 37 Frauen)"
+      ],
+      "aufgaben_anker": ["A1 Zitat-Lektüre Macht-Frage", "A2 Volkssouveränität erklären", "A3 Vergleichstabelle füllen"],
+      "tafelbild_saat": "Vergleichstabelle Absolutismus (Ludwig XIV.) ↔ Demokratie (Weimar 1919) — Macht / Wahlrecht / Macht-Begrenzung",
+      "sicherungs_erkenntnis": "Die Weimarer Verfassung gab erstmals echte Mitbestimmung. Frauen durften wählen. Macht war begrenzt. Bruch mit dem Absolutismus.",
+      "uebergang_zu_naechster_mappe": "Die Republik hatte jetzt eine Verfassung. Sie hatte eine neue Ordnung im Inneren. Aber im Sommer 1919 wartete eine schwere Last von außen. Ein Vertrag wurde unterschrieben. In Versailles.",
+      "abschluss_typ": "UEBERLEITUNG",
+      "trigger_flags": ["Notverordnungsrecht Art. 48 NICHT vertiefen", "BRD-Vergleich neutral halten"],
+      "multiperspektive": ["Verfassungsgeber Preuss/Ebert", "Erstwählerin 1919", "Konservativer Beamter Kaiserreich (optional Tipp)", "Ludwig XIV. (historischer Vergleich)"],
+      "drift_hinweise_compliance": ["img-m2-03 BU '1925' umgesetzt in M2.6", "m2-mat-07 Statistik Wahlbeteiligung umgesetzt in M2.7"],
+      "skript_datei": "SKRIPT_MAPPE_M2.md"
+    },
+    {
+      "mappe_id": "M3",
+      "titel": "Versailles 1919: Wie reagieren die Menschen?",
+      "aktenkarton_titel": "Akte 1919/II — Wie reagiert das Land auf Versailles?",
+      "funktion": "Vertiefen",
+      "bloom": "L3-L4",
+      "afb": "II (mit III-Anteil)",
+      "leitfrage": "Ein Vertrag, drei Sichtweisen — wer reagiert wie auf Versailles, und warum?",
+      "ke_anker_haupt": "GPG7_LB3_K_04",
+      "material_anzahl": 6,
+      "material_sequenz": [
+        "M3.1 Karte Gebietsverluste (img-m3-01)",
+        "M3.2 Bestimmungs-Übersicht (militärisch/territorial/wirtschaftlich)",
+        "M3.3 Auszug Art. 231",
+        "M3.4 Perspektiv-Karte Frontheimkehrer",
+        "M3.5 Perspektiv-Karte Berliner Arbeiterfamilie",
+        "M3.6 Perspektiv-Karte SPD-Reichstagsabgeordneter",
+        "M3.7 Orpen-Gemälde Spiegelsaal (img-m3-02) — Pflicht-Quellenkritik",
+        "M3.8 Originaldokument Versailler Vertrag (img-m3-03, optional)"
+      ],
+      "aufgaben_anker": ["A1 Bestimmungen zuordnen", "A2 Perspektiven erschließen", "A3 Schichten-Reaktion begründen"],
+      "tafelbild_saat": "Schichten-Reaktions-Tabelle (Bestimmung / Was / Wer leidet besonders)",
+      "sicherungs_erkenntnis": "Versailler Vertrag belastete die Republik schwer. Verschiedene Menschen reagierten verschieden. Manche fühlten sich gedemütigt. Manche hofften auf Frieden. Manche mussten unterschreiben.",
+      "uebergang_zu_naechster_mappe": "Die Republik trug eine schwere Last. In den nächsten Jahren kamen weitere Krisen dazu. Putsche, Geld ohne Wert, Aufstände. Würde diese junge Demokratie das überstehen?",
+      "abschluss_typ": "UEBERLEITUNG",
+      "trigger_flags": ["Diktat-Rhetorik nur in Anführungszeichen", "Kriegsschuldfrage geteilte Verantwortung", "Polnischer Korridor → Gebietsabtretung an Polen", "Multiperspektivität PFLICHT", "Quellenkritik Orpen-Gemälde PFLICHT"],
+      "multiperspektive": ["Frontheimkehrer", "Berliner Arbeiterfamilie", "SPD-Reichstagsabgeordneter", "Sieger-Position via Art. 231 + Orpen quellenkritisch"],
+      "drift_hinweise_compliance": ["m3-mat-02 Quellenkritik-Hinweis 'Gemälde nicht Foto, Auftragskunst Imperial War Museum' umgesetzt in M3.7", "Scheidemann-Zitat 12.5.1919 von Rücktritt 20.6.1919 entkoppelt"],
+      "skript_datei": "SKRIPT_MAPPE_M3.md"
+    },
+    {
+      "mappe_id": "M4",
+      "titel": "1920-1923: Wie hält sich die Republik?",
+      "aktenkarton_titel": "Akte 1920-1923 — Wie hält sich die Republik?",
+      "funktion": "Sichern (Bewährungsprobe)",
+      "bloom": "L4-L5",
+      "afb": "II-III",
+      "leitfrage": "Drei Krisen in vier Jahren — was bedroht die junge Republik, und was hält sie?",
+      "ke_anker_haupt": "GPG7_LB2_K_01 (impl.) + GPG7_LB3_K_04 (Folgewirkung Versailles)",
+      "material_anzahl": 6,
+      "material_sequenz": [
+        "M4.1 100-Billionen-Schein (img-m4-03)",
+        "M4.2 Brotpreis-Tabelle Jan-Nov 1923",
+        "M4.3 Tagebuch Berliner Arbeiterfamilie Nov 1923 (rekonstruiert auf Quellenbasis)",
+        "M4.4 Foto Kapp-Putsch Brandenburger Tor (img-m4-05) — Pflicht-BU 'Marinebrigade Ehrhardt am Pariser Platz, März 1920'",
+        "M4.5 Aufruf Generalstreik 13.3.1920",
+        "M4.6 Krisen-Tabelle 1920-1923 (Hefteintrag-Slot, 4 Knoten) inkl. img-m4-06 — Pflicht-BU 'Marienplatz München, 9. November 1923'"
+      ],
+      "aufgaben_anker": ["A1 Hyperinflation erklären", "A2 Kapp-Foto analysieren + Republik-Verteidiger benennen", "A3 Krisen-Tabelle vervollständigen", "A4 Krisenresilienz-Urteil begründen"],
+      "tafelbild_saat": "Krisen-Tabelle 4 Knoten (Krise / Ursache / Antwort/Stütze): Kapp-Putsch / Ruhrbesetzung / Hyperinflation / Hitler-Putsch",
+      "sicherungs_erkenntnis": "Die Republik überstand 1923 vier Krisen. Sie hatte Verteidiger. Sie hatte auch viele Gegner. Sie war stabil und gefährdet zugleich. Krisenresilienz als Befund auf Probe — keine Garantie.",
+      "uebergang_zu_naechster_mappe": null,
+      "abschluss_typ": "REFLEXION",
+      "abschluss_impuls": "Die Republik hat 1923 bestanden. Aber war sie damit auch dauerhaft sicher? Diese Frage trägt die Sonderausgabe — und sie bleibt offen.",
+      "trigger_flags": ["politische Gewalt Putsche", "Hitler-Putsch Heroisierungs-Risiko (KEIN Vorgriff 1933, KEIN Hitler-Portrait, KEIN Mein Kampf)", "Hyperinflation Existenznot", "Stresemann scope-out 1924+", "Antisemitismus/völkisch Hintergrund NICHT vertieft", "Festungshaft-Strafmaß NICHT als Justiz-Skandal vertieft"],
+      "multiperspektive": ["Putschisten von rechts (Kapp/Lüttwitz; Hitler/Ludendorff)", "Republik-Verteidiger (Gewerkschafter/Streikende)", "Berliner Arbeiterfamilie (Alltag/Inflation)", "Reichsregierung/Reichsbank (Rentenmark)"],
+      "drift_hinweise_compliance": ["img-m4-06 BU 'Marienplatz München, 9.11.1923' umgesetzt in M4.6 — KEIN Bürgerbräukeller-Bild, Vorabend 8.11. nur narrativ erwähnt", "Hitler-Putsch Faktentreue 8.-9.11.1923 / Feldherrnhalle / 15+4+1 Tote / 9 Monate Festungshaft Landsberg umgesetzt", "anti-teleologisch: KEIN 1933-Vorgriff, KEIN Stresemann-positives-Schluss-Narrativ"],
+      "skript_datei": "SKRIPT_MAPPE_M4.md"
+    }
+  ],
+
+  "sandwich_uebergaenge": [
+    {"von": "M1", "nach": "M2", "ueberleitungssatz": "Die Antwort kam wenige Monate später aus Weimar.", "abschluss_typ": "UEBERLEITUNG"},
+    {"von": "M2", "nach": "M3", "ueberleitungssatz": "Im Sommer 1919 wartete eine schwere Last von außen. Ein Vertrag wurde unterschrieben. In Versailles.", "abschluss_typ": "UEBERLEITUNG"},
+    {"von": "M3", "nach": "M4", "ueberleitungssatz": "Putsche, Geld ohne Wert, Aufstände. Würde diese junge Demokratie das überstehen?", "abschluss_typ": "UEBERLEITUNG"},
+    {"von": "M4", "nach": null, "ueberleitungssatz": null, "abschluss_typ": "REFLEXION", "reflexionsfrage": "Die Republik hat 1923 bestanden. Aber war sie damit auch dauerhaft sicher?"}
+  ],
+
+  "ke_abdeckung": [
+    {"ke": "GPG7_LB2_K_08", "abgedeckt_in": "M1", "skript_stelle": "M1 Sicherungs-Erkenntnis + Steckbrief 9.11.1918"},
+    {"ke": "GPG7_LB2_K_01", "abgedeckt_in": "M2 (Kern) + M4 (Krisenresilienz-Urteil)", "skript_stelle": "M2 Vergleichstabelle + M4 Krisen-Tabelle"},
+    {"ke": "GPG7_LB3_K_04", "abgedeckt_in": "M3 (Kern) + M4 (Folgewirkung Reparationen→Hyperinflation)", "skript_stelle": "M3 Schichten-Reaktion + M4 Krisen-Tabelle Ursachenspalte"}
+  ],
+
+  "trigger_sichtbarkeit_policy": {
+    "lehrkraft_only_felder": ["trigger_flags"],
+    "sus_render_ausschluss": "Im SuS-data.json und SuS-HTML wird KEIN Feld trigger_flags gerendert.",
+    "begleitdokument_pflicht": ["M4 Hitler-Putsch-Sensibilitaet", "M3 Diktat-Rhetorik", "M4 Hyperinflation-Existenznot"]
+  }
+}

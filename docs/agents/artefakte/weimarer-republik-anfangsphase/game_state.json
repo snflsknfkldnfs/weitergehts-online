@@ -1,0 +1,211 @@
+{
+  "schema_version": "1.0",
+  "game_id": "weimarer-republik-anfangsphase",
+  "run_id": "run-3-2026-04-26",
+  "erstellt_am": "2026-04-26",
+  "last_updated": "2026-04-26T-after-0.3-continuation",
+
+  "status": "PRODUKTION_PHASE_0_3_DONE",
+  "naechste_aktion": "Phase 0.4 (agent-hefteintrag) — Hefteintrag/Sicherung pro Mappe (SCPL-Tafelbild, baut auf Tafelbild-Saat aus chunk_architektur + ARTEFAKT_INVENTAR.tafelbild_knoten)",
+
+  "game_parameter": {
+    "thema": "weimarer-republik-anfangsphase",
+    "thema_klartext": "Weimarer Republik — Anfangsphase 1918/19 — Novemberrevolution, Verfassungsgebung, fruehe Krisen 1919-1923",
+    "jahrgangsstufe": "7c",
+    "schulart": "Mittelschule Bayern",
+    "fach": "GPG",
+    "schwierigkeit": "Basis",
+    "mappen_anzahl": 4,
+    "vorgaenger_game": null
+  },
+
+  "pfade": {
+    "generator_path": "/Users/paulad/escape-game-generator",
+    "target_path": "/Users/paulad/weitergehts.online/weitergehts-online",
+    "uew_path": "/Users/paulad/weitergehts.online/Unterrichtseinwicklung",
+    "output_verzeichnis": "/Users/paulad/weitergehts.online/weitergehts-online/docs/agents/artefakte/weimarer-republik-anfangsphase/",
+    "lehrplan_anker": "/Users/paulad/weitergehts.online/Unterrichtseinwicklung/7c/Input_Artefake/Lehrplan/GPG_R7/Fachlehrplan_GPG_R7.md"
+  },
+
+  "phase_history": [
+    {
+      "phase": "ONBOARDING",
+      "status": "DONE",
+      "datum": "2026-04-26",
+      "outputs": ["GAME_PARAMETERS.md", "game_state.json"]
+    },
+    {
+      "phase": "0.1_DIDAKTIK",
+      "status": "DONE_AWAITING_USER_VALIDATION",
+      "datum": "2026-04-26",
+      "agent": "agent-didaktik",
+      "vertrag": "VERTRAG_PHASE_0-1_DIDAKTIK_v1.2",
+      "outputs": [
+        "DIDAKTIK_RAHMEN.md",
+        "didaktisches_konzept.json",
+        "mappen_aufteilung.json",
+        "Q-GATE-LOG.md",
+        "GAME_PARAMETERS.md"
+      ],
+      "q_gate_urteil": "PASS_MIT_1_WARN",
+      "q_gate_warn_id": "QD2_LehrplanScopeBruecke",
+      "eskalation_ausgeloest": false,
+      "user_validierung_pflicht": true
+    },
+    {
+      "phase": "0.2_INHALT",
+      "status": "DONE",
+      "datum": "2026-04-26",
+      "agent": "agent-inhalt",
+      "vertrag": "VERTRAG_PHASE_0-2_INHALT",
+      "outputs": [
+        "inhalts_briefing.json",
+        "QUELLENVERZEICHNIS.md",
+        "Q-GATE-LOG_phase_0_2.md"
+      ],
+      "q_gate_urteil": "PASS_MIT_1_OFFEN_BEDINGT",
+      "q_gate_offen_id": "QI-MV_MedienVerifikationProspektivPhase_0_2_M",
+      "eskalation_ausgeloest": false,
+      "e_d3_data_degraded": false,
+      "anzahl_schluessel_fakten_total": 28,
+      "anzahl_quellen_wiki_mcp": 14,
+      "anzahl_quellen_webfetch": 8,
+      "anzahl_quellen_llm_memory": 0,
+      "trigger_flags": [
+        "politische_gewalt_putsche_1919_1923",
+        "ermordung_liebknecht_luxemburg_jan_1919",
+        "tote_bei_kapp_putsch_und_hitler_putsch",
+        "hyperinflation_existenznot_familien"
+      ]
+    },
+    {
+      "phase": "0.2_M_MEDIENRECHERCHE",
+      "status": "DONE",
+      "datum": "2026-04-26",
+      "agent": "agent-medienrecherche",
+      "gate": "Q-MEDIEN-PROSPEKTIV",
+      "vertrag": "VERTRAG_PHASE_0-2_INHALT §3.2 + UPGRADE_PLAN v1.3 §19",
+      "outputs": [
+        "medien_katalog_game.json",
+        "Q-GATE-LOG_phase_0_2_m.md"
+      ],
+      "q_gate_urteil": "PASS",
+      "anzahl_geprueft": 16,
+      "anzahl_verified": 16,
+      "anzahl_alternative_found": 5,
+      "anzahl_motiv_mismatch_korrigiert": 1,
+      "anzahl_not_found": 0,
+      "anzahl_license_problem": 0,
+      "not_found_quote_prozent": 0,
+      "stop_blocker": false,
+      "lizenz_summary": {
+        "Public_Domain": 11,
+        "CC_BY-SA_3.0_DE_Bundesarchiv": 5,
+        "CC_BY-SA_3.0": 1,
+        "kein_NC_oder_ND": true,
+        "alle_github_pages_kompatibel": true
+      },
+      "drift_hinweise_fuer_didaktik": [
+        "img-m1-02: Vermutete Bundesarchiv 102-08214 zeigt 1929 (NICHT 1918), ersetzt durch 146-1970-096-13 Portrait",
+        "img-m3-02: Foto-Aufnahme Spiegelsaal nicht in Commons; Orpen-Gemaelde -> Bildunterschrift muss 'Gemaelde' ausweisen",
+        "img-m4-06: Vermutete 146-1971-088-50 MISSING; 119-1486 Marienplatz Muenchen 9.11.1923 statt Buergerbraeukeller (Vorabend)"
+      ]
+    },
+    {
+      "phase": "0.3_CONTINUATION_AFTER_USER_INTERRUPT",
+      "status": "DONE",
+      "datum": "2026-04-26",
+      "agents": ["agent-skript", "agent-artefakt"],
+      "vertrag": "VERTRAG_PHASE_0-3 + ROLLEN_KATALOG + POLICY_TRIGGER_SICHTBARKEIT + Cowork-Patches-Audit-2026-04-26",
+      "kontext": "H2 User-Interrupt im Subagent-Streaming (kein Generator-Defekt). Continuation ohne Re-Run nach Cowork-Patches (DIDAKTIK Mittelschule, M3 Scheidemann-Datum, M2 img Drift, ARTEFAKT v0.4.3 Schema-Erweiterung).",
+      "outputs_skript": [
+        "SKRIPT_MAPPE_M4.md",
+        "chunk_architektur.json",
+        "Q-GATE-LOG_phase_0_3_skript.md"
+      ],
+      "outputs_artefakt": [
+        "ARTEFAKT_QUALIFIZIERUNG.md",
+        "artefakt_inventar.json",
+        "Q-GATE-LOG_phase_0_3_artefakt.md"
+      ],
+      "bestehende_dateien_unangetastet": [
+        "SKRIPT_GAME.md",
+        "SKRIPT_MAPPE_M1.md",
+        "SKRIPT_MAPPE_M2.md",
+        "SKRIPT_MAPPE_M3.md",
+        "ARTEFAKT_INVENTAR_GAME.md (Patch v0.4.3)"
+      ],
+      "q_gate_skript_urteil": "PASS",
+      "q_gate_skript_matrix": {
+        "SKRIPT_GAME.md": "17/18 PASS (1 n.v.)",
+        "SKRIPT_MAPPE_M1.md": "17/18 PASS (1 SOLL-Hinweis Typen-Vielfalt)",
+        "SKRIPT_MAPPE_M2.md": "17/18 PASS (1 n.v.)",
+        "SKRIPT_MAPPE_M3.md": "18/18 PASS",
+        "SKRIPT_MAPPE_M4.md": "18/18 PASS"
+      },
+      "q_gate_artefakt_urteil": "PASS",
+      "q_gate_artefakt_cross_checks": {
+        "medien_katalog_16_bilder": "12 als Material referenziert + 4 als RESERVE-Pool dokumentiert",
+        "briefing_material_kandidaten_21": "17 GEDECKT + 2 AEQUIVALENT/EINGEBETTET + 2 POST-AUDIT-NACHZUG + 4 INVENTAR-ERGAENZUNG",
+        "lizenz_konsistenz": "11 PD + 4 CC-BY-SA 3.0 DE Bundesarchiv + 1 CC-BY-SA 3.0",
+        "schema_v0_4_3_erweiterung": "24/24 mit anker_briefing + tafelbild_knoten + tipp_stufen_slot",
+        "drift_bu_quellenkritik": "8/8 Pflichten verortet"
+      },
+      "anti_teleologie_compliance_m4": "KEIN 1933-Vorgriff, KEIN Mein Kampf, KEIN Hitler-Portrait, KEIN Stresemann-positives-Schluss-Narrativ (Stresemann scope-out 1924+). Hitler-Putsch faktentreu 8.-9.11.1923, 15+4+1 Tote, 9 Monate Festungshaft Landsberg.",
+      "stoffdichte_pro_mappe": {"M1": 6, "M2": 7, "M3": 6, "M4": 6, "total": 25},
+      "eskalation_ausgeloest": false
+    }
+  ],
+
+  "q_gate_summary": {
+    "phase_0_1": {
+      "QD1": "PASS", "QD2": "PASS_WARN", "QD3": "PASS", "QD4": "PASS", "QD5": "PASS",
+      "QD6": "PASS", "QD7": "PASS", "QD8": "PASS", "QD9": "PASS", "QD10": "PASS",
+      "QD-TITEL": "PASS",
+      "gesamt": "PASS_MIT_1_WARN"
+    },
+    "phase_0_2": {
+      "QI-LH": "PASS", "QI-FK": "PASS", "QI-MP": "PASS", "QI-SP": "PASS", "QI-KO": "PASS",
+      "QI-SD": "PASS", "QI-SC": "PASS", "QI-TG": "PASS", "QI-QU": "PASS",
+      "QI-MV": "PASS_VIA_PHASE_0_2_M",
+      "QI-TV": "PASS", "QI-TD": "PASS_MANUAL", "QI-DS": "PASS",
+      "gesamt": "PASS"
+    },
+    "phase_0_2_m": {
+      "Q-MEDIEN-PROSPEKTIV": "PASS",
+      "anzahl_verified_dual_kanal": 16,
+      "anzahl_total": 16,
+      "verified_quote_prozent": 100
+    },
+    "phase_0_3_skript": {
+      "SK1_bis_SK18_pro_skript": "mind. 17/18 PASS pro Skript (Schwellwert 12/18)",
+      "drift_compliance": "PASS (alle 7 Drift-Hinweise umgesetzt)",
+      "vollstaendigkeit": "SKRIPT_GAME + 4 Mappen-Skripte + chunk_architektur",
+      "gesamt": "PASS"
+    },
+    "phase_0_3_artefakt": {
+      "standard_q_gates": "10/10 PASS",
+      "cross_checks": "5/5 PASS",
+      "schema_v0_4_3_compliance": "24/24 Materialien",
+      "gesamt": "PASS"
+    }
+  },
+
+  "user_validation_pending": {
+    "phase": "0.1",
+    "punkte": [
+      "Lehrplan-Scope-Brueckenargument (LB3_K_04 + LB2_K_01 als Bruecke fuer Weimar 1918-1923)",
+      "Mappen-Sequenz (M1 Nov 1918 -> M2 Verfassung 1919 -> M3 Versailles 1919 -> M4 1920-1923)",
+      "Narrativ-Rahmen 'Berliner Zeitungsredaktion 1923' (figuren-frei)",
+      "Mappen-Titel R-TITEL-3-Konformitaet"
+    ]
+  },
+
+  "transition_blockers_for_phase_0_3": [
+    "User-Validierung Phase 0.1 muss vorliegen (Phase 0.2 + 0.2.M haben User-Validierung NICHT eingeholt — bleibt offen)"
+  ],
+
+  "transition_blockers_for_phase_0_4": [
+    "Keine. Phase 0.3 vollstaendig (SKRIPT_GAME + 4 Mappen-Skripte + chunk_architektur + ARTEFAKT_INVENTAR + ARTEFAKT_QUALIFIZIERUNG + artefakt_inventar.json). Phase 0.4 (agent-hefteintrag) entsperrt — Tafelbild-Saat aus chunk_architektur + tafelbild_knoten aus ARTEFAKT_INVENTAR liefert Hefteintrag-Eingaben."
+  ]
+}

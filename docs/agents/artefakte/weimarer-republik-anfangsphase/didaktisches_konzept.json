@@ -1,0 +1,132 @@
+{
+  "schema_version": "1.0",
+  "vertrag": "VERTRAG_PHASE_0-1_DIDAKTIK_v1.2",
+  "game_id": "weimarer-republik-anfangsphase",
+  "run_id": "run-3-2026-04-26",
+  "erstellt_am": "2026-04-26",
+  "agent": "agent-didaktik",
+  "validierungsstatus": "ENTWURF",
+
+  "lehrplan_anker": {
+    "lehrplan_id": "LehrplanPLUS_GPG_R7_Bayern_Realschule",
+    "quelldatei": "Unterrichtseinwicklung/7c/Input_Artefake/Lehrplan/GPG_R7/Fachlehrplan_GPG_R7.md",
+    "primaer_lernbereich": {
+      "id": "GPG7_LB3",
+      "titel": "Lernbereich 3: Politik und Gesellschaft"
+    },
+    "sekundaer_lernbereiche": [
+      {"id": "GPG7_LB2", "titel": "Lernbereich 2: Zeit und Wandel"},
+      {"id": "GPG7_LB4", "titel": "Lernbereich 4: Lebenswelt"}
+    ],
+    "kompetenzerwartungen": [
+      {
+        "kompetenzerwartung_id": "GPG7_LB2_K_01",
+        "wortlaut": "Die Schuelerinnen und Schueler nutzen den Vergleich zwischen absolutistischer und demokratischer Regierungsform, um den Wert der politischen Mitbestimmungsmoeglichkeiten in einer Demokratie (z. B. in der Bundesrepublik Deutschland) beurteilen zu koennen.",
+        "afb": "II-III",
+        "rolle_im_game": "Hauptzuordnung Mappe 2 + Implizit-Anwendung Mappe 4"
+      },
+      {
+        "kompetenzerwartung_id": "GPG7_LB2_K_08",
+        "wortlaut": "Sie beschreiben die Auswirkungen des Ersten Weltkrieges auf den Alltag der Menschen in der Heimat sowie an der Front und diskutieren anhand aktueller Beispiele die unmittelbaren Folgen von Kriegen fuer die Menschen.",
+        "afb": "II",
+        "rolle_im_game": "Hauptzuordnung Mappe 1 (Heimatfront-Kontext der Republikausrufung)"
+      },
+      {
+        "kompetenzerwartung_id": "GPG7_LB3_K_04",
+        "wortlaut": "Sie erlaeutern die wesentlichen militaerischen, territorialen und wirtschaftlichen Bestimmungen des Versailler Friedensvertrags, um die entstehende Unzufriedenheit der unterschiedlichen gesellschaftlichen Schichten im Deutschen Reich zu begruenden.",
+        "afb": "II",
+        "rolle_im_game": "Hauptzuordnung Mappe 3"
+      }
+    ],
+    "inhalte": [
+      {"id": "GPG7_LB2_I_01", "text": "Selbstverstaendnis eines absolutistischen Herrschers am Beispiel Ludwig XIV., Selbstverstaendnis eines demokratischen Amtsinhabers"},
+      {"id": "GPG7_LB3_I_03", "text": "Kriegsschuldfrage und Versailler Vertrag"}
+    ],
+    "scope_hinweis": "LehrplanPLUS GPG R7 Bayern endet thematisch in LB3 mit Versailler Vertrag. Weimarer Republik selbst ist kein eigener Lernbereich der Jahrgangsstufe 7 (systematisch erst Jg. 8/9 Realschule). Game nutzt LB3_K_04 + LB2_K_01 als didaktische Bruecke. User-Validierung in Run-2 bereits AKZEPTIERT."
+  },
+
+  "kompetenzen_prozessbezogen": [
+    {"name": "Erkenntnisse gewinnen und anwenden", "schwerpunkt_mappen": [1, 2]},
+    {"name": "Beurteilen und bewerten", "schwerpunkt_mappen": [3, 4]},
+    {"name": "Anwenden und handeln", "schwerpunkt_mappen": [4]}
+  ],
+
+  "gegenstandsbereiche": [
+    {"name": "Ordnungssysteme", "mappen": [1, 2, 4]},
+    {"name": "Interessen", "mappen": [3]},
+    {"name": "Werte", "mappen": [1, 2, 4]}
+  ],
+
+  "operationalisierungsziele": {
+    "stundenziel": {
+      "text": "Die SuS beurteilen die Anfangsphase der Weimarer Republik 1918-1923 als ersten deutschen Demokratie-Versuch, indem sie deren Errungenschaften (Verfassung, Wahlrecht), Belastungen (Versailler Vertrag, Inflation) und Bedrohungen (Putsche von links und rechts) aus verschiedenen Perspektiven untersuchen, was daran erkennbar wird, dass sie begruenden koennen, warum diese Republik gleichzeitig stabil und gefaehrdet war.",
+      "afb": "II-III"
+    },
+    "teilziele": [
+      {"id": "TZ1", "mappe": 1, "afb": "I-II", "text": "Die SuS beschreiben die Ausrufung der Republik im November 1918, indem sie die Doppelausrufung Scheidemann/Liebknecht mit der vorherigen Monarchie vergleichen, was daran erkennbar wird, dass sie zwei zentrale Veraenderungen (Wahlrecht, Staatsoberhaupt) benennen koennen."},
+      {"id": "TZ2", "mappe": 2, "afb": "II", "text": "Die SuS erklaeren die Grundzuege der Weimarer Reichsverfassung 1919, indem sie zentrale Rechte und Institutionen den Selbstverstaendnis-Texten eines absolutistischen und eines demokratischen Amtsinhabers gegenueberstellen, was daran erkennbar wird, dass sie drei demokratische Mitbestimmungs-Wege im Vergleich zum Absolutismus markieren koennen."},
+      {"id": "TZ3", "mappe": 3, "afb": "II", "text": "Die SuS erlaeutern die wesentlichen militaerischen, territorialen und wirtschaftlichen Bestimmungen des Versailler Vertrags, indem sie aus drei Perspektiven (Frontsoldat, Buergerin, Politiker) die Reaktionen pruefen, was daran erkennbar wird, dass sie begruenden koennen, warum unterschiedliche Schichten unterschiedlich reagierten."},
+      {"id": "TZ4", "mappe": 4, "afb": "II-III", "text": "Die SuS beurteilen die Krisen 1920-1923 (Kapp-Putsch, Hyperinflation, Hitler-Putsch) als Bedrohungen der jungen Demokratie, indem sie pruefen, welche Stuetzen die Republik trotz dieser Krisen trugen, was daran erkennbar wird, dass sie ein begruendetes Urteil zur Krisenresilienz formulieren koennen."}
+    ]
+  },
+
+  "bloom_verteilung": {
+    "vorschlag": "progressiv L1->L5",
+    "pro_mappe": {
+      "1": {"primaer": "L1_Erinnern", "sekundaer": "L2_Verstehen"},
+      "2": {"primaer": "L2_Verstehen", "sekundaer": "L3_Anwenden"},
+      "3": {"primaer": "L3_Anwenden", "sekundaer": "L4_Analysieren"},
+      "4": {"primaer": "L4_Analysieren", "sekundaer": "L5_Bewerten"}
+    },
+    "begruendung": "Monoton steigende kognitive Anforderung, abgestimmt auf AFB-Progression I-II -> II -> II -> II-III. Sicherung von Daten/Personen in M1, Anwendung des Vergleichsschemas in M2, multiperspektivische Analyse in M3, Synthese-Bewertung in M4."
+  },
+
+  "ethische_hinweise": {
+    "multiperspektivitaet": "Doppelausrufung M1 (SPD + USPD/KPD), Versailles-Reaktionen M3 (3 Schichten), Krisen-Beurteilung M4 (Bedrohung + Resilienz)",
+    "ueberwaeltigungsverbot": "Beutelsbacher Konsens. Keine teleologische Falle (Republik nicht als 'zum Scheitern verurteilt'), Hitler-Putsch streng als gescheiterter Putsch 1923 ohne 1933-Vorgriff.",
+    "kontroversitaet": "Kriegsschuldfrage (Versailler Artikel 231) als historisch geteilte Verantwortung darstellbar.",
+    "sensibilitaet": "Hyperinflation existenzbezogen statt Kuriositaet, politische Gewalt ohne Verherrlichung/Banalisierung.",
+    "aktualitaetsbezug": "Demokratie als Errungenschaft + Bedrohung; Bezug zu Bundesrepublik heute via LB2_K_01."
+  },
+
+  "multiperspektiv_akteure": [
+    {"perspektive": "Reformer (parlamentarisch-sozialdemokratisch)", "hauptort": ["M1", "M2"], "exemplar": "Philipp Scheidemann"},
+    {"perspektive": "Revolutionaere (raetekommunistisch)", "hauptort": ["M1"], "exemplar": "Karl Liebknecht"},
+    {"perspektive": "Konservative / Anti-Republikaner (rechts)", "hauptort": ["M4"], "exemplar": "Wolfgang Kapp"},
+    {"perspektive": "Republik-Gegner (links)", "hauptort": ["M4"], "exemplar": "Spartakus-Erbe"},
+    {"perspektive": "Alltags-Buerger / Arbeiterfamilie", "hauptort": ["M3", "M4"], "exemplar": "Berliner Arbeiterfamilie 1919/1923"}
+  ],
+
+  "scpl_begruendung_verweis": "DIDAKTIK_RAHMEN.md Sektion 8 'SCPL-Begruendung'",
+
+  "r7_sprachniveau_kalibrierung": {
+    "max_satzlaenge_woerter": 14,
+    "hauptsatz_dominanz": true,
+    "komposita_regel": "max 2 Glieder pro Hauptsatz, sonst umschreiben",
+    "nominalstil": "vermeiden, Verbalkonstruktionen bevorzugen",
+    "daz_vertraeglich": true,
+    "anrede": "Du-Form oder neutrale Aufgabenformulierung",
+    "fachbegriffe_pro_mappe": {
+      "1": ["Republik", "Abdankung"],
+      "2": ["Verfassung", "Reichspraesident", "Volkssouveraenitaet"],
+      "3": ["Reparationen", "Bestimmungen", "Schichten"],
+      "4": ["Putsch", "Inflation", "Generalstreik"]
+    }
+  },
+
+  "q_gate_status": {
+    "QD1": "PASS",
+    "QD2": "PASS_WARN",
+    "QD3": "PASS",
+    "QD4": "PASS",
+    "QD5": "PASS",
+    "QD6": "PASS",
+    "QD7": "PASS",
+    "QD8": "PASS",
+    "QD9": "PASS",
+    "QD10": "PASS",
+    "QD-TITEL": "PASS",
+    "gate_urteil": "PASS_MIT_1_WARN_QD2",
+    "user_validierung_pflicht": true
+  }
+}

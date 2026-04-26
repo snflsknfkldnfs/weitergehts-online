@@ -1,0 +1,654 @@
+{
+  "schema_version": "1.1",
+  "vertrag": "VERTRAG_PHASE_0-3_ARTEFAKT",
+  "game_id": "weimarer-republik-anfangsphase",
+  "run_id": "run-3-2026-04-26",
+  "erstellt_am": "2026-04-26",
+  "agent": "agent-artefakt",
+  "patch_version": "v0.4.3-post-audit",
+  "schema_extension_post_audit": [
+    "anker_briefing",
+    "tafelbild_knoten",
+    "tipp_stufen_slot"
+  ],
+  "_meta": {
+    "mappen_anzahl": 4,
+    "material_anzahl_total": 25,
+    "material_pro_mappe": {"M1": 6, "M2": 7, "M3": 6, "M4": 6},
+    "bilder_verifiziert_aus_medien_katalog": 16,
+    "alle_qualifiziert": true,
+    "lizenz_kompatibel_kein_NC_oder_ND": true,
+    "stoffdichte_pflichtvorgabe_akzeptiert": true
+  },
+
+  "mappen": [
+    {
+      "mappe_id": "M1",
+      "titel": "November 1918 — Eine neue Ordnung",
+      "ke_anker": ["GPG7_LB2_K_08", "GPG7_LB2_K_01"],
+      "bloom_korridor": "L1-L2",
+      "afb": "I-II",
+      "materialien": [
+        {
+          "material_id": "m1-mat-01-bildquelle-scheidemann",
+          "typ": "bildquelle",
+          "subtyp": "foto",
+          "kerninhalt": "Scheidemann am Reichstagsfenster, ruft am 9.11.1918 die Republik aus.",
+          "quelle_status": "VERIFIED",
+          "wikimedia_filename": "Ausrufung_Republik_Scheidemann.jpg",
+          "img_id": "img-m1-01",
+          "lizenz": "Public Domain (PD-old-70)",
+          "urheber": "Erich Greiser (1883-1939)",
+          "perspektive": "Sozialdemokratisch-parlamentarisch (Scheidemann/MSPD)",
+          "sequenz_position": 1,
+          "aufgaben_anker": ["a1-01", "a1-02"],
+          "anker_briefing": "wiki-doppel-ausrufung-2026-04-26",
+          "tafelbild_knoten": "Steckbrief 9.11.1918: Akteur 'Scheidemann am Reichstag'",
+          "tipp_stufen_slot": {
+            "a1-01": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"},
+            "a1-02": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"}
+          },
+          "bu_pflicht": null,
+          "trigger_vermerk": null,
+          "qualifizierung": "QUALIFIZIERT"
+        },
+        {
+          "material_id": "m1-mat-02-bildquelle-wilhelm-exil",
+          "typ": "bildquelle",
+          "subtyp": "foto",
+          "kerninhalt": "Wilhelm II. im niederlaendischen Exil (Doorn). Belegt Abdankung + Flucht 9.11.1918.",
+          "quelle_status": "VERIFIED",
+          "wikimedia_filename": "Bundesarchiv_Bild_136-C0804,_Kaiser_Wilhelm_II._im_Exil.jpg",
+          "img_id": "img-m1-03",
+          "lizenz": "Public Domain",
+          "urheber": "Oscar Tellgmann (1857-1936)",
+          "perspektive": "Monarchisch-konservativ (Anhaenger Wilhelms II.)",
+          "sequenz_position": 2,
+          "aufgaben_anker": ["a1-03"],
+          "anker_briefing": "wiki-wilhelm2-2026-04-26",
+          "tafelbild_knoten": "Steckbrief 9.11.1918: Kontrast 'Kaiser dankt ab'",
+          "tipp_stufen_slot": {
+            "a1-03": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"}
+          },
+          "trigger_vermerk": null,
+          "qualifizierung": "QUALIFIZIERT"
+        },
+        {
+          "material_id": "m1-mat-03-zeitleiste-okt-nov-1918",
+          "typ": "zeitleiste",
+          "subtyp": "visuell-strukturiert",
+          "kerninhalt": "Mini-Zeitleiste 28. Okt - 11. Nov 1918 mit 5 Knoten.",
+          "quelle_status": "TBD",
+          "wikimedia_filename": null,
+          "img_id": null,
+          "lizenz": "Eigenkomposition",
+          "urheber": "Eigenkomposition basierend auf wiki:Kiel_mutiny + wiki:Novemberrevolution",
+          "perspektive": "Strukturierend (akteursneutral)",
+          "sequenz_position": 3,
+          "aufgaben_anker": ["a1-04", "a1-05"],
+          "anker_briefing": ["wiki-kielmutiny-2026-04-26", "wiki-novemberrevolution-2026-04-26"],
+          "tafelbild_knoten": "Steckbrief 9.11.1918: zeitliche Verortung",
+          "tipp_stufen_slot": {
+            "a1-04": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"},
+            "a1-05": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"}
+          },
+          "trigger_vermerk": null,
+          "qualifizierung": "QUALIFIZIERT"
+        },
+        {
+          "material_id": "m1-mat-04-quellentext-aufruf-rdv",
+          "typ": "quellentext",
+          "subtyp": "gekuerzter-originalauszug",
+          "kerninhalt": "Aufruf des Rats der Volksbeauftragten 12.11.1918 — Acht-Stunden-Tag, Pressezensur-Aufhebung, Frauenwahlrecht.",
+          "quelle_status": "TBD-PD-Recherche",
+          "wikimedia_filename": null,
+          "img_id": null,
+          "lizenz": "Public Domain (amtliches Werk, zu sichern Phase 2.1)",
+          "urheber": "Rat der Volksbeauftragten 1918",
+          "perspektive": "Sozialdemokratisch-parlamentarisch (Rat der Volksbeauftragten)",
+          "sequenz_position": 4,
+          "aufgaben_anker": ["a1-06", "a1-07"],
+          "anker_briefing": "wiki-novemberrevolution-2026-04-26",
+          "tafelbild_knoten": "Steckbrief 9.11.1918: 'Was aenderte sich' (Wahlrecht, 8-h-Tag)",
+          "tipp_stufen_slot": {
+            "a1-06": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"},
+            "a1-07": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"}
+          },
+          "trigger_vermerk": null,
+          "qualifizierung": "QUALIFIZIERT"
+        },
+        {
+          "material_id": "m1-mat-05-darstellungstext-steckbrief-9-nov",
+          "typ": "darstellungstext",
+          "subtyp": "hefteintrag-steckbrief",
+          "kerninhalt": "Kompakter Steckbrief 9. November 1918 (Datum, Orte, Akteure, Visionen, Schluesselsatz).",
+          "quelle_status": "TBD",
+          "wikimedia_filename": null,
+          "img_id": null,
+          "lizenz": "Eigenkomposition",
+          "urheber": "Eigenkomposition basierend auf wiki:Novemberrevolution + wiki:Philipp_Scheidemann + wiki:Karl_Liebknecht",
+          "perspektive": "Strukturierend (multiperspektivisch zusammenfassend)",
+          "sequenz_position": 5,
+          "aufgaben_anker": ["a1-08"],
+          "anker_briefing": "M1.kerninhalt-1-bis-5-synthese",
+          "tafelbild_knoten": "**HEFTEINTRAG M1 (Steckbrief 9.11.1918)**",
+          "tipp_stufen_slot": {
+            "a1-08": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"}
+          },
+          "trigger_vermerk": null,
+          "qualifizierung": "QUALIFIZIERT",
+          "hefteintrag_slot": true
+        },
+        {
+          "material_id": "m1-mat-06-bildquelle-portrait-scheidemann",
+          "typ": "bildquelle",
+          "subtyp": "portrait",
+          "kerninhalt": "Reines Portrait Philipp Scheidemann (Akteurs-Identifikation, Steckbrief-Begleitbild).",
+          "quelle_status": "VERIFIED",
+          "wikimedia_filename": "Bundesarchiv_Bild_146-1970-096-13,_Philipp_Scheidemann.jpg",
+          "img_id": "img-m1-02",
+          "lizenz": "CC BY-SA 3.0 DE (Bundesarchiv)",
+          "urheber": "Bundesarchiv (Fotograf unbekannt)",
+          "perspektive": "Sozialdemokratisch-parlamentarisch (Scheidemann/MSPD)",
+          "sequenz_position": "5b",
+          "aufgaben_anker": ["a1-08"],
+          "anker_briefing": "wiki-doppel-ausrufung-2026-04-26",
+          "tafelbild_knoten": "Steckbrief 9.11.1918: Akteurs-Visual",
+          "tipp_stufen_slot": {
+            "a1-08": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"}
+          },
+          "bu_pflicht": "Philipp Scheidemann (Portrait, undatiert) — KEIN Datum 1918 vorgaukeln",
+          "trigger_vermerk": null,
+          "qualifizierung": "QUALIFIZIERT",
+          "post_audit": true
+        }
+      ]
+    },
+
+    {
+      "mappe_id": "M2",
+      "titel": "Eine Verfassung fuer eine Demokratie — Weimar 1919",
+      "ke_anker": ["GPG7_LB2_K_01"],
+      "bloom_korridor": "L2-L4",
+      "afb": "II",
+      "materialien": [
+        {
+          "material_id": "m2-mat-01-bildquelle-louis-xiv",
+          "typ": "bildquelle",
+          "subtyp": "gemaelde-vergleichsanker",
+          "kerninhalt": "Kroenungsportrait Ludwig XIV. (Hyacinthe Rigaud, 1701).",
+          "quelle_status": "VERIFIED",
+          "wikimedia_filename": "Louis_XIV_of_France.jpg",
+          "img_id": "img-m2-04",
+          "lizenz": "Public Domain (PD-old-100)",
+          "urheber": "Hyacinthe Rigaud (1659-1743)",
+          "perspektive": "Vergleichs-Stimme (historisch absolutistisch)",
+          "sequenz_position": 1,
+          "aufgaben_anker": ["a2-01"],
+          "anker_briefing": "M2.kerninhalt-5",
+          "tafelbild_knoten": "Vergleichstabelle Absolutismus-Spalte: Macht-Symbolik",
+          "tipp_stufen_slot": {
+            "a2-01": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"}
+          },
+          "trigger_vermerk": null,
+          "qualifizierung": "QUALIFIZIERT"
+        },
+        {
+          "material_id": "m2-mat-02-quellentext-zitat-louis-xiv",
+          "typ": "quellentext",
+          "subtyp": "kurzzitat-mit-r7-erlaeuterung",
+          "kerninhalt": "L'etat c'est moi — uebersetzt + 2 erlaeuternde Saetze (apokryph markieren).",
+          "quelle_status": "TBD",
+          "wikimedia_filename": null,
+          "img_id": null,
+          "lizenz": "Standardquelle",
+          "urheber": "Eigenkomposition basierend auf wiki:Louis_XIV (Zuschreibung quellenkritisch)",
+          "perspektive": "Vergleichs-Stimme (historisch absolutistisch)",
+          "sequenz_position": 2,
+          "aufgaben_anker": ["a2-02", "a2-03"],
+          "anker_briefing": "M2.kerninhalt-5",
+          "tafelbild_knoten": "Vergleichstabelle Absolutismus-Spalte: 'Macht beim Herrscher'",
+          "tipp_stufen_slot": {
+            "a2-02": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"},
+            "a2-03": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"}
+          },
+          "trigger_vermerk": null,
+          "qualifizierung": "QUALIFIZIERT"
+        },
+        {
+          "material_id": "m2-mat-03-quellentext-wrv-art-1-22-109",
+          "typ": "quellentext",
+          "subtyp": "verfassungsartikel-gekuerzt",
+          "kerninhalt": "Auszuege WRV Art. 1 (Volkssouveraenitaet), Art. 22 (Wahlrecht), Art. 109 (Gleichheit).",
+          "quelle_status": "VERIFIED",
+          "wikimedia_filename": null,
+          "img_id": null,
+          "lizenz": "Public Domain (amtliches Werk)",
+          "urheber": "Verfassungsgeber 1919 / verfassungen.de",
+          "perspektive": "Verfassungsgeber (parlamentarisch-demokratisch)",
+          "sequenz_position": 3,
+          "aufgaben_anker": ["a2-04", "a2-05", "a2-06"],
+          "anker_briefing": ["wf-verfde-art1-2026-04-26", "wf-verfde-art22-2026-04-26", "wf-verfde-art109-2026-04-26"],
+          "tafelbild_knoten": "Vergleichstabelle Demokratie-Spalte: 3 Verfassungs-Anker",
+          "tipp_stufen_slot": {
+            "a2-04": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"},
+            "a2-05": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"},
+            "a2-06": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"}
+          },
+          "trigger_vermerk": null,
+          "qualifizierung": "QUALIFIZIERT"
+        },
+        {
+          "material_id": "m2-mat-04-bildquelle-nationalversammlung",
+          "typ": "bildquelle",
+          "subtyp": "foto-innenraum",
+          "kerninhalt": "Plenum der Nationalversammlung Weimar im Deutschen Nationaltheater, Ebert vorsitzend (Maerz 1919).",
+          "quelle_status": "VERIFIED",
+          "wikimedia_filename": "Enemy_Activities_-_German_Republic_-_German_congress_in_session_at_Weimar_-_President_Ebert_presiding_-_NARA_-_31478647.jpg",
+          "img_id": "img-m2-01",
+          "lizenz": "Public Domain (NARA US Government Work)",
+          "urheber": "Underwood and Underwood / NARA",
+          "perspektive": "Verfassungsgeber (institutionell-prozessbezogen)",
+          "sequenz_position": 4,
+          "aufgaben_anker": ["a2-07"],
+          "anker_briefing": "wiki-weimarna-2026-04-26",
+          "tafelbild_knoten": "Vergleichstabelle: institutioneller Anker",
+          "tipp_stufen_slot": {
+            "a2-07": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"}
+          },
+          "trigger_vermerk": null,
+          "qualifizierung": "QUALIFIZIERT"
+        },
+        {
+          "material_id": "m2-mat-05-bildquelle-portrait-ebert",
+          "typ": "bildquelle",
+          "subtyp": "portrait",
+          "kerninhalt": "Friedrich Ebert (Reichspraesident) — Wiedererkennungs-Portrait.",
+          "quelle_status": "VERIFIED",
+          "wikimedia_filename": "Bundesarchiv_Bild_102-00015,_Friedrich_Ebert.jpg",
+          "img_id": "img-m2-03",
+          "lizenz": "CC BY-SA 3.0 DE (Bundesarchiv)",
+          "urheber": "Georg Pahl (1900-1963)",
+          "perspektive": "Demokratischer Amtstraeger (Reichspraesident)",
+          "sequenz_position": 5,
+          "aufgaben_anker": ["a2-08"],
+          "anker_briefing": "wiki-wrv-2026-04-26",
+          "tafelbild_knoten": "Vergleichstabelle Demokratie-Spalte: Amtstraeger",
+          "tipp_stufen_slot": {
+            "a2-08": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"}
+          },
+          "bu_pflicht": "Friedrich Ebert (1925), Reichspraesident der Weimarer Republik 1919-1925 — Aufnahmedatum sichtbar (Drift-Hinweis)",
+          "cross_mappen": ["M3", "M4"],
+          "trigger_vermerk": null,
+          "qualifizierung": "QUALIFIZIERT"
+        },
+        {
+          "material_id": "m2-mat-06-darstellungstext-vergleichstabelle-absolutismus-demokratie",
+          "typ": "darstellungstext",
+          "subtyp": "hefteintrag-vergleichstabelle",
+          "kerninhalt": "Tabelle 4-spaltig: Dimension | Absolutismus | Demokratie Weimar 1919 | Konkrete Quelle.",
+          "quelle_status": "TBD",
+          "wikimedia_filename": null,
+          "img_id": null,
+          "lizenz": "Eigenkomposition",
+          "urheber": "Eigenkomposition basierend auf m2-mat-02 + m2-mat-03",
+          "perspektive": "Strukturierend (multiperspektivisch synthetisch)",
+          "sequenz_position": 6,
+          "aufgaben_anker": ["a2-09"],
+          "anker_briefing": "M2.kerninhalt-synthetisch",
+          "tafelbild_knoten": "**HEFTEINTRAG M2 (Vergleichstabelle Absolutismus vs. Demokratie)**",
+          "tipp_stufen_slot": {
+            "a2-09": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"}
+          },
+          "trigger_vermerk": null,
+          "qualifizierung": "QUALIFIZIERT",
+          "hefteintrag_slot": true
+        },
+        {
+          "material_id": "m2-mat-07-statistik-wahlbeteiligung-1919",
+          "typ": "statistik",
+          "subtyp": "kompakt-r7",
+          "kerninhalt": "Wahlbeteiligung 19.1.1919 ~83%, 37 weibliche Abgeordnete von 423 (8,7%), erstmals Frauen reichsweit wahlberechtigt + waehlbar.",
+          "quelle_status": "VERIFIED",
+          "wikimedia_filename": null,
+          "img_id": null,
+          "lizenz": "Sachdaten",
+          "urheber": "Eigenkomposition basierend auf wiki:Weimar_National_Assembly",
+          "perspektive": "Strukturierend (faktisch) + Lebenswelt-Bezug ueber Erstwaehlerin",
+          "sequenz_position": "4b",
+          "aufgaben_anker": ["a2-07b"],
+          "anker_briefing": "wiki-weimarna-2026-04-26",
+          "tafelbild_knoten": "Vergleichstabelle Demokratie-Spalte: Wahlrecht-Quantifizierung",
+          "tipp_stufen_slot": {
+            "a2-07b": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"}
+          },
+          "trigger_vermerk": null,
+          "qualifizierung": "QUALIFIZIERT",
+          "post_audit": true
+        }
+      ]
+    },
+
+    {
+      "mappe_id": "M3",
+      "titel": "Versailles 1919 — Wie reagieren die Menschen?",
+      "ke_anker": ["GPG7_LB3_K_04", "GPG7_LB2_K_08"],
+      "bloom_korridor": "L3-L4 (mit L5-Anteil a3-09)",
+      "afb": "II",
+      "materialien": [
+        {
+          "material_id": "m3-mat-01-karte-gebietsverluste",
+          "typ": "karte",
+          "subtyp": "thematische-karte-deutsch",
+          "kerninhalt": "Karte deutsche Gebietsabtretungen 1919.",
+          "quelle_status": "VERIFIED",
+          "wikimedia_filename": "Versailler_Vertrag.png",
+          "img_id": "img-m3-01",
+          "lizenz": "CC BY-SA 3.0",
+          "urheber": "Matthias Kuech",
+          "perspektive": "Strukturierend (geografisch-akteursneutral)",
+          "sequenz_position": 1,
+          "aufgaben_anker": ["a3-01", "a3-02"],
+          "anker_briefing": "wiki-treaty-2026-04-26",
+          "tafelbild_knoten": "Schichten-Tabelle: Spalte 'Territoriale Bestimmungen'",
+          "tipp_stufen_slot": {
+            "a3-01": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"},
+            "a3-02": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"}
+          },
+          "trigger_vermerk": null,
+          "qualifizierung": "QUALIFIZIERT"
+        },
+        {
+          "material_id": "m3-mat-02-bildquelle-orpen-spiegelsaal",
+          "typ": "bildquelle",
+          "subtyp": "gemaelde-quellenkritik-pflicht",
+          "kerninhalt": "William Orpen, Signing of Peace in the Hall of Mirrors (1919).",
+          "quelle_status": "VERIFIED",
+          "wikimedia_filename": "William_Orpen_-_The_Signing_of_Peace_in_the_Hall_of_Mirrors,_Versailles.jpg",
+          "img_id": "img-m3-02",
+          "lizenz": "Public Domain (PD-old-70)",
+          "urheber": "William Orpen (1878-1931)",
+          "perspektive": "Sieger-Inszenierung (britischer Auftrag) — quellenkritisch markieren",
+          "sequenz_position": 2,
+          "aufgaben_anker": ["a3-03"],
+          "anker_briefing": "wiki-treaty-2026-04-26",
+          "tafelbild_knoten": "Schichten-Tabelle: Inszenierungs-Anker (Lehrkraft-sichtbar)",
+          "tipp_stufen_slot": {
+            "a3-03": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"}
+          },
+          "quellenkritik_pflicht": true,
+          "trigger_vermerk": null,
+          "qualifizierung": "QUALIFIZIERT"
+        },
+        {
+          "material_id": "m3-mat-03-quellentext-art-231",
+          "typ": "quellentext",
+          "subtyp": "kurzauszug-mit-forschungsstand-hinweis",
+          "kerninhalt": "Artikel 231 (Kriegsschuldartikel) gekuerzt + R7-Erlaeuterung. Pflicht: zeitgenoessische Sieger-Position, NICHT historische Wahrheit.",
+          "quelle_status": "VERIFIED",
+          "wikimedia_filename": null,
+          "img_id": null,
+          "lizenz": "Public Domain (Vertragstext)",
+          "urheber": "Vertragsparteien 1919 / wiki:Article_231",
+          "perspektive": "Sieger-Position (Verbuendete) — quellenkritisch markieren",
+          "sequenz_position": 3,
+          "aufgaben_anker": ["a3-04", "a3-05"],
+          "anker_briefing": "wiki-art231-2026-04-26",
+          "tafelbild_knoten": "Schichten-Tabelle: Spalte 'Wirtschaftliche Bestimmungen' + Kriegsschuld-Lehrkraft-Hinweis",
+          "tipp_stufen_slot": {
+            "a3-04": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"},
+            "a3-05": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"}
+          },
+          "forschungsstand_pflicht": true,
+          "trigger_vermerk": null,
+          "qualifizierung": "QUALIFIZIERT"
+        },
+        {
+          "material_id": "m3-mat-04-statistik-zahlen-vertrag",
+          "typ": "statistik",
+          "subtyp": "datenanker-kompakt",
+          "kerninhalt": "3 Schluesselzahlen: Heer 100.000 (vs. 800.000 vor 1914), Reparationen 132 Mrd. Goldmark, Kolonien 100% Verlust.",
+          "quelle_status": "VERIFIED",
+          "wikimedia_filename": null,
+          "img_id": null,
+          "lizenz": "Sachdaten",
+          "urheber": "Eigenkomposition basierend auf wiki:Treaty_of_Versailles + wiki:WWI_reparations",
+          "perspektive": "Strukturierend (faktisch)",
+          "sequenz_position": 4,
+          "aufgaben_anker": ["a3-06"],
+          "anker_briefing": ["wiki-treaty-2026-04-26", "wiki-londonschedule-2026-04-26"],
+          "tafelbild_knoten": "Schichten-Tabelle: Quantifizierung",
+          "tipp_stufen_slot": {
+            "a3-06": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"}
+          },
+          "cross_mappen": ["M4 (m4-mat-06 Ursachenspalte)"],
+          "trigger_vermerk": null,
+          "qualifizierung": "QUALIFIZIERT"
+        },
+        {
+          "material_id": "m3-mat-05-darstellungstext-perspektivkarten-3",
+          "typ": "darstellungstext",
+          "subtyp": "perspektiv-karten-parallel",
+          "kerninhalt": "3 Reaktions-Perspektiven a 3-4 Saetze: Frontheimkehrer / Berliner Arbeiterfamilie / SPD-Reichstagsabgeordneter.",
+          "quelle_status": "TBD",
+          "wikimedia_filename": null,
+          "img_id": null,
+          "lizenz": "Eigenkomposition",
+          "urheber": "Eigenkomposition basierend auf wiki:Treaty_of_Versailles + wiki:Philipp_Scheidemann + DHM-LeMO + bpb",
+          "perspektive": "Multiperspektivisch (3 Schichten parallel — KEINE privilegieren)",
+          "sequenz_position": 5,
+          "aufgaben_anker": ["a3-07", "a3-08", "a3-09"],
+          "anker_briefing": ["M3.perspektiven_kandidaten-1-bis-3", "wiki-scheidemann-2026-04-26"],
+          "tafelbild_knoten": "**HEFTEINTRAG M3 (Schichten-Reaktions-Tabelle)**",
+          "tipp_stufen_slot": {
+            "a3-07": {"stufe_1": "Beispielbefuellung in DIDAKTIK_RAHMEN §7 vorhanden", "stufe_2": "TBD", "stufe_3": "TBD"},
+            "a3-08": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"},
+            "a3-09": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"}
+          },
+          "rekonstruktions_markierung_pflicht": true,
+          "trigger_vermerk": "implizit Kriegsfolgen — sachlich, KEINE Schock-Effekte",
+          "qualifizierung": "QUALIFIZIERT",
+          "hefteintrag_slot": true
+        },
+        {
+          "material_id": "m3-mat-06-bildquelle-vertragsdokument",
+          "typ": "bildquelle",
+          "subtyp": "dokumentenfoto",
+          "kerninhalt": "Originaldokument Versailler Vertrag (englische Fassung), Titel-/Signaturseite.",
+          "quelle_status": "VERIFIED",
+          "wikimedia_filename": "Treaty_of_Versailles,_English_version.jpg",
+          "img_id": "img-m3-03",
+          "lizenz": "Public Domain (Government Work)",
+          "urheber": "Lloyd George / Wilson / Clemenceau (Signatare); amtliches Werk",
+          "perspektive": "Strukturierend (dokumentarisch)",
+          "sequenz_position": 6,
+          "aufgaben_anker": ["a3-10"],
+          "anker_briefing": "wiki-treaty-2026-04-26",
+          "tafelbild_knoten": "Schichten-Tabelle: visueller Schluss-Anker",
+          "tipp_stufen_slot": {
+            "a3-10": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"}
+          },
+          "trigger_vermerk": null,
+          "qualifizierung": "QUALIFIZIERT"
+        }
+      ]
+    },
+
+    {
+      "mappe_id": "M4",
+      "titel": "1920-1923 — Die Republik unter Druck",
+      "ke_anker": ["GPG7_LB2_K_01", "GPG7_LB3_K_04"],
+      "bloom_korridor": "L4-L5",
+      "afb": "II-III",
+      "materialien": [
+        {
+          "material_id": "m4-mat-01-bildquelle-billionenschein",
+          "typ": "bildquelle",
+          "subtyp": "foto-haptischer-anker",
+          "kerninhalt": "100-Billionen-Mark-Reichsbanknote 1923.",
+          "quelle_status": "VERIFIED",
+          "wikimedia_filename": "100-Billionen-Geldschein.jpg",
+          "img_id": "img-m4-03",
+          "lizenz": "Public Domain",
+          "urheber": "Reichsbank",
+          "perspektive": "Alltagsbetroffen (Lebenswelt-Anker)",
+          "sequenz_position": 1,
+          "aufgaben_anker": ["a4-01"],
+          "anker_briefing": "wiki-hyperinfl-2026-04-26",
+          "tafelbild_knoten": "Krisen-Tabelle: Krise 'Hyperinflation' haptisch",
+          "tipp_stufen_slot": {
+            "a4-01": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"}
+          },
+          "trigger_vermerk": "implizit hyperinflation_existenznot_familien — kein Kuriositaets-Frame",
+          "qualifizierung": "QUALIFIZIERT"
+        },
+        {
+          "material_id": "m4-mat-02-statistik-brotpreis-tabelle",
+          "typ": "statistik",
+          "subtyp": "tabelle-zeitliche-progression",
+          "kerninhalt": "Brotpreis Jan-Nov 1923 (5 Stuetzpunkte) + Begleitsatz 'Lohn am Morgen, wertlos am Abend.'",
+          "quelle_status": "VERIFIED",
+          "wikimedia_filename": null,
+          "img_id": null,
+          "lizenz": "Sachdaten",
+          "urheber": "Eigenkomposition basierend auf wiki:Hyperinflation + DHM-LeMO Inflation",
+          "perspektive": "Strukturierend (faktisch) + Lebenswelt-Bezug",
+          "sequenz_position": 2,
+          "aufgaben_anker": ["a4-02", "a4-03"],
+          "anker_briefing": "wiki-hyperinfl-2026-04-26",
+          "tafelbild_knoten": "Krisen-Tabelle: Krise 'Hyperinflation' quantifiziert",
+          "tipp_stufen_slot": {
+            "a4-02": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"},
+            "a4-03": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"}
+          },
+          "trigger_vermerk": "RELEVANT hyperinflation_existenznot_familien — sachlich-faktisch",
+          "qualifizierung": "QUALIFIZIERT"
+        },
+        {
+          "material_id": "m4-mat-03-tagebuch-arbeiterfamilie-nov-1923",
+          "typ": "tagebuch",
+          "subtyp": "kurzeintrag-r7-quellengestuetzt",
+          "kerninhalt": "Fiktiver, quellengestuetzter Tagebucheintrag Berliner Arbeiterfamilie Nov 1923, 6-8 Saetze.",
+          "quelle_status": "TBD",
+          "wikimedia_filename": null,
+          "img_id": null,
+          "lizenz": "Eigenkomposition",
+          "urheber": "Eigenkomposition basierend auf zeitgenoessischen Quellen (DHM-LeMO + wiki:Hyperinflation Augenzeugenberichte)",
+          "perspektive": "Berliner Arbeiterfamilie 1923 (Lebenswelt-Anker, existentiell)",
+          "sequenz_position": 3,
+          "aufgaben_anker": ["a4-04", "a4-05"],
+          "anker_briefing": "M4.kerninhalt-4",
+          "tafelbild_knoten": "Krisen-Tabelle: Krise 'Hyperinflation' existentiell",
+          "tipp_stufen_slot": {
+            "a4-04": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"},
+            "a4-05": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"}
+          },
+          "rekonstruktions_markierung_pflicht": true,
+          "trigger_vermerk": "RELEVANT hyperinflation_existenznot_familien — altersgemaess + sachlich, KEINE Schock-Effekte. Lehrkraft-Sichtbarkeit gemaess agent-didaktik §6",
+          "qualifizierung": "QUALIFIZIERT"
+        },
+        {
+          "material_id": "m4-mat-04-bildquelle-kapp-putsch",
+          "typ": "bildquelle",
+          "subtyp": "foto-krise-rechts",
+          "kerninhalt": "Geschuetz Marinebrigade Ehrhardt am Pariser Platz / Brandenburger Tor, Kapp-Putsch Maerz 1920.",
+          "quelle_status": "VERIFIED",
+          "wikimedia_filename": "Bundesarchiv_Bild_183-H25109,_Kapp-Putsch,_Brigade_Erhardt,_Berlin.jpg",
+          "img_id": "img-m4-05",
+          "lizenz": "CC BY-SA 3.0 DE (Bundesarchiv)",
+          "urheber": "Bundesarchiv (Fotograf unbekannt)",
+          "perspektive": "Konservativ-monarchistische Putschisten — sichtbar gemacht ohne Verherrlichung",
+          "sequenz_position": 4,
+          "aufgaben_anker": ["a4-06", "a4-07"],
+          "anker_briefing": "wiki-kapp-2026-04-26",
+          "tafelbild_knoten": "Krisen-Tabelle: Krise 'Kapp-Putsch'",
+          "tipp_stufen_slot": {
+            "a4-06": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"},
+            "a4-07": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"}
+          },
+          "trigger_vermerk": "RELEVANT politische_gewalt_putsche_1919_1923 — sachlich-dokumentarisch, KEIN heroisierender Ton; Generalstreik als Gegenkraft betonen",
+          "qualifizierung": "QUALIFIZIERT"
+        },
+        {
+          "material_id": "m4-mat-05-quellentext-aufruf-generalstreik",
+          "typ": "quellentext",
+          "subtyp": "auszug-zeitgenoessisch",
+          "kerninhalt": "Aufruf Generalstreik gegen Kapp-Putsch (Maerz 1920), Auszug 4-6 Zeilen.",
+          "quelle_status": "TBD-PD-Recherche",
+          "wikimedia_filename": null,
+          "img_id": null,
+          "lizenz": "Public Domain (amtliches/gewerkschaftliches Werk, zu sichern Phase 2.1)",
+          "urheber": "Reichsregierung + SPD/Gewerkschaften 13.3.1920 / DHM-LeMO",
+          "perspektive": "Gewerkschafter / Streikender Arbeiter (Republik-Verteidigung)",
+          "sequenz_position": 5,
+          "aufgaben_anker": ["a4-08", "a4-09"],
+          "anker_briefing": "wiki-kapp-2026-04-26",
+          "tafelbild_knoten": "Krisen-Tabelle: Stuetze 'Generalstreik'",
+          "tipp_stufen_slot": {
+            "a4-08": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"},
+            "a4-09": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"}
+          },
+          "cross_mappen": ["M1 (m1-mat-04 Wertfundament)", "M2 (m2-mat-03 WRV)"],
+          "trigger_vermerk": null,
+          "qualifizierung": "QUALIFIZIERT"
+        },
+        {
+          "material_id": "m4-mat-06-zeitleiste-krisen-1920-1923",
+          "typ": "zeitleiste",
+          "subtyp": "hefteintrag-krisen-tabelle",
+          "kerninhalt": "4-Knoten-Zeitleiste 1920-1923: Kapp-Putsch / Ruhrbesetzung / Hyperinflation+Rentenmark / Hitler-Putsch. Spalten: Krise | Ursache | Antwort/Stuetze.",
+          "quelle_status": "TBD",
+          "wikimedia_filename": null,
+          "img_id": null,
+          "lizenz": "Eigenkomposition",
+          "urheber": "Eigenkomposition basierend auf wiki:Kapp_Putsch + wiki:Occupation_of_the_Ruhr + wiki:Hyperinflation + wiki:Beer_Hall_Putsch",
+          "perspektive": "Strukturierend (synthetisch — Krise UND Stuetze parallel)",
+          "sequenz_position": 6,
+          "aufgaben_anker": ["a4-10", "a4-11"],
+          "anker_briefing": ["wiki-kapp-2026-04-26", "wiki-ruhr-2026-04-26", "wiki-hyperinfl-2026-04-26", "wiki-beerhall-2026-04-26"],
+          "tafelbild_knoten": "**HEFTEINTRAG M4 (Krisen-Tabelle 1920-1923)**",
+          "tipp_stufen_slot": {
+            "a4-10": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"},
+            "a4-11": {"stufe_1": "TBD", "stufe_2": "TBD", "stufe_3": "TBD"}
+          },
+          "bu_pflicht_hitler_putsch_knoten": "Marienplatz Muenchen, 9.11.1923",
+          "cross_mappen": ["M3 (m3-mat-04 Reparationen-Ursache)", "M1 (m1-mat-04 Wertfundament)", "M2 (m2-mat-03 Wertfundament)"],
+          "trigger_vermerk": "RELEVANT politische_gewalt_putsche_1919_1923 — Hitler-Putsch streng als gescheiterter Putsch 1923, KEIN Vorgriff 1933. Tote benennen ohne Heroisierung.",
+          "qualifizierung": "QUALIFIZIERT",
+          "hefteintrag_slot": true
+        }
+      ]
+    }
+  ],
+
+  "cross_mappen_konsistenz": [
+    {"bezug": "Scheidemann-Wiedererkennung", "von": "M1 (m1-mat-01 + m1-mat-06)", "nach": "M3 (m3-mat-05c)", "funktion": "Personen-Kontinuitaet"},
+    {"bezug": "Ebert-Wiedererkennung", "von": "M2 (m2-mat-05)", "nach": "M3/M4", "funktion": "Institution + Person"},
+    {"bezug": "Versailles-Reparationen → Hyperinflation", "von": "M3 (m3-mat-04)", "nach": "M4 (m4-mat-06 Ursachenspalte)", "funktion": "Kausalkette"},
+    {"bezug": "Republik-Errungenschaften (Wahlrecht, 8h-Tag) → 'wert verteidigt'", "von": "M1 (m1-mat-04) + M2 (m2-mat-03)", "nach": "M4 (m4-mat-05 Generalstreik)", "funktion": "Wertfundament der Krisenresilienz"},
+    {"bezug": "Doppelausrufung-Spannung (links/rechts)", "von": "M1 (m1-mat-01 + Steckbrief)", "nach": "M4 (Republik-Gegner)", "funktion": "Politisches Spektrum"}
+  ],
+
+  "lizenz_inventar_konsistenz": {
+    "Public_Domain": ["img-m1-01", "img-m1-03", "img-m2-01", "img-m2-02", "img-m2-04", "img-m3-02", "img-m3-03", "img-m4-01", "img-m4-02", "img-m4-03", "img-m4-04"],
+    "CC_BY-SA_3.0_DE_Bundesarchiv": ["img-m1-02", "img-m2-03", "img-m4-05", "img-m4-06"],
+    "CC_BY-SA_3.0": ["img-m3-01"],
+    "kein_NC": true,
+    "kein_ND": true,
+    "alle_github_pages_kompatibel": true,
+    "attribution_pflichten": {
+      "img-m1-02": "Bundesarchiv, Bild 146-1970-096-13 / Fotograf unbekannt / CC BY-SA 3.0 DE",
+      "img-m2-03": "Bundesarchiv, Bild 102-00015 / Georg Pahl / CC BY-SA 3.0 DE",
+      "img-m4-05": "Bundesarchiv, Bild 183-H25109 / Fotograf unbekannt / CC BY-SA 3.0 DE",
+      "img-m4-06": "Bundesarchiv, Bild 119-1486 / Fotograf unbekannt / CC BY-SA 3.0 DE",
+      "img-m3-01": "Matthias Kuech / Wikimedia Commons / CC BY-SA 3.0"
+    }
+  },
+
+  "stoffdichte_status": {
+    "M1": {"anzahl": 6, "typenvielfalt": 4, "korridor_4_7": "PASS"},
+    "M2": {"anzahl": 7, "typenvielfalt": 4, "korridor_4_7": "PASS"},
+    "M3": {"anzahl": 6, "typenvielfalt": 5, "korridor_4_7": "PASS"},
+    "M4": {"anzahl": 6, "typenvielfalt": 5, "korridor_4_7": "PASS"}
+  }
+}
