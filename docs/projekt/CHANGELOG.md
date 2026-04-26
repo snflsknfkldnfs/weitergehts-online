@@ -4,6 +4,44 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-26 — Plugin v0.5.0 Phase C+D KOMPLETT — v0.5.0 Implementation TOTAL DONE (Generator-Repo)
+
+**Scope:** Phase C MED (4 Findings) + Phase D LOW (1 Finding) = v0.5.0-Closure (4 PT Plan).
+
+**Modus:** EXECUTE (Cowork-Plugin-Dev), Variante A Self-Edit + 1 Subagent fuer 1 NEW Tool + 1 Validator-Erweiterung.
+
+**1 Commit Generator-Repo (939a527):**
+
+- **F-PB-39 Aufnahmedatum-Pflicht-Schritt** (MED): AGENT_MEDIENRECHERCHE §3 Kanal-2 verschaerft — extmetadata.DateTimeOriginal-Pflicht-Schritt mit Coverage >=80% + NULL-Begruendungs-Feld
+- **F-PB-44 R7-Komposita-Erstgebrauch-Validator** (MED): NEU tools/check_komposita_erstgebrauch.py (~430 Z., 5 Erklaerungs-Methoden) + VERTRAG_SPRACHNIVEAU_R7 §6 Metrik-Tabelle (>=80% Pflicht)
+- **F-PB-47 SK5-Wortzahl-Chunk-Korridor** (MED): tools/validate_skript_sk.py erweitert (+~125 Z.) um 600-900W-Korridor-Check pro Chunk
+- **F-PB-48 lizenz_inventar Naming-Strict** (LOW): AGENT_MEDIENRECHERCHE + AGENT_ARTEFAKT Output-Schema-Doku verbindlich auf lizenz_inventar
+- **F-PB-49 _meta-Konsistenz Pflicht-Felder** (MED): AGENT_MEDIENRECHERCHE §5 Output-Schema _meta erweitert um anzahl_geprueft + anzahl_verified + anzahl_persisted Pflicht
+
+**Aufwand-Ist:** ~40-60 Min Wall-Clock (Plan 4 PT).
+
+**v0.5.0-Coverage TOTAL KOMPLETT:** 26 PT von 26 PT. Alle 14 systemischen Findings F-PB-36..49 + F-PB-04 strukturell adressiert.
+
+**Run-3-Empirie neuer Tools (READ-ONLY):**
+- check_komposita_erstgebrauch auf SKRIPT_MAPPE_M3.md: rc=2 FAIL Coverage 24.2% (8/33 erklaert) — neuer empirischer Befund: viele Meta-Komposita ('Lehrkraft-Trigger-Flags' etc.) im Skript-Format detektiert
+- validate_skript_sk SK5-Wortzahl auf SKRIPT_MAPPE_M3.md: rc=2 FAIL 0/6 Chunks im 600-900W-Korridor — Mappen-Skripte sind Stichpunkt-/Aufgaben-Listen, nicht Narrativ-Format wie VERTRAG_PHASE_0-3 §3.4 vorgibt
+
+**Strukturelles Plugin-Generator-Issue post-v0.5.0:** SKRIPT-Format ist Stichpunkt-/Listen-orientiert, nicht Narrativ-orientiert. Tools machen Gap explizit. Konsequenz fuer Run-4/v0.5.1: Vertrag-Anpassung (Korridor lockern) ODER Generator-Prompt-Erweiterung (echtes Narrativ erzwingen).
+
+**8 Plugin-Commits Generator-Repo seit v0.4.3:**
+- `40fc423` v0.5.0 Hardening-Spec
+- `3eb7d7a` A1 Schema-Verzeichnis-Konsolidierung F-PB-04
+- `54c7e95` A2+A3 4 Phase-0-Schemas + 4 Hooks
+- `45a2502` A4+A5 4 Validatoren + Doku + .gitignore
+- `3009ce2` B.1 Phase-0.2-Schicht F-PB-37/38/41
+- `f70d69a` B.2 Phase-0.3-Schicht F-PB-36/40/42
+- `b305207` B.3 Phase-0.1+Tools F-PB-43/45/46
+- `939a527` C+D F-PB-39/44/47/48/49
+
+**Naechster Schritt:** Plugin-Version-Bump v0.4.3 -> v0.5.0 (plugin.json + marketplace.json + CHANGELOG-Plugin-Repo NEU + Tag v0.5.0) — separater Commit jetzt im selben Block.
+
+---
+
 ## 2026-04-26 — Plugin v0.5.0 Phase B HIGH-Findings KOMPLETT (Generator-Repo)
 
 **Scope:** Phase B Sessions B.1 + B.2 + B.3 fuer Plugin v0.5.0 Hardening (11.5 PT Plan, 9 HIGH-Findings F-PB-36/37/38/40/41/42/43/45/46).
