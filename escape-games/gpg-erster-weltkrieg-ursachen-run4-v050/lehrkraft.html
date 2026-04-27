@@ -49,16 +49,11 @@
         <!-- Wird dynamisch befuellt -->
       </section>
 
-      <!-- Didaktische Hinweise (Platzhalter) -->
+      <!-- Didaktische Hinweise (dynamisch aus mappenabschluss.lehrkraft*-Feldern) -->
       <section class="lehrkraft__loesungen" aria-label="Didaktische Hinweise">
-        <h2>📖 Didaktische Hinweise</h2>
+        <h2>📖 Didaktische Hinweise (POLICY_TRIGGER_SICHTBARKEIT — lehrkraft-only)</h2>
         <div id="didaktische-hinweise">
-          <p>
-            Die didaktischen Hinweise werden vom AGENT_DIDAKTIK generiert und
-            enthalten Informationen zu Lernzielen, Kompetenzbezuegen und
-            methodischen Empfehlungen fuer den Einsatz im Unterricht.
-          </p>
-          <p><em>Platzhalter – wird bei der Erstellung eines konkreten Escape-Games befuellt.</em></p>
+          <p class="text-center"><em>Lehrkraft-Sektionen werden geladen...</em></p>
         </div>
       </section>
 
@@ -154,6 +149,7 @@
           .then(function (data) {
             gameData = data;
             renderLoesungen(data);
+            renderMappenabschlussLehrkraft(data);
             initSteuerung(data);
           })
           .catch(function (err) {
@@ -277,6 +273,200 @@
         }
 
         return block;
+      }
+
+      // ====================================================================
+      // Mappenabschluss-Lehrkraft-Renderer (F-PB-68 v0.5.1)
+      // ====================================================================
+
+      /**
+       * Render aller mappenabschluss.lehrkraft*-Felder als V13-konforme
+       * Lehrkraft-Sektion. Iteriert ueber alle Mappen + rendert verfuegbare
+       * Felder: lehrkraft / sicherungstexte_lehrkraft / lehrkraft_sektion.
+       *
+       * Adressiert F-PB-68 (Live-Audit 2026-04-27): V13-Inhalte (Versailles-
+       * NSDAP-Sprengkraft + Augusterlebnis-Idealisierungs-Verbot + Schlieffen-
+       * Plan-Mythos-Korrektur Zuber 2002+) sichtbar im Lehrkraft-Frontend.
+       *
+       * @param {Object} data - data.json
+       */
+      function renderMappenabschlussLehrkraft(data) {
+        var container = document.getElementById('didaktische-hinweise');
+        if (!container) return;
+        container.innerHTML = '';
+
+        var mappen = data.mappen || [];
+        var sektionen_count = 0;
+
+        for (var i = 0; i < mappen.length; i++) {
+          var mappe = mappen[i];
+          var ma = mappe.mappenabschluss || {};
+
+          var hasContent = ma.lehrkraft || ma.sicherungstexte_lehrkraft || ma.lehrkraft_sektion;
+          if (!hasContent) continue;
+
+          var block = document.createElement('div');
+          block.className = 'lehrkraft__mappenabschluss-block';
+          block.style.marginBottom = '2rem';
+          block.style.padding = '1rem';
+          block.style.borderLeft = '4px solid var(--color-accent, #c44)';
+
+          var titel = document.createElement('h3');
+          titel.textContent = 'Mappe ' + (i + 1) + ': ' + (mappe.titel || '');
+          block.appendChild(titel);
+
+          if (ma.lehrkraft) {
+            block.appendChild(renderLehrkraftSubBlock(ma.lehrkraft, 'Didaktischer Rahmen'));
+            sektionen_count++;
+          }
+
+          if (ma.sicherungstexte_lehrkraft) {
+            block.appendChild(renderLehrkraftSubBlock(
+              ma.sicherungstexte_lehrkraft,
+              'Trigger-Sichtbarkeit (lehrkraft-only)'
+            ));
+            sektionen_count++;
+          }
+
+          if (ma.lehrkraft_sektion) {
+            block.appendChild(renderLehrkraftSubBlock(
+              ma.lehrkraft_sektion,
+              'Lehrkraft-Sektion'
+            ));
+            sektionen_count++;
+          }
+
+          container.appendChild(block);
+        }
+
+        if (sektionen_count === 0) {
+          var p = document.createElement('p');
+          p.innerHTML = '<em>Keine mappenabschluss.lehrkraft*-Sektionen in data.json gefunden.</em>';
+          container.appendChild(p);
+        }
+      }
+
+      /**
+       * Rendert ein Lehrkraft-Sub-Block (lehrkraft / sicherungstexte_lehrkraft /
+       * lehrkraft_sektion). Iteriert ueber Felder + rendert je nach Typ.
+       *
+       * @param {Object} obj - Lehrkraft-Sub-Dict
+       * @param {string} title - Sub-Block-Titel
+       * @returns {HTMLElement}
+       */
+      function renderLehrkraftSubBlock(obj, title) {
+        var section = document.createElement('div');
+        section.className = 'lehrkraft__sub-block';
+        section.style.marginTop = '1rem';
+        section.style.marginLeft = '0.5rem';
+
+        var h4 = document.createElement('h4');
+        h4.textContent = title;
+        h4.style.marginBottom = '0.5rem';
+        section.appendChild(h4);
+
+        // Spezial: _sichtbarkeit + _policy als prominenter Hinweis-Banner
+        if (obj._sichtbarkeit || obj._policy) {
+          var banner = document.createElement('div');
+          banner.className = 'lehrkraft__policy-banner';
+          banner.style.padding = '0.5rem';
+          banner.style.marginBottom = '0.75rem';
+          banner.style.background = 'var(--color-policy-bg, #fef3c7)';
+          banner.style.borderLeft = '3px solid var(--color-policy, #f59e0b)';
+          banner.style.fontSize = '0.9rem';
+          if (obj._sichtbarkeit) {
+            var s = document.createElement('div');
+            s.innerHTML = '<strong>Sichtbarkeit:</strong> ' + Core.utils.sanitizeHTML(obj._sichtbarkeit);
+            banner.appendChild(s);
+          }
+          if (obj._policy) {
+            var p = document.createElement('div');
+            p.innerHTML = '<strong>Policy:</strong> ' + Core.utils.sanitizeHTML(obj._policy);
+            banner.appendChild(p);
+          }
+          section.appendChild(banner);
+        }
+
+        // Skip-Liste fuer interne Felder (bereits oben gerendert)
+        var SKIP = ['_sichtbarkeit', '_policy', '_meta', '_template_ref', '_f0b_priming_kennung',
+                    '_variante', '_audit_korrektur_lizenz_summe', '_meta_korrigiert',
+                    'schema_version', 'mappe_id', 'mappe_index', 'game_id', 'run_id',
+                    'agent', 'phase', 'template_version', 'vertrag'];
+
+        for (var key in obj) {
+          if (SKIP.indexOf(key) !== -1) continue;
+          var value = obj[key];
+
+          var item = document.createElement('div');
+          item.className = 'lehrkraft__field';
+          item.style.marginBottom = '0.5rem';
+
+          var labelText = humanizeKey(key);
+
+          if (typeof value === 'string') {
+            var p = document.createElement('p');
+            p.innerHTML = '<strong>' + Core.utils.sanitizeHTML(labelText) + ':</strong> ' +
+                          Core.utils.sanitizeHTML(value);
+            item.appendChild(p);
+          } else if (typeof value === 'boolean' || typeof value === 'number') {
+            var p2 = document.createElement('p');
+            p2.innerHTML = '<strong>' + Core.utils.sanitizeHTML(labelText) + ':</strong> ' +
+                           Core.utils.sanitizeHTML(String(value));
+            item.appendChild(p2);
+          } else if (Array.isArray(value)) {
+            var label = document.createElement('p');
+            label.innerHTML = '<strong>' + Core.utils.sanitizeHTML(labelText) + ':</strong>';
+            item.appendChild(label);
+            var ul = document.createElement('ul');
+            for (var j = 0; j < value.length; j++) {
+              var li = document.createElement('li');
+              if (typeof value[j] === 'string') {
+                li.textContent = value[j];
+              } else {
+                li.textContent = JSON.stringify(value[j]);
+              }
+              ul.appendChild(li);
+            }
+            item.appendChild(ul);
+          } else if (typeof value === 'object' && value !== null) {
+            var label2 = document.createElement('p');
+            label2.innerHTML = '<strong>' + Core.utils.sanitizeHTML(labelText) + ':</strong>';
+            item.appendChild(label2);
+            // Verschachtelt: rekursiv als Sub-Sub-Block rendern
+            var subList = document.createElement('ul');
+            for (var subKey in value) {
+              if (SKIP.indexOf(subKey) !== -1) continue;
+              var subVal = value[subKey];
+              var subLi = document.createElement('li');
+              var subLabel = humanizeKey(subKey);
+              if (typeof subVal === 'string') {
+                subLi.innerHTML = '<strong>' + Core.utils.sanitizeHTML(subLabel) + ':</strong> ' +
+                                  Core.utils.sanitizeHTML(subVal);
+              } else {
+                subLi.innerHTML = '<strong>' + Core.utils.sanitizeHTML(subLabel) + ':</strong> ' +
+                                  Core.utils.sanitizeHTML(JSON.stringify(subVal));
+              }
+              subList.appendChild(subLi);
+            }
+            item.appendChild(subList);
+          }
+
+          section.appendChild(item);
+        }
+
+        return section;
+      }
+
+      /**
+       * Konvertiert snake_case_keys zu "Snake Case Keys" fuer Anzeige.
+       *
+       * @param {string} k
+       * @returns {string}
+       */
+      function humanizeKey(k) {
+        return k.split('_').map(function (w) {
+          return w.charAt(0).toUpperCase() + w.slice(1);
+        }).join(' ');
       }
 
       // ====================================================================
