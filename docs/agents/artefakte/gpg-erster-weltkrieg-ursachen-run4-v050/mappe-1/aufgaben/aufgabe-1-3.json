@@ -1,0 +1,51 @@
+{
+  "id": "aufgabe-1-3",
+  "typ": "multiple-choice",
+  "frage": "Warum gilt die HMS Dreadnought als Beginn eines neuen Wettrennens?",
+  "material_referenz": ["mat-1-2", "mat-1-4"],
+  "optionen": [
+    "Sie war schneller und staerker als alle Schiffe davor — alle aelteren Schiffe waren plotzlich veraltet.",
+    "Sie war das erste U-Boot der Royal Navy.",
+    "Sie wurde im Auftrag des Deutschen Reiches gebaut.",
+    "Sie war ein Handelsschiff fuer den Kolonial-Handel."
+  ],
+  "loesung": "Sie war schneller und staerker als alle Schiffe davor — alle aelteren Schiffe waren plotzlich veraltet.",
+  "tipps": [
+    {
+      "stufe": 1,
+      "text": "Schau auf das [[mat-1-2|Foto der HMS Dreadnought]] (M3) und lies die Bildunterschrift."
+    },
+    {
+      "stufe": 2,
+      "text": "Was bedeutet 'All-big-gun'? Was passiert mit aelteren Schiffen, wenn ein viel staerkeres Schiff gebaut wird?"
+    },
+    {
+      "stufe": 3,
+      "text": "Loesung: Sie war schneller und staerker als alle Schiffe davor. Alle aelteren Schlachtschiffe waren plotzlich veraltet. Deutschland baute nun auch solche Schiffe — der Flotten-Wettlauf begann."
+    }
+  ],
+  "punkte": 10,
+  "_meta": {
+    "bloom": "L2",
+    "afb": "II",
+    "scpl_zone": "C2",
+    "tafelbild_knoten": ["K1-4"],
+    "ke_anker_haupt": "GPG7_LB2_K_05",
+    "ziel_material_id": "mat-1-2",
+    "operationalisierungsziel": "Die SuS koennen erklaeren, warum die HMS Dreadnought 1906 den Flotten-Wettlauf zwischen Deutschland und Grossbritannien beschleunigte.",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "subagent": "sub-aufgabe-mc",
+    "mc_subtyp": "single-choice",
+    "q_gate": {
+      "A1_afb_kongruenz": "PASS",
+      "A2_fragestamm_klarheit": "PASS",
+      "A3_material_kongruenz": "PASS",
+      "A4_mc_distraktor_qualitaet": "PASS — D1 typ-Verwechslung (U-Boot vs. Schlachtschiff), D2 Akteur-Verwechslung (DT vs. GB), D3 Funktion-Verwechslung (Handel vs. Krieg). Alle plausibel + eindeutig falsch.",
+      "A6_tipp_progression": "PASS",
+      "A7_operator_praezision": "PASS",
+      "MQ3_kein_link_in_frage": "PASS",
+      "MQ3b_displayref_in_tipp1": "PASS",
+      "F0B_R7": "PASS"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "mat_id": "mat-3-3",
+  "subagent": "sub-material-quellentext",
+  "subagent_version": "v3.12.1",
+  "schema_version": "v3.10.4",
+  "dispatch_mode": "GENERATOR",
+  "dispatch_timestamp": "2026-04-26",
+  "g1_partial_gate": {
+    "result": "PASS",
+    "schema": "material_quellentext_partial_v3.10.4.json",
+    "g1_redispatch_count": 0,
+    "errors": []
+  },
+  "g2_full_gate": {
+    "result": "PASS",
+    "schema": "material_quellentext_v3.10.4.json",
+    "g2_redispatch_count": 0,
+    "errors": []
+  },
+  "m16_prosa_only": {
+    "result": "PASS",
+    "regex_check": "Keine Aufgaben-Operator-Treffer in <p>-Scope ('Denk nach:', '^Aufgabe:', 'Analysiere:', 'Beschreibe:', 'Vergleiche:', 'Begruende:').",
+    "fragezeichen_count_outside_blockquote": 0
+  },
+  "m17_quelle_ssot": {
+    "result": "PASS",
+    "regex_check": "Keine bibliografischen Nachweis-Patterns in <p>-Scope (cite-Element ist innerhalb blockquote, ausgenommen)."
+  },
+  "g3_llm_review": {
+    "result": "PASS",
+    "reviewer": "reviewer-material-quellentext v0.1.1",
+    "g3_revisor_iteration": 0,
+    "review_file": "review_v1.json",
+    "overall": "PASS",
+    "confidence": 0.88
+  },
+  "final_material": "material.json",
+  "escalation": false,
+  "perspektiv_tags_dispatcher_merge": ["dominant", "Macht-Ausuebung"],
+  "f_pb_44_komposita_check": "PASS — Kriegsschuld-Klausel via Apposition vorentlastet; Kriegsschuldfrage explizit erklaert",
+  "f_pb_37_quellenkritik_block": "PASS — Produzent/Auftraggeber/Motiv ueber _meta.perspektive + 3 Impulse erfuellt",
+  "reserve_eskalation_mat_3_6": "RESERVE_NICHT_AKTIVIERT — Burgfrieden-C2-Zone wird durch ueberleitung_von (Phase 2.1c) und Hefteintrag B.3 erarbeitet. _meta.fachbegriffe_eingefuehrt enthaelt Burgfrieden + Kriegskredite als zusaetzliche Einfuehrung in mat-3-3.",
+  "policy_trigger_sichtbarkeit_v13": "PASS — NSDAP-Propaganda-Sprengkraft bleibt im _meta.lehrkraft_only_hinweis (Lehrkraft-Block); KEIN Schueler-Text-Vorkommen.",
+  "beutelsbach_kontroversitaet": "PASS — Versailles 1919 als HISTORISCHE Sieger-Position vorgestellt; KEIN Antwort-Vorgriff. Gegenpol mat-3-4 (Clark) sequenziell vorbereitet."
+}

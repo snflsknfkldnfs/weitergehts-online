@@ -1,0 +1,46 @@
+{
+  "mat_id": "mat-2-5",
+  "mappe": "M2",
+  "position_in_mappe": "5 von 5",
+  "didaktische_funktion": "vertiefung",
+  "primary_scpl_zone": "C2",
+  "scpl_zonen_abgedeckt": ["C2"],
+  "vorausgesetztes_wissen": {
+    "fachbegriffe": [
+      "Buendnis-System (M1)",
+      "Habsburger (M1)",
+      "Julikrise (mat-2-1)",
+      "Blanko-Scheck (mat-2-1)",
+      "Ultimatum (mat-2-1)",
+      "Mobilmachung (mat-2-1)",
+      "Buendnisfall (mat-2-1)",
+      "Sarajevo (mat-2-2)",
+      "Thronfolger (mat-2-3)",
+      "Junges Bosnien (mat-2-4)",
+      "Schwarze Hand (mat-2-4)"
+    ],
+    "source_materialien": ["mat-2-1", "mat-2-2", "mat-2-3", "mat-2-4"]
+  },
+  "noch_nicht_eingefuehrt": {
+    "fachbegriffe": [],
+    "source_materialien": []
+  },
+  "vorheriges_material": {
+    "id": "mat-2-4",
+    "typ": "bildquelle",
+    "kerninhalt": "Princip vor Gericht — Multiperspektivitaet Held-vs-Terrorist."
+  },
+  "naechstes_material": null,
+  "zugeordneter_tb_knoten": {
+    "ids": ["K2-4"],
+    "texte": ["Ultimatum + Kriegserklaerung 28.7. (AT-UN → SR)"]
+  },
+  "stundenfrage": "Wie wurde aus dem Attentat in Sarajevo in fuenf Wochen ein Weltkrieg?",
+  "dominante_perspektive": "P2: Habsburger / Oesterreich-Ungarn (Berchtold) — dominant, Macht-Ausuebung",
+  "deine_aufgabe": "Du vertiefst die C2-Zone: Was hat Wien Serbien GENAU gefordert? Auszug aus dem Original-Ultimatum (R7-vereinfacht) zeigt: Wien forderte etwas, das Serbien ablehnen musste — Berlin hatte den Blanko-Scheck (mat-2-1) gegeben. Pflicht: Quellenkritik-Block (Produzent: Habsburger Aussenministerium Berchtold / Auftraggeber: Wien / Motiv: Eskalations-bereit, Kriegsanlass schaffen).",
+  "fachbegriffe_eingefuehrt": ["Souveraenitaet"],
+  "perspektiv_tags_plan": ["dominant", "Macht-Ausuebung"],
+  "sensibilitaets_constraint": "propaganda_kontextualisierung_noetig: Klar benennen, dass Wien das Ultimatum bewusst Eskalations-bereit formulierte. F-PB-37 Quellenkritik-Block PFLICHT.",
+  "subtyp": "quellentext_primaer",
+  "g3_review_pflicht": true
+}

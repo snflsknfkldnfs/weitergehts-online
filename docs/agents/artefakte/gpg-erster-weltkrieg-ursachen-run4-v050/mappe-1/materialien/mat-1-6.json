@@ -1,0 +1,46 @@
+{
+  "id": "mat-1-6",
+  "typ": "karte",
+  "titel": "Afrika 1914 — wer beherrscht was?",
+  "inhalt": "<figure><img src=\"assets/images/gpg-erster-weltkrieg-ursachen-run4-v050/mappe-1/m1-mat-06-karte-afrika-1914.svg\" alt=\"Karte Afrikas um 1914 mit Farb-Codierung der europaeischen Kolonialmaechte. Marokko ist mit einem roten Stern markiert.\"/><figcaption><p>Karte: Afrika um 1914. Sieben europaeische Grossmaechte haben Afrika unter sich aufgeteilt. <strong>Frankreich</strong> (blau) und <strong>Grossbritannien</strong> (rot) haben die groessten Gebiete. Das Deutsche Reich (gelb) kam spaet dazu. Auf der <em>Berliner Konferenz 1884</em> zogen die Europaeer Linien auf die Karte. Diese Linien sind heute oft noch Grenzen Afrikas.</p><p>Eine <em>Kolonie</em> ist ein Land, das von einem anderen Land beherrscht wird. Den Streit der europaeischen Maechte um Land in Afrika nennt man den <strong>Kolonialwettlauf</strong>. Der rote Stern zeigt Marokko: Hier kracht es 1905 und 1911 zwei Mal zwischen Deutschland und Frankreich. Das nennt man die <em>Marokko-Krisen</em>.</p><p><strong>Wichtig:</strong> Die Karte zeigt, wie die europaeischen Maechte Afrika unter sich aufgeteilt haben. Die Bevoelkerung Afrikas wurde nicht gefragt. Sie wurde erobert und unterdrueckt.</p><p><cite>Karte: Eigenkomposition (agent-material), Datenbasis Wikipedia 'Scramble for Africa', 'First Moroccan Crisis', 'Agadir Crisis' (Stand 2026-04-26).</cite></p></figcaption></figure>",
+  "bildunterschrift": "Karte: Aufteilung Afrikas durch sieben europaeische Grossmaechte um 1914 — Marokko als Konfliktanker (1905, 1911).",
+  "quelle": "Eigenkomposition (agent-material, Phase 2.1, SUB_MATERIAL_KARTE). Datenbasis: Wikipedia 'Scramble for Africa', 'First Moroccan Crisis', 'Agadir Crisis' (Stand 2026-04-26).",
+  "lizenz": "Eigenproduktion (Datenbasis Wikipedia, CC-BY-SA-4.0)",
+  "position": 5,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": ["mat-1-4"],
+  "ueberleitung_von": "Beide Seiten haben gebaut — der britische Vorsprung blieb, die Spannung wuchs. Aber das Wettruesten zur See war nicht der einzige Streit. Wo noch?",
+  "sequenz_kontext": {
+    "vorher": {"id": "mat-1-5", "typ": "statistik", "kerninhalt": "Britischer Vorsprung blieb (29 vs. 17)."},
+    "nachher": {"id": "mat-1-3", "typ": "bildquelle", "kerninhalt": "Wilhelm II. als personifizierter Treiber der Welt-Politik."}
+  },
+  "perspektiv_tags": ["Macht-Betroffen", "Kritik"],
+  "_meta": {
+    "wortanzahl_inhalt": 158,
+    "wortanzahl_bildunterschrift": 16,
+    "fachbegriffe_eingefuehrt": ["Kolonialwettlauf", "Kolonie", "Marokko-Krisen", "Berliner Konferenz 1884"],
+    "fachbegriffe_referenziert": ["Imperialismus"],
+    "tafelbild_knoten": ["K1-5"],
+    "scpl_zone_primary": "C3",
+    "scpl_zonen_abdeckung": ["C3"],
+    "artefakt_ref": [],
+    "skript_ref": "M1 §5",
+    "datenbasis_hashes": ["wiki-scramble-2026-04-26", "wiki-first-morocco-2026-04-26", "wiki-agadir-2026-04-26"],
+    "ke_anker_haupt": "GPG7_LB2_K_05",
+    "afb": "II",
+    "bloom": "Verstehen → Anwenden",
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "sprachniveau": "R7",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "sensibilitaets_markierung": "propaganda_kontextualisierung_noetig",
+    "quellenkritik_pflicht": true,
+    "kontextualisierung_satz_realisiert": "Die Karte zeigt, wie die europaeischen Maechte Afrika unter sich aufgeteilt haben. Die Bevoelkerung Afrikas wurde nicht gefragt.",
+    "kolonial_terminologie_qg07": {
+      "verbotene_begriffe_check": "PASS — keine Verwendung von 'Eingeborene', 'Erschliessung', 'zivilisatorische Mission', 'Entdeckung'",
+      "alternative_formulierungen_realisiert": ["Aufteilung Afrikas durch europaeische Grossmaechte", "kolonisierte Bevoelkerung wurde nicht gefragt", "wurde erobert und unterdrueckt"]
+    },
+    "bildfunktion": "heuristisch",
+    "trigger_vermerk": "kolonialismus"
+  }
+}

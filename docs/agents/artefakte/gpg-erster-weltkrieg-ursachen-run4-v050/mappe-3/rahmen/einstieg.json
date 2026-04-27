@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "mappe_id": "M3",
+  "narrativ": "<p>In Mappe 2 hast du gelernt: Ein einzelner Schuss war nur der Ausloeser, nicht die Ursache. Jetzt liegt Mappe 3 vor dir. Im Deckel: zwei Fotos und eine Erinnerungs-Medaille. Auf der Medaille steht ein Datum: <strong>4. August 1914</strong>. Auf den Fotos jubelnde Menschen am Bahnhof, Soldaten mit Blumen am Gewehr.</p><p>Aber sieh genau hin: Wen zeigen die Fotos — und wen zeigen sie nicht? Wer hat den Krieg eigentlich gewollt? Und wer bekommt heute die Schuld zugewiesen?</p>",
+  "problemstellung": "Wer war im August 1914 begeistert — und wer hat heute die Schuld am Krieg?",
+  "tafelbild_voraussetzung": ["M2: Ursache, Ausloeser, Buendnisfall, Mobilmachung", "M1 (implizit): Pulverfass Europa, Buendnis-System"],
+  "aktivierungs_material": "mat-3-1",
+  "_meta": {
+    "skript_ref": "M3 Einstieg-Kontext",
+    "ueberleitung_von_M2": "Wer im August 1914 jubelte, wer schwieg und wer heute die Schuld bekommt, erfaehrst du in der naechsten Mappe.",
+    "wortanzahl": 84
+  }
+}

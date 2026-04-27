@@ -1,0 +1,67 @@
+{
+  "id": "aufgabe-4-7",
+  "typ": "freitext-code",
+  "frage": "Schreibe in 2-3 Saetzen: Welche vier Befunde aus M1-M4 ergeben den Schluessel-Code? Und welche Frage bleibt offen?",
+  "material_referenz": [
+    "mat-4-6"
+  ],
+  "leitfragen": [
+    "Was war der Befund von Mappe 1 (Pulverfass Europa)?",
+    "Was war der Befund von Mappe 2 (Sarajevo als Ausloeser)?",
+    "Was war der Befund von Mappe 3 (Augustbegeisterung + geteilte Schuld)?",
+    "Was war der Befund von Mappe 4 (Stellungskrieg statt kurzer Krieg)?",
+    "Welche Frage bleibt offen — fuer ein naechstes Game (Stellungskrieg / Heimatfront / Versailles)?"
+  ],
+  "scaffolding": "Beginne mit: „Vor dem Krieg gab es ... (M1). Dann ... (M2). Im August 1914 ... (M3). An der Marne ... (M4). Offen bleibt: ...“",
+  "loesung": "Pulverfass Ausloeser Augustbegeisterung Stellungskrieg",
+  "erwartungs_horizont": {
+    "anker_mindeststandard": "M1 Buendnisse, M2 Sarajevo, M3 Schuld, M4 Stellungskrieg. Ich frage mich, wie es weiter ging.",
+    "volltext_regelstandard": "Vor dem Krieg gab es Buendnisse und einen Wettlauf um Kolonien (M1). Dann erschoss Princip Franz Ferdinand in Sarajevo (M2). Viele jubelten im August 1914, aber heute wissen wir: Mehrere Maechte waren schuld (M3). Der Plan vom kurzen Krieg scheiterte an der Marne — der Stellungskrieg begann (M4). Offen: Wie war das Leben im Schuetzen-Graben? Und wie endete der Krieg?",
+    "begruendung_maximalstandard": "Wie Volltext + Eigenposition: Mich beeindruckt am meisten, dass niemand den Krieg verhindert hat, obwohl alle die Folgen ahnten. Im naechsten Game will ich verstehen, was Versailles bedeutete — und ob das vermeidbar war."
+  },
+  "tipps": [
+    {
+      "stufe": 1,
+      "text": "Schau dir den [[mat-4-6|Darstellungstext mit dem Folge-Game-Anker]] (M6) genau an. Welche drei Themen werden fuer das naechste Game genannt?"
+    },
+    {
+      "stufe": 2,
+      "text": "Schreibe pro Mappe einen kurzen Befund (M1, M2, M3, M4). Nutze die Schluessel-Begriffe: Pulverfass — Ausloeser — Augustbegeisterung — Stellungskrieg. Am Ende: eine offene Frage."
+    },
+    {
+      "stufe": 3,
+      "text": "Loesung-Anker: M1 = Pulverfass Europa (Buendnisse + Konflikte). M2 = Sarajevo als Ausloeser (28.06.1914). M3 = Augustbegeisterung + geteilte Schuld (Clark-Schlafwandler). M4 = Stellungskrieg statt kurzem Krieg. Offene Frage z.B.: Wie war das Leben im Schuetzen-Graben? Wie endete der Krieg 1918? Diese vier Begriffe sind dein Schluessel-Code."
+    }
+  ],
+  "punkte": 15,
+  "_meta": {
+    "afb": "III",
+    "bloom": "L4",
+    "tb_knoten": [
+      "K4-1"
+    ],
+    "scpl_zone": "L",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "sprachniveau": "R7",
+    "game_abschluss_reflexion": true,
+    "folge_game_bruecke_anker": [
+      "Stellungskrieg",
+      "Heimatfront",
+      "Versailles"
+    ],
+    "schluessel_code_komplett": "PULVERFASS — AUSLOESER — AUGUSTBEGEISTERUNG — STELLUNGSKRIEG",
+    "q_gate": {
+      "A1_afb_kongruenz": "PASS",
+      "A2_fragestamm_klarheit": "PASS — 2 Saetze, 2 klare Operatoren (Schreibe / welche Frage bleibt offen)",
+      "A11_freitext_qualitaet": "PASS — 5 Leitfragen + Scaffolding + 3-stufiger Erwartungs-Horizont",
+      "A6_tipp_progression": "PASS",
+      "MQ3_material_referenz_in_frage": "PASS",
+      "MQ3b_display_referenz_in_tipp1": "PASS — [[mat-4-6|Darstellungstext mit dem Folge-Game-Anker]] (M6)",
+      "folge_game_bruecke_ohne_stoff_vorgriff": "PASS — drei Themen werden NUR als offene Anker benannt (Stellungskrieg/Heimatfront/Versailles), ohne Inhalt vorzugreifen",
+      "cross_konsistenz_M1_M2_M3": "PASS — alle drei Vor-Mappen werden in Synthese aktiviert"
+    },
+    "bloom_label": "Analysieren"
+  }
+}

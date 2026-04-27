@@ -1,0 +1,74 @@
+{
+  "id": "mat-4-4",
+  "typ": "bildquelle",
+  "titel": "Achtung Datums-Falle: Wann ist dieses Foto wirklich entstanden?",
+  "inhalt": "<figure class=\"bildquelle\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/a/a8/Infanterie-fran%C3%A7aise-rol.jpg\" alt=\"Foto franzoesischer Infanterie beim Bajonett-Angriff, Manoever-Aufnahme von 1913\" /><figcaption class=\"bildquelle__bu bildquelle__bu--haupt\">Franzoesische Infanterie beim Bajonett-Angriff. Photograph: Agence Rol (franzoesische Photo-Agentur).</figcaption><figcaption class=\"bildquelle__bu bildquelle__bu--quellenkritik\"><em>Datums-Quellenkritik: Achtung — dieses Foto wurde 1913 gemacht. Es ist ein Foto von einem Manoever, also einer Uebung. Die Marne-Schlacht war erst im September 1914. Manchmal werden solche Manoever-Bilder spaeter so verwendet, als waeren sie aus echten Schlachten. Frag dich: Wer schreibt heute, wann ein Bild entstanden ist — und stimmt das auch?</em></figcaption></figure>",
+  "bildunterschrift": "FR-Infanterie 1913 (Manoever-Foto Agence Rol). Datums-Quellenkritik: Bild ist VOR der Marne-Schlacht entstanden — Uebungs-Aufnahme, kein Kampf-Foto. So sah die franzoesische Infanterie 1913/14 aus.",
+  "quelle": "Wikimedia Commons, File:Infanterie-francaise-rol.jpg, Urheber: Agence Rol (franzoesische Photo-Agentur 1904-1937), 1913, Lizenz: Public Domain (PD-old-70). Quellen-Kontext: Bild aus den 'Grandes manoeuvres de 1913' (frz. Heeres-Manoever Sommer 1913, vor Kriegsausbruch). Datenbasis: Wikipedia-Artikel 'First Battle of the Marne' (Stand 2026-04-26), Gallica BnF.",
+  "lizenz": "Public Domain (PD-old-70)",
+  "position": 4,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": ["mat-4-3"],
+  "ueberleitung_von": "Das Foto der deutschen Soldaten war vermutlich gestellt — Heeres-Selbstdarstellung. Sahen die Franzosen anders aus? Und Achtung: Bei diesem Bild gibt es eine Datums-Falle.",
+  "sequenz_kontext": {
+    "vorher": {"id": "mat-4-3", "typ": "bildquelle", "kerninhalt": "DT-Soldaten-Foto an der Marne — gestellt."},
+    "nachher": {"id": "mat-4-5", "typ": "statistik", "kerninhalt": "Verlust-Statistik Marne (FR/GB/DT)."}
+  },
+  "perspektiv_tags": ["nicht-dominant"],
+  "_meta": {
+    "wortanzahl_inhalt": 88,
+    "wortanzahl_bildunterschrift": 26,
+    "wortanzahl_quellenkritik_bu": 60,
+    "fachbegriffe_eingefuehrt": [],
+    "fachbegriffe_referenziert": ["Quellenkritik (M3)", "Marne-Schlacht (mat-4-2)"],
+    "tafelbild_knoten": ["K4-4"],
+    "scpl_zone_primary": "C2",
+    "scpl_zonen_abdeckung": ["C2"],
+    "artefakt_ref": ["img-m4-03"],
+    "wikimedia_filename": "Infanterie-francaise-rol.jpg",
+    "skript_ref": "M4 §5",
+    "datenbasis_hashes": ["wiki-marne-2026-04-26"],
+    "ke_anker_haupt": "GPG7_LB2_K_07",
+    "afb": "II-III",
+    "bloom": "Analysieren (Datums-Quellenkritik)",
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "sprachniveau": "R7",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "sensibilitaets_markierung": "propaganda_kontextualisierung_noetig",
+    "kontextualisierung_realisiert": true,
+    "kontextualisierung_ort": ["inhalt (bildquelle__bu--quellenkritik)", "bildunterschrift", "quelle"],
+    "f_pb_37_quellenkritik_block_pflicht": true,
+    "f_pb_37_quellenkritik_block_realisiert": true,
+    "auftragskunst_flag": true,
+    "inszenierungs_hinweis": "Manoever-Inszenierung 1913 (kein realer Kampf)",
+    "propaganda_kontext": "frz. Heeres-Selbstdarstellung Pre-WK1",
+    "datums_stolperfalle": "Foto 1913 (Grandes manoeuvres) — NICHT Marne 1914. Pflicht-Hinweis im BU.",
+    "bildfunktion": "illustrativ",
+    "material_charakter": "besinnung_sachbezogen",
+    "analyseauftrag": true,
+    "personalisiert": false,
+    "perspektive": "P3 nicht-dominant (FR-Pre-WK-Sicht) — Multiperspektiv-Korrektur zur DT-Sicht in mat-4-3.",
+    "anti_bias_kompensation": "Multiperspektiv-Doppel mat-4-3 (DT-Inszenierung) + mat-4-4 (FR-Manoever-Inszenierung). Beide Seiten haben sich aehnlich aufrecht und ordentlich praesentiert — kein Sieger-Verlierer-Mythos.",
+    "tipp_stufen": {
+      "stufe_1": "Wann wurde das Foto gemacht?",
+      "stufe_2": "Lies die Bildunterschrift genau. Es war 1913 — vor der Marne-Schlacht.",
+      "stufe_3": "Ein Manoever ist eine Uebung, kein echter Kampf. Dieses Foto zeigt typische frz. Infanterie 1913/14, aber nicht die Marne-Schlacht selbst. Pruefe immer das Datum, bevor du einem Bild glaubst."
+    },
+    "quellenkritische_impulse": [
+      "Wann ist dieses Foto entstanden — und wo?",
+      "Warum koennte jemand ein Manoever-Bild als Kriegs-Bild zeigen?",
+      "Welche Frage stellst du jetzt bei jedem Bild aus dem Krieg?"
+    ],
+    "kernerkenntnisse_bezug": [
+      "Quellenkritik gilt fuer beide Seiten — DT (mat-4-3) und FR (mat-4-4).",
+      "Das Datum eines Fotos ist Pflicht-Information bei der Quellenkritik."
+    ],
+    "trigger_vermerk": ["weltkrieg_grossereignis", "konflikt"],
+    "f_pb_44_komposita_check": {
+      "datums_quellenkritik": "neue Wort-Verbindung im BU eingefuehrt; Begriff 'Quellenkritik' aus M3 bekannt; Praefix 'Datums-' ergaenzt als spezifische Variante",
+      "marne_schlacht_referenziert": "aus mat-4-2 bekannt"
+    },
+    "erarbeitbarkeits_check": "PASS — SuS sehen Foto, lesen Datums-Quellenkritik-BU, erkennen die Manoever-Inszenierungs-Logik 1913. Multiperspektiv-Vergleich zu mat-4-3 moeglich (beide Seiten praesentieren sich aufrecht). Vorwissen Quellenkritik (M3) gesichert."
+  }
+}

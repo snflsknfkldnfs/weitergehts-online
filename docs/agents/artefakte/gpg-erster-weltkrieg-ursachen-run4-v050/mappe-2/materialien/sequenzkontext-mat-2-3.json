@@ -1,0 +1,45 @@
+{
+  "mat_id": "mat-2-3",
+  "mappe": "M2",
+  "position_in_mappe": "3 von 5",
+  "didaktische_funktion": "erarbeitung",
+  "primary_scpl_zone": "S",
+  "scpl_zonen_abgedeckt": ["S"],
+  "vorausgesetztes_wissen": {
+    "fachbegriffe": [
+      "Buendnis-System (M1)",
+      "Dreibund (M1)",
+      "Habsburger (M1)",
+      "Oesterreich-Ungarn (M1)",
+      "Julikrise (mat-2-1)",
+      "Blanko-Scheck (mat-2-1)",
+      "Sarajevo (mat-2-2)",
+      "Lateinerbruecke (mat-2-2)"
+    ],
+    "source_materialien": ["mat-2-1", "mat-2-2"]
+  },
+  "noch_nicht_eingefuehrt": {
+    "fachbegriffe": ["Junges Bosnien (mat-2-4)", "Schwarze Hand (mat-2-4)", "Souveraenitaet (mat-2-5)"],
+    "source_materialien": ["mat-2-4", "mat-2-5"]
+  },
+  "vorheriges_material": {
+    "id": "mat-2-2",
+    "typ": "bildquelle",
+    "kerninhalt": "Tatortskizze: Wo das Attentat raeumlich stattfand."
+  },
+  "naechstes_material": {
+    "id": "mat-2-4",
+    "typ": "bildquelle",
+    "kerninhalt": "Princip vor Gericht."
+  },
+  "zugeordneter_tb_knoten": {
+    "ids": ["K2-2"],
+    "texte": ["28. Juni 1914 Sarajevo — Princip 19 J. erschiesst Franz Ferdinand + Sophie"]
+  },
+  "stundenfrage": "Wie wurde aus dem Attentat in Sarajevo in fuenf Wochen ein Weltkrieg?",
+  "dominante_perspektive": "P2: Habsburger / Oesterreich-Ungarn (dominante Macht-Selbstdarstellung)",
+  "deine_aufgabe": "Du zeigst SuS, wer das Opfer war — und zwar nicht als neutrales Foto, sondern als Auftrags-Inszenierung des Habsburger Hofs. SuS lernen Quellenkritik: Was wollte der Hof zeigen — und was nicht? Sensibilitaets-Constraint: propaganda_kontextualisierung_noetig — klar benennen, dass dies KEIN dokumentarisches Foto ist.",
+  "fachbegriffe_eingefuehrt": ["Thronfolger"],
+  "perspektiv_tags_plan": ["dominant", "Macht-Ausuebung", "Aussen"],
+  "sensibilitaets_constraint": "propaganda_kontextualisierung_noetig: Klar benennen, dass dies offizielles Auftragsbild Habsburger Hof ist. F-PB-37 Quellenkritik-Block PFLICHT (Produzent: Hofphotograph Carl Pietzner / Auftraggeber: Habsburger Hof / Motiv: Repraesentations-Selbstdarstellung)."
+}

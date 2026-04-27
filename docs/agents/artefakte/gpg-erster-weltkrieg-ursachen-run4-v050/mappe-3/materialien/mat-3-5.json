@@ -1,0 +1,63 @@
+{
+  "id": "mat-3-5",
+  "typ": "tagebuch",
+  "titel": "Tagebuch einer Bauern-Frau, August 1914",
+  "inhalt": "<article class=\"tagebuch\"><p class=\"tagebuch__hinweis\"><em>Hinweis: Dieser Tagebuch-Eintrag ist <strong>rekonstruiert</strong>. Er ist nicht echt, sondern auf Basis vieler historischer Berichte von Land-Bevoelkerung, Arbeitern und SPD-Anhaengern aus dem Jahr 1914 nachgeschrieben.</em></p><p class=\"tagebuch__datum\">3. August 1914, abends</p><blockquote class=\"tagebuch__eintrag\"><p>„Heute kam der Brief. Heinrich muss morgen einruecken. Die Nachbarn sagen, der Krieg sei in sechs Wochen vorbei. Aber ich sehe keinen Grund zur Freude. Wer pflegt das Vieh, wenn er weg ist? Wer hilft beim Heu im September? Im Dorf reden alle leise. Im Wirtshaus haben sie zugeprostet, das schon. Aber die Frauen — wir nicken nur. Pflicht ist Pflicht. Aber Jubel? Davon ist hier nichts.\"</p></blockquote></article>",
+  "bildunterschrift": "",
+  "quelle": "Fiktiver Tagebucheintrag, rekonstruiert auf Basis typischer Erfahrungsberichte von Land-Bevoelkerung und SPD-Anhaengern 1914. Datenbasis: Wikipedia-Artikel 'Spirit_of_1914', Sektion 'Reception' (Stadt-Land-Differenz, Arbeiter-Skepsis, SPD-Reichstagsfraktion). Kein Original-Dokument.",
+  "lizenz": "Eigenproduktion (Fiktion mit historischer Datenbasis)",
+  "position": 3,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": ["mat-3-1", "mat-3-2"],
+  "ueberleitung_von": "Bilder zeigen, was vor der Kamera stand. Aber Tagebuecher zeigen, was Menschen wirklich dachten. Lies jetzt eine Stimme, die in keinem Foto vorkam.",
+  "sequenz_kontext": {
+    "vorher": {"id": "mat-3-2", "typ": "bildquelle", "kerninhalt": "Bundesarchiv-Inszenierungs-Topos 'Frau mit Blumen'."},
+    "nachher": {"id": "mat-3-3", "typ": "quellentext", "kerninhalt": "Versailles Art. 231 (1919) — Sieger-Position weist Allein-Schuld zu. Burgfrieden 4.8.1914 wird in der ueberleitung_von verbalisiert."}
+  },
+  "perspektiv_tags": ["nicht-dominant", "Alltag", "Kritik"],
+  "_meta": {
+    "wortanzahl_inhalt": 78,
+    "wortanzahl_bildunterschrift": 0,
+    "fachbegriffe_eingefuehrt": [],
+    "fachbegriffe_referenziert": ["Augusterlebnis (mat-3-1)", "Quellenkritik (mat-3-1)", "Foto-Bias (mat-3-2)", "Inszenierung (mat-3-2)"],
+    "tafelbild_knoten": ["K3-2"],
+    "scpl_zone_primary": "C1",
+    "scpl_zonen_abdeckung": ["S", "C1"],
+    "artefakt_ref": ["rolle-M3-1"],
+    "skript_ref": "M3 §3",
+    "datenbasis_hashes": ["wiki-spirit-of-1914-2026-04-26-section-reception"],
+    "ke_anker_haupt": "GPG7_LB3_K_03",
+    "afb": "II-III",
+    "bloom": "Analysieren (Multiperspektivitaet erkennen)",
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "sprachniveau": "R7",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "sensibilitaets_markierung": "keine",
+    "subtyp_quellentext": "rekonstruiert",
+    "aufbereitung": "rekonstruiert",
+    "rekonstruktions_begruendung": "Kein woertliches Originalzitat aus 1914 verfuegbar, das R7-altersgerecht und fuer eine bauerliche Frauenstimme typisch waere. Rekonstruktion synthetisiert empirisch belegte Stimmungsmuster (Land-Skepsis, Arbeiter-Skepsis, SPD-Skepsis) zu einem typischen Eintrag. STR-14-NEU Fiktionalitaets-Kennzeichnung erfuellt: Hinweis im inhalt + quelle-Feld.",
+    "m14_fiktionalitaets_kennzeichnung_realisiert": true,
+    "m14_kennzeichnungs_ort": ["inhalt (tagebuch__hinweis)", "quelle"],
+    "perspektive": "P2: Skeptische Land-Bevoelkerung 1914 (Anti-Bias-Stimme zur Stadt-Inszenierung)",
+    "quellenkritische_impulse": [
+      "Was schreibt diese Frau — und was schreibt sie nicht?",
+      "Warum hoert man solche Stimmen heute weniger als die jubelnden Stadt-Buerger?",
+      "Wenn du nur die Fotos haettest — wuerdest du wissen, wie diese Frau dachte?"
+    ],
+    "kernerkenntnisse_bezug": ["Augusterlebnis war begrenzt — auf dem Land und bei Arbeitern war die Stimmung oft skeptisch.", "Pflicht ja, Jubel nein: Die Vielfalt der Stimmen 1914 war groesser, als die Fotos zeigen."],
+    "trigger_vermerk": [],
+    "figur_briefing": {
+      "figur": "Bauern-Frau im laendlichen Norddeutschland (typisierte Figur, kein Originalzitat)",
+      "lebenssituation": "Hofarbeit, Mann (Heinrich) wird mobilisiert, Heu-Ernte im September steht bevor",
+      "haltung": "Pflichtgefuehl ja, aber kein Jubel — Sorge um Ernte + Familie",
+      "datenbasis": "Spirit_of_1914 Sektion 'Reception' (laendliche und Arbeiter-Skepsis empirisch belegt)"
+    },
+    "tipp_stufen": {
+      "stufe_1": "Was schreibt diese Person? Freut sie sich auf den Krieg?",
+      "stufe_2": "Sie ist skeptisch oder besorgt. Sie sieht den Krieg nicht als Abenteuer.",
+      "stufe_3": "Auf dem Land und bei Arbeitern war die Stimmung oft so. Pflichtgefuehl ja, aber kein Jubel. Diese Stimmen hoert man heute weniger — Fotos zeigten meist die jubelnden Stadtbuerger."
+    },
+    "erarbeitbarkeits_check": "PASS — Anti-Bias-Stimme als historisch belegte Gegenposition zu mat-3-1+mat-3-2; STR-14-NEU Fiktionalitaets-Kennzeichnung mit Datenbasis-Verweis erfuellt; Multiperspektivitaet als Korrektur-Mechanik zu Augusterlebnis-Idealisierung."
+  }
+}

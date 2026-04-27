@@ -1,0 +1,56 @@
+{
+  "mat_id": "mat-3-4",
+  "mappe": "M3",
+  "position_in_mappe": "5 von 5",
+  "didaktische_funktion": "sicherung",
+  "primary_scpl_zone": "L",
+  "scpl_zonen_abgedeckt": ["L"],
+  "vorausgesetztes_wissen": {
+    "fachbegriffe": [
+      "Pulverfass Europa (M1)",
+      "Buendnis-System (M1)",
+      "Ursache (M2)",
+      "Augusterlebnis (mat-3-1)",
+      "Quellenkritik (mat-3-1)",
+      "Foto-Bias (mat-3-2)",
+      "Inszenierung (mat-3-2)",
+      "Burgfrieden (mat-3-3 + Hefteintrag B.3)",
+      "Kriegskredite (mat-3-3 + Hefteintrag B.3)",
+      "Kriegsschuldfrage (mat-3-3)",
+      "Kriegsschuld-Klausel (mat-3-3)"
+    ],
+    "source_materialien": ["mat-3-1", "mat-3-2", "mat-3-5", "mat-3-3"]
+  },
+  "noch_nicht_eingefuehrt": {
+    "fachbegriffe": [],
+    "source_materialien": []
+  },
+  "vorheriges_material": {
+    "id": "mat-3-3",
+    "typ": "quellentext",
+    "kerninhalt": "Versailles Art. 231 (1919) — Sieger-Position weist Deutschland und Verbuendeten Allein-Schuld zu."
+  },
+  "naechstes_material": null,
+  "zugeordneter_tb_knoten": {
+    "ids": ["K3-1", "K3-5"],
+    "texte": ["Kriegsschuldfrage", "Clark — Schlafwandler (2013) — multi-kausal: Wien+Berlin+Petersburg+Paris+London"]
+  },
+  "stundenfrage": "Wer war im August 1914 begeistert — und wer hat heute die Schuld am Krieg?",
+  "dominante_perspektive": "P4: Heutige Forschung Christopher Clark 2013 (Schlafwandler-These — Kritik der Allein-Schuld-These von 1919, nicht-dominant gegenueber Versailles-Sieger-Sicht)",
+  "deine_aufgabe": "Du formulierst die L-Zone (Loesung/Synthese) als Forschungs-Paraphrase. Christopher Clark 'Die Schlafwandler' (2013) ist heute der prominenteste Forschungsstand zur Kriegsschuldfrage. Wortbudget MAX 110 W, Kernsatz MAX 25 W. Pflicht: Personifizierung (Christopher Clark als heutiger Forscher, Australier, Buch-Titel + Jahr). Pflicht: Schlafwandler-These erklaeren — Schlafwandler sehen aus, als wuerden sie wachen, aber sie wissen nicht, was sie tun. Pflicht: 5 Maechte explizit nennen (Wien, Berlin, Petersburg, Paris, London). Beutelsbach-Kontroversitaet: Clarks Position als Gegenposition zu Versailles 1919 darstellen — beide Positionen explizit gegenueberstellen, KEIN Antwort-Vorgriff auf 'die richtige' Antwort. SuS sollen eigene Position bilden koennen. Quelle-Feld: 'Paraphrasiert nach Christopher Clark, Die Schlafwandler — Wie Europa in den Ersten Weltkrieg zog, 2013.'",
+  "fachbegriffe_eingefuehrt": ["Schlafwandler-These"],
+  "perspektiv_tags_plan": ["nicht-dominant", "Kritik"],
+  "sensibilitaets_constraint": "keine. Standard-Forschungs-Paraphrase mit klarer Quellenangabe. Beutelsbach-Kontroversitaet ohne Antwort-Vorgriff: BEIDE Positionen (Versailles 1919 + Clark 2013) gleichberechtigt nennen, Reflexion an SuS uebergeben.",
+  "subtyp": "forschungs-paraphrase-r7",
+  "g3_review_pflicht": false,
+  "skript_ref": "M3 §6",
+  "artefakt_ref": null,
+  "wort_budget_max": 110,
+  "kernsatz_max": 25,
+  "ueberleitung_intentionsskizze": "Die Sieger schrieben 1919 die Schuld auf. Aber Geschichte wird neu geschrieben. Heute sagt der Forscher Christopher Clark etwas anderes. Hoer dir seine These an.",
+  "tipp_stufen": {
+    "stufe_1": "Was sagt Christopher Clark heute ueber die Schuld?",
+    "stufe_2": "Clark sagt: Es gab keine Allein-Schuld. Mehrere Maechte sind gemeinsam in den Krieg hineingestolpert.",
+    "stufe_3": "Sein Buch heisst 'Die Schlafwandler' (2013). Schlafwandler sehen aus, als wuerden sie wachen, aber sie wissen nicht, was sie tun. Clark meint: So gingen die Regierungen 1914 in den Krieg."
+  }
+}

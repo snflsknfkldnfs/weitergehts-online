@@ -1,0 +1,61 @@
+{
+  "mat_id": "mat-3-5",
+  "mappe": "M3",
+  "position_in_mappe": "3 von 5",
+  "didaktische_funktion": "erarbeitung",
+  "primary_scpl_zone": "C1",
+  "scpl_zonen_abgedeckt": ["S", "C1"],
+  "vorausgesetztes_wissen": {
+    "fachbegriffe": [
+      "Pulverfass Europa (M1)",
+      "Mobilmachung (M2)",
+      "Augusterlebnis (mat-3-1)",
+      "Quellenkritik (mat-3-1)",
+      "Foto-Bias (mat-3-2)",
+      "Inszenierung (mat-3-2)"
+    ],
+    "source_materialien": ["mat-3-1", "mat-3-2"]
+  },
+  "noch_nicht_eingefuehrt": {
+    "fachbegriffe": [
+      "Burgfrieden (Hefteintrag M3 B.3 — RESERVE-Eskalation, kein eigenes Material)",
+      "Kriegskredite (Hefteintrag M3 B.3)",
+      "Kriegsschuldfrage (mat-3-3)",
+      "Kriegsschuld-Klausel (mat-3-3)",
+      "Schlafwandler-These (mat-3-4)"
+    ],
+    "source_materialien": ["mat-3-3", "mat-3-4"]
+  },
+  "vorheriges_material": {
+    "id": "mat-3-2",
+    "typ": "bildquelle",
+    "kerninhalt": "Bundesarchiv-Inszenierungs-Topos 'Frau mit Blumen' — zweites Mobilmachungs-Foto, ergaenzt Foto-Bias-Erkenntnis."
+  },
+  "naechstes_material": {
+    "id": "mat-3-3",
+    "typ": "quellentext",
+    "kerninhalt": "Versailles Art. 231 (1919) — Sieger-Position weist Allein-Schuld zu. (RESERVE-Eskalation: mat-3-6 Burgfrieden-Medaille entfaellt; Burgfrieden-C2-Zone wird im Hefteintrag-Schueler-Text + ueberleitung_von zu mat-3-3 verbalisiert.)"
+  },
+  "zugeordneter_tb_knoten": {
+    "ids": ["K3-2"],
+    "texte": ["Augusterlebnis 1914 — Anti-Bias-Stimme: Land-Skepsis sichtbar machen"]
+  },
+  "stundenfrage": "Wer war im August 1914 begeistert — und wer hat heute die Schuld am Krieg?",
+  "dominante_perspektive": "P2: Skeptische Land-Bevoelkerung / Arbeiter / SPD-Anhaenger 1914 (nicht-dominant — Anti-Bias-Stimme zur Augusterlebnis-Idealisierung)",
+  "deine_aufgabe": "Du formulierst eine SKEPTISCHE Tagebuch-Stimme als historische Anti-Bias-Quelle. STR-14-NEU Fiktionalitaets-Kennzeichnung PFLICHT: 'Rekonstruiert auf Basis historischer Quellen' explizit ausweisen. Datenbasis: wiki:Spirit_of_1914 Sektion 'Reception' — Land-Bevoelkerung, Arbeiter und SPD-Anhaenger waren oft skeptisch oder ablehnend. Whoel-Wahl: Bauern-Frau ODER SPD-Anhaenger ODER Pazifist (du waehlst eine Figur). Konkrete Lebenssituation, keine generischen Gefuehle. Skepsis ueber Krieg, Sorge um Familie, Pflichtgefuehl ja — aber kein Jubel. Wortbudget MAX 80. Multiperspektivitaet als Kontrast zu mat-3-1+mat-3-2 (Stadt-Inszenierung). Augusterlebnis-Idealisierung-Verbot strikt: explizite Anti-Bias-Funktion.",
+  "fachbegriffe_eingefuehrt": [],
+  "perspektiv_tags_plan": ["nicht-dominant", "Alltag", "Kritik"],
+  "sensibilitaets_constraint": "STR-14-NEU Fiktionalitaets-Kennzeichnung PFLICHT in quelle-Feld: 'Fiktiver Tagebucheintrag, rekonstruiert auf Basis typischer Erfahrungsberichte von Land-Bevoelkerung und SPD-Anhaengern 1914 (Datenbasis: wiki:Spirit_of_1914, Sektion Reception).' Beutelsbach-Kontroversitaet: Skeptiker-Stimme als historisch belegte Gegenposition zur Augusterlebnis-Inszenierung — KEIN Antwort-Vorgriff auf Schuldfrage.",
+  "subtyp": "rekonstruiert",
+  "subtyp_quellentext": "rekonstruiert",
+  "g3_review_pflicht": false,
+  "skript_ref": "M3 §3",
+  "artefakt_ref": "rolle-M3-1",
+  "wort_budget_max": 80,
+  "ueberleitung_intentionsskizze": "Bilder zeigen, was vor der Kamera stand. Aber Tagebuecher zeigen, was Menschen wirklich dachten. Lies jetzt eine Stimme, die in keinem Foto vorkam.",
+  "tipp_stufen": {
+    "stufe_1": "Was schreibt diese Person? Freut sie sich auf den Krieg?",
+    "stufe_2": "Sie ist skeptisch oder besorgt. Sie sieht den Krieg nicht als Abenteuer.",
+    "stufe_3": "Auf dem Land und bei Arbeitern war die Stimmung oft so. Pflichtgefuehl ja, aber kein Jubel. Diese Stimmen hoert man heute weniger — Fotos zeigten meist die jubelnden Stadtbuerger."
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "id": "mat-4-5",
+  "typ": "statistik",
+  "titel": "Wenn die Bilder nicht zeigen, was passiert — was zeigen die Zahlen?",
+  "inhalt": "<figure class=\"statistik\"><figcaption class=\"statistik__leitfrage\">Verluste der Marne-Schlacht — 5. bis 12. September 1914 (sieben Tage). Tote und Verwundete zusammen.</figcaption><table class=\"statistik__tabelle\"><thead><tr><th scope=\"col\">Land</th><th scope=\"col\">Verluste (Tote + Verwundete)</th></tr></thead><tbody><tr><td>Frankreich</td><td>ca. 250.000</td></tr><tr><td>Grossbritannien</td><td>12.733</td></tr><tr><td>Deutschland</td><td>ca. 298.000</td></tr><tr class=\"statistik__summe\"><td>Zusammen</td><td>mehr als 500.000</td></tr></tbody></table><figcaption class=\"statistik__kontext\">Diese Zahlen sind so gross, dass kaum jemand sie sich vorstellen kann. Mehr als 500.000 Menschen — in nur einer Woche. Bei Frankreich und Deutschland steht „ca.\" davor: Die Forschung kennt die genaue Zahl nicht, sie liegt in einer Spanne.</figcaption></figure>",
+  "bildunterschrift": "",
+  "quelle": "Eigenproduktion (Phase 2.1, SUB_STATISTIK). Datenbasis: Wikipedia-Artikel 'First Battle of the Marne', Sektion 'Casualties' (Stand 2026-04-26). FR ~250.000 / GB 12.733 / DT ~298.000. 'ca.' bei FR und DT wegen Forschungs-Bandbreite.",
+  "lizenz": "Eigenproduktion",
+  "position": 5,
+  "didaktische_funktion": "vertiefung",
+  "voraussetzung": ["mat-4-2"],
+  "ueberleitung_von": "Beide Heere haben sich aehnlich aufrecht und ordentlich praesentiert — Manoever-Photographie, kein dokumentarisches Bild des Krieges. Wenn die Bilder nicht zeigen, was passiert — was zeigen die Zahlen?",
+  "sequenz_kontext": {
+    "vorher": {"id": "mat-4-4", "typ": "bildquelle", "kerninhalt": "FR-Infanterie 1913 — Manoever, nicht 1914."},
+    "nachher": {"id": "mat-4-6", "typ": "darstellungstext", "kerninhalt": "Erklaerung Stellungskrieg + Schluss-Bruecke."}
+  },
+  "perspektiv_tags": ["nicht-dominant", "Macht-Betroffen"],
+  "_meta": {
+    "wortanzahl_inhalt": 86,
+    "wortanzahl_bildunterschrift": 0,
+    "anzahl_zeilen_tabelle": 4,
+    "fachbegriffe_eingefuehrt": [],
+    "fachbegriffe_referenziert": ["Marne-Schlacht (mat-4-2)"],
+    "tafelbild_knoten": ["K4-4", "K4-5"],
+    "scpl_zone_primary": "P",
+    "scpl_zonen_abdeckung": ["C2", "P"],
+    "artefakt_ref": [],
+    "skript_ref": "M4 §6",
+    "datenbasis_hashes": ["wiki-marne-2026-04-26"],
+    "ke_anker_haupt": "GPG7_LB2_K_07",
+    "afb": "II",
+    "bloom": "Anwenden -> Analysieren",
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "sprachniveau": "R7",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "sensibilitaets_markierung": "gewalt_altersfilter",
+    "altersfilter_realisiert": true,
+    "altersfilter_massnahmen": [
+      "Zahlen werden genannt, NICHT visualisiert (keine Bilder von Toten/Verwundeten).",
+      "'ca.' vor FR- und DT-Zahlen wegen Forschungs-Bandbreite.",
+      "Begleitsatz: 'Diese Zahlen sind so gross, dass kaum jemand sie sich vorstellen kann.' (aus SKRIPT M4 §6).",
+      "Neutrale Zahl-Darstellung: 'Tote + Verwundete zusammen' — keine Verletzungs-Beschreibungen."
+    ],
+    "keine_visualisierung": true,
+    "ca_marker_realisiert": ["FR (ca. 250.000)", "DT (ca. 298.000)"],
+    "bildfunktion": "n/a",
+    "material_charakter": "besinnung_wertbezogen",
+    "analyseauftrag": true,
+    "personalisiert": false,
+    "perspektive": "Drei-Parteien-Bilanz (FR/GB/DT) — Soldaten beider Seiten als Macht-Betroffene unabhaengig der Nationalitaet. Multiperspektivitaet ueber neutrale Zahlen-Darstellung.",
+    "tipp_stufen": {
+      "stufe_1": "Wie viele Menschen waren betroffen?",
+      "stufe_2": "Rechne die drei Zahlen zusammen. Wie lange dauerte die Schlacht?",
+      "stufe_3": "Mehr als 500.000 Tote und Verwundete in 7 Tagen. Diese Wucht zerstoert die Idee vom 'kurzen Krieg'. Auf allen drei Seiten waren Soldaten betroffen — kein einseitiger Verlierer-Mythos."
+    },
+    "quellenkritische_impulse": [
+      "Warum steht bei FR und DT 'ca.' davor — und bei GB nicht?",
+      "Was sagt die Zahl ueber die Idee vom 'kurzen Krieg'?",
+      "Welche drei Laender sind betroffen? Wer fehlt in der Tabelle?"
+    ],
+    "kernerkenntnisse_bezug": [
+      "Marne-Schlacht 5.-12.9.1914: > 500.000 Tote/Verwundete in 7 Tagen.",
+      "Wendepunkt: Die Wucht macht den 'kurzen Krieg' als Idee unmoeglich.",
+      "Multiperspektivitaet: Soldaten aller drei Konfliktparteien sind Betroffene."
+    ],
+    "trigger_vermerk": ["weltkrieg_grossereignis", "konflikt"],
+    "f_pb_44_komposita_check": {
+      "marne_schlacht_referenziert": "aus mat-4-2 bekannt",
+      "wendepunkt_implizit": "Wucht der Zahlen macht Wendepunkt-Funktion sichtbar; expliziter Begriff in mat-4-6"
+    },
+    "erarbeitbarkeits_check": "PASS — SuS lesen Tabelle, erkennen Drei-Parteien-Verluste, verstehen die Wucht (>500.000 in 7 Tagen) als Wendepunkt zur Stellungskrieg-Logik. Altersfilter eingehalten (keine Visualisierung, neutrale Zahl-Darstellung)."
+  }
+}

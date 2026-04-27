@@ -1,0 +1,39 @@
+{
+  "id": "aufgabe-4-6",
+  "typ": "lueckentext",
+  "frage": "Ergaenze die fehlenden Begriffe zum Wendepunkt an der Marne.",
+  "material_referenz": ["mat-4-6"],
+  "lueckentext": "An der Marne im September 1914 endete der „kurze Krieg\". Beide Seiten gruben sich ein und bauten {{1}} — also tiefe Loecher und Linien im Boden. Genau das ist der {{2}}: Soldaten bleiben in festen Stellungen und kommen kaum mehr vorwaerts. Aus geplanten sechs Wochen wurden {{3}} Krieg.",
+  "optionen": {
+    "1": ["Schuetzen-Graeben", "Festungen", "Bunker", "Bruecken"],
+    "2": ["Stellungskrieg", "Bewegungskrieg", "Blitzkrieg", "Bauernkrieg"],
+    "3": ["vier Jahre", "sechs Monate", "zwei Jahre", "zehn Jahre"]
+  },
+  "loesung": ["Schuetzen-Graeben", "Stellungskrieg", "vier Jahre"],
+  "tipps": [
+    {"stufe": 1, "text": "Schau dir den [[mat-4-6|Darstellungstext zum Stellungskrieg]] (M6) genau an. Wie heisst der zentrale Begriff fuer den neuen Kriegs-Zustand?"},
+    {"stufe": 2, "text": "Im Text steht: „tiefe Loecher und Linien im Boden\". Wie nennt man das mit einem Wort? Und wie viele Jahre dauerte der Krieg am Ende?"},
+    {"stufe": 3, "text": "Loesung: Schuetzen-Graeben sind tiefe Loecher und Linien. Der Stellungskrieg bedeutet: Beide Seiten bleiben in festen Stellungen. Aus 6 Wochen Plan wurden 4 Jahre Krieg. Der Begriff Stellungskrieg ist auch das M4-Code-Element."}
+  ],
+  "punkte": 10,
+  "_meta": {
+    "afb": "II",
+    "bloom": "Anwenden",
+    "tb_knoten": ["K4-1", "K4-5"],
+    "scpl_zone": "L",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "sprachniveau": "R7",
+    "schluessel_code_element": "STELLUNGSKRIEG (Hauptluecke 2)",
+    "q_gate": {
+      "A1_afb_kongruenz": "PASS",
+      "A2_fragestamm_klarheit": "PASS — 8 Worte",
+      "A4_lt_eindeutigkeit": "PASS — alle 3 Luecken in mat-4-6 wortlautnah erklaert",
+      "A6_tipp_progression": "PASS",
+      "MQ3_material_referenz_in_frage": "PASS",
+      "MQ3b_display_referenz_in_tipp1": "PASS — [[mat-4-6|Darstellungstext zum Stellungskrieg]] (M6)",
+      "schluessel_code_anker": "PASS — STELLUNGSKRIEG ist Luecke 2 + Code-Element M4"
+    }
+  }
+}

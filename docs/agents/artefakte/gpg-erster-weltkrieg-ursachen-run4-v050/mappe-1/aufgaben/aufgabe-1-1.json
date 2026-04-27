@@ -1,0 +1,60 @@
+{
+  "id": "aufgabe-1-1",
+  "typ": "zuordnung",
+  "frage": "Ordne die sechs Grossmaechte ihrem Buendnis zu.",
+  "material_referenz": ["mat-1-1", "mat-1-4"],
+  "paare": {
+    "Deutsches Reich": "Dreibund",
+    "Oesterreich-Ungarn": "Dreibund",
+    "Italien": "Dreibund",
+    "Frankreich": "Triple Entente",
+    "Russland": "Triple Entente",
+    "Grossbritannien": "Triple Entente"
+  },
+  "kategorien": ["Dreibund", "Triple Entente"],
+  "loesung": {
+    "Deutsches Reich": "Dreibund",
+    "Oesterreich-Ungarn": "Dreibund",
+    "Italien": "Dreibund",
+    "Frankreich": "Triple Entente",
+    "Russland": "Triple Entente",
+    "Grossbritannien": "Triple Entente"
+  },
+  "tipps": [
+    {
+      "stufe": 1,
+      "text": "Schau auf die [[mat-1-1|Karte Europa 1914]] (M1). Welche Farbe hat welches Land?"
+    },
+    {
+      "stufe": 2,
+      "text": "Gelb ist der Dreibund. Blau ist die Triple Entente. Lies dazu nochmal den [[mat-1-4|Text zum Buendnis-System]] (M2)."
+    },
+    {
+      "stufe": 3,
+      "text": "Loesung: Dreibund (1882) = Deutsches Reich, Oesterreich-Ungarn, Italien. Triple Entente (1907) = Frankreich, Russland, Grossbritannien. Merke: Die drei Mittelmaechte gegen die drei Randmaechte."
+    }
+  ],
+  "punkte": 10,
+  "_meta": {
+    "bloom": "L1",
+    "afb": "I",
+    "scpl_zone": "S+C1",
+    "tafelbild_knoten": ["K1-2", "K1-3"],
+    "ke_anker_haupt": "GPG7_LB2_K_05",
+    "ziel_material_id": "mat-1-1",
+    "operationalisierungsziel": "Die SuS ordnen sechs europaeische Grossmaechte den zwei Buendnis-Bloecken (Dreibund / Triple Entente) zu.",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "subagent": "sub-aufgabe-zuordnung",
+    "q_gate": {
+      "A1_afb_kongruenz": "PASS",
+      "A2_fragestamm_klarheit": "PASS",
+      "A3_material_kongruenz": "PASS",
+      "A4_zu_trennschaerfe": "PASS — disjunkte Kategorien Dreibund vs. Triple Entente",
+      "A6_tipp_progression": "PASS — Hinweis -> Richtung -> Loesung+Begruendung",
+      "A7_operator_praezision": "PASS — Operator 'ordne zu' (AFB I)",
+      "MQ3_kein_link_in_frage": "PASS",
+      "MQ3b_displayref_in_tipp1": "PASS",
+      "F0B_R7": "PASS — Satzlaenge max. 8W"
+    }
+  }
+}

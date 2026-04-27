@@ -1,0 +1,75 @@
+{
+  "id": "aufgabe-2-6",
+  "typ": "zuordnung",
+  "frage": "Ordne die fuenf Aussagen ueber Princip den zwei Erinnerungs-Perspektiven zu.",
+  "material_referenz": ["mat-2-4", "mat-2-3"],
+  "paare": {
+    "Princip kaempfte fuer die Befreiung der Suedslawen aus der Habsburg-Herrschaft.": "Serbisch-nationale Erinnerung",
+    "Princip wird in Belgrad bis heute auf Tafeln und Denkmaelern geehrt.": "Serbisch-nationale Erinnerung",
+    "Princip ermordete den Thronfolger und seine Frau Sophie auf offener Strasse.": "Habsburgisch-bosniakisch-kroatische Erinnerung",
+    "Princip war Mitglied einer Geheim-Organisation und kein einsamer Taeter.": "Habsburgisch-bosniakisch-kroatische Erinnerung",
+    "Princip wurde 1914 vor Gericht gestellt und als Angeklagter photographiert.": "Habsburgisch-bosniakisch-kroatische Erinnerung"
+  },
+  "kategorien": [
+    "Serbisch-nationale Erinnerung",
+    "Habsburgisch-bosniakisch-kroatische Erinnerung"
+  ],
+  "loesung": {
+    "Princip kaempfte fuer die Befreiung der Suedslawen aus der Habsburg-Herrschaft.": "Serbisch-nationale Erinnerung",
+    "Princip wird in Belgrad bis heute auf Tafeln und Denkmaelern geehrt.": "Serbisch-nationale Erinnerung",
+    "Princip ermordete den Thronfolger und seine Frau Sophie auf offener Strasse.": "Habsburgisch-bosniakisch-kroatische Erinnerung",
+    "Princip war Mitglied einer Geheim-Organisation und kein einsamer Taeter.": "Habsburgisch-bosniakisch-kroatische Erinnerung",
+    "Princip wurde 1914 vor Gericht gestellt und als Angeklagter photographiert.": "Habsburgisch-bosniakisch-kroatische Erinnerung"
+  },
+  "tipps": [
+    {
+      "stufe": 1,
+      "text": "Lies die Bildunterschrift zu [[mat-2-4|Princip vor Gericht]] (M4) und vergleiche mit [[mat-2-3|Hofportrait Franz Ferdinand]] (M3). Beide Erinnerungen stehen dort gleichberechtigt nebeneinander."
+    },
+    {
+      "stufe": 2,
+      "text": "Aus serbisch-nationaler Sicht: Princip wollte die Suedslawen befreien — er wird als nationaler Kaempfer erinnert. Aus habsburgisch-bosniakisch-kroatischer Sicht: Princip toetete einen Menschen — er wird als Attentaeter erinnert. Beide Erinnerungen lassen sich nicht widerlegen, weil sie verschiedene Tatsachen betonen."
+    },
+    {
+      "stufe": 3,
+      "text": "Loesung: Serbisch-national = Befreiung der Suedslawen + Denkmaeler in Belgrad. Habsburgisch-bosniakisch-kroatisch = Mord auf offener Strasse + Mitglied einer Geheim-Organisation + Gerichts-Angeklagter. Beide Erinnerungen sind heute gleichzeitig gueltig — Geschichte hat oft mehrere Wahrheiten nebeneinander. Das nennt man Multiperspektivitaet."
+    }
+  ],
+  "punkte": 18,
+  "_meta": {
+    "bloom": "L5",
+    "afb": "II-III",
+    "scpl_zone": "L",
+    "tafelbild_knoten": ["K2-1", "K2-2"],
+    "ke_anker_haupt": "GPG7_LB2_K_06",
+    "ziel_material_id": "mat-2-4",
+    "operationalisierungsziel": "Die SuS ordnen fuenf Aussagen ueber Princip zwei gleichberechtigten Erinnerungs-Perspektiven zu (serbisch-national / habsburgisch-bosniakisch-kroatisch) und erkennen, dass beide Sichten heute nebeneinander gueltig sind.",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "subagent": "sub-aufgabe-zuordnung",
+    "didaktisches_kernstueck": true,
+    "fachbegriffe_eingefuehrt_im_material": ["Junges Bosnien", "Schwarze Hand"],
+    "multiperspektivitaet": {
+      "perspektive_p1": "Serbisch-nationale Sicht (Princip als Befreier / Mitglied Junges Bosnien, Suedslawen-Freiheit)",
+      "perspektive_p2": "Habsburgisch-bosniakisch-kroatische Sicht (Princip als Attentaeter / Mitglied Schwarze Hand, Mord)",
+      "kein_antwort_vorgriff": "PASS — die Aufgabe selbst wertet KEINE Erinnerung als richtig oder falsch. Beide Perspektiven werden gleichberechtigt benannt. Loesung-Tipp 3 explizit: 'Beide Erinnerungen sind heute gleichzeitig gueltig.' Begriffe 'Held' und 'Terrorist' werden im Aufgaben-Stamm und in den Aussagen NICHT verwendet — nur die Erinnerungs-Perspektiven 'serbisch-national' / 'habsburgisch-bosniakisch-kroatisch' und beobachtbare Faktoren (Befreiungs-Motiv, Tat selbst, Organisations-Mitgliedschaft, Gerichts-Inszenierung)."
+    },
+    "f_pb_37_quellenkritik_pflicht": "PASS — Quellenkritik bei mat-2-4 + mat-2-3 realisiert: SuS muessen erkennen, dass das Gerichts-Foto (mat-2-4) eine juristische Inszenierung ist, NICHT ein Held- oder Terrorist-Bild. Auch das Hofportrait (mat-2-3) ist Auftrags-Inszenierung. Beide Quellen tragen ihre Produzenten-Perspektive in sich. Tipp 1 weist auf gleichberechtigte Erinnerungen in den Bildunterschriften hin.",
+    "q_gate": {
+      "A1_afb_kongruenz": "PASS — AFB II-III (Vergleich + Wertungs-Diskrimination)",
+      "A2_fragestamm_klarheit": "PASS — 11 Woerter, neutral",
+      "A3_material_kongruenz": "PASS — beide Perspektiven explizit in mat-2-4 BU + multiperspektivitaet_pflicht-Block",
+      "A4_zu_trennschaerfe": "PASS — disjunkte Kategorien (serbisch-national vs. habsburgisch-bosniakisch-kroatisch) + 5 trennscharfe Aussagen, die sich klar einer Perspektive zuordnen lassen",
+      "A6_tipp_progression": "PASS — neutraler Hinweis -> beide Sichten benennen -> beide gleichberechtigt + Begriff Multiperspektivitaet",
+      "A7_operator_praezision": "PASS — 'ordne zu' (AFB II-III) + Begruendungs-Element in Tipp 3",
+      "A8_kognitive_aktivierung": "PASS — Multiperspektivitaet als denkanregender Vergleich",
+      "A12_sachbezogen_vor_wertbezogen": "PASS — Position 6 nach Pos 1-5 (sachbezogen)",
+      "A17_scpl_zonen_abdeckung": "PASS — L-Zone",
+      "F-PB-37": "PASS — Quellenkritik mat-2-3 + mat-2-4 realisiert",
+      "QG-07_sprach_sieb": "PASS — keine kolonial-sprachlichen oder wertenden Etiketten",
+      "MULTIPERSPEKTIVITAET_KEIN_ANTWORT_VORGRIFF": "PASS — Begriffe 'Held' und 'Terrorist' aus dem Material-Titel werden im Aufgaben-Stamm bewusst NICHT verwendet; stattdessen 'Erinnerungs-Perspektiven'. Beide Sichten gleichberechtigt benannt.",
+      "MQ3_kein_link_in_frage": "PASS",
+      "MQ3b_displayref_in_tipp1": "PASS — [[mat-2-4|...]] (M4) + [[mat-2-3|...]] (M3)",
+      "F0B_R7": "PASS — Aussagen 12-15W, DaZ-tauglich, Komposita Junges-Bosnien/Schwarze-Hand im Material erstgebraucht erklaert"
+    }
+  }
+}

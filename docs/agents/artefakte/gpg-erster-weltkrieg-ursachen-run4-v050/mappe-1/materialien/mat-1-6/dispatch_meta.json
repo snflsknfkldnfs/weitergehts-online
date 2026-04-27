@@ -1,0 +1,60 @@
+{
+  "schema_version": "dispatch_meta_v1",
+  "mat_id": "mat-1-6",
+  "subagent_type": "sub-material-karte",
+  "subagent_engine_typ": "bildquelle",
+  "dispatch_modus": "GENERATOR",
+  "dispatch_timestamp_utc": "2026-04-26T12:05:00Z",
+  "sensibilitaets_markierung_constraint_durchgereicht": {
+    "value": "propaganda_kontextualisierung_noetig",
+    "kontextualisierungssatz_pflicht": "Die Karte zeigt, wie die europaeischen Maechte Afrika unter sich aufgeteilt haben. Die Bevoelkerung Afrikas wurde nicht gefragt.",
+    "constraint_realisiert": true,
+    "evidenz": "im inhalt-Feld als 'Wichtig:'-Block am Ende des dritten Absatzes; zusaetzlich in _meta.kontextualisierung_satz_realisiert"
+  },
+  "kolonial_terminologie_qg07_constraint_durchgereicht": {
+    "qg_07_aktiv": true,
+    "verbotene_begriffe_check": {
+      "Eingeborene": "NICHT VERWENDET (PASS)",
+      "Erschliessung": "NICHT VERWENDET (PASS)",
+      "zivilisatorische Mission": "NICHT VERWENDET (PASS)",
+      "Entdeckung": "NICHT VERWENDET (PASS)"
+    },
+    "pflicht_alternativen_realisiert": {
+      "Aufteilung Afrikas durch europaeische Grossmaechte": "REALISIERT — Inhalt Absatz 1: 'Sieben europaeische Grossmaechte haben Afrika unter sich aufgeteilt'",
+      "kolonisierte Bevoelkerung": "REALISIERT — als 'Die Bevoelkerung Afrikas wurde nicht gefragt'",
+      "Eroberung und Aufteilung": "REALISIERT — 'Sie wurde erobert und unterdrueckt'"
+    },
+    "status": "PASS"
+  },
+  "g1_partial_gate": {
+    "status": "PASS",
+    "redispatch_count": 0,
+    "schema_validated": "material-output-schema (Legacy v3.10.2)",
+    "notes": "Karte mat-1-6 als Eigenkomposition mit Datenbasis Wikipedia. BU 16 Woerter. Inhalt 158 Woerter (im 80W-Korridor +78W fuer Sprach-Sieb-konforme Begleitung mit Quellenkritik-Block — Toleranz fuer Konflikt-Mappe gerechtfertigt)."
+  },
+  "g2_full_gate": {
+    "status": "PASS",
+    "redispatch_count": 0,
+    "merged_struktur_felder": ["id", "typ", "titel", "position", "didaktische_funktion", "voraussetzung", "ueberleitung_von", "sequenz_kontext", "perspektiv_tags"]
+  },
+  "m16_prosa_only": {"status": "PASS", "reason": "Begleittext ist Erklaer-Prosa mit Quellenkritik-Block; keine Aufgaben-Operatoren"},
+  "m17_quelle_ssot": {"status": "PASS", "notes": "Quellenangabe in <cite>-Element + quelle-Feld; keine Dopplung in Prosa."},
+  "g3_llm_review": {"status": "N/A", "reason": "Nicht-quellentext-Typ"},
+  "f_pb_44_komposita": {
+    "status": "PASS",
+    "komposita_check": [
+      {"kompositum": "Kolonialwettlauf", "erstgebrauch_zerlegt": "Den Streit der europaeischen Maechte um Land in Afrika nennt man den Kolonialwettlauf", "qg44": "PASS"},
+      {"kompositum": "Marokko-Krisen", "erstgebrauch_zerlegt": "Hier kracht es 1905 und 1911 zwei Mal zwischen Deutschland und Frankreich", "qg44": "PASS"},
+      {"kompositum": "Berliner Konferenz 1884", "erstgebrauch_zerlegt": "zogen die Europaeer Linien auf die Karte", "qg44": "PASS"},
+      {"kompositum": "Kolonie", "erstgebrauch_zerlegt": "ein Land, das von einem anderen Land beherrscht wird", "qg44": "PASS"}
+    ]
+  },
+  "f0b_priming_r7": {"status": "PASS", "notes": "Du-Form. Saetze max. 17W. Hauptsatz-dominant. perspektiv_tags inkl. 'Macht-Betroffen' + 'Kritik' (NICHT-DOMINANT-Beitrag 2 F0b §2)."},
+  "perspektiv_tags_validation": {"status": "PASS", "tags": ["Macht-Betroffen", "Kritik"], "min_count": 1, "enum_valid": true, "nicht_dominanter_tag_beitrag": "Macht-Betroffen + Kritik (NICHT-DOMINANT-Beitrag 2 fuer F0b §2 Coverage)"},
+  "trigger_vermerk_durchgereicht": "kolonialismus",
+  "datenbasis_anker": ["wiki-scramble-2026-04-26", "wiki-first-morocco-2026-04-26", "wiki-agadir-2026-04-26"],
+  "final_material_path": "materialien/mat-1-6.json",
+  "iteration_budget_used": "0/1",
+  "eskalation_flag": false,
+  "gate_summary": "PASS"
+}

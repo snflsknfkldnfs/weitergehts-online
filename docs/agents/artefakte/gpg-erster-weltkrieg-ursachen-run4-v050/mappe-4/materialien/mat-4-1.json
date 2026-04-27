@@ -1,0 +1,66 @@
+{
+  "id": "mat-4-1",
+  "typ": "karte",
+  "titel": "Welcher Weg war geplant — und warum durch Belgien?",
+  "inhalt": "<figure class=\"karte\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/a/a9/Plan_Moltke-Schlieffen_1914.svg\" alt=\"Karte des Schlieffen-Plans 1914 mit den geplanten Bewegungs-Pfeilen der deutschen Armee durch Belgien nach Frankreich\" /><figcaption class=\"karte__bu karte__bu--haupt\">Diese Karte zeigt den <strong>Schlieffen-Plan</strong>: die geplanten Bewegungs-Pfeile der deutschen Armee 1914. Der grosse Bogen geht von Norden durch das neutrale Belgien — und dann im Sueden um Paris herum. Idee: Frankreich in nur sechs Wochen besiegen, dann gegen Russland.</figcaption><figcaption class=\"karte__bu karte__bu--quellenkritik\"><em>Quellenkritik: Heute weiss die Forschung — es gab keinen einzigen fertigen Plan. Es gab nur Aufmarsch-Skizzen, die mehrfach geaendert wurden. Den Begriff Schlieffen-Plan benutzen wir trotzdem, aber nicht als Helden-Geschichte.</em></figcaption></figure>",
+  "bildunterschrift": "Schlieffen-Plan 1914: geplanter Bogen durch Belgien nach Paris. Quellenkritik: Es gab keinen einzigen fertigen Plan — nur Aufmarsch-Skizzen, mehrfach geaendert.",
+  "quelle": "Wikimedia Commons, File:Plan_Moltke-Schlieffen_1914.svg, Urheber: Lvcvlvs (Wikipedia-User), 21.10.2013, Lizenz: CC-BY-SA-3.0. Datenbasis: Wikipedia-Artikel 'First Battle of the Marne' und 'Schlieffen Plan' (Stand 2026-04-26). Kuratorische Einordnung: didaktische Schulbuch-Visualisierung.",
+  "lizenz": "CC-BY-SA-3.0",
+  "position": 1,
+  "didaktische_funktion": "einstieg",
+  "voraussetzung": [],
+  "ueberleitung_von": null,
+  "sequenz_kontext": {
+    "vorher": null,
+    "nachher": {"id": "mat-4-2", "typ": "zeitleiste", "kerninhalt": "Zeitleiste August/September 1914 mit 7 Schluessel-Daten."}
+  },
+  "perspektiv_tags": ["dominant"],
+  "_meta": {
+    "wortanzahl_inhalt": 73,
+    "wortanzahl_bildunterschrift": 26,
+    "wortanzahl_quellenkritik_bu": 32,
+    "fachbegriffe_eingefuehrt": ["Schlieffen-Plan"],
+    "fachbegriffe_referenziert": ["Buendnis-System (M1)", "Neutralitaet (M2)"],
+    "tafelbild_knoten": ["K4-2"],
+    "scpl_zone_primary": "S",
+    "scpl_zonen_abdeckung": ["S"],
+    "artefakt_ref": ["img-m4-01"],
+    "wikimedia_filename": "Plan_Moltke-Schlieffen_1914.svg",
+    "skript_ref": "M4 §1-§2",
+    "datenbasis_hashes": ["wiki-schlieffen-2026-04-26", "wiki-marne-2026-04-26"],
+    "ke_anker_haupt": "GPG7_LB2_K_07",
+    "afb": "II",
+    "bloom": "Anwenden",
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "sprachniveau": "R7",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "sensibilitaets_markierung": "mythos_korrektur_noetig",
+    "mythos_korrektur_realisiert": true,
+    "mythos_korrektur_ort": ["inhalt (karte__bu--quellenkritik)", "bildunterschrift", "lehrkraft_hinweis"],
+    "lehrkraft_hinweis": "Forschung Annika Mombauer / Terence Zuber: Es gab keinen einzelnen 'fertigen' Schlieffen-Plan, sondern Aufmarsch-Skizzen, die mehrfach veraendert wurden. Begriff bleibt im Schueler-Heft etabliert; muendlich relativieren statt heroisieren. Lehrkraft-Sektion HEFTEINTRAG_M4 A.3.",
+    "bildfunktion": "heuristisch",
+    "material_charakter": "vergegenwaertigung",
+    "analyseauftrag": true,
+    "personalisiert": false,
+    "aktivierungscharakter": "bild",
+    "tipp_stufen": {
+      "stufe_1": "Schau auf die Karte. Welcher Weg war geplant?",
+      "stufe_2": "Der Plan fuehrte durch Belgien — ein neutrales Land. Warum nicht direkt gegen Frankreich?",
+      "stufe_3": "Die deutsch-franzoesische Grenze war stark befestigt. Deshalb plante Schlieffen den grossen Bogen durch Belgien — schnell, ueberraschend, von Norden."
+    },
+    "perspektive": "P1: Deutsche Generalstab-Fuehrung (Plan-Sicht 1905) — dominant. Multiperspektiv-Korrektur erfolgt durch Quellenkritik-BU.",
+    "quellenkritische_impulse": [
+      "Wer hat diese Karte gezeichnet — und wann?",
+      "Zeigt die Karte die Wirklichkeit oder die Idee?",
+      "Was sagt die heutige Forschung zum 'Schlieffen-Plan' — gab es ihn ueberhaupt so?"
+    ],
+    "kernerkenntnisse_bezug": ["Schlieffen-Plan (1905/06): Frankreich in 6 Wochen besiegen, ueber Belgien. Plan-Idee."],
+    "trigger_vermerk": ["weltkrieg_grossereignis"],
+    "f_pb_44_komposita_check": {
+      "schlieffen_plan_erstgebrauch": "erklaert via Bindestrich + Funktions-Erklaerung im naechsten Satz ('die geplanten Bewegungs-Pfeile')",
+      "buendnis_system_referenziert": "aus M1 bekannt (kein Re-Erstgebrauch noetig)"
+    },
+    "erarbeitbarkeits_check": "PASS — SuS sehen die geplante Bewegung als Bogen-Pfeil; Quellenkritik-BU bringt Zuber-Forschung als Korrektur. Vorwissen aus M1 (Buendnis-System) und M2 (Neutralitaet Belgiens) gesichert."
+  }
+}

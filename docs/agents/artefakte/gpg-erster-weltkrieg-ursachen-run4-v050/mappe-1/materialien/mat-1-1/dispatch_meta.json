@@ -1,0 +1,32 @@
+{
+  "schema_version": "dispatch_meta_v1",
+  "mat_id": "mat-1-1",
+  "subagent_type": "sub-material-karte",
+  "subagent_engine_typ": "bildquelle",
+  "dispatch_modus": "GENERATOR",
+  "dispatch_timestamp_utc": "2026-04-26T12:00:00Z",
+  "g1_partial_gate": {
+    "status": "PASS",
+    "redispatch_count": 0,
+    "schema_validated": "material-output-schema (Legacy v3.10.2)",
+    "notes": "Karte mat-1-1 ueber Wikimedia-Bild img-m1-02 (CC-BY-SA-2.5). BU 9 Woerter (R7-konform). Inhalt 78 Woerter."
+  },
+  "g2_full_gate": {
+    "status": "PASS",
+    "redispatch_count": 0,
+    "merged_struktur_felder": ["id", "typ", "titel", "position", "didaktische_funktion", "voraussetzung", "ueberleitung_von", "sequenz_kontext", "perspektiv_tags"]
+  },
+  "m16_prosa_only": {"status": "N/A", "reason": "Kein HTML-String-inhalt-Pfad (figure/figcaption-Wrapper, keine Aufgaben-Operatoren)"},
+  "m17_quelle_ssot": {"status": "PASS", "notes": "Quellenangabe ausschliesslich in <cite> innerhalb figcaption + quelle-Feld."},
+  "g3_llm_review": {"status": "N/A", "reason": "Nicht-quellentext-Typ — G3 nur fuer quellentext-Typ aktiv (Track C3 v3.11.0+-Route)"},
+  "f_pb_44_komposita": {
+    "status": "PASS",
+    "komposita_check": ["Buendnis (Erstgebrauch in BU mit Versprechens-Erklaerung)", "Dreibund (Erstgebrauch im Inhalt benannt)", "Triple Entente (Erstgebrauch im Inhalt benannt)"]
+  },
+  "f0b_priming_r7": {"status": "PASS", "notes": "BU max. 9W; Saetze max. 18W; Hauptsatz-dominant."},
+  "perspektiv_tags_validation": {"status": "PASS", "tags": ["Aussen", "dominant"], "min_count": 1, "enum_valid": true},
+  "final_material_path": "materialien/mat-1-1.json",
+  "iteration_budget_used": "0/1",
+  "eskalation_flag": false,
+  "gate_summary": "PASS"
+}

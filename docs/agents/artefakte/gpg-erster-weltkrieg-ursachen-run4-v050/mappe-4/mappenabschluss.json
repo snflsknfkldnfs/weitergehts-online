@@ -1,0 +1,136 @@
+{
+  "schema_version": "1.0",
+  "template_version": "SUB_TEMPLATE_MAPPENABSCHLUSS_v1.0",
+  "phase": "2.2c",
+  "agent": "sub-template-mappenabschluss",
+  "mappe_id": "M4",
+  "mappe_index": 4,
+  "mappe_titel": "Marne 1914 — Das Ende des kurzen Krieges",
+  "game_id": "gpg-erster-weltkrieg-ursachen-run4-v050",
+  "_variante": "B",
+  "letzte_mappe_indikator": true,
+
+  "stundenfrage_referenz": "Warum scheiterte der deutsche Plan fuer einen schnellen Sieg an der Marne?",
+  "rahmenthema_game": "Wie kam es zum Ersten Weltkrieg — und warum wurde er kein kurzer Krieg?",
+
+  "reflexion_fragen": [
+    "Schau auf die vier Mappen zurueck: Pulverfass (M1) — Sarajevo (M2) — Augustfieber (M3) — Marne (M4). Welcher dieser vier Befunde hat dein Bild vom Krieg am staerksten veraendert — und warum gerade dieser?",
+    "In M3 hast du eine Bauern-Frau erlebt, die nicht jubelte, als ihr Mann in den Krieg zog. In M4 hast du gesehen, wie der 'kurze Krieg' an der Marne starb. Was sagen dir diese beiden Perspektiven — die der Daheimgebliebenen und die der Soldaten — ueber den Unterschied zwischen Plan und Wirklichkeit?",
+    "Niemand der Maechte 1914 hat den Krieg allein gewollt — und doch ist er gekommen. Was nimmst du aus M1-M4 mit, wenn du heute Nachrichten ueber Konflikte zwischen Staaten hoerst?"
+  ],
+
+  "ueberleitungssatz": "",
+
+  "game_abschluss_reflexion": {
+    "vier_mappen_befund_synthese": {
+      "M1_pulverfass": "Europa war vor 1914 schon brennbar: Buendnisse (Dreibund / Triple Entente), Wettruesten und Wettlauf um Kolonien lagen wie Pulverfaesser bereit.",
+      "M2_ausloeser": "Der Schuss von Sarajevo (28.06.1914) war der Funke — der Ausloeser, nicht die Ursache. Die Buendnisketten zogen die Maechte in den Krieg.",
+      "M3_augustbegeisterung": "Im August 1914 jubelten viele in den Staedten. Aber: nicht alle. Auf dem Land, in vielen Familien, war Sorge. Die Schuld war geteilt — wir folgen dem Forschungsstand (Clark: 'Schlafwandler', Fischer-Korrektur).",
+      "M4_marne": "An der Marne im September 1914 endete der 'kurze Krieg' und der Stellungskrieg begann. Aus geplanten sechs Wochen wurden vier Jahre Krieg."
+    },
+    "schluessel_code_komplett": "PULVERFASS — AUSLOESER — AUGUSTBEGEISTERUNG — STELLUNGSKRIEG",
+    "schluessel_code_zerlegung": [
+      {"mappe": "M1", "code_element": "PULVERFASS", "befund": "Europa lag brennbar."},
+      {"mappe": "M2", "code_element": "AUSLOESER", "befund": "Sarajevo als Funke."},
+      {"mappe": "M3", "code_element": "AUGUSTBEGEISTERUNG", "befund": "Stadt-Land-Differenz, geteilte Schuld."},
+      {"mappe": "M4", "code_element": "STELLUNGSKRIEG", "befund": "Plan gescheitert, 4 Jahre Krieg."}
+    ],
+    "synthese_satz_schueler": "Vor dem Krieg lag Europa brennbar (M1). In Sarajevo fiel der Funke (M2). Im August jubelten viele, aber nicht alle (M3). An der Marne starb der Plan vom kurzen Krieg, und der Stellungskrieg begann (M4)."
+  },
+
+  "multiperspektivitaet_abschluss": {
+    "sieger_verlierer_abschliessend": "Es gab an der Marne keinen einfachen Sieger und keinen einfachen Verlierer. Die franzoesische Armee unter Joffre und die britische BEF stoppten den deutschen Vormarsch — das war ihr Erfolg. Aber: in einer Woche wurden mehr als eine halbe Million Soldaten getoetet oder verwundet — auf beiden Seiten. Die belgische Bevoelkerung hatte den Einmarsch gar nicht gewaehlt. Und die Soldaten in den Schuetzen-Graeben — Deutsche wie Franzosen wie Briten — verloren am Ende fast alle: ihre Heimat-Idee vom kurzen Krieg, ihre Gesundheit, viele ihr Leben.",
+    "fuenf_perspektiven_summary": [
+      {"perspektive": "P1 Deutscher Generalstab (Moltke d.J. / Schlieffen-Erbe)", "befund": "Der Plan scheiterte an der Wirklichkeit — Erschoepfung, Versorgung, franzoesischer Widerstand."},
+      {"perspektive": "P2 Belgische Bevoelkerung+Regierung", "befund": "Opfer einer Neutralitaets-Verletzung. Ihr Land wurde Schlachtfeld, ohne dass sie Krieg gewollt hatten."},
+      {"perspektive": "P3 Franzoesische Armee unter Joffre", "befund": "Defensiv-Sieger der Marne — Paris bleibt frei, der Plan ist gestoppt."},
+      {"perspektive": "P4 Britische BEF unter John French", "befund": "Kriegseintritt wegen Belgien-Bruch, beteiligt am Marne-Stopp."},
+      {"perspektive": "P5 Soldaten beider Seiten", "befund": "Erschoepfung, Versorgungsprobleme, hunderttausende Tote und Verwundete in einer Woche — und danach Schuetzen-Graben."}
+    ],
+    "qg_M3_multiperspektiv_explizit": "Reflexionsfrage 2 greift die nicht-dominanten Perspektiven aus M3 (Bauern-Frau / Stille auf dem Land) und M4 (Soldaten beider Seiten / belgische Bevoelkerung) explizit auf — keine generische Form."
+  },
+
+  "folge_game_bruecke": {
+    "anker": ["Stellungskrieg", "Heimatfront", "Versailles 1919"],
+    "bruecke_satz_schueler": "Der Krieg war jetzt nicht zu Ende — er hatte gerade erst begonnen. Was im Schuetzen-Graben geschah, was die Familien zu Hause erlebten und wie der Krieg 1918/19 endete, das ist Stoff fuer ein naechstes Game.",
+    "drei_offene_anker": [
+      {"anker": "Stellungskrieg", "frage_offen": "Wie war das Leben im Schuetzen-Graben — vier Jahre lang?"},
+      {"anker": "Heimatfront", "frage_offen": "Wie veraenderte der Krieg das Leben der Frauen, Kinder und alten Menschen zu Hause?"},
+      {"anker": "Versailles 1919", "frage_offen": "Wie endete der Krieg — und welcher Frieden folgte?"}
+    ],
+    "stoff_vorgriff_check": "PASS — Anker werden NUR als offene Themen benannt. Keine Inhalte aus Folge-Game (Verdun / Somme / 14 Punkte / Versailler Vertrag / Reparationen) werden vorgegeben."
+  },
+
+  "lehrkraft_sektion": {
+    "schlieffen_plan_mythos_korrektur_ausgewiesen": true,
+    "schlieffen_plan_mythos_hinweis": "Schlieffen-Plan-Mythos (Forschungsstand Terence Zuber u.a., seit ca. 2002): Es gab keinen einzigen, verbindlichen 'Schlieffen-Plan' als fertig ausgearbeitetes Dokument — sondern eine Reihe von Aufmarsch-Skizzen Schlieffens (1905/06) und spaetere Modifikationen Moltkes d.J. Im Schueler-Heft wird der Begriff 'Schlieffen-Plan' bewusst etabliert (Mittelschule R7, Begriffs-Sicherung), muendlich relativieren: 'Der Plan, wie wir ihn im Heft kennen, ist eine vereinfachte Form. Historiker streiten heute, wie genau dieser Plan aussah.'",
+    "didaktische_hinweise_lehrkraft": [
+      "Die Game-Abschluss-Reflexion (Reflexion-Fragen 1-3) ist als muendliche Schluss-Runde gedacht (10-15 Min). Reflexion-Frage 3 (Gegenwartsbezug) bewusst offen halten — keine politische Eigenpositionierung der Lehrkraft.",
+      "Schlieffen-Plan-Mythos-Korrektur: muendlich relativieren (siehe oben), nicht im Heft.",
+      "Marne-Verluste >500.000: als Zahl belassen, nicht visualisieren. Wenn SuS nachfragen: Empathie-Raum oeffnen, aber nicht ausweiten.",
+      "Multiperspektivitaet: Reflexion-Frage 2 explizit auf Bauern-Frau (M3) + Soldaten (M4) verweisen lassen, falls Klasse generisch antwortet.",
+      "Folge-Game-Bruecke: NICHT als Versprechen formulieren, sondern als offene Anker. Der Stoff (Versailler Vertrag, Heimatfront-Frauenarbeit, Verdun) gehoert in eine Folge-Sequenz und darf hier nicht vorweggenommen werden.",
+      "Sieger-Verlierer-Abschluss: Frage stellen 'Wer hat an der Marne gewonnen?' — und Antwort offen halten: Joffre/BEF taktisch ja, aber langfristig hat niemand gewonnen (4 Jahre Stellungskrieg, Millionen Tote)."
+    ],
+    "trigger_sichtbarkeit_policy": "POLICY_TRIGGER_SICHTBARKEIT: Trigger-Hinweise (weltkrieg_grossereignis, konflikt) erscheinen NUR in dieser Lehrkraft-Sektion und im _meta-Block — NICHT im Schueler-Text der reflexion_fragen.",
+    "f_pb_addressed_mappenabschluss": [
+      "F-PB-37 (Quellenkritik / Multiperspektivitaet im Game-Abschluss)",
+      "F-PB-44 (Komposita: Schluessel-Code-Element / Stellungskrieg / Folge-Game-Bruecke — alle aus Mappe bekannt)",
+      "POLICY_TRIGGER_SICHTBARKEIT (PASS)",
+      "M3-Multiperspektiv-Sanity (V19): Reflexion-Frage 2 greift Bauern-Frau (M3 nicht-dominant) + Soldaten (M4 nicht-dominant) explizit auf"
+    ]
+  },
+
+  "engine_kompatibilitaet": {
+    "data_json_schema": "data_mappe_v1",
+    "vollstaendiger_game_abschluss_code": "PULVERFASS — AUSLOESER — AUGUSTBEGEISTERUNG — STELLUNGSKRIEG",
+    "freischalt_code_m4_ref": "STELLUNGSKRIEG",
+    "render_zone": "MAPPENABSCHLUSS_ZONE_unterhalb_HEFTEINTRAG",
+    "render_position_in_mappe": "nach Sicherung, nach Hefteintrag, vor Game-Abschluss-Bildschirm"
+  },
+
+  "q_gates": {
+    "MZ1_variante_korrekt": "PASS — Variante B (letzte Mappe), kein Ueberleitungssatz, Game-Abschluss-Reflexion + Folge-Game-Bruecke vorhanden",
+    "MZ2_disjunkt_zu_hefteintrag": "PASS — Reflexion-Fragen sind nicht identisch mit hefteintrag.scpl.loesung[] (kein Wortlaut-Overlap)",
+    "MZ3_keine_faktenabfrage": "PASS — alle 3 Fragen sind Bewertung / Metakognition / Gegenwartsbezug, keine Wissensreproduktion",
+    "MZ4_ueberleitungssatz_var_b": "PASS — bei Var. B nicht erforderlich, leer gesetzt; stattdessen folge_game_bruecke.bruecke_satz_schueler vorhanden",
+    "MZ5_sprachregister_R7": "PASS — alle Schueler-Saetze ueberwiegend 8-15 Wo, keine Schachtel-Saetze, Komposita aus Mappe bekannt",
+    "POLICY_TRIGGER_SICHTBARKEIT": "PASS — keine Trigger-Hinweise im Schueler-Text",
+    "GAME_ABSCHLUSS_4_MAPPEN_BEFUND": "PASS — alle vier Mappen (Pulverfass / Sarajevo / Augustfieber / Marne) explizit synthetisiert",
+    "FOLGE_GAME_BRUECKE_OHNE_STOFFVORGRIFF": "PASS — Anker (Stellungskrieg / Heimatfront / Versailles 1919) als offene Themen, keine Inhalte",
+    "ENGINE_KOMPATIBILITAET": "PASS — data_mappe_v1, vollstaendiger Code dokumentiert",
+    "F0B_PRIMING_R7_ENTLASTEND_NACH_M3": "PASS — Reflexion-Fragen sind metakognitiv-bewertend, kein Wissens-Druck nach M3-Hoehepunkt",
+    "SCHLIEFFEN_PLAN_MYTHOS_KORREKTUR_AUSGEWIESEN": "PASS — explizit in lehrkraft_sektion.schlieffen_plan_mythos_hinweis (Zuber-Forschung)",
+    "MULTIPERSPEKTIVITAET_SIEGER_VERLIERER_ABSCHLIESSEND": "PASS — explizit in multiperspektivitaet_abschluss.sieger_verlierer_abschliessend (kein einfacher Sieger / kein einfacher Verlierer)",
+    "M3_MULTIPERSPEKTIV_SANITY_V19": "PASS — Reflexion-Frage 2 greift nicht-dominante Perspektiven (Bauern-Frau M3 + Soldaten M4) explizit auf, keine generische Form"
+  },
+
+  "_meta": {
+    "schema_version": "mappenabschluss_v1",
+    "template_ssot": "agents/_includes/F0B_PRIMING_INCLUDE.md + SUB_TEMPLATE_MAPPENABSCHLUSS v1.0",
+    "phase": "2.2c (STR-13)",
+    "agent": "sub-template-mappenabschluss",
+    "created_at": "2026-04-26",
+    "game_id": "gpg-erster-weltkrieg-ursachen-run4-v050",
+    "mappe_id": "M4",
+    "ke_anker_haupt": "GPG7_LB2_K_07",
+    "afb_schwerpunkt": "II/III (Reflexion-Fragen sind AFB-III-naehe)",
+    "bloom_korridor": "L4-L5 (Analysieren -> Bewerten)",
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "fach": "GPG",
+    "sprachniveau": "R7",
+    "plugin_version": "v0.5.0",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "trigger_flags_mappe": ["weltkrieg_grossereignis", "konflikt"],
+    "trigger_categories_inaktiv": ["Kolonisierung"],
+    "wortanzahl_reflexion_fragen": {"frage_1": 39, "frage_2": 51, "frage_3": 32, "summe": 122},
+    "wortanzahl_synthese_satz_schueler": 31,
+    "wortanzahl_bruecke_satz_schueler": 33,
+    "perspektiv_inventar_aktiviert": ["P1_DT_Generalstab", "P2_BEL_Bevoelkerung", "P3_FR_Joffre", "P4_GB_BEF", "P5_Soldaten_beide_Seiten"],
+    "rahmen_referenzen": ["rahmen/hefteintrag.json", "rahmen/sicherung.json", "rahmen/einstieg.json", "rahmen/meta.json"],
+    "aufgaben_referenzen": ["aufgaben/aufgabe-4-7.json (game_abschluss_reflexion=true)"],
+    "skript_ref": "M4 §7 (Sicherung) + Game-Abschluss-Bruecke (HEFTEINTRAG_M4 B.3 + B.5 + sicherung.ueberleitung)",
+    "next_phase": "Phase 2.2d (data.json Aktualisierung mit mappenabschluss-Verweis) -> Phase 3 (Game-Assembly)"
+  }
+}

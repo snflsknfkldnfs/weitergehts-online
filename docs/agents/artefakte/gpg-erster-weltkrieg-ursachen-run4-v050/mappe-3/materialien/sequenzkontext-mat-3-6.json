@@ -1,0 +1,24 @@
+{
+  "mat_id": "mat-3-6",
+  "mappe": "M3",
+  "position_in_mappe": "RESERVE_NICHT_AKTIVIERT",
+  "didaktische_funktion": "erarbeitung",
+  "primary_scpl_zone": "C2",
+  "scpl_zonen_abgedeckt": ["C2"],
+  "_status": "RESERVE_NICHT_AKTIVIERT",
+  "_eskalations_grund": "Per material_geruest_m3.json reserve_status.pflicht_phase_1: 'Direkt-Verifikation der Wikimedia-Datei VOR Phase-2.1-Dispatch (Q-GATE-LOG-Eintrag)'. Eine abschliessende Direkt-API-Verifikation der Datei 'Germany_entering_WWI_1914,_Silver_Medal,_obverse.jpg' wurde in den Phase-1-Artefakten nicht dokumentiert (verified_via in medien_katalog_game.json zeigt nur 'kanal0-wikipedia-article-cross-ref (Spirit_of_1914)' und 'uebereinstimmung_status: PARTIAL'). Per Frontmatter: Bei FAIL/Nicht-Verifikation entfaellt mat-3-6, M3 wird auf 5 Materialien reduziert. C2-Burgfrieden-Erarbeitung erfolgt durch (a) Hefteintrag-Schueler-Text B.3 (vollstaendige Verbalisierung) + (b) ueberleitung_von in mat-3-3 (sequenzielle Verbalisierung) + (c) Skript M3 §4. Anti-Bias-Pflicht ist durch mat-3-5 (Tagebuch Skeptiker) erfuellt. Medienvielfalt-Ratio bleibt bei 5 Materialien: 3 textbasiert (mat-3-3, mat-3-4, mat-3-5) : 2 nicht-textbasiert (mat-3-1, mat-3-2) — KNAPP ueber 50%-Schwelle, daher als WARN im Q-GATE-LOG dokumentiert.",
+  "_assembly_phase_3_hinweis": "Material wird NICHT in data.json geschrieben. Phase 3 Assembly: skip mat-3-6.",
+  "vorausgesetztes_wissen": null,
+  "noch_nicht_eingefuehrt": null,
+  "vorheriges_material": null,
+  "naechstes_material": null,
+  "zugeordneter_tb_knoten": {
+    "ids": ["K3-3"],
+    "texte": ["Burgfrieden 4.8.1914 — wird ueber Hefteintrag B.3 + Skript M3 §4 + ueberleitung_von in mat-3-3 erarbeitet"]
+  },
+  "stundenfrage": "Wer war im August 1914 begeistert — und wer hat heute die Schuld am Krieg?",
+  "dominante_perspektive": "P5: Reichstags-Inszenierung Burgfrieden — entfaellt als eigenstaendiges Material; Verbalisierung im Hefteintrag-Schueler-Text + ueberleitung_von mat-3-3.",
+  "deine_aufgabe": "RESERVE NICHT AKTIVIERT — kein Dispatch.",
+  "fachbegriffe_eingefuehrt": ["Burgfrieden", "Kriegskredite"],
+  "_uebernahme_in_mat_3_3": "Die Fachbegriffe Burgfrieden + Kriegskredite werden in mat-3-3 ueberleitung_von verbalisiert und im Hefteintrag B.3 vollstaendig erklaert. Sie sind damit fuer SuS erarbeitbar. mat-3-3 sequenzkontext.fachbegriffe_eingefuehrt enthaelt diese Begriffe als zusaetzliche Einfuehrung."
+}

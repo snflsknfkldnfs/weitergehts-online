@@ -1,0 +1,54 @@
+{
+  "schema_version": "sequenzkontext_v1",
+  "mat_id": "mat-1-6",
+  "material_id_design": "m1-mat-06",
+  "typ": "karte",
+  "position_in_mappe": 5,
+  "anzahl_materialien_mappe": 6,
+  "didaktische_funktion": "erarbeitung",
+  "primary_scpl_zone": "C3",
+  "scpl_zonen_abdeckung": ["C3"],
+  "vorausgesetztes_wissen": {
+    "fachbegriffe": ["Buendnis", "Dreibund", "Triple Entente", "Buendnis-System", "Imperialismus", "Pulverfass-Metapher", "Flotten-Wettlauf", "HMS Dreadnought", "Wettruesten"],
+    "source_materialien": ["mat-1-1", "mat-1-4", "mat-1-2", "mat-1-5"]
+  },
+  "noch_nicht_eingefuehrt": {
+    "fachbegriffe": [],
+    "source_materialien": ["mat-1-3"]
+  },
+  "vorheriges_material": {
+    "id": "mat-1-5",
+    "typ": "statistik",
+    "kerninhalt": "Britischer Vorsprung blieb (29 vs. 17 Grossschiffe).",
+    "design_id": "m1-mat-05"
+  },
+  "naechstes_material": {
+    "id": "mat-1-3",
+    "typ": "bildquelle",
+    "kerninhalt": "Wilhelm II. als personifizierter Treiber der Welt-Politik (Quellenkritik).",
+    "design_id": "m1-mat-03"
+  },
+  "fachbegriffe_eingefuehrt": ["Kolonialwettlauf", "Kolonie", "Marokko-Krisen", "Berliner Konferenz 1884"],
+  "zugeordneter_tb_knoten": [
+    {"id": "K1-5", "label": "Wettlauf um Afrika / Marokko-Krisen", "elemente": ["Berlin-Konferenz 1884", "1. Marokko-Krise 1905", "2. Marokko-Krise 1911 (SMS Panther)"]}
+  ],
+  "dominante_perspektive": "europaeisch-imperial (Aufteilungsperspektive) — durch Sprach-Sieb-Hinweise dekonstruiert",
+  "perspektiv_tags_plan": ["Macht-Betroffen", "Kritik"],
+  "erwartete_aktivitaet": "Betrachten + raeumlich Zuordnen (Kolonialgebiete identifizieren, Marokko als Konfliktanker erkennen)",
+  "stundenfrage": "Warum war Europa vor 1914 ein 'Pulverfass'?",
+  "wortbudget": "ca. 80 Woerter Bildunterschrift",
+  "datenbasis_anker": ["wiki:Scramble_for_Africa", "wiki:First_Moroccan_Crisis", "wiki:Agadir_Crisis"],
+  "sensibilitaets_markierung": "propaganda_kontextualisierung_noetig",
+  "quellenkritik_pflicht": true,
+  "kontextualisierung_satz_pflicht": "Die Karte zeigt, wie die europaeischen Maechte Afrika unter sich aufgeteilt haben. Die Bevoelkerung Afrikas wurde nicht gefragt.",
+  "kolonial_terminologie_constraint": {
+    "qg_07_aktiv": true,
+    "verbotene_begriffe": ["Eingeborene", "Erschliessung", "zivilisatorische Mission", "Entdeckung"],
+    "pflicht_alternativen": ["Aufteilung Afrikas durch europaeische Grossmaechte", "kolonisierte Bevoelkerung", "Eroberung und Aufteilung", "wird erobert und unterdrueckt"]
+  },
+  "ueberleitung_zu_naechstem": {
+    "rueckbezug": "Sieben europaeische Maechte teilen Afrika auf; Marokko ist zweimal Konfliktanker DT vs. FR.",
+    "vorausblick": "Wer steht hinter dieser deutschen Welt-Politik?",
+    "kausalitaets_typ": "perspektivwechsel"
+  }
+}

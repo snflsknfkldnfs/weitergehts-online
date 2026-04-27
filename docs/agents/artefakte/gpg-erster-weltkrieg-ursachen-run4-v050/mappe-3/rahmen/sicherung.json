@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "mappe_id": "M3",
+  "tafelbild": {
+    "stundenfrage": "Wer war im August 1914 begeistert — und wer hat heute die Schuld am Krieg?",
+    "ordnungsmuster": "kategorial-kontrastiv",
+    "scpl_ref": "rahmen/hefteintrag.json#scpl",
+    "knoten_ref": "rahmen/hefteintrag.json#knoten",
+    "verbindungen_ref": "rahmen/hefteintrag.json#verbindungen"
+  },
+  "kernerkenntnisse": [
+    "Die Augustbegeisterung 1914 war real, aber nicht ueberall — Stadt-Mittelschicht jubelte, Land + Arbeiter waren oft skeptisch.",
+    "Burgfrieden 4.8.1914: Alle Parteien im Reichstag (auch SPD) stimmen den Kriegskrediten zu. Zerfaellt 1916/17.",
+    "Kriegsschuld-Klausel (Versailles Art. 231, 1919): Deutschland und Verbuendete allein schuld.",
+    "Schlafwandler-These (Clark, 2013): Mehrere Maechte sind gemeinsam in den Krieg getaumelt.",
+    "Quellenkritik: Wer schreibt? Wann? Mit welchem Ziel? — Pflicht-Methode bei jeder Quelle."
+  ],
+  "zusammenfassung": "Im August 1914 jubelten viele junge Maenner — vor allem in den Staedten. Auf dem Land und bei Arbeitern war die Stimmung oft skeptisch. Im Reichstag herrschte am 4. August Burgfrieden: alle Parteien stimmten fuer Kriegskredite. Vier Jahre spaeter ist der Krieg verloren. Versailles 1919 (Artikel 231) gibt Deutschland die Allein-Schuld. Heute sagt Clark (2013): Keine Macht allein, sondern fuenf Regierungen gemeinsam taumelten in den Krieg.",
+  "ueberleitung": "Die Maenner zogen los — was passierte, als sie ankamen?",
+  "merksatz": "Die Augustbegeisterung 1914 war real, aber nicht ueberall. Die Frage 'Wer ist schuld?' hat heute keine einfache Antwort mehr — Versailles 1919 sagt: Deutschland allein. Clark 2013 sagt: mehrere Maechte gemeinsam.",
+  "hefteintrag_verweis": "Uebertrage das Tafelbild und die Schluessel-Begriffe in dein Heft. Schreibe in eigenen Worten: Wer jubelte 1914 — und wer schwieg? Welche zwei Antworten gibt es heute auf die Schuldfrage?",
+  "reflexionsimpuls": "Welche Position findest du ueberzeugender — Versailles 1919 oder Clark 2013, und welche Argumente hast du?",
+  "_meta": {
+    "skript_ref": "M3 §7 (Sicherung) + HEFTEINTRAG_M3 B.3 + B.5",
+    "wortanzahl_zusammenfassung": 71,
+    "abschluss_format": "ABSCHLUSS_C5_UEBERLEITUNG"
+  }
+}

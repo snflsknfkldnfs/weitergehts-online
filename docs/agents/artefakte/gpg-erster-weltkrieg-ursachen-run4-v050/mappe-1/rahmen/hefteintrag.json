@@ -1,0 +1,62 @@
+{
+  "schema_version": "hefteintrag_v1",
+  "game_id": "gpg-erster-weltkrieg-ursachen-run4-v050",
+  "mappe_id": "M1",
+  "stundenfrage": "Warum war Europa vor 1914 ein 'Pulverfass'?",
+  "ke_anker_haupt": "GPG7_LB2_K_05",
+  "ke_anker_neben": ["GPG7_LB3_K_03"],
+  "afb": "I-II",
+  "bloom": "Verstehen → Anwenden",
+  "scpl": {
+    "situation": {
+      "kontextsatz": "Um 1900 stehen sich in Europa sechs Grossmaechte gegenueber.",
+      "fachbegriffe": ["Grossmaechte", "Europa um 1900"]
+    },
+    "complication": [
+      {
+        "id": "C1",
+        "schritt": "Sechs Grossmaechte schliessen sich zu zwei feindlichen Buendnis-Bloecken zusammen: Dreibund (1882) und Triple Entente (1907).",
+        "fachbegriff": "Buendnis-System",
+        "darstellung": "Dreibund: Deutsches Reich, Oesterreich-Ungarn, Italien. Triple Entente: Frankreich, Russland, Grossbritannien.",
+        "tafelbild_knoten": ["K1-2", "K1-3"]
+      },
+      {
+        "id": "C2",
+        "schritt": "Ab 1898 baut Deutschland eine grosse Kriegsflotte. Grossbritannien antwortet 1906 mit der HMS Dreadnought. Es beginnt der Flotten-Wettlauf.",
+        "fachbegriff": "Flotten-Wettlauf",
+        "darstellung": "Bis 1914: 29 britische gegen 17 deutsche Grossschiffe.",
+        "tafelbild_knoten": ["K1-4"]
+      },
+      {
+        "id": "C3",
+        "schritt": "Sieben europaeische Maechte teilen Afrika unter sich auf (Berliner Konferenz 1884). Zweimal kracht es um Marokko: 1905 und 1911.",
+        "fachbegriff": "Kolonialwettlauf",
+        "darstellung": "Marokko-Krisen: Wilhelm II. in Tanger 1905, SMS Panther in Agadir 1911.",
+        "tafelbild_knoten": ["K1-5"]
+      }
+    ],
+    "problem": {
+      "satz": "Drei Spannungen treffen auf zwei feindliche Buendnis-Bloecke — Europa wird zum Pulverfass.",
+      "fachbegriff": "Pulverfass Europa",
+      "tafelbild_knoten": ["K1-1"]
+    },
+    "loesung": [
+      "Schon vor 1914 war Europa ein Pulverfass: Zwei feindliche Buendnisse, der Wettlauf um Schiffe und der Streit um Kolonien hatten ueber Jahrzehnte Spannungen aufgebaut."
+    ]
+  },
+  "tafelbild_knoten": [
+    {"knoten_id": "K1-1", "label": "Pulverfass Europa", "position": "zentrum", "typ": "leitbegriff"},
+    {"knoten_id": "K1-2", "label": "Dreibund (1882)", "position": "links-oben", "typ": "buendnis_block", "elemente": ["Deutsches Reich", "Oesterreich-Ungarn", "Italien"]},
+    {"knoten_id": "K1-3", "label": "Triple Entente (1907)", "position": "rechts-oben", "typ": "buendnis_block", "elemente": ["Frankreich", "Russland", "Grossbritannien"]},
+    {"knoten_id": "K1-4", "label": "Flotten-Wettlauf", "position": "rechts-unten", "typ": "spannungsfeld", "elemente": ["HMS Dreadnought 1906", "Tirpitz-Plan 1898", "29 vs 17 Grossschiffe 1914"]},
+    {"knoten_id": "K1-5", "label": "Wettlauf um Afrika / Marokko-Krisen", "position": "links-unten", "typ": "spannungsfeld", "elemente": ["Berlin-Konferenz 1884", "1. Marokko-Krise 1905", "2. Marokko-Krise 1911 (SMS Panther)"]}
+  ],
+  "schluessel_begriffe": [
+    {"begriff": "Buendnis-System", "erklaerung": "Mehrere Buendnisse, die sich gegenseitig in Stellung bringen."},
+    {"begriff": "Dreibund (1882)", "erklaerung": "Deutsches Reich, Oesterreich-Ungarn, Italien."},
+    {"begriff": "Triple Entente (1907)", "erklaerung": "Frankreich, Russland, Grossbritannien."},
+    {"begriff": "Flotten-Wettlauf", "erklaerung": "Wettbewerb beim Bau von Kriegsschiffen — Deutschland gegen Grossbritannien."},
+    {"begriff": "Kolonialwettlauf", "erklaerung": "Streit der europaeischen Maechte um Land in Afrika."}
+  ],
+  "merksatz": "Schon vor 1914 war Europa ein Pulverfass: Zwei feindliche Buendnisse, der Wettlauf um Schiffe und der Streit um Kolonien hatten ueber Jahrzehnte Spannungen aufgebaut."
+}

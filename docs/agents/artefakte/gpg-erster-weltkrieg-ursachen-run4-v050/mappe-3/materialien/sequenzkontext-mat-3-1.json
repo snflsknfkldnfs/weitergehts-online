@@ -1,0 +1,58 @@
+{
+  "mat_id": "mat-3-1",
+  "mappe": "M3",
+  "position_in_mappe": "1 von 5",
+  "didaktische_funktion": "einstieg",
+  "primary_scpl_zone": "S",
+  "scpl_zonen_abgedeckt": ["S", "C1"],
+  "vorausgesetztes_wissen": {
+    "fachbegriffe": [
+      "Pulverfass Europa (M1)",
+      "Buendnis-System (M1)",
+      "Ursache (M2)",
+      "Ausloeser (M2)",
+      "Mobilmachung (M2)",
+      "Buendnisfall (M2)"
+    ],
+    "source_materialien": []
+  },
+  "noch_nicht_eingefuehrt": {
+    "fachbegriffe": [
+      "Foto-Bias (mat-3-2)",
+      "Inszenierung (mat-3-2)",
+      "Burgfrieden (Hefteintrag M3 B.3 + Vor-Material entfaellt RESERVE-Eskalation)",
+      "Kriegskredite (Hefteintrag M3 B.3)",
+      "Kriegsschuldfrage (mat-3-3)",
+      "Kriegsschuld-Klausel (mat-3-3)",
+      "Schlafwandler-These (mat-3-4)"
+    ],
+    "source_materialien": ["mat-3-2", "mat-3-5", "mat-3-3", "mat-3-4"]
+  },
+  "vorheriges_material": null,
+  "naechstes_material": {
+    "id": "mat-3-2",
+    "typ": "bildquelle",
+    "kerninhalt": "Bundesarchiv-Foto Mobilmachung 1./2.8.1914 — zweites Inszenierungs-Beispiel, Topos 'Frau mit Blumen'."
+  },
+  "zugeordneter_tb_knoten": {
+    "ids": ["K3-2"],
+    "texte": ["Augusterlebnis 1914 — Stadt-Begeisterung / Land-Skepsis / Foto-Bias"]
+  },
+  "stundenfrage": "Wer war im August 1914 begeistert — und wer hat heute die Schuld am Krieg?",
+  "dominante_perspektive": "P1: Begeisterte Stadtbuerger 1914 (Stadt-Mittelschicht-Inszenierung Luebeck-Provinz)",
+  "deine_aufgabe": "Du erarbeitest die S-Zone (Augusterlebnis als Stadt-Phaenomen) und beginnst die C1-Zone (Quellenkritik). Die Postkarte aus Luebeck zeigt jubelnde Buerger am Hauptbahnhof am 31. Juli 1914. Pflicht: Begriff 'Augusterlebnis' im 3-Funktions-BU einfuehren (Identifikation: Was zeigt das Foto? + Kontextualisierung: Was zeigt es NICHT? Stadt-Buerger sind im Bild, Land-Bevoelkerung + Arbeiter NICHT + Impuls: 'Wer ist NICHT zu sehen?'). Pflicht: F-PB-37 Quellenkritik-Block (Produzent: Gebrueder Borchers Druckerei Luebeck / Auftraggeber: Regiments-Postkarten-Verlag / Motiv: patriotische Mobilmachungs-Inszenierung). Augusterlebnis-Idealisierung-Verbot strikt aktiv: Stimmung NICHT als universal-deutsche Begeisterung darstellen.",
+  "fachbegriffe_eingefuehrt": ["Augusterlebnis", "Quellenkritik"],
+  "perspektiv_tags_plan": ["dominant", "Macht-Ausuebung"],
+  "sensibilitaets_constraint": "propaganda_kontextualisierung_noetig: Kontextualisierungs-Satz PFLICHT in BU: 'Das Foto zeigt Stadt-Buerger — Land-Bevoelkerung und Arbeiter sind nicht im Bild.' F-PB-37 Quellenkritik-Block PFLICHT.",
+  "subtyp": "postkarten-mobilmachungsfoto",
+  "g3_review_pflicht": false,
+  "skript_ref": "M3 §1-§2",
+  "artefakt_ref": "img-m3-01",
+  "wikimedia_filename": "IR_Lübeck_033_-_EB.jpg",
+  "lizenz": "Public Domain",
+  "tipp_stufen": {
+    "stufe_1": "Was siehst du auf dem Foto? Wer steht da?",
+    "stufe_2": "Soldaten und Stadtbuerger am Bahnhof. Sie schauen freundlich. Aber: Wer ist NICHT auf dem Foto?",
+    "stufe_3": "Auf dem Foto sind Stadt-Mittelschicht-Buerger zu sehen. Land-Bevoelkerung und Arbeiter waren oft skeptisch und nicht am Bahnhof. Das Foto zeigt nur EINE Gruppe — nicht 'die Deutschen'."
+  }
+}

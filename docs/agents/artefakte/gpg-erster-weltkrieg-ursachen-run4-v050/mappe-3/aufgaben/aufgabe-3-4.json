@@ -1,0 +1,49 @@
+{
+  "id": "aufgabe-3-4",
+  "typ": "multiple-choice",
+  "frage": "Welche Aussage ueber Artikel 231 stimmt?",
+  "material_referenz": ["mat-3-3"],
+  "optionen": [
+    "Im Vertrag von Versailles (28. Juni 1919) weisen die Sieger Deutschland und seinen Verbuendeten die Verantwortung fuer alle Verluste und Schaeden zu. Diese Stelle wurde spaeter Kriegsschuld-Klausel genannt.",
+    "Der Reichstag in Berlin verabschiedete Artikel 231 am 4. August 1914 als Burgfriedens-Erklaerung.",
+    "Christopher Clark formulierte Artikel 231 im Jahr 2013 als Schlafwandler-These — alle Maechte gemeinsam schuld.",
+    "Die SPD lehnte Artikel 231 im Reichstag 1914 ab und stimmte gegen die Kriegskredite."
+  ],
+  "loesung": "Im Vertrag von Versailles (28. Juni 1919) weisen die Sieger Deutschland und seinen Verbuendeten die Verantwortung fuer alle Verluste und Schaeden zu. Diese Stelle wurde spaeter Kriegsschuld-Klausel genannt.",
+  "tipps": [
+    {"stufe": 1, "text": "Lies den [[mat-3-3|Versailles-Auszug Artikel 231]] (M4) genau durch. Achte auf Datum, Sprecher und den Begriff am Ende des Textes."},
+    {"stufe": 2, "text": "Der Vertrag wurde 1919 geschlossen — fuenf Jahre nach Kriegsbeginn. Die Sieger sind USA, Frankreich und Grossbritannien. Welche Aussage stimmt mit Datum UND Sprecher UND dem spaeteren Begriff (Kriegsschuld-Klausel) ueberein?"},
+    {"stufe": 3, "text": "Die richtige Antwort ist Option A: Versailles am 28.6.1919, Sieger weisen Verantwortung zu, spaeter Kriegsschuld-Klausel genannt. Option B verwechselt das Datum (1914 statt 1919). Option C verwechselt den Sprecher (Clark schrieb 2013 ein Forschungs-Buch, kein Vertrag). Option D ist falsch — die SPD stimmte 1914 FUER die Kriegskredite (Burgfrieden)."}
+  ],
+  "punkte": 12,
+  "_meta": {
+    "afb": "II",
+    "bloom": "L3",
+    "scpl_zone": "P",
+    "tafelbild_knoten": ["K3-1", "K3-4"],
+    "ke_anker": "GPG7_LB3_K_03",
+    "perspektive": "P3: Versailler Sieger-Maechte 1919",
+    "operationalisierungsziel": "Du kannst aus dem Versailles-Auszug ablesen, wer wann welche Schuldzuweisung formulierte — und welchen Begriff diese Stelle spaeter erhielt.",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "sprachniveau": "R7",
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "freischalt_buchstabe_position": "(Bonus — kein Buchstabe; Pos 1/2/3/5/6/7 liefern S-C-H-U-L-D)",
+    "v13_lehrkraft_only_schutz": "PASS — KEIN NSDAP-Vorgriff in Distraktoren; KEIN 'Kriegsschuld-Luege'-Topos; keine spaetere Rezeption (Weimarer Republik) im Schueler-Text",
+    "distraktor_logik": "B verwechselt Datum (1914 statt 1919, Burgfrieden-Bezug); C verwechselt Sprecher (Clark 2013 = mat-3-4); D Burgfrieden-Verwechslung (SPD stimmte FUER Kriegskredite, nicht dagegen) — Anti-Quota fuer Multi-Material-Vorbereitung Pos 5/6",
+    "erarbeitbarkeits_check": "PASS — richtige Antwort direkt aus mat-3-3 inhalt + _meta.fachbegriffe_eingefuehrt (Kriegsschuld-Klausel) ableitbar; alle 4 Optionen plausibel aber EINE eindeutig richtig.",
+    "q_gate_self_check": {
+      "A1_afb_kongruenz": "PASS — AFB II (Quelle anwenden + Begriff zuordnen)",
+      "A2_fragestamm_klar": "PASS — 1 Satz, 6 Woerter",
+      "A3_material_kongruenz": "PASS — richtige Antwort vollstaendig aus mat-3-3 ableitbar",
+      "A4_MC_distraktor_qualitaet": "PASS — alle 3 Distraktoren plausibel (typische SuS-Verwechslungen: Datum, Sprecher-Verwechslung mit M5, Burgfrieden-Bezug)",
+      "A6_tipp_progression": "PASS — Stufe 1 Lese-Hinweis, Stufe 2 Triple-Check (Datum+Sprecher+Begriff), Stufe 3 Vollerklaerung mit Distraktor-Aufloesung",
+      "A7_operator_praezision": "PASS — Welche-Frage als MC-Standard",
+      "MQ3_kein_link_in_frage": "PASS — frage enthaelt kein [[ und kein (M",
+      "MQ3b_link_in_tipp_1": "PASS — Tipp 1 enthaelt [[mat-3-3|...]] + (M4)",
+      "F0B_R7_metrik": "PASS — Optionen max. 22 Woerter (komplexe Sachverhalts-Optionen, alle parallel strukturiert: Sprecher+Datum+Inhalt+Folge-Begriff); Frage 6 Woerter; Tipps R7-konform",
+      "beutelsbach_kein_antwortvorgriff": "PASS — Sachfrage zur Quelle, keine Wertung der Schuld-Position",
+      "V13_kein_NSDAP_vorgriff": "PASS"
+    }
+  }
+}

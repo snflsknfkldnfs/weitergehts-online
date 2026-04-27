@@ -1,0 +1,45 @@
+{
+  "inhalt": "<p class=\"quellentext__einleitung\">Vier Jahre Krieg sind vorbei. Deutschland hat verloren. Am 28. Juni 1919 unterschreiben die Sieger und das besiegte Deutsche Reich den Vertrag von Versailles. Die Sieger sind die USA, Frankreich und Grossbritannien. Im Vertrag steht Artikel 231:</p><blockquote class=\"quellentext__wortlaut\"><p>„Deutschland und seine Verbuendeten sind verantwortlich fuer alle Verluste und Schaeden, die [...] der Krieg [...] verursacht hat.\"</p><cite>— Versailles, Artikel 231, 28. Juni 1919</cite></blockquote><p>Mit diesem Satz weisen die Sieger Deutschland und seinen Verbuendeten die alleinige Schuld am Krieg zu. Spaeter nennt man Artikel 231 die <strong>Kriegsschuld-Klausel</strong>. Aus ihm leitet sich die <strong>Kriegsschuldfrage</strong> ab: Wer ist verantwortlich fuer den Ausbruch des Ersten Weltkriegs?</p>",
+  "quelle": "Auszug aus Vertrag von Versailles, Artikel 231, 28. Juni 1919. Zitiert nach: Wikisource, „Friedensvertrag von Versailles\", Public Domain. Gekuerzt und sprachlich vereinfacht fuer Jahrgang 7.",
+  "_meta": {
+    "wortanzahl": 117,
+    "quellentyp": "vertragstext",
+    "aufbereitung": "ausschnitt",
+    "artefakt_ref": ["zit-M3-1"],
+    "tafelbild_knoten_abgedeckt": ["K3-1", "K3-4"],
+    "quellenkritische_impulse": [
+      "Wer schreibt diesen Satz — und an wen mit welchem Ziel?",
+      "Was bedeutet 'Verbuendete' hier — wer ist gemeint?",
+      "Warum schrieben die Sieger 1919 die Schuld auf Papier — was sollte das bewirken?"
+    ],
+    "perspektive": "P3: Versailler Sieger-Maechte 1919 (Wilson, Clemenceau, Lloyd George) — dominant, Macht-Ausuebung",
+    "fachbegriffe_eingefuehrt": ["Kriegsschuldfrage", "Kriegsschuld-Klausel", "Burgfrieden", "Kriegskredite"],
+    "fachbegriffe_referenziert": ["Buendnisfall (M2)", "Augusterlebnis (mat-3-1)", "Quellenkritik (mat-3-1)"],
+    "scpl_zone_primary": "P",
+    "scpl_zonen_abdeckung": ["P"],
+    "ke_anker_haupt": "GPG7_LB3_K_03",
+    "afb": "II-III",
+    "bloom": "Analysieren -> Beurteilen",
+    "skript_ref": "M3 §5 + Hefteintrag M3 B.3 (Burgfrieden-Verbalisierung in ueberleitung_von)",
+    "subtyp_quellentext": "primaer",
+    "m14_aufbereitung": "gekuerzt-vereinfacht",
+    "datenbasis_hashes": ["wikisource-versailles-art-231-2026-04-26"],
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "sprachniveau": "R7",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "sensibilitaets_markierung": "mythos_korrektur_noetig",
+    "lehrkraft_only_hinweis": "POLICY_TRIGGER_SICHTBARKEIT V13: Sprengkraft der Kriegsschuld-Klausel fuer die Weimarer Republik (Kriegsschuld-Luege als NSDAP-Propaganda-Topos) BLEIBT IM LEHRKRAFT-Block. KEIN Schueler-Text-Vorkommen. Korrektur erfolgt didaktisch ueber mat-3-4 (Clark-Gegenposition) — Multiperspektivitaet als Korrektur-Mechanik (Beutelsbach-Kontroversitaet ohne Antwort-Vorgriff).",
+    "kontextualisierung_pflicht": "Sieger-Position 1919 als historisch verortete Position vorgestellt. Vier-Jahre-Krieg-Voraussetzung benannt. Burgfrieden-Begriff in ueberleitung_von (Geruest-Intentionsskizze) verbalisiert.",
+    "burgfrieden_uebernahme_aus_mat_3_6_RESERVE_NICHT_AKTIVIERT": "Da mat-3-6 (Burgfriedens-Medaille) als RESERVE_NICHT_AKTIVIERT entfaellt (siehe sequenzkontext-mat-3-6.json), wird die Erarbeitung der C2-Zone (Burgfrieden) hier durch ueberleitung_von (Phase 2.1c) und vollstaendig durch Hefteintrag B.3 + Skript M3 §4 abgedeckt. Begriffe Burgfrieden + Kriegskredite werden im _meta.fachbegriffe_eingefuehrt aufgefuehrt.",
+    "erarbeitbarkeits_check": "PASS — Auszug zeigt Kernformulierung Art. 231 (verantwortlich-Zuweisung) + Datum + Sprecher. Kontextualisierung benennt Kriegsschuld-Klausel-Begriff. P-Zone (Kriegsschuldfrage) erarbeitbar. mythos_korrektur erfolgt durch mat-3-4 (Clark) — kein Schueler-seitiger Antwort-Vorgriff.",
+    "trigger_flags": ["weltkrieg_grossereignis"],
+    "review_iteration": 1,
+    "review_warnings": [],
+    "tipp_stufen": {
+      "stufe_1": "Lies den Artikel 231. Wer hat das geschrieben? Wann?",
+      "stufe_2": "Die Sieger-Maechte (USA, Frankreich, Grossbritannien) schrieben das 1919 — fuenf Jahre nach Kriegsbeginn. Sie geben Deutschland und seinen Verbuendeten die Schuld.",
+      "stufe_3": "Das Wort 'Schuld' steht nicht direkt drin. Aber Deutschland sollte fuer alle Schaeden zahlen. Diese Stelle wurde 'Kriegsschuldklausel' genannt — sie war eine zentrale politische Belastung der Weimarer Republik."
+    }
+  }
+}

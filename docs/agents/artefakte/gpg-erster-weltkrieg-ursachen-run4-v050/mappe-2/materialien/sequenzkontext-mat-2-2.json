@@ -1,0 +1,45 @@
+{
+  "mat_id": "mat-2-2",
+  "mappe": "M2",
+  "position_in_mappe": "2 von 5",
+  "didaktische_funktion": "erarbeitung",
+  "primary_scpl_zone": "S",
+  "scpl_zonen_abgedeckt": ["S"],
+  "vorausgesetztes_wissen": {
+    "fachbegriffe": [
+      "Buendnis-System (M1)",
+      "Dreibund (M1)",
+      "Triple Entente (M1)",
+      "Julikrise (mat-2-1)",
+      "Blanko-Scheck (mat-2-1)",
+      "Ultimatum (mat-2-1)",
+      "Mobilmachung (mat-2-1)",
+      "Buendnisfall (mat-2-1)"
+    ],
+    "source_materialien": ["mat-2-1"]
+  },
+  "noch_nicht_eingefuehrt": {
+    "fachbegriffe": ["Thronfolger (mat-2-3)", "Junges Bosnien (mat-2-4)", "Schwarze Hand (mat-2-4)", "Souveraenitaet (mat-2-5)"],
+    "source_materialien": ["mat-2-3", "mat-2-4", "mat-2-5"]
+  },
+  "vorheriges_material": {
+    "id": "mat-2-1",
+    "typ": "zeitleiste",
+    "kerninhalt": "Vom Schuss in Sarajevo zum Weltkrieg in 5 Wochen — 7 Daten, 6 Akteure."
+  },
+  "naechstes_material": {
+    "id": "mat-2-3",
+    "typ": "bildquelle",
+    "kerninhalt": "Hofportrait Franz Ferdinand."
+  },
+  "zugeordneter_tb_knoten": {
+    "ids": ["K2-2"],
+    "texte": ["28. Juni 1914 Sarajevo — Princip 19 J. erschiesst Franz Ferdinand + Sophie"]
+  },
+  "stundenfrage": "Wie wurde aus dem Attentat in Sarajevo in fuenf Wochen ein Weltkrieg?",
+  "dominante_perspektive": "raeumlich-faktisch (kein Akteur dominant)",
+  "deine_aufgabe": "Du zoomst aus der Zeitleiste in den 28. Juni 1914 hinein. Die Tatortskizze zeigt SuS den Ort, die Fahrtroute, den Standort des Schuetzen — ohne dass sie die Tat selbst sehen muessen. Sensibilitaets-Constraint: KEINE Beschreibung der Verletzungen oder des Sterbens.",
+  "fachbegriffe_eingefuehrt": ["Sarajevo", "Lateinerbruecke"],
+  "perspektiv_tags_plan": ["nicht-dominant"],
+  "sensibilitaets_constraint": "gewalt_altersfilter: Im Material klar benennen, dass dies eine Sekundaer-Skizze ohne Gewaltdarstellung ist. KEINE Verletzungen, KEIN Sterben."
+}

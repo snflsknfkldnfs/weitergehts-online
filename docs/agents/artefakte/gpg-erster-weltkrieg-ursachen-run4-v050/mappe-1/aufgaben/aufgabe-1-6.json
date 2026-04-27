@@ -1,0 +1,80 @@
+{
+  "id": "aufgabe-1-6",
+  "typ": "quellenkritik",
+  "frage": "Wer hat diese Karte gezeichnet — und wessen Sicht zeigt sie?",
+  "material_referenz": ["mat-1-6", "mat-1-4"],
+  "w_fragen": [
+    {
+      "id": "W1",
+      "frage": "Wer hat das Material erstellt?",
+      "erwartungs_anker": "Eigenkomposition (agent-material), Datenbasis Wikipedia. Erstellt aus europaeischer Sicht."
+    },
+    {
+      "id": "W2",
+      "frage": "Was zeigt das Material?",
+      "erwartungs_anker": "Sieben europaeische Grossmaechte haben Afrika unter sich aufgeteilt. Marokko ist Konfliktanker zwischen Deutschland und Frankreich (1905, 1911)."
+    },
+    {
+      "id": "W3",
+      "frage": "Wessen Sicht fehlt?",
+      "erwartungs_anker": "Die Sicht der kolonisierten Bevoelkerung Afrikas. Sie wurde nicht gefragt. Sie wurde erobert und unterdrueckt."
+    },
+    {
+      "id": "W4",
+      "frage": "Warum ist das wichtig?",
+      "erwartungs_anker": "Die Karte zeigt nur die Aufteilungs-Perspektive der europaeischen Maechte. Wer Afrika so anschaut, sieht nicht das Erleben der kolonisierten Menschen."
+    }
+  ],
+  "loesung": "Die Karte zeigt die Aufteilung Afrikas aus Sicht der europaeischen Maechte. Beleg im Material: Die Bevoelkerung Afrikas wurde nicht gefragt. Sie wurde erobert und unterdrueckt. Die Karte ist also keine neutrale Darstellung — sie blendet die Sicht der kolonisierten Bevoelkerung aus.",
+  "loesungs_keywords": ["europaeische Sicht", "Aufteilung", "Bevoelkerung Afrikas wurde nicht gefragt", "kolonisiert", "erobert", "nicht neutral"],
+  "tipps": [
+    {
+      "stufe": 1,
+      "text": "Lies den Begleittext zur [[mat-1-6|Karte Afrika 1914]] (M5) genau. Was steht im letzten Absatz?"
+    },
+    {
+      "stufe": 2,
+      "text": "Stell dir vor, du lebst 1900 in Marokko. Wuerde diese Karte deine Sicht zeigen? Wer hat sie gezeichnet? Wer kommt darin nicht vor?"
+    },
+    {
+      "stufe": 3,
+      "text": "Loesung: Die Karte zeigt die Sicht der europaeischen Maechte. Sie zeigt, wer welches Gebiet beherrscht. Sie zeigt aber nicht die Sicht der kolonisierten Bevoelkerung. Im Text steht: Die Bevoelkerung Afrikas wurde nicht gefragt. Sie wurde erobert und unterdrueckt."
+    }
+  ],
+  "punkte": 15,
+  "_meta": {
+    "bloom": "L4",
+    "afb": "II-III",
+    "scpl_zone": "C3",
+    "tafelbild_knoten": ["K1-5"],
+    "ke_anker_haupt": "GPG7_LB2_K_05",
+    "ziel_material_id": "mat-1-6",
+    "operationalisierungsziel": "Die SuS koennen erklaeren, dass die Karte die Aufteilungs-Perspektive der europaeischen Maechte zeigt, und mindestens einen Beleg im Material benennen.",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "subagent": "sub-aufgabe-quellenkritik",
+    "multiperspektivitaet": {
+      "perspektive_dominant": "Europaeische Aufteilungs-Perspektive (sieben Grossmaechte)",
+      "perspektive_gegen": "Kolonisierte Bevoelkerung Afrikas (im Text dekonstruiert)"
+    },
+    "f_pb_37_quellenkritik_pflicht": "PASS — Quellenkritik-Aufgabe bei mat-1-6 realisiert.",
+    "qg07_kolonial_sprach_sieb": {
+      "verbotene_begriffe_check": "PASS — keine Verwendung von 'Eingeborene', 'Erschliessung', 'zivilisatorische Mission', 'Entdeckung'",
+      "alternative_formulierungen_realisiert": ["Aufteilung Afrikas durch europaeische Maechte", "kolonisierte Bevoelkerung", "wurde erobert und unterdrueckt"]
+    },
+    "q_gate": {
+      "A1_afb_kongruenz": "PASS",
+      "A2_fragestamm_klarheit": "PASS — 9 Woerter, 2 W-Fragen",
+      "A3_material_kongruenz": "PASS",
+      "A6_tipp_progression": "PASS",
+      "A7_operator_praezision": "PASS — Quellenkritik-Operator W1+W3",
+      "A8_kognitive_aktivierung": "PASS",
+      "A12_sachbezogen_vor_wertbezogen": "PASS — analytisch nach sachbezogen",
+      "A17_scpl_zonen_abdeckung": "PASS — C3",
+      "F-PB-37": "PASS",
+      "QG-07_sprach_sieb": "PASS",
+      "MQ3_kein_link_in_frage": "PASS",
+      "MQ3b_displayref_in_tipp1": "PASS",
+      "F0B_R7": "PASS"
+    }
+  }
+}

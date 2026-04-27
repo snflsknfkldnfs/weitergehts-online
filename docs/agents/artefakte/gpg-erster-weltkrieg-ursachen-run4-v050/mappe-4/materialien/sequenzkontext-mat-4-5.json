@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "mat_id": "mat-4-5",
+  "position_in_mappe": 5,
+  "didaktische_funktion": "vertiefung",
+  "vorausgesetztes_wissen": {
+    "fachbegriffe": ["Marne-Schlacht", "Wendepunkt", "Schlieffen-Plan"],
+    "source_materialien": ["mat-4-1", "mat-4-2", "mat-4-3", "mat-4-4"]
+  },
+  "noch_nicht_eingefuehrt": {
+    "fachbegriffe": ["Stellungskrieg"],
+    "source_materialien": ["mat-4-6"]
+  },
+  "vorheriges_material": {
+    "id": "mat-4-4",
+    "typ": "bildquelle",
+    "kerninhalt": "FR-Infanterie 1913 — Manoever, nicht 1914."
+  },
+  "naechstes_material": {
+    "id": "mat-4-6",
+    "typ": "darstellungstext",
+    "kerninhalt": "Erklaerung Stellungskrieg + Schluss-Bruecke."
+  },
+  "zugeordneter_tb_knoten": {
+    "id": "K4-4 + K4-5",
+    "text": "Marne-Schlacht / Wendepunkt zum Stellungskrieg"
+  },
+  "dominante_perspektive": "Drei-Parteien-Bilanz (FR/GB/DT) — Macht-Betroffene auf allen Seiten",
+  "scpl_zone_primary": "P",
+  "stundenfrage": "Warum scheiterte der deutsche Plan fuer einen schnellen Sieg an der Marne?"
+}

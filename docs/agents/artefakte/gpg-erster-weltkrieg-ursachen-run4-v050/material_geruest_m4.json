@@ -1,0 +1,453 @@
+{
+  "schema_version": "1.0",
+  "vertrag": "VERTRAG_PHASE_2-1_MATERIAL (agent-material-design Phase 1) + F0b-Priming-Include + STR-05 + F0b-M4 + F0b-M9 + Plugin v0.5.0",
+  "game_id": "gpg-erster-weltkrieg-ursachen-run4-v050",
+  "run_id": "run-4-2026-04-26",
+  "mappe_id": "M4",
+  "mappe_titel": "Marne 1914 — Das Ende des kurzen Krieges",
+  "stundenfrage": "Warum scheiterte der deutsche Plan fuer einen schnellen Sieg an der Marne?",
+  "ke_anker_haupt": "GPG7_LB2_K_07",
+  "afb": "II",
+  "bloom": "Anwenden → Analysieren",
+  "schulart": "Mittelschule Bayern",
+  "jahrgangsstufe": "7c",
+  "phase": "1",
+  "agent": "agent-material-design",
+  "erstellt_am": "2026-04-26",
+  "validierungsstatus": "ENTWURF",
+  "user_validierung_pflicht": true,
+  "_meta": {
+    "material_anzahl": 6,
+    "korridor_4_7": "PASS",
+    "f0b_priming_include": "F0B_PRIMING_v1",
+    "konflikttyp": true,
+    "perspektiven_policy": "P1: Deutsche Generalstab-Fuehrung (Moltke d.J., Schlieffen-Erbe) | P2: Belgische Bevoelkerung+Regierung (Opfer Neutralitaets-Verletzung) | P3: Franzoesische Armee unter Joffre (defensiv-Sieger Marne) | P4: Britische Expeditionsstreitmacht (BEF unter John French) | P5: Soldaten beider Seiten (Erschoepfung, Versorgungs-Probleme)",
+    "trigger_categories_aktiv": ["weltkrieg_grossereignis", "konflikt"],
+    "trigger_categories_inaktiv": ["Kolonisierung"],
+    "kolonialterminologie_scan_pflicht": false,
+    "perspektiv_verteilungs_plan_qg09": "Mindestens 2 nicht-dominante Tags ueber Mappe — geplant: 4 Materialien mit 'nicht-dominant' + 'Opfer' (mat-4-2) + 'Kritik' (mat-4-3) + 'Macht-Betroffen' (mat-4-5)",
+    "medienvielfalt_ratio": {
+      "textbasiert": 1,
+      "nicht_textbasiert": 5,
+      "anteil_text_prozent": 17,
+      "schwelle_max_50": "PASS"
+    }
+  },
+  "scpl_abdeckung": [
+    {
+      "scpl_zone": "S",
+      "tafelbild_knoten": "K4-2",
+      "kurztext": "Schlieffen-Plan (1905/06) — 6 Wochen FR-Sieg ueber Belgien",
+      "fachbegriffe": ["Schlieffen-Plan"],
+      "material_ids": ["mat-4-1", "mat-4-6"],
+      "abdeckungs_typ": "DIRECT"
+    },
+    {
+      "scpl_zone": "C1",
+      "tafelbild_knoten": "K4-3",
+      "kurztext": "Belgien-Verletzung 4.8.1914 — Neutralitaets-Bruch + GB-Kriegseintritt",
+      "fachbegriffe": ["Belgien-Verletzung", "Neutralitaet"],
+      "material_ids": ["mat-4-2"],
+      "abdeckungs_typ": "DIRECT"
+    },
+    {
+      "scpl_zone": "C2",
+      "tafelbild_knoten": "K4-4",
+      "kurztext": "Marne-Schlacht 5.-12.9.1914 — Joffre vs. Moltke, 40 km vor Paris",
+      "fachbegriffe": ["Marne-Schlacht"],
+      "material_ids": ["mat-4-2", "mat-4-3", "mat-4-4", "mat-4-5"],
+      "abdeckungs_typ": "DIRECT"
+    },
+    {
+      "scpl_zone": "P",
+      "tafelbild_knoten": "K4-5",
+      "kurztext": "Wendepunkt zum Stellungskrieg — Wettlauf zum Meer",
+      "fachbegriffe": ["Wendepunkt"],
+      "material_ids": ["mat-4-2", "mat-4-5"],
+      "abdeckungs_typ": "DIRECT"
+    },
+    {
+      "scpl_zone": "L",
+      "tafelbild_knoten": "K4-1",
+      "kurztext": "Stellungskrieg — feste Stellungen, Schuetzen-Graeben, kein Vormarsch",
+      "fachbegriffe": ["Stellungskrieg"],
+      "material_ids": ["mat-4-6"],
+      "abdeckungs_typ": "DIRECT"
+    }
+  ],
+  "scpl_uebergaenge": [
+    {
+      "von": "S",
+      "nach": "C1",
+      "material_ids": ["mat-4-1", "mat-4-2"],
+      "kausal_mechanismus": "Plan verlangt Belgien-Durchmarsch → Plan-Umsetzung erfordert Neutralitaets-Bruch → Belgien-Verletzung als unmittelbare Plan-Konsequenz."
+    },
+    {
+      "von": "C1",
+      "nach": "C2",
+      "material_ids": ["mat-4-2"],
+      "kausal_mechanismus": "Belgien-Marsch erschoepft Truppen + Versorgung + bringt DT bis 40 km vor Paris → Joffre setzt Falle → Marne-Konfrontation als geographische Folge des Plan-Marsches."
+    },
+    {
+      "von": "C2",
+      "nach": "P",
+      "material_ids": ["mat-4-5", "mat-4-2"],
+      "kausal_mechanismus": "Marne-Niederlage zwingt DT zum Rueckzug → Moltke-Abloesung markiert organisationalen Plan-Bruch → kontrastiver Wechsel von Bewegungs- zu Stellungs-Logik (= Wendepunkt)."
+    },
+    {
+      "von": "P",
+      "nach": "L",
+      "material_ids": ["mat-4-2", "mat-4-6"],
+      "kausal_mechanismus": "Wettlauf zum Meer scheitert beidseitig → beide Heere graben sich ein → Stellungskrieg als raeumlich-zeitliche Folge des Marne-Stops."
+    },
+    {
+      "von": "S",
+      "nach": "L",
+      "typ": "klammer",
+      "material_ids": ["mat-4-1", "mat-4-6"],
+      "kausal_mechanismus": "Plan-Versprechen (6 Wochen) wird durch Stellungskrieg-Realitaet (4 Jahre) widerlegt — kontrastiver Mechanismus 'Plan vs. Realitaet' als didaktischer Schluss-Befund."
+    }
+  ],
+  "voraussetzungs_check": [
+    {"konzept": "Buendnis-System", "vor_mappe": "M1", "status": "GESICHERT"},
+    {"konzept": "Buendnisfall + Mobilmachung", "vor_mappe": "M2 §5", "status": "GESICHERT"},
+    {"konzept": "GB-Kriegseintritt wegen Belgien", "vor_mappe": "M2 §5", "status": "GESICHERT"},
+    {"konzept": "Augustbegeisterung + Glaube an kurzen Krieg", "vor_mappe": "M3 §1+§4", "status": "GESICHERT"},
+    {"konzept": "Quellenkritik (Wer schreibt? Wann? Mit welchem Ziel?)", "vor_mappe": "M3 §2+§4+§7", "status": "GESICHERT"}
+  ],
+  "materialien": [
+    {
+      "id": "mat-4-1",
+      "typ": "karte",
+      "engine_typ": "bildquelle",
+      "sub_material_prompt": "SUB_MATERIAL_KARTE.md",
+      "titel": "Schlieffen-Plan 1914 — die geplanten Bewegungen",
+      "position": 1,
+      "didaktische_funktion": "einstieg",
+      "skript_chunk": "M4 §1-§2",
+      "tafelbild_knoten": ["K4-2"],
+      "primary_scpl_zone": "S",
+      "scpl_zonen": ["S"],
+      "artefakt_refs": ["img-m4-01"],
+      "artefakt_inventar_material_id": "m4-mat-01-karte-schlieffen-plan",
+      "wikimedia_filename": "Plan_Moltke-Schlieffen_1914.svg",
+      "lizenz": "CC-BY-SA-3.0",
+      "urheber": "Lvcvlvs (Wikipedia-User)",
+      "quelle": "Wikimedia Commons",
+      "wort_budget": "BU ~50W + Quellenkritik-BU ~25W",
+      "material_charakter": "vergegenwaertigung",
+      "bildfunktion": "heuristisch",
+      "analyseauftrag": true,
+      "personalisiert": false,
+      "aktivierungscharakter": "bild",
+      "fachbegriffe_eingefuehrt": ["Schlieffen-Plan"],
+      "fachbegriffe_referenziert": ["Buendnis-System"],
+      "voraussetzung": [],
+      "ueberleitung_von": null,
+      "sequenz_kontext": {
+        "vorher": null,
+        "nachher": {"id": "mat-4-2", "typ": "zeitleiste", "kerninhalt": "Zeitleiste August/September 1914 mit 7 Schluessel-Daten"}
+      },
+      "sensibilitaets_markierung": "mythos_korrektur_noetig",
+      "dispatch_constraints": {
+        "korrektur_satz_pflicht": "Forschung (Annika Mombauer / Terence Zuber) zeigt: Es gab keinen einzigen 'fertigen' Schlieffen-Plan — sondern Aufmarsch-Skizzen, die mehrfach veraendert wurden. Der Begriff bleibt im Schueler-Heft etabliert, aber Heroisierung vermeiden.",
+        "quellenkritik_bu_pflicht": true,
+        "datenbasis_briefing": "wiki-schlieffen-2026-04-26 + wiki-marne-2026-04-26"
+      },
+      "perspektiv_tags": ["dominant"],
+      "kerninhalt_1_satz": "Karte mit den geplanten Bewegungs-Pfeilen des Schlieffen-Plans (Bogen durch Belgien nach Paris)."
+    },
+    {
+      "id": "mat-4-2",
+      "typ": "zeitleiste",
+      "engine_typ": "zeitleiste",
+      "sub_material_prompt": "SUB_MATERIAL_ZEITLEISTE.md",
+      "titel": "August/September 1914 — vom Ultimatum bis zum Wettlauf zum Meer",
+      "position": 2,
+      "didaktische_funktion": "erarbeitung",
+      "skript_chunk": "M4 §3-§7",
+      "tafelbild_knoten": ["K4-3", "K4-4", "K4-5"],
+      "primary_scpl_zone": "C1",
+      "scpl_zonen": ["C1", "C2", "P"],
+      "artefakt_refs": [],
+      "artefakt_inventar_material_id": "m4-mat-02-zeitleiste-august-september-1914",
+      "lizenz": "Eigenproduktion",
+      "urheber": "agent-material (Phase 2.1, SUB_ZEITLEISTE)",
+      "quelle": "Datenbasis Wikipedia",
+      "wort_budget": "~120W (7 Eintraege a 15-20W)",
+      "material_charakter": "vergegenwaertigung",
+      "bildfunktion": "n/a",
+      "analyseauftrag": true,
+      "personalisiert": false,
+      "fachbegriffe_eingefuehrt": ["Marne-Schlacht", "Wendepunkt"],
+      "fachbegriffe_referenziert": ["Schlieffen-Plan", "Mobilmachung", "Buendnisfall"],
+      "voraussetzung": ["mat-4-1"],
+      "ueberleitung_von": "mat-4-1",
+      "sequenz_kontext": {
+        "vorher": {"id": "mat-4-1", "typ": "karte", "kerninhalt": "Karte mit den geplanten Bewegungs-Pfeilen des Schlieffen-Plans"},
+        "nachher": {"id": "mat-4-3", "typ": "bildquelle", "kerninhalt": "DT-Soldaten-Foto an der Marne — Quellenkritik-Anker"}
+      },
+      "datums_eintraege": [
+        {"datum": "02.08.1914", "ereignis": "Deutschland stellt Belgien Ultimatum: 'Lasst uns durch!'"},
+        {"datum": "04.08.1914", "ereignis": "DT-Einmarsch in Belgien; GB erklaert DT den Krieg"},
+        {"datum": "07.08.1914", "ereignis": "Belgische Festung Lueck (Liege) faellt"},
+        {"datum": "20.08.1914", "ereignis": "Bruessel faellt; DT-Vormarsch erschoepft Truppen"},
+        {"datum": "05.-12.09.1914", "ereignis": "Marne-Schlacht: Joffre stoppt DT-Vormarsch ca. 40 km vor Paris"},
+        {"datum": "14.09.1914", "ereignis": "Moltke d.J. wird abgesetzt — Schlieffen-Plan ist gescheitert"},
+        {"datum": "19.10.1914", "ereignis": "Wettlauf zum Meer endet — Stellungskrieg beginnt"}
+      ],
+      "sensibilitaets_markierung": "keine",
+      "perspektiv_tags": ["nicht-dominant", "Opfer"],
+      "kerninhalt_1_satz": "Zeitleiste August/September 1914 mit 7 Schluessel-Daten — vom Ultimatum bis zum Wettlauf zum Meer."
+    },
+    {
+      "id": "mat-4-3",
+      "typ": "bildquelle",
+      "engine_typ": "bildquelle",
+      "sub_material_prompt": "SUB_MATERIAL_BILDQUELLE.md",
+      "titel": "Deutsche Soldaten an der Marne 1914 — vermutlich gestelltes Foto",
+      "position": 3,
+      "didaktische_funktion": "erarbeitung",
+      "skript_chunk": "M4 §4",
+      "tafelbild_knoten": ["K4-4"],
+      "primary_scpl_zone": "C2",
+      "scpl_zonen": ["C2"],
+      "artefakt_refs": ["img-m4-02"],
+      "artefakt_inventar_material_id": "m4-mat-03-bildquelle-deutsche-soldaten-marne",
+      "wikimedia_filename": "German_soldiers_Battle_of_Marne_WWI.jpg",
+      "lizenz": "Public Domain",
+      "urheber": "German Army (anonym)",
+      "quelle": "Wikimedia Commons",
+      "wort_budget": "BU ~30W + Quellenkritik-BU ~50W",
+      "material_charakter": "besinnung_sachbezogen",
+      "bildfunktion": "illustrativ",
+      "analyseauftrag": true,
+      "personalisiert": false,
+      "fachbegriffe_eingefuehrt": [],
+      "fachbegriffe_referenziert": ["Marne-Schlacht", "Quellenkritik"],
+      "voraussetzung": ["mat-4-2"],
+      "ueberleitung_von": "mat-4-2",
+      "sequenz_kontext": {
+        "vorher": {"id": "mat-4-2", "typ": "zeitleiste", "kerninhalt": "Zeitleiste August/September 1914 mit 7 Schluessel-Daten"},
+        "nachher": {"id": "mat-4-4", "typ": "bildquelle", "kerninhalt": "FR-Infanterie 1913 — Multiperspektiv-Vergleich"}
+      },
+      "sensibilitaets_markierung": "propaganda_kontextualisierung_noetig",
+      "dispatch_constraints": {
+        "kontextualisierung_satz_pflicht": "Wikipedia weist explizit auf Inszenierungs-Verdacht hin: Decorations-Tragen ist im aktiven Kampf unueblich. Das Foto ist vermutlich gestellt — Heeres-Selbstdarstellung, kein dokumentarisches Bild.",
+        "quellenkritik_bu_pflicht": true,
+        "trigger_vermerk": "weltkrieg_grossereignis+konflikt"
+      },
+      "perspektiv_tags": ["dominant", "Kritik"],
+      "kerninhalt_1_satz": "DT-Soldaten-Foto an der Marne — Quellenkritik-Anker (Inszenierungs-Verdacht: Decorations-Tragen)."
+    },
+    {
+      "id": "mat-4-4",
+      "typ": "bildquelle",
+      "engine_typ": "bildquelle",
+      "sub_material_prompt": "SUB_MATERIAL_BILDQUELLE.md",
+      "titel": "Franzoesische Infanterie 1913 — der Pre-Marne-Vergleich",
+      "position": 4,
+      "didaktische_funktion": "erarbeitung",
+      "skript_chunk": "M4 §5",
+      "tafelbild_knoten": ["K4-4"],
+      "primary_scpl_zone": "C2",
+      "scpl_zonen": ["C2"],
+      "artefakt_refs": ["img-m4-03"],
+      "artefakt_inventar_material_id": "m4-mat-04-bildquelle-frz-infanterie",
+      "wikimedia_filename": "Infanterie-française-rol.jpg",
+      "lizenz": "Public Domain",
+      "urheber": "Agence Rol (frz. Photo-Agentur 1904-1937)",
+      "quelle": "Wikimedia Commons / Gallica BnF",
+      "wort_budget": "BU ~30W + Datums-BU ~30W",
+      "material_charakter": "besinnung_sachbezogen",
+      "bildfunktion": "illustrativ",
+      "analyseauftrag": true,
+      "personalisiert": false,
+      "fachbegriffe_eingefuehrt": [],
+      "fachbegriffe_referenziert": ["Quellenkritik"],
+      "voraussetzung": ["mat-4-3"],
+      "ueberleitung_von": "mat-4-3",
+      "sequenz_kontext": {
+        "vorher": {"id": "mat-4-3", "typ": "bildquelle", "kerninhalt": "DT-Soldaten-Foto an der Marne — gestellt"},
+        "nachher": {"id": "mat-4-5", "typ": "statistik", "kerninhalt": "Verlust-Statistik Marne (FR/GB/DT)"}
+      },
+      "sensibilitaets_markierung": "propaganda_kontextualisierung_noetig",
+      "dispatch_constraints": {
+        "kontextualisierung_satz_pflicht": "Pflicht-Hinweis: Foto ist von 1913 (Manoever 'Grandes manoeuvres de 1913'), NICHT Marne-Schlacht 1914. Im M4-Kontext mit Datums-Hinweis verwenden — Stolperfalle-Aufgabe fuer Quellenkritik.",
+        "quellenkritik_bu_pflicht": true,
+        "trigger_vermerk": "weltkrieg_grossereignis+konflikt"
+      },
+      "perspektiv_tags": ["nicht-dominant"],
+      "kerninhalt_1_satz": "FR-Infanterie 1913 — Multiperspektiv-Vergleich (DT vs. FR) + Datums-Quellenkritik (1913, nicht 1914)."
+    },
+    {
+      "id": "mat-4-5",
+      "typ": "statistik",
+      "engine_typ": "zeitleiste",
+      "sub_material_prompt": "SUB_MATERIAL_STATISTIK.md",
+      "titel": "Verluste der Marne-Schlacht — die Zahl, die alles aendert",
+      "position": 5,
+      "didaktische_funktion": "vertiefung",
+      "skript_chunk": "M4 §6",
+      "tafelbild_knoten": ["K4-4", "K4-5"],
+      "primary_scpl_zone": "P",
+      "scpl_zonen": ["C2", "P"],
+      "artefakt_refs": [],
+      "artefakt_inventar_material_id": "m4-mat-05-statistik-marne-verluste",
+      "lizenz": "Eigenproduktion",
+      "urheber": "agent-material (Phase 2.1, SUB_STATISTIK)",
+      "quelle": "Datenbasis Wikipedia 'First Battle of the Marne'",
+      "wort_budget": "~50W (Tabelle + Kontextsatz)",
+      "material_charakter": "besinnung_wertbezogen",
+      "bildfunktion": "n/a",
+      "analyseauftrag": true,
+      "personalisiert": false,
+      "fachbegriffe_eingefuehrt": [],
+      "fachbegriffe_referenziert": ["Marne-Schlacht"],
+      "voraussetzung": ["mat-4-2"],
+      "ueberleitung_von": "mat-4-4",
+      "sequenz_kontext": {
+        "vorher": {"id": "mat-4-4", "typ": "bildquelle", "kerninhalt": "FR-Infanterie 1913 — Manoever, nicht 1914"},
+        "nachher": {"id": "mat-4-6", "typ": "darstellungstext", "kerninhalt": "Erklaerung Stellungskrieg + Schluss-Bruecke"}
+      },
+      "datentabelle": [
+        {"partei": "Frankreich", "verluste": "ca. 250.000", "kategorie": "Tote + Verwundete"},
+        {"partei": "Grossbritannien", "verluste": "12.733", "kategorie": "Tote + Verwundete"},
+        {"partei": "Deutschland", "verluste": "ca. 298.000", "kategorie": "Tote + Verwundete"}
+      ],
+      "kontext_zeitraum": "5.-12. September 1914 (7 Tage)",
+      "sensibilitaets_markierung": "gewalt_altersfilter",
+      "dispatch_constraints": {
+        "altersfilter_hinweis_pflicht": "Sensibilitaet: Zahlen werden genannt, NICHT visualisiert (keine Bilder von Verletzten/Toten). 'ca.' verwenden bei FR/DT-Zahlen wegen Forschungs-Bandbreite. Begleitsatz fuer R7: 'Diese Zahlen sind so gross, dass kaum jemand sie sich vorstellen kann.' (aus SKRIPT M4 §6).",
+        "keine_visualisierung_pflicht": true,
+        "ca_marker_pflicht": ["FR", "DT"],
+        "trigger_vermerk": "weltkrieg_grossereignis+konflikt"
+      },
+      "perspektiv_tags": ["nicht-dominant", "Macht-Betroffen"],
+      "kerninhalt_1_satz": "Verlust-Statistik Marne 5.-12.9.1914 (~250.000 FR / 12.733 GB / ~298.000 DT — > 500.000 in 7 Tagen)."
+    },
+    {
+      "id": "mat-4-6",
+      "typ": "darstellungstext",
+      "engine_typ": "darstellungstext",
+      "sub_material_prompt": "SUB_MATERIAL_DARSTELLUNGSTEXT.md",
+      "titel": "Vom Schlieffen-Plan zum Stellungskrieg — der Wendepunkt der Marne",
+      "position": 6,
+      "didaktische_funktion": "sicherung",
+      "skript_chunk": "M4 §7 (+ §1 als Plan-Anker)",
+      "tafelbild_knoten": ["K4-5", "K4-1"],
+      "primary_scpl_zone": "L",
+      "scpl_zonen": ["P", "L"],
+      "artefakt_refs": [],
+      "artefakt_inventar_material_id": "m4-mat-06-darstellungstext-stellungskrieg (RESERVE-Aktivierung in Phase 1)",
+      "lizenz": "Eigenproduktion",
+      "urheber": "agent-material (Phase 2.1, SUB_DARSTELLUNGSTEXT)",
+      "quelle": "Datenbasis Wikipedia + Skript M4 §1+§7",
+      "wort_budget": "~120W",
+      "material_charakter": "besinnung_sachbezogen",
+      "bildfunktion": "n/a",
+      "analyseauftrag": false,
+      "personalisiert": false,
+      "fachbegriffe_eingefuehrt": ["Stellungskrieg"],
+      "fachbegriffe_referenziert": ["Schlieffen-Plan", "Marne-Schlacht", "Wendepunkt"],
+      "voraussetzung": ["mat-4-5"],
+      "ueberleitung_von": "mat-4-5",
+      "sequenz_kontext": {
+        "vorher": {"id": "mat-4-5", "typ": "statistik", "kerninhalt": "Verlust-Statistik Marne — > 500.000 in 7 Tagen"},
+        "nachher": null
+      },
+      "kernerkenntnisse_anker": [
+        "Schlieffen-Plan = 6-Wochen-Sieg gegen FR ueber Belgien",
+        "Belgien-Bruch 4.8. → GB-Kriegseintritt",
+        "Joffre stoppt DT-Vormarsch an der Marne 5.-12.9. ca. 40 km vor Paris",
+        "Folge: Wettlauf zum Meer, dann Stellungskrieg fuer 4 Jahre"
+      ],
+      "sensibilitaets_markierung": "keine",
+      "dispatch_constraints": {
+        "schluss_bruecke_pflicht": "Letzter Satz muss die Bruecke zum Folge-Game schlagen: 'Stellungskrieg / Heimatfront / Versailles' als Anschluss-Anker; Hefteintrag B.6 Merksatz wortlautnah aufnehmen ('Aus geplanten sechs Wochen wurden vier Jahre Krieg').",
+        "begriff_stellungskrieg_pflicht_definiert": "Doppelpunkt-Erklaerung wie im Skript M4 §7: 'Stellungskrieg = Soldaten bleiben in festen Stellungen — Schuetzen-Graeben — und kommen kaum mehr vorwaerts.'",
+        "transfer_marker_optional": "Pre-Plan vs. Realitaet (TRANSFER-Marker aus skript_struktur.json moeglich, aber nicht Pflicht — Lehrkraft-Diskussion bevorzugt laut Hefteintrag A.3)"
+      },
+      "perspektiv_tags": ["nicht-dominant"],
+      "kerninhalt_1_satz": "Erklaerung 'Stellungskrieg' + Schluss-Bruecke 'aus 6 Wochen wurden 4 Jahre Krieg' + Folge-Game-Anker."
+    }
+  ],
+  "nicht_verwendete_artefakte": [
+    {
+      "img_id": "img-m4-04",
+      "wikimedia_filename": "Taxi_de_la_Marne,_Musée_de_l'Armée-IMG_0987.jpg",
+      "lizenz": "CC-BY-SA-2.0-FR",
+      "status_phase_03": "VERWORFEN_AUS_STOFFDICHTE",
+      "status_phase_1": "NICHT_REAKTIVIERT",
+      "begruendung": "Stoffdichte-Korridor-Obergrenze (6 Materialien) bereits durch Stellungskrieg-Darstellungstext (mat-4-6) belegt. KE-Bonus-Sicherung GPG7_LB2_K_07 hat Vorrang vor Erinnerungs-Kultur-Erweiterung. Marne-Taxi-Mythos ist im SKRIPT M4 §5 narrativ verankert (~5000 Soldaten, 'als Mythos unsterblich'). RESERVE bleibt fuer optionale Lehrkraft-Erweiterung."
+    },
+    {
+      "rolle_id": "rolle-M4-?",
+      "typ": "tagebuch",
+      "status_phase_1": "NICHT_GEPLANT",
+      "begruendung": "AFB-II-Sicherungs-Mappe nach M3-Hoehepunkt. Personifizierung wurde in M3 (rolle-M3-1 Skeptiker-Tagebuch) verankert; M4 fokussiert auf strategisch-strukturelle Sicherung. Multiperspektivitaet in M4 kompensiert durch Bildquellen-Doppel (mat-4-3 DT vs. mat-4-4 FR) + drei-Parteien-Statistik (mat-4-5 FR/GB/DT)."
+    }
+  ],
+  "perspektiven_abdeckungs_matrix": {
+    "P1_DT_Generalstab": {"materialien": ["mat-4-1", "mat-4-2", "mat-4-3", "mat-4-5", "mat-4-6"], "anteil": "5/6"},
+    "P2_BE_Bevoelkerung": {"materialien": ["mat-4-1", "mat-4-2", "mat-4-6"], "anteil": "3/6"},
+    "P3_FR_Joffre": {"materialien": ["mat-4-2", "mat-4-4", "mat-4-5", "mat-4-6"], "anteil": "4/6"},
+    "P4_GB_BEF": {"materialien": ["mat-4-2", "mat-4-5"], "anteil": "2/6"},
+    "P5_Soldaten_beider_Seiten": {"materialien": ["mat-4-2", "mat-4-3", "mat-4-4", "mat-4-5", "mat-4-6"], "anteil": "5/6"},
+    "str_05_min_3_perspektiven": "PASS (5/5 abgedeckt)",
+    "fehlende_perspektiven": [],
+    "schwaechste_perspektive": "P4 BEF (2/6) — akzeptabel, weil zahlenmaessig kleinerer Anteil an Marne-Schlacht (12.733 vs. ~250.000+~298.000)"
+  },
+  "einstieg": {
+    "typ": "narrativ-szenarisch",
+    "text": "Mappe 3 endete mit den Maennern, die in den Krieg zogen. Sie glaubten an einen kurzen Krieg. 'Weihnachten sind wir wieder zu Hause', sagten viele. Mappe 4 zeigt dir, wie schnell dieser Glaube zerbrach. Die deutsche Heeresleitung hatte einen Plan — und du wirst gleich sehen, wie dieser Plan in nur fuenf Wochen scheiterte. Pack die vierte Mappe an.",
+    "tafelbild_voraussetzung": "M3-Sicherung (Augustfieber + Burgfrieden + Schuld-Diskurs) gesichert; Sandwich-Bruecke aus M3-Skript-Schluss",
+    "rahmenhandlung_anschluss": "Spurensucher / Archiv 1914 — Mappe 4 als letzte der vier Mappen"
+  },
+  "sicherung": {
+    "typ": "zusammenfassung+reflexion+ausblick",
+    "text": "Du hast nun alle vier Mappen geoeffnet. Trag die Begriffe Schlieffen-Plan, Belgien-Verletzung, Marne-Schlacht, Wendepunkt und Stellungskrieg in deinen Hefteintrag ein. Schreibe in einem Satz: An der Marne im September 1914 endete der 'kurze Krieg' — und der Stellungskrieg begann. Aus geplanten sechs Wochen wurden vier Jahre Krieg.",
+    "reflexionsimpuls": "Wie hat sich dein Bild vom Krieg veraendert, seit du Mappe 1 (Pulverfass) bis Mappe 4 (Marne) durchgearbeitet hast?",
+    "ueberleitung_folge_game": "Der Krieg war jetzt nicht zu Ende — er hatte gerade erst begonnen. Was im Schuetzen-Graben geschah, was die Soldaten erlebten und wie der Krieg nach 1918 endete, das erfaehrst du in einem naechsten Game: Stellungskrieg, Heimatfront und Versailles.",
+    "verweis_hefteintrag": "B.5 Schluessel-Begriffe (5 Begriffe) + B.6 Merksatz (1 Satz)"
+  },
+  "q_gate_self_check": {
+    "scpl_abdeckung_vollstaendig": "PASS",
+    "scpl_uebergaenge_belegt_inkl_kausal_mechanismus": "PASS",
+    "erarbeitbarkeits_dokumentation_3_schritte": "PASS",
+    "mindest_materialien_mix": "WARN",
+    "mindest_materialien_mix_begruendung": "Personifiziert FEHLT in M4 (begruendet als AFB-II-Entlastung nach M3-Hoehepunkt; M3 hatte rolle-M3-1; Multiperspektivitaet hier durch DT-vs-FR-Bildquellen-Doppel + drei-Parteien-Statistik kompensiert)",
+    "anzahl_korridor_4_7": "PASS (6 Materialien)",
+    "medienvielfalt_ratio_max_50_text": "PASS (17%)",
+    "erarbeitbarkeits_nachweis_zonen_und_uebergaenge": "PASS",
+    "vorwissen_aus_vor_mappen_gesichert": "PASS",
+    "zielklarheit_pruefung": "PASS",
+    "sequenzplan_vollstaendig": "PASS",
+    "perspektiven_abdeckung_str_05_min_3": "PASS",
+    "qg09_inline_perspektiv_tags_mind_2_nicht_dominant": "PASS",
+    "qg07_kolonialterminologie": "n/a",
+    "sensibilitaets_markierungen_dispatch_constraints": "PASS",
+    "lizenz_kompatibilitaet_kein_NC_ND": "PASS",
+    "f_pb_46_math_counts": "PASS",
+    "gesamturteil": "PASS_MIT_WARN"
+  },
+  "exit_kriterien_phase_1": {
+    "alle_materialien_geplant_mit_eindeutiger_id": true,
+    "alle_materialien_haben_subagent_zuordnung": true,
+    "alle_materialien_haben_skript_chunk_referenz": true,
+    "alle_materialien_haben_tafelbild_knoten_referenz": true,
+    "alle_materialien_haben_sequenz_kontext": true,
+    "alle_materialien_haben_dispatch_constraints_falls_sensibel": true,
+    "alle_materialien_haben_perspektiv_tags": true,
+    "blueprint_md_existiert": "BLUEPRINT_M4.md",
+    "user_validierungs_gate_phase_1_5": "PFLICHT, ausstehend",
+    "naechste_phase": "Phase 2.0b (Hefteintrag-zu-rahmen-JSON-Konversion) → Phase 2.1 (SUB_MATERIAL-Dispatches mat-4-1..mat-4-6 inkrementell, P4-Isolation 1 Material = 1 Dispatch = 1 .json)"
+  },
+  "spezial_hinweise_m4": {
+    "marne_taxi_bild_reaktivierung": "NICHT REAKTIVIERT in Phase 1 — Stoffdichte-Obergrenze und KE-Bonus-Sicherung haben Vorrang. RESERVE-Status beibehalten.",
+    "schlieffen_plan_karte_zentral": "mat-4-1 als Sequenz-Position 1 (Einstieg) mit mythos_korrektur_noetig-Constraint (Zuber-Forschung)",
+    "multiperspektivitaet_sieger_verlierer_mythos": "Umgesetzt durch mat-4-3 (DT-Inszenierung) + mat-4-4 (FR-Pre-Manoever) als visuelles Doppel + mat-4-5 (drei-Parteien-Statistik FR/GB/DT). Kriegsmuendigkeits-Erwartung im Einstiegs-Text ('Weihnachten sind wir wieder zu Hause') narrativ aufgegriffen.",
+    "stellungskrieg_anker_folge_game_bruecke": "mat-4-6 (Darstellungstext) — Hefteintrag B.6 Merksatz wortlautnah, Folge-Game 'Stellungskrieg / Heimatfront / Versailles' als Schluss-Anker",
+    "afb_ii_sicherung_entlastend": "Bewusst kein personifiziertes Material — strukturell-strategische Sicherung mit visueller Dominanz (5/6 nicht-textbasiert) als didaktische Entlastung nach M3-Hoehepunkt"
+  }
+}

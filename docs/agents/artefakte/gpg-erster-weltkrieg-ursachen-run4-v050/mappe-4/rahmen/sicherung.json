@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "mappe_id": "M4",
+  "tafelbild": {
+    "stundenfrage": "Warum scheiterte der deutsche Plan fuer einen schnellen Sieg an der Marne?",
+    "ordnungsmuster": "chronologisch-kausal",
+    "scpl_ref": "rahmen/hefteintrag.json#scpl",
+    "knoten_ref": "rahmen/hefteintrag.json#knoten",
+    "verbindungen_ref": "rahmen/hefteintrag.json#verbindungen"
+  },
+  "kernerkenntnisse": [
+    "Schlieffen-Plan (1905/06): Frankreich in 6 Wochen besiegen, ueber das neutrale Belgien.",
+    "Belgien-Verletzung am 4.8.1914 fuehrt zum britischen Kriegseintritt.",
+    "Marne-Schlacht (5.-12.9.1914): Joffre stoppt DT-Vormarsch ca. 40 km vor Paris.",
+    "Wendepunkt: Schlieffen-Plan gescheitert; Moltke abgesetzt 14.9.1914.",
+    "Stellungskrieg: Beide Heere graben sich ein. Aus 6 Wochen werden 4 Jahre Krieg."
+  ],
+  "zusammenfassung": "Du hast nun alle vier Mappen geoeffnet. Der Schlieffen-Plan sah einen Sieg ueber Frankreich in sechs Wochen vor — durch das neutrale Belgien. Am 4. August 1914 marschiert Deutschland in Belgien ein, Grossbritannien erklaert den Krieg. Der schnelle Vormarsch erschoepft die Truppen. Vom 5. bis 12. September stoppt der franzoesische General Joffre den deutschen Vormarsch an der Marne, etwa 40 km vor Paris. Moltke wird abgesetzt, der Plan ist gescheitert. Beide Heere graben sich ein — der Stellungskrieg beginnt.",
+  "ueberleitung": "Der Krieg war jetzt nicht zu Ende — er hatte gerade erst begonnen. Was im Schuetzen-Graben geschah, was die Soldaten erlebten und wie der Krieg nach 1918 endete, das erfaehrst du in einem naechsten Game: Stellungskrieg, Heimatfront und Versailles.",
+  "merksatz": "An der Marne im September 1914 endete der 'kurze Krieg' und der Stellungskrieg begann. Aus geplanten sechs Wochen wurden vier Jahre Krieg.",
+  "hefteintrag_verweis": "Uebertrage das Tafelbild und die fuenf Schluessel-Begriffe (Schlieffen-Plan, Belgien-Verletzung, Marne-Schlacht, Wendepunkt, Stellungskrieg) in dein Heft. Schreibe in einem Satz: An der Marne im September 1914 endete der 'kurze Krieg' und der Stellungskrieg begann.",
+  "reflexionsimpuls": "Wie hat sich dein Bild vom Krieg veraendert, seit du Mappe 1 (Pulverfass) bis Mappe 4 (Marne) durchgearbeitet hast?",
+  "_meta": {
+    "skript_ref": "M4 §7 (Sicherung) + HEFTEINTRAG_M4 B.3 + B.5",
+    "wortanzahl_zusammenfassung": 81,
+    "wortanzahl_ueberleitung": 41,
+    "abschluss_format": "ABSCHLUSS_C5_REFLEXION_PLUS_FOLGE_GAME_BRUECKE",
+    "letzte_mappe_indikator": true,
+    "folge_game_anker": ["Stellungskrieg", "Heimatfront", "Versailles"],
+    "befunde_aller_mappen_summary": [
+      "Mappe 1 — Pulverfass: Europa war vor 1914 schon brennbar.",
+      "Mappe 2 — Sarajevo: Der Schuss war der Ausloeser, nicht die Ursache.",
+      "Mappe 3 — Augustfieber: Begeisterung war Stadt-Sache. Schuld war geteilt.",
+      "Mappe 4 — Marne: Der Plan vom kurzen Krieg ist gescheitert. Der Stellungskrieg begann."
+    ]
+  }
+}

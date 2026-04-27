@@ -1,0 +1,48 @@
+{
+  "id": "mat-2-3",
+  "typ": "bildquelle",
+  "titel": "Franz Ferdinand — der Mann, den der Habsburger Hof zeigen wollte",
+  "position": 3,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": ["mat-2-1"],
+  "ueberleitung_von": "Du kennst den Tatort. Aber wer war das Opfer? Das Hofportrait zeigt dir, wie sich der Habsburger Hof selbst inszenierte.",
+  "sequenz_kontext": {
+    "vorher": {
+      "id": "mat-2-2",
+      "typ": "bildquelle",
+      "kerninhalt": "Tatortskizze Sarajevo: räumliche Rekonstruktion des Attentats."
+    },
+    "nachher": {
+      "id": "mat-2-4",
+      "typ": "bildquelle",
+      "kerninhalt": "Princip vor Gericht."
+    }
+  },
+  "perspektiv_tags": ["dominant", "Macht-Ausuebung", "Aussen"],
+  "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen-run4-v050/img-m2-02.jpg",
+  "bildunterschrift": "Erzherzog Franz Ferdinand, Thronfolger Österreich-Ungarns. Hof-Auftrags-Portrait des Hofphotographen Carl Pietzner, um 1896. Hinweis: Auftragsbild des Habsburger Hofs — kein neutrales Foto. 1914 war Franz Ferdinand 50 Jahre alt und seit fast 20 Jahren Thronfolger.",
+  "quelle": "Carl Pietzner (Hofphotograph), Wikimedia Commons.",
+  "lizenz": "Public Domain",
+  "_meta": {
+    "wortanzahl": 50,
+    "aufbereitung": "echt",
+    "artefakt_ref": ["pb-2-2"],
+    "tafelbild_knoten_abgedeckt": ["k2-2"],
+    "perspektive": "P2: Habsburger / Oesterreich-Ungarn (Hof-Selbstdarstellung)",
+    "quellenkritische_impulse": [
+      "Wer hat dieses Bild in Auftrag gegeben — und was sollte es zeigen?",
+      "Welche Haltung und Kleidung wählt der Hof — und was sagt das über die Macht der Habsburger?",
+      "Welches Bild hätten bosnisch-serbische Nationalisten von Franz Ferdinand wohl gezeichnet?"
+    ],
+    "erarbeitbarkeits_check": "PASS — Bild macht Franz Ferdinand als Person sichtbar (S-Zone Akteur Opfer); Quellenkritik macht die Habsburger Selbst-Inszenierung als Quellen-Eigenschaft erkennbar (F-PB-37 Produzent/Auftraggeber/Motiv erfuellt).",
+    "trigger_flags": [],
+    "kontextualisierung_pflicht": "Auftrags-Inszenierung Habsburger Hof. KEIN dokumentarisches Foto. Lebend-Bild, NICHT Foto vom Attentats-Tag.",
+    "fachbegriffe_eingefuehrt": ["Thronfolger"],
+    "fachbegriffe_referenziert": ["Habsburger (M1)", "Oesterreich-Ungarn (M1)"],
+    "quellenkritik_block": {
+      "produzent": "Carl Pietzner, Hofphotograph in Wien (offizieller Habsburger Bildauftrag)",
+      "auftraggeber": "Habsburger Hof / Erzherzog Franz Ferdinand selbst",
+      "motiv": "Repräsentations-Selbstdarstellung der Dynastie: Würde, Macht, Tradition zeigen — kein dokumentarisches Foto."
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "mat-2-4",
+  "typ": "bildquelle",
+  "titel": "Wer war Princip — Held oder Terrorist?",
+  "position": 4,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": ["mat-2-3"],
+  "ueberleitung_von": "Bisher hast du die Habsburger Seite gesehen. Jetzt wechselst du die Perspektive: Princip war 19, Schüler, Mitglied von Junges Bosnien.",
+  "sequenz_kontext": {
+    "vorher": {
+      "id": "mat-2-3",
+      "typ": "bildquelle",
+      "kerninhalt": "Hofportrait Franz Ferdinand — Habsburger Hof-Selbstdarstellung."
+    },
+    "nachher": {
+      "id": "mat-2-5",
+      "typ": "quellentext",
+      "kerninhalt": "Auszug Wiener Ultimatum 23.7.1914."
+    }
+  },
+  "perspektiv_tags": ["Widerstand", "Macht-Betroffen", "Innen"],
+  "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen-run4-v050/img-m2-03.jpg",
+  "bildunterschrift": "Gavrilo Princip vor dem Gericht in Sarajevo, 1914. Photograph unbekannt. Princip war 19 Jahre alt, bosnisch-serbischer Schüler und Mitglied von „Junges Bosnien\" — einer Jugendbewegung der bosnisch-serbischen Nationalisten. Die Pistolen kamen von der „Schwarzen Hand\", einer geheimen serbischen Offiziers-Organisation. Vor Gericht sagte er: „Ich bin jugoslawischer Nationalist und will, dass die Südslawen frei sind.\" In Serbien wird Princip teils als nationaler Befreier erinnert, in Bosniaken- und Kroaten-Geschichtsschreibung teils als Attentäter. Beide Erinnerungen existieren bis heute — ohne dass eine die andere widerlegen kann.",
+  "quelle": "Unbekannter Photograph (1914), Wikimedia Commons.",
+  "lizenz": "Public Domain",
+  "_meta": {
+    "wortanzahl": 113,
+    "aufbereitung": "echt",
+    "artefakt_ref": ["pb-2-3"],
+    "tafelbild_knoten_abgedeckt": ["k2-2"],
+    "perspektive": "multiperspektivisch: P1 Bosnisch-serbische Nationalisten (Princip / Junges Bosnien) kontrastiert mit P2 Habsburger / Oesterreich-Ungarn",
+    "quellenkritische_impulse": [
+      "Wer hat dieses Foto gemacht — und in welcher Inszenierung steht Princip da?",
+      "Warum erinnern Serben und Bosniaken denselben Mann unterschiedlich?",
+      "Welches Bild hätte die serbische Geschichtsschreibung gezeigt? Welches die habsburgische?"
+    ],
+    "erarbeitbarkeits_check": "PASS — Bild + BU machen Princip als Person (19 Jahre, Schueler, Junges Bosnien) sichtbar (S-Zone Akteur Taeter); Multiperspektivitaet (Held-vs-Terrorist) didaktisch zentrales Lern-Element der Mappe.",
+    "trigger_flags": ["gewalt", "krieg"],
+    "kontextualisierung_pflicht": "Foto zeigt Angeklagten in juristischer Inszenierung des Gerichts in Sarajevo — KEIN Held-Foto, KEIN Terrorist-Foto. Beide Erinnerungs-Perspektiven (serbisch-national / habsburgisch-bosniakisch-kroatisch) gleichberechtigt benennen.",
+    "fachbegriffe_eingefuehrt": ["Junges Bosnien", "Schwarze Hand"],
+    "fachbegriffe_referenziert": ["Sarajevo (mat-2-2)", "Thronfolger (mat-2-3)"],
+    "quellenkritik_block": {
+      "produzent": "Unbekannter Photograph 1914 (anonym, kein Hofphotograph)",
+      "auftraggeber": "Gericht in Sarajevo (juristische Dokumentation des Angeklagten)",
+      "motiv": "Dokumentation eines laufenden Strafverfahrens — KEIN Held-/Terrorist-Bild. Die Erinnerungs-Etiketten kamen erst später aus den jeweiligen nationalen Geschichtsschreibungen."
+    },
+    "multiperspektivitaet_pflicht": "ERFUELLT: Beide Erinnerungs-Perspektiven gleichberechtigt benannt (serbisch-national: Befreier / habsburgisch-bosniakisch-kroatisch: Attentaeter). KEINE wertende Etikettierung im Material selbst."
+  }
+}

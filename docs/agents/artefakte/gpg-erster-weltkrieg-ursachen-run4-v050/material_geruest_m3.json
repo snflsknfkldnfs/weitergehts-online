@@ -1,0 +1,503 @@
+{
+  "schema_version": "material_geruest_v1",
+  "vertrag": "VERTRAG_PHASE_2-1_MATERIAL.md (Phase 1 Design-Modus, agent-material-design)",
+  "game_id": "gpg-erster-weltkrieg-ursachen-run4-v050",
+  "run_id": "run-4-2026-04-26-v050-pristine",
+  "mappe_id": "M3",
+  "mappe_titel": "Augustfieber — Wer schuld ist und wer jubelt",
+  "stundenfrage": "Wer war im August 1914 begeistert — und wer hat heute die Schuld am Krieg?",
+  "phase": "1.0",
+  "agent": "agent-material-design",
+  "erstellt_am": "2026-04-26",
+  "plugin_version": "v0.5.0",
+  "validierungsstatus": "ENTWURF",
+  "_meta": {
+    "ke_anker_haupt": "GPG7_LB3_K_03",
+    "afb": "II-III",
+    "bloom": "Analysieren -> Beurteilen",
+    "konflikttyp": true,
+    "perspektiven_policy": "P1: Begeisterte Stadtbuerger 1914 | P2: Skeptische Land-Bevoelkerung+Arbeiter+SPD 1914 | P3: Versailler Sieger-Maechte 1919 | P4: Heutige Forschung Clark 2013 | P5: Reichstags-Inszenierung Burgfrieden",
+    "trigger_flags_mappe": ["nationalismus", "weltkrieg_grossereignis"],
+    "trigger_categories_aktiv": ["Konflikt", "Macht-Asymmetrie"],
+    "material_perspektiv_01_aktiv": true,
+    "terminologie_01_aktiv": false,
+    "augusterlebnis_idealisierung_verbot": true,
+    "differenzierung_3_stufen_tipps": true,
+    "kontroversitaet_beutelsbach": true,
+    "struktur_freeze_quelle": "hefteintrag_struktur.json M3 (Phase 0.4)",
+    "f_pb_addressed": ["F-PB-40", "F-PB-41", "F-PB-42", "F-PB-44", "F-PB-46", "F-PB-47", "POLICY_TRIGGER_SICHTBARKEIT", "V13", "V14"]
+  },
+  "scpl_abdeckung": {
+    "S": {
+      "kurztext": "August 1914 — Stimmung in deutschen Staedten: Maenner ziehen mit Blumen am Gewehr in den Krieg, Maedchen kuessen Soldaten am Bahnhof",
+      "fachbegriffe": ["Augusterlebnis", "Augustbegeisterung"],
+      "tb_knoten": ["K3-2"],
+      "material_abdeckung": ["mat-3-1", "mat-3-2"],
+      "modus": "DIRECT"
+    },
+    "C1": {
+      "kurztext": "Foto-Bias / Quellenkritik: Fotos zeigen meist nur Stadt-Buerger; Land-Bevoelkerung und Arbeiter waren oft skeptisch",
+      "fachbegriffe": ["Quellenkritik", "Foto-Bias"],
+      "tb_knoten": ["K3-2", "K3-6"],
+      "material_abdeckung": ["mat-3-1", "mat-3-2", "mat-3-5"],
+      "modus": "DIRECT"
+    },
+    "C2": {
+      "kurztext": "Burgfrieden 4. August 1914 — sogar SPD stimmt fuer Kriegskredite, alle Parteien dafuer; zerfaellt 1916/17",
+      "fachbegriffe": ["Burgfrieden", "Kriegskredite"],
+      "tb_knoten": ["K3-3"],
+      "material_abdeckung": ["mat-3-6"],
+      "modus": "DIRECT",
+      "reserve_hinweis": "mat-3-6 ist VERIFIED-PARTIAL; Direkt-Verifikation Pflicht in Phase 1 vor Final-Einsatz; Fallback Hefteintrag-Schueler-Text"
+    },
+    "P": {
+      "kurztext": "Kriegsschuldfrage — Versailles 1919 (Art. 231) weist Deutschland und Verbuendeten die Allein-Schuld zu",
+      "fachbegriffe": ["Kriegsschuldfrage", "Kriegsschuld-Klausel"],
+      "tb_knoten": ["K3-1", "K3-4"],
+      "material_abdeckung": ["mat-3-3"],
+      "modus": "DIRECT"
+    },
+    "L": {
+      "kurztext": "Heute: Clark 2013 (Schlafwandler) — keine Macht hatte allein Schuld, mehrere Regierungen gemeinsam in den Krieg getaumelt (Wien+Berlin+Petersburg+Paris+London)",
+      "fachbegriffe": ["Schlafwandler-These"],
+      "tb_knoten": ["K3-1", "K3-5"],
+      "material_abdeckung": ["mat-3-4"],
+      "modus": "DIRECT"
+    },
+    "direct_pruefung": {
+      "direkt_zonen": 5,
+      "gesamt_zonen": 5,
+      "prozent": 100,
+      "schwelle_70": "PASS"
+    }
+  },
+  "scpl_uebergaenge": [
+    {
+      "von": "S",
+      "nach": "C1",
+      "material": ["mat-3-1", "mat-3-2"],
+      "zusammenhang_belegt_durch": "BU-Pflicht 'Wer ist NICHT zu sehen?' in beiden Bildquellen",
+      "kausal_mechanismus": "Sichtbare Begeisterung im Foto -> Frage nach Unsichtbarem -> Erkenntnis: Foto ist Ausschnitt, nicht Repraesentation",
+      "kausalitaets_typ": "vertiefend"
+    },
+    {
+      "von": "C1",
+      "nach": "C2",
+      "material": ["mat-3-5", "mat-3-6"],
+      "zusammenhang_belegt_durch": "Skript M3 §3-§4 (Uebergang Foto-Bias -> Burgfrieden); Tagebuch-Stimme zeigt Skepsis der Bevoelkerung; Medaille zeigt Reichstags-Konsens",
+      "kausal_mechanismus": "Skepsis-Stimmen 1914 erkannt -> Aber 4.8.1914 stimmen sogar SPD-Vertreter zu -> Burgfrieden als institutioneller Konsens trotz Bevoelkerungs-Skepsis",
+      "kausalitaets_typ": "kontrastiv"
+    },
+    {
+      "von": "C2",
+      "nach": "P",
+      "material": ["mat-3-6", "mat-3-3"],
+      "zusammenhang_belegt_durch": "Skript M3 §4-§5 (Burgfrieden zerfaellt 1916/17 -> Krieg verloren -> Versailles 1919 weist Schuld zu)",
+      "kausal_mechanismus": "Burgfrieden als Anfangsphase -> 4 Jahre Krieg -> Niederlage -> Schuldzuweisung durch Sieger",
+      "kausalitaets_typ": "temporal"
+    },
+    {
+      "von": "P",
+      "nach": "L",
+      "material": ["mat-3-3", "mat-3-4"],
+      "zusammenhang_belegt_durch": "Hefteintrag-Sicherungs-Text + Skript M3 §6",
+      "kausal_mechanismus": "Versailles-Position 1919 (Allein-Schuld) wird durch Forschung herausgefordert -> Clark 2013 (multi-kausal, 5 Maechte) -> Kontroverse als heutiger Forschungsstand",
+      "kausalitaets_typ": "kontrastiv"
+    }
+  ],
+  "materialien": [
+    {
+      "material_id": "mat-3-1",
+      "typ": "bildquelle",
+      "subtyp": "postkarten-mobilmachungsfoto",
+      "titel": "Mobilmachung Luebeck — wer steht NICHT auf dem Foto?",
+      "skript_chunk": "M3 §1-§2",
+      "tafelbild_knoten": ["K3-2"],
+      "scpl_zone_primary": "S",
+      "scpl_zonen_alle": ["S", "C1"],
+      "didaktische_funktion": "einstieg",
+      "artefakt_ref": ["img-m3-01"],
+      "wikimedia_filename": "IR_Lübeck_033_-_EB.jpg",
+      "lizenz": "Public Domain",
+      "urheber": "Gebrueder Borchers (Druckerei Luebeck)",
+      "quelle_status": "VERIFIED",
+      "qualifizierung": "QUALIFIZIERT",
+      "perspektive_artefakt": "Stadt-Provinz Luebeck (Augusterlebnis-Foto-Bias)",
+      "position": 1,
+      "voraussetzung": [],
+      "sequenz_kontext": {
+        "vorher": null,
+        "nachher": {"id": "mat-3-2", "typ": "bildquelle", "kerninhalt": "Bundesarchiv-Foto Mobilmachung 1./2.8.1914 — zweites Inszenierungs-Beispiel"}
+      },
+      "ueberleitung_von": null,
+      "perspektiv_tags_plan": ["dominant", "Macht-Ausuebung"],
+      "sensibilitaets_markierung": "propaganda_kontextualisierung_noetig",
+      "kontextualisierung_satz_pflicht": "Das Foto zeigt Stadt-Buerger — Land-Bevoelkerung und Arbeiter sind nicht im Bild.",
+      "trigger_flags_meta": ["nationalismus", "weltkrieg_grossereignis"],
+      "bildfunktion": "heuristisch",
+      "analyseauftrag": true,
+      "personalisiert": false,
+      "material_charakter": "vergegenwaertigung",
+      "aktivierungscharakter": "bild",
+      "fachbegriffe_eingefuehrt": ["Augusterlebnis", "Quellenkritik"],
+      "fachbegriffe_referenziert": ["Ursache", "Ausloeser"],
+      "kerninhalt_satz": "Postkarte Luebeck Hauptbahnhof 31.7.1914 — sichtbare Begeisterung loest Quellenkritik-Frage 'Wer ist NICHT zu sehen?' aus",
+      "funktion_satz": "SuS sehen die ikonische Augustbegeisterungs-Postkarte und lernen Quellenkritik anhand der Frage 'Wer ist NICHT zu sehen?' — Stadt-Bias wird sichtbar",
+      "tipp_stufen": {
+        "stufe_1": "Was siehst du auf dem Foto? Wer steht da?",
+        "stufe_2": "Soldaten und Stadtbuerger am Bahnhof. Sie schauen freundlich. Aber: Wer ist NICHT auf dem Foto?",
+        "stufe_3": "Auf dem Foto sind Stadt-Mittelschicht-Buerger zu sehen. Land-Bevoelkerung und Arbeiter waren oft skeptisch und nicht am Bahnhof. Das Foto zeigt nur EINE Gruppe — nicht 'die Deutschen'."
+      }
+    },
+    {
+      "material_id": "mat-3-2",
+      "typ": "bildquelle",
+      "subtyp": "bundesarchiv-mobilmachungsfoto",
+      "titel": "Mobilmachung 1./2. August 1914 — die Frau mit den Blumen",
+      "skript_chunk": "M3 §3",
+      "tafelbild_knoten": ["K3-2"],
+      "scpl_zone_primary": "C1",
+      "scpl_zonen_alle": ["S", "C1"],
+      "didaktische_funktion": "erarbeitung",
+      "artefakt_ref": ["img-m3-02"],
+      "wikimedia_filename": "Bundesarchiv_Bild_146-1974-118-18,_Mobilmachung.jpg",
+      "lizenz": "CC-BY-SA-3.0-DE",
+      "urheber": "Bundesarchiv-Bestand 146-* (Reichs-Nachrichten-Stelle)",
+      "quelle_status": "VERIFIED",
+      "qualifizierung": "QUALIFIZIERT",
+      "perspektive_artefakt": "deutsche Mobilmachung-Selbstdarstellung (Heeresleitung-Auftragsbild)",
+      "position": 2,
+      "voraussetzung": ["mat-3-1"],
+      "sequenz_kontext": {
+        "vorher": {"id": "mat-3-1", "typ": "bildquelle", "kerninhalt": "Postkarte Luebeck 31.7.1914 — erste Augusterlebnis-Quelle"},
+        "nachher": {"id": "mat-3-5", "typ": "tagebuch", "kerninhalt": "Skeptische Zeitgenossen-Stimme als Anti-Bias zu beiden Fotos"}
+      },
+      "ueberleitung_von": {
+        "rueckbezug_inhalt_ref": "Das erste Foto aus Luebeck zeigt jubelnde Stadt-Buerger am Bahnhof",
+        "vorausblick_frage": "Aber war das ueberall in Deutschland so — oder zeigt jedes Foto denselben Ausschnitt?",
+        "kausalitaets_typ": "vertiefend",
+        "intentionsskizze": "Du hast die Augustbegeisterung in Luebeck gesehen. Schau dir jetzt ein zweites Foto an. Vergleiche: Was zeigen beide Fotos? Und was zeigen sie nicht?"
+      },
+      "perspektiv_tags_plan": ["dominant", "Macht-Ausuebung"],
+      "sensibilitaets_markierung": "propaganda_kontextualisierung_noetig",
+      "kontextualisierung_satz_pflicht": "Inszenierungs-Topos 'Frau gibt Soldat Blumen' — patriotisch-mobilisierend; Skeptiker und Trauernde wurden nicht fotografiert.",
+      "trigger_flags_meta": ["weltkrieg_grossereignis", "nationalismus"],
+      "bildfunktion": "heuristisch",
+      "analyseauftrag": true,
+      "personalisiert": false,
+      "material_charakter": "vergegenwaertigung",
+      "aktivierungscharakter": null,
+      "fachbegriffe_eingefuehrt": ["Foto-Bias", "Inszenierung"],
+      "fachbegriffe_referenziert": ["Augusterlebnis", "Quellenkritik"],
+      "kerninhalt_satz": "Bundesarchiv-Foto Mobilmachung 1./2.8.1914 — Inszenierungs-Topos 'Frau mit Blumen' wird zur zweiten Quellen-Pruefung",
+      "funktion_satz": "SuS erkennen das zweite Mobilmachungs-Foto als Inszenierungs-Topos und uebertragen die Quellenkritik-Methode auf eine zweite Quelle",
+      "tipp_stufen": {
+        "stufe_1": "Was tut die Frau? Wem gibt sie Blumen?",
+        "stufe_2": "Sie gibt einem Soldaten Blumen — typisches Inszenierungs-Bild der Mobilmachung. Aber: ist das echt oder gestellt?",
+        "stufe_3": "Das Foto kommt aus dem Bundesarchiv. Es soll zeigen: 'Die Heimat liebt unsere Soldaten'. Aber Skeptiker und Trauernde wurden nicht fotografiert."
+      }
+    },
+    {
+      "material_id": "mat-3-5",
+      "typ": "tagebuch",
+      "subtyp": "zeitgenoesssicher-tagebuch-eintrag",
+      "titel": "Skeptische Stimme 1914 — Tagebuch eines SPD-Anhaengers oder einer Bauern-Frau",
+      "skript_chunk": "M3 §3",
+      "tafelbild_knoten": ["K3-2"],
+      "scpl_zone_primary": "C1",
+      "scpl_zonen_alle": ["S", "C1"],
+      "didaktische_funktion": "erarbeitung",
+      "artefakt_ref": ["rolle-M3-1"],
+      "wikimedia_filename": null,
+      "lizenz": "TBD (PD oder zitatfaehiger Auszug aus Editionen)",
+      "urheber": "agent-material (Phase 2.1, SUB_TAGEBUCH) — Datenbasis wiki:Spirit_of_1914 Sektion 'Reception'",
+      "quelle_status": "TBD",
+      "qualifizierung": "QUALIFIZIERT",
+      "perspektive_artefakt": "skeptische Land-Bevoelkerung / Arbeiter / SPD-Anhaenger 1914",
+      "position": 3,
+      "voraussetzung": ["mat-3-1", "mat-3-2"],
+      "sequenz_kontext": {
+        "vorher": {"id": "mat-3-2", "typ": "bildquelle", "kerninhalt": "Bundesarchiv-Inszenierungs-Topos 'Frau mit Blumen'"},
+        "nachher": {"id": "mat-3-6", "typ": "bildquelle", "kerninhalt": "Burgfriedens-Medaille — Inszenierung des Reichstags-Konsens 4.8.1914"}
+      },
+      "ueberleitung_von": {
+        "rueckbezug_inhalt_ref": "Beide Fotos inszenieren patriotische Begeisterung am Bahnhof oder bei der Mobilmachung",
+        "vorausblick_frage": "Was schrieben Menschen, die eben NICHT am Bahnhof jubelten — die zu Hause blieben oder skeptisch waren?",
+        "kausalitaets_typ": "perspektivwechsel",
+        "intentionsskizze": "Bilder zeigen, was vor der Kamera stand. Aber Tagebuecher zeigen, was Menschen wirklich dachten. Lies jetzt eine Stimme, die in keinem Foto vorkam"
+      },
+      "perspektiv_tags_plan": ["nicht-dominant", "Alltag", "Kritik"],
+      "sensibilitaets_markierung": "keine",
+      "trigger_flags_meta": [],
+      "subtyp_quellentext": "rekonstruiert",
+      "m14_fiktionalitaets_kennzeichnung_pflicht": true,
+      "m14_quelle_format_beispiel": "Fiktiver Tagebucheintrag, basierend auf typischen Erfahrungsberichten von Land-Bevoelkerung und SPD-Anhaengern 1914 (Datenbasis: wiki:Spirit_of_1914, Sektion 'Reception').",
+      "wort_budget_max": 80,
+      "bildfunktion": "n/a",
+      "analyseauftrag": true,
+      "personalisiert": true,
+      "material_charakter": "besinnung_wertbezogen",
+      "aktivierungscharakter": null,
+      "fachbegriffe_eingefuehrt": [],
+      "fachbegriffe_referenziert": ["Augusterlebnis", "Quellenkritik", "Foto-Bias"],
+      "kerninhalt_satz": "Tagebuch-Stimme Land/Arbeiter/SPD 1914 — historische Anti-Bias-Stimme zur Begeisterungs-Inszenierung",
+      "funktion_satz": "SuS hoeren eine bewusst skeptische Zeitgenossen-Stimme und korrigieren das Begeisterungs-Bild durch Anti-Bias-Perspektive",
+      "tipp_stufen": {
+        "stufe_1": "Was schreibt diese Person? Freut sie sich auf den Krieg?",
+        "stufe_2": "Sie ist skeptisch oder besorgt. Sie sieht den Krieg nicht als Abenteuer.",
+        "stufe_3": "Auf dem Land und bei Arbeitern war die Stimmung oft so. Pflichtgefuehl ja, aber kein Jubel. Diese Stimmen hoert man heute weniger — Fotos zeigten meist die jubelnden Stadtbuerger."
+      }
+    },
+    {
+      "material_id": "mat-3-6",
+      "typ": "bildquelle",
+      "subtyp": "numismatik-medaille",
+      "titel": "Burgfriedens-Medaille 4. August 1914",
+      "skript_chunk": "M3 §4",
+      "tafelbild_knoten": ["K3-3"],
+      "scpl_zone_primary": "C2",
+      "scpl_zonen_alle": ["C2"],
+      "didaktische_funktion": "erarbeitung",
+      "artefakt_ref": ["img-m3-03"],
+      "wikimedia_filename": "Germany_entering_WWI_1914,_Silver_Medal,_obverse.jpg",
+      "lizenz": "CC-BY-SA-4.0",
+      "urheber": "Numismatik-Photograph (anonym, Wikipedia-Community)",
+      "quelle_status": "VERIFIED-PARTIAL",
+      "qualifizierung": "RESERVE",
+      "perspektive_artefakt": "Reichstags-Burgfrieden (offizielle Selbst-Inszenierung)",
+      "position": 4,
+      "voraussetzung": ["mat-3-5"],
+      "sequenz_kontext": {
+        "vorher": {"id": "mat-3-5", "typ": "tagebuch", "kerninhalt": "Tagebuch eines Skeptikers — Stimme der nicht-jubelnden Mehrheit"},
+        "nachher": {"id": "mat-3-3", "typ": "quellentext", "kerninhalt": "Versailles Art. 231 (1919) — Sieger-Position weist Allein-Schuld zu"}
+      },
+      "ueberleitung_von": {
+        "rueckbezug_inhalt_ref": "Land-Bevoelkerung und Arbeiter waren oft skeptisch oder ablehnend gegenueber dem Krieg",
+        "vorausblick_frage": "Wenn die Bevoelkerung gespalten war — wie reagierten dann die Politiker im Reichstag?",
+        "kausalitaets_typ": "kontrastiv",
+        "intentionsskizze": "Auf der Strasse war die Stimmung gemischt. Im Reichstag aber waren am 4. August alle einer Meinung. Sogar die SPD. Diese politische Einigkeit hatte einen Namen — und einen offiziellen Beleg"
+      },
+      "perspektiv_tags_plan": ["dominant", "Macht-Ausuebung"],
+      "sensibilitaets_markierung": "propaganda_kontextualisierung_noetig",
+      "kontextualisierung_satz_pflicht": "Die Medaille zeigt eine offizielle Selbst-Inszenierung des Reichstags — der Burgfrieden zerfiel real ab 1916/17.",
+      "trigger_flags_meta": ["nationalismus", "weltkrieg_grossereignis"],
+      "bildfunktion": "heuristisch",
+      "analyseauftrag": true,
+      "personalisiert": false,
+      "material_charakter": "vergegenwaertigung",
+      "aktivierungscharakter": null,
+      "fachbegriffe_eingefuehrt": ["Burgfrieden", "Kriegskredite"],
+      "fachbegriffe_referenziert": ["Quellenkritik", "Inszenierung"],
+      "kerninhalt_satz": "Burgfriedens-Medaille 4.8.1914 — Auftrags-Inszenierung des Reichstags-Konsens (RESERVE: PARTIAL-Verifikation)",
+      "funktion_satz": "SuS verstehen den Burgfrieden als institutionellen Konsens und erkennen die Medaille als Auftrags-Inszenierung des Reichstags",
+      "reserve_status": {
+        "begruendung": "PARTIAL-Verifikation in Phase 0.2.M (Pool-Match Spirit_of_1914, Direkt-API NICHT abgefragt)",
+        "pflicht_phase_1": "Direkt-Verifikation der Wikimedia-Datei VOR Phase-2.1-Dispatch (Q-GATE-LOG-Eintrag)",
+        "fallback_bei_fail": "C2-Erarbeitung allein durch Hefteintrag-Schueler-Text + Skript M3 §4; Material 3-6 entfaellt; DOWNGRADE-Notiz im Q-GATE-LOG"
+      },
+      "tipp_stufen": {
+        "stufe_1": "Was ist auf der Medaille zu sehen? Was steht drauf?",
+        "stufe_2": "Eine Erinnerungs-Medaille fuer den 4. August 1914 — den Tag des Burgfriedens. Alle Parteien im Reichstag stimmten den Kriegskrediten zu.",
+        "stufe_3": "Die Medaille zeigt eine offizielle Selbst-Inszenierung. In Wirklichkeit zerfiel der Burgfrieden ab 1916. Bilder wie diese zeigen, wie sich Staaten gerne sehen — nicht die Realitaet."
+      }
+    },
+    {
+      "material_id": "mat-3-3",
+      "typ": "quellentext",
+      "subtyp": "primaerquelle-vertrag-versailles",
+      "titel": "Versailles Artikel 231 (1919) — die Kriegsschuld-Klausel",
+      "skript_chunk": "M3 §5",
+      "tafelbild_knoten": ["K3-1", "K3-4"],
+      "scpl_zone_primary": "P",
+      "scpl_zonen_alle": ["P"],
+      "didaktische_funktion": "erarbeitung",
+      "artefakt_ref": ["zit-M3-1"],
+      "wikimedia_filename": null,
+      "lizenz": "Public Domain (1919 Vertragstext, Wikisource)",
+      "urheber": "Versailler Friedens-Konferenz (Wilson, Clemenceau, Lloyd George)",
+      "quelle_status": "TBD",
+      "qualifizierung": "QUALIFIZIERT",
+      "perspektive_artefakt": "Sieger-Maechte 1919 (Schuld-Zuweiser-Position)",
+      "position": 5,
+      "voraussetzung": ["mat-3-6"],
+      "sequenz_kontext": {
+        "vorher": {"id": "mat-3-6", "typ": "bildquelle", "kerninhalt": "Burgfriedens-Medaille — Anfang des Krieges 1914"},
+        "nachher": {"id": "mat-3-4", "typ": "darstellungstext", "kerninhalt": "Clark-Schlafwandler-These (2013) — heutige Forschungsposition"}
+      },
+      "ueberleitung_von": {
+        "rueckbezug_inhalt_ref": "Die Medaille feiert den Burgfrieden 4.8.1914 als Reichstags-Konsens am Anfang des Krieges",
+        "vorausblick_frage": "Vier Jahre spaeter ist der Krieg verloren — wer bekommt jetzt die Schuld zugewiesen?",
+        "kausalitaets_typ": "temporal",
+        "intentionsskizze": "Der Burgfrieden war der Anfang. Vier Jahre Krieg spaeter ist Deutschland besiegt. Im Vertrag von Versailles steht 1919 ein wichtiger Satz — Artikel 231"
+      },
+      "perspektiv_tags_plan": ["dominant", "Macht-Ausuebung"],
+      "sensibilitaets_markierung": "mythos_korrektur_noetig",
+      "korrektur_satz_pflicht_lehrkraft_only": "Sprengkraft der Kriegsschuld-Klausel fuer Weimarer Republik (Kriegsschuld-Luege als Propaganda-Topos der NSDAP) BLEIBT IM LEHRKRAFT-Block — POLICY_TRIGGER_SICHTBARKEIT V13.",
+      "korrektur_mechanik_schueler_seite": "Korrektur erfolgt didaktisch ueber mat-3-4 (Clark-Gegenposition) — Multiperspektivitaet als Korrektur-Mechanik (kein Antwort-Vorgriff)",
+      "trigger_flags_meta": ["weltkrieg_grossereignis"],
+      "subtyp_quellentext": "primaer",
+      "m14_aufbereitung": "gekuerzt-vereinfacht",
+      "wort_budget_max": 60,
+      "bildfunktion": "n/a",
+      "analyseauftrag": true,
+      "personalisiert": false,
+      "material_charakter": "besinnung_sachbezogen",
+      "aktivierungscharakter": null,
+      "fachbegriffe_eingefuehrt": ["Kriegsschuldfrage", "Kriegsschuld-Klausel"],
+      "fachbegriffe_referenziert": ["Burgfrieden", "Quellenkritik"],
+      "kerninhalt_satz": "Versailles Art. 231 (1919) Original-Auszug — Sieger-Position weist Allein-Schuld an Deutschland und Verbuendete zu",
+      "funktion_satz": "SuS lesen die Originalformulierung Versailles Art. 231 und identifizieren die Allein-Schuld-Zuweisung 1919 als historische Sieger-Position",
+      "tipp_stufen": {
+        "stufe_1": "Lies den Artikel 231. Wer hat das geschrieben? Wann?",
+        "stufe_2": "Die Sieger-Maechte (USA, Frankreich, Grossbritannien) schrieben das 1919 — fuenf Jahre nach Kriegsbeginn. Sie geben Deutschland und seinen Verbuendeten die Schuld.",
+        "stufe_3": "Das Wort 'Schuld' steht nicht direkt drin. Aber Deutschland sollte fuer alle Schaeden zahlen. Diese Stelle wurde 'Kriegsschuldklausel' genannt — sie war eine zentrale politische Belastung der Weimarer Republik."
+      }
+    },
+    {
+      "material_id": "mat-3-4",
+      "typ": "darstellungstext",
+      "subtyp": "forschungs-paraphrase-r7",
+      "titel": "Christopher Clark — Die Schlafwandler (2013)",
+      "skript_chunk": "M3 §6",
+      "tafelbild_knoten": ["K3-1", "K3-5"],
+      "scpl_zone_primary": "L",
+      "scpl_zonen_alle": ["L"],
+      "didaktische_funktion": "sicherung",
+      "artefakt_ref": [],
+      "wikimedia_filename": null,
+      "lizenz": "Eigenproduktion (Paraphrase Clark, Datenbasis Wikipedia)",
+      "urheber": "agent-material (Phase 2.1, SUB_DARSTELLUNGSTEXT)",
+      "quelle_status": "TBD",
+      "qualifizierung": "QUALIFIZIERT",
+      "perspektive_artefakt": "heutige Forschung (Christopher Clark, Schlafwandler-These 2013)",
+      "position": 6,
+      "voraussetzung": ["mat-3-3"],
+      "sequenz_kontext": {
+        "vorher": {"id": "mat-3-3", "typ": "quellentext", "kerninhalt": "Versailles Art. 231 — historische Sieger-Position 1919"},
+        "nachher": null
+      },
+      "ueberleitung_von": {
+        "rueckbezug_inhalt_ref": "Versailles Artikel 231 weist Deutschland und seinen Verbuendeten 1919 die Allein-Schuld zu",
+        "vorausblick_frage": "Aber stimmt das aus heutiger Forschungs-Sicht — oder sieht die Wissenschaft das ueber 100 Jahre spaeter anders?",
+        "kausalitaets_typ": "kontrastiv",
+        "intentionsskizze": "Die Sieger schrieben 1919 die Schuld auf. Aber Geschichte wird neu geschrieben. Heute sagt der Forscher Christopher Clark etwas anderes. Hoer dir seine These an"
+      },
+      "perspektiv_tags_plan": ["Kritik", "nicht-dominant"],
+      "sensibilitaets_markierung": "keine",
+      "trigger_flags_meta": [],
+      "wort_budget_max": 110,
+      "kernsatz_max": 25,
+      "bildfunktion": "n/a",
+      "analyseauftrag": false,
+      "personalisiert": true,
+      "material_charakter": "besinnung_sachbezogen",
+      "aktivierungscharakter": null,
+      "fachbegriffe_eingefuehrt": ["Schlafwandler-These"],
+      "fachbegriffe_referenziert": ["Kriegsschuldfrage", "Kriegsschuld-Klausel"],
+      "kerninhalt_satz": "Christopher Clark 'Die Schlafwandler' (2013) — heutige Forschung: keine Allein-Schuld, multi-kausale Mit-Verantwortung von 5 Maechten",
+      "funktion_satz": "SuS lernen Clarks Schlafwandler-These als heutige Forschungsposition und stellen sie der Versailles-Position gegenueber",
+      "tipp_stufen": {
+        "stufe_1": "Was sagt Christopher Clark heute ueber die Schuld?",
+        "stufe_2": "Clark sagt: Es gab keine Allein-Schuld. Mehrere Maechte sind gemeinsam in den Krieg hineingestolpert.",
+        "stufe_3": "Sein Buch heisst 'Die Schlafwandler' (2013). Schlafwandler sehen aus, als wuerden sie wachen, aber sie wissen nicht, was sie tun. Clark meint: So gingen die Regierungen 1914 in den Krieg."
+      }
+    }
+  ],
+  "perspektiven_abdeckungsmatrix": {
+    "P1_Begeisterte_Stadtbuerger_1914": {
+      "anzahl": 2,
+      "materialien": ["mat-3-1", "mat-3-2"]
+    },
+    "P2_Skeptische_Land_Arbeiter_SPD_1914": {
+      "anzahl": 1,
+      "materialien": ["mat-3-5"]
+    },
+    "P3_Versailler_Sieger_1919": {
+      "anzahl": 1,
+      "materialien": ["mat-3-3"]
+    },
+    "P4_Heutige_Forschung_Clark_2013": {
+      "anzahl": 1,
+      "materialien": ["mat-3-4"]
+    },
+    "P5_Reichstags_Inszenierung_Burgfrieden": {
+      "anzahl": 1,
+      "materialien": ["mat-3-6"]
+    },
+    "abdeckung_min_3_pflicht": "PASS (5/5 Perspektiven vertreten)"
+  },
+  "stoffdichte": {
+    "anzahl": 6,
+    "korridor_4_7": "PASS",
+    "typenvielfalt": 4,
+    "typen": ["bildquelle", "tagebuch", "quellentext", "darstellungstext"]
+  },
+  "medienvielfalt": {
+    "textbasiert_anzahl": 3,
+    "textbasiert_ids": ["mat-3-3", "mat-3-4", "mat-3-5"],
+    "nicht_textbasiert_anzahl": 3,
+    "nicht_textbasiert_ids": ["mat-3-1", "mat-3-2", "mat-3-6"],
+    "ratio_pruefung": "PASS (3:3 — genau auf max-50%-Schwelle)"
+  },
+  "einstieg": {
+    "typ": "narrativ_visueller_anker",
+    "text": "In Mappe 2 hast du gelernt: Ausloeser und Ursache sind nicht das Gleiche. Jetzt liegt Mappe 3 vor dir. Im Deckel: zwei Fotos und eine Medaille. Auf der Medaille steht '4. August 1914'. Was war an diesem Tag los?",
+    "tafelbild_voraussetzung": ["M2: Ursache, Ausloeser, Buendnisfall, Mobilmachung"],
+    "aktivierungs_material": "mat-3-1"
+  },
+  "sicherung": {
+    "typ": "zusammenfassung_reflexion",
+    "text_quellverweis": "HEFTEINTRAG_M3.md B.3 + B.5 (uebernommen, nicht neu generiert)",
+    "merksatz": "Die Augustbegeisterung 1914 war real, aber nicht ueberall. Die Frage 'Wer ist schuld?' hat heute keine einfache Antwort mehr — Versailles 1919 sagt: Deutschland allein. Clark 2013 sagt: mehrere Maechte gemeinsam.",
+    "ueberleitung_M4": "Die Maenner zogen los — was passierte, als sie ankamen?",
+    "reflexionsimpuls": "Welche Position findest du ueberzeugender — Versailles 1919 oder Clark 2013, und welche Argumente hast du?"
+  },
+  "q_gate_self_check": {
+    "scpl_zone_abdeckung_100": "PASS",
+    "scpl_uebergaenge_belegt": "PASS",
+    "mindest_materialien_typenmix": "PASS",
+    "stoffdichte_korridor": "PASS",
+    "medienvielfalt_ratio": "PASS",
+    "konflikttyp_flag": "PASS",
+    "perspektiven_abdeckung_min_3": "PASS (5/5)",
+    "f0b_m4_material_perspektiv_01_min_2_nicht_dominant": "PASS",
+    "f0b_m9_perspektiv_tags_geplant": "PASS",
+    "f0b_m6_terminologie_01": "N/A (nicht aktiv fuer M3)",
+    "sensibilitaets_markierung_pro_material": "PASS",
+    "quellentext_subtyp_klassifikation": "PASS",
+    "afb_korridor_II_III": "PASS",
+    "differenzierung_3_stufen_tipps_aktiv": "PASS",
+    "augusterlebnis_idealisierung_verbot": "PASS",
+    "kontroversitaet_beutelsbach": "PASS",
+    "sequenzplan_S1_S17": "PASS",
+    "niedrigschwelliger_einstieg_R3_S1": "PASS",
+    "identifikationsfiguren_R3_S2": "PASS",
+    "visuelle_klarheit_R3_S3": "PASS",
+    "emotionale_ansprache_R3_S4": "PASS",
+    "reserve_status_mat_3_6_dokumentiert": "PASS",
+    "trigger_sichtbarkeit_V13": "PASS",
+    "gate_urteil": "PASS"
+  },
+  "hand_off_phase_2_1": {
+    "dispatch_reihenfolge": [
+      {"position": 1, "material_id": "mat-3-1", "subagent": "SUB_MATERIAL_BILDQUELLE.md"},
+      {"position": 2, "material_id": "mat-3-2", "subagent": "SUB_MATERIAL_BILDQUELLE.md"},
+      {"position": 3, "material_id": "mat-3-5", "subagent": "SUB_MATERIAL_TAGEBUCH.md"},
+      {"position": 4, "material_id": "mat-3-6", "subagent": "SUB_MATERIAL_BILDQUELLE.md", "vorbedingung": "Direkt-Verifikation img-m3-03 in Phase 1 nachgeholt"},
+      {"position": 5, "material_id": "mat-3-3", "subagent": "SUB_MATERIAL_QUELLENTEXT.md"},
+      {"position": 6, "material_id": "mat-3-4", "subagent": "SUB_MATERIAL_DARSTELLUNGSTEXT.md"}
+    ],
+    "globale_constraints": [
+      "Sprachniveau-R7-Priming-Include verbindlich (alle Materialien)",
+      "Post-Gen-Metrik-Gate scripts/sprachniveau-gate.js (alle Materialien)",
+      "Schema-Strict-Validation gegen material-output-schema.json (alle Materialien, KEIN Strip)",
+      "trigger_flags ausschliesslich in _meta, NIE im Schueler-Text (V13)",
+      "Quellenangaben als <cite>-Element in Material-HTML (L6, kein separates Array)",
+      "perspektiv_tags Pflichtfeld, Enum-Constraint (F0b-M9)",
+      "M14-Fiktionalitaets-Kennzeichnung verbindlich bei mat-3-3 + mat-3-5"
+    ],
+    "spezial_constraint_kontroversitaet": "mat-3-3 + mat-3-4 bilden den Kontroversitaets-Pol P vs. L. Im Dispatch-Prompt EXPLIZIT auf Gegenposition referenzieren (sequenz_kontext). Keine vorzeitige Synthese, kein Antwort-Vorgriff (Beutelsbach-Kontroversitaet).",
+    "spezial_constraint_reserve_mat_3_6": "VOR Dispatch in Phase 2.1: Direkt-Verifikation der Wikimedia-Datei Germany_entering_WWI_1914,_Silver_Medal,_obverse.jpg. Bei FAIL: Material 3-6 entfaellt; C2-Erarbeitung allein durch Hefteintrag-Schueler-Text + Skript M3 §4."
+  },
+  "naechste_phase": "Phase 1.5 (User-Validierung Blueprint M3) -> bei PASS: Phase 2.1 (agent-material-dispatcher)"
+}

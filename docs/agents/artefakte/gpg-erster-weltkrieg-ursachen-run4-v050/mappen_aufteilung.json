@@ -1,0 +1,142 @@
+{
+  "$comment_schema_status": "Plugin v0.5.0 hat KEIN dediziertes mappen_aufteilung.schema.json (verifiziert: nur 4 Phase-0-Schemas in CHANGELOG v0.5.0 dokumentiert: didaktik_rahmen + inhalts_briefing + medien_katalog + artefakt_inventar). Mappen-Struktur ist Teilmenge von didaktik_rahmen.schema.json (mappen[]-Array). Diese Datei ist ein konsumenten-freundlicher Slim-Cut fuer Phase-0.2/0.3-Agenten. Felder spiegeln didaktik_rahmen mappen[] + ke_matrix + schwierigkeitskurve.",
+  "game_id": "gpg-erster-weltkrieg-ursachen-run4-v050",
+  "run_id": "run-4-2026-04-26",
+  "erstellt_am": "2026-04-26",
+  "schulart": "Mittelschule Bayern",
+  "jahrgangsstufe": "7c",
+  "fach": "GPG",
+  "mappen_anzahl": 4,
+  "mappen": [
+    {
+      "mappe_id": "M1",
+      "reihenfolge": 1,
+      "titel": "Pulverfass Europa",
+      "kerninhalt": "Die europaeischen Grossmaechte um 1900 stehen sich in zwei Buendnis-Bloecken gegenueber (Dreibund: Deutschland, Oesterreich-Ungarn, Italien — Triple-Entente: Frankreich, Russland, Grossbritannien) und konkurrieren weltweit um Kolonien und um die Flottenstaerke.",
+      "zentrale_erkenntnis": "Schon vor 1914 war Europa wie ein Pulverfass: Buendnisse, Kolonialstreit und Wettruesten bauten ueber Jahrzehnte Spannungen auf.",
+      "ke_anker_haupt": ["GPG7_LB2_K_05"],
+      "ke_anker_neben": ["GPG7_LB3_K_03"],
+      "gegenstandsbereich": "Raeume + Zeit und Wandel",
+      "afb_schwerpunkt": "I-II",
+      "bloom_korridor": "Verstehen → Anwenden",
+      "konkreter_anker_h5": "Marokko-Krise 1905/1911 (Tanger-Besuch Wilhelms II.) ODER Britisch-deutscher Flottenwettlauf 1898-1912 (HMS Dreadnought 1906)",
+      "stoffdichte": {
+        "anzahl_kernelemente": 4,
+        "zielkorridor": "3-5",
+        "im_zielkorridor": true,
+        "kernelemente_liste": ["Dreibund", "Triple-Entente", "Kolonial-Wettlauf", "Flottenwettruesten"]
+      },
+      "teilziel_id": "TZ1",
+      "pflicht_begriffe": ["Buendnis", "Triple-Entente", "Dreibund", "Imperialismus", "Kolonie", "Flottenwettruesten"],
+      "artikulation": {
+        "einstieg": "Karten-Raetsel: Europa-Karte 1914, Buendnisse einfaerben",
+        "erarbeitung": "Tabelle: 6 Maechte → 2 Bloecke + Spannungsfelder zuordnen",
+        "sicherung": "Merksatz 'Pulverfass Europa' + Begriff 'Buendnis-System'"
+      }
+    },
+    {
+      "mappe_id": "M2",
+      "reihenfolge": 2,
+      "titel": "Sarajevo 1914 — Ein Schuss, eine Welt im Krieg",
+      "kerninhalt": "Am 28. Juni 1914 erschiesst der Serbe Gavrilo Princip in Sarajevo den oesterreichisch-ungarischen Thronfolger Erzherzog Franz Ferdinand. Innerhalb von fuenf Wochen (Julikrise) erklaeren sich die europaeischen Grossmaechte ueber das Buendnissystem gegenseitig den Krieg.",
+      "zentrale_erkenntnis": "Aus dem Attentat in Sarajevo wurde durch das Buendnissystem in fuenf Wochen ein Weltkrieg — der einzelne Schuss war der Ausloeser, nicht die Ursache.",
+      "ke_anker_haupt": ["GPG7_LB2_K_06"],
+      "ke_anker_neben": ["GPG7_LB2_K_05", "GPG7_LB3_K_03"],
+      "gegenstandsbereich": "Zeit und Wandel + Gesellschaft und Politik",
+      "afb_schwerpunkt": "II",
+      "bloom_korridor": "Anwenden → Analysieren",
+      "konkreter_anker_h5": "28. Juni 1914 / Sarajevo / Princip + Franz Ferdinand. Kettenreaktion: 28.07. AT-UN→Serbien, 01.08. DT→Russland, 03.08. DT→Frankreich, 04.08. GB→DT.",
+      "stoffdichte": {
+        "anzahl_kernelemente": 5,
+        "zielkorridor": "3-5",
+        "im_zielkorridor": true,
+        "kernelemente_liste": ["Attentat-Hergang", "Juli-Ultimatum", "Buendnisfall-Mechanik", "Mobilmachungs-Reihenfolge", "Begriff Ausloeser-vs-Ursache"]
+      },
+      "teilziel_id": "TZ2",
+      "pflicht_begriffe": ["Attentat", "Sarajevo", "Julikrise", "Buendnisfall", "Mobilmachung", "Ausloeser", "Ursache"],
+      "artikulation": {
+        "einstieg": "Schluessel-Raetsel: Datum 28.06.1914 als Code",
+        "erarbeitung": "Zeitleiste Julikrise rekonstruieren (5 Karten in richtige Reihenfolge)",
+        "sicherung": "Definition Ursache/Ausloeser nebeneinander aufschreiben"
+      }
+    },
+    {
+      "mappe_id": "M3",
+      "reihenfolge": 3,
+      "titel": "Augustfieber — Wer schuld ist und wer jubelt",
+      "kerninhalt": "Im August 1914 ziehen viele junge Maenner mit Begeisterung in den Krieg ('Augusterlebnis'); zugleich streiten Politiker und Historiker bis heute um die Frage, wer den Ersten Weltkrieg ausgeloest hat (Kriegsschuldfrage). Aktuelle Forschung (Christopher Clark, 'Die Schlafwandler' 2013) sieht keine Allein-Schuld Deutschlands.",
+      "zentrale_erkenntnis": "Die Kriegsbegeisterung von 1914 war real, aber nicht ueberall — und die Frage 'Wer ist schuld?' hat heute keine einfache Antwort mehr.",
+      "ke_anker_haupt": ["GPG7_LB3_K_03"],
+      "ke_anker_neben": ["GPG7_LB2_K_05", "GPG7_LB2_K_06"],
+      "gegenstandsbereich": "Gesellschaft und Politik",
+      "afb_schwerpunkt": "II-III",
+      "bloom_korridor": "Analysieren → Beurteilen",
+      "konkreter_anker_h5": "Foto 'Jubelnde Menge auf dem Odeonsplatz Muenchen, 02.08.1914' (mit Adolf Hitler im Bild) ODER Berlin Lustgarten 01.08.1914 — datierbares Massenphaenomen mit Quellenkritik (Foto-Bias).",
+      "stoffdichte": {
+        "anzahl_kernelemente": 4,
+        "zielkorridor": "3-5",
+        "im_zielkorridor": true,
+        "kernelemente_liste": ["Augusterlebnis-Phaenomen", "Burgfrieden-Politik", "Kriegsschuld-Artikel-231 als Ausblick", "Forschungsstand Clark"]
+      },
+      "teilziel_id": "TZ3",
+      "pflicht_begriffe": ["Augustbegeisterung", "Burgfrieden", "Kriegsschuld", "Versailles", "Quellenkritik"],
+      "artikulation": {
+        "einstieg": "Quellen-Vergleichs-Raetsel: 2 Foto-Quellen + 1 Forschungs-Text",
+        "erarbeitung": "Diskussion in Kleingruppen: 'Wer ist schuld?' — 4 Akteure abwaegen",
+        "sicherung": "Position aufschreiben + Begruendung mit Forschungsbezug"
+      }
+    },
+    {
+      "mappe_id": "M4",
+      "reihenfolge": 4,
+      "titel": "Marne 1914 — Das Ende des kurzen Krieges",
+      "kerninhalt": "Der deutsche Schlieffen-Plan sah einen schnellen Sieg ueber Frankreich in sechs Wochen vor — durchs neutrale Belgien. An der Marne (5.-12. September 1914) stoppen franzoesische und britische Truppen den deutschen Vormarsch.",
+      "zentrale_erkenntnis": "An der Marne im September 1914 endete der 'kurze Krieg' und der Stellungskrieg begann.",
+      "ke_anker_haupt": ["GPG7_LB2_K_07"],
+      "ke_anker_neben": [],
+      "gegenstandsbereich": "Zeit und Wandel + Lebenswelt",
+      "afb_schwerpunkt": "II",
+      "bloom_korridor": "Anwenden → Analysieren",
+      "konkreter_anker_h5": "5.-12. September 1914 / Marne (Frankreich nordoestlich Paris) / General Joffre (FR) + General von Moltke (DT). Konkretion: Pariser Taxis transportieren Soldaten an die Front (Taxi-Mythos der Marne).",
+      "stoffdichte": {
+        "anzahl_kernelemente": 4,
+        "zielkorridor": "3-5",
+        "im_zielkorridor": true,
+        "kernelemente_liste": ["Schlieffen-Plan-Idee", "Belgien-Verletzung", "Marne-Schlacht", "Beginn Stellungskrieg"]
+      },
+      "teilziel_id": "TZ4",
+      "pflicht_begriffe": ["Schlieffen-Plan", "Marne", "Stellungskrieg", "Wendepunkt"],
+      "artikulation": {
+        "einstieg": "Karten-Skizzen-Raetsel: Schlieffen-Plan-Pfeile vs. tatsaechlicher Verlauf",
+        "erarbeitung": "Vergleich Plan vs. Realitaet — was ging schief?",
+        "sicherung": "Begriff 'Stellungskrieg' + Ueberleitung 'und nun 4 Jahre …'"
+      }
+    }
+  ],
+  "ke_matrix": [
+    {"ke_id": "GPG7_LB2_K_05", "mappe_id": "M1", "rolle": "haupt"},
+    {"ke_id": "GPG7_LB2_K_05", "mappe_id": "M2", "rolle": "neben"},
+    {"ke_id": "GPG7_LB2_K_05", "mappe_id": "M3", "rolle": "neben"},
+    {"ke_id": "GPG7_LB2_K_06", "mappe_id": "M2", "rolle": "haupt"},
+    {"ke_id": "GPG7_LB2_K_06", "mappe_id": "M3", "rolle": "neben"},
+    {"ke_id": "GPG7_LB3_K_03", "mappe_id": "M1", "rolle": "neben"},
+    {"ke_id": "GPG7_LB3_K_03", "mappe_id": "M2", "rolle": "neben"},
+    {"ke_id": "GPG7_LB3_K_03", "mappe_id": "M3", "rolle": "haupt"},
+    {"ke_id": "GPG7_LB2_K_07", "mappe_id": "M4", "rolle": "haupt"}
+  ],
+  "konsistenz_checks": {
+    "jede_ke_hat_haupt": true,
+    "jede_mappe_hat_ke": true,
+    "mappen_anzahl_match": true,
+    "header_anzahl_eq_array_len": true,
+    "h5_anker_pro_mappe": true,
+    "stoffdichte_alle_im_korridor": true
+  },
+  "_meta": {
+    "created_at": "2026-04-26",
+    "schema_version": "implicit (Teilmenge didaktik_rahmen_v1)",
+    "vertrag_version": "VERTRAG_PHASE_0-1_DIDAKTIK v1.2 + v0.5.0 QD-SCHULART",
+    "agent": "agent-didaktik",
+    "schwester_artefakt": "didaktisches_konzept.json"
+  }
+}

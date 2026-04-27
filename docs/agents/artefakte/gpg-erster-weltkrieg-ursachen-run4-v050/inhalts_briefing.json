@@ -1,0 +1,533 @@
+{
+  "schema_version": "1.0",
+  "vertrag": "VERTRAG_PHASE_0-2_INHALT v1.6 + v0.5.0 Phase B.1 (F-PB-37/38/41)",
+  "game_id": "gpg-erster-weltkrieg-ursachen-run4-v050",
+  "run_id": "run-4-2026-04-26",
+  "erstellt_am": "2026-04-26",
+  "agent": "agent-inhalt",
+  "_meta": {
+    "trigger_flags": [
+      "konflikt",
+      "gewalt_attentat",
+      "nationalismus",
+      "kolonialismus",
+      "macht_asymmetrie_kolonien",
+      "weltkrieg_grossereignis"
+    ],
+    "trigger_handling_hinweis": "QG-06 Multiperspektiv-Pflicht aktiv (mind. 4 Konfliktperspektiven pro Mappe wo angemessen). QG-07 Kolonial-Terminologie-Screen aktiv fuer M1 (Imperialismus / Scramble for Africa) — keine 'Eingeborene', 'Entdeckung', 'zivilisatorische Mission'. Sarajevo-Attentat in M2 ohne grafische Gewaltdarstellung (Tatortskizze + Augenzeugenbericht statt Foto). Augusterlebnis in M3 nicht idealisieren — Quellenkritik Foto-Bias mitliefern.",
+    "data_source_legend": "verified = MCP Wikipedia EN dual-channel (Kanal 2 = WebFetch-faehig); webfetch = WebFetch Live-Quelle (LeMO/dhm.de); legacy = LLM-Memory degraded (E-D3 wuerde Eskalation triggern, hier NICHT verwendet — alle Fakten Wikipedia/LeMO-belegt).",
+    "e_d3_status": "NICHT_AKTIV — alle Fakten aus MCP-Wikipedia (Kanal verified) oder LeMO-WebFetch (webfetch). Keine reine LLM-Memory-Aussage in schluessel_fakten.",
+    "mappen_anzahl": 4,
+    "f_pb_addressed": ["F-PB-37", "F-PB-38", "F-PB-41", "F-PB-44", "F-PB-45"],
+    "schema_extension_post_audit": []
+  },
+  "mappen": [
+    {
+      "mappe_id": "M1",
+      "titel": "Pulverfass Europa",
+      "kerninhalt": [
+        "Um 1900 stehen sich die europaeischen Grossmaechte in zwei Buendnis-Bloecken gegenueber.",
+        "Im Dreibund (1882) sind das Deutsche Reich, Oesterreich-Ungarn und Italien verbunden.",
+        "In der Triple Entente (1907) sind Frankreich, Russland und Grossbritannien lose verbunden.",
+        "Die Maechte streiten weltweit um Kolonien (vor allem in Afrika) und um die Flotten-Staerke.",
+        "Zwei grosse Streitfaelle vor dem Krieg sind die Marokko-Krise (1905 und 1911) und der deutsch-britische Flotten-Wettlauf (1898 bis 1912)."
+      ],
+      "schluessel_fakten": [
+        {
+          "fakt": "Der Dreibund war ein Verteidigungs-Buendnis zwischen dem Deutschen Reich, Oesterreich-Ungarn und Italien. Er wurde am 20. Mai 1882 geschlossen.",
+          "data_source": "wiki:Triple_Alliance_(1882)",
+          "reliability": "verified",
+          "quellen_hash": "wiki-triple-alliance-2026-04-26",
+          "event_date": "1882-05-20"
+        },
+        {
+          "fakt": "Die Triple Entente war eine lose Absprache zwischen Russland, Frankreich und Grossbritannien. Sie ging zurueck auf die franzoesisch-russische Allianz von 1894, die Entente Cordiale 1904 und die britisch-russische Verstaendigung 1907.",
+          "data_source": "wiki:Triple_Entente",
+          "reliability": "verified",
+          "quellen_hash": "wiki-triple-entente-2026-04-26",
+          "event_date": "1907"
+        },
+        {
+          "fakt": "Die Erste Marokko-Krise (Tanger-Krise) dauerte vom 31. Maerz 1905 bis zum 7. April 1906. Wilhelm II. landete in Tanger und stellte die franzoesische Herrschaft ueber Marokko in Frage.",
+          "data_source": "wiki:First_Moroccan_Crisis",
+          "reliability": "verified",
+          "quellen_hash": "wiki-first-morocco-2026-04-26",
+          "event_date": "1905-03-31/1906-04-07"
+        },
+        {
+          "fakt": "Die Zweite Marokko-Krise (Agadir-Krise) wurde im Juli 1911 durch die Entsendung des deutschen Kanonen-Boots SMS Panther nach Agadir ausgeloest. Sie wurde am 4. November 1911 mit einem Vertrag beigelegt: Frankreich erhielt Marokko, Deutschland einen Teil von Franzoesisch-Kongo.",
+          "data_source": "wiki:Agadir_Crisis",
+          "reliability": "verified",
+          "quellen_hash": "wiki-agadir-2026-04-26",
+          "event_date": "1911-07/1911-11-04"
+        },
+        {
+          "fakt": "Der deutsch-britische Flotten-Wettlauf begann 1897 mit Admiral Tirpitz' Plan, eine deutsche Schlachtflotte aufzubauen. Der Bau der HMS Dreadnought 1906 markiert eine technische Zaesur und beschleunigte das Wettruesten.",
+          "data_source": "wiki:Anglo-German_naval_arms_race",
+          "reliability": "verified",
+          "quellen_hash": "wiki-naval-race-2026-04-26",
+          "event_date": "1897/1912"
+        },
+        {
+          "fakt": "Die HMS Dreadnought wurde 1906 von der Royal Navy in Dienst gestellt und revolutionierte den Schlachtschiffbau (einheitliche Hauptbewaffnung 12 Zoll, Dampfturbine, 21 Knoten).",
+          "data_source": "wiki:HMS_Dreadnought_(1906)",
+          "reliability": "verified",
+          "quellen_hash": "wiki-dreadnought-2026-04-26",
+          "event_date": "1906"
+        },
+        {
+          "fakt": "Der Wettlauf um Afrika ('Scramble for Africa') war die Eroberung und Aufteilung Afrikas durch sieben westeuropaeische Maechte (Belgien, Frankreich, Deutschland, Italien, Portugal, Spanien, Grossbritannien) im spaeten 19. und fruehen 20. Jahrhundert. Die Berliner Konferenz 1884 regelte die Aufteilung.",
+          "data_source": "wiki:Scramble_for_Africa",
+          "reliability": "verified",
+          "quellen_hash": "wiki-scramble-2026-04-26",
+          "event_date": "1884"
+        },
+        {
+          "fakt": "Wilhelm II. war von 1888 bis zu seiner Abdankung 1918 deutscher Kaiser. Er entliess Bismarck 1890 und begann einen 'Neuen Kurs' der Welt-Macht-Politik mit Flotten-Aufbau und Kolonial-Erwerb.",
+          "data_source": "wiki:Wilhelm_II,_German_Emperor",
+          "reliability": "verified",
+          "quellen_hash": "wiki-wilhelm-ii-2026-04-26",
+          "event_date": "1888/1918"
+        }
+      ],
+      "perspektiven_kandidaten": [
+        {"perspektive": "Deutsche Reichsfuehrung (Wilhelm II., Tirpitz)", "rolle": "Aktiv-Treiber Flottenruestung und Welt-Politik"},
+        {"perspektive": "Britische Reichsregierung (Asquith, Grey)", "rolle": "Reaktiv-Verteidiger Seeherrschaft, Annaeherung an Frankreich nach Agadir"},
+        {"perspektive": "Franzoesische Republik (Clemenceau, Delcasse)", "rolle": "Revanchismus nach 1871, Kolonial-Konkurrent Marokko"},
+        {"perspektive": "Russisches Zarenreich", "rolle": "Schutzmacht Serbiens, Balkan-Interesse, Flotten-Konkurrent"},
+        {"perspektive": "Kolonisierte Bevoelkerung Afrikas", "rolle": "Objekt der Aufteilung — perspektivische Stimmen rar in Sek-Quellen, aber multiperspektiv beruecksichtigen (QG-07)"}
+      ],
+      "material_kandidaten": [
+        {
+          "typ": "karte",
+          "inhalt": "Europa-Karte 1914 mit Buendnis-Bloecken Dreibund (gelb) und Triple Entente (blau) sowie neutralen Staaten (Belgien, Niederlande, Schweiz, Skandinavien) — vorbereitende Pflicht-Karte fuer Phase 1 Kartenraetsel TZ1.",
+          "quelle_kandidat": "Eigenkomposition auf Basis Wikimedia Commons 'Map Europe alliances 1914' (PD); Datenbasis: wiki:Triple_Alliance_(1882) + wiki:Triple_Entente"
+        },
+        {
+          "typ": "karte",
+          "inhalt": "Welt-Karte um 1914 mit Kolonialgebieten der europaeischen Grossmaechte in Afrika (Schwerpunkt Marokko, Deutsch-Suedwestafrika, Britisch-/Franzoesisch-Westafrika).",
+          "quelle_kandidat": "wiki:Scramble_for_Africa Sektion 'Colonial division'"
+        },
+        {
+          "typ": "bildquelle",
+          "inhalt": "Foto HMS Dreadnought 1906 — das erste 'All-big-gun'-Schlachtschiff als Symbol fuer das Flottenwettruesten.",
+          "quelle_kandidat": "Wikimedia Commons File:HMS_Dreadnought_1906_H61017.jpg (PD-USNavy); Beleg wiki:HMS_Dreadnought_(1906)"
+        },
+        {
+          "typ": "darstellungstext",
+          "inhalt": "R7-altersgerechter Erklaer-Text 'Was ist ein Buendnis-System?' (max. 120 Woerter, du-Form, mit Komposita-Erstgebrauch 'Buendnis' + 'System').",
+          "quelle_kandidat": "Eigenkomposition; Datenbasis: wiki:Triple_Alliance_(1882) + wiki:Triple_Entente + wiki:Causes_of_World_War_I"
+        },
+        {
+          "typ": "statistik",
+          "inhalt": "Tabelle: Flottenstaerke 1906 vs. 1914 (Anzahl Dreadnoughts Royal Navy / Kaiserliche Marine) — illustriert das Wettruesten quantitativ.",
+          "quelle_kandidat": "wiki:Anglo-German_naval_arms_race Sektion 'Naval bills'"
+        }
+      ],
+      "ke_anker": ["GPG7_LB2_K_05"],
+      "sprachniveau_marker": {
+        "fachbegriffe_einfuehren": ["Buendnis", "Dreibund", "Triple Entente", "Imperialismus", "Kolonie", "Flottenwettruesten", "Pulverfass (Metapher)"],
+        "satzlaenge_max_woerter": 15,
+        "kompositum_warnungen": [
+          "'Flottenwettruesten' = 3 Glieder (Flotte + Wett + Ruesten) → grenzwertig, beim Erstgebrauch zerlegen: 'Wettruesten zur See' oder 'Wett-Bau von Kriegsschiffen'",
+          "'Buendnissystem' = 2 Glieder, beim Erstgebrauch erklaeren als 'mehrere Buendnisse zusammen'"
+        ],
+        "anrede": "Du-Form (Spurensucher-Narrativ, direkte Anrede)"
+      },
+      "kontroversitaets_hinweise": [
+        "Die Frage 'Wer hat Schuld?' bleibt fuer M1 OFFEN. M1 zeigt nur Strukturen (Buendnisse, Wettruesten, Kolonialstreit). Wertung erst in M3.",
+        "Kolonial-Wettlauf nicht als 'zivilisatorische Mission' darstellen (QG-07 Sprach-Sieb): keine 'Erschliessung', keine 'Eingeborenen', sondern 'Aufteilung Afrikas durch europaeische Grossmaechte', 'kolonisierte Bevoelkerung'."
+      ]
+    },
+    {
+      "mappe_id": "M2",
+      "titel": "Sarajevo 1914 — Ein Schuss, eine Welt im Krieg",
+      "kerninhalt": [
+        "Am 28. Juni 1914 erschoss Gavrilo Princip in Sarajevo den oesterreichisch-ungarischen Thronfolger Franz Ferdinand und seine Frau Sophie.",
+        "Princip war 19 Jahre alt, bosnisch-serbischer Schueler und Mitglied der Bewegung 'Junges Bosnien'.",
+        "Oesterreich-Ungarn stellte Serbien am 23. Juli ein Ultimatum, dem Russland das deutsche Versprechen ('Blanko-Scheck') gegenuebersah.",
+        "Innerhalb von fuenf Wochen erklaerten sich die Grossmaechte gegenseitig den Krieg: 28.07. AT-UN→Serbien, 01.08. DT→Russland, 03.08. DT→Frankreich, 04.08. GB→DT (wegen Belgien).",
+        "Der einzelne Schuss war der Ausloeser, nicht die Ursache — die strukturellen Ursachen lagen in M1 (Buendnisse, Wettruesten, Kolonialstreit)."
+      ],
+      "schluessel_fakten": [
+        {
+          "fakt": "Am 28. Juni 1914 erschoss Gavrilo Princip in Sarajevo Erzherzog Franz Ferdinand und seine Frau Sophie aus naechster Naehe in deren Auto.",
+          "data_source": "wiki:Assassination_of_Archduke_Franz_Ferdinand",
+          "reliability": "verified",
+          "quellen_hash": "wiki-assassination-ff-2026-04-26",
+          "event_date": "1914-06-28"
+        },
+        {
+          "fakt": "Gavrilo Princip wurde am 25. Juli 1894 in West-Bosnien geboren und war zur Tat-Zeit 19 Jahre alt. Er war bosnisch-serbischer Schueler und Mitglied der Bewegung 'Junges Bosnien'.",
+          "data_source": "wiki:Gavrilo_Princip",
+          "reliability": "verified",
+          "quellen_hash": "wiki-princip-2026-04-26",
+          "event_date": "1894-07-25"
+        },
+        {
+          "fakt": "Franz Ferdinand wurde am 18. Dezember 1863 geboren und war seit dem Tod Kronprinz Rudolfs 1889 und seines Vaters 1896 Thron-Folger Oesterreich-Ungarns.",
+          "data_source": "wiki:Archduke_Franz_Ferdinand_of_Austria",
+          "reliability": "verified",
+          "quellen_hash": "wiki-ff-2026-04-26",
+          "event_date": "1863-12-18"
+        },
+        {
+          "fakt": "Die Schwarze Hand (serbisch: Crna ruka, gegruendet Mai 1911) war eine geheime serbische Offiziers-Organisation; sie versorgte Princip und seine Mit-Verschwoerer mit Pistolen und Bomben.",
+          "data_source": "wiki:Black_Hand_(Serbia)",
+          "reliability": "verified",
+          "quellen_hash": "wiki-black-hand-2026-04-26",
+          "event_date": "1911-05"
+        },
+        {
+          "fakt": "Oesterreich-Ungarn stellte Serbien am 23. Juli 1914 ein Ultimatum. Deutschland sicherte vorher (5./6. Juli) den 'Blanko-Scheck' fuer militaerische Unterstuetzung zu.",
+          "data_source": "wiki:July_Crisis",
+          "reliability": "verified",
+          "quellen_hash": "wiki-july-crisis-2026-04-26",
+          "event_date": "1914-07-23"
+        },
+        {
+          "fakt": "Oesterreich-Ungarn erklaerte Serbien am 28. Juli 1914 den Krieg. Das war exakt einen Monat nach dem Attentat in Sarajevo.",
+          "data_source": "wiki:July_Crisis",
+          "reliability": "verified",
+          "quellen_hash": "wiki-july-crisis-2026-04-26",
+          "event_date": "1914-07-28"
+        },
+        {
+          "fakt": "Deutschland erklaerte Russland am 1. August 1914 den Krieg.",
+          "data_source": "wiki:World_War_I",
+          "reliability": "verified",
+          "quellen_hash": "wiki-wwi-2026-04-26",
+          "event_date": "1914-08-01"
+        },
+        {
+          "fakt": "Deutschland erklaerte Frankreich am 3. August 1914 den Krieg.",
+          "data_source": "wiki:World_War_I",
+          "reliability": "verified",
+          "quellen_hash": "wiki-wwi-2026-04-26",
+          "event_date": "1914-08-03"
+        },
+        {
+          "fakt": "Grossbritannien erklaerte Deutschland am 4. August 1914 den Krieg, nachdem deutsche Truppen das neutrale Belgien angegriffen hatten.",
+          "data_source": "wiki:German_invasion_of_Belgium_(1914)",
+          "reliability": "verified",
+          "quellen_hash": "wiki-belgium-1914-2026-04-26",
+          "event_date": "1914-08-04"
+        }
+      ],
+      "zitate": [
+        {
+          "wortlaut": "Ich bin ein jugoslawischer Nationalist und strebe die Vereinigung aller Jugoslawen an, und es ist mir egal, welche Staatsform es gibt, aber sie muss frei von Oesterreich sein.",
+          "sprecher": "Gavrilo Princip",
+          "quelle": "wiki:Gavrilo_Princip Sektion 'Trial' (Aussage vor Gericht Sarajevo Oktober 1914)",
+          "kontext": "Vor Gericht in Sarajevo, Oktober 1914 — Princip begruendet sein politisches Motiv. Eignet sich fuer Quellenkritik (Selbst-Stilisierung) und fuer M2-Diskussion 'Was wollte er erreichen?'.",
+          "aeusserungs_datum": "1914-10"
+        }
+      ],
+      "perspektiven_kandidaten": [
+        {"perspektive": "Bosnisch-serbische / serbische Nationalisten (Princip, Junges Bosnien)", "rolle": "Aktiv-Akteure Attentat — Ziel: Befreiung Bosniens von Habsburg-Herrschaft"},
+        {"perspektive": "Habsburger / Oesterreich-Ungarn (Franz Joseph, Berchtold)", "rolle": "Forderten Praeventivkrieg gegen Serbien als Antwort auf Attentat"},
+        {"perspektive": "Deutsches Reich (Wilhelm II., Bethmann Hollweg)", "rolle": "'Blanko-Scheck' an Wien — bewusste Eskalations-Bereitschaft, vertraute auf britische Neutralitaet"},
+        {"perspektive": "Russisches Zarenreich (Sasonow, Nikolaus II.)", "rolle": "Mobilmachung als Schutzmacht-Geste fuer Serbien — eskalierte aus Sicht Berlins"},
+        {"perspektive": "Britische Regierung (Grey)", "rolle": "Vermittlungsversuche bis zur deutschen Belgien-Verletzung — diese kippte britische Position"}
+      ],
+      "material_kandidaten": [
+        {
+          "typ": "zeitleiste",
+          "inhalt": "Zeitleiste 'Julikrise 1914' mit den 5 Schluessel-Daten 28.06. / 23.07. / 28.07. / 01.08. / 03.08. / 04.08. — gekreuzt mit Akteur und Aktion. Kern-Material fuer TZ2 Zeitleiste-Raetsel.",
+          "quelle_kandidat": "Eigenkomposition; Datenbasis: wiki:July_Crisis + wiki:World_War_I"
+        },
+        {
+          "typ": "quellentext",
+          "inhalt": "Auszug aus dem oesterreich-ungarischen Ultimatum an Serbien vom 23. Juli 1914 (R7-tauglich gekuerzt, max. 80 Woerter), als Primaerquelle fuer 'Was hat Wien gefordert?'.",
+          "quelle_kandidat": "wiki:July_Crisis Sektion 'Austrian ultimatum'; Originaltext via Wikisource"
+        },
+        {
+          "typ": "bildquelle",
+          "inhalt": "Tatortskizze Sarajevo 28.06.1914 (Lateinerbruecke, Fahrtroute Auto, Standort Princip) — bewusst KEINE Foto-Darstellung von Leichen (Sensibilitaets-Hinweis Phase 0.1).",
+          "quelle_kandidat": "Wikimedia Commons File:Sarajevo_assassination_map.svg (CC-BY-SA); Beleg wiki:Assassination_of_Archduke_Franz_Ferdinand"
+        },
+        {
+          "typ": "darstellungstext",
+          "inhalt": "R7-altersgerechter Erklaer-Text 'Ursache vs. Ausloeser' mit Alltags-Beispiel (max. 100 Woerter, du-Form) — zentraler Begriffs-Anker fuer TZ2.",
+          "quelle_kandidat": "Eigenkomposition; Datenbasis: wiki:Causes_of_World_War_I + wiki:July_Crisis"
+        }
+      ],
+      "ke_anker": ["GPG7_LB2_K_06"],
+      "sprachniveau_marker": {
+        "fachbegriffe_einfuehren": ["Attentat", "Sarajevo", "Julikrise", "Buendnisfall", "Mobilmachung", "Ausloeser", "Ursache", "Ultimatum", "Blanko-Scheck"],
+        "satzlaenge_max_woerter": 15,
+        "kompositum_warnungen": [
+          "'Buendnisfall' = 2 Glieder, Erstgebrauch zerlegen: 'Buendnisfall = wenn ein Buendnispartner angegriffen wird, muessen die anderen helfen'",
+          "'Mobilmachung' = 2 Glieder, Erstgebrauch zerlegen: 'die Armee fuer den Krieg bereitmachen'",
+          "'Blanko-Scheck' = Metapher, Erstgebrauch erklaeren: 'Versprechen, ohne Bedingungen alles zu unterstuetzen'"
+        ],
+        "anrede": "Du-Form"
+      },
+      "kontroversitaets_hinweise": [
+        "Princip wird in den Nachfolgestaaten Jugoslawiens unterschiedlich bewertet: Serben sehen ihn oft als Helden, Bosniaken und Kroaten oft als Terroristen (wiki:Gavrilo_Princip Sektion 'Legacy'). Diese Doppel-Sicht in Phase 1 didaktisch nutzen — Multiperspektivitaet QG-06.",
+        "Das deutsche 'Blanko-Scheck'-Versprechen (5./6. Juli 1914) ist ein zentraler Beleg fuer eine Mit-Verantwortung Berlins. Aber: nicht 'Allein-Schuld' — diese Frage wird in M3 mit Clark-These geoeffnet."
+      ]
+    },
+    {
+      "mappe_id": "M3",
+      "titel": "Augustfieber — Wer schuld ist und wer jubelt",
+      "kerninhalt": [
+        "Die 'Augustbegeisterung' 1914 (deutsch: Augusterlebnis) war das Phaenomen einer Kriegs-Euphorie in Teilen der deutschen Bevoelkerung Anfang August 1914.",
+        "Forschung seit den 1970ern zeigt: Diese Begeisterung war begrenzt — vor allem bei gebildeten Stadt-Schichten. Auf dem Land und bei der Arbeiterschaft war die Stimmung eher nachdenklich-besorgt.",
+        "Die Burgfriedens-Politik (4. August 1914) war ein parteiuebergreifender Burgfrieden — alle Parteien, auch die SPD, stimmten den Kriegskrediten zu.",
+        "Die Kriegsschuldfrage wurde im Versailler Vertrag 1919 (Artikel 231) Deutschland und seinen Verbuendeten allein zugewiesen — diese 'Kriegsschuldklausel' war eine zentrale politische Belastung der Weimarer Republik.",
+        "Christopher Clark hat 2013 in 'Die Schlafwandler' die These einer geteilten Verantwortung mehrerer Maechte vertreten — keine Allein-Schuld Deutschlands."
+      ],
+      "schluessel_fakten": [
+        {
+          "fakt": "Die SPD-Reichstags-Fraktion stimmte am 4. August 1914 einstimmig fuer die Kriegskredite. Das war der Beginn der Burgfriedens-Politik.",
+          "data_source": "wiki:Burgfriedenspolitik",
+          "reliability": "verified",
+          "quellen_hash": "wiki-burgfrieden-2026-04-26",
+          "event_date": "1914-08-04"
+        },
+        {
+          "fakt": "Die Augustbegeisterung wurde lange als universal dargestellt; Studien seit den 1970ern zeigen, dass sie auf gebildete Stadt-Schichten beschraenkt war. Auf dem Land und in der Arbeiterklasse dominierten Skepsis und Pflichtgefuehl.",
+          "data_source": "wiki:Spirit_of_1914",
+          "reliability": "verified",
+          "quellen_hash": "wiki-spirit-1914-2026-04-26",
+          "event_date": "1914-08"
+        },
+        {
+          "fakt": "Die Burgfriedens-Politik war ein politischer Waffenstillstand zwischen den Parteien des deutschen Reichstags waehrend des Krieges. Sie zerfiel ab Mitte 1915 wegen Streit um Annexions-Kriegsziele und fuehrte 1917 zur SPD-Spaltung (USPD-Gruendung).",
+          "data_source": "wiki:Burgfriedenspolitik",
+          "reliability": "verified",
+          "quellen_hash": "wiki-burgfrieden-2026-04-26",
+          "event_date": "1914-08-04/1917"
+        },
+        {
+          "fakt": "Artikel 231 des Versailler Vertrags vom 28. Juni 1919 legt Deutschland und seinen Verbuendeten die Verantwortung fuer den Schaden des Krieges auf. Er gilt als 'Kriegsschuldklausel', auch wenn das Wort 'Schuld' nicht vorkommt.",
+          "data_source": "wiki:Article_231_of_the_Treaty_of_Versailles",
+          "reliability": "verified",
+          "quellen_hash": "wiki-art231-2026-04-26",
+          "event_date": "1919-06-28"
+        },
+        {
+          "fakt": "Die Kriegsschuldfrage (deutsch: Kriegsschuldfrage) ist die historische Debatte um die Verantwortung fuer den Ersten Weltkrieg. Sie praegte die gesamte Weimarer Republik.",
+          "data_source": "wiki:War_guilt_question",
+          "reliability": "verified",
+          "quellen_hash": "wiki-kriegsschuld-2026-04-26",
+          "event_date": "1919/1933"
+        },
+        {
+          "fakt": "Christopher Clark veroeffentlichte 2013 das Buch 'The Sleepwalkers: How Europe Went to War in 1914' (deutsch: 'Die Schlafwandler'). Er argumentiert, dass mehrere Maechte schlafwandlerisch in den Krieg taumelten — keine Allein-Schuld Deutschlands.",
+          "data_source": "wiki:Christopher_Clark + wiki:War_guilt_question",
+          "reliability": "verified",
+          "quellen_hash": "wiki-clark-2026-04-26",
+          "event_date": "2013"
+        },
+        {
+          "fakt": "Christopher Clark wurde am 14. Maerz 1960 in Australien geboren. Seit 2014 ist er Regius Professor of History an der University of Cambridge.",
+          "data_source": "wiki:Christopher_Clark",
+          "reliability": "verified",
+          "quellen_hash": "wiki-clark-2026-04-26",
+          "event_date": "1960-03-14"
+        },
+        {
+          "fakt": "Wilhelm II. abdankte am 9. November 1918 und ging ins niederlaendische Exil — damit endete das Kaiserreich, das die Hauptschuld-Vorwuerfe von Versailles tragen musste.",
+          "data_source": "wiki:Wilhelm_II,_German_Emperor",
+          "reliability": "verified",
+          "quellen_hash": "wiki-wilhelm-ii-2026-04-26",
+          "event_date": "1918-11-09"
+        }
+      ],
+      "zitate": [
+        {
+          "wortlaut": "Die Allierten und Assoziierten Regierungen erklaeren und Deutschland erkennt an, dass Deutschland und seine Verbuendeten als Urheber fuer alle Verluste und Schaeden verantwortlich sind, die die Allierten und Assoziierten Regierungen und ihre Staatsangehoerigen infolge des Krieges erlitten haben.",
+          "sprecher": "Versailler Vertrag, Artikel 231",
+          "quelle": "wiki:Article_231_of_the_Treaty_of_Versailles",
+          "kontext": "Versailles, 28. Juni 1919 — Eroeffnungs-Artikel des Reparations-Teils. Sehr kontrovers; in Phase 1 fuer Quellenkritik nutzbar (Wer schreibt? Wann? Mit welcher Wirkung?).",
+          "aeusserungs_datum": "1919-06-28"
+        }
+      ],
+      "perspektiven_kandidaten": [
+        {"perspektive": "Begeisterte Stadtbuerger 1914 (gebildete Mittelschicht, Studenten)", "rolle": "Augusterlebnis-Traeger; spaetere 'Geist-von-1914'-Stilisierung"},
+        {"perspektive": "Skeptische Landbevoelkerung / Arbeiter / SPD-Anhaenger 1914", "rolle": "Zweifel und Pflichtgefuehl; spaetere Burgfriedens-Bruch-Akteure"},
+        {"perspektive": "Versailler Friedens-Konferenz 1919 (Wilson, Clemenceau, Lloyd George)", "rolle": "Schuld-Zuweisung an Deutschland — politisch motiviert"},
+        {"perspektive": "Weimarer Republik / deutsche Historiker 1920er", "rolle": "Aktive Kriegsschuld-Abwehr; Sammeln gegen Versailles-These"},
+        {"perspektive": "Heutige Forschung (Christopher Clark, Schlafwandler-These 2013)", "rolle": "Multi-Verantwortlichkeits-These; Korrektur der Versailles-Schuld"}
+      ],
+      "material_kandidaten": [
+        {
+          "typ": "bildquelle",
+          "inhalt": "Foto 'Jubelnde Menge auf dem Odeonsplatz Muenchen 02.08.1914' (in der Menge angeblich Adolf Hitler) — klassisches 'Augusterlebnis'-Foto, Pflicht mit Quellenkritik (zeigt nur eine soziale Schicht).",
+          "quelle_kandidat": "Wikimedia Commons File:Adolf_Hitler_in_Crowd_at_the_Odeonsplatz_1914.jpg (PD-1923); Beleg wiki:Spirit_of_1914"
+        },
+        {
+          "typ": "bildquelle",
+          "inhalt": "Foto Berlin Lustgarten 01.08.1914 (Mobilmachungs-Verkuendung) — als Vergleichs-Quelle zu Muenchen, ebenfalls Stadt-Mittelschicht.",
+          "quelle_kandidat": "Wikimedia Commons File:Bundesarchiv_Bild_146-1970-073-04,_Berlin,_Lustgarten,_Demonstration.jpg (CC-BY-SA Bundesarchiv); Beleg wiki:Spirit_of_1914"
+        },
+        {
+          "typ": "quellentext",
+          "inhalt": "Auszug Artikel 231 Versailler Vertrag (R7-vereinfacht, max. 60 Woerter): Original-Text als Primaerquelle fuer Quellenkritik-Aufgabe TZ3.",
+          "quelle_kandidat": "wiki:Article_231_of_the_Treaty_of_Versailles + Wikisource Versailler-Vertrag-Volltext"
+        },
+        {
+          "typ": "darstellungstext",
+          "inhalt": "Forschungs-Aussage 'Schlafwandler' (Christopher Clark, 2013) — 1 Satz im R7-Niveau (max. 25 Woerter): 'Keine Macht hatte allein Schuld; mehrere Regierungen tappten gemeinsam in den Krieg hinein.'",
+          "quelle_kandidat": "Eigenkomposition (Paraphrase Clark); Datenbasis: wiki:Christopher_Clark + wiki:War_guilt_question"
+        },
+        {
+          "typ": "tagebuch",
+          "inhalt": "Auszug Tagebuch-Eintrag eines SPD-Anhaengers oder einer skeptischen Bauern-Frau 1914 als Gegen-Stimme zum Augusterlebnis (R7-Niveau, max. 80 Woerter).",
+          "quelle_kandidat": "wiki:Spirit_of_1914 Sektion 'Reception'; konkrete Auswahl in Phase 1 (AGENT_MATERIAL) aus zeitgenoessischen Tagebuch-Editionen"
+        }
+      ],
+      "ke_anker": ["GPG7_LB3_K_03"],
+      "sprachniveau_marker": {
+        "fachbegriffe_einfuehren": ["Augustbegeisterung", "Augusterlebnis", "Burgfrieden", "Kriegsschuld", "Versailles", "Quellenkritik", "Reparationen"],
+        "satzlaenge_max_woerter": 15,
+        "kompositum_warnungen": [
+          "'Augusterlebnis' = 2 Glieder, Erstgebrauch erklaeren: 'das, was die Menschen im August 1914 erlebten und fuehlten'",
+          "'Kriegsschuldklausel' = 3 Glieder → grenzwertig, beim Erstgebrauch zerlegen: 'Klausel = ein Abschnitt im Vertrag, in dem die Kriegsschuld geregelt ist'",
+          "'Burgfriedenspolitik' = 3 Glieder → ZERLEGEN: 'Burgfrieden + Politik = Politik des Burg-Friedens (alle halten zusammen, niemand streitet)'"
+        ],
+        "anrede": "Du-Form"
+      },
+      "kontroversitaets_hinweise": [
+        "Kriegsschuldfrage: Versailles 1919 (Allein-Schuld DT) vs. Clark 2013 (Multi-Schuld) — beide Positionen mit Beleg vorlegen, SuS bilden eigene Position. Beutelsbacher Kontroversitaet PFLICHT.",
+        "Augustbegeisterung Foto-Bias: Foto Odeonsplatz zeigt eine soziale Schicht, nicht 'die Deutschen'. Quellenkritik-Aufgabe: Wer ist NICHT auf dem Foto?",
+        "Politische Spreng-Kraft Artikel 231 fuer Weimarer Republik: Der Streit um die 'Schuld-Luege' wurde von rechts-radikalen Kraeften (NS) instrumentalisiert. Nur als Hintergrund-Information fuer Lehrkraft, nicht im Schueler-Material expliziert."
+      ]
+    },
+    {
+      "mappe_id": "M4",
+      "titel": "Marne 1914 — Das Ende des kurzen Krieges",
+      "kerninhalt": [
+        "Der Schlieffen-Plan war eine Aufmarsch-Planung der deutschen Generalstab-Fuehrung, ausgearbeitet 1905/06 von Alfred von Schlieffen.",
+        "Idee: Schneller Sieg ueber Frankreich in 6 Wochen durch einen Angriff durch das neutrale Belgien — danach Kraefte gegen Russland verschieben.",
+        "Am 4. August 1914 verletzte das Deutsche Reich die Neutralitaet Belgiens und marschierte ein.",
+        "An der Marne (5. bis 12. September 1914) stoppten franzoesische und britische Truppen unter General Joffre den deutschen Vormarsch — der Plan war gescheitert.",
+        "Der erhoffte 'kurze Krieg' wurde zum vier Jahre dauernden Stellungskrieg an der West-Front."
+      ],
+      "schluessel_fakten": [
+        {
+          "fakt": "Der Schlieffen-Plan wurde 1905/06 von Alfred von Schlieffen, dem Chef des deutschen Generalstabs (1891-1906), ausgearbeitet. Er sah einen Angriff auf Frankreich durch die Niederlande, Luxemburg und Belgien vor.",
+          "data_source": "wiki:Schlieffen_Plan",
+          "reliability": "verified",
+          "quellen_hash": "wiki-schlieffen-2026-04-26",
+          "event_date": "1905/1906"
+        },
+        {
+          "fakt": "Am 2. August 1914 sandte die deutsche Regierung ein Ultimatum an Belgien und forderte freien Durchmarsch. Belgien lehnte am 3. August ab; Deutschland erklaerte am 4. August Belgien den Krieg und marschierte ein.",
+          "data_source": "wiki:German_invasion_of_Belgium_(1914)",
+          "reliability": "verified",
+          "quellen_hash": "wiki-belgium-1914-2026-04-26",
+          "event_date": "1914-08-02/1914-08-04"
+        },
+        {
+          "fakt": "Am 7. August 1914 fiel die belgische Festung Lueck (Liege). Brussel wurde am 20. August besetzt.",
+          "data_source": "wiki:German_invasion_of_Belgium_(1914)",
+          "reliability": "verified",
+          "quellen_hash": "wiki-belgium-1914-2026-04-26",
+          "event_date": "1914-08-07"
+        },
+        {
+          "fakt": "Die Erste Marne-Schlacht fand vom 5. bis 12. September 1914 statt. Die franzoesische Armee unter General Joffre (mit britischer Unterstuetzung) stoppte den deutschen Vormarsch ca. 40 km vor Paris.",
+          "data_source": "wiki:First_Battle_of_the_Marne",
+          "reliability": "verified",
+          "quellen_hash": "wiki-marne-2026-04-26",
+          "event_date": "1914-09-05/1914-09-12"
+        },
+        {
+          "fakt": "Die Marne-Schlacht forderte rund 250.000 franzoesische, 12.733 britische und 298.000 deutsche Verluste (Tote und Verwundete).",
+          "data_source": "wiki:First_Battle_of_the_Marne",
+          "reliability": "verified",
+          "quellen_hash": "wiki-marne-2026-04-26",
+          "event_date": "1914-09-05/1914-09-12"
+        },
+        {
+          "fakt": "Joseph Joffre war von Kriegsbeginn bis Ende 1916 Oberbefehlshaber der franzoesischen Truppen an der West-Front. Er wird vor allem fuer den Sieg an der Marne erinnert.",
+          "data_source": "wiki:Joseph_Joffre",
+          "reliability": "verified",
+          "quellen_hash": "wiki-joffre-2026-04-26",
+          "event_date": "1914-08/1916-12"
+        },
+        {
+          "fakt": "Helmuth von Moltke der Juengere war vom 1. Januar 1906 bis zum 14. September 1914 Chef des deutschen Generalstabs. Er wurde nach der Marne-Niederlage abgesetzt.",
+          "data_source": "wiki:Helmuth_von_Moltke_the_Younger",
+          "reliability": "verified",
+          "quellen_hash": "wiki-moltke-younger-2026-04-26",
+          "event_date": "1906-01-01/1914-09-14"
+        },
+        {
+          "fakt": "Der 'Wettlauf zum Meer' (17. September bis 19. Oktober 1914) folgte unmittelbar auf die Marne und endete mit der Etablierung einer durchgehenden Front-Linie vom Aermelkanal bis zur Schweiz — der Stellungskrieg war damit etabliert.",
+          "data_source": "wiki:Race_to_the_Sea + wiki:Trench_warfare",
+          "reliability": "verified",
+          "quellen_hash": "wiki-race-sea-2026-04-26",
+          "event_date": "1914-09-17/1914-10-19"
+        }
+      ],
+      "perspektiven_kandidaten": [
+        {"perspektive": "Deutsche Generalstab-Fuehrung (Moltke d.J., Schlieffen-Erbe)", "rolle": "Plan-Macher und -Vollstrecker; Plan scheitert"},
+        {"perspektive": "Belgische Bevoelkerung und Regierung", "rolle": "Opfer der Neutralitaets-Verletzung — 'Vergewaltigung Belgiens' (rape of Belgium) als Kriegsvorwurf"},
+        {"perspektive": "Franzoesische Armee unter Joffre", "rolle": "Defensiv-Sieger an der Marne — nationaler Mythos 'miracle de la Marne'"},
+        {"perspektive": "Britische Expeditionsstreitmacht (BEF) unter John French", "rolle": "Mit-Beteiligter an der Marne, anfangs Rueckzugs-orientiert"},
+        {"perspektive": "Soldaten beider Seiten als Subjekte", "rolle": "Ermuedung nach 1-Monat-Marsch, Versorgungs-Probleme — auf beiden Seiten"}
+      ],
+      "material_kandidaten": [
+        {
+          "typ": "karte",
+          "inhalt": "Karte 'Schlieffen-Plan vs. tatsaechlicher Verlauf' — geplante Bewegungs-Pfeile (Schlieffen 1905) ueberlagert mit tatsaechlichem Vormarsch August/September 1914 und Marne-Stop. Kern-Material fuer TZ4 Karten-Skizzen-Raetsel.",
+          "quelle_kandidat": "Eigenkomposition; Datenbasis: wiki:Schlieffen_Plan + wiki:First_Battle_of_the_Marne + wiki:German_invasion_of_Belgium_(1914)"
+        },
+        {
+          "typ": "zeitleiste",
+          "inhalt": "Zeitleiste 'August/September 1914' mit Daten 02.08. (Ultimatum Belgien) / 04.08. (Einmarsch) / 07.08. (Lueck/Liege) / 20.08. (Bruessel) / 05.09.-12.09. (Marne) / 14.09. (Moltke abgesetzt) / 19.10. (Wettlauf zum Meer endet).",
+          "quelle_kandidat": "Eigenkomposition; Datenbasis: wiki:German_invasion_of_Belgium_(1914) + wiki:First_Battle_of_the_Marne + wiki:Race_to_the_Sea"
+        },
+        {
+          "typ": "bildquelle",
+          "inhalt": "Foto deutsche Truppen auf dem Vormarsch in Belgien August 1914 (Infanterie-Marsch, ohne Gewaltdarstellung).",
+          "quelle_kandidat": "Wikimedia Commons File:Bundesarchiv_Bild_146-1981-046-09A,_Westfront,_deutscher_Vormarsch.jpg (CC-BY-SA Bundesarchiv); Beleg wiki:German_invasion_of_Belgium_(1914)"
+        },
+        {
+          "typ": "darstellungstext",
+          "inhalt": "R7-Erklaer-Text 'Stellungskrieg' (max. 100 Woerter, du-Form) — zentraler Begriffs-Anker fuer TZ4-Sicherung. Mit Komposita-Erstgebrauch 'Stellung + Krieg'.",
+          "quelle_kandidat": "Eigenkomposition; Datenbasis: wiki:Trench_warfare + wiki:Race_to_the_Sea"
+        },
+        {
+          "typ": "statistik",
+          "inhalt": "Verlust-Statistik Marne-Schlacht (250.000 FR / 12.733 GB / 298.000 DT) — als reine Zahlen-Tafel mit Hinweis 'Tote + Verwundete'. Sensibilitaet: Zahl genannt, nicht visualisiert (PFLICHT Phase 0.1).",
+          "quelle_kandidat": "wiki:First_Battle_of_the_Marne Sektion 'Casualties'"
+        }
+      ],
+      "ke_anker": ["GPG7_LB2_K_07"],
+      "sprachniveau_marker": {
+        "fachbegriffe_einfuehren": ["Schlieffen-Plan", "Marne", "Stellungskrieg", "Wendepunkt", "Generalstab", "Neutralitaet", "Mobilmachung"],
+        "satzlaenge_max_woerter": 15,
+        "kompositum_warnungen": [
+          "'Stellungskrieg' = 2 Glieder, Erstgebrauch erklaeren: 'die Soldaten bleiben in festen Stellungen — Schuetzen-Graeben — und kommen kaum mehr vorwaerts'",
+          "'Schlieffen-Plan' = Eigenname mit Bindestrich, Erstgebrauch erklaeren: 'Plan, benannt nach dem deutschen General Schlieffen'",
+          "'Wettlauf zum Meer' = Metapher, Erstgebrauch erklaeren: 'beide Seiten versuchen, sich gegenseitig nach Norden zu ueberholen'"
+        ],
+        "anrede": "Du-Form"
+      },
+      "kontroversitaets_hinweise": [
+        "Schlieffen-Plan-Mythos: Nach 1918 verbreitete sich die Erzaehlung, Moltke d.J. habe einen 'fertigen' Plan ruiniert. Forschung seit Gerhard Ritter 1956 und besonders Terence Zuber (ab 1999) korrigiert: Es gab keinen einzelnen 'Plan', sondern Aufmarsch-Skizzen. Fuer R7 vereinfacht: 'Plan' als didaktischer Begriff legitim, aber nicht heroisieren.",
+        "Belgien-Verletzung als Voelkerrechtsbruch: Pflicht zu erwaehnen, dass DT eine Neutralitaet brach. Briti­scher Kriegseintritt war 'Reaktion' (kein Angriff)."
+      ]
+    }
+  ],
+  "multiperspektiv_zusammenfassung": {
+    "ziel_min_3_perspektiven_pro_mappe": "ERFUELLT: M1=5, M2=5, M3=5, M4=5 perspektiven_kandidaten. Konflikt-Seiten ausgewogen vertreten (DR / OE-UN / SR / FR / GB / RU + Bevoelkerungs-Sub-Perspektiven).",
+    "ziel_5_perspektiven_gesamt": "ERFUELLT: ueber alle Mappen 11 distinkte Perspektiv-Profile (DT-Reichsfuehrung, DT-Bevoelkerung-jubelnd, DT-Bevoelkerung-skeptisch, OE-UN-Habsburg, SR-bosnisch-serbisch-Nationalisten, RU-Zarenreich, FR-Republik, GB-Regierung, BE-Bevoelkerung, BE-Regierung, heutige Forschung Clark)."
+  },
+  "scope_einhaltung": {
+    "vor_kriegszeit_1882_1913": "IN_SCOPE — M1 (Buendnisse, Marokko, Flotte)",
+    "attentat_julikrise_06_08_1914": "IN_SCOPE — M2 (Sarajevo, Ultimatum, Kriegserklaerungen)",
+    "augusterlebnis_burgfrieden_1914": "IN_SCOPE — M3",
+    "kriegsschuldfrage_versailles_artikel_231_1919": "IN_SCOPE als Vorausverweis — M3 (kein Versailles-Detail-Aufbau)",
+    "schlieffen_marne_belgien_08_09_1914": "IN_SCOPE — M4",
+    "stellungskrieg_1915_1918_verdun_somme": "AUSGESCHLOSSEN — fuer Folge-Game 'WK1-Stellungskrieg' reserviert",
+    "heimatfront_1915_1918": "AUSGESCHLOSSEN — fuer Folge-Game 'WK1-Heimatfront'",
+    "kriegsende_versailles_detailbestimmungen_1918_1919": "AUSGESCHLOSSEN — fuer Folge-Game 'WK1-Ende-und-Versailles'",
+    "novemberrevolution_weimar_gruendung": "AUSGESCHLOSSEN — fuer Folge-Game 'WK1-Ende'"
+  }
+}

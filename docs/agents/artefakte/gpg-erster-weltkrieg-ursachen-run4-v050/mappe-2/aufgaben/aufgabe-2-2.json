@@ -1,0 +1,62 @@
+{
+  "id": "aufgabe-2-2",
+  "typ": "zuordnung",
+  "frage": "Ordne den Daten der Julikrise das jeweilige Ereignis zu.",
+  "material_referenz": ["mat-2-1"],
+  "paare": {
+    "5./6. Juli 1914": "Berlin gibt Wien den Blanko-Scheck",
+    "23. Juli 1914": "Wien stellt Serbien das Ultimatum mit 48-Stunden-Frist",
+    "28. Juli 1914": "Oesterreich-Ungarn erklaert Serbien den Krieg",
+    "1. August 1914": "Deutschland erklaert Russland den Krieg"
+  },
+  "kategorien": [
+    "Berlin gibt Wien den Blanko-Scheck",
+    "Wien stellt Serbien das Ultimatum mit 48-Stunden-Frist",
+    "Oesterreich-Ungarn erklaert Serbien den Krieg",
+    "Deutschland erklaert Russland den Krieg"
+  ],
+  "loesung": {
+    "5./6. Juli 1914": "Berlin gibt Wien den Blanko-Scheck",
+    "23. Juli 1914": "Wien stellt Serbien das Ultimatum mit 48-Stunden-Frist",
+    "28. Juli 1914": "Oesterreich-Ungarn erklaert Serbien den Krieg",
+    "1. August 1914": "Deutschland erklaert Russland den Krieg"
+  },
+  "tipps": [
+    {
+      "stufe": 1,
+      "text": "Lies die [[mat-2-1|Zeitleiste der Julikrise]] (M1) genau. Welches Ereignis steht bei welchem Datum?"
+    },
+    {
+      "stufe": 2,
+      "text": "Beginne mit dem Blanko-Scheck (Versprechen ohne Bedingungen) — der kommt zuerst. Das Ultimatum hat eine Frist von 48 Stunden. Genau einen Monat nach dem Attentat erklaert Oesterreich-Ungarn den Krieg."
+    },
+    {
+      "stufe": 3,
+      "text": "Loesung: 5./6. Juli = Blanko-Scheck Berlin -> Wien. 23. Juli = Ultimatum Wien -> Serbien. 28. Juli = Kriegserklaerung Oesterreich-Ungarn -> Serbien. 1. August = Kriegserklaerung Deutschland -> Russland. Merke: Erst Versprechen, dann Forderung, dann Krieg, dann Buendnis-Domino."
+    }
+  ],
+  "punkte": 12,
+  "_meta": {
+    "bloom": "L2",
+    "afb": "I-II",
+    "scpl_zone": "C1+C2+C3",
+    "tafelbild_knoten": ["K2-3", "K2-4", "K2-5"],
+    "ke_anker_haupt": "GPG7_LB2_K_06",
+    "ziel_material_id": "mat-2-1",
+    "operationalisierungsziel": "Die SuS verknuepfen vier Schluessel-Daten der Julikrise mit dem jeweiligen politischen Ereignis (Blanko-Scheck, Ultimatum, Kriegserklaerung AT-UN -> SR, Kriegserklaerung DT -> RU).",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "subagent": "sub-aufgabe-zuordnung",
+    "fachbegriffe_eingefuehrt_im_material": ["Blanko-Scheck", "Ultimatum"],
+    "q_gate": {
+      "A1_afb_kongruenz": "PASS — AFB I-II (Faktenwissen-Verknuepfung)",
+      "A2_fragestamm_klarheit": "PASS — 8 Woerter",
+      "A3_material_kongruenz": "PASS — alle 4 Datum-Ereignis-Paare in mat-2-1 vorhanden",
+      "A4_zu_trennschaerfe": "PASS — vier disjunkte Daten + vier disjunkte Ereignisse, keine Mehrdeutigkeit",
+      "A6_tipp_progression": "PASS",
+      "A7_operator_praezision": "PASS — 'ordne zu' (AFB I-II)",
+      "MQ3_kein_link_in_frage": "PASS",
+      "MQ3b_displayref_in_tipp1": "PASS — [[mat-2-1|...]] (M1)",
+      "F0B_R7": "PASS — kurze Hauptsaetze, Komposita Blanko-Scheck/Ultimatum im Material erstgebraucht erklaert"
+    }
+  }
+}

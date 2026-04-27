@@ -1,0 +1,19 @@
+{
+  "inhalt": "<p class=\"quellentext__einleitung\">Am 23. Juli 1914 schickte das Habsburger Außenministerium in Wien einen Brief nach Belgrad. Außenminister war Graf Berchtold. Er stellte Serbien Forderungen mit einer Frist von 48 Stunden — ein Ultimatum.</p><blockquote class=\"quellentext__wortlaut\"><p>„Die königlich serbische Regierung verpflichtet sich, [...] zu erlauben, dass österreichisch-ungarische Beamte in Serbien an der Ermittlung gegen die Mitglieder der ‚Schwarzen Hand' mitwirken, die für das Attentat von Sarajevo verantwortlich sind. [...] Eine Antwort wird binnen 48 Stunden erwartet.\"</p><cite>— Wiener Ultimatum an Serbien, 23. Juli 1914</cite></blockquote><p>Wien forderte etwas, das Serbien als Verletzung seiner Souveränität — also seiner Selbstbestimmung als Staat — empfinden musste. Wien wusste das. Berlin hatte den Blanko-Scheck gegeben.</p>",
+  "quelle": "Auszug aus dem österreichisch-ungarischen Ultimatum an Serbien, 23. Juli 1914. Zitiert nach: Wikisource, „Österreichisch-ungarisches Ultimatum an Serbien\", Public Domain. Gekürzt und sprachlich vereinfacht für Jahrgang 7.",
+  "_meta": {
+    "wortanzahl": 117,
+    "quellentyp": "amtlich",
+    "aufbereitung": "ausschnitt",
+    "artefakt_ref": ["pq-2-1"],
+    "tafelbild_knoten_abgedeckt": ["k2-4"],
+    "quellenkritische_impulse": [
+      "Wer schreibt — und an wen mit welchem Ziel?",
+      "Warum war diese Forderung für Serbien kaum annehmbar?",
+      "Was bedeutet es, wenn Wien wusste, dass Serbien ablehnen würde?"
+    ],
+    "perspektive": "P2: Habsburger Aussenministerium (Berchtold) — Eskalations-bereit",
+    "erarbeitbarkeits_check": "PASS — Auszug zeigt Hauptforderung (oesterreichische Beamte ermitteln in Serbien) + Frist (48h). Kontextualisierung benennt Souveraenitaets-Verletzung + Blanko-Scheck-Bezug. C2-Zone (Ultimatum) erarbeitbar.",
+    "trigger_flags": ["krieg"]
+  }
+}

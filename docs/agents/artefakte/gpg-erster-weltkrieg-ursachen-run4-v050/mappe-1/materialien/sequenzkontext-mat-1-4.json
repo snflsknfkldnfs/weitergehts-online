@@ -1,0 +1,48 @@
+{
+  "schema_version": "sequenzkontext_v1",
+  "mat_id": "mat-1-4",
+  "material_id_design": "m1-mat-04",
+  "typ": "darstellungstext",
+  "position_in_mappe": 2,
+  "anzahl_materialien_mappe": 6,
+  "didaktische_funktion": "erarbeitung",
+  "primary_scpl_zone": "C1",
+  "scpl_zonen_abdeckung": ["C1", "P"],
+  "vorausgesetztes_wissen": {
+    "fachbegriffe": ["Buendnis", "Dreibund", "Triple Entente"],
+    "source_materialien": ["mat-1-1"]
+  },
+  "noch_nicht_eingefuehrt": {
+    "fachbegriffe": ["Flotten-Wettlauf", "HMS Dreadnought", "Wettruesten", "Kolonialwettlauf", "Kolonie", "Marokko-Krisen", "Berliner Konferenz 1884"],
+    "source_materialien": ["mat-1-2", "mat-1-5", "mat-1-6", "mat-1-3"]
+  },
+  "vorheriges_material": {
+    "id": "mat-1-1",
+    "typ": "karte",
+    "kerninhalt": "Europa 1914: zwei Buendnisse, sechs Grossmaechte (visuell, mit Farb-Codierung).",
+    "design_id": "m1-mat-01"
+  },
+  "naechstes_material": {
+    "id": "mat-1-2",
+    "typ": "bildquelle",
+    "kerninhalt": "HMS Dreadnought 1906 — Symbol des deutsch-britischen Flotten-Wettlaufs.",
+    "design_id": "m1-mat-02"
+  },
+  "fachbegriffe_eingefuehrt": ["Buendnis-System", "Imperialismus", "Pulverfass-Metapher"],
+  "zugeordneter_tb_knoten": [
+    {"id": "K1-2", "label": "Dreibund (1882)"},
+    {"id": "K1-3", "label": "Triple Entente (1907)"},
+    {"id": "K1-1", "label": "Pulverfass Europa (Synthese)"}
+  ],
+  "dominante_perspektive": "didaktisch-neutral (R7-Erklaerung)",
+  "perspektiv_tags_plan": ["Aussen", "dominant"],
+  "erwartete_aktivitaet": "Lesen + Begriff verstehen (Buendnis-System mit eigenen Worten erklaeren)",
+  "stundenfrage": "Warum war Europa vor 1914 ein 'Pulverfass'?",
+  "wortbudget": "max. 120 Woerter (R7-Korridor)",
+  "datenbasis_anker": ["wiki:Triple_Alliance_(1882)", "wiki:Triple_Entente", "wiki:Causes_of_World_War_I"],
+  "ueberleitung_zu_naechstem": {
+    "rueckbezug": "Du weisst jetzt: zwei feindliche Buendnisse stehen sich misstrauisch gegenueber.",
+    "vorausblick": "Aber war das alles? Was war noch los — auf den Meeren?",
+    "kausalitaets_typ": "kausal"
+  }
+}

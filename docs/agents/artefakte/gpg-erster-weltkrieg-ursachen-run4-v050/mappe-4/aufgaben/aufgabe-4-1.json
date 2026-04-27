@@ -1,0 +1,38 @@
+{
+  "id": "aufgabe-4-1",
+  "typ": "multiple-choice",
+  "frage": "Was sah der Schlieffen-Plan vor — und durch welches Land fuehrte der Bogen?",
+  "material_referenz": ["mat-4-1"],
+  "optionen": [
+    "Frankreich in sechs Wochen besiegen — durch Belgien.",
+    "Russland in sechs Wochen besiegen — direkt von Osten.",
+    "Direkter Marsch ueber die deutsch-franzoesische Grenze ohne Umweg.",
+    "Krieg gegen Grossbritannien zuerst — ueber die Nordsee."
+  ],
+  "loesung": "Frankreich in sechs Wochen besiegen — durch Belgien.",
+  "tipps": [
+    {"stufe": 1, "text": "Schau dir die [[mat-4-1|Karte des Schlieffen-Plans]] (M1) genau an. Welcher Pfeil-Bogen ist eingezeichnet?"},
+    {"stufe": 2, "text": "Achte darauf, durch welches Land der grosse Bogen geht — und in welche Richtung er zeigt. Wie viele Wochen waren geplant?"},
+    {"stufe": 3, "text": "Loesung: „Frankreich in sechs Wochen besiegen — durch Belgien.\" Der Plan war: Erst schnell Frankreich von Norden ueberraschen, dann Russland. Belgien war neutral — der Plan brach diese Neutralitaet."}
+  ],
+  "punkte": 10,
+  "_meta": {
+    "afb": "I",
+    "bloom": "Verstehen",
+    "tb_knoten": ["K4-2"],
+    "scpl_zone": "S",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "sprachniveau": "R7",
+    "q_gate": {
+      "A1_afb_kongruenz": "PASS",
+      "A2_fragestamm_klarheit": "PASS — 9 Worte, 1 Operator (was), Material-Bezug nur ueber Tipp 1",
+      "A4_mc_distractor_qualitaet": "PASS — 3 plausible Distraktoren (Russland-Verwechslung, Grenz-Marsch-Mythos, GB-Vorrang)",
+      "A6_tipp_progression": "PASS — Hinweis (Karte lesen) -> Einschraenkung (Bogen-Richtung + Wochenzahl) -> Loesung+Erklaerung",
+      "MQ3_material_referenz_in_frage": "PASS — keine [[..]] oder (M..) im Fragestamm",
+      "MQ3b_display_referenz_in_tipp1": "PASS — [[mat-4-1|Karte des Schlieffen-Plans]] (M1)",
+      "mythos_korrektur": "PASS — Distraktoren wiederholen NICHT die Mythos-Verankerung (kein 'einziger fertiger Plan')"
+    }
+  }
+}

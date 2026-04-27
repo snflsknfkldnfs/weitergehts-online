@@ -1,0 +1,95 @@
+{
+  "id": "aufgabe-3-2",
+  "typ": "quellenkritik",
+  "frage": "Pruefe die Postkarte mit den vier W-Fragen.",
+  "material_referenz": ["mat-3-1"],
+  "w_fragen": [
+    {
+      "id": "wer",
+      "frage": "Wer hat die Postkarte gemacht?",
+      "antwortoptionen": [
+        "Die Druckerei Gebrueder Borchers in Luebeck",
+        "Die Heeresleitung in Berlin",
+        "Ein privater Soldat am Bahnhof",
+        "Die SPD-Partei"
+      ],
+      "loesung": "Die Druckerei Gebrueder Borchers in Luebeck"
+    },
+    {
+      "id": "wann",
+      "frage": "Wann wurde das Foto aufgenommen?",
+      "antwortoptionen": [
+        "31. Juli 1914",
+        "28. Juni 1914",
+        "4. August 1914",
+        "1919 nach dem Krieg"
+      ],
+      "loesung": "31. Juli 1914"
+    },
+    {
+      "id": "ziel",
+      "frage": "Mit welchem Ziel wurde die Postkarte gedruckt?",
+      "antwortoptionen": [
+        "Um sie als patriotische Postkarte zu verkaufen",
+        "Um den Krieg zu kritisieren",
+        "Um die SPD zu unterstuetzen",
+        "Um auslaendische Soldaten anzuwerben"
+      ],
+      "loesung": "Um sie als patriotische Postkarte zu verkaufen"
+    },
+    {
+      "id": "fehlt",
+      "frage": "Wer ist NICHT auf dem Foto zu sehen?",
+      "antwortoptionen": [
+        "Land-Bevoelkerung und Arbeiter",
+        "Soldaten in Uniform",
+        "Stadtbuerger am Bahnhof",
+        "Ein paar Familien"
+      ],
+      "loesung": "Land-Bevoelkerung und Arbeiter"
+    }
+  ],
+  "loesung": {
+    "wer": "Die Druckerei Gebrueder Borchers in Luebeck",
+    "wann": "31. Juli 1914",
+    "ziel": "Um sie als patriotische Postkarte zu verkaufen",
+    "fehlt": "Land-Bevoelkerung und Arbeiter"
+  },
+  "tipps": [
+    {"stufe": 1, "text": "Schau dir die Bildunterschrift der [[mat-3-1|Postkarte vom Hauptbahnhof Luebeck]] (M1) genau an. Dort steht der Quellenkritik-Block mit Produzent, Datum und Motiv."},
+    {"stufe": 2, "text": "Quellenkritik heisst: pruefen, wer eine Quelle gemacht hat, wann und mit welchem Ziel. Und besonders wichtig: WER ist NICHT zu sehen? Auf dem Foto stehen Stadtbuerger am Bahnhof — eine bestimmte Gruppe."},
+    {"stufe": 3, "text": "Die Druckerei Gebrueder Borchers druckte die Postkarte am 31. Juli 1914 als Verkaufs-Postkarte. Auf dem Foto fehlen Land-Bevoelkerung und Arbeiter — die waren oft skeptisch oder ablehnend. Deshalb zeigt die Postkarte nur EINE Gruppe, nicht 'die Deutschen 1914'."}
+  ],
+  "punkte": 20,
+  "_meta": {
+    "afb": "II-III",
+    "bloom": "L3-L4",
+    "scpl_zone": "C1",
+    "tafelbild_knoten": ["K3-2", "K3-6"],
+    "ke_anker": "GPG7_LB3_K_03",
+    "perspektive": "P1 (Stadt-Inszenierung) als Anti-Bias-Frage operationalisiert",
+    "operationalisierungsziel": "Du kannst die Postkarte Luebeck mit vier W-Fragen pruefen — und benennen, welche Menschen auf dem Foto fehlen und warum das wichtig ist.",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "sprachniveau": "R7",
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "freischalt_buchstabe_position": "C (Position 2 von SCHULD)",
+    "f_pb_37_pflicht_erfuellt": true,
+    "f_pb_37_quellenkritik_block_genutzt": "_meta.quellenkritik_block (Produzent: Gebrueder Borchers, Auftraggeber: Regiments-Postkarten-Verlag, Motiv: patriotische Mobilmachungs-Inszenierung)",
+    "augusterlebnis_idealisierungs_verbot_operationalisiert": "JA — W-Frage 'fehlt' (Pflicht-Item) macht explizit, dass Foto NICHT 'die Deutschen 1914' zeigt, sondern Stadt-Mittelschicht in Luebeck am 31.7.; loesung benennt Land + Arbeiter als fehlende Gruppen",
+    "erarbeitbarkeits_check": "PASS — alle 4 W-Fragen sind aus mat-3-1 _meta.quellenkritik_block + inhalt-Block direkt ableitbar; Distraktoren sind plausibel aber eindeutig falsch (Datum-Verwechslung 28.6./4.8.; Auftraggeber-Verwechslung Heeresleitung gehoert zu mat-3-2; SPD/auslaendisch als ferne Distraktoren).",
+    "q_gate_self_check": {
+      "A1_afb_kongruenz": "PASS — AFB II-III (Methoden-Anwendung Quellenkritik + Bewertung 'wer fehlt warum')",
+      "A2_fragestamm_klar": "PASS — 1 Satz, 7 Woerter",
+      "A3_material_kongruenz": "PASS — alle Antworten aus mat-3-1 _meta.quellenkritik_block ableitbar",
+      "A4_QK_w_fragen_systematisch": "PASS — vier W-Fragen (wer, wann, ziel, fehlt) systematisch nach Methode",
+      "A6_tipp_progression": "PASS — Stufe 1 Hinweis (Bildunterschrift+Block), Stufe 2 Einschraenkung (Methode + 'fehlt'-Schluessel), Stufe 3 vollstaendige Loesung mit Idealisierungs-Korrektur",
+      "A7_operator_praezision": "PASS — 'Pruefe' als AFB-II-III-Operator (analysieren+bewerten), kongruent zu Quellenkritik-Typ",
+      "MQ3_kein_link_in_frage": "PASS — frage enthaelt kein [[ und kein (M",
+      "MQ3b_link_in_tipp_1": "PASS — Tipp 1 enthaelt [[mat-3-1|...]] + (M1)",
+      "F0B_R7_metrik": "PASS — Antwortoptionen max. 8 Woerter; Tipps R7-konform; Quellenkritik als Begriff aus mat-3-1 bereits eingefuehrt",
+      "beutelsbach_kein_antwortvorgriff": "PASS — Aufgabe operationalisiert Methode, nicht eine Wertungsposition; 'fehlt'-Frage ist Sachfrage",
+      "F_PB_37_quellenkritik_pflicht": "PASS — mat-3-1 ist Pflicht-Quellenkritik-Material, vollstaendiger Block aktiviert"
+    }
+  }
+}

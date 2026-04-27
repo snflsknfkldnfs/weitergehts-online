@@ -1,0 +1,57 @@
+{
+  "id": "aufgabe-1-4",
+  "typ": "multiple-choice",
+  "frage": "Welche Aussagen ueber die Spannungen in Europa um 1914 sind richtig? Waehle zwei aus.",
+  "material_referenz": ["mat-1-1", "mat-1-4"],
+  "optionen": [
+    "Auf den Meeren ruesten Deutschland und Grossbritannien gegeneinander auf.",
+    "In Afrika streiten Deutschland und Frankreich um Marokko.",
+    "Italien und Frankreich teilen sich das deutsche Kolonialreich auf.",
+    "Russland kaempft 1905 mit Grossbritannien um Indien."
+  ],
+  "loesung": [
+    "Auf den Meeren ruesten Deutschland und Grossbritannien gegeneinander auf.",
+    "In Afrika streiten Deutschland und Frankreich um Marokko."
+  ],
+  "mehrfachauswahl": true,
+  "tipps": [
+    {
+      "stufe": 1,
+      "text": "Sieh dir die [[mat-1-1|Karte Europa 1914]] (M1) und den [[mat-1-4|Text zum Buendnis-System]] (M2) an."
+    },
+    {
+      "stufe": 2,
+      "text": "Drei Spannungsfelder: Buendnisse, Flotte, Kolonien. Wer streitet auf den Meeren? Wer in Afrika?"
+    },
+    {
+      "stufe": 3,
+      "text": "Loesung: Auf den Meeren ruesten Deutschland und Grossbritannien (Flotten-Wettlauf). In Afrika streiten Deutschland und Frankreich um Marokko (Kolonialwettlauf). Beides ergibt zusammen mit den Buendnissen das Pulverfass Europa."
+    }
+  ],
+  "punkte": 15,
+  "_meta": {
+    "bloom": "L3",
+    "afb": "II",
+    "scpl_zone": "C1+C2+C3",
+    "tafelbild_knoten": ["K1-1", "K1-4", "K1-5"],
+    "ke_anker_haupt": "GPG7_LB2_K_05",
+    "ziel_material_id": "mat-1-1",
+    "operationalisierungsziel": "Die SuS ordnen die drei Spannungsfelder (Buendnisse, Flotte, Kolonien) auf der Europa-Karte raeumlich zu und benennen den Konfliktort.",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "subagent": "sub-aufgabe-mc",
+    "mc_subtyp": "multiple-select-2-aus-4",
+    "q_gate": {
+      "A1_afb_kongruenz": "PASS",
+      "A2_fragestamm_klarheit": "PASS",
+      "A3_material_kongruenz": "PASS",
+      "A4_mc_distraktor_qualitaet": "PASS — D3 sachlich falsch (Deutschland verlor seine Kolonien erst nach 1918), D4 Akteur+Konfliktort verwechselt (Russland-GB Konflikt um Persien, nicht Indien; und nicht Krieg)",
+      "A6_tipp_progression": "PASS",
+      "A7_operator_praezision": "PASS",
+      "A8_kognitive_aktivierung": "PASS — Synthese-Vorbereitung der 3 Spannungsfelder",
+      "A10_typvielfalt_mc_2x": "PASS — didaktisch begruendet im Progressionsplan §6.2 (anderer MC-Subtyp: multi-select)",
+      "MQ3_kein_link_in_frage": "PASS",
+      "MQ3b_displayref_in_tipp1": "PASS",
+      "F0B_R7": "PASS"
+    }
+  }
+}

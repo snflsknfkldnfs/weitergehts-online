@@ -1,0 +1,40 @@
+{
+  "id": "mat-1-1",
+  "typ": "karte",
+  "titel": "Wer verbuendete sich mit wem? Europa 1914",
+  "inhalt": "<figure><img src=\"assets/images/gpg-erster-weltkrieg-ursachen-run4-v050/mappe-1/img-m1-02-buendnisse-europa-1914.svg\" alt=\"Karte Europa 1914 mit zwei Buendnis-Bloecken: Dreibund (gelb) und Triple Entente (blau).\"/><figcaption><p>Karte: Europa im Jahr 1914. Sechs grosse Maechte stehen sich gegenueber. Gelb zeigt den <strong>Dreibund</strong>: das Deutsche Reich, Oesterreich-Ungarn und Italien (1882). Blau zeigt die <strong>Triple Entente</strong>: Frankreich, Russland und Grossbritannien (1907). Ein <em>Buendnis</em> ist ein Versprechen: Wer angegriffen wird, dem helfen die anderen. Graue Laender (z.B. Belgien, Schweiz, Niederlande) gehoeren zu keinem der zwei Bloecke.</p><p><cite>Karte: Wikimedia Commons, historicair / Fluteflute / Bibi Saint-Pol (CC-BY-SA 2.5).</cite></p></figcaption></figure>",
+  "bildunterschrift": "Karte Europa 1914 — Dreibund (gelb) und Triple Entente (blau).",
+  "quelle": "Wikimedia Commons: 'Map_Europe_alliances_1914-en.svg' von historicair / Fluteflute / Bibi Saint-Pol. Lizenz: CC-BY-SA 2.5.",
+  "lizenz": "CC-BY-SA-2.5",
+  "position": 1,
+  "didaktische_funktion": "einstieg",
+  "voraussetzung": [],
+  "ueberleitung_von": null,
+  "sequenz_kontext": {
+    "vorher": null,
+    "nachher": {"id": "mat-1-4", "typ": "darstellungstext", "kerninhalt": "Was ist ein Buendnis-System? Begriff, Mitglieder, Mechanismus."}
+  },
+  "perspektiv_tags": ["Aussen", "dominant"],
+  "_meta": {
+    "wortanzahl_inhalt": 78,
+    "wortanzahl_bildunterschrift": 9,
+    "fachbegriffe_eingefuehrt": ["Buendnis", "Dreibund", "Triple Entente"],
+    "fachbegriffe_referenziert": [],
+    "tafelbild_knoten": ["K1-2", "K1-3"],
+    "scpl_zone_primary": "S",
+    "scpl_zonen_abdeckung": ["S", "C1"],
+    "artefakt_ref": ["img-m1-02"],
+    "wikimedia_filename": "Map_Europe_alliances_1914-en.svg",
+    "skript_ref": "M1 §1, §5",
+    "datenbasis_hashes": ["wiki-triple-alliance-2026-04-26", "wiki-triple-entente-2026-04-26"],
+    "ke_anker_haupt": "GPG7_LB2_K_05",
+    "afb": "I-II",
+    "bloom": "Verstehen",
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "sprachniveau": "R7",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "sensibilitaets_markierung": "keine",
+    "quellenkritik_pflicht": false
+  }
+}

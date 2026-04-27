@@ -1,0 +1,39 @@
+{
+  "schema_version": "dispatch_meta_v1",
+  "mat_id": "mat-1-5",
+  "subagent_type": "sub-material-statistik",
+  "subagent_engine_typ": "bildquelle",
+  "subtyp": "tabelle-vergleich",
+  "dispatch_modus": "GENERATOR",
+  "dispatch_timestamp_utc": "2026-04-26T12:04:00Z",
+  "g1_partial_gate": {
+    "status": "PASS",
+    "redispatch_count": 0,
+    "schema_validated": "material-output-schema (Legacy v3.10.2)",
+    "notes": "Statistik mat-1-5 als Eigenproduktion. 2-Spalten-2-Zeilen-Tabelle (4 Datenzellen). Begleittext 73 Woerter (im 60W-Korridor +13W Toleranz fuer Wettruesten-Erklaerung). Zahlen mit 'ca.' gekennzeichnet."
+  },
+  "g2_full_gate": {
+    "status": "PASS",
+    "redispatch_count": 0,
+    "merged_struktur_felder": ["id", "typ", "titel", "position", "didaktische_funktion", "voraussetzung", "ueberleitung_von", "sequenz_kontext", "perspektiv_tags"]
+  },
+  "m16_prosa_only": {"status": "PASS", "reason": "Begleittext ist Erklaer-Prosa, keine Aufgaben-Operatoren"},
+  "m17_quelle_ssot": {"status": "PASS", "notes": "Quellenangabe in <cite> + quelle-Feld; keine Dopplung."},
+  "g3_llm_review": {"status": "N/A", "reason": "Nicht-quellentext-Typ"},
+  "f_pb_44_komposita": {
+    "status": "PASS",
+    "komposita_check": [
+      {"kompositum": "Wettruesten", "erstgebrauch_zerlegt": "wenn zwei Laender immer mehr Waffen bauen, weil der andere auch baut", "qg44": "PASS"},
+      "Royal Navy (referenziert mit Klammer-Zusatz '(Grossbritannien)')",
+      "Kaiserliche Marine (referenziert mit Klammer-Zusatz '(Deutschland)')"
+    ]
+  },
+  "f0b_priming_r7": {"status": "PASS", "notes": "Begleittext-Saetze max. 16W. Hauptsatz-dominant. Tabelle minimal-strukturiert."},
+  "perspektiv_tags_validation": {"status": "PASS", "tags": ["Macht-Ausuebung", "dominant"], "min_count": 1, "enum_valid": true},
+  "ca_kennzeichnung": {"status": "PASS", "notes": "Alle Zahlen mit 'ca.' gekennzeichnet — Pflicht-Hinweis aus artefakt_inventar erfuellt"},
+  "datenbasis_anker": ["wiki-naval-race-2026-04-26", "wiki-dreadnought-2026-04-26"],
+  "final_material_path": "materialien/mat-1-5.json",
+  "iteration_budget_used": "0/1",
+  "eskalation_flag": false,
+  "gate_summary": "PASS"
+}

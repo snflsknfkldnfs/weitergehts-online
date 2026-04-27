@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.0",
+  "game_id": "gpg-erster-weltkrieg-ursachen-run4-v050",
+  "run_id": "run-4-2026-04-26-v050-pristine",
+  "erstellt_am": "2026-04-26",
+  "last_updated": "2026-04-27",
+
+  "status": "PHASE_3_ASSEMBLY_DONE_DEPLOY_PENDING",
+  "naechste_aktion": "Phase 3.5 git commit (freigegeben durch sub-assembly-verify ALL_PASS) + Phase 3.6 deploy BLOCKED bis Bildpfad-Hotfix + Asset-Download (3 Pfad-Schemata gemischt: assets/images/[game-id]/mappe-N/* / ../../assets/img/[game-id]/img-MN-X.{svg,jpg} / Wikimedia-Hotlinks; Plugin-v0.5.1-Issue).",
+
+  "game_parameter": {
+    "thema": "gpg-erster-weltkrieg-ursachen-run4-v050",
+    "thema_klartext": "Erster Weltkrieg — Ursachen + Ausbruch + Marne 1914",
+    "jahrgangsstufe": "7c",
+    "schulart": "Mittelschule Bayern",
+    "fach": "GPG",
+    "schwierigkeit": "Basis",
+    "mappen_anzahl": 4,
+    "vorgaenger_game": null
+  },
+
+  "pfade": {
+    "generator_path": "/Users/paulad/escape-game-generator",
+    "target_path": "/Users/paulad/weitergehts.online/weitergehts-online",
+    "uew_path": "/Users/paulad/weitergehts.online/Unterrichtseinwicklung",
+    "output_verzeichnis": "/Users/paulad/weitergehts.online/weitergehts-online/docs/agents/artefakte/gpg-erster-weltkrieg-ursachen-run4-v050/",
+    "lehrplan_anker": "/Users/paulad/weitergehts.online/Unterrichtseinwicklung/7c/Input_Artefake/Lehrplan/GPG_R7/Fachlehrplan_GPG_R7.md",
+    "phase_3_assembly_target": "/Users/paulad/weitergehts.online/weitergehts-online/escape-games/gpg-erster-weltkrieg-ursachen-run4-v050/"
+  },
+
+  "phase_history": [
+    { "phase": "ONBOARDING", "status": "DONE", "datum": "2026-04-26" },
+    { "phase": "0.1_DIDAKTIK", "status": "DONE", "gate_urteil": "PASS", "outputs": ["DIDAKTIK_RAHMEN.md", "didaktisches_konzept.json", "mappen_aufteilung.json"] },
+    { "phase": "0.2_INHALT", "status": "DONE", "gate_urteil": "PASS", "outputs": ["inhalts_briefing.json", "Quellenverzeichnis.md"] },
+    { "phase": "0.2.M_MEDIEN", "status": "DONE", "gate_urteil": "PASS_MIT_WARN", "outputs": ["medien_katalog_game.json"], "befund": "4/5 material_kandidaten Wikimedia-Hallus erkannt + ersetzt (Plugin-Schutz funktioniert)" },
+    { "phase": "0.3_SKRIPT", "status": "DONE", "gate_urteil": "PASS", "outputs": ["SKRIPT.md", "skript_struktur.json"] },
+    { "phase": "0.3_ARTEFAKT", "status": "DONE", "gate_urteil": "PASS_MIT_HINWEIS", "outputs": ["artefakt_inventar.json"] },
+    { "phase": "0.4_HEFTEINTRAG", "status": "DONE", "gate_urteil": "PASS", "outputs": ["HEFTEINTRAG_M{1,2,3,4}.md", "hefteintrag_struktur.json"] },
+    { "phase": "1_MATERIAL_DESIGN", "status": "DONE", "gate_urteil": "PASS_MIT_WARN", "outputs": ["BLUEPRINT_M{1..4}.md", "material_geruest_m{1..4}.json"], "befund": "Concurrent-Write am Q-GATE-LOG erzeugte 3 separate Append-Files" },
+    { "phase": "2.0b+2.1_M1_MATERIAL", "status": "DONE", "gate_urteil": "PASS", "outputs": "mappe-1/{materialien,rahmen}/" },
+    { "phase": "2.0b+2.1_M2_MATERIAL", "status": "DONE", "gate_urteil": "PASS", "outputs": "mappe-2/{materialien,rahmen}/", "notes": "mat-2-5 quellentext v3.11.0+ Pro-Material-Verzeichnis + G3-Review" },
+    { "phase": "2.0b+2.1_M3_MATERIAL", "status": "DONE", "gate_urteil": "PASS", "outputs": "mappe-3/{materialien,rahmen}/", "notes": "mat-3-6 RESERVE_NICHT_AKTIVIERT + mat-3-3 v3.11.0+ + Beutelsbach-Kontroversitaet realisiert" },
+    { "phase": "2.0b+2.1_M4_MATERIAL", "status": "DONE", "gate_urteil": "PASS_MIT_WARN", "outputs": "mappe-4/{materialien,rahmen}/" },
+    { "phase": "2.2a_PROGRESSION_M1-M4", "status": "DONE", "gate_urteil": "PASS", "outputs": ["PROGRESSIONSPLAN_Mappe_{1..4}.md"] },
+    { "phase": "2.2b_AUFGABEN_M1", "status": "DONE", "gate_urteil": "PASS", "outputs": "mappe-1/aufgaben/aufgabe-1-{1..7}.json + mappe-1/data.json", "freischalt_code": "PULVER" },
+    { "phase": "2.2b_AUFGABEN_M2", "status": "DONE", "gate_urteil": "PASS", "outputs": "mappe-2/aufgaben/aufgabe-2-{1..7}.json + mappe-2/data.json", "freischalt_code": "28-06-1914" },
+    { "phase": "2.2b_AUFGABEN_M3", "status": "DONE", "gate_urteil": "PASS", "outputs": "mappe-3/aufgaben/aufgabe-3-{1..7}.json + mappe-3/data.json", "freischalt_code": "SCHULD" },
+    { "phase": "2.2b_AUFGABEN_M4", "status": "DONE", "gate_urteil": "PASS", "outputs": "mappe-4/aufgaben/aufgabe-4-{1..7}.json + mappe-4/data.json", "freischalt_code": "STELLUNGSKRIEG" },
+    { "phase": "2.2c_MAPPENABSCHLUSS_M1-M4", "status": "DONE", "gate_urteil": "PASS", "outputs": ["mappe-{1..4}/mappenabschluss.json"], "game_abschluss_code": "PULVERFASS — AUSLOESER — AUGUSTBEGEISTERUNG — STELLUNGSKRIEG" },
+    { "phase": "3.0_Q_GATE_LOG_KONSOLIDIERT", "status": "DONE", "datum": "2026-04-27", "outputs": ["Q-GATE-LOG.md (3001 Zeilen, 11 Append-Files merged)"], "notes": "Concurrent-Write-Append-Files entfernt nach Konsolidierung" },
+    { "phase": "3.1_GAME_VERZEICHNIS", "status": "DONE", "datum": "2026-04-27", "outputs": ["escape-games/gpg-erster-weltkrieg-ursachen-run4-v050/{index,lehrkraft,mappe-1..4}.html"] },
+    { "phase": "3.2_DATA_JSON_ASSEMBLY", "status": "DONE", "datum": "2026-04-27", "outputs": ["escape-games/gpg-erster-weltkrieg-ursachen-run4-v050/data.json"], "gate_urteil": "PASS", "notes": "4 Iterationen Assembly-Script bis V13/V12/V10/V05 alle gruen. 9 broken JSONs (typografische Anfuehrungszeichen unescaped) repariert. v3.11.0+ Pro-Material-id-Recovery aus parent-dir." },
+    { "phase": "3.4_SUB_ASSEMBLY_VERIFY", "status": "DONE", "datum": "2026-04-27", "gate_urteil": "ALL_PASS", "details": "Alle 4 Mappen V1-V13 PASS — V13 Hefteintrag-Verschachtelung-Regression-Schutz strukturell sauber" },
+    { "phase": "3.X_AGENT_QUALITAET_BROWSER_SMOKE", "status": "DONE", "datum": "2026-04-27", "gate_urteil": "PASS_MIT_WARN", "outputs": ["qualitaets_protokoll.md"], "befund": "S10 Bildpfad-Inkonsistenz BLOCKER fuer Deploy (3 Schemata gemischt, Phase-3.1-Asset-Download nicht durchgefuehrt). Didaktische Pruefungen alle PASS (F-PB-37 / V13 / Beutelsbach / Multiperspektivitaet / R7 / STR-14-NEU)." }
+  ],
+
+  "q_gate_summary": {
+    "phase_0_1": "PASS",
+    "phase_0_2": "PASS",
+    "phase_0_2_M": "PASS_MIT_WARN",
+    "phase_0_3_skript": "PASS",
+    "phase_0_3_artefakt": "PASS_MIT_HINWEIS",
+    "phase_0_4": "PASS",
+    "phase_1_design": "PASS_MIT_WARN",
+    "phase_2_1_m1": "PASS",
+    "phase_2_1_m2": "PASS",
+    "phase_2_1_m3": "PASS",
+    "phase_2_1_m4": "PASS_MIT_WARN",
+    "phase_2_2a": "PASS",
+    "phase_2_2b_m1": "PASS",
+    "phase_2_2b_m2": "PASS",
+    "phase_2_2b_m3": "PASS",
+    "phase_2_2b_m4": "PASS",
+    "phase_2_2c": "PASS"
+  },
+
+  "user_validation_pending": {
+    "scope": "Game-weite User-Validierung ausstehend",
+    "empfohlene_fokus": ["M2 Multiperspektivitaet Princip Held-vs-Terrorist (Kalibrierungs-Mappe)", "M3 Beutelsbach Versailles vs. Clark", "M3 Augusterlebnis-Idealisierungs-Verbot", "M4 Schlieffen-Plan-Mythos-Korrektur (Zuber)", "Game-Abschluss-Code"]
+  },
+
+  "transition_blockers_for_phase_3": [
+    "Q-GATE-LOG.md-Konsolidierung der 9 Append-Dateien (administrative Aufgabe)",
+    "Optional: User-Validierung der KERNSTUECKE (M2 Multiperspektivitaet, M3 Beutelsbach, M4 Schlieffen-Plan-Mythos)",
+    "sub-assembly-verify (Phase 3.4) als MUST_VERIFY-Pflicht-Gate vor Deploy"
+  ],
+
+  "stats": {
+    "files_geschrieben_total": 92,
+    "materialien_total": 22,
+    "aufgaben_total": 28,
+    "mappen_completed": 4,
+    "wikipedia_quellen": 29,
+    "wikimedia_bilder_dual_kanal_verifiziert": 13,
+    "hallus_erkannt_und_korrigiert": 4,
+    "subagent_dispatches": 23,
+    "re_dispatches_phase_2": 0
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "id": "aufgabe-1-5",
+  "typ": "reihenfolge",
+  "frage": "Bringe die vier Stationen des Flotten-Wettlaufs in die richtige Reihenfolge.",
+  "material_referenz": ["mat-1-5", "mat-1-2"],
+  "elemente": [
+    "1898: Der deutsche Tirpitz-Plan startet — das Deutsche Reich baut eine grosse Kriegsflotte.",
+    "1906: Grossbritannien baut die HMS Dreadnought — schneller und staerker als alle Schiffe davor.",
+    "Bis 1914: Das Deutsche Reich baut 17 moderne Grossschiffe.",
+    "Bis 1914: Grossbritannien hat 29 moderne Grossschiffe — der Vorsprung bleibt."
+  ],
+  "loesung": [
+    "1898: Der deutsche Tirpitz-Plan startet — das Deutsche Reich baut eine grosse Kriegsflotte.",
+    "1906: Grossbritannien baut die HMS Dreadnought — schneller und staerker als alle Schiffe davor.",
+    "Bis 1914: Das Deutsche Reich baut 17 moderne Grossschiffe.",
+    "Bis 1914: Grossbritannien hat 29 moderne Grossschiffe — der Vorsprung bleibt."
+  ],
+  "ordnungsprinzip": "chronologisch",
+  "tipps": [
+    {
+      "stufe": 1,
+      "text": "Schau auf die [[mat-1-5|Tabelle der Grossschiffe]] (M5) und das [[mat-1-2|Foto der HMS Dreadnought]] (M3)."
+    },
+    {
+      "stufe": 2,
+      "text": "Welches Jahr steht zuerst in der Tabelle? Was passiert dann? Sortiere nach Jahreszahlen."
+    },
+    {
+      "stufe": 3,
+      "text": "Loesung: 1898 Tirpitz-Plan -> 1906 HMS Dreadnought -> bis 1914 Deutsches Reich 17 Schiffe -> bis 1914 Grossbritannien 29 Schiffe. Merke: Beide ruesten gleichzeitig. Der britische Vorsprung bleibt."
+    }
+  ],
+  "punkte": 12,
+  "_meta": {
+    "bloom": "L3",
+    "afb": "II",
+    "scpl_zone": "C2",
+    "tafelbild_knoten": ["K1-4"],
+    "ke_anker_haupt": "GPG7_LB2_K_05",
+    "ziel_material_id": "mat-1-5",
+    "operationalisierungsziel": "Die SuS ordnen die vier Stationen des deutsch-britischen Flotten-Wettlaufs in chronologische Reihenfolge.",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "subagent": "sub-aufgabe-reihenfolge",
+    "q_gate": {
+      "A1_afb_kongruenz": "PASS",
+      "A2_fragestamm_klarheit": "PASS",
+      "A3_material_kongruenz": "PASS",
+      "A4_rf_eindeutigkeit": "PASS — chronologisch eindeutig durch Jahreszahlen 1898/1906/1914",
+      "A6_tipp_progression": "PASS",
+      "A7_operator_praezision": "PASS — 'Bringe in Reihenfolge'",
+      "MQ3_kein_link_in_frage": "PASS",
+      "MQ3b_displayref_in_tipp1": "PASS",
+      "F0B_R7": "PASS"
+    }
+  }
+}

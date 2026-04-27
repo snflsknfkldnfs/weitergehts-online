@@ -1,0 +1,343 @@
+{
+  "schema_version": "hefteintrag_v1",
+  "vertrag": "VERTRAG_PHASE_0-4_HEFTEINTRAG v1.0 + v0.5.0 (V13 Hefteintrag-Dualstruktur + V14 Entity-Encoding)",
+  "game_id": "gpg-erster-weltkrieg-ursachen-run4-v050",
+  "run_id": "run-4-2026-04-26",
+  "phase": "0.4",
+  "agent": "agent-hefteintrag",
+  "erstellt_am": "2026-04-26",
+  "_meta": {
+    "mappen_anzahl": 4,
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "fach": "GPG",
+    "sprachniveau": "R7",
+    "trigger_sichtbarkeit_policy": "POLICY_TRIGGER_SICHTBARKEIT — Lehrkraft-only Trigger-Warnungen + AFB + didaktische_begruendung. Schueler-Block enthaelt KEINE Trigger-Warnung-Wortlaute, KEINE didaktischen Begruendungen, KEINE AFB-Etiketten.",
+    "v13_dualstruktur_check": "PASS — strikte Trennung lehrkraft.* vs. schueler.* in allen 4 Mappen (BLOCKER aktiv).",
+    "v14_entity_encoding_check": "PASS — UTF-8 ASCII-konform (keine HTML-Entities, keine Umlaut-Verschluckungen). Begruendung: Run-4 Konvention 'ASCII-Transliteration ae/oe/ue/ss' systemweit.",
+    "cross_konsistenz_skript_struktur": "PASS — alle tafelbild_knoten 1:1 aus skript_struktur.json M1-M4 uebernommen.",
+    "f_pb_addressed": ["F-PB-46 (math counts)", "F-PB-45 (schulart)", "POLICY_TRIGGER_SICHTBARKEIT", "V13", "V14"],
+    "plugin_version": "v0.5.0"
+  },
+  "mappen": [
+    {
+      "mappe_id": "M1",
+      "titel": "Pulverfass Europa",
+      "stundenfrage": "Warum war Europa vor 1914 ein 'Pulverfass'?",
+      "ke_anker_haupt": "GPG7_LB2_K_05",
+      "afb": "I-II",
+      "tafelbild_dual_struktur": {
+        "lehrkraft": {
+          "didaktische_begruendung": "Erste Mappe legt das STRUKTUR-FREEZE der drei Spannungsfelder (Buendnis-System, Flotten-Wettruesten, Kolonialwettlauf). Diese Felder werden in M2 als 'Brennstoff' aufgegriffen (Ursache vs. Ausloeser). KE GPG7_LB2_K_05 wird auf Anwendungsebene erarbeitet.",
+          "afb_stufe": "I-II",
+          "bloom_ebene": "Verstehen → Anwenden",
+          "tafelbild_visualisierungstyp": "mindmap",
+          "tafelbild_aufbau_anweisung": "Zentrum 'Pulverfass Europa' am Ende setzen. Erst K1-2 Dreibund + K1-3 Triple Entente (oben), dann K1-4 Flotte (rechts-unten) und K1-5 Afrika (links-unten). Pfeile 'spannt' und 'heizt an' ohne Text.",
+          "tafelbild_knoten": [
+            {"knoten_id": "K1-1", "label": "Pulverfass Europa", "position": "zentrum", "typ": "leitbegriff", "skript_ref": "M1 §7"},
+            {"knoten_id": "K1-2", "label": "Dreibund (1882)", "position": "links-oben", "typ": "buendnis_block", "elemente": ["Deutsches Reich", "Oesterreich-Ungarn", "Italien"]},
+            {"knoten_id": "K1-3", "label": "Triple Entente (1907)", "position": "rechts-oben", "typ": "buendnis_block", "elemente": ["Frankreich", "Russland", "Grossbritannien"]},
+            {"knoten_id": "K1-4", "label": "Flotten-Wettlauf", "position": "rechts-unten", "typ": "spannungsfeld", "elemente": ["HMS Dreadnought 1906", "Tirpitz-Plan 1898", "29 vs 17 Grossschiffe 1914"]},
+            {"knoten_id": "K1-5", "label": "Wettlauf um Afrika / Marokko-Krisen", "position": "links-unten", "typ": "spannungsfeld", "elemente": ["Berlin-Konferenz 1884", "1. Marokko-Krise 1905", "2. Marokko-Krise 1911 (SMS Panther)"]}
+          ],
+          "tafelbild_verbindungen": [
+            {"von": "K1-2", "nach": "K1-1", "label": "spannt"},
+            {"von": "K1-3", "nach": "K1-1", "label": "spannt"},
+            {"von": "K1-4", "nach": "K1-1", "label": "heizt an"},
+            {"von": "K1-5", "nach": "K1-1", "label": "heizt an"},
+            {"von": "K1-2", "nach": "K1-3", "label": "stehen sich gegenueber"}
+          ],
+          "trigger_hinweise": {
+            "trigger_flags_mappe": ["nationalismus", "kolonialismus"],
+            "kolonial_sprach_sieb_qg_07": "PFLICHT — keine 'Eingeborenen', keine 'Erschliessung', keine 'zivilisatorische Mission', keine 'Entdeckung'. Neutrale Begriffe: 'kolonisierte Bevoelkerung', 'Aufteilung Afrikas durch europaeische Grossmaechte'.",
+            "wilhelm_ii_portrait_quellenkritik": "img-m1-03 ist Studio-Auftrags-Inszenierung — kein neutrales Foto. Frage an SuS: 'Was wollte der Kaiser zeigen — und was nicht?'"
+          },
+          "differenzierungs_tipps_3_stufen": [
+            {"stufe": 1, "typ": "denkanstoss", "text": "Schau dir die Karte an. Welche Farben siehst du? Was bedeuten sie?"},
+            {"stufe": 2, "typ": "richtung", "text": "Es gibt zwei Buendnisse. Eines mit Deutschland, Oesterreich-Ungarn und Italien. Wie heisst das andere? Und welche drei Streitfelder gibt es?"},
+            {"stufe": 3, "typ": "loesung", "text": "Buendnis 1 (Dreibund 1882): DT, OE-UN, IT. Buendnis 2 (Triple Entente 1907): FR, RU, GB. Drei Spannungsfelder: Buendnis-System, Flotten-Wettruesten, Kolonial-Wettlauf in Afrika."}
+          ],
+          "multiperspektivitaet": [
+            "Deutsche Reichsfuehrung (Wilhelm II., Tirpitz)",
+            "Britische Reichsregierung (Asquith, Grey)",
+            "Franzoesische Republik (Clemenceau, Delcasse)",
+            "Russisches Zarenreich",
+            "Kolonisierte Bevoelkerung Afrikas (strukturell durch Sprach-Sieb adressiert)"
+          ]
+        },
+        "schueler": {
+          "stundenfrage": "Warum war Europa vor 1914 ein 'Pulverfass'?",
+          "tafelbild_skizze_typ": "mindmap",
+          "tafelbild_beschreibung_kurz": "Mindmap: Zentrum 'Pulverfass Europa'. Oben links Dreibund (1882: Deutsches Reich, Oesterreich-Ungarn, Italien), oben rechts Triple Entente (1907: Frankreich, Russland, Grossbritannien). Unten rechts Flotten-Wettlauf (HMS Dreadnought 1906). Unten links Wettlauf um Afrika (Marokko 1905+1911). Pfeile 'spannt' und 'heizt an' verbinden Aussenknoten mit Zentrum.",
+          "schluessel_begriffe": [
+            {"begriff": "Buendnis-System", "kurzdefinition": "Mehrere Buendnisse, die sich gegenseitig in Stellung bringen."},
+            {"begriff": "Dreibund (1882)", "kurzdefinition": "Deutsches Reich, Oesterreich-Ungarn, Italien."},
+            {"begriff": "Triple Entente (1907)", "kurzdefinition": "Frankreich, Russland, Grossbritannien."},
+            {"begriff": "Flotten-Wettlauf", "kurzdefinition": "Wettbewerb beim Bau von Kriegsschiffen — Deutschland gegen Grossbritannien."},
+            {"begriff": "Kolonialwettlauf", "kurzdefinition": "Streit der europaeischen Maechte um Land in Afrika."}
+          ]
+        }
+      },
+      "sicherungs_text_dual": {
+        "lehrkraft_kommentar": "Sicherungstext baut von Buendnissen ueber Spannungen zur Pulverfass-Synthese auf. Dieser Aufbau folgt dem narrativen Pfad in M1 §1-§7 und endet mit der Synthese-Metapher (vgl. M1 §7 Skript).",
+        "schueler_text": "Um 1900 stehen sich in Europa sechs Grossmaechte gegenueber. Sie schliessen sich zu zwei Buendnissen zusammen: dem Dreibund (1882: Deutsches Reich, Oesterreich-Ungarn, Italien) und der Triple Entente (1907: Frankreich, Russland, Grossbritannien). Ein Buendnis ist ein Versprechen: Wer angegriffen wird, dem helfen die anderen. Drei Spannungen heizen Europa weiter an. Erstens: Deutschland baut ab 1898 eine grosse Kriegsflotte. Grossbritannien antwortet 1906 mit der HMS Dreadnought. So beginnt der Flotten-Wettlauf. Zweitens: Die europaeischen Maechte streiten um Land in Afrika. Zwei Mal kracht es zwischen Deutschland und Frankreich um Marokko (1905 und 1911). Drittens: Die zwei Buendnisse stehen sich misstrauisch gegenueber. Drei Spannungen plus zwei feindliche Buendnisse — das ergibt das Pulverfass Europa. Es braucht nur einen Funken.",
+        "wortzahl_schueler": 135,
+        "korridor_pass": true
+      },
+      "key_concepts": ["Buendnis-System", "Dreibund", "Triple Entente", "Flotten-Wettlauf", "Kolonialwettlauf", "Pulverfass Europa"],
+      "merksatz": "Schon vor 1914 war Europa ein Pulverfass: Zwei feindliche Buendnisse, der Wettlauf um Schiffe und der Streit um Kolonien hatten ueber Jahrzehnte Spannungen aufgebaut.",
+      "sandwich_anschluss_naechste_mappe": "Wer wirft den Funken?"
+    },
+    {
+      "mappe_id": "M2",
+      "titel": "Sarajevo 1914 — Ein Schuss, eine Welt im Krieg",
+      "stundenfrage": "Wie wurde aus dem Attentat in Sarajevo in fuenf Wochen ein Weltkrieg?",
+      "ke_anker_haupt": "GPG7_LB2_K_06",
+      "afb": "II",
+      "tafelbild_dual_struktur": {
+        "lehrkraft": {
+          "didaktische_begruendung": "Begriffspaar Ursache vs. Ausloeser wird mit Alltagsmetapher (trockener Wald + Zigarette) verankert. Brueckenfunktion zu M1 (Pulverfass = brennbarer Wald) macht das Lernen rueckwirkend sinnstiftend. Bogen zu M3: Wenn der Schuss nur Ausloeser war — wer ist dann schuldig?",
+          "afb_stufe": "II",
+          "bloom_ebene": "Anwenden → Analysieren",
+          "tafelbild_visualisierungstyp": "zeitstrahl_mit_begriffsbox",
+          "tafelbild_aufbau_anweisung": "Zeitstrahl horizontal von links nach rechts: 28.6. → 5./6.7. → 23./28.7. → 1.-4.8. Begriffsbox K2-1 (Ausloeser vs. Ursache) erst am Ende als Sicherung — bewusst NACH dem Ablauf, damit SuS aus dem Sachverhalt erst die Begriffe abstrahieren.",
+          "tafelbild_knoten": [
+            {"knoten_id": "K2-1", "label": "Ausloeser vs. Ursache", "position": "zentrum-unten", "typ": "leitbegriff", "elemente": ["Ursache = brennbarer Wald (M1)", "Ausloeser = Zigarette (Princip)"]},
+            {"knoten_id": "K2-2", "label": "28. Juni 1914 Sarajevo", "position": "oben-links", "typ": "ereignis", "elemente": ["Princip 19 J.", "Franz Ferdinand + Sophie", "Schwarze Hand"]},
+            {"knoten_id": "K2-3", "label": "Blanko-Scheck (5./6.7.)", "position": "oben-rechts", "typ": "schluesseldatum"},
+            {"knoten_id": "K2-4", "label": "Ultimatum + Kriegserklaerung 28.7.", "position": "rechts", "typ": "ereignis"},
+            {"knoten_id": "K2-5", "label": "Buendnis-Domino 1.-4. August", "position": "unten", "typ": "kettenreaktion", "elemente": ["1.8. DT→RU", "3.8. DT→FR", "4.8. GB→DT (Belgien)"]}
+          ],
+          "tafelbild_verbindungen": [
+            {"von": "K2-2", "nach": "K2-3", "label": "loest aus"},
+            {"von": "K2-3", "nach": "K2-4", "label": "ermoeglicht"},
+            {"von": "K2-4", "nach": "K2-5", "label": "loest Buendnisfall aus"},
+            {"von": "K2-5", "nach": "K2-1", "label": "macht Strukturen sichtbar"},
+            {"von": "K2-2", "nach": "K2-1", "label": "ist nur Ausloeser"}
+          ],
+          "trigger_hinweise": {
+            "trigger_flags_mappe": ["gewalt_attentat", "nationalismus"],
+            "sensibilitaet_attentat": "KEINE Foto-Darstellung von Verletzten oder Toten. Tatortskizze (img-m2-01) ist Sekundaer-Skizze.",
+            "princip_multiperspektivisch": "Nicht eindimensional als 'Terrorist' oder 'Held' labeln. Serbische Sicht (nationaler Befreier) und habsburgische Sicht (Attentaeter) gleichberechtigt nennen. Junges Bosnien als Jugendbewegung kontextualisieren (Princip war 19, Schueler).",
+            "transfer_marker_lehrkraft_only": "TRANSFER 'Konflikt-Eskalations-Mechanik heute' — Lehrkraft kann muendlich oeffnen, NICHT in Heft-Eintrag aufnehmen."
+          },
+          "differenzierungs_tipps_3_stufen": [
+            {"stufe": 1, "typ": "denkanstoss", "text": "Schau dir das Datum auf der ersten Karte an. Was ist da passiert?"},
+            {"stufe": 2, "typ": "richtung", "text": "Das Attentat war am 28. Juni. Wer wurde erschossen? Welches Land hat dann zuerst den Krieg erklaert? Schau auf die Buendnis-Tabelle aus Mappe 1."},
+            {"stufe": 3, "typ": "loesung", "text": "Princip erschoss Franz Ferdinand. Oesterreich-Ungarn erklaerte Serbien den Krieg. Russland half Serbien (Buendnisfall). Deutschland half Oesterreich-Ungarn. Frankreich half Russland. GB kam dazu, weil DT durch Belgien marschierte."}
+          ],
+          "multiperspektivitaet": [
+            "Bosnisch-serbische / serbische Nationalisten (Princip, Junges Bosnien)",
+            "Habsburger / Oesterreich-Ungarn (Franz Joseph, Berchtold)",
+            "Deutsches Reich (Wilhelm II., Bethmann Hollweg)",
+            "Russisches Zarenreich (Sasonow, Nikolaus II.)",
+            "Britische Regierung (Grey)"
+          ]
+        },
+        "schueler": {
+          "stundenfrage": "Wie wurde aus dem Attentat in Sarajevo in fuenf Wochen ein Weltkrieg?",
+          "tafelbild_skizze_typ": "zeitstrahl_mit_begriffsbox",
+          "tafelbild_beschreibung_kurz": "Zeitstrahl horizontal: 28.6.1914 (Sarajevo, Princip erschiesst Franz Ferdinand) → 5./6.7. (Blanko-Scheck Berlin → Wien) → 23.7. (Ultimatum) → 28.7. (AT-UN erklaert SR den Krieg) → 1.-4.8. (Buendnis-Domino: DT→RU, DT→FR, GB→DT). Unten Begriffsbox: Ursache (brennbarer Wald = Pulverfass Europa) vs. Ausloeser (Zigarette = Schuss von Princip).",
+          "schluessel_begriffe": [
+            {"begriff": "Julikrise", "kurzdefinition": "Die fuenf Wochen zwischen Attentat (28.6.) und Kriegsausbruch (4.8.1914)."},
+            {"begriff": "Blanko-Scheck", "kurzdefinition": "Versprechen ohne Bedingungen — Berlin sagt Wien jede Hilfe zu."},
+            {"begriff": "Ultimatum", "kurzdefinition": "Forderung mit kurzer Frist (hier 48 Stunden an Serbien)."},
+            {"begriff": "Mobilmachung", "kurzdefinition": "Die Armee fuer den Krieg bereitmachen."},
+            {"begriff": "Buendnisfall", "kurzdefinition": "Wenn ein Buendnis-Partner angegriffen wird, muessen die anderen helfen."},
+            {"begriff": "Ursache", "kurzdefinition": "Grund, der lange wirkt (z.B. das Pulverfass Europa)."},
+            {"begriff": "Ausloeser", "kurzdefinition": "Funke, der ein Ereignis startet (z.B. der Schuss in Sarajevo)."}
+          ]
+        }
+      },
+      "sicherungs_text_dual": {
+        "lehrkraft_kommentar": "Sicherungstext folgt dem chronologischen Aufbau M2 §1-§6 und schliesst mit der Begriffs-Differenzierung Ursache/Ausloeser. Die Metapher 'trockener Wald + Zigarette' verankert das Begriffspaar konkret und reaktiviert M1.",
+        "schueler_text": "Am 28. Juni 1914 erschiesst der 19-jaehrige Schueler Gavrilo Princip in Sarajevo den oesterreichisch-ungarischen Thronfolger Franz Ferdinand und seine Frau Sophie. Bosnien gehoert zu Oesterreich-Ungarn. Princip will Bosnien aus der Habsburg-Herrschaft befreien. Was dann folgt, nennt man die Julikrise. Am 5. und 6. Juli verspricht Berlin Wien Hilfe — den Blanko-Scheck. Am 23. Juli stellt Wien Serbien ein Ultimatum. Am 28. Juli erklaert Oesterreich-Ungarn Serbien den Krieg. Jetzt fallen die Buendnisse wie Dominosteine: Am 1. August erklaert Deutschland Russland den Krieg. Am 3. August folgt Frankreich. Am 4. August marschiert Deutschland ins neutrale Belgien — und Grossbritannien erklaert Deutschland den Krieg. In nur fuenf Wochen wird aus einem Schuss ein Weltkrieg. Der Schuss war der Ausloeser, nicht die Ursache. Eine Ursache wirkt lange (Pulverfass aus Mappe 1). Ein Ausloeser ist der Funke, der startet. Trockener Wald + Zigarette = Feuer.",
+        "wortzahl_schueler": 150,
+        "korridor_pass": true
+      },
+      "key_concepts": ["Julikrise", "Blanko-Scheck", "Ultimatum", "Mobilmachung", "Buendnisfall", "Ursache", "Ausloeser"],
+      "merksatz": "Aus dem Attentat in Sarajevo wurde durch das Buendnis-System in fuenf Wochen ein Weltkrieg. Der einzelne Schuss war der Ausloeser — die wahren Ursachen lagen tiefer.",
+      "sandwich_anschluss_naechste_mappe": "Wenn der Schuss nur Ausloeser war — wer ist dann schuld?"
+    },
+    {
+      "mappe_id": "M3",
+      "titel": "Augustfieber — Wer schuld ist und wer jubelt",
+      "stundenfrage": "Wer war im August 1914 begeistert — und wer hat heute die Schuld am Krieg?",
+      "ke_anker_haupt": "GPG7_LB3_K_03",
+      "afb": "II-III",
+      "tafelbild_dual_struktur": {
+        "lehrkraft": {
+          "didaktische_begruendung": "Kognitiv anspruchsvollste Mappe (AFB II-III). Quellenkritik + Multiperspektivitaet + eigene Position. Mappe ist als ECHTE historische Kontroverse angelegt (Beutelsbach Kontroversitaetsgebot). Kein Antwort-Vorgriff — SuS bilden eigene begruendete Position.",
+          "afb_stufe": "II-III",
+          "bloom_ebene": "Analysieren → Beurteilen",
+          "tafelbild_visualisierungstyp": "hierarchisch_frage_im_zentrum",
+          "tafelbild_aufbau_anweisung": "Erst K3-2 (Augusterlebnis Stadt vs. Land) + Foto-Quellenkritik → K3-3 (Burgfrieden) → K3-4 (Versailles 1919, unten links) → K3-5 (Clark 2013, unten rechts) → K3-1 (Kriegsschuldfrage in der Mitte). K3-6 (Quellenkritik) am Rand als Methoden-Reflexion.",
+          "tafelbild_knoten": [
+            {"knoten_id": "K3-1", "label": "Kriegsschuldfrage", "position": "zentrum", "typ": "leitbegriff", "elemente": ["Versailles 1919 (Art. 231)", "Clark 2013 (Schlafwandler)"]},
+            {"knoten_id": "K3-2", "label": "Augusterlebnis 1914", "position": "oben-links", "typ": "phaenomen", "elemente": ["Stadt-Begeisterung", "Land-Skepsis", "Foto-Bias"]},
+            {"knoten_id": "K3-3", "label": "Burgfrieden 4.8.1914", "position": "oben-rechts", "typ": "ereignis", "elemente": ["SPD-Kriegskredite", "Reichstags-Konsens", "zerfaellt 1916/17"]},
+            {"knoten_id": "K3-4", "label": "Versailles Art. 231 (1919)", "position": "unten-links", "typ": "quellentext", "elemente": ["Allein-Schuld DT + Verbuendete", "politisch motiviert"]},
+            {"knoten_id": "K3-5", "label": "Clark — Schlafwandler (2013)", "position": "unten-rechts", "typ": "forschungsstand", "elemente": ["multi-kausal", "Wien+Berlin+Petersburg+Paris+London"]},
+            {"knoten_id": "K3-6", "label": "Quellenkritik", "position": "rand", "typ": "methode", "elemente": ["Wer schreibt?", "Wann?", "Mit welchem Ziel?"]}
+          ],
+          "tafelbild_verbindungen": [
+            {"von": "K3-2", "nach": "K3-1", "label": "ist Teil der Frage"},
+            {"von": "K3-3", "nach": "K3-1", "label": "zeigt politische Einigkeit Anfang"},
+            {"von": "K3-4", "nach": "K3-1", "label": "Antwort 1919"},
+            {"von": "K3-5", "nach": "K3-1", "label": "Antwort 2013"},
+            {"von": "K3-4", "nach": "K3-5", "label": "widerspricht"},
+            {"von": "K3-6", "nach": "K3-2", "label": "deckt Bias auf"},
+            {"von": "K3-6", "nach": "K3-4", "label": "deckt Position auf"}
+          ],
+          "trigger_hinweise": {
+            "trigger_flags_mappe": ["nationalismus", "weltkrieg_grossereignis"],
+            "augusterlebnis_idealisierung_verbot": "Augusterlebnis NIEMALS idealisieren (Ueberwaeltigungsverbot Beutelsbach). SuS lernen explizit: Foto-Bias zeigt nur Stadt-Mittelschicht. Land-Bevoelkerung, Arbeiter und SPD-Anhaenger waren oft skeptisch oder ablehnend.",
+            "quellenkritik_pflicht_4_quellen": [
+              "img-m3-01 Luebeck-Postkarte: kommerzielle Inszenierung, Stadt-Buerger.",
+              "img-m3-02 Bundesarchiv: amtliche Mobilmachungs-Dokumentation.",
+              "img-m3-03 Burgfriedens-Medaille: Auftrags-Inszenierung des Reichstags.",
+              "zit-M3-1 Versailles Art. 231: politisch motiviert, Sieger-Vertrag."
+            ],
+            "versailles_art_231_sprengkraft_lehrkraft_only": "Sprengkraft der Kriegsschuld-Klausel fuer Weimarer Republik (Kriegsschuld-Luege als Propaganda-Topos der NSDAP) BLEIBT IM LEHRKRAFT-Block.",
+            "transfer_marker_lehrkraft_only": "TRANSFER 'Schuldfragen heute' — muendlich, NICHT in Heft-Eintrag."
+          },
+          "differenzierungs_tipps_3_stufen": [
+            {"stufe": 1, "typ": "denkanstoss", "text": "Schau auf das Foto aus Luebeck. Wer ist NICHT zu sehen?"},
+            {"stufe": 2, "typ": "richtung", "text": "Das Foto zeigt Stadt-Buerger. Wer fehlt? Forschung sagt: Land-Bevoelkerung und Arbeiter waren oft skeptisch. Und: Wer hat 1919 die Schuld zugewiesen? Wer 2013?"},
+            {"stufe": 3, "typ": "loesung", "text": "Auf dem Foto fehlen Land-Bevoelkerung + Arbeiter. Augusterlebnis war begrenzt. Schuld-Frage: 1919 (Versailles Art. 231) sagt: DT allein. 2013 (Clark) sagt: mehrere Maechte gemeinsam. Beide Positionen begruenden, eigene Position formulieren."}
+          ],
+          "multiperspektivitaet": [
+            "Begeisterte Stadtbuerger 1914 (gebildete Mittelschicht, Studenten)",
+            "Skeptische Landbevoelkerung / Arbeiter / SPD-Anhaenger 1914",
+            "Versailler Friedens-Konferenz 1919 (Wilson, Clemenceau, Lloyd George)",
+            "Weimarer Republik / deutsche Historiker 1920er",
+            "Heutige Forschung (Christopher Clark, Schlafwandler-These 2013)"
+          ]
+        },
+        "schueler": {
+          "stundenfrage": "Wer war im August 1914 begeistert — und wer hat heute die Schuld am Krieg?",
+          "tafelbild_skizze_typ": "hierarchisch_frage_im_zentrum",
+          "tafelbild_beschreibung_kurz": "Zentrum: Kriegsschuldfrage 'Wer ist schuld am Krieg?'. Oben links Augusterlebnis 1914 (Stadt jubelt, Land + Arbeiter skeptisch, Foto-Bias). Oben rechts Burgfrieden 4.8.1914 (alle Parteien dafuer, auch SPD). Unten links Versailles Art. 231 (1919): 'DT allein schuld'. Unten rechts Clark — Schlafwandler (2013): 'mehrere Maechte gemeinsam' (Wien + Berlin + Petersburg + Paris + London). Rechts am Rand Quellenkritik-Box: Wer schreibt? Wann? Mit welchem Ziel?",
+          "schluessel_begriffe": [
+            {"begriff": "Augusterlebnis / Augustbegeisterung", "kurzdefinition": "Stimmung in deutschen Staedten Anfang August 1914 — viele jubeln, aber nicht alle."},
+            {"begriff": "Burgfrieden", "kurzdefinition": "Politische Einigkeit aller Parteien im Reichstag ab 4.8.1914 (auch SPD)."},
+            {"begriff": "Kriegsschuld-Klausel (Art. 231)", "kurzdefinition": "Abschnitt im Vertrag von Versailles 1919 — Deutschland trage die Allein-Schuld."},
+            {"begriff": "Kriegsschuldfrage", "kurzdefinition": "Die offene Frage, wer fuer den Ausbruch des Ersten Weltkriegs verantwortlich ist."},
+            {"begriff": "Quellenkritik", "kurzdefinition": "Eine Quelle pruefen — wer schreibt, wann, mit welchem Ziel?"},
+            {"begriff": "Schlafwandler-These (Clark, 2013)", "kurzdefinition": "Mehrere Maechte sind gemeinsam in den Krieg getaumelt — keine allein hat Schuld."}
+          ]
+        }
+      },
+      "sicherungs_text_dual": {
+        "lehrkraft_kommentar": "Sicherungstext fuehrt dreistufig: 1) Augusterlebnis als Stadt-Phaenomen mit Quellenkritik-Hinweis, 2) Burgfrieden als institutioneller Konsens, 3) Schuldfrage zwischen Versailles 1919 und Clark 2013. Schluss-Satz signalisiert: keine einfache Antwort.",
+        "schueler_text": "Im August 1914 ziehen viele junge Maenner mit Begeisterung in den Krieg. Diese Stimmung nennt man Augusterlebnis oder Augustbegeisterung. Aber Vorsicht: Die Fotos zeigen meist nur Stadt-Buerger. Auf dem Land und in den Arbeiter-Vierteln waren viele Menschen skeptisch oder ablehnend. Beim Anschauen einer Quelle gilt: Quellenkritik — wer schreibt, wann, mit welchem Ziel? Am 4. August 1914 stimmt sogar die SPD im Reichstag fuer die Kriegskredite. Alle Parteien sind dafuer. Diese Einigkeit nennt man Burgfrieden. 1916/17 zerbricht der Burgfrieden wieder. Vier Jahre spaeter ist der Krieg verloren. Im Vertrag von Versailles steht 1919 die Kriegsschuld-Klausel (Artikel 231): Deutschland und seine Verbuendeten seien allein schuld. Heute sieht der Forscher Christopher Clark das anders. In seinem Buch Die Schlafwandler (2013) schreibt er: Keine Macht hat allein Schuld. Mehrere Regierungen sind wie Schlafwandler in den Krieg getaumelt — Wien, Berlin, Petersburg, Paris und London. Die Frage 'Wer ist schuld?' hat keine einfache Antwort. Begeisterung war Stadt-Sache. Schuld war geteilt.",
+        "wortzahl_schueler": 145,
+        "korridor_pass": true
+      },
+      "key_concepts": ["Augusterlebnis", "Burgfrieden", "Kriegsschuld-Klausel", "Kriegsschuldfrage", "Quellenkritik", "Schlafwandler-These"],
+      "merksatz": "Die Augustbegeisterung 1914 war real, aber nicht ueberall. Die Frage 'Wer ist schuld?' hat heute keine einfache Antwort mehr — Versailles 1919 sagt: Deutschland allein. Clark 2013 sagt: mehrere Maechte gemeinsam.",
+      "sandwich_anschluss_naechste_mappe": "Die Maenner zogen los — was passierte, als sie ankamen?"
+    },
+    {
+      "mappe_id": "M4",
+      "titel": "Marne 1914 — Das Ende des kurzen Krieges",
+      "stundenfrage": "Warum scheiterte der deutsche Plan fuer einen schnellen Sieg an der Marne?",
+      "ke_anker_haupt": "GPG7_LB2_K_07",
+      "afb": "II",
+      "tafelbild_dual_struktur": {
+        "lehrkraft": {
+          "didaktische_begruendung": "M4 als Sicherung und Ueberleitung zum Folge-Game. Bewusster AFB-Rueckgang nach Hoehepunkt M3 (didaktischer Spannungsbogen). Kern-Lernschritt: Plan vs. Realitaet — der Schlieffen-Plan zerbricht an Versorgung, Belgiens Widerstand und der Marne-Schlacht. Begriff Stellungskrieg als Folge.",
+          "afb_stufe": "II",
+          "bloom_ebene": "Anwenden → Analysieren",
+          "tafelbild_visualisierungstyp": "zeitstrahl_mit_wendepunkt",
+          "tafelbild_aufbau_anweisung": "Zeitstrahl horizontal: 1905/06 (Plan) → 4.8.1914 (Belgien-Verletzung + GB-Kriegseintritt) → 20.8. (Bruessel) → 5.-12.9. (Marne-Schlacht). Wendepunkt-Pfeil 'scheitert' nach unten zum Stellungskrieg-Knoten als Sicherungs-Synthese.",
+          "tafelbild_knoten": [
+            {"knoten_id": "K4-1", "label": "Stellungskrieg", "position": "zentrum-unten", "typ": "leitbegriff", "elemente": ["feste Stellungen", "Schuetzen-Graeben", "kein Vormarsch"]},
+            {"knoten_id": "K4-2", "label": "Schlieffen-Plan (1905/06)", "position": "oben-links", "typ": "plan", "elemente": ["6 Wochen FR-Sieg", "ueber Belgien", "Plan-Mythos vs. Aufmarsch-Skizze"]},
+            {"knoten_id": "K4-3", "label": "Belgien-Verletzung 4.8.1914", "position": "oben-rechts", "typ": "ereignis", "elemente": ["Neutralitaets-Bruch", "GB-Kriegseintritt", "Lueck 7.8., Bruessel 20.8."]},
+            {"knoten_id": "K4-4", "label": "Marne-Schlacht 5.-12.9.1914", "position": "rechts", "typ": "schlacht", "elemente": ["Joffre vs. Moltke", "40 km vor Paris", "Marne-Taxis (Mythos)", "Verluste >500.000"]},
+            {"knoten_id": "K4-5", "label": "Wendepunkt zum Stellungskrieg", "position": "unten-links", "typ": "wendepunkt", "elemente": ["Wettlauf zum Meer", "vier Jahre Krieg statt sechs Wochen"]}
+          ],
+          "tafelbild_verbindungen": [
+            {"von": "K4-2", "nach": "K4-3", "label": "fordert"},
+            {"von": "K4-3", "nach": "K4-4", "label": "fuehrt nach Frankreich"},
+            {"von": "K4-4", "nach": "K4-5", "label": "scheitert → wird"},
+            {"von": "K4-5", "nach": "K4-1", "label": "muendet in"},
+            {"von": "K4-2", "nach": "K4-1", "label": "scheitert an"}
+          ],
+          "trigger_hinweise": {
+            "trigger_flags_mappe": ["weltkrieg_grossereignis", "konflikt"],
+            "schlieffen_plan_mythos": "Zuber-Forschung: kein einziger 'fertiger' Plan, sondern Aufmarsch-Skizzen. Begriff trotzdem verwenden, aber muendlich relativieren.",
+            "marne_verluste_zahl_nicht_visuell": "~250.000 FR + 12.733 GB + 298.000 DT (zusammen >500.000). KEINE Bildquellen mit Leichen/Verwundeten.",
+            "img_m4_2_inszenierungs_verdacht": "Foto 'deutsche Soldaten Marne 1914' zeigt Decorations-Tragen — wahrscheinlich gestelltes Foto. SuS bekommen den Hinweis als BU am Foto, kein Trigger-Wortlaut im Heft.",
+            "marne_taxi_mythos": "Nur ~5000 Soldaten transportiert, aber als Symbol unsterblich. Mythos vs. Faktum.",
+            "belgien_voelkerrechtsbruch": "Explizit benennen: GB-Kriegseintritt war Folge der Neutralitaets-Verletzung — nicht 'Imperialismus' oder 'Englandfeindschaft'.",
+            "transfer_marker_lehrkraft_only": "TRANSFER 'Pre-Plan vs. Realitaet' — muendlich, NICHT in Heft."
+          },
+          "differenzierungs_tipps_3_stufen": [
+            {"stufe": 1, "typ": "denkanstoss", "text": "Schau auf die Karte. Welcher Weg war geplant? Welcher wurde wirklich gegangen?"},
+            {"stufe": 2, "typ": "richtung", "text": "Der Plan fuehrte durch Belgien — ein neutrales Land. Was passierte am 4. August? Warum trat GB in den Krieg ein? Und wo stoppten Joffre und Moltke?"},
+            {"stufe": 3, "typ": "loesung", "text": "Schlieffen-Plan = 6-Wochen-Sieg gegen FR ueber Belgien. Belgien-Bruch 4.8. → GB-Kriegseintritt. Joffre stoppt DT-Vormarsch an der Marne 5.-12.9. ca. 40 km vor Paris. Moltke abgesetzt. Folge: Wettlauf zum Meer, dann Stellungskrieg fuer 4 Jahre."}
+          ],
+          "multiperspektivitaet": [
+            "Deutsche Generalstab-Fuehrung (Moltke d.J., Schlieffen-Erbe)",
+            "Belgische Bevoelkerung und Regierung (Opfer Neutralitaets-Verletzung)",
+            "Franzoesische Armee unter Joffre (defensiv-Sieger Marne)",
+            "Britische Expeditionsstreitmacht (BEF) unter John French",
+            "Soldaten beider Seiten (Erschoepfung, Versorgungs-Probleme)"
+          ]
+        },
+        "schueler": {
+          "stundenfrage": "Warum scheiterte der deutsche Plan fuer einen schnellen Sieg an der Marne?",
+          "tafelbild_skizze_typ": "zeitstrahl_mit_wendepunkt",
+          "tafelbild_beschreibung_kurz": "Zeitstrahl: 1905/06 Schlieffen-Plan (Frankreich in 6 Wochen besiegen, ueber Belgien) → 4.8.1914 deutsche Truppen marschieren in Belgien ein, GB erklaert DT den Krieg → 20.8. Bruessel faellt → 5.-12.9.1914 Marne-Schlacht (Joffre stoppt deutsche Truppen ca. 40 km vor Paris, Moltke abgesetzt). Pfeil 'scheitert' nach unten zur Stellungskrieg-Box: feste Stellungen + Schuetzen-Graeben → 4 Jahre statt 6 Wochen.",
+          "schluessel_begriffe": [
+            {"begriff": "Schlieffen-Plan", "kurzdefinition": "Deutscher Plan von 1905/06 — Frankreich in sechs Wochen besiegen, ueber Belgien."},
+            {"begriff": "Belgien-Verletzung", "kurzdefinition": "Deutscher Einmarsch ins neutrale Belgien am 4.8.1914 — Grund fuer den britischen Kriegseintritt."},
+            {"begriff": "Marne-Schlacht (5.-12.9.1914)", "kurzdefinition": "Franzoesisch-britischer Sieg etwa 40 km vor Paris, gefuehrt von General Joffre."},
+            {"begriff": "Stellungskrieg", "kurzdefinition": "Beide Seiten bleiben in festen Stellungen (Schuetzen-Graeben) und kommen kaum mehr vorwaerts."},
+            {"begriff": "Wendepunkt", "kurzdefinition": "Punkt, an dem sich der Verlauf entscheidend aendert (hier: Marne-Schlacht September 1914)."}
+          ]
+        }
+      },
+      "sicherungs_text_dual": {
+        "lehrkraft_kommentar": "Sicherungstext folgt M4 §1-§7. Verluste werden als Faktum erwaehnt, aber NICHT visualisiert. Schluss: Stellungskrieg als Konsequenz und Folge-Game-Anker (4 Jahre statt 6 Wochen).",
+        "schueler_text": "Schon 1905 entwirft der deutsche General Alfred von Schlieffen einen Plan fuer einen schnellen Sieg gegen Frankreich: in nur sechs Wochen — und durch das neutrale Belgien. Diesen Plan nennt man den Schlieffen-Plan. Am 4. August 1914 marschieren deutsche Truppen in Belgien ein. Belgien ist neutral — also nicht Teil eines Buendnisses. Genau am gleichen Tag erklaert Grossbritannien Deutschland den Krieg, weil die Briten Belgien beschuetzt hatten. Die deutschen Truppen marschieren schnell. Bis zum 20. August faellt Bruessel. Sie sind erschoepft, die Versorgung kommt nicht hinterher. Vom 5. bis 12. September 1914 kommt es zur Marne-Schlacht, etwa 40 Kilometer vor Paris. Der franzoesische General Joseph Joffre stoppt den deutschen Vormarsch. General Moltke wird kurz danach abgesetzt. Der Schlieffen-Plan ist gescheitert. Beide Seiten graben sich nun ein. Sie bauen lange Schuetzen-Graeben. Sie bewegen sich kaum noch vorwaerts. Der Stellungskrieg beginnt. Aus dem geplanten kurzen Krieg wird ein Krieg, der noch vier Jahre dauert.",
+        "wortzahl_schueler": 150,
+        "korridor_pass": true
+      },
+      "key_concepts": ["Schlieffen-Plan", "Belgien-Verletzung", "Marne-Schlacht", "Stellungskrieg", "Wendepunkt"],
+      "merksatz": "An der Marne im September 1914 endete der 'kurze Krieg' und der Stellungskrieg begann. Aus geplanten sechs Wochen wurden vier Jahre Krieg.",
+      "sandwich_anschluss_naechste_mappe": "Folge-Game: Stellungskrieg / Heimatfront / Versailler Vertrag"
+    }
+  ],
+  "cross_konsistenz_check": {
+    "skript_struktur_tafelbild_knoten_uebernahme": {
+      "M1": "5/5 Knoten + 5/5 Verbindungen 1:1 uebernommen",
+      "M2": "5/5 Knoten + 5/5 Verbindungen 1:1 uebernommen",
+      "M3": "6/6 Knoten + 7/7 Verbindungen 1:1 uebernommen",
+      "M4": "5/5 Knoten + 5/5 Verbindungen 1:1 uebernommen"
+    },
+    "ke_matrix_konsistenz": {
+      "M1_haupt_K_05": "PASS — KE-Anker bestaetigt didaktisches_konzept.json",
+      "M2_haupt_K_06": "PASS",
+      "M3_haupt_K_03": "PASS",
+      "M4_haupt_K_07": "PASS"
+    },
+    "schueler_text_korridor_80_150": {
+      "M1": "135 Wo — PASS",
+      "M2": "150 Wo — PASS (Obergrenze)",
+      "M3": "145 Wo — PASS",
+      "M4": "150 Wo — PASS (Obergrenze)"
+    },
+    "scpl_struktur_pro_mappe": {
+      "M1": "Situation: Europa um 1900 / Complication: Buendnisse + Spannungen / Problem: Pulverfass / Loesung: Merksatz",
+      "M2": "Situation: 28.6.1914 Sarajevo / Complication: Julikrise + Domino / Problem: 5 Wochen → Weltkrieg / Loesung: Ursache vs. Ausloeser",
+      "M3": "Situation: August 1914 Stimmung / Complication: Foto-Bias + Burgfrieden / Problem: Schuldfrage / Loesung: 1919 vs. 2013",
+      "M4": "Situation: Schlieffen-Plan 1905/06 / Complication: Belgien + Vormarsch / Problem: Marne-Schlacht / Loesung: Stellungskrieg"
+    }
+  },
+  "validierungsstatus": "ENTWURF",
+  "user_validierung_pflicht": "ja",
+  "naechste_phase": "Phase 1 (agent-material-design): Material-Sloots erfuellen die SCPL-Struktur des Hefteintrags. Hefteintrag-STRUKTUR-FREEZE ist nun aktiv — keine Schritte mehr hinzufuegen oder entfernen. Formulierungs-OPEN bleibt bis Phase 2.1c Achse 6."
+}

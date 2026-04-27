@@ -1,0 +1,73 @@
+{
+  "id": "mat-4-3",
+  "typ": "bildquelle",
+  "titel": "Was zeigt das Foto wirklich — und was nicht?",
+  "inhalt": "<figure class=\"bildquelle\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/3/3b/German_soldiers_Battle_of_Marne_WWI.jpg\" alt=\"Foto deutscher Soldaten an der Front bei der Marne-Schlacht September 1914 — Soldaten posieren in Reihe mit Decorationen am Rock\" /><figcaption class=\"bildquelle__bu bildquelle__bu--haupt\">Deutsche Soldaten an der Marne-Schlacht, September 1914. Photograph: deutsches Heer (anonym). Heeres-Selbstdarstellung waehrend des Vormarsches gegen Frankreich.</figcaption><figcaption class=\"bildquelle__bu bildquelle__bu--quellenkritik\"><em>Quellenkritik: Dieses Foto ist vermutlich gestellt. Die Soldaten tragen Decorationen — also Orden und Auszeichnungen. Im aktiven Kampf war das unueblich. Wahrscheinlich hat der Photograph die Soldaten posieren lassen, damit das Heer stark aussieht. Frag dich: Was zeigt dieses Foto NICHT? (Erschoepfung, Versorgungs-Probleme, gefallene Kameraden.)</em></figcaption></figure>",
+  "bildunterschrift": "DT-Soldaten an der Marne, Sep 1914, deutsches Heer (anonym). Quellenkritik: vermutlich gestelltes Foto — Decorations-Tragen im aktiven Kampf unueblich. Heeres-Selbstdarstellung, kein dokumentarisches Kampf-Bild.",
+  "quelle": "Wikimedia Commons, File:German_soldiers_Battle_of_Marne_WWI.jpg, Urheber: German Army (anonym), September 1914, Lizenz: Public Domain (PD-old-70). Wikipedia weist explizit auf Inszenierungs-Verdacht hin (Decorations-Tragen unueblich im aktiven Kampf). Datenbasis: Wikipedia-Artikel 'First Battle of the Marne' (Stand 2026-04-26).",
+  "lizenz": "Public Domain (PD-old-70)",
+  "position": 3,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": ["mat-4-2"],
+  "ueberleitung_von": "Die Zeitleiste hat dich vom Ultimatum am 2. August bis zur Marne-Schlacht im September gefuehrt. Aber wie sahen die Soldaten an der Front aus, die diesen Plan zu Ende bringen sollten? Schau das Foto an — und denk an Quellenkritik aus Mappe 3.",
+  "sequenz_kontext": {
+    "vorher": {"id": "mat-4-2", "typ": "zeitleiste", "kerninhalt": "Zeitleiste August/September 1914 mit 7 Schluessel-Daten."},
+    "nachher": {"id": "mat-4-4", "typ": "bildquelle", "kerninhalt": "FR-Infanterie 1913 — Multiperspektiv-Vergleich + Datums-Quellenkritik."}
+  },
+  "perspektiv_tags": ["dominant", "Kritik"],
+  "_meta": {
+    "wortanzahl_inhalt": 109,
+    "wortanzahl_bildunterschrift": 30,
+    "wortanzahl_quellenkritik_bu": 67,
+    "fachbegriffe_eingefuehrt": [],
+    "fachbegriffe_referenziert": ["Marne-Schlacht (mat-4-2)", "Quellenkritik (M3)"],
+    "tafelbild_knoten": ["K4-4"],
+    "scpl_zone_primary": "C2",
+    "scpl_zonen_abdeckung": ["C2"],
+    "artefakt_ref": ["img-m4-02"],
+    "wikimedia_filename": "German_soldiers_Battle_of_Marne_WWI.jpg",
+    "skript_ref": "M4 §4",
+    "datenbasis_hashes": ["wiki-marne-2026-04-26"],
+    "ke_anker_haupt": "GPG7_LB2_K_07",
+    "afb": "II-III",
+    "bloom": "Analysieren (Quellenkritik)",
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "sprachniveau": "R7",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "sensibilitaets_markierung": "propaganda_kontextualisierung_noetig",
+    "kontextualisierung_realisiert": true,
+    "kontextualisierung_ort": ["inhalt (bildquelle__bu--quellenkritik)", "bildunterschrift", "quelle"],
+    "f_pb_37_quellenkritik_block_pflicht": true,
+    "f_pb_37_quellenkritik_block_realisiert": true,
+    "auftragskunst_flag": true,
+    "inszenierungs_hinweis": "Wikipedia-explizit: vermutlich gestellte Aufnahme (Decorations-Tragen unueblich im aktiven Kampf)",
+    "propaganda_kontext": "deutsche Heeres-Selbstdarstellung 1914",
+    "bildfunktion": "illustrativ",
+    "material_charakter": "besinnung_sachbezogen",
+    "analyseauftrag": true,
+    "personalisiert": false,
+    "perspektive": "P1 dominant (DT-Heeres-Selbstdarstellung) — Quellenkritik dekonstruiert die Inszenierung. Multiperspektiv-Korrektur durch mat-4-4 (FR-Sicht).",
+    "tipp_stufen": {
+      "stufe_1": "Was zeigt das Foto?",
+      "stufe_2": "Stelle dir vor: Du bist im echten Kampf. Wuerdest du Orden tragen?",
+      "stufe_3": "Decorations-Tragen ist im aktiven Kampf unueblich. Das Foto ist vermutlich gestellt — Heeres-Selbstdarstellung. Frag bei jedem historischen Foto: Wer hat es gemacht? Mit welcher Absicht?"
+    },
+    "quellenkritische_impulse": [
+      "Wer hat dieses Foto gemacht — und mit welchem Ziel?",
+      "Warum tragen die Soldaten Orden, wenn sie im Kampf sind?",
+      "Was zeigt das Foto NICHT? Was haette ein dokumentarisches Foto gezeigt?"
+    ],
+    "kernerkenntnisse_bezug": [
+      "Heeres-Bilder sind oft Inszenierung, nicht Dokumentation.",
+      "Quellenkritik gilt fuer DT-Bilder — und in mat-4-4 gleich auch fuer FR-Bilder."
+    ],
+    "trigger_vermerk": ["weltkrieg_grossereignis", "konflikt"],
+    "f_pb_44_komposita_check": {
+      "marne_schlacht_referenziert": "aus mat-4-2 bekannt (kein Re-Erstgebrauch)",
+      "quellenkritik_referenziert": "aus M3 bekannt (kein Re-Erstgebrauch); Methode wird im BU angewandt"
+    },
+    "anti_bias_kompensation": "Mat-4-3 zeigt DT-dominant. Mat-4-4 (Folge-Material) zeigt FR-Sicht — Multiperspektiv-Doppel als Sieger-Verlierer-Mythos-Korrektur (DT-Inszenierung neben FR-Inszenierung 1913).",
+    "erarbeitbarkeits_check": "PASS — SuS sehen Foto, lesen Quellenkritik-BU, erkennen die Inszenierungs-Logik. Vorwissen Quellenkritik (M3) gesichert. Anschluss an mat-4-4 fuer Multiperspektiv-Vergleich."
+  }
+}

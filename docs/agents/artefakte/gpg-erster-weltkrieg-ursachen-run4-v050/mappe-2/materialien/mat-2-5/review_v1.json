@@ -1,0 +1,39 @@
+{
+  "reviewer": "reviewer-material-quellentext",
+  "version": "v0.1.1",
+  "material_id": "mat-2-5",
+  "review_iteration": 1,
+  "timestamp": "2026-04-26",
+  "schema_version": "v3.10.4",
+  "overall": "PASS",
+  "confidence": 0.86,
+  "summary": "mat-2-5 Wiener Ultimatum erfuellt Q-Gates SQ-1..SQ-5, QT-1..QT-6, M16, M17, MQ-Meta. Wortanzahl 117 (Richtwert 120). Originalauszug korrekt mit cite-Attribution + Quellen-SSOT in quelle-Feld. Inhalt-Prosa-only erfuellt (keine Aufgaben-Operatoren). Quellenkritische Impulse 3 Eintraege (W-Fragen). Multiperspektivitaet adressiert ueber Sender-Perspektive Berchtold/Wien (in P2-Slot der perspektiven_policy). F-PB-37 Quellenkritik-Block implizit ueber _meta.perspektive + impulse. R7-Sprachniveau erfuellt: Souveraenitaet via Apposition vorentlastet (Selbstbestimmung als Staat).",
+  "gate_results": [
+    {"gate": "SQ-1 Vorausgesetztes Wissen", "result": "PASS", "evidence": "Nur bereits eingefuehrte Begriffe verwendet (Schwarze Hand mat-2-4, Blanko-Scheck mat-2-1, Sarajevo mat-2-2)."},
+    {"gate": "SQ-2 Noch nicht eingefuehrt", "result": "PASS", "evidence": "Souveraenitaet wird im Material selbst eingefuehrt (Apposition); kein Vorgriff auf nicht-existente Folge-Materialien."},
+    {"gate": "SQ-3 TB-Knoten erarbeitbar", "result": "PASS", "evidence": "K2-4 (Ultimatum + Kriegserklaerung 28.7.) durch Auszug + Kontextualisierung erarbeitbar."},
+    {"gate": "SQ-4 Narrativer Anschluss", "result": "PASS", "evidence": "ueberleitung_von verbindet mit mat-2-4 Princip; Schwarze Hand wird als Bezug aufgegriffen."},
+    {"gate": "SQ-5 material_charakter besinnung_sachbezogen", "result": "PASS", "evidence": "Analytisch-sachbezogener Ton, keine narrative Vergegenwaertigung, keine wertende Urteilsbildung."},
+    {"gate": "QT-1 Originalnaehe", "result": "PASS", "evidence": "Kernforderung im Original-Wortlaut zitiert (blockquote), nur am Anfang [...]-Auslassungen."},
+    {"gate": "QT-2 Aufbereitung dokumentiert", "result": "PASS", "evidence": "_meta.aufbereitung=ausschnitt; Fussnote benennt Kuerzung + sprachliche Vereinfachung."},
+    {"gate": "QT-3 Sprecher klar", "result": "PASS", "evidence": "Einleitung benennt Berchtold, Habsburger Aussenministerium, Datum, Adressat Belgrad."},
+    {"gate": "QT-4 Quellentyp Enum", "result": "PASS", "evidence": "_meta.quellentyp=amtlich (D2-konform)."},
+    {"gate": "QT-5 Quellenkritische Rahmung", "result": "PASS", "evidence": "Souveraenitaets-Verletzung + Blanko-Scheck-Bezug = Eskalations-bereite Strategie benannt."},
+    {"gate": "QT-6 Multiperspektivitaet", "result": "PASS", "evidence": "Sender-Perspektive Wien benannt + impuls 'Was bedeutet es, wenn Wien wusste, dass Serbien ablehnen wuerde?' fordert Gegenperspektive Serbien."},
+    {"gate": "M16 Inhalt-Prosa-Only", "result": "PASS", "evidence": "Keine Aufgaben-Operatoren in inhalt; nur Einleitungs-Prosa + blockquote + Erlaeuterungs-Prosa."},
+    {"gate": "M17 Quelle-SSOT", "result": "PASS", "evidence": "Keine bibliografische Referenz in <p>-Scope (cite ist innerhalb blockquote, ausgenommen)."},
+    {"gate": "D1 perspektiv_tags VERBOTEN", "result": "PASS", "evidence": "_meta enthaelt KEIN perspektiv_tags-Feld. (Top-Level perspektiv_tags wird vom Dispatcher beim Merge gesetzt — siehe v3.11.0 Route.)"},
+    {"gate": "D3 perspektive String", "result": "PASS", "evidence": "_meta.perspektive ist String 'P2: Habsburger Aussenministerium ...'."},
+    {"gate": "D6 quellenkritische_impulse Array", "result": "PASS", "evidence": "Array mit 3 Eintraegen, jeder min. 5 Zeichen."},
+    {"gate": "Wortanzahl Cap 180", "result": "PASS", "evidence": "117 W < 180 W (auch < 150 W Soft-Cap)."},
+    {"gate": "F-PB-37 Quellenkritik (Produzent/Auftraggeber/Motiv)", "result": "PASS", "evidence": "Berchtold/Wien als Produzent identifiziert; Habsburger Hof als Auftraggeber implizit (Berchtold = Aussenminister); Motiv: Eskalations-bereit, Kriegsanlass schaffen — explizit benannt 'Wien wusste, dass Serbien ablehnen wuerde'."},
+    {"gate": "F-PB-44 Komposita-Erstgebrauch", "result": "PASS", "evidence": "Souveraenitaet via Apposition vorentlastet ('also seiner Selbstbestimmung als Staat')."}
+  ],
+  "warnings_for_meta": [
+    "Sprache 'Eine Antwort wird binnen 48 Stunden erwartet' enthaelt 'binnen' — historische Originalsprache, R7-Schwelle minimal verletzt aber durch Originalzitat-Sonderregel (Primaerquellen-Sonderregel F0B §1+§3) gerechtfertigt. KEIN FAIL."
+  ],
+  "recommendations": [
+    "Im Aufgaben-Subagent SUB_AUFGABE_QUELLENKRITIK die 3 Impuls-Eintraege als Anker fuer adversarial Aufgabe nutzen.",
+    "Phase 2.1c: Ueberleitung von mat-2-4 → mat-2-5 final formulieren (Geruest-Intentionsskizze als Ausgangspunkt)."
+  ]
+}

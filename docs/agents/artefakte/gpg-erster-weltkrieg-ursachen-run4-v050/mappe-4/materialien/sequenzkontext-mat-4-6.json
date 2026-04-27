@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "mat_id": "mat-4-6",
+  "position_in_mappe": 6,
+  "didaktische_funktion": "sicherung",
+  "vorausgesetztes_wissen": {
+    "fachbegriffe": ["Schlieffen-Plan", "Marne-Schlacht", "Wendepunkt", "Belgien-Verletzung", "Neutralitaet"],
+    "source_materialien": ["mat-4-1", "mat-4-2", "mat-4-3", "mat-4-4", "mat-4-5"]
+  },
+  "noch_nicht_eingefuehrt": {
+    "fachbegriffe": [],
+    "source_materialien": []
+  },
+  "vorheriges_material": {
+    "id": "mat-4-5",
+    "typ": "statistik",
+    "kerninhalt": "Verlust-Statistik Marne — > 500.000 in 7 Tagen."
+  },
+  "naechstes_material": null,
+  "zugeordneter_tb_knoten": {
+    "id": "K4-5 + K4-1",
+    "text": "Wendepunkt zum Stellungskrieg / Stellungskrieg — feste Stellungen, Schuetzen-Graeben"
+  },
+  "dominante_perspektive": "P5 nicht-dominant (Soldaten beider Seiten) — Wendepunkt-Konsequenz fuer alle",
+  "scpl_zone_primary": "L",
+  "stundenfrage": "Warum scheiterte der deutsche Plan fuer einen schnellen Sieg an der Marne?",
+  "schluss_bruecke_pflicht": "Folge-Game-Anker: Stellungskrieg / Heimatfront / Versailles. Hefteintrag B.5 Merksatz wortlautnah."
+}

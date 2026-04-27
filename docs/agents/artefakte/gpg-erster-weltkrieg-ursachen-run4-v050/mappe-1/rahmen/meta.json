@@ -1,0 +1,19 @@
+{
+  "schema_version": "meta_v1",
+  "game_id": "gpg-erster-weltkrieg-ursachen-run4-v050",
+  "run_id": "run-4-2026-04-26",
+  "mappe_id": "M1",
+  "mappe_index": 1,
+  "titel": "Pulverfass Europa",
+  "ke_anker_haupt": "GPG7_LB2_K_05",
+  "ke_anker_neben": ["GPG7_LB3_K_03"],
+  "afb": "I-II",
+  "bloom": "Verstehen → Anwenden",
+  "stundenfrage": "Warum war Europa vor 1914 ein 'Pulverfass'?",
+  "anzahl_materialien": 6,
+  "konflikttyp": true,
+  "perspektiven_policy": "P1: Deutsche Reichsfuehrung (Wilhelm II., Tirpitz) | P2: Britische Reichsregierung (Royal Navy, Asquith, Grey) | P3: Franzoesische + russische Triple-Entente-Mitglieder | P4: Kolonisierte Bevoelkerung Afrikas (strukturell durch Sprach-Sieb adressiert) | P5: Pazifistische / kritische Stimmen (durch Quellenkritik dekonstruiert)",
+  "trigger_flags": ["konflikt", "kolonialismus", "nationalismus", "weltkrieg_grossereignis"],
+  "phase": "2.1",
+  "f0b_priming_kennung": "F0B_PRIMING_v1"
+}

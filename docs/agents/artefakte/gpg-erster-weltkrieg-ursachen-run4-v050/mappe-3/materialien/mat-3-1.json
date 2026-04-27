@@ -1,0 +1,61 @@
+{
+  "id": "mat-3-1",
+  "typ": "bildquelle",
+  "titel": "Wer steht NICHT auf dem Foto?",
+  "inhalt": "<figure><img src=\"assets/images/gpg-erster-weltkrieg-ursachen-run4-v050/mappe-3/img-m3-01-luebeck-mobilmachung-1914.jpg\" alt=\"Postkarte vom 31. Juli 1914: Soldaten und Stadtbuerger am Hauptbahnhof Luebeck waehrend der Mobilmachung des 2. Bataillons.\"/><figcaption><p>Foto: <strong>Luebeck, Hauptbahnhof, 31. Juli 1914</strong>. Soldaten ziehen los — viele Stadtbuerger jubeln. Diese Stimmung nennt man <strong>Augusterlebnis</strong> oder Augustbegeisterung. Aber sieh genau hin: Wer steht da? Junge Maenner in Uniform, gut gekleidete Buerger, ein paar Familien. Wer ist NICHT auf dem Foto?</p><p><strong>Achtung — Quellenkritik:</strong> Eine Quelle pruefen heisst: Wer hat das gemacht? Wann? Mit welchem Ziel? Diese Postkarte hat die Druckerei Gebrueder Borchers in Luebeck gedruckt. Sie sollte verkauft werden. Sie zeigt Stadt-Buerger am Bahnhof — Land-Bevoelkerung und Arbeiter sind nicht im Bild. Auf dem Land waren viele Menschen skeptisch oder ablehnend.</p><p><cite>Postkarte: Gebrueder Borchers (Druckerei Luebeck), 31. Juli 1914. Wikimedia Commons, Public Domain.</cite></p></figcaption></figure>",
+  "bildunterschrift": "Mobilmachung Luebeck Hauptbahnhof, 31. Juli 1914 — Postkarte der Druckerei Gebrueder Borchers. Quellenkritik-Frage: Wer ist NICHT auf dem Foto?",
+  "quelle": "Wikimedia Commons: 'IR_Lübeck_033_-_EB.jpg' (Gebrueder Borchers, Druckerei Luebeck). Lizenz: Public Domain (PD-old-80, Author +1939).",
+  "lizenz": "Public Domain",
+  "position": 1,
+  "didaktische_funktion": "einstieg",
+  "voraussetzung": [],
+  "ueberleitung_von": null,
+  "sequenz_kontext": {
+    "vorher": null,
+    "nachher": {"id": "mat-3-2", "typ": "bildquelle", "kerninhalt": "Bundesarchiv-Foto Mobilmachung 1./2.8.1914 — zweites Inszenierungs-Beispiel."}
+  },
+  "perspektiv_tags": ["dominant", "Macht-Ausuebung"],
+  "_meta": {
+    "wortanzahl_inhalt": 137,
+    "wortanzahl_bildunterschrift": 21,
+    "fachbegriffe_eingefuehrt": ["Augusterlebnis", "Quellenkritik"],
+    "fachbegriffe_referenziert": ["Mobilmachung (M2)", "Ursache (M2)", "Ausloeser (M2)"],
+    "tafelbild_knoten": ["K3-2"],
+    "scpl_zone_primary": "S",
+    "scpl_zonen_abdeckung": ["S", "C1"],
+    "artefakt_ref": ["img-m3-01"],
+    "wikimedia_filename": "IR_Lübeck_033_-_EB.jpg",
+    "skript_ref": "M3 §1-§2",
+    "datenbasis_hashes": ["wiki-spirit-of-1914-2026-04-26"],
+    "ke_anker_haupt": "GPG7_LB3_K_03",
+    "afb": "II-III",
+    "bloom": "Analysieren (Quellenkritik anwenden)",
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "sprachniveau": "R7",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "sensibilitaets_markierung": "propaganda_kontextualisierung_noetig",
+    "quellenkritik_pflicht": true,
+    "kontextualisierung_satz_realisiert": "Sie zeigt Stadt-Buerger am Bahnhof — Land-Bevoelkerung und Arbeiter sind nicht im Bild. Auf dem Land waren viele Menschen skeptisch oder ablehnend.",
+    "bildfunktion": "heuristisch",
+    "perspektive": "P1: Begeisterte Stadtbuerger 1914 (Stadt-Mittelschicht-Inszenierung Luebeck)",
+    "quellenkritische_impulse": [
+      "Wer hat dieses Foto gemacht — und warum hat es jemand verkauft?",
+      "Welche Menschen siehst du auf dem Bahnhof — und welche fehlen?",
+      "Wenn du dich umdrehen koenntest: Was wuerden Bauern und Arbeiter zu Hause auf dem Land vermutlich sagen?"
+    ],
+    "quellenkritik_block": {
+      "produzent": "Gebrueder Borchers (lokale Druckerei Luebeck)",
+      "auftraggeber": "Regiments-Postkarten-Verlag (kommerziell)",
+      "motiv": "Patriotische Mobilmachungs-Inszenierung als Verkaufs-Postkarte; spaeter ikonisches 'Augusterlebnis-Foto' der Stadt-Mittelschicht-Begeisterung."
+    },
+    "kernerkenntnisse_bezug": ["Augusterlebnis war begrenzt — Stadt-Mittelschicht jubelte, Land + Arbeiter waren oft skeptisch.", "Quellenkritik: Wer schreibt? Wann? Mit welchem Ziel?"],
+    "trigger_vermerk": ["nationalismus", "weltkrieg_grossereignis"],
+    "tipp_stufen": {
+      "stufe_1": "Was siehst du auf dem Foto? Wer steht da?",
+      "stufe_2": "Soldaten und Stadtbuerger am Bahnhof. Sie schauen freundlich. Aber: Wer ist NICHT auf dem Foto?",
+      "stufe_3": "Auf dem Foto sind Stadt-Mittelschicht-Buerger zu sehen. Land-Bevoelkerung und Arbeiter waren oft skeptisch und nicht am Bahnhof. Das Foto zeigt nur EINE Gruppe — nicht 'die Deutschen'."
+    },
+    "erarbeitbarkeits_check": "PASS — Foto + 3-Funktions-BU + F-PB-37 Quellenkritik-Block fuehren SuS in S-Zone (Augusterlebnis als Stadt-Phaenomen) und C1-Zone (Foto-Bias / Quellenkritik) ein. Augusterlebnis-Idealisierungs-Verbot eingehalten: Kontextualisierungs-Satz benennt Stadt-Buerger-Begrenzung und Land/Arbeiter-Skepsis explizit."
+  }
+}

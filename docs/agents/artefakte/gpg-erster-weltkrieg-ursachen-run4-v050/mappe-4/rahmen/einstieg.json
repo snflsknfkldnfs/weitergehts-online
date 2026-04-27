@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "mappe_id": "M4",
+  "narrativ": "<p>Mappe 3 endete mit den Maennern, die in den Krieg zogen. Sie glaubten an einen kurzen Krieg. <em>„Weihnachten sind wir wieder zu Hause\"</em>, sagten viele. Mappe 4 zeigt dir, wie schnell dieser Glaube zerbrach.</p><p>Die deutsche Heeresleitung hatte einen Plan — und du wirst gleich sehen, wie dieser Plan in nur fuenf Wochen scheiterte. Pack die vierte Mappe an.</p>",
+  "problemstellung": "Warum scheiterte der deutsche Plan fuer einen schnellen Sieg an der Marne?",
+  "tafelbild_voraussetzung": [
+    "M3: Augustfieber + Burgfrieden + Quellenkritik",
+    "M2: Buendnisfall, Mobilmachung, GB-Kriegseintritt wegen Belgien",
+    "M1 (implizit): Pulverfass Europa, Buendnis-System"
+  ],
+  "aktivierungs_material": "mat-4-1",
+  "_meta": {
+    "skript_ref": "M4 Einstieg-Kontext",
+    "ueberleitung_von_M3": "Die Maenner zogen los — was passierte, als sie ankamen? (Sandwich-Bruecke aus M3-Sicherung)",
+    "wortanzahl": 65,
+    "rahmenhandlung_anschluss": "Spurensucher / Archiv 1914 — Mappe 4 als letzte der vier Mappen",
+    "c1b_problemstellung_match": "wortidentisch mit hefteintrag.stundenfrage und SKRIPT M4 Stundenfrage"
+  }
+}

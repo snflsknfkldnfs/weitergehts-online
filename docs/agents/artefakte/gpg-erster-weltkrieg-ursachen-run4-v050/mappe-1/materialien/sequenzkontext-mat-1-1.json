@@ -1,0 +1,40 @@
+{
+  "schema_version": "sequenzkontext_v1",
+  "mat_id": "mat-1-1",
+  "material_id_design": "m1-mat-01",
+  "typ": "karte",
+  "position_in_mappe": 1,
+  "anzahl_materialien_mappe": 6,
+  "didaktische_funktion": "einstieg",
+  "primary_scpl_zone": "S",
+  "scpl_zonen_abdeckung": ["S", "C1"],
+  "vorausgesetztes_wissen": {
+    "fachbegriffe": [],
+    "source_materialien": []
+  },
+  "noch_nicht_eingefuehrt": {
+    "fachbegriffe": ["Buendnis-System", "Imperialismus", "Pulverfass-Metapher", "Flotten-Wettlauf", "HMS Dreadnought", "Wettruesten", "Kolonialwettlauf", "Kolonie", "Marokko-Krisen", "Berliner Konferenz 1884"],
+    "source_materialien": ["mat-1-2", "mat-1-3", "mat-1-4", "mat-1-5", "mat-1-6"]
+  },
+  "vorheriges_material": null,
+  "naechstes_material": {
+    "id": "mat-1-4",
+    "typ": "darstellungstext",
+    "kerninhalt": "Was ist ein Buendnis-System? Begriff, Mitglieder, Mechanismus.",
+    "design_id": "m1-mat-04"
+  },
+  "fachbegriffe_eingefuehrt": ["Buendnis", "Dreibund", "Triple Entente"],
+  "zugeordneter_tb_knoten": [
+    {"id": "K1-2", "label": "Dreibund (1882)", "elemente": ["Deutsches Reich", "Oesterreich-Ungarn", "Italien"]},
+    {"id": "K1-3", "label": "Triple Entente (1907)", "elemente": ["Frankreich", "Russland", "Grossbritannien"]}
+  ],
+  "dominante_perspektive": "europaeisch-strukturell (Buendnisstruktur ohne nationale Privilegierung)",
+  "perspektiv_tags_plan": ["Aussen", "dominant"],
+  "erwartete_aktivitaet": "Betrachten + Zuordnen (Karten-Legende lesen, 6 Maechte den 2 Bloecken zuordnen)",
+  "stundenfrage": "Warum war Europa vor 1914 ein 'Pulverfass'?",
+  "ueberleitung_zu_naechstem": {
+    "rueckbezug": "Die Karte zeigt zwei Buendnis-Bloecke und sechs Grossmaechte um 1914.",
+    "vorausblick": "Was bedeutet ueberhaupt 'Buendnis' — und was ist daran gefaehrlich?",
+    "kausalitaets_typ": "vertiefend"
+  }
+}

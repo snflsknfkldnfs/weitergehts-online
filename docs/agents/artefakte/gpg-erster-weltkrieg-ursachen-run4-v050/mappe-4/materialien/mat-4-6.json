@@ -1,0 +1,76 @@
+{
+  "id": "mat-4-6",
+  "typ": "darstellungstext",
+  "titel": "Aus sechs Wochen wurden vier Jahre — was ist ein Stellungskrieg?",
+  "inhalt": "<article class=\"darstellungstext\"><p>Der Schlieffen-Plan war eine Idee. Sie hiess: Frankreich in sechs Wochen besiegen — durch Belgien. Du hast gesehen, wie sie an der Marne gestoppt wurde.</p><p>Was passiert nun? Beide Seiten kommen nicht weiter. Sie graben sich ein. Sie bauen lange Schuetzen-Graeben — also tiefe Loecher und Linien im Boden. Genau das ist der <strong>Stellungskrieg</strong>: Soldaten bleiben in festen Stellungen — Schuetzen-Graeben — und kommen kaum mehr vorwaerts.</p><p>Der Punkt, an dem sich das alles aenderte, heisst <strong>Wendepunkt</strong>. An der Marne im September 1914 endete der „kurze Krieg\" und der Stellungskrieg begann. Aus geplanten sechs Wochen wurden vier Jahre Krieg.</p><p>Was im Schuetzen-Graben passierte, was die Soldaten erlebten und wie der Krieg nach 1918 endete — das erfaehrst du in einem naechsten Game: Stellungskrieg, Heimatfront und Versailles.</p></article>",
+  "bildunterschrift": "",
+  "quelle": "Eigenproduktion (Phase 2.1, SUB_DARSTELLUNGSTEXT). Datenbasis: Wikipedia-Artikel 'Trench warfare', 'Race to the Sea', 'First Battle of the Marne' (Stand 2026-04-26). Skript M4 §1 (Plan-Anker) und §7 (Stellungskrieg-Sicherung). Hefteintrag M4 B.5 Merksatz wortlautnah aufgenommen.",
+  "lizenz": "Eigenproduktion",
+  "position": 6,
+  "didaktische_funktion": "sicherung",
+  "voraussetzung": ["mat-4-5"],
+  "ueberleitung_von": "Die Zahlen haben dir gezeigt: Allein an der Marne wurden in einer Woche mehr als eine halbe Million Soldaten getoetet oder verwundet. Was kommt nach so einer Schlacht — wie geht der Krieg jetzt weiter, wenn der Plan vom kurzen Krieg gestorben ist?",
+  "sequenz_kontext": {
+    "vorher": {"id": "mat-4-5", "typ": "statistik", "kerninhalt": "Verlust-Statistik Marne — > 500.000 in 7 Tagen."},
+    "nachher": null
+  },
+  "perspektiv_tags": ["nicht-dominant"],
+  "_meta": {
+    "wortanzahl_inhalt": 144,
+    "wortanzahl_bildunterschrift": 0,
+    "fachbegriffe_eingefuehrt": ["Stellungskrieg", "Wendepunkt"],
+    "fachbegriffe_referenziert": ["Schlieffen-Plan (mat-4-1)", "Marne-Schlacht (mat-4-2)"],
+    "tafelbild_knoten": ["K4-5", "K4-1"],
+    "scpl_zone_primary": "L",
+    "scpl_zonen_abdeckung": ["P", "L"],
+    "artefakt_ref": [],
+    "skript_ref": "M4 §7 (+ §1 als Plan-Anker)",
+    "datenbasis_hashes": ["wiki-trench-2026-04-26", "wiki-race-sea-2026-04-26", "wiki-marne-2026-04-26"],
+    "ke_anker_haupt": "GPG7_LB2_K_07",
+    "afb": "II",
+    "bloom": "Anwenden (Begriffs-Sicherung)",
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "sprachniveau": "R7",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "sensibilitaets_markierung": "keine",
+    "bildfunktion": "n/a",
+    "material_charakter": "besinnung_sachbezogen",
+    "analyseauftrag": false,
+    "personalisiert": false,
+    "perspektive": "P5 nicht-dominant (Soldaten beider Seiten) — Wendepunkt-Konsequenz fuer alle.",
+    "schluss_bruecke_realisiert": true,
+    "schluss_bruecke_inhalt": "Folge-Game-Anker: Stellungskrieg / Heimatfront / Versailles (letzter Absatz).",
+    "merksatz_wortlautnah_realisiert": true,
+    "merksatz_wortlaut": "An der Marne im September 1914 endete der 'kurze Krieg' und der Stellungskrieg begann. Aus geplanten sechs Wochen wurden vier Jahre Krieg.",
+    "tipp_stufen": {
+      "stufe_1": "Was passierte nach der Marne-Schlacht?",
+      "stufe_2": "Beide Heere bleiben — wo? In Loechern im Boden, also in Schuetzen-Graeben.",
+      "stufe_3": "Stellungskrieg = Soldaten bleiben in festen Stellungen — Schuetzen-Graeben — und kommen kaum mehr vorwaerts. Wendepunkt = der Punkt, an dem sich der Krieg aenderte. Aus 6 Wochen Plan wurden 4 Jahre Krieg."
+    },
+    "quellenkritische_impulse": [
+      "Warum graben sich beide Seiten ein, wenn keine vorwaerts kommt?",
+      "Was bedeutet 'Wendepunkt' — fuer den Krieg und fuer die Menschen?",
+      "Was geschieht mit der Idee vom 'kurzen Krieg' nach diesem Punkt?"
+    ],
+    "kernerkenntnisse_bezug": [
+      "Schlieffen-Plan = 6-Wochen-Sieg gegen FR ueber Belgien (mat-4-1)",
+      "Belgien-Bruch 4.8. -> GB-Kriegseintritt (mat-4-2)",
+      "Joffre stoppt DT-Vormarsch an der Marne 5.-12.9. ca. 40 km vor Paris (mat-4-2 + mat-4-3 + mat-4-4 + mat-4-5)",
+      "Folge: Wettlauf zum Meer, dann Stellungskrieg fuer 4 Jahre (mat-4-6)"
+    ],
+    "trigger_vermerk": ["weltkrieg_grossereignis"],
+    "f_pb_44_komposita_check": {
+      "stellungskrieg_erstgebrauch": "explizit erklaert: 'Soldaten bleiben in festen Stellungen — Schuetzen-Graeben — und kommen kaum mehr vorwaerts.' (Doppelpunkt-Definition, Skript M4 §7 wortlautnah)",
+      "wendepunkt_erstgebrauch": "explizit erklaert: 'der Punkt, an dem sich das alles aenderte' (Apposition)",
+      "schuetzen_graeben_erstgebrauch": "erklaert via Apposition: 'tiefe Loecher und Linien im Boden'",
+      "schlieffen_plan_referenziert": "aus mat-4-1 bekannt",
+      "marne_schlacht_referenziert": "aus mat-4-2 bekannt"
+    },
+    "saetze_max_20_wo_check": "PASS — alle Saetze unter 20 Wo, ueberwiegend 8-15 Wo (R7-Korridor)",
+    "absaetze_max_5_saetze_check": "PASS — vier Absaetze, keiner ueber 4 Saetze",
+    "wortbudget_check": "144 Wo (Plan-Budget ~120W, akzeptabel weil Schluss-Sicherung mit Folge-Game-Bruecke notwendig)",
+    "transfer_marker_optional": "TRANSFER 'Pre-Plan vs. Realitaet' aus skript_struktur.json bewusst NICHT im Schueler-Text (Hefteintrag A.3: Lehrkraft-Diskussion bevorzugt)",
+    "erarbeitbarkeits_check": "PASS — Begriffe Stellungskrieg + Wendepunkt explizit definiert. Merksatz wortlautnah aus Hefteintrag B.5. Schluss-Bruecke zu Folge-Game (Stellungskrieg/Heimatfront/Versailles). Vorwissen aus mat-4-1 bis mat-4-5 vollstaendig referenziert."
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "aufgabe-2-5",
+  "typ": "lueckentext",
+  "frage": "Ergaenze die fehlenden Schluessel-Begriffe der Julikrise.",
+  "material_referenz": ["mat-2-1", "mat-2-3"],
+  "text_mit_luecken": "Am 28. Juni 1914 erschoss Princip in Sarajevo den Thronfolger Franz Ferdinand. Einige Tage spaeter gab Berlin Wien den {{1}} — ein Versprechen ohne Bedingungen. Am 23. Juli stellte Wien Serbien ein {{2}} mit 48-Stunden-Frist und verletzte damit die {{3}} Serbiens. Russland begann darauf die {{4}}. Wegen des {{5}} mussten die Buendnis-Partner reagieren — das Buendnis-System wurde zum Domino.",
+  "luecken": [
+    {"id": 1, "loesung": "Blanko-Scheck", "alternativen": ["Blanko-Scheck", "Blankoscheck"]},
+    {"id": 2, "loesung": "Ultimatum", "alternativen": ["Ultimatum"]},
+    {"id": 3, "loesung": "Souveraenitaet", "alternativen": ["Souveraenitaet", "Souveränität"]},
+    {"id": 4, "loesung": "Mobilmachung", "alternativen": ["Mobilmachung"]},
+    {"id": 5, "loesung": "Buendnisfalls", "alternativen": ["Buendnisfalls", "Buendnisfall"]}
+  ],
+  "wortbank": ["Blanko-Scheck", "Ultimatum", "Souveraenitaet", "Mobilmachung", "Buendnisfalls", "Demokratie", "Vertrag", "Mehrheit", "Friedensplan"],
+  "loesung": ["Blanko-Scheck", "Ultimatum", "Souveraenitaet", "Mobilmachung", "Buendnisfalls"],
+  "tipps": [
+    {
+      "stufe": 1,
+      "text": "Lies die [[mat-2-1|Zeitleiste der Julikrise]] (M1) noch einmal genau. Das [[mat-2-3|Hofportrait Franz Ferdinand]] (M3) hilft bei der Person."
+    },
+    {
+      "stufe": 2,
+      "text": "Versprechen ohne Bedingungen, Forderung mit Frist, Selbstbestimmung eines Staates, Armee-Vorbereitung, Hilfs-Pflicht der Buendnis-Partner — fuenf Begriffe in genau dieser Reihenfolge."
+    },
+    {
+      "stufe": 3,
+      "text": "Loesung: Blanko-Scheck — Ultimatum — Souveraenitaet — Mobilmachung — Buendnisfalls. Merke: Diese fuenf Begriffe beschreiben die Eskalations-Mechanik der Julikrise. Sie verbinden Sarajevo mit dem Weltkrieg in nur fuenf Wochen."
+    }
+  ],
+  "punkte": 15,
+  "_meta": {
+    "bloom": "L3",
+    "afb": "II",
+    "scpl_zone": "P",
+    "tafelbild_knoten": ["K2-3", "K2-4", "K2-5"],
+    "ke_anker_haupt": "GPG7_LB2_K_06",
+    "ziel_material_id": "mat-2-1",
+    "operationalisierungsziel": "Die SuS ergaenzen die fuenf Schluessel-Begriffe der Julikrise (Blanko-Scheck, Ultimatum, Souveraenitaet, Mobilmachung, Buendnisfalls) im Sicherungs-Text und ordnen sie der Synthese-Erzaehlung zu.",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "subagent": "sub-aufgabe-lueckentext",
+    "fachbegriffe_eingefuehrt_im_material": ["Blanko-Scheck", "Ultimatum", "Mobilmachung", "Buendnisfall", "Souveraenitaet"],
+    "material_aktivierung_mat_2_3": "Sekundaer-Aktivierung mat-2-3 (Hofportrait Franz Ferdinand) ueber Tipp 1 erfolgt — Person wird visuell konkret. Primaer-Aktivierung mat-2-3 erfolgt in Aufgabe 2-6.",
+    "q_gate": {
+      "A1_afb_kongruenz": "PASS — AFB II (Fachbegriff-Recall in Synthese-Kontext)",
+      "A2_fragestamm_klarheit": "PASS — 5 Woerter",
+      "A3_material_kongruenz": "PASS — alle 5 Begriffe in mat-2-1 _meta.fachbegriffe_eingefuehrt + mat-2-5 Kontext",
+      "A4_lt_luecken_eindeutigkeit": "PASS — Wortbank mit 4 Plus-Distraktoren (Demokratie, Vertrag, Mehrheit, Friedensplan) thematisch nahe aber semantisch unpassbar; Luecken-Reihenfolge im Satz-Sinn eindeutig",
+      "A6_tipp_progression": "PASS",
+      "A7_operator_praezision": "PASS — 'Ergaenze'",
+      "MQ3_kein_link_in_frage": "PASS",
+      "MQ3b_displayref_in_tipp1": "PASS — [[mat-2-1|...]] (M1) + [[mat-2-3|...]] (M3)",
+      "F0B_R7": "PASS — Lueckentext-Saetze 12-15W, DaZ-tauglich"
+    }
+  }
+}

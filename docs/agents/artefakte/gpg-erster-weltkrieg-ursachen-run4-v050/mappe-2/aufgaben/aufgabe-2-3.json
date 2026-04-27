@@ -1,0 +1,76 @@
+{
+  "id": "aufgabe-2-3",
+  "typ": "freitext-code",
+  "frage": "Erklaere in 1 bis 2 Saetzen, warum Wien das Ultimatum so streng formulierte, dass Serbien ablehnen musste.",
+  "material_referenz": ["mat-2-5", "mat-2-1"],
+  "leitfragen": [
+    "Wer schrieb das Ultimatum — und mit welchem Ziel?",
+    "Was bedeutet 'Souveraenitaet' fuer einen Staat?",
+    "Welches Versprechen hatte Wien aus Berlin schon in der Tasche?",
+    "Was wuerde es fuer Serbien heissen, wenn oesterreichische Beamte im eigenen Land ermitteln duerfen?"
+  ],
+  "scaffolding": [
+    "Satz 1: Wien wollte den Krieg, weil ...",
+    "Satz 2: Die Forderung war zu hart, weil sie die Souveraenitaet Serbiens verletzte. Berlin hatte mit dem Blanko-Scheck schon ..."
+  ],
+  "erwartungs_anker": "(1) Wien suchte einen Vorwand, um Krieg zu fuehren. (2) Die Hauptforderung (oesterreichische Beamte ermitteln in Serbien) verletzte Serbiens Souveraenitaet — Wien wusste, dass Serbien das nicht annehmen kann. (3) Berlin hatte mit dem Blanko-Scheck Wien jede Hilfe versprochen — Wien fuehlte sich gedeckt.",
+  "loesung": "Wien wollte Krieg Ultimatum Souveraenitaet Berlin Blanko-Scheck",
+  "code_keywords": [
+    "Souveraenitaet",
+    "ablehnen",
+    "Wien wusste",
+    "Krieg",
+    "Vorwand",
+    "Blanko-Scheck",
+    "Berlin",
+    "Eskalation",
+    "annehmen"
+  ],
+  "code_min_treffer": 3,
+  "tipps": [
+    {
+      "stufe": 1,
+      "text": "Lies das [[mat-2-5|Wiener Ultimatum an Serbien]] (M5) langsam. Achte auf den Schluss-Satz im Begleittext."
+    },
+    {
+      "stufe": 2,
+      "text": "Souveraenitaet heisst: Ein Staat bestimmt selbst, wer in seinem Land ermittelt. Was forderte Wien? Und welches Versprechen hatte Wien schon aus Berlin?"
+    },
+    {
+      "stufe": 3,
+      "text": "Loesung: Wien wollte Krieg gegen Serbien. Die Forderung, dass oesterreichische Beamte in Serbien ermitteln duerfen, verletzte Serbiens Souveraenitaet. Wien wusste, dass Serbien das ablehnen wuerde — und Berlin hatte mit dem Blanko-Scheck schon jede Hilfe versprochen."
+    }
+  ],
+  "punkte": 15,
+  "_meta": {
+    "bloom": "L4",
+    "afb": "II",
+    "scpl_zone": "C2",
+    "tafelbild_knoten": ["K2-4"],
+    "ke_anker_haupt": "GPG7_LB2_K_06",
+    "ziel_material_id": "mat-2-5",
+    "operationalisierungsziel": "Die SuS koennen die Eskalations-Strategie Wiens mit eigenen Worten erklaeren und dabei die Begriffe 'Souveraenitaet' und 'Blanko-Scheck' anwenden.",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "subagent": "sub-aufgabe-freitext",
+    "fachbegriffe_eingefuehrt_im_material": ["Souveraenitaet", "Ultimatum"],
+    "multiperspektivitaet": {
+      "perspektive_dominant": "P2 Habsburger Aussenministerium / Berchtold (Eskalations-bereit)",
+      "perspektive_gegen": "P1 serbische Sicht (Souveraenitaets-Verletzung)"
+    },
+    "f_pb_37_quellenkritik_pflicht": "PASS — Quellenkritik bei mat-2-5 realisiert: Produzent (Berchtold/Aussenministerium), Auftraggeber (Habsburger Hof), Motiv (Eskalations-bereit, Krieg gewollt). SuS muessen Produzenten-Motiv im Antwort-Anker benennen.",
+    "q_gate": {
+      "A1_afb_kongruenz": "PASS — AFB II (Begriffs-Anwendung 'Souveraenitaet' auf konkretes Beispiel)",
+      "A2_fragestamm_klarheit": "PASS — 16 Woerter (Grenzfall, aber inhaltlich notwendig fuer Quellenkritik-Operator)",
+      "A3_material_kongruenz": "PASS — mat-2-5 enthaelt Forderung + Schluss-Satz 'Wien wusste das. Berlin hatte den Blanko-Scheck gegeben.'",
+      "A6_tipp_progression": "PASS",
+      "A7_operator_praezision": "PASS — 'Erklaere mit eigenen Worten' (AFB II)",
+      "A8_kognitive_aktivierung": "PASS — Eskalations-Mechanik begruenden",
+      "A11_freitext_qualitaet": "PASS — 4 Leitfragen + 2-Satz-Scaffolding + Code-Keywords (3-Treffer-Schwelle)",
+      "F-PB-37": "PASS — Quellenkritik mat-2-5 realisiert",
+      "MQ3_kein_link_in_frage": "PASS",
+      "MQ3b_displayref_in_tipp1": "PASS — [[mat-2-5|...]] (M5)",
+      "F0B_R7": "PASS — kurze Saetze, Komposita Blanko-Scheck/Souveraenitaet im Material/Tipp 2 erklaert",
+      "MULTIPERSPEKTIVITAET": "PASS (P2 Habsburger explizit; P1 implizit ueber Souveraenitaets-Verletzung)"
+    }
+  }
+}

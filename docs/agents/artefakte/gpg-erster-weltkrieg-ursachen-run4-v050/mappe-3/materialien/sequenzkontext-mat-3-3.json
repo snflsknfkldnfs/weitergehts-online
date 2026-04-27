@@ -1,0 +1,62 @@
+{
+  "mat_id": "mat-3-3",
+  "mappe": "M3",
+  "position_in_mappe": "4 von 5",
+  "didaktische_funktion": "erarbeitung",
+  "primary_scpl_zone": "P",
+  "scpl_zonen_abgedeckt": ["P"],
+  "vorausgesetztes_wissen": {
+    "fachbegriffe": [
+      "Pulverfass Europa (M1)",
+      "Buendnis-System (M1)",
+      "Ursache (M2)",
+      "Ausloeser (M2)",
+      "Mobilmachung (M2)",
+      "Augusterlebnis (mat-3-1)",
+      "Quellenkritik (mat-3-1)",
+      "Foto-Bias (mat-3-2)",
+      "Inszenierung (mat-3-2)",
+      "Burgfrieden (Hefteintrag M3 B.3 — RESERVE-Eskalation: in ueberleitung_von dieses Materials muendlich verbalisiert; KEIN eigenes Material; SuS-Text Sicherung erklaert Begriff vollstaendig)"
+    ],
+    "source_materialien": ["mat-3-1", "mat-3-2", "mat-3-5"]
+  },
+  "noch_nicht_eingefuehrt": {
+    "fachbegriffe": [
+      "Schlafwandler-These (mat-3-4)"
+    ],
+    "source_materialien": ["mat-3-4"]
+  },
+  "vorheriges_material": {
+    "id": "mat-3-5",
+    "typ": "tagebuch",
+    "kerninhalt": "Tagebuch eines Skeptikers — historische Anti-Bias-Stimme der nicht-jubelnden Land/Arbeiter/SPD-Bevoelkerung 1914."
+  },
+  "naechstes_material": {
+    "id": "mat-3-4",
+    "typ": "darstellungstext",
+    "kerninhalt": "Christopher Clark 'Die Schlafwandler' (2013) — heutige Forschung als Gegenposition zu Versailles 1919."
+  },
+  "zugeordneter_tb_knoten": {
+    "ids": ["K3-1", "K3-4"],
+    "texte": ["Kriegsschuldfrage", "Versailles Art. 231 (1919) — Allein-Schuld DT + Verbuendete, politisch motiviert"]
+  },
+  "stundenfrage": "Wer war im August 1914 begeistert — und wer hat heute die Schuld am Krieg?",
+  "dominante_perspektive": "P3: Versailler Sieger-Maechte 1919 (Schuld-Zuweiser-Position — USA, Frankreich, Grossbritannien)",
+  "deine_aufgabe": "Du erarbeitest die P-Zone (Kriegsschuldfrage). Originalauszug aus Versailles Art. 231 vom 28. Juni 1919, R7-vereinfacht und gekuerzt. Pflicht: blockquote-Wortlaut + Sprecher klar (Sieger-Maechte 1919) + Datum (28.6.1919) + Adressat (Deutsches Reich). Pflicht: F-PB-37 Quellenkritik-Block (Produzent: Versailler Friedens-Konferenz Wilson+Clemenceau+Lloyd George / Auftraggeber: Sieger-Maechte / Motiv: politisch motivierte Schuld-Zuweisung als Vertragsgrundlage). Wortbudget MAX 60 W. Beutelsbach-Kontroversitaet: Versailles-Position 1919 wird als HISTORISCHE Sieger-Position vorgestellt — KEIN Antwort-Vorgriff auf Clark/heutige Forschung. ueberleitung_von verbalisiert Burgfrieden-Erkenntnis aus Hefteintrag B.3 (RESERVE-Eskalation: kein mat-3-6 mehr): 'Am 4. August 1914 stimmten alle Parteien im Reichstag fuer Kriegskredite — auch die SPD. Diese Einigkeit hiess Burgfrieden. Vier Jahre spaeter ist der Krieg verloren.' WICHTIG (POLICY_TRIGGER_SICHTBARKEIT V13): Sprengkraft der Kriegsschuld-Klausel fuer Weimarer Republik / NSDAP-Propaganda BLEIBT IM LEHRKRAFT-Block, KEIN Schueler-Text-Vorkommen.",
+  "fachbegriffe_eingefuehrt": ["Kriegsschuldfrage", "Kriegsschuld-Klausel", "Burgfrieden", "Kriegskredite"],
+  "perspektiv_tags_plan": ["dominant", "Macht-Ausuebung"],
+  "sensibilitaets_constraint": "mythos_korrektur_noetig (Sprengkraft Lehrkraft-only). KEIN explizites Kriegsschuld-Luege-NSDAP-Topic im Schueler-Text. Korrektur erfolgt didaktisch ueber mat-3-4 (Clark-Gegenposition). F-PB-37 Quellenkritik-Block PFLICHT. Augusterlebnis-Idealisierungs-Verbot weiter implizit aktiv. Beutelsbach-Kontroversitaet ohne Antwort-Vorgriff.",
+  "subtyp": "primaerquelle-vertrag-versailles",
+  "subtyp_quellentext": "primaer",
+  "m14_aufbereitung": "gekuerzt-vereinfacht",
+  "g3_review_pflicht": true,
+  "skript_ref": "M3 §5",
+  "artefakt_ref": "zit-M3-1",
+  "wort_budget_max": 60,
+  "ueberleitung_intentionsskizze": "Auf der Strasse war die Stimmung gemischt. Im Reichstag aber waren am 4. August alle einer Meinung — sogar die SPD. Diese politische Einigkeit nennt man Burgfrieden. Vier Jahre Krieg spaeter ist Deutschland besiegt. Im Vertrag von Versailles steht 1919 ein wichtiger Satz — Artikel 231. Was steht da drin?",
+  "tipp_stufen": {
+    "stufe_1": "Lies den Artikel 231. Wer hat das geschrieben? Wann?",
+    "stufe_2": "Die Sieger-Maechte (USA, Frankreich, Grossbritannien) schrieben das 1919 — fuenf Jahre nach Kriegsbeginn. Sie geben Deutschland und seinen Verbuendeten die Schuld.",
+    "stufe_3": "Das Wort 'Schuld' steht nicht direkt drin. Aber Deutschland sollte fuer alle Schaeden zahlen. Diese Stelle wurde 'Kriegsschuldklausel' genannt — sie war eine zentrale politische Belastung der Weimarer Republik."
+  }
+}

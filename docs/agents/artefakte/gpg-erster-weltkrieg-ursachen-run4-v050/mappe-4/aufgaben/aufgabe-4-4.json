@@ -1,0 +1,50 @@
+{
+  "id": "aufgabe-4-4",
+  "typ": "zuordnung",
+  "frage": "Ordne den zwei Fotos den passenden Quellenkritik-Befund zu.",
+  "material_referenz": ["mat-4-3", "mat-4-4"],
+  "optionen": {
+    "begriffe": [
+      "Foto deutsche Soldaten an der Marne (mat-4-3)",
+      "Foto franzoesische Infanterie (mat-4-4)"
+    ],
+    "zuordnungen": [
+      "Gestelltes Heeres-Foto — Decorations-Tragen war im aktiven Kampf unueblich",
+      "Manoever-Aufnahme von 1913 — entstanden VOR der Marne-Schlacht (Datums-Falle)",
+      "Echtes Kampf-Foto vom 10. September 1914",
+      "Skizze eines Augenzeugen aus dem Schuetzen-Graben"
+    ]
+  },
+  "loesung": {
+    "Foto deutsche Soldaten an der Marne (mat-4-3)": "Gestelltes Heeres-Foto — Decorations-Tragen war im aktiven Kampf unueblich",
+    "Foto franzoesische Infanterie (mat-4-4)": "Manoever-Aufnahme von 1913 — entstanden VOR der Marne-Schlacht (Datums-Falle)"
+  },
+  "tipps": [
+    {"stufe": 1, "text": "Schau dir die [[mat-4-3|Bildquelle der deutschen Soldaten]] (M3) und die [[mat-4-4|Bildquelle der franzoesischen Infanterie]] (M4) genau an. Lies bei beiden die Quellenkritik-Bildunterschrift."},
+    {"stufe": 2, "text": "Beim deutschen Foto: Was tragen die Soldaten — und wuerde das im echten Kampf passen? Beim franzoesischen Foto: Achte auf das Datum in der Bildunterschrift. Wann war die Marne-Schlacht?"},
+    {"stufe": 3, "text": "Loesung: Das DT-Foto ist gestellt — Orden im Kampf waren unueblich (Heeres-Selbstdarstellung). Das FR-Foto ist eine Manoever-Aufnahme von 1913 — also vor der Marne-Schlacht 1914 (Datums-Falle). Wichtig: Beide Seiten haben sich aehnlich aufrecht inszeniert — kein Sieger-Verlierer-Mythos."}
+  ],
+  "punkte": 15,
+  "_meta": {
+    "afb": "II-III",
+    "bloom": "Analysieren",
+    "tb_knoten": ["K4-4"],
+    "scpl_zone": "C2",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "sprachniveau": "R7",
+    "f_pb_37_quellenkritik_pflicht_erfuellt": true,
+    "multiperspektivitaet": "DT (mat-4-3) + FR (mat-4-4) — Sieger-Verlierer-Mythos-Korrektur durch Doppel-Inszenierung",
+    "q_gate": {
+      "A1_afb_kongruenz": "PASS",
+      "A2_fragestamm_klarheit": "PASS — 9 Worte",
+      "A4_zu_trennschaerfe": "PASS — beide Befunde inhaltlich disjunkt (Inszenierungs-Typ vs. Datums-Typ); Distraktoren plausibel aber falsch",
+      "A6_tipp_progression": "PASS",
+      "MQ3_material_referenz_in_frage": "PASS",
+      "MQ3b_display_referenz_in_tipp1": "PASS — beide Materialien verlinkt",
+      "f_pb_37_quellenkritik": "PASS — Aufgabe wendet Quellenkritik auf beide Fotos an",
+      "multiperspektivitaet_check": "PASS — DT + FR + neutraler Schluss-Hinweis in Tipp 3"
+    }
+  }
+}

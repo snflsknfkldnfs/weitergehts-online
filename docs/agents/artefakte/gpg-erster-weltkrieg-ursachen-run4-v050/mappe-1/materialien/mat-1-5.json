@@ -1,0 +1,42 @@
+{
+  "id": "mat-1-5",
+  "typ": "statistik",
+  "titel": "Schiffe zaehlen — wer hatte mehr?",
+  "inhalt": "<figure><table class=\"statistik-tabelle\"><caption>Anzahl moderner Grossschiffe (Dreadnought-Typ und groesser)</caption><thead><tr><th></th><th>Royal Navy (Grossbritannien)</th><th>Kaiserliche Marine (Deutschland)</th></tr></thead><tbody><tr><th>1906</th><td>ca. 1</td><td>ca. 0</td></tr><tr><th>1914</th><td>ca. 29</td><td>ca. 17</td></tr></tbody></table><figcaption><p>Die Tabelle zeigt: 1906 hatte nur Grossbritannien ein Schiff vom neuen Typ — die HMS Dreadnought. Bis 1914 baute Deutschland 17 solcher Schiffe. Doch Grossbritannien blieb mit 29 vorn. Beide Seiten ruesten gleichzeitig auf. Das nennt man <em>Wettruesten</em> — wenn zwei Laender immer mehr Waffen bauen, weil der andere auch baut.</p><p><cite>Daten ca. nach: Wikipedia 'Anglo-German naval arms race' (Stand 2026-04-26).</cite></p></figcaption></figure>",
+  "bildunterschrift": "Tabelle: Anzahl moderner Grossschiffe Royal Navy / Kaiserliche Marine 1906 vs. 1914 (ca.-Werte).",
+  "quelle": "Eigenproduktion (agent-material, Phase 2.1). Datenbasis: Wikipedia 'Anglo-German naval arms race' (Sektion 'Naval bills'); Wikipedia 'HMS Dreadnought (1906)' (Stand 2026-04-26). Zahlen ca.",
+  "lizenz": "Eigenproduktion (Datenbasis Wikipedia, CC-BY-SA-4.0)",
+  "position": 4,
+  "didaktische_funktion": "vertiefung",
+  "voraussetzung": ["mat-1-2"],
+  "ueberleitung_von": "Die HMS Dreadnought 1906 war Antwort auf den deutschen Flotten-Aufbau. Wie viele solcher Schiffe haben die zwei Seiten bis 1914 gebaut?",
+  "sequenz_kontext": {
+    "vorher": {"id": "mat-1-2", "typ": "bildquelle", "kerninhalt": "HMS Dreadnought als Symbol des Flotten-Wettlaufs."},
+    "nachher": {"id": "mat-1-6", "typ": "karte", "kerninhalt": "Afrika 1914 — durch sieben europaeische Maechte aufgeteilt."}
+  },
+  "perspektiv_tags": ["Macht-Ausuebung", "dominant"],
+  "_meta": {
+    "wortanzahl_inhalt": 73,
+    "wortanzahl_bildunterschrift": 11,
+    "fachbegriffe_eingefuehrt": ["Wettruesten"],
+    "fachbegriffe_referenziert": ["Flotten-Wettlauf", "HMS Dreadnought"],
+    "tafelbild_knoten": ["K1-4"],
+    "scpl_zone_primary": "C2",
+    "scpl_zonen_abdeckung": ["C2"],
+    "artefakt_ref": [],
+    "skript_ref": "M1 §4",
+    "datenbasis_hashes": ["wiki-naval-race-2026-04-26", "wiki-dreadnought-2026-04-26"],
+    "ke_anker_haupt": "GPG7_LB2_K_05",
+    "afb": "II",
+    "bloom": "Verstehen → Anwenden",
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "sprachniveau": "R7",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "sensibilitaets_markierung": "keine",
+    "quellenkritik_pflicht": false,
+    "datenzellen_anzahl": 4,
+    "ca_kennzeichnung_realisiert": true,
+    "diagrammtyp": "tabelle-vergleich-2-spalten-2-zeilen"
+  }
+}

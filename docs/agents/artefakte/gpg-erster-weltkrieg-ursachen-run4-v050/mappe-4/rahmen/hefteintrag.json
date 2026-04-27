@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0",
+  "mappe_id": "M4",
+  "stundenfrage": "Warum scheiterte der deutsche Plan fuer einen schnellen Sieg an der Marne?",
+  "ordnungsmuster": "chronologisch-kausal",
+  "scpl": {
+    "situation": {
+      "kontextsatz": "Schon 1905/06 entwirft General Alfred von Schlieffen einen Plan fuer das deutsche Heer: Frankreich in nur sechs Wochen besiegen — durch das neutrale Belgien.",
+      "fachbegriffe": ["Schlieffen-Plan"]
+    },
+    "complication": [
+      {"schritt": "Am 4. August 1914 marschieren deutsche Truppen in Belgien ein. Belgien ist neutral, also nicht Teil eines Buendnisses. Genau am gleichen Tag erklaert Grossbritannien Deutschland den Krieg.", "fachbegriff": "Belgien-Verletzung", "darstellung": null},
+      {"schritt": "Die deutschen Soldaten marschieren schnell. Bis zum 20. August faellt Bruessel. Sie sind erschoepft, die Versorgung kommt nicht hinterher. Vom 5. bis 12. September 1914 stoppt der franzoesische General Joseph Joffre den deutschen Vormarsch etwa 40 km vor Paris — die Marne-Schlacht.", "fachbegriff": "Marne-Schlacht", "darstellung": null}
+    ],
+    "problem": {
+      "satz": "Am 14. September wird Generalstabs-Chef Moltke abgesetzt. Der Schlieffen-Plan ist gescheitert. Beide Heere graben sich ein. Das ist der Wendepunkt — der Punkt, an dem sich der Krieg entscheidend aendert.",
+      "fachbegriff": "Wendepunkt"
+    },
+    "loesung": [
+      "Beide Seiten bauen lange Schuetzen-Graeben. Sie kommen kaum mehr vorwaerts. Der Stellungskrieg beginnt: Soldaten bleiben in festen Stellungen.",
+      "Aus geplanten sechs Wochen wurden vier Jahre Krieg."
+    ]
+  },
+  "transfer": {
+    "frage": "Was passiert, wenn ein grosser Plan an der Wirklichkeit scheitert?"
+  },
+  "voraussetzungen": [
+    "M1: Buendnis-System (Dreibund + Triple Entente)",
+    "M2: Buendnisfall, Mobilmachung, GB-Kriegseintritt wegen Belgien",
+    "M3: Augustfieber + Burgfrieden + Quellenkritik (Wer schreibt? Wann? Mit welchem Ziel?)"
+  ],
+  "kernerkenntnisse": [
+    "Schlieffen-Plan (1905/06): Frankreich in 6 Wochen besiegen, ueber das neutrale Belgien.",
+    "Belgien-Verletzung am 4.8.1914 fuehrt zum britischen Kriegseintritt.",
+    "Marne-Schlacht (5.-12.9.1914): Joffre stoppt DT-Vormarsch ca. 40 km vor Paris.",
+    "Wendepunkt: Schlieffen-Plan gescheitert; Moltke abgesetzt 14.9.1914.",
+    "Stellungskrieg: Beide Heere graben sich ein. Aus 6 Wochen werden 4 Jahre Krieg."
+  ],
+  "knoten": [
+    {"id": "K4-1", "label": "Stellungskrieg", "position": "zentrum-unten", "typ": "leitbegriff"},
+    {"id": "K4-2", "label": "Schlieffen-Plan (1905/06)", "position": "oben-links", "typ": "plan"},
+    {"id": "K4-3", "label": "Belgien-Verletzung 4.8.1914", "position": "oben-rechts", "typ": "ereignis"},
+    {"id": "K4-4", "label": "Marne-Schlacht 5.-12.9.1914", "position": "rechts", "typ": "schlacht"},
+    {"id": "K4-5", "label": "Wendepunkt zum Stellungskrieg", "position": "unten-links", "typ": "wendepunkt"}
+  ],
+  "verbindungen": [
+    {"von": "K4-2", "nach": "K4-3", "label": "fordert Belgien-Durchmarsch"},
+    {"von": "K4-3", "nach": "K4-4", "label": "fuehrt nach Frankreich"},
+    {"von": "K4-4", "nach": "K4-5", "label": "scheitert -> wird Wendepunkt"},
+    {"von": "K4-5", "nach": "K4-1", "label": "muendet in"},
+    {"von": "K4-2", "nach": "K4-1", "label": "scheitert an (Klammer: Plan vs. Realitaet)"}
+  ],
+  "_meta": {
+    "tafelbild_visualisierung": "zeitstrahl_mit_wendepunkt_box",
+    "schluessel_begriffe": ["Schlieffen-Plan", "Belgien-Verletzung", "Marne-Schlacht", "Wendepunkt", "Stellungskrieg"],
+    "wortanzahl_schueler_text": 137,
+    "korridor_pass": true,
+    "tafelbild_knoten_uebernahme": "1:1 aus HEFTEINTRAG_M4 A.2 + B.2 (Phase 0.4) — STRUKTUR-FREEZE.",
+    "merksatz_wortlautnah": "An der Marne im September 1914 endete der 'kurze Krieg' und der Stellungskrieg begann. Aus geplanten sechs Wochen wurden vier Jahre Krieg.",
+    "afb": "II",
+    "ke_anker_haupt": "GPG7_LB2_K_07",
+    "lehrkraft_hinweise": [
+      "Schlieffen-Plan-Mythos (Zuber-Forschung): Es gab keinen einzigen 'fertigen' Plan, sondern Aufmarsch-Skizzen. Begriff im Schueler-Heft etabliert; muendlich relativieren.",
+      "Marne-Verluste (>500.000) als Zahl, NICHT visuell. Keine Bildquellen mit Leichen oder Verwundeten.",
+      "Belgien-Verletzung als Voelkerrechtsbruch explizit benennen: GB-Kriegseintritt = Folge der Neutralitaets-Verletzung.",
+      "img-m4-02 Inszenierungs-Verdacht: Decorations-Tragen unueblich im Kampf — Quellenkritik-BU pflichtgemaess umgesetzt in mat-4-3.",
+      "Multiperspektivitaet (5 Perspektiven): DT-Generalstab / Belgische Bevoelkerung+Regierung / FR-Armee Joffre / BEF unter John French / Soldaten beider Seiten."
+    ]
+  }
+}

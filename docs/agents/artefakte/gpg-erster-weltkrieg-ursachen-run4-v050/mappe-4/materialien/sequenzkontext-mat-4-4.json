@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "mat_id": "mat-4-4",
+  "position_in_mappe": 4,
+  "didaktische_funktion": "erarbeitung",
+  "vorausgesetztes_wissen": {
+    "fachbegriffe": ["Schlieffen-Plan", "Marne-Schlacht", "Wendepunkt", "Quellenkritik"],
+    "source_materialien": ["mat-4-1", "mat-4-2", "mat-4-3 (DT-Bild Inszenierungs-Befund)"]
+  },
+  "noch_nicht_eingefuehrt": {
+    "fachbegriffe": ["Stellungskrieg"],
+    "source_materialien": ["mat-4-6"]
+  },
+  "vorheriges_material": {
+    "id": "mat-4-3",
+    "typ": "bildquelle",
+    "kerninhalt": "DT-Soldaten-Foto an der Marne — gestelltes Foto, Inszenierungs-Verdacht."
+  },
+  "naechstes_material": {
+    "id": "mat-4-5",
+    "typ": "statistik",
+    "kerninhalt": "Verlust-Statistik Marne (FR/GB/DT)."
+  },
+  "zugeordneter_tb_knoten": {
+    "id": "K4-4",
+    "text": "Marne-Schlacht 5.-12.9.1914 — Joffre vs. Moltke, 40 km vor Paris"
+  },
+  "dominante_perspektive": "P3 nicht-dominant (FR-Pre-WK-Sicht) — Multiperspektiv-Korrektur zur DT-Sicht in mat-4-3",
+  "scpl_zone_primary": "C2",
+  "stundenfrage": "Warum scheiterte der deutsche Plan fuer einen schnellen Sieg an der Marne?"
+}

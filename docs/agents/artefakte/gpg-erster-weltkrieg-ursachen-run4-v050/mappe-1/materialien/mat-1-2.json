@@ -1,0 +1,41 @@
+{
+  "id": "mat-1-2",
+  "typ": "bildquelle",
+  "titel": "HMS Dreadnought 1906 — der Beginn eines Wettrennens",
+  "inhalt": "<figure><img src=\"assets/images/gpg-erster-weltkrieg-ursachen-run4-v050/mappe-1/img-m1-01-hms-dreadnought-1906.jpg\" alt=\"Schwarz-Weiss-Foto der HMS Dreadnought, eines britischen Schlachtschiffs aus dem Jahr 1906.\"/><figcaption><p>Foto: <strong>HMS Dreadnought</strong>, gebaut von der britischen Royal Navy 1906. Es war das erste grosse Schlachtschiff mit nur grossen Geschuetzen ('All-big-gun') und mit Dampfturbine. Schneller und staerker als alles davor. Plotzlich waren alle aelteren Schlachtschiffe veraltet. Deutschland baute nun auch solche Schiffe — der <em>Flotten-Wettlauf</em> begann.</p><p><cite>Foto: U.S. Navy / Restauration Adam Cuerden, Wikimedia Commons (Public Domain).</cite></p></figcaption></figure>",
+  "bildunterschrift": "HMS Dreadnought 1906 — das erste 'All-big-gun'-Schlachtschiff der Royal Navy.",
+  "quelle": "Wikimedia Commons: 'HMS_Dreadnought_1906_H61017.jpg' (U.S. Navy, Restauration Adam Cuerden). Lizenz: Public Domain (PD-USNavy).",
+  "lizenz": "Public Domain",
+  "position": 3,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": ["mat-1-4"],
+  "ueberleitung_von": "Du weisst jetzt: zwei feindliche Buendnisse stehen sich misstrauisch gegenueber. Aber war das alles? Was war noch los — auf den Meeren?",
+  "sequenz_kontext": {
+    "vorher": {"id": "mat-1-4", "typ": "darstellungstext", "kerninhalt": "Buendnis-System: Mitglieder + Mechanismus."},
+    "nachher": {"id": "mat-1-5", "typ": "statistik", "kerninhalt": "Quantifizierung: 29 vs. 17 Grossschiffe 1914."}
+  },
+  "perspektiv_tags": ["dominant", "Macht-Ausuebung"],
+  "_meta": {
+    "wortanzahl_inhalt": 65,
+    "wortanzahl_bildunterschrift": 11,
+    "fachbegriffe_eingefuehrt": ["Flotten-Wettlauf", "HMS Dreadnought"],
+    "fachbegriffe_referenziert": ["Imperialismus"],
+    "tafelbild_knoten": ["K1-4"],
+    "scpl_zone_primary": "C2",
+    "scpl_zonen_abdeckung": ["C2"],
+    "artefakt_ref": ["img-m1-01"],
+    "wikimedia_filename": "HMS_Dreadnought_1906_H61017.jpg",
+    "skript_ref": "M1 §3",
+    "datenbasis_hashes": ["wiki-dreadnought-2026-04-26", "wiki-naval-race-2026-04-26"],
+    "ke_anker_haupt": "GPG7_LB2_K_05",
+    "afb": "II",
+    "bloom": "Verstehen → Anwenden",
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "sprachniveau": "R7",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "sensibilitaets_markierung": "keine",
+    "quellenkritik_pflicht": false,
+    "bildfunktion": "illustrativ"
+  }
+}

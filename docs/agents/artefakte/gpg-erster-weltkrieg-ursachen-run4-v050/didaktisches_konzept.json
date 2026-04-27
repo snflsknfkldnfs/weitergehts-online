@@ -1,0 +1,306 @@
+{
+  "game_id": "gpg-erster-weltkrieg-ursachen-run4-v050",
+  "run_id": "run-4-2026-04-26",
+  "erstellt_am": "2026-04-26",
+  "schulart": "Mittelschule Bayern",
+  "jahrgangsstufe": "7c",
+  "fach": "GPG",
+  "schulart_lehrplan_konsistenz_check": {
+    "status": "PASS",
+    "lehrplan_quelle_url_or_path": "docs/lehrplan/Fachlehrplan_GPG_R7_Mittelschule.md",
+    "schulart_match": true,
+    "begruendung": "Schulart 'Mittelschule Bayern' matcht Lehrplan-Pfad-Token 'Mittelschule' (Heuristik F-PB-45). Originaldatei im UEW_PATH 7c/Input_Artefake/Lehrplan/GPG_R7/Fachlehrplan_GPG_R7.md, Profil 'Mittelschule_Jg7_GPG'."
+  },
+  "lehrplan_anker": [
+    {
+      "ke_id": "GPG7_LB2_K_05",
+      "lb_id": "GPG7_LB2",
+      "wortlaut_zitat": "Sie erklaeren, dass die traditionellen europaeischen Maechterivalitaeten und der imperialistische Wettlauf um Kolonien in den Ersten Weltkrieg muendeten.",
+      "afb": "II",
+      "rolle": "primaer"
+    },
+    {
+      "ke_id": "GPG7_LB2_K_06",
+      "lb_id": "GPG7_LB2",
+      "wortlaut_zitat": "Sie stellen die Ereignisse des Attentats von Sarajevo dar und diskutieren den Zusammenhang zwischen Ursachen und Ausloeser eines Konfliktes anhand eines aktuellen Beispiels.",
+      "afb": "II-III",
+      "rolle": "primaer"
+    },
+    {
+      "ke_id": "GPG7_LB3_K_03",
+      "lb_id": "GPG7_LB3",
+      "wortlaut_zitat": "Sie erlaeutern die Ursachen des Ersten Weltkrieges und diskutieren die Kriegsschuldfrage unter Einbezug aktueller Forschungsergebnisse.",
+      "afb": "III",
+      "rolle": "primaer"
+    },
+    {
+      "ke_id": "GPG7_LB2_K_07",
+      "lb_id": "GPG7_LB2",
+      "wortlaut_zitat": "Sie beschreiben anhand von historischen Spuren den Verlauf des Ersten Weltkrieges fuer die Menschen an der Front und in der Heimat.",
+      "afb": "II",
+      "rolle": "sekundaer-1"
+    }
+  ],
+  "lernziele": {
+    "stundenziel": "Die SuS erlaeutern die Ursachen, den Ausloeser und die ersten Wochen des Ersten Weltkriegs, indem sie die langfristigen Maechterivalitaeten, das Attentat von Sarajevo, die Reaktion der Bevoelkerung und das Scheitern des Schlieffen-Plans an der Marne aufeinander beziehen, was daran erkennbar wird, dass sie den Unterschied zwischen Ursachen und Ausloeser am Ende mit eigenen Worten erklaeren und die Frage 'Wer ist schuld?' mehrperspektivisch beantworten koennen.",
+    "teilziele": [
+      {
+        "id": "TZ1",
+        "wortlaut": "Die SuS beschreiben das System der europaeischen Buendnisse um 1914 und das Wettrennen um Kolonien, indem sie eine Karte und eine Buendnis-Tabelle auswerten, was daran erkennbar wird, dass sie die zwei grossen Buendnis-Bloecke (Dreibund / Triple-Entente) korrekt benennen und drei Spannungsfelder (Marokko, Balkan, Flotte) zuordnen koennen.",
+        "afb": "I-II",
+        "mappe_id": "M1"
+      },
+      {
+        "id": "TZ2",
+        "wortlaut": "Die SuS stellen dar, was am 28. Juni 1914 in Sarajevo geschah und wie aus einem einzigen Schuss in fuenf Wochen ein Weltkrieg wurde, indem sie eine Zeitleiste der Julikrise rekonstruieren, was daran erkennbar wird, dass sie das Datum des Attentats, die Reihenfolge der Kriegserklaerungen und den Begriff 'Buendnisfall' mit eigenen Worten erklaeren koennen.",
+        "afb": "II",
+        "mappe_id": "M2"
+      },
+      {
+        "id": "TZ3",
+        "wortlaut": "Die SuS diskutieren die Kriegsschuldfrage und die 'Augustbegeisterung' 1914, indem sie zwei Quellen (Kriegsbegeisterungs-Foto + heutige Forschungs-Aussage) vergleichen, was daran erkennbar wird, dass sie zwischen 'Ursachen' und 'Ausloeser' unterscheiden und mindestens zwei beteiligte Maechte (nicht nur Deutschland) als mitverantwortlich nennen koennen.",
+        "afb": "II-III",
+        "mappe_id": "M3"
+      },
+      {
+        "id": "TZ4",
+        "wortlaut": "Die SuS erklaeren, warum der geplante 'kurze Krieg' der Deutschen an der Marne im September 1914 scheiterte, indem sie den Schlieffen-Plan und die Marne-Schlacht auf einer Karte nachzeichnen, was daran erkennbar wird, dass sie den Begriff 'Stellungskrieg' als Folge der Marne mit einem eigenen Satz erklaeren koennen.",
+        "afb": "II",
+        "mappe_id": "M4"
+      }
+    ]
+  },
+  "mappen": [
+    {
+      "mappe_id": "M1",
+      "titel": "Pulverfass Europa",
+      "kerninhalt": "Die europaeischen Grossmaechte um 1900 stehen sich in zwei Buendnis-Bloecken gegenueber (Dreibund: Deutschland, Oesterreich-Ungarn, Italien — Triple-Entente: Frankreich, Russland, Grossbritannien) und konkurrieren weltweit um Kolonien (vor allem in Afrika) und um die Flottenstaerke. Zentrale Erkenntnis: Schon vor 1914 war Europa wie ein Pulverfass.",
+      "ke_anker": ["GPG7_LB2_K_05"],
+      "gegenstandsbereich": "Raeume + Zeit und Wandel",
+      "stoffdichte": {
+        "anzahl_kernelemente": 4,
+        "zielkorridor": "3-5",
+        "im_zielkorridor": true,
+        "begruendung": "Dreibund, Triple-Entente, Kolonial-Wettlauf, Flottenwettruesten."
+      },
+      "konkreter_anker_h5": "Marokko-Krise 1905/1911 (Tanger-Besuch Wilhelms II.) ODER Britisch-deutscher Flottenwettlauf 1898-1912 (HMS Dreadnought 1906)."
+    },
+    {
+      "mappe_id": "M2",
+      "titel": "Sarajevo 1914 — Ein Schuss, eine Welt im Krieg",
+      "kerninhalt": "Am 28. Juni 1914 erschiesst der Serbe Gavrilo Princip in Sarajevo den oesterreichisch-ungarischen Thronfolger Erzherzog Franz Ferdinand. Innerhalb von fuenf Wochen (Julikrise) erklaeren sich die europaeischen Grossmaechte ueber das Buendnissystem gegenseitig den Krieg. Zentrale Erkenntnis: Der einzelne Schuss war der Ausloeser, nicht die Ursache.",
+      "ke_anker": ["GPG7_LB2_K_06"],
+      "gegenstandsbereich": "Zeit und Wandel + Gesellschaft und Politik",
+      "stoffdichte": {
+        "anzahl_kernelemente": 5,
+        "zielkorridor": "3-5",
+        "im_zielkorridor": true,
+        "begruendung": "Attentat-Hergang, Juli-Ultimatum, Buendnisfall-Mechanik, Mobilmachungs-Reihenfolge, Begriff Ausloeser-vs-Ursache. An der Obergrenze, aber zerlegbar."
+      },
+      "konkreter_anker_h5": "28. Juni 1914, Sarajevo, Gavrilo Princip + Franz Ferdinand. Kettenreaktion: 28.07. AT-UN→Serbien, 01.08. DT→Russland, 03.08. DT→Frankreich, 04.08. GB→DT."
+    },
+    {
+      "mappe_id": "M3",
+      "titel": "Augustfieber — Wer schuld ist und wer jubelt",
+      "kerninhalt": "Im August 1914 ziehen viele junge Maenner mit Begeisterung in den Krieg ('Augusterlebnis'); zugleich streiten Politiker und Historiker bis heute um die Frage, wer den Ersten Weltkrieg ausgeloest hat (Kriegsschuldfrage). Aktuelle Forschung (Christopher Clark, Die Schlafwandler 2013) sieht keine Allein-Schuld Deutschlands. Zentrale Erkenntnis: Die Kriegsbegeisterung war real, aber nicht ueberall — und die Schuldfrage hat keine einfache Antwort.",
+      "ke_anker": ["GPG7_LB3_K_03"],
+      "gegenstandsbereich": "Gesellschaft und Politik",
+      "stoffdichte": {
+        "anzahl_kernelemente": 4,
+        "zielkorridor": "3-5",
+        "im_zielkorridor": true,
+        "begruendung": "Augusterlebnis-Phaenomen, Burgfrieden, Kriegsschuld-Artikel-231 als Ausblick, Forschungsstand Clark."
+      },
+      "konkreter_anker_h5": "Foto 'Jubelnde Menge auf dem Odeonsplatz Muenchen, 02.08.1914' ODER Versammlung Berlin Lustgarten 01.08.1914 — datierbares Massenphaenomen mit Quellenkritik (Foto-Bias)."
+    },
+    {
+      "mappe_id": "M4",
+      "titel": "Marne 1914 — Das Ende des kurzen Krieges",
+      "kerninhalt": "Der deutsche Schlieffen-Plan sah einen schnellen Sieg ueber Frankreich in sechs Wochen vor — durchs neutrale Belgien. An der Marne (5.-12. September 1914) stoppen franzoesische und britische Truppen den deutschen Vormarsch. Der erhoffte 'kurze Krieg' wird zum Stellungskrieg. Zentrale Erkenntnis: An der Marne 09/1914 endete der kurze Krieg, der Stellungskrieg begann.",
+      "ke_anker": ["GPG7_LB2_K_07"],
+      "gegenstandsbereich": "Zeit und Wandel + Lebenswelt",
+      "stoffdichte": {
+        "anzahl_kernelemente": 4,
+        "zielkorridor": "3-5",
+        "im_zielkorridor": true,
+        "begruendung": "Schlieffen-Plan-Idee, Belgien-Verletzung, Marne-Schlacht, Beginn Stellungskrieg."
+      },
+      "konkreter_anker_h5": "5.-12. September 1914, Marne (Frankreich nordoestlich Paris), General Joffre (FR) + General von Moltke (DT). Konkretion: Pariser Taxis transportieren Soldaten an die Front (Taxi-Mythos)."
+    }
+  ],
+  "narrativ_rahmen": {
+    "setting": "Archiv 1914 — vier verschlossene Mappen warten darauf, geoeffnet zu werden. Jede Mappe enthaelt Spuren, die zusammen die Frage beantworten: Wie konnte der Erste Weltkrieg ausbrechen — und warum hat ihn niemand verhindert?",
+    "sus_rolle": "Junge Spurensucher / Detektive im Auftrag eines Geschichts-Archivs. Du-Form, direkte Anrede.",
+    "roter_faden": "Die vier Mappen ergeben am Ende einen Schluessel-Code (4 Zentrale Erkenntnisse), der die Tuer zum Folge-Game (Stellungskrieg / Heimatfront / Versailler Vertrag) oeffnet.",
+    "begruendung": "Spurensucher-Setting eignet sich fuer Quellenarbeit (Geschichte als Spurensuche), motiviert R7-SuS (Detektiv-Topos altersgerecht), und das Mappen-Format ist im Narrativ authentisch begruendet (Archiv-Mappen)."
+  },
+  "differenzierungshinweise": {
+    "tipp_system_stufen": 3,
+    "beispiele": [
+      {
+        "mappe_id": "M2",
+        "stufe_1": "Schau dir das Datum auf der ersten Karte an. Was ist da passiert?",
+        "stufe_2": "Das Attentat war am 28. Juni. Wer wurde erschossen? Und welches Land hat dann zuerst den Krieg erklaert? Schau auf die Buendnis-Tabelle aus Mappe 1.",
+        "stufe_3": "Princip erschoss Franz Ferdinand. Oesterreich-Ungarn erklaerte Serbien den Krieg. Russland half Serbien (Buendnisfall). Deutschland half Oesterreich-Ungarn. Frankreich half Russland. Grossbritannien kam dazu wegen Belgien. Trage die Reihenfolge auf der Zeitleiste ein."
+      }
+    ]
+  },
+  "ke_matrix": [
+    {"ke_id": "GPG7_LB2_K_05", "mappe_id": "M1", "rolle": "haupt"},
+    {"ke_id": "GPG7_LB2_K_05", "mappe_id": "M2", "rolle": "neben"},
+    {"ke_id": "GPG7_LB2_K_05", "mappe_id": "M3", "rolle": "neben"},
+    {"ke_id": "GPG7_LB2_K_06", "mappe_id": "M2", "rolle": "haupt"},
+    {"ke_id": "GPG7_LB2_K_06", "mappe_id": "M3", "rolle": "neben"},
+    {"ke_id": "GPG7_LB3_K_03", "mappe_id": "M1", "rolle": "neben"},
+    {"ke_id": "GPG7_LB3_K_03", "mappe_id": "M2", "rolle": "neben"},
+    {"ke_id": "GPG7_LB3_K_03", "mappe_id": "M3", "rolle": "haupt"},
+    {"ke_id": "GPG7_LB2_K_07", "mappe_id": "M4", "rolle": "haupt"}
+  ],
+  "schwierigkeitskurve": [
+    {
+      "mappe_id": "M1",
+      "afb_schwerpunkt": "I-II",
+      "bloom_korridor": "Verstehen → Anwenden",
+      "prozesskompetenz": "Erkenntnisse gewinnen (Karte/Tabelle auswerten)",
+      "begruendung": "Einstieg: Topographie + Buendnis-Schema reproduzieren und ordnen. AFB I dominant, Vergleichselemente bringen AFB II."
+    },
+    {
+      "mappe_id": "M2",
+      "afb_schwerpunkt": "II",
+      "bloom_korridor": "Anwenden → Analysieren",
+      "prozesskompetenz": "Erkenntnisse gewinnen + Beurteilen (Zeitleiste rekonstruieren, Begriff anwenden)",
+      "begruendung": "Vertiefung: Ursache/Ausloeser-Differenzierung erfordert Begriffs-Anwendung auf Sachverhalt — klar AFB II."
+    },
+    {
+      "mappe_id": "M3",
+      "afb_schwerpunkt": "II-III",
+      "bloom_korridor": "Analysieren → Beurteilen",
+      "prozesskompetenz": "Beurteilen und bewerten (Kriegsschuldfrage diskutieren)",
+      "begruendung": "Hoehepunkt der kognitiven Anforderung: Quellenkritik + Mehrperspektivitaet + heutige Forschung einbeziehen → AFB III."
+    },
+    {
+      "mappe_id": "M4",
+      "afb_schwerpunkt": "II",
+      "bloom_korridor": "Anwenden → Analysieren",
+      "prozesskompetenz": "Erkenntnisse gewinnen + Handeln (Kartenarbeit + Wendepunkt erklaeren)",
+      "begruendung": "Synthese und Sicherung: Karte deuten + Folge-Begriff Stellungskrieg erklaeren. AFB II — bewusster Rueckgang nach Hoehepunkt M3 als didaktischer Spannungsbogen."
+    }
+  ],
+  "ethische_hinweise": {
+    "multiperspektivitaet": [
+      "Deutsche Perspektive 1914 (Einkreisungs-Angst, Augustbegeisterung, Schlieffen-Plan)",
+      "Franzoesisch-britische Perspektive (Defensiv-Allianz, Reaktion auf Belgien-Verletzung)",
+      "Serbisch / oesterreichisch-ungarische Perspektive (Princip als nationalistischer Aktivist, Franz Ferdinand als Reformversprechen)",
+      "Heutige Forschungsperspektive (Christopher Clark Schlafwandler-These 2013, Korrektur der Versailles-Schuld-Zuweisung)"
+    ],
+    "ueberwaeltigungsverbot": [
+      "Augustbegeisterung 1914 wird nicht idealisiert — laendliche Bevoelkerung, SPD-Anhaenger und viele Frauen waren skeptisch oder ablehnend",
+      "Kriegsschuldfrage wird nicht eindeutig beantwortet — als kontroverse historische Frage praesentiert",
+      "Keine heroische Darstellung von Krieg; Marne-Schlacht endet mit Begriff Stellungskrieg als Vorausverweis (kein Triumphismus)"
+    ],
+    "kontroversitaet": [
+      "Kriegsschuldfrage M3: Versailles-Artikel-231 (1919, Alleinschuld) vs. Christopher Clark (2013, kollektives Versagen) — SuS bilden eigene Position"
+    ],
+    "sensibilitaet": [
+      "Sarajevo-Attentat ohne Foto-Darstellung von Leichen; Quelle ist Tatortskizze + Augenzeugenbericht",
+      "Marne-Schlacht: Gefallenen-Zahlen ~500.000 als Faktum genannt, nicht visuell aufbereitet"
+    ],
+    "aktualitaetsbezug": [
+      "M2 Ursache-vs-Ausloeser-Differenzierung wird durch aktuelles Konflikt-Beispiel illustriert (konkretes Beispiel waehlt agent-skript Phase 0.3)"
+    ],
+    "akteurs_inventar": [
+      {
+        "perspektive": "Deutsche Perspektive 1914",
+        "hauptort_im_game": "M1 + M3 + M4",
+        "funktion": "Einkreisungs-Angst (M1), Augustbegeisterung (M3), Schlieffen-Plan (M4)"
+      },
+      {
+        "perspektive": "Franzoesisch-britische Perspektive",
+        "hauptort_im_game": "M1 + M4",
+        "funktion": "Triple-Entente als Defensiv-Allianz (M1), Marne-Sieg + Reaktion auf Belgien-Verletzung (M4)"
+      },
+      {
+        "perspektive": "Serbisch / oesterreichisch-ungarische Perspektive",
+        "hauptort_im_game": "M2",
+        "funktion": "Princip als Nationalist (Sicht Serben), Franz Ferdinand als Reformer (Sicht Habsburger), Juli-Ultimatum"
+      },
+      {
+        "perspektive": "Heutige Forschung (Clark / Schlafwandler-These)",
+        "hauptort_im_game": "M3",
+        "funktion": "Korrektur der einseitigen Versailles-Schuld-Zuweisung; mehrperspektivische Schuld-Verteilung"
+      }
+    ]
+  },
+  "r7_sprachniveau_kalibrierung": {
+    "satzlaenge_max_woerter": 15,
+    "hauptsatz_dominanz": true,
+    "kompositum_max_glieder": 3,
+    "nominalstil_vermeiden": true,
+    "daz_vertraeglich": true,
+    "anrede": "du-form",
+    "negativ_liste": ["ergo", "diesbezueglich", "infolgedessen", "Konsequenz"],
+    "pflicht_begriffe_pro_mappe": {
+      "M1": ["Buendnis", "Triple-Entente", "Dreibund", "Imperialismus", "Kolonie", "Flottenwettruesten"],
+      "M2": ["Attentat", "Sarajevo", "Julikrise", "Buendnisfall", "Mobilmachung", "Ausloeser", "Ursache"],
+      "M3": ["Augustbegeisterung", "Burgfrieden", "Kriegsschuld", "Versailles", "Quellenkritik"],
+      "M4": ["Schlieffen-Plan", "Marne", "Stellungskrieg", "Wendepunkt"]
+    }
+  },
+  "scope_abgrenzung": [
+    {
+      "aspekt": "Maechterivalitaeten + Imperialismus (KE GPG7_LB2_K_05)",
+      "in_scope": true,
+      "begruendung": "Voraussetzung fuer Verstaendnis der Kriegsausbruch-Ursachen — Mappe 1"
+    },
+    {
+      "aspekt": "Sarajevo + Ursache/Ausloeser (KE GPG7_LB2_K_06)",
+      "in_scope": true,
+      "begruendung": "Schluesselereignis Julikrise — Mappe 2"
+    },
+    {
+      "aspekt": "Kriegsschuldfrage ohne Versailles-Detail (KE GPG7_LB3_K_03)",
+      "in_scope": true,
+      "begruendung": "Mappe 3, ohne territoriale/militaerische Versailles-Bestimmungen"
+    },
+    {
+      "aspekt": "Versailles-Vertrag-Detailbestimmungen (KE GPG7_LB3_K_04)",
+      "in_scope": false,
+      "fuer_folge_game": "WK1-Ende-und-Versailles",
+      "begruendung": "Eigener Lernschwerpunkt mit militaerischen, territorialen und wirtschaftlichen Bestimmungen"
+    },
+    {
+      "aspekt": "Stellungskrieg 1915-1918 + Verdun + Somme + Kriegstechnik",
+      "in_scope": false,
+      "fuer_folge_game": "WK1-Stellungskrieg",
+      "begruendung": "Stoffumfang sprengt 4-Mappen-Game"
+    },
+    {
+      "aspekt": "Heimatfront + Kriegsalltag (KE GPG7_LB2_K_08)",
+      "in_scope": false,
+      "fuer_folge_game": "WK1-Heimatfront",
+      "begruendung": "Eigener Themenkreis (Hunger, Frauen-Erwerbsarbeit, Burgfrieden-Bruch)"
+    },
+    {
+      "aspekt": "Auswirkungen + Folgen (KE GPG7_LB2_K_08)",
+      "in_scope": false,
+      "fuer_folge_game": "WK1-Ende-und-Versailles",
+      "begruendung": "Nur Vorausverweis im Game; Vertiefung im Folge-Game"
+    },
+    {
+      "aspekt": "Kriegsende + Novemberrevolution",
+      "in_scope": false,
+      "fuer_folge_game": "WK1-Ende",
+      "begruendung": "Eigener Ereigniskomplex"
+    }
+  ],
+  "eskalations_log": [],
+  "validierungsstatus": "ENTWURF",
+  "_meta": {
+    "created_at": "2026-04-26",
+    "last_updated": "2026-04-26",
+    "schema_version": "didaktik_rahmen_v1",
+    "vertrag_version": "VERTRAG_PHASE_0-1_DIDAKTIK v1.2 + v0.5.0 QD-SCHULART",
+    "agent": "agent-didaktik",
+    "f_pb_addressed": ["F-PB-45", "F-PB-46", "F-PB-29-Fix"]
+  }
+}

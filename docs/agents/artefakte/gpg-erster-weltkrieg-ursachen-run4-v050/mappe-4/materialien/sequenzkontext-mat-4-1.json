@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "mat_id": "mat-4-1",
+  "position_in_mappe": 1,
+  "didaktische_funktion": "einstieg",
+  "vorausgesetztes_wissen": {
+    "fachbegriffe": ["Buendnis-System", "Dreibund", "Triple Entente", "Buendnisfall", "Mobilmachung", "Neutralitaet", "Quellenkritik"],
+    "source_materialien": ["M1: mat-1-* (Buendnis-System)", "M2: mat-2-* (Buendnisfall, Mobilmachung, GB-Kriegseintritt wegen Belgien)", "M3: mat-3-* (Quellenkritik)"]
+  },
+  "noch_nicht_eingefuehrt": {
+    "fachbegriffe": ["Marne-Schlacht", "Wendepunkt", "Stellungskrieg"],
+    "source_materialien": ["mat-4-2 (Marne-Schlacht, Wendepunkt)", "mat-4-6 (Stellungskrieg)"]
+  },
+  "vorheriges_material": null,
+  "naechstes_material": {
+    "id": "mat-4-2",
+    "typ": "zeitleiste",
+    "kerninhalt": "Zeitleiste August/September 1914 mit 7 Schluessel-Daten — vom Ultimatum bis zum Wettlauf zum Meer."
+  },
+  "zugeordneter_tb_knoten": {
+    "id": "K4-2",
+    "text": "Schlieffen-Plan (1905/06) — 6 Wochen FR-Sieg ueber Belgien"
+  },
+  "dominante_perspektive": "P1: Deutsche Generalstab-Fuehrung (Moltke d.J., Schlieffen-Erbe)",
+  "scpl_zone_primary": "S",
+  "stundenfrage": "Warum scheiterte der deutsche Plan fuer einen schnellen Sieg an der Marne?"
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "mat_id": "mat-4-2",
+  "position_in_mappe": 2,
+  "didaktische_funktion": "erarbeitung",
+  "vorausgesetztes_wissen": {
+    "fachbegriffe": ["Schlieffen-Plan", "Buendnis-System", "Buendnisfall", "Mobilmachung", "Neutralitaet"],
+    "source_materialien": ["mat-4-1 (Schlieffen-Plan)", "M1 (Buendnis-System)", "M2 (Buendnisfall, Mobilmachung, GB-Kriegseintritt wegen Belgien)"]
+  },
+  "noch_nicht_eingefuehrt": {
+    "fachbegriffe": ["Stellungskrieg"],
+    "source_materialien": ["mat-4-6 (Stellungskrieg)"]
+  },
+  "vorheriges_material": {
+    "id": "mat-4-1",
+    "typ": "karte",
+    "kerninhalt": "Karte mit den geplanten Bewegungs-Pfeilen des Schlieffen-Plans (Bogen durch Belgien nach Paris)."
+  },
+  "naechstes_material": {
+    "id": "mat-4-3",
+    "typ": "bildquelle",
+    "kerninhalt": "DT-Soldaten-Foto an der Marne — Quellenkritik-Anker (Inszenierungs-Verdacht)."
+  },
+  "zugeordneter_tb_knoten": {
+    "id": "K4-3 + K4-4 + K4-5",
+    "text": "Belgien-Verletzung 4.8.1914 / Marne-Schlacht 5.-12.9.1914 / Wendepunkt zum Stellungskrieg"
+  },
+  "dominante_perspektive": "Multiperspektivisch (DT/BE/FR/GB)",
+  "scpl_zone_primary": "C1",
+  "stundenfrage": "Warum scheiterte der deutsche Plan fuer einen schnellen Sieg an der Marne?"
+}

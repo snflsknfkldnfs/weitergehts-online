@@ -1,0 +1,61 @@
+{
+  "mat_id": "mat-3-2",
+  "mappe": "M3",
+  "position_in_mappe": "2 von 5",
+  "didaktische_funktion": "erarbeitung",
+  "primary_scpl_zone": "C1",
+  "scpl_zonen_abgedeckt": ["S", "C1"],
+  "vorausgesetztes_wissen": {
+    "fachbegriffe": [
+      "Pulverfass Europa (M1)",
+      "Ursache (M2)",
+      "Ausloeser (M2)",
+      "Mobilmachung (M2)",
+      "Augusterlebnis (mat-3-1)",
+      "Quellenkritik (mat-3-1)"
+    ],
+    "source_materialien": ["mat-3-1"]
+  },
+  "noch_nicht_eingefuehrt": {
+    "fachbegriffe": [
+      "Burgfrieden (Hefteintrag M3 B.3 — RESERVE-Eskalation, kein eigenes Material)",
+      "Kriegskredite (Hefteintrag M3 B.3)",
+      "Kriegsschuldfrage (mat-3-3)",
+      "Kriegsschuld-Klausel (mat-3-3)",
+      "Schlafwandler-These (mat-3-4)"
+    ],
+    "source_materialien": ["mat-3-5", "mat-3-3", "mat-3-4"]
+  },
+  "vorheriges_material": {
+    "id": "mat-3-1",
+    "typ": "bildquelle",
+    "kerninhalt": "Postkarte Luebeck 31.7.1914 — erste Augusterlebnis-Quelle, Stadt-Buerger jubeln am Hauptbahnhof."
+  },
+  "naechstes_material": {
+    "id": "mat-3-5",
+    "typ": "tagebuch",
+    "kerninhalt": "Skeptische Zeitgenossen-Stimme als Anti-Bias zu beiden Fotos — Tagebuch eines Skeptikers / Bauern-Frau / SPD-Anhaengers."
+  },
+  "zugeordneter_tb_knoten": {
+    "ids": ["K3-2"],
+    "texte": ["Augusterlebnis 1914 — Stadt-Begeisterung / Land-Skepsis / Foto-Bias"]
+  },
+  "stundenfrage": "Wer war im August 1914 begeistert — und wer hat heute die Schuld am Krieg?",
+  "dominante_perspektive": "P1: Begeisterte Stadtbuerger 1914 (Bundesarchiv-Selbstdarstellung Heeresleitung)",
+  "deine_aufgabe": "Du vertiefst die C1-Zone (Quellenkritik / Foto-Bias). Das zweite Foto kommt aus dem Bundesarchiv — eine Frau gibt einem Soldaten Blumen. Pflicht: Begriff 'Foto-Bias' und 'Inszenierung' im 3-Funktions-BU einfuehren. Pflicht: Vergleich zu mat-3-1 (Luebeck) ziehen — auch hier zeigt das Foto nur EINEN Ausschnitt. Pflicht: F-PB-37 Quellenkritik-Block (Produzent: anonymer Photograph / Auftraggeber: Heeresleitung-Reichs-Nachrichten-Stelle / Motiv: dokumentarisch-mobilisierend, Inszenierungs-Topos 'Frau mit Blumen'). Augusterlebnis-Idealisierungs-Verbot weiter aktiv. KEIN Antwort-Vorgriff auf Skeptiker-Stimme (mat-3-5 folgt).",
+  "fachbegriffe_eingefuehrt": ["Foto-Bias", "Inszenierung"],
+  "perspektiv_tags_plan": ["dominant", "Macht-Ausuebung"],
+  "sensibilitaets_constraint": "propaganda_kontextualisierung_noetig: Kontextualisierungs-Satz PFLICHT in BU: 'Inszenierungs-Topos Frau gibt Soldat Blumen — patriotisch-mobilisierend; Skeptiker und Trauernde wurden nicht fotografiert.' F-PB-37 Quellenkritik-Block PFLICHT.",
+  "subtyp": "bundesarchiv-mobilmachungsfoto",
+  "g3_review_pflicht": false,
+  "skript_ref": "M3 §3",
+  "artefakt_ref": "img-m3-02",
+  "wikimedia_filename": "Bundesarchiv_Bild_146-1974-118-18,_Mobilmachung.jpg",
+  "lizenz": "CC-BY-SA-3.0-DE",
+  "ueberleitung_intentionsskizze": "Du hast die Augustbegeisterung in Luebeck gesehen. Schau dir jetzt ein zweites Foto an. Vergleiche: Was zeigen beide Fotos? Und was zeigen sie nicht?",
+  "tipp_stufen": {
+    "stufe_1": "Was tut die Frau? Wem gibt sie Blumen?",
+    "stufe_2": "Sie gibt einem Soldaten Blumen — typisches Inszenierungs-Bild der Mobilmachung. Aber: ist das echt oder gestellt?",
+    "stufe_3": "Das Foto kommt aus dem Bundesarchiv. Es soll zeigen: 'Die Heimat liebt unsere Soldaten'. Aber Skeptiker und Trauernde wurden nicht fotografiert."
+  }
+}

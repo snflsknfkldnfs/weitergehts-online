@@ -1,0 +1,80 @@
+{
+  "id": "aufgabe-2-7",
+  "typ": "freitext-code",
+  "frage": "Erklaere in 3 bis 4 Saetzen den Unterschied zwischen Ursache und Ausloeser am Beispiel Sarajevo 1914 und Pulverfass Europa.",
+  "material_referenz": ["mat-2-1", "mat-2-2"],
+  "leitfragen": [
+    "Was war der Ausloeser in Sarajevo am 28. Juni 1914?",
+    "Was war die Ursache, die schon lange vor 1914 wirkte (Mappe 1)?",
+    "Welche Metapher hilft dir, den Unterschied zu zeigen (Wald, Zigarette)?",
+    "Was passiert, wenn man nur den Ausloeser sieht — und die Ursache uebersieht?"
+  ],
+  "scaffolding": [
+    "Satz 1: Der Ausloeser war der Schuss von Princip am 28. Juni 1914 in Sarajevo, weil ...",
+    "Satz 2: Die Ursache war das Pulverfass Europa aus Mappe 1 — Buendnis-System, Flotten-Wettlauf, Kolonial-Streit, weil ...",
+    "Satz 3: Wie ein trockener Wald und eine Zigarette: Die Zigarette ist der Funke, aber der Wald hat ueber Jahre brennbar werden muessen, weil ...",
+    "Satz 4: Wer nur den Schuss sieht, uebersieht ..."
+  ],
+  "erwartungs_anker": "(1) Ausloeser = Schuss Princip 28.6.1914 — der Funke, der startete. (2) Ursache = Pulverfass Europa (Buendnis-System, Wettruesten, Kolonial-Streit) aus Mappe 1 — wirkte lange vorher. (3) Metapher: trockener Wald (Ursache) + Zigarette (Ausloeser) = Feuer. (4) Wer nur den Ausloeser sieht, uebersieht die tieferen Ursachen — und kann den naechsten Krieg nicht verhindern.",
+  "loesung": "Ausloeser Schuss Princip Ursache Pulverfass Buendnis-System lange wirkend",
+  "code_keywords": [
+    "Ausloeser",
+    "Ursache",
+    "Schuss",
+    "Princip",
+    "28. Juni",
+    "Pulverfass",
+    "Buendnis-System",
+    "lange",
+    "Funke",
+    "Wald",
+    "Zigarette"
+  ],
+  "code_min_treffer": 4,
+  "tipps": [
+    {
+      "stufe": 1,
+      "text": "Schau auf die [[mat-2-1|Zeitleiste der Julikrise]] (M1) und die [[mat-2-2|Tatortskizze Sarajevo]] (M2). Erinnere dich an Mappe 1 — das Pulverfass Europa."
+    },
+    {
+      "stufe": 2,
+      "text": "Stell dir einen trockenen Wald im Sommer vor. Die Zigarette zuendet das Feuer — aber der Wald muss erst brennbar geworden sein. Was war der Wald (Ursache)? Was war die Zigarette (Ausloeser)?"
+    },
+    {
+      "stufe": 3,
+      "text": "Loesung: Der Ausloeser war der Schuss von Princip am 28. Juni 1914 in Sarajevo — der Funke, der das Feuer startete. Die Ursache war das Pulverfass Europa aus Mappe 1: das Buendnis-System, der Flotten-Wettlauf und der Kolonial-Streit, die ueber Jahrzehnte Spannungen aufgebaut hatten. Wie der trockene Wald, den die Zigarette anzuendet: Ohne den brennbaren Wald wuerde die Zigarette nichts ausrichten. Wer nur den Schuss sieht, uebersieht die tieferen Ursachen — und kann den naechsten Krieg nicht verhindern."
+    }
+  ],
+  "punkte": 25,
+  "_meta": {
+    "bloom": "L5",
+    "afb": "III",
+    "scpl_zone": "L",
+    "tafelbild_knoten": ["K2-1"],
+    "ke_anker_haupt": "GPG7_LB2_K_06",
+    "ke_anker_neben": ["GPG7_LB2_K_05"],
+    "ziel_material_id": "mat-2-1",
+    "operationalisierungsziel": "Die SuS koennen den Unterschied zwischen Ursache und Ausloeser mit eigenen Worten erklaeren und auf das Beispiel Sarajevo 1914 (Ausloeser) und Pulverfass Europa aus Mappe 1 (Ursache) anwenden.",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "subagent": "sub-aufgabe-freitext",
+    "fachbegriffe_eingefuehrt_im_material": ["Ausloeser", "Ursache"],
+    "synthese_bezug": "Bruecke zur Mappe-1-Pulverfass-Metapher (P-Zone Mappe M1, K1-1) ueber die Wald-Zigarette-Metapher des Hefteintrags B.3. Macht das M1-Vorwissen rueckwirkend sinnstiftend (Sandwich-Anschluss DR §4 + Hefteintrag M2 A.5).",
+    "f_pb_37_quellenkritik_pflicht": "n.a. (mat-2-1 ist Sekundaerquelle / didaktische Zusammenstellung — kein F-PB-37-Pflichtfall)",
+    "code_anker_beitrag": "Synthese-Aufgabe — Freischalt-Code 28-06-1914 wird primaer aus Aufgabe 2-1 abgeleitet. Diese Aufgabe sichert die Begriffs-Differenzierung (zentrale Erkenntnis).",
+    "q_gate": {
+      "A1_afb_kongruenz": "PASS — AFB III (Begriffs-Synthese + Beispiel-Anwendung)",
+      "A2_fragestamm_klarheit": "PASS — 17 Woerter (Grenzfall, aber inhaltlich notwendig fuer Synthese-Operator)",
+      "A3_material_kongruenz": "PASS — Hefteintrag M2 B.3+B.4 + mat-2-1 + mat-2-2 + Mappe-1-Vorwissen liefern alle Anker",
+      "A6_tipp_progression": "PASS — Anker -> Metapher -> ausfuehrliche Loesung mit Wertung",
+      "A7_operator_praezision": "PASS — 'Erklaere mit eigenen Worten den Unterschied' (AFB III)",
+      "A8_kognitive_aktivierung": "PASS — Synthese ueber zwei Mappen + Metapher-Transfer",
+      "A11_freitext_qualitaet": "PASS — 4 Leitfragen + 4-Satz-Scaffolding + 11 Code-Keywords (4-Treffer-Schwelle)",
+      "A12_sachbezogen_vor_wertbezogen": "PASS — Pos 7 ist wertbezogen-analytisch am Schluss der Sequenz",
+      "A17_scpl_zonen_abdeckung": "PASS — L-Zone",
+      "MQ3_kein_link_in_frage": "PASS",
+      "MQ3b_displayref_in_tipp1": "PASS — [[mat-2-1|...]] (M1) + [[mat-2-2|...]] (M2)",
+      "F0B_R7": "PASS — Saetze max. 15W, DaZ-tauglich, Metapher Wald-Zigarette altersgerecht",
+      "MULTIPERSPEKTIVITAET": "n.a. (Ursache-vs-Ausloeser-Synthese — strukturell, nicht akteurs-perspektivisch)"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "mat_id": "mat-4-3",
+  "position_in_mappe": 3,
+  "didaktische_funktion": "erarbeitung",
+  "vorausgesetztes_wissen": {
+    "fachbegriffe": ["Schlieffen-Plan", "Marne-Schlacht", "Wendepunkt", "Quellenkritik"],
+    "source_materialien": ["mat-4-1 (Schlieffen-Plan)", "mat-4-2 (Marne-Schlacht, Wendepunkt)", "M3 (Quellenkritik)"]
+  },
+  "noch_nicht_eingefuehrt": {
+    "fachbegriffe": ["Stellungskrieg"],
+    "source_materialien": ["mat-4-6 (Stellungskrieg)"]
+  },
+  "vorheriges_material": {
+    "id": "mat-4-2",
+    "typ": "zeitleiste",
+    "kerninhalt": "Zeitleiste August/September 1914 mit 7 Schluessel-Daten."
+  },
+  "naechstes_material": {
+    "id": "mat-4-4",
+    "typ": "bildquelle",
+    "kerninhalt": "FR-Infanterie 1913 — Multiperspektiv-Vergleich + Datums-Quellenkritik."
+  },
+  "zugeordneter_tb_knoten": {
+    "id": "K4-4",
+    "text": "Marne-Schlacht 5.-12.9.1914 — Joffre vs. Moltke, 40 km vor Paris"
+  },
+  "dominante_perspektive": "P1 dominant (DT-Heeres-Selbstdarstellung) — wird durch Quellenkritik dekonstruiert",
+  "scpl_zone_primary": "C2",
+  "stundenfrage": "Warum scheiterte der deutsche Plan fuer einen schnellen Sieg an der Marne?"
+}

@@ -1,0 +1,53 @@
+{
+  "id": "aufgabe-1-2",
+  "typ": "lueckentext",
+  "frage": "Ergaenze die fehlenden Fachbegriffe.",
+  "material_referenz": ["mat-1-4"],
+  "text_mit_luecken": "Ein Buendnis ist ein {{1}} zwischen Laendern. Wer {{2}} wird, dem helfen die anderen. Vor 1914 gab es zwei grosse Buendnisse: den {{3}} (1882) und die {{4}} (1907). Mehrere Buendnisse zusammen nennt man ein {{5}}.",
+  "luecken": [
+    {"id": 1, "loesung": "Versprechen", "alternativen": ["Versprechen"]},
+    {"id": 2, "loesung": "angegriffen", "alternativen": ["angegriffen"]},
+    {"id": 3, "loesung": "Dreibund", "alternativen": ["Dreibund"]},
+    {"id": 4, "loesung": "Triple Entente", "alternativen": ["Triple Entente"]},
+    {"id": 5, "loesung": "Buendnis-System", "alternativen": ["Buendnissystem", "Buendnis-System"]}
+  ],
+  "wortbank": ["Versprechen", "angegriffen", "Dreibund", "Triple Entente", "Buendnis-System", "Krieg", "Streit", "Angriff"],
+  "loesung": ["Versprechen", "angegriffen", "Dreibund", "Triple Entente", "Buendnis-System"],
+  "tipps": [
+    {
+      "stufe": 1,
+      "text": "Lies den [[mat-1-4|Text zum Buendnis-System]] (M2) noch einmal genau."
+    },
+    {
+      "stufe": 2,
+      "text": "Im ersten Absatz steht der Mechanismus (Wer hilft wem?). Im zweiten Absatz stehen die zwei Buendnis-Namen mit ihren Jahreszahlen."
+    },
+    {
+      "stufe": 3,
+      "text": "Loesung: Versprechen — angegriffen — Dreibund — Triple Entente — Buendnis-System. Merke: Ein Buendnis ist ein Versprechen, bei einem Angriff zu helfen."
+    }
+  ],
+  "punkte": 10,
+  "_meta": {
+    "bloom": "L2",
+    "afb": "I-II",
+    "scpl_zone": "C1",
+    "tafelbild_knoten": ["K1-2", "K1-3"],
+    "ke_anker_haupt": "GPG7_LB2_K_05",
+    "ziel_material_id": "mat-1-4",
+    "operationalisierungsziel": "Die SuS koennen den Buendnis-Mechanismus mit eigenen Worten wiedergeben (Versprechen, Hilfe bei Angriff).",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "subagent": "sub-aufgabe-lueckentext",
+    "q_gate": {
+      "A1_afb_kongruenz": "PASS",
+      "A2_fragestamm_klarheit": "PASS — 4 Woerter",
+      "A3_material_kongruenz": "PASS",
+      "A4_lt_luecken_eindeutigkeit": "PASS — Wortbank mit 3 Plus-Distraktoren (Krieg, Streit, Angriff) nicht einsetzbar",
+      "A6_tipp_progression": "PASS",
+      "A7_operator_praezision": "PASS — 'Ergaenze'",
+      "MQ3_kein_link_in_frage": "PASS",
+      "MQ3b_displayref_in_tipp1": "PASS",
+      "F0B_R7": "PASS"
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "mat-3-4",
+  "typ": "darstellungstext",
+  "titel": "Christopher Clark — Die Schlafwandler (2013)",
+  "inhalt": "<article class=\"darstellungstext\"><p class=\"darstellungstext__kernsatz\"><strong>Heute sagt der Forscher Christopher Clark: Keine Macht hatte allein Schuld am Krieg.</strong></p><p>Christopher Clark ist Historiker. Er kommt aus Australien und arbeitet in England. Im Jahr 2013 schrieb er ein Buch ueber den Beginn des Ersten Weltkriegs. Der Titel: <strong>Die Schlafwandler</strong>. Schlafwandler sehen aus, als waeren sie wach. Aber sie wissen nicht, was sie tun. So gingen — sagt Clark — fuenf Regierungen 1914 in den Krieg: Wien, Berlin, Petersburg (das ist Russland), Paris und London.</p><p>Clarks Antwort auf die Schuldfrage ist anders als die in Versailles 1919: Nicht Deutschland allein, sondern <strong>fuenf Maechte gemeinsam</strong>. Welche Position findest du ueberzeugender?</p></article>",
+  "bildunterschrift": "",
+  "quelle": "Paraphrasiert nach: Christopher Clark, Die Schlafwandler — Wie Europa in den Ersten Weltkrieg zog. Deutsche Verlags-Anstalt, Muenchen 2013.",
+  "lizenz": "Eigenproduktion (Forschungs-Paraphrase)",
+  "position": 5,
+  "didaktische_funktion": "sicherung",
+  "voraussetzung": ["mat-3-3"],
+  "ueberleitung_von": "Die Sieger schrieben 1919 die Schuld auf. Aber Geschichte wird neu geschrieben. Heute sagt der Forscher Christopher Clark etwas anderes. Hoer dir seine These an.",
+  "sequenz_kontext": {
+    "vorher": {"id": "mat-3-3", "typ": "quellentext", "kerninhalt": "Versailles Art. 231 — historische Sieger-Position 1919."},
+    "nachher": null
+  },
+  "perspektiv_tags": ["nicht-dominant", "Kritik"],
+  "_meta": {
+    "wortanzahl_inhalt": 122,
+    "kernsatz_wortanzahl": 14,
+    "wortanzahl_bildunterschrift": 0,
+    "fachbegriffe_eingefuehrt": ["Schlafwandler-These"],
+    "fachbegriffe_referenziert": ["Kriegsschuldfrage (mat-3-3)", "Kriegsschuld-Klausel (mat-3-3)"],
+    "tafelbild_knoten": ["K3-1", "K3-5"],
+    "scpl_zone_primary": "L",
+    "scpl_zonen_abdeckung": ["L"],
+    "artefakt_ref": [],
+    "skript_ref": "M3 §6",
+    "datenbasis_hashes": ["wiki-christopher-clark-historiker-2026-04-26", "wiki-the-sleepwalkers-clark-2026-04-26"],
+    "ke_anker_haupt": "GPG7_LB3_K_03",
+    "afb": "II-III",
+    "bloom": "Beurteilen (eigene Position bilden)",
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "sprachniveau": "R7",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "sensibilitaets_markierung": "keine",
+    "perspektive": "P4: Heutige Forschung Christopher Clark 2013 (Schlafwandler-These — Kritik der Allein-Schuld-These von 1919)",
+    "kernerkenntnisse_bezug": [
+      "Schlafwandler-These (Clark 2013): Mehrere Maechte sind gemeinsam in den Krieg getaumelt — keine allein hat Schuld.",
+      "Heutige Forschung widerspricht der Versailles-Position 1919.",
+      "Die Frage 'Wer ist schuld?' hat keine einfache Antwort."
+    ],
+    "trigger_vermerk": [],
+    "kontroversitaets_pol": {
+      "gegenpol_material": "mat-3-3 (Versailles Art. 231, 1919)",
+      "kontroversitaets_typ": "kontrastive Forschungsposition",
+      "beutelsbach_check": "PASS — Beide Positionen explizit gegenuebergestellt; eigene Position-Frage als Reflexionsimpuls am Ende; KEIN Antwort-Vorgriff auf 'die richtige' Antwort."
+    },
+    "personifizierung": {
+      "person": "Christopher Clark",
+      "rolle": "Historiker (Australien/England)",
+      "werk": "Die Schlafwandler — Wie Europa in den Ersten Weltkrieg zog",
+      "jahr": 2013,
+      "begriff_metapher": "Schlafwandler-These — Schlafwandler sehen aus, als waeren sie wach, aber sie wissen nicht, was sie tun"
+    },
+    "tipp_stufen": {
+      "stufe_1": "Was sagt Christopher Clark heute ueber die Schuld?",
+      "stufe_2": "Clark sagt: Es gab keine Allein-Schuld. Mehrere Maechte sind gemeinsam in den Krieg hineingestolpert.",
+      "stufe_3": "Sein Buch heisst 'Die Schlafwandler' (2013). Schlafwandler sehen aus, als wuerden sie wachen, aber sie wissen nicht, was sie tun. Clark meint: So gingen die Regierungen 1914 in den Krieg."
+    },
+    "erarbeitbarkeits_check": "PASS — Personifizierung Clark + Buch-Titel + Jahr + Schlafwandler-Metapher + 5 Maechte explizit. Beutelsbach-Kontroversitaet gewahrt: beide Positionen gegenuebergestellt, eigene Position-Frage als Schluss. F-PB-44 Komposita-Erstgebrauch: Schlafwandler-These via Metapher-Erklaerung erschlossen."
+  }
+}

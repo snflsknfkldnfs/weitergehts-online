@@ -1,0 +1,61 @@
+{
+  "id": "mat-3-2",
+  "typ": "bildquelle",
+  "titel": "Eine Frau gibt Blumen — wirklich oder gestellt?",
+  "inhalt": "<figure><img src=\"assets/images/gpg-erster-weltkrieg-ursachen-run4-v050/mappe-3/img-m3-02-bundesarchiv-mobilmachung-1914.jpg\" alt=\"Bundesarchiv-Foto vom 1./2. August 1914: Eine Frau gibt einem deutschen Soldaten Blumen waehrend des Ausmarschs.\"/><figcaption><p>Foto: <strong>Mobilmachung 1./2. August 1914</strong>. Eine Frau gibt einem Soldaten Blumen. So eine Szene gab es viele — aber nicht ueberall. Solche Bilder nennt man eine <strong>Inszenierung</strong>: Etwas wird absichtlich so gezeigt, wie es wirken soll. Vergleiche mit dem ersten Foto aus Luebeck — was zeigen beide Bilder? Und was zeigen sie nicht?</p><p><strong>Achtung — Quellenkritik:</strong> Das Foto liegt im Bundesarchiv. Wahrscheinlich hat es ein Photograph der Heeresleitung gemacht — einer Stelle, die fuer die Reichs-Nachrichten zustaendig war. Der Photograph wollte zeigen: 'Die Heimat liebt unsere Soldaten.' Skeptiker, weinende Muetter und Trauernde wurden nicht fotografiert. Solche Fotos sind also ein <strong>Foto-Bias</strong>: ein einseitiger Bild-Ausschnitt.</p><p><cite>Foto: Bundesarchiv, Bild 146-1974-118-18 / CC-BY-SA 3.0 DE. Wikimedia Commons.</cite></p></figcaption></figure>",
+  "bildunterschrift": "Mobilmachung 1./2. August 1914 — Bundesarchiv-Foto. Inszenierungs-Topos 'Frau gibt Soldat Blumen'. Skeptiker und Trauernde wurden nicht fotografiert.",
+  "quelle": "Wikimedia Commons: 'Bundesarchiv_Bild_146-1974-118-18,_Mobilmachung.jpg'. Bundesarchiv-Bestand 146-* (Reichs-Nachrichten-Stelle). Lizenz: CC-BY-SA 3.0 DE.",
+  "lizenz": "CC-BY-SA-3.0-DE",
+  "position": 2,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": ["mat-3-1"],
+  "ueberleitung_von": "Du hast die Augustbegeisterung in Luebeck gesehen. Schau dir jetzt ein zweites Foto an. Vergleiche: Was zeigen beide Fotos? Und was zeigen sie nicht?",
+  "sequenz_kontext": {
+    "vorher": {"id": "mat-3-1", "typ": "bildquelle", "kerninhalt": "Postkarte Luebeck 31.7.1914 — erste Augusterlebnis-Quelle."},
+    "nachher": {"id": "mat-3-5", "typ": "tagebuch", "kerninhalt": "Skeptische Zeitgenossen-Stimme als Anti-Bias zu beiden Fotos."}
+  },
+  "perspektiv_tags": ["dominant", "Macht-Ausuebung"],
+  "_meta": {
+    "wortanzahl_inhalt": 156,
+    "wortanzahl_bildunterschrift": 22,
+    "fachbegriffe_eingefuehrt": ["Foto-Bias", "Inszenierung"],
+    "fachbegriffe_referenziert": ["Augusterlebnis (mat-3-1)", "Quellenkritik (mat-3-1)", "Mobilmachung (M2)"],
+    "tafelbild_knoten": ["K3-2"],
+    "scpl_zone_primary": "C1",
+    "scpl_zonen_abdeckung": ["S", "C1"],
+    "artefakt_ref": ["img-m3-02"],
+    "wikimedia_filename": "Bundesarchiv_Bild_146-1974-118-18,_Mobilmachung.jpg",
+    "skript_ref": "M3 §3",
+    "datenbasis_hashes": ["wiki-spirit-of-1914-2026-04-26"],
+    "ke_anker_haupt": "GPG7_LB3_K_03",
+    "afb": "II-III",
+    "bloom": "Analysieren (Quellenkritik uebertragen)",
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "sprachniveau": "R7",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "sensibilitaets_markierung": "propaganda_kontextualisierung_noetig",
+    "quellenkritik_pflicht": true,
+    "kontextualisierung_satz_realisiert": "Solche Bilder nennt man eine Inszenierung. Skeptiker, weinende Muetter und Trauernde wurden nicht fotografiert.",
+    "bildfunktion": "heuristisch",
+    "perspektive": "P1: Bundesarchiv-Selbstdarstellung Heeresleitung (dominante Sicht)",
+    "quellenkritische_impulse": [
+      "Wer hat dieses Foto gemacht — und in welchem Auftrag?",
+      "Was sehen wir auf dem Bild — und was wuerde nebenan vielleicht zu sehen sein, wenn der Photograph weiter umgeschwenkt haette?",
+      "Was ist der Unterschied zwischen 'echt' und 'gestellt'?"
+    ],
+    "quellenkritik_block": {
+      "produzent": "anonymer Photograph (Bundesarchiv-Bestand 146-*)",
+      "auftraggeber": "Heeresleitung / Reichs-Nachrichten-Stelle",
+      "motiv": "Patriotisch-mobilisierendes Bundesarchiv-Mobilmachungsfoto. Inszenierungs-Topos 'Frau gibt Soldat Blumen' — bewusst geplante Bild-Komposition zur Stimmungs-Mobilisierung."
+    },
+    "kernerkenntnisse_bezug": ["Foto-Bias erkennen: Solche Fotos zeigen einen Ausschnitt, nicht 'die ganze Wahrheit'.", "Inszenierung als Quellen-Eigenschaft: Bilder werden gemacht, damit sie wirken."],
+    "trigger_vermerk": ["nationalismus", "weltkrieg_grossereignis"],
+    "tipp_stufen": {
+      "stufe_1": "Was tut die Frau? Wem gibt sie Blumen?",
+      "stufe_2": "Sie gibt einem Soldaten Blumen — typisches Inszenierungs-Bild der Mobilmachung. Aber: ist das echt oder gestellt?",
+      "stufe_3": "Das Foto kommt aus dem Bundesarchiv. Es soll zeigen: 'Die Heimat liebt unsere Soldaten'. Aber Skeptiker und Trauernde wurden nicht fotografiert."
+    },
+    "erarbeitbarkeits_check": "PASS — Foto-Bias + Inszenierung als Begriffe eingefuehrt; F-PB-37 Quellenkritik-Block dokumentiert; SuS uebertragen die Quellenkritik-Methode aus mat-3-1 auf eine zweite Quelle."
+  }
+}

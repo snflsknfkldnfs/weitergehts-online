@@ -1,0 +1,45 @@
+{
+  "mat_id": "mat-2-4",
+  "mappe": "M2",
+  "position_in_mappe": "4 von 5",
+  "didaktische_funktion": "erarbeitung",
+  "primary_scpl_zone": "S",
+  "scpl_zonen_abgedeckt": ["S"],
+  "vorausgesetztes_wissen": {
+    "fachbegriffe": [
+      "Buendnis-System (M1)",
+      "Habsburger (M1)",
+      "Oesterreich-Ungarn (M1)",
+      "Julikrise (mat-2-1)",
+      "Blanko-Scheck (mat-2-1)",
+      "Sarajevo (mat-2-2)",
+      "Lateinerbruecke (mat-2-2)",
+      "Thronfolger (mat-2-3)"
+    ],
+    "source_materialien": ["mat-2-1", "mat-2-2", "mat-2-3"]
+  },
+  "noch_nicht_eingefuehrt": {
+    "fachbegriffe": ["Souveraenitaet (mat-2-5)"],
+    "source_materialien": ["mat-2-5"]
+  },
+  "vorheriges_material": {
+    "id": "mat-2-3",
+    "typ": "bildquelle",
+    "kerninhalt": "Hofportrait Franz Ferdinand — Habsburger Hof-Selbstdarstellung."
+  },
+  "naechstes_material": {
+    "id": "mat-2-5",
+    "typ": "quellentext",
+    "kerninhalt": "Auszug Wiener Ultimatum 23.7.1914."
+  },
+  "zugeordneter_tb_knoten": {
+    "ids": ["K2-2"],
+    "texte": ["28. Juni 1914 Sarajevo — Princip 19 J. erschiesst Franz Ferdinand + Sophie"]
+  },
+  "stundenfrage": "Wie wurde aus dem Attentat in Sarajevo in fuenf Wochen ein Weltkrieg?",
+  "dominante_perspektive": "P1: Bosnisch-serbische Nationalisten (Princip / Junges Bosnien) — DIDAKTISCHES KERNSTUECK Multiperspektivitaet Held-vs-Terrorist",
+  "deine_aufgabe": "Du wechselst nach mat-2-3 die Perspektive: Bisher Habsburger Seite, jetzt Princip-Seite. KERNSTUECK: Beide Erinnerungen (serbisch-national: Held / habsburgisch-bosniakisch-kroatisch: Terrorist) gleichberechtigt nennen, ohne wertende Etikettierung. SuS sollen erkennen, dass historische Erinnerung perspektivabhaengig ist.",
+  "fachbegriffe_eingefuehrt": ["Junges Bosnien", "Schwarze Hand"],
+  "perspektiv_tags_plan": ["Widerstand", "Macht-Betroffen", "Innen"],
+  "sensibilitaets_constraint": "propaganda_kontextualisierung_noetig + Multiperspektivitaet: Beide Erinnerungs-Perspektiven gleichberechtigt. F-PB-37 Quellenkritik-Block PFLICHT (Produzent: anonym 1914 / Auftraggeber: Gericht-Inszenierung Sarajevo / Motiv: juristische Dokumentation des Angeklagten — KEIN Held-/Terrorist-Bild)."
+}

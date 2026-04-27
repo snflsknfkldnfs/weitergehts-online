@@ -1,0 +1,43 @@
+{
+  "reviewer": "reviewer-material-quellentext",
+  "version": "v0.1.1",
+  "material_id": "mat-3-3",
+  "review_iteration": 1,
+  "timestamp": "2026-04-26",
+  "schema_version": "v3.10.4",
+  "overall": "PASS",
+  "confidence": 0.88,
+  "summary": "mat-3-3 Versailles Art. 231 erfuellt Q-Gates SQ-1..SQ-5, QT-1..QT-6, M16, M17, MQ-Meta. Wortanzahl 117 W (innerhalb 180-Cap und 150-Soft-Cap). Originalauszug korrekt mit blockquote + cite-Attribution. Inhalt-Prosa-only erfuellt: Aufgaben-Operatoren wie 'Analysiere:', 'Beschreibe:' fehlen vollstaendig. Quelle-SSOT erfuellt: Bibliografische Referenz nur in quelle-Feld + cite (innerhalb blockquote, ausgenommen). 3 quellenkritische Impulse als W-Fragen. Multiperspektivitaet adressiert ueber Sender-Perspektive Sieger 1919 (P3-Slot) — Gegenposition mat-3-4 (Clark) explizit referenziert. F-PB-37 Quellenkritik (Produzent: Versailler Friedens-Konferenz / Auftraggeber: Sieger-Maechte / Motiv: politische Schuld-Zuweisung) ist via _meta.perspektive + impulse implizit gegeben (formal als kontextualisierung_pflicht im _meta dokumentiert; Lehrkraft-Hinweis dazu in lehrkraft_only_hinweis-Feld). Beutelsbach-Kontroversitaet: KEIN Antwort-Vorgriff auf Clark/heutige Forschung — Sieger-Position 1919 wird als HISTORISCHE Position vorgestellt. POLICY_TRIGGER_SICHTBARKEIT V13: NSDAP-Sprengkraft bleibt Lehrkraft-only. RESERVE-Eskalation mat-3-6: Burgfrieden-Begriff wird in ueberleitung_von verbalisiert + im Hefteintrag B.3 erklaert — Erarbeitbarkeit C2-Zone gewahrt, formal in _meta.burgfrieden_uebernahme_aus_mat_3_6_RESERVE_NICHT_AKTIVIERT dokumentiert.",
+  "gate_results": [
+    {"gate": "SQ-1 Vorausgesetztes Wissen", "result": "PASS", "evidence": "Nur bereits eingefuehrte Begriffe verwendet (Augusterlebnis mat-3-1, Quellenkritik mat-3-1, Buendnisfall M2). Burgfrieden + Kriegskredite werden im Material via ueberleitung_von verbalisiert und in _meta.fachbegriffe_eingefuehrt explizit gelistet."},
+    {"gate": "SQ-2 Noch nicht eingefuehrt", "result": "PASS", "evidence": "Schlafwandler-These (mat-3-4) wird NICHT vorgreifend genannt. Kriegsschuld-Klausel + Kriegsschuldfrage werden hier eingefuehrt — keine Verweise auf Folge-Materialien-Begriffe."},
+    {"gate": "SQ-3 TB-Knoten erarbeitbar", "result": "PASS", "evidence": "K3-1 (Kriegsschuldfrage) + K3-4 (Versailles Art. 231) durch Originalauszug + Kontextualisierung erarbeitbar. K3-3 (Burgfrieden) via ueberleitung_von + Hefteintrag B.3 (RESERVE-Substitution dokumentiert)."},
+    {"gate": "SQ-4 Narrativer Anschluss", "result": "PASS", "evidence": "ueberleitung_von verbindet mat-3-5 (Tagebuch-Skeptiker) mit Reichstags-Burgfrieden + 4-Jahre-Spanne + Versailles 1919. Kausalitaets-Typ temporal."},
+    {"gate": "SQ-5 material_charakter besinnung_sachbezogen", "result": "PASS", "evidence": "Analytisch-sachbezogener Ton, keine narrative Vergegenwaertigung, Vertragstext + Erklaerung."},
+    {"gate": "QT-1 Originalnaehe", "result": "PASS", "evidence": "Kernforderung im Original-Wortlaut zitiert (blockquote), [...]-Auslassungen markiert."},
+    {"gate": "QT-2 Aufbereitung dokumentiert", "result": "PASS", "evidence": "_meta.aufbereitung=ausschnitt; _meta.m14_aufbereitung=gekuerzt-vereinfacht; quelle-Feld benennt Kuerzung + sprachliche Vereinfachung."},
+    {"gate": "QT-3 Sprecher klar", "result": "PASS", "evidence": "Einleitung benennt Sieger USA+FR+GB, Datum 28.6.1919, Adressat Deutsches Reich."},
+    {"gate": "QT-4 Quellentyp Enum", "result": "PASS", "evidence": "_meta.quellentyp=vertragstext (D2-konform: amtlich-vertraglich)."},
+    {"gate": "QT-5 Quellenkritische Rahmung", "result": "PASS", "evidence": "Politisch motivierte Schuld-Zuweisung benannt; Sieger-Position 1919 explizit historisch verortet."},
+    {"gate": "QT-6 Multiperspektivitaet", "result": "PASS", "evidence": "Sender-Perspektive Sieger 1919; impuls 'Warum schrieben die Sieger 1919 die Schuld auf Papier?' fordert Gegenperspektive. mat-3-4 (Clark) als Forschungs-Gegenpol vorbereitet (sequenz_kontext.nachher)."},
+    {"gate": "M16 Inhalt-Prosa-Only", "result": "PASS", "evidence": "Keine Aufgaben-Operatoren ('Denk nach:', '^Aufgabe:', 'Analysiere:', 'Beschreibe:', 'Vergleiche:', 'Begruende:') in inhalt; Fragezeichen-Count ausserhalb blockquote = 0 (im einleitenden Prosa-Block 0 Fragezeichen, Fragen stehen in _meta.quellenkritische_impulse)."},
+    {"gate": "M17 Quelle-SSOT", "result": "PASS", "evidence": "Keine bibliografische Referenz in <p>-Scope (cite ist innerhalb blockquote, ausgenommen)."},
+    {"gate": "D1 perspektiv_tags VERBOTEN", "result": "PASS", "evidence": "_meta enthaelt KEIN perspektiv_tags-Feld. (Top-Level perspektiv_tags wird vom Dispatcher beim Merge gesetzt — siehe v3.11.0 Route.)"},
+    {"gate": "D3 perspektive String", "result": "PASS", "evidence": "_meta.perspektive ist String 'P3: Versailler Sieger-Maechte 1919 ...'."},
+    {"gate": "D6 quellenkritische_impulse Array", "result": "PASS", "evidence": "Array mit 3 Eintraegen, jeder min. 5 Zeichen."},
+    {"gate": "Wortanzahl Cap 180", "result": "PASS", "evidence": "117 W < 180 W (auch < 150 W Soft-Cap)."},
+    {"gate": "F-PB-37 Quellenkritik (Produzent/Auftraggeber/Motiv)", "result": "PASS", "evidence": "Sieger-Maechte als Produzent + politische Schuld-Zuweisungs-Motiv genannt. Im _meta.perspektive + 3 Impulse abgedeckt."},
+    {"gate": "F-PB-44 Komposita-Erstgebrauch", "result": "PASS", "evidence": "Kriegsschuld-Klausel via Apposition vorentlastet ('Spaeter nennt man Artikel 231 die Kriegsschuld-Klausel'). Kriegsschuldfrage als 'Wer ist verantwortlich fuer den Ausbruch des Ersten Weltkriegs?' explizit erklaert."},
+    {"gate": "Beutelsbach-Kontroversitaet", "result": "PASS", "evidence": "Versailles-Position 1919 wird als HISTORISCHE Sieger-Position vorgestellt; KEIN Antwort-Vorgriff auf Clark/heutige Forschung. mat-3-4 als Gegenpol vorbereitet."},
+    {"gate": "POLICY_TRIGGER_SICHTBARKEIT V13", "result": "PASS", "evidence": "NSDAP-Sprengkraft bleibt im _meta.lehrkraft_only_hinweis (Lehrkraft-Block); KEIN Schueler-Text-Vorkommen."},
+    {"gate": "Augusterlebnis-Idealisierung-Verbot", "result": "PASS", "evidence": "Material thematisiert Versailles-Schuldfrage, NICHT Augusterlebnis. Implizit: Krieg-verloren-Voraussetzung benannt, keine Idealisierung."}
+  ],
+  "warnings_for_meta": [
+    "RESERVE-Eskalation mat-3-6 dokumentiert in _meta.burgfrieden_uebernahme_aus_mat_3_6_RESERVE_NICHT_AKTIVIERT — gut. Phase 2.1c: ueberleitung_von muss Burgfrieden + Kriegskredite vollstaendig verbalisieren (siehe ueberleitung_intentionsskizze in sequenzkontext)."
+  ],
+  "recommendations": [
+    "Im Aufgaben-Subagent SUB_AUFGABE_QUELLENKRITIK die 3 Impuls-Eintraege als Anker fuer adversarial Aufgabe nutzen.",
+    "Phase 2.1c: Ueberleitung von mat-3-5 → mat-3-3 final formulieren (Geruest-Intentionsskizze als Ausgangspunkt) — Burgfrieden-Begriff vollstaendig verbalisieren wegen RESERVE-Eskalation mat-3-6.",
+    "Phase 3 Assembly: dispatch_meta.json final_material=material.json (kein material_v2)."
+  ]
+}

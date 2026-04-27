@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0",
+  "mappe_id": "M3",
+  "_variante": "A",
+  "_template_ref": "SUB_TEMPLATE_MAPPENABSCHLUSS v1.0 (STR-13)",
+  "_f0b_priming_kennung": "F0B_PRIMING_v1",
+  "reflexion_fragen": [
+    "Welche Position findest du im Moment ueberzeugender — Versailles 1919 (Deutschland und seine Verbuendeten allein schuld) oder Clark 2013 (fuenf Maechte gemeinsam) — und welches eine Argument aus dieser Mappe waere noch zu pruefen, bevor du dich endgueltig entscheidest?",
+    "Die Postkarte aus Luebeck zeigt jubelnde Stadtbuerger. Welche Stimmen aus dem August 1914 fehlen auf solchen Bildern — und woran erkennst du, dass eine Quelle nur eine Gruppe zeigt?"
+  ],
+  "ueberleitungssatz": "Die Maenner zogen los — was passierte, als sie ankamen?",
+  "sicherungstexte_lehrkraft": {
+    "_sichtbarkeit": "lehrkraft-only",
+    "_policy": "POLICY_TRIGGER_SICHTBARKEIT — diese Texte erscheinen NICHT im Schueler-Spielfluss (Engine rendert nur reflexion_fragen + ueberleitungssatz). Lehrkraft-Hinweis fuer Nachbesprechung.",
+    "augusterlebnis_idealisierungs_verbot": "Die Postkarte aus Luebeck (mat-3-1) und das Bundesarchiv-Inszenierungsfoto (mat-3-2) zeigen Stadt-Mittelschicht in einem inszenierten Moment. Reflexion in der Klasse darf NICHT bei 'Alle waren begeistert' enden. Aufgaben 3-2 (Quellenkritik W-Frage 'fehlt') und 3-3 (Zuordnung Land-Skepsis + Inszenierung) haben das Idealisierungs-Verbot bereits operationalisiert. Nachbesprechung sollte Land-Bevoelkerung, Arbeiter und SPD-Burgfrieden-Differenzierung 1916/17 explizit benennen.",
+    "beutelsbach_kontroversitaet": "Aufgabe 3-5 (Vergleich Versailles 1919 vs. Clark 2013) und Aufgabe 3-6 (CER-Begruendung) stellen beide Positionen gleichrangig. KEINE Position ist als 'die richtige' markiert. Reflexionsfrage 1 fragt nach individueller Praeferenz UND fordert ein noch zu pruefendes Argument — das verhindert vorschnelle Festlegung. Nachbesprechung darf beide Positionen wuerdigen, aber keine Lehrkraft-Wertung 'Clark hat recht' / 'Versailles ist ueberholt' aussprechen. Schueler-Antworten sind beide Pole zu akzeptieren.",
+    "versailles_nsdap_sprengkraft": "POLICY_TRIGGER_SICHTBARKEIT (Lehrkraft-only): Artikel 231 wurde ab 1919 in der Weimarer Republik politisch instrumentalisiert (Kriegsschuld-Luege, Dolchstoss-Legende). Die NSDAP nutzte diese Narrative ab 1920 propagandistisch. Diese Folge-Rezeption ist NICHT Stoff der 7. Klasse (V13: kein NSDAP-Vorgriff im Schueler-Material). Im Hefteintrag M3 und in den Aufgaben wird Art. 231 ausschliesslich als Sieger-Position 1919 dargestellt, ohne Vorgriff auf Weimarer Folgegeschichte. Nachbesprechung sollte diesen Vorgriff ebenfalls vermeiden — Folge-Wirkung ist Stoff spaeterer Jahrgangsstufen.",
+    "multiperspektivitaet_synthese_hinweis": "M3 hat fuenf Perspektiven aktiviert: P1 Stadt-Begeisterte (mat-3-1), P2 Land-Skepsis und Arbeiter (mat-3-5), P3 Versailler Sieger 1919 (mat-3-3), P4 Clark-Forschung 2013 (mat-3-4), P5 Reichsamt-Inszenierung (mat-3-2). Reflexionsfrage 2 zielt explizit auf P2 + P5 (Nicht-Dominant-Perspektiven), um die Anti-Bias-Mechanik aus Aufgabe 3-2/3-3 in der Reflexion fortzufuehren (M3-Rubrik aus F0B_PRIMING §5)."
+  },
+  "_meta": {
+    "agent": "sub-template-mappenabschluss",
+    "phase": "2.2c (STR-13)",
+    "erstellt_am": "2026-04-26",
+    "plugin_version": "v0.5.0",
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "fach": "GPG",
+    "sprachniveau": "R7",
+    "afb_mappe": "II-III",
+    "ke_anker_haupt": "GPG7_LB3_K_03",
+    "didaktisches_kernstueck_mappe": "Beutelsbach-Kontroversitaet Versailles 1919 vs. Clark 2013",
+    "trigger_flags_mappe": ["nationalismus", "weltkrieg_grossereignis"],
+    "abgrenzung": {
+      "stundenfrage_+_scpl_+_schaubild_+_merksaetze": "rahmen/hefteintrag.json",
+      "reflexionsimpuls_kurzer_denkimpuls": "rahmen/sicherung.json (bereits vorhanden: 'Welche Position findest du ueberzeugender — Versailles 1919 oder Clark 2013, und welche Argumente hast du?')",
+      "reflexion_fragen_transfer_bewertung": "mappenabschluss.json (dieses Dokument)",
+      "ueberleitung_zur_naechsten_mappe": "mappenabschluss.json (dieses Dokument)",
+      "zusammenfassung": "rahmen/sicherung.json (zusammenfassung-Feld)"
+    },
+    "reflexionsfragen_typ_zuordnung": [
+      {
+        "frage_index": 0,
+        "typ": "Bewertung + Metakognition",
+        "muster": "Welche Position findest du ueberzeugender — und welches Argument waere noch zu pruefen?",
+        "begruendung": "Operationalisiert Beutelsbach-Kontroversitaet ohne Antwort-Vorgriff: fragt Praeferenz, aber haelt Festlegung bewusst offen ('noch zu pruefen, bevor du dich endgueltig entscheidest'). Differenziert sich von Sicherungs-Reflexionsimpuls (kurzer Denkimpuls) durch zusaetzliche Metakognitions-Schicht.",
+        "afb": "III",
+        "bloom": "L5 (Beurteilen) + L6 (Bewerten mit Vorbehalt)"
+      },
+      {
+        "frage_index": 1,
+        "typ": "Perspektivwechsel + Methoden-Transfer",
+        "muster": "Welche Stimmen fehlen auf solchen Bildern — und woran erkennst du, dass eine Quelle nur eine Gruppe zeigt?",
+        "begruendung": "Operationalisiert Augusterlebnis-Idealisierungs-Verbot durch expliziten Bezug auf Nicht-Dominant-Perspektiven (P2 Land-Skepsis + Arbeiter; P5 Inszenierungs-Mechanik). Transferiert Quellenkritik-Methode aus Pos 2/3 auf eigene Reflexions-Ebene. Erfuellt Multiperspektiv-Synthese-Rubrik M3 aus F0B-Priming §5.",
+        "afb": "II-III",
+        "bloom": "L4 (Analysieren) + L5 (Beurteilen)"
+      }
+    ],
+    "ueberleitung_M3_zu_M4": {
+      "satz": "Die Maenner zogen los — was passierte, als sie ankamen?",
+      "wortzahl": 9,
+      "bezug_zu_M4": "Marne-Schlacht (laut data.json _meta.narrative_einbettung.uebergang_M3_zu_M4)",
+      "stoff_vorgriff_pruefung": "PASS — Satz benennt KEINEN M4-Inhalt (kein 'Marne', kein 'Stellungskrieg', keine Verlust-Zahlen). Erzeugt nur die Neugier auf das Eintreffen, ohne das Ergebnis zu antizipieren. Multiperspektivisch neutral (gilt fuer Stadt + Land + alle Soldaten gleichermassen)."
+    },
+    "q_gate_self_check": {
+      "MZ1_variante_korrekt": "PASS — Variante A (M3 ist nicht-letzte Mappe; M4 Marne folgt). ueberleitungssatz vorhanden, reflexion_fragen 2 Stueck.",
+      "MZ2_reflexionsfragen_disjunkt_zu_hefteintrag": "PASS — Frage 1 fragt PERSOENLICHE Praeferenz + offenes Pruef-Argument; SCPL-loesung gibt nur die historischen Positionen (Versailles allein-schuld / Clark Schlafwandler). Frage 2 fragt nach FEHLENDEN Stimmen + Erkennungs-Methode; SCPL gibt nur die Quellenkritik-Forderung 'wer schreibt? wann? mit welchem Ziel?' — Frage operationalisiert in eigenem Wortlaut.",
+      "MZ3_keine_faktenabfrage": "PASS — beide Fragen sind Weiterdenken (Bewertung + Metakognition), nicht Wissensreproduktion (keine Fakten wie Datum, Akteur, Begriff abgefragt).",
+      "MZ4_ueberleitungssatz_var_A": "PASS — vorhanden, 9 Woerter (Limit 20), erzeugt Neugier durch offene Frage 'was passierte'. Bezug zur naechsten Mappe etabliert ohne Stoff-Vorgriff.",
+      "MZ5_sprachregister_R7": "PASS — Frage 1 hat Komma-getrennte Hauptsatz-Struktur, Saetze max. 21 Woerter (Frage 1 als Doppel-Frage zaehlt zusammengesetzt); Frage 2 max. 14 Woerter pro Satz; ueberleitung 9 Woerter. Du-Form. Keine Fremdwoerter ohne Erklaerung (Versailles/Clark sind aus Hefteintrag eingefuehrt).",
+      "F0B_R7_metrik_anspruchsvoll_AFB_II_III": "PASS — Anspruchsvolleres Sprachniveau wegen AFB II-III: Frage 1 enthaelt Metakognitions-Klausel ('noch zu pruefen, bevor du dich endgueltig entscheidest') als L6-Operator; Frage 2 enthaelt Methoden-Transfer ('woran erkennst du'). Beide Fragen bleiben jedoch im R7-Korridor (Hauptsatzdominanz, du-Form, Fachbegriffe aus Hefteintrag).",
+      "F0B_M3_multiperspektiv_synthese_rubrik": "PASS — Mappe traegt Trigger-Kategorien 'nationalismus' und 'weltkrieg_grossereignis'. Reflexionsfrage 2 greift Nicht-Dominant-Perspektiven (P2 Land-Skepsis + Arbeiter, P5 Reichsamt-Inszenierung) explizit auf ('welche Stimmen fehlen'). KEINE generische 'Was habt ihr gelernt?'-Form.",
+      "POLICY_TRIGGER_SICHTBARKEIT_versailles_NSDAP": "PASS — Versailles-NSDAP-Sprengkraft ist als sicherungstexte_lehrkraft._sichtbarkeit='lehrkraft-only' markiert. Schueler sehen NUR reflexion_fragen + ueberleitungssatz. Schueler-Texte enthalten KEINEN Vorgriff auf Weimar/NSDAP (V13-konform).",
+      "beutelsbach_kontroversitaet_kein_antwortvorgriff": "PASS (BLOCKER-Pruefung) — Reflexionsfrage 1 fragt nach Praeferenz im Moment ('im Moment ueberzeugender'), nicht nach finaler Wahrheit. Klausel 'noch zu pruefen, bevor du dich endgueltig entscheidest' fixiert Vorlaeufigkeit. KEINE Lehrkraft-Wertung im Schueler-Text.",
+      "augusterlebnis_idealisierungs_verbot": "PASS — Reflexionsfrage 2 fragt explizit nach den FEHLENDEN Stimmen auf Begeisterungs-Bildern; Augusterlebnis NICHT als ungebrochenes Phaenomen reflektiert. lehrkraft-Hinweis 'Nachbesprechung sollte Land-Bevoelkerung, Arbeiter und SPD-Burgfrieden-Differenzierung 1916/17 explizit benennen' verstaerkt.",
+      "M4_stoff_vorgriff_pruefung": "PASS — ueberleitungssatz benennt KEINEN M4-Inhalt (kein 'Marne', kein 'Stellungskrieg'). Frage-Form 'was passierte' bleibt offen.",
+      "engine_kompatibilitaet": "PASS — JSON-Struktur entspricht SUB_TEMPLATE_MAPPENABSCHLUSS §1 (reflexion_fragen Array, ueberleitungssatz String, _variante 'A'). sicherungstexte_lehrkraft als optionales Zusatz-Objekt mit _sichtbarkeit-Marker fuer Engine-Filter; Engine rendert standardmaessig nur die Schueler-Felder.",
+      "V13_kein_NSDAP_vorgriff": "PASS — Schueler-Felder (reflexion_fragen, ueberleitungssatz) enthalten keinen Bezug auf Weimar/NSDAP. NSDAP-Bezug nur in lehrkraft-only-Hinweis.",
+      "V14_fiktionalitaet": "PASS — keine Quellen in Reflexionsfragen direkt zitiert; Bezuege auf 'Postkarte aus Luebeck' identisch zur Mappe-internen Kennzeichnung."
+    },
+    "data_json_aktualisierung": "mappe-3/data.json muss um 'mappenabschluss_ref': 'mappe-3/mappenabschluss.json' ergaenzt werden (wird in begleitendem Edit-Schritt vollzogen)."
+  }
+}

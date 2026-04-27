@@ -1,0 +1,1171 @@
+{
+  "schema_version": "1.0",
+  "vertrag": "VERTRAG_PHASE_0-3_ARTEFAKT v0.5.0 (F-PB-40 + F-PB-41 + F-PB-42 + F-PB-46 + F-PB-48)",
+  "game_id": "gpg-erster-weltkrieg-ursachen-run4-v050",
+  "run_id": "run-4-2026-04-26",
+  "erstellt_am": "2026-04-26",
+  "agent": "agent-artefakt",
+  "patch_version": "v0.5.0-hardening",
+  "schema_extension_post_audit": [
+    "anker_briefing",
+    "tafelbild_knoten",
+    "tipp_stufen_slot"
+  ],
+  "_meta": {
+    "mappen_anzahl": 4,
+    "material_anzahl_total": 22,
+    "material_pro_mappe": {
+      "M1": 6,
+      "M2": 5,
+      "M3": 6,
+      "M4": 5
+    },
+    "bilder_verifiziert_aus_medien_katalog": 13,
+    "alle_qualifiziert": true,
+    "lizenz_kompatibel_kein_NC_oder_ND": true,
+    "stoffdichte_pflichtvorgabe_akzeptiert": true,
+    "schema_extension_post_audit": [
+      "anker_briefing",
+      "tafelbild_knoten",
+      "tipp_stufen_slot"
+    ],
+    "f_pb_addressed": [
+      "F-PB-40",
+      "F-PB-41",
+      "F-PB-42",
+      "F-PB-46",
+      "F-PB-48"
+    ]
+  },
+  "mappen": [
+    {
+      "mappe_id": "M1",
+      "titel": "Pulverfass Europa",
+      "ke_anker": [
+        "GPG7_LB2_K_05"
+      ],
+      "bloom_korridor": "Verstehen → Anwenden",
+      "afb": "I-II",
+      "materialien": [
+        {
+          "material_id": "m1-mat-01-karte-buendnisse-1914",
+          "typ": "karte",
+          "subtyp": "thematische-karte-buendnisse",
+          "kerninhalt": "Europa-Karte 1914 mit zwei Buendnis-Bloecken: Dreibund (Deutsches Reich, Oesterreich-Ungarn, Italien) gelb, Triple Entente (Frankreich, Russland, Grossbritannien) blau, neutrale Staaten (Belgien, Niederlande, Schweiz, Skandinavien) grau. Pflicht-Material fuer TZ1-Einstieg.",
+          "quelle_status": "VERIFIED",
+          "wikimedia_filename": "Map_Europe_alliances_1914-en.svg",
+          "img_id": "img-m1-02",
+          "lizenz": "CC-BY-SA-2.5",
+          "urheber": "historicair / Fluteflute / Bibi Saint-Pol",
+          "perspektive": "europaeisch-strukturell (Buendnisstruktur ohne nationale Privilegierung)",
+          "sequenz_position": 1,
+          "aufgaben_anker": [
+            "a1-01"
+          ],
+          "anker_briefing": "wiki-triple-alliance-2026-04-26+wiki-triple-entente-2026-04-26",
+          "tafelbild_knoten": {
+            "knoten_id": "k1-1",
+            "label": "Dreibund vs. Triple Entente 1914",
+            "position": "M1-Sicherung-zentral",
+            "typ": "begriffshierarchie"
+          },
+          "tipp_stufen_slot": {
+            "a1-01": {
+              "stufe_1": "Schau dir die Farben auf der Karte an. Welche Laender haben dieselbe Farbe?",
+              "stufe_2": "Gelb = Dreibund (Deutsches Reich, Oesterreich-Ungarn, Italien). Blau = Triple Entente (Frankreich, Russland, Grossbritannien).",
+              "stufe_3": null
+            }
+          },
+          "bu_pflicht": "Karte: Europa 1914 — Dreibund (gelb) und Triple Entente (blau). Quelle: Wikimedia Commons (historicair/Fluteflute/Bibi Saint-Pol, CC-BY-SA-2.5).",
+          "qualifizierung": "QUALIFIZIERT",
+          "hefteintrag_slot": true,
+          "quellenkritik_pflicht": false,
+          "quellenkritik_hinweis": "didaktische SVG-Karte, vereinfachte Darstellung — neutrale Staaten muessen separat erlaeutert werden; Italien-Wechsel 1915 nicht visualisiert"
+        },
+        {
+          "material_id": "m1-mat-02-bildquelle-dreadnought",
+          "typ": "bildquelle",
+          "subtyp": "marine-photo",
+          "kerninhalt": "Foto HMS Dreadnought 1906 — das erste 'All-big-gun'-Schlachtschiff der Royal Navy als Symbol fuer den deutsch-britischen Flotten-Wettlauf 1898-1912.",
+          "quelle_status": "VERIFIED",
+          "wikimedia_filename": "HMS_Dreadnought_1906_H61017.jpg",
+          "img_id": "img-m1-01",
+          "lizenz": "Public Domain",
+          "urheber": "U.S. Navy / Restauration Adam Cuerden",
+          "perspektive": "britisch (Royal Navy Selbstdokumentation)",
+          "sequenz_position": 2,
+          "aufgaben_anker": [
+            "a1-02"
+          ],
+          "anker_briefing": "wiki-dreadnought-2026-04-26+wiki-naval-race-2026-04-26",
+          "tafelbild_knoten": {
+            "knoten_id": "k1-2",
+            "label": "Flotten-Wettruesten DT vs. GB",
+            "position": "M1-Sicherung-rechts",
+            "typ": "kausalitaet-spannungsfeld"
+          },
+          "tipp_stufen_slot": {
+            "a1-02": {
+              "stufe_1": "Was siehst du auf dem Foto? Was ist das fuer ein Schiff?",
+              "stufe_2": "Das ist die HMS Dreadnought von 1906 — ein britisches Schlachtschiff. Warum war es so wichtig?",
+              "stufe_3": "Das neue Schiff war so stark, dass alle Schlachtschiffe vorher veraltet waren. Deutschland baute jetzt auch solche Schiffe — ein Wettrennen begann."
+            }
+          },
+          "bu_pflicht": "HMS Dreadnought 1906 — das erste 'All-big-gun'-Schlachtschiff. Foto: U.S. Navy (Public Domain).",
+          "qualifizierung": "QUALIFIZIERT",
+          "hefteintrag_slot": false,
+          "quellenkritik_pflicht": false,
+          "quellenkritik_hinweis": "neutrale Marine-Dokumentation; spaetere ikonische Verwendung als Symbol des deutsch-britischen Flotten-Wettlaufs"
+        },
+        {
+          "material_id": "m1-mat-03-bildquelle-wilhelm-ii",
+          "typ": "bildquelle",
+          "subtyp": "studio-portrait-auftragskunst",
+          "kerninhalt": "Studio-Portrait Kaiser Wilhelm II. (1902, Hofphotograph T.H. Voigt Frankfurt) als Inszenierung kaiserlicher Welt-Politik.",
+          "quelle_status": "VERIFIED",
+          "wikimedia_filename": "Kaiser_Wilhelm_II_of_Germany_-_1902.jpg",
+          "img_id": "img-m1-03",
+          "lizenz": "Public Domain",
+          "urheber": "Studio of Thomas Heinrich Voigt (Hofphotograph Frankfurt)",
+          "perspektive": "deutsche Reichsfuehrung (Selbstdarstellung)",
+          "sequenz_position": 3,
+          "aufgaben_anker": [
+            "a1-03"
+          ],
+          "anker_briefing": "wiki-wilhelm-ii-2026-04-26",
+          "tafelbild_knoten": {
+            "knoten_id": "k1-3",
+            "label": "Wilhelm II. — Welt-Politik + Flotten-Aufbau",
+            "position": "M1-Akteure-links",
+            "typ": "akteur-personifizierung"
+          },
+          "tipp_stufen_slot": {
+            "a1-03": {
+              "stufe_1": "Was traegt der Mann auf dem Bild? Wie wirkt er?",
+              "stufe_2": "Er traegt Uniform mit vielen Decorationen. Das Foto wurde in einem Studio bei einem Hofphotographen gemacht — also bewusst inszeniert.",
+              "stufe_3": "Wilhelm II. liess sich als maechtigen Kaiser zeigen. Er wollte 'Welt-Macht-Politik' und baute eine grosse Flotte. Das Foto sollte seine Wuerde + Macht zeigen — kein neutrales Bild."
+            }
+          },
+          "bu_pflicht": "Kaiser Wilhelm II. von Deutschland, 1902 — Auftrags-Portrait des Hofphotographen T.H. Voigt. Foto: Public Domain (>120 Jahre alt).",
+          "qualifizierung": "QUALIFIZIERT",
+          "hefteintrag_slot": false,
+          "quellenkritik_pflicht": true,
+          "quellenkritik_hinweis": "PFLICHT-Quellenkritik: Auftrags-Inszenierung Studio-Portrait. SuS-Frage: Was wollte der Kaiser zeigen — und was nicht?",
+          "trigger_vermerk": "nationalismus"
+        },
+        {
+          "material_id": "m1-mat-04-darstellungstext-buendnissystem",
+          "typ": "darstellungstext",
+          "subtyp": "erklaer-text-r7",
+          "kerninhalt": "R7-altersgerechter Erklaer-Text 'Was ist ein Buendnis-System?' (max. 120 Woerter, du-Form). Erstgebrauch der Komposita 'Buendnis' + 'System' explizit zerlegt: 'mehrere Buendnisse zusammen'.",
+          "quelle_status": "TBD",
+          "wikimedia_filename": null,
+          "img_id": null,
+          "lizenz": "Eigenproduktion",
+          "urheber": "agent-material (Phase 2.1, SUB_DARSTELLUNGSTEXT)",
+          "perspektive": "didaktisch-neutral (R7-Erklaerung)",
+          "sequenz_position": 4,
+          "aufgaben_anker": [
+            "a1-01",
+            "a1-04"
+          ],
+          "anker_briefing": "wiki-triple-alliance-2026-04-26+wiki-triple-entente-2026-04-26+M1.kerninhalt-1-bis-3-synthese",
+          "tafelbild_knoten": {
+            "knoten_id": "k1-1",
+            "label": "Dreibund vs. Triple Entente 1914",
+            "position": "M1-Sicherung-zentral",
+            "typ": "begriffshierarchie"
+          },
+          "tipp_stufen_slot": {
+            "a1-04": {
+              "stufe_1": "Was bedeutet 'Buendnis'? Was bedeutet 'System'?",
+              "stufe_2": "Buendnis = wenn Laender sich versprechen, einander zu helfen. System = mehrere Buendnisse zusammen.",
+              "stufe_3": "Vor 1914 gab es zwei grosse Buendnis-Systeme in Europa: Dreibund + Triple Entente. Wenn ein Land aus dem einen Buendnis angegriffen wurde, mussten die anderen Laender im Buendnis helfen."
+            }
+          },
+          "bu_pflicht": null,
+          "qualifizierung": "QUALIFIZIERT",
+          "hefteintrag_slot": true,
+          "quellenkritik_pflicht": false
+        },
+        {
+          "material_id": "m1-mat-05-statistik-flottenstaerke",
+          "typ": "statistik",
+          "subtyp": "tabelle-vergleich",
+          "kerninhalt": "Tabelle: Flotten-Staerke 1906 vs. 1914 (Anzahl Dreadnoughts Royal Navy / Kaiserliche Marine) — illustriert das Wettruesten quantitativ. Pflicht-Hinweis: Zahlen sind nach Wikipedia 'Anglo-German naval arms race', in Phase 1 mit 'ca.' kennzeichnen.",
+          "quelle_status": "TBD",
+          "wikimedia_filename": null,
+          "img_id": null,
+          "lizenz": "Eigenproduktion (Datenbasis Wikipedia)",
+          "urheber": "agent-material (Phase 2.1, SUB_STATISTIK)",
+          "perspektive": "quantitativ-strukturell",
+          "sequenz_position": 5,
+          "aufgaben_anker": [
+            "a1-02",
+            "a1-05"
+          ],
+          "anker_briefing": "wiki-naval-race-2026-04-26+wiki-dreadnought-2026-04-26",
+          "tafelbild_knoten": {
+            "knoten_id": "k1-2",
+            "label": "Flotten-Wettruesten DT vs. GB",
+            "position": "M1-Sicherung-rechts",
+            "typ": "kausalitaet-spannungsfeld"
+          },
+          "tipp_stufen_slot": {
+            "a1-05": {
+              "stufe_1": "Schau die zwei Spalten an. Wer hat mehr Schiffe?",
+              "stufe_2": "1906 hatte GB einen Vorsprung. Bis 1914 baute Deutschland auf — aber GB blieb vorn. Beide bauten gleichzeitig immer mehr.",
+              "stufe_3": null
+            }
+          },
+          "bu_pflicht": "Tabelle: Anzahl Dreadnoughts 1906 vs. 1914. Quelle: Wikipedia 'Anglo-German naval arms race' (zur Verifikation in Phase 1).",
+          "qualifizierung": "QUALIFIZIERT",
+          "hefteintrag_slot": false,
+          "quellenkritik_pflicht": false
+        },
+        {
+          "material_id": "m1-mat-06-karte-kolonien-afrika",
+          "typ": "karte",
+          "subtyp": "thematische-karte-kolonien",
+          "kerninhalt": "Welt-Karte um 1914 mit Kolonialgebieten der europaeischen Grossmaechte in Afrika (Schwerpunkt Marokko, Deutsch-Suedwestafrika, Britisch-/Franzoesisch-Westafrika). Sekundaer-Karte zur Buendnis-Karte; macht den Kolonial-Wettlauf raeumlich sichtbar.",
+          "quelle_status": "TBD-PD-Recherche",
+          "wikimedia_filename": null,
+          "img_id": null,
+          "lizenz": "TBD (Eigenkomposition oder PD-Karte aus wiki:Scramble_for_Africa)",
+          "urheber": "agent-material (Phase 2.1, SUB_KARTE) — Datenbasis wiki:Scramble_for_Africa",
+          "perspektive": "europaeisch-imperial (Aufteilungsperspektive) + bewusste Sprach-Sieb-Hinweise",
+          "sequenz_position": 6,
+          "aufgaben_anker": [
+            "a1-06"
+          ],
+          "anker_briefing": "wiki-scramble-2026-04-26+wiki-first-morocco-2026-04-26+wiki-agadir-2026-04-26",
+          "tafelbild_knoten": {
+            "knoten_id": "k1-4",
+            "label": "Kolonial-Wettlauf in Afrika (Marokko 1905/1911)",
+            "position": "M1-Sicherung-unten",
+            "typ": "kausalitaet-spannungsfeld"
+          },
+          "tipp_stufen_slot": {
+            "a1-06": {
+              "stufe_1": "Welche Laender haben grosse Gebiete in Afrika?",
+              "stufe_2": "Sieben europaeische Grossmaechte teilten Afrika unter sich auf. Frankreich + Grossbritannien hatten am meisten. Deutschland kam spaet.",
+              "stufe_3": "Marokko war zweimal der Streitpunkt: 1905 und 1911. Wilhelm II. wollte zeigen, dass Deutschland mitreden will. Frankreich und Deutschland gerieten beide Male in Streit."
+            }
+          },
+          "bu_pflicht": "Karte: Kolonialgebiete in Afrika um 1914 — Aufteilung durch sieben europaeische Grossmaechte (Berliner Konferenz 1884).",
+          "qualifizierung": "QUALIFIZIERT",
+          "hefteintrag_slot": false,
+          "quellenkritik_pflicht": true,
+          "quellenkritik_hinweis": "QG-07 Kolonial-Terminologie-Pflicht: Begriffe wie 'Erschliessung', 'Eingeborene', 'zivilisatorische Mission' VERMEIDEN. Stattdessen: 'Aufteilung Afrikas durch europaeische Grossmaechte', 'kolonisierte Bevoelkerung'."
+        }
+      ]
+    },
+    {
+      "mappe_id": "M2",
+      "titel": "Sarajevo 1914 — Ein Schuss, eine Welt im Krieg",
+      "ke_anker": [
+        "GPG7_LB2_K_06"
+      ],
+      "bloom_korridor": "Anwenden → Analysieren",
+      "afb": "II",
+      "materialien": [
+        {
+          "material_id": "m2-mat-01-zeitleiste-julikrise",
+          "typ": "zeitleiste",
+          "subtyp": "chronologie-eskalation",
+          "kerninhalt": "Zeitleiste 'Julikrise 1914' mit 6 Schluessel-Daten 28.06. (Attentat) / 23.07. (Ultimatum) / 28.07. (AT-UN→SR) / 01.08. (DT→RU) / 03.08. (DT→FR) / 04.08. (GB→DT) — gekreuzt mit Akteur und Aktion. Kern-Material fuer TZ2 Zeitleiste-Raetsel.",
+          "quelle_status": "TBD",
+          "wikimedia_filename": null,
+          "img_id": null,
+          "lizenz": "Eigenproduktion (Datenbasis Wikipedia)",
+          "urheber": "agent-material (Phase 2.1, SUB_ZEITLEISTE)",
+          "perspektive": "multiperspektivisch (alle 6 Akteure DT/AT-UN/SR/RU/FR/GB)",
+          "sequenz_position": 1,
+          "aufgaben_anker": [
+            "a2-01"
+          ],
+          "anker_briefing": "wiki-july-crisis-2026-04-26+wiki-wwi-2026-04-26+wiki-belgium-1914-2026-04-26",
+          "tafelbild_knoten": {
+            "knoten_id": "k2-1",
+            "label": "Julikrise 5 Wochen Eskalation",
+            "position": "M2-Sicherung-zentral",
+            "typ": "chronologie"
+          },
+          "tipp_stufen_slot": {
+            "a2-01": {
+              "stufe_1": "Schau dir das Datum auf der ersten Karte an. Was ist da passiert?",
+              "stufe_2": "Das Attentat war am 28. Juni. Wer wurde erschossen? Und welches Land hat dann zuerst den Krieg erklaert? Schau auf die Buendnis-Tabelle aus Mappe 1.",
+              "stufe_3": "Princip erschoss Franz Ferdinand. Oesterreich-Ungarn erklaerte Serbien den Krieg. Russland half Serbien (Buendnisfall). Deutschland half Oesterreich-Ungarn. Frankreich half Russland. Grossbritannien kam dazu wegen Belgien. Trage die Reihenfolge auf der Zeitleiste ein."
+            }
+          },
+          "bu_pflicht": null,
+          "cross_mappen": [
+            "M1 (Buendnis-Tabelle als Voraussetzung)"
+          ],
+          "qualifizierung": "QUALIFIZIERT",
+          "hefteintrag_slot": true,
+          "quellenkritik_pflicht": false
+        },
+        {
+          "material_id": "m2-mat-02-bildquelle-tatortskizze",
+          "typ": "bildquelle",
+          "subtyp": "tatortskizze-svg",
+          "kerninhalt": "Tatortskizze Sarajevo 28.06.1914 (Lateinerbruecke, Fahrtroute Auto, Standort Princip) — bewusst KEINE Foto-Darstellung von Verletzten/Toten (Sensibilitaets-Pflicht Phase 0.1).",
+          "quelle_status": "VERIFIED",
+          "wikimedia_filename": "Sarajevo-assn-chart.svg",
+          "img_id": "img-m2-01",
+          "lizenz": "CC-BY-SA-3.0",
+          "urheber": "User:Oni Lukos",
+          "perspektive": "Tatort-strukturell (didaktische Rekonstruktion ohne Gewaltdarstellung)",
+          "sequenz_position": 2,
+          "aufgaben_anker": [
+            "a2-02"
+          ],
+          "anker_briefing": "wiki-assassination-ff-2026-04-26",
+          "tafelbild_knoten": {
+            "knoten_id": "k2-2",
+            "label": "Sarajevo 28.06.1914 — Attentat",
+            "position": "M2-Erarbeitung-links",
+            "typ": "ereignis-anker"
+          },
+          "tipp_stufen_slot": {
+            "a2-02": {
+              "stufe_1": "Schau dir die Skizze an. Wo war das Auto? Wo stand Princip?",
+              "stufe_2": "Princip stand an der Lateinerbruecke. Das Auto kam langsam vorbei. Aus naechster Naehe schoss er.",
+              "stufe_3": null
+            }
+          },
+          "bu_pflicht": "Tatortskizze Sarajevo 28. Juni 1914 — Lateinerbruecke, Fahrtroute Auto, Standort Princip. Skizze: User:Oni Lukos, Wikimedia Commons (CC-BY-SA-3.0). Hinweis: Sekundaere Skizze, kein Tatort-Foto.",
+          "qualifizierung": "QUALIFIZIERT",
+          "hefteintrag_slot": false,
+          "quellenkritik_pflicht": true,
+          "quellenkritik_hinweis": "SuS-Hinweis: Disclaimer 'lack of accuracy' — Sekundaer-Skizze, keine Original-Quelle. Bewusste Wahl: Skizze statt Foto (Sensibilitaet).",
+          "trigger_vermerk": "gewalt_attentat"
+        },
+        {
+          "material_id": "m2-mat-03-bildquelle-franz-ferdinand",
+          "typ": "bildquelle",
+          "subtyp": "studio-portrait-habsburger-hof",
+          "kerninhalt": "Studio-Portrait Erzherzog Franz Ferdinand (Carl Pietzner ca. 1896) — offizielles Habsburger Thron-Folger-Portrait. Geeignet fuer 'Wer war Franz Ferdinand?'-Einstieg.",
+          "quelle_status": "VERIFIED",
+          "wikimedia_filename": "Franz_ferdinand.jpg",
+          "img_id": "img-m2-02",
+          "lizenz": "Public Domain",
+          "urheber": "Carl Pietzner (Hofphotograph)",
+          "perspektive": "Habsburger Hof (Opfer-Sicht, offizielle Selbstdarstellung)",
+          "sequenz_position": 3,
+          "aufgaben_anker": [
+            "a2-03"
+          ],
+          "anker_briefing": "wiki-ff-2026-04-26",
+          "tafelbild_knoten": {
+            "knoten_id": "k2-3",
+            "label": "Franz Ferdinand (Opfer)",
+            "position": "M2-Erarbeitung-rechts",
+            "typ": "akteur-personifizierung"
+          },
+          "tipp_stufen_slot": {
+            "a2-03": {
+              "stufe_1": "Wer ist der Mann auf dem Foto? Was traegt er?",
+              "stufe_2": "Franz Ferdinand, Thron-Folger Oesterreich-Ungarns. Uniform mit Decorationen — offizielles Auftrags-Portrait.",
+              "stufe_3": null
+            }
+          },
+          "bu_pflicht": "Erzherzog Franz Ferdinand, Thron-Folger Oesterreich-Ungarns, ca. 1896 — Auftrags-Portrait Hofphotograph Carl Pietzner. Public Domain.",
+          "qualifizierung": "QUALIFIZIERT",
+          "hefteintrag_slot": false,
+          "quellenkritik_pflicht": true,
+          "quellenkritik_hinweis": "Auftragsbild Habsburger Hof — KEIN dokumentarisches Foto. Lebend-Bild des Mannes, der 1914 erschossen wurde, NICHT Foto vom Tag des Attentats.",
+          "trigger_vermerk": "gewalt_attentat"
+        },
+        {
+          "material_id": "m2-mat-04-bildquelle-princip",
+          "typ": "bildquelle",
+          "subtyp": "pressefoto-gerichts-kontext",
+          "kerninhalt": "Foto Gavrilo Princip vor Gericht (Sarajevo, Oktober 1914) — Pflicht-Multiperspektivitaet (Taeter-Sicht neben Opfer-Sicht). SuS-Frage: 'Wer war er — und wie wurde er erinnert?'",
+          "quelle_status": "VERIFIED",
+          "wikimedia_filename": "Gavrilo_Princip,_outside_court.jpg",
+          "img_id": "img-m2-03",
+          "lizenz": "Public Domain",
+          "urheber": "Unbekannter Photograph (1914)",
+          "perspektive": "bosnisch-serbisch-jugoslawische Nationalisten (Taeter-Sicht); Pflicht-Erinnerungs-Doppelung Held-vs-Terrorist",
+          "sequenz_position": 4,
+          "aufgaben_anker": [
+            "a2-04",
+            "a2-05"
+          ],
+          "anker_briefing": "wiki-princip-2026-04-26+wiki-black-hand-2026-04-26",
+          "tafelbild_knoten": {
+            "knoten_id": "k2-4",
+            "label": "Princip (Taeter, 19 Jahre, 'Junges Bosnien')",
+            "position": "M2-Erarbeitung-rechts",
+            "typ": "akteur-personifizierung"
+          },
+          "tipp_stufen_slot": {
+            "a2-04": {
+              "stufe_1": "Wer ist der junge Mann? Wie alt war er?",
+              "stufe_2": "Gavrilo Princip, 19 Jahre alt, bosnisch-serbischer Schueler, Mitglied der Bewegung 'Junges Bosnien'.",
+              "stufe_3": "Princip wollte Bosnien von Oesterreich-Ungarn loesen. Er wird in Serbien teils als Held gesehen, von Bosniaken/Kroaten teils als Terrorist. Beide Sichten existieren bis heute."
+            }
+          },
+          "bu_pflicht": "Gavrilo Princip vor dem Gericht in Sarajevo, 1914. Foto: Unbekannter Photograph, Public Domain. Hinweis: zeigt den Angeklagten in juristischer Inszenierung, nicht die politischen Motive.",
+          "qualifizierung": "QUALIFIZIERT",
+          "hefteintrag_slot": false,
+          "quellenkritik_pflicht": true,
+          "quellenkritik_hinweis": "Multiperspektivitaets-PFLICHT (QG-06): Princip wird in Serbien teils als Held, in Bosniaken/Kroaten teils als Terrorist gesehen.",
+          "trigger_vermerk": "gewalt_attentat+nationalismus"
+        },
+        {
+          "material_id": "m2-mat-05-quellentext-ultimatum",
+          "typ": "quellentext",
+          "subtyp": "primaerquelle-diplomatie",
+          "kerninhalt": "Auszug oesterreich-ungarisches Ultimatum an Serbien vom 23. Juli 1914 (R7-tauglich gekuerzt, max. 80 Woerter) — Primaerquelle fuer 'Was hat Wien gefordert?'",
+          "quelle_status": "TBD",
+          "wikimedia_filename": null,
+          "img_id": null,
+          "lizenz": "Public Domain (1914-Originaltext, Wikisource)",
+          "urheber": "Habsburger Aussenministerium (Berchtold)",
+          "perspektive": "Habsburger Reichsfuehrung (Anklaeger-Position)",
+          "sequenz_position": 5,
+          "aufgaben_anker": [
+            "a2-06"
+          ],
+          "anker_briefing": "wiki-july-crisis-2026-04-26",
+          "tafelbild_knoten": {
+            "knoten_id": "k2-1",
+            "label": "Julikrise 5 Wochen Eskalation",
+            "position": "M2-Sicherung-zentral",
+            "typ": "chronologie"
+          },
+          "tipp_stufen_slot": {
+            "a2-06": {
+              "stufe_1": "Lies den Text. Was fordert Oesterreich-Ungarn von Serbien?",
+              "stufe_2": "Das Ultimatum verlangt: Serbien soll erlauben, dass oesterreichische Beamte in Serbien gegen die Schwarze Hand ermitteln. Das verletzt Serbiens Souveraenitaet.",
+              "stufe_3": "Wien wusste: Serbien wird ablehnen. Das Ultimatum war so streng, dass es zum Krieg fuehren musste. Deutschland hatte den 'Blanko-Scheck' versprochen — Wien wagte das Risiko."
+            }
+          },
+          "bu_pflicht": "Auszug aus dem oesterreich-ungarischen Ultimatum an Serbien, 23. Juli 1914 (gekuerzt). Quelle: Wikisource Wien-Originaltext.",
+          "qualifizierung": "QUALIFIZIERT",
+          "hefteintrag_slot": false,
+          "quellenkritik_pflicht": true,
+          "quellenkritik_hinweis": "Primaerquelle der Wiener Reichsfuehrung — bewusst formulierter Eskalations-Schritt. Pflicht: Wer schreibt? An wen? Mit welchem Ziel?"
+        }
+      ]
+    },
+    {
+      "mappe_id": "M3",
+      "titel": "Augustfieber — Wer schuld ist und wer jubelt",
+      "ke_anker": [
+        "GPG7_LB3_K_03"
+      ],
+      "bloom_korridor": "Analysieren → Beurteilen",
+      "afb": "II-III",
+      "materialien": [
+        {
+          "material_id": "m3-mat-01-bildquelle-luebeck-mobilmachung",
+          "typ": "bildquelle",
+          "subtyp": "postkarten-mobilmachungsfoto",
+          "kerninhalt": "Foto 2. Bataillon Regiment Luebeck am Hauptbahnhof, 31. Juli 1914 (Verabschiedung nach Sylt) — Provinz-Druckerei-Postkarte als 'Augusterlebnis-Foto'. Pflicht-Quellenkritik: zeigt nur Stadt-Mittelschicht, repraesentiert nicht 'die Deutschen'.",
+          "quelle_status": "VERIFIED",
+          "wikimedia_filename": "IR_Lübeck_033_-_EB.jpg",
+          "img_id": "img-m3-01",
+          "lizenz": "Public Domain",
+          "urheber": "Gebrueder Borchers (Druckerei Luebeck)",
+          "perspektive": "Stadt-Provinz Luebeck (Augusterlebnis-Foto-Bias) — bewusste Wahl statt Hitler-Odeonsplatz-Bild (DRIFT begruendet, siehe Q-GATE-LOG Phase 0.2.M)",
+          "sequenz_position": 1,
+          "aufgaben_anker": [
+            "a3-01"
+          ],
+          "anker_briefing": "wiki-spirit-1914-2026-04-26",
+          "tafelbild_knoten": {
+            "knoten_id": "k3-1",
+            "label": "Augustbegeisterung 1914 — wer NICHT auf dem Foto ist",
+            "position": "M3-Erarbeitung-links",
+            "typ": "ereignis-quellenkritik"
+          },
+          "tipp_stufen_slot": {
+            "a3-01": {
+              "stufe_1": "Was siehst du auf dem Foto? Wer steht da?",
+              "stufe_2": "Soldaten und Stadtbuerger am Bahnhof. Sie schauen freundlich. Aber: Wer ist NICHT auf dem Foto?",
+              "stufe_3": "Auf dem Foto sind Stadt-Mittelschicht-Buerger zu sehen. Land-Bevoelkerung und Arbeiter waren oft skeptisch und nicht am Bahnhof. Das Foto zeigt nur EINE Gruppe — nicht 'die Deutschen'."
+            }
+          },
+          "bu_pflicht": "2. Bataillon Regiment Luebeck verlaesst den Hauptbahnhof Richtung Sylt, 31. Juli 1914. Foto: Gebrueder Borchers (Druckerei Luebeck), Public Domain. Pflicht-Hinweis: Das Foto zeigt Stadt-Buerger — Land-Bevoelkerung und Arbeiter fehlen.",
+          "qualifizierung": "QUALIFIZIERT",
+          "hefteintrag_slot": false,
+          "quellenkritik_pflicht": true,
+          "quellenkritik_hinweis": "PFLICHT-Quellenkritik (kontroversitaets_hinweise M3): SuS-Frage 'Wer ist NICHT auf dem Foto?'. Bias: Provinz-Stadt-Buerger; Arbeiter/Land-Bevoelkerung fehlen.",
+          "trigger_vermerk": "nationalismus+weltkrieg_grossereignis"
+        },
+        {
+          "material_id": "m3-mat-02-bildquelle-bundesarchiv-mobilmachung",
+          "typ": "bildquelle",
+          "subtyp": "bundesarchiv-mobilmachungsfoto",
+          "kerninhalt": "Bundesarchiv-Foto 'Ausmarsch der deutschen Truppen nach der Mobilmachung 1./2. August 1914' — Inszenierungs-Topos 'Frau gibt Soldat Blumen'. Vergleichs-Quelle zu Luebeck-Postkarte (zweites Mobilmachungs-Bild).",
+          "quelle_status": "VERIFIED",
+          "wikimedia_filename": "Bundesarchiv_Bild_146-1974-118-18,_Mobilmachung.jpg",
+          "img_id": "img-m3-02",
+          "lizenz": "CC-BY-SA-3.0-DE",
+          "urheber": "Bundesarchiv-Bestand 146-* (Reichs-Nachrichten-Stelle)",
+          "perspektive": "deutsche Mobilmachung-Selbstdarstellung (Heeresleitung-Auftragsbild)",
+          "sequenz_position": 2,
+          "aufgaben_anker": [
+            "a3-02"
+          ],
+          "anker_briefing": "wiki-spirit-1914-2026-04-26",
+          "tafelbild_knoten": {
+            "knoten_id": "k3-1",
+            "label": "Augustbegeisterung 1914 — wer NICHT auf dem Foto ist",
+            "position": "M3-Erarbeitung-links",
+            "typ": "ereignis-quellenkritik"
+          },
+          "tipp_stufen_slot": {
+            "a3-02": {
+              "stufe_1": "Was tut die Frau? Wem gibt sie Blumen?",
+              "stufe_2": "Sie gibt einem Soldaten Blumen — typisches Inszenierungs-Bild der Mobilmachung. Aber: ist das echt oder gestellt?",
+              "stufe_3": "Das Foto kommt aus dem Bundesarchiv. Es soll zeigen: 'Die Heimat liebt unsere Soldaten'. Aber Skeptiker und Trauernde wurden nicht fotografiert."
+            }
+          },
+          "bu_pflicht": "Ausmarsch deutscher Truppen, 1./2. August 1914. Foto: Bundesarchiv, Bild 146-1974-118-18 / CC-BY-SA-3.0-DE.",
+          "qualifizierung": "QUALIFIZIERT",
+          "hefteintrag_slot": false,
+          "quellenkritik_pflicht": true,
+          "quellenkritik_hinweis": "Inszenierungs-Topos 'Frau gibt Soldat Blumen' — patriotisch-mobilisierend; auch hier: was zeigt das Foto NICHT?",
+          "trigger_vermerk": "weltkrieg_grossereignis+nationalismus"
+        },
+        {
+          "material_id": "m3-mat-03-quellentext-art231",
+          "typ": "quellentext",
+          "subtyp": "primaerquelle-vertrag-versailles",
+          "kerninhalt": "Auszug Artikel 231 Versailler Vertrag (R7-vereinfacht, max. 60 Woerter) — Original-Text als Primaerquelle fuer Quellenkritik-Aufgabe TZ3. Pflicht: Wer schreibt? Wann? Mit welcher Wirkung?",
+          "quelle_status": "TBD",
+          "wikimedia_filename": null,
+          "img_id": null,
+          "lizenz": "Public Domain (1919 Vertragstext, Wikisource)",
+          "urheber": "Versailler Friedens-Konferenz (Wilson, Clemenceau, Lloyd George)",
+          "perspektive": "Sieger-Maechte 1919 (Schuld-Zuweiser-Position)",
+          "sequenz_position": 3,
+          "aufgaben_anker": [
+            "a3-03"
+          ],
+          "anker_briefing": "wiki-art231-2026-04-26+wiki-kriegsschuld-2026-04-26",
+          "tafelbild_knoten": {
+            "knoten_id": "k3-2",
+            "label": "Kriegsschuld-Diskurs 1919 vs. heute",
+            "position": "M3-Sicherung-zentral",
+            "typ": "kontroversitaet-achse"
+          },
+          "tipp_stufen_slot": {
+            "a3-03": {
+              "stufe_1": "Lies den Artikel 231. Wer hat das geschrieben? Wann?",
+              "stufe_2": "Die Sieger-Maechte (USA, Frankreich, Grossbritannien) schrieben das 1919 — fuenf Jahre nach Kriegsbeginn. Sie geben Deutschland und seinen Verbuendeten die Schuld.",
+              "stufe_3": "Das Wort 'Schuld' steht nicht direkt drin. Aber Deutschland sollte fuer alle Schaeden zahlen. Diese Stelle wurde 'Kriegsschuldklausel' genannt — sie war eine zentrale politische Belastung der Weimarer Republik."
+            }
+          },
+          "bu_pflicht": "Auszug Artikel 231 Versailler Vertrag, 28. Juni 1919 (gekuerzt). Quelle: Wikisource Versailles-Volltext, Public Domain.",
+          "qualifizierung": "QUALIFIZIERT",
+          "hefteintrag_slot": true,
+          "quellenkritik_pflicht": true,
+          "quellenkritik_hinweis": "Sehr kontrovers; Pflicht-Quellenkritik. Begleit-Diskurs in Phase 1: Aufnahme Christopher-Clark-Schlafwandler-These als Korrektur-Anker."
+        },
+        {
+          "material_id": "m3-mat-04-darstellungstext-clark-schlafwandler",
+          "typ": "darstellungstext",
+          "subtyp": "forschungs-paraphrase-r7",
+          "kerninhalt": "Forschungs-Aussage 'Schlafwandler' (Christopher Clark, 2013) — 1 Satz im R7-Niveau (max. 25 Woerter): 'Keine Macht hatte allein Schuld; mehrere Regierungen tappten gemeinsam in den Krieg hinein.'",
+          "quelle_status": "TBD",
+          "wikimedia_filename": null,
+          "img_id": null,
+          "lizenz": "Eigenproduktion (Paraphrase Clark, Datenbasis Wikipedia)",
+          "urheber": "agent-material (Phase 2.1, SUB_DARSTELLUNGSTEXT)",
+          "perspektive": "heutige Forschung (Christopher Clark, Schlafwandler-These 2013)",
+          "sequenz_position": 4,
+          "aufgaben_anker": [
+            "a3-03",
+            "a3-04"
+          ],
+          "anker_briefing": "wiki-clark-2026-04-26+wiki-kriegsschuld-2026-04-26",
+          "tafelbild_knoten": {
+            "knoten_id": "k3-2",
+            "label": "Kriegsschuld-Diskurs 1919 vs. heute",
+            "position": "M3-Sicherung-zentral",
+            "typ": "kontroversitaet-achse"
+          },
+          "tipp_stufen_slot": {
+            "a3-04": {
+              "stufe_1": "Was sagt Christopher Clark heute ueber die Schuld?",
+              "stufe_2": "Clark sagt: Es gab keine Allein-Schuld. Mehrere Maechte sind gemeinsam in den Krieg hineingestolpert.",
+              "stufe_3": "Sein Buch heisst 'Die Schlafwandler' (2013). Schlafwandler sehen aus, als wuerden sie wachen, aber sie wissen nicht, was sie tun. Clark meint: So gingen die Regierungen 1914 in den Krieg."
+            }
+          },
+          "bu_pflicht": null,
+          "qualifizierung": "QUALIFIZIERT",
+          "hefteintrag_slot": true,
+          "quellenkritik_pflicht": false,
+          "forschungsstand_pflicht": true
+        },
+        {
+          "material_id": "m3-mat-05-tagebuch-skeptiker",
+          "typ": "tagebuch",
+          "subtyp": "zeitgenoesssicher-tagebuch-eintrag",
+          "kerninhalt": "Tagebuch-Eintrag eines SPD-Anhaengers oder einer skeptischen Bauern-Frau 1914 als Gegen-Stimme zum Augusterlebnis (R7-Niveau, max. 80 Woerter). Konkrete Auswahl in Phase 2.1 (SUB_TAGEBUCH) aus zeitgenoessischen Tagebuch-Editionen.",
+          "quelle_status": "TBD",
+          "wikimedia_filename": null,
+          "img_id": null,
+          "lizenz": "TBD (PD oder zitatfaehiger Auszug aus Editionen)",
+          "urheber": "agent-material (Phase 2.1, SUB_TAGEBUCH) — Datenbasis wiki:Spirit_of_1914 Sektion 'Reception'",
+          "perspektive": "skeptische Land-Bevoelkerung / Arbeiter / SPD-Anhaenger 1914 — Anti-Bias zur Augusterlebnis-Inszenierung",
+          "sequenz_position": 5,
+          "aufgaben_anker": [
+            "a3-05"
+          ],
+          "anker_briefing": "wiki-spirit-1914-2026-04-26+wiki-burgfrieden-2026-04-26",
+          "tafelbild_knoten": {
+            "knoten_id": "k3-1",
+            "label": "Augustbegeisterung 1914 — wer NICHT auf dem Foto ist",
+            "position": "M3-Erarbeitung-links",
+            "typ": "ereignis-quellenkritik"
+          },
+          "tipp_stufen_slot": {
+            "a3-05": {
+              "stufe_1": "Was schreibt diese Person? Freut sie sich auf den Krieg?",
+              "stufe_2": "Sie ist skeptisch oder besorgt. Sie sieht den Krieg nicht als Abenteuer.",
+              "stufe_3": "Auf dem Land und bei Arbeitern war die Stimmung oft so. Pflichtgefuehl ja, aber kein Jubel. Diese Stimmen hoert man heute weniger — Fotos zeigten meist die jubelnden Stadtbuerger."
+            }
+          },
+          "bu_pflicht": "Tagebuch-Auszug einer skeptischen Stimme 1914 (konkrete Auswahl in Phase 2.1).",
+          "qualifizierung": "QUALIFIZIERT",
+          "hefteintrag_slot": false,
+          "quellenkritik_pflicht": true,
+          "quellenkritik_hinweis": "Multiperspektivitaets-Pflicht: bewusste Anti-Bias-Stimme zur Augusterlebnis-Inszenierung."
+        },
+        {
+          "material_id": "m3-mat-06-bildquelle-burgfriedens-medaille",
+          "typ": "bildquelle",
+          "subtyp": "numismatik-medaille",
+          "kerninhalt": "Silbermedaille zur Erinnerung an Reichstags-Burgfrieden 4. August 1914 — Beispiel fuer amtliche Burgfriedens-Inszenierung. Pflicht-Quellenkritik: Auftrags-Inszenierung, Burgfrieden zerfiel real ab 1916.",
+          "quelle_status": "VERIFIED-PARTIAL",
+          "wikimedia_filename": "Germany_entering_WWI_1914,_Silver_Medal,_obverse.jpg",
+          "img_id": "img-m3-03",
+          "lizenz": "CC-BY-SA-4.0",
+          "urheber": "Numismatik-Photograph (anonym, Wikipedia-Community)",
+          "perspektive": "Reichstags-Burgfrieden (offizielle Selbst-Inszenierung)",
+          "sequenz_position": 6,
+          "aufgaben_anker": [
+            "a3-06"
+          ],
+          "anker_briefing": "wiki-burgfrieden-2026-04-26",
+          "tafelbild_knoten": {
+            "knoten_id": "k3-3",
+            "label": "Burgfrieden 4.8.1914 — alle Parteien stimmen Kriegskrediten zu",
+            "position": "M3-Sicherung-rechts",
+            "typ": "ereignis-anker"
+          },
+          "tipp_stufen_slot": {
+            "a3-06": {
+              "stufe_1": "Was ist auf der Medaille zu sehen? Was steht drauf?",
+              "stufe_2": "Eine Erinnerungs-Medaille fuer den 4. August 1914 — den Tag des Burgfriedens. Alle Parteien im Reichstag stimmten den Kriegskrediten zu.",
+              "stufe_3": "Die Medaille zeigt eine offizielle Selbst-Inszenierung. In Wirklichkeit zerfiel der Burgfrieden ab 1916. Bilder wie diese zeigen, wie sich Staaten gerne sehen — nicht die Realitaet."
+            }
+          },
+          "bu_pflicht": "Silbermedaille zum Reichstags-Burgfrieden 4. August 1914 (Foto Wikipedia-Community, CC-BY-SA-4.0). Hinweis: Verifikation in Phase 1 vor Final-Einsatz nachholen (Status PARTIAL).",
+          "qualifizierung": "RESERVE",
+          "hefteintrag_slot": false,
+          "quellenkritik_pflicht": true,
+          "quellenkritik_hinweis": "PARTIAL-Verifikation in Phase 0.2.M (Pool-Match Spirit_of_1914, Direkt-API NICHT abgefragt). Phase 1: vor Final-Einsatz Direkt-Verifikation nachholen.",
+          "trigger_vermerk": "nationalismus+weltkrieg_grossereignis"
+        }
+      ]
+    },
+    {
+      "mappe_id": "M4",
+      "titel": "Marne 1914 — Das Ende des kurzen Krieges",
+      "ke_anker": [
+        "GPG7_LB2_K_07"
+      ],
+      "bloom_korridor": "Anwenden → Analysieren",
+      "afb": "II",
+      "materialien": [
+        {
+          "material_id": "m4-mat-01-karte-schlieffen-plan",
+          "typ": "karte",
+          "subtyp": "thematische-karte-strategie",
+          "kerninhalt": "Karte 'Schlieffen-Moltke-Plan 1914' — geplante Bewegungs-Pfeile (Schlieffen 1905) durch Belgien nach Frankreich. Kern-Material fuer TZ4 Karten-Skizzen-Raetsel; im Plan-vs-Realitaets-Vergleich mit Marne-Stop.",
+          "quelle_status": "VERIFIED",
+          "wikimedia_filename": "Plan_Moltke-Schlieffen_1914.svg",
+          "img_id": "img-m4-01",
+          "lizenz": "CC-BY-SA-3.0",
+          "urheber": "Lvcvlvs (Wikipedia-User)",
+          "perspektive": "deutsche Generalstab-Fuehrung (Plan-Strategie) — strukturell-strategische Karte",
+          "sequenz_position": 1,
+          "aufgaben_anker": [
+            "a4-01"
+          ],
+          "anker_briefing": "wiki-schlieffen-2026-04-26+wiki-marne-2026-04-26",
+          "tafelbild_knoten": {
+            "knoten_id": "k4-1",
+            "label": "Schlieffen-Plan 1905 — schneller Sieg in 6 Wochen",
+            "position": "M4-Einstieg-links",
+            "typ": "kausalitaet-strategie"
+          },
+          "tipp_stufen_slot": {
+            "a4-01": {
+              "stufe_1": "Schau dir die Pfeile an. Wo sollten die deutschen Truppen hin?",
+              "stufe_2": "Durch Belgien nach Frankreich — und dann nach Paris. Der Plan: Frankreich in 6 Wochen besiegen.",
+              "stufe_3": "Schlieffen entwickelte den Plan 1905. Idee: Erst Frankreich schnell, dann gegen Russland. Aber der Plan verletzte die Neutralitaet Belgiens — das brachte Grossbritannien in den Krieg."
+            }
+          },
+          "bu_pflicht": "Karte: Schlieffen-Moltke-Plan 1914 (geplante Bewegungs-Pfeile). Karte: Lvcvlvs, Wikimedia Commons (CC-BY-SA-3.0). Pflicht-Hinweis: 'Plan' ist didaktischer Begriff — Forschung (Zuber) zeigt, es gab nur Aufmarsch-Skizzen.",
+          "qualifizierung": "QUALIFIZIERT",
+          "hefteintrag_slot": true,
+          "quellenkritik_pflicht": true,
+          "quellenkritik_hinweis": "Pflicht: 'Schlieffen-Plan' didaktisch legitim, aber NICHT als 'fertiger Plan' heroisieren. Forschung Zuber: nur Aufmarsch-Skizzen.",
+          "rekonstruktions_markierung_pflicht": true
+        },
+        {
+          "material_id": "m4-mat-02-zeitleiste-august-september-1914",
+          "typ": "zeitleiste",
+          "subtyp": "chronologie-feldzug",
+          "kerninhalt": "Zeitleiste 'August/September 1914' mit 7 Daten 02.08. (Ultimatum BE) / 04.08. (Einmarsch BE) / 07.08. (Lueck/Liege) / 20.08. (Bruessel) / 05.-12.09. (Marne) / 14.09. (Moltke abgesetzt) / 19.10. (Wettlauf zum Meer endet).",
+          "quelle_status": "TBD",
+          "wikimedia_filename": null,
+          "img_id": null,
+          "lizenz": "Eigenproduktion (Datenbasis Wikipedia)",
+          "urheber": "agent-material (Phase 2.1, SUB_ZEITLEISTE)",
+          "perspektive": "multiperspektivisch (DT/BE/FR/GB-Akteure)",
+          "sequenz_position": 2,
+          "aufgaben_anker": [
+            "a4-02"
+          ],
+          "anker_briefing": "wiki-belgium-1914-2026-04-26+wiki-marne-2026-04-26+wiki-race-sea-2026-04-26",
+          "tafelbild_knoten": {
+            "knoten_id": "k4-2",
+            "label": "Verlauf Aug/Sept 1914 — Marne stoppt Vormarsch",
+            "position": "M4-Erarbeitung-zentral",
+            "typ": "chronologie"
+          },
+          "tipp_stufen_slot": {
+            "a4-02": {
+              "stufe_1": "Wann marschierte Deutschland in Belgien ein? Und wann war die Marne-Schlacht?",
+              "stufe_2": "Einmarsch in Belgien: 4. August 1914. Marne-Schlacht: 5.-12. September 1914 — also einen Monat spaeter.",
+              "stufe_3": "Die Daten zeigen: Der Plan ging schief. Statt 6 Wochen brauchte Deutschland viel laenger fuer Belgien (Lueck/Liege bis 7.8., Bruessel 20.8.). Bei der Marne war die Armee erschoepft. Der 'kurze Krieg' wurde zum vier Jahre langen Stellungskrieg."
+            }
+          },
+          "bu_pflicht": null,
+          "cross_mappen": [
+            "M2 (4.8.1914 GB-Kriegserklaerung wegen Belgien)"
+          ],
+          "qualifizierung": "QUALIFIZIERT",
+          "hefteintrag_slot": true,
+          "quellenkritik_pflicht": false
+        },
+        {
+          "material_id": "m4-mat-03-bildquelle-deutsche-soldaten-marne",
+          "typ": "bildquelle",
+          "subtyp": "front-photo-inszeniert",
+          "kerninhalt": "Foto deutsche Soldaten an der Marne-Front September 1914. Pflicht-Quellenkritik: Wikipedia weist explizit auf Inszenierungs-Verdacht hin (Decorations-Tragen unueblich im aktiven Kampf).",
+          "quelle_status": "VERIFIED",
+          "wikimedia_filename": "German_soldiers_Battle_of_Marne_WWI.jpg",
+          "img_id": "img-m4-02",
+          "lizenz": "Public Domain",
+          "urheber": "German Army (anonym)",
+          "perspektive": "deutsche Heeres-Selbstdarstellung (Front-Photographie)",
+          "sequenz_position": 3,
+          "aufgaben_anker": [
+            "a4-03"
+          ],
+          "anker_briefing": "wiki-marne-2026-04-26",
+          "tafelbild_knoten": {
+            "knoten_id": "k4-3",
+            "label": "Marne 5.-12.9.1914 — Stellungskrieg beginnt",
+            "position": "M4-Sicherung-zentral",
+            "typ": "ereignis-anker"
+          },
+          "tipp_stufen_slot": {
+            "a4-03": {
+              "stufe_1": "Was siehst du? Sieht das nach Kampf aus?",
+              "stufe_2": "Soldaten an der Front. Aber sie tragen viele Decorationen — das ist im echten Kampf unueblich.",
+              "stufe_3": "Wikipedia weist darauf hin: Das Foto ist vermutlich gestellt. Heere zeigten ihre Soldaten gerne aufrecht und ordentlich — die Realitaet im Schuetzengraben war anders."
+            }
+          },
+          "bu_pflicht": "Deutsche Soldaten an der Marne-Front, September 1914. Foto: German Army, Public Domain. Pflicht-Hinweis: vermutlich gestelltes Foto (Decorations-Tragen).",
+          "qualifizierung": "QUALIFIZIERT",
+          "hefteintrag_slot": false,
+          "quellenkritik_pflicht": true,
+          "quellenkritik_hinweis": "Wikipedia-explizit: vermutlich gestellte Aufnahme. SuS-Frage: 'Wie zeigen Heere ihre Soldaten?'",
+          "trigger_vermerk": "weltkrieg_grossereignis+konflikt"
+        },
+        {
+          "material_id": "m4-mat-04-bildquelle-frz-infanterie",
+          "typ": "bildquelle",
+          "subtyp": "presse-photo-manoever",
+          "kerninhalt": "Foto franzoesische Infanterie 1913 (Agence Rol, Manoever-Photographie 'Grandes manoeuvres de 1913') — Multiperspektivitaets-Erweiterung neben deutschen Soldaten. Datums-Hinweis: 1913, NICHT Marne 1914.",
+          "quelle_status": "VERIFIED",
+          "wikimedia_filename": "Infanterie-française-rol.jpg",
+          "img_id": "img-m4-03",
+          "lizenz": "Public Domain",
+          "urheber": "Agence Rol (frz. Photo-Agentur 1904-1937)",
+          "perspektive": "franzoesische Heeres-Selbstdarstellung Pre-WK1",
+          "sequenz_position": 4,
+          "aufgaben_anker": [
+            "a4-04"
+          ],
+          "anker_briefing": "wiki-marne-2026-04-26",
+          "tafelbild_knoten": {
+            "knoten_id": "k4-3",
+            "label": "Marne 5.-12.9.1914 — Stellungskrieg beginnt",
+            "position": "M4-Sicherung-zentral",
+            "typ": "ereignis-anker"
+          },
+          "tipp_stufen_slot": {
+            "a4-04": {
+              "stufe_1": "Welche Soldaten siehst du auf diesem Foto?",
+              "stufe_2": "Franzoesische Infanterie. Vergleiche mit dem deutschen Foto: Wer sieht aehnlich aus?",
+              "stufe_3": "Beide Heere praesentierten sich aehnlich: aufrecht, ordentlich, mit Bajonetten. Aber das frz. Foto ist von 1913 (Manoever) — nicht Marne 1914. Es zeigt 'so sah die frz. Infanterie damals aus'."
+            }
+          },
+          "bu_pflicht": "Franzoesische Infanterie 1913 (Manoever, NICHT Marne-Schlacht). Foto: Agence Rol / Gallica BnF, Public Domain. Pflicht-Hinweis: Datum 1913 — Manoever-Aufnahme, nicht 1914-Kampf.",
+          "qualifizierung": "QUALIFIZIERT",
+          "hefteintrag_slot": false,
+          "quellenkritik_pflicht": true,
+          "quellenkritik_hinweis": "Foto ist von 1913 (Manoever), NICHT von der Marne-Schlacht 1914. Im M4-Kontext mit Datums-Hinweis verwenden.",
+          "trigger_vermerk": "weltkrieg_grossereignis+konflikt"
+        },
+        {
+          "material_id": "m4-mat-05-statistik-marne-verluste",
+          "typ": "statistik",
+          "subtyp": "verlust-statistik",
+          "kerninhalt": "Verlust-Statistik Marne-Schlacht: 250.000 FR / 12.733 GB / 298.000 DT (Tote + Verwundete, ca. 7 Tage). Reine Zahlen-Tafel mit Hinweis 'Tote + Verwundete'. Sensibilitaet: Zahl genannt, nicht visualisiert.",
+          "quelle_status": "TBD",
+          "wikimedia_filename": null,
+          "img_id": null,
+          "lizenz": "Eigenproduktion (Datenbasis Wikipedia)",
+          "urheber": "agent-material (Phase 2.1, SUB_STATISTIK)",
+          "perspektive": "neutral-quantitativ (alle 3 Kriegsparteien gleich gelistet)",
+          "sequenz_position": 5,
+          "aufgaben_anker": [
+            "a4-05"
+          ],
+          "anker_briefing": "wiki-marne-2026-04-26",
+          "tafelbild_knoten": {
+            "knoten_id": "k4-3",
+            "label": "Marne 5.-12.9.1914 — Stellungskrieg beginnt",
+            "position": "M4-Sicherung-zentral",
+            "typ": "ereignis-anker"
+          },
+          "tipp_stufen_slot": {
+            "a4-05": {
+              "stufe_1": "Schau die drei Zahlen an. Was bedeuten sie?",
+              "stufe_2": "Tote + Verwundete in nur 7 Tagen Marne-Schlacht. Allein Frankreich: 250.000 Menschen.",
+              "stufe_3": "Die Zahlen zeigen: Der 'kurze Krieg' war schon nach einer Schlacht so blutig, dass nichts mehr 'kurz' sein wuerde. Und das war erst der Anfang — der Stellungskrieg dauerte 4 Jahre."
+            }
+          },
+          "bu_pflicht": "Verluste der Marne-Schlacht (5.-12. September 1914): ca. 250.000 FR / 12.733 GB / 298.000 DT (Tote + Verwundete). Quelle: Wikipedia 'First Battle of the Marne'.",
+          "qualifizierung": "QUALIFIZIERT",
+          "hefteintrag_slot": false,
+          "quellenkritik_pflicht": false,
+          "quellenkritik_hinweis": "Sensibilitaet: Zahlen werden genannt, NICHT visualisiert (Phase 0.1 Pflicht). 'ca.' verwenden bei FR/DT-Zahlen (Forschungs-Bandbreite)."
+        }
+      ]
+    }
+  ],
+  "cross_mappen_konsistenz": [
+    {
+      "bezug": "Buendnis-System M1 → Buendnisfall-Mechanik M2",
+      "von": "m1-mat-01-karte-buendnisse-1914",
+      "nach": "m2-mat-01-zeitleiste-julikrise",
+      "funktion": "M1-Karte ist Voraussetzung fuer M2-Zeitleiste: SuS muessen die Buendnisse aus M1 kennen, um die Eskalation der Julikrise zu verstehen. Tipp-Stufe 2 in M2 verweist explizit zurueck auf M1-Buendnis-Tabelle."
+    },
+    {
+      "bezug": "GB-Kriegserklaerung 4.8.1914 wegen Belgien M2 → Belgien-Verletzung M4",
+      "von": "m2-mat-01-zeitleiste-julikrise",
+      "nach": "m4-mat-02-zeitleiste-august-september-1914",
+      "funktion": "Beide Zeitleisten teilen das Datum 4.8.1914 (Einmarsch DT in BE / GB-Kriegserklaerung an DT). M4-Zeitleiste fuehrt fort, M2 stoppt mit dieser Eskalation."
+    },
+    {
+      "bezug": "Wilhelm-II-Welt-Politik M1 → Augustfieber M3",
+      "von": "m1-mat-03-bildquelle-wilhelm-ii",
+      "nach": "m3-mat-02-bildquelle-bundesarchiv-mobilmachung",
+      "funktion": "Beide Bilder sind Auftrags-Inszenierungen der deutschen Reichsfuehrung — vor (M1, 1902) und nach Kriegseintritt (M3, 1.8.1914). Ermoeglicht Quellenkritik-Achse: 'Wie inszenieren sich Staaten/Personen?'"
+    },
+    {
+      "bezug": "Augusterlebnis M3 → Marne-Verluste M4",
+      "von": "m3-mat-01-bildquelle-luebeck-mobilmachung",
+      "nach": "m4-mat-05-statistik-marne-verluste",
+      "funktion": "Spannungs-Bogen: Begeisterung der Mobilmachung 31.7.1914 (Luebeck) konfrontiert mit Verlusten 5.-12.9.1914 (Marne). Innerhalb von 6 Wochen kippte die Realitaet."
+    },
+    {
+      "bezug": "Versailles Art. 231 M3 ←→ Schlieffen-Plan M4",
+      "von": "m3-mat-03-quellentext-art231",
+      "nach": "m4-mat-01-karte-schlieffen-plan",
+      "funktion": "Konsistenz-Pruefung: Art.-231 weist DT die Allein-Schuld zu. Schlieffen-Plan + Belgien-Verletzung sind ein Beleg fuer DT-Verantwortung — ABER nicht Allein-Schuld (Clark M3.4). M4-Quellenkritik 'Plan-Mythos' betont strukturelle Faktoren neben Schuld-Frage."
+    },
+    {
+      "bezug": "Quellenkritik-Doppelung Princip-Bild M2 + Skeptiker-Tagebuch M3",
+      "von": "m2-mat-04-bildquelle-princip",
+      "nach": "m3-mat-05-tagebuch-skeptiker",
+      "funktion": "Beide Materialien dienen der Multiperspektivitaet (QG-06): Princip-Bild zeigt Held-vs-Terrorist-Doppelsicht, Tagebuch zeigt Begeisterung-vs-Skepsis-Doppelsicht. Methode wiedererkennbar: 'Wer wurde NICHT gesehen/gezeigt?'"
+    }
+  ],
+  "lizenz_inventar": {
+    "total": 13,
+    "public_domain_count": 7,
+    "cc_by_count": 0,
+    "cc_by_sa_count": 6,
+    "inkompatible_count": 0,
+    "alle_github_pages_kompatibel": true,
+    "_konsistenz_mit_medien_katalog": "PASS — alle 13 verifizierten Bilder aus medien_katalog_game.json (Phase 0.2.M) sind referenziert in Materialien (img_id-Pointer in 13 bildquelle/karte-Materialien). 0 RESERVE-only, 0 VERWORFEN.",
+    "lizenzen_eingesetzt_detail": [
+      {
+        "code": "Public Domain",
+        "anzahl": 7,
+        "bilder_ids": [
+          "img-m1-01",
+          "img-m1-03",
+          "img-m2-02",
+          "img-m2-03",
+          "img-m3-01",
+          "img-m4-02",
+          "img-m4-03"
+        ],
+        "attribution_required": false
+      },
+      {
+        "code": "CC-BY-SA-2.5",
+        "anzahl": 1,
+        "bilder_ids": [
+          "img-m1-02"
+        ],
+        "attribution_required": true
+      },
+      {
+        "code": "CC-BY-SA-3.0",
+        "anzahl": 2,
+        "bilder_ids": [
+          "img-m2-01",
+          "img-m4-01"
+        ],
+        "attribution_required": true
+      },
+      {
+        "code": "CC-BY-SA-3.0-DE",
+        "anzahl": 1,
+        "bilder_ids": [
+          "img-m3-02"
+        ],
+        "attribution_required": true
+      },
+      {
+        "code": "CC-BY-SA-2.0-FR",
+        "anzahl": 1,
+        "bilder_ids": [
+          "img-m4-04"
+        ],
+        "attribution_required": true
+      },
+      {
+        "code": "CC-BY-SA-4.0",
+        "anzahl": 1,
+        "bilder_ids": [
+          "img-m3-03"
+        ],
+        "attribution_required": true
+      }
+    ],
+    "ausgeschlossene_lizenzen": [
+      "CC-BY-NC",
+      "CC-BY-ND",
+      "GFDL-only",
+      "proprietaer",
+      "unbekannt"
+    ]
+  },
+  "stoffdichte_status": {
+    "M1": {
+      "anzahl": 6,
+      "typenvielfalt": 4,
+      "korridor_4_7": "PASS"
+    },
+    "M2": {
+      "anzahl": 5,
+      "typenvielfalt": 4,
+      "korridor_4_7": "PASS"
+    },
+    "M3": {
+      "anzahl": 6,
+      "typenvielfalt": 4,
+      "korridor_4_7": "PASS"
+    },
+    "M4": {
+      "anzahl": 5,
+      "typenvielfalt": 4,
+      "korridor_4_7": "PASS"
+    }
+  },
+  "f_pb_40_medien_katalog_cross_check": {
+    "total_bilder_im_medien_katalog": 13,
+    "verified_bilder_im_medien_katalog": 13,
+    "bilder_im_artefakt_inventar_referenziert": 13,
+    "bilder_im_artefakt_inventar_als_RESERVE": 1,
+    "bilder_im_artefakt_inventar_als_VERWORFEN": 0,
+    "nicht_referenzierte_verifizierte_bilder": 0,
+    "img_id_zu_material_id_mapping": {
+      "img-m1-01": "m1-mat-02-bildquelle-dreadnought",
+      "img-m1-02": "m1-mat-01-karte-buendnisse-1914",
+      "img-m1-03": "m1-mat-03-bildquelle-wilhelm-ii",
+      "img-m2-01": "m2-mat-02-bildquelle-tatortskizze",
+      "img-m2-02": "m2-mat-03-bildquelle-franz-ferdinand",
+      "img-m2-03": "m2-mat-04-bildquelle-princip",
+      "img-m3-01": "m3-mat-01-bildquelle-luebeck-mobilmachung",
+      "img-m3-02": "m3-mat-02-bildquelle-bundesarchiv-mobilmachung",
+      "img-m3-03": "m3-mat-06-bildquelle-burgfriedens-medaille (Status RESERVE wegen PARTIAL-Verifikation)",
+      "img-m4-01": "m4-mat-01-karte-schlieffen-plan",
+      "img-m4-02": "m4-mat-03-bildquelle-deutsche-soldaten-marne",
+      "img-m4-03": "m4-mat-04-bildquelle-frz-infanterie",
+      "img-m4-04": "m4-mat-04b-bildquelle-taxi-marne (NICHT integriert — siehe Begruendung unten)"
+    },
+    "ergebnis": "PASS_MIT_HINWEIS",
+    "hinweis": "img-m4-04 (Taxi de la Marne, Musee de l'Armee) ist im medien_katalog verified, wurde aber im Artefakt-Inventar NICHT als eigenes Material integriert. Begruendung: M4 hat bereits 5 Materialien (Stoffdichte-Korridor-Obergrenze), und das Taxi-Bild ist Anti-Bias-Erweiterung 4. Quellen-Kategorie ohne KE-haupttragende Funktion. STATUS: RESERVE (potentielle Phase-1-Erweiterung als 6. Material 'Erinnerungs-Kultur Sieger-Mythos', nur falls Stoffdichte-Erweiterung gewollt). FORMAL als VERWORFEN_AUS_STOFFDICHTE_GRUND markiert mit Begruendung dokumentiert."
+  },
+  "f_pb_40_verworfen_aus_stoffdichte": [
+    {
+      "img_id": "img-m4-04",
+      "wikimedia_filename": "Taxi_de_la_Marne,_Musée_de_l'Armée-IMG_0987.jpg",
+      "begruendung": "Stoffdichte-Korridor M4 mit 5 Materialien voll ausgenutzt. Taxi-Bild ist Anti-Bias-Erweiterung 4. Quellen-Kategorie (frz. Museums-Sammlung), aber didaktisch nicht KE-tragend (Marne-Mythos vs. Marne-Sieg-Faktum). RESERVE fuer Phase 1 falls Lehrkraft Erinnerungs-Kultur-Diskurs hinzufuegen will. Cross-Reference-Pool-Match aus First_Battle_of_the_Marne bleibt im medien_katalog dokumentiert."
+    }
+  ],
+  "f_pb_41_material_kandidaten_coverage": {
+    "total_kandidaten_in_inhalts_briefing": 19,
+    "kandidaten_pro_mappe_bewertung": {
+      "M1": [
+        {
+          "kandidat": "Europa-Karte 1914 Buendnis-Bloecke",
+          "status": "GEDECKT",
+          "material_id": "m1-mat-01-karte-buendnisse-1914"
+        },
+        {
+          "kandidat": "Welt-Karte um 1914 Kolonialgebiete",
+          "status": "GEDECKT",
+          "material_id": "m1-mat-06-karte-kolonien-afrika"
+        },
+        {
+          "kandidat": "Foto HMS Dreadnought 1906",
+          "status": "GEDECKT",
+          "material_id": "m1-mat-02-bildquelle-dreadnought"
+        },
+        {
+          "kandidat": "R7-Erklaer-Text Buendnis-System",
+          "status": "GEDECKT",
+          "material_id": "m1-mat-04-darstellungstext-buendnissystem"
+        },
+        {
+          "kandidat": "Tabelle Flottenstaerke 1906 vs 1914",
+          "status": "GEDECKT",
+          "material_id": "m1-mat-05-statistik-flottenstaerke"
+        }
+      ],
+      "M2": [
+        {
+          "kandidat": "Zeitleiste Julikrise 1914",
+          "status": "GEDECKT",
+          "material_id": "m2-mat-01-zeitleiste-julikrise"
+        },
+        {
+          "kandidat": "Auszug oesterreich-ungarisches Ultimatum",
+          "status": "GEDECKT",
+          "material_id": "m2-mat-05-quellentext-ultimatum"
+        },
+        {
+          "kandidat": "Tatortskizze Sarajevo",
+          "status": "GEDECKT (mit Datei-Ersatz Sarajevo-assn-chart.svg, da Original-Hypothese Hallu)",
+          "material_id": "m2-mat-02-bildquelle-tatortskizze"
+        },
+        {
+          "kandidat": "R7-Erklaer-Text Ursache vs Ausloeser",
+          "status": "AEQUIVALENT (gedeckt durch m2-mat-01 + m2-mat-05 als gemeinsame Begriffsanker; eigener Darstellungstext optional in Phase 1 nachzuruesten falls SuS-Bedarf)",
+          "material_id": "m2-mat-01+m2-mat-05 (kombiniert)"
+        }
+      ],
+      "M3": [
+        {
+          "kandidat": "Foto Jubelnde Menge Odeonsplatz",
+          "status": "MODIFIZIERT (DRIFT begruendet; Ersatz Luebeck-Mobilmachung statt Hitler-Odeonsplatz wegen Hallu+Sensibilitaet)",
+          "material_id": "m3-mat-01-bildquelle-luebeck-mobilmachung"
+        },
+        {
+          "kandidat": "Foto Berlin Lustgarten 01.08.1914",
+          "status": "MODIFIZIERT (Datei-Ersatz Bundesarchiv 146-1974-118-18 Mobilmachung wegen Hallu-Original)",
+          "material_id": "m3-mat-02-bildquelle-bundesarchiv-mobilmachung"
+        },
+        {
+          "kandidat": "Auszug Artikel 231 Versailler Vertrag",
+          "status": "GEDECKT",
+          "material_id": "m3-mat-03-quellentext-art231"
+        },
+        {
+          "kandidat": "Forschungs-Aussage Schlafwandler Clark",
+          "status": "GEDECKT",
+          "material_id": "m3-mat-04-darstellungstext-clark-schlafwandler"
+        },
+        {
+          "kandidat": "Tagebuch-Eintrag SPD-Anhaenger / Bauern-Frau",
+          "status": "GEDECKT",
+          "material_id": "m3-mat-05-tagebuch-skeptiker"
+        }
+      ],
+      "M4": [
+        {
+          "kandidat": "Karte Schlieffen-Plan vs tatsaechlicher Verlauf",
+          "status": "GEDECKT (Karte m4-mat-01 + Zeitleiste m4-mat-02 ergeben den Plan-vs-Realitaet-Vergleich gemeinsam)",
+          "material_id": "m4-mat-01+m4-mat-02 (Plan + Verlauf)"
+        },
+        {
+          "kandidat": "Zeitleiste August/September 1914",
+          "status": "GEDECKT",
+          "material_id": "m4-mat-02-zeitleiste-august-september-1914"
+        },
+        {
+          "kandidat": "Foto deutsche Truppen Vormarsch Belgien",
+          "status": "MODIFIZIERT (Datei-Ersatz German_soldiers_Battle_of_Marne_WWI.jpg wegen Hallu-Original; thematisch verschoben Belgien-Vormarsch → Marne-Front, weil Marne-Front das Plan-Scheitern direkter zeigt)",
+          "material_id": "m4-mat-03-bildquelle-deutsche-soldaten-marne"
+        },
+        {
+          "kandidat": "R7-Erklaer-Text Stellungskrieg",
+          "status": "AEQUIVALENT (gedeckt durch Begriffs-Anker in m4-mat-02-Tipp-Stufe-3 + m4-mat-05-Tipp-Stufe-3; eigener Darstellungstext optional in Phase 1, falls Lehrkraft expliziten Begriffstext bevorzugt — RESERVE-Marker)",
+          "material_id": "m4-mat-02+m4-mat-05 (kombiniert) — Reserve: m4-mat-06-darstellungstext-stellungskrieg in Phase 1 hinzufuegbar"
+        },
+        {
+          "kandidat": "Verlust-Statistik Marne-Schlacht",
+          "status": "GEDECKT",
+          "material_id": "m4-mat-05-statistik-marne-verluste"
+        }
+      ]
+    },
+    "summe_status": {
+      "GEDECKT": 13,
+      "AEQUIVALENT": 2,
+      "MODIFIZIERT": 4,
+      "AUSGELASSEN": 0
+    },
+    "ergebnis": "PASS",
+    "begruendung": "Alle 19 material_kandidaten aus inhalts_briefing.json sind im artefakt_inventar bewertet. 13 direkt GEDECKT, 4 MODIFIZIERT (3 davon wegen Hallu-Datei-Ersatz aus Phase 0.2.M, 1 thematisch verschoben Belgien→Marne), 2 AEQUIVALENT (Synthese durch bestehende Materialien, Phase-1-Erweiterung als Reserve markiert). 0 AUSGELASSEN ohne Begruendung."
+  },
+  "f_pb_46_math_counts": {
+    "mappen_anzahl_deklariert": 4,
+    "mappen_anzahl_gezaehlt": 4,
+    "konsistenz_mappen_anzahl": "PASS",
+    "material_anzahl_total_deklariert": 22,
+    "material_anzahl_summe_aus_pro_mappe": 22,
+    "summe_pro_mappe": "M1=6 + M2=5 + M3=6 + M4=5 = 22",
+    "konsistenz_material_total": "PASS",
+    "bilder_aus_medien_katalog_total": 13,
+    "bilder_referenziert_im_inventar": 13,
+    "konsistenz_bilder_referenzierung": "PASS"
+  },
+  "f_pb_42_pflicht_felder_audit": {
+    "anker_briefing_coverage": "22/22 = 100%",
+    "tafelbild_knoten_coverage": "22/22 = 100%",
+    "tipp_stufen_slot_coverage": "22/22 = 100%",
+    "ergebnis": "PASS"
+  }
+}

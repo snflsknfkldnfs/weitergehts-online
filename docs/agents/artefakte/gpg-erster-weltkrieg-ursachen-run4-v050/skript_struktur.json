@@ -1,0 +1,370 @@
+{
+  "schema_version": "1.0",
+  "vertrag": "VERTRAG_PHASE_0-3_SKRIPT v1.4 + v0.5.0 Phase B.2 (F-PB-36/42/47) + v0.5.0 Phase B.3 (F-PB-43)",
+  "game_id": "gpg-erster-weltkrieg-ursachen-run4-v050",
+  "run_id": "run-4-2026-04-26",
+  "phase": "0.3",
+  "agent": "agent-skript",
+  "erstellt_am": "2026-04-26",
+  "_meta": {
+    "mappen_anzahl": 4,
+    "segments_per_mappe": 7,
+    "wortzahl_korridor": "600-900 Wo Narrativ pro Mappe (F-PB-47 SK5)",
+    "wortzahlen_pro_mappe": {
+      "M1": 612,
+      "M2": 631,
+      "M3": 605,
+      "M4": 645
+    },
+    "trigger_flags_game_ebene": [
+      "konflikt",
+      "gewalt_attentat",
+      "nationalismus",
+      "kolonialismus",
+      "weltkrieg_grossereignis"
+    ],
+    "trigger_sichtbarkeit_policy": "POLICY_TRIGGER_SICHTBARKEIT — Trigger-Warnungen ausschliesslich Lehrkraft-sichtbar (R2/R3) via didaktische_warnung_lehrkraft im medien_katalog_game.json. Schueler-HTML/JSON enthaelt KEINE Trigger-Warnung-Wortlaute. Skript-Narrativ implementiert Empfindsamkeit durch Bild-Auswahl + Quellenkritik-Pflicht-BU, NICHT durch sichtbare Trigger-Warnungen.",
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "rahmenhandlung_format": "Detektiv/Spurensucher im Archiv 1914 — altersgerecht 7c, du-Form",
+    "f_pb_addressed": ["F-PB-36", "F-PB-42", "F-PB-44", "F-PB-46", "F-PB-47"],
+    "schema_extension_post_audit": []
+  },
+  "rahmenhandlung": {
+    "leitfrage": "Wie konnte der Erste Weltkrieg ausbrechen — und warum hat ihn niemand verhindert?",
+    "setting": "Spurensucher / junger Detektiv im Auftrag eines Geschichts-Archivs. Vier verschlossene Mappen aus dem 'Archiv 1914' liegen vor dir. Jede Mappe enthaelt ein Schluessel-Stueck.",
+    "anrede": "du-Form",
+    "spannungsbogen": "Strukturen (M1) → Ausloeser (M2) → Stimmung+Schuld (M3) → erste Schlacht (M4) — Spannungsbogen Aufbau-Hoehepunkt-Sicherung gemaess DR §5",
+    "anschluss_folge_game": "Game endet mit Beginn Stellungskrieg. Folge-Games: Stellungskrieg / Heimatfront / Versailler Vertrag.",
+    "narrativ_briefing_text": "Du sitzt vor vier verschlossenen Mappen. Sie kommen aus einem Archiv. Auf jeder Mappe steht eine Jahreszahl: 1914. Ein Brief liegt obenauf: 'Liebe Spurensucher, vor mehr als 100 Jahren begann ein Krieg, den niemand gewollt hat — und alle haben mitgemacht.'"
+  },
+  "ke_abdeckung": [
+    {"ke_id": "GPG7_LB2_K_05", "rolle": "haupt_M1", "skript_stelle_haupt": "M1 §1-§6", "skript_stelle_neben": ["M2 §3 (Buendnisfall)", "M3 §6 (Clark-These)"]},
+    {"ke_id": "GPG7_LB2_K_06", "rolle": "haupt_M2", "skript_stelle_haupt": "M2 §1-§6", "skript_stelle_neben": ["M3 §6 (Multiperspektiv-Schuld)"]},
+    {"ke_id": "GPG7_LB3_K_03", "rolle": "haupt_M3", "skript_stelle_haupt": "M3 §1-§6", "skript_stelle_neben": ["M1 §7 (strukturelle Ursachen)", "M2 §6 (Ursache vs Ausloeser)"]},
+    {"ke_id": "GPG7_LB2_K_07", "rolle": "haupt_M4", "skript_stelle_haupt": "M4 §1-§6", "skript_stelle_neben": []}
+  ],
+  "mappen": [
+    {
+      "mappe_id": "M1",
+      "titel": "Pulverfass Europa",
+      "stundenfrage": "Warum war Europa vor 1914 ein 'Pulverfass'?",
+      "wortzahl_narrativ": 612,
+      "ke_anker": ["GPG7_LB2_K_05"],
+      "anker_briefing": {
+        "einstiegs_anker": "Mappe-Deckblatt mit dem einzigen Wort 'Pulverfass'. Anschluss an Alltagswissen (Pulverfass = brennbar, Funken-empfindlich).",
+        "konflikt_aufriss": "Sechs europaeische Grossmaechte stehen sich in zwei Buendnis-Bloecken gegenueber (Dreibund 1882 / Triple Entente 1907). Sie wettruesten zur See (HMS Dreadnought 1906 vs. Tirpitz-Plan) und streiten um Kolonien (Marokko-Krisen 1905+1911, Wettlauf um Afrika ab 1884). Die Stimmung ist seit Jahrzehnten gespannt.",
+        "sicherungs_erwartung": "SuS koennen am Ende der Mappe (a) die zwei Buendnis-Bloecke benennen, (b) drei Spannungsfelder zuordnen (Marokko, Balkan-Vorlauf, Flotte) und (c) die Pulverfass-Metapher mit eigenen Worten erklaeren.",
+        "anker_pointer_briefing": "inhalts_briefing.json#mappen[0].schluessel_fakten (8 Fakten) + perspektiven_kandidaten (5 Profile) + material_kandidaten (5)",
+        "ke_belege": ["GPG7_LB2_K_05 — Hauptzuordnung"]
+      },
+      "tafelbild_knoten": [
+        {"knoten_id": "K1-1", "label": "Pulverfass Europa", "position": "zentrum", "typ": "leitbegriff", "skript_ref": "M1 §7"},
+        {"knoten_id": "K1-2", "label": "Dreibund (1882)", "position": "links-oben", "typ": "buendnis_block", "skript_ref": "M1 §1", "elemente": ["Deutsches Reich", "Oesterreich-Ungarn", "Italien"]},
+        {"knoten_id": "K1-3", "label": "Triple Entente (1907)", "position": "rechts-oben", "typ": "buendnis_block", "skript_ref": "M1 §1", "elemente": ["Frankreich", "Russland", "Grossbritannien"]},
+        {"knoten_id": "K1-4", "label": "Flotten-Wettlauf", "position": "rechts-unten", "typ": "spannungsfeld", "skript_ref": "M1 §3-§4", "elemente": ["HMS Dreadnought 1906", "Tirpitz-Plan 1898", "29 vs 17 Grossschiffe 1914"]},
+        {"knoten_id": "K1-5", "label": "Wettlauf um Afrika / Marokko-Krisen", "position": "links-unten", "typ": "spannungsfeld", "skript_ref": "M1 §5", "elemente": ["Berlin-Konferenz 1884", "1. Marokko-Krise 1905", "2. Marokko-Krise 1911 (SMS Panther)"]}
+      ],
+      "tafelbild_verbindungen": [
+        {"von": "K1-2", "nach": "K1-1", "label": "spannt"},
+        {"von": "K1-3", "nach": "K1-1", "label": "spannt"},
+        {"von": "K1-4", "nach": "K1-1", "label": "heizt an"},
+        {"von": "K1-5", "nach": "K1-1", "label": "heizt an"},
+        {"von": "K1-2", "nach": "K1-3", "label": "stehen sich gegenueber"}
+      ],
+      "tipp_stufen_slot": [
+        {"stufe": 1, "typ": "denkanstoss", "platzhalter_befuellung_phase_1": true, "skript_ref_anker": "M1 §1-§2", "anker_text": "Schau dir die Karte an. Welche Farben siehst du? Was bedeuten sie?"},
+        {"stufe": 2, "typ": "richtung", "platzhalter_befuellung_phase_1": true, "skript_ref_anker": "M1 §1+§5", "anker_text": "Es gibt zwei Buendnisse. Eines mit Deutschland, Oesterreich-Ungarn und Italien. Wie heisst das andere? Und welche drei Streitfelder gibt es?"},
+        {"stufe": 3, "typ": "loesung", "platzhalter_befuellung_phase_1": true, "skript_ref_anker": "M1 §7", "anker_text": "Buendnis 1 (Dreibund 1882): DT, OE-UN, IT. Buendnis 2 (Triple Entente 1907): FR, RU, GB. Drei Spannungsfelder: Buendnis-System, Flotten-Wettruesten, Kolonial-Wettlauf in Afrika. Diese drei zusammen = Pulverfass."}
+      ],
+      "trigger_material_sichtbarkeit": {
+        "narrativ_zugaenglich_fuer_schueler": "Buendnis-Karte (img-m1-02), Dreadnought-Foto (img-m1-01), Wilhelm-II-Portrait (img-m1-03) — Quellenkritik-BU sichtbar",
+        "lehrkraft_only_warnungen": "Wilhelm-II-Portrait: Auftrags-Inszenierung — kein neutrales Foto; Kolonial-Sprach-Sieb QG-07 (keine 'Eingeborenen', keine 'Erschliessung', keine 'zivilisatorische Mission')",
+        "trigger_flags_im_skript_gesetzt": ["nationalismus", "kolonialismus"]
+      },
+      "multiperspektivitaet": [
+        "Deutsche Reichsfuehrung (Wilhelm II., Tirpitz)",
+        "Britische Reichsregierung (Asquith, Grey)",
+        "Franzoesische Republik (Clemenceau, Delcasse)",
+        "Russisches Zarenreich",
+        "Kolonisierte Bevoelkerung Afrikas (strukturell durch Sprach-Sieb adressiert)"
+      ],
+      "kolonial_terminologie_check": {
+        "blacklist_eingehalten": true,
+        "verwendete_neutrale_formulierungen": ["Aufteilung Afrikas durch europaeische Grossmaechte", "kolonisierte Bevoelkerung", "Eroberung und Aufteilung", "wird erobert und unterdrueckt"],
+        "blacklist_terms_nicht_verwendet": ["Eingeborene", "Erschliessung", "zivilisatorische Mission", "Entdeckung"]
+      },
+      "artefakte_referenziert": [
+        {"id": "img-m1-01", "typ": "bildquelle", "skript_ref": "§3", "beschreibung": "HMS Dreadnought 1906"},
+        {"id": "img-m1-02", "typ": "karte", "skript_ref": "§5", "beschreibung": "Europa-Buendnis-Karte 1914"},
+        {"id": "img-m1-03", "typ": "bildquelle", "skript_ref": "§6", "beschreibung": "Wilhelm-II-Auftrags-Portrait 1902"}
+      ],
+      "abschluss_impuls": {
+        "format": "ABSCHLUSS_C5_UEBERLEITUNG",
+        "text": "Wer den Funken warf und wie aus einem Schuss ein Weltkrieg wurde, erfaehrst du in der naechsten Mappe."
+      }
+    },
+    {
+      "mappe_id": "M2",
+      "titel": "Sarajevo 1914 — Ein Schuss, eine Welt im Krieg",
+      "stundenfrage": "Wie wurde aus dem Attentat in Sarajevo in fuenf Wochen ein Weltkrieg?",
+      "wortzahl_narrativ": 631,
+      "ke_anker": ["GPG7_LB2_K_06"],
+      "anker_briefing": {
+        "einstiegs_anker": "Datum auf dem Mappe-Deckblatt: 28. Juni 1914. Schluessel-Code-Anker fuer das Einstiegs-Raetsel.",
+        "konflikt_aufriss": "Gavrilo Princip (19, bosnisch-serbisch, 'Junges Bosnien') erschiesst in Sarajevo Erzherzog Franz Ferdinand und Sophie. Es folgt die Julikrise: Blanko-Scheck Berlin (5./6.7.) → Ultimatum Wien (23.7.) → Kriegserklaerungen wie Dominosteine (28.7. AT-UN→SR, 1.8. DT→RU, 3.8. DT→FR, 4.8. GB→DT). Der Schuss war Ausloeser, nicht Ursache.",
+        "sicherungs_erwartung": "SuS koennen am Ende (a) das Datum nennen, (b) die Reihenfolge der Kriegserklaerungen rekonstruieren, (c) den Begriff Buendnisfall mit eigenen Worten erklaeren und (d) zwischen Ursache und Ausloeser unterscheiden.",
+        "anker_pointer_briefing": "inhalts_briefing.json#mappen[1].schluessel_fakten (9 Fakten) + zitate (Princip-Aussage 1914-10) + material_kandidaten (4)",
+        "ke_belege": ["GPG7_LB2_K_06 — Hauptzuordnung"]
+      },
+      "tafelbild_knoten": [
+        {"knoten_id": "K2-1", "label": "Ausloeser vs. Ursache", "position": "zentrum", "typ": "leitbegriff", "skript_ref": "M2 §6", "elemente": ["Ursache = brennbarer Wald (M1)", "Ausloeser = Zigarette (Princip)"]},
+        {"knoten_id": "K2-2", "label": "28. Juni 1914 Sarajevo", "position": "oben-links", "typ": "ereignis", "skript_ref": "M2 §1-§2", "elemente": ["Princip 19 J.", "Franz Ferdinand + Sophie", "Schwarze Hand"]},
+        {"knoten_id": "K2-3", "label": "Blanko-Scheck (5./6.7.)", "position": "oben-rechts", "typ": "schluesseldatum", "skript_ref": "M2 §3"},
+        {"knoten_id": "K2-4", "label": "Ultimatum + Kriegserklaerung 28.7.", "position": "rechts", "typ": "ereignis", "skript_ref": "M2 §4"},
+        {"knoten_id": "K2-5", "label": "Buendnis-Domino 1.-4. August", "position": "unten", "typ": "kettenreaktion", "skript_ref": "M2 §5", "elemente": ["1.8. DT→RU", "3.8. DT→FR", "4.8. GB→DT (Belgien)"]}
+      ],
+      "tafelbild_verbindungen": [
+        {"von": "K2-2", "nach": "K2-3", "label": "loest aus"},
+        {"von": "K2-3", "nach": "K2-4", "label": "ermoeglicht"},
+        {"von": "K2-4", "nach": "K2-5", "label": "loest Buendnisfall aus"},
+        {"von": "K2-5", "nach": "K2-1", "label": "macht Strukturen sichtbar"},
+        {"von": "K2-2", "nach": "K2-1", "label": "ist nur Ausloeser"}
+      ],
+      "tipp_stufen_slot": [
+        {"stufe": 1, "typ": "denkanstoss", "platzhalter_befuellung_phase_1": true, "skript_ref_anker": "M2 §1", "anker_text": "Schau dir das Datum an. Was ist da passiert?"},
+        {"stufe": 2, "typ": "richtung", "platzhalter_befuellung_phase_1": true, "skript_ref_anker": "M2 §2-§5", "anker_text": "Das Attentat war am 28. Juni. Wer wurde erschossen? Wer hat dann zuerst den Krieg erklaert? Schau auf die Buendnis-Tabelle aus Mappe 1."},
+        {"stufe": 3, "typ": "loesung", "platzhalter_befuellung_phase_1": true, "skript_ref_anker": "M2 §5-§6", "anker_text": "Princip erschoss Franz Ferdinand. Oesterreich-Ungarn erklaerte Serbien den Krieg. Russland half Serbien (Buendnisfall). Deutschland half Oesterreich-Ungarn. Frankreich half Russland. GB kam dazu, weil DT durch Belgien marschierte. Trage die Reihenfolge auf der Zeitleiste ein."}
+      ],
+      "trigger_material_sichtbarkeit": {
+        "narrativ_zugaenglich_fuer_schueler": "Tatortskizze (img-m2-01, KEIN Foto), Franz-Ferdinand-Hofportrait (img-m2-02), Princip-Gerichtsfoto (img-m2-03), Princip-Zitat (zit-M2-1)",
+        "lehrkraft_only_warnungen": "Sensibilitaet: keine Foto-Darstellung von Verletzten/Toten. Princip multiperspektivitaets-pflichtig (Held vs. Terrorist je nach Erinnerungs-Tradition).",
+        "trigger_flags_im_skript_gesetzt": ["gewalt_attentat", "nationalismus"]
+      },
+      "multiperspektivitaet": [
+        "Bosnisch-serbische / serbische Nationalisten (Princip, Junges Bosnien)",
+        "Habsburger / Oesterreich-Ungarn (Franz Joseph, Berchtold)",
+        "Deutsches Reich (Wilhelm II., Bethmann Hollweg)",
+        "Russisches Zarenreich (Sasonow, Nikolaus II.)",
+        "Britische Regierung (Grey)"
+      ],
+      "transfer_marker": [
+        {"kontext": "Konflikt-Eskalations-Mechanik heute", "anknuepfungspunkt": "Skript M2 §7", "ke_belegt": "GPG7_LB2_K_06 fordert 'aktuelles Beispiel'", "skript_text_inline": "[TRANSFER: Konflikt-Eskalations-Mechanik heute | Auch in heutigen Krisen gibt es oft einen 'Funken' — aber die Ursachen liegen viel tiefer.]"}
+      ],
+      "artefakte_referenziert": [
+        {"id": "img-m2-01", "typ": "karte", "skript_ref": "§2", "beschreibung": "Tatortskizze Lateinerbruecke (Sekundaer-Skizze)"},
+        {"id": "img-m2-02", "typ": "bildquelle", "skript_ref": "§1", "beschreibung": "Franz Ferdinand Hofportrait Pietzner ca. 1896"},
+        {"id": "img-m2-03", "typ": "bildquelle", "skript_ref": "§2", "beschreibung": "Gavrilo Princip vor Gericht 1914"},
+        {"id": "zit-M2-1", "typ": "quellentext", "skript_ref": "§4", "beschreibung": "Princip-Aussage Gericht Oktober 1914 — jugoslawischer Nationalist"}
+      ],
+      "abschluss_impuls": {
+        "format": "ABSCHLUSS_C5_UEBERLEITUNG",
+        "text": "Wer im August 1914 jubelte, wer schwieg und wer heute die Schuld bekommt, erfaehrst du in der naechsten Mappe."
+      }
+    },
+    {
+      "mappe_id": "M3",
+      "titel": "Augustfieber — Wer schuld ist und wer jubelt",
+      "stundenfrage": "Wer war im August 1914 begeistert — und wer hat heute die Schuld am Krieg?",
+      "wortzahl_narrativ": 605,
+      "ke_anker": ["GPG7_LB3_K_03"],
+      "anker_briefing": {
+        "einstiegs_anker": "Mappe-Inhalt: zwei Fotos + Burgfriedens-Medaille mit Datum 4. August 1914. Quellen-Vergleich-Raetsel als Einstieg.",
+        "konflikt_aufriss": "Augusterlebnis 1914 wirkt universell, war aber tatsaechlich Stadt-Mittelschicht-Phaenomen. Burgfrieden 4.8.1914 vereinigt Reichstag (auch SPD) — zerfaellt 1916/17. Versailles Art. 231 (1919) weist DT Allein-Schuld zu, Christopher Clark (2013) widerspricht: 'Schlafwandler' — kollektives Versagen mehrerer Maechte.",
+        "sicherungs_erwartung": "SuS koennen (a) Augusterlebnis als Stadt-Phaenomen einordnen (Foto-Bias-Quellenkritik), (b) Burgfrieden als parteiuebergreifenden Schulterschluss erklaeren, (c) Kriegsschuld-Klausel Art. 231 vs. Clark-These multiperspektivisch diskutieren und (d) eine eigene Position mit Quellen-Bezug formulieren.",
+        "anker_pointer_briefing": "inhalts_briefing.json#mappen[2].schluessel_fakten (8 Fakten) + zitate (Versailles Art. 231) + material_kandidaten (5)",
+        "ke_belege": ["GPG7_LB3_K_03 — Hauptzuordnung"]
+      },
+      "tafelbild_knoten": [
+        {"knoten_id": "K3-1", "label": "Kriegsschuldfrage", "position": "zentrum", "typ": "leitbegriff", "skript_ref": "M3 §5-§6", "elemente": ["Versailles 1919 (Art. 231)", "Clark 2013 (Schlafwandler)"]},
+        {"knoten_id": "K3-2", "label": "Augusterlebnis 1914", "position": "oben-links", "typ": "phaenomen", "skript_ref": "M3 §1-§3", "elemente": ["Stadt-Begeisterung", "Land-Skepsis", "Foto-Bias"]},
+        {"knoten_id": "K3-3", "label": "Burgfrieden 4.8.1914", "position": "oben-rechts", "typ": "ereignis", "skript_ref": "M3 §4", "elemente": ["SPD-Kriegskredite", "Reichstags-Konsens", "zerfaellt 1916/17"]},
+        {"knoten_id": "K3-4", "label": "Versailles Art. 231 (1919)", "position": "unten-links", "typ": "quellentext", "skript_ref": "M3 §5", "elemente": ["Allein-Schuld DT + Verbuendete", "politisch motiviert"]},
+        {"knoten_id": "K3-5", "label": "Clark — Schlafwandler (2013)", "position": "unten-rechts", "typ": "forschungsstand", "skript_ref": "M3 §6", "elemente": ["multi-kausal", "Wien+Berlin+Petersburg+Paris+London"]},
+        {"knoten_id": "K3-6", "label": "Quellenkritik", "position": "rand", "typ": "methode", "skript_ref": "M3 §2+§7", "elemente": ["Wer schreibt?", "Wann?", "Mit welchem Ziel?"]}
+      ],
+      "tafelbild_verbindungen": [
+        {"von": "K3-2", "nach": "K3-1", "label": "ist Teil der Frage"},
+        {"von": "K3-3", "nach": "K3-1", "label": "zeigt politische Einigkeit Anfang"},
+        {"von": "K3-4", "nach": "K3-1", "label": "Antwort 1919"},
+        {"von": "K3-5", "nach": "K3-1", "label": "Antwort 2013"},
+        {"von": "K3-4", "nach": "K3-5", "label": "widerspricht"},
+        {"von": "K3-6", "nach": "K3-2", "label": "deckt Bias auf"},
+        {"von": "K3-6", "nach": "K3-4", "label": "deckt Position auf"}
+      ],
+      "tipp_stufen_slot": [
+        {"stufe": 1, "typ": "denkanstoss", "platzhalter_befuellung_phase_1": true, "skript_ref_anker": "M3 §1-§2", "anker_text": "Schau auf das Foto aus Luebeck. Wer ist NICHT zu sehen?"},
+        {"stufe": 2, "typ": "richtung", "platzhalter_befuellung_phase_1": true, "skript_ref_anker": "M3 §3-§5", "anker_text": "Das Foto zeigt Stadt-Buerger. Wer fehlt? Forschung sagt: Land-Bevoelkerung und Arbeiter waren oft skeptisch. Und: Wer hat 1919 die Schuld zugewiesen? Wer 2013?"},
+        {"stufe": 3, "typ": "loesung", "platzhalter_befuellung_phase_1": true, "skript_ref_anker": "M3 §5-§7", "anker_text": "Auf dem Foto fehlen Land-Bevoelkerung + Arbeiter. Augusterlebnis war begrenzt. Schuld-Frage: 1919 (Versailles Art. 231) sagt: DT allein. 2013 (Clark) sagt: mehrere Maechte gemeinsam. Beide Positionen begruenden, eigene Position formulieren."}
+      ],
+      "trigger_material_sichtbarkeit": {
+        "narrativ_zugaenglich_fuer_schueler": "Luebeck-Mobilmachungs-Postkarte (img-m3-01), Bundesarchiv-Mobilmachung (img-m3-02), Burgfriedens-Medaille (img-m3-03), Versailles-Zitat Art. 231 (zit-M3-1), Tagebuch-Slot fuer skeptische Stimme (rolle-M3-1)",
+        "lehrkraft_only_warnungen": "Augusterlebnis nicht idealisieren. Foto-Bias als Pflicht-Quellenkritik. Burgfriedens-Medaille als Auftrags-Inszenierung markieren. Versailles-Art-231-Spreng-Kraft fuer Weimarer Republik nur Lehrkraft-Hintergrund.",
+        "trigger_flags_im_skript_gesetzt": ["nationalismus", "weltkrieg_grossereignis"]
+      },
+      "multiperspektivitaet": [
+        "Begeisterte Stadtbuerger 1914 (gebildete Mittelschicht, Studenten)",
+        "Skeptische Landbevoelkerung / Arbeiter / SPD-Anhaenger 1914",
+        "Versailler Friedens-Konferenz 1919 (Wilson, Clemenceau, Lloyd George)",
+        "Weimarer Republik / deutsche Historiker 1920er",
+        "Heutige Forschung (Christopher Clark, Schlafwandler-These 2013)"
+      ],
+      "transfer_marker": [
+        {"kontext": "Schuldfragen heute", "anknuepfungspunkt": "Skript M3 §7", "ke_belegt": "GPG7_LB3_K_03 fordert 'aktuelle Forschungsergebnisse + Diskussion'", "skript_text_inline": "[TRANSFER: Schuldfragen heute | Auch heute streiten Staaten oft um Schuldfragen — und auch heute braucht man Quellenkritik, um nicht nur einer Seite zu glauben.]"}
+      ],
+      "artefakte_referenziert": [
+        {"id": "img-m3-01", "typ": "bildquelle", "skript_ref": "§2", "beschreibung": "Mobilmachung Luebeck 31.07.1914 (Postkarten-Inszenierung)"},
+        {"id": "img-m3-02", "typ": "bildquelle", "skript_ref": "§3", "beschreibung": "Bundesarchiv-Mobilmachung 01.08.1914"},
+        {"id": "img-m3-03", "typ": "bildquelle", "skript_ref": "§4", "beschreibung": "Burgfriedens-Silbermedaille (Reichstags-Inszenierung)"},
+        {"id": "zit-M3-1", "typ": "quellentext", "skript_ref": "§5", "beschreibung": "Versailles Art. 231, 28.06.1919"},
+        {"id": "rolle-M3-1", "typ": "tagebuch", "skript_ref": "§3", "beschreibung": "Skeptische Stimme 1914 — SPD-Anhaenger oder Bauern-Frau (Befuellung Phase 1)"}
+      ],
+      "abschluss_impuls": {
+        "format": "ABSCHLUSS_C5_UEBERLEITUNG",
+        "text": "Wie der geplante 'kurze Krieg' der Deutschen nach nur sechs Wochen scheiterte, erfaehrst du in der naechsten Mappe."
+      }
+    },
+    {
+      "mappe_id": "M4",
+      "titel": "Marne 1914 — Das Ende des kurzen Krieges",
+      "stundenfrage": "Warum scheiterte der deutsche Plan fuer einen schnellen Sieg an der Marne?",
+      "wortzahl_narrativ": 645,
+      "ke_anker": ["GPG7_LB2_K_07"],
+      "anker_briefing": {
+        "einstiegs_anker": "Mappe-Inhalt: Karten-Skizze Schlieffen-Plan vs. tatsaechlicher Verlauf (img-m4-01). Karten-Vergleich-Raetsel als Einstieg.",
+        "konflikt_aufriss": "Schlieffen-Plan (1905/06) sah Sieg gegen Frankreich in 6 Wochen ueber Belgien vor. Belgien-Verletzung 4.8.1914 → britische Kriegserklaerung. Vormarsch zu schnell, Versorgung scheitert. Marne 5.-12.9.1914: Joffre stoppt deutsche Truppen 40 km vor Paris. Moltke d.J. abgesetzt. Wettlauf zum Meer 17.9.-19.10.1914 → Stellungskrieg etabliert. Verluste: ~250.000 FR + 12.733 GB + 298.000 DT.",
+        "sicherungs_erwartung": "SuS koennen (a) Schlieffen-Plan-Idee skizzieren, (b) Belgien-Verletzung als Voelkerrechtsbruch erkennen, (c) Marne als Wendepunkt benennen und (d) Stellungskrieg mit eigenem Satz erklaeren.",
+        "anker_pointer_briefing": "inhalts_briefing.json#mappen[3].schluessel_fakten (8 Fakten) + material_kandidaten (5)",
+        "ke_belege": ["GPG7_LB2_K_07 — Hauptzuordnung"]
+      },
+      "tafelbild_knoten": [
+        {"knoten_id": "K4-1", "label": "Stellungskrieg", "position": "zentrum-unten", "typ": "leitbegriff", "skript_ref": "M4 §7", "elemente": ["feste Stellungen", "Schuetzen-Graeben", "kein Vormarsch"]},
+        {"knoten_id": "K4-2", "label": "Schlieffen-Plan (1905/06)", "position": "oben-links", "typ": "plan", "skript_ref": "M4 §1-§2", "elemente": ["6 Wochen FR-Sieg", "ueber Belgien", "Plan-Mythos vs. Aufmarsch-Skizze"]},
+        {"knoten_id": "K4-3", "label": "Belgien-Verletzung 4.8.1914", "position": "oben-rechts", "typ": "ereignis", "skript_ref": "M4 §3", "elemente": ["Neutralitaets-Bruch", "GB-Kriegseintritt", "Lueck 7.8., Bruessel 20.8."]},
+        {"knoten_id": "K4-4", "label": "Marne-Schlacht 5.-12.9.1914", "position": "rechts", "typ": "schlacht", "skript_ref": "M4 §5-§6", "elemente": ["Joffre vs. Moltke", "40 km vor Paris", "Marne-Taxis (Mythos)", "Verluste >500.000"]},
+        {"knoten_id": "K4-5", "label": "Wendepunkt zum Stellungskrieg", "position": "unten-links", "typ": "wendepunkt", "skript_ref": "M4 §6-§7", "elemente": ["Wettlauf zum Meer", "vier Jahre Krieg statt sechs Wochen"]}
+      ],
+      "tafelbild_verbindungen": [
+        {"von": "K4-2", "nach": "K4-3", "label": "fordert"},
+        {"von": "K4-3", "nach": "K4-4", "label": "fuehrt nach Frankreich"},
+        {"von": "K4-4", "nach": "K4-5", "label": "scheitert → wird"},
+        {"von": "K4-5", "nach": "K4-1", "label": "muendet in"},
+        {"von": "K4-2", "nach": "K4-1", "label": "scheitert an"}
+      ],
+      "tipp_stufen_slot": [
+        {"stufe": 1, "typ": "denkanstoss", "platzhalter_befuellung_phase_1": true, "skript_ref_anker": "M4 §1-§2", "anker_text": "Schau auf die Karte. Welcher Weg war geplant? Welcher wurde wirklich gegangen?"},
+        {"stufe": 2, "typ": "richtung", "platzhalter_befuellung_phase_1": true, "skript_ref_anker": "M4 §3-§5", "anker_text": "Der Plan fuehrte durch Belgien — ein neutrales Land. Was passierte am 4. August? Warum trat GB in den Krieg ein? Und wo stoppten Joffre und Moltke?"},
+        {"stufe": 3, "typ": "loesung", "platzhalter_befuellung_phase_1": true, "skript_ref_anker": "M4 §6-§7", "anker_text": "Schlieffen-Plan = 6-Wochen-Sieg gegen FR ueber Belgien. Belgien-Bruch 4.8. → GB-Kriegseintritt. Joffre stoppt DT-Vormarsch an der Marne 5.-12.9. ca. 40 km vor Paris. Moltke abgesetzt. Folge: Wettlauf zum Meer, dann Stellungskrieg fuer 4 Jahre."}
+      ],
+      "trigger_material_sichtbarkeit": {
+        "narrativ_zugaenglich_fuer_schueler": "Schlieffen-Karte (img-m4-01), DT-Soldaten Marne (img-m4-02, mit Inszenierungs-BU), FR-Infanterie 1913 (img-m4-03, mit Datums-BU), Marne-Taxi Museum (img-m4-04, mit Mythos-BU)",
+        "lehrkraft_only_warnungen": "Schlieffen-Plan-Mythos (Zuber-Forschung): nicht heroisieren. img-m4-02 vermutlich gestelltes Foto. Marne-Verluste als Zahl, nicht visuell. Belgien-Verletzung als Voelkerrechtsbruch erwaehnen.",
+        "trigger_flags_im_skript_gesetzt": ["weltkrieg_grossereignis", "konflikt"]
+      },
+      "multiperspektivitaet": [
+        "Deutsche Generalstab-Fuehrung (Moltke d.J., Schlieffen-Erbe)",
+        "Belgische Bevoelkerung und Regierung (Opfer Neutralitaets-Verletzung)",
+        "Franzoesische Armee unter Joffre (defensiv-Sieger Marne)",
+        "Britische Expeditionsstreitmacht (BEF) unter John French",
+        "Soldaten beider Seiten (Erschoepfung, Versorgungs-Probleme)"
+      ],
+      "transfer_marker": [
+        {"kontext": "Pre-Plan vs. Realitaet", "anknuepfungspunkt": "Skript M4 §7", "ke_belegt": "GPG7_LB2_K_07 — historische Spuren", "skript_text_inline": "[TRANSFER: Pre-Plan vs. Realitaet | Auch heute koennen Plaene scheitern, weil die Wirklichkeit nicht mitspielt — das gilt fuer Kriege, aber auch fuer andere grosse Vorhaben.]"}
+      ],
+      "artefakte_referenziert": [
+        {"id": "img-m4-01", "typ": "karte", "skript_ref": "§1", "beschreibung": "Schlieffen-Moltke-Plan 1914"},
+        {"id": "img-m4-02", "typ": "bildquelle", "skript_ref": "§4", "beschreibung": "Deutsche Soldaten Marne 1914 (Inszenierungs-Verdacht)"},
+        {"id": "img-m4-03", "typ": "bildquelle", "skript_ref": "§5", "beschreibung": "Franzoesische Infanterie 1913 (Manoever)"},
+        {"id": "img-m4-04", "typ": "bildquelle", "skript_ref": "§5", "beschreibung": "Renault-Taxi de la Marne (Sieger-Mythos Museum)"}
+      ],
+      "abschluss_impuls": {
+        "format": "ABSCHLUSS_C5_REFLEXION",
+        "text": "Der Krieg war nicht zu Ende — er hatte gerade erst begonnen. Und die Frage bleibt offen: Haetten die Grossmaechte den Krieg verhindern koennen — und wenn ja, um welchen Preis?"
+      }
+    }
+  ],
+  "drift_hinweise_verarbeitung_qs_drift": {
+    "vorhanden_in_phase_0_2_m": 7,
+    "verarbeitet_im_skript": 7,
+    "stillschweigend_uebergangen": 0,
+    "details": [
+      {"drift_id": "img-m3-01-luebeck-statt-hitler", "verarbeitung": "M3 §2-§3 — als Provinz-Stadt-Buerger eingefuehrt, Foto-Bias-Quellenkritik als Pflicht-BU"},
+      {"drift_id": "img-m2-01-tatortskizze-statt-hallu", "verarbeitung": "M2 §2 — als Tatortskizze referenziert, Sekundaer-Skizze-Disclaimer im Begleittext"},
+      {"drift_id": "img-m3-02-bundesarchiv-statt-lustgarten", "verarbeitung": "M3 §3 — als Bundesarchiv-Mobilmachungsfoto Anfang August 1914 eingefuehrt"},
+      {"drift_id": "img-m4-02-german-soldiers-marne-statt-hallu", "verarbeitung": "M4 §4 — Quellenkritik-BU 'vermutlich gestelltes Foto (Decorations-Tragen)'"},
+      {"drift_id": "img-m1-03-wilhelm-ii-auftragskunst", "verarbeitung": "M1 §6 — explizite Quellenkritik 'Studio-Auftrags-Portrait'"},
+      {"drift_id": "img-m3-03-burgfriedens-medaille-auftragskunst", "verarbeitung": "M3 §4 — explizit als amtliche Inszenierung des Reichstags markiert"},
+      {"drift_id": "img-m4-04-marne-taxi-mythos", "verarbeitung": "M4 §5 — als Symbol des Sieger-Mythos markiert (~5000 Soldaten Faktum vs. Mythos-Symbol)"}
+    ]
+  },
+  "math_counts_check_f_pb_46": {
+    "mappen_anzahl_didaktik_rahmen": 4,
+    "mappen_anzahl_inhalts_briefing": 4,
+    "mappen_anzahl_medien_katalog": 4,
+    "mappen_anzahl_skript": 4,
+    "mappen_anzahl_skript_struktur_json": 4,
+    "konsistenz": "PASS",
+    "segments_per_mappe": 7,
+    "konsistenz_segments_paragraphen": "PASS"
+  },
+  "f_pb_47_sk5_wortzahl_check": {
+    "korridor": "600-900 Woerter Narrativ pro Mappe",
+    "mappen_wortzahlen": {
+      "M1": {"wortzahl": 612, "im_korridor": true},
+      "M2": {"wortzahl": 631, "im_korridor": true},
+      "M3": {"wortzahl": 605, "im_korridor": true},
+      "M4": {"wortzahl": 645, "im_korridor": true}
+    },
+    "alle_im_korridor": true,
+    "validator_aufruf": "tools/validate_skript_sk.py SKRIPT.md (post-write-Hook)"
+  },
+  "f_pb_44_komposita_erstgebrauch": {
+    "geprueft": true,
+    "komposita_im_skript_erklaert": [
+      {"kompositum": "Buendnis-System", "mappe": "M1 §1", "erklaerung_methode": "Apposition: 'mehrere Buendnisse zusammen'"},
+      {"kompositum": "Flotten-Wettlauf", "mappe": "M1 §3", "erklaerung_methode": "Apposition: 'Wettbewerb beim Bau von Kriegsschiffen'"},
+      {"kompositum": "Buendnisfall", "mappe": "M2 §5 (Tipp-Slot expliziter)", "erklaerung_methode": "im Tipp-Slot 3 explizit erklaert"},
+      {"kompositum": "Mobilmachung", "mappe": "M2 §5", "erklaerung_methode": "Doppelpunkt-Erklaerung: 'die Armee fuer den Krieg bereit machen'"},
+      {"kompositum": "Blanko-Scheck", "mappe": "M2 §3", "erklaerung_methode": "Apposition: 'ein Versprechen ohne Bedingungen'"},
+      {"kompositum": "Augusterlebnis", "mappe": "M3 §1", "erklaerung_methode": "Apposition: 'das, was die Menschen im August 1914 erlebt und gefuehlt haben'"},
+      {"kompositum": "Burgfrieden", "mappe": "M3 §4", "erklaerung_methode": "Bild-Erklaerung: 'Burg im Mittelalter — Streit ruhen lassen'"},
+      {"kompositum": "Kriegsschuld-Klausel", "mappe": "M3 §5", "erklaerung_methode": "Apposition: 'Klausel = ein Abschnitt im Vertrag'"},
+      {"kompositum": "Schlieffen-Plan", "mappe": "M4 §1", "erklaerung_methode": "Eigenname-Erklaerung: 'benannt nach dem deutschen General Schlieffen'"},
+      {"kompositum": "Stellungskrieg", "mappe": "M4 §7", "erklaerung_methode": "Doppelpunkt-Erklaerung: 'die Soldaten bleiben in festen Stellungen — Schuetzen-Graeben — und kommen kaum mehr vorwaerts'"},
+      {"kompositum": "Marne-Taxis", "mappe": "M4 §5", "erklaerung_methode": "Apposition: 'aus Paris werden Soldaten mit Taxis an die Front gefahren'"}
+    ],
+    "validator_aufruf": "tools/check_komposita_erstgebrauch.py SKRIPT.md"
+  },
+  "q_gates_self_check_summary": {
+    "Q1_narrative_kohaerenz": "PASS",
+    "Q2_fakten_vollstaendigkeit": "PASS",
+    "Q3_fachbegriff_erklaerung": "PASS",
+    "Q4_satzlaenge": "PASS",
+    "Q5_chunk_abgeschlossenheit": "PASS",
+    "Q7_sandwich_uebergaenge": "PASS",
+    "Q8_ke_abdeckung": "PASS",
+    "Q9_personifizierung": "PASS",
+    "Q10_luecken_markierung": "n/a",
+    "Q11_Q12_Q13_artefakt_positionierung": "PASS",
+    "MQ1_stundenfrage_konformitaet": "PASS",
+    "MQ5_abschluss_impuls": "PASS",
+    "QS1_dokument_vollstaendigkeit": "PASS",
+    "QS2_ke_matrix_konsistenz": "PASS",
+    "QS3_chunking_konformitaet_F_PB_47": "PASS (alle 4 Mappen 600-900 Wo)",
+    "QS4_artefakt_vollstaendigkeit": "PASS (13/13 Bilder + 2 Zitate + 1 Rollen-Slot)",
+    "QS5_tafelbild_plausibilitaet": "PASS (5-6 Knoten + 5-7 Verbindungen pro Mappe)",
+    "QS_DRIFT_drift_verarbeitung_F_PB_36": "PASS (7/7 Drift-Hinweise adressiert)",
+    "QS6_umfangs_angemessenheit": "PASS",
+    "QS7_interne_sequenzierbarkeit": "PASS",
+    "QS8_tafelbild_ableitbarkeit": "PASS",
+    "QS9_transfer_marker_pflicht": "PASS (3 Marker fuer KE GPG7_LB2_K_06 + GPG7_LB3_K_03 + GPG7_LB2_K_07)",
+    "F_PB_42_pflicht_felder_anker_briefing_tafelbild_knoten_tipp_stufen_slot": "PASS (alle 4 Mappen vollstaendig)",
+    "F_PB_46_math_counts": "PASS",
+    "F_PB_47_sk5_wortzahl": "PASS",
+    "F_PB_44_komposita_erstgebrauch": "PASS",
+    "gate_urteil_phase_0_3_skript": "PASS (alle BLOCKER + HIGH PASS, keine WARN-Eskalation noetig)"
+  },
+  "validierungsstatus": "ENTWURF",
+  "user_validierung_pflicht": "ja",
+  "naechste_phase": "Phase 0.4 (AGENT_HEFTEINTRAG) extrahiert Tafelbild-Quintessenz aus diesem Skript-Strukturartefakt"
+}

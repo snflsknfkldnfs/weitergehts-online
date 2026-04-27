@@ -1,0 +1,104 @@
+{
+  "id": "aufgabe-3-5",
+  "typ": "vergleich",
+  "frage": "Vergleiche Versailles 1919 und Clark 2013 in drei Dimensionen.",
+  "material_referenz": ["mat-3-3", "mat-3-4"],
+  "vergleichsobjekte": [
+    "Versailles 1919 (Artikel 231)",
+    "Clark 2013 (Schlafwandler-These)"
+  ],
+  "dimensionen": [
+    "Wer traegt Schuld?",
+    "Welcher Quelltyp?",
+    "Wann formuliert?"
+  ],
+  "raster": {
+    "Wer traegt Schuld?": {
+      "Versailles 1919 (Artikel 231)": [
+        "Deutschland und seine Verbuendeten allein",
+        "Allein-Schuld-Zuweisung",
+        "Deutschland ist allein verantwortlich"
+      ],
+      "Clark 2013 (Schlafwandler-These)": [
+        "Fuenf Maechte gemeinsam (Wien, Berlin, Petersburg, Paris, London)",
+        "Mehrere Regierungen gemeinsam — keine Allein-Schuld",
+        "Multi-kausal — alle 5 Maechte zusammen"
+      ]
+    },
+    "Welcher Quelltyp?": {
+      "Versailles 1919 (Artikel 231)": [
+        "Politischer Vertrag (Sieger-Position)",
+        "Vertrags-Text der Sieger-Maechte",
+        "Politisches Dokument"
+      ],
+      "Clark 2013 (Schlafwandler-These)": [
+        "Forschungs-Buch eines Historikers",
+        "Geschichts-Buch von Christopher Clark",
+        "Wissenschaftliche Forschung"
+      ]
+    },
+    "Wann formuliert?": {
+      "Versailles 1919 (Artikel 231)": [
+        "28. Juni 1919 (5 Jahre nach Kriegsbeginn)",
+        "1919, direkt nach dem Krieg",
+        "1919"
+      ],
+      "Clark 2013 (Schlafwandler-These)": [
+        "2013 (99 Jahre nach Kriegsbeginn)",
+        "2013, fast 100 Jahre nach dem Krieg",
+        "2013"
+      ]
+    }
+  },
+  "loesung": {
+    "Wer traegt Schuld?": {
+      "Versailles 1919 (Artikel 231)": "Deutschland und seine Verbuendeten allein",
+      "Clark 2013 (Schlafwandler-These)": "Fuenf Maechte gemeinsam (Wien, Berlin, Petersburg, Paris, London)"
+    },
+    "Welcher Quelltyp?": {
+      "Versailles 1919 (Artikel 231)": "Politischer Vertrag (Sieger-Position)",
+      "Clark 2013 (Schlafwandler-These)": "Forschungs-Buch eines Historikers"
+    },
+    "Wann formuliert?": {
+      "Versailles 1919 (Artikel 231)": "28. Juni 1919 (5 Jahre nach Kriegsbeginn)",
+      "Clark 2013 (Schlafwandler-These)": "2013 (99 Jahre nach Kriegsbeginn)"
+    }
+  },
+  "tipps": [
+    {"stufe": 1, "text": "Lies den [[mat-3-3|Versailles-Auszug Art. 231]] (M4) und den [[mat-3-4|Clark-Text Schlafwandler]] (M5). Suche zu jeder Dimension einen Satz aus jeder Quelle."},
+    {"stufe": 2, "text": "Vergleichen heisst: gleiche Frage an beide Quellen stellen. Frage 1 (Schuld): Wen nennt der Vertrag, wen nennt Clark? Frage 2 (Quelltyp): Vertrag oder Buch? Frage 3 (Zeit): 1919 oder 2013?"},
+    {"stufe": 3, "text": "Versailles 1919 sagt: Deutschland + Verbuendete allein schuld — politischer Vertrag der Sieger, geschlossen am 28.6.1919 (5 Jahre nach Kriegsbeginn). Clark 2013 sagt: 5 Maechte gemeinsam (Wien, Berlin, Petersburg, Paris, London) — Forschungs-Buch eines Historikers, 99 Jahre danach geschrieben. Beide Positionen widersprechen sich — die Frage 'Wer ist schuld?' hat keine einfache Antwort."}
+  ],
+  "punkte": 25,
+  "_meta": {
+    "afb": "III",
+    "bloom": "L4",
+    "scpl_zone": "P↔L",
+    "tafelbild_knoten": ["K3-1", "K3-4", "K3-5"],
+    "ke_anker": "GPG7_LB3_K_03",
+    "perspektive": "P3 (Versailler Sieger 1919) vs. P4 (Heutige Forschung Clark 2013) — kontrastive Forschungs-Pole",
+    "operationalisierungsziel": "Du kannst die Schuld-Zuweisung von Versailles 1919 und die Schlafwandler-These von Clark 2013 entlang dreier Dimensionen vergleichen — und benennen, worin sie sich unterscheiden.",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "sprachniveau": "R7",
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "freischalt_buchstabe_position": "U (Position 4 von SCHULD)",
+    "didaktisches_kernstueck": "JA — Beutelsbach-Kontroversitaet operationalisiert: beide Positionen gleichberechtigt nebeneinandergestellt, KEIN Antwort-Vorgriff (welche Position 'richtiger' ist, bleibt offen — Pos 6 fragt eigene Position)",
+    "vergleich_anti_pseudo_pruefung": "PASS — 3 trennscharfe Dimensionen (nicht 1 Pseudo-Vergleich); 2 Vergleichsobjekte derselben Kategorienebene (zwei historische Schuld-Positionen); L4 explizit gefordert (Hoehepunkt M3)",
+    "multiperspektivitaet_5_perspektiven_kontext": "P3 + P4 in dieser Aufgabe (Komplettierung nach P1+P2+P5 in Pos 3)",
+    "erarbeitbarkeits_check": "PASS — alle 6 Raster-Zellen aus mat-3-3 / mat-3-4 inhalt-Bloecken direkt ableitbar; Loesungs-Alternativen (3 Formulierungen pro Zelle) decken R7-typische Schueler-Antworten ab",
+    "q_gate_self_check": {
+      "A1_afb_kongruenz": "PASS — AFB III (Vergleichen+Bewerten Multiperspektivitaet)",
+      "A2_fragestamm_klar": "PASS — 1 Satz, 8 Woerter",
+      "A3_material_kongruenz": "PASS — alle Raster-Zellen aus beiden Materialien ableitbar",
+      "A4_VG_dimensionen_trennscharfe": "PASS — 3 disjunkte Dimensionen (Schuld-Akteur / Quelltyp / Zeitstand)",
+      "A6_tipp_progression": "PASS — Stufe 1 Material-Refs+Methode, Stufe 2 Schritt-fuer-Schritt-Anleitung, Stufe 3 vollstaendige Loesung+Synthese",
+      "A7_operator_praezision": "PASS — 'Vergleiche' als AFB-III-L4-Operator",
+      "MQ3_kein_link_in_frage": "PASS — frage enthaelt kein [[ und kein (M",
+      "MQ3b_link_in_tipp_1": "PASS — Tipp 1 enthaelt [[mat-3-3|...]] + [[mat-3-4|...]] + (M4)/(M5)",
+      "F0B_R7_metrik": "PASS — Loesungs-Texte max. 12 Woerter, R7-konform; Schlafwandler-These und Kriegsschuld-Klausel als Fachbegriffe in mat-3-3+mat-3-4 vorab eingefuehrt",
+      "beutelsbach_kein_antwortvorgriff": "PASS (BLOCKER-Pruefung) — beide Positionen werden in identischer Struktur dargestellt; KEIN Distraktor markiert eine Position als 'die richtige'; Schluss-Tipp-3 benennt explizit 'die Frage hat keine einfache Antwort'",
+      "V13_kein_NSDAP_vorgriff": "PASS — keine Weimarer-Republik-Folge-Rezeption im Schueler-Text"
+    }
+  }
+}

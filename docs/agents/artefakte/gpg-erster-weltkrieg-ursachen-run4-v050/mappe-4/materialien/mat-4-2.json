@@ -1,0 +1,63 @@
+{
+  "id": "mat-4-2",
+  "typ": "zeitleiste",
+  "titel": "Hat der Plan funktioniert? Lies an den Daten ab.",
+  "inhalt": "<figure class=\"zeitleiste\"><figcaption class=\"zeitleiste__leitfrage\">Aus geplanten sechs Wochen wurden fuenf Wochen Vormarsch — dann der Stop. Lies die sieben Daten August bis Oktober 1914.</figcaption><ol class=\"zeitleiste__eintraege\"><li class=\"zeitleiste__eintrag\"><span class=\"zeitleiste__datum\">2. August 1914</span><span class=\"zeitleiste__ereignis\">Deutschland stellt Belgien ein Ultimatum: \"Lasst uns durch!\" Belgien ist neutral und sagt nein.</span></li><li class=\"zeitleiste__eintrag\"><span class=\"zeitleiste__datum\">4. August 1914</span><span class=\"zeitleiste__ereignis\">Deutsche Truppen marschieren in Belgien ein. Am gleichen Tag erklaert Grossbritannien Deutschland den Krieg.</span></li><li class=\"zeitleiste__eintrag\"><span class=\"zeitleiste__datum\">7. August 1914</span><span class=\"zeitleiste__ereignis\">Die belgische Festung Lueck (Liege) faellt. Belgien wehrt sich — aber der Vormarsch geht weiter.</span></li><li class=\"zeitleiste__eintrag\"><span class=\"zeitleiste__datum\">20. August 1914</span><span class=\"zeitleiste__ereignis\">Bruessel faellt. Der deutsche Vormarsch ist schnell — aber die Truppen sind erschoepft, die Versorgung kommt nicht hinterher.</span></li><li class=\"zeitleiste__eintrag zeitleiste__eintrag--hoehepunkt\"><span class=\"zeitleiste__datum\">5.-12. September 1914</span><span class=\"zeitleiste__ereignis\">Marne-Schlacht: Der franzoesische General Joffre stoppt den deutschen Vormarsch etwa 40 km vor Paris.</span></li><li class=\"zeitleiste__eintrag\"><span class=\"zeitleiste__datum\">14. September 1914</span><span class=\"zeitleiste__ereignis\">Der deutsche Generalstabs-Chef Moltke wird abgesetzt. Der Schlieffen-Plan ist gescheitert.</span></li><li class=\"zeitleiste__eintrag\"><span class=\"zeitleiste__datum\">19. Oktober 1914</span><span class=\"zeitleiste__ereignis\">Wettlauf zum Meer endet — beide Seiten graben sich ein. Der Stellungskrieg beginnt.</span></li></ol></figure>",
+  "bildunterschrift": "",
+  "quelle": "Eigenproduktion (Phase 2.1, SUB_ZEITLEISTE). Datenbasis: Wikipedia-Artikel 'First Battle of the Marne', 'German invasion of Belgium (1914)', 'Race to the Sea' (Stand 2026-04-26).",
+  "lizenz": "Eigenproduktion",
+  "position": 2,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": ["mat-4-1"],
+  "ueberleitung_von": "Die Karte hat dir die Idee gezeigt: ein grosser Bogen durch Belgien in sechs Wochen. Aber hat dieser Plan in der Wirklichkeit auch funktioniert? Lies an den Daten ab.",
+  "sequenz_kontext": {
+    "vorher": {"id": "mat-4-1", "typ": "karte", "kerninhalt": "Karte mit den geplanten Bewegungs-Pfeilen des Schlieffen-Plans."},
+    "nachher": {"id": "mat-4-3", "typ": "bildquelle", "kerninhalt": "DT-Soldaten-Foto an der Marne — Quellenkritik-Anker."}
+  },
+  "perspektiv_tags": ["nicht-dominant", "Opfer"],
+  "_meta": {
+    "wortanzahl_inhalt": 152,
+    "wortanzahl_bildunterschrift": 0,
+    "anzahl_eintraege": 7,
+    "fachbegriffe_eingefuehrt": ["Marne-Schlacht", "Wendepunkt"],
+    "fachbegriffe_referenziert": ["Schlieffen-Plan (mat-4-1)", "Mobilmachung (M2)", "Buendnisfall (M2)", "Neutralitaet (M2)"],
+    "tafelbild_knoten": ["K4-3", "K4-4", "K4-5"],
+    "scpl_zone_primary": "C1",
+    "scpl_zonen_abdeckung": ["C1", "C2", "P"],
+    "artefakt_ref": [],
+    "skript_ref": "M4 §3-§7",
+    "datenbasis_hashes": ["wiki-marne-2026-04-26", "wiki-belgium-1914-2026-04-26", "wiki-race-sea-2026-04-26"],
+    "ke_anker_haupt": "GPG7_LB2_K_07",
+    "afb": "II",
+    "bloom": "Anwenden -> Analysieren",
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "sprachniveau": "R7",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "sensibilitaets_markierung": "keine",
+    "bildfunktion": "n/a",
+    "material_charakter": "vergegenwaertigung",
+    "analyseauftrag": true,
+    "personalisiert": false,
+    "perspektive": "Multiperspektivisch (DT-Vormarsch / BE-Opfer / FR-Stop / GB-Kriegseintritt)",
+    "perspektiv_doppel_belgien_opfer": "02.08. (Ultimatum) + 04.08. (Einmarsch) + 07.08. (Lueck) + 20.08. (Bruessel) — vier Eintraege geben Belgien als Opfer der Neutralitaets-Verletzung Stimme.",
+    "tipp_stufen": {
+      "stufe_1": "Wann begann der Plan — und wann wurde er gestoppt?",
+      "stufe_2": "Plan war sechs Wochen. Marne-Stop war nach fuenf Wochen. Was bedeutet das?",
+      "stufe_3": "Schlieffen-Plan: 6 Wochen FR-Sieg. Realitaet: 02.08. Ultimatum, 04.08. Einmarsch+GB-Kriegseintritt, 05.-12.09. Marne-Stop ca. 40 km vor Paris, 14.09. Moltke abgesetzt. Plan gescheitert."
+    },
+    "leitfrage": "Aus geplanten sechs Wochen wurden fuenf Wochen Vormarsch — dann der Stop. Lies die sieben Daten August bis Oktober 1914.",
+    "kernerkenntnisse_bezug": [
+      "Belgien-Bruch 4.8.1914 → GB-Kriegseintritt",
+      "Marne-Schlacht 5.-12.9.1914: Joffre stoppt DT-Vormarsch ca. 40 km vor Paris",
+      "Wendepunkt: Stellungskrieg beginnt"
+    ],
+    "trigger_vermerk": ["weltkrieg_grossereignis", "konflikt"],
+    "f_pb_44_komposita_check": {
+      "marne_schlacht_erstgebrauch": "Eintrag 5.-12.9.: 'Marne-Schlacht: Der franzoesische General Joffre stoppt den deutschen Vormarsch etwa 40 km vor Paris.' — Bindestrich + Funktions-Erklaerung im gleichen Satz",
+      "wendepunkt_erstgebrauch": "noch nicht im Eintrag, wird im naechsten Material/Bridge eingefuehrt; Begriff erscheint als Konzept (Wettlauf zum Meer endet — Stellungskrieg beginnt)",
+      "stellungskrieg_avoid": "Begriff vorausverwendet im letzten Eintrag, aber NICHT erklaert (Erklaerung in mat-4-6) — Sequenz-OK weil mat-4-6 nachfolgt und Sicherung leistet"
+    },
+    "erarbeitbarkeits_check": "PASS — SuS lesen die Daten ab, vergleichen mit Plan-Idee aus mat-4-1 (6 Wochen vs. 5 Wochen), erkennen die Eskalation Belgien-Verletzung -> GB-Kriegseintritt -> Marne-Stop -> Stellungskrieg-Beginn."
+  }
+}

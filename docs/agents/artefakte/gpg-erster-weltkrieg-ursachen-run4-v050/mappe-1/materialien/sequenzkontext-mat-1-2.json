@@ -1,0 +1,50 @@
+{
+  "schema_version": "sequenzkontext_v1",
+  "mat_id": "mat-1-2",
+  "material_id_design": "m1-mat-02",
+  "typ": "bildquelle",
+  "position_in_mappe": 3,
+  "anzahl_materialien_mappe": 6,
+  "didaktische_funktion": "erarbeitung",
+  "primary_scpl_zone": "C2",
+  "scpl_zonen_abdeckung": ["C2"],
+  "vorausgesetztes_wissen": {
+    "fachbegriffe": ["Buendnis", "Dreibund", "Triple Entente", "Buendnis-System", "Imperialismus", "Pulverfass-Metapher"],
+    "source_materialien": ["mat-1-1", "mat-1-4"]
+  },
+  "noch_nicht_eingefuehrt": {
+    "fachbegriffe": ["Wettruesten", "Kolonialwettlauf", "Kolonie", "Marokko-Krisen", "Berliner Konferenz 1884"],
+    "source_materialien": ["mat-1-5", "mat-1-6", "mat-1-3"]
+  },
+  "vorheriges_material": {
+    "id": "mat-1-4",
+    "typ": "darstellungstext",
+    "kerninhalt": "Buendnis-System: Begriff, Mitglieder, Mechanismus 'Wer angegriffen wird, dem helfen die anderen'.",
+    "design_id": "m1-mat-04"
+  },
+  "naechstes_material": {
+    "id": "mat-1-5",
+    "typ": "statistik",
+    "kerninhalt": "Quantifizierung: 29 vs. 17 Grossschiffe 1914 — britischer Vorsprung blieb.",
+    "design_id": "m1-mat-05"
+  },
+  "fachbegriffe_eingefuehrt": ["Flotten-Wettlauf", "HMS Dreadnought"],
+  "zugeordneter_tb_knoten": [
+    {"id": "K1-4", "label": "Flotten-Wettlauf", "elemente": ["HMS Dreadnought 1906", "Tirpitz-Plan 1898", "29 vs 17 Grossschiffe 1914"]}
+  ],
+  "dominante_perspektive": "britisch (Royal Navy Selbstdokumentation)",
+  "perspektiv_tags_plan": ["dominant", "Macht-Ausuebung"],
+  "erwartete_aktivitaet": "Betrachten (Foto eines Schlachtschiffs) + Lesen der Bildunterschrift",
+  "stundenfrage": "Warum war Europa vor 1914 ein 'Pulverfass'?",
+  "artefakt_ref": "img-m1-01",
+  "wikimedia_filename": "HMS_Dreadnought_1906_H61017.jpg",
+  "lizenz": "Public Domain (PD-USNavy)",
+  "urheber": "U.S. Navy / Restauration Adam Cuerden",
+  "sensibilitaets_markierung": "keine",
+  "quellenkritik_pflicht": false,
+  "ueberleitung_zu_naechstem": {
+    "rueckbezug": "Die HMS Dreadnought 1906 war Antwort auf den deutschen Flotten-Aufbau.",
+    "vorausblick": "Wie viele solcher Schiffe haben die zwei Seiten bis 1914 gebaut?",
+    "kausalitaets_typ": "vertiefend"
+  }
+}

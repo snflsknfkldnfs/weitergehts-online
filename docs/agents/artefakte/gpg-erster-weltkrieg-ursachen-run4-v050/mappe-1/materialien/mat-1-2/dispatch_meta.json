@@ -1,0 +1,32 @@
+{
+  "schema_version": "dispatch_meta_v1",
+  "mat_id": "mat-1-2",
+  "subagent_type": "sub-material-bildquelle",
+  "subagent_engine_typ": "bildquelle",
+  "dispatch_modus": "GENERATOR",
+  "dispatch_timestamp_utc": "2026-04-26T12:01:00Z",
+  "g1_partial_gate": {
+    "status": "PASS",
+    "redispatch_count": 0,
+    "schema_validated": "material-output-schema (Legacy v3.10.2)",
+    "notes": "Bildquelle mat-1-2 ueber Wikimedia-Bild img-m1-01 (PD-USNavy). BU 11 Woerter. Inhalt 65 Woerter."
+  },
+  "g2_full_gate": {
+    "status": "PASS",
+    "redispatch_count": 0,
+    "merged_struktur_felder": ["id", "typ", "titel", "position", "didaktische_funktion", "voraussetzung", "ueberleitung_von", "sequenz_kontext", "perspektiv_tags"]
+  },
+  "m16_prosa_only": {"status": "N/A", "reason": "Bildquelle-Typ — kein Aufgaben-Operator-Risiko"},
+  "m17_quelle_ssot": {"status": "PASS", "notes": "Quellenangabe in <cite> + quelle-Feld; keine Dopplung."},
+  "g3_llm_review": {"status": "N/A", "reason": "Nicht-quellentext-Typ"},
+  "f_pb_44_komposita": {
+    "status": "PASS",
+    "komposita_check": ["HMS Dreadnought (Erstgebrauch im Inhalt benannt + 'All-big-gun' erklaert)", "Flotten-Wettlauf (Erstgebrauch zerlegt: 'Wettrennen begann')", "Royal Navy (eingefuehrt im Skript M1 §3, hier referenziert)"]
+  },
+  "f0b_priming_r7": {"status": "PASS", "notes": "BU 11W; Saetze max. 13W; Hauptsatz-dominant."},
+  "perspektiv_tags_validation": {"status": "PASS", "tags": ["dominant", "Macht-Ausuebung"], "min_count": 1, "enum_valid": true},
+  "final_material_path": "materialien/mat-1-2.json",
+  "iteration_budget_used": "0/1",
+  "eskalation_flag": false,
+  "gate_summary": "PASS"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "mat-1-4",
+  "typ": "darstellungstext",
+  "titel": "Was ist ein Buendnis-System?",
+  "inhalt": "<p>Ein <strong>Buendnis</strong> ist ein Versprechen zwischen Laendern. Sie versprechen sich: Wenn einer von uns angegriffen wird, helfen die anderen. Stell dir das wie eine Schul-Clique vor. Wer einen aus der Clique aergert, bekommt es mit allen zu tun.</p><p>Vor 1914 gibt es in Europa zwei grosse Buendnisse. Der <strong>Dreibund</strong> (1882) verbindet das Deutsche Reich, Oesterreich-Ungarn und Italien. Die <strong>Triple Entente</strong> (1907) verbindet Frankreich, Russland und Grossbritannien. Mehrere Buendnisse zusammen nennt man ein <em>Buendnis-System</em>: ein System aus mehreren Buendnissen.</p><p>Das ist gefaehrlich. Denn jetzt streiten die Maechte nicht nur um zwei Dinge: Sie bauen riesige Kriegsflotten und sie streiten um Land in Afrika. Das nennt man auch <em>Imperialismus</em> — also der Wunsch, in der ganzen Welt Macht zu haben. Drei Spannungen treffen jetzt auf zwei feindliche Buendnisse. Das ergibt das <strong>Pulverfass Europa</strong>. Es braucht nur noch einen Funken.</p>",
+  "bildunterschrift": "",
+  "quelle": "Eigenproduktion (agent-material, Phase 2.1). Datenbasis: Wikipedia 'Triple Alliance (1882)', 'Triple Entente', 'Causes of World War I' (Stand 2026-04-26).",
+  "lizenz": "Eigenproduktion",
+  "position": 2,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": ["mat-1-1"],
+  "ueberleitung_von": "Die Karte zeigt zwei Buendnis-Bloecke und sechs Grossmaechte um 1914. Was bedeutet ueberhaupt 'Buendnis' — und was ist daran gefaehrlich?",
+  "sequenz_kontext": {
+    "vorher": {"id": "mat-1-1", "typ": "karte", "kerninhalt": "Europa 1914: zwei Buendnisse, sechs Grossmaechte."},
+    "nachher": {"id": "mat-1-2", "typ": "bildquelle", "kerninhalt": "HMS Dreadnought 1906 — Symbol des Flotten-Wettlaufs."}
+  },
+  "perspektiv_tags": ["Aussen", "dominant"],
+  "_meta": {
+    "wortanzahl_inhalt": 156,
+    "wortanzahl_bildunterschrift": 0,
+    "fachbegriffe_eingefuehrt": ["Buendnis-System", "Imperialismus", "Pulverfass-Metapher"],
+    "fachbegriffe_referenziert": ["Buendnis", "Dreibund", "Triple Entente"],
+    "tafelbild_knoten": ["K1-2", "K1-3", "K1-1"],
+    "scpl_zone_primary": "C1",
+    "scpl_zonen_abdeckung": ["C1", "P"],
+    "artefakt_ref": [],
+    "skript_ref": "M1 §1-§2, §7",
+    "datenbasis_hashes": ["wiki-triple-alliance-2026-04-26", "wiki-triple-entente-2026-04-26", "wiki-causes-wwi-2026-04-26"],
+    "ke_anker_haupt": "GPG7_LB2_K_05",
+    "afb": "I-II",
+    "bloom": "Verstehen → Anwenden",
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "sprachniveau": "R7",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "sensibilitaets_markierung": "keine",
+    "quellenkritik_pflicht": false,
+    "saetze_anzahl": 11,
+    "max_satzlaenge_woerter": 18,
+    "komposita_erstgebrauch_zerlegt": [
+      {"kompositum": "Buendnis-System", "zerlegung": "ein System aus mehreren Buendnissen"},
+      {"kompositum": "Pulverfass Europa", "zerlegung": "implizite Metapher: brennbare Lage, in der ein Funke reicht"}
+    ]
+  }
+}

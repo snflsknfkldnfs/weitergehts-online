@@ -1,0 +1,43 @@
+{
+  "id": "mat-2-2",
+  "typ": "bildquelle",
+  "titel": "Wo genau passierte das Attentat in Sarajevo?",
+  "position": 2,
+  "didaktische_funktion": "erarbeitung",
+  "voraussetzung": ["mat-2-1"],
+  "ueberleitung_von": "Auf der Zeitleiste hast du das erste Datum gesehen: 28. Juni 1914 in Sarajevo. Jetzt zoomst du in den Tag hinein.",
+  "sequenz_kontext": {
+    "vorher": {
+      "id": "mat-2-1",
+      "typ": "zeitleiste",
+      "kerninhalt": "Vom Schuss in Sarajevo zum Weltkrieg in 5 Wochen."
+    },
+    "nachher": {
+      "id": "mat-2-3",
+      "typ": "bildquelle",
+      "kerninhalt": "Hofportrait Franz Ferdinand."
+    }
+  },
+  "perspektiv_tags": ["nicht-dominant"],
+  "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen-run4-v050/img-m2-01.svg",
+  "bildunterschrift": "Tatortskizze Sarajevo, 28. Juni 1914: Lateinerbrücke, Fahrtroute des Autos und Standort von Princip. Hinweis: Sekundär-Skizze, kein Foto vom Tatort.",
+  "quelle": "User:Oni Lukos, Wikimedia Commons.",
+  "lizenz": "CC-BY-SA-3.0",
+  "_meta": {
+    "wortanzahl": 28,
+    "aufbereitung": "rekonstruiert",
+    "rekonstruktions_begruendung": "Sekundär-Skizze (SVG-Plan-Rekonstruktion), bewusste didaktische Wahl statt Foto wegen gewalt_altersfilter-Constraint. Keine Gewaltdarstellung, raeumliche Rekonstruktion des Tatorts.",
+    "artefakt_ref": ["pb-2-1"],
+    "tafelbild_knoten_abgedeckt": ["k2-2"],
+    "perspektive": "uebergreifend",
+    "quellenkritische_impulse": [
+      "Was zeigt diese Skizze — und was zeigt sie bewusst nicht?",
+      "Warum waehlt man eine Skizze statt eines Fotos vom Tatort?"
+    ],
+    "erarbeitbarkeits_check": "PASS — Skizze macht Lateinerbruecke, Auto-Wendepunkt und Schussposition raeumlich erkennbar. SuS koennen rekonstruieren, was wo passierte (S-Zone), ohne Verletzungs-Darstellung.",
+    "trigger_flags": ["krieg"],
+    "kontextualisierung_pflicht": "Skizze ist Sekundaer-Quelle ohne Original-Charakter. Bewusste Wahl: keine Foto-Darstellung der Tat selbst.",
+    "fachbegriffe_eingefuehrt": ["Sarajevo", "Lateinerbruecke"],
+    "altersfilter_hinweis": "Erfuellt: keine Beschreibung von Verletzungen, keine Erwaehnung des Sterbens. Fokus auf raeumliche Rekonstruktion."
+  }
+}

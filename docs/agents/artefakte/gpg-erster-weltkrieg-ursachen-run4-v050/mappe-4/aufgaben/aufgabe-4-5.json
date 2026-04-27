@@ -1,0 +1,39 @@
+{
+  "id": "aufgabe-4-5",
+  "typ": "multiple-choice",
+  "frage": "Was zeigen die Verlust-Zahlen der Marne-Schlacht?",
+  "material_referenz": ["mat-4-5"],
+  "optionen": [
+    "Mehr als 500.000 Tote und Verwundete in 7 Tagen — Frankreich, Grossbritannien und Deutschland sind alle drei betroffen.",
+    "Nur Deutschland hatte hohe Verluste — Frankreich und Grossbritannien waren kaum betroffen.",
+    "Die Zahlen waren niedrig — die Idee vom kurzen Krieg wurde bestaetigt.",
+    "Nur Frankreich hatte Verluste — die anderen Laender kaempften nicht an der Marne."
+  ],
+  "loesung": "Mehr als 500.000 Tote und Verwundete in 7 Tagen — Frankreich, Grossbritannien und Deutschland sind alle drei betroffen.",
+  "tipps": [
+    {"stufe": 1, "text": "Schau dir die [[mat-4-5|Verluste-Statistik der Marne-Schlacht]] (M5) genau an. Welche drei Laender stehen in der Tabelle?"},
+    {"stufe": 2, "text": "Rechne die drei Zahlen zusammen. Wie lange dauerte die Schlacht? Was bedeutet das fuer die Idee vom „kurzen Krieg\"?"},
+    {"stufe": 3, "text": "Loesung: Mehr als 500.000 Tote und Verwundete in einer Woche — und alle drei Konfliktparteien (FR, GB, DT) waren betroffen. Diese Wucht zerstoert die Idee vom kurzen Krieg. Wichtig: Soldaten beider Seiten waren Betroffene — kein Sieger-Verlierer-Mythos."}
+  ],
+  "punkte": 10,
+  "_meta": {
+    "afb": "II",
+    "bloom": "Analysieren",
+    "tb_knoten": ["K4-4", "K4-5"],
+    "scpl_zone": "P",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "sprachniveau": "R7",
+    "multiperspektivitaet": "Drei-Parteien-Statistik (FR/GB/DT) korrigiert Sieger-Verlierer-Mythos",
+    "q_gate": {
+      "A1_afb_kongruenz": "PASS",
+      "A2_fragestamm_klarheit": "PASS — 7 Worte, Operator (zeigen)",
+      "A4_mc_distractor_qualitaet": "PASS — Distraktor 'Nur Deutschland' korrigiert Sieger-Verlierer-Mythos; Distraktor 'kurzer Krieg bestaetigt' ist Inversion; Distraktor 'Nur Frankreich' ist faktisch falsch",
+      "A6_tipp_progression": "PASS",
+      "MQ3_material_referenz_in_frage": "PASS",
+      "MQ3b_display_referenz_in_tipp1": "PASS — [[mat-4-5|Verluste-Statistik der Marne-Schlacht]] (M5)",
+      "altersfilter": "PASS — Zahlen genannt, nicht visualisiert; keine Verletzungs-Beschreibung"
+    }
+  }
+}

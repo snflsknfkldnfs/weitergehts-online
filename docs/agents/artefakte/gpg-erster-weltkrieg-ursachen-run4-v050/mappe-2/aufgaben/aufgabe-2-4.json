@@ -1,0 +1,57 @@
+{
+  "id": "aufgabe-2-4",
+  "typ": "reihenfolge",
+  "frage": "Bringe die vier Kriegserklaerungen vom 28. Juli bis 4. August 1914 in die richtige Reihenfolge.",
+  "material_referenz": ["mat-2-1"],
+  "elemente": [
+    "28. Juli 1914: Oesterreich-Ungarn erklaert Serbien den Krieg.",
+    "1. August 1914: Deutschland erklaert Russland den Krieg.",
+    "3. August 1914: Deutschland erklaert Frankreich den Krieg.",
+    "4. August 1914: Grossbritannien erklaert Deutschland den Krieg."
+  ],
+  "loesung": [
+    "28. Juli 1914: Oesterreich-Ungarn erklaert Serbien den Krieg.",
+    "1. August 1914: Deutschland erklaert Russland den Krieg.",
+    "3. August 1914: Deutschland erklaert Frankreich den Krieg.",
+    "4. August 1914: Grossbritannien erklaert Deutschland den Krieg."
+  ],
+  "ordnungsprinzip": "chronologisch",
+  "tipps": [
+    {
+      "stufe": 1,
+      "text": "Schau auf die [[mat-2-1|Zeitleiste der Julikrise]] (M1) ab dem 28. Juli."
+    },
+    {
+      "stufe": 2,
+      "text": "Erst beginnt Oesterreich-Ungarn — wegen Serbien. Dann reagiert Deutschland (zweimal). Zum Schluss greift Grossbritannien ein, weil Deutschland durch Belgien marschiert."
+    },
+    {
+      "stufe": 3,
+      "text": "Loesung: 28.7. AT-UN -> Serbien -> 1.8. DT -> Russland -> 3.8. DT -> Frankreich -> 4.8. GB -> Deutschland. Merke: Buendnisfall heisst, dass jedes Land seinem Buendnis-Partner helfen muss. So fielen die Buendnisse wie Dominosteine — in nur einer Woche entstand ein Weltkrieg."
+    }
+  ],
+  "punkte": 12,
+  "_meta": {
+    "bloom": "L3",
+    "afb": "II",
+    "scpl_zone": "C3",
+    "tafelbild_knoten": ["K2-5"],
+    "ke_anker_haupt": "GPG7_LB2_K_06",
+    "ziel_material_id": "mat-2-1",
+    "operationalisierungsziel": "Die SuS rekonstruieren die chronologische Kausalkette der vier Kriegserklaerungen 28. Juli bis 4. August 1914 und wenden den Begriff 'Buendnisfall' auf das konkrete Domino an.",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "subagent": "sub-aufgabe-reihenfolge",
+    "fachbegriffe_eingefuehrt_im_material": ["Buendnisfall", "Mobilmachung"],
+    "q_gate": {
+      "A1_afb_kongruenz": "PASS — AFB II (Begriffs-Anwendung Buendnisfall)",
+      "A2_fragestamm_klarheit": "PASS — 14 Woerter, klar",
+      "A3_material_kongruenz": "PASS — alle 4 Kriegserklaerungen in mat-2-1 Eintraege #4-#7",
+      "A4_rf_eindeutigkeit": "PASS — chronologisch eindeutig durch Datum 28.7./1.8./3.8./4.8.",
+      "A6_tipp_progression": "PASS",
+      "A7_operator_praezision": "PASS — 'Bringe in Reihenfolge' (AFB II)",
+      "MQ3_kein_link_in_frage": "PASS",
+      "MQ3b_displayref_in_tipp1": "PASS — [[mat-2-1|...]] (M1)",
+      "F0B_R7": "PASS — kurze Hauptsaetze"
+    }
+  }
+}

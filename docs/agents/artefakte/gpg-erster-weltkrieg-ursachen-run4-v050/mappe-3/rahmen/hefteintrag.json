@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0",
+  "mappe_id": "M3",
+  "stundenfrage": "Wer war im August 1914 begeistert — und wer hat heute die Schuld am Krieg?",
+  "ordnungsmuster": "kategorial-kontrastiv",
+  "scpl": {
+    "situation": {
+      "kontextsatz": "Im August 1914 ziehen viele junge Maenner mit Begeisterung in den Krieg. Diese Stimmung nennt man Augusterlebnis oder Augustbegeisterung.",
+      "fachbegriffe": ["Augusterlebnis", "Augustbegeisterung"]
+    },
+    "complication": [
+      {"schritt": "Aber Vorsicht: Die Fotos zeigen meist nur Stadt-Buerger. Auf dem Land und in den Arbeiter-Vierteln waren viele Menschen skeptisch oder ablehnend. Beim Anschauen einer Quelle gilt: Quellenkritik — wer schreibt, wann, mit welchem Ziel?", "fachbegriff": "Quellenkritik", "darstellung": null},
+      {"schritt": "Am 4. August 1914 stimmt sogar die SPD im Reichstag fuer die Kriegskredite. Alle Parteien sind dafuer. Diese Einigkeit nennt man Burgfrieden. 1916/17 zerbricht der Burgfrieden wieder.", "fachbegriff": "Burgfrieden", "darstellung": null}
+    ],
+    "problem": {
+      "satz": "Vier Jahre spaeter ist der Krieg verloren. Im Vertrag von Versailles steht 1919 die Kriegsschuld-Klausel (Artikel 231): Deutschland und seine Verbuendeten seien allein schuld.",
+      "fachbegriff": "Kriegsschuldfrage"
+    },
+    "loesung": [
+      "Heute sieht der Forscher Christopher Clark das anders. In seinem Buch Die Schlafwandler (2013) schreibt er: Keine Macht hat allein Schuld. Mehrere Regierungen sind wie Schlafwandler in den Krieg getaumelt — Wien, Berlin, Petersburg, Paris und London.",
+      "Die Frage 'Wer ist schuld?' hat keine einfache Antwort. Begeisterung war Stadt-Sache. Schuld war geteilt."
+    ]
+  },
+  "transfer": {
+    "frage": "Wer schreibt heute Schuld zu — und mit welchem Recht?"
+  },
+  "voraussetzungen": [
+    "M1: Pulverfass Europa, Buendnis-System (Dreibund + Triple Entente)",
+    "M2: Ursache vs. Ausloeser, Buendnisfall, Mobilmachung"
+  ],
+  "kernerkenntnisse": [
+    "Die Augustbegeisterung 1914 war real, aber nicht ueberall — Stadt-Mittelschicht jubelte, Land + Arbeiter waren oft skeptisch.",
+    "Burgfrieden 4.8.1914: Alle Parteien im Reichstag (auch SPD) stimmen den Kriegskrediten zu. Zerfaellt 1916/17.",
+    "Kriegsschuld-Klausel (Versailles Art. 231, 1919): Deutschland und Verbuendete allein schuld.",
+    "Schlafwandler-These (Clark, 2013): Mehrere Maechte sind gemeinsam in den Krieg getaumelt.",
+    "Quellenkritik: Wer schreibt? Wann? Mit welchem Ziel? — Pflicht-Methode bei jeder Quelle."
+  ],
+  "knoten": [
+    {"id": "K3-1", "label": "Kriegsschuldfrage", "position": "zentrum", "typ": "leitbegriff"},
+    {"id": "K3-2", "label": "Augusterlebnis 1914", "position": "oben-links", "typ": "phaenomen"},
+    {"id": "K3-3", "label": "Burgfrieden 4.8.1914", "position": "oben-rechts", "typ": "ereignis"},
+    {"id": "K3-4", "label": "Versailles Art. 231 (1919)", "position": "unten-links", "typ": "quellentext"},
+    {"id": "K3-5", "label": "Clark — Schlafwandler (2013)", "position": "unten-rechts", "typ": "forschungsstand"},
+    {"id": "K3-6", "label": "Quellenkritik", "position": "rand", "typ": "methode"}
+  ],
+  "verbindungen": [
+    {"von": "K3-2", "nach": "K3-1", "label": "ist Teil der Frage"},
+    {"von": "K3-3", "nach": "K3-1", "label": "zeigt politische Einigkeit Anfang"},
+    {"von": "K3-4", "nach": "K3-1", "label": "Antwort 1919"},
+    {"von": "K3-5", "nach": "K3-1", "label": "Antwort 2013"},
+    {"von": "K3-4", "nach": "K3-5", "label": "widerspricht"},
+    {"von": "K3-6", "nach": "K3-2", "label": "deckt Bias auf"},
+    {"von": "K3-6", "nach": "K3-4", "label": "deckt Position auf"}
+  ],
+  "_meta": {
+    "tafelbild_visualisierung": "hierarchisch_frage_im_zentrum",
+    "schluessel_begriffe": ["Augusterlebnis", "Burgfrieden", "Kriegsschuld-Klausel", "Kriegsschuldfrage", "Quellenkritik", "Schlafwandler-These"],
+    "wortanzahl_schueler_text": 145,
+    "korridor_pass": true,
+    "tafelbild_knoten_uebernahme": "1:1 aus hefteintrag_struktur.json M3 (Phase 0.4) — STRUKTUR-FREEZE."
+  }
+}

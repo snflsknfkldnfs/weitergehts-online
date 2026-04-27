@@ -1,0 +1,45 @@
+{
+  "id": "mat-2-1",
+  "typ": "zeitleiste",
+  "titel": "Wie wurde aus einem Schuss in fünf Wochen ein Weltkrieg?",
+  "position": 1,
+  "didaktische_funktion": "einstieg",
+  "voraussetzung": [],
+  "ueberleitung_von": null,
+  "sequenz_kontext": {
+    "vorher": null,
+    "nachher": {
+      "id": "mat-2-2",
+      "typ": "bildquelle",
+      "kerninhalt": "Tatortskizze: Wo das Attentat räumlich stattfand."
+    }
+  },
+  "perspektiv_tags": ["nicht-dominant", "Macht-Betroffen"],
+  "inhalt": [
+    {"datum": "28. Juni 1914", "text": "Sarajevo: Princip erschießt Thronfolger Franz Ferdinand und seine Frau Sophie."},
+    {"datum": "5./6. Juli 1914", "text": "Berlin: Kaiser Wilhelm II. gibt Wien den Blanko-Scheck — ein Versprechen ohne Bedingungen."},
+    {"datum": "23. Juli 1914", "text": "Wien stellt Serbien ein Ultimatum mit 48-Stunden-Frist (eine Forderung mit Frist)."},
+    {"datum": "28. Juli 1914", "text": "Österreich-Ungarn erklärt Serbien den Krieg — genau einen Monat nach dem Attentat."},
+    {"datum": "1. August 1914", "text": "Deutschland erklärt Russland den Krieg, weil Russland mobil macht."},
+    {"datum": "3. August 1914", "text": "Deutschland erklärt Frankreich den Krieg und greift über Belgien an."},
+    {"datum": "4. August 1914", "text": "Großbritannien erklärt Deutschland den Krieg — wegen des Bündnisfalls für Belgien."}
+  ],
+  "quelle": "Eigene Zusammenstellung. Quellen: Wikipedia „Julikrise\", „Erster Weltkrieg\", „Deutsche Invasion Belgiens 1914\".",
+  "_meta": {
+    "wortanzahl": 102,
+    "aufbereitung": "rekonstruiert",
+    "rekonstruktions_begruendung": "Zeitleiste ist agent-generierte didaktische Zusammenstellung aus SKRIPT M2 §3-§5 + INHALTSBASIS-Chronologie M2. Kein Original-Artefakt, daher aufbereitung=rekonstruiert. Ankerpunkte: 28.6., 23.7., 4.8.",
+    "artefakt_ref": ["pz-2-1"],
+    "tafelbild_knoten_abgedeckt": ["k2-3", "k2-4", "k2-5"],
+    "perspektive": "uebergreifend",
+    "quellenkritische_impulse": [
+      "Welcher Schritt in dieser Kette war am wichtigsten — und warum?",
+      "Wie viele Tage liegen zwischen Attentat und Weltkrieg?"
+    ],
+    "erarbeitbarkeits_check": "PASS — 7 Daten + 6 Akteure decken C1 (Blanko-Scheck), C2 (Ultimatum + Kriegserklärung), C3 (Bündnis-Domino) und P (5 Wochen → Weltkrieg) ab.",
+    "trigger_flags": ["krieg"],
+    "tempo_hinweis": "In nur 5 Wochen aus einem Schuss ein Weltkrieg.",
+    "fachbegriffe_eingefuehrt": ["Julikrise", "Blanko-Scheck", "Ultimatum", "Mobilmachung", "Buendnisfall"],
+    "fachbegriffe_referenziert": ["Buendnis-System (M1)", "Dreibund (M1)", "Triple Entente (M1)"]
+  }
+}

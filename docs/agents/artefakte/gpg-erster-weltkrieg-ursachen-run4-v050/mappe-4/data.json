@@ -1,0 +1,74 @@
+{
+  "id": "mappe-4",
+  "titel": "Marne 1914 — Das Ende des kurzen Krieges",
+  "beschreibung": "Im August 1914 marschierten deutsche Truppen nach dem Schlieffen-Plan durch das neutrale Belgien. Sie wollten Frankreich in sechs Wochen besiegen. An der Marne im September 1914 wurde der Vormarsch gestoppt. Aus dem Plan vom kurzen Krieg wurde ein vier Jahre langer Stellungskrieg. In dieser Mappe schliesst du die Untersuchung ab — und entdeckst den letzten Buchstaben-Code.",
+  "freischalt_code": "STELLUNGSKRIEG",
+  "aufgaben": [
+    {"$ref": "aufgaben/aufgabe-4-1.json"},
+    {"$ref": "aufgaben/aufgabe-4-2.json"},
+    {"$ref": "aufgaben/aufgabe-4-3.json"},
+    {"$ref": "aufgaben/aufgabe-4-4.json"},
+    {"$ref": "aufgaben/aufgabe-4-5.json"},
+    {"$ref": "aufgaben/aufgabe-4-6.json"},
+    {"$ref": "aufgaben/aufgabe-4-7.json"}
+  ],
+  "materialien": [
+    {"$ref": "materialien/mat-4-1.json"},
+    {"$ref": "materialien/mat-4-2.json"},
+    {"$ref": "materialien/mat-4-3.json"},
+    {"$ref": "materialien/mat-4-4.json"},
+    {"$ref": "materialien/mat-4-5.json"},
+    {"$ref": "materialien/mat-4-6.json"}
+  ],
+  "rahmen": {
+    "einstieg": {"$ref": "rahmen/einstieg.json"},
+    "hefteintrag": {"$ref": "rahmen/hefteintrag.json"},
+    "sicherung": {"$ref": "rahmen/sicherung.json"},
+    "meta": {"$ref": "rahmen/meta.json"}
+  },
+  "mappenabschluss": {"$ref": "mappenabschluss.json"},
+  "_meta": {
+    "schema_version": "data_mappe_v1",
+    "phase": "2.2c",
+    "agent": "sub-template-mappenabschluss",
+    "created_at": "2026-04-26",
+    "game_id": "gpg-erster-weltkrieg-ursachen-run4-v050",
+    "mappe_id": "M4",
+    "mappe_index": 4,
+    "letzte_mappe_indikator": true,
+    "ke_anker_haupt": "GPG7_LB2_K_07",
+    "afb_schwerpunkt": "II",
+    "bloom_korridor": "L2-L4",
+    "scpl_zonen_abdeckung": ["S", "C1", "C2", "P", "L"],
+    "schluessel_code_element_m4": "STELLUNGSKRIEG",
+    "game_abschluss_code_komplett": "PULVERFASS — AUSLOESER — AUGUSTBEGEISTERUNG — STELLUNGSKRIEG",
+    "folge_game_bruecke": ["Stellungskrieg", "Heimatfront", "Versailles"],
+    "f_pb_addressed": [
+      "F-PB-37 (Quellenkritik mat-4-3 + mat-4-4 in aufgabe-4-4 + Multiperspektivitaet im Mappenabschluss)",
+      "F-PB-44 (Komposita-Erstgebrauch — alle erklaert)",
+      "POLICY_TRIGGER_SICHTBARKEIT (PASS, Trigger nur in Lehrkraft-Sektion)"
+    ],
+    "plugin_version": "v0.5.0",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "sprachniveau": "R7",
+    "mappenabschluss_variante": "B",
+    "mappenabschluss_q_gates_pass": [
+      "MZ1_variante_korrekt",
+      "MZ2_disjunkt_zu_hefteintrag",
+      "MZ3_keine_faktenabfrage",
+      "MZ4_ueberleitungssatz_var_b",
+      "MZ5_sprachregister_R7",
+      "POLICY_TRIGGER_SICHTBARKEIT",
+      "GAME_ABSCHLUSS_4_MAPPEN_BEFUND",
+      "FOLGE_GAME_BRUECKE_OHNE_STOFFVORGRIFF",
+      "ENGINE_KOMPATIBILITAET",
+      "F0B_PRIMING_R7_ENTLASTEND_NACH_M3",
+      "SCHLIEFFEN_PLAN_MYTHOS_KORREKTUR_AUSGEWIESEN",
+      "MULTIPERSPEKTIVITAET_SIEGER_VERLIERER_ABSCHLIESSEND",
+      "M3_MULTIPERSPEKTIV_SANITY_V19"
+    ],
+    "next_phase": "Phase 3 (Game-Assembly)"
+  }
+}

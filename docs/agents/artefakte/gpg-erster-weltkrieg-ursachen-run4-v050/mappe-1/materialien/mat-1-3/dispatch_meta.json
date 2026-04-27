@@ -1,0 +1,39 @@
+{
+  "schema_version": "dispatch_meta_v1",
+  "mat_id": "mat-1-3",
+  "subagent_type": "sub-material-bildquelle",
+  "subagent_engine_typ": "bildquelle",
+  "dispatch_modus": "GENERATOR",
+  "dispatch_timestamp_utc": "2026-04-26T12:02:00Z",
+  "sensibilitaets_markierung_constraint_durchgereicht": {
+    "value": "propaganda_kontextualisierung_noetig",
+    "kontextualisierungssatz_pflicht": "Dieses Foto ist kein neutrales Bild. Der Kaiser liess sich bewusst so zeigen — mit Uniform und Decorationen.",
+    "constraint_realisiert": true,
+    "evidenz": "im inhalt-Feld als 'Achtung — Quellenkritik:' Block + im _meta.kontextualisierung_satz_realisiert dokumentiert"
+  },
+  "g1_partial_gate": {
+    "status": "PASS",
+    "redispatch_count": 0,
+    "schema_validated": "material-output-schema (Legacy v3.10.2)",
+    "notes": "Bildquelle mat-1-3 ueber Wikimedia-Bild img-m1-03 (PD-old-100). BU 12 Woerter. Inhalt 119 Woerter incl. Quellenkritik-Block."
+  },
+  "g2_full_gate": {
+    "status": "PASS",
+    "redispatch_count": 0,
+    "merged_struktur_felder": ["id", "typ", "titel", "position", "didaktische_funktion", "voraussetzung", "ueberleitung_von", "sequenz_kontext", "perspektiv_tags"]
+  },
+  "m16_prosa_only": {"status": "PASS", "reason": "Quellenkritik-Frage 'Was wollte der Kaiser zeigen — und was nicht?' steht in Prosa-Form (Reflexionsfrage), kein Aufgaben-Operator wie 'Analysiere:' oder 'Beschreibe:'"},
+  "m17_quelle_ssot": {"status": "PASS", "notes": "Quellenangabe nur in <cite>-Element + quelle-Feld; keine Dopplung."},
+  "g3_llm_review": {"status": "N/A", "reason": "Nicht-quellentext-Typ"},
+  "f_pb_44_komposita": {
+    "status": "PASS",
+    "komposita_check": ["Welt-Politik (durch Kontext erklaert: 'Macht in der ganzen Welt' im Skript M1 §3 referenziert)", "Hofphotograph (durch Kontext erklaert: 'im Studio aufgenommen — als Auftrag')", "Quellenkritik (eingefuehrt im Inhalt mit Erklaerung)"]
+  },
+  "f0b_priming_r7": {"status": "PASS", "notes": "Saetze max. 17W; Quellenkritik-Frage als Reflexionsanstoss; perspektiv_tags inkl. 'Kritik' zur Dekonstruktion."},
+  "perspektiv_tags_validation": {"status": "PASS", "tags": ["dominant", "Macht-Ausuebung", "Kritik"], "min_count": 1, "enum_valid": true, "nicht_dominanter_tag_beitrag": "Kritik (NICHT-DOMINANT-Beitrag 1 fuer F0b §2 Coverage)"},
+  "trigger_vermerk_durchgereicht": "nationalismus",
+  "final_material_path": "materialien/mat-1-3.json",
+  "iteration_budget_used": "0/1",
+  "eskalation_flag": false,
+  "gate_summary": "PASS"
+}

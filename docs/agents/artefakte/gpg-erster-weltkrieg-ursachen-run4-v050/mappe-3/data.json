@@ -1,0 +1,98 @@
+{
+  "id": "mappe-3",
+  "titel": "Augustfieber — Wer schuld ist und wer jubelt",
+  "beschreibung": "Du oeffnest die dritte Mappe aus dem Archiv 1914. Innen liegen zwei Fotos vom August 1914, ein rekonstruiertes Tagebuch, ein Versailles-Vertragstext von 1919 und ein Forschungs-Auszug von Christopher Clark aus 2013. Deine Aufgabe: Pruefe die Quellen kritisch und beantworte die offene Frage — wer war damals begeistert, und wer hat heute die Schuld am Krieg?",
+  "freischalt_code": "SCHULD",
+  "ke_anker_haupt": "GPG7_LB3_K_03",
+  "afb": "II-III",
+  "stundenfrage": "Wer war im August 1914 begeistert — und wer hat heute die Schuld am Krieg?",
+  "materialien_ref": [
+    "mat-3-1",
+    "mat-3-2",
+    "mat-3-3",
+    "mat-3-4",
+    "mat-3-5"
+  ],
+  "aufgaben_ref": [
+    "aufgabe-3-1",
+    "aufgabe-3-2",
+    "aufgabe-3-3",
+    "aufgabe-3-4",
+    "aufgabe-3-5",
+    "aufgabe-3-6",
+    "aufgabe-3-7"
+  ],
+  "mappenabschluss_ref": "mappe-3/mappenabschluss.json",
+  "_meta": {
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "fach": "GPG",
+    "sprachniveau": "R7",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "plugin_version": "v0.5.0",
+    "phase": "2.2c (sub-template-mappenabschluss STR-13)",
+    "created_at": "2026-04-26",
+    "schema_version": "mappe_v1",
+    "didaktisches_kernstueck": "Beutelsbach-Kontroversitaet Versailles 1919 vs. Clark 2013 (Pos 5 vergleich + Pos 6 begruendung CER)",
+    "augusterlebnis_idealisierungs_verbot_operationalisiert": "Pos 2 (quellenkritik mat-3-1) + Pos 3 (zuordnung Anti-Bias mat-3-5) + mappenabschluss reflexion_fragen[1]",
+    "f_pb_37_quellenkritik_pflicht": "Pos 2 (mat-3-1 Primaerquelle)",
+    "str_14_neu_fiktionalitaet": "Pos 3 (mat-3-5 in Tipp 1 als rekonstruiert gekennzeichnet)",
+    "str_13_mappenabschluss": "mappenabschluss.json (Variante A) — reflexion_fragen Bewertung+Metakognition + Perspektivwechsel; ueberleitungssatz nach M4 (kein Stoff-Vorgriff); sicherungstexte_lehrkraft mit POLICY_TRIGGER_SICHTBARKEIT (Versailles-NSDAP-Sprengkraft lehrkraft-only)",
+    "multiperspektivitaet_5_perspektiven": {
+      "P1_stadt_buerger_begeistert": "Pos 1 + Pos 3 (mat-3-1)",
+      "P2_land_arbeiter_skeptisch": "Pos 3 (mat-3-5)",
+      "P3_versailles_sieger_1919": "Pos 4 + Pos 5 (mat-3-3)",
+      "P4_clark_revisionismus_2013": "Pos 5 + Pos 6 (mat-3-4)",
+      "P5_reichsamt_inszenierung": "Pos 3 (mat-3-2)",
+      "synthese_in_mappenabschluss": "reflexion_fragen[1] greift P2 + P5 (Nicht-Dominant-Perspektiven) explizit auf — F0B-Priming §5 Multiperspektiv-Synthese-Rubrik M3 erfuellt"
+    },
+    "scpl_zonen_abdeckung": {
+      "S": ["aufgabe-3-1"],
+      "C1": ["aufgabe-3-2", "aufgabe-3-3"],
+      "C2_burgfrieden_implizit": "ueber mat-3-3 ueberleitung_von + Hefteintrag B.3 + Pos 4 Distraktor D",
+      "P": ["aufgabe-3-4", "aufgabe-3-5"],
+      "L": ["aufgabe-3-5", "aufgabe-3-6", "aufgabe-3-7"]
+    },
+    "afb_progression": "I → II-III → II → II → III → III → III (monoton steigend)",
+    "bloom_verteilung": {
+      "L1-L2": "14 % (1/7) — Pos 1",
+      "L3-L4": "57 % (4/7) — Pos 2, Pos 3, Pos 4, Pos 5",
+      "L5-L6": "29 % (2/7) — Pos 6, Pos 7",
+      "schwerpunkt": "L4-L5 (Hoehepunkt M3)",
+      "korridor_check": "PASS (max 40% L1-L2 / min 30% L3-L4 / min 20% L5-L6)"
+    },
+    "typvielfalt": {
+      "anzahl": 7,
+      "typen": ["lueckentext", "quellenkritik", "zuordnung", "multiple-choice", "vergleich", "begruendung", "freitext-code"],
+      "max_pro_typ": 1,
+      "A10v2_check": "PASS (>=3 Typen, kein Typ >3x)"
+    },
+    "narrative_einbettung": {
+      "rahmengeschichte": "Spurensucher / Geheimagenten im Auftrag eines Geschichts-Archivs (DIDAKTIK_RAHMEN §7.2)",
+      "mappe_einstieg": "Du oeffnest die dritte Mappe aus dem Archiv 1914...",
+      "uebergang_M2_zu_M3": "Aus M2 weisst du: Der Schuss von Sarajevo war der Ausloeser, nicht die Ursache. Wenn der Schuss nur Ausloeser war — wer ist dann schuldig?",
+      "uebergang_M3_zu_M4": "Die Maenner zogen los. Was passierte, als sie ankamen?",
+      "uebergang_M3_zu_M4_in_mappenabschluss": "ueberleitungssatz 'Die Maenner zogen los — was passierte, als sie ankamen?' (9 Woerter, kein M4-Stoff-Vorgriff)"
+    },
+    "freischalt_code_logik": {
+      "code": "SCHULD",
+      "laenge": 6,
+      "buchstaben_quelle": [
+        "Pos 1 → S",
+        "Pos 2 → C",
+        "Pos 3 → H",
+        "Pos 4 → (Bonus, kein Buchstabe)",
+        "Pos 5 → U",
+        "Pos 6 → L",
+        "Pos 7 → D"
+      ],
+      "thematischer_anker": "Kernfrage M3 — 'Wer hat Schuld?' (Hefteintrag M3 B.5 Merksatz)",
+      "multiperspektivisch_neutral": "Code ist Frage, keine Position"
+    },
+    "policy_trigger_sichtbarkeit": {
+      "_status": "AKTIVIERT (M3)",
+      "_grund": "Versailles Art. 231 (mat-3-3) hat NSDAP-Folge-Sprengkraft (Kriegsschuld-Luege, Dolchstoss-Legende ab 1920)",
+      "_umsetzung": "Schueler-Material (mat-3-3 + Hefteintrag + Aufgaben + Schueler-Felder im mappenabschluss) enthaelt KEINEN Vorgriff auf Weimar/NSDAP. Lehrkraft-Hinweis zur NSDAP-Folge-Rezeption ist in mappenabschluss.json -> sicherungstexte_lehrkraft._sichtbarkeit='lehrkraft-only' isoliert. V13-konform."
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "aufgabe-3-3",
+  "typ": "zuordnung",
+  "frage": "Ordne die Aussagen den drei Personen-Gruppen zu.",
+  "material_referenz": ["mat-3-1", "mat-3-2", "mat-3-5"],
+  "kategorien": [
+    "Stadtbuerger 1914 (begeistert)",
+    "Land-Bevoelkerung und Arbeiter 1914 (skeptisch)",
+    "Heeresleitung / Reichsamt (Inszenierung)"
+  ],
+  "elemente": [
+    "Soldaten ziehen los — viele Stadtbuerger jubeln am Bahnhof.",
+    "Wer pflegt das Vieh, wenn er weg ist? Wer hilft beim Heu im September?",
+    "Eine Frau gibt einem Soldaten Blumen — typisches Inszenierungs-Bild.",
+    "Pflicht ist Pflicht. Aber Jubel? Davon ist hier nichts.",
+    "Ein Photograph fotografiert die Mobilmachung fuer die Reichs-Nachrichten.",
+    "Im Wirtshaus haben sie zugeprostet — aber die Frauen nicken nur."
+  ],
+  "loesung": {
+    "Soldaten ziehen los — viele Stadtbuerger jubeln am Bahnhof.": "Stadtbuerger 1914 (begeistert)",
+    "Wer pflegt das Vieh, wenn er weg ist? Wer hilft beim Heu im September?": "Land-Bevoelkerung und Arbeiter 1914 (skeptisch)",
+    "Eine Frau gibt einem Soldaten Blumen — typisches Inszenierungs-Bild.": "Heeresleitung / Reichsamt (Inszenierung)",
+    "Pflicht ist Pflicht. Aber Jubel? Davon ist hier nichts.": "Land-Bevoelkerung und Arbeiter 1914 (skeptisch)",
+    "Ein Photograph fotografiert die Mobilmachung fuer die Reichs-Nachrichten.": "Heeresleitung / Reichsamt (Inszenierung)",
+    "Im Wirtshaus haben sie zugeprostet — aber die Frauen nicken nur.": "Land-Bevoelkerung und Arbeiter 1914 (skeptisch)"
+  },
+  "tipps": [
+    {"stufe": 1, "text": "Lies das rekonstruierte [[mat-3-5|Tagebuch der Bauern-Frau]] (M3), schau dir die [[mat-3-1|Postkarte aus Luebeck]] (M1) und das [[mat-3-2|Bundesarchiv-Foto]] (M2) an. Jedes Material gehoert zu einer anderen Personen-Gruppe."},
+    {"stufe": 2, "text": "Die Postkarte (M1) zeigt jubelnde Stadtbuerger. Das Tagebuch (M3) ist eine rekonstruierte Stimme aus dem Land — pflichtbewusst, aber ohne Jubel. Das Bundesarchiv-Foto (M2) ist eine bewusste Inszenierung der Heeresleitung."},
+    {"stufe": 3, "text": "Die Stimmung 1914 war NICHT ueberall gleich. In den Staedten jubelte die Mittelschicht. Auf dem Land sorgten sich Frauen um die Ernte. Im Wirtshaus tranken Maenner zwar mit — aber Frauen blieben skeptisch. Die Heeresleitung liess Inszenierungs-Fotos machen, die nur die Begeisterung zeigten."}
+  ],
+  "punkte": 18,
+  "_meta": {
+    "afb": "II",
+    "bloom": "L3",
+    "scpl_zone": "C1",
+    "tafelbild_knoten": ["K3-2"],
+    "ke_anker": "GPG7_LB3_K_03",
+    "perspektive": "P1 (Stadt-Begeisterung) + P2 (Land/SPD-Skepsis) + P5 (Heeresleitung-Inszenierung) — 3 Perspektiven explizit",
+    "operationalisierungsziel": "Du kannst Aussagen aus drei Quellen den richtigen Personen-Gruppen zuordnen — und so erkennen, dass die Stimmung 1914 nicht ueberall gleich war.",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "sprachniveau": "R7",
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "freischalt_buchstabe_position": "H (Position 3 von SCHULD)",
+    "str_14_neu_fiktionalitaets_kennzeichnung": "JA — Tipp Stufe 1 benennt mat-3-5 als 'rekonstruiertes Tagebuch'; aussagen aus mat-3-5 sind paraphrasiert (nicht als 'Originalzitat' suggeriert); M14-Compliance",
+    "multiperspektivitaet_5_perspektiven_kontext": "P1+P2+P5 in dieser Aufgabe; P3+P4 folgen in Pos 5/6",
+    "augusterlebnis_idealisierungs_verbot_operationalisiert": "JA — Anti-Bias-Mechanik: Land-Skepsis (mat-3-5) und Inszenierungs-Hintergrund (mat-3-2) als gleichberechtigte Kategorien neben Stadt-Begeisterung",
+    "erarbeitbarkeits_check": "PASS — 6 Aussagen mit klar trennbaren Kategorien (3 disjunkte Personen-Gruppen); Aussagen direkt aus inhalt-Bloecken/Bildunterschriften der drei Materialien ableitbar; je Kategorie 2 Aussagen (balanciert).",
+    "q_gate_self_check": {
+      "A1_afb_kongruenz": "PASS — AFB II (Multiperspektivitaet erkennen + zuordnen)",
+      "A2_fragestamm_klar": "PASS — 1 Satz, 7 Woerter",
+      "A3_material_kongruenz": "PASS — alle 6 Aussagen aus mat-3-1 / mat-3-2 / mat-3-5 ableitbar",
+      "A4_ZU_trennscharfe_kategorien": "PASS — 3 disjunkte Kategorien (Stadt / Land+Arbeiter / Heeresleitung), keine Ueberschneidungen",
+      "A6_tipp_progression": "PASS — Stufe 1 Material-Refs+Hinweis; Stufe 2 Material-Belegen-Bezug; Stufe 3 didaktischer Synthese-Satz",
+      "A7_operator_praezision": "PASS — 'Ordne ... zu' als AFB-II-Operator",
+      "MQ3_kein_link_in_frage": "PASS — frage enthaelt kein [[ und kein (M",
+      "MQ3b_link_in_tipp_1": "PASS — Tipp 1 enthaelt 3 Inline-Links + (M1)/(M2)/(M3)",
+      "F0B_R7_metrik": "PASS — Aussagen max. 14 Woerter, R7-konform",
+      "beutelsbach_kein_antwortvorgriff": "PASS — Aufgabe ordnet Sachverhalte zu, ohne Wertung (welche Gruppe 'richtiger' lag)",
+      "STR_14_NEU_fiktionalitaet": "PASS — mat-3-5 in Tipp 1 als 'rekonstruiert' gekennzeichnet"
+    }
+  }
+}

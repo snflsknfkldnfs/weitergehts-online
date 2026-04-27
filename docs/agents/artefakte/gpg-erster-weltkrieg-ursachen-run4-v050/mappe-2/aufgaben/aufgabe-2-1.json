@@ -1,0 +1,53 @@
+{
+  "id": "aufgabe-2-1",
+  "typ": "multiple-choice",
+  "frage": "An welchem Datum erschoss Princip in Sarajevo den Thronfolger Franz Ferdinand?",
+  "material_referenz": ["mat-2-1", "mat-2-2"],
+  "optionen": [
+    "28. Juni 1914",
+    "23. Juli 1914",
+    "28. Juli 1914",
+    "4. August 1914"
+  ],
+  "loesung": "28. Juni 1914",
+  "tipps": [
+    {
+      "stufe": 1,
+      "text": "Schau auf die [[mat-2-1|Zeitleiste der Julikrise]] (M1). Welches Datum steht ganz oben?"
+    },
+    {
+      "stufe": 2,
+      "text": "Genau einen Monat vor der Kriegserklaerung Oesterreich-Ungarns an Serbien fiel der Schuss in Sarajevo. Suche das fruehste Datum in der Zeitleiste."
+    },
+    {
+      "stufe": 3,
+      "text": "Loesung: 28. Juni 1914. An diesem Tag erschoss Princip den Thronfolger Franz Ferdinand und seine Frau Sophie. Genau einen Monat spaeter (28. Juli 1914) erklaerte Oesterreich-Ungarn Serbien den Krieg."
+    }
+  ],
+  "punkte": 10,
+  "_meta": {
+    "bloom": "L1",
+    "afb": "I",
+    "scpl_zone": "S",
+    "tafelbild_knoten": ["K2-2"],
+    "ke_anker_haupt": "GPG7_LB2_K_06",
+    "ziel_material_id": "mat-2-1",
+    "operationalisierungsziel": "Die SuS nennen das Datum, an dem Princip in Sarajevo Franz Ferdinand erschoss.",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "subagent": "sub-aufgabe-mc",
+    "mc_subtyp": "single-choice",
+    "code_anker_beitrag": "Tag-Monat-Jahr (28-06-1914) = vollstaendiger Freischalt-Code Mappe M2 ableitbar aus dieser Aufgabe.",
+    "q_gate": {
+      "A1_afb_kongruenz": "PASS — AFB I (Datum-Recall)",
+      "A2_fragestamm_klarheit": "PASS — 12 Woerter, klar",
+      "A3_material_kongruenz": "PASS — mat-2-1 Eintrag #1 enthaelt Datum",
+      "A4_mc_distraktor_qualitaet": "PASS — D1 23.7.1914 (Ultimatum), D2 28.7.1914 (Kriegserklaerung AT-UN), D3 4.8.1914 (GB-Kriegseintritt). Alle drei Distraktoren sind echte Daten aus mat-2-1, plausibel verwechselbar, aber eindeutig falsch.",
+      "A6_tipp_progression": "PASS — Hinweis -> Richtung -> Loesung+Erklaerung",
+      "A7_operator_praezision": "PASS — Operator implizit 'nenne' via W-Frage (AFB I)",
+      "MQ3_kein_link_in_frage": "PASS — keine Links/(M..)-Verweise im Fragestamm",
+      "MQ3b_displayref_in_tipp1": "PASS — Tipp 1 enthaelt [[mat-2-1|...]] + (M1)",
+      "F0B_R7": "PASS — Satzlaenge max. 12W, DaZ-tauglich",
+      "MULTIPERSPEKTIVITAET": "n.a. (Datums-Recall)"
+    }
+  }
+}

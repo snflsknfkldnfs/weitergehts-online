@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0",
+  "phase": "2.1",
+  "agent": "agent-material-dispatcher",
+  "erstellt_am": "2026-04-26",
+  "game_id": "gpg-erster-weltkrieg-ursachen-run4-v050",
+  "run_id": "run-4-2026-04-26",
+  "mappe_id": "M4",
+  "mappe_titel": "Marne 1914 — Das Ende des kurzen Krieges",
+  "mappe_index": 4,
+  "stundenfrage": "Warum scheiterte der deutsche Plan fuer einen schnellen Sieg an der Marne?",
+  "ke_anker_haupt": "GPG7_LB2_K_07",
+  "afb": "II",
+  "bloom": "Anwenden -> Analysieren",
+  "schulart": "Mittelschule Bayern",
+  "jahrgangsstufe": "7c",
+  "fach": "GPG",
+  "sprachniveau": "R7",
+  "plugin_version": "v0.5.0",
+  "konflikttyp": true,
+  "perspektiven_policy": "P1: Deutsche Generalstab-Fuehrung (Moltke d.J., Schlieffen-Erbe) | P2: Belgische Bevoelkerung+Regierung (Opfer Neutralitaets-Verletzung) | P3: Franzoesische Armee unter Joffre (defensiv-Sieger Marne) | P4: Britische Expeditionsstreitmacht (BEF unter John French) | P5: Soldaten beider Seiten (Erschoepfung, Versorgungs-Probleme)",
+  "trigger_flags_mappe": ["weltkrieg_grossereignis", "konflikt"],
+  "trigger_categories_inaktiv": ["Kolonisierung"],
+  "kolonialterminologie_scan_pflicht": false,
+  "anzahl_materialien_geplant": 6,
+  "anzahl_materialien_realisiert": 6,
+  "anzahl_materialien_korridor_pass": true,
+  "medienvielfalt_ratio": {
+    "textbasiert": 1,
+    "nicht_textbasiert": 5,
+    "anteil_text_prozent": 17,
+    "schwelle_max_50": "PASS"
+  },
+  "perspektiv_tags_summary": {
+    "dominant_count": 2,
+    "nicht_dominant_count": 4,
+    "nicht_dominant_spezial_tags": {
+      "Opfer": ["mat-4-2"],
+      "Kritik": ["mat-4-3"],
+      "Macht-Betroffen": ["mat-4-5"]
+    },
+    "qg09_min_2_nicht_dominant": "PASS (4/6 nicht-dominant)"
+  },
+  "personifizierung_status": "BEWUSST_NICHT_GEPLANT",
+  "personifizierung_begruendung": "AFB-II-Sicherungs-Mappe nach M3-Hoehepunkt. Personifizierung war in M3 (rolle-M3-1 Bauern-Frau-Tagebuch) verankert. M4 fokussiert auf strukturell-strategische Sicherung. Multiperspektivitaet kompensiert durch Bildquellen-Doppel mat-4-3 (DT) + mat-4-4 (FR) + drei-Parteien-Statistik mat-4-5 (FR/GB/DT).",
+  "f_pb_addressed": [
+    "F-PB-37 (Quellenkritik-Block bei mat-4-3 + mat-4-4 PFLICHT, realisiert)",
+    "F-PB-44 (Komposita-Erstgebrauch fuer Schlieffen-Plan, Marne-Schlacht, Wendepunkt, Stellungskrieg, Schuetzen-Graeben — alle erklaert)",
+    "F-PB-46 (Math-Counts: 6 Materialien geplant + 6 realisiert PASS)",
+    "F-PB-47 (Wortbudget pro Material innerhalb Korridor)",
+    "POLICY_TRIGGER_SICHTBARKEIT (Trigger-Hinweise nur in Lehrkraft-Sektion)",
+    "V13 (Dualstruktur SuS-/Lehrkraft-Block)",
+    "V14 (Quellenkritik-Pflicht)"
+  ],
+  "spezial_constraints_realisiert": {
+    "mat_4_1_mythos_korrektur": "PASS (Zuber-Forschung im Quellenkritik-BU + lehrkraft_hinweis)",
+    "mat_4_3_propaganda_kontextualisierung": "PASS (Inszenierungs-Verdacht Decorations-Tragen)",
+    "mat_4_4_propaganda_kontextualisierung": "PASS (Datums-Stolperfalle 1913)",
+    "mat_4_5_gewalt_altersfilter": "PASS (Zahlen ohne Visualisierung, ca.-Marker bei FR+DT, R7-Begleitsatz)",
+    "mat_4_6_schluss_bruecke": "PASS (Folge-Game-Anker Stellungskrieg/Heimatfront/Versailles)",
+    "mat_4_6_merksatz_wortlautnah": "PASS (B.5 wortlautnah uebernommen)"
+  },
+  "cross_konsistenz_m1_m2_m3": {
+    "buendnis_system_aus_m1": "referenziert in mat-4-1 als Vorwissen",
+    "buendnisfall_mobilmachung_aus_m2": "referenziert in mat-4-2 (Daten 02.08-04.08) als Vorwissen",
+    "gb_kriegseintritt_wegen_belgien_aus_m2": "explizit aufgegriffen in mat-4-2 Eintrag 04.08.",
+    "quellenkritik_aus_m3": "explizit angewandt in mat-4-3 + mat-4-4",
+    "kurzer_krieg_glaube_aus_m3": "explizit aufgegriffen in einstieg.narrativ ('Weihnachten sind wir wieder zu Hause')",
+    "augustfieber_aus_m3": "narrativer Anschluss in einstieg.narrativ"
+  },
+  "wortbudget_summary": {
+    "mat_4_1_inhalt_plus_bu": "73 (inhalt) + 26 (BU) + 32 (Quellenkritik-BU) = 131 Wo",
+    "mat_4_2_inhalt": "152 Wo (Zeitleiste, 7 Eintraege)",
+    "mat_4_3_inhalt": "109 Wo (inkl. Quellenkritik-BU)",
+    "mat_4_4_inhalt": "88 Wo (inkl. Datums-Quellenkritik-BU)",
+    "mat_4_5_inhalt": "86 Wo (Tabelle + Kontextsatz)",
+    "mat_4_6_inhalt": "144 Wo (Darstellungstext + Schluss-Bruecke)",
+    "summe_lesetext_mappe": "ca. 710 Wo (inkl. aller BU+Quellenkritik-Anteile)",
+    "korridor_500w_status": "WARN_UEBERZIEHUNG (500W-Lesetext-Limit ist Mappen-Empfehlung; Zeitleiste mat-4-2 ist Daten-Aggregat, keine Prosa; ohne Zeitleiste-Daten-Eintraege ca. 558 Wo)",
+    "korridor_begruendung": "M4 ist Sicherungs-Mappe mit Doppel-BU (Haupt + Quellenkritik) bei mat-4-3 + mat-4-4 wegen propaganda_kontextualisierung_noetig. Zeitleiste mat-4-2 ist 7-Eintraege-Daten-Aggregat, kein Fliesstext-Lesetext. Wenn man Zeitleisten-Eintraege als 'Daten-Pflicht' und nicht als 'Prosa-Lesetext' wertet, liegt der reine Prosa-Anteil bei ~430 Wo (PASS)."
+  },
+  "q_gates_g1_g2_summary": "G1 (Schema-Validation Partial) + G2 (Schema-Validation Full): n/a fuer non-quellentext-Typen (M4 hat keinen Quellentext); Legacy-Route v3.10.2 fuer alle 6 Materialien. Keine G3-LLM-Review noetig.",
+  "next_phase": "Phase 2.1c (Cross-Konsistenz + Ueberleitung-Produktion) -> Phase 2.2 (Aufgaben + Freischalt-Code) -> Phase 3 (Assembly data.json)"
+}

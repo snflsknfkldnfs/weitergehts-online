@@ -1,0 +1,74 @@
+{
+  "schema_version": "mappe_data_v1",
+  "game_id": "gpg-erster-weltkrieg-ursachen-run4-v050",
+  "run_id": "run-4-2026-04-26",
+  "mappe_id": "mappe-1",
+  "mappe_index": 1,
+  "titel": "Pulverfass Europa",
+  "freischalt_code": "PULVER",
+  "meta": {
+    "ke_anker_haupt": "GPG7_LB2_K_05",
+    "ke_anker_neben": ["GPG7_LB3_K_03"],
+    "afb": "I-II",
+    "bloom": "Verstehen → Anwenden",
+    "stundenfrage": "Warum war Europa vor 1914 ein 'Pulverfass'?",
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "fach": "GPG",
+    "sprachniveau": "R7",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "trigger_flags": ["konflikt", "kolonialismus", "nationalismus", "weltkrieg_grossereignis"]
+  },
+  "einstieg": {
+    "typ": "narrativ",
+    "narrativ": "<p>Du oeffnest die erste Mappe. Auf dem Deckblatt steht ein einziges Wort: <em>Pulverfass</em>. Was meint das? Du weisst: Ein Pulverfass kann jederzeit hochgehen. Es braucht nur einen Funken. Aber warum war Europa vor dem Krieg so ein Pulverfass? Die Antwort beginnt mit zwei grossen Buendnissen — und mit einem Wettlauf um Schiffe und um Land.</p>",
+    "problemstellung": "Warum war Europa vor 1914 ein 'Pulverfass'?"
+  },
+  "materialien": [
+    {"$ref": "materialien/mat-1-1.json"},
+    {"$ref": "materialien/mat-1-4.json"},
+    {"$ref": "materialien/mat-1-2.json"},
+    {"$ref": "materialien/mat-1-5.json"},
+    {"$ref": "materialien/mat-1-6.json"},
+    {"$ref": "materialien/mat-1-3.json"}
+  ],
+  "aufgaben": [
+    {"$ref": "aufgaben/aufgabe-1-1.json"},
+    {"$ref": "aufgaben/aufgabe-1-2.json"},
+    {"$ref": "aufgaben/aufgabe-1-3.json"},
+    {"$ref": "aufgaben/aufgabe-1-4.json"},
+    {"$ref": "aufgaben/aufgabe-1-5.json"},
+    {"$ref": "aufgaben/aufgabe-1-6.json"},
+    {"$ref": "aufgaben/aufgabe-1-7.json"}
+  ],
+  "hefteintrag": {"$ref": "rahmen/hefteintrag.json"},
+  "sicherung": {"$ref": "rahmen/sicherung.json"},
+  "mappenabschluss": {"$ref": "mappenabschluss.json"},
+  "narrative_rahmung": {
+    "rahmengeschichte": "Ein Forscher-Team entdeckt einen alten Aktenkoffer aus dem Jahr 1914. Vier Mappen sind darin. Jede Mappe ist ein Schluessel zur Frage: Wie kam es zum Ersten Weltkrieg? Wer alle Mappen oeffnet, versteht die Ursachen — und kann den Koffer wieder schliessen.",
+    "einstieg_mappe": "Du oeffnest die erste Mappe. Auf dem Deckblatt steht: Pulverfass. Was meint das?",
+    "abschluss_mappe": "Du legst Mappe 1 zur Seite. Dein Befund: Europa war ein Pulverfass, lange bevor irgendjemand schoss. Aber wer hat den Funken geworfen? Mappe 2 zeigt dir den 28. Juni 1914. Ein Datum. Eine Stadt. Ein Schuss.",
+    "freischalt_anker": "Mit dem Code PULVER schliesst du Mappe 2 auf."
+  },
+  "_meta": {
+    "phase": "2.2c",
+    "agent": "sub-template-mappenabschluss",
+    "plugin_version": "v0.5.0",
+    "schema_version": "mappe_data_v1",
+    "vertrag_version": "VERTRAG_PHASE_2-2c_MAPPENABSCHLUSS v1.0 + Plugin v0.5.0",
+    "anzahl_aufgaben": 7,
+    "anzahl_materialien": 6,
+    "aufgaben_typen": ["zuordnung", "lueckentext", "multiple-choice", "multiple-choice", "reihenfolge", "quellenkritik", "freitext-code"],
+    "afb_progression": "I → I-II → II → II → II → II-III → II-III",
+    "bloom_verteilung": {"L1": 1, "L2": 2, "L3": 2, "L4": 1, "L5": 1},
+    "scpl_abdeckung": ["S", "C1", "C2", "C3", "P"],
+    "freischalt_code_naechste_mappe": "PULVER",
+    "mappenabschluss_eingebunden": true,
+    "mappenabschluss_variante": "A",
+    "mappenabschluss_anzahl_reflexion_fragen": 3,
+    "mappenabschluss_str_template": "STR-13 v1.0",
+    "phase_2_2b_aufgaben_status": "PASS (7/7)",
+    "phase_2_2c_mappenabschluss_status": "PASS",
+    "validierungsstatus": "ENTWURF"
+  }
+}

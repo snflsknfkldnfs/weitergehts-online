@@ -1,0 +1,97 @@
+{
+  "schema_version": "mappe_data_v1",
+  "game_id": "gpg-erster-weltkrieg-ursachen-run4-v050",
+  "run_id": "run-4-2026-04-26",
+  "mappe_id": "mappe-2",
+  "mappe_index": 2,
+  "titel": "Sarajevo 1914 — Ein Schuss, eine Welt im Krieg",
+  "freischalt_code": "28061914",
+  "freischalt_code_anzeige": "28-06-1914",
+  "meta": {
+    "ke_anker_haupt": "GPG7_LB2_K_06",
+    "ke_anker_neben": ["GPG7_LB2_K_05", "GPG7_LB3_K_03"],
+    "afb": "II (mit Tendenz II-III)",
+    "bloom": "Anwenden → Analysieren → Bewerten",
+    "stundenfrage": "Wie wurde aus dem Attentat in Sarajevo in fuenf Wochen ein Weltkrieg?",
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "fach": "GPG",
+    "sprachniveau": "R7",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "trigger_flags": ["gewalt_attentat", "nationalismus", "krieg"],
+    "trigger_sichtbarkeit": "lehrkraft-only"
+  },
+  "einstieg": {
+    "typ": "narrativ",
+    "narrativ": "<p>Du oeffnest die zweite Mappe. Das Deckblatt zeigt eine schwarz-weisse Photographie und ein Datum: <em>28. Juni 1914 — Sarajevo</em>. Du weisst aus Mappe 1: Europa war ein Pulverfass. Aber wer hat den Funken geworfen? In dieser Mappe findest du den Tatort, den Thronfolger, den 19-jaehrigen Schueler — und das Ultimatum, das Krieg wollte. In nur fuenf Wochen wird aus einem Schuss ein Weltkrieg. Pack die Mappe an.</p>",
+    "problemstellung": "Wie wurde aus dem Attentat in Sarajevo in fuenf Wochen ein Weltkrieg?"
+  },
+  "materialien": [
+    {"$ref": "materialien/mat-2-1.json"},
+    {"$ref": "materialien/mat-2-2.json"},
+    {"$ref": "materialien/mat-2-3.json"},
+    {"$ref": "materialien/mat-2-4.json"},
+    {"$ref": "materialien/mat-2-5/material.json"}
+  ],
+  "aufgaben": [
+    {"$ref": "aufgaben/aufgabe-2-1.json"},
+    {"$ref": "aufgaben/aufgabe-2-2.json"},
+    {"$ref": "aufgaben/aufgabe-2-3.json"},
+    {"$ref": "aufgaben/aufgabe-2-4.json"},
+    {"$ref": "aufgaben/aufgabe-2-5.json"},
+    {"$ref": "aufgaben/aufgabe-2-6.json"},
+    {"$ref": "aufgaben/aufgabe-2-7.json"}
+  ],
+  "hefteintrag": {"$ref": "rahmen/hefteintrag.json"},
+  "sicherung": {"$ref": "rahmen/sicherung.json"},
+  "mappenabschluss": {"$ref": "mappenabschluss.json"},
+  "narrative_rahmung": {
+    "rahmengeschichte": "Ein Forscher-Team entdeckt einen alten Aktenkoffer aus dem Jahr 1914. Vier Mappen sind darin. Jede Mappe ist ein Schluessel zur Frage: Wie kam es zum Ersten Weltkrieg? Wer alle Mappen oeffnet, versteht die Ursachen — und kann den Koffer wieder schliessen.",
+    "einstieg_mappe": "Du oeffnest die zweite Mappe. Auf dem Deckblatt: 28. Juni 1914 — Sarajevo. Ein Datum. Eine Stadt. Ein Schuss.",
+    "abschluss_mappe": "Du schliesst Mappe 2. Dein Befund: Der Schuss in Sarajevo war der Ausloeser, nicht die Ursache. Aber wer ist dann schuldig — wenn das Pulverfass schon brennbar war? Mappe 3 fuehrt dich in den August 1914. Menschen jubeln. Andere streiten ueber Schuld. Mit dem Code 28-06-1914 schliesst du Mappe 3 auf.",
+    "freischalt_anker": "Mit dem Code 28-06-1914 schliesst du Mappe 3 auf — das Datum, an dem alles begann."
+  },
+  "freischalt_code_meta": {
+    "code": "28061914",
+    "anzeige_format": "28-06-1914",
+    "ableitungs_logik": "Tag-Monat-Jahr des Sarajevo-Attentats (Datum aus Aufgabe 2-1). Im Spurensucher-Setting (DR §7.2) ergeben die vier Mappen am Ende einen Schluessel-Code zum Folge-Game.",
+    "code_quelle_haupt": "aufgabe-2-1 (Datum-Recall 28. Juni 1914)",
+    "code_quelle_fallback": "aufgabe-2-4 (Reihenfolge zeigt 28.7. — implizit 28.6. genau einen Monat vorher)",
+    "engine_verhalten": "Tiles 2-8-0-6-1-9-1-4 erscheinen in zufaelliger Reihenfolge nach Loesung aller 7 Aufgaben. Drag-and-Drop in chronologische Reihenfolge schaltet Sicherung + Mappe 3 frei."
+  },
+  "_meta": {
+    "phase": "2.2c",
+    "agent": "sub-template-mappenabschluss",
+    "plugin_version": "v0.5.0",
+    "schema_version": "mappe_data_v1",
+    "vertrag_version": "VERTRAG_PHASE_2-2c_MAPPENABSCHLUSS v1 + STR-13 + Plugin v0.5.0",
+    "anzahl_aufgaben": 7,
+    "anzahl_materialien": 5,
+    "aufgaben_typen": ["multiple-choice", "zuordnung", "freitext-code", "reihenfolge", "lueckentext", "zuordnung", "freitext-code"],
+    "afb_progression": "I → I-II → II → II → II → II-III → III",
+    "bloom_verteilung": {"L1": 1, "L2": 1, "L3": 2, "L4": 1, "L5": 2},
+    "scpl_abdeckung": ["S", "C1", "C2", "C3", "P", "L"],
+    "scpl_abdeckung_pruefung": "PASS — alle 6 Zonen mit mind. 1 diagnostischer Aufgabe",
+    "typvielfalt": "5 verschiedene Typen (multiple-choice, zuordnung, freitext-code, reihenfolge, lueckentext); zuordnung 2x (begruendet: Pos 2 Faktenwissen vs. Pos 6 Multiperspektivitaet); freitext-code 2x (begruendet: Pos 3 kurz/Quellenkritik vs. Pos 7 ausfuehrlich/Synthese)",
+    "didaktisches_kernstueck": ["aufgabe-2-6 (Multiperspektivitaet Princip)", "aufgabe-2-7 (Ursache-vs-Ausloeser-Synthese)"],
+    "f_pb_37_quellenkritik_pflicht": {
+      "mat-2-3": "Sekundaer-Aktivierung in aufgabe-2-5 (Tipp 1) + Primaer-Aktivierung in aufgabe-2-6",
+      "mat-2-4": "Primaer-Aktivierung in aufgabe-2-6 (Multiperspektivitaet)",
+      "mat-2-5": "Primaer-Aktivierung in aufgabe-2-3 (Quellenkritik Wiener Ultimatum)"
+    },
+    "multiperspektivitaet_realisiert": {
+      "aufgabe-2-3": "P2 Habsburger Aussenministerium (Eskalations-bereit)",
+      "aufgabe-2-6": "P1 serbisch-national vs. P2 habsburgisch-bosniakisch-kroatisch (gleichberechtigt, kein Antwort-Vorgriff)",
+      "mappenabschluss_MZ-M2-R1": "Beide Erinnerungen aus aufgabe-2-6 in der Schluss-Reflexion explizit aufgegriffen"
+    },
+    "freischalt_code_naechste_mappe": "28-06-1914",
+    "mappenabschluss_zone": {
+      "variante": "A",
+      "anzahl_reflexion_fragen": 2,
+      "ueberleitungssatz_woerter": 19,
+      "schluss_reflexion_verankerung": "Multiperspektivitaet Princip (MZ-M2-R1) + Ursache-vs-Ausloeser-Synthese (MZ-M2-R2) — beide didaktischen Kernstuecke aus M2 sind in der Schluss-Reflexion verankert.",
+      "bruecke_M3": "'Wenn der Schuss nur Ausloeser war — wer ist dann schuld? Mappe 3 fuehrt dich in den August 1914.' (kein Stoff-Vorgriff)"
+    },
+    "validierungsstatus": "ENTWURF"
+  }
+}

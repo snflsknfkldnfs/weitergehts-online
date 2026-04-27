@@ -1,0 +1,40 @@
+{
+  "mat_id": "mat-2-1",
+  "mappe": "M2",
+  "position_in_mappe": "1 von 5",
+  "didaktische_funktion": "einstieg",
+  "primary_scpl_zone": "C2",
+  "scpl_zonen_abgedeckt": ["C1", "C2", "C3", "P"],
+  "vorausgesetztes_wissen": {
+    "fachbegriffe": [
+      "Buendnis-System (M1)",
+      "Dreibund (M1)",
+      "Triple Entente (M1)",
+      "Pulverfass Europa (M1)"
+    ],
+    "source_materialien": ["mat-1-1 bis mat-1-5 (M1, abgeschlossen)"]
+  },
+  "noch_nicht_eingefuehrt": {
+    "fachbegriffe": ["Sarajevo (mat-2-2)", "Lateinerbruecke (mat-2-2)", "Thronfolger (mat-2-3)", "Junges Bosnien (mat-2-4)", "Schwarze Hand (mat-2-4)", "Souveraenitaet (mat-2-5)"],
+    "source_materialien": ["mat-2-2", "mat-2-3", "mat-2-4", "mat-2-5"]
+  },
+  "vorheriges_material": null,
+  "naechstes_material": {
+    "id": "mat-2-2",
+    "typ": "bildquelle",
+    "kerninhalt": "Tatortskizze: Wo das Attentat raeumlich stattfand."
+  },
+  "zugeordneter_tb_knoten": {
+    "ids": ["K2-3", "K2-4", "K2-5"],
+    "texte": [
+      "Blanko-Scheck Berlin → Wien (5./6.7.)",
+      "Ultimatum + Kriegserklaerung 28.7. (AT-UN → SR)",
+      "Buendnis-Domino 1.-4. August (1.8. DT→RU, 3.8. DT→FR, 4.8. GB→DT)"
+    ]
+  },
+  "stundenfrage": "Wie wurde aus dem Attentat in Sarajevo in fuenf Wochen ein Weltkrieg?",
+  "dominante_perspektive": "P2 + P3 (Wien + Berlin als Eskalations-Akteure)",
+  "deine_aufgabe": "Du bist das Einstiegsmaterial: Gib SuS sofort die Gesamt-Struktur der 5 Wochen als visuelle Karte, die sie waehrend der Mappe immer wieder konsultieren. Advance-Organizer-Prinzip: SuS verstehen Detail-Materialien besser, wenn sie die Gesamt-Struktur bereits kennen.",
+  "fachbegriffe_eingefuehrt": ["Julikrise", "Blanko-Scheck", "Ultimatum", "Mobilmachung", "Buendnisfall"],
+  "perspektiv_tags_plan": ["nicht-dominant", "Macht-Betroffen"]
+}

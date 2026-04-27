@@ -1,0 +1,43 @@
+{
+  "id": "aufgabe-4-2",
+  "typ": "reihenfolge",
+  "frage": "Bringe die vier Ereignisse im August 1914 in die richtige Reihenfolge.",
+  "material_referenz": ["mat-4-2"],
+  "optionen": [
+    "Ultimatum an Belgien — Deutschland fordert Durchmarsch",
+    "Deutscher Einmarsch in Belgien — Grossbritannien erklaert den Krieg",
+    "Festung Lueck (Liege) faellt — Vormarsch geht weiter",
+    "Bruessel faellt — deutsche Truppen sind erschoepft"
+  ],
+  "loesung": [
+    "Ultimatum an Belgien — Deutschland fordert Durchmarsch",
+    "Deutscher Einmarsch in Belgien — Grossbritannien erklaert den Krieg",
+    "Festung Lueck (Liege) faellt — Vormarsch geht weiter",
+    "Bruessel faellt — deutsche Truppen sind erschoepft"
+  ],
+  "tipps": [
+    {"stufe": 1, "text": "Schau dir die [[mat-4-2|Zeitleiste August/September 1914]] (M2) genau an. Welche Daten gehoeren zum August?"},
+    {"stufe": 2, "text": "Beginne mit dem Ultimatum — also der Frist mit Drohung. Danach folgt der Einmarsch. An welchem Tag kam Grossbritannien dazu? Welche Festung fiel zuerst?"},
+    {"stufe": 3, "text": "Reihenfolge: 02.08. Ultimatum -> 04.08. Einmarsch + GB-Kriegseintritt -> 07.08. Lueck faellt -> 20.08. Bruessel faellt. Der deutsche Vormarsch war schnell, aber die Truppen wurden muede."}
+  ],
+  "punkte": 10,
+  "_meta": {
+    "afb": "I-II",
+    "bloom": "Anwenden",
+    "tb_knoten": ["K4-3"],
+    "scpl_zone": "C1",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "sprachniveau": "R7",
+    "q_gate": {
+      "A1_afb_kongruenz": "PASS",
+      "A2_fragestamm_klarheit": "PASS — 8 Worte, klarer Operator (bringe in Reihenfolge)",
+      "A4_rf_eindeutigkeit": "PASS — chronologische Reihenfolge in mat-4-2 eindeutig dokumentiert (02.08./04.08./07.08./20.08.)",
+      "A6_tipp_progression": "PASS",
+      "MQ3_material_referenz_in_frage": "PASS",
+      "MQ3b_display_referenz_in_tipp1": "PASS — [[mat-4-2|Zeitleiste August/September 1914]] (M2)",
+      "f_pb_44_apposition": "PASS — Ultimatum als 'Frist mit Drohung' in Tipp 2 erklaert"
+    }
+  }
+}

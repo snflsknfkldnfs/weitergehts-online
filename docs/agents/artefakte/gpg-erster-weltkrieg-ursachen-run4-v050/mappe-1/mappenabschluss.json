@@ -1,0 +1,148 @@
+{
+  "schema_version": "mappenabschluss_v1",
+  "vertrag": "VERTRAG_PHASE_2-2c_MAPPENABSCHLUSS v1.0 + STR-13 + V13 Dualstruktur + V19 Multiperspektiv-Sanity + Plugin v0.5.0",
+  "game_id": "gpg-erster-weltkrieg-ursachen-run4-v050",
+  "run_id": "run-4-2026-04-26",
+  "mappe_id": "M1",
+  "mappe_index": 1,
+  "titel": "Pulverfass Europa",
+  "phase": "2.2c",
+  "agent": "sub-template-mappenabschluss",
+  "erstellt_am": "2026-04-26",
+  "_variante": "A",
+  "_variante_begruendung": "Nicht-letzte Mappe (M2-M4 folgen) — Reflexionsfragen + Ueberleitungssatz nach M2 (Sarajevo).",
+  "f0b_priming": {
+    "kennung": "F0B_PRIMING_v1",
+    "ssot_pfad": "agents/_includes/F0B_PRIMING_INCLUDE.md",
+    "sprachniveau": "R7",
+    "terminologie_01": "PASS — neutrale Begriffe (kolonisierte Bevoelkerung, Aufteilung Afrikas durch europaeische Grossmaechte). KEINE Eingeborene/Erschliessung/zivilisatorische Mission/Entdeckung.",
+    "multiperspektiv_synthese_m3_pflicht": "PASS — mindestens eine Reflexionsfrage greift Nicht-Dominant-Perspektive (kolonisierte Bevoelkerung Afrikas) explizit auf, da Mappe Trigger-Kategorie 'kolonialismus' traegt."
+  },
+  "trigger_sichtbarkeit_policy": "POLICY_TRIGGER_SICHTBARKEIT — Lehrkraft-Block (didaktischer Kommentar, AFB, Trigger-Hinweise, Erwartungs-Indikatoren) NICHT fuer SuS sichtbar. Schueler-Block (Reflexionsfragen + Ueberleitungssatz) ohne Trigger-Wortlaute, ohne AFB-Etiketten, ohne didaktische Begriffe.",
+
+  "lehrkraft": {
+    "didaktischer_kommentar": "Mappenabschluss M1 schliesst die Wissenssicherung (hefteintrag.json) ab und oeffnet bewusst eine Reflexions-Zone. Reflexionsfragen sind disjunkt zu SCPL-Loesung (Pulverfass-Synthese steht im Hefteintrag). Drei Frage-Typen: Transfer (Buendnis-System-Logik), Bewertung (Folgenreichste Spannung), Perspektivwechsel (kolonisierte Bevoelkerung — Multiperspektiv-Synthese-Pflicht M3). Ueberleitungssatz ankert das Pulverfass-Funke-Bild fuer M2 (Sarajevo) ohne Stoff-Vorgriff.",
+    "afb_stufe": "II-III (Reflexion ueber gesicherten AFB-I-II-Stoff)",
+    "bloom_ebene": "Anwenden → Beurteilen",
+    "scpl_disjunkt_check": "PASS — keine Reflexionsfrage wiederholt scpl.loesung[0] ('Schon vor 1914 war Europa ein Pulverfass…'). Keine Frage testet Fakten (Buendnis-Mitglieder, Jahreszahlen — das ist Hefteintrag-Aufgabe).",
+    "trigger_hinweise": {
+      "trigger_flags_mappe": ["nationalismus", "kolonialismus"],
+      "kolonial_sprach_sieb_qg_07": "PFLICHT — Reflexionsfrage 3 (Perspektivwechsel) verwendet 'kolonisierte Bevoelkerung in Afrika' und NICHT 'Eingeborene', 'Erschliessung' oder 'zivilisatorische Mission'.",
+      "multiperspektiv_synthese_m3_trigger": "Mappe traegt Trigger-Kategorie 'kolonialismus' (siehe meta.trigger_flags). V19-Pflicht: mindestens eine Reflexionsfrage adressiert Nicht-Dominant-Perspektive aus perspektiv_inventar.json (P4 Kolonisierte Bevoelkerung Afrikas). Erfuellt durch reflexion_fragen[2].",
+      "neutralitaet_eskalation": "Ueberleitungssatz beschreibt Spannungs-Auflauf (Funke-Bild), ohne den Krieg zu glorifizieren oder Schuld vorwegzunehmen (Beutelsbach-Kontroversitaetsgebot)."
+    },
+    "erwartungs_indikatoren": {
+      "reflexion_frage_1_transfer": "SuS erkennen Buendnis-System als selbst-verstaerkende Eskalations-Logik: Wenn ein Buendnis-Partner einen Streit beginnt, werden alle hineingezogen. Begruendung verweist auf SCPL-Komplikation C1 (zwei feindliche Buendnis-Bloecke).",
+      "reflexion_frage_2_bewertung": "SuS waehlen begruendet eine der drei Spannungen (Buendnis-System / Flotten-Wettlauf / Kolonialwettlauf) und erklaeren ihre Wahl mit Bezug auf Reichweite, Dauer oder Eskalations-Potenzial. Keine 'richtige' Antwort — Beurteilungs-AFB.",
+      "reflexion_frage_3_perspektivwechsel": "SuS reflektieren, dass die Berliner Konferenz 1884 Afrika OHNE die kolonisierte Bevoelkerung aufteilte. Erwartung: Erkenntnis, dass das Pulverfass aus europaeischer Sicht erzaehlt ist und kolonisierte Menschen kein Mitspracherecht hatten."
+    },
+    "differenzierungs_hinweis": "Schwache SuS: Frage 1 oder 2 wahlweise muendlich. Starke SuS: Frage 3 schriftlich (3-4 Saetze). Frage 2 als Ankreuz-Variante mit Begruendungs-Pflicht moeglich.",
+    "sandwich_anschluss_m2": "Ueberleitungssatz oeffnet das 'Funke-Bild' (Pulverfass + Funke). M2 wird in den Funken einsteigen (28.6.1914 Sarajevo). KEIN Stoff-Vorgriff: weder Princip noch Datum noch Begriff Julikrise im Mappenabschluss.",
+    "qg_str_13_check": {
+      "MZ1_variante": "PASS — Variante A (M2-M4 folgen).",
+      "MZ2_disjunkt_zu_hefteintrag": "PASS — keine Frage identisch mit hefteintrag.scpl.loesung[]. Keine Frage = stundenfrage.",
+      "MZ3_keine_faktenabfrage": "PASS — alle drei Fragen sind Transfer/Bewertung/Perspektivwechsel, keine Reproduktion.",
+      "MZ4_ueberleitungssatz": "PASS — vorhanden, 18 Woerter, erzeugt Neugier (Funke-Frage).",
+      "MZ5_sprachregister_r7": "PASS — kurze Saetze, konkrete Begriffe, keine Fremdwoerter ohne Erklaerung."
+    }
+  },
+
+  "schueler": {
+    "reflexion_fragen": [
+      {
+        "id": "M1-RQ1",
+        "typ": "transfer",
+        "frage": "Stell dir vor, ein Buendnis-Partner laesst sich auf einen Streit ein. Was bedeutet das fuer alle anderen Mitglieder des Buendnisses?",
+        "hinweis": "Denke daran, was ein Buendnis verspricht."
+      },
+      {
+        "id": "M1-RQ2",
+        "typ": "bewertung",
+        "frage": "Welche der drei Spannungen — Buendnis-System, Flotten-Wettlauf oder Wettlauf um Afrika — findest du am gefaehrlichsten fuer den Frieden in Europa? Begruende deine Wahl.",
+        "hinweis": "Es gibt keine richtige Antwort. Wichtig ist deine Begruendung."
+      },
+      {
+        "id": "M1-RQ3",
+        "typ": "perspektivwechsel",
+        "frage": "Auf der Berliner Konferenz 1884 teilten sieben europaeische Maechte Afrika unter sich auf. Die kolonisierte Bevoelkerung in Afrika sass NICHT mit am Tisch. Was bedeutet das fuer ihre Sicht auf das 'Pulverfass Europa'?",
+        "hinweis": "Aus wessen Sicht erzaehlt der Begriff 'Pulverfass Europa' die Geschichte?",
+        "perspektive_aus_inventar": "P4 Kolonisierte Bevoelkerung Afrikas"
+      }
+    ],
+    "ueberleitungssatz": "Du legst Mappe 1 zur Seite. Das Pulverfass ist voll — aber wer wirft den Funken hinein?"
+  },
+
+  "engine_kompatibilitaet": {
+    "data_json_schema_konform": true,
+    "data_json_einbindung": {
+      "feld": "mappenabschluss",
+      "typ": "objekt_oder_ref",
+      "ref_pfad": "mappenabschluss.json",
+      "render_zone": "unter_hefteintrag",
+      "rendering_hinweis": "Schueler-Block wird im Schueler-Frontend gerendert. Lehrkraft-Block bleibt Lehrkraft-Ansicht (POLICY_TRIGGER_SICHTBARKEIT)."
+    },
+    "freischalt_code_tile": {
+      "code": "PULVER",
+      "ziel_mappe": "M2",
+      "tile_format": "freischalt_code_tile_v1",
+      "tile_position": "nach_ueberleitungssatz",
+      "tile_label": "Naechste Mappe oeffnen",
+      "tile_hinweis_lehrkraft": "Tile erscheint NUR, wenn alle 7 Aufgaben in M1 PASS sind. Code wird in Aufgabe 1-7 (freitext-code) erspielt."
+    }
+  },
+
+  "cross_konsistenz_check": {
+    "hefteintrag_m1": {
+      "stundenfrage_match": "PASS — Reflexionsfragen knuepfen an Stundenfrage 'Warum war Europa vor 1914 ein Pulverfass?' an, ohne sie zu wiederholen.",
+      "scpl_loesung_disjunkt": "PASS — keine Frage = scpl.loesung[0].",
+      "tafelbild_knoten_referenziert": [
+        "K1-2/K1-3 Buendnis-Bloecke → Frage 1 (Transfer Buendnis-Logik)",
+        "K1-4 Flotten-Wettlauf + K1-5 Wettlauf um Afrika → Frage 2 (Bewertung der drei Spannungen)",
+        "K1-5 Berlin-Konferenz 1884 → Frage 3 (Perspektivwechsel kolonisierte Bevoelkerung)"
+      ],
+      "schluessel_begriffe_aktiviert": ["Buendnis-System", "Flotten-Wettlauf", "Kolonialwettlauf"]
+    },
+    "aufgaben_m1": {
+      "anzahl_aufgaben": 7,
+      "afb_progression_respektiert": "PASS — Mappenabschluss-AFB II-III liegt OBERHALB der hoechsten Aufgabe (Aufgabe 1-7 freitext-code, AFB II-III). Reflexion ist Synthese-Schritt, kein zusaetzlicher Wissenstest.",
+      "freischalt_code_logik": "PASS — Code PULVER wird in Aufgabe 1-7 erspielt; Mappenabschluss aktiviert das Freischalt-Tile NACH Reflexion."
+    },
+    "materialien_m1": {
+      "anzahl_materialien": 6,
+      "referenz_in_reflexion": "Frage 3 nutzt mat-1-5 (Berliner Konferenz 1884) implizit, ohne Material-ID zu nennen — Reflexion bleibt material-unabhaengig formuliert."
+    },
+    "sicherung_m1_komplementaritaet": {
+      "abgrenzung": "PASS — sicherung.json enthaelt zusammenfassung + ueberleitung + reflexionsimpuls (1 Impuls). mappenabschluss.json enthaelt 3 Reflexionsfragen + Ueberleitungssatz. Keine Doppelung.",
+      "sicherung_reflexionsimpuls": "Was hast du jetzt verstanden — warum war Europa vor 1914 wie ein Pulverfass?",
+      "mappenabschluss_reflexion_geht_weiter": "Drei Fragen vertiefen Transfer / Bewertung / Perspektivwechsel ueber den Sicherungs-Impuls hinaus."
+    },
+    "skript_m1_konsistenz": "PASS — Funke-Bild im Ueberleitungssatz folgt Skript M1 §7 Synthese-Metapher (Pulverfass + Funke).",
+    "didaktik_rahmen_konsistenz": "PASS — Reflexions-Zone respektiert Beutelsbach (Kontroversitaet bei Frage 2) und Sandwich-Prinzip (Bogen zu M2 ohne Vorgriff)."
+  },
+
+  "v_validatoren_check": {
+    "V13_dualstruktur": "PASS — strikte Trennung lehrkraft.* vs. schueler.* (BLOCKER aktiv). Schueler-Block enthaelt KEINE Trigger-Wortlaute, KEINE AFB-Etiketten, KEINE didaktischen Begriffe.",
+    "V14_entity_encoding": "PASS — UTF-8 ASCII-Transliteration (ae/oe/ue/ss). Keine HTML-Entities.",
+    "V19_multiperspektiv_sanity": "PASS — Trigger-Kategorie 'kolonialismus' aktiv. reflexion_fragen[2] (M1-RQ3) adressiert Nicht-Dominant-Perspektive P4 (Kolonisierte Bevoelkerung Afrikas) explizit, nicht generisch.",
+    "QG_07_kolonial_sprach_sieb": "PASS — verwendete Begriffe: 'kolonisierte Bevoelkerung in Afrika', 'sieben europaeische Maechte teilten Afrika unter sich auf'. KEINE verbotenen Begriffe.",
+    "POLICY_TRIGGER_SICHTBARKEIT": "PASS — Trigger-Hinweise + AFB + didaktische_begruendung ausschliesslich in lehrkraft.*. Schueler-Block trigger-frei.",
+    "F0B_PRIMING_v1_R7": "PASS — Reflexionsfragen-Wortzahl-Bereich 14-31 Woerter, Hauptsaetze + Nebensaetze einfach verknuepft. Ueberleitungssatz 18 Woerter."
+  },
+
+  "_meta": {
+    "phase": "2.2c",
+    "str_template": "STR-13 sub-template-mappenabschluss v1.0",
+    "agent": "sub-template-mappenabschluss",
+    "plugin_version": "v0.5.0",
+    "schema_version": "mappenabschluss_v1",
+    "vertrag_version": "VERTRAG_PHASE_2-2c_MAPPENABSCHLUSS v1.0",
+    "anzahl_reflexion_fragen": 3,
+    "frage_typen": ["transfer", "bewertung", "perspektivwechsel"],
+    "ueberleitungssatz_wortzahl": 18,
+    "ueberleitungssatz_max_20_woerter_pass": true,
+    "freischalt_code": "PULVER",
+    "ziel_mappe_naechste": "M2",
+    "validierungsstatus": "ENTWURF",
+    "user_validierung_pflicht": "ja"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "id": "aufgabe-3-6",
+  "typ": "begruendung",
+  "frage": "Welche Position findest du ueberzeugender — und warum?",
+  "material_referenz": ["mat-3-3", "mat-3-4"],
+  "cer_gitter": {
+    "claim": {
+      "label": "Behauptung (Claim)",
+      "anweisung": "Waehle eine Position und schreibe einen Satz: 'Ich finde die Position von Versailles 1919 / Clark 2013 ueberzeugender.'",
+      "optionen": [
+        "Ich finde die Position von Versailles 1919 ueberzeugender.",
+        "Ich finde die Position von Clark 2013 ueberzeugender."
+      ]
+    },
+    "evidence": {
+      "label": "Beleg (Evidence)",
+      "anweisung": "Zitiere oder paraphrasiere einen Satz aus dem Material, der deine Behauptung stuetzt.",
+      "min_woerter": 5,
+      "max_woerter": 30
+    },
+    "reasoning": {
+      "label": "Begruendung (Reasoning)",
+      "anweisung": "Erklaere in 2-3 Saetzen, warum dieser Beleg deine Behauptung stuetzt.",
+      "min_woerter": 15,
+      "max_woerter": 60
+    }
+  },
+  "loesung": {
+    "claim_optionen": [
+      "Ich finde die Position von Versailles 1919 ueberzeugender.",
+      "Ich finde die Position von Clark 2013 ueberzeugender."
+    ],
+    "musterantwort_versailles": {
+      "claim": "Ich finde die Position von Versailles 1919 ueberzeugender.",
+      "evidence": "Im Vertrag steht: 'Deutschland und seine Verbuendeten sind verantwortlich fuer alle Verluste und Schaeden.' (Art. 231)",
+      "reasoning": "Deutschland hat als erste Macht Russland und Frankreich den Krieg erklaert. Deutschland marschierte durch das neutrale Belgien. Deshalb finde ich die Sieger-Position 1919 nachvollziehbar."
+    },
+    "musterantwort_clark": {
+      "claim": "Ich finde die Position von Clark 2013 ueberzeugender.",
+      "evidence": "Clark schreibt: 'Wie Schlafwandler sind fuenf Regierungen 1914 in den Krieg getaumelt: Wien, Berlin, Petersburg, Paris und London.'",
+      "reasoning": "Aus M2 weiss ich, dass das Buendnissystem alle 5 Maechte ineinander verkettet hat. Wenn alle ueber Buendnisse verbunden sind, kann nicht eine Macht allein schuld sein. Deshalb ueberzeugt mich Clark."
+    },
+    "bewertungskriterien": [
+      "Claim ist eine klare Position-Wahl (Versailles ODER Clark)",
+      "Evidence enthaelt einen konkreten Material-Bezug (Zitat oder Paraphrase aus mat-3-3 oder mat-3-4)",
+      "Reasoning erklaert die Verbindung zwischen Beleg und Behauptung",
+      "Beide Positions-Wahlen sind gleich gewertet — keine 'richtige' Antwort"
+    ]
+  },
+  "tipps": [
+    {"stufe": 1, "text": "Schau dir [[mat-3-3|Versailles Art. 231]] (M4) und [[mat-3-4|Clark — Schlafwandler]] (M5) noch einmal an. Welche Position klingt fuer dich logischer? Beide Antworten sind erlaubt — wichtig ist deine Begruendung."},
+    {"stufe": 2, "text": "CER bedeutet: Claim (Behauptung) + Evidence (Beleg) + Reasoning (Begruendung). Schritt 1: Schreibe deine Behauptung als ganzen Satz. Schritt 2: Suche im Material EINEN Satz, der deine Behauptung stuetzt. Schritt 3: Erklaere in 2-3 Saetzen, warum der Satz deine Behauptung stuetzt."},
+    {"stufe": 3, "text": "Beispiel fuer Clark-Position: Claim — 'Ich finde Clark 2013 ueberzeugender.' Evidence — 'Clark schreibt: Wie Schlafwandler sind fuenf Regierungen 1914 in den Krieg getaumelt.' Reasoning — 'Aus Mappe 2 weiss ich, dass das Buendnissystem alle Maechte verkettet hat. Wenn alle verbunden sind, kann nicht eine allein schuld sein.' Du kannst auch die Versailles-Position waehlen — beide sind erlaubt."}
+  ],
+  "punkte": 25,
+  "_meta": {
+    "afb": "III",
+    "bloom": "L5",
+    "scpl_zone": "L",
+    "tafelbild_knoten": ["K3-1"],
+    "ke_anker": "GPG7_LB3_K_03",
+    "perspektive": "P3 + P4 als Wahl-Pole; SuS-Eigen-Position als 5. Reflexionspunkt",
+    "operationalisierungsziel": "Du kannst eine eigene Position zur Schuldfrage formulieren und mit einem Beleg aus mat-3-3 oder mat-3-4 begruenden — nach dem CER-Schema (Claim, Evidence, Reasoning).",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "sprachniveau": "R7",
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "freischalt_buchstabe_position": "L (Position 5 von SCHULD)",
+    "didaktisches_kernstueck": "JA — CER-Gitter operationalisiert L5 (Beurteilen + eigene Position) als Hoehepunkt M3; strukturierte Geruest-Stuetze fuer R7-SuS",
+    "begruendung_belegfaehigkeit_pruefung": "PASS — beide Positionen haben belegfaehige Material-Stellen (mat-3-3 Wortlaut Art. 231 / mat-3-4 Schlafwandler-Metapher mit 5 Maechten)",
+    "echte_streitfrage_pruefung": "PASS — historische Kontroverse, beide Positionen vertretbar (siehe Hefteintrag M3 A.1 'echte Kontroverse')",
+    "erarbeitbarkeits_check": "PASS — beide Musterantworten aus den jeweiligen Materialien (mat-3-3/mat-3-4) belegfaehig; Bewertungskriterien klar formuliert; Beutelsbach-Kontroversitaet operationalisiert",
+    "q_gate_self_check": {
+      "A1_afb_kongruenz": "PASS — AFB III (eigene Position bilden mit Beleg)",
+      "A2_fragestamm_klar": "PASS — 1 Satz, 7 Woerter; offene W-Frage als L5-Operator",
+      "A3_material_kongruenz": "PASS — beide Position-Optionen aus mat-3-3 / mat-3-4 belegfaehig",
+      "A6_tipp_progression": "PASS — Stufe 1 Material-Refs+Wahl-Erlaubnis, Stufe 2 CER-Schritt-Anleitung, Stufe 3 vollstaendiges Beispiel mit Erlaubnis-Satz fuer alternative Position",
+      "A7_operator_praezision": "PASS — Welche-Frage + 'warum' als AFB-III-L5-Operator (Beurteilen+Begruenden)",
+      "A11_FT_freitext_qualitaet": "PASS — Strukturierungsgeruest CER + min/max-Woerter + Bewertungskriterien (kein 'reines Schreibe-deine-Meinung')",
+      "MQ3_kein_link_in_frage": "PASS — frage enthaelt kein [[ und kein (M",
+      "MQ3b_link_in_tipp_1": "PASS — Tipp 1 enthaelt [[mat-3-3|...]] + [[mat-3-4|...]] + (M4)/(M5)",
+      "F0B_R7_metrik": "PASS — Saetze max. 14 Woerter; CER-Begriffe in Tipp 2 als Fachbegriffe erklaert",
+      "beutelsbach_kein_antwortvorgriff": "PASS (BLOCKER-Pruefung) — beide Positions-Wahlen explizit gleichrangig in 'claim_optionen'; bewertungskriterien.4 fixiert 'beide Positionen gleich gewertet'; Tipp 3 schliesst mit 'beide sind erlaubt'",
+      "V13_kein_NSDAP_vorgriff": "PASS"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "aufgabe-3-1",
+  "typ": "lueckentext",
+  "frage": "Ergaenze die fehlenden Begriffe.",
+  "material_referenz": ["mat-3-1"],
+  "lueckentext_template": "Am 31. Juli 1914 ziehen Soldaten am Hauptbahnhof in {{1}} los. Viele Stadtbuerger jubeln. Diese Stimmung nennt man {{2}}.",
+  "loesung": ["Luebeck", "Augusterlebnis"],
+  "loesungsalternativen": {
+    "1": ["Lübeck"],
+    "2": ["Augustbegeisterung"]
+  },
+  "tipps": [
+    {"stufe": 1, "text": "Lies die Bildunterschrift der [[mat-3-1|Postkarte vom Hauptbahnhof]] (M1). Dort stehen Ort und Datum."},
+    {"stufe": 2, "text": "Der Ort liegt in Norddeutschland. Den Fachbegriff fuer die jubelnde Stimmung im August 1914 lernst du in dieser Mappe — er hat mit dem Monatsnamen zu tun."},
+    {"stufe": 3, "text": "Der Bahnhof steht in Luebeck. Die Stimmung in deutschen Staedten Anfang August 1914 nennt man Augusterlebnis (auch: Augustbegeisterung). Wichtig: Diese Stimmung war nicht ueberall — auf dem Land waren viele skeptisch."}
+  ],
+  "punkte": 10,
+  "_meta": {
+    "afb": "I",
+    "bloom": "L1-L2",
+    "scpl_zone": "S",
+    "tafelbild_knoten": ["K3-2"],
+    "ke_anker": "GPG7_LB3_K_03",
+    "perspektive": "P1: Begeisterte Stadtbuerger 1914",
+    "operationalisierungsziel": "Du kannst den Fachbegriff fuer die Stimmung in deutschen Staedten Anfang August 1914 nennen — und sagen, wo die Postkarte aufgenommen wurde.",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "sprachniveau": "R7",
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7c",
+    "freischalt_buchstabe_position": "S (Position 1 von SCHULD)",
+    "erarbeitbarkeits_check": "PASS — beide Lueckenbegriffe (Luebeck, Augusterlebnis) sind im inhalt-Block + Bildunterschrift mat-3-1 explizit definiert; Datum 31.7.1914 als Faktum in Bildunterschrift; Lueckentext-Eindeutigkeit: PASS.",
+    "q_gate_self_check": {
+      "A1_afb_kongruenz": "PASS — AFB I (Reproduktion Schluessel-Begriff)",
+      "A2_fragestamm_klar": "PASS — 1 Satz, 4 Woerter (Kurzregel C3c)",
+      "A3_material_kongruenz": "PASS — beide Lueckenbegriffe aus mat-3-1 inhalt direkt entnommen",
+      "A4_LT_lueckeneindeutigkeit": "PASS — Luebeck (eindeutiger Ortsname) + Augusterlebnis (Fachbegriff mit Synonym Augustbegeisterung als Loesungsalternative)",
+      "A6_tipp_progression": "PASS — Stufe 1 Hinweis (Bildunterschrift), Stufe 2 Einschraenkung (Norddeutschland + Monatsbezug), Stufe 3 Loesung+Erklaerung (mit Korrektur-Hinweis 'nicht ueberall')",
+      "A7_operator_praezision": "PASS — 'Ergaenze' als Operator AFB I, kongruent zu Lueckentext-Typ",
+      "MQ3_kein_link_in_frage": "PASS — frage enthaelt kein [[ und kein (M",
+      "MQ3b_link_in_tipp_1": "PASS — Tipp 1 enthaelt [[mat-3-1|...]] + (M1)",
+      "F0B_R7_metrik": "PASS — Saetze max. 12 Woerter, du-Form, Fachbegriff Augusterlebnis im Stufe-3-Tipp erklaert",
+      "beutelsbach_kein_antwortvorgriff": "PASS — Aufgabe ist S-Zone-Reproduktion, keine Wertungs-Frage",
+      "augusterlebnis_idealisierungs_verbot": "TEILS — Stufe-3-Tipp benennt 'nicht ueberall' explizit; vollstaendige Operationalisierung erfolgt in Aufgabe 3-2 (quellenkritik)"
+    }
+  }
+}

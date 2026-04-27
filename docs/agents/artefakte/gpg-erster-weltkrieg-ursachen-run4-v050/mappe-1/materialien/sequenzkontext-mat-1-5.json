@@ -1,0 +1,47 @@
+{
+  "schema_version": "sequenzkontext_v1",
+  "mat_id": "mat-1-5",
+  "material_id_design": "m1-mat-05",
+  "typ": "statistik",
+  "position_in_mappe": 4,
+  "anzahl_materialien_mappe": 6,
+  "didaktische_funktion": "vertiefung",
+  "primary_scpl_zone": "C2",
+  "scpl_zonen_abdeckung": ["C2"],
+  "vorausgesetztes_wissen": {
+    "fachbegriffe": ["Buendnis", "Dreibund", "Triple Entente", "Buendnis-System", "Imperialismus", "Pulverfass-Metapher", "Flotten-Wettlauf", "HMS Dreadnought"],
+    "source_materialien": ["mat-1-1", "mat-1-4", "mat-1-2"]
+  },
+  "noch_nicht_eingefuehrt": {
+    "fachbegriffe": ["Kolonialwettlauf", "Kolonie", "Marokko-Krisen", "Berliner Konferenz 1884"],
+    "source_materialien": ["mat-1-6", "mat-1-3"]
+  },
+  "vorheriges_material": {
+    "id": "mat-1-2",
+    "typ": "bildquelle",
+    "kerninhalt": "HMS Dreadnought 1906 — Symbol des Flotten-Wettlaufs (visuell).",
+    "design_id": "m1-mat-02"
+  },
+  "naechstes_material": {
+    "id": "mat-1-6",
+    "typ": "karte",
+    "kerninhalt": "Afrika 1914 — durch sieben europaeische Maechte aufgeteilt.",
+    "design_id": "m1-mat-06"
+  },
+  "fachbegriffe_eingefuehrt": ["Wettruesten"],
+  "zugeordneter_tb_knoten": [
+    {"id": "K1-4", "label": "Flotten-Wettlauf", "elemente": ["HMS Dreadnought 1906", "29 vs 17 Grossschiffe 1914"]}
+  ],
+  "dominante_perspektive": "quantitativ-strukturell",
+  "perspektiv_tags_plan": ["Macht-Ausuebung", "dominant"],
+  "erwartete_aktivitaet": "Vergleichen (2-Spalten-Tabelle lesen, Zahlen vergleichen, britischen Vorsprung erkennen)",
+  "stundenfrage": "Warum war Europa vor 1914 ein 'Pulverfass'?",
+  "wortbudget": "ca. 60 Woerter Tabellen-Begleittext",
+  "datenbasis_anker": ["wiki:Anglo-German_naval_arms_race", "wiki:HMS_Dreadnought_(1906)"],
+  "pflicht_hinweis": "Zahlen mit 'ca.' kennzeichnen (Sekundaerquelle)",
+  "ueberleitung_zu_naechstem": {
+    "rueckbezug": "Beide Seiten haben gebaut — der britische Vorsprung blieb, die Spannung wuchs.",
+    "vorausblick": "Aber das Wettruesten zur See war nicht der einzige Streit. Wo noch?",
+    "kausalitaets_typ": "kontrastiv"
+  }
+}

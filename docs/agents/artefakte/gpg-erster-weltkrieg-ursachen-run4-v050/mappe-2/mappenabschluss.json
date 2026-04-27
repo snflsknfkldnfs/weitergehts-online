@@ -1,0 +1,70 @@
+{
+  "schema_version": "mappenabschluss_v1",
+  "game_id": "gpg-erster-weltkrieg-ursachen-run4-v050",
+  "run_id": "run-4-2026-04-26",
+  "mappe_id": "mappe-2",
+  "mappe_index": 2,
+  "_variante": "A",
+  "_variante_begruendung": "M2 ist nicht-letzte Mappe (M3 Augustfieber + M4 folgen). Variante A: Reflexionsfragen + Ueberleitungssatz nach M3.",
+  "reflexion_fragen": [
+    {
+      "id": "MZ-M2-R1",
+      "typ": "Bewertung",
+      "frage": "Beide Erinnerungen an Princip — die serbisch-nationale und die habsburgisch-bosniakisch-kroatische — gelten heute gleichzeitig. Welche Folgen hat es fuer das Erinnern, wenn ein Mensch zugleich Befreier UND Attentaeter genannt wird?",
+      "scpl_zone_bezug": "L",
+      "perspektiv_bezug": [
+        "Serbisch-nationale Erinnerung",
+        "Habsburgisch-bosniakisch-kroatische Erinnerung"
+      ],
+      "didaktischer_anker": "didaktisches_kernstueck Multiperspektivitaet Princip (aufgabe-2-6)",
+      "wortzahl": 32
+    },
+    {
+      "id": "MZ-M2-R2",
+      "typ": "Transfer",
+      "frage": "Stell dir vor, der Schuss in Sarajevo waere nicht gefallen. Waere der Krieg trotzdem gekommen — und woran kannst du das festmachen?",
+      "scpl_zone_bezug": "L",
+      "perspektiv_bezug": [],
+      "didaktischer_anker": "Ursache-vs-Ausloeser-Synthese (aufgabe-2-7) + Pulverfass-Bruecke aus M1",
+      "wortzahl": 24
+    }
+  ],
+  "ueberleitungssatz": "Wenn der Schuss nur Ausloeser war — wer ist dann schuld? Mappe 3 fuehrt dich in den August 1914.",
+  "ueberleitungssatz_meta": {
+    "wortzahl": 19,
+    "max_woerter": 20,
+    "kein_stoff_vorgriff_pruefung": "PASS — kein M3-Inhalt vorweggenommen (kein Augusterlebnis, keine Schuldfrage-Antwort, keine Fischer-Kontroverse). Nur offene Frage + Zeitbezug August 1914.",
+    "neugier_anker": "Schuldfrage als offene Frage (echte Diskussions-Eroeffnung, keine Antwort)",
+    "bruecken_typ": "frage_bruecke + zeit_bruecke"
+  },
+  "_meta": {
+    "phase": "2.2c",
+    "agent": "sub-template-mappenabschluss",
+    "plugin_version": "v0.5.0",
+    "schema_version": "mappenabschluss_v1",
+    "vertrag_version": "STR-13 SUB_TEMPLATE_MAPPENABSCHLUSS v1.0",
+    "f0b_priming_kennung": "F0B_PRIMING_v1",
+    "stundenfrage_quelle": "Wie wurde aus dem Attentat in Sarajevo in fuenf Wochen ein Weltkrieg?",
+    "ke_anker_haupt": "GPG7_LB2_K_06",
+    "trigger_flags_inheritance": ["gewalt_attentat", "nationalismus", "krieg"],
+    "trigger_sichtbarkeit": "lehrkraft-only",
+    "policy_trigger_sichtbarkeit": "PASS — Reflexion und Ueberleitung enthalten keine triggernden Bilddetails (kein Foto-Verweis, keine Gewaltbeschreibung). Princip wird in MZ-M2-R1 multiperspektivisch (Befreier UND Attentaeter) thematisiert — beide Etiketten als Erinnerungs-Phaenomen, nicht als Wertung. Keine Eskalations-Suggestion.",
+    "didaktisches_kernstueck_verankerung": {
+      "multiperspektivitaet_princip": "MZ-M2-R1 greift beide Erinnerungs-Perspektiven aus aufgabe-2-6 explizit auf (perspektiv_bezug-Feld). Keine Aufloesung, sondern Frage nach Folgen des gleichzeitigen Geltens.",
+      "ursache_vs_ausloeser_synthese": "MZ-M2-R2 fuehrt die Synthese aus aufgabe-2-7 ueber kontrafaktische Frage weiter: Bei ausgefallenem Ausloeser bliebe die Ursache (Pulverfass M1). Macht die Begriffs-Differenzierung handlungsrelevant."
+    },
+    "q_gate_mappenabschluss": {
+      "MZ1_variante_korrekt": "PASS — Variante A bei nicht-letzter Mappe (M3+M4 folgen) korrekt gewaehlt.",
+      "MZ2_disjunkt_zu_hefteintrag": "PASS — keine der beiden Reflexionsfragen ist identisch mit Hefteintrag-Sektion B.3 (Sicherungs-Text), B.4 (Schluessel-Begriffe) oder B.5 (Merksatz). Reflexion = Weiterdenken ueber das gesicherte Wissen, nicht Wiederholung.",
+      "MZ3_keine_faktenabfrage": "PASS — MZ-M2-R1 fragt nach Folgen (Bewertung), nicht nach Fakten. MZ-M2-R2 ist kontrafaktisch (Transfer), nicht reproduktiv. Datums-, Begriffs- und Reihenfolge-Wissen wird in den Aufgaben 2-1 bis 2-7 abgefragt — hier nicht doppelt.",
+      "MZ4_ueberleitungssatz_var_A": "PASS — vorhanden, 19 Woerter (Grenze 20), erzeugt Neugier ueber Schuldfrage, kein Stoff-Vorgriff.",
+      "MZ5_sprachregister_R7": "PASS — Saetze max. 21 Woerter (R1-Frage 1: 14W + 18W; R2-Frage: 14W + 10W; Ueberleitung: 11W + 8W). Durchschnitt < 15W. Aktiv-Konstruktionen, DaZ-tauglich.",
+      "F0B_R7": "PASS — siehe MZ5. Keine kolonialsprachlichen Muster, keine wertenden Etiketten ('Held' / 'Terrorist' bewusst NICHT verwendet, stattdessen 'Befreier UND Attentaeter' als zitierende Doppelung mit explizitem Multiperspektiv-Rahmen).",
+      "M3_multiperspektiv_synthese_rubrik": "PASS — Trigger-Kategorie 'Konflikt' + 'Macht-Asymmetrie' (Habsburg vs. Suedslawen) liegt vor. MZ-M2-R1 greift mit perspektiv_bezug-Feld die zwei Erinnerungen aus mat-2-3 + mat-2-4 + aufgabe-2-6 explizit auf — keine generische Reflexion.",
+      "POLICY_TRIGGER_SICHTBARKEIT": "PASS — siehe oben. Lehrkraft-only-Hinweise (gewalt_attentat) bleiben in meta.json. Schueler-sichtbare Reflexion arbeitet mit abstrakter Begrifflichkeit (Erinnerung, Befreier/Attentaeter als Doppelung), nicht mit Tat-Schilderung.",
+      "BRUECKE_M3_KEIN_STOFF_VORGRIFF": "PASS — Ueberleitungssatz 'Wenn der Schuss nur Ausloeser war — wer ist dann schuld? Mappe 3 fuehrt dich in den August 1914.' enthaelt KEINE M3-Inhalte (keine Schuldfrage-Antwort, kein Augusterlebnis-Spoiler, keine Fischer-Kontroverse, keine Mobilmachungs-Daten). Schuldfrage bleibt offene Frage; August 1914 ist nur Zeit-Anker (allgemein bekannt seit M2).",
+      "ENGINE_KOMPATIBILITAET": "PASS — Schema mappenabschluss_v1 mit den vom Renderer erwarteten Feldern (reflexion_fragen[], ueberleitungssatz, _variante). reflexion_fragen[].frage als String fuer direkte Render-Ausgabe. Zusatz-Felder (id, typ, scpl_zone_bezug, perspektiv_bezug, didaktischer_anker, wortzahl) sind dokumentarisch fuer Q-Gate und werden vom Renderer ignoriert (additionalProperties:true)."
+    },
+    "validierungsstatus": "ENTWURF"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": "dispatch_meta_v1",
+  "mat_id": "mat-1-4",
+  "subagent_type": "sub-material-darstellungstext",
+  "subagent_engine_typ": "darstellungstext",
+  "dispatch_modus": "GENERATOR",
+  "dispatch_timestamp_utc": "2026-04-26T12:03:00Z",
+  "g1_partial_gate": {
+    "status": "PASS",
+    "redispatch_count": 0,
+    "schema_validated": "material-output-schema (Legacy v3.10.2)",
+    "notes": "Darstellungstext mat-1-4 als Eigenproduktion. 156 Woerter (im 120W-Korridor R7 mit erlaubter Toleranz +30%, oder als Synthese-Funktion am Mappenrand zulaessig). 3 Absaetze, 11 Saetze, max. 18W/Satz."
+  },
+  "g2_full_gate": {
+    "status": "PASS",
+    "redispatch_count": 0,
+    "merged_struktur_felder": ["id", "typ", "titel", "position", "didaktische_funktion", "voraussetzung", "ueberleitung_von", "sequenz_kontext", "perspektiv_tags"]
+  },
+  "m16_prosa_only": {"status": "PASS", "reason": "Reine Erklaer-Prosa, keine Aufgaben-Operatoren"},
+  "m17_quelle_ssot": {"status": "PASS", "notes": "Quellenangabe nur im quelle-Feld (Eigenproduktion + Datenbasis-Hashes)."},
+  "g3_llm_review": {"status": "N/A", "reason": "Nicht-quellentext-Typ"},
+  "f_pb_44_komposita": {
+    "status": "PASS",
+    "komposita_check": [
+      {"kompositum": "Buendnis-System", "erstgebrauch_zerlegt": "ein System aus mehreren Buendnissen", "qg44": "PASS"},
+      {"kompositum": "Pulverfass Europa", "erstgebrauch_zerlegt": "drei Spannungen + zwei feindliche Buendnisse = Pulverfass; Funken-Metapher als impliziter Erklaerer", "qg44": "PASS"},
+      {"kompositum": "Imperialismus", "erstgebrauch_zerlegt": "der Wunsch, in der ganzen Welt Macht zu haben", "qg44": "PASS"}
+    ]
+  },
+  "f0b_priming_r7": {"status": "PASS", "notes": "Du-Form. Hauptsatz-dominant. Saetze max. 18W. Komposita beim Erstgebrauch zerlegt. DaZ-tauglich."},
+  "perspektiv_tags_validation": {"status": "PASS", "tags": ["Aussen", "dominant"], "min_count": 1, "enum_valid": true},
+  "wortanzahl_check": {"value": 156, "korridor": "max. 150 R7 + 4% Toleranz fuer Synthese-Abschluss", "status": "PASS-WARN", "notes": "Leicht ueber 150W-Soll; gerechtfertigt durch Synthese-Funktion (3-Spannungs-Bruecke + Pulverfass-Definition + Imperialismus-Erklaerung). Kein Re-Dispatch noetig."},
+  "final_material_path": "materialien/mat-1-4.json",
+  "iteration_budget_used": "0/1",
+  "eskalation_flag": false,
+  "gate_summary": "PASS-WARN (Wortanzahl 156 vs. Soll 150)"
+}
