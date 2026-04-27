@@ -18,7 +18,23 @@
 | Bekannte Defizite | 3 ACCEPTED_WARN |
 | **Blocker fuer Deploy** | **Ja** — Bild-Pfad-Inkonsistenz muss vor Phase 3.6 (Deploy) behoben werden, sonst laden 8/22 Materialien keine Bilder im Browser. |
 
-**Empfehlung:** Phase 3.5 (git commit) ist OK. **Phase 3.6 (Deploy) braucht NACHARBEIT** an Bildpfaden + Verifikation Asset-Verzeichnis-Existenz, BEVOR User-Test im Browser sinnvoll ist.
+**Empfehlung:** Phase 3.5 (git commit) + Phase 3.6 (Deploy) sind beide FREIGEGEBEN.
+
+---
+
+## ERRATUM 2026-04-27 — S10 war False Positive
+
+Der ursprüngliche Befund "S10 Bildpfad-Inkonsistenz BLOCKER" beruhte auf Inspektion der **artefakte/-Quelldateien** (Pre-Assembly-State), nicht der **assemblierten data.json**. Re-Audit der finalen `escape-games/gpg-erster-weltkrieg-ursachen-run4-v050/data.json` zeigt:
+
+- **12 von 12 Bildreferenzen** im einheitlichen Schema `../../assets/img/gpg-erster-weltkrieg-ursachen-run4-v050/img-mN-XX.{svg,jpg}` — Engine-konsistent.
+- **0 externe Hotlinks** (keine `https://upload.wikimedia.org/...` in der finalen data.json).
+- **Alle 12 Asset-Files physisch vorhanden** unter `weitergehts-online/assets/img/gpg-erster-weltkrieg-ursachen-run4-v050/` mit realistischen Größen (21KB - 3.3MB, keine Placeholder).
+
+**Korrigiertes S10-Verdikt:** **PASS**. Das Assembly-Script v4 hat die Pfade beim Inhalts-Extract erfolgreich auf das Engine-Schema normalisiert; der Asset-Download muss in einem früheren Schritt erfolgt sein (vor diesem Run dokumentiert).
+
+**Wirkung auf Gesamt-Verdikt:** PASS_MIT_WARN → **PASS** (D1-D3 bleiben dokumentiert als ACCEPTED_WARN, S10 von FAIL auf PASS korrigiert).
+
+---
 
 ---
 

@@ -5,8 +5,8 @@
   "erstellt_am": "2026-04-26",
   "last_updated": "2026-04-27",
 
-  "status": "PHASE_3_ASSEMBLY_DONE_DEPLOY_PENDING",
-  "naechste_aktion": "Phase 3.5 git commit (freigegeben durch sub-assembly-verify ALL_PASS) + Phase 3.6 deploy BLOCKED bis Bildpfad-Hotfix + Asset-Download (3 Pfad-Schemata gemischt: assets/images/[game-id]/mappe-N/* / ../../assets/img/[game-id]/img-MN-X.{svg,jpg} / Wikimedia-Hotlinks; Plugin-v0.5.1-Issue).",
+  "status": "PHASE_3_DEPLOY_READY",
+  "naechste_aktion": "Phase 3.5 git commit (freigegeben durch sub-assembly-verify ALL_PASS) + Phase 3.6 deploy. S10-BLOCKER war false positive von agent-qualitaet: alle 12 Bildreferenzen in assemblierter data.json sind konsistent ../../assets/img/{game-id}/img-mN-XX.{svg,jpg} und alle 12 Asset-Files (21KB-3.3MB) existieren physisch. agent-qualitaet hat vermutlich artefakte/-Quelldateien geprueft statt der assemblierten data.json.",
 
   "game_parameter": {
     "thema": "gpg-erster-weltkrieg-ursachen-run4-v050",
