@@ -4,6 +4,60 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-27 — F-PB-68 FIX + 5 BEFUNDe konsolidiert + Pfad C Pilot-Vorbereitung GESTARTET (weitergehts-online)
+
+**Scope:** Pfad C aus 4-Optionen-Plan (Parallel Pilot-Vorbereitung + v0.5.1-Phase A). 3 Stufen Cowork: Stufe A F-PB-68 lehrkraft.html Fix + Stufe B v0.5.1-Spec im Generator-Repo + Stufe C Pilot-Walk-Through.
+
+**Modus:** EXECUTE Cowork-Self-Edit, ~3h Wall-Clock.
+
+**Stufe A — F-PB-68 lehrkraft.html JS-Renderer (Cowork-Commit `a5c998c`):**
+
+- 198 LOC neu in lehrkraft.html (12032 → 19820 B, 330 → 520 Z.)
+- 3 Renderer-Funktionen ergaenzt:
+  - `renderMappenabschlussLehrkraft(data)` iteriert ueber alle Mappen
+  - `renderLehrkraftSubBlock(obj, title)` rendert pro lehrkraft-Sub-Field
+  - `humanizeKey(k)` konvertiert snake_case zu Title Case
+- Spezial-Banner fuer `_sichtbarkeit` + `_policy` (POLICY_TRIGGER_SICHTBARKEIT-Hinweis)
+- Skip-Liste fuer interne Felder (_meta, _template_ref, _f0b_priming_kennung)
+- **PILOT-BLOCKER BESEITIGT:** V13-Inhalte (M3 Versailles-NSDAP-Sprengkraft + Augusterlebnis-Idealisierungs-Verbot + M4 Schlieffen-Plan-Mythos-Korrektur Zuber 2002+) jetzt im Lehrkraft-Frontend abrufbar
+- Live-Verifikation post-30s GitHub-Pages-Build: PASS (19860 B + 2x F-PB-68 + 2x renderMappenabschlussLehrkraft + 1x POLICY_TRIGGER_SICHTBARKEIT Marker)
+
+**Stufe B — PLUGIN_v0_5_1_HARDENING_SPEC.md im Generator-Repo:**
+
+- 10 Sektionen analog v0.5.0-Spec: Scope + Versionsstrategie + Foundation-Phase-A + Komponenten-Patches Phase-B + Implementierungs-Reihenfolge + T-Smoke-Suite + Risiken + Run-5-Akzeptanzkriterien + Migrations-Hinweise + Commit-Plan
+- 27-Item-Backlog strukturiert (6 HIGH + 10 MED + 11 LOW), ~14-20 PT
+- 3 Implementations-Stufen (Phase A + Phase B + Run-5-Pristine-Test)
+- Cross-Reference-Mapping aller F-PB-IDs zu Source-BEFUNDen
+- v0.5.1-Patch-Bump-Versionsstrategie (rueckwaertskompatibel zu v0.5.0)
+
+**Stufe C — PILOT_WALK_THROUGH_M2_M3_M4.md (Lehrer-Briefing):**
+
+- 6 Sektionen: Vor-Pilot-Pflicht + M2 + M3 + M4 + Game-Abschluss + Pilot-Eval-Pflicht
+- M2 Princip-Multiperspektivitaet (aufgabe-2-6 Held-vs-Terrorist-Zuordnung) — Anti-Pattern-Vermeidung Lehrkraft
+- M3 Beutelsbach Versailles vs. Clark (aufgabe-3-5 Vergleich + aufgabe-3-6 CER-Begruendung) — Kontroversitaetsgebot
+- M3 Augusterlebnis-Idealisierungs-Verbot — Differenzierung Stadt-Mittelschicht / Land-Bevoelkerung / Arbeiter
+- M3 Versailles-NSDAP-Sprengkraft (V13 lehrkraft-only, kein NSDAP-Vorgriff im Schueler-Material)
+- M4 Schlieffen-Plan-Mythos-Korrektur Zuber 2002+ (muendliche Relativierung, NICHT im Heft korrigieren)
+- M4 Sieger-Verlierer-Abschluss (Frage offen halten, Joffre/BEF taktisch ja, langfristig niemand)
+- Game-Abschluss-Reflexion (Lehrkraft-Schluss-Runde 10-15 Min, Reflexionsfrage 3 Gegenwartsbezug bewusst offen halten)
+- Pilot-Eval-Pflicht: 8 Empirie-Erfassungs-Punkte fuer v0.5.1-Backlog-Refinement
+
+**5 BEFUNDe konsolidiert (vorab, Empirie-Basis):**
+
+- BEFUND_RUN4_AUDIT.md (236 Z.) — Pre-Phase-Audit + §10 CLI-Self-Diagnose
+- BEFUND_RUN4_TIEFEN_EVAL.md (314 Z.) — Drei-Wege-Vergleich Goldstandard/Run-3/Run-4
+- BEFUND_RUN4_GENERIERUNGS_TRACE.md (305 Z.) — Schritt-fuer-Schritt CLI-Verlauf, 23 Subagent-Dispatches, 6 Defekte chronologisch
+- BEFUND_RUN4_LIVE_CONTENT_INVENTAR.md (365 Z.) — Sandbox-Audit Live-Site, 5 NEU-Items
+- BEFUND_RUN4_BACKLOG_KONSOLIDIERT.md (368 Z.) — Master-Merge + 27-Item-Backlog + 5 R-Architektur-Empfehlungen
+
+**CLI-Self-Eval-Verifikation:** 7/8 Anti-Patterns empirisch belegt via Sandbox-Empirie. **A6 (Verifier-Source-Confusion) als Mis-Diagnose korrigiert** — data.json.pre-hotfix.bak hatte tatsaechlich 3 Pfad-Schemata gemischt (3 SchB + 6 SchA + 3 Wikimedia-Hotlinks), agent-qualitaet hat KORREKT gelesen, NICHT artefakte/. Real-Issue: Multi-Track-Coordination ohne Versions-Hash.
+
+**Aufwand-Realismus-Update:** v0.5.1-Backlog von 17 (initial) → 27 Items (konsolidiert), ~6-8 PT → ~14-20 PT (2.5x).
+
+**Naechste Schritte:** (1) Pilot-Termin mit Lehrkraft koordinieren (User-Aktion), (2) v0.5.1-Phase-A-Implementation im Generator-Repo (F-PB-50 + F-PB-72 + F-PB-63 + F-PB-52 + F-PB-53, ~5-7 PT, 1-2 Wochen), (3) Pilot-Empirie auswerten + v0.5.1-Phase-B (Schema-Drift-Cluster, ~6-8 PT, 2-3 Wochen), (4) Run-5 Pristine-Test mit neuem Game (~5h CC + 2-3h Audit), (5) v0.5.1-Tag.
+
+---
+
 ## 2026-04-27 — Run-4 v0.5.0 KOMPLETT (Phase 0-3.5) + Hotfix DONE + Plugin-Self-Diagnose CLI-Capture (weitergehts-online)
 
 **Scope:** Run-4-Game `gpg-erster-weltkrieg-ursachen-run4-v050` autonom durch Code-Mode-CLI generiert + 6-Subagent-Audit + Cowork-Hotfix + Phase 3.5 git commit + Plugin-Self-Diagnose-Capture.
