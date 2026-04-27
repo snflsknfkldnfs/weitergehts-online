@@ -4,6 +4,43 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-27 — Run-4 v0.5.0 KOMPLETT (Phase 0-3.5) + Hotfix DONE + Plugin-Self-Diagnose CLI-Capture (weitergehts-online)
+
+**Scope:** Run-4-Game `gpg-erster-weltkrieg-ursachen-run4-v050` autonom durch Code-Mode-CLI generiert + 6-Subagent-Audit + Cowork-Hotfix + Phase 3.5 git commit + Plugin-Self-Diagnose-Capture.
+
+**Modus:** EXECUTE (Cowork post-Run-4), Pfad-C aus 4-Optionen-Plan (HIGH-Patches → Q-GATE-LOG-Konsolidierung → Phase 3 Assembly → v0.5.1-Backlog).
+
+**1 Commit weitergehts-online (`ba808b2`):**
+
+- **Run-4-Output (artefakte/, escape-games/, assets/img/):** 157 Files / 28126 Insertions
+- **4 Mappen / 22 Materialien / 28 Aufgaben / 12 Bilder / Game-Abschluss-Code** PULVERFASS — AUSLOESER — AUGUSTBEGEISTERUNG — STELLUNGSKRIEG
+- **HIGH-Hotfix Bildpfad:** 12 Bilder von Wikimedia Commons via `Special:FilePath` lokal gespiegelt (~10.6 MB), 12 Pfade auf kanonisches Schema B vereinheitlicht (`../../assets/img/{game-id}/img-mN-0n.{ext}`). Eliminiert: 9 Schema-A-Pfade (Asset-Verzeichnis-Drift) + 3 Schema-C-Wikimedia-Hotlinks (Mixed-Content-Risiko). Substitute für mat-1-6 (Eigenkomposition agent-material) via Wikimedia Commons `Colonial_Africa_1913_map.svg`.
+- **HIGH-Patches img_id Bulk-Rename:** 288 Replacements in 20 TARGET-Files + 24 in 19 Mappen-Files (data.json + artefakt_inventar.json + medien_katalog_game.json + skript_struktur.json + hefteintrag_struktur.json + SKRIPT.md + 4× HEFTEINTRAG_M*.md + Q-GATE-LOG.md + UEBERGABE_PHASE_3.md + qualitaets_protokoll.md + DIDAKTIK_RAHMEN.md + inhalts_briefing.json + 4× BLUEPRINT_M*.md + 4× material_geruest_m*.json + 4× PROGRESSIONSPLAN_Mappe_*.md). Konvention `img-MN-n` → `img-mN-0n` (lowercase + 2-stellig). Schema-Pattern `^img-m[0-9]+-[0-9]+$` jetzt erfüllt.
+- **HIGH-Patch knoteen_id-Tippfehler:** mappe-3 mat-3-2 tafelbild_knoten Schlüssel-Duplikat entfernt (knoteen_id war zusätzlich zu knoten_id, oneOf-Schema-FAIL).
+- **LOW-Patch a4-7 Bloom-String:** `_meta.bloom: "Analysieren"` → `"L4"` + neues `bloom_label: "Analysieren"` (Anderson-Krathwohl-Taxonomie L1-L6).
+- **LOW-Patch a4-7 Quote-Bug:** scaffolding ASCII U+0022 → German U+201C (typografisch korrekt für `„...""` Closing-Quote).
+- **Validator-Re-Run:** artefakt_inventar.json 14 errors → 1 (UNKNOWN_FIELD f_pb_* Plugin-Komposita-Felder → v0.5.1-Backlog).
+- **Browser-Smoke 13/13 HTTP 200:** index.html + data.json + 4× mappe-N.html + lehrkraft.html + 7 Bildpfade-Stichprobe + base.css + escape-engine.js.
+- **BEFUND_RUN4_AUDIT.md (236 Z., 9 Sektionen):** Aggregat-Befund + F-PB-Hardening-Empirie + Hallu-Pipeline (4/5 erkannt) + 3 HIGH + 4 MED + 8 LOW Findings + Drei-Wege-Vergleich Goldstandard/Run-3/Run-4 + v0.5.1-Backlog (13 Items, ~6-8 PT).
+- **BEFUND_GOLDSTANDARD_PRE_v050_STRICT_TEST.md (151 Z.):** v0.5.0-Plugin-Validatoren auf altes Game `gpg-erster-weltkrieg-ursachen` (4 Tests, F-PB-50-52 NEW empirisch belegt).
+
+**Plugin-Self-Diagnose CLI-Capture (post-Phase-3, BEFUND_RUN4_AUDIT.md §10 ergänzt):**
+
+- **CLI-Source:** `2026-04-27-102854-command-messageescape-game-generatorgenerate-g.txt` (1115 Z., Plugin-Generator-Self-Diagnose während Phase 3.2 Assembly + 3.4 sub-assembly-verify)
+- **CLI-1 Bildpfad-3-Schemata** (DEDUPT mit F-PB-50-NEW agent-assembly Pfad-Schema-Vereinheitlichung)
+- **CLI-2 M2 fehlt rahmen/-Verzeichnis** (NEU **F-PB-63-NEW**, Plugin-Output-Pflicht-Check fehlt)
+- **CLI-3 9 JSON unescaped typografische Anführungszeichen** (NEU **F-PB-64-NEW**, post-write-Hook fehlt für agent-aufgaben/agent-material)
+- **CLI-4 Hefteintrag-Schlüssel-Drift `tafelbild_knoten` vs. `knoten`** (NEU **F-PB-65-NEW**, Vertrag/Engine-Schema-Vereinheitlichung)
+- **CLI-5 lueckentext-Feldname-Drift** (NEU **F-PB-66-NEW**, → `text_mit_luecken` engine-konform)
+
+**v0.5.1-Backlog erweitert:** 13 (Audit) + 4 (CLI-NEU) = **17 Items total**. Tiefen-Eval (B2) wird empirische Pflicht/Optional-Klassifizierung pro Item liefern.
+
+**Aufwand-Ist Hotfix + PM-Pflege:** ~3h Wall-Clock (Asset-Download + 11 Patches + Validator-Re-Runs + Browser-Smoke + Commit + STATUS/CHANGELOG/BEFUND-Updates). Wall-Clock-Speedup ~50%+ durch Self-Edit-Fallback + Python-Bulk-Rename statt Subagent-Pattern.
+
+**Naechste Schritte:** B2 Tiefen-Eval Run-4 (60-90 Min): Drei-Wege-Vergleich Goldstandard/Run-3/Run-4 quantitativ + Plugin-v0.5.0-Hardening-Wirkungsanalyse pro F-PB + Hallu-Pipeline-Empirie + Architektur-Befunde S1-S4 Status + v0.5.1-Backlog REVISIT (17 Items mit empirischer Pflicht/Optional-Klassifizierung) + Phase-3.6-Deploy-Reifegrad-Urteil. Dann B3 Informed-Decision (v0.5.1-Backlog Implementation oder Phase 3.6 Deploy mit Lehrkraft-Pilot oder beide parallel).
+
+---
+
 ## 2026-04-26 — Plugin v0.5.0 Phase C+D KOMPLETT — v0.5.0 Implementation TOTAL DONE (Generator-Repo)
 
 **Scope:** Phase C MED (4 Findings) + Phase D LOW (1 Finding) = v0.5.0-Closure (4 PT Plan).

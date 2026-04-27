@@ -234,3 +234,27 @@
 ---
 
 **Audit abgeschlossen.** 6 Subagent-Reviews + Pre-Audit-Validatoren konsolidiert. v0.5.0-Pilot-Empirie als Production-Ready-Beweis. v0.5.1-Backlog mit 13 Items abgeleitet.
+
+---
+
+## 10. Plugin-Self-Diagnose CLI-Capture (post-Phase-3 Update 2026-04-27)
+
+**Source:** CLI-Generator-Session-Export `2026-04-27-102854-command-messageescape-game-generatorgenerate-g.txt` (1115 Zeilen). Plugin hat sich in Phase 3.2 Assembly + 3.4 sub-assembly-verify selbst-diagnostiziert. Findings ergänzend zu Audit-Subagent-Reviews.
+
+**5 Plugin-v0.5.1-Issues (Plugin-Self-Diagnose):**
+
+| ID | Finding | Impact | Status post-Hotfix | v0.5.1-Backlog-Cross-Ref |
+|---|---|---|---|---|
+| **CLI-1** | Bildpfad-Inkonsistenz (3 Pfad-Schemata gemischt: `assets/images/{game-id}/mappe-N/*` + `../../assets/img/{game-id}/img-MN-X.{ext}` + Wikimedia-Hotlinks) | Deploy-Blocker | TARGET-Hotfix DONE (12 Bilder downloaded + Schema B vereinheitlicht), Plugin-Bug bleibt | Überlappt F-PB-50-NEW (agent-assembly Pfad-Schema-Vereinheitlichung) |
+| **CLI-2** | M2 fehlt `rahmen/`-Verzeichnis (FileNotFoundError beim Phase-3 Assembly auf `mappe-2/rahmen/hefteintrag.json`) | Plugin-Output-Pflicht-Check fehlt | Workaround in Assembly-Skript (V13 Detection statt File-Lesen) | **NEU:** F-PB-63-NEW (Plugin-Output-Pflicht-Check für rahmen/-Verzeichnis pro Mappe) |
+| **CLI-3** | 9 JSON-Files mit unescaped typografischen Anführungszeichen (`„...""` statt JSON-escaped `\"`) | JSON-Parse-Fehler bei Phase-3-Assembly | Bandaid `/tmp/fix_json_quotes.py` in CLI, post-Phase-2 reparieren | **NEU:** F-PB-64-NEW (post-write-Hook für agent-aufgaben/agent-material: JSON-Sanitizer für typografische Quotes) |
+| **CLI-4** | Hefteintrag-Schlüssel-Drift `tafelbild_knoten` (in artefakt_inventar.json) vs. `knoten` (in rahmen/hefteintrag.json) | Vertrag/Engine-Schema-Inkonsistenz | sub-assembly-verify V13 hat Mismatch ignoriert (Detection-Heuristik) | **NEU:** F-PB-65-NEW (Vertrag/Engine-Schema-Vereinheitlichung Schlüssel-Naming `knoten` als Single-Source-of-Truth) |
+| **CLI-5** | `lueckentext`-Feldname-Drift (engine-konformes Naming wäre `text_mit_luecken`) | Engine-Render-Inkonsistenz mit altem Goldstandard | aufgabe-Schema-Compatibility-Layer in data.json-Assembly | **NEU:** F-PB-66-NEW (lueckentext → text_mit_luecken Vertrag/Schema-Migration) |
+
+**Konsequenz für v0.5.1-Backlog:** 13 Items (Audit) + 4 NEUE (CLI-Self-Diagnose) = **17 Items total**. CLI-1 dedupt mit F-PB-50-NEW. CLI-2-5 sind echte Neuzugänge.
+
+**Tiefen-Eval-Implikation:** Plugin-Self-Diagnose ist methodisch wertvoll — Plugin erkennt eigene Bugs zur Laufzeit. Sollte als Empirie-Modus in v0.5.1-Spec aufgenommen werden (selbst-protokollierend). Vergleichs-Empirie mit Goldstandard zeigt: alle 5 Issues sind v0.5.0-spezifisch, nicht Goldstandard-Regression.
+
+---
+
+**Audit erweitert 2026-04-27.** Backlog wächst auf 17 Items. Tiefen-Eval-Pflicht: empirische Pflicht/Optional-Klassifizierung pro Item.
