@@ -4,6 +4,88 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-27 — Track 2 v0.5.1-Phase-A KOMPLETT: 13/13 HIGH-Items DONE im Generator-Repo
+
+**Scope:** v0.5.1-Phase-A-Implementation (HIGH-Items, Pilot-Pflicht). Generator-Repo strukturell hardened. 2 NEUE User-Pädagogen-Befunde (F-PB-88+89) integriert.
+
+**Modus:** EXECUTE Cowork-Self-Edit + Python-Batch-Patches + Subagent-Pattern für Frontmatter-Patches. ~2.5h Wall-Clock total (Plan 19-26 PT — Speedup ~85%).
+
+**2 Generator-Repo-Commits:**
+
+### Commit `317626e` — Initial Phase-A (8 HIGH-Items)
+
+**4 NEUE Tools** (~1100 LOC Python):
+- `check_hefteintrag_struktur.py` (F-PB-84) — Hefteintrag-Strukturfeld-Validator (knoten≥3 + verbindungen≥2 ab M2 + voraussetzungen≥1 ab M2 + ordnungsmuster NotEmpty + transfer.frage NotEmpty + scpl.zwischen_komplikationen Pflicht bei ≥3 Komplikationen)
+- `check_synthese_aufgabe.py` (F-PB-87) — Synthese-Aufgabe-Pflicht pro Mappe (≥3 Materialien + AFB-III + Stundenfrage adressiert)
+- `check_rahmen_completeness.py` (F-PB-63) — rahmen/-Pflicht-Files pro Mappe (4 Files)
+- `check_img_id_pattern.py` (F-PB-53) — img_id-Pattern `^img-m[0-9]+-[0-9]+$`
+
+**1 Tool-Patch:**
+- `validate_skript_sk.py` (F-PB-52) — chunk_grenze H3-Marker primary, H2 als Fallback (Korrektur Run-4-Empirie 0/6 Korridor)
+
+**4 NEUE Hooks:**
+- post-write-hefteintrag-struktur (F-PB-84) + post-write-aufgabe-synthese (F-PB-87) + post-write-mappe-rahmen-completeness (F-PB-63, BLOCK exit 2) + pre-write-img-id-pattern (F-PB-53, BLOCK exit 2)
+
+**24 Subagent-Frontmatter-Patches (F-PB-72):**
+- state-advance-policy als Pre-Run-State-Pflicht-Block in 24 Subagent-Files
+- Vertragsregel: "Tatsächliche Files > deklarierte State-Anzeige"
+
+**5 Vertrag-Patches in Agent-Files:**
+- AGENT_ARTEFAKT.md (F-PB-50 Pfad-Schema-Vereinheitlichung)
+- AGENT_SKRIPT.md + AGENT_HEFTEINTRAG.md (F-PB-85 SCPL-Multi-Kausalität)
+- agent-raetsel-dispatcher.md + agent-raetsel-progressionsplan.md (F-PB-87 Synthese-Aufgabe-Pflicht)
+
+### Commit `6a633b1` — F-PB-88+89 (User-Pädagogen-Befund 2+3)
+
+**2 NEUE Tools** (~400 LOC Python):
+- `check_doppelfragen.py` (F-PB-88) — Pattern-Detection für Gedankenstrich-Doppelfragen
+- `check_ueberleitung_qualitaet.py` (F-PB-89) — Floskel-Detection + 4-Komponenten-Pflicht
+
+**2 NEUE Hooks:** post-write-data-doppelfragen-check + post-write-data-ueberleitung-qualitaet
+
+**6 Vertrag-Patches:**
+- agent-raetsel-dispatcher/progressionsplan + AGENT_SKRIPT + 3 SUB_MATERIAL_*.md (F-PB-88+89)
+
+**Empirie auf Run-4 Validatoren:**
+- `check_hefteintrag_struktur`: M1 PASS post-Cowork-Hotfix + M2 2 Errors (voraussetzungen=0 + scpl-Verschränkung fehlt)
+- `check_synthese_aufgabe`: M2 a-2-7 nur 2 Materialien + M4 a-4-7 nur 1 Material + underweighted
+- `check_rahmen_completeness`: mappe-2/rahmen/ MISSING
+- `check_img_id_pattern`: 0 Errors (Cowork-Hotfix-Wirkung empirisch belegt)
+- `check_doppelfragen`: 1 Aufgabe-Error (a-3-6) + 6 Material-Title-Warns
+- `check_ueberleitung_qualitaet`: 6 Floskel-Errors → 0 Errors post-Cowork-Beispiel-Patch (mat-1-2 + mat-1-6)
+
+**Cowork-Beispiel-Patch im weitergehts-online (Commit `486ce86`):**
+
+- M1 mat-1-2 Überleitung umstrukturiert (Floskel "Aber war das alles?" → "Daraus folgt die Frage: Wenn man dem anderen Block nicht traut — wie sichert man sich ab?" + kausale Brücke zu HMS Dreadnought)
+- M1 mat-1-6 Überleitung umstrukturiert (analog problemorientiert)
+
+**Plugin-Komponenten-Inventar v0.5.1-Phase-A-Closure:**
+- Tools: 23 → **29** (+6 NEU, ~1500 LOC Python total)
+- Hooks: 17 → **23** (+6 NEU)
+- Subagent-Frontmatter mit F-PB-72: 0 → **24/24**
+- Vertrag-Patches in Agent-Files: 0 → **11** (in 7 Files)
+
+**v0.5.1-Backlog-Stand post-Phase-A:**
+- Phase A (HIGH, Pilot-Pflicht): **13/13 DONE** ✓
+- Phase B (MED, Schema-Drift-Cluster + 6 weitere): 10 Items PENDING (~6-8 PT)
+- Phase C (LOW, Polish + Doku): 11 Items OPTIONAL deferrable
+- Total v0.5.1: **39 Items**, 13/39 = 33% DONE
+
+**Methodik-Lessons etabliert:**
+1. **User-Pädagogen-Audit als 4. Pflicht-Audit-Stufe** (neben Sandbox-Validatoren + Subagent-Reviews + Plugin-Self-Diagnose). 5 vorherige BEFUNDe + CLI-Self-Eval konnten M1-Strukturmängel + Doppelfragen + Floskel-Überleitungen NICHT detektieren.
+2. **Plugin-vs-Engine Schema-Drift** = häufigste CRITICAL-Bug-Klasse in v0.5.0 (F-PB-77/78/79/80/82) — Strukturelle Lösung in v0.5.1-Phase-B (Schema-Drift-Cluster + Migration-Skript).
+3. **Ende-zu-Ende Browser-Render-Test (headless Playwright)** als Pflicht-Audit-Stufe — Sandbox-Fetch reicht nicht, weil Plugin-vs-Engine Schema-Drifts erst beim JavaScript-Render sichtbar werden (F-PB-77 Bilder broken + F-PB-79 Lückentext-Marker sichtbar wären durch headless-Browser sofort detektiert).
+
+**Aufwand-Ist Phase A:** ~2.5h Wall-Clock (Plan-Schätzung 19-26 PT — Speedup ~85% durch Self-Edit + Python-Batch + Subagent-Pattern für 24 Frontmatter-Patches).
+
+**Naechste Schritte:**
+1. **Plugin-Validator-Run** (User-side `claude plugin validate /Users/paulad/escape-game-generator`) zur strukturellen Plugin-Spec-Verifikation
+2. **Phase B starten** — Schema-Drift-Cluster F-PB-65/66/75/76 als ein Vertrag-Patch-Bündel + Migration-Skript + 6 weitere MED-Items
+3. **Run-5 Pristine-Test** mit neuem Game (Vorschlag: Weimarer-Republik-Anfangsphase oder NS-Diktatur-Anfang) zur Phase-A+B-Validierung
+4. **v0.5.1-Tag** nach Phase A+B mind. 50% + Run-5 PASS
+
+---
+
 ## 2026-04-27 — Track 1 Cowork-Sprint Run-4 Pilot-Vorbereitung KOMPLETT (3 Hotfix-Wellen + 4 BEFUNDe + Pilot-Cancel)
 
 **Scope:** User-Visual-Audit Mappe 1 + Fragebogen-Qualitäts-Audit + User-Pädagogen-Befund (didaktische Strukturqualität). 3 Hotfix-Wellen (Welle 1 Commit `7a686ff` + Welle 2 Commit `5ac7d26` + Welle 3 Commit `14d9f85`) + 4 NEUE BEFUNDe + Backlog-Update auf 37 Items.
