@@ -324,12 +324,12 @@
             "mat-1-4"
           ],
           "optionen": [
-            "Sie war schneller und stärker als alle Schiffe davor — alle älteren Schiffe waren plotzlich veraltet.",
+            "Sie war schneller und stärker als alle Schiffe davor — alle älteren Schiffe waren plötzlich veraltet.",
             "Sie war das erste U-Boot der Royal Navy.",
             "Sie wurde im Auftrag des Deutschen Reiches gebaut.",
             "Sie war ein Handelsschiff für den Kolonial-Handel."
           ],
-          "loesung": "Sie war schneller und stärker als alle Schiffe davor — alle älteren Schiffe waren plotzlich veraltet.",
+          "loesung": "Sie war schneller und stärker als alle Schiffe davor — alle älteren Schiffe waren plötzlich veraltet.",
           "tipps": [
             {
               "stufe": 1,
@@ -337,11 +337,11 @@
             },
             {
               "stufe": 2,
-              "text": "Was bedeutet 'All-big-gun'? Was passiert mit älteren Schiffen, wenn ein viel staerkeres Schiff gebaut wird?"
+              "text": "Was bedeutet 'All-big-gun'? Was passiert mit älteren Schiffen, wenn ein viel stärkeres Schiff gebaut wird?"
             },
             {
               "stufe": 3,
-              "text": "Lösung: Sie war schneller und stärker als alle Schiffe davor. Alle älteren Schlachtschiffe waren plotzlich veraltet. Deutschland baute nun auch solche Schiffe — der Flotten-Wettlauf begann."
+              "text": "Lösung: Sie war schneller und stärker als alle Schiffe davor. Alle älteren Schlachtschiffe waren plötzlich veraltet. Deutschland baute nun auch solche Schiffe — der Flotten-Wettlauf begann."
             }
           ],
           "punkte": 10
@@ -476,11 +476,14 @@
         {
           "id": "aufgabe-1-7",
           "typ": "freitext-code",
-          "frage": "Erkläre in 3 bis 4 Sätzen, warum das kein gewöhnliches Foto ist. Nenne mindestens zwei Dinge, die der Kaiser zeigen wollte.",
+          "frage": "Wie zeigt dieses Kaiser-Foto die Verbindung zwischen Bündnis-Politik, Flotten-Wettrüsten und Kolonialismus? Erkläre in 3-5 Sätzen mit Bezug zu mat-1-1 (Bündnis-Karte), mat-1-2 (HMS Dreadnought) und mat-1-6 (Karte Afrika). Nenne den zentralen Begriff aus dem Hefteintrag.",
           "material_referenz": [
             "mat-1-3",
+            "mat-1-1",
+            "mat-1-2",
             "mat-1-6",
-            "mat-1-4"
+            "mat-1-4",
+            "mat-1-5"
           ],
           "leitfragen": [
             "Wer hat das Foto gemacht — und wo?",
@@ -495,7 +498,7 @@
             "Satz 4: Was das Bild nicht zeigt: ..."
           ],
           "erwartungs_anker": "(1) Kein neutrales Foto: Hofphotograph T. H. Voigt, Studio, Auftragsarbeit. (2) Inszenierungs-Elemente: Uniform, Orden, ernste Pose, fester Stand. (3) Aussage des Kaisers: 'Ich bin mächtig' (Welt-Politik). (4) Nicht gezeigt: Kritik in Deutschland, Spannungen mit anderen Mächten.",
-          "loesung": "Studio Hofphotograph Voigt Uniform Orden inszeniert Macht",
+          "loesung": "Pulverfass Bündnis-System Dreibund Triple Entente Flotten-Wettlauf Kolonialwettlauf Marokko Wilhelm II. Welt-Politik Selbstdarstellung",
           "code_keywords": [
             "Studio",
             "Hofphotograph",
@@ -511,18 +514,18 @@
           "tipps": [
             {
               "stufe": 1,
-              "text": "Schau auf das [[mat-1-3|Foto Kaiser Wilhelm II.]] (M6) und lies den Quellenkritik-Absatz im Begleittext."
+              "text": "Schau dir das [[mat-1-3|Kaiser-Foto]] (M6) an. Was will Wilhelm II. zeigen? Schau dann auf [[mat-1-1|Karte Europa]] (M1), [[mat-1-2|HMS Dreadnought]] (M3) und [[mat-1-6|Karte Afrika]] (M5)."
             },
             {
               "stufe": 2,
-              "text": "Was hat der Kaiser an? Wer hat das Foto gemacht — und wo? Was sieht man — und was sieht man nicht?"
+              "text": "Wilhelm II. inszeniert sich als Welt-Macht (Uniform + Orden). Diese Welt-Politik verbindet drei Felder: Bündnisse (M1), Flotten-Wettrüsten (M3) und Kolonialismus (M5). Frag dich: Wie verstärken sich die drei Felder gegenseitig?"
             },
             {
               "stufe": 3,
-              "text": "Beispiel-Antwort: Das Foto ist kein neutrales Bild. Der Hofphotograph T. H. Voigt nahm es 1902 im Studio auf — als Auftrag. Der Kaiser zeigt sich in Uniform mit vielen Orden, fest und ernst. Damit will er sagen: Ich bin mächtig. Was das Bild nicht zeigt: Viele in Deutschland waren mit seiner Welt-Politik unzufrieden. Hinter dem Pulverfass Europa standen Akteure wie Wilhelm II."
+              "text": "Lösung-Anker: Das Foto zeigt Wilhelm II. als Repräsentanten deutscher Welt-Politik. Diese Politik wollte Deutschland als Welt-Macht: dafür brauchte es eine starke Flotte (M3) UND Kolonien (M5). Beides verschärfte die Spannungen mit Großbritannien und Frankreich, die durch ihre Bündnisse (M1) zum Block zusammenrückten — der Triple Entente. So wird aus parallelen Konflikten ein gemeinsames Bündnis-System gegen Deutschland — das Pulverfass Europa."
             }
           ],
-          "punkte": 20
+          "punkte": 25
         }
       ],
       "sicherung": {
@@ -573,7 +576,7 @@
               }
             ],
             "problem": {
-              "satz": "Drei Spannungen treffen auf zwei feindliche Bündnis-Blöcke — Europa wird zum Pulverfass.",
+              "satz": "Drei Spannungen verstärken sich gegenseitig: Imperialismus (Kolonien + Flotte) verfestigt die Bündnisse, Bündnisse machen jeden Imperialismus-Konflikt zur Block-Frage. Europa wird zum Pulverfass.",
               "fachbegriff": "Pulverfass Europa",
               "tafelbild_knoten": [
                 "K1-1"
@@ -581,6 +584,28 @@
             },
             "loesung": [
               "Schon vor 1914 war Europa ein Pulverfass: Zwei feindliche Bündnisse, der Wettlauf um Schiffe und der Streit um Kolonien hatten über Jahrzehnte Spannungen aufgebaut."
+            ],
+            "zwischen_komplikationen": [
+              {
+                "von": "C2",
+                "nach": "C1",
+                "label": "Flotten-Wettrüsten verfestigt britische Hinwendung zu Frankreich → Triple Entente 1907"
+              },
+              {
+                "von": "C3",
+                "nach": "C1",
+                "label": "Marokko-Krisen 1905+1911 verfestigen die Triple Entente (Frankreich+Großbritannien gemeinsam gegen Deutschland)"
+              },
+              {
+                "von": "C1",
+                "nach": "C2",
+                "label": "Bündnis-System macht Flotten-Wettrüsten zur Block-Frage"
+              },
+              {
+                "von": "C1",
+                "nach": "C3",
+                "label": "Bündnis-System macht jeden Kolonial-Konflikt zum Multi-Front-Risiko"
+              }
             ]
           },
           "schluessel_begriffe": [
@@ -658,12 +683,56 @@
               ]
             }
           ],
-          "verbindungen": [],
-          "voraussetzungen": [],
+          "verbindungen": [
+            {
+              "von": "K1-2",
+              "nach": "K1-3",
+              "label": "stehen feindlich gegenüber"
+            },
+            {
+              "von": "K1-5",
+              "nach": "K1-3",
+              "label": "Marokko-Krisen 1905+1911 verfestigen die Triple Entente"
+            },
+            {
+              "von": "K1-4",
+              "nach": "K1-3",
+              "label": "Flotten-Wettrüsten verfestigt britische Hinwendung zu Frankreich+Russland"
+            },
+            {
+              "von": "K1-5",
+              "nach": "K1-2",
+              "label": "Wilhelm II. Welt-Politik macht Deutschland zum Konflikt-Akteur"
+            },
+            {
+              "von": "K1-2",
+              "nach": "K1-1",
+              "label": "Bündnis-Block 1 verstärkt Pulverfass"
+            },
+            {
+              "von": "K1-3",
+              "nach": "K1-1",
+              "label": "Bündnis-Block 2 verstärkt Pulverfass"
+            },
+            {
+              "von": "K1-4",
+              "nach": "K1-1",
+              "label": "Flotten-Konflikt verstärkt Pulverfass"
+            },
+            {
+              "von": "K1-5",
+              "nach": "K1-1",
+              "label": "Kolonial-Konflikt verstärkt Pulverfass"
+            }
+          ],
+          "voraussetzungen": [
+            "Vorwissen 4. Klasse: Großstaaten Europas + Kontinente (Europa, Afrika)",
+            "Vorwissen aus M1-Einstieg: Begriff 'Pulverfass' als Metapher für gespannte Lage"
+          ],
           "transfer": {
-            "frage": ""
+            "frage": "Wenn Bündnisse + Flotten-Wettrüsten + Kolonialismus zusammen das Pulverfass machten — was musste noch passieren, damit es explodiert?"
           },
-          "ordnungsmuster": ""
+          "ordnungsmuster": "multi-kausal-verschränkt"
         },
         "hefteintrag_verweis": "Uebertrage das Tafelbild und den Merksatz in dein Heft.",
         "reflexionsimpuls": "Was hast du jetzt verstanden — warum war Europa vor 1914 wie ein Pulverfass?",
@@ -1221,10 +1290,10 @@
           ],
           "paare": {
             "Princip wird in Belgrad bis heute auf Tafeln und Denkmaelern geehrt.": "Serbisch-nationale Erinnerung",
-            "Princip ermordete den Thronfolger und seine Frau Sophie auf offener Strasse.": "Habsburgisch-bosniakisch-kroatische Erinnerung",
-            "Princip war Mitglied einer Geheim-Organisation und kein einsamer Taeter.": "Habsburgisch-bosniakisch-kroatische Erinnerung",
             "Princip wurde 1914 vor Gericht gestellt und als Angeklagter photographiert.": "Habsburgisch-bosniakisch-kroatische Erinnerung",
-            "Princip kämpfte für die Befreiung der Südslawen aus der Habsburg-Herrschaft.": "Serbisch-nationale Erinnerung"
+            "Princip kämpfte für die Befreiung der Südslawen aus der Habsburg-Herrschaft.": "Serbisch-nationale Erinnerung",
+            "Princip ermordete den Thronfolger und seine Frau Sophie auf offener Straße.": "Habsburgisch-bosniakisch-kroatische Erinnerung",
+            "Princip war Mitglied einer Geheim-Organisation und kein einsamer Täter.": "Habsburgisch-bosniakisch-kroatische Erinnerung"
           },
           "kategorien": [
             "Serbisch-nationale Erinnerung",
@@ -1232,10 +1301,10 @@
           ],
           "loesung": {
             "Princip wird in Belgrad bis heute auf Tafeln und Denkmaelern geehrt.": "Serbisch-nationale Erinnerung",
-            "Princip ermordete den Thronfolger und seine Frau Sophie auf offener Strasse.": "Habsburgisch-bosniakisch-kroatische Erinnerung",
-            "Princip war Mitglied einer Geheim-Organisation und kein einsamer Taeter.": "Habsburgisch-bosniakisch-kroatische Erinnerung",
             "Princip wurde 1914 vor Gericht gestellt und als Angeklagter photographiert.": "Habsburgisch-bosniakisch-kroatische Erinnerung",
-            "Princip kämpfte für die Befreiung der Südslawen aus der Habsburg-Herrschaft.": "Serbisch-nationale Erinnerung"
+            "Princip kämpfte für die Befreiung der Südslawen aus der Habsburg-Herrschaft.": "Serbisch-nationale Erinnerung",
+            "Princip ermordete den Thronfolger und seine Frau Sophie auf offener Straße.": "Habsburgisch-bosniakisch-kroatische Erinnerung",
+            "Princip war Mitglied einer Geheim-Organisation und kein einsamer Täter.": "Habsburgisch-bosniakisch-kroatische Erinnerung"
           },
           "tipps": [
             {
@@ -1248,7 +1317,7 @@
             },
             {
               "stufe": 3,
-              "text": "Lösung: Serbisch-national = Befreiung der Südslawen + Denkmäler in Belgrad. Habsburgisch-bosniakisch-kroatisch = Mord auf offener Strasse + Mitglied einer Geheim-Organisation + Gerichts-Angeklagter. Beide Erinnerungen sind heute gleichzeitig gueltig — Geschichte hat oft mehrere Wahrheiten nebeneinander. Das nennt man Multiperspektivität."
+              "text": "Lösung: Serbisch-national = Befreiung der Südslawen + Denkmäler in Belgrad. Habsburgisch-bosniakisch-kroatisch = Mord auf offener Straße + Mitglied einer Geheim-Organisation + Gerichts-Angeklagter. Beide Erinnerungen sind heute gleichzeitig gueltig — Geschichte hat oft mehrere Wahrheiten nebeneinander. Das nennt man Multiperspektivität."
             }
           ],
           "punkte": 18
@@ -1499,7 +1568,7 @@
     {
       "id": "mappe-3",
       "titel": "Augustfieber — Wer schuld ist und wer jubelt",
-      "beschreibung": "Du öffnest die dritte Mappe aus dem Archiv 1914. Innen liegen zwei Fotos vom August 1914, ein rekonstruiertes Tagebuch, ein Versailles-Vertragstext von 1919 und ein Forschungs-Auszug von Christopher Clark aus 2013. Deine Aufgabe: Pruefe die Quellen kritisch und beantworte die offene Frage — wer war damals begeistert, und wer hat heute die Schuld am Krieg?",
+      "beschreibung": "Du öffnest die dritte Mappe aus dem Archiv 1914. Innen liegen zwei Fotos vom August 1914, ein rekonstruiertes Tagebuch, ein Versailles-Vertragstext von 1919 und ein Forschungs-Auszug von Christopher Clark aus 2013. Deine Aufgabe: Prüfe die Quellen kritisch und beantworte die offene Frage — wer war damals begeistert, und wer hat heute die Schuld am Krieg?",
       "freischalt_code": "SCHULD",
       "einstieg": {
         "narrativ": "<p>In Mappe 2 hast du gelernt: Ein einzelner Schuss war nur der Auslöser, nicht die Ursache. Jetzt liegt Mappe 3 vor dir. Im Deckel: zwei Fotos und eine Erinnerungs-Medaille. Auf der Medaille steht ein Datum: <strong>4. August 1914</strong>. Auf den Fotos jubelnde Menschen am Bahnhof, Soldaten mit Blumen am Gewehr.</p><p>Aber sieh genau hin: Wen zeigen die Fotos — und wen zeigen sie nicht? Wer hat den Krieg eigentlich gewollt? Und wer bekommt heute die Schuld zugewiesen?</p>",
@@ -1661,7 +1730,7 @@
         {
           "id": "aufgabe-3-2",
           "typ": "quellenkritik",
-          "frage": "Pruefe die Postkarte mit den vier W-Fragen.",
+          "frage": "Prüfe die Postkarte mit den vier W-Fragen.",
           "material_referenz": [
             "mat-3-1"
           ],
@@ -1724,7 +1793,7 @@
             },
             {
               "stufe": 2,
-              "text": "Quellenkritik heißt: pruefen, wer eine Quelle gemacht hat, wann und mit welchem Ziel. Und besonders wichtig: WER ist NICHT zu sehen? Auf dem Foto stehen Stadtbürger am Bahnhof — eine bestimmte Gruppe."
+              "text": "Quellenkritik heißt: prüfen, wer eine Quelle gemacht hat, wann und mit welchem Ziel. Und besonders wichtig: WER ist NICHT zu sehen? Auf dem Foto stehen Stadtbürger am Bahnhof — eine bestimmte Gruppe."
             },
             {
               "stufe": 3,
@@ -1756,12 +1825,12 @@
             "Im Wirtshaus haben sie zugeprostet — aber die Frauen nicken nur."
           ],
           "loesung": {
-            "Soldaten ziehen los — viele Stadtbuerger jubeln am Bahnhof.": "Stadtbürger 1914 (begeistert)",
             "Wer pflegt das Vieh, wenn er weg ist? Wer hilft beim Heu im September?": "Land-Bevölkerung und Arbeiter 1914 (skeptisch)",
             "Eine Frau gibt einem Soldaten Blumen — typisches Inszenierungs-Bild.": "Heeresleitung / Reichsamt (Inszenierung)",
             "Pflicht ist Pflicht. Aber Jubel? Davon ist hier nichts.": "Land-Bevölkerung und Arbeiter 1914 (skeptisch)",
             "Im Wirtshaus haben sie zugeprostet — aber die Frauen nicken nur.": "Land-Bevölkerung und Arbeiter 1914 (skeptisch)",
-            "Ein Photograph fotografiert die Mobilmachung für die Reichs-Nachrichten.": "Heeresleitung / Reichsamt (Inszenierung)"
+            "Ein Photograph fotografiert die Mobilmachung für die Reichs-Nachrichten.": "Heeresleitung / Reichsamt (Inszenierung)",
+            "Soldaten ziehen los — viele Stadtbürger jubeln am Bahnhof.": "Stadtbürger 1914 (begeistert)"
           },
           "tipps": [
             {
@@ -2148,7 +2217,7 @@
         "_template_ref": "SUB_TEMPLATE_MAPPENABSCHLUSS v1.0 (STR-13)",
         "_f0b_priming_kennung": "F0B_PRIMING_v1",
         "reflexion_fragen": [
-          "Welche Position findest du im Moment überzeugender — Versailles 1919 (Deutschland und seine Verbündeten allein schuld) oder Clark 2013 (fünf Mächte gemeinsam) — und welches eine Argument aus dieser Mappe wäre noch zu pruefen, bevor du dich endgueltig entscheidest?",
+          "Welche Position findest du im Moment überzeugender — Versailles 1919 (Deutschland und seine Verbündeten allein schuld) oder Clark 2013 (fünf Mächte gemeinsam) — und welches eine Argument aus dieser Mappe wäre noch zu prüfen, bevor du dich endgueltig entscheidest?",
           "Die Postkarte aus Lübeck zeigt jubelnde Stadtbürger. Welche Stimmen aus dem August 1914 fehlen auf solchen Bildern — und woran erkennst du, dass eine Quelle nur eine Gruppe zeigt?"
         ],
         "ueberleitungssatz": "Die Männer zogen los — was passierte, als sie ankamen?",
@@ -2215,7 +2284,7 @@
               "kerninhalt": "DT-Soldaten-Foto an der Marne — Quellenkritik-Anker."
             }
           },
-          "inhalt": "<figure class=\"zeitleiste\"><figcaption class=\"zeitleiste__leitfrage\">Aus geplanten sechs Wochen wurden fünf Wochen Vormarsch — dann der Stop. Lies die sieben Daten August bis Oktober 1914.</figcaption><ol class=\"zeitleiste__eintraege\"><li class=\"zeitleiste__eintrag\"><span class=\"zeitleiste__datum\">2. August 1914</span><span class=\"zeitleiste__ereignis\">Deutschland stellt Belgien ein Ultimatum: \"Lasst uns durch!\" Belgien ist neutral und sagt nein.</span></li><li class=\"zeitleiste__eintrag\"><span class=\"zeitleiste__datum\">4. August 1914</span><span class=\"zeitleiste__ereignis\">Deutsche Truppen marschieren in Belgien ein. Am gleichen Tag erklärt Großbritannien Deutschland den Krieg.</span></li><li class=\"zeitleiste__eintrag\"><span class=\"zeitleiste__datum\">7. August 1914</span><span class=\"zeitleiste__ereignis\">Die belgische Festung Lück (Liege) fällt. Belgien wehrt sich — aber der Vormarsch geht weiter.</span></li><li class=\"zeitleiste__eintrag\"><span class=\"zeitleiste__datum\">20. August 1914</span><span class=\"zeitleiste__ereignis\">Brüssel fällt. Der deutsche Vormarsch ist schnell — aber die Truppen sind erschöpft, die Versorgung kommt nicht hinterher.</span></li><li class=\"zeitleiste__eintrag zeitleiste__eintrag--hoehepunkt\"><span class=\"zeitleiste__datum\">5.-12. September 1914</span><span class=\"zeitleiste__ereignis\">Marne-Schlacht: Der französische General Joffre stoppt den deutschen Vormarsch etwa 40 km vor Paris.</span></li><li class=\"zeitleiste__eintrag\"><span class=\"zeitleiste__datum\">14. September 1914</span><span class=\"zeitleiste__ereignis\">Der deutsche Generalstabs-Chef Moltke wird abgesetzt. Der Schlieffen-Plan ist gescheitert.</span></li><li class=\"zeitleiste__eintrag\"><span class=\"zeitleiste__datum\">19. Oktober 1914</span><span class=\"zeitleiste__ereignis\">Wettlauf zum Meer endet — beide Seiten graben sich ein. Der Stellungskrieg beginnt.</span></li></ol></figure>",
+          "inhalt": "<figure class=\"zeitleiste\"><figcaption class=\"zeitleiste__leitfrage\">Aus geplanten sechs Wochen wurden fünf Wochen Vormarsch — dann der Stop. Lies die sieben Daten August bis Oktober 1914.</figcaption><ol class=\"zeitleiste__eintraege\"><li class=\"zeitleiste__eintrag\"><span class=\"zeitleiste__datum\">2. August 1914</span><span class=\"zeitleiste__ereignis\">Deutschland stellt Belgien ein Ultimatum: \"Lasst uns durch!\" Belgien ist neutral und sagt nein.</span></li><li class=\"zeitleiste__eintrag\"><span class=\"zeitleiste__datum\">4. August 1914</span><span class=\"zeitleiste__ereignis\">Deutsche Truppen marschieren in Belgien ein. Am gleichen Tag erklärt Großbritannien Deutschland den Krieg.</span></li><li class=\"zeitleiste__eintrag\"><span class=\"zeitleiste__datum\">7. August 1914</span><span class=\"zeitleiste__ereignis\">Die belgische Festung Lüttich (Liège) fällt. Belgien wehrt sich — aber der Vormarsch geht weiter.</span></li><li class=\"zeitleiste__eintrag\"><span class=\"zeitleiste__datum\">20. August 1914</span><span class=\"zeitleiste__ereignis\">Brüssel fällt. Der deutsche Vormarsch ist schnell — aber die Truppen sind erschöpft, die Versorgung kommt nicht hinterher.</span></li><li class=\"zeitleiste__eintrag zeitleiste__eintrag--hoehepunkt\"><span class=\"zeitleiste__datum\">5.-12. September 1914</span><span class=\"zeitleiste__ereignis\">Marne-Schlacht: Der französische General Joffre stoppt den deutschen Vormarsch etwa 40 km vor Paris.</span></li><li class=\"zeitleiste__eintrag\"><span class=\"zeitleiste__datum\">14. September 1914</span><span class=\"zeitleiste__ereignis\">Der deutsche Generalstabs-Chef Moltke wird abgesetzt. Der Schlieffen-Plan ist gescheitert.</span></li><li class=\"zeitleiste__eintrag\"><span class=\"zeitleiste__datum\">19. Oktober 1914</span><span class=\"zeitleiste__ereignis\">Wettlauf zum Meer endet — beide Seiten graben sich ein. Der Stellungskrieg beginnt.</span></li></ol></figure>",
           "bildunterschrift": "",
           "quelle": "Eigenproduktion (Phase 2.1, SUB_ZEITLEISTE). Datenbasis: Wikipedia-Artikel 'First Battle of the Marne', 'German invasion of Belgium (1914)', 'Race to the Sea' (Stand 2026-04-26).",
           "lizenz": "Eigenproduktion"
@@ -2366,13 +2435,13 @@
           "optionen": [
             "Ultimatum an Belgien — Deutschland fordert Durchmarsch",
             "Deutscher Einmarsch in Belgien — Großbritannien erklärt den Krieg",
-            "Festung Lück (Liege) fällt — Vormarsch geht weiter",
+            "Festung Lüttich (Liège) fällt — Vormarsch geht weiter",
             "Brüssel fällt — deutsche Truppen sind erschöpft"
           ],
           "loesung": [
             "Ultimatum an Belgien — Deutschland fordert Durchmarsch",
             "Deutscher Einmarsch in Belgien — Großbritannien erklärt den Krieg",
-            "Festung Lück (Liege) fällt — Vormarsch geht weiter",
+            "Festung Lüttich (Liège) fällt — Vormarsch geht weiter",
             "Brüssel fällt — deutsche Truppen sind erschöpft"
           ],
           "tipps": [
@@ -2386,7 +2455,7 @@
             },
             {
               "stufe": 3,
-              "text": "Reihenfolge: 02.08. Ultimatum -> 04.08. Einmarsch + GB-Kriegseintritt -> 07.08. Lück fällt -> 20.08. Brüssel fällt. Der deutsche Vormarsch war schnell, aber die Truppen wurden muede."
+              "text": "Reihenfolge: 02.08. Ultimatum -> 04.08. Einmarsch + GB-Kriegseintritt -> 07.08. Lüttich fällt -> 20.08. Brüssel fällt. Der deutsche Vormarsch war schnell, aber die Truppen wurden muede."
             }
           ],
           "punkte": 10
