@@ -4,6 +4,57 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-27 — Track 1 Cowork-Sprint Run-4 Pilot-Vorbereitung KOMPLETT (3 Hotfix-Wellen + 4 BEFUNDe + Pilot-Cancel)
+
+**Scope:** User-Visual-Audit Mappe 1 + Fragebogen-Qualitäts-Audit + User-Pädagogen-Befund (didaktische Strukturqualität). 3 Hotfix-Wellen (Welle 1 Commit `7a686ff` + Welle 2 Commit `5ac7d26` + Welle 3 Commit `14d9f85`) + 4 NEUE BEFUNDe + Backlog-Update auf 37 Items.
+
+**Modus:** EXECUTE Cowork-Self-Edit + osascript-Push, ~6-8h Wall-Clock total über mehrere Iterationen.
+
+**3 Commits weitergehts-online:**
+
+### Hotfix-Welle 1 (`7a686ff`) — F-PB-77/78/79
+
+- **F-PB-77 CRITICAL** Plugin-vs-Engine Schema-Drift `mat.inhalt`: 9 Materialien `<figure><img src=URL/></figure>` → URL-only (Engine setzt `img.src=mat.inhalt` direkt)
+- **F-PB-79 HIGH** Lückentext-Marker `{{N}}` → `___` (3x Underscore Engine-Konvention) in 5 Aufgaben (19 Marker)
+- **F-PB-78 HIGH** Umlaut-Bulk-Replace 807 Replacements (3-Pass + Dict-Keys): Buendnis 92x → Bündnis, Loesung 72x → Lösung, Maechte 30x → Mächte, fuenf 26x → fünf, europaeische 19x → europäische, Grossmaechte 10x → Großmächte usw.
+- Echte Umlaute: 32 → 829
+
+### Hotfix-Welle 2 (`5ac7d26`) — F-PB-80
+
+- **F-PB-80 HIGH** Plugin-vs-Engine Schema-Drift `aufgabe.elemente` → `aufgabe.optionen` für reihenfolge-Typ
+- 2 von 3 Reihenfolge-Aufgaben broken (a-1-5 Flotten-Wettlauf 4 Stationen + a-2-4 Kriegserklärungen 4 Daten); a-4-2 zufällig korrekt
+
+### Hotfix-Welle 3 (`14d9f85`) — F-PB-82 + M1-Hefteintrag + 5 Restdrifts
+
+- **F-PB-82 HIGH** historische Bezeichnungs-Korrektur "Festung Lück (Liege)" → "Festung Lüttich (Liège)" (4 Vorkommen)
+- **F-PB-84/85 HIGH M1-Hefteintrag-Optimierung** post User-Pädagogen-Befund:
+  - M1.knoten.verbindungen: **0 → 8 Wirkungs-Pfeile** (Multi-Kausal-Verschränkung Bündnisse ↔ Imperialismus)
+  - M1.voraussetzungen: **0 → 2** (4-Klasse-Vorwissen + M1-Einstieg-Pulverfass-Metapher)
+  - M1.ordnungsmuster: leer → `multi-kausal-verschränkt`
+  - M1.transfer.frage: leer → "Wenn Bündnisse + Flotten-Wettrüsten + Kolonialismus zusammen das Pulverfass machten — was musste noch passieren, damit es explodiert?"
+  - M1.scpl.zwischen_komplikationen: 4 Wirkungs-Pfeile (C2→C1, C3→C1, C1→C2, C1→C3)
+  - M1.scpl.problem.satz erweitert: explizite Verschränkungs-Begründung statt parallele Liste
+  - **a-1-7 als echte Synthese-Aufgabe restruktuiert**: Frage neu (Multi-Kausal-Synthese), material_referenz 3 → 6 (alle M1), Lösung erweitert (10-Begriff-Token-Liste), Punkte 20 → 25 (AFB-III), Tipps Multi-Kausal-Logik
+- **5 Restdrifts** (Hotfix-Welle 3 finale): plotzlich 3x, staerker 1x, Pruefe 2x, Stadtbuerger 1x, Taeter 2x → korrekte Umlaute
+
+**Total Hotfix-Patches Run-4:** 31 strukturelle Patches + 821 Umlaut-Replacements = **852 Patches gesamt**.
+
+**4 NEUE BEFUNDe (Empirie + Eval):**
+
+- **BEFUND_RUN4_CONTENT_QUALITAET.md** (253 Z.) — User-Visual-Audit Mappe 1, 3 CRITICAL/HIGH (F-PB-77/78/79) + 1 False-Positive (B4 Sticky-Layout-Artefakt korrigiert)
+- **BEFUND_RUN4_FRAGEBOGEN_QUALITAET.md** (241 Z.) — 28 Aufgaben + 22 Materialien Tiefen-Audit, 6 Eval-Dimensionen pro Aufgabe, AFB-Sequenzierungs-Heuristik, Cross-Mappen-Kohärenz. Aggregat 3 HIGH + 9 MED + 28+ LOW. F-PB-82 + F-PB-83 NEU. Alle Mappen evaluiert (M1-PASS, M2-PASS, M3-MIXED Sequenzierungs-Drift, M4-PASS_MIT_WARN a-4-7-underweighted).
+- **BEFUND_RUN4_DIDAKTISCHE_STRUKTUR.md** (173 Z.) — User-Pädagogen-Befund Problemorientierung + Multi-Kausalität. Empirie M1: 4 von 4 Hefteintrag-Strukturfeldern leer (verbindungen=0, voraussetzungen=0, ordnungsmuster="", transfer.frage=""). M2/M3/M4 strukturell vollständig. F-PB-84/85/86/87 NEU.
+
+**v0.5.1-Backlog-Stand:** 33 → **37 Items** (4 NEU aus User-Pädagogen-Befund). Phase A: 9 → 11 HIGH-Items. Aufwand-Schätzung 14-20 PT → 17-24 PT.
+
+**User-Decision Pilot-Cancel:** Pilot mit echten 7c-SuS wird ausfallen. User-Pädagogen-Expertise reicht für Eval-Ableitung des erwartbaren Ablaufs ohne SuS-Empirie. Run-4 bleibt als Empirie-Anker für Plugin-Verbesserungen.
+
+**Methodik-Lesson:** User-Pädagogen-Audit als **Pflicht-Audit-Stufe** etabliert (Sandbox-Tests + Subagent-Reviews + CLI-Self-Eval konnten M1-Hefteintrag-Strukturmängel + Multi-Kausal-Defizite nicht detektieren). v0.5.1-Spec nimmt User-Pädagogen-Audit als 4. Audit-Stufe auf neben (1) Sandbox-Validatoren + (2) Subagent-Reviews + (3) Plugin-Self-Diagnose.
+
+**Naechste Schritte:** **Track 2 v0.5.1-Phase-A-Implementation** im Generator-Repo gestartet (8 HIGH-Items: F-PB-50/72/63/52/53/84/85/87, ~7-10 PT, ~1-2 Wochen Cowork). Danach Phase B Schema-Drift-Cluster + Run-5 Pristine-Test mit neuem Game + v0.5.1-Tag.
+
+---
+
 ## 2026-04-27 — F-PB-68 FIX + 5 BEFUNDe konsolidiert + Pfad C Pilot-Vorbereitung GESTARTET (weitergehts-online)
 
 **Scope:** Pfad C aus 4-Optionen-Plan (Parallel Pilot-Vorbereitung + v0.5.1-Phase A). 3 Stufen Cowork: Stufe A F-PB-68 lehrkraft.html Fix + Stufe B v0.5.1-Spec im Generator-Repo + Stufe C Pilot-Walk-Through.
