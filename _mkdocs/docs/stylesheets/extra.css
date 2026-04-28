@@ -1,0 +1,284 @@
+/* extra.css — Theme-Override für weitergehts.online Schulrecht-Skripts
+   Aligning Material Design auf das bestehende v4-Design-System (base.css). */
+
+:root {
+  --md-primary-fg-color: #c2410c;
+  --md-primary-fg-color--light: #fff7ed;
+  --md-primary-fg-color--dark: #9a3412;
+  --md-accent-fg-color: #c2410c;
+  --md-accent-fg-color--transparent: rgba(194, 65, 12, 0.1);
+
+  --md-typeset-a-color: #c2410c;
+
+  --md-default-fg-color: #1f2937;
+  --md-default-fg-color--light: #475569;
+  --md-default-fg-color--lighter: #94a3b8;
+
+  /* Norm-Hierarchie-Farben (analog Anki v4) */
+  --c-bund: #1e3a8a;
+  --c-bayeug: #c2410c;
+  --c-vo: #ca8a04;
+  --c-kmbek: #65a30d;
+  --c-falle: #dc2626;
+
+  --c-bund-bg: #eff6ff;
+  --c-bayeug-bg: #fff7ed;
+  --c-vo-bg: #fefce8;
+  --c-kmbek-bg: #f7fee7;
+  --c-falle-bg: #fef2f2;
+}
+
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #c2410c;
+  --md-primary-bg-color: #ffffff;
+  --md-typeset-a-color: #c2410c;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #fb923c;
+  --md-typeset-a-color: #fb923c;
+}
+
+/* Lesetypografie verbessern */
+.md-typeset {
+  font-size: 0.78rem;
+  line-height: 1.65;
+}
+
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.md-typeset h2 {
+  font-weight: 700;
+  margin-top: 2em;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 0.8em;
+}
+
+.md-typeset h3 {
+  font-weight: 600;
+  margin-top: 1.6em;
+}
+
+/* Inline-Norm-Code hervorheben */
+.md-typeset code {
+  background: #fff7ed;
+  color: #9a3412;
+  border: 1px solid #fed7aa;
+  padding: 0.1em 0.4em;
+  border-radius: 0.2em;
+  font-size: 0.88em;
+  font-weight: 500;
+}
+
+/* Choreographie-Schritt-Header (h3) als Stepper */
+.md-typeset h3[id^="schritt-"] {
+  background: linear-gradient(90deg, #fff7ed 0%, transparent 30%);
+  padding: 0.5em 0.8em;
+  border-left: 4px solid #c2410c;
+  margin-top: 2em;
+}
+
+/* Falle-Tabelle: Border-Top in Rot */
+.md-typeset table:has(thead th:first-child:contains("FA")) {
+  border-top: 3px solid #dc2626;
+}
+
+/* Kompakte Tabellen */
+.md-typeset table:not([class]) {
+  font-size: 0.86em;
+}
+
+.md-typeset table:not([class]) th {
+  background: #fff7ed;
+  color: #9a3412;
+  font-weight: 700;
+}
+
+/* Admonitions: Falle-Style */
+.md-typeset .admonition.warning,
+.md-typeset details.warning {
+  border-color: var(--c-falle);
+}
+
+.md-typeset .warning > .admonition-title,
+.md-typeset .warning > summary {
+  background-color: var(--c-falle-bg);
+  border-color: var(--c-falle);
+}
+
+/* Highlight-Box für Top-9-Pflichtwissen */
+.md-typeset .admonition.tip {
+  border-color: var(--c-kmbek);
+}
+
+.md-typeset .tip > .admonition-title {
+  background-color: var(--c-kmbek-bg);
+  border-color: var(--c-kmbek);
+}
+
+/* Kernnormen-Sub-Block-Header (h3 unter "Kernnormen") farb-codiert per ID-Prefix */
+.md-typeset h3[id*="msd"]::before,
+.md-typeset h3[id*="schulberatung"]::before {
+  content: "● ";
+  color: var(--c-bayeug);
+}
+
+.md-typeset h3[id*="forderzentrum"]::before,
+.md-typeset h3[id*="bausteine"]::before {
+  content: "● ";
+  color: var(--c-vo);
+}
+
+.md-typeset h3[id*="betreuung"]::before {
+  content: "● ";
+  color: var(--c-bund);
+}
+
+/* Cross-Reference-Box */
+.md-typeset .grid.cards > :is(ol, ul) > li,
+.md-typeset .grid > .card,
+.md-typeset .grid.cards > .card {
+  border-radius: 0.4em;
+  border: 1px solid #cbd5e1;
+  padding: 1em 1.2em;
+  background: #ffffff;
+}
+
+/* Lese-Container max-width */
+.md-grid {
+  max-width: 70rem;
+}
+
+.md-content {
+  max-width: 65ch;
+}
+
+@media screen and (min-width: 76.25em) {
+  .md-content {
+    max-width: 70ch;
+  }
+}
+
+/* Print-Stylesheet */
+@media print {
+  .md-header, .md-tabs, .md-sidebar, .md-footer, .md-content__button {
+    display: none !important;
+  }
+  .md-content {
+    max-width: 100% !important;
+  }
+  .md-typeset h2 {
+    page-break-after: avoid;
+  }
+  .md-typeset table {
+    page-break-inside: avoid;
+  }
+}
+
+/* Horizontaler Choreographie-Stepper am Anfang der Choreographie-Sektion */
+.choreographie-stepper {
+  display: flex;
+  gap: 0.4em;
+  margin: 1em 0 1.5em;
+  flex-wrap: wrap;
+}
+
+.choreographie-stepper a {
+  flex: 1 1 auto;
+  min-width: 8em;
+  padding: 0.6em 0.8em;
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 0.4em;
+  text-align: center;
+  font-size: 0.78em;
+  color: #9a3412;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.15s;
+}
+
+.choreographie-stepper a:hover {
+  background: #c2410c;
+  color: #ffffff;
+  border-color: #c2410c;
+}
+
+.choreographie-stepper a .step-num {
+  display: block;
+  font-size: 1.4em;
+  font-weight: 700;
+  margin-bottom: 0.1em;
+}
+
+/* Falle-Atlas: jede Tabellen-Zeile mit Falle-Trigger-Markierung */
+.md-typeset table tbody tr:has(td:first-child > strong:contains("FA")) {
+  border-left: 3px solid var(--c-falle);
+}
+
+/* Norm-Hierarchie-Badges für Inline-Verweise */
+.norm-bund {
+  background: var(--c-bund-bg);
+  color: var(--c-bund);
+  padding: 0.05em 0.4em;
+  border-radius: 0.25em;
+  font-size: 0.85em;
+  font-weight: 600;
+  border: 1px solid var(--c-bund);
+}
+
+.norm-bayeug {
+  background: var(--c-bayeug-bg);
+  color: var(--c-bayeug);
+  padding: 0.05em 0.4em;
+  border-radius: 0.25em;
+  font-size: 0.85em;
+  font-weight: 600;
+  border: 1px solid var(--c-bayeug);
+}
+
+.norm-vo {
+  background: var(--c-vo-bg);
+  color: #854d0e;
+  padding: 0.05em 0.4em;
+  border-radius: 0.25em;
+  font-size: 0.85em;
+  font-weight: 600;
+  border: 1px solid var(--c-vo);
+}
+
+.norm-kmbek {
+  background: var(--c-kmbek-bg);
+  color: #3f6212;
+  padding: 0.05em 0.4em;
+  border-radius: 0.25em;
+  font-size: 0.85em;
+  font-weight: 600;
+  border: 1px solid var(--c-kmbek);
+}
+
+/* Top-9-Pflichtwissen als Cheat-Card */
+.md-typeset h2[id="top-9-pflichtwissen-hochprior-fur-7-tage-endspurt"] + ol {
+  background: linear-gradient(135deg, #fff7ed 0%, #fefce8 100%);
+  padding: 1.2em 2em 1.2em 3em;
+  border-radius: 0.6em;
+  border: 2px solid #c2410c;
+  box-shadow: 0 2px 8px rgba(194, 65, 12, 0.1);
+}
+
+.md-typeset h2[id="top-9-pflichtwissen-hochprior-fur-7-tage-endspurt"] + ol li {
+  padding: 0.4em 0;
+  border-bottom: 1px dashed #fed7aa;
+}
+
+.md-typeset h2[id="top-9-pflichtwissen-hochprior-fur-7-tage-endspurt"] + ol li:last-child {
+  border-bottom: none;
+}
+
+/* Footer-Bereich beruhigen */
+.md-footer-meta {
+  background: #1f2937;
+}
