@@ -8,6 +8,16 @@ Strukturierte Lernscripts pro ZALGM-Themenfeld mit Kernnormen, Choreographie, Fa
 
 <div class="grid cards" markdown>
 
+-   :material-school: __MP_03 Gliederung Bildungssystem__
+
+    ---
+
+    Schularten · Schulpflicht · Einschulung · Übertritt · MS-Abschlüsse
+
+    **39 Karten** · **12 Falle** · **10 Hochprior** · 5-stufige Norm-Hierarchie
+
+    [→ Zum Skript](mp03/index.md)
+
 -   :material-account-group: __MP_08 Kooperation Bildungsdienste__
 
     ---
@@ -22,7 +32,6 @@ Strukturierte Lernscripts pro ZALGM-Themenfeld mit Kernnormen, Choreographie, Fa
 
 ## In Vorbereitung
 
-- MP_03 Gliederung des Bildungssystems
 - MP_01 Schulrecht-Grundlagen / Norm-Hierarchie
 - MP_05 Leistungserhebung / Notengebung / Zeugnisse
 - MP_06 Erziehungs- und Ordnungsmaßnahmen

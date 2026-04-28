@@ -18,6 +18,15 @@ SOURCE_BASE = Path.home() / "weitergehts.online" / "Klassenleitung" / "Seminar" 
 
 # Map: Skript-Datei → Ziel-Slug
 MAPPING = {
+    "MP_03_Gliederung_Bildungssystem.md": {
+        "slug": "mp03",
+        "title": "MP_03 — Gliederung des Bildungssystems · Bildungswege",
+        "anki_lerndeck": "https://weitergehts.online/lerndecks/schulrecht-mp03-bildungssystem/",
+        "themen_detail": "https://weitergehts.online/staatsexamen/schulrecht/2-gliederung-bildungssystem/",
+        "card_count": 39,
+        "falle_count": 12,
+        "hochprior_count": 10,
+    },
     "MP_08_Kooperation_Bildungsdienste.md": {
         "slug": "mp08",
         "title": "MP_08 — Kooperation mit Bildungs- und Betreuungseinrichtungen",
@@ -27,8 +36,6 @@ MAPPING = {
         "falle_count": 11,
         "hochprior_count": 9,
     },
-    # MP_03 später aktivieren wenn Source-Skript vorhanden
-    # "MP_03_Gliederung_Bildungssystem.md": {...},
 }
 
 CTA_HEADER_TEMPLATE = """

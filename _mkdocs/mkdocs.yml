@@ -83,6 +83,7 @@ plugins:
 
 nav:
   - Übersicht: index.md
+  - "MP_03 Gliederung Bildungssystem": mp03/index.md
   - "MP_08 Kooperation Bildungsdienste": mp08/index.md
 
 extra:
