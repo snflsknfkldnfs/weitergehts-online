@@ -171,3 +171,90 @@ Falls User Run-4 als Pilot-Game nutzen will, kann M1-Hefteintrag Cowork-side erw
 ---
 
 **Befund abgeschlossen 2026-04-27.** Methodik: User-Pädagogen-Befund + Sandbox-Empirie auf hefteintrag-Strukturfeldern. 4 NEUE Backlog-Items. Verifikations-Pfad definiert für v0.5.1 Phase-A + Run-5.
+
+---
+
+## 8. NACHTRAG (2026-04-27 Abend) — User-Pädagogen-Befund 2 + 3: Doppelfragen + Überleitungs-Qualität
+
+**User-Befund 2 (verbatim):**
+> "Die doppelfragen-formulierungen mit gedankenstrich dazwischen sind problematisch, verwirren die lesende und überlasten cognitive load. die fragen müssen möglichst linear in der bearbeitung problemorientiert aufeinander folgen."
+
+**User-Befund 3 (verbatim):**
+> "Die überleitungs-struktur muss noch qualitativ präzisiert und verbessert werden. sie ist ein riesiger hebel für die gesamte qualität des games/der mappen. überleitungen wie 'Du weißt jetzt: zwei feindliche Bündnisse stehen sich misstrauisch gegenueber. Aber war das alles? Was war noch los — auf den Meeren?' sind zu allgemein, werden ihrer funktion nicht gerecht"
+
+### 8.1 Empirie Doppelfragen (11 game-weit)
+
+**Pattern:** "Frage A — und Frage B?" / "Aussage X — und was Y?" / "Was A — Held oder B?"
+
+**Aufgaben mit Doppelfrage (3):**
+- M1 a-1-6: "Wer hat diese Karte gezeichnet — und wessen Sicht zeigt sie?"
+- M3 a-3-6: "Welche Position findest du überzeugender — und warum?"
+- M4 a-4-1: "Was sah der Schlieffen-Plan vor — und durch welches Land führte der Bogen?"
+
+**Material-Titel mit Doppelfrage (8):**
+- M1 mat-1-5: "Schiffe zählen — wer hatte mehr?"
+- M1 mat-1-6: "Afrika 1914 — wer beherrscht was?"
+- M2 mat-2-4: "Wer war Princip — Held oder Terrorist?"
+- M3 mat-3-2: "Eine Frau gibt Blumen — wirklich oder gestellt?"
+- M4 mat-4-1: "Welcher Weg war geplant — und warum durch Belgien?"
+- M4 mat-4-3: "Was zeigt das Foto wirklich — und was nicht?"
+- M4 mat-4-5: "Wenn die Bilder nicht zeigen, was passiert — was zeigen die Zahlen?"
+- M4 mat-4-6: "Aus sechs Wochen wurden vier Jahre — was ist ein Stellungskrieg?"
+
+**Didaktischer Mangel:** Doppelfragen kombinieren 2 kognitive Anforderungen in einer Frage. Schüler muss BEIDE simultan halten + beantworten. Cognitive Load-Überlast besonders bei R7 Mittelschule + DaZ-SuS. Korrekt: 2 sequenzielle Fragen mit klarer Bearbeitungs-Reihenfolge.
+
+**Gegenmuster (gut):**
+- M2 a-2-1: "An welchem Datum erschoss Princip in Sarajevo den Thronfolger Franz Ferdinand?" (1 klare Frage)
+- M3 a-3-4: "Welche Aussage über Artikel 231 stimmt?" (1 klare Frage)
+
+### 8.2 Empirie Überleitungs-Qualität (7 von 16 Floskel-Pattern)
+
+**Floskel-Pattern identifiziert (7 von 16 Überleitungen):**
+
+| Material | Überleitung | Problem |
+|---|---|---|
+| **M1 mat-1-2** | "Du weißt jetzt: zwei feindliche Bündnisse stehen sich misstrauisch gegenüber. **Aber war das alles?** Was war noch los — auf den Meeren?" | rhetorische Floskel + räumlicher Wechsel ohne kausale Brücke (User-Beispiel) |
+| **M1 mat-1-6** | "Beide Seiten haben gebaut — der britische Vorsprung blieb, die Spannung wuchs. **Aber das Wettrüsten zur See war nicht der einzige Streit.** Wo noch?" | "Wo noch?" generisch, kein Erklärungs-Bedarf |
+| M2 mat-2-3 | "Du kennst den Tatort. **Aber wer war das Opfer?** Das Hofportrait zeigt dir, wie sich der Habsburger Hof selbst inszenierte." | OK — explizit kausal, knüpft an Tatort an |
+| M3 mat-3-4 | "Die Sieger schrieben 1919 die Schuld auf. **Aber Geschichte wird neu geschrieben.** Heute sagt der Forscher Christopher Clark etwas anderes." | OK — kontrastiv-explizit (Versailles vs. Clark) |
+| M3 mat-3-5 | "Bilder zeigen, was vor der Kamera stand. **Aber Tagebücher zeigen, was Menschen wirklich dachten.** Lies jetzt eine Stimme, die in keinem Foto vorkam." | OK — kontrastiv-explizit (Bild vs. Text-Quelle) |
+| M4 mat-4-2 | "Die Karte hat dir die Idee gezeigt: ein großer Bogen durch Belgien in sechs Wochen. **Aber hat dieser Plan in der Wirklichkeit auch funktioniert?** Lies an den Daten ab." | OK — Plan-vs-Realität kontrastiv |
+| M4 mat-4-3 | "Die Zeitleiste hat dich vom Ultimatum am 2. August bis zur Marne-Schlacht im September geführt. **Aber wie sahen die Soldaten an der Front aus, die diesen Plan zu Ende bringen sollten?** Schau das Foto an." | OK — vom Datum zur Person-Perspektive |
+
+**Didaktische Funktion einer Überleitung:**
+1. **Bilanz-Anker:** "Du hast jetzt X erfahren..."
+2. **Erklärungs-Bedarfs-Anker:** "Aber daraus folgt die Frage: Y?"
+3. **Material-Verweis:** "Das nächste Material zeigt Z..."
+4. **Kausale Brücke:** explizit kausal "Wenn X, dann braucht es Y" (NICHT räumlich/zeitlich/rhetorisch)
+
+**Anti-Pattern Beispiel M1 mat-1-2:**
+- ✓ Bilanz-Anker: "Du weißt jetzt: zwei feindliche Bündnisse..."
+- ✗ Erklärungs-Bedarfs-Anker: "Aber war das alles?" → rhetorisch, kein Erklärungs-Bedarf
+- ✗ Material-Verweis: "auf den Meeren" → vage räumliche Andeutung
+- ✗ Kausale Brücke: fehlt komplett
+
+**Verbessert (Beispiel-Vorschlag):**
+> "Du weißt jetzt: zwei feindliche Bündnisse stehen sich misstrauisch gegenüber. **Daraus folgt die Frage: Wenn man dem anderen Block nicht traut — wie sichert man sich ab?** Eine Antwort lag im Aufbau einer riesigen Kriegsflotte. Schau dir das nächste Material an."
+
+**Was die verbesserte Form leistet:**
+- Bilanz-Anker bleibt
+- "Daraus folgt die Frage" macht Erklärungs-Bedarf explizit (statt rhetorisch)
+- Kausale Brücke "Wenn X — dann braucht es Y" verbindet kognitiv
+- Material-Verweis konkret ("Aufbau einer Kriegsflotte")
+
+### 8.3 v0.5.1-Backlog-Erweiterung (2 NEUE Items)
+
+| ID | Severity | Beschreibung |
+|---|---|---|
+| **F-PB-88-NEU** | **HIGH** | Doppelfragen-Verbot in Aufgaben + Material-Titeln. Pattern-Detection: `frage` enthält `[—–-]` + zweite Fragestruktur ("und warum" / "Held oder" / "wirklich oder" / "und was"). Vertrag-Patch: agent-aufgaben + agent-material Frontmatter — bei Doppel-Anforderung MUSS in 2 sequenzielle Fragen splitten. Tool: `tools/check_doppelfragen.py`. |
+| **F-PB-89-NEU** | **HIGH** | Überleitungs-Qualitäts-Pflicht: Pattern-Detection für Floskel ("Aber war das alles", "Was war noch los", standalone "Aber" am Anfang ohne kontrastiv-explizite Fortsetzung). Vertrag-Patch: agent-material Frontmatter — Überleitung MUSS 4 Komponenten enthalten (Bilanz-Anker + Erklärungs-Bedarfs-Anker + Material-Verweis + kausale Brücke). Tool: `tools/check_ueberleitung_qualitaet.py`. |
+
+**v0.5.1-Backlog-Stand:** 37 → **39 Items** (2 NEU). Phase A wächst auf **13 HIGH-Items**. Aufwand 17-24 PT → **19-26 PT**.
+
+### 8.4 Cowork-Beispiel-Patch (zur Demonstration der Verbesserung)
+
+Falls User wünscht, kann M1 mat-1-2 Überleitung als Beispiel-Patch Cowork-side umgesetzt werden — zeigt wie eine korrekte problemorientierte Überleitung aussieht. Aufwand ~5 Min.
+
+---
+
+**Nachtrag abgeschlossen 2026-04-27 Abend.** Methodik: User-Pädagogen-Befund 2+3 + Sandbox-Empirie auf 28 Aufgaben + 22 Materialien + 16 Überleitungen. 2 NEUE Backlog-Items (F-PB-88+89). Total v0.5.1-Backlog: 39 Items.
