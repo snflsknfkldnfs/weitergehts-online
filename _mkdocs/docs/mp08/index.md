@@ -39,12 +39,12 @@ Block 8 regelt das **Zusammenspiel zwischen Schule und externen Bildungs-/Betreu
 - Psychomotorisch — Wahrnehmung, Aufmerksamkeit, Hyperaktivität, Motorik.
 
 **Maßstab**: Einzelsymptom ≠ Auffälligkeit. Ausschlag = **Ausprägung + Dauer + Intensität + Häufigkeit + Kombination**.
-**B9.8.3-Erweiterungen**: MSD verantwortet **Förderdiagnostischen Bericht** (Eltern vorab über standardisierte Tests informieren — Pflicht); Unterstützung inklusiver Schulentwicklung; Übergangsbegleitung.
+**Erweiterungen**: MSD verantwortet **Förderdiagnostischen Bericht** (Eltern vorab über standardisierte Tests informieren — Pflicht); Unterstützung inklusiver Schulentwicklung; Übergangsbegleitung schul. Lernorte.
 
 !!! warning "⚠ Fallen MSD"
     - **MSD ≠ FöS** — Dienst (Art. 21) vs. Schulart (Art. 19).
     - **MSD ≠ MSH** — schulisch (Art. 21) vs. **vorschulisch** (Art. 19/2).
-    - **Eltern-Info-Pflicht** vor standardisierten Tests (B9.8.3).
+    - **Eltern-Info-Pflicht** vor standardisierten Tests.
 
 ## A.2 Förderzentrum (FöS)
 
@@ -96,7 +96,7 @@ Block 8 regelt das **Zusammenspiel zwischen Schule und externen Bildungs-/Betreu
 
 **Themen**: Schullaufbahn/Übertritt · Bildungsmöglichkeiten · Lern-/Leistungsstörung · Verhaltensauffälligkeit.
 
-**SPych-Aufgaben (B9.8.2)**: Diagnostik · Gruppenuntersuchungen · Krisenintervention · Test-/Diagnoseverfahren (LRS, Rechenschwäche) · Supervision · kollegiale Fallbesprechung.
+**SPych-Aufgaben**: Diagnostik · Gruppenuntersuchungen · Krisenintervention · Test-/Diagnoseverfahren (LRS, Rechenschwäche) · Supervision · kollegiale Fallbesprechung. Besondere Felder: Inklusion · Lehrergesundheit · Supervision/Coaching · Mobbing · Demokratie/Toleranz · **KIBBS** (Kriseninterventions-/Bewältigungsteam Bayer. Schulpsychologen).
 
 **Außerschulische Schnittstellen**: vorschulisch (Einschulungsberatung) · Berufsberatung MS 8/9 · Gesundheitsamt/Logopäd:innen · Jugendamt · Erziehungsberatung (**Verschwiegenheit + Eltern-Einverständnis** Voraussetzung).
 
@@ -123,13 +123,13 @@ Block 8 regelt das **Zusammenspiel zwischen Schule und externen Bildungs-/Betreu
     - **Mittagsbetreuung ≠ Hort ≠ GTS** — drei verschiedene Rechtsregime.
     - **gGTS-Anmeldung freiwillig**, danach **Teilnahme verpflichtend**.
     - **Aufsichtspflicht Mittagspause Halbtags-GS** = Schulverband/Gemeinde, NICHT Schule (↔ Block 6.2).
-    - **Kein Rechtsanspruch** auf GTS-Platz (B9.8.1).
+    - **Kein Rechtsanspruch** auf GTS-Platz — Wahlfreiheit, Schulaufwandsträger entscheidet Ausbau.
 
-## A.5 Bausteine 9.8.x (Detail-Zusatz)
+## A.5 Detail-Zusätze (GTS-Antragsprinzip · Förderlehrkraft)
 
-**B9.8.1 GTS**: Antragsprinzip — **Schulaufwandsträger** beantragt an GS/MS/RS/WS/Gym + entspr. FöS, im Benehmen mit Trägern öff. Jugendhilfe. Wahlfreiheit Halbtag↔Ganztag, **kein Rechtsanspruch**, Teilnahmepflicht ab Anmeldung.
+**Ganztagsschule – Antragsprinzip**: **Schulaufwandsträger** beantragt GTS-Einrichtung an GS/MS/RS/WS/Gym + entspr. FöS, im Benehmen mit Trägern öff. Jugendhilfe. Wahlfreiheit Halbtag↔Ganztag, **kein Rechtsanspruch**, Teilnahmepflicht ab Anmeldung.
 
-**B9.8.3 Förderlehrkraft**: Rechtsgrund Art. 60 BayEUG + BaySchO §§ 31/36 + VSO-F § 25 + MSO §§ 9/10. Aufgaben: AG-Leitung, LRS-Förder-U., Intensiv-/Förder-U., diff. Sport/Schwimmen, EH/Verkehr, Aufsicht. **Arbeitszeit GS/MS**: 28 UE (45 Min) = 8 eigenverantwortlich + 20 Kooperations-U. + 5 Verwaltungsstunden (60 Min). FöS/Schulen für Kranke: 27 UE.
+**Förderlehrkraft (FL)**: Rechtsgrund Art. 60 BayEUG + BaySchO §§ 31/36 + VSO-F § 25 + MSO §§ 9/10. Aufgaben: AG-Leitung, LRS-Förder-U., Intensiv-/Förder-U., diff. Sport/Schwimmen, EH/Verkehr, Aufsicht. **Arbeitszeit GS/MS**: 28 UE (45 Min) = 8 eigenverantwortlich (AGs) + 20 Kooperations-U. + 5 Verwaltungsstunden (60 Min). FöS/Schulen für Kranke: 27 UE. SL bestellt Einsatzplan; Kooperations-LK verantwortet Klasseneinsatz.
 
 !!! warning "⚠ Falle FL"
     **FL-Vertretungsunterricht** nur kurzfristig in unabweisbaren Fällen, **max. 5 WStd**, NICHT permanent.
@@ -140,7 +140,7 @@ Block 8 regelt das **Zusammenspiel zwischen Schule und externen Bildungs-/Betreu
 
 !!! tip "Cheat-Sheet · 7-Tage-Endspurt"
     1. **K03 MSD-Ziel** — Verbleib allgem. Schule, FöS-Überweisung vermeiden (Art. 21).
-    2. **K08 MSD-Förderdiagn. Bericht** + Eltern-Info-Pflicht vor standardisierten Tests (B9.8.3).
+    2. **K08 MSD-Förderdiagn. Bericht** + Eltern-Info-Pflicht vor standardisierten Tests.
     3. **K11 7 Förderschwerpunkte** (Art. 20/1).
     4. **K13 Lernort-Entscheidung** — Eltern (Art. 41/1); FöS-Aufnahme = sonderpäd. Gutachten.
     5. **K16 Förderplanpflicht** (MSO § 14) — jährlich fortschreiben, MSD-Einbeziehung Pflicht.
@@ -157,7 +157,7 @@ Block 8 regelt das **Zusammenspiel zwischen Schule und externen Bildungs-/Betreu
 |---|---|---|
 | FA01 | MSD = FöS? | MSD = Dienst (Art. 21); FöS = Schulart (Art. 19). |
 | FA02 | MSD = MSH? | MSD = schulisch; MSH = vorschulisch (Art. 19/2). |
-| FA03 | Eltern-Info vor MSD-Tests optional? | Pflicht (B9.8.3). |
+| FA03 | Eltern-Info vor MSD-Tests optional? | Pflicht. |
 | FA04 | Hertha (FS gE) braucht Sachaufwandsträger? | Nein — Abs. 4 nur Sehen/Hören/k.-m. |
 | FA05 | BL = SPych? | Nein — LK + Zusatzqual. vs. Psychologe. |
 | FA06 | LK darf therapieren? | Nein — Weiterleitung; Verschwiegenheit + Eltern-Einverständnis. |
@@ -212,6 +212,63 @@ Block 8 regelt das **Zusammenspiel zwischen Schule und externen Bildungs-/Betreu
     2. **Teilnahme ab Anmeldung verpflichtend** — gGTS = Ganztagszug, kein Tages-Rückzug.
     3. **Wechsel nur zum SJ-Ende** möglich; alternativ oGTS prüfen (freiwillige Nachmittagsanmeldung).
 
+    **Antwortkette**: Eltern-Beratung Art. 78 → Wechsel-Antrag zum SJ-Ende oder Wechsel in oGTS (sofern an Schule angeboten) → bei Halbtags-Bedarf akut: Mittagsbetreuung (Gemeinde) oder Hort (außerschulisch) als Alternative.
+
+??? example "Fall **Niklas** — Aufsichtspflicht-Übergang Schule → Hort"
+    **Sachverhalt**: Niklas (7) verletzt sich auf dem Weg von der Halbtags-Grundschule zum Hort um 13:15 Uhr. Mutter macht die Schule haftbar.
+
+    **Knackpunkte**:
+
+    1. **Aufsichtspflicht-Sphären getrennt**: Schule (Unterricht) — Schulverband/Gemeinde (Mittagspause Halbtags-GS) — Hort-Träger (außerschulisch, § 22 SGB VIII).
+    2. **Mittagsbetreuung ≠ Hort ≠ GTS** — drei verschiedene Träger, drei verschiedene Haftungsachsen.
+    3. **Schule haftet nur** für die Zeit unter SL-Aufsicht und -Verantwortung (bei GTS Nachmittag inkl., bei Halbtags-GS nicht).
+
+    **Antwortkette**: Sphären-Zuordnung klären → Niklas-Unfall um 13:15 außerhalb Schulpräsenz → Schulverband/Gemeinde bzw. Hort-Träger als Verantwortliche → KL informiert SL + Eltern, dokumentiert Vorfall, verweist Mutter an Hort-Träger / Gemeindeverwaltung. Cross-Ref Block 6.2.
+
+??? example "Fall **Becker** — FL als Dauer-Vertretung"
+    **Sachverhalt**: SL setzt Frau Becker (Förderlehrkraft) seit 6 Wochen täglich als Vertretung für eine erkrankte Klassenleitung ein. Beckers AG-Stunden fallen aus. Personalrat fragt nach.
+
+    **Knackpunkte**:
+
+    1. **FL-Vertretungsunterricht NUR kurzfristig** in unabweisbaren Fällen, **max. 5 WStd**, NICHT permanent.
+    2. **Arbeitszeit-Aufteilung** schützt das FL-Profil: 8 eigenverantwortliche AG-Stunden + 20 Kooperations-U. + 5 Verwaltungsstunden.
+    3. **Permanente Vertretung** wäre Verstoß gegen die FL-Aufgabenbindung — alternativ: mobile Reserve, befristete Vertretungsregelung über SchA.
+
+    **Antwortkette**: SL-Praxis prüfen → wenn Dauer-Vertretung: rechtswidrig → Eskalation an Schulaufsichtsbehörde / Beratungsrektor:in → mobile Reserve als Lösung; Personalrat hat Mitbestimmungsrecht.
+
+??? example "Fall **Mira** — Rückkehr von FöS zur MS"
+    **Sachverhalt**: Mira (12) besucht seit 3 Jahren eine FöS Lernen, hat sich stabilisiert. Eltern fragen, ob sie zur Mittelschule zurückkehren und zum Quali zugelassen werden kann.
+
+    **Knackpunkte**:
+
+    1. **Rückkehr stets möglich** — pädagogischer Hinweis: Eltern beraten, Wertigkeit FöS verdeutlichen, aber Übergang nicht verstellen.
+    2. **QA-Teilnahme stets offen** — Mira kann externe Prüfung absolvieren.
+    3. **Förderplan + Nachteilsausgleich** (MSO § 14) übergangsweise an der MS möglich; sonderpäd. Bedarf endet nicht automatisch mit Schulartenwechsel.
+
+    **Antwortkette**: Beratung Art. 78 → Anmeldung an Sprengel-MS → Probezeit/-versetzung nach MS-Regularien → Förderplan in MS-Schuljahr fortschreiben → MSD-Anbindung optional → QA-Anmeldung im 9. SJ.
+
+??? example "Fall **Familie Schwarz** — Antrag auf GTS-Einrichtung"
+    **Sachverhalt**: Eltern einer GS-Klasse fordern bei der Schule die Einrichtung einer gebundenen Ganztagsschule. Die SL verweist auf den Schulträger.
+
+    **Knackpunkte**:
+
+    1. **Antragsrecht bei Schulaufwandsträger** — Eltern haben **kein** direktes Antragsrecht; Antrag an GS/MS/RS/WS/Gym läuft über Schulaufwandsträger (Gemeinde/Landkreis).
+    2. **Im Benehmen mit Trägern öff. Jugendhilfe** — Planung erfordert Abstimmung.
+    3. **Kein Rechtsanspruch** auf GTS-Platz — Wahlfreiheit Halbtag↔Ganztag, aber Ausbau abhängig von Träger-Entscheidung.
+
+    **Antwortkette**: Eltern-Beratung → Verweis auf Schulaufwandsträger als richtigen Adressaten → Eltern-Initiative kann politisch wirken, aber nicht rechtlich erzwungen werden → Alternative: oGTS (Antrag durch SL möglich, aber ebenfalls trägergebunden).
+
+??? example "Fall **Frau Akbar** — Eltern-Forderung Schulpsych. Test ohne LK-Befund"
+    **Sachverhalt**: Frau Akbar fordert schriftlich einen LRS-Test ihrer Tochter durch die Schulpsychologin, obwohl die KL keinen Verdacht hat.
+
+    **Knackpunkte**:
+
+    1. **Freiwilligkeitsgrundsatz Schulberatung** — Eltern können Beratung in Anspruch nehmen, KL/Schule keine Veto-Position.
+    2. **SPych-Aufgaben umfassen Test-/Diagnoseverfahren LRS** — formal zuständig, terminiert nach Verfügbarkeit.
+    3. **Verschwiegenheitspflicht** und **Eltern-Einverständnis** sind bereits gegeben, da Eltern selbst beantragen.
+
+    **Antwortkette**: Eltern-Anliegen aufnehmen → Weiterleitung an Beratungsrektor:in → SPych-Termin koordinieren → KL-Aufzeichnungen auf Lern-/Leistungsverhalten dokumentieren (zur Test-Vorbereitung) → Test-Ergebnis abwarten, ggf. Förderplan einleiten.
+
 ---
 
 # Querverweise
@@ -228,8 +285,5 @@ Block 8 regelt das **Zusammenspiel zwischen Schule und externen Bildungs-/Betreu
 
 - **Bundesrecht**: § 22 SGB VIII (8. Buch SGB; früher KJHG).
 - **BayEUG**: Art. 6/4, 19, 20, 21, 30a, 31/3, 41, 60, 78.
-- **Schulordnungen**: MSO § 14 (Förderplan, B9.1.6 / Ressourcen Z. 1470), GrSO § 5, BaySchO §§ 31/36, VSO-F § 25, MSO §§ 9/10.
-- **KMBek**: KWMBl 2011/240 · 08.07.2013 (oGTS) · 10.02.2020 (gGTS) · 12.06.1991 (Hort↔Schule) · 29.10.2001 (Schulberatung).
-- **Kompendium Lemnitzer**: Kap. 5.5–5.8, S. 148–164.
-- **Bausteine**: B9.1.6 (Förderplan), B9.8.1 (GTS), B9.8.2 (Schulberatung), B9.8.3 (FL + MSD-Erweiterung).
-- **Anki-Manifest**: `Schulrecht/Anki/Material_Inventar_MP_08.md` (Audit-Score 9.3, APPROVED) — 45 Karten, 11 Fallen, 9 Hochprior.
+- **Schulordnungen**: MSO § 14 (Förderplan), GrSO § 5 (Überweisungsverfahren), BaySchO §§ 31/36 (FL-Arbeitszeit), VSO-F § 25, MSO §§ 9/10.
+- **KMBek**: KWMBl 2011 S. 240 (GTS-Ausbau) · 08.07.2013 (oGTS) · 10.02.2020 (gGTS) · 12.06.1991 (Hort↔Schule) · 29.10.2001 geänd. 24.06.2011 (Schulberatung).

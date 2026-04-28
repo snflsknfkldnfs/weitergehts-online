@@ -12,7 +12,7 @@ Strukturierte Lernscripts pro ZALGM-Themenfeld mit Kernnormen, Choreographie, Fa
 
     ---
 
-    MSD · Förderzentrum · Schulberatung · Ganztag · Hort · Bausteine 9.8.x
+    MSD · Förderzentrum · Schulberatung · Ganztag · Hort · Förderlehrkraft
 
     **45 Karten** · **11 Falle** · **9 Hochprior** · 4-stufige Norm-Hierarchie
 
