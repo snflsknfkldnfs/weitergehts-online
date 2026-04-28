@@ -389,12 +389,6 @@
             "mat-1-5",
             "mat-1-2"
           ],
-          "elemente": [
-            "1898: Der deutsche Tirpitz-Plan startet — das Deutsche Reich baut eine große Kriegsflotte.",
-            "1906: Großbritannien baut die HMS Dreadnought — schneller und stärker als alle Schiffe davor.",
-            "Bis 1914: Das Deutsche Reich baut 17 moderne Großschiffe.",
-            "Bis 1914: Großbritannien hat 29 moderne Großschiffe — der Vorsprung bleibt."
-          ],
           "loesung": [
             "1898: Der deutsche Tirpitz-Plan startet — das Deutsche Reich baut eine große Kriegsflotte.",
             "1906: Großbritannien baut die HMS Dreadnought — schneller und stärker als alle Schiffe davor.",
@@ -416,7 +410,13 @@
               "text": "Lösung: 1898 Tirpitz-Plan -> 1906 HMS Dreadnought -> bis 1914 Deutsches Reich 17 Schiffe -> bis 1914 Großbritannien 29 Schiffe. Merke: Beide rüsten gleichzeitig. Der britische Vorsprung bleibt."
             }
           ],
-          "punkte": 12
+          "punkte": 12,
+          "optionen": [
+            "1898: Der deutsche Tirpitz-Plan startet — das Deutsche Reich baut eine große Kriegsflotte.",
+            "1906: Großbritannien baut die HMS Dreadnought — schneller und stärker als alle Schiffe davor.",
+            "Bis 1914: Das Deutsche Reich baut 17 moderne Großschiffe.",
+            "Bis 1914: Großbritannien hat 29 moderne Großschiffe — der Vorsprung bleibt."
+          ]
         },
         {
           "id": "aufgabe-1-6",
@@ -1088,12 +1088,6 @@
           "material_referenz": [
             "mat-2-1"
           ],
-          "elemente": [
-            "28. Juli 1914: Österreich-Ungarn erklärt Serbien den Krieg.",
-            "1. August 1914: Deutschland erklärt Russland den Krieg.",
-            "3. August 1914: Deutschland erklärt Frankreich den Krieg.",
-            "4. August 1914: Großbritannien erklärt Deutschland den Krieg."
-          ],
           "loesung": [
             "28. Juli 1914: Österreich-Ungarn erklärt Serbien den Krieg.",
             "1. August 1914: Deutschland erklärt Russland den Krieg.",
@@ -1115,7 +1109,13 @@
               "text": "Lösung: 28.7. AT-UN -> Serbien -> 1.8. DT -> Russland -> 3.8. DT -> Frankreich -> 4.8. GB -> Deutschland. Merke: Bündnisfall heißt, dass jedes Land seinem Bündnis-Partner helfen muss. So fielen die Bündnisse wie Dominosteine — in nur einer Woche entstand ein Weltkrieg."
             }
           ],
-          "punkte": 12
+          "punkte": 12,
+          "optionen": [
+            "28. Juli 1914: Österreich-Ungarn erklärt Serbien den Krieg.",
+            "1. August 1914: Deutschland erklärt Russland den Krieg.",
+            "3. August 1914: Deutschland erklärt Frankreich den Krieg.",
+            "4. August 1914: Großbritannien erklärt Deutschland den Krieg."
+          ]
         },
         {
           "id": "aufgabe-2-5",
