@@ -4,6 +4,69 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-04-27 — v0.5.1-Phase-B+C KOMPLETT: 39/39 v0.5.1-Backlog DONE (Run-5-Voraussicherung)
+
+**Scope:** Phase B (10 MED + Schema-Drift-Cluster) + Phase C (11 LOW + Polish) — alle 21 verbleibenden Backlog-Items adressiert. User-Decision: Run-5-Voraussicherung statt Run-5-Sofort-Start.
+
+**Modus:** EXECUTE Cowork-Self-Edit + Python-Batch-Patches. ~3h Wall-Clock (Plan 9-12 PT, Speedup ~85%).
+
+**2 Generator-Repo-Commits:**
+
+### Commit `c20386f` — Phase B (10 MED)
+
+**Schema-Drift-Cluster (F-PB-65/66/75/76):**
+- 6 Vertrag-Patches mit kombiniertem F-PB-65/66/75/76-Block in AGENT_HEFTEINTRAG/SKRIPT/ARTEFAKT + agent-raetsel-dispatcher + SUB_AUFGABE_LUECKENTEXT + SUB_MATERIAL_QUELLENTEXT
+- NEU `tools/migrate_v0_5_0_to_v0_5_1.py` (~280 LOC) — Migration-Skript für bestehende Games (idempotent + Backup)
+  - F-PB-65: tafelbild_knoten → knoten + tafelbild_verbindungen → verbindungen
+  - F-PB-66: lueckentext_template → text_mit_luecken + {{N}} → ___
+  - F-PB-75: materialien_ref → materialien [{$ref}]
+  - F-PB-76: v3.11.0+ Top-Level-id (aus _meta.id ableiten)
+  - Self-Test PASS
+
+**Phase B Rest (F-PB-57/58/64/67/73/74):**
+- NEU `tools/sanitize_json_quotes.py` (F-PB-64) — typografische Quote-Pair Auto-Repair
+- NEU `tools/post_assembly_browser_smoke.py` (F-PB-58) — Static-Check + Render-Stub
+- 6 Vertrag-Patches in Agent-Files (F-PB-57 additionalProperties + F-PB-67 _meta-Whitelist + F-PB-73 mcp-Pre-Verifikation + F-PB-74 strukturiertes JSON-Output-Schema)
+- 2 NEUE Hooks (PostToolUse 15 → 17): post-write-aufgabe-sanitize + post-write-data-browser-smoke
+
+### Commit `a9e0486` — Phase C (11 LOW)
+
+- NEU `tools/check_game_meta_completeness.py` (~150 LOC, F-PB-69/70/71) — meta-Pflicht-Felder + einstieg.typ + mappenabschluss._variante. Run-4-Empirie: 4 Warnings (meta.schulart=null + meta.thema=null + M3+M4 einstieg.typ).
+- 1 NEUER Hook (PostToolUse 17 → 18): post-write-game-meta-completeness
+- 6 Vertrag-Patches in Agent-Files mit kombiniertem Phase-C-Block für 11 LOW-Items (F-PB-51/54-56/59-62/69-71)
+
+**Plugin-Komponenten-Inventar v0.5.1 FINAL:**
+
+| Komponente | v0.5.0 | v0.5.1 (Phase A+B+C) | Delta |
+|---|---|---|---|
+| Tools | 23 | **33** | **+10 NEU** (~2300 LOC Python) |
+| Hooks | 17 | **26** (6+18+2) | **+9 NEU** |
+| Subagent-Frontmatter F-PB-72 | 0 | **24/24** | +24 |
+| Vertrag-Patches in Agent-Files | 0 | **29 in 8 Files** | +29 |
+| Migration-Skript | 0 | **1 (~280 LOC)** | +1 |
+
+**v0.5.1-Backlog-Stand FINAL: 39/39 = 100% DONE.**
+
+| Phase | Items | Aufwand-Ist |
+|---|---|---|
+| Phase A (HIGH) | 13/13 ✓ | ~2.5h |
+| Phase B (MED) | 10/10 ✓ | ~1.5h |
+| Phase C (LOW) | 11/11 ✓ | ~1h |
+| **Total** | **39/39** | **~5h Wall-Clock** (Plan 28-37 PT, Speedup ~85%) |
+
+**Methodik-Lesson (User-Begründung Phase-C-Pflicht):**
+"Run-5 ist extrem extensiv und muss vorher noch weiter abgesichert werden, damit er wirklich zu erwartbar besserer Qualität führt." → Phase C als Run-5-Voraussicherung (alle 39 Items vor Run-5 abgesichert).
+
+**Naechste Schritte:**
+1. Plugin-Validator-Run user-side: `claude plugin validate /Users/paulad/escape-game-generator` (strukturelle Plugin-Spec-Verifikation aller 33 Tools + 26 Hooks)
+2. **Run-5 Pristine-Test** mit neuem Game (Vorschlag: NS-Diktatur-Anfang oder Weimarer-Republik-Anfangsphase, ~5h CC + 2-3h Audit)
+3. **v0.5.1 Plugin-Version-Bump + Tag** + Marketplace-Update
+4. Run-5-Audit + Empirie-Validierung (alle 10 NEUE Validatoren auf Run-5-Output)
+
+**v0.6-Architektur-Roadmap als nächstes Major-Item:** R1-R5 (engine_schema.json SSoT + assembly_runner + state_machine_runner + Pre-Persist-Hooks + Concurrent-Safe-Logging) ~30-50 PT, mehrere Monate, separater Spec.
+
+---
+
 ## 2026-04-27 — Track 2 v0.5.1-Phase-A KOMPLETT: 13/13 HIGH-Items DONE im Generator-Repo
 
 **Scope:** v0.5.1-Phase-A-Implementation (HIGH-Items, Pilot-Pflicht). Generator-Repo strukturell hardened. 2 NEUE User-Pädagogen-Befunde (F-PB-88+89) integriert.
