@@ -1,5 +1,19 @@
 # Workflow v4: Cowork-basierte Produktion + Praezise Schnittstellen
 
+> **DEPRECATED post-v3.9-Steuerungsrefaktor.** Dieses Dokument ist Pre-Plugin-Aera (v3 / v4 / v4.1, vor Plugin-Migration Track P.1+P.2 + v3.9-Steuerungsrefaktor).
+>
+> **Empirisch verifiziert 2026-04-28:** ~58% Phase-Werte-Divergenz vs `escape-game-generator/agents/phase_transitions.json`. 6 stale-Extras (1.5, 2.2, 2.3, 3.3, 3.4, 3.5) + 8 phase_transitions-only Phasen (0.1, 0.2, 0.2.M, 1, 2.0b, 2.1b, ONBOARDING, DONE).
+>
+> **Phase-Achse-SSoT post-Plugin (Pflicht-Referenz):**
+> - `escape-game-generator/agents/phase_transitions.json` — kanonische Phase-Achse (18 Transitions, 19 States)
+> - `escape-game-generator/PROJECT_INSTRUCTIONS.md` — State-Machine, ~423 Z. SSoT
+>
+> WORKFLOW_v4.md NICHT mehr referenzieren fuer Phase-Definition. Bei Konflikt zwischen WORKFLOW_v4 und phase_transitions.json: phase_transitions.json wins.
+>
+> **Bridge-Pair-Quelle:** `session-bridge/pilot-runs/p4-eg-dev/bridge/BILANZ.md` (Pair `614a35ad`, Trace-RE Run-4, 2026-04-28).
+
+---
+
 **Datum:** 2026-03-31 (v4), 2026-04-06 (v4.1)
 **Basiert auf:** v3 (WORKFLOW_v2.md, 2026-03-26)
 **Ersetzt:** WORKFLOW_v2.md (v3) als kanonische Referenz
