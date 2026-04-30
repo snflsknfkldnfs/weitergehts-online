@@ -497,3 +497,41 @@ flowchart LR
 - **Schulordnungen**: GrSO § 6 (ÜZ) · § 10 (Probearbeiten Jgst. 4) · MSO §§ 6 (Gelenkklasse) · 7 (M-Zug) · 8 (Durchlässigkeit) · 22 (Praxisklasse-Abschluss) · 34 (Quabi) · BaySchO § 19/4 (Distanzunterricht) · § 20 (Eltern-Meldepflicht).
 - **KMBek**: Vorkurs Deutsch 240.
 - **Bundesrecht**: JuSchG § 1 (Kind/Jugendliche/sittliche Reife).
+
+*[BV]: Bayerische Verfassung
+*[BayEUG]: Bayerisches Gesetz über das Erziehungs- und Unterrichtswesen
+*[GrSO]: Schulordnung für die Grundschulen
+*[MSO]: Schulordnung für die Mittelschulen
+*[BaySchO]: Bayerische Schulordnung
+*[ÜZ]: Übertrittszeugnis (Mai, Jgst. 4)
+*[ESA]: Erfolgreicher Mittelschulabschluss
+*[MSA]: Mittlerer Schulabschluss
+*[Quali]: Qualifizierender Mittelschulabschluss
+*[Quabi]: Qualifizierter beruflicher Bildungsabschluss
+*[FOS]: Fachoberschule
+*[BOS]: Berufsoberschule
+*[BS]: Berufsschule
+*[BFS]: Berufsfachschule
+*[WS]: Wirtschaftsschule
+*[FöS]: Förderschule
+*[SVE]: Schulvorbereitende Einrichtung
+*[KMBek]: Kultusministerielle Bekanntmachung
+*[D/M/HSU]: Deutsch / Mathematik / Heimat- und Sachunterricht
+*[Art. 35]: BayEUG Art. 35 — Beginn der Schulpflicht
+*[Art. 37]: BayEUG Art. 37 — Stichtag und Einschulungskorridor
+*[Art. 41]: BayEUG Art. 41 — Schulpflicht bei sonderpäd. Förderbedarf
+*[Art. 43]: BayEUG Art. 43 — Wechsel der Schulart
+*[Art. 44]: BayEUG Art. 44 — Elternwahlrecht
+*[Art. 76]: BayEUG Art. 76 — Pflichten der Erziehungsberechtigten
+*[Art. 78]: BayEUG Art. 78 — Schulberatung
+*[Art. 118]: BayEUG Art. 118 — Schulzwang
+*[Art. 119]: BayEUG Art. 119 — Ordnungswidrigkeit Schulpflicht
+*[Art. 120]: BayEUG Art. 120 — Grundrechtseinschränkung zugunsten Schulpflicht
+*[BVerwG]: Bundesverwaltungsgericht
+*[KL]: Klassenleitung
+*[SL]: Schulleitung
+*[LK]: Lehrkraft
+*[SuS]: Schülerinnen und Schüler
+*[ÜZ]: Übertrittszeugnis
+*[PU]: Probeunterricht
+*[LNW]: Leistungsnachweis

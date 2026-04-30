@@ -287,6 +287,36 @@ flowchart LR
 | FA10 | Rechtsanspruch GTS-Platz? | Kein Anspruch; Wahlfreiheit. |
 | FA11 | FL permanent als Vertretung? | Nur kurzfristig, max. 5 WStd, unabweisbare Fälle. |
 
+**Interaktiv-Modus** (Click-to-Reveal — zum Selbst-Abprüfen):
+
+<div class="falle-card" markdown>
+<span class="falle-frage">FA01 · MSD = Förderzentrum?</span>
+<div class="falle-antwort" markdown>
+NEIN — MSD = **Dienst** an der allgem. Schule (Art. 21 BayEUG); FöS = **Schulart** (Art. 19 BayEUG).
+</div>
+</div>
+
+<div class="falle-card" markdown>
+<span class="falle-frage">FA04 · Hertha (FS gE) → Regelschule braucht Sachaufwandsträger?</span>
+<div class="falle-antwort" markdown>
+NEIN — Art. 30a/4 sieht Sachaufwandsträger-Zustimmung **nur** für **Sehen / Hören / körperl.-motor.** vor. FS gE fällt NICHT darunter.
+</div>
+</div>
+
+<div class="falle-card" markdown>
+<span class="falle-frage">FA05 · BL = SPych?</span>
+<div class="falle-antwort" markdown>
+NEIN — BL = **Lehrkraft + Erweiterungsstudium** (oder 2-J-Weiterbildung); SPych = **Psychologe** mit schulpsych. Schwerpunkt. Unterschiedliche Qualifikation + Aufgabenkatalog.
+</div>
+</div>
+
+<div class="falle-card" markdown>
+<span class="falle-frage">FA08 · Mittagsbetreuung = Hort = Ganztagsschule?</span>
+<div class="falle-antwort" markdown>
+NEIN — drei verschiedene Rechtsträger: Gemeinde (Mittagsbetreuung, Art. 31/3) · freier/kirchl./kommunal. JuHi-Träger (Hort, § 22 SGB VIII) · staatl. Schule (GTS, Art. 6/4 BayEUG).
+</div>
+</div>
+
 ---
 
 # Teil D — Fallbeispiele (Anwendung)
@@ -407,3 +437,31 @@ flowchart LR
 - **BayEUG**: Art. 6/4, 19, 20, 21, 30a, 31/3, 41, 60, 78.
 - **Schulordnungen**: MSO § 14 (Förderplan), GrSO § 5 (Überweisungsverfahren), BaySchO §§ 31/36 (FL-Arbeitszeit), VSO-F § 25, MSO §§ 9/10.
 - **KMBek**: KWMBl 2011 S. 240 (GTS-Ausbau) · 08.07.2013 (oGTS) · 10.02.2020 (gGTS) · 12.06.1991 (Hort↔Schule) · 29.10.2001 geänd. 24.06.2011 (Schulberatung).
+
+*[MSD]: Mobiler Sonderpädagogischer Dienst — Art. 21 BayEUG
+*[MSH]: Mobile Sonderpädagogische Hilfe — Art. 19/2 BayEUG (vorschulisch)
+*[FöS]: Förderzentrum / Förderschule — Art. 19–24 BayEUG
+*[BL]: Beratungslehrkraft (LK + Erweiterungsstudium ODER 2-J-Weiterbildungskurs)
+*[SPych]: Schulpsycholog:in (Psychologiestudium mit schulpsych. Schwerpunkt)
+*[FL]: Förderlehrkraft — Art. 60 BayEUG
+*[GTS]: Ganztagsschule — Art. 6/4 BayEUG
+*[oGTS]: offene Ganztagsschule — KMBek 08.07.2013
+*[gGTS]: gebundene Ganztagsschule — KMBek 10.02.2020
+*[ELECOK]: Elektronische Hilfen + Computer für Körperbehinderte
+*[KIBBS]: Kriseninterventions- und Bewältigungsteam Bayerischer Schulpsychologen
+*[SVE]: Schulvorbereitende Einrichtung
+*[BayEUG]: Bayerisches Gesetz über das Erziehungs- und Unterrichtswesen
+*[BaySchO]: Bayerische Schulordnung
+*[MSO]: Mittelschulordnung
+*[GrSO]: Schulordnung für die Grundschulen
+*[VSO-F]: Volksschulordnung für Förderschulen
+*[KMBek]: Kultusministerielle Bekanntmachung
+*[KJHG]: Kinder- und Jugendhilfegesetz (heute: SGB VIII)
+*[SGB]: Sozialgesetzbuch
+*[SL]: Schulleitung
+*[KL]: Klassenleitung
+*[LK]: Lehrkraft
+*[SuS]: Schülerinnen und Schüler
+*[em./soz.]: emotional / sozial
+*[k./m.]: körperlich / motorisch
+*[gE]: geistige Entwicklung

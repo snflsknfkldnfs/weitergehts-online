@@ -379,6 +379,87 @@
   background: #1f2937;
 }
 
+/* === Iter 4: Reading-Progress-Bar (Top) === */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #c2410c 0%, #ca8a04 100%);
+  z-index: 999;
+  transition: width 0.1s ease-out;
+  pointer-events: none;
+}
+
+[data-md-color-scheme="slate"] .reading-progress {
+  background: linear-gradient(90deg, #fb923c 0%, #facc15 100%);
+}
+
+/* === Iter 4: Sidebar Active-Highlight stärker === */
+.md-nav__link--active,
+.md-nav__link[aria-current="page"] {
+  font-weight: 700 !important;
+  color: #c2410c !important;
+}
+
+.md-nav__list .md-nav__link[aria-current="true"] {
+  background: #fff7ed;
+  border-left: 3px solid #c2410c;
+  padding-left: 0.8em;
+  margin-left: -1em;
+}
+
+[data-md-color-scheme="slate"] .md-nav__list .md-nav__link[aria-current="true"] {
+  background: rgba(194, 65, 12, 0.15);
+}
+
+/* === Iter 4: Inline-Norm-Tooltips ===
+   Markdown-Pattern: [Art. 41/1](# "Vollständiger Wortlaut...")
+   Material-Theme aktiviert title-Attribute via abbr/tooltip plugin (md_in_html + attr_list).
+   Hier visuelles Styling für inline-tooltip-Elemente. */
+.md-typeset abbr[title] {
+  text-decoration: underline dotted #c2410c;
+  text-underline-offset: 2px;
+  cursor: help;
+}
+
+/* === Iter 4: Falle-Cards Click-to-Reveal ===
+   Nutzt Material's "details" admonition-collapsible.
+   Falle-Atlas-Tabelle wird optional ergänzt durch interaktive Cards. */
+.falle-card {
+  background: #fef2f2;
+  border-left: 3px solid #dc2626;
+  padding: 0.8em 1em;
+  border-radius: 0.4em;
+  margin: 0.5em 0;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.falle-card:hover {
+  background: #fee2e2;
+  border-left-color: #991b1b;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.12);
+}
+
+.falle-card .falle-frage {
+  font-weight: 600;
+  color: #991b1b;
+}
+
+.falle-card .falle-antwort {
+  margin-top: 0.5em;
+  padding-top: 0.5em;
+  border-top: 1px dashed #fca5a5;
+  color: #1f2937;
+  display: none;
+}
+
+.falle-card.is-open .falle-antwort {
+  display: block;
+}
+
 /* === Iter 2: Cards-Grid + Mermaid === */
 
 .md-typeset .grid.cards > ul > li,
