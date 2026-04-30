@@ -4,27 +4,10 @@ Format: *[Begriff/Norm]: Wortlaut/Erläuterung
 Material rendert das als <abbr title="..."> mit gestrichelter Unterstreichung.
 -->
 
-*[BV]: Bayerische Verfassung
-*[BayEUG]: Bayerisches Gesetz über das Erziehungs- und Unterrichtswesen
-*[BaySchO]: Bayerische Schulordnung
-*[GrSO]: Schulordnung für die Grundschulen
-*[MSO]: Mittelschulordnung
-*[RSO]: Realschulordnung
-*[GSO]: Gymnasial-Schulordnung
-*[WSO]: Wirtschaftsschulordnung
-*[VSO-F]: Volksschulordnung für Förderschulen
-*[LDO]: Lehrerdienstordnung (Verwaltungsvorschrift)
-*[KMBek]: Kultusministerielle Bekanntmachung
-*[KWMBl]: Amtsblatt des Bayerischen Kultusministeriums
-*[GSG]: Gesundheitsschutzgesetz Bayern (Rauchverbot)
-*[BayPrG]: Bayerisches Pressegesetz
-*[KUG]: Kunsturhebergesetz (§ 22 Recht am eigenen Bild)
-*[KJHG]: Kinder- und Jugendhilfegesetz (heute SGB VIII)
-*[SGB VIII]: Sozialgesetzbuch 8. Buch (Kinder- und Jugendhilfe)
-*[JuSchG]: Jugendschutzgesetz (Bundesrecht)
-*[GG]: Grundgesetz
-*[DSGVO]: Datenschutz-Grundverordnung
-*[StMUK]: Bayerisches Staatsministerium für Unterricht und Kultus
+<!-- Trivial-Abks (BV/BayEUG/BaySchO/GrSO/MSO/RSO/GSO/WSO/VSO-F/LDO/KMBek/KWMBl/GSG/BayPrG/KJHG/SGB VIII/GG/DSGVO/StMUK) BEWUSST entfernt — kein Tooltip-Wert für LAA. -->
+
+*[KUG]: Kunsturhebergesetz § 22 — Verbreitung von Bildnissen nur mit Einwilligung der abgebildeten Person.
+*[JuSchG]: Jugendschutzgesetz § 1 — Begriffsbestimmungen: Kind (unter 14) · Jugendlicher (14 bis unter 18).
 
 *[BV Art. 128]: BV Art. 128 — „Jeder Bewohner Bayerns hat Anspruch darauf, eine seinen erkennbaren Fähigkeiten und seiner inneren Berufung entsprechende Ausbildung zu erhalten."
 *[BV Art. 129]: BV Art. 129 — Schulpflicht Volks-/Berufsschule + Unentgeltlichkeit des Unterrichts.
@@ -143,3 +126,65 @@ Material rendert das als <abbr title="..."> mit gestrichelter Unterstreichung.
 *[BVerfG]: Bundesverfassungsgericht
 *[KMK]: Kultusministerkonferenz
 *[ZALGM]: Zulassungs- und Ausbildungs-Ordnung Lehramtsbefähigung Mittelschule
+
+<!-- === Iter 6: Lücken-Defs (Coverage-Erweiterung) === -->
+
+*[Art. 3]: BayEUG Art. 3 — Schulen Bayern = öffentlich (staatlich + kommunal) + privat; Träger-Differenzierung.
+*[Art. 6]: BayEUG Art. 6 — Schularten-Katalog (allgemein bildend · beruflich · Förderschulen · Schulen für Kranke).
+*[Art. 6/4]: BayEUG Art. 6 Abs. 4 — Ganztagsschule: mind. 4 Tage à mind. 7 Std.; Antragsprinzip durch Schulaufwandsträger; kein Rechtsanspruch.
+*[Art. 7]: BayEUG Art. 7 — Grundschule (Jgst. 1–4); grundlegende Bildung; erste gemeinsame Schule (mit Ausnahmen).
+*[Art. 7a]: BayEUG Art. 7a — Mittelschule (Jgst. 5–9; M-Zug 5–10); berufsbezogen; Abschlüsse ESA/Quali/MSA.
+*[Art. 8]: BayEUG Art. 8 — Realschule (Jgst. 5–10); mittlerer Schulabschluss.
+*[Art. 9]: BayEUG Art. 9 — Gymnasium (Jgst. 5–13, G9); allgemeine Hochschulreife.
+*[Art. 11]: BayEUG Art. 11 — Berufsschule (Jgst. 10–12/13).
+*[Art. 19]: BayEUG Art. 19 — Förderzentrum/Förderschule: Aufgaben (diagnostizieren/erziehen/unterrichten/beraten/fördern); Adressaten K/J mit sonderpäd. Bedarf.
+*[Art. 19/1]: BayEUG Art. 19 Abs. 1 — Aufgaben FöS: K/J mit sonderpäd. Bedarf, an allgem. Schule nicht/nicht ausreichend förderbar.
+*[Art. 19/2]: BayEUG Art. 19 Abs. 2 — Leistungsspektrum FöS: Klassen-U. + SVE (vorschulisch) + MSH + MSD.
+*[Art. 19/3]: BayEUG Art. 19 Abs. 3 — Bei dauerhaft fremdhilfebedürftigen K/J: pflegerische Aufgaben in U./Erziehung möglich.
+*[Art. 20]: BayEUG Art. 20 — FöS-Aufbau + 7 Förderschwerpunkte.
+*[Art. 20/1]: BayEUG Art. 20 Abs. 1 — 7 Förderschwerpunkte: Sehen · Hören · k./m. Entwicklung · gE · Sprache · Lernen · em./soz. Entwicklung.
+*[Art. 20/2]: BayEUG Art. 20 Abs. 2 — FöS-Stufen: GS-Stufe 1–4 · MS-Stufe 5–9 (ggf. 10 MR) · Berufsschulstufe 10–12 (FS gE).
+*[Art. 21]: BayEUG Art. 21 — MSD (Mobiler Sonderpädagogischer Dienst) als präventiv-integrativer Dienst an allgem. Schule.
+*[Art. 21/1]: BayEUG Art. 21 Abs. 1 — MSD-Aufgaben: diagnostizieren · fördern · beraten (LK/Eltern/SuS) · koordinieren · fortbilden. Träger: nächstgelegene FöS.
+*[Art. 30a]: BayEUG Art. 30a — Zusammenarbeit aller Schularten (Inklusion); Pflicht zur Zusammenarbeit; gemeinsamer Unterricht.
+*[Art. 30a/1]: BayEUG Art. 30a Abs. 1 — Pflicht aller Schularten zur Zusammenarbeit + Abstimmung bei Schulwechsel.
+*[Art. 30a/3]: BayEUG Art. 30a Abs. 3 — SuS mit/ohne Bedarf gemeinsam möglich; FöS unterstützt allgem. Schule.
+*[Art. 30a/4]: BayEUG Art. 30a Abs. 4 — FS Sehen/Hören/körperl.-motor. an allgem. Schule NUR mit Zustimmung Schulaufwandsträger.
+*[Art. 31/3]: BayEUG Art. 31 Abs. 3 — Mittagsbetreuung: Träger Gemeinde / gemeinnützige Einrichtung; sozialpäd. Fachpersonal.
+*[Art. 36/3]: BayEUG Art. 36 Abs. 3 — Jgst.-Einweisung; tiefere Einstufung bis 2 Jgst. NUR bei mangelndem Bildungsstand, NICHT bei sprachlichen Defiziten.
+*[Art. 41/2]: BayEUG Art. 41 Abs. 2 — Längerfristig Kranke besuchen Schule für Kranke.
+*[Art. 41/4]: BayEUG Art. 41 Abs. 4 — Anmeldung Sprengel/Schulprofil Inklusion/FöS; FöS-Aufnahme = sonderpäd. Gutachten.
+*[Art. 41/6]: BayEUG Art. 41 Abs. 6 — Bei Nicht-Einvernehmen entscheidet Schulaufsichtsbehörde nach Anhörung.
+*[Art. 60]: BayEUG Art. 60 — Förderlehrkraft + heilpäd. Förderlehrkraft + Schulsozialpädagog:innen.
+*[Art. 78/1]: BayEUG Art. 78 Abs. 1 — Beratungspflicht: Schule + jede LK haben Eltern + SuS in Schullaufbahn-Fragen zu beraten.
+*[Art. 80]: BayEUG Art. 80 — Schulgesundheit / Verhütung.
+*[Art. 119]: BayEUG Art. 119 — Ordnungswidrigkeit bei Unterlassung Anmeldung (Geldbuße).
+*[Art. 120]: BayEUG Art. 120 — Grundrechtseinschränkung Freiheit/Wohnung zugunsten Schulpflicht.
+
+*[§ 1]: JuSchG § 1 — Begriffsbestimmungen: Kind (unter 14) · Jugendlicher (14 bis unter 18) · Personensorgeberechtigte · Erziehungsbeauftragte.
+*[§ 5]: GrSO § 5 — Überweisungsverfahren Förderzentrum (6 Schritte).
+*[§ 6]: GrSO § 6 — Übertrittszeugnis (Mai, Jgst. 4, Fächer D/M/HSU).
+*[§ 7]: MSO § 7 — M-Zug-Aufnahme: M7 ≤ 2,66 (D+M+E); M8/M9/M10 ≤ 2,33.
+*[§ 8]: MSO § 8 — Durchlässigkeit MS↔M-Zug; Rückkehr jederzeit (Abs. 3).
+*[§ 9]: BaySchO § 9 — Schülersprecher (1./2./3.) + Schülerausschuss; Wahl 2 Wochen nach Klassensprecher-Wahl.
+*[§ 10]: BaySchO § 10 — Verbindungslehrkraft + Schülerzeitung; SMV-Veranstaltungen unter Schulaufsicht.
+*[§ 11]: BaySchO § 11 — Bezirksschülersprecher; MS: 7 pro Regierungsbezirk.
+*[§ 14]: MSO § 14 — Individueller Förderplan (B9.1.6); Pflicht bei nicht erreichten Lernzielen; jährliche Fortschreibung; MSD-Einbeziehung Pflicht.
+*[§ 19]: BaySchO § 19 — Distanzunterricht; verpflichtender Charakter.
+*[§ 20]: BaySchO § 20 — Eltern-Meldepflicht bei Verhinderung.
+*[§ 22]: SGB VIII § 22 — Hort als außerschul. Bildungs-/Erziehungseinrichtung; früher KJHG. Träger: kirchlich/kommunal/freie Jugendhilfe.
+*[§ 25]: BaySchO § 25 — Schülerzeitung-Detail-Bestimmungen.
+*[§ 32]: BaySchO § 32 — Individuelle Unterstützung; bei HA Differenzierung möglich.
+*[§ 33]: BaySchO § 33 — Nachteilsausgleich (NA): Anpassung äußerer Prüfungsbedingungen.
+*[§ 34]: MSO § 34 — Quabi (Quali + Berufsausbildungsabschluss).
+*[§ 39]: Art. 39 BayEUG — Berufsschulpflicht: 3 Jahre, spätestens bis Schuljahresende mit Vollendung 21. Lj.
+
+*[Art. 35 BayEUG]: BayEUG Art. 35 — Beginn der Schulpflicht: Vollendung 6. Lebensjahr; Stichtag 30.09. Dauer 12 Jahre.
+*[Art. 41 BayEUG]: BayEUG Art. 41 — Schulpflicht bei sonderpäd. Förderbedarf; Eltern entscheiden Lernort.
+*[Art. 44 BayEUG]: BayEUG Art. 44 — Elternwahlrecht Schulart/Ausbildungs-/Fachrichtung; gebunden an Eignung + Leistung.
+*[Art. 56 BayEUG]: BayEUG Art. 56 — Rechte und Pflichten der Schüler:innen.
+*[Art. 76 BayEUG]: BayEUG Art. 76 — Pflichten der Erziehungsberechtigten: gewissenhafte Erfüllung schulischer Pflichten + Erziehungsarbeit der Schule unterstützen.
+*[Art. 78 BayEUG]: BayEUG Art. 78 — Beratungspflicht Schule + LK in Schullaufbahn-Fragen.
+*[Art. 84 BayEUG]: BayEUG Art. 84 — Politische Werbung + parteipol. Tätigkeit in Schule verboten.
+*[Art. 86 BayEUG]: BayEUG Art. 86 — Erziehungs- und Ordnungsmaßnahmen (gestaffelt); Verhältnismäßigkeit zwingend.
+*[Art. 118 BayEUG]: BayEUG Art. 118 — Schulzwang (Antrag SL bei Kreisverwaltungsbehörde).

@@ -41,9 +41,9 @@ flowchart TB
     - 🃏 [**Anki-Lerndeck** (39 Karten · 12 Falle · 10 Hochprior)](https://weitergehts.online/lerndecks/schulrecht-mp03-bildungssystem/)
     - 📑 [**Themen-Übersichtsseite**](https://weitergehts.online/staatsexamen/schulrecht/2-gliederung-bildungssystem/)
 
-# Teil A — Stoff
+## Teil A — Stoff
 
-## A.1 Schulwesen / Schularten (Art. 6 BayEUG · BV Art. 132)
+### A.1 Schulwesen / Schularten (Art. 6 BayEUG · BV Art. 132)
 
 **Verfassungsrahmen** (BV Art. 128/132/133/134):
 
@@ -82,7 +82,7 @@ flowchart TB
     - **Genehmigte ≠ anerkannte Ersatzschule** — nur die anerkannte vergibt selbständig öff.-anerkannte Zeugnisse.
     - **Elternwahlrecht ist nicht absolut** — Vorbehalt Eignung/Leistung (Art. 44 BayEUG).
 
-## A.2 Kindergarten → Grundschule
+### A.2 Kindergarten → Grundschule
 
 **Rechtsrahmen**: Art. 7 BayEUG, BayKiBiG, Lehrplan PLUS.
 
@@ -95,7 +95,7 @@ flowchart TB
 !!! warning "⚠ Falle Vorkurs"
     Vorkurs Deutsch 240 = **240 h über 1,5 Schuljahre** — NICHT 1 Jahr, NICHT 2 Jahre. „Lieblings-Falle" der Schulräte.
 
-## A.3 Einschulung & Schulpflicht (Art. 35–39 BayEUG · BV Art. 129)
+### A.3 Einschulung & Schulpflicht (Art. 35–39 BayEUG · BV Art. 129)
 
 **Schulpflicht-Norm-Kette**:
 
@@ -151,7 +151,7 @@ flowchart TB
     - **Distanzunterricht**: aktive Teilnahmepflicht, mündliche LNW grundsätzlich möglich.
     - **JuSchG § 1**: „Lieblingsbegriff Schulräte" — Definitionen Kind (0–13) / Jugendlicher (14–17) / sittliche Reife — oft übersehen.
 
-## A.4 Übertritt (Art. 43/44 BayEUG · GrSO § 6/§ 10 · MSO § 6/7/8)
+### A.4 Übertritt (Art. 43/44 BayEUG · GrSO § 6/§ 10 · MSO § 6/7/8)
 
 **Rechtsgrundlage**: Art. 43 BayEUG (Schulartwechsel) · Art. 44 (Elternwahlrecht) · GrSO/MSO/RSO/GSO/WSO Schulart-spezifisch.
 
@@ -212,7 +212,7 @@ flowchart TB
     - **Übertritt-Dokument**: nicht nur Jgst. 4 ÜZ — **Gelenkklasse Jgst. 5 MS** (Jahreszeugnis) ebenfalls.
     - **Probearbeiten-Verteilung**: durch **LK-Konferenz** (nicht einzelne LK).
 
-## A.5 Vorrücken / Wiederholen / Überspringen
+### A.5 Vorrücken / Wiederholen / Überspringen
 
 **Vorrückungsfächer (MS)**: Kernfächer D/M/E + Pflichtfach nach Jgst.
 
@@ -224,7 +224,7 @@ flowchart TB
 
 Verkürzung Vollzeitschulpflicht durch Überspringen möglich; **keine Verlängerung** durch Streckung.
 
-## A.6 Mittelschul-Abschlüsse (MSO §§ 19–34)
+### A.6 Mittelschul-Abschlüsse (MSO §§ 19–34)
 
 **Vier Abschlüsse**:
 
@@ -281,7 +281,7 @@ flowchart LR
 
 ---
 
-# Teil B — Top-10-Pflichtwissen
+## Teil B — Top-10-Pflichtwissen
 
 7-Tage-Endspurt-Cheat-Sheet · Karten-IDs verlinken auf das Anki-Lerndeck.
 
@@ -340,7 +340,7 @@ flowchart LR
 
 ---
 
-# Teil C — Falle-Atlas
+## Teil C — Falle-Atlas
 
 | ID | Falle | Korrekte Auflösung |
 |---|---|---|
@@ -359,7 +359,7 @@ flowchart LR
 
 ---
 
-# Teil D — Fallbeispiele (Anwendung)
+## Teil D — Fallbeispiele (Anwendung)
 
 ??? example "Fall **Lara** — Schnitt 2,67 Mutter fordert Nachbenotung (Hauptfall)"
     **Sachverhalt**: 4. Klasse GS. Lara hat im Übertrittszeugnis einen Schnitt von **2,67 in D/M/HSU**. Die Mutter fordert **Nachbenotung** der letzten Probearbeiten (damit der Schnitt auf 2,66 fällt) und besteht zusätzlich darauf, dass Lara den **Probeunterricht am Gymnasium** antreten darf.
@@ -479,7 +479,7 @@ flowchart LR
 
 ---
 
-# Querverweise
+## Querverweise
 
 - **Lara/Yusuf-PU ↔ Block 4** — LNW-Bewertung; pädagogischer Beurteilungsspielraum (Art. 52 BayEUG).
 - **Sildi-FA01 ↔ Block 8** — FöS-Lernort-Entscheidung Art. 41 BayEUG.
@@ -490,7 +490,7 @@ flowchart LR
 
 ---
 
-# Quellen
+## Quellen
 
 - **BV**: Art. 128 (Bildungsanspruch) · 129 (Schulpflicht/Unentgeltlichkeit) · 132 (Anlagen-/Leistungs-Prinzip) · 133 (Bildungsträger) · 134 (Privatschulen).
 - **BayEUG**: Art. 3, 6, 7, 7a, 8, 9, 11–18, 19–24, 35, 37, 39, 41, 43, 44, 52, 56/4, 76, 78, 90–105, 118, 119, 120.
@@ -498,42 +498,5 @@ flowchart LR
 - **KMBek**: Vorkurs Deutsch 240.
 - **Bundesrecht**: JuSchG § 1 (Kind/Jugendliche/sittliche Reife).
 
-*[BV]: Bayerische Verfassung
-*[BayEUG]: Bayerisches Gesetz über das Erziehungs- und Unterrichtswesen
-*[GrSO]: Schulordnung für die Grundschulen
-*[MSO]: Schulordnung für die Mittelschulen
-*[BaySchO]: Bayerische Schulordnung
-*[ÜZ]: Übertrittszeugnis (Mai, Jgst. 4)
-*[ESA]: Erfolgreicher Mittelschulabschluss
-*[MSA]: Mittlerer Schulabschluss
-*[Quali]: Qualifizierender Mittelschulabschluss
-*[Quabi]: Qualifizierter beruflicher Bildungsabschluss
-*[FOS]: Fachoberschule
-*[BOS]: Berufsoberschule
-*[BS]: Berufsschule
-*[BFS]: Berufsfachschule
-*[WS]: Wirtschaftsschule
-*[FöS]: Förderschule
-*[SVE]: Schulvorbereitende Einrichtung
-*[KMBek]: Kultusministerielle Bekanntmachung
-*[D/M/HSU]: Deutsch / Mathematik / Heimat- und Sachunterricht
-*[Art. 35]: BayEUG Art. 35 — Beginn der Schulpflicht
-*[Art. 37]: BayEUG Art. 37 — Stichtag und Einschulungskorridor
-*[Art. 41]: BayEUG Art. 41 — Schulpflicht bei sonderpäd. Förderbedarf
-*[Art. 43]: BayEUG Art. 43 — Wechsel der Schulart
-*[Art. 44]: BayEUG Art. 44 — Elternwahlrecht
-*[Art. 76]: BayEUG Art. 76 — Pflichten der Erziehungsberechtigten
-*[Art. 78]: BayEUG Art. 78 — Schulberatung
-*[Art. 118]: BayEUG Art. 118 — Schulzwang
-*[Art. 119]: BayEUG Art. 119 — Ordnungswidrigkeit Schulpflicht
-*[Art. 120]: BayEUG Art. 120 — Grundrechtseinschränkung zugunsten Schulpflicht
-*[BVerwG]: Bundesverwaltungsgericht
-*[KL]: Klassenleitung
-*[SL]: Schulleitung
-*[LK]: Lehrkraft
-*[SuS]: Schülerinnen und Schüler
-*[ÜZ]: Übertrittszeugnis
-*[PU]: Probeunterricht
-*[LNW]: Leistungsnachweis
 
 --8<-- "includes/normen-glossar.md"

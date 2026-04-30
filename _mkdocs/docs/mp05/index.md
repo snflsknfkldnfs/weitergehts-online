@@ -41,9 +41,9 @@ flowchart TB
     - 🃏 [**Anki-Lerndeck** (36 Karten · 10 Falle · 8 Hochprior)](https://weitergehts.online/lerndecks/schulrecht-mp05-rechte-pflichten/)
     - 📑 [**Themen-Übersichtsseite**](https://weitergehts.online/staatsexamen/schulrecht/5-rechte-pflichten-schueler/)
 
-# Teil A — Stoff
+## Teil A — Stoff
 
-## A.1 Rechte der SuS (Art. 56 BayEUG)
+### A.1 Rechte der SuS (Art. 56 BayEUG)
 
 **Rechts-Trias (Art. 56/2 BayEUG)**:
 
@@ -87,7 +87,7 @@ flowchart LR
 !!! warning "⚠ Falle Beschwerderecht"
     Es gibt **KEINE Zwangsstufenfolge**. SuS können je nach Sachverhalt direkt zu SL oder Schulforum — die LK darf nicht „erst zu mir, dann SL" verlangen.
 
-## A.2 Pflichten der SuS (Art. 56/4 BayEUG)
+### A.2 Pflichten der SuS (Art. 56/4 BayEUG)
 
 **Verhaltensgrundnorm**: SuS müssen sich so verhalten, dass „die Aufgabe der Schule erfüllt und das Bildungsziel erreicht werden kann" (Art. 56/4 S. 1).
 
@@ -127,7 +127,7 @@ flowchart LR
     - **Rückgabe gefährlicher Gegenstände** bei Minderjährigen NUR an Eltern.
     - **Mitarbeitsnote als Verhaltens-Strafe = Fachfehler.**
 
-## A.3 SuS mit nichtdeutscher Muttersprache (ndM)
+### A.3 SuS mit nichtdeutscher Muttersprache (ndM)
 
 **Schulpflicht-Universalität** (Art. 35 BayEUG): alle K/J mit Wohnsitz/gewöhnl. Aufenthalt Bayern — **ohne Rücksicht auf Staatsangehörigkeit** — auch wenn nach Heimatrecht nicht schulpflichtig.
 
@@ -159,7 +159,7 @@ flowchart LR
 !!! warning "⚠ Falle ndM"
     Tiefere Jgst.-Einstufung (bis 2 Jgst.) NUR bei mangelndem **Bildungsstand**, NICHT bei sprachlichen Defiziten allein. Wer „kein Deutsch" als Begründung für Tiefer-Einweisung nennt, verstößt gegen Art. 36/3 S. 4 BayEUG.
 
-## A.4 SMV — Schülermitverantwortung (Art. 62–63 BayEUG)
+### A.4 SMV — Schülermitverantwortung (Art. 62–63 BayEUG)
 
 **Rechtsgrundlage**: Art. 62/62a/63/73 BayEUG + Art. 8/9/10/11 BaySchO.
 **Legitimation**: SMV = Instrument der Demokratie-Einübung, gestützt auf **BV Art. 131 + Art. 2 BayEUG**.
@@ -239,7 +239,7 @@ SL erhält rechtzeitig vor Drucklegung Exemplar; bei Einwänden Schulforum → g
 
 ---
 
-# Teil B — Top-8-Pflichtwissen
+## Teil B — Top-8-Pflichtwissen
 
 7-Tage-Endspurt-Cheat-Sheet · Karten-IDs verlinken auf das Anki-Lerndeck.
 
@@ -297,7 +297,7 @@ SL erhält rechtzeitig vor Drucklegung Exemplar; bei Einwänden Schulforum → g
 
 ---
 
-# Teil C — Falle-Atlas
+## Teil C — Falle-Atlas
 
 | ID | Falle | Korrekte Auflösung |
 |---|---|---|
@@ -344,7 +344,7 @@ NEIN. **Art. 62/7 BayEUG**: wählbar nur LK + FL, mind. ½ Regelstundenmaß **+ 
 
 ---
 
-# Teil D — Fallbeispiele (Anwendung)
+## Teil D — Fallbeispiele (Anwendung)
 
 ??? example "Fall **Hannah** — Notenauskunft + Vergleichsverbot (Hauptfall)"
     **Sachverhalt**: Hannah (13, 7. Kl. MS) verlangt im Sprechstundengespräch Auskunft über **alle** Noten in Mathematik (schriftlich, mündlich, praktisch). Die Mathe-LK lehnt ab: „Das ist meine pädagogische Beurteilungsautonomie." Hannah fragt zusätzlich, was Lara aus der Parallelklasse für die letzte Probe hatte.
@@ -465,7 +465,7 @@ NEIN. **Art. 62/7 BayEUG**: wählbar nur LK + FL, mind. ½ Regelstundenmaß **+ 
 
 ---
 
-# Querverweise
+## Querverweise
 
 - **Mitarbeitsnote ↔ EOM ↔ MP_06** (Block 5.3) — Trennung Art. 52/3 ↔ Art. 86 ist Schnittstelle.
 - **§ 23 BaySchO Wegnahme ↔ MP_06** — Sicherstellung getrennt von Art. 86/87.
@@ -476,7 +476,7 @@ NEIN. **Art. 62/7 BayEUG**: wählbar nur LK + FL, mind. ½ Regelstundenmaß **+ 
 
 ---
 
-# Quellen
+## Quellen
 
 - **BV**: Art. 128 (Bildungsanspruch) · 131 (Demokratie + Völkerverständigung).
 - **BayEUG**: Art. 35 (Schulpflicht) · 36/3 (Jgst.-Einweisung ndM) · 41 (Mitwirkungspflicht Gutachten) · 52 (Leistungsbewertung) · 56 (R/P SuS, Abs. 2/3/4/5) · 62/62a/63/73 (SMV) · 78 (Beratung) · 80 · 84 (Politik-Verbot) · 86 (EOM) · 118 (Schulzwang).
@@ -484,44 +484,5 @@ NEIN. **Art. 62/7 BayEUG**: wählbar nur LK + FL, mind. ½ Regelstundenmaß **+ 
 - **KMBek**: Vorkurs Deutsch 240 · DeutschPLUS-Differenzierung/-Kurse · LehrplanPLUS DaZ.
 - **Bundesrecht**: GG Art. 103/3 (ne bis in idem analog) · DSGVO Art. 15 (Auskunftsrecht) · KUG (Bild-Persönlichkeitsrecht) · BayPrG (Schülerzeitung als Druckwerk) · Art. 3 GSG (Rauchverbot).
 
-*[BV]: Bayerische Verfassung
-*[BayEUG]: Bayerisches Gesetz über das Erziehungs- und Unterrichtswesen
-*[BaySchO]: Bayerische Schulordnung
-*[GrSO]: Schulordnung für die Grundschulen
-*[MSO]: Mittelschulordnung
-*[LDO]: Lehrerdienstordnung
-*[GSG]: Gesundheitsschutzgesetz Bayern
-*[KMBek]: Kultusministerielle Bekanntmachung
-*[DSGVO]: Datenschutzgrundverordnung
-*[KUG]: Kunsturhebergesetz
-*[BayPrG]: Bayerisches Pressegesetz
-*[ndM]: nichtdeutsche Muttersprache
-*[DaZ]: Deutsch als Zweitsprache
-*[SMV]: Schülermitverantwortung
-*[LAA]: Lehramtsanwärter:in
-*[LK]: Lehrkraft
-*[FL]: Förderlehrkraft
-*[KL]: Klassenleitung
-*[SL]: Schulleitung
-*[SuS]: Schülerinnen und Schüler
-*[EB]: Elternbeirat
-*[EOM]: Erziehungs- und Ordnungsmaßnahmen
-*[LNW]: Leistungsnachweis
-*[Reg.bez.]: Regierungsbezirk
-*[StMUK]: Staatsministerium für Unterricht und Kultus
-*[GG]: Grundgesetz
-*[Art. 56/2]: BayEUG Art. 56 Abs. 2 — Rechte SuS (Trias)
-*[Art. 56/4]: BayEUG Art. 56 Abs. 4 — Pflichten SuS
-*[Art. 52/3]: BayEUG Art. 52 Abs. 3 — Mitarbeitsnote
-*[Art. 36/3]: BayEUG Art. 36 Abs. 3 — Jgst.-Einweisung
-*[Art. 62/7]: BayEUG Art. 62 Abs. 7 — Verbindungslehrkraft
-*[Art. 84]: BayEUG Art. 84 — politische Werbung verboten
-*[Art. 86]: BayEUG Art. 86 — Erziehungs-/Ordnungsmaßnahmen
-*[§ 14/4 LDO]: Lehrerdienstordnung § 14 Abs. 4 — Notengeheimnis
-*[§ 23/2 BaySchO]: BaySchO § 23 Abs. 2 — Wegnahme/Sicherstellung
-*[§ 8 GrSO]: GrSO § 8 — Deutschklasse Grundschule
-*[§ 10 MSO]: MSO § 10 — Deutschklasse Mittelschule
-*[§ 41/1 BaySchO]: BaySchO § 41 Abs. 1 — Schülerakte ab 14. Lj.
-*[Vorkurs Deutsch 240]: 1,5 Schuljahre, 240 WStd, KiGa+GS gemeinsam
 
 --8<-- "includes/normen-glossar.md"

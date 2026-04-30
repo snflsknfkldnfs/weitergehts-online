@@ -38,9 +38,9 @@ flowchart TB
     - 🃏 [**Anki-Lerndeck** (45 Karten · 11 Falle · 9 Hochprior)](https://weitergehts.online/lerndecks/schulrecht-mp08-kooperation/)
     - 📑 [**Themen-Übersichtsseite**](https://weitergehts.online/staatsexamen/schulrecht/8-kooperation/)
 
-# Teil A — Stoff
+## Teil A — Stoff
 
-## A.1 MSD — Mobile Sonderpädagogische Dienste
+### A.1 MSD — Mobile Sonderpädagogische Dienste
 
 **Norm**: Art. 21/1 BayEUG · KMBek MSD.
 **Wesen**: präventiv-integrativer **Dienst an der allgemeinen Schule** (≠ Schulart!). Ziel: negative Entwicklung aufhalten, Verbleib an allgem. Schule, FöS-Überweisung **vermeiden**.
@@ -62,7 +62,7 @@ flowchart TB
     - **MSD ≠ MSH** — schulisch (Art. 21) vs. **vorschulisch** (Art. 19/2).
     - **Eltern-Info-Pflicht** vor standardisierten Tests.
 
-## A.2 Förderzentrum (FöS)
+### A.2 Förderzentrum (FöS)
 
 **Norm**: Art. 19 (Aufgaben) · Art. 20 (Schwerpunkte/Aufbau) · Art. 41 (Lernort) · Art. 30a (Inklusion) · § 5 GrSO (Überweisung) · MSO § 14 (Förderplan).
 
@@ -94,7 +94,7 @@ flowchart TB
 !!! warning "⚠ Falle FöS"
     **Hertha-Konfiguration** (FS gE → Regelschule): rechtlich möglich (Art. 41/1 + Art. 30a/3). **ABER**: Sachaufwandsträger-Zustimmung NUR bei Sehen/Hören/k.-m. — bei FS gE NICHT erforderlich.
 
-## A.3 Schulberatung
+### A.3 Schulberatung
 
 **Norm**: Art. 78/1 BayEUG · KMBek 29.10.2001 (geänd. 24.06.2011). **Freiwilligkeitsgrundsatz**.
 
@@ -139,7 +139,7 @@ flowchart LR
     - **BL ≠ SPych** — Lehrkraft mit Zusatzqual. vs. Psychologe.
     - LK darf **nicht selbst therapieren** — Pflicht zur Weiterleitung.
 
-## A.4 Betreuung (4 Säulen)
+### A.4 Betreuung (4 Säulen)
 
 **Übersicht** — vier Säulen, drei Rechtsregime:
 
@@ -201,7 +201,7 @@ flowchart LR
     - **Aufsichtspflicht Mittagspause Halbtags-GS** = Schulverband/Gemeinde, NICHT Schule (↔ Block 6.2).
     - **Kein Rechtsanspruch** auf GTS-Platz — Wahlfreiheit, Schulaufwandsträger entscheidet Ausbau.
 
-## A.5 Detail-Zusätze (GTS-Antragsprinzip · Förderlehrkraft)
+### A.5 Detail-Zusätze (GTS-Antragsprinzip · Förderlehrkraft)
 
 **Ganztagsschule – Antragsprinzip**: **Schulaufwandsträger** beantragt GTS-Einrichtung an GS/MS/RS/WS/Gym + entspr. FöS, im Benehmen mit Trägern öff. Jugendhilfe. Wahlfreiheit Halbtag↔Ganztag, **kein Rechtsanspruch**, Teilnahmepflicht ab Anmeldung.
 
@@ -212,7 +212,7 @@ flowchart LR
 
 ---
 
-# Teil B — Top-9-Pflichtwissen
+## Teil B — Top-9-Pflichtwissen
 
 7-Tage-Endspurt-Cheat-Sheet · Karten-IDs verlinken auf das Anki-Lerndeck.
 
@@ -271,7 +271,7 @@ flowchart LR
 
 ---
 
-# Teil C — Falle-Atlas
+## Teil C — Falle-Atlas
 
 | ID | Falle | Korrekte Auflösung |
 |---|---|---|
@@ -319,7 +319,7 @@ NEIN — drei verschiedene Rechtsträger: Gemeinde (Mittagsbetreuung, Art. 31/3)
 
 ---
 
-# Teil D — Fallbeispiele (Anwendung)
+## Teil D — Fallbeispiele (Anwendung)
 
 ??? example "Fall **Tom** — em./soz. + Eltern-Veto + Hort-Frage (Hauptfall)"
     **Sachverhalt**: 7. Kl. MS. Aggressives Verhalten, Schulverweigerung, Konzentrationsprobleme. Sie vermuten Förderbedarf em./soz. Eltern lehnen MSD-Diagnostik ab, fordern SPych-Termin und fragen nach Hortwechsel.
@@ -421,7 +421,7 @@ NEIN — drei verschiedene Rechtsträger: Gemeinde (Mittagsbetreuung, Art. 31/3)
 
 ---
 
-# Querverweise
+## Querverweise
 
 - **K16 Förderplan ↔ Block 5.5** — Notenschutz/Nachteilsausgleich (BVerwG 29.07.2015; BaySchO § 33 NA äußere Bedingungen vs. § 34 NS Anforderungs-/Bewertungsverzicht).
 - **K35 Aufsichtspflicht Mittagspause ↔ Block 6.2** — Träger außerhalb Schulzeit.
@@ -431,39 +431,12 @@ NEIN — drei verschiedene Rechtsträger: Gemeinde (Mittagsbetreuung, Art. 31/3)
 
 ---
 
-# Quellen
+## Quellen
 
 - **Bundesrecht**: § 22 SGB VIII (8. Buch SGB; früher KJHG).
 - **BayEUG**: Art. 6/4, 19, 20, 21, 30a, 31/3, 41, 60, 78.
 - **Schulordnungen**: MSO § 14 (Förderplan), GrSO § 5 (Überweisungsverfahren), BaySchO §§ 31/36 (FL-Arbeitszeit), VSO-F § 25, MSO §§ 9/10.
 - **KMBek**: KWMBl 2011 S. 240 (GTS-Ausbau) · 08.07.2013 (oGTS) · 10.02.2020 (gGTS) · 12.06.1991 (Hort↔Schule) · 29.10.2001 geänd. 24.06.2011 (Schulberatung).
 
-*[MSD]: Mobiler Sonderpädagogischer Dienst — Art. 21 BayEUG
-*[MSH]: Mobile Sonderpädagogische Hilfe — Art. 19/2 BayEUG (vorschulisch)
-*[FöS]: Förderzentrum / Förderschule — Art. 19–24 BayEUG
-*[BL]: Beratungslehrkraft (LK + Erweiterungsstudium ODER 2-J-Weiterbildungskurs)
-*[SPych]: Schulpsycholog:in (Psychologiestudium mit schulpsych. Schwerpunkt)
-*[FL]: Förderlehrkraft — Art. 60 BayEUG
-*[GTS]: Ganztagsschule — Art. 6/4 BayEUG
-*[oGTS]: offene Ganztagsschule — KMBek 08.07.2013
-*[gGTS]: gebundene Ganztagsschule — KMBek 10.02.2020
-*[ELECOK]: Elektronische Hilfen + Computer für Körperbehinderte
-*[KIBBS]: Kriseninterventions- und Bewältigungsteam Bayerischer Schulpsychologen
-*[SVE]: Schulvorbereitende Einrichtung
-*[BayEUG]: Bayerisches Gesetz über das Erziehungs- und Unterrichtswesen
-*[BaySchO]: Bayerische Schulordnung
-*[MSO]: Mittelschulordnung
-*[GrSO]: Schulordnung für die Grundschulen
-*[VSO-F]: Volksschulordnung für Förderschulen
-*[KMBek]: Kultusministerielle Bekanntmachung
-*[KJHG]: Kinder- und Jugendhilfegesetz (heute: SGB VIII)
-*[SGB]: Sozialgesetzbuch
-*[SL]: Schulleitung
-*[KL]: Klassenleitung
-*[LK]: Lehrkraft
-*[SuS]: Schülerinnen und Schüler
-*[em./soz.]: emotional / sozial
-*[k./m.]: körperlich / motorisch
-*[gE]: geistige Entwicklung
 
 --8<-- "includes/normen-glossar.md"
