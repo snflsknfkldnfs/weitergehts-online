@@ -96,6 +96,9 @@ plugins:
   - mermaid2:
       version: 10.9.1
 
+hooks:
+  - hooks.py
+
 nav:
   - Übersicht: index.md
   - "MP_03 Gliederung Bildungssystem": mp03/index.md
