@@ -147,18 +147,17 @@
   background: #ffffff;
 }
 
-/* Lese-Container max-width */
+/* Lese-Container — Material-Default 61rem ist auf großen Bildschirmen zu schmal.
+   Erweitern auf 88rem; .md-content nicht zusätzlich begrenzen (Material handhabt das selbst). */
 .md-grid {
-  max-width: 70rem;
+  max-width: 88rem;
 }
 
-.md-content {
-  max-width: 65ch;
-}
-
-@media screen and (min-width: 76.25em) {
-  .md-content {
-    max-width: 70ch;
+/* Optional: Inhaltsspalte für sehr breite Bildschirme leicht zurücknehmen
+   damit Lesefluss nicht überspannt — aber deutlich breiter als alter 70ch-Wert */
+@media screen and (min-width: 100em) {
+  .md-content__inner {
+    max-width: 60rem;
   }
 }
 
