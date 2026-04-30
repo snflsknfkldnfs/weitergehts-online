@@ -41,6 +41,7 @@ flowchart TB
     - 🃏 [**Anki-Lerndeck** (36 Karten · 10 Falle · 8 Hochprior)](https://weitergehts.online/lerndecks/schulrecht-mp05-rechte-pflichten/)
     - 📑 [**Themen-Übersichtsseite**](https://weitergehts.online/staatsexamen/schulrecht/5-rechte-pflichten-schueler/)
 
+
 ## Teil A — Stoff
 
 ### A.1 Rechte der SuS (Art. 56 BayEUG)
@@ -74,8 +75,8 @@ flowchart LR
 
 | Recht | Norm | Detail |
 |---|---|---|
-| **Schülerakte einsehen** | § 41/1 BaySchO | ab **14. Lj.** |
-| **LNW-Rückgabe** | MSO § 12/3 | „angemessene Frist" — i.d.R. **innerhalb 2 Wochen**; Benotung + Besprechung + Herausgabe zur Eltern-Kenntnisnahme |
+| **Schülerakte einsehen** | § 41/1 BaySchO | **ab Vollendung des 14. Lebensjahres** (Wortlaut) |
+| **LNW-Rückgabe** | MSO § 12/3 | **LK→SuS**: „angemessene Frist" (KEIN konkreter Wert!); **SuS→Schule**: „innerhalb einer Woche unverändert" zurück; Benotung + Besprechung + Herausgabe zur Eltern-Kenntnisnahme |
 
 **Notenauskunft** (Reviewer-D-Pflichtfrage F5 / Master-Fehlerliste K13):
 
@@ -433,7 +434,7 @@ NEIN. **Art. 62/7 BayEUG**: wählbar nur LK + FL, mind. ½ Regelstundenmaß **+ 
 
     **Knackpunkte**:
 
-    1. **§ 41/1 BaySchO**: Einsicht ab **14. Lj.**.
+    1. **§ 41/1 BaySchO**: Einsicht **ab Vollendung des 14. Lebensjahres** (Wortlaut).
     2. Yusra ist 13 — Einsicht steht ihr noch NICHT direkt zu.
     3. **Eltern-Recht** als Vertretung Minderjähriger besteht weiterhin (Art. 76 BayEUG).
     4. Notenauskunft als getrenntes Recht (Art. 56/2): bleibt davon unberührt — Notengespräch jederzeit möglich.
@@ -445,11 +446,13 @@ NEIN. **Art. 62/7 BayEUG**: wählbar nur LK + FL, mind. ½ Regelstundenmaß **+ 
 
     **Knackpunkte**:
 
-    1. **MSO § 12/3**: LNW-Rückgabe in „angemessener Frist" — i.d.R. **innerhalb 2 Wochen**.
-    2. **4 Wochen** überschreitet die Norm-Erwartung deutlich.
+    1. **MSO § 12/3** (zwei Direktionalitäten — Wortlaut präzise!):
+       - **LK → SuS**: Rückgabe „innerhalb einer **angemessenen Frist**" (KEIN konkreter Wert im Wortlaut — Würdigung im Einzelfall).
+       - **SuS → Schule**: Rückgabe „innerhalb **einer Woche** **unverändert**" nach Eltern-Kenntnisnahme.
+    2. **4 Wochen LK-seitige Rückgabe-Verzögerung** überschreitet die „angemessene Frist" deutlich (Würdigung anhand Klausur-Aufwand, Belastung, Krankheit etc.).
     3. SL muss Mahnung an LK aussprechen → Korrektur-Pflicht ist Dienstpflicht (LDO).
 
-    **Antwortkette**: KL/SL ansprechen → LK-Gespräch (Gründe? Belastung? Krankheit?) → Termin für Rückgabe binnen 1 Woche fixieren → SL-Aufforderung in extremer Verzögerung. Eltern-Antwort: Norm transparent kommunizieren (2 Wochen Richtwert); Verzögerung muss begründet sein.
+    **Antwortkette**: KL/SL ansprechen → LK-Gespräch (Gründe? Belastung? Krankheit?) → Termin für Rückgabe binnen kurzer Frist fixieren → SL-Aufforderung in extremer Verzögerung. Eltern-Antwort: Wortlaut-Direktionalität transparent kommunizieren („angemessene Frist" für LK-Rückgabe; SuS-seitige 1-Wochen-Frist für „unverändert"-Zurückgabe); Verzögerung muss begründet sein.
 
 ??? example "Fall **Tom** — Politik-Plakat in der Schule"
     **Sachverhalt**: Tom (9. Kl. MS) hängt im Klassenzimmer ein Wahlplakat einer Partei auf, mit der Begründung „Meinungsfreiheit Art. 5 GG".

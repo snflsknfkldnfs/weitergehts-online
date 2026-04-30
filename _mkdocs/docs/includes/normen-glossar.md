@@ -7,7 +7,7 @@ Material rendert das als <abbr title="..."> mit gestrichelter Unterstreichung.
 <!-- Trivial-Abks (BV/BayEUG/BaySchO/GrSO/MSO/RSO/GSO/WSO/VSO-F/LDO/KMBek/KWMBl/GSG/BayPrG/KJHG/SGB VIII/GG/DSGVO/StMUK) BEWUSST entfernt — kein Tooltip-Wert für LAA. -->
 
 *[KUG]: Kunsturhebergesetz § 22 — Verbreitung von Bildnissen nur mit Einwilligung der abgebildeten Person.
-*[JuSchG]: Jugendschutzgesetz § 1 — Begriffsbestimmungen: Kind (unter 14) · Jugendlicher (14 bis unter 18).
+*[JuSchG]: Jugendschutzgesetz § 1 — Begriffsbestimmungen: Kind (noch nicht 14 Jahre alt) · Jugendlicher (14, aber noch nicht 18 Jahre alt).
 
 *[BV Art. 128]: BV Art. 128 — „Jeder Bewohner Bayerns hat Anspruch darauf, eine seinen erkennbaren Fähigkeiten und seiner inneren Berufung entsprechende Ausbildung zu erhalten."
 *[BV Art. 129]: BV Art. 129 — Schulpflicht Volks-/Berufsschule + Unentgeltlichkeit des Unterrichts.
@@ -56,8 +56,8 @@ Material rendert das als <abbr title="..."> mit gestrichelter Unterstreichung.
 *[§ 23 BaySchO]: BaySchO § 23 — Verbote (Alkohol, Rauschmittel) + Wegnahme/Sicherstellung gefährlicher Gegenstände; Rückgabe bei Minderjährigen NUR an Eltern.
 *[§ 23/1 BaySchO]: BaySchO § 23 Abs. 1 — Konsum Alkohol/Rauschmittel auf Schulanlage + bei schul. Veranstaltungen untersagt.
 *[§ 23/2 BaySchO]: BaySchO § 23 Abs. 2 — Wegnahme + Sicherstellung gefährlicher/störender Gegenstände; Rückgabe bei Minderjährigen NUR an Erziehungsberechtigte.
-*[§ 41 BaySchO]: BaySchO § 41 — Schülerunterlagen + Schülerakten-Einsichtsrecht ab 14. Lebensjahr.
-*[§ 41/1 BaySchO]: BaySchO § 41 Abs. 1 — Einsichtsrecht eigene Schülerakte ab Vollendung 14. Lebensjahr.
+*[§ 41 BaySchO]: BaySchO § 41 — Schülerunterlagen + Schülerakten-Einsichtsrecht ab Vollendung des 14. Lebensjahres (Wortlaut).
+*[§ 41/1 BaySchO]: BaySchO § 41 Abs. 1 — Einsichtsrecht eigene Schülerakte „ab Vollendung des 14. Lebensjahres" (Wortlaut, exakt).
 *[§ 19/4 BaySchO]: BaySchO § 19 Abs. 4 — Distanzunterricht (verpflichtender Charakter seit SJ 2020/21).
 *[§ 20 BaySchO]: BaySchO § 20 — Eltern-Meldepflicht bei Verhinderung.
 *[§ 8 BaySchO]: BaySchO § 8 — Klassensprecher: Wahl 4 Wochen nach U.-Beginn; ab Jgst. 5.
@@ -73,7 +73,7 @@ Material rendert das als <abbr title="..."> mit gestrichelter Unterstreichung.
 *[§ 7 MSO]: MSO § 7 — M-Zug-Aufnahme (M7 ≤ 2,66; M8/M9/M10 ≤ 2,33).
 *[§ 8 MSO]: MSO § 8 — Durchlässigkeit MS↔M-Zug; Rückkehr jederzeit (Abs. 3).
 *[§ 10 MSO]: MSO § 10 — Deutschklasse Mittelschule.
-*[§ 12/3 MSO]: MSO § 12 Abs. 3 — LNW-Rückgabe in „angemessener Frist" (i.d.R. 2 Wochen).
+*[§ 12/3 MSO]: MSO § 12 Abs. 3 — LNW-Rückgabe direktional: LK→SuS in „angemessener Frist" (KEIN konkreter Wert!) · SuS→Schule „innerhalb einer Woche unverändert".
 *[§ 14 MSO]: MSO § 14 — Individueller Förderplan (B9.1.6); Pflicht bei nicht erreichten Lernzielen; jährliche Fortschreibung; MSD-Einbeziehung Pflicht.
 *[§ 22 MSO]: MSO § 22 — Praxisklasse-Abschluss.
 *[§ 34 MSO]: MSO § 34 — Quabi (Quali + Berufsausbildungsabschluss).
@@ -85,7 +85,7 @@ Material rendert das als <abbr title="..."> mit gestrichelter Unterstreichung.
 *[DSGVO Art. 15]: DSGVO Art. 15 — Auskunftsrecht der betroffenen Person über verarbeitete personenbezogene Daten.
 *[KUG § 22]: KUG § 22 — Recht am eigenen Bild: Verbreitung von Bildnissen nur mit Einwilligung der abgebildeten Person.
 *[Art. 3 GSG]: GSG Art. 3 — Rauchverbot in Schulen + auf Schulgelände.
-*[JuSchG § 1]: JuSchG § 1 — Begriffsbestimmungen: Kind (unter 14) · Jugendlicher (14 bis unter 18) · Personensorgeberechtigte · Erziehungsbeauftragte.
+*[JuSchG § 1]: JuSchG § 1 — Begriffsbestimmungen: Kind (noch nicht 14 Jahre alt) · Jugendlicher (14, aber noch nicht 18 Jahre alt) · Personensorgeberechtigte · Erziehungsbeauftragte.
 
 *[ÜZ]: Übertrittszeugnis (Mai, Jgst. 4, Fächer D/M/HSU)
 *[PU]: Probeunterricht (3 Tage schriftl. + mdl., Bestanden = mind. 1×3 + 1×4 in D/M)
@@ -161,7 +161,7 @@ Material rendert das als <abbr title="..."> mit gestrichelter Unterstreichung.
 *[Art. 119]: BayEUG Art. 119 — Ordnungswidrigkeit bei Unterlassung Anmeldung (Geldbuße).
 *[Art. 120]: BayEUG Art. 120 — Grundrechtseinschränkung Freiheit/Wohnung zugunsten Schulpflicht.
 
-*[§ 1]: JuSchG § 1 — Begriffsbestimmungen: Kind (unter 14) · Jugendlicher (14 bis unter 18) · Personensorgeberechtigte · Erziehungsbeauftragte.
+*[§ 1]: JuSchG § 1 — Begriffsbestimmungen: Kind (noch nicht 14 Jahre alt) · Jugendlicher (14, aber noch nicht 18 Jahre alt) · Personensorgeberechtigte · Erziehungsbeauftragte.
 *[§ 5]: GrSO § 5 — Überweisungsverfahren Förderzentrum (6 Schritte).
 *[§ 6]: GrSO § 6 — Übertrittszeugnis (Mai, Jgst. 4, Fächer D/M/HSU).
 *[§ 7]: MSO § 7 — M-Zug-Aufnahme: M7 ≤ 2,66 (D+M+E); M8/M9/M10 ≤ 2,33.
@@ -238,9 +238,9 @@ Material rendert das als <abbr title="..."> mit gestrichelter Unterstreichung.
 
 <!-- MSO § 12-Untergliederung Standalone + Suffix -->
 *[§ 12]: MSO § 12 — Leistungsnachweise: Probearbeiten · Stegreifaufgaben · mündl./prakt. LNW.
-*[§ 12/3]: MSO § 12 Abs. 3 — LNW-Rückgabe in „angemessener Frist" (i.d.R. 2 Wochen).
+*[§ 12/3]: MSO § 12 Abs. 3 — LNW-Rückgabe direktional: LK→SuS in „angemessener Frist" (KEIN konkreter Wert!) · SuS→Schule „innerhalb einer Woche unverändert".
 *[MSO § 12]: MSO § 12 — Leistungsnachweise: Probearbeiten · Stegreifaufgaben · mündl./prakt. LNW.
-*[MSO § 12/3]: MSO § 12 Abs. 3 — LNW-Rückgabe in „angemessener Frist" (i.d.R. 2 Wochen).
+*[MSO § 12/3]: MSO § 12 Abs. 3 — LNW-Rückgabe direktional: LK→SuS in „angemessener Frist" (KEIN konkreter Wert!) · SuS→Schule „innerhalb einer Woche unverändert".
 
 <!-- LDO § 14-Untergliederung Standalone -->
 *[§ 14/4]: LDO § 14 Abs. 4 — Notengeheimnis: Vergleich mit Noten anderer SuS verboten.
