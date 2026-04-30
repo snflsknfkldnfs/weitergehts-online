@@ -18,6 +18,16 @@ Strukturierte Lernscripts pro ZALGM-Themenfeld mit Kernnormen, Choreographie, Fa
 
     [→ Zum Skript](mp03/index.md)
 
+-   :material-scale-balance: __MP_05 Rechte und Pflichten Schüler:innen__
+
+    ---
+
+    Rechts-Trias Art. 56 · ndM/Deutschklasse · SMV · Notenauskunft · Mitarbeitsnote
+
+    **36 Karten** · **10 Falle** · **8 Hochprior** · 5-stufige Norm-Hierarchie
+
+    [→ Zum Skript](mp05/index.md)
+
 -   :material-account-group: __MP_08 Kooperation Bildungsdienste__
 
     ---

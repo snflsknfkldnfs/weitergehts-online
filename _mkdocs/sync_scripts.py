@@ -27,6 +27,15 @@ MAPPING = {
         "falle_count": 12,
         "hochprior_count": 10,
     },
+    "MP_05_Rechte_Pflichten_Schueler.md": {
+        "slug": "mp05",
+        "title": "MP_05 — Rechte und Pflichten der Schüler:innen",
+        "anki_lerndeck": "https://weitergehts.online/lerndecks/schulrecht-mp05-rechte-pflichten/",
+        "themen_detail": "https://weitergehts.online/staatsexamen/schulrecht/5-rechte-pflichten-schueler/",
+        "card_count": 36,
+        "falle_count": 10,
+        "hochprior_count": 8,
+    },
     "MP_08_Kooperation_Bildungsdienste.md": {
         "slug": "mp08",
         "title": "MP_08 — Kooperation mit Bildungs- und Betreuungseinrichtungen",
