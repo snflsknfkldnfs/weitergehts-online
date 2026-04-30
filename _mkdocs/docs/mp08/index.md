@@ -8,6 +8,22 @@ Block 8 regelt das **Zusammenspiel zwischen Schule und externen Bildungs-/Betreu
 
 ## Norm-Kartografie (4 Ebenen)
 
+```mermaid
+flowchart TB
+    BU["**Bundesrecht** · § 22 SGB VIII<br/>Hort als außerschul. Einrichtung"]:::bu
+    BAY["**BayEUG** · Art. 6/4 · 19 · 20 · 21 · 30a · 31/3 · 41 · 60 · 78"]:::bay
+    VO["**VO** · MSO § 14 · GrSO § 5 · BaySchO §§ 31/36 · VSO-F § 25"]:::vo
+    KM["**KMBek** · GTS · Hort · Schulberatung · MSD · Inklusion"]:::km
+
+    BU -.Querverweis Hort.-> BAY
+    BAY --> VO --> KM
+
+    classDef bu fill:#eff6ff,stroke:#1e3a8a,stroke-width:2px,color:#1f2937
+    classDef bay fill:#fff7ed,stroke:#c2410c,stroke-width:2px,color:#1f2937
+    classDef vo fill:#fefce8,stroke:#ca8a04,stroke-width:2px,color:#1f2937
+    classDef km fill:#f7fee7,stroke:#65a30d,stroke-width:2px,color:#1f2937
+```
+
 | Ebene | Quellen für Block 8 |
 |---|---|
 | **Bundesrecht** | § 22 SGB VIII (Hort, früher KJHG) |
@@ -82,6 +98,25 @@ Block 8 regelt das **Zusammenspiel zwischen Schule und externen Bildungs-/Betreu
 
 **Norm**: Art. 78/1 BayEUG · KMBek 29.10.2001 (geänd. 24.06.2011). **Freiwilligkeitsgrundsatz**.
 
+**Beratungsweg** (5 Eskalationsstufen):
+
+```mermaid
+flowchart LR
+    KL["**1. Klassenleitung**<br/>wöchentl. Sprechstunde"]:::stage1
+    SCHUL["**2. Schul-intern**<br/>BL · SPych · MSD"]:::stage2
+    REKTOR["**3. Beratungsrektor:in**<br/>Staatl. SchA"]:::stage3
+    UEBER["**4. Überregionale Stelle**<br/>9 Schulberatungsstellen Bayern · KIBBS"]:::stage4
+    AUSSER["**5. Außerschulisch**<br/>Erziehungsberatung · Jugendamt · Therapie"]:::stage5
+
+    KL --> SCHUL --> REKTOR --> UEBER --> AUSSER
+
+    classDef stage1 fill:#fff7ed,stroke:#c2410c,color:#1f2937
+    classDef stage2 fill:#fefce8,stroke:#ca8a04,color:#1f2937
+    classDef stage3 fill:#f7fee7,stroke:#65a30d,color:#1f2937
+    classDef stage4 fill:#eff6ff,stroke:#1e3a8a,color:#1f2937
+    classDef stage5 fill:#fef2f2,stroke:#9f1239,color:#1f2937
+```
+
 **Beratungsebenen** (Reihenfolge):
 
 | Ebene | Wer / Qualifikation |
@@ -138,16 +173,58 @@ Block 8 regelt das **Zusammenspiel zwischen Schule und externen Bildungs-/Betreu
 
 # Teil B — Top-9-Pflichtwissen
 
-!!! tip "Cheat-Sheet · 7-Tage-Endspurt"
-    1. **K03 MSD-Ziel** — Verbleib allgem. Schule, FöS-Überweisung vermeiden (Art. 21).
-    2. **K08 MSD-Förderdiagn. Bericht** + Eltern-Info-Pflicht vor standardisierten Tests.
-    3. **K11 7 Förderschwerpunkte** (Art. 20/1).
-    4. **K13 Lernort-Entscheidung** — Eltern (Art. 41/1); FöS-Aufnahme = sonderpäd. Gutachten.
-    5. **K16 Förderplanpflicht** (MSO § 14) — jährlich fortschreiben, MSD-Einbeziehung Pflicht.
-    6. **K22 BL ≠ SPych** — Qualifikation + Aufgabenkatalog.
-    7. **K27 LK ≠ Therapie** — Weiterleitung; Verschwiegenheit + Eltern-Einverständnis.
-    8. **K31 oGTS vs. gGTS** — Anmeldung freiwillig vs. Teilnahme verpflichtend.
-    9. **K32 Kein Rechtsanspruch GTS-Platz** — Wahlfreiheit; Schulaufwandsträger.
+7-Tage-Endspurt-Cheat-Sheet · Karten-IDs verlinken auf das Anki-Lerndeck.
+
+<div class="grid cards" markdown>
+
+-   :material-numeric-1-circle: __K03 · MSD-Ziel__
+
+    Verbleib allgem. Schule.
+    FöS-Überweisung **vermeiden**.
+    *Art. 21 BayEUG*
+
+-   :material-numeric-2-circle: __K08 · Förderdiagn. Bericht__
+
+    MSD verantwortlich.
+    **Eltern-Info-Pflicht** vor standardisierten Tests.
+
+-   :material-numeric-3-circle: __K11 · 7 Förderschwerpunkte__
+
+    Sehen · Hören · k./m. · gE · Sprache · Lernen · em./soz.
+    *Art. 20/1 BayEUG*
+
+-   :material-numeric-4-circle: __K13 · Lernort-Entscheidung__
+
+    **Eltern** (Art. 41/1).
+    FöS-Aufnahme = sonderpäd. Gutachten.
+
+-   :material-numeric-5-circle: __K16 · Förderplanpflicht__
+
+    Pflicht bei nicht erreichten Lernzielen.
+    Jährlich fortschreiben.
+    MSD-Einbeziehung Pflicht.
+    *MSO § 14*
+
+-   :material-numeric-6-circle: __K22 · BL ≠ SPych__
+
+    Unterschiedl. Qualifikation + Aufgabenkatalog.
+
+-   :material-numeric-7-circle: __K27 · LK ≠ Therapie__
+
+    Weiterleitung Pflicht.
+    Verschwiegenheit + Eltern-Einverständnis.
+
+-   :material-numeric-8-circle: __K31 · oGTS vs. gGTS__
+
+    Anmeldung **freiwillig**.
+    Teilnahme **verpflichtend**.
+
+-   :material-numeric-9-circle: __K32 · Kein Anspruch GTS-Platz__
+
+    Wahlfreiheit Halbtag↔Ganztag.
+    Antrag durch Schulaufwandsträger.
+
+</div>
 
 ---
 

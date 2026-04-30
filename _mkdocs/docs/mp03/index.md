@@ -8,7 +8,25 @@ Das bayerische Schulwesen ist **gegliedert und durchlässig zugleich**: Jede Sch
 
 ## Norm-Kartografie (5 Ebenen)
 
-| Ebene | Quellen für Block 2 |
+```mermaid
+flowchart TB
+    BV["**BV** · Bayerische Verfassung<br/>Art. 128 · 129 · 132 · 133 · 134"]:::bv
+    BAY["**BayEUG** · Bay. Erziehungs- und Unterrichts-Gesetz<br/>Art. 3 · 6 · 7/7a/8/9 · 11–18 · 19–24 · 35 · 37 · 39 · 41 · 43 · 44 · 76 · 78 · 90–105 · 118–120"]:::bay
+    VO["**VO** · Schulordnungen<br/>GrSO § 6/§ 10 · MSO §§ 6/7/8/22/34 · BaySchO § 19/4 · § 20"]:::vo
+    KM["**KMBek** · Kultusministerielle Bekanntmachung<br/>Vorkurs Deutsch 240"]:::km
+    BU["**Bundesrecht** · JuSchG § 1<br/>(Kind / Jugendlicher / Sittliche Reife)"]:::bu
+
+    BV --> BAY --> VO --> KM
+    BU -.Querverweis.-> BAY
+
+    classDef bv fill:#fef2f2,stroke:#9f1239,stroke-width:2px,color:#1f2937
+    classDef bay fill:#fff7ed,stroke:#c2410c,stroke-width:2px,color:#1f2937
+    classDef vo fill:#fefce8,stroke:#ca8a04,stroke-width:2px,color:#1f2937
+    classDef km fill:#f7fee7,stroke:#65a30d,stroke-width:2px,color:#1f2937
+    classDef bu fill:#eff6ff,stroke:#1e3a8a,stroke-width:2px,color:#1f2937
+```
+
+| Ebene | Schwerpunkt-Normen |
 |---|---|
 | **BV** | Art. 128 (Bildungsanspruch) · 129 (Schulpflicht/Unentgeltlichkeit) · 132 (Anlagen-/Leistungsprinzip) · 133 (Bildungsträger) · 134 (Privatschulen) |
 | **BayEUG** | Art. 3 (öff./privat) · 6 (Schularten) · 7/7a/8/9 (GS/MS/RS/Gym) · 11–18 (berufliche) · 19–24 (FöS) · 35 (Schulpflicht) · 37 (Stichtag/Korridor) · 39 (BS-Pflicht) · 41 (FöS-Lernort) · 43 (Schulartwechsel) · 44 (Elternwahlrecht) · 76 (Eltern-Mitwirkung) · 78 (Beratung) · 90–105 (Privatschulen) · 118–120 (Schulzwang) |
@@ -211,7 +229,39 @@ Verkürzung Vollzeitschulpflicht durch Überspringen möglich; **keine Verlänge
 
 **Drei Aufstiegswege MS → Hochschulreife**:
 
-1. **Weg A — M-Zug**: MS 5 → M7 → M10 + MSA. Dann FOS 11/12 → Fachabi.
+```mermaid
+flowchart LR
+    MS["MS 5"]:::start
+    A1["M7<br/>D+M+E ≤ 2,66"]:::path-a
+    A2["M10 + MSA"]:::path-a
+    A3["FOS 11/12"]:::end-a
+    AF["Fachabi"]:::goal
+
+    B1["ESA Ende 9."]:::path-b
+    B2["Quali<br/>50/50 + Projekt"]:::path-b
+    B3["Berufsausbildung + BS"]:::path-b
+    B4["Quabi MSO § 34"]:::path-b
+    B5["FOS 11/12"]:::end-b
+
+    C1["WS 4-stufig<br/>Jgst. 7"]:::path-c
+    C2["Mittlerer Abschluss"]:::path-c
+    C3["FOS 11/12"]:::end-c
+
+    MS -->|Weg A: M-Zug| A1 --> A2 --> A3 --> AF
+    MS -->|Weg B: Quali+BS+FOS| B1 --> B2 --> B3 --> B4 --> B5 --> AF
+    MS -->|Weg C: WS| C1 --> C2 --> C3 --> AF
+
+    classDef start fill:#fff7ed,stroke:#c2410c,stroke-width:2px,color:#1f2937
+    classDef path-a fill:#fefce8,stroke:#ca8a04,color:#1f2937
+    classDef path-b fill:#f7fee7,stroke:#65a30d,color:#1f2937
+    classDef path-c fill:#eff6ff,stroke:#1e3a8a,color:#1f2937
+    classDef end-a fill:#fefce8,stroke:#ca8a04,color:#1f2937
+    classDef end-b fill:#f7fee7,stroke:#65a30d,color:#1f2937
+    classDef end-c fill:#eff6ff,stroke:#1e3a8a,color:#1f2937
+    classDef goal fill:#fef2f2,stroke:#9f1239,stroke-width:3px,color:#1f2937
+```
+
+1. **Weg A — M-Zug**: MS 5 → M7 → M10 + MSA → FOS 11/12 → Fachabi.
 2. **Weg B — Quali + BS + FOS**: ESA + Quali → Berufsausbildung + BS → Quabi (mittlerer Abschluss) → FOS 11/12 → Fachabi.
 3. **Weg C — Wirtschaftsschule**: MS 6./7. → 4-stufige WS → mittlerer Abschluss → FOS.
 
@@ -224,17 +274,60 @@ Verkürzung Vollzeitschulpflicht durch Überspringen möglich; **keine Verlänge
 
 # Teil B — Top-10-Pflichtwissen
 
-!!! tip "Cheat-Sheet · 7-Tage-Endspurt"
-    1. **Schwellen GS→Sek I** — Gym ≤ 2,33 · RS ≤ 2,66 · MS alle übrigen (D/M/HSU).
-    2. **Probeunterricht-Bestehen** — mind. 1×3 + 1×4 in D/M; Elternwillen-Regel NUR bei 2× Note 4 NACH PU.
-    3. **Schulpflicht** — Vollendung 6. Lj., Stichtag 30.09., 12 J. Gesamt (9 Vollzeit + 3 BS).
-    4. **Einschulungskorridor** — 01.07.–30.09. seit SJ 2019/2020; nach 31.12. nur mit schulpsych. Gutachten.
-    5. **Schulpflicht ≠ Schulzwang** — Pflicht (Art. 35+76) vs. Sanktion (Art. 118 → Kreisverwaltung).
-    6. **M-Zug-Aufnahme** — M7 ≤ 2,66 (D+M+E); M8/M9/M10 ≤ 2,33; Rückkehr MS↔M-Zug jederzeit (MSO § 8/3).
-    7. **Vorkurs Deutsch 240** — 240 h über **1,5 Schuljahre**.
-    8. **Migration-Schulpflicht** — 3 Monate nach Zuzug; tiefer-einweisen NUR bei allgem. Bildungsstand-Defizit.
-    9. **Drei MS-Abschlüsse** — ESA (Vorrückungsfächer ≥ 4,00) · Quali (50/50 + Projekt) · MSA (M10).
-    10. **3 Aufstiegswege MS → Hochschulreife** — M-Zug · Quali+BS+FOS · WS.
+7-Tage-Endspurt-Cheat-Sheet · Karten-IDs verlinken auf das Anki-Lerndeck.
+
+<div class="grid cards" markdown>
+
+-   :material-numeric-1-circle: __Schwellen GS→Sek I__
+
+    Gym ≤ **2,33** · RS ≤ **2,66** · MS alle übrigen.
+    Nur **D/M/HSU** zählen.
+
+-   :material-numeric-2-circle: __Probeunterricht-Bestehen__
+
+    Mind. **1×3 + 1×4** in D/M.
+    Elternwillen-Regel NUR bei **2× Note 4** NACH PU.
+
+-   :material-numeric-3-circle: __Schulpflicht__
+
+    Beginn: Vollendung **6. Lj.** · Stichtag **30.09.**
+    Dauer: **12 J.** = 9 Vollzeit + 3 BS.
+
+-   :material-numeric-4-circle: __Einschulungskorridor__
+
+    **01.07.–30.09.** seit SJ 2019/2020.
+    Nach 31.12. nur mit schulpsych. Gutachten.
+
+-   :material-numeric-5-circle: __Schulpflicht ≠ Schulzwang__
+
+    Pflicht: Art. 35 + 76 BayEUG.
+    Sanktion: Art. 118 → Kreisverwaltungsbehörde.
+
+-   :material-numeric-6-circle: __M-Zug-Aufnahme__
+
+    M7 ≤ **2,66** (D+M+E) · M8/M9/M10 ≤ **2,33**.
+    Rückkehr MS↔M-Zug jederzeit (MSO § 8/3).
+
+-   :material-numeric-7-circle: __Vorkurs Deutsch 240__
+
+    **240 h über 1,5 Schuljahre**.
+    Vorletztes + letztes KiTa-Jahr.
+
+-   :material-numeric-8-circle: __Migration-Schulpflicht__
+
+    **3 Monate** nach Zuzug.
+    Tiefer-Einweisung NUR bei allg. Bildungsstand-Defizit.
+
+-   :material-numeric-9-circle: __Drei MS-Abschlüsse__
+
+    ESA (Vorrückungsfächer ≥ 4,00) · Quali (50/50 + Projekt) · MSA (M10).
+
+-   :material-numeric-10-circle: __3 Aufstiegswege__
+
+    M-Zug · Quali+BS+FOS · WS.
+    Alle führen zu Fachabi via FOS.
+
+</div>
 
 ---
 
