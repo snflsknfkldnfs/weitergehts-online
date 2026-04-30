@@ -193,6 +193,22 @@ document.addEventListener('keydown', e => {
   else if (e.key === ' ') { e.preventDefault(); flip(); }
 });
 
+// Iter 3: URL-Parameter ?card=Kxx → Karte direkt anzeigen
+(function() {
+    const params = new URLSearchParams(window.location.search);
+    const cardId = params.get('card');
+    if (!cardId) return;
+    // Find card by header_label or first match in tags (Karten-IDs sind in front HTML embedded)
+    const idx = CARDS.findIndex(c => {
+        const haystack = (c.front + c.back).toUpperCase();
+        return haystack.includes(cardId.toUpperCase());
+    });
+    if (idx >= 0) {
+        curIdx = idx;
+        showBack = false;
+    }
+})();
+
 render();
 </script>
 <script src="../../assets/js/core.js"></script>

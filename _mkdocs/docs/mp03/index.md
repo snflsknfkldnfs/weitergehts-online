@@ -155,47 +155,56 @@ flowchart TB
 
 **Rechtsgrundlage**: Art. 43 BayEUG (Schulartwechsel) · Art. 44 (Elternwahlrecht) · GrSO/MSO/RSO/GSO/WSO Schulart-spezifisch.
 
-**GS 4 → Sek I** (Mai-ÜZ, **nur D/M/HSU** zählen):
+=== "GS 4 → Sek I"
 
-| Ziel | Schwelle | Probeunterricht (PU) |
-|---|---|---|
-| **Gymnasium** | **≤ 2,33** | ab 2,34: PU 3 Tage D/M; bestanden = mind. **1×3 + 1×4**; Elternwille bei 2× Note 4 |
-| **Realschule** | **≤ 2,66** | analog |
-| **Mittelschule** | alle übrigen | — |
+    **Mai-ÜZ, nur D/M/HSU zählen.**
 
-Eltern können **unabhängig vom Schnitt** Probeunterricht beantragen.
+    | Ziel | Schwelle | Probeunterricht |
+    |---|---|---|
+    | **Gymnasium** | ≤ **2,33** | ab 2,34: PU 3 Tage D/M; bestanden = mind. **1×3 + 1×4**; Elternwille bei 2× Note 4 |
+    | **Realschule** | ≤ **2,66** | analog |
+    | **Mittelschule** | alle übrigen | — |
 
-**Probearbeiten Jgst. 4** (GrSO § 10):
+    Eltern können **unabhängig vom Schnitt** Probeunterricht beantragen.
 
-- **18 Probearbeiten** bis ÜZ in D/M/HSU (typisch 10 D / 4 M / 4 HSU; Verteilung durch **LK-Konferenz**).
-- **4 Unterrichtswochen probearbeitenfrei** vor ÜZ pro Fach.
+    **Probearbeiten** (GrSO § 10): 18 Probearbeiten bis ÜZ in D/M/HSU (typisch 10 D / 4 M / 4 HSU; Verteilung durch **LK-Konferenz**); **4 Unterrichtswochen probearbeitenfrei** vor ÜZ pro Fach.
 
-**MS 5 → Gym/RS („Gelenkklasse")** — Jahreszeugnis:
+=== "MS 5 → Gym/RS"
 
-- **Gymnasium**: D+M **≤ 2,0** uneingeschränkt; sonst Härtefall LK-Konferenz.
-- **Realschule**: D+M **≤ 2,5** uneingeschränkt.
-- **Staatlich genehmigte Schulen**: einheitlicher Probeunterricht.
+    **„Gelenkklasse" — Jahreszeugnis.**
 
-**MS 5–9 → höhere Jgst. Gym/RS**:
+    | Ziel | Schwelle | Anmerkung |
+    |---|---|---|
+    | **Gymnasium** | D+M ≤ **2,0** | uneingeschränkt; sonst Härtefall LK-Konferenz |
+    | **Realschule** | D+M ≤ **2,5** | uneingeschränkt |
+    | **Staatl. genehmigte Schulen** | — | einheitlicher Probeunterricht |
 
-- **Aufnahmeprüfung** in letzten Tagen der Sommerferien + Probezeit.
-- **RS** alternativ: Durchschnitt D+M+E **≤ 2,0** im Jahreszeugnis.
+=== "MS 5–9 → höhere Jgst."
 
-**MS → M-Zug (MSO § 7)** — Mittlere-Reife-Klassen:
+    **Wechsel ins Gym/RS außerhalb Gelenkklasse.**
 
-| Ziel | Schwelle D+M+E | Bedingung |
-|---|---|---|
-| **M7** | ≤ 2,66 | uneingeschränkt aus 6. Klasse Jahreszeugnis |
-| **M8 / M9** | ≤ 2,33 | analog |
-| **M10** | Quali + ≤ 2,33 | + Quali-Zeugnis aus 9. Klasse |
+    - **Aufnahmeprüfung** in letzten Tagen der Sommerferien + Probezeit.
+    - **RS** alternativ: Durchschnitt D+M+E **≤ 2,0** im Jahreszeugnis.
 
-Sonst Antrag + Aufnahmeprüfung. **Rückkehr MS↔M-Zug jederzeit** (MSO § 8/3).
+=== "MS → M-Zug"
 
-**MS → 4-stufige Wirtschaftsschule** (Jgst. 7):
+    **MSO § 7 · Mittlere-Reife-Klassen.**
 
-- aus 6./7. Klasse MS: Zwischen-/Jahreszeugnis D+M+E **≤ 2,66** uneingeschränkt.
-- alternativ M-Zug-Vorrückungserlaubnis aus 7.
-- sonst **Probeunterricht** (3 Tage).
+    | Ziel | Schwelle D+M+E | Bedingung |
+    |---|---|---|
+    | **M7** | ≤ **2,66** | uneingeschränkt aus 6. Klasse Jahreszeugnis |
+    | **M8 / M9** | ≤ **2,33** | analog |
+    | **M10** | Quali + ≤ **2,33** | + Quali-Zeugnis aus 9. Klasse |
+
+    Sonst Antrag + Aufnahmeprüfung. **Rückkehr MS↔M-Zug jederzeit** (MSO § 8/3).
+
+=== "MS → Wirtschaftsschule"
+
+    **4-stufige WS, Jgst. 7.**
+
+    - Aus 6./7. Klasse MS: Zwischen-/Jahreszeugnis D+M+E **≤ 2,66** uneingeschränkt.
+    - Alternativ M-Zug-Vorrückungserlaubnis aus 7.
+    - Sonst **Probeunterricht** (3 Tage).
 
 !!! warning "⚠ Fallen Übertritt"
     - **Schwelle verwechseln**: Gym ≤ **2,33** (NICHT 2,5/3,0); RS ≤ **2,66**; nur **D/M/HSU**, nicht alle Fächer.

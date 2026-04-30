@@ -161,19 +161,116 @@
   }
 }
 
-/* Print-Stylesheet */
+/* === Iter 3: Print-Stylesheet (A4 Portrait, optimiert für Endspurt-Druck) === */
 @media print {
-  .md-header, .md-tabs, .md-sidebar, .md-footer, .md-content__button {
+  @page {
+    size: A4 portrait;
+    margin: 1.5cm 1.8cm;
+  }
+
+  /* Navigation und UI-Elemente entfernen */
+  .md-header, .md-tabs, .md-sidebar, .md-footer,
+  .md-content__button, .md-search, .md-source,
+  .md-top {
     display: none !important;
   }
-  .md-content {
+
+  /* Volle Breite für Inhalt */
+  .md-grid, .md-main__inner, .md-content, .md-content__inner {
     max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
+
+  body {
+    font-size: 10pt;
+    line-height: 1.45;
+  }
+
+  .md-typeset {
+    font-size: 10pt;
+  }
+
+  .md-typeset h1 {
+    font-size: 18pt;
+    page-break-after: avoid;
+    border-bottom: 2px solid #c2410c;
+    padding-bottom: 0.2em;
+  }
+
   .md-typeset h2 {
+    font-size: 14pt;
+    page-break-after: avoid;
+    page-break-before: auto;
+    margin-top: 1.5em;
+    border-top: 1px solid #cbd5e1;
+    padding-top: 0.4em;
+  }
+
+  .md-typeset h3 {
+    font-size: 11pt;
     page-break-after: avoid;
   }
+
   .md-typeset table {
     page-break-inside: avoid;
+    font-size: 9pt;
+  }
+
+  /* Cards-Grid: kompakter im Druck */
+  .md-typeset .grid.cards > ul {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.4em !important;
+  }
+
+  .md-typeset .grid.cards > ul > li {
+    box-shadow: none !important;
+    page-break-inside: avoid;
+    padding: 0.5em 0.7em !important;
+    font-size: 9pt;
+  }
+
+  /* Admonitions: dünn, kein Hintergrund-Vollfläche */
+  .md-typeset .admonition,
+  .md-typeset details {
+    border: 1px solid #cbd5e1;
+    page-break-inside: avoid;
+    box-shadow: none !important;
+  }
+
+  /* Mermaid: SVG bleibt sichtbar */
+  .md-typeset .mermaid {
+    page-break-inside: avoid;
+    border: 1px solid #cbd5e1;
+    background: #ffffff !important;
+  }
+
+  /* Kollabierte Details öffnen für Druck */
+  details {
+    open: true !important;
+  }
+  details summary {
+    display: block !important;
+    font-weight: 700;
+  }
+
+  /* Tabs: alle Tab-Panels sichtbar im Druck */
+  .tabbed-set > input,
+  .tabbed-set > label {
+    display: none !important;
+  }
+  .tabbed-set .tabbed-content {
+    display: block !important;
+    page-break-inside: avoid;
+    margin-bottom: 1em;
+    padding: 0.5em 0.8em;
+    border-left: 2px solid #c2410c;
+  }
+
+  /* Footnotes + Quellen kompakt */
+  .md-typeset hr {
+    border-top: 1px dashed #94a3b8;
+    margin: 1em 0;
   }
 }
 

@@ -141,6 +141,8 @@ flowchart LR
 
 ## A.4 Betreuung (4 Säulen)
 
+**Übersicht** — vier Säulen, drei Rechtsregime:
+
 | Form | Norm | Träger | Zeit |
 |---|---|---|---|
 | **Mittagsbetreuung** | Art. 31/3 BayEUG | Gemeinde / gemeinnützig | bis ~14 Uhr; verlängert bis 15:30/16:00 |
@@ -148,11 +150,50 @@ flowchart LR
 | **Ganztagsschule (oGTS/gGTS)** | Art. 6/4 BayEUG + KMBek | staatl. | mind. 4 Tage à 7 Std. |
 | **Hort** | **§ 22 SGB VIII** | freier/kirchl./kommunal. JuHi-Träger | außerschul. |
 
-**oGTS** (KMBek 08.07.2013): Vormittag Klassenverband, Nachmittag **freiwillig** (Anmeldung); Mittagsverpflegung + HA-Betreuung + Förder-U. + AGs.
+=== "Mittagsbetreuung"
 
-**gGTS** (KMBek 10.02.2020): **Ganztagszug**, **verpflichtend** mind. 4 Tage à 7 Std., **rhythmisierter U.** in Ganztagsklasse; typisch 8–16 Uhr; 45-Min-Regel-Abweichung möglich.
+    **Art. 31/3 BayEUG · Träger: Gemeinde / gemeinnützig.**
 
-**Hort** (§ 22 SGB VIII, KMBek 12.06.1991 für Schule↔Hort-Kooperation): eigenständige Bildungs-/Erziehungseinrichtung. Ziele: Lebensraum · Selbstständigkeit · HA-Bewältigung · sinnvolle Freizeit (**Bewegung!**) · gesundes Mittagessen. Zusammenarbeit Eltern↔LK↔Erzieher:innen über gemeinsame Besprechungen, Besuche, Fortbildungen, Projekte.
+    - Sozialpäd. Fachpersonal.
+    - SL-Benehmen bei Organisation.
+    - Standard bis ca. 14 Uhr.
+    - Verlängert bis 15:30/16:00 mit HA-Betreuung möglich.
+
+=== "Halbtags-GS"
+
+    **KMBek (seit 1999/2000) · staatl.**
+
+    - 7:30–13:00 Uhr.
+    - Vernetzung vor-/nachunterrichtlicher Angebote.
+    - Kindgerechte Rhythmisierung des Schulvormittags.
+
+=== "oGTS"
+
+    **KMBek 08.07.2013 · offene Ganztagsschule.**
+
+    - Vormittag im Klassenverband.
+    - Nachmittag **freiwillig** (Anmeldung erforderlich).
+    - Mittagsverpflegung + HA-Betreuung + Förder-U. + AGs.
+    - Kooperation mit Vereinen / Musikschule.
+
+=== "gGTS"
+
+    **KMBek 10.02.2020 · gebundene Ganztagsschule.**
+
+    - **Ganztagszug**, **verpflichtend**.
+    - Mind. 4 Tage à 7 Std.; typisch 8–16 Uhr.
+    - **Rhythmisierter U.** in Ganztagsklasse.
+    - 45-Min-Regel-Abweichung möglich.
+    - Zusatzangebote: Sprachförderung, HA-Hilfe, Gewaltprävention.
+
+=== "Hort"
+
+    **§ 22 SGB VIII · KMBek 12.06.1991 (Schule↔Hort).**
+
+    - Eigenständige Bildungs-/Erziehungseinrichtung.
+    - Träger: kirchlich / kommunal / freie Jugendhilfe.
+    - Ziele: Lebensraum · Selbstständigkeit · HA-Bewältigung · sinnvolle Freizeit (**Bewegung!**) · gesundes Mittagessen.
+    - Zusammenarbeit: gemeinsame Besprechungen, Besuche, Fortbildungen, Projekte.
 
 !!! warning "⚠ Fallen Betreuung"
     - **Mittagsbetreuung ≠ Hort ≠ GTS** — drei verschiedene Rechtsregime.
@@ -225,6 +266,8 @@ flowchart LR
     Antrag durch Schulaufwandsträger.
 
 </div>
+
+🃏 **Direkt zur Karte im Lerndeck**: [K03](https://weitergehts.online/lerndecks/schulrecht-mp08-kooperation/?card=K03) · [K08](https://weitergehts.online/lerndecks/schulrecht-mp08-kooperation/?card=K08) · [K11](https://weitergehts.online/lerndecks/schulrecht-mp08-kooperation/?card=K11) · [K13](https://weitergehts.online/lerndecks/schulrecht-mp08-kooperation/?card=K13) · [K16](https://weitergehts.online/lerndecks/schulrecht-mp08-kooperation/?card=K16) · [K22](https://weitergehts.online/lerndecks/schulrecht-mp08-kooperation/?card=K22) · [K27](https://weitergehts.online/lerndecks/schulrecht-mp08-kooperation/?card=K27) · [K31](https://weitergehts.online/lerndecks/schulrecht-mp08-kooperation/?card=K31) · [K32](https://weitergehts.online/lerndecks/schulrecht-mp08-kooperation/?card=K32)
 
 ---
 
