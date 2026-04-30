@@ -535,3 +535,5 @@ flowchart LR
 *[ÜZ]: Übertrittszeugnis
 *[PU]: Probeunterricht
 *[LNW]: Leistungsnachweis
+
+--8<-- "includes/normen-glossar.md"

@@ -31,7 +31,10 @@ theme:
     - navigation.sections
     - navigation.indexes
     - navigation.top
+    - navigation.footer
+    - navigation.path
     - toc.follow
+    - toc.integrate
     - search.suggest
     - search.highlight
     - content.code.copy
@@ -50,6 +53,7 @@ extra_javascript:
   - javascripts/extra.js
 
 markdown_extensions:
+  - abbr
   - admonition
   - attr_list
   - def_list
@@ -57,13 +61,19 @@ markdown_extensions:
   - md_in_html
   - tables
   - toc:
-      permalink: "#"
-      toc_depth: 3
+      permalink: "¶"
+      toc_depth: 4
+      title: "Auf dieser Seite"
+      permalink_title: "Permalink zu dieser Sektion"
   - pymdownx.details
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
-  - pymdownx.snippets
+  - pymdownx.snippets:
+      base_path:
+        - docs
+        - docs/includes
+      check_paths: true
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid

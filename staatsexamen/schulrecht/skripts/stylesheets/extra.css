@@ -420,8 +420,83 @@
    Hier visuelles Styling für inline-tooltip-Elemente. */
 .md-typeset abbr[title] {
   text-decoration: underline dotted #c2410c;
+  text-decoration-thickness: 1.5px;
   text-underline-offset: 2px;
   cursor: help;
+  position: relative;
+}
+
+[data-md-color-scheme="slate"] .md-typeset abbr[title] {
+  text-decoration-color: #fb923c;
+}
+
+/* Material's content.tooltips: Custom-Style für längere Wortlaut-Tooltips */
+.md-tooltip {
+  max-width: min(28rem, 92vw);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  background: #1f2937;
+  color: #f8fafc;
+  padding: 0.7em 0.9em;
+  border-radius: 0.4em;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.18);
+  border-left: 3px solid #c2410c;
+}
+
+.md-tooltip__inner {
+  font-weight: 400;
+}
+
+[data-md-color-scheme="slate"] .md-tooltip {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+/* Verfeinerte TOC-Section-Hierarchie */
+.md-nav__list .md-nav__list .md-nav__link {
+  font-size: 0.7rem;
+  line-height: 1.4;
+}
+
+.md-nav__list .md-nav__list .md-nav__list .md-nav__link {
+  font-size: 0.66rem;
+  opacity: 0.85;
+}
+
+/* Verfeinerter Permalink (bessere Sichtbarkeit beim Hover über Headline) */
+.md-typeset h2 .headerlink,
+.md-typeset h3 .headerlink {
+  color: #c2410c;
+  opacity: 0.4;
+  text-decoration: none;
+  font-weight: 400;
+  margin-left: 0.4em;
+}
+
+.md-typeset h2:hover .headerlink,
+.md-typeset h3:hover .headerlink {
+  opacity: 1;
+}
+
+/* Footer-Vor/Zurück-Navigation hervorheben */
+.md-footer__inner.md-grid {
+  background: #fff7ed;
+  border-radius: 0.5em;
+  margin: 1em auto;
+  padding: 0.5em 0.8em;
+}
+
+.md-footer__link {
+  border-radius: 0.4em;
+  transition: background 0.15s;
+}
+
+.md-footer__link:hover {
+  background: #fff7ed;
+}
+
+[data-md-color-scheme="slate"] .md-footer__inner.md-grid {
+  background: rgba(194, 65, 12, 0.1);
 }
 
 /* === Iter 4: Falle-Cards Click-to-Reveal ===

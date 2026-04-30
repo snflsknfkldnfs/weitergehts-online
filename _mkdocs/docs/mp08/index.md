@@ -465,3 +465,5 @@ NEIN — drei verschiedene Rechtsträger: Gemeinde (Mittagsbetreuung, Art. 31/3)
 *[em./soz.]: emotional / sozial
 *[k./m.]: körperlich / motorisch
 *[gE]: geistige Entwicklung
+
+--8<-- "includes/normen-glossar.md"

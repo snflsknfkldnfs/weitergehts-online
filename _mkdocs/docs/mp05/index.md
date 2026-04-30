@@ -523,3 +523,5 @@ NEIN. **Art. 62/7 BayEUG**: wählbar nur LK + FL, mind. ½ Regelstundenmaß **+ 
 *[§ 10 MSO]: MSO § 10 — Deutschklasse Mittelschule
 *[§ 41/1 BaySchO]: BaySchO § 41 Abs. 1 — Schülerakte ab 14. Lj.
 *[Vorkurs Deutsch 240]: 1,5 Schuljahre, 240 WStd, KiGa+GS gemeinsam
+
+--8<-- "includes/normen-glossar.md"
