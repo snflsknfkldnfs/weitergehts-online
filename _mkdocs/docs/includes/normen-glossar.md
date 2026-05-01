@@ -88,3 +88,38 @@ Material rendert das als <abbr title="..."> mit gestrichelter Unterstreichung.
 <!-- pre-audit-2026-05-01: Duplikat-Eintrag bereinigt (Stichtag → Art. 37, NICHT Art. 35). -->
 *[Art. 35]: BayEUG Art. 35 — Schulpflicht-Voraussetzungen (altersmäßig + gewöhnlicher Aufenthalt Bayern); Dauer „zwölf Jahre" (Wortlaut, 9 Vollzeit + 3 Berufsschule). (Stichtag 30.09. → Art. 37.)
 *[Art. 86]: BayEUG Art. 86 — Erziehungs- und Ordnungsmaßnahmen (gestaffelt). Verhältnismäßigkeit zwingend.
+
+<!-- ============================================== -->
+<!-- Iter 12 Auto-Add (Pre-Audit-Backup-Marker Iter 12 Auto-Add) -->
+<!-- Auto-generiert via lib/auto_patch_glossar.py — Wortlaute aus Source-YAMLs abgeleitet, NICHT erfunden. -->
+*[Art. 103/3]: GG Art. 103/3 — ne bis in idem · Doppelbestrafungsverbot
+*[Art. 103/3 GG]: GG Art. 103/3 — ne bis in idem · Doppelbestrafungsverbot
+*[Art. 132 BV]: BV Art. 132 — Mannigfaltigkeit · Anlagen/Neigungen/Leistung · NICHT Stellung Eltern
+*[Art. 19/1]: BayEUG Art. 19/1 — Förderzentrum · Aufgaben · Diagnose
+*[Art. 19/2]: BayEUG Art. 19/2 — MSH · vorschulische sonderpäd. Hilfe · SVE
+*[Art. 2 BayEUG]: BayEUG Art. 2 — Bildungs-/Erziehungsauftrag der Schule · Inklusiver Unterricht (Detail-Pull ausstehend)
+*[Art. 30a/3]: BayEUG Art. 30a/3 — Inklusion · Zusammenarbeit Schularten · gemeinsamer Unterricht (Detail-Pull ausstehend)
+*[Art. 30a/4]: BayEUG Art. 30a/4 — Inklusion · Zusammenarbeit Schularten · gemeinsamer Unterricht (Detail-Pull ausstehend)
+*[Art. 5 GG]: GG Art. 5 — Meinungsfreiheit · Pressefreiheit · Zensurverbot
+*[Art. 6 BayEUG]: BayEUG Art. 6 — Schularten · Katalog · allgemein bildend (Detail-Pull ausstehend)
+*[Art. 6/4]: BayEUG Art. 6/4 — Ganztagsangebote · Antragsprinzip Schulaufwandsträger · gebundenes vs. offenes Ganztag
+*[Art. 6/4 BayEUG]: BayEUG Art. 6/4 — Ganztagsangebote · Antragsprinzip Schulaufwandsträger · gebundenes vs. offenes Ganztag
+*[§ 1 JuSchG]: JuSchG § 1 — Begriffsbestimmungen · Kind unter 14 · Jugendlicher 14-18 (Detail-Pull ausstehend)
+*[§ 10/25 BaySchO]: BaySchO § 10/25 — Verbindungslehrkraft · Schülerzeitung · SMV-Veranstaltungen
+*[§ 12/3]: MSO § 12/3 — LNW-Rückgabe · angemessene Frist · 1 Woche
+*[§ 19 BaySchO]: BaySchO § 19 — Distanzunterricht · behördliche Anordnung · außergewöhnliche Wetterereignisse
+*[§ 20/1 BaySchO]: BaySchO § 20/1 — Verhinderung · Meldepflicht · unverzüglich
+*[§ 23/2]: BaySchO § 23/2 — Wegnahme · Sicherstellung · gefährliche Gegenstände
+*[§ 6/7]: GrSO § 6/7 — Übertrittszeugnis · Mai · D/M/HSU (Detail-Pull ausstehend)
+*[§ 8/3]: BaySchO § 8/3 — Klassensprecher · Wahl · Jgst. 5
+
+<!-- ============================================== -->
+<!-- Iter 12.2 Auto-Add (Pre-Audit-Backup-Marker Iter 12.2 Auto-Add) -->
+<!-- Auto-generiert via lib/auto_patch_glossar.py — Wortlaute aus Source-YAMLs abgeleitet, NICHT erfunden. -->
+*[Art. 19 BayEUG]: BayEUG Art. 19 — Förderzentrum · Aufgaben · Diagnose
+*[Art. 19 BayEUG]: BayEUG Art. 19 — Förderzentrum · Aufgaben · Diagnose
+*[Art. 21 BayEUG]: BayEUG Art. 21 — MSD · Mobiler Sonderpäd. Dienst · Diagnose
+*[Art. 21 BayEUG]: BayEUG Art. 21 — MSD · Mobiler Sonderpäd. Dienst · Diagnose
+*[Art. 21/1 BayEUG]: BayEUG Art. 21/1 — MSD · Mobiler Sonderpäd. Dienst · Diagnose
+*[Art. 30a BayEUG]: BayEUG Art. 30a — Inklusion · Zusammenarbeit Schularten · gemeinsamer Unterricht (Detail-Pull ausstehend)
+*[§ 22 SGB VIII]: SGB VIII § 22 — Tageseinrichtung · Kindertagespflege · Förderungsauftrag (Detail-Pull ausstehend)
