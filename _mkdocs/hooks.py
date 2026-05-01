@@ -119,6 +119,15 @@ _RE_SLASH_ART = re.compile(
     r"(?P<list>\d+[a-z]?(?:/\d+[a-z]?){2,})"
 )
 
+# pre-audit-2026-05-01: Bullet-Art-Listen `Art. 6/4 · 19 · 20 · 21 · 30a · 31/3 · 41 · 60 · 78`
+# (≥2 Items, ·-getrennt). Items: N | N/M | Na | Na/M.
+# Pflicht: mindestens ein `·` als Trenner, sonst greift _RE_SINGLE_ART.
+_RE_BULLET_ART = re.compile(
+    r"\bArt\.\s*"
+    r"(?P<list>\d+[a-z]?(?:/\d+[a-z]?)?"
+    r"(?:\s*·\s*\d+[a-z]?(?:/\d+[a-z]?)?)+)"
+)
+
 
 def _detect_norm_suffix(context: str, before: bool = True) -> str:
     """
@@ -192,6 +201,50 @@ def _expand_multi_para(
         return f"§§ {sep.join(parts)}"
 
     return _RE_MULTI_PARA.sub(_replace, segment)
+
+
+def _expand_bullet_art(
+    segment: str,
+    all_keys: dict[str, str],
+) -> str:
+    """
+    pre-audit-2026-05-01: Findet `Art. N1 · N2 · N3...` (≥2 Items, ·-Trenner) und
+    wrapt jedes Item einzeln in `<abbr>` mit Glossar-Lookup. Norm-Default: BayEUG
+    (Kontext „BayEUG"-Header dominiert in MP_08-Tabellen).
+    """
+    def _replace(m: re.Match) -> str:
+        list_str = m.group("list")
+        s, e = m.start(), m.end()
+        ctx_before = segment[max(0, s - 200):s]
+        ctx_after = segment[e:min(len(segment), e + 80)]
+        norm = _detect_norm_suffix(ctx_before) or _detect_norm_suffix(ctx_after) or "BayEUG"
+
+        # Items splitten: nur ·
+        items = re.split(r"\s*·\s*", list_str)
+        parts: list[str] = []
+        for item in items:
+            item = item.strip()
+            if not item:
+                continue
+            candidates = [
+                f"Art. {item} {norm}".strip(),
+                f"Art. {item}",
+                f"{norm} Art. {item}".strip() if norm == "BV" else None,
+            ]
+            candidates = [c for c in candidates if c]
+            title = None
+            for c in candidates:
+                if c in all_keys:
+                    title = all_keys[c]
+                    break
+            if title:
+                parts.append(f'<abbr title="{html.escape(title, quote=True)}">{item}</abbr>')
+            else:
+                parts.append(item)
+
+        return f"Art. {' · '.join(parts)}"
+
+    return _RE_BULLET_ART.sub(_replace, segment)
 
 
 def _expand_slash_art(
@@ -421,7 +474,10 @@ def _process_segment(
 
     # 1) Multi-§ expandieren (vor Single-§)
     segment = _expand_multi_para(segment, abbrs, all_keys)
-    # 2) Slash-Liste Art. expandieren (vor Single-Art)
+    # 2a) pre-audit-2026-05-01: Bullet-Art-Listen `Art. N · M · L` (·-Trenner, ≥2 Items)
+    #     vor Slash-Variante, damit gemischte Patterns wie `Art. 6/4 · 19` greifen.
+    segment = _expand_bullet_art(segment, all_keys)
+    # 2b) Slash-Liste Art. expandieren (vor Single-Art)
     segment = _expand_slash_art(segment, all_keys)
     # 3) Single §-Patterns (existing logic)
     def wrap(m: re.Match) -> str:
