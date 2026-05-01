@@ -16,8 +16,9 @@ Material rendert das als <abbr title="..."> mit gestrichelter Unterstreichung.
 *[BV Art. 133]: BV Art. 133 — Bildung durch öffentliche Anstalten; Staat + Gemeinde + anerk. Religions-/Weltanschauungsgemeinschaften als Bildungsträger.
 *[BV Art. 134]: BV Art. 134 — Privatschulen bedürfen staatlicher Genehmigung.
 
-*[Art. 35]: BayEUG Art. 35 — Beginn der Schulpflicht: Vollendung 6. Lebensjahr; Stichtag 30.09. Dauer 12 Jahre = 9 Vollzeit + 3 Berufsschule.
-*[Art. 35 BayEUG]: Beginn der Schulpflicht: Vollendung 6. Lebensjahr; Stichtag 30.09. Dauer 12 Jahre.
+<!-- pre-audit-2026-05-01: "Stichtag 30.09." aus Art. 35-Tooltips entfernt — Wortlaut Art. 35 enthält KEINEN Stichtag (steht in Art. 37). Source-Falle bayeug.yaml: Drift möglich. -->
+*[Art. 35]: BayEUG Art. 35 — Schulpflicht-Voraussetzungen (altersmäßig + gewöhnlicher Aufenthalt Bayern); Dauer „zwölf Jahre" (Wortlaut); gliedert sich in Vollzeit- und Berufsschulpflicht.
+*[Art. 35 BayEUG]: BayEUG Art. 35 — Schulpflicht-Voraussetzungen (altersmäßig + gewöhnlicher Aufenthalt Bayern); Dauer „zwölf Jahre" (Wortlaut). (Stichtag 30.09. → Art. 37, NICHT Art. 35.)
 *[Art. 36/3]: BayEUG Art. 36 Abs. 3 — Jgst.-Einweisung; tiefere Einstufung bis 2 Jgst. zulässig NUR bei mangelndem Bildungsstand, NICHT bei sprachlichen Defiziten.
 *[Art. 37]: BayEUG Art. 37 — Stichtag 30.09. + Einschulungskorridor 01.07.–30.09.
 *[Art. 39]: BayEUG Art. 39 — Berufsschulpflicht: 3 Jahre, spätestens bis Schuljahresende mit Vollendung 21. Lj.
@@ -32,7 +33,8 @@ Material rendert das als <abbr title="..."> mit gestrichelter Unterstreichung.
 *[Art. 52/3]: BayEUG Art. 52 Abs. 3 — Mitarbeitsnote NUR fachbezogen; Verhalten separat über Art. 86.
 *[Art. 56]: BayEUG Art. 56 — Rechte und Pflichten der Schüler:innen.
 *[Art. 56/2]: BayEUG Art. 56 Abs. 2 — Rechte-Trias: Information · Beteiligung · Beschwerde; bei Minderjährigen gelten Info-Rechte AUCH für Erziehungsberechtigte.
-*[Art. 56/3]: BayEUG Art. 56 Abs. 3 — Freie Meinungsäußerung mit Grenze „Wahrung sachlichen Zusammenhangs"; abhängig von Alter + Reife + Interesse.
+<!-- pre-audit-2026-05-01: "abhängig von Alter + Reife + Interesse" entfernt — Drift gegen Art. 56/3 BayEUG (Wortlaut nur "sachlicher Zusammenhang" als Schranke). -->
+*[Art. 56/3]: BayEUG Art. 56 Abs. 3 — Freie Meinungsäußerung „aller Schülerinnen und Schüler"; im Unterricht ist der „sachliche Zusammenhang" zu wahren (einzige unterrichtsbez. Schranke).
 *[Art. 56/4]: BayEUG Art. 56 Abs. 4 — Pflichten SuS: Verhalten · Verhüllungsverbot · Teilnahme-Pflicht · Distanz-U. Bild+Ton · Mitwirkung sonderpäd. Gutachten.
 *[Art. 56/5]: BayEUG Art. 56 Abs. 5 — Handy/digitale Endgeräte: nur mit Erlaubnis Aufsicht; auf Gelände SL im Einvernehmen Schulforum.
 *[Art. 62]: BayEUG Art. 62 — SMV als Mitwirkungsorgan; gestützt auf BV Art. 131 + Art. 2 BayEUG.
@@ -77,7 +79,8 @@ Material rendert das als <abbr title="..."> mit gestrichelter Unterstreichung.
 *[§ 14 MSO]: MSO § 14 — Individueller Förderplan (B9.1.6); Pflicht bei nicht erreichten Lernzielen; jährliche Fortschreibung; MSD-Einbeziehung Pflicht.
 *[§ 22 MSO]: MSO § 22 — Praxisklasse-Abschluss.
 *[§ 34 MSO]: MSO § 34 — Quabi (Quali + Berufsausbildungsabschluss).
-*[§ 14/4 LDO]: LDO § 14 Abs. 4 — Notengeheimnis: Vergleich mit Noten anderer SuS verboten.
+<!-- TODO Audit 2026-05-01: "Notengeheimnis: Vergleich verboten" ist populäre Verkürzung. Source-Wortlaut LDO § 14 Abs. 4: "Die Schule ist nicht berechtigt, anderen Personen als den Erziehungsberechtigten Auskunft über Schülerinnen und Schüler und ihre Leistungen zu geben." → eigentlicher Regelungsgegenstand = AUSKUNFT-AN-DRITTE, NICHT Vergleichsverbot. Manuell prüfen ob Tooltip präzisiert werden soll. -->
+*[§ 14/4 LDO]: LDO § 14 Abs. 4 — Auskunfts-Verbot ggü. Dritten (außer Erziehungsberechtigte); populäre Charakterisierung als „Notengeheimnis/Vergleichsverbot" ist verkürzt.
 
 *[§ 22 SGB VIII]: SGB VIII § 22 — Hort als außerschul. Bildungs-/Erziehungseinrichtung; früher KJHG. Träger: kirchlich/kommunal/freie Jugendhilfe.
 
@@ -131,7 +134,8 @@ Material rendert das als <abbr title="..."> mit gestrichelter Unterstreichung.
 
 *[Art. 3]: BayEUG Art. 3 — Schulen Bayern = öffentlich (staatlich + kommunal) + privat; Träger-Differenzierung.
 *[Art. 6]: BayEUG Art. 6 — Schularten-Katalog (allgemein bildend · beruflich · Förderschulen · Schulen für Kranke).
-*[Art. 6/4]: BayEUG Art. 6 Abs. 4 — Ganztagsschule: mind. 4 Tage à mind. 7 Std.; Antragsprinzip durch Schulaufwandsträger; kein Rechtsanspruch.
+<!-- pre-audit-2026-05-01: "mind. 4 Tage à mind. 7 Std." aus BayEUG-Tooltip entfernt — diese Quantifizierung steht NICHT in Art. 6/4 BayEUG selbst, sondern in den KMBek (oGTS 2013, gGTS 2020). -->
+*[Art. 6/4]: BayEUG Art. 6 Abs. 4 — schulische Ganztagsangebote (gebunden = rhythmisierte Ganztagsklassen / offen = klassen-/jgst.-übergreifend); Antragsprinzip durch Schulaufwandsträger; kein Rechtsanspruch; nach Anmeldung Teilnahmepflicht. (Quantifizierung „4 Tage à 7 Std." → KMBek, nicht BayEUG.)
 *[Art. 7]: BayEUG Art. 7 — Grundschule (Jgst. 1–4); grundlegende Bildung; erste gemeinsame Schule (mit Ausnahmen).
 *[Art. 7a]: BayEUG Art. 7a — Mittelschule (Jgst. 5–9; M-Zug 5–10); berufsbezogen; Abschlüsse ESA/Quali/MSA.
 *[Art. 8]: BayEUG Art. 8 — Realschule (Jgst. 5–10); mittlerer Schulabschluss.
@@ -179,7 +183,8 @@ Material rendert das als <abbr title="..."> mit gestrichelter Unterstreichung.
 *[§ 34]: MSO § 34 — Quabi (Quali + Berufsausbildungsabschluss).
 *[§ 39]: Art. 39 BayEUG — Berufsschulpflicht: 3 Jahre, spätestens bis Schuljahresende mit Vollendung 21. Lj.
 
-*[Art. 35 BayEUG]: BayEUG Art. 35 — Beginn der Schulpflicht: Vollendung 6. Lebensjahr; Stichtag 30.09. Dauer 12 Jahre.
+<!-- pre-audit-2026-05-01: Duplikat-Eintrag bereinigt (Stichtag → Art. 37, NICHT Art. 35). -->
+*[Art. 35 BayEUG]: BayEUG Art. 35 — Schulpflicht-Voraussetzungen (altersmäßig + gewöhnlicher Aufenthalt Bayern); Dauer „zwölf Jahre" (Wortlaut). (Stichtag 30.09. → Art. 37.)
 *[Art. 41 BayEUG]: BayEUG Art. 41 — Schulpflicht bei sonderpäd. Förderbedarf; Eltern entscheiden Lernort.
 *[Art. 44 BayEUG]: BayEUG Art. 44 — Elternwahlrecht Schulart/Ausbildungs-/Fachrichtung; gebunden an Eignung + Leistung.
 *[Art. 56 BayEUG]: BayEUG Art. 56 — Rechte und Pflichten der Schüler:innen.
@@ -209,7 +214,8 @@ Material rendert das als <abbr title="..."> mit gestrichelter Unterstreichung.
 
 <!-- BayEUG Art. 56-Untergliederung mit Suffix -->
 *[Art. 56/2 BayEUG]: BayEUG Art. 56 Abs. 2 — Rechte-Trias: Information · Beteiligung · Beschwerde; bei Minderjährigen Info-Rechte AUCH für Erziehungsberechtigte.
-*[Art. 56/3 BayEUG]: BayEUG Art. 56 Abs. 3 — Freie Meinungsäußerung mit Grenze „Wahrung sachlichen Zusammenhangs"; abhängig von Alter + Reife + Interesse.
+<!-- pre-audit-2026-05-01: "abhängig von Alter + Reife + Interesse" entfernt — Drift gegen Art. 56/3 BayEUG. -->
+*[Art. 56/3 BayEUG]: BayEUG Art. 56 Abs. 3 — Freie Meinungsäußerung „aller Schülerinnen und Schüler"; im Unterricht ist der „sachliche Zusammenhang" zu wahren (einzige unterrichtsbez. Schranke).
 *[Art. 56/4 BayEUG]: BayEUG Art. 56 Abs. 4 — Pflichten SuS: Verhalten · Verhüllungsverbot · Teilnahme-Pflicht · Distanz-U. Bild+Ton · Mitwirkung sonderpäd. Gutachten.
 *[Art. 56/4 S]: BayEUG Art. 56 Abs. 4 Satz — Spezifische Pflicht-Aspekte (Verhalten/Verhüllungsverbot/Teilnahme/Distanz-U./Mitwirkung).
 *[Art. 56/5 BayEUG]: BayEUG Art. 56 Abs. 5 — Handy/digitale Endgeräte: nur mit Erlaubnis Aufsicht; auf Gelände SL im Einvernehmen Schulforum.
@@ -243,11 +249,13 @@ Material rendert das als <abbr title="..."> mit gestrichelter Unterstreichung.
 *[MSO § 12/3]: MSO § 12 Abs. 3 — LNW-Rückgabe direktional: LK→SuS in „angemessener Frist" (KEIN konkreter Wert!) · SuS→Schule „innerhalb einer Woche unverändert".
 
 <!-- LDO § 14-Untergliederung Standalone -->
-*[§ 14/4]: LDO § 14 Abs. 4 — Notengeheimnis: Vergleich mit Noten anderer SuS verboten.
+<!-- TODO Audit 2026-05-01: Populäre Verkürzung. Source: AUSKUNFT-AN-DRITTE-Verbot, nicht Vergleichsverbot. -->
+*[§ 14/4]: LDO § 14 Abs. 4 — Auskunfts-Verbot ggü. Dritten (außer Erziehungsberechtigte); populäre Charakterisierung als „Notengeheimnis" ist verkürzt.
 
 <!-- BaySchO § 8-Standalone (Klassensprecher-Wahl) -->
 *[§ 8 BaySchO]: BaySchO § 8 — Klassensprecher: Wahl 4 Wochen nach U.-Beginn; ab Jgst. 5.
 
 <!-- Art-Suffix-Varianten zu Häufigkeits-Top -->
-*[Art. 35]: BayEUG Art. 35 — Beginn der Schulpflicht: Vollendung 6. Lebensjahr; Stichtag 30.09. Dauer 12 Jahre = 9 Vollzeit + 3 Berufsschule.
+<!-- pre-audit-2026-05-01: Duplikat-Eintrag bereinigt (Stichtag → Art. 37, NICHT Art. 35). -->
+*[Art. 35]: BayEUG Art. 35 — Schulpflicht-Voraussetzungen (altersmäßig + gewöhnlicher Aufenthalt Bayern); Dauer „zwölf Jahre" (Wortlaut, 9 Vollzeit + 3 Berufsschule). (Stichtag 30.09. → Art. 37.)
 *[Art. 86]: BayEUG Art. 86 — Erziehungs- und Ordnungsmaßnahmen (gestaffelt). Verhältnismäßigkeit zwingend.
