@@ -145,3 +145,269 @@ Material rendert das als <abbr title="..."> mit gestrichelter Unterstreichung.
 *[Art. 60]: BayEUG Art. 60 — Förderlehrkraft · Schülergruppen · selbstständig + eigenverantwortlich · Heilpäd-FL im Gesamtplan
 *[Art. 60 BayEUG]: BayEUG Art. 60 — Förderlehrkraft (FL) · Sicherung Unterrichtserfolg · selbstständig + eigenverantwortlich
 *[VSO-F § 25]: VSO-F § 25 — nicht öffentlich zugänglich; Volksschulordnung Förderschulen (Quelle: KMBek/Lehrerdienstrecht)
+
+<!-- ============================================== -->
+<!-- Phase-4 (2026-05-05): MP_06 — Rechte und Pflichten der Lehrkräfte -->
+<!-- LDO §§ 2-22 + BayPVG Art. 75-78 + BayDG Art. 6-13 + BeamtStG + GG Art. 33/5 -->
+<!-- Hinweis MEMORY.md: § 9 LDO aufgehoben — § 9a/9b sind aktuelle Fassung. -->
+
+<!-- LDO — Lehrerdienstordnung -->
+*[§ 2 LDO]: LDO § 2 — Dienstleistungspflicht: Unterricht + Erziehung als Kernaufgabe der Lehrkraft.
+*[§ 3 LDO]: LDO § 3 — Pflicht zur Durchführung von Unterricht und Erziehung gemäß Lehrplan.
+*[§ 4 LDO]: LDO § 4 — Schulische Veranstaltungen außerhalb des Unterrichts (Wandertage, Skikurse u. ä.).
+*[§ 5 LDO]: LDO § 5 — Aufsichtspflicht: spätestens ab U.-Beginn im Raum, Pausen + Stundenwechsel nach SL-Einteilung; Treff-/Endpunkt bei außerschul. Veranstaltungen.
+*[§ 5/1 LDO]: LDO § 5 Abs. 1 — Aufsicht durch jede LK; spätestens vom Beginn des Unterrichts an im Raum, erforderlichenfalls bis zum Weggang der SuS.
+*[§ 5/2 LDO]: LDO § 5 Abs. 2 — Aufsicht in Pausen + Stundenwechseln nach SL-Einteilung (schriftlich).
+*[§ 5/3 LDO]: LDO § 5 Abs. 3 — Außerschul. Veranstaltungen: Treff-/Endpunkt = Aufsicht-Beginn/-Ende; Jgst. 1–4 muss Punkt im Schulsprengel liegen.
+*[§ 5/4 LDO]: LDO § 5 Abs. 4 — Bei Mitwirkung Externer „soll" eine LK anwesend sein (Soll-Vorschrift).
+*[§ 6 LDO]: LDO § 6 — Zusammenarbeit mit Erziehungsberechtigten; Klassenleitungspflichten.
+*[§ 6/3 LDO]: LDO § 6 Abs. 3 — Pflicht zur frühzeitigen schriftlichen Information der Erziehungsberechtigten bei auffallendem Leistungsabsinken (mit Empfangsbestätigung).
+*[§ 9a LDO]: LDO § 9a — Allgemeine Dienstpflichten (Anwesenheit, Selbst-/Veranstaltungsfortbildung, Hausunterricht, Förderschul-Aufgaben).
+*[§ 9a/2 LDO]: LDO § 9a Abs. 2 — Pflicht zur Selbstfortbildung + Teilnahme an dienstlichen Fortbildungsveranstaltungen (vgl. Art. 20 BayLBG).
+*[§ 9a/3 LDO]: LDO § 9a Abs. 3 — Verfügbarkeit „in zumutbarem Umfang" + frühzeitige Information; auch in Ferien zu dienstl. FB heranziehbar (zumutbar).
+*[§ 9a/4 LDO]: LDO § 9a Abs. 4 — Fachfremder Unterricht NICHT zum Nachteil bei dienstlicher Beurteilung.
+*[§ 9a/8 LDO]: LDO § 9a Abs. 8 — Rauchverbot absolut auf Schulgelände (außer Wohnungen); außerhalb „sollen verzichten".
+*[§ 9b LDO]: LDO § 9b — Außerunterrichtliche Dienstpflichten („insbesondere"-Liste, 10 Punkte; nicht abschließend).
+*[§ 11 LDO]: LDO § 11 — Bekleidung und Auftreten; Vermeidung Symbole, die Neutralitätsgebot konterkarieren (vgl. Art. 59/2 S. 4 BayEUG).
+*[§ 14 LDO]: LDO § 14 — Verschwiegenheitspflicht (Amtsverschwiegenheit); 4 Absätze.
+*[§ 14/1 LDO]: LDO § 14 Abs. 1 — Verschwiegenheit über dienstl. Angelegenheiten auch nach Dienstende; Spannungen/Gegensätze vertraulich.
+*[§ 14/2 LDO]: LDO § 14 Abs. 2 — Auskünfte an Presse/Rundfunk/TV NUR durch SL bzw. beauftragte LK.
+*[§ 14/3 LDO]: LDO § 14 Abs. 3 — Vor endgültiger Festlegung Zeugnisnoten KEINE Auskünfte über Vorrücken/Noten an SuS oder EB (§ 6/3 LDO bleibt unberührt).
+*[§ 14/4 LDO]: LDO § 14 Abs. 4 — Auskunfts-Verbot ggü. Dritten (außer Erziehungsberechtigte); populäre Charakterisierung als „Notengeheimnis" ist verkürzt.
+*[§ 16 LDO]: LDO § 16 — Beurteilung der Lehrkräfte; periodische dienstliche Beurteilung.
+*[§ 19 LDO]: LDO § 19 — Lehrerkonferenz: Aufgaben, Einberufung, Beschlussverfahren.
+*[§ 20 LDO]: LDO § 20 — Teilnahmepflicht an Lehrerkonferenz (Art. 58 BayEUG).
+*[§ 21 LDO]: LDO § 21 — Mitwirkung in Personalvertretung und Schulgremien.
+*[§ 22 LDO]: LDO § 22 — Geltungsbereich der LDO + Übergangsvorschriften.
+
+<!-- BaySchO Aufsicht + Schriftwesen -->
+*[§ 22 BaySchO]: BaySchO § 22 — Beaufsichtigung; konkretisiert LDO § 5 (Vor-, Pausen-, Nachaufsicht; angemessene Zeit).
+*[§ 37 BaySchO]: BaySchO § 37 — Schülerbogen + Schülerakten: Anlage und Inhalt.
+*[§ 38 BaySchO]: BaySchO § 38 — Aufbewahrungspflichten Schülerunterlagen.
+*[§ 39 BaySchO]: BaySchO § 39 — Übermittlung von Schülerdaten an andere Schulen + Behörden.
+*[§ 40 BaySchO]: BaySchO § 40 — Datenschutz Schülerunterlagen.
+
+<!-- BayEUG (Erweiterung MP_06) -->
+*[Art. 57/2]: BayEUG Art. 57 Abs. 2 — Schulleiter:in: Gesamtverantwortung für die Schule (Aufsicht, Organisation, pädagogische Leitung).
+*[Art. 57/2 BayEUG]: BayEUG Art. 57 Abs. 2 — SL-Gesamtverantwortung für die Schule.
+*[Art. 58]: BayEUG Art. 58 — Lehrerkonferenz: Beratungs- und Beschlussorgan; Pflicht zur Teilnahme.
+*[Art. 58 BayEUG]: BayEUG Art. 58 — Lehrerkonferenz; Pflicht-Teilnahme der LK (vgl. § 20 LDO).
+*[Art. 59]: BayEUG Art. 59 — Lehrkräfte: unmittelbare pädagogische Verantwortung für Unterricht und Erziehung; Weisungsbefugnis ggü. päd. Personal.
+*[Art. 59 BayEUG]: BayEUG Art. 59 — Lehrkräfte: päd. Verantwortung; Symbol-Verbot (Abs. 2 S. 4) konditional „sofern auch als Haltung verstanden werden können"; politische Treuepflicht (Abs. 3).
+*[Art. 60a]: BayEUG Art. 60a — Sonstiges päd. Personal (Sozialpädagog:innen, Erzieher:innen, Förderlehrkräfte) im Unterstützungsverbund.
+*[Art. 60a BayEUG]: BayEUG Art. 60a — Sonstiges päd. Personal an Schulen; Weisungsverhältnis zur LK.
+*[Art. 75]: BayEUG Art. 75 — Auskunftsrechte der Erziehungsberechtigten ggü. Schule.
+*[Art. 75 BayEUG]: BayEUG Art. 75 — Auskunftsrechte der Erziehungsberechtigten; Volljährige SuS Art. 75/1 + 88/4.
+*[Art. 75/1]: BayEUG Art. 75 Abs. 1 — Auskunftsrechte; bei volljährigen SuS gelten Auskunfts-Modi nach Art. 75/1 + 88/4 S. 1 Nr. 3.
+
+<!-- BayPVG — Personalvertretungsgesetz -->
+*[Art. 75 BayPVG]: BayPVG Art. 75 — Mitbestimmung in Personal- und Sozialangelegenheiten (Einstellung, Beförderung, Versetzung > 3 Mon., Beurteilungsrichtlinien u. a.).
+*[Art. 76 BayPVG]: BayPVG Art. 76 — Mitwirkung in Personal-, Sozial- und Organisationsangelegenheiten (Stellungnahme, schwächer als Mitbestimmung).
+*[Art. 77 BayPVG]: BayPVG Art. 77 — Mitwirkung in weiteren Personalangelegenheiten (z. B. Disziplinarverfügung auf Antrag, Probezeitverlängerung).
+*[Art. 78 BayPVG]: BayPVG Art. 78 — Mitwirkung in sozialen + organisatorischen Angelegenheiten.
+
+<!-- BayDG — Disziplinargesetz Bayern -->
+*[BayDG Art. 6]: BayDG Art. 6 — Maßnahmenkatalog: 5 Stufen Lebenszeit (Verweis · Geldbuße · Kürzung Bezüge · Zurückstufung · Entfernung); 2 Stufen Ruhestand (Kürzung/Aberkennung Ruhegehalt). Tatbestand Dienstvergehen → § 47 BeamtStG.
+*[Art. 6 BayDG]: BayDG Art. 6 — Maßnahmenkatalog Disziplinarmaßnahmen (5 Stufen Lebenszeit + 2 Ruhestand). Tatbestand → § 47 BeamtStG.
+*[BayDG Art. 7]: BayDG Art. 7 — Verweis (mildeste Disziplinarmaßnahme).
+*[Art. 7 BayDG]: BayDG Art. 7 — Verweis als Disziplinarmaßnahme.
+*[BayDG Art. 8]: BayDG Art. 8 — Geldbuße als Disziplinarmaßnahme.
+*[BayDG Art. 9]: BayDG Art. 9 — Kürzung der Dienstbezüge.
+*[BayDG Art. 10]: BayDG Art. 10 — Zurückstufung.
+*[BayDG Art. 11]: BayDG Art. 11 — Entfernung aus dem Beamtenverhältnis (höchste Stufe Lebenszeitbeamte).
+*[BayDG Art. 12]: BayDG Art. 12 — Kürzung des Ruhegehalts (Ruhestandsbeamte).
+*[BayDG Art. 13]: BayDG Art. 13 — Aberkennung des Ruhegehalts (Ruhestandsbeamte).
+
+<!-- BeamtStG — Beamtenstatusgesetz Bund -->
+*[§ 33 BeamtStG]: BeamtStG § 33 — Grundpflichten; Verfassungstreue.
+*[§ 35 BeamtStG]: BeamtStG § 35 — Folgepflicht (Weisungsgebundenheit); volle Hingabe an den Beruf.
+*[§ 37 BeamtStG]: BeamtStG § 37 — Verschwiegenheitspflicht (Bundesrahmen; Ausgestaltung in § 14 LDO).
+*[§ 47 BeamtStG]: BeamtStG § 47 — Tatbestand „Dienstvergehen": schuldhafte Pflichtverletzung. Außerdienstliches Verhalten erfasst, wenn Ansehen Beamtentum bedeutsam beeinträchtigt. Maßnahmenkatalog → BayDG Art. 6.
+
+<!-- StGB / BGB / GG -->
+*[§ 203 StGB]: StGB § 203 — Verletzung von Privatgeheimnissen (Berufsgeheimnis Schulpsycholog:innen, Beratungslehrkräfte).
+*[§ 839 BGB]: BGB § 839 i.V.m. Art. 34 GG — Amtshaftung: Freistaat Bayern haftet primär; Rückgriff auf LK NUR bei Vorsatz + grober Fahrlässigkeit.
+*[Art. 34 GG]: GG Art. 34 — Haftung bei Amtspflichtverletzung; Rückgriff bei Vorsatz/grober Fahrlässigkeit (Satz 2).
+*[Art. 33/5]: GG Art. 33 Abs. 5 — Hergebrachte Grundsätze des Berufsbeamtentums (u. a. Streikverbot, Treuepflicht, Alimentation).
+*[Art. 33/5 GG]: GG Art. 33 Abs. 5 — Hergebrachte Grundsätze des Berufsbeamtentums.
+*[GG Art. 33/5]: GG Art. 33 Abs. 5 — Hergebrachte Grundsätze Berufsbeamtentum (Streikverbot, Alimentation, Treuepflicht).
+
+<!-- BV / BayLBG -->
+*[Art. 95]: BV Art. 95 — Beamtenverhältnis (Bayern); Begründung durch Ernennung.
+*[Art. 95 BV]: BV Art. 95 — Beamtenverhältnis Bayern.
+*[Art. 136 BV]: BV Art. 136 Abs. 3+4 — Religionsunterricht: Bevollmächtigung durch Religionsgemeinschaft + Schriftform-Ablehnung Lehrauftrag ReliU.
+*[Art. 20 BayLBG]: BayLBG Art. 20 — Bayerisches Lehrerbildungsgesetz: Pflicht zur Selbst- + Veranstaltungs-Fortbildung.
+
+<!-- ============================================== -->
+<!-- Phase-4 (2026-05-05) — Kurz-Aliase ohne Suffix für korrekten abbr-Match -->
+<!-- abbr-Extension matcht exakte Wortgrenzen — Kurz-Refs (§ X/Y ohne Suffix) brauchen eigenen Eintrag. -->
+
+<!-- LDO Kurz-Aliase -->
+*[§ 5/1]: LDO § 5 Abs. 1 — Aufsicht durch jede LK; spätestens vom Beginn des Unterrichts an im Raum, erforderlichenfalls bis zum Weggang der SuS.
+*[§ 5/2]: LDO § 5 Abs. 2 — Aufsicht in Pausen + Stundenwechseln nach SL-Einteilung.
+*[§ 5/3]: LDO § 5 Abs. 3 — Außerschul. Veranstaltungen: Treff-/Endpunkt = Aufsicht-Beginn/-Ende; Jgst. 1–4 muss Punkt im Schulsprengel liegen.
+*[§ 5/4]: LDO § 5 Abs. 4 — Bei Mitwirkung Externer „soll" eine LK anwesend sein.
+*[§ 6/3]: LDO § 6 Abs. 3 — Pflicht zur frühzeitigen schriftlichen Information der EB bei Leistungsabsinken.
+*[§ 9a/2]: LDO § 9a Abs. 2 — Pflicht Selbstfortbildung + Teilnahme an dienstl. FB-Veranstaltungen.
+*[§ 9a/3]: LDO § 9a Abs. 3 — Verfügbarkeit „in zumutbarem Umfang" + frühzeitige Information.
+*[§ 9a/4]: LDO § 9a Abs. 4 — Fachfremder Unterricht NICHT zum Nachteil bei Beurteilung.
+*[§ 9a/8]: LDO § 9a Abs. 8 — Rauchverbot absolut auf Schulgelände (außer Wohnungen).
+*[§ 9a/9]: LDO § 9a Abs. 9 — Weitere allgemeine Dienstpflichten (Fortsetzung Katalog).
+*[§ 9a Abs]: LDO § 9a — Allgemeine Dienstpflichten (Anwesenheit, Selbstfortbildung, Hausunterricht).
+*[§ 9b]: LDO § 9b — Außerunterrichtliche Dienstpflichten (10-Punkte-Liste „insbesondere", nicht abschließend).
+*[§ 14/1]: LDO § 14 Abs. 1 — Verschwiegenheit auch nach Dienstende; Spannungen vertraulich.
+*[§ 14/2]: LDO § 14 Abs. 2 — Auskünfte an Presse/Rundfunk/TV NUR durch SL bzw. beauftragte LK.
+*[§ 14/3]: LDO § 14 Abs. 3 — Vor endgültiger Festlegung Zeugnisnoten KEINE Auskünfte.
+*[§ 14/4]: LDO § 14 Abs. 4 — Auskunfts-Verbot ggü. Dritten (außer EB).
+*[§ 17]: LDO § 17 — Nebentätigkeitsrecht / Mitteilungspflichten (vgl. BayBG Art. 81–87).
+*[§ 22]: LDO § 22 — Geltungsbereich + Übergangsvorschriften.
+*[§ 4]: LDO § 4 — Schulische Veranstaltungen außerhalb des Unterrichts (Wandertage, Skikurse).
+*[§ 4 Abs]: LDO § 4 — Schulische Veranstaltungen außerhalb des Unterrichts.
+*[§ 6 Abs]: LDO § 6 — Zusammenarbeit EB + Klassenleitungspflichten.
+
+<!-- BaySchO Kurz-Aliase + Pause-Aufsicht -->
+*[§ 22/1]: BaySchO § 22 Abs. 1 — Beaufsichtigung: Rahmen + Einteilung.
+*[§ 22/2]: BaySchO § 22 Abs. 2 — Beaufsichtigung Pausen + Stundenwechsel.
+*[§ 22/3]: BaySchO § 22 Abs. 3 — Beaufsichtigung außerschul. Veranstaltungen.
+
+<!-- BayPVG Art. — fehlende Kurzformen + Detail-Artikel -->
+*[Art. 6 BayPVG]: BayPVG Art. 6 — Personalrat: Größe + Sitzverteilung Beschäftigte.
+*[Art. 7 BayPVG]: BayPVG Art. 7 — Personalrat: Wahl + Aufgaben.
+*[Art. 8 BayPVG]: BayPVG Art. 8 — Personalrat: Beschäftigtengruppen.
+*[Art. 9 BayPVG]: BayPVG Art. 9 — Personalrat: Beschäftigte (Begriff).
+*[Art. 10 BayPVG]: BayPVG Art. 10 — Wahlberechtigung.
+*[Art. 11 BayPVG]: BayPVG Art. 11 — Wählbarkeit (passiv).
+*[Art. 12 BayPVG]: BayPVG Art. 12 — Personalrat in staatlichen Dienststellen.
+*[Art. 13 BayPVG]: BayPVG Art. 13 — Wahlmodus (geheim, unmittelbar, Verhältniswahl).
+*[Art. 14 BayPVG]: BayPVG Art. 14 — Wählbarkeit: 6 Mon. Geschäftsbereich + 1 Jahr öff.-rechtl. Dienstverh.
+*[Art. 15 BayPVG]: BayPVG Art. 15 — Wahlanfechtung.
+*[Art. 64 BayPVG]: BayPVG Art. 64 — Vertrauensvolle Zusammenarbeit Dienststelle ↔ PR.
+*[Art. 66 BayPVG]: BayPVG Art. 66 — Geschäftsführung des Personalrats.
+*[Art. 69 BayPVG]: BayPVG Art. 69 — Beteiligungsformen Übersicht (Mitbestimmung, Mitwirkung, Anhörung).
+*[Art. 70 BayPVG]: BayPVG Art. 70 — Mitbestimmung Verfahren (Antrag DB → Zustimmung PR).
+*[Art. 70a BayPVG]: BayPVG Art. 70a — Initiativrecht des Personalrats.
+*[Art. 71 BayPVG]: BayPVG Art. 71 — Einigungsstelle (letzte Instanz Mitbestimmung).
+*[Art. 72 BayPVG]: BayPVG Art. 72 — Mitwirkungsverfahren.
+
+<!-- BayBG Beamtenrecht + Detail-Artikel -->
+*[Art. 81 BayBG]: BayBG Art. 81 — Nebentätigkeitsrecht; Genehmigungspflicht.
+*[Art. 82 BayBG]: BayBG Art. 82 — Anzeigepflicht Nebentätigkeit.
+*[Art. 83 BayBG]: BayBG Art. 83 — Versagung/Untersagung Nebentätigkeit.
+*[Art. 84 BayBG]: BayBG Art. 84 — Mehrarbeit.
+*[Art. 85 BayBG]: BayBG Art. 85 — Mehrarbeitsvergütung.
+*[Art. 86 BayBG]: BayBG Art. 86 — Arbeitszeit / Teilzeit.
+*[Art. 87 BayBG]: BayBG Art. 87 — Ehrenamt.
+
+<!-- Häufige Kurz-Aliase Art. (kontextfrei — zur Tooltip-Vermeidung in Eindeutigkeit) -->
+*[Art. 6/7]: BayEUG Art. 6 Abs. 7 — Stundenmaß / Klassengröße / Rahmenregeln Schularten.
+*[Art. 9/3]: BayEUG Art. 9 Abs. 3 — Mittelschule: Profilbildung + Praxisorientierung.
+*[Art. 33]: GG Art. 33 — Staatsbürgerliche Gleichheit + Berufsbeamtentum.
+*[Art. 34]: GG Art. 34 — Haftung bei Amtspflichtverletzung; Rückgriff bei Vorsatz/grober Fahrlässigkeit.
+*[Art. 71]: BayPVG Art. 71 — Einigungsstelle (Letzte Instanz Mitbestimmung).
+*[Art. 70/2]: BayPVG Art. 70 Abs. 2 — Verweigerung schriftlich mit Gründen innerhalb 2 Wochen.
+*[Art. 70a]: BayPVG Art. 70a — Initiativrecht des Personalrats.
+*[Art. 12]: GG Art. 12 — Berufsfreiheit (Art. 12 Abs. 1 i.V.m. Art. 75/76 BayPVG → PR-Kompetenz Bezug).
+*[Art. 110]: BV Art. 110 — Bayerische Verfassung; Gleichheitsgrundsatz.
+*[Art. 111]: BayEUG Art. 111 — Sonstiges päd. Personal: Rechtsstellung.
+*[Art. 136/3]: BV Art. 136 Abs. 3 — Religionsunterricht: Bevollmächtigung Religionsgemeinschaft.
+
+<!-- BeamtStG Bund (zusätzlich Kurz-Defs für Häufigkeits-Top) -->
+*[§ 35]: BeamtStG § 35 — Folgepflicht (Weisungsgebundenheit).
+*[§ 37]: BeamtStG § 37 — Verschwiegenheitspflicht (Bundesrahmen).
+*[§ 33]: BeamtStG § 33 — Grundpflichten / Verfassungstreue.
+*[§ 47]: BeamtStG § 47 — Tatbestand Dienstvergehen (schuldhafte Pflichtverletzung).
+
+<!-- StGB / SGB Kurz-Defs -->
+*[§ 203]: StGB § 203 — Verletzung von Privatgeheimnissen (Berufsgeheimnis).
+*[§ 229]: StGB § 229 — Fahrlässige Körperverletzung.
+*[§ 181 SGB IX]: SGB IX § 181 — Schwerbehindertenvertretung.
+
+<!-- Restliche Häufigkeits-Top aus MP_05/08 — Schlankhalt-Defs -->
+*[§ 25]: BaySchO § 25 — Mitwirkung sonstiges päd. Personal in SMV-Veranstaltungen.
+*[§ 9]: BaySchO § 9 — Schülersprecher (3) + Schülerausschuss; Wahl 2 Wo. nach Klassensprecher.
+*[§ 5]: GrSO § 5 — Überweisungsverfahren FöS.
+*[§ 8]: BaySchO § 8 — Klassensprecher: Wahl 4 Wo. nach U.-Beginn; ab Jgst. 5.
+*[§ 16]: BaySchO § 16 — Schülerratswahl + Vertretungsmodi.
+*[§ 8/1]: BaySchO § 8 Abs. 1 — Klassensprecher-Wahl: Modus + Frist.
+*[§ 9/1]: BaySchO § 9 Abs. 1 — Schülerratswahl Wahlrecht.
+*[§ 10 Abs]: BaySchO § 10 — Verbindungslehrkraft + Schülerzeitung-Modus.
+*[§ 16 Nr]: BaySchO § 16 — Schülerratswahl Detailbestimmung.
+*[§ 22 BayPrG]: BayPrG § 22 — Pressegesetz (Schülerzeitung-Druckwerk-Modus).
+*[§ 33 NA]: BaySchO § 33 — Nachteilsausgleich-Voraussetzungen.
+*[§ 34 NS Anforderungs]: BaySchO § 34 — Notenschutz-Anforderungs-Voraussetzungen.
+*[§ 37/1]: BaySchO § 37 Abs. 1 — Schülerunterlagen-Inhalt.
+*[§ 2/1]: LDO § 2 Abs. 1 — Dienstleistungspflicht: Unterricht + Erziehung.
+
+*[Art. 1]: BV Art. 1 — Bayern als Freistaat (Verfassungsanker).
+*[Art. 3]: BayEUG Art. 3 — Schulträger (öff./privat); Lehrpläne + Stundentafeln.
+*[Art. 6]: BayEUG Art. 6 — Schularten-Katalog (allgemein bildend).
+*[Art. 7]: BayEUG Art. 7 — Grundschule: Stufe + Aufgaben.
+*[Art. 8]: BayEUG Art. 8 — Mittelschule: Profil + Stufen.
+*[Art. 9]: BayEUG Art. 9 — Realschule.
+*[Art. 14]: BayEUG Art. 14 — Wirtschaftsschule.
+*[Art. 81]: BayBG Art. 81 — Nebentätigkeitsrecht (Genehmigungspflicht).
+
+<!-- KMBek-Anker fehlend -->
+*[DeutschPLUS]: KMBek DeutschPLUS — Sprachförderprogramm Sek I Bayern (KMBek 2018; Folgeprogramm Vorkurs Deutsch 240).
+
+<!-- ============================================== -->
+<!-- Phase-4 Round 2 (2026-05-05) — Letzte Coverage-Lücken (Bidirektional Art./§-Kurz-Aliase) -->
+
+*[Vorkurs Deutsch 240]: KMBek (KWMBl 2011/240) — Vorkurs Deutsch 240: 1,5 Schuljahre, 240 WStd, KiGa+GS gemeinsam.
+*[Art. 7a]: BayEUG Art. 7a — Mittelschulverbund.
+*[Art. 11]: BayEUG Art. 11 — Berufliche Schulen: Gliederung.
+*[Art. 90]: BayEUG Art. 90 — Privatschulen: Allgemeines (Genehmigungsbedürftigkeit).
+*[Art. 91]: BayEUG Art. 91 — Privatschulen: Genehmigungsvoraussetzungen.
+*[Art. 102]: BayEUG Art. 102 — Privatschulen: Förderung.
+*[Art. 128]: BV Art. 128 — Bildungsanspruch (vgl. BV Art. 128).
+*[§ 1]: JuSchG § 1 / BaySchO § 1 — kontextabhängiger Einzel-§ (siehe spezifische Quelle).
+*[§ 6]: BaySchO § 6 / GrSO § 6 / MSO § 6 — kontextabhängige Quelle (siehe Verweis).
+*[§ 19]: BaySchO § 19 — Distanzunterricht (Wetter/Anordnung).
+*[§ 20]: BaySchO § 20 — Eltern-Meldepflicht bei Verhinderung.
+*[§ 26]: MSO § 26 — Probezeit M-Zug.
+*[§ 30]: MSO § 30 — Quali-Prüfung Bestehen.
+*[§ 10/1]: BaySchO § 10 Abs. 1 — Verbindungslehrkraft Wahl + Aufgaben.
+*[§ 6/7]: GrSO § 6 Abs. 7 — Übertrittszeugnis Modalitäten.
+
+<!-- BayPVG Art. — Kurz-Aliase ohne Suffix für direkte Match -->
+*[Art. 10]: BayPVG Art. 10 — Wahlberechtigung Personalrat.
+*[Art. 13]: BayPVG Art. 13 — Wahlmodus Personalrat (geheim, unmittelbar, Verhältniswahl).
+*[Art. 15]: BayPVG Art. 15 — Wahlanfechtung Personalrat.
+*[Art. 64]: BayPVG Art. 64 — Vertrauensvolle Zusammenarbeit Dienststelle ↔ PR.
+*[Art. 66]: BayPVG Art. 66 — Geschäftsführung Personalrat.
+*[Art. 70]: BayPVG Art. 70 — Mitbestimmung Verfahren.
+*[Art. 72]: BayPVG Art. 72 — Mitwirkungsverfahren.
+
+<!-- § 9a/9 + § 37 — kontextfrei -->
+*[§ 9a/9]: LDO § 9a Abs. 9 — Allgemeine Dienstpflichten (Fortsetzung).
+*[§ 37]: BeamtStG § 37 — Verschwiegenheitspflicht (Bundesrahmen; Ausgestaltung in § 14 LDO).
+
+<!-- pre-track2-2026-05-05: Hook-Coverage MP_06 — BeamtStG §§ 3/7/8 Falle-Tabelle + § 9a/9b Doppel-Anker -->
+*[§ 3 BeamtStG]: BeamtStG § 3 — Beamtenverhältnis (Begründung, Arten).
+*[§ 7 BeamtStG]: BeamtStG § 7 — Voraussetzungen für das Beamtenverhältnis.
+*[§ 8 BeamtStG]: BeamtStG § 8 — Ernennung.
+*[§ 9a/9b]: LDO §§ 9a + 9b — Allgemeine + Außerunterrichtliche Dienstpflichten (Doppel-Anker; § 9 LDO ist aufgehoben).
+
+<!-- mp09-2026-05-05: MP_09 Datenschutz Schülerakte — Hover-Coverage-Erweiterung -->
+*[§ 23]: KUG § 23 — Ausnahmen vom Einwilligungs-Erfordernis (Zeitgeschichte / Beiwerk / Versammlung / Kunst-Interesse).
+*[§ 23 Abs]: KUG § 23 Abs. — Ausnahme-Tatbestand (z. B. Abs. 1 Nr. 1–4 + Abs. 2 Gegen-Ausnahme).
+*[§ 23 Nr]: KUG § 23 Abs. 1 — vier Ausnahme-Nummern (Zeitgeschichte / Beiwerk / Versammlung / Kunst-Interesse).
+*[§ 23 Ausnahme]: KUG § 23 — Ausnahme vom Einwilligungs-Erfordernis (vier Tatbestände).
+*[§ 23 Schul]: KUG § 23 — Schul-Anwendung (Klassenfoto NICHT Beiwerk/Zeitgeschichte).
+*[§ 41/1]: BaySchO § 41 Abs. 1 — Einsichtsrecht in Schülerakte (drei Personenkreise: SuS ab Vollendung 14. Lj. · aktuelle EB · frühere EB bis Vollendung 21. Lj.).
+*[§ 41/1 Nr]: BaySchO § 41 Abs. 1 Nr. 1–3 — drei Personenkreise des Einsichtsrechts.
+*[§ 14]: LDO § 14 — Verschwiegenheitspflicht (Abs. 3 Vor-Festlegungs-Verbot · Abs. 4 Drittauskunfts-Verbot).
+*[§ 22/23]: KUG §§ 22 + 23 — Recht am eigenen Bild (§ 22 Einwilligung + § 23 Ausnahmen).
+*[§ 353b]: StGB § 353b — Verletzung des Dienstgeheimnisses (für reguläre LK ohne § 203-Berufseigenschaft).
+*[§ 353b Bund]: StGB § 353b — Bundesrecht; Strafbarkeit der Verletzung des Dienstgeheimnisses durch Amtsträger.
+*[§ 8a]: SGB VIII § 8a — Schutzauftrag bei Kindeswohl-Gefährdung.
+*[Art. 17]: DSGVO Art. 17 — Recht auf Löschung („Recht auf Vergessenwerden").
+*[Art. 6/1]: DSGVO Art. 6 Abs. 1 — Rechtsgrundlagen (lit. a Einwilligung · lit. c gesetzliche Pflicht · lit. e öffentliche Aufgabe).
+*[Art. 2/1]: GG Art. 2 Abs. 1 — Allgemeines Persönlichkeitsrecht (i.V.m. Art. 1/1 GG).
+*[Art. 85]: BayEUG Art. 85 — Datenschutz Schulen (DSGVO-Konkretisierung Bayern).
+*[Art. 100]: GG Art. 100 — Konkrete Normenkontrolle (NICHT Datenschutz-Anker; Stale-Sekundärquelle).
+*[Art. 100/101]: GG Art. 100 + 101 — Konkrete Normenkontrolle / Recht auf gesetzlichen Richter (NICHT Datenschutz-Anker).
+*[§ 161]: StPO § 161 — Auskunftsrecht der Staatsanwaltschaft (Ermittlungsverfahren).
+*[§ 163]: StPO § 163 — Aufgaben und Befugnisse der Polizei im Ermittlungsverfahren.
+*[§ 161 StPO]: StPO § 161 — Auskunftsrecht der Staatsanwaltschaft (Ermittlungsverfahren).
+*[§ 163 StPO]: StPO § 163 — Aufgaben und Befugnisse der Polizei im Ermittlungsverfahren.

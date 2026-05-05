@@ -110,7 +110,33 @@ def _break_abbr_match(s: str) -> str:
 
 _RE_MULTI_PARA = re.compile(
     r"§§\s*"
-    r"(?P<list>\d+[a-z]?(?:\s*[/·,]\s*(?:und\s+)?\d+[a-z]?)+)"
+    r"(?P<list>\d+[a-z]?"
+    r"(?:\s*(?:\([^)]+\)\s*)?[/·,]\s*(?:und\s+)?\d+[a-z]?)+)"
+)
+
+# pre-track2-2026-05-05: `§§ N ff.` (offene Folge) — wrappe nur das erste §
+_RE_FF_PARA = re.compile(
+    r"§§\s*"
+    r"(?P<num>\d+[a-z]?)"
+    r"\s*ff\."
+)
+
+# pre-track2-2026-05-05: `§§ N–M` / `§§ N-M` (Range mit em-/en-dash oder Bindestrich) —
+# wrappe Start- und End-§. Match auch reine `§§ 33–48` ohne weitere Trenner.
+_RE_RANGE_PARA = re.compile(
+    r"§§\s*"
+    r"(?P<from>\d+[a-z]?)"
+    r"\s*[–\-]\s*"
+    r"(?P<to>\d+[a-z]?)"
+    r"(?![/·,\d])"
+)
+
+# pre-track2-2026-05-05: `§ N/M/L` (≥2 slash-Items) für single-§ Slash-Listen,
+# z.B. `MSO § 6/7/8`. Single-§ mit ≥2 slash-Trennern.
+_RE_SLASH_PARA = re.compile(
+    r"(?<![A-Za-z0-9_§])§\s*"
+    r"(?P<list>\d+[a-z]?(?:/\d+[a-z]?){2,})"
+    r"(?![/\d])"
 )
 
 # `Art. 62/62a/63/73` (≥3 Items, sonst kollidiert mit Art. N/M = Abs.)
@@ -135,7 +161,7 @@ def _detect_norm_suffix(context: str, before: bool = True) -> str:
     `before=True`: schaue ~80 chars VOR der Multi-§-Stelle nach Norm-Hint.
     `before=False`: schaue ~30 chars NACH der Stelle.
     """
-    norm_alts = ["BaySchO", "BayEUG", "MSO", "GrSO", "LDO", "BV", "GG", "DSGVO", "BayPrG", "SGB VIII", "SGB", "JuSchG", "KUG"]
+    norm_alts = ["BaySchO", "BayEUG", "MSO", "GrSO", "LDO", "BV", "GG", "DSGVO", "BayPrG", "SGB VIII", "SGB", "JuSchG", "KUG", "BeamtStG", "BayBG", "BayDG", "BayLBG", "BayPVG", "StGB", "BGB"]
     # context bereits vorgeschnitten — finde den letzten Vorkommen
     for n in norm_alts:
         if n in context:
@@ -161,46 +187,144 @@ def _expand_multi_para(
         ctx_after = segment[e:min(len(segment), e + 50)]
         norm = _detect_norm_suffix(ctx_before) or _detect_norm_suffix(ctx_after)
 
-        # Items splitten: Trenner / · ,
-        items = re.split(r"\s*[/·,]\s*(?:und\s+)?", list_str)
-        parts: list[str] = []
-        for item in items:
-            item = item.strip()
-            if not item:
+        # pre-track2-2026-05-05: erlaube Klammer-Annotationen `6 (Gelenkklasse)`
+        # zwischen Item und Trenner. Token-basiert splitten, um Annotations zu erhalten.
+        # Token-Pattern: `<num>[a-z]? (annotation)?` getrennt durch /, ·, ,.
+        token_re = re.compile(
+            r"(?P<num>\d+[a-z]?)"
+            r"(?P<ann>\s*\([^)]+\))?"
+            r"(?P<sep>\s*(?:[/·,]\s*(?:und\s+)?)?)"
+        )
+        out_parts: list[str] = []
+        any_token = False
+        for tm in token_re.finditer(list_str):
+            num = tm.group("num")
+            ann = tm.group("ann") or ""
+            sep_token = tm.group("sep") or ""
+            if not num:
                 continue
+            any_token = True
             candidates = [
-                f"§ {item} {norm}".strip(),
-                f"§ {item}",
-                f"{norm} § {item}".strip(),
+                f"§ {num} {norm}".strip(),
+                f"§ {num}",
+                f"{norm} § {num}".strip(),
             ]
             title = None
-            matched_key = None
             for c in candidates:
                 c = c.strip()
                 if c in abbrs_by_key:
                     title = abbrs_by_key[c]
-                    matched_key = c
                     break
                 if c in all_keys:
                     title = all_keys[c]
-                    matched_key = c
                     break
+            if title:
+                wrapped = (f'<abbr title="{html.escape(title, quote=True)}">{num}</abbr>')
+            else:
+                wrapped = num
+            out_parts.append(f"{wrapped}{ann}{sep_token}")
+        if not any_token:
+            return m.group(0)
+        return "§§ " + "".join(out_parts)
+
+    return _RE_MULTI_PARA.sub(_replace, segment)
+
+
+def _lookup_para(item: str, norm: str, abbrs_by_key: dict[str, str], all_keys: dict[str, str]) -> str | None:
+    """Helper: try multiple candidate keys for a §-item under norm-context."""
+    candidates = [
+        f"§ {item} {norm}".strip(),
+        f"§ {item}",
+        f"{norm} § {item}".strip(),
+    ]
+    for c in candidates:
+        c = c.strip()
+        if c in abbrs_by_key:
+            return abbrs_by_key[c]
+        if c in all_keys:
+            return all_keys[c]
+    return None
+
+
+def _expand_ff_para(
+    segment: str,
+    abbrs_by_key: dict[str, str],
+    all_keys: dict[str, str],
+) -> str:
+    """
+    pre-track2-2026-05-05: `§§ N ff.` → `§§ <abbr>N</abbr> ff.` (single number wrap).
+    Norm aus Kontext (vor + nach).
+    """
+    def _replace(m: re.Match) -> str:
+        num = m.group("num")
+        s, e = m.start(), m.end()
+        ctx_before = segment[max(0, s - 80):s]
+        ctx_after = segment[e:min(len(segment), e + 50)]
+        norm = _detect_norm_suffix(ctx_before) or _detect_norm_suffix(ctx_after)
+        title = _lookup_para(num, norm, abbrs_by_key, all_keys)
+        if title:
+            wrapped = f'<abbr title="{html.escape(title, quote=True)}">{num}</abbr>'
+            return f"§§ {wrapped} ff."
+        return m.group(0)
+    return _RE_FF_PARA.sub(_replace, segment)
+
+
+def _expand_range_para(
+    segment: str,
+    abbrs_by_key: dict[str, str],
+    all_keys: dict[str, str],
+) -> str:
+    """
+    pre-track2-2026-05-05: `§§ N–M` → `§§ <abbr>N</abbr>–<abbr>M</abbr>` (boundary-§ wrap).
+    Norm aus Kontext (vor + nach).
+    """
+    def _replace(m: re.Match) -> str:
+        a, b = m.group("from"), m.group("to")
+        s, e = m.start(), m.end()
+        sep_match = re.search(r"[–\-]", m.group(0))
+        sep = sep_match.group(0) if sep_match else "–"
+        ctx_before = segment[max(0, s - 80):s]
+        ctx_after = segment[e:min(len(segment), e + 50)]
+        norm = _detect_norm_suffix(ctx_before) or _detect_norm_suffix(ctx_after)
+        title_a = _lookup_para(a, norm, abbrs_by_key, all_keys)
+        title_b = _lookup_para(b, norm, abbrs_by_key, all_keys)
+        out_a = (f'<abbr title="{html.escape(title_a, quote=True)}">{a}</abbr>'
+                 if title_a else a)
+        out_b = (f'<abbr title="{html.escape(title_b, quote=True)}">{b}</abbr>'
+                 if title_b else b)
+        return f"§§ {out_a}{sep}{out_b}"
+    return _RE_RANGE_PARA.sub(_replace, segment)
+
+
+def _expand_slash_para(
+    segment: str,
+    abbrs_by_key: dict[str, str],
+    all_keys: dict[str, str],
+) -> str:
+    """
+    pre-track2-2026-05-05: `§ N/M/L` (≥2 slash-Items) → einzelne <abbr>-Wraps.
+    Beispiel: `MSO § 6/7/8` → `MSO § <abbr>6</abbr>/<abbr>7</abbr>/<abbr>8</abbr>`.
+    Norm aus Kontext (vor).
+    """
+    def _replace(m: re.Match) -> str:
+        list_str = m.group("list")
+        s, e = m.start(), m.end()
+        ctx_before = segment[max(0, s - 80):s]
+        ctx_after = segment[e:min(len(segment), e + 50)]
+        norm = _detect_norm_suffix(ctx_before) or _detect_norm_suffix(ctx_after)
+
+        items = list_str.split("/")
+        parts: list[str] = []
+        for item in items:
+            item = item.strip()
+            title = _lookup_para(item, norm, abbrs_by_key, all_keys)
             if title:
                 parts.append(f'<abbr title="{html.escape(title, quote=True)}">{item}</abbr>')
             else:
                 parts.append(item)
+        return f"§ {'/'.join(parts)}"
 
-        # Re-assemble: keep original separator from list_str approximately
-        # Detect dominant separator
-        if "·" in list_str:
-            sep = " · "
-        elif "/" in list_str:
-            sep = "/"
-        else:
-            sep = ", "
-        return f"§§ {sep.join(parts)}"
-
-    return _RE_MULTI_PARA.sub(_replace, segment)
+    return _RE_SLASH_PARA.sub(_replace, segment)
 
 
 def _expand_bullet_art(
@@ -474,11 +598,26 @@ def _process_segment(
 
     # 1) Multi-§ expandieren (vor Single-§)
     segment = _expand_multi_para(segment, abbrs, all_keys)
+    # pre-track2-2026-05-05: Re-Stash nach Multi-§-Expansion, damit nachfolgende
+    # Single-§-Substitutionen NICHT in die title-Attribute der frisch gewrappten
+    # <abbr>-Tags reinpatchen (Doppel-Wrap-Bug bei `LDO §§ 2 · 3 · 4 · ...`).
+    segment = re.sub(r"<abbr\b[^>]*>.*?</abbr>", stash, segment, flags=re.DOTALL)
+    # 1b) pre-track2-2026-05-05: ff.-Suffix `§§ N ff.`
+    segment = _expand_ff_para(segment, abbrs, all_keys)
+    segment = re.sub(r"<abbr\b[^>]*>.*?</abbr>", stash, segment, flags=re.DOTALL)
+    # 1c) pre-track2-2026-05-05: Range `§§ N–M`
+    segment = _expand_range_para(segment, abbrs, all_keys)
+    segment = re.sub(r"<abbr\b[^>]*>.*?</abbr>", stash, segment, flags=re.DOTALL)
+    # 1d) pre-track2-2026-05-05: Slash-§ `§ N/M/L` (≥2 Items)
+    segment = _expand_slash_para(segment, abbrs, all_keys)
+    segment = re.sub(r"<abbr\b[^>]*>.*?</abbr>", stash, segment, flags=re.DOTALL)
     # 2a) pre-audit-2026-05-01: Bullet-Art-Listen `Art. N · M · L` (·-Trenner, ≥2 Items)
     #     vor Slash-Variante, damit gemischte Patterns wie `Art. 6/4 · 19` greifen.
     segment = _expand_bullet_art(segment, all_keys)
+    segment = re.sub(r"<abbr\b[^>]*>.*?</abbr>", stash, segment, flags=re.DOTALL)
     # 2b) Slash-Liste Art. expandieren (vor Single-Art)
     segment = _expand_slash_art(segment, all_keys)
+    segment = re.sub(r"<abbr\b[^>]*>.*?</abbr>", stash, segment, flags=re.DOTALL)
     # 3) Single §-Patterns (existing logic)
     def wrap(m: re.Match) -> str:
         key = m.group(0)

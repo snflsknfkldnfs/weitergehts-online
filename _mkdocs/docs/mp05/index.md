@@ -41,10 +41,9 @@ flowchart TB
     - 🃏 [**Anki-Lerndeck** (36 Karten · 10 Falle · 8 Hochprior)](https://weitergehts.online/lerndecks/schulrecht-mp05-rechte-pflichten/)
     - 📑 [**Themen-Übersichtsseite**](https://weitergehts.online/staatsexamen/schulrecht/5-rechte-pflichten-schueler/)
 
+# Teil A — Stoff
 
-## Teil A — Stoff
-
-### A.1 Rechte der SuS (Art. 56 BayEUG)
+## A.1 Rechte der SuS (Art. 56 BayEUG)
 
 **Rechts-Trias (Art. 56/2 BayEUG)**:
 
@@ -53,7 +52,7 @@ flowchart LR
     R["Rechte SuS<br/>Art. 56/2 BayEUG"]:::root
     INFO["**Information**<br/>· Schulbetrieb<br/>· Leistungsstand<br/>· Förderhinweise"]:::info
     BET["**Beteiligung**<br/>· Schulleben<br/>· U.-Mitwirkung<br/>· SMV"]:::bet
-    BES["**Beschwerde**<br/>· LK<br/>· SL<br/>· Schulforum<br/>(KEINE Zwangsstufenfolge!)"]:::bes
+    BES["**Beschwerde**<br/>· LK → SL → Schulforum<br/>('nacheinander', Art. 56/2 Nr. 5)"]:::bes
 
     R --> INFO
     R --> BET
@@ -67,8 +66,9 @@ flowchart LR
 
 - **Informationsrechte**: über wesentl. Schulangelegenheiten · Auskunft über Leistungsstand · Förderhinweise. Bei Minderjährigen gelten Info-Rechte **auch für Erziehungsberechtigte**.
 - **Beteiligungsrechte**: Teilnahme am Schulleben, Mitwirkung an U.-Gestaltung im Rahmen von Schulordnung + Lehrplan.
-- **Beschwerderecht**: nacheinander an LK / SL / Schulforum — **KEINE Zwangsstufenfolge**, Wahl der Ebene nach Sachverhalt.
-- **Freie Meinungsäußerung** (Art. 56/3): „Wahrung sachlichen Zusammenhangs" — keine politische Agitation; abhängig von Alter, Reife, Interesse.
+- **Beschwerderecht**: Wortlaut Art. 56/2 Nr. 5 BayEUG (verified-1:1) — „bei als ungerecht empfundener Behandlung oder Beurteilung sich **nacheinander** an Lehrkräfte, an die Schulleiterin oder den Schulleiter und an das Schulforum zu wenden". Das Adverb „nacheinander" gibt eine **gestufte Reihenfolge** vor (LK → SL → Schulforum). Praktische Lockerung: bei Beurteilungs-Konflikten kann eine Eskalationsstufe übersprungen werden, wenn die jeweilige Ebene befangen ist — der Wortlaut nennt aber keine pauschale Wahlfreiheit.
+<!-- pre-audit-2026-05-01: "...keine politische Agitation; abhängig von Alter, Reife, Interesse." → Drift gegen Art. 56/3 BayEUG (Wortlaut: nur "sachlicher Zusammenhang" als unterrichtsbez. Schranke; KEIN Alter/Reife-Vorbehalt). -->
+- **Freie Meinungsäußerung** (Art. 56/3): „im Unterricht ist der sachliche Zusammenhang zu wahren" — Wortlaut nennt **„Alle Schülerinnen und Schüler"**; **sachlicher Zusammenhang ist die einzige unterrichtsbezogene Schranke** (KEIN Alter/Reife-Vorbehalt).
 - **Fürsorge-Rechte**: Schulgesundheit · Unfallverhütung · Lernmittelfreiheit · Kostenfreiheit Schulweg.
 
 **Verfahrensrechte**:
@@ -86,9 +86,9 @@ flowchart LR
 - **Falle**: Vergleich mit Noten anderer SuS bleibt **verboten** (§ 14/4 LDO) — Auskunft nur zu eigenen Leistungen.
 
 !!! warning "⚠ Falle Beschwerderecht"
-    Es gibt **KEINE Zwangsstufenfolge**. SuS können je nach Sachverhalt direkt zu SL oder Schulforum — die LK darf nicht „erst zu mir, dann SL" verlangen.
+    Wortlaut Art. 56/2 Nr. 5 sagt **„nacheinander"** (LK → SL → Schulforum) — also durchaus eine vorgegebene Reihenfolge. Pragmatische Lockerung: bei Befangenheit der unteren Ebene kann übersprungen werden; die LK darf trotzdem nicht „erst zu mir, dann SL" als Bedingung pauschal vorschreiben.
 
-### A.2 Pflichten der SuS (Art. 56/4 BayEUG)
+## A.2 Pflichten der SuS (Art. 56/4 BayEUG)
 
 **Verhaltensgrundnorm**: SuS müssen sich so verhalten, dass „die Aufgabe der Schule erfüllt und das Bildungsziel erreicht werden kann" (Art. 56/4 S. 1).
 
@@ -109,7 +109,7 @@ flowchart LR
 | **Rauchen** | Art. 3 GSG | in Schulen + auf Gelände **verboten** |
 | **Alkohol/Rauschmittel** | § 23/1 BaySchO | Konsum innerhalb Schulanlage + bei schul. Veranstaltungen untersagt |
 | **Gefährliche/störende Gegenstände** | § 23/2 BaySchO | Mitbringen/Mitführen untersagt; **Wegnahme + Sicherstellung** zulässig; **Rückgabe bei Minderjährigen NUR an Erziehungsberechtigte** |
-| **Politik/Parteinahme** | Art. 84 BayEUG | politische Werbung + parteipol. Tätigkeit verboten; Abzeichen nur wenn Schulbetrieb nicht gestört |
+| **Politik/Parteinahme** | Art. 84 BayEUG (verified-1:1) | Abs. 2: „Politische Werbung im Rahmen von Schulveranstaltungen oder auf dem Schulgelände ist nicht zulässig". Abs. 3 Abzeichen: zulässig, **wenn dadurch nicht Schulfriede, geordneter Schulbetrieb, Bildungs-/Erziehungsauftrag, persönliche Ehre oder Erziehung zur Toleranz gefährdet wird** (5 Schutzgüter); im Zweifelsfall entscheidet die SL. |
 
 **Mitarbeitsnote ↔ Verhaltenssanktion** (Master-Fehlerliste M20 + Reviewer-D F6):
 
@@ -128,7 +128,7 @@ flowchart LR
     - **Rückgabe gefährlicher Gegenstände** bei Minderjährigen NUR an Eltern.
     - **Mitarbeitsnote als Verhaltens-Strafe = Fachfehler.**
 
-### A.3 SuS mit nichtdeutscher Muttersprache (ndM)
+## A.3 SuS mit nichtdeutscher Muttersprache (ndM)
 
 **Schulpflicht-Universalität** (Art. 35 BayEUG): alle K/J mit Wohnsitz/gewöhnl. Aufenthalt Bayern — **ohne Rücksicht auf Staatsangehörigkeit** — auch wenn nach Heimatrecht nicht schulpflichtig.
 
@@ -146,10 +146,10 @@ flowchart LR
 - Entscheidung nach Leistungsstand über konkrete Klasse.
 - **Tiefere Einstufung bis 2 Jgst.** zulässig **NUR bei mangelndem Bildungsstand** — **NICHT wegen sprachlicher Probleme** (Falle).
 
-**Vier Fördermaßnahmen** (StMUK):
+**Vier Fördermaßnahmen** (StMUK · *KMBek-Skeleton — KMBek-Volltext nicht öffentlich strukturiert verfügbar*):
 
 1. **Vorkurs Deutsch 240** — 1,5 J. vor Einschulung, 240 WStd, KiGa+GS gemeinsam.
-2. **Deutschklassen** — siehe oben.
+2. **Deutschklassen** — siehe oben (§ 8 GrSO / § 10 MSO).
 3. **DeutschPLUS-Differenzierung** — innerhalb Regel-U.
 4. **DeutschPLUS-Kurse** — additiv.
 
@@ -160,7 +160,7 @@ flowchart LR
 !!! warning "⚠ Falle ndM"
     Tiefere Jgst.-Einstufung (bis 2 Jgst.) NUR bei mangelndem **Bildungsstand**, NICHT bei sprachlichen Defiziten allein. Wer „kein Deutsch" als Begründung für Tiefer-Einweisung nennt, verstößt gegen Art. 36/3 S. 4 BayEUG.
 
-### A.4 SMV — Schülermitverantwortung (Art. 62–63 BayEUG)
+## A.4 SMV — Schülermitverantwortung (Art. 62–63 BayEUG)
 
 **Rechtsgrundlage**: Art. 62/62a/63/73 BayEUG + Art. 8/9/10/11 BaySchO.
 **Legitimation**: SMV = Instrument der Demokratie-Einübung, gestützt auf **BV Art. 131 + Art. 2 BayEUG**.
@@ -173,16 +173,16 @@ flowchart LR
 - Mithilfe bei Konfliktlösung.
 - Unterstützung durch SL + LK + Elternbeirat.
 
-**6 Rechte (Art. 62/1 S. 4)**:
+**6 Rechte (Art. 62 Abs. 1 Satz 4 BayEUG · verified-1:1)** — Wortlaut-Reihenfolge:
 
-| # | Recht |
-|---|---|
-| 1 | **Information** |
-| 2 | **Anhörung / Vorschlag** |
-| 3 | **Vermittlung** |
-| 4 | **Beschwerde** |
-| 5 | **Mitwirkung** (Hausordnung, Schulforum) |
-| 6 | **Vorschlag** Kurs-/Veranstaltungs-Gestaltung |
+| # | Wortlaut-Stichwort | Wortlaut-Auszug |
+|---|---|---|
+| 1 | **Information** | „in allen sie betreffenden Angelegenheiten durch die Schule informiert zu werden" |
+| 2 | **Wünsche und Anregungen übermitteln** | „Wünsche und Anregungen der Schülerinnen und Schüler an Lehrkräfte, die Leiterin oder den Leiter der Schule und den Elternbeirat zu übermitteln" |
+| 3 | **Hilfe und Vermittlung auf Antrag** | „auf Antrag der betroffenen Schülerinnen und Schüler ihre Hilfe und Vermittlung einzusetzen, wenn diese glauben, es sei ihnen Unrecht geschehen" |
+| 4 | **Beschwerden allgemeiner Art** | „Beschwerden allgemeiner Art bei Lehrkräften, bei der Leiterin oder beim Leiter der Schule und im Schulforum vorzubringen" |
+| 5 | **Mitwirkung Hausordnung / besondere Veranstaltungen / Schulforum** | „bei der Aufstellung und Durchführung der Hausordnung, der Organisation und Betreuung von besonderen Veranstaltungen und im Schulforum mitzuwirken" |
+| 6 | **Anregungen + Vorschläge zu Kursen/Schulveranstaltungen + Unterricht** | „zur Gestaltung von Kursen und Schulveranstaltungen und im Rahmen der Lehrpläne zum Unterricht Anregungen zu geben und Vorschläge zu unterbreiten" |
 
 **Organe-Hierarchie**:
 
@@ -191,7 +191,7 @@ flowchart TB
     KS["**Klassensprecher** (Art. 8 BaySchO)<br/>ab Jgst. 5"]:::stage1
     KSV["**Klassensprecher-Versammlung** (Art. 62/4)"]:::stage2
     SCH["**Schülersprecher 1./2./3. + Schülerausschuss** (Art. 9 BaySchO)"]:::stage3
-    BEZ["**Bezirksschülersprecher** (Art. 11 BaySchO)<br/>**MS: 7 pro Reg.bez.**"]:::stage4
+    BEZ["**Bezirksschülersprecher** (Art. 62a BayEUG)<br/>+ Stadt-/Landkreisschülersprecher MS (§ 11 BaySchO)<br/><i>'7 pro Reg.bez.' Sekundärliteratur — vor Prüfungseinsatz cross-check</i>"]:::stage4
     LAND["**Landesschülersprecher · LSchKonf · LSchRat** (Art. 62a)<br/>**Landesschulbeirat** (Art. 73)"]:::stage5
 
     KS --> KSV --> SCH --> BEZ --> LAND
@@ -207,25 +207,26 @@ flowchart TB
 
 | Organ | Wann |
 |---|---|
-| **Klassensprecher** (§ 8 BaySchO) | 4 Wochen nach U.-Beginn; ab Jgst. 5 (in 1–4 keine Pflicht); Wahlverfahren durch Schülerausschuss im Einvernehmen SL |
-| **Schülersprecher (3) + Schülerausschuss** (Art. 9) | innerhalb **2 Wochen** nach Klassensprecher-Wahl; Schulforum kann entscheiden, dass alle SuS wählen |
+| **Klassensprecher** (§ 8 BaySchO Abs. 1 · verified-equivalent + Art. 62 Abs. 3 BayEUG) | „**innerhalb von vier Wochen** nach Unterrichtsbeginn" (Wortlaut § 8/1 S. 3); ab Jgst. 5 Pflicht (Art. 62/3 Wortlaut), in Jgst. 1–4 entscheidet die SL im Einvernehmen mit dem Elternbeirat; Wahlverfahren durch Schülerausschuss im Einvernehmen mit SL (§ 8/1 S. 1 Wortlaut). |
+| **Schülersprecher (3) + Schülerausschuss** (§ 9 BaySchO · verified-1:1) | „**innerhalb von zwei Wochen** nach der Wahl der Klassensprecherinnen und Klassensprecher" (Wortlaut § 9/1 S. 2); Wahl durch Klassensprecher (Art. 62/5 Wortlaut), Schulforum kann das Wahlrecht auf alle SuS ausdehnen. |
 
-**Verbindungslehrkraft (Art. 62/7 + § 10 BaySchO)**:
+**Verbindungslehrkraft (Art. 62 Abs. 7 BayEUG · verified-1:1)**:
 
-- **Wählbar**: jede LK + FL, **mind. ½ Regelstundenmaß + unbefristet** an der Schule beschäftigt.
-- **NICHT wählbar: LAA** — auf Widerruf, nicht unbefristet (⚠ klassische LAA-Selbstbetroffenheits-Falle).
-- **Wahl** durch Klassensprecher-Versammlung (Schulforum kann alle SuS wahlberechtigen).
-- **Amtszeit**: 1 Schuljahr.
-- **Aufgaben**: Verbindung SL/LK ↔ SuS · Beratung SMV · Vermittlung Beschwerden · Teilnahme Klassensprecher-Versammlung + Schulforum (Berater nach Mehrheitsbeschluss).
+- **Wählbar** (Art. 62/7 Satz 1 Wortlaut): „Lehrkräfte, die an der Schule mit **mindestens der Hälfte der Unterrichtspflichtzeit unbefristet beschäftigt** sind, sowie Förderlehrerinnen oder Förderlehrer unter entsprechenden Voraussetzungen".
+- **NICHT wählbar: LAA** — Status „auf Widerruf" erfüllt das Unbefristet-Kriterium nicht (⚠ klassische LAA-Selbstbetroffenheits-Falle).
+- **Wahl** durch Klassensprecherinnen + Klassensprecher und ihre Stellvertreter (Schulforum kann beschließen, dass alle SuS wählen) — Wortlaut.
+- **Amtszeit**: „für jeweils ein Schuljahr" (Wortlaut).
+- **Aufgaben** (Wortlaut Sätze 3–4): „pflegen die Verbindung zwischen Schulleiterin oder Schulleiter und Lehrkräften einerseits und den Schülerinnen und Schülern andererseits. Sie beraten die Einrichtungen der Schülermitverantwortung und vermitteln bei Beschwerden".
+- Wahlverfahren-Detail: § 10 Abs. 1 BaySchO (verified-1:1) — „Über das Wahlverfahren … entscheidet der Schülerausschuss im Einvernehmen mit der Schulleiterin oder dem Schulleiter".
 
-**Schülerzeitung (Art. 63 BayEUG + § 10/25 BaySchO)** — zwei Erscheinungsformen:
+**Schülerzeitung (Art. 63 BayEUG · verified-1:1)** — zwei Erscheinungsformen (Wortlaut Abs. 1 Satz 4: „Die Redaktion … hat das Wahlrecht, ob die Schülerzeitung als **Einrichtung der Schule** im Rahmen der Schülermitverantwortung **oder als Druckwerk im Sinn des Bayerischen Pressegesetzes (BayPrG)** erscheint"):
 
-| Modus | Folge |
+| Modus | Folge (Wortlaut Art. 63 BayEUG) |
 |---|---|
-| **Einrichtung der Schule** (SMV-Rahmen) | SL kann Verteilung + Herausgabe insgesamt bei Rechtsverstoß **untersagen**; Schulaufsicht trägt Verantwortung |
-| **Druckwerk nach BayPrG** (Presserecht) | **Eltern-Haftung bleibt**; SL kann **NICHT** Herausgabe insgesamt verbieten — nur Verteilung **auf Schulgelände** bei Rechtsverstoß |
+| **Einrichtung der Schule** (SMV-Rahmen) | Abs. 5 Wortlaut: „kann die Schulleiterin oder der Schulleiter die Verteilung auf dem Schulgelände, und für den Fall, dass die Schülerzeitung als Einrichtung der Schule im Rahmen der Schülermitverantwortung erscheint, **auch die Herausgabe untersagen**". |
+| **Druckwerk nach BayPrG** (Presserecht) | Abs. 2 Wortlaut: „Die **Haftung der Erziehungsberechtigten** für minderjährige Schülerinnen und Schüler bleibt unberührt". Abs. 5: SL kann **nur die Verteilung auf dem Schulgelände** untersagen, **NICHT** die Herausgabe insgesamt. |
 
-SL erhält rechtzeitig vor Drucklegung Exemplar; bei Einwänden Schulforum → gütliche Einigung; sonst Schulforum kann Verteilung untersagen.
+Vorlauf-Pflicht (Art. 63 Abs. 4 Wortlaut): „**Soll die Schülerzeitung auf dem Schulgelände verteilt werden**, ist der Schulleiterin oder dem Schulleiter rechtzeitig vor Drucklegung ein Exemplar zur Kenntnis zu geben." Bei Einwendungen → Stellungnahme der Redaktion + Vorlage beim Schulforum → gütliche Einigung; scheitert sie, kann das **Schulforum** die Verteilung auf dem Schulgelände untersagen.
 
 **Grenzen SMV**:
 
@@ -240,7 +241,7 @@ SL erhält rechtzeitig vor Drucklegung Exemplar; bei Einwänden Schulforum → g
 
 ---
 
-## Teil B — Top-8-Pflichtwissen
+# Teil B — Top-8-Pflichtwissen
 
 7-Tage-Endspurt-Cheat-Sheet · Karten-IDs verlinken auf das Anki-Lerndeck.
 
@@ -298,7 +299,7 @@ SL erhält rechtzeitig vor Drucklegung Exemplar; bei Einwänden Schulforum → g
 
 ---
 
-## Teil C — Falle-Atlas
+# Teil C — Falle-Atlas
 
 | ID | Falle | Korrekte Auflösung |
 |---|---|---|
@@ -345,7 +346,7 @@ NEIN. **Art. 62/7 BayEUG**: wählbar nur LK + FL, mind. ½ Regelstundenmaß **+ 
 
 ---
 
-## Teil D — Fallbeispiele (Anwendung)
+# Teil D — Fallbeispiele (Anwendung)
 
 ??? example "Fall **Hannah** — Notenauskunft + Vergleichsverbot (Hauptfall)"
     **Sachverhalt**: Hannah (13, 7. Kl. MS) verlangt im Sprechstundengespräch Auskunft über **alle** Noten in Mathematik (schriftlich, mündlich, praktisch). Die Mathe-LK lehnt ab: „Das ist meine pädagogische Beurteilungsautonomie." Hannah fragt zusätzlich, was Lara aus der Parallelklasse für die letzte Probe hatte.
@@ -459,7 +460,7 @@ NEIN. **Art. 62/7 BayEUG**: wählbar nur LK + FL, mind. ½ Regelstundenmaß **+ 
 
     **Knackpunkte**:
 
-    1. **Art. 84 BayEUG**: politische Werbung + parteipol. Tätigkeit in der Schule **verboten**.
+    1. **Art. 84 Abs. 2 BayEUG** (verified-1:1): „Politische Werbung im Rahmen von Schulveranstaltungen oder auf dem Schulgelände ist nicht zulässig" — gilt für beide Bezugsräume (Veranstaltung **und** Schulgelände).
     2. **Art. 56/3 BayEUG**: Meinungsäußerung mit Grenze „Wahrung sachlichen Zusammenhangs".
     3. **Schule als parteipolitisch neutraler Raum** — verfassungsrechtlich begründet (Schulfrieden, Anvertrauten-Schutz).
     4. Diskussion politischer Themen im U. ist möglich (Beutelsbacher Konsens), aber kein Plakat-Kampagnen.
@@ -468,7 +469,7 @@ NEIN. **Art. 62/7 BayEUG**: wählbar nur LK + FL, mind. ½ Regelstundenmaß **+ 
 
 ---
 
-## Querverweise
+# Querverweise
 
 - **Mitarbeitsnote ↔ EOM ↔ MP_06** (Block 5.3) — Trennung Art. 52/3 ↔ Art. 86 ist Schnittstelle.
 - **§ 23 BaySchO Wegnahme ↔ MP_06** — Sicherstellung getrennt von Art. 86/87.
@@ -479,7 +480,7 @@ NEIN. **Art. 62/7 BayEUG**: wählbar nur LK + FL, mind. ½ Regelstundenmaß **+ 
 
 ---
 
-## Quellen
+# Quellen
 
 - **BV**: Art. 128 (Bildungsanspruch) · 131 (Demokratie + Völkerverständigung).
 - **BayEUG**: Art. 35 (Schulpflicht) · 36/3 (Jgst.-Einweisung ndM) · 41 (Mitwirkungspflicht Gutachten) · 52 (Leistungsbewertung) · 56 (R/P SuS, Abs. 2/3/4/5) · 62/62a/63/73 (SMV) · 78 (Beratung) · 80 · 84 (Politik-Verbot) · 86 (EOM) · 118 (Schulzwang).
@@ -487,5 +488,44 @@ NEIN. **Art. 62/7 BayEUG**: wählbar nur LK + FL, mind. ½ Regelstundenmaß **+ 
 - **KMBek**: Vorkurs Deutsch 240 · DeutschPLUS-Differenzierung/-Kurse · LehrplanPLUS DaZ.
 - **Bundesrecht**: GG Art. 103/3 (ne bis in idem analog) · DSGVO Art. 15 (Auskunftsrecht) · KUG (Bild-Persönlichkeitsrecht) · BayPrG (Schülerzeitung als Druckwerk) · Art. 3 GSG (Rauchverbot).
 
+*[BV]: Bayerische Verfassung
+*[BayEUG]: Bayerisches Gesetz über das Erziehungs- und Unterrichtswesen
+*[BaySchO]: Bayerische Schulordnung
+*[GrSO]: Schulordnung für die Grundschulen
+*[MSO]: Mittelschulordnung
+*[LDO]: Lehrerdienstordnung
+*[GSG]: Gesundheitsschutzgesetz Bayern
+*[KMBek]: Kultusministerielle Bekanntmachung
+*[DSGVO]: Datenschutzgrundverordnung
+*[KUG]: Kunsturhebergesetz
+*[BayPrG]: Bayerisches Pressegesetz
+*[ndM]: nichtdeutsche Muttersprache
+*[DaZ]: Deutsch als Zweitsprache
+*[SMV]: Schülermitverantwortung
+*[LAA]: Lehramtsanwärter:in
+*[LK]: Lehrkraft
+*[FL]: Förderlehrkraft
+*[KL]: Klassenleitung
+*[SL]: Schulleitung
+*[SuS]: Schülerinnen und Schüler
+*[EB]: Elternbeirat
+*[EOM]: Erziehungs- und Ordnungsmaßnahmen
+*[LNW]: Leistungsnachweis
+*[Reg.bez.]: Regierungsbezirk
+*[StMUK]: Staatsministerium für Unterricht und Kultus
+*[GG]: Grundgesetz
+*[Art. 56/2]: BayEUG Art. 56 Abs. 2 — Rechte SuS (Trias)
+*[Art. 56/4]: BayEUG Art. 56 Abs. 4 — Pflichten SuS
+*[Art. 52/3]: BayEUG Art. 52 Abs. 3 — Mitarbeitsnote
+*[Art. 36/3]: BayEUG Art. 36 Abs. 3 — Jgst.-Einweisung
+*[Art. 62/7]: BayEUG Art. 62 Abs. 7 — Verbindungslehrkraft
+*[Art. 84]: BayEUG Art. 84 — politische Werbung verboten
+*[Art. 86]: BayEUG Art. 86 — Erziehungs-/Ordnungsmaßnahmen
+*[§ 14/4 LDO]: Lehrerdienstordnung § 14 Abs. 4 — Notengeheimnis
+*[§ 23/2 BaySchO]: BaySchO § 23 Abs. 2 — Wegnahme/Sicherstellung
+*[§ 8 GrSO]: GrSO § 8 — Deutschklasse Grundschule
+*[§ 10 MSO]: MSO § 10 — Deutschklasse Mittelschule
+*[§ 41/1 BaySchO]: BaySchO § 41 Abs. 1 — Schülerakte ab Vollendung des 14. Lebensjahres (Wortlaut).
+*[Vorkurs Deutsch 240]: 1,5 Schuljahre, 240 WStd, KiGa+GS gemeinsam
 
 --8<-- "includes/normen-glossar.md"

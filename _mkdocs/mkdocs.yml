@@ -103,7 +103,10 @@ nav:
   - Übersicht: index.md
   - "MP_03 Gliederung Bildungssystem": mp03/index.md
   - "MP_05 Rechte und Pflichten Schüler:innen": mp05/index.md
+  - "MP_06 Rechte und Pflichten Lehrkräfte": mp06/index.md
+  - "MP_07 Disziplinarrecht und Haftung": mp07/index.md
   - "MP_08 Kooperation Bildungsdienste": mp08/index.md
+  - "MP_09 Datenschutz Schülerakte": mp09/index.md
 
 extra:
   generator: false

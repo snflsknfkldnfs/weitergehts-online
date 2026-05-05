@@ -12,8 +12,8 @@ Block 8 regelt das **Zusammenspiel zwischen Schule und externen Bildungs-/Betreu
 flowchart TB
     BU["**Bundesrecht** · § 22 SGB VIII<br/>Hort als außerschul. Einrichtung"]:::bu
     BAY["**BayEUG** · Art. 6/4 · 19 · 20 · 21 · 30a · 31/3 · 41 · 60 · 78"]:::bay
-    VO["**VO** · MSO § 14 · GrSO § 5 · BaySchO §§ 31/36 · VSO-F § 25"]:::vo
-    KM["**KMBek** · GTS · Hort · Schulberatung · MSD · Inklusion"]:::km
+    VO["**VO** · MSO § 14 · GrSO § 5 · BaySchO §§ 31/36 · VSO-F § 25<br/><i>BaySchO §§ 31/36 + VSO-F § 25: Hover-Anker — vor Prüfungseinsatz cross-check</i>"]:::vo
+    KM["**KMBek** · GTS · Hort · Schulberatung · MSD · Inklusion<br/><i>KMBek-Volltexte nicht öffentlich strukturiert — Skeleton-Anker; konkrete Werte (4-Tage/7-Std, 9 Beratungsstellen, 9 MSD-Bereiche) cross-check vor Prüfungseinsatz</i>"]:::km
 
     BU -.Querverweis Hort.-> BAY
     BAY --> VO --> KM
@@ -28,7 +28,7 @@ flowchart TB
 |---|---|
 | **Bundesrecht** | § 22 SGB VIII (Hort, früher KJHG) |
 | **BayEUG** | Art. 6/4 · 19 · 20 · 21 · 30a · 31/3 · 41 · 60 · 78 |
-| **VO** | MSO § 14 · GrSO § 5 · BaySchO §§ 31/36 · VSO-F § 25 |
+| **VO** | MSO § 14 (verified-1:1) · GrSO § 5 (verified-equivalent) · BaySchO §§ 31/36 *(regelt eigentlich Individuelle Unterstützung/Nachteilsausgleich; FL-Arbeitszeit ist in BayLBG / Bekanntmachung — Anker)* · VSO-F § 25 *(nicht im Source-Repo verbatim — Anker)* |
 | **KMBek** | KWMBl 2011/240 · 08.07.2013 (oGTS) · 10.02.2020 (gGTS) · 12.06.1991 (Hort↔Schule) · 29.10.2001 (Schulberatung) |
 
 ---
@@ -38,15 +38,15 @@ flowchart TB
     - 🃏 [**Anki-Lerndeck** (45 Karten · 11 Falle · 9 Hochprior)](https://weitergehts.online/lerndecks/schulrecht-mp08-kooperation/)
     - 📑 [**Themen-Übersichtsseite**](https://weitergehts.online/staatsexamen/schulrecht/8-kooperation/)
 
-## Teil A — Stoff
+# Teil A — Stoff
 
-### A.1 MSD — Mobile Sonderpädagogische Dienste
+## A.1 MSD — Mobile Sonderpädagogische Dienste
 
-**Norm**: Art. 21/1 BayEUG · KMBek MSD.
+**Norm**: Art. 21/1 BayEUG (verified-1:1) · KMBek MSD *(KMBek-Volltext nicht öffentlich strukturiert verfügbar — Anker)*.
 **Wesen**: präventiv-integrativer **Dienst an der allgemeinen Schule** (≠ Schulart!). Ziel: negative Entwicklung aufhalten, Verbleib an allgem. Schule, FöS-Überweisung **vermeiden**.
-**Träger**: nächstgelegene FöS mit entspr. Schwerpunkt; Personal: Förderschullehrkräfte.
-**Aufgaben**: diagnostizieren · fördern · beraten (LK/Eltern/SuS) · koordinieren · fortbilden.
-**9 Bereiche**: Autismus · em./soz. · gE · Hören · k./m. · Lernen · Sehen · Sprache · **ELECOK** (Elektronische Hilfen + Computer für Körperbehinderte).
+**Träger** (Wortlaut Art. 21/1 Satz 3): „Mobile Sonderpädagogische Dienste werden von den **nächstgelegenen Förderschulen mit entsprechendem Förderschwerpunkt** geleistet"; Personal: Förderschullehrkräfte.
+**5 MSD-Aufgaben** (Wortlaut Art. 21/1 Satz 2): „diagnostizieren und fördern die Schülerinnen und Schüler, sie **beraten** Lehrkräfte, Erziehungsberechtigte und Schülerinnen und Schüler, **koordinieren** sonderpädagogische Förderung und führen **Fortbildungen** für Lehrkräfte durch".
+**MSD-Bereiche**: 7 Förderschwerpunkte aus Art. 20/1 BayEUG (verified-1:1) — Sehen · Hören · k./m. Entwicklung · gE · Sprache · Lernen · em./soz. Entwicklung. Erweiterte Praxis-Bereiche aus KMBek MSD: zusätzlich **Autismus** + **ELECOK** (Elektronische Hilfen + Computer für Körperbehinderte) → praktisch werden 9 Bereiche genannt. *Die zusätzlichen 2 Bereiche sind nicht im BayEUG-Wortlaut Art. 20 enthalten — KMBek-Skeleton, vor Prüfungseinsatz cross-check.*
 **Anfrage-Indikatoren** (4 Felder):
 
 - Lern/Leistung — Verweigerung, Schwänzen, U.-Störung, Schul-/Prüfungsangst, Konzentration.
@@ -62,7 +62,7 @@ flowchart TB
     - **MSD ≠ MSH** — schulisch (Art. 21) vs. **vorschulisch** (Art. 19/2).
     - **Eltern-Info-Pflicht** vor standardisierten Tests.
 
-### A.2 Förderzentrum (FöS)
+## A.2 Förderzentrum (FöS)
 
 **Norm**: Art. 19 (Aufgaben) · Art. 20 (Schwerpunkte/Aufbau) · Art. 41 (Lernort) · Art. 30a (Inklusion) · § 5 GrSO (Überweisung) · MSO § 14 (Förderplan).
 
@@ -72,16 +72,16 @@ flowchart TB
 
 **Aufbau (Art. 20/2)**: GS-Stufe 1–4 · MS-Stufe 5–9 (ggf. 10 MR) · **Berufsschulstufe** 10–12 bei FS gE (ersetzt BS).
 
-**Lernort (Art. 41)**:
+**Lernort (Art. 41 BayEUG · verified-1:1 für Abs. 1, 2, 4, 6)**:
 
-| Abs. | Inhalt |
+| Abs. | Inhalt (Wortlaut-Auszug) |
 |---|---|
-| 1 | **Eltern entscheiden** — allgem. Schule oder FöS |
-| 2 | Längerfristig Kranke → Schule für Kranke |
-| 3 | Eltern *sollen* Beratungsstelle aufsuchen |
-| 4 | Anmeldung Sprengel/Inklusion-Profil/FöS; FöS = sonderpäd. Gutachten |
-| 5 | Bedarf nicht deckbar → geeignete FöS |
-| 6 | Kein Einvernehmen → **Schulaufsichtsbehörde** entscheidet |
+| 1 | „Die **Erziehungsberechtigten entscheiden**, an welchem der … schulischen Lernorte ihr Kind unterrichtet werden soll" — allgem. Schule oder FöS |
+| 2 | Längerfristig Kranke → Schule für Kranke (Wortlaut belegt) |
+| 3 | Eltern *sollen* Beratungsstelle aufsuchen *(Abs. 3 nicht im Source-Repo verbatim — Anker)* |
+| 4 | „melden ihr Kind … an der Sprengelschule, einer Schule mit dem Schulprofil »Inklusion« oder an der Förderschule an. Die Aufnahme an der Förderschule setzt die Erstellung eines sonderpädagogischen Gutachtens voraus" |
+| 5 | Bedarf nicht deckbar → geeignete FöS *(Abs. 5 nicht im Source-Repo verbatim — Anker)* |
+| 6 | „Kommt keine einvernehmliche Aufnahme zustande, entscheidet die zuständige **Schulaufsichtsbehörde** nach Anhörung … über den schulischen Lernort." |
 
 **Überweisungsverfahren (§ 5 GrSO, 6 Schritte)**: KL erörtert mit Eltern → schriftl. Meldung an SL → SL benachrichtigt Eltern → Hinweis auf BL/SPych → sonderpäd. Gutachten → Eltern-Stellungnahme → Förderort.
 
@@ -94,18 +94,18 @@ flowchart TB
 !!! warning "⚠ Falle FöS"
     **Hertha-Konfiguration** (FS gE → Regelschule): rechtlich möglich (Art. 41/1 + Art. 30a/3). **ABER**: Sachaufwandsträger-Zustimmung NUR bei Sehen/Hören/k.-m. — bei FS gE NICHT erforderlich.
 
-### A.3 Schulberatung
+## A.3 Schulberatung
 
-**Norm**: Art. 78/1 BayEUG · KMBek 29.10.2001 (geänd. 24.06.2011). **Freiwilligkeitsgrundsatz**.
+**Norm**: Art. 78 Abs. 1 BayEUG (verified-1:1) — Wortlaut: „Jede Schule und jede Lehrkraft hat die Aufgabe, die Erziehungsberechtigten und die Schülerinnen und Schüler in Fragen der Schullaufbahn zu beraten"; Abs. 2: überregionale Aufgaben durch staatliche Schulberatungsstellen. KMBek 29.10.2001 (geänd. 24.06.2011) *(KMBek-Volltext nicht öffentlich strukturiert verfügbar — Werte aus KMBek-Skeleton)*. **Freiwilligkeitsgrundsatz**.
 
-**Beratungsweg** (5 Eskalationsstufen):
+**Beratungsweg** (5 Eskalationsstufen *Werte aus KMBek-Skeleton — KMBek-Volltext nicht öffentlich strukturiert verfügbar; Stufenmodell ist Sekundärliteratur-Auslegung*):
 
 ```mermaid
 flowchart LR
     KL["**1. Klassenleitung**<br/>wöchentl. Sprechstunde"]:::stage1
     SCHUL["**2. Schul-intern**<br/>BL · SPych · MSD"]:::stage2
     REKTOR["**3. Beratungsrektor:in**<br/>Staatl. SchA"]:::stage3
-    UEBER["**4. Überregionale Stelle**<br/>9 Schulberatungsstellen Bayern · KIBBS"]:::stage4
+    UEBER["**4. Überregionale Stelle**<br/>9 Schulberatungsstellen Bayern · KIBBS<br/><i>9 = Sekundärliteratur — vor Prüfungseinsatz cross-check</i>"]:::stage4
     AUSSER["**5. Außerschulisch**<br/>Erziehungsberatung · Jugendamt · Therapie"]:::stage5
 
     KL --> SCHUL --> REKTOR --> UEBER --> AUSSER
@@ -126,7 +126,7 @@ flowchart LR
 | 2b | **Schulpsycholog:in (SPych)** — Psychologie-Studium mit schulpsych. Schwerpunkt; mehrere Schulen |
 | 2c | **MSD** — Förderschullehrkraft |
 | 3 | **Beratungsrektor:in** (Staatl. SchA, Koordination) |
-| 4 | **Staatl. Schulberatungsstelle** (9 in Bayern; KIBBS) |
+| 4 | **Staatl. Schulberatungsstelle** (9 in Bayern; KIBBS) — *„9" Sekundärliteratur, KMBek-Skeleton; vor Prüfungseinsatz cross-check* |
 | 5 | **Außerschulisch** — Erziehungsberatung, Jugendamt, Therapie |
 
 **Themen**: Schullaufbahn/Übertritt · Bildungsmöglichkeiten · Lern-/Leistungsstörung · Verhaltensauffälligkeit.
@@ -139,7 +139,7 @@ flowchart LR
     - **BL ≠ SPych** — Lehrkraft mit Zusatzqual. vs. Psychologe.
     - LK darf **nicht selbst therapieren** — Pflicht zur Weiterleitung.
 
-### A.4 Betreuung (4 Säulen)
+## A.4 Betreuung (4 Säulen)
 
 **Übersicht** — vier Säulen, drei Rechtsregime:
 
@@ -147,8 +147,8 @@ flowchart LR
 |---|---|---|---|
 | **Mittagsbetreuung** | Art. 31/3 BayEUG | Gemeinde / gemeinnützig | bis ~14 Uhr; verlängert bis 15:30/16:00 |
 | **Halbtagsgrundschule** | KMBek (seit 1999/2000) | staatl. | 7:30–13:00 |
-| **Ganztagsschule (oGTS/gGTS)** | Art. 6/4 BayEUG + KMBek | staatl. | mind. 4 Tage à 7 Std. |
-| **Hort** | **§ 22 SGB VIII** | freier/kirchl./kommunal. JuHi-Träger | außerschul. |
+| **Ganztagsschule (oGTS/gGTS)** | Art. 6/4 BayEUG (verified-1:1) + KMBek 08.07.2013 (oGTS) / 10.02.2020 (gGTS) | staatl. | mind. 4 Tage à 7 Std. *(„4 Tage / 7 Std" ist KMBek-Wert, nicht im Art. 6/4-Wortlaut; KMBek-Volltext nicht öffentlich strukturiert — Skeleton)* |
+| **Hort** | § 22 SGB VIII (Tageseinrichtungen für Kinder · partial-summary; *Hort-Begriff nicht explizit im § 22-Wortlaut, sondern als Tageseinrichtung subsumiert*) | freier/kirchl./kommunal. JuHi-Träger | außerschul. |
 
 === "Mittagsbetreuung"
 
@@ -188,7 +188,7 @@ flowchart LR
 
 === "Hort"
 
-    **§ 22 SGB VIII · KMBek 12.06.1991 (Schule↔Hort).**
+    **§ 22 SGB VIII (Tageseinrichtungen für Kinder · partial-summary; Hort-Begriff im Wortlaut nicht explizit, fällt unter „Tageseinrichtungen"). KMBek 12.06.1991 (Schule↔Hort) — KMBek-Skeleton.**
 
     - Eigenständige Bildungs-/Erziehungseinrichtung.
     - Träger: kirchlich / kommunal / freie Jugendhilfe.
@@ -201,18 +201,18 @@ flowchart LR
     - **Aufsichtspflicht Mittagspause Halbtags-GS** = Schulverband/Gemeinde, NICHT Schule (↔ Block 6.2).
     - **Kein Rechtsanspruch** auf GTS-Platz — Wahlfreiheit, Schulaufwandsträger entscheidet Ausbau.
 
-### A.5 Detail-Zusätze (GTS-Antragsprinzip · Förderlehrkraft)
+## A.5 Detail-Zusätze (GTS-Antragsprinzip · Förderlehrkraft)
 
 **Ganztagsschule – Antragsprinzip**: **Schulaufwandsträger** beantragt GTS-Einrichtung an GS/MS/RS/WS/Gym + entspr. FöS, im Benehmen mit Trägern öff. Jugendhilfe. Wahlfreiheit Halbtag↔Ganztag, **kein Rechtsanspruch**, Teilnahmepflicht ab Anmeldung.
 
-**Förderlehrkraft (FL)**: Rechtsgrund Art. 60 BayEUG + BaySchO §§ 31/36 + VSO-F § 25 + MSO §§ 9/10. Aufgaben: AG-Leitung, LRS-Förder-U., Intensiv-/Förder-U., diff. Sport/Schwimmen, EH/Verkehr, Aufsicht. **Arbeitszeit GS/MS**: 28 UE (45 Min) = 8 eigenverantwortlich (AGs) + 20 Kooperations-U. + 5 Verwaltungsstunden (60 Min). FöS/Schulen für Kranke: 27 UE. SL bestellt Einsatzplan; Kooperations-LK verantwortet Klasseneinsatz.
+**Förderlehrkraft (FL)**: Rechtsgrund Art. 60 BayEUG (verified-1:1) — „selbstständig und eigenverantwortlich" (Wortlaut Abs. 1 S. 2). Begleit-Normen Sekundärliteratur: VSO-F § 25 + MSO §§ 9/10 *(nicht im Source-Repo verbatim — Anker; FL-Arbeitszeit-Detailregelung tatsächlich in BayLBG / Bekanntmachung Lehrerdienstrecht, NICHT BaySchO §§ 31/36 — diese regeln Individuelle Unterstützung/Nachteilsausgleich)*. Aufgaben: AG-Leitung, LRS-Förder-U., Intensiv-/Förder-U., diff. Sport/Schwimmen, EH/Verkehr, Aufsicht. **Arbeitszeit GS/MS** *(Werte aus Sekundärliteratur — vor Prüfungseinsatz cross-check)*: 28 UE (45 Min) = 8 eigenverantwortlich (AGs) + 20 Kooperations-U. + 5 Verwaltungsstunden (60 Min). FöS/Schulen für Kranke: 27 UE. SL bestellt Einsatzplan; Kooperations-LK verantwortet Klasseneinsatz.
 
 !!! warning "⚠ Falle FL"
     **FL-Vertretungsunterricht** nur kurzfristig in unabweisbaren Fällen, **max. 5 WStd**, NICHT permanent.
 
 ---
 
-## Teil B — Top-9-Pflichtwissen
+# Teil B — Top-9-Pflichtwissen
 
 7-Tage-Endspurt-Cheat-Sheet · Karten-IDs verlinken auf das Anki-Lerndeck.
 
@@ -271,7 +271,7 @@ flowchart LR
 
 ---
 
-## Teil C — Falle-Atlas
+# Teil C — Falle-Atlas
 
 | ID | Falle | Korrekte Auflösung |
 |---|---|---|
@@ -319,7 +319,7 @@ NEIN — drei verschiedene Rechtsträger: Gemeinde (Mittagsbetreuung, Art. 31/3)
 
 ---
 
-## Teil D — Fallbeispiele (Anwendung)
+# Teil D — Fallbeispiele (Anwendung)
 
 ??? example "Fall **Tom** — em./soz. + Eltern-Veto + Hort-Frage (Hauptfall)"
     **Sachverhalt**: 7. Kl. MS. Aggressives Verhalten, Schulverweigerung, Konzentrationsprobleme. Sie vermuten Förderbedarf em./soz. Eltern lehnen MSD-Diagnostik ab, fordern SPych-Termin und fragen nach Hortwechsel.
@@ -421,7 +421,7 @@ NEIN — drei verschiedene Rechtsträger: Gemeinde (Mittagsbetreuung, Art. 31/3)
 
 ---
 
-## Querverweise
+# Querverweise
 
 - **K16 Förderplan ↔ Block 5.5** — Notenschutz/Nachteilsausgleich (BVerwG 29.07.2015; BaySchO § 33 NA äußere Bedingungen vs. § 34 NS Anforderungs-/Bewertungsverzicht).
 - **K35 Aufsichtspflicht Mittagspause ↔ Block 6.2** — Träger außerhalb Schulzeit.
@@ -431,12 +431,39 @@ NEIN — drei verschiedene Rechtsträger: Gemeinde (Mittagsbetreuung, Art. 31/3)
 
 ---
 
-## Quellen
+# Quellen
 
 - **Bundesrecht**: § 22 SGB VIII (8. Buch SGB; früher KJHG).
 - **BayEUG**: Art. 6/4, 19, 20, 21, 30a, 31/3, 41, 60, 78.
 - **Schulordnungen**: MSO § 14 (Förderplan), GrSO § 5 (Überweisungsverfahren), BaySchO §§ 31/36 (FL-Arbeitszeit), VSO-F § 25, MSO §§ 9/10.
 - **KMBek**: KWMBl 2011 S. 240 (GTS-Ausbau) · 08.07.2013 (oGTS) · 10.02.2020 (gGTS) · 12.06.1991 (Hort↔Schule) · 29.10.2001 geänd. 24.06.2011 (Schulberatung).
 
+*[MSD]: Mobiler Sonderpädagogischer Dienst — Art. 21 BayEUG
+*[MSH]: Mobile Sonderpädagogische Hilfe — Art. 19/2 BayEUG (vorschulisch)
+*[FöS]: Förderzentrum / Förderschule — Art. 19–24 BayEUG
+*[BL]: Beratungslehrkraft (LK + Erweiterungsstudium ODER 2-J-Weiterbildungskurs)
+*[SPych]: Schulpsycholog:in (Psychologiestudium mit schulpsych. Schwerpunkt)
+*[FL]: Förderlehrkraft — Art. 60 BayEUG
+*[GTS]: Ganztagsschule — Art. 6/4 BayEUG
+*[oGTS]: offene Ganztagsschule — KMBek 08.07.2013
+*[gGTS]: gebundene Ganztagsschule — KMBek 10.02.2020
+*[ELECOK]: Elektronische Hilfen + Computer für Körperbehinderte
+*[KIBBS]: Kriseninterventions- und Bewältigungsteam Bayerischer Schulpsychologen
+*[SVE]: Schulvorbereitende Einrichtung
+*[BayEUG]: Bayerisches Gesetz über das Erziehungs- und Unterrichtswesen
+*[BaySchO]: Bayerische Schulordnung
+*[MSO]: Mittelschulordnung
+*[GrSO]: Schulordnung für die Grundschulen
+*[VSO-F]: Volksschulordnung für Förderschulen
+*[KMBek]: Kultusministerielle Bekanntmachung
+*[KJHG]: Kinder- und Jugendhilfegesetz (heute: SGB VIII)
+*[SGB]: Sozialgesetzbuch
+*[SL]: Schulleitung
+*[KL]: Klassenleitung
+*[LK]: Lehrkraft
+*[SuS]: Schülerinnen und Schüler
+*[em./soz.]: emotional / sozial
+*[k./m.]: körperlich / motorisch
+*[gE]: geistige Entwicklung
 
 --8<-- "includes/normen-glossar.md"

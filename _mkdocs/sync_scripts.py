@@ -36,6 +36,24 @@ MAPPING = {
         "falle_count": 10,
         "hochprior_count": 8,
     },
+    "MP_06_Rechte_Pflichten_Lehrkraefte.md": {
+        "slug": "mp06",
+        "title": "MP_06 — Rechte und Pflichten der Lehrkräfte",
+        "anki_lerndeck": "https://weitergehts.online/lerndecks/schulrecht-mp06-rechte-pflichten-lk/",
+        "themen_detail": "https://weitergehts.online/staatsexamen/schulrecht/6-rechte-pflichten-lehrkraefte/",
+        "card_count": 8,    # L01-L08
+        "falle_count": 10,  # FA01-FA10
+        "hochprior_count": 5,  # 5 Fallbeispiele
+    },
+    "MP_07_Disziplinar_Haftung.md": {
+        "slug": "mp07",
+        "title": "MP_07 — Disziplinarrecht und Haftung im Schuldienst",
+        "anki_lerndeck": "https://weitergehts.online/lerndecks/schulrecht-mp07-disziplinar-haftung/",
+        "themen_detail": "https://weitergehts.online/staatsexamen/schulrecht/7-disziplinar-haftung/",
+        "card_count": 8,    # H01-H08
+        "falle_count": 10,  # FA01-FA10
+        "hochprior_count": 4,  # 4 Fallbeispiele
+    },
     "MP_08_Kooperation_Bildungsdienste.md": {
         "slug": "mp08",
         "title": "MP_08 — Kooperation mit Bildungs- und Betreuungseinrichtungen",
@@ -44,6 +62,15 @@ MAPPING = {
         "card_count": 45,
         "falle_count": 11,
         "hochprior_count": 9,
+    },
+    "MP_09_Datenschutz_Schuelerakte.md": {
+        "slug": "mp09",
+        "title": "MP_09 — Datenschutz und Schülerakte im Schuldienst",
+        "anki_lerndeck": "https://weitergehts.online/lerndecks/schulrecht-mp09-datenschutz-schuelerakte/",
+        "themen_detail": "https://weitergehts.online/staatsexamen/schulrecht/9-datenschutz-schuelerakte/",
+        "card_count": 8,    # D01-D08
+        "falle_count": 10,  # FA01-FA10
+        "hochprior_count": 5,  # 5 Fallbeispiele
     },
 }
 
