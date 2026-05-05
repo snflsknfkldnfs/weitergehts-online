@@ -4,7 +4,7 @@ ZALGM § 16 Nr. 9 · 2. Staatsexamen MS Bayern · Schwerpunkt 9.1 Schülerunterl
 
 ## In aller Kürze
 
-Datenschutz im Schuldienst ist eine **Auskunfts-Trias** mit klarer **Verbot-vs.-Recht-Trennschärfe**: **Auskunfts-VERBOT an Dritte** (§ 14/4 LDO — Schule darf KEINE Auskunft an Personen außerhalb der Erziehungsberechtigten geben; nur mit ausdrücklicher Zustimmung oder bei günstiger Auswirkung mit Zustimmungs-Vermutung) — **NICHT** zu verwechseln mit „Notengeheimnis" zwischen SuS. Demgegenüber besteht das **subjektive Auskunfts-RECHT der SuS/EB**: Akten-Einsicht nach **§ 41/1 BaySchO** (drei Personenkreise — SuS ab Vollendung 14. Lj., aktuelle EB, frühere EB bis Vollendung 21. Lj.) plus **DSGVO Art. 15** (kumulativ, Bund/EU-Anker) plus **Notenauskunft** an SuS/EB (§ 14/3 LDO erlaubt ab endgültiger Festlegung der Zeugnisnoten). **§ 203 StGB** (Berufsgeheimnis-Strafrecht) greift NICHT pauschal für jede Lehrkraft, sondern primär für **Schulpsycholog:innen, Beratungslehrer:innen, Schul-Ärzt:innen**; reguläre LK unterliegen **§ 14 LDO + Amtsverschwiegenheit (Disziplinar-Tatbestand)**. **Bildrechte**: § 22 KUG verlangt **Einwilligung** zur Verbreitung/Schaustellung; § 23 KUG kennt vier Ausnahmen (Zeitgeschichte, Beiwerk, Versammlung, Kunst-Interesse) — **Klassenfotos** fallen NICHT darunter. **Verfassungs-Anker**: allgemeines Persönlichkeitsrecht aus **Art. 2/1 GG i.V.m. Art. 1/1 GG** (informationelle Selbstbestimmung, BVerfG Volkszählungsurteil 1983).
+Datenschutz im Schuldienst ist eine **Auskunfts-Trias** mit klarer **Verbot-vs.-Recht-Trennschärfe**: **Auskunfts-VERBOT an Dritte** (§ 14/4 LDO — Schule darf KEINE Auskunft an Personen außerhalb der Erziehungsberechtigten geben; nur mit ausdrücklicher Zustimmung oder bei günstiger Auswirkung mit Zustimmungs-Vermutung) — **NICHT** zu verwechseln mit „Notengeheimnis" zwischen SuS. Demgegenüber besteht das **subjektive Auskunfts-RECHT der SuS/EB**: Akten-Einsicht nach **§ 41/1 BaySchO** (drei Personenkreise — SuS ab Vollendung 14. Lj., aktuelle EB, frühere EB bis Vollendung 21. Lj.) plus **DSGVO Art. 15** (kumulativ, Bund/EU-Anker) plus **Notenauskunft** an SuS/EB (§ 14/3 LDO erlaubt ab endgültiger Festlegung der Zeugnisnoten). **§ 203 StGB** (Berufsgeheimnis-Strafrecht) greift NICHT pauschal für jede Lehrkraft. Tatbestandsseitig erfasst sind primär **Schulpsycholog:innen** (§ 203 Abs. 1 Nr. 2: staatlich anerkannte Berufspsycholog:innen) und **Schul-Ärzt:innen** (§ 203 Abs. 1 Nr. 1). **Beratungs-LK** fallen i.d.R. **NICHT** unter § 203 StGB — nur dann, wenn sie zugleich als staatlich anerkannte Sozialpädagog:in/Berufspsycholog:in tätig werden. Reguläre LK + reine Beratungs-LK unterliegen **§ 14 LDO + Amtsverschwiegenheit (Disziplinar-Tatbestand)** + ggf. **§ 353b StGB**. **Bildrechte**: § 22 KUG verlangt **Einwilligung** zur Verbreitung/Schaustellung; § 23 KUG kennt vier Ausnahmen (Zeitgeschichte, Beiwerk, Versammlung, Kunst-Interesse) — **Klassenfotos** fallen NICHT darunter. **Verfassungs-Anker**: allgemeines Persönlichkeitsrecht aus **Art. 2/1 GG i.V.m. Art. 1/1 GG** (informationelle Selbstbestimmung, BVerfG Volkszählungsurteil 1983).
 
 > **Hinweis** — Stoff-Überlapp: § 14 LDO Verschwiegenheit wird primär in **MP_06 A.3** entwickelt; MP_09 vertieft Abs. 3 (Vor-Festlegung-Verbot) + Abs. 4 (Drittauskunfts-Verbot) als datenschutzrechtlichen Kern. KUG / Persönlichkeitsrecht überlappt mit der **MP_05 K15-Falle** (SuS-Persönlichkeitsrecht). § 203 StGB hat eine Schnittstelle zu **MP_08** (Schulpsychologie / Beratungslehrer:innen / MSD-Datenaustausch).
 
@@ -13,7 +13,7 @@ Datenschutz im Schuldienst ist eine **Auskunfts-Trias** mit klarer **Verbot-vs.-
 ```mermaid
 flowchart TB
     GG["**GG / Bund** · Art. 2/1 i.V.m. Art. 1/1 GG (allg. Persönlichkeitsrecht — *nicht im Source-Repo verbatim — Anker fehlt*) · DSGVO Art. 6 + 15 + 17 (*nicht im Source-Repo verbatim — Anker fehlt*) · KUG § 22 + 23 · § 203 StGB (*nicht im Source-Repo verbatim — Anker fehlt*)"]:::bund
-    BAY["**BayEUG** · Art. 75 (Datenverarbeitungs-Anker — *nicht im Source-Repo verbatim — Anker fehlt*) · Art. 85 (Datenschutz Schulen — *nicht im Source-Repo verbatim — Anker fehlt*) · Art. 88 (Daten in Ordnungsmaßnahmen — *nicht im Source-Repo verbatim — Anker fehlt*)"]:::bay
+    BAY["**BayEUG** · Art. 75 (Unterrichtungspflicht ggü. EB — *nicht im Source-Repo verbatim — Anker fehlt*) · Art. 85 (Datenschutz Schulen — *nicht im Source-Repo verbatim — Anker fehlt*) · Art. 88 (Daten in Ordnungsmaßnahmen — *nicht im Source-Repo verbatim — Anker fehlt*)"]:::bay
     SCHO["**BaySchO** · § 41 (Schülerakte — Container, *Skeleton — Volltext nicht verfügbar; siehe § 41/1*) · § 41/1 (Einsichtsrecht — drei Personenkreise)"]:::vo
     LDO["**LDO** · § 14 (Verschwiegenheitspflicht — VERWEIS MP_06) · § 14/3 (Vor-Festlegung-Verbot Zeugnisnoten) · § 14/4 (Drittauskunfts-Verbot)"]:::vo
     KMBEK["**KMBek** · KMBek Schulberatung 29.10.2001 (Datenaustausch MSD/SBPS — siehe MP_08) · *Skeleton-Anker, Volltext nicht öffentlich gepullt*"]:::kmbek
@@ -38,11 +38,6 @@ flowchart TB
 | **KMBek / Sek.** | KMBek Schulberatung 29.10.2001 (Datenaustausch MSD/SBPS — Cross-Ref **MP_08**) · *Skeleton-Anker, Volltext nicht öffentlich gepullt* |
 
 ---
-
-
-!!! abstract "Begleit-Material"
-    - 🃏 [**Anki-Lerndeck** (8 Karten · 10 Falle · 5 Hochprior)](https://weitergehts.online/lerndecks/schulrecht-mp09-datenschutz-schuelerakte/)
-    - 📑 [**Themen-Übersichtsseite**](https://weitergehts.online/staatsexamen/schulrecht/9-datenschutz-schuelerakte/)
 
 # Teil A — Stoff
 
@@ -129,7 +124,7 @@ flowchart TB
 
 > Bis zur endgültigen Festlegung der Zeugnisnoten nach den für die einzelnen Schularten geltenden Bestimmungen dürfen Schülerinnen und Schülern oder Erziehungsberechtigten keine Auskünfte über das Vorrücken oder über Zeugnisnoten erteilt werden. § 6 Abs. 3 bleibt unberührt.
 
-*verified-1:1 · gesetze-bayern.de · LDO § 14/3 · Auszug, Wortlaut gekürzt*
+*verified-1:1 · gesetze-bayern.de · LDO § 14 Abs. 3*
 
 **Art. 15 DSGVO — Sinngehalt** (*nicht im Source-Repo verbatim — Anker fehlt*):
 
@@ -189,7 +184,7 @@ flowchart TB
 flowchart LR
     LK["**Lehrkraft**<br/>(Schulen)"]:::lk
     REG["**Reguläre LK**<br/>→ § 14 LDO + Amtsverschwiegenheit<br/>→ Disziplinar (§ 47 BeamtStG / BayDG)<br/>→ ggf. § 353b StGB"]:::reg
-    BG["**Berufsgeheimnisträger:in**<br/>(Schulpsych., Beratungs-LK, Schul-Ärzt:in)<br/>→ § 203 StGB (Strafrecht)<br/>+ § 14 LDO<br/>+ Disziplinar"]:::bg
+    BG["**Berufsgeheimnisträger:in**<br/>(Schulpsych. + Schul-Ärzt:in;<br/>Beratungs-LK NUR mit Doppel-Qual.)<br/>→ § 203 StGB (Strafrecht)<br/>+ § 14 LDO<br/>+ Disziplinar"]:::bg
 
     LK --> REG
     LK --> BG
@@ -298,7 +293,7 @@ flowchart TB
 | **D02** | **Auskunfts-Trias**: (1) Notenauskunft § 14/3 LDO (NACH Festlegung) · (2) Akten-Einsicht § 41/1 BaySchO · (3) DSGVO Art. 15 (kumulativ). Drei Pfade getrennt halten. |
 | **D03** | **§ 14/4 LDO ist DRITTAUSKUNFTS-VERBOT** — NICHT „Notengeheimnis". Auskunft an Dritte NUR mit ausdrücklicher EB-Zustimmung ODER bei „günstiger Auswirkung" + Zustimmungs-Vermutung. |
 | **D04** | **§ 14/3 LDO Vor-Festlegungs-Verbot**: VOR endgültiger Festlegung der Zeugnisnoten KEINE Auskunft an SuS/EB über Vorrücken oder Zeugnisnoten. |
-| **D05** | **§ 203 StGB greift NUR für Berufsgeheimnisträger:innen** (Schulpsych., Beratungs-LK, Schul-Ärzt:in). Reguläre LK → § 14 LDO + Amtsverschwiegenheit + Disziplinar (§ 47 BeamtStG / BayDG). |
+| **D05** | **§ 203 StGB greift NUR für Berufsgeheimnisträger:innen** kraft Beruf — primär Schulpsycholog:innen (Abs. 1 Nr. 2) + Schul-Ärzt:innen (Abs. 1 Nr. 1). Beratungs-LK NUR bei Doppel-Qualifikation (anerkannte Sozialpädagog:in/Berufspsycholog:in). Reguläre LK + reine Beratungs-LK → § 14 LDO + Amtsverschwiegenheit + Disziplinar (§ 47 BeamtStG / BayDG) + ggf. § 353b StGB. |
 | **D06** | **Berufsschule-Sonderpfad**: § 14/4 S. 3 LDO — Auskunftspflicht ggü. Ausbildenden / Arbeitgebern UNBERÜHRT. Datenfluss zur dualen Ausbildung gesetzlich gewollt. |
 | **D07** | **KUG § 22**: Verbreitung/Schaustellung von Bildnissen NUR mit Einwilligung. § 23 kennt **vier** Ausnahmen (Zeitgeschichte / Beiwerk / Versammlung / Kunst-Interesse). Klassenfoto fällt NICHT darunter. |
 | **D08** | **Persönlichkeitsrecht-Anker**: allgemeines Persönlichkeitsrecht / informationelle Selbstbestimmung aus **Art. 2/1 GG i.V.m. Art. 1/1 GG** (BVerfG Volkszählungsurteil 1983). NICHT BV Art. 100/101 — robuster Anker ist Bundesrecht. |
@@ -310,7 +305,7 @@ flowchart TB
 | FA | Falle | Korrektur |
 |---|---|---|
 | **FA01** | „§ 14/4 LDO ist das **Notengeheimnis** zwischen SuS — SuS dürfen Noten nicht vergleichen" | **NEIN**. Abs. 4 regelt Auskunft-an-DRITTE (Schule → Dritte). Note-Vergleiche zwischen SuS sind durch § 14/4 LDO NICHT verboten. Vor-Festlegungs-Verbot ist Abs. 3 (NICHT Abs. 4). |
-| **FA02** | „Jede Lehrkraft fällt unter § 203 StGB" | **NEIN**. § 203 StGB greift **berufsbezogen** — primär Schulpsycholog:innen, Beratungs-LK, Schul-Ärzt:innen. Reguläre LK → § 14 LDO + § 353b StGB + Disziplinar. |
+| **FA02** | „Jede Lehrkraft fällt unter § 203 StGB" | **NEIN**. § 203 StGB greift **berufsbezogen** — primär Schulpsycholog:innen (Abs. 1 Nr. 2) + Schul-Ärzt:innen (Abs. 1 Nr. 1). Beratungs-LK i.d.R. NICHT erfasst (nur bei Doppel-Qualifikation als staatl. anerkannte Sozialpädagog:in/Berufspsycholog:in). Reguläre LK → § 14 LDO + § 353b StGB + Disziplinar. |
 | **FA03** | „§ 41/1 BaySchO sagt 'ab 14 Lj.'" | **NEIN**. Wortlaut ist **„ab Vollendung des 14. Lebensjahres"** (Wirkung: ab dem Tag des 14. Geburtstages). |
 | **FA04** | „Die DSGVO ersetzt § 41/1 BaySchO als Akten-Einsichtsrecht" | **NEIN**. Beide bestehen **kumulativ** — § 41/1 = Akten-Einsicht, Art. 15 DSGVO = Datenauskunft; getrennte Anspruchsgrundlagen. |
 | **FA05** | „Klassenfoto auf Schul-Homepage = Beiwerk iSd § 23 Nr. 2 KUG — keine Einwilligung nötig" | **NEIN**. Klassenfoto IST KEIN Beiwerk (SuS sind Hauptmotiv). § 22 KUG-Einwilligung erforderlich. |
@@ -444,24 +439,24 @@ flowchart TB
 *[§ 23 KUG]: KUG § 23 — Ausnahmen (Zeitgeschichte / Beiwerk / Versammlung / Kunst-Interesse + Gegen-Ausnahme berechtigtes Interesse)
 *[§ 22]: KUG § 22 — Recht am eigenen Bild
 *[§ 23]: KUG § 23 — Ausnahmen vom Einwilligungs-Erfordernis
-*[§ 203 StGB]: StGB § 203 — Verletzung von Privatgeheimnissen (Berufsgeheimnis-Strafrecht; Schulpsych./Beratungs-LK/Schul-Ärzt:in)
+*[§ 203 StGB]: StGB § 203 — Verletzung von Privatgeheimnissen (Berufsgeheimnis; Schulpsych. + Schul-Ärzt:in; Beratungs-LK nur mit Doppel-Qualifikation)
 *[§ 203]: StGB § 203 — Verletzung von Privatgeheimnissen
 *[§ 353b StGB]: StGB § 353b — Verletzung des Dienstgeheimnisses (für reguläre LK ohne § 203-Berufseigenschaft)
 *[§ 353b]: StGB § 353b — Verletzung des Dienstgeheimnisses
 *[Art. 15 DSGVO]: DSGVO Art. 15 — Auskunftsrecht der betroffenen Person (kumulativ neben § 41/1 BaySchO)
 *[Art. 6 DSGVO]: DSGVO Art. 6 — Rechtmäßigkeit der Verarbeitung (lit. a Einwilligung, lit. c gesetzliche Pflicht, lit. e öffentliche Aufgabe)
 *[Art. 17 DSGVO]: DSGVO Art. 17 — Recht auf Löschung („Recht auf Vergessenwerden")
-*[Art. 75 BayEUG]: BayEUG Art. 75 — Datenverarbeitungs-Anker (Befugnis-Norm, i.V.m. BaySchO)
+*[Art. 75 BayEUG]: BayEUG Art. 75 — Unterrichtungspflicht ggü. Erziehungsberechtigten (NICHT Datenverarbeitungs-Befugnis)
 *[Art. 85 BayEUG]: BayEUG Art. 85 — Datenschutz Schulen (DSGVO-Konkretisierung Bayern)
 *[Art. 88 BayEUG]: BayEUG Art. 88 — Daten in Ordnungsmaßnahmen
 *[Art. 88/4]: BayEUG Art. 88 Abs. 4 — Auskünfte an frühere EB volljähriger SuS
-*[Art. 75/1]: BayEUG Art. 75 Abs. 1 — Datenverarbeitungs-Anker
+*[Art. 75/1]: BayEUG Art. 75 Abs. 1 — Unterrichtungspflicht ggü. Erziehungsberechtigten
 *[Art. 2/1 GG]: GG Art. 2 Abs. 1 — Allgemeines Persönlichkeitsrecht (i.V.m. Art. 1/1 GG)
 *[Art. 1/1 GG]: GG Art. 1 Abs. 1 — Würde des Menschen (Anker für allg. Persönlichkeitsrecht)
 *[informationelle Selbstbestimmung]: BVerfG Volkszählungsurteil 1983 — Schutz vor unbegrenzter Datenerhebung; verfassungsrechtlicher Anker für DSGVO
 *[Schülerakte]: BaySchO § 41 — Aufnahme/Personalien/Zeugnisse/Bescheide; Container, Volltext via § 41/1
 *[Leistungsnachweise]: BaySchO § 37 S. 2 Nr. 2 — Klassenarbeiten/Tests/Klausuren (eigener Einsichtspfad nach Abschluss-Feststellung)
-*[Berufsgeheimnis]: § 203 StGB — Geheimnisträger:innen kraft Beruf (Schulpsych., Beratungs-LK, Schul-Ärzt:in)
+*[Berufsgeheimnis]: § 203 StGB — Geheimnisträger:innen kraft Beruf (Schulpsych. + Schul-Ärzt:in; Beratungs-LK nur bei Doppel-Qualifikation als anerkannte Sozialpädagog:in/Berufspsycholog:in)
 *[Amtsverschwiegenheit]: § 14 LDO + BeamtStG § 37 — beamtenrechtliche Verschwiegenheit (reguläre LK)
 *[Schweigepflichts-Entbindung]: schriftliche, ausdrückliche Erklärung der/des Berechtigten, die Schweigepflicht für definierten Zweck aufzuheben
 *[Vor-Festlegungs-Verbot]: § 14/3 LDO — keine Auskunft über Vorrücken/Zeugnisnoten VOR endgültiger Festlegung
