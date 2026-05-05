@@ -42,11 +42,6 @@ flowchart TB
 
 ---
 
-
-!!! abstract "Begleit-Material"
-    - 🃏 [**Anki-Lerndeck** (8 Karten · 10 Falle · 5 Hochprior)](https://weitergehts.online/lerndecks/schulrecht-mp06-rechte-pflichten-lk/)
-    - 📑 [**Themen-Übersichtsseite**](https://weitergehts.online/staatsexamen/schulrecht/6-rechte-pflichten-lehrkraefte/)
-
 # Teil A — Stoff
 
 ## A.1 Pflichten-Doppelstruktur (Beamtenstatus ↔ LK-spezifisch)
@@ -208,7 +203,7 @@ flowchart TB
 
 **Dienstvergehen + Maßnahmenkatalog** (verbatim · verified-1:1 · gesetze-bayern.de):
 
-> **§ 47 BeamtStG (Bundesrecht)** definiert das Dienstvergehen — **Art. 6 BayDG enthält NICHT die Tatbestandsdefinition**, sondern den Maßnahmenkatalog. Tatbestand: schuldhafte Pflichtverletzung; außerdienstliches Verhalten erfasst, wenn es das Ansehen des Beamtentums bedeutsam beeinträchtigt.
+> **§ 47 BeamtStG (Bundesrecht)** definiert das Dienstvergehen — **Art. 6 BayDG enthält NICHT die Tatbestandsdefinition**, sondern den Maßnahmenkatalog. Tatbestand (§ 47/1 BeamtStG): schuldhafte Pflichtverletzung; außerdienstliches Verhalten erfasst, wenn es nach den Umständen des Einzelfalls in besonderem Maße geeignet ist, das Vertrauen in einer für ihr Amt bedeutsamen Weise zu beeinträchtigen.
 
 > **Art. 6 Abs. 1 BayDG — 5-Stufen-Katalog (Lebenszeitbeamte)**:
 > 1. Verweis (Art. 7)

@@ -411,3 +411,18 @@ Material rendert das als <abbr title="..."> mit gestrichelter Unterstreichung.
 *[§ 163]: StPO § 163 — Aufgaben und Befugnisse der Polizei im Ermittlungsverfahren.
 *[§ 161 StPO]: StPO § 161 — Auskunftsrecht der Staatsanwaltschaft (Ermittlungsverfahren).
 *[§ 163 StPO]: StPO § 163 — Aufgaben und Befugnisse der Polizei im Ermittlungsverfahren.
+
+<!-- mp04-2026-05-05: MP_04 Schulartenrecht / Schullaufbahn — Hover-Coverage-Erweiterung -->
+*[§ 12]: MSO § 12 — Leistungsnachweise Mittelschule (Container-Eintrag → § 12/1, /2, /3, /4).
+*[§ 12/1]: MSO § 12 Abs. 1 — Lehrerkonferenz legt LNW-Grundsätze vor Schuljahresbeginn fest; Bekanntgabe an SuS+EB.
+*[§ 12/2]: MSO § 12 Abs. 2 — Ankündigungs-Frist 1 Woche · max. 1/Tag · max. 2/Woche · Nachtermin 1 Woche · Ersatzprüfung 2 Wochen vorher · 1×/Halbjahr.
+*[§ 12/4]: MSO § 12 Abs. 4 — Projektprüfung Jgst. 9 Regelklasse · WiB + berufsorientierendes Wahlpflichtfach · T 240 / W&K 120 / E&S 150 Min.
+*[§ 28]: BaySchO § 28 — Hausaufgaben (durchschnittliches Leistungsvermögen · GS bis 1 Stunde · Sonn-/Feiertage/Ferien frei).
+*[§ 7]: MSO § 7 — M-Zug-Aufnahme: M7 ≤ 2,66 (D+M+E) · M8/9/10 ≤ 2,33 · M10 zus. Quali.
+*[§ 10]: MSO § 10 — MS-Schülerpflichten (schulartspezifisch).
+*[§ 1626]: BGB § 1626 — Elterliche Sorge (Eltern-Antragsrecht-Anker, MP_04-randständig).
+*[Art. 7b]: BayEUG Art. 7b — Schulen besonderer Art (schulartübergreifende Modellprojekte; NICHT „Profil Inklusion").
+*[Art. 53]: BayEUG Art. 53 — Vorrücken/Wiederholen (Kern-Anker MP_04; out-of-repo verbatim).
+*[§ 32/2 Nr]: BaySchO § 32 Abs. 2 Nr. — 7-Maßnahmen-Katalog Individuelle Unterstützung; Nr. 6 = HA-Differenzierung.
+*[§ 34/1]: MSO § 34 Abs. 1 — Quabi-Voraussetzung: Berufsabschluss mit Notendurchschnitt mindestens 3,0.
+*[§ 34/2]: MSO § 34 Abs. 2 — Quabi: Englischkenntnisse durch Note „ausreichend" (= Note 4) nachgewiesen.

@@ -27,6 +27,15 @@ MAPPING = {
         "falle_count": 12,
         "hochprior_count": 10,
     },
+    "MP_04_Schulartenrecht_Schullaufbahn.md": {
+        "slug": "mp04",
+        "title": "MP_04 — Schulartenrecht · Schullaufbahn-Steuerung",
+        "anki_lerndeck": "https://weitergehts.online/lerndecks/schulrecht-mp04-schulartenrecht-schullaufbahn/",
+        "themen_detail": "https://weitergehts.online/staatsexamen/schulrecht/4-schulartenrecht-schullaufbahn/",
+        "card_count": 8,    # S01-S08
+        "falle_count": 10,  # FA01-FA10
+        "hochprior_count": 5,  # 5 Fallbeispiele
+    },
     "MP_05_Rechte_Pflichten_Schueler.md": {
         "slug": "mp05",
         "title": "MP_05 — Rechte und Pflichten der Schüler:innen",

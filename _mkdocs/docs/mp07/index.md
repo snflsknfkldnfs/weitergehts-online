@@ -41,11 +41,6 @@ flowchart TB
 
 ---
 
-
-!!! abstract "Begleit-Material"
-    - 🃏 [**Anki-Lerndeck** (8 Karten · 10 Falle · 4 Hochprior)](https://weitergehts.online/lerndecks/schulrecht-mp07-disziplinar-haftung/)
-    - 📑 [**Themen-Übersichtsseite**](https://weitergehts.online/staatsexamen/schulrecht/7-disziplinar-haftung/)
-
 # Teil A — Stoff
 
 ## A.1 Haftungsdreieck — drei Pfade nebeneinander
@@ -134,7 +129,7 @@ flowchart LR
 
 ## A.3 Disziplinarrecht — BayDG Art. 6 ff. (5+2-Stufen-Katalog)
 
-> **§ 47 BeamtStG (Bundesrecht — Out-of-Repo, Anker)** definiert das **Dienstvergehen** — **Art. 6 BayDG enthält NICHT die Tatbestandsdefinition**, sondern den Maßnahmenkatalog. Tatbestand: schuldhafte Pflichtverletzung; außerdienstliches Verhalten erfasst, wenn es das Ansehen des Beamtentums bedeutsam beeinträchtigt.
+> **§ 47 BeamtStG (Bundesrecht — Out-of-Repo, Anker)** definiert das **Dienstvergehen** — **Art. 6 BayDG enthält NICHT die Tatbestandsdefinition**, sondern den Maßnahmenkatalog. Tatbestand (§ 47/1 BeamtStG): schuldhafte Pflichtverletzung; außerdienstliches Verhalten erfasst, wenn es nach den Umständen des Einzelfalls in besonderem Maße geeignet ist, das Vertrauen in einer für ihr Amt bedeutsamen Weise zu beeinträchtigen.
 
 *sinngemäß · § 47 BeamtStG · nicht im Source-Repo verbatim — Anker fehlt*
 
@@ -251,7 +246,7 @@ Das Strafrecht trifft die Lehrkraft **persönlich** (Schuldprinzip — keine Sta
 
 **Schul-Relevanz** (Cross-Ref **MP_08** Beratungsdienste):
 
-- **Schulpsycholog:innen**, **Beratungslehrkräfte** unterliegen § 203 StGB.
+- **Schulpsycholog:innen** (§ 203/1 Nr. 2: anerkannte Berufspsycholog:innen) und **Schul-Ärzt:innen** (§ 203/1 Nr. 1) unterliegen § 203 StGB. **Beratungslehrkräfte** fallen i.d.R. **NICHT** darunter — nur bei Doppel-Qualifikation als anerkannte Sozialpädagog:in (Nr. 6) oder Berufspsycholog:in (Nr. 2).
 - **Reguläre Lehrkräfte** unterliegen idR **NICHT** § 203 StGB direkt — sondern § 14 LDO (Verschwiegenheitspflicht — siehe MP_06) + Amtsverschwiegenheit.
 - Bruch der Verschwiegenheit kann ABER Disziplinarmaßnahme nach BayDG Art. 6 auslösen (Tatbestand § 47 BeamtStG).
 
@@ -271,7 +266,7 @@ Marginale Relevanz (Extremfälle), Vollständigkeit halber genannt.
 
 !!! warning "⚠ Fallen Strafrecht-Schnittstelle"
     - Strafe trifft LK **persönlich** (Schuldprinzip) — KEIN Rückgriff über Freistaat.
-    - § 203 StGB greift NICHT für jede LK — nur für Beratungslehrer:innen + Schulpsycholog:innen.
+    - § 203 StGB greift NICHT für jede LK — primär Schulpsycholog:innen (Nr. 2) + Schul-Ärzt:innen (Nr. 1); reine Beratungs-LK NUR mit Doppel-Qualifikation.
     - § 14 LDO Verschwiegenheitsbruch ist primär **Disziplinar**-Tatbestand (Cross-Ref MP_06 A.3).
     - Strafverfahren UND Disziplinarverfahren laufen **kumulativ** — kein Verstoß gegen Art. 103/3 GG.
 
@@ -312,7 +307,7 @@ Drei Stufen — entscheidend für Rückgriff (Amtshaftung) und Maßnahmen-Schwer
 | **H05** | **Verschuldensformen-Faustregel**: einfache Fahrlässigkeit „kann vorkommen" → kein Rückgriff · grobe Fahrlässigkeit „darf nicht vorkommen" → Rückgriff möglich · Vorsatz → Rückgriff sicher (Art. 34 S. 2 GG). |
 | **H06** | **Berufsbeamtentum-Anker**: **GG Art. 33/5** (hergebrachte Grundsätze) → Streikverbot, Treuepflicht. NICHT BV Art. 130. |
 | **H07** | **ne bis in idem (Art. 103/3 GG)**: Strafrecht + Disziplinar laufen **kumulativ** — keine Doppelbestrafung iSd Art. 103/3 GG (gilt nur „allgemeine Strafgesetze"). |
-| **H08** | **§ 203 StGB-Reichweite**: Greift NUR für Berufsgeheimnisträger:innen (Schulpsych., Beratungslehrer:innen). Reguläre LK → § 14 LDO + Amtsverschwiegenheit (Disziplinar-Tatbestand bei Bruch). |
+| **H08** | **§ 203 StGB-Reichweite**: Greift NUR für Berufsgeheimnisträger:innen kraft Beruf — primär Schulpsycholog:innen (§ 203/1 Nr. 2) + Schul-Ärzt:innen (Nr. 1). Beratungs-LK NUR bei Doppel-Qualifikation als anerkannte Sozialpädagog:in/Berufspsycholog:in. Reguläre LK + reine Beratungs-LK → § 14 LDO + Amtsverschwiegenheit + ggf. § 353b StGB. |
 
 ---
 
@@ -328,7 +323,7 @@ Drei Stufen — entscheidend für Rückgriff (Amtshaftung) und Maßnahmen-Schwer
 | **FA06** | „Eine Ermahnung ist eine Disziplinarmaßnahme" | **NEIN** (Art. 7/1 S. 2 BayDG). Zurechtweisungen/Ermahnungen/Rügen OHNE ausdrücklichen Verweis-Titel sind KEINE Disziplinarmaßnahme. |
 | **FA07** | „Der Verweis kann per E-Mail ausgesprochen werden" | **NEIN**. Art. 7/1 S. 3: schriftlich UND **nicht in elektronischer Form** — Papierform. |
 | **FA08** | „Kürzung der Dienstbezüge bis zur Hälfte des Gehalts auf 5 Jahre" | **NEIN**. Art. 9: max. **1/5** auf max. **3 Jahre** (Eingangsamt 5 J). |
-| **FA09** | „Jede Lehrkraft fällt unter § 203 StGB" | **NEIN**. § 203 StGB greift nur für **Berufsgeheimnisträger:innen** (Schulpsych., Beratungslehrer:innen). Reguläre LK → § 14 LDO + Amtsverschwiegenheit. |
+| **FA09** | „Jede Lehrkraft fällt unter § 203 StGB" | **NEIN**. § 203 StGB greift berufsbezogen — primär Schulpsycholog:innen (Nr. 2) + Schul-Ärzt:innen (Nr. 1). Beratungs-LK i.d.R. NICHT erfasst (nur bei Doppel-Qualifikation als anerkannte Sozialpädagog:in/Berufspsycholog:in). Reguläre LK → § 14 LDO + Amtsverschwiegenheit + ggf. § 353b StGB. |
 | **FA10** | „Probebeamt:in kann zurückgestuft werden" | **NEIN**. Art. 6/5: Probe-/Widerrufsbeamt:innen NUR Verweis + Geldbuße zulässig (geringerer Schutzstandard). |
 
 ---
@@ -360,7 +355,7 @@ Drei Stufen — entscheidend für Rückgriff (Amtshaftung) und Maßnahmen-Schwer
 1. **§ 14/2 LDO** (Cross-Ref **MP_06 A.3** Verschwiegenheits-Trias): „Auskünfte an Presse, Rundfunk und Fernsehen erteilt **nur die Schulleiterin oder der Schulleiter** oder die von ihr/ihm beauftragte Lehrkraft."
 2. **§ 14/1 LDO**: Amtsverschwiegenheit auch nach Beendigung des Dienstverhältnisses.
 3. **Disziplinar**: § 47 BeamtStG (Tatbestand) erfüllt → Maßnahmen-Katalog BayDG Art. 6: realistische Stufe **Verweis (Art. 7)**, ggf. **Geldbuße (Art. 8)** je Schwere/Wiederholung.
-4. **§ 203 StGB**? Greift NUR, wenn LK Schmidt Berufsgeheimnisträger:in ist (z. B. Beratungslehrkraft). Bei regulärer LK: **NEIN**, sondern § 14 LDO + Amtsverschwiegenheit.
+4. **§ 203 StGB**? Greift NUR, wenn LK Schmidt Berufsgeheimnisträger:in kraft Beruf ist (Schulpsycholog:in nach Nr. 2 oder Schul-Ärzt:in nach Nr. 1; Beratungslehrkraft nur bei Doppel-Qualifikation als anerkannte Sozialpädagog:in). Bei regulärer LK: **NEIN**, sondern § 14 LDO + Amtsverschwiegenheit + ggf. § 353b StGB.
 5. **Zivil**: Persönlichkeitsrechtsverletzung der SuS denkbar — Außenhaftung Freistaat (§ 839 BGB + Art. 34 GG); Rückgriff bei grober Fahrlässigkeit.
 
 **Antwortkette**: § 14/2 LDO Verstoß + § 14/1 Vertraulichkeit → § 47 BeamtStG Tatbestand → BayDG Art. 6 Maßnahme (Verweis Art. 7 oder Geldbuße Art. 8) → Außenhaftung Freistaat → § 203 StGB-Anker NUR bei Berufsgeheimnisträgerschaft prüfen.
@@ -426,7 +421,7 @@ Drei Stufen — entscheidend für Rückgriff (Amtshaftung) und Maßnahmen-Schwer
 *[Art. 34 GG]: GG Art. 34 — Staatshaftung + Rückgriff (S. 2 nur bei Vorsatz/grobe Fahrlässigkeit)
 *[Art. 33/5 GG]: GG Art. 33 Abs. 5 — hergebrachte Grundsätze des Berufsbeamtentums (Streikverbot)
 *[Art. 103/3 GG]: GG Art. 103 Abs. 3 — ne bis in idem (Doppelbestrafungsverbot, „allgemeine Strafgesetze")
-*[§ 203 StGB]: StGB § 203 — Verletzung von Privatgeheimnissen (Berufsgeheimnis Schulpsych./Beratungs-LK)
+*[§ 203 StGB]: StGB § 203 — Verletzung von Privatgeheimnissen (Berufsgeheimnis; Schulpsych. + Schul-Ärzt:in; Beratungs-LK nur mit Doppel-Qualifikation)
 *[§ 229 StGB]: StGB § 229 — fahrlässige Körperverletzung
 *[§ 174 StGB]: StGB § 174 — sexueller Missbrauch von Schutzbefohlenen
 *[§ 232 StGB]: StGB § 232 — Menschenhandel (marginale Schul-Relevanz)

@@ -102,6 +102,7 @@ hooks:
 nav:
   - Übersicht: index.md
   - "MP_03 Gliederung Bildungssystem": mp03/index.md
+  - "MP_04 Schulartenrecht Schullaufbahn": mp04/index.md
   - "MP_05 Rechte und Pflichten Schüler:innen": mp05/index.md
   - "MP_06 Rechte und Pflichten Lehrkräfte": mp06/index.md
   - "MP_07 Disziplinarrecht und Haftung": mp07/index.md
