@@ -12,7 +12,7 @@ import urllib.error
 from pathlib import Path
 
 ANKI_URL = "http://localhost:8765"
-DECK_FILES = ["MP_03_cards.json", "MP_05_cards.json", "MP_06_cards.json", "MP_07_cards.json", "MP_08_cards.json", "MP_09_cards.json"]
+DECK_FILES = ["MP_01_cards.json", "MP_02_cards.json", "MP_03_cards.json", "MP_04_cards.json", "MP_05_cards.json", "MP_06_cards.json", "MP_07_cards.json", "MP_08_cards.json", "MP_09_cards.json"]
 
 
 def anki(action: str, **params) -> dict:
