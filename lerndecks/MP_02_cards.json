@@ -1,0 +1,181 @@
+{
+  "deck": "Schulrecht::MP_02 — Hausaufgaben + Beschwerde",
+  "ankiconnect_status": "offline_2026-05-05",
+  "source": "/sessions/sleepy-jolly-fermi/mnt/MuendlichePrüfungen/Schulrecht/Podcasts/Skripts/MP_02_Hausaufgaben_Beschwerde.md",
+  "card_counts": {
+    "A_top_n": 8,
+    "B_falle_atlas": 10,
+    "C_verbatim": 6,
+    "total": 24
+  },
+  "cards": [
+    {
+      "klasse": "A",
+      "id": "H01",
+      "front": "H01 · § 28/1 BaySchO Drei-Sätze-Logik?",
+      "back": "S. 1: Stellpflicht + Maßstab 'durchschnittliches Leistungsvermögen + angemessene Zeit + Berücksichtigung NM-Unterricht/praktische Ausbildung berufl. Schulen'. S. 2: LK-Konferenz legt vor Schuljahresbeginn die Grundsätze fest (Pflicht!). S. 3: Sonntage UND Feiertage UND Ferien sind freizuhalten — drei Kategorien.",
+      "tags": ["schulrecht","mp02","klasse-a","H01","§28 BaySchO"]
+    },
+    {
+      "klasse": "A",
+      "id": "H02",
+      "front": "H02 · MS-Spezifik — gibt es eine HA-Stundenobergrenze?",
+      "back": "NEIN für MS. § 28/2 S. 1 BaySchO 'bis zu einer Stunde' gilt NUR Grundschulen + Grundschulstufen Förderschulen. MS hat keine feste Stundenzahl — Maßstab bleibt 'angemessen' + LK-Konferenz-Grundsätze.",
+      "tags": ["schulrecht","mp02","klasse-a","H02","MS-Spezifik"]
+    },
+    {
+      "klasse": "A",
+      "id": "H03",
+      "front": "H03 · Wo steht die HA-Differenzierung?",
+      "back": "§ 32/2 Nr. 6 BaySchO! NICHT in § 28. Schranke § 32/1 S. 1: 'soweit nicht die Leistungsfeststellung berührt wird' — Abgrenzung zu Nachteilsausgleich (§ 33). 7-Maßnahmen-Katalog Abs. 2 (Differenzierung = Nr. 6).",
+      "tags": ["schulrecht","mp02","klasse-a","H03","Differenzierung"]
+    },
+    {
+      "klasse": "A",
+      "id": "H04",
+      "front": "H04 · Beschwerde-Eskalation Art. 56/2 Nr. 5 BayEUG?",
+      "back": "SuS/EB → NACHEINANDER Lehrkraft → Schulleitung → Schulforum (NICHT parallel!). Wortlaut: 'sich nacheinander an Lehrkräfte, an die Schulleiterin oder den Schulleiter und an das Schulforum zu wenden'. Maßstab: 'entsprechend ihrem Alter und ihrer Stellung'.",
+      "tags": ["schulrecht","mp02","klasse-a","H04","Beschwerde"]
+    },
+    {
+      "klasse": "A",
+      "id": "H05",
+      "front": "H05 · Eltern-Mitwirkungspflicht Art. 76 BayEUG?",
+      "back": "Zwei verschiedene Pflichten: 'achten auf' UND 'unterstützen'. Bei minderj. Schulpflichtigen Pflicht zu regelmäßiger Unterrichts-Teilnahme (Abs. 2). Mitwirkung ist Gesetzespflicht — nicht 'nice to have'.",
+      "tags": ["schulrecht","mp02","klasse-a","H05","Eltern"]
+    },
+    {
+      "klasse": "A",
+      "id": "H06",
+      "front": "H06 · Erziehungsmaßnahme bei nicht erledigten HA?",
+      "back": "Art. 86/1 BayEUG (verified-1:1): 'Dazu zählt bei nicht hinreichender Beteiligung der Schülerin oder des Schülers am Unterricht auch eine Nacharbeit unter Aufsicht einer Lehrkraft.' Aufsicht greift § 5 LDO. Subsidiarität: erst Erziehungs-, dann Ordnungsmaßnahme.",
+      "tags": ["schulrecht","mp02","klasse-a","H06","Nacharbeit"]
+    },
+    {
+      "klasse": "A",
+      "id": "H07",
+      "front": "H07 · Dürfen HA benotet werden? (Drift-Falle!)",
+      "back": "NEIN — aber: § 28 BaySchO sagt zur Benotung NICHTS. Verbot folgt aus LNW-Definition (Art. 52 BayEUG-Anker) + Lehrplan-Vorgaben — HA dienen Einübung, nicht Leistungsbewertung. Schlechte HA-Note als Sanktion = unzulässig. NIE 'aus § 28 abgeleitet'!",
+      "tags": ["schulrecht","mp02","klasse-a","H07","HA-LNW-Drift"]
+    },
+    {
+      "klasse": "A",
+      "id": "H08",
+      "front": "H08 · KL-Stufenplan bei HA-Beschwerde?",
+      "back": "1. Sondierungsgespräch Mutter (Arbeitsplatz · Ablenkungen · Block-Arbeit · Lernbeeinträchtigungen). 2. Austausch Fach-LK (KL-Koordinationspflicht LDO § 6/2-Anker). 3. LK-Konferenz (§ 28/1 S. 2 Grundsätze). 4. Elternbeirat (Art. 64/65-Anker). 5. SL (Art. 57-Anker).",
+      "tags": ["schulrecht","mp02","klasse-a","H08","KL-Stufenplan"]
+    },
+    {
+      "klasse": "B",
+      "id": "M02-FA01",
+      "front": "FA01 · '§ 28 BaySchO verbietet HA-Benotung'?",
+      "back": "NEIN (Drift-Falle). § 28 sagt zur Benotung NICHTS. Verbot folgt aus LNW-Definition (Art. 52 BayEUG-Anker) + Lehrplan. NIE 'aus § 28 abgeleitet'.",
+      "tags": ["schulrecht","mp02","klasse-b","M02-FA01"]
+    },
+    {
+      "klasse": "B",
+      "id": "M02-FA02",
+      "front": "FA02 · 'MS hat 1-Stunde-Obergrenze für HA'?",
+      "back": "NEIN. 'bis zu einer Stunde' gilt NUR GS + GS-Stufe FöS (§ 28/2 S. 1). MS hat keine feste Stundenzahl — Maßstab 'angemessen' + LK-Konferenz-Grundsätze.",
+      "tags": ["schulrecht","mp02","klasse-b","M02-FA02"]
+    },
+    {
+      "klasse": "B",
+      "id": "M02-FA03",
+      "front": "FA03 · 'HA-Differenzierung steht in § 28 BaySchO'?",
+      "back": "NEIN. Steht in § 32/2 Nr. 6 BaySchO! § 28 selbst regelt nur Zweck + Maßstab + LK-Konferenz-Grundsätze + Sonn-/Feiertage/Ferien.",
+      "tags": ["schulrecht","mp02","klasse-b","M02-FA03"]
+    },
+    {
+      "klasse": "B",
+      "id": "M02-FA04",
+      "front": "FA04 · 'Beschwerde gleichzeitig an LK + SL + Schulforum'?",
+      "back": "NEIN. Art. 56/2 Nr. 5 BayEUG sagt 'nacheinander' — sequenziell, NICHT parallel. Wortlaut: 'sich nacheinander an Lehrkräfte, an die Schulleiterin oder den Schulleiter und an das Schulforum zu wenden'.",
+      "tags": ["schulrecht","mp02","klasse-b","M02-FA04"]
+    },
+    {
+      "klasse": "B",
+      "id": "M02-FA05",
+      "front": "FA05 · 'Sonntage sind frei, Samstage nicht'?",
+      "back": "VORSICHT. § 28/1 S. 3 nennt drei Kategorien: Sonntage UND Feiertage UND Ferien. Samstage nicht explizit geschützt — aber 'angemessene Zeit' (S. 1) als Schranke. Wochenend-HA bis Sonntag-Belastung = Verstoß.",
+      "tags": ["schulrecht","mp02","klasse-b","M02-FA05"]
+    },
+    {
+      "klasse": "B",
+      "id": "M02-FA06",
+      "front": "FA06 · 'LK-Konferenz-Grundsätze sind optional'?",
+      "back": "NEIN. § 28/1 S. 2 BaySchO: 'legt vor Unterrichtsbeginn des Schuljahres die Grundsätze … fest' — Pflicht.",
+      "tags": ["schulrecht","mp02","klasse-b","M02-FA06"]
+    },
+    {
+      "klasse": "B",
+      "id": "M02-FA07",
+      "front": "FA07 · 'Schlechte Note in HA als Sanktion zulässig'?",
+      "back": "NEIN. HA ≠ LNW (Art. 52 BayEUG-Anker + Lehrplan). Stattdessen Nacharbeit unter Aufsicht (Art. 86/1 verbatim).",
+      "tags": ["schulrecht","mp02","klasse-b","M02-FA07"]
+    },
+    {
+      "klasse": "B",
+      "id": "M02-FA08",
+      "front": "FA08 · 'Das ist Sache der Fachlehrkraft, KL hat damit nichts zu tun'?",
+      "back": "NEIN. LDO § 6/2 KL-Koordinationspflicht (Anker) + LDO § 3/3 LK-Kooperationspflicht (Anker). 'Nicht mein Problem' ist dienstrechtlich problematisch — Cross-Ref MP_06.",
+      "tags": ["schulrecht","mp02","klasse-b","M02-FA08"]
+    },
+    {
+      "klasse": "B",
+      "id": "M02-FA09",
+      "front": "FA09 · 'Eltern können HA-Erledigung verweigern, wenn übertrieben'?",
+      "back": "NEIN. Art. 76 BayEUG: Eltern-Mitwirkungspflicht (Pflichtgesetz). Bei systematischem Eltern-Boykott: Mitteilung SL + Art. 75 BayEUG-Anker EB-Unterrichtung + ggf. Jugendamt.",
+      "tags": ["schulrecht","mp02","klasse-b","M02-FA09"]
+    },
+    {
+      "klasse": "B",
+      "id": "M02-FA10",
+      "front": "FA10 · 'Elternbeirat entscheidet die Beschwerde der einzelnen Mutter'?",
+      "back": "NEIN (Art. 64/65-Anker). Elternbeirat ist Mitwirkungs-/Anhörungsorgan für allgemeine Fragen — kein Individual-Beschwerde-Mandat. Individual-Pfad = Art. 56/2 Nr. 5 (LK → SL → Schulforum).",
+      "tags": ["schulrecht","mp02","klasse-b","M02-FA10"]
+    },
+    {
+      "klasse": "C",
+      "id": "M02-V01",
+      "front": "Verbatim · § 28/1 S. 1 BaySchO (verified-1:1)?",
+      "back": "'Um den Lehrstoff einzuüben und die Schülerinnen und Schüler zu eigener Tätigkeit anzuregen, werden Hausaufgaben gestellt, die bei durchschnittlichem Leistungsvermögen in angemessener Zeit unter Berücksichtigung der Anforderungen des Nachmittagsunterrichts sowie der Inanspruchnahme durch die praktische Ausbildung an beruflichen Schulen bearbeitet werden können.' (verified-1:1)",
+      "tags": ["schulrecht","mp02","klasse-c","verbatim","§28/1 BaySchO"]
+    },
+    {
+      "klasse": "C",
+      "id": "M02-V02",
+      "front": "Verbatim · § 28/1 S. 2 + S. 3 BaySchO (verified-1:1)?",
+      "back": "S. 2: 'Die Lehrerkonferenz legt vor Unterrichtsbeginn des Schuljahres die Grundsätze für die Hausaufgaben fest.' S. 3: 'Sonntage, Feiertage und Ferien sind von Hausaufgaben freizuhalten.' (verified-1:1)",
+      "tags": ["schulrecht","mp02","klasse-c","verbatim","§28/1 BaySchO"]
+    },
+    {
+      "klasse": "C",
+      "id": "M02-V03",
+      "front": "Verbatim · § 28/2 S. 1 BaySchO (verified-1:1)?",
+      "back": "'An Grundschulen und Grundschulstufen der Förderschulen gilt eine Zeit von bis zu einer Stunde als angemessen.' (verified-1:1) — 'bis zu' = Obergrenze, NICHT Mindestwert. Gilt NUR GS + GS-Stufe FöS.",
+      "tags": ["schulrecht","mp02","klasse-c","verbatim","§28/2 BaySchO"]
+    },
+    {
+      "klasse": "C",
+      "id": "M02-V04",
+      "front": "Verbatim · § 32/2 Nr. 6 BaySchO (verified-1:1)?",
+      "back": "'Zulässig sind insbesondere folgende Maßnahmen: … 6. bei den Hausaufgaben unter Berücksichtigung der schulartspezifischen Anforderung zu differenzieren …' (verified-1:1) — HA-Differenzierung in § 32, NICHT in § 28!",
+      "tags": ["schulrecht","mp02","klasse-c","verbatim","§32/2 BaySchO"]
+    },
+    {
+      "klasse": "C",
+      "id": "M02-V05",
+      "front": "Verbatim · Art. 56/2 Nr. 5 BayEUG (verified-1:1)?",
+      "back": "'… 5. bei als ungerecht empfundener Behandlung oder Beurteilung sich nacheinander an Lehrkräfte, an die Schulleiterin oder den Schulleiter und an das Schulforum zu wenden.' (verified-1:1) — 'nacheinander', nicht parallel.",
+      "tags": ["schulrecht","mp02","klasse-c","verbatim","Art. 56/2 BayEUG"]
+    },
+    {
+      "klasse": "C",
+      "id": "M02-V06",
+      "front": "Verbatim · Art. 76/1 BayEUG (verified-1:1)?",
+      "back": "'Die Erziehungsberechtigten sind verpflichtet, auf die gewissenhafte Erfüllung der schulischen Pflichten … durch die Schülerinnen und Schüler zu achten und die Erziehungsarbeit der Schule zu unterstützen.' (verified-1:1) — zwei Pflichten: 'achten auf' UND 'unterstützen'.",
+      "tags": ["schulrecht","mp02","klasse-c","verbatim","Art. 76 BayEUG"]
+    }
+  ]
+}

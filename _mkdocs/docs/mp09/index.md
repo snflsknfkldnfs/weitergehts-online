@@ -39,6 +39,11 @@ flowchart TB
 
 ---
 
+
+!!! abstract "Begleit-Material"
+    - 🃏 [**Anki-Lerndeck** (8 Karten · 10 Falle · 5 Hochprior)](https://weitergehts.online/lerndecks/schulrecht-mp09-datenschutz-schuelerakte/)
+    - 📑 [**Themen-Übersichtsseite**](https://weitergehts.online/staatsexamen/schulrecht/9-datenschutz-schuelerakte/)
+
 # Teil A — Stoff
 
 ## A.1 Schülerunterlagen-Terminologie + § 41 BaySchO Schülerakte

@@ -18,6 +18,24 @@ SOURCE_BASE = Path.home() / "weitergehts.online" / "Klassenleitung" / "Seminar" 
 
 # Map: Skript-Datei → Ziel-Slug
 MAPPING = {
+    "MP_01_Messer_im_Unterricht.md": {
+        "slug": "mp01",
+        "title": "MP_01 — Messer im Unterricht · Beschlagnahme + Strafrechts-Schnittstelle",
+        "anki_lerndeck": "https://weitergehts.online/lerndecks/schulrecht-mp01-messer-im-unterricht/",
+        "themen_detail": "https://weitergehts.online/staatsexamen/schulrecht/1-messer-im-unterricht/",
+        "card_count": 24,    # M01-M08 + 10 FA + 6 Verbatim
+        "falle_count": 10,   # FA01-FA10
+        "hochprior_count": 4,  # 4 Fallbeispiele
+    },
+    "MP_02_Hausaufgaben_Beschwerde.md": {
+        "slug": "mp02",
+        "title": "MP_02 — Hausaufgaben + Beschwerde-Verfahren",
+        "anki_lerndeck": "https://weitergehts.online/lerndecks/schulrecht-mp02-hausaufgaben-beschwerde/",
+        "themen_detail": "https://weitergehts.online/staatsexamen/schulrecht/2-hausaufgaben-beschwerde/",
+        "card_count": 24,    # H01-H08 + 10 FA + 6 Verbatim
+        "falle_count": 10,   # FA01-FA10
+        "hochprior_count": 4,  # 4 Fallbeispiele
+    },
     "MP_03_Gliederung_Bildungssystem.md": {
         "slug": "mp03",
         "title": "MP_03 — Gliederung des Bildungssystems · Bildungswege",

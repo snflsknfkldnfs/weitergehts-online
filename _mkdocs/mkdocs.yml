@@ -101,6 +101,8 @@ hooks:
 
 nav:
   - Übersicht: index.md
+  - "MP_01 Messer im Unterricht": mp01/index.md
+  - "MP_02 Hausaufgaben + Beschwerde": mp02/index.md
   - "MP_03 Gliederung Bildungssystem": mp03/index.md
   - "MP_04 Schulartenrecht Schullaufbahn": mp04/index.md
   - "MP_05 Rechte und Pflichten Schüler:innen": mp05/index.md

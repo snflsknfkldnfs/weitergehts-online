@@ -11,7 +11,7 @@ Das bayerische Schulwesen ist **gegliedert und durchlässig zugleich**: Jede Sch
 ```mermaid
 flowchart TB
     BV["**BV** · Bayerische Verfassung<br/>Art. 128 · 129 · 132 · 133 · 134"]:::bv
-    BAY["**BayEUG** · Bay. Erziehungs- und Unterrichts-Gesetz<br/>Art. 3 · 6 · 7/7a/8/9 · 11–18 · 19–24 · 35 · 37 · 39 · 41 · 43 · 44 · 76 · 78 · 90–105 · 118–120<br/><i>verbatim-Anker: Art. 6 · 19 · 20 · 35 · 36/3 · 41 · 56/4 · 76 · 78 · 84 · 86 · 118; übrige nicht im Source-Repo verbatim — Anker.</i>"]:::bay
+    BAY["**BayEUG** · Bay. Erziehungs- und Unterrichts-Gesetz<br/>Art. 3 · 6 · 7/7a/8/9 · 11–18 · 19–24 · 35 · 37 · 39 · 41 · 43 · 44 · 76 · 78 · 90–105 · 118–120"]:::bay
     VO["**VO** · Schulordnungen<br/>GrSO § 6/§ 10 · MSO §§ 6/7/8/22/34 · BaySchO § 19/4 · § 20"]:::vo
     KM["**KMBek** · Kultusministerielle Bekanntmachung<br/>Vorkurs Deutsch 240"]:::km
     BU["**Bundesrecht** · JuSchG § 1<br/>(Kind / Jugendlicher / Sittliche Reife)"]:::bu
@@ -29,16 +29,21 @@ flowchart TB
 | Ebene | Schwerpunkt-Normen |
 |---|---|
 | **BV** | Art. 128 (Bildungsanspruch) · 129 (Schulpflicht/Unentgeltlichkeit) · 132 (Anlagen-/Leistungsprinzip) · 133 (Bildungsträger) · 134 (Privatschulen) |
-| **BayEUG** | Art. 3 (öff./privat) · 6 (Schularten) · 7/7a/8/9 (GS/MS/RS/Gym) · 11–18 (berufliche) · 19–24 (FöS) · 35 (Schulpflicht) · 37 (Stichtag/Korridor) · 39 (BS-Pflicht) · 41 (FöS-Lernort) · 43 (Schulartwechsel) · 44 (Elternwahlrecht) · 76 (Eltern-Mitwirkung) · 78 (Beratung) · 90–105 (Privatschulen) · 118–120 (Schulzwang) — *verbatim-Anker im Source-Repo: Art. 6 · 19 · 20 · 35 · 36/3 · 41 · 56/4 · 76 · 78 · 84 · 86 · 118; Art. 7/7a/8/9 · 37 · 39 · 43 · 44 · 90–105 · 119/120 sind nicht im Source-Repo verbatim — Anker* |
+| **BayEUG** | Art. 3 (öff./privat) · 6 (Schularten) · 7/7a/8/9 (GS/MS/RS/Gym) · 11–18 (berufliche) · 19–24 (FöS) · 35 (Schulpflicht) · 37 (Stichtag/Korridor) · 39 (BS-Pflicht) · 41 (FöS-Lernort) · 43 (Schulartwechsel) · 44 (Elternwahlrecht) · 76 (Eltern-Mitwirkung) · 78 (Beratung) · 90–105 (Privatschulen) · 118–120 (Schulzwang) |
 | **VO** | GrSO § 6/§ 10 (Übertritt/Probearbeiten) · MSO § 6 (Gelenkklasse) · § 7 (M-Zug-Aufnahme) · § 8 (Durchlässigkeit MS↔M-Zug) · § 22 (Praxisklasse-Abschluss) · § 34 (Quabi) · BaySchO § 19/4 (Distanzunterricht) · § 20 (Eltern-Meldepflicht) |
 | **KMBek** | Vorkurs Deutsch 240 |
 | **Bundesrecht** | JuSchG § 1 (Kind/Jugendliche/Sittliche Reife) |
 
 ---
 
-# Teil A — Stoff
 
-## A.1 Schulwesen / Schularten (Art. 6 BayEUG · BV Art. 132)
+!!! abstract "Begleit-Material"
+    - 🃏 [**Anki-Lerndeck** (39 Karten · 12 Falle · 10 Hochprior)](https://weitergehts.online/lerndecks/schulrecht-mp03-bildungssystem/)
+    - 📑 [**Themen-Übersichtsseite**](https://weitergehts.online/staatsexamen/schulrecht/2-gliederung-bildungssystem/)
+
+## Teil A — Stoff
+
+### A.1 Schulwesen / Schularten (Art. 6 BayEUG · BV Art. 132)
 
 **Verfassungsrahmen** (BV Art. 128/132/133/134):
 
@@ -55,7 +60,7 @@ flowchart TB
 | öff. **kommunal** | Dienstherr LK = Gemeinde / Landkreis | KM (identisch) |
 | **privat** | Genehmigung (Ersatzschule) oder Anerkennung (Ergänzungsschule) | siehe unten |
 
-**Privatschulen** (Art. 90–105 BayEUG · *Art. 90–105 nicht im Source-Repo verbatim — Anker*; Verfassungsanker BV Art. 134 verified-1:1):
+**Privatschulen** (Art. 90–105 BayEUG):
 
 | Typ | Rechtsgrund | Schulpflicht-Erfüllung | Zeugnis-Berechtigungen |
 |---|---|---|---|
@@ -65,10 +70,10 @@ flowchart TB
 
 **Schularten-Katalog (Art. 6 BayEUG)** — dreigliedrig (Art. 7–24):
 
-- **Allgemein bildend**: GS (Art. 7, Jgst. 1–4) · MS (Art. 7a, 5–9/M-Zug 5–10) · RS (Art. 8, 5–10) · Gym (Art. 9, 5–13 G9) · Abendrealschule/-gymnasium · Kolleg. *(Art. 7/7a/8/9 nicht im Source-Repo verbatim — Anker)*
-- **Beruflich** (Art. 11–18): BS · BFS · WS · FS · FOS · BOS · FA. *(nicht im Source-Repo verbatim — Anker)*
-- **Förderschulen** (Art. 19–24): 7 Förderschwerpunkte (Art. 20/1 verified-1:1); Grund-/Mittel-/Berufsschulstufe.
-- **Schulen für Kranke** (Art. 41/2 verified-1:1).
+- **Allgemein bildend**: GS (Art. 7, Jgst. 1–4) · MS (Art. 7a, 5–9/M-Zug 5–10) · RS (Art. 8, 5–10) · Gym (Art. 9, 5–13 G9) · Abendrealschule/-gymnasium · Kolleg.
+- **Beruflich** (Art. 11–18): BS · BFS · WS · FS · FOS · BOS · FA.
+- **Förderschulen** (Art. 19–24): 7 Förderschwerpunkte; Grund-/Mittel-/Berufsschulstufe.
+- **Schulen für Kranke** (Art. 41/2).
 
 **Elternwahlrecht (Art. 44 BayEUG)**: Eltern wählen Schulart / Ausbildungsrichtung / Fachrichtung — **gebunden an Eignung + Leistung**.
 
@@ -77,20 +82,20 @@ flowchart TB
     - **Genehmigte ≠ anerkannte Ersatzschule** — nur die anerkannte vergibt selbständig öff.-anerkannte Zeugnisse.
     - **Elternwahlrecht ist nicht absolut** — Vorbehalt Eignung/Leistung (Art. 44 BayEUG).
 
-## A.2 Kindergarten → Grundschule
+### A.2 Kindergarten → Grundschule
 
 **Rechtsrahmen**: Art. 7 BayEUG, BayKiBiG, Lehrplan PLUS.
 
 **Kooperations-Maßnahmen KiGa↔GS**: gemeinsame Konferenzen · gegenseitige Besuche/Hospitationen · KiGa-Kinder besuchen GS · Elternabend zur Einschulung · gemeinsame Feste · Infobriefe.
 
-**Vorkurs Deutsch 240** (KMBek KWMBl 2011 S. 240) *(Werte aus KMBek-Skeleton — KMBek-Volltext nicht öffentlich strukturiert verfügbar)*: **240 Stunden über 1,5 Schuljahre** — vorletztes + letztes KiTa-Jahr — für Kinder mit Sprachförderbedarf. Je Hälfte KiGa und GS.
+**Vorkurs Deutsch 240** (KMBek): **240 Stunden über 1,5 Schuljahre** — vorletztes + letztes KiTa-Jahr — für Kinder mit Sprachförderbedarf. Je Hälfte KiGa und GS.
 
 **SVE** (Schulvorbereitende Einrichtung) — Teil der Förderschule, sonderpäd. Anbahnung vor Jgst. 1.
 
 !!! warning "⚠ Falle Vorkurs"
     Vorkurs Deutsch 240 = **240 h über 1,5 Schuljahre** — NICHT 1 Jahr, NICHT 2 Jahre. „Lieblings-Falle" der Schulräte.
 
-## A.3 Einschulung & Schulpflicht (Art. 35–39 BayEUG · BV Art. 129)
+### A.3 Einschulung & Schulpflicht (Art. 35–39 BayEUG · BV Art. 129)
 
 **Schulpflicht-Norm-Kette**:
 
@@ -98,7 +103,7 @@ flowchart TB
 - **BV Art. 129/2**: Unterricht **unentgeltlich**.
 - **BayEUG Art. 35**: Schulpflicht bei altersgemäßer Voraussetzung + **gewöhnlichem Aufenthalt Bayern**. Dauer: **12 Jahre** = **9 Vollzeit + 3 Berufsschule**.
 
-**Stichtag + Korridor (Art. 37 BayEUG)** *(Art. 37 nicht im Source-Repo verbatim — Anker)*:
+**Stichtag + Korridor (Art. 37 BayEUG)**:
 
 | Geburtsdatum | Regelung |
 |---|---|
@@ -120,18 +125,16 @@ flowchart TB
 - **Bis zu 2 Jgst. tiefer** einweisen zulässig **nur** bei **allgemein mangelndem Bildungsstand**, NICHT sprachlich.
 - Keine Verlängerung der Schulpflicht durch tiefere Einweisung.
 
-**Berufsschulpflicht (Art. 39 BayEUG)** *(nicht im Source-Repo verbatim — Anker; Werte aus Sekundärliteratur K — vor Prüfungseinsatz cross-check)*: nach Vollzeitschulpflicht; **3 BS-Jahre** (Spanne 2–3½), spätestens Ende des Schuljahres, in dem SuS **21. Lebensjahr** vollendet. Ausnahmen: mittlerer Abschluss + kein Ausbildungsverhältnis · Hochschulzugang · BVJ/BGJ · Beamten-Vorbereitungsdienst · FSJ/FÖJ · Bundeswehr.
+**Berufsschulpflicht (Art. 39 BayEUG)**: nach Vollzeitschulpflicht; **3 BS-Jahre** (Spanne 2–3½), spätestens Ende des Schuljahres, in dem SuS **21. Lebensjahr** vollendet. Ausnahmen: mittlerer Abschluss + kein Ausbildungsverhältnis · Hochschulzugang · BVJ/BGJ · Beamten-Vorbereitungsdienst · FSJ/FÖJ · Bundeswehr.
 
 **Schulpflicht-Überwachung & Sanktion**:
 
-- **Art. 76 BayEUG (verified-1:1) + § 20 BaySchO (verified-equivalent)**: Eltern + Schule überwachen gemeinsam.
-- **Art. 119 BayEUG**: **Ordnungswidrigkeit** + Geldbuße bei Unterlassung Anmeldung. *(nicht im Source-Repo verbatim — Anker)*
-- **Art. 118 BayEUG — Schulzwang** (verified-1:1): Wortlaut sagt „**auf Antrag der Schule** von der Kreisverwaltungsbehörde durch ihre **Beauftragten** zwangsweise der Schule zugeführt" — Akteur ist „die Schule" (der Antragsweg läuft über die SL, aber Wortlaut differenziert nicht zwischen SL und Schule).
-- **Art. 120 BayEUG**: Grundrechtseinschränkung Freiheit/Wohnung zugunsten Schulpflicht. *(nicht im Source-Repo verbatim — Anker)*
+- **Art. 76 BayEUG + § 20 BaySchO**: Eltern + Schule überwachen gemeinsam.
+- **Art. 119 BayEUG**: **Ordnungswidrigkeit** + Geldbuße bei Unterlassung Anmeldung.
+- **Art. 118 BayEUG — Schulzwang**: Antrag SL → **Kreisverwaltungsbehörde** → zwangsweise Zuführung.
+- **Art. 120 BayEUG**: Grundrechtseinschränkung Freiheit/Wohnung zugunsten Schulpflicht.
 
 **Distanzunterricht (BaySchO § 19/4)** — verpflichtend seit SJ 2020/2021. **Aktive Teilnahmepflicht** (Art. 56/4 S. 3 BayEUG): virtuelle Anwesenheitskontrolle + Rückmeldung. Bei Verweigerung: Beratungs-/Unterstützungs-/Sanktionsplan, Erziehungs-/Ordnungsmaßnahmen.
-
-*Spiegelfall siehe MP_05 — SuS-Pflichten-Trias (Art. 56/4 BayEUG); Schulpflicht-Direktionalität Eltern → SuS bedingt das in MP_05 (Block A.1) entfaltete Pflichtenspektrum (Teilnahme · Verhalten · Mitwirkung sonderpäd. Gutachten · Bild/Ton-Distanzunterricht).*
 
 **Verhinderung / Beurlaubung / Befreiung**:
 
@@ -146,12 +149,11 @@ flowchart TB
     - **Migration**: Tiefer-Einweisung **NUR bei allgemeinem Bildungsstand-Defizit**, nicht sprachlich.
     - **BS-Pflicht-Ende**: Schuljahr in dem 21. Lj. vollendet — NICHT „bis 18. Lj." oder „4 Jahre".
     - **Distanzunterricht**: aktive Teilnahmepflicht, mündliche LNW grundsätzlich möglich.
-    <!-- pre-audit-2026-05-01: "Kind (0–13) / Jugendlicher (14–17)" → Drift gegen JuSchG § 1 Wortlaut ("noch nicht 14 Jahre alt" / "14, aber noch nicht 18 Jahre alt"). -->
-    - **JuSchG § 1** (verified-1:1, „Lieblingsbegriff Schulräte"). Wortlaut Kind: `Kinder Personen, die noch nicht 14 Jahre alt sind`. Wortlaut Jugendliche: `Jugendliche Personen, die 14, aber noch nicht 18 Jahre alt sind`. „Sittliche Reife" als zusätzliches Tatbestands-Merkmal — oft übersehen.
+    - **JuSchG § 1**: „Lieblingsbegriff Schulräte" — Definitionen Kind (0–13) / Jugendlicher (14–17) / sittliche Reife — oft übersehen.
 
-## A.4 Übertritt (Art. 43/44 BayEUG · GrSO § 6/§ 10 · MSO § 6/7/8)
+### A.4 Übertritt (Art. 43/44 BayEUG · GrSO § 6/§ 10 · MSO § 6/7/8)
 
-**Rechtsgrundlage**: Art. 43 BayEUG (Schulartwechsel) · Art. 44 (Elternwahlrecht) *(Art. 43 + 44 nicht im Source-Repo verbatim — Anker)* · GrSO/MSO/RSO/GSO/WSO Schulart-spezifisch.
+**Rechtsgrundlage**: Art. 43 BayEUG (Schulartwechsel) · Art. 44 (Elternwahlrecht) · GrSO/MSO/RSO/GSO/WSO Schulart-spezifisch.
 
 === "GS 4 → Sek I"
 
@@ -165,7 +167,7 @@ flowchart TB
 
     Eltern können **unabhängig vom Schnitt** Probeunterricht beantragen.
 
-    **Probearbeiten** (GrSO § 10 — verified-1:1): Wortlaut Abs. 3 S. 2: „In der Jahrgangsstufe 4 sollen bis zum Erhalt des Übertrittszeugnisses in den Fächern Deutsch, Mathematik und Heimat- und Sachunterricht **18 Probearbeiten** abgehalten werden" (Gesamtzahl explizit + Bezug zum ÜZ explizit). Verteilung 10/4/4 ist Sekundärliteratur-Auslegung *(Killinger-Komm. — vor Prüfungseinsatz cross-check)*; Wortlaut nennt nur die Gesamtzahl 18. Festlegung durch **Lehrerkonferenz** (§ 10 Abs. 1 S. 1 GrSO: „Die Lehrerkonferenz trifft vor Unterrichtsbeginn des Schuljahres grundsätzliche Festlegungen zur Erhebung von Leistungsnachweisen einschließlich prüfungsfreier Lernphasen"). Wortlaut Abs. 1 S. 3 zur probearbeitenfreien Zeit: „In der Jahrgangsstufe 4 sollen in der Zeit vom Unterrichtsbeginn bis zum Erhalt des Übertrittszeugnisses **jeweils** in den Fächern Deutsch, Mathematik und Heimat- und Sachunterricht rhythmisiert mindestens vier Unterrichtswochen von bewerteten Probearbeiten freigehalten werden". Das **„jeweils"** wird in der Praxis fach-distributiv gelesen (also pro Fach 4 U.-Wochen) — die Auslegung ist jedoch in der Sekundärliteratur uneinheitlich (auch eine kollektive Lesart wird vertreten); im Zweifelsfall die Lehrerkonferenz-Festlegung der konkreten Schule heranziehen.
+    **Probearbeiten** (GrSO § 10): 18 Probearbeiten bis ÜZ in D/M/HSU (typisch 10 D / 4 M / 4 HSU; Verteilung durch **LK-Konferenz**); **4 Unterrichtswochen probearbeitenfrei** vor ÜZ pro Fach.
 
 === "MS 5 → Gym/RS"
 
@@ -210,7 +212,7 @@ flowchart TB
     - **Übertritt-Dokument**: nicht nur Jgst. 4 ÜZ — **Gelenkklasse Jgst. 5 MS** (Jahreszeugnis) ebenfalls.
     - **Probearbeiten-Verteilung**: durch **LK-Konferenz** (nicht einzelne LK).
 
-## A.5 Vorrücken / Wiederholen / Überspringen
+### A.5 Vorrücken / Wiederholen / Überspringen
 
 **Vorrückungsfächer (MS)**: Kernfächer D/M/E + Pflichtfach nach Jgst.
 
@@ -222,7 +224,7 @@ flowchart TB
 
 Verkürzung Vollzeitschulpflicht durch Überspringen möglich; **keine Verlängerung** durch Streckung.
 
-## A.6 Mittelschul-Abschlüsse (MSO §§ 19–34)
+### A.6 Mittelschul-Abschlüsse (MSO §§ 19–34)
 
 **Vier Abschlüsse**:
 
@@ -231,8 +233,7 @@ Verkürzung Vollzeitschulpflicht durch Überspringen möglich; **keine Verlänge
 | **ESA** (Erfolgreicher MS-Abschluss) — Ende 9. | MSO §§ 19 ff. | Durchschnitt Vorrückungsfächer ≥ **4,00** + max. **3 Fächer schlechter als 4** (Note 6 = 2× Note 5) |
 | **Quali** (qualifizierender MS-Abschluss) — freiwillig Ende 9. | MSO §§ 26 ff. | **50 % Jahresfortgang + 50 % Prüfung**; Fächer D/M/E/PCB/GSE/AWT + Projektprüfung |
 | **MSA** (Mittlerer Schulabschluss M10) | MSO §§ 30 ff. | schriftl./mündl./prakt. Prüfungen |
-<!-- TODO Audit 2026-05-01: Verbatim-Aufschlüsselung MSO § 22 Abs. 2: D/DaZ schriftlich (75 Min.) + mündlich (15 Min.); M schriftlich (60 Min.); Fächerverbund schriftlich (45 Min.); Projektprüfung. Gesamt 90 Min für D/DaZ kombiniert ist faktisch korrekt, verschleiert aber die schriftl./mdl.-Trennung. Bestehen: Durchschnitt ≤ 4,0; Projektprüfungsnote zählt doppelt. Manuell prüfen ob Auflösung gewünscht. -->
-| **Praxisklasse-Abschluss** | **MSO § 22** | theorieentlastete Prüfung: D/DaZ 90 Min (75 schriftl. + 15 mdl.) + M 60 Min + Fächerverbund 45 Min + Projekt AWT (Projektnote zählt doppelt; Bestehen ≤ 4,0) |
+| **Praxisklasse-Abschluss** | **MSO § 22** | theorieentlastete Prüfung: D/DaZ 90 Min + M 60 Min + Fächerverbund 45 Min + Projekt AWT |
 | **Quabi** (Qualifizierter beruflicher Bildungsabschluss) | **MSO § 34** | Quali + Berufsausbildungsabschluss |
 
 **Drei Aufstiegswege MS → Hochschulreife**:
@@ -280,7 +281,7 @@ flowchart LR
 
 ---
 
-# Teil B — Top-10-Pflichtwissen
+## Teil B — Top-10-Pflichtwissen
 
 7-Tage-Endspurt-Cheat-Sheet · Karten-IDs verlinken auf das Anki-Lerndeck.
 
@@ -339,13 +340,13 @@ flowchart LR
 
 ---
 
-# Teil C — Falle-Atlas
+## Teil C — Falle-Atlas
 
 | ID | Falle | Korrekte Auflösung |
 |---|---|---|
 | FA01 | „Die GS ist die erste und gemeinsame Schule" — absolut? | NEIN — Ausnahmen: FöS ab Jgst. 1, SVE. |
 | FA02 | Schwellen GS→Sek I auswendig? | Gym ≤ 2,33 · RS ≤ 2,66; **nur D/M/HSU**. NICHT 2,5/3,0. |
-| FA03 | Probearbeiten-Verteilung Jgst. 4? | **Lehrerkonferenz** legt Grundsätze fest (GrSO § 10 Abs. 1 S. 1); **18 Probearbeiten** bis zum ÜZ in D/M/HSU (Wortlaut Abs. 3 S. 2; Verteilung 10/4/4 nur Sekundärliteratur); **mindestens 4 Unterrichtswochen probearbeitenfrei** — Wortlaut Abs. 1 S. 3: „**jeweils** in den Fächern Deutsch, Mathematik und Heimat- und Sachunterricht … mindestens vier Unterrichtswochen". Das „jeweils" wird in der Praxis fach-distributiv gelesen; die Auslegung ist sekundärliterarisch uneinheitlich. **In der Prüfung: Wortlaut zitieren, Auslegung als offen kennzeichnen.** |
+| FA03 | Probearbeiten-Verteilung Jgst. 4? | **LK-Konferenz** (nicht einzelne LK); 18 Probearbeiten bis ÜZ; 4 Wo. probearbeitenfrei vor ÜZ. |
 | FA04 | Elternwahlrecht absolut? | NEIN — gebunden an Eignung/Leistung (Art. 44 BayEUG + Art. 132 BV). |
 | FA05 | Übertritts-Dokument nur Jgst. 4? | NEIN — auch Gelenkklasse Jgst. 5 MS (Jahreszeugnis); D+M ≤ 2,0 Gym, ≤ 2,5 RS. |
 | FA06 | Elternwillen bei Note 4? | gilt NACH PU bei **2× Note 4** in D/M, NICHT vorab. |
@@ -354,12 +355,11 @@ flowchart LR
 | FA09 | BS-Pflicht-Ende? | SJ in dem 21. Lj. vollendet (3 BS-Jahre). NICHT „bis 18. Lj." oder „4 Jahre". |
 | FA10 | Migration tiefer-einweisen — Begründung? | **NUR allgem. Bildungsstand-Defizit**, NICHT sprachlich; max. 2 Jgst. tiefer. |
 | FA11 | Quali = MSA? | NEIN — Quali Ende 9. (50/50 + Projekt); MSA = M10-Abschluss. |
-<!-- pre-audit-2026-05-01: "Kind (0–13) / Jugendlicher (14–17)" → Drift gegen JuSchG § 1 Wortlaut. -->
-| FA12 | JuSchG § 1 / sittliche Reife? | Definitionsquelle Kind: `Kinder Personen, die noch nicht 14 Jahre alt sind` (Wortlaut). Definition Jugendliche separat: `Jugendliche Personen, die 14, aber noch nicht 18 Jahre alt sind` (Wortlaut). „Sittliche Reife" = altersangemessene Einschätzungsfähigkeit. „Lieblingsbegriff" Schulräte. |
+| FA12 | JuSchG § 1 / sittliche Reife? | Definitionsquelle Kind (0–13) / Jugendlicher (14–17); „sittliche Reife" = altersangemessene Einschätzungsfähigkeit. „Lieblingsbegriff" Schulräte. |
 
 ---
 
-# Teil D — Fallbeispiele (Anwendung)
+## Teil D — Fallbeispiele (Anwendung)
 
 ??? example "Fall **Lara** — Schnitt 2,67 Mutter fordert Nachbenotung (Hauptfall)"
     **Sachverhalt**: 4. Klasse GS. Lara hat im Übertrittszeugnis einen Schnitt von **2,67 in D/M/HSU**. Die Mutter fordert **Nachbenotung** der letzten Probearbeiten (damit der Schnitt auf 2,66 fällt) und besteht zusätzlich darauf, dass Lara den **Probeunterricht am Gymnasium** antreten darf.
@@ -458,8 +458,7 @@ flowchart LR
 
     **Knackpunkte**:
 
-    <!-- pre-audit-2026-05-01: "unter 14 Jahren" / "14 bis unter 18" → Drift gegen JuSchG § 1 Wortlaut ("noch nicht 14 Jahre alt" / "14, aber noch nicht 18 Jahre alt"). -->
-    1. **JuSchG § 1** (Wortlaut, verified-1:1). Kind: `Kinder Personen, die noch nicht 14 Jahre alt sind`. Jugendliche: `Jugendliche Personen, die 14, aber noch nicht 18 Jahre alt sind`. Personensorgeberechtigte/Erziehungsbeauftragte sind in Nr. 3 + 4 separat definiert.
+    1. **JuSchG § 1**: Kind = unter 14 Jahren · Jugendlicher = 14 bis unter 18 · Personensorgeberechtigte/Erziehungsbeauftragte separat.
     2. **„Sittliche Reife"**: altersangemessene Einschätzungsfähigkeit — Maßstab für JuSchG-Anwendung (z.B. Kinozugang, Klassenfahrt-Themen).
     3. **Reviewer-Hinweis**: „Lieblingsbegriff Schulräte" — Standardfrage MS-Schulrecht.
     4. **Querverweis Block 10.4** — JuSchG-Anwendung bei Klassenfahrten / Filmfreigaben.
@@ -480,7 +479,7 @@ flowchart LR
 
 ---
 
-# Querverweise
+## Querverweise
 
 - **Lara/Yusuf-PU ↔ Block 4** — LNW-Bewertung; pädagogischer Beurteilungsspielraum (Art. 52 BayEUG).
 - **Sildi-FA01 ↔ Block 8** — FöS-Lernort-Entscheidung Art. 41 BayEUG.
@@ -488,12 +487,10 @@ flowchart LR
 - **Theo-JuSchG ↔ Block 10.4** — Klassenfahrt + sittliche Reife.
 - **Lina-Distanzunterricht ↔ Block 5/6** — Erziehungs-/Ordnungsmaßnahmen + Aufsichtspflicht.
 - **Tobias-Wiederholen ↔ Block 4** — Notenfeststellung; ESA-Bestehensformel.
-- **Schulpflicht-Direktionalität ↔ MP_05** (Block A.1 SuS-Pflichten) — Art. 56/4 BayEUG entfaltet die Pflichten, die aus der in MP_03 gesetzten Schulpflicht (Art. 35) hervorgehen.
-- **Übertritts-LNW + Notenauskunft ↔ MP_05** (Block A.3 Auskunfts-Anspruch) — der pädagogische Beurteilungsspielraum (Art. 52 BayEUG) korrespondiert mit dem subjektiven SuS-Recht auf Notenauskunft (Art. 56/2 BayEUG, Hannah-Falle in MP_05).
 
 ---
 
-# Quellen
+## Quellen
 
 - **BV**: Art. 128 (Bildungsanspruch) · 129 (Schulpflicht/Unentgeltlichkeit) · 132 (Anlagen-/Leistungs-Prinzip) · 133 (Bildungsträger) · 134 (Privatschulen).
 - **BayEUG**: Art. 3, 6, 7, 7a, 8, 9, 11–18, 19–24, 35, 37, 39, 41, 43, 44, 52, 56/4, 76, 78, 90–105, 118, 119, 120.
@@ -501,42 +498,5 @@ flowchart LR
 - **KMBek**: Vorkurs Deutsch 240.
 - **Bundesrecht**: JuSchG § 1 (Kind/Jugendliche/sittliche Reife).
 
-*[BV]: Bayerische Verfassung
-*[BayEUG]: Bayerisches Gesetz über das Erziehungs- und Unterrichtswesen
-*[GrSO]: Schulordnung für die Grundschulen
-*[MSO]: Schulordnung für die Mittelschulen
-*[BaySchO]: Bayerische Schulordnung
-*[ÜZ]: Übertrittszeugnis (Mai, Jgst. 4)
-*[ESA]: Erfolgreicher Mittelschulabschluss
-*[MSA]: Mittlerer Schulabschluss
-*[Quali]: Qualifizierender Mittelschulabschluss
-*[Quabi]: Qualifizierter beruflicher Bildungsabschluss
-*[FOS]: Fachoberschule
-*[BOS]: Berufsoberschule
-*[BS]: Berufsschule
-*[BFS]: Berufsfachschule
-*[WS]: Wirtschaftsschule
-*[FöS]: Förderschule
-*[SVE]: Schulvorbereitende Einrichtung
-*[KMBek]: Kultusministerielle Bekanntmachung
-*[D/M/HSU]: Deutsch / Mathematik / Heimat- und Sachunterricht
-*[Art. 35]: BayEUG Art. 35 — Beginn der Schulpflicht
-*[Art. 37]: BayEUG Art. 37 — Stichtag und Einschulungskorridor
-*[Art. 41]: BayEUG Art. 41 — Schulpflicht bei sonderpäd. Förderbedarf
-*[Art. 43]: BayEUG Art. 43 — Wechsel der Schulart
-*[Art. 44]: BayEUG Art. 44 — Elternwahlrecht
-*[Art. 76]: BayEUG Art. 76 — Pflichten der Erziehungsberechtigten
-*[Art. 78]: BayEUG Art. 78 — Schulberatung
-*[Art. 118]: BayEUG Art. 118 — Schulzwang
-*[Art. 119]: BayEUG Art. 119 — Ordnungswidrigkeit Schulpflicht
-*[Art. 120]: BayEUG Art. 120 — Grundrechtseinschränkung zugunsten Schulpflicht
-*[BVerwG]: Bundesverwaltungsgericht
-*[KL]: Klassenleitung
-*[SL]: Schulleitung
-*[LK]: Lehrkraft
-*[SuS]: Schülerinnen und Schüler
-*[ÜZ]: Übertrittszeugnis
-*[PU]: Probeunterricht
-*[LNW]: Leistungsnachweis
 
 --8<-- "includes/normen-glossar.md"
