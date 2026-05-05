@@ -10,25 +10,25 @@ Block 8 regelt das **Zusammenspiel zwischen Schule und externen Bildungs-/Betreu
 
 ```mermaid
 flowchart TB
-    BU["**Bundesrecht** · § 22 SGB VIII<br/>Hort als außerschul. Einrichtung"]:::bu
-    BAY["**BayEUG** · Art. 6/4 · 19 · 20 · 21 · 30a · 31/3 · 41 · 60 · 78"]:::bay
-    VO["**VO** · MSO § 14 · GrSO § 5 · BaySchO §§ 31/36 · VSO-F § 25<br/><i>BaySchO §§ 31/36 + VSO-F § 25: Hover-Anker — vor Prüfungseinsatz cross-check</i>"]:::vo
-    KM["**KMBek** · GTS · Hort · Schulberatung · MSD · Inklusion<br/><i>KMBek-Volltexte nicht öffentlich strukturiert — Skeleton-Anker; konkrete Werte (4-Tage/7-Std, 9 Beratungsstellen, 9 MSD-Bereiche) cross-check vor Prüfungseinsatz</i>"]:::km
+ BU["**Bundesrecht** · § 22 SGB VIII<br/>Hort als außerschul. Einrichtung"]:::bu
+ BAY["**BayEUG** · Art. 6/4 · 19 · 20 · 21 · 30a · 31/3 · 41 · 60 · 78"]:::bay
+ VO["**VO** · MSO § 14 · GrSO § 5 · BaySchO §§ 31/36 · VSO-F § 25<br/>"]:::vo
+ KM["**KMBek** · GTS · Hort · Schulberatung · MSD · Inklusion<br/>"]:::km
 
-    BU -.Querverweis Hort.-> BAY
-    BAY --> VO --> KM
+ BU -.Querverweis Hort.-> BAY
+ BAY --> VO --> KM
 
-    classDef bu fill:#eff6ff,stroke:#1e3a8a,stroke-width:2px,color:#1f2937
-    classDef bay fill:#fff7ed,stroke:#c2410c,stroke-width:2px,color:#1f2937
-    classDef vo fill:#fefce8,stroke:#ca8a04,stroke-width:2px,color:#1f2937
-    classDef km fill:#f7fee7,stroke:#65a30d,stroke-width:2px,color:#1f2937
+ classDef bu fill:#eff6ff,stroke:#1e3a8a,stroke-width:2px,color:#1f2937
+ classDef bay fill:#fff7ed,stroke:#c2410c,stroke-width:2px,color:#1f2937
+ classDef vo fill:#fefce8,stroke:#ca8a04,stroke-width:2px,color:#1f2937
+ classDef km fill:#f7fee7,stroke:#65a30d,stroke-width:2px,color:#1f2937
 ```
 
 | Ebene | Quellen für Block 8 |
 |---|---|
 | **Bundesrecht** | § 22 SGB VIII (Hort, früher KJHG) |
 | **BayEUG** | Art. 6/4 · 19 · 20 · 21 · 30a · 31/3 · 41 · 60 · 78 |
-| **VO** | MSO § 14 (verified-1:1) · GrSO § 5 (verified-equivalent) · BaySchO §§ 31/36 *(regelt eigentlich Individuelle Unterstützung/Nachteilsausgleich; FL-Arbeitszeit ist in BayLBG / Bekanntmachung — Anker)* · VSO-F § 25 *(nicht im Source-Repo verbatim — Anker)* |
+| **VO** | MSO § 14 · GrSO § 5 · BaySchO §§ 31/36 *(regelt eigentlich Individuelle Unterstützung/Nachteilsausgleich; FL-Arbeitszeit ist in BayLBG / Bekanntmachung — Anker)* · VSO-F § 25 |
 | **KMBek** | KWMBl 2011/240 · 08.07.2013 (oGTS) · 10.02.2020 (gGTS) · 12.06.1991 (Hort↔Schule) · 29.10.2001 (Schulberatung) |
 
 ---
@@ -37,11 +37,11 @@ flowchart TB
 
 ## A.1 MSD — Mobile Sonderpädagogische Dienste
 
-**Norm**: Art. 21/1 BayEUG (verified-1:1) · KMBek MSD *(KMBek-Volltext nicht öffentlich strukturiert verfügbar — Anker)*.
+**Norm**: Art. 21/1 BayEUG · KMBek MSD *(KMBek-Volltext nicht öffentlich strukturiert verfügbar — Anker)*.
 **Wesen**: präventiv-integrativer **Dienst an der allgemeinen Schule** (≠ Schulart!). Ziel: negative Entwicklung aufhalten, Verbleib an allgem. Schule, FöS-Überweisung **vermeiden**.
 **Träger** (Wortlaut Art. 21/1 Satz 3): „Mobile Sonderpädagogische Dienste werden von den **nächstgelegenen Förderschulen mit entsprechendem Förderschwerpunkt** geleistet"; Personal: Förderschullehrkräfte.
 **5 MSD-Aufgaben** (Wortlaut Art. 21/1 Satz 2): „diagnostizieren und fördern die Schülerinnen und Schüler, sie **beraten** Lehrkräfte, Erziehungsberechtigte und Schülerinnen und Schüler, **koordinieren** sonderpädagogische Förderung und führen **Fortbildungen** für Lehrkräfte durch".
-**MSD-Bereiche**: 7 Förderschwerpunkte aus Art. 20/1 BayEUG (verified-1:1) — Sehen · Hören · k./m. Entwicklung · gE · Sprache · Lernen · em./soz. Entwicklung. Erweiterte Praxis-Bereiche aus KMBek MSD: zusätzlich **Autismus** + **ELECOK** (Elektronische Hilfen + Computer für Körperbehinderte) → praktisch werden 9 Bereiche genannt. *Die zusätzlichen 2 Bereiche sind nicht im BayEUG-Wortlaut Art. 20 enthalten — KMBek-Skeleton, vor Prüfungseinsatz cross-check.*
+**MSD-Bereiche**: 7 Förderschwerpunkte aus Art. 20/1 BayEUG — Sehen · Hören · k./m. Entwicklung · gE · Sprache · Lernen · em./soz. Entwicklung. Erweiterte Praxis-Bereiche: zusätzlich **Autismus** + **ELECOK** (Elektronische Hilfen + Computer für Körperbehinderte) → praktisch 9 Bereiche.
 **Anfrage-Indikatoren** (4 Felder):
 
 - Lern/Leistung — Verweigerung, Schwänzen, U.-Störung, Schul-/Prüfungsangst, Konzentration.
@@ -53,9 +53,9 @@ flowchart TB
 **Erweiterungen**: MSD verantwortet **Förderdiagnostischen Bericht** (Eltern vorab über standardisierte Tests informieren — Pflicht); Unterstützung inklusiver Schulentwicklung; Übergangsbegleitung schul. Lernorte.
 
 !!! warning "⚠ Fallen MSD"
-    - **MSD ≠ FöS** — Dienst (Art. 21) vs. Schulart (Art. 19).
-    - **MSD ≠ MSH** — schulisch (Art. 21) vs. **vorschulisch** (Art. 19/2).
-    - **Eltern-Info-Pflicht** vor standardisierten Tests.
+ - **MSD ≠ FöS** — Dienst (Art. 21) vs. Schulart (Art. 19).
+ - **MSD ≠ MSH** — schulisch (Art. 21) vs. **vorschulisch** (Art. 19/2).
+ - **Eltern-Info-Pflicht** vor standardisierten Tests.
 
 ## A.2 Förderzentrum (FöS)
 
@@ -67,15 +67,15 @@ flowchart TB
 
 **Aufbau (Art. 20/2)**: GS-Stufe 1–4 · MS-Stufe 5–9 (ggf. 10 MR) · **Berufsschulstufe** 10–12 bei FS gE (ersetzt BS).
 
-**Lernort (Art. 41 BayEUG · verified-1:1 für Abs. 1, 2, 4, 6)**:
+**Lernort (Art. 41 BayEUG für Abs. 1, 2, 4, 6)**:
 
 | Abs. | Inhalt (Wortlaut-Auszug) |
 |---|---|
 | 1 | „Die **Erziehungsberechtigten entscheiden**, an welchem der … schulischen Lernorte ihr Kind unterrichtet werden soll" — allgem. Schule oder FöS |
 | 2 | Längerfristig Kranke → Schule für Kranke (Wortlaut belegt) |
-| 3 | Eltern *sollen* Beratungsstelle aufsuchen *(Abs. 3 nicht im Source-Repo verbatim — Anker)* |
+| 3 | Eltern *sollen* Beratungsstelle aufsuchen |
 | 4 | „melden ihr Kind … an der Sprengelschule, einer Schule mit dem Schulprofil »Inklusion« oder an der Förderschule an. Die Aufnahme an der Förderschule setzt die Erstellung eines sonderpädagogischen Gutachtens voraus" |
-| 5 | Bedarf nicht deckbar → geeignete FöS *(Abs. 5 nicht im Source-Repo verbatim — Anker)* |
+| 5 | Bedarf nicht deckbar → geeignete FöS |
 | 6 | „Kommt keine einvernehmliche Aufnahme zustande, entscheidet die zuständige **Schulaufsichtsbehörde** nach Anhörung … über den schulischen Lernort." |
 
 **Überweisungsverfahren (§ 5 GrSO, 6 Schritte)**: KL erörtert mit Eltern → schriftl. Meldung an SL → SL benachrichtigt Eltern → Hinweis auf BL/SPych → sonderpäd. Gutachten → Eltern-Stellungnahme → Förderort.
@@ -87,29 +87,29 @@ flowchart TB
 **4 Kooperationsformen** (KMBek): Kooperationsklasse (gemeinsam + MSD) · Partnerklasse (FöS↔allg., lernzieldifferent) · Offene Klasse FöS · Tandemklasse.
 
 !!! warning "⚠ Falle FöS"
-    **Hertha-Konfiguration** (FS gE → Regelschule): rechtlich möglich (Art. 41/1 + Art. 30a/3). **ABER**: Sachaufwandsträger-Zustimmung NUR bei Sehen/Hören/k.-m. — bei FS gE NICHT erforderlich.
+ **Hertha-Konfiguration** (FS gE → Regelschule): rechtlich möglich (Art. 41/1 + Art. 30a/3). **ABER**: Sachaufwandsträger-Zustimmung NUR bei Sehen/Hören/k.-m. — bei FS gE NICHT erforderlich.
 
 ## A.3 Schulberatung
 
-**Norm**: Art. 78 Abs. 1 BayEUG (verified-1:1) — Wortlaut: „Jede Schule und jede Lehrkraft hat die Aufgabe, die Erziehungsberechtigten und die Schülerinnen und Schüler in Fragen der Schullaufbahn zu beraten"; Abs. 2: überregionale Aufgaben durch staatliche Schulberatungsstellen. KMBek 29.10.2001 (geänd. 24.06.2011) *(KMBek-Volltext nicht öffentlich strukturiert verfügbar — Werte aus KMBek-Skeleton)*. **Freiwilligkeitsgrundsatz**.
+**Norm**: Art. 78 Abs. 1 BayEUG — Wortlaut: „Jede Schule und jede Lehrkraft hat die Aufgabe, die Erziehungsberechtigten und die Schülerinnen und Schüler in Fragen der Schullaufbahn zu beraten"; Abs. 2: überregionale Aufgaben durch staatliche Schulberatungsstellen. KMBek 29.10.2001 (geänd. 24.06.2011) *(KMBek-Volltext nicht öffentlich strukturiert verfügbar — Werte aus KMBek-Skeleton)*. **Freiwilligkeitsgrundsatz**.
 
-**Beratungsweg** (5 Eskalationsstufen *Werte aus KMBek-Skeleton — KMBek-Volltext nicht öffentlich strukturiert verfügbar; Stufenmodell ist Sekundärliteratur-Auslegung*):
+**Beratungsweg** (5 Eskalationsstufen):
 
 ```mermaid
 flowchart LR
-    KL["**1. Klassenleitung**<br/>wöchentl. Sprechstunde"]:::stage1
-    SCHUL["**2. Schul-intern**<br/>BL · SPych · MSD"]:::stage2
-    REKTOR["**3. Beratungsrektor:in**<br/>Staatl. SchA"]:::stage3
-    UEBER["**4. Überregionale Stelle**<br/>9 Schulberatungsstellen Bayern · KIBBS<br/><i>9 = Sekundärliteratur — vor Prüfungseinsatz cross-check</i>"]:::stage4
-    AUSSER["**5. Außerschulisch**<br/>Erziehungsberatung · Jugendamt · Therapie"]:::stage5
+ KL["**1. Klassenleitung**<br/>wöchentl. Sprechstunde"]:::stage1
+ SCHUL["**2. Schul-intern**<br/>BL · SPych · MSD"]:::stage2
+ REKTOR["**3. Beratungsrektor:in**<br/>Staatl. SchA"]:::stage3
+ UEBER["**4. Überregionale Stelle**<br/>9 Schulberatungsstellen Bayern · KIBBS<br/>"]:::stage4
+ AUSSER["**5. Außerschulisch**<br/>Erziehungsberatung · Jugendamt · Therapie"]:::stage5
 
-    KL --> SCHUL --> REKTOR --> UEBER --> AUSSER
+ KL --> SCHUL --> REKTOR --> UEBER --> AUSSER
 
-    classDef stage1 fill:#fff7ed,stroke:#c2410c,color:#1f2937
-    classDef stage2 fill:#fefce8,stroke:#ca8a04,color:#1f2937
-    classDef stage3 fill:#f7fee7,stroke:#65a30d,color:#1f2937
-    classDef stage4 fill:#eff6ff,stroke:#1e3a8a,color:#1f2937
-    classDef stage5 fill:#fef2f2,stroke:#9f1239,color:#1f2937
+ classDef stage1 fill:#fff7ed,stroke:#c2410c,color:#1f2937
+ classDef stage2 fill:#fefce8,stroke:#ca8a04,color:#1f2937
+ classDef stage3 fill:#f7fee7,stroke:#65a30d,color:#1f2937
+ classDef stage4 fill:#eff6ff,stroke:#1e3a8a,color:#1f2937
+ classDef stage5 fill:#fef2f2,stroke:#9f1239,color:#1f2937
 ```
 
 **Beratungsebenen** (Reihenfolge):
@@ -121,7 +121,7 @@ flowchart LR
 | 2b | **Schulpsycholog:in (SPych)** — Psychologie-Studium mit schulpsych. Schwerpunkt; mehrere Schulen |
 | 2c | **MSD** — Förderschullehrkraft |
 | 3 | **Beratungsrektor:in** (Staatl. SchA, Koordination) |
-| 4 | **Staatl. Schulberatungsstelle** (9 in Bayern; KIBBS) — *„9" Sekundärliteratur, KMBek-Skeleton; vor Prüfungseinsatz cross-check* |
+| 4 | **Staatl. Schulberatungsstelle** (9 in Bayern; KIBBS) |
 | 5 | **Außerschulisch** — Erziehungsberatung, Jugendamt, Therapie |
 
 **Themen**: Schullaufbahn/Übertritt · Bildungsmöglichkeiten · Lern-/Leistungsstörung · Verhaltensauffälligkeit.
@@ -131,8 +131,8 @@ flowchart LR
 **Außerschulische Schnittstellen**: vorschulisch (Einschulungsberatung) · Berufsberatung MS 8/9 · Gesundheitsamt/Logopäd:innen · Jugendamt · Erziehungsberatung (**Verschwiegenheit + Eltern-Einverständnis** Voraussetzung).
 
 !!! warning "⚠ Fallen Beratung"
-    - **BL ≠ SPych** — Lehrkraft mit Zusatzqual. vs. Psychologe.
-    - LK darf **nicht selbst therapieren** — Pflicht zur Weiterleitung.
+ - **BL ≠ SPych** — Lehrkraft mit Zusatzqual. vs. Psychologe.
+ - LK darf **nicht selbst therapieren** — Pflicht zur Weiterleitung.
 
 ## A.4 Betreuung (4 Säulen)
 
@@ -142,68 +142,68 @@ flowchart LR
 |---|---|---|---|
 | **Mittagsbetreuung** | Art. 31/3 BayEUG | Gemeinde / gemeinnützig | bis ~14 Uhr; verlängert bis 15:30/16:00 |
 | **Halbtagsgrundschule** | KMBek (seit 1999/2000) | staatl. | 7:30–13:00 |
-| **Ganztagsschule (oGTS/gGTS)** | Art. 6/4 BayEUG (verified-1:1) + KMBek 08.07.2013 (oGTS) / 10.02.2020 (gGTS) | staatl. | mind. 4 Tage à 7 Std. *(„4 Tage / 7 Std" ist KMBek-Wert, nicht im Art. 6/4-Wortlaut; KMBek-Volltext nicht öffentlich strukturiert — Skeleton)* |
-| **Hort** | § 22 SGB VIII (Tageseinrichtungen für Kinder · partial-summary; *Hort-Begriff nicht explizit im § 22-Wortlaut, sondern als Tageseinrichtung subsumiert*) | freier/kirchl./kommunal. JuHi-Träger | außerschul. |
+| **Ganztagsschule (oGTS/gGTS)** | Art. 6/4 BayEUG + KMBek 08.07.2013 (oGTS) / 10.02.2020 (gGTS) | staatl. | mind. 4 Tage à 7 Std. *(„4 Tage / 7 Std" ist KMBek-Wert, nicht im Art. 6/4-Wortlaut; KMBek-Volltext nicht öffentlich strukturiert — Skeleton)* |
+| **Hort** | § 22 SGB VIII (Tageseinrichtungen für Kinder ·; *Hort-Begriff nicht explizit im § 22-Wortlaut, sondern als Tageseinrichtung subsumiert*) | freier/kirchl./kommunal. JuHi-Träger | außerschul. |
 
 === "Mittagsbetreuung"
 
-    **Art. 31/3 BayEUG · Träger: Gemeinde / gemeinnützig.**
+ **Art. 31/3 BayEUG · Träger: Gemeinde / gemeinnützig.**
 
-    - Sozialpäd. Fachpersonal.
-    - SL-Benehmen bei Organisation.
-    - Standard bis ca. 14 Uhr.
-    - Verlängert bis 15:30/16:00 mit HA-Betreuung möglich.
+ - Sozialpäd. Fachpersonal.
+ - SL-Benehmen bei Organisation.
+ - Standard bis ca. 14 Uhr.
+ - Verlängert bis 15:30/16:00 mit HA-Betreuung möglich.
 
 === "Halbtags-GS"
 
-    **KMBek (seit 1999/2000) · staatl.**
+ **KMBek (seit 1999/2000) · staatl.**
 
-    - 7:30–13:00 Uhr.
-    - Vernetzung vor-/nachunterrichtlicher Angebote.
-    - Kindgerechte Rhythmisierung des Schulvormittags.
+ - 7:30–13:00 Uhr.
+ - Vernetzung vor-/nachunterrichtlicher Angebote.
+ - Kindgerechte Rhythmisierung des Schulvormittags.
 
 === "oGTS"
 
-    **KMBek 08.07.2013 · offene Ganztagsschule.**
+ **KMBek 08.07.2013 · offene Ganztagsschule.**
 
-    - Vormittag im Klassenverband.
-    - Nachmittag **freiwillig** (Anmeldung erforderlich).
-    - Mittagsverpflegung + HA-Betreuung + Förder-U. + AGs.
-    - Kooperation mit Vereinen / Musikschule.
+ - Vormittag im Klassenverband.
+ - Nachmittag **freiwillig** (Anmeldung erforderlich).
+ - Mittagsverpflegung + HA-Betreuung + Förder-U. + AGs.
+ - Kooperation mit Vereinen / Musikschule.
 
 === "gGTS"
 
-    **KMBek 10.02.2020 · gebundene Ganztagsschule.**
+ **KMBek 10.02.2020 · gebundene Ganztagsschule.**
 
-    - **Ganztagszug**, **verpflichtend**.
-    - Mind. 4 Tage à 7 Std.; typisch 8–16 Uhr.
-    - **Rhythmisierter U.** in Ganztagsklasse.
-    - 45-Min-Regel-Abweichung möglich.
-    - Zusatzangebote: Sprachförderung, HA-Hilfe, Gewaltprävention.
+ - **Ganztagszug**, **verpflichtend**.
+ - Mind. 4 Tage à 7 Std.; typisch 8–16 Uhr.
+ - **Rhythmisierter U.** in Ganztagsklasse.
+ - 45-Min-Regel-Abweichung möglich.
+ - Zusatzangebote: Sprachförderung, HA-Hilfe, Gewaltprävention.
 
 === "Hort"
 
-    **§ 22 SGB VIII (Tageseinrichtungen für Kinder · partial-summary; Hort-Begriff im Wortlaut nicht explizit, fällt unter „Tageseinrichtungen"). KMBek 12.06.1991 (Schule↔Hort) — KMBek-Skeleton.**
+ **§ 22 SGB VIII (Tageseinrichtungen für Kinder ·; Hort-Begriff im Wortlaut nicht explizit, fällt unter „Tageseinrichtungen"). KMBek 12.06.1991 (Schule↔Hort) — KMBek-Skeleton.**
 
-    - Eigenständige Bildungs-/Erziehungseinrichtung.
-    - Träger: kirchlich / kommunal / freie Jugendhilfe.
-    - Ziele: Lebensraum · Selbstständigkeit · HA-Bewältigung · sinnvolle Freizeit (**Bewegung!**) · gesundes Mittagessen.
-    - Zusammenarbeit: gemeinsame Besprechungen, Besuche, Fortbildungen, Projekte.
+ - Eigenständige Bildungs-/Erziehungseinrichtung.
+ - Träger: kirchlich / kommunal / freie Jugendhilfe.
+ - Ziele: Lebensraum · Selbstständigkeit · HA-Bewältigung · sinnvolle Freizeit (**Bewegung!**) · gesundes Mittagessen.
+ - Zusammenarbeit: gemeinsame Besprechungen, Besuche, Fortbildungen, Projekte.
 
 !!! warning "⚠ Fallen Betreuung"
-    - **Mittagsbetreuung ≠ Hort ≠ GTS** — drei verschiedene Rechtsregime.
-    - **gGTS-Anmeldung freiwillig**, danach **Teilnahme verpflichtend**.
-    - **Aufsichtspflicht Mittagspause Halbtags-GS** = Schulverband/Gemeinde, NICHT Schule (↔ Block 6.2).
-    - **Kein Rechtsanspruch** auf GTS-Platz — Wahlfreiheit, Schulaufwandsträger entscheidet Ausbau.
+ - **Mittagsbetreuung ≠ Hort ≠ GTS** — drei verschiedene Rechtsregime.
+ - **gGTS-Anmeldung freiwillig**, danach **Teilnahme verpflichtend**.
+ - **Aufsichtspflicht Mittagspause Halbtags-GS** = Schulverband/Gemeinde, NICHT Schule (↔ Block 6.2).
+ - **Kein Rechtsanspruch** auf GTS-Platz — Wahlfreiheit, Schulaufwandsträger entscheidet Ausbau.
 
 ## A.5 Detail-Zusätze (GTS-Antragsprinzip · Förderlehrkraft)
 
 **Ganztagsschule – Antragsprinzip**: **Schulaufwandsträger** beantragt GTS-Einrichtung an GS/MS/RS/WS/Gym + entspr. FöS, im Benehmen mit Trägern öff. Jugendhilfe. Wahlfreiheit Halbtag↔Ganztag, **kein Rechtsanspruch**, Teilnahmepflicht ab Anmeldung.
 
-**Förderlehrkraft (FL)**: Rechtsgrund Art. 60 BayEUG (verified-1:1) — „selbstständig und eigenverantwortlich" (Wortlaut Abs. 1 S. 2). Begleit-Normen Sekundärliteratur: VSO-F § 25 + MSO §§ 9/10 *(nicht im Source-Repo verbatim — Anker; FL-Arbeitszeit-Detailregelung tatsächlich in BayLBG / Bekanntmachung Lehrerdienstrecht, NICHT BaySchO §§ 31/36 — diese regeln Individuelle Unterstützung/Nachteilsausgleich)*. Aufgaben: AG-Leitung, LRS-Förder-U., Intensiv-/Förder-U., diff. Sport/Schwimmen, EH/Verkehr, Aufsicht. **Arbeitszeit GS/MS** *(Werte aus Sekundärliteratur — vor Prüfungseinsatz cross-check)*: 28 UE (45 Min) = 8 eigenverantwortlich (AGs) + 20 Kooperations-U. + 5 Verwaltungsstunden (60 Min). FöS/Schulen für Kranke: 27 UE. SL bestellt Einsatzplan; Kooperations-LK verantwortet Klasseneinsatz.
+**Förderlehrkraft (FL)**: Rechtsgrund Art. 60 BayEUG — „selbstständig und eigenverantwortlich" (Wortlaut Abs. 1 S. 2). Begleit-Normen Sekundärliteratur: VSO-F § 25 + MSO §§ 9/10. Aufgaben: AG-Leitung, LRS-Förder-U., Intensiv-/Förder-U., diff. Sport/Schwimmen, EH/Verkehr, Aufsicht. **Arbeitszeit GS/MS**: 28 UE (45 Min) = 8 eigenverantwortlich (AGs) + 20 Kooperations-U. + 5 Verwaltungsstunden (60 Min). FöS/Schulen für Kranke: 27 UE. SL bestellt Einsatzplan; Kooperations-LK verantwortet Klasseneinsatz.
 
 !!! warning "⚠ Falle FL"
-    **FL-Vertretungsunterricht** nur kurzfristig in unabweisbaren Fällen, **max. 5 WStd**, NICHT permanent.
+ **FL-Vertretungsunterricht** nur kurzfristig in unabweisbaren Fällen, **max. 5 WStd**, NICHT permanent.
 
 ---
 
@@ -213,52 +213,52 @@ flowchart LR
 
 <div class="grid cards" markdown>
 
--   :material-numeric-1-circle: __K03 · MSD-Ziel__
+-:material-numeric-1-circle: __K03 · MSD-Ziel__
 
-    Verbleib allgem. Schule.
-    FöS-Überweisung **vermeiden**.
-    *Art. 21 BayEUG*
+ Verbleib allgem. Schule.
+ FöS-Überweisung **vermeiden**.
+ *Art. 21 BayEUG*
 
--   :material-numeric-2-circle: __K08 · Förderdiagn. Bericht__
+-:material-numeric-2-circle: __K08 · Förderdiagn. Bericht__
 
-    MSD verantwortlich.
-    **Eltern-Info-Pflicht** vor standardisierten Tests.
+ MSD verantwortlich.
+ **Eltern-Info-Pflicht** vor standardisierten Tests.
 
--   :material-numeric-3-circle: __K11 · 7 Förderschwerpunkte__
+-:material-numeric-3-circle: __K11 · 7 Förderschwerpunkte__
 
-    Sehen · Hören · k./m. · gE · Sprache · Lernen · em./soz.
-    *Art. 20/1 BayEUG*
+ Sehen · Hören · k./m. · gE · Sprache · Lernen · em./soz.
+ *Art. 20/1 BayEUG*
 
--   :material-numeric-4-circle: __K13 · Lernort-Entscheidung__
+-:material-numeric-4-circle: __K13 · Lernort-Entscheidung__
 
-    **Eltern** (Art. 41/1).
-    FöS-Aufnahme = sonderpäd. Gutachten.
+ **Eltern** (Art. 41/1).
+ FöS-Aufnahme = sonderpäd. Gutachten.
 
--   :material-numeric-5-circle: __K16 · Förderplanpflicht__
+-:material-numeric-5-circle: __K16 · Förderplanpflicht__
 
-    Pflicht bei nicht erreichten Lernzielen.
-    Jährlich fortschreiben.
-    MSD-Einbeziehung Pflicht.
-    *MSO § 14*
+ Pflicht bei nicht erreichten Lernzielen.
+ Jährlich fortschreiben.
+ MSD-Einbeziehung Pflicht.
+ *MSO § 14*
 
--   :material-numeric-6-circle: __K22 · BL ≠ SPych__
+-:material-numeric-6-circle: __K22 · BL ≠ SPych__
 
-    Unterschiedl. Qualifikation + Aufgabenkatalog.
+ Unterschiedl. Qualifikation + Aufgabenkatalog.
 
--   :material-numeric-7-circle: __K27 · LK ≠ Therapie__
+-:material-numeric-7-circle: __K27 · LK ≠ Therapie__
 
-    Weiterleitung Pflicht.
-    Verschwiegenheit + Eltern-Einverständnis.
+ Weiterleitung Pflicht.
+ Verschwiegenheit + Eltern-Einverständnis.
 
--   :material-numeric-8-circle: __K31 · oGTS vs. gGTS__
+-:material-numeric-8-circle: __K31 · oGTS vs. gGTS__
 
-    Anmeldung **freiwillig**.
-    Teilnahme **verpflichtend**.
+ Anmeldung **freiwillig**.
+ Teilnahme **verpflichtend**.
 
--   :material-numeric-9-circle: __K32 · Kein Anspruch GTS-Platz__
+-:material-numeric-9-circle: __K32 · Kein Anspruch GTS-Platz__
 
-    Wahlfreiheit Halbtag↔Ganztag.
-    Antrag durch Schulaufwandsträger.
+ Wahlfreiheit Halbtag↔Ganztag.
+ Antrag durch Schulaufwandsträger.
 
 </div>
 
@@ -317,102 +317,102 @@ NEIN — drei verschiedene Rechtsträger: Gemeinde (Mittagsbetreuung, Art. 31/3)
 # Teil D — Fallbeispiele (Anwendung)
 
 ??? example "Fall **Tom** — em./soz. + Eltern-Veto + Hort-Frage (Hauptfall)"
-    **Sachverhalt**: 7. Kl. MS. Aggressives Verhalten, Schulverweigerung, Konzentrationsprobleme. Sie vermuten Förderbedarf em./soz. Eltern lehnen MSD-Diagnostik ab, fordern SPych-Termin und fragen nach Hortwechsel.
+ **Sachverhalt**: 7. Kl. MS. Aggressives Verhalten, Schulverweigerung, Konzentrationsprobleme. Sie vermuten Förderbedarf em./soz. Eltern lehnen MSD-Diagnostik ab, fordern SPych-Termin und fragen nach Hortwechsel.
 
-    **Knackpunkte**:
+ **Knackpunkte**:
 
-    1. **MSD-Anfrage trotz Eltern-Veto möglich** — MSD = Dienst an allgem. Schule (Art. 21), kein Schulartenwechsel. Eltern haben **Lernort-Primat** (Art. 41), nicht Diagnostik-Veto. Pflicht: Eltern vorab über standardisierte Tests informieren.
-    2. **BL ≠ SPych** — beide möglich, aber unterschiedliche Qualifikation/Aufgaben. Bei em./soz.-Verdacht ist MSD primär; SPych ergänzend für psychol. Diagnostik/Krisenintervention.
-    3. **Hort = außerschulisch** (§ 22 SGB VIII), Träger ≠ Schule. Anmeldung über Jugendhilfe; Schule kooperiert (KMBek 12.06.1991), bietet aber nicht an.
-    4. **Therapie-Verbot** (Falle Hanna) — falls Tom psychotherapeutisch auffällig: Weiterleitung, nicht Selbst-Therapie.
+ 1. **MSD-Anfrage trotz Eltern-Veto möglich** — MSD = Dienst an allgem. Schule (Art. 21), kein Schulartenwechsel. Eltern haben **Lernort-Primat** (Art. 41), nicht Diagnostik-Veto. Pflicht: Eltern vorab über standardisierte Tests informieren.
+ 2. **BL ≠ SPych** — beide möglich, aber unterschiedliche Qualifikation/Aufgaben. Bei em./soz.-Verdacht ist MSD primär; SPych ergänzend für psychol. Diagnostik/Krisenintervention.
+ 3. **Hort = außerschulisch** (§ 22 SGB VIII), Träger ≠ Schule. Anmeldung über Jugendhilfe; Schule kooperiert (KMBek 12.06.1991), bietet aber nicht an.
+ 4. **Therapie-Verbot** (Falle Hanna) — falls Tom psychotherapeutisch auffällig: Weiterleitung, nicht Selbst-Therapie.
 
-    **Antwortkette**: Anfrage-Indikatoren em./soz. erkennen (Maßstab Ausprägung+Dauer+Intensität+Häufigkeit+Kombination) → Elterngespräch (MSD ≠ Sonderschullehrer-Stigma entkräften) → Beratungsweg KL→BL/SPych/MSD parallel → Förderplanpflicht MSO § 14 ankündigen falls Bedarf bestätigt → Hort-Anregung in Jugendhilfe-Kanal verweisen → bei Eltern-Verhärtung: SL + Beratungsrektor:in einschalten (Schulaufsichtsbehörde nur bei FöS-Überweisungs-Konflikt nach Art. 41/6).
+ **Antwortkette**: Anfrage-Indikatoren em./soz. erkennen (Maßstab Ausprägung+Dauer+Intensität+Häufigkeit+Kombination) → Elterngespräch (MSD ≠ Sonderschullehrer-Stigma entkräften) → Beratungsweg KL→BL/SPych/MSD parallel → Förderplanpflicht MSO § 14 ankündigen falls Bedarf bestätigt → Hort-Anregung in Jugendhilfe-Kanal verweisen → bei Eltern-Verhärtung: SL + Beratungsrektor:in einschalten (Schulaufsichtsbehörde nur bei FöS-Überweisungs-Konflikt nach Art. 41/6).
 
 ??? example "Fall **Hertha** — FS gE → Regelschule"
-    **Sachverhalt**: 7-jährige Hertha (FS gE) soll an die Sprengelschule wechseln.
+ **Sachverhalt**: 7-jährige Hertha (FS gE) soll an die Sprengelschule wechseln.
 
-    **Knackpunkte**:
+ **Knackpunkte**:
 
-    1. Rechtlich möglich über **Art. 41/1** (Eltern-Lernort-Entscheidung) + **Art. 30a/3** (gemeinsamer Unterricht).
-    2. **Sachaufwandsträger-Zustimmung** ist **NICHT** erforderlich — Art. 30a/4 betrifft NUR Sehen/Hören/k.-m., nicht gE.
-    3. **Förderplan MSO § 14** verbindlich; **Schulprofil Inklusion** oder Kooperations-/Partnerklasse prüfen; MSD em./soz. + gE zur Begleitung anfragen.
+ 1. Rechtlich möglich über **Art. 41/1** (Eltern-Lernort-Entscheidung) + **Art. 30a/3** (gemeinsamer Unterricht).
+ 2. **Sachaufwandsträger-Zustimmung** ist **NICHT** erforderlich — Art. 30a/4 betrifft NUR Sehen/Hören/k.-m., nicht gE.
+ 3. **Förderplan MSO § 14** verbindlich; **Schulprofil Inklusion** oder Kooperations-/Partnerklasse prüfen; MSD em./soz. + gE zur Begleitung anfragen.
 
-    **Antwortkette**: Eltern-Anmeldung an Sprengelschule → Schulprofil Inklusion verfügbar? → MSD-Anbindung an FS gE → Förderplan + Nachteilsausgleich → Wertigkeit FöS pädagogisch verdeutlichen, Rückkehr-Option offen halten.
+ **Antwortkette**: Eltern-Anmeldung an Sprengelschule → Schulprofil Inklusion verfügbar? → MSD-Anbindung an FS gE → Förderplan + Nachteilsausgleich → Wertigkeit FöS pädagogisch verdeutlichen, Rückkehr-Option offen halten.
 
 ??? example "Fall **Hanna** — therapeutisch auffällig"
-    **Sachverhalt**: Schülerin zeigt Symptome, die therapeutische Behandlung nahelegen.
+ **Sachverhalt**: Schülerin zeigt Symptome, die therapeutische Behandlung nahelegen.
 
-    **Knackpunkte**:
+ **Knackpunkte**:
 
-    1. **LK darf NICHT selbst therapieren** — Pflicht zur Weiterleitung (BL/SPych/Erziehungsberatung).
-    2. **Verschwiegenheit + Eltern-Einverständnis** Voraussetzung für Erziehungsberatung.
-    3. **Freiwilligkeitsgrundsatz** Schulberatung — Eltern können ablehnen.
+ 1. **LK darf NICHT selbst therapieren** — Pflicht zur Weiterleitung (BL/SPych/Erziehungsberatung).
+ 2. **Verschwiegenheit + Eltern-Einverständnis** Voraussetzung für Erziehungsberatung.
+ 3. **Freiwilligkeitsgrundsatz** Schulberatung — Eltern können ablehnen.
 
 ??? example "Fall **Lina** — gGTS-Anmeldung"
-    **Sachverhalt**: 9-jährige Lina will keine gebundene Ganztagsschule mehr besuchen.
+ **Sachverhalt**: 9-jährige Lina will keine gebundene Ganztagsschule mehr besuchen.
 
-    **Knackpunkte**:
+ **Knackpunkte**:
 
-    1. **Anmeldung freiwillig** — Eltern-Entscheidung.
-    2. **Teilnahme ab Anmeldung verpflichtend** — gGTS = Ganztagszug, kein Tages-Rückzug.
-    3. **Wechsel nur zum SJ-Ende** möglich; alternativ oGTS prüfen (freiwillige Nachmittagsanmeldung).
+ 1. **Anmeldung freiwillig** — Eltern-Entscheidung.
+ 2. **Teilnahme ab Anmeldung verpflichtend** — gGTS = Ganztagszug, kein Tages-Rückzug.
+ 3. **Wechsel nur zum SJ-Ende** möglich; alternativ oGTS prüfen (freiwillige Nachmittagsanmeldung).
 
-    **Antwortkette**: Eltern-Beratung Art. 78 → Wechsel-Antrag zum SJ-Ende oder Wechsel in oGTS (sofern an Schule angeboten) → bei Halbtags-Bedarf akut: Mittagsbetreuung (Gemeinde) oder Hort (außerschulisch) als Alternative.
+ **Antwortkette**: Eltern-Beratung Art. 78 → Wechsel-Antrag zum SJ-Ende oder Wechsel in oGTS (sofern an Schule angeboten) → bei Halbtags-Bedarf akut: Mittagsbetreuung (Gemeinde) oder Hort (außerschulisch) als Alternative.
 
 ??? example "Fall **Niklas** — Aufsichtspflicht-Übergang Schule → Hort"
-    **Sachverhalt**: Niklas (7) verletzt sich auf dem Weg von der Halbtags-Grundschule zum Hort um 13:15 Uhr. Mutter macht die Schule haftbar.
+ **Sachverhalt**: Niklas (7) verletzt sich auf dem Weg von der Halbtags-Grundschule zum Hort um 13:15 Uhr. Mutter macht die Schule haftbar.
 
-    **Knackpunkte**:
+ **Knackpunkte**:
 
-    1. **Aufsichtspflicht-Sphären getrennt**: Schule (Unterricht) — Schulverband/Gemeinde (Mittagspause Halbtags-GS) — Hort-Träger (außerschulisch, § 22 SGB VIII).
-    2. **Mittagsbetreuung ≠ Hort ≠ GTS** — drei verschiedene Träger, drei verschiedene Haftungsachsen.
-    3. **Schule haftet nur** für die Zeit unter SL-Aufsicht und -Verantwortung (bei GTS Nachmittag inkl., bei Halbtags-GS nicht).
+ 1. **Aufsichtspflicht-Sphären getrennt**: Schule (Unterricht) — Schulverband/Gemeinde (Mittagspause Halbtags-GS) — Hort-Träger (außerschulisch, § 22 SGB VIII).
+ 2. **Mittagsbetreuung ≠ Hort ≠ GTS** — drei verschiedene Träger, drei verschiedene Haftungsachsen.
+ 3. **Schule haftet nur** für die Zeit unter SL-Aufsicht und -Verantwortung (bei GTS Nachmittag inkl., bei Halbtags-GS nicht).
 
-    **Antwortkette**: Sphären-Zuordnung klären → Niklas-Unfall um 13:15 außerhalb Schulpräsenz → Schulverband/Gemeinde bzw. Hort-Träger als Verantwortliche → KL informiert SL + Eltern, dokumentiert Vorfall, verweist Mutter an Hort-Träger / Gemeindeverwaltung. Cross-Ref Block 6.2.
+ **Antwortkette**: Sphären-Zuordnung klären → Niklas-Unfall um 13:15 außerhalb Schulpräsenz → Schulverband/Gemeinde bzw. Hort-Träger als Verantwortliche → KL informiert SL + Eltern, dokumentiert Vorfall, verweist Mutter an Hort-Träger / Gemeindeverwaltung. Cross-Ref Block 6.2.
 
 ??? example "Fall **Becker** — FL als Dauer-Vertretung"
-    **Sachverhalt**: SL setzt Frau Becker (Förderlehrkraft) seit 6 Wochen täglich als Vertretung für eine erkrankte Klassenleitung ein. Beckers AG-Stunden fallen aus. Personalrat fragt nach.
+ **Sachverhalt**: SL setzt Frau Becker (Förderlehrkraft) seit 6 Wochen täglich als Vertretung für eine erkrankte Klassenleitung ein. Beckers AG-Stunden fallen aus. Personalrat fragt nach.
 
-    **Knackpunkte**:
+ **Knackpunkte**:
 
-    1. **FL-Vertretungsunterricht NUR kurzfristig** in unabweisbaren Fällen, **max. 5 WStd**, NICHT permanent.
-    2. **Arbeitszeit-Aufteilung** schützt das FL-Profil: 8 eigenverantwortliche AG-Stunden + 20 Kooperations-U. + 5 Verwaltungsstunden.
-    3. **Permanente Vertretung** wäre Verstoß gegen die FL-Aufgabenbindung — alternativ: mobile Reserve, befristete Vertretungsregelung über SchA.
+ 1. **FL-Vertretungsunterricht NUR kurzfristig** in unabweisbaren Fällen, **max. 5 WStd**, NICHT permanent.
+ 2. **Arbeitszeit-Aufteilung** schützt das FL-Profil: 8 eigenverantwortliche AG-Stunden + 20 Kooperations-U. + 5 Verwaltungsstunden.
+ 3. **Permanente Vertretung** wäre Verstoß gegen die FL-Aufgabenbindung — alternativ: mobile Reserve, befristete Vertretungsregelung über SchA.
 
-    **Antwortkette**: SL-Praxis prüfen → wenn Dauer-Vertretung: rechtswidrig → Eskalation an Schulaufsichtsbehörde / Beratungsrektor:in → mobile Reserve als Lösung; Personalrat hat Mitbestimmungsrecht.
+ **Antwortkette**: SL-Praxis prüfen → wenn Dauer-Vertretung: rechtswidrig → Eskalation an Schulaufsichtsbehörde / Beratungsrektor:in → mobile Reserve als Lösung; Personalrat hat Mitbestimmungsrecht.
 
 ??? example "Fall **Mira** — Rückkehr von FöS zur MS"
-    **Sachverhalt**: Mira (12) besucht seit 3 Jahren eine FöS Lernen, hat sich stabilisiert. Eltern fragen, ob sie zur Mittelschule zurückkehren und zum Quali zugelassen werden kann.
+ **Sachverhalt**: Mira (12) besucht seit 3 Jahren eine FöS Lernen, hat sich stabilisiert. Eltern fragen, ob sie zur Mittelschule zurückkehren und zum Quali zugelassen werden kann.
 
-    **Knackpunkte**:
+ **Knackpunkte**:
 
-    1. **Rückkehr stets möglich** — pädagogischer Hinweis: Eltern beraten, Wertigkeit FöS verdeutlichen, aber Übergang nicht verstellen.
-    2. **QA-Teilnahme stets offen** — Mira kann externe Prüfung absolvieren.
-    3. **Förderplan + Nachteilsausgleich** (MSO § 14) übergangsweise an der MS möglich; sonderpäd. Bedarf endet nicht automatisch mit Schulartenwechsel.
+ 1. **Rückkehr stets möglich** — pädagogischer Hinweis: Eltern beraten, Wertigkeit FöS verdeutlichen, aber Übergang nicht verstellen.
+ 2. **QA-Teilnahme stets offen** — Mira kann externe Prüfung absolvieren.
+ 3. **Förderplan + Nachteilsausgleich** (MSO § 14) übergangsweise an der MS möglich; sonderpäd. Bedarf endet nicht automatisch mit Schulartenwechsel.
 
-    **Antwortkette**: Beratung Art. 78 → Anmeldung an Sprengel-MS → Probezeit/-versetzung nach MS-Regularien → Förderplan in MS-Schuljahr fortschreiben → MSD-Anbindung optional → QA-Anmeldung im 9. SJ.
+ **Antwortkette**: Beratung Art. 78 → Anmeldung an Sprengel-MS → Probezeit/-versetzung nach MS-Regularien → Förderplan in MS-Schuljahr fortschreiben → MSD-Anbindung optional → QA-Anmeldung im 9. SJ.
 
 ??? example "Fall **Familie Schwarz** — Antrag auf GTS-Einrichtung"
-    **Sachverhalt**: Eltern einer GS-Klasse fordern bei der Schule die Einrichtung einer gebundenen Ganztagsschule. Die SL verweist auf den Schulträger.
+ **Sachverhalt**: Eltern einer GS-Klasse fordern bei der Schule die Einrichtung einer gebundenen Ganztagsschule. Die SL verweist auf den Schulträger.
 
-    **Knackpunkte**:
+ **Knackpunkte**:
 
-    1. **Antragsrecht bei Schulaufwandsträger** — Eltern haben **kein** direktes Antragsrecht; Antrag an GS/MS/RS/WS/Gym läuft über Schulaufwandsträger (Gemeinde/Landkreis).
-    2. **Im Benehmen mit Trägern öff. Jugendhilfe** — Planung erfordert Abstimmung.
-    3. **Kein Rechtsanspruch** auf GTS-Platz — Wahlfreiheit Halbtag↔Ganztag, aber Ausbau abhängig von Träger-Entscheidung.
+ 1. **Antragsrecht bei Schulaufwandsträger** — Eltern haben **kein** direktes Antragsrecht; Antrag an GS/MS/RS/WS/Gym läuft über Schulaufwandsträger (Gemeinde/Landkreis).
+ 2. **Im Benehmen mit Trägern öff. Jugendhilfe** — Planung erfordert Abstimmung.
+ 3. **Kein Rechtsanspruch** auf GTS-Platz — Wahlfreiheit Halbtag↔Ganztag, aber Ausbau abhängig von Träger-Entscheidung.
 
-    **Antwortkette**: Eltern-Beratung → Verweis auf Schulaufwandsträger als richtigen Adressaten → Eltern-Initiative kann politisch wirken, aber nicht rechtlich erzwungen werden → Alternative: oGTS (Antrag durch SL möglich, aber ebenfalls trägergebunden).
+ **Antwortkette**: Eltern-Beratung → Verweis auf Schulaufwandsträger als richtigen Adressaten → Eltern-Initiative kann politisch wirken, aber nicht rechtlich erzwungen werden → Alternative: oGTS (Antrag durch SL möglich, aber ebenfalls trägergebunden).
 
 ??? example "Fall **Frau Akbar** — Eltern-Forderung Schulpsych. Test ohne LK-Befund"
-    **Sachverhalt**: Frau Akbar fordert schriftlich einen LRS-Test ihrer Tochter durch die Schulpsychologin, obwohl die KL keinen Verdacht hat.
+ **Sachverhalt**: Frau Akbar fordert schriftlich einen LRS-Test ihrer Tochter durch die Schulpsychologin, obwohl die KL keinen Verdacht hat.
 
-    **Knackpunkte**:
+ **Knackpunkte**:
 
-    1. **Freiwilligkeitsgrundsatz Schulberatung** — Eltern können Beratung in Anspruch nehmen, KL/Schule keine Veto-Position.
-    2. **SPych-Aufgaben umfassen Test-/Diagnoseverfahren LRS** — formal zuständig, terminiert nach Verfügbarkeit.
-    3. **Verschwiegenheitspflicht** und **Eltern-Einverständnis** sind bereits gegeben, da Eltern selbst beantragen.
+ 1. **Freiwilligkeitsgrundsatz Schulberatung** — Eltern können Beratung in Anspruch nehmen, KL/Schule keine Veto-Position.
+ 2. **SPych-Aufgaben umfassen Test-/Diagnoseverfahren LRS** — formal zuständig, terminiert nach Verfügbarkeit.
+ 3. **Verschwiegenheitspflicht** und **Eltern-Einverständnis** sind bereits gegeben, da Eltern selbst beantragen.
 
-    **Antwortkette**: Eltern-Anliegen aufnehmen → Weiterleitung an Beratungsrektor:in → SPych-Termin koordinieren → KL-Aufzeichnungen auf Lern-/Leistungsverhalten dokumentieren (zur Test-Vorbereitung) → Test-Ergebnis abwarten, ggf. Förderplan einleiten.
+ **Antwortkette**: Eltern-Anliegen aufnehmen → Weiterleitung an Beratungsrektor:in → SPych-Termin koordinieren → KL-Aufzeichnungen auf Lern-/Leistungsverhalten dokumentieren (zur Test-Vorbereitung) → Test-Ergebnis abwarten, ggf. Förderplan einleiten.
 
 ---
 

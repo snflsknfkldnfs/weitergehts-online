@@ -817,3 +817,28 @@
 [data-md-color-scheme="slate"] .md-typeset .mermaid {
   background: #1e293b;
 }
+
+/* ==========================================================================
+   2026-05-05 (readability-pass): Klick-Links zu Gesetzes-Quelle
+   <abbr> innerhalb <a class="norm-link"> öffnet gesetze-bayern.de etc.
+   im neuen Tab. Visuell wie zuvor (gestrichelte Unterstreichung des abbr).
+   ========================================================================== */
+a.norm-link {
+  /* Verbergen der typischen Link-Farbe; abbr behält dotted-underline */
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  border-bottom: none !important;
+}
+
+a.norm-link:hover abbr,
+a.norm-link:focus abbr {
+  /* Subtle hover-Indikator */
+  background-color: rgba(194, 65, 12, 0.08);
+  border-radius: 2px;
+}
+
+/* Externer-Link-Indikator nicht aufdringlich — kein Icon-Default */
+a.norm-link:visited {
+  color: inherit;
+}

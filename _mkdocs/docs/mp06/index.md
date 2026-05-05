@@ -10,34 +10,34 @@ Der LK-Pflichtenkanon ist eine **Doppelstruktur**: einerseits **beamtenrechtlich
 
 ```mermaid
 flowchart TB
-    BV["**BV** · Bayerische Verfassung<br/>Art. 95 (Beamtenverhältnis) · Art. 136 (Religionsunterricht)"]:::bv
-    BAY["**BayEUG** · Bay. Erziehungs- und Unterrichts-Gesetz<br/>Art. 56/4 · 57/2 · 58 · 59 · 60a · 75 · 84"]:::bay
-    BUND["**Bundesrecht** · GG Art. 33/5 (hergebrachte Grundsätze Berufsbeamtentum) · BeamtStG · § 839 BGB · Art. 34 GG · § 203 StGB"]:::bund
-    LDO["**LDO** · Lehrerdienstordnung<br/>§§ 2 · 3 · 4 · 5 · 6 · 9a · 9b · 11 · 14 · 16 · 19 · 20 · 21 · 22"]:::vo
-    BAYBG["**BayBG/BayDG/BayLBG/BayPVG**<br/>BayBG Art. 81–87 · BayDG Art. 6–13 · BayLBG Art. 20 · BayPVG Art. 75/76/77/78"]:::vo
-    KM["**KMBek** · Lehrerfortbildung 09.08.2002 (Anpassung 08.2025) · SchiLF 05.12.2002 · Pädagogischer Tag 24.08.1999"]:::km
+ BV["**BV** · Bayerische Verfassung<br/>Art. 95 (Beamtenverhältnis) · Art. 136 (Religionsunterricht)"]:::bv
+ BAY["**BayEUG** · Bay. Erziehungs- und Unterrichts-Gesetz<br/>Art. 56/4 · 57/2 · 58 · 59 · 60a · 75 · 84"]:::bay
+ BUND["**Bundesrecht** · GG Art. 33/5 (hergebrachte Grundsätze Berufsbeamtentum) · BeamtStG · § 839 BGB · Art. 34 GG · § 203 StGB"]:::bund
+ LDO["**LDO** · Lehrerdienstordnung<br/>§§ 2 · 3 · 4 · 5 · 6 · 9a · 9b · 11 · 14 · 16 · 19 · 20 · 21 · 22"]:::vo
+ BAYBG["**BayBG/BayDG/BayLBG/BayPVG**<br/>BayBG Art. 81–87 · BayDG Art. 6–13 · BayLBG Art. 20 · BayPVG Art. 75/76/77/78"]:::vo
+ KM["**KMBek** · Lehrerfortbildung 09.08.2002 (Anpassung 08.2025) · SchiLF 05.12.2002 · Pädagogischer Tag 24.08.1999"]:::km
 
-    BUND --> BV
-    BV --> BAY
-    BAY --> LDO
-    BAY --> BAYBG
-    LDO --> KM
-    BAYBG --> KM
+ BUND --> BV
+ BV --> BAY
+ BAY --> LDO
+ BAY --> BAYBG
+ LDO --> KM
+ BAYBG --> KM
 
-    classDef bv fill:#fef2f2,stroke:#9f1239,stroke-width:2px,color:#1f2937
-    classDef bay fill:#fff7ed,stroke:#c2410c,stroke-width:2px,color:#1f2937
-    classDef vo fill:#fefce8,stroke:#ca8a04,stroke-width:2px,color:#1f2937
-    classDef km fill:#f7fee7,stroke:#65a30d,stroke-width:2px,color:#1f2937
-    classDef bund fill:#eff6ff,stroke:#1e3a8a,stroke-width:2px,color:#1f2937
+ classDef bv fill:#fef2f2,stroke:#9f1239,stroke-width:2px,color:#1f2937
+ classDef bay fill:#fff7ed,stroke:#c2410c,stroke-width:2px,color:#1f2937
+ classDef vo fill:#fefce8,stroke:#ca8a04,stroke-width:2px,color:#1f2937
+ classDef km fill:#f7fee7,stroke:#65a30d,stroke-width:2px,color:#1f2937
+ classDef bund fill:#eff6ff,stroke:#1e3a8a,stroke-width:2px,color:#1f2937
 ```
 
 | Ebene | Schwerpunkt-Normen |
 |---|---|
-| **BV** | Art. 95 (Beamtenverhältnis Bayern, *nicht im Source-Repo verbatim — Anker*) · Art. 136/3+4 (ReliU-Bevollmächtigung + Schriftform-Ablehnung). Berufsbeamtentum-Grundsätze primär in **GG Art. 33/5** verankert |
+| **BV** | Art. 95 (Beamtenverhältnis Bayern) · Art. 136/3+4 (ReliU-Bevollmächtigung + Schriftform-Ablehnung). Berufsbeamtentum-Grundsätze primär in **GG Art. 33/5** verankert |
 | **BayEUG** | Art. 56/4 (SuS-Pflichten als Spiegel der LK-Aufsicht) · 57/2 (SL-Gesamtverantwortung) · 58 (Lehrerkonferenz) · 59 (Lehrkräfte) · 60a · 75 (Auskunft an EB) · 84 (Werbeverbot) |
 | **VO** | LDO §§ 2 · 3 · 4 · 5 · 6 · 9a · 9b · 11 · 14 · 16 · 19 · 20 · 21 · 22 · BaySchO § 22 (Aufsicht-Anker) · §§ 37–41 (Schriftwesen) |
 | **Beamtenrecht Bayern** | BayBG Art. 81–87 (Nebentätigkeit/Mehrarbeit) · BayDG Art. 6–13 (Maßnahmenkatalog: 5 Stufen Lebenszeit + 2 Stufen Ruhestand; Dienstvergehens-Tatbestand in § 47 BeamtStG) · BayLBG Art. 20 (Fortbildung) · BayPVG Art. 75/76/77/78 (Beteiligungsformen) |
-| **KMBek** | Lehrerfortbildung 09.08.2002 (KWMBl I S. 260) · SchiLF 05.12.2002 · Pädagogischer Tag 24.08.1999 · Anpassung 08.2025 (12 FB-Tage / 4 Jahre, ≈ 60 h, mind. 1/3 SchiLF) — *KMBek-Volltexte nicht öffentlich strukturiert verfügbar; Werte aus Sekundärliteratur K S. 173, vor Prüfungseinsatz mit aktueller KMBek-Fassung abgleichen* |
+| **KMBek** | Lehrerfortbildung 09.08.2002 (KWMBl I S. 260) · SchiLF 05.12.2002 · Pädagogischer Tag 24.08.1999 · Anpassung 08.2025 (12 FB-Tage / 4 Jahre, ≈ 60 h, mind. 1/3 SchiLF) |
 | **Bundesrecht** | GG Art. 33/5 (hergebrachte Grundsätze Berufsbeamtentum, Streikverbot) · BeamtStG §§ 3 · 7 · 8 · 33–48 · § 839 BGB i.V.m. Art. 34 GG (Amtshaftung) · § 203 StGB (Berufsgeheimnis Schulpsych.) |
 
 ---
@@ -48,16 +48,16 @@ flowchart TB
 
 ```mermaid
 flowchart LR
-    LK["LK-Pflichten<br/>**Doppelstruktur**"]:::root
-    BS["**Beamten-Säule**<br/>BayBG · BeamtStG · BayDG"]:::beamt
-    LS["**Schul-Säule**<br/>LDO · BayEUG · BaySchO"]:::schul
+ LK["LK-Pflichten<br/>**Doppelstruktur**"]:::root
+ BS["**Beamten-Säule**<br/>BayBG · BeamtStG · BayDG"]:::beamt
+ LS["**Schul-Säule**<br/>LDO · BayEUG · BaySchO"]:::schul
 
-    LK --> BS
-    LK --> LS
+ LK --> BS
+ LK --> LS
 
-    classDef root fill:#fff7ed,stroke:#c2410c,stroke-width:2px,color:#1f2937
-    classDef beamt fill:#eff6ff,stroke:#1e3a8a,color:#1f2937
-    classDef schul fill:#fefce8,stroke:#ca8a04,color:#1f2937
+ classDef root fill:#fff7ed,stroke:#c2410c,stroke-width:2px,color:#1f2937
+ classDef beamt fill:#eff6ff,stroke:#1e3a8a,color:#1f2937
+ classDef schul fill:#fefce8,stroke:#ca8a04,color:#1f2937
 ```
 
 **Zwei-Säulen-Tabelle (K S. 170)**:
@@ -87,8 +87,6 @@ flowchart LR
 > Abs. 7: Lehrkräfte der Förderschulen sind verpflichtet, die Aufgaben der Förderschulen in allen in Art. 19 Abs. 2 BayEUG genannten Tätigkeitsbereichen wahrzunehmen.
 > Abs. 8: In der Schule und auf dem Schulgelände (mit Ausnahme von dort gelegenen Wohnungen) darf nicht geraucht werden. Bei schulischen Veranstaltungen außerhalb des Schulgeländes sollen die Lehrkräfte und das sonstige schulische Personal auf das Rauchen verzichten.
 
-*verified-1:1 · gesetze-bayern.de · BayVwV288393-9a*
-
 **§ 9b LDO — Außerunterrichtliche Dienstpflichten** (verbatim, 10-Punkte-Katalog):
 
 > Außerunterrichtliche Dienstpflichten
@@ -105,43 +103,39 @@ flowchart LR
 > – die Gestaltung des Schullebens.
 > Die Schulleitung hat darauf zu achten, dass die außerunterrichtlichen Aufgaben unter Berücksichtigung der individuellen dienstlichen Belastung möglichst gleichmäßig auf alle Lehrkräfte verteilt werden.
 
-*verified-1:1 · gesetze-bayern.de · BayVwV288393-9b*
-
 **Art. 59 BayEUG — Lehrkräfte** (verbatim Abs. 1+2):
 
 > Abs. 1: Die Lehrkräfte tragen die unmittelbare pädagogische Verantwortung für den Unterricht und die Erziehung der Schülerinnen und Schüler. Gegenüber dem ihnen zugeordneten sonstigen pädagogischen Personal sind sie weisungsberechtigt. Die Art. 111 bis 114 und die dienstrechtlichen Vorschriften bleiben unberührt. Art. 60a Abs. 2 gilt entsprechend.
 > Abs. 2: Die Lehrkräfte haben den in Art. 1 und 2 niedergelegten Bildungs- und Erziehungsauftrag sowie die Lehrpläne und Richtlinien für den Unterricht und die Erziehung zu beachten. Erteilen Lehrkräfte Distanzunterricht im Wege einer Videoübertragung und liegen die technischen Voraussetzungen vor, sind sie in der Regel zur Übertragung des eigenen Bildes und Tones verpflichtet. Sie müssen die verfassungsrechtlichen Grundwerte glaubhaft vermitteln. Äußere Symbole und Kleidungsstücke, die eine religiöse oder weltanschauliche Überzeugung ausdrücken, dürfen von Lehrkräften im Unterricht nicht getragen werden, sofern die Symbole oder Kleidungsstücke bei den Schülerinnen und Schülern oder den Eltern auch als Ausdruck einer Haltung verstanden werden können, die mit den verfassungsrechtlichen Grundwerten und Bildungszielen der Verfassung einschließlich den christlich-abendländischen Bildungs- und Kulturwerten nicht vereinbar ist. Art. 84 Abs. 2 bleibt unberührt. Für Lehrkräfte im Vorbereitungsdienst können im Einzelfall Ausnahmen von der Bestimmung des Satzes 4 zugelassen werden.
 
-*verified-1:1 · gesetze-bayern.de*
-
 !!! warning "⚠ Fallen § 9a/9b + Art. 59"
-    - § 9a/3 S. 2: Verfügbarkeit „in **zumutbarem** Umfang" + frühzeitige Information — KEINE schrankenlose Verfügbarkeit.
-    - § 9a/4: Fachfremder U. NICHT zum Nachteil bei Beurteilung — explizit geschützt.
-    - § 9a/8: Rauchverbot **absolut** auf Schulgelände (außer Wohnungen); außerhalb nur „sollen verzichten".
-    - § 9b: 10-Punkte-Katalog ist **„insbesondere"-Liste** — NICHT abschließend; Verteilung „möglichst gleichmäßig **unter Berücksichtigung** individueller Belastung" — keine starre Gleichverteilung.
-    - Art. 59/2 S. 4: Symbol-Verbot **konditional** („sofern auch als Haltung verstanden werden können") — KEIN absolutes Verbot.
+ - § 9a/3 S. 2: Verfügbarkeit „in **zumutbarem** Umfang" + frühzeitige Information — KEINE schrankenlose Verfügbarkeit.
+ - § 9a/4: Fachfremder U. NICHT zum Nachteil bei Beurteilung — explizit geschützt.
+ - § 9a/8: Rauchverbot **absolut** auf Schulgelände (außer Wohnungen); außerhalb nur „sollen verzichten".
+ - § 9b: 10-Punkte-Katalog ist **„insbesondere"-Liste** — NICHT abschließend; Verteilung „möglichst gleichmäßig **unter Berücksichtigung** individueller Belastung" — keine starre Gleichverteilung.
+ - Art. 59/2 S. 4: Symbol-Verbot **konditional** („sofern auch als Haltung verstanden werden können") — KEIN absolutes Verbot.
 
 ## A.2 Aufsichtspflicht (Hochfrequenz)
 
 ```mermaid
 flowchart TB
-    F["**Fürsorgepflicht des Staates**<br/>ununterbrochene Beaufsichtigung"]:::root
-    SL["**SL-Gesamtverantwortung**<br/>Art. 57/2 BayEUG"]:::sl
-    LK5["**§ 5 LDO**<br/>LK-Mitwirkung Aufsichtspflicht<br/>+ eigener Unterricht"]:::ldo
-    SUS["**Art. 56/4 BayEUG**<br/>SuS-Pflichten (Spiegel)"]:::eug
-    SCHO["**§ 22 BaySchO**<br/>Aufsicht-VO-Anker"]:::scho
+ F["**Fürsorgepflicht des Staates**<br/>ununterbrochene Beaufsichtigung"]:::root
+ SL["**SL-Gesamtverantwortung**<br/>Art. 57/2 BayEUG"]:::sl
+ LK5["**§ 5 LDO**<br/>LK-Mitwirkung Aufsichtspflicht<br/>+ eigener Unterricht"]:::ldo
+ SUS["**Art. 56/4 BayEUG**<br/>SuS-Pflichten (Spiegel)"]:::eug
+ SCHO["**§ 22 BaySchO**<br/>Aufsicht-VO-Anker"]:::scho
 
-    F --> SL
-    F --> LK5
-    SL --> LK5
-    LK5 -.korrespondiert.-> SUS
-    LK5 -.- SCHO
+ F --> SL
+ F --> LK5
+ SL --> LK5
+ LK5 -.korrespondiert.-> SUS
+ LK5 -.- SCHO
 
-    classDef root fill:#fef2f2,stroke:#9f1239,stroke-width:2px,color:#1f2937
-    classDef sl fill:#fff7ed,stroke:#c2410c,color:#1f2937
-    classDef ldo fill:#fefce8,stroke:#ca8a04,color:#1f2937
-    classDef eug fill:#f7fee7,stroke:#65a30d,color:#1f2937
-    classDef scho fill:#eff6ff,stroke:#1e3a8a,color:#1f2937
+ classDef root fill:#fef2f2,stroke:#9f1239,stroke-width:2px,color:#1f2937
+ classDef sl fill:#fff7ed,stroke:#c2410c,color:#1f2937
+ classDef ldo fill:#fefce8,stroke:#ca8a04,color:#1f2937
+ classDef eug fill:#f7fee7,stroke:#65a30d,color:#1f2937
+ classDef scho fill:#eff6ff,stroke:#1e3a8a,color:#1f2937
 ```
 
 **§ 5 LDO — Aufsichtspflicht** (verbatim):
@@ -152,15 +146,11 @@ flowchart TB
 > Abs. 3: Bei sonstigen schulischen Veranstaltungen gelten die Abs. 1 und 2 entsprechend. Beginnt oder endet eine schulische Veranstaltung außerhalb der Schule, so beginnt und endet dort auch die Aufsichtspflicht der Lehrkraft. Der Treff- und Endpunkt soll möglichst in der Nähe erreichbarer und zumutbarer Verkehrsmittel liegen. Für Schülerinnen und Schüler der Jahrgangsstufen eins bis vier muss der Treff- und Endpunkt auf jeden Fall innerhalb des Schulsprengels liegen.
 > Abs. 4: Wenn im Rahmen des stundenplanmäßigen Unterrichts andere Personen (z.B. aus dem Gesundheitsbereich, dem Bereich der beruflichen Orientierung oder von der Polizei) mitwirken, soll eine Lehrkraft anwesend sein.
 
-*verified-1:1 · gesetze-bayern.de · BayVwV288393-5*
-
 **§ 22 BaySchO — Beaufsichtigung** (verbatim):
 
 > Abs. 1: 1Die Aufsichtspflicht der Schule erstreckt sich auf die Zeit, in der die Schülerinnen und Schüler am Unterricht oder an sonstigen Schulveranstaltungen teilnehmen, einschließlich einer angemessenen Zeit vor Beginn und nach Beendigung des Unterrichts oder der Schulveranstaltungen. 2An Grundschulen sowie Grundschulstufen an Förderschulen gelten als angemessene Zeit vor Beginn des Unterrichts 15 Minuten, als angemessene Zeit nach Beendigung des Unterrichts gilt die Zeit bis zum Verlassen des Schulgeländes. 3Bei Bedarf erfolgt eine Beaufsichtigung an diesen Schulen eine halbe Stunde vor dem regelmäßigen Unterrichtsbeginn.
 > Abs. 2: 1Der Umfang der Aufsichtspflicht richtet sich nach der geistigen und charakterlichen Reife der zu beaufsichtigenden Schülerinnen und Schüler. 2Schülerinnen und Schülern kann gestattet werden, während der unterrichtsfreien Zeit die Schulanlage zu verlassen, ausgenommen an Grundschulen und Grundschulstufen an Förderschulen. 3Die Grundsätze werden mit dem Schulforum abgestimmt.
 > Abs. 3: 1Während der Teilnahme an der praktischen und fachpraktischen Ausbildung an beruflichen Schulen obliegt die Aufsicht den Praxisanleiterinnen und -anleitern bzw. den Ausbilderinnen und Ausbildern. 2Deren Anordnungen ist Folge zu leisten. 3Während der Teilnahme am Distanzunterricht außerhalb der Schule verbleibt die Aufsicht bei den Erziehungsberechtigten.
-
-*verified-1:1 · gesetze-bayern.de · BaySchO2016-22*
 
 **Charakteristika guter Aufsicht** (K S. 176): umsichtig — kontinuierlich — vorausschauend — aktiv — präventiv. **Vorbildwirkung LK** bedeutsam.
 
@@ -201,7 +191,7 @@ flowchart TB
 | **Disziplinarrecht** | BayDG Art. 6 ff. | LK persönlich — **5-Stufen-Maßnahmenkatalog** (Lebenszeit) + **2 Stufen** (Ruhestand) |
 | **Strafrecht** | StGB (Körperverletzung, fahrlässige Tötung, § 203 StGB Berufsgeheimnis) | LK persönlich |
 
-**Dienstvergehen + Maßnahmenkatalog** (verbatim · verified-1:1 · gesetze-bayern.de):
+**Dienstvergehen + Maßnahmenkatalog** (verbatim · gesetze-bayern.de):
 
 > **§ 47 BeamtStG (Bundesrecht)** definiert das Dienstvergehen — **Art. 6 BayDG enthält NICHT die Tatbestandsdefinition**, sondern den Maßnahmenkatalog. Tatbestand (§ 47/1 BeamtStG): schuldhafte Pflichtverletzung; außerdienstliches Verhalten erfasst, wenn es nach den Umständen des Einzelfalls in besonderem Maße geeignet ist, das Vertrauen in einer für ihr Amt bedeutsamen Weise zu beeinträchtigen.
 
@@ -218,8 +208,6 @@ flowchart TB
 >
 > **Art. 6 Abs. 3–5 BayDG — Sonderregeln**: Ehrenbeamte (nur Verweis · Geldbuße · Entfernung); Beamte auf Zeit (Verweis · Geldbuße · Kürzung · Entfernung); Probe-/Widerrufsbeamte (NUR Verweis + Geldbuße).
 
-*verified-1:1 · gesetze-bayern.de · BayDG-6 (Maßnahmenkatalog) + BayDG-7 (Verweis-Definition)*
-
 **Verschuldensformen — Faustregel** (K S. 178–179):
 
 - **Einfache Fahrlässigkeit**: „Das kann vorkommen!" — keine Haftungsfreistellung von Pflichtverletzung, aber **kein Rückgriff** des Freistaats.
@@ -232,13 +220,13 @@ flowchart TB
 - **„13:02 LK-Parkplatz"** = Aufsichtspflichtverletzung — angemessene Zeit nach U. bis Weggang SuS aus Schulanlage nicht eingehalten.
 
 !!! warning "⚠ Fallen Aufsicht"
-    - **15 Min vor U.-Beginn** (GS normativ, MS Praxis), NICHT „ab Klingel".
-    - § 5/1 S. 3: **„spätestens** von Beginn des Unterrichts an" im Raum — NICHT „pünktlich".
-    - § 5/1 S. 3: Aufsicht „**erforderlichenfalls bis zum Weggang**" — geht ggf. über Stundenende hinaus.
-    - § 5/3: Jgst. 1–4 Treff-/Endpunkt **muss** im Schulsprengel liegen — NICHT nur „soll".
-    - § 5/4: Bei Externen-Mitwirkung „**soll**" eine LK anwesend sein — Soll-Vorschrift, nicht absolute Pflicht.
-    - **Schulweg ≠ Aufsicht Schule** (Eltern); **Schulbus + Wartezeit** = Gemeinde/Schulverband (nicht LK).
-    - Rückgriff Freistaat → LK NUR bei **Vorsatz + grober Fahrlässigkeit**.
+ - **15 Min vor U.-Beginn** (GS normativ, MS Praxis), NICHT „ab Klingel".
+ - § 5/1 S. 3: **„spätestens** von Beginn des Unterrichts an" im Raum — NICHT „pünktlich".
+ - § 5/1 S. 3: Aufsicht „**erforderlichenfalls bis zum Weggang**" — geht ggf. über Stundenende hinaus.
+ - § 5/3: Jgst. 1–4 Treff-/Endpunkt **muss** im Schulsprengel liegen — NICHT nur „soll".
+ - § 5/4: Bei Externen-Mitwirkung „**soll**" eine LK anwesend sein — Soll-Vorschrift, nicht absolute Pflicht.
+ - **Schulweg ≠ Aufsicht Schule** (Eltern); **Schulbus + Wartezeit** = Gemeinde/Schulverband (nicht LK).
+ - Rückgriff Freistaat → LK NUR bei **Vorsatz + grober Fahrlässigkeit**.
 
 ## A.3 Auskunfts- und Schweigepflicht
 
@@ -249,8 +237,6 @@ flowchart TB
 > Abs. 2: Auskünfte an Presse, Rundfunk und Fernsehen erteilt nur die Schulleiterin oder der Schulleiter oder die von ihr oder ihm beauftragte Lehrkraft.
 > Abs. 3: Bis zur endgültigen Festlegung der Zeugnisnoten nach den für die einzelnen Schularten geltenden Bestimmungen dürfen Schülerinnen und Schülern oder Erziehungsberechtigten keine Auskünfte über das Vorrücken oder über Zeugnisnoten erteilt werden. § 6 Abs. 3 bleibt unberührt.
 > Abs. 4: Die Schule ist nicht berechtigt, anderen Personen als den Erziehungsberechtigten Auskunft über Schülerinnen und Schüler und ihre Leistungen zu geben. Von dieser Regel kann jedoch abgewichen werden, wenn die Erziehungsberechtigten ausdrücklich zustimmen oder wenn anzunehmen ist, dass sich die Auskunft für die Schülerinnen und Schüler und die Erziehungsberechtigten nur günstig auswirkt und die Zustimmung der Erziehungsberechtigten erwartet werden kann. Die Auskunftspflicht gegenüber den Ausbildenden oder Arbeitgebern nach den schulrechtlichen Bestimmungen für die Berufsschulen bleibt hiervon unberührt. Für Auskünfte an frühere Erziehungsberechtigte volljähriger Schüler gelten Art. 75 Abs. 1 und 88 Abs. 4 Satz 1 Ziff. 3 BayEUG. Die Erteilung von Auskünften über Schülerinnen und Schüler an Behörden außerhalb der Schulaufsicht richtet sich nach den dafür ergangenen besonderen Bestimmungen.
-
-*verified-1:1 · gesetze-bayern.de · BayVwV288393-14*
 
 **MUSS- vs. DARF-NICHT-Auskunft** (K S. 174–175):
 
@@ -278,11 +264,11 @@ flowchart TB
 5. Behörden außerhalb der Schulaufsicht: nach besonderen Bestimmungen.
 
 !!! warning "⚠ Fallen § 14 LDO"
-    - **§ 14/4 ≠ Notengeheimnis als Vergleichsverbot**: regelt Auskunft AN DRITTE; Vergleich mit anderen SuS folgt aus Drittauskunfts-Logik.
-    - **§ 14/3**: VOR Festlegung der Zeugnisnoten **keine** Auskunft über Vorrücken/Noten an SuS oder EB (§ 6/3 LDO bleibt unberührt — Pflicht zur frühzeitigen schriftlichen Warnung).
-    - **§ 14/2**: Presse/Rundfunk/TV NUR durch SL oder beauftragte LK — nicht „spontan auf dem Pausenhof".
-    - **§ 14/1**: Verschwiegenheit auch **nach** Beendigung des Dienstverhältnisses.
-    - **§ 14/1 S. 3**: Spannungen/Gegensätze innerhalb der Schule erfordern **vertrauliche Behandlung** — nicht in Lehrerzimmer-Klatsch.
+ - **§ 14/4 ≠ Notengeheimnis als Vergleichsverbot**: regelt Auskunft AN DRITTE; Vergleich mit anderen SuS folgt aus Drittauskunfts-Logik.
+ - **§ 14/3**: VOR Festlegung der Zeugnisnoten **keine** Auskunft über Vorrücken/Noten an SuS oder EB (§ 6/3 LDO bleibt unberührt — Pflicht zur frühzeitigen schriftlichen Warnung).
+ - **§ 14/2**: Presse/Rundfunk/TV NUR durch SL oder beauftragte LK — nicht „spontan auf dem Pausenhof".
+ - **§ 14/1**: Verschwiegenheit auch **nach** Beendigung des Dienstverhältnisses.
+ - **§ 14/1 S. 3**: Spannungen/Gegensätze innerhalb der Schule erfordern **vertrauliche Behandlung** — nicht in Lehrerzimmer-Klatsch.
 
 ## A.4 Fortbildungspflicht
 
@@ -329,15 +315,15 @@ flowchart TB
 *Inklusions-FB ist Schnittstelle zu MP_08 (MSD/ELECOK/FL): die in MP_08 (Block A.4) skizzierten Kooperationsformen mit MSD und Förderzentren erfordern entsprechende LK-Fortbildung im Bereich der 7 Förderschwerpunkte (Art. 20 BayEUG).*
 
 !!! warning "⚠ Fallen Fortbildung"
-    - **Mind. 1/3 SchiLF** ist Pflicht-Anteil — kein Verbleib auf externen Veranstaltungen allein.
-    - LK kann auch **in Ferien** zu dienstlichen FB-Veranstaltungen herangezogen werden (§ 9a/3 S. 2 LDO „in zumutbarem Umfang") — keine schrankenlose Ferien-Inanspruchnahme.
-    - KMBek 09.08.2002 in der **jeweils gültigen Fassung** — keine starre Quelle (Anpassung 08.2025 beachten).
+ - **Mind. 1/3 SchiLF** ist Pflicht-Anteil — kein Verbleib auf externen Veranstaltungen allein.
+ - LK kann auch **in Ferien** zu dienstlichen FB-Veranstaltungen herangezogen werden (§ 9a/3 S. 2 LDO „in zumutbarem Umfang") — keine schrankenlose Ferien-Inanspruchnahme.
+ - KMBek 09.08.2002 in der **jeweils gültigen Fassung** — keine starre Quelle (Anpassung 08.2025 beachten).
 
 ## A.5 Personalvertretung (BayPVG)
 
 **Rechtsgrundlage**: **Bayerisches Personalvertretungsgesetz (BayPVG)** für öffentlichen Dienst (Beamt:innen + Angestellte). **BetrVG** gilt **nicht** für Schule. Art. 12 Abs. 1 i.V.m. Art. 75/76 BayPVG → Personalrat in staatlichen Dienststellen.
 
-**Art. 75 BayPVG — Mitbestimmung in Personal- und Sozialangelegenheiten** (verbatim · verified-equivalent):
+**Art. 75 BayPVG — Mitbestimmung in Personal- und Sozialangelegenheiten** (verbatim):
 
 > Mitbestimmung in Personal- und Sozialangelegenheiten
 > Abs. 1: Der Personalrat hat, soweit eine gesetzliche oder tarifliche Regelung nicht besteht, in Personalangelegenheiten mitzubestimmen über Einstellung, Anstellung, Beförderung, Übertragung höherwertiger Tätigkeiten, höhere oder niedrigere Eingruppierung, Versetzung von einer Dienststelle zur anderen, Abordnung von Beamten von einer Dienststelle zur anderen für eine Dauer von mehr als drei Monaten, Übertragung eines anderen Dienstpostens, Versetzung in den Ruhestand auf eigenen Antrag bei Vorliegen einer der in Art. 64 BayBG genannten Voraussetzungen, Hinausschiebung des Eintritts in den Ruhestand, Geltendmachung von Ersatzansprüchen gegen einen Beschäftigten und in weiteren Personalmaßnahmen.
@@ -345,9 +331,7 @@ flowchart TB
 > Abs. 3: Der Personalrat hat in sozialen Angelegenheiten mitzubestimmen, soweit eine gesetzliche oder tarifliche Regelung nicht besteht, insbesondere bei Gewährung von Unterstützungen, Vorschüssen, Darlehen sowie Wohnungs- und Pachtland-Zuweisung.
 > Abs. 4: Der Personalrat hat ferner Mitbestimmungsrechte bei Beginn und Ende der täglichen Arbeitszeit, Pausen und Verteilung der Arbeitszeit, Aufstellung des Urlaubsplans, Lohngestaltung, Errichtung/Verwaltung/Auflösung von Sozialeinrichtungen, Berufsausbildung, Bestellung Betriebsärzte, Maßnahmen zur Verhütung von Dienst- und Arbeitsunfällen, Vorschlagswesen, Inhalt von Personalfragebogen, Beurteilungsrichtlinien und Sozialplänen.
 
-*verified-equivalent · gesetze-bayern.de*
-
-**Art. 76 BayPVG — Mitwirkung in Personal-, Sozial- und Organisationsangelegenheiten** (verbatim · verified-1:1):
+**Art. 76 BayPVG — Mitwirkung in Personal-, Sozial- und Organisationsangelegenheiten** (verbatim):
 
 > Mitwirkung in Personal-, Sozial- und Organisationsangelegenheiten
 > Abs. 1: Der Personalrat wirkt mit in sozialen und persönlichen Angelegenheiten bei:
@@ -370,8 +354,6 @@ flowchart TB
 > 4. Auflösung, Verlegung und Zusammenlegung von Dienststellen oder wesentlichen Teilen von ihnen;
 > 5. Aufstellung von Grundsätzen für die Personalbedarfsberechnung.
 > Abs. 3: Vor der Weiterleitung von Personalanforderungen zum Haushaltsvoranschlag ist der Personalrat anzuhören.
-
-*verified-1:1 · gesetze-bayern.de*
 
 **Beteiligungsformen-Tabelle** (K S. 196):
 
@@ -404,14 +386,14 @@ flowchart TB
 *Versetzungs-Mitbestimmung (Art. 75/1 BayPVG) berührt Schullaufbahn-Steuerung als LK-Personal-Verteilung; die SuS-perspektivische Schullaufbahn-Steuerung (Übertritt, Wechsel, Abschlüsse) ist in MP_03 (Block A.4–A.6) gesetzt — Spiegelblick LK-Personalmaßnahme ↔ SuS-Bildungsweg.*
 
 !!! warning "⚠ Fallen BayPVG"
-    - **Mitbestimmung ≠ Mitwirkung**: Bei Mitbestimmung hat die Dienststelle ohne PR-Zustimmung **keine Handlungsmacht**; bei Mitwirkung bleibt Entscheidungsrecht bei Dienststelle, PR nur angehört (Stellungnahme).
-    - **Streikrecht**: Beamt:innen haben Gewerkschaftsrecht ABER **kein Streikrecht** (Art. 33/5 GG, hergebrachte Grundsätze).
-    - **Zuständigkeit GS/MS örtlicher PR ≠ Schule**, sondern **Staatliches SchA** (klassische Verwechslung).
-    - **Art. 75/1**: Mitbestimmung NUR „soweit gesetzliche/tarifliche Regelung NICHT besteht" — sonst Vorrang.
-    - **Art. 75/1**: Versetzung über DIENSTSTELLEN-Grenze (nicht innerhalb); Abordnung **> 3 Monate** mitbestimmungspflichtig (kürzer nicht).
-    - **Art. 75/2**: Zustimmungsverweigerung nur aus 3 Kategorien (Rechtsverstoß · Benachteiligungs-Besorgnis · Dienststellenfrieden gestört).
-    - **Art. 76/1 Nr. 3–6**: Disziplinar/Probezeit/Entlassung/Ruhestand — Beteiligung **nur auf Antrag** des Beschäftigten + **rechtzeitig vorher** Information.
-    - **Art. 76/1 Nr. 11**: Telearbeit/Homeoffice-Versagung mitwirkungspflichtig.
+ - **Mitbestimmung ≠ Mitwirkung**: Bei Mitbestimmung hat die Dienststelle ohne PR-Zustimmung **keine Handlungsmacht**; bei Mitwirkung bleibt Entscheidungsrecht bei Dienststelle, PR nur angehört (Stellungnahme).
+ - **Streikrecht**: Beamt:innen haben Gewerkschaftsrecht ABER **kein Streikrecht** (Art. 33/5 GG, hergebrachte Grundsätze).
+ - **Zuständigkeit GS/MS örtlicher PR ≠ Schule**, sondern **Staatliches SchA** (klassische Verwechslung).
+ - **Art. 75/1**: Mitbestimmung NUR „soweit gesetzliche/tarifliche Regelung NICHT besteht" — sonst Vorrang.
+ - **Art. 75/1**: Versetzung über DIENSTSTELLEN-Grenze (nicht innerhalb); Abordnung **> 3 Monate** mitbestimmungspflichtig (kürzer nicht).
+ - **Art. 75/2**: Zustimmungsverweigerung nur aus 3 Kategorien (Rechtsverstoß · Benachteiligungs-Besorgnis · Dienststellenfrieden gestört).
+ - **Art. 76/1 Nr. 3–6**: Disziplinar/Probezeit/Entlassung/Ruhestand — Beteiligung **nur auf Antrag** des Beschäftigten + **rechtzeitig vorher** Information.
+ - **Art. 76/1 Nr. 11**: Telearbeit/Homeoffice-Versagung mitwirkungspflichtig.
 
 ---
 
@@ -491,52 +473,52 @@ flowchart TB
 
 <div class="grid cards" markdown>
 
--   :material-numeric-1-circle: __L01 · Pädagogische Freiheit__
+-:material-numeric-1-circle: __L01 · Pädagogische Freiheit__
 
-    **§ 2/1 LDO** — unmittelbare päd. Verantwortung.
-    Gebunden an **Lehrplan + Rechtsordnung** (Art. 45 BayEUG).
-    Kein „wie er will".
+ **§ 2/1 LDO** — unmittelbare päd. Verantwortung.
+ Gebunden an **Lehrplan + Rechtsordnung** (Art. 45 BayEUG).
+ Kein „wie er will".
 
--   :material-numeric-2-circle: __L02 · Aufsicht zeitlich__
+-:material-numeric-2-circle: __L02 · Aufsicht zeitlich__
 
-    § 22/1 BaySchO: **15 Min vor U.-Beginn** normativ NUR GS + GS-Stufe FöS.
-    MS „angemessene Zeit".
-    Bis Verlassen Schulgelände nach U.
+ § 22/1 BaySchO: **15 Min vor U.-Beginn** normativ NUR GS + GS-Stufe FöS.
+ MS „angemessene Zeit".
+ Bis Verlassen Schulgelände nach U.
 
--   :material-numeric-3-circle: __L03 · Haftungsdreieck__
+-:material-numeric-3-circle: __L03 · Haftungsdreieck__
 
-    § 839 BGB + Art. 34 GG → **Freistaat**.
-    BayDG Art. 6 → 5-Stufen-Katalog (Lebenszeit) + 2 Stufen (Ruhestand); Tatbestand § 47 BeamtStG.
-    StGB → LK persönlich.
-    Rückgriff NUR Vorsatz + grobe Fahrlässigkeit.
+ § 839 BGB + Art. 34 GG → **Freistaat**.
+ BayDG Art. 6 → 5-Stufen-Katalog (Lebenszeit) + 2 Stufen (Ruhestand); Tatbestand § 47 BeamtStG.
+ StGB → LK persönlich.
+ Rückgriff NUR Vorsatz + grobe Fahrlässigkeit.
 
--   :material-numeric-4-circle: __L04 · § 14/4 ≠ Notengeheimnis__
+-:material-numeric-4-circle: __L04 · § 14/4 ≠ Notengeheimnis__
 
-    Auskunfts-VERBOT an **Dritte**.
-    Notenauskunft an SuS/EB = subjektives öff. Recht.
-    Vergleich mit anderen SuS unzulässig.
+ Auskunfts-VERBOT an **Dritte**.
+ Notenauskunft an SuS/EB = subjektives öff. Recht.
+ Vergleich mit anderen SuS unzulässig.
 
--   :material-numeric-5-circle: __L05 · Presse-Hoheit SL__
+-:material-numeric-5-circle: __L05 · Presse-Hoheit SL__
 
-    **§ 14/2 LDO**: Auskünfte an Presse/Rundfunk/TV NUR SL oder beauftragte LK.
-    Eigeninitiative = Verstoß.
+ **§ 14/2 LDO**: Auskünfte an Presse/Rundfunk/TV NUR SL oder beauftragte LK.
+ Eigeninitiative = Verstoß.
 
--   :material-numeric-6-circle: __L06 · Fortbildung 12/4__
+-:material-numeric-6-circle: __L06 · Fortbildung 12/4__
 
-    § 9a/2 LDO + Art. 20 BayLBG + KMBek 09.08.2002.
-    **12 Tage / 4 Jahre = ~60 Std**.
-    Mind. **1/3 SchiLF** · 6 Zielfelder.
+ § 9a/2 LDO + Art. 20 BayLBG + KMBek 09.08.2002.
+ **12 Tage / 4 Jahre = ~60 Std**.
+ Mind. **1/3 SchiLF** · 6 Zielfelder.
 
--   :material-numeric-7-circle: __L07 · Mitbestimmung ≠ Mitwirkung__
+-:material-numeric-7-circle: __L07 · Mitbestimmung ≠ Mitwirkung__
 
-    Art. 75 BayPVG: **Zustimmung erforderlich** (Personal).
-    Art. 76/77: nur Stellungnahme/Anhörung.
+ Art. 75 BayPVG: **Zustimmung erforderlich** (Personal).
+ Art. 76/77: nur Stellungnahme/Anhörung.
 
--   :material-numeric-8-circle: __L08 · Kein Streikrecht__
+-:material-numeric-8-circle: __L08 · Kein Streikrecht__
 
-    **Art. 33/5 GG** hergebrachte Grundsätze.
-    Gewerkschaftsrecht ja, Streik nein.
-    PR-Weg statt Arbeitskampf.
+ **Art. 33/5 GG** hergebrachte Grundsätze.
+ Gewerkschaftsrecht ja, Streik nein.
+ PR-Weg statt Arbeitskampf.
 
 </div>
 
@@ -594,63 +576,63 @@ NEIN. **Art. 75/1 BayPVG** listet „Versetzung von einer Dienststelle zur ander
 # Teil D — Fallbeispiele (Anwendung)
 
 ??? example "Fall **Pünktlicher Parkplatz** — Aufsichtspflichtverletzung 13:02"
-    **Sachverhalt**: LK Frau Mahler verlässt um 13:02 Uhr das Schulgelände in Richtung Lehrer-Parkplatz, während SuS aus ihrer 6. Stunde noch in der Schulanlage befindlich sind (Stundenende 13:00). Im Pausenhof verletzt sich Schüler Jonas durch Stolpern, ohne dass eine LK präsent ist.
+ **Sachverhalt**: LK Frau Mahler verlässt um 13:02 Uhr das Schulgelände in Richtung Lehrer-Parkplatz, während SuS aus ihrer 6. Stunde noch in der Schulanlage befindlich sind (Stundenende 13:00). Im Pausenhof verletzt sich Schüler Jonas durch Stolpern, ohne dass eine LK präsent ist.
 
-    **Knackpunkte**:
+ **Knackpunkte**:
 
-    1. **§ 5/1 S. 3 LDO**: Aufsicht „**erforderlichenfalls bis zum Weggang** der Schülerinnen und Schüler" — geht ggf. über Stundenende hinaus.
-    2. **§ 22/1 S. 1 BaySchO**: „angemessene Zeit nach Beendigung des Unterrichts" — bis Verlassen der Schulanlage.
-    3. **Haftungsdreieck-Analyse**:
-       - Zivil/Amtshaftung: § 839 BGB + Art. 34 GG → **Freistaat haftet**; Rückgriff auf Mahler NUR bei Vorsatz + grober Fahrlässigkeit (hier: einfache Fahrlässigkeit eher wahrscheinlich → kein Rückgriff).
-       - Disziplinar: Dienstvergehen § 47 BeamtStG (Tatbestand) → Maßnahme aus BayDG Art. 6 Abs. 1 Katalog; SL kann **Verweis (Art. 7 BayDG)** als geringste Stufe aussprechen.
-       - Strafrecht: § 229 StGB fahrlässige Körperverletzung möglich (LK persönlich).
+ 1. **§ 5/1 S. 3 LDO**: Aufsicht „**erforderlichenfalls bis zum Weggang** der Schülerinnen und Schüler" — geht ggf. über Stundenende hinaus.
+ 2. **§ 22/1 S. 1 BaySchO**: „angemessene Zeit nach Beendigung des Unterrichts" — bis Verlassen der Schulanlage.
+ 3. **Haftungsdreieck-Analyse**:
+ - Zivil/Amtshaftung: § 839 BGB + Art. 34 GG → **Freistaat haftet**; Rückgriff auf Mahler NUR bei Vorsatz + grober Fahrlässigkeit (hier: einfache Fahrlässigkeit eher wahrscheinlich → kein Rückgriff).
+ - Disziplinar: Dienstvergehen § 47 BeamtStG (Tatbestand) → Maßnahme aus BayDG Art. 6 Abs. 1 Katalog; SL kann **Verweis (Art. 7 BayDG)** als geringste Stufe aussprechen.
+ - Strafrecht: § 229 StGB fahrlässige Körperverletzung möglich (LK persönlich).
 
-    **Antwortkette**: Aufsichtspflichtverletzung bejahen → Direktionalität § 5/1 LDO + § 22/1 BaySchO benennen → Haftungsdreieck durchspielen → Verschuldensgrad einordnen (einfache vs. grobe Fahrlässigkeit) → Disziplinarstufe abschätzen.
+ **Antwortkette**: Aufsichtspflichtverletzung bejahen → Direktionalität § 5/1 LDO + § 22/1 BaySchO benennen → Haftungsdreieck durchspielen → Verschuldensgrad einordnen (einfache vs. grobe Fahrlässigkeit) → Disziplinarstufe abschätzen.
 
 ??? example "Fall **Pressetermin Frau Berg** — § 14/2 LDO"
-    **Sachverhalt**: Lokalreporter spricht im Schuleingang LK Frau Berg an, fragt nach der gestrigen Schulkonferenz-Diskussion über das neue Inklusions-Profil. Frau Berg gibt spontan ein 5-Minuten-Interview mit Detail-Wiedergabe der Wortbeiträge einzelner Kollegen.
+ **Sachverhalt**: Lokalreporter spricht im Schuleingang LK Frau Berg an, fragt nach der gestrigen Schulkonferenz-Diskussion über das neue Inklusions-Profil. Frau Berg gibt spontan ein 5-Minuten-Interview mit Detail-Wiedergabe der Wortbeiträge einzelner Kollegen.
 
-    **Knackpunkte**:
+ **Knackpunkte**:
 
-    1. **§ 14/2 LDO** (verbatim): „Auskünfte an Presse, Rundfunk und Fernsehen erteilt nur die Schulleiterin oder der Schulleiter oder die von ihr oder ihm beauftragte Lehrkraft." — Frau Berg war nicht beauftragt → Kompetenzüberschreitung.
-    2. **§ 14/1 S. 3 LDO**: „Spannungen und Gegensätze innerhalb der Schule erfordern vertrauliche Behandlung" — Konferenz-Wortbeiträge sind vertraulich.
-    3. **Disziplinarrechtlicher Schritt**: Dienstvergehen-Tatbestand nach **§ 47 BeamtStG** (schuldhafte Pflichtverletzung). Maßnahme aus dem BayDG-Art.-6-Katalog: niedrigste Stufe **Verweis (Art. 7 BayDG, schriftlich)** wahrscheinlich, da kein gravierender Schaden + Erstvorgang.
+ 1. **§ 14/2 LDO** (verbatim): „Auskünfte an Presse, Rundfunk und Fernsehen erteilt nur die Schulleiterin oder der Schulleiter oder die von ihr oder ihm beauftragte Lehrkraft." — Frau Berg war nicht beauftragt → Kompetenzüberschreitung.
+ 2. **§ 14/1 S. 3 LDO**: „Spannungen und Gegensätze innerhalb der Schule erfordern vertrauliche Behandlung" — Konferenz-Wortbeiträge sind vertraulich.
+ 3. **Disziplinarrechtlicher Schritt**: Dienstvergehen-Tatbestand nach **§ 47 BeamtStG** (schuldhafte Pflichtverletzung). Maßnahme aus dem BayDG-Art.-6-Katalog: niedrigste Stufe **Verweis (Art. 7 BayDG, schriftlich)** wahrscheinlich, da kein gravierender Schaden + Erstvorgang.
 
-    **Antwortkette**: Verstoß gegen § 14/2 LDO konstatieren → zusätzlich § 14/1 S. 3 als Vertraulichkeit → Tatbestand § 47 BeamtStG + Maßnahmenkatalog BayDG Art. 6 → Stufe Verweis (Art. 7 BayDG) → SL-Aufgabe: künftig Pressekontakt-Regelung im Kollegium kommunizieren.
+ **Antwortkette**: Verstoß gegen § 14/2 LDO konstatieren → zusätzlich § 14/1 S. 3 als Vertraulichkeit → Tatbestand § 47 BeamtStG + Maßnahmenkatalog BayDG Art. 6 → Stufe Verweis (Art. 7 BayDG) → SL-Aufgabe: künftig Pressekontakt-Regelung im Kollegium kommunizieren.
 
 ??? example "Fall **Hannah-Auskunft** — Spiegel zu MP_05 Hannah"
-    **Sachverhalt**: SuS Hannah (8. Kl. MS) verlangt im Sprechstundengespräch von Mathe-LK Auskunft über alle ihre Mathe-Noten und fragt zusätzlich, was Lara aus der Parallelklasse für die letzte Probe hatte.
+ **Sachverhalt**: SuS Hannah (8. Kl. MS) verlangt im Sprechstundengespräch von Mathe-LK Auskunft über alle ihre Mathe-Noten und fragt zusätzlich, was Lara aus der Parallelklasse für die letzte Probe hatte.
 
-    **Knackpunkte**:
+ **Knackpunkte**:
 
-    1. **Notenauskunft an Hannah selbst** = subjektives öff. Recht (Art. 56/2 BayEUG + Art. 52/1 + DSGVO Art. 15 + BV Art. 128) — alle Notenarten umfasst, **muss erteilt werden**.
-    2. **Vergleich mit Lara** = **§ 14/4 LDO**-Verstoß (Auskunftsverbot an Dritte / über andere SuS namentlich zum Vergleich) — ist NICHT der „Notengeheimnis"-Mythos, sondern folgt aus Drittauskunfts-Logik (Lara ist für Hannah eine „andere Person").
-    3. **Drift-Falle**: § 14/4 LDO regelt **Auskunft AN Dritte** — NICHT „Notengeheimnis als Vergleichsverbot ggü. SuS". Der Vergleichsnamen-Block leitet sich aus der Drittauskunfts-Logik ab.
+ 1. **Notenauskunft an Hannah selbst** = subjektives öff. Recht (Art. 56/2 BayEUG + Art. 52/1 + DSGVO Art. 15 + BV Art. 128) — alle Notenarten umfasst, **muss erteilt werden**.
+ 2. **Vergleich mit Lara** = **§ 14/4 LDO**-Verstoß (Auskunftsverbot an Dritte / über andere SuS namentlich zum Vergleich) — ist NICHT der „Notengeheimnis"-Mythos, sondern folgt aus Drittauskunfts-Logik (Lara ist für Hannah eine „andere Person").
+ 3. **Drift-Falle**: § 14/4 LDO regelt **Auskunft AN Dritte** — NICHT „Notengeheimnis als Vergleichsverbot ggü. SuS". Der Vergleichsnamen-Block leitet sich aus der Drittauskunfts-Logik ab.
 
-    **Antwortkette**: Eigene Note-Auskunft (Anspruchsgrundlage Art. 56/2 BayEUG) bejahen → Strukturiertes Einzelgespräch mit Belegen + Förderhinweisen → Lara-Frage höflich aber bestimmt zurückweisen mit Verweis auf § 14/4 LDO-Direktionalität. KEINE Verwechslung mit „Notengeheimnis" als globales Vergleichsverbot.
+ **Antwortkette**: Eigene Note-Auskunft (Anspruchsgrundlage Art. 56/2 BayEUG) bejahen → Strukturiertes Einzelgespräch mit Belegen + Förderhinweisen → Lara-Frage höflich aber bestimmt zurückweisen mit Verweis auf § 14/4 LDO-Direktionalität. KEINE Verwechslung mit „Notengeheimnis" als globales Vergleichsverbot.
 
 ??? example "Fall **Distanzunterricht zuhause** — § 22/3 BaySchO"
-    **Sachverhalt**: Wegen Heizungsausfalls schickt die Schulleitung die Klasse 8c am Mittwoch in den Distanzunterricht (Videokonferenz aus dem Elternhaus). Schüler Tim verlässt während der Videokonferenz heimlich den Bildschirm und spielt Konsole. Vater fragt entrüstet bei der KL: „Wer haftet jetzt für die Aufsicht über mein Kind?"
+ **Sachverhalt**: Wegen Heizungsausfalls schickt die Schulleitung die Klasse 8c am Mittwoch in den Distanzunterricht (Videokonferenz aus dem Elternhaus). Schüler Tim verlässt während der Videokonferenz heimlich den Bildschirm und spielt Konsole. Vater fragt entrüstet bei der KL: „Wer haftet jetzt für die Aufsicht über mein Kind?"
 
-    **Knackpunkte**:
+ **Knackpunkte**:
 
-    1. **§ 22/3 S. 3 BaySchO** (verbatim): „Während der Teilnahme am Distanzunterricht außerhalb der Schule verbleibt die Aufsicht bei den Erziehungsberechtigten." → klare Direktionalität: **Eltern**, nicht Schule.
-    2. **Schulische Restpflichten**: Bereitstellung der Lehrinhalte, Erreichbarkeit der LK, Bild-/Ton-Pflicht der LK (Art. 59/2 S. 2 BayEUG „in der Regel"). Aber: keine Aufsichtspflicht über das Verhalten des Kindes im Elternhaus.
-    3. **Korrespondierende SuS-Pflicht**: Art. 56/4 S. 4 BayEUG — Bild- und Tonübertragung des SuS bei pädagogisch begründeter Anordnung der LK.
+ 1. **§ 22/3 S. 3 BaySchO** (verbatim): „Während der Teilnahme am Distanzunterricht außerhalb der Schule verbleibt die Aufsicht bei den Erziehungsberechtigten." → klare Direktionalität: **Eltern**, nicht Schule.
+ 2. **Schulische Restpflichten**: Bereitstellung der Lehrinhalte, Erreichbarkeit der LK, Bild-/Ton-Pflicht der LK (Art. 59/2 S. 2 BayEUG „in der Regel"). Aber: keine Aufsichtspflicht über das Verhalten des Kindes im Elternhaus.
+ 3. **Korrespondierende SuS-Pflicht**: Art. 56/4 S. 4 BayEUG — Bild- und Tonübertragung des SuS bei pädagogisch begründeter Anordnung der LK.
 
-    **Antwortkette**: § 22/3 S. 3 BaySchO als zentrale Norm zitieren → Aufsichtsverantwortung den Eltern zuordnen → schulische Restpflichten benennen (Bereitstellung Lehrinhalt + Erreichbarkeit LK) → Tim's Verhalten ist primär ein Elternhaus-Aufsichtsthema, kein LK-Haftungstatbestand.
+ **Antwortkette**: § 22/3 S. 3 BaySchO als zentrale Norm zitieren → Aufsichtsverantwortung den Eltern zuordnen → schulische Restpflichten benennen (Bereitstellung Lehrinhalt + Erreichbarkeit LK) → Tim's Verhalten ist primär ein Elternhaus-Aufsichtsthema, kein LK-Haftungstatbestand.
 
 ??? example "Fall **Versetzung Wieser** — Mitbestimmung statt Anhörung"
-    **Sachverhalt**: Herr Wieser, Mathe-/Physik-LK an MS A, wird im Rahmen des KMK-Versetzungsverfahrens an MS B versetzt. SL informiert den örtlichen Personalrat (Staatl. Schulamt) erst **im Nachgang** über die abgeschlossene Versetzung. Der PR rügt: „Wir hätten **vorher** gehört werden müssen." Wieser fragt seinen LAA-Kollegen: „Ist das so korrekt?"
+ **Sachverhalt**: Herr Wieser, Mathe-/Physik-LK an MS A, wird im Rahmen des KMK-Versetzungsverfahrens an MS B versetzt. SL informiert den örtlichen Personalrat (Staatl. Schulamt) erst **im Nachgang** über die abgeschlossene Versetzung. Der PR rügt: „Wir hätten **vorher** gehört werden müssen." Wieser fragt seinen LAA-Kollegen: „Ist das so korrekt?"
 
-    **Knackpunkte**:
+ **Knackpunkte**:
 
-    1. **Art. 75/1 BayPVG** (verbatim): listet „Versetzung von einer Dienststelle zur anderen" explizit als **Mitbestimmungs**-Tatbestand — d. h. die Dienststelle kann die Maßnahme „erst nach Zustimmung PR" durchführen (Mitbestimmung ≠ Mitwirkung/Anhörung).
-    2. **Verfahrensfehler**: Information „im Nachgang" verfehlt das Mitbestimmungsverfahren komplett — ohne PR-Zustimmung war die Maßnahme rechtswidrig durchgeführt.
-    3. **PR-Reaktion**: PR kann Beanstandung einreichen → Stufenverfahren über Bezirks-PR / HPR → ggf. Einigungsstelle (Art. 71 BayPVG).
-    4. **Direktionalität**: Versetzung **über Dienststellen-Grenze** ist mitbestimmungspflichtig; reine **Umsetzung innerhalb** einer Dienststelle nicht (Falle).
+ 1. **Art. 75/1 BayPVG** (verbatim): listet „Versetzung von einer Dienststelle zur anderen" explizit als **Mitbestimmungs**-Tatbestand — d. h. die Dienststelle kann die Maßnahme „erst nach Zustimmung PR" durchführen (Mitbestimmung ≠ Mitwirkung/Anhörung).
+ 2. **Verfahrensfehler**: Information „im Nachgang" verfehlt das Mitbestimmungsverfahren komplett — ohne PR-Zustimmung war die Maßnahme rechtswidrig durchgeführt.
+ 3. **PR-Reaktion**: PR kann Beanstandung einreichen → Stufenverfahren über Bezirks-PR / HPR → ggf. Einigungsstelle (Art. 71 BayPVG).
+ 4. **Direktionalität**: Versetzung **über Dienststellen-Grenze** ist mitbestimmungspflichtig; reine **Umsetzung innerhalb** einer Dienststelle nicht (Falle).
 
-    **Antwortkette**: Mitbestimmung (Art. 75/1) ↔ Mitwirkung/Anhörung (Art. 76/77) trennen → Versetzungs-Tatbestand explizit in Art. 75/1 verorten → Verfahrensfehler diagnostizieren → PR-Beanstandungsweg + Einigungsstellen-Option skizzieren → Antwort an Wieser: „Ja, der PR hat Recht — die Versetzung erforderte Mitbestimmung, nicht nur Anhörung."
+ **Antwortkette**: Mitbestimmung (Art. 75/1) ↔ Mitwirkung/Anhörung (Art. 76/77) trennen → Versetzungs-Tatbestand explizit in Art. 75/1 verorten → Verfahrensfehler diagnostizieren → PR-Beanstandungsweg + Einigungsstellen-Option skizzieren → Antwort an Wieser: „Ja, der PR hat Recht — die Versetzung erforderte Mitbestimmung, nicht nur Anhörung."
 
 ---
 

@@ -10,20 +10,20 @@ Das Verhältnis SuS ↔ Schule ist ein **rechtliches Doppelprinzip**: SuS haben 
 
 ```mermaid
 flowchart TB
-    BV["**BV** · Bayerische Verfassung<br/>Art. 128 (Bildungsanspruch) · 131 (Demokratie-/Völkerverständigung)"]:::bv
-    BAY["**BayEUG** · Bay. Erziehungs- und Unterrichts-Gesetz<br/>Art. 35 · 36/3 · 41 · 52 · 56 · 62 · 62a · 63 · 73 · 78 · 80 · 84 · 86 · 118"]:::bay
-    VO["**VO** · Schulordnungen<br/>BaySchO §§ 8 · 9 · 10 · 11 · 20 · 23 · 28 · 41 · MSO § 12 · GrSO § 8 · MSO § 10 · LDO § 14"]:::vo
-    KM["**KMBek** · Vorkurs Deutsch 240 · DeutschPLUS · LehrplanPLUS DaZ"]:::km
-    BUND["**Bundesrecht** · GG Art. 103/3 (ne bis in idem analog) · DSGVO Art. 15 · KUG · BayPrG"]:::bund
+ BV["**BV** · Bayerische Verfassung<br/>Art. 128 (Bildungsanspruch) · 131 (Demokratie-/Völkerverständigung)"]:::bv
+ BAY["**BayEUG** · Bay. Erziehungs- und Unterrichts-Gesetz<br/>Art. 35 · 36/3 · 41 · 52 · 56 · 62 · 62a · 63 · 73 · 78 · 80 · 84 · 86 · 118"]:::bay
+ VO["**VO** · Schulordnungen<br/>BaySchO §§ 8 · 9 · 10 · 11 · 20 · 23 · 28 · 41 · MSO § 12 · GrSO § 8 · MSO § 10 · LDO § 14"]:::vo
+ KM["**KMBek** · Vorkurs Deutsch 240 · DeutschPLUS · LehrplanPLUS DaZ"]:::km
+ BUND["**Bundesrecht** · GG Art. 103/3 (ne bis in idem analog) · DSGVO Art. 15 · KUG · BayPrG"]:::bund
 
-    BV --> BAY --> VO --> KM
-    BUND -.Querverweis.-> BAY
+ BV --> BAY --> VO --> KM
+ BUND -.Querverweis.-> BAY
 
-    classDef bv fill:#fef2f2,stroke:#9f1239,stroke-width:2px,color:#1f2937
-    classDef bay fill:#fff7ed,stroke:#c2410c,stroke-width:2px,color:#1f2937
-    classDef vo fill:#fefce8,stroke:#ca8a04,stroke-width:2px,color:#1f2937
-    classDef km fill:#f7fee7,stroke:#65a30d,stroke-width:2px,color:#1f2937
-    classDef bund fill:#eff6ff,stroke:#1e3a8a,stroke-width:2px,color:#1f2937
+ classDef bv fill:#fef2f2,stroke:#9f1239,stroke-width:2px,color:#1f2937
+ classDef bay fill:#fff7ed,stroke:#c2410c,stroke-width:2px,color:#1f2937
+ classDef vo fill:#fefce8,stroke:#ca8a04,stroke-width:2px,color:#1f2937
+ classDef km fill:#f7fee7,stroke:#65a30d,stroke-width:2px,color:#1f2937
+ classDef bund fill:#eff6ff,stroke:#1e3a8a,stroke-width:2px,color:#1f2937
 ```
 
 | Ebene | Schwerpunkt-Normen |
@@ -44,24 +44,24 @@ flowchart TB
 
 ```mermaid
 flowchart LR
-    R["Rechte SuS<br/>Art. 56/2 BayEUG"]:::root
-    INFO["**Information**<br/>· Schulbetrieb<br/>· Leistungsstand<br/>· Förderhinweise"]:::info
-    BET["**Beteiligung**<br/>· Schulleben<br/>· U.-Mitwirkung<br/>· SMV"]:::bet
-    BES["**Beschwerde**<br/>· LK → SL → Schulforum<br/>('nacheinander', Art. 56/2 Nr. 5)"]:::bes
+ R["Rechte SuS<br/>Art. 56/2 BayEUG"]:::root
+ INFO["**Information**<br/>· Schulbetrieb<br/>· Leistungsstand<br/>· Förderhinweise"]:::info
+ BET["**Beteiligung**<br/>· Schulleben<br/>· U.-Mitwirkung<br/>· SMV"]:::bet
+ BES["**Beschwerde**<br/>· LK → SL → Schulforum<br/>('nacheinander', Art. 56/2 Nr. 5)"]:::bes
 
-    R --> INFO
-    R --> BET
-    R --> BES
+ R --> INFO
+ R --> BET
+ R --> BES
 
-    classDef root fill:#fff7ed,stroke:#c2410c,stroke-width:2px,color:#1f2937
-    classDef info fill:#fefce8,stroke:#ca8a04,color:#1f2937
-    classDef bet fill:#f7fee7,stroke:#65a30d,color:#1f2937
-    classDef bes fill:#fef2f2,stroke:#9f1239,color:#1f2937
+ classDef root fill:#fff7ed,stroke:#c2410c,stroke-width:2px,color:#1f2937
+ classDef info fill:#fefce8,stroke:#ca8a04,color:#1f2937
+ classDef bet fill:#f7fee7,stroke:#65a30d,color:#1f2937
+ classDef bes fill:#fef2f2,stroke:#9f1239,color:#1f2937
 ```
 
 - **Informationsrechte**: über wesentl. Schulangelegenheiten · Auskunft über Leistungsstand · Förderhinweise. Bei Minderjährigen gelten Info-Rechte **auch für Erziehungsberechtigte**.
 - **Beteiligungsrechte**: Teilnahme am Schulleben, Mitwirkung an U.-Gestaltung im Rahmen von Schulordnung + Lehrplan.
-- **Beschwerderecht**: Wortlaut Art. 56/2 Nr. 5 BayEUG (verified-1:1) — „bei als ungerecht empfundener Behandlung oder Beurteilung sich **nacheinander** an Lehrkräfte, an die Schulleiterin oder den Schulleiter und an das Schulforum zu wenden". Das Adverb „nacheinander" gibt eine **gestufte Reihenfolge** vor (LK → SL → Schulforum). Praktische Lockerung: bei Beurteilungs-Konflikten kann eine Eskalationsstufe übersprungen werden, wenn die jeweilige Ebene befangen ist — der Wortlaut nennt aber keine pauschale Wahlfreiheit.
+- **Beschwerderecht**: Wortlaut Art. 56/2 Nr. 5 BayEUG — „bei als ungerecht empfundener Behandlung oder Beurteilung sich **nacheinander** an Lehrkräfte, an die Schulleiterin oder den Schulleiter und an das Schulforum zu wenden". Das Adverb „nacheinander" gibt eine **gestufte Reihenfolge** vor (LK → SL → Schulforum). Praktische Lockerung: bei Beurteilungs-Konflikten kann eine Eskalationsstufe übersprungen werden, wenn die jeweilige Ebene befangen ist — der Wortlaut nennt aber keine pauschale Wahlfreiheit.
 <!-- pre-audit-2026-05-01: "...keine politische Agitation; abhängig von Alter, Reife, Interesse." → Drift gegen Art. 56/3 BayEUG (Wortlaut: nur "sachlicher Zusammenhang" als unterrichtsbez. Schranke; KEIN Alter/Reife-Vorbehalt). -->
 - **Freie Meinungsäußerung** (Art. 56/3): „im Unterricht ist der sachliche Zusammenhang zu wahren" — Wortlaut nennt **„Alle Schülerinnen und Schüler"**; **sachlicher Zusammenhang ist die einzige unterrichtsbezogene Schranke** (KEIN Alter/Reife-Vorbehalt).
 - **Fürsorge-Rechte**: Schulgesundheit · Unfallverhütung · Lernmittelfreiheit · Kostenfreiheit Schulweg.
@@ -81,7 +81,7 @@ flowchart LR
 - **Falle**: Vergleich mit Noten anderer SuS ist nicht zulässig — die Auskunftspflicht bezieht sich nur auf die eigenen Leistungen der/des einzelnen SuS (datenschutzrechtliche Bindung an die individuelle Person, BaySchO § 39 i.V.m. DSGVO Art. 6/1; LDO § 14 normiert nur die Verschwiegenheitspflicht der Lehrkraft, KEIN „Notengeheimnis" oder explizites Vergleichsverbot — der häufig kursierende „§ 14/4 LDO Notengeheimnis"-Anker ist Drift; § 14 Abs. 4 LDO regelt vielmehr, an WEN die Schule Schülerinformationen geben darf — primär Erziehungsberechtigte).
 
 !!! warning "⚠ Falle Beschwerderecht"
-    Wortlaut Art. 56/2 Nr. 5 sagt **„nacheinander"** (LK → SL → Schulforum) — also durchaus eine vorgegebene Reihenfolge. Pragmatische Lockerung: bei Befangenheit der unteren Ebene kann übersprungen werden; die LK darf trotzdem nicht „erst zu mir, dann SL" als Bedingung pauschal vorschreiben.
+ Wortlaut Art. 56/2 Nr. 5 sagt **„nacheinander"** (LK → SL → Schulforum) — also durchaus eine vorgegebene Reihenfolge. Pragmatische Lockerung: bei Befangenheit der unteren Ebene kann übersprungen werden; die LK darf trotzdem nicht „erst zu mir, dann SL" als Bedingung pauschal vorschreiben.
 
 ## A.2 Pflichten der SuS (Art. 56/4 BayEUG)
 
@@ -100,11 +100,11 @@ flowchart LR
 
 | Bereich | Norm | Regelung |
 |---|---|---|
-| **Handy / digitale Endgeräte** | Art. 56/5 (verified-1:1) | Wortlaut Satz 1: „Die Verwendung von digitalen Endgeräten ist für Schülerinnen und Schüler nur zulässig 1. im Unterricht und bei sonstigen Schulveranstaltungen, soweit die Aufsicht führende Person dies gestattet, 2. im Übrigen im Schulgebäude und auf dem Schulgelände, soweit dies die Schulleitung im Einvernehmen mit dem Schulforum allgemein oder die Aufsicht führende Person im Einzelfall gestattet". Satz 3: „Satz 1 Nr. 2 gilt nicht für Grundschulen und Grundschulstufen an Förderschulen". Satz 4: „Bei unzulässiger Verwendung kann das digitale Endgerät vorübergehend einbehalten werden". **Kein absolutes Verbot.** |
+| **Handy / digitale Endgeräte** | Art. 56/5 | Wortlaut Satz 1: „Die Verwendung von digitalen Endgeräten ist für Schülerinnen und Schüler nur zulässig 1. im Unterricht und bei sonstigen Schulveranstaltungen, soweit die Aufsicht führende Person dies gestattet, 2. im Übrigen im Schulgebäude und auf dem Schulgelände, soweit dies die Schulleitung im Einvernehmen mit dem Schulforum allgemein oder die Aufsicht führende Person im Einzelfall gestattet". Satz 3: „Satz 1 Nr. 2 gilt nicht für Grundschulen und Grundschulstufen an Förderschulen". Satz 4: „Bei unzulässiger Verwendung kann das digitale Endgerät vorübergehend einbehalten werden". **Kein absolutes Verbot.** |
 | **Rauchen** | Art. 3 GSG | in Schulen + auf Gelände **verboten** |
 | **Alkohol/Rauschmittel** | § 23/1 BaySchO | Konsum innerhalb Schulanlage + bei schul. Veranstaltungen untersagt |
 | **Gefährliche/störende Gegenstände** | § 23/2 BaySchO | Mitbringen/Mitführen untersagt; **Wegnahme + Sicherstellung** zulässig; **Rückgabe bei Minderjährigen NUR an Erziehungsberechtigte** |
-| **Politik/Parteinahme** | Art. 84 BayEUG (verified-1:1) | Abs. 2: „Politische Werbung im Rahmen von Schulveranstaltungen oder auf dem Schulgelände ist nicht zulässig". Abs. 3 Abzeichen: zulässig, **wenn dadurch nicht Schulfriede, geordneter Schulbetrieb, Bildungs-/Erziehungsauftrag, persönliche Ehre oder Erziehung zur Toleranz gefährdet wird** (5 Schutzgüter); im Zweifelsfall entscheidet die SL. |
+| **Politik/Parteinahme** | Art. 84 BayEUG | Abs. 2: „Politische Werbung im Rahmen von Schulveranstaltungen oder auf dem Schulgelände ist nicht zulässig". Abs. 3 Abzeichen: zulässig, **wenn dadurch nicht Schulfriede, geordneter Schulbetrieb, Bildungs-/Erziehungsauftrag, persönliche Ehre oder Erziehung zur Toleranz gefährdet wird** (5 Schutzgüter); im Zweifelsfall entscheidet die SL. |
 
 **Mitarbeitsnote ↔ Verhaltenssanktion** (Master-Fehlerliste M20 + Reviewer-D F6):
 
@@ -112,16 +112,16 @@ flowchart LR
 - Verweigerung = fehlende Leistung bewertbar; das **Verweigern selbst** ist KEIN Notenkriterium.
 - Verhaltenssanktion separat über Art. 86 (Erziehungs-/Ordnungsmaßnahme).
 - **Doppelsanktion**-Prüfschema (Art. 103/3 GG analog, ne bis in idem):
-    1. identisches Verhalten?
-    2. zwei Sanktionen?
-    3. verschiedene Rechtsgüter?
+ 1. identisches Verhalten?
+ 2. zwei Sanktionen?
+ 3. verschiedene Rechtsgüter?
 - **Identische** mündl. Note + Verweis für **identisches** Verhalten → unzulässig.
 
 !!! warning "⚠ Fallen Pflichten"
-    - **Handy nicht absolut verboten** — Aufsichts-/SL-Genehmigung möglich.
-    - **Filmen einer LK**: Persönlichkeitsrecht + KUG-Verstoß → Beschlagnahme nach § 23/2 BaySchO + Ordnungsmaßnahme.
-    - **Rückgabe gefährlicher Gegenstände** bei Minderjährigen NUR an Eltern.
-    - **Mitarbeitsnote als Verhaltens-Strafe = Fachfehler.**
+ - **Handy nicht absolut verboten** — Aufsichts-/SL-Genehmigung möglich.
+ - **Filmen einer LK**: Persönlichkeitsrecht + KUG-Verstoß → Beschlagnahme nach § 23/2 BaySchO + Ordnungsmaßnahme.
+ - **Rückgabe gefährlicher Gegenstände** bei Minderjährigen NUR an Eltern.
+ - **Mitarbeitsnote als Verhaltens-Strafe = Fachfehler.**
 
 ## A.3 SuS mit nichtdeutscher Muttersprache (ndM)
 
@@ -153,7 +153,7 @@ flowchart LR
 **Interkulturelle Erziehung**: GG + **BV Art. 131** („Geist der Demokratie", „Völkerversöhnung"); LehrplanPLUS MS = „interkultureller Begegnungsort". LK-Rolle: reversible Sprachhaltung · positive Konfliktlösung · repressionsfrei demokratisch.
 
 !!! warning "⚠ Falle ndM"
-    Tiefere Jgst.-Einstufung (bis 2 Jgst.) NUR bei mangelndem **Bildungsstand**, NICHT bei sprachlichen Defiziten allein. Wer „kein Deutsch" als Begründung für Tiefer-Einweisung nennt, verstößt gegen Art. 36/3 S. 4 BayEUG.
+ Tiefere Jgst.-Einstufung (bis 2 Jgst.) NUR bei mangelndem **Bildungsstand**, NICHT bei sprachlichen Defiziten allein. Wer „kein Deutsch" als Begründung für Tiefer-Einweisung nennt, verstößt gegen Art. 36/3 S. 4 BayEUG.
 
 ## A.4 SMV — Schülermitverantwortung (Art. 62–63 BayEUG)
 
@@ -168,7 +168,7 @@ flowchart LR
 - Mithilfe bei Konfliktlösung.
 - Unterstützung durch SL + LK + Elternbeirat.
 
-**6 Rechte (Art. 62 Abs. 1 Satz 4 BayEUG · verified-1:1)** — Wortlaut-Reihenfolge:
+**6 Rechte (Art. 62 Abs. 1 Satz 4 BayEUG)** — Wortlaut-Reihenfolge:
 
 | # | Wortlaut-Stichwort | Wortlaut-Auszug |
 |---|---|---|
@@ -183,38 +183,38 @@ flowchart LR
 
 ```mermaid
 flowchart TB
-    KS["**Klassensprecher** (Art. 8 BaySchO)<br/>ab Jgst. 5"]:::stage1
-    KSV["**Klassensprecher-Versammlung** (Art. 62/4)"]:::stage2
-    SCH["**Schülersprecher 1./2./3. + Schülerausschuss** (Art. 9 BaySchO)"]:::stage3
-    BEZ["**Bezirksschülersprecher** (Art. 62a BayEUG)<br/>+ Stadt-/Landkreisschülersprecher MS (§ 11 BaySchO)<br/><i>'7 pro Reg.bez.' Sekundärliteratur — vor Prüfungseinsatz cross-check</i>"]:::stage4
-    LAND["**Landesschülersprecher · LSchKonf · LSchRat** (Art. 62a)<br/>**Landesschulbeirat** (Art. 73)"]:::stage5
+ KS["**Klassensprecher** (Art. 8 BaySchO)<br/>ab Jgst. 5"]:::stage1
+ KSV["**Klassensprecher-Versammlung** (Art. 62/4)"]:::stage2
+ SCH["**Schülersprecher 1./2./3. + Schülerausschuss** (Art. 9 BaySchO)"]:::stage3
+ BEZ["**Bezirksschülersprecher** (Art. 62a BayEUG)<br/>+ Stadt-/Landkreisschülersprecher MS (§ 11 BaySchO)<br/>"]:::stage4
+ LAND["**Landesschülersprecher · LSchKonf · LSchRat** (Art. 62a)<br/>**Landesschulbeirat** (Art. 73)"]:::stage5
 
-    KS --> KSV --> SCH --> BEZ --> LAND
+ KS --> KSV --> SCH --> BEZ --> LAND
 
-    classDef stage1 fill:#fff7ed,stroke:#c2410c,color:#1f2937
-    classDef stage2 fill:#fefce8,stroke:#ca8a04,color:#1f2937
-    classDef stage3 fill:#f7fee7,stroke:#65a30d,color:#1f2937
-    classDef stage4 fill:#eff6ff,stroke:#1e3a8a,color:#1f2937
-    classDef stage5 fill:#fef2f2,stroke:#9f1239,color:#1f2937
+ classDef stage1 fill:#fff7ed,stroke:#c2410c,color:#1f2937
+ classDef stage2 fill:#fefce8,stroke:#ca8a04,color:#1f2937
+ classDef stage3 fill:#f7fee7,stroke:#65a30d,color:#1f2937
+ classDef stage4 fill:#eff6ff,stroke:#1e3a8a,color:#1f2937
+ classDef stage5 fill:#fef2f2,stroke:#9f1239,color:#1f2937
 ```
 
 **Wahl-Modus**:
 
 | Organ | Wann |
 |---|---|
-| **Klassensprecher** (§ 8 BaySchO Abs. 1 · verified-equivalent + Art. 62 Abs. 3 BayEUG) | „**innerhalb von vier Wochen** nach Unterrichtsbeginn" (Wortlaut § 8/1 S. 3); ab Jgst. 5 Pflicht (Art. 62/3 Wortlaut), in Jgst. 1–4 entscheidet die SL im Einvernehmen mit dem Elternbeirat; Wahlverfahren durch Schülerausschuss im Einvernehmen mit SL (§ 8/1 S. 1 Wortlaut). |
-| **Schülersprecher (3) + Schülerausschuss** (§ 9 BaySchO · verified-1:1) | „**innerhalb von zwei Wochen** nach der Wahl der Klassensprecherinnen und Klassensprecher" (Wortlaut § 9/1 S. 2); Wahl durch Klassensprecher (Art. 62/5 Wortlaut), Schulforum kann das Wahlrecht auf alle SuS ausdehnen. |
+| **Klassensprecher** (§ 8 BaySchO Abs. 1 + Art. 62 Abs. 3 BayEUG) | „**innerhalb von vier Wochen** nach Unterrichtsbeginn" (Wortlaut § 8/1 S. 3); ab Jgst. 5 Pflicht (Art. 62/3 Wortlaut), in Jgst. 1–4 entscheidet die SL im Einvernehmen mit dem Elternbeirat; Wahlverfahren durch Schülerausschuss im Einvernehmen mit SL (§ 8/1 S. 1 Wortlaut). |
+| **Schülersprecher (3) + Schülerausschuss** (§ 9 BaySchO) | „**innerhalb von zwei Wochen** nach der Wahl der Klassensprecherinnen und Klassensprecher" (Wortlaut § 9/1 S. 2); Wahl durch Klassensprecher (Art. 62/5 Wortlaut), Schulforum kann das Wahlrecht auf alle SuS ausdehnen. |
 
-**Verbindungslehrkraft (Art. 62 Abs. 7 BayEUG · verified-1:1)**:
+**Verbindungslehrkraft (Art. 62 Abs. 7 BayEUG)**:
 
 - **Wählbar** (Art. 62/7 Satz 1 Wortlaut): „Lehrkräfte, die an der Schule mit **mindestens der Hälfte der Unterrichtspflichtzeit unbefristet beschäftigt** sind, sowie Förderlehrerinnen oder Förderlehrer unter entsprechenden Voraussetzungen".
 - **NICHT wählbar: LAA** — Status „auf Widerruf" erfüllt das Unbefristet-Kriterium nicht (⚠ klassische LAA-Selbstbetroffenheits-Falle).
 - **Wahl** durch Klassensprecherinnen + Klassensprecher und ihre Stellvertreter (Schulforum kann beschließen, dass alle SuS wählen) — Wortlaut.
 - **Amtszeit**: „für jeweils ein Schuljahr" (Wortlaut).
 - **Aufgaben** (Wortlaut Sätze 3–4): „pflegen die Verbindung zwischen Schulleiterin oder Schulleiter und Lehrkräften einerseits und den Schülerinnen und Schülern andererseits. Sie beraten die Einrichtungen der Schülermitverantwortung und vermitteln bei Beschwerden".
-- Wahlverfahren-Detail: § 10 Abs. 1 BaySchO (verified-1:1) — „Über das Wahlverfahren … entscheidet der Schülerausschuss im Einvernehmen mit der Schulleiterin oder dem Schulleiter".
+- Wahlverfahren-Detail: § 10 Abs. 1 BaySchO — „Über das Wahlverfahren … entscheidet der Schülerausschuss im Einvernehmen mit der Schulleiterin oder dem Schulleiter".
 
-**Schülerzeitung (Art. 63 BayEUG · verified-1:1)** — zwei Erscheinungsformen (Wortlaut Abs. 1 Satz 4: „Die Redaktion … hat das Wahlrecht, ob die Schülerzeitung als **Einrichtung der Schule** im Rahmen der Schülermitverantwortung **oder als Druckwerk im Sinn des Bayerischen Pressegesetzes (BayPrG)** erscheint"):
+**Schülerzeitung (Art. 63 BayEUG)** — zwei Erscheinungsformen (Wortlaut Abs. 1 Satz 4: „Die Redaktion … hat das Wahlrecht, ob die Schülerzeitung als **Einrichtung der Schule** im Rahmen der Schülermitverantwortung **oder als Druckwerk im Sinn des Bayerischen Pressegesetzes (BayPrG)** erscheint"):
 
 | Modus | Folge (Wortlaut Art. 63 BayEUG) |
 |---|---|
@@ -230,9 +230,9 @@ Vorlauf-Pflicht (Art. 63 Abs. 4 Wortlaut): „**Soll die Schülerzeitung auf dem
 - SMV-Veranstaltungen unter Schulaufsicht (§ 10 BaySchO) — engl. organisator. Zusammenhang mit Schulbetrieb → Aufsichtspflicht + Versicherungsschutz.
 
 !!! warning "⚠ Fallen SMV"
-    - **Klassensprecher ab Jgst. 5** — in 1–4 keine Pflicht.
-    - **LAA NICHT wählbar** als Verbindungs-LK (Status auf Widerruf).
-    - **Presserechtliche Schülerzeitung**: SL-Eingriff begrenzt; Eltern-Haftung bleibt.
+ - **Klassensprecher ab Jgst. 5** — in 1–4 keine Pflicht.
+ - **LAA NICHT wählbar** als Verbindungs-LK (Status auf Widerruf).
+ - **Presserechtliche Schülerzeitung**: SL-Eingriff begrenzt; Eltern-Haftung bleibt.
 
 ---
 
@@ -242,51 +242,51 @@ Vorlauf-Pflicht (Art. 63 Abs. 4 Wortlaut): „**Soll die Schülerzeitung auf dem
 
 <div class="grid cards" markdown>
 
--   :material-numeric-1-circle: __K07 · Notenauskunft__
+-:material-numeric-1-circle: __K07 · Notenauskunft__
 
-    Subjektives öff. Recht — alle Notenarten.
-    4-Stufen-Verhältnismäßigkeit.
-    Vergleich mit anderen unzulässig (datenschutzrechtl. Bindung; § 14 LDO ≠ „Notengeheimnis").
-    *Art. 56/2 + 52/1 + DSGVO 15*
+ Subjektives öff. Recht — alle Notenarten.
+ 4-Stufen-Verhältnismäßigkeit.
+ Vergleich mit anderen unzulässig (datenschutzrechtl. Bindung; § 14 LDO ≠ „Notengeheimnis").
+ *Art. 56/2 + 52/1 + DSGVO 15*
 
--   :material-numeric-2-circle: __K10 · Pflichten Art. 56/4__
+-:material-numeric-2-circle: __K10 · Pflichten Art. 56/4__
 
-    Verhalten · Verhüllung · Teilnahme · Distanz-U. · Mitwirkung Gutachten.
+ Verhalten · Verhüllung · Teilnahme · Distanz-U. · Mitwirkung Gutachten.
 
--   :material-numeric-3-circle: __K12 · Passive Verweigerung__
+-:material-numeric-3-circle: __K12 · Passive Verweigerung__
 
-    Aktive Mitwirkung Pflicht.
-    Mitarbeitsnote ≠ Verhaltenssanktion.
-    Ne-bis-in-idem (Art. 103/3 GG analog).
+ Aktive Mitwirkung Pflicht.
+ Mitarbeitsnote ≠ Verhaltenssanktion.
+ Ne-bis-in-idem (Art. 103/3 GG analog).
 
--   :material-numeric-4-circle: __K15 · Handy-Falle__
+-:material-numeric-4-circle: __K15 · Handy-Falle__
 
-    Kein absolutes Verbot.
-    Filmen LK = KUG + § 23/2 → Beschlagnahme.
-    Rückgabe nur an Eltern.
+ Kein absolutes Verbot.
+ Filmen LK = KUG + § 23/2 → Beschlagnahme.
+ Rückgabe nur an Eltern.
 
--   :material-numeric-5-circle: __K20 · Deutschklasse__
+-:material-numeric-5-circle: __K20 · Deutschklasse__
 
-    Kernnorm § 8 GrSO / § 10 MSO.
-    Ziel: Regelklasse altersgleich.
-    Auf Elternantrag Regelklasse möglich.
+ Kernnorm § 8 GrSO / § 10 MSO.
+ Ziel: Regelklasse altersgleich.
+ Auf Elternantrag Regelklasse möglich.
 
--   :material-numeric-6-circle: __K22 · Jgst.-Einweisung ndM__
+-:material-numeric-6-circle: __K22 · Jgst.-Einweisung ndM__
 
-    Tiefer-Einstufung NUR bei Bildungsstand.
-    NICHT bei sprachlichen Defiziten.
-    Max. 2 Jgst. tiefer (Art. 36/3 S. 4).
+ Tiefer-Einstufung NUR bei Bildungsstand.
+ NICHT bei sprachlichen Defiziten.
+ Max. 2 Jgst. tiefer (Art. 36/3 S. 4).
 
--   :material-numeric-7-circle: __K30 · Verbindungs-LK__
+-:material-numeric-7-circle: __K30 · Verbindungs-LK__
 
-    ½ Regelstundenmaß + unbefristet.
-    **LAA NICHT wählbar.**
-    Amtszeit 1 SJ.
+ ½ Regelstundenmaß + unbefristet.
+ **LAA NICHT wählbar.**
+ Amtszeit 1 SJ.
 
--   :material-numeric-8-circle: __K33 · Schülerzeitung__
+-:material-numeric-8-circle: __K33 · Schülerzeitung__
 
-    Zwei Modi: Schul-Einrichtung ODER Druckwerk BayPrG.
-    Bei BayPrG: Eltern-Haftung bleibt; SL nur Verteilung untersagen.
+ Zwei Modi: Schul-Einrichtung ODER Druckwerk BayPrG.
+ Bei BayPrG: Eltern-Haftung bleibt; SL nur Verteilung untersagen.
 
 </div>
 
@@ -314,7 +314,7 @@ Vorlauf-Pflicht (Art. 63 Abs. 4 Wortlaut): „**Soll die Schülerzeitung auf dem
 <div class="falle-card" markdown>
 <span class="falle-frage">FA02 · Ist das Handy-Verbot in der Schule absolut?</span>
 <div class="falle-antwort" markdown>
-NEIN. **Art. 56/5 BayEUG** (verified-1:1) — Wortlaut: „Die Verwendung von digitalen Endgeräten ist für Schülerinnen und Schüler nur zulässig 1. im Unterricht und bei sonstigen Schulveranstaltungen, soweit die Aufsicht führende Person dies gestattet, 2. im Übrigen im Schulgebäude und auf dem Schulgelände, soweit dies die Schulleitung im Einvernehmen mit dem Schulforum allgemein oder die Aufsicht führende Person im Einzelfall gestattet" — **kein absolutes Verbot**. Satz 3: GS/GS-Stufe an FöS sind von Nr. 2 ausgenommen.
+NEIN. **Art. 56/5 BayEUG** — Wortlaut: „Die Verwendung von digitalen Endgeräten ist für Schülerinnen und Schüler nur zulässig 1. im Unterricht und bei sonstigen Schulveranstaltungen, soweit die Aufsicht führende Person dies gestattet, 2. im Übrigen im Schulgebäude und auf dem Schulgelände, soweit dies die Schulleitung im Einvernehmen mit dem Schulforum allgemein oder die Aufsicht führende Person im Einzelfall gestattet" — **kein absolutes Verbot**. Satz 3: GS/GS-Stufe an FöS sind von Nr. 2 ausgenommen.
 </div>
 </div>
 
@@ -344,123 +344,123 @@ NEIN. **Art. 62/7 BayEUG**: wählbar nur LK + FL, mind. ½ Regelstundenmaß **+ 
 # Teil D — Fallbeispiele (Anwendung)
 
 ??? example "Fall **Hannah** — Notenauskunft + Vergleichsverbot (Hauptfall)"
-    **Sachverhalt**: Hannah (13, 7. Kl. MS) verlangt im Sprechstundengespräch Auskunft über **alle** Noten in Mathematik (schriftlich, mündlich, praktisch). Die Mathe-LK lehnt ab: „Das ist meine pädagogische Beurteilungsautonomie." Hannah fragt zusätzlich, was Lara aus der Parallelklasse für die letzte Probe hatte.
+ **Sachverhalt**: Hannah (13, 7. Kl. MS) verlangt im Sprechstundengespräch Auskunft über **alle** Noten in Mathematik (schriftlich, mündlich, praktisch). Die Mathe-LK lehnt ab: „Das ist meine pädagogische Beurteilungsautonomie." Hannah fragt zusätzlich, was Lara aus der Parallelklasse für die letzte Probe hatte.
 
-    **Knackpunkte**:
+ **Knackpunkte**:
 
-    1. **Notenauskunft = subjektives öffentliches Recht** — Art. 56/2 + Art. 52/1 BayEUG + DSGVO Art. 15 + BV Art. 128. **Alle** Notenarten umfasst.
-    2. **4-Stufen-Verhältnismäßigkeitsprüfung** ergibt regelmäßig Auskunftspflicht — die LK-Autonomie betrifft die Bewertung selbst, nicht die Auskunft.
-    3. **Vergleich mit Lara unzulässig** — Auskunftspflicht ist personenbezogen (datenschutzrechtl. Bindung an die individuelle Schülerin, BaySchO § 39 i.V.m. DSGVO Art. 6/1; LDO § 14 normiert die Verschwiegenheits- + Auskunftspflicht der Lehrkraft, **kein explizites „Notengeheimnis"** — der häufig kursierende Anker „§ 14/4 LDO Notengeheimnis" ist eine Drift, § 14 Abs. 4 regelt, WEM die Schule Schülerinformationen geben darf).
+ 1. **Notenauskunft = subjektives öffentliches Recht** — Art. 56/2 + Art. 52/1 BayEUG + DSGVO Art. 15 + BV Art. 128. **Alle** Notenarten umfasst.
+ 2. **4-Stufen-Verhältnismäßigkeitsprüfung** ergibt regelmäßig Auskunftspflicht — die LK-Autonomie betrifft die Bewertung selbst, nicht die Auskunft.
+ 3. **Vergleich mit Lara unzulässig** — Auskunftspflicht ist personenbezogen (datenschutzrechtl. Bindung an die individuelle Schülerin, BaySchO § 39 i.V.m. DSGVO Art. 6/1; LDO § 14 normiert die Verschwiegenheits- + Auskunftspflicht der Lehrkraft, **kein explizites „Notengeheimnis"** — der häufig kursierende Anker „§ 14/4 LDO Notengeheimnis" ist eine Drift, § 14 Abs. 4 regelt, WEM die Schule Schülerinformationen geben darf).
 
-    **Antwortkette**: Anspruch anerkennen → Termin vereinbaren → strukturiertes Einzelgespräch mit Belegen + Förderhinweisen → Doku im Klassenbuch. Lara-Frage höflich aber bestimmt zurückweisen mit Verweis auf datenschutzrechtliche Personenbindung (eigene Daten ↔ Daten Dritter).
+ **Antwortkette**: Anspruch anerkennen → Termin vereinbaren → strukturiertes Einzelgespräch mit Belegen + Förderhinweisen → Doku im Klassenbuch. Lara-Frage höflich aber bestimmt zurückweisen mit Verweis auf datenschutzrechtliche Personenbindung (eigene Daten ↔ Daten Dritter).
 
 ??? example "Fall **Tobias** — Passive Verweigerung + Doppelsanktion"
-    **Sachverhalt**: Tobias (8. Kl. MS) dreht sich seit zwei Wochen demonstrativ mit dem Rücken zur Tafel. Auf LK-Ansprache antwortet er: „Meine Schulpflicht erfülle ich durch Anwesenheit." Die LK vergibt eine schlechte mündliche Note in Mathe **und** stellt einen schriftlichen Verweis aus.
+ **Sachverhalt**: Tobias (8. Kl. MS) dreht sich seit zwei Wochen demonstrativ mit dem Rücken zur Tafel. Auf LK-Ansprache antwortet er: „Meine Schulpflicht erfülle ich durch Anwesenheit." Die LK vergibt eine schlechte mündliche Note in Mathe **und** stellt einen schriftlichen Verweis aus.
 
-    **Knackpunkte**:
+ **Knackpunkte**:
 
-    1. **Aktive Mitwirkungspflicht** (Art. 56/4) — Anwesenheit allein genügt **nicht**.
-    2. **Mitarbeitsnote NUR fachbezogen** (Art. 52/3) — die LK darf die fachliche Verweigerung als fehlende Leistung bewerten, **NICHT** das Verweigern selbst als „Verhaltensnote".
-    3. **Doppelsanktion-Analyse** (Art. 103/3 GG analog): identisches Verhalten + zwei Sanktionen + gleiches Rechtsgut → **unzulässig**.
+ 1. **Aktive Mitwirkungspflicht** (Art. 56/4) — Anwesenheit allein genügt **nicht**.
+ 2. **Mitarbeitsnote NUR fachbezogen** (Art. 52/3) — die LK darf die fachliche Verweigerung als fehlende Leistung bewerten, **NICHT** das Verweigern selbst als „Verhaltensnote".
+ 3. **Doppelsanktion-Analyse** (Art. 103/3 GG analog): identisches Verhalten + zwei Sanktionen + gleiches Rechtsgut → **unzulässig**.
 
-    **Antwortkette**: Mündliche Note nur, soweit konkrete fachliche Mitarbeit fehlt → korrekte Begründung im Notenbuch. Verweis als Erziehungsmaßnahme nach Art. 86 separat erteilen, **mit anderem Begründungsfokus** (Verhalten, nicht fachliche Leistung). Stufenmodell beachten: päd. → organisator. → diszipl. → präventiv.
+ **Antwortkette**: Mündliche Note nur, soweit konkrete fachliche Mitarbeit fehlt → korrekte Begründung im Notenbuch. Verweis als Erziehungsmaßnahme nach Art. 86 separat erteilen, **mit anderem Begründungsfokus** (Verhalten, nicht fachliche Leistung). Stufenmodell beachten: päd. → organisator. → diszipl. → präventiv.
 
 ??? example "Fall **Uschi** — Filmen der LK"
-    **Sachverhalt**: Eine Schülerin filmt heimlich die LK im Unterricht und postet das Video auf TikTok.
+ **Sachverhalt**: Eine Schülerin filmt heimlich die LK im Unterricht und postet das Video auf TikTok.
 
-    **Knackpunkte**:
+ **Knackpunkte**:
 
-    1. **Persönlichkeitsrecht + KUG**-Verstoß (Recht am eigenen Bild).
-    2. **Beschlagnahme nach § 23/2 BaySchO** — Sicherstellung des Geräts; Rückgabe bei Minderjährigen NUR an Erziehungsberechtigte.
-    3. **Ordnungsmaßnahme Art. 86** wegen Schulbetrieb-Störung + Persönlichkeitsverletzung.
-    4. **Lösch-Anspruch**: Eltern-Gespräch mit Aufforderung zur Löschung; bei Verweigerung zivilrechtliche Ansprüche der LK.
+ 1. **Persönlichkeitsrecht + KUG**-Verstoß (Recht am eigenen Bild).
+ 2. **Beschlagnahme nach § 23/2 BaySchO** — Sicherstellung des Geräts; Rückgabe bei Minderjährigen NUR an Erziehungsberechtigte.
+ 3. **Ordnungsmaßnahme Art. 86** wegen Schulbetrieb-Störung + Persönlichkeitsverletzung.
+ 4. **Lösch-Anspruch**: Eltern-Gespräch mit Aufforderung zur Löschung; bei Verweigerung zivilrechtliche Ansprüche der LK.
 
-    **Antwortkette**: Sofort-Beschlagnahme im U. → SL informieren → Eltern-Gespräch (Rückgabe nur an Eltern) → Lösch-Aufforderung → Erziehungs-/Ordnungsmaßnahme → ggf. zivil-/strafrechtliche Anzeige (Persönlichkeitsrecht).
+ **Antwortkette**: Sofort-Beschlagnahme im U. → SL informieren → Eltern-Gespräch (Rückgabe nur an Eltern) → Lösch-Aufforderung → Erziehungs-/Ordnungsmaßnahme → ggf. zivil-/strafrechtliche Anzeige (Persönlichkeitsrecht).
 
 ??? example "Fall **Aischa** — Deutschklasse und Regelklasse"
-    **Sachverhalt**: Aischa (10) zog vor 4 Wochen aus Syrien nach Bayern. Sie spricht **kein Deutsch**, hat aber in Syrien die 4. Klasse mit guten Noten abgeschlossen. Die SL möchte sie in eine 3. Klasse einweisen, da sie „mit dem Stoff der 5. nicht mitkommt".
+ **Sachverhalt**: Aischa (10) zog vor 4 Wochen aus Syrien nach Bayern. Sie spricht **kein Deutsch**, hat aber in Syrien die 4. Klasse mit guten Noten abgeschlossen. Die SL möchte sie in eine 3. Klasse einweisen, da sie „mit dem Stoff der 5. nicht mitkommt".
 
-    **Knackpunkte**:
+ **Knackpunkte**:
 
-    1. **Deutschklasse-Pflicht** (§ 10 MSO) — Aischa kommt **zunächst in eine Deutschklasse**, sofern verfügbar.
-    2. **Tiefere Jgst.-Einstufung NUR bei mangelndem Bildungsstand** (Art. 36/3 S. 4) — sprachliche Defizite reichen NICHT. Ihr syrisches Zeugnis dokumentiert den Bildungsstand.
-    3. **Altersgleichheits-Prinzip**: Aischa (10) → Jgst. 5 (analog zu altersgleichen Dauer-in-Bayern-SuS).
-    4. **Auf Elternantrag** kann SL Regelklassen-Besuch gestatten, wenn Folgeerwartung.
+ 1. **Deutschklasse-Pflicht** (§ 10 MSO) — Aischa kommt **zunächst in eine Deutschklasse**, sofern verfügbar.
+ 2. **Tiefere Jgst.-Einstufung NUR bei mangelndem Bildungsstand** (Art. 36/3 S. 4) — sprachliche Defizite reichen NICHT. Ihr syrisches Zeugnis dokumentiert den Bildungsstand.
+ 3. **Altersgleichheits-Prinzip**: Aischa (10) → Jgst. 5 (analog zu altersgleichen Dauer-in-Bayern-SuS).
+ 4. **Auf Elternantrag** kann SL Regelklassen-Besuch gestatten, wenn Folgeerwartung.
 
-    **Antwortkette**: Anmeldung → Bildungsstand-Diagnostik (NICHT Deutsch-Test allein) → Deutschklasse Jgst. 5 + DaZ + DeutschPLUS-Programm → nach 1 SJ (max. 2) Übergang Regelklasse 5/6.
+ **Antwortkette**: Anmeldung → Bildungsstand-Diagnostik (NICHT Deutsch-Test allein) → Deutschklasse Jgst. 5 + DaZ + DeutschPLUS-Programm → nach 1 SJ (max. 2) Übergang Regelklasse 5/6.
 
 ??? example "Fall **Ben** — Klassensprecher-Wahl in 3. Klasse"
-    **Sachverhalt**: An einer GS möchte die KL der 3. Klasse einen Klassensprecher wählen lassen, weil das den Klassenrat unterstützen soll.
+ **Sachverhalt**: An einer GS möchte die KL der 3. Klasse einen Klassensprecher wählen lassen, weil das den Klassenrat unterstützen soll.
 
-    **Knackpunkte**:
+ **Knackpunkte**:
 
-    1. **Klassensprecher-Pflicht ab Jgst. 5** (§ 8 BaySchO).
-    2. In Jgst. 1–4: **keine Pflicht** — formelles SMV-Organ entfällt.
-    3. Pädagogisch zulässig: informelle „Klassenchef"-/„Klassenrat"-Strukturen, aber **keine** offizielle Klassensprecher-Funktion mit § 8 BaySchO-Rechten.
+ 1. **Klassensprecher-Pflicht ab Jgst. 5** (§ 8 BaySchO).
+ 2. In Jgst. 1–4: **keine Pflicht** — formelles SMV-Organ entfällt.
+ 3. Pädagogisch zulässig: informelle „Klassenchef"-/„Klassenrat"-Strukturen, aber **keine** offizielle Klassensprecher-Funktion mit § 8 BaySchO-Rechten.
 
-    **Antwortkette**: Eltern + SL aufklären → informelle Mitwirkungs-Form etablieren (ohne Klassensprecher-Etikett) → bei Übergang Jgst. 5: offizielle Klassensprecher-Wahl 4 Wochen nach U.-Beginn.
+ **Antwortkette**: Eltern + SL aufklären → informelle Mitwirkungs-Form etablieren (ohne Klassensprecher-Etikett) → bei Übergang Jgst. 5: offizielle Klassensprecher-Wahl 4 Wochen nach U.-Beginn.
 
 ??? example "Fall **Frau Becker (LAA)** — Verbindungslehrkraft-Wahl"
-    **Sachverhalt**: Frau Becker (LAA, 1. Dienstjahr) wird von der Klassensprecher-Versammlung als Verbindungslehrkraft vorgeschlagen.
+ **Sachverhalt**: Frau Becker (LAA, 1. Dienstjahr) wird von der Klassensprecher-Versammlung als Verbindungslehrkraft vorgeschlagen.
 
-    **Knackpunkte**:
+ **Knackpunkte**:
 
-    1. **NICHT wählbar**: LAA — Status auf Widerruf, nicht **unbefristet** (Art. 62/7 BayEUG).
-    2. **Wählbar**: jede LK + FL mit mind. ½ Regelstundenmaß + unbefristet.
-    3. SL muss vor der Wahl die Wählbarkeit verifizieren.
+ 1. **NICHT wählbar**: LAA — Status auf Widerruf, nicht **unbefristet** (Art. 62/7 BayEUG).
+ 2. **Wählbar**: jede LK + FL mit mind. ½ Regelstundenmaß + unbefristet.
+ 3. SL muss vor der Wahl die Wählbarkeit verifizieren.
 
-    **Antwortkette**: Frau Becker freundlich aufklären → SL informiert Klassensprecher-Versammlung über Wählbarkeits-Voraussetzungen → Wahl muss wählbarem Kandidaten gelten → ggf. neue Vorschlagsrunde.
+ **Antwortkette**: Frau Becker freundlich aufklären → SL informiert Klassensprecher-Versammlung über Wählbarkeits-Voraussetzungen → Wahl muss wählbarem Kandidaten gelten → ggf. neue Vorschlagsrunde.
 
 ??? example "Fall **Schülerzeitung** — SL will Ausgabe stoppen"
-    **Sachverhalt**: Die Redaktion der Schülerzeitung „Frischluft" druckt einen kritischen Artikel über die Mensa-Qualität. Die SL möchte vor Erscheinen die Ausgabe stoppen.
+ **Sachverhalt**: Die Redaktion der Schülerzeitung „Frischluft" druckt einen kritischen Artikel über die Mensa-Qualität. Die SL möchte vor Erscheinen die Ausgabe stoppen.
 
-    **Knackpunkte**:
+ **Knackpunkte**:
 
-    1. **Erscheinungsform klären**:
-       - Als **Einrichtung der Schule** (SMV-Rahmen) → SL kann bei Rechtsverstoß intervenieren, Verteilung untersagen.
-       - Als **Druckwerk nach BayPrG** → Eltern-Haftung; SL kann **NICHT** Herausgabe insgesamt verbieten, nur Verteilung **auf Schulgelände** bei Rechtsverstoß.
-    2. **Vorabprüfung**: SL erhält Exemplar rechtzeitig vor Drucklegung.
-    3. Bei Einwänden → **Schulforum** zur gütlichen Einigung; sonst Schulforum kann Verteilung untersagen (in der Schul-Einrichtungs-Variante).
-    4. Mensa-Kritik allein ist **kein Rechtsverstoß** — Meinungsfreiheit Art. 5 GG + Art. 110 BV greift.
+ 1. **Erscheinungsform klären**:
+ - Als **Einrichtung der Schule** (SMV-Rahmen) → SL kann bei Rechtsverstoß intervenieren, Verteilung untersagen.
+ - Als **Druckwerk nach BayPrG** → Eltern-Haftung; SL kann **NICHT** Herausgabe insgesamt verbieten, nur Verteilung **auf Schulgelände** bei Rechtsverstoß.
+ 2. **Vorabprüfung**: SL erhält Exemplar rechtzeitig vor Drucklegung.
+ 3. Bei Einwänden → **Schulforum** zur gütlichen Einigung; sonst Schulforum kann Verteilung untersagen (in der Schul-Einrichtungs-Variante).
+ 4. Mensa-Kritik allein ist **kein Rechtsverstoß** — Meinungsfreiheit Art. 5 GG + Art. 110 BV greift.
 
-    **Antwortkette**: Erscheinungsform feststellen → bei BayPrG-Druckwerk: kein SL-Vorabverbot möglich → Schulforum-Diskussion über Mensa-Qualität → faktische Lösung.
+ **Antwortkette**: Erscheinungsform feststellen → bei BayPrG-Druckwerk: kein SL-Vorabverbot möglich → Schulforum-Diskussion über Mensa-Qualität → faktische Lösung.
 
 ??? example "Fall **Yusra** — Schülerakte-Einsicht mit 13"
-    **Sachverhalt**: Yusra (13, 7. Kl. MS) verlangt Einsicht in ihre Schülerakte, weil sie wegen einer Notenauseinandersetzung „alles wissen" möchte.
+ **Sachverhalt**: Yusra (13, 7. Kl. MS) verlangt Einsicht in ihre Schülerakte, weil sie wegen einer Notenauseinandersetzung „alles wissen" möchte.
 
-    **Knackpunkte**:
+ **Knackpunkte**:
 
-    1. **§ 41/1 BaySchO**: Einsicht **ab Vollendung des 14. Lebensjahres** (Wortlaut).
-    2. Yusra ist 13 — Einsicht steht ihr noch NICHT direkt zu.
-    3. **Eltern-Recht** als Vertretung Minderjähriger besteht weiterhin (Art. 76 BayEUG).
-    4. Notenauskunft als getrenntes Recht (Art. 56/2): bleibt davon unberührt — Notengespräch jederzeit möglich.
+ 1. **§ 41/1 BaySchO**: Einsicht **ab Vollendung des 14. Lebensjahres** (Wortlaut).
+ 2. Yusra ist 13 — Einsicht steht ihr noch NICHT direkt zu.
+ 3. **Eltern-Recht** als Vertretung Minderjähriger besteht weiterhin (Art. 76 BayEUG).
+ 4. Notenauskunft als getrenntes Recht (Art. 56/2): bleibt davon unberührt — Notengespräch jederzeit möglich.
 
-    **Antwortkette**: Yusra erklären, dass Akte-Einsicht ab 14 ihr persönliches Recht wird; jetzt: Eltern können Einsicht beantragen. Parallel Notenauskunft-Recht direkt anbieten, das ist altersunabhängig.
+ **Antwortkette**: Yusra erklären, dass Akte-Einsicht ab 14 ihr persönliches Recht wird; jetzt: Eltern können Einsicht beantragen. Parallel Notenauskunft-Recht direkt anbieten, das ist altersunabhängig.
 
 ??? example "Fall **Klausur-Rückgabe verzögert**"
-    **Sachverhalt**: Eine Klausur in Mathematik wurde am 14.10. geschrieben. Bis zum 15.11. (4 Wochen später) hat die LK die Klausuren noch nicht zurückgegeben. Der Elternbeirat fragt nach.
+ **Sachverhalt**: Eine Klausur in Mathematik wurde am 14.10. geschrieben. Bis zum 15.11. (4 Wochen später) hat die LK die Klausuren noch nicht zurückgegeben. Der Elternbeirat fragt nach.
 
-    **Knackpunkte**:
+ **Knackpunkte**:
 
-    1. **MSO § 12/3** (zwei Direktionalitäten — Wortlaut präzise!):
-       - **LK → SuS**: Rückgabe „innerhalb einer **angemessenen Frist**" (KEIN konkreter Wert im Wortlaut — Würdigung im Einzelfall).
-       - **SuS → Schule**: Rückgabe „innerhalb **einer Woche** **unverändert**" nach Eltern-Kenntnisnahme.
-    2. **4 Wochen LK-seitige Rückgabe-Verzögerung** überschreitet die „angemessene Frist" deutlich (Würdigung anhand Klausur-Aufwand, Belastung, Krankheit etc.).
-    3. SL muss Mahnung an LK aussprechen → Korrektur-Pflicht ist Dienstpflicht (LDO).
+ 1. **MSO § 12/3** (zwei Direktionalitäten — Wortlaut präzise!):
+ - **LK → SuS**: Rückgabe „innerhalb einer **angemessenen Frist**" (KEIN konkreter Wert im Wortlaut — Würdigung im Einzelfall).
+ - **SuS → Schule**: Rückgabe „innerhalb **einer Woche** **unverändert**" nach Eltern-Kenntnisnahme.
+ 2. **4 Wochen LK-seitige Rückgabe-Verzögerung** überschreitet die „angemessene Frist" deutlich (Würdigung anhand Klausur-Aufwand, Belastung, Krankheit etc.).
+ 3. SL muss Mahnung an LK aussprechen → Korrektur-Pflicht ist Dienstpflicht (LDO).
 
-    **Antwortkette**: KL/SL ansprechen → LK-Gespräch (Gründe? Belastung? Krankheit?) → Termin für Rückgabe binnen kurzer Frist fixieren → SL-Aufforderung in extremer Verzögerung. Eltern-Antwort: Wortlaut-Direktionalität transparent kommunizieren („angemessene Frist" für LK-Rückgabe; SuS-seitige 1-Wochen-Frist für „unverändert"-Zurückgabe); Verzögerung muss begründet sein.
+ **Antwortkette**: KL/SL ansprechen → LK-Gespräch (Gründe? Belastung? Krankheit?) → Termin für Rückgabe binnen kurzer Frist fixieren → SL-Aufforderung in extremer Verzögerung. Eltern-Antwort: Wortlaut-Direktionalität transparent kommunizieren („angemessene Frist" für LK-Rückgabe; SuS-seitige 1-Wochen-Frist für „unverändert"-Zurückgabe); Verzögerung muss begründet sein.
 
 ??? example "Fall **Tom** — Politik-Plakat in der Schule"
-    **Sachverhalt**: Tom (9. Kl. MS) hängt im Klassenzimmer ein Wahlplakat einer Partei auf, mit der Begründung „Meinungsfreiheit Art. 5 GG".
+ **Sachverhalt**: Tom (9. Kl. MS) hängt im Klassenzimmer ein Wahlplakat einer Partei auf, mit der Begründung „Meinungsfreiheit Art. 5 GG".
 
-    **Knackpunkte**:
+ **Knackpunkte**:
 
-    1. **Art. 84 Abs. 2 BayEUG** (verified-1:1): „Politische Werbung im Rahmen von Schulveranstaltungen oder auf dem Schulgelände ist nicht zulässig" — gilt für beide Bezugsräume (Veranstaltung **und** Schulgelände).
-    2. **Art. 56/3 BayEUG**: Meinungsäußerung mit Grenze „Wahrung sachlichen Zusammenhangs".
-    3. **Schule als parteipolitisch neutraler Raum** — verfassungsrechtlich begründet (Schulfrieden, Anvertrauten-Schutz).
-    4. Diskussion politischer Themen im U. ist möglich (Beutelsbacher Konsens), aber kein Plakat-Kampagnen.
+ 1. **Art. 84 Abs. 2 BayEUG**: „Politische Werbung im Rahmen von Schulveranstaltungen oder auf dem Schulgelände ist nicht zulässig" — gilt für beide Bezugsräume (Veranstaltung **und** Schulgelände).
+ 2. **Art. 56/3 BayEUG**: Meinungsäußerung mit Grenze „Wahrung sachlichen Zusammenhangs".
+ 3. **Schule als parteipolitisch neutraler Raum** — verfassungsrechtlich begründet (Schulfrieden, Anvertrauten-Schutz).
+ 4. Diskussion politischer Themen im U. ist möglich (Beutelsbacher Konsens), aber kein Plakat-Kampagnen.
 
-    **Antwortkette**: Plakat entfernen → Tom rechtliche Lage erklären (Art. 84) → Diskurs im GPG-U. anbieten → Beutelsbacher Konsens als Rahmen.
+ **Antwortkette**: Plakat entfernen → Tom rechtliche Lage erklären (Art. 84) → Diskurs im GPG-U. anbieten → Beutelsbacher Konsens als Rahmen.
 
 ---
 

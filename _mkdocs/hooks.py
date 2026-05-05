@@ -27,6 +27,7 @@ Skip-Zonen: fenced code blocks, inline code, abbr-definitions, bestehende
 from __future__ import annotations
 
 import html
+import json
 import re
 from pathlib import Path
 
@@ -34,6 +35,7 @@ from pathlib import Path
 _ABBR_CACHE: dict[str, str] | None = None
 _ABBR_PATTERN: re.Pattern | None = None
 _ALL_KEYS_CACHE: dict[str, str] | None = None  # Auch nicht-§-Keys (Art./BV/Anker)
+_NORM_URLS_CACHE: dict[str, str] | None = None  # KEY → URL aus norm_urls.json
 
 
 def _load_glossar(docs_dir: Path) -> tuple[dict[str, str], re.Pattern, dict[str, str]]:
@@ -690,9 +692,124 @@ def _dedupe_nested_abbr(html_content: str) -> str:
     return html_content
 
 
+def _load_norm_urls(config_dir: Path) -> dict[str, str]:
+    """Lade norm_urls.json (KEY → URL-Mapping). Cached."""
+    global _NORM_URLS_CACHE
+    if _NORM_URLS_CACHE is not None:
+        return _NORM_URLS_CACHE
+    candidates = [
+        config_dir / "norm_urls.json",
+        config_dir.parent / "norm_urls.json",
+    ]
+    for p in candidates:
+        if p.exists():
+            try:
+                _NORM_URLS_CACHE = json.loads(p.read_text(encoding="utf-8"))
+                return _NORM_URLS_CACHE
+            except Exception:
+                pass
+    _NORM_URLS_CACHE = {}
+    return _NORM_URLS_CACHE
+
+
+# Pattern: matche `<abbr title="...">label</abbr>` (NICHT bereits im <a>)
+_ABBR_HTML_RE = re.compile(
+    r'(?<!>)<abbr\s+title=(?P<q>["\'])(?P<title>[^"\']*)(?P=q)>(?P<label>[^<]+)</abbr>'
+)
+# Pattern: matche bereits-gewrappte `<a ...><abbr ...>...</abbr></a>` für Skip
+_LINKED_ABBR_RE = re.compile(
+    r'<a\s+[^>]*norm-link[^>]*>\s*<abbr\b[^>]*>[^<]*</abbr>\s*</a>'
+)
+
+
+def _normalize_label(label: str) -> str:
+    """Whitespace-normalisierung für URL-Lookup."""
+    return re.sub(r"\s+", " ", html.unescape(label)).strip()
+
+
+def _wrap_abbr_with_link(html_content: str, urls: dict[str, str]) -> str:
+    """
+    Pre-render Hook (Post-Markdown): umschließe jedes <abbr title="...">LABEL</abbr>
+    mit <a class="norm-link" href="URL" target="_blank" rel="noopener">...</a>,
+    sofern norm_urls.json eine URL für LABEL kennt.
+
+    LABEL-Lookup: probiere LABEL direkt + LABEL-Varianten (mit/ohne Norm-Suffix
+    aus title-Attribut).
+    """
+    if not urls:
+        return html_content
+
+    def _replace(m: re.Match) -> str:
+        label = m.group("label")
+        title = html.unescape(m.group("title"))
+        norm_label = _normalize_label(label)
+
+        # Direkt-Lookup
+        url = urls.get(norm_label)
+
+        # Title-Parsing: Format meist 'LDO § 14 — ...' / 'BayEUG Art. 56 — ...'
+        # / 'LDO § 14 Abs. 4 — ...' / 'BayEUG Art. 56 Abs. 2 — ...'
+        title_abk: str | None = None
+        title_para_or_art: str | None = None
+        t_match = re.match(
+            r"^(?P<abk>[A-Za-zÄÖÜä-üß]+(?:\s+VIII)?)\s+"
+            r"(?P<para>(?:§|Art\.)\s*\d+[a-z]?(?:/\d+)?)"
+            r"(?:\s+(?:Abs\.\s*\d+))?",
+            title,
+        )
+        if t_match:
+            title_abk = t_match.group("abk").strip()
+            title_para_or_art = t_match.group("para").strip()
+
+        if not url and title_abk and title_para_or_art:
+            # Probiere "<para> <abk>" und "<abk> <para>"
+            for cand in (
+                f"{title_para_or_art} {title_abk}",
+                f"{title_abk} {title_para_or_art}",
+                title_para_or_art,
+            ):
+                cand = " ".join(cand.split())
+                if cand in urls:
+                    url = urls[cand]
+                    break
+        if not url and title_abk:
+            # Fallback Norm-Wurzel
+            if title_abk in urls:
+                url = urls[title_abk]
+
+        if not url:
+            # Letzter Versuch: title beginnt mit Norm-Abk (z.B. "BayEUG ..." → BayEUG)
+            first_word = title.split()[0] if title else ""
+            if first_word and first_word in urls:
+                url = urls[first_word]
+
+        if not url:
+            return m.group(0)  # nichts ändern
+
+        # Escape URL für HTML
+        url_esc = html.escape(url, quote=True)
+        return (
+            f'<a class="norm-link" href="{url_esc}" target="_blank" rel="noopener">'
+            f'{m.group(0)}</a>'
+        )
+
+    return _ABBR_HTML_RE.sub(_replace, html_content)
+
+
 def on_page_content(html: str, page=None, config=None, files=None, **kwargs):
-    """Post-markdown Hook: entferne Nested-<abbr>-Doppel-Wraps."""
-    return _dedupe_nested_abbr(html)
+    """Post-markdown Hook:
+    1) entferne Nested-<abbr>-Doppel-Wraps
+    2) umschließe <abbr>-Tags mit <a>-Tag zu Gesetze-Quelle (norm_urls.json)
+    """
+    html = _dedupe_nested_abbr(html)
+    if config is None:
+        return html
+    docs_dir = Path(config.get("docs_dir", "docs"))
+    # norm_urls.json liegt typischerweise im _mkdocs/-Ordner (parent von docs/)
+    config_dir = docs_dir.parent if docs_dir.name == "docs" else docs_dir
+    urls = _load_norm_urls(config_dir)
+    html = _wrap_abbr_with_link(html, urls)
+    return html
 
 
 def on_page_markdown(markdown: str, page=None, config=None, files=None, **kwargs):
