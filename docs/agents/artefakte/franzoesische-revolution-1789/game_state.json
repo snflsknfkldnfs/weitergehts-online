@@ -1,0 +1,55 @@
+{
+  "game_id": "franzoesische-revolution-1789",
+  "version": "1.0",
+  "phase": "0.1",
+  "mappen": [
+    {"id": "mappe-1", "status": "pending", "titel": "Frankreich vor 1789 — Drei Stände, ein König"},
+    {"id": "mappe-2", "status": "pending", "titel": "Sommer 1789 — Vom Ständetreffen zur Erklärung der Menschenrechte"},
+    {"id": "mappe-3", "status": "pending", "titel": "1792–1794 — Wenn die Revolution ihre Kinder verschlingt"},
+    {"id": "mappe-4", "status": "pending", "titel": "Was bleibt? — Vom Code Civil zu unseren Grundrechten"}
+  ],
+  "current_subagent": "",
+  "last_transition": {
+    "from_phase": "ONBOARDING",
+    "to_phase": "0.1",
+    "timestamp_iso8601": "2026-05-01T13:48:00Z",
+    "decision": "PASS",
+    "reasoning": "Phase 0.1 (agent-didaktik) abgeschlossen mit Q-Gate Gesamturteil PASS (12/12 Kriterien, 1 Iteration, keine Eskalation). Outputs: DIDAKTIK_RAHMEN.md + didaktisches_konzept.json + mappen_aufteilung.json + Q-GATE-LOG.md. Lehrplanbezug: GPG7_LB2 'Zeit und Wandel' primaer + Jahrgangsstufenprofil GPG_J7_K_05/K_07 sekundaer. KE-Schwerpunkt: GPG7_LB2_K_01 + K_02. Mappen-Aufteilung 4 Mappen (User-Override didaktisch bestaetigt). Narrativ-Rahmen: 'Geheim-Akte 1789 — Das Archiv der Republik' (Archiv-Ermittler-2026-Perspektive). User-PAUSE-Marker aktiv 2026-05-01 13:50: Phase 0.2 NICHT starten. Resume via /resume-state. 5 offene User-Validierungs-Befunde: (1) M3-Titel-Sensibilitaet 'Wenn die Revolution ihre Kinder verschlingt' vs. 'Republik im Terror'; (2) Sklaverei in Kolonien Hinweis-Ebene vs. Vertiefung; (3) AFB-Progression I-II/II/II-III/II-III; (4) Narrativ-Rahmen 'Archiv-Ermittler 2026'; (5) KE-Matrix-Gewichtung."
+  },
+  "q_gate_aggregate": {
+    "total_pass": 12,
+    "total_fail": 0,
+    "total_warn": 0,
+    "last_updated": "2026-05-01T13:48:00Z"
+  },
+  "user_stop_marker": {
+    "active": true,
+    "set_at": "2026-05-01T13:50:00Z",
+    "reason": "User-Pause vor Phase 0.2 — pending User-Validierung der 5 offenen Befunde aus Phase 0.1.",
+    "resume_action": "Phase 0.2 AGENT_INHALT (Wikipedia + bpb-Recherche, Claude-Code-Pflicht) NACH User-Antwort auf 5 Validierungs-Befunde. Bei User-Default-OK: direkt Phase 0.2 starten."
+  },
+  "params": {
+    "thema": "Franzoesische Revolution 1789",
+    "jahrgangsstufe": "7c (R7 Mittelschule Bayern)",
+    "schwierigkeit": "Basis",
+    "mappen_anzahl": 4,
+    "mappen_anzahl_quelle": "user_override",
+    "lehrplanbezug_primaer": "GPG7_LB2 Zeit und Wandel",
+    "kompetenzerwartungen": ["GPG7_LB2_K_01", "GPG7_LB2_K_02", "GPG_J7_K_05", "GPG_J7_K_07"]
+  },
+  "paths": {
+    "generator_path": "/Users/paulad/escape-game-generator",
+    "target_path": "/Users/paulad/weitergehts.online/weitergehts-online",
+    "uew_path": "/Users/paulad/weitergehts.online/Unterrichtseinwicklung",
+    "artefakt_dir": "/Users/paulad/weitergehts.online/weitergehts-online/docs/agents/artefakte/franzoesische-revolution-1789",
+    "escape_game_dir": "/Users/paulad/weitergehts.online/weitergehts-online/escape-games/franzoesische-revolution-1789"
+  },
+  "_meta": {
+    "created_at": "2026-05-01T13:36:00Z",
+    "last_updated": "2026-05-01T13:50:00Z",
+    "schema_version": "1.0",
+    "run_id": "run-fr-rev-2026-05-01",
+    "command_invocation": "/escape-game-generator:generate-game franzoesische-revolution-1789 7c 4",
+    "claude_code_session": true
+  }
+}

@@ -1,0 +1,2842 @@
+{
+  "meta": {
+    "titel": "Der Erste Weltkrieg — Ursachen und Marne 1914",
+    "fach": "GPG",
+    "jahrgangsstufe": "R7 Mittelschule Bayern (7c)",
+    "lehrplanbezug": "LB2 Zeit und Wandel + LB3 Politik und Gesellschaft (KE GPG7_LB2_K_05/06/07 + LB3_K_03)",
+    "schwierigkeit": "Basis",
+    "geschaetzte_dauer_min": 45,
+    "narrativ": "Sommer 1914. Du oeffnest einen alten Aktenkoffer mit vier Mappen. Jede Mappe ist ein Schluessel zur Frage: Wie kam es zum Ersten Weltkrieg?",
+    "_run_meta": {
+      "game_id": "gpg-erster-weltkrieg-ursachen-run4-v050",
+      "run_id": "run-4-2026-04-26-v050-pristine",
+      "plugin_version": "v0.5.0",
+      "assembled_at": "2026-04-27"
+    }
+  },
+  "mappen": [
+    {
+      "id": "mappe-1",
+      "titel": "Pulverfass Europa",
+      "beschreibung": "Warum war Europa vor 1914 ein 'Pulverfass'?",
+      "freischalt_code": "PULVER",
+      "einstieg": {
+        "typ": "narrativ",
+        "narrativ": "<p>Du oeffnest die erste Mappe. Auf dem Deckblatt steht ein einziges Wort: <em>Pulverfass</em>. Was meint das? Du weisst: Ein Pulverfass kann jederzeit hochgehen. Es braucht nur einen Funken. Aber warum war Europa vor dem Krieg so ein Pulverfass? Die Antwort beginnt mit zwei grossen Buendnissen — und mit einem Wettlauf um Schiffe und um Land.</p>",
+        "problemstellung": "Warum war Europa vor 1914 ein 'Pulverfass'?"
+      },
+      "materialien": [
+        {
+          "id": "mat-1-1",
+          "typ": "karte",
+          "titel": "Wer verbuendete sich mit wem? Europa 1914",
+          "position": 1,
+          "didaktische_funktion": "einstieg",
+          "voraussetzung": [],
+          "ueberleitung_von": null,
+          "sequenz_kontext": {
+            "vorher": null,
+            "nachher": {
+              "id": "mat-1-4",
+              "typ": "darstellungstext",
+              "kerninhalt": "Was ist ein Buendnis-System? Begriff, Mitglieder, Mechanismus."
+            }
+          },
+          "inhalt": "<figure><img src=\"../../assets/img/gpg-erster-weltkrieg-ursachen-run4-v050/img-m1-02.svg\" alt=\"Karte Europa 1914 mit zwei Buendnis-Bloecken: Dreibund (gelb) und Triple Entente (blau).\"/><figcaption><p>Karte: Europa im Jahr 1914. Sechs grosse Maechte stehen sich gegenueber. Gelb zeigt den <strong>Dreibund</strong>: das Deutsche Reich, Oesterreich-Ungarn und Italien (1882). Blau zeigt die <strong>Triple Entente</strong>: Frankreich, Russland und Grossbritannien (1907). Ein <em>Buendnis</em> ist ein Versprechen: Wer angegriffen wird, dem helfen die anderen. Graue Laender (z.B. Belgien, Schweiz, Niederlande) gehoeren zu keinem der zwei Bloecke.</p><p><cite>Karte: Wikimedia Commons, historicair / Fluteflute / Bibi Saint-Pol (CC-BY-SA 2.5).</cite></p></figcaption></figure>",
+          "bildunterschrift": "Karte Europa 1914 — Dreibund (gelb) und Triple Entente (blau).",
+          "quelle": "Wikimedia Commons: 'Map_Europe_alliances_1914-en.svg' von historicair / Fluteflute / Bibi Saint-Pol. Lizenz: CC-BY-SA 2.5.",
+          "lizenz": "CC-BY-SA-2.5"
+        },
+        {
+          "id": "mat-1-4",
+          "typ": "darstellungstext",
+          "titel": "Was ist ein Buendnis-System?",
+          "position": 2,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [
+            "mat-1-1"
+          ],
+          "ueberleitung_von": "Die Karte zeigt zwei Buendnis-Bloecke und sechs Grossmaechte um 1914. Was bedeutet ueberhaupt 'Buendnis' — und was ist daran gefaehrlich?",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-1-1",
+              "typ": "karte",
+              "kerninhalt": "Europa 1914: zwei Buendnisse, sechs Grossmaechte."
+            },
+            "nachher": {
+              "id": "mat-1-2",
+              "typ": "bildquelle",
+              "kerninhalt": "HMS Dreadnought 1906 — Symbol des Flotten-Wettlaufs."
+            }
+          },
+          "inhalt": "<p>Ein <strong>Buendnis</strong> ist ein Versprechen zwischen Laendern. Sie versprechen sich: Wenn einer von uns angegriffen wird, helfen die anderen. Stell dir das wie eine Schul-Clique vor. Wer einen aus der Clique aergert, bekommt es mit allen zu tun.</p><p>Vor 1914 gibt es in Europa zwei grosse Buendnisse. Der <strong>Dreibund</strong> (1882) verbindet das Deutsche Reich, Oesterreich-Ungarn und Italien. Die <strong>Triple Entente</strong> (1907) verbindet Frankreich, Russland und Grossbritannien. Mehrere Buendnisse zusammen nennt man ein <em>Buendnis-System</em>: ein System aus mehreren Buendnissen.</p><p>Das ist gefaehrlich. Denn jetzt streiten die Maechte nicht nur um zwei Dinge: Sie bauen riesige Kriegsflotten und sie streiten um Land in Afrika. Das nennt man auch <em>Imperialismus</em> — also der Wunsch, in der ganzen Welt Macht zu haben. Drei Spannungen treffen jetzt auf zwei feindliche Buendnisse. Das ergibt das <strong>Pulverfass Europa</strong>. Es braucht nur noch einen Funken.</p>",
+          "bildunterschrift": "",
+          "quelle": "Eigenproduktion (agent-material, Phase 2.1). Datenbasis: Wikipedia 'Triple Alliance (1882)', 'Triple Entente', 'Causes of World War I' (Stand 2026-04-26).",
+          "lizenz": "Eigenproduktion"
+        },
+        {
+          "id": "mat-1-2",
+          "typ": "bildquelle",
+          "titel": "HMS Dreadnought 1906 — der Beginn eines Wettrennens",
+          "position": 3,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [
+            "mat-1-4"
+          ],
+          "ueberleitung_von": "Du weisst jetzt: zwei feindliche Buendnisse stehen sich misstrauisch gegenueber. Aber war das alles? Was war noch los — auf den Meeren?",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-1-4",
+              "typ": "darstellungstext",
+              "kerninhalt": "Buendnis-System: Mitglieder + Mechanismus."
+            },
+            "nachher": {
+              "id": "mat-1-5",
+              "typ": "statistik",
+              "kerninhalt": "Quantifizierung: 29 vs. 17 Grossschiffe 1914."
+            }
+          },
+          "inhalt": "<figure><img src=\"../../assets/img/gpg-erster-weltkrieg-ursachen-run4-v050/img-m1-01.jpg\" alt=\"Schwarz-Weiss-Foto der HMS Dreadnought, eines britischen Schlachtschiffs aus dem Jahr 1906.\"/><figcaption><p>Foto: <strong>HMS Dreadnought</strong>, gebaut von der britischen Royal Navy 1906. Es war das erste grosse Schlachtschiff mit nur grossen Geschuetzen ('All-big-gun') und mit Dampfturbine. Schneller und staerker als alles davor. Plotzlich waren alle aelteren Schlachtschiffe veraltet. Deutschland baute nun auch solche Schiffe — der <em>Flotten-Wettlauf</em> begann.</p><p><cite>Foto: U.S. Navy / Restauration Adam Cuerden, Wikimedia Commons (Public Domain).</cite></p></figcaption></figure>",
+          "bildunterschrift": "HMS Dreadnought 1906 — das erste 'All-big-gun'-Schlachtschiff der Royal Navy.",
+          "quelle": "Wikimedia Commons: 'HMS_Dreadnought_1906_H61017.jpg' (U.S. Navy, Restauration Adam Cuerden). Lizenz: Public Domain (PD-USNavy).",
+          "lizenz": "Public Domain"
+        },
+        {
+          "id": "mat-1-5",
+          "typ": "statistik",
+          "titel": "Schiffe zaehlen — wer hatte mehr?",
+          "position": 4,
+          "didaktische_funktion": "vertiefung",
+          "voraussetzung": [
+            "mat-1-2"
+          ],
+          "ueberleitung_von": "Die HMS Dreadnought 1906 war Antwort auf den deutschen Flotten-Aufbau. Wie viele solcher Schiffe haben die zwei Seiten bis 1914 gebaut?",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-1-2",
+              "typ": "bildquelle",
+              "kerninhalt": "HMS Dreadnought als Symbol des Flotten-Wettlaufs."
+            },
+            "nachher": {
+              "id": "mat-1-6",
+              "typ": "karte",
+              "kerninhalt": "Afrika 1914 — durch sieben europaeische Maechte aufgeteilt."
+            }
+          },
+          "inhalt": "<figure><table class=\"statistik-tabelle\"><caption>Anzahl moderner Grossschiffe (Dreadnought-Typ und groesser)</caption><thead><tr><th></th><th>Royal Navy (Grossbritannien)</th><th>Kaiserliche Marine (Deutschland)</th></tr></thead><tbody><tr><th>1906</th><td>ca. 1</td><td>ca. 0</td></tr><tr><th>1914</th><td>ca. 29</td><td>ca. 17</td></tr></tbody></table><figcaption><p>Die Tabelle zeigt: 1906 hatte nur Grossbritannien ein Schiff vom neuen Typ — die HMS Dreadnought. Bis 1914 baute Deutschland 17 solcher Schiffe. Doch Grossbritannien blieb mit 29 vorn. Beide Seiten ruesten gleichzeitig auf. Das nennt man <em>Wettruesten</em> — wenn zwei Laender immer mehr Waffen bauen, weil der andere auch baut.</p><p><cite>Daten ca. nach: Wikipedia 'Anglo-German naval arms race' (Stand 2026-04-26).</cite></p></figcaption></figure>",
+          "bildunterschrift": "Tabelle: Anzahl moderner Grossschiffe Royal Navy / Kaiserliche Marine 1906 vs. 1914 (ca.-Werte).",
+          "quelle": "Eigenproduktion (agent-material, Phase 2.1). Datenbasis: Wikipedia 'Anglo-German naval arms race' (Sektion 'Naval bills'); Wikipedia 'HMS Dreadnought (1906)' (Stand 2026-04-26). Zahlen ca.",
+          "lizenz": "Eigenproduktion (Datenbasis Wikipedia, CC-BY-SA-4.0)"
+        },
+        {
+          "id": "mat-1-6",
+          "typ": "karte",
+          "titel": "Afrika 1914 — wer beherrscht was?",
+          "position": 5,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [
+            "mat-1-4"
+          ],
+          "ueberleitung_von": "Beide Seiten haben gebaut — der britische Vorsprung blieb, die Spannung wuchs. Aber das Wettruesten zur See war nicht der einzige Streit. Wo noch?",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-1-5",
+              "typ": "statistik",
+              "kerninhalt": "Britischer Vorsprung blieb (29 vs. 17)."
+            },
+            "nachher": {
+              "id": "mat-1-3",
+              "typ": "bildquelle",
+              "kerninhalt": "Wilhelm II. als personifizierter Treiber der Welt-Politik."
+            }
+          },
+          "inhalt": "<figure><img src=\"../../assets/img/gpg-erster-weltkrieg-ursachen-run4-v050/img-m1-06.svg\" alt=\"Karte Afrikas um 1914 mit Farb-Codierung der europaeischen Kolonialmaechte. Marokko ist mit einem roten Stern markiert.\"/><figcaption><p>Karte: Afrika um 1914. Sieben europaeische Grossmaechte haben Afrika unter sich aufgeteilt. <strong>Frankreich</strong> (blau) und <strong>Grossbritannien</strong> (rot) haben die groessten Gebiete. Das Deutsche Reich (gelb) kam spaet dazu. Auf der <em>Berliner Konferenz 1884</em> zogen die Europaeer Linien auf die Karte. Diese Linien sind heute oft noch Grenzen Afrikas.</p><p>Eine <em>Kolonie</em> ist ein Land, das von einem anderen Land beherrscht wird. Den Streit der europaeischen Maechte um Land in Afrika nennt man den <strong>Kolonialwettlauf</strong>. Der rote Stern zeigt Marokko: Hier kracht es 1905 und 1911 zwei Mal zwischen Deutschland und Frankreich. Das nennt man die <em>Marokko-Krisen</em>.</p><p><strong>Wichtig:</strong> Die Karte zeigt, wie die europaeischen Maechte Afrika unter sich aufgeteilt haben. Die Bevoelkerung Afrikas wurde nicht gefragt. Sie wurde erobert und unterdrueckt.</p><p><cite>Karte: Eigenkomposition (agent-material), Datenbasis Wikipedia 'Scramble for Africa', 'First Moroccan Crisis', 'Agadir Crisis' (Stand 2026-04-26).</cite></p></figcaption></figure>",
+          "bildunterschrift": "Karte: Aufteilung Afrikas durch sieben europaeische Grossmaechte um 1914 — Marokko als Konfliktanker (1905, 1911).",
+          "quelle": "Eigenkomposition (agent-material, Phase 2.1, SUB_MATERIAL_KARTE). Datenbasis: Wikipedia 'Scramble for Africa', 'First Moroccan Crisis', 'Agadir Crisis' (Stand 2026-04-26).",
+          "lizenz": "Eigenproduktion (Datenbasis Wikipedia, CC-BY-SA-4.0)"
+        },
+        {
+          "id": "mat-1-3",
+          "typ": "bildquelle",
+          "titel": "Kaiser Wilhelm II. — der Mann hinter der Welt-Politik",
+          "position": 6,
+          "didaktische_funktion": "sicherung",
+          "voraussetzung": [
+            "mat-1-4",
+            "mat-1-5",
+            "mat-1-6"
+          ],
+          "ueberleitung_von": "Sieben europaeische Maechte teilen Afrika auf; Marokko ist zweimal Konfliktanker zwischen Deutschland und Frankreich. Wer steht hinter dieser deutschen Welt-Politik?",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-1-6",
+              "typ": "karte",
+              "kerninhalt": "Afrika-Aufteilung; Marokko = Konfliktanker DT vs. FR."
+            },
+            "nachher": null
+          },
+          "inhalt": "<figure><img src=\"../../assets/img/gpg-erster-weltkrieg-ursachen-run4-v050/img-m1-03.jpg\" alt=\"Studio-Portrait Kaiser Wilhelms II. von Deutschland aus dem Jahr 1902 in Uniform mit Orden.\"/><figcaption><p>Foto: <strong>Kaiser Wilhelm II.</strong>, deutscher Kaiser seit 1888, im Jahr 1902. Er steht in Uniform mit vielen Orden, fest und ernst. Der Hofphotograph T. H. Voigt hat das Bild im Studio aufgenommen — als Auftrag.</p><p><strong>Achtung — Quellenkritik:</strong> Dieses Foto ist kein neutrales Bild. Der Kaiser liess sich bewusst so zeigen — mit Uniform und Decorationen. Frag dich: Was wollte der Kaiser zeigen — und was nicht? Er wollte zeigen: Ich bin maechtig. Was er nicht zeigte: Viele in Deutschland waren mit seiner Welt-Politik unzufrieden.</p><p><cite>Foto: Studio T. H. Voigt, Frankfurt 1902, Wikimedia Commons (Public Domain, &gt; 120 Jahre alt).</cite></p></figcaption></figure>",
+          "bildunterschrift": "Kaiser Wilhelm II. von Deutschland, 1902 — Studio-Portrait des Hofphotographen T. H. Voigt.",
+          "quelle": "Wikimedia Commons: 'Kaiser_Wilhelm_II_of_Germany_-_1902.jpg' (Studio Thomas Heinrich Voigt, Hofphotograph Frankfurt). Lizenz: Public Domain (PD-old-100).",
+          "lizenz": "Public Domain"
+        }
+      ],
+      "aufgaben": [
+        {
+          "id": "aufgabe-1-1",
+          "typ": "zuordnung",
+          "frage": "Ordne die sechs Grossmaechte ihrem Buendnis zu.",
+          "material_referenz": [
+            "mat-1-1",
+            "mat-1-4"
+          ],
+          "paare": {
+            "Deutsches Reich": "Dreibund",
+            "Oesterreich-Ungarn": "Dreibund",
+            "Italien": "Dreibund",
+            "Frankreich": "Triple Entente",
+            "Russland": "Triple Entente",
+            "Grossbritannien": "Triple Entente"
+          },
+          "kategorien": [
+            "Dreibund",
+            "Triple Entente"
+          ],
+          "loesung": {
+            "Deutsches Reich": "Dreibund",
+            "Oesterreich-Ungarn": "Dreibund",
+            "Italien": "Dreibund",
+            "Frankreich": "Triple Entente",
+            "Russland": "Triple Entente",
+            "Grossbritannien": "Triple Entente"
+          },
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Schau auf die [[mat-1-1|Karte Europa 1914]] (M1). Welche Farbe hat welches Land?"
+            },
+            {
+              "stufe": 2,
+              "text": "Gelb ist der Dreibund. Blau ist die Triple Entente. Lies dazu nochmal den [[mat-1-4|Text zum Buendnis-System]] (M2)."
+            },
+            {
+              "stufe": 3,
+              "text": "Loesung: Dreibund (1882) = Deutsches Reich, Oesterreich-Ungarn, Italien. Triple Entente (1907) = Frankreich, Russland, Grossbritannien. Merke: Die drei Mittelmaechte gegen die drei Randmaechte."
+            }
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-1-2",
+          "typ": "lueckentext",
+          "frage": "Ergaenze die fehlenden Fachbegriffe.",
+          "material_referenz": [
+            "mat-1-4"
+          ],
+          "text_mit_luecken": "Ein Buendnis ist ein {{1}} zwischen Laendern. Wer {{2}} wird, dem helfen die anderen. Vor 1914 gab es zwei grosse Buendnisse: den {{3}} (1882) und die {{4}} (1907). Mehrere Buendnisse zusammen nennt man ein {{5}}.",
+          "luecken": [
+            {
+              "id": 1,
+              "loesung": "Versprechen",
+              "alternativen": [
+                "Versprechen"
+              ]
+            },
+            {
+              "id": 2,
+              "loesung": "angegriffen",
+              "alternativen": [
+                "angegriffen"
+              ]
+            },
+            {
+              "id": 3,
+              "loesung": "Dreibund",
+              "alternativen": [
+                "Dreibund"
+              ]
+            },
+            {
+              "id": 4,
+              "loesung": "Triple Entente",
+              "alternativen": [
+                "Triple Entente"
+              ]
+            },
+            {
+              "id": 5,
+              "loesung": "Buendnis-System",
+              "alternativen": [
+                "Buendnissystem",
+                "Buendnis-System"
+              ]
+            }
+          ],
+          "wortbank": [
+            "Versprechen",
+            "angegriffen",
+            "Dreibund",
+            "Triple Entente",
+            "Buendnis-System",
+            "Krieg",
+            "Streit",
+            "Angriff"
+          ],
+          "loesung": [
+            "Versprechen",
+            "angegriffen",
+            "Dreibund",
+            "Triple Entente",
+            "Buendnis-System"
+          ],
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Lies den [[mat-1-4|Text zum Buendnis-System]] (M2) noch einmal genau."
+            },
+            {
+              "stufe": 2,
+              "text": "Im ersten Absatz steht der Mechanismus (Wer hilft wem?). Im zweiten Absatz stehen die zwei Buendnis-Namen mit ihren Jahreszahlen."
+            },
+            {
+              "stufe": 3,
+              "text": "Loesung: Versprechen — angegriffen — Dreibund — Triple Entente — Buendnis-System. Merke: Ein Buendnis ist ein Versprechen, bei einem Angriff zu helfen."
+            }
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-1-3",
+          "typ": "multiple-choice",
+          "frage": "Warum gilt die HMS Dreadnought als Beginn eines neuen Wettrennens?",
+          "material_referenz": [
+            "mat-1-2",
+            "mat-1-4"
+          ],
+          "optionen": [
+            "Sie war schneller und staerker als alle Schiffe davor — alle aelteren Schiffe waren plotzlich veraltet.",
+            "Sie war das erste U-Boot der Royal Navy.",
+            "Sie wurde im Auftrag des Deutschen Reiches gebaut.",
+            "Sie war ein Handelsschiff fuer den Kolonial-Handel."
+          ],
+          "loesung": "Sie war schneller und staerker als alle Schiffe davor — alle aelteren Schiffe waren plotzlich veraltet.",
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Schau auf das [[mat-1-2|Foto der HMS Dreadnought]] (M3) und lies die Bildunterschrift."
+            },
+            {
+              "stufe": 2,
+              "text": "Was bedeutet 'All-big-gun'? Was passiert mit aelteren Schiffen, wenn ein viel staerkeres Schiff gebaut wird?"
+            },
+            {
+              "stufe": 3,
+              "text": "Loesung: Sie war schneller und staerker als alle Schiffe davor. Alle aelteren Schlachtschiffe waren plotzlich veraltet. Deutschland baute nun auch solche Schiffe — der Flotten-Wettlauf begann."
+            }
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-1-4",
+          "typ": "multiple-choice",
+          "frage": "Welche Aussagen ueber die Spannungen in Europa um 1914 sind richtig? Waehle zwei aus.",
+          "material_referenz": [
+            "mat-1-1",
+            "mat-1-4"
+          ],
+          "optionen": [
+            "Auf den Meeren ruesten Deutschland und Grossbritannien gegeneinander auf.",
+            "In Afrika streiten Deutschland und Frankreich um Marokko.",
+            "Italien und Frankreich teilen sich das deutsche Kolonialreich auf.",
+            "Russland kaempft 1905 mit Grossbritannien um Indien."
+          ],
+          "loesung": [
+            "Auf den Meeren ruesten Deutschland und Grossbritannien gegeneinander auf.",
+            "In Afrika streiten Deutschland und Frankreich um Marokko."
+          ],
+          "mehrfachauswahl": true,
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Sieh dir die [[mat-1-1|Karte Europa 1914]] (M1) und den [[mat-1-4|Text zum Buendnis-System]] (M2) an."
+            },
+            {
+              "stufe": 2,
+              "text": "Drei Spannungsfelder: Buendnisse, Flotte, Kolonien. Wer streitet auf den Meeren? Wer in Afrika?"
+            },
+            {
+              "stufe": 3,
+              "text": "Loesung: Auf den Meeren ruesten Deutschland und Grossbritannien (Flotten-Wettlauf). In Afrika streiten Deutschland und Frankreich um Marokko (Kolonialwettlauf). Beides ergibt zusammen mit den Buendnissen das Pulverfass Europa."
+            }
+          ],
+          "punkte": 15
+        },
+        {
+          "id": "aufgabe-1-5",
+          "typ": "reihenfolge",
+          "frage": "Bringe die vier Stationen des Flotten-Wettlaufs in die richtige Reihenfolge.",
+          "material_referenz": [
+            "mat-1-5",
+            "mat-1-2"
+          ],
+          "elemente": [
+            "1898: Der deutsche Tirpitz-Plan startet — das Deutsche Reich baut eine grosse Kriegsflotte.",
+            "1906: Grossbritannien baut die HMS Dreadnought — schneller und staerker als alle Schiffe davor.",
+            "Bis 1914: Das Deutsche Reich baut 17 moderne Grossschiffe.",
+            "Bis 1914: Grossbritannien hat 29 moderne Grossschiffe — der Vorsprung bleibt."
+          ],
+          "loesung": [
+            "1898: Der deutsche Tirpitz-Plan startet — das Deutsche Reich baut eine grosse Kriegsflotte.",
+            "1906: Grossbritannien baut die HMS Dreadnought — schneller und staerker als alle Schiffe davor.",
+            "Bis 1914: Das Deutsche Reich baut 17 moderne Grossschiffe.",
+            "Bis 1914: Grossbritannien hat 29 moderne Grossschiffe — der Vorsprung bleibt."
+          ],
+          "ordnungsprinzip": "chronologisch",
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Schau auf die [[mat-1-5|Tabelle der Grossschiffe]] (M5) und das [[mat-1-2|Foto der HMS Dreadnought]] (M3)."
+            },
+            {
+              "stufe": 2,
+              "text": "Welches Jahr steht zuerst in der Tabelle? Was passiert dann? Sortiere nach Jahreszahlen."
+            },
+            {
+              "stufe": 3,
+              "text": "Loesung: 1898 Tirpitz-Plan -> 1906 HMS Dreadnought -> bis 1914 Deutsches Reich 17 Schiffe -> bis 1914 Grossbritannien 29 Schiffe. Merke: Beide ruesten gleichzeitig. Der britische Vorsprung bleibt."
+            }
+          ],
+          "punkte": 12
+        },
+        {
+          "id": "aufgabe-1-6",
+          "typ": "quellenkritik",
+          "frage": "Wer hat diese Karte gezeichnet — und wessen Sicht zeigt sie?",
+          "material_referenz": [
+            "mat-1-6",
+            "mat-1-4"
+          ],
+          "w_fragen": [
+            {
+              "id": "W1",
+              "frage": "Wer hat das Material erstellt?",
+              "erwartungs_anker": "Eigenkomposition (agent-material), Datenbasis Wikipedia. Erstellt aus europaeischer Sicht."
+            },
+            {
+              "id": "W2",
+              "frage": "Was zeigt das Material?",
+              "erwartungs_anker": "Sieben europaeische Grossmaechte haben Afrika unter sich aufgeteilt. Marokko ist Konfliktanker zwischen Deutschland und Frankreich (1905, 1911)."
+            },
+            {
+              "id": "W3",
+              "frage": "Wessen Sicht fehlt?",
+              "erwartungs_anker": "Die Sicht der kolonisierten Bevoelkerung Afrikas. Sie wurde nicht gefragt. Sie wurde erobert und unterdrueckt."
+            },
+            {
+              "id": "W4",
+              "frage": "Warum ist das wichtig?",
+              "erwartungs_anker": "Die Karte zeigt nur die Aufteilungs-Perspektive der europaeischen Maechte. Wer Afrika so anschaut, sieht nicht das Erleben der kolonisierten Menschen."
+            }
+          ],
+          "loesung": "Die Karte zeigt die Aufteilung Afrikas aus Sicht der europaeischen Maechte. Beleg im Material: Die Bevoelkerung Afrikas wurde nicht gefragt. Sie wurde erobert und unterdrueckt. Die Karte ist also keine neutrale Darstellung — sie blendet die Sicht der kolonisierten Bevoelkerung aus.",
+          "loesungs_keywords": [
+            "europaeische Sicht",
+            "Aufteilung",
+            "Bevoelkerung Afrikas wurde nicht gefragt",
+            "kolonisiert",
+            "erobert",
+            "nicht neutral"
+          ],
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Lies den Begleittext zur [[mat-1-6|Karte Afrika 1914]] (M5) genau. Was steht im letzten Absatz?"
+            },
+            {
+              "stufe": 2,
+              "text": "Stell dir vor, du lebst 1900 in Marokko. Wuerde diese Karte deine Sicht zeigen? Wer hat sie gezeichnet? Wer kommt darin nicht vor?"
+            },
+            {
+              "stufe": 3,
+              "text": "Loesung: Die Karte zeigt die Sicht der europaeischen Maechte. Sie zeigt, wer welches Gebiet beherrscht. Sie zeigt aber nicht die Sicht der kolonisierten Bevoelkerung. Im Text steht: Die Bevoelkerung Afrikas wurde nicht gefragt. Sie wurde erobert und unterdrueckt."
+            }
+          ],
+          "punkte": 15
+        },
+        {
+          "id": "aufgabe-1-7",
+          "typ": "freitext-code",
+          "frage": "Erklaere in 3 bis 4 Saetzen, warum das kein gewoehnliches Foto ist. Nenne mindestens zwei Dinge, die der Kaiser zeigen wollte.",
+          "material_referenz": [
+            "mat-1-3",
+            "mat-1-6",
+            "mat-1-4"
+          ],
+          "leitfragen": [
+            "Wer hat das Foto gemacht — und wo?",
+            "Was traegt der Kaiser? Wie steht er da?",
+            "Was wollte der Kaiser mit diesem Bild zeigen?",
+            "Was zeigt das Bild NICHT?"
+          ],
+          "scaffolding": [
+            "Satz 1: Das Foto ist kein neutrales Bild, weil ...",
+            "Satz 2: Der Hofphotograph T. H. Voigt nahm das Bild im Studio auf ...",
+            "Satz 3: Der Kaiser zeigt mit Uniform und Orden ...",
+            "Satz 4: Was das Bild nicht zeigt: ..."
+          ],
+          "erwartungs_anker": "(1) Kein neutrales Foto: Hofphotograph T. H. Voigt, Studio, Auftragsarbeit. (2) Inszenierungs-Elemente: Uniform, Orden, ernste Pose, fester Stand. (3) Aussage des Kaisers: 'Ich bin maechtig' (Welt-Politik). (4) Nicht gezeigt: Kritik in Deutschland, Spannungen mit anderen Maechten.",
+          "loesung": "Studio Hofphotograph Voigt Uniform Orden inszeniert Macht",
+          "code_keywords": [
+            "Studio",
+            "Hofphotograph",
+            "Voigt",
+            "Uniform",
+            "Orden",
+            "Auftrag",
+            "inszeniert",
+            "Macht",
+            "nicht neutral"
+          ],
+          "code_min_treffer": 3,
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Schau auf das [[mat-1-3|Foto Kaiser Wilhelm II.]] (M6) und lies den Quellenkritik-Absatz im Begleittext."
+            },
+            {
+              "stufe": 2,
+              "text": "Was hat der Kaiser an? Wer hat das Foto gemacht — und wo? Was sieht man — und was sieht man nicht?"
+            },
+            {
+              "stufe": 3,
+              "text": "Beispiel-Antwort: Das Foto ist kein neutrales Bild. Der Hofphotograph T. H. Voigt nahm es 1902 im Studio auf — als Auftrag. Der Kaiser zeigt sich in Uniform mit vielen Orden, fest und ernst. Damit will er sagen: Ich bin maechtig. Was das Bild nicht zeigt: Viele in Deutschland waren mit seiner Welt-Politik unzufrieden. Hinter dem Pulverfass Europa standen Akteure wie Wilhelm II."
+            }
+          ],
+          "punkte": 20
+        }
+      ],
+      "sicherung": {
+        "hefteintrag": {
+          "stundenfrage": "Warum war Europa vor 1914 ein 'Pulverfass'?",
+          "ke_anker_haupt": "GPG7_LB2_K_05",
+          "ke_anker_neben": [
+            "GPG7_LB3_K_03"
+          ],
+          "afb": "I-II",
+          "bloom": "Verstehen → Anwenden",
+          "scpl": {
+            "situation": {
+              "kontextsatz": "Um 1900 stehen sich in Europa sechs Grossmaechte gegenueber.",
+              "fachbegriffe": [
+                "Grossmaechte",
+                "Europa um 1900"
+              ]
+            },
+            "complication": [
+              {
+                "id": "C1",
+                "schritt": "Sechs Grossmaechte schliessen sich zu zwei feindlichen Buendnis-Bloecken zusammen: Dreibund (1882) und Triple Entente (1907).",
+                "fachbegriff": "Buendnis-System",
+                "darstellung": "Dreibund: Deutsches Reich, Oesterreich-Ungarn, Italien. Triple Entente: Frankreich, Russland, Grossbritannien.",
+                "tafelbild_knoten": [
+                  "K1-2",
+                  "K1-3"
+                ]
+              },
+              {
+                "id": "C2",
+                "schritt": "Ab 1898 baut Deutschland eine grosse Kriegsflotte. Grossbritannien antwortet 1906 mit der HMS Dreadnought. Es beginnt der Flotten-Wettlauf.",
+                "fachbegriff": "Flotten-Wettlauf",
+                "darstellung": "Bis 1914: 29 britische gegen 17 deutsche Grossschiffe.",
+                "tafelbild_knoten": [
+                  "K1-4"
+                ]
+              },
+              {
+                "id": "C3",
+                "schritt": "Sieben europaeische Maechte teilen Afrika unter sich auf (Berliner Konferenz 1884). Zweimal kracht es um Marokko: 1905 und 1911.",
+                "fachbegriff": "Kolonialwettlauf",
+                "darstellung": "Marokko-Krisen: Wilhelm II. in Tanger 1905, SMS Panther in Agadir 1911.",
+                "tafelbild_knoten": [
+                  "K1-5"
+                ]
+              }
+            ],
+            "problem": {
+              "satz": "Drei Spannungen treffen auf zwei feindliche Buendnis-Bloecke — Europa wird zum Pulverfass.",
+              "fachbegriff": "Pulverfass Europa",
+              "tafelbild_knoten": [
+                "K1-1"
+              ]
+            },
+            "loesung": [
+              "Schon vor 1914 war Europa ein Pulverfass: Zwei feindliche Buendnisse, der Wettlauf um Schiffe und der Streit um Kolonien hatten ueber Jahrzehnte Spannungen aufgebaut."
+            ]
+          },
+          "schluessel_begriffe": [
+            {
+              "begriff": "Buendnis-System",
+              "erklaerung": "Mehrere Buendnisse, die sich gegenseitig in Stellung bringen."
+            },
+            {
+              "begriff": "Dreibund (1882)",
+              "erklaerung": "Deutsches Reich, Oesterreich-Ungarn, Italien."
+            },
+            {
+              "begriff": "Triple Entente (1907)",
+              "erklaerung": "Frankreich, Russland, Grossbritannien."
+            },
+            {
+              "begriff": "Flotten-Wettlauf",
+              "erklaerung": "Wettbewerb beim Bau von Kriegsschiffen — Deutschland gegen Grossbritannien."
+            },
+            {
+              "begriff": "Kolonialwettlauf",
+              "erklaerung": "Streit der europaeischen Maechte um Land in Afrika."
+            }
+          ],
+          "merksatz": "Schon vor 1914 war Europa ein Pulverfass: Zwei feindliche Buendnisse, der Wettlauf um Schiffe und der Streit um Kolonien hatten ueber Jahrzehnte Spannungen aufgebaut.",
+          "knoten": [
+            {
+              "knoten_id": "K1-1",
+              "label": "Pulverfass Europa",
+              "position": "zentrum",
+              "typ": "leitbegriff"
+            },
+            {
+              "knoten_id": "K1-2",
+              "label": "Dreibund (1882)",
+              "position": "links-oben",
+              "typ": "buendnis_block",
+              "elemente": [
+                "Deutsches Reich",
+                "Oesterreich-Ungarn",
+                "Italien"
+              ]
+            },
+            {
+              "knoten_id": "K1-3",
+              "label": "Triple Entente (1907)",
+              "position": "rechts-oben",
+              "typ": "buendnis_block",
+              "elemente": [
+                "Frankreich",
+                "Russland",
+                "Grossbritannien"
+              ]
+            },
+            {
+              "knoten_id": "K1-4",
+              "label": "Flotten-Wettlauf",
+              "position": "rechts-unten",
+              "typ": "spannungsfeld",
+              "elemente": [
+                "HMS Dreadnought 1906",
+                "Tirpitz-Plan 1898",
+                "29 vs 17 Grossschiffe 1914"
+              ]
+            },
+            {
+              "knoten_id": "K1-5",
+              "label": "Wettlauf um Afrika / Marokko-Krisen",
+              "position": "links-unten",
+              "typ": "spannungsfeld",
+              "elemente": [
+                "Berlin-Konferenz 1884",
+                "1. Marokko-Krise 1905",
+                "2. Marokko-Krise 1911 (SMS Panther)"
+              ]
+            }
+          ],
+          "verbindungen": [],
+          "voraussetzungen": [],
+          "transfer": {
+            "frage": ""
+          },
+          "ordnungsmuster": ""
+        },
+        "hefteintrag_verweis": "Uebertrage das Tafelbild und den Merksatz in dein Heft.",
+        "reflexionsimpuls": "Was hast du jetzt verstanden — warum war Europa vor 1914 wie ein Pulverfass?",
+        "zusammenfassung": "Drei Spannungen plus zwei feindliche Buendnisse — das ergibt das Pulverfass Europa. Es braucht nur einen Funken.",
+        "ueberleitung": "Du legst Mappe 1 zur Seite. Dein Befund: Europa war ein Pulverfass, lange bevor irgendjemand schoss. Aber wer hat den Funken geworfen? Mappe 2 zeigt dir den 28. Juni 1914. Ein Datum. Eine Stadt. Ein Schuss."
+      },
+      "mappenabschluss": {
+        "schema_version": "mappenabschluss_v1",
+        "vertrag": "VERTRAG_PHASE_2-2c_MAPPENABSCHLUSS v1.0 + STR-13 + V13 Dualstruktur + V19 Multiperspektiv-Sanity + Plugin v0.5.0",
+        "game_id": "gpg-erster-weltkrieg-ursachen-run4-v050",
+        "run_id": "run-4-2026-04-26",
+        "mappe_id": "M1",
+        "mappe_index": 1,
+        "titel": "Pulverfass Europa",
+        "phase": "2.2c",
+        "agent": "sub-template-mappenabschluss",
+        "erstellt_am": "2026-04-26",
+        "_variante": "A",
+        "_variante_begruendung": "Nicht-letzte Mappe (M2-M4 folgen) — Reflexionsfragen + Ueberleitungssatz nach M2 (Sarajevo).",
+        "f0b_priming": {
+          "kennung": "F0B_PRIMING_v1",
+          "ssot_pfad": "agents/_includes/F0B_PRIMING_INCLUDE.md",
+          "sprachniveau": "R7",
+          "terminologie_01": "PASS — neutrale Begriffe (kolonisierte Bevoelkerung, Aufteilung Afrikas durch europaeische Grossmaechte). KEINE Eingeborene/Erschliessung/zivilisatorische Mission/Entdeckung.",
+          "multiperspektiv_synthese_m3_pflicht": "PASS — mindestens eine Reflexionsfrage greift Nicht-Dominant-Perspektive (kolonisierte Bevoelkerung Afrikas) explizit auf, da Mappe Trigger-Kategorie 'kolonialismus' traegt."
+        },
+        "trigger_sichtbarkeit_policy": "POLICY_TRIGGER_SICHTBARKEIT — Lehrkraft-Block (didaktischer Kommentar, AFB, Trigger-Hinweise, Erwartungs-Indikatoren) NICHT fuer SuS sichtbar. Schueler-Block (Reflexionsfragen + Ueberleitungssatz) ohne Trigger-Wortlaute, ohne AFB-Etiketten, ohne didaktische Begriffe.",
+        "lehrkraft": {
+          "didaktischer_kommentar": "Mappenabschluss M1 schliesst die Wissenssicherung (hefteintrag.json) ab und oeffnet bewusst eine Reflexions-Zone. Reflexionsfragen sind disjunkt zu SCPL-Loesung (Pulverfass-Synthese steht im Hefteintrag). Drei Frage-Typen: Transfer (Buendnis-System-Logik), Bewertung (Folgenreichste Spannung), Perspektivwechsel (kolonisierte Bevoelkerung — Multiperspektiv-Synthese-Pflicht M3). Ueberleitungssatz ankert das Pulverfass-Funke-Bild fuer M2 (Sarajevo) ohne Stoff-Vorgriff.",
+          "afb_stufe": "II-III (Reflexion ueber gesicherten AFB-I-II-Stoff)",
+          "bloom_ebene": "Anwenden → Beurteilen",
+          "scpl_disjunkt_check": "PASS — keine Reflexionsfrage wiederholt scpl.loesung[0] ('Schon vor 1914 war Europa ein Pulverfass…'). Keine Frage testet Fakten (Buendnis-Mitglieder, Jahreszahlen — das ist Hefteintrag-Aufgabe).",
+          "trigger_hinweise": {
+            "trigger_flags_mappe": [
+              "nationalismus",
+              "kolonialismus"
+            ],
+            "kolonial_sprach_sieb_qg_07": "PFLICHT — Reflexionsfrage 3 (Perspektivwechsel) verwendet 'kolonisierte Bevoelkerung in Afrika' und NICHT 'Eingeborene', 'Erschliessung' oder 'zivilisatorische Mission'.",
+            "multiperspektiv_synthese_m3_trigger": "Mappe traegt Trigger-Kategorie 'kolonialismus' (siehe meta.trigger_flags). V19-Pflicht: mindestens eine Reflexionsfrage adressiert Nicht-Dominant-Perspektive aus perspektiv_inventar.json (P4 Kolonisierte Bevoelkerung Afrikas). Erfuellt durch reflexion_fragen[2].",
+            "neutralitaet_eskalation": "Ueberleitungssatz beschreibt Spannungs-Auflauf (Funke-Bild), ohne den Krieg zu glorifizieren oder Schuld vorwegzunehmen (Beutelsbach-Kontroversitaetsgebot)."
+          },
+          "erwartungs_indikatoren": {
+            "reflexion_frage_1_transfer": "SuS erkennen Buendnis-System als selbst-verstaerkende Eskalations-Logik: Wenn ein Buendnis-Partner einen Streit beginnt, werden alle hineingezogen. Begruendung verweist auf SCPL-Komplikation C1 (zwei feindliche Buendnis-Bloecke).",
+            "reflexion_frage_2_bewertung": "SuS waehlen begruendet eine der drei Spannungen (Buendnis-System / Flotten-Wettlauf / Kolonialwettlauf) und erklaeren ihre Wahl mit Bezug auf Reichweite, Dauer oder Eskalations-Potenzial. Keine 'richtige' Antwort — Beurteilungs-AFB.",
+            "reflexion_frage_3_perspektivwechsel": "SuS reflektieren, dass die Berliner Konferenz 1884 Afrika OHNE die kolonisierte Bevoelkerung aufteilte. Erwartung: Erkenntnis, dass das Pulverfass aus europaeischer Sicht erzaehlt ist und kolonisierte Menschen kein Mitspracherecht hatten."
+          },
+          "differenzierungs_hinweis": "Schwache SuS: Frage 1 oder 2 wahlweise muendlich. Starke SuS: Frage 3 schriftlich (3-4 Saetze). Frage 2 als Ankreuz-Variante mit Begruendungs-Pflicht moeglich.",
+          "sandwich_anschluss_m2": "Ueberleitungssatz oeffnet das 'Funke-Bild' (Pulverfass + Funke). M2 wird in den Funken einsteigen (28.6.1914 Sarajevo). KEIN Stoff-Vorgriff: weder Princip noch Datum noch Begriff Julikrise im Mappenabschluss.",
+          "qg_str_13_check": {
+            "MZ1_variante": "PASS — Variante A (M2-M4 folgen).",
+            "MZ2_disjunkt_zu_hefteintrag": "PASS — keine Frage identisch mit hefteintrag.scpl.loesung[]. Keine Frage = stundenfrage.",
+            "MZ3_keine_faktenabfrage": "PASS — alle drei Fragen sind Transfer/Bewertung/Perspektivwechsel, keine Reproduktion.",
+            "MZ4_ueberleitungssatz": "PASS — vorhanden, 18 Woerter, erzeugt Neugier (Funke-Frage).",
+            "MZ5_sprachregister_r7": "PASS — kurze Saetze, konkrete Begriffe, keine Fremdwoerter ohne Erklaerung."
+          }
+        },
+        "schueler": {
+          "reflexion_fragen": [
+            {
+              "id": "M1-RQ1",
+              "typ": "transfer",
+              "frage": "Stell dir vor, ein Buendnis-Partner laesst sich auf einen Streit ein. Was bedeutet das fuer alle anderen Mitglieder des Buendnisses?",
+              "hinweis": "Denke daran, was ein Buendnis verspricht."
+            },
+            {
+              "id": "M1-RQ2",
+              "typ": "bewertung",
+              "frage": "Welche der drei Spannungen — Buendnis-System, Flotten-Wettlauf oder Wettlauf um Afrika — findest du am gefaehrlichsten fuer den Frieden in Europa? Begruende deine Wahl.",
+              "hinweis": "Es gibt keine richtige Antwort. Wichtig ist deine Begruendung."
+            },
+            {
+              "id": "M1-RQ3",
+              "typ": "perspektivwechsel",
+              "frage": "Auf der Berliner Konferenz 1884 teilten sieben europaeische Maechte Afrika unter sich auf. Die kolonisierte Bevoelkerung in Afrika sass NICHT mit am Tisch. Was bedeutet das fuer ihre Sicht auf das 'Pulverfass Europa'?",
+              "hinweis": "Aus wessen Sicht erzaehlt der Begriff 'Pulverfass Europa' die Geschichte?",
+              "perspektive_aus_inventar": "P4 Kolonisierte Bevoelkerung Afrikas"
+            }
+          ],
+          "ueberleitungssatz": "Du legst Mappe 1 zur Seite. Das Pulverfass ist voll — aber wer wirft den Funken hinein?"
+        },
+        "engine_kompatibilitaet": {
+          "data_json_schema_konform": true,
+          "data_json_einbindung": {
+            "feld": "mappenabschluss",
+            "typ": "objekt_oder_ref",
+            "ref_pfad": "mappenabschluss.json",
+            "render_zone": "unter_hefteintrag",
+            "rendering_hinweis": "Schueler-Block wird im Schueler-Frontend gerendert. Lehrkraft-Block bleibt Lehrkraft-Ansicht (POLICY_TRIGGER_SICHTBARKEIT)."
+          },
+          "freischalt_code_tile": {
+            "code": "PULVER",
+            "ziel_mappe": "M2",
+            "tile_format": "freischalt_code_tile_v1",
+            "tile_position": "nach_ueberleitungssatz",
+            "tile_label": "Naechste Mappe oeffnen",
+            "tile_hinweis_lehrkraft": "Tile erscheint NUR, wenn alle 7 Aufgaben in M1 PASS sind. Code wird in Aufgabe 1-7 (freitext-code) erspielt."
+          }
+        },
+        "cross_konsistenz_check": {
+          "hefteintrag_m1": {
+            "stundenfrage_match": "PASS — Reflexionsfragen knuepfen an Stundenfrage 'Warum war Europa vor 1914 ein Pulverfass?' an, ohne sie zu wiederholen.",
+            "scpl_loesung_disjunkt": "PASS — keine Frage = scpl.loesung[0].",
+            "tafelbild_knoten_referenziert": [
+              "K1-2/K1-3 Buendnis-Bloecke → Frage 1 (Transfer Buendnis-Logik)",
+              "K1-4 Flotten-Wettlauf + K1-5 Wettlauf um Afrika → Frage 2 (Bewertung der drei Spannungen)",
+              "K1-5 Berlin-Konferenz 1884 → Frage 3 (Perspektivwechsel kolonisierte Bevoelkerung)"
+            ],
+            "schluessel_begriffe_aktiviert": [
+              "Buendnis-System",
+              "Flotten-Wettlauf",
+              "Kolonialwettlauf"
+            ]
+          },
+          "aufgaben_m1": {
+            "anzahl_aufgaben": 7,
+            "afb_progression_respektiert": "PASS — Mappenabschluss-AFB II-III liegt OBERHALB der hoechsten Aufgabe (Aufgabe 1-7 freitext-code, AFB II-III). Reflexion ist Synthese-Schritt, kein zusaetzlicher Wissenstest.",
+            "freischalt_code_logik": "PASS — Code PULVER wird in Aufgabe 1-7 erspielt; Mappenabschluss aktiviert das Freischalt-Tile NACH Reflexion."
+          },
+          "materialien_m1": {
+            "anzahl_materialien": 6,
+            "referenz_in_reflexion": "Frage 3 nutzt mat-1-5 (Berliner Konferenz 1884) implizit, ohne Material-ID zu nennen — Reflexion bleibt material-unabhaengig formuliert."
+          },
+          "sicherung_m1_komplementaritaet": {
+            "abgrenzung": "PASS — sicherung.json enthaelt zusammenfassung + ueberleitung + reflexionsimpuls (1 Impuls). mappenabschluss.json enthaelt 3 Reflexionsfragen + Ueberleitungssatz. Keine Doppelung.",
+            "sicherung_reflexionsimpuls": "Was hast du jetzt verstanden — warum war Europa vor 1914 wie ein Pulverfass?",
+            "mappenabschluss_reflexion_geht_weiter": "Drei Fragen vertiefen Transfer / Bewertung / Perspektivwechsel ueber den Sicherungs-Impuls hinaus."
+          },
+          "skript_m1_konsistenz": "PASS — Funke-Bild im Ueberleitungssatz folgt Skript M1 §7 Synthese-Metapher (Pulverfass + Funke).",
+          "didaktik_rahmen_konsistenz": "PASS — Reflexions-Zone respektiert Beutelsbach (Kontroversitaet bei Frage 2) und Sandwich-Prinzip (Bogen zu M2 ohne Vorgriff)."
+        },
+        "v_validatoren_check": {
+          "V13_dualstruktur": "PASS — strikte Trennung lehrkraft.* vs. schueler.* (BLOCKER aktiv). Schueler-Block enthaelt KEINE Trigger-Wortlaute, KEINE AFB-Etiketten, KEINE didaktischen Begriffe.",
+          "V14_entity_encoding": "PASS — UTF-8 ASCII-Transliteration (ae/oe/ue/ss). Keine HTML-Entities.",
+          "V19_multiperspektiv_sanity": "PASS — Trigger-Kategorie 'kolonialismus' aktiv. reflexion_fragen[2] (M1-RQ3) adressiert Nicht-Dominant-Perspektive P4 (Kolonisierte Bevoelkerung Afrikas) explizit, nicht generisch.",
+          "QG_07_kolonial_sprach_sieb": "PASS — verwendete Begriffe: 'kolonisierte Bevoelkerung in Afrika', 'sieben europaeische Maechte teilten Afrika unter sich auf'. KEINE verbotenen Begriffe.",
+          "POLICY_TRIGGER_SICHTBARKEIT": "PASS — Trigger-Hinweise + AFB + didaktische_begruendung ausschliesslich in lehrkraft.*. Schueler-Block trigger-frei.",
+          "F0B_PRIMING_v1_R7": "PASS — Reflexionsfragen-Wortzahl-Bereich 14-31 Woerter, Hauptsaetze + Nebensaetze einfach verknuepft. Ueberleitungssatz 18 Woerter."
+        }
+      }
+    },
+    {
+      "id": "mappe-2",
+      "titel": "Sarajevo 1914 — Ein Schuss, eine Welt im Krieg",
+      "beschreibung": "Wie wurde aus dem Attentat in Sarajevo in fuenf Wochen ein Weltkrieg?",
+      "freischalt_code": "28061914",
+      "einstieg": {
+        "typ": "narrativ",
+        "narrativ": "<p>Du oeffnest die zweite Mappe. Das Deckblatt zeigt eine schwarz-weisse Photographie und ein Datum: <em>28. Juni 1914 — Sarajevo</em>. Du weisst aus Mappe 1: Europa war ein Pulverfass. Aber wer hat den Funken geworfen? In dieser Mappe findest du den Tatort, den Thronfolger, den 19-jaehrigen Schueler — und das Ultimatum, das Krieg wollte. In nur fuenf Wochen wird aus einem Schuss ein Weltkrieg. Pack die Mappe an.</p>",
+        "problemstellung": "Wie wurde aus dem Attentat in Sarajevo in fuenf Wochen ein Weltkrieg?"
+      },
+      "materialien": [
+        {
+          "id": "mat-2-1",
+          "typ": "zeitleiste",
+          "titel": "Wie wurde aus einem Schuss in fünf Wochen ein Weltkrieg?",
+          "position": 1,
+          "didaktische_funktion": "einstieg",
+          "voraussetzung": [],
+          "ueberleitung_von": null,
+          "sequenz_kontext": {
+            "vorher": null,
+            "nachher": {
+              "id": "mat-2-2",
+              "typ": "bildquelle",
+              "kerninhalt": "Tatortskizze: Wo das Attentat räumlich stattfand."
+            }
+          },
+          "inhalt": [
+            {
+              "datum": "28. Juni 1914",
+              "text": "Sarajevo: Princip erschießt Thronfolger Franz Ferdinand und seine Frau Sophie."
+            },
+            {
+              "datum": "5./6. Juli 1914",
+              "text": "Berlin: Kaiser Wilhelm II. gibt Wien den Blanko-Scheck — ein Versprechen ohne Bedingungen."
+            },
+            {
+              "datum": "23. Juli 1914",
+              "text": "Wien stellt Serbien ein Ultimatum mit 48-Stunden-Frist (eine Forderung mit Frist)."
+            },
+            {
+              "datum": "28. Juli 1914",
+              "text": "Österreich-Ungarn erklärt Serbien den Krieg — genau einen Monat nach dem Attentat."
+            },
+            {
+              "datum": "1. August 1914",
+              "text": "Deutschland erklärt Russland den Krieg, weil Russland mobil macht."
+            },
+            {
+              "datum": "3. August 1914",
+              "text": "Deutschland erklärt Frankreich den Krieg und greift über Belgien an."
+            },
+            {
+              "datum": "4. August 1914",
+              "text": "Großbritannien erklärt Deutschland den Krieg — wegen des Bündnisfalls für Belgien."
+            }
+          ],
+          "quelle": "Eigene Zusammenstellung. Quellen: Wikipedia „Julikrise\", „Erster Weltkrieg\", „Deutsche Invasion Belgiens 1914\"."
+        },
+        {
+          "id": "mat-2-2",
+          "typ": "bildquelle",
+          "titel": "Wo genau passierte das Attentat in Sarajevo?",
+          "position": 2,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [
+            "mat-2-1"
+          ],
+          "ueberleitung_von": "Auf der Zeitleiste hast du das erste Datum gesehen: 28. Juni 1914 in Sarajevo. Jetzt zoomst du in den Tag hinein.",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-2-1",
+              "typ": "zeitleiste",
+              "kerninhalt": "Vom Schuss in Sarajevo zum Weltkrieg in 5 Wochen."
+            },
+            "nachher": {
+              "id": "mat-2-3",
+              "typ": "bildquelle",
+              "kerninhalt": "Hofportrait Franz Ferdinand."
+            }
+          },
+          "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen-run4-v050/img-m2-01.svg",
+          "bildunterschrift": "Tatortskizze Sarajevo, 28. Juni 1914: Lateinerbrücke, Fahrtroute des Autos und Standort von Princip. Hinweis: Sekundär-Skizze, kein Foto vom Tatort.",
+          "quelle": "User:Oni Lukos, Wikimedia Commons.",
+          "lizenz": "CC-BY-SA-3.0"
+        },
+        {
+          "id": "mat-2-3",
+          "typ": "bildquelle",
+          "titel": "Franz Ferdinand — der Mann, den der Habsburger Hof zeigen wollte",
+          "position": 3,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [
+            "mat-2-1"
+          ],
+          "ueberleitung_von": "Du kennst den Tatort. Aber wer war das Opfer? Das Hofportrait zeigt dir, wie sich der Habsburger Hof selbst inszenierte.",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-2-2",
+              "typ": "bildquelle",
+              "kerninhalt": "Tatortskizze Sarajevo: räumliche Rekonstruktion des Attentats."
+            },
+            "nachher": {
+              "id": "mat-2-4",
+              "typ": "bildquelle",
+              "kerninhalt": "Princip vor Gericht."
+            }
+          },
+          "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen-run4-v050/img-m2-02.jpg",
+          "bildunterschrift": "Erzherzog Franz Ferdinand, Thronfolger Österreich-Ungarns. Hof-Auftrags-Portrait des Hofphotographen Carl Pietzner, um 1896. Hinweis: Auftragsbild des Habsburger Hofs — kein neutrales Foto. 1914 war Franz Ferdinand 50 Jahre alt und seit fast 20 Jahren Thronfolger.",
+          "quelle": "Carl Pietzner (Hofphotograph), Wikimedia Commons.",
+          "lizenz": "Public Domain"
+        },
+        {
+          "id": "mat-2-4",
+          "typ": "bildquelle",
+          "titel": "Wer war Princip — Held oder Terrorist?",
+          "position": 4,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [
+            "mat-2-3"
+          ],
+          "ueberleitung_von": "Bisher hast du die Habsburger Seite gesehen. Jetzt wechselst du die Perspektive: Princip war 19, Schüler, Mitglied von Junges Bosnien.",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-2-3",
+              "typ": "bildquelle",
+              "kerninhalt": "Hofportrait Franz Ferdinand — Habsburger Hof-Selbstdarstellung."
+            },
+            "nachher": {
+              "id": "mat-2-5",
+              "typ": "quellentext",
+              "kerninhalt": "Auszug Wiener Ultimatum 23.7.1914."
+            }
+          },
+          "inhalt": "../../assets/img/gpg-erster-weltkrieg-ursachen-run4-v050/img-m2-03.jpg",
+          "bildunterschrift": "Gavrilo Princip vor dem Gericht in Sarajevo, 1914. Photograph unbekannt. Princip war 19 Jahre alt, bosnisch-serbischer Schüler und Mitglied von „Junges Bosnien\" — einer Jugendbewegung der bosnisch-serbischen Nationalisten. Die Pistolen kamen von der „Schwarzen Hand\", einer geheimen serbischen Offiziers-Organisation. Vor Gericht sagte er: „Ich bin jugoslawischer Nationalist und will, dass die Südslawen frei sind.\" In Serbien wird Princip teils als nationaler Befreier erinnert, in Bosniaken- und Kroaten-Geschichtsschreibung teils als Attentäter. Beide Erinnerungen existieren bis heute — ohne dass eine die andere widerlegen kann.",
+          "quelle": "Unbekannter Photograph (1914), Wikimedia Commons.",
+          "lizenz": "Public Domain"
+        },
+        {
+          "id": "mat-2-5",
+          "typ": "darstellungstext",
+          "titel": "",
+          "position": 1,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [],
+          "ueberleitung_von": "",
+          "sequenz_kontext": {
+            "vorher": null,
+            "nachher": null
+          },
+          "inhalt": "<p class=\"quellentext__einleitung\">Am 23. Juli 1914 schickte das Habsburger Außenministerium in Wien einen Brief nach Belgrad. Außenminister war Graf Berchtold. Er stellte Serbien Forderungen mit einer Frist von 48 Stunden — ein Ultimatum.</p><blockquote class=\"quellentext__wortlaut\"><p>„Die königlich serbische Regierung verpflichtet sich, [...] zu erlauben, dass österreichisch-ungarische Beamte in Serbien an der Ermittlung gegen die Mitglieder der ‚Schwarzen Hand' mitwirken, die für das Attentat von Sarajevo verantwortlich sind. [...] Eine Antwort wird binnen 48 Stunden erwartet.\"</p><cite>— Wiener Ultimatum an Serbien, 23. Juli 1914</cite></blockquote><p>Wien forderte etwas, das Serbien als Verletzung seiner Souveränität — also seiner Selbstbestimmung als Staat — empfinden musste. Wien wusste das. Berlin hatte den Blanko-Scheck gegeben.</p>",
+          "quelle": "Auszug aus dem österreichisch-ungarischen Ultimatum an Serbien, 23. Juli 1914. Zitiert nach: Wikisource, „Österreichisch-ungarisches Ultimatum an Serbien\", Public Domain. Gekürzt und sprachlich vereinfacht für Jahrgang 7."
+        }
+      ],
+      "aufgaben": [
+        {
+          "id": "aufgabe-2-1",
+          "typ": "multiple-choice",
+          "frage": "An welchem Datum erschoss Princip in Sarajevo den Thronfolger Franz Ferdinand?",
+          "material_referenz": [
+            "mat-2-1",
+            "mat-2-2"
+          ],
+          "optionen": [
+            "28. Juni 1914",
+            "23. Juli 1914",
+            "28. Juli 1914",
+            "4. August 1914"
+          ],
+          "loesung": "28. Juni 1914",
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Schau auf die [[mat-2-1|Zeitleiste der Julikrise]] (M1). Welches Datum steht ganz oben?"
+            },
+            {
+              "stufe": 2,
+              "text": "Genau einen Monat vor der Kriegserklaerung Oesterreich-Ungarns an Serbien fiel der Schuss in Sarajevo. Suche das fruehste Datum in der Zeitleiste."
+            },
+            {
+              "stufe": 3,
+              "text": "Loesung: 28. Juni 1914. An diesem Tag erschoss Princip den Thronfolger Franz Ferdinand und seine Frau Sophie. Genau einen Monat spaeter (28. Juli 1914) erklaerte Oesterreich-Ungarn Serbien den Krieg."
+            }
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-2-2",
+          "typ": "zuordnung",
+          "frage": "Ordne den Daten der Julikrise das jeweilige Ereignis zu.",
+          "material_referenz": [
+            "mat-2-1"
+          ],
+          "paare": {
+            "5./6. Juli 1914": "Berlin gibt Wien den Blanko-Scheck",
+            "23. Juli 1914": "Wien stellt Serbien das Ultimatum mit 48-Stunden-Frist",
+            "28. Juli 1914": "Oesterreich-Ungarn erklaert Serbien den Krieg",
+            "1. August 1914": "Deutschland erklaert Russland den Krieg"
+          },
+          "kategorien": [
+            "Berlin gibt Wien den Blanko-Scheck",
+            "Wien stellt Serbien das Ultimatum mit 48-Stunden-Frist",
+            "Oesterreich-Ungarn erklaert Serbien den Krieg",
+            "Deutschland erklaert Russland den Krieg"
+          ],
+          "loesung": {
+            "5./6. Juli 1914": "Berlin gibt Wien den Blanko-Scheck",
+            "23. Juli 1914": "Wien stellt Serbien das Ultimatum mit 48-Stunden-Frist",
+            "28. Juli 1914": "Oesterreich-Ungarn erklaert Serbien den Krieg",
+            "1. August 1914": "Deutschland erklaert Russland den Krieg"
+          },
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Lies die [[mat-2-1|Zeitleiste der Julikrise]] (M1) genau. Welches Ereignis steht bei welchem Datum?"
+            },
+            {
+              "stufe": 2,
+              "text": "Beginne mit dem Blanko-Scheck (Versprechen ohne Bedingungen) — der kommt zuerst. Das Ultimatum hat eine Frist von 48 Stunden. Genau einen Monat nach dem Attentat erklaert Oesterreich-Ungarn den Krieg."
+            },
+            {
+              "stufe": 3,
+              "text": "Loesung: 5./6. Juli = Blanko-Scheck Berlin -> Wien. 23. Juli = Ultimatum Wien -> Serbien. 28. Juli = Kriegserklaerung Oesterreich-Ungarn -> Serbien. 1. August = Kriegserklaerung Deutschland -> Russland. Merke: Erst Versprechen, dann Forderung, dann Krieg, dann Buendnis-Domino."
+            }
+          ],
+          "punkte": 12
+        },
+        {
+          "id": "aufgabe-2-3",
+          "typ": "freitext-code",
+          "frage": "Erklaere in 1 bis 2 Saetzen, warum Wien das Ultimatum so streng formulierte, dass Serbien ablehnen musste.",
+          "material_referenz": [
+            "mat-2-5",
+            "mat-2-1"
+          ],
+          "leitfragen": [
+            "Wer schrieb das Ultimatum — und mit welchem Ziel?",
+            "Was bedeutet 'Souveraenitaet' fuer einen Staat?",
+            "Welches Versprechen hatte Wien aus Berlin schon in der Tasche?",
+            "Was wuerde es fuer Serbien heissen, wenn oesterreichische Beamte im eigenen Land ermitteln duerfen?"
+          ],
+          "scaffolding": [
+            "Satz 1: Wien wollte den Krieg, weil ...",
+            "Satz 2: Die Forderung war zu hart, weil sie die Souveraenitaet Serbiens verletzte. Berlin hatte mit dem Blanko-Scheck schon ..."
+          ],
+          "erwartungs_anker": "(1) Wien suchte einen Vorwand, um Krieg zu fuehren. (2) Die Hauptforderung (oesterreichische Beamte ermitteln in Serbien) verletzte Serbiens Souveraenitaet — Wien wusste, dass Serbien das nicht annehmen kann. (3) Berlin hatte mit dem Blanko-Scheck Wien jede Hilfe versprochen — Wien fuehlte sich gedeckt.",
+          "loesung": "Wien wollte Krieg Ultimatum Souveraenitaet Berlin Blanko-Scheck",
+          "code_keywords": [
+            "Souveraenitaet",
+            "ablehnen",
+            "Wien wusste",
+            "Krieg",
+            "Vorwand",
+            "Blanko-Scheck",
+            "Berlin",
+            "Eskalation",
+            "annehmen"
+          ],
+          "code_min_treffer": 3,
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Lies das [[mat-2-5|Wiener Ultimatum an Serbien]] (M5) langsam. Achte auf den Schluss-Satz im Begleittext."
+            },
+            {
+              "stufe": 2,
+              "text": "Souveraenitaet heisst: Ein Staat bestimmt selbst, wer in seinem Land ermittelt. Was forderte Wien? Und welches Versprechen hatte Wien schon aus Berlin?"
+            },
+            {
+              "stufe": 3,
+              "text": "Loesung: Wien wollte Krieg gegen Serbien. Die Forderung, dass oesterreichische Beamte in Serbien ermitteln duerfen, verletzte Serbiens Souveraenitaet. Wien wusste, dass Serbien das ablehnen wuerde — und Berlin hatte mit dem Blanko-Scheck schon jede Hilfe versprochen."
+            }
+          ],
+          "punkte": 15
+        },
+        {
+          "id": "aufgabe-2-4",
+          "typ": "reihenfolge",
+          "frage": "Bringe die vier Kriegserklaerungen vom 28. Juli bis 4. August 1914 in die richtige Reihenfolge.",
+          "material_referenz": [
+            "mat-2-1"
+          ],
+          "elemente": [
+            "28. Juli 1914: Oesterreich-Ungarn erklaert Serbien den Krieg.",
+            "1. August 1914: Deutschland erklaert Russland den Krieg.",
+            "3. August 1914: Deutschland erklaert Frankreich den Krieg.",
+            "4. August 1914: Grossbritannien erklaert Deutschland den Krieg."
+          ],
+          "loesung": [
+            "28. Juli 1914: Oesterreich-Ungarn erklaert Serbien den Krieg.",
+            "1. August 1914: Deutschland erklaert Russland den Krieg.",
+            "3. August 1914: Deutschland erklaert Frankreich den Krieg.",
+            "4. August 1914: Grossbritannien erklaert Deutschland den Krieg."
+          ],
+          "ordnungsprinzip": "chronologisch",
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Schau auf die [[mat-2-1|Zeitleiste der Julikrise]] (M1) ab dem 28. Juli."
+            },
+            {
+              "stufe": 2,
+              "text": "Erst beginnt Oesterreich-Ungarn — wegen Serbien. Dann reagiert Deutschland (zweimal). Zum Schluss greift Grossbritannien ein, weil Deutschland durch Belgien marschiert."
+            },
+            {
+              "stufe": 3,
+              "text": "Loesung: 28.7. AT-UN -> Serbien -> 1.8. DT -> Russland -> 3.8. DT -> Frankreich -> 4.8. GB -> Deutschland. Merke: Buendnisfall heisst, dass jedes Land seinem Buendnis-Partner helfen muss. So fielen die Buendnisse wie Dominosteine — in nur einer Woche entstand ein Weltkrieg."
+            }
+          ],
+          "punkte": 12
+        },
+        {
+          "id": "aufgabe-2-5",
+          "typ": "lueckentext",
+          "frage": "Ergaenze die fehlenden Schluessel-Begriffe der Julikrise.",
+          "material_referenz": [
+            "mat-2-1",
+            "mat-2-3"
+          ],
+          "text_mit_luecken": "Am 28. Juni 1914 erschoss Princip in Sarajevo den Thronfolger Franz Ferdinand. Einige Tage spaeter gab Berlin Wien den {{1}} — ein Versprechen ohne Bedingungen. Am 23. Juli stellte Wien Serbien ein {{2}} mit 48-Stunden-Frist und verletzte damit die {{3}} Serbiens. Russland begann darauf die {{4}}. Wegen des {{5}} mussten die Buendnis-Partner reagieren — das Buendnis-System wurde zum Domino.",
+          "luecken": [
+            {
+              "id": 1,
+              "loesung": "Blanko-Scheck",
+              "alternativen": [
+                "Blanko-Scheck",
+                "Blankoscheck"
+              ]
+            },
+            {
+              "id": 2,
+              "loesung": "Ultimatum",
+              "alternativen": [
+                "Ultimatum"
+              ]
+            },
+            {
+              "id": 3,
+              "loesung": "Souveraenitaet",
+              "alternativen": [
+                "Souveraenitaet",
+                "Souveränität"
+              ]
+            },
+            {
+              "id": 4,
+              "loesung": "Mobilmachung",
+              "alternativen": [
+                "Mobilmachung"
+              ]
+            },
+            {
+              "id": 5,
+              "loesung": "Buendnisfalls",
+              "alternativen": [
+                "Buendnisfalls",
+                "Buendnisfall"
+              ]
+            }
+          ],
+          "wortbank": [
+            "Blanko-Scheck",
+            "Ultimatum",
+            "Souveraenitaet",
+            "Mobilmachung",
+            "Buendnisfalls",
+            "Demokratie",
+            "Vertrag",
+            "Mehrheit",
+            "Friedensplan"
+          ],
+          "loesung": [
+            "Blanko-Scheck",
+            "Ultimatum",
+            "Souveraenitaet",
+            "Mobilmachung",
+            "Buendnisfalls"
+          ],
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Lies die [[mat-2-1|Zeitleiste der Julikrise]] (M1) noch einmal genau. Das [[mat-2-3|Hofportrait Franz Ferdinand]] (M3) hilft bei der Person."
+            },
+            {
+              "stufe": 2,
+              "text": "Versprechen ohne Bedingungen, Forderung mit Frist, Selbstbestimmung eines Staates, Armee-Vorbereitung, Hilfs-Pflicht der Buendnis-Partner — fuenf Begriffe in genau dieser Reihenfolge."
+            },
+            {
+              "stufe": 3,
+              "text": "Loesung: Blanko-Scheck — Ultimatum — Souveraenitaet — Mobilmachung — Buendnisfalls. Merke: Diese fuenf Begriffe beschreiben die Eskalations-Mechanik der Julikrise. Sie verbinden Sarajevo mit dem Weltkrieg in nur fuenf Wochen."
+            }
+          ],
+          "punkte": 15
+        },
+        {
+          "id": "aufgabe-2-6",
+          "typ": "zuordnung",
+          "frage": "Ordne die fuenf Aussagen ueber Princip den zwei Erinnerungs-Perspektiven zu.",
+          "material_referenz": [
+            "mat-2-4",
+            "mat-2-3"
+          ],
+          "paare": {
+            "Princip kaempfte fuer die Befreiung der Suedslawen aus der Habsburg-Herrschaft.": "Serbisch-nationale Erinnerung",
+            "Princip wird in Belgrad bis heute auf Tafeln und Denkmaelern geehrt.": "Serbisch-nationale Erinnerung",
+            "Princip ermordete den Thronfolger und seine Frau Sophie auf offener Strasse.": "Habsburgisch-bosniakisch-kroatische Erinnerung",
+            "Princip war Mitglied einer Geheim-Organisation und kein einsamer Taeter.": "Habsburgisch-bosniakisch-kroatische Erinnerung",
+            "Princip wurde 1914 vor Gericht gestellt und als Angeklagter photographiert.": "Habsburgisch-bosniakisch-kroatische Erinnerung"
+          },
+          "kategorien": [
+            "Serbisch-nationale Erinnerung",
+            "Habsburgisch-bosniakisch-kroatische Erinnerung"
+          ],
+          "loesung": {
+            "Princip kaempfte fuer die Befreiung der Suedslawen aus der Habsburg-Herrschaft.": "Serbisch-nationale Erinnerung",
+            "Princip wird in Belgrad bis heute auf Tafeln und Denkmaelern geehrt.": "Serbisch-nationale Erinnerung",
+            "Princip ermordete den Thronfolger und seine Frau Sophie auf offener Strasse.": "Habsburgisch-bosniakisch-kroatische Erinnerung",
+            "Princip war Mitglied einer Geheim-Organisation und kein einsamer Taeter.": "Habsburgisch-bosniakisch-kroatische Erinnerung",
+            "Princip wurde 1914 vor Gericht gestellt und als Angeklagter photographiert.": "Habsburgisch-bosniakisch-kroatische Erinnerung"
+          },
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Lies die Bildunterschrift zu [[mat-2-4|Princip vor Gericht]] (M4) und vergleiche mit [[mat-2-3|Hofportrait Franz Ferdinand]] (M3). Beide Erinnerungen stehen dort gleichberechtigt nebeneinander."
+            },
+            {
+              "stufe": 2,
+              "text": "Aus serbisch-nationaler Sicht: Princip wollte die Suedslawen befreien — er wird als nationaler Kaempfer erinnert. Aus habsburgisch-bosniakisch-kroatischer Sicht: Princip toetete einen Menschen — er wird als Attentaeter erinnert. Beide Erinnerungen lassen sich nicht widerlegen, weil sie verschiedene Tatsachen betonen."
+            },
+            {
+              "stufe": 3,
+              "text": "Loesung: Serbisch-national = Befreiung der Suedslawen + Denkmaeler in Belgrad. Habsburgisch-bosniakisch-kroatisch = Mord auf offener Strasse + Mitglied einer Geheim-Organisation + Gerichts-Angeklagter. Beide Erinnerungen sind heute gleichzeitig gueltig — Geschichte hat oft mehrere Wahrheiten nebeneinander. Das nennt man Multiperspektivitaet."
+            }
+          ],
+          "punkte": 18
+        },
+        {
+          "id": "aufgabe-2-7",
+          "typ": "freitext-code",
+          "frage": "Erklaere in 3 bis 4 Saetzen den Unterschied zwischen Ursache und Ausloeser am Beispiel Sarajevo 1914 und Pulverfass Europa.",
+          "material_referenz": [
+            "mat-2-1",
+            "mat-2-2"
+          ],
+          "leitfragen": [
+            "Was war der Ausloeser in Sarajevo am 28. Juni 1914?",
+            "Was war die Ursache, die schon lange vor 1914 wirkte (Mappe 1)?",
+            "Welche Metapher hilft dir, den Unterschied zu zeigen (Wald, Zigarette)?",
+            "Was passiert, wenn man nur den Ausloeser sieht — und die Ursache uebersieht?"
+          ],
+          "scaffolding": [
+            "Satz 1: Der Ausloeser war der Schuss von Princip am 28. Juni 1914 in Sarajevo, weil ...",
+            "Satz 2: Die Ursache war das Pulverfass Europa aus Mappe 1 — Buendnis-System, Flotten-Wettlauf, Kolonial-Streit, weil ...",
+            "Satz 3: Wie ein trockener Wald und eine Zigarette: Die Zigarette ist der Funke, aber der Wald hat ueber Jahre brennbar werden muessen, weil ...",
+            "Satz 4: Wer nur den Schuss sieht, uebersieht ..."
+          ],
+          "erwartungs_anker": "(1) Ausloeser = Schuss Princip 28.6.1914 — der Funke, der startete. (2) Ursache = Pulverfass Europa (Buendnis-System, Wettruesten, Kolonial-Streit) aus Mappe 1 — wirkte lange vorher. (3) Metapher: trockener Wald (Ursache) + Zigarette (Ausloeser) = Feuer. (4) Wer nur den Ausloeser sieht, uebersieht die tieferen Ursachen — und kann den naechsten Krieg nicht verhindern.",
+          "loesung": "Ausloeser Schuss Princip Ursache Pulverfass Buendnis-System lange wirkend",
+          "code_keywords": [
+            "Ausloeser",
+            "Ursache",
+            "Schuss",
+            "Princip",
+            "28. Juni",
+            "Pulverfass",
+            "Buendnis-System",
+            "lange",
+            "Funke",
+            "Wald",
+            "Zigarette"
+          ],
+          "code_min_treffer": 4,
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Schau auf die [[mat-2-1|Zeitleiste der Julikrise]] (M1) und die [[mat-2-2|Tatortskizze Sarajevo]] (M2). Erinnere dich an Mappe 1 — das Pulverfass Europa."
+            },
+            {
+              "stufe": 2,
+              "text": "Stell dir einen trockenen Wald im Sommer vor. Die Zigarette zuendet das Feuer — aber der Wald muss erst brennbar geworden sein. Was war der Wald (Ursache)? Was war die Zigarette (Ausloeser)?"
+            },
+            {
+              "stufe": 3,
+              "text": "Loesung: Der Ausloeser war der Schuss von Princip am 28. Juni 1914 in Sarajevo — der Funke, der das Feuer startete. Die Ursache war das Pulverfass Europa aus Mappe 1: das Buendnis-System, der Flotten-Wettlauf und der Kolonial-Streit, die ueber Jahrzehnte Spannungen aufgebaut hatten. Wie der trockene Wald, den die Zigarette anzuendet: Ohne den brennbaren Wald wuerde die Zigarette nichts ausrichten. Wer nur den Schuss sieht, uebersieht die tieferen Ursachen — und kann den naechsten Krieg nicht verhindern."
+            }
+          ],
+          "punkte": 25
+        }
+      ],
+      "sicherung": {
+        "hefteintrag": {
+          "stundenfrage": "Wie wurde aus dem Attentat in Sarajevo in fuenf Wochen ein Weltkrieg?",
+          "ordnungsmuster": "zeitstrahl_mit_begriffsbox",
+          "scpl": {
+            "situation": {
+              "kontextsatz": "Wie wurde aus dem Attentat in Sarajevo in fuenf Wochen ein Weltkrieg?",
+              "fachbegriffe": [
+                "Julikrise",
+                "Blanko-Scheck",
+                "Ultimatum",
+                "Mobilmachung",
+                "Buendnisfall",
+                "Ursache",
+                "Ausloeser"
+              ]
+            },
+            "complication": [
+              {
+                "schritt": "Ausloeser vs. Ursache",
+                "fachbegriff": "Ausloeser vs. Ursache",
+                "darstellung": null
+              },
+              {
+                "schritt": "28. Juni 1914 Sarajevo",
+                "fachbegriff": "28. Juni 1914 Sarajevo",
+                "darstellung": null
+              },
+              {
+                "schritt": "Blanko-Scheck (5./6.7.)",
+                "fachbegriff": "Blanko-Scheck (5./6.7.)",
+                "darstellung": null
+              },
+              {
+                "schritt": "Ultimatum + Kriegserklaerung 28.7.",
+                "fachbegriff": "Ultimatum + Kriegserklaerung 28.7.",
+                "darstellung": null
+              },
+              {
+                "schritt": "Buendnis-Domino 1.-4. August",
+                "fachbegriff": "Buendnis-Domino 1.-4. August",
+                "darstellung": null
+              }
+            ],
+            "problem": {
+              "satz": "Wie wurde aus dem Attentat in Sarajevo in fuenf Wochen ein Weltkrieg?",
+              "fachbegriff": "Julikrise"
+            },
+            "loesung": [
+              {
+                "satz": "Am 28"
+              },
+              {
+                "satz": "Juni 1914 erschiesst der 19-jaehrige Schueler Gavrilo Princip in Sarajevo den oesterreichisch-ungarischen Thronfolger Franz Ferdinand und seine Frau Sophie"
+              },
+              {
+                "satz": "Bosnien gehoert zu Oesterreich-Ungarn"
+              },
+              {
+                "satz": "Princip will Bosnien aus der Habsburg-Herrschaft befreien"
+              },
+              {
+                "satz": "Was dann folgt, nennt man die Julikrise"
+              }
+            ]
+          },
+          "knoten": [
+            {
+              "knoten_id": "K2-1",
+              "label": "Ausloeser vs. Ursache",
+              "position": "zentrum-unten",
+              "typ": "leitbegriff",
+              "elemente": [
+                "Ursache = brennbarer Wald (M1)",
+                "Ausloeser = Zigarette (Princip)"
+              ]
+            },
+            {
+              "knoten_id": "K2-2",
+              "label": "28. Juni 1914 Sarajevo",
+              "position": "oben-links",
+              "typ": "ereignis",
+              "elemente": [
+                "Princip 19 J.",
+                "Franz Ferdinand + Sophie",
+                "Schwarze Hand"
+              ]
+            },
+            {
+              "knoten_id": "K2-3",
+              "label": "Blanko-Scheck (5./6.7.)",
+              "position": "oben-rechts",
+              "typ": "schluesseldatum"
+            },
+            {
+              "knoten_id": "K2-4",
+              "label": "Ultimatum + Kriegserklaerung 28.7.",
+              "position": "rechts",
+              "typ": "ereignis"
+            },
+            {
+              "knoten_id": "K2-5",
+              "label": "Buendnis-Domino 1.-4. August",
+              "position": "unten",
+              "typ": "kettenreaktion",
+              "elemente": [
+                "1.8. DT→RU",
+                "3.8. DT→FR",
+                "4.8. GB→DT (Belgien)"
+              ]
+            }
+          ],
+          "verbindungen": [
+            {
+              "von": "K2-2",
+              "nach": "K2-3",
+              "label": "loest aus"
+            },
+            {
+              "von": "K2-3",
+              "nach": "K2-4",
+              "label": "ermoeglicht"
+            },
+            {
+              "von": "K2-4",
+              "nach": "K2-5",
+              "label": "loest Buendnisfall aus"
+            },
+            {
+              "von": "K2-5",
+              "nach": "K2-1",
+              "label": "macht Strukturen sichtbar"
+            },
+            {
+              "von": "K2-2",
+              "nach": "K2-1",
+              "label": "ist nur Ausloeser"
+            }
+          ],
+          "voraussetzungen": [],
+          "transfer": {
+            "frage": "Wenn der Schuss nur Ausloeser war — wer ist dann schuld?"
+          }
+        },
+        "hefteintrag_verweis": "",
+        "reflexionsimpuls": "",
+        "zusammenfassung": "",
+        "ueberleitung": ""
+      },
+      "mappenabschluss": {
+        "schema_version": "mappenabschluss_v1",
+        "game_id": "gpg-erster-weltkrieg-ursachen-run4-v050",
+        "run_id": "run-4-2026-04-26",
+        "mappe_id": "mappe-2",
+        "mappe_index": 2,
+        "_variante": "A",
+        "_variante_begruendung": "M2 ist nicht-letzte Mappe (M3 Augustfieber + M4 folgen). Variante A: Reflexionsfragen + Ueberleitungssatz nach M3.",
+        "reflexion_fragen": [
+          {
+            "id": "MZ-M2-R1",
+            "typ": "Bewertung",
+            "frage": "Beide Erinnerungen an Princip — die serbisch-nationale und die habsburgisch-bosniakisch-kroatische — gelten heute gleichzeitig. Welche Folgen hat es fuer das Erinnern, wenn ein Mensch zugleich Befreier UND Attentaeter genannt wird?",
+            "scpl_zone_bezug": "L",
+            "perspektiv_bezug": [
+              "Serbisch-nationale Erinnerung",
+              "Habsburgisch-bosniakisch-kroatische Erinnerung"
+            ],
+            "didaktischer_anker": "didaktisches_kernstueck Multiperspektivitaet Princip (aufgabe-2-6)",
+            "wortzahl": 32
+          },
+          {
+            "id": "MZ-M2-R2",
+            "typ": "Transfer",
+            "frage": "Stell dir vor, der Schuss in Sarajevo waere nicht gefallen. Waere der Krieg trotzdem gekommen — und woran kannst du das festmachen?",
+            "scpl_zone_bezug": "L",
+            "perspektiv_bezug": [],
+            "didaktischer_anker": "Ursache-vs-Ausloeser-Synthese (aufgabe-2-7) + Pulverfass-Bruecke aus M1",
+            "wortzahl": 24
+          }
+        ],
+        "ueberleitungssatz": "Wenn der Schuss nur Ausloeser war — wer ist dann schuld? Mappe 3 fuehrt dich in den August 1914.",
+        "ueberleitungssatz_meta": {
+          "wortzahl": 19,
+          "max_woerter": 20,
+          "kein_stoff_vorgriff_pruefung": "PASS — kein M3-Inhalt vorweggenommen (kein Augusterlebnis, keine Schuldfrage-Antwort, keine Fischer-Kontroverse). Nur offene Frage + Zeitbezug August 1914.",
+          "neugier_anker": "Schuldfrage als offene Frage (echte Diskussions-Eroeffnung, keine Antwort)",
+          "bruecken_typ": "frage_bruecke + zeit_bruecke"
+        }
+      }
+    },
+    {
+      "id": "mappe-3",
+      "titel": "Augustfieber — Wer schuld ist und wer jubelt",
+      "beschreibung": "Du oeffnest die dritte Mappe aus dem Archiv 1914. Innen liegen zwei Fotos vom August 1914, ein rekonstruiertes Tagebuch, ein Versailles-Vertragstext von 1919 und ein Forschungs-Auszug von Christopher Clark aus 2013. Deine Aufgabe: Pruefe die Quellen kritisch und beantworte die offene Frage — wer war damals begeistert, und wer hat heute die Schuld am Krieg?",
+      "freischalt_code": "SCHULD",
+      "einstieg": {
+        "narrativ": "<p>In Mappe 2 hast du gelernt: Ein einzelner Schuss war nur der Ausloeser, nicht die Ursache. Jetzt liegt Mappe 3 vor dir. Im Deckel: zwei Fotos und eine Erinnerungs-Medaille. Auf der Medaille steht ein Datum: <strong>4. August 1914</strong>. Auf den Fotos jubelnde Menschen am Bahnhof, Soldaten mit Blumen am Gewehr.</p><p>Aber sieh genau hin: Wen zeigen die Fotos — und wen zeigen sie nicht? Wer hat den Krieg eigentlich gewollt? Und wer bekommt heute die Schuld zugewiesen?</p>",
+        "problemstellung": "Wer war im August 1914 begeistert — und wer hat heute die Schuld am Krieg?"
+      },
+      "materialien": [
+        {
+          "id": "mat-3-1",
+          "typ": "bildquelle",
+          "titel": "Wer steht NICHT auf dem Foto?",
+          "position": 1,
+          "didaktische_funktion": "einstieg",
+          "voraussetzung": [],
+          "ueberleitung_von": null,
+          "sequenz_kontext": {
+            "vorher": null,
+            "nachher": {
+              "id": "mat-3-2",
+              "typ": "bildquelle",
+              "kerninhalt": "Bundesarchiv-Foto Mobilmachung 1./2.8.1914 — zweites Inszenierungs-Beispiel."
+            }
+          },
+          "inhalt": "<figure><img src=\"../../assets/img/gpg-erster-weltkrieg-ursachen-run4-v050/img-m3-01.jpg\" alt=\"Postkarte vom 31. Juli 1914: Soldaten und Stadtbuerger am Hauptbahnhof Luebeck waehrend der Mobilmachung des 2. Bataillons.\"/><figcaption><p>Foto: <strong>Luebeck, Hauptbahnhof, 31. Juli 1914</strong>. Soldaten ziehen los — viele Stadtbuerger jubeln. Diese Stimmung nennt man <strong>Augusterlebnis</strong> oder Augustbegeisterung. Aber sieh genau hin: Wer steht da? Junge Maenner in Uniform, gut gekleidete Buerger, ein paar Familien. Wer ist NICHT auf dem Foto?</p><p><strong>Achtung — Quellenkritik:</strong> Eine Quelle pruefen heisst: Wer hat das gemacht? Wann? Mit welchem Ziel? Diese Postkarte hat die Druckerei Gebrueder Borchers in Luebeck gedruckt. Sie sollte verkauft werden. Sie zeigt Stadt-Buerger am Bahnhof — Land-Bevoelkerung und Arbeiter sind nicht im Bild. Auf dem Land waren viele Menschen skeptisch oder ablehnend.</p><p><cite>Postkarte: Gebrueder Borchers (Druckerei Luebeck), 31. Juli 1914. Wikimedia Commons, Public Domain.</cite></p></figcaption></figure>",
+          "bildunterschrift": "Mobilmachung Luebeck Hauptbahnhof, 31. Juli 1914 — Postkarte der Druckerei Gebrueder Borchers. Quellenkritik-Frage: Wer ist NICHT auf dem Foto?",
+          "quelle": "Wikimedia Commons: 'IR_Lübeck_033_-_EB.jpg' (Gebrueder Borchers, Druckerei Luebeck). Lizenz: Public Domain (PD-old-80, Author +1939).",
+          "lizenz": "Public Domain"
+        },
+        {
+          "id": "mat-3-2",
+          "typ": "bildquelle",
+          "titel": "Eine Frau gibt Blumen — wirklich oder gestellt?",
+          "position": 2,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [
+            "mat-3-1"
+          ],
+          "ueberleitung_von": "Du hast die Augustbegeisterung in Luebeck gesehen. Schau dir jetzt ein zweites Foto an. Vergleiche: Was zeigen beide Fotos? Und was zeigen sie nicht?",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-3-1",
+              "typ": "bildquelle",
+              "kerninhalt": "Postkarte Luebeck 31.7.1914 — erste Augusterlebnis-Quelle."
+            },
+            "nachher": {
+              "id": "mat-3-5",
+              "typ": "tagebuch",
+              "kerninhalt": "Skeptische Zeitgenossen-Stimme als Anti-Bias zu beiden Fotos."
+            }
+          },
+          "inhalt": "<figure><img src=\"../../assets/img/gpg-erster-weltkrieg-ursachen-run4-v050/img-m3-02.jpg\" alt=\"Bundesarchiv-Foto vom 1./2. August 1914: Eine Frau gibt einem deutschen Soldaten Blumen waehrend des Ausmarschs.\"/><figcaption><p>Foto: <strong>Mobilmachung 1./2. August 1914</strong>. Eine Frau gibt einem Soldaten Blumen. So eine Szene gab es viele — aber nicht ueberall. Solche Bilder nennt man eine <strong>Inszenierung</strong>: Etwas wird absichtlich so gezeigt, wie es wirken soll. Vergleiche mit dem ersten Foto aus Luebeck — was zeigen beide Bilder? Und was zeigen sie nicht?</p><p><strong>Achtung — Quellenkritik:</strong> Das Foto liegt im Bundesarchiv. Wahrscheinlich hat es ein Photograph der Heeresleitung gemacht — einer Stelle, die fuer die Reichs-Nachrichten zustaendig war. Der Photograph wollte zeigen: 'Die Heimat liebt unsere Soldaten.' Skeptiker, weinende Muetter und Trauernde wurden nicht fotografiert. Solche Fotos sind also ein <strong>Foto-Bias</strong>: ein einseitiger Bild-Ausschnitt.</p><p><cite>Foto: Bundesarchiv, Bild 146-1974-118-18 / CC-BY-SA 3.0 DE. Wikimedia Commons.</cite></p></figcaption></figure>",
+          "bildunterschrift": "Mobilmachung 1./2. August 1914 — Bundesarchiv-Foto. Inszenierungs-Topos 'Frau gibt Soldat Blumen'. Skeptiker und Trauernde wurden nicht fotografiert.",
+          "quelle": "Wikimedia Commons: 'Bundesarchiv_Bild_146-1974-118-18,_Mobilmachung.jpg'. Bundesarchiv-Bestand 146-* (Reichs-Nachrichten-Stelle). Lizenz: CC-BY-SA 3.0 DE.",
+          "lizenz": "CC-BY-SA-3.0-DE"
+        },
+        {
+          "id": "mat-3-3",
+          "typ": "darstellungstext",
+          "titel": "",
+          "position": 1,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [],
+          "ueberleitung_von": "",
+          "sequenz_kontext": {
+            "vorher": null,
+            "nachher": null
+          },
+          "inhalt": "<p class=\"quellentext__einleitung\">Vier Jahre Krieg sind vorbei. Deutschland hat verloren. Am 28. Juni 1919 unterschreiben die Sieger und das besiegte Deutsche Reich den Vertrag von Versailles. Die Sieger sind die USA, Frankreich und Grossbritannien. Im Vertrag steht Artikel 231:</p><blockquote class=\"quellentext__wortlaut\"><p>„Deutschland und seine Verbuendeten sind verantwortlich fuer alle Verluste und Schaeden, die [...] der Krieg [...] verursacht hat.\"</p><cite>— Versailles, Artikel 231, 28. Juni 1919</cite></blockquote><p>Mit diesem Satz weisen die Sieger Deutschland und seinen Verbuendeten die alleinige Schuld am Krieg zu. Spaeter nennt man Artikel 231 die <strong>Kriegsschuld-Klausel</strong>. Aus ihm leitet sich die <strong>Kriegsschuldfrage</strong> ab: Wer ist verantwortlich fuer den Ausbruch des Ersten Weltkriegs?</p>",
+          "quelle": "Auszug aus Vertrag von Versailles, Artikel 231, 28. Juni 1919. Zitiert nach: Wikisource, „Friedensvertrag von Versailles\", Public Domain. Gekuerzt und sprachlich vereinfacht fuer Jahrgang 7."
+        },
+        {
+          "id": "mat-3-4",
+          "typ": "darstellungstext",
+          "titel": "Christopher Clark — Die Schlafwandler (2013)",
+          "position": 5,
+          "didaktische_funktion": "sicherung",
+          "voraussetzung": [
+            "mat-3-3"
+          ],
+          "ueberleitung_von": "Die Sieger schrieben 1919 die Schuld auf. Aber Geschichte wird neu geschrieben. Heute sagt der Forscher Christopher Clark etwas anderes. Hoer dir seine These an.",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-3-3",
+              "typ": "quellentext",
+              "kerninhalt": "Versailles Art. 231 — historische Sieger-Position 1919."
+            },
+            "nachher": null
+          },
+          "inhalt": "<article class=\"darstellungstext\"><p class=\"darstellungstext__kernsatz\"><strong>Heute sagt der Forscher Christopher Clark: Keine Macht hatte allein Schuld am Krieg.</strong></p><p>Christopher Clark ist Historiker. Er kommt aus Australien und arbeitet in England. Im Jahr 2013 schrieb er ein Buch ueber den Beginn des Ersten Weltkriegs. Der Titel: <strong>Die Schlafwandler</strong>. Schlafwandler sehen aus, als waeren sie wach. Aber sie wissen nicht, was sie tun. So gingen — sagt Clark — fuenf Regierungen 1914 in den Krieg: Wien, Berlin, Petersburg (das ist Russland), Paris und London.</p><p>Clarks Antwort auf die Schuldfrage ist anders als die in Versailles 1919: Nicht Deutschland allein, sondern <strong>fuenf Maechte gemeinsam</strong>. Welche Position findest du ueberzeugender?</p></article>",
+          "bildunterschrift": "",
+          "quelle": "Paraphrasiert nach: Christopher Clark, Die Schlafwandler — Wie Europa in den Ersten Weltkrieg zog. Deutsche Verlags-Anstalt, Muenchen 2013.",
+          "lizenz": "Eigenproduktion (Forschungs-Paraphrase)"
+        },
+        {
+          "id": "mat-3-5",
+          "typ": "tagebuch",
+          "titel": "Tagebuch einer Bauern-Frau, August 1914",
+          "position": 3,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [
+            "mat-3-1",
+            "mat-3-2"
+          ],
+          "ueberleitung_von": "Bilder zeigen, was vor der Kamera stand. Aber Tagebuecher zeigen, was Menschen wirklich dachten. Lies jetzt eine Stimme, die in keinem Foto vorkam.",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-3-2",
+              "typ": "bildquelle",
+              "kerninhalt": "Bundesarchiv-Inszenierungs-Topos 'Frau mit Blumen'."
+            },
+            "nachher": {
+              "id": "mat-3-3",
+              "typ": "quellentext",
+              "kerninhalt": "Versailles Art. 231 (1919) — Sieger-Position weist Allein-Schuld zu. Burgfrieden 4.8.1914 wird in der ueberleitung_von verbalisiert."
+            }
+          },
+          "inhalt": "<article class=\"tagebuch\"><p class=\"tagebuch__hinweis\"><em>Hinweis: Dieser Tagebuch-Eintrag ist <strong>rekonstruiert</strong>. Er ist nicht echt, sondern auf Basis vieler historischer Berichte von Land-Bevoelkerung, Arbeitern und SPD-Anhaengern aus dem Jahr 1914 nachgeschrieben.</em></p><p class=\"tagebuch__datum\">3. August 1914, abends</p><blockquote class=\"tagebuch__eintrag\"><p>„Heute kam der Brief. Heinrich muss morgen einruecken. Die Nachbarn sagen, der Krieg sei in sechs Wochen vorbei. Aber ich sehe keinen Grund zur Freude. Wer pflegt das Vieh, wenn er weg ist? Wer hilft beim Heu im September? Im Dorf reden alle leise. Im Wirtshaus haben sie zugeprostet, das schon. Aber die Frauen — wir nicken nur. Pflicht ist Pflicht. Aber Jubel? Davon ist hier nichts.\"</p></blockquote></article>",
+          "bildunterschrift": "",
+          "quelle": "Fiktiver Tagebucheintrag, rekonstruiert auf Basis typischer Erfahrungsberichte von Land-Bevoelkerung und SPD-Anhaengern 1914. Datenbasis: Wikipedia-Artikel 'Spirit_of_1914', Sektion 'Reception' (Stadt-Land-Differenz, Arbeiter-Skepsis, SPD-Reichstagsfraktion). Kein Original-Dokument.",
+          "lizenz": "Eigenproduktion (Fiktion mit historischer Datenbasis)"
+        }
+      ],
+      "aufgaben": [
+        {
+          "id": "aufgabe-3-1",
+          "typ": "lueckentext",
+          "frage": "Ergaenze die fehlenden Begriffe.",
+          "material_referenz": [
+            "mat-3-1"
+          ],
+          "loesung": [
+            "Luebeck",
+            "Augusterlebnis"
+          ],
+          "loesungsalternativen": {
+            "1": [
+              "Lübeck"
+            ],
+            "2": [
+              "Augustbegeisterung"
+            ]
+          },
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Lies die Bildunterschrift der [[mat-3-1|Postkarte vom Hauptbahnhof]] (M1). Dort stehen Ort und Datum."
+            },
+            {
+              "stufe": 2,
+              "text": "Der Ort liegt in Norddeutschland. Den Fachbegriff fuer die jubelnde Stimmung im August 1914 lernst du in dieser Mappe — er hat mit dem Monatsnamen zu tun."
+            },
+            {
+              "stufe": 3,
+              "text": "Der Bahnhof steht in Luebeck. Die Stimmung in deutschen Staedten Anfang August 1914 nennt man Augusterlebnis (auch: Augustbegeisterung). Wichtig: Diese Stimmung war nicht ueberall — auf dem Land waren viele skeptisch."
+            }
+          ],
+          "punkte": 10,
+          "text_mit_luecken": "Am 31. Juli 1914 ziehen Soldaten am Hauptbahnhof in {{1}} los. Viele Stadtbuerger jubeln. Diese Stimmung nennt man {{2}}."
+        },
+        {
+          "id": "aufgabe-3-2",
+          "typ": "quellenkritik",
+          "frage": "Pruefe die Postkarte mit den vier W-Fragen.",
+          "material_referenz": [
+            "mat-3-1"
+          ],
+          "w_fragen": [
+            {
+              "id": "wer",
+              "frage": "Wer hat die Postkarte gemacht?",
+              "antwortoptionen": [
+                "Die Druckerei Gebrueder Borchers in Luebeck",
+                "Die Heeresleitung in Berlin",
+                "Ein privater Soldat am Bahnhof",
+                "Die SPD-Partei"
+              ],
+              "loesung": "Die Druckerei Gebrueder Borchers in Luebeck"
+            },
+            {
+              "id": "wann",
+              "frage": "Wann wurde das Foto aufgenommen?",
+              "antwortoptionen": [
+                "31. Juli 1914",
+                "28. Juni 1914",
+                "4. August 1914",
+                "1919 nach dem Krieg"
+              ],
+              "loesung": "31. Juli 1914"
+            },
+            {
+              "id": "ziel",
+              "frage": "Mit welchem Ziel wurde die Postkarte gedruckt?",
+              "antwortoptionen": [
+                "Um sie als patriotische Postkarte zu verkaufen",
+                "Um den Krieg zu kritisieren",
+                "Um die SPD zu unterstuetzen",
+                "Um auslaendische Soldaten anzuwerben"
+              ],
+              "loesung": "Um sie als patriotische Postkarte zu verkaufen"
+            },
+            {
+              "id": "fehlt",
+              "frage": "Wer ist NICHT auf dem Foto zu sehen?",
+              "antwortoptionen": [
+                "Land-Bevoelkerung und Arbeiter",
+                "Soldaten in Uniform",
+                "Stadtbuerger am Bahnhof",
+                "Ein paar Familien"
+              ],
+              "loesung": "Land-Bevoelkerung und Arbeiter"
+            }
+          ],
+          "loesung": {
+            "wer": "Die Druckerei Gebrueder Borchers in Luebeck",
+            "wann": "31. Juli 1914",
+            "ziel": "Um sie als patriotische Postkarte zu verkaufen",
+            "fehlt": "Land-Bevoelkerung und Arbeiter"
+          },
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Schau dir die Bildunterschrift der [[mat-3-1|Postkarte vom Hauptbahnhof Luebeck]] (M1) genau an. Dort steht der Quellenkritik-Block mit Produzent, Datum und Motiv."
+            },
+            {
+              "stufe": 2,
+              "text": "Quellenkritik heisst: pruefen, wer eine Quelle gemacht hat, wann und mit welchem Ziel. Und besonders wichtig: WER ist NICHT zu sehen? Auf dem Foto stehen Stadtbuerger am Bahnhof — eine bestimmte Gruppe."
+            },
+            {
+              "stufe": 3,
+              "text": "Die Druckerei Gebrueder Borchers druckte die Postkarte am 31. Juli 1914 als Verkaufs-Postkarte. Auf dem Foto fehlen Land-Bevoelkerung und Arbeiter — die waren oft skeptisch oder ablehnend. Deshalb zeigt die Postkarte nur EINE Gruppe, nicht 'die Deutschen 1914'."
+            }
+          ],
+          "punkte": 20
+        },
+        {
+          "id": "aufgabe-3-3",
+          "typ": "zuordnung",
+          "frage": "Ordne die Aussagen den drei Personen-Gruppen zu.",
+          "material_referenz": [
+            "mat-3-1",
+            "mat-3-2",
+            "mat-3-5"
+          ],
+          "kategorien": [
+            "Stadtbuerger 1914 (begeistert)",
+            "Land-Bevoelkerung und Arbeiter 1914 (skeptisch)",
+            "Heeresleitung / Reichsamt (Inszenierung)"
+          ],
+          "elemente": [
+            "Soldaten ziehen los — viele Stadtbuerger jubeln am Bahnhof.",
+            "Wer pflegt das Vieh, wenn er weg ist? Wer hilft beim Heu im September?",
+            "Eine Frau gibt einem Soldaten Blumen — typisches Inszenierungs-Bild.",
+            "Pflicht ist Pflicht. Aber Jubel? Davon ist hier nichts.",
+            "Ein Photograph fotografiert die Mobilmachung fuer die Reichs-Nachrichten.",
+            "Im Wirtshaus haben sie zugeprostet — aber die Frauen nicken nur."
+          ],
+          "loesung": {
+            "Soldaten ziehen los — viele Stadtbuerger jubeln am Bahnhof.": "Stadtbuerger 1914 (begeistert)",
+            "Wer pflegt das Vieh, wenn er weg ist? Wer hilft beim Heu im September?": "Land-Bevoelkerung und Arbeiter 1914 (skeptisch)",
+            "Eine Frau gibt einem Soldaten Blumen — typisches Inszenierungs-Bild.": "Heeresleitung / Reichsamt (Inszenierung)",
+            "Pflicht ist Pflicht. Aber Jubel? Davon ist hier nichts.": "Land-Bevoelkerung und Arbeiter 1914 (skeptisch)",
+            "Ein Photograph fotografiert die Mobilmachung fuer die Reichs-Nachrichten.": "Heeresleitung / Reichsamt (Inszenierung)",
+            "Im Wirtshaus haben sie zugeprostet — aber die Frauen nicken nur.": "Land-Bevoelkerung und Arbeiter 1914 (skeptisch)"
+          },
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Lies das rekonstruierte [[mat-3-5|Tagebuch der Bauern-Frau]] (M3), schau dir die [[mat-3-1|Postkarte aus Luebeck]] (M1) und das [[mat-3-2|Bundesarchiv-Foto]] (M2) an. Jedes Material gehoert zu einer anderen Personen-Gruppe."
+            },
+            {
+              "stufe": 2,
+              "text": "Die Postkarte (M1) zeigt jubelnde Stadtbuerger. Das Tagebuch (M3) ist eine rekonstruierte Stimme aus dem Land — pflichtbewusst, aber ohne Jubel. Das Bundesarchiv-Foto (M2) ist eine bewusste Inszenierung der Heeresleitung."
+            },
+            {
+              "stufe": 3,
+              "text": "Die Stimmung 1914 war NICHT ueberall gleich. In den Staedten jubelte die Mittelschicht. Auf dem Land sorgten sich Frauen um die Ernte. Im Wirtshaus tranken Maenner zwar mit — aber Frauen blieben skeptisch. Die Heeresleitung liess Inszenierungs-Fotos machen, die nur die Begeisterung zeigten."
+            }
+          ],
+          "punkte": 18
+        },
+        {
+          "id": "aufgabe-3-4",
+          "typ": "multiple-choice",
+          "frage": "Welche Aussage ueber Artikel 231 stimmt?",
+          "material_referenz": [
+            "mat-3-3"
+          ],
+          "optionen": [
+            "Im Vertrag von Versailles (28. Juni 1919) weisen die Sieger Deutschland und seinen Verbuendeten die Verantwortung fuer alle Verluste und Schaeden zu. Diese Stelle wurde spaeter Kriegsschuld-Klausel genannt.",
+            "Der Reichstag in Berlin verabschiedete Artikel 231 am 4. August 1914 als Burgfriedens-Erklaerung.",
+            "Christopher Clark formulierte Artikel 231 im Jahr 2013 als Schlafwandler-These — alle Maechte gemeinsam schuld.",
+            "Die SPD lehnte Artikel 231 im Reichstag 1914 ab und stimmte gegen die Kriegskredite."
+          ],
+          "loesung": "Im Vertrag von Versailles (28. Juni 1919) weisen die Sieger Deutschland und seinen Verbuendeten die Verantwortung fuer alle Verluste und Schaeden zu. Diese Stelle wurde spaeter Kriegsschuld-Klausel genannt.",
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Lies den [[mat-3-3|Versailles-Auszug Artikel 231]] (M4) genau durch. Achte auf Datum, Sprecher und den Begriff am Ende des Textes."
+            },
+            {
+              "stufe": 2,
+              "text": "Der Vertrag wurde 1919 geschlossen — fuenf Jahre nach Kriegsbeginn. Die Sieger sind USA, Frankreich und Grossbritannien. Welche Aussage stimmt mit Datum UND Sprecher UND dem spaeteren Begriff (Kriegsschuld-Klausel) ueberein?"
+            },
+            {
+              "stufe": 3,
+              "text": "Die richtige Antwort ist Option A: Versailles am 28.6.1919, Sieger weisen Verantwortung zu, spaeter Kriegsschuld-Klausel genannt. Option B verwechselt das Datum (1914 statt 1919). Option C verwechselt den Sprecher (Clark schrieb 2013 ein Forschungs-Buch, kein Vertrag). Option D ist falsch — die SPD stimmte 1914 FUER die Kriegskredite (Burgfrieden)."
+            }
+          ],
+          "punkte": 12
+        },
+        {
+          "id": "aufgabe-3-5",
+          "typ": "vergleich",
+          "frage": "Vergleiche Versailles 1919 und Clark 2013 in drei Dimensionen.",
+          "material_referenz": [
+            "mat-3-3",
+            "mat-3-4"
+          ],
+          "vergleichsobjekte": [
+            "Versailles 1919 (Artikel 231)",
+            "Clark 2013 (Schlafwandler-These)"
+          ],
+          "dimensionen": [
+            "Wer traegt Schuld?",
+            "Welcher Quelltyp?",
+            "Wann formuliert?"
+          ],
+          "raster": {
+            "Wer traegt Schuld?": {
+              "Versailles 1919 (Artikel 231)": [
+                "Deutschland und seine Verbuendeten allein",
+                "Allein-Schuld-Zuweisung",
+                "Deutschland ist allein verantwortlich"
+              ],
+              "Clark 2013 (Schlafwandler-These)": [
+                "Fuenf Maechte gemeinsam (Wien, Berlin, Petersburg, Paris, London)",
+                "Mehrere Regierungen gemeinsam — keine Allein-Schuld",
+                "Multi-kausal — alle 5 Maechte zusammen"
+              ]
+            },
+            "Welcher Quelltyp?": {
+              "Versailles 1919 (Artikel 231)": [
+                "Politischer Vertrag (Sieger-Position)",
+                "Vertrags-Text der Sieger-Maechte",
+                "Politisches Dokument"
+              ],
+              "Clark 2013 (Schlafwandler-These)": [
+                "Forschungs-Buch eines Historikers",
+                "Geschichts-Buch von Christopher Clark",
+                "Wissenschaftliche Forschung"
+              ]
+            },
+            "Wann formuliert?": {
+              "Versailles 1919 (Artikel 231)": [
+                "28. Juni 1919 (5 Jahre nach Kriegsbeginn)",
+                "1919, direkt nach dem Krieg",
+                "1919"
+              ],
+              "Clark 2013 (Schlafwandler-These)": [
+                "2013 (99 Jahre nach Kriegsbeginn)",
+                "2013, fast 100 Jahre nach dem Krieg",
+                "2013"
+              ]
+            }
+          },
+          "loesung": {
+            "Wer traegt Schuld?": {
+              "Versailles 1919 (Artikel 231)": "Deutschland und seine Verbuendeten allein",
+              "Clark 2013 (Schlafwandler-These)": "Fuenf Maechte gemeinsam (Wien, Berlin, Petersburg, Paris, London)"
+            },
+            "Welcher Quelltyp?": {
+              "Versailles 1919 (Artikel 231)": "Politischer Vertrag (Sieger-Position)",
+              "Clark 2013 (Schlafwandler-These)": "Forschungs-Buch eines Historikers"
+            },
+            "Wann formuliert?": {
+              "Versailles 1919 (Artikel 231)": "28. Juni 1919 (5 Jahre nach Kriegsbeginn)",
+              "Clark 2013 (Schlafwandler-These)": "2013 (99 Jahre nach Kriegsbeginn)"
+            }
+          },
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Lies den [[mat-3-3|Versailles-Auszug Art. 231]] (M4) und den [[mat-3-4|Clark-Text Schlafwandler]] (M5). Suche zu jeder Dimension einen Satz aus jeder Quelle."
+            },
+            {
+              "stufe": 2,
+              "text": "Vergleichen heisst: gleiche Frage an beide Quellen stellen. Frage 1 (Schuld): Wen nennt der Vertrag, wen nennt Clark? Frage 2 (Quelltyp): Vertrag oder Buch? Frage 3 (Zeit): 1919 oder 2013?"
+            },
+            {
+              "stufe": 3,
+              "text": "Versailles 1919 sagt: Deutschland + Verbuendete allein schuld — politischer Vertrag der Sieger, geschlossen am 28.6.1919 (5 Jahre nach Kriegsbeginn). Clark 2013 sagt: 5 Maechte gemeinsam (Wien, Berlin, Petersburg, Paris, London) — Forschungs-Buch eines Historikers, 99 Jahre danach geschrieben. Beide Positionen widersprechen sich — die Frage 'Wer ist schuld?' hat keine einfache Antwort."
+            }
+          ],
+          "punkte": 25
+        },
+        {
+          "id": "aufgabe-3-6",
+          "typ": "begruendung",
+          "frage": "Welche Position findest du ueberzeugender — und warum?",
+          "material_referenz": [
+            "mat-3-3",
+            "mat-3-4"
+          ],
+          "cer_gitter": {
+            "claim": {
+              "label": "Behauptung (Claim)",
+              "anweisung": "Waehle eine Position und schreibe einen Satz: 'Ich finde die Position von Versailles 1919 / Clark 2013 ueberzeugender.'",
+              "optionen": [
+                "Ich finde die Position von Versailles 1919 ueberzeugender.",
+                "Ich finde die Position von Clark 2013 ueberzeugender."
+              ]
+            },
+            "evidence": {
+              "label": "Beleg (Evidence)",
+              "anweisung": "Zitiere oder paraphrasiere einen Satz aus dem Material, der deine Behauptung stuetzt.",
+              "min_woerter": 5,
+              "max_woerter": 30
+            },
+            "reasoning": {
+              "label": "Begruendung (Reasoning)",
+              "anweisung": "Erklaere in 2-3 Saetzen, warum dieser Beleg deine Behauptung stuetzt.",
+              "min_woerter": 15,
+              "max_woerter": 60
+            }
+          },
+          "loesung": {
+            "claim_optionen": [
+              "Ich finde die Position von Versailles 1919 ueberzeugender.",
+              "Ich finde die Position von Clark 2013 ueberzeugender."
+            ],
+            "musterantwort_versailles": {
+              "claim": "Ich finde die Position von Versailles 1919 ueberzeugender.",
+              "evidence": "Im Vertrag steht: 'Deutschland und seine Verbuendeten sind verantwortlich fuer alle Verluste und Schaeden.' (Art. 231)",
+              "reasoning": "Deutschland hat als erste Macht Russland und Frankreich den Krieg erklaert. Deutschland marschierte durch das neutrale Belgien. Deshalb finde ich die Sieger-Position 1919 nachvollziehbar."
+            },
+            "musterantwort_clark": {
+              "claim": "Ich finde die Position von Clark 2013 ueberzeugender.",
+              "evidence": "Clark schreibt: 'Wie Schlafwandler sind fuenf Regierungen 1914 in den Krieg getaumelt: Wien, Berlin, Petersburg, Paris und London.'",
+              "reasoning": "Aus M2 weiss ich, dass das Buendnissystem alle 5 Maechte ineinander verkettet hat. Wenn alle ueber Buendnisse verbunden sind, kann nicht eine Macht allein schuld sein. Deshalb ueberzeugt mich Clark."
+            },
+            "bewertungskriterien": [
+              "Claim ist eine klare Position-Wahl (Versailles ODER Clark)",
+              "Evidence enthaelt einen konkreten Material-Bezug (Zitat oder Paraphrase aus mat-3-3 oder mat-3-4)",
+              "Reasoning erklaert die Verbindung zwischen Beleg und Behauptung",
+              "Beide Positions-Wahlen sind gleich gewertet — keine 'richtige' Antwort"
+            ]
+          },
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Schau dir [[mat-3-3|Versailles Art. 231]] (M4) und [[mat-3-4|Clark — Schlafwandler]] (M5) noch einmal an. Welche Position klingt fuer dich logischer? Beide Antworten sind erlaubt — wichtig ist deine Begruendung."
+            },
+            {
+              "stufe": 2,
+              "text": "CER bedeutet: Claim (Behauptung) + Evidence (Beleg) + Reasoning (Begruendung). Schritt 1: Schreibe deine Behauptung als ganzen Satz. Schritt 2: Suche im Material EINEN Satz, der deine Behauptung stuetzt. Schritt 3: Erklaere in 2-3 Saetzen, warum der Satz deine Behauptung stuetzt."
+            },
+            {
+              "stufe": 3,
+              "text": "Beispiel fuer Clark-Position: Claim — 'Ich finde Clark 2013 ueberzeugender.' Evidence — 'Clark schreibt: Wie Schlafwandler sind fuenf Regierungen 1914 in den Krieg getaumelt.' Reasoning — 'Aus Mappe 2 weiss ich, dass das Buendnissystem alle Maechte verkettet hat. Wenn alle verbunden sind, kann nicht eine allein schuld sein.' Du kannst auch die Versailles-Position waehlen — beide sind erlaubt."
+            }
+          ],
+          "punkte": 25
+        },
+        {
+          "id": "aufgabe-3-7",
+          "typ": "freitext-code",
+          "frage": "Beantworte die Stundenfrage in 3-5 Saetzen.",
+          "leitfrage": "Wer war im August 1914 begeistert — und wer hat heute die Schuld am Krieg? Beziehe dich auf mindestens zwei Quellen aus dieser Mappe.",
+          "material_referenz": [
+            "mat-3-1",
+            "mat-3-2",
+            "mat-3-3",
+            "mat-3-4",
+            "mat-3-5"
+          ],
+          "scaffolding": {
+            "satzanfaenge": [
+              "Im August 1914 war die Stimmung ...",
+              "Die Postkarte aus Luebeck zeigt ..., aber das rekonstruierte Tagebuch zeigt ...",
+              "Bei der Schuldfrage gibt es zwei Positionen: ...",
+              "Versailles 1919 sagt ..., Clark 2013 sagt ..."
+            ],
+            "min_woerter": 40,
+            "max_woerter": 120,
+            "min_saetze": 3,
+            "max_saetze": 5,
+            "min_quellen_bezug": 2
+          },
+          "loesung": "Augusterlebnis Stadt-Mittelschicht Land-Skepsis Kriegsschuldfrage Versailles Clark Schlafwandler",
+          "musterantwort": "Im August 1914 jubelten viele Stadtbuerger, als die Soldaten loszogen — diese Stimmung nennt man Augusterlebnis (siehe Postkarte aus Luebeck). Aber nicht ueberall war Begeisterung: Auf dem Land waren viele skeptisch, wie das rekonstruierte Tagebuch zeigt — die Bauern-Frau sorgte sich um die Ernte. Bei der Schuldfrage gibt es zwei Positionen: Versailles 1919 sagt, Deutschland und seine Verbuendeten sind allein schuld (Artikel 231). Clark 2013 sagt, fuenf Maechte gemeinsam — Wien, Berlin, Petersburg, Paris und London — sind wie Schlafwandler in den Krieg getaumelt. Heute ist die Frage 'Wer ist schuld?' nicht mehr einfach zu beantworten.",
+          "bewertungskriterien": [
+            "Mindestens 2 Quellen-Bezuege (z.B. Postkarte/Bundesarchiv-Foto + Versailles ODER Clark)",
+            "Augusterlebnis als Begriff verwendet UND Land/Arbeiter-Skepsis benannt (Augusterlebnis-Idealisierungs-Verbot)",
+            "Beide Schuld-Positionen (Versailles 1919 / Clark 2013) genannt",
+            "Eigene Position oder reflexive Schluss-Aussage zur Frage 'Wer ist schuld?'",
+            "3-5 Saetze, R7-Sprachniveau"
+          ],
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Schau noch einmal in die [[mat-3-1|Postkarte aus Luebeck]] (M1), das [[mat-3-5|rekonstruierte Tagebuch]] (M3), den [[mat-3-3|Versailles-Auszug Art. 231]] (M4) und den [[mat-3-4|Clark-Text]] (M5). Die Frage hat zwei Teile: Erst die Stimmung 1914, dann die Schuldfrage."
+            },
+            {
+              "stufe": 2,
+              "text": "Teil 1 (Stimmung 1914): Wer jubelte in den Staedten? Wer war auf dem Land skeptisch? Teil 2 (Schuldfrage): Was sagte Versailles 1919? Was sagt Clark 2013? Beantworte beide Teile getrennt — 2-3 Saetze pro Teil."
+            },
+            {
+              "stufe": 3,
+              "text": "Beispiel-Antwort: 'Im August 1914 jubelten viele Stadtbuerger (Postkarte aus Luebeck). Aber auf dem Land war die Stimmung skeptisch — die Bauern sorgten sich um die Ernte (rekonstruiertes Tagebuch). Bei der Schuldfrage sagt Versailles 1919: Deutschland allein schuld (Art. 231). Clark 2013 sagt: fuenf Maechte gemeinsam (Schlafwandler-These). Die Frage hat heute keine einfache Antwort.'"
+            }
+          ],
+          "punkte": 30
+        }
+      ],
+      "sicherung": {
+        "hefteintrag": {
+          "stundenfrage": "Wer war im August 1914 begeistert — und wer hat heute die Schuld am Krieg?",
+          "ordnungsmuster": "kategorial-kontrastiv",
+          "scpl": {
+            "situation": {
+              "kontextsatz": "Im August 1914 ziehen viele junge Maenner mit Begeisterung in den Krieg. Diese Stimmung nennt man Augusterlebnis oder Augustbegeisterung.",
+              "fachbegriffe": [
+                "Augusterlebnis",
+                "Augustbegeisterung"
+              ]
+            },
+            "complication": [
+              {
+                "schritt": "Aber Vorsicht: Die Fotos zeigen meist nur Stadt-Buerger. Auf dem Land und in den Arbeiter-Vierteln waren viele Menschen skeptisch oder ablehnend. Beim Anschauen einer Quelle gilt: Quellenkritik — wer schreibt, wann, mit welchem Ziel?",
+                "fachbegriff": "Quellenkritik",
+                "darstellung": null
+              },
+              {
+                "schritt": "Am 4. August 1914 stimmt sogar die SPD im Reichstag fuer die Kriegskredite. Alle Parteien sind dafuer. Diese Einigkeit nennt man Burgfrieden. 1916/17 zerbricht der Burgfrieden wieder.",
+                "fachbegriff": "Burgfrieden",
+                "darstellung": null
+              }
+            ],
+            "problem": {
+              "satz": "Vier Jahre spaeter ist der Krieg verloren. Im Vertrag von Versailles steht 1919 die Kriegsschuld-Klausel (Artikel 231): Deutschland und seine Verbuendeten seien allein schuld.",
+              "fachbegriff": "Kriegsschuldfrage"
+            },
+            "loesung": [
+              "Heute sieht der Forscher Christopher Clark das anders. In seinem Buch Die Schlafwandler (2013) schreibt er: Keine Macht hat allein Schuld. Mehrere Regierungen sind wie Schlafwandler in den Krieg getaumelt — Wien, Berlin, Petersburg, Paris und London.",
+              "Die Frage 'Wer ist schuld?' hat keine einfache Antwort. Begeisterung war Stadt-Sache. Schuld war geteilt."
+            ]
+          },
+          "transfer": {
+            "frage": "Wer schreibt heute Schuld zu — und mit welchem Recht?"
+          },
+          "voraussetzungen": [
+            "M1: Pulverfass Europa, Buendnis-System (Dreibund + Triple Entente)",
+            "M2: Ursache vs. Ausloeser, Buendnisfall, Mobilmachung"
+          ],
+          "kernerkenntnisse": [
+            "Die Augustbegeisterung 1914 war real, aber nicht ueberall — Stadt-Mittelschicht jubelte, Land + Arbeiter waren oft skeptisch.",
+            "Burgfrieden 4.8.1914: Alle Parteien im Reichstag (auch SPD) stimmen den Kriegskrediten zu. Zerfaellt 1916/17.",
+            "Kriegsschuld-Klausel (Versailles Art. 231, 1919): Deutschland und Verbuendete allein schuld.",
+            "Schlafwandler-These (Clark, 2013): Mehrere Maechte sind gemeinsam in den Krieg getaumelt.",
+            "Quellenkritik: Wer schreibt? Wann? Mit welchem Ziel? — Pflicht-Methode bei jeder Quelle."
+          ],
+          "knoten": [
+            {
+              "id": "K3-1",
+              "label": "Kriegsschuldfrage",
+              "position": "zentrum",
+              "typ": "leitbegriff"
+            },
+            {
+              "id": "K3-2",
+              "label": "Augusterlebnis 1914",
+              "position": "oben-links",
+              "typ": "phaenomen"
+            },
+            {
+              "id": "K3-3",
+              "label": "Burgfrieden 4.8.1914",
+              "position": "oben-rechts",
+              "typ": "ereignis"
+            },
+            {
+              "id": "K3-4",
+              "label": "Versailles Art. 231 (1919)",
+              "position": "unten-links",
+              "typ": "quellentext"
+            },
+            {
+              "id": "K3-5",
+              "label": "Clark — Schlafwandler (2013)",
+              "position": "unten-rechts",
+              "typ": "forschungsstand"
+            },
+            {
+              "id": "K3-6",
+              "label": "Quellenkritik",
+              "position": "rand",
+              "typ": "methode"
+            }
+          ],
+          "verbindungen": [
+            {
+              "von": "K3-2",
+              "nach": "K3-1",
+              "label": "ist Teil der Frage"
+            },
+            {
+              "von": "K3-3",
+              "nach": "K3-1",
+              "label": "zeigt politische Einigkeit Anfang"
+            },
+            {
+              "von": "K3-4",
+              "nach": "K3-1",
+              "label": "Antwort 1919"
+            },
+            {
+              "von": "K3-5",
+              "nach": "K3-1",
+              "label": "Antwort 2013"
+            },
+            {
+              "von": "K3-4",
+              "nach": "K3-5",
+              "label": "widerspricht"
+            },
+            {
+              "von": "K3-6",
+              "nach": "K3-2",
+              "label": "deckt Bias auf"
+            },
+            {
+              "von": "K3-6",
+              "nach": "K3-4",
+              "label": "deckt Position auf"
+            }
+          ]
+        },
+        "hefteintrag_verweis": "Uebertrage das Tafelbild und die Schluessel-Begriffe in dein Heft. Schreibe in eigenen Worten: Wer jubelte 1914 — und wer schwieg? Welche zwei Antworten gibt es heute auf die Schuldfrage?",
+        "reflexionsimpuls": "Welche Position findest du ueberzeugender — Versailles 1919 oder Clark 2013, und welche Argumente hast du?",
+        "zusammenfassung": "Im August 1914 jubelten viele junge Maenner — vor allem in den Staedten. Auf dem Land und bei Arbeitern war die Stimmung oft skeptisch. Im Reichstag herrschte am 4. August Burgfrieden: alle Parteien stimmten fuer Kriegskredite. Vier Jahre spaeter ist der Krieg verloren. Versailles 1919 (Artikel 231) gibt Deutschland die Allein-Schuld. Heute sagt Clark (2013): Keine Macht allein, sondern fuenf Regierungen gemeinsam taumelten in den Krieg.",
+        "ueberleitung": "Die Maenner zogen los — was passierte, als sie ankamen?"
+      },
+      "mappenabschluss": {
+        "schema_version": "1.0",
+        "mappe_id": "M3",
+        "_variante": "A",
+        "_template_ref": "SUB_TEMPLATE_MAPPENABSCHLUSS v1.0 (STR-13)",
+        "_f0b_priming_kennung": "F0B_PRIMING_v1",
+        "reflexion_fragen": [
+          "Welche Position findest du im Moment ueberzeugender — Versailles 1919 (Deutschland und seine Verbuendeten allein schuld) oder Clark 2013 (fuenf Maechte gemeinsam) — und welches eine Argument aus dieser Mappe waere noch zu pruefen, bevor du dich endgueltig entscheidest?",
+          "Die Postkarte aus Luebeck zeigt jubelnde Stadtbuerger. Welche Stimmen aus dem August 1914 fehlen auf solchen Bildern — und woran erkennst du, dass eine Quelle nur eine Gruppe zeigt?"
+        ],
+        "ueberleitungssatz": "Die Maenner zogen los — was passierte, als sie ankamen?",
+        "sicherungstexte_lehrkraft": {
+          "_sichtbarkeit": "lehrkraft-only",
+          "_policy": "POLICY_TRIGGER_SICHTBARKEIT — diese Texte erscheinen NICHT im Schueler-Spielfluss (Engine rendert nur reflexion_fragen + ueberleitungssatz). Lehrkraft-Hinweis fuer Nachbesprechung.",
+          "augusterlebnis_idealisierungs_verbot": "Die Postkarte aus Luebeck (mat-3-1) und das Bundesarchiv-Inszenierungsfoto (mat-3-2) zeigen Stadt-Mittelschicht in einem inszenierten Moment. Reflexion in der Klasse darf NICHT bei 'Alle waren begeistert' enden. Aufgaben 3-2 (Quellenkritik W-Frage 'fehlt') und 3-3 (Zuordnung Land-Skepsis + Inszenierung) haben das Idealisierungs-Verbot bereits operationalisiert. Nachbesprechung sollte Land-Bevoelkerung, Arbeiter und SPD-Burgfrieden-Differenzierung 1916/17 explizit benennen.",
+          "beutelsbach_kontroversitaet": "Aufgabe 3-5 (Vergleich Versailles 1919 vs. Clark 2013) und Aufgabe 3-6 (CER-Begruendung) stellen beide Positionen gleichrangig. KEINE Position ist als 'die richtige' markiert. Reflexionsfrage 1 fragt nach individueller Praeferenz UND fordert ein noch zu pruefendes Argument — das verhindert vorschnelle Festlegung. Nachbesprechung darf beide Positionen wuerdigen, aber keine Lehrkraft-Wertung 'Clark hat recht' / 'Versailles ist ueberholt' aussprechen. Schueler-Antworten sind beide Pole zu akzeptieren.",
+          "versailles_nsdap_sprengkraft": "POLICY_TRIGGER_SICHTBARKEIT (Lehrkraft-only): Artikel 231 wurde ab 1919 in der Weimarer Republik politisch instrumentalisiert (Kriegsschuld-Luege, Dolchstoss-Legende). Die NSDAP nutzte diese Narrative ab 1920 propagandistisch. Diese Folge-Rezeption ist NICHT Stoff der 7. Klasse (V13: kein NSDAP-Vorgriff im Schueler-Material). Im Hefteintrag M3 und in den Aufgaben wird Art. 231 ausschliesslich als Sieger-Position 1919 dargestellt, ohne Vorgriff auf Weimarer Folgegeschichte. Nachbesprechung sollte diesen Vorgriff ebenfalls vermeiden — Folge-Wirkung ist Stoff spaeterer Jahrgangsstufen.",
+          "multiperspektivitaet_synthese_hinweis": "M3 hat fuenf Perspektiven aktiviert: P1 Stadt-Begeisterte (mat-3-1), P2 Land-Skepsis und Arbeiter (mat-3-5), P3 Versailler Sieger 1919 (mat-3-3), P4 Clark-Forschung 2013 (mat-3-4), P5 Reichsamt-Inszenierung (mat-3-2). Reflexionsfrage 2 zielt explizit auf P2 + P5 (Nicht-Dominant-Perspektiven), um die Anti-Bias-Mechanik aus Aufgabe 3-2/3-3 in der Reflexion fortzufuehren (M3-Rubrik aus F0B_PRIMING §5)."
+        }
+      }
+    },
+    {
+      "id": "mappe-4",
+      "titel": "Marne 1914 — Das Ende des kurzen Krieges",
+      "beschreibung": "Im August 1914 marschierten deutsche Truppen nach dem Schlieffen-Plan durch das neutrale Belgien. Sie wollten Frankreich in sechs Wochen besiegen. An der Marne im September 1914 wurde der Vormarsch gestoppt. Aus dem Plan vom kurzen Krieg wurde ein vier Jahre langer Stellungskrieg. In dieser Mappe schliesst du die Untersuchung ab — und entdeckst den letzten Buchstaben-Code.",
+      "freischalt_code": "STELLUNGSKRIEG",
+      "einstieg": {
+        "narrativ": "<p>Mappe 3 endete mit den Maennern, die in den Krieg zogen. Sie glaubten an einen kurzen Krieg. <em>„Weihnachten sind wir wieder zu Hause\"</em>, sagten viele. Mappe 4 zeigt dir, wie schnell dieser Glaube zerbrach.</p><p>Die deutsche Heeresleitung hatte einen Plan — und du wirst gleich sehen, wie dieser Plan in nur fuenf Wochen scheiterte. Pack die vierte Mappe an.</p>",
+        "problemstellung": "Warum scheiterte der deutsche Plan fuer einen schnellen Sieg an der Marne?"
+      },
+      "materialien": [
+        {
+          "id": "mat-4-1",
+          "typ": "karte",
+          "titel": "Welcher Weg war geplant — und warum durch Belgien?",
+          "position": 1,
+          "didaktische_funktion": "einstieg",
+          "voraussetzung": [],
+          "ueberleitung_von": null,
+          "sequenz_kontext": {
+            "vorher": null,
+            "nachher": {
+              "id": "mat-4-2",
+              "typ": "zeitleiste",
+              "kerninhalt": "Zeitleiste August/September 1914 mit 7 Schluessel-Daten."
+            }
+          },
+          "inhalt": "<figure class=\"karte\"><img src=\"../../assets/img/gpg-erster-weltkrieg-ursachen-run4-v050/img-m4-01.svg\" alt=\"Karte des Schlieffen-Plans 1914 mit den geplanten Bewegungs-Pfeilen der deutschen Armee durch Belgien nach Frankreich\" /><figcaption class=\"karte__bu karte__bu--haupt\">Diese Karte zeigt den <strong>Schlieffen-Plan</strong>: die geplanten Bewegungs-Pfeile der deutschen Armee 1914. Der grosse Bogen geht von Norden durch das neutrale Belgien — und dann im Sueden um Paris herum. Idee: Frankreich in nur sechs Wochen besiegen, dann gegen Russland.</figcaption><figcaption class=\"karte__bu karte__bu--quellenkritik\"><em>Quellenkritik: Heute weiss die Forschung — es gab keinen einzigen fertigen Plan. Es gab nur Aufmarsch-Skizzen, die mehrfach geaendert wurden. Den Begriff Schlieffen-Plan benutzen wir trotzdem, aber nicht als Helden-Geschichte.</em></figcaption></figure>",
+          "bildunterschrift": "Schlieffen-Plan 1914: geplanter Bogen durch Belgien nach Paris. Quellenkritik: Es gab keinen einzigen fertigen Plan — nur Aufmarsch-Skizzen, mehrfach geaendert.",
+          "quelle": "Wikimedia Commons, File:Plan_Moltke-Schlieffen_1914.svg, Urheber: Lvcvlvs (Wikipedia-User), 21.10.2013, Lizenz: CC-BY-SA-3.0. Datenbasis: Wikipedia-Artikel 'First Battle of the Marne' und 'Schlieffen Plan' (Stand 2026-04-26). Kuratorische Einordnung: didaktische Schulbuch-Visualisierung.",
+          "lizenz": "CC-BY-SA-3.0"
+        },
+        {
+          "id": "mat-4-2",
+          "typ": "zeitleiste",
+          "titel": "Hat der Plan funktioniert? Lies an den Daten ab.",
+          "position": 2,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [
+            "mat-4-1"
+          ],
+          "ueberleitung_von": "Die Karte hat dir die Idee gezeigt: ein grosser Bogen durch Belgien in sechs Wochen. Aber hat dieser Plan in der Wirklichkeit auch funktioniert? Lies an den Daten ab.",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-4-1",
+              "typ": "karte",
+              "kerninhalt": "Karte mit den geplanten Bewegungs-Pfeilen des Schlieffen-Plans."
+            },
+            "nachher": {
+              "id": "mat-4-3",
+              "typ": "bildquelle",
+              "kerninhalt": "DT-Soldaten-Foto an der Marne — Quellenkritik-Anker."
+            }
+          },
+          "inhalt": "<figure class=\"zeitleiste\"><figcaption class=\"zeitleiste__leitfrage\">Aus geplanten sechs Wochen wurden fuenf Wochen Vormarsch — dann der Stop. Lies die sieben Daten August bis Oktober 1914.</figcaption><ol class=\"zeitleiste__eintraege\"><li class=\"zeitleiste__eintrag\"><span class=\"zeitleiste__datum\">2. August 1914</span><span class=\"zeitleiste__ereignis\">Deutschland stellt Belgien ein Ultimatum: \"Lasst uns durch!\" Belgien ist neutral und sagt nein.</span></li><li class=\"zeitleiste__eintrag\"><span class=\"zeitleiste__datum\">4. August 1914</span><span class=\"zeitleiste__ereignis\">Deutsche Truppen marschieren in Belgien ein. Am gleichen Tag erklaert Grossbritannien Deutschland den Krieg.</span></li><li class=\"zeitleiste__eintrag\"><span class=\"zeitleiste__datum\">7. August 1914</span><span class=\"zeitleiste__ereignis\">Die belgische Festung Lueck (Liege) faellt. Belgien wehrt sich — aber der Vormarsch geht weiter.</span></li><li class=\"zeitleiste__eintrag\"><span class=\"zeitleiste__datum\">20. August 1914</span><span class=\"zeitleiste__ereignis\">Bruessel faellt. Der deutsche Vormarsch ist schnell — aber die Truppen sind erschoepft, die Versorgung kommt nicht hinterher.</span></li><li class=\"zeitleiste__eintrag zeitleiste__eintrag--hoehepunkt\"><span class=\"zeitleiste__datum\">5.-12. September 1914</span><span class=\"zeitleiste__ereignis\">Marne-Schlacht: Der franzoesische General Joffre stoppt den deutschen Vormarsch etwa 40 km vor Paris.</span></li><li class=\"zeitleiste__eintrag\"><span class=\"zeitleiste__datum\">14. September 1914</span><span class=\"zeitleiste__ereignis\">Der deutsche Generalstabs-Chef Moltke wird abgesetzt. Der Schlieffen-Plan ist gescheitert.</span></li><li class=\"zeitleiste__eintrag\"><span class=\"zeitleiste__datum\">19. Oktober 1914</span><span class=\"zeitleiste__ereignis\">Wettlauf zum Meer endet — beide Seiten graben sich ein. Der Stellungskrieg beginnt.</span></li></ol></figure>",
+          "bildunterschrift": "",
+          "quelle": "Eigenproduktion (Phase 2.1, SUB_ZEITLEISTE). Datenbasis: Wikipedia-Artikel 'First Battle of the Marne', 'German invasion of Belgium (1914)', 'Race to the Sea' (Stand 2026-04-26).",
+          "lizenz": "Eigenproduktion"
+        },
+        {
+          "id": "mat-4-3",
+          "typ": "bildquelle",
+          "titel": "Was zeigt das Foto wirklich — und was nicht?",
+          "position": 3,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [
+            "mat-4-2"
+          ],
+          "ueberleitung_von": "Die Zeitleiste hat dich vom Ultimatum am 2. August bis zur Marne-Schlacht im September gefuehrt. Aber wie sahen die Soldaten an der Front aus, die diesen Plan zu Ende bringen sollten? Schau das Foto an — und denk an Quellenkritik aus Mappe 3.",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-4-2",
+              "typ": "zeitleiste",
+              "kerninhalt": "Zeitleiste August/September 1914 mit 7 Schluessel-Daten."
+            },
+            "nachher": {
+              "id": "mat-4-4",
+              "typ": "bildquelle",
+              "kerninhalt": "FR-Infanterie 1913 — Multiperspektiv-Vergleich + Datums-Quellenkritik."
+            }
+          },
+          "inhalt": "<figure class=\"bildquelle\"><img src=\"../../assets/img/gpg-erster-weltkrieg-ursachen-run4-v050/img-m4-02.jpg\" alt=\"Foto deutscher Soldaten an der Front bei der Marne-Schlacht September 1914 — Soldaten posieren in Reihe mit Decorationen am Rock\" /><figcaption class=\"bildquelle__bu bildquelle__bu--haupt\">Deutsche Soldaten an der Marne-Schlacht, September 1914. Photograph: deutsches Heer (anonym). Heeres-Selbstdarstellung waehrend des Vormarsches gegen Frankreich.</figcaption><figcaption class=\"bildquelle__bu bildquelle__bu--quellenkritik\"><em>Quellenkritik: Dieses Foto ist vermutlich gestellt. Die Soldaten tragen Decorationen — also Orden und Auszeichnungen. Im aktiven Kampf war das unueblich. Wahrscheinlich hat der Photograph die Soldaten posieren lassen, damit das Heer stark aussieht. Frag dich: Was zeigt dieses Foto NICHT? (Erschoepfung, Versorgungs-Probleme, gefallene Kameraden.)</em></figcaption></figure>",
+          "bildunterschrift": "DT-Soldaten an der Marne, Sep 1914, deutsches Heer (anonym). Quellenkritik: vermutlich gestelltes Foto — Decorations-Tragen im aktiven Kampf unueblich. Heeres-Selbstdarstellung, kein dokumentarisches Kampf-Bild.",
+          "quelle": "Wikimedia Commons, File:German_soldiers_Battle_of_Marne_WWI.jpg, Urheber: German Army (anonym), September 1914, Lizenz: Public Domain (PD-old-70). Wikipedia weist explizit auf Inszenierungs-Verdacht hin (Decorations-Tragen unueblich im aktiven Kampf). Datenbasis: Wikipedia-Artikel 'First Battle of the Marne' (Stand 2026-04-26).",
+          "lizenz": "Public Domain (PD-old-70)"
+        },
+        {
+          "id": "mat-4-4",
+          "typ": "bildquelle",
+          "titel": "Achtung Datums-Falle: Wann ist dieses Foto wirklich entstanden?",
+          "position": 4,
+          "didaktische_funktion": "erarbeitung",
+          "voraussetzung": [
+            "mat-4-3"
+          ],
+          "ueberleitung_von": "Das Foto der deutschen Soldaten war vermutlich gestellt — Heeres-Selbstdarstellung. Sahen die Franzosen anders aus? Und Achtung: Bei diesem Bild gibt es eine Datums-Falle.",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-4-3",
+              "typ": "bildquelle",
+              "kerninhalt": "DT-Soldaten-Foto an der Marne — gestellt."
+            },
+            "nachher": {
+              "id": "mat-4-5",
+              "typ": "statistik",
+              "kerninhalt": "Verlust-Statistik Marne (FR/GB/DT)."
+            }
+          },
+          "inhalt": "<figure class=\"bildquelle\"><img src=\"../../assets/img/gpg-erster-weltkrieg-ursachen-run4-v050/img-m4-03.jpg\" alt=\"Foto franzoesischer Infanterie beim Bajonett-Angriff, Manoever-Aufnahme von 1913\" /><figcaption class=\"bildquelle__bu bildquelle__bu--haupt\">Franzoesische Infanterie beim Bajonett-Angriff. Photograph: Agence Rol (franzoesische Photo-Agentur).</figcaption><figcaption class=\"bildquelle__bu bildquelle__bu--quellenkritik\"><em>Datums-Quellenkritik: Achtung — dieses Foto wurde 1913 gemacht. Es ist ein Foto von einem Manoever, also einer Uebung. Die Marne-Schlacht war erst im September 1914. Manchmal werden solche Manoever-Bilder spaeter so verwendet, als waeren sie aus echten Schlachten. Frag dich: Wer schreibt heute, wann ein Bild entstanden ist — und stimmt das auch?</em></figcaption></figure>",
+          "bildunterschrift": "FR-Infanterie 1913 (Manoever-Foto Agence Rol). Datums-Quellenkritik: Bild ist VOR der Marne-Schlacht entstanden — Uebungs-Aufnahme, kein Kampf-Foto. So sah die franzoesische Infanterie 1913/14 aus.",
+          "quelle": "Wikimedia Commons, File:Infanterie-francaise-rol.jpg, Urheber: Agence Rol (franzoesische Photo-Agentur 1904-1937), 1913, Lizenz: Public Domain (PD-old-70). Quellen-Kontext: Bild aus den 'Grandes manoeuvres de 1913' (frz. Heeres-Manoever Sommer 1913, vor Kriegsausbruch). Datenbasis: Wikipedia-Artikel 'First Battle of the Marne' (Stand 2026-04-26), Gallica BnF.",
+          "lizenz": "Public Domain (PD-old-70)"
+        },
+        {
+          "id": "mat-4-5",
+          "typ": "statistik",
+          "titel": "Wenn die Bilder nicht zeigen, was passiert — was zeigen die Zahlen?",
+          "position": 5,
+          "didaktische_funktion": "vertiefung",
+          "voraussetzung": [
+            "mat-4-2"
+          ],
+          "ueberleitung_von": "Beide Heere haben sich aehnlich aufrecht und ordentlich praesentiert — Manoever-Photographie, kein dokumentarisches Bild des Krieges. Wenn die Bilder nicht zeigen, was passiert — was zeigen die Zahlen?",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-4-4",
+              "typ": "bildquelle",
+              "kerninhalt": "FR-Infanterie 1913 — Manoever, nicht 1914."
+            },
+            "nachher": {
+              "id": "mat-4-6",
+              "typ": "darstellungstext",
+              "kerninhalt": "Erklaerung Stellungskrieg + Schluss-Bruecke."
+            }
+          },
+          "inhalt": "<figure class=\"statistik\"><figcaption class=\"statistik__leitfrage\">Verluste der Marne-Schlacht — 5. bis 12. September 1914 (sieben Tage). Tote und Verwundete zusammen.</figcaption><table class=\"statistik__tabelle\"><thead><tr><th scope=\"col\">Land</th><th scope=\"col\">Verluste (Tote + Verwundete)</th></tr></thead><tbody><tr><td>Frankreich</td><td>ca. 250.000</td></tr><tr><td>Grossbritannien</td><td>12.733</td></tr><tr><td>Deutschland</td><td>ca. 298.000</td></tr><tr class=\"statistik__summe\"><td>Zusammen</td><td>mehr als 500.000</td></tr></tbody></table><figcaption class=\"statistik__kontext\">Diese Zahlen sind so gross, dass kaum jemand sie sich vorstellen kann. Mehr als 500.000 Menschen — in nur einer Woche. Bei Frankreich und Deutschland steht „ca.\" davor: Die Forschung kennt die genaue Zahl nicht, sie liegt in einer Spanne.</figcaption></figure>",
+          "bildunterschrift": "",
+          "quelle": "Eigenproduktion (Phase 2.1, SUB_STATISTIK). Datenbasis: Wikipedia-Artikel 'First Battle of the Marne', Sektion 'Casualties' (Stand 2026-04-26). FR ~250.000 / GB 12.733 / DT ~298.000. 'ca.' bei FR und DT wegen Forschungs-Bandbreite.",
+          "lizenz": "Eigenproduktion"
+        },
+        {
+          "id": "mat-4-6",
+          "typ": "darstellungstext",
+          "titel": "Aus sechs Wochen wurden vier Jahre — was ist ein Stellungskrieg?",
+          "position": 6,
+          "didaktische_funktion": "sicherung",
+          "voraussetzung": [
+            "mat-4-5"
+          ],
+          "ueberleitung_von": "Die Zahlen haben dir gezeigt: Allein an der Marne wurden in einer Woche mehr als eine halbe Million Soldaten getoetet oder verwundet. Was kommt nach so einer Schlacht — wie geht der Krieg jetzt weiter, wenn der Plan vom kurzen Krieg gestorben ist?",
+          "sequenz_kontext": {
+            "vorher": {
+              "id": "mat-4-5",
+              "typ": "statistik",
+              "kerninhalt": "Verlust-Statistik Marne — > 500.000 in 7 Tagen."
+            },
+            "nachher": null
+          },
+          "inhalt": "<article class=\"darstellungstext\"><p>Der Schlieffen-Plan war eine Idee. Sie hiess: Frankreich in sechs Wochen besiegen — durch Belgien. Du hast gesehen, wie sie an der Marne gestoppt wurde.</p><p>Was passiert nun? Beide Seiten kommen nicht weiter. Sie graben sich ein. Sie bauen lange Schuetzen-Graeben — also tiefe Loecher und Linien im Boden. Genau das ist der <strong>Stellungskrieg</strong>: Soldaten bleiben in festen Stellungen — Schuetzen-Graeben — und kommen kaum mehr vorwaerts.</p><p>Der Punkt, an dem sich das alles aenderte, heisst <strong>Wendepunkt</strong>. An der Marne im September 1914 endete der „kurze Krieg\" und der Stellungskrieg begann. Aus geplanten sechs Wochen wurden vier Jahre Krieg.</p><p>Was im Schuetzen-Graben passierte, was die Soldaten erlebten und wie der Krieg nach 1918 endete — das erfaehrst du in einem naechsten Game: Stellungskrieg, Heimatfront und Versailles.</p></article>",
+          "bildunterschrift": "",
+          "quelle": "Eigenproduktion (Phase 2.1, SUB_DARSTELLUNGSTEXT). Datenbasis: Wikipedia-Artikel 'Trench warfare', 'Race to the Sea', 'First Battle of the Marne' (Stand 2026-04-26). Skript M4 §1 (Plan-Anker) und §7 (Stellungskrieg-Sicherung). Hefteintrag M4 B.5 Merksatz wortlautnah aufgenommen.",
+          "lizenz": "Eigenproduktion"
+        }
+      ],
+      "aufgaben": [
+        {
+          "id": "aufgabe-4-1",
+          "typ": "multiple-choice",
+          "frage": "Was sah der Schlieffen-Plan vor — und durch welches Land fuehrte der Bogen?",
+          "material_referenz": [
+            "mat-4-1"
+          ],
+          "optionen": [
+            "Frankreich in sechs Wochen besiegen — durch Belgien.",
+            "Russland in sechs Wochen besiegen — direkt von Osten.",
+            "Direkter Marsch ueber die deutsch-franzoesische Grenze ohne Umweg.",
+            "Krieg gegen Grossbritannien zuerst — ueber die Nordsee."
+          ],
+          "loesung": "Frankreich in sechs Wochen besiegen — durch Belgien.",
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Schau dir die [[mat-4-1|Karte des Schlieffen-Plans]] (M1) genau an. Welcher Pfeil-Bogen ist eingezeichnet?"
+            },
+            {
+              "stufe": 2,
+              "text": "Achte darauf, durch welches Land der grosse Bogen geht — und in welche Richtung er zeigt. Wie viele Wochen waren geplant?"
+            },
+            {
+              "stufe": 3,
+              "text": "Loesung: „Frankreich in sechs Wochen besiegen — durch Belgien.\" Der Plan war: Erst schnell Frankreich von Norden ueberraschen, dann Russland. Belgien war neutral — der Plan brach diese Neutralitaet."
+            }
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-4-2",
+          "typ": "reihenfolge",
+          "frage": "Bringe die vier Ereignisse im August 1914 in die richtige Reihenfolge.",
+          "material_referenz": [
+            "mat-4-2"
+          ],
+          "optionen": [
+            "Ultimatum an Belgien — Deutschland fordert Durchmarsch",
+            "Deutscher Einmarsch in Belgien — Grossbritannien erklaert den Krieg",
+            "Festung Lueck (Liege) faellt — Vormarsch geht weiter",
+            "Bruessel faellt — deutsche Truppen sind erschoepft"
+          ],
+          "loesung": [
+            "Ultimatum an Belgien — Deutschland fordert Durchmarsch",
+            "Deutscher Einmarsch in Belgien — Grossbritannien erklaert den Krieg",
+            "Festung Lueck (Liege) faellt — Vormarsch geht weiter",
+            "Bruessel faellt — deutsche Truppen sind erschoepft"
+          ],
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Schau dir die [[mat-4-2|Zeitleiste August/September 1914]] (M2) genau an. Welche Daten gehoeren zum August?"
+            },
+            {
+              "stufe": 2,
+              "text": "Beginne mit dem Ultimatum — also der Frist mit Drohung. Danach folgt der Einmarsch. An welchem Tag kam Grossbritannien dazu? Welche Festung fiel zuerst?"
+            },
+            {
+              "stufe": 3,
+              "text": "Reihenfolge: 02.08. Ultimatum -> 04.08. Einmarsch + GB-Kriegseintritt -> 07.08. Lueck faellt -> 20.08. Bruessel faellt. Der deutsche Vormarsch war schnell, aber die Truppen wurden muede."
+            }
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-4-3",
+          "typ": "lueckentext",
+          "frage": "Ergaenze die fehlenden Fakten zur Marne-Schlacht.",
+          "material_referenz": [
+            "mat-4-2"
+          ],
+          "optionen": {
+            "1": [
+              "Joffre",
+              "Moltke",
+              "Petain",
+              "Foch"
+            ],
+            "2": [
+              "40",
+              "100",
+              "20",
+              "80"
+            ],
+            "3": [
+              "5. bis 12. September 1914",
+              "1. bis 8. August 1914",
+              "5. bis 12. Oktober 1914",
+              "20. bis 27. September 1914"
+            ],
+            "4": [
+              "Moltke",
+              "Joffre",
+              "Hindenburg",
+              "Ludendorff"
+            ]
+          },
+          "loesung": [
+            "Joffre",
+            "40",
+            "5. bis 12. September 1914",
+            "Moltke"
+          ],
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Schau dir die [[mat-4-2|Zeitleiste August/September 1914]] (M2) genau an — besonders die September-Daten."
+            },
+            {
+              "stufe": 2,
+              "text": "Welcher Eintrag ist als Hoehepunkt markiert? Welcher franzoesische General wird dort genannt? Wie viele Kilometer vor Paris war der Stop?"
+            },
+            {
+              "stufe": 3,
+              "text": "Loesung: General Joffre stoppte den Vormarsch ca. 40 km vor Paris. Die Schlacht dauerte vom 5. bis 12. September 1914. Moltke wurde am 14.09. abgesetzt — der Plan war gescheitert."
+            }
+          ],
+          "punkte": 10,
+          "text_mit_luecken": "Der franzoesische General {{1}} stoppte den deutschen Vormarsch etwa {{2}} km vor Paris. Die Marne-Schlacht dauerte vom {{3}}. Am 14. September 1914 wurde der deutsche Generalstabs-Chef {{4}} abgesetzt — der Schlieffen-Plan war gescheitert."
+        },
+        {
+          "id": "aufgabe-4-4",
+          "typ": "zuordnung",
+          "frage": "Ordne den zwei Fotos den passenden Quellenkritik-Befund zu.",
+          "material_referenz": [
+            "mat-4-3",
+            "mat-4-4"
+          ],
+          "optionen": {
+            "begriffe": [
+              "Foto deutsche Soldaten an der Marne (mat-4-3)",
+              "Foto franzoesische Infanterie (mat-4-4)"
+            ],
+            "zuordnungen": [
+              "Gestelltes Heeres-Foto — Decorations-Tragen war im aktiven Kampf unueblich",
+              "Manoever-Aufnahme von 1913 — entstanden VOR der Marne-Schlacht (Datums-Falle)",
+              "Echtes Kampf-Foto vom 10. September 1914",
+              "Skizze eines Augenzeugen aus dem Schuetzen-Graben"
+            ]
+          },
+          "loesung": {
+            "Foto deutsche Soldaten an der Marne (mat-4-3)": "Gestelltes Heeres-Foto — Decorations-Tragen war im aktiven Kampf unueblich",
+            "Foto franzoesische Infanterie (mat-4-4)": "Manoever-Aufnahme von 1913 — entstanden VOR der Marne-Schlacht (Datums-Falle)"
+          },
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Schau dir die [[mat-4-3|Bildquelle der deutschen Soldaten]] (M3) und die [[mat-4-4|Bildquelle der franzoesischen Infanterie]] (M4) genau an. Lies bei beiden die Quellenkritik-Bildunterschrift."
+            },
+            {
+              "stufe": 2,
+              "text": "Beim deutschen Foto: Was tragen die Soldaten — und wuerde das im echten Kampf passen? Beim franzoesischen Foto: Achte auf das Datum in der Bildunterschrift. Wann war die Marne-Schlacht?"
+            },
+            {
+              "stufe": 3,
+              "text": "Loesung: Das DT-Foto ist gestellt — Orden im Kampf waren unueblich (Heeres-Selbstdarstellung). Das FR-Foto ist eine Manoever-Aufnahme von 1913 — also vor der Marne-Schlacht 1914 (Datums-Falle). Wichtig: Beide Seiten haben sich aehnlich aufrecht inszeniert — kein Sieger-Verlierer-Mythos."
+            }
+          ],
+          "punkte": 15
+        },
+        {
+          "id": "aufgabe-4-5",
+          "typ": "multiple-choice",
+          "frage": "Was zeigen die Verlust-Zahlen der Marne-Schlacht?",
+          "material_referenz": [
+            "mat-4-5"
+          ],
+          "optionen": [
+            "Mehr als 500.000 Tote und Verwundete in 7 Tagen — Frankreich, Grossbritannien und Deutschland sind alle drei betroffen.",
+            "Nur Deutschland hatte hohe Verluste — Frankreich und Grossbritannien waren kaum betroffen.",
+            "Die Zahlen waren niedrig — die Idee vom kurzen Krieg wurde bestaetigt.",
+            "Nur Frankreich hatte Verluste — die anderen Laender kaempften nicht an der Marne."
+          ],
+          "loesung": "Mehr als 500.000 Tote und Verwundete in 7 Tagen — Frankreich, Grossbritannien und Deutschland sind alle drei betroffen.",
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Schau dir die [[mat-4-5|Verluste-Statistik der Marne-Schlacht]] (M5) genau an. Welche drei Laender stehen in der Tabelle?"
+            },
+            {
+              "stufe": 2,
+              "text": "Rechne die drei Zahlen zusammen. Wie lange dauerte die Schlacht? Was bedeutet das fuer die Idee vom „kurzen Krieg\"?"
+            },
+            {
+              "stufe": 3,
+              "text": "Loesung: Mehr als 500.000 Tote und Verwundete in einer Woche — und alle drei Konfliktparteien (FR, GB, DT) waren betroffen. Diese Wucht zerstoert die Idee vom kurzen Krieg. Wichtig: Soldaten beider Seiten waren Betroffene — kein Sieger-Verlierer-Mythos."
+            }
+          ],
+          "punkte": 10
+        },
+        {
+          "id": "aufgabe-4-6",
+          "typ": "lueckentext",
+          "frage": "Ergaenze die fehlenden Begriffe zum Wendepunkt an der Marne.",
+          "material_referenz": [
+            "mat-4-6"
+          ],
+          "optionen": {
+            "1": [
+              "Schuetzen-Graeben",
+              "Festungen",
+              "Bunker",
+              "Bruecken"
+            ],
+            "2": [
+              "Stellungskrieg",
+              "Bewegungskrieg",
+              "Blitzkrieg",
+              "Bauernkrieg"
+            ],
+            "3": [
+              "vier Jahre",
+              "sechs Monate",
+              "zwei Jahre",
+              "zehn Jahre"
+            ]
+          },
+          "loesung": [
+            "Schuetzen-Graeben",
+            "Stellungskrieg",
+            "vier Jahre"
+          ],
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Schau dir den [[mat-4-6|Darstellungstext zum Stellungskrieg]] (M6) genau an. Wie heisst der zentrale Begriff fuer den neuen Kriegs-Zustand?"
+            },
+            {
+              "stufe": 2,
+              "text": "Im Text steht: „tiefe Loecher und Linien im Boden\". Wie nennt man das mit einem Wort? Und wie viele Jahre dauerte der Krieg am Ende?"
+            },
+            {
+              "stufe": 3,
+              "text": "Loesung: Schuetzen-Graeben sind tiefe Loecher und Linien. Der Stellungskrieg bedeutet: Beide Seiten bleiben in festen Stellungen. Aus 6 Wochen Plan wurden 4 Jahre Krieg. Der Begriff Stellungskrieg ist auch das M4-Code-Element."
+            }
+          ],
+          "punkte": 10,
+          "text_mit_luecken": "An der Marne im September 1914 endete der „kurze Krieg\". Beide Seiten gruben sich ein und bauten {{1}} — also tiefe Loecher und Linien im Boden. Genau das ist der {{2}}: Soldaten bleiben in festen Stellungen und kommen kaum mehr vorwaerts. Aus geplanten sechs Wochen wurden {{3}} Krieg."
+        },
+        {
+          "id": "aufgabe-4-7",
+          "typ": "freitext-code",
+          "frage": "Schreibe in 2-3 Saetzen: Welche vier Befunde aus M1-M4 ergeben den Schluessel-Code? Und welche Frage bleibt offen?",
+          "material_referenz": [
+            "mat-4-6"
+          ],
+          "leitfragen": [
+            "Was war der Befund von Mappe 1 (Pulverfass Europa)?",
+            "Was war der Befund von Mappe 2 (Sarajevo als Ausloeser)?",
+            "Was war der Befund von Mappe 3 (Augustbegeisterung + geteilte Schuld)?",
+            "Was war der Befund von Mappe 4 (Stellungskrieg statt kurzer Krieg)?",
+            "Welche Frage bleibt offen — fuer ein naechstes Game (Stellungskrieg / Heimatfront / Versailles)?"
+          ],
+          "scaffolding": "Beginne mit: „Vor dem Krieg gab es ... (M1). Dann ... (M2). Im August 1914 ... (M3). An der Marne ... (M4). Offen bleibt: ...\"",
+          "loesung": "Pulverfass Ausloeser Augustbegeisterung Stellungskrieg",
+          "erwartungs_horizont": {
+            "anker_mindeststandard": "M1 Buendnisse, M2 Sarajevo, M3 Schuld, M4 Stellungskrieg. Ich frage mich, wie es weiter ging.",
+            "volltext_regelstandard": "Vor dem Krieg gab es Buendnisse und einen Wettlauf um Kolonien (M1). Dann erschoss Princip Franz Ferdinand in Sarajevo (M2). Viele jubelten im August 1914, aber heute wissen wir: Mehrere Maechte waren schuld (M3). Der Plan vom kurzen Krieg scheiterte an der Marne — der Stellungskrieg begann (M4). Offen: Wie war das Leben im Schuetzen-Graben? Und wie endete der Krieg?",
+            "begruendung_maximalstandard": "Wie Volltext + Eigenposition: Mich beeindruckt am meisten, dass niemand den Krieg verhindert hat, obwohl alle die Folgen ahnten. Im naechsten Game will ich verstehen, was Versailles bedeutete — und ob das vermeidbar war."
+          },
+          "tipps": [
+            {
+              "stufe": 1,
+              "text": "Schau dir den [[mat-4-6|Darstellungstext mit dem Folge-Game-Anker]] (M6) genau an. Welche drei Themen werden fuer das naechste Game genannt?"
+            },
+            {
+              "stufe": 2,
+              "text": "Schreibe pro Mappe einen kurzen Befund (M1, M2, M3, M4). Nutze die Schluessel-Begriffe: Pulverfass — Ausloeser — Augustbegeisterung — Stellungskrieg. Am Ende: eine offene Frage."
+            },
+            {
+              "stufe": 3,
+              "text": "Loesung-Anker: M1 = Pulverfass Europa (Buendnisse + Konflikte). M2 = Sarajevo als Ausloeser (28.06.1914). M3 = Augustbegeisterung + geteilte Schuld (Clark-Schlafwandler). M4 = Stellungskrieg statt kurzem Krieg. Offene Frage z.B.: Wie war das Leben im Schuetzen-Graben? Wie endete der Krieg 1918? Diese vier Begriffe sind dein Schluessel-Code."
+            }
+          ],
+          "punkte": 15
+        }
+      ],
+      "sicherung": {
+        "hefteintrag": {
+          "stundenfrage": "Warum scheiterte der deutsche Plan fuer einen schnellen Sieg an der Marne?",
+          "ordnungsmuster": "chronologisch-kausal",
+          "scpl": {
+            "situation": {
+              "kontextsatz": "Schon 1905/06 entwirft General Alfred von Schlieffen einen Plan fuer das deutsche Heer: Frankreich in nur sechs Wochen besiegen — durch das neutrale Belgien.",
+              "fachbegriffe": [
+                "Schlieffen-Plan"
+              ]
+            },
+            "complication": [
+              {
+                "schritt": "Am 4. August 1914 marschieren deutsche Truppen in Belgien ein. Belgien ist neutral, also nicht Teil eines Buendnisses. Genau am gleichen Tag erklaert Grossbritannien Deutschland den Krieg.",
+                "fachbegriff": "Belgien-Verletzung",
+                "darstellung": null
+              },
+              {
+                "schritt": "Die deutschen Soldaten marschieren schnell. Bis zum 20. August faellt Bruessel. Sie sind erschoepft, die Versorgung kommt nicht hinterher. Vom 5. bis 12. September 1914 stoppt der franzoesische General Joseph Joffre den deutschen Vormarsch etwa 40 km vor Paris — die Marne-Schlacht.",
+                "fachbegriff": "Marne-Schlacht",
+                "darstellung": null
+              }
+            ],
+            "problem": {
+              "satz": "Am 14. September wird Generalstabs-Chef Moltke abgesetzt. Der Schlieffen-Plan ist gescheitert. Beide Heere graben sich ein. Das ist der Wendepunkt — der Punkt, an dem sich der Krieg entscheidend aendert.",
+              "fachbegriff": "Wendepunkt"
+            },
+            "loesung": [
+              "Beide Seiten bauen lange Schuetzen-Graeben. Sie kommen kaum mehr vorwaerts. Der Stellungskrieg beginnt: Soldaten bleiben in festen Stellungen.",
+              "Aus geplanten sechs Wochen wurden vier Jahre Krieg."
+            ]
+          },
+          "transfer": {
+            "frage": "Was passiert, wenn ein grosser Plan an der Wirklichkeit scheitert?"
+          },
+          "voraussetzungen": [
+            "M1: Buendnis-System (Dreibund + Triple Entente)",
+            "M2: Buendnisfall, Mobilmachung, GB-Kriegseintritt wegen Belgien",
+            "M3: Augustfieber + Burgfrieden + Quellenkritik (Wer schreibt? Wann? Mit welchem Ziel?)"
+          ],
+          "kernerkenntnisse": [
+            "Schlieffen-Plan (1905/06): Frankreich in 6 Wochen besiegen, ueber das neutrale Belgien.",
+            "Belgien-Verletzung am 4.8.1914 fuehrt zum britischen Kriegseintritt.",
+            "Marne-Schlacht (5.-12.9.1914): Joffre stoppt DT-Vormarsch ca. 40 km vor Paris.",
+            "Wendepunkt: Schlieffen-Plan gescheitert; Moltke abgesetzt 14.9.1914.",
+            "Stellungskrieg: Beide Heere graben sich ein. Aus 6 Wochen werden 4 Jahre Krieg."
+          ],
+          "knoten": [
+            {
+              "id": "K4-1",
+              "label": "Stellungskrieg",
+              "position": "zentrum-unten",
+              "typ": "leitbegriff"
+            },
+            {
+              "id": "K4-2",
+              "label": "Schlieffen-Plan (1905/06)",
+              "position": "oben-links",
+              "typ": "plan"
+            },
+            {
+              "id": "K4-3",
+              "label": "Belgien-Verletzung 4.8.1914",
+              "position": "oben-rechts",
+              "typ": "ereignis"
+            },
+            {
+              "id": "K4-4",
+              "label": "Marne-Schlacht 5.-12.9.1914",
+              "position": "rechts",
+              "typ": "schlacht"
+            },
+            {
+              "id": "K4-5",
+              "label": "Wendepunkt zum Stellungskrieg",
+              "position": "unten-links",
+              "typ": "wendepunkt"
+            }
+          ],
+          "verbindungen": [
+            {
+              "von": "K4-2",
+              "nach": "K4-3",
+              "label": "fordert Belgien-Durchmarsch"
+            },
+            {
+              "von": "K4-3",
+              "nach": "K4-4",
+              "label": "fuehrt nach Frankreich"
+            },
+            {
+              "von": "K4-4",
+              "nach": "K4-5",
+              "label": "scheitert -> wird Wendepunkt"
+            },
+            {
+              "von": "K4-5",
+              "nach": "K4-1",
+              "label": "muendet in"
+            },
+            {
+              "von": "K4-2",
+              "nach": "K4-1",
+              "label": "scheitert an (Klammer: Plan vs. Realitaet)"
+            }
+          ]
+        },
+        "hefteintrag_verweis": "Uebertrage das Tafelbild und die fuenf Schluessel-Begriffe (Schlieffen-Plan, Belgien-Verletzung, Marne-Schlacht, Wendepunkt, Stellungskrieg) in dein Heft. Schreibe in einem Satz: An der Marne im September 1914 endete der 'kurze Krieg' und der Stellungskrieg begann.",
+        "reflexionsimpuls": "Wie hat sich dein Bild vom Krieg veraendert, seit du Mappe 1 (Pulverfass) bis Mappe 4 (Marne) durchgearbeitet hast?",
+        "zusammenfassung": "Du hast nun alle vier Mappen geoeffnet. Der Schlieffen-Plan sah einen Sieg ueber Frankreich in sechs Wochen vor — durch das neutrale Belgien. Am 4. August 1914 marschiert Deutschland in Belgien ein, Grossbritannien erklaert den Krieg. Der schnelle Vormarsch erschoepft die Truppen. Vom 5. bis 12. September stoppt der franzoesische General Joffre den deutschen Vormarsch an der Marne, etwa 40 km vor Paris. Moltke wird abgesetzt, der Plan ist gescheitert. Beide Heere graben sich ein — der Stellungskrieg beginnt.",
+        "ueberleitung": "Der Krieg war jetzt nicht zu Ende — er hatte gerade erst begonnen. Was im Schuetzen-Graben geschah, was die Soldaten erlebten und wie der Krieg nach 1918 endete, das erfaehrst du in einem naechsten Game: Stellungskrieg, Heimatfront und Versailles."
+      },
+      "mappenabschluss": {
+        "schema_version": "1.0",
+        "template_version": "SUB_TEMPLATE_MAPPENABSCHLUSS_v1.0",
+        "phase": "2.2c",
+        "agent": "sub-template-mappenabschluss",
+        "mappe_id": "M4",
+        "mappe_index": 4,
+        "mappe_titel": "Marne 1914 — Das Ende des kurzen Krieges",
+        "game_id": "gpg-erster-weltkrieg-ursachen-run4-v050",
+        "_variante": "B",
+        "letzte_mappe_indikator": true,
+        "stundenfrage_referenz": "Warum scheiterte der deutsche Plan fuer einen schnellen Sieg an der Marne?",
+        "rahmenthema_game": "Wie kam es zum Ersten Weltkrieg — und warum wurde er kein kurzer Krieg?",
+        "reflexion_fragen": [
+          "Schau auf die vier Mappen zurueck: Pulverfass (M1) — Sarajevo (M2) — Augustfieber (M3) — Marne (M4). Welcher dieser vier Befunde hat dein Bild vom Krieg am staerksten veraendert — und warum gerade dieser?",
+          "In M3 hast du eine Bauern-Frau erlebt, die nicht jubelte, als ihr Mann in den Krieg zog. In M4 hast du gesehen, wie der 'kurze Krieg' an der Marne starb. Was sagen dir diese beiden Perspektiven — die der Daheimgebliebenen und die der Soldaten — ueber den Unterschied zwischen Plan und Wirklichkeit?",
+          "Niemand der Maechte 1914 hat den Krieg allein gewollt — und doch ist er gekommen. Was nimmst du aus M1-M4 mit, wenn du heute Nachrichten ueber Konflikte zwischen Staaten hoerst?"
+        ],
+        "ueberleitungssatz": "",
+        "game_abschluss_reflexion": {
+          "vier_mappen_befund_synthese": {
+            "M1_pulverfass": "Europa war vor 1914 schon brennbar: Buendnisse (Dreibund / Triple Entente), Wettruesten und Wettlauf um Kolonien lagen wie Pulverfaesser bereit.",
+            "M2_ausloeser": "Der Schuss von Sarajevo (28.06.1914) war der Funke — der Ausloeser, nicht die Ursache. Die Buendnisketten zogen die Maechte in den Krieg.",
+            "M3_augustbegeisterung": "Im August 1914 jubelten viele in den Staedten. Aber: nicht alle. Auf dem Land, in vielen Familien, war Sorge. Die Schuld war geteilt — wir folgen dem Forschungsstand (Clark: 'Schlafwandler', Fischer-Korrektur).",
+            "M4_marne": "An der Marne im September 1914 endete der 'kurze Krieg' und der Stellungskrieg begann. Aus geplanten sechs Wochen wurden vier Jahre Krieg."
+          },
+          "schluessel_code_komplett": "PULVERFASS — AUSLOESER — AUGUSTBEGEISTERUNG — STELLUNGSKRIEG",
+          "schluessel_code_zerlegung": [
+            {
+              "mappe": "M1",
+              "code_element": "PULVERFASS",
+              "befund": "Europa lag brennbar."
+            },
+            {
+              "mappe": "M2",
+              "code_element": "AUSLOESER",
+              "befund": "Sarajevo als Funke."
+            },
+            {
+              "mappe": "M3",
+              "code_element": "AUGUSTBEGEISTERUNG",
+              "befund": "Stadt-Land-Differenz, geteilte Schuld."
+            },
+            {
+              "mappe": "M4",
+              "code_element": "STELLUNGSKRIEG",
+              "befund": "Plan gescheitert, 4 Jahre Krieg."
+            }
+          ],
+          "synthese_satz_schueler": "Vor dem Krieg lag Europa brennbar (M1). In Sarajevo fiel der Funke (M2). Im August jubelten viele, aber nicht alle (M3). An der Marne starb der Plan vom kurzen Krieg, und der Stellungskrieg begann (M4)."
+        },
+        "multiperspektivitaet_abschluss": {
+          "sieger_verlierer_abschliessend": "Es gab an der Marne keinen einfachen Sieger und keinen einfachen Verlierer. Die franzoesische Armee unter Joffre und die britische BEF stoppten den deutschen Vormarsch — das war ihr Erfolg. Aber: in einer Woche wurden mehr als eine halbe Million Soldaten getoetet oder verwundet — auf beiden Seiten. Die belgische Bevoelkerung hatte den Einmarsch gar nicht gewaehlt. Und die Soldaten in den Schuetzen-Graeben — Deutsche wie Franzosen wie Briten — verloren am Ende fast alle: ihre Heimat-Idee vom kurzen Krieg, ihre Gesundheit, viele ihr Leben.",
+          "fuenf_perspektiven_summary": [
+            {
+              "perspektive": "P1 Deutscher Generalstab (Moltke d.J. / Schlieffen-Erbe)",
+              "befund": "Der Plan scheiterte an der Wirklichkeit — Erschoepfung, Versorgung, franzoesischer Widerstand."
+            },
+            {
+              "perspektive": "P2 Belgische Bevoelkerung+Regierung",
+              "befund": "Opfer einer Neutralitaets-Verletzung. Ihr Land wurde Schlachtfeld, ohne dass sie Krieg gewollt hatten."
+            },
+            {
+              "perspektive": "P3 Franzoesische Armee unter Joffre",
+              "befund": "Defensiv-Sieger der Marne — Paris bleibt frei, der Plan ist gestoppt."
+            },
+            {
+              "perspektive": "P4 Britische BEF unter John French",
+              "befund": "Kriegseintritt wegen Belgien-Bruch, beteiligt am Marne-Stopp."
+            },
+            {
+              "perspektive": "P5 Soldaten beider Seiten",
+              "befund": "Erschoepfung, Versorgungsprobleme, hunderttausende Tote und Verwundete in einer Woche — und danach Schuetzen-Graben."
+            }
+          ],
+          "qg_M3_multiperspektiv_explizit": "Reflexionsfrage 2 greift die nicht-dominanten Perspektiven aus M3 (Bauern-Frau / Stille auf dem Land) und M4 (Soldaten beider Seiten / belgische Bevoelkerung) explizit auf — keine generische Form."
+        },
+        "folge_game_bruecke": {
+          "anker": [
+            "Stellungskrieg",
+            "Heimatfront",
+            "Versailles 1919"
+          ],
+          "bruecke_satz_schueler": "Der Krieg war jetzt nicht zu Ende — er hatte gerade erst begonnen. Was im Schuetzen-Graben geschah, was die Familien zu Hause erlebten und wie der Krieg 1918/19 endete, das ist Stoff fuer ein naechstes Game.",
+          "drei_offene_anker": [
+            {
+              "anker": "Stellungskrieg",
+              "frage_offen": "Wie war das Leben im Schuetzen-Graben — vier Jahre lang?"
+            },
+            {
+              "anker": "Heimatfront",
+              "frage_offen": "Wie veraenderte der Krieg das Leben der Frauen, Kinder und alten Menschen zu Hause?"
+            },
+            {
+              "anker": "Versailles 1919",
+              "frage_offen": "Wie endete der Krieg — und welcher Frieden folgte?"
+            }
+          ],
+          "stoff_vorgriff_check": "PASS — Anker werden NUR als offene Themen benannt. Keine Inhalte aus Folge-Game (Verdun / Somme / 14 Punkte / Versailler Vertrag / Reparationen) werden vorgegeben."
+        },
+        "lehrkraft_sektion": {
+          "schlieffen_plan_mythos_korrektur_ausgewiesen": true,
+          "schlieffen_plan_mythos_hinweis": "Schlieffen-Plan-Mythos (Forschungsstand Terence Zuber u.a., seit ca. 2002): Es gab keinen einzigen, verbindlichen 'Schlieffen-Plan' als fertig ausgearbeitetes Dokument — sondern eine Reihe von Aufmarsch-Skizzen Schlieffens (1905/06) und spaetere Modifikationen Moltkes d.J. Im Schueler-Heft wird der Begriff 'Schlieffen-Plan' bewusst etabliert (Mittelschule R7, Begriffs-Sicherung), muendlich relativieren: 'Der Plan, wie wir ihn im Heft kennen, ist eine vereinfachte Form. Historiker streiten heute, wie genau dieser Plan aussah.'",
+          "didaktische_hinweise_lehrkraft": [
+            "Die Game-Abschluss-Reflexion (Reflexion-Fragen 1-3) ist als muendliche Schluss-Runde gedacht (10-15 Min). Reflexion-Frage 3 (Gegenwartsbezug) bewusst offen halten — keine politische Eigenpositionierung der Lehrkraft.",
+            "Schlieffen-Plan-Mythos-Korrektur: muendlich relativieren (siehe oben), nicht im Heft.",
+            "Marne-Verluste >500.000: als Zahl belassen, nicht visualisieren. Wenn SuS nachfragen: Empathie-Raum oeffnen, aber nicht ausweiten.",
+            "Multiperspektivitaet: Reflexion-Frage 2 explizit auf Bauern-Frau (M3) + Soldaten (M4) verweisen lassen, falls Klasse generisch antwortet.",
+            "Folge-Game-Bruecke: NICHT als Versprechen formulieren, sondern als offene Anker. Der Stoff (Versailler Vertrag, Heimatfront-Frauenarbeit, Verdun) gehoert in eine Folge-Sequenz und darf hier nicht vorweggenommen werden.",
+            "Sieger-Verlierer-Abschluss: Frage stellen 'Wer hat an der Marne gewonnen?' — und Antwort offen halten: Joffre/BEF taktisch ja, aber langfristig hat niemand gewonnen (4 Jahre Stellungskrieg, Millionen Tote)."
+          ],
+          "trigger_sichtbarkeit_policy": "POLICY_TRIGGER_SICHTBARKEIT: Trigger-Hinweise (weltkrieg_grossereignis, konflikt) erscheinen NUR in dieser Lehrkraft-Sektion und im _meta-Block — NICHT im Schueler-Text der reflexion_fragen.",
+          "f_pb_addressed_mappenabschluss": [
+            "F-PB-37 (Quellenkritik / Multiperspektivitaet im Game-Abschluss)",
+            "F-PB-44 (Komposita: Schluessel-Code-Element / Stellungskrieg / Folge-Game-Bruecke — alle aus Mappe bekannt)",
+            "POLICY_TRIGGER_SICHTBARKEIT (PASS)",
+            "M3-Multiperspektiv-Sanity (V19): Reflexion-Frage 2 greift Bauern-Frau (M3 nicht-dominant) + Soldaten (M4 nicht-dominant) explizit auf"
+          ]
+        },
+        "engine_kompatibilitaet": {
+          "data_json_schema": "data_mappe_v1",
+          "vollstaendiger_game_abschluss_code": "PULVERFASS — AUSLOESER — AUGUSTBEGEISTERUNG — STELLUNGSKRIEG",
+          "freischalt_code_m4_ref": "STELLUNGSKRIEG",
+          "render_zone": "MAPPENABSCHLUSS_ZONE_unterhalb_HEFTEINTRAG",
+          "render_position_in_mappe": "nach Sicherung, nach Hefteintrag, vor Game-Abschluss-Bildschirm"
+        },
+        "q_gates": {
+          "MZ1_variante_korrekt": "PASS — Variante B (letzte Mappe), kein Ueberleitungssatz, Game-Abschluss-Reflexion + Folge-Game-Bruecke vorhanden",
+          "MZ2_disjunkt_zu_hefteintrag": "PASS — Reflexion-Fragen sind nicht identisch mit hefteintrag.scpl.loesung[] (kein Wortlaut-Overlap)",
+          "MZ3_keine_faktenabfrage": "PASS — alle 3 Fragen sind Bewertung / Metakognition / Gegenwartsbezug, keine Wissensreproduktion",
+          "MZ4_ueberleitungssatz_var_b": "PASS — bei Var. B nicht erforderlich, leer gesetzt; stattdessen folge_game_bruecke.bruecke_satz_schueler vorhanden",
+          "MZ5_sprachregister_R7": "PASS — alle Schueler-Saetze ueberwiegend 8-15 Wo, keine Schachtel-Saetze, Komposita aus Mappe bekannt",
+          "POLICY_TRIGGER_SICHTBARKEIT": "PASS — keine Trigger-Hinweise im Schueler-Text",
+          "GAME_ABSCHLUSS_4_MAPPEN_BEFUND": "PASS — alle vier Mappen (Pulverfass / Sarajevo / Augustfieber / Marne) explizit synthetisiert",
+          "FOLGE_GAME_BRUECKE_OHNE_STOFFVORGRIFF": "PASS — Anker (Stellungskrieg / Heimatfront / Versailles 1919) als offene Themen, keine Inhalte",
+          "ENGINE_KOMPATIBILITAET": "PASS — data_mappe_v1, vollstaendiger Code dokumentiert",
+          "F0B_PRIMING_R7_ENTLASTEND_NACH_M3": "PASS — Reflexion-Fragen sind metakognitiv-bewertend, kein Wissens-Druck nach M3-Hoehepunkt",
+          "SCHLIEFFEN_PLAN_MYTHOS_KORREKTUR_AUSGEWIESEN": "PASS — explizit in lehrkraft_sektion.schlieffen_plan_mythos_hinweis (Zuber-Forschung)",
+          "MULTIPERSPEKTIVITAET_SIEGER_VERLIERER_ABSCHLIESSEND": "PASS — explizit in multiperspektivitaet_abschluss.sieger_verlierer_abschliessend (kein einfacher Sieger / kein einfacher Verlierer)",
+          "M3_MULTIPERSPEKTIV_SANITY_V19": "PASS — Reflexion-Frage 2 greift nicht-dominante Perspektiven (Bauern-Frau M3 + Soldaten M4) explizit auf, keine generische Form"
+        }
+      }
+    }
+  ]
+}

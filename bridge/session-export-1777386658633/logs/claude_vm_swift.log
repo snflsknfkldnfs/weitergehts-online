@@ -1,0 +1,25 @@
+[VM] 2026-01-17 10:30:04 [info] startVM called for ~/Library/Application Support/Claude/vm_bundles/claudevm.bundle with memoryGB=4
+[VM] 2026-01-17 10:30:04 [info] Using bundle at ~/Library/Application Support/Claude/vm_bundles/claudevm.bundle
+[VM] 2026-01-17 10:30:04 [info] Creating new session data disk (10GB) at ~/Library/Application Support/Claude/vm_bundles/claudevm.bundle/sessiondata.img
+[VM] 2026-01-17 10:30:04 [info] Session data disk created successfully (ASIF format)
+[VM] 2026-01-17 10:30:04 [info] Found smol-bin.img at /Applications/Claude.app/Contents/Resources/smol-bin.img
+[VM] 2026-01-17 10:30:04 [info] Added smol-bin.img as USB mass storage device
+[VM] 2026-01-17 10:30:04 [info] Console device attached, routing to sdk_daemon.log
+[VM] 2026-01-17 10:30:04 [info] Configuration created:
+[VM] 2026-01-17 10:30:04 [info]   - CPUs: 4
+[VM] 2026-01-17 10:30:04 [info]   - Memory: 4GB
+[VM] 2026-01-17 10:30:04 [info]   - Boot: EFI (GRUB)
+[VM] 2026-01-17 10:30:04 [info]   - Rootfs: ~/Library/Application Support/Claude/vm_bundles/claudevm.bundle/rootfs.img
+[VM] 2026-01-17 10:30:04 [info]   - Session data: ~/Library/Application Support/Claude/vm_bundles/claudevm.bundle/sessiondata.img
+[VM] 2026-01-17 10:30:04 [info]   - MAC address: <ip>
+[VM] 2026-01-17 10:30:04 [info]   - Shared directory: ~
+[VM] 2026-01-17 10:30:04 [info] Starting VM...
+[VM] 2026-01-17 10:30:04 [info] Linux VM started successfully
+[VM] 2026-01-17 10:30:15 [info] Guest connected
+[VM] 2026-01-17 10:30:15 [info] Network status: CONNECTED
+[VM] 2026-01-17 10:30:15 [info] Guest ready
+[VM] 2026-01-17 10:30:16 [info] SDK installed successfully: version=2.1.8
+[VM] 2026-01-17 10:30:16 [info] SDK installed: version=2.1.8
+[VM] 2026-01-17 19:32:50 [info] Stopping VM...
+[VM] 2026-01-17 19:32:51 [info] VM stop() completed
+[VM] 2026-01-17 19:32:51 [info] VM stopped successfully

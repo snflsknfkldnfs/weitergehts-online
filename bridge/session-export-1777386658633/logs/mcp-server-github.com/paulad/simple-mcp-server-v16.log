@@ -1,0 +1,52 @@
+2025-05-26T10:17:00.318Z [github.com/paulad/simple-mcp-server-v16] [info] Initializing server...
+2025-05-26T10:17:00.338Z [github.com/paulad/simple-mcp-server-v16] [info] Server started and connected successfully
+Starting Simple MCP Server for Node.js v16...
+Simple MCP Server for Node.js v16 is ready. Press Ctrl+C to stop.
+2025-05-26T10:17:00.507Z [github.com/paulad/simple-mcp-server-v16] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0}
+2025-05-26T10:17:00.509Z [github.com/paulad/simple-mcp-server-v16] [info] Message from server: {"jsonrpc":"2.0","id":0,"error":{"code":-32601,"message":"Method not found"}}
+2025-05-26T10:17:00.568Z [github.com/paulad/simple-mcp-server-v16] [info] Client transport closed
+2025-05-26T10:17:00.569Z [github.com/paulad/simple-mcp-server-v16] [info] Server transport closed
+2025-05-26T10:17:00.569Z [github.com/paulad/simple-mcp-server-v16] [info] Client transport closed
+2025-05-26T10:17:00.569Z [github.com/paulad/simple-mcp-server-v16] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log.
+2025-05-26T10:17:00.569Z [github.com/paulad/simple-mcp-server-v16] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) {"context":"connection"}
+2025-05-26T10:17:00.570Z [github.com/paulad/simple-mcp-server-v16] [info] Server transport closed
+2025-05-26T10:17:00.570Z [github.com/paulad/simple-mcp-server-v16] [info] Client transport closed
+2025-05-26T10:38:49.679Z [github.com/paulad/simple-mcp-server-v16] [info] Initializing server...
+2025-05-26T10:38:49.731Z [github.com/paulad/simple-mcp-server-v16] [info] Server started and connected successfully
+Starting Simple MCP Server for Node.js v16...
+Simple MCP Server for Node.js v16 is ready. Press Ctrl+C to stop.
+2025-05-26T10:38:49.918Z [github.com/paulad/simple-mcp-server-v16] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0}
+2025-05-26T10:38:49.922Z [github.com/paulad/simple-mcp-server-v16] [info] Message from server: {"jsonrpc":"2.0","id":0,"error":{"code":-32601,"message":"Method not found"}}
+2025-05-26T10:38:50.006Z [github.com/paulad/simple-mcp-server-v16] [info] Client transport closed
+2025-05-26T10:38:50.007Z [github.com/paulad/simple-mcp-server-v16] [info] Server transport closed
+2025-05-26T10:38:50.007Z [github.com/paulad/simple-mcp-server-v16] [info] Client transport closed
+2025-05-26T10:38:50.007Z [github.com/paulad/simple-mcp-server-v16] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log.
+2025-05-26T10:38:50.007Z [github.com/paulad/simple-mcp-server-v16] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) {"context":"connection"}
+2025-05-26T10:38:50.008Z [github.com/paulad/simple-mcp-server-v16] [info] Server transport closed
+2025-05-26T10:38:50.008Z [github.com/paulad/simple-mcp-server-v16] [info] Client transport closed
+2025-05-26T17:08:10.167Z [github.com/paulad/simple-mcp-server-v16] [info] Initializing server...
+2025-05-26T17:08:10.374Z [github.com/paulad/simple-mcp-server-v16] [info] Server started and connected successfully
+2025-05-26T17:08:10.404Z [github.com/paulad/simple-mcp-server-v16] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0}
+Starting Simple MCP Server for Node.js v16...
+Simple MCP Server for Node.js v16 is ready. Press Ctrl+C to stop.
+2025-05-26T17:08:10.519Z [github.com/paulad/simple-mcp-server-v16] [info] Message from server: {"jsonrpc":"2.0","id":0,"error":{"code":-32601,"message":"Method not found"}}
+2025-05-26T17:08:10.519Z [github.com/paulad/simple-mcp-server-v16] [info] Client transport closed
+2025-05-26T17:08:10.519Z [github.com/paulad/simple-mcp-server-v16] [info] Server transport closed
+2025-05-26T17:08:10.519Z [github.com/paulad/simple-mcp-server-v16] [info] Client transport closed
+2025-05-26T17:08:10.520Z [github.com/paulad/simple-mcp-server-v16] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log.
+2025-05-26T17:08:10.520Z [github.com/paulad/simple-mcp-server-v16] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) {"context":"connection"}
+2025-05-26T17:08:10.521Z [github.com/paulad/simple-mcp-server-v16] [info] Server transport closed
+2025-05-26T17:08:10.521Z [github.com/paulad/simple-mcp-server-v16] [info] Client transport closed
+2025-05-26T18:08:50.855Z [github.com/paulad/simple-mcp-server-v16] [info] Initializing server...
+2025-05-26T18:08:50.925Z [github.com/paulad/simple-mcp-server-v16] [info] Server started and connected successfully
+2025-05-26T18:08:50.927Z [github.com/paulad/simple-mcp-server-v16] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0}
+Starting Simple MCP Server for Node.js v16...
+Simple MCP Server for Node.js v16 is ready. Press Ctrl+C to stop.
+2025-05-26T18:08:51.038Z [github.com/paulad/simple-mcp-server-v16] [info] Message from server: {"jsonrpc":"2.0","id":0,"error":{"code":-32601,"message":"Method not found"}}
+2025-05-26T18:08:51.039Z [github.com/paulad/simple-mcp-server-v16] [info] Client transport closed
+2025-05-26T18:08:51.039Z [github.com/paulad/simple-mcp-server-v16] [info] Server transport closed
+2025-05-26T18:08:51.039Z [github.com/paulad/simple-mcp-server-v16] [info] Client transport closed
+2025-05-26T18:08:51.039Z [github.com/paulad/simple-mcp-server-v16] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log.
+2025-05-26T18:08:51.039Z [github.com/paulad/simple-mcp-server-v16] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) {"context":"connection"}
+2025-05-26T18:08:51.040Z [github.com/paulad/simple-mcp-server-v16] [info] Server transport closed
+2025-05-26T18:08:51.040Z [github.com/paulad/simple-mcp-server-v16] [info] Client transport closed

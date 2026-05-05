@@ -1,0 +1,308 @@
+2025-06-11T07:16:50.014Z [zapier] [info] Initializing server... { metadata: undefined }
+2025-06-11T07:16:50.078Z [zapier] [error] spawn dummy ENOENT {
+  metadata: {
+    context: 'connection',
+    stack: 'Error: spawn dummy ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-06-11T07:16:50.078Z [zapier] [error] spawn dummy ENOENT {
+  metadata: {
+    stack: 'Error: spawn dummy ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-06-11T07:16:50.081Z [zapier] [info] Server transport closed { metadata: undefined }
+2025-06-11T07:16:50.081Z [zapier] [info] Client transport closed { metadata: undefined }
+2025-06-11T07:16:50.082Z [zapier] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-06-11T07:16:50.082Z [zapier] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-06-11T10:06:27.879Z [zapier] [info] Initializing server... { metadata: undefined }
+2025-06-11T10:06:27.940Z [zapier] [error] spawn dummy ENOENT {
+  metadata: {
+    context: 'connection',
+    stack: 'Error: spawn dummy ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-06-11T10:06:27.941Z [zapier] [error] spawn dummy ENOENT {
+  metadata: {
+    stack: 'Error: spawn dummy ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-06-11T10:06:27.950Z [zapier] [info] Server transport closed { metadata: undefined }
+2025-06-11T10:06:27.950Z [zapier] [info] Client transport closed { metadata: undefined }
+2025-06-11T10:06:27.951Z [zapier] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-06-11T10:06:27.951Z [zapier] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-06-11T10:17:07.255Z [zapier] [info] Initializing server... { metadata: undefined }
+2025-06-11T10:17:07.281Z [zapier] [error] spawn dummy ENOENT {
+  metadata: {
+    context: 'connection',
+    stack: 'Error: spawn dummy ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-06-11T10:17:07.282Z [zapier] [error] spawn dummy ENOENT {
+  metadata: {
+    stack: 'Error: spawn dummy ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-06-11T10:17:07.302Z [zapier] [info] Server transport closed { metadata: undefined }
+2025-06-11T10:17:07.302Z [zapier] [info] Client transport closed { metadata: undefined }
+2025-06-11T10:17:07.303Z [zapier] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-06-11T10:17:07.303Z [zapier] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-06-11T10:22:16.030Z [zapier] [info] Initializing server... { metadata: undefined }
+2025-06-11T10:22:16.052Z [zapier] [error] spawn dummy ENOENT {
+  metadata: {
+    context: 'connection',
+    stack: 'Error: spawn dummy ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-06-11T10:22:16.052Z [zapier] [error] spawn dummy ENOENT {
+  metadata: {
+    stack: 'Error: spawn dummy ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-06-11T10:22:16.065Z [zapier] [info] Server transport closed { metadata: undefined }
+2025-06-11T10:22:16.065Z [zapier] [info] Client transport closed { metadata: undefined }
+2025-06-11T10:22:16.065Z [zapier] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-06-11T10:22:16.065Z [zapier] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-06-12T06:29:44.117Z [zapier] [info] Initializing server... { metadata: undefined }
+2025-06-12T06:29:44.190Z [zapier] [error] spawn dummy ENOENT {
+  metadata: {
+    context: 'connection',
+    stack: 'Error: spawn dummy ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-06-12T06:29:44.190Z [zapier] [error] spawn dummy ENOENT {
+  metadata: {
+    stack: 'Error: spawn dummy ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-06-12T06:29:44.211Z [zapier] [info] Server transport closed { metadata: undefined }
+2025-06-12T06:29:44.211Z [zapier] [info] Client transport closed { metadata: undefined }
+2025-06-12T06:29:44.212Z [zapier] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-06-12T06:29:44.212Z [zapier] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-06-12T12:09:21.244Z [zapier] [info] Initializing server... { metadata: undefined }
+2025-06-12T12:09:21.264Z [zapier] [error] spawn dummy ENOENT {
+  metadata: {
+    context: 'connection',
+    stack: 'Error: spawn dummy ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-06-12T12:09:21.265Z [zapier] [error] spawn dummy ENOENT {
+  metadata: {
+    stack: 'Error: spawn dummy ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-06-12T12:09:21.275Z [zapier] [info] Server transport closed { metadata: undefined }
+2025-06-12T12:09:21.275Z [zapier] [info] Client transport closed { metadata: undefined }
+2025-06-12T12:09:21.275Z [zapier] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-06-12T12:09:21.275Z [zapier] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-06-13T08:35:25.859Z [zapier] [info] Initializing server... { metadata: undefined }
+2025-06-13T08:35:25.881Z [zapier] [error] spawn dummy ENOENT {
+  metadata: {
+    context: 'connection',
+    stack: 'Error: spawn dummy ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-06-13T08:35:25.881Z [zapier] [error] spawn dummy ENOENT {
+  metadata: {
+    stack: 'Error: spawn dummy ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-06-13T08:35:25.907Z [zapier] [info] Server transport closed { metadata: undefined }
+2025-06-13T08:35:25.907Z [zapier] [info] Client transport closed { metadata: undefined }
+2025-06-13T08:35:25.907Z [zapier] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-06-13T08:35:25.907Z [zapier] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-06-13T08:50:04.515Z [zapier] [info] Initializing server... { metadata: undefined }
+2025-06-13T08:50:04.537Z [zapier] [error] spawn dummy ENOENT {
+  metadata: {
+    context: 'connection',
+    stack: 'Error: spawn dummy ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-06-13T08:50:04.537Z [zapier] [error] spawn dummy ENOENT {
+  metadata: {
+    stack: 'Error: spawn dummy ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-06-13T08:50:04.547Z [zapier] [info] Server transport closed { metadata: undefined }
+2025-06-13T08:50:04.547Z [zapier] [info] Client transport closed { metadata: undefined }
+2025-06-13T08:50:04.547Z [zapier] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-06-13T08:50:04.547Z [zapier] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-06-13T08:55:38.413Z [zapier] [info] Initializing server... { metadata: undefined }
+2025-06-13T08:55:38.479Z [zapier] [error] spawn dummy ENOENT {
+  metadata: {
+    context: 'connection',
+    stack: 'Error: spawn dummy ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-06-13T08:55:38.479Z [zapier] [error] spawn dummy ENOENT {
+  metadata: {
+    stack: 'Error: spawn dummy ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-06-13T08:55:38.488Z [zapier] [info] Server transport closed { metadata: undefined }
+2025-06-13T08:55:38.488Z [zapier] [info] Client transport closed { metadata: undefined }
+2025-06-13T08:55:38.488Z [zapier] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-06-13T08:55:38.488Z [zapier] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-06-13T08:57:42.049Z [zapier] [info] Initializing server... { metadata: undefined }
+2025-06-13T08:57:42.077Z [zapier] [error] spawn dummy ENOENT {
+  metadata: {
+    context: 'connection',
+    stack: 'Error: spawn dummy ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-06-13T08:57:42.077Z [zapier] [error] spawn dummy ENOENT {
+  metadata: {
+    stack: 'Error: spawn dummy ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-06-13T08:57:42.089Z [zapier] [info] Server transport closed { metadata: undefined }
+2025-06-13T08:57:42.089Z [zapier] [info] Client transport closed { metadata: undefined }
+2025-06-13T08:57:42.090Z [zapier] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-06-13T08:57:42.090Z [zapier] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-06-14T16:53:53.389Z [zapier] [info] Initializing server... { metadata: undefined }
+2025-06-14T16:53:53.417Z [zapier] [error] spawn dummy ENOENT {
+  metadata: {
+    context: 'connection',
+    stack: 'Error: spawn dummy ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-06-14T16:53:53.418Z [zapier] [error] spawn dummy ENOENT {
+  metadata: {
+    stack: 'Error: spawn dummy ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-06-14T16:53:53.436Z [zapier] [info] Server transport closed { metadata: undefined }
+2025-06-14T16:53:53.436Z [zapier] [info] Client transport closed { metadata: undefined }
+2025-06-14T16:53:53.436Z [zapier] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-06-14T16:53:53.436Z [zapier] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-06-17T09:39:24.068Z [zapier] [info] Initializing server... { metadata: undefined }
+2025-06-17T09:39:24.133Z [zapier] [error] spawn dummy ENOENT {
+  metadata: {
+    context: 'connection',
+    stack: 'Error: spawn dummy ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-06-17T09:39:24.133Z [zapier] [error] spawn dummy ENOENT {
+  metadata: {
+    stack: 'Error: spawn dummy ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-06-17T09:39:24.152Z [zapier] [info] Server transport closed { metadata: undefined }
+2025-06-17T09:39:24.152Z [zapier] [info] Client transport closed { metadata: undefined }
+2025-06-17T09:39:24.152Z [zapier] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-06-17T09:39:24.152Z [zapier] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-06-17T09:45:06.726Z [zapier] [info] Initializing server... { metadata: undefined }
+2025-06-17T09:45:06.748Z [zapier] [error] spawn dummy ENOENT {
+  metadata: {
+    context: 'connection',
+    stack: 'Error: spawn dummy ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-06-17T09:45:06.749Z [zapier] [error] spawn dummy ENOENT {
+  metadata: {
+    stack: 'Error: spawn dummy ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-06-17T09:45:06.762Z [zapier] [info] Server transport closed { metadata: undefined }
+2025-06-17T09:45:06.762Z [zapier] [info] Client transport closed { metadata: undefined }
+2025-06-17T09:45:06.762Z [zapier] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-06-17T09:45:06.762Z [zapier] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-06-17T09:46:57.097Z [zapier] [info] Initializing server... { metadata: undefined }
+2025-06-17T09:46:57.126Z [zapier] [error] spawn dummy ENOENT {
+  metadata: {
+    context: 'connection',
+    stack: 'Error: spawn dummy ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-06-17T09:46:57.127Z [zapier] [error] spawn dummy ENOENT {
+  metadata: {
+    stack: 'Error: spawn dummy ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-06-17T09:46:57.143Z [zapier] [info] Server transport closed { metadata: undefined }
+2025-06-17T09:46:57.143Z [zapier] [info] Client transport closed { metadata: undefined }
+2025-06-17T09:46:57.143Z [zapier] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-06-17T09:46:57.144Z [zapier] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }

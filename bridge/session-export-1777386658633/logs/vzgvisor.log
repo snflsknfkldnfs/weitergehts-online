@@ -1,0 +1,7 @@
+time="2026-04-28T11:40:53+02:00" level=info msg="usernet: starting with sockFD=146"
+time="2026-04-28T11:40:53+02:00" level=info msg="usernet: vmMAC=<ip>"
+time="2026-04-28T11:40:53+02:00" level=info msg="usernet: virtual network created successfully"
+time="2026-04-28T11:40:53+02:00" level=info msg="usernet: net.Conn created from socket, type=*net.UnixConn"
+time="2026-04-28T11:40:53+02:00" level=info msg="usernet: network stack started successfully"
+time="2026-04-28T11:40:53+02:00" level=info msg="usernet: calling AcceptBess..."
+time="2026-04-28T11:41:34+02:00" level=error msg="r.CreateEndpoint() = connection reset by peer"

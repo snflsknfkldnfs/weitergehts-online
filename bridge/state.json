@@ -1,0 +1,27 @@
+{
+  "pair_id": "2c7fcbbc-381c-4629-8f4a-f1aa88ce5e84",
+  "schema_version": "1.0.0",
+  "created_at": "2026-04-27T08:37:42+00:00",
+  "updated_at": "2026-04-27T08:42:10+00:00",
+  "phase": "init",
+  "roles": {
+    "advisor": {
+      "session_id": "eloquent-pensive-pasteur",
+      "expertise_source": "Auto-Memory + Recon-Session-Historie: Track P.1 State (Block A+C DONE inkl. Validator-Fix-Cycle, B.1+B.2 next), Track P.2 State (Phase A+B + B.7b-Hook-Patch KOMPLETT, 3 HIGH closed, Pilot-Bereitschaft), Pilot-Setup game-weimar-pilot-20260425 (Phase 0.1+0.2 PASS, Plugin v0.4.0 Dependency-Architektur), Run-3 Forensik Phase 5 (Plugin v0.4.3 Hardening, 14 F-PB-36..49, S1-S4 Architektur-Befunde), Run-4 Pilot v0.5.0 Phase 0-3.5 + Hotfix DONE, Plugin-Runtime Strict-Separation (Dev=Cowork, Prod=Code-Mode), Plugin-Dev-Workflow Best-Practices (8 Learnings v0.4.x-Cycle), Cowork-Plugin-Install-Workflow + Marketplace Schema-Constraints, Subagent-Thoroughness-Drift, C-ARCHI-AUDIT Recon v1.3 + Audit-Plan v1.1 + Track C1-C3.5 (Sekundaer-Expertise)",
+      "active_since": "2026-04-27T08:37:42+00:00"
+    },
+    "worker": {
+      "session_id": "pending-attach",
+      "active_since": "2026-04-27T08:37:42+00:00"
+    }
+  },
+  "topic": "track-p2-completion-phase-b-audit",
+  "current_round": 0,
+  "rounds": [],
+  "open_blockers": [],
+  "decision_log": [],
+  "status_observations": [],
+  "file_ownership": {},
+  "shared_artifacts": [],
+  "wallclock_estimates": []
+}

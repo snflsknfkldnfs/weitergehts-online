@@ -1,0 +1,23 @@
+2025-05-27T18:58:46.968Z [github.com/modelcontextprotocol/servers/tree/main/src/memory] [info] Initializing server...
+2025-05-27T18:58:47.020Z [github.com/modelcontextprotocol/servers/tree/main/src/memory] [info] Server started and connected successfully
+2025-05-27T18:58:47.068Z [github.com/modelcontextprotocol/servers/tree/main/src/memory] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0}
+~/.nvm/versions/node/v16.20.2/lib/node_modules/npm/node_modules/ini/lib/ini.js:189
+    } catch {
+            ^
+
+SyntaxError: Unexpected token {
+    at createScript (vm.js:80:10)
+    at Object.runInThisContext (vm.js:139:10)
+    at Module._compile (module.js:588:28)
+    at Object.Module._extensions..js (module.js:635:10)
+    at Module.load (module.js:545:32)
+    at tryModuleLoad (module.js:508:12)
+    at Function.Module._load (module.js:500:3)
+    at Module.require (module.js:568:17)
+    at require (internal/module.js:11:18)
+    at Object.<anonymous> (~/.nvm/versions/node/v16.20.2/lib/node_modules/npm/node_modules/@npmcli/config/lib/index.js:3:13)
+2025-05-27T18:58:48.831Z [github.com/modelcontextprotocol/servers/tree/main/src/memory] [info] Server transport closed
+2025-05-27T18:58:48.831Z [github.com/modelcontextprotocol/servers/tree/main/src/memory] [info] Client transport closed
+2025-05-27T18:58:48.831Z [github.com/modelcontextprotocol/servers/tree/main/src/memory] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log.
+2025-05-27T18:58:48.831Z [github.com/modelcontextprotocol/servers/tree/main/src/memory] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) {"context":"connection"}
+2025-05-27T18:58:48.831Z [github.com/modelcontextprotocol/servers/tree/main/src/memory] [info] Client transport closed

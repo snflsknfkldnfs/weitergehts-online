@@ -1,0 +1,261 @@
+2025-05-25T15:05:43.439Z [github.com/paulad/canva-integration] [info] Initializing server...
+2025-05-25T15:05:43.471Z [github.com/paulad/canva-integration] [info] Server started and connected successfully
+2025-05-25T15:05:43.472Z [github.com/paulad/canva-integration] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0}
+node:internal/modules/cjs/loader:562
+      throw e;
+      ^
+
+Error: Cannot find module '~/Documents/Cline/MCP/openrouter-canva/node_modules/@modelcontextprotocol/sdk/dist/server'
+    at createEsmNotFoundErr (node:internal/modules/cjs/loader:1055:15)
+    at finalizeEsmResolution (node:internal/modules/cjs/loader:1048:15)
+    at resolveExports (node:internal/modules/cjs/loader:556:14)
+    at Function.Module._findPath (node:internal/modules/cjs/loader:596:31)
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:1014:27)
+    at Function.Module._load (node:internal/modules/cjs/loader:873:27)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/Documents/Cline/MCP/openrouter-canva/index.js:4:20)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14) {
+  code: 'MODULE_NOT_FOUND',
+  path: '~/Documents/Cline/MCP/openrouter-canva/node_modules/@modelcontextprotocol/sdk/package.json'
+}
+2025-05-25T15:05:47.441Z [github.com/paulad/canva-integration] [info] Server transport closed
+2025-05-25T15:05:47.441Z [github.com/paulad/canva-integration] [info] Client transport closed
+2025-05-25T15:05:47.441Z [github.com/paulad/canva-integration] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log.
+2025-05-25T15:05:47.441Z [github.com/paulad/canva-integration] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) {"context":"connection"}
+2025-05-25T15:05:47.441Z [github.com/paulad/canva-integration] [info] Client transport closed
+2025-05-26T06:37:14.632Z [github.com/paulad/canva-integration] [info] Initializing server...
+2025-05-26T06:37:14.693Z [github.com/paulad/canva-integration] [info] Server started and connected successfully
+2025-05-26T06:37:14.695Z [github.com/paulad/canva-integration] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0}
+node:internal/modules/cjs/loader:562
+      throw e;
+      ^
+
+Error: Cannot find module '~/Documents/Cline/MCP/openrouter-canva/node_modules/@modelcontextprotocol/sdk/dist/server'
+    at createEsmNotFoundErr (node:internal/modules/cjs/loader:1055:15)
+    at finalizeEsmResolution (node:internal/modules/cjs/loader:1048:15)
+    at resolveExports (node:internal/modules/cjs/loader:556:14)
+    at Function.Module._findPath (node:internal/modules/cjs/loader:596:31)
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:1014:27)
+    at Function.Module._load (node:internal/modules/cjs/loader:873:27)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/Documents/Cline/MCP/openrouter-canva/index.js:4:20)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14) {
+  code: 'MODULE_NOT_FOUND',
+  path: '~/Documents/Cline/MCP/openrouter-canva/node_modules/@modelcontextprotocol/sdk/package.json'
+}
+2025-05-26T06:37:14.879Z [github.com/paulad/canva-integration] [info] Server transport closed
+2025-05-26T06:37:14.879Z [github.com/paulad/canva-integration] [info] Client transport closed
+2025-05-26T06:37:14.879Z [github.com/paulad/canva-integration] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log.
+2025-05-26T06:37:14.879Z [github.com/paulad/canva-integration] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) {"context":"connection"}
+2025-05-26T06:37:14.879Z [github.com/paulad/canva-integration] [info] Client transport closed
+2025-05-26T08:01:27.445Z [github.com/paulad/canva-integration] [info] Initializing server...
+2025-05-26T08:01:27.494Z [github.com/paulad/canva-integration] [info] Server started and connected successfully
+2025-05-26T08:01:27.496Z [github.com/paulad/canva-integration] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0}
+node:internal/modules/cjs/loader:562
+      throw e;
+      ^
+
+Error: Cannot find module '~/Documents/Cline/MCP/openrouter-canva/node_modules/@modelcontextprotocol/sdk/dist/server'
+    at createEsmNotFoundErr (node:internal/modules/cjs/loader:1055:15)
+    at finalizeEsmResolution (node:internal/modules/cjs/loader:1048:15)
+    at resolveExports (node:internal/modules/cjs/loader:556:14)
+    at Function.Module._findPath (node:internal/modules/cjs/loader:596:31)
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:1014:27)
+    at Function.Module._load (node:internal/modules/cjs/loader:873:27)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/Documents/Cline/MCP/openrouter-canva/index.js:4:20)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14) {
+  code: 'MODULE_NOT_FOUND',
+  path: '~/Documents/Cline/MCP/openrouter-canva/node_modules/@modelcontextprotocol/sdk/package.json'
+}
+2025-05-26T08:01:27.587Z [github.com/paulad/canva-integration] [info] Server transport closed
+2025-05-26T08:01:27.587Z [github.com/paulad/canva-integration] [info] Client transport closed
+2025-05-26T08:01:27.588Z [github.com/paulad/canva-integration] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log.
+2025-05-26T08:01:27.588Z [github.com/paulad/canva-integration] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) {"context":"connection"}
+2025-05-26T08:01:27.588Z [github.com/paulad/canva-integration] [info] Client transport closed
+2025-05-26T08:02:08.305Z [github.com/paulad/canva-integration] [info] Initializing server...
+2025-05-26T08:02:08.385Z [github.com/paulad/canva-integration] [info] Server started and connected successfully
+2025-05-26T08:02:08.385Z [github.com/paulad/canva-integration] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0}
+node:internal/modules/cjs/loader:597
+      throw e;
+      ^
+
+Error: Cannot find module '~/Documents/Cline/MCP/openrouter-canva/node_modules/@modelcontextprotocol/sdk/dist/server'
+    at createEsmNotFoundErr (node:internal/modules/cjs/loader:1177:15)
+    at finalizeEsmResolution (node:internal/modules/cjs/loader:1165:15)
+    at resolveExports (node:internal/modules/cjs/loader:590:14)
+    at Module._findPath (node:internal/modules/cjs/loader:664:31)
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1126:27)
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:177:18)
+    at Object.<anonymous> (~/Documents/Cline/MCP/openrouter-canva/index.js:4:20)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14) {
+  code: 'MODULE_NOT_FOUND',
+  path: '~/Documents/Cline/MCP/openrouter-canva/node_modules/@modelcontextprotocol/sdk/package.json'
+}
+
+Node.js v18.20.8
+2025-05-26T08:02:09.223Z [github.com/paulad/canva-integration] [info] Server transport closed
+2025-05-26T08:02:09.223Z [github.com/paulad/canva-integration] [info] Client transport closed
+2025-05-26T08:02:09.223Z [github.com/paulad/canva-integration] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log.
+2025-05-26T08:02:09.223Z [github.com/paulad/canva-integration] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) {"context":"connection"}
+2025-05-26T08:02:09.223Z [github.com/paulad/canva-integration] [info] Client transport closed
+2025-05-26T08:03:23.698Z [github.com/paulad/canva-integration] [info] Initializing server...
+2025-05-26T08:03:23.747Z [github.com/paulad/canva-integration] [info] Server started and connected successfully
+2025-05-26T08:03:23.748Z [github.com/paulad/canva-integration] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0}
+node:internal/modules/cjs/loader:562
+      throw e;
+      ^
+
+Error: Cannot find module '~/Documents/Cline/MCP/openrouter-canva/node_modules/@modelcontextprotocol/sdk/dist/server'
+    at createEsmNotFoundErr (node:internal/modules/cjs/loader:1055:15)
+    at finalizeEsmResolution (node:internal/modules/cjs/loader:1048:15)
+    at resolveExports (node:internal/modules/cjs/loader:556:14)
+    at Function.Module._findPath (node:internal/modules/cjs/loader:596:31)
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:1014:27)
+    at Function.Module._load (node:internal/modules/cjs/loader:873:27)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/Documents/Cline/MCP/openrouter-canva/index.js:4:20)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14) {
+  code: 'MODULE_NOT_FOUND',
+  path: '~/Documents/Cline/MCP/openrouter-canva/node_modules/@modelcontextprotocol/sdk/package.json'
+}
+2025-05-26T08:03:23.935Z [github.com/paulad/canva-integration] [info] Server transport closed
+2025-05-26T08:03:23.935Z [github.com/paulad/canva-integration] [info] Client transport closed
+2025-05-26T08:03:23.936Z [github.com/paulad/canva-integration] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log.
+2025-05-26T08:03:23.936Z [github.com/paulad/canva-integration] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) {"context":"connection"}
+2025-05-26T08:03:23.936Z [github.com/paulad/canva-integration] [info] Client transport closed
+2025-05-26T08:05:24.255Z [github.com/paulad/canva-integration] [info] Initializing server...
+2025-05-26T08:05:24.274Z [github.com/paulad/canva-integration] [info] Server started and connected successfully
+2025-05-26T08:05:24.295Z [github.com/paulad/canva-integration] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0}
+node:internal/modules/cjs/loader:562
+      throw e;
+      ^
+
+Error: Cannot find module '~/Documents/Cline/MCP/openrouter-canva/node_modules/@modelcontextprotocol/sdk/dist/server'
+    at createEsmNotFoundErr (node:internal/modules/cjs/loader:1055:15)
+    at finalizeEsmResolution (node:internal/modules/cjs/loader:1048:15)
+    at resolveExports (node:internal/modules/cjs/loader:556:14)
+    at Function.Module._findPath (node:internal/modules/cjs/loader:596:31)
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:1014:27)
+    at Function.Module._load (node:internal/modules/cjs/loader:873:27)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/Documents/Cline/MCP/openrouter-canva/index.js:4:20)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14) {
+  code: 'MODULE_NOT_FOUND',
+  path: '~/Documents/Cline/MCP/openrouter-canva/node_modules/@modelcontextprotocol/sdk/package.json'
+}
+2025-05-26T08:05:24.484Z [github.com/paulad/canva-integration] [info] Server transport closed
+2025-05-26T08:05:24.484Z [github.com/paulad/canva-integration] [info] Client transport closed
+2025-05-26T08:05:24.484Z [github.com/paulad/canva-integration] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log.
+2025-05-26T08:05:24.484Z [github.com/paulad/canva-integration] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) {"context":"connection"}
+2025-05-26T08:05:24.484Z [github.com/paulad/canva-integration] [info] Client transport closed
+2025-05-26T09:26:07.406Z [github.com/paulad/canva-integration] [info] Initializing server...
+2025-05-26T09:26:07.460Z [github.com/paulad/canva-integration] [info] Server started and connected successfully
+2025-05-26T09:26:07.461Z [github.com/paulad/canva-integration] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0}
+node:internal/modules/cjs/loader:562
+      throw e;
+      ^
+
+Error: Cannot find module '~/Documents/Cline/MCP/openrouter-canva/node_modules/@modelcontextprotocol/sdk/dist/server'
+    at createEsmNotFoundErr (node:internal/modules/cjs/loader:1055:15)
+    at finalizeEsmResolution (node:internal/modules/cjs/loader:1048:15)
+    at resolveExports (node:internal/modules/cjs/loader:556:14)
+    at Function.Module._findPath (node:internal/modules/cjs/loader:596:31)
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:1014:27)
+    at Function.Module._load (node:internal/modules/cjs/loader:873:27)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/Documents/Cline/MCP/openrouter-canva/index.js:4:20)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14) {
+  code: 'MODULE_NOT_FOUND',
+  path: '~/Documents/Cline/MCP/openrouter-canva/node_modules/@modelcontextprotocol/sdk/package.json'
+}
+2025-05-26T09:26:07.543Z [github.com/paulad/canva-integration] [info] Server transport closed
+2025-05-26T09:26:07.543Z [github.com/paulad/canva-integration] [info] Client transport closed
+2025-05-26T09:26:07.544Z [github.com/paulad/canva-integration] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log.
+2025-05-26T09:26:07.544Z [github.com/paulad/canva-integration] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) {"context":"connection"}
+2025-05-26T09:26:07.544Z [github.com/paulad/canva-integration] [info] Client transport closed
+2025-05-26T10:38:49.680Z [github.com/paulad/canva-integration] [info] Initializing server...
+2025-05-26T10:38:49.732Z [github.com/paulad/canva-integration] [info] Server started and connected successfully
+node:internal/modules/cjs/loader:562
+      throw e;
+      ^
+
+Error: Cannot find module '~/Documents/Cline/MCP/openrouter-canva/node_modules/@modelcontextprotocol/sdk/dist/server'
+    at createEsmNotFoundErr (node:internal/modules/cjs/loader:1055:15)
+    at finalizeEsmResolution (node:internal/modules/cjs/loader:1048:15)
+    at resolveExports (node:internal/modules/cjs/loader:556:14)
+    at Function.Module._findPath (node:internal/modules/cjs/loader:596:31)
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:1014:27)
+    at Function.Module._load (node:internal/modules/cjs/loader:873:27)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/Documents/Cline/MCP/openrouter-canva/index.js:4:20)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14) {
+  code: 'MODULE_NOT_FOUND',
+  path: '~/Documents/Cline/MCP/openrouter-canva/node_modules/@modelcontextprotocol/sdk/package.json'
+}
+2025-05-26T10:38:49.872Z [github.com/paulad/canva-integration] [info] Server transport closed
+2025-05-26T10:38:49.872Z [github.com/paulad/canva-integration] [info] Client transport closed
+2025-05-26T10:38:49.872Z [github.com/paulad/canva-integration] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log.
+2025-05-26T10:38:49.872Z [github.com/paulad/canva-integration] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) {"context":"connection"}
+2025-05-26T10:38:49.873Z [github.com/paulad/canva-integration] [info] Client transport closed
+2025-05-26T17:08:10.168Z [github.com/paulad/canva-integration] [info] Initializing server...
+2025-05-26T17:08:10.375Z [github.com/paulad/canva-integration] [info] Server started and connected successfully
+2025-05-26T17:08:10.404Z [github.com/paulad/canva-integration] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0}
+node:internal/modules/cjs/loader:562
+      throw e;
+      ^
+
+Error: Cannot find module '~/Documents/Cline/MCP/openrouter-canva/node_modules/@modelcontextprotocol/sdk/dist/server'
+    at createEsmNotFoundErr (node:internal/modules/cjs/loader:1055:15)
+    at finalizeEsmResolution (node:internal/modules/cjs/loader:1048:15)
+    at resolveExports (node:internal/modules/cjs/loader:556:14)
+    at Function.Module._findPath (node:internal/modules/cjs/loader:596:31)
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:1014:27)
+    at Function.Module._load (node:internal/modules/cjs/loader:873:27)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/Documents/Cline/MCP/openrouter-canva/index.js:4:20)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14) {
+  code: 'MODULE_NOT_FOUND',
+  path: '~/Documents/Cline/MCP/openrouter-canva/node_modules/@modelcontextprotocol/sdk/package.json'
+}
+2025-05-26T17:08:10.568Z [github.com/paulad/canva-integration] [info] Server transport closed
+2025-05-26T17:08:10.568Z [github.com/paulad/canva-integration] [info] Client transport closed
+2025-05-26T17:08:10.568Z [github.com/paulad/canva-integration] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log.
+2025-05-26T17:08:10.568Z [github.com/paulad/canva-integration] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) {"context":"connection"}
+2025-05-26T17:08:10.568Z [github.com/paulad/canva-integration] [info] Client transport closed
+2025-05-26T18:08:50.856Z [github.com/paulad/canva-integration] [info] Initializing server...
+2025-05-26T18:08:50.926Z [github.com/paulad/canva-integration] [info] Server started and connected successfully
+2025-05-26T18:08:50.927Z [github.com/paulad/canva-integration] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0}
+node:internal/modules/cjs/loader:562
+      throw e;
+      ^
+
+Error: Cannot find module '~/Documents/Cline/MCP/openrouter-canva/node_modules/@modelcontextprotocol/sdk/dist/server'
+    at createEsmNotFoundErr (node:internal/modules/cjs/loader:1055:15)
+    at finalizeEsmResolution (node:internal/modules/cjs/loader:1048:15)
+    at resolveExports (node:internal/modules/cjs/loader:556:14)
+    at Function.Module._findPath (node:internal/modules/cjs/loader:596:31)
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:1014:27)
+    at Function.Module._load (node:internal/modules/cjs/loader:873:27)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/Documents/Cline/MCP/openrouter-canva/index.js:4:20)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14) {
+  code: 'MODULE_NOT_FOUND',
+  path: '~/Documents/Cline/MCP/openrouter-canva/node_modules/@modelcontextprotocol/sdk/package.json'
+}
+2025-05-26T18:08:51.089Z [github.com/paulad/canva-integration] [info] Server transport closed
+2025-05-26T18:08:51.089Z [github.com/paulad/canva-integration] [info] Client transport closed
+2025-05-26T18:08:51.089Z [github.com/paulad/canva-integration] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log.
+2025-05-26T18:08:51.089Z [github.com/paulad/canva-integration] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) {"context":"connection"}
+2025-05-26T18:08:51.089Z [github.com/paulad/canva-integration] [info] Client transport closed

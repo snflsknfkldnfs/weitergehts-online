@@ -1,0 +1,2876 @@
+2025-11-20T13:15:03.901Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-11-20T13:15:03.921Z [perplexity] [info] Using MCP server command: ~/.nvm/versions/node/v16.20.2/bin/npx with args and path: {
+  metadata: {
+    args: [ '-y', '@perplexity-ai/mcp-server', [length]: 2 ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 9
+    ]
+  }
+} %o
+2025-11-20T13:15:03.921Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-11-20T13:15:04.048Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@perplexity-ai/mcp-server@0.5.0',
+npm WARN EBADENGINE   required: { node: '>=18' },
+npm WARN EBADENGINE   current: { node: 'v16.20.2', npm: '8.19.4' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@modelcontextprotocol/sdk@1.22.0',
+npm WARN EBADENGINE   required: { node: '>=18' },
+npm WARN EBADENGINE   current: { node: 'v16.20.2', npm: '8.19.4' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'undici@6.22.0',
+npm WARN EBADENGINE   required: { node: '>=18.17' },
+npm WARN EBADENGINE   current: { node: 'v16.20.2', npm: '8.19.4' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'eventsource@3.0.7',
+npm WARN EBADENGINE   required: { node: '>=18.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.20.2', npm: '8.19.4' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'eventsource-parser@3.0.6',
+npm WARN EBADENGINE   required: { node: '>=18.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.20.2', npm: '8.19.4' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'express@5.1.0',
+npm WARN EBADENGINE   required: { node: '>= 18' },
+npm WARN EBADENGINE   current: { node: 'v16.20.2', npm: '8.19.4' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'body-parser@2.2.0',
+npm WARN EBADENGINE   required: { node: '>=18' },
+npm WARN EBADENGINE   current: { node: 'v16.20.2', npm: '8.19.4' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'content-disposition@1.0.1',
+npm WARN EBADENGINE   required: { node: '>=18' },
+npm WARN EBADENGINE   current: { node: 'v16.20.2', npm: '8.19.4' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'merge-descriptors@2.0.0',
+npm WARN EBADENGINE   required: { node: '>=18' },
+npm WARN EBADENGINE   current: { node: 'v16.20.2', npm: '8.19.4' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'mime-types@3.0.2',
+npm WARN EBADENGINE   required: { node: '>=18' },
+npm WARN EBADENGINE   current: { node: 'v16.20.2', npm: '8.19.4' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'router@2.2.0',
+npm WARN EBADENGINE   required: { node: '>= 18' },
+npm WARN EBADENGINE   current: { node: 'v16.20.2', npm: '8.19.4' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'send@1.2.0',
+npm WARN EBADENGINE   required: { node: '>= 18' },
+npm WARN EBADENGINE   current: { node: 'v16.20.2', npm: '8.19.4' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'serve-static@2.2.0',
+npm WARN EBADENGINE   required: { node: '>= 18' },
+npm WARN EBADENGINE   current: { node: 'v16.20.2', npm: '8.19.4' }
+npm WARN EBADENGINE }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-11-20T13:15:07.880Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-11-20T13:15:07.880Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:15:07.880Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-11-20T13:15:07.880Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-11-20T13:15:07.881Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:18:18.970Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:18:18.970Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-11-20T13:18:19.001Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-11-20T13:18:19.014Z [perplexity] [info] Using MCP server command: ~/.nvm/versions/node/v16.20.2/bin/npx with args and path: {
+  metadata: {
+    args: [ '-y', '@perplexity-ai/mcp-server', [length]: 2 ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 9
+    ]
+  }
+} %o
+2025-11-20T13:18:19.014Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-11-20T13:18:19.085Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:18:19.085Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-11-20T13:18:19.085Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:18:19.085Z [perplexity] [info] Server transport closed (intentional shutdown) { metadata: undefined }
+2025-11-20T13:18:19.085Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:18:19.085Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-11-20T13:18:19.085Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-11-20T13:18:19.093Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-11-20T13:18:19.093Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:18:19.105Z [perplexity] [info] Using MCP server command: ~/.nvm/versions/node/v16.20.2/bin/npx with args and path: {
+  metadata: {
+    args: [ '-y', '@perplexity-ai/mcp-server', [length]: 2 ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 9
+    ]
+  }
+} %o
+2025-11-20T13:18:19.105Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-11-20T13:18:19.106Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-11-20T13:18:20.121Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-11-20T13:18:20.122Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:18:20.122Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-11-20T13:18:20.122Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-11-20T13:18:20.122Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:18:43.717Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:18:43.717Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-11-20T13:18:43.746Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-11-20T13:18:43.752Z [perplexity] [info] Using MCP server command: ~/.nvm/versions/node/v16.20.2/bin/npx with args and path: {
+  metadata: {
+    args: [ '-y', '@perplexity-ai/mcp-server', [length]: 2 ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 9
+    ]
+  }
+} %o
+2025-11-20T13:18:43.752Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-11-20T13:18:43.849Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+2025-11-20T13:18:43.859Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:18:43.859Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-11-20T13:18:43.859Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:18:43.859Z [perplexity] [info] Server transport closed (intentional shutdown) { metadata: undefined }
+2025-11-20T13:18:43.859Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:18:43.858Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-11-20T13:18:43.864Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-11-20T13:18:43.859Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-11-20T13:18:43.864Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:18:43.874Z [perplexity] [info] Using MCP server command: ~/.nvm/versions/node/v16.20.2/bin/npx with args and path: {
+  metadata: {
+    args: [ '-y', '@perplexity-ai/mcp-server', [length]: 2 ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 9
+    ]
+  }
+} %o
+2025-11-20T13:18:43.874Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-11-20T13:18:43.874Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-11-20T13:18:44.741Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-11-20T13:18:44.742Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:18:44.742Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-11-20T13:18:44.742Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-11-20T13:18:44.742Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:18:58.045Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:18:58.045Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-11-20T13:18:58.182Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-11-20T13:18:58.207Z [perplexity] [info] Using MCP server command: ~/.nvm/versions/node/v16.20.2/bin/npx with args and path: {
+  metadata: {
+    args: [ '-y', '@perplexity-ai/mcp-server', [length]: 2 ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 9
+    ]
+  }
+} %o
+2025-11-20T13:18:58.207Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-11-20T13:18:58.208Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-11-20T13:18:59.460Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-11-20T13:18:59.460Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:18:59.460Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-11-20T13:18:59.460Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-11-20T13:18:59.460Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:19:20.900Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:19:20.900Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-11-20T13:19:21.033Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-11-20T13:19:21.049Z [perplexity] [info] Using MCP server command: ~/.nvm/versions/node/v16.20.2/bin/npx with args and path: {
+  metadata: {
+    args: [ '-y', '@perplexity-ai/mcp-server', [length]: 2 ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 9
+    ]
+  }
+} %o
+2025-11-20T13:19:21.049Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-11-20T13:19:21.050Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-11-20T13:19:22.385Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-11-20T13:19:22.385Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:19:22.385Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-11-20T13:19:22.385Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-11-20T13:19:22.385Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:19:58.055Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:19:58.055Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-11-20T13:19:58.196Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-11-20T13:19:58.216Z [perplexity] [info] Using MCP server command: ~/.nvm/versions/node/v16.20.2/bin/npx with args and path: {
+  metadata: {
+    args: [ '-y', '@perplexity-ai/mcp-server', [length]: 2 ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 9
+    ]
+  }
+} %o
+2025-11-20T13:19:58.216Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-11-20T13:19:58.230Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-11-20T13:19:59.263Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-11-20T13:19:59.263Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:19:59.263Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-11-20T13:19:59.263Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-11-20T13:19:59.263Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:21:29.544Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:21:29.544Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-11-20T13:21:29.544Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-11-20T13:21:29.548Z [perplexity] [info] Using MCP server command: ~/.nvm/versions/node/v16.20.2/bin/npx with args and path: {
+  metadata: {
+    args: [ '-y', '@perplexity-ai/mcp-server', [length]: 2 ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 9
+    ]
+  }
+} %o
+2025-11-20T13:21:29.548Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-11-20T13:21:29.589Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-11-20T13:21:30.366Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-11-20T13:21:30.366Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:21:30.366Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-11-20T13:21:30.366Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-11-20T13:21:30.366Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:21:33.444Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:21:33.444Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-11-20T13:21:33.484Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-11-20T13:21:33.507Z [perplexity] [info] Using MCP server command: ~/.nvm/versions/node/v16.20.2/bin/npx with args and path: {
+  metadata: {
+    args: [ '-y', '@perplexity-ai/mcp-server', [length]: 2 ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 9
+    ]
+  }
+} %o
+2025-11-20T13:21:33.507Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-11-20T13:21:33.507Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-11-20T13:21:40.133Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-11-20T13:21:40.154Z [perplexity] [info] Using MCP server command: ~/.nvm/versions/node/v16.20.2/bin/npx with args and path: {
+  metadata: {
+    args: [ '-y', '@perplexity-ai/mcp-server', [length]: 2 ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 9
+    ]
+  }
+} %o
+2025-11-20T13:21:40.154Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-11-20T13:21:40.261Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-11-20T13:21:41.319Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-11-20T13:21:41.319Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:21:41.319Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-11-20T13:21:41.319Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-11-20T13:21:41.320Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:28:10.944Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:28:10.944Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-11-20T13:28:11.100Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-11-20T13:28:16.651Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-11-20T13:28:16.682Z [perplexity] [info] Using MCP server command: ~/.nvm/versions/node/v16.20.2/bin/npx with args and path: {
+  metadata: {
+    args: [ '-y', '@perplexity-ai/mcp-server', [length]: 2 ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-11-20T13:28:16.683Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-11-20T13:28:16.789Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-11-20T13:28:17.895Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-11-20T13:28:17.895Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:28:17.896Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-11-20T13:28:17.896Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-11-20T13:28:17.896Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:33:36.760Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-20T13:33:36.760Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-11-20T13:33:36.869Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-11-20T13:33:42.941Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-11-20T13:33:42.971Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-11-20T13:33:42.971Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-11-20T13:33:43.062Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+Perplexity MCP Server running on stdio with Ask, Research, Reason, and Search tools
+2025-11-20T13:33:45.161Z [perplexity] [info] Message from server: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2025-06-18","capabilities":{"tools":{"listChanged":true}},"serverInfo":{"name":"io.github.perplexityai/mcp-server","version":"0.5.0"}}} { metadata: undefined }
+2025-11-20T13:33:45.162Z [perplexity] [info] Message from client: {"method":"notifications/initialized","jsonrpc":"2.0"} { metadata: undefined }
+2025-11-20T13:33:45.162Z [perplexity] [info] Message from client: {"method":"tools/list","params":{},"jsonrpc":"2.0","id":1} { metadata: undefined }
+2025-11-20T13:33:45.165Z [perplexity] [info] Message from server: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"perplexity_ask","title":"Ask Perplexity","description":"Engages in a conversation using the Sonar API. Accepts an array of messages (each with a role and content) and returns a chat completion response from the Perplexity model.","inputSchema":{"type":"object","properties":{"messages":{"type":"array","items":{"type":"object","properties":{"role":{"type":"string","description":"Role of the message (e.g., system, user, assistant)"},"content":{"type":"string","description":"The content of the message"}},"required":["role","content"],"additionalProperties":false},"description":"Array of conversation messages"}},"required":["messages"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"},"annotations":{"readOnlyHint":true,"openWorldHint":true},"outputSchema":{"type":"object","properties":{"response":{"type":"string","description":"The chat completion response"}},"required":["response"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}},{"name":"perplexity_research","title":"Deep Research","description":"Performs deep research using the Perplexity API. Accepts an array of messages (each with a role and content) and returns a comprehensive research response with citations.","inputSchema":{"type":"object","properties":{"messages":{"type":"array","items":{"type":"object","properties":{"role":{"type":"string","description":"Role of the message (e.g., system, user, assistant)"},"content":{"type":"string","description":"The content of the message"}},"required":["role","content"],"additionalProperties":false},"description":"Array of conversation messages"},"strip_thinking":{"type":"boolean","description":"If true, removes <think>...</think> tags and their content from the response to save context tokens. Default is false."}},"required":["messages"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"},"annotations":{"readOnlyHint":true,"openWorldHint":true},"outputSchema":{"type":"object","properties":{"response":{"type":"string","description":"The research response"}},"required":["response"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}},{"name":"perplexity_reason","title":"Advanced Reasoning","description":"Performs reasoning tasks using the Perplexity API. Accepts an array of messages (each with a role and content) and returns a well-reasoned response using the sonar-reasoning-pro model.","inputSchema":{"type":"object","properties":{"messages":{"type":"array","items":{"type":"object","properties":{"role":{"type":"string","description":"Role of the message (e.g., system, user, assistant)"},"content":{"type":"string","description":"The content of the message"}},"required":["role","content"],"additionalProperties":false},"description":"Array of conversation messages"},"strip_thinking":{"type":"boolean","description":"If true, removes <think>...</think> tags and their content from the response to save context tokens. Default is false."}},"required":["messages"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"},"annotations":{"readOnlyHint":true,"openWorldHint":true},"outputSchema":{"type":"object","properties":{"response":{"type":"string","description":"The reasoning response"}},"required":["response"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}},{"name":"perplexity_search","title":"Search the Web","description":"Performs web search using the Perplexity Search API. Returns ranked search results with titles, URLs, snippets, and metadata. Perfect for finding up-to-date facts, news, or specific information.","inputSchema":{"type":"object","properties":{"query":{"type":"string","description":"Search query string"},"max_results":{"type":"number","minimum":1,"maximum":20,"description":"Maximum number of results to return (1-20, default: 10)"},"max_tokens_per_page":{"type":"number","minimum":256,"maximum":2048,"description":"Maximum tokens to extract per webpage (default: 1024)"},"country":{"type":"string","description":"ISO 3166-1 alpha-2 country code for regional results (e.g., 'US', 'GB')"}},"required":["query"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"},"annotations":{"readOnlyHint":true,"openWorldHint":true},"outputSchema":{"type":"object","properties":{"results":{"type":"string","description":"Formatted search results"}},"required":["results"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}}]}} { metadata: undefined }
+2025-11-22T11:46:20.639Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-22T11:46:20.639Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-11-22T11:46:20.639Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-22T11:46:20.639Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-11-22T11:46:20.639Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-11-22T11:46:20.698Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-11-22T11:46:20.698Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-22T11:46:21.623Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-22T11:46:21.623Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-11-22T11:46:21.623Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-11-22T11:46:21.648Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-11-22T11:46:21.649Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-11-22T11:46:21.687Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-11-22T11:46:23.837Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-11-22T11:46:23.837Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-22T11:46:23.837Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-11-22T11:46:23.837Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-11-22T11:46:23.837Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-23T08:42:29.949Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-23T08:42:29.949Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-11-23T08:42:29.949Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-11-23T08:42:29.985Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-11-23T08:42:29.985Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-11-23T08:42:30.001Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-11-23T08:42:31.692Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-11-23T08:42:31.692Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-23T08:42:31.692Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-11-23T08:42:31.692Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-11-23T08:42:31.692Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-23T09:00:46.412Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-23T09:00:46.412Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-11-23T09:00:52.103Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-11-23T09:00:52.128Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-11-23T09:00:52.129Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-11-23T09:00:52.242Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-11-23T09:00:53.381Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-11-23T09:00:53.381Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-23T09:00:53.381Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-11-23T09:00:53.381Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-11-23T09:00:53.382Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-23T10:05:13.803Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-23T10:05:13.803Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-11-23T10:05:19.784Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-11-23T10:05:19.813Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-11-23T10:05:19.814Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-11-23T10:05:19.917Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-11-23T10:05:22.390Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-11-23T10:05:22.390Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-23T10:05:22.390Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-11-23T10:05:22.391Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-11-23T10:05:22.391Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-26T07:47:48.311Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-11-26T07:47:48.343Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-11-26T07:47:48.345Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-11-26T07:47:48.448Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+2025-11-26T07:47:50.295Z [perplexity] [info] Message from server: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2025-06-18","capabilities":{"tools":{"listChanged":true}},"serverInfo":{"name":"io.github.perplexityai/mcp-server","version":"0.5.1"}}} { metadata: undefined }
+2025-11-26T07:47:50.295Z [perplexity] [info] Message from client: {"method":"notifications/initialized","jsonrpc":"2.0"} { metadata: undefined }
+2025-11-26T07:47:50.296Z [perplexity] [info] Message from client: {"method":"tools/list","params":{},"jsonrpc":"2.0","id":1} { metadata: undefined }
+2025-11-26T07:47:50.298Z [perplexity] [info] Message from server: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"perplexity_ask","title":"Ask Perplexity","description":"Engages in a conversation using the Sonar API. Accepts an array of messages (each with a role and content) and returns a chat completion response from the Perplexity model.","inputSchema":{"type":"object","properties":{"messages":{"type":"array","items":{"type":"object","properties":{"role":{"type":"string","description":"Role of the message (e.g., system, user, assistant)"},"content":{"type":"string","description":"The content of the message"}},"required":["role","content"],"additionalProperties":false},"description":"Array of conversation messages"}},"required":["messages"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"},"annotations":{"readOnlyHint":true,"openWorldHint":true},"outputSchema":{"type":"object","properties":{"response":{"type":"string","description":"The chat completion response"}},"required":["response"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}},{"name":"perplexity_research","title":"Deep Research","description":"Performs deep research using the Perplexity API. Accepts an array of messages (each with a role and content) and returns a comprehensive research response with citations.","inputSchema":{"type":"object","properties":{"messages":{"type":"array","items":{"type":"object","properties":{"role":{"type":"string","description":"Role of the message (e.g., system, user, assistant)"},"content":{"type":"string","description":"The content of the message"}},"required":["role","content"],"additionalProperties":false},"description":"Array of conversation messages"},"strip_thinking":{"type":"boolean","description":"If true, removes <think>...</think> tags and their content from the response to save context tokens. Default is false."}},"required":["messages"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"},"annotations":{"readOnlyHint":true,"openWorldHint":true},"outputSchema":{"type":"object","properties":{"response":{"type":"string","description":"The research response"}},"required":["response"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}},{"name":"perplexity_reason","title":"Advanced Reasoning","description":"Performs reasoning tasks using the Perplexity API. Accepts an array of messages (each with a role and content) and returns a well-reasoned response using the sonar-reasoning-pro model.","inputSchema":{"type":"object","properties":{"messages":{"type":"array","items":{"type":"object","properties":{"role":{"type":"string","description":"Role of the message (e.g., system, user, assistant)"},"content":{"type":"string","description":"The content of the message"}},"required":["role","content"],"additionalProperties":false},"description":"Array of conversation messages"},"strip_thinking":{"type":"boolean","description":"If true, removes <think>...</think> tags and their content from the response to save context tokens. Default is false."}},"required":["messages"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"},"annotations":{"readOnlyHint":true,"openWorldHint":true},"outputSchema":{"type":"object","properties":{"response":{"type":"string","description":"The reasoning response"}},"required":["response"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}},{"name":"perplexity_search","title":"Search the Web","description":"Performs web search using the Perplexity Search API. Returns ranked search results with titles, URLs, snippets, and metadata. Perfect for finding up-to-date facts, news, or specific information.","inputSchema":{"type":"object","properties":{"query":{"type":"string","description":"Search query string"},"max_results":{"type":"number","minimum":1,"maximum":20,"description":"Maximum number of results to return (1-20, default: 10)"},"max_tokens_per_page":{"type":"number","minimum":256,"maximum":2048,"description":"Maximum tokens to extract per webpage (default: 1024)"},"country":{"type":"string","description":"ISO 3166-1 alpha-2 country code for regional results (e.g., 'US', 'GB')"}},"required":["query"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"},"annotations":{"readOnlyHint":true,"openWorldHint":true},"outputSchema":{"type":"object","properties":{"results":{"type":"string","description":"Formatted search results"}},"required":["results"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}}]}} { metadata: undefined }
+2025-11-26T15:41:31.552Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-26T15:41:31.552Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-11-26T15:41:31.552Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-26T15:41:31.552Z [perplexity] [info] Server transport closed (intentional shutdown) { metadata: undefined }
+2025-11-26T15:41:31.552Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-26T15:41:31.604Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-11-26T15:41:31.604Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-26T15:41:31.552Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-11-26T15:41:39.313Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-11-26T15:41:39.346Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-11-26T15:41:39.346Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-11-26T15:41:39.441Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-11-26T15:41:40.733Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-11-26T15:41:40.733Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-26T15:41:40.734Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-11-26T15:41:40.734Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-11-26T15:41:40.734Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-27T16:50:15.696Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-27T16:50:15.696Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-11-27T16:50:15.696Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-11-27T16:50:15.768Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-11-27T16:50:15.772Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-11-27T16:50:15.786Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-11-27T16:50:17.759Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-11-27T16:50:17.759Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-27T16:50:17.759Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-11-27T16:50:17.759Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-11-27T16:50:17.759Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-30T04:24:48.528Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-30T04:24:48.528Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-11-30T04:56:42.919Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-11-30T04:56:42.944Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-11-30T04:56:42.946Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-11-30T04:56:43.141Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-11-30T04:56:44.150Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-11-30T04:56:44.150Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-30T04:56:44.151Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-11-30T04:56:44.151Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-11-30T04:56:44.151Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-30T08:23:53.185Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-30T08:23:53.185Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-11-30T08:23:58.645Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-11-30T08:23:58.670Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-11-30T08:23:58.671Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-11-30T08:23:58.773Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-11-30T08:24:00.124Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-11-30T08:24:00.124Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-30T08:24:00.125Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-11-30T08:24:00.125Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-11-30T08:24:00.125Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-30T09:39:24.883Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-30T09:39:24.883Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-11-30T09:39:24.884Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-11-30T09:39:24.915Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-11-30T09:39:24.917Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-11-30T09:39:24.973Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-11-30T09:39:25.966Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-11-30T09:39:25.966Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-30T09:39:25.966Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-11-30T09:39:25.966Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-11-30T09:39:25.966Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-30T18:05:52.288Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-30T18:05:52.288Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-11-30T18:06:00.730Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-11-30T18:06:00.766Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-11-30T18:06:00.769Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-11-30T18:06:00.882Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-11-30T18:06:02.444Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-11-30T18:06:02.444Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-11-30T18:06:02.445Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-11-30T18:06:02.445Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-11-30T18:06:02.445Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-02T10:13:07.798Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-02T10:13:07.798Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-12-02T10:13:07.798Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-12-02T10:13:07.822Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-12-02T10:13:07.846Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-12-02T10:13:07.911Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-12-02T10:13:09.403Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-12-02T10:13:09.403Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-02T10:13:09.403Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-12-02T10:13:09.403Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-12-02T10:13:09.403Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-03T17:48:14.550Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-03T17:48:14.550Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-12-03T17:48:14.550Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-12-03T17:48:14.579Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-12-03T17:48:14.582Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-12-03T17:48:14.605Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-12-03T17:48:16.275Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-12-03T17:48:16.275Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-03T17:48:16.275Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-12-03T17:48:16.275Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-12-03T17:48:16.275Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-03T19:31:09.626Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-03T19:31:09.626Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-12-03T19:31:09.627Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-12-03T19:31:09.644Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-12-03T19:31:09.645Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-12-03T19:31:09.677Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-12-03T19:31:11.421Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-12-03T19:31:11.421Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-03T19:31:11.421Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-12-03T19:31:11.421Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-12-03T19:31:11.421Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-05T20:25:49.879Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-05T20:25:49.879Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-12-05T20:25:50.118Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-12-05T20:25:50.132Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-12-05T20:25:50.135Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-12-05T20:25:50.144Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-05T20:25:50.144Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-12-05T20:25:50.144Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-05T20:25:50.144Z [perplexity] [info] Server transport closed (intentional shutdown) { metadata: undefined }
+2025-12-05T20:25:50.144Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-05T20:25:50.146Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-12-05T20:25:50.146Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-05T20:25:50.144Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-12-05T20:25:50.145Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-12-05T20:25:50.152Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-12-05T20:25:50.153Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-12-05T20:54:29.470Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-12-05T20:54:29.487Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-12-05T20:54:29.488Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-12-05T20:54:29.842Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-12-05T20:54:30.786Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-12-05T20:54:30.786Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-05T20:54:30.787Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-12-05T20:54:30.787Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-12-05T20:54:30.787Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-06T08:12:37.984Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-06T08:12:37.984Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-12-06T08:12:37.984Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-12-06T08:12:38.039Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-12-06T08:12:38.040Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-12-06T08:12:38.069Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-12-06T08:12:39.614Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-12-06T08:12:39.614Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-06T08:12:39.614Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-12-06T08:12:39.614Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-12-06T08:12:39.614Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-07T10:39:39.403Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-07T10:39:39.402Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-12-07T13:30:05.974Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-12-07T13:30:06.061Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-12-07T13:30:06.066Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-12-07T13:30:06.797Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-12-07T13:30:09.000Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-12-07T13:30:09.000Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-07T13:30:09.000Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-12-07T13:30:09.000Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-12-07T13:30:09.001Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-12T16:24:42.080Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-12T16:24:42.080Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-12-14T07:26:09.179Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-12-14T07:26:09.221Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-12-14T07:26:09.221Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-12-14T07:26:09.368Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-12-14T07:26:12.949Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-12-14T07:26:12.949Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-14T07:26:12.949Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-12-14T07:26:12.949Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-12-14T07:26:12.950Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-14T07:56:15.240Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-14T07:56:15.239Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-12-14T07:56:15.492Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-12-14T07:56:15.509Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-12-14T07:56:15.509Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-12-14T07:56:15.510Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-12-14T07:56:16.973Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-12-14T07:56:16.973Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-14T07:56:16.973Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-12-14T07:56:16.973Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-12-14T07:56:16.973Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-14T07:56:56.260Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-14T07:56:56.260Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-12-14T07:56:56.396Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-12-14T07:56:56.423Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-12-14T07:56:56.424Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-12-14T07:56:56.425Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-12-14T07:56:57.795Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-12-14T07:56:57.795Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-14T07:56:57.795Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-12-14T07:56:57.795Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-12-14T07:56:57.795Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-14T07:57:11.272Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-14T07:57:11.272Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-12-14T07:57:11.455Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-12-14T07:57:11.470Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-12-14T07:57:11.470Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-12-14T07:57:11.475Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-12-14T07:57:12.764Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-12-14T07:57:12.764Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-14T07:57:12.764Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-12-14T07:57:12.764Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-12-14T07:57:12.764Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-16T14:28:55.302Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-16T14:28:55.302Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-12-16T14:28:55.302Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-12-16T14:28:55.322Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-12-16T14:28:55.322Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-12-16T14:28:55.495Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-12-16T14:28:57.106Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-12-16T14:28:57.106Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-16T14:28:57.106Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-12-16T14:28:57.106Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-12-16T14:28:57.106Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-16T14:29:35.694Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-16T14:29:35.694Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-12-16T14:29:41.440Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-12-16T14:29:41.477Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-12-16T14:29:41.478Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-12-16T14:29:41.624Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-12-16T14:29:42.956Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-12-16T14:29:42.957Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-16T14:29:42.957Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-12-16T14:29:42.957Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-12-16T14:29:42.957Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-18T07:01:09.030Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-18T07:01:09.030Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-12-18T07:01:09.030Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-12-18T07:01:10.482Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-12-18T07:01:10.483Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-12-18T07:01:10.771Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-12-18T07:01:15.320Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-12-18T07:01:15.321Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-18T07:01:15.321Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-12-18T07:01:15.321Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-12-18T07:01:15.321Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-18T17:07:05.049Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-18T17:07:05.049Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-12-18T17:07:05.049Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-12-18T17:07:05.075Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-12-18T17:07:05.075Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-12-18T17:07:05.416Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-12-18T17:07:06.839Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-12-18T17:07:06.839Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-18T17:07:06.839Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-12-18T17:07:06.839Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-12-18T17:07:06.839Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-19T06:35:10.266Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-19T06:35:10.265Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-12-19T06:35:10.266Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-12-19T06:35:10.276Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-12-19T06:35:10.278Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-12-19T06:35:10.355Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-12-19T06:35:15.462Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-12-19T06:35:15.464Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-19T06:35:15.464Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-12-19T06:35:15.464Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-12-19T06:35:15.465Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-19T12:53:31.911Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-19T12:53:31.911Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-12-19T12:53:31.911Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-12-19T12:53:31.941Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-12-19T12:53:31.941Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-12-19T12:53:31.950Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-12-19T12:53:33.544Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-12-19T12:53:33.544Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-19T12:53:33.544Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-12-19T12:53:33.544Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-12-19T12:53:33.544Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-20T20:27:36.650Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-20T20:27:36.650Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-12-20T20:27:53.157Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-12-20T20:27:53.201Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-12-20T20:27:53.201Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-12-20T20:27:54.907Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-12-20T20:27:54.907Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-20T20:27:54.907Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-12-20T20:27:54.907Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-12-20T20:27:54.908Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-22T09:01:55.069Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-22T09:01:55.069Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2025-12-22T09:01:55.069Z [perplexity] [info] Initializing server... { metadata: undefined }
+2025-12-22T09:01:55.086Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-12-22T09:01:55.087Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2025-12-22T09:01:55.100Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2025-12-22T09:01:57.296Z [perplexity] [info] Server transport closed { metadata: undefined }
+2025-12-22T09:01:57.296Z [perplexity] [info] Client transport closed { metadata: undefined }
+2025-12-22T09:01:57.297Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-12-22T09:01:57.297Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-12-22T09:01:57.297Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-02T09:02:39.132Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-02T09:02:39.132Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2026-01-02T09:02:39.132Z [perplexity] [info] Initializing server... { metadata: undefined }
+2026-01-02T09:02:39.173Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2026-01-02T09:02:39.173Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2026-01-02T09:02:39.181Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+npm notice
+npm notice New major version of npm available! 10.8.2 -> 11.7.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.7.0
+npm notice To update run: npm install -g npm@11.7.0
+npm notice
+2026-01-02T09:02:40.985Z [perplexity] [info] Server transport closed { metadata: undefined }
+2026-01-02T09:02:40.985Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-02T09:02:40.985Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2026-01-02T09:02:40.985Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2026-01-02T09:02:40.985Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-10T08:57:21.167Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-10T08:57:21.167Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2026-01-10T09:47:03.808Z [perplexity] [info] Initializing server... { metadata: undefined }
+2026-01-10T09:47:04.063Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2026-01-10T09:47:04.067Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2026-01-10T09:47:04.972Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+2026-01-10T09:47:06.788Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-10T09:47:06.788Z [perplexity] [info] Server transport closed { metadata: undefined }
+2026-01-10T09:47:06.788Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-10T09:47:06.788Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2026-01-10T09:47:06.788Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2026-01-10T09:47:07.008Z [perplexity] [info] Server transport closed { metadata: undefined }
+2026-01-10T09:47:07.008Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-10T10:38:27.142Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-10T10:38:27.142Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2026-01-10T10:38:27.142Z [perplexity] [info] Initializing server... { metadata: undefined }
+2026-01-10T10:38:27.155Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2026-01-10T10:38:27.156Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2026-01-10T10:38:27.360Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2026-01-10T10:38:42.029Z [perplexity] [info] Server transport closed { metadata: undefined }
+2026-01-10T10:38:42.029Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-10T10:38:42.029Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2026-01-10T10:38:42.029Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2026-01-10T10:38:42.030Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-11T08:49:38.989Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-11T08:49:38.989Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2026-01-11T08:49:38.989Z [perplexity] [info] Initializing server... { metadata: undefined }
+2026-01-11T08:49:39.036Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2026-01-11T08:49:39.036Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2026-01-11T08:49:39.189Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2026-01-11T08:49:40.865Z [perplexity] [info] Server transport closed { metadata: undefined }
+2026-01-11T08:49:40.865Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-11T08:49:40.865Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2026-01-11T08:49:40.865Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2026-01-11T08:49:40.865Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-11T09:15:38.836Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-11T09:15:38.836Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2026-01-11T09:15:52.718Z [perplexity] [info] Initializing server... { metadata: undefined }
+2026-01-11T09:15:52.750Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2026-01-11T09:15:52.750Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2026-01-11T09:15:52.839Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+2026-01-11T09:15:53.525Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-11T09:15:53.525Z [perplexity] [info] Server transport closed { metadata: undefined }
+2026-01-11T09:15:53.525Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-11T09:15:53.525Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2026-01-11T09:15:53.525Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2026-01-11T09:15:53.901Z [perplexity] [info] Server transport closed { metadata: undefined }
+2026-01-11T09:15:53.901Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-11T09:15:54.579Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-11T09:15:54.579Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2026-01-11T09:15:54.579Z [perplexity] [info] Initializing server... { metadata: undefined }
+2026-01-11T09:15:54.593Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2026-01-11T09:15:54.594Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2026-01-11T09:15:54.735Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2026-01-11T09:15:56.340Z [perplexity] [info] Server transport closed { metadata: undefined }
+2026-01-11T09:15:56.340Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-11T09:15:56.340Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2026-01-11T09:15:56.340Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2026-01-11T09:15:56.341Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-11T09:16:07.231Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-11T09:16:07.231Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2026-01-11T09:16:07.231Z [perplexity] [info] Initializing server... { metadata: undefined }
+2026-01-11T09:16:07.236Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2026-01-11T09:16:07.237Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2026-01-11T09:16:07.348Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2026-01-11T09:16:08.067Z [perplexity] [info] Server transport closed { metadata: undefined }
+2026-01-11T09:16:08.067Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-11T09:16:08.067Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2026-01-11T09:16:08.067Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2026-01-11T09:16:08.067Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-15T07:23:59.521Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-15T07:23:59.521Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2026-01-15T07:23:59.521Z [perplexity] [info] Initializing server... { metadata: undefined }
+2026-01-15T07:23:59.550Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2026-01-15T07:23:59.551Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2026-01-15T07:23:59.571Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2026-01-15T07:24:03.877Z [perplexity] [info] Server transport closed { metadata: undefined }
+2026-01-15T07:24:03.877Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-15T07:24:03.877Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2026-01-15T07:24:03.877Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2026-01-15T07:24:03.877Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-16T07:45:55.864Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-16T07:45:55.864Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2026-01-16T07:45:55.864Z [perplexity] [info] Initializing server... { metadata: undefined }
+2026-01-16T07:45:55.893Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2026-01-16T07:45:55.894Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2026-01-16T07:45:55.996Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2026-01-16T07:45:58.272Z [perplexity] [info] Server transport closed { metadata: undefined }
+2026-01-16T07:45:58.272Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-16T07:45:58.272Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2026-01-16T07:45:58.272Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2026-01-16T07:45:58.272Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-16T08:38:05.382Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-16T08:38:05.382Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2026-01-16T08:38:16.419Z [perplexity] [info] Initializing server... { metadata: undefined }
+2026-01-16T08:38:16.449Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2026-01-16T08:38:16.449Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2026-01-16T08:38:16.617Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2026-01-16T08:38:19.256Z [perplexity] [info] Server transport closed { metadata: undefined }
+2026-01-16T08:38:19.256Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-16T08:38:19.256Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2026-01-16T08:38:19.256Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2026-01-16T08:38:19.257Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-16T08:38:22.539Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-16T08:38:22.539Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2026-01-16T08:38:22.540Z [perplexity] [info] Initializing server... { metadata: undefined }
+2026-01-16T08:38:22.555Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2026-01-16T08:38:22.555Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2026-01-16T08:38:22.689Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2026-01-16T08:38:24.236Z [perplexity] [info] Server transport closed { metadata: undefined }
+2026-01-16T08:38:24.236Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-16T08:38:24.236Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2026-01-16T08:38:24.236Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2026-01-16T08:38:24.236Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-16T08:38:38.928Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-16T08:38:38.928Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2026-01-16T08:38:38.928Z [perplexity] [info] Initializing server... { metadata: undefined }
+2026-01-16T08:38:38.951Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2026-01-16T08:38:38.952Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2026-01-16T08:38:39.105Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2026-01-16T08:38:40.711Z [perplexity] [info] Server transport closed { metadata: undefined }
+2026-01-16T08:38:40.711Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-16T08:38:40.711Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2026-01-16T08:38:40.711Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2026-01-16T08:38:40.711Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-16T08:38:43.081Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-16T08:38:43.081Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2026-01-16T08:38:43.083Z [perplexity] [info] Initializing server... { metadata: undefined }
+2026-01-16T08:38:43.156Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2026-01-16T08:38:43.157Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2026-01-16T08:38:43.505Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+2026-01-16T08:38:44.342Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-16T08:38:44.342Z [perplexity] [info] Server transport closed { metadata: undefined }
+2026-01-16T08:38:44.342Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-16T08:38:44.342Z [perplexity] [info] Server transport closed (intentional shutdown) { metadata: undefined }
+2026-01-16T08:38:44.342Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-16T08:38:44.405Z [perplexity] [info] Server transport closed { metadata: undefined }
+2026-01-16T08:38:44.405Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-16T08:38:44.342Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2026-01-16T08:38:51.980Z [perplexity] [info] Initializing server... { metadata: undefined }
+2026-01-16T08:38:52.019Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2026-01-16T08:38:52.020Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2026-01-16T08:38:52.099Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+2026-01-16T08:38:59.990Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-16T08:38:59.990Z [perplexity] [info] Server transport closed { metadata: undefined }
+2026-01-16T08:38:59.990Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-16T08:38:59.990Z [perplexity] [info] Server transport closed (intentional shutdown) { metadata: undefined }
+2026-01-16T08:38:59.990Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-16T08:38:59.990Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2026-01-16T08:38:59.990Z [perplexity] [info] Initializing server... { metadata: undefined }
+2026-01-16T08:39:00.000Z [perplexity] [info] Server transport closed { metadata: undefined }
+2026-01-16T08:39:00.000Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-16T08:39:00.007Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2026-01-16T08:39:00.008Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2026-01-16T08:39:00.015Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2026-01-16T08:39:01.912Z [perplexity] [info] Server transport closed { metadata: undefined }
+2026-01-16T08:39:01.912Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-16T08:39:01.912Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2026-01-16T08:39:01.912Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2026-01-16T08:39:01.913Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-17T01:34:48.533Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-17T01:34:48.533Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2026-01-17T09:19:55.263Z [perplexity] [info] Initializing server... { metadata: undefined }
+2026-01-17T09:19:55.341Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2026-01-17T09:19:55.342Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2026-01-17T09:19:55.618Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2026-01-17T09:19:58.373Z [perplexity] [info] Server transport closed { metadata: undefined }
+2026-01-17T09:19:58.373Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-17T09:19:58.374Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2026-01-17T09:19:58.374Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2026-01-17T09:19:58.374Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-17T09:20:23.105Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-17T09:20:23.105Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2026-01-17T09:20:23.105Z [perplexity] [info] Initializing server... { metadata: undefined }
+2026-01-17T09:20:23.117Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2026-01-17T09:20:23.120Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2026-01-17T09:20:24.349Z [perplexity] [info] Server transport closed { metadata: undefined }
+2026-01-17T09:20:24.349Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-17T09:20:24.349Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2026-01-17T09:20:24.349Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2026-01-17T09:20:24.350Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-17T09:22:32.495Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-17T09:22:32.495Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2026-01-17T09:22:32.731Z [perplexity] [info] Initializing server... { metadata: undefined }
+2026-01-17T09:22:32.751Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2026-01-17T09:22:32.751Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2026-01-17T09:22:32.802Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+2026-01-17T09:22:33.920Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-17T09:22:33.920Z [perplexity] [info] Server transport closed { metadata: undefined }
+2026-01-17T09:22:33.920Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-17T09:22:33.920Z [perplexity] [info] Server transport closed (intentional shutdown) { metadata: undefined }
+2026-01-17T09:22:33.920Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-17T09:22:33.975Z [perplexity] [info] Server transport closed { metadata: undefined }
+2026-01-17T09:22:33.975Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-17T09:22:33.920Z [perplexity] [info] Shutting down server... { metadata: undefined }
+2026-01-17T09:22:34.147Z [perplexity] [info] Initializing server... { metadata: undefined }
+2026-01-17T09:22:34.165Z [perplexity] [info] Using MCP server command: /opt/homebrew/bin/node with args and path: {
+  metadata: {
+    args: [
+      '/opt/homebrew/bin/npx',
+      '-y',
+      '@perplexity-ai/mcp-server',
+      [length]: 3
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2026-01-17T09:22:34.166Z [perplexity] [info] Server started and connected successfully { metadata: undefined }
+2026-01-17T09:22:34.215Z [perplexity] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533
+  ReadableStream
+  ^
+
+ReferenceError: ReadableStream is not defined
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/response.js:533:3)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+    at Module.load (node:internal/modules/cjs/loader:1076:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:911:12)
+    at Module.require (node:internal/modules/cjs/loader:1100:19)
+    at require (node:internal/modules/cjs/helpers:119:18)
+    at Object.<anonymous> (~/.npm/_npx/69ddfc199ed18233/node_modules/undici/lib/web/fetch/index.js:11:5)
+    at Module._compile (node:internal/modules/cjs/loader:1198:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1252:10)
+2026-01-17T09:22:36.149Z [perplexity] [info] Server transport closed { metadata: undefined }
+2026-01-17T09:22:36.149Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-17T09:22:36.149Z [perplexity] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2026-01-17T09:22:36.149Z [perplexity] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2026-01-17T09:22:36.149Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-17T09:25:34.319Z [perplexity] [info] Client transport closed { metadata: undefined }
+2026-01-17T09:25:34.319Z [perplexity] [info] Shutting down server... { metadata: undefined }

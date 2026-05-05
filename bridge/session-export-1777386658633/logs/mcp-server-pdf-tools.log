@@ -1,0 +1,299 @@
+2025-07-01T06:34:04.009Z [pdf-tools] [info] Initializing server... { metadata: undefined }
+2025-07-01T06:34:04.058Z [pdf-tools] [info] Generated authentication token for server { metadata: undefined }
+2025-07-01T06:34:04.093Z [pdf-tools] [error] spawn uv ENOENT {
+  metadata: {
+    context: 'connection',
+    stack: 'Error: spawn uv ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-07-01T06:34:04.094Z [pdf-tools] [error] spawn uv ENOENT {
+  metadata: {
+    stack: 'Error: spawn uv ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-07-01T06:34:04.101Z [pdf-tools] [info] Server transport closed { metadata: undefined }
+2025-07-01T06:34:04.101Z [pdf-tools] [info] Client transport closed { metadata: undefined }
+2025-07-01T06:34:04.102Z [pdf-tools] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-07-01T06:34:04.102Z [pdf-tools] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-07-01T06:36:10.460Z [pdf-tools] [info] Initializing server... { metadata: undefined }
+2025-07-01T06:36:10.501Z [pdf-tools] [info] Generated authentication token for server { metadata: undefined }
+2025-07-01T06:36:10.542Z [pdf-tools] [error] spawn uv ENOENT {
+  metadata: {
+    context: 'connection',
+    stack: 'Error: spawn uv ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-07-01T06:36:10.542Z [pdf-tools] [error] spawn uv ENOENT {
+  metadata: {
+    stack: 'Error: spawn uv ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-07-01T06:36:10.544Z [pdf-tools] [info] Server transport closed { metadata: undefined }
+2025-07-01T06:36:10.544Z [pdf-tools] [info] Client transport closed { metadata: undefined }
+2025-07-01T06:36:10.545Z [pdf-tools] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-07-01T06:36:10.545Z [pdf-tools] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-07-01T06:37:10.820Z [pdf-tools] [info] Initializing server... { metadata: undefined }
+2025-07-01T06:37:10.862Z [pdf-tools] [info] Generated authentication token for server { metadata: undefined }
+2025-07-01T06:37:10.897Z [pdf-tools] [error] spawn uv ENOENT {
+  metadata: {
+    context: 'connection',
+    stack: 'Error: spawn uv ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-07-01T06:37:10.897Z [pdf-tools] [error] spawn uv ENOENT {
+  metadata: {
+    stack: 'Error: spawn uv ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-07-01T06:37:10.903Z [pdf-tools] [info] Server transport closed { metadata: undefined }
+2025-07-01T06:37:10.903Z [pdf-tools] [info] Client transport closed { metadata: undefined }
+2025-07-01T06:37:10.903Z [pdf-tools] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-07-01T06:37:10.903Z [pdf-tools] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-07-01T06:43:59.450Z [pdf-tools] [info] Initializing server... { metadata: undefined }
+2025-07-01T06:43:59.551Z [pdf-tools] [info] Using MCP server command: uv with args and path: {
+  metadata: {
+    args: [
+      '--directory',
+      '~/snflsknfkldnfs.github.io/mcp-pdf-tools',
+      'run',
+      'pdf-tools',
+      [length]: 4
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-07-01T06:43:59.557Z [pdf-tools] [error] spawn uv ENOENT {
+  metadata: {
+    context: 'connection',
+    stack: 'Error: spawn uv ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-07-01T06:43:59.558Z [pdf-tools] [error] spawn uv ENOENT {
+  metadata: {
+    stack: 'Error: spawn uv ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-07-01T06:43:59.572Z [pdf-tools] [info] Server transport closed { metadata: undefined }
+2025-07-01T06:43:59.572Z [pdf-tools] [info] Client transport closed { metadata: undefined }
+2025-07-01T06:43:59.572Z [pdf-tools] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-07-01T06:43:59.572Z [pdf-tools] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-07-01T07:58:56.349Z [pdf-tools] [info] Initializing server... { metadata: undefined }
+2025-07-01T07:58:56.385Z [pdf-tools] [info] Using MCP server command: uv with args and path: {
+  metadata: {
+    args: [
+      '--directory',
+      '~/snflsknfkldnfs.github.io/mcp-pdf-tools',
+      'run',
+      'pdf-tools',
+      [length]: 4
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-07-01T07:58:56.388Z [pdf-tools] [error] spawn uv ENOENT {
+  metadata: {
+    context: 'connection',
+    stack: 'Error: spawn uv ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-07-01T07:58:56.388Z [pdf-tools] [error] spawn uv ENOENT {
+  metadata: {
+    stack: 'Error: spawn uv ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-07-01T07:58:56.394Z [pdf-tools] [info] Server transport closed { metadata: undefined }
+2025-07-01T07:58:56.394Z [pdf-tools] [info] Client transport closed { metadata: undefined }
+2025-07-01T07:58:56.394Z [pdf-tools] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-07-01T07:58:56.394Z [pdf-tools] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-07-01T07:59:16.917Z [pdf-tools] [info] Initializing server... { metadata: undefined }
+2025-07-01T07:59:16.952Z [pdf-tools] [info] Using MCP server command: uv with args and path: {
+  metadata: {
+    args: [
+      '--directory',
+      '~/snflsknfkldnfs.github.io/mcp-pdf-tools',
+      'run',
+      'pdf-tools',
+      [length]: 4
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-07-01T07:59:16.956Z [pdf-tools] [error] spawn uv ENOENT {
+  metadata: {
+    context: 'connection',
+    stack: 'Error: spawn uv ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-07-01T07:59:16.956Z [pdf-tools] [error] spawn uv ENOENT {
+  metadata: {
+    stack: 'Error: spawn uv ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-07-01T07:59:16.963Z [pdf-tools] [info] Server transport closed { metadata: undefined }
+2025-07-01T07:59:16.963Z [pdf-tools] [info] Client transport closed { metadata: undefined }
+2025-07-01T07:59:16.964Z [pdf-tools] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-07-01T07:59:16.964Z [pdf-tools] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-07-01T08:03:12.059Z [pdf-tools] [info] Initializing server... { metadata: undefined }
+2025-07-01T08:03:12.090Z [pdf-tools] [info] Using MCP server command: uv with args and path: {
+  metadata: {
+    args: [
+      '--directory',
+      '~/snflsknfkldnfs.github.io/mcp-pdf-tools',
+      'run',
+      'pdf-tools',
+      [length]: 4
+    ],
+    paths: [
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-07-01T08:03:12.092Z [pdf-tools] [error] spawn uv ENOENT {
+  metadata: {
+    context: 'connection',
+    stack: 'Error: spawn uv ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-07-01T08:03:12.093Z [pdf-tools] [error] spawn uv ENOENT {
+  metadata: {
+    stack: 'Error: spawn uv ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-07-01T08:03:12.099Z [pdf-tools] [info] Server transport closed { metadata: undefined }
+2025-07-01T08:03:12.099Z [pdf-tools] [info] Client transport closed { metadata: undefined }
+2025-07-01T08:03:12.099Z [pdf-tools] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-07-01T08:03:12.099Z [pdf-tools] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }
+2025-07-01T08:03:41.596Z [pdf-tools] [info] Initializing server... { metadata: undefined }
+2025-07-01T08:03:41.622Z [pdf-tools] [info] Using MCP server command: uv with args and path: {
+  metadata: {
+    args: [
+      '--directory',
+      '~/snflsknfkldnfs.github.io/mcp-pdf-tools',
+      'run',
+      'pdf-tools',
+      [length]: 4
+    ],
+    paths: [
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v16.20.2/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '/usr/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 10
+    ]
+  }
+} %o
+2025-07-01T08:03:41.630Z [pdf-tools] [error] spawn uv ENOENT {
+  metadata: {
+    context: 'connection',
+    stack: 'Error: spawn uv ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-07-01T08:03:41.630Z [pdf-tools] [error] spawn uv ENOENT {
+  metadata: {
+    stack: 'Error: spawn uv ENOENT\n' +
+      '    at ChildProcess._handle.onexit (node:internal/child_process:285:19)\n' +
+      '    at onErrorNT (node:internal/child_process:483:16)\n' +
+      '    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)'
+  }
+}
+2025-07-01T08:03:41.633Z [pdf-tools] [info] Server transport closed { metadata: undefined }
+2025-07-01T08:03:41.633Z [pdf-tools] [info] Client transport closed { metadata: undefined }
+2025-07-01T08:03:41.633Z [pdf-tools] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log. { metadata: undefined }
+2025-07-01T08:03:41.633Z [pdf-tools] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) { metadata: { context: 'connection', stack: undefined } }

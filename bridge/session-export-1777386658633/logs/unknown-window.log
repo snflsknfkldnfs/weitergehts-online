@@ -1,0 +1,3 @@
+2026-04-19 22:53:57 [error] Uncaught ReferenceError: EscapeEngine is not defined
+2026-04-26 09:57:43 [error] Electron sandboxed_renderer.bundle.js script failed to run
+2026-04-26 09:57:43 [error] TypeError: object null is not iterable (cannot read property Symbol(Symbol.iterator))

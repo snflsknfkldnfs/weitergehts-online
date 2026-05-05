@@ -1,0 +1,322 @@
+2025-05-25T15:05:43.430Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Initializing server...
+2025-05-25T15:05:43.463Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server started and connected successfully
+2025-05-25T15:05:43.470Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0}
+~/.nvm/versions/node/v16.20.2/lib/node_modules/npm/node_modules/ini/lib/ini.js:189
+    } catch {
+            ^
+
+SyntaxError: Unexpected token {
+    at createScript (vm.js:80:10)
+    at Object.runInThisContext (vm.js:139:10)
+    at Module._compile (module.js:588:28)
+    at Object.Module._extensions..js (module.js:635:10)
+    at Module.load (module.js:545:32)
+    at tryModuleLoad (module.js:508:12)
+    at Function.Module._load (module.js:500:3)
+    at Module.require (module.js:568:17)
+    at require (internal/module.js:11:18)
+    at Object.<anonymous> (~/.nvm/versions/node/v16.20.2/lib/node_modules/npm/node_modules/@npmcli/config/lib/index.js:3:13)
+2025-05-25T15:05:45.710Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server transport closed
+2025-05-25T15:05:45.711Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Client transport closed
+2025-05-25T15:05:45.711Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log.
+2025-05-25T15:05:45.711Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) {"context":"connection"}
+2025-05-25T15:05:45.711Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Client transport closed
+2025-05-26T06:37:14.631Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Initializing server...
+2025-05-26T06:37:14.688Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server started and connected successfully
+2025-05-26T06:37:14.695Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0}
+~/.nvm/versions/node/v16.20.2/lib/node_modules/npm/node_modules/ini/lib/ini.js:189
+    } catch {
+            ^
+
+SyntaxError: Unexpected token {
+    at createScript (vm.js:80:10)
+    at Object.runInThisContext (vm.js:139:10)
+    at Module._compile (module.js:588:28)
+    at Object.Module._extensions..js (module.js:635:10)
+    at Module.load (module.js:545:32)
+    at tryModuleLoad (module.js:508:12)
+    at Function.Module._load (module.js:500:3)
+    at Module.require (module.js:568:17)
+    at require (internal/module.js:11:18)
+    at Object.<anonymous> (~/.nvm/versions/node/v16.20.2/lib/node_modules/npm/node_modules/@npmcli/config/lib/index.js:3:13)
+2025-05-26T06:37:16.774Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server transport closed
+2025-05-26T06:37:16.774Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Client transport closed
+2025-05-26T06:37:16.774Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log.
+2025-05-26T06:37:16.774Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) {"context":"connection"}
+2025-05-26T06:37:16.774Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Client transport closed
+2025-05-26T08:01:27.444Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Initializing server...
+2025-05-26T08:01:27.491Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server started and connected successfully
+2025-05-26T08:01:27.496Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0}
+~/.nvm/versions/node/v16.20.2/lib/node_modules/npm/node_modules/ini/lib/ini.js:189
+    } catch {
+            ^
+
+SyntaxError: Unexpected token {
+    at createScript (vm.js:80:10)
+    at Object.runInThisContext (vm.js:139:10)
+    at Module._compile (module.js:588:28)
+    at Object.Module._extensions..js (module.js:635:10)
+    at Module.load (module.js:545:32)
+    at tryModuleLoad (module.js:508:12)
+    at Function.Module._load (module.js:500:3)
+    at Module.require (module.js:568:17)
+    at require (internal/module.js:11:18)
+    at Object.<anonymous> (~/.nvm/versions/node/v16.20.2/lib/node_modules/npm/node_modules/@npmcli/config/lib/index.js:3:13)
+2025-05-26T08:01:29.670Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server transport closed
+2025-05-26T08:01:29.670Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Client transport closed
+2025-05-26T08:01:29.670Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log.
+2025-05-26T08:01:29.670Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) {"context":"connection"}
+2025-05-26T08:01:29.670Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Client transport closed
+2025-05-26T08:02:08.304Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Initializing server...
+2025-05-26T08:02:08.373Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server started and connected successfully
+2025-05-26T08:02:08.385Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0}
+~/.nvm/versions/node/v16.20.2/lib/node_modules/npm/node_modules/ini/lib/ini.js:189
+    } catch {
+            ^
+
+SyntaxError: Unexpected token {
+    at createScript (vm.js:80:10)
+    at Object.runInThisContext (vm.js:139:10)
+    at Module._compile (module.js:588:28)
+    at Object.Module._extensions..js (module.js:635:10)
+    at Module.load (module.js:545:32)
+    at tryModuleLoad (module.js:508:12)
+    at Function.Module._load (module.js:500:3)
+    at Module.require (module.js:568:17)
+    at require (internal/module.js:11:18)
+    at Object.<anonymous> (~/.nvm/versions/node/v16.20.2/lib/node_modules/npm/node_modules/@npmcli/config/lib/index.js:3:13)
+2025-05-26T08:02:08.658Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server transport closed
+2025-05-26T08:02:08.658Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Client transport closed
+2025-05-26T08:02:08.658Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log.
+2025-05-26T08:02:08.658Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) {"context":"connection"}
+2025-05-26T08:02:08.658Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Client transport closed
+2025-05-26T08:03:23.697Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Initializing server...
+2025-05-26T08:03:23.713Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server started and connected successfully
+2025-05-26T08:03:23.723Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0}
+~/.nvm/versions/node/v16.20.2/lib/node_modules/npm/node_modules/ini/lib/ini.js:189
+    } catch {
+            ^
+
+SyntaxError: Unexpected token {
+    at createScript (vm.js:80:10)
+    at Object.runInThisContext (vm.js:139:10)
+    at Module._compile (module.js:588:28)
+    at Object.Module._extensions..js (module.js:635:10)
+    at Module.load (module.js:545:32)
+    at tryModuleLoad (module.js:508:12)
+    at Function.Module._load (module.js:500:3)
+    at Module.require (module.js:568:17)
+    at require (internal/module.js:11:18)
+    at Object.<anonymous> (~/.nvm/versions/node/v16.20.2/lib/node_modules/npm/node_modules/@npmcli/config/lib/index.js:3:13)
+2025-05-26T08:03:24.212Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server transport closed
+2025-05-26T08:03:24.213Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Client transport closed
+2025-05-26T08:03:24.213Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log.
+2025-05-26T08:03:24.213Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) {"context":"connection"}
+2025-05-26T08:03:24.213Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Client transport closed
+2025-05-26T08:05:24.255Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Initializing server...
+2025-05-26T08:05:24.270Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server started and connected successfully
+2025-05-26T08:05:24.295Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0}
+~/.nvm/versions/node/v16.20.2/lib/node_modules/npm/node_modules/ini/lib/ini.js:189
+    } catch {
+            ^
+
+SyntaxError: Unexpected token {
+    at createScript (vm.js:80:10)
+    at Object.runInThisContext (vm.js:139:10)
+    at Module._compile (module.js:588:28)
+    at Object.Module._extensions..js (module.js:635:10)
+    at Module.load (module.js:545:32)
+    at tryModuleLoad (module.js:508:12)
+    at Function.Module._load (module.js:500:3)
+    at Module.require (module.js:568:17)
+    at require (internal/module.js:11:18)
+    at Object.<anonymous> (~/.nvm/versions/node/v16.20.2/lib/node_modules/npm/node_modules/@npmcli/config/lib/index.js:3:13)
+2025-05-26T08:05:24.757Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server transport closed
+2025-05-26T08:05:24.757Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Client transport closed
+2025-05-26T08:05:24.757Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log.
+2025-05-26T08:05:24.757Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) {"context":"connection"}
+2025-05-26T08:05:24.757Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Client transport closed
+2025-05-26T09:26:07.404Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Initializing server...
+2025-05-26T09:26:07.457Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server started and connected successfully
+2025-05-26T09:26:07.458Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0}
+~/.nvm/versions/node/v16.20.2/lib/node_modules/npm/node_modules/ini/lib/ini.js:189
+    } catch {
+            ^
+
+SyntaxError: Unexpected token {
+    at createScript (vm.js:80:10)
+    at Object.runInThisContext (vm.js:139:10)
+    at Module._compile (module.js:588:28)
+    at Object.Module._extensions..js (module.js:635:10)
+    at Module.load (module.js:545:32)
+    at tryModuleLoad (module.js:508:12)
+    at Function.Module._load (module.js:500:3)
+    at Module.require (module.js:568:17)
+    at require (internal/module.js:11:18)
+    at Object.<anonymous> (~/.nvm/versions/node/v16.20.2/lib/node_modules/npm/node_modules/@npmcli/config/lib/index.js:3:13)
+2025-05-26T09:26:09.015Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server transport closed
+2025-05-26T09:26:09.015Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Client transport closed
+2025-05-26T09:26:09.015Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log.
+2025-05-26T09:26:09.015Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) {"context":"connection"}
+2025-05-26T09:26:09.015Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Client transport closed
+2025-05-26T10:17:00.316Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Initializing server...
+2025-05-26T10:17:00.337Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server started and connected successfully
+2025-05-26T10:17:00.500Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0}
+~/.nvm/versions/node/v16.20.2/lib/node_modules/npm/node_modules/ini/lib/ini.js:189
+    } catch {
+            ^
+
+SyntaxError: Unexpected token {
+    at createScript (vm.js:80:10)
+    at Object.runInThisContext (vm.js:139:10)
+    at Module._compile (module.js:588:28)
+    at Object.Module._extensions..js (module.js:635:10)
+    at Module.load (module.js:545:32)
+    at tryModuleLoad (module.js:508:12)
+    at Function.Module._load (module.js:500:3)
+    at Module.require (module.js:568:17)
+    at require (internal/module.js:11:18)
+    at Object.<anonymous> (~/.nvm/versions/node/v16.20.2/lib/node_modules/npm/node_modules/@npmcli/config/lib/index.js:3:13)
+2025-05-26T10:17:02.332Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server transport closed
+2025-05-26T10:17:02.332Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Client transport closed
+2025-05-26T10:17:02.333Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log.
+2025-05-26T10:17:02.333Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) {"context":"connection"}
+2025-05-26T10:17:02.333Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Client transport closed
+2025-05-26T10:38:49.678Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Initializing server...
+2025-05-26T10:38:49.728Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server started and connected successfully
+2025-05-26T10:38:49.898Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0}
+~/.nvm/versions/node/v16.20.2/lib/node_modules/npm/node_modules/ini/lib/ini.js:189
+    } catch {
+            ^
+
+SyntaxError: Unexpected token {
+    at createScript (vm.js:80:10)
+    at Object.runInThisContext (vm.js:139:10)
+    at Module._compile (module.js:588:28)
+    at Object.Module._extensions..js (module.js:635:10)
+    at Module.load (module.js:545:32)
+    at tryModuleLoad (module.js:508:12)
+    at Function.Module._load (module.js:500:3)
+    at Module.require (module.js:568:17)
+    at require (internal/module.js:11:18)
+    at Object.<anonymous> (~/.nvm/versions/node/v16.20.2/lib/node_modules/npm/node_modules/@npmcli/config/lib/index.js:3:13)
+2025-05-26T10:38:51.765Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server transport closed
+2025-05-26T10:38:51.765Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Client transport closed
+2025-05-26T10:38:51.765Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log.
+2025-05-26T10:38:51.765Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) {"context":"connection"}
+2025-05-26T10:38:51.765Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Client transport closed
+2025-05-26T17:08:10.165Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Initializing server...
+2025-05-26T17:08:10.373Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server started and connected successfully
+2025-05-26T17:08:10.404Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0}
+~/.nvm/versions/node/v16.20.2/lib/node_modules/npm/node_modules/ini/lib/ini.js:189
+    } catch {
+            ^
+
+SyntaxError: Unexpected token {
+    at createScript (vm.js:80:10)
+    at Object.runInThisContext (vm.js:139:10)
+    at Module._compile (module.js:588:28)
+    at Object.Module._extensions..js (module.js:635:10)
+    at Module.load (module.js:545:32)
+    at tryModuleLoad (module.js:508:12)
+    at Function.Module._load (module.js:500:3)
+    at Module.require (module.js:568:17)
+    at require (internal/module.js:11:18)
+    at Object.<anonymous> (~/.nvm/versions/node/v16.20.2/lib/node_modules/npm/node_modules/@npmcli/config/lib/index.js:3:13)
+2025-05-26T17:08:12.431Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server transport closed
+2025-05-26T17:08:12.431Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Client transport closed
+2025-05-26T17:08:12.431Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log.
+2025-05-26T17:08:12.431Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) {"context":"connection"}
+2025-05-26T17:08:12.431Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Client transport closed
+2025-05-26T18:08:50.853Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Initializing server...
+2025-05-26T18:08:50.914Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server started and connected successfully
+2025-05-26T18:08:50.922Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0}
+~/.nvm/versions/node/v16.20.2/lib/node_modules/npm/node_modules/ini/lib/ini.js:189
+    } catch {
+            ^
+
+SyntaxError: Unexpected token {
+    at createScript (vm.js:80:10)
+    at Object.runInThisContext (vm.js:139:10)
+    at Module._compile (module.js:588:28)
+    at Object.Module._extensions..js (module.js:635:10)
+    at Module.load (module.js:545:32)
+    at tryModuleLoad (module.js:508:12)
+    at Function.Module._load (module.js:500:3)
+    at Module.require (module.js:568:17)
+    at require (internal/module.js:11:18)
+    at Object.<anonymous> (~/.nvm/versions/node/v16.20.2/lib/node_modules/npm/node_modules/@npmcli/config/lib/index.js:3:13)
+2025-05-26T18:08:52.817Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server transport closed
+2025-05-26T18:08:52.817Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Client transport closed
+2025-05-26T18:08:52.817Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log.
+2025-05-26T18:08:52.817Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) {"context":"connection"}
+2025-05-26T18:08:52.817Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Client transport closed
+2025-05-27T18:58:46.966Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Initializing server...
+2025-05-27T18:58:47.017Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server started and connected successfully
+2025-05-27T18:58:47.067Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0}
+~/.nvm/versions/node/v16.20.2/lib/node_modules/npm/node_modules/ini/lib/ini.js:189
+    } catch {
+            ^
+
+SyntaxError: Unexpected token {
+    at createScript (vm.js:80:10)
+    at Object.runInThisContext (vm.js:139:10)
+    at Module._compile (module.js:588:28)
+    at Object.Module._extensions..js (module.js:635:10)
+    at Module.load (module.js:545:32)
+    at tryModuleLoad (module.js:508:12)
+    at Function.Module._load (module.js:500:3)
+    at Module.require (module.js:568:17)
+    at require (internal/module.js:11:18)
+    at Object.<anonymous> (~/.nvm/versions/node/v16.20.2/lib/node_modules/npm/node_modules/@npmcli/config/lib/index.js:3:13)
+2025-05-27T18:58:48.832Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server transport closed
+2025-05-27T18:58:48.832Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Client transport closed
+2025-05-27T18:58:48.832Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log.
+2025-05-27T18:58:48.832Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) {"context":"connection"}
+2025-05-27T18:58:48.833Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Client transport closed
+2025-05-27T19:04:34.794Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Initializing server...
+2025-05-27T19:04:34.841Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server started and connected successfully
+2025-05-27T19:04:34.841Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0}
+~/.nvm/versions/node/v16.20.2/lib/node_modules/npm/node_modules/ini/lib/ini.js:189
+    } catch {
+            ^
+
+SyntaxError: Unexpected token {
+    at createScript (vm.js:80:10)
+    at Object.runInThisContext (vm.js:139:10)
+    at Module._compile (module.js:588:28)
+    at Object.Module._extensions..js (module.js:635:10)
+    at Module.load (module.js:545:32)
+    at tryModuleLoad (module.js:508:12)
+    at Function.Module._load (module.js:500:3)
+    at Module.require (module.js:568:17)
+    at require (internal/module.js:11:18)
+    at Object.<anonymous> (~/.nvm/versions/node/v16.20.2/lib/node_modules/npm/node_modules/@npmcli/config/lib/index.js:3:13)
+2025-05-27T19:04:34.983Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server transport closed
+2025-05-27T19:04:34.984Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Client transport closed
+2025-05-27T19:04:34.984Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log.
+2025-05-27T19:04:34.984Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) {"context":"connection"}
+2025-05-27T19:04:34.984Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Client transport closed
+2025-05-27T19:10:20.937Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Initializing server...
+2025-05-27T19:10:20.978Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server started and connected successfully
+2025-05-27T19:10:20.979Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0}
+~/.nvm/versions/node/v16.20.2/lib/node_modules/npm/node_modules/ini/lib/ini.js:189
+    } catch {
+            ^
+
+SyntaxError: Unexpected token {
+    at createScript (vm.js:80:10)
+    at Object.runInThisContext (vm.js:139:10)
+    at Module._compile (module.js:588:28)
+    at Object.Module._extensions..js (module.js:635:10)
+    at Module.load (module.js:545:32)
+    at tryModuleLoad (module.js:508:12)
+    at Function.Module._load (module.js:500:3)
+    at Module.require (module.js:568:17)
+    at require (internal/module.js:11:18)
+    at Object.<anonymous> (~/.nvm/versions/node/v16.20.2/lib/node_modules/npm/node_modules/@npmcli/config/lib/index.js:3:13)
+2025-05-27T19:10:21.121Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server transport closed
+2025-05-27T19:10:21.121Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Client transport closed
+2025-05-27T19:10:21.121Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Server transport closed unexpectedly, this is likely due to the process exiting early. If you are developing this MCP server you can add output to stderr (i.e. `console.error('...')` in JavaScript, `print('...', file=sys.stderr)` in python) and it will appear in this log.
+2025-05-27T19:10:21.121Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [error] Server disconnected. For troubleshooting guidance, please visit our [debugging documentation](https://modelcontextprotocol.io/docs/tools/debugging) {"context":"connection"}
+2025-05-27T19:10:21.121Z [github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking] [info] Client transport closed

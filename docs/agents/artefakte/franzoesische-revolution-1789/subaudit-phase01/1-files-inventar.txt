@@ -1,0 +1,6 @@
+Erwartete Phase-0.1-Files:
+  ✓ DIDAKTIK_RAHMEN.md (22954 Bytes)
+  ✓ didaktisches_konzept.json (12172 Bytes)
+  ✓ mappen_aufteilung.json (10510 Bytes)
+  ✓ Q-GATE-LOG.md (6826 Bytes)
+  ✓ game_state.json (3352 Bytes)

@@ -1,0 +1,49 @@
+F-007/F-044 Pattern-Replication-Check (Spec-Layer-Implicit-Reliance):
+
+Pflicht-Konzept-Klassen-Erwaehnungen in DIDAKTIK_RAHMEN.md:
+  Vergegenwaertigung: 0
+0 Erwaehnungen [OK]
+  Sequenzlogik: 0
+0 Erwaehnungen [OK]
+  Roth-Maxime: 0
+0 Erwaehnungen [OK]
+  Roth: 0
+0 Erwaehnungen [OK]
+  SCPL: 0
+0 Erwaehnungen [OK]
+  Multikausal: 0
+0 Erwaehnungen [OK]
+  Multi-Kausal: 0
+0 Erwaehnungen [OK]
+  Multiperspektiv: 7 Erwaehnungen [OK]
+  Multi-Perspektiv: 0
+0 Erwaehnungen [OK]
+  Beutelsbach: 2 Erwaehnungen [OK]
+  Quellenkritik: 0
+0 Erwaehnungen [OK]
+  Quellenorientierung: 0
+0 Erwaehnungen [OK]
+
+KK-01 bis KK-11 explicit erwaehnt?
+  KK-01: 0
+0
+  KK-02: 0
+0
+  KK-03: 0
+0
+  KK-04: 0
+0
+  KK-05: 0
+0
+  KK-06: 0
+0
+  KK-07: 0
+0
+  KK-08: 0
+0
+  KK-09: 0
+0
+  KK-10: 0
+0
+  KK-11: 0
+0

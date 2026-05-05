@@ -1,0 +1,1280 @@
+2026-04-18T20:30:52.317Z [Macos] [info] Initializing server... { metadata: undefined }
+2026-04-18T20:30:52.331Z [Macos] [info] Using MCP server command: /opt/homebrew/bin/uv with args and path: {
+  metadata: {
+    args: [
+      '--directory',
+      '~/Library/Application Support/Claude/Claude Extensions/ant.dir.gh.cursortouch.macos-mcp',
+      'run',
+      'macos-mcp',
+      [length]: 4
+    ],
+    paths: [
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '~/.bun/bin',
+      '~/Library/pnpm',
+      '~/.local/bin',
+      '~/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 13
+    ]
+  }
+} %o
+2026-04-18T20:30:52.364Z [Macos] [info] Server started and connected successfully { metadata: undefined }
+2026-04-18T20:30:52.494Z [Macos] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"extensions":{"io.modelcontextprotocol/ui":{"mimeTypes":["text/html;profile=mcp-app"]}}},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+Using CPython 3.12.11 interpreter at: /opt/homebrew/opt/python@3.12/bin/python3.12
+Creating virtual environment at: .venv
+   Building macos-mcp @ file://~/Library/Application%20Support/Claude/Claude%20Extensions/ant.dir.gh.cursortouch.macos-mcp
+Downloading cryptography (6.8MiB)
+Downloading pydantic-core (1.8MiB)
+Downloading beartype (1.3MiB)
+Downloading notebook (13.8MiB)
+Downloading pyzmq (1.2MiB)
+Downloading debugpy (2.4MiB)
+Downloading pillow (4.4MiB)
+Downloading widgetsnbextension (2.1MiB)
+Downloading jedi (1.5MiB)
+Downloading jupyterlab (11.8MiB)
+Downloading babel (9.7MiB)
+Downloading setuptools (1.0MiB)
+Downloading pygments (1.2MiB)
+ Downloaded setuptools
+ Downloaded pyzmq
+ Downloaded beartype
+ Downloaded jedi
+ Downloaded pydantic-core
+ Downloaded pygments
+ Downloaded widgetsnbextension
+ Downloaded debugpy
+ Downloaded pillow
+ Downloaded cryptography
+ Downloaded babel
+ Downloaded jupyterlab
+ Downloaded notebook
+      Built macos-mcp @ file://~/Library/Application%20Support/Claude/Claude%20Extensions/ant.dir.gh.cursortouch.macos-mcp
+Installed 165 packages in 447ms
+[04/18/26 22:31:29] INFO     Starting MCP server 'macos-mcp' with server.py:2506
+                             transport 'stdio'                                  
+2026-04-18T20:31:29.510Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2025-11-25","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":true},"tasks":{"list":{},"cancel":{},"requests":{"tools":{"call":{}},"prompts":{"get":{}},"resources":{"read":{}}}}},"serverInfo":{"name":"macos-mcp","version":"2.14.4"},"instructions":"\nmacOS MCP server provides tools to interact directly with the macOS desktop, \nenabling operation of the desktop on the user's behalf.\n"}} { metadata: undefined }
+2026-04-18T20:31:29.510Z [Macos] [info] Message from client: {"method":"notifications/initialized","jsonrpc":"2.0"} { metadata: undefined }
+2026-04-18T20:31:29.511Z [Macos] [info] Message from client: {"method":"tools/list","params":{},"jsonrpc":"2.0","id":1} { metadata: undefined }
+2026-04-18T20:31:29.511Z [Macos] [info] Message from client: {"method":"prompts/list","params":{},"jsonrpc":"2.0","id":2} { metadata: undefined }
+2026-04-18T20:31:29.511Z [Macos] [info] Message from client: {"method":"resources/list","params":{},"jsonrpc":"2.0","id":3} { metadata: undefined }
+2026-04-18T20:31:29.513Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"App","title":"App","description":"Manages macOS applications with three modes: 'launch' (opens the application), 'resize' (adjusts active window size/position), 'switch' (brings specific app into focus)."...[6463 chars truncated]...s":{"result":{"type":"string"}},"required":["result"],"type":"object","x-fastmcp-wrap-result":true},"annotations":{"title":"Scrape","readOnlyHint":true,"destructiveHint":false,"idempotentHint":true,"openWorldHint":true},"_meta":{"_fastmcp":{"tags":[]}}}]}} { metadata: undefined }
+2026-04-18T20:31:29.514Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}} { metadata: undefined }
+2026-04-18T20:31:29.514Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}} { metadata: undefined }
+2026-04-21T06:11:18.064Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-21T06:11:18.064Z [Macos] [info] Server transport closed (intentional shutdown) { metadata: undefined }
+2026-04-21T06:11:18.064Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-21T06:11:18.064Z [Macos] [info] Shutting down server... { metadata: undefined }
+2026-04-21T06:11:19.994Z [Macos] [info] Server transport closed { metadata: undefined }
+2026-04-21T06:11:19.994Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-21T06:15:31.646Z [Macos] [info] Initializing server... { metadata: undefined }
+2026-04-21T06:15:31.666Z [Macos] [info] Using MCP server command: /opt/homebrew/bin/uv with args and path: {
+  metadata: {
+    args: [
+      '--directory',
+      '~/Library/Application Support/Claude/Claude Extensions/ant.dir.gh.cursortouch.macos-mcp',
+      'run',
+      'macos-mcp',
+      [length]: 4
+    ],
+    paths: [
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '~/.bun/bin',
+      '~/Library/pnpm',
+      '~/.local/bin',
+      '~/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 13
+    ]
+  }
+} %o
+2026-04-21T06:15:31.693Z [Macos] [info] Server started and connected successfully { metadata: undefined }
+2026-04-21T06:15:33.955Z [Macos] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"extensions":{"io.modelcontextprotocol/ui":{"mimeTypes":["text/html;profile=mcp-app"]}}},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+[04/21/26 08:15:37] INFO     Starting MCP server 'macos-mcp' with server.py:2506
+                             transport 'stdio'                                  
+2026-04-21T06:15:37.649Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2025-11-25","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":true},"tasks":{"list":{},"cancel":{},"requests":{"tools":{"call":{}},"prompts":{"get":{}},"resources":{"read":{}}}}},"serverInfo":{"name":"macos-mcp","version":"2.14.4"},"instructions":"\nmacOS MCP server provides tools to interact directly with the macOS desktop, \nenabling operation of the desktop on the user's behalf.\n"}} { metadata: undefined }
+2026-04-21T06:15:37.691Z [Macos] [info] Message from client: {"method":"notifications/initialized","jsonrpc":"2.0"} { metadata: undefined }
+2026-04-21T06:15:37.692Z [Macos] [info] Message from client: {"method":"tools/list","params":{},"jsonrpc":"2.0","id":1} { metadata: undefined }
+2026-04-21T06:15:37.693Z [Macos] [info] Message from client: {"method":"prompts/list","params":{},"jsonrpc":"2.0","id":2} { metadata: undefined }
+2026-04-21T06:15:37.693Z [Macos] [info] Message from client: {"method":"resources/list","params":{},"jsonrpc":"2.0","id":3} { metadata: undefined }
+2026-04-21T06:15:37.711Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"App","title":"App","description":"Manages macOS applications with three modes: 'launch' (opens the application), 'resize' (adjusts active window size/position), 'switch' (brings specific app into focus)."...[6463 chars truncated]...s":{"result":{"type":"string"}},"required":["result"],"type":"object","x-fastmcp-wrap-result":true},"annotations":{"title":"Scrape","readOnlyHint":true,"destructiveHint":false,"idempotentHint":true,"openWorldHint":true},"_meta":{"_fastmcp":{"tags":[]}}}]}} { metadata: undefined }
+2026-04-21T06:15:37.715Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}} { metadata: undefined }
+2026-04-21T06:15:37.718Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}} { metadata: undefined }
+2026-04-21T06:36:47.315Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-21T06:36:47.315Z [Macos] [info] Server transport closed (renderer released port) { metadata: undefined }
+2026-04-21T06:36:47.750Z [Macos] [info] Server transport closed { metadata: undefined }
+2026-04-21T06:36:47.750Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-21T06:36:47.951Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-21T06:36:47.951Z [Macos] [info] Shutting down server... { metadata: undefined }
+2026-04-21T06:36:47.951Z [Macos] [info] Initializing server... { metadata: undefined }
+2026-04-21T06:36:47.970Z [Macos] [info] Using MCP server command: /opt/homebrew/bin/uv with args and path: {
+  metadata: {
+    args: [
+      '--directory',
+      '~/Library/Application Support/Claude/Claude Extensions/ant.dir.gh.cursortouch.macos-mcp',
+      'run',
+      'macos-mcp',
+      [length]: 4
+    ],
+    paths: [
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '~/.bun/bin',
+      '~/Library/pnpm',
+      '~/.local/bin',
+      '~/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 13
+    ]
+  }
+} %o
+2026-04-21T06:36:47.988Z [Macos] [info] Server started and connected successfully { metadata: undefined }
+2026-04-21T06:36:48.033Z [Macos] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"extensions":{"io.modelcontextprotocol/ui":{"mimeTypes":["text/html;profile=mcp-app"]}}},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+[04/21/26 08:36:52] INFO     Starting MCP server 'macos-mcp' with server.py:2506
+                             transport 'stdio'                                  
+2026-04-21T06:36:52.406Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2025-11-25","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":true},"tasks":{"list":{},"cancel":{},"requests":{"tools":{"call":{}},"prompts":{"get":{}},"resources":{"read":{}}}}},"serverInfo":{"name":"macos-mcp","version":"2.14.4"},"instructions":"\nmacOS MCP server provides tools to interact directly with the macOS desktop, \nenabling operation of the desktop on the user's behalf.\n"}} { metadata: undefined }
+2026-04-21T06:36:52.407Z [Macos] [info] Message from client: {"method":"notifications/initialized","jsonrpc":"2.0"} { metadata: undefined }
+2026-04-21T06:36:52.407Z [Macos] [info] Message from client: {"method":"tools/list","params":{},"jsonrpc":"2.0","id":1} { metadata: undefined }
+2026-04-21T06:36:52.407Z [Macos] [info] Message from client: {"method":"prompts/list","params":{},"jsonrpc":"2.0","id":2} { metadata: undefined }
+2026-04-21T06:36:52.407Z [Macos] [info] Message from client: {"method":"resources/list","params":{},"jsonrpc":"2.0","id":3} { metadata: undefined }
+2026-04-21T06:36:52.411Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"App","title":"App","description":"Manages macOS applications with three modes: 'launch' (opens the application), 'resize' (adjusts active window size/position), 'switch' (brings specific app into focus)."...[6463 chars truncated]...s":{"result":{"type":"string"}},"required":["result"],"type":"object","x-fastmcp-wrap-result":true},"annotations":{"title":"Scrape","readOnlyHint":true,"destructiveHint":false,"idempotentHint":true,"openWorldHint":true},"_meta":{"_fastmcp":{"tags":[]}}}]}} { metadata: undefined }
+2026-04-21T06:36:52.411Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}} { metadata: undefined }
+2026-04-21T06:36:52.411Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}} { metadata: undefined }
+2026-04-21T06:37:53.595Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-21T06:37:53.595Z [Macos] [info] Server transport closed (renderer released port) { metadata: undefined }
+2026-04-21T06:37:55.679Z [Macos] [info] Server transport closed { metadata: undefined }
+2026-04-21T06:37:55.679Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-21T06:37:56.187Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-21T06:37:56.187Z [Macos] [info] Shutting down server... { metadata: undefined }
+2026-04-21T06:37:56.187Z [Macos] [info] Initializing server... { metadata: undefined }
+2026-04-21T06:37:56.200Z [Macos] [info] Using MCP server command: /opt/homebrew/bin/uv with args and path: {
+  metadata: {
+    args: [
+      '--directory',
+      '~/Library/Application Support/Claude/Claude Extensions/ant.dir.gh.cursortouch.macos-mcp',
+      'run',
+      'macos-mcp',
+      [length]: 4
+    ],
+    paths: [
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '~/.bun/bin',
+      '~/Library/pnpm',
+      '~/.local/bin',
+      '~/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 13
+    ]
+  }
+} %o
+2026-04-21T06:37:56.214Z [Macos] [info] Server started and connected successfully { metadata: undefined }
+2026-04-21T06:37:56.284Z [Macos] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"extensions":{"io.modelcontextprotocol/ui":{"mimeTypes":["text/html;profile=mcp-app"]}}},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+[04/21/26 08:38:00] INFO     Starting MCP server 'macos-mcp' with server.py:2506
+                             transport 'stdio'                                  
+2026-04-21T06:38:00.214Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2025-11-25","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":true},"tasks":{"list":{},"cancel":{},"requests":{"tools":{"call":{}},"prompts":{"get":{}},"resources":{"read":{}}}}},"serverInfo":{"name":"macos-mcp","version":"2.14.4"},"instructions":"\nmacOS MCP server provides tools to interact directly with the macOS desktop, \nenabling operation of the desktop on the user's behalf.\n"}} { metadata: undefined }
+2026-04-21T06:38:00.597Z [Macos] [info] Message from client: {"method":"notifications/initialized","jsonrpc":"2.0"} { metadata: undefined }
+2026-04-21T06:38:00.598Z [Macos] [info] Message from client: {"method":"tools/list","params":{},"jsonrpc":"2.0","id":1} { metadata: undefined }
+2026-04-21T06:38:00.598Z [Macos] [info] Message from client: {"method":"prompts/list","params":{},"jsonrpc":"2.0","id":2} { metadata: undefined }
+2026-04-21T06:38:00.598Z [Macos] [info] Message from client: {"method":"resources/list","params":{},"jsonrpc":"2.0","id":3} { metadata: undefined }
+2026-04-21T06:38:00.601Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"App","title":"App","description":"Manages macOS applications with three modes: 'launch' (opens the application), 'resize' (adjusts active window size/position), 'switch' (brings specific app into focus)."...[6463 chars truncated]...s":{"result":{"type":"string"}},"required":["result"],"type":"object","x-fastmcp-wrap-result":true},"annotations":{"title":"Scrape","readOnlyHint":true,"destructiveHint":false,"idempotentHint":true,"openWorldHint":true},"_meta":{"_fastmcp":{"tags":[]}}}]}} { metadata: undefined }
+2026-04-21T06:38:00.601Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}} { metadata: undefined }
+2026-04-21T06:38:00.602Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}} { metadata: undefined }
+2026-04-21T06:39:01.906Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-21T06:39:01.906Z [Macos] [info] Server transport closed (renderer released port) { metadata: undefined }
+2026-04-21T06:39:03.974Z [Macos] [info] Server transport closed { metadata: undefined }
+2026-04-21T06:39:03.974Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-21T06:39:04.626Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-21T06:39:04.626Z [Macos] [info] Shutting down server... { metadata: undefined }
+2026-04-21T06:39:04.626Z [Macos] [info] Initializing server... { metadata: undefined }
+2026-04-21T06:39:04.639Z [Macos] [info] Using MCP server command: /opt/homebrew/bin/uv with args and path: {
+  metadata: {
+    args: [
+      '--directory',
+      '~/Library/Application Support/Claude/Claude Extensions/ant.dir.gh.cursortouch.macos-mcp',
+      'run',
+      'macos-mcp',
+      [length]: 4
+    ],
+    paths: [
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '~/.bun/bin',
+      '~/Library/pnpm',
+      '~/.local/bin',
+      '~/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 13
+    ]
+  }
+} %o
+2026-04-21T06:39:04.650Z [Macos] [info] Server started and connected successfully { metadata: undefined }
+2026-04-21T06:39:04.793Z [Macos] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"extensions":{"io.modelcontextprotocol/ui":{"mimeTypes":["text/html;profile=mcp-app"]}}},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+[04/21/26 08:39:08] INFO     Starting MCP server 'macos-mcp' with server.py:2506
+                             transport 'stdio'                                  
+2026-04-21T06:39:08.684Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2025-11-25","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":true},"tasks":{"list":{},"cancel":{},"requests":{"tools":{"call":{}},"prompts":{"get":{}},"resources":{"read":{}}}}},"serverInfo":{"name":"macos-mcp","version":"2.14.4"},"instructions":"\nmacOS MCP server provides tools to interact directly with the macOS desktop, \nenabling operation of the desktop on the user's behalf.\n"}} { metadata: undefined }
+2026-04-21T06:39:11.531Z [Macos] [info] Message from client: {"method":"notifications/initialized","jsonrpc":"2.0"} { metadata: undefined }
+2026-04-21T06:39:11.533Z [Macos] [info] Message from client: {"method":"tools/list","params":{},"jsonrpc":"2.0","id":1} { metadata: undefined }
+2026-04-21T06:39:11.533Z [Macos] [info] Message from client: {"method":"prompts/list","params":{},"jsonrpc":"2.0","id":2} { metadata: undefined }
+2026-04-21T06:39:11.533Z [Macos] [info] Message from client: {"method":"resources/list","params":{},"jsonrpc":"2.0","id":3} { metadata: undefined }
+2026-04-21T06:39:11.536Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"App","title":"App","description":"Manages macOS applications with three modes: 'launch' (opens the application), 'resize' (adjusts active window size/position), 'switch' (brings specific app into focus)."...[6463 chars truncated]...s":{"result":{"type":"string"}},"required":["result"],"type":"object","x-fastmcp-wrap-result":true},"annotations":{"title":"Scrape","readOnlyHint":true,"destructiveHint":false,"idempotentHint":true,"openWorldHint":true},"_meta":{"_fastmcp":{"tags":[]}}}]}} { metadata: undefined }
+2026-04-21T06:39:11.536Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}} { metadata: undefined }
+2026-04-21T06:39:11.537Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}} { metadata: undefined }
+2026-04-21T06:48:45.950Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-21T06:48:45.950Z [Macos] [info] Server transport closed (intentional shutdown) { metadata: undefined }
+2026-04-21T06:48:45.950Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-21T06:48:45.950Z [Macos] [info] Shutting down server... { metadata: undefined }
+2026-04-21T06:48:46.437Z [Macos] [info] Server transport closed { metadata: undefined }
+2026-04-21T06:48:46.437Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-21T06:59:41.651Z [Macos] [info] Initializing server... { metadata: undefined }
+2026-04-21T06:59:43.144Z [Macos] [info] Using MCP server command: /opt/homebrew/bin/uv with args and path: {
+  metadata: {
+    args: [
+      '--directory',
+      '~/Library/Application Support/Claude/Claude Extensions/ant.dir.gh.cursortouch.macos-mcp',
+      'run',
+      'macos-mcp',
+      [length]: 4
+    ],
+    paths: [
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '~/.bun/bin',
+      '~/Library/pnpm',
+      '~/.local/bin',
+      '~/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 13
+    ]
+  }
+} %o
+2026-04-21T06:59:43.170Z [Macos] [info] Server started and connected successfully { metadata: undefined }
+2026-04-21T06:59:43.709Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-21T06:59:43.709Z [Macos] [info] Server transport closed (intentional shutdown) { metadata: undefined }
+2026-04-21T06:59:43.710Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-21T06:59:43.709Z [Macos] [info] Shutting down server... { metadata: undefined }
+2026-04-21T06:59:43.710Z [Macos] [info] Initializing server... { metadata: undefined }
+2026-04-21T06:59:44.875Z [Macos] [info] Using MCP server command: /opt/homebrew/bin/uv with args and path: {
+  metadata: {
+    args: [
+      '--directory',
+      '~/Library/Application Support/Claude/Claude Extensions/ant.dir.gh.cursortouch.macos-mcp',
+      'run',
+      'macos-mcp',
+      [length]: 4
+    ],
+    paths: [
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '~/.bun/bin',
+      '~/Library/pnpm',
+      '~/.local/bin',
+      '~/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 13
+    ]
+  }
+} %o
+2026-04-21T06:59:45.000Z [Macos] [info] Server started and connected successfully { metadata: undefined }
+2026-04-21T06:59:45.525Z [Macos] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"extensions":{"io.modelcontextprotocol/ui":{"mimeTypes":["text/html;profile=mcp-app"]}}},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+2026-04-21T06:59:45.810Z [Macos] [info] Server transport closed { metadata: undefined }
+2026-04-21T06:59:45.810Z [Macos] [info] Client transport closed { metadata: undefined }
+[04/21/26 08:59:52] INFO     Starting MCP server 'macos-mcp' with server.py:2506
+                             transport 'stdio'                                  
+2026-04-21T06:59:52.252Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2025-11-25","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":true},"tasks":{"list":{},"cancel":{},"requests":{"tools":{"call":{}},"prompts":{"get":{}},"resources":{"read":{}}}}},"serverInfo":{"name":"macos-mcp","version":"2.14.4"},"instructions":"\nmacOS MCP server provides tools to interact directly with the macOS desktop, \nenabling operation of the desktop on the user's behalf.\n"}} { metadata: undefined }
+2026-04-21T06:59:52.413Z [Macos] [info] Message from client: {"method":"notifications/initialized","jsonrpc":"2.0"} { metadata: undefined }
+2026-04-21T06:59:52.414Z [Macos] [info] Message from client: {"method":"tools/list","params":{},"jsonrpc":"2.0","id":1} { metadata: undefined }
+2026-04-21T06:59:52.414Z [Macos] [info] Message from client: {"method":"prompts/list","params":{},"jsonrpc":"2.0","id":2} { metadata: undefined }
+2026-04-21T06:59:52.414Z [Macos] [info] Message from client: {"method":"resources/list","params":{},"jsonrpc":"2.0","id":3} { metadata: undefined }
+2026-04-21T06:59:52.418Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"App","title":"App","description":"Manages macOS applications with three modes: 'launch' (opens the application), 'resize' (adjusts active window size/position), 'switch' (brings specific app into focus)."...[6463 chars truncated]...s":{"result":{"type":"string"}},"required":["result"],"type":"object","x-fastmcp-wrap-result":true},"annotations":{"title":"Scrape","readOnlyHint":true,"destructiveHint":false,"idempotentHint":true,"openWorldHint":true},"_meta":{"_fastmcp":{"tags":[]}}}]}} { metadata: undefined }
+2026-04-21T06:59:52.418Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}} { metadata: undefined }
+2026-04-21T06:59:52.418Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}} { metadata: undefined }
+2026-04-23T11:52:37.354Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-23T11:52:37.354Z [Macos] [info] Server transport closed (intentional shutdown) { metadata: undefined }
+2026-04-23T11:52:37.354Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-23T11:52:37.354Z [Macos] [info] Shutting down server... { metadata: undefined }
+2026-04-23T11:52:39.688Z [Macos] [info] Server transport closed { metadata: undefined }
+2026-04-23T11:52:39.688Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-23T11:52:59.692Z [Macos] [info] Initializing server... { metadata: undefined }
+2026-04-23T11:53:01.219Z [Macos] [info] Using MCP server command: /opt/homebrew/bin/uv with args and path: {
+  metadata: {
+    args: [
+      '--directory',
+      '~/Library/Application Support/Claude/Claude Extensions/ant.dir.gh.cursortouch.macos-mcp',
+      'run',
+      'macos-mcp',
+      [length]: 4
+    ],
+    paths: [
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '~/.bun/bin',
+      '~/Library/pnpm',
+      '~/.local/bin',
+      '~/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 13
+    ]
+  }
+} %o
+2026-04-23T11:53:01.230Z [Macos] [info] Server started and connected successfully { metadata: undefined }
+2026-04-23T11:53:01.991Z [Macos] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"extensions":{"io.modelcontextprotocol/ui":{"mimeTypes":["text/html;profile=mcp-app"]}}},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+[04/23/26 13:53:08] INFO     Starting MCP server 'macos-mcp' with server.py:2506
+                             transport 'stdio'                                  
+2026-04-23T11:53:08.406Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2025-11-25","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":true},"tasks":{"list":{},"cancel":{},"requests":{"tools":{"call":{}},"prompts":{"get":{}},"resources":{"read":{}}}}},"serverInfo":{"name":"macos-mcp","version":"2.14.4"},"instructions":"\nmacOS MCP server provides tools to interact directly with the macOS desktop, \nenabling operation of the desktop on the user's behalf.\n"}} { metadata: undefined }
+2026-04-23T11:53:08.407Z [Macos] [info] Message from client: {"method":"notifications/initialized","jsonrpc":"2.0"} { metadata: undefined }
+2026-04-23T11:53:08.408Z [Macos] [info] Message from client: {"method":"tools/list","params":{},"jsonrpc":"2.0","id":1} { metadata: undefined }
+2026-04-23T11:53:08.408Z [Macos] [info] Message from client: {"method":"prompts/list","params":{},"jsonrpc":"2.0","id":2} { metadata: undefined }
+2026-04-23T11:53:08.408Z [Macos] [info] Message from client: {"method":"resources/list","params":{},"jsonrpc":"2.0","id":3} { metadata: undefined }
+2026-04-23T11:53:08.418Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"App","title":"App","description":"Manages macOS applications with three modes: 'launch' (opens the application), 'resize' (adjusts active window size/position), 'switch' (brings specific app into focus)."...[6463 chars truncated]...s":{"result":{"type":"string"}},"required":["result"],"type":"object","x-fastmcp-wrap-result":true},"annotations":{"title":"Scrape","readOnlyHint":true,"destructiveHint":false,"idempotentHint":true,"openWorldHint":true},"_meta":{"_fastmcp":{"tags":[]}}}]}} { metadata: undefined }
+2026-04-23T11:53:08.419Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}} { metadata: undefined }
+2026-04-23T11:53:08.420Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}} { metadata: undefined }
+2026-04-25T18:56:38.461Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-25T18:56:38.461Z [Macos] [info] Server transport closed (intentional shutdown) { metadata: undefined }
+2026-04-25T18:56:38.461Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-25T18:56:38.461Z [Macos] [info] Shutting down server... { metadata: undefined }
+2026-04-25T18:56:39.939Z [Macos] [info] Server transport closed { metadata: undefined }
+2026-04-25T18:56:39.939Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-25T18:57:01.282Z [Macos] [info] Initializing server... { metadata: undefined }
+2026-04-25T18:57:04.356Z [Macos] [info] Using MCP server command: /opt/homebrew/bin/uv with args and path: {
+  metadata: {
+    args: [
+      '--directory',
+      '~/Library/Application Support/Claude/Claude Extensions/ant.dir.gh.cursortouch.macos-mcp',
+      'run',
+      'macos-mcp',
+      [length]: 4
+    ],
+    paths: [
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '~/.bun/bin',
+      '~/Library/pnpm',
+      '~/.local/bin',
+      '~/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 13
+    ]
+  }
+} %o
+2026-04-25T18:57:04.405Z [Macos] [info] Server started and connected successfully { metadata: undefined }
+2026-04-25T18:57:04.405Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-25T18:57:04.405Z [Macos] [info] Server transport closed (intentional shutdown) { metadata: undefined }
+2026-04-25T18:57:04.405Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-25T18:57:04.405Z [Macos] [info] Shutting down server... { metadata: undefined }
+2026-04-25T18:57:04.406Z [Macos] [info] Initializing server... { metadata: undefined }
+2026-04-25T18:57:04.412Z [Macos] [info] Using MCP server command: /opt/homebrew/bin/uv with args and path: {
+  metadata: {
+    args: [
+      '--directory',
+      '~/Library/Application Support/Claude/Claude Extensions/ant.dir.gh.cursortouch.macos-mcp',
+      'run',
+      'macos-mcp',
+      [length]: 4
+    ],
+    paths: [
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '~/.bun/bin',
+      '~/Library/pnpm',
+      '~/.local/bin',
+      '~/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 13
+    ]
+  }
+} %o
+2026-04-25T18:57:04.449Z [Macos] [info] Server started and connected successfully { metadata: undefined }
+2026-04-25T18:57:05.473Z [Macos] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"extensions":{"io.modelcontextprotocol/ui":{"mimeTypes":["text/html;profile=mcp-app"]}}},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+2026-04-25T18:57:06.428Z [Macos] [info] Server transport closed { metadata: undefined }
+2026-04-25T18:57:06.428Z [Macos] [info] Client transport closed { metadata: undefined }
+[04/25/26 20:57:09] INFO     Starting MCP server 'macos-mcp' with server.py:2506
+                             transport 'stdio'                                  
+2026-04-25T18:57:09.969Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2025-11-25","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":true},"tasks":{"list":{},"cancel":{},"requests":{"tools":{"call":{}},"prompts":{"get":{}},"resources":{"read":{}}}}},"serverInfo":{"name":"macos-mcp","version":"2.14.4"},"instructions":"\nmacOS MCP server provides tools to interact directly with the macOS desktop, \nenabling operation of the desktop on the user's behalf.\n"}} { metadata: undefined }
+2026-04-25T18:57:09.970Z [Macos] [info] Message from client: {"method":"notifications/initialized","jsonrpc":"2.0"} { metadata: undefined }
+2026-04-25T18:57:09.971Z [Macos] [info] Message from client: {"method":"tools/list","params":{},"jsonrpc":"2.0","id":1} { metadata: undefined }
+2026-04-25T18:57:09.971Z [Macos] [info] Message from client: {"method":"prompts/list","params":{},"jsonrpc":"2.0","id":2} { metadata: undefined }
+2026-04-25T18:57:09.971Z [Macos] [info] Message from client: {"method":"resources/list","params":{},"jsonrpc":"2.0","id":3} { metadata: undefined }
+2026-04-25T18:57:09.976Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"App","title":"App","description":"Manages macOS applications with three modes: 'launch' (opens the application), 'resize' (adjusts active window size/position), 'switch' (brings specific app into focus)."...[6463 chars truncated]...s":{"result":{"type":"string"}},"required":["result"],"type":"object","x-fastmcp-wrap-result":true},"annotations":{"title":"Scrape","readOnlyHint":true,"destructiveHint":false,"idempotentHint":true,"openWorldHint":true},"_meta":{"_fastmcp":{"tags":[]}}}]}} { metadata: undefined }
+2026-04-25T18:57:09.977Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}} { metadata: undefined }
+2026-04-25T18:57:09.977Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}} { metadata: undefined }
+2026-04-25T19:21:28.907Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-25T19:21:28.907Z [Macos] [info] Server transport closed (renderer released port) { metadata: undefined }
+2026-04-25T19:21:29.276Z [Macos] [info] Server transport closed { metadata: undefined }
+2026-04-25T19:21:29.276Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-25T19:21:29.562Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-25T19:21:29.562Z [Macos] [info] Shutting down server... { metadata: undefined }
+2026-04-25T19:21:29.562Z [Macos] [info] Initializing server... { metadata: undefined }
+2026-04-25T19:21:29.567Z [Macos] [info] Using MCP server command: /opt/homebrew/bin/uv with args and path: {
+  metadata: {
+    args: [
+      '--directory',
+      '~/Library/Application Support/Claude/Claude Extensions/ant.dir.gh.cursortouch.macos-mcp',
+      'run',
+      'macos-mcp',
+      [length]: 4
+    ],
+    paths: [
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '~/.bun/bin',
+      '~/Library/pnpm',
+      '~/.local/bin',
+      '~/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 13
+    ]
+  }
+} %o
+2026-04-25T19:21:29.596Z [Macos] [info] Server started and connected successfully { metadata: undefined }
+2026-04-25T19:21:29.833Z [Macos] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"extensions":{"io.modelcontextprotocol/ui":{"mimeTypes":["text/html;profile=mcp-app"]}}},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+[04/25/26 21:21:34] INFO     Starting MCP server 'macos-mcp' with server.py:2506
+                             transport 'stdio'                                  
+2026-04-25T19:21:48.896Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2025-11-25","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":true},"tasks":{"list":{},"cancel":{},"requests":{"tools":{"call":{}},"prompts":{"get":{}},"resources":{"read":{}}}}},"serverInfo":{"name":"macos-mcp","version":"2.14.4"},"instructions":"\nmacOS MCP server provides tools to interact directly with the macOS desktop, \nenabling operation of the desktop on the user's behalf.\n"}} { metadata: undefined }
+2026-04-25T19:21:49.281Z [Macos] [info] Message from client: {"method":"notifications/initialized","jsonrpc":"2.0"} { metadata: undefined }
+2026-04-25T19:21:49.282Z [Macos] [info] Message from client: {"method":"tools/list","params":{},"jsonrpc":"2.0","id":1} { metadata: undefined }
+2026-04-25T19:21:49.282Z [Macos] [info] Message from client: {"method":"prompts/list","params":{},"jsonrpc":"2.0","id":2} { metadata: undefined }
+2026-04-25T19:21:49.282Z [Macos] [info] Message from client: {"method":"resources/list","params":{},"jsonrpc":"2.0","id":3} { metadata: undefined }
+2026-04-25T19:21:49.286Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"App","title":"App","description":"Manages macOS applications with three modes: 'launch' (opens the application), 'resize' (adjusts active window size/position), 'switch' (brings specific app into focus)."...[6463 chars truncated]...s":{"result":{"type":"string"}},"required":["result"],"type":"object","x-fastmcp-wrap-result":true},"annotations":{"title":"Scrape","readOnlyHint":true,"destructiveHint":false,"idempotentHint":true,"openWorldHint":true},"_meta":{"_fastmcp":{"tags":[]}}}]}} { metadata: undefined }
+2026-04-25T19:21:49.287Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}} { metadata: undefined }
+2026-04-25T19:21:49.288Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}} { metadata: undefined }
+2026-04-26T19:50:13.409Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-26T19:50:13.409Z [Macos] [info] Server transport closed (renderer released port) { metadata: undefined }
+2026-04-26T19:50:14.127Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-26T19:50:14.127Z [Macos] [info] Shutting down server... { metadata: undefined }
+2026-04-26T19:50:14.128Z [Macos] [info] Initializing server... { metadata: undefined }
+2026-04-26T19:50:14.133Z [Macos] [info] Using MCP server command: /opt/homebrew/bin/uv with args and path: {
+  metadata: {
+    args: [
+      '--directory',
+      '~/Library/Application Support/Claude/Claude Extensions/ant.dir.gh.cursortouch.macos-mcp',
+      'run',
+      'macos-mcp',
+      [length]: 4
+    ],
+    paths: [
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '~/.bun/bin',
+      '~/Library/pnpm',
+      '~/.local/bin',
+      '~/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 13
+    ]
+  }
+} %o
+2026-04-26T19:50:14.158Z [Macos] [info] Server started and connected successfully { metadata: undefined }
+2026-04-26T19:50:14.370Z [Macos] [info] Server transport closed { metadata: undefined }
+2026-04-26T19:50:14.370Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-26T19:50:14.426Z [Macos] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"extensions":{"io.modelcontextprotocol/ui":{"mimeTypes":["text/html;profile=mcp-app"]}}},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+[04/26/26 21:50:18] INFO     Starting MCP server 'macos-mcp' with server.py:2506
+                             transport 'stdio'                                  
+2026-04-26T19:50:18.998Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2025-11-25","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":true},"tasks":{"list":{},"cancel":{},"requests":{"tools":{"call":{}},"prompts":{"get":{}},"resources":{"read":{}}}}},"serverInfo":{"name":"macos-mcp","version":"2.14.4"},"instructions":"\nmacOS MCP server provides tools to interact directly with the macOS desktop, \nenabling operation of the desktop on the user's behalf.\n"}} { metadata: undefined }
+2026-04-26T19:50:18.998Z [Macos] [info] Message from client: {"method":"notifications/initialized","jsonrpc":"2.0"} { metadata: undefined }
+2026-04-26T19:50:18.999Z [Macos] [info] Message from client: {"method":"tools/list","params":{},"jsonrpc":"2.0","id":1} { metadata: undefined }
+2026-04-26T19:50:18.999Z [Macos] [info] Message from client: {"method":"prompts/list","params":{},"jsonrpc":"2.0","id":2} { metadata: undefined }
+2026-04-26T19:50:18.999Z [Macos] [info] Message from client: {"method":"resources/list","params":{},"jsonrpc":"2.0","id":3} { metadata: undefined }
+2026-04-26T19:50:19.003Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"App","title":"App","description":"Manages macOS applications with three modes: 'launch' (opens the application), 'resize' (adjusts active window size/position), 'switch' (brings specific app into focus)."...[6463 chars truncated]...s":{"result":{"type":"string"}},"required":["result"],"type":"object","x-fastmcp-wrap-result":true},"annotations":{"title":"Scrape","readOnlyHint":true,"destructiveHint":false,"idempotentHint":true,"openWorldHint":true},"_meta":{"_fastmcp":{"tags":[]}}}]}} { metadata: undefined }
+2026-04-26T19:50:19.004Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}} { metadata: undefined }
+2026-04-26T19:50:19.004Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}} { metadata: undefined }
+2026-04-26T19:51:36.152Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-26T19:51:36.152Z [Macos] [info] Server transport closed (renderer released port) { metadata: undefined }
+2026-04-26T19:51:36.599Z [Macos] [info] Server transport closed { metadata: undefined }
+2026-04-26T19:51:36.599Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-26T19:51:36.738Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-26T19:51:36.738Z [Macos] [info] Shutting down server... { metadata: undefined }
+2026-04-26T19:51:36.738Z [Macos] [info] Initializing server... { metadata: undefined }
+2026-04-26T19:51:36.749Z [Macos] [info] Using MCP server command: /opt/homebrew/bin/uv with args and path: {
+  metadata: {
+    args: [
+      '--directory',
+      '~/Library/Application Support/Claude/Claude Extensions/ant.dir.gh.cursortouch.macos-mcp',
+      'run',
+      'macos-mcp',
+      [length]: 4
+    ],
+    paths: [
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '~/.bun/bin',
+      '~/Library/pnpm',
+      '~/.local/bin',
+      '~/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 13
+    ]
+  }
+} %o
+2026-04-26T19:51:36.761Z [Macos] [info] Server started and connected successfully { metadata: undefined }
+2026-04-26T19:51:36.828Z [Macos] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"extensions":{"io.modelcontextprotocol/ui":{"mimeTypes":["text/html;profile=mcp-app"]}}},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+[04/26/26 21:51:40] INFO     Starting MCP server 'macos-mcp' with server.py:2506
+                             transport 'stdio'                                  
+2026-04-26T19:51:40.944Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2025-11-25","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":true},"tasks":{"list":{},"cancel":{},"requests":{"tools":{"call":{}},"prompts":{"get":{}},"resources":{"read":{}}}}},"serverInfo":{"name":"macos-mcp","version":"2.14.4"},"instructions":"\nmacOS MCP server provides tools to interact directly with the macOS desktop, \nenabling operation of the desktop on the user's behalf.\n"}} { metadata: undefined }
+2026-04-26T19:51:40.944Z [Macos] [info] Message from client: {"method":"notifications/initialized","jsonrpc":"2.0"} { metadata: undefined }
+2026-04-26T19:51:40.945Z [Macos] [info] Message from client: {"method":"tools/list","params":{},"jsonrpc":"2.0","id":1} { metadata: undefined }
+2026-04-26T19:51:40.945Z [Macos] [info] Message from client: {"method":"prompts/list","params":{},"jsonrpc":"2.0","id":2} { metadata: undefined }
+2026-04-26T19:51:40.945Z [Macos] [info] Message from client: {"method":"resources/list","params":{},"jsonrpc":"2.0","id":3} { metadata: undefined }
+2026-04-26T19:51:40.948Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"App","title":"App","description":"Manages macOS applications with three modes: 'launch' (opens the application), 'resize' (adjusts active window size/position), 'switch' (brings specific app into focus)."...[6463 chars truncated]...s":{"result":{"type":"string"}},"required":["result"],"type":"object","x-fastmcp-wrap-result":true},"annotations":{"title":"Scrape","readOnlyHint":true,"destructiveHint":false,"idempotentHint":true,"openWorldHint":true},"_meta":{"_fastmcp":{"tags":[]}}}]}} { metadata: undefined }
+2026-04-26T19:51:40.948Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}} { metadata: undefined }
+2026-04-26T19:51:40.948Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}} { metadata: undefined }
+2026-04-26T19:55:07.016Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-26T19:55:07.016Z [Macos] [info] Server transport closed (renderer released port) { metadata: undefined }
+2026-04-26T19:55:07.452Z [Macos] [info] Server transport closed { metadata: undefined }
+2026-04-26T19:55:07.452Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-26T19:55:07.626Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-26T19:55:07.626Z [Macos] [info] Shutting down server... { metadata: undefined }
+2026-04-26T19:55:07.626Z [Macos] [info] Initializing server... { metadata: undefined }
+2026-04-26T19:55:07.627Z [Macos] [info] Using MCP server command: /opt/homebrew/bin/uv with args and path: {
+  metadata: {
+    args: [
+      '--directory',
+      '~/Library/Application Support/Claude/Claude Extensions/ant.dir.gh.cursortouch.macos-mcp',
+      'run',
+      'macos-mcp',
+      [length]: 4
+    ],
+    paths: [
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '~/.bun/bin',
+      '~/Library/pnpm',
+      '~/.local/bin',
+      '~/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 13
+    ]
+  }
+} %o
+2026-04-26T19:55:07.650Z [Macos] [info] Server started and connected successfully { metadata: undefined }
+2026-04-26T19:55:07.741Z [Macos] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"extensions":{"io.modelcontextprotocol/ui":{"mimeTypes":["text/html;profile=mcp-app"]}}},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+[04/26/26 21:55:11] INFO     Starting MCP server 'macos-mcp' with server.py:2506
+                             transport 'stdio'                                  
+2026-04-26T19:55:11.803Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2025-11-25","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":true},"tasks":{"list":{},"cancel":{},"requests":{"tools":{"call":{}},"prompts":{"get":{}},"resources":{"read":{}}}}},"serverInfo":{"name":"macos-mcp","version":"2.14.4"},"instructions":"\nmacOS MCP server provides tools to interact directly with the macOS desktop, \nenabling operation of the desktop on the user's behalf.\n"}} { metadata: undefined }
+2026-04-26T19:55:11.804Z [Macos] [info] Message from client: {"method":"notifications/initialized","jsonrpc":"2.0"} { metadata: undefined }
+2026-04-26T19:55:11.804Z [Macos] [info] Message from client: {"method":"tools/list","params":{},"jsonrpc":"2.0","id":1} { metadata: undefined }
+2026-04-26T19:55:11.804Z [Macos] [info] Message from client: {"method":"prompts/list","params":{},"jsonrpc":"2.0","id":2} { metadata: undefined }
+2026-04-26T19:55:11.804Z [Macos] [info] Message from client: {"method":"resources/list","params":{},"jsonrpc":"2.0","id":3} { metadata: undefined }
+2026-04-26T19:55:11.807Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"App","title":"App","description":"Manages macOS applications with three modes: 'launch' (opens the application), 'resize' (adjusts active window size/position), 'switch' (brings specific app into focus)."...[6463 chars truncated]...s":{"result":{"type":"string"}},"required":["result"],"type":"object","x-fastmcp-wrap-result":true},"annotations":{"title":"Scrape","readOnlyHint":true,"destructiveHint":false,"idempotentHint":true,"openWorldHint":true},"_meta":{"_fastmcp":{"tags":[]}}}]}} { metadata: undefined }
+2026-04-26T19:55:11.807Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}} { metadata: undefined }
+2026-04-26T19:55:11.808Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}} { metadata: undefined }
+2026-04-26T19:57:38.606Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-26T19:57:38.606Z [Macos] [info] Server transport closed (renderer released port) { metadata: undefined }
+2026-04-26T19:57:39.167Z [Macos] [info] Server transport closed { metadata: undefined }
+2026-04-26T19:57:39.167Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-26T19:57:39.206Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-26T19:57:39.206Z [Macos] [info] Initializing server... { metadata: undefined }
+2026-04-26T19:57:39.206Z [Macos] [info] Shutting down server... { metadata: undefined }
+2026-04-26T19:57:39.208Z [Macos] [info] Using MCP server command: /opt/homebrew/bin/uv with args and path: {
+  metadata: {
+    args: [
+      '--directory',
+      '~/Library/Application Support/Claude/Claude Extensions/ant.dir.gh.cursortouch.macos-mcp',
+      'run',
+      'macos-mcp',
+      [length]: 4
+    ],
+    paths: [
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '~/.bun/bin',
+      '~/Library/pnpm',
+      '~/.local/bin',
+      '~/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 13
+    ]
+  }
+} %o
+2026-04-26T19:57:39.227Z [Macos] [info] Server started and connected successfully { metadata: undefined }
+2026-04-26T19:57:39.313Z [Macos] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"extensions":{"io.modelcontextprotocol/ui":{"mimeTypes":["text/html;profile=mcp-app"]}}},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+[04/26/26 21:57:43] INFO     Starting MCP server 'macos-mcp' with server.py:2506
+                             transport 'stdio'                                  
+2026-04-26T19:57:43.173Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2025-11-25","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":true},"tasks":{"list":{},"cancel":{},"requests":{"tools":{"call":{}},"prompts":{"get":{}},"resources":{"read":{}}}}},"serverInfo":{"name":"macos-mcp","version":"2.14.4"},"instructions":"\nmacOS MCP server provides tools to interact directly with the macOS desktop, \nenabling operation of the desktop on the user's behalf.\n"}} { metadata: undefined }
+2026-04-26T19:57:43.174Z [Macos] [info] Message from client: {"method":"notifications/initialized","jsonrpc":"2.0"} { metadata: undefined }
+2026-04-26T19:57:43.174Z [Macos] [info] Message from client: {"method":"tools/list","params":{},"jsonrpc":"2.0","id":1} { metadata: undefined }
+2026-04-26T19:57:43.174Z [Macos] [info] Message from client: {"method":"prompts/list","params":{},"jsonrpc":"2.0","id":2} { metadata: undefined }
+2026-04-26T19:57:43.174Z [Macos] [info] Message from client: {"method":"resources/list","params":{},"jsonrpc":"2.0","id":3} { metadata: undefined }
+2026-04-26T19:57:43.176Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"App","title":"App","description":"Manages macOS applications with three modes: 'launch' (opens the application), 'resize' (adjusts active window size/position), 'switch' (brings specific app into focus)."...[6463 chars truncated]...s":{"result":{"type":"string"}},"required":["result"],"type":"object","x-fastmcp-wrap-result":true},"annotations":{"title":"Scrape","readOnlyHint":true,"destructiveHint":false,"idempotentHint":true,"openWorldHint":true},"_meta":{"_fastmcp":{"tags":[]}}}]}} { metadata: undefined }
+2026-04-26T19:57:43.177Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}} { metadata: undefined }
+2026-04-26T19:57:43.177Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}} { metadata: undefined }
+2026-04-26T20:00:34.912Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-26T20:00:34.912Z [Macos] [info] Server transport closed (renderer released port) { metadata: undefined }
+2026-04-26T20:00:35.356Z [Macos] [info] Server transport closed { metadata: undefined }
+2026-04-26T20:00:35.357Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-26T20:00:35.523Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-26T20:00:35.523Z [Macos] [info] Shutting down server... { metadata: undefined }
+2026-04-26T20:00:35.524Z [Macos] [info] Initializing server... { metadata: undefined }
+2026-04-26T20:00:35.534Z [Macos] [info] Using MCP server command: /opt/homebrew/bin/uv with args and path: {
+  metadata: {
+    args: [
+      '--directory',
+      '~/Library/Application Support/Claude/Claude Extensions/ant.dir.gh.cursortouch.macos-mcp',
+      'run',
+      'macos-mcp',
+      [length]: 4
+    ],
+    paths: [
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '~/.bun/bin',
+      '~/Library/pnpm',
+      '~/.local/bin',
+      '~/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 13
+    ]
+  }
+} %o
+2026-04-26T20:00:35.549Z [Macos] [info] Server started and connected successfully { metadata: undefined }
+2026-04-26T20:00:35.634Z [Macos] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"extensions":{"io.modelcontextprotocol/ui":{"mimeTypes":["text/html;profile=mcp-app"]}}},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+[04/26/26 22:00:39] INFO     Starting MCP server 'macos-mcp' with server.py:2506
+                             transport 'stdio'                                  
+2026-04-26T20:00:39.658Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2025-11-25","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":true},"tasks":{"list":{},"cancel":{},"requests":{"tools":{"call":{}},"prompts":{"get":{}},"resources":{"read":{}}}}},"serverInfo":{"name":"macos-mcp","version":"2.14.4"},"instructions":"\nmacOS MCP server provides tools to interact directly with the macOS desktop, \nenabling operation of the desktop on the user's behalf.\n"}} { metadata: undefined }
+2026-04-26T20:00:39.659Z [Macos] [info] Message from client: {"method":"notifications/initialized","jsonrpc":"2.0"} { metadata: undefined }
+2026-04-26T20:00:39.659Z [Macos] [info] Message from client: {"method":"tools/list","params":{},"jsonrpc":"2.0","id":1} { metadata: undefined }
+2026-04-26T20:00:39.659Z [Macos] [info] Message from client: {"method":"prompts/list","params":{},"jsonrpc":"2.0","id":2} { metadata: undefined }
+2026-04-26T20:00:39.660Z [Macos] [info] Message from client: {"method":"resources/list","params":{},"jsonrpc":"2.0","id":3} { metadata: undefined }
+2026-04-26T20:00:39.663Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"App","title":"App","description":"Manages macOS applications with three modes: 'launch' (opens the application), 'resize' (adjusts active window size/position), 'switch' (brings specific app into focus)."...[6463 chars truncated]...s":{"result":{"type":"string"}},"required":["result"],"type":"object","x-fastmcp-wrap-result":true},"annotations":{"title":"Scrape","readOnlyHint":true,"destructiveHint":false,"idempotentHint":true,"openWorldHint":true},"_meta":{"_fastmcp":{"tags":[]}}}]}} { metadata: undefined }
+2026-04-26T20:00:39.667Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}} { metadata: undefined }
+2026-04-26T20:00:39.667Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}} { metadata: undefined }
+2026-04-26T20:05:43.272Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-26T20:05:43.272Z [Macos] [info] Server transport closed (renderer released port) { metadata: undefined }
+2026-04-26T20:05:43.851Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-26T20:05:43.851Z [Macos] [info] Shutting down server... { metadata: undefined }
+2026-04-26T20:05:43.852Z [Macos] [info] Initializing server... { metadata: undefined }
+2026-04-26T20:05:43.862Z [Macos] [info] Using MCP server command: /opt/homebrew/bin/uv with args and path: {
+  metadata: {
+    args: [
+      '--directory',
+      '~/Library/Application Support/Claude/Claude Extensions/ant.dir.gh.cursortouch.macos-mcp',
+      'run',
+      'macos-mcp',
+      [length]: 4
+    ],
+    paths: [
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '~/.bun/bin',
+      '~/Library/pnpm',
+      '~/.local/bin',
+      '~/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 13
+    ]
+  }
+} %o
+2026-04-26T20:05:43.876Z [Macos] [info] Server started and connected successfully { metadata: undefined }
+2026-04-26T20:05:44.090Z [Macos] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"extensions":{"io.modelcontextprotocol/ui":{"mimeTypes":["text/html;profile=mcp-app"]}}},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+2026-04-26T20:05:44.967Z [Macos] [info] Server transport closed { metadata: undefined }
+2026-04-26T20:05:44.967Z [Macos] [info] Client transport closed { metadata: undefined }
+[04/26/26 22:05:48] INFO     Starting MCP server 'macos-mcp' with server.py:2506
+                             transport 'stdio'                                  
+2026-04-26T20:05:48.093Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2025-11-25","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":true},"tasks":{"list":{},"cancel":{},"requests":{"tools":{"call":{}},"prompts":{"get":{}},"resources":{"read":{}}}}},"serverInfo":{"name":"macos-mcp","version":"2.14.4"},"instructions":"\nmacOS MCP server provides tools to interact directly with the macOS desktop, \nenabling operation of the desktop on the user's behalf.\n"}} { metadata: undefined }
+2026-04-26T20:05:48.094Z [Macos] [info] Message from client: {"method":"notifications/initialized","jsonrpc":"2.0"} { metadata: undefined }
+2026-04-26T20:05:48.094Z [Macos] [info] Message from client: {"method":"tools/list","params":{},"jsonrpc":"2.0","id":1} { metadata: undefined }
+2026-04-26T20:05:48.094Z [Macos] [info] Message from client: {"method":"prompts/list","params":{},"jsonrpc":"2.0","id":2} { metadata: undefined }
+2026-04-26T20:05:48.095Z [Macos] [info] Message from client: {"method":"resources/list","params":{},"jsonrpc":"2.0","id":3} { metadata: undefined }
+2026-04-26T20:05:48.097Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"App","title":"App","description":"Manages macOS applications with three modes: 'launch' (opens the application), 'resize' (adjusts active window size/position), 'switch' (brings specific app into focus)."...[6463 chars truncated]...s":{"result":{"type":"string"}},"required":["result"],"type":"object","x-fastmcp-wrap-result":true},"annotations":{"title":"Scrape","readOnlyHint":true,"destructiveHint":false,"idempotentHint":true,"openWorldHint":true},"_meta":{"_fastmcp":{"tags":[]}}}]}} { metadata: undefined }
+2026-04-26T20:05:48.097Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}} { metadata: undefined }
+2026-04-26T20:05:48.098Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}} { metadata: undefined }
+2026-04-26T20:07:07.607Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-26T20:07:07.607Z [Macos] [info] Server transport closed (renderer released port) { metadata: undefined }
+2026-04-26T20:07:08.036Z [Macos] [info] Server transport closed { metadata: undefined }
+2026-04-26T20:07:08.036Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-26T20:07:08.191Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-26T20:07:08.191Z [Macos] [info] Shutting down server... { metadata: undefined }
+2026-04-26T20:07:08.191Z [Macos] [info] Initializing server... { metadata: undefined }
+2026-04-26T20:07:08.203Z [Macos] [info] Using MCP server command: /opt/homebrew/bin/uv with args and path: {
+  metadata: {
+    args: [
+      '--directory',
+      '~/Library/Application Support/Claude/Claude Extensions/ant.dir.gh.cursortouch.macos-mcp',
+      'run',
+      'macos-mcp',
+      [length]: 4
+    ],
+    paths: [
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '~/.bun/bin',
+      '~/Library/pnpm',
+      '~/.local/bin',
+      '~/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 13
+    ]
+  }
+} %o
+2026-04-26T20:07:08.217Z [Macos] [info] Server started and connected successfully { metadata: undefined }
+2026-04-26T20:07:08.301Z [Macos] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"extensions":{"io.modelcontextprotocol/ui":{"mimeTypes":["text/html;profile=mcp-app"]}}},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+[04/26/26 22:07:12] INFO     Starting MCP server 'macos-mcp' with server.py:2506
+                             transport 'stdio'                                  
+2026-04-26T20:07:12.207Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2025-11-25","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":true},"tasks":{"list":{},"cancel":{},"requests":{"tools":{"call":{}},"prompts":{"get":{}},"resources":{"read":{}}}}},"serverInfo":{"name":"macos-mcp","version":"2.14.4"},"instructions":"\nmacOS MCP server provides tools to interact directly with the macOS desktop, \nenabling operation of the desktop on the user's behalf.\n"}} { metadata: undefined }
+2026-04-26T20:07:12.208Z [Macos] [info] Message from client: {"method":"notifications/initialized","jsonrpc":"2.0"} { metadata: undefined }
+2026-04-26T20:07:12.208Z [Macos] [info] Message from client: {"method":"tools/list","params":{},"jsonrpc":"2.0","id":1} { metadata: undefined }
+2026-04-26T20:07:12.209Z [Macos] [info] Message from client: {"method":"prompts/list","params":{},"jsonrpc":"2.0","id":2} { metadata: undefined }
+2026-04-26T20:07:12.209Z [Macos] [info] Message from client: {"method":"resources/list","params":{},"jsonrpc":"2.0","id":3} { metadata: undefined }
+2026-04-26T20:07:12.212Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"App","title":"App","description":"Manages macOS applications with three modes: 'launch' (opens the application), 'resize' (adjusts active window size/position), 'switch' (brings specific app into focus)."...[6463 chars truncated]...s":{"result":{"type":"string"}},"required":["result"],"type":"object","x-fastmcp-wrap-result":true},"annotations":{"title":"Scrape","readOnlyHint":true,"destructiveHint":false,"idempotentHint":true,"openWorldHint":true},"_meta":{"_fastmcp":{"tags":[]}}}]}} { metadata: undefined }
+2026-04-26T20:07:12.212Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}} { metadata: undefined }
+2026-04-26T20:07:12.213Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}} { metadata: undefined }
+2026-04-26T20:08:11.731Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-26T20:08:11.731Z [Macos] [info] Server transport closed (renderer released port) { metadata: undefined }
+2026-04-26T20:08:12.171Z [Macos] [info] Server transport closed { metadata: undefined }
+2026-04-26T20:08:12.171Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-26T20:08:12.348Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-26T20:08:12.348Z [Macos] [info] Shutting down server... { metadata: undefined }
+2026-04-26T20:08:12.348Z [Macos] [info] Initializing server... { metadata: undefined }
+2026-04-26T20:08:12.356Z [Macos] [info] Using MCP server command: /opt/homebrew/bin/uv with args and path: {
+  metadata: {
+    args: [
+      '--directory',
+      '~/Library/Application Support/Claude/Claude Extensions/ant.dir.gh.cursortouch.macos-mcp',
+      'run',
+      'macos-mcp',
+      [length]: 4
+    ],
+    paths: [
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '~/.bun/bin',
+      '~/Library/pnpm',
+      '~/.local/bin',
+      '~/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 13
+    ]
+  }
+} %o
+2026-04-26T20:08:12.373Z [Macos] [info] Server started and connected successfully { metadata: undefined }
+2026-04-26T20:08:12.457Z [Macos] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"extensions":{"io.modelcontextprotocol/ui":{"mimeTypes":["text/html;profile=mcp-app"]}}},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+[04/26/26 22:08:16] INFO     Starting MCP server 'macos-mcp' with server.py:2506
+                             transport 'stdio'                                  
+2026-04-26T20:08:16.752Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2025-11-25","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":true},"tasks":{"list":{},"cancel":{},"requests":{"tools":{"call":{}},"prompts":{"get":{}},"resources":{"read":{}}}}},"serverInfo":{"name":"macos-mcp","version":"2.14.4"},"instructions":"\nmacOS MCP server provides tools to interact directly with the macOS desktop, \nenabling operation of the desktop on the user's behalf.\n"}} { metadata: undefined }
+2026-04-26T20:08:16.753Z [Macos] [info] Message from client: {"method":"notifications/initialized","jsonrpc":"2.0"} { metadata: undefined }
+2026-04-26T20:08:16.753Z [Macos] [info] Message from client: {"method":"tools/list","params":{},"jsonrpc":"2.0","id":1} { metadata: undefined }
+2026-04-26T20:08:16.753Z [Macos] [info] Message from client: {"method":"prompts/list","params":{},"jsonrpc":"2.0","id":2} { metadata: undefined }
+2026-04-26T20:08:16.753Z [Macos] [info] Message from client: {"method":"resources/list","params":{},"jsonrpc":"2.0","id":3} { metadata: undefined }
+2026-04-26T20:08:16.756Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"App","title":"App","description":"Manages macOS applications with three modes: 'launch' (opens the application), 'resize' (adjusts active window size/position), 'switch' (brings specific app into focus)."...[6463 chars truncated]...s":{"result":{"type":"string"}},"required":["result"],"type":"object","x-fastmcp-wrap-result":true},"annotations":{"title":"Scrape","readOnlyHint":true,"destructiveHint":false,"idempotentHint":true,"openWorldHint":true},"_meta":{"_fastmcp":{"tags":[]}}}]}} { metadata: undefined }
+2026-04-26T20:08:16.758Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}} { metadata: undefined }
+2026-04-26T20:08:16.758Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}} { metadata: undefined }
+2026-04-26T20:08:52.422Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-26T20:08:52.422Z [Macos] [info] Server transport closed (renderer released port) { metadata: undefined }
+2026-04-26T20:08:52.899Z [Macos] [info] Server transport closed { metadata: undefined }
+2026-04-26T20:08:52.899Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-26T20:08:53.028Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-26T20:08:53.028Z [Macos] [info] Shutting down server... { metadata: undefined }
+2026-04-26T20:08:53.028Z [Macos] [info] Initializing server... { metadata: undefined }
+2026-04-26T20:08:53.030Z [Macos] [info] Using MCP server command: /opt/homebrew/bin/uv with args and path: {
+  metadata: {
+    args: [
+      '--directory',
+      '~/Library/Application Support/Claude/Claude Extensions/ant.dir.gh.cursortouch.macos-mcp',
+      'run',
+      'macos-mcp',
+      [length]: 4
+    ],
+    paths: [
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '~/.bun/bin',
+      '~/Library/pnpm',
+      '~/.local/bin',
+      '~/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 13
+    ]
+  }
+} %o
+2026-04-26T20:08:53.051Z [Macos] [info] Server started and connected successfully { metadata: undefined }
+2026-04-26T20:08:53.142Z [Macos] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"extensions":{"io.modelcontextprotocol/ui":{"mimeTypes":["text/html;profile=mcp-app"]}}},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+[04/26/26 22:08:56] INFO     Starting MCP server 'macos-mcp' with server.py:2506
+                             transport 'stdio'                                  
+2026-04-26T20:08:56.988Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2025-11-25","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":true},"tasks":{"list":{},"cancel":{},"requests":{"tools":{"call":{}},"prompts":{"get":{}},"resources":{"read":{}}}}},"serverInfo":{"name":"macos-mcp","version":"2.14.4"},"instructions":"\nmacOS MCP server provides tools to interact directly with the macOS desktop, \nenabling operation of the desktop on the user's behalf.\n"}} { metadata: undefined }
+2026-04-26T20:08:56.988Z [Macos] [info] Message from client: {"method":"notifications/initialized","jsonrpc":"2.0"} { metadata: undefined }
+2026-04-26T20:08:56.988Z [Macos] [info] Message from client: {"method":"tools/list","params":{},"jsonrpc":"2.0","id":1} { metadata: undefined }
+2026-04-26T20:08:56.989Z [Macos] [info] Message from client: {"method":"prompts/list","params":{},"jsonrpc":"2.0","id":2} { metadata: undefined }
+2026-04-26T20:08:56.989Z [Macos] [info] Message from client: {"method":"resources/list","params":{},"jsonrpc":"2.0","id":3} { metadata: undefined }
+2026-04-26T20:08:56.991Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"App","title":"App","description":"Manages macOS applications with three modes: 'launch' (opens the application), 'resize' (adjusts active window size/position), 'switch' (brings specific app into focus)."...[6463 chars truncated]...s":{"result":{"type":"string"}},"required":["result"],"type":"object","x-fastmcp-wrap-result":true},"annotations":{"title":"Scrape","readOnlyHint":true,"destructiveHint":false,"idempotentHint":true,"openWorldHint":true},"_meta":{"_fastmcp":{"tags":[]}}}]}} { metadata: undefined }
+2026-04-26T20:08:56.991Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}} { metadata: undefined }
+2026-04-26T20:08:56.991Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}} { metadata: undefined }
+2026-04-27T04:51:47.441Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-27T04:51:47.441Z [Macos] [info] Server transport closed (renderer released port) { metadata: undefined }
+2026-04-27T04:51:48.111Z [Macos] [info] Server transport closed { metadata: undefined }
+2026-04-27T04:51:48.112Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-27T04:51:48.790Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-27T04:51:48.790Z [Macos] [info] Shutting down server... { metadata: undefined }
+2026-04-27T04:51:48.790Z [Macos] [info] Initializing server... { metadata: undefined }
+2026-04-27T04:51:48.805Z [Macos] [info] Using MCP server command: /opt/homebrew/bin/uv with args and path: {
+  metadata: {
+    args: [
+      '--directory',
+      '~/Library/Application Support/Claude/Claude Extensions/ant.dir.gh.cursortouch.macos-mcp',
+      'run',
+      'macos-mcp',
+      [length]: 4
+    ],
+    paths: [
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '~/.bun/bin',
+      '~/Library/pnpm',
+      '~/.local/bin',
+      '~/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 13
+    ]
+  }
+} %o
+2026-04-27T04:51:49.049Z [Macos] [info] Server started and connected successfully { metadata: undefined }
+2026-04-27T04:51:49.321Z [Macos] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"extensions":{"io.modelcontextprotocol/ui":{"mimeTypes":["text/html;profile=mcp-app"]}}},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+[04/27/26 06:51:53] INFO     Starting MCP server 'macos-mcp' with server.py:2506
+                             transport 'stdio'                                  
+2026-04-27T04:51:53.268Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2025-11-25","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":true},"tasks":{"list":{},"cancel":{},"requests":{"tools":{"call":{}},"prompts":{"get":{}},"resources":{"read":{}}}}},"serverInfo":{"name":"macos-mcp","version":"2.14.4"},"instructions":"\nmacOS MCP server provides tools to interact directly with the macOS desktop, \nenabling operation of the desktop on the user's behalf.\n"}} { metadata: undefined }
+2026-04-27T04:51:53.268Z [Macos] [info] Message from client: {"method":"notifications/initialized","jsonrpc":"2.0"} { metadata: undefined }
+2026-04-27T04:51:53.269Z [Macos] [info] Message from client: {"method":"tools/list","params":{},"jsonrpc":"2.0","id":1} { metadata: undefined }
+2026-04-27T04:51:53.269Z [Macos] [info] Message from client: {"method":"prompts/list","params":{},"jsonrpc":"2.0","id":2} { metadata: undefined }
+2026-04-27T04:51:53.269Z [Macos] [info] Message from client: {"method":"resources/list","params":{},"jsonrpc":"2.0","id":3} { metadata: undefined }
+2026-04-27T04:51:53.272Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"App","title":"App","description":"Manages macOS applications with three modes: 'launch' (opens the application), 'resize' (adjusts active window size/position), 'switch' (brings specific app into focus)."...[6463 chars truncated]...s":{"result":{"type":"string"}},"required":["result"],"type":"object","x-fastmcp-wrap-result":true},"annotations":{"title":"Scrape","readOnlyHint":true,"destructiveHint":false,"idempotentHint":true,"openWorldHint":true},"_meta":{"_fastmcp":{"tags":[]}}}]}} { metadata: undefined }
+2026-04-27T04:51:53.272Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}} { metadata: undefined }
+2026-04-27T04:51:53.272Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}} { metadata: undefined }
+2026-04-27T06:06:14.522Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-27T06:06:14.522Z [Macos] [info] Server transport closed (renderer released port) { metadata: undefined }
+2026-04-27T06:06:15.008Z [Macos] [info] Server transport closed { metadata: undefined }
+2026-04-27T06:06:15.008Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-27T06:06:15.320Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-27T06:06:15.320Z [Macos] [info] Shutting down server... { metadata: undefined }
+2026-04-27T06:06:15.321Z [Macos] [info] Initializing server... { metadata: undefined }
+2026-04-27T06:06:15.330Z [Macos] [info] Using MCP server command: /opt/homebrew/bin/uv with args and path: {
+  metadata: {
+    args: [
+      '--directory',
+      '~/Library/Application Support/Claude/Claude Extensions/ant.dir.gh.cursortouch.macos-mcp',
+      'run',
+      'macos-mcp',
+      [length]: 4
+    ],
+    paths: [
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '~/.bun/bin',
+      '~/Library/pnpm',
+      '~/.local/bin',
+      '~/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 13
+    ]
+  }
+} %o
+2026-04-27T06:06:15.351Z [Macos] [info] Server started and connected successfully { metadata: undefined }
+2026-04-27T06:06:15.599Z [Macos] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"extensions":{"io.modelcontextprotocol/ui":{"mimeTypes":["text/html;profile=mcp-app"]}}},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+[04/27/26 08:06:20] INFO     Starting MCP server 'macos-mcp' with server.py:2506
+                             transport 'stdio'                                  
+2026-04-27T06:06:20.405Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2025-11-25","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":true},"tasks":{"list":{},"cancel":{},"requests":{"tools":{"call":{}},"prompts":{"get":{}},"resources":{"read":{}}}}},"serverInfo":{"name":"macos-mcp","version":"2.14.4"},"instructions":"\nmacOS MCP server provides tools to interact directly with the macOS desktop, \nenabling operation of the desktop on the user's behalf.\n"}} { metadata: undefined }
+2026-04-27T06:06:26.038Z [Macos] [info] Message from client: {"method":"notifications/initialized","jsonrpc":"2.0"} { metadata: undefined }
+2026-04-27T06:06:26.040Z [Macos] [info] Message from client: {"method":"tools/list","params":{},"jsonrpc":"2.0","id":1} { metadata: undefined }
+2026-04-27T06:06:26.040Z [Macos] [info] Message from client: {"method":"prompts/list","params":{},"jsonrpc":"2.0","id":2} { metadata: undefined }
+2026-04-27T06:06:26.040Z [Macos] [info] Message from client: {"method":"resources/list","params":{},"jsonrpc":"2.0","id":3} { metadata: undefined }
+2026-04-27T06:06:26.046Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"App","title":"App","description":"Manages macOS applications with three modes: 'launch' (opens the application), 'resize' (adjusts active window size/position), 'switch' (brings specific app into focus)."...[6463 chars truncated]...s":{"result":{"type":"string"}},"required":["result"],"type":"object","x-fastmcp-wrap-result":true},"annotations":{"title":"Scrape","readOnlyHint":true,"destructiveHint":false,"idempotentHint":true,"openWorldHint":true},"_meta":{"_fastmcp":{"tags":[]}}}]}} { metadata: undefined }
+2026-04-27T06:06:26.047Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}} { metadata: undefined }
+2026-04-27T06:06:26.047Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}} { metadata: undefined }
+2026-04-28T08:52:36.825Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-28T08:52:36.825Z [Macos] [info] Server transport closed (intentional shutdown) { metadata: undefined }
+2026-04-28T08:52:36.825Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-28T08:52:36.825Z [Macos] [info] Shutting down server... { metadata: undefined }
+2026-04-28T08:52:37.622Z [Macos] [info] Server transport closed { metadata: undefined }
+2026-04-28T08:52:37.622Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-28T08:56:04.250Z [Macos] [info] Initializing server... { metadata: undefined }
+2026-04-28T08:56:04.707Z [Macos] [info] Using MCP server command: /opt/homebrew/bin/uv with args and path: {
+  metadata: {
+    args: [
+      '--directory',
+      '~/Library/Application Support/Claude/Claude Extensions/ant.dir.gh.cursortouch.macos-mcp',
+      'run',
+      'macos-mcp',
+      [length]: 4
+    ],
+    paths: [
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '~/.bun/bin',
+      '~/Library/pnpm',
+      '~/.local/bin',
+      '~/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 13
+    ]
+  }
+} %o
+2026-04-28T08:56:04.761Z [Macos] [info] Server started and connected successfully { metadata: undefined }
+2026-04-28T08:56:04.762Z [Macos] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"extensions":{"io.modelcontextprotocol/ui":{"mimeTypes":["text/html;profile=mcp-app"]}}},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+[04/28/26 10:56:09] INFO     Starting MCP server 'macos-mcp' with server.py:2506
+                             transport 'stdio'                                  
+2026-04-28T08:56:09.483Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2025-11-25","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":true},"tasks":{"list":{},"cancel":{},"requests":{"tools":{"call":{}},"prompts":{"get":{}},"resources":{"read":{}}}}},"serverInfo":{"name":"macos-mcp","version":"2.14.4"},"instructions":"\nmacOS MCP server provides tools to interact directly with the macOS desktop, \nenabling operation of the desktop on the user's behalf.\n"}} { metadata: undefined }
+2026-04-28T08:56:09.484Z [Macos] [info] Message from client: {"method":"notifications/initialized","jsonrpc":"2.0"} { metadata: undefined }
+2026-04-28T08:56:09.484Z [Macos] [info] Message from client: {"method":"tools/list","params":{},"jsonrpc":"2.0","id":1} { metadata: undefined }
+2026-04-28T08:56:09.484Z [Macos] [info] Message from client: {"method":"prompts/list","params":{},"jsonrpc":"2.0","id":2} { metadata: undefined }
+2026-04-28T08:56:09.485Z [Macos] [info] Message from client: {"method":"resources/list","params":{},"jsonrpc":"2.0","id":3} { metadata: undefined }
+2026-04-28T08:56:09.490Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"App","title":"App","description":"Manages macOS applications with three modes: 'launch' (opens the application), 'resize' (adjusts active window size/position), 'switch' (brings specific app into focus)."...[6463 chars truncated]...s":{"result":{"type":"string"}},"required":["result"],"type":"object","x-fastmcp-wrap-result":true},"annotations":{"title":"Scrape","readOnlyHint":true,"destructiveHint":false,"idempotentHint":true,"openWorldHint":true},"_meta":{"_fastmcp":{"tags":[]}}}]}} { metadata: undefined }
+2026-04-28T08:56:09.491Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}} { metadata: undefined }
+2026-04-28T08:56:09.492Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}} { metadata: undefined }
+2026-04-28T08:56:12.589Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-28T08:56:12.589Z [Macos] [info] Server transport closed (renderer released port) { metadata: undefined }
+2026-04-28T08:56:12.920Z [Macos] [info] Server transport closed { metadata: undefined }
+2026-04-28T08:56:12.920Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-28T08:56:13.168Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-28T08:56:13.167Z [Macos] [info] Shutting down server... { metadata: undefined }
+2026-04-28T08:56:13.168Z [Macos] [info] Initializing server... { metadata: undefined }
+2026-04-28T08:56:13.184Z [Macos] [info] Using MCP server command: /opt/homebrew/bin/uv with args and path: {
+  metadata: {
+    args: [
+      '--directory',
+      '~/Library/Application Support/Claude/Claude Extensions/ant.dir.gh.cursortouch.macos-mcp',
+      'run',
+      'macos-mcp',
+      [length]: 4
+    ],
+    paths: [
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '~/.bun/bin',
+      '~/Library/pnpm',
+      '~/.local/bin',
+      '~/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 13
+    ]
+  }
+} %o
+2026-04-28T08:56:13.202Z [Macos] [info] Server started and connected successfully { metadata: undefined }
+2026-04-28T08:56:13.276Z [Macos] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"extensions":{"io.modelcontextprotocol/ui":{"mimeTypes":["text/html;profile=mcp-app"]}}},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+[04/28/26 10:56:17] INFO     Starting MCP server 'macos-mcp' with server.py:2506
+                             transport 'stdio'                                  
+2026-04-28T08:56:17.023Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2025-11-25","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":true},"tasks":{"list":{},"cancel":{},"requests":{"tools":{"call":{}},"prompts":{"get":{}},"resources":{"read":{}}}}},"serverInfo":{"name":"macos-mcp","version":"2.14.4"},"instructions":"\nmacOS MCP server provides tools to interact directly with the macOS desktop, \nenabling operation of the desktop on the user's behalf.\n"}} { metadata: undefined }
+2026-04-28T08:56:17.034Z [Macos] [info] Message from client: {"method":"notifications/initialized","jsonrpc":"2.0"} { metadata: undefined }
+2026-04-28T08:56:17.034Z [Macos] [info] Message from client: {"method":"tools/list","params":{},"jsonrpc":"2.0","id":1} { metadata: undefined }
+2026-04-28T08:56:17.034Z [Macos] [info] Message from client: {"method":"prompts/list","params":{},"jsonrpc":"2.0","id":2} { metadata: undefined }
+2026-04-28T08:56:17.034Z [Macos] [info] Message from client: {"method":"resources/list","params":{},"jsonrpc":"2.0","id":3} { metadata: undefined }
+2026-04-28T08:56:17.037Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"App","title":"App","description":"Manages macOS applications with three modes: 'launch' (opens the application), 'resize' (adjusts active window size/position), 'switch' (brings specific app into focus)."...[6463 chars truncated]...s":{"result":{"type":"string"}},"required":["result"],"type":"object","x-fastmcp-wrap-result":true},"annotations":{"title":"Scrape","readOnlyHint":true,"destructiveHint":false,"idempotentHint":true,"openWorldHint":true},"_meta":{"_fastmcp":{"tags":[]}}}]}} { metadata: undefined }
+2026-04-28T08:56:17.038Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}} { metadata: undefined }
+2026-04-28T08:56:17.039Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}} { metadata: undefined }
+2026-04-28T09:21:04.410Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-28T09:21:04.410Z [Macos] [info] Server transport closed (intentional shutdown) { metadata: undefined }
+2026-04-28T09:21:04.410Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-28T09:21:04.410Z [Macos] [info] Shutting down server... { metadata: undefined }
+2026-04-28T09:21:04.965Z [Macos] [info] Server transport closed { metadata: undefined }
+2026-04-28T09:21:04.965Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-28T09:21:34.747Z [Macos] [info] Initializing server... { metadata: undefined }
+2026-04-28T09:21:35.382Z [Macos] [info] Using MCP server command: /opt/homebrew/bin/uv with args and path: {
+  metadata: {
+    args: [
+      '--directory',
+      '~/Library/Application Support/Claude/Claude Extensions/ant.dir.gh.cursortouch.macos-mcp',
+      'run',
+      'macos-mcp',
+      [length]: 4
+    ],
+    paths: [
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '~/.bun/bin',
+      '~/Library/pnpm',
+      '~/.local/bin',
+      '~/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 13
+    ]
+  }
+} %o
+2026-04-28T09:21:35.392Z [Macos] [info] Server started and connected successfully { metadata: undefined }
+2026-04-28T09:21:35.581Z [Macos] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"extensions":{"io.modelcontextprotocol/ui":{"mimeTypes":["text/html;profile=mcp-app"]}}},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+[04/28/26 11:21:39] INFO     Starting MCP server 'macos-mcp' with server.py:2506
+                             transport 'stdio'                                  
+2026-04-28T09:21:39.202Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2025-11-25","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":true},"tasks":{"list":{},"cancel":{},"requests":{"tools":{"call":{}},"prompts":{"get":{}},"resources":{"read":{}}}}},"serverInfo":{"name":"macos-mcp","version":"2.14.4"},"instructions":"\nmacOS MCP server provides tools to interact directly with the macOS desktop, \nenabling operation of the desktop on the user's behalf.\n"}} { metadata: undefined }
+2026-04-28T09:21:39.203Z [Macos] [info] Message from client: {"method":"notifications/initialized","jsonrpc":"2.0"} { metadata: undefined }
+2026-04-28T09:21:39.203Z [Macos] [info] Message from client: {"method":"tools/list","params":{},"jsonrpc":"2.0","id":1} { metadata: undefined }
+2026-04-28T09:21:39.203Z [Macos] [info] Message from client: {"method":"prompts/list","params":{},"jsonrpc":"2.0","id":2} { metadata: undefined }
+2026-04-28T09:21:39.203Z [Macos] [info] Message from client: {"method":"resources/list","params":{},"jsonrpc":"2.0","id":3} { metadata: undefined }
+2026-04-28T09:21:39.207Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"App","title":"App","description":"Manages macOS applications with three modes: 'launch' (opens the application), 'resize' (adjusts active window size/position), 'switch' (brings specific app into focus)."...[6463 chars truncated]...s":{"result":{"type":"string"}},"required":["result"],"type":"object","x-fastmcp-wrap-result":true},"annotations":{"title":"Scrape","readOnlyHint":true,"destructiveHint":false,"idempotentHint":true,"openWorldHint":true},"_meta":{"_fastmcp":{"tags":[]}}}]}} { metadata: undefined }
+2026-04-28T09:21:39.208Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}} { metadata: undefined }
+2026-04-28T09:21:39.209Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}} { metadata: undefined }
+2026-04-28T09:22:08.473Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-28T09:22:08.473Z [Macos] [info] Server transport closed (intentional shutdown) { metadata: undefined }
+2026-04-28T09:22:08.473Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-28T09:22:08.473Z [Macos] [info] Shutting down server... { metadata: undefined }
+2026-04-28T09:22:08.818Z [Macos] [info] Server transport closed { metadata: undefined }
+2026-04-28T09:22:08.818Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-28T09:24:04.984Z [Macos] [info] Initializing server... { metadata: undefined }
+2026-04-28T09:24:05.287Z [Macos] [info] Using MCP server command: /opt/homebrew/bin/uv with args and path: {
+  metadata: {
+    args: [
+      '--directory',
+      '~/Library/Application Support/Claude/Claude Extensions/ant.dir.gh.cursortouch.macos-mcp',
+      'run',
+      'macos-mcp',
+      [length]: 4
+    ],
+    paths: [
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '~/.bun/bin',
+      '~/Library/pnpm',
+      '~/.local/bin',
+      '~/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 13
+    ]
+  }
+} %o
+2026-04-28T09:24:05.310Z [Macos] [info] Server started and connected successfully { metadata: undefined }
+2026-04-28T09:24:06.848Z [Macos] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"extensions":{"io.modelcontextprotocol/ui":{"mimeTypes":["text/html;profile=mcp-app"]}}},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+[04/28/26 11:24:10] INFO     Starting MCP server 'macos-mcp' with server.py:2506
+                             transport 'stdio'                                  
+2026-04-28T09:24:10.081Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2025-11-25","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":true},"tasks":{"list":{},"cancel":{},"requests":{"tools":{"call":{}},"prompts":{"get":{}},"resources":{"read":{}}}}},"serverInfo":{"name":"macos-mcp","version":"2.14.4"},"instructions":"\nmacOS MCP server provides tools to interact directly with the macOS desktop, \nenabling operation of the desktop on the user's behalf.\n"}} { metadata: undefined }
+2026-04-28T09:24:10.082Z [Macos] [info] Message from client: {"method":"notifications/initialized","jsonrpc":"2.0"} { metadata: undefined }
+2026-04-28T09:24:10.082Z [Macos] [info] Message from client: {"method":"tools/list","params":{},"jsonrpc":"2.0","id":1} { metadata: undefined }
+2026-04-28T09:24:10.082Z [Macos] [info] Message from client: {"method":"prompts/list","params":{},"jsonrpc":"2.0","id":2} { metadata: undefined }
+2026-04-28T09:24:10.083Z [Macos] [info] Message from client: {"method":"resources/list","params":{},"jsonrpc":"2.0","id":3} { metadata: undefined }
+2026-04-28T09:24:10.086Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"App","title":"App","description":"Manages macOS applications with three modes: 'launch' (opens the application), 'resize' (adjusts active window size/position), 'switch' (brings specific app into focus)."...[6463 chars truncated]...s":{"result":{"type":"string"}},"required":["result"],"type":"object","x-fastmcp-wrap-result":true},"annotations":{"title":"Scrape","readOnlyHint":true,"destructiveHint":false,"idempotentHint":true,"openWorldHint":true},"_meta":{"_fastmcp":{"tags":[]}}}]}} { metadata: undefined }
+2026-04-28T09:24:10.086Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}} { metadata: undefined }
+2026-04-28T09:24:10.087Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}} { metadata: undefined }
+2026-04-28T09:35:18.652Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-28T09:35:18.652Z [Macos] [info] Server transport closed (intentional shutdown) { metadata: undefined }
+2026-04-28T09:35:18.652Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-28T09:35:18.652Z [Macos] [info] Shutting down server... { metadata: undefined }
+2026-04-28T09:35:19.071Z [Macos] [info] Server transport closed { metadata: undefined }
+2026-04-28T09:35:19.072Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-28T09:40:50.232Z [Macos] [info] Initializing server... { metadata: undefined }
+2026-04-28T09:40:53.309Z [Macos] [info] Using MCP server command: /opt/homebrew/bin/uv with args and path: {
+  metadata: {
+    args: [
+      '--directory',
+      '~/Library/Application Support/Claude/Claude Extensions/ant.dir.gh.cursortouch.macos-mcp',
+      'run',
+      'macos-mcp',
+      [length]: 4
+    ],
+    paths: [
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '~/.bun/bin',
+      '~/Library/pnpm',
+      '~/.local/bin',
+      '~/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 13
+    ]
+  }
+} %o
+2026-04-28T09:40:53.441Z [Macos] [info] Server started and connected successfully { metadata: undefined }
+2026-04-28T09:40:53.441Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-28T09:40:53.441Z [Macos] [info] Server transport closed (intentional shutdown) { metadata: undefined }
+2026-04-28T09:40:53.441Z [Macos] [info] Client transport closed { metadata: undefined }
+2026-04-28T09:40:53.441Z [Macos] [info] Initializing server... { metadata: undefined }
+2026-04-28T09:40:53.441Z [Macos] [info] Shutting down server... { metadata: undefined }
+2026-04-28T09:40:53.456Z [Macos] [info] Using MCP server command: /opt/homebrew/bin/uv with args and path: {
+  metadata: {
+    args: [
+      '--directory',
+      '~/Library/Application Support/Claude/Claude Extensions/ant.dir.gh.cursortouch.macos-mcp',
+      'run',
+      'macos-mcp',
+      [length]: 4
+    ],
+    paths: [
+      '~/.nvm/versions/node/v18.20.8/bin',
+      '~/.nvm/versions/node/v20.19.3/bin',
+      '/usr/local/bin',
+      '/opt/homebrew/bin',
+      '/opt/local/bin',
+      '~/.bun/bin',
+      '~/Library/pnpm',
+      '~/.local/bin',
+      '~/bin',
+      '/usr/bin',
+      '/bin',
+      '/usr/sbin',
+      '/sbin',
+      [length]: 13
+    ]
+  }
+} %o
+2026-04-28T09:40:53.516Z [Macos] [info] Server started and connected successfully { metadata: undefined }
+2026-04-28T09:40:54.289Z [Macos] [info] Message from client: {"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"extensions":{"io.modelcontextprotocol/ui":{"mimeTypes":["text/html;profile=mcp-app"]}}},"clientInfo":{"name":"claude-ai","version":"0.1.0"}},"jsonrpc":"2.0","id":0} { metadata: undefined }
+2026-04-28T09:40:55.452Z [Macos] [info] Server transport closed { metadata: undefined }
+2026-04-28T09:40:55.452Z [Macos] [info] Client transport closed { metadata: undefined }
+[04/28/26 11:40:58] INFO     Starting MCP server 'macos-mcp' with server.py:2506
+                             transport 'stdio'                                  
+2026-04-28T09:40:58.857Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2025-11-25","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":true},"tasks":{"list":{},"cancel":{},"requests":{"tools":{"call":{}},"prompts":{"get":{}},"resources":{"read":{}}}}},"serverInfo":{"name":"macos-mcp","version":"2.14.4"},"instructions":"\nmacOS MCP server provides tools to interact directly with the macOS desktop, \nenabling operation of the desktop on the user's behalf.\n"}} { metadata: undefined }
+2026-04-28T09:40:58.953Z [Macos] [info] Message from client: {"method":"notifications/initialized","jsonrpc":"2.0"} { metadata: undefined }
+2026-04-28T09:40:58.954Z [Macos] [info] Message from client: {"method":"tools/list","params":{},"jsonrpc":"2.0","id":1} { metadata: undefined }
+2026-04-28T09:40:58.954Z [Macos] [info] Message from client: {"method":"prompts/list","params":{},"jsonrpc":"2.0","id":2} { metadata: undefined }
+2026-04-28T09:40:58.954Z [Macos] [info] Message from client: {"method":"resources/list","params":{},"jsonrpc":"2.0","id":3} { metadata: undefined }
+2026-04-28T09:40:58.958Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"App","title":"App","description":"Manages macOS applications with three modes: 'launch' (opens the application), 'resize' (adjusts active window size/position), 'switch' (brings specific app into focus)."...[6463 chars truncated]...s":{"result":{"type":"string"}},"required":["result"],"type":"object","x-fastmcp-wrap-result":true},"annotations":{"title":"Scrape","readOnlyHint":true,"destructiveHint":false,"idempotentHint":true,"openWorldHint":true},"_meta":{"_fastmcp":{"tags":[]}}}]}} { metadata: undefined }
+2026-04-28T09:40:58.958Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":2,"result":{"prompts":[]}} { metadata: undefined }
+2026-04-28T09:40:58.959Z [Macos] [info] Message from server: {"jsonrpc":"2.0","id":3,"result":{"resources":[]}} { metadata: undefined }

@@ -1,0 +1,201 @@
+{
+  "_meta": {
+    "schema_version": "phase-0.1-didaktik-v1.2",
+    "game_id": "franzoesische-revolution-1789",
+    "thema": "Französische Revolution 1789",
+    "schulart": "Mittelschule Bayern",
+    "jahrgangsstufe": "7",
+    "klassenkontext": "R7 / Mittlere-Reife-Klasse 7c",
+    "schwierigkeit": "Basis",
+    "mappen_anzahl": 4,
+    "vorgaenger_game": null,
+    "erstellt_von": "agent-didaktik",
+    "erstellt_am": "2026-05-01",
+    "validierungsstatus": "ENTWURF"
+  },
+  "lehrplan_anker": [
+    {
+      "lehrplan_quelle_url_or_path": "Unterrichtseinwicklung/7c/Input_Artefake/Lehrplan/GPG_R7/Fachlehrplan_GPG_R7.md",
+      "lehrplan_profil": "Mittelschule_Jg7_GPG",
+      "lernbereich_id": "GPG7_LB2",
+      "lernbereich_titel": "Zeit und Wandel",
+      "rolle": "primaer"
+    },
+    {
+      "lehrplan_quelle_url_or_path": "Unterrichtseinwicklung/7c/Input_Artefake/Lehrplan/GPG_R7/Jahrgangsstufenprofil_GPG_R7.md",
+      "lehrplan_profil": "Mittelschule_Jg7_Regelklasse_GPG",
+      "lernbereich_id": "GPG_J7_GRUNDLEGENDE_KOMPETENZEN",
+      "lernbereich_titel": "Grundlegende Kompetenzen Ende Jg. 7 GPG",
+      "rolle": "sekundaer"
+    }
+  ],
+  "kompetenzerwartungen": [
+    {
+      "id": "GPG7_LB2_K_01",
+      "wortlaut": "Die Schülerinnen und Schüler nutzen den Vergleich zwischen absolutistischer und demokratischer Regierungsform, um den Wert der politischen Mitbestimmungsmöglichkeiten in einer Demokratie (z. B. in der Bundesrepublik Deutschland) beurteilen zu können.",
+      "afb": "II-III",
+      "rolle": "primaer",
+      "haupt_mappen": ["M1", "M4"]
+    },
+    {
+      "id": "GPG7_LB2_K_02",
+      "wortlaut": "Sie übertragen ihre Kenntnisse über den nicht linearen Verlauf der Französischen Revolution auf Revolutionen der Gegenwart, um vergleichbare aktuelle Entwicklungen nachvollziehen zu können.",
+      "afb": "II-III",
+      "rolle": "primaer",
+      "haupt_mappen": ["M2", "M3"]
+    },
+    {
+      "id": "GPG_J7_K_05",
+      "wortlaut": "Sie setzen sich mit politischen und sozialen Entwicklungen auseinander, um zu bewerten, warum diese in der Geschichte nicht nur linear verlaufen und weshalb politisches Engagement nicht unmittelbar zum Erfolg führen muss.",
+      "afb": "II-III",
+      "rolle": "sekundaer",
+      "haupt_mappen": ["M3"]
+    },
+    {
+      "id": "GPG_J7_K_07",
+      "wortlaut": "Sie stellen Bezüge zwischen historischen Wertvorstellungen und der Entwicklung unseres heutigen Wertesystems her.",
+      "afb": "II",
+      "rolle": "sekundaer",
+      "haupt_mappen": ["M4"]
+    }
+  ],
+  "lehrplan_inhalte": [
+    {
+      "id": "GPG7_LB2_I_01",
+      "text": "Selbstverständnis eines absolutistischen Herrschers am Beispiel Ludwig XIV., Selbstverständnis eines demokratischen Amtsinhabers",
+      "typ": "Konzeptwissen",
+      "zugewiesene_mappen": ["M1", "M4"]
+    },
+    {
+      "id": "GPG7_LB2_I_02",
+      "text": "Französische Revolution: wichtige Beweggründe, grober Verlauf einzelner Phasen (z. B. Napoleonische Ära)",
+      "typ": "Faktenwissen",
+      "zugewiesene_mappen": ["M1", "M2", "M3", "M4"]
+    }
+  ],
+  "gegenstandsbereiche": {
+    "Ordnungssysteme": ["M1", "M2", "M4"],
+    "Interessen": ["M1", "M2", "M3"],
+    "Werte": ["M2", "M4"],
+    "Kulturen": ["M4"]
+  },
+  "lernziele": {
+    "stundenziel": {
+      "afb": "II-III",
+      "text": "Die SuS beurteilen den nicht-linearen Verlauf der Französischen Revolution 1789–1799 und ihre Bedeutung für unser heutiges Wertesystem, indem sie Ursachen, Phasen und Folgen aus mehreren Perspektiven (Adel, Klerus, Dritter Stand, Frauen) analysieren, was daran erkennbar wird, dass sie in einem Abschluss-Statement begründet erklären können, warum eine Revolution einerseits demokratische Errungenschaften (Menschenrechte, Volkssouveränität) hervorbringen und andererseits in Gewalt und Diktatur umschlagen kann."
+    },
+    "teilziele": [
+      {
+        "id": "TZ1",
+        "mappe": "M1",
+        "afb": "I-II",
+        "text": "Die SuS beschreiben die Lebenswirklichkeit der drei Stände im vorrevolutionären Frankreich (1789), indem sie zentrale Privilegien, Lasten und das Selbstverständnis Ludwigs XVI. einander gegenüberstellen, was daran erkennbar wird, dass sie für jeden Stand mindestens zwei Merkmale (z. B. Steuerpflicht, Recht, Lebensbedingung) korrekt zuordnen."
+      },
+      {
+        "id": "TZ2",
+        "mappe": "M2",
+        "afb": "II",
+        "text": "Die SuS erklären die Eskalation des Sommers 1789 (Generalstände → Nationalversammlung → Bastille → Erklärung der Menschen- und Bürgerrechte), indem sie diese Ereignisse in eine begründete Reihenfolge bringen und die Wirkung der Erklärung benennen, was daran erkennbar wird, dass sie mindestens zwei Artikel der Menschen- und Bürgerrechte ihrer Funktion (Schutz, Mitbestimmung) zuordnen können."
+      },
+      {
+        "id": "TZ3",
+        "mappe": "M3",
+        "afb": "II",
+        "text": "Die SuS analysieren die Radikalisierungsphase 1792–1794 (Republik, Hinrichtung Ludwigs XVI., Schreckensherrschaft), indem sie aus verschiedenen Perspektiven (Jakobiner, Girondisten, einfache Bürger, Frauen) Beweggründe und Folgen abwägen, was daran erkennbar wird, dass sie begründen, warum eine Revolution gegen den eigenen Anspruch (Freiheit, Gleichheit) verstoßen kann."
+      },
+      {
+        "id": "TZ4",
+        "mappe": "M4",
+        "afb": "II-III",
+        "text": "Die SuS beurteilen die langfristigen Wirkungen der Französischen Revolution für Europa und für unser heutiges Wertesystem (Menschenrechte, Verfassung, Volkssouveränität), indem sie konkrete Errungenschaften (z. B. Code Civil, Grundrechte) und konkrete heutige Bezüge (Grundgesetz Art. 1, demokratische Mitbestimmung) verknüpfen, was daran erkennbar wird, dass sie in einem begründeten Statement die Aussage „Was 1789 begann, prägt unser Leben heute" mit mindestens zwei Beispielen stützen oder begründet einschränken."
+      }
+    ]
+  },
+  "schwierigkeitskurve": [
+    {"mappe": "M1", "afb_schwerpunkt": "I-II", "prozesskompetenz": "Erkenntnisse gewinnen und anwenden", "begruendung": "Einstieg, Orientierung in fremder Gesellschaftsordnung. Beschreibung und erste Strukturierung."},
+    {"mappe": "M2", "afb_schwerpunkt": "II", "prozesskompetenz": "Erkenntnisse gewinnen und anwenden", "begruendung": "Transferleistung: Ereignisse in kausaler Reihenfolge anordnen, Funktion der Menschenrechte erklären."},
+    {"mappe": "M3", "afb_schwerpunkt": "II-III", "prozesskompetenz": "Beurteilen und bewerten", "begruendung": "Multiperspektivische Analyse, Bewertung des Widerspruchs Anspruch–Realität."},
+    {"mappe": "M4", "afb_schwerpunkt": "II-III", "prozesskompetenz": "Beurteilen und bewerten / Anwenden und handeln", "begruendung": "Synthese und Transfer auf heutige Lebenswelt (Bezug 1789 → Grundgesetz)."}
+  ],
+  "ethische_hinweise": {
+    "multiperspektivitaet": {
+      "perspektiven": ["Adel/Klerus", "Bürgerlicher Dritter Stand (Bourgeoisie)", "Einfacher Dritter Stand (Bauern, Sansculotten)", "Frauen (Olympe de Gouges, Marsch auf Versailles)", "Kolonien/Versklavte (Hinweis-Ebene)"],
+      "pflicht_in_mappen": ["M1", "M2", "M3"]
+    },
+    "ueberwaeltigungsverbot": {
+      "prinzip": "Beutelsbacher Konsens — keine einseitige Heroisierung, Schreckensherrschaft als Verstoß gegen eigene Werte thematisieren",
+      "umgesetzt_in": ["M3", "M4"]
+    },
+    "sensibilitaet": {
+      "thema": "Gewaltdarstellung (Hinrichtungen, Schreckensherrschaft)",
+      "umsetzung": "Sachlich, keine drastischen Bilder. Statistiken statt Emotionalisierung. Trigger-Hinweis in Lehrkraft-Doku.",
+      "betroffene_mappen": ["M3"]
+    },
+    "kontroversitaet": [
+      "Hinrichtung Ludwigs XVI. — Volkssouveränität oder politischer Mord?",
+      "Revolution: mehr Freiheit oder mehr Gewalt?",
+      "Napoleon — Revolutionsbeender oder -vollender?"
+    ],
+    "aktualitaetsbezug": {
+      "umsetzung_in": "M4",
+      "verknuepfungen": ["Grundgesetz Art. 1 / 3 / 20", "Heutige Revolutionen (Arabischer Frühling, Iran 2022) als Übertragung von KE GPG7_LB2_K_02"]
+    }
+  },
+  "didaktische_strukturvorgaben": {
+    "artikulation": {
+      "einstieg": "Mappen-Eröffnung mit narrativem Impuls + 1 Hinführungs-Bild/Quelle, aktiviert Vorwissen, stellt Mappen-Leitfrage.",
+      "erarbeitung": "3–5 Materialien pro Mappe (Quellen, Bilder, Karten, Zeitleiste, Statistiken).",
+      "sicherung": "Mappenabschluss mit Schlüsselbegriff (speist Game-Schlüssel aus 4 Wörtern)."
+    },
+    "narrativ_rahmen": {
+      "titel": "Geheim-Akte 1789 — Das Archiv der Republik",
+      "rolle_sus": "Archiv-Ermittler der République Française im Jahr 2026",
+      "setting": "Pariser Nationalarchiv — vier verschollene Akten zu rekonstruieren",
+      "begruendung_altersgerecht": "Archiv-/Detektiv-Rahmen motivierend, nicht infantil. Distanz zur Gewalt durch heutige Ermittler-Perspektive.",
+      "roter_faden": "Pro Mappe wird eine Akte gelöst; wiederkehrendes Archiv-Tagebuch verbindet die Mappen."
+    },
+    "differenzierung": {
+      "tipp_system_stufen": 3,
+      "stufen_definition": [
+        {"stufe": 1, "name": "Denkanstoß", "funktion": "Aktiviert Vorwissen, ohne Inhalt zu verraten"},
+        {"stufe": 2, "name": "Richtung", "funktion": "Strukturelle Hilfe, Kategorien"},
+        {"stufe": 3, "name": "Erklärung mit Lösung", "funktion": "Erklärt Konzept, nennt Lösung — kein SuS bleibt stecken"}
+      ],
+      "beispiel_M2_aufgabe_reihenfolge": {
+        "stufe_1": "Was passiert zuerst — bevor die Bastille gestürmt wird? Welches Treffen muss vorher schon eskaliert sein?",
+        "stufe_2": "Es gibt drei Phasen: erst ein Treffen (Mai), dann ein Schwur (Juni), dann ein Sturm (Juli) und schließlich eine Erklärung (August). Ordne nach Monaten.",
+        "stufe_3": "Reihenfolge: 1) Generalstände treten zusammen (5. Mai), 2) Ballhausschwur (20. Juni), 3) Sturm auf die Bastille (14. Juli), 4) Erklärung der Menschen- und Bürgerrechte (26. August). Logik: Je mehr der König blockiert, desto stärker organisiert sich der Dritte Stand."
+      },
+      "sprachliche_differenzierung": {
+        "komposita_aufloesung_pflicht_in": ["M1", "M2"],
+        "schluesselbegriffe_pro_mappe_max": 5
+      }
+    }
+  },
+  "scope_abgrenzung": [
+    {"aspekt": "Absolutismus Ludwig XIV. (Detail)", "im_game": false, "begruendung": "Voraussetzung, nicht Schwerpunkt — sonst M1 überladen.", "folge_game_reserve": "optional"},
+    {"aspekt": "Französische Revolution Phasen 1789–1794", "im_game": true, "begruendung": "Lehrplan-Hauptkompetenz GPG7_LB2_K_02.", "folge_game_reserve": null},
+    {"aspekt": "Napoleonische Ära (vertieft)", "im_game": false, "begruendung": "Eigener komplexer Themenbereich, würde M4 sprengen.", "folge_game_reserve": "Folge-Game „Napoleon und Europa"", "hinweis": "Code Civil als Wirkung wird in M4 kurz behandelt."},
+    {"aspekt": "Industrialisierung (GPG7_LB2_K_03)", "im_game": false, "begruendung": "Anderer Lernbereich-Schwerpunkt.", "folge_game_reserve": "ja"},
+    {"aspekt": "Reichsgründung 1871 (GPG7_LB2_K_04)", "im_game": false, "begruendung": "Anderer Themenbereich (deutsche Nationalbewegung).", "folge_game_reserve": "ja"},
+    {"aspekt": "Erster Weltkrieg (GPG7_LB2_K_05–08)", "im_game": false, "begruendung": "Bereits als Folge-Sequenz im Lehrplan vorgesehen.", "folge_game_reserve": "ja"},
+    {"aspekt": "Sklaverei in französischen Kolonien", "im_game": "hinweis", "begruendung": "Wichtiger ethischer Bezug, aber nicht Hauptzentrum (Reine Hinweis-Erwähnung in M3).", "folge_game_reserve": "optional"}
+  ],
+  "eskalations_log": [],
+  "q_gate_self_check": {
+    "qd1_lehrplan_abdeckung": "PASS",
+    "qd2_ke_vollstaendigkeit": "PASS",
+    "qd3_teilziel_qualitaet": "PASS",
+    "qd4_ke_matrix_konsistenz": "PASS",
+    "qd5_mappen_balance": "PASS",
+    "qd6_afb_progression": "PASS",
+    "qd7_ethik_abdeckung": "PASS",
+    "qd8_strukturvorgaben": "PASS",
+    "qd9_sequenzierbarkeit": "PASS",
+    "qd10_struktur_freeze_tauglich": "PASS",
+    "qd_titel_multiperspektivitaet": "PASS",
+    "qd_schulart_konsistenz": "PASS",
+    "gate_urteil": "PASS",
+    "user_validierung": "AUSSTEHEND"
+  }
+}
