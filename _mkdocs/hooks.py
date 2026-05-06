@@ -206,11 +206,13 @@ def _expand_multi_para(
             if not num:
                 continue
             any_token = True
+            # pre-disambig-2026-05-06: suffixed-priority Lookup
             candidates = [
-                f"§ {num} {norm}".strip(),
+                f"§ {num} {norm}".strip() if norm else None,
+                f"{norm} § {num}".strip() if norm else None,
                 f"§ {num}",
-                f"{norm} § {num}".strip(),
             ]
+            candidates = [c for c in candidates if c]
             title = None
             for c in candidates:
                 c = c.strip()
@@ -233,12 +235,21 @@ def _expand_multi_para(
 
 
 def _lookup_para(item: str, norm: str, abbrs_by_key: dict[str, str], all_keys: dict[str, str]) -> str | None:
-    """Helper: try multiple candidate keys for a §-item under norm-context."""
+    """Helper: try multiple candidate keys for a §-item under norm-context.
+
+    pre-disambig-2026-05-06: Lookup-Reihenfolge **suffixed > bare** ist hier
+    erzwungen — `§ N <NORM>` bzw. `<NORM> § N` haben Vorrang vor bare `§ N`.
+    Damit bekommen mehrdeutige §§ wie § 16 (LDO/BaySchO) oder § 22 (LDO/MSO/
+    BaySchO/SGB VIII) bei vorhandenem Norm-Kontext den korrekten Tooltip.
+    """
     candidates = [
-        f"§ {item} {norm}".strip(),
+        # 1. PRIORITÄT: norm-suffixed (eindeutig)
+        f"§ {item} {norm}".strip() if norm else None,
+        f"{norm} § {item}".strip() if norm else None,
+        # 2. FALLBACK: bare-key (nur wenn keine suffixed-Version existiert)
         f"§ {item}",
-        f"{norm} § {item}".strip(),
     ]
+    candidates = [c for c in candidates if c]
     for c in candidates:
         c = c.strip()
         if c in abbrs_by_key:
@@ -712,9 +723,12 @@ def _load_norm_urls(config_dir: Path) -> dict[str, str]:
     return _NORM_URLS_CACHE
 
 
-# Pattern: matche `<abbr title="...">label</abbr>` (NICHT bereits im <a>)
+# pre-disambig-2026-05-06: Match-Pattern OHNE `(?<!>)`-Lookbehind, der
+# fälschlich `<strong><abbr>...</abbr></strong>` und ähnliche Inline-Tag-
+# Verschachtelungen blockierte. Stattdessen prüfen wir direkt im _replace,
+# ob das <abbr> bereits in einem <a>-Tag steht (per Kontext-Check).
 _ABBR_HTML_RE = re.compile(
-    r'(?<!>)<abbr\s+title=(?P<q>["\'])(?P<title>[^"\']*)(?P=q)>(?P<label>[^<]+)</abbr>'
+    r'<abbr\s+title=(?P<q>["\'])(?P<title>[^"\']*)(?P=q)>(?P<label>[^<]+)</abbr>'
 )
 # Pattern: matche bereits-gewrappte `<a ...><abbr ...>...</abbr></a>` für Skip
 _LINKED_ABBR_RE = re.compile(
@@ -740,6 +754,22 @@ def _wrap_abbr_with_link(html_content: str, urls: dict[str, str]) -> str:
         return html_content
 
     def _replace(m: re.Match) -> str:
+        # pre-disambig-2026-05-06: Doppelwrap-Schutz — wenn unmittelbar vor
+        # dem <abbr> ein offenes `<a class="norm-link"`-Tag steht, skip.
+        s = m.start()
+        # Schaue 80 Zeichen davor nach `<a class="norm-link"`
+        ctx_before = html_content[max(0, s - 80):s]
+        last_open_a = ctx_before.rfind("<a ")
+        if last_open_a > -1:
+            close_after_a = ctx_before.find("</a>", last_open_a)
+            close_self_a = ctx_before.find(">", last_open_a)
+            # Wir sind innerhalb eines noch offenen <a>-Tags wenn:
+            # - es ein `<a ` gibt
+            # - kein `</a>` zwischen `<a >` und unserer Position
+            # Idempotent: bei `<a class="norm-link"...>` bleiben wir hier.
+            if close_after_a == -1 and "norm-link" in ctx_before[last_open_a:]:
+                return m.group(0)
+
         label = m.group("label")
         title = html.unescape(m.group("title"))
         norm_label = _normalize_label(label)
