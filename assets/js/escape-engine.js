@@ -4488,3 +4488,606 @@ var EscapeEngine = (function () {
   };
 
 })();
+
+// ============================================================================
+// === Differenzierungs-MVP v1 — STR-09-NEU (2026-05-07) ======================
+// ============================================================================
+// Minimal-invasive Erweiterung. Wrappt EscapeEngine.init zur Post-Render-
+// Annotation (Sprachbutton + Glossar-Inline-Tooltips + KI-Prompt-Copy-Boxen).
+// Aktiv nur wenn data.meta.differenzierung_aktiv === true.
+// Material-Volltext bleibt DE; Sprachschalter wirkt auf Aufgabenstellungen,
+// MC-Optionen-Labels (input.value bleibt DE = Loesungs-Anker), Glossar-
+// Erklaerungen, KI-Prompt-Inhalt. RTL-Spiegelung pro AR fuer Aufgaben-/
+// Glossar-/KI-Container, NICHT fuer Material-Container.
+// ============================================================================
+(function () {
+  'use strict';
+
+  if (typeof EscapeEngine === 'undefined' || typeof document === 'undefined') return;
+
+  var SPRACHE_KEY = 'escape_sprache';
+  var SUPPORTED_LANGS = ['de', 'ru', 'ar'];
+  var LANG_LABEL = { de: 'DE', ru: 'RU', ar: 'AR' };
+  var LANG_LABEL_LONG = { de: 'Deutsch', ru: 'Русский', ar: 'العربية' };
+
+  var I18N = {
+    de: {
+      ki_box_titel: 'KI-Hilfe holen',
+      ki_box_button: 'Prompt für KI-Hilfe kopieren',
+      ki_box_kopiert: 'Kopiert ✓',
+      ki_box_hint: 'Füge den Prompt in eine KI deiner Wahl ein und stelle deine Frage.',
+      sprache_button_label: 'Sprache wählen',
+      tooltip_close: 'Schließen',
+      nur_de_hinweis: '(nur DE verfügbar)'
+    },
+    ru: {
+      ki_box_titel: 'Помощь от ИИ',
+      ki_box_button: 'Скопировать промпт для AI-помощника',
+      ki_box_kopiert: 'Скопировано ✓',
+      ki_box_hint: 'Вставь промпт в AI и задай свой вопрос.',
+      sprache_button_label: 'Выбрать язык',
+      tooltip_close: 'Закрыть',
+      nur_de_hinweis: '(только на DE)'
+    },
+    ar: {
+      ki_box_titel: 'الاستعانة بالذكاء الاصطناعي',
+      ki_box_button: 'نسخ موجّه المساعد الذكي',
+      ki_box_kopiert: 'تم النسخ ✓',
+      ki_box_hint: 'الصق الموجّه في مساعد ذكي واطرح سؤالك.',
+      sprache_button_label: 'اختر اللغة',
+      tooltip_close: 'إغلاق',
+      nur_de_hinweis: '(بالألمانية فقط)'
+    }
+  };
+
+  var _diffData = null;          // gesamtes data.json (zweite fetch)
+  var _currentMappe = null;      // aktuelle Mappe
+  var _activeTooltip = null;     // einziger aktiver Glossar-Tooltip
+  var _glossarSeq = 0;           // ID-Counter fuer Tooltip-IDs
+
+  // -- Sprache-State ---------------------------------------------------------
+
+  function getCurrentSprache() {
+    try {
+      var s = localStorage.getItem(SPRACHE_KEY);
+      return SUPPORTED_LANGS.indexOf(s) !== -1 ? s : 'de';
+    } catch (e) { return 'de'; }
+  }
+
+  function setSprache(lang) {
+    if (SUPPORTED_LANGS.indexOf(lang) === -1) return;
+    try { localStorage.setItem(SPRACHE_KEY, lang); } catch (e) {}
+    document.documentElement.dataset.sprache = lang;
+    closeActiveTooltip();
+    applyToAllMaterials();
+    applyToAllAufgaben();
+    updateSprachButton();
+  }
+
+  // -- Webfont AR injizieren -------------------------------------------------
+
+  function injectArabicFont() {
+    if (document.getElementById('diff-mvp-font-ar')) return;
+    var link = document.createElement('link');
+    link.id = 'diff-mvp-font-ar';
+    link.rel = 'stylesheet';
+    link.href = 'https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600&display=swap';
+    link.crossOrigin = 'anonymous';
+    document.head.appendChild(link);
+  }
+
+  // -- Sprach-Button im Header ----------------------------------------------
+
+  function renderSprachButton() {
+    if (!_currentMappe || !_currentMappe.verfuegbare_sprachen) return;
+    var langs = _currentMappe.verfuegbare_sprachen;
+    if (!langs || langs.length < 2) return; // nur DE -> kein Schalter noetig
+
+    var header = document.querySelector('header');
+    if (!header) return;
+    if (header.querySelector('.sprachbutton-wrapper')) return; // idempotent
+
+    var wrapper = document.createElement('div');
+    wrapper.className = 'sprachbutton-wrapper';
+
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'sprachbutton';
+    btn.setAttribute('aria-haspopup', 'menu');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', I18N[getCurrentSprache()].sprache_button_label);
+
+    var icon = document.createElement('span');
+    icon.className = 'sprachbutton__icon';
+    icon.setAttribute('aria-hidden', 'true');
+    icon.textContent = '\u{1F310}'; // Globe
+    btn.appendChild(icon);
+
+    var lbl = document.createElement('span');
+    lbl.className = 'sprachbutton__label';
+    lbl.textContent = LANG_LABEL[getCurrentSprache()];
+    btn.appendChild(lbl);
+
+    wrapper.appendChild(btn);
+
+    var menu = document.createElement('ul');
+    menu.className = 'sprachbutton__menu';
+    menu.setAttribute('role', 'menu');
+    menu.hidden = true;
+
+    for (var i = 0; i < langs.length; i++) {
+      (function (lang) {
+        var li = document.createElement('li');
+        li.setAttribute('role', 'none');
+        var item = document.createElement('button');
+        item.type = 'button';
+        item.className = 'sprachbutton__item';
+        item.setAttribute('role', 'menuitem');
+        item.setAttribute('data-lang', lang);
+        item.textContent = LANG_LABEL[lang] + ' — ' + (LANG_LABEL_LONG[lang] || lang);
+        if (lang === 'ar') item.dir = 'rtl';
+        item.addEventListener('click', function () {
+          setSprache(lang);
+          menu.hidden = true;
+          btn.setAttribute('aria-expanded', 'false');
+          btn.focus();
+        });
+        li.appendChild(item);
+        menu.appendChild(li);
+      })(langs[i]);
+    }
+    wrapper.appendChild(menu);
+
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = !menu.hidden;
+      menu.hidden = open;
+      btn.setAttribute('aria-expanded', String(!open));
+    });
+    document.addEventListener('click', function (e) {
+      if (!wrapper.contains(e.target)) {
+        menu.hidden = true;
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !menu.hidden) {
+        menu.hidden = true;
+        btn.setAttribute('aria-expanded', 'false');
+        btn.focus();
+      }
+    });
+
+    header.appendChild(wrapper);
+  }
+
+  function updateSprachButton() {
+    var lbl = document.querySelector('.sprachbutton__label');
+    if (lbl) lbl.textContent = LANG_LABEL[getCurrentSprache()];
+    var btn = document.querySelector('.sprachbutton');
+    if (btn) btn.setAttribute('aria-label', I18N[getCurrentSprache()].sprache_button_label);
+  }
+
+  // -- Glossar-Inline-Trigger (DOM-Walker, NICHT Regex auf innerHTML) -------
+
+  var SKIP_TAGS = { A: 1, BUTTON: 1, SCRIPT: 1, STYLE: 1, CITE: 1 };
+
+  function annotiereGlossar(materialEl, glossarArr) {
+    if (!glossarArr || !glossarArr.length) return;
+    var inhaltDiv = materialEl.querySelector('.material__inhalt');
+    if (!inhaltDiv) return;
+
+    // Idempotenz: existierende Trigger entfernen (bei Re-Rendering)
+    var oldTriggers = inhaltDiv.querySelectorAll('.glossar-trigger');
+    for (var i = 0; i < oldTriggers.length; i++) {
+      var t = oldTriggers[i];
+      t.replaceWith(document.createTextNode(t.textContent));
+    }
+    inhaltDiv.normalize();
+
+    for (var k = 0; k < glossarArr.length; k++) {
+      var entry = glossarArr[k];
+      if (!entry || !entry.begriff) continue;
+      _wrapFirstOccurrence(inhaltDiv, entry.begriff, entry.erklaerung || {});
+    }
+  }
+
+  function _wrapFirstOccurrence(rootEl, begriff, erklaerungObj) {
+    var pattern = _buildWordRegex(begriff);
+    var done = { val: false };
+    _walkAndWrap(rootEl, pattern, erklaerungObj, done);
+  }
+
+  function _walkAndWrap(node, pattern, erklaerungObj, done) {
+    if (done.val) return;
+    if (node.nodeType === 3 /* TEXT_NODE */) {
+      var txt = node.nodeValue;
+      var m = txt.match(pattern);
+      if (!m) return;
+      var idx = m.index;
+      var matched = m[0];
+      var before = txt.slice(0, idx);
+      var after = txt.slice(idx + matched.length);
+      var parent = node.parentNode;
+      if (!parent) return;
+      if (before) parent.insertBefore(document.createTextNode(before), node);
+      var btn = _createGlossarTrigger(matched, erklaerungObj);
+      parent.insertBefore(btn, node);
+      if (after) parent.insertBefore(document.createTextNode(after), node);
+      parent.removeChild(node);
+      done.val = true;
+      return;
+    }
+    if (node.nodeType !== 1 /* ELEMENT_NODE */) return;
+    if (SKIP_TAGS[node.tagName]) return;
+    if (node.classList && node.classList.contains('glossar-trigger')) return;
+    var children = Array.prototype.slice.call(node.childNodes);
+    for (var i = 0; i < children.length; i++) {
+      if (done.val) break;
+      _walkAndWrap(children[i], pattern, erklaerungObj, done);
+    }
+  }
+
+  function _buildWordRegex(begriff) {
+    var escaped = begriff.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    // Wort-Boundary mit Unterstuetzung fuer Umlaute (\b funktioniert dort)
+    return new RegExp('\\b' + escaped + '\\b', 'i');
+  }
+
+  function _createGlossarTrigger(displayText, erklaerungObj) {
+    _glossarSeq += 1;
+    var ttId = 'glossar-tt-' + _glossarSeq;
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'glossar-trigger';
+    btn.textContent = displayText;
+    btn.setAttribute('aria-describedby', ttId);
+    btn.setAttribute('aria-expanded', 'false');
+    btn.dataset.glossar = JSON.stringify(erklaerungObj || {});
+    btn.dataset.tooltipId = ttId;
+
+    var hoverTimer = null;
+    btn.addEventListener('mouseenter', function () {
+      if (hoverTimer) clearTimeout(hoverTimer);
+      hoverTimer = setTimeout(function () { showGlossarTooltip(btn); }, 80);
+    });
+    btn.addEventListener('mouseleave', function () {
+      if (hoverTimer) clearTimeout(hoverTimer);
+      // Nicht schliessen wenn per Tap geoeffnet
+      if (_activeTooltip && _activeTooltip.dataset.openMode === 'tap') return;
+      hideGlossarTooltip();
+    });
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (_activeTooltip && _activeTooltip.dataset.triggerId === ttId) {
+        hideGlossarTooltip();
+      } else {
+        showGlossarTooltip(btn, /*tap*/ true);
+      }
+    });
+    btn.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        if (_activeTooltip && _activeTooltip.dataset.triggerId === ttId) {
+          hideGlossarTooltip();
+        } else {
+          showGlossarTooltip(btn, /*tap*/ true);
+        }
+      }
+    });
+
+    return btn;
+  }
+
+  function showGlossarTooltip(triggerEl, tapMode) {
+    closeActiveTooltip();
+    var lang = getCurrentSprache();
+    var raw = triggerEl.dataset.glossar || '{}';
+    var data;
+    try { data = JSON.parse(raw); } catch (e) { data = {}; }
+    var text = data[lang] || data.de || '';
+    if (!text) return;
+
+    var ttId = triggerEl.dataset.tooltipId;
+    var tt = document.createElement('div');
+    tt.className = 'glossar-tooltip';
+    tt.id = ttId;
+    tt.setAttribute('role', 'tooltip');
+    tt.dataset.triggerId = ttId;
+    tt.dataset.openMode = tapMode ? 'tap' : 'hover';
+    if (lang === 'ar') tt.dir = 'rtl';
+    tt.textContent = text;
+
+    document.body.appendChild(tt);
+    var rect = triggerEl.getBoundingClientRect();
+    var top = rect.bottom + (window.scrollY || window.pageYOffset || 0) + 6;
+    var left = rect.left + (window.scrollX || window.pageXOffset || 0);
+    // Keine Ueberlappung mit rechtem Rand
+    var maxLeft = (window.scrollX || 0) + window.innerWidth - 300;
+    if (left > maxLeft) left = maxLeft;
+    if (left < 8) left = 8;
+    tt.style.top = top + 'px';
+    tt.style.left = left + 'px';
+
+    triggerEl.setAttribute('aria-expanded', 'true');
+    _activeTooltip = tt;
+  }
+
+  function hideGlossarTooltip() {
+    if (!_activeTooltip) return;
+    var trigId = _activeTooltip.dataset.triggerId;
+    var trig = document.getElementById(trigId) || document.querySelector('[data-tooltip-id="' + trigId + '"]');
+    if (_activeTooltip.parentNode) _activeTooltip.parentNode.removeChild(_activeTooltip);
+    _activeTooltip = null;
+    if (trig) trig.setAttribute('aria-expanded', 'false');
+  }
+
+  function closeActiveTooltip() { hideGlossarTooltip(); }
+
+  document.addEventListener('click', function (e) {
+    if (!_activeTooltip) return;
+    var t = e.target;
+    if (t.classList && (t.classList.contains('glossar-trigger') || t.classList.contains('glossar-tooltip'))) return;
+    if (t.closest && (t.closest('.glossar-trigger') || t.closest('.glossar-tooltip'))) return;
+    hideGlossarTooltip();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && _activeTooltip) hideGlossarTooltip();
+  });
+
+  // -- KI-Hilfe-Box ----------------------------------------------------------
+
+  function rendereKIHilfeBox(materialEl, kiPromptObj) {
+    if (!kiPromptObj) return;
+    // Idempotenz
+    var existing = materialEl.querySelector('.ki-hilfe-icon');
+    if (existing) existing.parentNode.removeChild(existing);
+
+    var lang = getCurrentSprache();
+    var t = I18N[lang] || I18N.de;
+    var promptText = kiPromptObj[lang] || kiPromptObj.de || '';
+    if (!promptText) return;
+
+    // Material-Container muss position-relative sein, damit der absolute Icon-Button korrekt sitzt
+    var cs = window.getComputedStyle(materialEl);
+    if (cs.position === 'static') materialEl.style.position = 'relative';
+
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'ki-hilfe-icon';
+    btn.setAttribute('aria-label', t.ki_box_titel);
+    btn.title = t.ki_box_titel;
+    btn.dataset.promptDe = kiPromptObj.de || '';
+    btn.dataset.promptRu = kiPromptObj.ru || '';
+    btn.dataset.promptAr = kiPromptObj.ar || '';
+
+    // Sparkles-Icon (KI/AI) — neutral, dezent, ohne Beschriftung
+    btn.innerHTML = ''
+      + '<svg class="ki-hilfe-icon__svg" viewBox="0 0 24 24" width="18" height="18" '
+      + 'fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+      + '<path d="M9.94 14.06 8 18l-1.94-3.94L2 12l4.06-1.94L8 6l1.94 4.06L14 12z"/>'
+      + '<path d="M18 4v4"/>'
+      + '<path d="M16 6h4"/>'
+      + '<path d="M19 14v4"/>'
+      + '<path d="M17 16h4"/>'
+      + '</svg>'
+      + '<svg class="ki-hilfe-icon__check" viewBox="0 0 24 24" width="18" height="18" '
+      + 'fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+      + '<path d="M5 12.5 10 17 19 7"/>'
+      + '</svg>';
+
+    btn.addEventListener('click', function () {
+      var curLang = getCurrentSprache();
+      var pt = btn.dataset['prompt' + curLang.charAt(0).toUpperCase() + curLang.slice(1)] || btn.dataset.promptDe;
+      copyToClipboard(pt, btn);
+    });
+
+    materialEl.appendChild(btn);
+  }
+
+  function copyToClipboard(text, btn) {
+    var afterCopy = function () {
+      btn.classList.add('ki-hilfe-icon--kopiert');
+      setTimeout(function () {
+        btn.classList.remove('ki-hilfe-icon--kopiert');
+      }, 1500);
+    };
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(afterCopy, function () { _fallbackCopy(text, afterCopy); });
+    } else {
+      _fallbackCopy(text, afterCopy);
+    }
+  }
+
+  function _fallbackCopy(text, callback) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    try { document.execCommand('copy'); callback(); }
+    catch (e) { /* still callback so user sees feedback */ callback(); }
+    finally { document.body.removeChild(ta); }
+  }
+
+  // -- Aufgaben-Frage + MC-Optionen-Uebersetzung ----------------------------
+
+  function applyToAllAufgaben() {
+    if (!_currentMappe || !_currentMappe.aufgaben) return;
+    var lang = getCurrentSprache();
+    for (var i = 0; i < _currentMappe.aufgaben.length; i++) {
+      var auf = _currentMappe.aufgaben[i];
+      var sec = document.getElementById(auf.id);
+      if (!sec) continue;
+      _translateAufgabe(sec, auf, lang);
+    }
+  }
+
+  function _translateAufgabe(sec, auf, lang) {
+    if (sec.dataset.deFrage === undefined) {
+      var orig = sec.querySelector('.aufgabe__frage');
+      if (orig) sec.dataset.deFrage = orig.innerHTML;
+    }
+    var fr = sec.querySelector('.aufgabe__frage');
+    if (fr) {
+      var de = sec.dataset.deFrage || '';
+      var transl = (auf.frage_uebersetzung && auf.frage_uebersetzung[lang]) || null;
+      if (lang !== 'de' && transl) {
+        fr.innerHTML = '';
+        fr.appendChild(_parseInlineMaterialLinksLocal(transl));
+        fr.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+        sec.dataset.translated = '1';
+      } else {
+        // DE-Original einsetzen
+        fr.innerHTML = de;
+        fr.dir = '';
+        sec.dataset.translated = '0';
+        if (lang !== 'de') {
+          var hint = document.createElement('span');
+          hint.className = 'aufgabe__nur-de-hinweis';
+          hint.textContent = ' ' + (I18N[lang] || I18N.de).nur_de_hinweis;
+          fr.appendChild(hint);
+        }
+      }
+    }
+    // MC-Optionen
+    if (auf.typ === 'multiple-choice') {
+      var labels = sec.querySelectorAll('.aufgabe__option');
+      var origDeOpts = (auf.optionen || []);
+      var transOpts = (auf.optionen_uebersetzung && auf.optionen_uebersetzung[lang]) || null;
+      for (var j = 0; j < labels.length; j++) {
+        var lbl = labels[j];
+        var input = lbl.querySelector('input');
+        var span = lbl.querySelector('.aufgabe__label');
+        if (!input || !span) continue;
+        // input.value bleibt DE = Loesungs-Anker
+        var deVal = input.value;
+        if (lang !== 'de' && transOpts) {
+          // Position der DE-Option im Original-Array
+          var idx = origDeOpts.indexOf(deVal);
+          if (idx !== -1 && transOpts[idx]) {
+            span.textContent = transOpts[idx];
+            input.setAttribute('aria-label', transOpts[idx]);
+          } else {
+            span.textContent = deVal; // Fallback
+            input.setAttribute('aria-label', deVal);
+          }
+        } else {
+          span.textContent = deVal;
+          input.setAttribute('aria-label', deVal);
+        }
+        if (lang === 'ar') {
+          lbl.dir = 'rtl';
+        } else {
+          lbl.dir = '';
+        }
+      }
+    }
+    // RTL-Direktivierung des Aufgaben-Frage-Containers
+    if (lang === 'ar') {
+      sec.classList.add('aufgabe--rtl');
+    } else {
+      sec.classList.remove('aufgabe--rtl');
+    }
+  }
+
+  // Parse Inline-Material-Links [[mat-2-2|Anzeigetext]] -> <a href="#mat-2-2">…</a>
+  function _parseInlineMaterialLinksLocal(text) {
+    var frag = document.createDocumentFragment();
+    var re = /\[\[([a-z0-9-]+)(?:\|([^\]]+))?\]\]/g;
+    var lastIdx = 0;
+    var m;
+    while ((m = re.exec(text)) !== null) {
+      if (m.index > lastIdx) {
+        frag.appendChild(document.createTextNode(text.slice(lastIdx, m.index)));
+      }
+      var a = document.createElement('a');
+      a.href = '#' + m[1];
+      a.textContent = m[2] || m[1];
+      frag.appendChild(a);
+      lastIdx = m.index + m[0].length;
+    }
+    if (lastIdx < text.length) {
+      frag.appendChild(document.createTextNode(text.slice(lastIdx)));
+    }
+    return frag;
+  }
+
+  // -- Material-Annotation ---------------------------------------------------
+
+  function applyToAllMaterials() {
+    if (!_currentMappe || !_currentMappe.materialien) return;
+    for (var i = 0; i < _currentMappe.materialien.length; i++) {
+      var mat = _currentMappe.materialien[i];
+      var matEl = document.getElementById(mat.id);
+      if (!matEl) continue;
+      if (mat.glossar && mat.glossar.length) annotiereGlossar(matEl, mat.glossar);
+      if (mat.ki_prompt) rendereKIHilfeBox(matEl, mat.ki_prompt);
+    }
+  }
+
+  // -- Render-Trigger: warten bis Material/Aufgaben gemoutet sind ----------
+
+  function waitForRenderAndAnnotate() {
+    var matContainer = document.getElementById('material-container');
+    var aufContainer = document.getElementById('aufgaben-container');
+    if (!matContainer && !aufContainer) return; // Index-Seite
+
+    var done = false;
+    var attempts = 0;
+    var maxAttempts = 60; // ~6s
+
+    function tryApply() {
+      attempts++;
+      var matsReady = !matContainer || matContainer.querySelector('[id^="mat-"]');
+      var aufsReady = !aufContainer || aufContainer.querySelector('[id^="aufgabe-"]');
+      if (matsReady && aufsReady) {
+        done = true;
+        applyToAllMaterials();
+        applyToAllAufgaben();
+        return;
+      }
+      if (attempts < maxAttempts) setTimeout(tryApply, 100);
+    }
+    tryApply();
+  }
+
+  // -- Public Hook: Wrap EscapeEngine.init -----------------------------------
+
+  var origInit = EscapeEngine.init;
+  EscapeEngine.init = function (mappeId) {
+    origInit.apply(EscapeEngine, arguments);
+
+    // Eigenes data.json-Fetch (Browser-Cache trifft, ist non-blocking)
+    fetch('data.json')
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (data) {
+        if (!data || !data.meta || data.meta.differenzierung_aktiv !== true) return;
+        _diffData = data;
+        for (var i = 0; i < data.mappen.length; i++) {
+          if (data.mappen[i].id === mappeId) { _currentMappe = data.mappen[i]; break; }
+        }
+        if (!_currentMappe) return;
+        if (!_currentMappe.verfuegbare_sprachen || _currentMappe.verfuegbare_sprachen.length === 0) {
+          // Mappe ohne Differenzierung (z. B. Mappe 4) — vanilla
+          return;
+        }
+        injectArabicFont();
+        document.documentElement.dataset.sprache = getCurrentSprache();
+        renderSprachButton();
+        waitForRenderAndAnnotate();
+      })
+      .catch(function () { /* silent */ });
+  };
+
+  // Expose minimal API fuer Debugging (optional)
+  EscapeEngine._diffMvp = {
+    getCurrentSprache: getCurrentSprache,
+    setSprache: setSprache,
+    version: 'mvp-v1-2026-05-07'
+  };
+})();

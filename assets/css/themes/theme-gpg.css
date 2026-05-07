@@ -2531,3 +2531,212 @@ body.quellen-hidden .material__inhalt cite {
   margin-top: 0.25rem;
   font-style: italic;
 }
+
+/* ============================================================================
+   Differenzierungs-MVP v1 — STR-09-NEU (2026-05-07)
+   ============================================================================ */
+
+/* --- Sprachbutton --- */
+.sprachbutton-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+.sprachbutton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  background: var(--color-bg-elev, #fff);
+  border: 1px solid var(--color-border, #ccc);
+  border-radius: 4px;
+  cursor: pointer;
+  font: inherit;
+  color: var(--color-text, #222);
+  line-height: 1.2;
+}
+.sprachbutton:hover,
+.sprachbutton:focus-visible {
+  border-color: var(--color-accent, #ff9800);
+  outline: none;
+}
+.sprachbutton:focus-visible {
+  outline: 2px solid var(--color-accent, #ff9800);
+  outline-offset: 2px;
+}
+.sprachbutton__icon { font-size: 1.1em; }
+.sprachbutton__label { font-weight: 600; letter-spacing: 0.04em; }
+
+.sprachbutton__menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.25rem;
+  padding: 0.25rem 0;
+  list-style: none;
+  background: var(--color-bg-elev, #fff);
+  border: 1px solid var(--color-border, #ccc);
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 50;
+  min-width: 12rem;
+}
+.sprachbutton__item {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background: none;
+  border: 0;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  color: var(--color-text, #222);
+}
+.sprachbutton__item:hover,
+.sprachbutton__item:focus-visible {
+  background: var(--color-bg-soft, #f3f6fa);
+  outline: none;
+}
+.sprachbutton__item[dir="rtl"] { text-align: right; }
+
+/* --- Glossar-Trigger inline --- */
+.glossar-trigger {
+  border: 0;
+  border-bottom: 1px dashed currentColor;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: help;
+  line-height: inherit;
+}
+.glossar-trigger:hover,
+.glossar-trigger[aria-expanded="true"] {
+  background: rgba(255, 152, 0, 0.12);
+  border-bottom-style: solid;
+}
+.glossar-trigger:focus-visible {
+  outline: 2px solid var(--color-accent, #ff9800);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* --- Glossar-Tooltip Popover --- */
+.glossar-tooltip {
+  position: absolute;
+  max-width: 280px;
+  padding: 0.75rem 1rem;
+  background: var(--color-bg-elev, #fff);
+  color: var(--color-text, #222);
+  border: 1px solid var(--color-border, #ccc);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+  font-size: 0.92rem;
+  line-height: 1.45;
+  z-index: 100;
+  pointer-events: auto;
+}
+.glossar-tooltip[dir="rtl"] {
+  text-align: right;
+  font-family: 'Noto Sans Arabic', 'Tahoma', system-ui, sans-serif;
+}
+
+/* --- KI-Hilfe als dezentes Icon am linken Materialrand (Hotfix 2026-05-07) --- */
+.ki-hilfe-icon {
+  position: absolute;
+  top: 0.5rem;
+  left: -2.25rem;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  color: var(--color-text-muted, #888);
+  cursor: pointer;
+  opacity: 0.55;
+  transition: opacity 140ms ease-in-out, color 140ms ease-in-out, background 140ms ease-in-out;
+}
+.ki-hilfe-icon:hover,
+.ki-hilfe-icon:focus-visible {
+  opacity: 1;
+  color: var(--color-accent, #ff9800);
+  background: rgba(0, 0, 0, 0.04);
+  outline: none;
+}
+.ki-hilfe-icon:focus-visible {
+  outline: 2px solid var(--color-accent, #ff9800);
+  outline-offset: 2px;
+}
+.ki-hilfe-icon__svg,
+.ki-hilfe-icon__check {
+  display: block;
+}
+.ki-hilfe-icon__check {
+  display: none;
+  color: #2e7d32;
+}
+.ki-hilfe-icon--kopiert {
+  opacity: 1;
+  color: #2e7d32;
+}
+.ki-hilfe-icon--kopiert .ki-hilfe-icon__svg { display: none; }
+.ki-hilfe-icon--kopiert .ki-hilfe-icon__check { display: block; }
+
+/* Bei schmalen Screens: Icon nach innen rutschen, damit es nicht abgeschnitten wird */
+@media (max-width: 720px) {
+  .ki-hilfe-icon {
+    left: 0.25rem;
+    top: 0.25rem;
+  }
+}
+
+/* RTL-Variante: Icon rechts statt links */
+[dir="rtl"] .ki-hilfe-icon,
+.aufgabe--rtl .ki-hilfe-icon {
+  left: auto;
+  right: -2.25rem;
+}
+@media (max-width: 720px) {
+  [dir="rtl"] .ki-hilfe-icon,
+  .aufgabe--rtl .ki-hilfe-icon {
+    right: 0.25rem;
+  }
+}
+
+/* --- RTL-Spiegelung NUR fuer Aufgaben-/Tooltip-/KI-Container, NICHT fuer Material --- */
+.aufgabe--rtl .aufgabe__frage,
+.aufgabe--rtl .aufgabe__option {
+  text-align: right;
+  direction: rtl;
+}
+.aufgabe--rtl .aufgabe__option[dir="rtl"] { direction: rtl; }
+
+/* --- Webfont AR Fallback-Stack --- */
+:root {
+  --diff-font-arabic: 'Noto Sans Arabic', 'Tahoma', system-ui, sans-serif;
+}
+[lang="ar"],
+[dir="rtl"] {
+  font-family: var(--diff-font-arabic);
+}
+/* Material-Container bleibt LTR + DE-Schrift */
+.material,
+.material *,
+.material__inhalt,
+.material__inhalt * {
+  direction: ltr;
+  font-family: inherit;
+}
+
+/* --- Aufgaben-Hinweis "nur DE verfügbar" --- */
+.aufgabe__nur-de-hinweis {
+  font-size: 0.85em;
+  font-style: italic;
+  color: var(--color-text-muted, #666);
+  margin-left: 0.4em;
+}
