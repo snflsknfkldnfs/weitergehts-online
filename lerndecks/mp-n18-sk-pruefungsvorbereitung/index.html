@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MP N18 Sozialkunde — Lerndeck (Pruefungsvorbereitung)</title>
+<link rel="stylesheet" href="../../assets/css/base.css">
+<style>
+:root {
+  --c-prim:#1e3a8a; --c-prim-dark:#1e40af; --c-prim-bg:#eff6ff;
+  --c-hp:#dc2626;
+  --c-text:#1f2937; --c-muted:#475569; --c-faint:#94a3b8; --c-border:#cbd5e1;
+}
+body { background:#f8fafc; color:var(--c-text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+.wrap { max-width:900px; margin:0 auto; padding:24px 16px; }
+header { margin-bottom:20px; border-bottom:1px solid var(--c-border); padding-bottom:14px; }
+h1 { font-size:1.4em; margin-bottom:6px; color:var(--c-prim-dark); }
+.crumb { font-size:0.85em; color:var(--c-muted); margin-bottom:10px; }
+.crumb a { color:var(--c-prim); text-decoration:none; }
+.crumb a:hover { text-decoration:underline; }
+.intro { color:var(--c-muted); font-size:0.95em; line-height:1.5; }
+.downloads { display:flex; flex-wrap:wrap; gap:8px; margin:14px 0 20px; }
+.downloads a { display:inline-flex; align-items:center; gap:6px; padding:8px 14px; background:#fff; color:var(--c-prim-dark); text-decoration:none; border:1px solid var(--c-border); border-radius:6px; font-size:0.88em; font-weight:600; }
+.downloads a:hover { background:var(--c-prim-bg); border-color:var(--c-prim); }
+.controls { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px; align-items:center; background:#fff; padding:10px; border-radius:8px; border:1px solid var(--c-border); }
+.controls select, .controls input[type=search] { padding:5px 10px; border:1px solid var(--c-border); border-radius:4px; font-size:0.9em; background:#fff; color:var(--c-text); }
+.controls label { font-size:0.88em; display:flex; align-items:center; gap:4px; cursor:pointer; }
+.controls button { padding:5px 12px; background:var(--c-prim); color:#fff; border:none; border-radius:4px; font-size:0.88em; cursor:pointer; }
+.controls button:hover { background:var(--c-prim-dark); }
+.counter { font-size:0.85em; color:var(--c-muted); margin-bottom:12px; text-align:center; }
+.counter strong { color:var(--c-text); }
+.card-frame { background:#fff; border-radius:8px; padding:24px; border:1px solid var(--c-border); cursor:pointer; min-height:280px; display:flex; flex-direction:column; justify-content:center; line-height:1.6; font-size:1.05em; }
+.card-frame:hover { box-shadow:0 4px 12px rgba(0,0,0,0.05); }
+.card-frame.is-hp { border-left:4px solid var(--c-hp); }
+.card-front { font-weight:600; color:var(--c-prim-dark); }
+.card-back { color:var(--c-text); }
+.card-quelle { margin-top:14px; font-size:0.78em; color:var(--c-faint); border-top:1px solid var(--c-border); padding-top:8px; }
+.card-tags { font-size:0.72em; color:var(--c-faint); margin-top:8px; }
+.card-tags span { display:inline-block; background:var(--c-prim-bg); color:var(--c-prim-dark); padding:2px 8px; border-radius:3px; margin-right:4px; font-weight:500; }
+.card-tags span.tag-hp { background:#fee2e2; color:var(--c-hp); }
+.flip-hint { text-align:center; color:var(--c-faint); font-size:0.78em; margin-top:6px; }
+.card-nav { display:flex; justify-content:space-between; align-items:center; margin-top:14px; gap:8px; }
+.card-nav button { padding:8px 16px; background:#fff; color:var(--c-prim-dark); border:1px solid var(--c-border); border-radius:4px; cursor:pointer; font-size:0.9em; }
+.card-nav button:hover { background:var(--c-prim-bg); border-color:var(--c-prim); }
+.card-nav button:disabled { opacity:0.4; cursor:not-allowed; }
+.review-buttons { display:flex; gap:6px; margin-top:10px; }
+.review-buttons button { flex:1; padding:8px; border-radius:4px; cursor:pointer; font-size:0.85em; font-weight:600; border:none; color:#fff; }
+.btn-fail { background:#dc2626; }
+.btn-meh { background:#f59e0b; }
+.btn-good { background:#16a34a; }
+.empty-msg { text-align:center; color:var(--c-faint); padding:40px 20px; font-size:0.95em; }
+.progress-bar { display:flex; gap:2px; margin-top:6px; height:4px; }
+.progress-bar .seg { flex:1; background:#e5e7eb; border-radius:1px; }
+.progress-bar .seg.good { background:#16a34a; }
+.progress-bar .seg.meh { background:#f59e0b; }
+.progress-bar .seg.fail { background:#dc2626; }
+.note-bottom { margin-top:32px; padding-top:18px; border-top:1px solid var(--c-border); color:var(--c-faint); font-size:0.78em; line-height:1.6; }
+@media (max-width:600px) {
+  .controls { flex-direction:column; align-items:stretch; }
+  .controls label, .controls select, .controls input[type=search] { width:100%; }
+}
+</style>
+</head>
+<body>
+<main>
+<div class="wrap">
+<div class="crumb"><a href="../../">Startseite</a> &rsaquo; <a href="../../staatsexamen/">Staatsexamen</a> &rsaquo; N18 Sozialkunde &rsaquo; Lerndeck</div>
+
+<header>
+<h1>MP N18 Sozialkunde &middot; Pruefungsvorbereitung 2026</h1>
+<p class="intro">84 Karten in 5 Clustern (Begriffe / Modelle / LP+-Zitate / Operatoren / Praxis) zur muendlichen Pruefung Mai 2026. 35 Hochprior-Karten als Tagesdurchlauf. Klick auf Karte zum Umdrehen, Pfeiltasten fuer Navigation, Leertaste zum Umdrehen. Lernfortschritt wird im Browser gespeichert.</p>
+</header>
+
+<div class="downloads">
+<a href="mp_n18_sk_v1.apkg" download>&#128229; Anki-Deck (.apkg)</a>
+<a href="mp_n18_sk_v1.tsv" download>&#128221; TSV-Daten</a>
+</div>
+
+<div class="controls">
+  <label>Cluster:
+    <select id="filter-cluster">
+      <option value="">alle</option>
+      <option value="A_Begriffe">A · Begriffe (29)</option>
+      <option value="B_Modelle">B · Modelle/Listen (16)</option>
+      <option value="C_LP">C · LP+-Zitate (24)</option>
+      <option value="D_Operatoren">D · Operatoren (10)</option>
+      <option value="E_Praxis">E · Praxis (5)</option>
+    </select>
+  </label>
+  <label>Jgst:
+    <select id="filter-jgst">
+      <option value="">alle</option>
+      <option value="GPG5">GPG5 (2)</option>
+      <option value="GPG6">GPG6 (2)</option>
+      <option value="GPG7">GPG7 (3)</option>
+      <option value="GPG8">GPG8 (5)</option>
+      <option value="GPG9">GPG9 (3)</option>
+      <option value="GPG10">GPG10 (5)</option>
+      <option value="UEBZ">UEBZ (1)</option>
+      <option value="FPGPG">FPGPG (3)</option>
+    </select>
+  </label>
+  <label>LB:
+    <select id="filter-lb">
+      <option value="">alle</option>
+      <option value="LB3">LB3 (9)</option>
+      <option value="LB4">LB4 (11)</option>
+    </select>
+  </label>
+  <label><input type="checkbox" id="filter-hp"> nur Hochprior</label>
+  <input type="search" id="search" placeholder="Suchen...">
+  <button id="shuffle">&#x21BB; Mischen</button>
+  <button id="reset">&#x27F2; Reset</button>
+</div>
+
+<div class="counter">Karte <strong id="cur-idx">1</strong> von <strong id="cur-total">84</strong> &mdash; <span id="filter-info">alle</span></div>
+
+<div id="card-container"></div>
+
+<div class="card-nav">
+  <button id="prev">&larr; Zurueck</button>
+  <span id="progress-text" style="font-size:0.85em;color:var(--c-muted);"></span>
+  <button id="next">Weiter &rarr;</button>
+</div>
+
+<div class="note-bottom">
+Quelle: Glossar Sk + LP+-Zitatkonzentrat aus <code>MuendlichePruefungen/Fragenbearbeitung/</code>. Karten-Build via <code>build_mp_n18_sk_anki.py</code>, Webseite via <code>build_mp_n18_sk_lerndeck.py</code>. Stand: 2026-05-07.
+</div>
+
+</div>
+</main>
+
+<script>
+const CARDS = [{"front": "Was ist der Beutelsbacher Konsens?", "back": "Tagungsergebnis 1976 (LpB Baden-Württemberg) mit drei Minimalbedingungen politischer Bildung: (1) Überwältigungsverbot, (2) Kontroversitätsgebot, (3) Schülerorientierung.", "quelle": "GPG B3 §1.1; bpb", "tags": ["Begriff", "Beutelsbach", "Hochprior"], "cluster": "A_Begriffe", "jgst": "", "lb": "", "hochprior": true}, {"front": "Was besagt das Überwältigungsverbot?", "back": "Erstes Beutelsbacher Prinzip: Lehrkraft darf SuS nicht überwältigen / indoktrinieren; SuS sollen sich eine eigene Meinung bilden können. Synonym: Indoktrinationsverbot.", "quelle": "GPG B3 §1.1", "tags": ["Begriff", "Beutelsbach", "Hochprior"], "cluster": "A_Begriffe", "jgst": "", "lb": "", "hochprior": true}, {"front": "Was besagt das Kontroversitätsgebot?", "back": "Zweites Beutelsbacher Prinzip: Was in Politik/Wissenschaft kontrovers ist, muss kontrovers im Unterricht erscheinen.", "quelle": "GPG B3 §1.1", "tags": ["Begriff", "Beutelsbach", "Hochprior"], "cluster": "A_Begriffe", "jgst": "", "lb": "", "hochprior": true}, {"front": "Was besagt das Schülerorientierungs-Prinzip (Beutelsbach)?", "back": "Drittes Beutelsbacher Prinzip: SuS sollen befähigt werden, die politische Situation der Gesellschaft und ihre eigene Position zu analysieren und Konsequenzen zu ziehen.", "quelle": "GPG B3 §1.1", "tags": ["Begriff", "Beutelsbach", "Hochprior"], "cluster": "A_Begriffe", "jgst": "", "lb": "", "hochprior": true}, {"front": "Was bedeutet politische Mündigkeit als Zielkategorie?", "back": "Selbstständig politisch urteilen und handeln können (Detjen). Nicht durch Belehrung erreichbar — methodisches Korrelat: Handlungsorientierung.", "quelle": "Detjen 2007", "tags": ["Begriff", "Detjen", "Hochprior"], "cluster": "A_Begriffe", "jgst": "", "lb": "", "hochprior": true}, {"front": "Was ist Handlungsorientierung in der Sk?", "back": "Didaktisches Leitprinzip (kein einzelnes Verfahren): aktive Aneignung von Politik durch die Lernenden selbst, mit Reflexion der Handlung als Bildungsmoment.", "quelle": "Reinhardt 2018; Massing 2012; LP:FPGPG", "tags": ["Begriff", "Handlungsorientierung", "Hochprior"], "cluster": "A_Begriffe", "jgst": "", "lb": "", "hochprior": true}, {"front": "Was unterscheidet Realhandeln von Simulationshandeln (Massing)?", "back": "Realhandeln = echte politische Partizipation (Klassenrat, SMV, Petition). Simulationshandeln = Planspiel, Rollenspiel, Gerichtssimulation. Beide sind legitime Realisierungen handlungsorientierter Sk.", "quelle": "Massing 2012", "tags": ["Begriff", "Massing", "Hochprior"], "cluster": "A_Begriffe", "jgst": "", "lb": "", "hochprior": true}, {"front": "Was ist das kasuistische Prinzip in der Sk?", "back": "„Ausschnitt aus der Wirklichkeit“ als didaktischer Zugang: konkreter Fall steht im Mittelpunkt, nicht systematische Inhaltsentfaltung. Trägt Fallanalyse, Aktualstunde, Lebensweltbezug.", "quelle": "GPG B3 §2.1.1", "tags": ["Begriff", "Methode"], "cluster": "A_Begriffe", "jgst": "", "lb": "", "hochprior": false}, {"front": "Was ist Multiperspektivität als didaktisches Prinzip?", "back": "Gleichzeitige Berücksichtigung verschiedener Standpunkte/Quellen zu einem Sachverhalt. Voraussetzung für rationale Urteilsbildung; LP+ verankert für GPG.", "quelle": "GPG GB §3.2; Sander 2014", "tags": ["Begriff", "Methode", "Hochprior"], "cluster": "A_Begriffe", "jgst": "", "lb": "", "hochprior": true}, {"front": "Was bedeutet Lebensweltbezug in der Sk?", "back": "Sk-Unterricht orientiert sich am unmittelbaren Umfeld und Alltag der SuS. Methodische Folge: Fallorientierung, Aktualstunde, Identifikationsfiguren.", "quelle": "LP:FPGPG; GPG GB §5.4", "tags": ["Begriff", "Prinzip", "Hochprior"], "cluster": "A_Begriffe", "jgst": "", "lb": "", "hochprior": true}, {"front": "Was ist die „Schule als Polis“?", "back": "Werterziehungsansatz, der Just-Community um die gestalterische Komponente erweitert: SuS gestalten Schule mit, „Es ist für mich bedeutsam“ + praktisches Handeln. Anker für Demokratielernen.", "quelle": "GPG B3 §1.2", "tags": ["Begriff", "Werterziehung"], "cluster": "A_Begriffe", "jgst": "", "lb": "", "hochprior": false}, {"front": "Was ist das Just-Community-Konzept?", "back": "Werterziehungsansatz nach Kohlberg/Power: SuS sind für Schul-/Klassenkonflikte selbst verantwortlich (z. B. Fairness-Komitees). Reaktiv-konfliktorientiert; Wirkungsbereich gilt als zu schmal.", "quelle": "GPG B3 §1.2", "tags": ["Begriff", "Werterziehung"], "cluster": "A_Begriffe", "jgst": "", "lb": "", "hochprior": false}, {"front": "Was kritisiert die Sk-Didaktik an der Dilemmadiskussion (Kohlberg)?", "back": "Kognitiv urteilsbildend, aber moralisch folgenarm — als Propädeutik politischen Handelns ungeeignet.", "quelle": "GPG B3 §1.2", "tags": ["Begriff", "Werterziehung"], "cluster": "A_Begriffe", "jgst": "", "lb": "", "hochprior": false}, {"front": "Was ist Demokratielernen?", "back": "Übergreifendes Bildungsziel und Schulleitprinzip; Demokratie als Lebensform (Dewey), Gesellschaftsform und Herrschaftsform. Operativer Anker: Klassenrat, SMV, Schule-als-Polis.", "quelle": "LP:ÜBZ; Dewey; Sander 2014", "tags": ["Begriff", "Demokratielernen", "Hochprior"], "cluster": "A_Begriffe", "jgst": "", "lb": "", "hochprior": true}, {"front": "Was sind Klafkis Schlüsselprobleme?", "back": "Epochaltypische Schlüsselprobleme (Krieg/Frieden, Umweltfrage, Ungleichheit, Technik, interkulturelles Zusammenleben) als kategorialer Bildungsanker; rechtfertigt Aktualität und Problemorientierung.", "quelle": "Klafki", "tags": ["Begriff", "Allg-Didaktik"], "cluster": "A_Begriffe", "jgst": "", "lb": "", "hochprior": false}, {"front": "Was ist eine Fallanalyse / kasuistisches Verfahren?", "back": "Makromethode der Sk: analysierende Betrachtung einer Tagesfrage / eines aktuellen Problems als Ausschnitt der Wirklichkeit. Auswahlkriterien: Realitätsbezug, Aktualität, räumliche/soziale/zeitliche Nähe.", "quelle": "GPG B4 §2.2.1; Kaiser in Mickel 1999", "tags": ["Begriff", "Methode", "Hochprior"], "cluster": "A_Begriffe", "jgst": "", "lb": "", "hochprior": true}, {"front": "Was ist eine Erkundung in der Sk?", "back": "Geplante, methodisch organisierte Wirklichkeitsbegegnung — interaktionell angelegt, mit gemeinsamer Planung, Auswertung, Dokumentation. Verbindet konkretes und abstraktes Lernen.", "quelle": "GPG B4 §2.2.2; Detjen in Mickel 1999", "tags": ["Begriff", "Methode"], "cluster": "A_Begriffe", "jgst": "", "lb": "", "hochprior": false}, {"front": "Was ist ein Planspiel (Sk-Methodik)?", "back": "Komplexere Spielform als Rollenspiel: simulierte Umwelt, höhere Komplexität, SuS vertreten Institutionen/Interessengruppen statt Individuen, Gegenstand sind politische Entscheidungsprozesse.", "quelle": "GPG B4 §2.2.8", "tags": ["Begriff", "Methode"], "cluster": "A_Begriffe", "jgst": "", "lb": "", "hochprior": false}, {"front": "Was ist ein Rollenspiel (Sk-Methodik)?", "back": "Spielform mit Sich-Hineinversetzen in soziale Situation; vier Stufen: frei, offen, halboffen, gebunden. Schult Ambiguitätstoleranz, Rollendistanz, Empathie, kommunikative Kompetenz.", "quelle": "GPG B4 §2.2.7; Giesecke 1973", "tags": ["Begriff", "Methode", "Hochprior"], "cluster": "A_Begriffe", "jgst": "", "lb": "", "hochprior": true}, {"front": "Was unterscheidet Mikro- von Makromethoden (Klippert)?", "back": "Mikromethoden = einzelne Lern-/Arbeitstechniken (Texte, Karikatur, Brainstorming, Diskussion). Makromethoden = komplexe Vollzugsformen aus mehreren Mikromethoden (Fallanalyse, Erkundung, Projekt, Sozialstudie, Rollenspiel, Planspiel, Entscheidungsspiel).", "quelle": "GPG B4 §2; Klippert 1997", "tags": ["Begriff", "Methodik"], "cluster": "A_Begriffe", "jgst": "", "lb": "", "hochprior": false}, {"front": "Was ist die narrative Kompetenz?", "back": "Reflektiertes historisches Erzählen als Voraussetzung für eigenständige Geschichtsdarstellung und kritischen Umgang mit Historiografie. LP+-explizit verankert.", "quelle": "LP:FPGPG", "tags": ["Begriff", "Geschichtsdidaktik"], "cluster": "A_Begriffe", "jgst": "", "lb": "", "hochprior": false}, {"front": "Was sind die Lernebenen der sozialwiss. Perspektive (GPG GB §5.2)?", "back": "(I) Zwischenmenschlich, (II) Sozialisation, (III) Gesellschaftlich-ökonomisch, (IV) Global. Verortungs-Schema für Themenanalyse.", "quelle": "GPG GB §5.2", "tags": ["Begriff", "Modell"], "cluster": "B_Modelle", "jgst": "", "lb": "", "hochprior": false}, {"front": "Was ist eine Pro-Contra-Debatte (Sk)?", "back": "Mikromethode: zwei Positionen, Argumente sammeln, Streitgespräch, Abstimmung. Schult Empathiefähigkeit, Argumentation, Urteilsbildung.", "quelle": "GPG B4 §2.1.9", "tags": ["Begriff", "Methode"], "cluster": "A_Begriffe", "jgst": "", "lb": "", "hochprior": false}, {"front": "Was ist die Werterziehung in der Sk?", "back": "Vermittlung gemeinschaftstragender Werte; in der Sk historisch von Inhaltsorientierung zu Handlungsorientierung verschoben. Konzept-Stufen: Dilemmata → Just-Community → Schule als Polis.", "quelle": "GPG B3 §1.2", "tags": ["Begriff", "Werterziehung", "Hochprior"], "cluster": "A_Begriffe", "jgst": "", "lb": "", "hochprior": true}, {"front": "Was bedeutet das Aktualitätsprinzip in der Sk?", "back": "Sk-Unterricht knüpft an gegenwärtige politische/gesellschaftliche Ereignisse an, um Lebensweltbezug und Mündigkeit zu sichern. Eines der 7 Sk-Unterrichtsprinzipien.", "quelle": "GPG GB §5.4", "tags": ["Begriff", "Prinzip"], "cluster": "A_Begriffe", "jgst": "", "lb": "", "hochprior": false}, {"front": "Was ist das Kompetenzstrukturmodell GPG?", "back": "LP+-Modell mit drei Achsen: (a) Gegenstandsbereiche im Kern (Räume, Ordnungssysteme, Interessen, Kulturen, Werte), (b) prozessbezogene Kompetenzen im Ring (Erkenntnis/Beurteilen/Handeln), (c) drei fachliche Perspektiven (hist./sozialwiss./geo.).", "quelle": "LP:FPGPG; GPG GB §2", "tags": ["Begriff", "Lehrplan", "Hochprior"], "cluster": "A_Begriffe", "jgst": "", "lb": "", "hochprior": true}, {"front": "Was sind die fünf Gegenstandsbereiche im LP+-GPG-Kompetenzmodell?", "back": "Räume, Ordnungssysteme, Interessen, Kulturen, Werte.", "quelle": "LP:FPGPG", "tags": ["Begriff", "Lehrplan"], "cluster": "A_Begriffe", "jgst": "", "lb": "", "hochprior": false}, {"front": "Was sind die drei prozessbezogenen Kompetenzen im LP+-GPG?", "back": "(1) Erkenntnisse gewinnen, (2) Beurteilen und bewerten, (3) Anwenden und handeln.", "quelle": "LP:FPGPG; GPG B3 §2.1", "tags": ["Begriff", "Lehrplan"], "cluster": "A_Begriffe", "jgst": "", "lb": "", "hochprior": false}, {"front": "Was sind die vier Lernbereiche GPG?", "back": "LB1 Lebensraum Erde / LB2 Zeit und Wandel / LB3 Politik und Gesellschaft / LB4 Lebenswelt. Sozialwissenschaftlich tragend: LB3 + LB4.", "quelle": "LP:FPGPG", "tags": ["Begriff", "Lehrplan"], "cluster": "A_Begriffe", "jgst": "", "lb": "", "hochprior": false}, {"front": "Was ist Sozialkunde im Lehrplan MS Bayern?", "back": "Eigenständiges Fach existiert nicht eigenständig in MS Bayern. Sozialwiss. Inhalte werden in GPG (Geschichte/Politik/Geographie) integriert (LB3 + LB4) plus übergreifend in ÜBZ Politische Bildung.", "quelle": "LP:FPGPG", "tags": ["Begriff", "Strukturell", "Hochprior"], "cluster": "A_Begriffe", "jgst": "", "lb": "", "hochprior": true}, {"front": "Nenne die drei Beutelsbacher Prinzipien.", "back": "(1) Überwältigungsverbot / Indoktrinationsverbot, (2) Kontroversitätsgebot / Ausgewogenheit, (3) Schülerorientierung.", "quelle": "GPG B3 §1.1", "tags": ["Modell", "Beutelsbach", "Hochprior"], "cluster": "B_Modelle", "jgst": "", "lb": "", "hochprior": true}, {"front": "Nenne die vier Dimensionen des Detjen-Politikkompetenz-Modells.", "back": "(1) Fachwissen, (2) politisches Urteilen, (3) politische Handlungsfähigkeit, (4) politische Einstellung/Motivation.", "quelle": "Detjen et al. 2012", "tags": ["Modell", "Detjen", "Hochprior"], "cluster": "B_Modelle", "jgst": "", "lb": "", "hochprior": true}, {"front": "Nenne die sechs fachspezifischen Arbeitsweisen Sk nach Reinhardt.", "back": "(1) Sich informieren, (2) Interpretieren, (3) Meinungen äußern, (4) Argumentieren/Diskutieren/Kooperieren, (5) Reflektieren, (6) Handeln.", "quelle": "GPG B3 §3.1; Reinhardt 2018", "tags": ["Modell", "Reinhardt", "Hochprior"], "cluster": "B_Modelle", "jgst": "", "lb": "", "hochprior": true}, {"front": "Nenne die fünf Phasen einer Sk-Stunde (GPG GB §5.5).", "back": "(1) Problemstellung, (2) Problementfaltung, (3) Problemlösung, (4) Wertung / rationales Urteil, (5) Sicherung + Lernzielkontrolle.", "quelle": "GPG GB §5.5", "tags": ["Modell", "Stundenstruktur", "Hochprior"], "cluster": "B_Modelle", "jgst": "", "lb": "", "hochprior": true}, {"front": "Nenne die fünf Phasen einer Fallanalyse (GPG B4).", "back": "(1) Konfrontation, (2) Information, (3) Resolution, (4) Disputation, (5) Kollation.", "quelle": "GPG B4 §2.2.1", "tags": ["Modell", "Methode", "Hochprior"], "cluster": "B_Modelle", "jgst": "", "lb": "", "hochprior": true}, {"front": "Nenne die drei Stufen der Werterziehungs-Konzepte (GPG B3).", "back": "(1) Hypothetische Dilemmata (Kohlberg), (2) Just-Community, (3) Schule als Polis.", "quelle": "GPG B3 §1.2", "tags": ["Modell", "Werterziehung"], "cluster": "B_Modelle", "jgst": "", "lb": "", "hochprior": false}, {"front": "Nenne die sieben Sk-Unterrichtsprinzipien (GPG GB §5.4).", "back": "Erfahrungsbezug — Realitätsbegegnung — Handlungsorientierung — kommunikatives Prinzip — Wertorientierung — Aktualitätsprinzip — Sachgerechtigkeit.", "quelle": "GPG GB §5.4", "tags": ["Modell", "Prinzipien"], "cluster": "B_Modelle", "jgst": "", "lb": "", "hochprior": false}, {"front": "Nenne die vier Lernebenen der sozialwiss. Perspektive.", "back": "(I) Zwischenmenschlich, (II) Sozialisation, (III) Gesellschaftlich-ökonomisch, (IV) Global.", "quelle": "GPG GB §5.2", "tags": ["Modell"], "cluster": "B_Modelle", "jgst": "", "lb": "", "hochprior": false}, {"front": "Nenne die fünf Auswahlkriterien für Fälle in der Sk-Fallanalyse.", "back": "Realitätsbezug, Aktualität, räumliche Nähe, soziale Nähe, zeitliche Nähe.", "quelle": "GPG B4 §2.2.1", "tags": ["Modell", "Methode"], "cluster": "B_Modelle", "jgst": "", "lb": "", "hochprior": false}, {"front": "Nenne die drei Bewertungsachsen der mündlichen Prüfung (Hinweise S. 2).", "back": "(1) Erfassen der gestellten Aufgabe, (2) Fachkenntnisse — Umfang + Praxisorientierung, (3) Darlegung — Begriffe, logischer Aufbau, selbstständige Entwicklung, kritische Argumentation.", "quelle": "Hinweise zur mündlichen Prüfung 2026 S. 2", "tags": ["Modell", "Pruefung", "Hochprior"], "cluster": "B_Modelle", "jgst": "", "lb": "", "hochprior": true}, {"front": "Nenne die acht Punkte der Lösungsmatrix (Seminar SW V).", "back": "(1) Gesamtzusammenhang, (2) Grobgliederung, (3) Begriffsklärung, (4) Lehrplan, (5) Realisierungsmöglichkeiten, (6) Probleme/Grenzen, (7) Wertung/Stellungnahme, (8) Zusammenfassung.", "quelle": "Seminar SW V", "tags": ["Modell", "Pruefung", "Hochprior"], "cluster": "B_Modelle", "jgst": "", "lb": "", "hochprior": true}, {"front": "Nenne die drei AFB-Stufen.", "back": "AFB I = Reproduktion (benennen, beschreiben). AFB II = Reorganisation/Transfer (erklären, erläutern, vergleichen). AFB III = Reflexion/Beurteilung (diskutieren, bewerten, erörtern).", "quelle": "KMK; LP+-Operatorenliste", "tags": ["Modell", "AFB"], "cluster": "B_Modelle", "jgst": "", "lb": "", "hochprior": false}, {"front": "Nenne die drei fachlichen Perspektiven im GPG-Kompetenzstrukturmodell.", "back": "(1) Historische Perspektive, (2) Sozialwissenschaftliche Perspektive, (3) Geographische Perspektive.", "quelle": "LP:FPGPG; GPG GB §2", "tags": ["Modell", "Lehrplan"], "cluster": "B_Modelle", "jgst": "", "lb": "", "hochprior": false}, {"front": "Nenne vier Makromethoden der Sk.", "back": "Fallanalyse, Erkundung, Projekt/Projektmethode, Rollenspiel/Planspiel/Entscheidungsspiel.", "quelle": "GPG B4 §2.2", "tags": ["Modell", "Methode"], "cluster": "B_Modelle", "jgst": "", "lb": "", "hochprior": false}, {"front": "Nenne sechs Mikromethoden der Sk.", "back": "Textanalyse, Karikaturanalyse, Pro-Contra-Debatte, Diskussion, Befragung/Interview, Talkshow (weitere: Brainstorming, Blitzlicht, Stellung nehmen, Methode 66, Prioritätenliste, WebQuest).", "quelle": "GPG B4 §2.1", "tags": ["Modell", "Methode"], "cluster": "B_Modelle", "jgst": "", "lb": "", "hochprior": false}, {"front": "LP+ GPG5 LB4: Klassenrat-KE wörtlich?", "back": "„wenden demokratische Verhaltensweisen (z. B. bei Klassensprecherwahl, Klassenrat) an, und gestalten ein friedliches und respektvolles Zusammenleben in Familie, Schule und Gesellschaft mit, indem sie z. B. aktiv zuhören, ihre Standpunkte artikulieren, Gesprächsregeln einhalten, argumentieren und verhandeln, Kompromisse finden, Entscheidungen treffen, Beschlüsse fassen und diese in sozialer Verantwortung umsetzen.“", "quelle": "LP+ GPG5 LB4", "tags": ["LP", "GPG5", "LB4", "Hochprior"], "cluster": "C_LP", "jgst": "GPG5", "lb": "LB4", "hochprior": true}, {"front": "LP+ GPG5 LB3: Demokratie-KE zur Antike wörtlich?", "back": "„beschreiben Zusammensetzung und Befugnisse der Volksversammlung im antiken Griechenland und beurteilen diese Form der Mitsprache für die Bürgerinnen und Bürger als ersten Ansatz von Demokratie.“", "quelle": "LP+ GPG5 LB3", "tags": ["LP", "GPG5", "LB3"], "cluster": "C_LP", "jgst": "GPG5", "lb": "LB3", "hochprior": false}, {"front": "LP+ GPG6 LB4: Kommunalpolitik-KE wörtlich?", "back": "„erläutern ausgehend von einem aktuellen Fallbeispiel aus ihrem Umfeld die kommunalpolitischen Entscheidungsprozesse und erproben ihre Mitwirkungsmöglichkeiten bei exemplarischen Fällen an ihrem Wohnort.“", "quelle": "LP+ GPG6 LB4", "tags": ["LP", "GPG6", "LB4", "Hochprior"], "cluster": "C_LP", "jgst": "GPG6", "lb": "LB4", "hochprior": true}, {"front": "LP+ GPG7 LB4 (R+M wortgleich): Pflicht-KE Jugendstrafrecht?", "back": "„diskutieren grundlegende Bestimmungen des Jugendstrafrechts sowie die präventiv und pädagogisch ausgerichtete Strafbemessung anhand einer öffentlichen Gerichtsverhandlung.“", "quelle": "LP+ GPG7 LB4 (R+M)", "tags": ["LP", "GPG7", "LB4", "Hochprior"], "cluster": "C_LP", "jgst": "GPG7", "lb": "LB4", "hochprior": true}, {"front": "LP+ GPG7 LB3: KE zur Sozialen Frage?", "back": "„beschreiben die Lebens- und Arbeitsverhältnisse von Arbeiterinnen bzw. Arbeitern und deren Familien sowie Lösungsansätze der Sozialen Frage während der Industrialisierung.“ (R) — M zusätzlich: „und vergleichen sie mit unserem sozialen Sicherungssystem“.", "quelle": "LP+ GPG7 LB3", "tags": ["LP", "GPG7", "LB3"], "cluster": "C_LP", "jgst": "GPG7", "lb": "LB3", "hochprior": false}, {"front": "LP+ GPG8 LB3: KE zu parlamentarischer Gesetzgebung?", "back": "R: „beschreiben die Aufgaben wichtiger parlamentarischer Institutionen bei der Gesetzgebung anhand eines aktuellen Fallbeispiels und diskutieren den Sinn dieser Regelungen für die Zielsetzungen von Legitimität, Effizienz und Allgemeinwohl.“ M: „erklären…“", "quelle": "LP+ GPG8 LB3", "tags": ["LP", "GPG8", "LB3", "Hochprior"], "cluster": "C_LP", "jgst": "GPG8", "lb": "LB3", "hochprior": true}, {"front": "LP+ GPG8 LB4: KE zu politischer Teilhabe?", "back": "R: „beschreiben…“ / M: „erklären die Möglichkeiten der politischen Teilhabe der Bürgerinnen und Bürger in einer Demokratie, beurteilen deren Mitwirkungsmöglichkeiten und diskutieren sie als eigene zukünftige Handlungsmöglichkeiten.“", "quelle": "LP+ GPG8 LB4", "tags": ["LP", "GPG8", "LB4", "Hochprior"], "cluster": "C_LP", "jgst": "GPG8", "lb": "LB4", "hochprior": true}, {"front": "LP+ GPG8 LB4: KE zu Wahlbeteiligung?", "back": "„analysieren die Wahlbeteiligung einer aktuellen Bundes- oder Landtagswahl und diskutieren Gründe für die geringe Wahlbeteiligung von Erstwählerinnen und Erstwählern.“", "quelle": "LP+ GPG8 LB4", "tags": ["LP", "GPG8", "LB4"], "cluster": "C_LP", "jgst": "GPG8", "lb": "LB4", "hochprior": false}, {"front": "LP+ GPG9 LB3: KE zu Friedenssicherung?", "back": "R: „stellen Organisationen der nationalen und internationalen Friedenssicherung dar und diskutieren deren Rolle in aktuellen humanitären und militärischen Einsätzen.“ M zusätzlich: „begründen deren Funktion innerhalb der internationalen Staatengemeinschaft“.", "quelle": "LP+ GPG9 LB3", "tags": ["LP", "GPG9", "LB3"], "cluster": "C_LP", "jgst": "GPG9", "lb": "LB3", "hochprior": false}, {"front": "LP+ GPG9 LB4: KE zu Migration?", "back": "R: „erklären Ursachen von Migrationsbewegungen, nennen politische Entscheidungen sowie getroffene Maßnahmen in ihrer Region und diskutieren Herausforderungen und Chancen der Migration für unsere Gesellschaft.“ M: „analysieren Ursachen…“", "quelle": "LP+ GPG9 LB4", "tags": ["LP", "GPG9", "LB4", "Hochprior"], "cluster": "C_LP", "jgst": "GPG9", "lb": "LB4", "hochprior": true}, {"front": "LP+ GPG10 LB3: KE zu Grund- und Menschenrechten?", "back": "„definieren die Grund- und Menschenrechte als schützenswerte Basis gesellschaftlichen Zusammenlebens.“ Plus: „erörtern Möglichkeiten der Intervention durch die Staatengemeinschaft bei anhaltenden Menschenrechtsverletzungen…“", "quelle": "LP+ GPG10 LB3", "tags": ["LP", "GPG10", "LB3", "Hochprior"], "cluster": "C_LP", "jgst": "GPG10", "lb": "LB3", "hochprior": true}, {"front": "LP+ GPG10 LB3: KE zum Bundesverfassungsgericht?", "back": "„stellen die Rolle des Bundesverfassungsgerichts in unserem politischen System dar und erörtern seine Bedeutung für den Schutz der Grund- und Menschenrechte in Deutschland an einem selbst recherchierten Beispiel.“", "quelle": "LP+ GPG10 LB3", "tags": ["LP", "GPG10", "LB3"], "cluster": "C_LP", "jgst": "GPG10", "lb": "LB3", "hochprior": false}, {"front": "LP+ GPG10 LB4: KE zur politischen Willensbildung?", "back": "„stellen den Prozess der politischen Willensbildung dar und erproben Einfluss- und Beteiligungsmöglichkeiten politischer Mitwirkung.“", "quelle": "LP+ GPG10 LB4", "tags": ["LP", "GPG10", "LB4", "Hochprior"], "cluster": "C_LP", "jgst": "GPG10", "lb": "LB4", "hochprior": true}, {"front": "LP+ ÜBZ Politische Bildung — Eingangssatz?", "back": "„Politische Bildung basiert auf der Kenntnis und Akzeptanz von Demokratie und freiheitlich-demokratischer Grundordnung sowie dem Wissen um den föderalen, rechtsstaatlichen und sozialstaatlichen Aufbau der Bundesrepublik Deutschland.“", "quelle": "LP+ ÜBZ Mittelschule", "tags": ["LP", "UEBZ", "Hochprior"], "cluster": "C_LP", "jgst": "UEBZ", "lb": "", "hochprior": true}, {"front": "LP+ FPGPG LB3-Beschreibung — Kernsatz?", "back": "„In der Rolle als mündige und verantwortungsvoll handelnde Bürgerinnen und Bürger einer Demokratie setzen sich die Schülerinnen und Schüler im Lernbereich Politik und Gesellschaft mit politischen Ordnungssystemen, Kulturen, Wertvorstellungen, Religionen, politischen und gesellschaftlichen Schlüsselproblemen und den damit zusammenhängenden Interessen und Konflikten auseinander.“", "quelle": "LP+ FPGPG", "tags": ["LP", "FPGPG", "Hochprior"], "cluster": "C_LP", "jgst": "FPGPG", "lb": "", "hochprior": true}, {"front": "LP+ FPGPG LB4-Beschreibung — Kernsatz?", "back": "„Die Schülerinnen und Schüler setzen sich im Lernbereich Lebenswelt mit konkreten lebensweltlichen Themen im Unterricht auseinander und analysieren Fragen und Probleme des gesellschaftlichen Zusammenlebens aus verschiedenen Perspektiven.“", "quelle": "LP+ FPGPG", "tags": ["LP", "FPGPG"], "cluster": "C_LP", "jgst": "FPGPG", "lb": "", "hochprior": false}, {"front": "LP+ FPGPG zur R/M-Differenzierung — wörtlich?", "back": "„Die Anforderungen in den Mittlere-Reife-Klassen unterscheiden sich von denen der Regelklassen durch umfangreichere und komplexere Aufgabenstellungen, ein höheres Arbeitstempo und mehr Selbständigkeit.“", "quelle": "LP+ FPGPG", "tags": ["LP", "FPGPG"], "cluster": "C_LP", "jgst": "FPGPG", "lb": "", "hochprior": false}, {"front": "LP+ GPG7 LB4 (M-Variante): Wodurch unterscheidet sich M zur R-KE „berichten über aktuelle kriminelle Tat“?", "back": "M: „recherchieren selbständig und berichten über eine aktuelle, von öffentlichem Interesse geprägte kriminelle Tat (z. B. Jugendgewalt, Internetkriminalität) und diskutieren die möglichen Strafen…“ Selbstständigkeit + öffentliches Interesse als Zusatz.", "quelle": "LP+ GPG7 LB4 M", "tags": ["LP", "GPG7", "LB4", "RM-Diff"], "cluster": "C_LP", "jgst": "GPG7", "lb": "LB4", "hochprior": false}, {"front": "LP+ GPG6 LB4: KE zur kommunalen Selbstverwaltung?", "back": "„stellen den Aufbau und die Funktionszusammenhänge der kommunalen Selbstverwaltung sowie die Mitwirkungsmöglichkeiten der Bürgerinnen und Bürger in der Gemeinde dar.“", "quelle": "LP+ GPG6 LB4", "tags": ["LP", "GPG6", "LB4"], "cluster": "C_LP", "jgst": "GPG6", "lb": "LB4", "hochprior": false}, {"front": "LP+ GPG10 LB4: KE zu Kinderrechten?", "back": "„erläutern Aufgaben und Leistungen von Familie und staatlichen Einrichtungen zum Schutz von Kinderrechten und begründen die Bedeutung von Interessenvertretungen, die sich für die Wahrung dieser Rechte einsetzen.“", "quelle": "LP+ GPG10 LB4", "tags": ["LP", "GPG10", "LB4"], "cluster": "C_LP", "jgst": "GPG10", "lb": "LB4", "hochprior": false}, {"front": "LP+ GPG9 LB3: KE zu Terrorismus?", "back": "R: „nennen Formen des Terrorismus, beschreiben deren unterschiedliche Motive und bewerten diese als Bedrohung für die Freiheit und die Sicherheit.“ (M: erläutern + beurteilen)", "quelle": "LP+ GPG9 LB3", "tags": ["LP", "GPG9", "LB3"], "cluster": "C_LP", "jgst": "GPG9", "lb": "LB3", "hochprior": false}, {"front": "LP+ GPG8 LB3: KE zum Widerstand im NS?", "back": "„erläutern Motive und Formen des Widerstands … diskutieren Möglichkeiten und Grenzen, Menschenrechte auch in einer Demokratie einzufordern und erkennen dabei Zivilcourage als eine zum Erhalt und zur Stabilisierung demokratischer Gesellschaftsstrukturen unverzichtbare Voraussetzung.“", "quelle": "LP+ GPG8 LB3", "tags": ["LP", "GPG8", "LB3"], "cluster": "C_LP", "jgst": "GPG8", "lb": "LB3", "hochprior": false}, {"front": "LP+ GPG10 LB3: KE zu Extremismus?", "back": "„entwickeln Erklärungen für die Existenz unterschiedlicher Formen von Extremismus und Radikalisierung.“ Inhalte: Links- und Rechtsextremismus, Dschihadismus.", "quelle": "LP+ GPG10 LB3", "tags": ["LP", "GPG10", "LB3"], "cluster": "C_LP", "jgst": "GPG10", "lb": "LB3", "hochprior": false}, {"front": "LP+ GPG8 LB4: KE zum Sozialstaat?", "back": "„stellen Aufgaben und Funktion einer gemeinnützigen Einrichtung in ihrem Umfeld (z. B. Tafeln) dar und bewerten deren Notwendigkeit in unserem Sozialstaat.“ Plus: Generationenvertrag, demogr. Wandel.", "quelle": "LP+ GPG8 LB4", "tags": ["LP", "GPG8", "LB4"], "cluster": "C_LP", "jgst": "GPG8", "lb": "LB4", "hochprior": false}, {"front": "AFB-Stufe und Bedeutung von „benennen“?", "back": "AFB I (Reproduktion). Ohne Begründung, einfache Auflistung. Beispiel: GPG7 LB4 R „benennen die rechtsbedeutsamen Altersstufen für Jugendliche“.", "quelle": "KMK-Operatorenliste", "tags": ["Operator", "AFB-I"], "cluster": "D_Operatoren", "jgst": "", "lb": "", "hochprior": false}, {"front": "AFB-Stufe und Bedeutung von „beschreiben“?", "back": "AFB I (Reproduktion). Sachverhalte mit eigenen Worten wiedergeben. Beispiel: GPG5 LB4 „beschreiben Konfliktsituationen aus ihrem Alltag“.", "quelle": "KMK-Operatorenliste", "tags": ["Operator", "AFB-I"], "cluster": "D_Operatoren", "jgst": "", "lb": "", "hochprior": false}, {"front": "AFB-Stufe und Bedeutung von „erläutern“?", "back": "AFB II (Reorganisation). Mit Beispielen verdeutlichen, Zusammenhänge aufzeigen. Beispiel: GPG6 LB4 „erläutern kommunalpolitische Entscheidungsprozesse“.", "quelle": "KMK-Operatorenliste", "tags": ["Operator", "AFB-II"], "cluster": "D_Operatoren", "jgst": "", "lb": "", "hochprior": false}, {"front": "AFB-Stufe und Bedeutung von „diskutieren“?", "back": "AFB III (Reflexion). Argumente abwägen, eigene Position begründen. Häufigster AFB-III-Operator in GPG-LB3+LB4. Beispiel: GPG7 LB4 „diskutieren … anhand einer öffentlichen Gerichtsverhandlung“.", "quelle": "KMK-Operatorenliste", "tags": ["Operator", "AFB-III", "Hochprior"], "cluster": "D_Operatoren", "jgst": "", "lb": "", "hochprior": true}, {"front": "AFB-Stufe und Bedeutung von „bewerten“?", "back": "AFB III (Reflexion). Werturteil unter Anwendung von Kriterien fällen. Beispiel: GPG8 LB4 „bewerten Notwendigkeit in unserem Sozialstaat“.", "quelle": "KMK-Operatorenliste", "tags": ["Operator", "AFB-III"], "cluster": "D_Operatoren", "jgst": "", "lb": "", "hochprior": false}, {"front": "AFB-Stufe und Bedeutung von „erörtern“?", "back": "AFB III (Reflexion). Pro- und Contra-Argumente abwägen, zu begründetem Urteil kommen. Beispiel: GPG10 LB3 „erörtern Möglichkeiten der Intervention durch die Staatengemeinschaft“.", "quelle": "KMK-Operatorenliste", "tags": ["Operator", "AFB-III"], "cluster": "D_Operatoren", "jgst": "", "lb": "", "hochprior": false}, {"front": "AFB-Stufe und Bedeutung von „analysieren“?", "back": "AFB II–III (kontextabhängig). Bestandteile/Strukturen herausarbeiten und in Beziehung setzen. Beispiel: GPG9 LB4 M „analysieren Ursachen von Migrationsbewegungen“ (M-Variante = AFB III).", "quelle": "KMK-Operatorenliste", "tags": ["Operator", "AFB-II", "AFB-III"], "cluster": "D_Operatoren", "jgst": "", "lb": "", "hochprior": false}, {"front": "AFB-Progression R → M (Beispiel GPG8 LB4 politische Teilhabe)?", "back": "R: „beschreiben“ (AFB I) → M: „erklären“ (AFB II). M-Anforderung höher: nicht nur Wiedergabe, sondern Zusammenhang darstellen.", "quelle": "LP+ GPG8 LB4", "tags": ["Operator", "RM-Diff"], "cluster": "D_Operatoren", "jgst": "", "lb": "", "hochprior": false}, {"front": "AFB-Progression R → M (Beispiel GPG9 LB4 Migration)?", "back": "R: „erklären“ (AFB II) → M: „analysieren“ (AFB III). Operatorenwechsel = höhere AFB-Stufe in M.", "quelle": "LP+ GPG9 LB4", "tags": ["Operator", "RM-Diff"], "cluster": "D_Operatoren", "jgst": "", "lb": "", "hochprior": false}, {"front": "Was kennzeichnet AFB-III-Operatoren in der LP+-Sk-Schicht?", "back": "Reflexive Urteilsbildung mit Begründung. Häufigste AFB-III-Operatoren: diskutieren, beurteilen, bewerten, erörtern, definieren (normativ), entwickeln, entschlüsseln. Konzentration in GPG7M–10.", "quelle": "LP+ + GPG B3 §2.3", "tags": ["Operator", "AFB-III"], "cluster": "D_Operatoren", "jgst": "", "lb": "", "hochprior": false}, {"front": "Welche Sk-Methoden werden in der Yehya-Sequenz GPG7 LB4 realisiert?", "back": "UE 1 Pro-Contra (Mikro), UE 5 Fallanalyse (Makro, kasuistisch), UE 6 Pro-Contra+Positionslinie, UE 8 Rollenspiel/Gerichtssimulation (Makro, gebundenes Rollenspiel = Realisierung der LP+-KE).", "quelle": "Sequenzplan 05_Sequenz_Recht.md + GPG B4", "tags": ["Praxis", "Yehya", "Hochprior"], "cluster": "E_Praxis", "jgst": "", "lb": "", "hochprior": true}, {"front": "Wie verbindet die Yehya-Sequenz Handlungsorientierung + Lebensweltbezug + Werterziehung?", "back": "Identifikationsfigur (Yehya) = Lebensweltbezug; Gerichtssimulation = Simulationshandeln (Massing); „Strafe oder Hilfe?“-Diskussion = moralischer Urteilskonflikt (Werterziehung Stufe 3 Polis).", "quelle": "Sequenzplan + Massing 2012 + GPG B3 §1.2", "tags": ["Praxis", "Yehya", "Hochprior"], "cluster": "E_Praxis", "jgst": "", "lb": "", "hochprior": true}, {"front": "Wie wird der Beutelsbacher Konsens in der Yehya-Sequenz operationalisiert?", "back": "Stereotypisierungsvermeidung explizit thematisiert; Yehya als individueller Fall, nicht Migrant-Stereotyp. Pro-Contra UE 6 = Kontroversitätsgebot. SuS-Positionierung UE 1 = Schülerorientierung.", "quelle": "Sequenzplan + GPG B3 §1.1", "tags": ["Praxis", "Yehya", "Beutelsbach"], "cluster": "E_Praxis", "jgst": "", "lb": "", "hochprior": false}, {"front": "Wie verbindet die Industrialisierungs-Sequenz GPG7 LB2/LB3 mit Multiperspektivität?", "back": "Identifikationsfiguren Johann/Anna/Peter erlauben Perspektivübernahme über soziale Schichten; Tagebuch-Aufgabe + Plenums-Vergleich = explizite Multiperspektivität als Methodenelement.", "quelle": "Antwortgerüst Handlungsorientierung", "tags": ["Praxis", "Industrialisierung"], "cluster": "E_Praxis", "jgst": "", "lb": "", "hochprior": false}, {"front": "Welche Sk-Lernebene (GPG GB §5.2) trägt die Yehya-Sequenz primär?", "back": "Ebenen I (zwischenmenschlich: Yehyas Konflikte, Strafe als Reaktion), II (Sozialisation: Familie, Peergroup, Schule), III (gesellschaftlich-ökonomisch: strukturelle Faktoren der Kriminalitätsgenese).", "quelle": "GPG GB §5.2; Klafki", "tags": ["Praxis", "Yehya"], "cluster": "E_Praxis", "jgst": "", "lb": "", "hochprior": false}];
+const CLUSTER_LABELS = {"A_Begriffe": "A · Begriffe", "B_Modelle": "B · Modelle/Listen", "C_LP": "C · LP+-Zitate", "D_Operatoren": "D · Operatoren", "E_Praxis": "E · Praxis"};
+const STORAGE_KEY = 'mp_n18_sk_progress_v1';
+
+function loadProgress() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); }
+  catch (e) { return {}; }
+}
+function saveProgress(p) {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(p)); }
+  catch (e) {}
+}
+let progress = loadProgress();
+
+let filtered = [...CARDS];
+let curIdx = 0;
+let showBack = false;
+
+const $ = id => document.getElementById(id);
+
+function applyFilter() {
+  const cl = $('filter-cluster').value;
+  const j = $('filter-jgst').value;
+  const lb = $('filter-lb').value;
+  const hp = $('filter-hp').checked;
+  const q = $('search').value.toLowerCase().trim();
+  filtered = CARDS.filter(c => {
+    if (cl && c.cluster !== cl) return false;
+    if (j && c.jgst !== j) return false;
+    if (lb && c.lb !== lb) return false;
+    if (hp && !c.hochprior) return false;
+    if (q && !(c.front + ' ' + c.back + ' ' + c.quelle).toLowerCase().includes(q)) return false;
+    return true;
+  });
+  curIdx = 0;
+  showBack = false;
+  render();
+}
+
+function cardKey(c) { return c.front; }
+
+function render() {
+  const container = $('card-container');
+  if (!filtered.length) {
+    container.innerHTML = '<div class="empty-msg">Keine Karten mit diesen Filtern.</div>';
+    $('cur-idx').textContent = 0;
+    $('cur-total').textContent = 0;
+    $('progress-text').textContent = '';
+    return;
+  }
+  $('cur-idx').textContent = curIdx + 1;
+  $('cur-total').textContent = filtered.length;
+
+  const filters = [];
+  if ($('filter-cluster').value) filters.push(CLUSTER_LABELS[$('filter-cluster').value] || $('filter-cluster').value);
+  if ($('filter-jgst').value) filters.push($('filter-jgst').value);
+  if ($('filter-lb').value) filters.push($('filter-lb').value);
+  if ($('filter-hp').checked) filters.push('Hochprior');
+  $('filter-info').textContent = filters.length ? filters.join(' / ') : 'alle';
+
+  const c = filtered[curIdx];
+  const hpClass = c.hochprior ? 'is-hp' : '';
+  const tagsHtml = (c.hochprior ? '<span class="tag-hp">Hochprior</span>' : '') +
+    (c.jgst ? '<span>' + c.jgst + '</span>' : '') +
+    (c.lb ? '<span>' + c.lb + '</span>' : '') +
+    '<span>' + (CLUSTER_LABELS[c.cluster] || c.cluster) + '</span>';
+
+  let html = '';
+  if (showBack) {
+    html = '<div class="card-front" style="font-size:0.95em;color:var(--c-muted);margin-bottom:12px;">' + c.front + '</div>' +
+           '<div class="card-back">' + c.back + '</div>' +
+           '<div class="card-quelle">' + c.quelle + '</div>' +
+           '<div class="card-tags">' + tagsHtml + '</div>';
+  } else {
+    html = '<div class="card-front">' + c.front + '</div>' +
+           '<div class="card-tags">' + tagsHtml + '</div>';
+  }
+
+  let reviewHtml = '';
+  if (showBack) {
+    const k = cardKey(c);
+    const pr = progress[k] || { good:0, meh:0, fail:0 };
+    reviewHtml = '<div class="review-buttons">' +
+      '<button class="btn-fail" onclick="rate(\'fail\')">&#x2715; nochmal</button>' +
+      '<button class="btn-meh" onclick="rate(\'meh\')">~ ok</button>' +
+      '<button class="btn-good" onclick="rate(\'good\')">&#x2713; sicher</button>' +
+      '</div>';
+    const total = pr.good + pr.meh + pr.fail;
+    if (total > 0) {
+      reviewHtml += '<div class="progress-bar">' +
+        Array(pr.good).fill('<div class="seg good"></div>').join('') +
+        Array(pr.meh).fill('<div class="seg meh"></div>').join('') +
+        Array(pr.fail).fill('<div class="seg fail"></div>').join('') +
+        '</div>';
+    }
+  }
+
+  container.innerHTML =
+    '<div class="card-frame ' + hpClass + '" onclick="flip(event)">' + html + '</div>' +
+    '<div class="flip-hint">' + (showBack ? '&uarr; Klick fuer Vorderseite' : '&darr; Klick zum Umdrehen') + '</div>' +
+    reviewHtml;
+
+  $('prev').disabled = curIdx === 0;
+  $('next').disabled = curIdx === filtered.length - 1;
+
+  // Progress-Text
+  let goodCount = 0, total = 0;
+  filtered.forEach(c => {
+    const pr = progress[cardKey(c)];
+    if (pr) {
+      total++;
+      if (pr.good > pr.fail && pr.good > pr.meh) goodCount++;
+    }
+  });
+  $('progress-text').textContent = total ? (goodCount + '/' + total + ' gemeistert') : '';
+}
+
+function flip(e) {
+  if (e && e.target.tagName === 'BUTTON') return;
+  showBack = !showBack;
+  render();
+}
+window.flip = flip;
+
+window.rate = function(level) {
+  const c = filtered[curIdx];
+  const k = cardKey(c);
+  if (!progress[k]) progress[k] = { good:0, meh:0, fail:0 };
+  progress[k][level] = (progress[k][level] || 0) + 1;
+  saveProgress(progress);
+  // Auto-Vorrücken auf nächste Karte
+  if (curIdx < filtered.length - 1) {
+    curIdx++; showBack = false; render();
+  } else {
+    render();
+  }
+};
+
+$('prev').onclick = () => { if (curIdx > 0) { curIdx--; showBack = false; render(); } };
+$('next').onclick = () => { if (curIdx < filtered.length - 1) { curIdx++; showBack = false; render(); } };
+$('filter-cluster').onchange = applyFilter;
+$('filter-jgst').onchange = applyFilter;
+$('filter-lb').onchange = applyFilter;
+$('filter-hp').onchange = applyFilter;
+$('search').oninput = applyFilter;
+$('shuffle').onclick = () => {
+  for (let i = filtered.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [filtered[i], filtered[j]] = [filtered[j], filtered[i]];
+  }
+  curIdx = 0; showBack = false; render();
+};
+$('reset').onclick = () => {
+  $('filter-cluster').value = '';
+  $('filter-jgst').value = '';
+  $('filter-lb').value = '';
+  $('filter-hp').checked = false;
+  $('search').value = '';
+  applyFilter();
+};
+
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+  if (e.key === 'ArrowLeft' && curIdx > 0) { curIdx--; showBack = false; render(); }
+  else if (e.key === 'ArrowRight' && curIdx < filtered.length - 1) { curIdx++; showBack = false; render(); }
+  else if (e.key === ' ') { e.preventDefault(); flip(); }
+  else if (e.key === '1') { if (showBack) rate('fail'); }
+  else if (e.key === '2') { if (showBack) rate('meh'); }
+  else if (e.key === '3') { if (showBack) rate('good'); }
+});
+
+render();
+</script>
+</body>
+</html>
