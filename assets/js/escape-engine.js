@@ -4516,6 +4516,8 @@ var EscapeEngine = (function () {
       ki_box_button: 'Prompt für KI-Hilfe kopieren',
       ki_box_kopiert: 'Kopiert ✓',
       ki_box_hint: 'Füge den Prompt in eine KI deiner Wahl ein und stelle deine Frage.',
+      ki_toast_open: 'Tab geöffnet — drücke Enter im Chat',
+      ki_toast_blocked: 'Popup blockiert — Prompt ist kopiert, öffne duck.ai manuell',
       sprache_button_label: 'Sprache wählen',
       tooltip_close: 'Schließen',
       nur_de_hinweis: '(nur DE verfügbar)'
@@ -4525,6 +4527,8 @@ var EscapeEngine = (function () {
       ki_box_button: 'Скопировать промпт для AI-помощника',
       ki_box_kopiert: 'Скопировано ✓',
       ki_box_hint: 'Вставь промпт в AI и задай свой вопрос.',
+      ki_toast_open: 'Вкладка открыта — нажми Enter в чате',
+      ki_toast_blocked: 'Всплывающее окно заблокировано — промпт скопирован, открой duck.ai вручную',
       sprache_button_label: 'Выбрать язык',
       tooltip_close: 'Закрыть',
       nur_de_hinweis: '(только на DE)'
@@ -4534,11 +4538,15 @@ var EscapeEngine = (function () {
       ki_box_button: 'نسخ موجّه المساعد الذكي',
       ki_box_kopiert: 'تم النسخ ✓',
       ki_box_hint: 'الصق الموجّه في مساعد ذكي واطرح سؤالك.',
+      ki_toast_open: 'تم فتح علامة تبويب — اضغط Enter في الدردشة',
+      ki_toast_blocked: 'تم حظر النافذة المنبثقة — المُوجِّه منسوخ، افتح duck.ai يدويًا',
       sprache_button_label: 'اختر اللغة',
       tooltip_close: 'إغلاق',
       nur_de_hinweis: '(بالألمانية فقط)'
     }
   };
+
+  var DUCKAI_BASE = 'https://duck.ai/?q=';
 
   var _diffData = null;          // gesamtes data.json (zweite fetch)
   var _currentMappe = null;      // aktuelle Mappe
@@ -4881,9 +4889,57 @@ var EscapeEngine = (function () {
       var curLang = getCurrentSprache();
       var pt = btn.dataset['prompt' + curLang.charAt(0).toUpperCase() + curLang.slice(1)] || btn.dataset.promptDe;
       copyToClipboard(pt, btn);
+      openDuckAi(pt, btn);
     });
 
     materialEl.appendChild(btn);
+  }
+
+  // Öffnet duck.ai mit dem Prompt im ?q=-Param. Synchron im Click-Handler aufgerufen,
+  // damit Browser-Popup-Blocker es als User-Geste akzeptiert. Bei Block: Toast-Hinweis
+  // mit Fallback-Anweisung (Prompt ist im Clipboard, manuell öffnen).
+  function openDuckAi(prompt, btn) {
+    var url = DUCKAI_BASE + encodeURIComponent(prompt);
+    var win = null;
+    try {
+      win = window.open(url, '_blank', 'noopener,noreferrer');
+    } catch (e) {
+      win = null;
+    }
+    var lang = getCurrentSprache();
+    var t = I18N[lang] || I18N.de;
+    if (win) {
+      showKiToast(btn, t.ki_toast_open, false);
+    } else {
+      showKiToast(btn, t.ki_toast_blocked, true);
+    }
+  }
+
+  // Mini-Toast in der Nähe des Icons (absolute, rechts vom Icon).
+  // Schließt sich nach 3 s automatisch (5 s bei Fehler-Variante).
+  function showKiToast(btn, text, isError) {
+    var existing = btn.parentNode.querySelector('.ki-hilfe-toast');
+    if (existing) existing.parentNode.removeChild(existing);
+
+    var toast = document.createElement('div');
+    toast.className = 'ki-hilfe-toast' + (isError ? ' ki-hilfe-toast--error' : '');
+    toast.setAttribute('role', 'status');
+    toast.textContent = text;
+    btn.parentNode.appendChild(toast);
+
+    // Position: relativ zum Icon-Button. Toast erscheint rechts neben dem Icon.
+    var iconRect = btn.getBoundingClientRect();
+    var parentRect = btn.parentNode.getBoundingClientRect();
+    toast.style.position = 'absolute';
+    toast.style.top = (btn.offsetTop) + 'px';
+    toast.style.left = (btn.offsetLeft + btn.offsetWidth + 8) + 'px';
+
+    setTimeout(function () {
+      toast.classList.add('ki-hilfe-toast--fade');
+      setTimeout(function () {
+        if (toast.parentNode) toast.parentNode.removeChild(toast);
+      }, 400);
+    }, isError ? 5000 : 3000);
   }
 
   function copyToClipboard(text, btn) {

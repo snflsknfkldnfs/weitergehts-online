@@ -2695,6 +2695,42 @@ body.quellen-hidden .material__inhalt cite {
   }
 }
 
+/* --- Mini-Toast für duck.ai-Tab-Open-Hinweis --- */
+.ki-hilfe-toast {
+  display: inline-block;
+  padding: 0.4rem 0.7rem;
+  background: var(--color-text, #222);
+  color: #fff;
+  border-radius: 4px;
+  font-size: 0.82rem;
+  line-height: 1.3;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  z-index: 50;
+  white-space: nowrap;
+  max-width: 280px;
+  white-space: normal;
+  pointer-events: none;
+  opacity: 0;
+  animation: kiHilfeToastFadeIn 180ms ease-out forwards;
+}
+.ki-hilfe-toast--error {
+  background: #b53a17;
+}
+.ki-hilfe-toast--fade {
+  opacity: 0;
+  transition: opacity 380ms ease-in;
+}
+@keyframes kiHilfeToastFadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 720px) {
+  .ki-hilfe-toast {
+    max-width: 200px;
+    font-size: 0.78rem;
+  }
+}
+
 /* RTL-Variante: Icon rechts statt links */
 [dir="rtl"] .ki-hilfe-icon,
 .aufgabe--rtl .ki-hilfe-icon {
