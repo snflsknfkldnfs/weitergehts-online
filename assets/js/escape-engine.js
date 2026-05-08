@@ -4516,7 +4516,7 @@ var EscapeEngine = (function () {
       ki_box_button: 'Prompt für KI-Hilfe kopieren',
       ki_box_kopiert: 'Kopiert ✓',
       ki_box_hint: 'Füge den Prompt in eine KI deiner Wahl ein und stelle deine Frage.',
-      ki_toast_open: 'Tab geöffnet — drücke Enter im Chat',
+      ki_toast_open: 'Tab geöffnet — wähle „Claude Haiku" als Modell und drücke Enter',
       ki_toast_blocked: 'Popup blockiert — Prompt ist kopiert, öffne duck.ai manuell',
       sprache_button_label: 'Sprache wählen',
       tooltip_close: 'Schließen',
@@ -4527,7 +4527,7 @@ var EscapeEngine = (function () {
       ki_box_button: 'Скопировать промпт для AI-помощника',
       ki_box_kopiert: 'Скопировано ✓',
       ki_box_hint: 'Вставь промпт в AI и задай свой вопрос.',
-      ki_toast_open: 'Вкладка открыта — нажми Enter в чате',
+      ki_toast_open: 'Вкладка открыта — выбери модель «Claude Haiku» и нажми Enter',
       ki_toast_blocked: 'Всплывающее окно заблокировано — промпт скопирован, открой duck.ai вручную',
       sprache_button_label: 'Выбрать язык',
       tooltip_close: 'Закрыть',
@@ -4538,7 +4538,7 @@ var EscapeEngine = (function () {
       ki_box_button: 'نسخ موجّه المساعد الذكي',
       ki_box_kopiert: 'تم النسخ ✓',
       ki_box_hint: 'الصق الموجّه في مساعد ذكي واطرح سؤالك.',
-      ki_toast_open: 'تم فتح علامة تبويب — اضغط Enter في الدردشة',
+      ki_toast_open: 'تم فتح علامة تبويب — اختر النموذج «Claude Haiku» واضغط Enter',
       ki_toast_blocked: 'تم حظر النافذة المنبثقة — المُوجِّه منسوخ، افتح duck.ai يدويًا',
       sprache_button_label: 'اختر اللغة',
       tooltip_close: 'إغلاق',
@@ -4939,7 +4939,7 @@ var EscapeEngine = (function () {
       setTimeout(function () {
         if (toast.parentNode) toast.parentNode.removeChild(toast);
       }, 400);
-    }, isError ? 5000 : 3000);
+    }, isError ? 6000 : 5000);
   }
 
   function copyToClipboard(text, btn) {
