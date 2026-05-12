@@ -4984,6 +4984,9 @@ var EscapeEngine = (function () {
   }
 
   function _translateAufgabe(sec, auf, lang) {
+    // Wave-1 W1.A R21 D-WAVE1-07 Master-Switch (W1.A.5 inline-integriert per D-WAVE1-38)
+    if (!_diffData || !_diffData.meta || !_diffData.meta.differenzierung_aktiv) return;
+
     if (sec.dataset.deFrage === undefined) {
       var orig = sec.querySelector('.aufgabe__frage');
       if (orig) sec.dataset.deFrage = orig.innerHTML;
@@ -5010,7 +5013,7 @@ var EscapeEngine = (function () {
         }
       }
     }
-    // MC-Optionen
+    // MC-Optionen (existing, Pilot-validiert)
     if (auf.typ === 'multiple-choice') {
       var labels = sec.querySelectorAll('.aufgabe__option');
       var origDeOpts = (auf.optionen || []);
@@ -5043,7 +5046,108 @@ var EscapeEngine = (function () {
         }
       }
     }
-    // RTL-Direktivierung des Aufgaben-Frage-Containers
+
+    // === Wave-1 W1.A NEU typ-Branches (BL-WAVE0-01-Engine-Hook-Pflicht-Auflösung) ===
+    // Architektur-Annotation: DIFF-002 §5.4-Klassen-Spec divergiert von Live-Engine
+    // (Wave-3-Backlog-Refactor per D-WAVE1-39). Implementation targetet Live-Engine-Klassen.
+
+    // reihenfolge: optionen_uebersetzung Array-Map auf .aufgabe__reihenfolge-text
+    if (auf.typ === 'reihenfolge') {
+      var rItems = sec.querySelectorAll('.aufgabe__reihenfolge-item');
+      var rOrigOpts = (auf.optionen || []);
+      var rTransOpts = (auf.optionen_uebersetzung && auf.optionen_uebersetzung[lang]) || null;
+      for (var ri = 0; ri < rItems.length; ri++) {
+        var rTxt = rItems[ri].querySelector('.aufgabe__reihenfolge-text');
+        if (!rTxt) continue;
+        var rDeVal = rItems[ri].dataset.value || rTxt.textContent;
+        if (lang !== 'de' && rTransOpts) {
+          var rIdx = rOrigOpts.indexOf(rDeVal);
+          rTxt.textContent = (rIdx !== -1 && rTransOpts[rIdx]) ? rTransOpts[rIdx] : rDeVal;
+        } else {
+          rTxt.textContent = rDeVal;
+        }
+      }
+    }
+
+    // zuordnung: .aufgabe__zuordnung-begriff (links) + select option-Labels (rechts)
+    // Lösungs-Anker: select.option.value bleibt DE
+    if (auf.typ === 'zuordnung') {
+      var zZeilen = sec.querySelectorAll('.aufgabe__zuordnung-zeile');
+      var zOrigPool = (auf.optionen || []);
+      var zTransOpts = (auf.optionen_uebersetzung && auf.optionen_uebersetzung[lang]) || null;
+      // begriff_uebersetzung ist NEU-Slot (Wave-3-Backlog per D-WAVE1-40), Wave-1 optional
+      var zTransBegriffe = (auf.begriff_uebersetzung && auf.begriff_uebersetzung[lang]) || null;
+      for (var zi = 0; zi < zZeilen.length; zi++) {
+        var zBegriffEl = zZeilen[zi].querySelector('.aufgabe__zuordnung-begriff');
+        var zSelect = zZeilen[zi].querySelector('select');
+        if (zBegriffEl && lang !== 'de' && zTransBegriffe && zTransBegriffe[zi]) {
+          zBegriffEl.textContent = zTransBegriffe[zi];
+        }
+        if (zSelect) {
+          var zOpts = zSelect.querySelectorAll('option');
+          for (var zoi = 0; zoi < zOpts.length; zoi++) {
+            if (!zOpts[zoi].value) continue; // Skip empty-placeholder
+            var zDeOpt = zOpts[zoi].value;
+            var zOptIdx = zOrigPool.indexOf(zDeOpt);
+            if (lang !== 'de' && zTransOpts && zOptIdx !== -1 && zTransOpts[zOptIdx]) {
+              zOpts[zoi].textContent = zTransOpts[zOptIdx];
+            } else {
+              zOpts[zoi].textContent = zDeOpt;
+            }
+          }
+        }
+      }
+    }
+
+    // vergleich: .vergleich__raster thead/tbody th
+    // Schema-Drift-Annotation: Live-Engine nutzt auf.loesung.dimensionen/objekte (D-WAVE1-40 Wave-3-Backlog)
+    if (auf.typ === 'vergleich') {
+      var vTable = sec.querySelector('.vergleich__raster');
+      if (vTable) {
+        var vLoesung = auf.loesung || {};
+        var vOrigDim = vLoesung.dimensionen || [];
+        var vOrigObj = vLoesung.objekte || [];
+        var vTransDim = (vLoesung.dimensionen_uebersetzung && vLoesung.dimensionen_uebersetzung[lang]) || null;
+        var vTransObj = (vLoesung.objekte_uebersetzung && vLoesung.objekte_uebersetzung[lang]) || null;
+        // Dimensionen-Header (thead tr th, skip first empty column)
+        var vHeadTh = vTable.querySelectorAll('thead tr th');
+        for (var vd = 0; vd < vOrigDim.length; vd++) {
+          var vTh = vHeadTh[vd + 1];
+          if (!vTh) continue;
+          vTh.textContent = (lang !== 'de' && vTransDim && vTransDim[vd]) ? vTransDim[vd] : vOrigDim[vd];
+        }
+        // Objekte-Row-Header
+        var vBodyRows = vTable.querySelectorAll('tbody tr');
+        for (var vo = 0; vo < vOrigObj.length; vo++) {
+          var vRowTh = vBodyRows[vo] && vBodyRows[vo].querySelector('th[scope="row"]');
+          if (!vRowTh) continue;
+          vRowTh.textContent = (lang !== 'de' && vTransObj && vTransObj[vo]) ? vTransObj[vo] : vOrigObj[vo];
+        }
+        vTable.dir = (lang === 'ar') ? 'rtl' : '';
+      }
+    }
+
+    // begruendung: Inline-Labels-Map (Wave-1-Hotfix per D-WAVE1-41; Wave-2-Refactor in _renderBegruendung-Backlog)
+    if (auf.typ === 'begruendung') {
+      var bLabels = {
+        de: { claim: 'These', evidence: 'Beleg(e) aus dem Material', reasoning: 'Begründung' },
+        ru: { claim: 'Тезис', evidence: 'Доказательство', reasoning: 'Обоснование' },
+        ar: { claim: 'الأطروحة', evidence: 'الدليل', reasoning: 'التبرير' }
+      };
+      var bSet = bLabels[lang] || bLabels.de;
+      var bFormLabels = sec.querySelectorAll('.aufgabe__form-group label');
+      // 3 labels in order: claim, evidence, reasoning
+      if (bFormLabels.length >= 3) {
+        bFormLabels[0].textContent = bSet.claim;
+        bFormLabels[1].textContent = bSet.evidence;
+        bFormLabels[2].textContent = bSet.reasoning;
+      }
+    }
+
+    // lueckentext + freitext-code: frage-only-Übersetzung (Variante-B per D-WAVE0-31), kein typ-Branch
+    // Drag-Source-Pool LTR-Override per CSS (W1.E §C3 angelegt)
+
+    // RTL-Direktivierung des Aufgaben-Containers
     if (lang === 'ar') {
       sec.classList.add('aufgabe--rtl');
     } else {
