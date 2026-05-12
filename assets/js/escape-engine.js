@@ -4520,7 +4520,13 @@ var EscapeEngine = (function () {
       ki_toast_blocked: 'Popup blockiert — Prompt ist kopiert, öffne duck.ai manuell',
       sprache_button_label: 'Sprache wählen',
       tooltip_close: 'Schließen',
-      nur_de_hinweis: '(nur DE verfügbar)'
+      nur_de_hinweis: '(nur DE verfügbar)',
+      // Wave-1 W1.G R29 DSGVO-Stufe-B Consent-Modal-Strings (DIFF-007 §5.0)
+      consent_modal_title: 'KI-Hilfe nutzen?',
+      consent_modal_desc: 'Beim Klick öffnet sich duck.ai im neuen Tab. Dein Prompt wird an duck.ai geschickt. duck.ai speichert keine Chats. Es geht kein Name, keine E-Mail.',
+      consent_modal_accept: 'Ja, KI-Hilfe nutzen',
+      consent_modal_decline: 'Nein, lieber nicht',
+      consent_modal_decline_toast: 'KI-Hilfe deaktiviert für diese Session — Tab neu öffnen wenn du es doch nutzen möchtest'
     },
     ru: {
       ki_box_titel: 'Помощь от ИИ',
@@ -4531,7 +4537,12 @@ var EscapeEngine = (function () {
       ki_toast_blocked: 'Всплывающее окно заблокировано — промпт скопирован, открой duck.ai вручную',
       sprache_button_label: 'Выбрать язык',
       tooltip_close: 'Закрыть',
-      nur_de_hinweis: '(только на DE)'
+      nur_de_hinweis: '(только на DE)',
+      consent_modal_title: 'Использовать ИИ-помощь?',
+      consent_modal_desc: 'При нажатии откроется duck.ai в новой вкладке. Твой запрос будет отправлен в duck.ai. duck.ai не сохраняет чаты. Имя и email не отправляются.',
+      consent_modal_accept: 'Да, использовать ИИ-помощь',
+      consent_modal_decline: 'Нет, лучше не надо',
+      consent_modal_decline_toast: 'ИИ-помощь отключена для этой сессии — закрой и открой вкладку, если передумаешь'
     },
     ar: {
       ki_box_titel: 'الاستعانة بالذكاء الاصطناعي',
@@ -4542,7 +4553,12 @@ var EscapeEngine = (function () {
       ki_toast_blocked: 'تم حظر النافذة المنبثقة — المُوجِّه منسوخ، افتح duck.ai يدويًا',
       sprache_button_label: 'اختر اللغة',
       tooltip_close: 'إغلاق',
-      nur_de_hinweis: '(بالألمانية فقط)'
+      nur_de_hinweis: '(بالألمانية فقط)',
+      consent_modal_title: 'استخدام مساعدة الذكاء الاصطناعي؟',
+      consent_modal_desc: 'عند النقر، سيفتح duck.ai في علامة تبويب جديدة. سيتم إرسال طلبك إلى duck.ai. duck.ai لا يحفظ المحادثات. لا يتم إرسال اسم أو بريد إلكتروني.',
+      consent_modal_accept: 'نعم، استخدم مساعدة الذكاء الاصطناعي',
+      consent_modal_decline: 'لا، أفضل عدم ذلك',
+      consent_modal_decline_toast: 'تم إلغاء تنشيط مساعدة الذكاء الاصطناعي لهذه الجلسة — أغلق علامة التبويب وأعد فتحها إذا غيرت رأيك'
     }
   };
 
@@ -4888,8 +4904,22 @@ var EscapeEngine = (function () {
     btn.addEventListener('click', function () {
       var curLang = getCurrentSprache();
       var pt = btn.dataset['prompt' + curLang.charAt(0).toUpperCase() + curLang.slice(1)] || btn.dataset.promptDe;
-      copyToClipboard(pt, btn);
-      openDuckAi(pt, btn);
+
+      // Wave-1 W1.G R29 DSGVO-Stufe-B Pre-First-KI-Klick-Consent (DIFF-007 §5.0+§5.1)
+      if (_checkKiConsent()) {
+        copyToClipboard(pt, btn);
+        openDuckAi(pt, btn);
+      } else {
+        _showConsentModal(
+          function onAccept() {
+            copyToClipboard(pt, btn);
+            _handleConsentAccept(pt, btn);
+          },
+          function onDecline() {
+            _handleConsentDecline(btn);
+          }
+        );
+      }
     });
 
     materialEl.appendChild(btn);
@@ -4947,6 +4977,138 @@ var EscapeEngine = (function () {
         if (toast.parentNode) toast.parentNode.removeChild(toast);
       }, 400);
     }, isError ? 6000 : 5000);
+  }
+
+  // === Wave-1 W1.G R29 DSGVO-Stufe-B Consent-Modal-Engine (DIFF-007 §5.0+§5.1) ===
+  //
+  // Lehrer-Reset-Routine (DIFF-007 §3.4 + §2.2):
+  //   KI-Hilfe-Consent ist sessionStorage-basiert ('escape_ki_consent').
+  //   sessionStorage wird automatisch bei Tab-Close gelöscht.
+  //   Lehrer-Reset für neue Klasse:
+  //     1. Tab schließen (Cmd+W / Tab-X-Button) — Tab-Close = automatischer Reset
+  //     2. Manuell in DevTools-Console: sessionStorage.removeItem('escape_ki_consent')
+  //     3. Pool-iPad-Praxis: MDM-Schul-Profil mit Privat-Modus schließt sessionStorage automatisch
+  //   Pool-iPad-Sicherheit: Privat-Modus + sessionStorage-Reset = DSGVO-Stufe-B-Mitigation.
+
+  function _checkKiConsent() {
+    try {
+      return sessionStorage.getItem('escape_ki_consent') === 'true';
+    } catch (e) {
+      return false; // iOS-Safari Privat-Modus oder Storage-Quota
+    }
+  }
+
+  function _showConsentModal(onAccept, onDecline) {
+    var lang = getCurrentSprache();
+    var t = I18N[lang] || I18N.de;
+    var isRtl = (lang === 'ar');
+
+    var modal = document.createElement('div');
+    modal.className = 'consent-modal';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-labelledby', 'consent-modal-title');
+    modal.setAttribute('aria-describedby', 'consent-modal-desc');
+    if (isRtl) modal.dir = 'rtl';
+
+    var content = document.createElement('div');
+    content.className = 'consent-modal__content';
+
+    var title = document.createElement('h2');
+    title.id = 'consent-modal-title';
+    title.textContent = t.consent_modal_title;
+    content.appendChild(title);
+
+    var desc = document.createElement('p');
+    desc.id = 'consent-modal-desc';
+    desc.textContent = t.consent_modal_desc;
+    content.appendChild(desc);
+
+    var actions = document.createElement('div');
+    actions.className = 'consent-modal__actions';
+
+    var acceptBtn = document.createElement('button');
+    acceptBtn.type = 'button';
+    acceptBtn.className = 'consent-modal__btn consent-modal__btn--accept';
+    acceptBtn.textContent = t.consent_modal_accept;
+    acceptBtn.addEventListener('click', function () {
+      closeModal();
+      onAccept();
+    });
+
+    var declineBtn = document.createElement('button');
+    declineBtn.type = 'button';
+    declineBtn.className = 'consent-modal__btn consent-modal__btn--decline';
+    declineBtn.textContent = t.consent_modal_decline;
+    declineBtn.addEventListener('click', function () {
+      closeModal();
+      onDecline();
+    });
+
+    actions.appendChild(acceptBtn);
+    actions.appendChild(declineBtn);
+    content.appendChild(actions);
+    modal.appendChild(content);
+
+    // Wave-1 W1.G G-12 Backdrop-Click-Handler (DIFF-007 §5.0a Z.284)
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) {
+        closeModal();
+        onDecline();
+      }
+    });
+
+    document.body.appendChild(modal);
+
+    // Focus-Trap + Esc-Handler (DIFF-007 §5.0a Z.284-286)
+    var previousFocus = document.activeElement;
+    acceptBtn.focus();
+
+    function closeModal() {
+      document.removeEventListener('keydown', keyHandler);
+      if (modal.parentNode) modal.parentNode.removeChild(modal);
+      if (previousFocus && previousFocus.focus) previousFocus.focus();
+    }
+
+    function keyHandler(e) {
+      if (e.key === 'Escape') {
+        closeModal();
+        onDecline();
+      } else if (e.key === 'Tab') {
+        var focusables = [acceptBtn, declineBtn];
+        var idx = focusables.indexOf(document.activeElement);
+        if (idx === -1) idx = 0;
+        if (e.shiftKey) {
+          e.preventDefault();
+          focusables[(idx - 1 + focusables.length) % focusables.length].focus();
+        } else {
+          e.preventDefault();
+          focusables[(idx + 1) % focusables.length].focus();
+        }
+      }
+    }
+    document.addEventListener('keydown', keyHandler);
+  }
+
+  function _handleConsentAccept(prompt, btn) {
+    try {
+      sessionStorage.setItem('escape_ki_consent', 'true');
+    } catch (e) { /* iOS-Safari Privat-Modus: silent fail */ }
+    openDuckAi(prompt, btn);
+  }
+
+  function _handleConsentDecline(btn) {
+    // Disable KI-Icon für diese Session (DIFF-007 §5.0a Z.283)
+    btn.style.pointerEvents = 'none';
+    btn.style.opacity = '0.4';
+    btn.setAttribute('aria-disabled', 'true');
+
+    // Decline-Toast mit --blocked-Variante (W1.E §C4 + DIFF-007 §5.0a)
+    var lang = getCurrentSprache();
+    var t = I18N[lang] || I18N.de;
+    showKiToast(btn, t.consent_modal_decline_toast, false);
+    var toast = btn.parentNode.querySelector('.ki-hilfe-toast');
+    if (toast) toast.classList.add('ki-hilfe-toast--blocked');
   }
 
   function copyToClipboard(text, btn) {
