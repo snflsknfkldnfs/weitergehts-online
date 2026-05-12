@@ -4925,6 +4925,13 @@ var EscapeEngine = (function () {
     toast.className = 'ki-hilfe-toast' + (isError ? ' ki-hilfe-toast--error' : '');
     toast.setAttribute('role', 'status');
     toast.textContent = text;
+
+    // Wave-1 W1.A.4 R25 H3 RTL-Hook (DIFF-002 §5.5 H3)
+    var toastLang = getCurrentSprache();
+    if (toastLang === 'ar') {
+      toast.dir = 'rtl';
+    }
+
     btn.parentNode.appendChild(toast);
 
     // Position: relativ zum Icon-Button. Toast erscheint rechts neben dem Icon.
