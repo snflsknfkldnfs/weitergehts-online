@@ -2776,3 +2776,62 @@ body.quellen-hidden .material__inhalt cite {
   color: var(--color-text-muted, #666);
   margin-left: 0.4em;
 }
+
+/* === Wave-1 W1.E Theme-CSS-Erweiterung (Bridge-Pair 424a5832 R17) === */
+/* Anker: DIFF-002 §5.5 RTL-Hooks H3+H4 + §5.4 Lückentext-Variante-B + DIFF-007 DSGVO-Stufe-B */
+
+/* C1: RTL-Hook H3 — KI-Hilfe-Toast bei RTL-Sprache */
+.ki-hilfe-toast[dir="rtl"] {
+  text-align: right;
+  font-family: 'Noto Sans Arabic', 'Tahoma', system-ui, sans-serif;
+}
+
+/* C2: Consent-Modal (DIFF-007 DSGVO-Stufe-B + DIFF-002 §5.5 H4 RTL-Vorbereitung) */
+.consent-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1000;
+  padding: 1rem;
+}
+.consent-modal__content {
+  background: var(--color-bg-elev, #fff);
+  color: var(--color-text, #222);
+  border-radius: 8px;
+  padding: 1.5rem 1.75rem;
+  max-width: 480px;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.32);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.consent-modal__actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  justify-content: flex-end;
+}
+.consent-modal[dir="rtl"] .consent-modal__actions {
+  justify-content: flex-start;
+  flex-direction: row-reverse;
+}
+
+/* C3: Lückentext-Variante-B — Drag-Source-Pool bleibt LTR-DE auch bei RTL-Container */
+.aufgabe[dir="rtl"] .lueckentext-drag-source-pool,
+.aufgabe--rtl .lueckentext-drag-source-pool {
+  direction: ltr;
+  unicode-bidi: embed;
+  text-align: left;
+  font-family: inherit;
+}
+
+/* C4: Toast-State-Modifier (W1.A.4 + DIFF-007 Decline-Pfad — D-WAVE1-32 PFLICHT) */
+.ki-hilfe-toast--blocked {
+  background: #6c757d;
+  font-style: italic;
+}
+.ki-hilfe-toast--success {
+  background: #2e7d32;
+}
