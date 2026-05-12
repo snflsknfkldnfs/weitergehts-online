@@ -4,6 +4,61 @@ Chronologisches Protokoll aller Arbeitsschritte. Neueste Einträge oben.
 
 ---
 
+## 2026-05-12 — p14 Design-Track-Recon CLOSED + Spec-§2.X.13-Patch committed
+
+**Scope:** Pre-Implementation-Audit der Design-Operationskarte-Integration in v0.6-Plugin-Architektur. Recon-Pattern aus p9/p10.
+
+**Modus:** Cowork-Bridge-Pair p14 (advisor + worker parallel-Session). 5 Rounds, drift_avg 0.114x, 8.5 min wallclock-skill-cycle.
+
+**Bridge-Pair p14:**
+- pair_id: `01fe89c7-84e3-499c-8e70-5b9d856e1ccd`
+- Topic: design-track-recon-operationskarte
+- Phase-Sequenz: init → scope-lock → iterate → execute → verify → close
+- AC: 6/6 PASS
+- Drift: 0.114x (deutlich unter Konvergenz-Empirie-Range 0.34-0.60)
+- Memory-Symmetrie: complete (8 Items, 4 advisor + 4 worker)
+- Bilanz: `escape-game-generator/pilot-runs/p14-design-track-recon-operationskarte/bridge/bilanz_01fe89c7-84e3-499c-8e70-5b9d856e1ccd.md`
+
+**Findings-Bundle (34 KB) + Pre-Mortem (21 KB):**
+- 10/10 Gap-Closure (8 CONFIRMED + 1 OUT-OF-SCOPE Gap 4 Differenzierungs-Track + 1 DEFERRED Gap 8 Font-Self-Host-Pre-Flight)
+- 5 NEU-Defekt-Befunde D-1 bis D-5 (P0/P1-Carry-Over)
+- 6 ADR-Kandidaten DRAFT (ADR_0053-0058) mit Lock-Trigger pre-jeweiligem-D-Sprint-Start
+- D-Track-Position: 5-Stufen-Sequenz (D1+D4 in Stufe 1, D2+D3 in Stufe 2, D5+D6 in Stufe 4, D7+D8 in NEUER Stufe 5)
+- PT-Re-Calibration 11-19 PT → 18.5-26.5 PT (+56%, Faktor 1.5x niedriger als p9-Audit 2.5x)
+- Theme-Convention Empfehlung Option B class-on-body-Pattern
+
+**Spec-§2.X.13-Patch in escape-game-generator-Repo:**
+
+### Commit `8585879` — branch `spec/d-track-p14-patch` (local-only, ahead of origin/main +1)
+
+- §2 Sprint-Decomposition 8 → 9 Sprints, 4 → 5 Stufen
+- §2.X.13 NEUE Sektion (~170 Zeilen): 8 K-Komponenten K1-K8 (5×Klasse-1 + 2×Klasse-2 + 1×Klasse-3) + Dependency-Graph + 8 jq-Filter pro D-Sprint + ADR-Maturitaets-Status + PT-Re-Calibration + Anti-Drift-Konformität
+- File-Delta: 1 file, +153 / -8 (= 145 Netto-Add)
+- HTML-Audit-Anker-Format konsistent mit §2.X.1-§2.X.12: `<!-- Audit-Anker: P0/P1-NEU / p14-Recon-Findings §d / D-1..D-5 + 10-Gap-Closure -->`
+
+**Memory-Updates beide Sessions:**
+- advisor: `project_p14_design_track_recon.md` (updated to closed-state) + `feedback_recon_bridge_pre_implementation_pattern.md` (neu) + `feedback_advisor_pfad_annahme_anti_pattern.md` (neu) + `reference_design_track_substanz_anker.md` (neu)
+- worker: `project_p14_design_track_recon_done.md` + `feedback_pre_flight_substanz_probe_hebel.md` + `feedback_drift_konvergenz_audit_vorlage_reuse.md` + `reference_5_defekt_befunde_design_track.md`
+
+**Bridge-Pattern-Empirie:**
+- 7. Tooling-Effizienz-Cycle post-p10 mit Audit-Vorlage-Reuse-Pattern empirisch belegt
+- Pre-Patch-Substanz-Hebel-Pattern (Round 2 detected 3 Anomalien VOR Execute)
+- Mega-Bundle-Execute + Implicit-Lock-Pattern bei etabliertem Pattern zulässig
+
+**Carry-Over zu Folge-Tracks:**
+
+1. ADR_0053-0058 Lock-Round (PM-Cowork, 1-2 PT) — incremental nach Dependency-Severity
+2. Push `spec/d-track-p14-patch` + ADR-Branch zu origin (User-Freigabe pflicht)
+3. CC-Handoff D1+D4 Stufe-1-Bundle (Schema-Co-Lock mit R1.1)
+4. D2+D3 Stufe-2 (post-D1+D4)
+5. D5+D6 Stufe-4 (post-D3)
+6. D7 Pilot-Migration (gpg-erster-weltkrieg-ursachen)
+7. D8 Generator-Bulk-Migration
+
+**Verantwortlich:** PM-Cowork (diese Session) + EG-Design-Worker (parallele Session, geschlossen post-Memory-Sync) + CC-Handoff (D-Sprint-Implementation).
+
+---
+
 ## 2026-04-27 — v0.5.1-Phase-B+C KOMPLETT: 39/39 v0.5.1-Backlog DONE (Run-5-Voraussicherung)
 
 **Scope:** Phase B (10 MED + Schema-Drift-Cluster) + Phase C (11 LOW + Polish) — alle 21 verbleibenden Backlog-Items adressiert. User-Decision: Run-5-Voraussicherung statt Run-5-Sofort-Start.

@@ -2,6 +2,80 @@
 
 ---
 
+## Aktiver Track 2026-05-12: D-Track Operationskarten-UI-Integration
+
+**Plugin-Stand pre-Track:** v0.5.2 + Wave-1-Engine-Impl-Branch (`wave-1-engine-impl`, 3 Commits ahead of main) + Spec-§2.X.13-Patch (`spec/d-track-p14-patch`, local-only, ahead +1).
+**Predecessor-Bridge-Pair:** p14 `01fe89c7` (Design-Track-Recon-Operationskarte closed 2026-05-12, drift 0.114x, AC 6/6 PASS).
+**Spec-Anker:** `escape-game-generator/docs/projekt/PLUGIN_v0_6_ARCHITEKTUR_SPEC.md` §2.X.13 (commit `8585879`, branch `spec/d-track-p14-patch`).
+**Source-of-Truth-Lock:** Designvorschlag `escape-game-generator/scratch/p13-design-spec/designvorschlag_mappenübersicht/` (6 Files) + p14-Bridge-Artifacts (findings 34KB + pre-mortem 21KB).
+**Zielsystem-Cross-Refs:** Z1.1+Z1.2+Z1.4+Z2.1+Z2.2+Z2.3+Z2.4+Z2.6+Z3-KK-01+Z3-KK-10+Z4.1+Z4.6 (12-Z-Anker-Cluster).
+
+### Sub-Tracks D1-D8
+
+| Sub-Track | Inhalt | Status | PT (Re-Calib) | Owner | Lock-Pflicht |
+|---|---|---|---|---|---|
+| **D1** Token-Foundation | `tokens.json` → CSS-Custom-Properties + Self-Host-Fonts | OFFEN | 1.5-2.5 | CC-Handoff | ADR_0057 pre-Start |
+| **D2** Theme-System-Integration | `body.layout-operationskarte` class-on-body-Pattern (Option B) | OFFEN | 1.5-2 | CC-Handoff | ADR_0055 pre-Start |
+| **D3** Layout-View Vanilla-DOM | `EscapeEngine.renderOperationskarte()` + Engine-Refactor (D-1-Fix) | OFFEN | 3-4.5 | CC-Handoff | ADR_0053 pre-Start |
+| **D4** Schema-Migration + Generator-Vertrags-Patch | 5 Pflichtfelder + 4 Subagent-Patches | OFFEN | 3-4 | CC-Handoff | ADR_0054 + ADR_0056 pre-Start |
+| **D5** A11y-Layer | prefers-reduced-motion + aria-hidden + Test-Layer-Bootstrap | OFFEN | 3-4 | CC-Handoff | ADR_0058 pre-Start |
+| **D6** Mobile + Print | Typo-Skala + Print-Stylesheet + Cross-Browser | OFFEN | 2-3 | CC-Handoff | post-D3 |
+| **D7** Pilot-Migration | gpg-erster-weltkrieg-ursachen mit `meta.layout_variante` | OFFEN | 1.5-2.5 | CC-Handoff | post-D1-D6 |
+| **D8** Generator-Bulk-Migration | alle Bestand-Games + Validator-Skript | OFFEN | 3-4 | CC-Handoff | post-D7 |
+
+**Total PT:** 18.5-26.5 (vs. Eval-Original 11-19, Faktor 1.5x p14-Re-Calibration).
+
+### Pre-D-Sprint-Locks: 6 ADR-Kandidaten DRAFT (alle pending)
+
+| ADR | Thema | Lock-Trigger | Severity |
+|---|---|---|---|
+| ADR_0053 | Engine-Renderer-Zentralisierung | pre-D3 | P0 |
+| ADR_0054 | mappe.id-Naming-Convention | pre-D4 | P0 |
+| ADR_0055 | Theme-Convention Option B (class-on-body) | pre-D2 | P0 |
+| ADR_0056 | mappe.status author-time-vs-runtime | pre-D4 | P1 |
+| ADR_0057 | Cross-Project-Release-Sync (eg-gen ↔ weitergehts-online) | pre-D1 | P1 |
+| ADR_0058 | Browser-Test-Layer-Aufbau-Sequenz | pre-D5 | P1 |
+
+### D-Track Dependency-Graph (5-Stufen-Sequenz, post-p14)
+
+```
+Stufe 1: R1.1 Schema-Strict + D1 Token-Foundation + D4 Schema-Migration (Schema-Co-Lock)
+         ↓
+Stufe 2: R1.2 + R3.3 + R2-Skeleton + D2 Theme-Integration + D3 Layout-View
+         ↓
+Stufe 3: R3.1 Runtime-Orchestration (D-Track Pause)
+         ↓
+Stufe 4: R3.2 + R3.4 + R5 + D5 A11y + D6 Mobile/Print (parallel post-D3)
+         ↓
+Stufe 5 (NEU): D7 Pilot-Migration → D8 Bulk-Migration
+```
+
+### 5 NEU-Defekt-Befunde D-1 bis D-5 (P0/P1-Carry-Over aus p14)
+
+- **D-1** Engine-Status-Logik pro `index.html`-Inline-Script dupliziert, NICHT in `escape-engine.js` (P0, addressed durch D3-Refactor + ADR_0053)
+- **D-2** `mappe.id` Reihenfolge-Lock String-Konstruktion bricht Designvorschlag-Schema-Pattern (P0, addressed durch ADR_0054 + D4)
+- **D-3** `mappe.status` author-time-vs-runtime-Konfusion (P1, addressed durch ADR_0056 + D4)
+- **D-4** Cross-Project-Release-Sync nötig (Vertraege liegen in weitergehts-online, NICHT escape-game-generator) (P1, addressed durch ADR_0057 + D1)
+- **D-5** `body.layout-operationskarte` CSS-Scope Side-by-Side mit `body.quellen-hidden` (P1, addressed durch D2-Implementation)
+
+### Cross-Track-Koordination (Schema-Konflikt-Risiken)
+
+- **D4 ↔ R1.1 Schema-Strict (HIGH):** beide touchieren `data-schema.json` → Schema-Co-Lock-Round pre-D4-Start Pflicht
+- **D3 ↔ R3.1 Runtime-Orchestration (MED):** beide touchieren `escape-engine.js` → File-Ownership-Audit pre-D3-Start
+- **D4 ↔ R3.2 Agent-Orch-Redesign (HIGH):** beide touchieren Subagent-Prompts → Co-Lock-Round agent-didaktik / agent-inhalt / agent-skript
+- **D-Track parallel zu R3.4 Quellen-Layer (NONE):** Quellen ≠ UI, orthogonal
+- **D-Track parallel zu R5 SchSch (NONE):** Persona ≠ UI, orthogonal
+
+### Naechster Schritt
+
+**ADR-Bulk-Draft** als nächster Schritt (PM-Cowork, 1-2 PT). Reihenfolge der ADR-Lock-Rounds incremental nach Dependency-Severity: ADR_0057 → ADR_0055 → ADR_0054 → ADR_0056 → ADR_0053 → ADR_0058. Nach ADR-Lock: Push `spec/d-track-p14-patch` + ADR-Branch zu origin (User-Freigabe Pflicht). Danach D1+D4 als CC-Handoff Stufe-1-Bundle.
+
+### Memory-Symmetrie p14 (complete)
+
+8 Items persistiert (4 advisor + 4 worker) — siehe Memory-Index. Cross-Project-Marker: source `escape-game-generator`, target `weitergehts-online`, pair `01fe89c7`.
+
+---
+
 ## Aktiver Track 2026-04-30: v0.6-Vorbereitung-und-Quellen-Refactor
 
 **Plugin-Stand pre-Track:** v0.5.1 + Phase-D + v0.5.2-Patch-Stream (commit `066d919`, tag `v0.5.2`).
