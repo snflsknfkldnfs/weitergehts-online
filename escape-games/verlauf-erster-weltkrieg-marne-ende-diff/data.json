@@ -6,7 +6,9 @@
     "lehrplanbezug": "LB2 Zeit und Wandel, LB3 Politik und Gesellschaft",
     "schwierigkeit": "Basis",
     "geschaetzte_dauer_min": 30,
-    "narrativ": "Der Schlieffen-Plan ist gescheitert. Statt eines schnellen Sieges sitzen Millionen Soldaten in Gräben fest. Eure Aufgabe als Kriegskorrespondenten: Berichtet, was der Krieg wirklich bedeutet — für die Soldaten an der Front, für die Menschen in der Heimat, und für ein ganzes Kaiserreich, das am Ende zusammenbricht."
+    "narrativ": "Der Schlieffen-Plan ist gescheitert. Statt eines schnellen Sieges sitzen Millionen Soldaten in Gräben fest. Eure Aufgabe als Kriegskorrespondenten: Berichtet, was der Krieg wirklich bedeutet — für die Soldaten an der Front, für die Menschen in der Heimat, und für ein ganzes Kaiserreich, das am Ende zusammenbricht.",
+    "differenzierung_aktiv": true,
+    "differenzierung_version": "marne-path-a-light-2026-05-15"
   },
   "mappen": [
     {
