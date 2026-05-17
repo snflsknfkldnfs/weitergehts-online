@@ -83,8 +83,8 @@ button { font-family: inherit; }
 .meta-bar {
   background: var(--ink);
   color: var(--bg);
-  /* Align inner content with skript-header (max-width: 1480px, padding: 56px) */
-  padding: 12px max(20px, calc(50% - 740px + 56px));
+  /* Align inner content with skript-header (max-width: 1520px, padding: 56px) */
+  padding: 12px max(20px, calc(50% - 760px + 56px));
   display: flex; justify-content: space-between; align-items: center; gap: 24px;
   font-family: var(--mono);
   font-size: 10.5px;
@@ -107,7 +107,7 @@ button { font-family: inherit; }
   grid-template-columns: repeat(12, 1fr);
   gap: 24px;
   border-bottom: 1px solid var(--hairline);
-  max-width: 1480px;
+  max-width: 1520px;
   margin: 0 auto;
 }
 .skript-header__id   { grid-column: 1 / span 2; }
@@ -224,7 +224,7 @@ button { font-family: inherit; }
   gap: 36px;
   padding: 32px 56px;
   border-bottom: 1px solid var(--hairline);
-  max-width: 1480px;
+  max-width: 1520px;
   margin: 0 auto;
 }
 .top-row > section { min-width: 0; }
@@ -318,8 +318,8 @@ button { font-family: inherit; }
    Bei <1320 px collapses TOC; bei <1200 px collapses 2→1 col. */
 .werkbank {
   display: grid;
-  grid-template-columns: 200px minmax(540px, 1fr) minmax(380px, 420px);
-  max-width: 1480px;
+  grid-template-columns: 240px minmax(540px, 1fr) minmax(380px, 420px);
+  max-width: 1520px;
   margin: 0 auto;
 }
 .werkbank__main {
@@ -330,29 +330,45 @@ button { font-family: inherit; }
 
 /* TOC linke Spalte ------------------------------------------------------- */
 .werkbank__toc {
-  padding: 36px 24px 96px 56px;
+  padding: 36px 16px 96px 32px;
   border-right: 1px solid var(--hairline);
   min-width: 0;
+  background: var(--bg);
 }
 .toc-sticky {
   position: sticky;
   top: 12px;
   max-height: calc(100vh - 24px);
   overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+.toc-heading {
+  font-size: 10.5px !important;
+  font-weight: 500;
+  display: block;
+  margin: 0 0 12px;
+}
+.toc-heading--sub {
+  margin-top: 24px;
+  padding-top: 14px;
+  border-top: 1px solid var(--rule);
 }
 .toc-list {
   list-style: none;
   padding: 0;
-  margin: 12px 0 0;
+  margin: 0;
 }
-.toc-li { margin-bottom: 12px; }
+.toc-list--drill { margin-top: 6px; }
+.toc-li { margin-bottom: 10px; }
 .toc-link {
   display: block;
   text-decoration: none;
   color: var(--ink);
-  padding: 4px 8px 4px 10px;
+  padding: 5px 8px 5px 10px;
   border-left: 2px solid transparent;
   transition: color .12s, border-color .12s, background .12s;
+  word-break: break-word;
+  hyphens: auto;
 }
 .toc-link:hover { color: var(--accent); }
 .toc-link--top {
@@ -361,20 +377,24 @@ button { font-family: inherit; }
   font-size: 13px;
   letter-spacing: -0.1px;
   line-height: 1.3;
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+  flex-wrap: wrap;
 }
 .toc-link--top .toc-kuerzel {
-  display: inline-block;
   font-family: var(--mono);
   font-size: 10.5px;
   letter-spacing: 0.4px;
   color: var(--accent);
   margin-right: 8px;
+  flex-shrink: 0;
 }
 .toc-link--top .toc-titel { color: var(--ink); }
 .toc-sublist {
   list-style: none;
   padding: 0;
-  margin: 4px 0 0 0;
+  margin: 6px 0 0 0;
 }
 .toc-sublist li { margin: 2px 0; }
 .toc-link--sub {
@@ -382,15 +402,60 @@ button { font-family: inherit; }
   font-size: 12px;
   line-height: 1.35;
   color: var(--muted);
-  padding-left: 22px; /* indent under top-link */
+  padding-left: 20px;
+}
+.toc-link--sub .toc-sub-main { display: block; }
+.toc-link--sub .toc-sub-norm {
+  display: block;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.3px;
+  color: var(--muted);
+  opacity: 0.75;
+  margin-top: 1px;
 }
 .toc-link--sub:hover { color: var(--accent); }
+.toc-link--sub:hover .toc-sub-norm { color: var(--accent); }
+.toc-link--falle { color: var(--accent); font-style: italic; }
+.toc-link--drill {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--sans);
+  font-size: 12.5px;
+  color: var(--ink);
+}
+.toc-link--drill .toc-count {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.3px;
+}
 .toc-link.is-active {
   background: var(--accent-soft);
   border-left-color: var(--accent);
   color: var(--accent);
 }
 .toc-link--sub.is-active { color: var(--accent); font-weight: 500; }
+.toc-link.is-active:focus-visible { outline-color: var(--ink); }
+
+/* TOC Mini-Status-Dot — vor jedem Top-Link, syncs via refreshTOCDot() */
+.toc-mini-dot {
+  display: inline-block;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid var(--mute2);
+  background: transparent;
+  margin-right: 8px;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+.toc-mini-dot--work {
+  border-color: var(--status-work);
+  background: linear-gradient(90deg, var(--status-work) 50%, transparent 50%);
+}
+.toc-mini-dot--repeat { background: var(--status-repeat); border-color: var(--status-repeat); }
+.toc-mini-dot--sit { background: var(--status-sit); border-color: var(--status-sit); }
 .werkbank__aside {
   padding: 36px 56px 96px 36px;
   background: #efeee8;
@@ -426,7 +491,7 @@ h2.mono-h, h3.mono-h { margin: 0; font-weight: 500; font-size: 10.5px; }
 }
 
 /* Mid-large: TOC verschwindet, 2-col Main+Aside bleibt */
-@media (max-width: 1320px) and (min-width: 1201px) {
+@media (max-width: 1400px) and (min-width: 1201px) {
   .werkbank {
     grid-template-columns: minmax(560px, 1fr) minmax(380px, 420px);
     max-width: 1320px;
@@ -547,16 +612,20 @@ h2.mono-h, h3.mono-h { margin: 0; font-weight: 500; font-size: 10.5px; }
 .rb-h {
   display: flex; align-items: baseline; gap: 14px;
   margin: 22px 0 12px;
-  /* Break out of the body's left-rule, accent-bar anchors each h-section */
+  /* Break out of the body's left-rule, accent-bar anchors each h-section.
+     2px accent matches rhythm with 1px subblock-body-rule better than 3px. */
   margin-left: -22px;
-  padding-left: 18px;
-  border-left: 3px solid var(--accent);
-  scroll-margin-top: 24px; /* leave space below sticky meta-bar when jumping via TOC */
+  padding-left: 19px;
+  border-left: 2px solid var(--accent);
+  /* 96px leaves Sub-Block-Head visible in viewport when jumping via TOC */
+  scroll-margin-top: 96px;
 }
 .rb-h .mono-cap { color: var(--accent); }
 .rb-h .rule { flex: 1; height: 1px; background: var(--rule); }
-/* Subblock article scroll-margin so TOC-jumps don't tuck the head under the meta-bar */
-.subblock { scroll-margin-top: 24px; }
+/* Sub-Block-Article scroll-margin so TOC-jumps land just below page-top */
+.subblock { scroll-margin-top: 32px; }
+/* rb-warn scroll-target for Falle-Sprünge from TOC */
+.rb-warn { scroll-margin-top: 96px; }
 .rb-p { margin: 0 0 14px; line-height: 1.65; font-size: 15px; }
 .rb-list { margin: 0 0 16px; padding-left: 22px; line-height: 1.6; font-size: 15px; }
 .rb-list li { margin-bottom: 6px; }
@@ -910,7 +979,7 @@ h2.mono-h, h3.mono-h { margin: 0; font-weight: 500; font-size: 10.5px; }
   @page { margin: 1.5cm; size: A4; }
 
   .meta-bar, .slideover, .slideover-backdrop, .print-btn,
-  .top-row, .werkbank__main,
+  .top-row, .werkbank__main, .werkbank__toc,
   .werkbank__sticky, .skript-header__deck,
   .rb-selfcheck, .rb-warn,
   .skip-link, #sr-announcer { display: none !important; }

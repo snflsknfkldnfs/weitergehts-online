@@ -19,7 +19,7 @@ window.MP05 = {
     'Die Schülermitverantwortung ist verfasste Demokratie-Einübung und kein politisches Mandat.',
   ],
 
-  deck: { cards: 36, normebenen: 5, hochprior: 8, fallen: 10 },
+  deck: { cards: 42, normebenen: 5, hochprior: 8, fallen: 10 },
 
   kartografie: [
     {
@@ -296,7 +296,7 @@ window.MP05 = {
       status: 'repeat',
       cards: 11,
       subblocks: [
-        { label: 'Verhaltensgrundnorm', cards: 3 },
+        { label: 'Konkrete Pflichten', cards: 3 },
         { label: 'Spezielle Verbote', cards: 5 },
         { label: 'Mitarbeitsnote ↔ Verhalten', cards: 3 },
       ],
@@ -308,11 +308,12 @@ window.MP05 = {
       anriss: 'Schulpflicht-Universalität. Deutschklasse als Kernnorm. Jgst.-Einweisung NUR bei Bildungsstand. Vier Förderpfade. Interkulturelle Erziehung als Verfassungsauftrag.',
       norm: '§ 10 MSO',
       status: 'open',
-      cards: 8,
+      cards: 10,
       subblocks: [
         { label: 'Deutschklasse', cards: 3 },
         { label: 'Jgst.-Einweisung', cards: 2 },
         { label: 'Fördermaßnahmen', cards: 3 },
+        { label: 'DaZ + Interkultur', cards: 2 },
       ],
     },
     {
@@ -322,12 +323,14 @@ window.MP05 = {
       anriss: '6 Rechte aus Art. 62. Organe-Hierarchie Klassen → Schul → Bezirk → Land. Verbindungs-LK mit Unbefristet-Kriterium. Schülerzeitung in zwei Modi.',
       norm: 'Art. 62 BayEUG',
       status: 'work',
-      cards: 8,
+      cards: 12,
       subblocks: [
+        { label: 'Aufgaben SMV', cards: 1 },
         { label: '6 Rechte SMV', cards: 2 },
-        { label: 'Organe + Wahl-Modus', cards: 3 },
+        { label: 'Wahl-Modus', cards: 3 },
         { label: 'Verbindungs-LK', cards: 1 },
         { label: 'Schülerzeitung', cards: 2 },
+        { label: 'Grenzen SMV', cards: 3 },
       ],
     },
   ],

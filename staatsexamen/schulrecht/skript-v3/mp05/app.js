@@ -43,6 +43,7 @@
     statusMem[id] = s;
     try { localStorage.setItem(statusKey(id), s); } catch (_) { /* private mode */ }
     refreshAggregate();
+    refreshTOCDot(id);
     announce('Lernstand ' + id + ': ' + STATUS_LABEL[s]);
   };
   function announce(msg) {
@@ -321,11 +322,26 @@
     return el;
   };
 
+  // ─── TOC Mini-Status-Dot (read-only, syncs via refreshTOCDot) ────────────
+  const miniStatusDot = (id) => {
+    const cur = getStatus(id);
+    return h('span', {
+      class: 'toc-mini-dot toc-mini-dot--' + cur,
+      'aria-hidden': 'true',
+      data: { id: id },
+    });
+  };
+  function refreshTOCDot(id) {
+    const dot = document.querySelector('.toc-mini-dot[data-id="' + CSS.escape(id) + '"]');
+    if (!dot) return;
+    dot.className = 'toc-mini-dot toc-mini-dot--' + getStatus(id);
+  }
+
   // ─── TOC (linke Spalte, sticky + scrollspy) ──────────────────────────────
   const renderTOC = () => {
     const nav = h('nav', { class: 'werkbank__toc', 'aria-label': 'Stoff-Navigation' });
     const sticky = h('div', { class: 'toc-sticky' });
-    sticky.appendChild(monoCap('Stoff-Navigation', 'ink'));
+    sticky.appendChild(h('h2', { class: 'mono-cap mono-cap--ink mono-h toc-heading' }, 'Stoff-Navigation'));
     const list = h('ol', { class: 'toc-list' });
     d.vertiefung.forEach(blk => {
       const items = bodies[blk.id] || [];
@@ -335,6 +351,7 @@
         href: '#' + blk.id,
         data: { target: blk.id },
       },
+        miniStatusDot(blk.id),
         h('span', { class: 'toc-kuerzel' }, blk.kuerzel),
         h('span', { class: 'toc-titel' }, blk.titel),
       );
@@ -345,64 +362,128 @@
         if (it.type === 'h') {
           const hId = blk.id + '-h' + hIdx;
           hIdx++;
-          // shorten heading: drop the ' · Norm-Reference' tail if present
-          const label = it.text.replace(/\s+·\s+.*$/, '');
-          sublist.appendChild(h('li', null,
-            h('a', {
-              class: 'toc-link toc-link--sub',
-              href: '#' + hId,
-              data: { target: hId },
-            }, label),
-          ));
+          // Preserve Norm as secondary line (don't strip)
+          const dotIdx = it.text.indexOf(' · ');
+          const mainLabel = dotIdx >= 0 ? it.text.slice(0, dotIdx) : it.text;
+          const normLabel = dotIdx >= 0 ? it.text.slice(dotIdx + 3) : null;
+          const subA = h('a', {
+            class: 'toc-link toc-link--sub',
+            href: '#' + hId,
+            data: { target: hId },
+          }, h('span', { class: 'toc-sub-main' }, mainLabel));
+          if (normLabel) subA.appendChild(h('span', { class: 'toc-sub-norm' }, normLabel));
+          sublist.appendChild(h('li', null, subA));
         }
       });
+      // Add Falle-Sprung as final sublist entry
+      const hasWarn = items.some(it => it.type === 'warn');
+      if (hasWarn) {
+        sublist.appendChild(h('li', null,
+          h('a', {
+            class: 'toc-link toc-link--sub toc-link--falle',
+            href: '#' + blk.id + '-warn',
+            data: { target: blk.id + '-warn' },
+          }, h('span', { class: 'toc-sub-main' }, '⚠ Falle')),
+        ));
+      }
       if (sublist.children.length) li.appendChild(sublist);
       list.appendChild(li);
     });
     sticky.appendChild(list);
+
+    // Drill-Sektion: Sprung zu Aside-Sections
+    const drillH = h('h3', { class: 'mono-cap mono-cap--ink mono-h toc-heading toc-heading--sub' }, 'Drill');
+    sticky.appendChild(drillH);
+    const drillList = h('ol', { class: 'toc-list toc-list--drill' });
+    [
+      { id: 'sec-pw', label: 'Pflichtwissen', count: d.pflichtwissen.length },
+      { id: 'sec-fa', label: 'Falle-Atlas', count: d.fallen.length },
+      { id: 'sec-fb', label: 'Fallbeispiele', count: d.faelle.length },
+    ].forEach(s => {
+      drillList.appendChild(h('li', null,
+        h('a', {
+          class: 'toc-link toc-link--drill',
+          href: '#' + s.id,
+          data: { target: s.id },
+        },
+          h('span', { class: 'toc-titel' }, s.label),
+          h('span', { class: 'toc-count' }, s.count),
+        ),
+      ));
+    });
+    sticky.appendChild(drillList);
     nav.appendChild(sticky);
     return nav;
   };
 
-  // Scrollspy: highlight TOC link of currently-visible section
+  // Scrollspy: highlight TOC link of currently-visible section.
+  // Guarded by matchMedia so it only runs when TOC is visible (≥1321px).
   function setupScrollspy() {
-    const links = document.querySelectorAll('.toc-link');
-    if (!links.length || !('IntersectionObserver' in window)) return;
-    const targets = [];
-    links.forEach(l => {
-      const t = document.getElementById(l.dataset.target);
-      if (t) targets.push(t);
-    });
+    if (!('IntersectionObserver' in window) || !('matchMedia' in window)) return;
+    const mql = window.matchMedia('(min-width: 1401px)');
+    let observer = null;
     let lastActiveId = null;
+    const links = document.querySelectorAll('.toc-link');
+    if (!links.length) return;
+
     const setActive = (id) => {
       if (id === lastActiveId) return;
       lastActiveId = id;
-      links.forEach(l => l.classList.toggle('is-active', l.dataset.target === id));
-    };
-    const visible = new Map();
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) visible.set(e.target.id, e.intersectionRatio);
-        else visible.delete(e.target.id);
+      links.forEach(l => {
+        const isActive = l.dataset.target === id;
+        l.classList.toggle('is-active', isActive);
+        if (isActive) l.setAttribute('aria-current', 'location');
+        else l.removeAttribute('aria-current');
       });
-      if (visible.size) {
-        // pick the topmost visible target (smallest top-position)
-        let best = null, bestTop = Infinity;
-        visible.forEach((_, id) => {
-          const el = document.getElementById(id);
-          if (!el) return;
-          const top = el.getBoundingClientRect().top;
-          if (top < bestTop) { bestTop = top; best = id; }
+    };
+
+    const start = () => {
+      if (observer || !mql.matches) return;
+      const targets = [];
+      links.forEach(l => {
+        const t = document.getElementById(l.dataset.target);
+        if (t) targets.push(t);
+      });
+      const visible = new Map();
+      observer = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) visible.set(e.target.id, e.intersectionRatio);
+          else visible.delete(e.target.id);
         });
-        if (best) setActive(best);
-      }
-    }, { rootMargin: '-15% 0px -65% 0px', threshold: [0, 0.2, 0.5, 1] });
-    targets.forEach(t => observer.observe(t));
+        if (visible.size) {
+          let best = null, bestTop = Infinity;
+          visible.forEach((_, id) => {
+            const el = document.getElementById(id);
+            if (!el) return;
+            const top = el.getBoundingClientRect().top;
+            if (top < bestTop) { bestTop = top; best = id; }
+          });
+          if (best) setActive(best);
+        } else if (!lastActiveId && targets.length) {
+          // Initial activation: pick first subblock as default
+          const firstSubblock = targets.find(t => /^A\d+$/.test(t.id));
+          if (firstSubblock) setActive(firstSubblock.id);
+        }
+      }, { rootMargin: '-40px 0px -70% 0px', threshold: [0, 0.2, 0.5, 1] });
+      targets.forEach(t => observer.observe(t));
+      // Initial seed: first subblock active
+      const firstSubblock = targets.find(t => /^A\d+$/.test(t.id));
+      if (firstSubblock) setActive(firstSubblock.id);
+    };
+    const stop = () => {
+      if (!observer) return;
+      observer.disconnect();
+      observer = null;
+      lastActiveId = null;
+      links.forEach(l => { l.classList.remove('is-active'); l.removeAttribute('aria-current'); });
+    };
+    start();
+    mql.addEventListener('change', e => { e.matches ? start() : stop(); });
   }
 
   // ─── Vertiefung (Sub-Blocks A.1-A.4) ─────────────────────────────────────
   const renderVertiefung = () => {
-    const main = h('article', { class: 'werkbank__main' });
+    const main = h('article', { class: 'werkbank__main', id: 'vertiefung', tabindex: '-1' });
     main.appendChild(h('div', { class: 'section-header' },
       monoH('h2', 'Stoff · Referenz', 'accent'),
       h('span', { class: 'section-header__rule' }),
@@ -436,6 +517,8 @@
           const hId = blk.id + '-h' + hIdx;
           hIdx++;
           body.appendChild(renderRichItem(it, hId));
+        } else if (it.type === 'warn') {
+          body.appendChild(renderRichItem(it, blk.id + '-warn'));
         } else {
           body.appendChild(renderRichItem(it));
         }
@@ -472,11 +555,14 @@
         });
         return grid;
       }
-      case 'warn':
-        return h('div', { class: 'rb-warn' },
+      case 'warn': {
+        const wAttrs = { class: 'rb-warn' };
+        if (idArg) wAttrs.id = idArg;
+        return h('div', wAttrs,
           h('span', { class: 'rb-warn__t' }, it.titel),
           h('div', { class: 'rb-warn__body' }, renderInline(it.text)),
         );
+      }
       case 'selfcheck':
         return h('div', { class: 'rb-selfcheck' },
           h('span', { class: 'rb-selfcheck__t' }, it.titel || '✱ Selbst-Check · mündlich formulieren, dann aufdecken'),
@@ -580,17 +666,14 @@
 
   // ─── Cross-Reference: Slideover-Karte → Aside-Card-Spring ────────────────
   function scrollToCard(id) {
-    closeSlideover();
-    // small delay so close-animation finishes
-    setTimeout(() => {
-      const card = document.querySelector('[data-id="' + id + '"]');
+    const doScroll = () => {
+      const card = document.querySelector('[data-id="' + CSS.escape(id) + '"]');
       if (!card) {
         announce('Karte ' + id + ' nicht auf dieser Seite gefunden');
         return;
       }
       card.scrollIntoView({ behavior: 'smooth', block: 'center' });
       card.classList.add('pulse-highlight');
-      // Reveal answer if it's a reveal-card
       if (card.classList.contains('reveal-card') && card.dataset.state !== 'open') {
         card.dataset.state = 'open';
         card.setAttribute('aria-expanded', 'true');
@@ -599,7 +682,23 @@
       }
       setTimeout(() => card.classList.remove('pulse-highlight'), 2000);
       announce('Sprung zu Karte ' + id);
-    }, 200);
+    };
+    // Use transitionend if slideover is mid-animation; otherwise immediate
+    const wasOpen = slideoverEl && slideoverEl.dataset.open === 'true';
+    closeSlideover();
+    if (!wasOpen) {
+      requestAnimationFrame(doScroll);
+      return;
+    }
+    let fired = false;
+    const onEnd = () => {
+      if (fired) return; fired = true;
+      slideoverEl.removeEventListener('transitionend', onEnd);
+      doScroll();
+    };
+    slideoverEl.addEventListener('transitionend', onEnd, { once: true });
+    // Safety fallback for reduced-motion / no-transitionend browsers
+    setTimeout(onEnd, 320);
   }
 
   // ─── Slideover (Glossar) ─────────────────────────────────────────────────
