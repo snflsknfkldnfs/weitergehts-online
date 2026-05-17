@@ -9,7 +9,7 @@
   --paper: #ffffff;
   --ink: #0c0c0a;
   --muted: #6b685f;
-  --mute2: #9b988e;
+  --mute2: #8a8779; /* non-text UI only (dot borders, planned-segment) — 3:1 on bg */
   --rule: rgba(12, 12, 10, 0.18);
   --hairline: rgba(12, 12, 10, 0.34);
   --accent: #4a5d3b;
@@ -40,6 +40,31 @@ body {
 }
 a { color: inherit; }
 button { font-family: inherit; }
+
+/* a11y utilities */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
+}
+.skip-link {
+  position: absolute;
+  top: -100px; left: 16px;
+  z-index: 100;
+  background: var(--ink);
+  color: #c7d2b0;
+  padding: 10px 16px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid var(--accent);
+  transition: top .15s;
+}
+.skip-link:focus { top: 12px; outline: none; }
 
 /* Mono-Cap convention ----------------------------------------------------- */
 .mono-cap {
@@ -267,12 +292,15 @@ button { font-family: inherit; }
 
 /* Norm-Tag (klickbar → Slideover) ----------------------------------------- */
 .norm-tag {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   font-family: var(--mono);
   font-size: 10.5px;
   letter-spacing: 0.3px;
   color: var(--ink);
-  padding: 2px 6px;
+  /* WCAG 2.5.8 AA target ≥ 24px height (10.5px + ~7px*2 padding = ~24-25px) */
+  padding: 5px 8px;
+  min-height: 24px;
   border: 1px solid var(--rule);
   background: transparent;
   cursor: pointer;
@@ -286,10 +314,10 @@ button { font-family: inherit; }
 }
 .norm-tag:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
-/* Werkbank-Grid (Main + Aside) ------------------------------------------- */
+/* Werkbank-Grid (Main + Aside) — Min-Width-Guard verhindert sub-500px Main bei 1025-1200px */
 .werkbank {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 440px;
+  grid-template-columns: minmax(560px, 1fr) minmax(380px, 440px);
   max-width: 1320px;
   margin: 0 auto;
 }
@@ -302,11 +330,37 @@ button { font-family: inherit; }
   padding: 36px 56px 96px 36px;
   background: #efeee8;
   min-width: 0;
-  /* No outer sticky — only the inner stickyHead is pinned (status aggregate).
-     Aside scrolls with the page, avoiding nested-sticky double-scroll. */
+}
+.werkbank__sticky {
+  position: sticky;
+  top: 0;
+  background: #efeee8;
+  padding-bottom: 12px;
+  z-index: 2;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 18px;
+}
+.aggr-slot { margin-top: 8px; }
+.aside-section { margin-bottom: 28px; }
+.aside-section:last-of-type { margin-bottom: 0; }
+/* Heading-tagged mono-cap inherits mono-cap styles via shared class.
+   Reset native h2/h3 defaults that would conflict with flex line-up. */
+h2.mono-h, h3.mono-h { margin: 0; font-weight: 500; font-size: 10.5px; }
+/* Slideover-Karten Cross-Reference Buttons */
+.slideover__karten-list { display: flex; gap: 6px; flex-wrap: wrap; }
+.norm-tag--karten { color: var(--accent); cursor: pointer; }
+.norm-tag--karten:hover { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+/* Card-Sprung Highlight-Pulse */
+@keyframes pulseHighlight {
+  0%, 100% { box-shadow: 0 0 0 0 transparent; }
+  20%, 80% { box-shadow: 0 0 0 4px rgba(74, 93, 59, 0.25); border-color: var(--accent); }
+}
+.pulse-highlight { animation: pulseHighlight 2s ease-out; }
+@media (prefers-reduced-motion: reduce) {
+  .pulse-highlight { animation: none; outline: 2px solid var(--accent); outline-offset: 4px; }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .werkbank { grid-template-columns: 1fr; }
   .werkbank__main { border-right: none; border-bottom: 1px solid var(--hairline); padding: 28px 20px 60px; }
   .werkbank__aside { padding: 28px 20px 60px; }
@@ -332,7 +386,8 @@ button { font-family: inherit; }
   display: flex; align-items: baseline; gap: 14px; margin: 0 0 18px;
 }
 .section-header__rule { flex: 1; height: 1px; background: var(--rule); }
-.section-header__count { color: var(--mute2); }
+.section-header__count { color: var(--muted); }
+.dot-sep { color: var(--muted); margin: 0 4px; }
 
 /* Vertiefung (Sub-Blocks) ------------------------------------------------- */
 .vertiefung-intro {
@@ -462,9 +517,10 @@ button { font-family: inherit; }
 }
 .rb-selfcheck {
   margin: 22px 0 18px;
-  border: 1px solid var(--accent);
-  background: var(--accent-soft);
-  padding: 14px 18px 12px;
+  /* Dashed-border + paper-bg differentiates from rb-warn (solid + accent-soft) */
+  border: 1px dashed var(--accent);
+  background: var(--paper);
+  padding: 14px 18px 14px;
 }
 .rb-selfcheck__t {
   font-family: var(--mono);
@@ -473,13 +529,40 @@ button { font-family: inherit; }
   color: var(--accent);
   text-transform: uppercase;
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
-.rb-selfcheck ol {
+.rb-selfcheck__list {
   margin: 0; padding-left: 22px;
   font-size: 14px; line-height: 1.55;
 }
-.rb-selfcheck ol li { margin-bottom: 6px; }
+.rb-selfcheck__item { margin-bottom: 14px; }
+.rb-selfcheck__item:last-child { margin-bottom: 0; }
+.rb-selfcheck__q { font-weight: 500; color: var(--ink); }
+.rb-selfcheck__reveal {
+  margin-top: 6px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid var(--rule);
+  padding: 5px 9px;
+  cursor: pointer;
+  min-height: 24px;
+}
+.rb-selfcheck__reveal:hover { border-color: var(--accent); background: var(--accent-soft); }
+.rb-selfcheck__a {
+  margin-top: 8px;
+  padding: 10px 12px;
+  background: var(--accent-soft);
+  border-left: 2px solid var(--accent);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink);
+}
 
 /* Reveal-Karte (Pflichtwissen) ------------------------------------------- */
 .reveal-card {
@@ -503,7 +586,7 @@ button { font-family: inherit; }
   font-weight: 500;
   letter-spacing: -0.1px;
   color: var(--ink);
-  min-height: 56px;
+  /* no min-height — let content size naturally */
 }
 .reveal-card__antwort {
   margin-top: 12px;
@@ -511,7 +594,7 @@ button { font-family: inherit; }
   border-top: 1px solid var(--rule);
   font-family: var(--serif);
   font-style: italic;
-  font-size: 13.5px;
+  font-size: 14px;
   line-height: 1.55;
   color: var(--ink);
   display: none;
@@ -523,20 +606,26 @@ button { font-family: inherit; }
 }
 .reveal-card__hint {
   font-family: var(--mono);
-  font-size: 9.5px;
+  font-size: 10px;
   letter-spacing: 1.2px;
-  color: var(--mute2);
+  color: var(--muted);
   text-transform: uppercase;
 }
 
-/* Pflichtwissen-Grid (2-col) -------------------------------------------- */
+/* Pflichtwissen — flex-wrap statt grid: each card has intrinsic height,
+   siblings don't reflow when one card opens its Lösung. */
 .pflicht-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 8px;
+  align-items: flex-start;
 }
-@media (max-width: 640px) {
-  .pflicht-grid { grid-template-columns: 1fr; }
+.pflicht-grid > .reveal-card {
+  flex: 1 1 calc(50% - 8px);
+  min-width: 200px;
+}
+@media (max-width: 720px) {
+  .pflicht-grid > .reveal-card { flex: 1 1 100%; }
 }
 
 /* Falle-Row (Akkordeon) ------------------------------------------------- */
@@ -575,7 +664,7 @@ button { font-family: inherit; }
 .fa-row__chevron {
   font-family: var(--mono);
   font-size: 14px;
-  color: var(--mute2);
+  color: var(--muted);
   padding-top: 1px;
   transition: transform .2s;
 }
@@ -599,7 +688,7 @@ button { font-family: inherit; }
   font-family: var(--sans);
   font-weight: 600;
   letter-spacing: -0.3px;
-  font-size: 19px;
+  font-size: 20px;
   line-height: 1.2;
   margin: 0 0 10px;
 }
@@ -633,7 +722,7 @@ button { font-family: inherit; }
   display: block;
   margin-top: 3px;
   font-size: 10.5px;
-  color: var(--mute2);
+  color: var(--muted);
 }
 .fall-card__panel {
   margin-top: 14px;
@@ -725,10 +814,60 @@ button { font-family: inherit; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
 
-/* Print ----------------------------------------------------------------- */
+/* Print: Spickzettel = nur Pflichtwissen + Falle-Atlas (Drill-Karten),
+   Vertiefung/Self-Check/Header-Deck/Kartografie raus. ------------------- */
 @media print {
-  .meta-bar, .werkbank__aside, .slideover, .slideover-backdrop, .print-btn { display: none !important; }
-  .werkbank { grid-template-columns: 1fr !important; }
-  .werkbank__main { border-right: none !important; padding: 0 !important; }
-  .reveal-card__antwort, .fa-row__antwort, .fall-card__panel { display: block !important; }
+  @page { margin: 1.5cm; size: A4; }
+
+  .meta-bar, .slideover, .slideover-backdrop, .print-btn,
+  .top-row, .werkbank__main,
+  .werkbank__sticky, .skript-header__deck,
+  .rb-selfcheck, .rb-warn,
+  .skip-link, #sr-announcer { display: none !important; }
+
+  body { background: #fff; color: #000; font-size: 11pt; }
+
+  .skript-header {
+    padding: 0 0 12px !important;
+    border-bottom: 1px solid #000;
+    grid-template-columns: 1fr !important;
+    max-width: none !important;
+  }
+  .skript-header__id, .skript-header__main { grid-column: 1 / -1 !important; }
+  .skript-header h1 { font-size: 22pt !important; line-height: 1.1 !important; }
+  .skript-header__status-row { display: none !important; }
+  .skript-header__abriss { font-size: 11pt !important; max-width: none !important; }
+
+  .werkbank { display: block !important; max-width: none !important; }
+  .werkbank__aside {
+    display: block !important;
+    background: #fff !important;
+    padding: 0 !important;
+    break-before: avoid;
+  }
+  .werkbank__aside .section-header {
+    margin-top: 14pt; margin-bottom: 8pt;
+    break-after: avoid;
+  }
+  .reveal-card, .fa-row, .fall-card {
+    break-inside: avoid;
+    background: #fff !important;
+    border: 1px solid #000 !important;
+  }
+  .reveal-card__antwort, .fa-row__antwort, .fall-card__panel {
+    display: block !important;
+    visibility: visible !important;
+    height: auto !important;
+    overflow: visible !important;
+    border-top: 1px solid #888 !important;
+  }
+  .pflicht-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 6pt;
+  }
+  .pflicht-grid > .reveal-card { flex: none; min-width: 0; }
+  .fa-row__chevron, .status-dot, .reveal-card__hint, .fall-card__btns { display: none !important; }
+  .fall-card__panel { display: block !important; margin-top: 8pt; padding-top: 6pt; }
+  .norm-tag { border-color: #888 !important; }
 }

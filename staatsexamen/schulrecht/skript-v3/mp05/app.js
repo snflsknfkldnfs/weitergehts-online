@@ -33,8 +33,24 @@
   const STATUS = ['open', 'work', 'repeat', 'sit'];
   const STATUS_LABEL = { open: 'offen', work: 'in Arbeit', repeat: 'wiederholt', sit: 'sitzt' };
   const statusKey = id => `wg.lernraum.status.mp05.${id}`;
-  const getStatus = id => localStorage.getItem(statusKey(id)) || 'open';
-  const setStatus = (id, s) => { localStorage.setItem(statusKey(id), s); refreshAggregate(); };
+  // In-memory fallback for private browsing / storage-quota-exceeded
+  const statusMem = Object.create(null);
+  const getStatus = id => {
+    try { return localStorage.getItem(statusKey(id)) || statusMem[id] || 'open'; }
+    catch (_) { return statusMem[id] || 'open'; }
+  };
+  const setStatus = (id, s) => {
+    statusMem[id] = s;
+    try { localStorage.setItem(statusKey(id), s); } catch (_) { /* private mode */ }
+    refreshAggregate();
+    announce('Lernstand ' + id + ': ' + STATUS_LABEL[s]);
+  };
+  function announce(msg) {
+    const node = document.getElementById('sr-announcer');
+    if (!node) return;
+    node.textContent = '';
+    setTimeout(() => { node.textContent = msg; }, 30);
+  }
   const cycleStatus = id => {
     const cur = getStatus(id);
     const next = STATUS[(STATUS.indexOf(cur) + 1) % STATUS.length];
@@ -79,9 +95,14 @@
       ...d.pflichtwissen.map(c => c.id),
       ...d.fallen.map(f => f.id),
       ...d.faelle.map(f => f.id),
+      ...(d.vertiefung || []).map(v => v.id),
     ];
     const counts = { sit: 0, repeat: 0, work: 0, open: 0 };
-    ids.forEach(id => { counts[getStatus(id)]++; });
+    ids.forEach(id => {
+      const s = getStatus(id);
+      if (counts[s] !== undefined) counts[s]++;
+      else counts.open++;
+    });
     return counts;
   }
   const statusBar = () => {
@@ -108,6 +129,12 @@
   const monoCap = (text, variant) => h('span', {
     class: 'mono-cap' + (variant ? ' mono-cap--' + variant : '')
   }, text);
+  // Heading-tagged mono-cap (semantic h2/h3) — visual identical via shared CSS
+  const monoH = (tag, text, variant, id) => {
+    const attrs = { class: 'mono-cap mono-h' + (variant ? ' mono-cap--' + variant : '') };
+    if (id) attrs.id = id;
+    return h(tag, attrs, text);
+  };
 
   // ─── Skript-Header ──────────────────────────────────────────────────────
   const renderHeader = () => h('header', { class: 'skript-header' },
@@ -118,7 +145,7 @@
     h('div', { class: 'skript-header__main' },
       h('div', { class: 'skript-header__status-row' },
         h('span', { class: 'mono-cap mono-cap--ink' }, 'STATUS · IN BEARBEITUNG'),
-        h('span', { style: 'color:var(--mute2)' }, '·'),
+        h('span', { class: 'dot-sep' }, '·'),
         monoCap(d.schwerpunkt.join(' · ')),
       ),
       h('h1', null, d.titel, h('br'), h('span', { class: 'accent' }, d.titel2)),
@@ -132,14 +159,14 @@
         h('div', { class: 'deck-box__row' }, h('span', null, 'Hochprior'), h('b', null, d.deck.hochprior)),
         h('div', { class: 'deck-box__row' }, h('span', null, 'Fallen'), h('b', null, d.deck.fallen)),
       ),
-      h('button', { class: 'print-btn', onclick: () => window.print() }, '↓ Spickzettel'),
+      h('button', { class: 'print-btn', type: 'button', 'aria-label': 'Druckansicht öffnen', onclick: () => window.print() }, '↓ Spickzettel'),
     ),
   );
 
   // ─── Top-Row (Kürze + Kartografie) ───────────────────────────────────────
   const renderTopRow = () => h('section', { class: 'top-row' },
     h('section', null,
-      monoCap('In aller Kürze', 'accent'),
+      monoH('h2', 'In aller Kürze', 'accent'),
       h('ol', { class: 'kurz-list' },
         ...d.kurz.map((s, i) => h('li', null,
           h('span', { class: 'num' }, String(i + 1).padStart(2, '0')),
@@ -148,7 +175,7 @@
       ),
     ),
     h('section', null,
-      monoCap('Norm-Kartografie · 5 Ebenen', 'accent'),
+      monoH('h2', 'Norm-Kartografie · 5 Ebenen', 'accent'),
       h('div', null, ...d.kartografie.map(r => h('div', { class: 'kartografie-row' },
         h('span', { class: 'ebene' }, r.ebene + '.'),
         h('span', null,
@@ -174,11 +201,11 @@
       monoCap(card.id + ' · ' + card.titel, 'accent'),
       statusDot(card.id),
     ));
-    el.appendChild(h('div', { class: 'reveal-card__frage' }, card.frage));
-    el.appendChild(h('div', { class: 'reveal-card__antwort' }, card.antwort));
+    el.appendChild(h('div', { class: 'reveal-card__frage' }, renderInline(card.frage)));
+    el.appendChild(h('div', { class: 'reveal-card__antwort' }, renderInline(card.antwort)));
     el.appendChild(h('div', { class: 'reveal-card__foot' },
       normTag(card.norm),
-      h('span', { class: 'reveal-card__hint' }, 'tippen · lösung'),
+      h('span', { class: 'reveal-card__hint', 'aria-hidden': 'true' }, 'Lösung zeigen'),
     ));
     const toggle = (ev) => {
       if (ev.target.closest('.norm-tag, .status-dot')) return;
@@ -188,7 +215,7 @@
       const open = el.dataset.state === 'open';
       el.dataset.state = open ? 'closed' : 'open';
       el.setAttribute('aria-expanded', open ? 'false' : 'true');
-      el.querySelector('.reveal-card__hint').textContent = open ? 'tippen · lösung' : 'tippen · zu';
+      el.querySelector('.reveal-card__hint').textContent = open ? 'Lösung zeigen' : 'Lösung verbergen';
     };
     el.addEventListener('click', toggle);
     el.addEventListener('keydown', e => {
@@ -214,8 +241,8 @@
     el.appendChild(statusDot(falle.id));
     el.appendChild(h('span', { class: 'fa-row__id' }, falle.id));
     el.appendChild(h('div', null,
-      h('div', { class: 'fa-row__frage' }, falle.frage),
-      h('div', { class: 'fa-row__antwort' }, falle.antwort),
+      h('div', { class: 'fa-row__frage' }, renderInline(falle.frage)),
+      h('div', { class: 'fa-row__antwort' }, renderInline(falle.antwort)),
     ));
     el.appendChild(h('span', { class: 'fa-row__chevron' }, '›'));
     const toggle = (ev) => {
@@ -246,33 +273,37 @@
       monoCap('verdeckt'),
     ));
     el.appendChild(h('h3', { class: 'fall-card__title' }, fall.titel));
-    el.appendChild(h('div', { class: 'fall-card__sachverhalt' }, fall.sachverhalt));
+    el.appendChild(h('div', { class: 'fall-card__sachverhalt' }, renderInline(fall.sachverhalt)));
 
+    const panelKnackId = 'pnl-knack-' + fall.id;
+    const panelAntwId = 'pnl-antw-' + fall.id;
     const btnKnack = h('button', {
       class: 'fall-card__btn',
       type: 'button',
       data: { on: 'false' },
       'aria-expanded': 'false',
+      'aria-controls': panelKnackId,
     },
       monoCap('Knackpunkte'),
-      h('span', { class: 'hint' }, 'tippen · aufdecken'),
+      h('span', { class: 'hint', 'aria-hidden': 'true' }, 'aufdecken'),
     );
     const btnAntw = h('button', {
       class: 'fall-card__btn',
       type: 'button',
       data: { on: 'false' },
       'aria-expanded': 'false',
+      'aria-controls': panelAntwId,
     },
       monoCap('Antwortkette'),
-      h('span', { class: 'hint' }, 'tippen · aufdecken'),
+      h('span', { class: 'hint', 'aria-hidden': 'true' }, 'aufdecken'),
     );
     el.appendChild(h('div', { class: 'fall-card__btns' }, btnKnack, btnAntw));
 
-    const panelKnack = h('div', { class: 'fall-card__panel', data: { on: 'false' } },
-      h('ol', null, ...fall.knackpunkte.map(k => h('li', null, k))),
+    const panelKnack = h('div', { class: 'fall-card__panel', id: panelKnackId, data: { on: 'false' } },
+      h('ol', null, ...fall.knackpunkte.map(k => h('li', null, renderInline(k)))),
     );
-    const panelAntw = h('div', { class: 'fall-card__panel', data: { on: 'false' } },
-      h('div', { class: 'antwortkette' }, fall.antwortkette),
+    const panelAntw = h('div', { class: 'fall-card__panel', id: panelAntwId, data: { on: 'false' } },
+      h('div', { class: 'antwortkette' }, renderInline(fall.antwortkette)),
     );
     el.appendChild(panelKnack);
     el.appendChild(panelAntw);
@@ -284,17 +315,17 @@
       btn.setAttribute('aria-expanded', on ? 'false' : 'true');
       btn.querySelector('.hint').textContent = on ? hintHidden : hintShown;
     };
-    btnKnack.addEventListener('click', () => togglePanel(btnKnack, panelKnack, 'tippen · verdecken', 'tippen · aufdecken'));
-    btnAntw.addEventListener('click', () => togglePanel(btnAntw, panelAntw, 'tippen · verdecken', 'tippen · aufdecken'));
+    btnKnack.addEventListener('click', () => togglePanel(btnKnack, panelKnack, 'verdecken', 'aufdecken'));
+    btnAntw.addEventListener('click', () => togglePanel(btnAntw, panelAntw, 'verdecken', 'aufdecken'));
 
     return el;
   };
 
   // ─── Vertiefung (Sub-Blocks A.1-A.4) ─────────────────────────────────────
   const renderVertiefung = () => {
-    const main = h('main', { class: 'werkbank__main' });
+    const main = h('article', { class: 'werkbank__main' });
     main.appendChild(h('div', { class: 'section-header' },
-      monoCap('Stoff · Referenz', 'accent'),
+      monoH('h2', 'Stoff · Referenz', 'accent'),
       h('span', { class: 'section-header__rule' }),
       monoCap('chunkbar nach Sub-Block'),
     ));
@@ -356,8 +387,32 @@
         );
       case 'selfcheck':
         return h('div', { class: 'rb-selfcheck' },
-          h('span', { class: 'rb-selfcheck__t' }, it.titel || '✱ Selbst-Check (mündlich antworten)'),
-          h('ol', null, ...it.items.map(q => h('li', null, renderInline(q)))),
+          h('span', { class: 'rb-selfcheck__t' }, it.titel || '✱ Selbst-Check · mündlich formulieren, dann aufdecken'),
+          h('ol', { class: 'rb-selfcheck__list' }, ...it.items.map((item, idx) => {
+            // Backwards-compat: item may be string (q only) or object {q, a}
+            const q = typeof item === 'string' ? item : item.q;
+            const a = typeof item === 'string' ? null : item.a;
+            const li = h('li', { class: 'rb-selfcheck__item' });
+            li.appendChild(h('div', { class: 'rb-selfcheck__q' }, renderInline(q)));
+            if (a) {
+              const btn = h('button', {
+                class: 'rb-selfcheck__reveal',
+                type: 'button',
+                'aria-expanded': 'false',
+              }, '▾ Antwort aufdecken');
+              const ans = h('div', { class: 'rb-selfcheck__a', hidden: 'hidden' }, renderInline(a));
+              btn.addEventListener('click', () => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+                btn.textContent = expanded ? '▾ Antwort aufdecken' : '▴ Antwort verbergen';
+                if (expanded) ans.setAttribute('hidden', 'hidden');
+                else ans.removeAttribute('hidden');
+              });
+              li.appendChild(btn);
+              li.appendChild(ans);
+            }
+            return li;
+          })),
         );
       default: return h('span');
     }
@@ -384,12 +439,12 @@
 
   // ─── Aktiv-Abruf-Aside ───────────────────────────────────────────────────
   const renderAside = () => {
-    const aside = h('aside', { class: 'werkbank__aside' });
+    const aside = h('aside', { class: 'werkbank__aside', 'aria-label': 'Aktiv-Abruf-Werkbank' });
 
     // Sticky top: Status-Aggregat
-    const stickyHead = h('div', { style: 'position:sticky; top:0; background:#efeee8; padding-bottom:12px; z-index:2; border-bottom:1px solid var(--rule); margin-bottom:18px;' });
+    const stickyHead = h('div', { class: 'werkbank__sticky' });
     stickyHead.appendChild(monoCap('Werkbank · Aktiv-Abruf', 'ink'));
-    const aggrSlot = h('div', { style: 'margin-top:8px;' });
+    const aggrSlot = h('div', { class: 'aggr-slot' });
     refreshAggregate = () => {
       while (aggrSlot.firstChild) aggrSlot.removeChild(aggrSlot.firstChild);
       aggrSlot.appendChild(statusBar());
@@ -399,9 +454,9 @@
     aside.appendChild(stickyHead);
 
     // Pflichtwissen
-    aside.appendChild(h('section', { style: 'margin-bottom:28px;' },
+    aside.appendChild(h('section', { class: 'aside-section', 'aria-labelledby': 'sec-pw' },
       h('div', { class: 'section-header' },
-        monoCap('Pflichtwissen', 'accent'),
+        monoH('h2', 'Pflichtwissen', 'accent', 'sec-pw'),
         h('span', { class: 'section-header__rule' }),
         h('span', { class: 'mono-cap section-header__count' }, d.pflichtwissen.length + ' Karten'),
       ),
@@ -409,9 +464,9 @@
     ));
 
     // Falle-Atlas
-    aside.appendChild(h('section', { style: 'margin-bottom:28px;' },
+    aside.appendChild(h('section', { class: 'aside-section', 'aria-labelledby': 'sec-fa' },
       h('div', { class: 'section-header' },
-        monoCap('Falle-Atlas', 'accent'),
+        monoH('h2', 'Falle-Atlas', 'accent', 'sec-fa'),
         h('span', { class: 'section-header__rule' }),
         h('span', { class: 'mono-cap section-header__count' }, d.fallen.length + ' Stellen'),
       ),
@@ -419,9 +474,9 @@
     ));
 
     // Fallbeispiele
-    aside.appendChild(h('section', null,
+    aside.appendChild(h('section', { class: 'aside-section', 'aria-labelledby': 'sec-fb' },
       h('div', { class: 'section-header' },
-        monoCap('Fallbeispiele', 'accent'),
+        monoH('h2', 'Fallbeispiele', 'accent', 'sec-fb'),
         h('span', { class: 'section-header__rule' }),
         h('span', { class: 'mono-cap section-header__count' }, d.faelle.length + ' Fälle'),
       ),
@@ -430,6 +485,30 @@
 
     return aside;
   };
+
+  // ─── Cross-Reference: Slideover-Karte → Aside-Card-Spring ────────────────
+  function scrollToCard(id) {
+    closeSlideover();
+    // small delay so close-animation finishes
+    setTimeout(() => {
+      const card = document.querySelector('[data-id="' + id + '"]');
+      if (!card) {
+        announce('Karte ' + id + ' nicht auf dieser Seite gefunden');
+        return;
+      }
+      card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      card.classList.add('pulse-highlight');
+      // Reveal answer if it's a reveal-card
+      if (card.classList.contains('reveal-card') && card.dataset.state !== 'open') {
+        card.dataset.state = 'open';
+        card.setAttribute('aria-expanded', 'true');
+        const hint = card.querySelector('.reveal-card__hint');
+        if (hint) hint.textContent = 'Lösung verbergen';
+      }
+      setTimeout(() => card.classList.remove('pulse-highlight'), 2000);
+      announce('Sprung zu Karte ' + id);
+    }, 200);
+  }
 
   // ─── Slideover (Glossar) ─────────────────────────────────────────────────
   let slideoverBackdrop, slideoverEl, slideoverLastFocus = null;
@@ -451,7 +530,12 @@
       k.style.display = hasKarten ? '' : 'none';
       if (hasKarten) {
         entry.karten.forEach(kk => {
-          const tag = h('span', { class: 'norm-tag', style: 'color:var(--accent)' }, kk);
+          const tag = h('button', {
+            class: 'norm-tag norm-tag--karten',
+            type: 'button',
+            'aria-label': 'Zur Karte ' + kk + ' springen',
+            onclick: () => scrollToCard(kk),
+          }, kk);
           kList.appendChild(tag);
         });
       }
@@ -509,7 +593,7 @@
         h('div', { class: 'slideover__wortlaut' }),
         h('div', { class: 'slideover__karten' },
           monoCap('Karten zum Üben'),
-          h('div', { class: 'slideover__karten-list', style: 'display:flex; gap:6px; flex-wrap:wrap;' }),
+          h('div', { class: 'slideover__karten-list' }),
         ),
       ),
     );
@@ -524,9 +608,10 @@
   // ─── Mount ───────────────────────────────────────────────────────────────
   function mount() {
     const root = document.getElementById('skript-root');
+    if (!root) return;
     root.appendChild(renderHeader());
     root.appendChild(renderTopRow());
-    const werkbank = h('div', { class: 'werkbank' });
+    const werkbank = h('main', { class: 'werkbank', id: 'main' });
     werkbank.appendChild(renderVertiefung());
     werkbank.appendChild(renderAside());
     root.appendChild(werkbank);
