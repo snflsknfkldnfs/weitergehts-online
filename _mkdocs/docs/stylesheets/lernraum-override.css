@@ -551,3 +551,283 @@ body.no-scroll { overflow: hidden; }
   }
   .md-header, .md-tabs, .md-footer, .md-sidebar, .reading-progress { display: none !important; }
 }
+
+/* --------------------------------------------------------------------------
+   12. Skript-Redesign V2 — Werkbank (handoff-skript-design-v2)
+        12.1 Section-Reorder (Test-Effekt-First)
+        12.2 Vertiefung (Teil A) collapsed-by-default
+        12.3 Reveal-Karten (Top-8 in Teil B)
+        12.4 Falle-Atlas Akkordeon (Teil C)
+        12.5 Status-Dot (Sub-Block-Header)
+        12.6 Mermaid classDef Pastell-Override (Belt-and-Suspenders zu mkdocs.yml)
+        12.7 Print-Pfad — 1-A4-Spickzettel
+   -------------------------------------------------------------------------- */
+
+/* 12.1  Section-Reorder via flex `order` ------------------------------------
+   Kein DOM-Umbau. H1/H2 mit .section-kind-X (Stamp aus hooks.py) bestimmen
+   die Ziel-Reihenfolge: Kürze → Kartografie → Pflicht (B) → Fallen (C) →
+   Fälle (D) → Stoff (A) → Meta. Späterer ~ * gewinnt für Folge-Elemente. */
+
+body[data-lernraum] .md-content__inner.md-typeset {
+  display: flex;
+  flex-direction: column;
+}
+
+body[data-lernraum] .md-content__inner > h1.section-kind-kurz,
+body[data-lernraum] .md-content__inner > h2.section-kind-kurz,
+body[data-lernraum] .md-content__inner > h1.section-kind-kurz ~ *,
+body[data-lernraum] .md-content__inner > h2.section-kind-kurz ~ * { order: 1; }
+
+body[data-lernraum] .md-content__inner > h1.section-kind-karto,
+body[data-lernraum] .md-content__inner > h2.section-kind-karto,
+body[data-lernraum] .md-content__inner > h1.section-kind-karto ~ *,
+body[data-lernraum] .md-content__inner > h2.section-kind-karto ~ * { order: 2; }
+
+body[data-lernraum] .md-content__inner > h1.section-kind-pflicht,
+body[data-lernraum] .md-content__inner > h2.section-kind-pflicht,
+body[data-lernraum] .md-content__inner > h1.section-kind-pflicht ~ *,
+body[data-lernraum] .md-content__inner > h2.section-kind-pflicht ~ * { order: 3; }
+
+body[data-lernraum] .md-content__inner > h1.section-kind-fallen,
+body[data-lernraum] .md-content__inner > h2.section-kind-fallen,
+body[data-lernraum] .md-content__inner > h1.section-kind-fallen ~ *,
+body[data-lernraum] .md-content__inner > h2.section-kind-fallen ~ * { order: 4; }
+
+body[data-lernraum] .md-content__inner > h1.section-kind-faelle,
+body[data-lernraum] .md-content__inner > h2.section-kind-faelle,
+body[data-lernraum] .md-content__inner > h1.section-kind-faelle ~ *,
+body[data-lernraum] .md-content__inner > h2.section-kind-faelle ~ * { order: 5; }
+
+body[data-lernraum] .md-content__inner > h1.section-kind-stoff,
+body[data-lernraum] .md-content__inner > h2.section-kind-stoff,
+body[data-lernraum] .md-content__inner > h1.section-kind-stoff ~ *,
+body[data-lernraum] .md-content__inner > h2.section-kind-stoff ~ * { order: 6; }
+
+body[data-lernraum] .md-content__inner > h1.section-kind-meta,
+body[data-lernraum] .md-content__inner > h2.section-kind-meta,
+body[data-lernraum] .md-content__inner > h1.section-kind-meta ~ *,
+body[data-lernraum] .md-content__inner > h2.section-kind-meta ~ * { order: 7; }
+
+/* 12.2  Vertiefung (Teil A — Stoff) collapsed-by-default -------------------
+   Klick auf H1.section-kind-stoff toggelt .is-open (JS). Solange nicht open:
+   Verbirgt alle Folge-Geschwister, bis das nächste H1 (gleicher Level) kommt.
+   Implementierung: Generelles Hide aller direkten Folge-Geschwister, JS sorgt
+   für `is-open`. Folge-H1 (z.B. section-kind-pflicht) re-zeigt seine Reihe
+   via eigenen Selektor. */
+
+body[data-lernraum] .md-content__inner > h1.section-kind-stoff {
+  cursor: pointer;
+  position: relative;
+  padding-right: 140px;
+}
+body[data-lernraum] .md-content__inner > h1.section-kind-stoff::after {
+  content: "+ aufklappen";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--lr-font-mono, 'JetBrains Mono', monospace);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: var(--lr-mute2, #9b988e);
+  text-transform: uppercase;
+}
+body[data-lernraum] .md-content__inner > h1.section-kind-stoff.is-open::after {
+  content: "— zuklappen";
+}
+
+/* Hide ALLE Folge-Geschwister wenn nicht open. Folge-H1 mit anderer
+   section-kind re-zeigt seine Subtree via Override unten. */
+body[data-lernraum] .md-content__inner > h1.section-kind-stoff:not(.is-open) ~ * {
+  display: none;
+}
+/* Re-display: alles ab dem nächsten H1 anderer Kind (pflicht/fallen/faelle/meta) */
+body[data-lernraum] .md-content__inner > h1.section-kind-stoff:not(.is-open) ~ h1.section-kind-pflicht,
+body[data-lernraum] .md-content__inner > h1.section-kind-stoff:not(.is-open) ~ h1.section-kind-fallen,
+body[data-lernraum] .md-content__inner > h1.section-kind-stoff:not(.is-open) ~ h1.section-kind-faelle,
+body[data-lernraum] .md-content__inner > h1.section-kind-stoff:not(.is-open) ~ h1.section-kind-meta,
+body[data-lernraum] .md-content__inner > h1.section-kind-stoff:not(.is-open) ~ h1.section-kind-pflicht ~ *,
+body[data-lernraum] .md-content__inner > h1.section-kind-stoff:not(.is-open) ~ h1.section-kind-fallen ~ *,
+body[data-lernraum] .md-content__inner > h1.section-kind-stoff:not(.is-open) ~ h1.section-kind-faelle ~ *,
+body[data-lernraum] .md-content__inner > h1.section-kind-stoff:not(.is-open) ~ h1.section-kind-meta ~ * {
+  display: revert;
+}
+
+/* 12.3  Reveal-Karten (Top-8 in Teil B) ------------------------------------
+   hooks.py setzt li.reveal-card[data-reveal="closed"]. Closed: nur erste
+   Zeile (Titel) sichtbar, Rest hidden. JS toggelt data-reveal. */
+
+body[data-lernraum] .reveal-card {
+  list-style: none;
+  border: 1px solid var(--lr-rule, rgba(12, 12, 10, 0.34));
+  background: var(--lr-paper);
+  padding: 16px 44px 16px 20px;
+  margin: 0 0 12px 0;
+  cursor: pointer;
+  position: relative;
+  transition: background .12s, border-color .12s;
+}
+body[data-lernraum] .reveal-card .reveal-card__title {
+  font-size: 15px;
+  line-height: 1.45;
+  margin: 0;
+  font-weight: 500;
+}
+body[data-lernraum] .reveal-card .reveal-card__title strong {
+  font-weight: 600;
+}
+body[data-lernraum] .reveal-card:hover {
+  background: var(--lr-accent-soft);
+  border-color: var(--lr-accent);
+}
+body[data-lernraum] .reveal-card[data-reveal="open"] {
+  background: var(--lr-accent-soft);
+}
+/* Closed: alles außer dem ersten Absatz (Titel) verbergen */
+body[data-lernraum] .reveal-card[data-reveal="closed"] > *:not(:first-child) {
+  display: none;
+}
+body[data-lernraum] .reveal-card::after {
+  content: "Tippen · Lösung";
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+  font-family: var(--lr-font-mono, 'JetBrains Mono', monospace);
+  font-size: 9.5px;
+  letter-spacing: 1.2px;
+  color: var(--lr-mute2, #9b988e);
+  text-transform: uppercase;
+  pointer-events: none;
+}
+body[data-lernraum] .reveal-card[data-reveal="open"]::after {
+  content: "Tippen · zu";
+}
+
+/* 12.4  Falle-Atlas Akkordeon ----------------------------------------------
+   Bestehende .falle-card-Klasse wird zu Akkordeon: closed default, click =
+   open. .falle-frage immer sichtbar (Frage), .falle-antwort closed-hidden. */
+
+body[data-lernraum] .falle-card {
+  border: 1px solid var(--lr-rule, rgba(12, 12, 10, 0.34));
+  background: var(--lr-paper);
+  padding: 14px 44px 14px 20px;
+  margin: 0 0 8px 0;
+  cursor: pointer;
+  position: relative;
+  transition: background .12s, border-color .12s;
+}
+body[data-lernraum] .falle-card:hover {
+  background: var(--lr-accent-soft);
+  border-color: var(--lr-accent);
+}
+body[data-lernraum] .falle-card .falle-frage {
+  display: block;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--lr-ink);
+}
+body[data-lernraum] .falle-card .falle-antwort {
+  margin-top: 12px;
+  padding: 12px 14px;
+  background: var(--lr-bg, #fafaf6);
+  border-left: 2px solid var(--lr-accent);
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+body[data-lernraum] .falle-card[data-open="false"] .falle-antwort,
+body[data-lernraum] .falle-card:not([data-open]) .falle-antwort {
+  display: none;
+}
+body[data-lernraum] .falle-card::after {
+  content: "›";
+  position: absolute;
+  right: 16px;
+  top: 14px;
+  font-family: var(--lr-font-mono, 'JetBrains Mono', monospace);
+  font-size: 18px;
+  color: var(--lr-mute2, #9b988e);
+  transition: transform .2s;
+  pointer-events: none;
+}
+body[data-lernraum] .falle-card[data-open="true"]::after {
+  transform: rotate(90deg);
+  color: var(--lr-accent);
+}
+
+/* 12.5  Status-Dot auf Sub-Block-Header ------------------------------------
+   lernraum.js injiziert .status-dot vor H2[data-status-key]. Hier nur Layout. */
+
+body[data-lernraum] .md-content__inner > h2[data-status-key] {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+body[data-lernraum] .md-content__inner > h2[data-status-key] .status-dot {
+  flex: 0 0 auto;
+  cursor: pointer;
+  width: 12px;
+  height: 12px;
+  border-radius: 0;
+  border: 1.5px solid var(--lr-mute2, #9b988e);
+  background: transparent;
+  margin: 0;
+}
+body[data-lernraum] .status-dot--work {
+  border-color: var(--lr-status-work, #c89933);
+  background: var(--lr-status-work, #c89933);
+}
+body[data-lernraum] .status-dot--repeat {
+  border-color: var(--lr-status-repeat, #4a5d3b);
+  background: var(--lr-status-repeat, #4a5d3b);
+}
+body[data-lernraum] .status-dot--sit {
+  border-color: var(--lr-accent, #2d4a1f);
+  background: var(--lr-accent, #2d4a1f);
+}
+
+/* 12.6  Mermaid classDef Pastell-Override (Belt-and-Suspenders) -----------
+   mkdocs.yml setzt theme:base + themeVariables. Inline classDef-Definitionen
+   in .md-Quellen würden Mermaid::renderer ignorieren — falls Mermaid sie
+   doch durchreicht, hier auf Token-Palette zurückklemmen. */
+
+body[data-lernraum] .mermaid g.node[class*="bv"] rect,
+body[data-lernraum] .mermaid g.node[class*="bay"] rect,
+body[data-lernraum] .mermaid g.node[class*="vo"] rect,
+body[data-lernraum] .mermaid g.node[class*="km"] rect,
+body[data-lernraum] .mermaid g.node[class*="kmbek"] rect,
+body[data-lernraum] .mermaid g.node[class*="bund"] rect {
+  fill: var(--lr-paper) !important;
+  stroke: var(--lr-rule, rgba(12, 12, 10, 0.34)) !important;
+}
+body[data-lernraum] .mermaid g.node[class*="bay"] rect {
+  stroke: var(--lr-accent) !important;
+}
+
+/* 12.7  Print — 1-A4-Spickzettel -------------------------------------------
+   Wirkt zusätzlich zu §11 oben. Vertiefung (Teil A) wird komplett ausgeblendet,
+   Reveal-Karten + Falle-Karten werden aufgedeckt, Mermaid raus. */
+
+@media print {
+  body[data-lernraum] .md-content__inner > h1.section-kind-stoff,
+  body[data-lernraum] .md-content__inner > h1.section-kind-stoff ~ * {
+    display: none !important;
+  }
+  body[data-lernraum] .md-content__inner > h1.section-kind-pflicht,
+  body[data-lernraum] .md-content__inner > h1.section-kind-fallen,
+  body[data-lernraum] .md-content__inner > h1.section-kind-faelle,
+  body[data-lernraum] .md-content__inner > h1.section-kind-meta,
+  body[data-lernraum] .md-content__inner > h1.section-kind-pflicht ~ *,
+  body[data-lernraum] .md-content__inner > h1.section-kind-fallen ~ *,
+  body[data-lernraum] .md-content__inner > h1.section-kind-faelle ~ *,
+  body[data-lernraum] .md-content__inner > h1.section-kind-meta ~ * {
+    display: revert !important;
+  }
+  body[data-lernraum] .reveal-card[data-reveal="closed"] > * { display: revert !important; }
+  body[data-lernraum] .reveal-card::after,
+  body[data-lernraum] .falle-card::after { display: none !important; }
+  body[data-lernraum] .falle-card .falle-antwort { display: block !important; }
+  body[data-lernraum] .mermaid { display: none !important; }
+  body[data-lernraum] details.example summary { font-weight: 600; }
+  body[data-lernraum] details.example > *:not(summary) { display: revert !important; }
+}

@@ -97,6 +97,17 @@ plugins:
       lang: de
   - mermaid2:
       version: 10.9.1
+      arguments:
+        theme: base
+        themeVariables:
+          fontFamily: "'Inter Tight', sans-serif"
+          primaryColor: "#ffffff"
+          primaryTextColor: "#0c0c0a"
+          primaryBorderColor: "#4a5d3b"
+          lineColor: "#6b685f"
+          secondaryColor: "#fafaf6"
+          tertiaryColor: "#ffffff"
+          background: "#fafaf6"
 
 hooks:
   - hooks.py

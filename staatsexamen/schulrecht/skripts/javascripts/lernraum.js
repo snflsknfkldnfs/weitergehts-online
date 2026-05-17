@@ -135,11 +135,79 @@
     }
   }
 
+  // ---- 4. Skript-Redesign V2 (Werkbank) ----------------------------------
+  // Drei Handler: Vertiefung-Toggle, Reveal-Karten (Top-8 + Falle-Card),
+  // Status-Dot pro Sub-Block-H2[data-status-key].
+
+  var STATUS_CYCLE = ['open', 'work', 'repeat', 'sit'];
+
+  function bindVertiefungToggle(root) {
+    root = root || document;
+    root.querySelectorAll('h1.section-kind-stoff').forEach(function (h) {
+      if (h.__lrStoffBound) return;
+      h.__lrStoffBound = true;
+      h.addEventListener('click', function (ev) {
+        // Klick auf Status-Dot soll nicht togglen
+        if (ev.target.closest('.status-dot')) return;
+        h.classList.toggle('is-open');
+      });
+    });
+  }
+
+  function bindRevealCards(root) {
+    root = root || document;
+    // Delegated handler — funktioniert auch für später injizierte Karten
+    if (document.__lrRevealBound) return;
+    document.__lrRevealBound = true;
+    document.addEventListener('click', function (ev) {
+      var card = ev.target.closest('.reveal-card');
+      if (card) {
+        card.dataset.reveal = card.dataset.reveal === 'open' ? 'closed' : 'open';
+        return;
+      }
+      var falle = ev.target.closest('.falle-card');
+      if (falle) {
+        var open = falle.dataset.open === 'true';
+        falle.dataset.open = open ? 'false' : 'true';
+        return;
+      }
+    });
+  }
+
+  function bindStatusDots(root) {
+    root = root || document;
+    root.querySelectorAll('h2[data-status-key]').forEach(function (h) {
+      if (h.__lrStatusBound) return;
+      h.__lrStatusBound = true;
+      var key = 'wg.lernraum.status.' + h.getAttribute('data-status-key');
+      var cur = (window.localStorage && localStorage.getItem(key)) || 'open';
+      var dot = document.createElement('span');
+      dot.className = 'status-dot status-dot--' + cur;
+      dot.setAttribute('data-status-storage-key', key);
+      dot.setAttribute('role', 'button');
+      dot.setAttribute('aria-label', 'Lernstand ändern');
+      dot.title = 'Lernstand zyklen (offen → in Arbeit → wiederholt → sitzt)';
+      dot.addEventListener('click', function (ev) {
+        ev.stopPropagation();
+        ev.preventDefault();
+        var current = localStorage.getItem(key) || 'open';
+        var idx = STATUS_CYCLE.indexOf(current);
+        var next = STATUS_CYCLE[(idx + 1) % STATUS_CYCLE.length];
+        localStorage.setItem(key, next);
+        dot.className = 'status-dot status-dot--' + next;
+      });
+      h.insertBefore(dot, h.firstChild);
+    });
+  }
+
   // Material-Theme nutzt navigation.instant: kein klassischer Reload zwischen Pages.
   // Nach jedem Page-Wechsel neu binden.
   function rebindAll() {
     bindNormLinks(document);
     if (window.LR && LR.AnchorTag) LR.AnchorTag.bind(document);
+    bindVertiefungToggle(document);
+    bindRevealCards(document);
+    bindStatusDots(document);
   }
 
   function init() {

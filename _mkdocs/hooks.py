@@ -830,22 +830,263 @@ def on_page_content(html: str, page=None, config=None, files=None, **kwargs):
     """Post-markdown Hook:
     1) entferne Nested-<abbr>-Doppel-Wraps
     2) umschließe <abbr>-Tags mit <a>-Tag zu Gesetze-Quelle (norm_urls.json)
+    3) Skript-Redesign V2: Top-8 Reveal-Wrap + Falle-Atlas Konsolidierung
     """
     html = _dedupe_nested_abbr(html)
-    if config is None:
-        return html
-    docs_dir = Path(config.get("docs_dir", "docs"))
-    # norm_urls.json liegt typischerweise im _mkdocs/-Ordner (parent von docs/)
-    config_dir = docs_dir.parent if docs_dir.name == "docs" else docs_dir
-    urls = _load_norm_urls(config_dir)
-    html = _wrap_abbr_with_link(html, urls)
+    if config is not None:
+        docs_dir = Path(config.get("docs_dir", "docs"))
+        # norm_urls.json liegt typischerweise im _mkdocs/-Ordner (parent von docs/)
+        config_dir = docs_dir.parent if docs_dir.name == "docs" else docs_dir
+        urls = _load_norm_urls(config_dir)
+        html = _wrap_abbr_with_link(html, urls)
+
+    # Skript-Redesign V2 Passes (idempotent, schalten sich nur in passenden Sections ein)
+    html = wrap_top8_reveal(html)
+    html = consolidate_falle_atlas(html)
     return html
 
 
+# ---------------------------------------------------------------------------
+# Skript-Redesign V2 (handoff-skript-design-v2) — Section-Kind + Status-Stamp
+# ---------------------------------------------------------------------------
+
+# H1/H2-Titel -> Section-Kind (für CSS-Reorder via flex order)
+SECTION_KINDS = (
+    ("In aller Kürze",       "kurz"),
+    ("Norm-Kartografie",     "karto"),
+    ("Teil A",               "stoff"),
+    ("Teil B",               "pflicht"),
+    ("Teil C",               "fallen"),
+    ("Teil D",               "faelle"),
+    ("Querverweise",         "meta"),
+    ("Quellen",              "meta"),
+)
+
+_RE_HEADING_H1H2 = re.compile(r"^(?P<lvl>#{1,2})\s+(?P<title>.+?)\s*$", re.M)
+# Sub-Block: H2-Heading mit Anker-Pattern A.1 / B.2 / C.3 etc.
+_RE_HEADING_SUBBLOCK_H2 = re.compile(
+    r"^(?P<lvl>##)\s+(?P<ref>[A-Z]\.\d+)\s+(?P<title>.+?)\s*$", re.M
+)
+
+
+def _slugify(text: str) -> str:
+    s = re.sub(r"[^A-Za-z0-9]+", "-", text.lower()).strip("-")
+    return s or "section"
+
+
+def stamp_section_kinds(markdown: str) -> str:
+    """Tagged jede H1/H2 mit {.section-kind-X} attr_list, wenn der Titel
+    einem der bekannten Section-Kind-Präfixe matcht. Für CSS-Reorder."""
+    def repl(m):
+        lvl = m.group("lvl")
+        title = m.group("title").strip()
+        # Skip wenn bereits attr_list im Titel
+        if title.endswith("}"):
+            return m.group(0)
+        kind = None
+        for prefix, k in SECTION_KINDS:
+            if title.startswith(prefix):
+                kind = k
+                break
+        if not kind:
+            return m.group(0)
+        return f"{lvl} {title} {{.section-kind-{kind}}}"
+    return _RE_HEADING_H1H2.sub(repl, markdown)
+
+
+def stamp_subblock_status(markdown: str, page_slug: str) -> str:
+    """Hängt an jede Sub-Block-H2 (Pattern: ## A.1 …, ## B.2 …) ein
+    {data-status-key="<page>.<sub>"} attr_list für die Status-Dot-Persistenz."""
+    def repl(m):
+        ref = m.group("ref").lower()  # a.1
+        title = m.group("title").strip()
+        if title.endswith("}"):
+            return m.group(0)
+        sub_slug = ref.replace(".", "-")  # a-1
+        key = f"{page_slug}.{sub_slug}"
+        return f"## {m.group('ref')} {title} {{data-status-key=\"{key}\"}}"
+    return _RE_HEADING_SUBBLOCK_H2.sub(repl, markdown)
+
+
+# ---------------------------------------------------------------------------
+# Skript-Redesign V2 — on_page_content Helpers (Top-8 Reveal + Falle-Konsolidierung)
+# ---------------------------------------------------------------------------
+
+def _wrap_grid_card_inner(html_content: str) -> str:
+    """In MP_05 ist die grid-cards-Quelle ohne Space nach `-:material-`. mkdocs
+    parsed sie nicht als <ul><li>, sondern als <p>-Folge mit führendem `-`.
+    Strategie: jede `<p>-…</p>` als Karten-Titel erkennen; alle nachfolgenden
+    `<p>` bis zum nächsten `<p>-…</p>` als Karten-Body gruppieren; Block in
+    `<div class="reveal-card" data-reveal="closed">…</div>` wrappen.
+    Funktioniert auch für proper <ul><li>-Variante als Fallback."""
+    # Fall A: echte <ul><li>-Listen (proper material grid-cards)
+    if "<li>" in html_content:
+        return re.sub(
+            r"<li>([\s\S]*?)</li>",
+            lambda m: f'<li class="reveal-card" data-reveal="closed">{m.group(1)}</li>',
+            html_content,
+        )
+    # Fall B: <p>- …</p>-Folge — gruppieren
+    # Token-Liste der Paragraphen + ggf. zwischen-tags
+    paragraphs = re.split(r"(?=<p>)", html_content)
+    out_parts: list[str] = []
+    current_card: list[str] = []
+
+    def flush():
+        if current_card:
+            inner = "\n".join(current_card)
+            out_parts.append(f'<div class="reveal-card" data-reveal="closed">{inner}</div>')
+            current_card.clear()
+
+    for chunk in paragraphs:
+        # Prüfe: ist es ein `<p>-`-Karten-Titel?
+        m = re.match(r"\s*<p>-\s*(?:<span[^>]*>[\s\S]*?</span>\s*)?(<strong>[\s\S]*?)</p>", chunk)
+        if m:
+            # Neuer Karten-Titel — vorigen Card flushen
+            flush()
+            title_inner = m.group(1)
+            # Trim trailing </p> aus title_inner Strong
+            current_card.append(f"<p class=\"reveal-card__title\">{title_inner}</p>")
+            # Rest hinter dem </p> als trailing chunk (selten, idR leer)
+            tail = chunk[m.end():]
+            if tail.strip():
+                current_card.append(tail)
+        elif chunk.strip().startswith("<p>") and current_card:
+            # Folge-Paragraph dieser Karte
+            current_card.append(chunk.rstrip())
+        else:
+            # Kein Karten-Kontext (z.B. erste leere chunk vor erstem <p>)
+            flush()
+            out_parts.append(chunk)
+    flush()
+    return "".join(out_parts)
+
+
+def wrap_top8_reveal(html_content: str) -> str:
+    """Im 'pflicht'-Bereich (Teil B) jede grid-cards-Karte mit data-reveal stempeln.
+    Aufruf in on_page_content nach Markdown→HTML. Greift nur wenn section-kind-pflicht
+    bereits per attr_list-Stamp gesetzt ist."""
+    if "section-kind-pflicht" not in html_content:
+        return html_content
+    # Match grid-cards-Container und wrap Inhalt
+    return re.sub(
+        r'(<div class="grid cards"[^>]*>\s*)([\s\S]*?)(\s*</div>\s*(?=<p>🃏|<hr|<h1|<h2))',
+        lambda m: m.group(1) + _wrap_grid_card_inner(m.group(2)) + m.group(3),
+        html_content, count=1,
+    )
+
+
+# Falle-Atlas Tabelle → 10 falle-card-Blöcke (Single source of truth: Tabelle)
+_RE_FA_TABLE = re.compile(
+    r'<table>\s*<thead>\s*<tr>\s*'
+    r'<th>\s*ID\s*</th>\s*'
+    r'<th>\s*Falle\s*</th>\s*'
+    r'<th>\s*Korrekte\s+Auflösung\s*</th>\s*'
+    r'</tr>\s*</thead>\s*'
+    r'<tbody>([\s\S]*?)</tbody>\s*</table>',
+    re.IGNORECASE,
+)
+_RE_FA_ROW = re.compile(
+    r'<tr>\s*<td>\s*(?P<id>FA\d+)\s*</td>\s*'
+    r'<td>(?P<frage>[\s\S]*?)</td>\s*'
+    r'<td>(?P<antwort>[\s\S]*?)</td>\s*</tr>',
+    re.IGNORECASE,
+)
+# Existing manual <div class="falle-card">…</div> blocks (Pre-Konsolidierung)
+_RE_FA_CARD = re.compile(
+    r'<div class="falle-card"[^>]*>([\s\S]*?)</div>\s*</div>',
+    re.IGNORECASE,
+)
+_RE_FA_CARD_ID = re.compile(r'(FA\d+)\s*·', re.IGNORECASE)
+
+
+def consolidate_falle_atlas(html_content: str) -> str:
+    """In Teil C (section-kind-fallen): parsed die Falle-Atlas-Tabelle und ALLE
+    bestehenden falle-card-Blöcke. Generiert genau 10 falle-card-Blöcke in
+    FA-ID-Reihenfolge. Bevorzugt manuell-gepflegten Karten-Inhalt (richer Wortlaut)
+    über Tabellen-Zeile (knapper)."""
+    if "section-kind-fallen" not in html_content:
+        return html_content
+
+    table_m = _RE_FA_TABLE.search(html_content)
+    if not table_m:
+        return html_content
+
+    # Parse Tabellenzeilen
+    table_rows = {}
+    for rm in _RE_FA_ROW.finditer(table_m.group(1)):
+        fa_id = rm.group("id").upper()
+        frage = rm.group("frage").strip()
+        antwort = rm.group("antwort").strip()
+        table_rows[fa_id] = (frage, antwort)
+
+    if not table_rows:
+        return html_content
+
+    # Parse bestehende manuelle falle-cards (Region nach der Tabelle)
+    after_table = html_content[table_m.end():]
+    # Stop-Anker: nächste H1 (Teil D) — innerhalb dieser Region liegen die Manual-Cards
+    next_h1 = re.search(r'<h1[^>]*>', after_table)
+    region = after_table[: next_h1.start()] if next_h1 else after_table
+
+    manual_cards = {}  # FA-ID -> (frage_html, antwort_html)
+    for cm in re.finditer(
+        r'<div class="falle-card"[^>]*>\s*'
+        r'<span class="falle-frage">([\s\S]*?)</span>\s*'
+        r'<div class="falle-antwort"[^>]*>([\s\S]*?)</div>\s*</div>',
+        region,
+    ):
+        frage_raw = cm.group(1).strip()
+        antwort_raw = cm.group(2).strip()
+        id_m = _RE_FA_CARD_ID.search(frage_raw)
+        if not id_m:
+            continue
+        fa_id = id_m.group(1).upper()
+        # Frage: nach „FA0X · " trimmen für den Card-Titel
+        frage_clean = re.sub(r'^FA\d+\s*·\s*', '', frage_raw).strip()
+        manual_cards[fa_id] = (frage_clean, antwort_raw)
+
+    # Build merged 10 Cards in FA-ID-Reihenfolge
+    sorted_ids = sorted(table_rows.keys(), key=lambda x: int(re.sub(r'\D', '', x)))
+    out_cards = []
+    for fa_id in sorted_ids:
+        if fa_id in manual_cards:
+            frage, antwort = manual_cards[fa_id]
+        else:
+            frage, antwort = table_rows[fa_id]
+        out_cards.append(
+            f'<div class="falle-card" data-fa-id="{fa_id}">\n'
+            f'<span class="falle-frage">{fa_id} · {frage}</span>\n'
+            f'<div class="falle-antwort">\n{antwort}\n</div>\n</div>'
+        )
+    new_block = "\n\n".join(out_cards)
+
+    # Original-Region (Tabelle + Interaktiv-Paragraph + Manual-Cards) löschen
+    # Region-Ende = vor next_h1 (Teil D) oder Ende der Region
+    region_end_in_html = table_m.end() + (next_h1.start() if next_h1 else len(after_table))
+    # Optional: zusätzlich "Interaktiv-Modus"-Paragraph wegfegen (ist in region drin, wird mit ersetzt)
+    return (
+        html_content[: table_m.start()]
+        + new_block
+        + "\n\n"
+        + html_content[region_end_in_html:]
+    )
+
+
 def on_page_markdown(markdown: str, page=None, config=None, files=None, **kwargs):
-    """mkdocs hook: pre-process markdown to wrap §/Art./Anker-patterns."""
+    """mkdocs hook: pre-process markdown to wrap §/Art./Anker-patterns.
+    Skript-Redesign V2: Section-Kind-Stamp + Sub-Block-Status-Stamp vorgeschaltet."""
     if config is None:
         return markdown
+
+    # Section-Kind-Stamp + Sub-Block-Status-Stamp (idempotent, vor Norm-Wrap)
+    page_slug = "page"
+    if page is not None and getattr(page, "url", None):
+        # page.url Bsp.: 'mp05/' -> 'mp05'
+        page_slug = page.url.strip("/").split("/")[-1] or "index"
+    markdown = stamp_section_kinds(markdown)
+    markdown = stamp_subblock_status(markdown, page_slug)
+
     docs_dir = Path(config.get("docs_dir", "docs"))
     abbrs, pattern, all_keys = _load_glossar(docs_dir)
     if not abbrs and not all_keys:
