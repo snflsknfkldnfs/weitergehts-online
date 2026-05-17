@@ -47,9 +47,11 @@ theme:
 
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/lernraum-override.css   # NACH extra.css -> wg.lernraum-Spec §2
 
 extra_javascript:
   - javascripts/extra.js
+  - javascripts/lernraum.js              # Norm-Slideover-Wiring (Spec §4 + §12)
 
 markdown_extensions:
   - abbr

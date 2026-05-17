@@ -23,10 +23,10 @@ flowchart TB
  BAY --> LDO
  BAY --> KMBEK
 
- classDef bund fill:#eff6ff,stroke:#1e3a8a,stroke-width:2px,color:#1f2937
- classDef bay fill:#fff7ed,stroke:#c2410c,stroke-width:2px,color:#1f2937
- classDef vo fill:#fefce8,stroke:#ca8a04,stroke-width:2px,color:#1f2937
- classDef kmbek fill:#f5f3ff,stroke:#6d28d9,stroke-width:2px,color:#1f2937
+ classDef bund fill:#ffffff,stroke:#0c0c0a,stroke-width:1px,color:#0c0c0a,stroke-dasharray: 2 2
+ classDef bay fill:#ffffff,stroke:#4a5d3b,stroke-width:1.5px,color:#0c0c0a
+ classDef vo fill:#fafaf6,stroke:#6b685f,stroke-width:1px,color:#0c0c0a
+ classDef kmbek fill:#fafaf6,stroke:#9b988e,stroke-width:1px,color:#0c0c0a,stroke-dasharray: 4 2
 ```
 
 | Ebene | Schwerpunkt-Normen MP_09 |
