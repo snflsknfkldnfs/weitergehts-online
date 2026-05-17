@@ -856,7 +856,8 @@ def on_page_content(html: str, page=None, config=None, files=None, **kwargs):
 # Skript-Redesign V2 (handoff-skript-design-v2) — Section-Kind + Status-Stamp
 # ---------------------------------------------------------------------------
 
-# H1/H2-Titel -> Section-Kind (für CSS-Reorder via flex order)
+# Section-Kind-Mapping. Heading-Downgrade (s.u.) wandelt H1 (außer Page-Title)
+# zu H2, also stempelt section-kind hier auf H2.
 SECTION_KINDS = (
     ("In aller Kürze",       "kurz"),
     ("Norm-Kartografie",     "karto"),
@@ -868,10 +869,16 @@ SECTION_KINDS = (
     ("Quellen",              "meta"),
 )
 
-_RE_HEADING_H1H2 = re.compile(r"^(?P<lvl>#{1,2})\s+(?P<title>.+?)\s*$", re.M)
-# Sub-Block: H2-Heading mit Anker-Pattern A.1 / B.2 / C.3 etc.
-_RE_HEADING_SUBBLOCK_H2 = re.compile(
-    r"^(?P<lvl>##)\s+(?P<ref>[A-Z]\.\d+)\s+(?P<title>.+?)\s*$", re.M
+# H2 mit Section-Kind-Prefix (nach Downgrade — vorher waren Teil-X H1).
+_RE_HEADING_H2 = re.compile(r"^(?P<lvl>##)\s+(?P<title>.+?)\s*$", re.M)
+# Sub-Block H3 mit Pattern A.1 / B.2 / C.3 (nach Downgrade — vorher H2).
+_RE_HEADING_SUBBLOCK_H3 = re.compile(
+    r"^(?P<lvl>###)\s+(?P<ref>[A-Z]\.\d+)\s+(?P<title>.+?)\s*$", re.M
+)
+# Heading-Downgrade-Regexes
+_RE_H1_NON_TITLE = re.compile(r"^# (?!#)(?P<title>.+?)\s*$", re.M)
+_RE_H2_SUBBLOCK = re.compile(
+    r"^## (?P<ref>[A-Z]\.\d+)\s+(?P<title>.+?)\s*$", re.M
 )
 
 
@@ -880,11 +887,51 @@ def _slugify(text: str) -> str:
     return s or "section"
 
 
+def downgrade_headings(markdown: str) -> str:
+    """Fixiert mkdocs-Material TOC-Hierarchie:
+       1. Erstes H1 (Page-Title) bleibt H1.
+       2. Alle weiteren `# Teil X/Querverweise/Quellen` werden zu H2.
+       3. Alle `## A.N`-Sub-Blocks werden zu H3.
+
+    Damit ist die Heading-Hierarchie hierarchisch (H1 > H2 > H3) und mkdocs-
+    Material's Secondary-Nav (rechte TOC) zeigt alle Sektionen + Sub-Blocks
+    differenziert an statt nur die ersten zwei H2s."""
+    lines = markdown.split("\n")
+    out: list[str] = []
+    seen_first_h1 = False
+    in_fence = False
+    for line in lines:
+        # Fence-Schutz (kein Heading-Patch in Code-Blocks)
+        if line.startswith("```"):
+            in_fence = not in_fence
+            out.append(line)
+            continue
+        if in_fence:
+            out.append(line)
+            continue
+        # Erstes H1 = Page-Title; bleibt unverändert.
+        if not seen_first_h1 and re.match(r"^# (?!#)", line):
+            seen_first_h1 = True
+            out.append(line)
+            continue
+        # Weitere H1 → H2
+        m = re.match(r"^# (?!#)(?P<title>.+?)\s*$", line)
+        if m and seen_first_h1:
+            out.append(f"## {m.group('title')}")
+            continue
+        # H2 mit A.N-Pattern → H3
+        m = re.match(r"^## (?P<ref>[A-Z]\.\d+)\s+(?P<title>.+?)\s*$", line)
+        if m:
+            out.append(f"### {m.group('ref')} {m.group('title')}")
+            continue
+        out.append(line)
+    return "\n".join(out)
+
+
 def stamp_section_kinds(markdown: str) -> str:
-    """Tagged jede H1/H2 mit {.section-kind-X} attr_list, wenn der Titel
-    einem der bekannten Section-Kind-Präfixe matcht. Für CSS-Reorder."""
+    """Tagged jede H2 (nach Downgrade) mit {.section-kind-X} attr_list,
+    wenn der Titel einem der bekannten Section-Kind-Präfixe matcht."""
     def repl(m):
-        lvl = m.group("lvl")
         title = m.group("title").strip()
         # Skip wenn bereits attr_list im Titel
         if title.endswith("}"):
@@ -896,14 +943,13 @@ def stamp_section_kinds(markdown: str) -> str:
                 break
         if not kind:
             return m.group(0)
-        return f"{lvl} {title} {{.section-kind-{kind}}}"
-    return _RE_HEADING_H1H2.sub(repl, markdown)
+        return f"## {title} {{.section-kind-{kind}}}"
+    return _RE_HEADING_H2.sub(repl, markdown)
 
 
 def stamp_subblock_status(markdown: str, page_slug: str) -> str:
-    """Hängt an jede Sub-Block-H2 (Pattern: ## A.1 …, ## B.2 …) ein
-    {data-status-key="<page>.<sub>" data-block-ref="A.1"} attr_list für die
-    Status-Dot-Persistenz + CSS-::before-Pille."""
+    """Hängt an jede Sub-Block-H3 (Pattern: ### A.1 …, ### B.2 …) ein
+    {data-status-key="<page>.<sub>" data-block-ref="A.1"} attr_list."""
     def repl(m):
         ref_orig = m.group("ref")  # A.1
         ref = ref_orig.lower()  # a.1
@@ -913,10 +959,10 @@ def stamp_subblock_status(markdown: str, page_slug: str) -> str:
         sub_slug = ref.replace(".", "-")  # a-1
         key = f"{page_slug}.{sub_slug}"
         return (
-            f"## {title} "
+            f"### {title} "
             f"{{data-status-key=\"{key}\" data-block-ref=\"{ref_orig}\"}}"
         )
-    return _RE_HEADING_SUBBLOCK_H2.sub(repl, markdown)
+    return _RE_HEADING_SUBBLOCK_H3.sub(repl, markdown)
 
 
 # ---------------------------------------------------------------------------
@@ -988,7 +1034,7 @@ def wrap_top8_reveal(html_content: str) -> str:
         opener_new = opener.replace('class="grid cards"', 'class="grid cards reveal-grid"', 1)
         return opener_new + inner + closer
     return re.sub(
-        r'(<div class="grid cards"[^>]*>\s*)([\s\S]*?)(\s*</div>\s*(?=<p>🃏|<hr|<h1|<h2))',
+        r'(<div class="grid cards"[^>]*>\s*)([\s\S]*?)(\s*</div>\s*(?=<p>🃏|<hr|<h2|<h3))',
         _replace,
         html_content, count=1,
     )
@@ -998,11 +1044,7 @@ def wrap_top8_reveal(html_content: str) -> str:
 # Skript-Redesign V2 — Werkbank-DOM-Wrap (post-render)
 # ---------------------------------------------------------------------------
 
-# Erkennt H1 mit einer der bekannten section-kind-Klassen.
-_RE_H1_SECTION_KIND = re.compile(
-    r'<h1[^>]*class="section-kind-(?P<kind>kurz|karto|stoff|pflicht|fallen|faelle|meta)"[^>]*>',
-    re.IGNORECASE,
-)
+# Nach Heading-Downgrade sind alle Section-Headers H2.
 _RE_H2_SECTION_KIND = re.compile(
     r'<h2[^>]*class="section-kind-(?P<kind>kurz|karto|stoff|pflicht|fallen|faelle|meta)"[^>]*>',
     re.IGNORECASE,
@@ -1012,8 +1054,6 @@ _RE_H2_SECTION_KIND = re.compile(
 def _find_section_starts(html_content: str) -> list[tuple[int, str, int]]:
     """Liefert sortierte Liste (start_pos, kind, level) aller section-kind-Header."""
     starts: list[tuple[int, str, int]] = []
-    for m in _RE_H1_SECTION_KIND.finditer(html_content):
-        starts.append((m.start(), m.group("kind"), 1))
     for m in _RE_H2_SECTION_KIND.finditer(html_content):
         starts.append((m.start(), m.group("kind"), 2))
     starts.sort(key=lambda x: x[0])
@@ -1067,28 +1107,33 @@ def wrap_sections_in_cards(html_content: str) -> str:
     return "\n".join(out)
 
 
-_RE_H2_STATUS_KEY = re.compile(
-    r'<h2[^>]*data-status-key=[^>]*>',
+_RE_H3_STATUS_KEY = re.compile(
+    r'<h3[^>]*data-status-key=[^>]*>',
     re.IGNORECASE,
 )
 
 
 def _wrap_subblocks_in_cards(stoff_content: str) -> str:
-    """Splittet ein stoff-Section-HTML an H2[data-status-key]-Headers
+    """Splittet ein stoff-Section-HTML an H3[data-status-key]-Headers
     (A.1, A.2, …) und wrappt jeden Sub-Block in <article class="lr-subblock">.
-    Der Inhalt VOR dem ersten H2[data-status-key] (Section-Header + ggf. intro)
+    Der Inhalt VOR dem ersten H3[data-status-key] (Section-Header + ggf. intro)
     bleibt außerhalb."""
-    matches = list(_RE_H2_STATUS_KEY.finditer(stoff_content))
+    matches = list(_RE_H3_STATUS_KEY.finditer(stoff_content))
     if not matches:
         return stoff_content
     out_parts: list[str] = []
-    # Pre-content (Section-Header H1.section-kind-stoff + optional intro)
+    # Pre-content (Section-Header H2.section-kind-stoff + optional intro)
     out_parts.append(stoff_content[: matches[0].start()])
     for i, m in enumerate(matches):
         start = m.start()
         end = matches[i + 1].start() if i + 1 < len(matches) else len(stoff_content)
         sub_content = stoff_content[start:end]
-        out_parts.append(f'<article class="lr-subblock">\n{sub_content}\n</article>')
+        # Collapsible-fähiger Sub-Block. JS toggelt data-collapsed.
+        out_parts.append(
+            f'<article class="lr-subblock" data-collapsed="false">\n'
+            f'{sub_content}\n'
+            f'</article>'
+        )
     return "\n".join(out_parts)
 
 
@@ -1224,9 +1269,9 @@ def consolidate_falle_atlas(html_content: str) -> str:
 
     # Parse bestehende manuelle falle-cards (Region nach der Tabelle)
     after_table = html_content[table_m.end():]
-    # Stop-Anker: nächste H1 (Teil D) — innerhalb dieser Region liegen die Manual-Cards
-    next_h1 = re.search(r'<h1[^>]*>', after_table)
-    region = after_table[: next_h1.start()] if next_h1 else after_table
+    # Stop-Anker: nächste H2 (Teil D — nach Downgrade) oder H1.
+    next_h = re.search(r'<h[12][^>]*>', after_table)
+    region = after_table[: next_h.start()] if next_h else after_table
 
     manual_cards = {}  # FA-ID -> (frage_html, antwort_html)
     for cm in re.finditer(
@@ -1261,8 +1306,8 @@ def consolidate_falle_atlas(html_content: str) -> str:
     new_block = "\n\n".join(out_cards)
 
     # Original-Region (Tabelle + Interaktiv-Paragraph + Manual-Cards) löschen
-    # Region-Ende = vor next_h1 (Teil D) oder Ende der Region
-    region_end_in_html = table_m.end() + (next_h1.start() if next_h1 else len(after_table))
+    # Region-Ende = vor next_h (Teil D) oder Ende der Region
+    region_end_in_html = table_m.end() + (next_h.start() if next_h else len(after_table))
     # Optional: zusätzlich "Interaktiv-Modus"-Paragraph wegfegen (ist in region drin, wird mit ersetzt)
     return (
         html_content[: table_m.start()]
@@ -1278,12 +1323,13 @@ def on_page_markdown(markdown: str, page=None, config=None, files=None, **kwargs
     if config is None:
         return markdown
 
-    # Stamps: Section-Kind (fuer Reveal-Trigger + Optional-CSS-Hooks) +
-    # Sub-Block-Status (data-status-key + data-block-ref auf A.1-A.4).
-    # Werkbank-DOM-Wrap entfernt — natuerliche Single-Column-Reihenfolge.
+    # 1) Heading-Downgrade (Teil-X H1 → H2, A.N H2 → H3) damit mkdocs-Material
+    #    TOC hierarchisch alle Sections + Sub-Blocks zeigt.
+    # 2) Stamps: Section-Kind + Sub-Block-Status (data-status-key + block-ref).
     page_slug = "page"
     if page is not None and getattr(page, "url", None):
         page_slug = page.url.strip("/").split("/")[-1] or "index"
+    markdown = downgrade_headings(markdown)
     markdown = stamp_section_kinds(markdown)
     markdown = stamp_subblock_status(markdown, page_slug)
 

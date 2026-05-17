@@ -174,9 +174,27 @@
     });
   }
 
+  // Sub-Block Collapse-Toggle: Click auf H3-Header in .lr-subblock togglt
+  // data-collapsed auf parent .lr-subblock. Status-Dot-Click bubbelt nicht
+  // (stopPropagation siehe bindStatusDots).
+  function bindSubblockCollapse(root) {
+    root = root || document;
+    root.querySelectorAll('.lr-subblock > h3[data-status-key]').forEach(function (h) {
+      if (h.__lrCollapseBound) return;
+      h.__lrCollapseBound = true;
+      h.addEventListener('click', function (ev) {
+        if (ev.target.closest('.status-dot')) return;
+        var sb = h.parentElement;
+        var cur = sb.getAttribute('data-collapsed') === 'true';
+        sb.setAttribute('data-collapsed', cur ? 'false' : 'true');
+      });
+    });
+  }
+
   function bindStatusDots(root) {
     root = root || document;
-    root.querySelectorAll('h2[data-status-key]').forEach(function (h) {
+    // H3 (Sub-Block, nach Downgrade) + Fallback H2 (alt) ansprechen
+    root.querySelectorAll('h3[data-status-key], h2[data-status-key]').forEach(function (h) {
       if (h.__lrStatusBound) return;
       h.__lrStatusBound = true;
       var key = 'wg.lernraum.status.' + h.getAttribute('data-status-key');
@@ -208,6 +226,7 @@
     bindVertiefungToggle(document);
     bindRevealCards(document);
     bindStatusDots(document);
+    bindSubblockCollapse(document);
   }
 
   function init() {
