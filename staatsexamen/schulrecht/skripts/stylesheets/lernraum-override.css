@@ -400,6 +400,131 @@ body,
 .mermaid .edgeLabel       { background: var(--lr-bg); color: var(--lr-muted); font-family: var(--lr-font-mono); font-size: 10.5px; }
 
 /* --------------------------------------------------------------------------
+   9b. SLIDEOVER — wird per core.js dynamisch in <body> injiziert.
+   base.css ist auf mkdocs-Pages NICHT geladen; daher Styles hier dupliziert.
+   -------------------------------------------------------------------------- */
+
+.slideover-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 12, 10, 0.42);
+  z-index: 9000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+.slideover-backdrop[aria-hidden="false"] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.slideover {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 100%);
+  width: min(920px, calc(100% - 32px));
+  max-height: 80vh;
+  overflow-y: auto;
+  background: var(--md-default-bg-color);
+  color: var(--md-typeset-color);
+  border: 1px solid var(--lr-hairline);
+  border-bottom: none;
+  padding: 28px 56px 40px;
+  z-index: 9001;
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: var(--lr-font-sans);
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.18);
+}
+.slideover[aria-hidden="false"] {
+  transform: translate(-50%, 0);
+}
+.slideover[aria-hidden="true"] {
+  pointer-events: none;
+}
+
+.slideover-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid var(--lr-rule);
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+}
+.slideover-head > div { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+
+.slideover-title {
+  font-family: var(--lr-font-mono);
+  font-size: 13px;
+  letter-spacing: 0.6px;
+  color: var(--md-typeset-color);
+  font-weight: 600;
+}
+
+.slideover-badge {
+  font-family: var(--lr-font-mono);
+  font-size: 10px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--md-default-fg-color--light);
+  padding: 3px 8px;
+  border: 1px solid var(--lr-rule);
+  background: transparent;
+}
+
+.slideover-close {
+  font-family: var(--lr-font-mono);
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--md-default-fg-color--light);
+  background: transparent;
+  border: 1px solid var(--lr-rule);
+  cursor: pointer;
+  padding: 6px 12px;
+  min-height: auto;
+  min-width: auto;
+}
+.slideover-close:hover,
+.slideover-close:focus-visible {
+  color: var(--md-accent-fg-color);
+  border-color: var(--md-accent-fg-color);
+}
+
+.slideover-body {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--md-typeset-color);
+}
+.slideover-body p { margin-bottom: 12px; }
+.slideover-body strong { color: var(--md-typeset-color); font-weight: 600; }
+
+.slideover-sources {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--lr-rule);
+  font-family: var(--lr-font-mono);
+  font-size: 11.5px;
+  color: var(--md-default-fg-color--light);
+}
+
+/* Body-Scroll sperren wenn Slideover offen */
+body.no-scroll { overflow: hidden; }
+
+@media (prefers-reduced-motion: reduce) {
+  .slideover,
+  .slideover-backdrop { transition: none; }
+}
+
+@media (max-width: 480px) {
+  .slideover {
+    width: 100%;
+    padding: 24px 20px 32px;
+  }
+}
+
+/* --------------------------------------------------------------------------
    10. Reading-Progress-Bar (extra.js Z. 5) auf Akzent-Token
    -------------------------------------------------------------------------- */
 
