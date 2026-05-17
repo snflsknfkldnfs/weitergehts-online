@@ -840,13 +840,15 @@ def on_page_content(html: str, page=None, config=None, files=None, **kwargs):
         urls = _load_norm_urls(config_dir)
         html = _wrap_abbr_with_link(html, urls)
 
-    # Skript-Redesign V2 Passes (single-column reading layout):
+    # Skript-Redesign V2 Passes (single-column Card-Architektur):
     # - Top-8 in Teil B als Reveal-Karten
     # - Falle-Atlas-Tabelle in 10 Akkordeon-Cards konsolidieren
-    # - KEIN Werkbank-DOM-Wrap (zerschiesst mkdocs-Material-Layout)
-    # - KEIN Section-Reorder (natuerliche Reihenfolge bleibt)
+    # - Sections in <section class="lr-block"> wrappen (Card-Architektur)
+    # - Permalink-Headerlinks entfernen (visuelles Rauschen)
     html = wrap_top8_reveal(html)
     html = consolidate_falle_atlas(html)
+    html = wrap_sections_in_cards(html)
+    html = strip_headerlinks(html)
     return html
 
 
@@ -1016,6 +1018,78 @@ def _find_section_starts(html_content: str) -> list[tuple[int, str, int]]:
         starts.append((m.start(), m.group("kind"), 2))
     starts.sort(key=lambda x: x[0])
     return starts
+
+
+_RE_HEADERLINK = re.compile(
+    r'<a\s+class="headerlink"[^>]*>[\s\S]*?</a>',
+    re.IGNORECASE,
+)
+
+
+def strip_headerlinks(html_content: str) -> str:
+    """Entferne die mkdocs-Material `<a class="headerlink">¶</a>`-Suffixe
+    in allen Headers. Visuelles Rauschen, niemand klickt drauf."""
+    return _RE_HEADERLINK.sub('', html_content)
+
+
+def wrap_sections_in_cards(html_content: str) -> str:
+    """Wrappt jede Major-Section in <section class="lr-block lr-block--{kind}">.
+    Innerhalb der stoff-Section werden Sub-Blocks (H2[data-status-key]) zusätzlich
+    in nested <article class="lr-subblock"> gewrappt.
+
+    Single-column Card-Architektur — KEIN DOM-Restructure (Reihenfolge bleibt).
+    Vorbedingung: hooks.py hat section-kind-Klassen auf H1/H2 + data-status-key
+    auf Sub-Block-H2 gestempelt."""
+    starts = _find_section_starts(html_content)
+    if not starts:
+        return html_content
+
+    # Blocks: pre, kind1, kind2, ...
+    blocks: list[tuple[str, str]] = []
+    if starts[0][0] > 0:
+        blocks.append(("pre", html_content[: starts[0][0]]))
+    for i, (pos, kind, level) in enumerate(starts):
+        end = starts[i + 1][0] if i + 1 < len(starts) else len(html_content)
+        blocks.append((kind, html_content[pos:end]))
+
+    out: list[str] = []
+    for kind, content in blocks:
+        if kind == "pre":
+            # Page-H1 bleibt unverpackt (oberhalb der Cards)
+            out.append(content)
+            continue
+        if kind == "stoff":
+            # Sub-Blocks (H2[data-status-key]) als nested .lr-subblock-Cards
+            content = _wrap_subblocks_in_cards(content)
+        out.append(
+            f'<section class="lr-block lr-block--{kind}">\n{content}\n</section>'
+        )
+    return "\n".join(out)
+
+
+_RE_H2_STATUS_KEY = re.compile(
+    r'<h2[^>]*data-status-key=[^>]*>',
+    re.IGNORECASE,
+)
+
+
+def _wrap_subblocks_in_cards(stoff_content: str) -> str:
+    """Splittet ein stoff-Section-HTML an H2[data-status-key]-Headers
+    (A.1, A.2, …) und wrappt jeden Sub-Block in <article class="lr-subblock">.
+    Der Inhalt VOR dem ersten H2[data-status-key] (Section-Header + ggf. intro)
+    bleibt außerhalb."""
+    matches = list(_RE_H2_STATUS_KEY.finditer(stoff_content))
+    if not matches:
+        return stoff_content
+    out_parts: list[str] = []
+    # Pre-content (Section-Header H1.section-kind-stoff + optional intro)
+    out_parts.append(stoff_content[: matches[0].start()])
+    for i, m in enumerate(matches):
+        start = m.start()
+        end = matches[i + 1].start() if i + 1 < len(matches) else len(stoff_content)
+        sub_content = stoff_content[start:end]
+        out_parts.append(f'<article class="lr-subblock">\n{sub_content}\n</article>')
+    return "\n".join(out_parts)
 
 
 def wrap_werkbank_layout(html_content: str) -> str:

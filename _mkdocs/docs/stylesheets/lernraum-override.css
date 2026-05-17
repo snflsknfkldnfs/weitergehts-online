@@ -554,180 +554,239 @@ body.no-scroll { overflow: hidden; }
 
 
 /* ==========================================================================
-   12. Skript-Redesign V2 — Elegant Single-Column Reading Layout
-       (Reset nach Werkbank-Versuch — Fokus: Lesbarkeit + Aesthetik + Lern-UX)
+   12. Skript-Redesign V2 — Card-Architecture (single-column)
+       Reset nach Werkbank-Versuch + Editorial-Versuch:
+       Sections sind Cards. Page-bg = cream, Card-bg = paper.
+       Klare visuelle Hierarchie. Wenig UI-Rauschen.
 
-       12.1 Content max-width (Reading-Comfort)
-       12.2 Typografie: H1/H2/H3 — clean editorial style
-       12.3 "In aller Kürze" — Lead-Paragraph mit Border-Left-Quote
-       12.4 Norm-Kartografie — Mermaid hidden, Tabelle als Hairline-Liste
-       12.5 Reveal-Karten (Top-8) — grosse single-column Cards mit Tap-to-Reveal
-       12.6 Falle-Atlas — Hairline-Akkordeon-Liste
-       12.7 Status-Dot
-       12.8 Mermaid neutralisieren / verbergen
-       12.9 Print
+       12.0 Page-Frame: cream-bg, content-width, header-cleanup
+       12.1 .lr-block — Section-Card (Kürze, Karto, Stoff, Pflicht, Fallen, ...)
+       12.2 Section-Headers (H1 in Card)
+       12.3 .lr-subblock — Nested A.N-Cards in Teil A
+       12.4 "In aller Kürze" — Special Lead-Card
+       12.5 Norm-Kartografie — Mermaid hidden, Tabelle clean
+       12.6 Reveal-Karten (Top-8) — bleiben Card-Pattern aus §12.5 davor
+       12.7 Falle-Atlas — Akkordeon-Liste in Card
+       12.8 Status-Dot
+       12.9 Mermaid kompakt
+       12.10 Tables generic
+       12.11 Norm-Tag subtle
+       12.12 Hide: permalinks, redundant UI
+       12.13 Print
    ========================================================================== */
 
-/* 12.1  Content-Breite — Reading Comfort ---------------------------------- */
+/* 12.0  Page-Frame ------------------------------------------------------- */
+body[data-lernraum] {
+  background: var(--lr-bg) !important;
+}
+body[data-lernraum] .md-main,
+body[data-lernraum] .md-container,
 body[data-lernraum] .md-content {
-  max-width: 920px;
+  background: var(--lr-bg) !important;
+}
+body[data-lernraum] .md-content {
+  max-width: 960px;
   margin: 0 auto;
 }
 body[data-lernraum] .md-content__inner {
-  padding: 32px 36px 80px;
+  padding: 28px 16px 80px;
+}
+@media (min-width: 960px) {
+  body[data-lernraum] .md-content__inner {
+    padding: 36px 24px 96px;
+  }
 }
 
-/* mkdocs-Material rechte TOC kollidiert mit Reading-Width — verstecken auf
-   schmalen Bildschirmen erlaubt mehr Platz. Auf grossen Screens bleibt TOC. */
-
-/* 12.2  Typografie (editorial) -------------------------------------------- */
-body[data-lernraum] .md-typeset h1 {
+/* Page-Title (H1 vor erstem .lr-block) */
+body[data-lernraum] .md-typeset > h1:first-child,
+body[data-lernraum] .md-typeset > h1.no-card {
   font-family: var(--lr-font-sans);
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 600;
-  letter-spacing: -0.8px;
-  line-height: 1.15;
-  margin: 0 0 28px;
-  padding: 0 0 14px;
-  border-bottom: 1px solid var(--lr-rule);
-  color: var(--lr-ink);
-  background: none;
-}
-body[data-lernraum] .md-typeset h1.section-kind-stoff,
-body[data-lernraum] .md-typeset h1.section-kind-pflicht,
-body[data-lernraum] .md-typeset h1.section-kind-fallen,
-body[data-lernraum] .md-typeset h1.section-kind-faelle,
-body[data-lernraum] .md-typeset h1.section-kind-meta {
-  margin-top: 64px;
-}
-
-body[data-lernraum] .md-typeset h2 {
-  font-family: var(--lr-font-sans);
-  font-size: 22px;
-  font-weight: 600;
-  letter-spacing: -0.4px;
-  line-height: 1.25;
-  margin: 44px 0 14px;
+  letter-spacing: -0.6px;
+  line-height: 1.2;
+  margin: 4px 0 4px;
   padding: 0;
   border: none;
   background: none;
   color: var(--lr-ink);
 }
-
-/* Sub-Block-H2 (A.1, A.2 …): mit Pille-Praefix via data-block-ref */
-body[data-lernraum] .md-typeset h2[data-block-ref] {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-body[data-lernraum] .md-typeset h2[data-block-ref]::before {
-  content: attr(data-block-ref);
+body[data-lernraum] .md-typeset > h1:first-child + p {
   font-family: var(--lr-font-mono);
   font-size: 11px;
-  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--lr-muted);
+  margin: 0 0 28px;
+}
+
+/* 12.1  .lr-block — Section-Card --------------------------------------- */
+body[data-lernraum] .lr-block {
+  background: var(--lr-paper);
+  border: 1px solid var(--lr-rule);
+  padding: 28px 32px 32px;
+  margin: 0 0 22px;
+  position: relative;
+}
+
+/* Kind-spezifischer Akzent oben (1px-Strich in Akzentfarbe) */
+body[data-lernraum] .lr-block::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  height: 2px;
+  background: var(--lr-accent);
+  opacity: 0.7;
+}
+body[data-lernraum] .lr-block--kurz::before  { background: var(--lr-accent); }
+body[data-lernraum] .lr-block--karto::before { background: var(--lr-muted);  opacity: 0.4; }
+body[data-lernraum] .lr-block--stoff::before { background: var(--lr-muted);  opacity: 0.3; }
+body[data-lernraum] .lr-block--pflicht::before { background: var(--lr-accent); }
+body[data-lernraum] .lr-block--fallen::before  { background: var(--lr-accent); }
+body[data-lernraum] .lr-block--faelle::before  { background: var(--lr-accent); opacity: 0.6; }
+body[data-lernraum] .lr-block--meta::before    { background: var(--lr-mute2); opacity: 0.3; }
+
+/* 12.2  Section-Headers im .lr-block ------------------------------------ */
+body[data-lernraum] .lr-block > h1,
+body[data-lernraum] .lr-block > h2.section-kind-kurz,
+body[data-lernraum] .lr-block > h2.section-kind-karto {
+  font-family: var(--lr-font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--lr-accent);
+  margin: 0 0 18px;
+  padding: 0;
+  border: none;
+  background: none;
+  line-height: 1.3;
+}
+
+/* Längere Section-Names (Teil X — ...) compact */
+body[data-lernraum] .lr-block > h1.section-kind-stoff,
+body[data-lernraum] .lr-block > h1.section-kind-pflicht,
+body[data-lernraum] .lr-block > h1.section-kind-fallen,
+body[data-lernraum] .lr-block > h1.section-kind-faelle,
+body[data-lernraum] .lr-block > h1.section-kind-meta {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+}
+
+/* 12.3  .lr-subblock — Sub-Block-Cards in Teil A (A.1, A.2, ...) -------- */
+body[data-lernraum] .lr-subblock {
+  border-top: 1px solid var(--lr-rule);
+  padding: 24px 0 4px;
+  margin: 24px 0 0;
+}
+body[data-lernraum] .lr-subblock:first-of-type {
+  border-top: none;
+  margin-top: 0;
+  padding-top: 8px;
+}
+
+/* H2-Sub-Block-Header mit Pille (data-block-ref) */
+body[data-lernraum] .lr-subblock > h2[data-status-key] {
+  font-family: var(--lr-font-sans);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  line-height: 1.25;
+  margin: 0 0 14px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--lr-ink);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+body[data-lernraum] .lr-subblock > h2[data-status-key]::before {
+  content: attr(data-block-ref);
+  font-family: var(--lr-font-mono);
+  font-size: 10.5px;
+  font-weight: 600;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: var(--lr-accent);
   background: var(--lr-accent-soft);
-  padding: 4px 10px;
+  padding: 5px 10px;
   flex: 0 0 auto;
 }
 
-body[data-lernraum] .md-typeset h3 {
-  font-family: var(--lr-font-sans);
-  font-size: 17px;
-  font-weight: 600;
-  letter-spacing: -0.2px;
-  line-height: 1.3;
-  margin: 28px 0 10px;
-  padding: 0;
-  border: none;
-  color: var(--lr-ink);
-  background: none;
-}
-
-/* 12.2b  Text-Block: Reading-Tuning */
-body[data-lernraum] .md-typeset p,
-body[data-lernraum] .md-typeset li {
-  font-size: 15.5px;
-  line-height: 1.65;
-  color: var(--lr-ink);
-}
-body[data-lernraum] .md-typeset strong {
-  font-weight: 600;
-  color: var(--lr-ink);
-}
-
-/* 12.3  "In aller Kürze" als Lead-Block ----------------------------------- */
-body[data-lernraum] .md-typeset h2.section-kind-kurz + p {
+/* 12.4  In aller Kürze — Special Lead-Block ---------------------------- */
+body[data-lernraum] .lr-block--kurz > p {
   font-family: var(--lr-font-serif);
-  font-size: 17px;
+  font-size: 16.5px;
   line-height: 1.6;
-  font-style: italic;
   color: var(--lr-ink);
-  border-left: 3px solid var(--lr-accent);
-  padding: 4px 0 4px 20px;
-  margin: 0 0 28px;
-  max-width: 720px;
+  margin: 0 0 12px;
+  max-width: 740px;
+}
+body[data-lernraum] .lr-block--kurz > p:last-child {
+  margin-bottom: 0;
 }
 
-/* 12.4  Norm-Kartografie — Mermaid hidden, Tabelle als Hairline-Liste ----- */
-body[data-lernraum] .md-typeset h2.section-kind-karto + .mermaid,
-body[data-lernraum] .md-typeset h2.section-kind-karto ~ .mermaid:not(* ~ .mermaid + *) {
+/* 12.5  Norm-Kartografie — Mermaid weg, Tabelle clean ------------------- */
+body[data-lernraum] .lr-block--karto > .mermaid {
   display: none;
 }
-
-/* Norm-Kartografie-Tabelle (Heuristik: erste Tabelle nach H2.section-kind-karto) */
-body[data-lernraum] .md-typeset h2.section-kind-karto ~ table:first-of-type {
-  border: 1px solid var(--lr-rule);
+body[data-lernraum] .lr-block--karto > table {
+  border: none;
   border-collapse: collapse;
   width: 100%;
-  margin: 16px 0 32px;
-  background: var(--lr-paper);
+  margin: 0;
+  background: none;
 }
-body[data-lernraum] .md-typeset h2.section-kind-karto ~ table:first-of-type thead {
-  background: var(--lr-accent-soft);
+body[data-lernraum] .lr-block--karto > table thead {
+  background: none;
 }
-body[data-lernraum] .md-typeset h2.section-kind-karto ~ table:first-of-type th {
+body[data-lernraum] .lr-block--karto > table th {
   font-family: var(--lr-font-mono);
-  font-size: 10.5px;
+  font-size: 10px;
   letter-spacing: 1.2px;
   font-weight: 600;
   text-transform: uppercase;
-  color: var(--lr-accent);
-  padding: 10px 14px;
+  color: var(--lr-mute2);
+  padding: 0 0 10px 0;
   border-bottom: 1px solid var(--lr-rule);
   text-align: left;
+  background: none;
 }
-body[data-lernraum] .md-typeset h2.section-kind-karto ~ table:first-of-type td {
-  padding: 12px 14px;
+body[data-lernraum] .lr-block--karto > table td {
+  padding: 12px 0;
   border-bottom: 1px solid var(--lr-rule);
   font-size: 14px;
-  line-height: 1.5;
+  line-height: 1.55;
   vertical-align: top;
+  background: none;
 }
-body[data-lernraum] .md-typeset h2.section-kind-karto ~ table:first-of-type tr:last-child td {
+body[data-lernraum] .lr-block--karto > table tr:last-child td {
   border-bottom: none;
 }
-body[data-lernraum] .md-typeset h2.section-kind-karto ~ table:first-of-type td:first-child {
+body[data-lernraum] .lr-block--karto > table td:first-child {
+  font-family: var(--lr-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.5px;
   font-weight: 600;
-  white-space: nowrap;
   color: var(--lr-accent);
   width: 130px;
+  white-space: nowrap;
 }
 
-/* 12.5  Reveal-Karten (Top-8) — single column Big-Cards ------------------- */
-/* hooks.py wrappt <div class="grid cards reveal-grid"> + 8x .reveal-card */
-
+/* 12.6  Reveal-Karten (Top-8) ------------------------------------------ */
 body[data-lernraum] .md-typeset .reveal-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 12px;
-  margin: 18px 0 24px;
+  gap: 10px;
+  margin: 6px 0 14px;
   padding: 0;
   list-style: none;
 }
-@media (min-width: 760px) {
+@media (min-width: 720px) {
   body[data-lernraum] .md-typeset .reveal-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -736,12 +795,12 @@ body[data-lernraum] .md-typeset .reveal-grid {
 body[data-lernraum] .md-typeset .reveal-card {
   list-style: none;
   border: 1px solid var(--lr-rule);
-  background: var(--lr-paper);
-  padding: 18px 22px 36px;
+  background: var(--lr-bg);
+  padding: 16px 20px 34px;
   margin: 0;
   cursor: pointer;
   position: relative;
-  transition: background .12s, border-color .12s, transform .12s;
+  transition: background .12s, border-color .12s;
 }
 body[data-lernraum] .md-typeset .reveal-card:hover {
   border-color: var(--lr-accent);
@@ -751,30 +810,22 @@ body[data-lernraum] .md-typeset .reveal-card[data-reveal="open"] {
   border-color: var(--lr-accent);
   background: var(--lr-paper);
 }
-
 body[data-lernraum] .md-typeset .reveal-card .reveal-card__title {
-  font-family: var(--lr-font-mono);
-  font-size: 11px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--lr-accent);
-  margin: 0 0 4px;
-  font-weight: 600;
-  line-height: 1.4;
-}
-body[data-lernraum] .md-typeset .reveal-card .reveal-card__title strong {
-  text-transform: none;
-  letter-spacing: 0;
+  font-family: var(--lr-font-sans);
   font-size: 15px;
   font-weight: 600;
+  letter-spacing: -0.1px;
   color: var(--lr-ink);
-  display: block;
-  margin-top: 4px;
+  margin: 0 0 4px;
+  line-height: 1.35;
+}
+body[data-lernraum] .md-typeset .reveal-card .reveal-card__title strong {
+  font-weight: 600;
 }
 body[data-lernraum] .md-typeset .reveal-card > p:not(.reveal-card__title) {
-  font-size: 14.5px;
+  font-size: 14px;
   line-height: 1.55;
-  margin: 10px 0 0;
+  margin: 8px 0 0;
 }
 body[data-lernraum] .md-typeset .reveal-card[data-reveal="closed"] > *:not(:first-child) {
   display: none;
@@ -796,12 +847,24 @@ body[data-lernraum] .md-typeset .reveal-card[data-reveal="open"]::after {
   color: var(--lr-accent);
 }
 
-/* 12.6  Falle-Atlas — Hairline-Akkordeon ---------------------------------- */
+/* Pflichtwissen-Footer (Direkt zur Karte im Lerndeck...) compact + subtle */
+body[data-lernraum] .lr-block--pflicht > p:has(> a[href*="lerndecks"]),
+body[data-lernraum] .lr-block--pflicht > p:last-child {
+  font-family: var(--lr-font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.5px;
+  color: var(--lr-mute2);
+  margin: 14px 0 0;
+  padding: 12px 0 0;
+  border-top: 1px solid var(--lr-rule);
+}
+
+/* 12.7  Falle-Atlas — Akkordeon-Liste in Card -------------------------- */
 body[data-lernraum] .md-typeset .falle-card {
   display: grid;
-  grid-template-columns: 70px 1fr 28px;
-  gap: 16px;
-  padding: 16px 0;
+  grid-template-columns: 56px 1fr 28px;
+  gap: 14px;
+  padding: 14px 0;
   margin: 0;
   border: none;
   border-bottom: 1px solid var(--lr-rule);
@@ -810,10 +873,14 @@ body[data-lernraum] .md-typeset .falle-card {
   align-items: start;
   transition: background .12s;
 }
+body[data-lernraum] .md-typeset .falle-card:first-of-type {
+  border-top: none;
+}
+body[data-lernraum] .md-typeset .falle-card:last-of-type {
+  border-bottom: none;
+}
 body[data-lernraum] .md-typeset .falle-card:hover {
-  background: var(--lr-accent-soft);
-  padding-left: 8px;
-  padding-right: 8px;
+  background: var(--lr-bg);
 }
 body[data-lernraum] .md-typeset .falle-card::before {
   content: attr(data-fa-id);
@@ -822,14 +889,13 @@ body[data-lernraum] .md-typeset .falle-card::before {
   letter-spacing: 0.6px;
   color: var(--lr-accent);
   font-weight: 600;
-  padding-top: 3px;
+  padding-top: 2px;
 }
 body[data-lernraum] .md-typeset .falle-card .falle-frage {
   display: block;
-  font-size: 15px;
+  font-size: 14.5px;
   line-height: 1.5;
   color: var(--lr-ink);
-  font-weight: 400;
 }
 body[data-lernraum] .md-typeset .falle-card .falle-antwort {
   grid-column: 2 / span 1;
@@ -838,10 +904,9 @@ body[data-lernraum] .md-typeset .falle-card .falle-antwort {
   background: var(--lr-bg);
   border-left: 3px solid var(--lr-accent);
   font-family: var(--lr-font-serif);
-  font-size: 15px;
+  font-size: 14.5px;
   line-height: 1.6;
   color: var(--lr-ink);
-  font-style: italic;
 }
 body[data-lernraum] .md-typeset .falle-card:not([data-open="true"]) .falle-antwort {
   display: none;
@@ -855,22 +920,24 @@ body[data-lernraum] .md-typeset .falle-card::after {
   padding-top: 1px;
   pointer-events: none;
   text-align: center;
+  align-self: start;
 }
 body[data-lernraum] .md-typeset .falle-card[data-open="true"]::after {
   transform: rotate(90deg);
   color: var(--lr-accent);
 }
 
-/* 12.7  Status-Dot auf H2-Sub-Block-Headers (JS-injected) ----------------- */
-body[data-lernraum] .md-typeset h2[data-status-key] .status-dot {
+/* 12.8  Status-Dot ----------------------------------------------------- */
+body[data-lernraum] .md-typeset .status-dot {
   flex: 0 0 auto;
-  cursor: pointer;
-  width: 11px;
-  height: 11px;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
   border-radius: 0;
   border: 1.5px solid var(--lr-mute2);
   background: transparent;
   margin: 0;
+  cursor: pointer;
 }
 body[data-lernraum] .md-typeset .status-dot--work {
   border-color: var(--lr-status-work, #c89933);
@@ -885,15 +952,10 @@ body[data-lernraum] .md-typeset .status-dot--sit {
   background: #2d4a1f;
 }
 
-/* 12.8  Mermaid — neutralisiert oder verborgen ---------------------------- */
-/* Erstes Mermaid nach Norm-Kartografie verbergen (Doppel mit Tabelle).
-   Andere Mermaids (z.B. Rechts-Trias in A.1) bleiben — werden aber kompakt + monochrom. */
-body[data-lernraum] .md-typeset h2.section-kind-karto + .mermaid {
-  display: none;
-}
+/* 12.9  Mermaid kompakt ------------------------------------------------ */
 body[data-lernraum] .md-typeset .mermaid {
-  max-width: 720px;
-  margin: 16px auto 24px;
+  max-width: 680px;
+  margin: 12px auto 18px;
   background: transparent;
   text-align: center;
 }
@@ -902,41 +964,118 @@ body[data-lernraum] .md-typeset .mermaid svg {
   height: auto;
 }
 
-/* 12.9  Tabellen (Falle-Atlas + andere) generell --------------------------- */
-body[data-lernraum] .md-typeset table:not([class]) {
-  border: 1px solid var(--lr-rule);
+/* 12.10  Tabellen — clean Hairline-Style (alle innerhalb .lr-block) -------- */
+body[data-lernraum] .lr-block > table,
+body[data-lernraum] .lr-subblock > table,
+body[data-lernraum] .lr-subblock table,
+body[data-lernraum] .lr-block table {
+  border: none;
   border-collapse: collapse;
   width: 100%;
-  margin: 16px 0 24px;
-  background: var(--lr-paper);
+  margin: 12px 0 16px;
+  background: none;
+  font-size: 13.5px;
 }
-body[data-lernraum] .md-typeset table:not([class]) thead {
-  background: var(--lr-accent-soft);
+body[data-lernraum] .lr-block table thead {
+  background: none;
 }
-body[data-lernraum] .md-typeset table:not([class]) th {
+body[data-lernraum] .lr-block table th {
   font-family: var(--lr-font-mono);
-  font-size: 10.5px;
-  letter-spacing: 1.2px;
+  font-size: 10px;
+  letter-spacing: 1px;
   font-weight: 600;
   text-transform: uppercase;
-  color: var(--lr-accent);
-  padding: 10px 14px;
+  color: var(--lr-mute2);
+  padding: 8px 12px 8px 0;
   border-bottom: 1px solid var(--lr-rule);
   text-align: left;
+  background: none;
 }
-body[data-lernraum] .md-typeset table:not([class]) td {
-  padding: 11px 14px;
+body[data-lernraum] .lr-block table td {
+  padding: 10px 12px 10px 0;
   border-bottom: 1px solid var(--lr-rule);
-  font-size: 14.5px;
   line-height: 1.55;
   vertical-align: top;
+  background: none;
 }
-body[data-lernraum] .md-typeset table:not([class]) tr:last-child td {
+body[data-lernraum] .lr-block table tr:last-child td {
   border-bottom: none;
 }
 
-/* 12.10  Print — 1-A4-Spickzettel ----------------------------------------- */
+/* 12.11  Norm-Tag — subtler (kein Border-Bottom, dezenter Hover) ---------- */
+body[data-lernraum] .md-typeset a.norm-link {
+  border-bottom: 1px dotted var(--lr-mute2);
+  color: var(--lr-ink);
+  text-decoration: none;
+  transition: border-color .12s, color .12s;
+}
+body[data-lernraum] .md-typeset a.norm-link:hover {
+  border-bottom-color: var(--lr-accent);
+  color: var(--lr-accent);
+}
+body[data-lernraum] .md-typeset abbr {
+  border-bottom: 1px dotted var(--lr-mute2);
+  cursor: help;
+  text-decoration: none;
+}
+body[data-lernraum] .md-typeset abbr:hover {
+  border-bottom-color: var(--lr-accent);
+}
+
+/* 12.12  UI-Rauschen ausblenden ------------------------------------------ */
+/* Permalink-¶ wird in hooks.py gestrippt; CSS-Fallback */
+body[data-lernraum] .md-typeset a.headerlink {
+  display: none !important;
+}
+
+/* mkdocs-Material edit-Button (falls aktiv) */
+body[data-lernraum] .md-content__button {
+  display: none !important;
+}
+
+/* Reading-Progress-Bar dezent */
+body[data-lernraum] .reading-progress {
+  height: 2px !important;
+  background: var(--lr-accent) !important;
+}
+
+/* 12.13  Body-Text Defaults ---------------------------------------------- */
+body[data-lernraum] .lr-block > p,
+body[data-lernraum] .lr-subblock > p {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--lr-ink);
+  margin: 0 0 12px;
+}
+body[data-lernraum] .lr-block ul,
+body[data-lernraum] .lr-block ol,
+body[data-lernraum] .lr-subblock ul,
+body[data-lernraum] .lr-subblock ol {
+  margin: 0 0 14px;
+  padding-left: 22px;
+}
+body[data-lernraum] .lr-block li,
+body[data-lernraum] .lr-subblock li {
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin: 0 0 4px;
+}
+body[data-lernraum] .lr-subblock h3 {
+  font-family: var(--lr-font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.1px;
+  margin: 22px 0 8px;
+  color: var(--lr-ink);
+}
+
+/* 12.14  Print --------------------------------------------------------- */
 @media print {
+  body[data-lernraum] .lr-block {
+    border: 1px solid #ccc;
+    page-break-inside: avoid;
+    box-shadow: none;
+  }
   body[data-lernraum] .reveal-card[data-reveal="closed"] > * { display: revert !important; }
   body[data-lernraum] .reveal-card::after,
   body[data-lernraum] .falle-card::after { display: none !important; }
