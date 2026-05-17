@@ -62,7 +62,12 @@
 
   --md-default-bg-color:             var(--lr-bg);
 
+  --md-typeset-color:                var(--lr-ink);   /* KONTRAST-FIX */
   --md-typeset-a-color:              var(--lr-accent);
+
+  /* Code-Block-Tokens */
+  --md-code-bg-color:                var(--lr-accent-soft);
+  --md-code-fg-color:                var(--lr-ink);
 }
 
 /* Dark-Mode: Olive auf dunklem Grund — vollstaendige Token-Map */
@@ -85,6 +90,7 @@
   --md-default-bg-color--light:      #1f1e1c;
 
   --md-code-bg-color:                #232220;
+  --md-code-fg-color:                #e5e5e0;
   --md-typeset-a-color:              #a8c089;
   --md-typeset-color:                #e5e5e0;
 
@@ -109,10 +115,26 @@ body,
   font-family: var(--lr-font-sans);
 }
 
+/* Globaler Body + Hauptcontainer-Background (Spec §2 --bg) */
+body,
+.md-main,
+.md-container,
+.md-content {
+  background-color: var(--md-default-bg-color) !important;
+}
+
 .md-typeset {
   font-size: 0.82rem;
   line-height: 1.65;
-  color: var(--lr-ink);
+  color: var(--md-typeset-color) !important;   /* KONTRAST-FIX */
+}
+
+/* Sicherheitsnetz: Text-Knoten ohne typeset-Wrapper */
+.md-typeset p,
+.md-typeset li,
+.md-typeset td,
+.md-typeset dd {
+  color: var(--md-typeset-color);
 }
 
 .md-typeset h1,
