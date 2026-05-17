@@ -6,95 +6,207 @@
 <title>N18 Sozialkunde — Fachdidaktik | weitergehts.online</title>
 <link rel="stylesheet" href="../../../assets/css/base.css">
 <style>
-.crumb{font-size:0.85em;color:#475569;margin-bottom:8px;}
-.crumb a{color:#c2410c;text-decoration:none;}
-.crumb a:hover{text-decoration:underline;}
-.theme-list{list-style:none;padding:0;}
-.theme-list li{padding:10px 14px;margin-bottom:6px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:6px;}
-.theme-list li:has(a){background:#ffffff;border-color:#c2410c;}
-.theme-list li a{color:#9a3412;font-weight:600;text-decoration:none;}
-.theme-list li a:hover{text-decoration:underline;}
-.theme-num{display:inline-block;width:36px;color:#94a3b8;font-weight:700;font-size:0.9em;}
-.lerndeck-cta{background:#eff6ff;border:2px solid #1e3a8a;border-radius:8px;padding:14px 16px;margin:18px 0;}
-.lerndeck-cta a{color:#1e3a8a;font-weight:700;font-size:1.05em;text-decoration:none;}
-.lerndeck-cta a:hover{text-decoration:underline;}
-.lerndeck-cta .meta{color:#475569;font-size:0.88em;margin-top:6px;}
-.fact-box{background:#fff;border:1px solid #cbd5e1;border-radius:6px;padding:12px 16px;margin-bottom:12px;}
-.fact-box strong{color:#1f2937;}
+.crumb { margin-bottom: 24px; }
+.crumb a { color: inherit; }
+.hero { display: grid; grid-template-columns: 200px 1fr 240px; gap: 32px; align-items: start; padding-bottom: 28px; border-bottom: 1px solid var(--hairline); margin-bottom: 32px; }
+.hero h1 { font-size: 26px; font-weight: 600; margin-bottom: 10px; }
+.hero p.lead { font-family: var(--lr-font-serif); font-style: italic; color: var(--muted); font-size: 15px; }
+.stats-box { background: var(--paper); border: 1px solid var(--rule); padding: 14px 16px; }
+.stats-box h3 { font-family: var(--lr-font-mono); font-size: var(--lr-cap-size); letter-spacing: var(--lr-cap-track); text-transform: uppercase; color: var(--muted); margin-bottom: 10px; font-weight: 500; }
+.stats-row { display: flex; justify-content: space-between; padding: 3px 0; font-size: 13px; }
+.section-head { display: flex; align-items: baseline; gap: 14px; margin: 28px 0 14px; }
+.section-head .line { flex: 1; height: 1px; background: var(--hairline); }
+.cluster-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.cluster-card { background: var(--paper); border: 1px solid var(--rule); padding: 14px 16px; }
+.cluster-card .label { font-weight: 600; display: block; margin-bottom: 6px; }
+.cluster-card .meta { font-family: var(--lr-font-mono); font-size: 11px; color: var(--muted); }
+.pflichtkanon-list { display: flex; flex-direction: column; gap: 12px; }
+.pflichtkanon-row { padding: 12px 0; border-bottom: 1px solid var(--rule); }
+.pflichtkanon-row strong { display: block; margin-bottom: 4px; }
+.fact { font-family: var(--lr-font-serif); font-style: italic; color: var(--muted); font-size: 14px; }
+.lerndeck-cta-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 14px; }
+@media (max-width: 768px) {
+  .hero { grid-template-columns: 1fr; gap: 20px; }
+  .lerndeck-cta-row { grid-template-columns: 1fr; }
+}
 </style>
 </head>
-<body>
-<main>
-  <div class="crumb"><a href="../../../">Startseite</a> › <a href="../../">Staatsexamen</a> › <a href="../">Fachdidaktik</a> › N18 Sozialkunde</div>
-  <h1>N18 Sozialkunde — Mündliche Prüfung 2026</h1>
+<body data-lernraum data-fach="sk">
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+<main id="main-content">
 
-  <div class="fact-box">
-    <p><strong>Termin:</strong> 26.–28. Mai 2026, Matthias-Grünewald-Gymnasium Würzburg, Zwerchgraben 1.<br>
-    <strong>Format:</strong> 3 mündliche Prüfungen × 20 Min, 2 Fragen je 10 Min, keine Vorbereitungszeit.<br>
-    <strong>Sonderfall UF Sozialkunde:</strong> Staatsbürgerliche Bildung entfällt → 2 Schulrecht-Fragen statt SR + SB. Didaktik Sozialkunde bleibt regulär.</p>
+  <nav aria-label="Brotkrumen" class="mono-cap crumb">
+    <a href="../../../">STARTSEITE</a>
+    <span aria-hidden="true">›</span>
+    <a href="../../">STAATSEXAMEN</a>
+    <span aria-hidden="true">›</span>
+    <a href="../">FACHDIDAKTIK</a>
+    <span aria-hidden="true">›</span>
+    <span>N18 SOZIALKUNDE</span>
+  </nav>
+
+  <header class="hero">
+    <div data-status-id="fachdidaktik.n18-sk">
+      <span class="mono-cap">Prüfungsteil N18</span>
+      <span class="mono-cap">26.–28. Mai 2026</span>
+      <div style="margin-top: 14px;">
+        <span class="status-dot" data-status="work"></span>
+        <span class="status-label">in Arbeit</span>
+      </div>
+    </div>
+    <div>
+      <h1>Sozialkunde — Mündliche Prüfung</h1>
+      <p class="lead">
+        Sozialkunde ist in der MS kein eigenständiges Fach: Die sozialwissenschaftliche Perspektive
+        steckt in <strong>GPG</strong> (LB3 + LB4 jeder Jgst.). Sonderfall N18: 2 Schulrecht-Fragen
+        statt SR + SB, Didaktik regulär.
+      </p>
+      <p class="fact" style="margin-top: 10px;">
+        Format: 3 mündliche Prüfungen × 20 Min · 2 Fragen je 10 Min · keine Vorbereitungszeit ·
+        Matthias-Grünewald-Gymnasium Würzburg.
+      </p>
+    </div>
+    <aside class="stats-box" aria-label="Lerndeck-Statistik">
+      <h3>Lerndeck</h3>
+      <div class="stats-row"><span>Karten gesamt</span><span>85</span></div>
+      <div class="stats-row"><span>Hochprior</span><span>35</span></div>
+      <div class="stats-row"><span>KE-Matrix</span><span>27</span></div>
+      <div class="stats-row"><span>Cluster</span><span>5</span></div>
+    </aside>
+  </header>
+
+  <section aria-labelledby="lernpfade-heading">
+    <h2 id="lernpfade-heading" class="mono-cap">Lernpfade</h2>
+    <div class="lernpfad-grid">
+      <a href="../../../lerndecks/mp-n18-sk-pruefungsvorbereitung/" class="lernpfad-card lernpfad-card--primary" style="text-decoration: none;">
+        <span class="mono-cap" style="display: block; margin-bottom: 14px;">Aktiv abrufen · 85 Karten</span>
+        <strong style="display: block; font-size: 20px;">Begriffe + Modelle + LP+ + Operatoren</strong>
+      </a>
+      <a href="../../../lerndecks/ke-umsetzungsmatrix-sk/" class="lernpfad-card" style="text-decoration: none; color: inherit;">
+        <span class="mono-cap" style="display: block; margin-bottom: 14px;">KE-Umsetzungsmatrix · 27 KE × 3 Stufen</span>
+        <strong style="display: block; font-size: 18px;">LP+ → Unterrichtsbeispiel → Prinzip</strong>
+      </a>
+    </div>
+  </section>
+
+  <div class="section-head">
+    <h2 id="bewertung-heading">Bewertungsachsen (Hinweise S. 2)</h2>
+    <span class="line" aria-hidden="true"></span>
+    <span class="mono-cap">3 Achsen</span>
+  </div>
+  <ul class="pflichtkanon-list">
+    <li class="pflichtkanon-row"><strong>1. Erfassen</strong> der gestellten Aufgabe</li>
+    <li class="pflichtkanon-row"><strong>2. Fachkenntnisse</strong> — Umfang + Praxisorientierung</li>
+    <li class="pflichtkanon-row"><strong>3. Darlegung</strong> — Begriffe, logischer Aufbau, selbstständige Entwicklung, kritische Argumentation</li>
+  </ul>
+
+  <div class="section-head">
+    <h2 id="antwort-schema-heading">Antwort-Schema · 8-Matrix (Seminar SW V)</h2>
+    <span class="line" aria-hidden="true"></span>
+    <span class="mono-cap">8 Schritte</span>
+  </div>
+  <ol class="pflichtkanon-list" style="list-style: decimal; padding-left: 22px;">
+    <li class="pflichtkanon-row">Thema im Gesamtzusammenhang</li>
+    <li class="pflichtkanon-row">Vorgabe einer Grobgliederung</li>
+    <li class="pflichtkanon-row">Begriffsklärungen</li>
+    <li class="pflichtkanon-row">Aussagen des Lehrplans — LP+ wörtlich</li>
+    <li class="pflichtkanon-row">Realisierungsmöglichkeiten</li>
+    <li class="pflichtkanon-row">Probleme / Grenzen</li>
+    <li class="pflichtkanon-row">Wertung / persönliche Stellungnahme</li>
+    <li class="pflichtkanon-row">Zusammenfassung</li>
+  </ol>
+
+  <div class="section-head">
+    <h2 id="cluster-heading">Themen-Cluster</h2>
+    <span class="line" aria-hidden="true"></span>
+    <span class="mono-cap">5 Cluster · 85 Karten</span>
+  </div>
+  <div class="cluster-grid">
+    <div class="cluster-card">
+      <span class="label">A · Begriffe</span>
+      <span class="meta">29 Karten · Pflichtkanon</span>
+      <p style="margin-top: 8px; font-size: 14px;">Beutelsbach, Mündigkeit, Handlungsorientierung, Kasuistik, Schule als Polis, Werterziehung.</p>
+    </div>
+    <div class="cluster-card">
+      <span class="label">B · Modelle / Listen</span>
+      <span class="meta">16 Karten</span>
+      <p style="margin-top: 8px; font-size: 14px;">Detjen-4, Reinhardt-6, 5-Phasen-Sk-Stunde, 5-Phasen-Fallanalyse.</p>
+    </div>
+    <div class="cluster-card">
+      <span class="label">C · LP+-Zitate</span>
+      <span class="meta">24 Karten · R/M-Differenzierung</span>
+      <p style="margin-top: 8px; font-size: 14px;">GPG5–10 LB3+LB4 · ÜBZ Politische Bildung · FPGPG.</p>
+    </div>
+    <div class="cluster-card">
+      <span class="label">D · Operatoren / AFB</span>
+      <span class="meta">10 Karten</span>
+      <p style="margin-top: 8px; font-size: 14px;">benennen, beschreiben, erläutern, diskutieren, bewerten — R→M-Wechsel.</p>
+    </div>
+    <div class="cluster-card">
+      <span class="label">E · Anschluss-Praxis</span>
+      <span class="meta">6 Karten</span>
+      <p style="margin-top: 8px; font-size: 14px;">Leon-Sequenz (GPG7 LB4), Industrialisierungs-Sequenz (GPG7 LB2/LB3), Klassenrat.</p>
+    </div>
   </div>
 
-  <div class="lerndeck-cta">
-    📇 <a href="../../../lerndecks/mp-n18-sk-pruefungsvorbereitung/">Lerndeck: 84 Karten in 5 Clustern öffnen</a>
-    <div class="meta">Begriffe (29) · Modelle (16) · LP+-Zitate (24) · Operatoren (10) · Praxis (5) · 35 Hochprior · LocalStorage-SR-Tracker</div>
+  <div class="section-head">
+    <h2 id="pflichtkanon-heading">Pflichtkanon (auswendig)</h2>
+    <span class="line" aria-hidden="true"></span>
+    <span class="mono-cap">6 Modelle</span>
   </div>
+  <ul class="pflichtkanon-list">
+    <li class="pflichtkanon-row">
+      <strong>Beutelsbacher Konsens (1976)</strong>
+      <button type="button" class="anchor-tag" data-type="prinzip" data-ref="beutelsbacher-konsens">Beutelsbach</button>
+      <button type="button" class="anchor-tag" data-type="prinzip" data-ref="uberwaltigungsverbot">Überwältigungsverbot</button>
+      <button type="button" class="anchor-tag" data-type="prinzip" data-ref="kontroversitatsgebot">Kontroversitätsgebot</button>
+      <button type="button" class="anchor-tag" data-type="prinzip" data-ref="schulerorientierung">Schülerorientierung</button>
+    </li>
+    <li class="pflichtkanon-row">
+      <strong>Detjen-4-Dimensionen-Modell (2012)</strong>
+      <button type="button" class="anchor-tag" data-type="prinzip" data-ref="detjen-vier-dimensionen-modell">Detjen-4-Dim</button>
+      <button type="button" class="anchor-tag" data-type="prinzip" data-ref="politische-handlungsfahigkeit">Politische Handlungsfähigkeit</button>
+    </li>
+    <li class="pflichtkanon-row">
+      <strong>Reinhardt-6-Arbeitsweisen</strong>
+      <button type="button" class="anchor-tag" data-type="prinzip" data-ref="fachspezifische-arbeitsweisen-sk">Reinhardt-6</button>
+    </li>
+    <li class="pflichtkanon-row">
+      <strong>5-Phasen-Sk-Stunde (GPG GB §5.5)</strong>
+      <button type="button" class="anchor-tag" data-type="prinzip" data-ref="strukturmodell-sk-stunde">5-Phasen-Sk-Stunde</button>
+    </li>
+    <li class="pflichtkanon-row">
+      <strong>Werterziehungs-Stufen (GPG B3 §1.2)</strong>
+      <button type="button" class="anchor-tag" data-type="prinzip" data-ref="werterziehung">Werterziehung</button>
+      <button type="button" class="anchor-tag" data-type="prinzip" data-ref="just-community-konzept">Just-Community</button>
+      <button type="button" class="anchor-tag" data-type="prinzip" data-ref="polis-schule-als">Schule als Polis</button>
+    </li>
+    <li class="pflichtkanon-row">
+      <strong>Fallanalyse-Verlauf (GPG B4 §2.2.1)</strong>
+      <button type="button" class="anchor-tag" data-type="prinzip" data-ref="fallanalyse-fallmethode-kasuistisches-verfahren">Fallanalyse</button>
+    </li>
+  </ul>
 
-  <div class="lerndeck-cta">
-    🗂️ <a href="../../../lerndecks/ke-umsetzungsmatrix-sk/">KE-Umsetzungsmatrix: 27 Kompetenzerwartungen in 3 Stufen öffnen</a>
-    <div class="meta">Lehrplan → Unterrichtsbeispiel → didaktische Prinzipien · GPG5–10 LB3+LB4 · 8 real / 19 idealtypisch · drillbar · Anki-Deck + Markdown-Matrix</div>
+  <div class="section-head">
+    <h2 id="praxis-heading">Universalbelege Praxis</h2>
+    <span class="line" aria-hidden="true"></span>
+    <span class="mono-cap">2 Sequenzen</span>
   </div>
-
-  <h2>Bewertungsachsen (Hinweise S. 2)</h2>
-  <ul class="theme-list">
-    <li><span class="theme-num">1.</span> <strong>Erfassen</strong> der gestellten Aufgabe</li>
-    <li><span class="theme-num">2.</span> <strong>Fachkenntnisse</strong> — Umfang + <em>Praxisorientierung</em></li>
-    <li><span class="theme-num">3.</span> <strong>Darlegung</strong> — Begriffe, logischer Aufbau, <em>selbstständige Entwicklung</em>, kritische Argumentation</li>
+  <ul class="pflichtkanon-list">
+    <li class="pflichtkanon-row">
+      <strong>GPG7 LB4 „Recht / Leon" (ELP 26.01.2026)</strong>
+      <button type="button" class="anchor-tag" data-type="lp" data-ref="gpg7-lb4">GPG7 LB4</button>
+      <button type="button" class="anchor-tag" data-type="prinzip" data-ref="handlungsorientierung">Handlungsorientierung</button>
+      <button type="button" class="anchor-tag" data-type="prinzip" data-ref="multiperspektivitat">Multiperspektivität</button>
+      <p style="margin-top: 6px; font-size: 14px;">8-UE-Sequenz „Jugendkriminalität". Identifikationsfigur Leon (anonymisiert). Methoden: Pro-Contra-Debatte, Stationenlernen, Fallanalyse, Think-Pair-Share. AFB-III-Operator „beurteilen".</p>
+    </li>
+    <li class="pflichtkanon-row">
+      <strong>GPG7 LB2/LB3 „Industrialisierung / Soziale Frage"</strong>
+      <button type="button" class="anchor-tag" data-type="lp" data-ref="gpg7-lb3">GPG7 LB3</button>
+      <p style="margin-top: 6px; font-size: 14px;">Identifikationsfiguren Johann/Anna/Peter. Anschluss an Multiperspektivität, Quellenarbeit, narrative Kompetenz.</p>
+    </li>
   </ul>
 
-  <h2>Antwort-Schema (8-Matrix Seminar SW V)</h2>
-  <ul class="theme-list">
-    <li><span class="theme-num">1.</span> Thema im Gesamtzusammenhang</li>
-    <li><span class="theme-num">2.</span> Vorgabe einer Grobgliederung</li>
-    <li><span class="theme-num">3.</span> Begriffsklärungen</li>
-    <li><span class="theme-num">4.</span> Aussagen des Lehrplans (LP+ wörtlich)</li>
-    <li><span class="theme-num">5.</span> Realisierungsmöglichkeiten</li>
-    <li><span class="theme-num">6.</span> Probleme / Grenzen</li>
-    <li><span class="theme-num">7.</span> Wertung / persönliche Stellungnahme</li>
-    <li><span class="theme-num">8.</span> Zusammenfassung</li>
-  </ul>
-
-  <h2>Themen-Cluster</h2>
-  <ul class="theme-list">
-    <li><span class="theme-num">A</span> <strong>Begriffe Pflichtkanon</strong> (29) — Beutelsbach, Mündigkeit, Handlungsorientierung, kasuistisches Prinzip, Lebensweltbezug, Schule als Polis, Werterziehung u. a.</li>
-    <li><span class="theme-num">B</span> <strong>Modelle / Listen</strong> (16) — Beutelsbach-3, Detjen-4-Dimensionen, Reinhardt-6-Arbeitsweisen, 5-Phasen-Sk-Stunde, 5-Phasen-Fallanalyse, Werterziehungs-3-Stufen, Sk-Unterrichtsprinzipien-7</li>
-    <li><span class="theme-num">C</span> <strong>LP+-Zitate</strong> (24) — GPG5–10 LB3 (Politik und Gesellschaft) + LB4 (Lebenswelt) inkl. R/M-Differenzierung, ÜBZ Politische Bildung, FPGPG-Lernbereichsbeschreibungen</li>
-    <li><span class="theme-num">D</span> <strong>Operatoren / AFB</strong> (10) — benennen, beschreiben, erläutern, diskutieren, bewerten, erörtern, analysieren, R→M-Operatorenwechsel</li>
-    <li><span class="theme-num">E</span> <strong>Anschluss-Praxis</strong> (6) — Leon-Sequenz GPG7 LB4 (ELP 26.01.2026), Industrialisierungs-Sequenz GPG7 LB2/LB3 (Johann/Anna), Klassenrat</li>
-  </ul>
-
-  <h2>Pflichtkanon (auswendig)</h2>
-  <ul class="theme-list">
-    <li><strong>Beutelsbacher Konsens (1976):</strong> Überwältigungsverbot · Kontroversitätsgebot · Schülerorientierung</li>
-    <li><strong>Detjen-4-Dimensionen-Modell (2012):</strong> Fachwissen · politisches Urteilen · politische Handlungsfähigkeit · politische Einstellung/Motivation</li>
-    <li><strong>Reinhardt-6-Arbeitsweisen:</strong> Informieren · Interpretieren · Meinen · Argumentieren/Diskutieren/Kooperieren · Reflektieren · Handeln</li>
-    <li><strong>5-Phasen-Sk-Stunde (GPG GB §5.5):</strong> Problemstellung · Problementfaltung · Problemlösung · Wertung · Sicherung</li>
-    <li><strong>Werterziehungs-Stufen (GPG B3 §1.2):</strong> Dilemmata (Kohlberg) · Just-Community · Schule als Polis</li>
-    <li><strong>Fallanalyse-Verlauf (GPG B4 §2.2.1):</strong> Konfrontation · Information · Resolution · Disputation · Kollation</li>
-  </ul>
-
-  <h2>Universalbelege Praxis</h2>
-  <ul class="theme-list">
-    <li><strong>GPG7 LB4 „Recht/Leon" (ELP 26.01.2026)</strong> — 8 UE-Sequenz „Jugendkriminalität verstehen und beurteilen", Identifikationsfigur Leon (anonymisiert aus Spiegel-Artikel Nürnberg-Messer 2024). Methoden: Pro-Contra-Debatte, Stationenlernen, Fallanalyse, Think-Pair-Share mit Multiperspektivität (3 Perspektiven × 8 Teams), Meinungslinie iterativ, individuelles Urteil. Anschlussfähig an Handlungsorientierung, Fallanalyse, Beutelsbacher Konsens, Lebensweltbezug, Werterziehung, AFB-III-Operator „beurteilen".</li>
-    <li><strong>GPG7 LB2/LB3 „Industrialisierung / Soziale Frage"</strong> — Identifikationsfiguren Johann/Anna/Peter. Anschlussfähig an Multiperspektivität, Quellenarbeit, narrative Kompetenz, soziale Schlüsselprobleme.</li>
-  </ul>
-
-  <h2>Strukturelle Besonderheit Sk MS Bayern</h2>
-  <p>Sozialkunde ist in der Mittelschule <strong>kein eigenständiges Fach</strong>. Die sozialwissenschaftliche Perspektive ist in <strong>GPG (Geschichte/Politik/Geographie)</strong> integriert (Lernbereiche 3 + 4 in jeder Jgst.). Die Prüfung umfasst:</p>
-  <ul class="theme-list">
-    <li>Sozialwissenschaftliche Perspektive in GPG 5–10 (LehrplanPLUS, Fachprofil GPG + LB3 + LB4)</li>
-    <li>Politische Bildung als übergreifendes Bildungs- und Erziehungsziel (alle Fächer)</li>
-    <li>Demokratielernen als Schulleitprinzip (Klassenrat, SMV, Schulkultur)</li>
-  </ul>
 </main>
 <script src="../../../assets/js/core.js"></script>
 </body>

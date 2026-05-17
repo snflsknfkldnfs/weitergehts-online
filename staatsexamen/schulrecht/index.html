@@ -6,50 +6,271 @@
 <title>Schulrecht — Staatsexamen MS Bayern | weitergehts.online</title>
 <link rel="stylesheet" href="../../assets/css/base.css">
 <style>
-li[data-status="planned"]{opacity:0.5;}
-li[data-status="planned"]::after{content:" — in Vorbereitung";color:#94a3b8;font-size:0.85em;font-weight:400;}
-.crumb{font-size:0.85em;color:#475569;margin-bottom:8px;}
-.crumb a{color:#c2410c;text-decoration:none;}
-.crumb a:hover{text-decoration:underline;}
-.theme-list{list-style:none;padding:0;}
-.theme-list li{padding:10px 14px;margin-bottom:6px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:6px;}
-.theme-list li:has(a){background:#ffffff;border-color:#c2410c;}
-.theme-list li a{color:#9a3412;font-weight:600;text-decoration:none;}
-.theme-list li a:hover{text-decoration:underline;}
-.theme-num{display:inline-block;width:30px;color:#94a3b8;font-weight:700;font-size:0.9em;}
+.crumb { margin-bottom: 24px; }
+.crumb a { color: inherit; }
+.hero { display: grid; grid-template-columns: 1fr 280px; gap: 32px; padding-bottom: 32px; border-bottom: 1px solid var(--hairline); margin-bottom: 36px; }
+.hero h1 { font-size: 28px; margin-bottom: 12px; }
+.hero p.lr-l3-abriss { font-family: var(--lr-font-serif); font-style: italic; color: var(--muted); font-size: 16px; }
+.legend-box { background: var(--paper); border: 1px solid var(--rule); padding: 16px; }
+.legend-box h3 { font-family: var(--lr-font-mono); font-size: var(--lr-cap-size); letter-spacing: var(--lr-cap-track); text-transform: uppercase; color: var(--muted); margin-bottom: 10px; font-weight: 500; }
+.legend-row { display: flex; align-items: center; gap: 10px; padding: 3px 0; font-size: 13px; }
+.filterbar { display: flex; gap: 8px; margin: 24px 0; flex-wrap: wrap; }
+.section-head { display: flex; align-items: baseline; gap: 14px; margin: 32px 0 14px; }
+.section-head .line { flex: 1; height: 1px; background: var(--hairline); }
+.section-head h2 { font-size: 20px; font-weight: 600; }
+.querschnitt-note { font-family: var(--lr-font-serif); font-style: italic; color: var(--muted); font-size: 14px; margin-bottom: 14px; }
+.themen-table .theme-titel { font-weight: 600; }
+.themen-table .theme-sub { font-family: var(--lr-font-mono); font-size: 11px; color: var(--muted); letter-spacing: 0.4px; display: block; margin-top: 2px; }
+.themen-table .tag-cell { display: flex; flex-wrap: wrap; gap: 4px; }
+.themen-table tr.is-planned { opacity: 0.55; }
+.themen-table tr.is-planned .theme-titel::after { content: " · in Vorbereitung"; font-family: var(--lr-font-mono); font-size: 10.5px; letter-spacing: 0.6px; color: var(--mute2); }
 </style>
 </head>
-<body>
-<main>
-  <div class="crumb"><a href="../../">Startseite</a> › <a href="../">Staatsexamen</a> › Schulrecht</div>
-  <h1>Schulrecht — Staatsexamen MS Bayern</h1>
-  <p>Themenfelder gemäß <strong>ZALGM § 16 Nr. 1–10</strong> für die mündliche Prüfung Schulrecht.</p>
+<body data-lernraum data-fach="schulrecht">
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+<main id="main-content">
 
-  <h2>Themenfelder</h2>
-  <ul class="theme-list">
-    <li data-status="planned"><span class="theme-num">1.</span> Hierarchie der Rechtsvorschriften / Aufbau des bayerischen Schulrechts</li>
-    <li><span class="theme-num">2.</span> <a href="skripts/mp03/">Gliederung des Bildungssystems, Bildungswege</a> <span style="color:#475569;font-size:0.85em;font-weight:400;">— MP_03</span></li>
-    <li><span class="theme-num">3.</span> <a href="skripts/mp04/">Schulpflicht und Schulbesuch</a> <span style="color:#475569;font-size:0.85em;font-weight:400;">— MP_04 (Schullaufbahn-Steuerung)</span></li>
-    <li><span class="theme-num">4.</span> <a href="skripts/mp04/">Aufnahme, Versetzung, Übertritt, Abschlüsse</a> <span style="color:#475569;font-size:0.85em;font-weight:400;">— MP_04</span></li>
-    <li><span class="theme-num">5.</span> <a href="skripts/mp05/">Leistungserhebung, Notengebung, Zeugnisse</a> <span style="color:#475569;font-size:0.85em;font-weight:400;">— MP_05 (Notenauskunft + Zeugnisse)</span></li>
-    <li><span class="theme-num">6.</span> <a href="skripts/mp02/">Erziehungs- und Ordnungsmaßnahmen</a> <span style="color:#475569;font-size:0.85em;font-weight:400;">— MP_02 (HA + Beschwerde) · MP_05 (EOM-Stufen)</span></li>
-    <li><span class="theme-num">7.</span> <a href="skripts/mp07/">Aufsichtspflicht und Haftung</a> <span style="color:#475569;font-size:0.85em;font-weight:400;">— MP_07 · MP_06 A.2</span></li>
-    <li><span class="theme-num">8.</span> <a href="skripts/mp08/">Kooperation mit schulischen und außerschulischen Bildungs- und Betreuungseinrichtungen</a> <span style="color:#475569;font-size:0.85em;font-weight:400;">— MP_08</span></li>
-    <li><span class="theme-num">9.</span> <a href="skripts/mp06/">Lehrkraft im Beamtenverhältnis (Dienstrecht)</a> <span style="color:#475569;font-size:0.85em;font-weight:400;">— MP_06 · MP_07</span></li>
-    <li><span class="theme-num">10.</span> <a href="skripts/mp09/">Spezialthemen (JuSchG, Datenschutz, Inklusion)</a> <span style="color:#475569;font-size:0.85em;font-weight:400;">— MP_09 (Datenschutz/Schülerakte) · MP_01 (Messer/JuSchG)</span></li>
-  </ul>
+  <nav aria-label="Brotkrumen" class="mono-cap crumb">
+    <a href="../../">STARTSEITE</a>
+    <span aria-hidden="true">›</span>
+    <a href="../">STAATSEXAMEN</a>
+    <span aria-hidden="true">›</span>
+    <span>SCHULRECHT</span>
+  </nav>
 
-  <h2>Querschnitts-Themen</h2>
-  <ul class="theme-list">
-    <li><span class="theme-num">★</span> <a href="skripts/mp05/">Rechte und Pflichten der Schüler:innen</a> — Schwerpunkt 5.1 + ndM + SMV (MP_05)</li>
-    <li><span class="theme-num">★</span> <a href="skripts/mp06/">Rechte und Pflichten der Lehrkräfte</a> — Verschwiegenheit · Aufsicht · Fortbildung · PR (MP_06)</li>
-    <li><span class="theme-num">★</span> <a href="skripts/mp01/">Messer im Unterricht — Beschlagnahme + Strafrecht</a> (MP_01)</li>
-    <li><span class="theme-num">★</span> <a href="skripts/mp02/">Hausaufgaben + Beschwerdeverfahren</a> (MP_02)</li>
-  </ul>
+  <header class="hero">
+    <div>
+      <span class="mono-cap">Prüfungsteil I · ZALGM § 16 Nr. 1–10</span>
+      <h1>Schulrecht. 10 Themenfelder, 4 Schwerpunkte.</h1>
+      <p class="lr-l3-abriss">
+        Themenfelder gemäß ZALGM für die mündliche Prüfung Schulrecht. Schwerpunkte sind
+        querschnittliche Bündel, die mehrere Themenfelder verklammern.
+      </p>
+    </div>
+    <aside class="legend-box" aria-label="Lernstand-Legende">
+      <h3>Lernstand</h3>
+      <div class="legend-row"><span class="status-dot" data-status="planned" aria-hidden="true"></span><span>in Vorbereitung</span></div>
+      <div class="legend-row"><span class="status-dot" data-status="open" aria-hidden="true"></span><span>offen</span></div>
+      <div class="legend-row"><span class="status-dot" data-status="work" aria-hidden="true"></span><span>in Arbeit</span></div>
+      <div class="legend-row"><span class="status-dot" data-status="repeat" aria-hidden="true"></span><span>wiederholt</span></div>
+      <div class="legend-row"><span class="status-dot" data-status="sit" aria-hidden="true"></span><span>sitzt</span></div>
+    </aside>
+  </header>
 
-  <h2>Vollständige Skripten-Übersicht</h2>
-  <p><a href="skripts/" style="color:#9a3412;font-weight:600;">→ Alle MP-Skripte (MP_01–MP_09) in der mkdocs-Site</a></p>
+  <div class="filterbar" role="toolbar" aria-label="Status-Filter">
+    <button type="button" class="lr-btn is-active" data-filter="all">Alle</button>
+    <button type="button" class="lr-btn" data-filter="open">Offen</button>
+    <button type="button" class="lr-btn" data-filter="work">In Arbeit</button>
+    <button type="button" class="lr-btn" data-filter="sit">Sitzt</button>
+  </div>
+
+  <div class="section-head">
+    <h2 id="themen-heading">Themenfelder</h2>
+    <span class="line" aria-hidden="true"></span>
+    <span class="mono-cap">10 Felder</span>
+  </div>
+
+  <table class="lr-table themen-table" aria-labelledby="themen-heading">
+    <colgroup>
+      <col class="col-nr"><col class="col-status"><col><col class="col-tags"><col class="col-stand"><col class="col-arrow">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>Nr</th><th></th><th>Themenfeld</th><th>Norm-Anker</th><th>Lernstand</th><th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="is-planned" data-status-id="schulrecht.1-hierarchie">
+        <td class="col-nr">1</td>
+        <td><span class="status-dot" data-status="planned" aria-label="in Vorbereitung"></span></td>
+        <td><span class="theme-titel">Hierarchie der Rechtsvorschriften</span><span class="theme-sub">Aufbau des bayerischen Schulrechts</span></td>
+        <td class="tag-cell"></td>
+        <td><span class="status-label">in Vorbereitung</span></td>
+        <td class="col-arrow">→</td>
+      </tr>
+      <tr data-status-id="schulrecht.2-gliederung-bildungssystem">
+        <td class="col-nr">2</td>
+        <td><span class="status-dot" data-status="open" aria-label="offen"></span></td>
+        <td><a href="2-gliederung-bildungssystem/" class="theme-titel">Gliederung des Bildungssystems</a><span class="theme-sub">MP_03 · Bildungswege</span></td>
+        <td class="tag-cell">
+          <button type="button" class="anchor-tag" data-type="norm" data-ref="BV Art. 128">BV Art. 128</button>
+          <button type="button" class="anchor-tag" data-type="norm" data-ref="Art. 43">Art. 43</button>
+        </td>
+        <td><span class="status-label">offen</span></td>
+        <td class="col-arrow">→</td>
+      </tr>
+      <tr data-status-id="schulrecht.3-schulpflicht">
+        <td class="col-nr">3</td>
+        <td><span class="status-dot" data-status="open" aria-label="offen"></span></td>
+        <td><a href="skripts/mp04/" class="theme-titel">Schulpflicht und Schulbesuch</a><span class="theme-sub">MP_04 · Schullaufbahn-Steuerung</span></td>
+        <td class="tag-cell">
+          <button type="button" class="anchor-tag" data-type="norm" data-ref="Art. 35 BayEUG">Art. 35</button>
+          <button type="button" class="anchor-tag" data-type="norm" data-ref="Art. 37">Art. 37</button>
+          <button type="button" class="anchor-tag" data-type="norm" data-ref="Art. 41">Art. 41</button>
+        </td>
+        <td><span class="status-label">offen</span></td>
+        <td class="col-arrow">→</td>
+      </tr>
+      <tr data-status-id="schulrecht.4-aufnahme-versetzung">
+        <td class="col-nr">4</td>
+        <td><span class="status-dot" data-status="open" aria-label="offen"></span></td>
+        <td><a href="skripts/mp04/" class="theme-titel">Aufnahme, Versetzung, Übertritt</a><span class="theme-sub">MP_04 · Abschlüsse</span></td>
+        <td class="tag-cell">
+          <button type="button" class="anchor-tag" data-type="norm" data-ref="Art. 43">Art. 43</button>
+          <button type="button" class="anchor-tag" data-type="norm" data-ref="Art. 44">Art. 44</button>
+        </td>
+        <td><span class="status-label">offen</span></td>
+        <td class="col-arrow">→</td>
+      </tr>
+      <tr data-status-id="schulrecht.5-rechte-pflichten-schueler">
+        <td class="col-nr">5</td>
+        <td><span class="status-dot" data-status="open" aria-label="offen"></span></td>
+        <td><a href="5-rechte-pflichten-schueler/" class="theme-titel">Rechte und Pflichten der Schüler:innen</a><span class="theme-sub">MP_05 · ZALGM 5.1+5.4+5.6</span></td>
+        <td class="tag-cell">
+          <button type="button" class="anchor-tag" data-type="norm" data-ref="Art. 56/2">Art. 56/2</button>
+          <button type="button" class="anchor-tag" data-type="norm" data-ref="Art. 56/4">Art. 56/4</button>
+          <button type="button" class="anchor-tag" data-type="norm" data-ref="Art. 62">Art. 62</button>
+        </td>
+        <td><span class="status-label">offen</span></td>
+        <td class="col-arrow">→</td>
+      </tr>
+      <tr data-status-id="schulrecht.6-leistungserhebung">
+        <td class="col-nr">6</td>
+        <td><span class="status-dot" data-status="open" aria-label="offen"></span></td>
+        <td><a href="skripts/mp05/" class="theme-titel">Leistungserhebung, Notengebung, Zeugnisse</a><span class="theme-sub">MP_05 · Notenauskunft</span></td>
+        <td class="tag-cell">
+          <button type="button" class="anchor-tag" data-type="norm" data-ref="Art. 52">Art. 52</button>
+          <button type="button" class="anchor-tag" data-type="norm" data-ref="Art. 52/1">Art. 52/1</button>
+          <button type="button" class="anchor-tag" data-type="norm" data-ref="Art. 52/3">Art. 52/3</button>
+        </td>
+        <td><span class="status-label">offen</span></td>
+        <td class="col-arrow">→</td>
+      </tr>
+      <tr data-status-id="schulrecht.7-eom">
+        <td class="col-nr">7</td>
+        <td><span class="status-dot" data-status="open" aria-label="offen"></span></td>
+        <td><a href="skripts/mp02/" class="theme-titel">Erziehungs- und Ordnungsmaßnahmen</a><span class="theme-sub">MP_02 · MP_05 EOM-Stufen</span></td>
+        <td class="tag-cell">
+          <button type="button" class="anchor-tag" data-type="norm" data-ref="§ 23 BaySchO">§ 23</button>
+          <button type="button" class="anchor-tag" data-type="norm" data-ref="§ 28 BaySchO">§ 28</button>
+        </td>
+        <td><span class="status-label">offen</span></td>
+        <td class="col-arrow">→</td>
+      </tr>
+      <tr data-status-id="schulrecht.8-aufsicht-haftung">
+        <td class="col-nr">8</td>
+        <td><span class="status-dot" data-status="open" aria-label="offen"></span></td>
+        <td><a href="skripts/mp07/" class="theme-titel">Aufsichtspflicht und Haftung</a><span class="theme-sub">MP_07 · MP_06 A.2</span></td>
+        <td class="tag-cell">
+          <button type="button" class="anchor-tag" data-type="norm" data-ref="Art. 80">Art. 80</button>
+        </td>
+        <td><span class="status-label">offen</span></td>
+        <td class="col-arrow">→</td>
+      </tr>
+      <tr data-status-id="schulrecht.9-kooperation">
+        <td class="col-nr">9</td>
+        <td><span class="status-dot" data-status="open" aria-label="offen"></span></td>
+        <td><a href="8-kooperation/" class="theme-titel">Kooperation mit Bildungs- und Betreuungseinrichtungen</a><span class="theme-sub">MP_08</span></td>
+        <td class="tag-cell"></td>
+        <td><span class="status-label">offen</span></td>
+        <td class="col-arrow">→</td>
+      </tr>
+      <tr data-status-id="schulrecht.10-dienstrecht">
+        <td class="col-nr">10</td>
+        <td><span class="status-dot" data-status="open" aria-label="offen"></span></td>
+        <td><a href="skripts/mp06/" class="theme-titel">Lehrkraft im Beamtenverhältnis (Dienstrecht)</a><span class="theme-sub">MP_06 · MP_07</span></td>
+        <td class="tag-cell">
+          <button type="button" class="anchor-tag" data-type="norm" data-ref="Art. 73">Art. 73</button>
+        </td>
+        <td><span class="status-label">offen</span></td>
+        <td class="col-arrow">→</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="section-head">
+    <h2 id="schwerpunkte-heading">Querschnitts-Schwerpunkte</h2>
+    <span class="line" aria-hidden="true"></span>
+    <span class="mono-cap">4 Bündel</span>
+  </div>
+  <p class="querschnitt-note">Querschnitts-Themen sind sekundär — sie bündeln Inhalte aus den Themenfeldern oben (keine Doppellistung).</p>
+
+  <table class="lr-table themen-table" aria-labelledby="schwerpunkte-heading">
+    <colgroup>
+      <col class="col-nr"><col class="col-status"><col><col class="col-tags"><col class="col-stand"><col class="col-arrow">
+    </colgroup>
+    <tbody>
+      <tr data-status-id="schulrecht.qs-rechte-pflichten-schueler">
+        <td class="col-nr">★</td>
+        <td><span class="status-dot" data-status="open"></span></td>
+        <td><a href="5-rechte-pflichten-schueler/" class="theme-titel">Rechte und Pflichten der Schüler:innen</a><span class="theme-sub">→ Themenfeld 5 · MP_05</span></td>
+        <td class="tag-cell">
+          <button type="button" class="anchor-tag" data-type="norm" data-ref="Art. 56/2">Art. 56/2</button>
+          <button type="button" class="anchor-tag" data-type="norm" data-ref="Art. 62">Art. 62</button>
+        </td>
+        <td><span class="status-label">offen</span></td>
+        <td class="col-arrow">→</td>
+      </tr>
+      <tr data-status-id="schulrecht.qs-rechte-pflichten-lehrkraft">
+        <td class="col-nr">★</td>
+        <td><span class="status-dot" data-status="open"></span></td>
+        <td><a href="skripts/mp06/" class="theme-titel">Rechte und Pflichten der Lehrkräfte</a><span class="theme-sub">→ Themenfeld 10 · Verschwiegenheit · Aufsicht · Fortbildung</span></td>
+        <td class="tag-cell">
+          <button type="button" class="anchor-tag" data-type="norm" data-ref="Art. 73">Art. 73</button>
+        </td>
+        <td><span class="status-label">offen</span></td>
+        <td class="col-arrow">→</td>
+      </tr>
+      <tr data-status-id="schulrecht.qs-messer">
+        <td class="col-nr">★</td>
+        <td><span class="status-dot" data-status="open"></span></td>
+        <td><a href="skripts/mp01/" class="theme-titel">Messer im Unterricht — Beschlagnahme + Strafrecht</a><span class="theme-sub">→ Themenfeld 10 · MP_01</span></td>
+        <td class="tag-cell">
+          <button type="button" class="anchor-tag" data-type="norm" data-ref="JuSchG">JuSchG</button>
+          <button type="button" class="anchor-tag" data-type="norm" data-ref="§ 23 BaySchO">§ 23</button>
+        </td>
+        <td><span class="status-label">offen</span></td>
+        <td class="col-arrow">→</td>
+      </tr>
+      <tr data-status-id="schulrecht.qs-hausaufgaben">
+        <td class="col-nr">★</td>
+        <td><span class="status-dot" data-status="open"></span></td>
+        <td><a href="skripts/mp02/" class="theme-titel">Hausaufgaben + Beschwerdeverfahren</a><span class="theme-sub">→ Themenfeld 6/7 · MP_02</span></td>
+        <td class="tag-cell">
+          <button type="button" class="anchor-tag" data-type="norm" data-ref="§ 28 BaySchO">§ 28</button>
+        </td>
+        <td><span class="status-label">offen</span></td>
+        <td class="col-arrow">→</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="mono-cap" style="margin-top: 36px;">
+    <a href="skripts/">Alle MP-Skripte (MP_01–MP_09) in der mkdocs-Site →</a>
+  </p>
 </main>
+
 <script src="../../assets/js/core.js"></script>
+<script>
+// Filter-Buttons (v3.4-Erhalt §11.2 — Spec-konformer Refactor)
+(function() {
+  if (!document.body.hasAttribute('data-lernraum')) return;
+  var bar = document.querySelector('.filterbar');
+  if (!bar) return;
+  bar.addEventListener('click', function(ev) {
+    var btn = ev.target.closest('[data-filter]');
+    if (!btn) return;
+    bar.querySelectorAll('[data-filter]').forEach(function(b) {
+      b.classList.toggle('is-active', b === btn);
+    });
+    var f = btn.getAttribute('data-filter');
+    document.querySelectorAll('.themen-table tbody tr').forEach(function(tr) {
+      var dot = tr.querySelector('.status-dot');
+      var status = dot ? dot.getAttribute('data-status') : 'open';
+      tr.style.display = (f === 'all' || status === f) ? '' : 'none';
+    });
+  });
+})();
+</script>
 </body>
 </html>

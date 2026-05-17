@@ -1,0 +1,1904 @@
+{
+  "08.07.2013 (oGTS)": {
+    "definition": "offene Ganztagsschule (Antragsprinzip Schulaufwandsträger; Mindestumfang 4 Tage à 7 Std.; Anmeldung freiwillig + Teilnahme verpflichtend)",
+    "key": "08.07.2013 (oGTS)",
+    "title": "KMBek 08.07.2013",
+    "type": "norm"
+  },
+  "10.02.2020 (gGTS)": {
+    "definition": "gebundene Ganztagsschule (rhythmisierte Ganztagsklassen; 4 Tage à 7 Std.; 45-Min-Regel-Abweichung möglich)",
+    "key": "10.02.2020 (gGTS)",
+    "title": "KMBek 10.02.2020",
+    "type": "norm"
+  },
+  "12.06.1991 (Hort↔Schule)": {
+    "definition": "Kooperation Hort↔Schule (Träger kommunal/kirchlich/freie JuHi; gemeinsame Besprechungen + Fortbildungen)",
+    "key": "12.06.1991 (Hort↔Schule)",
+    "title": "KMBek 12.06.1991",
+    "type": "norm"
+  },
+  "29.10.2001 (Schulberatung)": {
+    "definition": "Beratungslehrkraft + Schulpsycholog:in + MSD; 9 staatl. Schulberatungsstellen; KIBBS",
+    "key": "29.10.2001 (Schulberatung)",
+    "title": "KMBek 29.10.2001 (geänd. 24.06.2011)",
+    "type": "norm"
+  },
+  "Art. 1": {
+    "definition": "„Die Befähigung für ein Lehramt an öffentlichen Schulen setzt eine abgeschlossene wissenschaftliche oder künstlerische Vorbildung (Studium) und eine abgeschlossene schulpraktische Ausbildung (Vorbereitungsdienst) voraus; Vorbildung und…\"",
+    "key": "Art. 1",
+    "title": "BV Art. 1",
+    "type": "norm"
+  },
+  "Art. 1 BayLBG": {
+    "definition": "„Allgemeines Die Befähigung für ein Lehramt an öffentlichen Schulen setzt eine abgeschlossene wissenschaftliche oder künstlerische Vorbildung (Studium) und eine abgeschlossene schulpraktische Ausbildung (Vorbereitungsdienst) voraus; Vorbild…",
+    "key": "Art. 1 BayLBG",
+    "title": "BayLBG Art. 1",
+    "type": "norm"
+  },
+  "Art. 10 BayDG": {
+    "definition": "„Zurückstufung Abs. 1: Die Zurückstufung ist die Versetzung in ein Amt mit geringerem Endgrundgehalt, höchstens bis in das jeweilige Eingangsamt. Der Beamte oder die Beamtin verliert alle Rechte aus dem bisherigen Amt einschließlich der dam…",
+    "key": "Art. 10 BayDG",
+    "title": "BayDG Art. 10",
+    "type": "norm"
+  },
+  "Art. 10 BayPVG": {
+    "definition": "„Abs. 1: Die Zurückstufung ist die Versetzung in ein Amt mit geringerem Endgrundgehalt, höchstens bis in das jeweilige Eingangsamt. Der Beamte oder die Beamtin verliert alle Rechte aus dem bisherigen Amt einschließlich der damit verbundenen…\"",
+    "key": "Art. 10 BayPVG",
+    "title": "BayPVG Art. 10",
+    "type": "norm"
+  },
+  "Art. 100": {
+    "definition": "Konkrete Normenkontrolle (NICHT Datenschutz-Anker; Stale-Sekundärquelle).",
+    "key": "Art. 100",
+    "title": "GG Art. 100",
+    "type": "norm"
+  },
+  "Art. 100/101": {
+    "definition": "Konkrete Normenkontrolle / Recht auf gesetzlichen Richter (NICHT Datenschutz-Anker).",
+    "key": "Art. 100/101",
+    "title": "GG Art. 100 + 101",
+    "type": "norm"
+  },
+  "Art. 102": {
+    "definition": "Privatschulen: Förderung.",
+    "key": "Art. 102",
+    "title": "BayEUG Art. 102",
+    "type": "norm"
+  },
+  "Art. 103/3 GG": {
+    "definition": "„Niemand darf wegen derselben Tat auf Grund der allgemeinen Strafgesetze mehrmals bestraft werden.\"",
+    "key": "Art. 103/3 GG",
+    "title": "GG Art. 103/3",
+    "type": "norm"
+  },
+  "Art. 11 BayDG": {
+    "definition": "„Entfernung aus dem Beamtenverhältnis Abs. 1: Mit der Entfernung aus dem Beamtenverhältnis endet das Dienstverhältnis. Der Beamte oder die Beamtin verliert den Anspruch auf Dienstbezüge und Versorgung einschließlich der Hinterbliebenenverso…",
+    "key": "Art. 11 BayDG",
+    "title": "BayDG Art. 11",
+    "type": "norm"
+  },
+  "Art. 11 BayPVG": {
+    "definition": "„Abs. 1: Mit der Entfernung aus dem Beamtenverhältnis endet das Dienstverhältnis. Der Beamte oder die Beamtin verliert den Anspruch auf Dienstbezüge und Versorgung einschließlich der Hinterbliebenenversorgung sowie die Befugnis, die…\"",
+    "key": "Art. 11 BayPVG",
+    "title": "BayPVG Art. 11",
+    "type": "norm"
+  },
+  "Art. 110": {
+    "definition": "Bayerische Verfassung; Gleichheitsgrundsatz.",
+    "key": "Art. 110",
+    "title": "BV Art. 110",
+    "type": "norm"
+  },
+  "Art. 111": {
+    "definition": "Sonstiges päd. Personal: Rechtsstellung.",
+    "key": "Art. 111",
+    "title": "BayEUG Art. 111",
+    "type": "norm"
+  },
+  "Art. 118": {
+    "definition": "„Abs. 1: Wer ohne berechtigten Grund dem Unterricht oder einer verbindlichen Schulveranstaltung fernbleibt, obwohl er der Schulpflicht unterliegt, kann auf Antrag der Schule von der Kreisverwaltungsbehörde durch ihre Beauftragten…\"",
+    "key": "Art. 118",
+    "title": "BayEUG Art. 118",
+    "type": "norm"
+  },
+  "Art. 118 BayEUG": {
+    "definition": "„Abs. 1: Wer ohne berechtigten Grund dem Unterricht oder einer verbindlichen Schulveranstaltung fernbleibt, obwohl er der Schulpflicht unterliegt, kann auf Antrag der Schule von der Kreisverwaltungsbehörde durch ihre Beauftragten zwangsweis…",
+    "key": "Art. 118 BayEUG",
+    "title": "BayEUG Art. 118",
+    "type": "norm"
+  },
+  "Art. 119": {
+    "definition": "Ordnungswidrigkeit bei Unterlassung Anmeldung (Geldbuße).",
+    "key": "Art. 119",
+    "title": "BayEUG Art. 119",
+    "type": "norm"
+  },
+  "Art. 12 BayPVG": {
+    "definition": "Personalrat in staatlichen Dienststellen.",
+    "key": "Art. 12 BayPVG",
+    "title": "BayPVG Art. 12",
+    "type": "norm"
+  },
+  "Art. 120": {
+    "definition": "Grundrechtseinschränkung Freiheit/Wohnung zugunsten Schulpflicht.",
+    "key": "Art. 120",
+    "title": "BayEUG Art. 120",
+    "type": "norm"
+  },
+  "Art. 128 BV": {
+    "definition": "„Abs. 1: Jeder Bewohner Bayerns hat Anspruch darauf, eine seinen erkennbaren Fähigkeiten und seiner inneren Berufung entsprechende Ausbildung zu erhalten. Abs. 2: Begabten ist der Besuch von Schulen und Hochschulen, nötigenfalls aus öffentl…",
+    "key": "Art. 128 BV",
+    "title": "BV Art. 128",
+    "type": "norm"
+  },
+  "Art. 129 BV": {
+    "definition": "„Abs. 1: Alle Kinder sind zum Besuch der Volksschule und der Berufsschule verpflichtet. Abs. 2: Der Unterricht an diesen Schulen ist unentgeltlich.…",
+    "key": "Art. 129 BV",
+    "title": "BV Art. 129",
+    "type": "norm"
+  },
+  "Art. 13 BayPVG": {
+    "definition": "Wahlmodus (geheim, unmittelbar, Verhältniswahl).",
+    "key": "Art. 13 BayPVG",
+    "title": "BayPVG Art. 13",
+    "type": "norm"
+  },
+  "Art. 131 BV": {
+    "definition": "„Abs. 1: Die Schulen sollen nicht nur Wissen und Können vermitteln, sondern auch Herz und Charakter bilden. Abs. 2: Oberste Bildungsziele sind Ehrfurcht vor Gott, Achtung vor religiöser Überzeugung und vor der Würde des Menschen,…\"",
+    "key": "Art. 131 BV",
+    "title": "BV Art. 131",
+    "type": "norm"
+  },
+  "Art. 132 BV": {
+    "definition": "„Für den Aufbau des Schulwesens ist die Mannigfaltigkeit der Lebensberufe, für die Aufnahme eines Kindes in eine bestimmte Schule sind seine Anlagen, seine Neigung, seine Leistung und seine innere Berufung maßgebend, nicht aber die…\"",
+    "key": "Art. 132 BV",
+    "title": "BV Art. 132",
+    "type": "norm"
+  },
+  "Art. 133 BV": {
+    "definition": "„Abs. 1: Für die Bildung der Jugend ist durch öffentliche Anstalten zu sorgen. Bei ihrer Einrichtung wirken Staat und Gemeinde zusammen. Auch die anerkannten Religionsgemeinschaften und weltanschaulichen Gemeinschaften sind Bildungsträger. …",
+    "key": "Art. 133 BV",
+    "title": "BV Art. 133",
+    "type": "norm"
+  },
+  "Art. 134 BV": {
+    "definition": "„Abs. 1: Privatschulen müssen den an die öffentlichen Schulen gestellten Anforderungen entsprechen. Sie können nur mit Genehmigung des Staates errichtet und betrieben werden. Abs. 2: Die Genehmigung ist zu erteilen, wenn die Schule in ihren…",
+    "key": "Art. 134 BV",
+    "title": "BV Art. 134",
+    "type": "norm"
+  },
+  "Art. 136 BV": {
+    "definition": "Religionsunterricht: Bevollmächtigung durch Religionsgemeinschaft + Schriftform-Ablehnung Lehrauftrag ReliU.",
+    "key": "Art. 136 BV",
+    "title": "BV Art. 136 Abs. 3+4",
+    "type": "norm"
+  },
+  "Art. 136/3": {
+    "definition": "Religionsunterricht: Bevollmächtigung Religionsgemeinschaft.",
+    "key": "Art. 136/3",
+    "title": "BV Art. 136 Abs. 3",
+    "type": "norm"
+  },
+  "Art. 14 BayPVG": {
+    "definition": "Wählbarkeit: 6 Mon. Geschäftsbereich + 1 Jahr öff.-rechtl. Dienstverh.",
+    "key": "Art. 14 BayPVG",
+    "title": "BayPVG Art. 14",
+    "type": "norm"
+  },
+  "Art. 15 BayPVG": {
+    "definition": "Wahlanfechtung.",
+    "key": "Art. 15 BayPVG",
+    "title": "BayPVG Art. 15",
+    "type": "norm"
+  },
+  "Art. 17": {
+    "definition": "Recht auf Löschung („Recht auf Vergessenwerden\").",
+    "key": "Art. 17",
+    "title": "DSGVO Art. 17",
+    "type": "norm"
+  },
+  "Art. 19 BayEUG": {
+    "definition": "„Abs. 1: Die Förderschulen diagnostizieren, erziehen, unterrichten, beraten und fördern Kinder und Jugendliche, die der sonderpädagogischen Förderung bedürfen und deswegen an einer allgemeinen Schule (allgemein bildende oder berufliche…\"",
+    "key": "Art. 19 BayEUG",
+    "title": "BayEUG Art. 19",
+    "type": "norm"
+  },
+  "Art. 19/1": {
+    "definition": "Förderzentrum · Aufgaben · Diagnose",
+    "key": "Art. 19/1",
+    "title": "BayEUG Art. 19/1",
+    "type": "norm"
+  },
+  "Art. 19/2": {
+    "definition": "„Aufgaben sind 1. die schulische Unterrichtung und Förderung in Klassen mit bestimmten Förderschwerpunkten, 2. die vorschulische Förderung durch die Schulvorbereitenden Einrichtungen, 3. im Rahmen der verfügbaren Stellen und Mittel: a) die…\"",
+    "key": "Art. 19/2",
+    "title": "BayEUG Art. 19/2",
+    "type": "norm"
+  },
+  "Art. 19/2 BayEUG": {
+    "definition": "„Aufgaben sind 1. die schulische Unterrichtung und Förderung in Klassen mit bestimmten Förderschwerpunkten, 2. die vorschulische Förderung durch die Schulvorbereitenden Einrichtungen, 3. im Rahmen der verfügbaren Stellen und Mittel: a) die …",
+    "key": "Art. 19/2 BayEUG",
+    "title": "BayEUG Art. 19/2",
+    "type": "norm"
+  },
+  "Art. 2 BayEUG": {
+    "definition": "„Abs. 2: Inklusiver Unterricht ist Aufgabe aller Schulen. # Abs. 1, 3-6: WebFetch lieferte nur Summary — Verbatim für 13 Spiegelstrich-Aufzählung in Abs. 1 nicht zugänglich. Manueller Pull aus gesetze-bayern.de erforderlich.\"",
+    "key": "Art. 2 BayEUG",
+    "title": "BayEUG Art. 2",
+    "type": "norm"
+  },
+  "Art. 2 BayLBG": {
+    "definition": "„Lehrämter Lehrämter sind: 1. das Lehramt an Grundschulen, 2. das Lehramt an Mittelschulen, 3. das Lehramt an Realschulen, 4. das Lehramt an Gymnasien, 5. das Lehramt an beruflichen Schulen, 6. das Lehramt für Sonderpädagogik.…",
+    "key": "Art. 2 BayLBG",
+    "title": "BayLBG Art. 2",
+    "type": "norm"
+  },
+  "Art. 2/1": {
+    "definition": "Allgemeines Persönlichkeitsrecht (i.V.m. Art. 1/1 GG).",
+    "key": "Art. 2/1",
+    "title": "GG Art. 2 Abs. 1",
+    "type": "norm"
+  },
+  "Art. 20 BayEUG": {
+    "definition": "„Abs. 1: Förderschulen können gebildet werden für 1. den Förderschwerpunkt Sehen, 2. den Förderschwerpunkt Hören, 3. den Förderschwerpunkt körperliche und motorische Entwicklung, 4. den Förderschwerpunkt geistige Entwicklung, 5. den…\"",
+    "key": "Art. 20 BayEUG",
+    "title": "BayEUG Art. 20",
+    "type": "norm"
+  },
+  "Art. 20 BayLBG": {
+    "definition": "„Abs. 1: Die Fortbildung des Lehrers dient der Erhaltung der für die Ausübung des Lehramts erworbenen Fähigkeiten und deren Anpassung an die Entwicklung der Erkenntnisse der Wissenschaft bzw. der Wirtschafts- und Arbeitswelt.…\"",
+    "key": "Art. 20 BayLBG",
+    "title": "BayLBG Art. 20",
+    "type": "norm"
+  },
+  "Art. 21 BayEUG": {
+    "definition": "„Abs. 1: Die Mobilen Sonderpädagogischen Dienste unterstützen die Unterrichtung von Schülerinnen und Schülern mit sonderpädagogischem Förderbedarf, die nach Maßgabe des Art. 41 eine allgemeine Schule besuchen können; sie können auch an…\"",
+    "key": "Art. 21 BayEUG",
+    "title": "BayEUG Art. 21",
+    "type": "norm"
+  },
+  "Art. 21/1 BayEUG": {
+    "definition": "„Die Mobilen Sonderpädagogischen Dienste unterstützen die Unterrichtung von Schülerinnen und Schülern mit sonderpädagogischem Förderbedarf, die nach Maßgabe des Art. 41 eine allgemeine Schule besuchen können; sie können auch an einer…\"",
+    "key": "Art. 21/1 BayEUG",
+    "title": "BayEUG Art. 21/1",
+    "type": "norm"
+  },
+  "Art. 3": {
+    "definition": "Schulträger (öff./privat); Lehrpläne + Stundentafeln.",
+    "key": "Art. 3",
+    "title": "BayEUG Art. 3",
+    "type": "norm"
+  },
+  "Art. 30a BayEUG": {
+    "definition": "„Abs. 1: 1Die Schulen aller Schularten haben zusammenzuarbeiten. 2Dies gilt insbesondere für Schulen im gleichen Einzugsbereich zur Ergänzung des Unterrichtsangebots und zur Abstimmung der Unterrichtszeiten. 3Die Schulen stimmen sich beim…\"",
+    "key": "Art. 30a BayEUG",
+    "title": "BayEUG Art. 30a",
+    "type": "norm"
+  },
+  "Art. 30a/1": {
+    "definition": "„Die Schulen aller Schularten haben zusammenzuarbeiten. Dies gilt insbesondere für Schulen im gleichen Einzugsbereich zur Ergänzung des Unterrichtsangebots und zur Abstimmung der Unterrichtszeiten. Die Schulen stimmen sich beim Wechsel…\"",
+    "key": "Art. 30a/1",
+    "title": "BayEUG Art. 30a/1",
+    "type": "norm"
+  },
+  "Art. 30a/1 BayEUG": {
+    "definition": "„Die Schulen aller Schularten haben zusammenzuarbeiten. Dies gilt insbesondere für Schulen im gleichen Einzugsbereich zur Ergänzung des Unterrichtsangebots und zur Abstimmung der Unterrichtszeiten. Die Schulen stimmen sich beim Wechsel eine…",
+    "key": "Art. 30a/1 BayEUG",
+    "title": "BayEUG Art. 30a/1",
+    "type": "norm"
+  },
+  "Art. 30a/3": {
+    "definition": "Inklusion · Zusammenarbeit Schularten · gemeinsamer Unterricht (Detail-Pull ausstehend)",
+    "key": "Art. 30a/3",
+    "title": "BayEUG Art. 30a/3",
+    "type": "norm"
+  },
+  "Art. 30a/4 BayEUG": {
+    "definition": "„Die Aufnahme von Schülerinnen und Schülern mit sonderpädagogischem Förderbedarf in den Förderschwerpunkten Sehen, Hören sowie körperliche und motorische Entwicklung in die allgemeine Schule bedarf der Zustimmung des Schulaufwandsträgers;…\"",
+    "key": "Art. 30a/4 BayEUG",
+    "title": "BayEUG Art. 30a/4",
+    "type": "norm"
+  },
+  "Art. 31/3 BayEUG": {
+    "definition": "„Mittagsbetreuung wird bei Bedarf auf Antrag des jeweiligen Trägers an der Grundschule, in geeigneten Fällen auch an anderen Schularten nach Maßgabe der im Staatshaushalt ausgebrachten Mittel im Zusammenwirken mit den Kommunen und den…\"",
+    "key": "Art. 31/3 BayEUG",
+    "title": "BayEUG Art. 31/3",
+    "type": "norm"
+  },
+  "Art. 33": {
+    "definition": "Staatsbürgerliche Gleichheit + Berufsbeamtentum.",
+    "key": "Art. 33",
+    "title": "GG Art. 33",
+    "type": "norm"
+  },
+  "Art. 33/5 GG": {
+    "definition": "Hergebrachte Grundsätze des Berufsbeamtentums.",
+    "key": "Art. 33/5 GG",
+    "title": "GG Art. 33 Abs. 5",
+    "type": "norm"
+  },
+  "Art. 34 GG": {
+    "definition": "Haftung bei Amtspflichtverletzung; Rückgriff bei Vorsatz/grober Fahrlässigkeit (Satz 2).",
+    "key": "Art. 34 GG",
+    "title": "GG Art. 34",
+    "type": "norm"
+  },
+  "Art. 35 BayEUG": {
+    "definition": "„Abs. 1: Wer die altersmäßigen Voraussetzungen erfüllt und in Bayern seinen gewöhnlichen Aufenthalt hat oder in einem Berufsausbildungsverhältnis oder einem Beschäftigungsverhältnis steht, unterliegt der Schulpflicht (Schulpflichtiger).…\"",
+    "key": "Art. 35 BayEUG",
+    "title": "BayEUG Art. 35",
+    "type": "norm"
+  },
+  "Art. 36/3": {
+    "definition": "„¹Für jeden aus dem Ausland zugezogenen Schulpflichtigen stellt die Schule fest, in welche Jahrgangsstufe der Pflichtschule er einzuweisen ist. ²Es gilt derjenige Teil der Schulpflicht als zurückgelegt, der dem durch die Einweisung…\"",
+    "key": "Art. 36/3",
+    "title": "BayEUG Art. 36 Abs. 3",
+    "type": "norm"
+  },
+  "Art. 36/3 BayEUG": {
+    "definition": "„¹Für jeden aus dem Ausland zugezogenen Schulpflichtigen stellt die Schule fest, in welche Jahrgangsstufe der Pflichtschule er einzuweisen ist. ²Es gilt derjenige Teil der Schulpflicht als zurückgelegt, der dem durch die Einweisung bestimmt…",
+    "key": "Art. 36/3 BayEUG",
+    "title": "BayEUG Art. 36/3",
+    "type": "norm"
+  },
+  "Art. 37": {
+    "definition": "Stichtag 30.09. + Einschulungskorridor 01.07.–30.09.",
+    "key": "Art. 37",
+    "title": "BayEUG Art. 37",
+    "type": "norm"
+  },
+  "Art. 39": {
+    "definition": "Berufsschulpflicht: 3 Jahre, spätestens bis Schuljahresende mit Vollendung 21. Lj.",
+    "key": "Art. 39",
+    "title": "BayEUG Art. 39",
+    "type": "norm"
+  },
+  "Art. 41": {
+    "definition": "„Abs. 1: Schulpflichtige mit sonderpädagogischem Förderbedarf erfüllen ihre Schulpflicht durch den Besuch der allgemeinen Schule oder der Förderschule. Die Förderschule kann besucht werden, sofern die Schülerin oder der Schüler einer…\"",
+    "key": "Art. 41",
+    "title": "BayEUG Art. 41",
+    "type": "norm"
+  },
+  "Art. 41 BayEUG": {
+    "definition": "„Abs. 1: Schulpflichtige mit sonderpädagogischem Förderbedarf erfüllen ihre Schulpflicht durch den Besuch der allgemeinen Schule oder der Förderschule. Die Förderschule kann besucht werden, sofern die Schülerin oder der Schüler einer besond…",
+    "key": "Art. 41 BayEUG",
+    "title": "BayEUG Art. 41",
+    "type": "norm"
+  },
+  "Art. 41/1": {
+    "definition": "Eltern entscheiden Lernort (allgem. Schule oder FöS).",
+    "key": "Art. 41/1",
+    "title": "BayEUG Art. 41 Abs. 1",
+    "type": "norm"
+  },
+  "Art. 41/4": {
+    "definition": "„Die Erziehungsberechtigten melden ihr Kind unter Beachtung der schulartspezifischen Regelungen für Aufnahme und Schulwechsel an der Sprengelschule, einer Schule mit dem Schulprofil »Inklusion« oder an der Förderschule an. Die Aufnahme an…\"",
+    "key": "Art. 41/4",
+    "title": "BayEUG Art. 41 Abs. 4",
+    "type": "norm"
+  },
+  "Art. 41/4 BayEUG": {
+    "definition": "„Die Erziehungsberechtigten melden ihr Kind unter Beachtung der schulartspezifischen Regelungen für Aufnahme und Schulwechsel an der Sprengelschule, einer Schule mit dem Schulprofil »Inklusion« oder an der Förderschule an. Die Aufnahme an d…",
+    "key": "Art. 41/4 BayEUG",
+    "title": "BayEUG Art. 41/4",
+    "type": "norm"
+  },
+  "Art. 41/6": {
+    "definition": "„Kommt keine einvernehmliche Aufnahme zustande, entscheidet die zuständige Schulaufsichtsbehörde nach Anhörung der Erziehungsberechtigten und der betroffenen Schulen über den schulischen Lernort. Sie kann ihre Lernortentscheidung auch…\"",
+    "key": "Art. 41/6",
+    "title": "BayEUG Art. 41 Abs. 6",
+    "type": "norm"
+  },
+  "Art. 41/6 BayEUG": {
+    "definition": "„Kommt keine einvernehmliche Aufnahme zustande, entscheidet die zuständige Schulaufsichtsbehörde nach Anhörung der Erziehungsberechtigten und der betroffenen Schulen über den schulischen Lernort. Sie kann ihre Lernortentscheidung auch zeitl…",
+    "key": "Art. 41/6 BayEUG",
+    "title": "BayEUG Art. 41/6",
+    "type": "norm"
+  },
+  "Art. 43": {
+    "definition": "Wechsel der Schulart.",
+    "key": "Art. 43",
+    "title": "BayEUG Art. 43",
+    "type": "norm"
+  },
+  "Art. 44": {
+    "definition": "Elternwahlrecht Schulart/Ausbildungs-/Fachrichtung; gebunden an Eignung + Leistung.",
+    "key": "Art. 44",
+    "title": "BayEUG Art. 44",
+    "type": "norm"
+  },
+  "Art. 5 GG": {
+    "definition": "„Abs. 1: Jeder hat das Recht, seine Meinung in Wort, Schrift und Bild frei zu äußern und zu verbreiten und sich aus allgemein zugänglichen Quellen ungehindert zu unterrichten. Die Pressefreiheit und die Freiheit der Berichterstattung durch…\"",
+    "key": "Art. 5 GG",
+    "title": "GG Art. 5",
+    "type": "norm"
+  },
+  "Art. 52": {
+    "definition": "„Abs. 1: Zum Nachweis des Leistungsstands erbringen die Schülerinnen und Schüler in angemessenen Zeitabständen entsprechend der Art des Fachs schriftliche, mündliche und praktische Leistungen. Art, Zahl, Umfang, Schwierigkeit und Gewichtung…\"",
+    "key": "Art. 52",
+    "title": "BayEUG Art. 52",
+    "type": "norm"
+  },
+  "Art. 52 BayEUG": {
+    "definition": "„Abs. 1: Zum Nachweis des Leistungsstands erbringen die Schülerinnen und Schüler in angemessenen Zeitabständen entsprechend der Art des Fachs schriftliche, mündliche und praktische Leistungen. Art, Zahl, Umfang, Schwierigkeit und Gewichtung…",
+    "key": "Art. 52 BayEUG",
+    "title": "BayEUG Art. 52",
+    "type": "norm"
+  },
+  "Art. 52/1": {
+    "definition": "„Zum Nachweis des Leistungsstands erbringen die Schülerinnen und Schüler in angemessenen Zeitabständen entsprechend der Art des Fachs schriftliche, mündliche und praktische Leistungen. Art, Zahl, Umfang, Schwierigkeit und Gewichtung der…\"",
+    "key": "Art. 52/1",
+    "title": "BayEUG Art. 52 Abs. 1",
+    "type": "norm"
+  },
+  "Art. 52/1 BayEUG": {
+    "definition": "„Zum Nachweis des Leistungsstands erbringen die Schülerinnen und Schüler in angemessenen Zeitabständen entsprechend der Art des Fachs schriftliche, mündliche und praktische Leistungen. Art, Zahl, Umfang, Schwierigkeit und Gewichtung der Lei…",
+    "key": "Art. 52/1 BayEUG",
+    "title": "BayEUG Art. 52/1",
+    "type": "norm"
+  },
+  "Art. 52/3": {
+    "definition": "„Unter Berücksichtigung der einzelnen schriftlichen, mündlichen und praktischen Leistungen werden Zeugnisse erteilt. Hierbei werden die gesamten Leistungen einer Schülerin oder eines Schülers unter Wahrung der Gleichbehandlung aller…\"",
+    "key": "Art. 52/3",
+    "title": "BayEUG Art. 52 Abs. 3",
+    "type": "norm"
+  },
+  "Art. 52/3 BayEUG": {
+    "definition": "„Unter Berücksichtigung der einzelnen schriftlichen, mündlichen und praktischen Leistungen werden Zeugnisse erteilt. Hierbei werden die gesamten Leistungen einer Schülerin oder eines Schülers unter Wahrung der Gleichbehandlung aller Schüler…",
+    "key": "Art. 52/3 BayEUG",
+    "title": "BayEUG Art. 52/3",
+    "type": "norm"
+  },
+  "Art. 53": {
+    "definition": "Vorrücken/Wiederholen (Kern-Anker MP_04; out-of-repo verbatim).",
+    "key": "Art. 53",
+    "title": "BayEUG Art. 53",
+    "type": "norm"
+  },
+  "Art. 56": {
+    "definition": "„Abs. 1: 1Schülerinnen und Schüler im Sinn dieses Gesetzes und der auf Grund dieses Gesetzes erlassenen Vorschriften sind Personen, die in den Schulen unterrichtet und erzogen werden. 2Alle Schülerinnen und Schüler haben gemäß Art. 128 der…\"",
+    "key": "Art. 56",
+    "title": "BayEUG Art. 56",
+    "type": "norm"
+  },
+  "Art. 56 BayEUG": {
+    "definition": "„Rechte und Pflichten Abs. 1: 1Schülerinnen und Schüler im Sinn dieses Gesetzes und der auf Grund dieses Gesetzes erlassenen Vorschriften sind Personen, die in den Schulen unterrichtet und erzogen werden. 2Alle Schülerinnen und Schüler habe…",
+    "key": "Art. 56 BayEUG",
+    "title": "BayEUG Art. 56",
+    "type": "norm"
+  },
+  "Art. 56/2": {
+    "definition": "„Die Schülerinnen und Schüler haben das Recht, entsprechend ihrem Alter und ihrer Stellung innerhalb des Schulverhältnisses 1. sich am Schulleben zu beteiligen, 2. im Rahmen der Schulordnung und der Lehrpläne an der Gestaltung des…\"",
+    "key": "Art. 56/2",
+    "title": "BayEUG Art. 56 Abs. 2",
+    "type": "norm"
+  },
+  "Art. 56/2 BayEUG": {
+    "definition": "„Die Schülerinnen und Schüler haben das Recht, entsprechend ihrem Alter und ihrer Stellung innerhalb des Schulverhältnisses 1. sich am Schulleben zu beteiligen, 2. im Rahmen der Schulordnung und der Lehrpläne an der Gestaltung des Unterrich…",
+    "key": "Art. 56/2 BayEUG",
+    "title": "BayEUG Art. 56/2",
+    "type": "norm"
+  },
+  "Art. 56/3": {
+    "definition": "„Alle Schülerinnen und Schüler haben das Recht, ihre Meinung frei zu äußern; im Unterricht ist der sachliche Zusammenhang zu wahren. Die Bestimmungen über Schülerzeitung (Art. 63) und politische Werbung (Art. 84) bleiben unberührt.\"",
+    "key": "Art. 56/3",
+    "title": "BayEUG Art. 56 Abs. 3",
+    "type": "norm"
+  },
+  "Art. 56/3 BayEUG": {
+    "definition": "„Alle Schülerinnen und Schüler haben das Recht, ihre Meinung frei zu äußern; im Unterricht ist der sachliche Zusammenhang zu wahren. Die Bestimmungen über Schülerzeitung (Art. 63) und politische Werbung (Art. 84) bleiben unberührt.…",
+    "key": "Art. 56/3 BayEUG",
+    "title": "BayEUG Art. 56/3",
+    "type": "norm"
+  },
+  "Art. 56/4": {
+    "definition": "„Alle Schülerinnen und Schüler haben sich so zu verhalten, dass die Aufgabe der Schule erfüllt und das Bildungsziel erreicht werden kann. Sie dürfen insbesondere in der Schule und bei Schulveranstaltungen ihr Gesicht nicht verhüllen, es sei…\"",
+    "key": "Art. 56/4",
+    "title": "BayEUG Art. 56 Abs. 4",
+    "type": "norm"
+  },
+  "Art. 56/4 BayEUG": {
+    "definition": "„Alle Schülerinnen und Schüler haben sich so zu verhalten, dass die Aufgabe der Schule erfüllt und das Bildungsziel erreicht werden kann. Sie dürfen insbesondere in der Schule und bei Schulveranstaltungen ihr Gesicht nicht verhüllen, es sei…",
+    "key": "Art. 56/4 BayEUG",
+    "title": "BayEUG Art. 56/4",
+    "type": "norm"
+  },
+  "Art. 56/5": {
+    "definition": "„Die Verwendung von digitalen Endgeräten ist für Schülerinnen und Schüler nur zulässig im Unterricht und bei sonstigen Schulveranstaltungen, soweit die Aufsicht führende Person dies gestattet, im Übrigen im Schulgebäude und auf dem…\"",
+    "key": "Art. 56/5",
+    "title": "BayEUG Art. 56 Abs. 5",
+    "type": "norm"
+  },
+  "Art. 56/5 BayEUG": {
+    "definition": "„Die Verwendung von digitalen Endgeräten ist für Schülerinnen und Schüler nur zulässig im Unterricht und bei sonstigen Schulveranstaltungen, soweit die Aufsicht führende Person dies gestattet, im Übrigen im Schulgebäude und auf dem Schulgel…",
+    "key": "Art. 56/5 BayEUG",
+    "title": "BayEUG Art. 56/5",
+    "type": "norm"
+  },
+  "Art. 57": {
+    "definition": "SL-Gesamtverantwortung (Anker; out-of-repo)",
+    "key": "Art. 57",
+    "title": "BayEUG Art. 57",
+    "type": "norm"
+  },
+  "Art. 57/2 BayEUG": {
+    "definition": "SL-Gesamtverantwortung für die Schule.",
+    "key": "Art. 57/2 BayEUG",
+    "title": "BayEUG Art. 57 Abs. 2",
+    "type": "norm"
+  },
+  "Art. 58 BayEUG": {
+    "definition": "„Abs. 1: An jeder Schule besteht eine Lehrerkonferenz. Wenn an einer Schule mehrere Schularten oder Ausbildungsrichtungen als Abteilungen geführt werden, kann die Schulordnung die Bildung von Teilkonferenzen der Lehrkräfte dieser…\"",
+    "key": "Art. 58 BayEUG",
+    "title": "BayEUG Art. 58",
+    "type": "norm"
+  },
+  "Art. 59 BayEUG": {
+    "definition": "„Abs. 1: Die Lehrkräfte tragen die unmittelbare pädagogische Verantwortung für den Unterricht und die Erziehung der Schülerinnen und Schüler. Gegenüber dem ihnen zugeordneten sonstigen pädagogischen Personal sind sie weisungsberechtigt. Die…\"",
+    "key": "Art. 59 BayEUG",
+    "title": "BayEUG Art. 59",
+    "type": "norm"
+  },
+  "Art. 6 BayDG": {
+    "definition": "„Abs. 1: Disziplinarmaßnahmen gegen Beamte und Beamtinnen sind: 1. Verweis (Art. 7), 2. Geldbuße (Art. 8), 3. Kürzung der Dienstbezüge (Art. 9), 4. Zurückstufung (Art. 10) und 5. Entfernung aus dem Beamtenverhältnis (Art. 11). Abs. 2:…\"",
+    "key": "Art. 6 BayDG",
+    "title": "BayDG Art. 6",
+    "type": "norm"
+  },
+  "Art. 6 BayEUG": {
+    "definition": "„Abs. 1: Das Schulwesen gliedert sich in allgemein bildende und berufliche Schularten. Diese haben im Rahmen des gemeinsamen Bildungs- und Erziehungsauftrags ihre eigenständige, gleichwertige Aufgabe. Abs. 3: Innerhalb einer Schulart können…\"",
+    "key": "Art. 6 BayEUG",
+    "title": "BayEUG Art. 6",
+    "type": "norm"
+  },
+  "Art. 6 BayPVG": {
+    "definition": "„Abs. 1: Das Schulwesen gliedert sich in allgemein bildende und berufliche Schularten. Diese haben im Rahmen des gemeinsamen Bildungs- und Erziehungsauftrags ihre eigenständige, gleichwertige Aufgabe. Abs. 3: Innerhalb einer Schulart können…\"",
+    "key": "Art. 6 BayPVG",
+    "title": "BayPVG Art. 6",
+    "type": "norm"
+  },
+  "Art. 6/1": {
+    "definition": "Rechtsgrundlagen (lit. a Einwilligung · lit. c gesetzliche Pflicht · lit. e öffentliche Aufgabe).",
+    "key": "Art. 6/1",
+    "title": "DSGVO Art. 6 Abs. 1",
+    "type": "norm"
+  },
+  "Art. 6/4 BayEUG": {
+    "definition": "„Auf Antrag des Schulaufwandsträgers können an Grundschulen, Mittelschulen, Realschulen, Wirtschaftsschulen und Gymnasien sowie an den entsprechenden Förderschulen schulische Ganztagsangebote in eigenen Ganztagsklassen in rhythmisierter…\"",
+    "key": "Art. 6/4 BayEUG",
+    "title": "BayEUG Art. 6/4",
+    "type": "norm"
+  },
+  "Art. 6/7": {
+    "definition": "Stundenmaß / Klassengröße / Rahmenregeln Schularten.",
+    "key": "Art. 6/7",
+    "title": "BayEUG Art. 6 Abs. 7",
+    "type": "norm"
+  },
+  "Art. 60 BayEUG": {
+    "definition": "„Abs. 1: Die Förderlehrerin oder der Förderlehrer unterstützt den Unterricht und trägt durch die Arbeit mit Schülergruppen zur Sicherung des Unterrichtserfolges bei. Sie oder er nimmt besondere Aufgaben der Betreuung von Schülerinnen und…\"",
+    "key": "Art. 60 BayEUG",
+    "title": "BayEUG Art. 60",
+    "type": "norm"
+  },
+  "Art. 60a BayEUG": {
+    "definition": "Sonstiges päd. Personal an Schulen; Weisungsverhältnis zur LK.",
+    "key": "Art. 60a BayEUG",
+    "title": "BayEUG Art. 60a",
+    "type": "norm"
+  },
+  "Art. 62": {
+    "definition": "„Abs. 1: Im Rahmen der Schülermitverantwortung soll allen Schülerinnen und Schülern die Möglichkeit gegeben werden, Leben und Unterricht ihrer Schule ihrem Alter und ihrer Verantwortungsfähigkeit entsprechend mitzugestalten; hierfür werden…\"",
+    "key": "Art. 62",
+    "title": "BayEUG Art. 62",
+    "type": "norm"
+  },
+  "Art. 62 BayEUG": {
+    "definition": "„Abs. 1: Im Rahmen der Schülermitverantwortung soll allen Schülerinnen und Schülern die Möglichkeit gegeben werden, Leben und Unterricht ihrer Schule ihrem Alter und ihrer Verantwortungsfähigkeit entsprechend mitzugestalten; hierfür werden …",
+    "key": "Art. 62 BayEUG",
+    "title": "BayEUG Art. 62",
+    "type": "norm"
+  },
+  "Art. 62/7": {
+    "definition": "„Die Klassensprecherinnen und Klassensprecher und ihre jeweiligen Stellvertreter können für jeweils ein Schuljahr eine Verbindungslehrkraft wählen; wählbar sind Lehrkräfte, die an der Schule mit mindestens der Hälfte der…\"",
+    "key": "Art. 62/7",
+    "title": "BayEUG Art. 62 Abs. 7",
+    "type": "norm"
+  },
+  "Art. 62/7 BayEUG": {
+    "definition": "„Die Klassensprecherinnen und Klassensprecher und ihre jeweiligen Stellvertreter können für jeweils ein Schuljahr eine Verbindungslehrkraft wählen; wählbar sind Lehrkräfte, die an der Schule mit mindestens der Hälfte der Unterrichtspflichtz…",
+    "key": "Art. 62/7 BayEUG",
+    "title": "BayEUG Art. 62/7",
+    "type": "norm"
+  },
+  "Art. 62a": {
+    "definition": "„Abs. 1: 1Die Landesschülerkonferenz dient insbesondere der Erörterung allgemeiner schulischer Angelegenheiten. 2Sie tagt wenigstens zweimal im Jahr. 3Art und Umfang der Aufsicht über die teilnehmenden Schülerinnen und Schüler richtet sich…\"",
+    "key": "Art. 62a",
+    "title": "BayEUG Art. 62a",
+    "type": "norm"
+  },
+  "Art. 62a BayEUG": {
+    "definition": "„Landesschülerkonferenz, Landesschülerrat Abs. 1: 1Die Landesschülerkonferenz dient insbesondere der Erörterung allgemeiner schulischer Angelegenheiten. 2Sie tagt wenigstens zweimal im Jahr. 3Art und Umfang der Aufsicht über die teilnehmend…",
+    "key": "Art. 62a BayEUG",
+    "title": "BayEUG Art. 62a",
+    "type": "norm"
+  },
+  "Art. 63": {
+    "definition": "„Abs. 1: Schülerzeitungen sind Zeitungen, die von Schülerinnen und Schülern für Schülerinnen und Schüler derselben Schule geschrieben werden. Die Schülerinnen und Schüler machen durch die Herausgabe von Schülerzeitungen vom Recht der freien…\"",
+    "key": "Art. 63",
+    "title": "BayEUG Art. 63",
+    "type": "norm"
+  },
+  "Art. 63 BayEUG": {
+    "definition": "„Abs. 1: Schülerzeitungen sind Zeitungen, die von Schülerinnen und Schülern für Schülerinnen und Schüler derselben Schule geschrieben werden. Die Schülerinnen und Schüler machen durch die Herausgabe von Schülerzeitungen vom Recht der freien…",
+    "key": "Art. 63 BayEUG",
+    "title": "BayEUG Art. 63",
+    "type": "norm"
+  },
+  "Art. 64 BayPVG": {
+    "definition": "Vertrauensvolle Zusammenarbeit Dienststelle ↔ PR.",
+    "key": "Art. 64 BayPVG",
+    "title": "BayPVG Art. 64",
+    "type": "norm"
+  },
+  "Art. 64/65": {
+    "definition": "Elternbeirat-Aufgaben + Anhörung (Anker; out-of-repo)",
+    "key": "Art. 64/65",
+    "title": "BayEUG Art. 64+65",
+    "type": "norm"
+  },
+  "Art. 65": {
+    "definition": "Elternbeirat: Vertretung der Erziehungsberechtigten.",
+    "key": "Art. 65",
+    "title": "BayEUG Art. 65",
+    "type": "norm"
+  },
+  "Art. 66 BayPVG": {
+    "definition": "Geschäftsführung des Personalrats.",
+    "key": "Art. 66 BayPVG",
+    "title": "BayPVG Art. 66",
+    "type": "norm"
+  },
+  "Art. 69 BayPVG": {
+    "definition": "Beteiligungsformen Übersicht (Mitbestimmung, Mitwirkung, Anhörung).",
+    "key": "Art. 69 BayPVG",
+    "title": "BayPVG Art. 69",
+    "type": "norm"
+  },
+  "Art. 7 BayDG": {
+    "definition": "„Abs. 1: Der Verweis ist der Tadel eines bestimmten Verhaltens. Missbilligende Äußerungen (Zurechtweisungen, Ermahnungen oder Rügen), die nicht ausdrücklich als Verweis bezeichnet werden, sind keine Disziplinarmaßnahmen. Der Verweis ist…\"",
+    "key": "Art. 7 BayDG",
+    "title": "BayDG Art. 7",
+    "type": "norm"
+  },
+  "Art. 7 BayPVG": {
+    "definition": "„Abs. 1: Der Verweis ist der Tadel eines bestimmten Verhaltens. Missbilligende Äußerungen (Zurechtweisungen, Ermahnungen oder Rügen), die nicht ausdrücklich als Verweis bezeichnet werden, sind keine Disziplinarmaßnahmen. Der Verweis ist…\"",
+    "key": "Art. 7 BayPVG",
+    "title": "BayPVG Art. 7",
+    "type": "norm"
+  },
+  "Art. 70 BayPVG": {
+    "definition": "Mitbestimmung Verfahren (Antrag DB → Zustimmung PR).",
+    "key": "Art. 70 BayPVG",
+    "title": "BayPVG Art. 70",
+    "type": "norm"
+  },
+  "Art. 70/2": {
+    "definition": "Verweigerung schriftlich mit Gründen innerhalb 2 Wochen.",
+    "key": "Art. 70/2",
+    "title": "BayPVG Art. 70 Abs. 2",
+    "type": "norm"
+  },
+  "Art. 70a BayPVG": {
+    "definition": "Initiativrecht des Personalrats.",
+    "key": "Art. 70a BayPVG",
+    "title": "BayPVG Art. 70a",
+    "type": "norm"
+  },
+  "Art. 71 BayPVG": {
+    "definition": "Einigungsstelle (letzte Instanz Mitbestimmung).",
+    "key": "Art. 71 BayPVG",
+    "title": "BayPVG Art. 71",
+    "type": "norm"
+  },
+  "Art. 72 BayPVG": {
+    "definition": "Mitwirkungsverfahren.",
+    "key": "Art. 72 BayPVG",
+    "title": "BayPVG Art. 72",
+    "type": "norm"
+  },
+  "Art. 73": {
+    "definition": "„Abs. 1: Der Diensteid hat folgenden Wortlaut: „Ich schwöre Treue dem Grundgesetz für die Bundesrepublik Deutschland und der Verfassung des Freistaates Bayern, Gehorsam den Gesetzen und gewissenhafte Erfüllung meiner Amtspflichten, so wahr…\"",
+    "key": "Art. 73",
+    "title": "BayEUG Art. 73",
+    "type": "norm"
+  },
+  "Art. 73 BayBG": {
+    "definition": "„Eid und Gelöbnis Abs. 1: Der Diensteid hat folgenden Wortlaut: „Ich schwöre Treue dem Grundgesetz für die Bundesrepublik Deutschland und der Verfassung des Freistaates Bayern, Gehorsam den Gesetzen und gewissenhafte Erfüllung meiner Amtspf…",
+    "key": "Art. 73 BayBG",
+    "title": "BayBG Art. 73",
+    "type": "norm"
+  },
+  "Art. 75 BayEUG": {
+    "definition": "Unterrichtungspflicht ggü. Erziehungsberechtigten (Auskunfts-/Beratungsrechte; bei volljährigen SuS Art. 75/1 + 88/4 S. 1 Nr. 3).",
+    "key": "Art. 75 BayEUG",
+    "title": "BayEUG Art. 75",
+    "type": "norm"
+  },
+  "Art. 75 BayPVG": {
+    "definition": "„Abs. 1: Der Personalrat hat, soweit eine gesetzliche oder tarifliche Regelung nicht besteht, in Personalangelegenheiten mitzubestimmen über Einstellung, Anstellung, Beförderung, Übertragung höherwertiger Tätigkeiten, höhere oder niedrigere…\"",
+    "key": "Art. 75 BayPVG",
+    "title": "BayPVG Art. 75",
+    "type": "norm"
+  },
+  "Art. 75/1": {
+    "definition": "Auskunftsrechte; bei volljährigen SuS gelten Auskunfts-Modi nach Art. 75/1 + 88/4 S. 1 Nr. 3.",
+    "key": "Art. 75/1",
+    "title": "BayEUG Art. 75 Abs. 1",
+    "type": "norm"
+  },
+  "Art. 76 BayEUG": {
+    "definition": "„Abs. 1: Die Erziehungsberechtigten sind verpflichtet, auf die gewissenhafte Erfüllung der schulischen Pflichten einschließlich der Verpflichtung nach Art. 56 Abs. 4 Satz 5 und der von der Schule gestellten Anforderungen durch die Schülerin…",
+    "key": "Art. 76 BayEUG",
+    "title": "BayEUG Art. 76",
+    "type": "norm"
+  },
+  "Art. 76 BayPVG": {
+    "definition": "„Abs. 1: Der Personalrat wirkt mit in sozialen und persönlichen Angelegenheiten bei: 1. Vorbereitung von Verwaltungsanordnungen einer Dienststelle für die innerdienstlichen sozialen oder persönlichen Angelegenheiten der Beschäftigten ihres…\"",
+    "key": "Art. 76 BayPVG",
+    "title": "BayPVG Art. 76",
+    "type": "norm"
+  },
+  "Art. 77 BayEUG": {
+    "definition": "„Pflichten der Arbeitgeberinnen und Arbeitgeber Abs. 1: Ausbildende, Arbeitgeberinnen und Arbeitgeber, die Berufsschulpflichtige beschäftigen, haben ebenso wie die von ihnen Beauftragten die Berufsschulpflichtigen zur Teilnahme am Unterrich…",
+    "key": "Art. 77 BayEUG",
+    "title": "BayEUG Art. 77",
+    "type": "norm"
+  },
+  "Art. 77 BayPVG": {
+    "definition": "„Abs. 1: Der Personalrat wirkt bei der ordentlichen Kündigung durch den Arbeitgeber mit. Der Personalrat kann gegen die Kündigung Einwendungen erheben, wenn nach seiner Ansicht 1. bei der Auswahl des zu kündigenden Arbeitnehmers oder der zu…\"",
+    "key": "Art. 77 BayPVG",
+    "title": "BayPVG Art. 77",
+    "type": "norm"
+  },
+  "Art. 78 BayEUG": {
+    "definition": "„Abs. 1: Jede Schule und jede Lehrkraft hat die Aufgabe, die Erziehungsberechtigten und die Schülerinnen und Schüler in Fragen der Schullaufbahn zu beraten und ihnen bei der Wahl der Bildungsmöglichkeiten entsprechend den Anlagen und Fähigk…",
+    "key": "Art. 78 BayEUG",
+    "title": "BayEUG Art. 78",
+    "type": "norm"
+  },
+  "Art. 78 BayPVG": {
+    "definition": "„Abs. 1: Die §§ 75 bis 77 finden keine Anwendung auf Beamte der Besoldungsgruppe A 16 und höher, auf Lehrpersonen an Einrichtungen der Lehrer-, Fachlehrer- und Förderlehrerausbildung sowie auf wissenschaftliches Personal an…\"",
+    "key": "Art. 78 BayPVG",
+    "title": "BayPVG Art. 78",
+    "type": "norm"
+  },
+  "Art. 7a": {
+    "definition": "Mittelschulverbund.",
+    "key": "Art. 7a",
+    "title": "BayEUG Art. 7a",
+    "type": "norm"
+  },
+  "Art. 7b": {
+    "definition": "Schulen besonderer Art (schulartübergreifende Modellprojekte; NICHT „Profil Inklusion\").",
+    "key": "Art. 7b",
+    "title": "BayEUG Art. 7b",
+    "type": "norm"
+  },
+  "Art. 8 BayDG": {
+    "definition": "„Geldbuße Abs. 1: Die Geldbuße kann bis zur Höhe der monatlichen Dienst- oder Anwärterbezüge auferlegt werden. Hat der Beamte oder die Beamtin keine Dienst- oder Anwärterbezüge, darf die Geldbuße bis zu 500 € oder bei Ehrenbeamten bis zu ei…",
+    "key": "Art. 8 BayDG",
+    "title": "BayDG Art. 8",
+    "type": "norm"
+  },
+  "Art. 8 BayPVG": {
+    "definition": "„Abs. 1: Die Geldbuße kann bis zur Höhe der monatlichen Dienst- oder Anwärterbezüge auferlegt werden. Hat der Beamte oder die Beamtin keine Dienst- oder Anwärterbezüge, darf die Geldbuße bis zu 500 € oder bei Ehrenbeamten bis zu einem…\"",
+    "key": "Art. 8 BayPVG",
+    "title": "BayPVG Art. 8",
+    "type": "norm"
+  },
+  "Art. 80": {
+    "definition": "Schulgesundheit / Verhütung.",
+    "key": "Art. 80",
+    "title": "BayEUG Art. 80",
+    "type": "norm"
+  },
+  "Art. 81 BayBG": {
+    "definition": "„Abs. 1: Beamtinnen und Beamte können verpflichtet werden, eine Nebentätigkeit im öffentlichen Dienst zu übernehmen, wenn diese ihrer Vorbildung oder Berufsausbildung entspricht und die Übernahme ihnen nach ihren persönlichen Verhältnissen…\"",
+    "key": "Art. 81 BayBG",
+    "title": "BayBG Art. 81",
+    "type": "norm"
+  },
+  "Art. 82 BayBG": {
+    "definition": "Anzeigepflicht Nebentätigkeit.",
+    "key": "Art. 82 BayBG",
+    "title": "BayBG Art. 82",
+    "type": "norm"
+  },
+  "Art. 83 BayBG": {
+    "definition": "Versagung/Untersagung Nebentätigkeit.",
+    "key": "Art. 83 BayBG",
+    "title": "BayBG Art. 83",
+    "type": "norm"
+  },
+  "Art. 84 BayBG": {
+    "definition": "„Abs. 1: Der Vertrieb von Gegenständen aller Art, Ankündigungen und Werbung hierzu, das Sammeln von Bestellungen sowie der Abschluss sonstiger Geschäfte sind in der Schule untersagt. Ausnahmen im schulischen Interesse insbesondere für…\"",
+    "key": "Art. 84 BayBG",
+    "title": "BayBG Art. 84",
+    "type": "norm"
+  },
+  "Art. 84 BayEUG": {
+    "definition": "„Abs. 1: Der Vertrieb von Gegenständen aller Art, Ankündigungen und Werbung hierzu, das Sammeln von Bestellungen sowie der Abschluss sonstiger Geschäfte sind in der Schule untersagt. Ausnahmen im schulischen Interesse insbesondere für Samme…",
+    "key": "Art. 84 BayEUG",
+    "title": "BayEUG Art. 84",
+    "type": "norm"
+  },
+  "Art. 85 BayBG": {
+    "definition": "Mehrarbeitsvergütung.",
+    "key": "Art. 85 BayBG",
+    "title": "BayBG Art. 85",
+    "type": "norm"
+  },
+  "Art. 86 BayBG": {
+    "definition": "„Abs. 1: Zur Sicherung des Bildungs- und Erziehungsauftrags oder zum Schutz von Personen und Sachen können Erziehungsmaßnahmen gegenüber Schülerinnen und Schülern getroffen werden. Dazu zählt bei nicht hinreichender Beteiligung der…\"",
+    "key": "Art. 86 BayBG",
+    "title": "BayBG Art. 86",
+    "type": "norm"
+  },
+  "Art. 86 BayEUG": {
+    "definition": "„Abs. 1: Zur Sicherung des Bildungs- und Erziehungsauftrags oder zum Schutz von Personen und Sachen können Erziehungsmaßnahmen gegenüber Schülerinnen und Schülern getroffen werden. Dazu zählt bei nicht hinreichender Beteiligung der Schüleri…",
+    "key": "Art. 86 BayEUG",
+    "title": "BayEUG Art. 86",
+    "type": "norm"
+  },
+  "Art. 86/1": {
+    "definition": "Subsidiarität + Verhältnismäßigkeit + Nacharbeit unter Aufsicht (verified-1:1)",
+    "key": "Art. 86/1",
+    "title": "BayEUG Art. 86/1",
+    "type": "norm"
+  },
+  "Art. 86/2": {
+    "definition": "12-Punkte-Katalog Ordnungsmaßnahmen (partial-summary; Detail-Pull Punkte 4-12 ausstehend)",
+    "key": "Art. 86/2",
+    "title": "BayEUG Art. 86/2",
+    "type": "norm"
+  },
+  "Art. 86/3": {
+    "definition": "Erziehungs-/Ordnungsmaßnahmen · Verhältnismäßigkeit · Nacharbeit (Detail-Pull ausstehend)",
+    "key": "Art. 86/3",
+    "title": "BayEUG Art. 86/3",
+    "type": "norm"
+  },
+  "Art. 87 BayBG": {
+    "definition": "„Abs. 1: Die Staatsregierung regelt die Arbeitszeit durch Rechtsverordnung. Abs. 2: Beamtinnen und Beamte sind verpflichtet, ohne Entschädigung über die regelmäßige Arbeitszeit hinaus Dienst zu tun, wenn zwingende dienstliche Verhältnisse…\"",
+    "key": "Art. 87 BayBG",
+    "title": "BayBG Art. 87",
+    "type": "norm"
+  },
+  "Art. 88": {
+    "definition": "Verfahren bei Ordnungsmaßnahmen / Anhörung + EB-Mitteilung (Anker; out-of-repo)",
+    "key": "Art. 88",
+    "title": "BayEUG Art. 88",
+    "type": "norm"
+  },
+  "Art. 9 BayDG": {
+    "definition": "„Kürzung der Dienstbezüge Abs. 1: Die Kürzung der Dienstbezüge ist die bruchteilsmäßige Verminderung der monatlichen Dienstbezüge um höchstens ein Fünftel auf längstens drei Jahre. Eine gewährte Leistungsstufe verfällt ganz. Bei Beamten im …",
+    "key": "Art. 9 BayDG",
+    "title": "BayDG Art. 9",
+    "type": "norm"
+  },
+  "Art. 9 BayPVG": {
+    "definition": "„Abs. 1: Die Kürzung der Dienstbezüge ist die bruchteilsmäßige Verminderung der monatlichen Dienstbezüge um höchstens ein Fünftel auf längstens drei Jahre. Eine gewährte Leistungsstufe verfällt ganz. Bei Beamten im Eingangsamt kann die…\"",
+    "key": "Art. 9 BayPVG",
+    "title": "BayPVG Art. 9",
+    "type": "norm"
+  },
+  "Art. 9/3": {
+    "definition": "Mittelschule: Profilbildung + Praxisorientierung.",
+    "key": "Art. 9/3",
+    "title": "BayEUG Art. 9 Abs. 3",
+    "type": "norm"
+  },
+  "Art. 90": {
+    "definition": "Privatschulen: Allgemeines (Genehmigungsbedürftigkeit).",
+    "key": "Art. 90",
+    "title": "BayEUG Art. 90",
+    "type": "norm"
+  },
+  "Art. 91": {
+    "definition": "Privatschulen: Genehmigungsvoraussetzungen.",
+    "key": "Art. 91",
+    "title": "BayEUG Art. 91",
+    "type": "norm"
+  },
+  "Art. 95 BV": {
+    "definition": "Beamtenverhältnis Bayern.",
+    "key": "Art. 95 BV",
+    "title": "BV Art. 95",
+    "type": "norm"
+  },
+  "BV Art. 128": {
+    "definition": "„Abs. 1: Jeder Bewohner Bayerns hat Anspruch darauf, eine seinen erkennbaren Fähigkeiten und seiner inneren Berufung entsprechende Ausbildung zu erhalten. Abs. 2: Begabten ist der Besuch von Schulen und Hochschulen, nötigenfalls aus…\"",
+    "key": "BV Art. 128",
+    "title": "BV Art. 128",
+    "type": "norm"
+  },
+  "BV Art. 129": {
+    "definition": "„Abs. 1: Alle Kinder sind zum Besuch der Volksschule und der Berufsschule verpflichtet. Abs. 2: Der Unterricht an diesen Schulen ist unentgeltlich.\"",
+    "key": "BV Art. 129",
+    "title": "BV Art. 129",
+    "type": "norm"
+  },
+  "BV Art. 131": {
+    "definition": "„Abs. 1: Die Schulen sollen nicht nur Wissen und Können vermitteln, sondern auch Herz und Charakter bilden. Abs. 2: Oberste Bildungsziele sind Ehrfurcht vor Gott, Achtung vor religiöser Überzeugung und vor der Würde des Menschen,…\"",
+    "key": "BV Art. 131",
+    "title": "BV Art. 131",
+    "type": "norm"
+  },
+  "BV Art. 132": {
+    "definition": "„Für den Aufbau des Schulwesens ist die Mannigfaltigkeit der Lebensberufe, für die Aufnahme eines Kindes in eine bestimmte Schule sind seine Anlagen, seine Neigung, seine Leistung und seine innere Berufung maßgebend, nicht aber die…\"",
+    "key": "BV Art. 132",
+    "title": "BV Art. 132",
+    "type": "norm"
+  },
+  "BV Art. 133": {
+    "definition": "„Abs. 1: Für die Bildung der Jugend ist durch öffentliche Anstalten zu sorgen. Bei ihrer Einrichtung wirken Staat und Gemeinde zusammen. Auch die anerkannten Religionsgemeinschaften und weltanschaulichen Gemeinschaften sind Bildungsträger.…\"",
+    "key": "BV Art. 133",
+    "title": "BV Art. 133",
+    "type": "norm"
+  },
+  "BV Art. 134": {
+    "definition": "„Abs. 1: Privatschulen müssen den an die öffentlichen Schulen gestellten Anforderungen entsprechen. Sie können nur mit Genehmigung des Staates errichtet und betrieben werden. Abs. 2: Die Genehmigung ist zu erteilen, wenn die Schule in ihren…\"",
+    "key": "BV Art. 134",
+    "title": "BV Art. 134",
+    "type": "norm"
+  },
+  "BayDG Art. 10": {
+    "definition": "„Abs. 1: Die Zurückstufung ist die Versetzung in ein Amt mit geringerem Endgrundgehalt, höchstens bis in das jeweilige Eingangsamt. Der Beamte oder die Beamtin verliert alle Rechte aus dem bisherigen Amt einschließlich der damit verbundenen…\"",
+    "key": "BayDG Art. 10",
+    "title": "BayDG Art. 10",
+    "type": "norm"
+  },
+  "BayDG Art. 11": {
+    "definition": "„Abs. 1: Mit der Entfernung aus dem Beamtenverhältnis endet das Dienstverhältnis. Der Beamte oder die Beamtin verliert den Anspruch auf Dienstbezüge und Versorgung einschließlich der Hinterbliebenenversorgung sowie die Befugnis, die…\"",
+    "key": "BayDG Art. 11",
+    "title": "BayDG Art. 11",
+    "type": "norm"
+  },
+  "BayDG Art. 12": {
+    "definition": "Kürzung des Ruhegehalts (Ruhestandsbeamte).",
+    "key": "BayDG Art. 12",
+    "title": "BayDG Art. 12",
+    "type": "norm"
+  },
+  "BayDG Art. 13": {
+    "definition": "Aberkennung des Ruhegehalts (Ruhestandsbeamte).",
+    "key": "BayDG Art. 13",
+    "title": "BayDG Art. 13",
+    "type": "norm"
+  },
+  "BayDG Art. 6": {
+    "definition": "„Abs. 1: Disziplinarmaßnahmen gegen Beamte und Beamtinnen sind: 1. Verweis (Art. 7), 2. Geldbuße (Art. 8), 3. Kürzung der Dienstbezüge (Art. 9), 4. Zurückstufung (Art. 10) und 5. Entfernung aus dem Beamtenverhältnis (Art. 11). Abs. 2:…\"",
+    "key": "BayDG Art. 6",
+    "title": "BayDG Art. 6",
+    "type": "norm"
+  },
+  "BayDG Art. 7": {
+    "definition": "„Abs. 1: Der Verweis ist der Tadel eines bestimmten Verhaltens. Missbilligende Äußerungen (Zurechtweisungen, Ermahnungen oder Rügen), die nicht ausdrücklich als Verweis bezeichnet werden, sind keine Disziplinarmaßnahmen. Der Verweis ist…\"",
+    "key": "BayDG Art. 7",
+    "title": "BayDG Art. 7",
+    "type": "norm"
+  },
+  "BayDG Art. 8": {
+    "definition": "„Abs. 1: Die Geldbuße kann bis zur Höhe der monatlichen Dienst- oder Anwärterbezüge auferlegt werden. Hat der Beamte oder die Beamtin keine Dienst- oder Anwärterbezüge, darf die Geldbuße bis zu 500 € oder bei Ehrenbeamten bis zu einem…\"",
+    "key": "BayDG Art. 8",
+    "title": "BayDG Art. 8",
+    "type": "norm"
+  },
+  "BayDG Art. 9": {
+    "definition": "„Abs. 1: Die Kürzung der Dienstbezüge ist die bruchteilsmäßige Verminderung der monatlichen Dienstbezüge um höchstens ein Fünftel auf längstens drei Jahre. Eine gewährte Leistungsstufe verfällt ganz. Bei Beamten im Eingangsamt kann die…\"",
+    "key": "BayDG Art. 9",
+    "title": "BayDG Art. 9",
+    "type": "norm"
+  },
+  "BayPolG": {
+    "definition": "Polizei-Verständigung in Eilfällen",
+    "key": "BayPolG",
+    "title": "Bayerisches Polizeiaufgabengesetz (Anker; out-of-repo)",
+    "type": "norm"
+  },
+  "BayVwVfG": {
+    "definition": "",
+    "key": "BayVwVfG",
+    "title": "Bayerisches Verwaltungsverfahrensgesetz (Anker für Anhörung Art. 28; out-of-repo)",
+    "type": "norm"
+  },
+  "DeutschPLUS": {
+    "definition": "Sprachförderprogramm Sek I Bayern (KMBek 2018; Folgeprogramm Vorkurs Deutsch 240).",
+    "key": "DeutschPLUS",
+    "title": "KMBek DeutschPLUS",
+    "type": "norm"
+  },
+  "GG Art. 33/5": {
+    "definition": "Hergebrachte Grundsätze Berufsbeamtentum (Streikverbot, Alimentation, Treuepflicht).",
+    "key": "GG Art. 33/5",
+    "title": "GG Art. 33 Abs. 5",
+    "type": "norm"
+  },
+  "JuSchG": {
+    "definition": "Begriffsbestimmungen: Kind (noch nicht 14 Jahre alt) · Jugendlicher (14, aber noch nicht 18 Jahre alt).",
+    "key": "JuSchG",
+    "title": "Jugendschutzgesetz § 1",
+    "type": "norm"
+  },
+  "KMBek": {
+    "definition": "",
+    "key": "KMBek",
+    "title": "KM-Bekanntmachung (Verwaltungsvorschrift; Anker)",
+    "type": "norm"
+  },
+  "KUG": {
+    "definition": "Verbreitung von Bildnissen nur mit Einwilligung der abgebildeten Person.",
+    "key": "KUG",
+    "title": "Kunsturhebergesetz § 22",
+    "type": "norm"
+  },
+  "KWMBl 2011/240": {
+    "definition": "Vorkurs Deutsch 240 (1,5 Schuljahre, 240 WStd, KiGa+GS gemeinsam)",
+    "key": "KWMBl 2011/240",
+    "title": "Bekanntmachung im KWMBl 2011 S. 240",
+    "type": "norm"
+  },
+  "VSO-F § 25": {
+    "definition": "nicht öffentlich zugänglich; Volksschulordnung Förderschulen (Quelle: KMBek/Lehrerdienstrecht)",
+    "key": "VSO-F § 25",
+    "title": "VSO-F § 25",
+    "type": "norm"
+  },
+  "Vorkurs Deutsch 240": {
+    "definition": "Vorkurs Deutsch 240: 1,5 Schuljahre, 240 WStd, KiGa+GS gemeinsam.",
+    "key": "Vorkurs Deutsch 240",
+    "title": "KMBek (KWMBl 2011/240)",
+    "type": "norm"
+  },
+  "WaffG": {
+    "definition": "Verbote / Mitführung in der Öffentlichkeit",
+    "key": "WaffG",
+    "title": "Waffengesetz (Bundesgesetz; Anker; out-of-repo)",
+    "type": "norm"
+  },
+  "§ 1 JGG": {
+    "definition": "Strafmündigkeit ab vollendetem 14. Lebensjahr (Bund-Anker)",
+    "key": "§ 1 JGG",
+    "title": "JGG § 1",
+    "type": "norm"
+  },
+  "§ 1 JuSchG": {
+    "definition": "„Abs. 1 (Begriffsbestimmungen, Auszug): Im Sinne dieses Gesetzes sind 1. Kinder Personen, die noch nicht 14 Jahre alt sind, 2. Jugendliche Personen, die 14, aber noch nicht 18 Jahre alt sind, 3. personensorgeberechtigte Personen, denen…\"",
+    "key": "§ 1 JuSchG",
+    "title": "JuSchG § 1",
+    "type": "norm"
+  },
+  "§ 10 Abs": {
+    "definition": "Verbindungslehrkraft + Schülerzeitung-Modus.",
+    "key": "§ 10 Abs",
+    "title": "BaySchO § 10",
+    "type": "norm"
+  },
+  "§ 10 BaySchO": {
+    "definition": "„Abs. 1: ¹Über das Wahlverfahren von Verbindungslehrkräften entscheidet der Schülerausschuss im Einvernehmen mit der Schulleiterin oder dem Schulleiter. ²Im Fall des § 8 Abs. 4 erfolgt die Wahl durch die Lehrerkonferenz. Abs. 2: ¹Die…\"",
+    "key": "§ 10 BaySchO",
+    "title": "BaySchO § 10",
+    "type": "norm"
+  },
+  "§ 10 GrSO": {
+    "definition": "„Abs. 1: 1Die Lehrerkonferenz trifft vor Unterrichtsbeginn des Schuljahres grundsätzliche Festlegungen zur Erhebung von Leistungsnachweisen einschließlich prüfungsfreier Lernphasen. 2Die Festlegungen sind den Schülerinnen und Schülern sowie…\"",
+    "key": "§ 10 GrSO",
+    "title": "GrSO § 10",
+    "type": "norm"
+  },
+  "§ 10 LDO": {
+    "definition": "„Arbeitszeit Die Arbeitszeit und die Leistung von Mehrarbeit richten sich nach Art. 87 des Bayerischen Beamtengesetzes (BayBG) und den dazu ergangenen Ausführungsbestimmungen.…",
+    "key": "§ 10 LDO",
+    "title": "LDO § 10",
+    "type": "norm"
+  },
+  "§ 10 MSO": {
+    "definition": "„Abs. 1: 1Schülerinnen und Schüler mit nichtdeutscher Muttersprache, die nach Deutschland zugewandert sind und keine oder nur geringe Deutschkenntnisse haben, besuchen in den Jahrgangsstufen 7 bis 9 zunächst eine Deutschklasse, soweit das…\"",
+    "key": "§ 10 MSO",
+    "title": "MSO § 10",
+    "type": "norm"
+  },
+  "§ 10/1": {
+    "definition": "Verbindungslehrkraft Wahl + Aufgaben.",
+    "key": "§ 10/1",
+    "title": "BaySchO § 10 Abs. 1",
+    "type": "norm"
+  },
+  "§ 10/25 BaySchO": {
+    "definition": "Verbindungslehrkraft · Schülerzeitung · SMV-Veranstaltungen",
+    "key": "§ 10/25 BaySchO",
+    "title": "BaySchO § 10/25",
+    "type": "norm"
+  },
+  "§ 11 BaySchO": {
+    "definition": "„Abs. 1 (Auszug, verbatim): ¹Die Schülersprecherinnen und Schülersprecher an Mittelschulen wählen spätestens drei Wochen nach ihrer Wahl aus ihrer Mitte für die jeweilige Stadt bzw. den jeweiligen Landkreis je eine Stadt- bzw.…\"",
+    "key": "§ 11 BaySchO",
+    "title": "BaySchO § 11",
+    "type": "norm"
+  },
+  "§ 11 LDO": {
+    "definition": "„Abs. 1: Ist die Lehrkraft wegen Krankheit dienstunfähig, so hat sie dies und die voraussichtliche Dauer ihrem Schulleiter unverzüglich anzuzeigen. In gleicher Weise ist die Beendigung des Fernbleibens anzuzeigen. Bei Erkrankung über drei…\"",
+    "key": "§ 11 LDO",
+    "title": "LDO § 11",
+    "type": "norm"
+  },
+  "§ 12": {
+    "definition": "„Abs. 1: 1Die Lehrerkonferenz trifft vor Unterrichtsbeginn des Schuljahres grundsätzliche Festlegungen zur Erhebung von Leistungsnachweisen einschließlich prüfungsfreier Lernphasen. 2Die Festlegungen sind den Schülerinnen und Schülern sowie…\"",
+    "key": "§ 12",
+    "title": "MSO § 12",
+    "type": "norm"
+  },
+  "§ 12 LDO": {
+    "definition": "„Urlaub Abs. 1: Für den Erholungsurlaub, die Elternzeit, den Urlaub in anderen Fällen und die Dienstbefreiung sind die Urlaubs- und Mutterschutzverordnung (UrlMV) und die hierzu ergangenen Vollzugsvorschriften maßgebend. Für Lehrkräfte als …",
+    "key": "§ 12 LDO",
+    "title": "LDO § 12",
+    "type": "norm"
+  },
+  "§ 12 MSO": {
+    "definition": "„Leistungsnachweise Abs. 1: 1Die Lehrerkonferenz trifft vor Unterrichtsbeginn des Schuljahres grundsätzliche Festlegungen zur Erhebung von Leistungsnachweisen einschließlich prüfungsfreier Lernphasen. 2Die Festlegungen sind den Schülerinnen…",
+    "key": "§ 12 MSO",
+    "title": "MSO § 12",
+    "type": "norm"
+  },
+  "§ 12/1": {
+    "definition": "„Festlegungen zur Erhebung von Leistungsnachweisen einschließlich prüfungsfreier Lernphasen. Die Festlegungen sind den Schülerinnen und Schülern sowie ihren Erziehungsberechtigten bekannt zu geben.\"",
+    "key": "§ 12/1",
+    "title": "MSO § 12 Abs. 1",
+    "type": "norm"
+  },
+  "§ 12/1 MSO": {
+    "definition": "„Die Lehrerkonferenz trifft vor Unterrichtsbeginn des Schuljahres grundsätzliche Festlegungen zur Erhebung von Leistungsnachweisen einschließlich prüfungsfreier Lernphasen. Die Festlegungen sind den Schülerinnen und Schülern sowie ihren Erz…",
+    "key": "§ 12/1 MSO",
+    "title": "MSO § 12/1",
+    "type": "norm"
+  },
+  "§ 12/2": {
+    "definition": "„werden; sie müssen angekündigt werden, wenn größere Lernabschnitte bearbeitet werden sollen. Der Termin eines angekündigten schriftlichen Leistungsnachweises muss spätestens eine Woche vorher bekannt gegeben werden. An einem Tag darf nur…\"",
+    "key": "§ 12/2",
+    "title": "MSO § 12 Abs. 2",
+    "type": "norm"
+  },
+  "§ 12/2 MSO": {
+    "definition": "„Schriftliche Leistungsnachweise können je nach Art und Umfang angekündigt werden; sie müssen angekündigt werden, wenn größere Lernabschnitte bearbeitet werden sollen. Der Termin eines angekündigten schriftlichen Leistungsnachweises muss sp…",
+    "key": "§ 12/2 MSO",
+    "title": "MSO § 12/2",
+    "type": "norm"
+  },
+  "§ 12/3 MSO": {
+    "definition": "„Schriftliche und praktische Leistungsnachweise sind den Schülerinnen und Schülern innerhalb einer angemessenen Frist zurückzugeben und mit ihnen zu besprechen. Schriftliche Leistungsnachweise werden den Schülerinnen und Schülern zur…\"",
+    "key": "§ 12/3 MSO",
+    "title": "MSO § 12 Abs. 3",
+    "type": "norm"
+  },
+  "§ 12/4": {
+    "definition": "„In der Jahrgangsstufe 9 findet für die Schülerinnen und Schüler einer Regelklasse eine Projektprüfung mit schriftlichen, mündlichen und praktischen Lerninhalten des Fachs Wirtschaft und Beruf sowie des jeweiligen in dieser Jahrgangsstufe…\"",
+    "key": "§ 12/4",
+    "title": "MSO § 12 Abs. 4",
+    "type": "norm"
+  },
+  "§ 12/4 MSO": {
+    "definition": "„In der Jahrgangsstufe 9 findet für die Schülerinnen und Schüler einer Regelklasse eine Projektprüfung mit schriftlichen, mündlichen und praktischen Lerninhalten des Fachs Wirtschaft und Beruf sowie des jeweiligen in dieser Jahrgangsstufe b…",
+    "key": "§ 12/4 MSO",
+    "title": "MSO § 12/4",
+    "type": "norm"
+  },
+  "§ 138": {
+    "definition": "Anzeigepflicht geplanter schwerer Straftaten (taxative Liste; Bund-Anker)",
+    "key": "§ 138",
+    "title": "StGB § 138",
+    "type": "norm"
+  },
+  "§ 14 LDO": {
+    "definition": "„Abs. 1: Die Lehrkraft hat, auch nach Beendigung des Dienstverhältnisses, über die ihr bei ihrer dienstlichen Tätigkeit bekannt gewordenen Angelegenheiten Verschwiegenheit zu bewahren. Dies gilt nicht für Mitteilungen im dienstlichen…\"",
+    "key": "§ 14 LDO",
+    "title": "LDO § 14",
+    "type": "norm"
+  },
+  "§ 14 MSO": {
+    "definition": "„¹Die Lernziele der Schülerinnen und Schüler, die auf Grund ihres sonderpädagogischen Förderbedarfs voraussichtlich die Lernziele der Mittelschule nicht erreichen, sind in einem individuellen Förderplan festzuschreiben; ansonsten kann ein…\"",
+    "key": "§ 14 MSO",
+    "title": "MSO § 14",
+    "type": "norm"
+  },
+  "§ 14/1 LDO": {
+    "definition": "Verschwiegenheit über dienstl. Angelegenheiten auch nach Dienstende; Spannungen/Gegensätze vertraulich.",
+    "key": "§ 14/1 LDO",
+    "title": "LDO § 14 Abs. 1",
+    "type": "norm"
+  },
+  "§ 14/2 LDO": {
+    "definition": "Auskünfte an Presse/Rundfunk/TV NUR durch SL bzw. beauftragte LK.",
+    "key": "§ 14/2 LDO",
+    "title": "LDO § 14 Abs. 2",
+    "type": "norm"
+  },
+  "§ 14/3 LDO": {
+    "definition": "Vor endgültiger Festlegung Zeugnisnoten KEINE Auskünfte über Vorrücken/Noten an SuS oder EB (§ 6/3 LDO bleibt unberührt).",
+    "key": "§ 14/3 LDO",
+    "title": "LDO § 14 Abs. 3",
+    "type": "norm"
+  },
+  "§ 14/4 LDO": {
+    "definition": "„Die Schule ist nicht berechtigt, anderen Personen als den Erziehungsberechtigten Auskunft über Schülerinnen und Schüler und ihre Leistungen zu geben. Von dieser Regel kann jedoch abgewichen werden, wenn die Erziehungsberechtigten…\"",
+    "key": "§ 14/4 LDO",
+    "title": "LDO § 14 Abs. 4",
+    "type": "norm"
+  },
+  "§ 16 LDO": {
+    "definition": "„Abs. 1: Jegliche Werbung für politische Parteien, Wählergruppen, Bürgerinitiativen oder vergleichbare Vereinigungen sowie für deren Meinungen und Anliegen ist im Unterricht und im schulischen Bereich unzulässig. Abs. 2: Politische…\"",
+    "key": "§ 16 LDO",
+    "title": "LDO § 16",
+    "type": "norm"
+  },
+  "§ 16 Nr": {
+    "definition": "Schülerratswahl Detailbestimmung.",
+    "key": "§ 16 Nr",
+    "title": "BaySchO § 16",
+    "type": "norm"
+  },
+  "§ 161 StPO": {
+    "definition": "Auskunftsrecht der Staatsanwaltschaft (Ermittlungsverfahren).",
+    "key": "§ 161 StPO",
+    "title": "StPO § 161",
+    "type": "norm"
+  },
+  "§ 1626": {
+    "definition": "Elterliche Sorge (Eltern-Antragsrecht-Anker, MP_04-randständig).",
+    "key": "§ 1626",
+    "title": "BGB § 1626",
+    "type": "norm"
+  },
+  "§ 163 StPO": {
+    "definition": "Aufgaben und Befugnisse der Polizei im Ermittlungsverfahren.",
+    "key": "§ 163 StPO",
+    "title": "StPO § 163",
+    "type": "norm"
+  },
+  "§ 17": {
+    "definition": "„Abs. 1: Die Lehrkraft unterrichtet sich über die amtlichen Veröffentlichungen. Sie hat Anspruch darauf, dass sie ihr in geeigneter Weise zugänglich gemacht werden. Abs. 2: Über die Weitergabe, Verteilung und Bekanntgabe von Druckschriften…\"",
+    "key": "§ 17",
+    "title": "LDO § 17",
+    "type": "norm"
+  },
+  "§ 17 LDO": {
+    "definition": "„Amtliche und sonstige Veröffentlichungen Abs. 1: Die Lehrkraft unterrichtet sich über die amtlichen Veröffentlichungen. Sie hat Anspruch darauf, dass sie ihr in geeigneter Weise zugänglich gemacht werden. Abs. 2: Über die Weitergabe, Verte…",
+    "key": "§ 17 LDO",
+    "title": "LDO § 17",
+    "type": "norm"
+  },
+  "§ 181 SGB IX": {
+    "definition": "Schwerbehindertenvertretung.",
+    "key": "§ 181 SGB IX",
+    "title": "SGB IX § 181",
+    "type": "norm"
+  },
+  "§ 19 BaySchO": {
+    "definition": "„Abs. 4 (verbatim): Die Durchführung von Distanzunterricht an einer Schule oder in einzelnen Klassen oder Kursen der Schule ist nur zulässig, 1. wenn die zuständigen Behörden zum Schutz von Leben oder Gesundheit a) die Schulschließung oder…\"",
+    "key": "§ 19 BaySchO",
+    "title": "BaySchO § 19",
+    "type": "norm"
+  },
+  "§ 19 LDO": {
+    "definition": "„Abs. 1: Die Schulleiterin oder der Schulleiter übt das Hausrecht in der Schulanlage aus. Abs. 2: Unbeschadet dieses Rechts hat die Lehrkraft in ihrem jeweiligen Unterrichtsraum das Hausrecht.\"",
+    "key": "§ 19 LDO",
+    "title": "LDO § 19",
+    "type": "norm"
+  },
+  "§ 19/4 BaySchO": {
+    "definition": "„Die Durchführung von Distanzunterricht an einer Schule oder in einzelnen Klassen oder Kursen der Schule ist nur zulässig, 1. wenn die zuständigen Behörden zum Schutz von Leben oder Gesundheit a) die Schulschließung oder den Ausschluss…\"",
+    "key": "§ 19/4 BaySchO",
+    "title": "BaySchO § 19 Abs. 4",
+    "type": "norm"
+  },
+  "§ 2 LDO": {
+    "definition": "„Abs. 1: Die Lehrkraft trägt im Rahmen der Rechtsordnung und ihrer dienstlichen Pflichten die unmittelbare pädagogische Verantwortung für die Erziehung und den Unterricht ihrer Schülerinnen und Schüler. Sie trägt die Verantwortung für die…\"",
+    "key": "§ 2 LDO",
+    "title": "LDO § 2",
+    "type": "norm"
+  },
+  "§ 2/1": {
+    "definition": "Dienstleistungspflicht: Unterricht + Erziehung.",
+    "key": "§ 2/1",
+    "title": "LDO § 2 Abs. 1",
+    "type": "norm"
+  },
+  "§ 20 BaySchO": {
+    "definition": "„Abs. 1: ¹Ist eine Schülerin oder ein Schüler aus zwingenden Gründen verhindert am Unterricht oder an einer sonstigen verbindlichen Schulveranstaltung teilzunehmen, so ist die Schule unverzüglich unter Angabe des Grundes zu verständigen.…\"",
+    "key": "§ 20 BaySchO",
+    "title": "BaySchO § 20",
+    "type": "norm"
+  },
+  "§ 20 LDO": {
+    "definition": "„Abs. 1: Die Aufgabe der Schule erfordert das vertrauensvolle und kollegiale Zusammenwirken aller Lehrkräfte. Abs. 2: Für die Lehrerkonferenz sind die Vorschriften des Art. 58 BayEUG und der Schulordnungen maßgebend.\"",
+    "key": "§ 20 LDO",
+    "title": "LDO § 20",
+    "type": "norm"
+  },
+  "§ 20/1 BaySchO": {
+    "definition": "Verhinderung · Meldepflicht · unverzüglich",
+    "key": "§ 20/1 BaySchO",
+    "title": "BaySchO § 20/1",
+    "type": "norm"
+  },
+  "§ 203 StGB": {
+    "definition": "Verletzung von Privatgeheimnissen (Berufsgeheimnis Schulpsycholog:innen, Beratungslehrkräfte).",
+    "key": "§ 203 StGB",
+    "title": "StGB § 203",
+    "type": "norm"
+  },
+  "§ 21 LDO": {
+    "definition": "„Abs. 1: Die Klassenkonferenz hat unbeschadet von Art. 53 Abs. 4 BayEUG und ihren Aufgaben nach den Schulordnungen auch den Zweck, die enge Zusammenarbeit und die gegenseitige Verständigung der in der Klasse tätigen Lehrkräfte zu fördern…\"",
+    "key": "§ 21 LDO",
+    "title": "LDO § 21",
+    "type": "norm"
+  },
+  "§ 22 BayPrG": {
+    "definition": "„Abs. 1 (Auszug): Tageseinrichtungen sind Einrichtungen, in denen Kinder ganztägig oder für einen Teil des Tages aufgenommen und in Gruppen gefördert werden. Kindertagespflege wird von einer geeigneten Tagespflegeperson in ihrem Haushalt,…\"",
+    "key": "§ 22 BayPrG",
+    "title": "BayPrG § 22",
+    "type": "norm"
+  },
+  "§ 22 BaySchO": {
+    "definition": "„Abs. 1: 1Die Aufsichtspflicht der Schule erstreckt sich auf die Zeit, in der die Schülerinnen und Schüler am Unterricht oder an sonstigen Schulveranstaltungen teilnehmen, einschließlich einer angemessenen Zeit vor Beginn und nach…\"",
+    "key": "§ 22 BaySchO",
+    "title": "BaySchO § 22",
+    "type": "norm"
+  },
+  "§ 22 KUG": {
+    "definition": "„Bildnisse dürfen nur mit Einwilligung des Abgebildeten verbreitet oder öffentlich zur Schau gestellt werden. Die Einwilligung gilt im Zweifel als erteilt, wenn der Abgebildete dafür, daß er sich abbilden ließ, eine Entlohnung erhielt. Nach…",
+    "key": "§ 22 KUG",
+    "title": "KUG § 22",
+    "type": "norm"
+  },
+  "§ 22 LDO": {
+    "definition": "„Abs. 1: Die Schulleiterin oder der Schulleiter beruft bei Bedarf die Lehrkräfte aller oder einzelner Jahrgangsstufen, der einzelnen Unterrichtsfächer oder der Fächergruppen zu Fachsitzungen außerhalb der regelmäßigen Unterrichtszeit ein.…\"",
+    "key": "§ 22 LDO",
+    "title": "LDO § 22",
+    "type": "norm"
+  },
+  "§ 22 MSO": {
+    "definition": "„Abs. 1 (Auszug, verbatim): Schüler ab dem 9. Schulbesuchsjahr in Praxisklassen oder Deutschklassen können den erfolgreichen Abschluss der Mittelschule mit dem Bestehen einer theorieentlasteten Abschlussprüfung erlangen. Abs. 2 (Auszug,…\"",
+    "key": "§ 22 MSO",
+    "title": "MSO § 22",
+    "type": "norm"
+  },
+  "§ 22 SGB VIII": {
+    "definition": "„Abs. 1 (Auszug): Tageseinrichtungen sind Einrichtungen, in denen Kinder ganztägig oder für einen Teil des Tages aufgenommen und in Gruppen gefördert werden. Kindertagespflege wird von einer geeigneten Tagespflegeperson in ihrem Haushalt,…\"",
+    "key": "§ 22 SGB VIII",
+    "title": "SGB VIII § 22",
+    "type": "norm"
+  },
+  "§ 22/1": {
+    "definition": "Beaufsichtigung: Rahmen + Einteilung.",
+    "key": "§ 22/1",
+    "title": "BaySchO § 22 Abs. 1",
+    "type": "norm"
+  },
+  "§ 22/2": {
+    "definition": "Beaufsichtigung Pausen + Stundenwechsel.",
+    "key": "§ 22/2",
+    "title": "BaySchO § 22 Abs. 2",
+    "type": "norm"
+  },
+  "§ 22/23": {
+    "definition": "Recht am eigenen Bild (§ 22 Einwilligung + § 23 Ausnahmen).",
+    "key": "§ 22/23",
+    "title": "KUG §§ 22 + 23",
+    "type": "norm"
+  },
+  "§ 22/3": {
+    "definition": "Beaufsichtigung außerschul. Veranstaltungen.",
+    "key": "§ 22/3",
+    "title": "BaySchO § 22 Abs. 3",
+    "type": "norm"
+  },
+  "§ 224": {
+    "definition": "gefährliche Körperverletzung (gefährliches Werkzeug; Bund-Anker; out-of-repo)",
+    "key": "§ 224",
+    "title": "StGB § 224",
+    "type": "norm"
+  },
+  "§ 229": {
+    "definition": "Fahrlässige Körperverletzung.",
+    "key": "§ 229",
+    "title": "StGB § 229",
+    "type": "norm"
+  },
+  "§ 23 Abs": {
+    "definition": "Ausnahme-Tatbestand (z. B. Abs. 1 Nr. 1–4 + Abs. 2 Gegen-Ausnahme).",
+    "key": "§ 23 Abs",
+    "title": "KUG § 23 Abs.",
+    "type": "norm"
+  },
+  "§ 23 Ausnahme": {
+    "definition": "Ausnahme vom Einwilligungs-Erfordernis (vier Tatbestände).",
+    "key": "§ 23 Ausnahme",
+    "title": "KUG § 23",
+    "type": "norm"
+  },
+  "§ 23 BaySchO": {
+    "definition": "„Abs. 1: ¹Der Konsum alkoholischer Getränke und sonstiger Rauschmittel ist Schülerinnen und Schülern innerhalb der Schulanlage sowie bei schulischen Veranstaltungen untersagt. ²Über Ausnahmen vom Verbot des Konsums alkoholischer Getränke…\"",
+    "key": "§ 23 BaySchO",
+    "title": "BaySchO § 23",
+    "type": "norm"
+  },
+  "§ 23 KUG": {
+    "definition": "„Abs. 1: Ohne die nach § 22 erforderliche Einwilligung dürfen verbreitet und zur Schau gestellt werden: 1. Bildnisse aus dem Bereiche der Zeitgeschichte; 2. Bilder, auf denen die Personen nur als Beiwerk neben einer Landschaft oder sonstige…",
+    "key": "§ 23 KUG",
+    "title": "KUG § 23",
+    "type": "norm"
+  },
+  "§ 23 LDO": {
+    "definition": "„Fachbetreuung/Fachschaftsleitung Abs. 1: Soweit Fachbetreuerinnen oder Fachbetreuer bzw. Fachschaftsleiterinnen oder Fachschaftsleiter bestellt sind, unterstützen sie die Schulleitung in fachlichen Fragen, insbesondere bei der Koordinierun…",
+    "key": "§ 23 LDO",
+    "title": "LDO § 23",
+    "type": "norm"
+  },
+  "§ 23 Nr": {
+    "definition": "vier Ausnahme-Nummern (Zeitgeschichte / Beiwerk / Versammlung / Kunst-Interesse).",
+    "key": "§ 23 Nr",
+    "title": "KUG § 23 Abs. 1",
+    "type": "norm"
+  },
+  "§ 23 Schul": {
+    "definition": "Schul-Anwendung (Klassenfoto NICHT Beiwerk/Zeitgeschichte).",
+    "key": "§ 23 Schul",
+    "title": "KUG § 23",
+    "type": "norm"
+  },
+  "§ 23/1 BaySchO": {
+    "definition": "„¹Der Konsum alkoholischer Getränke und sonstiger Rauschmittel ist Schülerinnen und Schülern innerhalb der Schulanlage sowie bei schulischen Veranstaltungen untersagt. ²Über Ausnahmen vom Verbot des Konsums alkoholischer Getränke ist im…\"",
+    "key": "§ 23/1 BaySchO",
+    "title": "BaySchO § 23 Abs. 1",
+    "type": "norm"
+  },
+  "§ 23/2 BaySchO": {
+    "definition": "„¹Das Mitbringen und Mitführen von gefährlichen Gegenständen sowie von sonstigen Gegenständen, die den Unterricht oder die Ordnung der Schule stören, ist den Schülerinnen und Schülern untersagt. ²Derartige Gegenstände können weggenommen und…\"",
+    "key": "§ 23/2 BaySchO",
+    "title": "BaySchO § 23 Abs. 2",
+    "type": "norm"
+  },
+  "§ 241": {
+    "definition": "Bedrohung (Bund-Anker; out-of-repo)",
+    "key": "§ 241",
+    "title": "StGB § 241",
+    "type": "norm"
+  },
+  "§ 25": {
+    "definition": "Mitwirkung sonstiges päd. Personal in SMV-Veranstaltungen.",
+    "key": "§ 25",
+    "title": "BaySchO § 25",
+    "type": "norm"
+  },
+  "§ 26": {
+    "definition": "Probezeit M-Zug.",
+    "key": "§ 26",
+    "title": "MSO § 26",
+    "type": "norm"
+  },
+  "§ 28 BaySchO": {
+    "definition": "„Abs. 1: ¹Um den Lehrstoff einzuüben und die Schülerinnen und Schüler zu eigener Tätigkeit anzuregen, werden Hausaufgaben gestellt, die bei durchschnittlichem Leistungsvermögen in angemessener Zeit unter Berücksichtigung der Anforderungen…\"",
+    "key": "§ 28 BaySchO",
+    "title": "BaySchO § 28",
+    "type": "norm"
+  },
+  "§ 28/1": {
+    "definition": "Hausaufgaben · angemessene Zeit · durchschnittliches Leistungsvermögen",
+    "key": "§ 28/1",
+    "title": "BaySchO § 28/1",
+    "type": "norm"
+  },
+  "§ 28/2": {
+    "definition": "Hausaufgaben · angemessene Zeit · durchschnittliches Leistungsvermögen",
+    "key": "§ 28/2",
+    "title": "BaySchO § 28/2",
+    "type": "norm"
+  },
+  "§ 3 BeamtStG": {
+    "definition": "„Abs. 1: Die Lehrkraft ist bei ihrem Unterricht an die geltenden Lehrpläne und Stundentafeln gebunden. Sie achtet auf eine gleichmäßige Verteilung des Lehrstoffs und der schriftlichen Leistungserhebungen über das Schuljahr. Die…\"",
+    "key": "§ 3 BeamtStG",
+    "title": "BeamtStG § 3",
+    "type": "norm"
+  },
+  "§ 3 LDO": {
+    "definition": "„Abs. 1: Die Lehrkraft ist bei ihrem Unterricht an die geltenden Lehrpläne und Stundentafeln gebunden. Sie achtet auf eine gleichmäßige Verteilung des Lehrstoffs und der schriftlichen Leistungserhebungen über das Schuljahr. Die…\"",
+    "key": "§ 3 LDO",
+    "title": "LDO § 3",
+    "type": "norm"
+  },
+  "§ 3/3": {
+    "definition": "Lehrplanbindung · Stundentafeln · Unterrichtsvorbereitung",
+    "key": "§ 3/3",
+    "title": "LDO § 3/3",
+    "type": "norm"
+  },
+  "§ 30": {
+    "definition": "Quali-Prüfung Bestehen.",
+    "key": "§ 30",
+    "title": "MSO § 30",
+    "type": "norm"
+  },
+  "§ 31 BaySchO": {
+    "definition": "„Abs. 1: Individuelle Unterstützung, Nachteilsausgleich und Notenschutz dienen dazu, die Schülerinnen und Schüler mit Beeinträchtigungen in ihrer schulischen Entwicklung zu fördern, und sollen diese darin unterstützen, allgemein bildende…\"",
+    "key": "§ 31 BaySchO",
+    "title": "BaySchO § 31",
+    "type": "norm"
+  },
+  "§ 32 BaySchO": {
+    "definition": "„Abs. 1: ¹Individuelle Unterstützung wird durch pädagogische, didaktisch-methodische und schulorganisatorische Maßnahmen sowie die Verwendung technischer Hilfen gewährt, soweit nicht die Leistungsfeststellung berührt wird. ²Sie kommt…\"",
+    "key": "§ 32 BaySchO",
+    "title": "BaySchO § 32",
+    "type": "norm"
+  },
+  "§ 32/1": {
+    "definition": "Individuelle Unterstützung · Differenzierung · techn. Hilfen",
+    "key": "§ 32/1",
+    "title": "BaySchO § 32/1",
+    "type": "norm"
+  },
+  "§ 32/2 Nr": {
+    "definition": "7-Maßnahmen-Katalog Individuelle Unterstützung; Nr. 6 = HA-Differenzierung.",
+    "key": "§ 32/2 Nr",
+    "title": "BaySchO § 32 Abs. 2 Nr.",
+    "type": "norm"
+  },
+  "§ 33 BeamtStG": {
+    "definition": "Grundpflichten; Verfassungstreue.",
+    "key": "§ 33 BeamtStG",
+    "title": "BeamtStG § 33",
+    "type": "norm"
+  },
+  "§ 33 NA": {
+    "definition": "Nachteilsausgleich-Voraussetzungen.",
+    "key": "§ 33 NA",
+    "title": "BaySchO § 33",
+    "type": "norm"
+  },
+  "§ 34 MSO": {
+    "definition": "„Abs. 1 (Auszug, verbatim): Für den qualifizierten beruflichen Bildungsabschluss [Quabi] ist ein Berufsabschluss mit Notendurchschnitt von mindestens 3,0 erforderlich. Teilnoten werden gleich gewichtet, wenn im Zeugnis keine Gesamtnote…\"",
+    "key": "§ 34 MSO",
+    "title": "MSO § 34",
+    "type": "norm"
+  },
+  "§ 34 NS Anforderungs": {
+    "definition": "Notenschutz-Anforderungs-Voraussetzungen.",
+    "key": "§ 34 NS Anforderungs",
+    "title": "BaySchO § 34",
+    "type": "norm"
+  },
+  "§ 34/1": {
+    "definition": "Quabi-Voraussetzung: Berufsabschluss mit Notendurchschnitt mindestens 3,0.",
+    "key": "§ 34/1",
+    "title": "MSO § 34 Abs. 1",
+    "type": "norm"
+  },
+  "§ 34/2": {
+    "definition": "Quabi: Englischkenntnisse durch Note „ausreichend\" (= Note 4) nachgewiesen.",
+    "key": "§ 34/2",
+    "title": "MSO § 34 Abs. 2",
+    "type": "norm"
+  },
+  "§ 35 BeamtStG": {
+    "definition": "Folgepflicht (Weisungsgebundenheit); volle Hingabe an den Beruf.",
+    "key": "§ 35 BeamtStG",
+    "title": "BeamtStG § 35",
+    "type": "norm"
+  },
+  "§ 353b": {
+    "definition": "Verletzung des Dienstgeheimnisses (für reguläre LK ohne § 203-Berufseigenschaft).",
+    "key": "§ 353b",
+    "title": "StGB § 353b",
+    "type": "norm"
+  },
+  "§ 353b Bund": {
+    "definition": "Bundesrecht; Strafbarkeit der Verletzung des Dienstgeheimnisses durch Amtsträger.",
+    "key": "§ 353b Bund",
+    "title": "StGB § 353b",
+    "type": "norm"
+  },
+  "§ 36 BaySchO": {
+    "definition": "„Abs. 1: Individuelle Unterstützung wird im Rahmen des pädagogischen und organisatorischen Ermessens gewährt. Die Erziehungsberechtigten sind angemessen einzubinden. Abs. 2 (Auszug, verbatim): Nachteilsausgleich und Notenschutz benötigen…\"",
+    "key": "§ 36 BaySchO",
+    "title": "BaySchO § 36",
+    "type": "norm"
+  },
+  "§ 37 BaySchO": {
+    "definition": "Schülerbogen + Schülerakten: Anlage und Inhalt.",
+    "key": "§ 37 BaySchO",
+    "title": "BaySchO § 37",
+    "type": "norm"
+  },
+  "§ 37 BeamtStG": {
+    "definition": "Verschwiegenheitspflicht (Bundesrahmen; Ausgestaltung in § 14 LDO).",
+    "key": "§ 37 BeamtStG",
+    "title": "BeamtStG § 37",
+    "type": "norm"
+  },
+  "§ 37/1": {
+    "definition": "Schülerunterlagen-Inhalt.",
+    "key": "§ 37/1",
+    "title": "BaySchO § 37 Abs. 1",
+    "type": "norm"
+  },
+  "§ 38 BaySchO": {
+    "definition": "Aufbewahrungspflichten Schülerunterlagen.",
+    "key": "§ 38 BaySchO",
+    "title": "BaySchO § 38",
+    "type": "norm"
+  },
+  "§ 39 BaySchO": {
+    "definition": "Übermittlung von Schülerdaten an andere Schulen + Behörden.",
+    "key": "§ 39 BaySchO",
+    "title": "BaySchO § 39",
+    "type": "norm"
+  },
+  "§ 4 Abs": {
+    "definition": "Schulische Veranstaltungen außerhalb des Unterrichts.",
+    "key": "§ 4 Abs",
+    "title": "LDO § 4",
+    "type": "norm"
+  },
+  "§ 4 LDO": {
+    "definition": "„Sonstige schulische Veranstaltungen, schulische Veranstaltungen außerhalb der Schulanlage Abs. 1: Die Teilnahme an Schülerfahrten (u. a. Schullandheimaufenthalten, Schul- und Studienfahrten, Fachexkursionen, Schülerwanderungen und…\"",
+    "key": "§ 4 LDO",
+    "title": "LDO § 4",
+    "type": "norm"
+  },
+  "§ 40 BaySchO": {
+    "definition": "Datenschutz Schülerunterlagen.",
+    "key": "§ 40 BaySchO",
+    "title": "BaySchO § 40",
+    "type": "norm"
+  },
+  "§ 41 BaySchO": {
+    "definition": "„Abs. 1: Ein Recht auf Einsicht in die eigene Schülerakte nach § 37 Satz 2 Nr. 1 sowie – nach Abschluss des Aufnahmeverfahrens, der Abschlussprüfung oder anderer schulischer Leistungsfeststellungen – in die Leistungsnachweise nach § 37 Satz…\"",
+    "key": "§ 41 BaySchO",
+    "title": "BaySchO § 41",
+    "type": "norm"
+  },
+  "§ 41/1 BaySchO": {
+    "definition": "„– nach Abschluss des Aufnahmeverfahrens, der Abschlussprüfung oder anderer schulischer Leistungsfeststellungen – in die Leistungsnachweise nach § 37 Satz 2 Nr. 2 haben 1. die jeweiligen Schülerinnen und Schüler ab Vollendung des 14.…\"",
+    "key": "§ 41/1 BaySchO",
+    "title": "BaySchO § 41 Abs. 1",
+    "type": "norm"
+  },
+  "§ 41/1 Nr": {
+    "definition": "drei Personenkreise des Einsichtsrechts.",
+    "key": "§ 41/1 Nr",
+    "title": "BaySchO § 41 Abs. 1 Nr. 1–3",
+    "type": "norm"
+  },
+  "§ 47 BeamtStG": {
+    "definition": "Tatbestand „Dienstvergehen\": schuldhafte Pflichtverletzung. Außerdienstliches Verhalten erfasst, wenn Ansehen Beamtentum bedeutsam beeinträchtigt. Maßnahmenkatalog → BayDG Art. 6.",
+    "key": "§ 47 BeamtStG",
+    "title": "BeamtStG § 47",
+    "type": "norm"
+  },
+  "§ 5 GrSO": {
+    "definition": "„Abs. 1: Die Klassenleiterin oder der Klassenleiter meldet nach eingehender Erörterung mit den Erziehungsberechtigten Schülerinnen und Schüler, die auf Grund des möglichen Vorliegens der Voraussetzungen nach Art. 41 Abs. 5 BayEUG für eine…\"",
+    "key": "§ 5 GrSO",
+    "title": "GrSO § 5",
+    "type": "norm"
+  },
+  "§ 5 LDO": {
+    "definition": "„Abs. 1: Die Lehrkraft ist verpflichtet, bei der Wahrnehmung der Aufsichtspflicht der Schule mitzuwirken. Dabei kann sie auch zur Aufsicht außerhalb ihres Unterrichts herangezogen werden. Insbesondere hat die Lehrkraft spätestens von Beginn…\"",
+    "key": "§ 5 LDO",
+    "title": "LDO § 5",
+    "type": "norm"
+  },
+  "§ 5/1 LDO": {
+    "definition": "Aufsicht durch jede LK; spätestens vom Beginn des Unterrichts an im Raum, erforderlichenfalls bis zum Weggang der SuS.",
+    "key": "§ 5/1 LDO",
+    "title": "LDO § 5 Abs. 1",
+    "type": "norm"
+  },
+  "§ 5/2 LDO": {
+    "definition": "Aufsicht in Pausen + Stundenwechseln nach SL-Einteilung (schriftlich).",
+    "key": "§ 5/2 LDO",
+    "title": "LDO § 5 Abs. 2",
+    "type": "norm"
+  },
+  "§ 5/3 LDO": {
+    "definition": "Außerschul. Veranstaltungen: Treff-/Endpunkt = Aufsicht-Beginn/-Ende; Jgst. 1–4 muss Punkt im Schulsprengel liegen.",
+    "key": "§ 5/3 LDO",
+    "title": "LDO § 5 Abs. 3",
+    "type": "norm"
+  },
+  "§ 5/4 LDO": {
+    "definition": "Bei Mitwirkung Externer „soll\" eine LK anwesend sein (Soll-Vorschrift).",
+    "key": "§ 5/4 LDO",
+    "title": "LDO § 5 Abs. 4",
+    "type": "norm"
+  },
+  "§ 6 Abs": {
+    "definition": "Zusammenarbeit EB + Klassenleitungspflichten.",
+    "key": "§ 6 Abs",
+    "title": "LDO § 6",
+    "type": "norm"
+  },
+  "§ 6 GrSO": {
+    "definition": "„Abs. 5 (verbatim soweit aus Quelle extrahiert): Die Eignung für den Bildungsweg des Gymnasiums liegt vor, wenn die Gesamtdurchschnittsnote mindestens 2,33 beträgt. # Volltext Abs. 1-6 nicht vollständig per WebFetch extrahierbar, nur…\"",
+    "key": "§ 6 GrSO",
+    "title": "GrSO § 6",
+    "type": "norm"
+  },
+  "§ 6 LDO": {
+    "definition": "„Abs. 1: Die Schulleiterin oder der Schulleiter beauftragt für jede Klasse eine Lehrkraft mit der Leitung (Klassenleiterin oder Klassenleiter). An Grundschulen und Mittelschulen sowie Förderzentren führt die Klassenleiterin oder der…\"",
+    "key": "§ 6 LDO",
+    "title": "LDO § 6",
+    "type": "norm"
+  },
+  "§ 6 MSO": {
+    "definition": "„Auszug (verbatim, Jgst. 5): Eignung Gymnasium = Gesamtdurchschnittsnote aus den Fächern Deutsch und Mathematik mindestens 2,0; Realschule = mindestens 2,5. Auszug (verbatim, Jgst. 6): Übertritt in Realschule Klasse 6 erfordert…\"",
+    "key": "§ 6 MSO",
+    "title": "MSO § 6",
+    "type": "norm"
+  },
+  "§ 6/2": {
+    "definition": "Klassenleitung · Klassenleiter-Beauftragung · Kursleitung",
+    "key": "§ 6/2",
+    "title": "LDO § 6/2",
+    "type": "norm"
+  },
+  "§ 6/3 LDO": {
+    "definition": "Pflicht zur frühzeitigen schriftlichen Information der Erziehungsberechtigten bei auffallendem Leistungsabsinken (mit Empfangsbestätigung).",
+    "key": "§ 6/3 LDO",
+    "title": "LDO § 6 Abs. 3",
+    "type": "norm"
+  },
+  "§ 6/7": {
+    "definition": "Übertrittszeugnis Modalitäten.",
+    "key": "§ 6/7",
+    "title": "GrSO § 6 Abs. 7",
+    "type": "norm"
+  },
+  "§ 7 BeamtStG": {
+    "definition": "„- Jgst. 7: Durchschnittsnote von mindestens 2,66 aus den Fächern Deutsch, Mathematik und Englisch - Jgst. 8 und 9: Durchschnitt von mindestens 2,33 in denselben Fächern - Jgst. 10: Qualifizierender Abschluss der Mittelschule plus…\"",
+    "key": "§ 7 BeamtStG",
+    "title": "BeamtStG § 7",
+    "type": "norm"
+  },
+  "§ 7 LDO": {
+    "definition": "„Erteilung von Religionsunterricht an Grundschulen und Mittelschulen sowie Förderzentren Zu den Dienstaufgaben der Lehrkräfte an Grundschulen und Mittelschulen und der Lehrkräfte an Förderzentren gehört auch die Erteilung des Religionsunter…",
+    "key": "§ 7 LDO",
+    "title": "LDO § 7",
+    "type": "norm"
+  },
+  "§ 7 MSO": {
+    "definition": "„- Jgst. 7: Durchschnittsnote von mindestens 2,66 aus den Fächern Deutsch, Mathematik und Englisch - Jgst. 8 und 9: Durchschnitt von mindestens 2,33 in denselben Fächern - Jgst. 10: Qualifizierender Abschluss der Mittelschule plus…\"",
+    "key": "§ 7 MSO",
+    "title": "MSO § 7",
+    "type": "norm"
+  },
+  "§ 8 BaySchO": {
+    "definition": "„Abs. 1: 1Über das Wahlverfahren von Klassensprecherinnen und Klassensprechern entscheidet der Schülerausschuss im Einvernehmen mit der Schulleiterin oder dem Schulleiter. 2In den Jahrgangsstufen 1 bis 4 entscheidet abweichend von Satz 1…\"",
+    "key": "§ 8 BaySchO",
+    "title": "BaySchO § 8",
+    "type": "norm"
+  },
+  "§ 8 BeamtStG": {
+    "definition": "„Abs. 1 (Auszug, verbatim): Schüler [aus anderen weiterführenden Schularten] treten in der Regel in die Regelklasse der nächsthöheren Jahrgangsstufe über. Abs. 3 (Auszug, verbatim): Der Wechsel zurück in die Regelklasse derselben…\"",
+    "key": "§ 8 BeamtStG",
+    "title": "BeamtStG § 8",
+    "type": "norm"
+  },
+  "§ 8 GrSO": {
+    "definition": "„Abs. 1 (Auszug, verbatim): Schülerinnen und Schüler mit nichtdeutscher Muttersprache, die nach Deutschland zugewandert sind und keine oder nur geringe Deutschkenntnisse haben, besuchen zunächst eine Deutschklasse, soweit das Staatliche…\"",
+    "key": "§ 8 GrSO",
+    "title": "GrSO § 8",
+    "type": "norm"
+  },
+  "§ 8 LDO": {
+    "definition": "„Schwerbehinderte Lehrkräfte Abs. 1: Bei der Organisation des Unterrichts und sonstiger schulischer Veranstaltungen sowie bei der Zuweisung besonderer Aufgaben ist die besondere Stellung der Lehrkräfte mit einem Grad der Behinderung von wen…",
+    "key": "§ 8 LDO",
+    "title": "LDO § 8",
+    "type": "norm"
+  },
+  "§ 8 MSO": {
+    "definition": "„Abs. 1 (Auszug, verbatim): Schüler [aus anderen weiterführenden Schularten] treten in der Regel in die Regelklasse der nächsthöheren Jahrgangsstufe über. Abs. 3 (Auszug, verbatim): Der Wechsel zurück in die Regelklasse derselben…\"",
+    "key": "§ 8 MSO",
+    "title": "MSO § 8",
+    "type": "norm"
+  },
+  "§ 8/1": {
+    "definition": "Klassensprecher-Wahl: Modus + Frist.",
+    "key": "§ 8/1",
+    "title": "BaySchO § 8 Abs. 1",
+    "type": "norm"
+  },
+  "§ 8/3": {
+    "definition": "Klassensprecher · Wahl · Jgst. 5",
+    "key": "§ 8/3",
+    "title": "BaySchO § 8/3",
+    "type": "norm"
+  },
+  "§ 839 BGB": {
+    "definition": "Amtshaftung: Freistaat Bayern haftet primär; Rückgriff auf LK NUR bei Vorsatz + grober Fahrlässigkeit.",
+    "key": "§ 839 BGB",
+    "title": "BGB § 839 i.V.m. Art. 34 GG",
+    "type": "norm"
+  },
+  "§ 8a": {
+    "definition": "Schutzauftrag bei Kindeswohlgefährdung (Bund-Anker)",
+    "key": "§ 8a",
+    "title": "SGB VIII § 8a",
+    "type": "norm"
+  },
+  "§ 9 BaySchO": {
+    "definition": "„Abs. 1: ¹Die Schülersprecherinnen und Schülersprecher werden jeweils für ein Schuljahr gewählt. ²Die Wahl findet innerhalb von zwei Wochen nach der Wahl der Klassensprecherinnen und Klassensprecher statt. ³Die Schülersprecherinnen und…\"",
+    "key": "§ 9 BaySchO",
+    "title": "BaySchO § 9",
+    "type": "norm"
+  },
+  "§ 9/1": {
+    "definition": "Schülerratswahl Wahlrecht.",
+    "key": "§ 9/1",
+    "title": "BaySchO § 9 Abs. 1",
+    "type": "norm"
+  },
+  "§ 9a Abs": {
+    "definition": "Allgemeine Dienstpflichten (Anwesenheit, Selbstfortbildung, Hausunterricht).",
+    "key": "§ 9a Abs",
+    "title": "LDO § 9a",
+    "type": "norm"
+  },
+  "§ 9a LDO": {
+    "definition": "„Abs. 1: 1Die Lehrkraft ist verpflichtet, ihre Arbeitskraft dem Dienst als Lehrkraft zu widmen. 2Dies verlangt erzieherischen Einsatz der Lehrkraft auch außerhalb des Unterrichts. 3Bei teilzeitbeschäftigten Lehrkräften soll der verminderte…\"",
+    "key": "§ 9a LDO",
+    "title": "LDO § 9a",
+    "type": "norm"
+  },
+  "§ 9a/2 LDO": {
+    "definition": "Pflicht zur Selbstfortbildung + Teilnahme an dienstlichen Fortbildungsveranstaltungen (vgl. Art. 20 BayLBG).",
+    "key": "§ 9a/2 LDO",
+    "title": "LDO § 9a Abs. 2",
+    "type": "norm"
+  },
+  "§ 9a/3 LDO": {
+    "definition": "Verfügbarkeit „in zumutbarem Umfang\" + frühzeitige Information; auch in Ferien zu dienstl. FB heranziehbar (zumutbar).",
+    "key": "§ 9a/3 LDO",
+    "title": "LDO § 9a Abs. 3",
+    "type": "norm"
+  },
+  "§ 9a/4 LDO": {
+    "definition": "Fachfremder Unterricht NICHT zum Nachteil bei dienstlicher Beurteilung.",
+    "key": "§ 9a/4 LDO",
+    "title": "LDO § 9a Abs. 4",
+    "type": "norm"
+  },
+  "§ 9a/8 LDO": {
+    "definition": "Rauchverbot absolut auf Schulgelände (außer Wohnungen); außerhalb „sollen verzichten\".",
+    "key": "§ 9a/8 LDO",
+    "title": "LDO § 9a Abs. 8",
+    "type": "norm"
+  },
+  "§ 9a/9": {
+    "definition": "Allgemeine Dienstpflichten (Fortsetzung).",
+    "key": "§ 9a/9",
+    "title": "LDO § 9a Abs. 9",
+    "type": "norm"
+  },
+  "§ 9a/9b": {
+    "definition": "Allgemeine + Außerunterrichtliche Dienstpflichten (Doppel-Anker; § 9 LDO ist aufgehoben).",
+    "key": "§ 9a/9b",
+    "title": "LDO §§ 9a + 9b",
+    "type": "norm"
+  },
+  "§ 9b LDO": {
+    "definition": "„1Zur Wahrnehmung des Bildungs- und Erziehungsauftrags der Schule hat die Lehrkraft über den planmäßigen Unterricht und die damit in Zusammenhang stehenden dienstlichen Verpflichtungen hinaus in angemessenem Umfang außerunterrichtliche…\"",
+    "key": "§ 9b LDO",
+    "title": "LDO § 9b",
+    "type": "norm"
+  }
+}

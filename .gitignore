@@ -21,3 +21,10 @@ docs/projekt/*/evidenz/
 
 # Q-GATE-LOG runtime artifacts (deploy-check.sh append-only logs, game-spezifisch)
 tools/q-gate-log/*.log
+
+# Python bytecode cache
+__pycache__/
+*.pyc
+
+# Lernraum-Smoketest-Output (Screenshots; ad-hoc)
+tools/lernraum/_smoketest_out/

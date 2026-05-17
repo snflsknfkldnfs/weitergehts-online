@@ -6,35 +6,99 @@
 <title>Staatsexamen — Mündliche Prüfungen | weitergehts.online</title>
 <link rel="stylesheet" href="../assets/css/base.css">
 <style>
-li[data-status="staging"]{display:none;}
-li[data-status="planned"]{opacity:0.5;}
-li[data-status="planned"]::after{content:" — in Vorbereitung";color:#94a3b8;font-size:0.85em;font-weight:400;}
-.crumb{font-size:0.85em;color:#475569;margin-bottom:8px;}
-.crumb a{color:#c2410c;text-decoration:none;}
-.crumb a:hover{text-decoration:underline;}
+.crumb { margin-bottom: 24px; }
+.crumb a { color: inherit; }
+.hero { display: grid; grid-template-columns: 1fr 280px; gap: 32px; padding-bottom: 32px; border-bottom: 1px solid var(--hairline); margin-bottom: 40px; }
+.hero h1 { font-size: 32px; font-weight: 600; margin-bottom: 12px; }
+.hero p.lead { font-family: var(--lr-font-serif); font-style: italic; color: var(--muted); font-size: 17px; line-height: 1.55; }
+.gesamt-box { background: var(--paper); border: 1px solid var(--rule); padding: 18px; }
+.gesamt-box h3 { font-family: var(--lr-font-mono); font-size: var(--lr-cap-size); letter-spacing: var(--lr-cap-track); text-transform: uppercase; color: var(--muted); margin-bottom: 12px; font-weight: 500; }
+.gesamt-bar { display: flex; height: 8px; border: 1px solid var(--rule); margin: 10px 0; }
+.gesamt-bar > span { height: 100%; }
+.gesamt-legend { font-family: var(--lr-font-mono); font-size: 11px; letter-spacing: 0.6px; color: var(--muted); }
+.pruefungs-table td.titel { font-weight: 600; }
+.pruefungs-table td .sub { font-family: var(--lr-font-mono); font-size: 11px; letter-spacing: 0.4px; color: var(--muted); display: block; margin-top: 2px; }
+.pruefungs-table tr.is-planned { opacity: 0.55; }
+.pruefungs-table tr.is-planned .titel::after { content: " · in Vorbereitung"; font-family: var(--lr-font-mono); font-size: 10.5px; letter-spacing: 0.6px; color: var(--mute2); }
+.note { font-family: var(--lr-font-serif); font-style: italic; color: var(--muted); font-size: 13px; }
 </style>
 </head>
-<body>
-<main>
-  <div class="crumb"><a href="../">Startseite</a> › Staatsexamen</div>
-  <h1>Staatsexamen — Mündliche Prüfungen</h1>
-  <p>Vorbereitungsmaterialien für das 2. Staatsexamen Lehramt Mittelschule Bayern.</p>
+<body data-lernraum>
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+<main id="main-content">
 
-  <h2>Prüfungsteile</h2>
-  <ul>
-    <li id="staatsexamen-schulrecht">
-      <a href="schulrecht/index.html">Schulrecht</a>
-    </li>
-    <li id="staatsexamen-paedagogik" data-status="planned">
-      Pädagogik
-    </li>
-    <li id="staatsexamen-psychologie" data-status="planned">
-      Psychologie
-    </li>
-    <li id="staatsexamen-fachdidaktik">
-      <a href="fachdidaktik/index.html">Fachdidaktik</a>
-    </li>
-  </ul>
+  <nav aria-label="Brotkrumen" class="mono-cap crumb">
+    <a href="../">STARTSEITE</a>
+    <span aria-hidden="true">›</span>
+    <span>STAATSEXAMEN</span>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <span class="mono-cap">2. Staatsexamen · Lehramt Mittelschule Bayern</span>
+      <h1>Staatsexamen. Mündliche Prüfungen, Mai 2026.</h1>
+      <p class="lead">
+        Vorbereitungsmaterialien für die vier Prüfungsteile — Schulrecht, Fachdidaktik,
+        Pädagogik und Psychologie.
+      </p>
+    </div>
+    <aside class="gesamt-box" aria-label="Lernstand gesamt">
+      <h3>Lernstand gesamt</h3>
+      <div class="gesamt-bar" role="img" aria-label="Verteilung der Themenfelder">
+        <span style="width: 60%; background: var(--mute2);"></span>
+        <span style="width: 30%; background: var(--status-work);"></span>
+        <span style="width: 10%; background: var(--status-sit);"></span>
+      </div>
+      <div class="gesamt-legend">offen · in Arbeit · sitzt</div>
+    </aside>
+  </header>
+
+  <h2 id="pruefungsteile" class="mono-cap">Prüfungsteile</h2>
+  <table class="lr-table pruefungs-table" aria-labelledby="pruefungsteile">
+    <colgroup>
+      <col class="col-nr"><col class="col-status"><col><col class="col-stand"><col class="col-arrow">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>Nr</th><th></th><th>Prüfungsteil</th><th>Lernstand</th><th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-status-id="staatsexamen.schulrecht">
+        <td class="col-nr">I</td>
+        <td><span class="status-dot" data-status="open" aria-label="offen"></span></td>
+        <td><a href="schulrecht/" class="titel">Schulrecht</a><span class="sub">10 Themenfelder · 4 Schwerpunkte · ZALGM § 16</span></td>
+        <td><span class="status-label">offen</span></td>
+        <td class="col-arrow">→</td>
+      </tr>
+      <tr data-status-id="staatsexamen.fachdidaktik">
+        <td class="col-nr">II</td>
+        <td><span class="status-dot" data-status="open" aria-label="offen"></span></td>
+        <td><a href="fachdidaktik/" class="titel">Fachdidaktik</a><span class="sub">N18 Sozialkunde · D Mathe · D GPG · D WiB (planned)</span></td>
+        <td><span class="status-label">offen</span></td>
+        <td class="col-arrow">→</td>
+      </tr>
+      <tr class="is-planned" data-status-id="staatsexamen.paedagogik">
+        <td class="col-nr">III</td>
+        <td><span class="status-dot" data-status="planned" aria-label="in Vorbereitung"></span></td>
+        <td><span class="titel">Pädagogik</span><span class="sub">in Vorbereitung</span></td>
+        <td><span class="status-label">in Vorbereitung</span></td>
+        <td class="col-arrow"></td>
+      </tr>
+      <tr class="is-planned" data-status-id="staatsexamen.psychologie">
+        <td class="col-nr">IV</td>
+        <td><span class="status-dot" data-status="planned" aria-label="in Vorbereitung"></span></td>
+        <td><span class="titel">Psychologie</span><span class="sub">in Vorbereitung</span></td>
+        <td><span class="status-label">in Vorbereitung</span></td>
+        <td class="col-arrow"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="note" style="margin-top: 36px;">
+    Die Reihenfolge entspricht der ZALGM-Bewertungsmatrix. Lernstand pro Themenfeld setzt
+    sich aus dem jeweiligen Detail (L3) zusammen.
+  </p>
 </main>
 <script src="../assets/js/core.js"></script>
 </body>
