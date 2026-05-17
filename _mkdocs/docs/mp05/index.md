@@ -59,29 +59,42 @@ flowchart LR
  classDef bes fill:#fef2f2,stroke:#9f1239,color:#1f2937
 ```
 
+#### Trias der Rechte (Art. 56/2)
+
 - **Informationsrechte**: über wesentl. Schulangelegenheiten · Auskunft über Leistungsstand · Förderhinweise. Bei Minderjährigen gelten Info-Rechte **auch für Erziehungsberechtigte**.
 - **Beteiligungsrechte**: Teilnahme am Schulleben, Mitwirkung an U.-Gestaltung im Rahmen von Schulordnung + Lehrplan.
-- **Beschwerderecht**: Wortlaut Art. 56/2 Nr. 5 BayEUG — „bei als ungerecht empfundener Behandlung oder Beurteilung sich **nacheinander** an Lehrkräfte, an die Schulleiterin oder den Schulleiter und an das Schulforum zu wenden". Das Adverb „nacheinander" gibt eine **gestufte Reihenfolge** vor (LK → SL → Schulforum). Praktische Lockerung: bei Beurteilungs-Konflikten kann eine Eskalationsstufe übersprungen werden, wenn die jeweilige Ebene befangen ist — der Wortlaut nennt aber keine pauschale Wahlfreiheit.
+- **Beschwerderecht**: nach Art. 56/2 Nr. 5 BayEUG **gestuft** — LK → SL → Schulforum. Eskalationsstufe übersprungbar bei Befangenheit; keine pauschale Wahlfreiheit.
+
+??? note "Wortlaut Beschwerderecht Art. 56/2 Nr. 5"
+    „bei als ungerecht empfundener Behandlung oder Beurteilung sich **nacheinander** an Lehrkräfte, an die Schulleiterin oder den Schulleiter und an das Schulforum zu wenden". Das Adverb „nacheinander" gibt eine gestufte Reihenfolge vor (LK → SL → Schulforum).
+
+#### Weitere SuS-Rechte
+
 <!-- pre-audit-2026-05-01: "...keine politische Agitation; abhängig von Alter, Reife, Interesse." → Drift gegen Art. 56/3 BayEUG (Wortlaut: nur "sachlicher Zusammenhang" als unterrichtsbez. Schranke; KEIN Alter/Reife-Vorbehalt). -->
 - **Freie Meinungsäußerung** (Art. 56/3): „im Unterricht ist der sachliche Zusammenhang zu wahren" — Wortlaut nennt **„Alle Schülerinnen und Schüler"**; **sachlicher Zusammenhang ist die einzige unterrichtsbezogene Schranke** (KEIN Alter/Reife-Vorbehalt).
 - **Fürsorge-Rechte**: Schulgesundheit · Unfallverhütung · Lernmittelfreiheit · Kostenfreiheit Schulweg.
 
-**Verfahrensrechte**:
+#### Verfahrensrechte
 
 | Recht | Norm | Detail |
 |---|---|---|
 | **Schülerakte einsehen** | § 41/1 BaySchO | **ab Vollendung des 14. Lebensjahres** (Wortlaut) |
 | **LNW-Rückgabe** | MSO § 12/3 | **LK→SuS**: „angemessene Frist" (KEIN konkreter Wert!); **SuS→Schule**: „innerhalb einer Woche unverändert" zurück; Benotung + Besprechung + Herausgabe zur Eltern-Kenntnisnahme |
 
-**Notenauskunft** (Reviewer-D-Pflichtfrage F5 / Master-Fehlerliste K13):
+#### Notenauskunft
+
+*Reviewer-D-Pflichtfrage F5 · Master-Fehlerliste K13.*
 
 - Subjektives öff. Recht aus **Art. 56/2 + Art. 52/1 BayEUG + DSGVO Art. 15 + BV Art. 128**.
 - **Keine Einschränkung** auf Notenarten — schriftlich, mündlich, praktisch alle.
 - **4-Stufen-Verhältnismäßigkeitsprüfung**: legitimes Ziel · Geeignetheit · Erforderlichkeit · Angemessenheit → i.d.R. Auskunftspflicht.
-- **Falle**: Vergleich mit Noten anderer SuS ist nicht zulässig — die Auskunftspflicht bezieht sich nur auf die eigenen Leistungen der/des einzelnen SuS (datenschutzrechtliche Bindung an die individuelle Person, BaySchO § 39 i.V.m. DSGVO Art. 6/1; LDO § 14 normiert nur die Verschwiegenheitspflicht der Lehrkraft, KEIN „Notengeheimnis" oder explizites Vergleichsverbot — der häufig kursierende „§ 14/4 LDO Notengeheimnis"-Anker ist Drift; § 14 Abs. 4 LDO regelt vielmehr, an WEN die Schule Schülerinformationen geben darf — primär Erziehungsberechtigte).
+- **Vergleichsverbot**: Auskunftspflicht ist **personenbezogen** — Vergleich mit Noten anderer SuS unzulässig (BaySchO § 39 + DSGVO Art. 6/1).
 
-!!! warning "⚠ Falle Beschwerderecht"
- Wortlaut Art. 56/2 Nr. 5 sagt **„nacheinander"** (LK → SL → Schulforum) — also durchaus eine vorgegebene Reihenfolge. Pragmatische Lockerung: bei Befangenheit der unteren Ebene kann übersprungen werden; die LK darf trotzdem nicht „erst zu mir, dann SL" als Bedingung pauschal vorschreiben.
+!!! danger "Falle · § 14 LDO ≠ Notengeheimnis"
+    Der häufig kursierende „§ 14/4 LDO Notengeheimnis"-Anker ist **Drift**. § 14 LDO normiert nur die **Verschwiegenheits- + Auskunftspflicht der LK**; Abs. 4 regelt, an WEN die Schule Schülerinformationen geben darf (primär Erziehungsberechtigte). **Kein expliziter Notengeheimnis-Wortlaut** im Text.
+
+!!! warning "Falle · Beschwerderecht-Reihenfolge"
+    Art. 56/2 Nr. 5 sagt **„nacheinander"** (LK → SL → Schulforum) — eine vorgegebene Reihenfolge. Bei Befangenheit darf eine Stufe übersprungen werden; pauschale Wahlfreiheit gibt es nicht.
 
 ## A.2 Pflichten der SuS (Art. 56/4 BayEUG)
 
@@ -100,22 +113,29 @@ flowchart LR
 
 | Bereich | Norm | Regelung |
 |---|---|---|
-| **Handy / digitale Endgeräte** | Art. 56/5 | Wortlaut Satz 1: „Die Verwendung von digitalen Endgeräten ist für Schülerinnen und Schüler nur zulässig 1. im Unterricht und bei sonstigen Schulveranstaltungen, soweit die Aufsicht führende Person dies gestattet, 2. im Übrigen im Schulgebäude und auf dem Schulgelände, soweit dies die Schulleitung im Einvernehmen mit dem Schulforum allgemein oder die Aufsicht führende Person im Einzelfall gestattet". Satz 3: „Satz 1 Nr. 2 gilt nicht für Grundschulen und Grundschulstufen an Förderschulen". Satz 4: „Bei unzulässiger Verwendung kann das digitale Endgerät vorübergehend einbehalten werden". **Kein absolutes Verbot.** |
+| **Handy / digitale Endgeräte** | Art. 56/5 | **Kein absolutes Verbot.** Gestaffelte Genehmigung: im U. durch Aufsicht, sonst SL im Einvernehmen mit Schulforum. **GS + GS-Stufe FöS ausgenommen.** Bei unzulässiger Verwendung Einbehaltung möglich. |
 | **Rauchen** | Art. 3 GSG | in Schulen + auf Gelände **verboten** |
 | **Alkohol/Rauschmittel** | § 23/1 BaySchO | Konsum innerhalb Schulanlage + bei schul. Veranstaltungen untersagt |
 | **Gefährliche/störende Gegenstände** | § 23/2 BaySchO | Mitbringen/Mitführen untersagt; **Wegnahme + Sicherstellung** zulässig; **Rückgabe bei Minderjährigen NUR an Erziehungsberechtigte** |
-| **Politik/Parteinahme** | Art. 84 BayEUG | Abs. 2: „Politische Werbung im Rahmen von Schulveranstaltungen oder auf dem Schulgelände ist nicht zulässig". Abs. 3 Abzeichen: zulässig, **wenn dadurch nicht Schulfriede, geordneter Schulbetrieb, Bildungs-/Erziehungsauftrag, persönliche Ehre oder Erziehung zur Toleranz gefährdet wird** (5 Schutzgüter); im Zweifelsfall entscheidet die SL. |
+| **Politik/Parteinahme** | Art. 84 BayEUG | Abs. 2: „Politische Werbung … nicht zulässig". Abs. 3 Abzeichen: zulässig, **wenn nicht Schulfriede, geordneter Schulbetrieb, Bildungs-/Erziehungsauftrag, persönliche Ehre oder Erziehung zur Toleranz gefährdet werden** (5 Schutzgüter); im Zweifel SL. |
 
-**Mitarbeitsnote ↔ Verhaltenssanktion** (Master-Fehlerliste M20 + Reviewer-D F6):
+??? note "Wortlaut Art. 56/5 BayEUG (Handy)"
+    Satz 1: „Die Verwendung von digitalen Endgeräten ist für Schülerinnen und Schüler nur zulässig 1. im Unterricht und bei sonstigen Schulveranstaltungen, soweit die Aufsicht führende Person dies gestattet, 2. im Übrigen im Schulgebäude und auf dem Schulgelände, soweit dies die Schulleitung im Einvernehmen mit dem Schulforum allgemein oder die Aufsicht führende Person im Einzelfall gestattet". Satz 3: „Satz 1 Nr. 2 gilt nicht für Grundschulen und Grundschulstufen an Förderschulen". Satz 4: „Bei unzulässiger Verwendung kann das digitale Endgerät vorübergehend einbehalten werden".
+
+#### Mitarbeitsnote ↔ Verhaltenssanktion
+
+*Master-Fehlerliste M20 · Reviewer-D-Pflichtfrage F6.*
 
 - **Mitarbeitsnote (Art. 52/3)**: NUR fachbezogen — **NICHT** als Verhaltenssanktion.
 - Verweigerung = fehlende Leistung bewertbar; das **Verweigern selbst** ist KEIN Notenkriterium.
 - Verhaltenssanktion separat über Art. 86 (Erziehungs-/Ordnungsmaßnahme).
-- **Doppelsanktion**-Prüfschema (Art. 103/3 GG analog, ne bis in idem):
- 1. identisches Verhalten?
- 2. zwei Sanktionen?
- 3. verschiedene Rechtsgüter?
-- **Identische** mündl. Note + Verweis für **identisches** Verhalten → unzulässig.
+
+!!! tip "Merke · Doppelsanktion-3-Schritt (Art. 103/3 GG analog)"
+    1. **Identisches Verhalten?** → wenn nein, unproblematisch.
+    2. **Zwei Sanktionen?** → wenn nein, unproblematisch.
+    3. **Gleiches Rechtsgut?** → wenn ja: rechtswidrig (ne bis in idem).
+
+    *Beispiel*: mündl. Note + Verweis für identisches Verhalten = unzulässig.
 
 !!! warning "⚠ Fallen Pflichten"
  - **Handy nicht absolut verboten** — Aufsichts-/SL-Genehmigung möglich.
@@ -205,23 +225,37 @@ flowchart TB
 | **Klassensprecher** (§ 8 BaySchO Abs. 1 + Art. 62 Abs. 3 BayEUG) | „**innerhalb von vier Wochen** nach Unterrichtsbeginn" (Wortlaut § 8/1 S. 3); ab Jgst. 5 Pflicht (Art. 62/3 Wortlaut), in Jgst. 1–4 entscheidet die SL im Einvernehmen mit dem Elternbeirat; Wahlverfahren durch Schülerausschuss im Einvernehmen mit SL (§ 8/1 S. 1 Wortlaut). |
 | **Schülersprecher (3) + Schülerausschuss** (§ 9 BaySchO) | „**innerhalb von zwei Wochen** nach der Wahl der Klassensprecherinnen und Klassensprecher" (Wortlaut § 9/1 S. 2); Wahl durch Klassensprecher (Art. 62/5 Wortlaut), Schulforum kann das Wahlrecht auf alle SuS ausdehnen. |
 
-**Verbindungslehrkraft (Art. 62 Abs. 7 BayEUG)**:
+#### Verbindungslehrkraft (Art. 62/7 BayEUG)
 
-- **Wählbar** (Art. 62/7 Satz 1 Wortlaut): „Lehrkräfte, die an der Schule mit **mindestens der Hälfte der Unterrichtspflichtzeit unbefristet beschäftigt** sind, sowie Förderlehrerinnen oder Förderlehrer unter entsprechenden Voraussetzungen".
-- **NICHT wählbar: LAA** — Status „auf Widerruf" erfüllt das Unbefristet-Kriterium nicht (⚠ klassische LAA-Selbstbetroffenheits-Falle).
-- **Wahl** durch Klassensprecherinnen + Klassensprecher und ihre Stellvertreter (Schulforum kann beschließen, dass alle SuS wählen) — Wortlaut.
-- **Amtszeit**: „für jeweils ein Schuljahr" (Wortlaut).
-- **Aufgaben** (Wortlaut Sätze 3–4): „pflegen die Verbindung zwischen Schulleiterin oder Schulleiter und Lehrkräften einerseits und den Schülerinnen und Schülern andererseits. Sie beraten die Einrichtungen der Schülermitverantwortung und vermitteln bei Beschwerden".
-- Wahlverfahren-Detail: § 10 Abs. 1 BaySchO — „Über das Wahlverfahren … entscheidet der Schülerausschuss im Einvernehmen mit der Schulleiterin oder dem Schulleiter".
-
-**Schülerzeitung (Art. 63 BayEUG)** — zwei Erscheinungsformen (Wortlaut Abs. 1 Satz 4: „Die Redaktion … hat das Wahlrecht, ob die Schülerzeitung als **Einrichtung der Schule** im Rahmen der Schülermitverantwortung **oder als Druckwerk im Sinn des Bayerischen Pressegesetzes (BayPrG)** erscheint"):
-
-| Modus | Folge (Wortlaut Art. 63 BayEUG) |
+| Aspekt | Regel |
 |---|---|
-| **Einrichtung der Schule** (SMV-Rahmen) | Abs. 5 Wortlaut: „kann die Schulleiterin oder der Schulleiter die Verteilung auf dem Schulgelände, und für den Fall, dass die Schülerzeitung als Einrichtung der Schule im Rahmen der Schülermitverantwortung erscheint, **auch die Herausgabe untersagen**". |
-| **Druckwerk nach BayPrG** (Presserecht) | Abs. 2 Wortlaut: „Die **Haftung der Erziehungsberechtigten** für minderjährige Schülerinnen und Schüler bleibt unberührt". Abs. 5: SL kann **nur die Verteilung auf dem Schulgelände** untersagen, **NICHT** die Herausgabe insgesamt. |
+| **Wählbar** | LK + FL, mind. ½ Regelstundenmaß, **unbefristet** beschäftigt |
+| **NICHT wählbar** | **LAA** — „auf Widerruf" ≠ unbefristet (⚠ klassische LAA-Selbstbetroffenheits-Falle) |
+| **Wahl** | Klassensprecher + Stellvertreter (Schulforum kann auf alle SuS erweitern) |
+| **Amtszeit** | 1 Schuljahr |
+| **Aufgaben** | Verbindung SL+LK ↔ SuS · SMV beraten · bei Beschwerden vermitteln |
+| **Wahlverfahren** | Schülerausschuss im Einvernehmen mit SL (§ 10/1 BaySchO) |
 
-Vorlauf-Pflicht (Art. 63 Abs. 4 Wortlaut): „**Soll die Schülerzeitung auf dem Schulgelände verteilt werden**, ist der Schulleiterin oder dem Schulleiter rechtzeitig vor Drucklegung ein Exemplar zur Kenntnis zu geben." Bei Einwendungen → Stellungnahme der Redaktion + Vorlage beim Schulforum → gütliche Einigung; scheitert sie, kann das **Schulforum** die Verteilung auf dem Schulgelände untersagen.
+??? note "Wortlaut Art. 62/7 BayEUG"
+    Satz 1: „Lehrkräfte, die an der Schule mit mindestens der Hälfte der Unterrichtspflichtzeit unbefristet beschäftigt sind, sowie Förderlehrerinnen oder Förderlehrer unter entsprechenden Voraussetzungen". Sätze 3–4: „pflegen die Verbindung zwischen Schulleiterin oder Schulleiter und Lehrkräften einerseits und den Schülerinnen und Schülern andererseits. Sie beraten die Einrichtungen der Schülermitverantwortung und vermitteln bei Beschwerden".
+
+#### Schülerzeitung (Art. 63 BayEUG)
+
+Zwei Erscheinungsformen — Redaktion hat **Wahlrecht**:
+
+| Modus | Folgen |
+|---|---|
+| **Einrichtung der Schule** (SMV) | SL kann **Verteilung + Herausgabe** untersagen (Art. 63/5). |
+| **Druckwerk nach BayPrG** | **Eltern-Haftung** bleibt (Art. 63/2). SL kann **nur Verteilung auf Schulgelände** untersagen, **NICHT** die Herausgabe. |
+
+**Vorlauf-Pflicht** (Art. 63/4): rechtzeitig vor Drucklegung ein Exemplar SL zur Kenntnis. Einwendungen → Schulforum entscheidet.
+
+??? note "Wortlaut Art. 63 BayEUG"
+    Abs. 1 S. 4: „Die Redaktion … hat das Wahlrecht, ob die Schülerzeitung als **Einrichtung der Schule** im Rahmen der Schülermitverantwortung **oder als Druckwerk im Sinn des Bayerischen Pressegesetzes (BayPrG)** erscheint".
+
+    Abs. 5: „kann die Schulleiterin oder der Schulleiter die Verteilung auf dem Schulgelände, und für den Fall, dass die Schülerzeitung als Einrichtung der Schule im Rahmen der Schülermitverantwortung erscheint, **auch die Herausgabe untersagen**".
+
+    Abs. 4: „**Soll die Schülerzeitung auf dem Schulgelände verteilt werden**, ist der Schulleiterin oder dem Schulleiter rechtzeitig vor Drucklegung ein Exemplar zur Kenntnis zu geben."
 
 **Grenzen SMV**:
 

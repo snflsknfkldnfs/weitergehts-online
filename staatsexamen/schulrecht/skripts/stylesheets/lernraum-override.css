@@ -1516,3 +1516,184 @@ body[data-lernraum] {
 [data-md-color-scheme="slate"] body[data-lernraum] {
   --lr-accent-soft: rgba(168, 192, 137, 0.18);
 }
+
+/* ==========================================================================
+   13.12  Sub-Block Scan-Rhythm (Audit-Run 2 — Scanability-Befund)
+       Adressiert: <strong>-als-h4, Bullet-Wall, Tabellen-ohne-Transition,
+       Norm-Link-Density (17-22/Sub-Block), Wortlaut-Brocken in TD.
+   ========================================================================== */
+
+/* 13.12.a — <strong>-Labels in <p> als Mini-Cap-Tabs visualisieren ---------
+   Markdown nutzt `**Verhaltensgrundnorm**:` als Pseudo-Heading. Promotion zu
+   visuell-erkennbarem Chunk-Divider (Akzent-Border-Left + Mono-Cap). */
+body[data-lernraum] .lr-subblock > p > strong:first-child {
+  display: inline-block;
+  font-family: var(--lr-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--lr-accent);
+  border-left: 3px solid var(--lr-accent);
+  padding: 1px 0 1px 10px;
+  margin-right: 10px;
+  vertical-align: baseline;
+}
+/* Bullets mit führendem <strong>-Label ebenfalls als Chunk-Anker */
+body[data-lernraum] .lr-subblock ul > li > strong:first-child,
+body[data-lernraum] .lr-subblock ol > li > strong:first-child {
+  color: var(--lr-ink);
+  font-weight: 600;
+}
+/* Labelled bullets bekommen subtilen Border-Left zur Chunk-Gruppierung */
+body[data-lernraum] .lr-subblock ul > li:has(> strong:first-child),
+body[data-lernraum] .lr-subblock ol > li:has(> strong:first-child) {
+  border-left: 2px solid transparent;
+  padding-left: 10px;
+  margin-left: -12px;
+  transition: border-color .15s;
+}
+body[data-lernraum] .lr-subblock ul > li:has(> strong:first-child):hover,
+body[data-lernraum] .lr-subblock ol > li:has(> strong:first-child):hover {
+  border-left-color: var(--lr-accent-soft);
+}
+
+/* 13.12.b — Visual-Transition vor Tabellen (Hairline + Top-Padding) --------
+   Tabellen butten gegen vorangehende <p>/<ul> — wirken wie Bullet-Fortsetzung.
+   Sanfte Trennung. */
+body[data-lernraum] .lr-subblock > table {
+  margin-top: 20px;
+  border-top: 1px solid var(--lr-hairline);
+  padding-top: 8px;
+}
+body[data-lernraum] .lr-subblock > p + table,
+body[data-lernraum] .lr-subblock > ul + table,
+body[data-lernraum] .lr-subblock > ol + table {
+  margin-top: 16px;
+}
+
+/* 13.12.c — Norm-Link-Visual-Weight reduzieren ---------------------------
+   22 norm-links pro Sub-Block mit solid-underline = noise. Dotted-Hairline
+   bleibt entdeckbar, hover/focus zeigt solid + accent-soft-bg. */
+body[data-lernraum] .md-typeset .lr-subblock a.norm-link {
+  text-decoration: none;
+  border-bottom: 1px dotted var(--lr-accent);
+  font-variant-numeric: tabular-nums;
+}
+body[data-lernraum] .md-typeset .lr-subblock a.norm-link:hover,
+body[data-lernraum] .md-typeset .lr-subblock a.norm-link:focus-visible {
+  border-bottom-style: solid;
+  background: var(--lr-accent-soft);
+  border-radius: 1px;
+}
+
+/* 13.12.d — Bullet rest-zones (max-width 68ch + breathing) ---------------
+   Lange Bullets bleiben in optimaler Reading-Width; Block-Margin gibt Pause. */
+body[data-lernraum] .lr-subblock ul > li,
+body[data-lernraum] .lr-subblock ol > li {
+  margin-block: 8px;
+  max-width: 70ch;
+  line-height: 1.6;
+}
+/* Wenn nested ul/ol in li: Sub-Bullets sind Sub-Logik, kompakter */
+body[data-lernraum] .lr-subblock li > ul,
+body[data-lernraum] .lr-subblock li > ol {
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+/* 13.12.e — Wide-Table Cell-Tuning (Wortlaut-Brocken contain) ------------
+   A.2 Handy-Cell hat 410 char verbatim § quote. max-width + hyphens stabilisieren. */
+body[data-lernraum] .lr-subblock table td {
+  font-size: 14.5px;
+  line-height: 1.55;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+body[data-lernraum] .lr-subblock table td:last-child {
+  max-width: 58ch;
+}
+
+/* 13.12.f — Warning + folgende Liste/p als verbundenes Visual --------------
+   mkdocs-Material rendert <div class="admonition warning"> + folgendes ul
+   als getrennte Blöcke. Visuell verbinden via Border-Continuation. */
+body[data-lernraum] .lr-subblock .admonition.warning {
+  margin-bottom: 0;
+}
+body[data-lernraum] .lr-subblock .admonition.warning + ul,
+body[data-lernraum] .lr-subblock .admonition.warning + ol,
+body[data-lernraum] .lr-subblock .admonition.warning + p {
+  margin-top: 0;
+  padding: 10px 16px 12px 22px;
+  background: rgba(231, 197, 99, 0.06);
+  border: 1px solid rgba(231, 197, 99, 0.30);
+  border-top: none;
+}
+
+/* 13.12.g — H4 promoted styling (für Markdown-Patches #### Sub-Caps) -----
+   mkdocs h4 bekommt Mono-Cap + Border-Left als Chunk-Divider innerhalb Sub-Block.
+   Erlaubt #### Trias-Details / #### Verfahrensrechte etc. */
+body[data-lernraum] .lr-subblock h4 {
+  font-family: var(--lr-font-mono);
+  font-size: 10.5px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--lr-accent);
+  margin: 24px 0 10px;
+  padding: 4px 0 4px 12px;
+  border: none;
+  border-left: 3px solid var(--lr-accent);
+  background: none;
+}
+
+/* 13.12.h — Paragraph-Length-Limit (max-width 70ch — Bringhurst-Optimum) -- */
+body[data-lernraum] .lr-subblock > p {
+  max-width: 70ch;
+}
+
+/* 13.12.i — Admonition-Boxen (info/note/tip/warning/danger) standardisieren */
+body[data-lernraum] .lr-subblock .admonition,
+body[data-lernraum] .lr-subblock details.admonition {
+  margin: 18px 0;
+  border: 1px solid var(--lr-rule);
+  background: var(--lr-bg);
+  padding: 12px 16px 14px;
+  font-size: 14.5px;
+  border-radius: 0;
+  box-shadow: none;
+}
+body[data-lernraum] .lr-subblock .admonition.tip,
+body[data-lernraum] .lr-subblock details.admonition.tip {
+  border-left: 3px solid var(--lr-accent);
+}
+body[data-lernraum] .lr-subblock .admonition.danger,
+body[data-lernraum] .lr-subblock details.admonition.danger {
+  border-left: 3px solid #c0584a;
+  background: rgba(192, 88, 74, 0.04);
+}
+body[data-lernraum] .lr-subblock .admonition.warning,
+body[data-lernraum] .lr-subblock details.admonition.warning {
+  border-left: 3px solid #c89933;
+  background: rgba(200, 153, 51, 0.04);
+}
+body[data-lernraum] .lr-subblock .admonition.note,
+body[data-lernraum] .lr-subblock details.admonition.note {
+  border-left: 3px solid var(--lr-muted);
+}
+body[data-lernraum] .lr-subblock .admonition-title,
+body[data-lernraum] .lr-subblock summary.admonition-title {
+  font-family: var(--lr-font-mono);
+  font-size: 10.5px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--lr-ink);
+  margin: 0 0 6px;
+  padding: 0;
+  background: none;
+}
+body[data-lernraum] .lr-subblock .admonition-title::before,
+body[data-lernraum] .lr-subblock summary.admonition-title::before {
+  display: none;
+}
