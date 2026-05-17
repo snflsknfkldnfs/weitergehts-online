@@ -154,42 +154,92 @@
     });
   }
 
+  // a11y-helper: macht Element keyboard-aktivierbar (Enter/Space toggelt).
+  function makeKeyboardActivatable(el) {
+    if (el.__lrA11y) return;
+    el.__lrA11y = true;
+    if (!el.hasAttribute('tabindex')) el.setAttribute('tabindex', '0');
+    if (!el.hasAttribute('role')) el.setAttribute('role', 'button');
+    el.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ' || e.code === 'Space') {
+        e.preventDefault();
+        el.click();
+      }
+    });
+  }
+
+  function syncAriaExpanded(el, isOpen) {
+    el.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+
   function bindRevealCards(root) {
     root = root || document;
-    // Delegated handler — funktioniert auch für später injizierte Karten
+    // ARIA + Tabindex pro Card (idempotent)
+    root.querySelectorAll('.reveal-card').forEach(function (c) {
+      makeKeyboardActivatable(c);
+      syncAriaExpanded(c, c.dataset.reveal === 'open');
+      var title = c.querySelector('.reveal-card__title');
+      if (title && !c.getAttribute('aria-label')) {
+        c.setAttribute('aria-label',
+          'Lösung zu ' + title.textContent.trim().slice(0, 80) + ' ein- oder ausblenden');
+      }
+    });
+    root.querySelectorAll('.falle-card').forEach(function (f) {
+      makeKeyboardActivatable(f);
+      syncAriaExpanded(f, f.dataset.open === 'true');
+      var q = f.querySelector('.falle-frage');
+      var fa = f.getAttribute('data-fa-id') || '';
+      if (q && !f.getAttribute('aria-label')) {
+        f.setAttribute('aria-label',
+          fa + ' — Antwort ein- oder ausblenden: ' + q.textContent.trim().slice(0, 90));
+      }
+    });
+    // Delegated click handler — funktioniert auch für später injizierte Karten
     if (document.__lrRevealBound) return;
     document.__lrRevealBound = true;
     document.addEventListener('click', function (ev) {
       var card = ev.target.closest('.reveal-card');
       if (card) {
-        card.dataset.reveal = card.dataset.reveal === 'open' ? 'closed' : 'open';
+        var open = card.dataset.reveal === 'open';
+        card.dataset.reveal = open ? 'closed' : 'open';
+        syncAriaExpanded(card, !open);
         return;
       }
       var falle = ev.target.closest('.falle-card');
       if (falle) {
-        var open = falle.dataset.open === 'true';
-        falle.dataset.open = open ? 'false' : 'true';
+        var fopen = falle.dataset.open === 'true';
+        falle.dataset.open = fopen ? 'false' : 'true';
+        syncAriaExpanded(falle, !fopen);
         return;
       }
     });
   }
 
   // Sub-Block Collapse-Toggle: Click auf H3-Header in .lr-subblock togglt
-  // data-collapsed auf parent .lr-subblock. Status-Dot-Click bubbelt nicht
-  // (stopPropagation siehe bindStatusDots).
+  // data-collapsed auf parent .lr-subblock. Mit ARIA + Keyboard-Support.
   function bindSubblockCollapse(root) {
     root = root || document;
     root.querySelectorAll('.lr-subblock > h3[data-status-key]').forEach(function (h) {
       if (h.__lrCollapseBound) return;
       h.__lrCollapseBound = true;
+      makeKeyboardActivatable(h);
+      var sb = h.parentElement;
+      syncAriaExpanded(h, sb.getAttribute('data-collapsed') !== 'true');
+      // Verlinke H3 mit Subblock-Body via aria-controls (synthetische ID)
+      if (!sb.id) sb.id = 'lr-sb-' + (h.getAttribute('data-status-key') || Math.random().toString(36).slice(2, 8));
+      h.setAttribute('aria-controls', sb.id);
       h.addEventListener('click', function (ev) {
         if (ev.target.closest('.status-dot')) return;
-        var sb = h.parentElement;
         var cur = sb.getAttribute('data-collapsed') === 'true';
         sb.setAttribute('data-collapsed', cur ? 'false' : 'true');
+        syncAriaExpanded(h, cur); // wenn vorher collapsed (cur=true), ist jetzt offen
       });
     });
   }
+
+  var STATUS_LABEL = {
+    open: 'offen', work: 'in Arbeit', repeat: 'wiederholt', sit: 'sitzt'
+  };
 
   function bindStatusDots(root) {
     root = root || document;
@@ -203,9 +253,11 @@
       dot.className = 'status-dot status-dot--' + cur;
       dot.setAttribute('data-status-storage-key', key);
       dot.setAttribute('role', 'button');
-      dot.setAttribute('aria-label', 'Lernstand ändern');
-      dot.title = 'Lernstand zyklen (offen → in Arbeit → wiederholt → sitzt)';
-      dot.addEventListener('click', function (ev) {
+      dot.setAttribute('tabindex', '0');
+      dot.setAttribute('aria-live', 'polite');
+      dot.setAttribute('aria-label', 'Lernstand: ' + (STATUS_LABEL[cur] || cur) + ' — Klick wechselt');
+      dot.title = 'Lernstand: offen → in Arbeit → wiederholt → sitzt';
+      function cycle(ev) {
         ev.stopPropagation();
         ev.preventDefault();
         var current = localStorage.getItem(key) || 'open';
@@ -213,9 +265,39 @@
         var next = STATUS_CYCLE[(idx + 1) % STATUS_CYCLE.length];
         localStorage.setItem(key, next);
         dot.className = 'status-dot status-dot--' + next;
+        dot.setAttribute('aria-label', 'Lernstand: ' + (STATUS_LABEL[next] || next) + ' — Klick wechselt');
+      }
+      dot.addEventListener('click', cycle);
+      dot.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ' || e.code === 'Space') {
+          cycle(e);
+        }
       });
       h.insertBefore(dot, h.firstChild);
     });
+  }
+
+  // Expand/Collapse-all-Toolbar oberhalb dem ersten Sub-Block. Idempotent.
+  function injectExpandCollapseToolbar(root) {
+    root = root || document;
+    if (root.querySelector('.lr-subblock-toolbar')) return;
+    var firstSb = root.querySelector('.lr-subblock');
+    if (!firstSb) return;
+    var bar = document.createElement('div');
+    bar.className = 'lr-subblock-toolbar';
+    bar.innerHTML =
+      '<button type="button" data-act="expand" aria-label="Alle Sub-Blöcke öffnen">alle öffnen</button>' +
+      '<button type="button" data-act="collapse" aria-label="Alle Sub-Blöcke schließen">alle schließen</button>';
+    bar.addEventListener('click', function (e) {
+      var act = e.target.getAttribute('data-act');
+      if (!act) return;
+      document.querySelectorAll('.lr-subblock').forEach(function (s) {
+        s.setAttribute('data-collapsed', act === 'collapse' ? 'true' : 'false');
+        var h = s.querySelector('h3[data-status-key]');
+        if (h) syncAriaExpanded(h, act !== 'collapse');
+      });
+    });
+    firstSb.parentNode.insertBefore(bar, firstSb);
   }
 
   // Material-Theme nutzt navigation.instant: kein klassischer Reload zwischen Pages.
@@ -227,6 +309,7 @@
     bindRevealCards(document);
     bindStatusDots(document);
     bindSubblockCollapse(document);
+    injectExpandCollapseToolbar(document);
   }
 
   function init() {
