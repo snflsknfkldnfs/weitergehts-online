@@ -671,6 +671,15 @@ var LR = (function () {
     bindGlobalKeys();
   }
 
+  // Cache-Injektor: erlaubt Konsumenten (z. B. mkdocs lernraum.js),
+  // synthetische Eintraege beizusteuern (Fallback aus <abbr title>).
+  function glossarInject(type, key, entry) {
+    if (['norm', 'lp', 'prinzip'].indexOf(type) === -1) return false;
+    if (!glossarCache[type]) glossarCache[type] = {};
+    glossarCache[type][key] = entry;
+    return true;
+  }
+
   // ------------------------------------------------------------------------
   // API
   // ------------------------------------------------------------------------
@@ -687,7 +696,8 @@ var LR = (function () {
     },
     Glossar: {
       load: glossarLoad,
-      lookup: glossarLookup
+      lookup: glossarLookup,
+      inject: glossarInject
     },
     AnchorTag: {
       bind: anchorTagBind
