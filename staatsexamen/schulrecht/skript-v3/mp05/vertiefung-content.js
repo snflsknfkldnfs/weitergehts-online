@@ -2,7 +2,7 @@
 // Strukturierte Body-Items, die VertiefungBlock generisch rendern kann.
 // Marker {{Art. 56/2 BayEUG}} im Text wird zu klickbarem NormTag.
 
-window.MP05_BODIES = {
+window.MODULE_BODIES = {
 
   A1: [
     { type: 'lead', text:

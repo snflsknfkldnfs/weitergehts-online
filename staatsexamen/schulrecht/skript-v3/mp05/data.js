@@ -1,7 +1,7 @@
 // MP_05 — Inhaltsauszug (echte Quelle der Live-Seite, gekürzt + strukturiert für
 // die Reveal-Mechanik). Die Felder spiegeln das künftige Frontmatter-Schema.
 
-window.MP05 = {
+window.MODULE = {
   id: 'mp05',
   zalgm: 'ZALGM § 16',
   schwerpunkt: ['Schwerpunkt 5.1', '5.4 ndM', '5.6 SMV'],

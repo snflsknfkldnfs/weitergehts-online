@@ -172,11 +172,11 @@ button { font-family: inherit; }
 /* Status-Dot -------------------------------------------------------------- */
 .status-dot {
   display: inline-block;
-  width: 11px; height: 11px;
+  width: 12px; height: 12px;
   padding: 0;
   border-radius: 50%;
-  border: 1.5px solid var(--mute2);
-  background: transparent;
+  border: 2px solid var(--mute2);
+  background: var(--paper);
   flex: 0 0 auto;
   cursor: pointer;
   position: relative;
@@ -197,10 +197,12 @@ button { font-family: inherit; }
 }
 .status-dot:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
-/* StatusBar (Aggregat) ---------------------------------------------------- */
+/* StatusBar (Aggregat) — Werkstatt-Reling, sichtbares Tool ---------------- */
 .status-bar {
-  height: 5px;
+  height: 10px;
   display: flex; gap: 1px; width: 100%;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--ink);
 }
 .status-bar > div { transition: width .25s; }
 .status-bar__sit     { background: var(--status-sit); }
@@ -210,11 +212,14 @@ button { font-family: inherit; }
 .status-bar__planned { background: var(--mute2); }
 .status-bar-legend {
   display: flex; justify-content: space-between;
-  margin-top: 6px;
+  margin-top: 8px;
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 10.5px;
   letter-spacing: 0.4px;
   color: var(--muted);
+}
+.status-bar-legend b {
+  color: var(--ink); font-weight: 600; margin-right: 3px;
 }
 
 /* Top-Row (Kürze + Kartografie) ------------------------------------------ */
@@ -416,7 +421,14 @@ button { font-family: inherit; }
 }
 .toc-link--sub:hover { color: var(--accent); }
 .toc-link--sub:hover .toc-sub-norm { color: var(--accent); }
-.toc-link--falle { color: var(--accent); font-style: italic; }
+.toc-link--falle {
+  color: var(--accent);
+  font-weight: 600;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
 .toc-link--drill {
   display: flex;
   justify-content: space-between;
@@ -442,11 +454,11 @@ button { font-family: inherit; }
 /* TOC Mini-Status-Dot — vor jedem Top-Link, syncs via refreshTOCDot() */
 .toc-mini-dot {
   display: inline-block;
-  width: 8px; height: 8px;
+  width: 10px; height: 10px;
   border-radius: 50%;
   border: 1.5px solid var(--mute2);
-  background: transparent;
-  margin-right: 8px;
+  background: var(--paper);
+  margin-right: 10px;
   flex-shrink: 0;
   vertical-align: middle;
 }
@@ -471,8 +483,12 @@ button { font-family: inherit; }
   margin-bottom: 18px;
 }
 .aggr-slot { margin-top: 8px; }
-.aside-section { margin-bottom: 28px; }
+.aside-section { margin-bottom: 44px; }
 .aside-section:last-of-type { margin-bottom: 0; }
+.aside-section + .aside-section {
+  padding-top: 36px;
+  border-top: 1px solid var(--hairline);
+}
 /* Heading-tagged mono-cap inherits mono-cap styles via shared class.
    Reset native h2/h3 defaults that would conflict with flex line-up. */
 h2.mono-h, h3.mono-h { margin: 0; font-weight: 500; font-size: 10.5px; }
@@ -480,12 +496,15 @@ h2.mono-h, h3.mono-h { margin: 0; font-weight: 500; font-size: 10.5px; }
 .slideover__karten-list { display: flex; gap: 6px; flex-wrap: wrap; }
 .norm-tag--karten { color: var(--accent); cursor: pointer; }
 .norm-tag--karten:hover { background: var(--accent); color: var(--paper); border-color: var(--accent); }
-/* Card-Sprung Highlight-Pulse */
+/* Card-Sprung Highlight-Pulse — zwei kräftige Pulses */
 @keyframes pulseHighlight {
-  0%, 100% { box-shadow: 0 0 0 0 transparent; }
-  20%, 80% { box-shadow: 0 0 0 4px rgba(74, 93, 59, 0.25); border-color: var(--accent); }
+  0%, 100% { box-shadow: 0 0 0 0 transparent; border-color: var(--hairline); }
+  15% { box-shadow: 0 0 0 6px rgba(74, 93, 59, 0.45); border-color: var(--accent); }
+  35% { box-shadow: 0 0 0 0 transparent; border-color: var(--accent); }
+  55% { box-shadow: 0 0 0 6px rgba(74, 93, 59, 0.45); border-color: var(--accent); }
+  75% { box-shadow: 0 0 0 0 transparent; border-color: var(--accent); }
 }
-.pulse-highlight { animation: pulseHighlight 2s ease-out; }
+.pulse-highlight { animation: pulseHighlight 1.6s ease-out; }
 @media (prefers-reduced-motion: reduce) {
   .pulse-highlight { animation: none; outline: 2px solid var(--accent); outline-offset: 4px; }
 }
@@ -526,8 +545,8 @@ h2.mono-h, h3.mono-h { margin: 0; font-weight: 500; font-size: 10.5px; }
 .section-header {
   display: flex; align-items: baseline; gap: 14px; margin: 0 0 18px;
 }
-.section-header__rule { flex: 1; height: 1px; background: var(--rule); }
-.section-header__count { color: var(--muted); }
+.section-header__rule { flex: 1; height: 1px; background: var(--hairline); }
+.section-header__count { color: var(--accent); font-weight: 600; }
 .dot-sep { color: var(--muted); margin: 0 4px; }
 
 /* Vertiefung (Sub-Blocks) ------------------------------------------------- */
@@ -559,9 +578,9 @@ h2.mono-h, h3.mono-h { margin: 0; font-weight: 500; font-size: 10.5px; }
 .subblock__title {
   font-family: var(--sans);
   font-weight: 600;
-  font-size: 22px;
-  letter-spacing: -0.4px;
-  line-height: 1.2;
+  font-size: 26px;
+  letter-spacing: -0.6px;
+  line-height: 1.15;
   margin: 0;
 }
 .subblock__anriss {
@@ -611,17 +630,18 @@ h2.mono-h, h3.mono-h { margin: 0; font-weight: 500; font-size: 10.5px; }
 }
 .rb-h {
   display: flex; align-items: baseline; gap: 14px;
-  margin: 22px 0 12px;
-  /* Break out of the body's left-rule, accent-bar anchors each h-section.
-     2px accent matches rhythm with 1px subblock-body-rule better than 3px. */
+  margin: 26px 0 14px;
   margin-left: -22px;
-  padding-left: 19px;
-  border-left: 2px solid var(--accent);
-  /* 96px leaves Sub-Block-Head visible in viewport when jumping via TOC */
+  padding: 4px 0 4px 16px;
+  border-left: 3px solid var(--accent);
   scroll-margin-top: 96px;
 }
-.rb-h .mono-cap { color: var(--accent); }
-.rb-h .rule { flex: 1; height: 1px; background: var(--rule); }
+.rb-h .mono-cap {
+  color: var(--accent);
+  font-size: 11.5px;
+  font-weight: 600;
+}
+.rb-h .rule { flex: 1; height: 1px; background: var(--hairline); }
 /* Sub-Block-Article scroll-margin so TOC-jumps land just below page-top */
 .subblock { scroll-margin-top: 32px; }
 /* rb-warn scroll-target for Falle-Sprünge from TOC */
@@ -654,24 +674,25 @@ h2.mono-h, h3.mono-h { margin: 0; font-weight: 500; font-size: 10.5px; }
 }
 .rb-table__row:last-child { border-bottom: none; }
 .rb-warn {
-  margin: 16px 0;
-  border: 1px solid var(--accent);
-  background: var(--accent-soft);
-  padding: 12px 16px 14px;
+  margin: 18px 0;
+  border: 1.5px solid var(--accent);
+  border-left: 4px solid var(--accent);
+  background: rgba(74, 93, 59, 0.13);
+  padding: 14px 18px 16px;
 }
 .rb-warn__t {
   font-family: var(--mono);
-  font-size: 10.5px;
-  letter-spacing: 1px;
+  font-size: 11.5px;
+  letter-spacing: 1.4px;
   color: var(--accent);
   text-transform: uppercase;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   display: block;
+  font-weight: 600;
 }
 .rb-warn__body {
   font-family: var(--serif);
-  font-style: italic;
-  font-size: 14.5px;
+  font-size: 15px;
   line-height: 1.55;
 }
 .rb-selfcheck {
@@ -698,27 +719,27 @@ h2.mono-h, h3.mono-h { margin: 0; font-weight: 500; font-size: 10.5px; }
 .rb-selfcheck__item:last-child { margin-bottom: 0; }
 .rb-selfcheck__q { font-weight: 500; color: var(--ink); }
 .rb-selfcheck__reveal {
-  margin-top: 6px;
+  margin-top: 8px;
   font-family: var(--mono);
   font-size: 10.5px;
   letter-spacing: 0.6px;
   text-transform: uppercase;
   color: var(--accent);
-  background: transparent;
-  border: 1px solid var(--rule);
-  padding: 5px 9px;
+  background: var(--paper);
+  border: 1.5px solid var(--accent);
+  padding: 7px 12px;
   cursor: pointer;
-  min-height: 24px;
+  min-height: 26px;
+  font-weight: 600;
 }
-.rb-selfcheck__reveal:hover { border-color: var(--accent); background: var(--accent-soft); }
+.rb-selfcheck__reveal:hover { background: var(--accent); color: var(--paper); }
 .rb-selfcheck__a {
-  margin-top: 8px;
-  padding: 10px 12px;
-  background: var(--accent-soft);
-  border-left: 2px solid var(--accent);
+  margin-top: 10px;
+  padding: 14px 16px;
+  background: rgba(74, 93, 59, 0.13);
+  border-left: 3px solid var(--accent);
   font-family: var(--serif);
-  font-style: italic;
-  font-size: 14px;
+  font-size: 15.5px;
   line-height: 1.55;
   color: var(--ink);
 }
@@ -727,11 +748,12 @@ h2.mono-h, h3.mono-h { margin: 0; font-weight: 500; font-size: 10.5px; }
 .reveal-card {
   border: 1px solid var(--hairline);
   background: var(--paper);
-  padding: 16px 18px;
+  padding: 18px 20px;
   cursor: pointer;
   position: relative;
   transition: background .12s, border-color .12s;
   display: flex; flex-direction: column;
+  box-shadow: 0 1px 0 rgba(12, 12, 10, 0.06);
 }
 .reveal-card:hover { background: #fbfaf3; border-color: var(--accent); }
 .reveal-card[data-state="open"] { background: #fbfaf3; }
@@ -822,19 +844,22 @@ h2.mono-h, h3.mono-h { margin: 0; font-weight: 500; font-size: 10.5px; }
 .fa-row[data-open="true"] .fa-row__antwort { display: block; }
 .fa-row__chevron {
   font-family: var(--mono);
-  font-size: 14px;
-  color: var(--muted);
+  font-size: 16px;
+  color: var(--ink);
+  font-weight: 600;
   padding-top: 1px;
   transition: transform .2s;
 }
 .fa-row[data-open="true"] .fa-row__chevron { transform: rotate(90deg); color: var(--accent); }
 
-/* FallCard (Fallbeispiel) ----------------------------------------------- */
+/* FallCard (Fallbeispiel) — Akten-Mappen-Look ---------------------------- */
 .fall-card {
-  border: 1px solid var(--hairline);
+  border: 1px solid var(--ink);
+  border-left: 4px solid var(--accent);
   background: var(--paper);
   padding: 20px 22px;
   margin-bottom: 14px;
+  box-shadow: 0 1px 0 rgba(12, 12, 10, 0.08);
 }
 .fall-card__head {
   display: flex; justify-content: space-between; align-items: baseline; gap: 18px;

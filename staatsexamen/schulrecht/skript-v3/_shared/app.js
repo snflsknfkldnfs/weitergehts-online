@@ -1,10 +1,12 @@
-// MP_05 V2 Werkbank · Vanilla JS Renderer (no React)
-// Consumes window.MP05 + window.MP05_BODIES, builds DOM, wires interactivity.
+// V3 Werkbank · Vanilla JS Renderer (no React) · shared across all MPs
+// Consumes window.MODULE + window.MODULE_BODIES, builds DOM, wires interactivity.
+// Module-id-namespaced localStorage so different MPs don't collide.
 
 (function () {
   'use strict';
-  const d = window.MP05;
-  const bodies = window.MP05_BODIES || {};
+  const d = window.MODULE || window.MP05; // backwards-compat fallback
+  if (!d) { console.error('No module data loaded (window.MODULE missing)'); return; }
+  const bodies = window.MODULE_BODIES || window.MP05_BODIES || {};
 
   // ─── DOM Helpers ─────────────────────────────────────────────────────────
   const h = (tag, attrs, ...children) => {
@@ -32,7 +34,7 @@
   // ─── Status Persistence ──────────────────────────────────────────────────
   const STATUS = ['open', 'work', 'repeat', 'sit'];
   const STATUS_LABEL = { open: 'offen', work: 'in Arbeit', repeat: 'wiederholt', sit: 'sitzt' };
-  const statusKey = id => `wg.lernraum.status.mp05.${id}`;
+  const statusKey = id => `wg.lernraum.status.${d.id}.${id}`;
   // In-memory fallback for private browsing / storage-quota-exceeded
   const statusMem = Object.create(null);
   const getStatus = id => {
@@ -117,10 +119,10 @@
       h('div', { class: 'status-bar__open', style: 'width:' + pct(c.open) }),
     );
     const legend = h('div', { class: 'status-bar-legend' },
-      h('span', null, c.sit + ' sitzen'),
-      h('span', null, c.repeat + ' wiederholt'),
-      h('span', null, c.work + ' wackeln'),
-      h('span', null, c.open + ' offen'),
+      h('span', null, h('b', null, c.sit), 'sitzen'),
+      h('span', null, h('b', null, c.repeat), 'wiederholt'),
+      h('span', null, h('b', null, c.work), 'wackeln'),
+      h('span', null, h('b', null, c.open), 'offen'),
     );
     return h('div', null, bar, legend);
   };

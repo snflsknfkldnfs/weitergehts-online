@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Skript V3 — Schulrecht · 2. Staatsexamen MS Bayern</title>
+  <meta name="description" content="Skript V3 — Hub-Index der neun Prüfungsmappen (MP_01 bis MP_09) für das 2. Staatsexamen Mittelschule Bayern" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="_shared/style.css" />
+  <style>
+    .hub-shell {
+      max-width: 1520px;
+      margin: 0 auto;
+      padding: 56px max(20px, calc(50% - 760px + 56px));
+      padding-left: 56px;
+      padding-right: 56px;
+    }
+    @media (max-width: 1520px) {
+      .hub-shell { padding-left: max(20px, 4vw); padding-right: max(20px, 4vw); }
+    }
+
+    .hub-hero {
+      border-top: 3px solid var(--ink);
+      border-bottom: 1px solid var(--rule);
+      padding: 48px 0 40px;
+      margin-bottom: 56px;
+    }
+    .hub-hero__zalgm {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .hub-hero__title {
+      font-family: var(--serif);
+      font-size: clamp(40px, 6vw, 76px);
+      line-height: 1.05;
+      letter-spacing: -0.015em;
+      font-weight: 500;
+      color: var(--ink);
+      margin: 0 0 8px;
+    }
+    .hub-hero__sub {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(24px, 3vw, 36px);
+      line-height: 1.15;
+      color: var(--muted);
+      margin: 0 0 28px;
+    }
+    .hub-hero__lead {
+      font-family: var(--serif);
+      font-size: 20px;
+      line-height: 1.55;
+      max-width: 720px;
+      color: var(--ink);
+      margin: 0 0 4px;
+    }
+    .hub-hero__meta {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .hub-hero__meta b { color: var(--ink); font-weight: 600; }
+
+    .hub-section-head {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin: 56px 0 28px;
+    }
+    .hub-section-head__num {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .hub-section-head__title {
+      font-family: var(--serif);
+      font-size: 28px;
+      line-height: 1.1;
+      font-weight: 500;
+      color: var(--ink);
+      margin: 0;
+    }
+    .hub-section-head__rule {
+      flex: 1;
+      height: 1px;
+      background: var(--hairline);
+      margin-left: 8px;
+    }
+
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 20px;
+    }
+    .hub-card {
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      border-left: 3px solid var(--accent);
+      padding: 24px 26px 22px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: border-color .15s, transform .15s, box-shadow .15s;
+      position: relative;
+    }
+    .hub-card:hover {
+      border-color: var(--ink);
+      box-shadow: 0 4px 12px rgba(12,12,10,0.08);
+      transform: translateY(-1px);
+    }
+    .hub-card__row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+    }
+    .hub-card__id {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .hub-card__zalgm {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .hub-card__title {
+      font-family: var(--serif);
+      font-size: 26px;
+      line-height: 1.1;
+      font-weight: 500;
+      color: var(--ink);
+      margin: 0;
+    }
+    .hub-card__title em {
+      font-style: italic;
+      font-weight: 500;
+      color: var(--muted);
+      display: block;
+      font-size: 20px;
+      margin-top: 2px;
+    }
+    .hub-card__abriss {
+      font-family: var(--serif);
+      font-size: 15.5px;
+      line-height: 1.55;
+      color: var(--ink);
+      margin: 4px 0 6px;
+    }
+    .hub-card__norms {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .hub-card__norm {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      padding: 3px 8px;
+      border: 1px solid var(--rule);
+      color: var(--muted);
+      letter-spacing: 0.5px;
+      border-radius: 2px;
+    }
+    .hub-card__norm--accent { color: var(--accent); border-color: var(--accent); }
+    .hub-card__footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid var(--rule);
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .hub-card__arrow {
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 1.2px;
+    }
+    .hub-card:hover .hub-card__arrow { color: var(--ink); }
+
+    .hub-meta-block {
+      margin-top: 72px;
+      padding-top: 36px;
+      border-top: 1px solid var(--rule);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 36px;
+    }
+    .hub-meta-block h3 {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin: 0 0 14px;
+    }
+    .hub-meta-block p {
+      font-family: var(--serif);
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--ink);
+      margin: 0 0 10px;
+    }
+    .hub-meta-block ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .hub-meta-block li::before {
+      content: '→ ';
+      color: var(--accent);
+      font-family: var(--mono);
+      font-weight: 600;
+    }
+    .hub-meta-block a { border-bottom: 1px solid var(--accent); text-decoration: none; }
+    .hub-meta-block a:hover { background: var(--accent-soft); }
+
+    .hub-foot {
+      margin-top: 72px;
+      padding: 28px 0 40px;
+      border-top: 1px solid var(--rule);
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="meta-bar">
+    <span><a href="/staatsexamen/schulrecht/">Schulrecht</a> · Skript V3 · Hub-Index</span>
+    <span><a href="/staatsexamen/schulrecht/skripts/">mkdocs-Version vergleichen →</a></span>
+  </div>
+
+  <div class="hub-shell">
+    <header class="hub-hero">
+      <div class="hub-hero__zalgm">Skript V3 · 2. Staatsexamen · Mittelschule Bayern</div>
+      <h1 class="hub-hero__title">Schulrecht.</h1>
+      <p class="hub-hero__sub"><em>Neun Mappen, eine Architektur.</em></p>
+      <p class="hub-hero__lead">
+        Die neun Prüfungsmappen <strong>MP_01</strong> bis <strong>MP_09</strong> nach ZALGM § 16 — als
+        Hybrid aus Spickzettel, Vertiefung und interaktivem Trainingsraum. Jede Mappe folgt der
+        gleichen Struktur: Norm-Kartografie, Pflichtwissen, Fallen-Atlas, Fallbeispiele und
+        vertiefte Stoffblöcke mit Self-Check.
+      </p>
+      <div class="hub-hero__meta">
+        <span><b>9</b> · Mappen MP_01 – MP_09</span>
+        <span><b>~75</b> · Pflichtwissen-Karten</span>
+        <span><b>~95</b> · Fallen</span>
+        <span><b>~45</b> · Fallbeispiele</span>
+      </div>
+    </header>
+
+    <div class="hub-section-head">
+      <span class="hub-section-head__num">§ 16 · Nr. 1 – 9</span>
+      <h2 class="hub-section-head__title">Prüfungsmappen</h2>
+      <div class="hub-section-head__rule"></div>
+    </div>
+
+    <div class="hub-grid">
+
+      <a class="hub-card" href="mp01/">
+        <div class="hub-card__row">
+          <span class="hub-card__id">MP_01</span>
+          <span class="hub-card__zalgm">ZALGM § 16 Nr. 1</span>
+        </div>
+        <h3 class="hub-card__title">Messer im Unterricht<em>· Beschlagnahme + Strafrechts-Schnittstelle</em></h3>
+        <p class="hub-card__abriss">Drei-Pfad-Struktur: Sicherstellung § 23/2 BaySchO · Schulrechtl. Maßnahmen Art. 86–88 · Strafrecht. Drei Zeitfenster: 0–30 min / Tag / Folgetag.</p>
+        <div class="hub-card__norms">
+          <span class="hub-card__norm hub-card__norm--accent">§ 23/2 BaySchO</span>
+          <span class="hub-card__norm">Art. 86 BayEUG</span>
+          <span class="hub-card__norm">§ 47/2 WaffG</span>
+        </div>
+        <div class="hub-card__footer">
+          <span>8 Karten · 10 Fallen · 4 Fälle</span>
+          <span class="hub-card__arrow">öffnen →</span>
+        </div>
+      </a>
+
+      <a class="hub-card" href="mp02/">
+        <div class="hub-card__row">
+          <span class="hub-card__id">MP_02</span>
+          <span class="hub-card__zalgm">ZALGM § 16 Nr. 2</span>
+        </div>
+        <h3 class="hub-card__title">Hausaufgaben<em>· Beschwerde-Verfahren</em></h3>
+        <p class="hub-card__abriss">§ 28 BaySchO Drei-Sätze. Angemessene Zeit + Differenzierung § 32. Beschwerde-Eskalation Art. 56/2 BayEUG. HA ≠ LNW Drift-Falle.</p>
+        <div class="hub-card__norms">
+          <span class="hub-card__norm hub-card__norm--accent">§ 28 BaySchO</span>
+          <span class="hub-card__norm">§ 32 BaySchO</span>
+          <span class="hub-card__norm">Art. 56/2 BayEUG</span>
+        </div>
+        <div class="hub-card__footer">
+          <span>8 Karten · 10 Fallen · 4 Fälle</span>
+          <span class="hub-card__arrow">öffnen →</span>
+        </div>
+      </a>
+
+      <a class="hub-card" href="mp03/">
+        <div class="hub-card__row">
+          <span class="hub-card__id">MP_03</span>
+          <span class="hub-card__zalgm">ZALGM § 16 Nr. 3</span>
+        </div>
+        <h3 class="hub-card__title">Gliederung des Bildungssystems<em>· Bildungswege</em></h3>
+        <p class="hub-card__abriss">Schulwesen + Schularten · KiGa → GS · Einschulung + Schulpflicht · Übertritt + Durchlässigkeit · MS-Abschlüsse + Aufstiegswege.</p>
+        <div class="hub-card__norms">
+          <span class="hub-card__norm hub-card__norm--accent">Art. 35 BayEUG</span>
+          <span class="hub-card__norm">GrSO § 6/10</span>
+          <span class="hub-card__norm">BV Art. 132</span>
+        </div>
+        <div class="hub-card__footer">
+          <span>8 Karten · 12 Fallen · 5 Fälle</span>
+          <span class="hub-card__arrow">öffnen →</span>
+        </div>
+      </a>
+
+      <a class="hub-card" href="mp04/">
+        <div class="hub-card__row">
+          <span class="hub-card__id">MP_04</span>
+          <span class="hub-card__zalgm">ZALGM § 16 Nr. 4</span>
+        </div>
+        <h3 class="hub-card__title">Schulartenrecht<em>· Schullaufbahn-Steuerung</em></h3>
+        <p class="hub-card__abriss">Trias SuS/EB/Schule. Vorrücken Art. 53. § 12/3 MSO zwei Direktionalitäten. M-Zug-Schwellen. Vier MS-Abschlüsse + Quabi.</p>
+        <div class="hub-card__norms">
+          <span class="hub-card__norm hub-card__norm--accent">Art. 53 BayEUG</span>
+          <span class="hub-card__norm">§ 12/3 MSO</span>
+          <span class="hub-card__norm">§ 22/34 MSO</span>
+        </div>
+        <div class="hub-card__footer">
+          <span>8 Karten · 10 Fallen · 5 Fälle</span>
+          <span class="hub-card__arrow">öffnen →</span>
+        </div>
+      </a>
+
+      <a class="hub-card" href="mp05/">
+        <div class="hub-card__row">
+          <span class="hub-card__id">MP_05</span>
+          <span class="hub-card__zalgm">ZALGM § 16 Nr. 5</span>
+        </div>
+        <h3 class="hub-card__title">Rechte und Pflichten der SuS<em>· Erziehungs- und Ordnungsmaßnahmen</em></h3>
+        <p class="hub-card__abriss">Doppelstruktur SuS-Pflichten + -Rechte. EM/OM Verhältnismäßigkeit. Anhörungsrecht. Notenschutz vs. Nachteilsausgleich (BVerwG 2015).</p>
+        <div class="hub-card__norms">
+          <span class="hub-card__norm hub-card__norm--accent">Art. 86 BayEUG</span>
+          <span class="hub-card__norm">Art. 56 BayEUG</span>
+          <span class="hub-card__norm">§ 33/34 BaySchO</span>
+        </div>
+        <div class="hub-card__footer">
+          <span>Pilot · Referenz-Module</span>
+          <span class="hub-card__arrow">öffnen →</span>
+        </div>
+      </a>
+
+      <a class="hub-card" href="mp06/">
+        <div class="hub-card__row">
+          <span class="hub-card__id">MP_06</span>
+          <span class="hub-card__zalgm">ZALGM § 16 Nr. 6</span>
+        </div>
+        <h3 class="hub-card__title">Rechte und Pflichten der Lehrkräfte<em>· LDO + Personalvertretung</em></h3>
+        <p class="hub-card__abriss">Doppelstruktur Beamten- + Lehrer-Pflichten. Aufsichtspflicht § 5 LDO. Auskunfts-/Verschwiegenheits-Trias § 14 LDO. Streikverbot Art. 33/5 GG.</p>
+        <div class="hub-card__norms">
+          <span class="hub-card__norm hub-card__norm--accent">§ 14 LDO</span>
+          <span class="hub-card__norm">§ 5 LDO</span>
+          <span class="hub-card__norm">Art. 33/5 GG</span>
+        </div>
+        <div class="hub-card__footer">
+          <span>8 Karten · 10 Fallen · 4 Fälle</span>
+          <span class="hub-card__arrow">öffnen →</span>
+        </div>
+      </a>
+
+      <a class="hub-card" href="mp07/">
+        <div class="hub-card__row">
+          <span class="hub-card__id">MP_07</span>
+          <span class="hub-card__zalgm">ZALGM § 16 Nr. 7</span>
+        </div>
+        <h3 class="hub-card__title">Disziplinarrecht<em>· Haftung im Schuldienst</em></h3>
+        <p class="hub-card__abriss">Haftungsdreieck Zivil/Disziplinar/Strafrecht. Amtshaftung § 839 BGB + Art. 34 GG. BayDG 5+2 Stufen. ne bis in idem nur „allgemeine Strafgesetze".</p>
+        <div class="hub-card__norms">
+          <span class="hub-card__norm hub-card__norm--accent">Art. 34 GG</span>
+          <span class="hub-card__norm">Art. 6 BayDG</span>
+          <span class="hub-card__norm">§ 47 BeamtStG</span>
+        </div>
+        <div class="hub-card__footer">
+          <span>8 Karten · 10 Fallen · 4 Fälle</span>
+          <span class="hub-card__arrow">öffnen →</span>
+        </div>
+      </a>
+
+      <a class="hub-card" href="mp08/">
+        <div class="hub-card__row">
+          <span class="hub-card__id">MP_08</span>
+          <span class="hub-card__zalgm">ZALGM § 16 Nr. 8</span>
+        </div>
+        <h3 class="hub-card__title">Kooperation Bildung<em>· + Betreuung</em></h3>
+        <p class="hub-card__abriss">MSD ≠ FöS · Lernort Art. 41 (Eltern!) · Schulberatung Art. 78 · vier Säulen Betreuung (3 Rechtsregime) · GTS-Antragsprinzip · FL Art. 60.</p>
+        <div class="hub-card__norms">
+          <span class="hub-card__norm hub-card__norm--accent">Art. 21 BayEUG</span>
+          <span class="hub-card__norm">Art. 41 BayEUG</span>
+          <span class="hub-card__norm">Art. 78 BayEUG</span>
+        </div>
+        <div class="hub-card__footer">
+          <span>9 Karten · 11 Fallen · 5 Fälle</span>
+          <span class="hub-card__arrow">öffnen →</span>
+        </div>
+      </a>
+
+      <a class="hub-card" href="mp09/">
+        <div class="hub-card__row">
+          <span class="hub-card__id">MP_09</span>
+          <span class="hub-card__zalgm">ZALGM § 16 Nr. 9</span>
+        </div>
+        <h3 class="hub-card__title">Datenschutz<em>· + Schülerakte</em></h3>
+        <p class="hub-card__abriss">Auskunfts-Trias § 14/3 LDO · § 41/1 BaySchO · Art. 15 DSGVO. Drittauskunfts-Verbot § 14/4. § 203 StGB NICHT pauschal. KUG: 4 Ausnahmen, Klassenfoto nicht.</p>
+        <div class="hub-card__norms">
+          <span class="hub-card__norm hub-card__norm--accent">§ 14/4 LDO</span>
+          <span class="hub-card__norm">§ 41/1 BaySchO</span>
+          <span class="hub-card__norm">§ 22 KUG</span>
+        </div>
+        <div class="hub-card__footer">
+          <span>8 Karten · 10 Fallen · 5 Fälle</span>
+          <span class="hub-card__arrow">öffnen →</span>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="hub-meta-block">
+      <div>
+        <h3>Designprinzipien</h3>
+        <p>
+          <strong>Spickzettel-Spalte rechts</strong> für Tafelbild + Fallen.
+          <strong>Vertiefung-Mitte</strong> mit Self-Check je Sub-Block.
+          <strong>TOC-Spalte links</strong> mit Scrollspy ≥ 1401 px.
+          Print-Layout reduziert auf Spickzettel.
+        </p>
+      </div>
+      <div>
+        <h3>Norm-Konvention</h3>
+        <p>
+          Inline-Marker <code style="font-family: var(--mono); font-size: 13px; background: var(--accent-soft); padding: 1px 4px;">&#123;&#123;Norm&#125;&#125;</code>
+          rendert zur Norm-Tag mit Slideover (Wortlaut + Karten-Verweise).
+          Cross-Refs zwischen Mappen explizit markiert (Cross-Ref MP_xy A.z).
+        </p>
+      </div>
+      <div>
+        <h3>Status-Tracking</h3>
+        <p>
+          Vier-Status-Cycle pro Karte (offen · in Bearbeitung · Wiederholung · sitzt).
+          Module-id-namespaced localStorage — kein Status-Leck zwischen Mappen.
+          Reset pro Mappe verfügbar.
+        </p>
+      </div>
+      <div>
+        <h3>Querverbindungen</h3>
+        <ul>
+          <li>MP_01 Beschlagnahme ↔ MP_05 OM-Verfahren</li>
+          <li>MP_02 HA ↔ MP_05 Nachteilsausgleich</li>
+          <li>MP_06 § 14 LDO ↔ MP_09 Datenschutz</li>
+          <li>MP_07 Haftung ↔ MP_06 Aufsichtspflicht</li>
+          <li>MP_08 MSD ↔ MP_04 Förderplan</li>
+        </ul>
+      </div>
+    </div>
+
+    <footer class="hub-foot">
+      <span>Skript V3 · 2. Staatsexamen MS Bayern · Schulrecht</span>
+      <span><a href="/staatsexamen/schulrecht/" style="border-bottom: 1px dotted var(--muted); text-decoration: none;">← Zurück zur Schulrecht-Übersicht</a></span>
+    </footer>
+  </div>
+
+  <script>
+    // Defensive: ensure cards are tab-navigable
+    document.querySelectorAll('.hub-card').forEach(card => {
+      card.setAttribute('aria-label', card.querySelector('.hub-card__title').textContent.trim());
+    });
+  </script>
+</body>
+</html>
