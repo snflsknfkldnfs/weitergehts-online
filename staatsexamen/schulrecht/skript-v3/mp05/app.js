@@ -42,13 +42,12 @@
     return next;
   };
 
-  // ─── Status Dot ──────────────────────────────────────────────────────────
+  // ─── Status Dot (real <button>) ──────────────────────────────────────────
   const statusDot = (id) => {
     const cur = getStatus(id);
-    const el = h('span', {
+    const el = h('button', {
       class: 'status-dot status-dot--' + cur,
-      role: 'button',
-      tabindex: '0',
+      type: 'button',
       'aria-label': 'Lernstand: ' + STATUS_LABEL[cur] + ' — klick wechselt',
       title: 'Lernstand: offen → in Arbeit → wiederholt → sitzt',
     });
@@ -183,6 +182,9 @@
     ));
     const toggle = (ev) => {
       if (ev.target.closest('.norm-tag, .status-dot')) return;
+      // Don't collapse when user just selected antwort text
+      const sel = window.getSelection && window.getSelection();
+      if (sel && sel.toString().length > 0) return;
       const open = el.dataset.state === 'open';
       el.dataset.state = open ? 'closed' : 'open';
       el.setAttribute('aria-expanded', open ? 'false' : 'true');
@@ -352,6 +354,11 @@
           h('span', { class: 'rb-warn__t' }, it.titel),
           h('div', { class: 'rb-warn__body' }, renderInline(it.text)),
         );
+      case 'selfcheck':
+        return h('div', { class: 'rb-selfcheck' },
+          h('span', { class: 'rb-selfcheck__t' }, it.titel || '✱ Selbst-Check (mündlich antworten)'),
+          h('ol', null, ...it.items.map(q => h('li', null, renderInline(q)))),
+        );
       default: return h('span');
     }
   }
@@ -425,11 +432,14 @@
   };
 
   // ─── Slideover (Glossar) ─────────────────────────────────────────────────
-  let slideoverBackdrop, slideoverEl;
+  let slideoverBackdrop, slideoverEl, slideoverLastFocus = null;
   function openSlideover(name) {
+    slideoverLastFocus = document.activeElement;
+    // Always clear karten-list at top to avoid stale entries leaking between opens
+    const kList = slideoverEl.querySelector('.slideover__karten-list');
+    if (kList) kList.innerHTML = '';
     const entry = (d.glossar || {})[name];
     if (!entry) {
-      // synthetisch falls kein Eintrag
       slideoverEl.querySelector('.slideover__title').textContent = name;
       slideoverEl.querySelector('.slideover__wortlaut').textContent = '(Kein detaillierter Glossar-Eintrag — nur Norm-Kürzel)';
       slideoverEl.querySelector('.slideover__karten').style.display = 'none';
@@ -437,13 +447,12 @@
       slideoverEl.querySelector('.slideover__title').textContent = entry.titel || name;
       slideoverEl.querySelector('.slideover__wortlaut').textContent = entry.wortlaut || '';
       const k = slideoverEl.querySelector('.slideover__karten');
-      k.style.display = entry.karten && entry.karten.length ? '' : 'none';
-      if (entry.karten && entry.karten.length) {
-        const c = k.querySelector('.slideover__karten-list');
-        c.innerHTML = '';
+      const hasKarten = entry.karten && entry.karten.length;
+      k.style.display = hasKarten ? '' : 'none';
+      if (hasKarten) {
         entry.karten.forEach(kk => {
           const tag = h('span', { class: 'norm-tag', style: 'color:var(--accent)' }, kk);
-          c.appendChild(tag);
+          kList.appendChild(tag);
         });
       }
     }
@@ -451,11 +460,35 @@
     slideoverBackdrop.dataset.open = 'true';
     slideoverEl.dataset.open = 'true';
     document.body.style.overflow = 'hidden';
+    // Focus management: move focus into dialog
+    const closeBtn = slideoverEl.querySelector('.slideover__close');
+    if (closeBtn) closeBtn.focus();
   }
   function closeSlideover() {
+    if (slideoverBackdrop.dataset.open !== 'true') return;
     slideoverBackdrop.dataset.open = 'false';
     slideoverEl.dataset.open = 'false';
     document.body.style.overflow = '';
+    // Return focus to opener
+    if (slideoverLastFocus && typeof slideoverLastFocus.focus === 'function') {
+      try { slideoverLastFocus.focus(); } catch (_) {}
+    }
+    slideoverLastFocus = null;
+  }
+  function trapFocus(e) {
+    if (slideoverEl.dataset.open !== 'true') return;
+    if (e.key !== 'Tab') return;
+    const focusables = slideoverEl.querySelectorAll(
+      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    );
+    if (!focusables.length) return;
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault(); last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault(); first.focus();
+    }
   }
   function buildSlideover() {
     slideoverBackdrop = h('div', { class: 'slideover-backdrop', data: { open: 'false' }, onclick: closeSlideover });
@@ -464,13 +497,15 @@
       data: { open: 'false' },
       role: 'dialog',
       'aria-modal': 'true',
+      'aria-labelledby': 'slideover-title',
+      tabindex: '-1',
     },
       h('div', { class: 'slideover__inner' },
         h('div', { class: 'slideover__head' },
           h('span', { class: 'mono-cap mono-cap--accent slideover__label' }, ''),
-          h('button', { class: 'slideover__close', onclick: closeSlideover }, 'ESC · schließen'),
+          h('button', { class: 'slideover__close', type: 'button', onclick: closeSlideover }, 'ESC · schließen'),
         ),
-        h('h3', { class: 'slideover__title' }),
+        h('h3', { class: 'slideover__title', id: 'slideover-title' }),
         h('div', { class: 'slideover__wortlaut' }),
         h('div', { class: 'slideover__karten' },
           monoCap('Karten zum Üben'),
@@ -482,6 +517,7 @@
     document.body.appendChild(slideoverEl);
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') closeSlideover();
+      else trapFocus(e);
     });
   }
 

@@ -58,12 +58,14 @@ button { font-family: inherit; }
 .meta-bar {
   background: var(--ink);
   color: var(--bg);
-  padding: 12px 56px;
+  /* Align inner content with skript-header (max-width: 1320px, padding: 56px) */
+  padding: 12px max(20px, calc(50% - 660px + 56px));
   display: flex; justify-content: space-between; align-items: center; gap: 24px;
   font-family: var(--mono);
   font-size: 10.5px;
   letter-spacing: 1px;
   text-transform: uppercase;
+  flex-wrap: wrap;
 }
 .meta-bar a {
   color: #c7d2b0;
@@ -146,13 +148,18 @@ button { font-family: inherit; }
 .status-dot {
   display: inline-block;
   width: 11px; height: 11px;
+  padding: 0;
   border-radius: 50%;
   border: 1.5px solid var(--mute2);
   background: transparent;
   flex: 0 0 auto;
   cursor: pointer;
   position: relative;
+  -webkit-appearance: none;
+  appearance: none;
+  vertical-align: middle;
 }
+/* Touch target ≥ 24×24 via invisible hit area (WCAG 2.5.8 AA) */
 .status-dot::after { content: ""; position: absolute; inset: -8px; }
 .status-dot--work {
   border-color: var(--status-work);
@@ -180,15 +187,15 @@ button { font-family: inherit; }
   display: flex; justify-content: space-between;
   margin-top: 6px;
   font-family: var(--mono);
-  font-size: 9.5px;
+  font-size: 10px;
   letter-spacing: 0.4px;
-  color: var(--mute2);
+  color: var(--muted);
 }
 
 /* Top-Row (Kürze + Kartografie) ------------------------------------------ */
 .top-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 5fr 7fr;
   gap: 36px;
   padding: 32px 56px;
   border-bottom: 1px solid var(--hairline);
@@ -295,20 +302,29 @@ button { font-family: inherit; }
   padding: 36px 56px 96px 36px;
   background: #efeee8;
   min-width: 0;
-  position: sticky;
-  top: 0;
-  align-self: start;
-  max-height: 100vh;
-  overflow-y: auto;
+  /* No outer sticky — only the inner stickyHead is pinned (status aggregate).
+     Aside scrolls with the page, avoiding nested-sticky double-scroll. */
 }
 
 @media (max-width: 1024px) {
   .werkbank { grid-template-columns: 1fr; }
   .werkbank__main { border-right: none; border-bottom: 1px solid var(--hairline); padding: 28px 20px 60px; }
-  .werkbank__aside { position: static; max-height: none; padding: 28px 20px 60px; }
+  .werkbank__aside { padding: 28px 20px 60px; }
   .top-row { grid-template-columns: 1fr; padding: 24px 20px; gap: 22px; }
   .skript-header { padding: 28px 20px; }
   .skript-header__id, .skript-header__main, .skript-header__deck { grid-column: 1 / -1; }
+  .subblock__head { grid-template-columns: 1fr auto; }
+  .subblock__id { grid-column: 1; }
+  .subblock__title { grid-column: 1; }
+  .subblock__anriss, .subblock__cards-row, .subblock__body { margin-left: 0; max-width: none; }
+  .rb-table__head, .rb-table__row { grid-template-columns: 1fr !important; gap: 4px; }
+  .rb-table__head > div, .rb-table__row > div { padding: 2px 0; }
+  .slideover__inner { padding: 22px 20px 40px; }
+  .fall-card { padding: 16px 18px; }
+}
+@media (max-width: 520px) {
+  .fall-card__btns { grid-template-columns: 1fr; }
+  .meta-bar { font-size: 9.5px; gap: 12px; padding: 10px 16px; }
 }
 
 /* Section-Header (Werkbank-Main + Aside) --------------------------------- */
@@ -444,6 +460,26 @@ button { font-family: inherit; }
   font-size: 14.5px;
   line-height: 1.55;
 }
+.rb-selfcheck {
+  margin: 22px 0 18px;
+  border: 1px solid var(--accent);
+  background: var(--accent-soft);
+  padding: 14px 18px 12px;
+}
+.rb-selfcheck__t {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 1px;
+  color: var(--accent);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 10px;
+}
+.rb-selfcheck ol {
+  margin: 0; padding-left: 22px;
+  font-size: 14px; line-height: 1.55;
+}
+.rb-selfcheck ol li { margin-bottom: 6px; }
 
 /* Reveal-Karte (Pflichtwissen) ------------------------------------------- */
 .reveal-card {
@@ -510,7 +546,7 @@ button { font-family: inherit; }
   gap: 14px;
   padding: 14px 0;
   border-bottom: 1px solid var(--rule);
-  align-items: start;
+  align-items: center;
   cursor: pointer;
   transition: background .12s;
 }

@@ -73,9 +73,9 @@ window.MP05 = {
     {
       id: 'K10',
       titel: 'Pflichten Art. 56/4',
-      frage: 'Welche fünf Pflichten formuliert Art. 56/4 BayEUG ausdrücklich?',
+      frage: 'Welche sechs Pflichten formuliert Art. 56/4 BayEUG ausdrücklich?',
       antwort:
-        'Verhalten (Aufgabe der Schule + Bildungsziel) · Verhüllungs-Verbot · regelmäßige Teilnahme · Distanz-U. mit Bild+Ton bei päd. Forderung · Mitwirkung sonderpäd. Gutachten (Art. 41).',
+        'Aktive Mitwirkung (Aufgabe der Schule + Bildungsziel) · Verhüllungs-Verbot · regelmäßige Teilnahme · Distanz-U. mit Bild+Ton bei päd. Forderung · Unterlassen schulbetrieb-/ordnungsstörender Handlungen · Mitwirkung sonderpäd. Gutachten (Art. 41).',
       norm: 'Art. 56/4 BayEUG',
       status: 'repeat',
     },
@@ -129,7 +129,7 @@ window.MP05 = {
       titel: 'Schülerzeitung',
       frage: 'Welche zwei Erscheinungsformen gibt es — und was darf die SL bei jeder?',
       antwort:
-        'Modus A: Schul-Einrichtung im SMV-Rahmen — SL kann Herausgabe + Verteilung untersagen. Modus B: Druckwerk nach BayPrG — Eltern-Haftung bleibt, SL kann NUR Verteilung auf Schulgelände untersagen (Art. 63 BayEUG).',
+        'Modus A: Schul-Einrichtung im SMV-Rahmen — SL kann Verteilung + Herausgabe untersagen. Modus B: Druckwerk nach BayPrG — Eltern-Haftung bleibt, SL kann NUR Verteilung auf Schulgelände untersagen (NICHT Herausgabe). Bei Einwendungen (Modus A): Vorlauf-Pflicht Abs. 4 → Stellungnahme Redaktion → Schulforum-Befassung → bei Scheitern gütlicher Einigung Schulforum-Untersagung (Art. 63 BayEUG).',
       norm: 'Art. 63 BayEUG',
       status: 'planned',
     },
@@ -345,8 +345,8 @@ window.MP05 = {
       karten: ['K07'],
     },
     'Art. 56/4 BayEUG': {
-      titel: 'Art. 56 Abs. 4 BayEUG — Verhaltensgrundnorm',
-      wortlaut: '„Alle Schülerinnen und Schüler haben sich so zu verhalten, dass die Aufgabe der Schule erfüllt und das Bildungsziel erreicht werden kann. Sie dürfen insbesondere in der Schule und bei Schulveranstaltungen ihr Gesicht nicht verhüllen, es sei denn…"',
+      titel: 'Art. 56 Abs. 4 BayEUG — Verhaltensgrundnorm + 6 Pflichten',
+      wortlaut: 'S. 1 (Verhaltensgrundnorm): „Alle Schülerinnen und Schüler haben sich so zu verhalten, dass die Aufgabe der Schule erfüllt und das Bildungsziel erreicht werden kann." S. 2 (Verhüllungs-Verbot): „Sie dürfen insbesondere in der Schule und bei Schulveranstaltungen ihr Gesicht nicht verhüllen, es sei denn, schulbedingte Gründe erfordern dies." S. 3 (Distanzunterricht): Bild + Ton bei päd. Forderung der LK + technischer Voraussetzung. 6 Pflichten: (1) aktive Mitwirkung, (2) Verhüllungs-Verbot, (3) regelmäßige Teilnahme U./Veranstaltungen, (4) Distanz-U. Bild+Ton, (5) Unterlassen schulbetrieb-/ordnungsstörender Handlungen, (6) Mitwirkung sonderpäd. Gutachten i.V.m. Art. 41.',
       karten: ['K10', 'K12'],
     },
     'Art. 56/5 BayEUG': {
@@ -359,10 +359,20 @@ window.MP05 = {
       wortlaut: 'S. 1: „Für jeden aus dem Ausland zugezogenen Schulpflichtigen stellt die Schule fest, in welche Jahrgangsstufe der Pflichtschule er einzuweisen ist." S. 4: Tiefer-Einstufung bis zu 2 Jgst. zulässig NUR bei mangelndem Bildungsstand.',
       karten: ['K22'],
     },
+    'Art. 52/1 BayEUG': {
+      titel: 'Art. 52 Abs. 1 BayEUG — Leistungsfeststellung + Auskunft',
+      wortlaut: 'Maßstab für die Bewertung in den einzelnen Fächern ist das Ergebnis der von den SuS erbrachten Leistungen — festgestellt durch fortlaufende Beobachtung im Unterricht, durch Befragungen oder durch Leistungsnachweise. Basis des Auskunftsanspruchs i.V.m. Art. 56/2 BayEUG.',
+      karten: ['K07'],
+    },
     'Art. 52/3 BayEUG': {
       titel: 'Art. 52 Abs. 3 BayEUG — Leistungsbewertung Zeugnis',
       wortlaut: 'Berücksichtigung schriftlicher, mündlicher und praktischer Leistungen. Mitarbeitsnote ist FACHbezogen — keine Verhaltenssanktion.',
       karten: ['K12'],
+    },
+    '§ 12 MSO': {
+      titel: '§ 12 MSO — Leistungsnachweise (Rückgabe)',
+      wortlaut: 'Abs. 3: Schriftliche Leistungsnachweise werden in „angemessener Frist" von der Lehrkraft korrigiert + benotet zurückgegeben (KEIN konkreter Wert). Die SuS geben die Arbeiten „innerhalb einer Woche unverändert" zurück. Benotung + Besprechung + Eltern-Kenntnisnahme.',
+      karten: [],
     },
     'Art. 62 BayEUG': {
       titel: 'Art. 62 BayEUG — Schülermitverantwortung',
@@ -428,6 +438,61 @@ window.MP05 = {
       titel: 'Art. 131 Bayerische Verfassung — Bildungsziele',
       wortlaut: 'Bildungsziele: Ehrfurcht vor Gott, Achtung vor religiöser Überzeugung und Würde des Menschen, Selbstbeherrschung, Verantwortungsgefühl, Aufgeschlossenheit, Demokratie, Völkerversöhnung.',
       karten: ['K20'],
+    },
+    'Art. 35 BayEUG': {
+      titel: 'Art. 35 BayEUG — Schulpflicht-Grundsatz',
+      wortlaut: 'Allgemeine Schulpflicht für alle Kinder + Jugendlichen mit gewöhnlichem Aufenthalt oder Ausbildungs-/Arbeitsplatz in Bayern — OHNE Rücksicht auf Staatsangehörigkeit. Basis für Jgst.-Einweisung Art. 36/3 (Alter + bisherige Schullaufbahn).',
+      karten: ['K22'],
+    },
+    'Art. 41 BayEUG': {
+      titel: 'Art. 41 BayEUG — Sonderpädagogische Förderung',
+      wortlaut: 'Abs. 4 S. 2 + Abs. 6: Mitwirkungspflicht von SuS + Eltern bei sonderpädagogischer Diagnostik / Gutachten. Rechtsgrundlage für 6. Pflicht in Art. 56/4: „Mitwirkung sonderpäd. Gutachten".',
+      karten: ['K10'],
+    },
+    'Art. 84 BayEUG': {
+      titel: 'Art. 84 BayEUG — Schulfrieden + politische Werbung',
+      wortlaut: 'Abs. 2: „Politische Werbung im Rahmen von Schulveranstaltungen oder auf dem Schulgelände ist nicht zulässig." Abs. 3: Tragen von Abzeichen + Kleidungsstücken mit politischer Aussage zulässig nur, wenn 5 Schutzgüter NICHT gefährdet sind: (1) Schulfrieden, (2) Schulbetrieb, (3) Bildungs- + Erziehungsauftrag, (4) persönliche Ehre, (5) Erziehung zur Toleranz. Im Zweifel entscheidet SL.',
+      karten: [],
+    },
+    '§ 41 BaySchO': {
+      titel: '§ 41 BaySchO — Schülerakte (Einsicht)',
+      wortlaut: 'Abs. 1: Einsicht in die Schülerakte „nach Vollendung des 14. Lebensjahres" durch die Schülerin / den Schüler. Eltern-Recht als Vertretung Minderjähriger besteht parallel (Art. 76 BayEUG). Notenauskunft (Art. 56/2) ist davon getrennt + altersunabhängig.',
+      karten: [],
+    },
+    '§ 8 BaySchO': {
+      titel: '§ 8 BaySchO — Klassensprecher:innen',
+      wortlaut: 'Abs. 1 S. 3: Wahl „innerhalb von vier Wochen nach Unterrichtsbeginn". Ab Jgst. 5 PFLICHT (Art. 62/3 BayEUG). In Jgst. 1–4: SL entscheidet im Einvernehmen mit Elternbeirat. Mehrheitswahl in geheimer Abstimmung. Stellvertreter:in zwingend.',
+      karten: [],
+    },
+    '§ 9 BaySchO': {
+      titel: '§ 9 BaySchO — Schülersprecher:innen + Schülerausschuss',
+      wortlaut: 'Abs. 1 S. 2: Wahl „innerhalb von zwei Wochen nach der Wahl der Klassensprecher". Drei Schülersprecher:innen, Wahl durch Klassensprecher:innen. Schulforum kann Wahlrecht auf alle SuS ausdehnen. Schülerausschuss = alle Klassensprecher:innen.',
+      karten: [],
+    },
+    '§ 10 BaySchO': {
+      titel: '§ 10 BaySchO — SMV-Veranstaltungen',
+      wortlaut: 'SMV-Veranstaltungen finden unter schulischer Aufsicht statt — Aufsichtspflicht + gesetzlicher Versicherungsschutz greifen. Keine parteipolitische Agitation; kein politisches Mandat (Grenze SMV).',
+      karten: [],
+    },
+    'BayPrG': {
+      titel: 'BayPrG — Bayerisches Pressegesetz',
+      wortlaut: 'Modus B Schülerzeitung (Art. 63 BayEUG Abs. 1 S. 4): Druckwerk mit verantwortlichem Redakteur i.S.d. BayPrG. Eltern-Haftung bleibt. SL kann NICHT Herausgabe insgesamt verbieten — nur Verteilung auf Schulgelände bei Rechtsverstoß.',
+      karten: ['K33'],
+    },
+    'Vorkurs Deutsch 240': {
+      titel: 'KMBek Vorkurs Deutsch 240',
+      wortlaut: 'Sprachförderprogramm für K mit ndM 1,5 Jahre vor Einschulung. Umfang 240 Wochenstunden. Träger gemeinsam: Kindertageseinrichtung + Grundschule. Ziel: Deutschkenntnisse für erfolgreichen Übergang Regelklasse.',
+      karten: [],
+    },
+    'DeutschPLUS': {
+      titel: 'KMBek DeutschPLUS',
+      wortlaut: 'Zwei Spielarten: (1) DeutschPLUS-Differenzierung — innerhalb des Regelunterrichts (binnendifferenzierte Sprachförderung). (2) DeutschPLUS-Kurse — additiv neben Regel-U. Beide Wege ergänzen die Deutschklasse (§ 10 MSO / § 8 GrSO).',
+      karten: [],
+    },
+    'LehrplanPLUS DaZ': {
+      titel: 'LehrplanPLUS DaZ — Deutsch als Zweitsprache',
+      wortlaut: 'Bayerischer Lehrplan für alle weiterführenden Schularten mit DaZ-Bezug. Noten kommen in das Zeugnis. Stützt die Interkulturelle Erziehung (Verfassungsauftrag Art. 131 BV — „Geist der Demokratie", „Völkerversöhnung").',
+      karten: [],
     },
   },
 };

@@ -22,14 +22,14 @@ window.MP05_BODIES = {
       head: ['Recht', 'Norm', 'Detail'],
       rows: [
         ['**Schülerakte einsehen**', '§ 41/1 BaySchO', '**ab Vollendung des 14. Lebensjahres** (Wortlaut)'],
-        ['**LNW-Rückgabe**', 'MSO § 12/3',
+        ['**LNW-Rückgabe**', '{{§ 12 MSO}}',
           'LK → SuS: „angemessene Frist" (KEIN konkreter Wert!). SuS → Schule: „innerhalb einer Woche unverändert" zurück. Benotung + Besprechung + Eltern-Kenntnisnahme.'],
       ],
     },
 
     { type: 'h', text: 'Notenauskunft' },
     { type: 'bullets', items: [
-      'Subjektives öffentliches Recht aus {{Art. 56/2 BayEUG}} + {{Art. 52/3 BayEUG}} + {{DSGVO Art. 15}} + {{Art. 128 BV}}.',
+      'Subjektives öffentliches Recht aus {{Art. 56/2 BayEUG}} + {{Art. 52/1 BayEUG}} + {{DSGVO Art. 15}} + {{Art. 128 BV}}.',
       'KEINE Einschränkung auf Notenarten — schriftlich, mündlich, praktisch alle.',
       '**4-Stufen-Verhältnismäßigkeitsprüfung**: legitimes Ziel · Geeignetheit · Erforderlichkeit · Angemessenheit → i.d.R. Auskunftspflicht.',
       'Vergleich mit Lara-Noten UNZULÄSSIG — personenbezogene Bindung. {{§ 14 LDO}} normiert Verschwiegenheit, KEIN explizites „Notengeheimnis"; § 14/4 LDO regelt nur, WEM die Schule Auskunft geben darf.',
@@ -38,6 +38,12 @@ window.MP05_BODIES = {
     { type: 'warn', titel: '⚠ Falle Beschwerderecht', text:
       'Wortlaut {{Art. 56/2 BayEUG}} Nr. 5 sagt „nacheinander" (LK → SL → Schulforum) — also eine vorgegebene Reihenfolge. Lockerung bei Befangenheit; die LK darf trotzdem nicht „erst zu mir, dann SL" als pauschale Bedingung vorschreiben.',
     },
+    { type: 'selfcheck', items: [
+      'Welche drei Klassen kennzeichnen die Rechts-Trias des {{Art. 56/2 BayEUG}}? Wie verhält sich das Wort „nacheinander" zur Beschwerde-Stufung?',
+      'Welcher Normverbund trägt den Auskunftsanspruch zur Notenauskunft — und warum bleibt der Lara-Vergleich auch dann unzulässig, wenn beide einverstanden wären?',
+      'Ab welchem Alter steht der/dem Schüler:in die Akteneinsicht persönlich zu ({{§ 41 BaySchO}}) — und was bleibt davon unberührt?',
+      'Welche zwei Direktionalitäten trägt {{§ 12 MSO}} bei der Klausur-Rückgabe — und wo liegt die rechtliche Schwäche der LK, wenn sie „angemessene Frist" überdehnt?',
+    ]},
   ],
 
   A2: [
@@ -82,6 +88,12 @@ window.MP05_BODIES = {
     { type: 'warn', titel: '⚠ Fallen Pflichten', text:
       'Handy nicht absolut verboten — Aufsichts-/SL-Genehmigung möglich. Filmen einer LK = Persönlichkeitsrecht + {{KUG § 22}}-Verstoß → Beschlagnahme {{§ 23 BaySchO}} + EOM. Rückgabe gefährlicher Gegenstände bei Minderjährigen NUR an Eltern. Mitarbeitsnote als Verhaltens-Strafe = Fachfehler.',
     },
+    { type: 'selfcheck', items: [
+      'Zähle die sechs Pflichten aus {{Art. 56/4 BayEUG}} auf — welche ist eine Verweisung auf einen anderen BayEUG-Artikel?',
+      'Warum ist das Handy-Verbot KEIN absolutes Verbot — welche drei Erlaubniswege benennt {{Art. 56/5 BayEUG}}?',
+      'Welche FÜNF Schutzgüter aus {{Art. 84 BayEUG}} Abs. 3 müssen UNGEFÄHRDET bleiben, damit politische Abzeichen zulässig sind?',
+      'Wie unterscheidet sich die Mitarbeitsnote ({{Art. 52/3 BayEUG}}) von einer Erziehungsmaßnahme ({{Art. 86 BayEUG}}) — welche drei Prüfschritte verlangt die Doppelsanktions-Analyse ({{Art. 103/3 GG}} analog)?',
+    ]},
   ],
 
   A3: [
@@ -123,6 +135,12 @@ window.MP05_BODIES = {
     { type: 'warn', titel: '⚠ Falle ndM', text:
       'Tiefere Jgst.-Einstufung (bis 2 Jgst.) NUR bei mangelndem Bildungsstand, NICHT bei sprachlichen Defiziten allein. Wer „kein Deutsch" als Begründung für Tiefer-Einweisung nennt, verstößt gegen {{Art. 36/3 BayEUG}} S. 4.',
     },
+    { type: 'selfcheck', items: [
+      'Worauf stützt sich die Schulpflicht-Universalität ({{Art. 35 BayEUG}}) — und wie verhält sie sich zur Staatsangehörigkeit?',
+      'Wie ist die korrekte Reihenfolge: Bildungsstand-Diagnostik → Deutschklasse → Jgst.-Einstufung? Wann ist Tiefer-Einstufung zulässig ({{Art. 36/3 BayEUG}}) — wann nicht?',
+      'Welche vier Fördermaßnahmen flankieren die Deutschklasse — und welcher Träger-Verbund kennzeichnet den {{Vorkurs Deutsch 240}}?',
+      'Welche Lehrplan-Verankerung gilt für DaZ ({{LehrplanPLUS DaZ}}) — und welche LK-Haltung verlangt die Interkulturelle Erziehung als Verfassungsauftrag ({{Art. 131 BV}})?',
+    ]},
   ],
 
   A4: [
@@ -193,5 +211,11 @@ window.MP05_BODIES = {
     { type: 'warn', titel: '⚠ Fallen SMV', text:
       'Klassensprecher ab Jgst. 5 — in 1–4 keine Pflicht. LAA NICHT wählbar als Verbindungs-LK (Status auf Widerruf). Bei presserechtlicher Schülerzeitung: SL-Eingriff begrenzt; Eltern-Haftung bleibt.',
     },
+    { type: 'selfcheck', items: [
+      'Welche 6 Rechte normiert {{Art. 62 BayEUG}} Abs. 1 Satz 4?',
+      'Wer ist als Verbindungslehrkraft wählbar ({{Art. 62/7 BayEUG}}) — und wer fällt klassisch durch das Unbefristet-Kriterium?',
+      'Welche zwei Erscheinungsformen kennt die Schülerzeitung ({{Art. 63 BayEUG}}) — und welche Eingriffe darf die SL in welchem Modus, welche das Schulforum?',
+      'Wo verläuft die Grenze der SMV gegenüber politischem Mandat — und welche Norm regelt die Aufsichtspflicht bei SMV-Veranstaltungen ({{§ 10 BaySchO}})?',
+    ]},
   ],
 };
