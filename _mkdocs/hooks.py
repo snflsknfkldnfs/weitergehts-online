@@ -840,13 +840,13 @@ def on_page_content(html: str, page=None, config=None, files=None, **kwargs):
         urls = _load_norm_urls(config_dir)
         html = _wrap_abbr_with_link(html, urls)
 
-    # Skript-Redesign V2 Passes (idempotent, schalten sich nur in passenden Sections ein)
+    # Skript-Redesign V2 Passes (single-column reading layout):
+    # - Top-8 in Teil B als Reveal-Karten
+    # - Falle-Atlas-Tabelle in 10 Akkordeon-Cards konsolidieren
+    # - KEIN Werkbank-DOM-Wrap (zerschiesst mkdocs-Material-Layout)
+    # - KEIN Section-Reorder (natuerliche Reihenfolge bleibt)
     html = wrap_top8_reveal(html)
     html = consolidate_falle_atlas(html)
-    # Werkbank-Layout MUSS als letzter Schritt laufen — wrappt das ganze HTML in
-    # Top-Row + Main/Aside-Grid. Nach diesem Wrap matchen Section-Position-Regexes
-    # nicht mehr zuverlässig.
-    html = wrap_werkbank_layout(html)
     return html
 
 
@@ -1204,10 +1204,11 @@ def on_page_markdown(markdown: str, page=None, config=None, files=None, **kwargs
     if config is None:
         return markdown
 
-    # Section-Kind-Stamp + Sub-Block-Status-Stamp (idempotent, vor Norm-Wrap)
+    # Stamps: Section-Kind (fuer Reveal-Trigger + Optional-CSS-Hooks) +
+    # Sub-Block-Status (data-status-key + data-block-ref auf A.1-A.4).
+    # Werkbank-DOM-Wrap entfernt — natuerliche Single-Column-Reihenfolge.
     page_slug = "page"
     if page is not None and getattr(page, "url", None):
-        # page.url Bsp.: 'mp05/' -> 'mp05'
         page_slug = page.url.strip("/").split("/")[-1] or "index"
     markdown = stamp_section_kinds(markdown)
     markdown = stamp_subblock_status(markdown, page_slug)
