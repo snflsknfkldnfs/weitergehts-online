@@ -1697,3 +1697,156 @@ body[data-lernraum] .lr-subblock .admonition-title::before,
 body[data-lernraum] .lr-subblock summary.admonition-title::before {
   display: none;
 }
+
+/* ==========================================================================
+   13.13  Question + Success Admonitions (Self-Check + Fall-Reveal-Nesting)
+       Iteration 3 — Mastery-Self-Checks + Teil-D-Reveal-Pattern.
+   ========================================================================== */
+
+/* Question (Self-Check + Knackpunkte) — Akzent-Border-Left, kompakt */
+body[data-lernraum] details.question,
+body[data-lernraum] .admonition.question {
+  border: 1px solid var(--lr-rule);
+  border-left: 3px solid var(--lr-accent);
+  background: var(--lr-bg);
+  padding: 0;
+  margin: 14px 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+body[data-lernraum] details.question > summary,
+body[data-lernraum] .admonition.question > .admonition-title {
+  font-family: var(--lr-font-mono);
+  font-size: 10.5px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--lr-accent);
+  padding: 10px 14px;
+  margin: 0;
+  background: var(--lr-accent-soft);
+  cursor: pointer;
+  list-style: none;
+}
+body[data-lernraum] details.question > summary::before,
+body[data-lernraum] .admonition.question > .admonition-title::before {
+  content: "? ";
+  display: inline;
+  font-weight: 700;
+}
+body[data-lernraum] details.question > summary::after {
+  content: " · tippen zum aufklappen";
+  font-weight: 400;
+  text-transform: lowercase;
+  letter-spacing: 0.5px;
+  color: var(--lr-muted);
+  font-size: 10px;
+}
+body[data-lernraum] details.question[open] > summary::after {
+  content: " · tippen zum zuklappen";
+}
+body[data-lernraum] details.question > *:not(summary),
+body[data-lernraum] .admonition.question > *:not(.admonition-title) {
+  padding: 12px 18px;
+  margin: 0;
+}
+body[data-lernraum] details.question ol,
+body[data-lernraum] details.question ul,
+body[data-lernraum] .admonition.question ol,
+body[data-lernraum] .admonition.question ul {
+  margin: 0;
+  padding-left: 22px;
+}
+body[data-lernraum] details.question li,
+body[data-lernraum] .admonition.question li {
+  margin-bottom: 8px;
+  line-height: 1.55;
+}
+
+/* Success (Antwortkette) — etwas anderer Akzent: Olive-Vollton-Border */
+body[data-lernraum] details.success,
+body[data-lernraum] .admonition.success {
+  border: 1px solid var(--lr-rule);
+  border-left: 3px solid #2d4a1f;
+  background: rgba(74, 93, 59, 0.04);
+  padding: 0;
+  margin: 14px 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+body[data-lernraum] details.success > summary,
+body[data-lernraum] .admonition.success > .admonition-title {
+  font-family: var(--lr-font-mono);
+  font-size: 10.5px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #2d4a1f;
+  padding: 10px 14px;
+  margin: 0;
+  background: rgba(74, 93, 59, 0.12);
+  cursor: pointer;
+  list-style: none;
+}
+[data-md-color-scheme="slate"] body[data-lernraum] details.success > summary,
+[data-md-color-scheme="slate"] body[data-lernraum] .admonition.success > .admonition-title {
+  color: #a8c089;
+}
+body[data-lernraum] details.success > summary::before,
+body[data-lernraum] .admonition.success > .admonition-title::before {
+  content: "✓ ";
+}
+body[data-lernraum] details.success > *:not(summary),
+body[data-lernraum] .admonition.success > *:not(.admonition-title) {
+  padding: 12px 18px;
+  margin: 0;
+  font-family: var(--lr-font-serif);
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+/* Example (Fallbeispiele) — Card-Look */
+body[data-lernraum] details.example,
+body[data-lernraum] .admonition.example {
+  border: 1px solid var(--lr-rule);
+  border-left: 3px solid var(--lr-muted);
+  background: var(--lr-paper);
+  padding: 0;
+  margin: 18px 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+body[data-lernraum] details.example > summary,
+body[data-lernraum] .admonition.example > .admonition-title {
+  font-family: var(--lr-font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.15px;
+  text-transform: none;
+  color: var(--lr-ink);
+  padding: 14px 18px;
+  margin: 0;
+  background: var(--lr-bg);
+  cursor: pointer;
+  list-style: none;
+}
+body[data-lernraum] details.example > *:not(summary) {
+  padding: 14px 18px;
+  margin: 0;
+}
+body[data-lernraum] details.example p,
+body[data-lernraum] details.example > p {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+/* Native Chevron für details/summary — alle nested admonitions */
+body[data-lernraum] details > summary::-webkit-details-marker { display: none; }
+body[data-lernraum] details > summary { position: relative; padding-right: 36px; }
+body[data-lernraum] details > summary::-marker { content: ""; }
+
+/* Self-Check Question-Boxes (Self-Check A.1-A.4) noch deutlicher hervor heben */
+body[data-lernraum] .lr-subblock > details.question {
+  margin-top: 22px;
+  border-left-width: 4px;
+}
