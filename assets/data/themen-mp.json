@@ -1,0 +1,188 @@
+{
+  "source": "staatsexamen/schulrecht/index.html",
+  "themen": [
+    {
+      "nr": "1",
+      "titel": "Hierarchie der Rechtsvorschriften",
+      "sub": "Aufbau des bayerischen Schulrechts",
+      "href": null,
+      "mp_codes": [],
+      "status_default": "planned",
+      "status_id": "schulrecht.1-hierarchie",
+      "anchor": null,
+      "querschnitt": false
+    },
+    {
+      "nr": "2",
+      "titel": "Gliederung des Bildungssystems",
+      "sub": "MP_03 · Bildungswege",
+      "href": "2-gliederung-bildungssystem/",
+      "mp_codes": [
+        "MP_03"
+      ],
+      "status_default": "open",
+      "status_id": "schulrecht.2-gliederung-bildungssystem",
+      "anchor": null,
+      "querschnitt": false
+    },
+    {
+      "nr": "3",
+      "titel": "Schulpflicht und Schulbesuch",
+      "sub": "MP_04 · Schullaufbahn-Steuerung",
+      "href": "skripts/mp04/",
+      "mp_codes": [
+        "MP_04"
+      ],
+      "status_default": "open",
+      "status_id": "schulrecht.3-schulpflicht",
+      "anchor": "3-schulpflicht",
+      "querschnitt": false
+    },
+    {
+      "nr": "4",
+      "titel": "Aufnahme, Versetzung, Übertritt",
+      "sub": "MP_04 · Abschlüsse",
+      "href": "skripts/mp04/",
+      "mp_codes": [
+        "MP_04"
+      ],
+      "status_default": "open",
+      "status_id": "schulrecht.4-aufnahme-versetzung",
+      "anchor": "3-schulpflicht",
+      "querschnitt": false
+    },
+    {
+      "nr": "5",
+      "titel": "Rechte und Pflichten der Schüler:innen",
+      "sub": "MP_05 · ZALGM 5.1+5.4+5.6",
+      "href": "5-rechte-pflichten-schueler/",
+      "mp_codes": [
+        "MP_05"
+      ],
+      "status_default": "open",
+      "status_id": "schulrecht.5-rechte-pflichten-schueler",
+      "anchor": null,
+      "querschnitt": false
+    },
+    {
+      "nr": "6",
+      "titel": "Leistungserhebung, Notengebung, Zeugnisse",
+      "sub": "MP_05 · Notenauskunft",
+      "href": "skripts/mp05/",
+      "mp_codes": [
+        "MP_05"
+      ],
+      "status_default": "open",
+      "status_id": "schulrecht.6-leistungserhebung",
+      "anchor": "5-rechte-pflichten-schueler",
+      "querschnitt": false
+    },
+    {
+      "nr": "7",
+      "titel": "Erziehungs- und Ordnungsmaßnahmen",
+      "sub": "MP_02 · MP_05 EOM-Stufen",
+      "href": "skripts/mp02/",
+      "mp_codes": [
+        "MP_02",
+        "MP_05"
+      ],
+      "status_default": "open",
+      "status_id": "schulrecht.7-eom",
+      "anchor": "6-eom",
+      "querschnitt": false
+    },
+    {
+      "nr": "8",
+      "titel": "Aufsichtspflicht und Haftung",
+      "sub": "MP_07 · MP_06 A.2",
+      "href": "skripts/mp07/",
+      "mp_codes": [
+        "MP_07",
+        "MP_06"
+      ],
+      "status_default": "open",
+      "status_id": "schulrecht.8-aufsicht-haftung",
+      "anchor": "7-aufsicht-haftung",
+      "querschnitt": false
+    },
+    {
+      "nr": "9",
+      "titel": "Kooperation mit Bildungs- und Betreuungseinrichtungen",
+      "sub": "MP_08",
+      "href": "8-kooperation/",
+      "mp_codes": [
+        "MP_08"
+      ],
+      "status_default": "open",
+      "status_id": "schulrecht.9-kooperation",
+      "anchor": null,
+      "querschnitt": false
+    },
+    {
+      "nr": "10",
+      "titel": "Lehrkraft im Beamtenverhältnis (Dienstrecht)",
+      "sub": "MP_06 · MP_07",
+      "href": "skripts/mp06/",
+      "mp_codes": [
+        "MP_06",
+        "MP_07"
+      ],
+      "status_default": "open",
+      "status_id": "schulrecht.10-dienstrecht",
+      "anchor": "9-dienstrecht-lehrkraft",
+      "querschnitt": false
+    }
+  ],
+  "schwerpunkte": [
+    {
+      "nr": "★",
+      "titel": "Rechte und Pflichten der Schüler:innen",
+      "sub": "→ Themenfeld 5 · MP_05",
+      "href": "5-rechte-pflichten-schueler/",
+      "mp_codes": [
+        "MP_05"
+      ],
+      "status_default": "open",
+      "status_id": "schulrecht.qs-rechte-pflichten-schueler",
+      "anchor": null,
+      "querschnitt": true
+    },
+    {
+      "nr": "★",
+      "titel": "Rechte und Pflichten der Lehrkräfte",
+      "sub": "→ Themenfeld 10 · Verschwiegenheit · Aufsicht · Fortbildung",
+      "href": "skripts/mp06/",
+      "mp_codes": [],
+      "status_default": "open",
+      "status_id": "schulrecht.qs-rechte-pflichten-lehrkraft",
+      "anchor": "9-dienstrecht-lehrkraft",
+      "querschnitt": true
+    },
+    {
+      "nr": "★",
+      "titel": "Messer im Unterricht — Beschlagnahme + Strafrecht",
+      "sub": "→ Themenfeld 10 · MP_01",
+      "href": "skripts/mp01/",
+      "mp_codes": [
+        "MP_01"
+      ],
+      "status_default": "open",
+      "status_id": "schulrecht.qs-messer",
+      "anchor": "messer-jugendschutz",
+      "querschnitt": true
+    },
+    {
+      "nr": "★",
+      "titel": "Hausaufgaben + Beschwerdeverfahren",
+      "sub": "→ Themenfeld 6/7 · MP_02",
+      "href": "skripts/mp02/",
+      "mp_codes": [
+        "MP_02"
+      ],
+      "status_default": "open",
+      "status_id": "schulrecht.qs-hausaufgaben",
+      "anchor": "6-eom",
+      "querschnitt": true
+    }
+  ]
+}

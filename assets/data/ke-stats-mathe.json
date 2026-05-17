@@ -1,0 +1,559 @@
+{
+  "fach": "mathe",
+  "source": "Klassenleitung/Seminar/MuendlichePrüfungen/KE_Matrix_Mathe/mp_n18_mathe_ke_v1.tsv",
+  "total": 93,
+  "themen": [
+    {
+      "id": "m5r-lb1-2",
+      "label": "M5R LB1.2",
+      "jgst": "M5R",
+      "lb": "LB1.2",
+      "cards": 3,
+      "stufen": {
+        "Stufe1": 1,
+        "Stufe2": 1,
+        "Stufe3": 1
+      },
+      "rollen": {
+        "vorwissen": 3
+      },
+      "card_ids": [
+        "was-sagt-der-lp-in-b-m5-lb1-grundrechenarten-b-grundrechenar",
+        "wie-realisierst-du-b-m5-lb1-grundrechenarten-b-grundrechenar",
+        "welche-sequenz-skizze-welche-prinzipien-tragt-b-m5-lb1-grund"
+      ]
+    },
+    {
+      "id": "m5r-lb2",
+      "label": "M5R LB2",
+      "jgst": "M5R",
+      "lb": "LB2",
+      "cards": 3,
+      "stufen": {
+        "Stufe1": 1,
+        "Stufe2": 1,
+        "Stufe3": 1
+      },
+      "rollen": {
+        "vorwissen": 3
+      },
+      "card_ids": [
+        "was-sagt-der-lp-in-b-m5-lb2-ganze-zahlen-b-ganze-zahlen-z-vo",
+        "wie-realisierst-du-b-m5-lb2-ganze-zahlen-b-ganze-zahlen-z-vo",
+        "welche-sequenz-skizze-welche-prinzipien-tragt-b-m5-lb2-ganze"
+      ]
+    },
+    {
+      "id": "m5r-lb3",
+      "label": "M5R LB3",
+      "jgst": "M5R",
+      "lb": "LB3",
+      "cards": 3,
+      "stufen": {
+        "Stufe1": 1,
+        "Stufe2": 1,
+        "Stufe3": 1
+      },
+      "rollen": {
+        "vorwissen": 3
+      },
+      "card_ids": [
+        "was-sagt-der-lp-in-b-m5-lb3-geometrie-grundlagen-b-linien-wi",
+        "wie-realisierst-du-b-m5-lb3-geometrie-grundlagen-b-linien-wi",
+        "welche-sequenz-skizze-welche-prinzipien-tragt-b-m5-lb3-geome"
+      ]
+    },
+    {
+      "id": "m5r-lb4",
+      "label": "M5R LB4",
+      "jgst": "M5R",
+      "lb": "LB4",
+      "cards": 3,
+      "stufen": {
+        "Stufe1": 1,
+        "Stufe2": 1,
+        "Stufe3": 1
+      },
+      "rollen": {
+        "vorwissen": 3
+      },
+      "card_ids": [
+        "was-sagt-der-lp-in-b-m5-lb4-flaecheninhalt-rechteck-b-flache",
+        "wie-realisierst-du-b-m5-lb4-flaecheninhalt-rechteck-b-flache",
+        "welche-sequenz-skizze-welche-prinzipien-tragt-b-m5-lb4-flaec"
+      ]
+    },
+    {
+      "id": "m6-lb1-1",
+      "label": "M6 LB1.1",
+      "jgst": "M6",
+      "lb": "LB1.1",
+      "cards": 3,
+      "stufen": {
+        "Stufe1": 1,
+        "Stufe2": 1,
+        "Stufe3": 1
+      },
+      "rollen": {
+        "vorwissen": 3
+      },
+      "card_ids": [
+        "was-sagt-der-lp-in-b-m6-lb1-1-bruch-dezimal-prozent-b-erweit",
+        "wie-realisierst-du-b-m6-lb1-1-bruch-dezimal-prozent-b-erweit",
+        "welche-sequenz-skizze-welche-prinzipien-tragt-b-m6-lb1-1-bru"
+      ]
+    },
+    {
+      "id": "m6-lb1-2",
+      "label": "M6 LB1.2",
+      "jgst": "M6",
+      "lb": "LB1.2",
+      "cards": 3,
+      "stufen": {
+        "Stufe1": 1,
+        "Stufe2": 1,
+        "Stufe3": 1
+      },
+      "rollen": {
+        "vorwissen": 3
+      },
+      "card_ids": [
+        "was-sagt-der-lp-in-b-m6-lb1-2-bruchrechnung-b-rechnen-mit-br",
+        "wie-realisierst-du-b-m6-lb1-2-bruchrechnung-b-rechnen-mit-br",
+        "welche-sequenz-skizze-welche-prinzipien-tragt-b-m6-lb1-2-bru"
+      ]
+    },
+    {
+      "id": "m6-lb2",
+      "label": "M6 LB2",
+      "jgst": "M6",
+      "lb": "LB2",
+      "cards": 3,
+      "stufen": {
+        "Stufe1": 1,
+        "Stufe2": 1,
+        "Stufe3": 1
+      },
+      "rollen": {
+        "vorwissen": 3
+      },
+      "card_ids": [
+        "was-sagt-der-lp-in-b-m6-lb2-rationale-zahlen-einfuehrung-b-e",
+        "wie-realisierst-du-b-m6-lb2-rationale-zahlen-einfuehrung-b-e",
+        "welche-sequenz-skizze-welche-prinzipien-tragt-b-m6-lb2-ratio"
+      ]
+    },
+    {
+      "id": "m6-lb3",
+      "label": "M6 LB3",
+      "jgst": "M6",
+      "lb": "LB3",
+      "cards": 3,
+      "stufen": {
+        "Stufe1": 1,
+        "Stufe2": 1,
+        "Stufe3": 1
+      },
+      "rollen": {
+        "vorwissen": 3
+      },
+      "card_ids": [
+        "was-sagt-der-lp-in-b-m6-lb3-vierecke-koerper-b-vierecks-klas",
+        "wie-realisierst-du-b-m6-lb3-vierecke-koerper-b-vierecks-klas",
+        "welche-sequenz-skizze-welche-prinzipien-tragt-b-m6-lb3-viere"
+      ]
+    },
+    {
+      "id": "m6-lb4-5",
+      "label": "M6 LB4-5",
+      "jgst": "M6",
+      "lb": "LB4-5",
+      "cards": 3,
+      "stufen": {
+        "Stufe1": 1,
+        "Stufe2": 1,
+        "Stufe3": 1
+      },
+      "rollen": {
+        "vorwissen": 3
+      },
+      "card_ids": [
+        "was-sagt-der-lp-in-b-m6-lb4-5-quader-volumen-b-oberflachenin",
+        "wie-realisierst-du-b-m6-lb4-5-quader-volumen-b-oberflachenin",
+        "welche-sequenz-skizze-welche-prinzipien-tragt-b-m6-lb4-5-qua"
+      ]
+    },
+    {
+      "id": "m6-lb6",
+      "label": "M6 LB6",
+      "jgst": "M6",
+      "lb": "LB6",
+      "cards": 3,
+      "stufen": {
+        "Stufe1": 1,
+        "Stufe2": 1,
+        "Stufe3": 1
+      },
+      "rollen": {
+        "vorwissen": 3
+      },
+      "card_ids": [
+        "was-sagt-der-lp-in-b-m6-lb6-arithmetisches-mittel-b-datendar",
+        "wie-realisierst-du-b-m6-lb6-arithmetisches-mittel-b-datendar",
+        "welche-sequenz-skizze-welche-prinzipien-tragt-b-m6-lb6-arith"
+      ]
+    },
+    {
+      "id": "m7r-lb1",
+      "label": "M7R LB1",
+      "jgst": "M7R",
+      "lb": "LB1",
+      "cards": 3,
+      "stufen": {
+        "Stufe1": 1,
+        "Stufe2": 1,
+        "Stufe3": 1
+      },
+      "rollen": {
+        "kern": 3
+      },
+      "card_ids": [
+        "was-sagt-der-lp-in-b-m7r-lb1-prozent-b-prozentrechnung-und-d",
+        "wie-realisierst-du-b-m7r-lb1-prozent-b-prozentrechnung-und-d",
+        "welche-sequenz-skizze-welche-prinzipien-tragt-b-m7r-lb1-proz"
+      ]
+    },
+    {
+      "id": "m7r-lb2",
+      "label": "M7R LB2",
+      "jgst": "M7R",
+      "lb": "LB2",
+      "cards": 3,
+      "stufen": {
+        "Stufe1": 1,
+        "Stufe2": 1,
+        "Stufe3": 1
+      },
+      "rollen": {
+        "kern": 3
+      },
+      "card_ids": [
+        "was-sagt-der-lp-in-b-m7r-lb2-rationale-zahlen-b-rechenregeln",
+        "wie-realisierst-du-b-m7r-lb2-rationale-zahlen-b-rechenregeln",
+        "welche-sequenz-skizze-welche-prinzipien-tragt-b-m7r-lb2-rati"
+      ]
+    },
+    {
+      "id": "m7r-lb3",
+      "label": "M7R LB3",
+      "jgst": "M7R",
+      "lb": "LB3",
+      "cards": 3,
+      "stufen": {
+        "Stufe1": 1,
+        "Stufe2": 1,
+        "Stufe3": 1
+      },
+      "rollen": {
+        "kern": 3
+      },
+      "card_ids": [
+        "was-sagt-der-lp-in-b-m7r-lb3-geometrie-konstruktion-b-geomet",
+        "wie-realisierst-du-b-m7r-lb3-geometrie-konstruktion-b-geomet",
+        "welche-sequenz-skizze-welche-prinzipien-tragt-b-m7r-lb3-geom"
+      ]
+    },
+    {
+      "id": "m7r-lb4",
+      "label": "M7R LB4",
+      "jgst": "M7R",
+      "lb": "LB4",
+      "cards": 3,
+      "stufen": {
+        "Stufe1": 1,
+        "Stufe2": 1,
+        "Stufe3": 1
+      },
+      "rollen": {
+        "kern": 3
+      },
+      "card_ids": [
+        "was-sagt-der-lp-in-b-m7r-lb4-flaecheninhalt-b-flacheninhalt-",
+        "wie-realisierst-du-b-m7r-lb4-flaecheninhalt-b-flacheninhalt-",
+        "welche-sequenz-skizze-welche-prinzipien-tragt-b-m7r-lb4-flae"
+      ]
+    },
+    {
+      "id": "m7r-lb5",
+      "label": "M7R LB5",
+      "jgst": "M7R",
+      "lb": "LB5",
+      "cards": 3,
+      "stufen": {
+        "Stufe1": 1,
+        "Stufe2": 1,
+        "Stufe3": 1
+      },
+      "rollen": {
+        "kern": 3
+      },
+      "card_ids": [
+        "was-sagt-der-lp-in-b-m7r-lb5-volumen-b-volumen-gerader-prism",
+        "wie-realisierst-du-b-m7r-lb5-volumen-b-volumen-gerader-prism",
+        "welche-sequenz-skizze-welche-prinzipien-tragt-b-m7r-lb5-volu"
+      ]
+    },
+    {
+      "id": "m7r-lb6",
+      "label": "M7R LB6",
+      "jgst": "M7R",
+      "lb": "LB6",
+      "cards": 3,
+      "stufen": {
+        "Stufe1": 1,
+        "Stufe2": 1,
+        "Stufe3": 1
+      },
+      "rollen": {
+        "kern": 3
+      },
+      "card_ids": [
+        "was-sagt-der-lp-in-b-m7r-lb6-statistik-b-statistische-kennwe",
+        "wie-realisierst-du-b-m7r-lb6-statistik-b-statistische-kennwe",
+        "welche-sequenz-skizze-welche-prinzipien-tragt-b-m7r-lb6-stat"
+      ]
+    },
+    {
+      "id": "m7r-lb7",
+      "label": "M7R LB7",
+      "jgst": "M7R",
+      "lb": "LB7",
+      "cards": 3,
+      "stufen": {
+        "Stufe1": 1,
+        "Stufe2": 1,
+        "Stufe3": 1
+      },
+      "rollen": {
+        "kern": 3
+      },
+      "card_ids": [
+        "was-sagt-der-lp-in-b-m7r-lb7-algebra-b-terme-variablen-linea",
+        "wie-realisierst-du-b-m7r-lb7-algebra-b-terme-variablen-linea",
+        "welche-sequenz-skizze-welche-prinzipien-tragt-b-m7r-lb7-alge"
+      ]
+    },
+    {
+      "id": "m7r-lb8",
+      "label": "M7R LB8",
+      "jgst": "M7R",
+      "lb": "LB8",
+      "cards": 3,
+      "stufen": {
+        "Stufe1": 1,
+        "Stufe2": 1,
+        "Stufe3": 1
+      },
+      "rollen": {
+        "kern": 3
+      },
+      "card_ids": [
+        "was-sagt-der-lp-in-b-m7r-lb8-proportionalitaet-b-proportiona",
+        "wie-realisierst-du-b-m7r-lb8-proportionalitaet-b-proportiona",
+        "welche-sequenz-skizze-welche-prinzipien-tragt-b-m7r-lb8-prop"
+      ]
+    },
+    {
+      "id": "m8r-lb6",
+      "label": "M8R LB6",
+      "jgst": "M8R",
+      "lb": "LB6",
+      "cards": 3,
+      "stufen": {
+        "Stufe1": 1,
+        "Stufe2": 1,
+        "Stufe3": 1
+      },
+      "rollen": {
+        "anschluss": 3
+      },
+      "card_ids": [
+        "was-sagt-der-lp-in-b-m8-lb6-zufallsexperimente-b-zufallsexpe",
+        "wie-realisierst-du-b-m8-lb6-zufallsexperimente-b-zufallsexpe",
+        "welche-sequenz-skizze-welche-prinzipien-tragt-b-m8-lb6-zufal"
+      ]
+    },
+    {
+      "id": "m9r-lb1",
+      "label": "M9R LB1",
+      "jgst": "M9R",
+      "lb": "LB1",
+      "cards": 3,
+      "stufen": {
+        "Stufe1": 1,
+        "Stufe2": 1,
+        "Stufe3": 1
+      },
+      "rollen": {
+        "anschluss": 3
+      },
+      "card_ids": [
+        "was-sagt-der-lp-in-b-m9r-lb1-zinsrechnung-b-prozent-und-zins",
+        "wie-realisierst-du-b-m9r-lb1-zinsrechnung-b-prozent-und-zins",
+        "welche-sequenz-skizze-welche-prinzipien-tragt-b-m9r-lb1-zins"
+      ]
+    },
+    {
+      "id": "m9r-lb2",
+      "label": "M9R LB2",
+      "jgst": "M9R",
+      "lb": "LB2",
+      "cards": 3,
+      "stufen": {
+        "Stufe1": 1,
+        "Stufe2": 1,
+        "Stufe3": 1
+      },
+      "rollen": {
+        "anschluss": 3
+      },
+      "card_ids": [
+        "was-sagt-der-lp-in-b-m9r-lb2-potenzen-b-zehnerpotenz-schreib",
+        "wie-realisierst-du-b-m9r-lb2-potenzen-b-zehnerpotenz-schreib",
+        "welche-sequenz-skizze-welche-prinzipien-tragt-b-m9r-lb2-pote"
+      ]
+    },
+    {
+      "id": "m9r-lb3",
+      "label": "M9R LB3",
+      "jgst": "M9R",
+      "lb": "LB3",
+      "cards": 3,
+      "stufen": {
+        "Stufe1": 1,
+        "Stufe2": 1,
+        "Stufe3": 1
+      },
+      "rollen": {
+        "anschluss": 3
+      },
+      "card_ids": [
+        "was-sagt-der-lp-in-b-m9r-lb3-pythagoras-b-satz-des-pythagora",
+        "wie-realisierst-du-b-m9r-lb3-pythagoras-b-satz-des-pythagora",
+        "welche-sequenz-skizze-welche-prinzipien-tragt-b-m9r-lb3-pyth"
+      ]
+    },
+    {
+      "id": "m9r-lb4-5",
+      "label": "M9R LB4-5",
+      "jgst": "M9R",
+      "lb": "LB4-5",
+      "cards": 3,
+      "stufen": {
+        "Stufe1": 1,
+        "Stufe2": 1,
+        "Stufe3": 1
+      },
+      "rollen": {
+        "anschluss": 3
+      },
+      "card_ids": [
+        "was-sagt-der-lp-in-b-m9r-lb4-5-vielecke-volumen-b-flacheninh",
+        "wie-realisierst-du-b-m9r-lb4-5-vielecke-volumen-b-flacheninh",
+        "welche-sequenz-skizze-welche-prinzipien-tragt-b-m9r-lb4-5-vi"
+      ]
+    },
+    {
+      "id": "m9r-lb6",
+      "label": "M9R LB6",
+      "jgst": "M9R",
+      "lb": "LB6",
+      "cards": 3,
+      "stufen": {
+        "Stufe1": 1,
+        "Stufe2": 1,
+        "Stufe3": 1
+      },
+      "rollen": {
+        "anschluss": 3
+      },
+      "card_ids": [
+        "was-sagt-der-lp-in-b-m9r-lb6-wahrscheinlichkeiten-b-laplace-",
+        "wie-realisierst-du-b-m9r-lb6-wahrscheinlichkeiten-b-laplace-",
+        "welche-sequenz-skizze-welche-prinzipien-tragt-b-m9r-lb6-wahr"
+      ]
+    },
+    {
+      "id": "m9r-lb7",
+      "label": "M9R LB7",
+      "jgst": "M9R",
+      "lb": "LB7",
+      "cards": 3,
+      "stufen": {
+        "Stufe1": 1,
+        "Stufe2": 1,
+        "Stufe3": 1
+      },
+      "rollen": {
+        "anschluss": 3
+      },
+      "card_ids": [
+        "was-sagt-der-lp-in-b-m9r-lb7-komplexe-gleichungen-b-komplexe",
+        "wie-realisierst-du-b-m9r-lb7-komplexe-gleichungen-b-komplexe",
+        "welche-sequenz-skizze-welche-prinzipien-tragt-b-m9r-lb7-komp"
+      ]
+    },
+    {
+      "id": "m9r-lb8",
+      "label": "M9R LB8",
+      "jgst": "M9R",
+      "lb": "LB8",
+      "cards": 3,
+      "stufen": {
+        "Stufe1": 1,
+        "Stufe2": 1,
+        "Stufe3": 1
+      },
+      "rollen": {
+        "anschluss": 3
+      },
+      "card_ids": [
+        "was-sagt-der-lp-in-b-m9r-lb8-funktionstypen-b-funktionstypen",
+        "wie-realisierst-du-b-m9r-lb8-funktionstypen-b-funktionstypen",
+        "welche-sequenz-skizze-welche-prinzipien-tragt-b-m9r-lb8-funk"
+      ]
+    },
+    {
+      "id": "universal-anker",
+      "label": "universal Anker",
+      "jgst": "universal",
+      "lb": "Anker",
+      "cards": 15,
+      "stufen": {
+        "Stufe1": 0,
+        "Stufe2": 0,
+        "Stufe3": 0
+      },
+      "rollen": {
+        "universal": 15
+      },
+      "card_ids": [
+        "was-sagt-der-lp-in-b-univ-kompetenzstrukturmodell-b-kompeten",
+        "wie-realisierst-du-b-univ-kompetenzstrukturmodell-b-kompeten",
+        "welche-sequenz-skizze-welche-prinzipien-tragt-b-univ-kompete",
+        "was-sagt-der-lp-in-b-univ-spiralprinzip-lp-b-spiralprinzip-k",
+        "wie-realisierst-du-b-univ-spiralprinzip-lp-b-spiralprinzip-k",
+        "welche-sequenz-skizze-welche-prinzipien-tragt-b-univ-spiralp",
+        "was-sagt-der-lp-in-b-univ-kompetenzorientierung-b-kompetenzo",
+        "wie-realisierst-du-b-univ-kompetenzorientierung-b-kompetenzo",
+        "welche-sequenz-skizze-welche-prinzipien-tragt-b-univ-kompete",
+        "was-sagt-der-lp-in-b-univ-operatives-prinzip-b-operatives-pr",
+        "wie-realisierst-du-b-univ-operatives-prinzip-b-operatives-pr",
+        "welche-sequenz-skizze-welche-prinzipien-tragt-b-univ-operati",
+        "was-sagt-der-lp-in-b-univ-inklusion-daz-b-inklusion-sprachse",
+        "wie-realisierst-du-b-univ-inklusion-daz-b-inklusion-sprachse",
+        "welche-sequenz-skizze-welche-prinzipien-tragt-b-univ-inklusi"
+      ]
+    }
+  ]
+}

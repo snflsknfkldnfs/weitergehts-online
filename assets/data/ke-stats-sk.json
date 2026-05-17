@@ -1,0 +1,506 @@
+{
+  "fach": "sk",
+  "source": "lerndecks/mp-n18-sk-pruefungsvorbereitung/mp_n18_sk_v1.tsv",
+  "total": 85,
+  "themen": [
+    {
+      "id": "lb4",
+      "label": "LB4",
+      "cards": 11,
+      "hochprior": 6,
+      "kategorien": {
+        "LP": 11
+      },
+      "card_ids": [
+        "lp-gpg5-lb4-klassenrat-ke-wortlich",
+        "lp-gpg6-lb4-kommunalpolitik-ke-wortlich",
+        "lp-gpg7-lb4-r-m-wortgleich-pflicht-ke-jugendstrafrecht",
+        "lp-gpg8-lb4-ke-zu-politischer-teilhabe",
+        "lp-gpg8-lb4-ke-zu-wahlbeteiligung",
+        "lp-gpg9-lb4-ke-zu-migration",
+        "lp-gpg10-lb4-ke-zur-politischen-willensbildung",
+        "lp-gpg7-lb4-m-variante-wodurch-unterscheidet-sich-m-zur-r-ke",
+        "lp-gpg6-lb4-ke-zur-kommunalen-selbstverwaltung",
+        "lp-gpg10-lb4-ke-zu-kinderrechten",
+        "lp-gpg8-lb4-ke-zum-sozialstaat"
+      ]
+    },
+    {
+      "id": "operator",
+      "label": "Operator",
+      "cards": 10,
+      "hochprior": 1,
+      "kategorien": {},
+      "card_ids": [
+        "afb-stufe-und-bedeutung-von-benennen",
+        "afb-stufe-und-bedeutung-von-beschreiben",
+        "afb-stufe-und-bedeutung-von-erlautern",
+        "afb-stufe-und-bedeutung-von-diskutieren",
+        "afb-stufe-und-bedeutung-von-bewerten",
+        "afb-stufe-und-bedeutung-von-erortern",
+        "afb-stufe-und-bedeutung-von-analysieren",
+        "afb-progression-r-m-beispiel-gpg8-lb4-politische-teilhabe",
+        "afb-progression-r-m-beispiel-gpg9-lb4-migration",
+        "was-kennzeichnet-afb-iii-operatoren-in-der-lp-sk-schicht"
+      ]
+    },
+    {
+      "id": "lb3",
+      "label": "LB3",
+      "cards": 9,
+      "hochprior": 2,
+      "kategorien": {
+        "LP": 9
+      },
+      "card_ids": [
+        "lp-gpg5-lb3-demokratie-ke-zur-antike-wortlich",
+        "lp-gpg7-lb3-ke-zur-sozialen-frage",
+        "lp-gpg8-lb3-ke-zu-parlamentarischer-gesetzgebung",
+        "lp-gpg9-lb3-ke-zu-friedenssicherung",
+        "lp-gpg10-lb3-ke-zu-grund-und-menschenrechten",
+        "lp-gpg10-lb3-ke-zum-bundesverfassungsgericht",
+        "lp-gpg9-lb3-ke-zu-terrorismus",
+        "lp-gpg8-lb3-ke-zum-widerstand-im-ns",
+        "lp-gpg10-lb3-ke-zu-extremismus"
+      ]
+    },
+    {
+      "id": "beutelsbach",
+      "label": "Beutelsbach",
+      "cards": 6,
+      "hochprior": 6,
+      "kategorien": {
+        "Begriff": 4,
+        "Modell": 1
+      },
+      "card_ids": [
+        "was-ist-der-beutelsbacher-konsens",
+        "was-besagt-das-uberwaltigungsverbot",
+        "was-besagt-das-kontroversitatsgebot",
+        "was-besagt-das-schulerorientierungs-prinzip-beutelsbach",
+        "nenne-die-drei-beutelsbacher-prinzipien",
+        "wie-wird-der-beutelsbacher-konsens-in-der-leon-sequenz-opera"
+      ]
+    },
+    {
+      "id": "praxis",
+      "label": "Praxis",
+      "cards": 6,
+      "hochprior": 4,
+      "kategorien": {},
+      "card_ids": [
+        "welche-sk-methoden-werden-in-der-leon-sequenz-gpg7-lb4-elp-2",
+        "wie-verbindet-die-leon-sequenz-handlungsorientierung-lebensw",
+        "wie-wird-der-beutelsbacher-konsens-in-der-leon-sequenz-opera",
+        "wie-ist-die-elp-stunde-26-01-2026-nach-dem-5-phasen-modell-g",
+        "wie-verbindet-die-industrialisierungs-sequenz-gpg7-lb2-lb3-m",
+        "welche-sk-lernebene-gpg-gb-5-2-tragt-die-leon-sequenz-primar"
+      ]
+    },
+    {
+      "id": "afb-iii",
+      "label": "AFB-III",
+      "cards": 5,
+      "hochprior": 1,
+      "kategorien": {},
+      "card_ids": [
+        "afb-stufe-und-bedeutung-von-diskutieren",
+        "afb-stufe-und-bedeutung-von-bewerten",
+        "afb-stufe-und-bedeutung-von-erortern",
+        "afb-stufe-und-bedeutung-von-analysieren",
+        "was-kennzeichnet-afb-iii-operatoren-in-der-lp-sk-schicht"
+      ]
+    },
+    {
+      "id": "gpg10",
+      "label": "GPG10",
+      "cards": 5,
+      "hochprior": 2,
+      "kategorien": {
+        "LP": 5
+      },
+      "card_ids": [
+        "lp-gpg10-lb3-ke-zu-grund-und-menschenrechten",
+        "lp-gpg10-lb3-ke-zum-bundesverfassungsgericht",
+        "lp-gpg10-lb4-ke-zur-politischen-willensbildung",
+        "lp-gpg10-lb4-ke-zu-kinderrechten",
+        "lp-gpg10-lb3-ke-zu-extremismus"
+      ]
+    },
+    {
+      "id": "gpg8",
+      "label": "GPG8",
+      "cards": 5,
+      "hochprior": 2,
+      "kategorien": {
+        "LP": 5
+      },
+      "card_ids": [
+        "lp-gpg8-lb3-ke-zu-parlamentarischer-gesetzgebung",
+        "lp-gpg8-lb4-ke-zu-politischer-teilhabe",
+        "lp-gpg8-lb4-ke-zu-wahlbeteiligung",
+        "lp-gpg8-lb3-ke-zum-widerstand-im-ns",
+        "lp-gpg8-lb4-ke-zum-sozialstaat"
+      ]
+    },
+    {
+      "id": "lehrplan",
+      "label": "Lehrplan",
+      "cards": 5,
+      "hochprior": 1,
+      "kategorien": {
+        "Begriff": 4,
+        "Modell": 1
+      },
+      "card_ids": [
+        "was-ist-das-kompetenzstrukturmodell-gpg",
+        "was-sind-die-funf-gegenstandsbereiche-im-lp-gpg-kompetenzmod",
+        "was-sind-die-drei-prozessbezogenen-kompetenzen-im-lp-gpg",
+        "was-sind-die-vier-lernbereiche-gpg",
+        "nenne-die-drei-fachlichen-perspektiven-im-gpg-kompetenzstruk"
+      ]
+    },
+    {
+      "id": "leon",
+      "label": "Leon",
+      "cards": 5,
+      "hochprior": 4,
+      "kategorien": {},
+      "card_ids": [
+        "welche-sk-methoden-werden-in-der-leon-sequenz-gpg7-lb4-elp-2",
+        "wie-verbindet-die-leon-sequenz-handlungsorientierung-lebensw",
+        "wie-wird-der-beutelsbacher-konsens-in-der-leon-sequenz-opera",
+        "wie-ist-die-elp-stunde-26-01-2026-nach-dem-5-phasen-modell-g",
+        "welche-sk-lernebene-gpg-gb-5-2-tragt-die-leon-sequenz-primar"
+      ]
+    },
+    {
+      "id": "werterziehung",
+      "label": "Werterziehung",
+      "cards": 5,
+      "hochprior": 1,
+      "kategorien": {
+        "Begriff": 4,
+        "Modell": 1
+      },
+      "card_ids": [
+        "was-ist-die-schule-als-polis",
+        "was-ist-das-just-community-konzept",
+        "was-kritisiert-die-sk-didaktik-an-der-dilemmadiskussion-kohl",
+        "was-ist-die-werterziehung-in-der-sk",
+        "nenne-die-drei-stufen-der-werterziehungs-konzepte-gpg-b3"
+      ]
+    },
+    {
+      "id": "elp",
+      "label": "ELP",
+      "cards": 4,
+      "hochprior": 4,
+      "kategorien": {},
+      "card_ids": [
+        "welche-sk-methoden-werden-in-der-leon-sequenz-gpg7-lb4-elp-2",
+        "wie-verbindet-die-leon-sequenz-handlungsorientierung-lebensw",
+        "wie-wird-der-beutelsbacher-konsens-in-der-leon-sequenz-opera",
+        "wie-ist-die-elp-stunde-26-01-2026-nach-dem-5-phasen-modell-g"
+      ]
+    },
+    {
+      "id": "fpgpg",
+      "label": "FPGPG",
+      "cards": 3,
+      "hochprior": 1,
+      "kategorien": {
+        "LP": 3
+      },
+      "card_ids": [
+        "lp-fpgpg-lb3-beschreibung-kernsatz",
+        "lp-fpgpg-lb4-beschreibung-kernsatz",
+        "lp-fpgpg-zur-r-m-differenzierung-wortlich"
+      ]
+    },
+    {
+      "id": "gpg7",
+      "label": "GPG7",
+      "cards": 3,
+      "hochprior": 1,
+      "kategorien": {
+        "LP": 3
+      },
+      "card_ids": [
+        "lp-gpg7-lb4-r-m-wortgleich-pflicht-ke-jugendstrafrecht",
+        "lp-gpg7-lb3-ke-zur-sozialen-frage",
+        "lp-gpg7-lb4-m-variante-wodurch-unterscheidet-sich-m-zur-r-ke"
+      ]
+    },
+    {
+      "id": "gpg9",
+      "label": "GPG9",
+      "cards": 3,
+      "hochprior": 1,
+      "kategorien": {
+        "LP": 3
+      },
+      "card_ids": [
+        "lp-gpg9-lb3-ke-zu-friedenssicherung",
+        "lp-gpg9-lb4-ke-zu-migration",
+        "lp-gpg9-lb3-ke-zu-terrorismus"
+      ]
+    },
+    {
+      "id": "rm-diff",
+      "label": "RM-Diff",
+      "cards": 3,
+      "hochprior": 0,
+      "kategorien": {
+        "LP": 1
+      },
+      "card_ids": [
+        "lp-gpg7-lb4-m-variante-wodurch-unterscheidet-sich-m-zur-r-ke",
+        "afb-progression-r-m-beispiel-gpg8-lb4-politische-teilhabe",
+        "afb-progression-r-m-beispiel-gpg9-lb4-migration"
+      ]
+    },
+    {
+      "id": "afb-i",
+      "label": "AFB-I",
+      "cards": 2,
+      "hochprior": 0,
+      "kategorien": {},
+      "card_ids": [
+        "afb-stufe-und-bedeutung-von-benennen",
+        "afb-stufe-und-bedeutung-von-beschreiben"
+      ]
+    },
+    {
+      "id": "afb-ii",
+      "label": "AFB-II",
+      "cards": 2,
+      "hochprior": 0,
+      "kategorien": {},
+      "card_ids": [
+        "afb-stufe-und-bedeutung-von-erlautern",
+        "afb-stufe-und-bedeutung-von-analysieren"
+      ]
+    },
+    {
+      "id": "detjen",
+      "label": "Detjen",
+      "cards": 2,
+      "hochprior": 2,
+      "kategorien": {
+        "Begriff": 1,
+        "Modell": 1
+      },
+      "card_ids": [
+        "was-bedeutet-politische-mundigkeit-als-zielkategorie",
+        "nenne-die-vier-dimensionen-des-detjen-politikkompetenz-model"
+      ]
+    },
+    {
+      "id": "gpg5",
+      "label": "GPG5",
+      "cards": 2,
+      "hochprior": 1,
+      "kategorien": {
+        "LP": 2
+      },
+      "card_ids": [
+        "lp-gpg5-lb4-klassenrat-ke-wortlich",
+        "lp-gpg5-lb3-demokratie-ke-zur-antike-wortlich"
+      ]
+    },
+    {
+      "id": "gpg6",
+      "label": "GPG6",
+      "cards": 2,
+      "hochprior": 1,
+      "kategorien": {
+        "LP": 2
+      },
+      "card_ids": [
+        "lp-gpg6-lb4-kommunalpolitik-ke-wortlich",
+        "lp-gpg6-lb4-ke-zur-kommunalen-selbstverwaltung"
+      ]
+    },
+    {
+      "id": "prinzip",
+      "label": "Prinzip",
+      "cards": 2,
+      "hochprior": 1,
+      "kategorien": {
+        "Begriff": 2
+      },
+      "card_ids": [
+        "was-bedeutet-lebensweltbezug-in-der-sk",
+        "was-bedeutet-das-aktualitatsprinzip-in-der-sk"
+      ]
+    },
+    {
+      "id": "pruefung",
+      "label": "Pruefung",
+      "cards": 2,
+      "hochprior": 2,
+      "kategorien": {
+        "Modell": 2
+      },
+      "card_ids": [
+        "nenne-die-drei-bewertungsachsen-der-mundlichen-prufung-hinwe",
+        "nenne-die-acht-punkte-der-losungsmatrix-seminar-sw-v"
+      ]
+    },
+    {
+      "id": "afb",
+      "label": "AFB",
+      "cards": 1,
+      "hochprior": 0,
+      "kategorien": {
+        "Modell": 1
+      },
+      "card_ids": [
+        "nenne-die-drei-afb-stufen"
+      ]
+    },
+    {
+      "id": "allg-didaktik",
+      "label": "Allg-Didaktik",
+      "cards": 1,
+      "hochprior": 0,
+      "kategorien": {
+        "Begriff": 1
+      },
+      "card_ids": [
+        "was-sind-klafkis-schlusselprobleme"
+      ]
+    },
+    {
+      "id": "demokratielernen",
+      "label": "Demokratielernen",
+      "cards": 1,
+      "hochprior": 1,
+      "kategorien": {
+        "Begriff": 1
+      },
+      "card_ids": [
+        "was-ist-demokratielernen"
+      ]
+    },
+    {
+      "id": "geschichtsdidaktik",
+      "label": "Geschichtsdidaktik",
+      "cards": 1,
+      "hochprior": 0,
+      "kategorien": {
+        "Begriff": 1
+      },
+      "card_ids": [
+        "was-ist-die-narrative-kompetenz"
+      ]
+    },
+    {
+      "id": "handlungsorientierung",
+      "label": "Handlungsorientierung",
+      "cards": 1,
+      "hochprior": 1,
+      "kategorien": {
+        "Begriff": 1
+      },
+      "card_ids": [
+        "was-ist-handlungsorientierung-in-der-sk"
+      ]
+    },
+    {
+      "id": "industrialisierung",
+      "label": "Industrialisierung",
+      "cards": 1,
+      "hochprior": 0,
+      "kategorien": {},
+      "card_ids": [
+        "wie-verbindet-die-industrialisierungs-sequenz-gpg7-lb2-lb3-m"
+      ]
+    },
+    {
+      "id": "massing",
+      "label": "Massing",
+      "cards": 1,
+      "hochprior": 1,
+      "kategorien": {
+        "Begriff": 1
+      },
+      "card_ids": [
+        "was-unterscheidet-realhandeln-von-simulationshandeln-massing"
+      ]
+    },
+    {
+      "id": "methodik",
+      "label": "Methodik",
+      "cards": 1,
+      "hochprior": 0,
+      "kategorien": {
+        "Begriff": 1
+      },
+      "card_ids": [
+        "was-unterscheidet-mikro-von-makromethoden-klippert"
+      ]
+    },
+    {
+      "id": "prinzipien",
+      "label": "Prinzipien",
+      "cards": 1,
+      "hochprior": 0,
+      "kategorien": {
+        "Modell": 1
+      },
+      "card_ids": [
+        "nenne-die-sieben-sk-unterrichtsprinzipien-gpg-gb-5-4"
+      ]
+    },
+    {
+      "id": "reinhardt",
+      "label": "Reinhardt",
+      "cards": 1,
+      "hochprior": 1,
+      "kategorien": {
+        "Modell": 1
+      },
+      "card_ids": [
+        "nenne-die-sechs-fachspezifischen-arbeitsweisen-sk-nach-reinh"
+      ]
+    },
+    {
+      "id": "strukturell",
+      "label": "Strukturell",
+      "cards": 1,
+      "hochprior": 1,
+      "kategorien": {
+        "Begriff": 1
+      },
+      "card_ids": [
+        "was-ist-sozialkunde-im-lehrplan-ms-bayern"
+      ]
+    },
+    {
+      "id": "stundenstruktur",
+      "label": "Stundenstruktur",
+      "cards": 1,
+      "hochprior": 1,
+      "kategorien": {
+        "Modell": 1
+      },
+      "card_ids": [
+        "nenne-die-funf-phasen-einer-sk-stunde-gpg-gb-5-5"
+      ]
+    },
+    {
+      "id": "uebz",
+      "label": "UEBZ",
+      "cards": 1,
+      "hochprior": 1,
+      "kategorien": {
+        "LP": 1
+      },
+      "card_ids": [
+        "lp-ubz-politische-bildung-eingangssatz"
+      ]
+    }
+  ]
+}

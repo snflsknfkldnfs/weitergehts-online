@@ -1,0 +1,1989 @@
+{
+  "aebli-hans": {
+    "cross_refs": [
+      "operative-prinzip-in-die-allgemeine-didaktik",
+      "folge",
+      "verbalisierung",
+      "operatives-durcharbeiten"
+    ],
+    "definition": "Schweizer Pädagoge. Hat das **operative Prinzip in die allgemeine Didaktik** eingeführt. Drei Stufen der Verinnerlichung: konkrete Stufe → figurale Stufe → symbolische Stufe. Im Unterschied zu Bruners EIS-Repräsentationsmodi ist das bei Aebli **Folge** (Stufenmodell), nicht wechselseitig. Stufenübergang durch **Verbalisierung** und **operatives Durcharbeiten**. Zitat: „Das operative Prinzip leitet einen Unterricht, der das Denken im Rahmen des Handelns weckt.\"",
+    "fach": "mathe",
+    "key": "Aebli, Hans",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "Weigand §7 S. 8–9",
+      "B1"
+    ],
+    "title": "Aebli, Hans (1923–1990) — Schüler Piagets",
+    "type": "prinzip"
+  },
+  "afb": {
+    "cross_refs": [
+      "afb-i-reproduzieren",
+      "afb-ii-zusammenhange-herstellen",
+      "afb-iii-verallgemeinern-und-reflektieren"
+    ],
+    "definition": "KMK-Bildungsstandards 2003/04. Drei Stufen:\n- **AFB I Reproduzieren** — Wiedergabe + direkte Anwendung (benennen, beschreiben)\n- **AFB II Zusammenhänge herstellen** — Kenntnisse verknüpfen (erklären, erläutern, vergleichen, analysieren)\n- **AFB III Verallgemeinern und Reflektieren** — komplexe Gegebenheiten, eigene Problemformulierungen (begründen, beurteilen, bewerten, erörtern)",
+    "fach": "mathe",
+    "key": "AFB",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "KMK Bildungsstandards Mittlerer Schulabschluss",
+      "Polya/Gercken",
+      "Begleitheft Examen §3.2.1"
+    ],
+    "title": "AFB (Anforderungsbereiche)",
+    "type": "prinzip"
+  },
+  "afb-sk": {
+    "cross_refs": [],
+    "definition": "Drei Stufen kognitiver Anforderung: I Reproduktion, II Reorganisation/Transfer, III Reflexion/Beurteilung. LP+-Operatoren sind AFB-zugeordnet (z. B. „benennen\" = AFB I, „diskutieren/bewerten\" = AFB III).",
+    "fach": "sk",
+    "key": "AFB",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "KMK",
+      "LP:FPGPG"
+    ],
+    "title": "AFB (Anforderungsbereiche I/II/III)",
+    "type": "prinzip"
+  },
+  "aktiv-entdeckendes-lernen": {
+    "cross_refs": [
+      "inklusionsverstandnis"
+    ],
+    "definition": "Begriff Winter/Wittmann/Müller. SuS konstruieren Wissen durch eigene Aktivität, gelenktes Entdecken statt rezeptiver Belehrung. Bildet Grundlage für **Inklusionsverständnis** im Fachprofil M (LP+).",
+    "fach": "mathe",
+    "key": "Aktiv-entdeckendes Lernen",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GB §3.4, Fachprofil M §1.5",
+      "Weigand §8"
+    ],
+    "title": "Aktiv-entdeckendes Lernen",
+    "type": "prinzip"
+  },
+  "aktualitatsprinzip": {
+    "cross_refs": [],
+    "definition": "Sk-Unterricht knüpft an gegenwärtige politische/gesellschaftliche Ereignisse an, um Lebensweltbezug und Mündigkeit zu sichern. Eines der 7 Sk-Unterrichtsprinzipien . Abgrenzung: Heimatprinzip (räumlich) — Aktualität (zeitlich).",
+    "fach": "sk",
+    "key": "Aktualitätsprinzip",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GPG GB §5.4"
+    ],
+    "title": "Aktualitätsprinzip",
+    "type": "prinzip"
+  },
+  "anwenden-und-handeln": {
+    "cross_refs": [],
+    "definition": "Eine der drei prozessbezogenen Kompetenzen im LP+-Kompetenzstrukturmodell GPG (neben „Erkenntnisse gewinnen\" und „Beurteilen und bewerten\"). Umfasst kontextbezogene Anwendung, fachsprachliche Mitteilung, vernünftiges Handeln.",
+    "fach": "sk",
+    "key": "Anwenden und handeln",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "LP:FPGPG",
+      "GPG B3 §2.1.3"
+    ],
+    "title": "Anwenden und handeln",
+    "type": "prinzip"
+  },
+  "anwendung": {
+    "cross_refs": [
+      "modellieren"
+    ],
+    "definition": "Vierte Phase des operativen Lernprozesses (B1): Übertragung in neue Sachsituationen, Integration in vorhandenes Wissen. Konkretisierung: Transfer-Aufgaben, **Modellieren** realitätsbezogener Situationen.",
+    "fach": "mathe",
+    "key": "Anwendung",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "B1",
+      "B2 §1"
+    ],
+    "title": "Anwendung (Phase 4 im B1-Modell)",
+    "type": "prinzip"
+  },
+  "argumentieren": {
+    "cross_refs": [],
+    "definition": "1. der 6 prozessbezogenen Kompetenzen LP+: Fragen stellen, begründete Vermutungen äußern, Lösungswege beschreiben + begründen, Beweise/Erläuterungen entwickeln. Fehler und ungewöhnliche Rechenwege regen zum Argumentieren an.",
+    "fach": "mathe",
+    "key": "Argumentieren",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "Fachprofil M §2.2",
+      "GB §1.3"
+    ],
+    "title": "Argumentieren (prozessbezogene Kompetenz)",
+    "type": "prinzip"
+  },
+  "assoziativitat": {
+    "cross_refs": [],
+    "definition": "Eines der 5 Merkmale der Operationen: verschiedene Wege zum selben Ziel. Beispiel: Umfang Rechteck U = a+b+a+b = 2a+2b = 2·(a+b). Sk-Beispiel Prozent: Dreisatz vs. Formel als zwei Wege.",
+    "fach": "mathe",
+    "key": "Assoziativität",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "B1",
+      "Weigand §7"
+    ],
+    "title": "Assoziativität (Operationsmerkmal Piaget/Aebli)",
+    "type": "prinzip"
+  },
+  "aufgabenkultur-neue": {
+    "cross_refs": [
+      "produktiv",
+      "authentisch",
+      "offen"
+    ],
+    "definition": "Reform-Begriff (SINUS-Transfer seit 1990er, Baptist 1998). Abgrenzung gegen „Aufgabenplantagen\". Aufgaben sollen sein: **produktiv** (nicht auf eine Lösung zugeschnitten, Diskussion + Reflexion), **authentisch** (inner-/außermathematisch relevant, lebensweltlich), **offen** (Differenzierung, Erfahrungsraum).",
+    "fach": "mathe",
+    "key": "Aufgabenkultur, „neue\"",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "B2 §4",
+      "Weigand §5"
+    ],
+    "title": "Aufgabenkultur, „neue\"",
+    "type": "prinzip"
+  },
+  "beurteilen-und-bewerten": {
+    "cross_refs": [],
+    "definition": "Zweite prozessbezogene Kompetenz im LP+-GPG: Orientierung in Raum/Zeit/Gesellschaft, multiperspektivische Betrachtung, Wertebezug, Begründung eigener Einstellung.",
+    "fach": "sk",
+    "key": "Beurteilen und bewerten",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "LP:FPGPG",
+      "GPG B3 §2.1.2"
+    ],
+    "title": "Beurteilen und bewerten",
+    "type": "prinzip"
+  },
+  "beutelsbacher-konsens": {
+    "cross_refs": [],
+    "definition": "Tagungsergebnis 1976 (LpB Baden-Württemberg), das die Minimalbedingungen politischer Bildung in drei Prinzipien festlegt: (1) Überwältigungsverbot, (2) Kontroversitätsgebot, (3) Schülerorientierung. Pflichtreferenz für jede Sk-Frage zu Methoden, Werterziehung, kontroversen Themen, politischer Neutralität.",
+    "fach": "sk",
+    "key": "Beutelsbacher Konsens",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "GPG B3 §1.1",
+      "bpb"
+    ],
+    "title": "Beutelsbacher Konsens",
+    "type": "prinzip"
+  },
+  "beziehungshaltigkeit": {
+    "cross_refs": [
+      "prinzip-der-realitats-lebensnahe"
+    ],
+    "definition": "Weigand §4 / Freudenthal: Mathematik mit der erlebten Wirklichkeit verknüpfen. „Das — ich meine die Wirklichkeit — ist das Skelett, an das die Mathematik sich festsetzt.\" Wurzel im **Prinzip der Realitäts-/Lebensnähe** (Reformpädagogik).",
+    "fach": "mathe",
+    "key": "Beziehungshaltigkeit",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "Weigand §4 S. 5–6",
+      "Freudenthal 1973"
+    ],
+    "title": "Beziehungshaltigkeit (Prinzip)",
+    "type": "prinzip"
+  },
+  "bildungsstandards": {
+    "cross_refs": [],
+    "definition": "Anforderungen der Gesellschaft für Politikdidaktik an nationale Bildungsstandards politischer Bildung; Nachfolger der GPJE-Standards 2004. Bezugsrahmen für Kompetenzbegriff.",
+    "fach": "sk",
+    "key": "Bildungsstandards",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GPJE 2023"
+    ],
+    "title": "Bildungsstandards (GPJE 2023)",
+    "type": "prinzip"
+  },
+  "bildungsstandards-mathematik": {
+    "cross_refs": [],
+    "definition": "KMK-Vereinbarung 2003 (Primarstufe + HSA) und 2004 (Mittlerer Schulabschluss). Festlegung der prozessbezogenen Kompetenzen + AFB. Grundlage des bayerischen LP+ M.",
+    "fach": "mathe",
+    "key": "Bildungsstandards Mathematik",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "GB §1.2",
+      "B2"
+    ],
+    "title": "Bildungsstandards Mathematik (KMK)",
+    "type": "prinzip"
+  },
+  "bruner-jerome": {
+    "cross_refs": [
+      "eis-prinzip",
+      "spiralprinzip"
+    ],
+    "definition": "Amerikanisch. Berühmt für: (a) **EIS-Prinzip** (enaktiv-ikonisch-symbolisch) — drei wechselseitige Repräsentationsmodi, (b) **Spiralprinzip** mit „jedem Kind auf jeder Entwicklungsstufe jeder Lehrgegenstand in intellektuell ehrlicher Form\" („Der Prozess der Erziehung\" 1970), (c) Fokus auf entdeckendes Lernen.",
+    "fach": "mathe",
+    "key": "Bruner, Jerome",
+    "pflichtanker_level": 2,
+    "quellen": [
+      "Weigand §1 + §7",
+      "GB §1.5"
+    ],
+    "title": "Bruner, Jerome (1915–2016) — Kognitions- und Entwicklungspsychologe",
+    "type": "prinzip"
+  },
+  "demokratielernen": {
+    "cross_refs": [],
+    "definition": "Übergreifendes Bildungsziel (LP+ ÜBZ) und Schulleitprinzip; Demokratie wird als Lebensform (Dewey), Gesellschaftsform und Herrschaftsform vermittelt. Operativer Anker: Klassenrat, SMV, Schule-als-Polis.",
+    "fach": "sk",
+    "key": "Demokratielernen",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "LP:ÜBZ „Demokratie lernen und leben\"",
+      "Dewey",
+      "Sander 2014"
+    ],
+    "title": "Demokratielernen",
+    "type": "prinzip"
+  },
+  "detjen-vier-dimensionen-modell": {
+    "cross_refs": [
+      "politische-handlungsfahigkeit"
+    ],
+    "definition": "Politikkompetenz nach Detjen/Massing/Richter/Weißeno (2012): (1) Fachwissen, (2) politisches Urteilen, (3) **politische Handlungsfähigkeit**, (4) politische Einstellung/Motivation. Begründet, warum Handlungsorientierung methodisch zwingend ist (Dimension 3 nicht durch Wissen erlernbar).",
+    "fach": "sk",
+    "key": "Detjen-Vier-Dimensionen-Modell",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "Detjen et al. 2012"
+    ],
+    "title": "Detjen-Vier-Dimensionen-Modell",
+    "type": "prinzip"
+  },
+  "differenzierung": {
+    "cross_refs": [],
+    "definition": "Innere D. = unterschiedliche Lernwege/Anforderungen in einer Gruppe; äußere D. = Gruppentrennung. LP+ verlangt: offene Aufgaben mit immanenter Differenzierung, gestufte Hilfen, verschiedene Niveaustufen (Basis / Regelstandard / Erhöht). In Pauls Seminarübung Prozent als 3-Niveau-AB realisiert.",
+    "fach": "mathe",
+    "key": "Differenzierung",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "GB §3.4",
+      "Fachprofil M §1.5",
+      "B2"
+    ],
+    "title": "Differenzierung",
+    "type": "prinzip"
+  },
+  "dilemmadiskussion": {
+    "cross_refs": [],
+    "definition": "Werterziehungsmethode: hypothetische moralische Konflikte (z. B. Heinz-Dilemma) provozieren Urteilsbildung; in der Sk-Didaktik als kognitiv wirksam, aber moralisch folgenarm bewertet — als Propädeutik politischen Handelns ungeeignet.",
+    "fach": "sk",
+    "key": "Dilemmadiskussion",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GPG B3 §1.2",
+      "Kohlberg"
+    ],
+    "title": "Dilemmadiskussion (Kohlberg-adaptiert)",
+    "type": "prinzip"
+  },
+  "dreisatz": {
+    "cross_refs": [],
+    "definition": "Klassisches Lösungsverfahren bei proportionalen Zuordnungen: gegebener Wert → auf 1% / 1 Einheit → auf gesuchten Wert. In Prozent: 25% → 25 Stück / 1% → 1 Stück / 100% → 100 Stück. Operativ: Komposition (Teilschritte verkettet). LP+-KE GPG7 LB8: „proportionale Zuordnungen (z. B. Dreisatz)\".",
+    "fach": "mathe",
+    "key": "Dreisatz",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "LP+ M7 LB8",
+      "B3"
+    ],
+    "title": "Dreisatz",
+    "type": "prinzip"
+  },
+  "eis-prinzip": {
+    "cross_refs": [
+      "wichtig",
+      "wechselseitig"
+    ],
+    "definition": "Enaktiv-Ikonisch-Symbolisch. Drei Repräsentationsmodi mathematischen Wissens:\n- **E**naktiv — Darstellung durch Handlung (Material handhaben)\n- **I**konisch — Darstellung durch Bilder (Skizzen, Diagramme, Modelle)\n- **S**ymbolisch — Darstellung durch Sprache + Zeichen (Formeln, Notation)\n\n**Wichtig:** Nicht streng nacheinander durchlaufen wie Aebli-Stufen, sondern **wechselseitig** aufeinander bezogen. Übergang durch fachgerechte Verbalisierung. Pflichtbegriff jeder Mathe-Didaktik-Antwort.",
+    "fach": "mathe",
+    "key": "EIS-Prinzip",
+    "pflichtanker_level": 2,
+    "quellen": [
+      "GB §1.5 + §3.4",
+      "B1",
+      "B2",
+      "Weigand §7 S. 9",
+      "Pauls Seminarübung v2 §1.4"
+    ],
+    "title": "EIS-Prinzip (Bruner)",
+    "type": "prinzip"
+  },
+  "engelking-achim": {
+    "cross_refs": [],
+    "definition": "Autor des Bausteinskripts Mathematik (GB, B1, B2, B3–B7). Seminarrektor. Skripte sind verbindlich für LAA-Ausbildung Unterfranken — also direkt prüfungsrelevant.",
+    "fach": "mathe",
+    "key": "Engelking, Achim",
+    "pflichtanker_level": 0,
+    "quellen": [],
+    "title": "Engelking, Achim (SR Unterfranken)",
+    "type": "prinzip"
+  },
+  "entdeckendes-lernen": {
+    "cross_refs": [
+      "sokratisches-prinzip",
+      "aktiv-entdeckendes-lernen",
+      "induktives-vorgehen"
+    ],
+    "definition": "Vgl. **Sokratisches Prinzip**, **Aktiv-entdeckendes Lernen**, **Induktives Vorgehen**. SuS erschließen Wissen durch eigene Auseinandersetzung; LK lenkt indirekt. Reformpädagogische Wurzel.",
+    "fach": "mathe",
+    "key": "Entdeckendes Lernen",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "Weigand §2",
+      "GB §3.4"
+    ],
+    "title": "Entdeckendes Lernen",
+    "type": "prinzip"
+  },
+  "erarbeitungsphase": {
+    "cross_refs": [],
+    "definition": "Erste der 4 Phasen des operativen Lernprozesses: konkretes Handeln → ikonische Darstellung → symbolische Darstellung mit fachgerechter Verbalisierung. EIS-Progression.",
+    "fach": "mathe",
+    "key": "Erarbeitungsphase",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "B1",
+      "B2 §1"
+    ],
+    "title": "Erarbeitungsphase (Phase 1 im B1-4-Phasen-Modell)",
+    "type": "prinzip"
+  },
+  "erfahrungsbezug-prinzip-des": {
+    "cross_refs": [],
+    "definition": "Eines der 7 Sk-Unterrichtsprinzipien (GPG GB §5.4): Sk-Unterricht knüpft an Schülererfahrungen an. Eng verwandt mit Lebensweltbezug.",
+    "fach": "sk",
+    "key": "Erfahrungsbezug, Prinzip des",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GPG GB §5.4"
+    ],
+    "title": "Erfahrungsbezug, Prinzip des",
+    "type": "prinzip"
+  },
+  "erkenntnisse-gewinnen": {
+    "cross_refs": [],
+    "definition": "Erste prozessbezogene Kompetenz LP+-GPG: Beobachten, Interpretieren, Fragen entwickeln, fachspezifische Arbeitsweisen anwenden. Verknüpft mit kasuistischem Prinzip.",
+    "fach": "sk",
+    "key": "Erkenntnisse gewinnen",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "LP:FPGPG",
+      "GPG B3 §2.1.1"
+    ],
+    "title": "Erkenntnisse gewinnen",
+    "type": "prinzip"
+  },
+  "erkundung": {
+    "cross_refs": [],
+    "definition": "Geplante, methodisch organisierte Wirklichkeitsbegegnung von Lernenden mit ihrer Umwelt — interaktionell angelegt, mit gemeinsamer Planung, Auswertung, Dokumentation (Detjen). Makromethode der Sk; verbindet konkretes und abstraktes Lernen.",
+    "fach": "sk",
+    "key": "Erkundung",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GPG B4 §2.2.2",
+      "Detjen in Mickel 1999"
+    ],
+    "title": "Erkundung",
+    "type": "prinzip"
+  },
+  "erweitertes-anforderungsniveau": {
+    "cross_refs": [],
+    "definition": "Differenzierung im LP+ M7-M10 für M-Klassen. „Komplexere Aufgabenstellungen, höheres Arbeitstempo, mehr Selbstständigkeit.\" Operatorenprogression R→M: beschreiben→erklären, erklären→analysieren, benennen→darstellen.",
+    "fach": "mathe",
+    "key": "Erweitertes Anforderungsniveau",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GB §2",
+      "Fachprofil M §3",
+      "LP+ M-Variante"
+    ],
+    "title": "Erweitertes Anforderungsniveau (EAN) — Mittlere-Reife-Zug",
+    "type": "prinzip"
+  },
+  "fachprofil-gpg": {
+    "cross_refs": [],
+    "definition": "LP+-Sektion, die Selbstverständnis, Kompetenzstrukturmodell, Gegenstandsbereiche, Lernbereiche, Unterrichtsgestaltung und Leistungserhebung des Fachs definiert. Zentrale Quelle für jede LP-bezogene Sk-Antwort.",
+    "fach": "sk",
+    "key": "Fachprofil GPG",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "LP:FPGPG"
+    ],
+    "title": "Fachprofil GPG",
+    "type": "prinzip"
+  },
+  "fachprofil-mathematik-ms": {
+    "cross_refs": [],
+    "definition": "LP+-Dokument (Bayern 2016), übergeordnetes Bezugswerk für alle Jgst. Inhalte: Aufgabe/Ziele · Kompetenzorientierter Unterricht · Inklusion · Kompetenzstrukturmodell · prozessbezogene Kompetenzen · Gegenstandsbereiche · fächerübergreifende Bezüge · übergreifende Bildungsziele.",
+    "fach": "mathe",
+    "key": "Fachprofil Mathematik MS",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "LP+ lehrplanplus.bayern.de/fachprofil/mittelschule/mathematik"
+    ],
+    "title": "Fachprofil Mathematik MS",
+    "type": "prinzip"
+  },
+  "fachspezifische-arbeitsweisen-sk": {
+    "cross_refs": [],
+    "definition": "Sechs-Felder-Standardmodell der Sk-Methodik (Reinhardt): (1) Sich informieren, (2) Interpretieren, (3) Meinungen äußern, (4) Argumentieren/Diskutieren/Kooperieren, (5) Reflektieren, (6) Handeln.",
+    "fach": "sk",
+    "key": "Fachspezifische Arbeitsweisen Sk",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "GPG B3 §3.1",
+      "Reinhardt 2018"
+    ],
+    "title": "Fachspezifische Arbeitsweisen Sk (Reinhardt-Sechs)",
+    "type": "prinzip"
+  },
+  "fallanalyse-fallmethode-kasuistisches-verfahren": {
+    "cross_refs": [],
+    "definition": "Makromethode der Sk: analysierende Betrachtung einer Tagesfrage / eines aktuellen Problems als Ausschnitt der Wirklichkeit. Verlauf nach 5-Phasen-Modell: Konfrontation → Information → Resolution → Disputation → Kollation. Auswahlkriterien: Realitätsbezug, Aktualität, räumliche/soziale/zeitliche Nähe.",
+    "fach": "sk",
+    "key": "Fallanalyse / Fallmethode / kasuistisches Verfahren",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "GPG B4 §2.2.1",
+      "Kaiser in Mickel 1999"
+    ],
+    "title": "Fallanalyse / Fallmethode / kasuistisches Verfahren",
+    "type": "prinzip"
+  },
+  "fehlerkultur": {
+    "cross_refs": [],
+    "definition": "GB §3.4 + Weigand. Fehler als Einblick in Denkwege der SuS; Erkennen ermöglicht Förderung. Übergeneralisierungen / falsche Analogien als Fehlerursachen. Kommunikativer Austausch, gutes Klassenklima, Akzeptanz verschiedener Lösungswege.",
+    "fach": "mathe",
+    "key": "Fehlerkultur",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "GB §3.4 S. 7",
+      "Weigand §5"
+    ],
+    "title": "Fehlerkultur",
+    "type": "prinzip"
+  },
+  "freudenthal-hans": {
+    "cross_refs": [
+      "realistischen-mathematikunterrichts",
+      "beziehungshaltigkeit-realitatsnahe"
+    ],
+    "definition": "Vater des **realistischen Mathematikunterrichts** (NL). Prinzip der **Beziehungshaltigkeit / Realitätsnähe**. „Mathematik als pädagogische Aufgabe\" (1973). Mathematik nicht als Fertigprodukt, sondern als Tätigkeit.",
+    "fach": "mathe",
+    "key": "Freudenthal, Hans",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "Weigand §4",
+      "B2"
+    ],
+    "title": "Freudenthal, Hans (1905–1990) — niederländischer Mathematikdidaktiker",
+    "type": "prinzip"
+  },
+  "funktionaler-zusammenhang": {
+    "cross_refs": [],
+    "definition": "Einer der 5 Gegenstandsbereiche: Funktionen zur Beschreibung quantitativer Beziehungen, lineare und quadratische Gesetzmäßigkeiten, Zuordnungen, Wachstum, Gleichungen. M7 LB8 (Proportionalität).",
+    "fach": "mathe",
+    "key": "Funktionaler Zusammenhang",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "Fachprofil M §2.3",
+      "B6"
+    ],
+    "title": "Funktionaler Zusammenhang (Gegenstandsbereich B6)",
+    "type": "prinzip"
+  },
+  "gegenstandsbereiche": {
+    "cross_refs": [
+      "spiralformig",
+      "zahlen-und-operationen",
+      "groen-und-messen",
+      "raum-und-form",
+      "funktionaler-zusammenhang",
+      "daten-und-zufall"
+    ],
+    "definition": "Innere Felder des Kompetenzstrukturmodells M (LP+ Bayern). Durchziehen den Lehrplan **spiralförmig** über alle Jgst. → kumulatives Lernen + vernetztes Denken:\n1. **Zahlen und Operationen** (B3)\n2. **Größen und Messen** (B4)\n3. **Raum und Form** (B5)\n4. **Funktionaler Zusammenhang** (B6)\n5. **Daten und Zufall** (B7)",
+    "fach": "mathe",
+    "key": "Gegenstandsbereiche",
+    "pflichtanker_level": 2,
+    "quellen": [
+      "Fachprofil M §2.3",
+      "GB §1.4"
+    ],
+    "title": "Gegenstandsbereiche (5)",
+    "type": "prinzip"
+  },
+  "gegenstandsbereiche-gpg": {
+    "cross_refs": [
+      "raume-ordnungssysteme-interessen-kulturen-werte"
+    ],
+    "definition": "Fünf Kerndimensionen im LP+-Kompetenzstrukturmodell: **Räume, Ordnungssysteme, Interessen, Kulturen, Werte**. Bilden den thematischen Kern, werden aus drei Perspektiven (hist./sozialwiss./geo.) bearbeitet.",
+    "fach": "sk",
+    "key": "Gegenstandsbereiche GPG",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "LP:FPGPG"
+    ],
+    "title": "Gegenstandsbereiche GPG",
+    "type": "prinzip"
+  },
+  "gegenwartsprinzip": {
+    "cross_refs": [],
+    "definition": "Geschichtsdidaktisches Prinzip mit Sk-Wirkung: historische Themen werden mit gegenwärtigem Sinnzusammenhang (Orientierungswissen) verknüpft. Anker für sozialwissenschaftlichen Transfer historischer Inhalte.",
+    "fach": "sk",
+    "key": "Gegenwartsprinzip",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GPG GB §3.2"
+    ],
+    "title": "Gegenwartsprinzip",
+    "type": "prinzip"
+  },
+  "genetisches-prinzip": {
+    "cross_refs": [
+      "historisch-genetisch",
+      "psychologisch-genetisch"
+    ],
+    "definition": "„Mathematik nicht als Fertigprodukt, sondern als Genese.\" Begriffe als Antworten auf Fragen erkennen (Toeplitz, Vollrath). **Historisch-genetisch** = Geschichte der Begriffsentwicklung als Lernweg; **psychologisch-genetisch** = an Vorerfahrung der SuS anknüpfen.",
+    "fach": "mathe",
+    "key": "Genetisches Prinzip",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "Weigand §3"
+    ],
+    "title": "Genetisches Prinzip (Weigand §3)",
+    "type": "prinzip"
+  },
+  "geometrieunterricht-strukturmodell": {
+    "cross_refs": [],
+    "definition": "Ablaufplan-Variante speziell für Geometrie-Stunden:\n1. Motivation – Problembegegnung\n2. Problemfindung – Zielstellung\n3. Lösungsvorstrukturierung – Hypothesen\n4. Erarbeitung Problemlösung — enaktiv → ikonisch → symbolisch\n5. Erfolgssicherung – Reflexion\n6. Transfer und Anwendung",
+    "fach": "mathe",
+    "key": "Geometrieunterricht-Strukturmodell",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "B1 S. 10–12",
+      "Pauls Pitch v3 §2.2.2"
+    ],
+    "title": "Geometrieunterricht-Strukturmodell (B1 6 Phasen)",
+    "type": "prinzip"
+  },
+  "goldenes-perlenmaterial": {
+    "cross_refs": [],
+    "definition": "1er-Perlen / 10er-Stangen / 100er-Platten. Enaktive Phase für Prozent/Stellenwert. Eingesetzt in Pauls Pitch v3 (UE3 Grundwert handelnd entwickeln). Vorteil: Mengen konkret erfahrbar, Selbstkontrolle.",
+    "fach": "mathe",
+    "key": "Goldenes Perlenmaterial",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "Pauls Pitch v3 §6.1"
+    ],
+    "title": "Goldenes Perlenmaterial (Montessori)",
+    "type": "prinzip"
+  },
+  "groen-und-messen": {
+    "cross_refs": [],
+    "definition": "Längen-, Flächen-, Volumenmessung. M7 LB3-5.",
+    "fach": "mathe",
+    "key": "Größen und Messen",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "Fachprofil M §2.3",
+      "B4"
+    ],
+    "title": "Größen und Messen (Gegenstandsbereich B4)",
+    "type": "prinzip"
+  },
+  "grundprinzipien-mathematikunterricht-ms": {
+    "cross_refs": [],
+    "definition": "Sammelkategorie: induktives Vorgehen · EIS-Prinzip · kumulatives Lernen · Öffnung des Unterrichts · individuelle Förderung · Mittlere-Reife-Zug.",
+    "fach": "mathe",
+    "key": "Grundprinzipien Mathematikunterricht MS",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GB §2"
+    ],
+    "title": "Grundprinzipien Mathematikunterricht MS (GB §2)",
+    "type": "prinzip"
+  },
+  "handlungsorientierung": {
+    "cross_refs": [],
+    "definition": "Konkretes Handeln mit Lernmaterialien als Ausgangspunkt; geht in EIS über. „Erst be-greifen, dann ver-stehen.\" Wittmann: aktiv-entdeckendes Lernen.",
+    "fach": "mathe",
+    "key": "Handlungsorientierung",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GB §3.4",
+      "Pauls Seminarübung v2"
+    ],
+    "title": "Handlungsorientierung",
+    "type": "prinzip"
+  },
+  "handlungsorientierung-sk": {
+    "cross_refs": [],
+    "definition": "Didaktisches Leitprinzip der Sk (kein einzelnes Verfahren): aktive Aneignung von Politik durch die Lernenden selbst, Reflexion der Handlung als Bildungsmoment. Methodisches Korrelat der Zielkategorie Mündigkeit.",
+    "fach": "sk",
+    "key": "Handlungsorientierung",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "Reinhardt 2018",
+      "Massing 2012",
+      "LP:FPGPG"
+    ],
+    "title": "Handlungsorientierung",
+    "type": "prinzip"
+  },
+  "heimatkundliches-prinzip": {
+    "cross_refs": [],
+    "definition": "Geographie-/Sk-Prinzip: Beleuchtung des Nahbereichs zur Sicherung von Anschaulichkeit und Konkretheit. Konsequenz: Vom Nahen zum Fernen.",
+    "fach": "sk",
+    "key": "Heimatkundliches Prinzip",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GPG GB §4.2.3"
+    ],
+    "title": "Heimatkundliches Prinzip",
+    "type": "prinzip"
+  },
+  "heuristik-heuristische-strategien": {
+    "cross_refs": [],
+    "definition": "Strategien zur Problemlösung (Polya, Gercken):\n1. Analogien suchen · 2. Sonderfälle/Vereinfachen · 3. Teilprobleme · 4. Vorwärtsarbeiten · 5. Rückwärtsarbeiten · 6. Zufälliges/systematisches Probieren · 7. Koordinatisieren · 8. Darstellungsform wechseln · 9. Variablen/Terme/Gleichungen · 10. Tabelle/Mindmap/Flussdiagramm · 11. Beziehungen suchen · 12. Hilfslinien einzeichnen",
+    "fach": "mathe",
+    "key": "Heuristik / Heuristische Strategien",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "Polya 1945",
+      "Gercken 2009"
+    ],
+    "title": "Heuristik / Heuristische Strategien",
+    "type": "prinzip"
+  },
+  "heymann-hans-werner": {
+    "cross_refs": [
+      "fundamentaler-ideen"
+    ],
+    "definition": "Mathematikdidaktiker. Katalog **fundamentaler Ideen**: Zahl · Messen · räumliches Strukturieren · funktionaler Zusammenhang · Algorithmus · mathematisches Modellieren. „Allgemeinbildung und Mathematik\" (1996).",
+    "fach": "mathe",
+    "key": "Heymann, Hans Werner",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "Weigand §1 S. 2"
+    ],
+    "title": "Heymann, Hans Werner (* 1949)",
+    "type": "prinzip"
+  },
+  "hilfsmittel-im-mu": {
+    "cross_refs": [
+      "formelsammlung"
+    ],
+    "definition": "Ab Jgst. 7 Taschenrechner sinnvoll. **Formelsammlung** ab Jgst. 8 systematisch (gezielte Hinführung). Computer mit Tabellenkalkulation, Geometrieprogramme. Phasen ohne Taschenrechner bewusst einplanen.",
+    "fach": "mathe",
+    "key": "Hilfsmittel im MU",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GB §4"
+    ],
+    "title": "Hilfsmittel im MU (GB §4)",
+    "type": "prinzip"
+  },
+  "ikonisch": {
+    "cross_refs": [],
+    "definition": "Bildliche Darstellung — Skizzen, Diagramme, Modelle, Prozentstreifen. Stufe zwischen enaktiv und symbolisch.",
+    "fach": "mathe",
+    "key": "Ikonisch",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "Bruner",
+      "GB §3.4"
+    ],
+    "title": "Ikonisch (EIS-Mittelstufe)",
+    "type": "prinzip"
+  },
+  "individuelle-forderung": {
+    "cross_refs": [],
+    "definition": "GB §3.4. Möglich durch (a) Wahl der Lösungswege, (b) anschauliche Lösungshilfen, (c) offene Aufgaben mit selbstgesetzten Bearbeitungszielen, (d) unterschiedliches Aufgabenmaterial nach Beobachtung.",
+    "fach": "mathe",
+    "key": "Individuelle Förderung",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GB §3.4"
+    ],
+    "title": "Individuelle Förderung",
+    "type": "prinzip"
+  },
+  "indoktrinationsverbot-uberwaltigungsverbot": {
+    "cross_refs": [],
+    "definition": "Synonym für das erste Beutelsbacher Prinzip.",
+    "fach": "sk",
+    "key": "Indoktrinationsverbot → Überwältigungsverbot",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GPG B3 §1.1"
+    ],
+    "title": "Indoktrinationsverbot → Überwältigungsverbot",
+    "type": "prinzip"
+  },
+  "induktives-vorgehen": {
+    "cross_refs": [
+      "deskriptive-methode"
+    ],
+    "definition": "Bevorzugte Methodik im MS-MU (GB §3.4 + B1 §6). Vom Konkreten zum Abstrakten — von Aufgaben aus der Alltagswelt zur allgemeinen Regel. Konstruktivistischer Lernweg. Abgrenzung gegen **deskriptive Methode** (LK gibt Verfahren vor).",
+    "fach": "mathe",
+    "key": "Induktives Vorgehen",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "GB §3.4",
+      "B1 §6 — bevorzugte Methode"
+    ],
+    "title": "Induktives Vorgehen",
+    "type": "prinzip"
+  },
+  "inhaltsgeneralisierung": {
+    "cross_refs": [],
+    "definition": "Wichtigstes Merkmal der Fallanalyse (nach Kaiser): vom konkreten Fall auf die allgemeine Struktur schließen.",
+    "fach": "sk",
+    "key": "Inhaltsgeneralisierung",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GPG B4 §2.2.1"
+    ],
+    "title": "Inhaltsgeneralisierung",
+    "type": "prinzip"
+  },
+  "inklusion": {
+    "cross_refs": [],
+    "definition": "Fachprofil M §1.5. Aktiv-entdeckendes Lernen, unterschiedliche Lernwege, offene Aufgabenstellungen, gestufte Hilfen, soziale Interaktion. Heterogenität als Lernchance.",
+    "fach": "mathe",
+    "key": "Inklusion",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "Fachprofil M §1.5",
+      "GB §3.4"
+    ],
+    "title": "Inklusion (Mathematik)",
+    "type": "prinzip"
+  },
+  "integrationsprinzip": {
+    "cross_refs": [
+      "beziehungsnetze"
+    ],
+    "definition": "Vgl. **Beziehungsnetze**. Wissen als Netzwerk von Begriffen und Beziehungen (kognitionspsychologisch). Innermathematische + außermathematische Verknüpfungen.",
+    "fach": "mathe",
+    "key": "Integrationsprinzip",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "Weigand §4"
+    ],
+    "title": "Integrationsprinzip",
+    "type": "prinzip"
+  },
+  "integrierte-wiederholung": {
+    "cross_refs": [],
+    "definition": "Wittmann/Müller. Bereits Gelerntes in neuen Kontexten aufgreifen — gegen isoliertes Üben. Verbindet sich mit kumulativem Lernen.",
+    "fach": "mathe",
+    "key": "Integrierte Wiederholung",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "Weigand §5 S. 6",
+      "GB §3.4"
+    ],
+    "title": "Integrierte Wiederholung (Prinzip)",
+    "type": "prinzip"
+  },
+  "isolation-der-schwierigkeiten": {
+    "cross_refs": [],
+    "definition": "Klassisches didaktisches Prinzip — Schwierigkeiten beim Lernen einer neuen Inhaltsstufe nicht häufen, sondern systematisch isolieren. Im LP+ erkennbar an bewusster Beschränkung von Zahlenraum oder Komplexität.",
+    "fach": "mathe",
+    "key": "Isolation der Schwierigkeiten",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GB §3.4",
+      "Weigand"
+    ],
+    "title": "Isolation der Schwierigkeiten (Prinzip)",
+    "type": "prinzip"
+  },
+  "juniorwahl": {
+    "cross_refs": [],
+    "definition": "Bundesweites Schulprojekt zur simulierten Wahl parallel zu realen Wahlen ab Jgst. 7 (Bundestags-, Landtags-, Europawahl); Mikromethode der Sk.",
+    "fach": "sk",
+    "key": "Juniorwahl",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GPG B4 §2.1.3",
+      "juniorwahl.de"
+    ],
+    "title": "Juniorwahl",
+    "type": "prinzip"
+  },
+  "just-community-konzept": {
+    "cross_refs": [],
+    "definition": "Werterziehungsansatz nach Kohlberg/Power: SuS sind für Schul-/Klassenkonflikte selbst verantwortlich (z. B. Fairness-Komitees). Reaktiv-konfliktorientiert; Wirkungsbereich gilt als zu schmal.",
+    "fach": "sk",
+    "key": "Just-Community-Konzept",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GPG B3 §1.2"
+    ],
+    "title": "Just-Community-Konzept",
+    "type": "prinzip"
+  },
+  "kasuistisches-prinzip": {
+    "cross_refs": [],
+    "definition": "„Ausschnitt aus der Wirklichkeit\" als didaktischer Zugang in der Sk; konkreter Fall steht im Mittelpunkt, nicht systematische Inhaltsentfaltung. Trägt Fallanalyse, Aktualstunde, Lebensweltbezug.",
+    "fach": "sk",
+    "key": "Kasuistisches Prinzip",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GPG B3 §2.1.1"
+    ],
+    "title": "Kasuistisches Prinzip",
+    "type": "prinzip"
+  },
+  "klafki-schlusselprobleme": {
+    "cross_refs": [],
+    "definition": "Epochaltypische Schlüsselprobleme (Krieg/Frieden, Umweltfrage, gesellschaftliche Ungleichheit, Technik, interkulturelles Zusammenleben) als kategorialer Bildungsanker; rechtfertigt Aktualität und Problemorientierung der Sk.",
+    "fach": "sk",
+    "key": "Klafki-Schlüsselprobleme",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "Klafki"
+    ],
+    "title": "Klafki-Schlüsselprobleme",
+    "type": "prinzip"
+  },
+  "klassenrat": {
+    "cross_refs": [],
+    "definition": "Ritualisiertes Gremium für Mitbestimmung im Klassenraum (Themen, Konflikte, Beschlüsse); Realhandeln-Form von Demokratielernen. LP+-Anker GPG5 LB4 „demokratische Verhaltensweisen anwenden\".",
+    "fach": "sk",
+    "key": "Klassenrat",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "LP:GPG5 LB4",
+      "Sander 2014"
+    ],
+    "title": "Klassenrat",
+    "type": "prinzip"
+  },
+  "kommunizieren": {
+    "cross_refs": [],
+    "definition": "Eine der 6 prozessbez. Kompetenzen. SuS verstehen math. Texte; eigene Lösungswege adressatengerecht in Fachsprache darstellen + präsentieren. Bei nahezu jeder Aufgabe relevant.",
+    "fach": "mathe",
+    "key": "Kommunizieren",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "Fachprofil M §2.2",
+      "GB §1.3"
+    ],
+    "title": "Kommunizieren (prozessbezogene Kompetenz)",
+    "type": "prinzip"
+  },
+  "kompetenzorientierter-mu": {
+    "cross_refs": [],
+    "definition": "LP+ 2016 §1.3: „Mehr als Vermittlung von Wissen, Fähigkeiten und Fertigkeiten — Kompetenzen haben stets Anwendungssituation im Blick.\" Verbindung Wissen + Kompetenzerwerb.",
+    "fach": "mathe",
+    "key": "Kompetenzorientierter MU",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "Fachprofil M §1.3",
+      "B2"
+    ],
+    "title": "Kompetenzorientierter MU",
+    "type": "prinzip"
+  },
+  "kompetenzstrukturmodell-gpg": {
+    "cross_refs": [],
+    "definition": "LP+-Modell mit drei Achsen: (a) Gegenstandsbereiche im Kern, (b) prozessbezogene Kompetenzen im Ring, (c) drei fachliche Perspektiven. Pflichtbestandteil jeder Antwort zur LP-Struktur.",
+    "fach": "sk",
+    "key": "Kompetenzstrukturmodell GPG",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "LP:FPGPG",
+      "GPG GB §2"
+    ],
+    "title": "Kompetenzstrukturmodell GPG",
+    "type": "prinzip"
+  },
+  "kompetenzstrukturmodell-m": {
+    "cross_refs": [
+      "auen-ring",
+      "innere-felder"
+    ],
+    "definition": "LP+ Bayern (orientiert an KMK-Bildungsstandards 2003/04). Zwei Bereiche:\n- **Außen-Ring**: 6 prozessbezogene Kompetenzen (Argumentieren · Probleme lösen · Modellieren · Darstellungen verwenden · Mit symbolischen/formalen/technischen Elementen umgehen · Kommunizieren)\n- **Innere Felder**: 5 Gegenstandsbereiche (Zahlen+Operationen / Größen+Messen / Raum+Form / Funktionaler Zusammenhang / Daten+Zufall) — spiralförmig",
+    "fach": "mathe",
+    "key": "Kompetenzstrukturmodell M",
+    "pflichtanker_level": 2,
+    "quellen": [
+      "Fachprofil M §2",
+      "GB §1.2"
+    ],
+    "title": "Kompetenzstrukturmodell M",
+    "type": "prinzip"
+  },
+  "komposition-kompositionsfahigkeit": {
+    "cross_refs": [],
+    "definition": "Operationen sind zusammensetzbar — Teilschritte zu Gesamtlösung verketten. Beispiel: 12 → 60 nicht direkt rechnen, sondern ·5. Dreisatz = Komposition (auf 1% → auf 100%).",
+    "fach": "mathe",
+    "key": "Komposition / Kompositionsfähigkeit",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "B1",
+      "Weigand §7"
+    ],
+    "title": "Komposition / Kompositionsfähigkeit (Operationsmerkmal)",
+    "type": "prinzip"
+  },
+  "konkrete-stufe": {
+    "cross_refs": [],
+    "definition": "Erste Stufe der Verinnerlichung: Arbeiten mit konkreten Gegenständen und Material.",
+    "fach": "mathe",
+    "key": "Konkrete Stufe",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "Weigand §7 S. 8"
+    ],
+    "title": "Konkrete Stufe (Aebli)",
+    "type": "prinzip"
+  },
+  "konstruktivistisches-lernen": {
+    "cross_refs": [],
+    "definition": "GB §3. Lernen ist (a) aktiver Prozess, (b) konstruktiver Prozess, (c) kumulativ, (d) situativ-sozial, (e) selbstreguliert. Grundgelegt bei Piaget, Freudenthal, Winter. Konsequenz: induktiv, offen, individuell, mit Anschauung.",
+    "fach": "mathe",
+    "key": "Konstruktivistisches Lernen",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "GB §3.1–3.4"
+    ],
+    "title": "Konstruktivistisches Lernen",
+    "type": "prinzip"
+  },
+  "kontroversitat": {
+    "cross_refs": [],
+    "definition": "Eigenständiges Prinzip im Geschichtsunterricht: Deutungsabhängigkeit historischen Wissens, fachwissenschaftliche Diskurse abbilden. Nicht zu verwechseln mit dem Beutelsbacher Kontroversitätsgebot.",
+    "fach": "sk",
+    "key": "Kontroversität",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GPG GB §3.2"
+    ],
+    "title": "Kontroversität (geschichtsdidaktisch)",
+    "type": "prinzip"
+  },
+  "kontroversitatsgebot": {
+    "cross_refs": [],
+    "definition": "Zweites Beutelsbacher Prinzip: Was in Politik/Wissenschaft kontrovers ist, muss kontrovers im Unterricht erscheinen. Begrenzt die Lehrperson — schützt nicht extremistische Positionen, sondern echten politischen Pluralismus.",
+    "fach": "sk",
+    "key": "Kontroversitätsgebot",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "GPG B3 §1.1"
+    ],
+    "title": "Kontroversitätsgebot",
+    "type": "prinzip"
+  },
+  "kumulatives-lernen": {
+    "cross_refs": [],
+    "definition": "GB §1.5 + §3.4. Spiraler Aufbau des LP+ + permanentes Wiederholen + Vernetzung. „Lernen ist dann effektiv, wenn Gelerntes mit Vorhandenem verknüpft werden kann.\" Konsequenz: regelmäßige Wiederholung in Probearbeiten.",
+    "fach": "mathe",
+    "key": "Kumulatives Lernen",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "GB §1.5 + §3.4",
+      "Weigand §4 BLK-Expertise"
+    ],
+    "title": "Kumulatives Lernen",
+    "type": "prinzip"
+  },
+  "lebensweltbezug": {
+    "cross_refs": [],
+    "definition": "Sk-Unterricht orientiert sich am unmittelbaren Umfeld und Alltag der SuS — eines der zentralen Anliegen des LP+-Fachprofils GPG. Methodische Folge: Fallorientierung, Aktualstunde, Identifikationsfiguren.",
+    "fach": "sk",
+    "key": "Lebensweltbezug",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "LP:FPGPG",
+      "GPG GB §5.4"
+    ],
+    "title": "Lebensweltbezug",
+    "type": "prinzip"
+  },
+  "leistungsfeststellung-leistungsmessung": {
+    "cross_refs": [
+      "veranderte-leistungsmessung"
+    ],
+    "definition": "LP+: Probearbeiten dienen Leistungskontrolle + Qualitätssicherung + Rückmeldung zu individuellen Stärken/Schwächen. Aufgaben sollten verschiedene Rechenwege zulassen. **Veränderte Leistungsmessung** (Weigand §6, NCTM): Vielfalt der Bewertungsformen, „messen was sie können\".",
+    "fach": "mathe",
+    "key": "Leistungsfeststellung / Leistungsmessung",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GB §3.4",
+      "Weigand §6"
+    ],
+    "title": "Leistungsfeststellung / Leistungsmessung",
+    "type": "prinzip"
+  },
+  "leitideen": {
+    "cross_refs": [
+      "fundamentale-ideen"
+    ],
+    "definition": "**Fundamentale Ideen** der Mathematik: Zahl · Messen · räumliches Strukturieren · funktionaler Zusammenhang · Algorithmus · Modellieren. Im LP+ Bayern als 5 Gegenstandsbereiche operationalisiert. Spiralprinzip-Bezug.",
+    "fach": "mathe",
+    "key": "Leitideen",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "Weigand §1",
+      "Heymann 1996"
+    ],
+    "title": "Leitideen (Heymann / Weigand)",
+    "type": "prinzip"
+  },
+  "lernbereich": {
+    "cross_refs": [],
+    "definition": "Strukturgliederung im Fachlehrplan pro Jgst. M7 hat 8 LB (Prozent · Rationale Zahlen · Geometrie · Flächeninhalt · Volumen · Statistik · Algebra · Proportionalität). Jeder LB ist einem Gegenstandsbereich zugeordnet.",
+    "fach": "mathe",
+    "key": "Lernbereich",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "Fachprofil M §3"
+    ],
+    "title": "Lernbereich (LB)",
+    "type": "prinzip"
+  },
+  "lernbereiche-gpg": {
+    "cross_refs": [],
+    "definition": "Vier strukturierende Lernbereiche pro Jgst. (LP+): LB1 Lebensraum Erde, LB2 Zeit und Wandel, LB3 Politik und Gesellschaft, LB4 Lebenswelt. Sozialwissenschaftliche Tragkraft am höchsten in LB3 + LB4.",
+    "fach": "sk",
+    "key": "Lernbereiche GPG",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "LP:FPGPG"
+    ],
+    "title": "Lernbereiche GPG",
+    "type": "prinzip"
+  },
+  "lernebenen-sk": {
+    "cross_refs": [],
+    "definition": "Vier Ebenen sozialwissenschaftlichen Lernens: I Zwischenmenschlich, II Sozialisation, III Gesellschaftlich-ökonomisch, IV Global. Verortungs-Schema für Themenanalyse.",
+    "fach": "sk",
+    "key": "Lernebenen Sk",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GPG GB §5.2"
+    ],
+    "title": "Lernebenen Sk (GB §5.2)",
+    "type": "prinzip"
+  },
+  "lerntheorie": {
+    "cross_refs": [
+      "konstruktivistisches-lernen"
+    ],
+    "definition": "Vgl. **Konstruktivistisches Lernen**. Mathematische Begriffsbildung erfolgt durch aktive Auseinandersetzung mit dem Lerngegenstand und sukzessive Abstraktion.",
+    "fach": "mathe",
+    "key": "Lerntheorie",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "GB §3.1",
+      "Piaget · Freudenthal · Winter"
+    ],
+    "title": "Lerntheorie (konstruktivistisch)",
+    "type": "prinzip"
+  },
+  "makromethoden": {
+    "cross_refs": [],
+    "definition": "Komplexe methodische Vollzugsformen aus mehreren Mikromethoden zusammengesetzt: Fallanalyse, Erkundung, Projekt, Sozialstudie, Rollenspiel, Planspiel, Entscheidungsspiel. Abgrenzung: Mikromethoden = einzelne Lern-/Arbeitstechniken (Texte, Karikatur, Brainstorming, Diskussion).",
+    "fach": "sk",
+    "key": "Makromethoden",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GPG B4 §2",
+      "Klippert 1997"
+    ],
+    "title": "Makromethoden (Klippert)",
+    "type": "prinzip"
+  },
+  "massing-unterscheidung-real-simulationshandeln": {
+    "cross_refs": [],
+    "definition": "Realhandeln = echte politische Partizipation (Klassenrat, Petition, SMV); Simulationshandeln = Planspiel, Rollenspiel, Gerichtssimulation. Beide sind legitime Realisierungen handlungsorientierter Sk.",
+    "fach": "sk",
+    "key": "Massing-Unterscheidung Real-/Simulationshandeln",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "Massing 2012"
+    ],
+    "title": "Massing-Unterscheidung Real-/Simulationshandeln",
+    "type": "prinzip"
+  },
+  "mathematikstunde": {
+    "cross_refs": [
+      "4-phasen-b1-modell",
+      "pauls-mathe-unterrichtseinheiten-md-stunden-artikulation"
+    ],
+    "definition": "**4-Phasen B1-Modell:** Erarbeitung → Operative Durchdringung → Übung → Anwendung. **Pauls Mathe-Unterrichtseinheiten.md-Stunden-Artikulation** (eigene Aufbereitung): Einstieg 5–7 min · Erarbeitung 15–20 min · Vertiefung 10–12 min · Anwendung 8–10 min.",
+    "fach": "mathe",
+    "key": "Mathematikstunde",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "B1",
+      "B2 §1",
+      "Mathe Unterrichtseinheiten.md"
+    ],
+    "title": "Mathematikstunde (5-Phasen / 4-Phasen)",
+    "type": "prinzip"
+  },
+  "mittlere-reife-klassen": {
+    "cross_refs": [],
+    "definition": "LP+-Differenzierung in der MS. Anforderungen unterscheiden sich durch komplexere Aufgaben, höheres Arbeitstempo, mehr Selbstständigkeit. Im LP+ markiert als „EAN — Erhöhtes Anforderungsniveau\".",
+    "fach": "mathe",
+    "key": "Mittlere-Reife-Klassen",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "Fachprofil M §3",
+      "GB §2",
+      "LP+ M-Variante"
+    ],
+    "title": "Mittlere-Reife-Klassen (M-Zug)",
+    "type": "prinzip"
+  },
+  "modellieren": {
+    "cross_refs": [
+      "modellierungskreislauf"
+    ],
+    "definition": "Realsituation in math. Sprache übersetzen, Zusammenhänge nutzen, Ergebnis interpretieren und prüfen. **Modellierungskreislauf**: Situation → math. Modell → Lösung → Interpretation → Validierung. Heymann: fundamentale Idee.",
+    "fach": "mathe",
+    "key": "Modellieren",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "Fachprofil M §2.2",
+      "GB §1.3",
+      "Weigand §1"
+    ],
+    "title": "Modellieren (prozessbezogene Kompetenz)",
+    "type": "prinzip"
+  },
+  "montessori-material": {
+    "cross_refs": [],
+    "definition": "Im Mathematikunterricht: Goldenes Perlenmaterial, Bruchkreise (mit Prozentaufdruck), Markenspiel. „Hilf mir, es selbst zu tun\" — Eigenaktivität, haptische Selbstkontrolle. Eingesetzt in Pauls Pitch v3 als Material-Variante.",
+    "fach": "mathe",
+    "key": "Montessori-Material",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "Pauls Pitch v3 §6.2"
+    ],
+    "title": "Montessori-Material",
+    "type": "prinzip"
+  },
+  "multiperspektivitat": {
+    "cross_refs": [],
+    "definition": "Gleichzeitige Berücksichtigung verschiedener Standpunkte/Quellen zu einem Sachverhalt. Geschichtsdidaktisches Kernprinzip mit Sk-Wirkung; Voraussetzung für rationale Urteilsbildung.",
+    "fach": "sk",
+    "key": "Multiperspektivität",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GPG GB §3.2",
+      "Sander 2014"
+    ],
+    "title": "Multiperspektivität",
+    "type": "prinzip"
+  },
+  "mundigkeit-politische": {
+    "cross_refs": [],
+    "definition": "Zielkategorie politischer Bildung (Detjen): selbstständig politisch urteilen und handeln können. Nicht durch Belehrung erreichbar — methodisches Korrelat ist Handlungsorientierung.",
+    "fach": "sk",
+    "key": "Mündigkeit, politische",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "Detjen 2007"
+    ],
+    "title": "Mündigkeit, politische",
+    "type": "prinzip"
+  },
+  "narrative-kompetenz": {
+    "cross_refs": [],
+    "definition": "Geschichtsdidaktischer Begriff: reflektiertes historisches Erzählen als Voraussetzung für eigenständige Geschichtsdarstellung und kritischen Umgang mit Historiografie. LP+-explizit verankert.",
+    "fach": "sk",
+    "key": "Narrative Kompetenz",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "LP:FPGPG"
+    ],
+    "title": "Narrative Kompetenz",
+    "type": "prinzip"
+  },
+  "neuronale-netze-neurobiologie": {
+    "cross_refs": [],
+    "definition": "GB §3.3. Lernen erfolgt durch Aktivität. Wiederholung verstärkt Verbindungen. Motivation = emotionaler Lernerfolgs-Faktor. Strategien bleiben verfestigt, wenn nicht aktiv umstrukturiert.",
+    "fach": "mathe",
+    "key": "Neuronale Netze / Neurobiologie",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GB §3.3"
+    ],
+    "title": "Neuronale Netze / Neurobiologie (Lernen)",
+    "type": "prinzip"
+  },
+  "offene-aufgaben": {
+    "cross_refs": [
+      "neuen-aufgabenkultur"
+    ],
+    "definition": "Aufgaben mit immanentem Differenzierungs-Angebot. Mehrere Zugangsweisen, Diskussion + Reflexion. Teil der **neuen Aufgabenkultur**.",
+    "fach": "mathe",
+    "key": "Offene Aufgaben",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "B2 §4",
+      "Weigand §5"
+    ],
+    "title": "Offene Aufgaben",
+    "type": "prinzip"
+  },
+  "offnung-des-unterrichts": {
+    "cross_refs": [],
+    "definition": "GB §2. Ergänzung des systematisch-aufbauenden MU durch offene Unterrichtsformen — selbstständige Lösungs-Entwicklung, Akzeptanz verschiedener Wege. Knobelaufgaben, Spiele, gestalterischer Umgang.",
+    "fach": "mathe",
+    "key": "Öffnung des Unterrichts",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GB §2"
+    ],
+    "title": "Öffnung des Unterrichts",
+    "type": "prinzip"
+  },
+  "operative-durchdringung": {
+    "cross_refs": [],
+    "definition": "Zweite der 4 Phasen. Schulung mathematischer Fähigkeiten durch operatives Üben mit den 5 Operationsmerkmalen.",
+    "fach": "mathe",
+    "key": "Operative Durchdringung",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "B1",
+      "B2 §1"
+    ],
+    "title": "Operative Durchdringung (Phase 2 B1-Modell)",
+    "type": "prinzip"
+  },
+  "operatives-prinzip": {
+    "cross_refs": [
+      "flexibel",
+      "reversibilitat",
+      "assoziativitat",
+      "variabilitat",
+      "transitivitat",
+      "kompositionsfahigkeit",
+      "anwendung"
+    ],
+    "definition": "Weigand §7 + B1. Denken = verinnerlichtes Handeln. Verinnerlichte Operationen sind **flexibel** durch fünf Merkmale:\n1. **Reversibilität** (Umkehrbarkeit)\n2. **Assoziativität** (verschiedene Wege)\n3. **Variabilität** (Variation von Ausgangssituation, gesuchten Größen, Unwesentlichem)\n4. **Transitivität** (Übertragbarkeit auf andere Situationen)\n5. **Kompositionsfähigkeit** (zusammensetzbar)\n\n**Anwendung:** in Phase 2 des B1-Lernprozesses (Operative Durchdringung) — durch operatives Üben.",
+    "fach": "mathe",
+    "key": "Operatives Prinzip",
+    "pflichtanker_level": 2,
+    "quellen": [
+      "B1 S. 12–16",
+      "Weigand §7 S. 8–9",
+      "B2 §1"
+    ],
+    "title": "Operatives Prinzip (Piaget / Aebli)",
+    "type": "prinzip"
+  },
+  "operatoren": {
+    "cross_refs": [],
+    "definition": "Verben, die Aufgabenstellungen lenken und an AFB anbinden. AFB I: benennen, beschreiben, formulieren · AFB II: erklären, erläutern, vergleichen, analysieren · AFB III: begründen, beurteilen, bewerten, erörtern.",
+    "fach": "mathe",
+    "key": "Operatoren",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "KMK-Operatorenliste",
+      "Begleitheft Examen §3.2.1"
+    ],
+    "title": "Operatoren (KMK / LP+)",
+    "type": "prinzip"
+  },
+  "operatoren-sk": {
+    "cross_refs": [],
+    "definition": "Verben in den LP+-Kompetenzerwartungen, AFB-zugeordnet: stellen dar, beschreiben, erklären, recherchieren, erläutern, analysieren, benennen, diskutieren, berichten, entschlüsseln, bewerten, vergleichen.",
+    "fach": "sk",
+    "key": "Operatoren",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GPG B3 §2.3"
+    ],
+    "title": "Operatoren (LP+-Sk)",
+    "type": "prinzip"
+  },
+  "ordnungssysteme": {
+    "cross_refs": [],
+    "definition": "Einer der fünf Gegenstandsbereiche im LP+-GPG-Kompetenzstrukturmodell: gesellschaftliche, wirtschaftliche, politische Strukturen und ihre Gestaltung durch mündige Bürger.",
+    "fach": "sk",
+    "key": "Ordnungssysteme",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "LP:FPGPG"
+    ],
+    "title": "Ordnungssysteme",
+    "type": "prinzip"
+  },
+  "piaget-jean": {
+    "cross_refs": [
+      "genetische-erkenntnistheorie"
+    ],
+    "definition": "Schweizer Entwicklungspsychologe. **Genetische Erkenntnistheorie**: Intelligenz entwickelt sich etappenweise zwischen Mensch und Umwelt. Verinnerlichtes Handeln → flexible Operationen mit Reversibilität / Assoziativität / Komposition. Grundlage des operativen Prinzips.",
+    "fach": "mathe",
+    "key": "Piaget, Jean",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "Weigand §7",
+      "B1"
+    ],
+    "title": "Piaget, Jean (1896–1980)",
+    "type": "prinzip"
+  },
+  "planspiel": {
+    "cross_refs": [],
+    "definition": "Komplexere Spielform als Rollenspiel: simulierte Umwelt, höhere Komplexität, SuS vertreten Institutionen/Interessengruppen statt Individuen, Gegenstand sind politische Entscheidungsprozesse. Risiko: Überforderung durch Komplexität.",
+    "fach": "sk",
+    "key": "Planspiel",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GPG B4 §2.2.8"
+    ],
+    "title": "Planspiel",
+    "type": "prinzip"
+  },
+  "polis-schule-als": {
+    "cross_refs": [],
+    "definition": "Werterziehungsansatz, der Just-Community um die gestalterische Komponente erweitert: SuS gestalten Schule mit, „Es ist für mich bedeutsam\" + Möglichkeit praktischen Handelns. Anker für Demokratielernen.",
+    "fach": "sk",
+    "key": "Polis, Schule als",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GPG B3 §1.2"
+    ],
+    "title": "Polis, Schule als",
+    "type": "prinzip"
+  },
+  "politische-bildung": {
+    "cross_refs": [],
+    "definition": "Übergreifendes Bildungs- und Erziehungsziel im LP+ Bayern; Vermittlung von Wissen über demokratisches System, freiheitlich-demokratische Grundordnung, föderale/rechtsstaatliche/sozialstaatliche Strukturen.",
+    "fach": "sk",
+    "key": "Politische Bildung",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "LP:ÜBZ „Politische Bildung\""
+    ],
+    "title": "Politische Bildung",
+    "type": "prinzip"
+  },
+  "politische-handlungsfahigkeit": {
+    "cross_refs": [],
+    "definition": "Dritte Dimension des Detjen-Modells: Artikulieren, Argumentieren, Verhandeln, Entscheiden — nur durch Handlungsvollzug entwickelbar. Begründet zwingend handlungsorientierte Methoden.",
+    "fach": "sk",
+    "key": "Politische Handlungsfähigkeit",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "Detjen et al. 2012"
+    ],
+    "title": "Politische Handlungsfähigkeit",
+    "type": "prinzip"
+  },
+  "polya-george": {
+    "cross_refs": [
+      "4-phasen-modell-des-problemlosens"
+    ],
+    "definition": "Ungarisch-US-amerikanischer Mathematiker. „How to solve it\" (1945, dt. 1966). **4-Phasen-Modell des Problemlösens**:\n1. Problem verstehen (Was gegeben? Was gesucht?)\n2. Plan erstellen (verwandte Probleme? Strategien?)\n3. Plan durchführen\n4. Rückschau halten\nPlus 12 heuristische Strategien.",
+    "fach": "mathe",
+    "key": "Polya, George",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "Polya 1945",
+      "Gercken 2009"
+    ],
+    "title": "Polya, George (1887–1985)",
+    "type": "prinzip"
+  },
+  "primat-der-handlung": {
+    "cross_refs": [],
+    "definition": "Piaget/Aebli/Pestalozzi-Tradition. Begriffsbildung beginnt mit konkretem Handeln. „Erst be-greifen, dann ver-stehen.\" Zentrales Seminar-Thema in Pauls Mathe-Übung Nov 2025.",
+    "fach": "mathe",
+    "key": "Primat der Handlung",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "B1 §5",
+      "Pauls Seminarübung v3 §3.1"
+    ],
+    "title": "Primat der Handlung",
+    "type": "prinzip"
+  },
+  "pro-contra-debatte": {
+    "cross_refs": [],
+    "definition": "Mikromethode mit gerichteter Argumentation: Zwei Positionen, Argumente sammeln, Streitgespräch, Abstimmung. Variante: inszenierte Kontroverse. Schult Empathiefähigkeit, Argumentation, Urteilsbildung.",
+    "fach": "sk",
+    "key": "Pro-Contra-Debatte",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GPG B4 §2.1.9"
+    ],
+    "title": "Pro-Contra-Debatte",
+    "type": "prinzip"
+  },
+  "probleme-losen": {
+    "cross_refs": [],
+    "definition": "Eine der 6. SuS lösen vorgegebene und selbst formulierte Probleme; nutzen heuristische Hilfsmittel + Strategien; Plausibilitätskontrolle der Ergebnisse. Verbunden mit Polya-Schritten und Heuristiken.",
+    "fach": "mathe",
+    "key": "Probleme lösen",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "Fachprofil M §2.2",
+      "Polya",
+      "Gercken"
+    ],
+    "title": "Probleme lösen (prozessbezogene Kompetenz)",
+    "type": "prinzip"
+  },
+  "problemorientierung": {
+    "cross_refs": [],
+    "definition": "Sk-Stundenmodell-Anker (5-Phasen): Stundeneinstieg über echte soziale/politische Problemsituation — schafft Fragehaltung, motiviert, sichert Lebensweltbezug.",
+    "fach": "sk",
+    "key": "Problemorientierung",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GPG GB §5.5"
+    ],
+    "title": "Problemorientierung",
+    "type": "prinzip"
+  },
+  "produktives-uben": {
+    "cross_refs": [],
+    "definition": "Wittmann/Müller (Weigand §5). Abgrenzung gegen „Aufgabenplantagen\" und mechanisches Drillen. Üben als sinnvermittelnde Tätigkeit, mit Reflexion + Eigenverantwortung. Sicht: „Üben ist immer ein Teil des Lernprozesses.\"",
+    "fach": "mathe",
+    "key": "Produktives Üben",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "Weigand §5 S. 6",
+      "GB §3.4 S. 7"
+    ],
+    "title": "Produktives Üben",
+    "type": "prinzip"
+  },
+  "prozentstreifen": {
+    "cross_refs": [],
+    "definition": "Ikonisches Mittel zur Visualisierung von Prozentanteilen. 100-Kästchen-Streifen, jedes Kästchen = 1%. Brücke zwischen 100er-Feld (Klasse 6) und Dreisatz-Schema. In Pauls Prozent-Sequenz zentrales Material.",
+    "fach": "mathe",
+    "key": "Prozentstreifen",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "mathematics_7c/02_sequenzen/Prozentrechnung_Grundlagen.md",
+      "Seminarübung v2"
+    ],
+    "title": "Prozentstreifen",
+    "type": "prinzip"
+  },
+  "prozessbezogene-kompetenzen": {
+    "cross_refs": [],
+    "definition": "Außen-Ring des Kompetenzstrukturmodells M. Sind „nicht streng voneinander trennbar, sie ergänzen und bedingen sich wechselseitig\":\n1. Argumentieren\n2. Probleme lösen\n3. Modellieren\n4. Darstellungen verwenden\n5. Mit symbolischen, formalen und technischen Elementen umgehen\n6. Kommunizieren",
+    "fach": "mathe",
+    "key": "Prozessbezogene Kompetenzen",
+    "pflichtanker_level": 2,
+    "quellen": [
+      "Fachprofil M §2.2",
+      "GB §1.3",
+      "KMK"
+    ],
+    "title": "Prozessbezogene Kompetenzen (6)",
+    "type": "prinzip"
+  },
+  "prozessbezogene-kompetenzen-sk": {
+    "cross_refs": [],
+    "definition": "Drei LP+-GPG-Kompetenzbereiche: Erkenntnisse gewinnen / Beurteilen und bewerten / Anwenden und handeln. Einrahmen die Gegenstandsbereiche, gelten gleichermaßen für alle drei Perspektiven.",
+    "fach": "sk",
+    "key": "Prozessbezogene Kompetenzen",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "LP:FPGPG"
+    ],
+    "title": "Prozessbezogene Kompetenzen",
+    "type": "prinzip"
+  },
+  "quellenorientierung": {
+    "cross_refs": [],
+    "definition": "Geschichtsdidaktisches Prinzip mit Sk-Wirkung: Methodenkompetenz, Zugang zur Wissensbasis, Erkennen von Standort- und Zeitgebundenheit. In der Sk verlängert auf Gesetzestexte, Statistiken, Karikaturen.",
+    "fach": "sk",
+    "key": "Quellenorientierung",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GPG GB §3.2"
+    ],
+    "title": "Quellenorientierung",
+    "type": "prinzip"
+  },
+  "raum-und-form": {
+    "cross_refs": [],
+    "definition": "Geometrie-Bereich. Räumliches Denken, geometrische Strukturen, Körper, Oberflächen/Volumen. M7 LB3–LB5.",
+    "fach": "mathe",
+    "key": "Raum und Form",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "Fachprofil M §2.3",
+      "B5"
+    ],
+    "title": "Raum und Form (Gegenstandsbereich B5)",
+    "type": "prinzip"
+  },
+  "realhandeln-massing-unterscheidung": {
+    "cross_refs": [],
+    "definition": "Echte politische Partizipation (Klassenrat, SMV, Petition, Schulentwicklung).",
+    "fach": "sk",
+    "key": "Realhandeln → Massing-Unterscheidung",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "Massing 2012"
+    ],
+    "title": "Realhandeln → Massing-Unterscheidung",
+    "type": "prinzip"
+  },
+  "realitatsnahe-lebensnahe": {
+    "cross_refs": [
+      "beziehungshaltigkeit"
+    ],
+    "definition": "Reformpädagogische Wurzel des Prinzips der **Beziehungshaltigkeit** (Freudenthal). Mathematik mit Erfahrungswelt der SuS verknüpfen.",
+    "fach": "mathe",
+    "key": "Realitätsnähe / Lebensnähe",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "Weigand §4"
+    ],
+    "title": "Realitätsnähe / Lebensnähe (Prinzip)",
+    "type": "prinzip"
+  },
+  "reinhardt-sibylle": {
+    "cross_refs": [],
+    "definition": "Zentrale deutschsprachige Politikdidaktikerin der Gegenwart; ihr „Politik-Methodik\" und „Politik-Didaktik\" sind Pflichtreferenzen. Lieferte u. a. die 6-Felder-Arbeitsweisen-Systematik.",
+    "fach": "sk",
+    "key": "Reinhardt, Sibylle",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "Reinhardt 2018",
+      "Reinhardt/Richter 2007"
+    ],
+    "title": "Reinhardt, Sibylle",
+    "type": "prinzip"
+  },
+  "reversibilitat": {
+    "cross_refs": [],
+    "definition": "Operationen sind umkehrbar. Sk-Beispiel: 3·4 = 12 ↔ 12:4 = 3 ↔ 12:3 = 4. Prozent-Beispiel: „Wenn 25 = 25%, dann 100% = ?\" + Umkehrung. Wichtigstes der 5 Merkmale für Übungsdidaktik.",
+    "fach": "mathe",
+    "key": "Reversibilität",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "B1",
+      "Weigand §7"
+    ],
+    "title": "Reversibilität (Operationsmerkmal)",
+    "type": "prinzip"
+  },
+  "rollenspiel": {
+    "cross_refs": [],
+    "definition": "Spielform mit Sich-Hineinversetzen in soziale Situation; vier Stufen: frei, offen, halboffen, gebunden. Schult Ambiguitätstoleranz, Rollendistanz, Empathie, kommunikative Kompetenz. Giesecke: „Wirklichkeit spielerisch abfotografieren\".",
+    "fach": "sk",
+    "key": "Rollenspiel",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GPG B4 §2.2.7",
+      "Giesecke 1973"
+    ],
+    "title": "Rollenspiel",
+    "type": "prinzip"
+  },
+  "sachrechnen": {
+    "cross_refs": [
+      "modellieren"
+    ],
+    "definition": "Anwendung mathematischer Verfahren auf realitätsbezogene Situationen. Verbindung mit **Modellieren**. Examen-Topic mit eigener Hintergrund-Pdf. Klassischer Examen-Schwerpunkt der MS.",
+    "fach": "mathe",
+    "key": "Sachrechnen",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "Sachrechnen.pdf",
+      "B2 §3.2.3"
+    ],
+    "title": "Sachrechnen",
+    "type": "prinzip"
+  },
+  "sander-walter": {
+    "cross_refs": [],
+    "definition": "Herausgeber „Handbuch politische Bildung\" (4. Aufl. 2014, Wochenschau); Pflichtreferenz für anthropologisch-pädagogische Begründung politischer Bildung und Subjektbildung.",
+    "fach": "sk",
+    "key": "Sander, Walter",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "Sander 2014"
+    ],
+    "title": "Sander, Walter",
+    "type": "prinzip"
+  },
+  "schulerorientierung": {
+    "cross_refs": [],
+    "definition": "Drittes Beutelsbacher Prinzip: politische Bildung muss SuS in die Lage versetzen, die politische Situation der Gesellschaft und ihre eigene Position zu analysieren und Konsequenzen zu ziehen.",
+    "fach": "sk",
+    "key": "Schülerorientierung",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "GPG B3 §1.1"
+    ],
+    "title": "Schülerorientierung",
+    "type": "prinzip"
+  },
+  "simulationshandeln-massing-unterscheidung": {
+    "cross_refs": [],
+    "definition": "Planspiel, Rollenspiel, Gerichtssimulation, Pro-Contra-Debatte mit Rollenzuweisung. Legitime Form handlungsorientierter Sk neben Realhandeln.",
+    "fach": "sk",
+    "key": "Simulationshandeln → Massing-Unterscheidung",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "Massing 2012"
+    ],
+    "title": "Simulationshandeln → Massing-Unterscheidung",
+    "type": "prinzip"
+  },
+  "sokratisches-prinzip": {
+    "cross_refs": [],
+    "definition": "„Lernen Fragen zu stellen.\" Wittenberg: „Die Echtheit des mathematischen Unterrichts beginnt dort, wo wirkliche Mathematik ihren Ursprung hat, bei den Fragestellungen.\" Fragerecht der SuS.",
+    "fach": "mathe",
+    "key": "Sokratisches Prinzip",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "Weigand §2"
+    ],
+    "title": "Sokratisches Prinzip (Weigand §2)",
+    "type": "prinzip"
+  },
+  "sozialstudie": {
+    "cross_refs": [],
+    "definition": "Verkürzte Form des Projektunterrichts: sozialkundliche Untersuchung mit Materialsammlung, Interview, Befragung — Analyse statt Problemlösung.",
+    "fach": "sk",
+    "key": "Sozialstudie",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GPG B4 §2.2.5"
+    ],
+    "title": "Sozialstudie",
+    "type": "prinzip"
+  },
+  "sozialwissenschaftliche-perspektive": {
+    "cross_refs": [],
+    "definition": "Eine der drei Perspektiven im LP+-GPG-Kompetenzstrukturmodell (neben historisch und geographisch). Tragend für politisch-demokratisches Bewusstsein, Mündigkeit, freiheitlich-demokratische Grundordnung.",
+    "fach": "sk",
+    "key": "Sozialwissenschaftliche Perspektive",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "LP:FPGPG",
+      "GPG GB §5"
+    ],
+    "title": "Sozialwissenschaftliche Perspektive",
+    "type": "prinzip"
+  },
+  "spiralprinzip": {
+    "cross_refs": [
+      "kumulativem-lernen",
+      "leitideen"
+    ],
+    "definition": "„Jedem Kind auf jeder Entwicklungsstufe jeder Lehrgegenstand in intellektuell ehrlicher Form\" — Inhalte wiederaufgreifen auf höherem kognitivem Niveau. Im LP+ als spiralförmiger Aufbau über Jgst. realisiert. Verknüpft mit **kumulativem Lernen** + **Leitideen**.",
+    "fach": "mathe",
+    "key": "Spiralprinzip",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "Weigand §1",
+      "GB §1.5",
+      "Bruner 1970"
+    ],
+    "title": "Spiralprinzip (Bruner / Weigand §1)",
+    "type": "prinzip"
+  },
+  "sprachsensibler-mathematikunterricht": {
+    "cross_refs": [],
+    "definition": "Fachprofil M §4. Kompetenzerwerb für alle SuS unabhängig von Muttersprache. Verbindung Mathematik-Argumentieren mit Sprachhandlungs-Kompetenz. Visualisierung, Wortgeländer, definierte Fachsprache.",
+    "fach": "mathe",
+    "key": "Sprachsensibler Mathematikunterricht",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "Fachprofil M §4",
+      "LP+ §5"
+    ],
+    "title": "Sprachsensibler Mathematikunterricht",
+    "type": "prinzip"
+  },
+  "stationenlernen": {
+    "cross_refs": [],
+    "definition": "Methode: Lernstationen mit Materialien zu Teilaspekten eines Themas; SuS arbeiten selbstständig + rotieren. In Sk-GPG7c-Recht zu Altersstufen real eingesetzt — übertragbar als Mathe-Methode (Üben verschiedener Lösungswege, Differenzierung).",
+    "fach": "mathe",
+    "key": "Stationenlernen",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GB §2",
+      "Methoden-Repertoire MS"
+    ],
+    "title": "Stationenlernen",
+    "type": "prinzip"
+  },
+  "strukturmodell-sk-stunde": {
+    "cross_refs": [],
+    "definition": "Phasenmodell GPG GB §5.5: (1) Problemstellung, (2) Problementfaltung, (3) Problemlösung, (4) Wertung/rationales Urteil, (5) Sicherung + Lernzielkontrolle. Pflichtreferenz für Stundenstruktur-Fragen.",
+    "fach": "sk",
+    "key": "Strukturmodell Sk-Stunde",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "GPG GB §5.5"
+    ],
+    "title": "Strukturmodell Sk-Stunde (5-Phasen)",
+    "type": "prinzip"
+  },
+  "symbolische-stufe": {
+    "cross_refs": [],
+    "definition": "Dritte Stufe der Verinnerlichung — Operationen durch Zeichen/Symbole/Sprache repräsentiert. Im MU: Formeln, Variablen, mathematische Notation.",
+    "fach": "mathe",
+    "key": "Symbolische Stufe",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "Weigand §7 S. 8–9"
+    ],
+    "title": "Symbolische Stufe (Aebli / EIS)",
+    "type": "prinzip"
+  },
+  "talkshow": {
+    "cross_refs": [],
+    "definition": "Mikromethode der Sk: SuS übernehmen konträre Positionen, Moderator führt Gespräch. Vier Typen: Promi-/Themen-/Portrait-/Konfro-Talk. Risiko: Missverständnis als Unterhaltungsereignis.",
+    "fach": "sk",
+    "key": "Talkshow",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GPG B4 §2.1.12"
+    ],
+    "title": "Talkshow (als Methode)",
+    "type": "prinzip"
+  },
+  "transitivitat": {
+    "cross_refs": [],
+    "definition": "Lösungsweg auf andere Situation übertragen. Beispiel: Prozent-Verfahren auf Zins → Wachstum.",
+    "fach": "mathe",
+    "key": "Transitivität",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "B1",
+      "Weigand §7"
+    ],
+    "title": "Transitivität (Operationsmerkmal)",
+    "type": "prinzip"
+  },
+  "ubergreifende-bildungs-und-erziehungsziele": {
+    "cross_refs": [],
+    "definition": "LP+-Querschnittsziele aller Fächer: u. a. Politische Bildung, Demokratie lernen, Interkulturelle Bildung, BNE, Werteerziehung, Berufliche Orientierung. Verstärken die Sk-Anliegen über das Fach hinaus.",
+    "fach": "sk",
+    "key": "Übergreifende Bildungs- und Erziehungsziele",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "LP:ÜBZ"
+    ],
+    "title": "Übergreifende Bildungs- und Erziehungsziele (ÜBZ)",
+    "type": "prinzip"
+  },
+  "uberwaltigungsverbot": {
+    "cross_refs": [],
+    "definition": "Erstes Beutelsbacher Prinzip: Lehrperson darf SuS nicht überwältigen / indoktrinieren; SuS sollen sich eine eigene Meinung bilden können. Synonym: Indoktrinationsverbot.",
+    "fach": "sk",
+    "key": "Überwältigungsverbot",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "GPG B3 §1.1"
+    ],
+    "title": "Überwältigungsverbot",
+    "type": "prinzip"
+  },
+  "ubung": {
+    "cross_refs": [
+      "ubungsgrundsatze"
+    ],
+    "definition": "Dritte der 4 Phasen. Mechanisierung + Automatisierung unter Beachtung der **Übungsgrundsätze** (regelmäßig, integriert, sinnbezogen, stabilisierend). Nicht zu verwechseln mit „bloßem Drillen\" — operative Durchdringung kommt vorher.",
+    "fach": "mathe",
+    "key": "Übung",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "B1",
+      "B2 §1",
+      "Weigand §5"
+    ],
+    "title": "Übung (Phase 3 B1-Modell)",
+    "type": "prinzip"
+  },
+  "ubungsstufen": {
+    "cross_refs": [],
+    "definition": "Verständnisübungen · stabilisierendes Üben · operatives Üben · anwendungsorientiertes Üben · heuristisches Üben.",
+    "fach": "mathe",
+    "key": "Übungsstufen",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "Weigand §5",
+      "Zech"
+    ],
+    "title": "Übungsstufen (4 nach Wittmann/Wieland)",
+    "type": "prinzip"
+  },
+  "unterrichtsprinzipien-sk": {
+    "cross_refs": [
+      "handlungsorientierung"
+    ],
+    "definition": "Sieben Prinzipien aus GPG GB §5.4: Erfahrungsbezug, Realitätsbegegnung, **Handlungsorientierung**, kommunikatives Prinzip, Wertorientierung, Aktualitätsprinzip, Sachgerechtigkeit.",
+    "fach": "sk",
+    "key": "Unterrichtsprinzipien Sk",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GPG GB §5.4"
+    ],
+    "title": "Unterrichtsprinzipien Sk",
+    "type": "prinzip"
+  },
+  "urteilsbildung-politische": {
+    "cross_refs": [],
+    "definition": "Eine der vier Detjen-Dimensionen; entwickelt sich durch Pro-Contra-Debatten, Dilemmadiskussion, Fallarbeit. Zielniveau: rationales Urteil mit Bezug auf Menschenwürde, Verantwortbarkeit, Freiheit, Finanzierbarkeit.",
+    "fach": "sk",
+    "key": "Urteilsbildung, politische",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "Detjen et al. 2012",
+      "GPG GB §5.5 Phase 4"
+    ],
+    "title": "Urteilsbildung, politische",
+    "type": "prinzip"
+  },
+  "variabilitat": {
+    "cross_refs": [],
+    "definition": "Variation der Ausgangssituation, gesuchten Größen, des Unwesentlichen (Größen ohne Einfluss). Erzeugt bewegliches Denken.",
+    "fach": "mathe",
+    "key": "Variabilität",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "B1",
+      "Weigand §7"
+    ],
+    "title": "Variabilität (Operationsmerkmal)",
+    "type": "prinzip"
+  },
+  "verbalisierung": {
+    "cross_refs": [],
+    "definition": "Sprachliche Beschreibung der eigenen Handlung — Brücke zwischen EIS-Stufen / Aebli-Stufen. „Beschreibe, was du machst.\" Voraussetzung für Abstraktion.",
+    "fach": "mathe",
+    "key": "Verbalisierung",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GB §1.5",
+      "B1",
+      "Weigand §7"
+    ],
+    "title": "Verbalisierung",
+    "type": "prinzip"
+  },
+  "verinnerlichung": {
+    "cross_refs": [],
+    "definition": "Vom Handeln am Konkreten zum Denken in Operationen — über drei Stufen (konkret / figural / symbolisch). Zentrale Idee des operativen Prinzips.",
+    "fach": "mathe",
+    "key": "Verinnerlichung",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "Weigand §7 S. 8–9"
+    ],
+    "title": "Verinnerlichung (Aebli)",
+    "type": "prinzip"
+  },
+  "vernetztes-denken": {
+    "cross_refs": [],
+    "definition": "LP+-Ziel. Kompetenzstrukturmodell + Gegenstandsbereiche durchziehen den Lehrplan spiralförmig und werden miteinander verknüpft — themengebietsübergreifendes Denken.",
+    "fach": "mathe",
+    "key": "Vernetztes Denken",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "Fachprofil M §2.3",
+      "GB §1.5"
+    ],
+    "title": "Vernetztes Denken",
+    "type": "prinzip"
+  },
+  "webquest": {
+    "cross_refs": [],
+    "definition": "Internet-basierte Aufgabenstellung mit Problemorientierung; Mikromethode der Sk. Fokus: nicht Vermittlung von Internetkompetenz, sondern problem-/handlungsorientiertes Lernen mit digitalen Materialien.",
+    "fach": "sk",
+    "key": "WebQuest",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GPG B4 §2.1.3"
+    ],
+    "title": "WebQuest",
+    "type": "prinzip"
+  },
+  "weigand-hans-georg": {
+    "cross_refs": [],
+    "definition": "Mathematikdidaktiker Universität Würzburg (lokal!). Standardwerk „Didaktische Prinzipien\" — die 8-Prinzipien-Liste, die in der Examen-Vorbereitung als Klassiker gilt.",
+    "fach": "mathe",
+    "key": "Weigand, Hans-Georg",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "Weigand-PDF"
+    ],
+    "title": "Weigand, Hans-Georg",
+    "type": "prinzip"
+  },
+  "werterziehung": {
+    "cross_refs": [],
+    "definition": "Vermittlung gemeinschaftstragender Werte; in der Sk historisch von Inhaltsorientierung zu Handlungsorientierung verschoben. Konzept-Stufen: Dilemmata → Just-Community → Schule als Polis.",
+    "fach": "sk",
+    "key": "Werterziehung",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "GPG B3 §1.2"
+    ],
+    "title": "Werterziehung",
+    "type": "prinzip"
+  },
+  "wittmann-erich-christian": {
+    "cross_refs": [
+      "aktiv-entdeckenden-lernens",
+      "produktives-uben"
+    ],
+    "definition": "Mathematikdidaktiker. Vater des **aktiv-entdeckenden Lernens** + **produktives Üben** (mit Müller). „Handbuch produktiver Rechenübungen\" (1990). Operationsmerkmale-Lehre.",
+    "fach": "mathe",
+    "key": "Wittmann, Erich Christian",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "Weigand §5 + §7",
+      "B1"
+    ],
+    "title": "Wittmann, Erich Christian",
+    "type": "prinzip"
+  },
+  "zahlen-und-operationen": {
+    "cross_refs": [
+      "prozent-zinsrechnen"
+    ],
+    "definition": "Erster der 5 Gegenstandsbereiche. Zahldarstellungen, Rechenoperationen, **Prozent-/Zinsrechnen**, Potenzen. Pauls Hauptpraxis-Anker in M7.",
+    "fach": "mathe",
+    "key": "Zahlen und Operationen",
+    "pflichtanker_level": 1,
+    "quellen": [
+      "Fachprofil M §2.3",
+      "B3"
+    ],
+    "title": "Zahlen und Operationen (Gegenstandsbereich B3)",
+    "type": "prinzip"
+  },
+  "zielkategorie-politische-mundigkeit-mundigkeit-politische": {
+    "cross_refs": [],
+    "definition": "Synonym; Detjens Zielbegriff politischer Bildung.",
+    "fach": "sk",
+    "key": "Zielkategorie politische Mündigkeit → Mündigkeit, politische",
+    "pflichtanker_level": 0,
+    "quellen": [
+      "Detjen 2007"
+    ],
+    "title": "Zielkategorie politische Mündigkeit → Mündigkeit, politische",
+    "type": "prinzip"
+  }
+}

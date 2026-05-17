@@ -6,40 +6,171 @@
 <title>Fachdidaktik — Staatsexamen MS Bayern | weitergehts.online</title>
 <link rel="stylesheet" href="../../assets/css/base.css">
 <style>
-li[data-status="planned"]{opacity:0.5;}
-li[data-status="planned"]::after{content:" — in Vorbereitung";color:#94a3b8;font-size:0.85em;font-weight:400;}
-.crumb{font-size:0.85em;color:#475569;margin-bottom:8px;}
-.crumb a{color:#c2410c;text-decoration:none;}
-.crumb a:hover{text-decoration:underline;}
-.theme-list{list-style:none;padding:0;}
-.theme-list li{padding:10px 14px;margin-bottom:6px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:6px;}
-.theme-list li:has(a){background:#ffffff;border-color:#c2410c;}
-.theme-list li a{color:#9a3412;font-weight:600;text-decoration:none;}
-.theme-list li a:hover{text-decoration:underline;}
-.theme-num{display:inline-block;width:42px;color:#94a3b8;font-weight:700;font-size:0.9em;}
+.crumb { margin-bottom: 24px; }
+.crumb a { color: inherit; }
+.hero { padding-bottom: 28px; border-bottom: 1px solid var(--hairline); margin-bottom: 32px; }
+.hero h1 { font-size: 28px; font-weight: 600; margin-bottom: 12px; }
+.hero p.lead { font-family: var(--lr-font-serif); font-style: italic; color: var(--muted); font-size: 16px; }
+.section-head { display: flex; align-items: baseline; gap: 14px; margin: 24px 0 14px; }
+.section-head .line { flex: 1; height: 1px; background: var(--hairline); }
+.fach-table td.titel { font-weight: 600; }
+.fach-table td .sub { font-family: var(--lr-font-mono); font-size: 11px; letter-spacing: 0.4px; color: var(--muted); display: block; margin-top: 2px; }
+.fach-table tr.is-planned { opacity: 0.55; }
+.note { font-family: var(--lr-font-serif); font-style: italic; color: var(--muted); font-size: 13px; margin-top: 24px; }
 </style>
 </head>
-<body>
-<main>
-  <div class="crumb"><a href="../../">Startseite</a> › <a href="../">Staatsexamen</a> › Fachdidaktik</div>
-  <h1>Fachdidaktik — Staatsexamen MS Bayern</h1>
-  <p>Vorbereitung auf die mündlichen Prüfungen <strong>Fachdidaktik</strong> (D) und <strong>Unterrichtsfach</strong> (N) — 2. Staatsexamen Lehramt Mittelschule Bayern.</p>
+<body data-lernraum data-fach="mathe">
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+<main id="main-content">
 
-  <h2>Fächer</h2>
-  <ul class="theme-list">
-    <li><span class="theme-num">N18</span> <a href="n18-sozialkunde/">Sozialkunde — Unterrichtsfach + Fachdidaktik</a> <span style="color:#475569;font-size:0.85em;font-weight:400;">— Termin 26.–28.05.2026</span></li>
-    <li data-status="planned"><span class="theme-num">D</span> Fachdidaktik GPG (Geschichte/Politik/Geographie)</li>
-    <li data-status="planned"><span class="theme-num">D</span> Fachdidaktik WiB (Wirtschaft und Beruf)</li>
-    <li><span class="theme-num">D</span> <a href="d-mathematik/">Fachdidaktik Mathematik</a> <span style="color:#475569;font-size:0.85em;font-weight:400;">— Termin 26.–28.05.2026 · 31-Karten-Lerndeck live</span></li>
-  </ul>
+  <nav aria-label="Brotkrumen" class="mono-cap crumb">
+    <a href="../../">STARTSEITE</a>
+    <span aria-hidden="true">›</span>
+    <a href="../">STAATSEXAMEN</a>
+    <span aria-hidden="true">›</span>
+    <span>FACHDIDAKTIK</span>
+  </nav>
 
-  <h2>Querschnitts-Themen</h2>
-  <ul class="theme-list">
-    <li data-status="planned"><span class="theme-num">★</span> Handlungsorientierung — fächerübergreifendes didaktisches Prinzip</li>
-    <li data-status="planned"><span class="theme-num">★</span> Kompetenzorientierung &amp; LehrplanPLUS-Aufbau</li>
-    <li data-status="planned"><span class="theme-num">★</span> Differenzierung &amp; Heterogenität in der Mittelschule</li>
-    <li data-status="planned"><span class="theme-num">★</span> Leistungserhebung kompetenzorientiert</li>
-  </ul>
+  <header class="hero">
+    <span class="mono-cap">Prüfungsteil II · D-Fachdidaktik + N18</span>
+    <h1>Fachdidaktik. Vier Fächer, drei live.</h1>
+    <p class="lead">
+      Vorbereitung auf die mündlichen Prüfungen Fachdidaktik (D) und Unterrichtsfach (N).
+      Pro Fach ein eigener L3-Hub mit Lernscript, KE-Matrix und Lerndeck.
+    </p>
+  </header>
+
+  <div class="section-head">
+    <h2 id="faecher-heading">Fächer</h2>
+    <span class="line" aria-hidden="true"></span>
+    <span class="mono-cap">4 Fächer · 3 live</span>
+  </div>
+
+  <table class="lr-table fach-table" aria-labelledby="faecher-heading">
+    <colgroup>
+      <col class="col-nr"><col class="col-status"><col><col class="col-tags"><col class="col-stand"><col class="col-arrow">
+    </colgroup>
+    <thead>
+      <tr><th>Nr</th><th></th><th>Fach</th><th>Schwerpunkte</th><th>Lernstand</th><th></th></tr>
+    </thead>
+    <tbody>
+      <tr data-status-id="fachdidaktik.n18-sk">
+        <td class="col-nr">N18</td>
+        <td><span class="status-dot" data-status="work" aria-label="in Arbeit"></span></td>
+        <td>
+          <span class="fach-marker" data-fach="sk" aria-hidden="true"></span>
+          <a href="n18-sozialkunde/" class="titel">Sozialkunde</a>
+          <span class="sub">Unterrichtsfach + Fachdidaktik · 26.–28.05.2026</span>
+        </td>
+        <td class="tag-cell">
+          <button type="button" class="anchor-tag" data-type="prinzip" data-ref="beutelsbacher-konsens">Beutelsbach</button>
+          <button type="button" class="anchor-tag" data-type="prinzip" data-ref="handlungsorientierung">Handlungsorientierung</button>
+          <button type="button" class="anchor-tag" data-type="lp" data-ref="gpg7-lb4">GPG7 LB4</button>
+        </td>
+        <td><span class="status-label">in Arbeit</span></td>
+        <td class="col-arrow">→</td>
+      </tr>
+      <tr data-status-id="fachdidaktik.d-mathe">
+        <td class="col-nr">D</td>
+        <td><span class="status-dot" data-status="work" aria-label="in Arbeit"></span></td>
+        <td>
+          <span class="fach-marker" data-fach="mathe" aria-hidden="true"></span>
+          <a href="../../lerndecks/ke-matrix-mathe/" class="titel">Mathematik</a>
+          <span class="sub">Fachdidaktik · 8 didaktische Prinzipien · 31 KE-Cluster</span>
+        </td>
+        <td class="tag-cell">
+          <button type="button" class="anchor-tag" data-type="prinzip" data-ref="eis-prinzip">EIS-Prinzip</button>
+          <button type="button" class="anchor-tag" data-type="prinzip" data-ref="operatives-prinzip">Operatives Prinzip</button>
+          <button type="button" class="anchor-tag" data-type="lp" data-ref="m7r-lb1">M7R LB1</button>
+        </td>
+        <td><span class="status-label">in Arbeit</span></td>
+        <td class="col-arrow">→</td>
+      </tr>
+      <tr data-status-id="fachdidaktik.d-gpg">
+        <td class="col-nr">D</td>
+        <td><span class="status-dot" data-status="open" aria-label="offen"></span></td>
+        <td>
+          <span class="fach-marker" data-fach="gpg" aria-hidden="true"></span>
+          <span class="titel">GPG (Geschichte / Politik / Geographie)</span>
+          <span class="sub">L3-Hub in Vorbereitung · Lerndeck planned</span>
+        </td>
+        <td class="tag-cell">
+          <button type="button" class="anchor-tag" data-type="prinzip" data-ref="fallanalyse-fallmethode-kasuistisches-verfahren">Fallanalyse</button>
+        </td>
+        <td><span class="status-label">offen</span></td>
+        <td class="col-arrow">→</td>
+      </tr>
+      <tr class="is-planned" data-status-id="fachdidaktik.d-wib">
+        <td class="col-nr">D</td>
+        <td><span class="status-dot" data-status="planned" aria-label="in Vorbereitung"></span></td>
+        <td>
+          <span class="fach-marker" data-fach="wib" aria-hidden="true"></span>
+          <span class="titel">WiB (Wirtschaft und Beruf)</span>
+          <span class="sub">in Vorbereitung</span>
+        </td>
+        <td class="tag-cell"></td>
+        <td><span class="status-label">in Vorbereitung</span></td>
+        <td class="col-arrow"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="section-head">
+    <h2 id="qs-heading">Querschnitts-Prinzipien</h2>
+    <span class="line" aria-hidden="true"></span>
+    <span class="mono-cap">Fächerübergreifend</span>
+  </div>
+  <p class="note">Querschnitts-Themen verweisen auf das jeweilige Hauptfach. Keine Doppellistung.</p>
+
+  <table class="lr-table fach-table" aria-labelledby="qs-heading">
+    <colgroup>
+      <col class="col-nr"><col class="col-status"><col><col class="col-tags"><col class="col-stand"><col class="col-arrow">
+    </colgroup>
+    <tbody>
+      <tr>
+        <td class="col-nr">★</td>
+        <td><span class="status-dot" data-status="open"></span></td>
+        <td><span class="titel">Kompetenzstrukturmodell</span><span class="sub">→ Mathe + Sk + GPG · identische Struktur, getrennte Lehrpläne</span></td>
+        <td class="tag-cell">
+          <button type="button" class="anchor-tag" data-type="prinzip" data-ref="kompetenzstrukturmodell-m">Kompetenzstrukturmodell M</button>
+          <button type="button" class="anchor-tag" data-type="prinzip" data-ref="kompetenzstrukturmodell-gpg">Kompetenzstrukturmodell GPG</button>
+        </td>
+        <td><span class="status-label">offen</span></td>
+        <td class="col-arrow">→</td>
+      </tr>
+      <tr>
+        <td class="col-nr">★</td>
+        <td><span class="status-dot" data-status="open"></span></td>
+        <td><span class="titel">Handlungsorientierung</span><span class="sub">→ fächerübergreifend</span></td>
+        <td class="tag-cell">
+          <button type="button" class="anchor-tag" data-type="prinzip" data-ref="handlungsorientierung">Handlungsorientierung</button>
+        </td>
+        <td><span class="status-label">offen</span></td>
+        <td class="col-arrow">→</td>
+      </tr>
+      <tr>
+        <td class="col-nr">★</td>
+        <td><span class="status-dot" data-status="open"></span></td>
+        <td><span class="titel">Differenzierung / Inklusion</span><span class="sub">→ MS-Pflichtthema</span></td>
+        <td class="tag-cell">
+          <button type="button" class="anchor-tag" data-type="prinzip" data-ref="differenzierung">Differenzierung</button>
+        </td>
+        <td><span class="status-label">offen</span></td>
+        <td class="col-arrow">→</td>
+      </tr>
+      <tr>
+        <td class="col-nr">★</td>
+        <td><span class="status-dot" data-status="open"></span></td>
+        <td><span class="titel">Sprachsensibler Unterricht</span><span class="sub">→ DaZ-Anker · alle Fächer</span></td>
+        <td class="tag-cell">
+          <button type="button" class="anchor-tag" data-type="prinzip" data-ref="sprachsensibler-mathematikunterricht">Sprachsensibler MU</button>
+        </td>
+        <td><span class="status-label">offen</span></td>
+        <td class="col-arrow">→</td>
+      </tr>
+    </tbody>
+  </table>
+
 </main>
 <script src="../../assets/js/core.js"></script>
 </body>
