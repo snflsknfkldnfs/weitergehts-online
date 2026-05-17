@@ -1,0 +1,1852 @@
+/* ==========================================================================
+   lernraum-override.css — Lernraum-Redesign v1.1 fuer mkdocs-Skripte
+
+   Geladen NACH extra.css. Ueberschreibt die Material-Theme + Iter-1..7-
+   Orange-Tokens auf das wg.lernraum-Token-System (Spec §2 + 06-spec-
+   erweiterung.md). extra.css bleibt unangetastet — Polish-Patterns wie
+   Falle-Cards, Reading-Progress-Bar, Cheat-Cards bleiben funktional.
+
+   Aktivierung pro Page automatisch via Material-Body. Akzent ist Olive
+   (Schulrecht-default). Kein <body data-lernraum> hier — wird per JS
+   in extra.js gesetzt, damit die assets/css/base.css-Patterns (falls
+   irgendwann geladen) auch greifen.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. wg.lernraum-Tokens (Spec §2) — dupliziert fuer mkdocs-Bundle-Isolation
+   -------------------------------------------------------------------------- */
+
+:root {
+  --lr-bg:           #fafaf6;
+  --lr-paper:        #ffffff;
+  --lr-ink:          #0c0c0a;
+  --lr-muted:        #6b685f;
+  --lr-mute2:        #9b988e;
+  --lr-rule:         rgba(12, 12, 10, 0.14);
+  --lr-hairline:     rgba(12, 12, 10, 0.34);
+  --lr-accent:       #4a5d3b;   /* Olive — Schulrecht-default */
+  --lr-accent-soft:  rgba(74, 93, 59, 0.10);
+
+  --lr-status-work:   #c89933;
+  --lr-status-repeat: #4a5d3b;
+  --lr-status-sit:    #2d4a1f;
+
+  --lr-font-sans:  "Inter Tight", "Inter", system-ui, -apple-system, sans-serif;
+  --lr-font-mono:  "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --lr-font-serif: "EB Garamond", Georgia, serif;
+
+  --lr-cap-size:  10.5px;
+  --lr-cap-track: 1.5px;
+}
+
+/* --------------------------------------------------------------------------
+   2. Material-Theme-Tokens ueberschreiben (Light)
+   -------------------------------------------------------------------------- */
+
+:root,
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color:             var(--lr-accent);
+  --md-primary-fg-color--light:      var(--lr-accent-soft);
+  --md-primary-fg-color--dark:       #2d4a1f;
+  --md-primary-bg-color:             var(--lr-paper);
+  --md-primary-bg-color--light:      var(--lr-bg);
+
+  --md-accent-fg-color:              var(--lr-accent);
+  --md-accent-fg-color--transparent: var(--lr-accent-soft);
+  --md-accent-bg-color:              var(--lr-paper);
+
+  --md-default-fg-color:             var(--lr-ink);
+  --md-default-fg-color--light:      var(--lr-muted);
+  --md-default-fg-color--lighter:    var(--lr-mute2);
+  --md-default-fg-color--lightest:   rgba(12, 12, 10, 0.07);
+
+  --md-default-bg-color:             var(--lr-bg);
+
+  --md-typeset-color:                var(--lr-ink);   /* KONTRAST-FIX */
+  --md-typeset-a-color:              var(--lr-accent);
+
+  /* Code-Block-Tokens */
+  --md-code-bg-color:                var(--lr-accent-soft);
+  --md-code-fg-color:                var(--lr-ink);
+}
+
+/* Dark-Mode: Olive auf dunklem Grund — vollstaendige Token-Map */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:             #7a9560;
+  --md-primary-fg-color--light:      rgba(122, 149, 96, 0.20);
+  --md-primary-fg-color--dark:       #4a5d3b;
+  --md-primary-bg-color:             #1a1a18;
+  --md-primary-bg-color--light:      #232220;
+
+  --md-accent-fg-color:              #a8c089;
+  --md-accent-fg-color--transparent: rgba(168, 192, 137, 0.15);
+
+  --md-default-fg-color:             #e5e5e0;
+  --md-default-fg-color--light:      #b8b6ad;
+  --md-default-fg-color--lighter:    #87857d;
+  --md-default-fg-color--lightest:   rgba(229, 229, 224, 0.07);
+
+  --md-default-bg-color:             #161614;
+  --md-default-bg-color--light:      #1f1e1c;
+
+  --md-code-bg-color:                #232220;
+  --md-code-fg-color:                #e5e5e0;
+  --md-typeset-a-color:              #a8c089;
+  --md-typeset-color:                #e5e5e0;
+
+  /* Re-mappen der lr-Tokens fuer Dark */
+  --lr-bg:           #161614;
+  --lr-paper:        #1f1e1c;
+  --lr-ink:          #e5e5e0;
+  --lr-muted:        #b8b6ad;
+  --lr-mute2:        #87857d;
+  --lr-rule:         rgba(229, 229, 224, 0.16);
+  --lr-hairline:     rgba(229, 229, 224, 0.38);
+  --lr-accent:       #a8c089;
+  --lr-accent-soft:  rgba(168, 192, 137, 0.12);
+}
+
+/* --------------------------------------------------------------------------
+   3. Lese-Typografie: Inter Tight statt Material-Default
+   -------------------------------------------------------------------------- */
+
+body,
+.md-typeset {
+  font-family: var(--lr-font-sans);
+}
+
+/* Globaler Body + Hauptcontainer-Background (Spec §2 --bg) */
+body,
+.md-main,
+.md-container,
+.md-content {
+  background-color: var(--md-default-bg-color) !important;
+}
+
+.md-typeset {
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: var(--md-typeset-color) !important;   /* KONTRAST-FIX */
+}
+
+/* Sicherheitsnetz: Text-Knoten ohne typeset-Wrapper */
+.md-typeset p,
+.md-typeset li,
+.md-typeset td,
+.md-typeset dd {
+  color: var(--md-typeset-color);
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+  font-family: var(--lr-font-sans);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--lr-ink);
+}
+
+/* --------------------------------------------------------------------------
+   4. Headings — Spec §6: keine Gradient-Boxen, nur 1px-Linien + Mono-Cap-Marker
+   -------------------------------------------------------------------------- */
+
+.md-typeset h1 {
+  font-size: 1.85em;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.4em;
+  border-bottom: 1px solid var(--lr-hairline);
+}
+
+.md-typeset h2 {
+  font-size: 1.35em;
+  margin-top: 2.4em;
+  margin-bottom: 0.6em;
+  padding: 0;                       /* Reset extra.css 0.4em 0 0.4em 0.8em */
+  background: none;                 /* Reset extra.css gradient */
+  border-left: none;                /* Reset extra.css 5px solid */
+  border-bottom: 1px solid var(--lr-hairline);
+  padding-bottom: 0.3em;
+  color: var(--lr-ink);
+}
+
+.md-typeset h3 {
+  font-size: 1.12em;
+  margin-top: 1.8em;
+  margin-bottom: 0.45em;
+  padding: 0;
+  background: none;
+  border-left: none;
+  border-bottom: none;
+  color: var(--lr-ink);
+}
+
+.md-typeset h4 {
+  font-size: 0.98em;
+  margin-top: 1.4em;
+  margin-bottom: 0.3em;
+  color: var(--lr-muted);
+  border-bottom: none;
+  font-style: normal;               /* Reset extra.css italic */
+  font-family: var(--lr-font-mono);
+  font-size: var(--lr-cap-size);
+  letter-spacing: var(--lr-cap-track);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Choreographie-Stepper-Headings (extra.css Z. 116) — auf Mono-Cap reduzieren */
+.md-typeset h3[id^="schritt-"] {
+  background: none;
+  padding: 0;
+  border-left: none;
+  margin-top: 2em;
+}
+.md-typeset h3[id^="schritt-"]::before {
+  content: "Schritt ";
+  font-family: var(--lr-font-mono);
+  font-size: var(--lr-cap-size);
+  letter-spacing: var(--lr-cap-track);
+  text-transform: uppercase;
+  color: var(--lr-muted);
+  margin-right: 8px;
+}
+
+/* Dark-mode reset */
+[data-md-color-scheme="slate"] .md-typeset h2,
+[data-md-color-scheme="slate"] .md-typeset h3 {
+  background: none;
+  border-bottom-color: var(--lr-hairline);
+  color: #e5e5e0;
+}
+
+/* --------------------------------------------------------------------------
+   5. Inline-Code + Norm-Links + Anchor-Tags
+   -------------------------------------------------------------------------- */
+
+.md-typeset code {
+  background: var(--lr-accent-soft);
+  color: var(--lr-ink);
+  border: 1px solid var(--lr-rule);
+  padding: 0.1em 0.4em;
+  border-radius: 0;                 /* Spec §2: keine Radien */
+  font-size: 0.88em;
+  font-family: var(--lr-font-mono);
+  font-weight: 500;
+}
+
+.md-typeset a.norm-link {
+  color: var(--lr-ink);
+  border-bottom: 1px dotted var(--lr-accent);
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+.md-typeset a.norm-link:hover {
+  color: var(--lr-accent);
+  background: var(--lr-accent-soft);
+}
+
+/* --------------------------------------------------------------------------
+   6. Tabellen — Spec §2 eckig, 1px-Linien, keine Zebra
+   -------------------------------------------------------------------------- */
+
+.md-typeset table:not([class]) {
+  border: none;
+  border-top: 1px solid var(--lr-hairline);
+  border-bottom: 1px solid var(--lr-hairline);
+  font-size: 0.92em;
+}
+
+.md-typeset table:not([class]) th {
+  background: transparent;
+  font-family: var(--lr-font-mono);
+  font-size: var(--lr-cap-size);
+  letter-spacing: var(--lr-cap-track);
+  text-transform: uppercase;
+  color: var(--lr-muted);
+  font-weight: 500;
+  border-bottom: 1px solid var(--lr-hairline);
+}
+
+.md-typeset table:not([class]) td {
+  border-bottom: 1px solid var(--lr-rule);
+  border-top: none;
+}
+
+.md-typeset table:not([class]) tr:nth-child(even) {
+  background: transparent;          /* Zebra raus */
+}
+
+.md-typeset table:not([class]) tr:hover {
+  background: var(--lr-accent-soft);
+}
+
+/* --------------------------------------------------------------------------
+   7. Admonitions (Hinweise / Tipps) — eckig, ohne Schatten
+   -------------------------------------------------------------------------- */
+
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px solid var(--lr-rule);
+  border-left: 3px solid var(--lr-accent);
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  background: var(--lr-accent-soft);
+  border-bottom: 1px solid var(--lr-rule);
+  border-radius: 0;
+  font-family: var(--lr-font-sans);
+  font-weight: 600;
+  color: var(--lr-ink);
+}
+
+/* --------------------------------------------------------------------------
+   8. Material-Header / -Sidebar / -Footer
+   -------------------------------------------------------------------------- */
+
+.md-header,
+.md-tabs {
+  background: var(--lr-ink);
+  color: var(--lr-paper);
+  box-shadow: none;
+}
+.md-header__title { font-family: var(--lr-font-sans); font-weight: 600; }
+.md-tabs__link    { font-family: var(--lr-font-mono); font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase; }
+
+.md-footer { background: var(--lr-ink); }
+.md-footer-meta { background: #000; }
+
+/* Sidebar */
+.md-nav__title { font-family: var(--lr-font-mono); font-size: var(--lr-cap-size); letter-spacing: var(--lr-cap-track); text-transform: uppercase; color: var(--lr-muted); }
+.md-nav__link  { color: var(--lr-ink); }
+.md-nav__link--active,
+.md-nav__item--active > .md-nav__link {
+  color: var(--lr-accent);
+  font-weight: 600;
+}
+
+/* TOC permalink ¶ dezenter */
+.md-typeset .headerlink {
+  color: var(--lr-mute2);
+}
+.md-typeset .headerlink:hover {
+  color: var(--lr-accent);
+}
+
+/* --------------------------------------------------------------------------
+   9. Mermaid-Diagramme — monochrom + 1px-Linien (Spec §2)
+   Overrides die classDef-fills aus den .md-Files; Browser-render wendet
+   sie auf die generierten SVG-Knoten an. Mermaid generiert pro classDef
+   einen `.classDef-XXX` Selector — wir uebersteuern.
+   -------------------------------------------------------------------------- */
+
+/* Universal: alle Mermaid-Knoten eckig + ohne Schatten */
+.mermaid .node rect,
+.mermaid .node polygon,
+.mermaid .node circle {
+  rx: 0;
+  ry: 0;
+  filter: none;
+}
+
+/* Ebenen-Klassen mit semantischer Akzentlinie LINKS, sonst monochrom */
+.mermaid .node.bv > rect,
+.mermaid .node.bv > polygon,
+.mermaid g.node.bv rect {
+  fill: var(--lr-paper);
+  stroke: var(--lr-ink);
+  stroke-width: 1.5;
+}
+.mermaid .node.bay > rect,
+.mermaid .node.bay > polygon,
+.mermaid g.node.bay rect {
+  fill: var(--lr-paper);
+  stroke: var(--lr-accent);
+  stroke-width: 1.5;
+}
+.mermaid .node.vo > rect,
+.mermaid .node.vo > polygon,
+.mermaid g.node.vo rect {
+  fill: var(--lr-bg);
+  stroke: var(--lr-muted);
+  stroke-width: 1;
+}
+.mermaid .node.km > rect,
+.mermaid .node.km > polygon,
+.mermaid g.node.km rect,
+.mermaid .node.kmbek > rect,
+.mermaid g.node.kmbek rect {
+  fill: var(--lr-bg);
+  stroke: var(--lr-mute2);
+  stroke-width: 1;
+  stroke-dasharray: 4 2;
+}
+.mermaid .node.bund > rect,
+.mermaid .node.bund > polygon,
+.mermaid g.node.bund rect {
+  fill: var(--lr-paper);
+  stroke: var(--lr-ink);
+  stroke-width: 1;
+  stroke-dasharray: 2 2;
+}
+
+.mermaid .node text,
+.mermaid .node .nodeLabel { fill: var(--lr-ink) !important; color: var(--lr-ink) !important; font-family: var(--lr-font-sans) !important; }
+.mermaid .edgePath .path { stroke: var(--lr-hairline); }
+.mermaid .edgeLabel       { background: var(--lr-bg); color: var(--lr-muted); font-family: var(--lr-font-mono); font-size: 10.5px; }
+
+/* --------------------------------------------------------------------------
+   9b. SLIDEOVER — wird per core.js dynamisch in <body> injiziert.
+   base.css ist auf mkdocs-Pages NICHT geladen; daher Styles hier dupliziert.
+   -------------------------------------------------------------------------- */
+
+.slideover-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 12, 10, 0.42);
+  z-index: 9000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+.slideover-backdrop[aria-hidden="false"] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.slideover {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 100%);
+  width: min(920px, calc(100% - 32px));
+  max-height: 80vh;
+  overflow-y: auto;
+  background: var(--md-default-bg-color);
+  color: var(--md-typeset-color);
+  border: 1px solid var(--lr-hairline);
+  border-bottom: none;
+  padding: 28px 56px 40px;
+  z-index: 9001;
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: var(--lr-font-sans);
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.18);
+}
+.slideover[aria-hidden="false"] {
+  transform: translate(-50%, 0);
+}
+.slideover[aria-hidden="true"] {
+  pointer-events: none;
+}
+
+.slideover-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid var(--lr-rule);
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+}
+.slideover-head > div { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+
+.slideover-title {
+  font-family: var(--lr-font-mono);
+  font-size: 13px;
+  letter-spacing: 0.6px;
+  color: var(--md-typeset-color);
+  font-weight: 600;
+}
+
+.slideover-badge {
+  font-family: var(--lr-font-mono);
+  font-size: 10px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--md-default-fg-color--light);
+  padding: 3px 8px;
+  border: 1px solid var(--lr-rule);
+  background: transparent;
+}
+
+.slideover-close {
+  font-family: var(--lr-font-mono);
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--md-default-fg-color--light);
+  background: transparent;
+  border: 1px solid var(--lr-rule);
+  cursor: pointer;
+  padding: 6px 12px;
+  min-height: auto;
+  min-width: auto;
+}
+.slideover-close:hover,
+.slideover-close:focus-visible {
+  color: var(--md-accent-fg-color);
+  border-color: var(--md-accent-fg-color);
+}
+
+.slideover-body {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--md-typeset-color);
+}
+.slideover-body p { margin-bottom: 12px; }
+.slideover-body strong { color: var(--md-typeset-color); font-weight: 600; }
+
+.slideover-sources {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--lr-rule);
+  font-family: var(--lr-font-mono);
+  font-size: 11.5px;
+  color: var(--md-default-fg-color--light);
+}
+
+/* Body-Scroll sperren wenn Slideover offen */
+body.no-scroll { overflow: hidden; }
+
+@media (prefers-reduced-motion: reduce) {
+  .slideover,
+  .slideover-backdrop { transition: none; }
+}
+
+@media (max-width: 480px) {
+  .slideover {
+    width: 100%;
+    padding: 24px 20px 32px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   10. Reading-Progress-Bar (extra.js Z. 5) auf Akzent-Token
+   -------------------------------------------------------------------------- */
+
+.reading-progress {
+  background: var(--lr-accent) !important;
+}
+
+/* --------------------------------------------------------------------------
+   11. Print-Stylesheet-Adjustments (Spec §11.2 v3.4-Erhalt)
+   -------------------------------------------------------------------------- */
+
+@media print {
+  .md-typeset h1,
+  .md-typeset h2,
+  .md-typeset h3 {
+    background: none !important;
+    border-left: none !important;
+    border-bottom: 1px solid #888;
+    color: #000 !important;
+  }
+  .md-typeset a.norm-link {
+    border-bottom: 1px solid #888;
+    color: #000;
+  }
+  .md-header, .md-tabs, .md-footer, .md-sidebar, .reading-progress { display: none !important; }
+}
+
+
+/* ==========================================================================
+   12. Skript-Redesign V2 — Card-Architecture (single-column)
+       Reset nach Werkbank-Versuch + Editorial-Versuch:
+       Sections sind Cards. Page-bg = cream, Card-bg = paper.
+       Klare visuelle Hierarchie. Wenig UI-Rauschen.
+
+       12.0 Page-Frame: cream-bg, content-width, header-cleanup
+       12.1 .lr-block — Section-Card (Kürze, Karto, Stoff, Pflicht, Fallen, ...)
+       12.2 Section-Headers (H1 in Card)
+       12.3 .lr-subblock — Nested A.N-Cards in Teil A
+       12.4 "In aller Kürze" — Special Lead-Card
+       12.5 Norm-Kartografie — Mermaid hidden, Tabelle clean
+       12.6 Reveal-Karten (Top-8) — bleiben Card-Pattern aus §12.5 davor
+       12.7 Falle-Atlas — Akkordeon-Liste in Card
+       12.8 Status-Dot
+       12.9 Mermaid kompakt
+       12.10 Tables generic
+       12.11 Norm-Tag subtle
+       12.12 Hide: permalinks, redundant UI
+       12.13 Print
+   ========================================================================== */
+
+/* 12.0  Page-Frame ------------------------------------------------------- */
+body[data-lernraum] {
+  background: var(--lr-bg) !important;
+}
+body[data-lernraum] .md-main,
+body[data-lernraum] .md-container,
+body[data-lernraum] .md-content {
+  background: var(--lr-bg) !important;
+}
+body[data-lernraum] .md-content {
+  max-width: 960px;
+  margin: 0 auto;
+}
+body[data-lernraum] .md-content__inner {
+  padding: 28px 16px 80px;
+}
+@media (min-width: 960px) {
+  body[data-lernraum] .md-content__inner {
+    padding: 36px 24px 96px;
+  }
+}
+
+/* Page-Title (H1 vor erstem .lr-block) */
+body[data-lernraum] .md-typeset > h1:first-child,
+body[data-lernraum] .md-typeset > h1.no-card {
+  font-family: var(--lr-font-sans);
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.6px;
+  line-height: 1.2;
+  margin: 4px 0 4px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--lr-ink);
+}
+body[data-lernraum] .md-typeset > h1:first-child + p {
+  font-family: var(--lr-font-mono);
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--lr-muted);
+  margin: 0 0 28px;
+}
+
+/* 12.1  .lr-block — Section-Card --------------------------------------- */
+body[data-lernraum] .lr-block {
+  background: var(--lr-paper);
+  border: 1px solid var(--lr-rule);
+  padding: 28px 32px 32px;
+  margin: 0 0 22px;
+  position: relative;
+}
+
+/* Kind-spezifischer Akzent oben (1px-Strich in Akzentfarbe) */
+body[data-lernraum] .lr-block::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  height: 2px;
+  background: var(--lr-accent);
+  opacity: 0.7;
+}
+body[data-lernraum] .lr-block--kurz::before  { background: var(--lr-accent); }
+body[data-lernraum] .lr-block--karto::before { background: var(--lr-muted);  opacity: 0.4; }
+body[data-lernraum] .lr-block--stoff::before { background: var(--lr-muted);  opacity: 0.3; }
+body[data-lernraum] .lr-block--pflicht::before { background: var(--lr-accent); }
+body[data-lernraum] .lr-block--fallen::before  { background: var(--lr-accent); }
+body[data-lernraum] .lr-block--faelle::before  { background: var(--lr-accent); opacity: 0.6; }
+body[data-lernraum] .lr-block--meta::before    { background: var(--lr-mute2); opacity: 0.3; }
+
+/* 12.2  Section-Headers im .lr-block (alle H2 nach Downgrade) ----------- */
+body[data-lernraum] .lr-block > h2.section-kind-kurz,
+body[data-lernraum] .lr-block > h2.section-kind-karto,
+body[data-lernraum] .lr-block > h2.section-kind-stoff,
+body[data-lernraum] .lr-block > h2.section-kind-pflicht,
+body[data-lernraum] .lr-block > h2.section-kind-fallen,
+body[data-lernraum] .lr-block > h2.section-kind-faelle,
+body[data-lernraum] .lr-block > h2.section-kind-meta {
+  font-family: var(--lr-font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--lr-accent);
+  margin: 0 0 18px;
+  padding: 0;
+  border: none;
+  background: none;
+  line-height: 1.3;
+}
+
+/* 12.3  .lr-subblock — Indented Sub-Block-Cards (A.1, A.2, ...) -------- */
+/* Tree-Indent-Look: left-border + padding-left visualisiert Nesting. */
+body[data-lernraum] .lr-subblock {
+  position: relative;
+  padding: 8px 0 4px 24px;
+  margin: 18px 0 0;
+  border-left: 1px solid var(--lr-rule);
+}
+body[data-lernraum] .lr-subblock:first-of-type {
+  margin-top: 20px;
+}
+body[data-lernraum] .lr-subblock + .lr-subblock {
+  margin-top: 28px;
+}
+body[data-lernraum] .lr-subblock[data-collapsed="true"] {
+  padding-bottom: 8px;
+}
+
+/* H3-Sub-Block-Header (nach Downgrade) mit Pille + Collapse-Toggle */
+body[data-lernraum] .lr-subblock > h3[data-status-key] {
+  font-family: var(--lr-font-sans);
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  line-height: 1.25;
+  margin: 0 0 14px -24px;     /* -24px für left-border-Bündigkeit */
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--lr-ink);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  cursor: pointer;
+  position: relative;
+}
+body[data-lernraum] .lr-subblock > h3[data-status-key]::before {
+  content: attr(data-block-ref);
+  font-family: var(--lr-font-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--lr-accent);
+  background: var(--lr-accent-soft);
+  padding: 5px 10px;
+  flex: 0 0 auto;
+}
+/* Chevron rechts auf Sub-Block-Header (Collapsible-Hint) */
+body[data-lernraum] .lr-subblock > h3[data-status-key]::after {
+  content: "▾";
+  margin-left: auto;
+  font-family: var(--lr-font-mono);
+  font-size: 13px;
+  color: var(--lr-mute2);
+  transition: transform .2s, color .12s;
+}
+body[data-lernraum] .lr-subblock[data-collapsed="true"] > h3[data-status-key]::after {
+  transform: rotate(-90deg);
+}
+body[data-lernraum] .lr-subblock > h3[data-status-key]:hover::after {
+  color: var(--lr-accent);
+}
+
+/* Collapsed state: Inhalt hidden, nur Header sichtbar */
+body[data-lernraum] .lr-subblock[data-collapsed="true"] > *:not(h3) {
+  display: none;
+}
+
+/* 12.4  In aller Kürze — Special Lead-Block ---------------------------- */
+body[data-lernraum] .lr-block--kurz > p {
+  font-family: var(--lr-font-serif);
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--lr-ink);
+  margin: 0 0 12px;
+  max-width: 740px;
+}
+body[data-lernraum] .lr-block--kurz > p:last-child {
+  margin-bottom: 0;
+}
+
+/* 12.5  Norm-Kartografie — Mermaid weg, Tabelle clean ------------------- */
+body[data-lernraum] .lr-block--karto > .mermaid {
+  display: none;
+}
+body[data-lernraum] .lr-block--karto > table {
+  border: none;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0;
+  background: none;
+}
+body[data-lernraum] .lr-block--karto > table thead {
+  background: none;
+}
+body[data-lernraum] .lr-block--karto > table th {
+  font-family: var(--lr-font-mono);
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--lr-mute2);
+  padding: 0 0 10px 0;
+  border-bottom: 1px solid var(--lr-rule);
+  text-align: left;
+  background: none;
+}
+body[data-lernraum] .lr-block--karto > table td {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--lr-rule);
+  font-size: 14px;
+  line-height: 1.55;
+  vertical-align: top;
+  background: none;
+}
+body[data-lernraum] .lr-block--karto > table tr:last-child td {
+  border-bottom: none;
+}
+body[data-lernraum] .lr-block--karto > table td:first-child {
+  font-family: var(--lr-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  color: var(--lr-accent);
+  width: 130px;
+  white-space: nowrap;
+}
+
+/* 12.6  Reveal-Karten (Top-8) ------------------------------------------ */
+body[data-lernraum] .md-typeset .reveal-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin: 6px 0 14px;
+  padding: 0;
+  list-style: none;
+}
+@media (min-width: 720px) {
+  body[data-lernraum] .md-typeset .reveal-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+body[data-lernraum] .md-typeset .reveal-card {
+  list-style: none;
+  border: 1px solid var(--lr-rule);
+  background: var(--lr-bg);
+  padding: 16px 20px 34px;
+  margin: 0;
+  cursor: pointer;
+  position: relative;
+  transition: background .12s, border-color .12s;
+}
+body[data-lernraum] .md-typeset .reveal-card:hover {
+  border-color: var(--lr-accent);
+  background: var(--lr-accent-soft);
+}
+body[data-lernraum] .md-typeset .reveal-card[data-reveal="open"] {
+  border-color: var(--lr-accent);
+  background: var(--lr-paper);
+}
+body[data-lernraum] .md-typeset .reveal-card .reveal-card__title {
+  font-family: var(--lr-font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.1px;
+  color: var(--lr-ink);
+  margin: 0 0 4px;
+  line-height: 1.35;
+}
+body[data-lernraum] .md-typeset .reveal-card .reveal-card__title strong {
+  font-weight: 600;
+}
+body[data-lernraum] .md-typeset .reveal-card > p:not(.reveal-card__title) {
+  font-size: 14px;
+  line-height: 1.55;
+  margin: 8px 0 0;
+}
+body[data-lernraum] .md-typeset .reveal-card[data-reveal="closed"] > *:not(:first-child) {
+  display: none;
+}
+body[data-lernraum] .md-typeset .reveal-card::after {
+  content: "tippen · lösung";
+  position: absolute;
+  bottom: 10px;
+  right: 14px;
+  font-family: var(--lr-font-mono);
+  font-size: 9.5px;
+  letter-spacing: 1px;
+  color: var(--lr-mute2);
+  text-transform: uppercase;
+  pointer-events: none;
+}
+body[data-lernraum] .md-typeset .reveal-card[data-reveal="open"]::after {
+  content: "tippen · zu";
+  color: var(--lr-accent);
+}
+
+/* Pflichtwissen-Footer (Direkt zur Karte im Lerndeck...) compact + subtle */
+body[data-lernraum] .lr-block--pflicht > p:has(> a[href*="lerndecks"]),
+body[data-lernraum] .lr-block--pflicht > p:last-child {
+  font-family: var(--lr-font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.5px;
+  color: var(--lr-mute2);
+  margin: 14px 0 0;
+  padding: 12px 0 0;
+  border-top: 1px solid var(--lr-rule);
+}
+
+/* 12.6b  H3 / H4 innerhalb Sub-Block + andere — Hierarchie ------------- */
+body[data-lernraum] .lr-block h3:not([data-status-key]),
+body[data-lernraum] .lr-subblock h3:not([data-status-key]) {
+  font-family: var(--lr-font-sans);
+  font-size: 14.5px;
+  font-weight: 600;
+  letter-spacing: -0.1px;
+  margin: 22px 0 8px;
+  color: var(--lr-ink);
+}
+body[data-lernraum] .lr-block h4,
+body[data-lernraum] .lr-subblock h4 {
+  font-family: var(--lr-font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--lr-muted);
+  margin: 18px 0 6px;
+}
+
+/* 12.7  Falle-Atlas — Akkordeon-Liste in Card -------------------------- */
+body[data-lernraum] .md-typeset .falle-card {
+  display: grid;
+  grid-template-columns: 56px 1fr 28px;
+  gap: 14px;
+  padding: 14px 0;
+  margin: 0;
+  border: none;
+  border-bottom: 1px solid var(--lr-rule);
+  background: transparent;
+  cursor: pointer;
+  align-items: start;
+  transition: background .12s;
+}
+body[data-lernraum] .md-typeset .falle-card:first-of-type {
+  border-top: none;
+}
+body[data-lernraum] .md-typeset .falle-card:last-of-type {
+  border-bottom: none;
+}
+body[data-lernraum] .md-typeset .falle-card:hover {
+  background: var(--lr-bg);
+}
+body[data-lernraum] .md-typeset .falle-card::before {
+  content: attr(data-fa-id);
+  font-family: var(--lr-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.6px;
+  color: var(--lr-accent);
+  font-weight: 600;
+  padding-top: 2px;
+}
+body[data-lernraum] .md-typeset .falle-card .falle-frage {
+  display: block;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--lr-ink);
+}
+body[data-lernraum] .md-typeset .falle-card .falle-antwort {
+  grid-column: 2 / span 1;
+  margin-top: 12px;
+  padding: 14px 18px;
+  background: var(--lr-bg);
+  border-left: 3px solid var(--lr-accent);
+  font-family: var(--lr-font-serif);
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--lr-ink);
+}
+body[data-lernraum] .md-typeset .falle-card:not([data-open="true"]) .falle-antwort {
+  display: none;
+}
+body[data-lernraum] .md-typeset .falle-card::after {
+  content: "›";
+  font-family: var(--lr-font-mono);
+  font-size: 18px;
+  color: var(--lr-mute2);
+  transition: transform .2s, color .12s;
+  padding-top: 1px;
+  pointer-events: none;
+  text-align: center;
+  align-self: start;
+}
+body[data-lernraum] .md-typeset .falle-card[data-open="true"]::after {
+  transform: rotate(90deg);
+  color: var(--lr-accent);
+}
+
+/* 12.8  Status-Dot ----------------------------------------------------- */
+body[data-lernraum] .md-typeset .status-dot {
+  flex: 0 0 auto;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 0;
+  border: 1.5px solid var(--lr-mute2);
+  background: transparent;
+  margin: 0;
+  cursor: pointer;
+}
+body[data-lernraum] .md-typeset .status-dot--work {
+  border-color: var(--lr-status-work, #c89933);
+  background: var(--lr-status-work, #c89933);
+}
+body[data-lernraum] .md-typeset .status-dot--repeat {
+  border-color: var(--lr-status-repeat, #4a5d3b);
+  background: var(--lr-status-repeat, #4a5d3b);
+}
+body[data-lernraum] .md-typeset .status-dot--sit {
+  border-color: #2d4a1f;
+  background: #2d4a1f;
+}
+
+/* 12.9  Mermaid kompakt ------------------------------------------------ */
+body[data-lernraum] .md-typeset .mermaid {
+  max-width: 680px;
+  margin: 12px auto 18px;
+  background: transparent;
+  text-align: center;
+}
+body[data-lernraum] .md-typeset .mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 12.10  Tabellen — clean Hairline-Style (alle innerhalb .lr-block) -------- */
+body[data-lernraum] .lr-block > table,
+body[data-lernraum] .lr-subblock > table,
+body[data-lernraum] .lr-subblock table,
+body[data-lernraum] .lr-block table {
+  border: none;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 12px 0 16px;
+  background: none;
+  font-size: 13.5px;
+}
+body[data-lernraum] .lr-block table thead {
+  background: none;
+}
+body[data-lernraum] .lr-block table th {
+  font-family: var(--lr-font-mono);
+  font-size: 10px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--lr-mute2);
+  padding: 8px 12px 8px 0;
+  border-bottom: 1px solid var(--lr-rule);
+  text-align: left;
+  background: none;
+}
+body[data-lernraum] .lr-block table td {
+  padding: 10px 12px 10px 0;
+  border-bottom: 1px solid var(--lr-rule);
+  line-height: 1.55;
+  vertical-align: top;
+  background: none;
+}
+body[data-lernraum] .lr-block table tr:last-child td {
+  border-bottom: none;
+}
+
+/* 12.11  Norm-Tag — subtler (kein Border-Bottom, dezenter Hover) ---------- */
+body[data-lernraum] .md-typeset a.norm-link {
+  border-bottom: 1px dotted var(--lr-mute2);
+  color: var(--lr-ink);
+  text-decoration: none;
+  transition: border-color .12s, color .12s;
+}
+body[data-lernraum] .md-typeset a.norm-link:hover {
+  border-bottom-color: var(--lr-accent);
+  color: var(--lr-accent);
+}
+body[data-lernraum] .md-typeset abbr {
+  border-bottom: 1px dotted var(--lr-mute2);
+  cursor: help;
+  text-decoration: none;
+}
+body[data-lernraum] .md-typeset abbr:hover {
+  border-bottom-color: var(--lr-accent);
+}
+
+/* 12.12  UI-Rauschen ausblenden ------------------------------------------ */
+/* Permalink-¶ wird in hooks.py gestrippt; CSS-Fallback */
+body[data-lernraum] .md-typeset a.headerlink {
+  display: none !important;
+}
+
+/* mkdocs-Material edit-Button (falls aktiv) */
+body[data-lernraum] .md-content__button {
+  display: none !important;
+}
+
+/* Reading-Progress-Bar dezent */
+body[data-lernraum] .reading-progress {
+  height: 2px !important;
+  background: var(--lr-accent) !important;
+}
+
+/* 12.13  Body-Text Defaults ---------------------------------------------- */
+body[data-lernraum] .lr-block > p,
+body[data-lernraum] .lr-subblock > p {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--lr-ink);
+  margin: 0 0 12px;
+}
+body[data-lernraum] .lr-block ul,
+body[data-lernraum] .lr-block ol,
+body[data-lernraum] .lr-subblock ul,
+body[data-lernraum] .lr-subblock ol {
+  margin: 0 0 14px;
+  padding-left: 22px;
+}
+body[data-lernraum] .lr-block li,
+body[data-lernraum] .lr-subblock li {
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin: 0 0 4px;
+}
+body[data-lernraum] .lr-subblock h3 {
+  font-family: var(--lr-font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.1px;
+  margin: 22px 0 8px;
+  color: var(--lr-ink);
+}
+
+/* 12.13b  TOC-Sidebar (rechts) — hierarchische Differenzierung -------- */
+body[data-lernraum] .md-sidebar--secondary {
+  background: var(--lr-bg);
+}
+body[data-lernraum] .md-sidebar--secondary .md-sidebar__scrollwrap {
+  background: var(--lr-bg);
+}
+body[data-lernraum] .md-nav--secondary {
+  padding: 8px 4px;
+}
+body[data-lernraum] .md-nav--secondary > .md-nav__title {
+  font-family: var(--lr-font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--lr-mute2);
+  padding: 4px 8px 10px;
+  background: none;
+  box-shadow: none;
+}
+
+/* Alle TOC-Links — gemeinsame Basis */
+body[data-lernraum] .md-nav--secondary .md-nav__link {
+  font-family: var(--lr-font-sans);
+  color: var(--lr-muted);
+  padding: 4px 8px;
+  border-left: 1px solid transparent;
+  transition: color .12s, border-color .12s, background .12s;
+  line-height: 1.4;
+  font-size: 13px;
+}
+body[data-lernraum] .md-nav--secondary .md-nav__link:hover {
+  color: var(--lr-ink);
+  background: var(--lr-accent-soft);
+}
+body[data-lernraum] .md-nav--secondary .md-nav__link--active,
+body[data-lernraum] .md-nav--secondary .md-nav__link.md-nav__link--active {
+  color: var(--lr-accent);
+  font-weight: 600;
+  border-left-color: var(--lr-accent);
+  background: var(--lr-accent-soft);
+}
+
+/* Level-1 TOC-Links (direkte H2) — Mono-Cap-Style, Section-Tier */
+body[data-lernraum] .md-nav--secondary > .md-nav__list > .md-nav__item > .md-nav__link {
+  font-family: var(--lr-font-mono);
+  font-size: 10.5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--lr-ink);
+  padding: 8px 8px 6px;
+  margin-top: 4px;
+}
+body[data-lernraum] .md-nav--secondary > .md-nav__list > .md-nav__item > .md-nav__link:hover {
+  color: var(--lr-accent);
+}
+
+/* Level-2 TOC-Links (H3 Sub-Blocks unter H2) — eingerückt + sans-serif */
+body[data-lernraum] .md-nav--secondary .md-nav .md-nav .md-nav__link {
+  padding-left: 22px;
+  font-family: var(--lr-font-sans);
+  font-size: 13px;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
+  color: var(--lr-muted);
+}
+body[data-lernraum] .md-nav--secondary .md-nav .md-nav .md-nav__link::before {
+  content: "·";
+  margin-right: 8px;
+  color: var(--lr-mute2);
+}
+
+/* Level-3+ TOC-Links — noch tiefer eingerückt */
+body[data-lernraum] .md-nav--secondary .md-nav .md-nav .md-nav .md-nav__link {
+  padding-left: 36px;
+  font-size: 12px;
+}
+
+/* 12.14  Print --------------------------------------------------------- */
+@media print {
+  body[data-lernraum] .lr-block {
+    border: 1px solid #ccc;
+    page-break-inside: avoid;
+    box-shadow: none;
+  }
+  body[data-lernraum] .reveal-card[data-reveal="closed"] > * { display: revert !important; }
+  body[data-lernraum] .reveal-card::after,
+  body[data-lernraum] .falle-card::after { display: none !important; }
+  body[data-lernraum] .falle-card .falle-antwort { display: block !important; }
+  body[data-lernraum] .md-typeset .mermaid { display: none !important; }
+  body[data-lernraum] details.example > *:not(summary) { display: revert !important; }
+}
+
+/* ==========================================================================
+   13. AUDIT-PATCHES (WCAG 2.2 AA + Visual + UX) — May 2026
+       Konsolidiert aus 4 parallel-Audits (a11y, visual-design, ux/interaction).
+
+       13.1 Token-Fixes (Kontrast)
+       13.2 Focus-Visible für alle Interaktiven
+       13.3 Status-Dot: Shape-Differentiation + 24×24 Hit-Target
+       13.4 Animate open/close (grid-template-rows-Trick)
+       13.5 Sub-Block-Header Grid Layout (statt flex-wrap-Hack)
+       13.6 Typography Scale Uplift (body 15.5, inner H3 16.5)
+       13.7 8pt-Grid Normalisierung (card padding 32, margin 24)
+       13.8 Expand/Collapse-all Toolbar
+       13.9 Norm-Link Touch-Target
+       13.10 TOC Bullet-Cleanup
+       13.11 Light-Mode Card-Kontrast verstärken
+   ========================================================================== */
+
+/* 13.1  Token-Kontrast-Fixes ---------------------------------------------
+   --lr-mute2 alt: 2.76:1 fail → bump auf 4.5:1+. Dark-mode bereits ok.
+   --lr-rule alt: 1.34:1 fail (UI-Border) → 3:1+ via stärkere Alpha. */
+
+body[data-lernraum] {
+  --lr-mute2: #6f6c63;             /* 4.61:1 auf #fafaf6 — WCAG AA pass */
+  --lr-rule: rgba(12, 12, 10, 0.22); /* ~3.0:1 UI-Border */
+}
+body[data-lernraum][data-md-color-scheme="slate"],
+[data-md-color-scheme="slate"] body[data-lernraum] {
+  --lr-mute2: #9c9a92;             /* 4.78:1 auf #161614 */
+  --lr-rule: rgba(229, 229, 224, 0.30);
+}
+
+/* 13.2  Universal Focus-Visible — WCAG 2.4.7 + 2.4.11 ----------------- */
+body[data-lernraum] :where(
+  .reveal-card,
+  .falle-card,
+  .status-dot,
+  .lr-subblock > h3[data-status-key],
+  a.norm-link,
+  .lr-subblock-toolbar button,
+  button
+):focus-visible {
+  outline: 2px solid var(--lr-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Default focus reset für mkdocs-Material vermeiden */
+body[data-lernraum] *:focus:not(:focus-visible) { outline: none; }
+
+/* 13.3  Status-Dot: Shape + 24×24 Hit-Target + Dark-Mode-Fix ----------- */
+/* Hit-Area unsichtbar via inset-padding (10px sichtbar bleibt) */
+body[data-lernraum] .md-typeset .status-dot {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;     /* runder Dot statt eckig */
+  transition: background .15s, border-color .15s, box-shadow .15s;
+}
+body[data-lernraum] .md-typeset .status-dot::after {
+  content: "";
+  position: absolute;
+  inset: -8px;            /* 28×28 Hit-Target, visuell unsichtbar */
+}
+
+/* Shape-coded states (color-blind-safe) */
+body[data-lernraum] .md-typeset .status-dot--open {
+  background: transparent;
+  border: 1.5px solid var(--lr-mute2);
+}
+body[data-lernraum] .md-typeset .status-dot--work {
+  background: linear-gradient(to right,
+    var(--lr-status-work, #c89933) 50%,
+    transparent 50%);
+  border: 1.5px solid var(--lr-status-work, #c89933);
+}
+body[data-lernraum] .md-typeset .status-dot--repeat {
+  background: var(--lr-status-repeat, #4a5d3b);
+  border: 1.5px solid var(--lr-status-repeat, #4a5d3b);
+}
+body[data-lernraum] .md-typeset .status-dot--sit {
+  background: #2d4a1f;
+  border: 1.5px solid #2d4a1f;
+  box-shadow: inset 0 0 0 2px var(--lr-paper);
+}
+/* Dark-mode sit-Kontrast: hell statt dark-olive */
+[data-md-color-scheme="slate"] body[data-lernraum] .md-typeset .status-dot--sit {
+  background: #a8c089;
+  border-color: #a8c089;
+  box-shadow: inset 0 0 0 2px #161614;
+}
+
+/* 13.4  Animate open/close — grid-template-rows-Trick ------------------ */
+/* Reveal-Card: animatable collapse statt display:none */
+body[data-lernraum] .md-typeset .reveal-card {
+  display: grid;
+  grid-template-rows: auto 0fr;
+  transition: grid-template-rows .25s cubic-bezier(.16, 1, .3, 1),
+              background .12s, border-color .12s;
+}
+body[data-lernraum] .md-typeset .reveal-card > :not(.reveal-card__title) {
+  overflow: hidden;
+  min-height: 0;
+}
+body[data-lernraum] .md-typeset .reveal-card[data-reveal="open"] {
+  grid-template-rows: auto 1fr;
+}
+/* Override §12.6: display:none ersetzt durch grid-row 0fr */
+body[data-lernraum] .md-typeset .reveal-card[data-reveal="closed"] > *:not(:first-child) {
+  display: revert;
+}
+
+/* Falle-Card: gleiche Logik für .falle-antwort */
+body[data-lernraum] .md-typeset .falle-card .falle-antwort {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows .25s cubic-bezier(.16, 1, .3, 1),
+              padding .15s, margin .15s;
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-left: 0;
+}
+body[data-lernraum] .md-typeset .falle-card[data-open="true"] .falle-antwort {
+  grid-template-rows: 1fr;
+  margin-top: 12px;
+  padding: 14px 18px;
+  border-left: 3px solid var(--lr-accent);
+}
+/* Override §12.7: display:none-Block deaktivieren */
+body[data-lernraum] .md-typeset .falle-card:not([data-open="true"]) .falle-antwort {
+  display: grid;
+}
+/* Inner-grid-row für korrekten Overflow */
+body[data-lernraum] .md-typeset .falle-card .falle-antwort > * {
+  min-width: 0;
+}
+
+/* Sub-Block-Collapse: gleiche Animation */
+body[data-lernraum] .lr-subblock {
+  transition: padding .2s ease;
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  body[data-lernraum] .md-typeset .reveal-card,
+  body[data-lernraum] .md-typeset .falle-card .falle-antwort,
+  body[data-lernraum] .lr-subblock,
+  body[data-lernraum] .status-dot {
+    transition: none !important;
+  }
+}
+
+/* 13.5  Sub-Block-Header — Grid statt flex-wrap (kein neg-margin-Hack) ---- */
+body[data-lernraum] .lr-subblock > h3[data-status-key] {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;  /* dot | pille | title | chevron */
+  column-gap: 12px;
+  align-items: baseline;
+  margin: 0 0 16px -24px;   /* pille bündig mit subblock-border-left */
+  padding-left: 24px;
+}
+body[data-lernraum] .lr-subblock > h3[data-status-key]::before {
+  align-self: center;
+  grid-column: 2;
+  padding: 4px 10px 5px;
+}
+body[data-lernraum] .lr-subblock > h3[data-status-key]::after {
+  align-self: center;
+  grid-column: 4;
+  margin-left: 0;
+}
+body[data-lernraum] .lr-subblock > h3[data-status-key] .status-dot {
+  grid-column: 1;
+  align-self: center;
+}
+
+/* 13.6  Typography Scale Uplift (1.25 ratio modular) ---------------------- */
+body[data-lernraum] .lr-block > p,
+body[data-lernraum] .lr-block > ul,
+body[data-lernraum] .lr-block > ol,
+body[data-lernraum] .lr-subblock > p,
+body[data-lernraum] .lr-subblock > ul,
+body[data-lernraum] .lr-subblock > ol {
+  font-size: 15.5px;
+  line-height: 1.65;
+}
+body[data-lernraum] .lr-block li,
+body[data-lernraum] .lr-subblock li {
+  font-size: 15.5px;
+  line-height: 1.65;
+  margin-bottom: 6px;
+}
+body[data-lernraum] .lr-subblock > h3[data-status-key] {
+  font-size: 20px;
+  line-height: 1.3;
+}
+body[data-lernraum] .lr-block h3:not([data-status-key]),
+body[data-lernraum] .lr-subblock h3:not([data-status-key]) {
+  font-size: 16.5px;
+  font-weight: 600;
+  letter-spacing: -0.15px;
+  margin: 28px 0 10px;
+  color: var(--lr-ink);
+}
+body[data-lernraum] .lr-block table,
+body[data-lernraum] .lr-subblock table {
+  font-size: 14.5px;
+}
+
+/* 13.7  8pt-Grid Card-Spacing -------------------------------------------- */
+body[data-lernraum] .lr-block {
+  padding: 32px;
+  margin: 0 0 24px;
+}
+@media (max-width: 720px) {
+  body[data-lernraum] .lr-block {
+    padding: 24px 20px;
+    margin-bottom: 16px;
+  }
+}
+body[data-lernraum] .lr-block > p,
+body[data-lernraum] .lr-block > ul,
+body[data-lernraum] .lr-block > ol {
+  margin: 0 0 16px;
+}
+body[data-lernraum] .lr-subblock {
+  padding: 12px 0 8px 24px;
+}
+body[data-lernraum] .lr-subblock + .lr-subblock {
+  margin-top: 32px;
+}
+@media (max-width: 600px) {
+  body[data-lernraum] .lr-subblock {
+    padding-left: 14px;
+  }
+  body[data-lernraum] .lr-subblock > h3[data-status-key] {
+    margin-left: -14px;
+    padding-left: 14px;
+  }
+}
+
+/* Reveal-Grid Breathing + Min-Height */
+body[data-lernraum] .md-typeset .reveal-grid {
+  gap: 16px;
+  margin: 8px 0 16px;
+}
+body[data-lernraum] .md-typeset .reveal-card {
+  padding: 18px 20px 40px;
+  min-height: 96px;
+}
+body[data-lernraum] .md-typeset .reveal-card::after {
+  bottom: 12px;
+  font-size: 10px;
+}
+
+/* 13.8  Expand/Collapse-all Toolbar -------------------------------------- */
+body[data-lernraum] .lr-subblock-toolbar {
+  display: flex;
+  gap: 8px;
+  margin: 0 0 16px;
+}
+body[data-lernraum] .lr-subblock-toolbar button {
+  font-family: var(--lr-font-mono);
+  font-size: 10.5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 7px 12px;
+  background: transparent;
+  border: 1px solid var(--lr-rule);
+  color: var(--lr-muted);
+  cursor: pointer;
+  transition: color .12s, border-color .12s, background .12s, transform .15s cubic-bezier(.34, 1.56, .64, 1);
+}
+body[data-lernraum] .lr-subblock-toolbar button:hover {
+  color: var(--lr-accent);
+  border-color: var(--lr-accent);
+  background: var(--lr-accent-soft);
+  transform: translateY(-1px);
+}
+
+/* 13.9  Norm-Link Touch-Target (≥24×24 effective) ------------------------ */
+body[data-lernraum] .md-typeset a.norm-link {
+  padding: 2px 4px;
+  margin: 0 -2px;        /* visually inline-stable */
+  border-radius: 2px;
+}
+
+/* 13.10  TOC Cleanup — Bullet entfernen --------------------------------- */
+body[data-lernraum] .md-nav--secondary .md-nav .md-nav .md-nav__link::before {
+  content: none;
+}
+
+/* 13.11  Light-Mode Card-Kontrast verstärken ---------------------------- */
+body[data-lernraum] {
+  --lr-bg: #f4f3ec;   /* tieferes Cream → 4.4% Lumi-Delta zu White */
+}
+[data-md-color-scheme="default"] body[data-lernraum] .md-main,
+[data-md-color-scheme="default"] body[data-lernraum] .md-container,
+[data-md-color-scheme="default"] body[data-lernraum] .md-content {
+  background-color: #f4f3ec !important;
+}
+
+/* Dark-mode accent-soft sichtbarer (vorher 0.12 zu unsichtbar) */
+[data-md-color-scheme="slate"] body[data-lernraum] {
+  --lr-accent-soft: rgba(168, 192, 137, 0.18);
+}
+
+/* ==========================================================================
+   13.12  Sub-Block Scan-Rhythm (Audit-Run 2 — Scanability-Befund)
+       Adressiert: <strong>-als-h4, Bullet-Wall, Tabellen-ohne-Transition,
+       Norm-Link-Density (17-22/Sub-Block), Wortlaut-Brocken in TD.
+   ========================================================================== */
+
+/* 13.12.a — <strong>-Labels in <p> als Mini-Cap-Tabs visualisieren ---------
+   Markdown nutzt `**Verhaltensgrundnorm**:` als Pseudo-Heading. Promotion zu
+   visuell-erkennbarem Chunk-Divider (Akzent-Border-Left + Mono-Cap). */
+body[data-lernraum] .lr-subblock > p > strong:first-child {
+  display: inline-block;
+  font-family: var(--lr-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--lr-accent);
+  border-left: 3px solid var(--lr-accent);
+  padding: 1px 0 1px 10px;
+  margin-right: 10px;
+  vertical-align: baseline;
+}
+/* Bullets mit führendem <strong>-Label ebenfalls als Chunk-Anker */
+body[data-lernraum] .lr-subblock ul > li > strong:first-child,
+body[data-lernraum] .lr-subblock ol > li > strong:first-child {
+  color: var(--lr-ink);
+  font-weight: 600;
+}
+/* Labelled bullets bekommen subtilen Border-Left zur Chunk-Gruppierung */
+body[data-lernraum] .lr-subblock ul > li:has(> strong:first-child),
+body[data-lernraum] .lr-subblock ol > li:has(> strong:first-child) {
+  border-left: 2px solid transparent;
+  padding-left: 10px;
+  margin-left: -12px;
+  transition: border-color .15s;
+}
+body[data-lernraum] .lr-subblock ul > li:has(> strong:first-child):hover,
+body[data-lernraum] .lr-subblock ol > li:has(> strong:first-child):hover {
+  border-left-color: var(--lr-accent-soft);
+}
+
+/* 13.12.b — Visual-Transition vor Tabellen (Hairline + Top-Padding) --------
+   Tabellen butten gegen vorangehende <p>/<ul> — wirken wie Bullet-Fortsetzung.
+   Sanfte Trennung. */
+body[data-lernraum] .lr-subblock > table {
+  margin-top: 20px;
+  border-top: 1px solid var(--lr-hairline);
+  padding-top: 8px;
+}
+body[data-lernraum] .lr-subblock > p + table,
+body[data-lernraum] .lr-subblock > ul + table,
+body[data-lernraum] .lr-subblock > ol + table {
+  margin-top: 16px;
+}
+
+/* 13.12.c — Norm-Link-Visual-Weight reduzieren ---------------------------
+   22 norm-links pro Sub-Block mit solid-underline = noise. Dotted-Hairline
+   bleibt entdeckbar, hover/focus zeigt solid + accent-soft-bg. */
+body[data-lernraum] .md-typeset .lr-subblock a.norm-link {
+  text-decoration: none;
+  border-bottom: 1px dotted var(--lr-accent);
+  font-variant-numeric: tabular-nums;
+}
+body[data-lernraum] .md-typeset .lr-subblock a.norm-link:hover,
+body[data-lernraum] .md-typeset .lr-subblock a.norm-link:focus-visible {
+  border-bottom-style: solid;
+  background: var(--lr-accent-soft);
+  border-radius: 1px;
+}
+
+/* 13.12.d — Bullet rest-zones (max-width 68ch + breathing) ---------------
+   Lange Bullets bleiben in optimaler Reading-Width; Block-Margin gibt Pause. */
+body[data-lernraum] .lr-subblock ul > li,
+body[data-lernraum] .lr-subblock ol > li {
+  margin-block: 8px;
+  max-width: 70ch;
+  line-height: 1.6;
+}
+/* Wenn nested ul/ol in li: Sub-Bullets sind Sub-Logik, kompakter */
+body[data-lernraum] .lr-subblock li > ul,
+body[data-lernraum] .lr-subblock li > ol {
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+/* 13.12.e — Wide-Table Cell-Tuning (Wortlaut-Brocken contain) ------------
+   A.2 Handy-Cell hat 410 char verbatim § quote. max-width + hyphens stabilisieren. */
+body[data-lernraum] .lr-subblock table td {
+  font-size: 14.5px;
+  line-height: 1.55;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+body[data-lernraum] .lr-subblock table td:last-child {
+  max-width: 58ch;
+}
+
+/* 13.12.f — Warning + folgende Liste/p als verbundenes Visual --------------
+   mkdocs-Material rendert <div class="admonition warning"> + folgendes ul
+   als getrennte Blöcke. Visuell verbinden via Border-Continuation. */
+body[data-lernraum] .lr-subblock .admonition.warning {
+  margin-bottom: 0;
+}
+body[data-lernraum] .lr-subblock .admonition.warning + ul,
+body[data-lernraum] .lr-subblock .admonition.warning + ol,
+body[data-lernraum] .lr-subblock .admonition.warning + p {
+  margin-top: 0;
+  padding: 10px 16px 12px 22px;
+  background: rgba(231, 197, 99, 0.06);
+  border: 1px solid rgba(231, 197, 99, 0.30);
+  border-top: none;
+}
+
+/* 13.12.g — H4 promoted styling (für Markdown-Patches #### Sub-Caps) -----
+   mkdocs h4 bekommt Mono-Cap + Border-Left als Chunk-Divider innerhalb Sub-Block.
+   Erlaubt #### Trias-Details / #### Verfahrensrechte etc. */
+body[data-lernraum] .lr-subblock h4 {
+  font-family: var(--lr-font-mono);
+  font-size: 10.5px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--lr-accent);
+  margin: 24px 0 10px;
+  padding: 4px 0 4px 12px;
+  border: none;
+  border-left: 3px solid var(--lr-accent);
+  background: none;
+}
+
+/* 13.12.h — Paragraph-Length-Limit (max-width 70ch — Bringhurst-Optimum) -- */
+body[data-lernraum] .lr-subblock > p {
+  max-width: 70ch;
+}
+
+/* 13.12.i — Admonition-Boxen (info/note/tip/warning/danger) standardisieren */
+body[data-lernraum] .lr-subblock .admonition,
+body[data-lernraum] .lr-subblock details.admonition {
+  margin: 18px 0;
+  border: 1px solid var(--lr-rule);
+  background: var(--lr-bg);
+  padding: 12px 16px 14px;
+  font-size: 14.5px;
+  border-radius: 0;
+  box-shadow: none;
+}
+body[data-lernraum] .lr-subblock .admonition.tip,
+body[data-lernraum] .lr-subblock details.admonition.tip {
+  border-left: 3px solid var(--lr-accent);
+}
+body[data-lernraum] .lr-subblock .admonition.danger,
+body[data-lernraum] .lr-subblock details.admonition.danger {
+  border-left: 3px solid #c0584a;
+  background: rgba(192, 88, 74, 0.04);
+}
+body[data-lernraum] .lr-subblock .admonition.warning,
+body[data-lernraum] .lr-subblock details.admonition.warning {
+  border-left: 3px solid #c89933;
+  background: rgba(200, 153, 51, 0.04);
+}
+body[data-lernraum] .lr-subblock .admonition.note,
+body[data-lernraum] .lr-subblock details.admonition.note {
+  border-left: 3px solid var(--lr-muted);
+}
+body[data-lernraum] .lr-subblock .admonition-title,
+body[data-lernraum] .lr-subblock summary.admonition-title {
+  font-family: var(--lr-font-mono);
+  font-size: 10.5px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--lr-ink);
+  margin: 0 0 6px;
+  padding: 0;
+  background: none;
+}
+body[data-lernraum] .lr-subblock .admonition-title::before,
+body[data-lernraum] .lr-subblock summary.admonition-title::before {
+  display: none;
+}
+
+/* ==========================================================================
+   13.13  Question + Success Admonitions (Self-Check + Fall-Reveal-Nesting)
+       Iteration 3 — Mastery-Self-Checks + Teil-D-Reveal-Pattern.
+   ========================================================================== */
+
+/* Question (Self-Check + Knackpunkte) — Akzent-Border-Left, kompakt */
+body[data-lernraum] details.question,
+body[data-lernraum] .admonition.question {
+  border: 1px solid var(--lr-rule);
+  border-left: 3px solid var(--lr-accent);
+  background: var(--lr-bg);
+  padding: 0;
+  margin: 14px 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+body[data-lernraum] details.question > summary,
+body[data-lernraum] .admonition.question > .admonition-title {
+  font-family: var(--lr-font-mono);
+  font-size: 10.5px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--lr-accent);
+  padding: 10px 14px;
+  margin: 0;
+  background: var(--lr-accent-soft);
+  cursor: pointer;
+  list-style: none;
+}
+body[data-lernraum] details.question > summary::before,
+body[data-lernraum] .admonition.question > .admonition-title::before {
+  content: "? ";
+  display: inline;
+  font-weight: 700;
+}
+body[data-lernraum] details.question > summary::after {
+  content: " · tippen zum aufklappen";
+  font-weight: 400;
+  text-transform: lowercase;
+  letter-spacing: 0.5px;
+  color: var(--lr-muted);
+  font-size: 10px;
+}
+body[data-lernraum] details.question[open] > summary::after {
+  content: " · tippen zum zuklappen";
+}
+body[data-lernraum] details.question > *:not(summary),
+body[data-lernraum] .admonition.question > *:not(.admonition-title) {
+  padding: 12px 18px;
+  margin: 0;
+}
+body[data-lernraum] details.question ol,
+body[data-lernraum] details.question ul,
+body[data-lernraum] .admonition.question ol,
+body[data-lernraum] .admonition.question ul {
+  margin: 0;
+  padding-left: 22px;
+}
+body[data-lernraum] details.question li,
+body[data-lernraum] .admonition.question li {
+  margin-bottom: 8px;
+  line-height: 1.55;
+}
+
+/* Success (Antwortkette) — etwas anderer Akzent: Olive-Vollton-Border */
+body[data-lernraum] details.success,
+body[data-lernraum] .admonition.success {
+  border: 1px solid var(--lr-rule);
+  border-left: 3px solid #2d4a1f;
+  background: rgba(74, 93, 59, 0.04);
+  padding: 0;
+  margin: 14px 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+body[data-lernraum] details.success > summary,
+body[data-lernraum] .admonition.success > .admonition-title {
+  font-family: var(--lr-font-mono);
+  font-size: 10.5px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #2d4a1f;
+  padding: 10px 14px;
+  margin: 0;
+  background: rgba(74, 93, 59, 0.12);
+  cursor: pointer;
+  list-style: none;
+}
+[data-md-color-scheme="slate"] body[data-lernraum] details.success > summary,
+[data-md-color-scheme="slate"] body[data-lernraum] .admonition.success > .admonition-title {
+  color: #a8c089;
+}
+body[data-lernraum] details.success > summary::before,
+body[data-lernraum] .admonition.success > .admonition-title::before {
+  content: "✓ ";
+}
+body[data-lernraum] details.success > *:not(summary),
+body[data-lernraum] .admonition.success > *:not(.admonition-title) {
+  padding: 12px 18px;
+  margin: 0;
+  font-family: var(--lr-font-serif);
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+/* Example (Fallbeispiele) — Card-Look */
+body[data-lernraum] details.example,
+body[data-lernraum] .admonition.example {
+  border: 1px solid var(--lr-rule);
+  border-left: 3px solid var(--lr-muted);
+  background: var(--lr-paper);
+  padding: 0;
+  margin: 18px 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+body[data-lernraum] details.example > summary,
+body[data-lernraum] .admonition.example > .admonition-title {
+  font-family: var(--lr-font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.15px;
+  text-transform: none;
+  color: var(--lr-ink);
+  padding: 14px 18px;
+  margin: 0;
+  background: var(--lr-bg);
+  cursor: pointer;
+  list-style: none;
+}
+body[data-lernraum] details.example > *:not(summary) {
+  padding: 14px 18px;
+  margin: 0;
+}
+body[data-lernraum] details.example p,
+body[data-lernraum] details.example > p {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+/* Native Chevron für details/summary — alle nested admonitions */
+body[data-lernraum] details > summary::-webkit-details-marker { display: none; }
+body[data-lernraum] details > summary { position: relative; padding-right: 36px; }
+body[data-lernraum] details > summary::-marker { content: ""; }
+
+/* Self-Check Question-Boxes (Self-Check A.1-A.4) noch deutlicher hervor heben */
+body[data-lernraum] .lr-subblock > details.question {
+  margin-top: 22px;
+  border-left-width: 4px;
+}
