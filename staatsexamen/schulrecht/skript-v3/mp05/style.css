@@ -83,8 +83,8 @@ button { font-family: inherit; }
 .meta-bar {
   background: var(--ink);
   color: var(--bg);
-  /* Align inner content with skript-header (max-width: 1320px, padding: 56px) */
-  padding: 12px max(20px, calc(50% - 660px + 56px));
+  /* Align inner content with skript-header (max-width: 1480px, padding: 56px) */
+  padding: 12px max(20px, calc(50% - 740px + 56px));
   display: flex; justify-content: space-between; align-items: center; gap: 24px;
   font-family: var(--mono);
   font-size: 10.5px;
@@ -107,7 +107,7 @@ button { font-family: inherit; }
   grid-template-columns: repeat(12, 1fr);
   gap: 24px;
   border-bottom: 1px solid var(--hairline);
-  max-width: 1320px;
+  max-width: 1480px;
   margin: 0 auto;
 }
 .skript-header__id   { grid-column: 1 / span 2; }
@@ -224,7 +224,7 @@ button { font-family: inherit; }
   gap: 36px;
   padding: 32px 56px;
   border-bottom: 1px solid var(--hairline);
-  max-width: 1320px;
+  max-width: 1480px;
   margin: 0 auto;
 }
 .top-row > section { min-width: 0; }
@@ -314,18 +314,83 @@ button { font-family: inherit; }
 }
 .norm-tag:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
-/* Werkbank-Grid (Main + Aside) — Min-Width-Guard verhindert sub-500px Main bei 1025-1200px */
+/* Werkbank-Grid: TOC (links) + Main (Vertiefung) + Aside (Werkbank).
+   Bei <1320 px collapses TOC; bei <1200 px collapses 2→1 col. */
 .werkbank {
   display: grid;
-  grid-template-columns: minmax(560px, 1fr) minmax(380px, 440px);
-  max-width: 1320px;
+  grid-template-columns: 200px minmax(540px, 1fr) minmax(380px, 420px);
+  max-width: 1480px;
   margin: 0 auto;
 }
 .werkbank__main {
-  padding: 36px 36px 96px 56px;
+  padding: 36px 36px 96px 36px;
   min-width: 0;
   border-right: 1px solid var(--hairline);
 }
+
+/* TOC linke Spalte ------------------------------------------------------- */
+.werkbank__toc {
+  padding: 36px 24px 96px 56px;
+  border-right: 1px solid var(--hairline);
+  min-width: 0;
+}
+.toc-sticky {
+  position: sticky;
+  top: 12px;
+  max-height: calc(100vh - 24px);
+  overflow-y: auto;
+}
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+}
+.toc-li { margin-bottom: 12px; }
+.toc-link {
+  display: block;
+  text-decoration: none;
+  color: var(--ink);
+  padding: 4px 8px 4px 10px;
+  border-left: 2px solid transparent;
+  transition: color .12s, border-color .12s, background .12s;
+}
+.toc-link:hover { color: var(--accent); }
+.toc-link--top {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: -0.1px;
+  line-height: 1.3;
+}
+.toc-link--top .toc-kuerzel {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.4px;
+  color: var(--accent);
+  margin-right: 8px;
+}
+.toc-link--top .toc-titel { color: var(--ink); }
+.toc-sublist {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 0 0;
+}
+.toc-sublist li { margin: 2px 0; }
+.toc-link--sub {
+  font-family: var(--sans);
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--muted);
+  padding-left: 22px; /* indent under top-link */
+}
+.toc-link--sub:hover { color: var(--accent); }
+.toc-link.is-active {
+  background: var(--accent-soft);
+  border-left-color: var(--accent);
+  color: var(--accent);
+}
+.toc-link--sub.is-active { color: var(--accent); font-weight: 500; }
 .werkbank__aside {
   padding: 36px 56px 96px 36px;
   background: #efeee8;
@@ -360,8 +425,19 @@ h2.mono-h, h3.mono-h { margin: 0; font-weight: 500; font-size: 10.5px; }
   .pulse-highlight { animation: none; outline: 2px solid var(--accent); outline-offset: 4px; }
 }
 
+/* Mid-large: TOC verschwindet, 2-col Main+Aside bleibt */
+@media (max-width: 1320px) and (min-width: 1201px) {
+  .werkbank {
+    grid-template-columns: minmax(560px, 1fr) minmax(380px, 420px);
+    max-width: 1320px;
+  }
+  .werkbank__toc { display: none; }
+  .werkbank__main { padding: 36px 36px 96px 56px; }
+}
+/* Small: 1-col stack */
 @media (max-width: 1200px) {
-  .werkbank { grid-template-columns: 1fr; }
+  .werkbank { grid-template-columns: 1fr; max-width: 100%; }
+  .werkbank__toc { display: none; }
   .werkbank__main { border-right: none; border-bottom: 1px solid var(--hairline); padding: 28px 20px 60px; }
   .werkbank__aside { padding: 28px 20px 60px; }
   .top-row { grid-template-columns: 1fr; padding: 24px 20px; gap: 22px; }
@@ -432,7 +508,7 @@ h2.mono-h, h3.mono-h { margin: 0; font-weight: 500; font-size: 10.5px; }
   margin: 8px 0 0 94px;
   padding-left: 14px;
   border-left: 2px solid var(--rule);
-  max-width: 560px;
+  max-width: 580px;
 }
 .subblock__cards-row {
   display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 0 94px;
@@ -445,10 +521,17 @@ h2.mono-h, h3.mono-h { margin: 0; font-weight: 500; font-size: 10.5px; }
   letter-spacing: 0.4px;
   color: var(--muted);
 }
+/* Body — Indentations-Anker: linke Hairline-Rule führt durchgängig vom
+   subblock__head bis zum Body-Ende → visuelle Bindung Head ↔ Inhalt. */
 .subblock__body {
-  margin: 14px 0 0 94px;
-  max-width: 580px;
+  margin: 18px 0 0 94px;
+  padding-left: 22px;
+  border-left: 1px solid var(--rule);
+  max-width: 620px;
+  position: relative;
 }
+/* rb-list marker tint: accent for visual anchoring */
+.rb-list li::marker { color: var(--accent); font-weight: 500; }
 
 /* Rich-body content (Vertiefung-Items) ---------------------------------- */
 .rb-lead {
@@ -464,9 +547,16 @@ h2.mono-h, h3.mono-h { margin: 0; font-weight: 500; font-size: 10.5px; }
 .rb-h {
   display: flex; align-items: baseline; gap: 14px;
   margin: 22px 0 12px;
+  /* Break out of the body's left-rule, accent-bar anchors each h-section */
+  margin-left: -22px;
+  padding-left: 18px;
+  border-left: 3px solid var(--accent);
+  scroll-margin-top: 24px; /* leave space below sticky meta-bar when jumping via TOC */
 }
 .rb-h .mono-cap { color: var(--accent); }
 .rb-h .rule { flex: 1; height: 1px; background: var(--rule); }
+/* Subblock article scroll-margin so TOC-jumps don't tuck the head under the meta-bar */
+.subblock { scroll-margin-top: 24px; }
 .rb-p { margin: 0 0 14px; line-height: 1.65; font-size: 15px; }
 .rb-list { margin: 0 0 16px; padding-left: 22px; line-height: 1.6; font-size: 15px; }
 .rb-list li { margin-bottom: 6px; }

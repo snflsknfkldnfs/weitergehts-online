@@ -321,6 +321,85 @@
     return el;
   };
 
+  // ─── TOC (linke Spalte, sticky + scrollspy) ──────────────────────────────
+  const renderTOC = () => {
+    const nav = h('nav', { class: 'werkbank__toc', 'aria-label': 'Stoff-Navigation' });
+    const sticky = h('div', { class: 'toc-sticky' });
+    sticky.appendChild(monoCap('Stoff-Navigation', 'ink'));
+    const list = h('ol', { class: 'toc-list' });
+    d.vertiefung.forEach(blk => {
+      const items = bodies[blk.id] || [];
+      const li = h('li', { class: 'toc-li' });
+      const topLink = h('a', {
+        class: 'toc-link toc-link--top',
+        href: '#' + blk.id,
+        data: { target: blk.id },
+      },
+        h('span', { class: 'toc-kuerzel' }, blk.kuerzel),
+        h('span', { class: 'toc-titel' }, blk.titel),
+      );
+      li.appendChild(topLink);
+      let hIdx = 0;
+      const sublist = h('ol', { class: 'toc-sublist' });
+      items.forEach(it => {
+        if (it.type === 'h') {
+          const hId = blk.id + '-h' + hIdx;
+          hIdx++;
+          // shorten heading: drop the ' · Norm-Reference' tail if present
+          const label = it.text.replace(/\s+·\s+.*$/, '');
+          sublist.appendChild(h('li', null,
+            h('a', {
+              class: 'toc-link toc-link--sub',
+              href: '#' + hId,
+              data: { target: hId },
+            }, label),
+          ));
+        }
+      });
+      if (sublist.children.length) li.appendChild(sublist);
+      list.appendChild(li);
+    });
+    sticky.appendChild(list);
+    nav.appendChild(sticky);
+    return nav;
+  };
+
+  // Scrollspy: highlight TOC link of currently-visible section
+  function setupScrollspy() {
+    const links = document.querySelectorAll('.toc-link');
+    if (!links.length || !('IntersectionObserver' in window)) return;
+    const targets = [];
+    links.forEach(l => {
+      const t = document.getElementById(l.dataset.target);
+      if (t) targets.push(t);
+    });
+    let lastActiveId = null;
+    const setActive = (id) => {
+      if (id === lastActiveId) return;
+      lastActiveId = id;
+      links.forEach(l => l.classList.toggle('is-active', l.dataset.target === id));
+    };
+    const visible = new Map();
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) visible.set(e.target.id, e.intersectionRatio);
+        else visible.delete(e.target.id);
+      });
+      if (visible.size) {
+        // pick the topmost visible target (smallest top-position)
+        let best = null, bestTop = Infinity;
+        visible.forEach((_, id) => {
+          const el = document.getElementById(id);
+          if (!el) return;
+          const top = el.getBoundingClientRect().top;
+          if (top < bestTop) { bestTop = top; best = id; }
+        });
+        if (best) setActive(best);
+      }
+    }, { rootMargin: '-15% 0px -65% 0px', threshold: [0, 0.2, 0.5, 1] });
+    targets.forEach(t => observer.observe(t));
+  }
+
   // ─── Vertiefung (Sub-Blocks A.1-A.4) ─────────────────────────────────────
   const renderVertiefung = () => {
     const main = h('article', { class: 'werkbank__main' });
@@ -334,7 +413,7 @@
     ));
 
     d.vertiefung.forEach(blk => {
-      const sb = h('article', { class: 'subblock', data: { id: blk.id } });
+      const sb = h('article', { class: 'subblock', id: blk.id, data: { id: blk.id } });
       sb.appendChild(h('div', { class: 'subblock__head' },
         h('div', { class: 'subblock__id' },
           statusDot(blk.id),
@@ -351,7 +430,16 @@
       }
       const body = h('div', { class: 'subblock__body' });
       const items = bodies[blk.id] || [];
-      items.forEach(it => body.appendChild(renderRichItem(it)));
+      let hIdx = 0;
+      items.forEach(it => {
+        if (it.type === 'h') {
+          const hId = blk.id + '-h' + hIdx;
+          hIdx++;
+          body.appendChild(renderRichItem(it, hId));
+        } else {
+          body.appendChild(renderRichItem(it));
+        }
+      });
       sb.appendChild(body);
       main.appendChild(sb);
     });
@@ -359,10 +447,14 @@
   };
 
   // ─── Rich Body Item Renderer ─────────────────────────────────────────────
-  function renderRichItem(it) {
+  function renderRichItem(it, idArg) {
     switch (it.type) {
       case 'lead': return h('p', { class: 'rb-lead' }, renderInline(it.text));
-      case 'h': return h('div', { class: 'rb-h' }, monoCap(it.text, 'accent'), h('span', { class: 'rule' }));
+      case 'h': {
+        const attrs = { class: 'rb-h' };
+        if (idArg) attrs.id = idArg;
+        return h('div', attrs, monoCap(it.text, 'accent'), h('span', { class: 'rule' }));
+      }
       case 'p': return h('p', { class: 'rb-p' }, renderInline(it.text));
       case 'bullets': return h('ul', { class: 'rb-list' }, ...it.items.map(li => h('li', null, renderInline(li))));
       case 'numbered': return h('ol', { class: 'rb-list' }, ...it.items.map(li => h('li', null, renderInline(li))));
@@ -612,10 +704,12 @@
     root.appendChild(renderHeader());
     root.appendChild(renderTopRow());
     const werkbank = h('main', { class: 'werkbank', id: 'main' });
+    werkbank.appendChild(renderTOC());
     werkbank.appendChild(renderVertiefung());
     werkbank.appendChild(renderAside());
     root.appendChild(werkbank);
     buildSlideover();
+    setupScrollspy();
   }
 
   if (document.readyState === 'loading') {
