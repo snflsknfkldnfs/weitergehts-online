@@ -843,6 +843,10 @@ def on_page_content(html: str, page=None, config=None, files=None, **kwargs):
     # Skript-Redesign V2 Passes (idempotent, schalten sich nur in passenden Sections ein)
     html = wrap_top8_reveal(html)
     html = consolidate_falle_atlas(html)
+    # Werkbank-Layout MUSS als letzter Schritt laufen — wrappt das ganze HTML in
+    # Top-Row + Main/Aside-Grid. Nach diesem Wrap matchen Section-Position-Regexes
+    # nicht mehr zuverlässig.
+    html = wrap_werkbank_layout(html)
     return html
 
 
@@ -896,15 +900,20 @@ def stamp_section_kinds(markdown: str) -> str:
 
 def stamp_subblock_status(markdown: str, page_slug: str) -> str:
     """Hängt an jede Sub-Block-H2 (Pattern: ## A.1 …, ## B.2 …) ein
-    {data-status-key="<page>.<sub>"} attr_list für die Status-Dot-Persistenz."""
+    {data-status-key="<page>.<sub>" data-block-ref="A.1"} attr_list für die
+    Status-Dot-Persistenz + CSS-::before-Pille."""
     def repl(m):
-        ref = m.group("ref").lower()  # a.1
+        ref_orig = m.group("ref")  # A.1
+        ref = ref_orig.lower()  # a.1
         title = m.group("title").strip()
         if title.endswith("}"):
             return m.group(0)
         sub_slug = ref.replace(".", "-")  # a-1
         key = f"{page_slug}.{sub_slug}"
-        return f"## {m.group('ref')} {title} {{data-status-key=\"{key}\"}}"
+        return (
+            f"## {title} "
+            f"{{data-status-key=\"{key}\" data-block-ref=\"{ref_orig}\"}}"
+        )
     return _RE_HEADING_SUBBLOCK_H2.sub(repl, markdown)
 
 
@@ -965,15 +974,131 @@ def _wrap_grid_card_inner(html_content: str) -> str:
 def wrap_top8_reveal(html_content: str) -> str:
     """Im 'pflicht'-Bereich (Teil B) jede grid-cards-Karte mit data-reveal stempeln.
     Aufruf in on_page_content nach Markdown→HTML. Greift nur wenn section-kind-pflicht
-    bereits per attr_list-Stamp gesetzt ist."""
+    bereits per attr_list-Stamp gesetzt ist. Container bekommt .reveal-grid für 2-col."""
     if "section-kind-pflicht" not in html_content:
         return html_content
-    # Match grid-cards-Container und wrap Inhalt
+    # Match grid-cards-Container und wrap Inhalt; Container-Klasse ergänzen
+    def _replace(m):
+        opener = m.group(1)
+        inner = _wrap_grid_card_inner(m.group(2))
+        closer = m.group(3)
+        # class auf .grid + .cards + .reveal-grid erweitern
+        opener_new = opener.replace('class="grid cards"', 'class="grid cards reveal-grid"', 1)
+        return opener_new + inner + closer
     return re.sub(
         r'(<div class="grid cards"[^>]*>\s*)([\s\S]*?)(\s*</div>\s*(?=<p>🃏|<hr|<h1|<h2))',
-        lambda m: m.group(1) + _wrap_grid_card_inner(m.group(2)) + m.group(3),
+        _replace,
         html_content, count=1,
     )
+
+
+# ---------------------------------------------------------------------------
+# Skript-Redesign V2 — Werkbank-DOM-Wrap (post-render)
+# ---------------------------------------------------------------------------
+
+# Erkennt H1 mit einer der bekannten section-kind-Klassen.
+_RE_H1_SECTION_KIND = re.compile(
+    r'<h1[^>]*class="section-kind-(?P<kind>kurz|karto|stoff|pflicht|fallen|faelle|meta)"[^>]*>',
+    re.IGNORECASE,
+)
+_RE_H2_SECTION_KIND = re.compile(
+    r'<h2[^>]*class="section-kind-(?P<kind>kurz|karto|stoff|pflicht|fallen|faelle|meta)"[^>]*>',
+    re.IGNORECASE,
+)
+
+
+def _find_section_starts(html_content: str) -> list[tuple[int, str, int]]:
+    """Liefert sortierte Liste (start_pos, kind, level) aller section-kind-Header."""
+    starts: list[tuple[int, str, int]] = []
+    for m in _RE_H1_SECTION_KIND.finditer(html_content):
+        starts.append((m.start(), m.group("kind"), 1))
+    for m in _RE_H2_SECTION_KIND.finditer(html_content):
+        starts.append((m.start(), m.group("kind"), 2))
+    starts.sort(key=lambda x: x[0])
+    return starts
+
+
+def wrap_werkbank_layout(html_content: str) -> str:
+    """Wrappe das gerenderte HTML in Werkbank-Container:
+       <section class="lr-top-row">       — Kürze + Karto (2-col)
+         <section class="lr-kurz">…</section>
+         <section class="lr-karto">…</section>
+       </section>
+       <div class="lr-werkbank">          — Werkbank-Grid (Main + Aside)
+         <main class="lr-werkbank-main">  — Stoff/Vertiefung (Teil A)
+           …
+         </main>
+         <aside class="lr-werkbank-aside"> — Pflicht/Fallen/Fälle/Meta
+           …
+         </aside>
+       </div>
+
+    Vorbedingung: hooks.py hat section-kind-Klassen auf H1/H2 gestempelt.
+    Sucht im HTML nach den jeweiligen Sektion-Headers und splittet den DOM
+    an diesen Stellen.
+    """
+    starts = _find_section_starts(html_content)
+    if not starts:
+        return html_content
+
+    # Sammle: (kind, content) — Content geht vom Section-Header bis zum
+    # nächsten Section-Header (egal welcher Kind).
+    # Index zwischen starts[i] und starts[i+1] = der Section-Block.
+    blocks: list[tuple[str, str]] = []
+    # Auch: alles VOR dem ersten Section-Header ist "pre" (Page-Title etc.)
+    if starts[0][0] > 0:
+        blocks.append(("pre", html_content[: starts[0][0]]))
+    for i, (pos, kind, level) in enumerate(starts):
+        end = starts[i + 1][0] if i + 1 < len(starts) else len(html_content)
+        blocks.append((kind, html_content[pos:end]))
+
+    # Verteile: pre + kurz + karto -> top-row
+    # stoff -> main
+    # pflicht/fallen/faelle/meta -> aside
+    top_row_parts: dict[str, str] = {}
+    pre_html = ""
+    main_html_parts: list[str] = []
+    aside_html_parts: list[str] = []
+
+    for kind, content in blocks:
+        if kind == "pre":
+            pre_html = content
+        elif kind in ("kurz", "karto"):
+            # Nur erstes Vorkommen pro Kind in top-row (Sub-Block-H2 mit gleichem
+            # Heuristik-Match landet stattdessen im jeweiligen Outer-Container —
+            # in der Praxis tritt das nicht auf, da Kürze + Karto nur einmal vorkommen).
+            top_row_parts.setdefault(kind, "")
+            top_row_parts[kind] += content
+        elif kind == "stoff":
+            main_html_parts.append(content)
+        elif kind in ("pflicht", "fallen", "faelle", "meta"):
+            aside_html_parts.append(content)
+
+    out: list[str] = []
+    if pre_html:
+        out.append(f'<div class="lr-pre-title">{pre_html}</div>')
+
+    # Top-Row
+    if "kurz" in top_row_parts or "karto" in top_row_parts:
+        out.append('<section class="lr-top-row">')
+        if "kurz" in top_row_parts:
+            out.append(f'<section class="lr-kurz">{top_row_parts["kurz"]}</section>')
+        if "karto" in top_row_parts:
+            out.append(f'<section class="lr-karto">{top_row_parts["karto"]}</section>')
+        out.append('</section>')
+
+    # Werkbank-Grid
+    if main_html_parts or aside_html_parts:
+        out.append('<div class="lr-werkbank">')
+        out.append('<main class="lr-werkbank-main">')
+        out.extend(main_html_parts)
+        out.append('</main>')
+        out.append('<aside class="lr-werkbank-aside">')
+        out.extend(aside_html_parts)
+        out.append('</aside>')
+        out.append('</div>')
+
+    return "\n".join(out)
 
 
 # Falle-Atlas Tabelle → 10 falle-card-Blöcke (Single source of truth: Tabelle)
