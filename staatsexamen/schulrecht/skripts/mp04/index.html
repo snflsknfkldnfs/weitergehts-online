@@ -19,6 +19,7 @@
 <link href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
 <link href="../stylesheets/extra.css" rel="stylesheet"/>
+<link href="../stylesheets/lernraum-override.css" rel="stylesheet"/>
 <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 </head>
 <body data-md-color-accent="deep-orange" data-md-color-primary="deep-orange" data-md-color-scheme="default" dir="ltr">
@@ -442,10 +443,10 @@
  BV --&gt; BAY --&gt; VO --&gt; KM
  BU -.Querverweis.-&gt; BAY
 
- classDef bv fill:#fef2f2,stroke:#9f1239,stroke-width:2px,color:#1f2937
- classDef bay fill:#fff7ed,stroke:#c2410c,stroke-width:2px,color:#1f2937
- classDef vo fill:#fefce8,stroke:#ca8a04,stroke-width:2px,color:#1f2937
- classDef km fill:#f7fee7,stroke:#65a30d,stroke-width:2px,color:#1f2937
+ classDef bv fill:#ffffff,stroke:#0c0c0a,stroke-width:1.5px,color:#0c0c0a
+ classDef bay fill:#ffffff,stroke:#4a5d3b,stroke-width:1.5px,color:#0c0c0a
+ classDef vo fill:#fafaf6,stroke:#6b685f,stroke-width:1px,color:#0c0c0a
+ classDef km fill:#fafaf6,stroke:#9b988e,stroke-width:1px,color:#0c0c0a,stroke-dasharray: 4 2
  classDef bu fill:#eff6ff,stroke:#1e3a8a,stroke-width:2px,color:#1f2937
 </code></pre>
 <table>
@@ -1256,6 +1257,7 @@ Material rendert das als <abbr title="..."> mit gestrichelter Unterstreichung.
 <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "navigation.path", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link", "content.tooltips"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
 <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
 <script src="../javascripts/extra.js"></script>
+<script src="../javascripts/lernraum.js"></script>
 <script type="module">import mermaid from "https://unpkg.com/mermaid@10.9.1/dist/mermaid.esm.min.mjs";
 window.mermaidConfig = {default: {
     startOnLoad: false
