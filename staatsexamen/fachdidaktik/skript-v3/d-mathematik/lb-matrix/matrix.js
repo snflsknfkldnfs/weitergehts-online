@@ -102,6 +102,9 @@
     if (s.ke_wortlaut) {
       frag.appendChild(h('p', { class: 'mx-slideover__ke-wortlaut' }, s.ke_wortlaut));
     }
+    if (s.ke_quelle) {
+      frag.appendChild(h('p', { class: 'mx-slideover__ke-quelle' }, 'Quelle: ' + s.ke_quelle));
+    }
     if (s.ueberblick) {
       frag.appendChild(h('p', { class: 'mx-slideover__ueberblick' }, s.ueberblick));
     }
