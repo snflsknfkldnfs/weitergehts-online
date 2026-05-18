@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LB-Matrix Mathematik — Fachdidaktik · Skript V3</title>
+  <meta name="description" content="LB×Jgst-Matrix Mathematik MS Bayern mit Sequenzplanungen + didaktischer Kommentierung — 2. Staatsexamen MS Bayern" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3E%3Ctext y=%2713%27 font-family=%27monospace%27 font-size=%2715%27 fill=%27%234a5d3b%27%3E%E2%86%92%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../../schulrecht/skript-v3/_shared/style.css" />
+  <style>
+    .mx-shell {
+      max-width: 1520px;
+      margin: 0 auto;
+      padding: 32px max(20px, 4vw) 64px;
+    }
+    .mx-hero {
+      border-top: 3px solid var(--ink);
+      border-bottom: 1px solid var(--rule);
+      padding: 36px 0 28px;
+      margin-bottom: 36px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 36px;
+      align-items: end;
+    }
+    .mx-hero__zalgm {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .mx-hero__title {
+      font-family: var(--serif);
+      font-size: clamp(32px, 4.4vw, 56px);
+      line-height: 1.05;
+      letter-spacing: -0.015em;
+      font-weight: 500;
+      margin: 0 0 6px;
+    }
+    .mx-hero__sub {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(18px, 2vw, 24px);
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
+    .mx-hero__lead {
+      font-family: var(--serif);
+      font-size: clamp(14.5px, 1.4vw, 17px);
+      line-height: 1.55;
+      max-width: 720px;
+      color: var(--ink);
+      margin: 0;
+    }
+    .mx-hero__legend {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: end;
+    }
+    .mx-hero__legend-item { display: flex; gap: 8px; align-items: center; }
+    .mx-hero__legend-dot {
+      width: 12px; height: 12px; border-radius: 2px;
+      border: 1px solid var(--hairline);
+    }
+    .mx-hero__legend-dot--ausg { background: var(--accent); border-color: var(--accent); }
+    .mx-hero__legend-dot--gerst { background: #d8d4c1; border-color: #b5b09a; }
+    .mx-hero__legend-dot--stub  { background: var(--paper); border-color: var(--hairline); }
+
+    .mx-grid-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--rule);
+      background: var(--paper);
+    }
+    .mx-grid {
+      display: grid;
+      grid-template-columns: 80px repeat(6, minmax(180px, 1fr));
+      min-width: 1180px;
+    }
+    .mx-cell {
+      padding: 12px 14px;
+      border-right: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      font-family: var(--serif);
+      font-size: 13.5px;
+      line-height: 1.45;
+      color: var(--ink);
+      position: relative;
+    }
+    .mx-cell:last-child { border-right: none; }
+    .mx-cell--corner {
+      font-family: var(--mono);
+      font-size: 9.5px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: var(--bg);
+      display: flex; align-items: end; justify-content: end;
+      padding: 14px 12px 10px;
+    }
+    .mx-cell--lb-head {
+      background: var(--bg);
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--ink);
+      font-weight: 600;
+      padding: 14px 14px 12px;
+    }
+    .mx-cell--lb-head .mx-lb-id { color: var(--accent); display: block; font-size: 9.5px; margin-bottom: 4px; }
+    .mx-cell--jgst {
+      background: var(--bg);
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 1.2px;
+      font-weight: 600;
+      color: var(--accent);
+      display: flex; align-items: center;
+      padding: 12px 14px;
+    }
+    .mx-cell--data {
+      cursor: pointer;
+      transition: background 0.12s, border-color 0.12s;
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .mx-cell--data:hover {
+      background: var(--accent-soft, #e8ece2);
+      box-shadow: inset 3px 0 0 var(--accent);
+    }
+    .mx-cell--data:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: -2px;
+      background: var(--accent-soft, #e8ece2);
+    }
+    .mx-cell__ke {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.6px;
+      color: var(--muted);
+    }
+    .mx-cell__titel { font-weight: 500; color: var(--ink); }
+    .mx-cell__kurz {
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.35;
+    }
+    .mx-cell__status {
+      position: absolute;
+      top: 8px; right: 8px;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      border: 1px solid var(--hairline);
+    }
+    .mx-cell--ausgearbeitet .mx-cell__status { background: var(--accent); border-color: var(--accent); }
+    .mx-cell--gerüst .mx-cell__status { background: #d8d4c1; border-color: #b5b09a; }
+    .mx-cell--stub .mx-cell__status { background: var(--paper); }
+    .mx-cell--ausgearbeitet { border-left: 3px solid var(--accent); padding-left: 11px; }
+
+    /* Slideover (eigene Implementierung, nicht aus app.js shared) */
+    .mx-slideover-backdrop {
+      position: fixed; inset: 0;
+      background: rgba(12, 12, 10, 0.36);
+      backdrop-filter: blur(2px);
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.2s;
+      z-index: 9000;
+    }
+    .mx-slideover-backdrop[data-open="true"] { opacity: 1; pointer-events: auto; }
+    .mx-slideover {
+      position: fixed;
+      top: 0; right: 0;
+      width: min(720px, 92vw);
+      height: 100vh;
+      background: var(--paper);
+      border-left: 1px solid var(--rule);
+      box-shadow: -4px 0 18px rgba(12, 12, 10, 0.08);
+      transform: translateX(100%);
+      transition: transform 0.24s ease-out;
+      overflow-y: auto;
+      z-index: 9001;
+    }
+    .mx-slideover[data-open="true"] { transform: translateX(0); }
+    .mx-slideover__inner { padding: 28px 32px 60px; max-width: none; }
+    .mx-slideover__close {
+      position: sticky;
+      top: 0; right: 0;
+      float: right;
+      margin: -8px -10px 0 12px;
+      background: var(--paper);
+      border: 1px solid var(--hairline);
+      padding: 6px 12px;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 1.2px;
+      cursor: pointer;
+      border-radius: 2px;
+    }
+    .mx-slideover__close:hover { border-color: var(--ink); color: var(--accent); }
+    .mx-slideover__crumb {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .mx-slideover__ke {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 1.2px;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    .mx-slideover__title {
+      font-family: var(--serif);
+      font-size: 28px;
+      line-height: 1.15;
+      font-weight: 500;
+      margin: 0 0 18px;
+    }
+    .mx-slideover__ke-wortlaut {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--ink);
+      border-left: 3px solid var(--accent);
+      padding: 8px 0 8px 14px;
+      margin: 0 0 22px;
+      background: linear-gradient(to right, var(--accent-soft, #e8ece2), transparent);
+    }
+    .mx-slideover__ueberblick {
+      font-family: var(--serif);
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: var(--ink);
+      margin: 0 0 24px;
+    }
+    .mx-section-h {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin: 28px 0 14px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--hairline);
+    }
+    .mx-ue {
+      border: 1px solid var(--rule);
+      border-left: 3px solid var(--accent);
+      padding: 14px 16px 12px;
+      margin-bottom: 10px;
+      background: var(--paper);
+    }
+    .mx-ue__head {
+      display: flex; gap: 12px; align-items: baseline;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+    .mx-ue__nr {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 1px;
+      min-width: 28px;
+    }
+    .mx-ue__titel {
+      font-family: var(--serif);
+      font-size: 15.5px;
+      font-weight: 600;
+      flex: 1;
+    }
+    .mx-ue__meta {
+      font-family: var(--mono);
+      font-size: 9.5px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 1px 6px;
+      border: 1px solid var(--hairline);
+      border-radius: 2px;
+    }
+    .mx-ue__inhalt {
+      font-family: var(--serif);
+      font-size: 14px;
+      line-height: 1.55;
+      margin: 0 0 8px;
+    }
+    .mx-ue__begruendung {
+      font-family: var(--serif);
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: var(--muted);
+      background: var(--bg);
+      padding: 8px 12px;
+      border-radius: 2px;
+      margin-top: 6px;
+    }
+    .mx-ue__begruendung::before {
+      content: 'Begründung — ';
+      font-family: var(--mono);
+      font-size: 9.5px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .mx-bezug {
+      border-top: 1px solid var(--rule);
+      padding-top: 12px;
+      margin-top: 8px;
+      font-family: var(--serif);
+      font-size: 13.5px;
+      line-height: 1.5;
+    }
+    .mx-bezug-item { margin: 6px 0; }
+    .mx-bezug-item__didaktik {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: var(--accent);
+      font-weight: 600;
+      display: inline-block;
+      margin-right: 6px;
+    }
+    .mx-stub-note {
+      font-family: var(--serif);
+      font-size: 14.5px;
+      font-style: italic;
+      color: var(--muted);
+      padding: 16px 18px;
+      border: 1px dashed var(--hairline);
+      background: var(--bg);
+      margin: 16px 0;
+    }
+
+    @media (max-width: 900px) {
+      .mx-hero { grid-template-columns: 1fr; }
+      .mx-hero__legend { align-items: start; flex-direction: row; flex-wrap: wrap; gap: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#matrix-root">Zum Hauptinhalt springen</a>
+  <div class="meta-bar">
+    <span><a href="../">D Mathematik</a> · LB-Matrix</span>
+    <span><a href="../../../d-mathematik/">L3-Hub vergleichen →</a></span>
+  </div>
+
+  <main id="matrix-root" class="mx-shell">
+    <header class="mx-hero">
+      <div>
+        <div class="mx-hero__zalgm">Fachdidaktik · Mathematik · LP+ Matrix</div>
+        <h1 class="mx-hero__title">LB × Jgst.</h1>
+        <p class="mx-hero__sub"><em>Sechs Lernbereiche, sechs Jahrgangsstufen.</em></p>
+        <p class="mx-hero__lead">
+          Stoff-Verteilung des LehrplanPLUS Mittelschule Mathematik als Matrix —
+          jeder Lernbereich eine Spalte, jede Jahrgangsstufe eine Zeile.
+          Klick auf eine Zelle öffnet die Sequenzplanung mit fachdidaktischer
+          Kommentierung: <em>warum diese Reihenfolge, warum dieses Material,
+          welche Prinzipien greifen?</em>
+        </p>
+      </div>
+      <div class="mx-hero__legend" aria-label="Legende">
+        <div class="mx-hero__legend-item"><span class="mx-hero__legend-dot mx-hero__legend-dot--ausg"></span><span>vollständig ausgearbeitet</span></div>
+        <div class="mx-hero__legend-item"><span class="mx-hero__legend-dot mx-hero__legend-dot--gerst"></span><span>Gerüst</span></div>
+        <div class="mx-hero__legend-item"><span class="mx-hero__legend-dot mx-hero__legend-dot--stub"></span><span>Stub · in Vorbereitung</span></div>
+      </div>
+    </header>
+
+    <div id="mx-grid-host"></div>
+  </main>
+
+  <div class="mx-slideover-backdrop" id="mx-backdrop" data-open="false" aria-hidden="true"></div>
+  <aside class="mx-slideover" id="mx-slideover" data-open="false" role="dialog" aria-modal="true" aria-labelledby="mx-slideover-title" tabindex="-1">
+    <div class="mx-slideover__inner" id="mx-slideover-body"></div>
+  </aside>
+
+  <div id="sr-announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="data.js"></script>
+  <script src="matrix.js"></script>
+</body>
+</html>
