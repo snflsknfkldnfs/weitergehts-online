@@ -1,4 +1,4 @@
-// LB-Matrix-Renderer Sozialkunde v3 · GPG-5-Phasen + Ankerwörter
+// LB-Matrix-Renderer Sozialkunde v4 · BUV-Template-konform · Mager-3-K + 4-Spuren-Diff
 // Konsumiert window.MATRIX (data.js v3) mit:
 //   - cells.kes[].pilot_sequenz.ues_detail[] · GPG-5-Artikulationsstufen pro UE
 //     (problemstellung · problementfaltung · problemloesung · wertung · sicherung_lzk)
@@ -79,24 +79,80 @@
     { id: 'sicherung_lzk',     label: '5 Sicherung + LZK',   kurz: 'Hefteintrag · Lernzielkontrolle' },
   ];
 
+  // Mager-3-K Lernziel renderer (Verhalten · Bedingung · Maßstab)
+  function renderMagerZiel(z, opts) {
+    opts = opts || {};
+    const el = h('div', { class: 'mx-mager' + (opts.compact ? ' mx-mager--compact' : '') });
+    if (z.verhalten)  el.appendChild(h('span', { class: 'mx-mager__verhalten' }, z.verhalten + ' '));
+    if (z.bedingung)  el.appendChild(h('span', { class: 'mx-mager__bedingung' }, z.bedingung + ' '));
+    if (z.maszstab)   el.appendChild(h('span', { class: 'mx-mager__massstab' }, z.maszstab));
+    return el;
+  }
+
+  // Teilziele-Liste mit AFB-Tag + diff-Marker
+  function renderTeilziele(tzs) {
+    const wrap = h('div', { class: 'mx-tz-list' });
+    wrap.appendChild(h('div', { class: 'mx-tz-list__h' }, `${tzs.length} Teilziele (Mager) · ${tzs.filter(t => t.differenziert).length} differenziert`));
+    const ol = h('ol', { class: 'mx-tz-list__ol' });
+    tzs.forEach((t, i) => {
+      const li = h('li', { class: 'mx-tz' + (t.differenziert ? ' mx-tz--diff' : '') });
+      li.appendChild(h('span', { class: 'mx-tz__head' },
+        h('span', { class: 'mx-tz__nr' }, `TZ${i+1}`),
+        t.afb && h('span', { class: `mx-tz__afb mx-tz__afb--${t.afb.toLowerCase()}` }, `AFB ${t.afb}`),
+        t.differenziert && h('span', { class: 'mx-tz__diff-tag' }, 'differenziert'),
+      ));
+      li.appendChild(h('span', { class: 'mx-tz__body' },
+        h('span', { class: 'mx-mager__verhalten' }, t.tz + ' '),
+        h('span', { class: 'mx-mager__bedingung' }, t.indem + ' '),
+        h('span', { class: 'mx-mager__massstab' }, t.erkennbar),
+      ));
+      ol.appendChild(li);
+    });
+    wrap.appendChild(ol);
+    return wrap;
+  }
+
   function renderPilotUE(ue, phasenSchema) {
     const schema = phasenSchema && phasenSchema.length ? phasenSchema : PHASEN_DEFAULT;
     const el = h('div', { class: 'mx-ue mx-ue-pilot' });
+
+    // Header: UE-Nr + Frage-Titel (statt Aussage-Titel)
     el.appendChild(h('div', { class: 'mx-ue__head' },
       h('span', { class: 'mx-ue__nr' }, `UE ${ue.nr}`),
       h('span', { class: 'mx-ue__titel' }, ue.titel),
       ue.minuten && h('span', { class: 'mx-ue__meta' }, `${ue.minuten} min`),
     ));
-    if (ue.lernziel) {
+    if (ue.stundenthema_frage) {
+      el.appendChild(h('p', { class: 'mx-ue__frage' }, ue.stundenthema_frage));
+    }
+
+    // Mager-3-K Stundenziel
+    if (ue.lernziel_stundenziel && (ue.lernziel_stundenziel.verhalten || ue.lernziel_stundenziel.bedingung)) {
+      const lzBlock = h('div', { class: 'mx-ue__sz' });
+      lzBlock.appendChild(h('div', { class: 'mx-ue__sz-label' }, 'Stundenziel (Mager)'));
+      lzBlock.appendChild(renderMagerZiel(ue.lernziel_stundenziel));
+      el.appendChild(lzBlock);
+    } else if (ue.lernziel) {
       el.appendChild(h('p', { class: 'mx-ue__lernziel' }, ue.lernziel));
     }
-    // 5 Artikulationsstufen (GPG-Bayern-Standard)
+
+    // Teilziele
+    if (ue.lernziel_teilziele && ue.lernziel_teilziele.length) {
+      el.appendChild(renderTeilziele(ue.lernziel_teilziele));
+    }
+
+    // 5 Artikulationsstufen mit Sozialform-Tag pro Phase
     const phasen = h('div', { class: 'mx-ue-phasen mx-ue-phasen--5' });
     schema.forEach(p => {
       const body = ue[p.id];
       if (!body) return;
-      phasen.appendChild(h('div', { class: 'mx-ue-phasen__label', title: p.kurz }, p.label));
-      phasen.appendChild(h('div', { class: 'mx-ue-phasen__body' }, body));
+      const labelEl = h('div', { class: 'mx-ue-phasen__label', title: p.kurz }, p.label);
+      phasen.appendChild(labelEl);
+      const bodyEl = h('div', { class: 'mx-ue-phasen__body' });
+      const sf = ue.sozialform_phasen && ue.sozialform_phasen[p.id];
+      if (sf) bodyEl.appendChild(h('span', { class: 'mx-ue-phasen__sozialform' }, sf));
+      bodyEl.appendChild(document.createTextNode(body));
+      phasen.appendChild(bodyEl);
     });
     el.appendChild(phasen);
 
@@ -119,16 +175,133 @@
       el.appendChild(kse);
     }
 
-    // Meta-Grid (Material · Differenzierung · LP+-Bezug · Didaktik)
-    if (ue.material || ue.differenzierung || ue.lp_bezug || ue.didaktik) {
+    // Differenzierungs-Block (4 Spuren)
+    if (ue.differenzierung_block) {
+      const d = ue.differenzierung_block;
+      const block = h('div', { class: 'mx-diff-block' });
+      block.appendChild(h('div', { class: 'mx-diff-block__h' }, 'Differenzierung · 4 Spuren'));
+      const grid = h('div', { class: 'mx-diff-grid' });
+      const spuren = [
+        { id: 'daz',              label: 'DaZ',              text: d.daz },
+        { id: 'lrs',              label: 'LRS',              text: d.lrs },
+        { id: 'leistungsschwach', label: 'Leistungsschwach', text: d.leistungsschwach },
+        { id: 'leistungsstark',   label: 'Leistungsstark',   text: d.leistungsstark },
+      ];
+      spuren.forEach(s => {
+        if (!s.text) return;
+        const cell = h('div', { class: `mx-diff-cell mx-diff-cell--${s.id}` });
+        cell.appendChild(h('span', { class: 'mx-diff-cell__label' }, s.label));
+        cell.appendChild(h('span', { class: 'mx-diff-cell__body' }, s.text));
+        grid.appendChild(cell);
+      });
+      block.appendChild(grid);
+      el.appendChild(block);
+    }
+
+    // Personifikation + Tafelbild als zwei kompakte Callouts
+    if (ue.personifikation_anteil || ue.tafelbild_skizze) {
+      const callouts = h('div', { class: 'mx-callouts' });
+      if (ue.personifikation_anteil) {
+        callouts.appendChild(h('div', { class: 'mx-callout mx-callout--pers' },
+          h('span', { class: 'mx-callout__label' }, 'Personifikation'),
+          h('span', null, ue.personifikation_anteil),
+        ));
+      }
+      if (ue.tafelbild_skizze) {
+        callouts.appendChild(h('div', { class: 'mx-callout mx-callout--tafel' },
+          h('span', { class: 'mx-callout__label' }, 'Tafelbild'),
+          h('span', null, ue.tafelbild_skizze),
+        ));
+      }
+      el.appendChild(callouts);
+    }
+
+    // Meta-Grid (Material · Hausaufgabe · LP+-Bezug · Didaktik)
+    if (ue.material || ue.hausaufgabe || ue.lp_bezug || ue.didaktik) {
       const meta = h('div', { class: 'mx-ue-meta-grid' });
-      if (ue.material)         { meta.appendChild(h('div', null, h('b', null, 'Material'), ue.material)); }
-      if (ue.differenzierung)  { meta.appendChild(h('div', null, h('b', null, 'Differenzierung'), ue.differenzierung)); }
-      if (ue.lp_bezug)         { meta.appendChild(h('div', null, h('b', null, 'LP+-Bezug'), ue.lp_bezug)); }
-      if (ue.didaktik)         { meta.appendChild(h('div', null, h('b', null, 'Didaktik'), ue.didaktik)); }
+      if (ue.material)    { meta.appendChild(h('div', null, h('b', null, 'Material'), ue.material)); }
+      if (ue.hausaufgabe && ue.hausaufgabe !== '—') {
+        meta.appendChild(h('div', null, h('b', null, 'Hausaufgabe'), ue.hausaufgabe));
+      }
+      if (ue.lp_bezug)    { meta.appendChild(h('div', null, h('b', null, 'LP+-Bezug'), ue.lp_bezug)); }
+      if (ue.didaktik)    { meta.appendChild(h('div', null, h('b', null, 'Didaktik'), ue.didaktik)); }
       el.appendChild(meta);
     }
     return el;
+  }
+
+  // Sequenz-Meta-Card (vor Sequenz-Tabelle)
+  function renderSequenzMeta(meta) {
+    const card = h('div', { class: 'mx-seq-meta' });
+    const rows = [
+      ['Lehrplanbezug',        meta.lehrplanbezug],
+      ['Zielsetzung',          meta.zielsetzung_uebergeordnet],
+      ['Methodische Schwerpunkte', (meta.methodische_schwerpunkte || []).join(' · ')],
+      ['Kompetenzerwerb · Progression', meta.kompetenzerwerb_progression],
+      ['Personifikation durchgängig',   meta.personifikation_durchgaengig],
+      ['Schwerpunktstunde-Kandidat',    meta.schwerpunktstunde_kandidat],
+    ];
+    rows.forEach(([k, v]) => {
+      if (!v) return;
+      card.appendChild(h('div', { class: 'mx-seq-meta__row' },
+        h('span', { class: 'mx-seq-meta__k' }, k),
+        h('span', { class: 'mx-seq-meta__v' }, v),
+      ));
+    });
+    if (meta.kompetenzerwartungen_verbatim && meta.kompetenzerwartungen_verbatim.length) {
+      const row = h('div', { class: 'mx-seq-meta__row' },
+        h('span', { class: 'mx-seq-meta__k' }, 'KE-Wortlaute (LP+ verbatim)'),
+      );
+      const ul = h('ul', { class: 'mx-seq-meta__list' });
+      meta.kompetenzerwartungen_verbatim.forEach(ke => ul.appendChild(h('li', null, ke)));
+      row.appendChild(ul);
+      card.appendChild(row);
+    }
+    if (meta.inhalte_lp_verbatim && meta.inhalte_lp_verbatim.length) {
+      const row = h('div', { class: 'mx-seq-meta__row' },
+        h('span', { class: 'mx-seq-meta__k' }, 'Inhalte zu den Kompetenzen (LP+ verbatim)'),
+      );
+      const ul = h('ul', { class: 'mx-seq-meta__list' });
+      meta.inhalte_lp_verbatim.forEach(t => ul.appendChild(h('li', null, t)));
+      row.appendChild(ul);
+      card.appendChild(row);
+    }
+    return card;
+  }
+
+  // Sequenz-Tabelle (Pflichtspalten BUV-Template v4 Abschn. 4.3)
+  function renderSequenzTabelle(rows) {
+    const wrap = h('div', { class: 'mx-seq-tab-wrap' });
+    const tbl = h('table', { class: 'mx-seq-tab' });
+    const thead = h('thead', null,
+      h('tr', null,
+        h('th', null, 'UZE'),
+        h('th', null, 'Datum'),
+        h('th', null, 'Stundenthema (Frage)'),
+        h('th', null, 'Prozesskompetenz'),
+        h('th', null, 'Gegenstand'),
+        h('th', null, 'Perspektive'),
+        h('th', null, 'Stundenziel (kurz)'),
+        h('th', null, 'Kommentar'),
+      ),
+    );
+    const tbody = h('tbody');
+    rows.forEach(r => {
+      const tr = h('tr', { class: r.schwerpunkt ? 'mx-seq-tab__row--schwerpunkt' : null });
+      tr.appendChild(h('td', { class: 'mx-seq-tab__uze' }, r.uze + (r.schwerpunkt ? ' ★' : '')));
+      tr.appendChild(h('td', null, r.datum || ''));
+      tr.appendChild(h('td', { class: 'mx-seq-tab__frage' }, r.stundenthema_frage || ''));
+      tr.appendChild(h('td', null, r.prozesskompetenz || ''));
+      tr.appendChild(h('td', null, r.gegenstand || ''));
+      tr.appendChild(h('td', null, r.perspektive || ''));
+      tr.appendChild(h('td', null, r.stundenziel_kurz || ''));
+      tr.appendChild(h('td', null, r.kommentar || ''));
+      tbody.appendChild(tr);
+    });
+    tbl.appendChild(thead);
+    tbl.appendChild(tbody);
+    wrap.appendChild(tbl);
+    return wrap;
   }
 
   // Ankerwörter im KE-Wortlaut hervorheben (longest-first, case-insensitive,
@@ -248,10 +421,28 @@
       if (ke.pilot_sequenz) {
         const p = ke.pilot_sequenz;
         sec.appendChild(h('div', { class: 'mx-section-h' },
-          'Pilot-Sequenz · 45-min-UE-Plan · GPG-5-Phasen-Standard'));
+          'Pilot-Sequenz · BUV-Template v4 · 5-Phasen-Standard'));
         sec.appendChild(h('div', { class: 'ke-section__umsetzung-titel' }, p.titel));
         sec.appendChild(h('div', { class: 'ke-section__umsetzung-meta' },
           `${p.gesamtzeit} · ${p.praxis}`));
+        if (p.qualitaetsstandards_quelle) {
+          sec.appendChild(h('div', { class: 'mx-quelle-note' },
+            'Standards-Quelle: ' + p.qualitaetsstandards_quelle));
+        }
+
+        // Sequenz-Metadaten-Karte
+        if (p.sequenz_meta) {
+          sec.appendChild(h('div', { class: 'mx-section-h mx-section-h--sub' }, 'Sequenz-Metadaten'));
+          sec.appendChild(renderSequenzMeta(p.sequenz_meta));
+        }
+
+        // Sequenz-Tabelle (Pflichtspalten BUV-Template v4)
+        if (p.sequenz_tabelle && p.sequenz_tabelle.length) {
+          sec.appendChild(h('div', { class: 'mx-section-h mx-section-h--sub' }, 'Sequenzplan · Übersicht'));
+          sec.appendChild(renderSequenzTabelle(p.sequenz_tabelle));
+        }
+
+        // Phasen-Standard-Hinweis
         if (p.phasenStandard) {
           sec.appendChild(h('div', { class: 'mx-phasen-legend' },
             h('span', { class: 'mx-phasen-legend__label' }, 'Phasen-Standard'),
@@ -268,6 +459,8 @@
           });
           sec.appendChild(legend);
         }
+
+        sec.appendChild(h('div', { class: 'mx-section-h mx-section-h--sub' }, 'UE-Verlaufspläne · 10 × 45 min'));
         (p.ues_detail || []).forEach(ue => {
           sec.appendChild(renderPilotUE(ue, p.phasenSchema));
         });

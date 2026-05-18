@@ -143,9 +143,89 @@
     .mx-bezug-item { margin: 6px 0; }
     .mx-bezug-item__didaktik { font-family: var(--mono); font-size: 10px; letter-spacing: 1px; color: var(--accent); font-weight: 600; display: inline-block; margin-right: 6px; }
 
+    /* ─── v4 BUV-Template-Standards ─── */
+
+    /* Quelle-Note (Standards-Quellenangabe) */
+    .mx-quelle-note { font-family: var(--mono); font-size: 10px; line-height: 1.45; letter-spacing: 0.3px; color: var(--muted); margin: 4px 0 14px; padding: 6px 10px; background: var(--bg); border-left: 2px solid var(--hairline); }
+
+    /* Sequenz-Meta-Card */
+    .mx-section-h--sub { margin-top: 24px; font-size: 11px; }
+    .mx-seq-meta { display: flex; flex-direction: column; gap: 6px; padding: 12px 14px; margin: 8px 0 16px; background: var(--bg); border-left: 3px solid var(--accent); font-family: var(--serif); font-size: 12.5px; line-height: 1.55; }
+    .mx-seq-meta__row { display: grid; grid-template-columns: 200px 1fr; gap: 12px; align-items: baseline; padding: 4px 0; border-bottom: 1px dotted var(--hairline); }
+    .mx-seq-meta__row:last-child { border-bottom: none; }
+    .mx-seq-meta__k { font-family: var(--mono); font-size: 9.5px; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); font-weight: 600; padding-top: 2px; }
+    .mx-seq-meta__v { color: var(--ink); }
+    .mx-seq-meta__list { margin: 0; padding-left: 18px; font-style: italic; color: var(--ink); }
+    .mx-seq-meta__list li { margin: 2px 0; }
+
+    /* Sequenz-Tabelle (BUV-Template v4 Pflichtspalten) */
+    .mx-seq-tab-wrap { overflow-x: auto; margin: 8px 0 18px; border: 1px solid var(--rule); background: var(--paper); }
+    .mx-seq-tab { width: 100%; min-width: 920px; border-collapse: collapse; font-family: var(--serif); font-size: 11.5px; line-height: 1.4; }
+    .mx-seq-tab th { background: var(--bg); font-family: var(--mono); font-size: 9px; letter-spacing: 0.6px; text-transform: uppercase; color: var(--muted); font-weight: 600; text-align: left; padding: 8px 8px; border-bottom: 1px solid var(--rule); border-right: 1px solid var(--hairline); }
+    .mx-seq-tab td { padding: 8px 8px; border-bottom: 1px solid var(--hairline); border-right: 1px solid var(--hairline); vertical-align: top; color: var(--ink); }
+    .mx-seq-tab tr:last-child td { border-bottom: none; }
+    .mx-seq-tab td:last-child, .mx-seq-tab th:last-child { border-right: none; }
+    .mx-seq-tab__uze { font-family: var(--mono); font-weight: 600; color: var(--accent); font-size: 11px; white-space: nowrap; }
+    .mx-seq-tab__frage { font-style: italic; }
+    .mx-seq-tab__row--schwerpunkt { background: var(--accent-soft, #e8ece2); }
+    .mx-seq-tab__row--schwerpunkt td { font-weight: 600; }
+    .mx-seq-tab__row--schwerpunkt .mx-seq-tab__uze { color: var(--ink); }
+
+    /* UE-Frage-Titel (statt Aussage) */
+    .mx-ue__frage { font-family: var(--serif); font-style: italic; font-size: 14px; line-height: 1.45; color: var(--accent); margin: 4px 0 8px; padding-left: 8px; border-left: 2px dotted var(--accent); }
+    .mx-ue__frage::before { content: 'Stundenfrage: '; font-family: var(--mono); font-style: normal; font-size: 9.5px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-right: 4px; }
+
+    /* Mager-Lernziel 3-Komponenten */
+    .mx-ue__sz { margin: 8px 0 8px; padding: 10px 12px; background: var(--paper); border: 1px solid var(--hairline); border-left: 3px solid var(--accent); }
+    .mx-ue__sz-label { font-family: var(--mono); font-size: 9.5px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 6px; }
+    .mx-mager { font-family: var(--serif); font-size: 13px; line-height: 1.6; color: var(--ink); }
+    .mx-mager--compact { font-size: 12px; line-height: 1.5; }
+    .mx-mager__verhalten { font-weight: 500; }
+    .mx-mager__bedingung { color: var(--muted); }
+    .mx-mager__bedingung::before { content: '— '; }
+    .mx-mager__massstab { background: linear-gradient(to bottom, transparent 50%, var(--accent-soft, #e8ece2) 50%); padding: 0 2px; }
+
+    /* Teilziele-Liste */
+    .mx-tz-list { margin: 8px 0 10px; padding: 8px 10px 10px; border: 1px dashed var(--hairline); border-radius: 2px; }
+    .mx-tz-list__h { font-family: var(--mono); font-size: 9.5px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 6px; }
+    .mx-tz-list__ol { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+    .mx-tz { padding: 6px 8px; background: var(--paper); border-left: 2px solid var(--hairline); font-family: var(--serif); font-size: 12px; line-height: 1.5; color: var(--ink); display: flex; flex-direction: column; gap: 3px; }
+    .mx-tz--diff { border-left-color: var(--accent); background: var(--bg); }
+    .mx-tz__head { display: flex; gap: 6px; align-items: baseline; }
+    .mx-tz__nr { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.6px; color: var(--muted); font-weight: 600; min-width: 32px; }
+    .mx-tz__afb { font-family: var(--mono); font-size: 9px; letter-spacing: 0.6px; padding: 1px 5px; border-radius: 8px; border: 1px solid var(--hairline); color: var(--muted); }
+    .mx-tz__afb--i   { color: var(--accent); border-color: var(--accent); }
+    .mx-tz__afb--ii  { color: #b8770a; border-color: #b8770a; }
+    .mx-tz__afb--iii { color: #a83232; border-color: #a83232; }
+    .mx-tz__diff-tag { font-family: var(--mono); font-size: 9px; letter-spacing: 0.6px; color: var(--accent); background: var(--accent-soft, #e8ece2); padding: 1px 6px; border-radius: 8px; font-weight: 600; }
+    .mx-tz__body { font-size: 12px; }
+
+    /* Sozialform-Tag pro Phase */
+    .mx-ue-phasen__sozialform { display: inline-block; font-family: var(--mono); font-size: 9px; letter-spacing: 0.5px; color: var(--accent); background: var(--paper); padding: 1px 5px; border-radius: 8px; border: 1px solid var(--accent); margin-right: 6px; margin-bottom: 2px; font-weight: 600; }
+
+    /* Differenzierungs-Block · 4 Spuren */
+    .mx-diff-block { margin: 10px 0 4px; padding-top: 8px; border-top: 1px dashed var(--rule); }
+    .mx-diff-block__h { font-family: var(--mono); font-size: 9.5px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 6px; }
+    .mx-diff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 6px; }
+    .mx-diff-cell { display: flex; flex-direction: column; gap: 3px; padding: 6px 9px; background: var(--paper); border: 1px solid var(--hairline); border-top: 2px solid var(--hairline); font-family: var(--serif); font-size: 11.5px; line-height: 1.45; color: var(--ink); }
+    .mx-diff-cell--daz              { border-top-color: #4a7a8a; }
+    .mx-diff-cell--lrs              { border-top-color: #b8770a; }
+    .mx-diff-cell--leistungsschwach { border-top-color: #7a4a8a; }
+    .mx-diff-cell--leistungsstark   { border-top-color: var(--accent); }
+    .mx-diff-cell__label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.8px; text-transform: uppercase; color: var(--ink); font-weight: 600; }
+
+    /* Callouts (Personifikation + Tafelbild) */
+    .mx-callouts { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin: 8px 0 4px; }
+    .mx-callout { padding: 6px 9px; background: var(--bg); border-left: 2px solid var(--accent); font-family: var(--serif); font-size: 11.5px; line-height: 1.45; color: var(--ink); display: flex; flex-direction: column; gap: 2px; }
+    .mx-callout--pers { border-left-color: #7a4a8a; }
+    .mx-callout--tafel { border-left-color: #b8770a; }
+    .mx-callout__label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.8px; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+
     @media (max-width: 900px) {
       .mx-hero { grid-template-columns: 1fr; }
       .mx-hero__legend { align-items: start; flex-direction: row; flex-wrap: wrap; gap: 14px; }
+      .mx-seq-meta__row { grid-template-columns: 1fr; gap: 2px; }
+      .mx-callouts { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -159,7 +239,7 @@
   <main id="matrix-root" class="mx-shell">
     <header class="mx-hero">
       <div>
-        <div class="mx-hero__zalgm">Fachdidaktik · Sozialkunde N18 · LP+ Matrix v3 · GPG-5-Phasen</div>
+        <div class="mx-hero__zalgm">Fachdidaktik · Sozialkunde N18 · LP+ Matrix v4 · BUV-Standard</div>
         <h1 class="mx-hero__title">LB × Jgst.</h1>
         <p class="mx-hero__sub"><em>Zeit und Wandel · Politik und Gesellschaft · Lebenswelt von GPG 5 bis GPG 10.</em></p>
         <p class="mx-hero__lead">
@@ -170,10 +250,12 @@
           LP+-verbatim Wortlaut (<strong>Ankerwörter hervorgehoben</strong>),
           LP+-Inhalten und fachdidaktischer Realisierung.
           <strong>13 KEs real durchgeführt</strong> (eigene Praxis SJ 24/25).
-          <strong>1 Pilot-Sequenz</strong> (GPG7 LB3 Soziale Frage) mit 10
-          detaillierten 45-min-UEs nach <strong>GPG-Bayern 5-Artikulationsstufen</strong>
-          (Problemstellung · Problementfaltung · Problemlösung · Wertung · Sicherung/LZK)
-          inkl. GPG-B3-Prinzipien und Kompetenzstrukturmodell pro UE.
+          <strong>1 Pilot-Sequenz</strong> (GPG7 LB3 Soziale Frage) mit 10 idealtypischen
+          45-min-UEs nach <strong>BUV-Schwerpunktstunde-Template v4</strong>:
+          Sequenz-Übersichtstabelle (7 Pflichtspalten) · Mager-3-K-Lernziele
+          (Stundenziel + 3-4 Teilziele · eines differenziert) · 5-Artikulationsstufen
+          mit Sozialform-Tag · 4-Spuren-Differenzierung (DaZ · LRS · leistungsschwach · leistungsstark)
+          · durchgängige Personifikation (Johann/Anna) · GPG-B3-Prinzipien · Kompetenzstrukturmodell.
         </p>
       </div>
       <div class="mx-hero__legend" aria-label="Legende">

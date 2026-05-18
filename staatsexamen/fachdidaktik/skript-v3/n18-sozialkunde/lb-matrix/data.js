@@ -1162,222 +1162,988 @@ window.MATRIX = {
             }
           ],
           "pilot_sequenz": {
-            "titel": "10-UE-Sequenz · Lebens- und Arbeitsverhältnisse + Soziale Frage",
+            "titel": "10-UE-Sequenz · Lebens- und Arbeitsverhaeltnisse + Soziale Frage",
             "praxis": "Eigene Praxis GPG7c SJ 24/25 + idealtypische Erweiterung",
             "gesamtzeit": "10 UEs à 45 min = 7,5 Zeitstunden",
-            "lernzielraster": "Sach- + Methoden- + Urteilskompetenz · GPJE 2004",
-            "phasenStandard": "GPG-Bayern · 5 Artikulationsstufen pro UE (GPG GB Kap. 5 + Seminarbuch Bd. 3 S. 10-12)",
+            "lernzielraster": "Sach- + Methoden- + Urteilskompetenz · GPJE 2004 · Mager-3-K-Lernziele",
+            "phasenStandard": "GPG-Bayern · 5 Artikulationsstufen pro UE · Sequenzplan-Standard nach BUV-Template v4",
+            "qualitaetsstandards_quelle": "GPG_Anleitungen/Sequenzplanung + Unterrichtseinheiten + Lernziele formulieren + GPG_BUV_Entwicklung/BUV_Template_Schwerpunktstunde_v4.md",
+            "sequenz_meta": {
+              "lehrplanbezug": "GPG 7 · Lernbereich 3 'Politik und Gesellschaft' · KE 1+2",
+              "kompetenzerwartungen_verbatim": [
+                "Die Schülerinnen und Schüler beschreiben die Lebens- und Arbeitsverhältnisse von Arbeiterinnen bzw. Arbeitern und deren Familien sowie Lösungsansätze der Sozialen Frage während der Industrialisierung.",
+                "Die Schülerinnen und Schüler beschreiben den Übergang von der Agrar- zur Industriegesellschaft am Beispiel ausgewählter Aspekte (z. B. Ende der Patrimonialherrschaft, Verstädterung)."
+              ],
+              "inhalte_lp_verbatim": [
+                "Industrielle Revolution, Industriegesellschaft",
+                "Soziale Frage zu Beginn des 20. Jahrhunderts und Lösungsansätze",
+                "Kriegsschuldfrage und Versailler Vertrag"
+              ],
+              "zielsetzung_uebergeordnet": "Die Sequenz erschließt am Identifikationsfiguren-Paar Johann (landloser Knecht) und Anna (Spinnerei-Arbeiterin) die Lebens- und Arbeitsverhältnisse der Industrialisierung und führt zur kritischen Beurteilung von Bismarcks Sozialgesetzgebung. Ziel ist die Bildung eines reflektierten Sach- und Werturteils zur Sozialen Frage — historisch und in aktualisierter Perspektive (Wohnungsfrage, Working-Poor heute).",
+              "methodische_schwerpunkte": [
+                "Personifikation (Johann/Anna) als sequenzdurchgaengige Identifikationsstrategie",
+                "Bild-/Quellenarbeit (Menzel, Engels, Stadtkarten) gemaess Bildquellen- und Quellenkritik-Standard (Pandel 2017)",
+                "Kooperative Methoden: Standbild · Stationenlernen · Jigsaw · Pro-Contra-Debatte · Vergleichsmatrix",
+                "Differenzierung in 4 Spuren (DaZ, LRS, leistungsschwach, leistungsstark) pro UE",
+                "Tafelbild-Zentrierung: handschriftlich, 3-Zonen-Schema, Sicherung im Heft (nicht Mappe)"
+              ],
+              "kompetenzerwerb_progression": "AFB-Progression I→III: UE 1-3 vorrangig AFB I (Beschreiben Lebensverhaeltnisse). UE 4-5 AFB II (Begriff Soziale Frage definieren, Loesungsansaetze unterscheiden). UE 6+8 AFB III (Urteil Bismarck, Vergleich heute). UE 9 LNW mit allen drei AFB-Stufen. UE 10 Transfer/Handlungsorientierung (Realhandeln im Sinne Reinhardts).",
+              "personifikation_durchgaengig": "Identifikationsfiguren Johann (landloser Knecht aus Hessen, 17, wandert 1875 nach Berlin) und Anna (Spinnerei-Arbeiterin, 19, Tochter eines Webers, lebt in Mietskaserne) — wiederkehrend in UE 2 (Wohnen Annas), UE 3 (Johanns Schicht), UE 5 (Anna tritt SPD bei), UE 6 (Johann profitiert von Bismarck), UE 8 (Anna heute = Working-Poor-Mutter).",
+              "schwerpunktstunde_kandidat": "UE 6 · Bismarcks Sozialgesetzgebung — Erfolg oder Beruhigung? (AFB-III, Pro-Contra)"
+            },
+            "sequenz_tabelle": [
+              {
+                "uze": 1,
+                "datum": "KW09 · Mo",
+                "stundenthema_frage": "Was sehen wir auf Menzels 'Eisenwalzwerk' — und warum nennen wir das die Soziale FRAGE?",
+                "prozesskompetenz": "Erkenntnisse gewinnen (Bilder interpretieren, Fragen entwickeln)",
+                "gegenstand": "Raeume · Werte",
+                "perspektive": "historisch · sozialwissenschaftlich",
+                "stundenziel_kurz": "Vorwissen aktivieren + Forschungsfrage entwickeln",
+                "kommentar": "Sequenz-Einstieg · personifikative Anbahnung Johann/Anna",
+                "schwerpunkt": false
+              },
+              {
+                "uze": 2,
+                "datum": "KW09 · Mi",
+                "stundenthema_frage": "Wie lebte Annas Familie in der Mietskaserne 1880?",
+                "prozesskompetenz": "Erkenntnisse gewinnen (Quellen erschliessen) · Fachsprache anwenden",
+                "gegenstand": "Raeume · Werte · Kulturen",
+                "perspektive": "historisch · sozialwissenschaftlich",
+                "stundenziel_kurz": "Lebens-/Wohnverhaeltnisse multiperspektivisch beschreiben",
+                "kommentar": "Stationenlernen · 4 Niveaus · DaZ-Wortspeicher",
+                "schwerpunkt": false
+              },
+              {
+                "uze": 3,
+                "datum": "KW10 · Mo",
+                "stundenthema_frage": "Wie sah Johanns Arbeitstag in der Fabrik 1880 wirklich aus?",
+                "prozesskompetenz": "Erkenntnisse gewinnen (Quellenkritik) · Beurteilen (Reliabilitaet)",
+                "gegenstand": "Ordnungssysteme · Werte",
+                "perspektive": "historisch · sozialwissenschaftlich",
+                "stundenziel_kurz": "3 Belastungen mit Beleg + Quellenkritik Engels",
+                "kommentar": "Engels-Auszug 3 Niveaus · sprachsensibel",
+                "schwerpunkt": false
+              },
+              {
+                "uze": 4,
+                "datum": "KW10 · Mi",
+                "stundenthema_frage": "Warum nennt man das 'die Soziale FRAGE' — und nicht einfach 'Armut'?",
+                "prozesskompetenz": "Erkenntnisse gewinnen (Begriff bilden) · Anwenden und handeln (Fachsprache)",
+                "gegenstand": "Werte · Ordnungssysteme",
+                "perspektive": "historisch · sozialwissenschaftlich",
+                "stundenziel_kurz": "Begriff 'Soziale Frage' praezise definieren",
+                "kommentar": "Begriffsbildung · Lexikon-Eintrag · Aktualitaetsbezug",
+                "schwerpunkt": false
+              },
+              {
+                "uze": 5,
+                "datum": "KW11 · Mo",
+                "stundenthema_frage": "Wer wollte die Soziale Frage loesen — und wie?",
+                "prozesskompetenz": "Erkenntnisse gewinnen (Quellen) · Beurteilen (Reichweite)",
+                "gegenstand": "Ordnungssysteme · Interessen",
+                "perspektive": "historisch · sozialwissenschaftlich",
+                "stundenziel_kurz": "3 Loesungsansaetze (Selbsthilfe/Gewerkschaft/Staat) unterscheiden",
+                "kommentar": "Jigsaw · Experten-/Stammgruppen · Anna tritt SPD bei",
+                "schwerpunkt": false
+              },
+              {
+                "uze": 6,
+                "datum": "KW11 · Mi",
+                "stundenthema_frage": "War Bismarcks Sozialgesetzgebung ein Erfolg fuer Johann — oder nur Beruhigung der Arbeiter?",
+                "prozesskompetenz": "Beurteilen und bewerten (Werturteil) · Anwenden und handeln (Position vertreten)",
+                "gegenstand": "Werte · Interessen",
+                "perspektive": "historisch · sozialwissenschaftlich",
+                "stundenziel_kurz": "Bismarcks Gesetzgebung kritisch beurteilen (3-Stufen-Urteil)",
+                "kommentar": "**SCHWERPUNKTSTUNDE-KANDIDAT** · Pro-Contra-Debatte · AFB III",
+                "schwerpunkt": true
+              },
+              {
+                "uze": 7,
+                "datum": "KW12 · Mo",
+                "stundenthema_frage": "Wie veraenderte sich unsere Stadt zwischen 1850 und 1900?",
+                "prozesskompetenz": "Erkenntnisse gewinnen (Karten/Statistik vergleichen) · Beurteilen (Indikatoren)",
+                "gegenstand": "Raeume · Ordnungssysteme",
+                "perspektive": "historisch · geographisch",
+                "stundenziel_kurz": "4 Veraenderungs-Indikatoren am Stadtbeispiel herausarbeiten",
+                "kommentar": "Lokalgeschichte · Wuerzburg/Augsburg · 3 Karten-Niveaus",
+                "schwerpunkt": false
+              },
+              {
+                "uze": 8,
+                "datum": "KW12 · Mi",
+                "stundenthema_frage": "Ist die Soziale Frage heute geloest — oder nur eine andere?",
+                "prozesskompetenz": "Beurteilen (Vergleich 1880/heute) · Anwenden (Position begruenden)",
+                "gegenstand": "Werte · Interessen",
+                "perspektive": "sozialwissenschaftlich · historisch",
+                "stundenziel_kurz": "1880 vs. heute strukturell vergleichen + Werturteil",
+                "kommentar": "Anna heute = Working-Poor-Mutter · Aktualisierungs-Auftrag LP+",
+                "schwerpunkt": false
+              },
+              {
+                "uze": 9,
+                "datum": "KW13 · Mo",
+                "stundenthema_frage": "Was kann ich jetzt — und was nicht?",
+                "prozesskompetenz": "Erkenntnisse gewinnen · Beurteilen · Anwenden (alle drei AFB-Stufen)",
+                "gegenstand": "Werte · Ordnungssysteme",
+                "perspektive": "historisch · sozialwissenschaftlich",
+                "stundenziel_kurz": "Lernzielkontrolle: AFB I + II + III dokumentieren",
+                "kommentar": "Schriftlicher LNW · 2 Niveaus · Selbsteinschaetzung",
+                "schwerpunkt": false
+              },
+              {
+                "uze": 10,
+                "datum": "KW13 · Mi",
+                "stundenthema_frage": "Welche Soziale Frage von heute waehle ich — und welchen Schritt gehe ich?",
+                "prozesskompetenz": "Anwenden und handeln (Handlungsorientierung) · Beurteilen (Realisierbarkeit)",
+                "gegenstand": "Interessen · Werte",
+                "perspektive": "sozialwissenschaftlich",
+                "stundenziel_kurz": "Eigene Handlungsoption zur Sozialen Frage heute entwickeln",
+                "kommentar": "Sequenz-Abschluss · Pinnwand · Handlungsorientierung Realhandeln",
+                "schwerpunkt": false
+              }
+            ],
             "phasenSchema": [
-              { "id": "problemstellung",   "label": "1 Problemstellung",   "kurz": "Vorwissen · Zielangabe · Arbeitsplanung" },
-              { "id": "problementfaltung", "label": "2 Problementfaltung", "kurz": "Erarbeitung am Material" },
-              { "id": "problemloesung",    "label": "3 Problemlösung",     "kurz": "Antwort auf die Problemfrage" },
-              { "id": "wertung",           "label": "4 Wertung",           "kurz": "Rationales Urteil (Sache · Wert · Position)" },
-              { "id": "sicherung_lzk",     "label": "5 Sicherung + LZK",   "kurz": "Hefteintrag · Lernzielkontrolle" }
+              {
+                "id": "problemstellung",
+                "label": "1 Problemstellung",
+                "kurz": "Vorwissen · Zielangabe · Arbeitsplanung"
+              },
+              {
+                "id": "problementfaltung",
+                "label": "2 Problementfaltung",
+                "kurz": "Erarbeitung am Material"
+              },
+              {
+                "id": "problemloesung",
+                "label": "3 Problemloesung",
+                "kurz": "Antwort auf die Problemfrage"
+              },
+              {
+                "id": "wertung",
+                "label": "4 Wertung",
+                "kurz": "Rationales Urteil (Sache · Wert · Position)"
+              },
+              {
+                "id": "sicherung_lzk",
+                "label": "5 Sicherung + LZK",
+                "kurz": "Hefteintrag · Lernzielkontrolle"
+              }
             ],
             "ues_detail": [
               {
                 "nr": 1,
                 "titel": "Standbilder · Was ist die Soziale Frage?",
+                "stundenthema_frage": "Was sehen wir auf Menzels 'Eisenwalzwerk' — und warum nennen wir das die Soziale FRAGE?",
                 "minuten": 45,
-                "lernziel": "SuS aktivieren Vorwissen zur Industrialisierung (LB2-Anknüpfung) und entwickeln eine Forschungsfrage zur sozialen Lage der Arbeiter:innen.",
-                "problemstellung": "8' · Bildimpuls Adolph Menzel »Eisenwalzwerk« (1875) · stilles Schreib-Gespräch. Zielangabe: »Wir untersuchen, warum man von der SOZIALEN FRAGE spricht.« Arbeitsplanung: 4 Standbild-Gruppen mit Themen Fabrik · Wohnung · Familie · Straße.",
+                "lernziel": "SuS aktivieren Vorwissen zur Industrialisierung (LB2-Anknuepfung) und entwickeln eine Forschungsfrage zur sozialen Lage der Arbeiter:innen.",
+                "lernziel_stundenziel": {
+                  "verhalten": "Die Schuelerinnen und Schueler aktivieren ihr Vorwissen zur Industrialisierung und entwickeln eine begruendete Forschungsfrage zur Sozialen Frage,",
+                  "bedingung": "indem sie zu Adolph Menzels Bildquelle 'Eisenwalzwerk' (1875) ein stilles Schreib-Gespraech fuehren und in 4er-Gruppen Standbilder zu typischen Industrialisierungs-Szenen (Fabrik · Wohnung · Familie · Strasse) entwickeln,",
+                  "maszstab": "was daran erkennbar wird, dass die Forschungsfrage 'Warum heisst das die SOZIALE FRAGE?' im Heft mit mindestens einer begruendeten Vermutung steht."
+                },
+                "lernziel_teilziele": [
+                  {
+                    "tz": "SuS beschreiben Eindruecke der Menzel-Bildquelle,",
+                    "indem": "indem sie in einem stillen Schreib-Gespraech mindestens drei Aspekte (z.B. Feuer, gebeugte Haltung, Hitze) notieren,",
+                    "erkennbar": "was daran erkennbar wird, dass mindestens fuenf Wortassoziationen an der Tafel sichtbar werden.",
+                    "afb": "I",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS stellen typische Industrialisierungs-Szenen szenisch dar,",
+                    "indem": "indem sie in 4er-Gruppen ein Standbild zu Fabrik/Wohnung/Familie/Strasse bauen und fotografieren,",
+                    "erkennbar": "was daran erkennbar wird, dass das Foto den Aspekt mit drei koerperlichen Details (Haltung · Position · Mimik) zeigt.",
+                    "afb": "II",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS leiten aus den Standbildern eine Forschungsfrage fuer die Sequenz ab,",
+                    "indem": "indem sie im Plenum die Kernfrage 'Warum heisst das die SOZIALE FRAGE?' formulieren,",
+                    "erkennbar": "was daran erkennbar wird, dass die Frage mit mindestens einer Vermutung als Hefteintrag steht.",
+                    "afb": "II",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "[Differenziert / leistungsstark] SuS verknuepfen die Bildquelle quellenkritisch mit der historischen Lage,",
+                    "indem": "indem sie pruefen, welche Wirkung Menzel bei welchen Adressaten 1875 anstreben wollte,",
+                    "erkennbar": "was daran erkennbar wird, dass sie im Plenum mindestens zwei Wirkungsabsichten benennen.",
+                    "afb": "III",
+                    "differenziert": true
+                  }
+                ],
+                "problemstellung": "8' · Bildimpuls Adolph Menzel »Eisenwalzwerk« (1875) · stilles Schreib-Gespraech. Zielangabe: »Wir untersuchen, warum man von der SOZIALEN FRAGE spricht.« Arbeitsplanung: 4 Standbild-Gruppen mit Themen Fabrik · Wohnung · Familie · Strasse.",
                 "problementfaltung": "22' · Gruppenarbeit in 4er-Teams: SuS bilden Standbilder zu »typischen Szenen« der Industrialisierung. Foto-Dokumentation je Gruppe.",
                 "problemloesung": "8' · Galerie-Rundgang + Mind-Map Tafel: »Welche Belastungen sind sichtbar?« — Sammlung gemeinsamer Kern-Aspekte.",
-                "wertung": "5' · Hypothese: »Warum heißt das die Soziale FRAGE — und nicht Soziale Lage?« — erste Deutungen.",
-                "sicherung_lzk": "2' · Hefteintrag-Vorlage »Die Soziale Frage entsteht durch …« · Lernzielklärung Sequenz.",
-                "material": "Menzel-Druck (A2) · Sammelplakat · Smartphone-Kamera · Hefteintrag-Vorlage",
-                "differenzierung": "Reduktiv: vorgegebene Standbild-Themen + Wortkärtchen. Erweitert: eigene Aspekte + Bildanalyse-Raster.",
-                "lp_bezug": "KE 1 Anbahnung (Lebensverhältnisse) · KE 2 Anbahnung (Übergang Agrar→Industrie)",
-                "prinzipien_b3": ["Schülerorientierung", "Problemorientierung", "Erfahrungsbezug"],
-                "kompetenzstruktur": { "gegenstand": "Räume · Werte", "perspektive": "historisch · sozialwissenschaftlich", "prozesskompetenz": "Wahrnehmen · Hinterfragen" },
-                "didaktik": "Lebensweltbezug (Klafki) · Bildquellenarbeit · Performatives Lernen (Standbild als sozialwissenschaftliche Methode, Massing/Reinhardt)"
+                "wertung": "5' · Hypothese: »Warum heisst das die Soziale FRAGE — und nicht Soziale Lage?« — erste Deutungen.",
+                "sicherung_lzk": "2' · Hefteintrag-Vorlage »Die Soziale Frage entsteht durch …« · Lernzielklaerung Sequenz.",
+                "sozialform_phasen": {
+                  "problemstellung": "Plenum (stilles Schreibgespraech) · UG",
+                  "problementfaltung": "GA (4er-Gruppen)",
+                  "problemloesung": "Plenum (Galerie)",
+                  "wertung": "UG",
+                  "sicherung_lzk": "EA"
+                },
+                "differenzierung_block": {
+                  "daz": "Themenkarten mit Wortspeicher (Fabrik, Mietskaserne, Schicht); Standbild als sprachreduzierte Methode (Koerper statt Sprache).",
+                  "lrs": "Themenkarten 18 pt · A4 · Tafelnotizen werden vorgelesen · Hefteintrag-Vorlage mit Lueckenstruktur.",
+                  "leistungsschwach": "Reduktiv: vorgegebene Standbild-Themen; einfache Stichpunkte; Tandem-Partnerwahl moeglich.",
+                  "leistungsstark": "Erweitert: eigenes Standbild-Thema + Bildanalyse Menzel (Wirkungsabsicht des Malers) als AFB-III-Zusatzaufgabe."
+                },
+                "personifikation_anteil": "Anbahnung Johann + Anna (noch ohne Namensnennung) — als 'die Menschen auf dem Bild'.",
+                "tafelbild_skizze": "3-Zonen: links Menzel-Druck (A2) · Mitte Mindmap 'Belastungen' (handschriftlich, 4 Aeste) · rechts Forschungsfrage + Hefteintrag-Vorlage.",
+                "hausaufgabe": "—",
+                "material": "Menzel-Druck (A2) · 4 Themenkarten · Smartphone-Kameras · Hefteintrag-Vorlage A5",
+                "lp_bezug": "KE 1 Anbahnung (Lebensverhaeltnisse) · KE 2 Anbahnung (Uebergang Agrar→Industrie)",
+                "prinzipien_b3": [
+                  "Schuelerorientierung",
+                  "Problemorientierung",
+                  "Erfahrungsbezug",
+                  "Personifikation"
+                ],
+                "kompetenzstruktur": {
+                  "gegenstand": "Raeume · Werte",
+                  "perspektive": "historisch · sozialwissenschaftlich",
+                  "prozesskompetenz": "Erkenntnisse gewinnen (Beobachten · Fragen entwickeln)"
+                },
+                "didaktik": "Lebensweltbezug (Klafki) · Bildquellenarbeit (Pandel 2017) · Performatives Lernen (Standbild als sozialwissenschaftliche Methode, Massing/Reinhardt)"
               },
               {
                 "nr": 2,
-                "titel": "Lebensverhältnisse der Arbeiter:innen-Familie",
+                "titel": "Lebensverhaeltnisse der Arbeiter:innen-Familie",
+                "stundenthema_frage": "Wie lebte Annas Familie in der Mietskaserne 1880?",
                 "minuten": 45,
-                "lernziel": "SuS beschreiben die Lebens- und Wohnverhältnisse der Industriearbeiter:innen-Familien (KE 1) anhand multiperspektivischer Quellen.",
-                "problemstellung": "6' · Foto »Mietskaserne Berlin 1900« — Sehimpuls + Vermutungen. Zielangabe: »Wie sah der Alltag aus?« Arbeitsplanung: 4 Stationen mit Rotation.",
-                "problementfaltung": "22' · Stationenlernen: (1) Wohnsituation (Schlafgänger) · (2) Ernährung (Kartoffel-Statistik) · (3) Kindheit (Kinderarbeit-Bilder Zeche) · (4) Tagesablauf (12-Stunden-Schichtprotokoll). Notizen im AB.",
+                "lernziel": "SuS beschreiben die Lebens- und Wohnverhaeltnisse der Industriearbeiter:innen-Familien (KE 1) anhand multiperspektivischer Quellen.",
+                "lernziel_stundenziel": {
+                  "verhalten": "Die Schuelerinnen und Schueler beschreiben die Lebens- und Wohnverhaeltnisse einer Industriearbeiter:innen-Familie (Anna) anhand multiperspektivischer Quellen,",
+                  "bedingung": "indem sie in einem 4-Stationen-Rundlauf je eine Quelle zu Wohnen, Ernaehrung, Kindheit und Tagesablauf erschliessen und im AB sichern,",
+                  "maszstab": "was daran erkennbar wird, dass jede:r SuS im Hefteintrag vier Belastungs-Achsen mit je einem Quellenbeleg notiert."
+                },
+                "lernziel_teilziele": [
+                  {
+                    "tz": "SuS erschliessen je eine Quelle zu Wohnen/Ernaehrung/Kindheit/Tagesablauf,",
+                    "indem": "indem sie an einer Station die Quelle gemeinsam lesen und die Leitfragen am AB beantworten,",
+                    "erkennbar": "was daran erkennbar wird, dass das AB pro Station drei Stichpunkte zur Belastung enthaelt.",
+                    "afb": "I",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS stellen ihre Stationsergebnisse in der Galerie vor,",
+                    "indem": "indem sie pro Station in einem Plakat die zentrale Aussage in einem Satz formulieren,",
+                    "erkennbar": "was daran erkennbar wird, dass alle vier Plakate eine vergleichbare Aussagestruktur (Belastung + Beleg) tragen.",
+                    "afb": "II",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS uebertragen die vier Belastungs-Achsen in einen strukturierten Hefteintrag,",
+                    "indem": "indem sie eine Vier-Felder-Tafel uebertragen und je Feld einen Beleg notieren,",
+                    "erkennbar": "was daran erkennbar wird, dass der Hefteintrag vier Felder mit je einem Beleg umfasst.",
+                    "afb": "II",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "[Differenziert / leistungsstark] SuS gewichten die Belastungen begruendet,",
+                    "indem": "indem sie eine Rangfolge der vier Achsen bilden und je begruendet,",
+                    "erkennbar": "was daran erkennbar wird, dass sie die Top-Belastung mit zwei Argumenten im Plenum verteidigen.",
+                    "afb": "III",
+                    "differenziert": true
+                  }
+                ],
+                "problemstellung": "6' · Foto »Mietskaserne Berlin 1900« — Sehimpuls + Vermutungen. Zielangabe: »Wie sah Annas Alltag aus?« Arbeitsplanung: 4 Stationen mit Rotation.",
+                "problementfaltung": "22' · Stationenlernen: (1) Wohnsituation (Schlafgaenger) · (2) Ernaehrung (Kartoffel-Statistik) · (3) Kindheit (Kinderarbeit-Bilder Zeche) · (4) Tagesablauf (12-Stunden-Schichtprotokoll). Notizen im AB.",
                 "problemloesung": "10' · Plakat-Galerie: jede Gruppe stellt 1 Station vor + zentrale Aussage in 1 Satz. Tafel-Synthese: 4 Belastungs-Dimensionen.",
-                "wertung": "4' · »Welche Belastung war für euch am überraschendsten — und warum?« Multiperspektivischer Austausch.",
+                "wertung": "4' · »Welche Belastung war fuer euch am ueberraschendsten — und warum?« Multiperspektivischer Austausch.",
                 "sicherung_lzk": "3' · Hefteintrag-Skizze »4 Achsen der Belastung« · LZK-Karte »Nenne 3 Belastungen mit Beleg«.",
-                "material": "4 Stationen-Mappen (mit AB + Bildquellen + Original-Texten) · Plakat-Pappen · Stifte · LZK-Karten",
-                "differenzierung": "Texte 3 Niveaus pro Station (basic/mittel/anspruch) · Wortspeicher für DaZ.",
-                "lp_bezug": "KE 1 Lebens-/Arbeitsverhältnisse Arbeiterinnen+Arbeiter",
-                "prinzipien_b3": ["Multiperspektivität", "Erfahrungsbezug", "Schülerorientierung"],
-                "kompetenzstruktur": { "gegenstand": "Räume · Werte · Kulturen", "perspektive": "historisch · sozialwissenschaftlich", "prozesskompetenz": "Erfassen · Beurteilen" },
-                "didaktik": "Multiperspektivität (Bergmann2000) · Quellenarbeit (Pandel2017) · Stationenlernen (Reinhardt2005) · sprachsensibler GPG-U."
+                "sozialform_phasen": {
+                  "problemstellung": "Plenum · UG",
+                  "problementfaltung": "GA (Stationen-Rotation in 4er-Teams)",
+                  "problemloesung": "Plenum (Galerie)",
+                  "wertung": "UG",
+                  "sicherung_lzk": "EA"
+                },
+                "differenzierung_block": {
+                  "daz": "Wortspeicher pro Station (Mietskaserne, Schlafgaenger, Kohlenstaub, Schicht) · Bildimpuls vor Text · Lese-Tandem.",
+                  "lrs": "Quellen-Texte in 3 Niveaus (basic = 100W, mittel = 200W, anspruch = Original) · Schriftgroesse 14pt+.",
+                  "leistungsschwach": "Vorgegebene AB-Stichpunkte zum Ankreuzen statt Schreiben · Reduzierte Stationen-Auswahl (3 statt 4).",
+                  "leistungsstark": "Quellenkritik-Zusatz: 'Welche Aussage fehlt? Was wuerde Anna selbst sagen?' (AFB III)."
+                },
+                "personifikation_anteil": "Anna wird namentlich eingefuehrt — die 4 Stationen rekonstruieren ihren Alltag (Wohnen mit Eltern + 4 Geschwistern, Schichtarbeit Spinnerei).",
+                "tafelbild_skizze": "Vier-Felder-Tafel: Wohnen | Ernaehrung | Kindheit | Tagesablauf. Pro Feld nach Galerie 1 Belastungs-Stichwort + Beleg.",
+                "hausaufgabe": "—",
+                "material": "4 Stationen-Mappen (mit AB + Bildquellen + Original-Texten) · Plakat-Pappen · Stifte · LZK-Karten · Wortspeicher",
+                "lp_bezug": "KE 1 Lebens-/Arbeitsverhaeltnisse Arbeiterinnen+Arbeiter",
+                "prinzipien_b3": [
+                  "Multiperspektivitaet",
+                  "Erfahrungsbezug",
+                  "Schuelerorientierung",
+                  "Personifikation"
+                ],
+                "kompetenzstruktur": {
+                  "gegenstand": "Raeume · Werte · Kulturen",
+                  "perspektive": "historisch · sozialwissenschaftlich",
+                  "prozesskompetenz": "Erkenntnisse gewinnen (Quellen erschliessen) · Beurteilen (gewichten)"
+                },
+                "didaktik": "Multiperspektivitaet (Bergmann 2000) · Quellenarbeit (Pandel 2017) · Stationenlernen (Reinhardt 2005) · sprachsensibler GPG-Unterricht"
               },
               {
                 "nr": 3,
                 "titel": "Arbeitsbedingungen in der Fabrik · Engels-Quelle",
+                "stundenthema_frage": "Wie sah Johanns Arbeitstag in der Fabrik 1880 wirklich aus?",
                 "minuten": 45,
-                "lernziel": "SuS analysieren konkrete Arbeitsbedingungen in einer Fabrik des späten 19. Jh. und benennen drei zentrale Belastungen.",
-                "problemstellung": "5' · Audio-Atmosphäre Fabrik 1900 — Wirkung notieren. Zielangabe: »Wir untersuchen, wie der Arbeitsalltag wirklich aussah.« Arbeitsplanung: Quellenarbeit + Vergleich.",
-                "problementfaltung": "22' · Quellenarbeit Friedrich Engels »Lage der arbeitenden Klasse« (1845) — gekürzter Textauszug. Markieren: Arbeitszeit · Lohn · Unfälle · Kinderarbeit.",
+                "lernziel": "SuS analysieren konkrete Arbeitsbedingungen in einer Fabrik des spaeten 19. Jh. und benennen drei zentrale Belastungen.",
+                "lernziel_stundenziel": {
+                  "verhalten": "Die Schuelerinnen und Schueler analysieren konkrete Arbeitsbedingungen in einer Fabrik des spaeten 19. Jh. und benennen drei zentrale Belastungen,",
+                  "bedingung": "indem sie einen gekuerzten Auszug aus Friedrich Engels' 'Lage der arbeitenden Klasse' (1845) markieren und tabellarisch sichern,",
+                  "maszstab": "was daran erkennbar wird, dass im Heft eine Tabelle mit drei Belastungen + je einem Beleg + einer Quellenkritik-Notiz steht."
+                },
+                "lernziel_teilziele": [
+                  {
+                    "tz": "SuS extrahieren Belastungs-Aspekte aus dem Engels-Auszug,",
+                    "indem": "indem sie die Kategorien Arbeitszeit/Lohn/Unfaelle/Kinderarbeit farbig markieren,",
+                    "erkennbar": "was daran erkennbar wird, dass je Kategorie mindestens ein Textbeleg markiert ist.",
+                    "afb": "I",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS vergleichen 1880 mit der Gegenwart in einer Tabelle,",
+                    "indem": "indem sie heutige Arbeitszeit (35-40h) der Schichtdauer 1880 (12-16h) gegenueberstellen,",
+                    "erkennbar": "was daran erkennbar wird, dass eine zweispaltige Tabelle im Heft drei Kategorien vergleicht.",
+                    "afb": "II",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS reflektieren Engels' Standpunkt quellenkritisch,",
+                    "indem": "indem sie im UG diskutieren: 'Engels ist Sozialist — wie veraendert das die Quellenaussage?',",
+                    "erkennbar": "was daran erkennbar wird, dass im Heft ein Satz zur Quellenkritik steht.",
+                    "afb": "II",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "[Differenziert / leistungsstark] SuS formulieren eine moderne Engels-Kritik,",
+                    "indem": "indem sie ueberlegen, was Engels heute (Working-Poor, Plattform-Arbeit) kritisieren wuerde,",
+                    "erkennbar": "was daran erkennbar wird, dass sie im Plenum ein begruendetes Beispiel nennen.",
+                    "afb": "III",
+                    "differenziert": true
+                  }
+                ],
+                "problemstellung": "5' · Audio-Atmosphaere Fabrik 1900 — Wirkung notieren. Zielangabe: »Wir untersuchen, wie der Arbeitsalltag wirklich aussah.« Arbeitsplanung: Quellenarbeit + Vergleich.",
+                "problementfaltung": "22' · Quellenarbeit Friedrich Engels »Lage der arbeitenden Klasse« (1845) — gekuerzter Textauszug. Markieren: Arbeitszeit · Lohn · Unfaelle · Kinderarbeit.",
                 "problemloesung": "10' · Tabellen-Vergleich Plenum: heutige Arbeitszeit (35-40h) vs. 1880 (12-16h pro Tag). 3 Belastungen mit Beleg im Heft.",
-                "wertung": "5' · Quellenkritisch: »Engels ist Sozialist — wie verändert das die Quellenaussage?« Reliabilitäts-Reflexion.",
-                "sicherung_lzk": "3' · Hefteintrag »3 Belastungen + 1 Quellenkritik-Satz« · LZK-Frage: »Was würde Engels heute kritisieren?«",
-                "material": "Engels-Auszug (gekürzt + bebildert) · AB Tabelle · Audio-Atmosphäre · Hefteintrag-Schablone",
-                "differenzierung": "Engels-Text in 3 Niveau-Versionen (Original / vereinfacht / mit Wortspeicher).",
-                "lp_bezug": "KE 1 Arbeitsverhältnisse",
-                "prinzipien_b3": ["Multiperspektivität", "Problemorientierung"],
-                "kompetenzstruktur": { "gegenstand": "Ordnungssysteme · Werte", "perspektive": "historisch · sozialwissenschaftlich", "prozesskompetenz": "Erfassen · Hinterfragen" },
-                "didaktik": "Quellenkritik (Pandel2017) · Vergleichsmethode · historische Empathie (Rüsen2002)"
+                "wertung": "5' · Quellenkritisch: »Engels ist Sozialist — wie veraendert das die Quellenaussage?« Reliabilitaets-Reflexion.",
+                "sicherung_lzk": "3' · Hefteintrag »3 Belastungen + 1 Quellenkritik-Satz« · LZK-Frage: »Was wuerde Engels heute kritisieren?«",
+                "sozialform_phasen": {
+                  "problemstellung": "Plenum (Audio + UG)",
+                  "problementfaltung": "EA · PA (Tandem-Markierung)",
+                  "problemloesung": "Plenum (Tafeltabelle)",
+                  "wertung": "UG",
+                  "sicherung_lzk": "EA"
+                },
+                "differenzierung_block": {
+                  "daz": "Engels-Text mit Wortspeicher (Schicht, Lohn, Unfall, Sozialist) · Bilder zum Text · Audio mehrfach.",
+                  "lrs": "Engels-Text in 3 Niveaus (gekuerzt 80W · mittel 180W · Original 400W) · Schriftgroesse 14pt+ · Farbleitsystem.",
+                  "leistungsschwach": "Markier-Aufgabe vorstrukturiert (Farben + Kategorien vorgegeben) · Tandem-Partner.",
+                  "leistungsstark": "Original-Auszug + Quellenkritik-Sheet (Wer? Wann? Adressat? Absicht?) als AFB-III-Zusatz."
+                },
+                "personifikation_anteil": "Johann arbeitet 14 h Schicht in der Berliner Maschinenfabrik · Engels-Auszug wird als 'was Johann erlebt' kontextualisiert.",
+                "tafelbild_skizze": "Zweispaltige Tabelle: 1880 (Engels) | heute (Daten). 3 Zeilen Arbeitszeit · Lohn · Unfaelle. Rechts: Quellenkritik-Frage.",
+                "hausaufgabe": "Lesen: 'Was hat Johann gegen die Belastung getan?' (Vorbereitung UE 5)",
+                "material": "Engels-Auszug (gekuerzt + bebildert) · AB Tabelle · Audio Fabrikatmosphaere · Hefteintrag-Schablone · Wortspeicher",
+                "lp_bezug": "KE 1 Arbeitsverhaeltnisse",
+                "prinzipien_b3": [
+                  "Multiperspektivitaet",
+                  "Problemorientierung",
+                  "Personifikation"
+                ],
+                "kompetenzstruktur": {
+                  "gegenstand": "Ordnungssysteme · Werte",
+                  "perspektive": "historisch · sozialwissenschaftlich",
+                  "prozesskompetenz": "Erkenntnisse gewinnen (Quellenkritik) · Beurteilen (Reliabilitaet)"
+                },
+                "didaktik": "Quellenkritik (Pandel 2017) · Vergleichsmethode · historische Empathie (Ruesen 2002)"
               },
               {
                 "nr": 4,
                 "titel": "Die Soziale Frage als Begriff",
+                "stundenthema_frage": "Warum nennt man das 'die Soziale FRAGE' — und nicht einfach 'Armut'?",
                 "minuten": 45,
-                "lernziel": "SuS definieren den Begriff „Soziale Frage\" sachlich präzise und ordnen ihn in den historischen Kontext ein.",
+                "lernziel": "SuS definieren den Begriff »Soziale Frage« sachlich praezise und ordnen ihn in den historischen Kontext ein.",
+                "lernziel_stundenziel": {
+                  "verhalten": "Die Schuelerinnen und Schueler definieren den Begriff 'Soziale Frage' sachlich praezise und ordnen ihn in den historischen Kontext ein,",
+                  "bedingung": "indem sie nach kurzem L-Input einen eigenen Lexikon-Eintrag in Partnerarbeit verfassen und im Plenum auf eine gemeinsame Tafel-Definition synthetisieren,",
+                  "maszstab": "was daran erkennbar wird, dass die Heft-Definition mindestens drei Kernbegriffe (Pauperismus · Industrialisierung · fehlende Sozialgesetzgebung) traegt."
+                },
+                "lernziel_teilziele": [
+                  {
+                    "tz": "SuS aktivieren das Begriffsfeld 'FRAGE im Politik-Kontext',",
+                    "indem": "indem sie aktuelle Beispiele (Klimafrage, Wohnungsfrage) sammeln,",
+                    "erkennbar": "was daran erkennbar wird, dass die Tafel mindestens drei aktuelle 'Fragen' enthaelt.",
+                    "afb": "I",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS schreiben einen eigenen Lexikon-Eintrag 'Soziale Frage',",
+                    "indem": "indem sie in Partnerarbeit den L-Input + Wortspeicher in einen 3-4-Saetze-Eintrag uebersetzen,",
+                    "erkennbar": "was daran erkennbar wird, dass der Eintrag drei Kernbegriffe (Pauperismus, Industrialisierung, fehlende Sozialgesetzgebung) enthaelt.",
+                    "afb": "II",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS synthetisieren eine gemeinsame Tafel-Definition,",
+                    "indem": "indem sie drei Best-Versionen vorlesen und Kernbegriffe konsensual sammeln,",
+                    "erkennbar": "was daran erkennbar wird, dass die Tafel-Definition als Hefteintrag uebernommen wird.",
+                    "afb": "II",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "[Differenziert / leistungsstark] SuS uebertragen den Begriff auf eine Gegenwartsfrage,",
+                    "indem": "indem sie eine aktuelle 'Frage' (z.B. Wohnungsfrage) mit denselben drei Komponenten beschreiben,",
+                    "erkennbar": "was daran erkennbar wird, dass sie im Plenum ihre Uebertragung begruenden.",
+                    "afb": "III",
+                    "differenziert": true
+                  }
+                ],
                 "problemstellung": "6' · Begriffsaktivierung: »Was sind FRAGEN im Politik-Kontext heute?« (Klimafrage · Wohnungsfrage). Zielangabe: »Wir bauen eine eigene Definition.« Arbeitsplanung: Input + Partner-Schreibarbeit.",
                 "problementfaltung": "22' · Lehrkraft-Input (10'): Pauperismus · Industrialisierung · fehlende Sozialgesetzgebung. Partner-Arbeit (12'): »Lexikon-Eintrag« in eigenen Worten.",
-                "problemloesung": "8' · Lexikon-Einträge gegenseitig prüfen → 3 Best-Versionen vorlesen → gemeinsame Tafel-Definition.",
-                "wertung": "5' · »Welche FRAGE unserer Gegenwart wäre vergleichbar — und warum genau diese?« Aktualitätsbezug.",
-                "sicherung_lzk": "4' · Definition ins Heft + LZK-Mini: »Erkläre Soziale Frage in 2 Sätzen einem Mitschüler.«",
-                "material": "Tafel-Vorlage Definition · Hefteintrag-Schablone · Wortspeicher",
-                "differenzierung": "Wortspeicher (Pauperismus, Industrialisierung etc.) · Vorgabe-Schreibgerüst für schwache Lerner.",
+                "problemloesung": "8' · Lexikon-Eintraege gegenseitig pruefen → 3 Best-Versionen vorlesen → gemeinsame Tafel-Definition.",
+                "wertung": "5' · »Welche FRAGE unserer Gegenwart waere vergleichbar — und warum genau diese?« Aktualitaetsbezug.",
+                "sicherung_lzk": "4' · Definition ins Heft + LZK-Mini: »Erklaere Soziale Frage in 2 Saetzen einem Mitschueler.«",
+                "sozialform_phasen": {
+                  "problemstellung": "UG (Tafelsammlung)",
+                  "problementfaltung": "Plenum (L-Input) · PA (Lexikon-Eintrag)",
+                  "problemloesung": "Plenum (Vorlesen + Konsens)",
+                  "wertung": "UG",
+                  "sicherung_lzk": "EA · PA (LZK-Mini)"
+                },
+                "differenzierung_block": {
+                  "daz": "Wortspeicher mit Definitionen (Pauperismus, Sozialgesetzgebung) · Lueckentext-Variante als Schreib-Geruest.",
+                  "lrs": "Lexikon-Eintrag mit Satzanfaengen vorgegeben · Schriftgroesse 14pt+ · Wortkarten zum Anordnen.",
+                  "leistungsschwach": "Schreibgeruest: 'Die Soziale Frage entstand durch ___ in der Zeit von ___. Die Menschen litten unter ___, weil ___.'",
+                  "leistungsstark": "AFB-III-Aufgabe: 'Formuliere die Wohnungsfrage 2026 als drei-komponentige Frage analog zur Sozialen Frage'."
+                },
+                "personifikation_anteil": "Johann und Anna stehen exemplarisch fuer 'die Menschen, ueber die die Frage gestellt wird'.",
+                "tafelbild_skizze": "Drei-Spalten-Tafel: links 'FRAGEN heute' (Klima/Wohnen/...) · Mitte L-Input-Struktur (3 Kernbegriffe) · rechts gemeinsame Definition.",
+                "hausaufgabe": "Bringe ein Zeitungsfoto/Schlagzeile zu einer aktuellen 'Frage' mit (Vorbereitung UE 8).",
+                "material": "Tafel-Vorlage Definition · Hefteintrag-Schablone · Wortspeicher · Schreib-Geruest-Karten",
                 "lp_bezug": "KE 1 Konzept Soziale Frage",
-                "prinzipien_b3": ["Problemorientierung", "Aktualität", "Schülerorientierung"],
-                "kompetenzstruktur": { "gegenstand": "Werte · Ordnungssysteme", "perspektive": "historisch · sozialwissenschaftlich", "prozesskompetenz": "Erfassen · Reflektieren" },
-                "didaktik": "Begriffsbildung · Mündigkeit-Anbahnung (Detjen2007) durch eigenständige Begriffsdefinition · Aktualitätsprinzip (Klafki1996)"
+                "prinzipien_b3": [
+                  "Problemorientierung",
+                  "Aktualitaet",
+                  "Schuelerorientierung"
+                ],
+                "kompetenzstruktur": {
+                  "gegenstand": "Werte · Ordnungssysteme",
+                  "perspektive": "historisch · sozialwissenschaftlich",
+                  "prozesskompetenz": "Erkenntnisse gewinnen (Begriffsbildung) · Anwenden (Fachsprache)"
+                },
+                "didaktik": "Begriffsbildung · Muendigkeit-Anbahnung (Detjen 2007) durch eigenstaendige Begriffsdefinition · Aktualitaetsprinzip (Klafki 1996)"
               },
               {
                 "nr": 5,
-                "titel": "Lösungsansätze · Genossenschaften · Gewerkschaften · Staat",
+                "titel": "Loesungsansaetze · Genossenschaften · Gewerkschaften · Staat",
+                "stundenthema_frage": "Wer wollte die Soziale Frage loesen — und wie?",
                 "minuten": 45,
-                "lernziel": "SuS unterscheiden drei historische Lösungsansätze zur Sozialen Frage (Selbsthilfe · Gewerkschaft · Sozialstaat) und ordnen ihnen Akteure zu.",
-                "problemstellung": "5' · Aktivierende Frage: »Wenn ihr Industriearbeiter 1880 wärt — was würdet ihr tun?« Brainstorming. Zielangabe: »3 historische Antworten kennenlernen.« Jigsaw-Plan.",
+                "lernziel": "SuS unterscheiden drei historische Loesungsansaetze zur Sozialen Frage (Selbsthilfe · Gewerkschaft · Sozialstaat) und ordnen ihnen Akteure zu.",
+                "lernziel_stundenziel": {
+                  "verhalten": "Die Schuelerinnen und Schueler unterscheiden drei historische Loesungsansaetze zur Sozialen Frage (Selbsthilfe · Gewerkschaft · Sozialstaat) und ordnen ihnen Akteure zu,",
+                  "bedingung": "indem sie in einem Gruppenpuzzle (Jigsaw) je einen Ansatz erschliessen und im Stamm-Team weitergeben,",
+                  "maszstab": "was daran erkennbar wird, dass im Heft eine Tabelle mit drei Akteur-Strategie-Reichweite-Eintraegen steht."
+                },
+                "lernziel_teilziele": [
+                  {
+                    "tz": "SuS erschliessen einen der drei Loesungsansaetze in der Expertengruppe,",
+                    "indem": "indem sie den Expertentext gemeinsam lesen und drei Kern-Aussagen sammeln,",
+                    "erkennbar": "was daran erkennbar wird, dass die Expertenkarte drei Kernaussagen + den Akteur traegt.",
+                    "afb": "I",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS vermitteln den eigenen Ansatz in der Stammgruppe,",
+                    "indem": "indem sie ihre Expertenkarte mit drei eigenen Saetzen praesentieren und Rueckfragen beantworten,",
+                    "erkennbar": "was daran erkennbar wird, dass die uebrigen Stammgruppen-Mitglieder die Inhalte ins Heft uebertragen.",
+                    "afb": "II",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS strukturieren die drei Ansaetze in einer Akteur-Strategie-Tabelle,",
+                    "indem": "indem sie gemeinsam die Tabelle (Akteur · Strategie · Reichweite) im Heft befuellen,",
+                    "erkennbar": "was daran erkennbar wird, dass alle drei Zeilen mit konkreten Beispielen besetzt sind.",
+                    "afb": "II",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "[Differenziert / leistungsstark] SuS bewerten die Reichweite der Ansaetze,",
+                    "indem": "indem sie pruefen, welcher Ansatz fuer Anna (Spinnerei-Arbeiterin) am wirksamsten gewesen waere,",
+                    "erkennbar": "was daran erkennbar wird, dass sie ihre Wahl im Plenum mit zwei Argumenten begruenden.",
+                    "afb": "III",
+                    "differenziert": true
+                  }
+                ],
+                "problemstellung": "5' · Aktivierende Frage: »Wenn ihr Industriearbeiter 1880 waert — was wuerdet ihr tun?« Brainstorming. Zielangabe: »3 historische Antworten kennenlernen.« Jigsaw-Plan.",
                 "problementfaltung": "25' · Jigsaw: Gruppe A Genossenschaften (Schulze-Delitzsch/Raiffeisen) · Gruppe B Gewerkschaft+SPD (Bebel/Lassalle) · Gruppe C Bismarcks Sozialgesetzgebung (1883-89). Experten- → Stammgruppen.",
-                "problemloesung": "8' · Tabelle gemeinsam füllen: Akteur · Strategie · Reichweite. 3 Antworten klar umrissen.",
-                "wertung": "5' · »Welche Strategie war am wirksamsten — und nach welchem Maßstab?« Sache vs. Werte unterscheiden.",
-                "sicherung_lzk": "2' · Tabelle ins Heft übernehmen · LZK-Mini: »Ordne 3 Akteure 3 Strategien zu.«",
-                "material": "3 Expertentexte (à 1 Seite) · Tabelle-Schablone · Hefteintrag-Vorlage",
-                "differenzierung": "Texte 3 Niveaus · Visualisierungs-Hilfen für DaZ (Symbol Gewerkschaft, Symbol Bismarck).",
-                "lp_bezug": "KE 1 Lösungsansätze Soziale Frage",
-                "prinzipien_b3": ["Multiperspektivität", "Handlungsorientierung", "Problemorientierung"],
-                "kompetenzstruktur": { "gegenstand": "Ordnungssysteme · Interessen", "perspektive": "historisch · sozialwissenschaftlich", "prozesskompetenz": "Erfassen · Beurteilen" },
-                "didaktik": "Jigsaw-Methode · Multiperspektivität · Politische Urteilsbildung (GPJE2004) · Handlungsorientierung Simulationshandeln (Reinhardt2005)"
+                "problemloesung": "8' · Tabelle gemeinsam fuellen: Akteur · Strategie · Reichweite. 3 Antworten klar umrissen.",
+                "wertung": "5' · »Welche Strategie waere fuer Anna am wirksamsten gewesen — nach welchem Massstab?« Sache vs. Werte unterscheiden.",
+                "sicherung_lzk": "2' · Tabelle ins Heft uebernehmen · LZK-Mini: »Ordne 3 Akteure 3 Strategien zu.«",
+                "sozialform_phasen": {
+                  "problemstellung": "UG (Brainstorming an der Tafel)",
+                  "problementfaltung": "GA (Expertengruppen) → GA (Stammgruppen)",
+                  "problemloesung": "Plenum (Tafeltabelle)",
+                  "wertung": "UG",
+                  "sicherung_lzk": "EA"
+                },
+                "differenzierung_block": {
+                  "daz": "Expertentexte mit Wortspeicher (Genossenschaft, Gewerkschaft, Sozialgesetz) · Symbole je Akteur · Lese-Tandem in Expertenphase.",
+                  "lrs": "Texte in 3 Niveaus (90W · 180W · 350W) · Schriftgroesse 14pt+ · Expertenkarte mit Schreib-Geruest.",
+                  "leistungsschwach": "Expertenkarte mit Lueckenstruktur (Akteur: ___; Strategie: ___; Beispiel: ___).",
+                  "leistungsstark": "AFB-III-Zusatz: 'Welcher Ansatz ist auch heute noch wirksam — Gewerkschaft? Genossenschaft? Sozialstaat?' (Brueckenfrage zu UE 8)."
+                },
+                "personifikation_anteil": "Anna tritt der Gewerkschaft bei (fiktiv) · Johann profitiert spaeter von Bismarcks Unfallversicherung — Brueckenstellen werden in den Expertengruppen gesetzt.",
+                "tafelbild_skizze": "Drei-Spalten-Tafel: A Genossenschaft | B Gewerkschaft/SPD | C Bismarck-Staat. Pro Spalte: Akteur · Strategie · Reichweite. Mitte: Anna/Johann-Symbol fuer 'wer profitiert?'",
+                "hausaufgabe": "—",
+                "material": "3 Expertentexte (à 1 Seite, 3 Niveaus) · Tabelle-Schablone · Hefteintrag-Vorlage · Symbol-Karten (Gewerkschaft/Genossenschaft/Bismarck)",
+                "lp_bezug": "KE 1 Loesungsansaetze Soziale Frage",
+                "prinzipien_b3": [
+                  "Multiperspektivitaet",
+                  "Handlungsorientierung",
+                  "Problemorientierung",
+                  "Personifikation"
+                ],
+                "kompetenzstruktur": {
+                  "gegenstand": "Ordnungssysteme · Interessen",
+                  "perspektive": "historisch · sozialwissenschaftlich",
+                  "prozesskompetenz": "Erkenntnisse gewinnen (Quellen) · Beurteilen (Reichweite)"
+                },
+                "didaktik": "Jigsaw-Methode · Multiperspektivitaet · Politische Urteilsbildung (GPJE 2004) · Handlungsorientierung Simulationshandeln (Reinhardt 2005)"
               },
               {
                 "nr": 6,
-                "titel": "Bismarcks Sozialgesetzgebung — Erfolg oder Beruhigung?",
+                "titel": "Bismarcks Sozialgesetzgebung — Erfolg oder Beruhigung? · SCHWERPUNKTSTUNDE-KANDIDAT",
+                "stundenthema_frage": "War Bismarcks Sozialgesetzgebung ein Erfolg fuer Johann — oder nur Beruhigung der Arbeiter?",
                 "minuten": 45,
                 "lernziel": "SuS beurteilen Bismarcks Sozialgesetzgebung kritisch und entwickeln ein Sach-/Werturteil.",
-                "problemstellung": "5' · Provokationsthese: »Bismarck war ein Sozialist.« Spontan zustimmen/ablehnen — Verortung an der Tafel. Zielangabe: »Wir prüfen die These mit Quellen.« Pro/Contra-Plan.",
-                "problementfaltung": "22' · Pro-Contra-Vorbereitung in 2 Gruppen mit Materialgrundlage (Bismarcks Reden + Auszüge SPD-Reaktionen). 15' Vorbereitung, 7' Debatte mit fest verteilten Rollen.",
-                "problemloesung": "5' · Beobachter:innen-Bilanz: stärkstes Pro- und stärkstes Contra-Argument festhalten.",
-                "wertung": "10' · 3-Stufen-Urteil im Heft: Sachebene (was geschah?) · Werte-Ebene (Maßstab Gerechtigkeit/Stabilität?) · eigene Position (begründet).",
-                "sicherung_lzk": "3' · Metakognitiv: »Welches Argument hat mich überzeugt — und warum?« · LZK-Karte mit AFB-III-Urteilsfrage.",
-                "material": "Material-Mappen (Pro + Contra · Reden Bismarck · Bebel-Kritik) · Urteilsraster (Sach/Wert/Position) · Beobachter-Karten",
-                "differenzierung": "Rollenkarten mit Argumenten für schwache Lerner · Frei-Argumentation für starke.",
-                "lp_bezug": "KE 1 Lösungsansätze + Urteilsbildung",
-                "prinzipien_b3": ["Kontroversitätsgebot", "Überwältigungsverbot", "Handlungsorientierung"],
-                "kompetenzstruktur": { "gegenstand": "Werte · Interessen", "perspektive": "historisch · sozialwissenschaftlich", "prozesskompetenz": "Beurteilen · Reflektieren · Handeln" },
-                "didaktik": "Pro-Contra-Debatte (Massing) · Politische Urteilsbildung 3-Stufen (GPJE2004) · Beutelsbacher Konsens (Kontroversitätsgebot) · Mündigkeit (Detjen2007)"
+                "lernziel_stundenziel": {
+                  "verhalten": "Die Schuelerinnen und Schueler beurteilen Bismarcks Sozialgesetzgebung kritisch und entwickeln ein begruendetes 3-Stufen-Urteil (Sache · Wert · Position),",
+                  "bedingung": "indem sie in einer rollenfest verteilten Pro-Contra-Debatte auf Materialgrundlage (Bismarcks Reden + SPD-Reaktionen) argumentieren und das Urteil im Heft mit dem 3-Stufen-Raster sichern,",
+                  "maszstab": "was daran erkennbar wird, dass im Heft alle drei Stufen mit je einem Argument + einer eigenen Position stehen und im Plenum mindestens zwei Mitschueler:innen-Argumente reflektiert werden."
+                },
+                "lernziel_teilziele": [
+                  {
+                    "tz": "SuS erschliessen Bismarcks Sozialgesetze (1883-89) in der Material-Phase,",
+                    "indem": "indem sie in der Pro- oder Contra-Gruppe Material lesen und Argumente sammeln,",
+                    "erkennbar": "was daran erkennbar wird, dass die Argumentationskarte mindestens drei Argumente mit Beleg traegt.",
+                    "afb": "I",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS fuehren eine moderierte Pro-Contra-Debatte,",
+                    "indem": "indem sie ihre Rollenposition rollenfest vertreten und auf Gegenargumente reagieren,",
+                    "erkennbar": "was daran erkennbar wird, dass jede Rolle mindestens zwei Argumente vorbringt und auf eines reagiert.",
+                    "afb": "II",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS sichern ein 3-Stufen-Urteil im Heft,",
+                    "indem": "indem sie auf dem Urteils-Raster Sachebene (was geschah?) · Werte-Ebene (Massstab) · eigene Position notieren,",
+                    "erkennbar": "was daran erkennbar wird, dass alle drei Stufen schriftlich besetzt sind.",
+                    "afb": "III",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "[Differenziert / leistungsstark] SuS reflektieren metakognitiv ihren Urteilsprozess,",
+                    "indem": "indem sie benennen, welches Mitschueler-Argument sie umgestimmt hat und warum,",
+                    "erkennbar": "was daran erkennbar wird, dass sie im Plenum einen Perspektiven-Wechsel begruenden.",
+                    "afb": "III",
+                    "differenziert": true
+                  }
+                ],
+                "problemstellung": "5' · Provokationsthese: »Bismarck war ein Sozialist.« Spontan zustimmen/ablehnen — Verortung an der Tafel. Zielangabe: »Wir pruefen die These mit Quellen.« Pro/Contra-Plan.",
+                "problementfaltung": "22' · Pro-Contra-Vorbereitung in 2 Gruppen mit Materialgrundlage (Bismarcks Reden + Auszuege SPD-Reaktionen). 15' Vorbereitung, 7' Debatte mit fest verteilten Rollen.",
+                "problemloesung": "5' · Beobachter:innen-Bilanz: staerkstes Pro- und staerkstes Contra-Argument festhalten.",
+                "wertung": "10' · 3-Stufen-Urteil im Heft: Sachebene (was geschah?) · Werte-Ebene (Massstab Gerechtigkeit/Stabilitaet?) · eigene Position (begruendet).",
+                "sicherung_lzk": "3' · Metakognitiv: »Welches Argument hat mich ueberzeugt — und warum?« · LZK-Karte mit AFB-III-Urteilsfrage.",
+                "sozialform_phasen": {
+                  "problemstellung": "UG (Tafel-Verortung)",
+                  "problementfaltung": "GA (Pro/Contra-Vorbereitung) · Plenum (Debatte)",
+                  "problemloesung": "UG (Beobachter-Bilanz)",
+                  "wertung": "EA (3-Stufen-Urteil schreiben)",
+                  "sicherung_lzk": "Plenum · EA"
+                },
+                "differenzierung_block": {
+                  "daz": "Rollenkarten mit Schluesselbegriffen (Unfallversicherung, Sozialdemokrat, Solidaritaet) · Argumente in Stichpunkten vorgegeben · Visualisierungs-Hilfen.",
+                  "lrs": "Argumentationskarte mit Schreib-Geruest · Material-Texte 14pt+ · Audio-Mitschnitt der Debatte zur Nachbereitung.",
+                  "leistungsschwach": "Rollenkarten mit 3 vorgegebenen Argumenten · 3-Stufen-Urteil mit Satzanfaengen ('Sachlich gilt: ___. Aus Sicht ___ bedeutet das: ___. Ich finde: ___.')",
+                  "leistungsstark": "Frei-Argumentation ohne Rollenkarte · Zusatz: 'Bewerte das Urteil aus Sicht Annas vs. Johanns' (Perspektivenwechsel · AFB III)."
+                },
+                "personifikation_anteil": "Johann profitiert von der Unfallversicherung 1884 (positiv) · Anna sieht die Gesetze als Beruhigungs-Geschenk an die Bourgeoisie (kritisch) — beide Perspektiven in den Material-Mappen.",
+                "tafelbild_skizze": "Drei-Felder-Tafel: links 'Bismarck war Sozialist' These mit Verortung · Mitte Pro/Contra-Argumente in 2 Spalten · rechts 3-Stufen-Urteilsraster (Sache · Wert · Position).",
+                "hausaufgabe": "Heft: 3-Stufen-Urteil ueberarbeiten + 1 Satz Selbstkritik (Welches Argument war mein staerkstes? Welches schwaechstes?).",
+                "material": "Material-Mappen (Pro + Contra · Reden Bismarck 1881 · Bebel-Kritik) · Urteilsraster (Sach/Wert/Position) · Beobachter-Karten · Audio-Aufnahmegeraet (optional)",
+                "lp_bezug": "KE 1 Loesungsansaetze + Urteilsbildung",
+                "prinzipien_b3": [
+                  "Kontroversitaetsgebot",
+                  "Ueberwaeltigungsverbot",
+                  "Handlungsorientierung",
+                  "Personifikation"
+                ],
+                "kompetenzstruktur": {
+                  "gegenstand": "Werte · Interessen",
+                  "perspektive": "historisch · sozialwissenschaftlich",
+                  "prozesskompetenz": "Beurteilen · Reflektieren · Handeln (Position vertreten)"
+                },
+                "didaktik": "Pro-Contra-Debatte (Massing) · Politische Urteilsbildung 3-Stufen (GPJE 2004) · Beutelsbacher Konsens (Kontroversitaetsgebot, Ueberwaeltigungsverbot) · Muendigkeit (Detjen 2007)"
               },
               {
                 "nr": 7,
-                "titel": "Übergang Agrar→Industriegesellschaft am Beispiel einer Stadt",
+                "titel": "Uebergang Agrar→Industriegesellschaft am Beispiel einer Stadt",
+                "stundenthema_frage": "Wie veraenderte sich unsere Stadt zwischen 1850 und 1900?",
                 "minuten": 45,
-                "lernziel": "SuS beschreiben den Übergang am Beispiel einer Stadt (z.B. Würzburg, Augsburg) und identifizieren Veränderungs-Indikatoren (KE 2).",
-                "problemstellung": "6' · Lokaler Bezug: »Wie war Würzburg/eure Stadt 1880?« Vermutungen sammeln. Zielangabe: »Wir messen den Wandel an Indikatoren.« Arbeitsplanung: 3 Quellen analysieren.",
-                "problementfaltung": "22' · Quellenarbeit: Stadtplan 1850 vs. 1900 · Bevölkerungs-Statistik 1850/1880/1900 · Beruf-Verteilung-Diagramm. Indikatoren herausarbeiten.",
-                "problemloesung": "10' · Tafelbild: 4 Veränderungs-Achsen (Wachstum · Wirtschaft · Wohnen · Verkehr) mit Quellenbeleg.",
-                "wertung": "4' · »Welche Veränderung ist heute ähnlich — Migration? Energiewende? Digitalisierung?« Aktualisierungsfrage.",
+                "lernziel": "SuS beschreiben den Uebergang am Beispiel einer Stadt (z.B. Wuerzburg, Augsburg) und identifizieren Veraenderungs-Indikatoren (KE 2).",
+                "lernziel_stundenziel": {
+                  "verhalten": "Die Schuelerinnen und Schueler beschreiben den Uebergang von der Agrar- zur Industriegesellschaft am Beispiel einer Stadt und identifizieren vier Veraenderungs-Indikatoren,",
+                  "bedingung": "indem sie Stadtplaene 1850 und 1900, eine Bevoelkerungs-Statistik und ein Berufs-Diagramm vergleichen und Indikatoren herausarbeiten,",
+                  "maszstab": "was daran erkennbar wird, dass im Heft vier Veraenderungs-Achsen (Wachstum · Wirtschaft · Wohnen · Verkehr) mit je einem Quellenbeleg notiert sind."
+                },
+                "lernziel_teilziele": [
+                  {
+                    "tz": "SuS lesen Stadtplaene 1850 und 1900 vergleichend,",
+                    "indem": "indem sie in Partnerarbeit drei Unterschiede markieren und benennen,",
+                    "erkennbar": "was daran erkennbar wird, dass im AB drei Karten-Vergleiche notiert sind.",
+                    "afb": "I",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS leiten Indikatoren aus Statistik + Diagramm ab,",
+                    "indem": "indem sie Bevoelkerungs- und Berufszahlen 1850/1880/1900 vergleichen,",
+                    "erkennbar": "was daran erkennbar wird, dass vier Indikator-Stichworte mit Datum-Bezug im Heft stehen.",
+                    "afb": "II",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS strukturieren die Indikatoren in vier Veraenderungs-Achsen,",
+                    "indem": "indem sie die Tafelvorlage (Wachstum · Wirtschaft · Wohnen · Verkehr) in Plenum befuellen,",
+                    "erkennbar": "was daran erkennbar wird, dass jede Achse einen Quellenbeleg traegt.",
+                    "afb": "II",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "[Differenziert / leistungsstark] SuS uebertragen die Indikatoren auf eine Gegenwartsveraenderung,",
+                    "indem": "indem sie ueberlegen, welche Achse heute (Migration, Digitalisierung, Energiewende) aehnlich wirkt,",
+                    "erkennbar": "was daran erkennbar wird, dass sie im Plenum eine Analogie begruenden.",
+                    "afb": "III",
+                    "differenziert": true
+                  }
+                ],
+                "problemstellung": "6' · Lokaler Bezug: »Wie war Wuerzburg/eure Stadt 1880?« Vermutungen sammeln. Zielangabe: »Wir messen den Wandel an Indikatoren.« Arbeitsplanung: 3 Quellen analysieren.",
+                "problementfaltung": "22' · Quellenarbeit: Stadtplan 1850 vs. 1900 · Bevoelkerungs-Statistik 1850/1880/1900 · Beruf-Verteilung-Diagramm. Indikatoren herausarbeiten.",
+                "problemloesung": "10' · Tafelbild: 4 Veraenderungs-Achsen (Wachstum · Wirtschaft · Wohnen · Verkehr) mit Quellenbeleg.",
+                "wertung": "4' · »Welche Veraenderung ist heute aehnlich — Migration? Energiewende? Digitalisierung?« Aktualisierungsfrage.",
                 "sicherung_lzk": "3' · Hefteintrag »4 Achsen mit je 1 Quellenbeleg« · LZK-Karte »Nenne 2 Indikatoren mit Beleg«.",
-                "material": "Lokale Stadtkarte 1850 + 1900 (digital wenn möglich) · Statistik-AB · Indikatoren-Raster · Hefteintrag-Vorlage",
-                "differenzierung": "AB Karten-Vergleich 3 Niveaus (Markieren / Vergleichen / Argumentieren).",
-                "lp_bezug": "KE 2 Übergang Agrar→Industriegesellschaft",
-                "prinzipien_b3": ["Erfahrungsbezug", "Aktualität", "Schülerorientierung"],
-                "kompetenzstruktur": { "gegenstand": "Räume · Ordnungssysteme", "perspektive": "historisch · geographisch", "prozesskompetenz": "Erfassen · Hinterfragen" },
-                "didaktik": "Lokalgeschichte (LP+ GPG-Fachprofil) · Quellenkritik (Pandel2017) · Aktualitätsprinzip · Kompetenzstrukturmodell Gegenstandsbereich »Räume« + »Zeit«"
+                "sozialform_phasen": {
+                  "problemstellung": "UG (Vermutungen sammeln)",
+                  "problementfaltung": "PA (Kartenvergleich) · EA (Statistik/Diagramm)",
+                  "problemloesung": "Plenum (Tafelbild)",
+                  "wertung": "UG",
+                  "sicherung_lzk": "EA"
+                },
+                "differenzierung_block": {
+                  "daz": "Karten mit Legenden in einfacher Sprache · Wortspeicher (Verstaedterung, Industrie, Bevoelkerungswachstum) · Lese-Tandem fuer Statistiken.",
+                  "lrs": "AB-Niveau 1: Markieren in der Karte · Schriftgroesse 14pt+ · Statistik-Zahlen visualisiert (Balkenfarben).",
+                  "leistungsschwach": "AB-Niveau 1: Markieren statt Schreiben · Tabellen-Schablone mit Lueckenstruktur.",
+                  "leistungsstark": "AB-Niveau 3 (Argumentieren): 'Welche Achse hat den staerksten Wandel verursacht — und warum?' (AFB III)."
+                },
+                "personifikation_anteil": "Johann zieht 1875 aus Hessen nach Berlin (Verstaedterung) · Anna lebt seit Geburt in der Mietskaserne — beide werden als 'Indikator-Personen' in den Quellen benannt.",
+                "tafelbild_skizze": "Vier-Quadranten-Tafel: Wachstum | Wirtschaft | Wohnen | Verkehr. Pro Quadrant: 1 Datum/Zahl + 1 Beleg. Mitte: Stadt-Logo + Karte 1850/1900-Mini.",
+                "hausaufgabe": "Mitbringen: 1 Foto aus eurer Stadt 1900 + 1 Foto heute (Vorbereitung UE 10).",
+                "material": "Lokale Stadtkarte 1850 + 1900 (digital wenn moeglich) · Statistik-AB · Indikatoren-Raster · Hefteintrag-Vorlage · Wortspeicher",
+                "lp_bezug": "KE 2 Uebergang Agrar→Industriegesellschaft",
+                "prinzipien_b3": [
+                  "Erfahrungsbezug",
+                  "Aktualitaet",
+                  "Schuelerorientierung",
+                  "Personifikation"
+                ],
+                "kompetenzstruktur": {
+                  "gegenstand": "Raeume · Ordnungssysteme",
+                  "perspektive": "historisch · geographisch",
+                  "prozesskompetenz": "Erkenntnisse gewinnen (Karten/Statistik) · Beurteilen (Indikatoren)"
+                },
+                "didaktik": "Lokalgeschichte (LP+ GPG-Fachprofil) · Quellenkritik (Pandel 2017) · Aktualitaetsprinzip · Kompetenzstrukturmodell Gegenstandsbereich »Raeume« + »Zeit«"
               },
               {
                 "nr": 8,
                 "titel": "Vergleich Soziale Frage 1880 vs. heute",
+                "stundenthema_frage": "Ist die Soziale Frage heute geloest — oder nur eine andere?",
                 "minuten": 45,
-                "lernziel": "SuS vergleichen die Soziale Frage des 19. Jh. mit aktuellen sozialen Spannungen (z.B. Wohnungsmangel, Niedriglohn) und entwickeln ein begründetes Sachurteil.",
+                "lernziel": "SuS vergleichen die Soziale Frage des 19. Jh. mit aktuellen sozialen Spannungen (z.B. Wohnungsmangel, Niedriglohn) und entwickeln ein begruendetes Sachurteil.",
+                "lernziel_stundenziel": {
+                  "verhalten": "Die Schuelerinnen und Schueler vergleichen die Soziale Frage des 19. Jh. mit aktuellen sozialen Spannungen und entwickeln ein begruendetes Sach-/Werturteil,",
+                  "bedingung": "indem sie in 4er-Gruppen eine Vergleichsmatrix (Spalten 1880/heute · Zeilen Wohnen/Lohn/Arbeitszeit/Sozialschutz) befuellen und im Plenum auswerten,",
+                  "maszstab": "was daran erkennbar wird, dass jede Gruppe je Zeile mindestens einen Beleg fuer 1880 und einen fuer heute notiert und im Plenum eine Werturteils-Position begruendet."
+                },
+                "lernziel_teilziele": [
+                  {
+                    "tz": "SuS sammeln aktuelle Beleg-Beispiele zu sozialen Spannungen,",
+                    "indem": "indem sie mitgebrachte Zeitungsfotos/Schlagzeilen (aus HA UE 4) auf die Vergleichsmatrix uebertragen,",
+                    "erkennbar": "was daran erkennbar wird, dass jede Zeile der heutigen Spalte einen Beleg traegt.",
+                    "afb": "I",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS fuellen die Vergleichsmatrix systematisch,",
+                    "indem": "indem sie in 4er-Gruppen 1880 und heute fuer alle vier Zeilen vergleichen,",
+                    "erkennbar": "was daran erkennbar wird, dass alle 8 Matrix-Felder besetzt sind.",
+                    "afb": "II",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS identifizieren strukturelle Gemeinsamkeiten und Unterschiede,",
+                    "indem": "indem sie im Plenum drei Gemeinsamkeiten und drei Unterschiede zusammentragen,",
+                    "erkennbar": "was daran erkennbar wird, dass die Tafel beide Spalten mit drei Eintraegen fuellt.",
+                    "afb": "II",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "[Differenziert / leistungsstark] SuS entwickeln ein 2-Stufen-Werturteil,",
+                    "indem": "indem sie auf Sach- und Werte-Ebene begruenden, ob die Soziale Frage 'geloest' ist,",
+                    "erkennbar": "was daran erkennbar wird, dass sie im Heft beide Stufen schriftlich begruenden.",
+                    "afb": "III",
+                    "differenziert": true
+                  }
+                ],
                 "problemstellung": "5' · Foto-Impuls aktuell: Tafel-Schlange · Working-Poor-Statistik. Zielangabe: »Vergleichen 1880 vs. heute.« Arbeitsplanung: Vergleichsmatrix in 4er-Gruppen.",
-                "problementfaltung": "22' · Vergleichsmatrix: Spalten 1880/heute · Zeilen Wohnungsfrage/Lohnfrage/Arbeitszeit/Sozialschutz. Gruppen befüllen + Belege markieren.",
+                "problementfaltung": "22' · Vergleichsmatrix: Spalten 1880/heute · Zeilen Wohnungsfrage/Lohnfrage/Arbeitszeit/Sozialschutz. Gruppen befuellen + Belege markieren.",
                 "problemloesung": "8' · Plenum: Strukturelle Gemeinsamkeiten + Unterschiede zusammentragen (Tafel-Synopsis).",
-                "wertung": "7' · 2-Stufen-Urteil: Sache (Was ist gleich, was anders?) · Wert (Ist die SOZIALE FRAGE überhaupt gelöst?). Schreib-Phase im Heft.",
+                "wertung": "7' · 2-Stufen-Urteil: Sache (Was ist gleich, was anders?) · Wert (Ist die SOZIALE FRAGE ueberhaupt geloest?). Schreib-Phase im Heft.",
                 "sicherung_lzk": "3' · LZK-Karte AFB II: »Vergleiche 1880 vs. heute in 1 Aspekt mit Beleg« · Hefteintrag Synopsis.",
-                "material": "Aktuelle Bilder + Statistiken (BMSFSJ Sozialbericht) · Vergleichsmatrix-Vorlage · Hefteintrag-Schablone",
-                "differenzierung": "Statistiken in 3 Niveaus aufbereitet · Wortspeicher Sozialpolitik-Begriffe.",
+                "sozialform_phasen": {
+                  "problemstellung": "Plenum (Foto-Impuls + UG)",
+                  "problementfaltung": "GA (4er-Gruppen Vergleichsmatrix)",
+                  "problemloesung": "Plenum (Tafel-Synopsis)",
+                  "wertung": "EA · UG",
+                  "sicherung_lzk": "EA"
+                },
+                "differenzierung_block": {
+                  "daz": "Vergleichsmatrix mit Wortspeicher (Niedriglohn, Tafel, Working-Poor, Wohngeld) · Foto-Belege statt Text · Lese-Tandem.",
+                  "lrs": "Matrix in 14pt+ · Belege als Bild + 1-Satz · Schreib-Geruest fuer Urteil ('Gleich ist: ___. Anders ist: ___. Ich finde: ___.').",
+                  "leistungsschwach": "Statistiken visualisiert · Matrix mit vorbefuellten Belegen 1880 · Heute selbst eintragen.",
+                  "leistungsstark": "AFB-III-Aufgabe: 'Formuliere die Wohnungsfrage 2026 als drei-komponentige Frage analog zu UE 4 und vergleiche.'"
+                },
+                "personifikation_anteil": "Anna heute = Working-Poor-Mutter (alleinerziehend, 2 Kinder, Niedriglohn) · Johann heute = Plattform-Kurier (befristet, ohne Sozialschutz) — Aktualisierung der Identifikationsfiguren.",
+                "tafelbild_skizze": "Vier-Zeilen-Matrix: Wohnen · Lohn · Arbeitszeit · Sozialschutz. Zwei Spalten 1880 | heute. Rechts: Werturteil 'Soziale Frage geloest?' mit zwei Positionen.",
+                "hausaufgabe": "Vorbereitung LNW UE 9: 1-Seiten-Spickzettel zu allen UEs 1-8.",
+                "material": "Aktuelle Bilder + Statistiken (BMSFSJ Sozialbericht) · Vergleichsmatrix-Vorlage · Hefteintrag-Schablone · Schreib-Geruest-Karten",
                 "lp_bezug": "KE 1 + KE 2 verbinden · Aktualisierungs-Auftrag LP+",
-                "prinzipien_b3": ["Aktualität", "Schülerorientierung", "Multiperspektivität", "Kontroversitätsgebot"],
-                "kompetenzstruktur": { "gegenstand": "Werte · Interessen", "perspektive": "sozialwissenschaftlich · historisch", "prozesskompetenz": "Beurteilen · Reflektieren" },
-                "didaktik": "Aktualitätsprinzip (Klafki1996) · Lebensweltbezug · Multiperspektivität · Politische Urteilsbildung"
+                "prinzipien_b3": [
+                  "Aktualitaet",
+                  "Schuelerorientierung",
+                  "Multiperspektivitaet",
+                  "Kontroversitaetsgebot",
+                  "Personifikation"
+                ],
+                "kompetenzstruktur": {
+                  "gegenstand": "Werte · Interessen",
+                  "perspektive": "sozialwissenschaftlich · historisch",
+                  "prozesskompetenz": "Beurteilen · Reflektieren · Anwenden (Position begruenden)"
+                },
+                "didaktik": "Aktualitaetsprinzip (Klafki 1996) · Lebensweltbezug · Multiperspektivitaet · Politische Urteilsbildung"
               },
               {
                 "nr": 9,
                 "titel": "Lernzielkontrolle (LNW) · alle AFB-Stufen",
+                "stundenthema_frage": "Was kann ich jetzt — und was nicht?",
                 "minuten": 45,
-                "lernziel": "SuS dokumentieren ihre Lernerträge in einer Lernzielkontrolle (LNW) mit Aufgaben aller AFB-Stufen.",
-                "problemstellung": "4' · Struktur-Hinweis: »LNW prüft Wissen (AFB I), Methoden (II), Urteilsfähigkeit (III).« Zielangabe + Arbeitsplanung mit Zeitvorgaben.",
-                "problementfaltung": "28' · LNW schreiben: AFB I (Beschreiben Lebensverhältnisse) · AFB II (Vergleich 1880-heute) · AFB III (Urteil Bismarck — Erfolg oder Beruhigung?).",
-                "problemloesung": "5' · Selbsteinschätzungsbogen ausfüllen (»Was kann ich? Wo brauche ich mehr Zeit?«).",
-                "wertung": "4' · »Welche Aufgabe war für mich am anspruchsvollsten — und warum?« — metakognitives Mini-Urteil.",
+                "lernziel": "SuS dokumentieren ihre Lernertraege in einer Lernzielkontrolle (LNW) mit Aufgaben aller AFB-Stufen.",
+                "lernziel_stundenziel": {
+                  "verhalten": "Die Schuelerinnen und Schueler dokumentieren ihre Lernertraege in einer schriftlichen Lernzielkontrolle (LNW) mit Aufgaben aller drei AFB-Stufen,",
+                  "bedingung": "indem sie nach kurzer Struktur-Klaerung eine LNW mit AFB-I-/-II-/-III-Aufgaben bearbeiten und einen Selbsteinschaetzungsbogen ausfuellen,",
+                  "maszstab": "was daran erkennbar wird, dass jede:r SuS alle drei AFB-Stufen bearbeitet hat und im Selbsteinschaetzungsbogen pro Aufgabe eine Einschaetzung gibt."
+                },
+                "lernziel_teilziele": [
+                  {
+                    "tz": "SuS strukturieren ihre LNW-Bearbeitung zeitlich,",
+                    "indem": "indem sie nach kurzer L-Klaerung der AFB-Stufen die Zeitvorgaben einhalten (AFB I 8' · II 12' · III 8'),",
+                    "erkennbar": "was daran erkennbar wird, dass mindestens 80% der Klasse alle drei AFB-Stufen bearbeitet haben.",
+                    "afb": "I",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS reproduzieren Lebensverhaeltnisse (AFB I),",
+                    "indem": "indem sie drei Belastungen aus UE 2/3 mit Beleg nennen,",
+                    "erkennbar": "was daran erkennbar wird, dass die AFB-I-Aufgabe alle drei Belastungen + Belege traegt.",
+                    "afb": "I",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS vergleichen 1880 mit heute (AFB II),",
+                    "indem": "indem sie die Vergleichsmatrix-Logik aus UE 8 anwenden,",
+                    "erkennbar": "was daran erkennbar wird, dass die AFB-II-Aufgabe einen Vergleich mit zwei strukturellen Gemeinsamkeiten enthaelt.",
+                    "afb": "II",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS urteilen ueber Bismarcks Sozialgesetzgebung (AFB III) — [Differenziert / leistungsstark mit Zusatzkriterien]",
+                    "indem": "indem sie ein 3-Stufen-Urteil (Sache · Wert · Position) wie in UE 6 schreiben,",
+                    "erkennbar": "was daran erkennbar wird, dass alle drei Stufen mit je einem Argument besetzt sind; im erhoehten Niveau zusaetzlich Perspektivenwechsel.",
+                    "afb": "III",
+                    "differenziert": true
+                  }
+                ],
+                "problemstellung": "4' · Struktur-Hinweis: »LNW prueft Wissen (AFB I), Methoden (II), Urteilsfaehigkeit (III).« Zielangabe + Arbeitsplanung mit Zeitvorgaben.",
+                "problementfaltung": "28' · LNW schreiben: AFB I (Beschreiben Lebensverhaeltnisse) · AFB II (Vergleich 1880-heute) · AFB III (Urteil Bismarck — Erfolg oder Beruhigung?).",
+                "problemloesung": "5' · Selbsteinschaetzungsbogen ausfuellen (»Was kann ich? Wo brauche ich mehr Zeit?«).",
+                "wertung": "4' · »Welche Aufgabe war fuer mich am anspruchsvollsten — und warum?« — metakognitives Mini-Urteil.",
                 "sicherung_lzk": "4' · Aufgaben einsammeln · Plenum: Diagnose-Sammlung an Tafel (welche Aufgaben-Typen brauchen Wiederholung).",
-                "material": "LNW-Aufgabenbogen · Selbsteinschätzungsbogen · Hefteintrag-Schablone",
-                "differenzierung": "LNW in 2 Niveaus (Regel + erhöht) · Wortspeicher für DaZ.",
-                "lp_bezug": "KE 1 + KE 2 + KE 3 (Kriegsschuld als Anknüpfung) — Sequenz-Sicherung",
-                "prinzipien_b3": ["Kompetenzorientierung", "Schülerorientierung"],
-                "kompetenzstruktur": { "gegenstand": "Werte · Ordnungssysteme", "perspektive": "historisch · sozialwissenschaftlich", "prozesskompetenz": "Erfassen · Beurteilen · Reflektieren" },
-                "didaktik": "Veränderte Leistungsmessung · Kompetenzorientierung · AFB-Stufung KMK · Selbst-Regulation (Schraw)"
+                "sozialform_phasen": {
+                  "problemstellung": "Plenum (L-Klaerung)",
+                  "problementfaltung": "EA (LNW)",
+                  "problemloesung": "EA (Selbsteinschaetzung)",
+                  "wertung": "UG (kurz)",
+                  "sicherung_lzk": "Plenum (Diagnose)"
+                },
+                "differenzierung_block": {
+                  "daz": "LNW-Aufgaben mit Wortspeicher · Visualisierungs-Hilfen · zusaetzliche Zeit (max +10').",
+                  "lrs": "LNW in 14pt+ · Aufgaben akustisch vorlesen lassen (Kopfhoerer) · einzelne Wortklaerung erlaubt.",
+                  "leistungsschwach": "LNW Niveau Regel: AFB-I-Aufgabe leicht erweitert · AFB-III-Aufgabe mit Satzanfaengen.",
+                  "leistungsstark": "LNW Niveau erhoeht: AFB-III-Aufgabe mit Perspektivenwechsel · zusaetzliche Quellenkritik-Frage."
+                },
+                "personifikation_anteil": "LNW-Aufgaben nehmen Bezug auf Johann und Anna (z.B. 'Beschreibe Annas Wohnverhaeltnis' statt abstrakter Frage).",
+                "tafelbild_skizze": "Drei-Spalten-Tafel: AFB I (8') · AFB II (12') · AFB III (8'). Daneben: Diagnose-Spalte fuer Diagnose-Sammlung nach LNW.",
+                "hausaufgabe": "—",
+                "material": "LNW-Aufgabenbogen (2 Niveaus) · Selbsteinschaetzungsbogen · Wortspeicher · Lese-Hilfe-Karten",
+                "lp_bezug": "KE 1 + KE 2 + KE 3 (Kriegsschuld als Anknuepfung) — Sequenz-Sicherung",
+                "prinzipien_b3": [
+                  "Kompetenzorientierung",
+                  "Schuelerorientierung",
+                  "Personifikation"
+                ],
+                "kompetenzstruktur": {
+                  "gegenstand": "Werte · Ordnungssysteme",
+                  "perspektive": "historisch · sozialwissenschaftlich",
+                  "prozesskompetenz": "Erkenntnisse gewinnen · Beurteilen · Anwenden"
+                },
+                "didaktik": "Veraenderte Leistungsmessung · Kompetenzorientierung · AFB-Stufung KMK · Selbst-Regulation (Schraw)"
               },
               {
                 "nr": 10,
                 "titel": "Transfer · Handlungsplan zur Gegenwart",
+                "stundenthema_frage": "Welche Soziale Frage von heute waehle ich — und welchen Schritt gehe ich?",
                 "minuten": 45,
                 "lernziel": "SuS reflektieren das Sequenz-Lernen und entwickeln eigene Handlungsoptionen zur sozialen Frage heute.",
-                "problemstellung": "5' · Sequenz-Rückblick: SuS nennen das wichtigste Wort. Zielangabe: »Wir entwickeln eigene Handlungsoptionen.« Plan: Stationen + Schreibphase.",
-                "problementfaltung": "20' · Stationenrundgang: jede Station 1 Sequenz-Aspekt (Lebensverhältnisse / Lösungsansätze / Bismarck / Gegenwart). SuS schreiben spontane Reflexionen + sammeln Anhaltspunkte für eigenes Handeln.",
+                "lernziel_stundenziel": {
+                  "verhalten": "Die Schuelerinnen und Schueler reflektieren das Sequenz-Lernen und entwickeln eine eigene, realistische Handlungsoption zur Sozialen Frage heute,",
+                  "bedingung": "indem sie nach einem Stationenrundgang einen Handlungsplan ('1 Frage von heute · 1 Schritt, den ICH gehen kann') schreiben und anonym an der Pinnwand teilen,",
+                  "maszstab": "was daran erkennbar wird, dass jede:r SuS einen Handlungsplan mit konkreter Frage + konkretem Schritt + Begruendung an der Pinnwand befestigt."
+                },
+                "lernziel_teilziele": [
+                  {
+                    "tz": "SuS rekonstruieren die Kern-Aspekte der Sequenz,",
+                    "indem": "indem sie an vier Stationen (Lebensverhaeltnisse · Loesungsansaetze · Bismarck · Gegenwart) je eine Reflexion notieren,",
+                    "erkennbar": "was daran erkennbar wird, dass jede Station mindestens drei Reflexions-Notizen traegt.",
+                    "afb": "I",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS waehlen eine aktuelle Soziale Frage,",
+                    "indem": "indem sie aus den mitgebrachten Bildern/Schlagzeilen (HA UE 4 + UE 8) eine fuer sich relevante auswaehlen,",
+                    "erkennbar": "was daran erkennbar wird, dass die Wahl im Handlungsplan benannt ist.",
+                    "afb": "II",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS formulieren einen realistischen Handlungsschritt,",
+                    "indem": "indem sie ueberlegen, was sie selbst (allein oder mit anderen) konkret tun koennen,",
+                    "erkennbar": "was daran erkennbar wird, dass der Schritt eine Zeit-Angabe + ein Aktions-Verb traegt.",
+                    "afb": "III",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "[Differenziert / leistungsstark] SuS reflektieren die Wirksamkeit historischer Loesungsansaetze,",
+                    "indem": "indem sie pruefen, welcher Ansatz (Selbsthilfe · Gewerkschaft · Staat) heute ihrem Schritt am naechsten kommt,",
+                    "erkennbar": "was daran erkennbar wird, dass sie im Plenum eine Analogie zu UE 5 begruenden.",
+                    "afb": "III",
+                    "differenziert": true
+                  }
+                ],
+                "problemstellung": "5' · Sequenz-Rueckblick: SuS nennen das wichtigste Wort. Zielangabe: »Wir entwickeln eigene Handlungsoptionen.« Plan: Stationen + Schreibphase.",
+                "problementfaltung": "20' · Stationenrundgang: jede Station 1 Sequenz-Aspekt (Lebensverhaeltnisse / Loesungsansaetze / Bismarck / Gegenwart). SuS schreiben spontane Reflexionen + sammeln Anhaltspunkte fuer eigenes Handeln.",
                 "problemloesung": "8' · Handlungsplan-Schreiben: »Eine soziale Frage von heute — und 1 Schritt, den ICH gehen kann.« Schreibvorlage.",
-                "wertung": "8' · Pinnwand-Galerie anonym: Welche Pläne wirken realistisch? Welche überzeugen — Position + Begründung.",
+                "wertung": "8' · Pinnwand-Galerie anonym: Welche Plaene wirken realistisch? Welche ueberzeugen — Position + Begruendung.",
                 "sicherung_lzk": "4' · Eigener Plan ins Heft · LZK-Mini: »Was kann ich heute, was ich vor der Sequenz nicht konnte?« (Lernzuwachs).",
-                "material": "Stationen-Plakate · Reflexions-Sticker · Pinnwand · Handlungsplan-Vorlage",
-                "differenzierung": "Handlungsplan in 3 Komplexitäts-Stufen (1 Satz / 1 Plan / 1 Aktion).",
+                "sozialform_phasen": {
+                  "problemstellung": "Plenum (Blitzlicht)",
+                  "problementfaltung": "EA · GA (Stationenrundgang)",
+                  "problemloesung": "EA (Handlungsplan-Schreiben)",
+                  "wertung": "Plenum (Pinnwand-Galerie)",
+                  "sicherung_lzk": "EA"
+                },
+                "differenzierung_block": {
+                  "daz": "Schreibvorlage mit Satzanfaengen ('Meine Frage ist ___. Ich kann ___ tun.') · Wortspeicher (Buergerinitiative, ehrenamtlich, spenden, organisieren).",
+                  "lrs": "Schreibvorlage 14pt+ · Diktier-Funktion erlaubt · Pinnwand-Karten gross.",
+                  "leistungsschwach": "Handlungsplan in 1 Satz: 'Eine Frage von heute ist ___. Ich kann ___ tun.' (3-Niveaus-Stufung).",
+                  "leistungsstark": "Handlungsplan + Verknuepfung zu UE 5 (Selbsthilfe/Gewerkschaft/Staat-Analogie) als AFB-III-Begruendung."
+                },
+                "personifikation_anteil": "Johann/Anna werden in den Stationen als historischer Spiegel verwendet: 'Was haetten Johann/Anna gemacht?' fuehrt zu 'Was kann ICH machen?'",
+                "tafelbild_skizze": "Vier-Stationen-Karte links · Pinnwand 'Handlungsplaene heute' rechts · Mitte 'Lernzuwachs-Frage' fuer LZK.",
+                "hausaufgabe": "—",
+                "material": "Stationen-Plakate (4 Sequenz-Aspekte) · Reflexions-Sticker · Pinnwand · Handlungsplan-Vorlage · Schreib-Geruest · Wortspeicher",
                 "lp_bezug": "KE 1+2 Sequenz-Abschluss · Aktualisierungs-Auftrag",
-                "prinzipien_b3": ["Handlungsorientierung", "Schülerorientierung", "Aktualität"],
-                "kompetenzstruktur": { "gegenstand": "Interessen · Werte", "perspektive": "sozialwissenschaftlich", "prozesskompetenz": "Beurteilen · Reflektieren · Handeln" },
-                "didaktik": "Demokratie-Lernen (Himmelmann2001: Lebensform-Dimension) · Handlungsorientierung Realhandeln (Reinhardt2005) · Mündigkeit (Detjen2007) · SRL (Self-Regulated Learning, Schraw)"
+                "prinzipien_b3": [
+                  "Handlungsorientierung",
+                  "Schuelerorientierung",
+                  "Aktualitaet",
+                  "Personifikation"
+                ],
+                "kompetenzstruktur": {
+                  "gegenstand": "Interessen · Werte",
+                  "perspektive": "sozialwissenschaftlich",
+                  "prozesskompetenz": "Beurteilen · Reflektieren · Handeln (Realhandeln)"
+                },
+                "didaktik": "Demokratie-Lernen (Himmelmann 2001: Lebensform-Dimension) · Handlungsorientierung Realhandeln (Reinhardt 2005) · Muendigkeit (Detjen 2007) · SRL (Self-Regulated Learning, Schraw)"
               }
             ],
             "bezuege_global": [
               {
-                "didaktik": "Beutelsbacher Konsens (Beutelsbach1976)",
-                "verweis": "Überwältigungsverbot: keine eindeutige LK-Position zu Bismarck (UE 6). Kontroversitätsgebot: Pro-Contra-Debatte. Schülerorientierung: Anschluss an Lebenswelt (UE 8)."
+                "didaktik": "Beutelsbacher Konsens (Beutelsbach 1976)",
+                "verweis": "Ueberwaeltigungsverbot: keine eindeutige LK-Position zu Bismarck (UE 6). Kontroversitaetsgebot: Pro-Contra-Debatte UE 6. Schuelerorientierung: Anschluss an Lebenswelt (UE 8 + 10)."
               },
               {
-                "didaktik": "Politische Urteilsbildung 3-Stufen (GPJE2004)",
-                "verweis": "3-Stufen-Urteil (Sachebene · Werte-Ebene · eigene Position) in UE 6 + LNW UE 9. Politische Urteilskompetenz als Kern-Kompetenz GPJE-Standards."
+                "didaktik": "Politische Urteilsbildung 3-Stufen (GPJE 2004)",
+                "verweis": "3-Stufen-Urteil (Sachebene · Werte-Ebene · eigene Position) in UE 6 + LNW UE 9 + UE 8. Politische Urteilskompetenz als Kern-Kompetenz GPJE-Standards."
               },
               {
-                "didaktik": "Aktualitätsprinzip (Klafki1996)",
-                "verweis": "Klafki kategoriale Bildung: historische Inhalte nur dann bildend, wenn sie zur Gegenwart sprechen. UE 8 (Vergleich heute) macht das explizit. UE 10 Transfer."
+                "didaktik": "Aktualitaetsprinzip (Klafki 1996)",
+                "verweis": "Klafki kategoriale Bildung: historische Inhalte nur dann bildend, wenn sie zur Gegenwart sprechen. UE 4 (Begriff heute) · UE 7 (lokale Stadt heute) · UE 8 (Vergleich heute) · UE 10 (Transfer Realhandeln)."
               },
               {
-                "didaktik": "Multiperspektivität (Bergmann2000)",
-                "verweis": "UE 2: 4 Stationen geben 4 Sichtweisen. UE 5: Jigsaw mit drei Akteur-Perspektiven (Genossenschaft · Gewerkschaft · Staat). UE 6: Pro-Contra-Rollen."
+                "didaktik": "Multiperspektivitaet (Bergmann 2000)",
+                "verweis": "UE 2: 4 Stationen geben 4 Sichtweisen · UE 3: Engels quellenkritisch · UE 5: Jigsaw mit drei Akteur-Perspektiven · UE 6: Pro-Contra-Rollen · UE 8: Vergleich-Matrix."
               },
               {
-                "didaktik": "Demokratie-Lernen (Himmelmann2001)",
-                "verweis": "UE 6 Pro-Contra-Debatte als Demokratie-Erfahrung (Lebensform-Dimension). UE 10 Handlungsplan als Mitwirkung-Anbahnung. Lernende als demokratische Bürger:innen."
+                "didaktik": "Demokratie-Lernen (Himmelmann 2001)",
+                "verweis": "UE 6 Pro-Contra-Debatte als Demokratie-Erfahrung (Lebensform-Dimension). UE 10 Handlungsplan + Pinnwand-Galerie als Mitwirkung-Anbahnung. Lernende als demokratische Buerger:innen."
               },
               {
-                "didaktik": "Quellenkritik (Pandel2017)",
-                "verweis": "UE 3 Engels-Auszug · UE 7 lokale Stadtkarte 1850/1900. Quellengattung benennen + Aussage prüfen + Bedeutung einordnen."
+                "didaktik": "Quellenkritik (Pandel 2017)",
+                "verweis": "UE 1 Bildquelle Menzel (Wirkungsabsicht) · UE 3 Engels-Auszug (Reliabilitaet Sozialist) · UE 7 Stadtkarte 1850/1900. Quellengattung benennen + Aussage pruefen + Bedeutung einordnen."
               },
               {
-                "didaktik": "Lebensweltbezug (Klafki1996)",
-                "verweis": "UE 1 Standbilder eigener Erfahrung · UE 7 lokale Stadt · UE 8 aktuelle soziale Fragen. Klafki: Inhalte über Schüler-Lebenswelt erschließen."
+                "didaktik": "Personifikation als Identifikationsstrategie (Allgemeine GPG-Hinweise Seminar)",
+                "verweis": "Johann + Anna durchziehen die Sequenz (UE 1 Anbahnung · UE 2 Anna Wohnen · UE 3 Johann Schicht · UE 5 Anna SPD · UE 6 Johann Unfallversicherung · UE 8 Anna heute Working-Poor · UE 9 LNW mit beiden Figuren · UE 10 Spiegelfrage 'Was haetten Johann/Anna getan?'). Identifikationsfiguren als personale Anker (Klafki) ermoeglichen schnellere Identifikation der Stundenfrage."
               },
               {
-                "didaktik": "Sprachsensibler GPG (LPplusGPG)",
-                "verweis": "Wortspeicher pro UE für DaZ + Niveau-Differenzierung. LP+ Bayern Fachprofil GPG: Sprachsensibilität als Querschnittsaufgabe."
+                "didaktik": "Sprachsensibler GPG-Unterricht (LP+ Fachprofil GPG)",
+                "verweis": "Wortspeicher + Lese-Tandems + 3-Niveau-Texte in UE 2, 3, 4, 5. DaZ-Spalte im Differenzierungs-Block jeder UE. Sprachsensibilitaet als Querschnittsaufgabe (LP+ GPG-Fachprofil)."
+              },
+              {
+                "didaktik": "Heterogenitaetsorientierung · 4-Spuren-Differenzierung (Seminar MS II SW)",
+                "verweis": "Pro UE explizite Spuren: DaZ · LRS · leistungsschwach · leistungsstark. Verhindert Ueberforderung -> Unruhe (Hinweis Allgemeine GPG-Anleitung) und sichert Inklusion. Diff-Block in jeder UE."
+              },
+              {
+                "didaktik": "Mager-Lernziele (Lernziele formulieren · Seminar-Standard)",
+                "verweis": "Pro UE: Stundenziel + 3-4 Teilziele · davon eines differenziert fuer leistungsstark (AFB III). 3-Komponenten: Verhalten + Bedingung (indem) + Beurteilungsmassstab (was daran erkennbar wird, dass)."
+              },
+              {
+                "didaktik": "Tafelbild-Zentrierung (Allgemeine GPG-Hinweise)",
+                "verweis": "Pro UE eine kurze Tafelbild-Skizze (3-Zonen oder 4-Quadranten oder 3-Spalten). Handschriftlich, nicht kopiert. Sicherung im Heft (nicht Mappe) — letzteres zaehlt fuer Noten."
               }
             ]
           }
