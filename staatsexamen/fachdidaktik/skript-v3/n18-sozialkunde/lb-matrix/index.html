@@ -37,7 +37,7 @@
     .mx-hero__legend-dot--ideal { background: var(--paper); border-color: var(--accent); }
 
     .mx-grid-wrap { overflow-x: auto; border: 1px solid var(--rule); background: var(--paper); }
-    .mx-grid { display: grid; grid-template-columns: 100px repeat(2, minmax(360px, 1fr)); min-width: 820px; }
+    .mx-grid { display: grid; grid-template-columns: 90px repeat(3, minmax(300px, 1fr)); min-width: 1090px; }
     .mx-cell { padding: 14px 18px; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); font-family: var(--serif); font-size: 13.5px; line-height: 1.5; color: var(--ink); position: relative; }
     .mx-cell:last-child { border-right: none; }
     .mx-cell--corner { font-family: var(--mono); font-size: 9.5px; letter-spacing: 1.4px; text-transform: uppercase; color: var(--muted); background: var(--bg); display: flex; align-items: end; justify-content: end; padding: 14px 14px 10px; }
@@ -88,6 +88,30 @@
     .mx-ue__titel { font-family: var(--serif); font-size: 14.5px; font-weight: 600; flex: 1; }
     .mx-ue__meta { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.6px; text-transform: uppercase; color: var(--muted); padding: 1px 6px; border: 1px solid var(--hairline); border-radius: 2px; }
     .mx-ue__inhalt { font-family: var(--serif); font-size: 13.5px; line-height: 1.5; margin: 0; }
+
+    /* Pilot-UE-Phasen-Rendering */
+    .mx-ue-pilot { background: linear-gradient(to right, var(--accent-soft, #e8ece2) 0%, var(--paper) 60%); }
+    .mx-ue-pilot .mx-ue__lernziel { font-family: var(--serif); font-style: italic; font-size: 13px; line-height: 1.5; color: var(--ink); margin: 4px 0 10px; padding-left: 14px; border-left: 2px solid var(--accent); }
+    .mx-ue-pilot .mx-ue__lernziel::before { content: 'Lernziel: '; font-family: var(--mono); font-size: 9.5px; font-style: normal; letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+    .mx-ue-phasen { display: grid; grid-template-columns: 80px 1fr; gap: 4px 12px; margin: 6px 0; font-size: 12.5px; line-height: 1.45; }
+    .mx-ue-phasen__label { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.8px; text-transform: uppercase; color: var(--accent); font-weight: 600; padding-top: 2px; }
+    .mx-ue-phasen__body { font-family: var(--serif); color: var(--ink); }
+    .mx-ue-meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 14px; margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--rule); font-size: 11.5px; font-family: var(--serif); }
+    .mx-ue-meta-grid b { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.6px; text-transform: uppercase; color: var(--muted); display: block; font-weight: 600; }
+
+    /* Quelle-Status-Badges */
+    .quelle-badge { font-family: var(--mono); font-size: 9px; letter-spacing: 0.8px; text-transform: uppercase; padding: 2px 6px; border-radius: 2px; font-weight: 600; }
+    .quelle-badge--verbatim { background: var(--accent-soft, #e8ece2); color: var(--accent); border: 1px solid var(--accent); }
+    .quelle-badge--sekundaer { background: var(--bg); color: var(--muted); border: 1px solid var(--hairline); }
+    .quelle-badge--ausstehend { background: var(--paper); color: var(--mute2); border: 1px dashed var(--mute2); }
+
+    /* Inhalte zu Kompetenzen (LP+) */
+    .ke-section__inhalte-lp { background: var(--bg); padding: 10px 14px; border-radius: 2px; margin: 12px 0; font-family: var(--serif); font-size: 13px; line-height: 1.5; }
+    .ke-section__inhalte-lp::before { content: 'LP+-Inhalte zu den Kompetenzen: '; font-family: var(--mono); font-size: 9.5px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent); font-weight: 600; display: block; margin-bottom: 4px; }
+    .ke-section__inhalte-lp ul { margin: 0; padding-left: 18px; }
+    .ke-section__inhalte-lp li { margin: 2px 0; }
+
+    .cell-ausstehend-note { font-family: var(--serif); font-style: italic; font-size: 13px; color: var(--muted); padding: 6px 0; }
 
     .mx-bezug { padding-top: 6px; font-family: var(--serif); font-size: 13px; line-height: 1.5; }
     .mx-bezug-item { margin: 6px 0; }

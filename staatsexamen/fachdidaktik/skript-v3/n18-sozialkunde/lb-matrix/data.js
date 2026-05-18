@@ -1,53 +1,60 @@
-// LB-Matrix Sozialkunde N18 · LP+-konform · zitierfähig
+// LB-Matrix Sozialkunde N18 · LP+-konform · zitierfähig · v2 (verbatim)
 //
-// QUELLEN-PRINZIP
+// QUELLEN-PRINZIP v2
 // ────────────────────────────────────────────────────────────────────────
-// 1. Spalten = die zwei für die Sozialkunde-Prüfung N18 relevanten
-//    Lernbereiche des Fachs GPG (Geschichte/Politik/Geographie) der
-//    Bayerischen Mittelschule: LB3 Politik und Gesellschaft + LB4
-//    Wirtschaft und Recht.
-// 2. KE-Wortlaute sind VERBATIM aus LehrplanPLUS Bayern Mittelschule GPG.
-//    Quelle pro KE im `fundort`-Feld dokumentiert.
-// 3. Umsetzungen entstammen Pauls eigener M7c-Praxis SJ 24/25 (13 real
-//    durchgeführt) oder sind idealtypisch dokumentiert (14 KEs).
-// 4. Didaktik-Bezüge zitieren Primärliteratur mit Jahr + ggf. Seite.
+// 1. Spalten = 3 für die N18-Sozialkunde-Prüfung relevante GPG-Lernbereiche:
+//    LB2 Zeit und Wandel · LB3 Politik und Gesellschaft · LB4 Lebenswelt.
+//    (LB1 Lebensraum Erde ist Geographie und hier ausgeblendet.)
 //
-// LITERATUR-KÜRZEL
+// 2. KE-Wortlaute Quellen-Status pro Zelle:
+//    · verbatim   — GPG5/6/7/10 aus LehrplanPLUS Bayern (Web 2026-05 +
+//                   lokales Skript für GPG7). Wortlaut 1:1.
+//    · sekundaer  — GPG8/9 aus aufbereiteter KE-Datenbank
+//                   (/lerndecks/ke-umsetzungsmatrix-sk · Pauls Eigen-Quelle,
+//                   LP+-Quelle für diese Jgst aktuell nicht verbatim verifiziert).
+//    · ausstehend — GPG8 LB2 + GPG9 LB2: Geschichts-KEs ohne lokale/Web-Quelle.
+//
+// 3. Inhalte zu den Kompetenzen: verbatim aus LP+ pro Zelle dokumentiert
+//    (Feld `inhalte_lp`).
+//
+// 4. Reale Umsetzungen (13 KEs) und Bezüge (alle KEs mit Umsetzung) bleiben
+//    aus der ursprünglichen Lerndeck-Quelle erhalten.
+//
+// 5. **Pilot-Sequenz GPG7_LB3 KE1 Soziale Frage**: 10 idealtypische 45-min-UEs
+//    mit Lernziel · Phasen (Einstieg/Erarbeitung/Sicherung/Reflexion) · Material
+//    · Differenzierung · LP+-Bezug · Didaktik-Verweis. Geht über die kompakte
+//    `verlauf`-Notation der anderen KEs hinaus und dient als Schreib-Vorlage
+//    für künftige UE-Expansionen anderer Zellen.
+//
+// LITERATUR (in bezuege[].didaktik verwendet, vollständige Refs in Kürzel-Index)
 // ────────────────────────────────────────────────────────────────────────
-// Beutelsbach1976  · Beutelsbacher Konsens 1976 (Wehling/Schiele Hg.). 3
-//                   Prinzipien: Überwältigungsverbot · Kontroversitätsgebot
-//                   · Schülerorientierung.
-// Detjen2007       · J. Detjen: Politische Bildung. Geschichte und Gegenwart
-//                   in Deutschland. Oldenbourg 2007.
-// Himmelmann2001   · G. Himmelmann: Demokratie-Lernen als Lebens-, Gesell-
-//                   schafts- und Herrschaftsform. Wochenschau 2001.
-// GPJE2004         · GPJE: Nationale Bildungsstandards politische Bildung 2004.
-//                   3 Kompetenzdimensionen.
-// Reinhardt2005    · S. Reinhardt: Politik-Didaktik. Praxishandbuch. Cornelsen
-//                   2005. Handlungsorientierung (Real- vs. Simulationshandeln).
-// Massing          · P. Massing: Politische Bildung. Wochenschau-Verlag.
-//                   Pro-Contra-Debatte · kasuistisches Verfahren.
-// Massing2010      · P. Massing: Fallanalyse / Kasuistik. Wochenschau 2010.
-// Bergmann2000     · K. Bergmann: Multiperspektivität · Geschichts- und Politik-
-//                   didaktik. Wochenschau 2000.
-// Pandel2017       · H.-J. Pandel: Geschichtsdidaktik. Wochenschau 2017.
-//                   Quellenkritik als Kernkompetenz.
-// Rüsen2002        · J. Rüsen: Geschichts-Theorie · Narrative Kompetenz.
-// Klafki1996       · W. Klafki: Neue Studien zur Bildungstheorie und Didaktik
-//                   (1996). Kategoriale Bildung · Aktualitätsprinzip.
-// Petrik2013       · A. Petrik: Politische Bildung in der Sekundarstufe I.
-// Lind2003         · G. Lind: Moralische Kompetenz (2003). Werterziehung
-//                   über Diskurs, nicht Doktrin.
-// LPplusGPG        · LehrplanPLUS Bayern Mittelschule GPG (Fachprofil + LBs).
+// Beutelsbach1976 · Beutelsbacher Konsens 1976: Überwältigungsverbot ·
+//                   Kontroversitätsgebot · Schülerorientierung.
+// Detjen2007      · J. Detjen: Politische Bildung. Oldenbourg 2007. Mündigkeit.
+// Himmelmann2001  · G. Himmelmann: Demokratie-Lernen 3-Formen-Modell.
+//                   Wochenschau 2001.
+// GPJE2004        · GPJE Bildungsstandards politische Bildung 2004.
+// Reinhardt2005   · S. Reinhardt: Politik-Didaktik. Cornelsen 2005.
+// Massing / 2010  · P. Massing: Pro-Contra-Debatte · Kasuistik. Wochenschau.
+// Bergmann2000    · K. Bergmann: Multiperspektivität. Wochenschau 2000.
+// Pandel2017      · H.-J. Pandel: Geschichtsdidaktik. Wochenschau 2017.
+// Rüsen2002       · J. Rüsen: Narrative Kompetenz · Historische Sinnbildung.
+// Klafki1996      · W. Klafki: Kategoriale Bildung · Aktualitätsprinzip.
+// Petrik2013      · A. Petrik: Politische Bildung Sek I.
+// Lind2003        · G. Lind: Moralische Kompetenz · Werterziehung über Diskurs.
+// Schraw          · G. Schraw: Self-Regulated Learning · Metakognition.
+// LPplusGPG       · LehrplanPLUS Bayern Mittelschule GPG (Fachprofil + LBs).
 
 window.MATRIX = {
   fach: 'N18 Sozialkunde',
   fachKuerzel: 'Sozialkunde',
-  schulart: 'Mittelschule Bayern · GPG (Sozialkunde-Anteil LB3+LB4)',
+  schulart: 'Mittelschule Bayern · GPG (Sozialkunde-Anteil LB2+LB3+LB4)',
 
   meta: {
-    spaltenLogik: 'Nur die für die N18-Sozialkunde-Prüfung relevanten Lernbereiche des Fachs GPG: LB3 Politik+Gesellschaft + LB4 Wirtschaft+Recht. LB1 Räume und Naturraum + LB2 Zeit und Wandel sind Geographie- bzw. Geschichts-LBs und hier ausgeblendet.',
-    quellen_status: 'LP+ GPG vollständig zitierbar via `fundort`-Feld pro KE. 13/27 KEs mit real durchgeführter Umsetzung (Paul · M7c/GPG-Klassen SJ 24/25). 14/27 KEs idealtypisch dokumentiert.',
+    version: 'v2 · 2026-05-18 · LP+-verbatim für 4 von 6 Jgst',
+    spaltenLogik: 'Drei für die N18-Sozialkunde-Prüfung relevante GPG-Lernbereiche: LB2 Zeit und Wandel (Geschichte mit politik-historischer Sicht) · LB3 Politik und Gesellschaft (Sozialkunde-Kern) · LB4 Lebenswelt (Recht + Demokratie-Praxis + Lebenswelt-Themen). LB1 Lebensraum Erde ist Geographie und nicht enthalten.',
+    quellenLogik: 'verbatim für GPG5/6/7/10 (Web + lokal). sekundaer für GPG8/9 LB3+LB4 (aus aufbereiteter KE-Datenbank). ausstehend für GPG8/9 LB2 (Geschichts-KEs ohne verfügbare Quelle).',
+    pilotSequenzen: 'GPG7_LB3 KE1 Soziale Frage · 10 UEs à 45 min idealtypisch + Lernziel + Phasen + Material + Differenzierung.',
   },
 
   jgst: [
@@ -60,31 +67,116 @@ window.MATRIX = {
   ],
 
   lernbereiche: [
+    { id: 'LB2', titel: 'LB2 · Zeit und Wandel',       kurz: 'Geschichte' },
     { id: 'LB3', titel: 'LB3 · Politik + Gesellschaft', kurz: 'Politik' },
-    { id: 'LB4', titel: 'LB4 · Wirtschaft + Recht',     kurz: 'Wirt./Recht' },
+    { id: 'LB4', titel: 'LB4 · Lebenswelt',             kurz: 'Lebenswelt' },
   ],
 
   cells: {
+    "GPG5_LB2": {
+      "ke_anzahl": 4,
+      "jgst": "GPG5",
+      "lb": "LB2",
+      "lb_titel": "Zeit und Wandel",
+      "quelle_status": "verbatim",
+      "kes": [
+        {
+          "ke_id": "GPG5-LB2-01",
+          "ke_wortlaut": "erklären die sich verändernden Lebensweisen des Menschen in Alt- und Jungsteinzeit, indem sie die Entwicklung vom Jäger und Sammler zum Ackerbauern und Viehzüchter vergleichen.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG5 · LB2 Zeit und Wandel · verbatim",
+          "thema": "erklären die sich verändernden Lebensweisen des Menschen in Alt- und Jungsteinze",
+          "operator": null,
+          "afb": null,
+          "inhalte_lp": [
+            "Vor- und Frühgeschichte: Lebensweise der Menschen, Sesshaftigkeit",
+            "Bedeutung des Nils früher und heute: Transportweg, wissenschaftliche Leistungen",
+            "Imperium Romanum",
+            "historische Orte in der Region und Spuren römischen Lebens in Süddeutschland (z. B. Limes, Sprache)"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG5 · LB2 Zeit und Wandel",
+          "umsetzung_typ": "planned",
+          "ues": [],
+          "bezuege": []
+        },
+        {
+          "ke_id": "GPG5-LB2-02",
+          "ke_wortlaut": "erklären die Besonderheiten des Nils und begründen seine Bedeutung für die Infrastruktur und Kultur Ägyptens.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG5 · LB2 Zeit und Wandel · verbatim",
+          "thema": "erklären die Besonderheiten des Nils und begründen seine Bedeutung für die Infra",
+          "operator": null,
+          "afb": null,
+          "inhalte_lp": [
+            "Vor- und Frühgeschichte: Lebensweise der Menschen, Sesshaftigkeit",
+            "Bedeutung des Nils früher und heute: Transportweg, wissenschaftliche Leistungen",
+            "Imperium Romanum",
+            "historische Orte in der Region und Spuren römischen Lebens in Süddeutschland (z. B. Limes, Sprache)"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG5 · LB2 Zeit und Wandel",
+          "umsetzung_typ": "planned",
+          "ues": [],
+          "bezuege": []
+        },
+        {
+          "ke_id": "GPG5-LB2-03",
+          "ke_wortlaut": "stellen die Ausdehnung des Römischen Weltreiches vereinfacht dar.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG5 · LB2 Zeit und Wandel · verbatim",
+          "thema": "stellen die Ausdehnung des Römischen Weltreiches vereinfacht dar.",
+          "operator": null,
+          "afb": null,
+          "inhalte_lp": [
+            "Vor- und Frühgeschichte: Lebensweise der Menschen, Sesshaftigkeit",
+            "Bedeutung des Nils früher und heute: Transportweg, wissenschaftliche Leistungen",
+            "Imperium Romanum",
+            "historische Orte in der Region und Spuren römischen Lebens in Süddeutschland (z. B. Limes, Sprache)"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG5 · LB2 Zeit und Wandel",
+          "umsetzung_typ": "planned",
+          "ues": [],
+          "bezuege": []
+        },
+        {
+          "ke_id": "GPG5-LB2-04",
+          "ke_wortlaut": "lokalisieren und deuten unter Anleitung Überreste der römischen Kultur und Lebensweise in Süddeutschland.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG5 · LB2 Zeit und Wandel · verbatim",
+          "thema": "lokalisieren und deuten unter Anleitung Überreste der römischen Kultur und Leben",
+          "operator": null,
+          "afb": null,
+          "inhalte_lp": [
+            "Vor- und Frühgeschichte: Lebensweise der Menschen, Sesshaftigkeit",
+            "Bedeutung des Nils früher und heute: Transportweg, wissenschaftliche Leistungen",
+            "Imperium Romanum",
+            "historische Orte in der Region und Spuren römischen Lebens in Süddeutschland (z. B. Limes, Sprache)"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG5 · LB2 Zeit und Wandel",
+          "umsetzung_typ": "planned",
+          "ues": [],
+          "bezuege": []
+        }
+      ]
+    },
     "GPG5_LB3": {
       "ke_anzahl": 2,
       "jgst": "GPG5",
       "lb": "LB3",
       "lb_titel": "Politik und Gesellschaft",
-      "status": "ausgearbeitet",
+      "quelle_status": "verbatim",
       "kes": [
         {
           "ke_id": "GPG5-LB3-01",
-          "ke_wortlaut": "stellen die unterschiedlichen Lebens- und Arbeitsbedingungen der Menschen im alten Ägypten dar und erklären anhand der hierarchisch aufgebauten Gesellschaftspyramide deren unterschiedliche Stellung und Macht in der Hochkultur.",
+          "ke_wortlaut": "stellen die unterschiedlichen Lebens- und Arbeitsbedingungen der Menschen im alten Ägypten dar und erklären anhand der hierarchisch aufgebauten Gesellschaftspyramide deren unterschiedliche Stellung und Macht.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG5 · LB3 Politik und Gesellschaft · verbatim",
           "thema": "Antike Hochkultur — Gesellschaftsordnung Ägypten",
           "operator": "darstellen / erklären",
           "afb": "I–II",
-          "inhalte": "ägyptische Hochkultur (Alltagsleben, hierarchische Gesellschaft); politisches und kulturelles Erbe der Griechen.",
+          "inhalte_lp": [
+            "ägyptische Hochkultur: Alltagsleben, hierarchische Gesellschaft",
+            "politisches und kulturelles Erbe der Griechen"
+          ],
           "fundort": "LehrplanPLUS MS Bayern · GPG5 · LB3 Politik und Gesellschaft",
           "umsetzung_typ": "real",
           "umsetzung_titel": "Sequenz „Das alte Ägypten“ — Gesellschaft am Nil (Rollenspiel) + Götter/Pyramiden (Stationenlernen)",
           "umsetzung_klasse": "GPG5b (SJ 24/25, 20 SuS, ⅔ arab. Migrationshintergrund, 2 DaZ, 3× LRS-Verdacht)",
           "umsetzung_datum": "KW 2–5 / Januar–Februar 2025 (8 UZE)",
-          "umsetzung_quelle": "GPG5b_Jahresplan_202425 Seq 3 · GPG5b_LB2_2_Ägypten früher und heute/",
           "ues": [
             {
               "nr": 1,
@@ -136,16 +228,19 @@ window.MATRIX = {
         {
           "ke_id": "GPG5-LB3-02",
           "ke_wortlaut": "beschreiben Zusammensetzung und Befugnisse der Volksversammlung im antiken Griechenland und beurteilen diese Form der Mitsprache für die Bürgerinnen und Bürger als ersten Ansatz von Demokratie.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG5 · LB3 Politik und Gesellschaft · verbatim",
           "thema": "Antike Demokratie — Volksversammlung Griechenland",
           "operator": "beschreiben / beurteilen",
           "afb": "I + III",
-          "inhalte": "politisches und kulturelles Erbe der Griechen; Volksversammlung als frühe Mitsprache-Form.",
+          "inhalte_lp": [
+            "ägyptische Hochkultur: Alltagsleben, hierarchische Gesellschaft",
+            "politisches und kulturelles Erbe der Griechen"
+          ],
           "fundort": "LehrplanPLUS MS Bayern · GPG5 · LB3 Politik und Gesellschaft",
           "umsetzung_typ": "real",
           "umsetzung_titel": "Sequenz „Die griechische Demokratie“ — Volksversammlung als Rollenspiel + Pro-Contra Demokratie damals/heute",
           "umsetzung_klasse": "GPG5b (SJ 24/25)",
           "umsetzung_datum": "Planung KW 14–17 / März–April 2025, real durchgeführt KW 23–27 / Juni–Juli 2025 (6 UZE)",
-          "umsetzung_quelle": "GPG5b_Jahresplan_202425 Seq 5 · Sequenzplan Die griechische Demokratie (GPG 5b).md · GPG5b_LB4_2_Antikes_Griechenland/",
           "ues": [
             {
               "nr": 1,
@@ -205,22 +300,26 @@ window.MATRIX = {
       "ke_anzahl": 4,
       "jgst": "GPG5",
       "lb": "LB4",
-      "lb_titel": "Wirtschaft und Recht",
-      "status": "ausgearbeitet",
+      "lb_titel": "Lebenswelt",
+      "quelle_status": "verbatim",
       "kes": [
         {
           "ke_id": "GPG5-LB4-01",
-          "ke_wortlaut": "beschreiben Konfliktsituationen aus ihrem Alltag (z. B. Peergroup, Familie, Schule) und formulieren Regeln für ein friedliches und gewaltfreies Zusammenleben in ihrem sozialen Umfeld.",
+          "ke_wortlaut": "beschreiben Konfliktsituationen aus ihrem Alltag (z. B. Peergroup, Familie, Schule) und formulieren Regeln für ein friedliches und gewaltfreies Zusammenleben.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG5 · LB4 Lebenswelt · verbatim",
           "thema": "Konflikte — Regeln für friedliches Zusammenleben",
           "operator": "beschreiben / formulieren",
           "afb": "I–II",
-          "inhalte": "Grundregeln friedliches Zusammenleben; Konflikte (Prävention, Intervention); Gemeinschaft.",
+          "inhalte_lp": [
+            "Grundregeln für ein friedliches Zusammenleben",
+            "Konflikte: Prävention, Intervention",
+            "Gemeinschaft: gemeinsam leben in Familie und Schule, in verschiedenen Lebensgemeinschaften, nach Trennung und Scheidung, in der Peergroup, mit Menschen mit Behinderung (Inklusion)"
+          ],
           "fundort": "LehrplanPLUS MS Bayern · GPG5 · LB4 Lebenswelt",
           "umsetzung_typ": "real",
           "umsetzung_titel": "UE „Konflikte lösen“ — Rollenspiel zur Konfliktbearbeitung (Schluss-UE der Sequenz „Familie und Gesellschaft“)",
           "umsetzung_klasse": "GPG5b (SJ 24/25)",
           "umsetzung_datum": "KW 26 / 23.–27.06.2025 (2 UZE)",
-          "umsetzung_quelle": "GPG5b_Jahresplan_202425 Seq 7 (Familie und Gesellschaft) UE „Konflikte lösen“",
           "ues": [
             {
               "nr": 1,
@@ -266,17 +365,21 @@ window.MATRIX = {
         },
         {
           "ke_id": "GPG5-LB4-02",
-          "ke_wortlaut": "wenden demokratische Verhaltensweisen (z. B. bei Klassensprecherwahl, Klassenrat) an, und gestalten ein friedliches und respektvolles Zusammenleben in Familie, Schule und Gesellschaft mit, indem sie z. B. aktiv zuhören, ihre Standpunkte artikulieren, Gesprächsregeln einhalten, argumentieren und verhandeln, Kompromisse finden, Entscheidungen treffen, Beschlüsse fassen und diese in sozialer Verantwortung umsetzen.",
+          "ke_wortlaut": "wenden demokratische Verhaltensweisen (z. B. bei Klassensprecherwahl, Klassenrat) an, und gestalten ein friedliches und respektvolles Zusammenleben in Familie, Schule und Gesellschaft mit.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG5 · LB4 Lebenswelt · verbatim",
           "thema": "Demokratische Verhaltensweisen — Klassenrat",
           "operator": "anwenden / mitgestalten",
           "afb": "III (Anwendung / Handlung)",
-          "inhalte": "demokratische Verhaltensweisen; Klassensprecherwahl; Klassenrat als ritualisierte Praxis.",
-          "fundort": "LehrplanPLUS MS Bayern · GPG5 · LB4 Lebenswelt — wirkt als Schulleitprinzip in allen Jgst.",
+          "inhalte_lp": [
+            "Grundregeln für ein friedliches Zusammenleben",
+            "Konflikte: Prävention, Intervention",
+            "Gemeinschaft: gemeinsam leben in Familie und Schule, in verschiedenen Lebensgemeinschaften, nach Trennung und Scheidung, in der Peergroup, mit Menschen mit Behinderung (Inklusion)"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG5 · LB4 Lebenswelt",
           "umsetzung_typ": "real",
           "umsetzung_titel": "Doppelanker: Klassenrat als ritualisierte Demokratiepraxis GPG7c + Sequenz „Demokratische Verhaltensweisen“ GPG5b",
           "umsetzung_klasse": "GPG7c SJ 25/26 (Hauptanker, 4×) + GPG5b SJ 24/25 (Einführung der Methode)",
           "umsetzung_datum": "GPG7c: 17.10.2025 · 01.12.2025 · 02.02.2026 · 27.04.2026 · GPG5b: KW 27 / Juli 2025 + LB4-Sequenz „Demokratische Verhaltensweisen“",
-          "umsetzung_quelle": "Belegcluster E · Wochenpläne_Timeline_GPG7c · Verlauf_27.04.md · GPG5b_LB4_1_Demokratische_Verhaltensweisen · GPG5b Sequenzplan Griechenland UE6",
           "ues": [
             {
               "nr": 1,
@@ -346,17 +449,21 @@ window.MATRIX = {
         },
         {
           "ke_id": "GPG5-LB4-03",
-          "ke_wortlaut": "stellen Ursachen für den aktuellen familiären Wandel in der Gesellschaft dar, indem sie die Entwicklung unterschiedlicher Formen des Zusammenlebens (z. B. Partnerschaft bzw. Ehe mit und ohne Kinder, Patchworkfamilie, gleichgeschlechtliche Partnerschaften) beschreiben und diskutieren.",
+          "ke_wortlaut": "stellen Ursachen für den aktuellen familiären Wandel in der Gesellschaft dar, indem sie die Entwicklung unterschiedlicher Formen des Zusammenlebens beschreiben und diskutieren.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG5 · LB4 Lebenswelt · verbatim",
           "thema": "Familiärer Wandel — Formen des Zusammenlebens",
           "operator": "darstellen / beschreiben / diskutieren",
           "afb": "II–III",
-          "inhalte": "Gemeinschaft (Familie, Schule, Lebensgemeinschaften, Trennung/Scheidung, Peergroup).",
+          "inhalte_lp": [
+            "Grundregeln für ein friedliches Zusammenleben",
+            "Konflikte: Prävention, Intervention",
+            "Gemeinschaft: gemeinsam leben in Familie und Schule, in verschiedenen Lebensgemeinschaften, nach Trennung und Scheidung, in der Peergroup, mit Menschen mit Behinderung (Inklusion)"
+          ],
           "fundort": "LehrplanPLUS MS Bayern · GPG5 · LB4 Lebenswelt",
           "umsetzung_typ": "real",
           "umsetzung_titel": "Sequenz „Familie und Gesellschaft“ — Familien heute + Wandel der Familie",
           "umsetzung_klasse": "GPG5b (SJ 24/25)",
           "umsetzung_datum": "KW 23–24 / 02.–13.06.2025 (4 UZE)",
-          "umsetzung_quelle": "GPG5b_Jahresplan_202425 Seq 7 (Familie und Gesellschaft)",
           "ues": [
             {
               "nr": 1,
@@ -398,16 +505,20 @@ window.MATRIX = {
         {
           "ke_id": "GPG5-LB4-04",
           "ke_wortlaut": "gehen wertschätzend mit Menschen mit Behinderung um und kooperieren bei gemeinsamen Vorhaben.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG5 · LB4 Lebenswelt · verbatim",
           "thema": "Inklusion — Umgang mit Menschen mit Behinderung",
           "operator": "umgehen / kooperieren",
           "afb": "Anwendung / Haltung",
-          "inhalte": "Inklusion; Gemeinschaft; Heterogenität.",
+          "inhalte_lp": [
+            "Grundregeln für ein friedliches Zusammenleben",
+            "Konflikte: Prävention, Intervention",
+            "Gemeinschaft: gemeinsam leben in Familie und Schule, in verschiedenen Lebensgemeinschaften, nach Trennung und Scheidung, in der Peergroup, mit Menschen mit Behinderung (Inklusion)"
+          ],
           "fundort": "LehrplanPLUS MS Bayern · GPG5 · LB4 Lebenswelt",
           "umsetzung_typ": "real",
           "umsetzung_titel": "UE „Leben mit Unterschieden“ — wertschätzender Umgang, Portfolio-Präsentation",
           "umsetzung_klasse": "GPG5b (SJ 24/25)",
           "umsetzung_datum": "KW 25 / 16.–20.06.2025 (2 UZE)",
-          "umsetzung_quelle": "GPG5b_Jahresplan_202425 Seq 7 (Familie und Gesellschaft) UE „Leben mit Unterschieden“",
           "ues": [
             {
               "nr": 1,
@@ -449,26 +560,183 @@ window.MATRIX = {
         }
       ]
     },
+    "GPG6_LB2": {
+      "ke_anzahl": 5,
+      "jgst": "GPG6",
+      "lb": "LB2",
+      "lb_titel": "Zeit und Wandel",
+      "quelle_status": "verbatim",
+      "kes": [
+        {
+          "ke_id": "GPG6-LB2-01",
+          "ke_wortlaut": "stellen die Lebens- und Arbeitsbedingungen der Menschen im Mittelalter auf dem Land und in der Stadt dar und vergleichen sie mit heute.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG6 · LB2 Zeit und Wandel · verbatim",
+          "thema": "stellen die Lebens- und Arbeitsbedingungen der Menschen im Mittelalter auf dem L",
+          "operator": null,
+          "afb": null,
+          "inhalte_lp": [
+            "Lebensräume und Lebensbedingungen im Mittelalter",
+            "Politische und gesellschaftliche Herrschaftsformen im Mittelalter am Beispiel Karl des Großen",
+            "Spuren des Mittelalters in einem heutigen Stadtbild",
+            "Medizinische, technische und kulturelle Errungenschaften zu Beginn der Neuzeit",
+            "Hochkulturen in Südamerika, Eroberungen aus Sicht der Europäer und der indigenen Völker Südamerikas",
+            "Reformation: Martin Luther, Dreißigjähriger Krieg"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG6 · LB2 Zeit und Wandel",
+          "umsetzung_typ": "planned",
+          "ues": [],
+          "bezuege": []
+        },
+        {
+          "ke_id": "GPG6-LB2-02",
+          "ke_wortlaut": "erkennen in einem heutigen Stadtbild historische Spuren einer mittelalterlichen Stadt und begründen deren Bedeutung für das gesellschaftliche Leben früher und heute.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG6 · LB2 Zeit und Wandel · verbatim",
+          "thema": "erkennen in einem heutigen Stadtbild historische Spuren einer mittelalterlichen ",
+          "operator": null,
+          "afb": null,
+          "inhalte_lp": [
+            "Lebensräume und Lebensbedingungen im Mittelalter",
+            "Politische und gesellschaftliche Herrschaftsformen im Mittelalter am Beispiel Karl des Großen",
+            "Spuren des Mittelalters in einem heutigen Stadtbild",
+            "Medizinische, technische und kulturelle Errungenschaften zu Beginn der Neuzeit",
+            "Hochkulturen in Südamerika, Eroberungen aus Sicht der Europäer und der indigenen Völker Südamerikas",
+            "Reformation: Martin Luther, Dreißigjähriger Krieg"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG6 · LB2 Zeit und Wandel",
+          "umsetzung_typ": "planned",
+          "ues": [],
+          "bezuege": []
+        },
+        {
+          "ke_id": "GPG6-LB2-03",
+          "ke_wortlaut": "benennen wichtige medizinische, technische und kulturelle Errungenschaften des Islam, die auf vielfältige Weise vom Morgenland ins Abendland gelangten, und erklären so den Einfluss auf den Übergang in ein neues Zeitalter.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG6 · LB2 Zeit und Wandel · verbatim",
+          "thema": "benennen wichtige medizinische, technische und kulturelle Errungenschaften des I",
+          "operator": null,
+          "afb": null,
+          "inhalte_lp": [
+            "Lebensräume und Lebensbedingungen im Mittelalter",
+            "Politische und gesellschaftliche Herrschaftsformen im Mittelalter am Beispiel Karl des Großen",
+            "Spuren des Mittelalters in einem heutigen Stadtbild",
+            "Medizinische, technische und kulturelle Errungenschaften zu Beginn der Neuzeit",
+            "Hochkulturen in Südamerika, Eroberungen aus Sicht der Europäer und der indigenen Völker Südamerikas",
+            "Reformation: Martin Luther, Dreißigjähriger Krieg"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG6 · LB2 Zeit und Wandel",
+          "umsetzung_typ": "planned",
+          "ues": [],
+          "bezuege": []
+        },
+        {
+          "ke_id": "GPG6-LB2-04",
+          "ke_wortlaut": "beschreiben wichtige Erfindungen und Erkenntnisse zu Beginn der Neuzeit, begründen diese als Voraussetzung für zahlreiche von Europa ausgehende Entdeckungsreisen und belegen deren Auswirkungen bis in die Gegenwart.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG6 · LB2 Zeit und Wandel · verbatim",
+          "thema": "beschreiben wichtige Erfindungen und Erkenntnisse zu Beginn der Neuzeit, begründ",
+          "operator": null,
+          "afb": null,
+          "inhalte_lp": [
+            "Lebensräume und Lebensbedingungen im Mittelalter",
+            "Politische und gesellschaftliche Herrschaftsformen im Mittelalter am Beispiel Karl des Großen",
+            "Spuren des Mittelalters in einem heutigen Stadtbild",
+            "Medizinische, technische und kulturelle Errungenschaften zu Beginn der Neuzeit",
+            "Hochkulturen in Südamerika, Eroberungen aus Sicht der Europäer und der indigenen Völker Südamerikas",
+            "Reformation: Martin Luther, Dreißigjähriger Krieg"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG6 · LB2 Zeit und Wandel",
+          "umsetzung_typ": "planned",
+          "ues": [],
+          "bezuege": []
+        },
+        {
+          "ke_id": "GPG6-LB2-05",
+          "ke_wortlaut": "beschreiben Ursachen und Ablauf der Reformation und erläutern die politischen, religiösen und wirtschaftlichen Konsequenzen der Kirchenspaltung.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG6 · LB2 Zeit und Wandel · verbatim",
+          "thema": "beschreiben Ursachen und Ablauf der Reformation und erläutern die politischen, r",
+          "operator": null,
+          "afb": null,
+          "inhalte_lp": [
+            "Lebensräume und Lebensbedingungen im Mittelalter",
+            "Politische und gesellschaftliche Herrschaftsformen im Mittelalter am Beispiel Karl des Großen",
+            "Spuren des Mittelalters in einem heutigen Stadtbild",
+            "Medizinische, technische und kulturelle Errungenschaften zu Beginn der Neuzeit",
+            "Hochkulturen in Südamerika, Eroberungen aus Sicht der Europäer und der indigenen Völker Südamerikas",
+            "Reformation: Martin Luther, Dreißigjähriger Krieg"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG6 · LB2 Zeit und Wandel",
+          "umsetzung_typ": "planned",
+          "ues": [],
+          "bezuege": []
+        }
+      ]
+    },
+    "GPG6_LB3": {
+      "ke_anzahl": 2,
+      "jgst": "GPG6",
+      "lb": "LB3",
+      "lb_titel": "Politik und Gesellschaft",
+      "quelle_status": "verbatim",
+      "kes": [
+        {
+          "ke_id": "GPG6-LB3-01",
+          "ke_wortlaut": "erklären die unterschiedlichen Lebensformen im Kloster und auf der Burg, um geistliche und weltliche Machtstrukturen zu vergleichen.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG6 · LB3 Politik und Gesellschaft · verbatim",
+          "thema": "erklären die unterschiedlichen Lebensformen im Kloster und auf der Burg, um geis",
+          "operator": null,
+          "afb": null,
+          "inhalte_lp": [
+            "Leben im Mittelalter (Erziehung und Bildung, Justiz und Strafwesen)",
+            "Bedeutung der Klöster im Mittelalter",
+            "Mittelalterliche Ständegesellschaft (Kaufleute, Handwerker, Bauern)"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG6 · LB3 Politik und Gesellschaft",
+          "umsetzung_typ": "planned",
+          "ues": [],
+          "bezuege": []
+        },
+        {
+          "ke_id": "GPG6-LB3-02",
+          "ke_wortlaut": "stellen den hierarchischen Aufbau der mittelalterlichen Ständegesellschaft dar, um die individuellen Freiheiten in unserer Gesellschaft heute zu bewerten.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG6 · LB3 Politik und Gesellschaft · verbatim",
+          "thema": "stellen den hierarchischen Aufbau der mittelalterlichen Ständegesellschaft dar, ",
+          "operator": null,
+          "afb": null,
+          "inhalte_lp": [
+            "Leben im Mittelalter (Erziehung und Bildung, Justiz und Strafwesen)",
+            "Bedeutung der Klöster im Mittelalter",
+            "Mittelalterliche Ständegesellschaft (Kaufleute, Handwerker, Bauern)"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG6 · LB3 Politik und Gesellschaft",
+          "umsetzung_typ": "planned",
+          "ues": [],
+          "bezuege": []
+        }
+      ]
+    },
     "GPG6_LB4": {
       "ke_anzahl": 3,
       "jgst": "GPG6",
       "lb": "LB4",
-      "lb_titel": "Wirtschaft und Recht",
-      "status": "ausgearbeitet",
+      "lb_titel": "Lebenswelt",
+      "quelle_status": "verbatim",
       "kes": [
         {
           "ke_id": "GPG6-LB4-01",
-          "ke_wortlaut": "recherchieren in ihrem familiären Umfeld die Motive für die Wahl des eigenen Wohnortes (z. B. Freizeitwert, Verkehrsanbindungen) und beurteilen diese Entscheidung.",
+          "ke_wortlaut": "recherchieren in ihrem familiären Umfeld die Motive für die Wahl des eigenen Wohnortes (Freizeitwert, Verkehrsanbindungen) und beurteilen diese Entscheidung.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG6 · LB4 Lebenswelt · verbatim",
           "thema": "Kommunalpolitik — Motive der Wohnortwahl",
           "operator": "recherchieren / beurteilen",
           "afb": "II–III",
-          "inhalte": "Leben Stadt/Land; Mobilität; kommunale Selbstverwaltung.",
+          "inhalte_lp": [
+            "Leben in der Stadt und auf dem Land",
+            "Mobilität (Wohnortwechsel)",
+            "Struktur und Funktionsweise der kommunalen Selbstverwaltung",
+            "Entscheidungsprozesse und Mitwirkungsmöglichkeiten in der Gemeinde (Wahl, Bürgerbegehren und -entscheid, Kinder- und Jugendforen)"
+          ],
           "fundort": "LehrplanPLUS MS Bayern · GPG6 · LB4 Lebenswelt",
           "umsetzung_typ": "idealtypisch",
           "umsetzung_titel": "Mini-Sozialstudie „Warum wohnen wir hier?“ — Befragung im familiären Umfeld",
           "umsetzung_klasse": "GPG6",
           "umsetzung_datum": "",
-          "umsetzung_quelle": "idealtypisch — kein eigenes GPG6-Schriftwesen vorliegend",
           "ues": [
             {
               "nr": 1,
@@ -515,16 +783,21 @@ window.MATRIX = {
         {
           "ke_id": "GPG6-LB4-02",
           "ke_wortlaut": "stellen den Aufbau und die Funktionszusammenhänge der kommunalen Selbstverwaltung sowie die Mitwirkungsmöglichkeiten der Bürgerinnen und Bürger in der Gemeinde dar.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG6 · LB4 Lebenswelt · verbatim",
           "thema": "Kommunalpolitik — Aufbau der kommunalen Selbstverwaltung",
           "operator": "darstellen",
           "afb": "II",
-          "inhalte": "kommunale Selbstverwaltung; Entscheidungsprozesse; Mitwirkungsmöglichkeiten (Wahl, Bürgerbegehren, -entscheid, Kinder- und Jugendforen).",
+          "inhalte_lp": [
+            "Leben in der Stadt und auf dem Land",
+            "Mobilität (Wohnortwechsel)",
+            "Struktur und Funktionsweise der kommunalen Selbstverwaltung",
+            "Entscheidungsprozesse und Mitwirkungsmöglichkeiten in der Gemeinde (Wahl, Bürgerbegehren und -entscheid, Kinder- und Jugendforen)"
+          ],
           "fundort": "LehrplanPLUS MS Bayern · GPG6 · LB4 Lebenswelt",
           "umsetzung_typ": "idealtypisch",
           "umsetzung_titel": "UE „Wer entscheidet in unserer Gemeinde?“ — Strukturmodell kommunale Selbstverwaltung",
           "umsetzung_klasse": "GPG6",
           "umsetzung_datum": "",
-          "umsetzung_quelle": "idealtypisch — kein eigenes GPG6-Schriftwesen vorliegend",
           "ues": [
             {
               "nr": 1,
@@ -561,17 +834,22 @@ window.MATRIX = {
         },
         {
           "ke_id": "GPG6-LB4-03",
-          "ke_wortlaut": "erläutern ausgehend von einem aktuellen Fallbeispiel aus ihrem Umfeld die kommunalpolitischen Entscheidungsprozesse und erproben ihre Mitwirkungsmöglichkeiten bei exemplarischen Fällen an ihrem Wohnort.",
+          "ke_wortlaut": "erläutern ausgehend von einem aktuellen Fallbeispiel aus ihrem Umfeld die kommunal-politischen Entscheidungsprozesse und erproben ihre Mitwirkungsmöglichkeiten bei exemplarischen Fällen an ihrem Wohnort.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG6 · LB4 Lebenswelt · verbatim",
           "thema": "Kommunalpolitik — Entscheidungsprozesse erproben",
           "operator": "erläutern / erproben",
           "afb": "II + Anwendung/Handlung",
-          "inhalte": "kommunalpolitische Entscheidungsprozesse; Mitwirkungsmöglichkeiten erproben.",
-          "fundort": "LehrplanPLUS MS Bayern · GPG6 · LB4 Lebenswelt — einziger MS-LB mit explizitem „erproben“ in der Kommunalpolitik",
+          "inhalte_lp": [
+            "Leben in der Stadt und auf dem Land",
+            "Mobilität (Wohnortwechsel)",
+            "Struktur und Funktionsweise der kommunalen Selbstverwaltung",
+            "Entscheidungsprozesse und Mitwirkungsmöglichkeiten in der Gemeinde (Wahl, Bürgerbegehren und -entscheid, Kinder- und Jugendforen)"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG6 · LB4 Lebenswelt",
           "umsetzung_typ": "idealtypisch",
           "umsetzung_titel": "Fallanalyse „Soll der Skatepark gebaut werden?“ — kommunalpolitischer Entscheidungsprozess am realen Ortsfall",
           "umsetzung_klasse": "GPG6",
           "umsetzung_datum": "",
-          "umsetzung_quelle": "idealtypisch — kein eigenes GPG6-Schriftwesen vorliegend",
           "ues": [
             {
               "nr": 1,
@@ -626,26 +904,199 @@ window.MATRIX = {
         }
       ]
     },
+    "GPG7_LB2": {
+      "ke_anzahl": 8,
+      "jgst": "GPG7",
+      "lb": "LB2",
+      "lb_titel": "Zeit und Wandel",
+      "quelle_status": "verbatim",
+      "kes": [
+        {
+          "ke_id": "GPG7-LB2-01",
+          "ke_wortlaut": "nutzen den Vergleich zwischen absolutistischer und demokratischer Regierungsform, um den Wert der politischen Mitbestimmungsmöglichkeiten in einer Demokratie (z. B. in der Bundesrepublik Deutschland) beurteilen zu können.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG7 · LB2 Zeit und Wandel · verbatim",
+          "thema": "nutzen den Vergleich zwischen absolutistischer und demokratischer Regierungsform",
+          "operator": null,
+          "afb": null,
+          "inhalte_lp": [
+            "Selbstverständnis eines absolutistischen Herrschers am Beispiel Ludwig XIV., Selbstverständnis eines demokratischen Amtsinhabers",
+            "Französische Revolution: wichtige Beweggründe, grober Verlauf einzelner Phasen (z. B. Napoleonische Ära)",
+            "Industrialisierung: technische und wirtschaftliche Entwicklung",
+            "deutsche Reichsgründung",
+            "Imperialismus: Rivalität der europäischen Nationalstaaten, Kolonialisierung am Beispiel Afrikas",
+            "Ursachen und Verlauf des Ersten Weltkrieges: Attentat von Sarajevo, Stellungskrieg, Technisierung des Krieges, Heimatfront"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG7 · LB2 Zeit und Wandel",
+          "umsetzung_typ": "planned",
+          "ues": [],
+          "bezuege": []
+        },
+        {
+          "ke_id": "GPG7-LB2-02",
+          "ke_wortlaut": "übertragen ihre Kenntnisse über den nicht linearen Verlauf der Französischen Revolution auf Revolutionen der Gegenwart, um vergleichbare aktuelle Entwicklungen nachvollziehen zu können.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG7 · LB2 Zeit und Wandel · verbatim",
+          "thema": "übertragen ihre Kenntnisse über den nicht linearen Verlauf der Französischen Rev",
+          "operator": null,
+          "afb": null,
+          "inhalte_lp": [
+            "Selbstverständnis eines absolutistischen Herrschers am Beispiel Ludwig XIV., Selbstverständnis eines demokratischen Amtsinhabers",
+            "Französische Revolution: wichtige Beweggründe, grober Verlauf einzelner Phasen (z. B. Napoleonische Ära)",
+            "Industrialisierung: technische und wirtschaftliche Entwicklung",
+            "deutsche Reichsgründung",
+            "Imperialismus: Rivalität der europäischen Nationalstaaten, Kolonialisierung am Beispiel Afrikas",
+            "Ursachen und Verlauf des Ersten Weltkrieges: Attentat von Sarajevo, Stellungskrieg, Technisierung des Krieges, Heimatfront"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG7 · LB2 Zeit und Wandel",
+          "umsetzung_typ": "planned",
+          "ues": [],
+          "bezuege": []
+        },
+        {
+          "ke_id": "GPG7-LB2-03",
+          "ke_wortlaut": "stellen in Grundzügen die Industrialisierung aus unterschiedlichen Perspektiven dar (z. B. technischer Wandel).",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG7 · LB2 Zeit und Wandel · verbatim",
+          "thema": "stellen in Grundzügen die Industrialisierung aus unterschiedlichen Perspektiven ",
+          "operator": null,
+          "afb": null,
+          "inhalte_lp": [
+            "Selbstverständnis eines absolutistischen Herrschers am Beispiel Ludwig XIV., Selbstverständnis eines demokratischen Amtsinhabers",
+            "Französische Revolution: wichtige Beweggründe, grober Verlauf einzelner Phasen (z. B. Napoleonische Ära)",
+            "Industrialisierung: technische und wirtschaftliche Entwicklung",
+            "deutsche Reichsgründung",
+            "Imperialismus: Rivalität der europäischen Nationalstaaten, Kolonialisierung am Beispiel Afrikas",
+            "Ursachen und Verlauf des Ersten Weltkrieges: Attentat von Sarajevo, Stellungskrieg, Technisierung des Krieges, Heimatfront"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG7 · LB2 Zeit und Wandel",
+          "umsetzung_typ": "planned",
+          "ues": [],
+          "bezuege": []
+        },
+        {
+          "ke_id": "GPG7-LB2-04",
+          "ke_wortlaut": "beschreiben die nationalstaatlichen Einigungsbestrebungen und die deutsche Reichsgründung.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG7 · LB2 Zeit und Wandel · verbatim",
+          "thema": "beschreiben die nationalstaatlichen Einigungsbestrebungen und die deutsche Reich",
+          "operator": null,
+          "afb": null,
+          "inhalte_lp": [
+            "Selbstverständnis eines absolutistischen Herrschers am Beispiel Ludwig XIV., Selbstverständnis eines demokratischen Amtsinhabers",
+            "Französische Revolution: wichtige Beweggründe, grober Verlauf einzelner Phasen (z. B. Napoleonische Ära)",
+            "Industrialisierung: technische und wirtschaftliche Entwicklung",
+            "deutsche Reichsgründung",
+            "Imperialismus: Rivalität der europäischen Nationalstaaten, Kolonialisierung am Beispiel Afrikas",
+            "Ursachen und Verlauf des Ersten Weltkrieges: Attentat von Sarajevo, Stellungskrieg, Technisierung des Krieges, Heimatfront"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG7 · LB2 Zeit und Wandel",
+          "umsetzung_typ": "planned",
+          "ues": [],
+          "bezuege": []
+        },
+        {
+          "ke_id": "GPG7-LB2-05",
+          "ke_wortlaut": "erklären, dass die traditionellen europäischen Mächterivalitäten und der imperialistische Wettlauf um Kolonien in den Ersten Weltkrieg mündeten.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG7 · LB2 Zeit und Wandel · verbatim",
+          "thema": "erklären, dass die traditionellen europäischen Mächterivalitäten und der imperia",
+          "operator": null,
+          "afb": null,
+          "inhalte_lp": [
+            "Selbstverständnis eines absolutistischen Herrschers am Beispiel Ludwig XIV., Selbstverständnis eines demokratischen Amtsinhabers",
+            "Französische Revolution: wichtige Beweggründe, grober Verlauf einzelner Phasen (z. B. Napoleonische Ära)",
+            "Industrialisierung: technische und wirtschaftliche Entwicklung",
+            "deutsche Reichsgründung",
+            "Imperialismus: Rivalität der europäischen Nationalstaaten, Kolonialisierung am Beispiel Afrikas",
+            "Ursachen und Verlauf des Ersten Weltkrieges: Attentat von Sarajevo, Stellungskrieg, Technisierung des Krieges, Heimatfront"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG7 · LB2 Zeit und Wandel",
+          "umsetzung_typ": "planned",
+          "ues": [],
+          "bezuege": []
+        },
+        {
+          "ke_id": "GPG7-LB2-06",
+          "ke_wortlaut": "stellen die Ereignisse des Attentats von Sarajevo dar und diskutieren den Zusammenhang zwischen Ursachen und Auslöser eines Konfliktes anhand eines aktuellen Beispiels.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG7 · LB2 Zeit und Wandel · verbatim",
+          "thema": "stellen die Ereignisse des Attentats von Sarajevo dar und diskutieren den Zusamm",
+          "operator": null,
+          "afb": null,
+          "inhalte_lp": [
+            "Selbstverständnis eines absolutistischen Herrschers am Beispiel Ludwig XIV., Selbstverständnis eines demokratischen Amtsinhabers",
+            "Französische Revolution: wichtige Beweggründe, grober Verlauf einzelner Phasen (z. B. Napoleonische Ära)",
+            "Industrialisierung: technische und wirtschaftliche Entwicklung",
+            "deutsche Reichsgründung",
+            "Imperialismus: Rivalität der europäischen Nationalstaaten, Kolonialisierung am Beispiel Afrikas",
+            "Ursachen und Verlauf des Ersten Weltkrieges: Attentat von Sarajevo, Stellungskrieg, Technisierung des Krieges, Heimatfront"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG7 · LB2 Zeit und Wandel",
+          "umsetzung_typ": "planned",
+          "ues": [],
+          "bezuege": []
+        },
+        {
+          "ke_id": "GPG7-LB2-07",
+          "ke_wortlaut": "beschreiben anhand von historischen Spuren den Verlauf des Ersten Weltkrieges für die Menschen an der Front und in der Heimat.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG7 · LB2 Zeit und Wandel · verbatim",
+          "thema": "beschreiben anhand von historischen Spuren den Verlauf des Ersten Weltkrieges fü",
+          "operator": null,
+          "afb": null,
+          "inhalte_lp": [
+            "Selbstverständnis eines absolutistischen Herrschers am Beispiel Ludwig XIV., Selbstverständnis eines demokratischen Amtsinhabers",
+            "Französische Revolution: wichtige Beweggründe, grober Verlauf einzelner Phasen (z. B. Napoleonische Ära)",
+            "Industrialisierung: technische und wirtschaftliche Entwicklung",
+            "deutsche Reichsgründung",
+            "Imperialismus: Rivalität der europäischen Nationalstaaten, Kolonialisierung am Beispiel Afrikas",
+            "Ursachen und Verlauf des Ersten Weltkrieges: Attentat von Sarajevo, Stellungskrieg, Technisierung des Krieges, Heimatfront"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG7 · LB2 Zeit und Wandel",
+          "umsetzung_typ": "planned",
+          "ues": [],
+          "bezuege": []
+        },
+        {
+          "ke_id": "GPG7-LB2-08",
+          "ke_wortlaut": "beschreiben die Auswirkungen des Ersten Weltkrieges auf den Alltag der Menschen in der Heimat sowie an der Front und diskutieren anhand aktueller Beispiele die unmittelbaren Folgen von Kriegen für die Menschen.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG7 · LB2 Zeit und Wandel · verbatim",
+          "thema": "beschreiben die Auswirkungen des Ersten Weltkrieges auf den Alltag der Menschen ",
+          "operator": null,
+          "afb": null,
+          "inhalte_lp": [
+            "Selbstverständnis eines absolutistischen Herrschers am Beispiel Ludwig XIV., Selbstverständnis eines demokratischen Amtsinhabers",
+            "Französische Revolution: wichtige Beweggründe, grober Verlauf einzelner Phasen (z. B. Napoleonische Ära)",
+            "Industrialisierung: technische und wirtschaftliche Entwicklung",
+            "deutsche Reichsgründung",
+            "Imperialismus: Rivalität der europäischen Nationalstaaten, Kolonialisierung am Beispiel Afrikas",
+            "Ursachen und Verlauf des Ersten Weltkrieges: Attentat von Sarajevo, Stellungskrieg, Technisierung des Krieges, Heimatfront"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG7 · LB2 Zeit und Wandel",
+          "umsetzung_typ": "planned",
+          "ues": [],
+          "bezuege": []
+        }
+      ]
+    },
     "GPG7_LB3": {
       "ke_anzahl": 4,
       "jgst": "GPG7",
       "lb": "LB3",
       "lb_titel": "Politik und Gesellschaft",
-      "status": "ausgearbeitet",
+      "quelle_status": "verbatim",
       "kes": [
         {
           "ke_id": "GPG7-LB3-01",
           "ke_wortlaut": "beschreiben die Lebens- und Arbeitsverhältnisse von Arbeiterinnen bzw. Arbeitern und deren Familien sowie Lösungsansätze der Sozialen Frage während der Industrialisierung.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG7 · LB3 Politik und Gesellschaft · verbatim",
           "thema": "Soziale Frage — Lebens- und Arbeitsverhältnisse der Industrialisierung",
           "operator": "beschreiben (R) / beschreiben + vergleichen (M)",
           "afb": "I (R) / II (M)",
-          "inhalte": "Industrielle Revolution, Industriegesellschaft, Soziale Frage 19./20. Jh. + Lösungsansätze.",
+          "inhalte_lp": [
+            "Industrielle Revolution, Industriegesellschaft",
+            "Soziale Frage zu Beginn des 20. Jahrhunderts und Lösungsansätze",
+            "Kriegsschuldfrage und Versailler Vertrag"
+          ],
           "fundort": "LehrplanPLUS MS Bayern · GPG7 · LB3 Politik und Gesellschaft",
           "umsetzung_typ": "real",
           "umsetzung_titel": "Sequenz „Industrialisierung / Soziale Frage“ — Identifikationsfiguren Johann und Anna",
           "umsetzung_klasse": "GPG7c und GPG7b (zeitversetzt)",
           "umsetzung_datum": "KW09–KW13 / Feb–März 2026",
-          "umsetzung_quelle": "Belegcluster D · TUV_03_Landflucht.md · TUV_04_Leben_in_der_Stadt.md · TUV_05_Streik_und_Gewerkschaft.md",
           "ues": [
             {
               "nr": 1,
@@ -701,21 +1152,207 @@ window.MATRIX = {
               "didaktik": "Handlungsorientierung (Reinhardt2005)",
               "verweis": "S. Reinhardt: Politik-Didaktik. Praxishandbuch. Cornelsen 2005. Handlungsorientierung = Real-Handeln · Simulationshandeln · produktives Handeln. — Anwendung hier: Tagebuch-Aufgabe als produktorientiertes Schreiben, Perspektivübernahme als kognitive Handlung."
             }
-          ]
+          ],
+          "pilot_sequenz": {
+            "titel": "10-UE-Sequenz · Lebens- und Arbeitsverhältnisse + Soziale Frage",
+            "praxis": "Eigene Praxis GPG7c SJ 24/25 + idealtypische Erweiterung",
+            "gesamtzeit": "10 UEs à 45 min = 7,5 Zeitstunden",
+            "lernzielraster": "Sach- + Methoden- + Urteilskompetenz · GPJE 2004",
+            "ues_detail": [
+              {
+                "nr": 1,
+                "titel": "Einstieg · Standbilder zur Sozialen Frage",
+                "minuten": 45,
+                "lernziel": "SuS aktivieren Vorwissen zur Industrialisierung (LB2-Anknüpfung) und entwickeln eine Forschungsfrage zur sozialen Lage der Arbeiter:innen.",
+                "einstieg": "5' · Bildimpuls: Adolph Menzel „Eisenwalzwerk\" (1875). Stiller Schreib-Gespräch zum Bild.",
+                "erarbeitung": "25' · Gruppenarbeit: SuS bilden in 4er-Gruppen Standbilder zu „typischen Szenen\" Industrialisierung (Fabrik · Wohnung · Familie · Straße). Foto-Dokumentation. Mind-Map an Tafel.",
+                "sicherung": "10' · Forschungsfrage: „Warum heißt das die Soziale FRAGE?\" sammeln; Hefteintrag-Vorlage.",
+                "reflexion": "5' · Lernzielklärung: „Am Ende der Sequenz werdet ihr…\"",
+                "material": "Menzel-Druck (A2) · Sammelplakat · Smartphone-Kamera",
+                "differenzierung": "Reduktiv: vorgegebene Standbild-Themen. Erweitert: SuS wählen eigene Aspekte.",
+                "lp_bezug": "KE 1 Anbahnung (Lebensverhältnisse) · KE 2 Anbahnung (Übergang Agrar→Industrie)",
+                "didaktik": "Lebensweltbezug (Klafki) · Bildquellenarbeit · Performatives Lernen (Standbild als sozialwissenschaftliche Methode, Massing/Reinhardt)"
+              },
+              {
+                "nr": 2,
+                "titel": "Lebensverhältnisse der Arbeiter:innen-Familie",
+                "minuten": 45,
+                "lernziel": "SuS beschreiben die Lebens- und Wohnverhältnisse der Industriearbeiter:innen-Familien (KE 1) anhand multiperspektivischer Quellen.",
+                "einstieg": "5' · Foto „Mietskaserne Berlin 1900\" — Sehimpuls + Vermutungen.",
+                "erarbeitung": "25' · Stationenlernen 4 Stationen: (1) Wohnsituation (Foto + Erinnerung Schlafgänger:innen) · (2) Ernährung (Kartoffel-Statistik + Schichtarbeiter-Diät) · (3) Kindheit (Kinderarbeit, Bilder Zeche) · (4) Tagesablauf (12-Stunden-Schicht-Protokoll).",
+                "sicherung": "12' · Plakat-Galerie: jede Gruppe stellt 1 Station vor + zentrale Aussage in 1 Satz.",
+                "reflexion": "3' · „Welche Belastung war für euch am überraschendsten?\"",
+                "material": "4 Stationen-Mappen (mit AB + Bildquellen + Original-Texten) · Plakat-Pappen · Stifte",
+                "differenzierung": "Texte 3 Niveaus pro Station (basic/mittel/anspruch) · Wortspeicher für DaZ",
+                "lp_bezug": "KE 1 Lebens-/Arbeitsverhältnisse Arbeiterinnen+Arbeiter",
+                "didaktik": "Multiperspektivität (Bergmann2000) · Quellenarbeit (Pandel2017) · Stationenlernen (Reinhardt2005) · sprachsensibler GPG-U."
+              },
+              {
+                "nr": 3,
+                "titel": "Arbeitsbedingungen in der Fabrik",
+                "minuten": 45,
+                "lernziel": "SuS analysieren konkrete Arbeitsbedingungen in einer Fabrik des späten 19. Jh. und benennen drei zentrale Belastungen.",
+                "einstieg": "5' · Geräusch-Atmosphäre (Audio: Fabrik 1900) — Wirkung notieren.",
+                "erarbeitung": "25' · Quellenarbeit Friedrich Engels „Lage der arbeitenden Klasse\" (1845) — gekürzter Textauszug. Markieren: Arbeitszeit · Lohn · Unfälle · Kinderarbeit. Tabellarische Sicherung.",
+                "sicherung": "10' · Tabellen-Vergleich Plenum: heutige Arbeitszeit (35-40h) vs. 1880 (12-16h pro Tag).",
+                "reflexion": "5' · „Welcher Aspekt war juristisch erlaubt? Wieso?\"",
+                "material": "Engels-Auszug (gekürzt + bebildert) · AB Tabelle · Audio",
+                "differenzierung": "Engels-Text in 3 Niveau-Versionen (Original / vereinfacht / mit Wortspeicher)",
+                "lp_bezug": "KE 1 Arbeitsverhältnisse",
+                "didaktik": "Quellenkritik (Pandel2017) · Vergleichsmethode · historische Empathie (Rüsen2002)"
+              },
+              {
+                "nr": 4,
+                "titel": "Die Soziale Frage als Begriff",
+                "minuten": 45,
+                "lernziel": "SuS definieren den Begriff „Soziale Frage\" sachlich präzise und ordnen ihn in den historischen Kontext ein.",
+                "einstieg": "5' · Begriffsaktivierung: „Was sind FRAGEN im Politik-Kontext heute?\" (Klimafrage, Wohnungsfrage)",
+                "erarbeitung": "25' · Lehrkraft-Input (10'): Definition Soziale Frage (Pauperismus, Industrialisierung, fehlende Sozialgesetzgebung). Partner-Arbeit (15'): SuS schreiben „Lexikon-Eintrag\" Soziale Frage in eigene Worte.",
+                "sicherung": "10' · Lexikon-Einträge gegenseitig prüfen → 3 Best-Versionen vorlesen → Hefteintrag-Definition gemeinsam formulieren.",
+                "reflexion": "5' · Vergleich: „Welche FRAGE ist heute vergleichbar?\"",
+                "material": "Tafel-Vorlage Definition · Hefteintrag-Schablone",
+                "differenzierung": "Wortspeicher (Pauperismus, Industrialisierung etc.) · Vorgabe-Schreibgerüst für schwache Lerner",
+                "lp_bezug": "KE 1 Konzept Soziale Frage",
+                "didaktik": "Begriffsbildung · Mündigkeit-Anbahnung (Detjen2007) durch eigenständige Begriffsdefinition · Aktualitätsprinzip (Klafki1996)"
+              },
+              {
+                "nr": 5,
+                "titel": "Lösungsansätze · Genossenschaften + Gewerkschaften",
+                "minuten": 45,
+                "lernziel": "SuS unterscheiden drei historische Lösungsansätze zur Sozialen Frage (Selbsthilfe · Gewerkschaft · Sozialstaat) und ordnen ihnen Akteure zu.",
+                "einstieg": "5' · Frage: „Wenn ihr Industriearbeiter im 1880 wärt — was würdet ihr tun?\" Brainstorming.",
+                "erarbeitung": "30' · Drei-Gruppen-Arbeit (Jigsaw): Gruppe A Genossenschaften (Schulze-Delitzsch, Raiffeisen) · Gruppe B Gewerkschaft + Sozialdemokratie (Bebel, Lassalle) · Gruppe C Bismarcks Sozialgesetzgebung (1883-89). Experten-Gruppen, dann Stammgruppen.",
+                "sicherung": "8' · Tabelle füllen: Akteur · Strategie · Erfolg.",
+                "reflexion": "2' · „Welche Strategie war am wirksamsten?\"",
+                "material": "3 Expertentexte (à 1 Seite) · Tabelle-Schablone",
+                "differenzierung": "Texte 3 Niveaus · Visualisierungs-Hilfen für DaZ (Symbol Gewerkschaft, Symbol Bismarck)",
+                "lp_bezug": "KE 1 Lösungsansätze Soziale Frage",
+                "didaktik": "Jigsaw-Methode · Multiperspektivität · Politische Urteilsbildung (GPJE2004) · Handlungsorientierung Simulationshandeln (Reinhardt2005)"
+              },
+              {
+                "nr": 6,
+                "titel": "Bismarcks Sozialgesetzgebung — Erfolg oder Beruhigung?",
+                "minuten": 45,
+                "lernziel": "SuS beurteilen Bismarcks Sozialgesetzgebung kritisch und entwickeln ein Sach-/Werturteil.",
+                "einstieg": "5' · Provokationsthese: „Bismarck war ein Sozialist.\" Spontan zustimmen/ablehnen.",
+                "erarbeitung": "25' · Pro-Contra-Vorbereitung in 2 Gruppen mit Materialgrundlage (Bismarcks Reden + Auszüge SPD-Reaktionen). 15' Vorbereitung, 10' Debatte mit fest verteilten Rollen.",
+                "sicherung": "10' · Synthese: 3-Stufen-Urteil (Sachebene · Werte-Ebene · eigene Position) im Heft.",
+                "reflexion": "5' · Metakognitiv: „Welches Argument hat mich überzeugt — warum?\"",
+                "material": "Material-Mappen (Pro + Contra · Reden Bismarck · Bebel-Kritik) · Urteilsraster (Sach/Wert/Position)",
+                "differenzierung": "Rollenkarten mit Argumenten für schwache Lerner · Frei-Argumentation für starke",
+                "lp_bezug": "KE 1 Lösungsansätze + Urteilsbildung",
+                "didaktik": "Pro-Contra-Debatte (Massing) · Politische Urteilsbildung 3-Stufen (GPJE2004) · Beutelsbacher Konsens (Kontroversitätsgebot) · Mündigkeit (Detjen2007)"
+              },
+              {
+                "nr": 7,
+                "titel": "Übergang Agrar→Industriegesellschaft am Beispiel einer Stadt",
+                "minuten": 45,
+                "lernziel": "SuS beschreiben den Übergang am Beispiel einer Stadt (z.B. Würzburg, Augsburg) und identifizieren Veränderungs-Indikatoren (KE 2).",
+                "einstieg": "5' · Lokaler Bezug: „Wie war Würzburg/eure Stadt 1880?\" Vermutungen.",
+                "erarbeitung": "25' · Quellenarbeit: Stadtplan 1850 vs. 1900 · Bevölkerungs-Statistik 1850/1880/1900 · Beruf-Verteilung-Diagramm. Verändungs-Indikatoren herausarbeiten.",
+                "sicherung": "12' · Tafelbild: 4 Veränderungs-Achsen (Wachstum · Wirtschaft · Wohnen · Verkehr).",
+                "reflexion": "3' · „Welche Veränderung gibt es heute? — Migration, Energiewende?\"",
+                "material": "Lokale Stadtkarte 1850 + 1900 (digital wenn möglich) · Statistik-AB · Verändungs-Indikatoren-Raster",
+                "differenzierung": "AB Karten-Vergleich 3 Niveaus (Markieren / Vergleichen / Argumentieren)",
+                "lp_bezug": "KE 2 Übergang Agrar→Industriegesellschaft",
+                "didaktik": "Lokalgeschichte (LP+ GPG-Fachprofil) · Quellenkritik (Pandel2017) · Aktualitätsprinzip · Kompetenzstrukturmodell Gegenstandsbereich „Räume\" + „Zeit\""
+              },
+              {
+                "nr": 8,
+                "titel": "Vergleich Soziale Frage 1880 vs. heute",
+                "minuten": 45,
+                "lernziel": "SuS vergleichen die Soziale Frage des 19. Jh. mit aktuellen sozialen Spannungen (z.B. Wohnungsmangel, Niedriglohn) und entwickeln ein begründetes Sachurteil.",
+                "einstieg": "5' · Aktuelles Foto-Impuls: Tafel-Schlange · Obdachlose · Working-Poor-Statistik.",
+                "erarbeitung": "25' · Vergleichsmatrix in 4er-Gruppen: 1880 vs. heute Spalten · Wohnungsfrage / Lohnfrage / Arbeitszeit / Sozialschutz Zeilen.",
+                "sicherung": "12' · Plenum: Strukturelle Gemeinsamkeiten + Unterschiede zusammentragen.",
+                "reflexion": "3' · „Ist die SOZIALE FRAGE überhaupt gelöst?\"",
+                "material": "Aktuelle Bilder + Statistiken (BMSFSJ Sozialbericht) · Vergleichsmatrix-Vorlage",
+                "differenzierung": "Statistiken in 3 Niveaus aufbereitet · Wortspeicher Sozialpolitik-Begriffe",
+                "lp_bezug": "KE 1 + KE 2 verbinden · Aktualisierungs-Auftrag LP+",
+                "didaktik": "Aktualitätsprinzip (Klafki1996) · Lebensweltbezug · Multiperspektivität · Politische Urteilsbildung"
+              },
+              {
+                "nr": 9,
+                "titel": "Sicherung + Lernzielkontrolle (LNW)",
+                "minuten": 45,
+                "lernziel": "SuS dokumentieren ihre Lernerträge in einer Lernzielkontrolle (LNW) mit Aufgaben aller AFB-Stufen.",
+                "einstieg": "5' · Strukturhinweis: „LNW prüft Wissen, Methoden, Urteilsfähigkeit.\"",
+                "erarbeitung": "30' · LNW schreiben: AFB I (Beschreiben Lebensverhältnisse) · AFB II (Vergleich 1880-heute mit Matrix) · AFB III (Urteil: Bismarck — Erfolg oder Beruhigung?).",
+                "sicherung": "5' · Aufgaben einsammeln + Selbsteinschätzungsbogen ausfüllen.",
+                "reflexion": "5' · Stille Selbst-Reflexion: „Was kann ich jetzt?\"",
+                "material": "LNW-Aufgabenbogen · Selbsteinschätzungsbogen · Hefteintrag-Schablone",
+                "differenzierung": "LNW in 2 Niveaus (Regel + erhöht) · Wortspeicher für DaZ",
+                "lp_bezug": "KE 1 + KE 2 + KE 3 (Kriegsschuld als Anknüpfung) — Sequenz-Sicherung",
+                "didaktik": "Veränderte Leistungsmessung · Kompetenzorientierung · AFB-Stufung KMK · Selbst-Regulation (Schraw)"
+              },
+              {
+                "nr": 10,
+                "titel": "Reflexion + Transfer zur Gegenwart",
+                "minuten": 45,
+                "lernziel": "SuS reflektieren das Sequenz-Lernen und entwickeln eigene Handlungsoptionen zur sozialen Frage heute.",
+                "einstieg": "5' · Sequenz-Rückblick: SuS nennen das wichtigste Wort der Sequenz.",
+                "erarbeitung": "25' · Stationenrundgang: jede Station 1 Sequenz-Aspekt (Lebensverhältnisse / Lösungsansätze / Bismarck / Gegenwart). SuS schreiben spontane Reflexionen.",
+                "sicherung": "10' · Handlungsplan-Schreiben: „Eine soziale Frage von heute — und 1 Schritt, den ICH gehen kann.\"",
+                "reflexion": "5' · Pinnwand: alle Handlungspläne anonym aufgehängt.",
+                "material": "Stationen-Plakate · Reflexions-Sticker · Pinnwand · Handlungsplan-Vorlage",
+                "differenzierung": "Handlungsplan in 3 Komplexitäts-Stufen (1 Satz / 1 Plan / 1 Aktion)",
+                "lp_bezug": "KE 1+2 Sequenz-Abschluss · Aktualisierungs-Auftrag",
+                "didaktik": "Demokratie-Lernen (Himmelmann2001: Lebensform-Dimension) · Handlungsorientierung Realhandeln (Reinhardt2005) · Mündigkeit (Detjen2007) · SRL (Self-Regulated Learning, Schraw)"
+              }
+            ],
+            "bezuege_global": [
+              {
+                "didaktik": "Beutelsbacher Konsens (Beutelsbach1976)",
+                "verweis": "Überwältigungsverbot: keine eindeutige LK-Position zu Bismarck (UE 6). Kontroversitätsgebot: Pro-Contra-Debatte. Schülerorientierung: Anschluss an Lebenswelt (UE 8)."
+              },
+              {
+                "didaktik": "Politische Urteilsbildung 3-Stufen (GPJE2004)",
+                "verweis": "3-Stufen-Urteil (Sachebene · Werte-Ebene · eigene Position) in UE 6 + LNW UE 9. Politische Urteilskompetenz als Kern-Kompetenz GPJE-Standards."
+              },
+              {
+                "didaktik": "Aktualitätsprinzip (Klafki1996)",
+                "verweis": "Klafki kategoriale Bildung: historische Inhalte nur dann bildend, wenn sie zur Gegenwart sprechen. UE 8 (Vergleich heute) macht das explizit. UE 10 Transfer."
+              },
+              {
+                "didaktik": "Multiperspektivität (Bergmann2000)",
+                "verweis": "UE 2: 4 Stationen geben 4 Sichtweisen. UE 5: Jigsaw mit drei Akteur-Perspektiven (Genossenschaft · Gewerkschaft · Staat). UE 6: Pro-Contra-Rollen."
+              },
+              {
+                "didaktik": "Demokratie-Lernen (Himmelmann2001)",
+                "verweis": "UE 6 Pro-Contra-Debatte als Demokratie-Erfahrung (Lebensform-Dimension). UE 10 Handlungsplan als Mitwirkung-Anbahnung. Lernende als demokratische Bürger:innen."
+              },
+              {
+                "didaktik": "Quellenkritik (Pandel2017)",
+                "verweis": "UE 3 Engels-Auszug · UE 7 lokale Stadtkarte 1850/1900. Quellengattung benennen + Aussage prüfen + Bedeutung einordnen."
+              },
+              {
+                "didaktik": "Lebensweltbezug (Klafki1996)",
+                "verweis": "UE 1 Standbilder eigener Erfahrung · UE 7 lokale Stadt · UE 8 aktuelle soziale Fragen. Klafki: Inhalte über Schüler-Lebenswelt erschließen."
+              },
+              {
+                "didaktik": "Sprachsensibler GPG (LPplusGPG)",
+                "verweis": "Wortspeicher pro UE für DaZ + Niveau-Differenzierung. LP+ Bayern Fachprofil GPG: Sprachsensibilität als Querschnittsaufgabe."
+              }
+            ]
+          }
         },
         {
           "ke_id": "GPG7-LB3-02",
-          "ke_wortlaut": "analysieren unter ausgewählten Aspekten (z. B. Bevölkerungswachstum, Arbeitersiedlungen) die Entwicklung einer Stadt Ende des 19. Jahrhunderts in Deutschland, um den Übergang von der Agrar- zur Industriegesellschaft darzustellen.",
+          "ke_wortlaut": "analysieren unter ausgewählten Aspekten (z. B. Bevölkerungswachstum, Arbeitsregelungen) die Entwicklung einer Stadt Ende des 19. Jahrhunderts in Deutschland, um den Übergang von der Agrar- zur Industriegesellschaft darzustellen.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG7 · LB3 Politik und Gesellschaft · verbatim",
           "thema": "Übergang Agrar- zur Industriegesellschaft — Stadtentwicklung",
           "operator": "analysieren / darstellen",
           "afb": "II–III",
-          "inhalte": "Bevölkerungswachstum, Arbeitersiedlungen, Stadtentwicklung, neue Berufsbilder.",
+          "inhalte_lp": [
+            "Industrielle Revolution, Industriegesellschaft",
+            "Soziale Frage zu Beginn des 20. Jahrhunderts und Lösungsansätze",
+            "Kriegsschuldfrage und Versailler Vertrag"
+          ],
           "fundort": "LehrplanPLUS MS Bayern · GPG7 · LB3 Politik und Gesellschaft",
           "umsetzung_typ": "real",
           "umsetzung_titel": "UZE Landflucht und „Leben in der Stadt“ — Push/Pull und Lebensbedingungen",
           "umsetzung_klasse": "GPG7c und GPG7b",
           "umsetzung_datum": "06.–09.03.2026",
-          "umsetzung_quelle": "Belegcluster D · TUV_03-04_Landflucht_Leben_in_der_Stadt.md",
           "ues": [
             {
               "nr": 1,
@@ -767,16 +1404,20 @@ window.MATRIX = {
         {
           "ke_id": "GPG7-LB3-03",
           "ke_wortlaut": "erläutern die Ursachen des Ersten Weltkrieges und diskutieren die Kriegsschuldfrage unter Einbezug aktueller Forschungsergebnisse.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG7 · LB3 Politik und Gesellschaft · verbatim",
           "thema": "Erster Weltkrieg — Ursachen und Kriegsschuldfrage",
           "operator": "erläutern / diskutieren",
           "afb": "II–III",
-          "inhalte": "Kriegsschuldfrage, Bündnissystem, Imperialismus als Vorgeschichte.",
+          "inhalte_lp": [
+            "Industrielle Revolution, Industriegesellschaft",
+            "Soziale Frage zu Beginn des 20. Jahrhunderts und Lösungsansätze",
+            "Kriegsschuldfrage und Versailler Vertrag"
+          ],
           "fundort": "LehrplanPLUS MS Bayern · GPG7 · LB3 Politik und Gesellschaft",
           "umsetzung_typ": "real",
           "umsetzung_titel": "Sequenz „Erster Weltkrieg“ — Pulverfass Europa und Attentat von Sarajewo",
           "umsetzung_klasse": "GPG7b",
           "umsetzung_datum": "ab 04.05.2026 (laufend, KW19–22 geplant)",
-          "umsetzung_quelle": "Belegcluster J · 05_Erster_Weltkrieg/",
           "ues": [
             {
               "nr": 1,
@@ -823,16 +1464,20 @@ window.MATRIX = {
         {
           "ke_id": "GPG7-LB3-04",
           "ke_wortlaut": "erläutern die wesentlichen militärischen, territorialen und wirtschaftlichen Bestimmungen des Versailler Friedensvertrags, um die entstehende Unzufriedenheit der unterschiedlichen gesellschaftlichen Schichten im Deutschen Reich zu begründen.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG7 · LB3 Politik und Gesellschaft · verbatim",
           "thema": "Versailler Friedensvertrag — Bestimmungen und Folgen",
           "operator": "erläutern / begründen (R) — selbständig darstellen / diskutieren (M)",
           "afb": "II (R) / III (M)",
-          "inhalte": "militärische, territoriale, wirtschaftliche Bestimmungen; gesellschaftliche Folgen.",
+          "inhalte_lp": [
+            "Industrielle Revolution, Industriegesellschaft",
+            "Soziale Frage zu Beginn des 20. Jahrhunderts und Lösungsansätze",
+            "Kriegsschuldfrage und Versailler Vertrag"
+          ],
           "fundort": "LehrplanPLUS MS Bayern · GPG7 · LB3 Politik und Gesellschaft",
           "umsetzung_typ": "idealtypisch",
           "umsetzung_titel": "UE „Der Vertrag von Versailles — Frieden oder Demütigung?“ — Fallanalyse eines Dokuments",
           "umsetzung_klasse": "GPG7",
           "umsetzung_datum": "",
-          "umsetzung_quelle": "idealtypisch — Sequenz Erster Weltkrieg GPG7b läuft, die Versailles-UE ist noch nicht durchgeführt",
           "ues": [
             {
               "nr": 1,
@@ -876,28 +1521,34 @@ window.MATRIX = {
             }
           ]
         }
-      ]
+      ],
+      "pilot_marker": true
     },
     "GPG7_LB4": {
       "ke_anzahl": 4,
       "jgst": "GPG7",
       "lb": "LB4",
-      "lb_titel": "Wirtschaft und Recht",
-      "status": "ausgearbeitet",
+      "lb_titel": "Lebenswelt",
+      "quelle_status": "verbatim",
       "kes": [
         {
           "ke_id": "GPG7-LB4-01",
           "ke_wortlaut": "benennen die rechtsbedeutsamen Altersstufen für Jugendliche und übertragen die Bedeutung rechtlicher Regelungen auf das eigene Leben.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG7 · LB4 Lebenswelt · verbatim",
           "thema": "Recht — rechtsbedeutsame Altersstufen",
           "operator": "benennen (R) / darstellen (M)",
           "afb": "I (R) / I–II (M)",
-          "inhalte": "rechtsbedeutsame Altersstufen, Jugendschutzgesetz.",
+          "inhalte_lp": [
+            "rechtsbedeutsame Altersstufen für Jugendliche",
+            "Jugendschutzgesetz",
+            "Bestimmungen des Jugendstrafrechts, Funktionen von Strafe",
+            "Rechtsverstöße und Konsequenzen an aktuellen Beispielen"
+          ],
           "fundort": "LehrplanPLUS MS Bayern · GPG7 · LB4 Lebenswelt",
           "umsetzung_typ": "real",
           "umsetzung_titel": "UE2 „Rechtliche Altersstufen + Jugendschutzgesetz“ — Stationenlernen",
           "umsetzung_klasse": "GPG7c (90 min) und GPG7b",
           "umsetzung_datum": "12.01.2026 (7c) · 30.01.2026 (7b)",
-          "umsetzung_quelle": "Belegcluster C · Sequenzplan Recht GPG7c",
           "ues": [
             {
               "nr": 1,
@@ -939,16 +1590,21 @@ window.MATRIX = {
         {
           "ke_id": "GPG7-LB4-02",
           "ke_wortlaut": "fassen wesentliche Bestimmungen des Jugendschutzgesetzes und des Jugendstrafrechts zusammen und beurteilen die Bedeutsamkeit der Gesetze für den eigenen Lebensbereich.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG7 · LB4 Lebenswelt · verbatim",
           "thema": "Recht — Jugendschutzgesetz und Jugendstrafrecht",
           "operator": "zusammenfassen + beurteilen (R) / erläutern + diskutieren (M)",
           "afb": "II–III",
-          "inhalte": "JuSchG, JGG, Funktionen von Strafe, Rechtsverstöße + Konsequenzen.",
+          "inhalte_lp": [
+            "rechtsbedeutsame Altersstufen für Jugendliche",
+            "Jugendschutzgesetz",
+            "Bestimmungen des Jugendstrafrechts, Funktionen von Strafe",
+            "Rechtsverstöße und Konsequenzen an aktuellen Beispielen"
+          ],
           "fundort": "LehrplanPLUS MS Bayern · GPG7 · LB4 Lebenswelt",
           "umsetzung_typ": "real",
           "umsetzung_titel": "UE3 + UE4a „Jugendstrafrecht-Grundlagen + Sanktionsmöglichkeiten“",
           "umsetzung_klasse": "GPG7c und GPG7b",
           "umsetzung_datum": "19.01.2026 (7c)",
-          "umsetzung_quelle": "Belegcluster C · Sequenzplan Recht GPG7c",
           "ues": [
             {
               "nr": 1,
@@ -989,17 +1645,22 @@ window.MATRIX = {
         },
         {
           "ke_id": "GPG7-LB4-03",
-          "ke_wortlaut": "diskutieren grundlegende Bestimmungen des Jugendstrafrechts sowie die präventiv und pädagogisch ausgerichtete Strafbemessung anhand einer öffentlichen Gerichtsverhandlung.",
+          "ke_wortlaut": "diskutieren grundlegende Bestimmungen des Jugendstrafrechts sowie die präventiv und pädagogisch ausgerichtete Strafzumessung anhand einer öffentlichen Gerichtsverhandlung.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG7 · LB4 Lebenswelt · verbatim",
           "thema": "Recht — Jugendstrafrecht und Strafbemessung",
           "operator": "diskutieren",
           "afb": "III",
-          "inhalte": "Jugendstrafrecht, präventiv-pädagogische Strafbemessung, öffentliche Gerichtsverhandlung als Realisierungsform.",
-          "fundort": "LehrplanPLUS MS Bayern · GPG7 · LB4 Lebenswelt — R und M wortgleich (stärkstes Pflichtzitat)",
+          "inhalte_lp": [
+            "rechtsbedeutsame Altersstufen für Jugendliche",
+            "Jugendschutzgesetz",
+            "Bestimmungen des Jugendstrafrechts, Funktionen von Strafe",
+            "Rechtsverstöße und Konsequenzen an aktuellen Beispielen"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG7 · LB4 Lebenswelt",
           "umsetzung_typ": "real",
           "umsetzung_titel": "UE4b + UE5 ELP „Welche Strafe ist für Leon passend?“ — Fallanalyse als Erweiterte Lehrprobe",
           "umsetzung_klasse": "GPG7c (ELP-Format) · GPG7b (ohne ELP-Format)",
           "umsetzung_datum": "UE4b 23.01.2026 · UE5 ELP 26.01.2026",
-          "umsetzung_quelle": "Belegcluster C · ELP_Artikulation_Tabelle_v7.2 · Sequenzplan Recht GPG7c",
           "ues": [
             {
               "nr": 1,
@@ -1063,16 +1724,21 @@ window.MATRIX = {
         {
           "ke_id": "GPG7-LB4-04",
           "ke_wortlaut": "berichten über eine aktuelle kriminelle Tat (z. B. Jugendgewalt, Internetkriminalität) und diskutieren die möglichen Strafen für die Täterin bzw. den Täter.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG7 · LB4 Lebenswelt · verbatim",
           "thema": "Recht — aktuelle kriminelle Tat und mögliche Strafen",
           "operator": "berichten + diskutieren (R) / selbständig recherchieren + berichten + diskutieren (M)",
           "afb": "II–III",
-          "inhalte": "aktuelle kriminelle Tat (Jugendgewalt, Internetkriminalität), Funktionen von Strafe.",
+          "inhalte_lp": [
+            "rechtsbedeutsame Altersstufen für Jugendliche",
+            "Jugendschutzgesetz",
+            "Bestimmungen des Jugendstrafrechts, Funktionen von Strafe",
+            "Rechtsverstöße und Konsequenzen an aktuellen Beispielen"
+          ],
           "fundort": "LehrplanPLUS MS Bayern · GPG7 · LB4 Lebenswelt",
           "umsetzung_typ": "real",
           "umsetzung_titel": "ELP-Einstieg „Welche Strafe ist für Leon passend?“ — aktueller Spiegel-Fall als Identifikationsfigur",
           "umsetzung_klasse": "GPG7c und GPG7b",
           "umsetzung_datum": "26.01.2026 (ELP) und Sequenzverlauf Januar 2026",
-          "umsetzung_quelle": "Belegcluster C · ELP_Artikulation_Tabelle_v7.2",
           "ues": [
             {
               "nr": 1,
@@ -1127,12 +1793,21 @@ window.MATRIX = {
         }
       ]
     },
+    "GPG8_LB2": {
+      "ke_anzahl": 0,
+      "jgst": "GPG8",
+      "lb": "LB2",
+      "lb_titel": "Zeit und Wandel",
+      "quelle_status": "ausstehend",
+      "kes": [],
+      "hinweis": "LP+ Bayern MS GPG GPG8 LB2 — Quelle steht aus. Bitte ergänzen."
+    },
     "GPG8_LB3": {
       "ke_anzahl": 2,
       "jgst": "GPG8",
       "lb": "LB3",
       "lb_titel": "Politik und Gesellschaft",
-      "status": "ausgearbeitet",
+      "quelle_status": "sekundaer",
       "kes": [
         {
           "ke_id": "GPG8-LB3-01",
@@ -1141,7 +1816,7 @@ window.MATRIX = {
           "operator": "beschreiben (R) / erklären (M) + diskutieren",
           "afb": "I→II (R→M) + III",
           "inhalte": "Verfassungsorgane (Bundestag, Bundesregierung, Bundesrat), Gesetzgebungsverfahren, freiheitliche demokratische Grundordnung.",
-          "fundort": "LehrplanPLUS MS Bayern · GPG8 · LB3 Politik und Gesellschaft",
+          "fundort": "LehrplanPLUS MS Bayern · GPG8 · LB3 Politik und Gesellschaft (Wortlaut über Sekundärquelle)",
           "umsetzung_typ": "idealtypisch",
           "umsetzung_titel": "Fallanalyse „Wie entsteht ein Gesetz?“ — Gesetzgebungsweg an einem aktuellen Gesetzentwurf",
           "umsetzung_klasse": "GPG8",
@@ -1202,7 +1877,9 @@ window.MATRIX = {
               "didaktik": "Aktualität / Lebensweltbezug (Klafki1996)",
               "verweis": "Klafki kategoriale Bildung + Aktualitätsprinzip GPJE: politische Bildung knüpft an aktuelle Lebens- und Gesellschaftsfragen an. — Anwendung hier: ein realer Gesetzentwurf verankert das Verfahren in der politischen Gegenwart."
             }
-          ]
+          ],
+          "ke_wortlaut_quelle": "Sekundärquelle (KE-Datenbank · LP+-Quelle für GPG8 aktuell nicht verbatim verifiziert)",
+          "inhalte_lp": []
         },
         {
           "ke_id": "GPG8-LB3-02",
@@ -1211,7 +1888,7 @@ window.MATRIX = {
           "operator": "erläutern / diskutieren / erkennen",
           "afb": "II–III",
           "inhalte": "Widerstand im NS (Weiße Rose, 20. Juli, Bonhoeffer, Pater Mayer); Zivilcourage; Menschenrechte.",
-          "fundort": "LehrplanPLUS MS Bayern · GPG8 · LB3 Politik und Gesellschaft",
+          "fundort": "LehrplanPLUS MS Bayern · GPG8 · LB3 Politik und Gesellschaft (Wortlaut über Sekundärquelle)",
           "umsetzung_typ": "idealtypisch",
           "umsetzung_titel": "UE „Warum riskierten sie ihr Leben?“ — Widerstandsgruppen und der Transfer auf Zivilcourage heute",
           "umsetzung_klasse": "GPG8",
@@ -1262,7 +1939,9 @@ window.MATRIX = {
               "didaktik": "Aktualität / Lebensweltbezug (Klafki1996)",
               "verweis": "Klafki kategoriale Bildung + Aktualitätsprinzip GPJE: politische Bildung knüpft an aktuelle Lebens- und Gesellschaftsfragen an. — Anwendung hier: der Transfer auf gegenwärtige Zivilcourage-Situationen verankert das historische Thema in der Lebenswelt."
             }
-          ]
+          ],
+          "ke_wortlaut_quelle": "Sekundärquelle (KE-Datenbank · LP+-Quelle für GPG8 aktuell nicht verbatim verifiziert)",
+          "inhalte_lp": []
         }
       ]
     },
@@ -1270,8 +1949,8 @@ window.MATRIX = {
       "ke_anzahl": 2,
       "jgst": "GPG8",
       "lb": "LB4",
-      "lb_titel": "Wirtschaft und Recht",
-      "status": "ausgearbeitet",
+      "lb_titel": "Lebenswelt",
+      "quelle_status": "sekundaer",
       "kes": [
         {
           "ke_id": "GPG8-LB4-01",
@@ -1280,7 +1959,7 @@ window.MATRIX = {
           "operator": "beschreiben (R) / erklären (M) + beurteilen + diskutieren",
           "afb": "I→II + III",
           "inhalte": "politische Teilhabe (Wahlen, Parteien, Bürgerinitiativen).",
-          "fundort": "LehrplanPLUS MS Bayern · GPG8 · LB4 Lebenswelt",
+          "fundort": "LehrplanPLUS MS Bayern · GPG8 · LB4 Lebenswelt (Wortlaut über Sekundärquelle)",
           "umsetzung_typ": "idealtypisch",
           "umsetzung_titel": "UE „Wie kann ich mitmischen?“ — Beteiligungsformen als eigene Handlungsoptionen",
           "umsetzung_klasse": "GPG8",
@@ -1331,7 +2010,9 @@ window.MATRIX = {
               "didaktik": "Politische Urteilsbildung (GPJE2004)",
               "verweis": "GPJE 2004: Anforderungen an Nationale Bildungsstandards für den Fachunterricht politische Bildung. 3 Kompetenzdimensionen: politische Urteils- · Handlungs- · methodische Kompetenz. — Anwendung hier: Operator „beurteilen / diskutieren“ — Mitwirkungsmöglichkeiten werden bewertet, nicht nur aufgezählt."
             }
-          ]
+          ],
+          "ke_wortlaut_quelle": "Sekundärquelle (KE-Datenbank · LP+-Quelle für GPG8 aktuell nicht verbatim verifiziert)",
+          "inhalte_lp": []
         },
         {
           "ke_id": "GPG8-LB4-02",
@@ -1340,7 +2021,7 @@ window.MATRIX = {
           "operator": "analysieren / diskutieren",
           "afb": "II–III",
           "inhalte": "Wahlen; Wahlbeteiligung; Erstwähler.",
-          "fundort": "LehrplanPLUS MS Bayern · GPG8 · LB4 Lebenswelt",
+          "fundort": "LehrplanPLUS MS Bayern · GPG8 · LB4 Lebenswelt (Wortlaut über Sekundärquelle)",
           "umsetzung_typ": "idealtypisch",
           "umsetzung_titel": "Aktualstunde „Warum gehen junge Leute nicht wählen?“ — Statistikanalyse einer aktuellen Wahl",
           "umsetzung_klasse": "GPG8",
@@ -1387,16 +2068,27 @@ window.MATRIX = {
               "didaktik": "Pro-Contra-Debatte / politische Urteilsbildung (Massing)",
               "verweis": "P. Massing: Politische Bildung. Wochenschau-Verlag. Pro-Contra-Debatte als kategoriale Methode politischer Urteilsbildung. — Anwendung hier: Operator „diskutieren Gründe“ — Urteilsbildung über ein gesellschaftliches Problem."
             }
-          ]
+          ],
+          "ke_wortlaut_quelle": "Sekundärquelle (KE-Datenbank · LP+-Quelle für GPG8 aktuell nicht verbatim verifiziert)",
+          "inhalte_lp": []
         }
       ]
+    },
+    "GPG9_LB2": {
+      "ke_anzahl": 0,
+      "jgst": "GPG9",
+      "lb": "LB2",
+      "lb_titel": "Zeit und Wandel",
+      "quelle_status": "ausstehend",
+      "kes": [],
+      "hinweis": "LP+ Bayern MS GPG GPG9 LB2 — Quelle steht aus. Bitte ergänzen."
     },
     "GPG9_LB3": {
       "ke_anzahl": 1,
       "jgst": "GPG9",
       "lb": "LB3",
       "lb_titel": "Politik und Gesellschaft",
-      "status": "ausgearbeitet",
+      "quelle_status": "sekundaer",
       "kes": [
         {
           "ke_id": "GPG9-LB3-01",
@@ -1405,7 +2097,7 @@ window.MATRIX = {
           "operator": "darstellen / diskutieren (R) — + begründen (M)",
           "afb": "II–III",
           "inhalte": "nationale + internationale Friedenssicherung (UNO, NATO, Bundeswehr); humanitäre und militärische Einsätze.",
-          "fundort": "LehrplanPLUS MS Bayern · GPG9 · LB3 Politik und Gesellschaft",
+          "fundort": "LehrplanPLUS MS Bayern · GPG9 · LB3 Politik und Gesellschaft (Wortlaut über Sekundärquelle)",
           "umsetzung_typ": "idealtypisch",
           "umsetzung_titel": "UE „Wer sichert den Frieden?“ — Organisationen und ein aktueller Einsatz",
           "umsetzung_klasse": "GPG9",
@@ -1451,7 +2143,9 @@ window.MATRIX = {
               "didaktik": "Kompetenzstrukturmodell GPG (LPplusGPG)",
               "verweis": "LehrplanPLUS Bayern Mittelschule GPG-Fachprofil · 4 Gegenstandsbereiche × 6 prozessbezogene Kompetenzen · Doppeltagging-Prinzip. — Anwendung hier: Gegenstandsbereich „Ordnungssysteme“ auf internationaler Ebene; M-Operatorenprogression."
             }
-          ]
+          ],
+          "ke_wortlaut_quelle": "Sekundärquelle (KE-Datenbank · LP+-Quelle für GPG9 aktuell nicht verbatim verifiziert)",
+          "inhalte_lp": []
         }
       ]
     },
@@ -1459,8 +2153,8 @@ window.MATRIX = {
       "ke_anzahl": 2,
       "jgst": "GPG9",
       "lb": "LB4",
-      "lb_titel": "Wirtschaft und Recht",
-      "status": "ausgearbeitet",
+      "lb_titel": "Lebenswelt",
+      "quelle_status": "sekundaer",
       "kes": [
         {
           "ke_id": "GPG9-LB4-01",
@@ -1469,7 +2163,7 @@ window.MATRIX = {
           "operator": "erklären (R) / analysieren (M) + diskutieren",
           "afb": "II→III (R→M) + III",
           "inhalte": "Migration und Integration (Ursachen, gesellschaftliche Herausforderungen).",
-          "fundort": "LehrplanPLUS MS Bayern · GPG9 · LB4 Lebenswelt — LB mit explizitem Multiperspektivitäts-Bezug",
+          "fundort": "LehrplanPLUS MS Bayern · GPG9 · LB4 Lebenswelt (Wortlaut über Sekundärquelle)",
           "umsetzung_typ": "idealtypisch",
           "umsetzung_titel": "Sequenz „Migration — Herausforderung und Chance“ — Push/Pull und regionale Maßnahmen",
           "umsetzung_klasse": "GPG9",
@@ -1515,7 +2209,9 @@ window.MATRIX = {
               "didaktik": "Aktualität / Lebensweltbezug (Klafki1996)",
               "verweis": "Klafki kategoriale Bildung + Aktualitätsprinzip GPJE: politische Bildung knüpft an aktuelle Lebens- und Gesellschaftsfragen an. — Anwendung hier: regionale Maßnahmen verankern das globale Thema im Nahraum der SuS."
             }
-          ]
+          ],
+          "ke_wortlaut_quelle": "Sekundärquelle (KE-Datenbank · LP+-Quelle für GPG9 aktuell nicht verbatim verifiziert)",
+          "inhalte_lp": []
         },
         {
           "ke_id": "GPG9-LB4-02",
@@ -1524,7 +2220,7 @@ window.MATRIX = {
           "operator": "recherchieren + bewerten (R) / + präsentieren + erörtern (M)",
           "afb": "II–III",
           "inhalte": "Analyse eines aktuellen Konfliktes aus unterschiedlichen Perspektiven.",
-          "fundort": "LehrplanPLUS MS Bayern · GPG9 · LB4 Lebenswelt",
+          "fundort": "LehrplanPLUS MS Bayern · GPG9 · LB4 Lebenswelt (Wortlaut über Sekundärquelle)",
           "umsetzung_typ": "idealtypisch",
           "umsetzung_titel": "Projekt „Konflikt im Fokus“ — selbst gewählter aktueller Konflikt, mehrperspektivisch",
           "umsetzung_klasse": "GPG9",
@@ -1575,30 +2271,114 @@ window.MATRIX = {
               "didaktik": "Quellenarbeit (Pandel2017)",
               "verweis": "H.-J. Pandel: Geschichtsdidaktik. Wochenschau 2017. Quellenkritik als Kernkompetenz historisch-politischen Lernens. — Anwendung hier: selbstständige Recherche als fachspezifische Arbeitsweise; M zusätzlich „präsentieren“."
             }
-          ]
+          ],
+          "ke_wortlaut_quelle": "Sekundärquelle (KE-Datenbank · LP+-Quelle für GPG9 aktuell nicht verbatim verifiziert)",
+          "inhalte_lp": []
+        }
+      ]
+    },
+    "GPG10_LB2": {
+      "ke_anzahl": 4,
+      "jgst": "GPG10",
+      "lb": "LB2",
+      "lb_titel": "Zeit und Wandel",
+      "quelle_status": "verbatim",
+      "kes": [
+        {
+          "ke_id": "GPG10-LB2-01",
+          "ke_wortlaut": "stellen wichtige Meilensteine der Entstehung der Menschenrechte dar und diskutieren ihre Bedeutung für ein Leben in Freiheit.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG10 · LB2 Zeit und Wandel · verbatim",
+          "thema": "stellen wichtige Meilensteine der Entstehung der Menschenrechte dar und diskutie",
+          "operator": null,
+          "afb": null,
+          "inhalte_lp": [
+            "Meilensteine der Menschenrechte: Magna Charta Libertatum, Unabhängigkeitserklärung in den USA, Ende des Absolutismus und Französische Revolution, Grundrechte in der deutschen Verfassung, Charta der Vereinten Nationen",
+            "Ausgewähltes Land oder Raum (z. B. China, Russland, USA, Indien): politisches System, Gesellschaft",
+            "Ursachen eines aktuellen, globalen Konfliktes und Einflussnahme der beteiligten Länder"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG10 · LB2 Zeit und Wandel",
+          "umsetzung_typ": "planned",
+          "ues": [],
+          "bezuege": []
+        },
+        {
+          "ke_id": "GPG10-LB2-02",
+          "ke_wortlaut": "erläutern an einem ausgewählten Land oder Raum der Erde das gegenwärtige politische System und stellen dessen Entwicklungsstand dar.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG10 · LB2 Zeit und Wandel · verbatim",
+          "thema": "erläutern an einem ausgewählten Land oder Raum der Erde das gegenwärtige politis",
+          "operator": null,
+          "afb": null,
+          "inhalte_lp": [
+            "Meilensteine der Menschenrechte: Magna Charta Libertatum, Unabhängigkeitserklärung in den USA, Ende des Absolutismus und Französische Revolution, Grundrechte in der deutschen Verfassung, Charta der Vereinten Nationen",
+            "Ausgewähltes Land oder Raum (z. B. China, Russland, USA, Indien): politisches System, Gesellschaft",
+            "Ursachen eines aktuellen, globalen Konfliktes und Einflussnahme der beteiligten Länder"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG10 · LB2 Zeit und Wandel",
+          "umsetzung_typ": "planned",
+          "ues": [],
+          "bezuege": []
+        },
+        {
+          "ke_id": "GPG10-LB2-03",
+          "ke_wortlaut": "erklären die Möglichkeiten gesellschaftlicher Teilhabe und politischer Mitwirkung einzelner Gruppen der Gesellschaft in einem ausgewählten Land.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG10 · LB2 Zeit und Wandel · verbatim",
+          "thema": "erklären die Möglichkeiten gesellschaftlicher Teilhabe und politischer Mitwirkun",
+          "operator": null,
+          "afb": null,
+          "inhalte_lp": [
+            "Meilensteine der Menschenrechte: Magna Charta Libertatum, Unabhängigkeitserklärung in den USA, Ende des Absolutismus und Französische Revolution, Grundrechte in der deutschen Verfassung, Charta der Vereinten Nationen",
+            "Ausgewähltes Land oder Raum (z. B. China, Russland, USA, Indien): politisches System, Gesellschaft",
+            "Ursachen eines aktuellen, globalen Konfliktes und Einflussnahme der beteiligten Länder"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG10 · LB2 Zeit und Wandel",
+          "umsetzung_typ": "planned",
+          "ues": [],
+          "bezuege": []
+        },
+        {
+          "ke_id": "GPG10-LB2-04",
+          "ke_wortlaut": "beschreiben Ursachen und Verlauf eines aktuellen globalen Konfliktes und entwickeln mögliche Begründungen für die resultierende politische Rolle.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG10 · LB2 Zeit und Wandel · verbatim",
+          "thema": "beschreiben Ursachen und Verlauf eines aktuellen globalen Konfliktes und entwick",
+          "operator": null,
+          "afb": null,
+          "inhalte_lp": [
+            "Meilensteine der Menschenrechte: Magna Charta Libertatum, Unabhängigkeitserklärung in den USA, Ende des Absolutismus und Französische Revolution, Grundrechte in der deutschen Verfassung, Charta der Vereinten Nationen",
+            "Ausgewähltes Land oder Raum (z. B. China, Russland, USA, Indien): politisches System, Gesellschaft",
+            "Ursachen eines aktuellen, globalen Konfliktes und Einflussnahme der beteiligten Länder"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG10 · LB2 Zeit und Wandel",
+          "umsetzung_typ": "planned",
+          "ues": [],
+          "bezuege": []
         }
       ]
     },
     "GPG10_LB3": {
-      "ke_anzahl": 2,
+      "ke_anzahl": 4,
       "jgst": "GPG10",
       "lb": "LB3",
       "lb_titel": "Politik und Gesellschaft",
-      "status": "ausgearbeitet",
+      "quelle_status": "verbatim",
       "kes": [
         {
           "ke_id": "GPG10-LB3-01",
           "ke_wortlaut": "definieren die Grund- und Menschenrechte als schützenswerte Basis gesellschaftlichen Zusammenlebens.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG10 · LB3 Politik und Gesellschaft · verbatim",
           "thema": "Grund- und Menschenrechte — schützenswerte Basis",
           "operator": "definieren",
           "afb": "III (normativ)",
-          "inhalte": "Garantie und Schutz der Grund- und Menschenrechte.",
-          "fundort": "LehrplanPLUS MS Bayern · GPG10 · LB3 Politik und Gesellschaft (M-Zug)",
+          "inhalte_lp": [
+            "Garantie und Schutz der Grund- und Menschenrechte",
+            "Einsatz der UN bei Menschenrechtsverletzungen anhand eines aktuellen Beispiels",
+            "Funktion und Aufgaben des Bundesverfassungsgerichts",
+            "Formen des Extremismus (z. B. Links- und Rechtsextremismus, Dschihadismus)"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG10 · LB3 Politik und Gesellschaft",
           "umsetzung_typ": "idealtypisch",
           "umsetzung_titel": "UE „Was sind unsere Rechte wert?“ — Grundrechte als normative Basis",
           "umsetzung_klasse": "GPG10 (M-Zug)",
           "umsetzung_datum": "",
-          "umsetzung_quelle": "idealtypisch — kein eigenes GPG10-Schriftwesen vorliegend",
           "ues": [
             {
               "nr": 1,
@@ -1644,17 +2424,22 @@ window.MATRIX = {
         },
         {
           "ke_id": "GPG10-LB3-02",
-          "ke_wortlaut": "stellen die Rolle des Bundesverfassungsgerichts in unserem politischen System dar und erörtern seine Bedeutung für den Schutz der Grund- und Menschenrechte in Deutschland an einem selbst recherchierten Beispiel.",
+          "ke_wortlaut": "erörtern Möglichkeiten der Intervention durch die Staatengemeinschaft bei anhaltenden Menschenrechtsverletzungen.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG10 · LB3 Politik und Gesellschaft · verbatim",
           "thema": "Bundesverfassungsgericht — Rolle im politischen System",
           "operator": "darstellen / erörtern",
           "afb": "II–III",
-          "inhalte": "Funktion und Aufgaben des Bundesverfassungsgerichts; Grundrechtsschutz.",
-          "fundort": "LehrplanPLUS MS Bayern · GPG10 · LB3 Politik und Gesellschaft (M-Zug)",
+          "inhalte_lp": [
+            "Garantie und Schutz der Grund- und Menschenrechte",
+            "Einsatz der UN bei Menschenrechtsverletzungen anhand eines aktuellen Beispiels",
+            "Funktion und Aufgaben des Bundesverfassungsgerichts",
+            "Formen des Extremismus (z. B. Links- und Rechtsextremismus, Dschihadismus)"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG10 · LB3 Politik und Gesellschaft",
           "umsetzung_typ": "idealtypisch",
           "umsetzung_titel": "Fallanalyse „Karlsruhe entscheidet“ — ein selbst recherchiertes BVerfG-Urteil",
           "umsetzung_klasse": "GPG10 (M-Zug)",
           "umsetzung_datum": "",
-          "umsetzung_quelle": "idealtypisch — kein eigenes GPG10-Schriftwesen vorliegend",
           "ues": [
             {
               "nr": 1,
@@ -1701,29 +2486,71 @@ window.MATRIX = {
               "verweis": "J. Detjen: Politische Bildung. Geschichte und Gegenwart in Deutschland. Oldenbourg 2007. Mündigkeit als Bildungsziel (Kant-Anschluss). — Anwendung hier: Operator „erörtern“ + Selbstrecherche — eigenständiges politisches Urteilen."
             }
           ]
+        },
+        {
+          "ke_id": "GPG10-LB3-03",
+          "ke_wortlaut": "stellen die Rolle des Bundesverfassungsgerichts in unserem politischen System dar und erörtern seine Bedeutung für den Schutz.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG10 · LB3 Politik und Gesellschaft · verbatim",
+          "thema": "stellen die Rolle des Bundesverfassungsgerichts in unserem politischen System da",
+          "operator": null,
+          "afb": null,
+          "inhalte_lp": [
+            "Garantie und Schutz der Grund- und Menschenrechte",
+            "Einsatz der UN bei Menschenrechtsverletzungen anhand eines aktuellen Beispiels",
+            "Funktion und Aufgaben des Bundesverfassungsgerichts",
+            "Formen des Extremismus (z. B. Links- und Rechtsextremismus, Dschihadismus)"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG10 · LB3 Politik und Gesellschaft",
+          "umsetzung_typ": "planned",
+          "ues": [],
+          "bezuege": []
+        },
+        {
+          "ke_id": "GPG10-LB3-04",
+          "ke_wortlaut": "entwickeln Erklärungen für die Existenz unterschiedlicher Formen von Extremismus und Radikalisierung.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG10 · LB3 Politik und Gesellschaft · verbatim",
+          "thema": "entwickeln Erklärungen für die Existenz unterschiedlicher Formen von Extremismus",
+          "operator": null,
+          "afb": null,
+          "inhalte_lp": [
+            "Garantie und Schutz der Grund- und Menschenrechte",
+            "Einsatz der UN bei Menschenrechtsverletzungen anhand eines aktuellen Beispiels",
+            "Funktion und Aufgaben des Bundesverfassungsgerichts",
+            "Formen des Extremismus (z. B. Links- und Rechtsextremismus, Dschihadismus)"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG10 · LB3 Politik und Gesellschaft",
+          "umsetzung_typ": "planned",
+          "ues": [],
+          "bezuege": []
         }
       ]
     },
     "GPG10_LB4": {
-      "ke_anzahl": 1,
+      "ke_anzahl": 5,
       "jgst": "GPG10",
       "lb": "LB4",
-      "lb_titel": "Wirtschaft und Recht",
-      "status": "ausgearbeitet",
+      "lb_titel": "Lebenswelt",
+      "quelle_status": "verbatim",
       "kes": [
         {
           "ke_id": "GPG10-LB4-01",
-          "ke_wortlaut": "stellen den Prozess der politischen Willensbildung dar und erproben Einfluss- und Beteiligungsmöglichkeiten politischer Mitwirkung.",
+          "ke_wortlaut": "formulieren ihre grundlegenden politischen und gesellschaftlichen Rechte und begründen die Existenz von Interessenvertretungen.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG10 · LB4 Lebenswelt · verbatim",
           "thema": "Politische Willensbildung — Beteiligung erproben",
           "operator": "darstellen / erproben",
           "afb": "II + Anwendung/Handlung",
-          "inhalte": "politische Willensbildung und Mitwirkung.",
-          "fundort": "LehrplanPLUS MS Bayern · GPG10 · LB4 Lebenswelt (M-Zug) — einzige Stufe mit „erproben“ über den Nahraum hinaus",
+          "inhalte_lp": [
+            "UN-Kinderrechtskonvention, Umsetzung und Einhaltung der Kinderrechte",
+            "Schutz von Kinder- und Jugendrechten (z. B. Leistungen der Kinder- und Jugendhilfe)",
+            "Nationale und internationale Organisationen zum Schutz von Kinderrechten",
+            "Geschlechterrollen früher und heute (Gender)",
+            "Politische Willensbildung und Mitwirkung der Bürgerinnen und Bürger in der Demokratie"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG10 · LB4 Lebenswelt",
           "umsetzung_typ": "idealtypisch",
           "umsetzung_titel": "Projekt „Mischen wir mit“ — politische Willensbildung darstellen und erproben",
           "umsetzung_klasse": "GPG10 (M-Zug)",
           "umsetzung_datum": "",
-          "umsetzung_quelle": "idealtypisch — kein eigenes GPG10-Schriftwesen vorliegend",
           "ues": [
             {
               "nr": 1,
@@ -1780,6 +2607,82 @@ window.MATRIX = {
               "verweis": "LehrplanPLUS Bayern Mittelschule GPG-Fachprofil · 4 Gegenstandsbereiche × 6 prozessbezogene Kompetenzen · Doppeltagging-Prinzip. — Anwendung hier: prozessbezogene Kompetenz „Anwenden und handeln“ explizit adressiert."
             }
           ]
+        },
+        {
+          "ke_id": "GPG10-LB4-02",
+          "ke_wortlaut": "vergleichen ihre gesellschaftliche Teilhabe und Rechte als Jugendliche in einem Rechtsstaat mit Kindern und Jugendlichen anderer Länder.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG10 · LB4 Lebenswelt · verbatim",
+          "thema": "vergleichen ihre gesellschaftliche Teilhabe und Rechte als Jugendliche in einem ",
+          "operator": null,
+          "afb": null,
+          "inhalte_lp": [
+            "UN-Kinderrechtskonvention, Umsetzung und Einhaltung der Kinderrechte",
+            "Schutz von Kinder- und Jugendrechten (z. B. Leistungen der Kinder- und Jugendhilfe)",
+            "Nationale und internationale Organisationen zum Schutz von Kinderrechten",
+            "Geschlechterrollen früher und heute (Gender)",
+            "Politische Willensbildung und Mitwirkung der Bürgerinnen und Bürger in der Demokratie"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG10 · LB4 Lebenswelt",
+          "umsetzung_typ": "planned",
+          "ues": [],
+          "bezuege": []
+        },
+        {
+          "ke_id": "GPG10-LB4-03",
+          "ke_wortlaut": "erläutern Aufgaben und Leistungen von Familie und staatlichen Einrichtungen zum Schutz von Kinderrechten.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG10 · LB4 Lebenswelt · verbatim",
+          "thema": "erläutern Aufgaben und Leistungen von Familie und staatlichen Einrichtungen zum ",
+          "operator": null,
+          "afb": null,
+          "inhalte_lp": [
+            "UN-Kinderrechtskonvention, Umsetzung und Einhaltung der Kinderrechte",
+            "Schutz von Kinder- und Jugendrechten (z. B. Leistungen der Kinder- und Jugendhilfe)",
+            "Nationale und internationale Organisationen zum Schutz von Kinderrechten",
+            "Geschlechterrollen früher und heute (Gender)",
+            "Politische Willensbildung und Mitwirkung der Bürgerinnen und Bürger in der Demokratie"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG10 · LB4 Lebenswelt",
+          "umsetzung_typ": "planned",
+          "ues": [],
+          "bezuege": []
+        },
+        {
+          "ke_id": "GPG10-LB4-04",
+          "ke_wortlaut": "stellen die unterschiedlichen Rollenbilder von Frauen und Männern früher und heute in gesellschaftlichen Zusammenhängen gegenüber.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG10 · LB4 Lebenswelt · verbatim",
+          "thema": "stellen die unterschiedlichen Rollenbilder von Frauen und Männern früher und heu",
+          "operator": null,
+          "afb": null,
+          "inhalte_lp": [
+            "UN-Kinderrechtskonvention, Umsetzung und Einhaltung der Kinderrechte",
+            "Schutz von Kinder- und Jugendrechten (z. B. Leistungen der Kinder- und Jugendhilfe)",
+            "Nationale und internationale Organisationen zum Schutz von Kinderrechten",
+            "Geschlechterrollen früher und heute (Gender)",
+            "Politische Willensbildung und Mitwirkung der Bürgerinnen und Bürger in der Demokratie"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG10 · LB4 Lebenswelt",
+          "umsetzung_typ": "planned",
+          "ues": [],
+          "bezuege": []
+        },
+        {
+          "ke_id": "GPG10-LB4-05",
+          "ke_wortlaut": "stellen den Prozess der politischen Willensbildung dar und erproben Einfluss- und Beteiligungsmöglichkeiten.",
+          "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG10 · LB4 Lebenswelt · verbatim",
+          "thema": "stellen den Prozess der politischen Willensbildung dar und erproben Einfluss- un",
+          "operator": null,
+          "afb": null,
+          "inhalte_lp": [
+            "UN-Kinderrechtskonvention, Umsetzung und Einhaltung der Kinderrechte",
+            "Schutz von Kinder- und Jugendrechten (z. B. Leistungen der Kinder- und Jugendhilfe)",
+            "Nationale und internationale Organisationen zum Schutz von Kinderrechten",
+            "Geschlechterrollen früher und heute (Gender)",
+            "Politische Willensbildung und Mitwirkung der Bürgerinnen und Bürger in der Demokratie"
+          ],
+          "fundort": "LehrplanPLUS MS Bayern · GPG10 · LB4 Lebenswelt",
+          "umsetzung_typ": "planned",
+          "ues": [],
+          "bezuege": []
         }
       ]
     }
