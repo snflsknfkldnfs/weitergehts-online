@@ -598,11 +598,12 @@
         // Diagramm-Block: SVG-Markup als String aus lokaler data.js (trusted) +
         // Caption + ARIA-Label. createContextualFragment statt innerHTML, weil
         // safer (kein Script-Execution per Spec) und gleichzeitig SVG-parsing-fähig.
+        // Range.selectNodeContents arbeitet auf parent-losen Nodes (selectNode tut das nicht).
         const fig = h('figure', { class: 'rb-svg', role: 'img', 'aria-label': it.titel || 'Diagramm' });
         const inner = h('div', { class: 'rb-svg__inner' });
         if (it.svg) {
           const range = document.createRange();
-          range.selectNode(inner);
+          range.selectNodeContents(inner);
           inner.appendChild(range.createContextualFragment(it.svg));
         }
         fig.appendChild(inner);
