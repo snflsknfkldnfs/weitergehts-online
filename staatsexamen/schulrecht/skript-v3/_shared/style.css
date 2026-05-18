@@ -156,7 +156,8 @@ button { font-family: inherit; }
 .print-btn {
   margin-top: 8px;
   display: inline-flex; align-items: center;
-  border: 1px solid var(--hairline);
+  /* WCAG 1.4.11: UI-Border ≥ 3:1 — auf --mute2 (3:1) gehoben (war: --hairline = 1.8:1) */
+  border: 1px solid var(--mute2);
   background: transparent;
   padding: 6px 10px;
   cursor: pointer;
@@ -413,10 +414,9 @@ button { font-family: inherit; }
 .toc-link--sub .toc-sub-norm {
   display: block;
   font-family: var(--mono);
-  font-size: 9.5px;
+  font-size: 10.5px; /* WCAG 1.4.3 — auf 10.5 angehoben (war 9.5 + opacity 0.75 = ~3.9:1 FAIL) */
   letter-spacing: 0.3px;
   color: var(--muted);
-  opacity: 0.75;
   margin-top: 1px;
 }
 .toc-link--sub:hover { color: var(--accent); }

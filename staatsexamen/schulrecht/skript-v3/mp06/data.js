@@ -1,7 +1,7 @@
 // MP_06 — Rechte und Pflichten der Lehrkräfte
 window.MODULE = {
   id: 'mp06',
-  zalgm: 'ZALGM § 17',
+  zalgm: 'ZALGM § 16 Nr. 6',
   schwerpunkt: ['6.1 Doppelstruktur', '6.2 Aufsicht (HF)', '6.3 Schriftwesen', '6.4 Fortbildung', '6.5 Personalvertretung'],
   titel: 'Rechte + Pflichten',
   titel2: 'der Lehrkräfte.',
@@ -92,7 +92,7 @@ window.MODULE = {
       sachverhalt: 'EB von Tim fragt im Elterngespräch: „Wie hat denn Lara abgeschnitten? Mein Tim hat doch genauso lange gelernt!"',
       knackpunkte: [
         '§ 14 LDO Drittauskunfts-Verbot: Auskunft über DRITTE SuS unzulässig.',
-        'Eigene Tim-Note: Auskunft regulär ({{Art. 56/2 BayEUG}} Nr. 4 i.V.m. Art. 52/1).',
+        'Eigene Tim-Note: Auskunft regulär (Art. 56/2 BayEUG Nr. 4 i.V.m. Art. 52/1 — Cross-Ref MP_05 A.3).',
         'Lara-Note geht andere Eltern nichts an — auch nicht „nur kurz vergleichend".',
         'KEIN „Notengeheimnis" ggü. eigenen EB — aber kein VERGLEICHENDER Bezug auf Dritte. Cross-Ref MP_05 Hannah-Fall.',
       ],

@@ -3,8 +3,8 @@
 
 window.MODULE = {
   id: 'mp05',
-  zalgm: 'ZALGM § 16',
-  schwerpunkt: ['Schwerpunkt 5.1', '5.4 ndM', '5.6 SMV'],
+  zalgm: 'ZALGM § 16 Nr. 5',
+  schwerpunkt: ['5.1 Doppelstruktur', '5.2 Erziehungs-/Ordnungsmaßnahmen', '5.3 Anhörungs- + Auskunftsrecht', '5.4 ndM-Spezifika', '5.5 Nachteilsausgleich vs. Notenschutz'],
   titel: 'Rechte und Pflichten',
   titel2: 'der Schüler:innen.',
   abriss:
@@ -19,7 +19,7 @@ window.MODULE = {
     'Die Schülermitverantwortung ist verfasste Demokratie-Einübung und kein politisches Mandat.',
   ],
 
-  deck: { cards: 42, normebenen: 5, hochprior: 8, fallen: 10 },
+  deck: { cards: 8, normebenen: 5, hochprior: 8, fallen: 10 },
 
   kartografie: [
     {

@@ -12,7 +12,7 @@ window.MODULE = {
 
   kurz: [
     'Trias SuS/EB/Schule: Eltern wählen Schulart ({{Art. 44 BayEUG}} — gebunden an **Eignung + Leistung** nach BV Art. 132). Schule **berät** strukturell ({{Art. 78 BayEUG}}). Lehrerkonferenz entscheidet über Vorrücken/Wiederholung ({{Art. 53 BayEUG}}).',
-    'LNW-Grundlagen {{Art. 52/1 BayEUG}}: Art, Zahl, Umfang vorher bekanntgeben; Bewertung mit Notenstufe + Begründung eröffnen. **LNW dienen Bewertung UND Beratung.** Notenstufen Art. 52/2 verbatim — „in besonderem Maße / voll / im Allgemeinen / im Ganzen noch / Grundkenntnisse vorhanden".',
+    'LNW-Grundlagen {{Art. 52 BayEUG}} Abs. 1: Art, Zahl, Umfang vorher bekanntgeben; Bewertung mit Notenstufe + Begründung eröffnen. **LNW dienen Bewertung UND Beratung.** Notenstufen Art. 52/2 verbatim — „in besonderem Maße / voll / im Allgemeinen / im Ganzen noch / Grundkenntnisse vorhanden".',
     '§ 12/3 MSO KRITISCH-Falle: **zwei Direktionalitäten** in einem Absatz — LK→SuS „**angemessene Frist**" (KEIN konkreter Wert), SuS→Schule „**innerhalb einer Woche unverändert**". Eltern-Kenntnisnahme als Zwischenschritt.',
     'M-Zug-Schwellen § 7 MSO: M7 ≤ **2,66** (D+M+E) · M8/M9/M10 ≤ **2,33**. M10 zusätzlich Quali-Voraussetzung. Rückkehr MS↔M-Zug jederzeit (§ 8 MSO). Art. 7a BayEUG ≠ 7b ≠ Art. 30a/4 (Profil Inklusion) — drei verschiedene Anker.',
     'Vier MS-Abschlüsse + Quabi: **ESA** (Ende 9., MSO §§19ff) · **Quali** (50% Jahr + 50% Prüfung + Projekt, KMBek QA-MS) · **MSA** (M10) · **Praxisklassen-Abschluss** ({{§ 22 MSO}} — 9. **Schulbesuchsjahr**, Projektnote DOPPELT) · **Quabi** ({{§ 34 MSO}} — Quali + Berufsabschluss ≥3,0 + Englisch „ausreichend").',

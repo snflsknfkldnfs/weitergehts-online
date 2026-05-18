@@ -55,7 +55,7 @@
     }
     .hub-hero__lead {
       font-family: var(--serif);
-      font-size: 20px;
+      font-size: clamp(16px, 1.6vw, 20px);
       line-height: 1.55;
       max-width: 720px;
       color: var(--ink);
@@ -180,7 +180,7 @@
       font-family: var(--mono);
       font-size: 10.5px;
       padding: 3px 8px;
-      border: 1px solid var(--rule);
+      border: 1px solid var(--hairline); /* WCAG 1.4.11: stärker als --rule für UI-Komponente */
       color: var(--muted);
       letter-spacing: 0.5px;
       border-radius: 2px;
@@ -265,12 +265,13 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-hub">Zum Hauptinhalt springen</a>
   <div class="meta-bar">
     <span><a href="/staatsexamen/schulrecht/">Schulrecht</a> · Skript V3 · Hub-Index</span>
     <span><a href="/staatsexamen/schulrecht/skripts/">mkdocs-Version vergleichen →</a></span>
   </div>
 
-  <div class="hub-shell">
+  <main id="main-hub" class="hub-shell">
     <header class="hub-hero">
       <div class="hub-hero__zalgm">Skript V3 · 2. Staatsexamen · Mittelschule Bayern</div>
       <h1 class="hub-hero__title">Schulrecht.</h1>
@@ -302,7 +303,7 @@
           <span class="hub-card__id">MP_01</span>
           <span class="hub-card__zalgm">ZALGM § 16 Nr. 1</span>
         </div>
-        <h3 class="hub-card__title">Messer im Unterricht<em>· Beschlagnahme + Strafrechts-Schnittstelle</em></h3>
+        <h3 class="hub-card__title">Messer im Unterricht<em>Beschlagnahme + Strafrechts-Schnittstelle</em></h3>
         <p class="hub-card__abriss">Drei-Pfad-Struktur: Sicherstellung § 23/2 BaySchO · Schulrechtl. Maßnahmen Art. 86–88 · Strafrecht. Drei Zeitfenster: 0–30 min / Tag / Folgetag.</p>
         <div class="hub-card__norms">
           <span class="hub-card__norm hub-card__norm--accent">§ 23/2 BaySchO</span>
@@ -320,7 +321,7 @@
           <span class="hub-card__id">MP_02</span>
           <span class="hub-card__zalgm">ZALGM § 16 Nr. 2</span>
         </div>
-        <h3 class="hub-card__title">Hausaufgaben<em>· Beschwerde-Verfahren</em></h3>
+        <h3 class="hub-card__title">Hausaufgaben<em>Beschwerde-Verfahren</em></h3>
         <p class="hub-card__abriss">§ 28 BaySchO Drei-Sätze. Angemessene Zeit + Differenzierung § 32. Beschwerde-Eskalation Art. 56/2 BayEUG. HA ≠ LNW Drift-Falle.</p>
         <div class="hub-card__norms">
           <span class="hub-card__norm hub-card__norm--accent">§ 28 BaySchO</span>
@@ -338,7 +339,7 @@
           <span class="hub-card__id">MP_03</span>
           <span class="hub-card__zalgm">ZALGM § 16 Nr. 3</span>
         </div>
-        <h3 class="hub-card__title">Gliederung des Bildungssystems<em>· Bildungswege</em></h3>
+        <h3 class="hub-card__title">Gliederung des Bildungssystems<em>Bildungswege</em></h3>
         <p class="hub-card__abriss">Schulwesen + Schularten · KiGa → GS · Einschulung + Schulpflicht · Übertritt + Durchlässigkeit · MS-Abschlüsse + Aufstiegswege.</p>
         <div class="hub-card__norms">
           <span class="hub-card__norm hub-card__norm--accent">Art. 35 BayEUG</span>
@@ -356,7 +357,7 @@
           <span class="hub-card__id">MP_04</span>
           <span class="hub-card__zalgm">ZALGM § 16 Nr. 4</span>
         </div>
-        <h3 class="hub-card__title">Schulartenrecht<em>· Schullaufbahn-Steuerung</em></h3>
+        <h3 class="hub-card__title">Schulartenrecht<em>Schullaufbahn-Steuerung</em></h3>
         <p class="hub-card__abriss">Trias SuS/EB/Schule. Vorrücken Art. 53. § 12/3 MSO zwei Direktionalitäten. M-Zug-Schwellen. Vier MS-Abschlüsse + Quabi.</p>
         <div class="hub-card__norms">
           <span class="hub-card__norm hub-card__norm--accent">Art. 53 BayEUG</span>
@@ -374,7 +375,7 @@
           <span class="hub-card__id">MP_05</span>
           <span class="hub-card__zalgm">ZALGM § 16 Nr. 5</span>
         </div>
-        <h3 class="hub-card__title">Rechte und Pflichten der SuS<em>· Erziehungs- und Ordnungsmaßnahmen</em></h3>
+        <h3 class="hub-card__title">Rechte und Pflichten der SuS<em>Erziehungs- und Ordnungsmaßnahmen</em></h3>
         <p class="hub-card__abriss">Doppelstruktur SuS-Pflichten + -Rechte. EM/OM Verhältnismäßigkeit. Anhörungsrecht. Notenschutz vs. Nachteilsausgleich (BVerwG 2015).</p>
         <div class="hub-card__norms">
           <span class="hub-card__norm hub-card__norm--accent">Art. 86 BayEUG</span>
@@ -392,7 +393,7 @@
           <span class="hub-card__id">MP_06</span>
           <span class="hub-card__zalgm">ZALGM § 16 Nr. 6</span>
         </div>
-        <h3 class="hub-card__title">Rechte und Pflichten der Lehrkräfte<em>· LDO + Personalvertretung</em></h3>
+        <h3 class="hub-card__title">Rechte und Pflichten der Lehrkräfte<em>LDO + Personalvertretung</em></h3>
         <p class="hub-card__abriss">Doppelstruktur Beamten- + Lehrer-Pflichten. Aufsichtspflicht § 5 LDO. Auskunfts-/Verschwiegenheits-Trias § 14 LDO. Streikverbot Art. 33/5 GG.</p>
         <div class="hub-card__norms">
           <span class="hub-card__norm hub-card__norm--accent">§ 14 LDO</span>
@@ -410,7 +411,7 @@
           <span class="hub-card__id">MP_07</span>
           <span class="hub-card__zalgm">ZALGM § 16 Nr. 7</span>
         </div>
-        <h3 class="hub-card__title">Disziplinarrecht<em>· Haftung im Schuldienst</em></h3>
+        <h3 class="hub-card__title">Disziplinarrecht<em>Haftung im Schuldienst</em></h3>
         <p class="hub-card__abriss">Haftungsdreieck Zivil/Disziplinar/Strafrecht. Amtshaftung § 839 BGB + Art. 34 GG. BayDG 5+2 Stufen. ne bis in idem nur „allgemeine Strafgesetze".</p>
         <div class="hub-card__norms">
           <span class="hub-card__norm hub-card__norm--accent">Art. 34 GG</span>
@@ -428,7 +429,7 @@
           <span class="hub-card__id">MP_08</span>
           <span class="hub-card__zalgm">ZALGM § 16 Nr. 8</span>
         </div>
-        <h3 class="hub-card__title">Kooperation Bildung<em>· + Betreuung</em></h3>
+        <h3 class="hub-card__title">Kooperation Bildung<em>+ Betreuung</em></h3>
         <p class="hub-card__abriss">MSD ≠ FöS · Lernort Art. 41 (Eltern!) · Schulberatung Art. 78 · vier Säulen Betreuung (3 Rechtsregime) · GTS-Antragsprinzip · FL Art. 60.</p>
         <div class="hub-card__norms">
           <span class="hub-card__norm hub-card__norm--accent">Art. 21 BayEUG</span>
@@ -446,7 +447,7 @@
           <span class="hub-card__id">MP_09</span>
           <span class="hub-card__zalgm">ZALGM § 16 Nr. 9</span>
         </div>
-        <h3 class="hub-card__title">Datenschutz<em>· + Schülerakte</em></h3>
+        <h3 class="hub-card__title">Datenschutz<em>+ Schülerakte</em></h3>
         <p class="hub-card__abriss">Auskunfts-Trias § 14/3 LDO · § 41/1 BaySchO · Art. 15 DSGVO. Drittauskunfts-Verbot § 14/4. § 203 StGB NICHT pauschal. KUG: 4 Ausnahmen, Klassenfoto nicht.</p>
         <div class="hub-card__norms">
           <span class="hub-card__norm hub-card__norm--accent">§ 14/4 LDO</span>
@@ -503,12 +504,15 @@
       <span>Skript V3 · 2. Staatsexamen MS Bayern · Schulrecht</span>
       <span><a href="/staatsexamen/schulrecht/" style="border-bottom: 1px dotted var(--muted); text-decoration: none;">← Zurück zur Schulrecht-Übersicht</a></span>
     </footer>
-  </div>
+  </main>
 
   <script>
-    // Defensive: ensure cards are tab-navigable
+    // Defensive: clean aria-label from card title (em-block creates raw "·" without space)
     document.querySelectorAll('.hub-card').forEach(card => {
-      card.setAttribute('aria-label', card.querySelector('.hub-card__title').textContent.trim());
+      const title = card.querySelector('.hub-card__title');
+      const main = title.childNodes[0]?.textContent?.trim() || '';
+      const em = title.querySelector('em')?.textContent?.replace(/^·\s*/, '').trim() || '';
+      card.setAttribute('aria-label', em ? `${main} — ${em}` : main);
     });
   </script>
 </body>

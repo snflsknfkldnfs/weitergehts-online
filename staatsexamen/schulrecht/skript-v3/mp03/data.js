@@ -1,7 +1,7 @@
 // MP_03 — Gliederung Bildungssystem · Bildungswege
 window.MODULE = {
   id: 'mp03',
-  zalgm: 'ZALGM § 16 Nr. 2',
+  zalgm: 'ZALGM § 16 Nr. 3',
   schwerpunkt: ['3.1 Schulwesen', '3.2 KiGa→GS', '3.3 Einschulung + Schulpflicht', '3.4 Übertritt', '3.5 MS-Abschlüsse'],
   titel: 'Gliederung Bildungs-',
   titel2: 'system + Bildungswege.',
