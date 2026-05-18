@@ -15,6 +15,57 @@ window.MODULE_BODIES = {
     ]},
 
     { type: 'h', text: 'Schularten-Katalog ({{Art. 6 BayEUG}})' },
+
+    { type: 'svg', titel: 'Schularten-Treppe nach Jahrgangsstufen',
+      caption: 'allgemein-bildend · beruflich · sonderpäd.',
+      svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" width="600" preserveAspectRatio="xMidYMid meet">
+  <text x="30" y="20" font-size="9.5" letter-spacing="1.4" class="muted">JGST.</text>
+  <text x="30" y="44" font-size="10" font-weight="500">1</text>
+  <text x="30" y="64" font-size="10" font-weight="500">4</text>
+  <text x="30" y="100" font-size="10" font-weight="500">5</text>
+  <text x="30" y="160" font-size="10" font-weight="500">9</text>
+  <text x="30" y="180" font-size="10" font-weight="500">10</text>
+  <text x="30" y="220" font-size="10" font-weight="500">11</text>
+  <text x="30" y="266" font-size="10" font-weight="500">13</text>
+  <line x1="55" y1="34" x2="55" y2="280" class="rule-line"/>
+
+  <text x="115" y="20" text-anchor="middle" font-size="9.5" letter-spacing="1.4" data-accent="true" font-weight="600">GS</text>
+  <rect x="70" y="32" width="90" height="50" class="box"/>
+  <text x="115" y="58" text-anchor="middle" font-size="11" font-weight="600">Grundschule</text>
+  <text x="115" y="74" text-anchor="middle" font-size="9" class="muted">Art. 7 BayEUG</text>
+
+  <text x="200" y="92" text-anchor="middle" font-size="9.5" letter-spacing="1.2" data-accent="true" font-weight="600">MS</text>
+  <rect x="170" y="100" width="100" height="80" class="box"/>
+  <text x="220" y="122" text-anchor="middle" font-size="10.5" font-weight="600">Mittelschule</text>
+  <text x="220" y="138" text-anchor="middle" font-size="9" class="muted">Art. 7a BayEUG</text>
+  <text x="220" y="154" text-anchor="middle" font-size="9" class="muted">5–9 / M-Zug</text>
+  <text x="220" y="168" text-anchor="middle" font-size="9" class="muted">5–10</text>
+
+  <text x="310" y="92" text-anchor="middle" font-size="9.5" letter-spacing="1.2" data-accent="true" font-weight="600">RS</text>
+  <rect x="280" y="100" width="80" height="80" class="box"/>
+  <text x="320" y="124" text-anchor="middle" font-size="10.5" font-weight="600">Realschule</text>
+  <text x="320" y="140" text-anchor="middle" font-size="9" class="muted">Art. 8 BayEUG</text>
+  <text x="320" y="156" text-anchor="middle" font-size="9" class="muted">5–10</text>
+
+  <text x="410" y="92" text-anchor="middle" font-size="9.5" letter-spacing="1.2" data-accent="true" font-weight="600">GYM</text>
+  <rect x="370" y="100" width="100" height="180" class="box"/>
+  <text x="420" y="122" text-anchor="middle" font-size="10.5" font-weight="600">Gymnasium</text>
+  <text x="420" y="138" text-anchor="middle" font-size="9" class="muted">Art. 9 BayEUG</text>
+  <text x="420" y="154" text-anchor="middle" font-size="9" class="muted">G9</text>
+  <text x="420" y="172" text-anchor="middle" font-size="9" class="muted">5–13</text>
+
+  <text x="525" y="212" text-anchor="middle" font-size="9.5" letter-spacing="1.2" data-accent="true" font-weight="600">BERUFL.</text>
+  <rect x="485" y="220" width="80" height="60" class="box"/>
+  <text x="525" y="240" text-anchor="middle" font-size="10" font-weight="600">FOS · BOS</text>
+  <text x="525" y="256" text-anchor="middle" font-size="9" class="muted">Art. 16 + 17</text>
+  <text x="525" y="270" text-anchor="middle" font-size="9" class="muted">11–13</text>
+
+  <line x1="55" y1="298" x2="565" y2="298" class="rule-line"/>
+  <text x="115" y="316" text-anchor="middle" font-size="9" class="muted">+ Förderschulen Art. 19–24 (7 Schwerpunkte) · BS Art. 11 · WS Art. 13 · Schulen f. Kranke Art. 41/2</text>
+  <text x="430" y="316" text-anchor="middle" font-size="9" class="muted">parallel</text>
+</svg>`
+    },
+
     { type: 'bullets', items: [
       '**Allgemein bildend**: GS (Art. 7, Jgst. 1–4) · MS (Art. 7a, 5–9/M-Zug 5–10) · RS (Art. 8, 5–10) · Gym (Art. 9, 5–13 G9).',
       '**Beruflich** (Art. 11–18): BS · BFS · WS · FS · FOS · BOS · FA.',

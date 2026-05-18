@@ -357,6 +357,21 @@ window.MODULE = {
         { label: 'Grenzen SMV', cards: 3 },
       ],
     },
+    {
+      id: 'A5',
+      kuerzel: 'A.5',
+      titel: 'Erziehungs- + Ordnungsmaßnahmen',
+      anriss: 'EOM strikt subsidiär nach EM. 6-Stufen-Katalog Art. 86 Abs. 2. Verfahrens-Trias Art. 88 mit Anhörung. Mitarbeitsnote ≠ Verhaltensstrafe. Nachteilsausgleich vs. Notenschutz nach BVerwG 2015.',
+      norm: 'Art. 86 BayEUG',
+      status: 'open',
+      cards: 8,
+      subblocks: [
+        { label: 'EOM-Stufenmodell', cards: 2 },
+        { label: 'EM vs. OM', cards: 2 },
+        { label: 'Verfahrens-Trias Art. 88', cards: 1 },
+        { label: 'Nachteilsausgleich/Notenschutz', cards: 3 },
+      ],
+    },
   ],
 
   // Glossar (Auszug — finale Quelle: includes/normen-glossar.md)

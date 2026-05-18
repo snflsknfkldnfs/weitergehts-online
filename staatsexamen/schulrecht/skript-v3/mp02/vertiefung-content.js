@@ -97,6 +97,51 @@ window.MODULE_BODIES = {
     ]},
 
     { type: 'h', text: 'Drei-Stufen-Beschwerde-Kette' },
+
+    { type: 'svg', titel: 'Beschwerde-Kette · Art. 56/2 Nr. 5 BayEUG',
+      caption: 'nacheinander — sequenziell, nicht parallel',
+      svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 220" width="600" preserveAspectRatio="xMidYMid meet">
+  <text x="300" y="18" text-anchor="middle" font-size="9.5" letter-spacing="1.8" class="muted">SEQUENZIELL · NICHT PARALLEL</text>
+  <g>
+    <rect x="40" y="40" width="150" height="80" class="box"/>
+    <text x="115" y="60" text-anchor="middle" font-size="10.5" letter-spacing="1.2" data-accent="true" font-weight="600">STUFE 1</text>
+    <line x1="50" y1="68" x2="180" y2="68" class="rule-line"/>
+    <text x="115" y="88" text-anchor="middle" font-size="11" font-weight="600">Lehrkraft</text>
+    <text x="115" y="104" text-anchor="middle" font-size="9.5" class="muted">KL bei Querthemen</text>
+    <text x="115" y="116" text-anchor="middle" font-size="9.5" class="muted">Erstadressat</text>
+  </g>
+  <path d="M 200 80 L 230 80" class="rule-line" stroke-width="1.5" marker-end="url(#arr2)"/>
+  <text x="215" y="72" text-anchor="middle" font-size="8.5" class="muted">scheitert</text>
+  <g>
+    <rect x="225" y="40" width="150" height="80" class="box"/>
+    <text x="300" y="60" text-anchor="middle" font-size="10.5" letter-spacing="1.2" data-accent="true" font-weight="600">STUFE 2</text>
+    <line x1="235" y1="68" x2="365" y2="68" class="rule-line"/>
+    <text x="300" y="88" text-anchor="middle" font-size="11" font-weight="600">Schulleitung</text>
+    <text x="300" y="104" text-anchor="middle" font-size="9.5" class="muted">Art. 57 BayEUG</text>
+    <text x="300" y="116" text-anchor="middle" font-size="9.5" class="muted">systemische Klärung</text>
+  </g>
+  <path d="M 385 80 L 415 80" class="rule-line" stroke-width="1.5" marker-end="url(#arr2)"/>
+  <text x="400" y="72" text-anchor="middle" font-size="8.5" class="muted">scheitert</text>
+  <g>
+    <rect x="410" y="40" width="150" height="80" class="box"/>
+    <text x="485" y="60" text-anchor="middle" font-size="10.5" letter-spacing="1.2" data-accent="true" font-weight="600">STUFE 3</text>
+    <line x1="420" y1="68" x2="550" y2="68" class="rule-line"/>
+    <text x="485" y="88" text-anchor="middle" font-size="11" font-weight="600">Schulforum</text>
+    <text x="485" y="104" text-anchor="middle" font-size="9.5" class="muted">Art. 69 BayEUG</text>
+    <text x="485" y="116" text-anchor="middle" font-size="9.5" class="muted">letzte schul-int. Instanz</text>
+  </g>
+  <line x1="40" y1="155" x2="560" y2="155" class="rule-line"/>
+  <text x="300" y="178" text-anchor="middle" font-size="10" font-weight="600" data-accent="true">Eltern-Beschwerde getrennt</text>
+  <text x="300" y="195" text-anchor="middle" font-size="9.5" class="muted">Art. 76 BayEUG · Elternbeirat Art. 64/65</text>
+  <text x="300" y="210" text-anchor="middle" font-size="9.5" class="muted">Lockerung bei Befangenheit zulässig</text>
+  <defs>
+    <marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor"/>
+    </marker>
+  </defs>
+</svg>`
+    },
+
     { type: 'table',
       head: ['Stufe', 'Adressat', 'Hinweis'],
       rows: [

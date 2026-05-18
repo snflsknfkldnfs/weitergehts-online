@@ -234,4 +234,103 @@ window.MODULE_BODIES = {
         a: 'Grenze: SMV hat KEIN politisches Mandat — keine Stellungnahmen zu allgemein-politischen Fragen, keine parteipolitische Agitation. SMV-Veranstaltungen unter schulischer Aufsicht ({{§ 10 BaySchO}}) — Aufsichtspflicht + gesetzlicher Versicherungsschutz greifen.' },
     ]},
   ],
+
+  A5: [
+    { type: 'lead', text:
+      'Erziehungs- und Ordnungsmaßnahmen sind die institutionalisierte Verhaltens-Reaktion der Schule — strikt **subsidiär nach Erziehungsmaßnahmen** ({{Art. 86 BayEUG}} Abs. 1), strikt **abgegrenzt von der Mitarbeitsnote** (Art. 52/3 — fachbezogen). Der **Stufen-Katalog Abs. 2** hat 6 Eskalationsstufen — die Anwendung verlangt Verhältnismäßigkeit + Anhörung ({{Art. 88 BayEUG}}).'
+    },
+
+    { type: 'svg', titel: 'EOM-Stufenmodell · Art. 86 Abs. 2 BayEUG',
+      caption: '6 Eskalationsstufen · Verhältnismäßigkeit + Anhörung Art. 88',
+      svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 280" width="600" preserveAspectRatio="xMidYMid meet">
+  <text x="30" y="22" font-size="9.5" letter-spacing="1.4" class="muted">LEICHT</text>
+  <text x="540" y="22" font-size="9.5" letter-spacing="1.4" class="muted" text-anchor="end">SCHWER</text>
+  <line x1="60" y1="32" x2="560" y2="32" class="rule-line"/>
+
+  <g>
+    <rect x="40" y="48" width="80" height="50" class="box"/>
+    <text x="80" y="68" text-anchor="middle" font-size="9.5" letter-spacing="1" data-accent="true" font-weight="600">1</text>
+    <text x="80" y="86" text-anchor="middle" font-size="10" font-weight="500">Verweis</text>
+  </g>
+  <g>
+    <rect x="125" y="60" width="90" height="60" class="box"/>
+    <text x="170" y="80" text-anchor="middle" font-size="9.5" letter-spacing="1" data-accent="true" font-weight="600">2</text>
+    <text x="170" y="98" text-anchor="middle" font-size="10" font-weight="500">verschärfter</text>
+    <text x="170" y="110" text-anchor="middle" font-size="10" font-weight="500">Verweis</text>
+  </g>
+  <g>
+    <rect x="220" y="80" width="100" height="70" class="box"/>
+    <text x="270" y="100" text-anchor="middle" font-size="9.5" letter-spacing="1" data-accent="true" font-weight="600">3</text>
+    <text x="270" y="118" text-anchor="middle" font-size="10" font-weight="500">Versetzung in</text>
+    <text x="270" y="130" text-anchor="middle" font-size="10" font-weight="500">Parallelklasse</text>
+  </g>
+  <g>
+    <rect x="325" y="100" width="100" height="80" class="box"/>
+    <text x="375" y="120" text-anchor="middle" font-size="9.5" letter-spacing="1" data-accent="true" font-weight="600">4</text>
+    <text x="375" y="138" text-anchor="middle" font-size="10" font-weight="500">Ausschluss</text>
+    <text x="375" y="152" text-anchor="middle" font-size="9.5" class="muted">Veranstaltung</text>
+    <text x="375" y="166" text-anchor="middle" font-size="9.5" class="muted">≤ 3 Mo</text>
+  </g>
+  <g>
+    <rect x="430" y="120" width="65" height="90" class="box"/>
+    <text x="462" y="140" text-anchor="middle" font-size="9.5" letter-spacing="1" data-accent="true" font-weight="600">5</text>
+    <text x="462" y="158" text-anchor="middle" font-size="9.5" font-weight="500">Androhung</text>
+    <text x="462" y="172" text-anchor="middle" font-size="9.5" font-weight="500">Entlassung</text>
+  </g>
+  <g>
+    <rect x="500" y="140" width="65" height="100" class="box"/>
+    <text x="532" y="160" text-anchor="middle" font-size="9.5" letter-spacing="1" data-accent="true" font-weight="600">6</text>
+    <text x="532" y="178" text-anchor="middle" font-size="10" font-weight="500">Entlassung</text>
+    <text x="532" y="194" text-anchor="middle" font-size="9" class="muted">ultima ratio</text>
+  </g>
+
+  <line x1="60" y1="248" x2="560" y2="248" class="rule-line"/>
+  <text x="180" y="266" text-anchor="middle" font-size="9.5" class="muted">Erziehungsmaßnahmen subsidiär</text>
+  <text x="420" y="266" text-anchor="middle" font-size="9.5" class="muted">Verfahrens-Trias Art. 88: Anhörung → Entscheidung → EB-Mitteilung</text>
+</svg>`
+    },
+
+    { type: 'h', text: 'Erziehungsmaßnahmen vs. Ordnungsmaßnahmen' },
+    { type: 'table',
+      head: ['Aspekt', 'Erziehungsmaßnahme', 'Ordnungsmaßnahme'],
+      rows: [
+        ['**Norm**', 'KEINE Aufzählung — alle pädagogisch-zumutbaren', '{{Art. 86 BayEUG}} Abs. 2 — abschließender 6-Stufen-Katalog'],
+        ['**Beispiele**', 'Tadel · Nacharbeit · Mündl. Klärung · Sitzplatzwechsel', 'Verweis · v. Verweis · Versetzung · Ausschluss · Entlassung'],
+        ['**Verfahren**', 'formlos, KEINE Anhörungspflicht', '{{Art. 88 BayEUG}}: Anhörung + Begründung + EB-Mitteilung'],
+        ['**Subsidiarität**', 'IMMER zuerst', 'NUR wenn Erziehungsmaßnahmen ausgeschöpft / aussichtslos'],
+        ['**Ne-bis-in-idem**', '—', 'für IDENTISCHES Verhalten KEINE Doppel-OM ({{Art. 103/3 GG}} analog)'],
+      ],
+    },
+
+    { type: 'h', text: 'Verfahrens-Trias {{Art. 88 BayEUG}}' },
+    { type: 'numbered', items: [
+      '**Anhörungspflicht**: SuS persönlich anhören VOR Entscheidung. Bei minderjährigen SuS: EB hinzuziehen.',
+      '**Entscheidung + Begründung**: schriftliche Verfügung mit Tat-Schilderung + Subsumtion + Begründung der Verhältnismäßigkeit.',
+      '**Mitteilung an EB**: bei minderjährigen SuS Pflicht.',
+    ]},
+
+    { type: 'h', text: 'Nachteilsausgleich vs. Notenschutz · BVerwG 2015' },
+    { type: 'table',
+      head: ['', 'Nachteilsausgleich', 'Notenschutz'],
+      rows: [
+        ['**Was wird verändert?**', 'Prüfungs-**Bedingungen** (Zeit, Hilfsmittel, Format)', 'Bewertung bestimmter **Teilleistungen** ausgesetzt (z.B. Rechtschreibung bei LRS)'],
+        ['**Bewertungsmaßstab**', 'BLEIBT identisch', 'WIRD modifiziert'],
+        ['**Zeugnis-Vermerk?**', 'NEIN', 'JA (BVerwG 2015) — sonst Vergleichbarkeits-Täuschung'],
+        ['**Anspruchsgrundlage**', '{{§ 33/34 BaySchO}} + Art. 3/3 GG', '{{§ 33/34 BaySchO}} + Art. 52a BayEUG'],
+      ],
+    },
+
+    { type: 'warn', titel: '⚠ Fallen EOM + Nachteilsausgleich', text:
+      '**Mitarbeitsnote ≠ OM** — Verhalten nie in fachliche Note. **Subsidiarität**: erst EM, dann OM. **Anhörungspflicht Art. 88** — nicht überspringbar. **Nachteilsausgleich OHNE Zeugnis-Vermerk** — Notenschutz MIT (BVerwG 2015). Wer beide gleich behandelt, fällt in die Falle.',
+    },
+
+    { type: 'selfcheck', items: [
+      { q: 'Nenne die sechs Stufen aus {{Art. 86 BayEUG}} Abs. 2 in aufsteigender Schwere.',
+        a: '(1) Verweis · (2) verschärfter Verweis · (3) Versetzung in Parallelklasse · (4) Ausschluss von einer Schulveranstaltung (≤ 3 Mo) · (5) Androhung der Entlassung · (6) Entlassung. Verhältnismäßigkeit pro Stufe; Erziehungsmaßnahmen subsidiär VOR EOM.' },
+      { q: 'Welche drei Verfahrensschritte verlangt {{Art. 88 BayEUG}}?',
+        a: '(1) Anhörung der SuS persönlich (bei Minderjährigen EB hinzuziehen) · (2) schriftliche Entscheidung mit Begründung der Verhältnismäßigkeit · (3) Mitteilung an EB.' },
+      { q: 'Lukas (8. Kl., LRS) — die Eltern wollen, dass Rechtschreibung in Deutsch nicht bewertet wird. Nachteilsausgleich oder Notenschutz? Zeugnis-Konsequenz?',
+        a: 'Notenschutz (Aussetzung der Teilleistungs-Bewertung). Nach BVerwG 2015 muss das im Zeugnis vermerkt werden — sonst Diskriminierung der Mitschüler:innen ohne LRS. Reiner Nachteilsausgleich (z.B. Zeitverlängerung) wäre vermerkfrei.' },
+    ]},
+  ],
 };

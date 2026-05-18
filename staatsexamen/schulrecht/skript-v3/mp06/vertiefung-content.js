@@ -117,6 +117,55 @@ window.MODULE_BODIES = {
     },
 
     { type: 'h', text: 'Drei Bereiche § 14 LDO' },
+
+    { type: 'svg', titel: 'Verschwiegenheits-Trias § 14 LDO',
+      caption: 'Verschwiegenheit · Presse-Hoheit SL · Drittauskunfts-Verbot',
+      svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 240" width="600" preserveAspectRatio="xMidYMid meet">
+  <text x="300" y="18" text-anchor="middle" font-size="9.5" letter-spacing="1.8" class="muted">§ 14 LDO · DREI BEREICHE</text>
+  <line x1="100" y1="26" x2="100" y2="42" class="rule-line"/>
+  <line x1="300" y1="26" x2="300" y2="42" class="rule-line"/>
+  <line x1="500" y1="26" x2="500" y2="42" class="rule-line"/>
+  <g>
+    <rect x="20" y="42" width="160" height="180" class="box"/>
+    <text x="100" y="62" text-anchor="middle" font-size="10.5" font-weight="600" data-accent="true">1 · VERSCHWIEGENHEIT</text>
+    <line x1="30" y1="72" x2="170" y2="72" class="rule-line"/>
+    <text x="100" y="92" text-anchor="middle" font-size="10">§ 14/1 LDO</text>
+    <text x="100" y="106" text-anchor="middle" font-size="10" class="muted">§ 37 BeamtStG</text>
+    <text x="100" y="132" text-anchor="middle" font-size="10" font-weight="500">über dienstlich</text>
+    <text x="100" y="148" text-anchor="middle" font-size="10" font-weight="500">bekanntes</text>
+    <line x1="30" y1="162" x2="170" y2="162" class="rule-line"/>
+    <text x="100" y="184" text-anchor="middle" font-size="10" font-weight="600" data-accent="true">post-dienstlich</text>
+    <text x="100" y="200" text-anchor="middle" font-size="9.5" class="muted">auch nach Ruhestand</text>
+    <text x="100" y="214" text-anchor="middle" font-size="9.5" class="muted">fortwirkend</text>
+  </g>
+  <g>
+    <rect x="220" y="42" width="160" height="180" class="box"/>
+    <text x="300" y="62" text-anchor="middle" font-size="10.5" font-weight="600" data-accent="true">2 · PRESSE-HOHEIT</text>
+    <line x1="230" y1="72" x2="370" y2="72" class="rule-line"/>
+    <text x="300" y="92" text-anchor="middle" font-size="10">§ 14/2 LDO</text>
+    <text x="300" y="118" text-anchor="middle" font-size="10" font-weight="500">Medien · Behörden</text>
+    <text x="300" y="134" text-anchor="middle" font-size="10" font-weight="500">NUR durch SL</text>
+    <line x1="230" y1="148" x2="370" y2="148" class="rule-line"/>
+    <text x="300" y="170" text-anchor="middle" font-size="9.5" class="muted">einzelne LK darf</text>
+    <text x="300" y="184" text-anchor="middle" font-size="9.5" class="muted">nicht selbständig</text>
+    <text x="300" y="198" text-anchor="middle" font-size="9.5" class="muted">Stellung nehmen</text>
+  </g>
+  <g>
+    <rect x="420" y="42" width="160" height="180" class="box"/>
+    <text x="500" y="62" text-anchor="middle" font-size="10.5" font-weight="600" data-accent="true">3 · DRITTAUSKUNFT</text>
+    <line x1="430" y1="72" x2="570" y2="72" class="rule-line"/>
+    <text x="500" y="92" text-anchor="middle" font-size="10">§ 14/4 LDO</text>
+    <text x="500" y="118" text-anchor="middle" font-size="10" font-weight="500">eigene SuS · EB ✓</text>
+    <text x="500" y="134" text-anchor="middle" font-size="10" font-weight="500">Außenstehende ✗</text>
+    <line x1="430" y1="148" x2="570" y2="148" class="rule-line"/>
+    <text x="500" y="170" text-anchor="middle" font-size="9.5" class="muted">ohne Rechtsgrundl.</text>
+    <text x="500" y="184" text-anchor="middle" font-size="9.5" class="muted">kein Bericht über</text>
+    <text x="500" y="198" text-anchor="middle" font-size="9.5" class="muted">SuS an Dritte</text>
+  </g>
+  <text x="300" y="234" text-anchor="middle" font-size="9.5" letter-spacing="1.4" class="muted">KEIN „NOTENGEHEIMNIS" — Notenauskunft an SuS/EB regulär (Art. 56/2)</text>
+</svg>`
+    },
+
     { type: 'bullets', items: [
       '**Verschwiegenheit**: über dienstlich bekannt gewordene Angelegenheiten. **Post-dienstlich fortwirkend** — auch nach Ruhestand.',
       '**Presse-Hoheit SL**: Öffentlichkeitsauskunft ggü. Medien/Behörden NUR durch SL. Einzelne LK darf nicht selbständig Stellung nehmen.',
