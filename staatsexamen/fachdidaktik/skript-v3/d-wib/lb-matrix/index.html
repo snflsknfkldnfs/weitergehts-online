@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GB-Matrix WiB — Fachdidaktik · Skript V3</title>
+  <meta name="description" content="GB×Jgst-Matrix Wirtschaft und Beruf · 13-Phasen-Standard · 2. Staatsexamen MS Bayern" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3E%3Ctext y=%2713%27 font-family=%27monospace%27 font-size=%2715%27 fill=%27%234a5d3b%27%3E%E2%86%92%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../../schulrecht/skript-v3/_shared/style.css" />
+  <style>
+    .mx-shell {
+      max-width: 1520px;
+      margin: 0 auto;
+      padding: 32px max(20px, 4vw) 64px;
+    }
+    .mx-hero {
+      border-top: 3px solid var(--ink);
+      border-bottom: 1px solid var(--rule);
+      padding: 36px 0 28px;
+      margin-bottom: 36px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 36px;
+      align-items: end;
+    }
+    .mx-hero__zalgm { font-family: var(--mono); font-size: 11px; letter-spacing: 1.8px; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 12px; }
+    .mx-hero__title { font-family: var(--serif); font-size: clamp(32px, 4.4vw, 56px); line-height: 1.05; letter-spacing: -0.015em; font-weight: 500; margin: 0 0 6px; }
+    .mx-hero__sub { font-family: var(--serif); font-style: italic; font-size: clamp(18px, 2vw, 24px); color: var(--muted); margin: 0 0 16px; }
+    .mx-hero__lead { font-family: var(--serif); font-size: clamp(14.5px, 1.4vw, 17px); line-height: 1.55; max-width: 720px; color: var(--ink); margin: 0; }
+    .mx-hero__legend { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.8px; text-transform: uppercase; color: var(--muted); display: flex; flex-direction: column; gap: 8px; align-items: end; }
+    .mx-hero__legend-item { display: flex; gap: 8px; align-items: center; }
+    .mx-hero__legend-dot { width: 12px; height: 12px; border-radius: 2px; border: 1px solid var(--hairline); }
+    .mx-hero__legend-dot--real { background: var(--accent); border-color: var(--accent); }
+    .mx-hero__legend-dot--ideal { background: var(--paper); border-color: var(--accent); }
+
+    .mx-grid-wrap { overflow-x: auto; border: 1px solid var(--rule); background: var(--paper); }
+    .mx-grid { display: grid; grid-template-columns: 90px repeat(6, minmax(220px, 1fr)); min-width: 1410px; }
+    .mx-cell { padding: 14px 18px; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); font-family: var(--serif); font-size: 13.5px; line-height: 1.5; color: var(--ink); position: relative; }
+    .mx-cell:last-child { border-right: none; }
+    .mx-cell--corner { font-family: var(--mono); font-size: 9.5px; letter-spacing: 1.4px; text-transform: uppercase; color: var(--muted); background: var(--bg); display: flex; align-items: end; justify-content: end; padding: 14px 14px 10px; }
+    .mx-cell--lb-head { background: var(--bg); font-family: var(--mono); font-size: 10.5px; letter-spacing: 1px; text-transform: uppercase; color: var(--ink); font-weight: 600; padding: 16px 18px 12px; }
+    .mx-cell--lb-head .mx-lb-id { color: var(--accent); display: block; font-size: 9.5px; margin-bottom: 4px; }
+    .mx-cell--jgst { background: var(--bg); font-family: var(--mono); font-size: 12px; letter-spacing: 1.2px; font-weight: 600; color: var(--accent); display: flex; align-items: center; padding: 14px 16px; }
+    .mx-cell--data { cursor: pointer; transition: background 0.12s, border-color 0.12s; display: flex; flex-direction: column; gap: 6px; }
+    .mx-cell--data:hover { background: var(--accent-soft, #e8ece2); box-shadow: inset 3px 0 0 var(--accent); }
+    .mx-cell--data:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; background: var(--accent-soft, #e8ece2); }
+    .mx-cell--data.mx-cell--leer { color: var(--muted); cursor: default; opacity: 0.55; }
+    .mx-cell__header { display: flex; gap: 8px; align-items: baseline; justify-content: space-between; }
+    .mx-cell__count { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.8px; color: var(--accent); font-weight: 600; }
+    .mx-cell__umsetzung { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.6px; color: var(--muted); text-transform: uppercase; }
+    .mx-cell__themas { display: flex; flex-direction: column; gap: 3px; margin-top: 4px; }
+    .mx-cell__thema { font-size: 13px; color: var(--ink); line-height: 1.4; }
+    .mx-cell__thema-id { font-family: var(--mono); font-size: 10px; color: var(--muted); margin-right: 6px; }
+
+    /* Slideover */
+    .mx-slideover-backdrop { position: fixed; inset: 0; background: rgba(12, 12, 10, 0.36); backdrop-filter: blur(2px); opacity: 0; pointer-events: none; transition: opacity 0.2s; z-index: 9000; }
+    .mx-slideover-backdrop[data-open="true"] { opacity: 1; pointer-events: auto; }
+    .mx-slideover { position: fixed; top: 0; right: 0; width: min(780px, 94vw); height: 100vh; background: var(--paper); border-left: 1px solid var(--rule); box-shadow: -4px 0 18px rgba(12, 12, 10, 0.08); transform: translateX(100%); transition: transform 0.24s ease-out; overflow-y: auto; z-index: 9001; }
+    .mx-slideover[data-open="true"] { transform: translateX(0); }
+    .mx-slideover__inner { padding: 28px 32px 60px; }
+    .mx-slideover__close { position: sticky; top: 0; right: 0; float: right; margin: -8px -10px 0 12px; background: var(--paper); border: 1px solid var(--hairline); padding: 6px 12px; font-family: var(--mono); font-size: 10px; letter-spacing: 1.2px; cursor: pointer; border-radius: 2px; }
+    .mx-slideover__close:hover { border-color: var(--ink); color: var(--accent); }
+    .mx-slideover__crumb { font-family: var(--mono); font-size: 10px; letter-spacing: 1.4px; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    .mx-slideover__title { font-family: var(--serif); font-size: 28px; line-height: 1.15; font-weight: 500; margin: 0 0 8px; }
+    .mx-slideover__sub { font-family: var(--serif); font-style: italic; font-size: 15px; color: var(--muted); margin: 0 0 24px; }
+
+    .ke-section { margin-bottom: 38px; padding-bottom: 28px; border-bottom: 1px solid var(--rule); }
+    .ke-section:last-child { border-bottom: none; }
+    .ke-section__head { display: flex; gap: 10px; align-items: baseline; margin-bottom: 10px; flex-wrap: wrap; }
+    .ke-section__id { font-family: var(--mono); font-size: 10.5px; letter-spacing: 1.2px; color: var(--accent); font-weight: 600; }
+    .ke-section__thema { font-family: var(--serif); font-size: 19px; font-weight: 500; flex: 1 1 100%; margin: 4px 0 0; }
+    .ke-section__meta { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.6px; text-transform: uppercase; color: var(--muted); padding: 1px 7px; border: 1px solid var(--hairline); border-radius: 2px; }
+    .ke-section__wortlaut { font-family: var(--serif); font-style: italic; font-size: 14.5px; line-height: 1.6; color: var(--muted); border-left: 3px solid var(--accent); padding: 8px 0 8px 14px; margin: 10px 0 4px; background: linear-gradient(to right, var(--accent-soft, #e8ece2), transparent); }
+    .ke-section__wortlaut::before { content: 'KE-Wortlaut (LP+ verbatim): '; font-family: var(--mono); font-size: 9.5px; font-style: normal; letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+    .ke-anker { background: transparent; color: var(--ink); font-style: normal; font-weight: 600; box-shadow: inset 0 -0.35em 0 var(--accent-soft, #e8ece2); padding: 0 1px; border-radius: 1px; }
+    .ke-section__anker-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; padding: 4px 0 6px 14px; margin: 0 0 6px; }
+    .ke-section__anker-label { font-family: var(--mono); font-size: 9.5px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-right: 4px; }
+    .ke-section__anker-chip { font-family: var(--mono); font-size: 11px; letter-spacing: 0.3px; color: var(--ink); background: var(--accent-soft, #e8ece2); padding: 2px 8px; border-radius: 11px; border: 1px solid var(--hairline); }
+    .ke-section__fundort { font-family: var(--mono); font-size: 10px; line-height: 1.4; letter-spacing: 0.3px; color: var(--muted); padding-left: 14px; margin: 0 0 18px; }
+    .ke-section__meta-row { display: flex; gap: 12px; flex-wrap: wrap; font-family: var(--serif); font-size: 13px; line-height: 1.45; margin: 4px 0 14px; color: var(--muted); }
+    .ke-section__meta-row strong { color: var(--ink); font-weight: 500; }
+    .ke-section__umsetzung-titel { font-family: var(--serif); font-size: 15.5px; font-weight: 600; color: var(--ink); margin: 4px 0 4px; }
+    .ke-section__umsetzung-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.4px; color: var(--muted); margin: 0 0 12px; }
+    .mx-section-h { font-family: var(--mono); font-size: 10.5px; letter-spacing: 1.4px; text-transform: uppercase; color: var(--accent); font-weight: 600; margin: 22px 0 10px; padding-bottom: 4px; border-bottom: 1px solid var(--hairline); }
+
+    .mx-ue { border: 1px solid var(--rule); border-left: 3px solid var(--accent); padding: 12px 14px 10px; margin-bottom: 8px; background: var(--paper); }
+    .mx-ue__head { display: flex; gap: 10px; align-items: baseline; margin-bottom: 6px; flex-wrap: wrap; }
+    .mx-ue__nr { font-family: var(--mono); font-size: 10.5px; font-weight: 600; color: var(--accent); letter-spacing: 1px; min-width: 26px; }
+    .mx-ue__titel { font-family: var(--serif); font-size: 14.5px; font-weight: 600; flex: 1; }
+    .mx-ue__meta { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.6px; text-transform: uppercase; color: var(--muted); padding: 1px 6px; border: 1px solid var(--hairline); border-radius: 2px; }
+    .mx-ue__inhalt { font-family: var(--serif); font-size: 13.5px; line-height: 1.5; margin: 0; }
+
+    /* Pilot-UE-Phasen-Rendering */
+    .mx-ue-pilot { background: linear-gradient(to right, var(--accent-soft, #e8ece2) 0%, var(--paper) 60%); }
+    .mx-ue-pilot .mx-ue__lernziel { font-family: var(--serif); font-style: italic; font-size: 13px; line-height: 1.5; color: var(--ink); margin: 4px 0 10px; padding-left: 14px; border-left: 2px solid var(--accent); }
+    .mx-ue-pilot .mx-ue__lernziel::before { content: 'Lernziel: '; font-family: var(--mono); font-size: 9.5px; font-style: normal; letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+    .mx-ue-phasen { display: grid; grid-template-columns: 130px 1fr; gap: 4px 14px; margin: 8px 0; font-size: 12.5px; line-height: 1.5; }
+    .mx-ue-phasen__label { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.8px; text-transform: uppercase; color: var(--accent); font-weight: 600; padding-top: 2px; }
+    .mx-ue-phasen__body { font-family: var(--serif); color: var(--ink); border-left: 1px solid var(--hairline); padding-left: 12px; }
+    .mx-ue-phasen--multi .mx-ue-phasen__label { color: var(--ink); border-left: 3px solid var(--accent); padding-left: 8px; padding-top: 1px; }
+    .mx-ue-phasen--multi > .mx-ue-phasen__body { padding-bottom: 3px; }
+
+    /* GPG-B3-Prinzipien-Chips */
+    .mx-ue-chips { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 10px 0 6px; padding-top: 8px; border-top: 1px dashed var(--rule); }
+    .mx-ue-chips__label { font-family: var(--mono); font-size: 9.5px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-right: 4px; }
+    .mx-ue-chip { font-family: var(--mono); font-size: 10px; letter-spacing: 0.4px; color: var(--accent); background: var(--paper); padding: 1px 7px; border-radius: 9px; border: 1px solid var(--accent); font-weight: 600; }
+
+    /* Kompetenzstrukturmodell-Achsen */
+    .mx-ue-kse { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; margin: 4px 0 4px; padding: 6px 0; font-family: var(--serif); font-size: 11.5px; color: var(--ink); }
+    .mx-ue-kse__label { font-family: var(--mono); font-size: 9.5px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-right: 4px; }
+    .mx-ue-kse__axis { line-height: 1.45; }
+    .mx-ue-kse__axis em { font-family: var(--mono); font-style: normal; font-size: 9.5px; letter-spacing: 0.5px; color: var(--accent); font-weight: 600; }
+
+    .mx-ue-meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 14px; margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--rule); font-size: 11.5px; font-family: var(--serif); }
+    .mx-ue-meta-grid b { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.6px; text-transform: uppercase; color: var(--muted); display: block; font-weight: 600; }
+
+    /* Phasen-Legende vor der UE-Liste */
+    .mx-phasen-legend { font-family: var(--serif); font-size: 12px; line-height: 1.5; color: var(--muted); margin: 6px 0 8px; padding: 6px 0; border-bottom: 1px dotted var(--hairline); }
+    .mx-phasen-legend__label { font-family: var(--mono); font-size: 9.5px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-right: 8px; }
+    .mx-phasen-keyline { list-style: none; padding: 4px 0 10px; margin: 0 0 12px; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 6px; border-bottom: 1px solid var(--hairline); }
+    .mx-phasen-keyline__item { font-family: var(--serif); font-size: 11px; line-height: 1.35; color: var(--ink); padding: 4px 8px; background: var(--bg); border-left: 2px solid var(--accent); }
+    .mx-phasen-keyline__nr { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.8px; text-transform: uppercase; color: var(--accent); font-weight: 600; display: block; margin-bottom: 2px; }
+    .mx-phasen-keyline__kurz { display: block; font-size: 10.5px; color: var(--muted); }
+
+    /* Quelle-Status-Badges */
+    .quelle-badge { font-family: var(--mono); font-size: 9px; letter-spacing: 0.8px; text-transform: uppercase; padding: 2px 6px; border-radius: 2px; font-weight: 600; }
+    .quelle-badge--verbatim { background: var(--accent-soft, #e8ece2); color: var(--accent); border: 1px solid var(--accent); }
+    .quelle-badge--sekundaer { background: var(--bg); color: var(--muted); border: 1px solid var(--hairline); }
+    .quelle-badge--ausstehend { background: var(--paper); color: var(--mute2); border: 1px dashed var(--mute2); }
+
+    /* Inhalte zu Kompetenzen (LP+) */
+    .ke-section__inhalte-lp { background: var(--bg); padding: 10px 14px; border-radius: 2px; margin: 12px 0; font-family: var(--serif); font-size: 13px; line-height: 1.5; }
+    .ke-section__inhalte-lp::before { content: 'LP+-Inhalte zu den Kompetenzen: '; font-family: var(--mono); font-size: 9.5px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent); font-weight: 600; display: block; margin-bottom: 4px; }
+    .ke-section__inhalte-lp ul { margin: 0; padding-left: 18px; }
+    .ke-section__inhalte-lp li { margin: 2px 0; }
+
+    .cell-ausstehend-note { font-family: var(--serif); font-style: italic; font-size: 13px; color: var(--muted); padding: 6px 0; }
+
+    .mx-bezug { padding-top: 6px; font-family: var(--serif); font-size: 13px; line-height: 1.5; }
+    .mx-bezug-item { margin: 6px 0; }
+    .mx-bezug-item__didaktik { font-family: var(--mono); font-size: 10px; letter-spacing: 1px; color: var(--accent); font-weight: 600; display: inline-block; margin-right: 6px; }
+
+    /* ─── v4 BUV-Template-Standards ─── */
+
+    /* Quelle-Note (Standards-Quellenangabe) */
+    .mx-quelle-note { font-family: var(--mono); font-size: 10px; line-height: 1.45; letter-spacing: 0.3px; color: var(--muted); margin: 4px 0 14px; padding: 6px 10px; background: var(--bg); border-left: 2px solid var(--hairline); }
+
+    /* Sequenz-Meta-Card */
+    .mx-section-h--sub { margin-top: 24px; font-size: 11px; }
+    .mx-seq-meta { display: flex; flex-direction: column; gap: 6px; padding: 12px 14px; margin: 8px 0 16px; background: var(--bg); border-left: 3px solid var(--accent); font-family: var(--serif); font-size: 12.5px; line-height: 1.55; }
+    .mx-seq-meta__row { display: grid; grid-template-columns: 200px 1fr; gap: 12px; align-items: baseline; padding: 4px 0; border-bottom: 1px dotted var(--hairline); }
+    .mx-seq-meta__row:last-child { border-bottom: none; }
+    .mx-seq-meta__k { font-family: var(--mono); font-size: 9.5px; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); font-weight: 600; padding-top: 2px; }
+    .mx-seq-meta__v { color: var(--ink); }
+    .mx-seq-meta__list { margin: 0; padding-left: 18px; font-style: italic; color: var(--ink); }
+    .mx-seq-meta__list li { margin: 2px 0; }
+
+    /* Sequenz-Tabelle (BUV-Template v4 Pflichtspalten) */
+    .mx-seq-tab-wrap { overflow-x: auto; margin: 8px 0 18px; border: 1px solid var(--rule); background: var(--paper); }
+    .mx-seq-tab { width: 100%; min-width: 920px; border-collapse: collapse; font-family: var(--serif); font-size: 11.5px; line-height: 1.4; }
+    .mx-seq-tab th { background: var(--bg); font-family: var(--mono); font-size: 9px; letter-spacing: 0.6px; text-transform: uppercase; color: var(--muted); font-weight: 600; text-align: left; padding: 8px 8px; border-bottom: 1px solid var(--rule); border-right: 1px solid var(--hairline); }
+    .mx-seq-tab td { padding: 8px 8px; border-bottom: 1px solid var(--hairline); border-right: 1px solid var(--hairline); vertical-align: top; color: var(--ink); }
+    .mx-seq-tab tr:last-child td { border-bottom: none; }
+    .mx-seq-tab td:last-child, .mx-seq-tab th:last-child { border-right: none; }
+    .mx-seq-tab__uze { font-family: var(--mono); font-weight: 600; color: var(--accent); font-size: 11px; white-space: nowrap; }
+    .mx-seq-tab__frage { font-style: italic; }
+    .mx-seq-tab__row--schwerpunkt { background: var(--accent-soft, #e8ece2); }
+    .mx-seq-tab__row--schwerpunkt td { font-weight: 600; }
+    .mx-seq-tab__row--schwerpunkt .mx-seq-tab__uze { color: var(--ink); }
+
+    /* UE-Frage-Titel (statt Aussage) */
+    .mx-ue__frage { font-family: var(--serif); font-style: italic; font-size: 14px; line-height: 1.45; color: var(--accent); margin: 4px 0 8px; padding-left: 8px; border-left: 2px dotted var(--accent); }
+    .mx-ue__frage::before { content: 'Stundenfrage: '; font-family: var(--mono); font-style: normal; font-size: 9.5px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-right: 4px; }
+
+    /* Mager-Lernziel 3-Komponenten */
+    .mx-ue__sz { margin: 8px 0 8px; padding: 10px 12px; background: var(--paper); border: 1px solid var(--hairline); border-left: 3px solid var(--accent); }
+    .mx-ue__sz-label { font-family: var(--mono); font-size: 9.5px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 6px; }
+    .mx-mager { font-family: var(--serif); font-size: 13px; line-height: 1.6; color: var(--ink); }
+    .mx-mager--compact { font-size: 12px; line-height: 1.5; }
+    .mx-mager__verhalten { font-weight: 500; }
+    .mx-mager__bedingung { color: var(--muted); }
+    .mx-mager__bedingung::before { content: '— '; }
+    .mx-mager__massstab { background: linear-gradient(to bottom, transparent 50%, var(--accent-soft, #e8ece2) 50%); padding: 0 2px; }
+
+    /* Teilziele-Liste */
+    .mx-tz-list { margin: 8px 0 10px; padding: 8px 10px 10px; border: 1px dashed var(--hairline); border-radius: 2px; }
+    .mx-tz-list__h { font-family: var(--mono); font-size: 9.5px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 6px; }
+    .mx-tz-list__ol { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+    .mx-tz { padding: 6px 8px; background: var(--paper); border-left: 2px solid var(--hairline); font-family: var(--serif); font-size: 12px; line-height: 1.5; color: var(--ink); display: flex; flex-direction: column; gap: 3px; }
+    .mx-tz--diff { border-left-color: var(--accent); background: var(--bg); }
+    .mx-tz__head { display: flex; gap: 6px; align-items: baseline; }
+    .mx-tz__nr { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.6px; color: var(--muted); font-weight: 600; min-width: 32px; }
+    .mx-tz__afb { font-family: var(--mono); font-size: 9px; letter-spacing: 0.6px; padding: 1px 5px; border-radius: 8px; border: 1px solid var(--hairline); color: var(--muted); }
+    .mx-tz__afb--i   { color: var(--accent); border-color: var(--accent); }
+    .mx-tz__afb--ii  { color: #b8770a; border-color: #b8770a; }
+    .mx-tz__afb--iii { color: #a83232; border-color: #a83232; }
+    .mx-tz__diff-tag { font-family: var(--mono); font-size: 9px; letter-spacing: 0.6px; color: var(--accent); background: var(--accent-soft, #e8ece2); padding: 1px 6px; border-radius: 8px; font-weight: 600; }
+    .mx-tz__body { font-size: 12px; }
+
+    /* Sozialform-Tag pro Phase */
+    .mx-ue-phasen__sozialform { display: inline-block; font-family: var(--mono); font-size: 9px; letter-spacing: 0.5px; color: var(--accent); background: var(--paper); padding: 1px 5px; border-radius: 8px; border: 1px solid var(--accent); margin-right: 6px; margin-bottom: 2px; font-weight: 600; }
+
+    /* Differenzierungs-Block · 4 Spuren */
+    .mx-diff-block { margin: 10px 0 4px; padding-top: 8px; border-top: 1px dashed var(--rule); }
+    .mx-diff-block__h { font-family: var(--mono); font-size: 9.5px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 6px; }
+    .mx-diff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 6px; }
+    .mx-diff-cell { display: flex; flex-direction: column; gap: 3px; padding: 6px 9px; background: var(--paper); border: 1px solid var(--hairline); border-top: 2px solid var(--hairline); font-family: var(--serif); font-size: 11.5px; line-height: 1.45; color: var(--ink); }
+    .mx-diff-cell--daz              { border-top-color: #4a7a8a; }
+    .mx-diff-cell--lrs              { border-top-color: #b8770a; }
+    .mx-diff-cell--leistungsschwach { border-top-color: #7a4a8a; }
+    .mx-diff-cell--leistungsstark   { border-top-color: var(--accent); }
+    .mx-diff-cell__label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.8px; text-transform: uppercase; color: var(--ink); font-weight: 600; }
+
+    /* Callouts (Personifikation + Tafelbild) */
+    .mx-callouts { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin: 8px 0 4px; }
+    .mx-callout { padding: 6px 9px; background: var(--bg); border-left: 2px solid var(--accent); font-family: var(--serif); font-size: 11.5px; line-height: 1.45; color: var(--ink); display: flex; flex-direction: column; gap: 2px; }
+    .mx-callout--pers { border-left-color: #7a4a8a; }
+    .mx-callout--tafel { border-left-color: #b8770a; }
+    .mx-callout__label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.8px; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+
+    @media (max-width: 900px) {
+      .mx-hero { grid-template-columns: 1fr; }
+      .mx-hero__legend { align-items: start; flex-direction: row; flex-wrap: wrap; gap: 14px; }
+      .mx-seq-meta__row { grid-template-columns: 1fr; gap: 2px; }
+      .mx-callouts { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#matrix-root">Zum Hauptinhalt springen</a>
+  <div class="meta-bar">
+    <span><a href="../">D-WiB</a> · GB-Matrix</span>
+    <span><a href="../../">Fachdidaktik · Skript V3</a></span>
+  </div>
+
+  <main id="matrix-root" class="mx-shell">
+    <header class="mx-hero">
+      <div>
+        <div class="mx-hero__zalgm">Fachdidaktik · WiB · LP+ GB-Matrix v1 · 13-Phasen-Standard</div>
+        <h1 class="mx-hero__title">GB × Jgst.</h1>
+        <p class="mx-hero__sub"><em>Arbeit · Berufsorientierung · Wirtschaft · Technik · Recht · Projekt — von Jgst. 5 bis 9.</em></p>
+        <p class="mx-hero__lead">
+          Kompetenzerwartungen aus dem LehrplanPLUS Bayern Mittelschule
+          <strong>Wirtschaft und Beruf</strong> — fünf Gegenstandsbereiche
+          (Arbeit · Berufsorientierung · Wirtschaft · Technik · Recht) +
+          übergreifender Lernbereich Projekt. WiB ist <strong>Leitfach des
+          Lernfelds Berufsorientierung</strong> an der Mittelschule. Klick auf eine
+          Zelle öffnet die KEs der Jgst×GB-Schnittmenge mit LP+-Wortlaut und
+          (sofern Pilot) Verlaufsplänen nach <strong>WiB-13-Phasen-Standard</strong>
+          (Moritz-Steigerwald 2018, Baustein GB):
+          Hinführung · Problemstufe · Zielangabe · Vermutungen · Lösungsplanung ·
+          <em>Lösung (Hauptphase)</em> · Präsentation · Erkenntnisstufe ·
+          Wertungsstufe · Zusammenfassung · Vermutungen prüfen · Transfer · Sicherung.
+          <strong>1 Pilot-Sequenz</strong> (Jgst. 8 GB Berufsorientierung —
+          »Anforderungsprofile analysieren«) mit Personifikation Lena, Mager-3-K-
+          Lernzielen und 4-Spuren-Differenzierung.
+        </p>
+      </div>
+      <div class="mx-hero__legend" aria-label="Legende">
+        <div class="mx-hero__legend-item"><span class="mx-hero__legend-dot mx-hero__legend-dot--real"></span><span>Pilot v1</span></div>
+        <div class="mx-hero__legend-item"><span class="mx-hero__legend-dot mx-hero__legend-dot--ideal"></span><span>KE-Gerüst</span></div>
+      </div>
+    </header>
+
+    <div id="mx-grid-host"></div>
+  </main>
+
+  <div class="mx-slideover-backdrop" id="mx-backdrop" data-open="false" aria-hidden="true"></div>
+  <aside class="mx-slideover" id="mx-slideover" data-open="false" role="dialog" aria-modal="true" aria-labelledby="mx-slideover-title" tabindex="-1">
+    <div class="mx-slideover__inner" id="mx-slideover-body"></div>
+  </aside>
+
+  <div id="sr-announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="data.js"></script>
+  <script src="matrix.js"></script>
+</body>
+</html>
