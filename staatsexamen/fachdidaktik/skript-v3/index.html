@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fachdidaktik · Skript V3 — Staatsexamen MS Bayern</title>
+  <meta name="description" content="V3-Skripte für die vier Prüfungsfächer der Fachdidaktik: N18 Sozialkunde · D Mathematik · D WiB · D Sport" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../schulrecht/skript-v3/_shared/style.css" />
+  <style>
+    .hub-shell {
+      max-width: 1520px;
+      margin: 0 auto;
+      padding: 56px max(20px, calc(50% - 760px + 56px));
+      padding-left: 56px;
+      padding-right: 56px;
+    }
+    @media (max-width: 1520px) {
+      .hub-shell { padding-left: max(20px, 4vw); padding-right: max(20px, 4vw); }
+    }
+
+    .hub-hero {
+      border-top: 3px solid var(--ink);
+      border-bottom: 1px solid var(--rule);
+      padding: 48px 0 40px;
+      margin-bottom: 56px;
+    }
+    .hub-hero__zalgm {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .hub-hero__title {
+      font-family: var(--serif);
+      font-size: clamp(40px, 6vw, 76px);
+      line-height: 1.05;
+      letter-spacing: -0.015em;
+      font-weight: 500;
+      color: var(--ink);
+      margin: 0 0 8px;
+    }
+    .hub-hero__sub {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(24px, 3vw, 36px);
+      line-height: 1.15;
+      color: var(--muted);
+      margin: 0 0 28px;
+    }
+    .hub-hero__lead {
+      font-family: var(--serif);
+      font-size: 20px;
+      line-height: 1.55;
+      max-width: 760px;
+      color: var(--ink);
+      margin: 0 0 4px;
+    }
+    .hub-hero__meta {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .hub-hero__meta b { color: var(--ink); font-weight: 600; }
+
+    .hub-section-head {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin: 56px 0 28px;
+    }
+    .hub-section-head__num {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .hub-section-head__title {
+      font-family: var(--serif);
+      font-size: 28px;
+      line-height: 1.1;
+      font-weight: 500;
+      color: var(--ink);
+      margin: 0;
+    }
+    .hub-section-head__rule {
+      flex: 1;
+      height: 1px;
+      background: var(--hairline);
+      margin-left: 8px;
+    }
+
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 22px;
+    }
+    .hub-card {
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      border-left: 3px solid var(--accent);
+      padding: 26px 28px 24px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: border-color .15s, transform .15s, box-shadow .15s;
+      position: relative;
+    }
+    .hub-card:hover {
+      border-color: var(--ink);
+      box-shadow: 0 4px 12px rgba(12,12,10,0.08);
+      transform: translateY(-1px);
+    }
+    .hub-card__row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+    }
+    .hub-card__id {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .hub-card__zalgm {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .hub-card__title {
+      font-family: var(--serif);
+      font-size: 30px;
+      line-height: 1.1;
+      font-weight: 500;
+      color: var(--ink);
+      margin: 0;
+    }
+    .hub-card__title em {
+      font-style: italic;
+      font-weight: 500;
+      color: var(--muted);
+      display: block;
+      font-size: 22px;
+      margin-top: 2px;
+    }
+    .hub-card__abriss {
+      font-family: var(--serif);
+      font-size: 16px;
+      line-height: 1.55;
+      color: var(--ink);
+      margin: 4px 0 6px;
+    }
+    .hub-card__norms {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .hub-card__norm {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      padding: 3px 8px;
+      border: 1px solid var(--rule);
+      color: var(--muted);
+      letter-spacing: 0.5px;
+      border-radius: 2px;
+    }
+    .hub-card__norm--accent { color: var(--accent); border-color: var(--accent); }
+    .hub-card__footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid var(--rule);
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .hub-card__arrow {
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 1.2px;
+    }
+    .hub-card:hover .hub-card__arrow { color: var(--ink); }
+
+    .hub-meta-block {
+      margin-top: 72px;
+      padding-top: 36px;
+      border-top: 1px solid var(--rule);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 36px;
+    }
+    .hub-meta-block h3 {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin: 0 0 14px;
+    }
+    .hub-meta-block p, .hub-meta-block ul {
+      font-family: var(--serif);
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--ink);
+      margin: 0 0 10px;
+    }
+    .hub-meta-block ul {
+      list-style: none;
+      padding: 0;
+      line-height: 1.7;
+    }
+    .hub-meta-block li::before {
+      content: '→ ';
+      color: var(--accent);
+      font-family: var(--mono);
+      font-weight: 600;
+    }
+    .hub-meta-block a { border-bottom: 1px solid var(--accent); text-decoration: none; }
+    .hub-meta-block a:hover { background: var(--accent-soft); }
+
+    .hub-foot {
+      margin-top: 72px;
+      padding: 28px 0 40px;
+      border-top: 1px solid var(--rule);
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="meta-bar">
+    <span><a href="../">Fachdidaktik</a> · Skript V3 · Hub-Index</span>
+    <span><a href="../../schulrecht/skript-v3/">Schulrecht V3-Hub →</a></span>
+  </div>
+
+  <div class="hub-shell">
+    <header class="hub-hero">
+      <div class="hub-hero__zalgm">Fachdidaktik · 2. Staatsexamen · Mittelschule Bayern</div>
+      <h1 class="hub-hero__title">Fachdidaktik.</h1>
+      <p class="hub-hero__sub"><em>Vier Prüfungsfächer, vier Skripte.</em></p>
+      <p class="hub-hero__lead">
+        V3-Skripte für die mündliche Prüfung Fachdidaktik (D) und Unterrichtsfach
+        (N18) im Mai 2026. Pro Fach 5–6 Sub-Blöcke mit didaktischen Prinzipien,
+        Antwortgerüsten, Karten, Fallen und Fallbeispielen — ergänzend zu den
+        existierenden KE-Matrizen und Lerndecks.
+      </p>
+      <div class="hub-hero__meta">
+        <span><b>4</b> · Prüfungsfächer</span>
+        <span><b>~36</b> · Pflichtwissen-Karten</span>
+        <span><b>~32</b> · Fallen</span>
+        <span><b>~16</b> · Fallbeispiele</span>
+      </div>
+    </header>
+
+    <div class="hub-section-head">
+      <span class="hub-section-head__num">Prüfungsteil II</span>
+      <h2 class="hub-section-head__title">Prüfungsfächer</h2>
+      <div class="hub-section-head__rule"></div>
+    </div>
+
+    <div class="hub-grid">
+
+      <a class="hub-card" href="n18-sozialkunde/">
+        <div class="hub-card__row">
+          <span class="hub-card__id">N18 · Sozialkunde</span>
+          <span class="hub-card__zalgm">26.–28. Mai 2026</span>
+        </div>
+        <h3 class="hub-card__title">Sozialkunde<em>· Politische Bildung MS Bayern</em></h3>
+        <p class="hub-card__abriss">Beutelsbacher Konsens · Mündigkeit (Detjen) · Politische Urteilsbildung · Demokratielernen · Handlungsorientierung (Real- vs Simulationshandeln).</p>
+        <div class="hub-card__norms">
+          <span class="hub-card__norm hub-card__norm--accent">Beutelsbach 1976</span>
+          <span class="hub-card__norm">Detjen / Sander</span>
+          <span class="hub-card__norm">GPG LB3+4</span>
+        </div>
+        <div class="hub-card__footer">
+          <span>10 Karten · 8 Fallen · 4 Fälle</span>
+          <span class="hub-card__arrow">öffnen →</span>
+        </div>
+      </a>
+
+      <a class="hub-card" href="d-mathematik/">
+        <div class="hub-card__row">
+          <span class="hub-card__id">D · Mathematik</span>
+          <span class="hub-card__zalgm">26.–28. Mai 2026</span>
+        </div>
+        <h3 class="hub-card__title">Mathematik<em>· Didaktische Prinzipien + Antwortgerüst</em></h3>
+        <p class="hub-card__abriss">EIS-Prinzip · Operatives Prinzip (5 Merkmale) · Modellieren · Sequenz-Architektur · Polya · SINUS. Bezug zu M7c-Prozent-Sequenz (eigene Praxis).</p>
+        <div class="hub-card__norms">
+          <span class="hub-card__norm hub-card__norm--accent">EIS Bruner</span>
+          <span class="hub-card__norm">Aebli/Wittmann</span>
+          <span class="hub-card__norm">LP+ Kompetenzmodell</span>
+        </div>
+        <div class="hub-card__footer">
+          <span>10 Karten · 9 Fallen · 4 Fälle</span>
+          <span class="hub-card__arrow">öffnen →</span>
+        </div>
+      </a>
+
+      <a class="hub-card" href="d-wib/">
+        <div class="hub-card__row">
+          <span class="hub-card__id">D · WiB</span>
+          <span class="hub-card__zalgm">26.–28. Mai 2026</span>
+        </div>
+        <h3 class="hub-card__title">Wirtschaft und Beruf<em>· Leitfach Berufsorientierung</em></h3>
+        <p class="hub-card__abriss">Leitfach BO · Realbegegnungen (Erkundung/Praktikum/Schülerfirma) · Vollständige Handlung 6 Schritte · Projektprüfung § 12/4 MSO · Berufswahlpass.</p>
+        <div class="hub-card__norms">
+          <span class="hub-card__norm hub-card__norm--accent">LP+ Fachprofil WiB</span>
+          <span class="hub-card__norm">Hacker/Aebli</span>
+          <span class="hub-card__norm">§ 12/4 MSO</span>
+        </div>
+        <div class="hub-card__footer">
+          <span>8 Karten · 7 Fallen · 4 Fälle</span>
+          <span class="hub-card__arrow">öffnen →</span>
+        </div>
+      </a>
+
+      <a class="hub-card" href="d-sport/">
+        <div class="hub-card__row">
+          <span class="hub-card__id">D · Sport</span>
+          <span class="hub-card__zalgm">26.–28. Mai 2026</span>
+        </div>
+        <h3 class="hub-card__title">Sport<em>· Erziehung im und durch Sport</em></h3>
+        <p class="hub-card__abriss">Doppelauftrag IM + DURCH Sport · 6 Pädagogische Perspektiven (Kurz) · Bewegungslernen 3 Phasen (Meinel/Schnabel) · Sicherheits-Anker · Inklusion + Para-Sportarten.</p>
+        <div class="hub-card__norms">
+          <span class="hub-card__norm hub-card__norm--accent">Kurz 6 Perspektiven</span>
+          <span class="hub-card__norm">Meinel/Schnabel</span>
+          <span class="hub-card__norm">KMBek Sicherheit</span>
+        </div>
+        <div class="hub-card__footer">
+          <span>8 Karten · 8 Fallen · 4 Fälle</span>
+          <span class="hub-card__arrow">öffnen →</span>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="hub-meta-block">
+      <div>
+        <h3>Designprinzipien</h3>
+        <p>
+          Gleiche V3-Architektur wie Schulrecht (Spickzettel-Aside · Vertiefung-Mitte · TOC-Scrollspy ≥ 1401 px).
+          Pro Fach 5–6 Sub-Blöcke mit Pflichtwissen, Fallen, Fällen und Self-Check pro Block.
+        </p>
+      </div>
+      <div>
+        <h3>8-Punkte-Antwort-Schema</h3>
+        <p>
+          Universell für alle Fächer: Zusammenhang · Grobgliederung · Begriffsklärungen · LP+-Wortlaut ·
+          Realisierung mit Praxisbeispiel · Probleme/Grenzen · Wertung · Zusammenfassung.
+        </p>
+      </div>
+      <div>
+        <h3>Bewertungsachsen (3)</h3>
+        <p>
+          <strong>Erfassen</strong> der Frage · <strong>Fachkenntnisse</strong> + Praxisorientierung ·
+          <strong>Darlegung</strong> (Begriffe, Aufbau, selbstständige Entwicklung, kritische Argumentation).
+        </p>
+      </div>
+      <div>
+        <h3>Cross-Refs zum Schulrecht</h3>
+        <ul>
+          <li>Mathe ↔ § 12/4 MSO Projektprüfung</li>
+          <li>WiB ↔ § 12/4 MSO + § 22 MSO</li>
+          <li>Sport ↔ § 5 LDO + Haftungsdreieck MP_07</li>
+          <li>Sozialkunde ↔ § 14 LDO + Art. 78 BayEUG</li>
+          <li>Inklusion alle Fächer ↔ Art. 30a/4 + MP_08</li>
+        </ul>
+      </div>
+    </div>
+
+    <footer class="hub-foot">
+      <span>Fachdidaktik · Skript V3 · 2. Staatsexamen MS Bayern · Mai 2026</span>
+      <span><a href="../" style="border-bottom: 1px dotted var(--muted); text-decoration: none;">← Zurück zur Fachdidaktik-Übersicht</a></span>
+    </footer>
+  </div>
+</body>
+</html>
