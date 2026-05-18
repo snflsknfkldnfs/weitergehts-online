@@ -1,6 +1,6 @@
-// LB-Matrix Sozialkunde N18 · LP+-konform · zitierfähig · v2 (verbatim)
+// LB-Matrix Sozialkunde N18 · LP+-konform · zitierfähig · v3 (5-Phasen-Standard)
 //
-// QUELLEN-PRINZIP v2
+// QUELLEN-PRINZIP v3
 // ────────────────────────────────────────────────────────────────────────
 // 1. Spalten = 3 für die N18-Sozialkunde-Prüfung relevante GPG-Lernbereiche:
 //    LB2 Zeit und Wandel · LB3 Politik und Gesellschaft · LB4 Lebenswelt.
@@ -17,14 +17,20 @@
 // 3. Inhalte zu den Kompetenzen: verbatim aus LP+ pro Zelle dokumentiert
 //    (Feld `inhalte_lp`).
 //
-// 4. Reale Umsetzungen (13 KEs) und Bezüge (alle KEs mit Umsetzung) bleiben
-//    aus der ursprünglichen Lerndeck-Quelle erhalten.
+// 4. **Ankerwörter statt Verbatim-Flut**: KE-Wortlaut zeigt Operator/Inhalts-
+//    Kernbegriffe als `<mark>`-Hervorhebung an (Feld `ke_wortlaut_anker[]`),
+//    Verbatim bleibt als zitierfähiger Text vorhanden — visuell entzerrt.
 //
-// 5. **Pilot-Sequenz GPG7_LB3 KE1 Soziale Frage**: 10 idealtypische 45-min-UEs
-//    mit Lernziel · Phasen (Einstieg/Erarbeitung/Sicherung/Reflexion) · Material
-//    · Differenzierung · LP+-Bezug · Didaktik-Verweis. Geht über die kompakte
-//    `verlauf`-Notation der anderen KEs hinaus und dient als Schreib-Vorlage
-//    für künftige UE-Expansionen anderer Zellen.
+// 5. **Pilot-Sequenz GPG7_LB3 KE1 Soziale Frage** (v3): 10 idealtypische
+//    45-min-UEs mit GPG-Bayern-Standard 5-Artikulationsstufen-Schema:
+//    (1) Problemstellung mit Vorwissensaktivierung · Zielangabe · Arbeitsplanung
+//    (2) Problementfaltung (Erarbeitungsphase: Material + Auseinandersetzung)
+//    (3) Problemlösung (Antwort auf die Problemfrage)
+//    (4) Wertung / rationales Urteil (Sach- + Werte-Ebene + eigene Position)
+//    (5) Sicherung + Lernzielkontrolle (Hefteintrag + Übung/Diagnose)
+//    Quelle: GPG GB Kap. 5 (Artikulationsstufen) + Seminarbuch Bd. 3 S. 10-12.
+//    Pro UE zusätzlich: `prinzipien_b3[]` (Beutelsbach + GPG B3 Prinzipien)
+//    und `kompetenzstruktur` (Gegenstandsbereich × Perspektive × Prozesskompetenz).
 //
 // LITERATUR (in bezuege[].didaktik verwendet, vollständige Refs in Kürzel-Index)
 // ────────────────────────────────────────────────────────────────────────
@@ -51,10 +57,11 @@ window.MATRIX = {
   schulart: 'Mittelschule Bayern · GPG (Sozialkunde-Anteil LB2+LB3+LB4)',
 
   meta: {
-    version: 'v2 · 2026-05-18 · LP+-verbatim für 4 von 6 Jgst',
+    version: 'v3 · 2026-05-18 · 5-Phasen-Standard + Ankerwörter',
     spaltenLogik: 'Drei für die N18-Sozialkunde-Prüfung relevante GPG-Lernbereiche: LB2 Zeit und Wandel (Geschichte mit politik-historischer Sicht) · LB3 Politik und Gesellschaft (Sozialkunde-Kern) · LB4 Lebenswelt (Recht + Demokratie-Praxis + Lebenswelt-Themen). LB1 Lebensraum Erde ist Geographie und nicht enthalten.',
     quellenLogik: 'verbatim für GPG5/6/7/10 (Web + lokal). sekundaer für GPG8/9 LB3+LB4 (aus aufbereiteter KE-Datenbank). ausstehend für GPG8/9 LB2 (Geschichts-KEs ohne verfügbare Quelle).',
-    pilotSequenzen: 'GPG7_LB3 KE1 Soziale Frage · 10 UEs à 45 min idealtypisch + Lernziel + Phasen + Material + Differenzierung.',
+    pilotSequenzen: 'GPG7_LB3 KE1 Soziale Frage · 10 UEs à 45 min idealtypisch · GPG-Standard 5 Artikulationsstufen pro UE + GPG-B3-Prinzipien + Kompetenzstruktur (Gegenstand × Perspektive × Prozesskompetenz).',
+    fachdidaktikStandard: 'GPG GB Kap. 5 (Artikulationsstufen) + Seminarbuch Bd. 3 S. 10-12 + Beutelsbacher Konsens 1976 + Kompetenzstrukturmodell LP+ Bayern GPG.',
   },
 
   jgst: [
@@ -1083,6 +1090,7 @@ window.MATRIX = {
         {
           "ke_id": "GPG7-LB3-01",
           "ke_wortlaut": "beschreiben die Lebens- und Arbeitsverhältnisse von Arbeiterinnen bzw. Arbeitern und deren Familien sowie Lösungsansätze der Sozialen Frage während der Industrialisierung.",
+          "ke_wortlaut_anker": ["beschreiben", "Lebens- und Arbeitsverhältnisse", "Lösungsansätze", "Sozialen Frage", "Industrialisierung"],
           "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG7 · LB3 Politik und Gesellschaft · verbatim",
           "thema": "Soziale Frage — Lebens- und Arbeitsverhältnisse der Industrialisierung",
           "operator": "beschreiben (R) / beschreiben + vergleichen (M)",
@@ -1158,19 +1166,30 @@ window.MATRIX = {
             "praxis": "Eigene Praxis GPG7c SJ 24/25 + idealtypische Erweiterung",
             "gesamtzeit": "10 UEs à 45 min = 7,5 Zeitstunden",
             "lernzielraster": "Sach- + Methoden- + Urteilskompetenz · GPJE 2004",
+            "phasenStandard": "GPG-Bayern · 5 Artikulationsstufen pro UE (GPG GB Kap. 5 + Seminarbuch Bd. 3 S. 10-12)",
+            "phasenSchema": [
+              { "id": "problemstellung",   "label": "1 Problemstellung",   "kurz": "Vorwissen · Zielangabe · Arbeitsplanung" },
+              { "id": "problementfaltung", "label": "2 Problementfaltung", "kurz": "Erarbeitung am Material" },
+              { "id": "problemloesung",    "label": "3 Problemlösung",     "kurz": "Antwort auf die Problemfrage" },
+              { "id": "wertung",           "label": "4 Wertung",           "kurz": "Rationales Urteil (Sache · Wert · Position)" },
+              { "id": "sicherung_lzk",     "label": "5 Sicherung + LZK",   "kurz": "Hefteintrag · Lernzielkontrolle" }
+            ],
             "ues_detail": [
               {
                 "nr": 1,
-                "titel": "Einstieg · Standbilder zur Sozialen Frage",
+                "titel": "Standbilder · Was ist die Soziale Frage?",
                 "minuten": 45,
                 "lernziel": "SuS aktivieren Vorwissen zur Industrialisierung (LB2-Anknüpfung) und entwickeln eine Forschungsfrage zur sozialen Lage der Arbeiter:innen.",
-                "einstieg": "5' · Bildimpuls: Adolph Menzel „Eisenwalzwerk\" (1875). Stiller Schreib-Gespräch zum Bild.",
-                "erarbeitung": "25' · Gruppenarbeit: SuS bilden in 4er-Gruppen Standbilder zu „typischen Szenen\" Industrialisierung (Fabrik · Wohnung · Familie · Straße). Foto-Dokumentation. Mind-Map an Tafel.",
-                "sicherung": "10' · Forschungsfrage: „Warum heißt das die Soziale FRAGE?\" sammeln; Hefteintrag-Vorlage.",
-                "reflexion": "5' · Lernzielklärung: „Am Ende der Sequenz werdet ihr…\"",
-                "material": "Menzel-Druck (A2) · Sammelplakat · Smartphone-Kamera",
-                "differenzierung": "Reduktiv: vorgegebene Standbild-Themen. Erweitert: SuS wählen eigene Aspekte.",
+                "problemstellung": "8' · Bildimpuls Adolph Menzel »Eisenwalzwerk« (1875) · stilles Schreib-Gespräch. Zielangabe: »Wir untersuchen, warum man von der SOZIALEN FRAGE spricht.« Arbeitsplanung: 4 Standbild-Gruppen mit Themen Fabrik · Wohnung · Familie · Straße.",
+                "problementfaltung": "22' · Gruppenarbeit in 4er-Teams: SuS bilden Standbilder zu »typischen Szenen« der Industrialisierung. Foto-Dokumentation je Gruppe.",
+                "problemloesung": "8' · Galerie-Rundgang + Mind-Map Tafel: »Welche Belastungen sind sichtbar?« — Sammlung gemeinsamer Kern-Aspekte.",
+                "wertung": "5' · Hypothese: »Warum heißt das die Soziale FRAGE — und nicht Soziale Lage?« — erste Deutungen.",
+                "sicherung_lzk": "2' · Hefteintrag-Vorlage »Die Soziale Frage entsteht durch …« · Lernzielklärung Sequenz.",
+                "material": "Menzel-Druck (A2) · Sammelplakat · Smartphone-Kamera · Hefteintrag-Vorlage",
+                "differenzierung": "Reduktiv: vorgegebene Standbild-Themen + Wortkärtchen. Erweitert: eigene Aspekte + Bildanalyse-Raster.",
                 "lp_bezug": "KE 1 Anbahnung (Lebensverhältnisse) · KE 2 Anbahnung (Übergang Agrar→Industrie)",
+                "prinzipien_b3": ["Schülerorientierung", "Problemorientierung", "Erfahrungsbezug"],
+                "kompetenzstruktur": { "gegenstand": "Räume · Werte", "perspektive": "historisch · sozialwissenschaftlich", "prozesskompetenz": "Wahrnehmen · Hinterfragen" },
                 "didaktik": "Lebensweltbezug (Klafki) · Bildquellenarbeit · Performatives Lernen (Standbild als sozialwissenschaftliche Methode, Massing/Reinhardt)"
               },
               {
@@ -1178,27 +1197,33 @@ window.MATRIX = {
                 "titel": "Lebensverhältnisse der Arbeiter:innen-Familie",
                 "minuten": 45,
                 "lernziel": "SuS beschreiben die Lebens- und Wohnverhältnisse der Industriearbeiter:innen-Familien (KE 1) anhand multiperspektivischer Quellen.",
-                "einstieg": "5' · Foto „Mietskaserne Berlin 1900\" — Sehimpuls + Vermutungen.",
-                "erarbeitung": "25' · Stationenlernen 4 Stationen: (1) Wohnsituation (Foto + Erinnerung Schlafgänger:innen) · (2) Ernährung (Kartoffel-Statistik + Schichtarbeiter-Diät) · (3) Kindheit (Kinderarbeit, Bilder Zeche) · (4) Tagesablauf (12-Stunden-Schicht-Protokoll).",
-                "sicherung": "12' · Plakat-Galerie: jede Gruppe stellt 1 Station vor + zentrale Aussage in 1 Satz.",
-                "reflexion": "3' · „Welche Belastung war für euch am überraschendsten?\"",
-                "material": "4 Stationen-Mappen (mit AB + Bildquellen + Original-Texten) · Plakat-Pappen · Stifte",
-                "differenzierung": "Texte 3 Niveaus pro Station (basic/mittel/anspruch) · Wortspeicher für DaZ",
+                "problemstellung": "6' · Foto »Mietskaserne Berlin 1900« — Sehimpuls + Vermutungen. Zielangabe: »Wie sah der Alltag aus?« Arbeitsplanung: 4 Stationen mit Rotation.",
+                "problementfaltung": "22' · Stationenlernen: (1) Wohnsituation (Schlafgänger) · (2) Ernährung (Kartoffel-Statistik) · (3) Kindheit (Kinderarbeit-Bilder Zeche) · (4) Tagesablauf (12-Stunden-Schichtprotokoll). Notizen im AB.",
+                "problemloesung": "10' · Plakat-Galerie: jede Gruppe stellt 1 Station vor + zentrale Aussage in 1 Satz. Tafel-Synthese: 4 Belastungs-Dimensionen.",
+                "wertung": "4' · »Welche Belastung war für euch am überraschendsten — und warum?« Multiperspektivischer Austausch.",
+                "sicherung_lzk": "3' · Hefteintrag-Skizze »4 Achsen der Belastung« · LZK-Karte »Nenne 3 Belastungen mit Beleg«.",
+                "material": "4 Stationen-Mappen (mit AB + Bildquellen + Original-Texten) · Plakat-Pappen · Stifte · LZK-Karten",
+                "differenzierung": "Texte 3 Niveaus pro Station (basic/mittel/anspruch) · Wortspeicher für DaZ.",
                 "lp_bezug": "KE 1 Lebens-/Arbeitsverhältnisse Arbeiterinnen+Arbeiter",
+                "prinzipien_b3": ["Multiperspektivität", "Erfahrungsbezug", "Schülerorientierung"],
+                "kompetenzstruktur": { "gegenstand": "Räume · Werte · Kulturen", "perspektive": "historisch · sozialwissenschaftlich", "prozesskompetenz": "Erfassen · Beurteilen" },
                 "didaktik": "Multiperspektivität (Bergmann2000) · Quellenarbeit (Pandel2017) · Stationenlernen (Reinhardt2005) · sprachsensibler GPG-U."
               },
               {
                 "nr": 3,
-                "titel": "Arbeitsbedingungen in der Fabrik",
+                "titel": "Arbeitsbedingungen in der Fabrik · Engels-Quelle",
                 "minuten": 45,
                 "lernziel": "SuS analysieren konkrete Arbeitsbedingungen in einer Fabrik des späten 19. Jh. und benennen drei zentrale Belastungen.",
-                "einstieg": "5' · Geräusch-Atmosphäre (Audio: Fabrik 1900) — Wirkung notieren.",
-                "erarbeitung": "25' · Quellenarbeit Friedrich Engels „Lage der arbeitenden Klasse\" (1845) — gekürzter Textauszug. Markieren: Arbeitszeit · Lohn · Unfälle · Kinderarbeit. Tabellarische Sicherung.",
-                "sicherung": "10' · Tabellen-Vergleich Plenum: heutige Arbeitszeit (35-40h) vs. 1880 (12-16h pro Tag).",
-                "reflexion": "5' · „Welcher Aspekt war juristisch erlaubt? Wieso?\"",
-                "material": "Engels-Auszug (gekürzt + bebildert) · AB Tabelle · Audio",
-                "differenzierung": "Engels-Text in 3 Niveau-Versionen (Original / vereinfacht / mit Wortspeicher)",
+                "problemstellung": "5' · Audio-Atmosphäre Fabrik 1900 — Wirkung notieren. Zielangabe: »Wir untersuchen, wie der Arbeitsalltag wirklich aussah.« Arbeitsplanung: Quellenarbeit + Vergleich.",
+                "problementfaltung": "22' · Quellenarbeit Friedrich Engels »Lage der arbeitenden Klasse« (1845) — gekürzter Textauszug. Markieren: Arbeitszeit · Lohn · Unfälle · Kinderarbeit.",
+                "problemloesung": "10' · Tabellen-Vergleich Plenum: heutige Arbeitszeit (35-40h) vs. 1880 (12-16h pro Tag). 3 Belastungen mit Beleg im Heft.",
+                "wertung": "5' · Quellenkritisch: »Engels ist Sozialist — wie verändert das die Quellenaussage?« Reliabilitäts-Reflexion.",
+                "sicherung_lzk": "3' · Hefteintrag »3 Belastungen + 1 Quellenkritik-Satz« · LZK-Frage: »Was würde Engels heute kritisieren?«",
+                "material": "Engels-Auszug (gekürzt + bebildert) · AB Tabelle · Audio-Atmosphäre · Hefteintrag-Schablone",
+                "differenzierung": "Engels-Text in 3 Niveau-Versionen (Original / vereinfacht / mit Wortspeicher).",
                 "lp_bezug": "KE 1 Arbeitsverhältnisse",
+                "prinzipien_b3": ["Multiperspektivität", "Problemorientierung"],
+                "kompetenzstruktur": { "gegenstand": "Ordnungssysteme · Werte", "perspektive": "historisch · sozialwissenschaftlich", "prozesskompetenz": "Erfassen · Hinterfragen" },
                 "didaktik": "Quellenkritik (Pandel2017) · Vergleichsmethode · historische Empathie (Rüsen2002)"
               },
               {
@@ -1206,27 +1231,33 @@ window.MATRIX = {
                 "titel": "Die Soziale Frage als Begriff",
                 "minuten": 45,
                 "lernziel": "SuS definieren den Begriff „Soziale Frage\" sachlich präzise und ordnen ihn in den historischen Kontext ein.",
-                "einstieg": "5' · Begriffsaktivierung: „Was sind FRAGEN im Politik-Kontext heute?\" (Klimafrage, Wohnungsfrage)",
-                "erarbeitung": "25' · Lehrkraft-Input (10'): Definition Soziale Frage (Pauperismus, Industrialisierung, fehlende Sozialgesetzgebung). Partner-Arbeit (15'): SuS schreiben „Lexikon-Eintrag\" Soziale Frage in eigene Worte.",
-                "sicherung": "10' · Lexikon-Einträge gegenseitig prüfen → 3 Best-Versionen vorlesen → Hefteintrag-Definition gemeinsam formulieren.",
-                "reflexion": "5' · Vergleich: „Welche FRAGE ist heute vergleichbar?\"",
-                "material": "Tafel-Vorlage Definition · Hefteintrag-Schablone",
-                "differenzierung": "Wortspeicher (Pauperismus, Industrialisierung etc.) · Vorgabe-Schreibgerüst für schwache Lerner",
+                "problemstellung": "6' · Begriffsaktivierung: »Was sind FRAGEN im Politik-Kontext heute?« (Klimafrage · Wohnungsfrage). Zielangabe: »Wir bauen eine eigene Definition.« Arbeitsplanung: Input + Partner-Schreibarbeit.",
+                "problementfaltung": "22' · Lehrkraft-Input (10'): Pauperismus · Industrialisierung · fehlende Sozialgesetzgebung. Partner-Arbeit (12'): »Lexikon-Eintrag« in eigenen Worten.",
+                "problemloesung": "8' · Lexikon-Einträge gegenseitig prüfen → 3 Best-Versionen vorlesen → gemeinsame Tafel-Definition.",
+                "wertung": "5' · »Welche FRAGE unserer Gegenwart wäre vergleichbar — und warum genau diese?« Aktualitätsbezug.",
+                "sicherung_lzk": "4' · Definition ins Heft + LZK-Mini: »Erkläre Soziale Frage in 2 Sätzen einem Mitschüler.«",
+                "material": "Tafel-Vorlage Definition · Hefteintrag-Schablone · Wortspeicher",
+                "differenzierung": "Wortspeicher (Pauperismus, Industrialisierung etc.) · Vorgabe-Schreibgerüst für schwache Lerner.",
                 "lp_bezug": "KE 1 Konzept Soziale Frage",
+                "prinzipien_b3": ["Problemorientierung", "Aktualität", "Schülerorientierung"],
+                "kompetenzstruktur": { "gegenstand": "Werte · Ordnungssysteme", "perspektive": "historisch · sozialwissenschaftlich", "prozesskompetenz": "Erfassen · Reflektieren" },
                 "didaktik": "Begriffsbildung · Mündigkeit-Anbahnung (Detjen2007) durch eigenständige Begriffsdefinition · Aktualitätsprinzip (Klafki1996)"
               },
               {
                 "nr": 5,
-                "titel": "Lösungsansätze · Genossenschaften + Gewerkschaften",
+                "titel": "Lösungsansätze · Genossenschaften · Gewerkschaften · Staat",
                 "minuten": 45,
                 "lernziel": "SuS unterscheiden drei historische Lösungsansätze zur Sozialen Frage (Selbsthilfe · Gewerkschaft · Sozialstaat) und ordnen ihnen Akteure zu.",
-                "einstieg": "5' · Frage: „Wenn ihr Industriearbeiter im 1880 wärt — was würdet ihr tun?\" Brainstorming.",
-                "erarbeitung": "30' · Drei-Gruppen-Arbeit (Jigsaw): Gruppe A Genossenschaften (Schulze-Delitzsch, Raiffeisen) · Gruppe B Gewerkschaft + Sozialdemokratie (Bebel, Lassalle) · Gruppe C Bismarcks Sozialgesetzgebung (1883-89). Experten-Gruppen, dann Stammgruppen.",
-                "sicherung": "8' · Tabelle füllen: Akteur · Strategie · Erfolg.",
-                "reflexion": "2' · „Welche Strategie war am wirksamsten?\"",
-                "material": "3 Expertentexte (à 1 Seite) · Tabelle-Schablone",
-                "differenzierung": "Texte 3 Niveaus · Visualisierungs-Hilfen für DaZ (Symbol Gewerkschaft, Symbol Bismarck)",
+                "problemstellung": "5' · Aktivierende Frage: »Wenn ihr Industriearbeiter 1880 wärt — was würdet ihr tun?« Brainstorming. Zielangabe: »3 historische Antworten kennenlernen.« Jigsaw-Plan.",
+                "problementfaltung": "25' · Jigsaw: Gruppe A Genossenschaften (Schulze-Delitzsch/Raiffeisen) · Gruppe B Gewerkschaft+SPD (Bebel/Lassalle) · Gruppe C Bismarcks Sozialgesetzgebung (1883-89). Experten- → Stammgruppen.",
+                "problemloesung": "8' · Tabelle gemeinsam füllen: Akteur · Strategie · Reichweite. 3 Antworten klar umrissen.",
+                "wertung": "5' · »Welche Strategie war am wirksamsten — und nach welchem Maßstab?« Sache vs. Werte unterscheiden.",
+                "sicherung_lzk": "2' · Tabelle ins Heft übernehmen · LZK-Mini: »Ordne 3 Akteure 3 Strategien zu.«",
+                "material": "3 Expertentexte (à 1 Seite) · Tabelle-Schablone · Hefteintrag-Vorlage",
+                "differenzierung": "Texte 3 Niveaus · Visualisierungs-Hilfen für DaZ (Symbol Gewerkschaft, Symbol Bismarck).",
                 "lp_bezug": "KE 1 Lösungsansätze Soziale Frage",
+                "prinzipien_b3": ["Multiperspektivität", "Handlungsorientierung", "Problemorientierung"],
+                "kompetenzstruktur": { "gegenstand": "Ordnungssysteme · Interessen", "perspektive": "historisch · sozialwissenschaftlich", "prozesskompetenz": "Erfassen · Beurteilen" },
                 "didaktik": "Jigsaw-Methode · Multiperspektivität · Politische Urteilsbildung (GPJE2004) · Handlungsorientierung Simulationshandeln (Reinhardt2005)"
               },
               {
@@ -1234,13 +1265,16 @@ window.MATRIX = {
                 "titel": "Bismarcks Sozialgesetzgebung — Erfolg oder Beruhigung?",
                 "minuten": 45,
                 "lernziel": "SuS beurteilen Bismarcks Sozialgesetzgebung kritisch und entwickeln ein Sach-/Werturteil.",
-                "einstieg": "5' · Provokationsthese: „Bismarck war ein Sozialist.\" Spontan zustimmen/ablehnen.",
-                "erarbeitung": "25' · Pro-Contra-Vorbereitung in 2 Gruppen mit Materialgrundlage (Bismarcks Reden + Auszüge SPD-Reaktionen). 15' Vorbereitung, 10' Debatte mit fest verteilten Rollen.",
-                "sicherung": "10' · Synthese: 3-Stufen-Urteil (Sachebene · Werte-Ebene · eigene Position) im Heft.",
-                "reflexion": "5' · Metakognitiv: „Welches Argument hat mich überzeugt — warum?\"",
-                "material": "Material-Mappen (Pro + Contra · Reden Bismarck · Bebel-Kritik) · Urteilsraster (Sach/Wert/Position)",
-                "differenzierung": "Rollenkarten mit Argumenten für schwache Lerner · Frei-Argumentation für starke",
+                "problemstellung": "5' · Provokationsthese: »Bismarck war ein Sozialist.« Spontan zustimmen/ablehnen — Verortung an der Tafel. Zielangabe: »Wir prüfen die These mit Quellen.« Pro/Contra-Plan.",
+                "problementfaltung": "22' · Pro-Contra-Vorbereitung in 2 Gruppen mit Materialgrundlage (Bismarcks Reden + Auszüge SPD-Reaktionen). 15' Vorbereitung, 7' Debatte mit fest verteilten Rollen.",
+                "problemloesung": "5' · Beobachter:innen-Bilanz: stärkstes Pro- und stärkstes Contra-Argument festhalten.",
+                "wertung": "10' · 3-Stufen-Urteil im Heft: Sachebene (was geschah?) · Werte-Ebene (Maßstab Gerechtigkeit/Stabilität?) · eigene Position (begründet).",
+                "sicherung_lzk": "3' · Metakognitiv: »Welches Argument hat mich überzeugt — und warum?« · LZK-Karte mit AFB-III-Urteilsfrage.",
+                "material": "Material-Mappen (Pro + Contra · Reden Bismarck · Bebel-Kritik) · Urteilsraster (Sach/Wert/Position) · Beobachter-Karten",
+                "differenzierung": "Rollenkarten mit Argumenten für schwache Lerner · Frei-Argumentation für starke.",
                 "lp_bezug": "KE 1 Lösungsansätze + Urteilsbildung",
+                "prinzipien_b3": ["Kontroversitätsgebot", "Überwältigungsverbot", "Handlungsorientierung"],
+                "kompetenzstruktur": { "gegenstand": "Werte · Interessen", "perspektive": "historisch · sozialwissenschaftlich", "prozesskompetenz": "Beurteilen · Reflektieren · Handeln" },
                 "didaktik": "Pro-Contra-Debatte (Massing) · Politische Urteilsbildung 3-Stufen (GPJE2004) · Beutelsbacher Konsens (Kontroversitätsgebot) · Mündigkeit (Detjen2007)"
               },
               {
@@ -1248,55 +1282,67 @@ window.MATRIX = {
                 "titel": "Übergang Agrar→Industriegesellschaft am Beispiel einer Stadt",
                 "minuten": 45,
                 "lernziel": "SuS beschreiben den Übergang am Beispiel einer Stadt (z.B. Würzburg, Augsburg) und identifizieren Veränderungs-Indikatoren (KE 2).",
-                "einstieg": "5' · Lokaler Bezug: „Wie war Würzburg/eure Stadt 1880?\" Vermutungen.",
-                "erarbeitung": "25' · Quellenarbeit: Stadtplan 1850 vs. 1900 · Bevölkerungs-Statistik 1850/1880/1900 · Beruf-Verteilung-Diagramm. Verändungs-Indikatoren herausarbeiten.",
-                "sicherung": "12' · Tafelbild: 4 Veränderungs-Achsen (Wachstum · Wirtschaft · Wohnen · Verkehr).",
-                "reflexion": "3' · „Welche Veränderung gibt es heute? — Migration, Energiewende?\"",
-                "material": "Lokale Stadtkarte 1850 + 1900 (digital wenn möglich) · Statistik-AB · Verändungs-Indikatoren-Raster",
-                "differenzierung": "AB Karten-Vergleich 3 Niveaus (Markieren / Vergleichen / Argumentieren)",
+                "problemstellung": "6' · Lokaler Bezug: »Wie war Würzburg/eure Stadt 1880?« Vermutungen sammeln. Zielangabe: »Wir messen den Wandel an Indikatoren.« Arbeitsplanung: 3 Quellen analysieren.",
+                "problementfaltung": "22' · Quellenarbeit: Stadtplan 1850 vs. 1900 · Bevölkerungs-Statistik 1850/1880/1900 · Beruf-Verteilung-Diagramm. Indikatoren herausarbeiten.",
+                "problemloesung": "10' · Tafelbild: 4 Veränderungs-Achsen (Wachstum · Wirtschaft · Wohnen · Verkehr) mit Quellenbeleg.",
+                "wertung": "4' · »Welche Veränderung ist heute ähnlich — Migration? Energiewende? Digitalisierung?« Aktualisierungsfrage.",
+                "sicherung_lzk": "3' · Hefteintrag »4 Achsen mit je 1 Quellenbeleg« · LZK-Karte »Nenne 2 Indikatoren mit Beleg«.",
+                "material": "Lokale Stadtkarte 1850 + 1900 (digital wenn möglich) · Statistik-AB · Indikatoren-Raster · Hefteintrag-Vorlage",
+                "differenzierung": "AB Karten-Vergleich 3 Niveaus (Markieren / Vergleichen / Argumentieren).",
                 "lp_bezug": "KE 2 Übergang Agrar→Industriegesellschaft",
-                "didaktik": "Lokalgeschichte (LP+ GPG-Fachprofil) · Quellenkritik (Pandel2017) · Aktualitätsprinzip · Kompetenzstrukturmodell Gegenstandsbereich „Räume\" + „Zeit\""
+                "prinzipien_b3": ["Erfahrungsbezug", "Aktualität", "Schülerorientierung"],
+                "kompetenzstruktur": { "gegenstand": "Räume · Ordnungssysteme", "perspektive": "historisch · geographisch", "prozesskompetenz": "Erfassen · Hinterfragen" },
+                "didaktik": "Lokalgeschichte (LP+ GPG-Fachprofil) · Quellenkritik (Pandel2017) · Aktualitätsprinzip · Kompetenzstrukturmodell Gegenstandsbereich »Räume« + »Zeit«"
               },
               {
                 "nr": 8,
                 "titel": "Vergleich Soziale Frage 1880 vs. heute",
                 "minuten": 45,
                 "lernziel": "SuS vergleichen die Soziale Frage des 19. Jh. mit aktuellen sozialen Spannungen (z.B. Wohnungsmangel, Niedriglohn) und entwickeln ein begründetes Sachurteil.",
-                "einstieg": "5' · Aktuelles Foto-Impuls: Tafel-Schlange · Obdachlose · Working-Poor-Statistik.",
-                "erarbeitung": "25' · Vergleichsmatrix in 4er-Gruppen: 1880 vs. heute Spalten · Wohnungsfrage / Lohnfrage / Arbeitszeit / Sozialschutz Zeilen.",
-                "sicherung": "12' · Plenum: Strukturelle Gemeinsamkeiten + Unterschiede zusammentragen.",
-                "reflexion": "3' · „Ist die SOZIALE FRAGE überhaupt gelöst?\"",
-                "material": "Aktuelle Bilder + Statistiken (BMSFSJ Sozialbericht) · Vergleichsmatrix-Vorlage",
-                "differenzierung": "Statistiken in 3 Niveaus aufbereitet · Wortspeicher Sozialpolitik-Begriffe",
+                "problemstellung": "5' · Foto-Impuls aktuell: Tafel-Schlange · Working-Poor-Statistik. Zielangabe: »Vergleichen 1880 vs. heute.« Arbeitsplanung: Vergleichsmatrix in 4er-Gruppen.",
+                "problementfaltung": "22' · Vergleichsmatrix: Spalten 1880/heute · Zeilen Wohnungsfrage/Lohnfrage/Arbeitszeit/Sozialschutz. Gruppen befüllen + Belege markieren.",
+                "problemloesung": "8' · Plenum: Strukturelle Gemeinsamkeiten + Unterschiede zusammentragen (Tafel-Synopsis).",
+                "wertung": "7' · 2-Stufen-Urteil: Sache (Was ist gleich, was anders?) · Wert (Ist die SOZIALE FRAGE überhaupt gelöst?). Schreib-Phase im Heft.",
+                "sicherung_lzk": "3' · LZK-Karte AFB II: »Vergleiche 1880 vs. heute in 1 Aspekt mit Beleg« · Hefteintrag Synopsis.",
+                "material": "Aktuelle Bilder + Statistiken (BMSFSJ Sozialbericht) · Vergleichsmatrix-Vorlage · Hefteintrag-Schablone",
+                "differenzierung": "Statistiken in 3 Niveaus aufbereitet · Wortspeicher Sozialpolitik-Begriffe.",
                 "lp_bezug": "KE 1 + KE 2 verbinden · Aktualisierungs-Auftrag LP+",
+                "prinzipien_b3": ["Aktualität", "Schülerorientierung", "Multiperspektivität", "Kontroversitätsgebot"],
+                "kompetenzstruktur": { "gegenstand": "Werte · Interessen", "perspektive": "sozialwissenschaftlich · historisch", "prozesskompetenz": "Beurteilen · Reflektieren" },
                 "didaktik": "Aktualitätsprinzip (Klafki1996) · Lebensweltbezug · Multiperspektivität · Politische Urteilsbildung"
               },
               {
                 "nr": 9,
-                "titel": "Sicherung + Lernzielkontrolle (LNW)",
+                "titel": "Lernzielkontrolle (LNW) · alle AFB-Stufen",
                 "minuten": 45,
                 "lernziel": "SuS dokumentieren ihre Lernerträge in einer Lernzielkontrolle (LNW) mit Aufgaben aller AFB-Stufen.",
-                "einstieg": "5' · Strukturhinweis: „LNW prüft Wissen, Methoden, Urteilsfähigkeit.\"",
-                "erarbeitung": "30' · LNW schreiben: AFB I (Beschreiben Lebensverhältnisse) · AFB II (Vergleich 1880-heute mit Matrix) · AFB III (Urteil: Bismarck — Erfolg oder Beruhigung?).",
-                "sicherung": "5' · Aufgaben einsammeln + Selbsteinschätzungsbogen ausfüllen.",
-                "reflexion": "5' · Stille Selbst-Reflexion: „Was kann ich jetzt?\"",
+                "problemstellung": "4' · Struktur-Hinweis: »LNW prüft Wissen (AFB I), Methoden (II), Urteilsfähigkeit (III).« Zielangabe + Arbeitsplanung mit Zeitvorgaben.",
+                "problementfaltung": "28' · LNW schreiben: AFB I (Beschreiben Lebensverhältnisse) · AFB II (Vergleich 1880-heute) · AFB III (Urteil Bismarck — Erfolg oder Beruhigung?).",
+                "problemloesung": "5' · Selbsteinschätzungsbogen ausfüllen (»Was kann ich? Wo brauche ich mehr Zeit?«).",
+                "wertung": "4' · »Welche Aufgabe war für mich am anspruchsvollsten — und warum?« — metakognitives Mini-Urteil.",
+                "sicherung_lzk": "4' · Aufgaben einsammeln · Plenum: Diagnose-Sammlung an Tafel (welche Aufgaben-Typen brauchen Wiederholung).",
                 "material": "LNW-Aufgabenbogen · Selbsteinschätzungsbogen · Hefteintrag-Schablone",
-                "differenzierung": "LNW in 2 Niveaus (Regel + erhöht) · Wortspeicher für DaZ",
+                "differenzierung": "LNW in 2 Niveaus (Regel + erhöht) · Wortspeicher für DaZ.",
                 "lp_bezug": "KE 1 + KE 2 + KE 3 (Kriegsschuld als Anknüpfung) — Sequenz-Sicherung",
+                "prinzipien_b3": ["Kompetenzorientierung", "Schülerorientierung"],
+                "kompetenzstruktur": { "gegenstand": "Werte · Ordnungssysteme", "perspektive": "historisch · sozialwissenschaftlich", "prozesskompetenz": "Erfassen · Beurteilen · Reflektieren" },
                 "didaktik": "Veränderte Leistungsmessung · Kompetenzorientierung · AFB-Stufung KMK · Selbst-Regulation (Schraw)"
               },
               {
                 "nr": 10,
-                "titel": "Reflexion + Transfer zur Gegenwart",
+                "titel": "Transfer · Handlungsplan zur Gegenwart",
                 "minuten": 45,
                 "lernziel": "SuS reflektieren das Sequenz-Lernen und entwickeln eigene Handlungsoptionen zur sozialen Frage heute.",
-                "einstieg": "5' · Sequenz-Rückblick: SuS nennen das wichtigste Wort der Sequenz.",
-                "erarbeitung": "25' · Stationenrundgang: jede Station 1 Sequenz-Aspekt (Lebensverhältnisse / Lösungsansätze / Bismarck / Gegenwart). SuS schreiben spontane Reflexionen.",
-                "sicherung": "10' · Handlungsplan-Schreiben: „Eine soziale Frage von heute — und 1 Schritt, den ICH gehen kann.\"",
-                "reflexion": "5' · Pinnwand: alle Handlungspläne anonym aufgehängt.",
+                "problemstellung": "5' · Sequenz-Rückblick: SuS nennen das wichtigste Wort. Zielangabe: »Wir entwickeln eigene Handlungsoptionen.« Plan: Stationen + Schreibphase.",
+                "problementfaltung": "20' · Stationenrundgang: jede Station 1 Sequenz-Aspekt (Lebensverhältnisse / Lösungsansätze / Bismarck / Gegenwart). SuS schreiben spontane Reflexionen + sammeln Anhaltspunkte für eigenes Handeln.",
+                "problemloesung": "8' · Handlungsplan-Schreiben: »Eine soziale Frage von heute — und 1 Schritt, den ICH gehen kann.« Schreibvorlage.",
+                "wertung": "8' · Pinnwand-Galerie anonym: Welche Pläne wirken realistisch? Welche überzeugen — Position + Begründung.",
+                "sicherung_lzk": "4' · Eigener Plan ins Heft · LZK-Mini: »Was kann ich heute, was ich vor der Sequenz nicht konnte?« (Lernzuwachs).",
                 "material": "Stationen-Plakate · Reflexions-Sticker · Pinnwand · Handlungsplan-Vorlage",
-                "differenzierung": "Handlungsplan in 3 Komplexitäts-Stufen (1 Satz / 1 Plan / 1 Aktion)",
+                "differenzierung": "Handlungsplan in 3 Komplexitäts-Stufen (1 Satz / 1 Plan / 1 Aktion).",
                 "lp_bezug": "KE 1+2 Sequenz-Abschluss · Aktualisierungs-Auftrag",
+                "prinzipien_b3": ["Handlungsorientierung", "Schülerorientierung", "Aktualität"],
+                "kompetenzstruktur": { "gegenstand": "Interessen · Werte", "perspektive": "sozialwissenschaftlich", "prozesskompetenz": "Beurteilen · Reflektieren · Handeln" },
                 "didaktik": "Demokratie-Lernen (Himmelmann2001: Lebensform-Dimension) · Handlungsorientierung Realhandeln (Reinhardt2005) · Mündigkeit (Detjen2007) · SRL (Self-Regulated Learning, Schraw)"
               }
             ],
