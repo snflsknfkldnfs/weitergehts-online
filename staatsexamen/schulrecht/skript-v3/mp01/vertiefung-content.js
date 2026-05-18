@@ -6,6 +6,58 @@ window.MODULE_BODIES = {
       'Bedrohung mit Messer im Unterricht ist ein **Drei-Pfad-Vorfall** in drei Zeitfenstern. Gefahrenabwehr · Schulrecht · Strafrecht laufen **parallel und kumulativ** — keine Verdrängung. Die richtige Antwort denkt in Zeitfenstern, nicht in „alles auf einmal".'
     },
 
+    { type: 'svg', titel: 'Drei-Pfad-Struktur · Messer im Unterricht',
+      caption: '3 Pfade · 3 Zeitfenster · parallel + kumulativ',
+      svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 250" width="600" preserveAspectRatio="xMidYMid meet">
+  <text x="300" y="14" text-anchor="middle" font-size="9.5" letter-spacing="1.8" class="muted">PARALLEL · KUMULATIV</text>
+  <line x1="100" y1="22" x2="100" y2="38" class="rule-line"/>
+  <line x1="300" y1="22" x2="300" y2="38" class="rule-line"/>
+  <line x1="500" y1="22" x2="500" y2="38" class="rule-line"/>
+  <g>
+    <rect x="20" y="38" width="160" height="200" class="box"/>
+    <text x="100" y="58" text-anchor="middle" font-size="10.5" font-weight="600" data-accent="true">GEFAHRENABWEHR</text>
+    <line x1="30" y1="68" x2="170" y2="68" class="rule-line"/>
+    <text x="100" y="88" text-anchor="middle" font-size="10">§ 5 LDO</text>
+    <text x="100" y="103" text-anchor="middle" font-size="10">§ 23/2 BaySchO</text>
+    <text x="100" y="118" text-anchor="middle" font-size="10">BayPolG</text>
+    <line x1="30" y1="138" x2="170" y2="138" class="rule-line"/>
+    <text x="100" y="160" text-anchor="middle" font-size="11" font-weight="600">Min 1–5</text>
+    <line x1="30" y1="178" x2="170" y2="178" class="rule-line"/>
+    <text x="100" y="200" text-anchor="middle" font-size="9.5" class="muted">LK · SL · Polizei</text>
+    <text x="100" y="216" text-anchor="middle" font-size="9.5" class="muted">Deeskalation +</text>
+    <text x="100" y="231" text-anchor="middle" font-size="9.5" class="muted">Sicherstellung</text>
+  </g>
+  <g>
+    <rect x="220" y="38" width="160" height="200" class="box"/>
+    <text x="300" y="58" text-anchor="middle" font-size="10.5" font-weight="600" data-accent="true">SCHULRECHT</text>
+    <line x1="230" y1="68" x2="370" y2="68" class="rule-line"/>
+    <text x="300" y="88" text-anchor="middle" font-size="10">Art. 86–88 BayEUG</text>
+    <text x="300" y="103" text-anchor="middle" font-size="10">Art. 87 (Person)</text>
+    <text x="300" y="118" text-anchor="middle" font-size="10" class="muted">EM · OM · Anhörung</text>
+    <line x1="230" y1="138" x2="370" y2="138" class="rule-line"/>
+    <text x="300" y="160" text-anchor="middle" font-size="11" font-weight="600">Min 5 → Tag 14</text>
+    <line x1="230" y1="178" x2="370" y2="178" class="rule-line"/>
+    <text x="300" y="200" text-anchor="middle" font-size="9.5" class="muted">LK · SL · Konferenz</text>
+    <text x="300" y="216" text-anchor="middle" font-size="9.5" class="muted">Verfahrens-Trias:</text>
+    <text x="300" y="231" text-anchor="middle" font-size="9.5" class="muted">Anhörung → OM → Vollzug</text>
+  </g>
+  <g>
+    <rect x="420" y="38" width="160" height="200" class="box"/>
+    <text x="500" y="58" text-anchor="middle" font-size="10.5" font-weight="600" data-accent="true">STRAFRECHT</text>
+    <line x1="430" y1="68" x2="570" y2="68" class="rule-line"/>
+    <text x="500" y="88" text-anchor="middle" font-size="10">§ 241 StGB</text>
+    <text x="500" y="103" text-anchor="middle" font-size="10">§ 224 StGB</text>
+    <text x="500" y="118" text-anchor="middle" font-size="10" class="muted">ab 14 J. JGG</text>
+    <line x1="430" y1="138" x2="570" y2="138" class="rule-line"/>
+    <text x="500" y="160" text-anchor="middle" font-size="11" font-weight="600">Wochen → Monate</text>
+    <line x1="430" y1="178" x2="570" y2="178" class="rule-line"/>
+    <text x="500" y="200" text-anchor="middle" font-size="9.5" class="muted">StA · Gericht</text>
+    <text x="500" y="216" text-anchor="middle" font-size="9.5" class="muted">LK = berechtigt</text>
+    <text x="500" y="231" text-anchor="middle" font-size="9.5" class="muted">(NICHT pflichtig § 138)</text>
+  </g>
+</svg>`
+    },
+
     { type: 'h', text: 'Drei-Pfad-Tabelle' },
     { type: 'table',
       head: ['Pfad', 'Rechtsgrundlage', 'Zeit', 'Adressat'],

@@ -46,6 +46,46 @@ window.MODULE_BODIES = {
       'Das **EIS-Prinzip** (Bruner 1966) ist das Rückgrat jeder MU-Begriffsbildung: Lernende durchlaufen **drei Repräsentationsebenen** — **e**naktiv (Handlung am Material) → **i**konisch (Bild/Visualisierung) → **s**ymbolisch (Notation/Zeichen). Konstruktivistisch verstanden: Wissen wird **aktiv konstruiert**, nicht passiv übernommen — daraus folgt der **Primat der Handlung** (Piaget, Montessori).'
     },
 
+    { type: 'svg', titel: 'EIS-Stufen Bruner · Begriffsbildung',
+      caption: 'enaktiv → ikonisch → symbolisch · pro Begriff alle 3 Ebenen',
+      svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 240" width="600" preserveAspectRatio="xMidYMid meet">
+  <g>
+    <rect x="40" y="140" width="160" height="80" class="box"/>
+    <text x="120" y="124" text-anchor="middle" font-size="11" font-weight="600" data-accent="true">E · ENAKTIV</text>
+    <text x="120" y="166" text-anchor="middle" font-size="10.5">Handeln am</text>
+    <text x="120" y="182" text-anchor="middle" font-size="10.5">konkreten Material</text>
+    <text x="120" y="204" text-anchor="middle" font-size="9.5" class="muted">handelnd sichtbar machen</text>
+  </g>
+  <g>
+    <rect x="220" y="90" width="160" height="130" class="box"/>
+    <text x="300" y="74" text-anchor="middle" font-size="11" font-weight="600" data-accent="true">I · IKONISCH</text>
+    <text x="300" y="116" text-anchor="middle" font-size="10.5">Bild · Skizze ·</text>
+    <text x="300" y="132" text-anchor="middle" font-size="10.5">Diagramm</text>
+    <text x="300" y="156" text-anchor="middle" font-size="9.5" class="muted">veranschaulichen</text>
+    <text x="300" y="172" text-anchor="middle" font-size="9.5" class="muted">darstellen</text>
+    <text x="300" y="200" text-anchor="middle" font-size="9" class="muted">Brücke konkret↔abstrakt</text>
+  </g>
+  <g>
+    <rect x="400" y="40" width="160" height="180" class="box"/>
+    <text x="480" y="24" text-anchor="middle" font-size="11" font-weight="600" data-accent="true">S · SYMBOLISCH</text>
+    <text x="480" y="80" text-anchor="middle" font-size="10.5">Mathem. Notation</text>
+    <text x="480" y="96" text-anchor="middle" font-size="10.5">Zeichen-System</text>
+    <text x="480" y="120" text-anchor="middle" font-size="9.5" class="muted">bestimmen</text>
+    <text x="480" y="136" text-anchor="middle" font-size="9.5" class="muted">berechnen</text>
+    <text x="480" y="152" text-anchor="middle" font-size="9.5" class="muted">argumentieren</text>
+    <text x="480" y="180" text-anchor="middle" font-size="9" class="muted">Beispiel: 25 % von 80</text>
+    <text x="480" y="194" text-anchor="middle" font-size="9" class="muted">= 0,25 · 80 = 20</text>
+  </g>
+  <path d="M 200 180 Q 210 180 220 155" class="rule-line" stroke-width="1.25" fill="none" marker-end="url(#arr)"/>
+  <path d="M 380 130 Q 390 130 400 105" class="rule-line" stroke-width="1.25" fill="none" marker-end="url(#arr)"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor"/>
+    </marker>
+  </defs>
+</svg>`
+    },
+
     { type: 'h', text: 'EIS-Stufen — Wortlaut + LP+-Auftrag' },
     { type: 'table',
       head: ['Stufe', 'Beschreibung', 'LP+-Wortlaut-Anker'],

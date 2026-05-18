@@ -50,6 +50,57 @@ window.MODULE_BODIES = {
       'Drei Pfade — drei Anspruchsgrundlagen. Wer **wer-was-wann** fragt, muss die drei Pfade getrennt halten: **{{§ 14/3 LDO}}** (Notenauskunft) · **{{§ 41/1 BaySchO}}** (Akten-Einsicht) · **{{Art. 15 DSGVO}}** (Daten-Auskunft). Sie ergänzen sich **kumulativ**, sie ersetzen sich nicht.'
     },
 
+    { type: 'svg', titel: 'Auskunfts-Trias · 3 Anspruchsgrundlagen',
+      caption: 'Noten · Akte · Daten — kumulativ, nicht alternativ',
+      svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" width="600" preserveAspectRatio="xMidYMid meet">
+  <text x="300" y="18" text-anchor="middle" font-size="9.5" letter-spacing="1.8" class="muted">KUMULATIV · NICHT ALTERNATIV</text>
+  <line x1="100" y1="26" x2="100" y2="42" class="rule-line"/>
+  <line x1="300" y1="26" x2="300" y2="42" class="rule-line"/>
+  <line x1="500" y1="26" x2="500" y2="42" class="rule-line"/>
+  <g>
+    <rect x="20" y="42" width="160" height="200" class="box"/>
+    <text x="100" y="62" text-anchor="middle" font-size="10.5" font-weight="600" data-accent="true">1 · NOTENAUSKUNFT</text>
+    <line x1="30" y1="72" x2="170" y2="72" class="rule-line"/>
+    <text x="100" y="92" text-anchor="middle" font-size="10">§ 14/3 LDO</text>
+    <text x="100" y="116" text-anchor="middle" font-size="10">SuS + EB</text>
+    <line x1="30" y1="132" x2="170" y2="132" class="rule-line"/>
+    <text x="100" y="152" text-anchor="middle" font-size="9.5" class="muted">Vorrücken / Zeugnis-</text>
+    <text x="100" y="166" text-anchor="middle" font-size="9.5" class="muted">noten</text>
+    <line x1="30" y1="182" x2="170" y2="182" class="rule-line"/>
+    <text x="100" y="204" text-anchor="middle" font-size="10" font-weight="600" data-accent="true">VOR Festlegung</text>
+    <text x="100" y="220" text-anchor="middle" font-size="10" font-weight="600" data-accent="true">VERBOTEN</text>
+  </g>
+  <g>
+    <rect x="220" y="42" width="160" height="200" class="box"/>
+    <text x="300" y="62" text-anchor="middle" font-size="10.5" font-weight="600" data-accent="true">2 · AKTEN-EINSICHT</text>
+    <line x1="230" y1="72" x2="370" y2="72" class="rule-line"/>
+    <text x="300" y="92" text-anchor="middle" font-size="10">§ 41/1 BaySchO</text>
+    <text x="300" y="116" text-anchor="middle" font-size="10">SuS ab 14 · EB</text>
+    <text x="300" y="130" text-anchor="middle" font-size="9.5" class="muted">frühere EB bis 21</text>
+    <line x1="230" y1="142" x2="370" y2="142" class="rule-line"/>
+    <text x="300" y="162" text-anchor="middle" font-size="9.5" class="muted">Schülerakte +</text>
+    <text x="300" y="176" text-anchor="middle" font-size="9.5" class="muted">Leistungsnachweise</text>
+    <line x1="230" y1="190" x2="370" y2="190" class="rule-line"/>
+    <text x="300" y="212" text-anchor="middle" font-size="9.5">nach Abschluss</text>
+    <text x="300" y="226" text-anchor="middle" font-size="9.5" class="muted">Verfahren / Prüfung</text>
+  </g>
+  <g>
+    <rect x="420" y="42" width="160" height="200" class="box"/>
+    <text x="500" y="62" text-anchor="middle" font-size="10.5" font-weight="600" data-accent="true">3 · DSGVO-AUSKUNFT</text>
+    <line x1="430" y1="72" x2="570" y2="72" class="rule-line"/>
+    <text x="500" y="92" text-anchor="middle" font-size="10">Art. 15 DSGVO</text>
+    <text x="500" y="116" text-anchor="middle" font-size="10">Betroffene Person</text>
+    <text x="500" y="130" text-anchor="middle" font-size="9.5" class="muted">(SuS / EB-Vertreter)</text>
+    <line x1="430" y1="142" x2="570" y2="142" class="rule-line"/>
+    <text x="500" y="162" text-anchor="middle" font-size="9.5" class="muted">Zwecke · Empfänger ·</text>
+    <text x="500" y="176" text-anchor="middle" font-size="9.5" class="muted">Speicherdauer · Rechte</text>
+    <line x1="430" y1="190" x2="570" y2="190" class="rule-line"/>
+    <text x="500" y="212" text-anchor="middle" font-size="10" font-weight="600" data-accent="true">binnen 1 Monat</text>
+    <text x="500" y="226" text-anchor="middle" font-size="9.5" class="muted">Art. 12/3 DSGVO</text>
+  </g>
+</svg>`
+    },
+
     { type: 'h', text: 'Drei-Pfad-Vergleichstabelle' },
     { type: 'table',
       head: ['Pfad', 'Norm', 'Berechtigte', 'Inhalt', 'Verbot-Phase?'],

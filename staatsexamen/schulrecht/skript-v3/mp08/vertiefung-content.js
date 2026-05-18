@@ -185,6 +185,74 @@ window.MODULE_BODIES = {
       'Vier Säulen Betreuung — **drei Rechtsregime**: schulisch (Halbtags-GS, GTS) · kommunal (Mittagsbetreuung) · jugendhilferechtlich (Hort). Jede Säule hat eigene Norm, eigenen Träger und eigene Aufsichtspflicht-Sphäre.'
     },
 
+    { type: 'svg', titel: 'Vier Säulen Betreuung · drei Rechtsregime',
+      caption: 'Mittagsbetreuung · Halbtags-GS · GTS · Hort',
+      svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 280" width="600" preserveAspectRatio="xMidYMid meet">
+  <text x="100" y="22" text-anchor="middle" font-size="9.5" letter-spacing="1.6" class="muted">KOMMUNAL</text>
+  <text x="250" y="22" text-anchor="middle" font-size="9.5" letter-spacing="1.6" class="muted">SCHULISCH</text>
+  <text x="400" y="22" text-anchor="middle" font-size="9.5" letter-spacing="1.6" class="muted">SCHULISCH</text>
+  <text x="540" y="22" text-anchor="middle" font-size="9.5" letter-spacing="1.6" class="muted">JUGENDHILFE</text>
+  <line x1="20" y1="32" x2="180" y2="32" class="rule-line"/>
+  <line x1="180" y1="32" x2="320" y2="32" class="rule-line"/>
+  <line x1="320" y1="32" x2="460" y2="32" class="rule-line"/>
+  <line x1="460" y1="32" x2="580" y2="32" class="rule-line"/>
+  <g>
+    <rect x="30" y="48" width="140" height="200" class="box"/>
+    <text x="100" y="68" text-anchor="middle" font-size="10.5" font-weight="600" data-accent="true">MITTAGSBETREUUNG</text>
+    <line x1="40" y1="78" x2="160" y2="78" class="rule-line"/>
+    <text x="100" y="100" text-anchor="middle" font-size="10">Art. 31/3 BayEUG</text>
+    <text x="100" y="128" text-anchor="middle" font-size="10.5" font-weight="500">Gemeinde</text>
+    <text x="100" y="142" text-anchor="middle" font-size="9.5" class="muted">gemeinnützig</text>
+    <line x1="40" y1="162" x2="160" y2="162" class="rule-line"/>
+    <text x="100" y="184" text-anchor="middle" font-size="9.5">bis ~14 Uhr</text>
+    <text x="100" y="200" text-anchor="middle" font-size="9.5" class="muted">verlängert mit HA</text>
+    <text x="100" y="214" text-anchor="middle" font-size="9.5" class="muted">15:30 / 16:00</text>
+    <text x="100" y="238" text-anchor="middle" font-size="9" class="muted">kein Bildungsauftrag</text>
+  </g>
+  <g>
+    <rect x="180" y="48" width="140" height="200" class="box"/>
+    <text x="250" y="68" text-anchor="middle" font-size="10.5" font-weight="600" data-accent="true">HALBTAGS-GS</text>
+    <line x1="190" y1="78" x2="310" y2="78" class="rule-line"/>
+    <text x="250" y="100" text-anchor="middle" font-size="10">KMBek 1999/2000</text>
+    <text x="250" y="128" text-anchor="middle" font-size="10.5" font-weight="500">Staat</text>
+    <text x="250" y="142" text-anchor="middle" font-size="9.5" class="muted">Freistaat Bayern</text>
+    <line x1="190" y1="162" x2="310" y2="162" class="rule-line"/>
+    <text x="250" y="184" text-anchor="middle" font-size="9.5">7:30 – 13:00 Uhr</text>
+    <text x="250" y="200" text-anchor="middle" font-size="9.5" class="muted">rhythmisierter</text>
+    <text x="250" y="214" text-anchor="middle" font-size="9.5" class="muted">Vormittag</text>
+    <text x="250" y="238" text-anchor="middle" font-size="9" class="muted">voller Bildungsauftrag</text>
+  </g>
+  <g>
+    <rect x="330" y="48" width="140" height="200" class="box"/>
+    <text x="400" y="68" text-anchor="middle" font-size="10.5" font-weight="600" data-accent="true">GANZTAGSSCHULE</text>
+    <line x1="340" y1="78" x2="460" y2="78" class="rule-line"/>
+    <text x="400" y="100" text-anchor="middle" font-size="10">Art. 6/4 BayEUG</text>
+    <text x="400" y="113" text-anchor="middle" font-size="9.5" class="muted">+ KMBek 2013/2020</text>
+    <text x="400" y="138" text-anchor="middle" font-size="10.5" font-weight="500">Staat</text>
+    <text x="400" y="152" text-anchor="middle" font-size="9.5" class="muted">oGTS · gGTS</text>
+    <line x1="340" y1="170" x2="460" y2="170" class="rule-line"/>
+    <text x="400" y="192" text-anchor="middle" font-size="9.5">mind. 4 Tage</text>
+    <text x="400" y="206" text-anchor="middle" font-size="9.5">à 7 Std.</text>
+    <text x="400" y="220" text-anchor="middle" font-size="9.5" class="muted">Mittagsverpflegung +</text>
+    <text x="400" y="234" text-anchor="middle" font-size="9.5" class="muted">HA + Förder + AGs</text>
+  </g>
+  <g>
+    <rect x="480" y="48" width="100" height="200" class="box"/>
+    <text x="530" y="68" text-anchor="middle" font-size="10.5" font-weight="600" data-accent="true">HORT</text>
+    <line x1="490" y1="78" x2="570" y2="78" class="rule-line"/>
+    <text x="530" y="100" text-anchor="middle" font-size="10">§ 22 SGB VIII</text>
+    <text x="530" y="113" text-anchor="middle" font-size="9.5" class="muted">KMBek 1991</text>
+    <text x="530" y="138" text-anchor="middle" font-size="10.5" font-weight="500">JuHi-Träger</text>
+    <text x="530" y="152" text-anchor="middle" font-size="9.5" class="muted">frei · kirchl. · kommunal</text>
+    <line x1="490" y1="170" x2="570" y2="170" class="rule-line"/>
+    <text x="530" y="192" text-anchor="middle" font-size="9.5">außerschul.</text>
+    <text x="530" y="206" text-anchor="middle" font-size="9.5" class="muted">eigene Bildungs-</text>
+    <text x="530" y="220" text-anchor="middle" font-size="9.5" class="muted">und Erziehungs-</text>
+    <text x="530" y="234" text-anchor="middle" font-size="9.5" class="muted">einrichtung</text>
+  </g>
+</svg>`
+    },
+
     { type: 'h', text: 'Übersicht 4 Säulen' },
     { type: 'table',
       head: ['Form', 'Norm', 'Träger', 'Zeit / Charakter'],

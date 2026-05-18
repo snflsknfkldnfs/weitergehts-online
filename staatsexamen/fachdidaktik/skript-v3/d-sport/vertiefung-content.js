@@ -60,6 +60,46 @@ window.MODULE_BODIES = {
     },
 
     { type: 'h', text: '6 Pädagogische Perspektiven verbatim ({{Kurz}})' },
+
+    { type: 'svg', titel: '6 Pädagogische Perspektiven nach Kurz',
+      caption: 'A · B · C · D · E · F — Mehrperspektivität pro Sequenz',
+      svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="600" preserveAspectRatio="xMidYMid meet">
+  <polygon points="300,60 405,120 405,220 300,280 195,220 195,120" class="rule-line" stroke-width="1.5" fill="none"/>
+  <circle cx="300" cy="170" r="3" data-accent="true"/>
+  <text x="300" y="160" text-anchor="middle" font-size="10" letter-spacing="1.4" data-accent="true" font-weight="600">MEHRPERSPEKTIVITÄT</text>
+  <text x="300" y="180" text-anchor="middle" font-size="9" class="muted">Pflicht-Prinzip pro Sequenz</text>
+  <g>
+    <text x="300" y="42" text-anchor="middle" font-size="11" font-weight="600" data-accent="true">A · EINDRUCK</text>
+    <text x="300" y="56" text-anchor="middle" font-size="9" class="muted">Wahrnehmung schulen</text>
+  </g>
+  <g>
+    <text x="465" y="105" text-anchor="middle" font-size="11" font-weight="600" data-accent="true">B · AUSDRUCK</text>
+    <text x="465" y="119" text-anchor="middle" font-size="9" class="muted">Tanz · Akrobatik</text>
+    <text x="465" y="131" text-anchor="middle" font-size="9" class="muted">Bewegungsgestaltung</text>
+  </g>
+  <g>
+    <text x="465" y="225" text-anchor="middle" font-size="11" font-weight="600" data-accent="true">C · GESUNDHEIT</text>
+    <text x="465" y="239" text-anchor="middle" font-size="9" class="muted">Fitness · Kondition</text>
+    <text x="465" y="251" text-anchor="middle" font-size="9" class="muted">Lebensführung</text>
+  </g>
+  <g>
+    <text x="300" y="305" text-anchor="middle" font-size="11" font-weight="600" data-accent="true">D · WAGNIS</text>
+    <text x="300" y="319" text-anchor="middle" font-size="9" class="muted">Verantwortetes Risiko</text>
+    <text x="300" y="331" text-anchor="middle" font-size="9" class="muted">Klettern · Trampolin</text>
+  </g>
+  <g>
+    <text x="135" y="225" text-anchor="middle" font-size="11" font-weight="600" data-accent="true">E · LEISTUNG</text>
+    <text x="135" y="239" text-anchor="middle" font-size="9" class="muted">Messen · Reflektieren</text>
+    <text x="135" y="251" text-anchor="middle" font-size="9" class="muted">Eigene Verbesserung</text>
+  </g>
+  <g>
+    <text x="135" y="105" text-anchor="middle" font-size="11" font-weight="600" data-accent="true">F · MITEINANDER</text>
+    <text x="135" y="119" text-anchor="middle" font-size="9" class="muted">Mannschaft · Kooperation</text>
+    <text x="135" y="131" text-anchor="middle" font-size="9" class="muted">Gemeinsam handeln</text>
+  </g>
+</svg>`
+    },
+
     { type: 'table',
       head: ['Code', 'Perspektive', 'Inhalt'],
       rows: [

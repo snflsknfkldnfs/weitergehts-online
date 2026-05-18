@@ -143,6 +143,58 @@ window.MODULE_BODIES = {
     { type: 'p', text: '**Rückkehr MS↔M-Zug jederzeit** ({{§ 8 MSO}}) als Sicherheitsnetz. Wirtschaftsschule (4-stufig, Jgst. 7): D+M+E ≤ 2,66 aus 6./7. Klasse Jahreszeugnis; alternativ M-Zug-Vorrückungserlaubnis aus 7.; sonst Probeunterricht.' },
 
     { type: 'h', text: 'Aufstiegswege MS → Hochschulreife' },
+
+    { type: 'svg', titel: 'Drei Aufstiegswege MS → Hochschulreife',
+      caption: 'Weg A · B · C — alle drei über FOS 11/12',
+      svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 280" width="600" preserveAspectRatio="xMidYMid meet">
+  <rect x="240" y="20" width="120" height="28" class="box"/>
+  <text x="300" y="38" text-anchor="middle" font-size="11" font-weight="600" data-accent="true">MS 5</text>
+  <line x1="300" y1="48" x2="300" y2="62" class="rule-line"/>
+  <line x1="120" y1="62" x2="480" y2="62" class="rule-line"/>
+  <line x1="120" y1="62" x2="120" y2="76" class="rule-line"/>
+  <line x1="300" y1="62" x2="300" y2="76" class="rule-line"/>
+  <line x1="480" y1="62" x2="480" y2="76" class="rule-line"/>
+  <text x="120" y="84" text-anchor="middle" font-size="9.5" letter-spacing="1.4" data-accent="true" font-weight="600">WEG A</text>
+  <text x="300" y="84" text-anchor="middle" font-size="9.5" letter-spacing="1.4" data-accent="true" font-weight="600">WEG B</text>
+  <text x="480" y="84" text-anchor="middle" font-size="9.5" letter-spacing="1.4" data-accent="true" font-weight="600">WEG C</text>
+  <g>
+    <rect x="60" y="92" width="120" height="40" class="box"/>
+    <text x="120" y="110" text-anchor="middle" font-size="10.5">M7 (D+M+E ≤ 2,66)</text>
+    <text x="120" y="124" text-anchor="middle" font-size="9.5" class="muted">§ 7 MSO</text>
+    <line x1="120" y1="132" x2="120" y2="148" class="rule-line"/>
+    <rect x="60" y="148" width="120" height="40" class="box"/>
+    <text x="120" y="166" text-anchor="middle" font-size="10.5">M10 + MSA</text>
+    <text x="120" y="180" text-anchor="middle" font-size="9.5" class="muted">§ 22 MSO</text>
+  </g>
+  <g>
+    <rect x="240" y="92" width="120" height="40" class="box"/>
+    <text x="300" y="110" text-anchor="middle" font-size="10.5">ESA / Quali</text>
+    <text x="300" y="124" text-anchor="middle" font-size="9.5" class="muted">§ 34 MSO</text>
+    <line x1="300" y1="132" x2="300" y2="148" class="rule-line"/>
+    <rect x="240" y="148" width="120" height="40" class="box"/>
+    <text x="300" y="166" text-anchor="middle" font-size="10.5">Ausbildung + BS</text>
+    <text x="300" y="180" text-anchor="middle" font-size="9.5" class="muted">→ Quabi</text>
+  </g>
+  <g>
+    <rect x="420" y="92" width="120" height="40" class="box"/>
+    <text x="480" y="110" text-anchor="middle" font-size="10.5">Wirtschaftsschule</text>
+    <text x="480" y="124" text-anchor="middle" font-size="9.5" class="muted">4-stufig ab Jgst. 7</text>
+    <line x1="480" y1="132" x2="480" y2="148" class="rule-line"/>
+    <rect x="420" y="148" width="120" height="40" class="box"/>
+    <text x="480" y="166" text-anchor="middle" font-size="10.5">Mittlerer Abschluss</text>
+    <text x="480" y="180" text-anchor="middle" font-size="9.5" class="muted">D+M+E ≤ 2,66</text>
+  </g>
+  <line x1="120" y1="188" x2="120" y2="206" class="rule-line"/>
+  <line x1="300" y1="188" x2="300" y2="206" class="rule-line"/>
+  <line x1="480" y1="188" x2="480" y2="206" class="rule-line"/>
+  <line x1="120" y1="206" x2="480" y2="206" class="rule-line"/>
+  <line x1="300" y1="206" x2="300" y2="220" class="rule-line"/>
+  <rect x="220" y="220" width="160" height="34" class="box"/>
+  <text x="300" y="242" text-anchor="middle" font-size="11.5" font-weight="600" data-accent="true">FOS 11/12</text>
+  <text x="300" y="268" text-anchor="middle" font-size="9.5" letter-spacing="1.2" class="muted">FACH-/HOCHSCHULREIFE</text>
+</svg>`
+    },
+
     { type: 'bullets', items: [
       '**Weg A (M-Zug)**: MS 5 → M7 (D+M+E ≤ 2,66) → M10 + MSA → FOS 11/12 → Fach-/Hochschulreife.',
       '**Weg B (Quali + BS + FOS)**: MS 5 → ESA Ende 9. → Quali (50/50 + Projekt) → Berufsausbildung + BS → Quabi {{§ 34 MSO}} → FOS 11/12 → Fach-/Hochschulreife.',

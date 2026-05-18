@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Fachdidaktik · Skript V3 — Staatsexamen MS Bayern</title>
   <meta name="description" content="V3-Skripte für die vier Prüfungsfächer der Fachdidaktik: N18 Sozialkunde · D Mathematik · D WiB · D Sport" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3E%3Ctext y=%2713%27 font-family=%27monospace%27 font-size=%2715%27 fill=%27%234a5d3b%27%3E%E2%86%92%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
@@ -111,6 +112,12 @@
     }
     @media (min-width: 1100px) {
       .hub-grid { grid-template-columns: repeat(2, 1fr); }
+      /* Center-Last-If-Odd: bei ungerader Anzahl letzte Karte zentriert (4 ist gerade — defensiv für künftige Erweiterungen). */
+      .hub-grid .hub-card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        max-width: calc(50% - 10px);
+        justify-self: center;
+      }
     }
     .hub-card {
       background: var(--paper);

@@ -19,7 +19,7 @@ window.MODULE = {
     'Die Schülermitverantwortung ist verfasste Demokratie-Einübung und kein politisches Mandat.',
   ],
 
-  deck: { cards: 8, normebenen: 5, hochprior: 8, fallen: 10 },
+  deck: { cards: 9, normebenen: 5, hochprior: 9, fallen: 11 },
 
   kartografie: [
     {
@@ -133,6 +133,15 @@ window.MODULE = {
       norm: 'Art. 63 BayEUG',
       status: 'planned',
     },
+    {
+      id: 'K35',
+      titel: 'Nachteilsausgleich vs. Notenschutz',
+      frage: 'Worin unterscheiden sich Nachteilsausgleich und Notenschutz — und welche Konsequenz hat BVerwG 2015 für das Zeugnis?',
+      antwort:
+        '**Nachteilsausgleich** = Veränderung der **Prüfungsbedingungen** (Zeitverlängerung, Hilfsmittel, alternative Aufgabenformate) bei BEHALTENEN Bewertungsmaßstäben → KEIN Zeugnis-Vermerk. **Notenschutz** = Aussetzung der Bewertung bestimmter Teilleistungen (z.B. Rechtschreibung bei LRS) → MUSS im Zeugnis vermerkt werden ({{BVerwG 2015}}). Anspruchsgrundlage: {{Art. 52a BayEUG}} + {{§ 33/34 BaySchO}}.',
+      norm: 'Art. 52a BayEUG',
+      status: 'open',
+    },
   ],
 
   // Falle-Atlas — alle 10 als Akkordeon
@@ -147,6 +156,7 @@ window.MODULE = {
     { id: 'FA08', frage: 'Tiefer-Einstufung bei ndM wegen schwacher Deutschkenntnisse?', antwort: 'UNZULÄSSIG. Art. 36/3 S. 4: Tiefer-Einstufung NUR bei mangelndem Bildungsstand. DaZ + Deutschklasse sind die richtigen Wege.' },
     { id: 'FA09', frage: 'Kann LAA Verbindungslehrkraft werden?', antwort: 'NEIN. Art. 62/7 BayEUG: nur LK/FL mit mind. ½ Regelstundenmaß + UNBEFRISTET. LAA „auf Widerruf" erfüllt das Kriterium nicht.' },
     { id: 'FA10', frage: 'SL kann presserechtliche Schülerzeitung herausgeben verbieten?', antwort: 'NEIN. Eltern-Haftung bleibt; SL nur Verteilung auf Schulgelände bei Rechtsverstoß. Herausgabe-Untersagung NUR bei Modus „Einrichtung der Schule" möglich.' },
+    { id: 'FA11', frage: 'Nachteilsausgleich darf im Zeugnis erscheinen?', antwort: 'NEIN. **Nachteilsausgleich** (Zeitverlängerung, Hilfsmittel) verändert NUR die Prüfungsbedingungen — KEINE Zeugnis-Erwähnung. NUR der **Notenschutz** (Aussetzung Teilleistungs-Bewertung, z.B. Rechtschreibung) MUSS laut BVerwG 2015 zeugnis-vermerkt werden — sonst Diskriminierungs-Falle in der Gegen-Richtung.' },
   ],
 
   // Fallbeispiele — Sachverhalt offen, Knackpunkte + Antwortkette als Reveal
@@ -256,6 +266,20 @@ window.MODULE = {
         'SL muss Mahnung an LK aussprechen → Korrektur-Pflicht ist Dienstpflicht (LDO).',
       ],
       antwortkette: 'KL/SL ansprechen → LK-Gespräch (Gründe? Belastung? Krankheit?) → Termin für Rückgabe binnen kurzer Frist fixieren → SL-Aufforderung bei extremer Verzögerung. Eltern-Antwort: Wortlaut-Direktionalität transparent kommunizieren.',
+    },
+    {
+      id: 'F11',
+      titel: 'Lukas — LRS und Notenschutz',
+      sachverhalt:
+        'Lukas (8. Kl. MS) hat ein fachärztlich attestiertes LRS-Gutachten. Die Eltern beantragen, dass Rechtschreibung in Deutsch und Englisch nicht in die Notengebung einfließt. Die Klassen-LK fragt: „Muss das ins Zeugnis?"',
+      knackpunkte: [
+        'Erst Trennung zwischen Nachteilsausgleich + Notenschutz prüfen.',
+        'Beantragt sind hier konkret: Aussetzung der Rechtschreib-Bewertung → Notenschutz, nicht bloß Nachteilsausgleich.',
+        '**BVerwG 2015**: Notenschutz MUSS im Zeugnis vermerkt werden — sonst Diskriminierung der Mitschüler:innen ohne LRS (irreführende Vergleichbarkeit).',
+        'Anspruchsgrundlage: Art. 52a BayEUG + § 33/34 BaySchO (Förderbedarf).',
+        'Verfahren: SL-Entscheidung auf Antrag + fachärztliches Gutachten + päd. Stellungnahme.',
+      ],
+      antwortkette: 'Antrag prüfen → Trennung Nachteilsausgleich (kein Vermerk) vs. Notenschutz (Vermerk-Pflicht) klären → Eltern aufklären, dass der gewünschte „Notenschutz Rechtschreibung" laut BVerwG 2015 zeugnisvermerkt werden MUSS → ggf. Wechsel auf reinen Nachteilsausgleich (Zeitverlängerung) erwägen, wenn kein Zeugnis-Vermerk gewünscht.',
     },
     {
       id: 'F10',

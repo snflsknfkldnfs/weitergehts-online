@@ -6,6 +6,37 @@ window.MODULE_BODIES = {
       'Die LK-Verantwortung im Schuldienst ist eine **Drei-Pfad-Haftung**: Zivil/Amtshaftung · Disziplinarrecht · Strafrecht — drei Schienen, drei Anspruchsgrundlagen, drei Adressaten der Außenhaftung. Sie laufen **kumulativ**, ohne {{Art. 103/3 GG}} ne-bis-in-idem-Verstoß.'
     },
 
+    { type: 'svg', titel: 'Haftungsdreieck im Schuldienst',
+      caption: '3 Schienen · kumulativ · ne bis in idem nur Strafrecht',
+      svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" width="600" preserveAspectRatio="xMidYMid meet">
+  <polygon points="300,40 80,280 520,280" class="rule-line" stroke-width="1.5" fill="none"/>
+  <g>
+    <text x="300" y="32" text-anchor="middle" font-size="11" font-weight="600" data-accent="true">ZIVIL / AMTSHAFTUNG</text>
+    <text x="300" y="50" text-anchor="middle" font-size="10">§ 839 BGB · Art. 34 GG</text>
+    <text x="300" y="66" text-anchor="middle" font-size="9.5" class="muted">außen: Freistaat haftet</text>
+    <text x="300" y="80" text-anchor="middle" font-size="9.5" class="muted">Rückgriff nur Vorsatz +</text>
+    <text x="300" y="94" text-anchor="middle" font-size="9.5" class="muted">grobe Fahrlässigkeit</text>
+  </g>
+  <g>
+    <text x="80" y="298" text-anchor="middle" font-size="11" font-weight="600" data-accent="true">DISZIPLINAR</text>
+    <text x="80" y="313" text-anchor="middle" font-size="10">§ 47 BeamtStG</text>
+    <text x="100" y="226" text-anchor="middle" font-size="10">Art. 6 BayDG</text>
+    <text x="100" y="244" text-anchor="middle" font-size="9.5" class="muted">5 Stufen Lebenszeit</text>
+    <text x="100" y="258" text-anchor="middle" font-size="9.5" class="muted">+ 2 Stufen Ruhestand</text>
+  </g>
+  <g>
+    <text x="520" y="298" text-anchor="middle" font-size="11" font-weight="600" data-accent="true">STRAFRECHT</text>
+    <text x="520" y="313" text-anchor="middle" font-size="10">StGB</text>
+    <text x="510" y="226" text-anchor="middle" font-size="10">§ 229 · § 203 · § 174</text>
+    <text x="510" y="244" text-anchor="middle" font-size="9.5" class="muted">LK persönlich</text>
+    <text x="510" y="258" text-anchor="middle" font-size="9.5" class="muted">Schuldprinzip</text>
+  </g>
+  <text x="300" y="180" text-anchor="middle" font-size="9" letter-spacing="2" class="muted">KUMULATIV</text>
+  <text x="300" y="196" text-anchor="middle" font-size="9" letter-spacing="1.5" class="muted">Art. 103/3 GG nur „allgemeine Strafgesetze"</text>
+  <text x="300" y="210" text-anchor="middle" font-size="9" letter-spacing="1.5" class="muted">Disziplinar = Sonderrecht ≠ ne bis in idem</text>
+</svg>`
+    },
+
     { type: 'h', text: 'Drei-Pfad-Tabelle' },
     { type: 'table',
       head: ['Schiene', 'Anspruchsgrundlage', 'Außenhaftung', 'Rückgriff/persönlich'],

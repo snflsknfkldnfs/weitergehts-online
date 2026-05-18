@@ -649,6 +649,53 @@ h2.mono-h, h3.mono-h { margin: 0; font-weight: 500; font-size: 10.5px; }
 .rb-p { margin: 0 0 14px; line-height: 1.65; font-size: 15px; }
 .rb-list { margin: 0 0 16px; padding-left: 22px; line-height: 1.6; font-size: 15px; }
 .rb-list li { margin-bottom: 6px; }
+
+/* SVG-Diagramm-Block: monochrom, JetBrains-Mono-Labels, Hairlines. */
+.rb-svg {
+  margin: 18px 0 22px;
+  padding: 0;
+}
+.rb-svg__inner {
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  padding: 18px 16px;
+  display: flex;
+  justify-content: center;
+}
+.rb-svg__inner svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  color: var(--ink);
+}
+.rb-svg__inner svg text {
+  font-family: var(--mono);
+  fill: var(--ink);
+}
+.rb-svg__inner svg .accent,
+.rb-svg__inner svg [data-accent] {
+  fill: var(--accent);
+  stroke: var(--accent);
+}
+.rb-svg__inner svg .muted { fill: var(--muted); }
+.rb-svg__inner svg .rule-line { stroke: var(--hairline); stroke-width: 1; fill: none; }
+.rb-svg__inner svg .box { fill: none; stroke: var(--ink); stroke-width: 1.25; }
+.rb-svg__caption {
+  margin: 10px 0 0;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: center;
+}
+@media print {
+  .rb-svg__inner { border-color: #000 !important; padding: 8pt !important; }
+  .rb-svg__inner svg { color: #000 !important; }
+  .rb-svg__inner svg .accent,
+  .rb-svg__inner svg [data-accent] { fill: #000 !important; stroke: #000 !important; }
+  .rb-svg__inner svg .box { stroke: #000 !important; }
+}
 .rb-table {
   margin: 0 0 18px;
   border: 1px solid var(--rule);
