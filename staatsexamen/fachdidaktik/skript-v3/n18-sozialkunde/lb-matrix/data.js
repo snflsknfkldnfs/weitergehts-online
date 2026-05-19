@@ -1166,8 +1166,8 @@ window.MATRIX = {
             "praxis": "Eigene Praxis GPG7c SJ 24/25 + idealtypische Erweiterung",
             "gesamtzeit": "10 UEs à 45 min = 7,5 Zeitstunden",
             "lernzielraster": "Sach- + Methoden- + Urteilskompetenz · GPJE 2004 · Mager-3-K-Lernziele",
-            "phasenStandard": "GPG-Bayern · 5 Artikulationsstufen pro UE · Sequenzplan-Standard nach BUV-Template v4",
-            "qualitaetsstandards_quelle": "GPG_Anleitungen/Sequenzplanung + Unterrichtseinheiten + Lernziele formulieren + GPG_BUV_Entwicklung/BUV_Template_Schwerpunktstunde_v4.md",
+            "phasenStandard": "GPG-Bayern · Fallanalyse-Verlaufsmodell nach Hartmann B4 (Konfrontation · Information · Resolution · Disputation · Kollation) · Sequenzplan-Standard nach BUV-Template v4 · Sekundaer fuer historische LB2-Stunden: Hofmann GB Modell 1+2 · LehrplanPLUS Bayern MS GPG, Kompetenzstrukturmodell (ISB)",
+            "qualitaetsstandards_quelle": "Primaerquelle: Bausteinskript GPG B4 'Fachspezifische Arbeitsweisen II — Methodische Vollzugsformen — Sozialwissenschaftliche Perspektive' (Hartmann, SR, AG der MS-Seminarleiter:innen Unterfranken) — Fallanalyse-Verlaufsmodell · kasuistisches Prinzip · 5 fachspezifische Arbeitsweisen (Informieren · Interpretieren · Meinung aeussern · Argumentieren/Diskutieren/Kooperieren · Reflektieren und Handeln) · Mikro-/Makromethoden-Katalog · Sekundaer fuer historische Stunden (LB2 Zeit+Wandel): Bausteinskript GB 'Grundsaetze des GPG-Unterrichts' (Hofmann, SR, AG der MS-Seminarleiter:innen Unterfranken) Modell 1+2 · Beutelsbacher Konsens 1976 (Kontroversitaetsgebot — gilt strikt fuer Phase 4 Disputation) · LehrplanPLUS Bayern MS GPG (ISB, Kompetenzstrukturmodell mit 3 Perspektiven, 3 Prozesskompetenzen, 5 Gegenstandsbereichen, 4 Lernbereichen) · GPG_Anleitungen/Sequenzplanung + BUV_Template_Schwerpunktstunde_v4 · Tertiaer (ueberregional): Reinhardt 2016 Konfliktanalyse · Sauer 2012 Geschichtsunterricht · Pandel 2013 Geschichtsdidaktik · Reinhardt/Kaiser 1983 Fallstudie · Massing/Skuhr 1994 Policy-Zyklus · Petrik 2007 ff. Genetische Politikdidaktik",
             "sequenz_meta": {
               "lehrplanbezug": "GPG 7 · Lernbereich 3 'Politik und Gesellschaft' · KE 1+2",
               "kompetenzerwartungen_verbatim": [
@@ -1181,11 +1181,15 @@ window.MATRIX = {
               ],
               "zielsetzung_uebergeordnet": "Die Sequenz erschließt am Identifikationsfiguren-Paar Johann (landloser Knecht) und Anna (Spinnerei-Arbeiterin) die Lebens- und Arbeitsverhältnisse der Industrialisierung und führt zur kritischen Beurteilung von Bismarcks Sozialgesetzgebung. Ziel ist die Bildung eines reflektierten Sach- und Werturteils zur Sozialen Frage — historisch und in aktualisierter Perspektive (Wohnungsfrage, Working-Poor heute).",
               "methodische_schwerpunkte": [
-                "Personifikation (Johann/Anna) als sequenzdurchgaengige Identifikationsstrategie",
-                "Bild-/Quellenarbeit (Menzel, Engels, Stadtkarten) gemaess Bildquellen- und Quellenkritik-Standard (Pandel 2017)",
-                "Kooperative Methoden: Standbild · Stationenlernen · Jigsaw · Pro-Contra-Debatte · Vergleichsmatrix",
+                "Phasenschema: Fallanalyse-Verlaufsmodell nach Hartmann B4 (Konfrontation · Information · Resolution · Disputation · Kollation) — kasuistisches Prinzip auch fuer Soziale-Frage-Thematik (Bismarck-Gesetzgebung UE 6 als Paradigma-Fall) · fuer reine LB2-Industrialisierungs-Aspekte (UE 7) sekundaer Hofmann-Modell 1+2 + Sauer-Dreischritt",
+                "Personifikation (Johann/Anna) als sequenzdurchgaengige Identifikationsstrategie · Faelle als Lern-Ausschnitte aus der Wirklichkeit (Hartmann-B4 kasuistisches Prinzip)",
+                "Bild-/Quellenarbeit (Menzel, Engels, Stadtkarten) gemaess Bildquellen- und Quellenkritik-Standard (Pandel 2017) — in Hartmann-Phase 2 Information",
+                "Mikromethoden nach Hartmann B4: Textanalyse · Karikatur-Analyse · Brainstorming · Stellung nehmen · Pro-Contra-Debatte · Diskussion · Priorisierungsliste",
+                "Makromethoden nach Hartmann B4: Fallanalyse (zentral) · Projekt (UE 10 Realhandeln)",
+                "Kooperative Methoden: Standbild · Stationenlernen · Jigsaw · Vergleichsmatrix",
                 "Differenzierung in 4 Spuren (DaZ, LRS, leistungsschwach, leistungsstark) pro UE",
-                "Tafelbild-Zentrierung: handschriftlich, 3-Zonen-Schema, Sicherung im Heft (nicht Mappe)"
+                "Tafelbild-Zentrierung: handschriftlich, 3-Zonen-Schema, Sicherung im Heft (nicht Mappe)",
+                "Beutelsbacher Konsens strikt — wirkt v. a. in Hartmann-Phase 4 Disputation (UE 6 Bismarck-Pro-Contra, UE 8 Soziale Frage heute)"
               ],
               "kompetenzerwerb_progression": "AFB-Progression I→III: UE 1-3 vorrangig AFB I (Beschreiben Lebensverhaeltnisse). UE 4-5 AFB II (Begriff Soziale Frage definieren, Loesungsansaetze unterscheiden). UE 6+8 AFB III (Urteil Bismarck, Vergleich heute). UE 9 LNW mit allen drei AFB-Stufen. UE 10 Transfer/Handlungsorientierung (Realhandeln im Sinne Reinhardts).",
               "personifikation_durchgaengig": "Identifikationsfiguren Johann (landloser Knecht aus Hessen, 17, wandert 1875 nach Berlin) und Anna (Spinnerei-Arbeiterin, 19, Tochter eines Webers, lebt in Mietskaserne) — wiederkehrend in UE 2 (Wohnen Annas), UE 3 (Johanns Schicht), UE 5 (Anna tritt SPD bei), UE 6 (Johann profitiert von Bismarck), UE 8 (Anna heute = Working-Poor-Mutter).",
@@ -1196,9 +1200,9 @@ window.MATRIX = {
                 "uze": 1,
                 "datum": "KW09 · Mo",
                 "stundenthema_frage": "Was sehen wir auf Menzels 'Eisenwalzwerk' — und warum nennen wir das die Soziale FRAGE?",
-                "prozesskompetenz": "Erkenntnisse gewinnen (Bilder interpretieren, Fragen entwickeln)",
+                "prozesskompetenz": "Erkenntnisse gewinnen und anwenden (Bilder interpretieren, Fragen entwickeln)",
                 "gegenstand": "Raeume · Werte",
-                "perspektive": "historisch · sozialwissenschaftlich",
+                "perspektive": "historische und sozialwissenschaftliche Perspektive",
                 "stundenziel_kurz": "Vorwissen aktivieren + Forschungsfrage entwickeln",
                 "kommentar": "Sequenz-Einstieg · personifikative Anbahnung Johann/Anna",
                 "schwerpunkt": false
@@ -1207,9 +1211,9 @@ window.MATRIX = {
                 "uze": 2,
                 "datum": "KW09 · Mi",
                 "stundenthema_frage": "Wie lebte Annas Familie in der Mietskaserne 1880?",
-                "prozesskompetenz": "Erkenntnisse gewinnen (Quellen erschliessen) · Fachsprache anwenden",
+                "prozesskompetenz": "Erkenntnisse gewinnen und anwenden (Quellen erschliessen) · Anwenden und handeln (Fachsprache)",
                 "gegenstand": "Raeume · Werte · Kulturen",
-                "perspektive": "historisch · sozialwissenschaftlich",
+                "perspektive": "historische und sozialwissenschaftliche Perspektive",
                 "stundenziel_kurz": "Lebens-/Wohnverhaeltnisse multiperspektivisch beschreiben",
                 "kommentar": "Stationenlernen · 4 Niveaus · DaZ-Wortspeicher",
                 "schwerpunkt": false
@@ -1218,9 +1222,9 @@ window.MATRIX = {
                 "uze": 3,
                 "datum": "KW10 · Mo",
                 "stundenthema_frage": "Wie sah Johanns Arbeitstag in der Fabrik 1880 wirklich aus?",
-                "prozesskompetenz": "Erkenntnisse gewinnen (Quellenkritik) · Beurteilen (Reliabilitaet)",
+                "prozesskompetenz": "Erkenntnisse gewinnen und anwenden (Quellenkritik) · Beurteilen und bewerten (Reliabilitaet)",
                 "gegenstand": "Ordnungssysteme · Werte",
-                "perspektive": "historisch · sozialwissenschaftlich",
+                "perspektive": "historische und sozialwissenschaftliche Perspektive",
                 "stundenziel_kurz": "3 Belastungen mit Beleg + Quellenkritik Engels",
                 "kommentar": "Engels-Auszug 3 Niveaus · sprachsensibel",
                 "schwerpunkt": false
@@ -1229,9 +1233,9 @@ window.MATRIX = {
                 "uze": 4,
                 "datum": "KW10 · Mi",
                 "stundenthema_frage": "Warum nennt man das 'die Soziale FRAGE' — und nicht einfach 'Armut'?",
-                "prozesskompetenz": "Erkenntnisse gewinnen (Begriff bilden) · Anwenden und handeln (Fachsprache)",
+                "prozesskompetenz": "Erkenntnisse gewinnen und anwenden (Begriff bilden) · Anwenden und handeln (Fachsprache)",
                 "gegenstand": "Werte · Ordnungssysteme",
-                "perspektive": "historisch · sozialwissenschaftlich",
+                "perspektive": "historische und sozialwissenschaftliche Perspektive",
                 "stundenziel_kurz": "Begriff 'Soziale Frage' praezise definieren",
                 "kommentar": "Begriffsbildung · Lexikon-Eintrag · Aktualitaetsbezug",
                 "schwerpunkt": false
@@ -1240,9 +1244,9 @@ window.MATRIX = {
                 "uze": 5,
                 "datum": "KW11 · Mo",
                 "stundenthema_frage": "Wer wollte die Soziale Frage loesen — und wie?",
-                "prozesskompetenz": "Erkenntnisse gewinnen (Quellen) · Beurteilen (Reichweite)",
+                "prozesskompetenz": "Erkenntnisse gewinnen und anwenden (Quellen) · Beurteilen und bewerten (Reichweite)",
                 "gegenstand": "Ordnungssysteme · Interessen",
-                "perspektive": "historisch · sozialwissenschaftlich",
+                "perspektive": "historische und sozialwissenschaftliche Perspektive",
                 "stundenziel_kurz": "3 Loesungsansaetze (Selbsthilfe/Gewerkschaft/Staat) unterscheiden",
                 "kommentar": "Jigsaw · Experten-/Stammgruppen · Anna tritt SPD bei",
                 "schwerpunkt": false
@@ -1253,7 +1257,7 @@ window.MATRIX = {
                 "stundenthema_frage": "War Bismarcks Sozialgesetzgebung ein Erfolg fuer Johann — oder nur Beruhigung der Arbeiter?",
                 "prozesskompetenz": "Beurteilen und bewerten (Werturteil) · Anwenden und handeln (Position vertreten)",
                 "gegenstand": "Werte · Interessen",
-                "perspektive": "historisch · sozialwissenschaftlich",
+                "perspektive": "historische und sozialwissenschaftliche Perspektive",
                 "stundenziel_kurz": "Bismarcks Gesetzgebung kritisch beurteilen (3-Stufen-Urteil)",
                 "kommentar": "**SCHWERPUNKTSTUNDE-KANDIDAT** · Pro-Contra-Debatte · AFB III",
                 "schwerpunkt": true
@@ -1262,9 +1266,9 @@ window.MATRIX = {
                 "uze": 7,
                 "datum": "KW12 · Mo",
                 "stundenthema_frage": "Wie veraenderte sich unsere Stadt zwischen 1850 und 1900?",
-                "prozesskompetenz": "Erkenntnisse gewinnen (Karten/Statistik vergleichen) · Beurteilen (Indikatoren)",
+                "prozesskompetenz": "Erkenntnisse gewinnen und anwenden (Karten/Statistik vergleichen) · Beurteilen und bewerten (Indikatoren)",
                 "gegenstand": "Raeume · Ordnungssysteme",
-                "perspektive": "historisch · geographisch",
+                "perspektive": "historische und geographische Perspektive",
                 "stundenziel_kurz": "4 Veraenderungs-Indikatoren am Stadtbeispiel herausarbeiten",
                 "kommentar": "Lokalgeschichte · Wuerzburg/Augsburg · 3 Karten-Niveaus",
                 "schwerpunkt": false
@@ -1273,9 +1277,9 @@ window.MATRIX = {
                 "uze": 8,
                 "datum": "KW12 · Mi",
                 "stundenthema_frage": "Ist die Soziale Frage heute geloest — oder nur eine andere?",
-                "prozesskompetenz": "Beurteilen (Vergleich 1880/heute) · Anwenden (Position begruenden)",
+                "prozesskompetenz": "Beurteilen und bewerten (Vergleich 1880/heute) · Anwenden und handeln (Position begruenden)",
                 "gegenstand": "Werte · Interessen",
-                "perspektive": "sozialwissenschaftlich · historisch",
+                "perspektive": "historische und sozialwissenschaftliche Perspektive",
                 "stundenziel_kurz": "1880 vs. heute strukturell vergleichen + Werturteil",
                 "kommentar": "Anna heute = Working-Poor-Mutter · Aktualisierungs-Auftrag LP+",
                 "schwerpunkt": false
@@ -1284,9 +1288,9 @@ window.MATRIX = {
                 "uze": 9,
                 "datum": "KW13 · Mo",
                 "stundenthema_frage": "Was kann ich jetzt — und was nicht?",
-                "prozesskompetenz": "Erkenntnisse gewinnen · Beurteilen · Anwenden (alle drei AFB-Stufen)",
+                "prozesskompetenz": "Erkenntnisse gewinnen und anwenden · Beurteilen und bewerten · Anwenden und handeln (alle drei AFB-Stufen)",
                 "gegenstand": "Werte · Ordnungssysteme",
-                "perspektive": "historisch · sozialwissenschaftlich",
+                "perspektive": "historische und sozialwissenschaftliche Perspektive",
                 "stundenziel_kurz": "Lernzielkontrolle: AFB I + II + III dokumentieren",
                 "kommentar": "Schriftlicher LNW · 2 Niveaus · Selbsteinschaetzung",
                 "schwerpunkt": false
@@ -1295,9 +1299,9 @@ window.MATRIX = {
                 "uze": 10,
                 "datum": "KW13 · Mi",
                 "stundenthema_frage": "Welche Soziale Frage von heute waehle ich — und welchen Schritt gehe ich?",
-                "prozesskompetenz": "Anwenden und handeln (Handlungsorientierung) · Beurteilen (Realisierbarkeit)",
+                "prozesskompetenz": "Anwenden und handeln (Handlungsorientierung) · Beurteilen und bewerten (Realisierbarkeit)",
                 "gegenstand": "Interessen · Werte",
-                "perspektive": "sozialwissenschaftlich",
+                "perspektive": "sozialwissenschaftliche Perspektive",
                 "stundenziel_kurz": "Eigene Handlungsoption zur Sozialen Frage heute entwickeln",
                 "kommentar": "Sequenz-Abschluss · Pinnwand · Handlungsorientierung Realhandeln",
                 "schwerpunkt": false
@@ -1306,28 +1310,28 @@ window.MATRIX = {
             "phasenSchema": [
               {
                 "id": "problemstellung",
-                "label": "1 Problemstellung",
-                "kurz": "Vorwissen · Zielangabe · Arbeitsplanung"
+                "label": "1 Konfrontation (Fallpraesentation · Problem herausarbeiten)",
+                "kurz": "Hartmann-B4 Fallanalyse: Konfrontation mit Fall (Text/Bild/Quelle) · Klaeren von Unverstandenem + Fachbegriffen · Analyse + Strukturierung des Falls · Problemformulierung"
               },
               {
                 "id": "problementfaltung",
-                "label": "2 Problementfaltung",
-                "kurz": "Erarbeitung am Material"
+                "label": "2 Information (Informationen einholen + auswerten)",
+                "kurz": "Hartmann-B4 Fallanalyse: Einholen/Darbietung von Informationen · Analyse + Auswertung · in Bezug zum Fallbeispiel setzen (Welche Aussagen treffen zu? Welche Konsequenz hat das fuer den Fall?)"
               },
               {
                 "id": "problemloesung",
-                "label": "3 Problemloesung",
-                "kurz": "Antwort auf die Problemfrage"
+                "label": "3 Resolution (Loesungsmoeglichkeiten + Entscheidung)",
+                "kurz": "Hartmann-B4 Fallanalyse: Loesungsalternativen abwaegen · Vor-/Nachteile gegenueberstellen · Entscheidung treffen"
               },
               {
                 "id": "wertung",
-                "label": "4 Wertung",
-                "kurz": "Rationales Urteil (Sache · Wert · Position)"
+                "label": "4 Disputation (Streitgespraech ueber Loesungsalternativen)",
+                "kurz": "Hartmann-B4 Fallanalyse: Argumente austauschen · Pro-Contra-Debatte · Beutelsbacher Konsens (Kontroversitaetsgebot) strikt"
               },
               {
                 "id": "sicherung_lzk",
-                "label": "5 Sicherung + LZK",
-                "kurz": "Hefteintrag · Lernzielkontrolle"
+                "label": "5 Kollation (Abgleich mit realer Wirklichkeit · Faktencheck)",
+                "kurz": "Hartmann-B4 Fallanalyse: Was passierte wirklich? · Abgleich der Loesung mit historischer/aktueller Realitaet · Inhaltsgeneralisierung · Hefteintrag · LZK"
               }
             ],
             "ues_detail": [
@@ -1403,8 +1407,8 @@ window.MATRIX = {
                 ],
                 "kompetenzstruktur": {
                   "gegenstand": "Raeume · Werte",
-                  "perspektive": "historisch · sozialwissenschaftlich",
-                  "prozesskompetenz": "Erkenntnisse gewinnen (Beobachten · Fragen entwickeln)"
+                  "perspektive": "historische und sozialwissenschaftliche Perspektive",
+                  "prozesskompetenz": "Erkenntnisse gewinnen und anwenden (Beobachten · Fragen entwickeln)"
                 },
                 "didaktik": "Lebensweltbezug (Klafki) · Bildquellenarbeit (Pandel 2017) · Performatives Lernen (Standbild als sozialwissenschaftliche Methode, Massing/Reinhardt)"
               },
@@ -1480,8 +1484,8 @@ window.MATRIX = {
                 ],
                 "kompetenzstruktur": {
                   "gegenstand": "Raeume · Werte · Kulturen",
-                  "perspektive": "historisch · sozialwissenschaftlich",
-                  "prozesskompetenz": "Erkenntnisse gewinnen (Quellen erschliessen) · Beurteilen (gewichten)"
+                  "perspektive": "historische und sozialwissenschaftliche Perspektive",
+                  "prozesskompetenz": "Erkenntnisse gewinnen und anwenden (Quellen erschliessen) · Beurteilen und bewerten (gewichten)"
                 },
                 "didaktik": "Multiperspektivitaet (Bergmann 2000) · Quellenarbeit (Pandel 2017) · Stationenlernen (Reinhardt 2005) · sprachsensibler GPG-Unterricht"
               },
@@ -1556,8 +1560,8 @@ window.MATRIX = {
                 ],
                 "kompetenzstruktur": {
                   "gegenstand": "Ordnungssysteme · Werte",
-                  "perspektive": "historisch · sozialwissenschaftlich",
-                  "prozesskompetenz": "Erkenntnisse gewinnen (Quellenkritik) · Beurteilen (Reliabilitaet)"
+                  "perspektive": "historische und sozialwissenschaftliche Perspektive",
+                  "prozesskompetenz": "Erkenntnisse gewinnen und anwenden (Quellenkritik) · Beurteilen und bewerten (Reliabilitaet)"
                 },
                 "didaktik": "Quellenkritik (Pandel 2017) · Vergleichsmethode · historische Empathie (Ruesen 2002)"
               },
@@ -1632,8 +1636,8 @@ window.MATRIX = {
                 ],
                 "kompetenzstruktur": {
                   "gegenstand": "Werte · Ordnungssysteme",
-                  "perspektive": "historisch · sozialwissenschaftlich",
-                  "prozesskompetenz": "Erkenntnisse gewinnen (Begriffsbildung) · Anwenden (Fachsprache)"
+                  "perspektive": "historische und sozialwissenschaftliche Perspektive",
+                  "prozesskompetenz": "Erkenntnisse gewinnen und anwenden (Begriffsbildung) · Anwenden und handeln (Fachsprache)"
                 },
                 "didaktik": "Begriffsbildung · Muendigkeit-Anbahnung (Detjen 2007) durch eigenstaendige Begriffsdefinition · Aktualitaetsprinzip (Klafki 1996)"
               },
@@ -1709,8 +1713,8 @@ window.MATRIX = {
                 ],
                 "kompetenzstruktur": {
                   "gegenstand": "Ordnungssysteme · Interessen",
-                  "perspektive": "historisch · sozialwissenschaftlich",
-                  "prozesskompetenz": "Erkenntnisse gewinnen (Quellen) · Beurteilen (Reichweite)"
+                  "perspektive": "historische und sozialwissenschaftliche Perspektive",
+                  "prozesskompetenz": "Erkenntnisse gewinnen und anwenden (Quellen) · Beurteilen und bewerten (Reichweite)"
                 },
                 "didaktik": "Jigsaw-Methode · Multiperspektivitaet · Politische Urteilsbildung (GPJE 2004) · Handlungsorientierung Simulationshandeln (Reinhardt 2005)"
               },
@@ -1786,8 +1790,8 @@ window.MATRIX = {
                 ],
                 "kompetenzstruktur": {
                   "gegenstand": "Werte · Interessen",
-                  "perspektive": "historisch · sozialwissenschaftlich",
-                  "prozesskompetenz": "Beurteilen · Reflektieren · Handeln (Position vertreten)"
+                  "perspektive": "historische und sozialwissenschaftliche Perspektive",
+                  "prozesskompetenz": "Beurteilen und bewerten · Anwenden und handeln (Position vertreten)"
                 },
                 "didaktik": "Pro-Contra-Debatte (Massing) · Politische Urteilsbildung 3-Stufen (GPJE 2004) · Beutelsbacher Konsens (Kontroversitaetsgebot, Ueberwaeltigungsverbot) · Muendigkeit (Detjen 2007)"
               },
@@ -1863,8 +1867,8 @@ window.MATRIX = {
                 ],
                 "kompetenzstruktur": {
                   "gegenstand": "Raeume · Ordnungssysteme",
-                  "perspektive": "historisch · geographisch",
-                  "prozesskompetenz": "Erkenntnisse gewinnen (Karten/Statistik) · Beurteilen (Indikatoren)"
+                  "perspektive": "historische und geographische Perspektive",
+                  "prozesskompetenz": "Erkenntnisse gewinnen und anwenden (Karten/Statistik) · Beurteilen und bewerten (Indikatoren)"
                 },
                 "didaktik": "Lokalgeschichte (LP+ GPG-Fachprofil) · Quellenkritik (Pandel 2017) · Aktualitaetsprinzip · Kompetenzstrukturmodell Gegenstandsbereich »Raeume« + »Zeit«"
               },
@@ -1941,8 +1945,8 @@ window.MATRIX = {
                 ],
                 "kompetenzstruktur": {
                   "gegenstand": "Werte · Interessen",
-                  "perspektive": "sozialwissenschaftlich · historisch",
-                  "prozesskompetenz": "Beurteilen · Reflektieren · Anwenden (Position begruenden)"
+                  "perspektive": "historische und sozialwissenschaftliche Perspektive",
+                  "prozesskompetenz": "Beurteilen und bewerten · Anwenden und handeln (Position begruenden)"
                 },
                 "didaktik": "Aktualitaetsprinzip (Klafki 1996) · Lebensweltbezug · Multiperspektivitaet · Politische Urteilsbildung"
               },
@@ -2017,8 +2021,8 @@ window.MATRIX = {
                 ],
                 "kompetenzstruktur": {
                   "gegenstand": "Werte · Ordnungssysteme",
-                  "perspektive": "historisch · sozialwissenschaftlich",
-                  "prozesskompetenz": "Erkenntnisse gewinnen · Beurteilen · Anwenden"
+                  "perspektive": "historische und sozialwissenschaftliche Perspektive",
+                  "prozesskompetenz": "Erkenntnisse gewinnen und anwenden · Beurteilen und bewerten · Anwenden und handeln"
                 },
                 "didaktik": "Veraenderte Leistungsmessung · Kompetenzorientierung · AFB-Stufung KMK · Selbst-Regulation (Schraw)"
               },
@@ -2094,8 +2098,8 @@ window.MATRIX = {
                 ],
                 "kompetenzstruktur": {
                   "gegenstand": "Interessen · Werte",
-                  "perspektive": "sozialwissenschaftlich",
-                  "prozesskompetenz": "Beurteilen · Reflektieren · Handeln (Realhandeln)"
+                  "perspektive": "sozialwissenschaftliche Perspektive",
+                  "prozesskompetenz": "Beurteilen und bewerten · Anwenden und handeln (Realhandeln)"
                 },
                 "didaktik": "Demokratie-Lernen (Himmelmann 2001: Lebensform-Dimension) · Handlungsorientierung Realhandeln (Reinhardt 2005) · Muendigkeit (Detjen 2007) · SRL (Self-Regulated Learning, Schraw)"
               }
@@ -3176,6 +3180,7 @@ window.MATRIX = {
         {
           "ke_id": "GPG10-LB3-01",
           "ke_wortlaut": "definieren die Grund- und Menschenrechte als schützenswerte Basis gesellschaftlichen Zusammenlebens.",
+          "ke_wortlaut_anker": ["definieren", "Grund- und Menschenrechte", "schützenswerte Basis", "gesellschaftlichen Zusammenlebens"],
           "ke_wortlaut_quelle": "LP+ Bayern MS GPG · GPG10 · LB3 Politik und Gesellschaft · verbatim",
           "thema": "Grund- und Menschenrechte — schützenswerte Basis",
           "operator": "definieren",
@@ -3232,7 +3237,1016 @@ window.MATRIX = {
               "didaktik": "Fallanalyse (Massing2010)",
               "verweis": "P. Massing: Fallanalyse / Kasuistik. Wochenschau-Sammelband 2010. Konkrete Fälle als Zugang zu politischen Strukturen. — Anwendung hier: „Grundrecht in Gefahr“-Fälle als kasuistischer Zugang zum abstrakten Normbestand."
             }
-          ]
+          ],
+          "pilot_sequenz": {
+            "titel": "10-UE-Sequenz · Demokratie und Grundrechte — Was sind unsere Rechte wert?",
+            "praxis": "10 UEs à 45 min · idealtypisch fuer R10b im Sommer 2026",
+            "gesamtzeit": "10 UEs à 45 min = 7,5 Zeitstunden",
+            "lernzielraster": "Sach- + Methoden- + Urteilskompetenz · GPJE 2004 · Mager-3-K-Lernziele",
+            "phasenStandard": "GPG-Bayern · Fallanalyse-Verlaufsmodell nach Hartmann B4 (Konfrontation · Information · Resolution · Disputation · Kollation) · Sequenzplan-Standard nach BUV-Template v4 · Sekundaer fuer historische LB2-Stunden: Hofmann GB Modell 1+2 · LehrplanPLUS Bayern MS GPG, Kompetenzstrukturmodell (ISB) · Beutelsbacher Konsens strikt fuer Phase 4 Disputation",
+            "qualitaetsstandards_quelle": "Primaerquelle: Bausteinskript GPG B4 'Fachspezifische Arbeitsweisen II — Methodische Vollzugsformen — Sozialwissenschaftliche Perspektive' (Hartmann, SR, AG der MS-Seminarleiter:innen Unterfranken) — Fallanalyse-Verlaufsmodell · kasuistisches Prinzip · 5 fachspezifische Arbeitsweisen (Informieren · Interpretieren · Meinung aeussern · Argumentieren/Diskutieren/Kooperieren · Reflektieren und Handeln) · Mikro-/Makromethoden-Katalog · Sekundaer fuer historische Stunden (LB2 Zeit+Wandel): Bausteinskript GB 'Grundsaetze des GPG-Unterrichts' (Hofmann, SR, AG der MS-Seminarleiter:innen Unterfranken) Modell 1+2 · Beutelsbacher Konsens 1976 (Kontroversitaetsgebot — gilt strikt fuer Phase 4 Disputation) · LehrplanPLUS Bayern MS GPG (ISB, Kompetenzstrukturmodell mit 3 Perspektiven, 3 Prozesskompetenzen, 5 Gegenstandsbereichen, 4 Lernbereichen) · GPG_Anleitungen/Sequenzplanung + BUV_Template_Schwerpunktstunde_v4 · Tertiaer (ueberregional): Reinhardt 2016 Konfliktanalyse · Sauer 2012 Geschichtsunterricht · Pandel 2013 Geschichtsdidaktik · Reinhardt/Kaiser 1983 Fallstudie · Massing/Skuhr 1994 Policy-Zyklus · Petrik 2007 ff. Genetische Politikdidaktik",
+            "sequenz_meta": {
+              "lehrplanbezug": "GPG 10 · Lernbereich 3 'Politik und Gesellschaft' · KE 1 + KE 2 + KE 3 + KE 4 (Sequenz deckt alle vier KEs ueber den 10-UE-Bogen ab)",
+              "kompetenzerwartungen_verbatim": [
+                "Die Schülerinnen und Schüler definieren die Grund- und Menschenrechte als schützenswerte Basis gesellschaftlichen Zusammenlebens.",
+                "Die Schülerinnen und Schüler erörtern Möglichkeiten der Intervention durch die Staatengemeinschaft bei anhaltenden Menschenrechtsverletzungen.",
+                "Die Schülerinnen und Schüler stellen die Rolle des Bundesverfassungsgerichts in unserem politischen System dar und erörtern seine Bedeutung für den Schutz der Grundrechte.",
+                "Die Schülerinnen und Schüler entwickeln Erklärungen für die Existenz unterschiedlicher Formen von Extremismus und Radikalisierung."
+              ],
+              "inhalte_lp_verbatim": [
+                "Garantie und Schutz der Grund- und Menschenrechte",
+                "Einsatz der UN bei Menschenrechtsverletzungen anhand eines aktuellen Beispiels",
+                "Funktion und Aufgaben des Bundesverfassungsgerichts",
+                "Formen des Extremismus (z. B. Links- und Rechtsextremismus, Dschihadismus)"
+              ],
+              "zielsetzung_uebergeordnet": "Die Sequenz erschliesst am Identifikationsfiguren-Paar Leon (Schueler R10b, plant eine Petition gegen das Verbot des Skate-Parks) und Maya (Klimaaktivistin, geriet bei einer Demo in einen Polizeikessel) die Grund- und Menschenrechte als normative Basis demokratischen Zusammenlebens. Ziel ist die Bildung eines reflektierten Sach- und Werturteils zur Frage: Wie wehrhaft soll unsere Demokratie sein? — historisch (Bonner Grundgesetz 1949 als Lehre aus Weimar) und aktuell (Klima-Beschluss BVerfG 2021, Iran-Frauen-Bewegung, Verfassungsschutz-Debatten). Die Sequenz endet mit eigenem politischen Realhandeln (Petition).",
+              "methodische_schwerpunkte": [
+                "Phasenschema: Fallanalyse-Verlaufsmodell nach Hartmann B4 (Konfrontation · Information · Resolution · Disputation · Kollation) — kasuistisches Prinzip durchgaengig (LB3 = sozialwissenschaftliche Perspektive)",
+                "Personifikation (Leon und Maya) als sequenzdurchgaengige Identifikationsstrategie · Faelle als Lern-Ausschnitte aus der Wirklichkeit (Hartmann-B4 kasuistisches Prinzip)",
+                "Makromethode Fallanalyse (Hartmann B4) zentral fuer BVerfG-Urteile, Petitionsrecht, UN-Mechanismen · sekundaer Massing 2010",
+                "Mikromethoden nach Hartmann B4: Stilles Schreibgespraech · Textanalyse · Karikatur-Analyse · Pro-Contra-Debatte · Diskussion · Stellung nehmen · Podiumsdiskussion · Befragung · Priorisierungsliste",
+                "Kooperative Methoden: Gruppenpuzzle · Fishbowl · Stationenrundgang",
+                "Differenzierung in 4 Spuren (DaZ, LRS, leistungsschwach, leistungsstark) pro UE",
+                "Tafelbild-Zentrierung: handschriftlich, 3-Zonen-Schema, Sicherung im Heft (nicht Mappe)",
+                "Beutelsbacher Konsens strikt — wirkt v. a. in Hartmann-Phase 4 Disputation: Kontroversitaetsgebot bei Extremismus + Wehrhafter Demokratie · Ueberwaeltigungsverbot ueber alle UEs"
+              ],
+              "kompetenzerwerb_progression": "AFB-Progression I→III: UE 1-2 vorrangig AFB I (Grundrechte benennen, Wuerde-Begriff klaeren). UE 3-4 AFB II (Versammlungsrecht analysieren, BVerfG-Funktion darstellen). UE 5 AFB III (Klima-Beschluss bewerten — SCHWERPUNKTSTUNDE). UE 6-7 AFB II (Petition + UN-Mechanismen). UE 8-9 AFB II+III (Extremismus-Formen + Verfassungsschutz). UE 10 AFB III mit Realhandeln (Pro-Contra-Debatte 'Wehrhafte Demokratie' + Petitions-Einreichung).",
+              "personifikation_durchgaengig": "Identifikationsfiguren Leon (16, Vater Sozialarbeiter beim Jugendamt, will eine Petition gegen das Verbot des oeffentlichen Skate-Parks einreichen, Anlass: Stadtrat-Beschluss) und Maya (16, Mutter selbststaendige Grafikerin, Klimaaktivistin, geriet bei der Klima-Demo am 1. Mai 2026 in einen Polizeikessel und wurde 4 Stunden festgehalten ohne Anklage) — wiederkehrend in UE 1 (beide auf dem Demo-Foto), UE 3 (Maya-Fall ausfuehrlich), UE 5 (Maya als junge Klimaklaegerin analog BVerfG 2021), UE 6 (Leons Petition wird konkret geschrieben), UE 8 (Leons Vater beschreibt Berufsbild Sozialarbeiter — auch Praevention von Radikalisierung), UE 10 (beide vertreten Positionen in der Pro-Contra-Debatte).",
+              "schwerpunktstunde_kandidat": "UE 5 · BVerfG-Klima-Beschluss 2021 — Wie schuetzt Karlsruhe Mayas Zukunft? (AFB III, Fallanalyse)",
+              "lehrkraft_recherchepunkte": [
+                "Wortlaut Klima-Beschluss BVerfG 24.03.2021 (1 BvR 2656/18) — Schluesselzitat zu intertemporaler Freiheitssicherung pruefen",
+                "Aktueller UN-Bericht Iran-Frauen-Bewegung (UN-Menschenrechtsrat-Bericht Mahsa Amini 2022ff.) auf aktualisierten Stand pruefen",
+                "Lokale Petition Bundestag oder bayerischer Landtag — Beispiel-Petition vor UE 6 als Referenz auswaehlen"
+              ]
+            },
+            "sequenz_tabelle": [
+              {
+                "uze": 1,
+                "datum": "KW18 · Mo",
+                "stundenthema_frage": "Was sind Grundrechte — und warum gibt es sie ueberhaupt?",
+                "prozesskompetenz": "Erkenntnisse gewinnen und anwenden (Bilder interpretieren · Fragen entwickeln)",
+                "gegenstand": "Werte · Ordnungssysteme",
+                "perspektive": "sozialwissenschaftliche Perspektive (Aspekt Recht)",
+                "stundenziel_kurz": "Vorwissen aktivieren + Forschungsfrage zur Sequenz entwickeln",
+                "kommentar": "Sequenz-Einstieg · Bildimpuls Demo-Foto · Anbahnung Leon + Maya",
+                "schwerpunkt": false
+              },
+              {
+                "uze": 2,
+                "datum": "KW18 · Mi",
+                "stundenthema_frage": "Was bedeutet 'Die Wuerde des Menschen ist unantastbar' — auch fuer Verbrecher?",
+                "prozesskompetenz": "Erkenntnisse gewinnen und anwenden (Fall erschliessen) · Beurteilen und bewerten (Werturteil bilden)",
+                "gegenstand": "Werte · Ordnungssysteme",
+                "perspektive": "sozialwissenschaftliche Perspektive (Aspekt Recht/Ethik)",
+                "stundenziel_kurz": "Art. 1 GG analysieren am Gaefgen-Fall (Folter-Androhung 2002) — Wuerde-Garantie auch fuer Taeter",
+                "kommentar": "Fallanalyse · Kontroversitaet · 3-Stufen-Urteil",
+                "schwerpunkt": false
+              },
+              {
+                "uze": 3,
+                "datum": "KW18 · Fr",
+                "stundenthema_frage": "Durfte die Polizei Maya 4 Stunden im Kessel halten?",
+                "prozesskompetenz": "Erkenntnisse gewinnen und anwenden (Norm-Anwendung) · Beurteilen und bewerten (Grundrechte-Abwaegung)",
+                "gegenstand": "Werte · Interessen · Ordnungssysteme",
+                "perspektive": "sozialwissenschaftliche Perspektive (Aspekt Recht)",
+                "stundenziel_kurz": "Art. 5 + Art. 8 GG anwenden auf Maya-Fall — Versammlungsfreiheit vs. oeffentliche Sicherheit",
+                "kommentar": "Maya-Fall (Polizeikessel 1. Mai) · Grundrechts-Schranken · Verhaeltnismaessigkeit",
+                "schwerpunkt": false
+              },
+              {
+                "uze": 4,
+                "datum": "KW19 · Mo",
+                "stundenthema_frage": "Wer prueft, ob ein Gesetz die Grundrechte verletzt — und wie?",
+                "prozesskompetenz": "Erkenntnisse gewinnen und anwenden (Institution erschliessen) · Anwenden und handeln (Fachsprache)",
+                "gegenstand": "Ordnungssysteme · Werte",
+                "perspektive": "sozialwissenschaftliche Perspektive (Aspekt Recht)",
+                "stundenziel_kurz": "Aufbau, Funktion und Verfahren des BVerfG darstellen (8 Richter:innen pro Senat, 12 Jahre, Wahl je 1/2 Bundestag/Bundesrat)",
+                "kommentar": "Stationenlernen Karlsruhe · 4 Verfahrensarten (Verfassungsbeschwerde · Normenkontrolle · Organstreit · Parteiverbot)",
+                "schwerpunkt": false
+              },
+              {
+                "uze": 5,
+                "datum": "KW19 · Mi",
+                "stundenthema_frage": "Wie schuetzt Karlsruhe Mayas Zukunft? Der Klima-Beschluss 2021",
+                "prozesskompetenz": "Erkenntnisse gewinnen und anwenden (Urteil analysieren) · Beurteilen und bewerten (Werturteil)",
+                "gegenstand": "Werte · Ordnungssysteme · Raeume",
+                "perspektive": "sozialwissenschaftliche Perspektive (Aspekt Recht)",
+                "stundenziel_kurz": "BVerfG-Klima-Beschluss (24.03.2021, 1 BvR 2656/18) analysieren — intertemporale Freiheitssicherung",
+                "kommentar": "**SCHWERPUNKTSTUNDE** · Fallanalyse Karlsruhe-Urteil · AFB III · Mayas Generation als Klaegerinnen-Generation",
+                "schwerpunkt": true
+              },
+              {
+                "uze": 6,
+                "datum": "KW19 · Fr",
+                "stundenthema_frage": "Wie reicht Leon seine Petition gegen das Skate-Park-Verbot ein — und was bewirkt sie?",
+                "prozesskompetenz": "Erkenntnisse gewinnen und anwenden (Verfahren erschliessen) · Anwenden und handeln (Realhandeln Anbahnung)",
+                "gegenstand": "Interessen · Ordnungssysteme",
+                "perspektive": "sozialwissenschaftliche Perspektive (Aspekt Recht)",
+                "stundenziel_kurz": "Petitionsrecht (Art. 17 GG) erschliessen + Leons Petition gemeinsam formulieren",
+                "kommentar": "Anwendungs-UE · Realhandeln vorbereitet · Petition kann auf epetitionen.bundestag.de eingereicht werden",
+                "schwerpunkt": false
+              },
+              {
+                "uze": 7,
+                "datum": "KW20 · Mo",
+                "stundenthema_frage": "Was tut die UN, wenn ein Staat seine eigenen Buergerinnen toetet? Die Iran-Frauen-Bewegung",
+                "prozesskompetenz": "Erkenntnisse gewinnen und anwenden (UN-Mechanismen verstehen) · Beurteilen und bewerten (Wirksamkeit)",
+                "gegenstand": "Werte · Interessen · Ordnungssysteme",
+                "perspektive": "sozialwissenschaftliche Perspektive (Aspekt Recht)",
+                "stundenziel_kurz": "UN-Mechanismen bei Menschenrechtsverletzungen am Beispiel Iran 2022ff. erschliessen",
+                "kommentar": "Aktualitaet · Beispiel Mahsa Amini · UN-Menschenrechtsrat · Reichweite-Begrenzung diskutieren",
+                "schwerpunkt": false
+              },
+              {
+                "uze": 8,
+                "datum": "KW20 · Mi",
+                "stundenthema_frage": "Wo endet Meinungsfreiheit — und faengt Extremismus an?",
+                "prozesskompetenz": "Erkenntnisse gewinnen und anwenden (Phaenomene differenzieren) · Anwenden und handeln (Fachsprache)",
+                "gegenstand": "Werte · Ordnungssysteme",
+                "perspektive": "sozialwissenschaftliche Perspektive",
+                "stundenziel_kurz": "Drei Extremismus-Formen (Rechts/Links/Dschihadismus) erklaeren + Abgrenzung zu legitimen Positionen",
+                "kommentar": "Gruppenpuzzle · Verfassungsschutz-Definition · Beutelsbacher Konsens strikt einhalten",
+                "schwerpunkt": false
+              },
+              {
+                "uze": 9,
+                "datum": "KW20 · Fr",
+                "stundenthema_frage": "Streitbare Demokratie — wie weit darf der Staat gehen, um sich zu schuetzen?",
+                "prozesskompetenz": "Erkenntnisse gewinnen und anwenden (Institutionen-Kenntnis) · Beurteilen und bewerten (Grenzen staatlichen Handelns)",
+                "gegenstand": "Ordnungssysteme · Werte · Interessen",
+                "perspektive": "sozialwissenschaftliche Perspektive (Aspekt Recht)",
+                "stundenziel_kurz": "Verfassungsschutz, Parteiverbot, Grundrechtsverwirkung als Instrumente der streitbaren Demokratie analysieren",
+                "kommentar": "Fallarbeit (NPD-Urteil 2017, KPD-Urteil 1956) · 'wehrhaft' historisch herleiten (Lehre aus Weimar)",
+                "schwerpunkt": false
+              },
+              {
+                "uze": 10,
+                "datum": "KW21 · Mo",
+                "stundenthema_frage": "Wie wehrhaft soll unsere Demokratie sein — und wo will ich selbst mitwirken?",
+                "prozesskompetenz": "Beurteilen und bewerten (Werturteil) · Anwenden und handeln (Position vertreten + Realhandeln)",
+                "gegenstand": "Werte · Interessen",
+                "perspektive": "sozialwissenschaftliche Perspektive (Aspekt Recht)",
+                "stundenziel_kurz": "Pro-Contra-Debatte + LZK + Leons Petition tatsaechlich einreichen (Realhandeln)",
+                "kommentar": "Sequenz-Abschluss · Synthese · LZK alle AFB-Stufen · Realhandeln gemaess Reinhardt 2005",
+                "schwerpunkt": false
+              }
+            ],
+            "phasenSchema": [
+              {
+                "id": "problemstellung",
+                "label": "1 Konfrontation (Fallpraesentation · Problem herausarbeiten)",
+                "kurz": "Hartmann-B4 Fallanalyse: Konfrontation mit Fall (BVerfG-Urteil, Petition, Demo-Foto) · Klaeren von Unverstandenem + Fachbegriffen · Analyse + Strukturierung des Falls · Problemformulierung"
+              },
+              {
+                "id": "problementfaltung",
+                "label": "2 Information (Informationen einholen + auswerten)",
+                "kurz": "Hartmann-B4 Fallanalyse: Einholen/Darbietung von Informationen (Grundgesetz-Artikel, Karlsruhe-Urteil, UN-Bericht) · Analyse + Auswertung · in Bezug zum Fallbeispiel setzen"
+              },
+              {
+                "id": "problemloesung",
+                "label": "3 Resolution (Loesungsmoeglichkeiten + Entscheidung)",
+                "kurz": "Hartmann-B4 Fallanalyse: Grundrechts-Abwaegung · Loesungsalternativen abwaegen · Vor-/Nachteile · Entscheidung treffen (z. B. Verhaeltnismaessigkeitspruefung)"
+              },
+              {
+                "id": "wertung",
+                "label": "4 Disputation (Streitgespraech ueber Loesungsalternativen)",
+                "kurz": "Hartmann-B4 Fallanalyse: Argumente austauschen · Pro-Contra-Debatte · Beutelsbacher Konsens (Kontroversitaetsgebot) strikt — kritisch fuer Extremismus + Wehrhafte Demokratie"
+              },
+              {
+                "id": "sicherung_lzk",
+                "label": "5 Kollation (Abgleich mit realer Wirklichkeit · Faktencheck)",
+                "kurz": "Hartmann-B4 Fallanalyse: Was hat das BVerfG/die UN tatsaechlich entschieden? · Abgleich mit realer Karlsruhe-Entscheidung · Inhaltsgeneralisierung · Hefteintrag · LZK"
+              }
+            ],
+            "ues_detail": [
+              {
+                "nr": 1,
+                "titel": "Was sind Grundrechte? · Sequenz-Einstieg",
+                "stundenthema_frage": "Was sind Grundrechte — und warum gibt es sie ueberhaupt?",
+                "minuten": 45,
+                "lernziel": "SuS aktivieren Vorwissen zu Grundrechten und entwickeln eine Forschungsfrage zur Sequenz 'Demokratie und Grundrechte'.",
+                "lernziel_stundenziel": {
+                  "verhalten": "Die Schuelerinnen und Schueler aktivieren ihr Vorwissen zu Grundrechten und entwickeln eine begruendete Forschungsfrage zur Schutz-Funktion der Grundrechte,",
+                  "bedingung": "indem sie zu einem Foto einer Klima-Demo (mit Polizeikessel und Petitions-Stand erkennbar) ein stilles Schreibgespraech fuehren und in 4er-Gruppen Vermutungen zur Frage 'Welche Rechte haben die Menschen auf dem Bild?' sammeln,",
+                  "maszstab": "was daran erkennbar wird, dass die Forschungsfrage 'Wie schuetzen Grundrechte uns — und wo stossen sie an Grenzen?' im Heft mit mindestens einer eigenen Vermutung steht."
+                },
+                "lernziel_teilziele": [
+                  {
+                    "tz": "SuS aktivieren Vorwissen zu 'Rechten in unserer Gesellschaft',",
+                    "indem": "indem sie auf einem Schreibgespraech-Plakat zum Demo-Foto mindestens drei Begriffe (z.B. Demonstrieren, Meinung, Polizei) notieren,",
+                    "erkennbar": "was daran erkennbar wird, dass das Plakat pro Gruppe mindestens fuenf Begriffe traegt.",
+                    "afb": "I",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS leiten aus dem Bild eine Forschungsfrage fuer die Sequenz ab,",
+                    "indem": "indem sie im Plenum aus den Plakat-Begriffen die Kernfrage 'Welche Rechte schuetzen uns wann — und wo enden sie?' synthetisieren,",
+                    "erkennbar": "was daran erkennbar wird, dass die Frage als Hefteintrag mit einer eigenen Vermutung steht.",
+                    "afb": "II",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS lernen Leon und Maya als Identifikationsfiguren kennen,",
+                    "indem": "indem die Lehrkraft die beiden Faelle (Petition Skate-Park / Polizeikessel Klima-Demo) anhand zweier Steckbrief-Karten einfuehrt,",
+                    "erkennbar": "was daran erkennbar wird, dass die SuS im Heft drei Fakten zu jeder Figur notieren.",
+                    "afb": "I",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "[Differenziert / leistungsstark] SuS verknuepfen die Forschungsfrage mit der Lehre aus der Geschichte,",
+                    "indem": "indem sie pruefen, warum die Vaeter und Muetter des Grundgesetzes 1949 die Grundrechte an den Anfang des GG gestellt haben (Anknuepfung an WK2/Nationalsozialismus),",
+                    "erkennbar": "was daran erkennbar wird, dass sie im Plenum mindestens zwei historische Gruende benennen.",
+                    "afb": "III",
+                    "differenziert": true
+                  }
+                ],
+                "problemstellung": "8' · Bildimpuls Demo-Foto (Klima-Demo mit Polizeipraesenz + Petitions-Stand) · stilles Schreibgespraech auf Plakat. Zielangabe: 'Wir untersuchen ueber 10 Stunden, welche Rechte uns schuetzen — und wo sie enden.' Arbeitsplanung: 4er-Gruppen.",
+                "problementfaltung": "20' · Schreibgespraech (8') · Sammelphase Plenum (5') · Einfuehrung Leon und Maya per Steckbrief-Karte (7'). Beide Figuren mit Familien-Kontext (Leons Vater = Sozialarbeiter Jugendamt; Mayas Mutter = selbststaendige Grafikerin).",
+                "problemloesung": "8' · Forschungsfrage gemeinsam formulieren: 'Wie schuetzen Grundrechte uns wann — und wo stossen sie an Grenzen?' — als Sequenz-Leitfrage an die Tafel.",
+                "wertung": "6' · Erste Vermutungen: 'Wer schuetzt diese Rechte — und kann man sich darauf verlassen?' Aktualitaetsbezug + Hinweis auf BVerfG (UE 4-5).",
+                "sicherung_lzk": "3' · Hefteintrag-Vorlage: 'Forschungsfrage der Sequenz' + Steckbrief Leon und Maya · Mini-LZK 'Welche zwei Fragen begleiten uns die naechsten 10 Stunden?'",
+                "sozialform_phasen": {
+                  "problemstellung": "Plenum (Bildimpuls)",
+                  "problementfaltung": "GA (Schreibgespraech) · Plenum (Steckbrief)",
+                  "problemloesung": "Plenum (Tafel)",
+                  "wertung": "UG",
+                  "sicherung_lzk": "EA"
+                },
+                "differenzierung_block": {
+                  "daz": "Wortspeicher (Grundrecht, Demonstration, Petition, Versammlung) · Bildimpuls vor Text · Schreibgespraech erlaubt Stichworte.",
+                  "lrs": "Steckbrief-Karten in 14pt+ · Schreibgespraech in DIN A1 · Wortspeicher mit Symbolen.",
+                  "leistungsschwach": "Schreibgespraech kann Bilder/Symbole statt Worte enthalten · Mindestanforderung 3 Begriffe pro SuS.",
+                  "leistungsstark": "AFB-III-Zusatz: 'Warum stehen die Grundrechte am Anfang des Grundgesetzes — und nicht z.B. die Wahlregeln?'"
+                },
+                "personifikation_anteil": "Leon und Maya werden eingefuehrt — beide Klasse 10 unserer Lehrkraft. Leon plant eine Petition wegen des geschlossenen Skate-Parks (Vater Sozialarbeiter). Maya wurde bei der Klima-Demo am 1. Mai im Polizeikessel festgehalten (Mutter selbststaendig). Beide Faelle laufen ueber die ganze Sequenz.",
+                "tafelbild_skizze": "3-Zonen: links Demo-Foto · Mitte Forschungsfrage gross + Mindmap-Anknuepfungen · rechts Steckbrief Leon | Steckbrief Maya (2 Spalten).",
+                "hausaufgabe": "Bringe in der naechsten Stunde 1 Nachrichten-Artikel oder Foto zu einem Grundrechts-Thema mit (max. 1 Woche alt).",
+                "material": "Demo-Foto A2 · Plakat-Papier A1 (4x) · Edding-Stifte · Steckbrief-Karten Leon/Maya · Hefteintrag-Vorlage A5 · Wortspeicher",
+                "lp_bezug": "KE 1 (Definition Grundrechte) + KE 2 (Anbahnung UN-Mechanismus) + KE 3 (Anbahnung BVerfG)",
+                "prinzipien_b3": [
+                  "Schuelerorientierung",
+                  "Problemorientierung",
+                  "Aktualitaet",
+                  "Personifikation"
+                ],
+                "kompetenzstruktur": {
+                  "gegenstand": "Werte · Ordnungssysteme",
+                  "perspektive": "sozialwissenschaftliche Perspektive (Aspekt Recht)",
+                  "prozesskompetenz": "Erkenntnisse gewinnen und anwenden (Beobachten · Fragen entwickeln)"
+                },
+                "didaktik": "Lebensweltbezug (Klafki 1996) · Aktualitaetsprinzip · Personifikation als Identifikationsstrategie · Schreibgespraech als sprachsensible kooperative Methode"
+              },
+              {
+                "nr": 2,
+                "titel": "Art. 1 GG · Wuerde — auch fuer Verbrecher?",
+                "stundenthema_frage": "Was bedeutet 'Die Wuerde des Menschen ist unantastbar' — auch fuer Verbrecher?",
+                "minuten": 45,
+                "lernziel": "SuS analysieren Art. 1 Abs. 1 GG am Gaefgen-Fall (Folter-Androhung 2002) und entwickeln ein begruendetes Werturteil zur Wuerde-Garantie auch fuer Straftaeter.",
+                "lernziel_stundenziel": {
+                  "verhalten": "Die Schuelerinnen und Schueler analysieren Art. 1 Abs. 1 GG am Gaefgen-Fall (Folter-Androhung durch Vize-Polizeipraesident Daschner 2002) und entwickeln ein begruendetes 3-Stufen-Urteil,",
+                  "bedingung": "indem sie den verkuerzten Fall lesen, den Wortlaut Art. 1 Abs. 1 GG markieren und in einer Pro-Contra-Phase die Frage 'Darf Folter angedroht werden, um ein entfuehrtes Kind zu retten?' bearbeiten,",
+                  "maszstab": "was daran erkennbar wird, dass im Heft das 3-Stufen-Urteil (Sachebene · Werte-Ebene · eigene Position) mit je einem Argument besetzt ist."
+                },
+                "lernziel_teilziele": [
+                  {
+                    "tz": "SuS geben den Wortlaut von Art. 1 Abs. 1 GG wieder,",
+                    "indem": "indem sie den Text aus dem GG-Auszug abschreiben und in eigene Worte fassen,",
+                    "erkennbar": "was daran erkennbar wird, dass im Heft beide Versionen stehen.",
+                    "afb": "I",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS erschliessen den Gaefgen-Fall in seinen Grundzuegen,",
+                    "indem": "indem sie das didaktisch verkuerzte Fallblatt lesen und die drei Akteure (entfuehrtes Kind / Taeter Gaefgen / Vize-Polizeipraesident Daschner) sowie den Konfliktkern (Folter-Androhung gegen Taeter zur Rettung des Kindes) im AB benennen,",
+                    "erkennbar": "was daran erkennbar wird, dass das AB drei Akteure mit Funktion und den Konfliktkern in 2 Saetzen traegt.",
+                    "afb": "II",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS bilden ein 3-Stufen-Urteil zur Frage 'Darf Folter angedroht werden, um ein Kind zu retten?',",
+                    "indem": "indem sie auf dem Urteilsraster Sachebene (was Art. 1 sagt) · Werte-Ebene (Wuerde-Schutz auch fuer Taeter?) · eigene Position notieren,",
+                    "erkennbar": "was daran erkennbar wird, dass alle drei Stufen schriftlich besetzt sind und im Plenum mindestens ein Mitschueler-Argument reflektiert wird.",
+                    "afb": "III",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "[Differenziert / leistungsstark] SuS verknuepfen den Fall mit dem absoluten Charakter von Art. 1,",
+                    "indem": "indem sie pruefen, warum Art. 1 als einziges Grundrecht nicht abwaegbar ist (Ewigkeitsklausel Art. 79 Abs. 3 GG),",
+                    "erkennbar": "was daran erkennbar wird, dass sie im Plenum den Unterschied 'absolut' vs. 'abwaegbar' begruenden.",
+                    "afb": "III",
+                    "differenziert": true
+                  }
+                ],
+                "problemstellung": "6' · Provokationsthese an der Tafel: 'Wenn ein Kind entfuehrt wurde, darf die Polizei dem Taeter Folter androhen, um es zu retten.' Spontan-Verortung der SuS (zustimmen/ablehnen). Zielangabe: 'Wir pruefen die These mit dem Grundgesetz.' Plan: Fallarbeit + Pro-Contra-Phase.",
+                "problementfaltung": "22' · Material-Phase (10'): Auszug Art. 1 Abs. 1 GG + didaktisch verkuerzter Gaefgen-Fall (1 Seite, 3 Niveaus). Pro-Contra-Phase (12'): 2 Gruppen sammeln Argumente — Pro-Folter-Androhung (Kindesrettung) vs. Contra (Wuerde-Garantie absolut).",
+                "problemloesung": "6' · Gruppen tragen je zwei staerkste Argumente vor · Tafelbild mit 2 Spalten Pro/Contra · Lehrkraft erlaeutert: BGH-Urteil 2004 (Daschner verurteilt, aber milde Strafe) + EGMR-Urteil 2010 (Gaefgen siegt im Folterverbot).",
+                "wertung": "8' · 3-Stufen-Urteil schreiben (EA): Sachebene (Was sagt Art. 1?) · Werte-Ebene (Wuerde auch fuer Taeter?) · eigene Position begruendet.",
+                "sicherung_lzk": "3' · Hefteintrag 'Art. 1 GG ist absolut — auch fuer Verbrecher' + Urteilsraster · LZK-Mini: 'Erklaere in 2 Saetzen, warum Art. 1 nicht abwaegbar ist.'",
+                "sozialform_phasen": {
+                  "problemstellung": "Plenum (Verortungs-Skala)",
+                  "problementfaltung": "EA (Lesen) · GA (Pro/Contra-Sammlung)",
+                  "problemloesung": "Plenum (Tafel + L-Input BGH/EGMR)",
+                  "wertung": "EA (Urteil schreiben)",
+                  "sicherung_lzk": "EA"
+                },
+                "differenzierung_block": {
+                  "daz": "Fallblatt mit Bildunterstuetzung · Wortspeicher (Wuerde, Folter, Androhung, entfuehrt) · Gaefgen-Text in 3 Niveaus (100/200/Original).",
+                  "lrs": "Fallblatt 14pt+ · Audio-Variante des Falls · Urteilsraster mit Satzanfaengen.",
+                  "leistungsschwach": "Vereinfachtes Fallblatt 100 W · Pro/Contra-Argumente vorgegeben zum Markieren · Urteils-Schreibgeruest ('Art. 1 sagt: ___. Mein Massstab ist: ___. Ich finde: ___').",
+                  "leistungsstark": "AFB-III-Zusatz: Vergleich Art. 1 vs. Art. 2 (Leben/Unversehrtheit) — warum ist nur Art. 1 absolut? Bezug zu Art. 79 Abs. 3 GG (Ewigkeitsklausel)."
+                },
+                "personifikation_anteil": "Leon und Maya als Klassen-Diskursteilnehmer beziehen Stellung (z.B. 'Leon meint: Auch der schlimmste Taeter behaelt seine Wuerde, weil...' — als Stellvertreter:innen unterschiedlicher Positionen).",
+                "tafelbild_skizze": "Drei-Zonen-Tafel: links Provokationsthese + Verortungs-Skala · Mitte Art. 1 Wortlaut + Gaefgen-Akteure · rechts Pro/Contra-Argumente und Urteilsraster.",
+                "hausaufgabe": "Heft: 3-Stufen-Urteil ueberarbeiten + 1 Satz Selbstkritik (Welches Gegenargument war am staerksten?).",
+                "material": "GG-Auszug Art. 1 · Fallblatt Gaefgen 3 Niveaus · Urteilsraster · Wortspeicher · Tafel-Verortung-Skala",
+                "lp_bezug": "KE 1 (Grundrechte als schuetzenswerte Basis)",
+                "prinzipien_b3": [
+                  "Kontroversitaetsgebot",
+                  "Ueberwaeltigungsverbot",
+                  "Problemorientierung",
+                  "Personifikation"
+                ],
+                "kompetenzstruktur": {
+                  "gegenstand": "Werte · Ordnungssysteme",
+                  "perspektive": "sozialwissenschaftliche Perspektive (Aspekt Recht/Ethik)",
+                  "prozesskompetenz": "Erkenntnisse gewinnen und anwenden (Norm + Fall) · Beurteilen und bewerten (Werturteil bilden)"
+                },
+                "didaktik": "Fallanalyse (Massing 2010) · Politische Urteilsbildung 3-Stufen (GPJE 2004) · Beutelsbacher Konsens (Kontroversitaet) · Wertebildung im Diskurs (Lind 2003)"
+              },
+              {
+                "nr": 3,
+                "titel": "Art. 5 + 8 GG · Mayas Polizeikessel",
+                "stundenthema_frage": "Durfte die Polizei Maya 4 Stunden im Kessel halten?",
+                "minuten": 45,
+                "lernziel": "SuS wenden Art. 5 (Meinungsfreiheit) und Art. 8 GG (Versammlungsfreiheit) auf Mayas Fall an und beurteilen die Verhaeltnismaessigkeit polizeilichen Handelns.",
+                "lernziel_stundenziel": {
+                  "verhalten": "Die Schuelerinnen und Schueler wenden Art. 5 und Art. 8 GG auf Mayas Polizeikessel-Fall an und beurteilen die Verhaeltnismaessigkeit der Polizeimassnahme,",
+                  "bedingung": "indem sie den Fall in Tandems bearbeiten, die Grundrechte mit Schranken (Art. 8 Abs. 2 GG, polizeiliche Generalklausel) abgleichen und das Verhaeltnismaessigkeits-Schema (geeignet · erforderlich · angemessen) anwenden,",
+                  "maszstab": "was daran erkennbar wird, dass im Heft eine Tabelle mit den drei Pruefungsschritten und je einer Einschaetzung steht."
+                },
+                "lernziel_teilziele": [
+                  {
+                    "tz": "SuS geben den Wortlaut von Art. 5 + Art. 8 GG wieder,",
+                    "indem": "indem sie den jeweiligen Schutzbereich und die Schranken markieren,",
+                    "erkennbar": "was daran erkennbar wird, dass im AB pro Artikel Schutzbereich + Schranke markiert sind.",
+                    "afb": "I",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS analysieren Mayas Fall systematisch,",
+                    "indem": "indem sie 4 Leitfragen in Tandem-Arbeit beantworten (Welches Recht uebt Maya aus? Worauf stuetzt sich die Polizei? Wie lange dauerte die Massnahme? Gab es Alternativen?),",
+                    "erkennbar": "was daran erkennbar wird, dass alle 4 Antworten im AB stehen.",
+                    "afb": "II",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS wenden das Verhaeltnismaessigkeits-Schema an,",
+                    "indem": "indem sie 3-stufig pruefen (geeignet · erforderlich · angemessen) und je begruenden,",
+                    "erkennbar": "was daran erkennbar wird, dass die Tabelle 3 Pruefungsschritte mit Begruendung enthaelt.",
+                    "afb": "II",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "[Differenziert / leistungsstark] SuS bewerten die Grenze zwischen Versammlungsrecht und oeffentlicher Sicherheit,",
+                    "indem": "indem sie ein eigenes Werturteil 'Die Polizei handelte ___, weil ___' formulieren und auf Gegenargumente eingehen,",
+                    "erkennbar": "was daran erkennbar wird, dass das Urteil im Plenum mit zwei Argumenten verteidigt wird.",
+                    "afb": "III",
+                    "differenziert": true
+                  }
+                ],
+                "problemstellung": "5' · Lehrkraft erzaehlt Mayas Fall (Klima-Demo 1. Mai 2026, friedlich, dann Polizeikessel 4h, keine Anklage). Zielangabe: 'Wir pruefen mit dem GG, ob das rechtens war.' Plan: Tandem-Fallarbeit + Verhaeltnismaessigkeit.",
+                "problementfaltung": "22' · Tandem-Arbeit: AB mit 4 Leitfragen (1. Welches Recht uebt Maya aus? — Art. 8 Versammlung / Art. 5 Meinung. 2. Worauf stuetzt sich Polizei? — Art. 8 Abs. 2 + Polizeigesetz. 3. Wie lange dauerte? — 4h. 4. Gab es mildere Mittel?). Material: GG-Auszug + Polizeirecht-Mini-Erklaerung + Foto Demo-Situation.",
+                "problemloesung": "8' · Plenum: Tafelbild mit Verhaeltnismaessigkeits-Schema (3 Stufen geeignet/erforderlich/angemessen) — gemeinsam ausfuellen. Lehrkraft fasst zusammen: Versammlungsrecht ist hoch geschuetzt, Eingriffe nur bei konkreter Gefahr.",
+                "wertung": "7' · Mini-Fishbowl (Innenkreis 4, Aussenkreis Rest): War das Polizeihandeln verhaeltnismaessig? Argumente austauschen.",
+                "sicherung_lzk": "3' · Hefteintrag Verhaeltnismaessigkeits-Tabelle · LZK-Mini: 'Pruefe in 3 Stufen, ob eine Massnahme verhaeltnismaessig ist.'",
+                "sozialform_phasen": {
+                  "problemstellung": "Plenum (Erzaehlung + Zielangabe)",
+                  "problementfaltung": "PA (Tandem-Fallarbeit)",
+                  "problemloesung": "Plenum (Tafelbild gemeinsam)",
+                  "wertung": "Fishbowl (Innenkreis 4 + Aussenkreis)",
+                  "sicherung_lzk": "EA"
+                },
+                "differenzierung_block": {
+                  "daz": "AB mit Bildern · Wortspeicher (Versammlung, Kessel, verhaeltnismaessig, polizeiliche Massnahme) · Lese-Tandem.",
+                  "lrs": "AB 14pt+ · GG-Auszug mit farbiger Hervorhebung Schutzbereich/Schranke · Audio-Variante des Fall.",
+                  "leistungsschwach": "AB mit Multiple-Choice fuer Verhaeltnismaessigkeits-Stufen · Antworten in Stichpunkten · Tandem-Partnerwahl.",
+                  "leistungsstark": "Frei-Argumentation in Fishbowl · Zusatz: Welche Reform-Vorschlaege gaeb es fuer eine bessere Demo-Polizeiarbeit (Bezug zu UN-Empfehlungen, anbahnt UE 7)."
+                },
+                "personifikation_anteil": "Maya als Hauptfall — Lehrkraft beschreibt Mayas Erleben aus Ich-Perspektive (kurzer Fluss-Text). Sie wird die ganze Sequenz hindurch als 'die, die im Kessel war' praesent gehalten.",
+                "tafelbild_skizze": "Drei-Zonen-Tafel: links Art. 5 + Art. 8 mit Schutzbereich/Schranke · Mitte Verhaeltnismaessigkeits-Schema (3 Stufen) · rechts Mayas Fall-Daten + Wert-Urteil.",
+                "hausaufgabe": "—",
+                "material": "GG-Auszug Art. 5 + Art. 8 · Mayas Fallblatt + Foto · Verhaeltnismaessigkeits-Schema · AB mit 4 Leitfragen · Wortspeicher",
+                "lp_bezug": "KE 1 (Grundrechte als Basis) + KE 3 (Anbahnung BVerfG — wer wuerde so einen Fall pruefen?)",
+                "prinzipien_b3": [
+                  "Schuelerorientierung",
+                  "Problemorientierung",
+                  "Aktualitaet",
+                  "Personifikation",
+                  "Multiperspektivitaet"
+                ],
+                "kompetenzstruktur": {
+                  "gegenstand": "Werte · Interessen · Ordnungssysteme",
+                  "perspektive": "sozialwissenschaftliche Perspektive (Aspekt Recht)",
+                  "prozesskompetenz": "Erkenntnisse gewinnen und anwenden (Norm-Anwendung) · Beurteilen und bewerten (Verhaeltnismaessigkeit)"
+                },
+                "didaktik": "Fallanalyse (Massing 2010) · Norm-Fall-Pruefungs-Schema · Lebensweltbezug (Klafki 1996) · Fishbowl als demokratie-bildende Methode"
+              },
+              {
+                "nr": 4,
+                "titel": "Bundesverfassungsgericht · Aufbau und Verfahren",
+                "stundenthema_frage": "Wer prueft, ob ein Gesetz die Grundrechte verletzt — und wie?",
+                "minuten": 45,
+                "lernziel": "SuS stellen Aufbau, Funktion und vier Verfahrensarten des Bundesverfassungsgerichts dar.",
+                "lernziel_stundenziel": {
+                  "verhalten": "Die Schuelerinnen und Schueler stellen Aufbau, Funktion und vier Verfahrensarten des Bundesverfassungsgerichts (Karlsruhe) systematisch dar,",
+                  "bedingung": "indem sie an vier Stationen (Aufbau · Verfassungsbeschwerde · Normenkontrolle · Organstreit/Parteiverbot) Material erschliessen und in der Stammgruppe weitergeben,",
+                  "maszstab": "was daran erkennbar wird, dass im Heft eine Uebersichts-Tabelle mit allen vier Verfahren (Wer klagt? Wer entscheidet? Beispiel?) steht."
+                },
+                "lernziel_teilziele": [
+                  {
+                    "tz": "SuS beschreiben den Aufbau des BVerfG,",
+                    "indem": "indem sie die Kennzahlen (2 Senate, je 8 Richter:innen, 12 Jahre Amtszeit, Wahl je Haelfte Bundestag/Bundesrat, Sitz Karlsruhe) korrekt benennen,",
+                    "erkennbar": "was daran erkennbar wird, dass die Aufbau-Karte im Heft alle 5 Kennzahlen traegt.",
+                    "afb": "I",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS unterscheiden vier Verfahrensarten des BVerfG,",
+                    "indem": "indem sie an den Stationen Verfassungsbeschwerde · Normenkontrolle · Organstreit · Parteiverbot je den Klagebefugten und den Entscheidungsgegenstand erschliessen,",
+                    "erkennbar": "was daran erkennbar wird, dass die Tabelle pro Verfahren 3 Spalten fuellt (Wer? Was? Beispiel?).",
+                    "afb": "II",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS ordnen Beispielfaelle den Verfahrensarten zu,",
+                    "indem": "indem sie 4 vorbereitete Fall-Karten (Klima-Beschluss / NPD-Verbot / Hartz-IV-Sanktionen / Bund-Laender-Streit) den richtigen Verfahren zuordnen,",
+                    "erkennbar": "was daran erkennbar wird, dass alle 4 Karten korrekt zugeordnet sind.",
+                    "afb": "II",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "[Differenziert / leistungsstark] SuS reflektieren die demokratie-politische Bedeutung des BVerfG,",
+                    "indem": "indem sie pruefen, warum eine 'Wehrhafte Demokratie' (UE 9) ein Verfassungsgericht braucht,",
+                    "erkennbar": "was daran erkennbar wird, dass sie im Plenum zwei Funktions-Argumente nennen (Minderheitenschutz + Gewaltenkontrolle).",
+                    "afb": "III",
+                    "differenziert": true
+                  }
+                ],
+                "problemstellung": "5' · Foto Karlsruhe-Gebaeude + Provokation: 'Wer kontrolliert eigentlich den Bundestag, wenn der ein Gesetz macht, das gegen Grundrechte verstoesst?' Zielangabe + Stationenplan.",
+                "problementfaltung": "25' · Stationenlernen (in Stammgruppen rotieren): Station 1 Aufbau (Senate/Richter:innen) · Station 2 Verfassungsbeschwerde (Buerger-Klage) · Station 3 Normenkontrolle (abstrakt + konkret) · Station 4 Organstreit + Parteiverbot. Pro Station 5' + 1' Wechsel.",
+                "problemloesung": "8' · Tafel-Synthese: 4-Spalten-Tabelle mit Verfahren (Wer klagt? Wer entscheidet? Beispiel?). Fall-Zuordnungs-Spiel (4 Fall-Karten ans richtige Verfahren).",
+                "wertung": "5' · 'Was passiert ohne ein Verfassungsgericht?' Plenum-Diskussion mit Bezug zu UE 1 (warum stehen Grundrechte am Anfang des GG).",
+                "sicherung_lzk": "2' · Hefteintrag 4-Spalten-Tabelle · LZK-Mini: 'Welches Verfahren wuerde Maya nutzen, um gegen die Polizeimassnahme zu klagen?' (Antwort: Verfassungsbeschwerde nach Erschoepfung Rechtsweg).",
+                "sozialform_phasen": {
+                  "problemstellung": "Plenum (Foto + UG)",
+                  "problementfaltung": "GA (Stationen-Rotation)",
+                  "problemloesung": "Plenum (Tafel-Synthese + Fall-Spiel)",
+                  "wertung": "UG",
+                  "sicherung_lzk": "EA"
+                },
+                "differenzierung_block": {
+                  "daz": "Stationen-Material mit Symbolen (Waage = Recht, 2 Senate = 2 Tueren) · Wortspeicher (Senat, Richterin, Verfassungsbeschwerde, Normenkontrolle).",
+                  "lrs": "Material 14pt+ · Stationen-Tabelle als Visualisierungs-Plakat A2.",
+                  "leistungsschwach": "Material auf 3 Stationen reduziert (Station 4 Organstreit nur in Stamm-Gruppe gehoert) · Tabelle mit Lueckenstruktur.",
+                  "leistungsstark": "AFB-III-Zusatz: Vergleich BVerfG vs. EGMR (Europaeischer Gerichtshof fuer Menschenrechte) — wann klagt man wo? (Anbahnt UE 7 UN-Mechanismen)."
+                },
+                "personifikation_anteil": "Maya als hypothetische Klaegerin in Station 2 (Verfassungsbeschwerde) — wuerde sie 'aus eigenem Recht betroffen' sein? Ja, Art. 8 GG verletzt.",
+                "tafelbild_skizze": "4-Spalten-Tafel: Verfassungsbeschwerde | Normenkontrolle | Organstreit | Parteiverbot. Je Spalte: Wer? Was? Beispiel?. Mitte: BVerfG-Logo + 2-Senate-Skizze.",
+                "hausaufgabe": "Recherche: Suche ein BVerfG-Urteil aus den letzten 5 Jahren in den Nachrichten (Stichwort: 'Karlsruhe entschieden'). Bringe einen Satz dazu mit (Vorbereitung UE 5).",
+                "material": "4 Stationen-Mappen mit Material A2 · Tabellen-Schablone · 4 Fall-Karten zur Zuordnung · Foto Karlsruhe · Wortspeicher · Hefteintrag-Vorlage",
+                "lp_bezug": "KE 3 (Rolle des BVerfG darstellen)",
+                "prinzipien_b3": [
+                  "Schuelerorientierung",
+                  "Problemorientierung",
+                  "Fachlichkeit"
+                ],
+                "kompetenzstruktur": {
+                  "gegenstand": "Ordnungssysteme · Werte",
+                  "perspektive": "sozialwissenschaftliche Perspektive (Aspekt Recht)",
+                  "prozesskompetenz": "Erkenntnisse gewinnen und anwenden (Institution erschliessen) · Anwenden und handeln (Fachsprache)"
+                },
+                "didaktik": "Stationenlernen (Reinhardt 2005) · Institutionenkunde · Kompetenzstrukturmodell GPG Gegenstandsbereich Ordnungssysteme · Anschluss an Detjen 2007 (Muendigkeit ueber Institutionen-Kenntnis)"
+              },
+              {
+                "nr": 5,
+                "titel": "Klima-Beschluss BVerfG 2021 · SCHWERPUNKTSTUNDE-KANDIDAT",
+                "stundenthema_frage": "Wie schuetzt Karlsruhe Mayas Zukunft? Der Klima-Beschluss 2021",
+                "minuten": 45,
+                "lernziel": "SuS analysieren den Klima-Beschluss des BVerfG vom 24.03.2021 (1 BvR 2656/18) und bewerten seine Bedeutung fuer den Grundrechte-Schutz junger Generationen.",
+                "lernziel_stundenziel": {
+                  "verhalten": "Die Schuelerinnen und Schueler analysieren den Klima-Beschluss des Bundesverfassungsgerichts vom 24.03.2021 (1 BvR 2656/18) und entwickeln ein begruendetes 3-Stufen-Urteil zur Bedeutung des Beschlusses fuer den Grundrechte-Schutz junger Generationen,",
+                  "bedingung": "indem sie die didaktisch reduzierte Urteils-Kurzfassung lesen, das Kernkonzept 'intertemporale Freiheitssicherung' herausarbeiten und die Klaeger:innen-Generation (z.B. Luisa Neubauer, geb. 1996 — Mayas Generation) zu Mayas Lebensperspektive in Bezug setzen,",
+                  "maszstab": "was daran erkennbar wird, dass im Heft Sachebene (Was hat das BVerfG entschieden?) · Werte-Ebene (Schutz zukuenftiger Freiheit?) · eigene Position mit je einem Argument besetzt sind."
+                },
+                "lernziel_teilziele": [
+                  {
+                    "tz": "SuS geben den Kerngehalt des Klima-Beschlusses wieder,",
+                    "indem": "indem sie die zwei Kern-Aussagen markieren (1. Klimaschutzgesetz 2019 war teilweise verfassungswidrig · 2. Grund: zukuenftige Generationen muessen heute schon vor unzumutbaren Freiheitseinschraenkungen geschuetzt werden),",
+                    "erkennbar": "was daran erkennbar wird, dass beide Kern-Aussagen im Heft stehen.",
+                    "afb": "I",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS erschliessen den Begriff 'intertemporale Freiheitssicherung',",
+                    "indem": "indem sie den Begriff in 3 Schritten aufbauen (intertemporal = zeitueberschreitend · Freiheit = Grundrechte · Sicherung = vorbeugender Schutz) und in einer Tandem-Definition zusammenfassen,",
+                    "erkennbar": "was daran erkennbar wird, dass die Tandem-Definition den Kernsatz traegt: 'Der Staat darf heute nicht so viel CO2 erlauben, dass kuenftige Generationen ihre Freiheit aufgeben muessen, um Klimaziele noch zu erreichen.'",
+                    "afb": "II",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS bewerten den Beschluss in einem 3-Stufen-Urteil,",
+                    "indem": "indem sie Sachebene (Was geschah?) · Werte-Ebene (Schuetzt der Beschluss Mayas Zukunft wirksam?) · eigene Position formulieren,",
+                    "erkennbar": "was daran erkennbar wird, dass im Heft alle 3 Stufen mit je einem Argument besetzt sind.",
+                    "afb": "III",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "[Differenziert / leistungsstark] SuS reflektieren die Grenze richterlicher Gestaltung,",
+                    "indem": "indem sie pruefen, ob das BVerfG mit dem Klima-Beschluss seine Rolle ueberschritten hat (klassische Gewaltenteilungs-Diskussion 'Gerichts-Staat?'),",
+                    "erkennbar": "was daran erkennbar wird, dass sie im Plenum eine Position mit zwei Argumenten begruenden.",
+                    "afb": "III",
+                    "differenziert": true
+                  }
+                ],
+                "problemstellung": "6' · Provokationsthese: 'Karlsruhe rettet Mayas Zukunft.' Zustimmen/ablehnen — Vermutungen sammeln. Zielangabe: 'Wir lesen einen echten Karlsruhe-Beschluss.' Plan: Urteils-Analyse + 3-Stufen-Urteil.",
+                "problementfaltung": "20' · Material-Phase: Didaktisch reduzierte Urteils-Kurzfassung (1 Seite, drei Niveaus). Aufgabe (PA): Markieren der zwei Kern-Aussagen + Tandem-Definition 'intertemporale Freiheitssicherung'. Anschluss an HA UE 4 (mitgebrachte Karlsruhe-Schlagzeilen).",
+                "problemloesung": "10' · Tafel-Synthese: Was hat das BVerfG entschieden? Was bedeutet 'intertemporal'? Lehrkraft erklaeut Klaegerinnen-Generation (Luisa Neubauer u.a., Jahrgaenge 1990-2000 = Mayas Generation in fiktiver Aktualisierung).",
+                "wertung": "7' · 3-Stufen-Urteil (EA · 5'): Sache · Werte · eigene Position · anschliessend kurzes Plenum (2'): Wer findet 'Karlsruhe rettet Mayas Zukunft' weiter zutreffend?",
+                "sicherung_lzk": "2' · Hefteintrag Kernsatz · LZK-Mini AFB III: 'Begruende in 2 Saetzen, was 'intertemporale Freiheitssicherung' fuer Mayas Generation bedeutet.'",
+                "sozialform_phasen": {
+                  "problemstellung": "Plenum (These + Verortung)",
+                  "problementfaltung": "PA (Urteils-Markierung + Tandem-Definition)",
+                  "problemloesung": "Plenum (Tafel-Synthese + L-Input)",
+                  "wertung": "EA · UG (Plenum-Vergleich)",
+                  "sicherung_lzk": "EA"
+                },
+                "differenzierung_block": {
+                  "daz": "Urteils-Kurzfassung mit Wortspeicher (intertemporal, Freiheit, Sicherung, Generation) · Bild-Begriffs-Karten fuer 'intertemporal' (Pfeil heute → morgen) · Lese-Tandem.",
+                  "lrs": "Urteils-Text 14pt+ · 3 Niveaus (80/180/350 W) · Audio-Variante · farbiges Leitsystem.",
+                  "leistungsschwach": "Urteils-Text 80 W mit vorbefuellten Markierungen · 3-Stufen-Urteil mit Satzanfaengen ('Das Gericht entschied: ___. Fuer kuenftige Freiheit bedeutet das: ___. Ich finde: ___').",
+                  "leistungsstark": "Original-Auszuege (zur Begruendung) · AFB-III-Zusatz: Vergleich Klima-Beschluss vs. Niederlande Urgenda-Urteil (2019) — Welcher Beschluss geht weiter? (Bezug auf europaeische Grundrechte)."
+                },
+                "personifikation_anteil": "Maya = junge Klimaaktivistin, geboren 2009 (analog zur Klaegerinnen-Generation des Originals: Neubauer 1996, Sophie Backsen 1998, etc.). Das Urteil schuetzt rechtlich exakt Mayas Lebensperspektive. Maya wird zur 'Personifikation der geschuetzten Generation' — emotional + sachlich gespannt.",
+                "tafelbild_skizze": "3-Zonen-Tafel: links Provokationsthese · Mitte Urteils-Kernsatz + Begriffs-Skizze 'intertemporal' (Zeitstrahl heute→2050) · rechts 3-Stufen-Urteilsraster + Mayas Lebenszeit-Pfeil.",
+                "hausaufgabe": "Schreibe ein Argument auf, warum Karlsruhe ein wichtiges (oder unwichtiges) Gericht fuer Demokratie ist (max. 4 Saetze).",
+                "material": "Urteils-Kurzfassung 3 Niveaus · Begriffs-Karten 'intertemporal' · Zeitstrahl-Plakat 2020-2050 · 3-Stufen-Urteilsraster · Wortspeicher · Foto Verkuendungstag",
+                "lp_bezug": "KE 3 (Bedeutung BVerfG fuer Grundrechte-Schutz · ZENTRALE STUNDE) + KE 1 (Grundrechte als schuetzenswerte Basis)",
+                "prinzipien_b3": [
+                  "Aktualitaet",
+                  "Schuelerorientierung",
+                  "Problemorientierung",
+                  "Kontroversitaetsgebot",
+                  "Personifikation"
+                ],
+                "kompetenzstruktur": {
+                  "gegenstand": "Werte · Ordnungssysteme · Raeume",
+                  "perspektive": "sozialwissenschaftliche Perspektive (Aspekt Recht)",
+                  "prozesskompetenz": "Erkenntnisse gewinnen und anwenden (Urteil analysieren) · Beurteilen und bewerten (Werturteil)"
+                },
+                "didaktik": "Fallanalyse (Massing 2010) · Aktualitaetsprinzip (Klafki 1996) · Politische Urteilsbildung 3-Stufen (GPJE 2004) · Generationen-Gerechtigkeit als demokratisches Lernfeld (Detjen 2007) · Beutelsbacher Konsens (Kontroversitaet) · SCHWERPUNKTSTUNDE-KANDIDAT"
+              },
+              {
+                "nr": 6,
+                "titel": "Petitionsrecht · Leons Skate-Park",
+                "stundenthema_frage": "Wie reicht Leon seine Petition gegen das Skate-Park-Verbot ein — und was bewirkt sie?",
+                "minuten": 45,
+                "lernziel": "SuS erschliessen das Petitionsrecht (Art. 17 GG) und formulieren gemeinsam mit Leon eine echte Petition zum Skate-Park-Schluss.",
+                "lernziel_stundenziel": {
+                  "verhalten": "Die Schuelerinnen und Schueler erschliessen das Petitionsrecht (Art. 17 GG) und formulieren gemeinsam mit Leon eine echte Petition zum Schluss des oeffentlichen Skate-Parks,",
+                  "bedingung": "indem sie nach kurzem L-Input zu Verfahren und Reichweite (Petitionsausschuss Bundestag, kommunale Petitionen, Online-Petitionen) in 4er-Gruppen je einen Petitions-Baustein (Adressat · Anliegen · Begruendung · Forderung) ausarbeiten und im Plenum zur Petition synthetisieren,",
+                  "maszstab": "was daran erkennbar wird, dass am Ende der Stunde ein vollstaendiger Petitions-Entwurf auf 1 DIN-A4-Seite steht, der in UE 10 tatsaechlich eingereicht wird."
+                },
+                "lernziel_teilziele": [
+                  {
+                    "tz": "SuS geben den Wortlaut von Art. 17 GG wieder,",
+                    "indem": "indem sie aus dem GG-Auszug die drei Kern-Aspekte herausarbeiten (sich · einzeln oder gemeinsam · schriftlich an die zustaendigen Stellen wenden),",
+                    "erkennbar": "was daran erkennbar wird, dass im AB die drei Aspekte markiert sind.",
+                    "afb": "I",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS beschreiben das Petitions-Verfahren des Bundestags,",
+                    "indem": "indem sie aus dem Material vier Verfahrens-Schritte herausarbeiten (Einreichung · Annahme · Beratung im Petitionsausschuss · Antwort),",
+                    "erkennbar": "was daran erkennbar wird, dass die Schritte im Heft chronologisch notiert sind.",
+                    "afb": "II",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS verfassen einen Petitions-Baustein in der Gruppe,",
+                    "indem": "indem sie zu Leons Skate-Park-Fall (1) Adressat (Stadtrat) (2) Anliegen (3) Begruendung (4) Forderung ausarbeiten,",
+                    "erkennbar": "was daran erkennbar wird, dass jede Gruppe ihren Baustein in 5 Saetzen schriftlich fixiert.",
+                    "afb": "II",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "[Differenziert / leistungsstark] SuS reflektieren die politische Wirksamkeit von Petitionen,",
+                    "indem": "indem sie pruefen, welche Petitionen in den letzten Jahren wirklich etwas bewirkt haben (z.B. Online-Petitionen >50.000 Unterschriften) und welche Faktoren entscheidend sind,",
+                    "erkennbar": "was daran erkennbar wird, dass sie im Plenum zwei Wirksamkeits-Faktoren mit Beispiel nennen.",
+                    "afb": "III",
+                    "differenziert": true
+                  }
+                ],
+                "problemstellung": "5' · Lehrkraft praesentiert Leons Situation (Stadtrat hat den oeffentlichen Skate-Park geschlossen, Leon und Freunde sind betroffen, Leon will eine Petition machen). Zielangabe: 'Wir verfassen heute Leons Petition gemeinsam.' Plan: L-Input + Gruppenarbeit + Synthese.",
+                "problementfaltung": "22' · L-Input (8'): Art. 17 GG · Petitions-Verfahren (Adressat · Anliegen · Begruendung · Forderung) · Wirksamkeits-Beispiele (Massentierhaltung 2019, Anti-CETA 2016). 4er-Gruppen (14'): jede Gruppe einen Baustein der Petition (Adressat · Anliegen · Begruendung · Forderung) ausarbeiten.",
+                "problemloesung": "10' · Plenum-Synthese: alle 4 Bausteine an die Tafel · gemeinsam zur fertigen 1-Seiten-Petition zusammenfuegen. Lehrkraft achtet auf sprachliche Konsistenz.",
+                "wertung": "5' · 'Wie wahrscheinlich bewirkt diese Petition etwas?' UG mit Bezug auf Wirksamkeits-Faktoren (Unterschriftenzahl · Adressat · oeffentliche Aufmerksamkeit).",
+                "sicherung_lzk": "3' · Petitions-Entwurf wird abfotografiert + ins Heft geklebt · LZK-Mini: 'Nenne die 4 Bausteine einer Petition.'",
+                "sozialform_phasen": {
+                  "problemstellung": "Plenum (Leons Fall)",
+                  "problementfaltung": "Plenum (L-Input) · GA (4er-Gruppen Bausteine)",
+                  "problemloesung": "Plenum (Synthese)",
+                  "wertung": "UG",
+                  "sicherung_lzk": "EA"
+                },
+                "differenzierung_block": {
+                  "daz": "Petitions-Baustein-Karten mit Beispiel-Saetzen · Wortspeicher (Petition, Anliegen, Forderung, Adressat) · Lese-Tandem.",
+                  "lrs": "Material 14pt+ · Baustein-Karten mit Visualisierungen · Schreibtempo-Anpassung.",
+                  "leistungsschwach": "Baustein mit Lueckenstruktur ('Wir bitten den Stadtrat um ___, weil ___') · Stichpunkte erlaubt.",
+                  "leistungsstark": "AFB-III-Zusatz: Recherche-Aufgabe: Suche eine erfolgreiche Online-Petition der letzten 12 Monate und benenne den entscheidenden Erfolgsfaktor."
+                },
+                "personifikation_anteil": "Leon als Petitions-Initiator — die Gruppen schreiben FUER Leon (sein Vater Sozialarbeiter beraet ihn methodisch). Die Petition wird in UE 10 tatsaechlich eingereicht — Realhandeln.",
+                "tafelbild_skizze": "4-Felder-Tafel: Adressat | Anliegen | Begruendung | Forderung. Pro Feld: ein Gruppenergebnis. Unten: Wirksamkeits-Skala (3 Stufen). Rechts: Petitions-Foto (Bundestag Petitionsausschuss).",
+                "hausaufgabe": "Sammle Unterschriften (mind. 5) fuer Leons Petition — bringe sie in UE 10 mit.",
+                "material": "GG-Auszug Art. 17 · Petitions-Verfahrens-Plakat · 4 Baustein-Karten · Wirksamkeits-Beispiele · Petitions-Vorlagen-Blatt · Wortspeicher",
+                "lp_bezug": "KE 1 (Grundrechte als handlungsleitende Basis) + KE 3 (Anbindung an staatliches Verfahren)",
+                "prinzipien_b3": [
+                  "Handlungsorientierung",
+                  "Schuelerorientierung",
+                  "Aktualitaet",
+                  "Personifikation"
+                ],
+                "kompetenzstruktur": {
+                  "gegenstand": "Interessen · Ordnungssysteme",
+                  "perspektive": "sozialwissenschaftliche Perspektive (Aspekt Recht)",
+                  "prozesskompetenz": "Erkenntnisse gewinnen und anwenden (Verfahren erschliessen) · Anwenden und handeln (Realhandeln Anbahnung)"
+                },
+                "didaktik": "Handlungsorientierung Realhandeln (Reinhardt 2005, Petrik 2013) · Demokratie-Lernen (Himmelmann 2001) · Lebensweltbezug (Klafki) · Produktorientiertes Schreiben"
+              },
+              {
+                "nr": 7,
+                "titel": "UN-Mechanismen · Iran-Frauen-Bewegung",
+                "stundenthema_frage": "Was tut die UN, wenn ein Staat seine eigenen Buergerinnen toetet? Die Iran-Frauen-Bewegung",
+                "minuten": 45,
+                "lernziel": "SuS erschliessen UN-Mechanismen bei Menschenrechtsverletzungen am aktuellen Beispiel der Iran-Frauen-Bewegung (seit 2022) und beurteilen ihre Wirksamkeit.",
+                "lernziel_stundenziel": {
+                  "verhalten": "Die Schuelerinnen und Schueler erschliessen drei UN-Mechanismen bei Menschenrechtsverletzungen (UN-Menschenrechtsrat · Sonderberichterstatter · Sanktionen) am Beispiel der Iran-Frauen-Bewegung und beurteilen ihre Wirksamkeit,",
+                  "bedingung": "indem sie nach kurzem L-Input zu UN-Strukturen das Fallbeispiel Mahsa Amini (16.09.2022) und die nachfolgende UN-Resolution analysieren und in einem Werturteil die Reichweite beurteilen,",
+                  "maszstab": "was daran erkennbar wird, dass im Heft eine Tabelle mit drei UN-Mechanismen + je einer Wirksamkeits-Einschaetzung steht."
+                },
+                "lernziel_teilziele": [
+                  {
+                    "tz": "SuS skizzieren den Anlass der Iran-Frauen-Bewegung,",
+                    "indem": "indem sie aus einem Zeitungsartikel die Kern-Daten extrahieren (Mahsa Amini, 22, im September 2022 nach Festnahme durch Sittenpolizei verstorben — Auslöser landesweiter Proteste 'Frau · Leben · Freiheit'),",
+                    "erkennbar": "was daran erkennbar wird, dass die Kern-Daten im Heft mit Datum stehen.",
+                    "afb": "I",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS unterscheiden drei UN-Mechanismen,",
+                    "indem": "indem sie aus dem AB die Funktionen von (1) UN-Menschenrechtsrat (2) Sonderberichterstatter (3) Sanktionen herausarbeiten,",
+                    "erkennbar": "was daran erkennbar wird, dass die Tabelle pro Mechanismus 2 Spalten fuellt (Was tut der Mechanismus? Konsequenz?).",
+                    "afb": "II",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS beurteilen die Wirksamkeit der UN-Reaktion auf Iran,",
+                    "indem": "indem sie an einer Wirksamkeits-Skala (sehr wirksam · teilweise · symbolisch · wirkungslos) je Mechanismus eine Position begruenden,",
+                    "erkennbar": "was daran erkennbar wird, dass die Tabelle pro Mechanismus eine Einstufung mit Begruendung enthaelt.",
+                    "afb": "III",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "[Differenziert / leistungsstark] SuS reflektieren die strukturellen Grenzen der UN,",
+                    "indem": "indem sie pruefen, warum UN-Mechanismen oft begrenzt wirken (Souveraenitaet, Vetorecht UN-Sicherheitsrat),",
+                    "erkennbar": "was daran erkennbar wird, dass sie im Plenum zwei strukturelle Gruende mit Beispiel nennen.",
+                    "afb": "III",
+                    "differenziert": true
+                  }
+                ],
+                "problemstellung": "5' · Foto-Impuls Iran-Demo + Slogan 'Frau · Leben · Freiheit' · Vermutungen 'Was kann die internationale Gemeinschaft tun?' Zielangabe: 'UN-Mechanismen am echten Beispiel.'",
+                "problementfaltung": "22' · L-Input UN-Struktur (5'): Generalversammlung · Menschenrechtsrat · Sicherheitsrat · Sonderberichterstatter. Fall-Material (12'): Zeitungsartikel zu Mahsa Amini + UN-Resolution-Auszug. Aufgabe in PA: 3 Mechanismen + Wirksamkeit ausarbeiten. (5' Vergleich in 4er-Gruppen).",
+                "problemloesung": "10' · Tafel-Synthese: 3-Spalten-Tabelle (Mechanismus · Was tut er? · Wirksamkeit?). Lehrkraft erlaeutert: UN-Resolution Iran (Nov. 2022) · Sonderberichterstatter-Mandate · Begrenzung durch Vetorecht (China/Russland).",
+                "wertung": "5' · 'Hilft die UN — oder ist sie ein zahnloser Tiger?' UG mit Wertschaetzung beider Positionen.",
+                "sicherung_lzk": "3' · Hefteintrag Tabelle · LZK-Mini: 'Nenne einen UN-Mechanismus mit Beispiel.'",
+                "sozialform_phasen": {
+                  "problemstellung": "Plenum (Foto + UG)",
+                  "problementfaltung": "Plenum (L-Input) · PA (Material-Erschliessung) · GA (Vergleich)",
+                  "problemloesung": "Plenum (Tafel-Synthese)",
+                  "wertung": "UG",
+                  "sicherung_lzk": "EA"
+                },
+                "differenzierung_block": {
+                  "daz": "Material mit Bild-Unterstuetzung · Wortspeicher (Resolution, Sanktion, Sonderberichterstatter, Souveraenitaet) · 3 Sprach-Niveaus.",
+                  "lrs": "Material 14pt+ · Audio-Variante Zeitungsartikel · Wortbedeutungs-Karten.",
+                  "leistungsschwach": "Tabelle mit Lueckenstruktur · Wirksamkeits-Skala mit Smileys · Mehr Zeit fuer Lesen.",
+                  "leistungsstark": "AFB-III-Zusatz: Vergleich Iran-Resolution vs. Russland/Ukraine-Resolution (2022) — wo greift die UN durch, wo nicht? (Anbahnt UE 9 Wehrhaftigkeit)."
+                },
+                "personifikation_anteil": "Anbahnung in UE 8: Mayas Klimaaktivismus in Deutschland kontrastiert zu den iranischen Frauen — Recht auf Protest hier vs. dort. Maya wuerde im Iran fuer dieselbe Tat (Demonstration) ihr Leben riskieren.",
+                "tafelbild_skizze": "3-Spalten-Tafel: UN-Menschenrechtsrat | Sonderberichterstatter | Sanktionen. Pro Spalte: Funktion + Wirksamkeit Iran-Beispiel. Mitte: Foto/Slogan 'Frau · Leben · Freiheit' + Karte Iran.",
+                "hausaufgabe": "—",
+                "material": "Foto Iran-Demo · Zeitungsartikel Mahsa Amini (3 Niveaus) · UN-Resolution-Auszug · 3-Spalten-Tabelle · Wirksamkeits-Skala · Wortspeicher · Karte Iran",
+                "lp_bezug": "KE 2 (UN-Einsatz bei Menschenrechtsverletzungen — VERBATIM AKTUELLES BEISPIEL)",
+                "prinzipien_b3": [
+                  "Aktualitaet",
+                  "Multiperspektivitaet",
+                  "Schuelerorientierung",
+                  "Kontroversitaetsgebot"
+                ],
+                "kompetenzstruktur": {
+                  "gegenstand": "Werte · Interessen · Ordnungssysteme",
+                  "perspektive": "sozialwissenschaftliche Perspektive (Aspekt Recht)",
+                  "prozesskompetenz": "Erkenntnisse gewinnen und anwenden (UN-Strukturen) · Beurteilen und bewerten (Wirksamkeit)"
+                },
+                "didaktik": "Fallanalyse (Massing 2010) · Aktualitaetsprinzip (Klafki 1996) · Multiperspektivitaet (Bergmann 2000) · Menschenrechts-Bildung als Querschnittsaufgabe (LP+ GPG-Fachprofil)"
+              },
+              {
+                "nr": 8,
+                "titel": "Extremismus-Formen · Wo endet Meinungsfreiheit?",
+                "stundenthema_frage": "Wo endet Meinungsfreiheit — und faengt Extremismus an?",
+                "minuten": 45,
+                "lernziel": "SuS unterscheiden drei Extremismus-Formen (Rechts/Links/religioes-motiviert/Dschihadismus) und grenzen sie von legitimen politischen Positionen ab.",
+                "lernziel_stundenziel": {
+                  "verhalten": "Die Schuelerinnen und Schueler unterscheiden drei Extremismus-Formen (Rechtsextremismus · Linksextremismus · Dschihadismus) und grenzen diese sachlich von legitimen politischen Positionen ab,",
+                  "bedingung": "indem sie im Gruppenpuzzle je eine Form erschliessen (Definition · Kernmerkmal · Beispiel) und im Stamm-Team zusammenfuehren,",
+                  "maszstab": "was daran erkennbar wird, dass im Heft eine 3-Zeilen-Tabelle mit Form · Kernmerkmal · Beispiel · Abgrenzung steht."
+                },
+                "lernziel_teilziele": [
+                  {
+                    "tz": "SuS erarbeiten in der Expertengruppe eine Extremismus-Form,",
+                    "indem": "indem sie den Expertentext gemeinsam lesen und drei Kernmerkmale herausarbeiten (Definition · Ideologie · Beispiel),",
+                    "erkennbar": "was daran erkennbar wird, dass die Expertenkarte alle drei Kernmerkmale traegt.",
+                    "afb": "I",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS vermitteln ihre Form in der Stammgruppe,",
+                    "indem": "indem sie die Expertenkarte praesentieren und Rueckfragen beantworten,",
+                    "erkennbar": "was daran erkennbar wird, dass die uebrigen Stammgruppen-Mitglieder die Inhalte ins Heft uebertragen.",
+                    "afb": "II",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS grenzen Extremismus von legitimen politischen Positionen ab,",
+                    "indem": "indem sie 5 Aussagen-Karten (3 legitim · 2 extremistisch) zuordnen und ihre Entscheidung begruenden,",
+                    "erkennbar": "was daran erkennbar wird, dass alle 5 Karten korrekt zugeordnet sind und 2 Zuordnungen im Plenum begruendet werden.",
+                    "afb": "II",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "[Differenziert / leistungsstark] SuS reflektieren das Spannungsverhaeltnis Meinungsfreiheit vs. Demokratieschutz,",
+                    "indem": "indem sie pruefen, wo die Linie zwischen geschuetzter scharfer Meinung und verbotener Verfassungsfeindlichkeit verlaeuft,",
+                    "erkennbar": "was daran erkennbar wird, dass sie im Plenum diese Linie mit zwei Kriterien begruenden (z.B. Gewaltaufruf · Wuerde-Verletzung).",
+                    "afb": "III",
+                    "differenziert": true
+                  }
+                ],
+                "problemstellung": "5' · Provokationsthese: 'Jede starke Meinung ist Extremismus.' Spontan ablehnen — warum nicht? Zielangabe: 'Wir lernen Extremismus sachlich zu unterscheiden.' Plan: Gruppenpuzzle + Aussagen-Zuordnung.",
+                "problementfaltung": "25' · Gruppenpuzzle: Expertengruppe A Rechtsextremismus · B Linksextremismus · C Dschihadismus (10' Experten · 10' Stamm). Material: definitorischer Auszug aus Verfassungsschutz-Bericht + 1 Beispiel pro Form.",
+                "problemloesung": "8' · Aussagen-Zuordnungs-Spiel (5 Karten): SuS ordnen Karten 'legitim' oder 'extremistisch' zu und begruenden. Tafel-Synthese: Drei-Zeilen-Tabelle.",
+                "wertung": "5' · 'Wo ist die Linie — und wer entscheidet das?' UG mit Verweis auf UE 9 (Verfassungsschutz). Lehrkraft halt sich neutral.",
+                "sicherung_lzk": "2' · Hefteintrag 3-Zeilen-Tabelle · LZK-Mini: 'Nenne 1 Kernmerkmal je Form.'",
+                "sozialform_phasen": {
+                  "problemstellung": "Plenum (These + UG)",
+                  "problementfaltung": "GA (Experten- + Stammgruppen)",
+                  "problemloesung": "Plenum (Aussagen-Spiel + Tafel)",
+                  "wertung": "UG",
+                  "sicherung_lzk": "EA"
+                },
+                "differenzierung_block": {
+                  "daz": "Expertentexte mit Wortspeicher (Ideologie, Verfassungsfeindlichkeit, Gewalt-Bereitschaft) · Symbol-Karten je Form · Lese-Tandem.",
+                  "lrs": "Texte in 3 Niveaus (100/200/350 W) · 14pt+ · Audio-Variante.",
+                  "leistungsschwach": "Expertenkarte mit Lueckenstruktur · Aussagen-Karten vorsortiert · weniger Karten (3 statt 5).",
+                  "leistungsstark": "AFB-III-Zusatz: 'Wie unterscheidet sich Extremismus von Radikalismus?' (Bezug auf Definition Verfassungsschutz)."
+                },
+                "personifikation_anteil": "Leons Vater (Sozialarbeiter beim Jugendamt) wird als Experte fuer Praeventions-Arbeit eingefuehrt — er erkennt erste Radikalisierungs-Zeichen bei Jugendlichen. Dadurch wird das Thema lebensnah, ohne dass SuS persoenlich blossgestellt werden.",
+                "tafelbild_skizze": "3-Zeilen-Tabelle: Rechtsextremismus | Linksextremismus | Dschihadismus. 4 Spalten: Form · Kernmerkmal · Beispiel · Abgrenzung. Rechts: Spannungsfeld 'Meinungsfreiheit ↔ Demokratieschutz'.",
+                "hausaufgabe": "Recherchiere 1 Beispiel fuer Praeventions-Arbeit (z.B. EXIT-Programm) — bringe es in UE 9 mit.",
+                "material": "3 Expertentexte (je 3 Niveaus) · 5 Aussagen-Karten · Tabelle-Schablone · Verfassungsschutz-Definitions-Auszug · Wortspeicher",
+                "lp_bezug": "KE 4 (Formen des Extremismus) — VERBATIM",
+                "prinzipien_b3": [
+                  "Kontroversitaetsgebot",
+                  "Ueberwaeltigungsverbot",
+                  "Problemorientierung",
+                  "Personifikation"
+                ],
+                "kompetenzstruktur": {
+                  "gegenstand": "Werte · Ordnungssysteme",
+                  "perspektive": "sozialwissenschaftliche Perspektive",
+                  "prozesskompetenz": "Erkenntnisse gewinnen und anwenden (Phaenomene differenzieren) · Anwenden und handeln (Fachsprache)"
+                },
+                "didaktik": "Gruppenpuzzle (Jigsaw) · Beutelsbacher Konsens strikt · Politische Urteilsbildung GPJE 2004 · Praeventions-Paedagogik (Auszug aus Demokratie-Lernen Himmelmann 2001)"
+              },
+              {
+                "nr": 9,
+                "titel": "Streitbare Demokratie · Verfassungsschutz",
+                "stundenthema_frage": "Streitbare Demokratie — wie weit darf der Staat gehen, um sich zu schuetzen?",
+                "minuten": 45,
+                "lernziel": "SuS analysieren Instrumente der streitbaren Demokratie (Verfassungsschutz · Parteiverbot · Grundrechtsverwirkung) und beurteilen ihre Verhaeltnismaessigkeit.",
+                "lernziel_stundenziel": {
+                  "verhalten": "Die Schuelerinnen und Schueler analysieren drei Instrumente der streitbaren Demokratie (Verfassungsschutz · Parteiverbot · Grundrechtsverwirkung) und beurteilen ihre Verhaeltnismaessigkeit,",
+                  "bedingung": "indem sie in 3er-Gruppen je ein Instrument an einem Fall analysieren (KPD-Verbot 1956 · NPD-Urteil 2017 · fiktiver Grundrechtsverwirkungs-Fall) und im Plenum vergleichend werten,",
+                  "maszstab": "was daran erkennbar wird, dass die Klasse alle drei Instrumente mit je 1 Wirkungs- + 1 Risiko-Argument im Heft notiert hat."
+                },
+                "lernziel_teilziele": [
+                  {
+                    "tz": "SuS leiten den Begriff 'streitbare Demokratie' historisch her,",
+                    "indem": "indem sie aus dem Material die Lehre aus Weimar (Aufstieg NSDAP 1933 trotz Demokratie) als Gruendungsmotiv identifizieren,",
+                    "erkennbar": "was daran erkennbar wird, dass im Heft der Satz steht 'Weimar zeigte: Demokratie muss sich verteidigen koennen'.",
+                    "afb": "I",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS beschreiben drei Instrumente der streitbaren Demokratie,",
+                    "indem": "indem sie aus dem AB Funktion und Adressat je Instrument herausarbeiten,",
+                    "erkennbar": "was daran erkennbar wird, dass die Tabelle pro Instrument 2 Spalten traegt (Wer ueberwacht/verbietet? Was kann das Mittel?).",
+                    "afb": "II",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS beurteilen die Verhaeltnismaessigkeit am Beispiel NPD-Urteil 2017,",
+                    "indem": "indem sie das Urteil (Partei nicht verboten, weil 'zu schwach') in 3 Stufen pruefen (Sache · Wert · Position),",
+                    "erkennbar": "was daran erkennbar wird, dass im Heft das Urteil mit Bezug auf 'Potentialitaets-Schwelle' verstanden ist.",
+                    "afb": "III",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "[Differenziert / leistungsstark] SuS reflektieren das Paradox der streitbaren Demokratie,",
+                    "indem": "indem sie pruefen, ob eine Demokratie, die Parteien verbietet, selbst noch demokratisch ist (Selbst-Widerspruchs-Problem),",
+                    "erkennbar": "was daran erkennbar wird, dass sie im Plenum dazu eine begruendete Position vertreten.",
+                    "afb": "III",
+                    "differenziert": true
+                  }
+                ],
+                "problemstellung": "5' · Provokationsthese: 'Eine Demokratie, die Parteien verbietet, ist keine Demokratie mehr.' Spontan-Verortung. Zielangabe: 'Wir pruefen, wie die Bundesrepublik damit umgeht.' Plan: 3 Fall-Analysen + Synthese.",
+                "problementfaltung": "22' · Gruppenarbeit (3 Gruppen): A KPD-Verbot 1956 (Bundesverfassungsgericht verbietet KPD) · B NPD-Urteil 2017 (Verbot abgelehnt, weil zu schwach) · C Grundrechtsverwirkung Art. 18 GG (bisher nie angewendet — warum?). Material: Material-Mappen + Urteilszusammenfassungen + GG-Auszuege.",
+                "problemloesung": "10' · Plenum-Synthese: 3-Spalten-Tafel · Vergleich der drei Instrumente. Lehrkraft erlaeut Potentialitaets-Schwelle (NPD-Urteil) als zentrales Konzept.",
+                "wertung": "5' · 'Wo ist die Linie — wann darf die Demokratie eingreifen?' Pro-Contra-Mini (vorbereitet UE 10).",
+                "sicherung_lzk": "3' · Hefteintrag Tabelle · LZK-Mini: 'Erklaere in 2 Saetzen die Potentialitaets-Schwelle.'",
+                "sozialform_phasen": {
+                  "problemstellung": "Plenum (These + Verortung)",
+                  "problementfaltung": "GA (3 Fall-Gruppen)",
+                  "problemloesung": "Plenum (Synthese)",
+                  "wertung": "UG (Pro-Contra-Vorbereitung)",
+                  "sicherung_lzk": "EA"
+                },
+                "differenzierung_block": {
+                  "daz": "Material mit historischen Bildern (KPD-Plakat 1956, NPD-Logo) · Wortspeicher (Verfassungsschutz, Parteiverbot, Verwirkung, Potentialitaet) · Lese-Tandem.",
+                  "lrs": "Material 14pt+ · Urteilszusammenfassungen mit Visualisierungen · Audio-Variante.",
+                  "leistungsschwach": "Material auf 2 Faelle reduziert (NPD + KPD) · Tabelle mit Lueckenstruktur · Urteil-Logik in Schritt-fuer-Schritt-Karte.",
+                  "leistungsstark": "AFB-III-Zusatz: Vergleich BRD-Modell streitbare Demokratie vs. USA (kein Parteiverbot moeglich) — warum diese Unterschiede?"
+                },
+                "personifikation_anteil": "Maya: Wenn rechtsextreme Gruppen ihre Klima-Demo angreifen — schuetzt sie die streitbare Demokratie? Leon: Wenn extremistische Gruppen seine Petition kapern wollen — was tut der Staat? Beide Figuren als Bezugspunkte.",
+                "tafelbild_skizze": "3-Spalten-Tafel: KPD-Verbot 1956 | NPD-Urteil 2017 | Grundrechtsverwirkung. Pro Spalte: Wer? Wann? Ergebnis? Mitte: Begriff 'Potentialitaets-Schwelle' + historischer Bezug 'Lehre aus Weimar'.",
+                "hausaufgabe": "Bereite dich auf die Pro-Contra-Debatte in UE 10 vor — Notiere 3 Argumente fuer ODER gegen 'Wehrhafte Demokratie braucht Parteiverbote'.",
+                "material": "3 Material-Mappen (KPD 1956 / NPD 2017 / Art. 18 GG) · Tabelle-Schablone · Wortspeicher · historische Plakate · Provokationsthese-Plakat",
+                "lp_bezug": "KE 1 (Grundrechte als schuetzenswerte Basis) + KE 3 (Rolle BVerfG bei Parteiverbot) + KE 4 (Extremismus + Verfassungsschutz)",
+                "prinzipien_b3": [
+                  "Kontroversitaetsgebot",
+                  "Ueberwaeltigungsverbot",
+                  "Problemorientierung",
+                  "Multiperspektivitaet"
+                ],
+                "kompetenzstruktur": {
+                  "gegenstand": "Ordnungssysteme · Werte · Interessen",
+                  "perspektive": "sozialwissenschaftliche Perspektive (Aspekt Recht)",
+                  "prozesskompetenz": "Erkenntnisse gewinnen und anwenden (Institutionen-Kenntnis) · Beurteilen und bewerten (Grenzen staatlichen Handelns)"
+                },
+                "didaktik": "Fallanalyse (Massing 2010) · Politische Urteilsbildung 3-Stufen (GPJE 2004) · Beutelsbacher Konsens · Demokratie-Lernen (Himmelmann 2001) · historische Sinnbildung (Ruesen 2002)"
+              },
+              {
+                "nr": 10,
+                "titel": "Pro-Contra-Debatte · Realhandeln · LZK",
+                "stundenthema_frage": "Wie wehrhaft soll unsere Demokratie sein — und wo will ich selbst mitwirken?",
+                "minuten": 45,
+                "lernziel": "SuS synthetisieren die Sequenz in einer Pro-Contra-Debatte zur Wehrhaftigkeit der Demokratie und reichen Leons Petition tatsaechlich ein (Realhandeln).",
+                "lernziel_stundenziel": {
+                  "verhalten": "Die Schuelerinnen und Schueler synthetisieren die Sequenz in einer Pro-Contra-Debatte zur Frage 'Wie wehrhaft soll unsere Demokratie sein?' und reichen Leons Petition tatsaechlich ein,",
+                  "bedingung": "indem sie in einer rollenfest verteilten Pro-Contra-Debatte auf Materialgrundlage (Argumentationskarten aus UE 1-9) argumentieren, eine LZK schreiben und Leons Petition (mit gesammelten Unterschriften) per E-Mail an den Stadtrat versenden,",
+                  "maszstab": "was daran erkennbar wird, dass jede:r SuS in der LZK alle drei AFB-Stufen bearbeitet und im Klassen-Plenum die Petition gemeinsam abgeschickt wird (Realhandeln dokumentiert per Screenshot)."
+                },
+                "lernziel_teilziele": [
+                  {
+                    "tz": "SuS reproduzieren Kern-Begriffe der Sequenz (AFB I),",
+                    "indem": "indem sie in der LZK 4 Grundrechte mit Artikel-Nummer benennen,",
+                    "erkennbar": "was daran erkennbar wird, dass die LZK-Aufgabe vollstaendig beantwortet ist.",
+                    "afb": "I",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS analysieren ein BVerfG-Verfahren (AFB II),",
+                    "indem": "indem sie in der LZK die Aufgaben des BVerfG am Beispiel der Verfassungsbeschwerde erklaeren,",
+                    "erkennbar": "was daran erkennbar wird, dass die LZK-Antwort 3 Verfahrens-Schritte enthaelt.",
+                    "afb": "II",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "SuS vertreten eine Position in der Pro-Contra-Debatte (AFB III),",
+                    "indem": "indem sie in ihrer Pro- oder Contra-Rolle mindestens zwei Argumente vorbringen und auf eines reagieren,",
+                    "erkennbar": "was daran erkennbar wird, dass im Beobachter-Protokoll je 2 Argumente pro SuS notiert sind.",
+                    "afb": "III",
+                    "differenziert": false
+                  },
+                  {
+                    "tz": "[Differenziert / leistungsstark] SuS reflektieren die Sequenz metakognitiv,",
+                    "indem": "indem sie schreiben, welches Argument sie umgestimmt hat und welcher Sequenz-Inhalt sie politisch nachhaltig praegt,",
+                    "erkennbar": "was daran erkennbar wird, dass die Reflexion zwei begruendete Selbst-Beobachtungen enthaelt.",
+                    "afb": "III",
+                    "differenziert": true
+                  }
+                ],
+                "problemstellung": "4' · Sequenz-Rueckblick: 1 Wort pro SuS — was bleibt nach 10 Stunden? Zielangabe: 'Heute Debatte + LZK + Petition einreichen.' Plan + Zeitvorgaben.",
+                "problementfaltung": "20' · Pro-Contra-Debatte (15'): 2 Gruppen — Pro 'Wir brauchen mehr Wehrhaftigkeit (Parteiverbote · Verfassungsschutz · Sanktionen)' vs. Contra 'Mehr Wehrhaftigkeit gefaehrdet selbst die Demokratie'. Beobachter:innen mit Protokoll-Karten. Anschliessend LZK schreiben (15'): 3 Aufgaben AFB I (Grundrechte benennen) · II (BVerfG-Verfahren) · III (Werturteil 'Klima-Beschluss').",
+                "problemloesung": "10' · Leons Petition gemeinsam abschicken (per E-Mail an Stadtrat oder Eintragung in epetitionen-Portal). Screenshot fuer Dokumentation. Beobachter:innen-Bilanz Debatte: staerkstes Pro- + Contra-Argument.",
+                "wertung": "7' · 'Welches Argument hat mich umgestimmt? Welcher Sequenz-Inhalt bleibt politisch wichtig fuer mich?' — Reflexions-Karte schreiben.",
+                "sicherung_lzk": "4' · LZK einsammeln · Petitions-Screenshot ins Klassenbuch · Lernzuwachs-Mini-Reflexion: 'Was kann ich jetzt, was ich vor 10 Stunden nicht konnte?'",
+                "sozialform_phasen": {
+                  "problemstellung": "Plenum (Blitzlicht)",
+                  "problementfaltung": "GA (Debatten-Vorbereitung) · Plenum (Debatte) · EA (LZK)",
+                  "problemloesung": "Plenum (Petition abschicken + Bilanz)",
+                  "wertung": "EA (Reflexions-Karte)",
+                  "sicherung_lzk": "EA + Plenum"
+                },
+                "differenzierung_block": {
+                  "daz": "Rollenkarten mit Schluesselbegriffen · LZK-Aufgaben mit Wortspeicher · Reflexions-Karte mit Satzanfaengen.",
+                  "lrs": "LZK 14pt+ · Audio-Variante der LZK-Aufgaben · zusaetzliche Zeit (+10').",
+                  "leistungsschwach": "Pro-Contra-Rolle mit 3 vorgegebenen Argumenten · LZK mit Satzanfaengen · Reflexions-Karte mit Lueckenstruktur.",
+                  "leistungsstark": "Frei-Argumentation · LZK-Aufgabe III mit Perspektivenwechsel-Auftrag · Reflexions-Karte als zusammenhaengender Text."
+                },
+                "personifikation_anteil": "Leon und Maya bilden die Debatten-Pole: Leon (Petition + Realhandeln) tendiert zur 'Vertrauen in Verfahren'-Position, Maya (Polizeikessel-Erfahrung) zur 'Vorsicht mit staatlicher Macht'-Position. Beide Figuren werden in der LZK-Schluss-Aufgabe noch einmal aktiviert.",
+                "tafelbild_skizze": "3-Zonen-Tafel: links Pro/Contra-Argumente · Mitte LZK-Aufgaben (AFB I/II/III) · rechts 'Petition abschicken'-Box (mit Screenshot-Platzhalter). Unten: Lernzuwachs-Frage.",
+                "hausaufgabe": "—",
+                "material": "Pro-Contra-Argumentationskarten · Beobachter-Protokoll-Karten · LZK-Aufgabenbogen (2 Niveaus) · Reflexions-Karten · Petition (1 Seite aus UE 6) · Smartphone fuer Petition-Versand + Screenshot",
+                "lp_bezug": "Sequenz-Abschluss: KE 1 + KE 2 + KE 3 + KE 4 · Realhandeln (LP+ Mitwirkung in der Demokratie)",
+                "prinzipien_b3": [
+                  "Handlungsorientierung",
+                  "Kontroversitaetsgebot",
+                  "Ueberwaeltigungsverbot",
+                  "Schuelerorientierung",
+                  "Personifikation"
+                ],
+                "kompetenzstruktur": {
+                  "gegenstand": "Werte · Interessen",
+                  "perspektive": "sozialwissenschaftliche Perspektive (Aspekt Recht)",
+                  "prozesskompetenz": "Beurteilen und bewerten (Werturteil) · Anwenden und handeln (Realhandeln · Position vertreten)"
+                },
+                "didaktik": "Pro-Contra-Debatte (Massing) · Realhandeln (Reinhardt 2005 · Petrik 2013) · Demokratie-Lernen Lebensform-Dimension (Himmelmann 2001) · Muendigkeit (Detjen 2007) · Veraenderte Leistungsmessung mit AFB-Stufung KMK · Beutelsbacher Konsens"
+              }
+            ],
+            "bezuege_global": [
+              {
+                "didaktik": "Beutelsbacher Konsens (Beutelsbach 1976)",
+                "verweis": "Ueberwaeltigungsverbot: keine eindeutige LK-Position zu Wehrhaftigkeit (UE 8 + 9 + 10). Kontroversitaetsgebot: Pro-Contra-Debatten UE 2 (Folter-Wuerde) + UE 10 (Wehrhafte Demokratie). Schuelerorientierung: Lebenswelt-Bezug (Petition Leon + Polizeikessel Maya) ueber gesamte Sequenz."
+              },
+              {
+                "didaktik": "Politische Urteilsbildung 3-Stufen (GPJE 2004)",
+                "verweis": "3-Stufen-Urteil (Sachebene · Werte-Ebene · eigene Position) in UE 2 (Wuerde) + UE 5 (Klima-Beschluss) + UE 9 (NPD-Urteil) + LNW UE 10. Politische Urteilskompetenz als Kern-Kompetenz GPJE-Standards."
+              },
+              {
+                "didaktik": "Fallanalyse (Massing 2010)",
+                "verweis": "Sequenz-prinzipiell auf Fall-Zugaengen aufgebaut: Gaefgen (UE 2) · Maya-Kessel (UE 3) · 4 BVerfG-Faelle (UE 4) · Klima-Beschluss (UE 5) · Iran/Amini (UE 7) · KPD/NPD/Art.18 (UE 9). Konkrete Faelle als kasuistischer Zugang zu abstrakten Strukturen."
+              },
+              {
+                "didaktik": "Aktualitaetsprinzip (Klafki 1996)",
+                "verweis": "Klafki kategoriale Bildung: rechtliche Inhalte nur dann bildend, wenn sie zur Gegenwart sprechen. UE 3 (Maya Klima-Demo aktuell) · UE 5 (Karlsruhe 2021) · UE 7 (Iran 2022ff.) · UE 10 (eigenes Realhandeln Petition). Saemtliche UEs an Lebenswelt-Aktualitaet 2026 angedockt."
+              },
+              {
+                "didaktik": "Muendigkeit (Detjen 2007)",
+                "verweis": "Detjen: Politische Bildung. Muendigkeit als Bildungsziel (Kant-Anschluss). Ueber die Sequenz hinweg gefuehrt: UE 6 (Petition selbst formulieren) · UE 10 (Petition selbst einreichen — Realhandeln). Eigenstaendiges politisches Urteilen als Sequenz-Telos."
+              },
+              {
+                "didaktik": "Demokratie-Lernen (Himmelmann 2001)",
+                "verweis": "Drei Dimensionen: Lebensform · Gesellschaftsform · Herrschaftsform. UE 1+3 (Lebensform: Grundrechte im Alltag) · UE 4+5 (Herrschaftsform: BVerfG als Kontroll-Institution) · UE 10 (Lebensform: Realhandeln Petition). Lernende als demokratische Buerger:innen."
+              },
+              {
+                "didaktik": "Handlungsorientierung Realhandeln (Reinhardt 2005 · Petrik 2013)",
+                "verweis": "Realhandeln als hoechste Stufe der Handlungsorientierung. UE 6 (Petition formulieren) + UE 10 (Petition tatsaechlich einreichen mit gesammelten Unterschriften) = Realhandlung im Sinne Reinhardts. Anschluss an Klassenrat-Praxis GPG7c (Schul-Demokratie-Lernen)."
+              },
+              {
+                "didaktik": "Multiperspektivitaet (Bergmann 2000)",
+                "verweis": "UE 2 (Pro/Contra Folter-Wuerde) · UE 3 (Maya vs. Polizei-Perspektive) · UE 5 (Klima-Klaegerinnen vs. Wirtschaftsperspektive) · UE 7 (UN vs. Iran-Regierung vs. iranische Buergerinnen) · UE 8 (drei Extremismus-Formen) · UE 9 (KPD/NPD/Art.18) · UE 10 (Pro/Contra-Debatte)."
+              },
+              {
+                "didaktik": "Sprachsensibler GPG-Unterricht (LP+ Fachprofil GPG)",
+                "verweis": "Wortspeicher + Lese-Tandems + 3-Niveau-Texte in saemtlichen UEs · Rechts-/Fachbegriffe in 3 Schritten aufgebaut (z.B. 'intertemporale Freiheitssicherung' UE 5 in 3-Schritt-Definition). DaZ-Spalte im Differenzierungs-Block jeder UE."
+              },
+              {
+                "didaktik": "Heterogenitaetsorientierung · 4-Spuren-Differenzierung (Seminar MS II SW)",
+                "verweis": "Pro UE explizite Spuren: DaZ · LRS · leistungsschwach · leistungsstark. Verhindert Ueberforderung -> Unruhe (Hinweis Allgemeine GPG-Anleitung) und sichert Inklusion. Diff-Block in jeder UE."
+              },
+              {
+                "didaktik": "Mager-Lernziele (Lernziele formulieren · Seminar-Standard)",
+                "verweis": "Pro UE: Stundenziel + 3-4 Teilziele · davon eines differenziert fuer leistungsstark (AFB III). 3-Komponenten: Verhalten + Bedingung (indem) + Beurteilungsmassstab (was daran erkennbar wird, dass)."
+              },
+              {
+                "didaktik": "Tafelbild-Zentrierung (Allgemeine GPG-Hinweise)",
+                "verweis": "Pro UE eine kurze Tafelbild-Skizze (3-Zonen oder 4-Felder oder 3-Spalten). Handschriftlich, nicht kopiert. Sicherung im Heft (nicht Mappe) — letzteres zaehlt fuer Noten."
+              },
+              {
+                "didaktik": "Personifikation als Identifikationsstrategie (Allgemeine GPG-Hinweise Seminar)",
+                "verweis": "Leon (Petitionsinitiator, Vater Sozialarbeiter Jugendamt) + Maya (Klimaaktivistin, Mutter selbststaendig) durchziehen die Sequenz (UE 1 Anbahnung · UE 2 Diskursteilnehmer · UE 3 Mayas Polizeikessel · UE 4 Maya als hypothetische BVerfG-Klaegerin · UE 5 Maya als geschuetzte Generation · UE 6 Leons Petition · UE 7 Kontrast Maya-Klimaaktivismus vs. Iran-Frauen · UE 8 Leons Vater als Praeventions-Experte · UE 9 beide als Bezugspunkte fuer wehrhafte Demokratie · UE 10 Pro-Contra-Pole). Identifikationsfiguren als personale Anker (Klafki)."
+              }
+            ]
+          }
         },
         {
           "ke_id": "GPG10-LB3-02",

@@ -227,6 +227,105 @@
       .mx-seq-meta__row { grid-template-columns: 1fr; gap: 2px; }
       .mx-callouts { grid-template-columns: 1fr; }
     }
+
+    /* ─── Didaktische Phasenstruktur GPG ─── */
+    .didaktik-phasen {
+      margin: 48px 0 36px;
+      padding: 36px 0 8px;
+      border-top: 3px solid var(--ink);
+      border-bottom: 1px solid var(--rule);
+    }
+    .didaktik-phasen__zalgm { font-family: var(--mono); font-size: 11px; letter-spacing: 1.8px; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 12px; }
+    .didaktik-phasen__title { font-family: var(--serif); font-size: clamp(24px, 3vw, 36px); line-height: 1.1; letter-spacing: -0.01em; font-weight: 500; margin: 0 0 12px; }
+    .didaktik-phasen__lead { font-family: var(--serif); font-size: clamp(14px, 1.3vw, 16px); line-height: 1.6; max-width: 880px; color: var(--ink); margin: 0 0 28px; }
+    .didaktik-phasen__lead strong { font-weight: 600; }
+
+    .didaktik-phasen h3 {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin: 32px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--hairline);
+    }
+    .didaktik-phasen h3 .quelle {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+      color: var(--muted);
+      font-size: 12px;
+      margin-left: 8px;
+    }
+
+    .didaktik-tab-wrap { overflow-x: auto; border: 1px solid var(--rule); background: var(--paper); margin: 0 0 8px; }
+    .didaktik-tab { width: 100%; min-width: 720px; border-collapse: collapse; font-family: var(--serif); font-size: 12.5px; line-height: 1.55; }
+    .didaktik-tab th { background: var(--bg); font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.8px; text-transform: uppercase; color: var(--muted); font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--rule); border-right: 1px solid var(--hairline); vertical-align: top; }
+    .didaktik-tab th:last-child { border-right: none; }
+    .didaktik-tab td { padding: 10px 12px; border-bottom: 1px solid var(--hairline); border-right: 1px solid var(--hairline); vertical-align: top; color: var(--ink); }
+    .didaktik-tab td:last-child { border-right: none; }
+    .didaktik-tab tr:last-child td { border-bottom: none; }
+    .didaktik-tab td.phase {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.3px;
+      white-space: nowrap;
+      width: 1%;
+    }
+    .didaktik-tab td.ziel { font-weight: 500; }
+    .didaktik-tab td.begruendung { color: var(--muted); font-size: 12px; }
+
+    .didaktik-stundentyp td.typ { font-family: var(--mono); font-size: 11px; font-weight: 600; color: var(--ink); white-space: nowrap; width: 1%; }
+    .didaktik-stundentyp td.typ em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); font-size: 11px; display: block; margin-top: 2px; }
+    .didaktik-stundentyp td.modell { font-weight: 500; }
+
+    .didaktik-box {
+      background: var(--bg);
+      border-left: 3px solid var(--accent);
+      padding: 18px 22px;
+      margin: 24px 0 8px;
+      font-family: var(--serif);
+      font-size: 13.5px;
+      line-height: 1.6;
+    }
+    .didaktik-box__title { font-family: var(--mono); font-size: 10.5px; letter-spacing: 1.4px; text-transform: uppercase; color: var(--accent); font-weight: 700; margin: 0 0 10px; }
+    .didaktik-box dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 4px 16px; }
+    .didaktik-box dt { font-family: var(--mono); font-size: 10px; letter-spacing: 0.6px; text-transform: uppercase; color: var(--ink); font-weight: 600; padding-top: 2px; }
+    .didaktik-box dd { margin: 0; color: var(--ink); }
+
+    .didaktik-box--beutelsbach {
+      border-left-color: #b8770a;
+      background: linear-gradient(to right, rgba(184,119,10,0.06), transparent 60%);
+    }
+    .didaktik-box--beutelsbach .didaktik-box__title { color: #b8770a; }
+    .didaktik-box--beutelsbach p { margin: 0 0 6px; }
+    .didaktik-box--beutelsbach .maximen { font-family: var(--mono); font-size: 11px; letter-spacing: 0.4px; color: var(--ink); font-weight: 600; margin: 6px 0; }
+    .didaktik-box--beutelsbach em { font-style: italic; color: var(--muted); }
+
+    .didaktik-quellen {
+      margin: 28px 0 0;
+      padding: 16px 0 0;
+      border-top: 1px dashed var(--hairline);
+      font-family: var(--mono);
+      font-size: 10.5px;
+      line-height: 1.65;
+      letter-spacing: 0.2px;
+      color: var(--muted);
+    }
+    .didaktik-quellen__h { display: block; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; font-size: 9.5px; }
+    .didaktik-quellen ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 4px 18px; }
+    .didaktik-quellen li { padding: 2px 0; }
+
+    @media (max-width: 700px) {
+      .didaktik-box dl { grid-template-columns: 1fr; gap: 2px 0; }
+      .didaktik-box dt { margin-top: 8px; }
+    }
   </style>
 </head>
 <body>
@@ -265,6 +364,500 @@
     </header>
 
     <div id="mx-grid-host"></div>
+
+    <section class="didaktik-phasen" aria-labelledby="didaktik-phasen-title">
+      <div class="didaktik-phasen__zalgm">Fachdidaktik · Fallanalyse-Verlaufsmodell · Bausteinskript GPG B4 Hartmann · LP+ Bayern MS</div>
+      <h2 class="didaktik-phasen__title" id="didaktik-phasen-title">Didaktische Phasenstruktur Sozialkunde/Politik (LB3 + LB4) — Fallanalyse-Verlaufsmodell nach Hartmann B4</h2>
+      <p class="didaktik-phasen__lead">
+        Verbindliches Phasenmodell für sozialwissenschaftliche Stunden (Politik/Gesellschaft, LB3+LB4) MS Bayern-Unterfranken ist das
+        <strong>Fallanalyse-Verlaufsmodell</strong> nach Bausteinskript <strong>GPG B4</strong> (Hartmann, SR):
+        <strong>Konfrontation → Information → Resolution → Disputation → Kollation</strong> — basierend auf dem
+        <strong>kasuistischen Prinzip</strong>: Lernen am Ausschnitt der Wirklichkeit.
+        Für historische Stunden (LB2 Zeit und Wandel) kommt das <strong>Artikulationsschema nach Hofmann GB</strong> zur Anwendung (siehe sekundäre Box unten).
+        GPG ist <strong>Integrationsfach mit drei Perspektiven</strong> — neben der sozialwissenschaftlichen werden weiter unten die <strong>historische</strong> (B1+B2) und <strong>geographische</strong> Perspektive (B5+B6) mit ihren fachspezifischen Methoden ausgestattet sowie <strong>außerschulische Lernorte</strong> (B7) als perspektivenübergreifendes Prinzip.
+      </p>
+
+      <h3>1 · Hartmann-Fallanalyse — Verlaufsmodell (5 [+1] Phasen) <span class="quelle">— Bausteinskript GPG B4 'Fachspezifische Arbeitsweisen II — Methodische Vollzugsformen — Sozialwissenschaftliche Perspektive' (Hartmann, SR · AG MS-Seminarleiter:innen Unterfranken) · Primärquelle</span></h3>
+      <div class="didaktik-tab-wrap">
+        <table class="didaktik-tab">
+          <thead>
+            <tr><th style="width:22%">Phase</th><th style="width:32%">Funktion (was passiert didaktisch)</th><th style="width:28%">Methodische Möglichkeiten (Mikro-/Makromethoden)</th><th>Prozesskompetenz (LP+ Bayern)</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="phase">0 · Vorkurs <em style="font-style:italic;color:var(--muted);font-weight:400;font-size:11px;">(optional)</em></td>
+              <td class="ziel">Bereitstellung von Vorinformationen und Vorwissen — nur bei komplexen oder sehr fernen Themen.</td>
+              <td class="begruendung">Vorab-Lektüre · Sachinformation · Begriffslandkarte · Lexikon-Eintrag · Erklärvideo · Mindmap Vorwissen.</td>
+              <td class="begruendung">Erkenntnisse gewinnen und anwenden (Vorwissens-Aktivierung).</td>
+            </tr>
+            <tr>
+              <td class="phase">1 · Konfrontation</td>
+              <td class="ziel">Konfrontation mit dem Fall via Text/Tonband/Bild/Film/Video · Klären des Inhalts (Unverstandenes, Fachbegriffe) · Erfassen + Analyse des Falls (Strukturierung, Trennen Wesentliches/Unwesentliches) · Herausarbeiten des Problems (Wo liegt das Problem? Problemformulierung).</td>
+              <td class="begruendung">Fallpräsentation (Zeitungsartikel, BVerfG-Urteil, Demo-Foto, Karikatur, Quelle) · Textanalyse · Bildanalyse · stilles Schreibgespräch · W-Fragen-Karte · Problemkarten anpinnen.</td>
+              <td class="begruendung">Erkenntnisse gewinnen und anwenden (Fall erschließen, Problem herausarbeiten).</td>
+            </tr>
+            <tr>
+              <td class="phase">2 · Information</td>
+              <td class="ziel">Einholen / Darbietung von Informationen · Analyse + Auswertung · in Bezug zum Fallbeispiel setzen (Welche Aussagen treffen zu? Welche Konsequenz hat das für den Fall?).</td>
+              <td class="begruendung">Internet-Recherche · Quellenarbeit · Statistik-Auswertung · Befragung/Interview · Textanalyse · Karikatur-Analyse · Gruppenpuzzle/Jigsaw · Stationenlernen · Referat als Input.</td>
+              <td class="begruendung">Erkenntnisse gewinnen und anwenden (Informationen erschließen, Norm anwenden).</td>
+            </tr>
+            <tr>
+              <td class="phase">3 · Resolution</td>
+              <td class="ziel">Lösungsmöglichkeiten suchen · Abwägen der Vor- und Nachteile · Treffen einer Entscheidung (z. B. Verhältnismäßigkeitsprüfung, Güterabwägung, politische Entscheidungsoption).</td>
+              <td class="begruendung">Prioritätenliste · Pro-Contra-Tabelle · Entscheidungsmatrix · Methode 66 · Brainstorming-Lösungen · Stellung nehmen · Wertbaum · Standpunkte fixieren.</td>
+              <td class="begruendung">Beurteilen und bewerten (Optionen abwägen, Entscheidung begründen).</td>
+            </tr>
+            <tr>
+              <td class="phase">4 · Disputation</td>
+              <td class="ziel">Streitgespräch über Lösungsalternativen · Argumente austauschen · konkurrierende Positionen sichtbar machen (Beutelsbacher Kontroversitätsgebot greift hier strikt).</td>
+              <td class="begruendung">Pro-Contra-Debatte · Debatte (klassisch, 4-Ecken) · Diskussion · Talkshow · Podiumsdiskussion · Fishbowl · Streitgespräch nach Rollen.</td>
+              <td class="begruendung">Beurteilen und bewerten · Anwenden und handeln (Position vertreten, Argumente austauschen).</td>
+            </tr>
+            <tr>
+              <td class="phase">5 · Kollation</td>
+              <td class="ziel">Abgleich mit der realen Wirklichkeit · Faktencheck — Was passierte wirklich? Wie hat das BVerfG/die UN/der Stadtrat tatsächlich entschieden? Inhaltsgeneralisierung über den Einzelfall hinaus.</td>
+              <td class="begruendung">Recherche reale Entscheidung · Vergleich Klassen-Ergebnis vs. reale Fakten · Inhaltsgeneralisierung · Hefteintrag · Lernplakat · LZK · Bezug auf Forschungsfrage zurück.</td>
+              <td class="begruendung">Erkenntnisse gewinnen und anwenden · Beurteilen und bewerten (Generalisierung, Selbst-Korrektur).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="didaktik-box">
+        <p class="didaktik-box__title">5 fachspezifische Arbeitsweisen Sozialkunde · Hartmann B4 §1</p>
+        <dl>
+          <dt>1 Informieren</dt>
+          <dd>Strukturiertes Erschließen politischer/gesellschaftlicher Informationen aus Quellen (Texten, Statistiken, Bildquellen, Karikaturen, Karten) — Grundoperation in Phase 1 + 2.</dd>
+          <dt>2 Interpretieren</dt>
+          <dd>Deutung und Auswertung von Quellen, Statistiken, Karikaturen, Reden — Sinnzuschreibung im Kontext (Wer sagt was, warum, zu welchem Zweck?). Greift v. a. in Phase 2.</dd>
+          <dt>3 Meinung äußern</dt>
+          <dd>Eigenständige Stellungnahme zu politischen Sachverhalten — Begründung der eigenen Position mit Argumenten + Werten. Trägt Phase 3 + 4.</dd>
+          <dt>4 Argumentieren / Diskutieren / Kooperieren</dt>
+          <dd>Position vertreten, Gegenargumente einbeziehen, gemeinsam zu einer tragfähigen Lösung kommen — Kernkompetenz in Phase 4 Disputation.</dd>
+          <dt>5 Reflektieren und Handeln</dt>
+          <dd>Eigenes Urteil prüfen, Konsequenzen ziehen, ggf. politisch real handeln (Petition, Klassenrat, Brief) — Brücke zwischen Phase 4/5 und außerschulischem Handeln (Reinhardt-Realhandeln).</dd>
+        </dl>
+      </div>
+
+      <div class="didaktik-box">
+        <p class="didaktik-box__title">Mikromethoden Sozialkunde · Hartmann B4 §2.1 (Auswahl)</p>
+        <dl>
+          <dt>Textanalyse</dt>
+          <dd>Systematische Erschließung politisch-gesellschaftlicher Texte (Zeitungsartikel, Gesetze, Reden, Programme) nach W-Fragen + Argumentationsstruktur.</dd>
+          <dt>Karikatur-Analyse</dt>
+          <dd>Drei-Schritte-Verfahren: Beschreiben — Deuten — Beurteilen. Symbolik, Übertreibung und Aussagekontext herausarbeiten.</dd>
+          <dt>Internet-Recherche</dt>
+          <dd>Quellenkritische Suche nach aktuellen Daten, Hintergründen, Statements (Bundestags-Website, BVerfG-Pressemitteilungen, Statistisches Bundesamt).</dd>
+          <dt>Brainstorming</dt>
+          <dd>Schnelle Ideensammlung ohne Wertung — geeignet für Vermutungsphasen und Lösungs-Auffächerung (Phase 2 + 3).</dd>
+          <dt>Methode 66</dt>
+          <dd>6 SuS in 6 Minuten — kompakte Diskussion in Kleingruppen mit Ergebnis-Plakat. Geeignet für Phase 3 (Resolution).</dd>
+          <dt>Blitzlicht</dt>
+          <dd>Reihum-Kurzstatement (1 Satz pro SuS) zu Stimmung oder Position — schnelle Diagnose der Lerngruppen-Haltung.</dd>
+          <dt>Stellung nehmen</dt>
+          <dd>Schriftliche oder mündliche Begründung der eigenen Position zu einer politischen Frage — Kern der Urteilsbildung (Phase 3 + 4).</dd>
+          <dt>Debatte (klassisch)</dt>
+          <dd>Strukturiertes Pro-Contra mit Eröffnungs-, Erwiderungs- und Schlussreden — formalisierte Disputations-Form.</dd>
+          <dt>Pro-Contra-Debatte</dt>
+          <dd>Argumente parallel gesammelt, Positionen werden vertreten — Standardform für Phase 4 Disputation.</dd>
+          <dt>Diskussion</dt>
+          <dd>Offene Auseinandersetzung mit klaren Wortmelderegeln — moderativ geführt, gerne ergebnisoffen.</dd>
+          <dt>Gespräch</dt>
+          <dd>Lehrer-Schüler- oder Schüler-Schüler-Dialog — geeignet für Klärung und Tiefenarbeit innerhalb Phase 1 + 2.</dd>
+          <dt>Talkshow</dt>
+          <dd>Inszenierte Diskussionsrunde mit verteilten Rollen (Moderator, Expert:innen, Bürger:innen) — Phase 4 mit Perspektivenfächer.</dd>
+          <dt>Befragung / Interview</dt>
+          <dd>Strukturiertes Gespräch mit externen Personen oder Mitschüler:innen — Quellengewinnung in Phase 2.</dd>
+          <dt>Podiumsdiskussion</dt>
+          <dd>Diskussion mehrerer Vertreter:innen verschiedener Positionen vor Publikum — anspruchsvolle Disputations-Form.</dd>
+          <dt>Prioritätenliste</dt>
+          <dd>Ranking von Lösungsoptionen nach selbst gewählten Kriterien — Standard-Methode für Phase 3 Resolution.</dd>
+        </dl>
+      </div>
+
+      <div class="didaktik-box">
+        <p class="didaktik-box__title">Makromethoden Sozialkunde · Hartmann B4 §2.2</p>
+        <dl>
+          <dt>Fallanalyse <em style="font-style:italic;color:var(--accent);font-weight:400;">— zentrale Makromethode</em></dt>
+          <dd>Konkreter Fall (Ausschnitt aus der Wirklichkeit) wird durchlaufen entlang des 5-Phasen-Schemas Konfrontation → Information → Resolution → Disputation → Kollation. Kasuistisches Prinzip — vom Einzelfall zur Generalisierung.</dd>
+          <dt>Planspiel</dt>
+          <dd>Simulation politischer Aushandlungsprozesse (Gemeinderats-Sitzung, UN-Konferenz, Tarifverhandlung) mit Rollenkarten und Spielregeln — handlungsorientiert, längerfristig.</dd>
+          <dt>Referat</dt>
+          <dd>Strukturierte Präsentation eines Themas durch SuS — eignet sich als Informations-Input in Phase 2.</dd>
+          <dt>Projekt</dt>
+          <dd>Längerfristige selbstgesteuerte Bearbeitung mit Produkt (Petition, Ausstellung, Podcast, Befragung) — Realhandeln im Sinne Reinhardts.</dd>
+        </dl>
+      </div>
+
+      <h3>1b · Historische Perspektive — Methoden + Vergegenwärtigung <span class="quelle">— Bausteinskripte GPG B1 (Hofmann, SR) + GPG B2 (Hofmann, SR) · AG MS-Seminarleiter:innen Unterfranken · Primärquellen</span></h3>
+      <p style="font-family: var(--serif); font-size: 13px; line-height: 1.6; color: var(--ink); margin: 0 0 14px; max-width: 880px;">
+        Für historische Stunden (LB2 Zeit und Wandel · historische Anteile in LB3) gilt das <strong>Hofmann-Modell-1</strong> (siehe Sekundär-Box unten). Die historische Perspektive (Bausteine B1+B2) ergänzt es um eine eigene Didaktik der <strong>Vergegenwärtigung</strong> (H. Roth: „verstehendes Teilhaben") sowie fachspezifische <strong>Mikro-</strong> und <strong>Makromethoden</strong>.
+      </p>
+
+      <div class="didaktik-box">
+        <p class="didaktik-box__title">10 Hauptforderungen der Vergegenwärtigung · H. Roth „Kind und Geschichte" (B1 §4)</p>
+        <dl>
+          <dt>1 Handlung</dt>
+          <dd>Alle Geschichte ist in Handlung rückzuverwandeln — Gegenstände in Erfindungen, Werke in Schöpfungen, Verträge in Beschlüsse. SuS müssen sich mit handelnden Personen identifizieren können.</dd>
+          <dt>2 Anschauen</dt>
+          <dd>Alles für das Auge Sichtbare ist anschaubar zu machen — vom Bildhaften her in den Fragehorizont des Kindes bringen.</dd>
+          <dt>3 Darstellen</dt>
+          <dd>Geschehnisse und Folgen, die graphisch oder kartographisch darstellbar sind, müssen in dieser Form zugänglich gemacht werden.</dd>
+          <dt>4 Begegnen</dt>
+          <dd>Wirkliche Begegnung und Gegenüberstellung mit Überresten, Dokumenten, Zeugen — wo immer möglich (Brücke zu B7 Außerschulische Lernorte).</dd>
+          <dt>5 Zeitleiste</dt>
+          <dd>Zeittiefe in Geschichtsfries, Zeitraumtabellen und Symbolen anschaubar und abschreitbar machen.</dd>
+          <dt>6 Ursprung</dt>
+          <dd>Ereignisse in ihrer Ursprungssituation aufzeigen — dort kommt die menschliche Seite am reinsten zur Darstellung.</dd>
+          <dt>7 Szene</dt>
+          <dd>Geschichte personalisieren, lokalisieren, kostümieren und in Szene setzen („repräsentative Szene"). Mindestens erzählend aufführen.</dd>
+          <dt>8 Quasi-Gegenwart</dt>
+          <dd>Fremde Zeitatmosphäre durch konkrete Detailschilderung und farbenkräftiges Kolorieren in eine Quasi-Gegenwart verwandeln — Personen müssen ins Zimmer treten.</dd>
+          <dt>9 Sprache</dt>
+          <dd>Abstrakte Begriffe vermeiden bzw. in die Sozialsprache und den Erfahrungskreis des Kindes übersetzen.</dd>
+          <dt>10 Vereinfachen</dt>
+          <dd>Verwickelte kausale/teleologische Zusammenhänge auf die Hauptlinie vereinfachen — ohne dass die Tatsachen verbogen werden.</dd>
+        </dl>
+      </div>
+
+      <div class="didaktik-box">
+        <p class="didaktik-box__title">Mikromethoden Historische Perspektive · GPG B2 (Auswahl)</p>
+        <dl>
+          <dt>Textquellen-Arbeit</dt>
+          <dd>Erschließung von Urkunden, Briefen, Verträgen, Zeitungen, Augenzeugenberichten, Parteiprogrammen, Verfassungen — mit W-Fragen-Raster (Wer? Wann? Wo? Zweck? Adressat?) und Quellenkritik.</dd>
+          <dt>Sachquellen-Arbeit</dt>
+          <dd>Drei-schrittiges Vorgehen (B2 §1.2.2): 1. Wahrnehmung (Quellenbegegnung und -beschreibung) · 2. Erschließung (Funktion, Herstellung) · 3. Erkenntnis (Einordnung in politische, soziale, kulturelle Bezüge). Geeignet für Werkzeuge, Münzen, Kleidung, Denkmäler.</dd>
+          <dt>Bildquellen-Arbeit</dt>
+          <dd>Verlaufsstruktur (B2 §3.3): Vorbereitung/Einstimmung · stilles Betrachten (Versenkung) · spontane Bildbeschreibung · systematische Bildanalyse · Bildinterpretation · Sicherung. <strong>Heuristisch</strong> (Selbstentdecken) statt nur illustrativ einsetzen. Lasswell-Formel: „Wer sagt was zu wem auf welchem Kanal mit welcher Wirkung?"</dd>
+          <dt>Quellenkritik</dt>
+          <dd>Unterscheidung Überreste (unbeabsichtigt) vs. Traditionen (mit Überlieferungsabsicht, hohes Maß an Subjektivität) nach Droysen — Authentizität, Tendenz, Stellenwert prüfen.</dd>
+          <dt>Tonquellen</dt>
+          <dd>Auswertung von Reden, Radio-Mitschnitten, Zeitzeugen-Interviews — Sprachgestus, Pathos, Wirkung mitlesen.</dd>
+          <dt>Zeitleisten-Arbeit</dt>
+          <dd>Einordnung historischen Geschehens in das Kontinuum · Geschichtsfries, Symbole, Zeitraumtabellen — anschaubar und abschreitbar (B1 Hauptforderung 5).</dd>
+          <dt>Geschichtskarte</dt>
+          <dd>Historische Karten lesen (Reichsgrenzen, Handelswege, Schlachtorte) — Verknüpfung mit topographischer Karte aus geographischer Perspektive.</dd>
+          <dt>Historisches Erzählen / Lehrererzählung</dt>
+          <dd>Gestaltungsprinzipien (B1 §7.5): Detailliere · Motiviere · Verkindliche · Dramatisiere · Personifiziere · Lokalisiere · Kostümiere · Vereinfache. Anschaulichkeit + Identifikation durch Betroffenheit (Rohlfes, Sauer).</dd>
+          <dt>Karikatur-Analyse</dt>
+          <dd>Beschreiben · Deuten · Beurteilen — Übertreibung, Symbolik, politische Aussage in historischem Kontext.</dd>
+          <dt>Rollenspiel historisch</dt>
+          <dd>SuS schlüpfen in historische Personen — Quasi-Gegenwart herstellen (B1 Hauptforderung 7+8).</dd>
+        </dl>
+      </div>
+
+      <div class="didaktik-box">
+        <p class="didaktik-box__title">Makromethoden Historische Perspektive · GPG B2 (Auswahl)</p>
+        <dl>
+          <dt>Längsschnitt</dt>
+          <dd>Untersuchung eines Phänomens (z. B. Stadt, Familie, Migration) über lange Zeiträume — diachron.</dd>
+          <dt>Querschnitt</dt>
+          <dd>Untersuchung eines Zeitabschnitts (z. B. „Leben um 1900") in allen Dimensionen — synchron.</dd>
+          <dt>Fallstudie historisch</dt>
+          <dd>Konkretes historisches Ereignis (z. B. Reichstagsbrand, Mauerfall) als Ausschnitt — strukturverwandt mit Hartmann-Fallanalyse, übertragen auf Vergangenheit.</dd>
+          <dt>Biographische Methode</dt>
+          <dd>Geschichte am Lebenslauf einer historischen Person (Sophie Scholl, Anne Frank, Bismarck) — Personifizierung im Sinne Roths.</dd>
+          <dt>Regionalgeschichtliches Projekt</dt>
+          <dd>Erforschung der eigenen Region (Stadtteil, Schule, Familie) — verbindet sich mit B7 Außerschulische Lernorte (Stadtarchiv, Heimatmuseum).</dd>
+          <dt>Reenactment / Geschichtswerkstatt</dt>
+          <dd>Längere Nachstellung (Schulalltag 1900, Mittelalter-Markt) mit primären Erfahrungen — handlungsorientiert, multisensorisch.</dd>
+        </dl>
+      </div>
+
+      <div class="didaktik-box">
+        <p class="didaktik-box__title">Geschichts-Prinzipien (kompakt) — siehe ausführlich Hofmann GB-Box unten</p>
+        <dl>
+          <dt>Quellenorientierung</dt>
+          <dd>Authentische Begegnung mit Quellen statt nur Schulbuchtext — Methodentraining der Geschichtswissenschaft.</dd>
+          <dt>Multikausalität</dt>
+          <dd>Historische Ereignisse haben mehrere Ursachen — monokausale Erklärungen vermeiden.</dd>
+          <dt>Multiperspektivität</dt>
+          <dd>Verschiedene Sichtweisen der Beteiligten/Betroffenen darstellen — z. B. Täter-, Opfer-, Beobachterperspektive (Pandel).</dd>
+          <dt>Kontroversität</dt>
+          <dd>Historische Deutungen sind strittig — verschiedene Interpretationen offenlegen (Pendant zum Beutelsbacher Konsens für die historische Perspektive).</dd>
+          <dt>Gegenwartsprinzip</dt>
+          <dd>Bezug zur Gegenwart der SuS herstellen — Geschichte als Anknüpfungspunkt für Identitätsbildung und Urteilsbildung.</dd>
+          <dt>Perspektivenwechsel</dt>
+          <dd>SuS in historische Rollen versetzen — Empathie + analytische Distanz parallel.</dd>
+        </dl>
+      </div>
+
+      <h3>1c · Geographische Perspektive — Methoden + Raumkompetenz <span class="quelle">— Bausteinskripte GPG B5 (Hartmann, SR) + GPG B6 (Hartmann, SR) · AG MS-Seminarleiter:innen Unterfranken · Primärquellen</span></h3>
+      <p style="font-family: var(--serif); font-size: 13px; line-height: 1.6; color: var(--ink); margin: 0 0 14px; max-width: 880px;">
+        Für geographische Stunden (LB1 Lebensraum Erde · Raum-Themen in anderen LBs) gilt der LP+-Auftrag: Verständnis und Beurteilung der <strong>naturgeographischen, ökologischen, politischen, wirtschaftlichen und sozialen Strukturen der räumlich geprägten Lebenswirklichkeit</strong> — mit Nachhaltigkeit lokal-regional wie global. Drei prozessbezogene Kompetenzen (B6 §1.1): Erkenntnisse gewinnen · Beurteilen und bewerten · Anwenden und handeln. Methoden:
+      </p>
+
+      <div class="didaktik-box">
+        <p class="didaktik-box__title">Mikromethoden Geographische Perspektive · GPG B5+B6 (Auswahl)</p>
+        <dl>
+          <dt>Kartenarbeit (Orientierung auf der Karte)</dt>
+          <dd>Topographische und thematische Karten lesen — Kartenzeichen, Legende, Maßstab, Höhenlinien, Farbgebung. Wege zur Karte (B5 §1.8): genetisch (vom Raumerleben zur Karte) · synthetisch (Teile → Ganzes) · analytisch (Karte vs. Realität).</dd>
+          <dt>Kartenarbeit (Orientierung mit der Karte)</dt>
+          <dd>Entfernungsmessung, Maßstabsberechnung, Steilheit aus Höhenlinien, Einnorden, Himmelsrichtungen, Kompass, GPS/Geocaching (B5 §2.3).</dd>
+          <dt>Kartenskizze / Faustskizze</dt>
+          <dd>Selbst gezeichnete vereinfachte Karte — Stadtteil, Schulweg, Wanderweg — mit Legende und Nordpfeil. Genetisches Verfahren.</dd>
+          <dt>Klimadiagramm</dt>
+          <dd>Lesen und interpretieren (Temperatur-Kurve + Niederschlags-Säulen) — Klimazonen-Zuordnung. Grundlegende Kompetenz Jgst. 7 (B6 §1.4).</dd>
+          <dt>Diagramme + Statistiken</dt>
+          <dd>Bevölkerungspyramide, Wirtschaftsstatistik, Profilschnitt lesen und interpretieren. Fragenraster (B6 §2.3): Worum? · Was dargestellt? · Wie? · Zeitliche Veränderungen? · Vergleich?</dd>
+          <dt>Bildauswertung geographisch</dt>
+          <dd>15–30 s gründlich beobachten · benennen · aufzählen · beschreiben · vergleichen/ordnen · verorten/lokalisieren · erklären · bewerten (B6 §2.2). Z. B. Landschaftsfoto → Klimazone ableiten.</dd>
+          <dt>Atlas-Arbeit</dt>
+          <dd>Strukturierte Suche im Diercke/Alexander — physische Karte, geographische Grundkarte/Wirtschaftskarte, thematische Karten kombinieren.</dd>
+          <dt>Profilskizze / Höhenprofil</dt>
+          <dd>Aus topographischer Karte ein Querschnitt-Profil ableiten — Visualisierung von Relief und Steigung.</dd>
+          <dt>Modell-Arbeit</dt>
+          <dd>Konkrete Modelle (Globus, Tellurium) und theoretische Modelle (Teufelskreis der Armut, Wasserkreislauf, Regelkreise) — Erfassen geographischer Grundbegriffe (B6 §2.3).</dd>
+          <dt>Digitale Geo-Werkzeuge</dt>
+          <dd>Google Earth, OpenStreetMap, einfache GIS-Anwendungen, GPS-Tracks — Orientierung und Raumanalyse mit Webkarten.</dd>
+        </dl>
+      </div>
+
+      <div class="didaktik-box">
+        <p class="didaktik-box__title">Makromethoden Geographische Perspektive · GPG B5+B6+B7 (Auswahl)</p>
+        <dl>
+          <dt>Exkursion / Geländearbeit <em style="font-style:italic;color:var(--accent);font-weight:400;">— zentrale Makromethode</em></dt>
+          <dd>Lernen außerhalb des Schulgebäudes in der realen Umgebung (B7 §3.1, Neeb 2012). Drei Phasen: Vorbereitung · Durchführung · Nachbereitung. Klassifikation nach Lehrer-Schüler-Aktivität: Überblicksexkursion · Arbeitsexkursion · Spurensuche.</dd>
+          <dt>Raumanalyse</dt>
+          <dd>Systematische Analyse eines Raumes/Landes nach einer aktuellen Fragestellung — Grundlegende Kompetenz Jgst. 10 LP+ (Länderportrait). Kombiniert Karten, Statistiken, Bilder, Texte.</dd>
+          <dt>Stadtteil-/Region-Erkundung</dt>
+          <dd>Kartierung, Befragung, Beobachtung im Nahraum — primäre Quellen vor Ort. Verbindung zu B7.</dd>
+          <dt>Atlas-Projekt</dt>
+          <dd>Längere Bearbeitung einer geographischen Fragestellung mit dem Atlas als Hauptmedium — z. B. „Wo lebt es sich am besten?" als Vergleich europäischer Länder.</dd>
+          <dt>Kartierungsfahrt</dt>
+          <dd>Geländekartierung mit Faustskizze, GPS-Punkten, Foto-Dokumentation — handlungsorientierte Datenerhebung.</dd>
+          <dt>Geographische Fallstudie</dt>
+          <dd>Konkretes räumliches Problem (z. B. „Braucht Giebelstadt eine Umgehungsstraße?" B7 §3.5) — verbindet geographische und politische Perspektive.</dd>
+        </dl>
+      </div>
+
+      <div class="didaktik-box">
+        <p class="didaktik-box__title">Geo-Prinzipien · LP+ GPG-Fachprofil + B5</p>
+        <dl>
+          <dt>Lebensweltbezug</dt>
+          <dd>Räumlich geprägte Lebenswirklichkeit der SuS als Ausgangspunkt — vom Nahraum zum Fernraum.</dd>
+          <dt>Nachhaltigkeit / BNE</dt>
+          <dd>„Menschliches Handeln hat Grenzen, Menschen tragen Verantwortung für das Erhalten der Umwelt" (LP+ GPG-Fachprofil 2.4). Lokal-regional wie global.</dd>
+          <dt>Internationale Verflechtungen</dt>
+          <dd>Globale Zusammenhänge sichtbar machen (Handel, Klima, Migration, Rohstoffe) — Lebensraum Erde als vernetztes System.</dd>
+          <dt>Ökologische Verantwortung</dt>
+          <dd>Eingriffe in Naturraum kritisch beurteilen — ökologische, soziale, wirtschaftliche Folgenabschätzung.</dd>
+          <dt>Regionale Lokalisierung</dt>
+          <dd>Topographische Verankerung jedes Raumthemas — „Wo ist das? Mit welchem Maßstab?" — Grundkompetenz aller Jgst.</dd>
+          <dt>Interkulturelle Bildung</dt>
+          <dd>Begegnung mit anderen Räumen, Kulturen, Lebensweisen — Perspektivwechsel ohne Exotisierung.</dd>
+        </dl>
+      </div>
+
+      <h3>1d · Außerschulische Lernorte — perspektivenübergreifendes Prinzip <span class="quelle">— Bausteinskript GPG B7 (Hofmann, SR) · AG MS-Seminarleiter:innen Unterfranken · Primärquelle</span></h3>
+      <p style="font-family: var(--serif); font-size: 13px; line-height: 1.6; color: var(--ink); margin: 0 0 14px; max-width: 880px;">
+        Eines der zentralen Prinzipien GPG-Bayern: <strong>handlungsorientierte Begegnung</strong> mit Menschen, Quellen, Räumen. Außerschulische Lernorte (B7) verbinden alle drei Perspektiven. Schnaß 1952: <em>„Exkursionen müssen so etwas Selbstverständliches werden, dass es künftig unangenehm auffällt, wenn sie unterbleiben."</em> Didaktischer Bezugsrahmen (B7 §4.1): Realitätsbegegnung · Subjektorientierung · forschendes Lernen · Prozessorientierung („Der Weg ist das Ziel").
+      </p>
+
+      <div class="didaktik-box">
+        <p class="didaktik-box__title">Historische Lernorte · B7 §1</p>
+        <dl>
+          <dt>Museum</dt>
+          <dd>Lernausstellung mit Besucherorientierung und Handlungsorientierung. Methodische Zugänge (B7 §1.4.3): Führung · Unterrichtsgespräch · Erkundung · Museumswerkstatt. Bsp.: Schulmuseum Lohr — Unterrichtsstunde wie zu Kaisers Zeiten nachgespielt.</dd>
+          <dt>Gedenkstätte</dt>
+          <dd>Erinnerungsort mit ethischer Dimension — KZ-Gedenkstätten (Dachau, Flossenbürg), Stolpersteine, Mahnmale. Strenge Vor- und Nachbereitung pflicht.</dd>
+          <dt>Stadtarchiv</dt>
+          <dd>Regionalgeschichtliche Quellenarbeit mit Originalen — Schulchroniken, Kirchenbücher, Stadtchroniken.</dd>
+          <dt>Erinnerungsort / Schauplatz</dt>
+          <dd>Originale Stätten (Reichsparteitagsgelände Nürnberg, Berliner Mauer, Burgen, Schlachtorte) — Authentizität der Geschichte erfahren.</dd>
+          <dt>Geschichts-Stadtrundgang</dt>
+          <dd>Lokalgeschichte vor Ort — Schule, Stadtteil, Synagoge, Rathaus als historische Spuren.</dd>
+        </dl>
+      </div>
+
+      <div class="didaktik-box">
+        <p class="didaktik-box__title">Geographische Lernorte · B7 §3</p>
+        <dl>
+          <dt>Naturraum / Geoexkursion</dt>
+          <dd>Wald, Fluss, Berg, Karstgebiet — naturgeographische Phänomene direkt am Original. Geländekartierung, Profilskizze, Bestimmung.</dd>
+          <dt>Stadtteilerkundung</dt>
+          <dd>Funktionalanalyse, Verkehrserhebung, Sozialraumkartierung — Stadt als räumliches System verstehen.</dd>
+          <dt>Lokale Betriebe</dt>
+          <dd>Bauernhof, Bäckerei, Industrie, Logistik-Hub — Wirtschaftsräume und Wertschöpfungsketten erfahrbar.</dd>
+          <dt>Wetterstation / Forstamt</dt>
+          <dd>Praktikumsähnliche Begegnung mit Geo-Berufsfeldern — Datenerhebung, Messung, Auswertung.</dd>
+          <dt>Kartierungsfahrt</dt>
+          <dd>Mehrtägige Geländearbeit (Mittelstufe, optional) — eigenständige Kartenerstellung im Gelände.</dd>
+        </dl>
+      </div>
+
+      <div class="didaktik-box">
+        <p class="didaktik-box__title">Sozialwissenschaftliche Lernorte · B7 §4</p>
+        <dl>
+          <dt>Rathaus / Bürgermeister:in</dt>
+          <dd>Kommunalpolitik direkt — Gemeinderats-Sitzung besuchen, Interviews mit Mandatsträger:innen. Anbindung an LB3 Kommunalpolitik.</dd>
+          <dt>Bayerischer Landtag (München) · Bundestag (Berlin)</dt>
+          <dd>Plenarbesuch + Gespräch mit Abgeordneten. Politische Tage im Schullandheim als organisatorischer Rahmen.</dd>
+          <dt>Gericht (Schöffengericht-Besuch)</dt>
+          <dd>Strafprozess-Hauptverhandlung (öffentlich, außer Jugendverfahren). Konkretes Ablaufschema (B7 §4.5): Aufruf · Vernehmung · Anklage · Beweisaufnahme · Plädoyers · Letztes Wort · Beratung · Urteil. Terminplanung Geschäftsstelle + Rücksprache Richter:in.</dd>
+          <dt>Berufsinformationszentrum (BIZ)</dt>
+          <dd>Anbindung an LB4 Lebenswelt / Beruf — Recherche, Eignungstests, Selbsterkundung.</dd>
+          <dt>NGOs · Vereine · Bürgerversammlungen</dt>
+          <dd>Politische Beteiligung außerhalb der Institutionen — Greenpeace, Amnesty, Tafel, Bürgerinitiative.</dd>
+          <dt>Zeitungsdruckerei · Rundfunk- / Fernsehanstalt</dt>
+          <dd>Medien als 4. Gewalt — Redaktion, Druckhaus, Studio. Anbindung an LB3 Medien.</dd>
+        </dl>
+      </div>
+
+      <div class="didaktik-box didaktik-box--beutelsbach" style="border-left-color: #4a5d3b; background: linear-gradient(to right, rgba(74,93,59,0.06), transparent 60%);">
+        <p class="didaktik-box__title" style="color: #4a5d3b;">Pflicht-Hinweise · Außerschulische Lernorte (B7)</p>
+        <dl>
+          <dt>Genehmigung</dt>
+          <dd>Schulleitung muss vorab informiert + genehmigend zustimmen — formloser Antrag mit Zeitrahmen, Ziel, Kosten.</dd>
+          <dt>Aufsichtspflicht</dt>
+          <dd>Beachten gemäß BayEUG / LDO — Begleitperson-Schlüssel je nach Klassenstufe und Veranstaltungsart.</dd>
+          <dt>Versicherung</dt>
+          <dd>Gesetzliche Schülerunfallversicherung erstreckt sich auf alle schulischen Veranstaltungen — bei Auslandsfahrten Zusatzversicherung prüfen.</dd>
+          <dt>Kostenfrage</dt>
+          <dd>Soziale Verträglichkeit prüfen — Bildungs- und Teilhabepaket, Förderverein, Sponsoring. Keine SuS aus Kostengründen ausschließen.</dd>
+          <dt>Vor- und Nachbereitung</dt>
+          <dd>Pflicht — keine reine „Ausflugsfahrt". Vorab: Sachkenntnis Lehrkraft (Vorbesuch), didaktische Reduktion, Arbeitsaufträge/Leitfragen, Eltern-Information. Nachher: Ergebnis-Aufbereitung (Plakat, Bericht, Ausstellung), Reflexion, Veröffentlichung.</dd>
+          <dt>Sicherheitsplanung</dt>
+          <dd>Risikoanalyse, Notrufnummern, Erste-Hilfe-Material, Klärung Wegstrecke und Verkehrsmittel.</dd>
+        </dl>
+      </div>
+
+      <h3>2 · Stundentyp-Differenzierung <span class="quelle">— Hartmann-Fallanalyse als Grundgerüst für LB3+LB4; Hofmann GB für LB2 (historisch)</span></h3>
+      <div class="didaktik-tab-wrap">
+        <table class="didaktik-tab didaktik-stundentyp">
+          <thead>
+            <tr><th style="width:30%">Stundentyp</th><th>Verlaufsmodell · Schwerpunktphasen</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="typ">Politische Fallanalyse<em>LB3 · kontroverses Thema (Standard)</em></td>
+              <td class="modell"><strong>Hartmann-Fallanalyse</strong> komplett — alle 5 Phasen <strong>Konfrontation → Information → Resolution → Disputation → Kollation</strong> gleichgewichtet. Kasuistisches Prinzip strikt: Fall als Ausschnitt der Wirklichkeit.</td>
+            </tr>
+            <tr>
+              <td class="typ">Politische Entscheidungs-Stunde<em>Petition, Klassenrat, Realhandeln</em></td>
+              <td class="modell"><strong>Hartmann-Fallanalyse</strong> mit Schwerpunkt <strong>Phase 3 Resolution</strong> (Lösungsalternativen) + <strong>Phase 5 Kollation</strong> + Realhandlung (Petition tatsächlich einreichen, Brief versenden). Reinhardts Realhandeln-Konzept als Sekundär-Anker.</td>
+            </tr>
+            <tr>
+              <td class="typ">Urteilsbildungs-Stunde<em>Pro-Contra-Debatte, normative Urteilsbildung</em></td>
+              <td class="modell"><strong>Hartmann-Fallanalyse</strong> mit Schwerpunkt <strong>Phase 4 Disputation</strong> (Pro-Contra-Debatte, Streitgespräch). Beutelsbacher Konsens strikt — Kontroversitätsgebot in dieser Phase zentral.</td>
+            </tr>
+            <tr>
+              <td class="typ">Historische Erarbeitungsstunde<em>LB2 Zeit + Wandel · historische Quellenarbeit</em></td>
+              <td class="modell"><strong>Hofmann-GB Modell 1</strong> (Problembegegnung → Vergegenwärtigung → Besinnung → Sicherung) — siehe sekundäre Box unten. Sauer-Dreischritt als Methoden-Anker für die Quellenarbeit innerhalb Hofmann-2.3.</td>
+            </tr>
+            <tr>
+              <td class="typ">Übungs- / Sicherungsstunde<em>Wiederholung, Vernetzung, LZK</em></td>
+              <td class="modell">Eigene Mikrostruktur (Aktivierung → Vertiefung → Anwendung → LZK). Bei thematischer Anbindung an einen Fall: Hartmann-Phase 5 Kollation ausbauen. Bei rein historischen Inhalten: Hofmann-Modell-2 Bewältigungsphase.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="didaktik-box">
+        <p class="didaktik-box__title">Bayern-LP+-Spezifika · Kompetenzstrukturmodell GPG MS</p>
+        <dl>
+          <dt>3 Perspektiven</dt>
+          <dd>
+            <strong>Historische Perspektive</strong> (Entstehung und Entwicklung menschlicher Gesellschaften in Raum und Zeit) ·
+            <strong>Sozialwissenschaftliche Perspektive</strong> (politische, gesellschaftliche, wirtschaftliche Strukturen — inkl. Aspekt Recht) ·
+            <strong>Geographische Perspektive</strong> (naturgeographische, ökologische, soziale Strukturen räumlich geprägter Lebenswirklichkeit).
+            Keine eigenständige „ökonomische" oder „rechtliche" Perspektive — Wirtschaft und Recht sind sozialwissenschaftliche Aspekte.
+          </dd>
+          <dt>3 Prozesskompetenzen</dt>
+          <dd>
+            <strong>Erkenntnisse gewinnen und anwenden</strong> ·
+            <strong>Beurteilen und bewerten</strong> ·
+            <strong>Anwenden und handeln</strong>.
+          </dd>
+          <dt>5 Gegenstandsbereiche</dt>
+          <dd><strong>Räume · Ordnungssysteme · Interessen · Kulturen · Werte</strong>.</dd>
+          <dt>4 Lernbereiche</dt>
+          <dd><strong>Lebensraum Erde · Zeit und Wandel · Politik und Gesellschaft · Lebenswelt</strong>.</dd>
+          <dt>Begleit-Bausteine</dt>
+          <dd><strong>GPG B1</strong> Vergegenwärtigung · <strong>B2</strong> historische · <strong>B3 / B4</strong> sozialwissenschaftliche · <strong>B5 / B6</strong> geographische Arbeitsweisen · <strong>B7</strong> Außerschulische Lernorte (AG MS-Seminarleiter:innen Unterfranken). <strong>B4 = Primärquelle dieses Skripts</strong>.</dd>
+        </dl>
+      </div>
+
+      <div class="didaktik-box didaktik-box--beutelsbach">
+        <p class="didaktik-box__title">Beutelsbacher Konsens 1976 — drei Maximen politischer Bildung</p>
+        <p class="maximen">Überwältigungsverbot — Kontroversitätsgebot — Schülerorientierung</p>
+        <p><em>„Was in Wissenschaft und Politik kontrovers ist, muss auch im Unterricht kontrovers erscheinen."</em>
+        Maßstab politischer Bildung in der Bundesrepublik · prüfungsrelevant im 2. Staatsexamen MS Bayern · greift in der Hartmann-Fallanalyse <strong>strikt in Phase 4 Disputation</strong> — gilt aber für die gesamte Stunde (Überwältigungsverbot durchgängig).</p>
+      </div>
+
+      <div class="didaktik-box">
+        <p class="didaktik-box__title">Hofmann GB · Sekundär-Modell für historische Lernbereiche (LB2 Zeit + Wandel)</p>
+        <p style="margin: 0 0 10px; font-family: var(--serif); font-size: 12px; line-height: 1.55; color: var(--muted);">Für rein historische GPG-Stunden (LB2 Zeit + Wandel, ohne aktuelle politische Falldimension) bleibt das <strong>Artikulationsschema nach Hofmann GB</strong> (Bausteinskript GB · AG MS-Seminarleiter:innen Unterfranken) die anwendbare Wahl — mit den 4 Hauptphasen und 11 Subphasen.</p>
+        <div class="didaktik-tab-wrap" style="margin-top: 8px;">
+          <table class="didaktik-tab" style="font-size: 11.5px;">
+            <thead>
+              <tr><th style="width:36%">Hauptphase / Subphase</th><th>Funktion (Hofmann GB)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="phase">1 · Problembegegnung</td><td class="ziel">Aufbau einer Problemsituation (1.1 Motivation · 1.2 zeitlich-räumliche Einordnung · 1.3 Problemisolierung · 1.4 Zielangabe).</td></tr>
+              <tr><td class="phase">2 · Vergegenwärtigung</td><td class="ziel">Aneignung des Oberflächenwissens (2.1 Vermutungen · 2.2 Lösungsplanung · 2.3 Informationsgewinnung/Erarbeitung · 2.4 Erkenntnisgewinnung/Auswertung).</td></tr>
+              <tr><td class="phase">3 · Besinnung</td><td class="ziel">Denkendes + wertendes Durchdringen (3.1 sachbezogene Besinnung · 3.2 wertbezogene Besinnung mit Gegenwartsbezug).</td></tr>
+              <tr><td class="phase">4 · Sicherung</td><td class="ziel">Festigung · wiederholende Rückschau · Hefteintrag · Bezug auf Forschungsfrage zurück.</td></tr>
+              <tr><td class="phase">Hofmann-Modell 2 (alternativ)</td><td class="ziel">Block-Variante: Motivation → Vergegenwärtigungsphase → Besinnungsphase → Bewältigungsphase. Geeignet für Übungs- und Sicherungsstunden.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="didaktik-box">
+        <p class="didaktik-box__title">Ergänzende fachdidaktische Modelle (überregional, tertiär)</p>
+        <dl>
+          <dt>Reinhardt 2016</dt>
+          <dd>Konfliktanalyse (Konfrontation · Analyse · Stellungnahme · Kontroversverfahren · Generalisierung) — ergänzender Anker für stark kontroverse Stunden.</dd>
+          <dt>Reinhardt/Kaiser 1983</dt>
+          <dd>Fallstudie (Konfrontation · Information · Exploration · Disputation · Kollation) — strukturverwandt mit Hartmann-Fallanalyse, historische Wurzel.</dd>
+          <dt>Sauer 2012</dt>
+          <dd>Geschichtsunterricht-Dreischritt (Hinführung · quellenkritische Erarbeitung in 4 Schritten · Ergebnissicherung) — Methoden-Anker bei historischer Quellenarbeit.</dd>
+          <dt>Pandel 2013</dt>
+          <dd>Geschichtsdidaktik · Multiperspektivität · narrative Kompetenz — fachliche Vertiefung historische Perspektive (GPG B2).</dd>
+          <dt>Massing/Skuhr 1994</dt>
+          <dd>Policy-Zyklus (Problem · Auseinandersetzung · Entscheidung · Ausgestaltung · Reaktionen · Weiterführung) — Analyseraster politische Prozesse.</dd>
+          <dt>Petrik 2007 ff.</dt>
+          <dd>Genetische Politikdidaktik — Lernen entlang authentischer Erfahrungsprozesse; Anker für Realhandeln-Stunden.</dd>
+        </dl>
+        <p style="margin: 10px 0 0; font-family: var(--serif); font-size: 12px; line-height: 1.55; color: var(--muted);"><em>Diese Modelle sind ergänzende Anker — Bayern-Unterfranken-Primärquellen bleiben Hartmann B4 (sozialwissenschaftlich, LB3+LB4) + Hofmann GB (historisch, LB2).</em></p>
+      </div>
+
+      <div class="didaktik-quellen">
+        <span class="didaktik-quellen__h">Quellen · Hierarchie (Primär · Sekundär · Tertiär)</span>
+        <ul>
+          <li><strong>PRIMÄRQUELLE sozialwissenschaftlich:</strong> Hartmann, Ch. (SR): Bausteinskript <em>GPG B4 — Fachspezifische Arbeitsweisen II — Methodische Vollzugsformen — Sozialwissenschaftliche Perspektive</em>. AG der MS-Seminarleiter:innen Unterfranken. (Begleit-Baustein <em>GPG B3 — Sozialwissenschaftliche Perspektive: Fachspezifische Arbeitsweisen I</em>.)</li>
+          <li><strong>PRIMÄRQUELLE historisch:</strong> Hofmann, D. (SR): Bausteinskript <em>GPG B1 — Historische Perspektive: Die Vergegenwärtigung im Geschichtsunterricht und die Bedeutung der Besinnungsphase</em>. AG der MS-Seminarleiter:innen Unterfranken.</li>
+          <li><strong>PRIMÄRQUELLE historisch:</strong> Hofmann, D. (SR): Bausteinskript <em>GPG B2 — Historische Perspektive: Fachspezifische Arbeitsweisen (Text-, Sach- und Bildquellen, Zeitleiste)</em>. AG der MS-Seminarleiter:innen Unterfranken.</li>
+          <li><strong>PRIMÄRQUELLE geographisch:</strong> Hartmann, Ch. (SR): Bausteinskript <em>GPG B5 — Geographische Perspektive: Fachspezifische Arbeitsweisen I (Karten, Pläne, Skizzen, Atlas, Globus)</em>. AG der MS-Seminarleiter:innen Unterfranken.</li>
+          <li><strong>PRIMÄRQUELLE geographisch:</strong> Hartmann, Ch. (SR): Bausteinskript <em>GPG B6 — Geographische Perspektive: Fachspezifische Arbeitsweisen II (Bild- und Textquellen, Graphiken und Statistiken, Sandkasten und Modelle)</em>. AG der MS-Seminarleiter:innen Unterfranken.</li>
+          <li><strong>PRIMÄRQUELLE außerschulische Lernorte:</strong> Hofmann, D. (SR): Bausteinskript <em>GPG B7 — Außerschulische Lernorte (Originale Begegnung, Museumspädagogik)</em>. AG der MS-Seminarleiter:innen Unterfranken.</li>
+          <li><strong>LP+ Bayern:</strong> ISB: LehrplanPLUS Bayern MS — GPG (Geschichte · Politik und Gesellschaft · Geographie). Kompetenzstrukturmodell (3 Perspektiven, 3 Prozesskompetenzen, 5 Gegenstandsbereiche, 4 Lernbereiche).</li>
+          <li><strong>Konsens:</strong> Beutelsbacher Konsens (1976) — Wehling/Schiele (Hg.). Wirkt strikt in Phase 4 Disputation.</li>
+        </ul>
+        <ul style="margin-top: 12px; opacity: 0.92;">
+          <li><strong>Sekundärquelle (historische Stunden LB2):</strong> Hofmann, D. (SR): Bausteinskript <em>GPG GB — Grundsätze des GPG-Unterrichts</em>. AG der MS-Seminarleiter:innen Unterfranken — siehe ausführliche Sekundär-Box oben.</li>
+        </ul>
+        <ul style="margin-top: 12px; opacity: 0.78; font-size: 11.5px;">
+          <li><em>Tertiär:</em> Reinhardt, S. (2016): Politik-Didaktik. Praxishandbuch. Berlin: Cornelsen.</li>
+          <li><em>Tertiär:</em> Reinhardt, S. / Kaiser, F.-J. (1983): Fallstudie. In: Sutor (Hg.).</li>
+          <li><em>Tertiär (historisch):</em> Sauer, M. (2012): Geschichte unterrichten. Seelze: Klett-Kallmeyer.</li>
+          <li><em>Tertiär (historisch):</em> Pandel, H.-J. (2013): Geschichtsdidaktik. Schwalbach/Ts.: Wochenschau.</li>
+          <li><em>Tertiär (historisch):</em> Rohlfes, J. (1997): Geschichte und ihre Didaktik. Göttingen.</li>
+          <li><em>Tertiär (historisch):</em> Roth, H.: Kind und Geschichte — pädagogische Grundlage der Vergegenwärtigungs-Didaktik (zit. in B1).</li>
+          <li><em>Tertiär (geographisch):</em> Haubrich, H. u. a. (1988/1997): Konkrete Didaktik der Geographie. Oldenbourg.</li>
+          <li><em>Tertiär (geographisch):</em> Rinschede, G. (2003): Geographiedidaktik. Paderborn: Schöningh.</li>
+          <li><em>Tertiär (geographisch):</em> Köck, H. (1986): Handbuch des Geographieunterrichts. Aulis.</li>
+          <li><em>Tertiär (Exkursion):</em> Neeb, K. (2012): Geographische Exkursionen im Fokus empirischer Forschung. Weingarten.</li>
+          <li><em>Tertiär:</em> Massing, P. / Skuhr, W. (1994): Politische Bildung. Schwalbach/Ts.</li>
+          <li><em>Tertiär:</em> Petrik, A. (2007 ff.): Genetische Politikdidaktik.</li>
+          <li><em>Tertiär:</em> Massing, P. (2010): Fallanalyse / Kasuistik. Wochenschau-Sammelband.</li>
+          <li><em>Tertiär:</em> Sander, W. (2013): Politik entdecken — Freiheit leben. Schwalbach/Ts.: Wochenschau.</li>
+          <li><em>Tertiär:</em> GPJE (2004): Anforderungen an Nationale Bildungsstandards.</li>
+        </ul>
+      </div>
+    </section>
   </main>
 
   <div class="mx-slideover-backdrop" id="mx-backdrop" data-open="false" aria-hidden="true"></div>

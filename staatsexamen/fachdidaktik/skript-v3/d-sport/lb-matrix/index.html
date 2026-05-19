@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>LB-Matrix Sport — Fachdidaktik · Skript V3</title>
-  <meta name="description" content="LB×Jgst-Matrix Sport · Sport-5-Phasen-Standard · Pilot Handball BUV · 2. Staatsexamen MS Bayern" />
+  <meta name="description" content="LB×Jgst-Matrix Sport · Söll-konforme 7-Phasen-Struktur (Einstimmung 1-3 · Schwerpunkt 4-6 · Ausklang 7) · Pilot Handball BUV · 2. Staatsexamen MS Bayern" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3E%3Ctext y=%2713%27 font-family=%27monospace%27 font-size=%2715%27 fill=%27%234a5d3b%27%3E%E2%86%92%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -237,11 +237,188 @@
     .mx-sport-redu { margin: 6px 0 4px; padding: 6px 10px; background: var(--paper); border-left: 2px solid var(--muted); font-family: var(--serif); font-size: 11.5px; line-height: 1.5; color: var(--ink); display: flex; flex-direction: column; gap: 2px; }
     .mx-sport-redu__h { font-family: var(--mono); font-size: 9.5px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); font-weight: 600; }
 
+    /* ─── Didaktische Phasenstruktur Sport (Söll-Modell) ─── */
+    .didaktik-phasen {
+      margin-top: 56px;
+      padding-top: 32px;
+      border-top: 3px solid var(--ink);
+    }
+    .didaktik-phasen__zalgm {
+      font-family: var(--mono); font-size: 11px; letter-spacing: 1.8px;
+      text-transform: uppercase; color: var(--accent); font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .didaktik-phasen__h {
+      font-family: var(--serif); font-size: clamp(24px, 3vw, 34px);
+      line-height: 1.15; font-weight: 500; margin: 0 0 14px;
+      letter-spacing: -0.01em;
+    }
+    .didaktik-phasen__lead {
+      font-family: var(--serif); font-size: 14.5px; line-height: 1.65;
+      color: var(--ink); max-width: 900px; margin: 0 0 28px;
+    }
+    .didaktik-phasen__lead strong { color: var(--ink); font-weight: 600; }
+    .didaktik-phasen__lead em { color: var(--accent); font-style: italic; }
+
+    .dp-section {
+      margin: 28px 0 24px;
+    }
+    .dp-section__h {
+      font-family: var(--mono); font-size: 11px; letter-spacing: 1.4px;
+      text-transform: uppercase; color: var(--accent); font-weight: 600;
+      margin: 0 0 12px; padding-bottom: 5px;
+      border-bottom: 1px solid var(--hairline);
+    }
+    .dp-table-wrap { overflow-x: auto; border: 1px solid var(--rule); background: var(--paper); }
+    .dp-table { width: 100%; border-collapse: collapse; font-family: var(--serif); font-size: 12.5px; line-height: 1.5; }
+    .dp-table th {
+      background: var(--bg); font-family: var(--mono); font-size: 9.5px;
+      letter-spacing: 0.8px; text-transform: uppercase; color: var(--muted);
+      font-weight: 600; text-align: left; padding: 10px 12px;
+      border-bottom: 1px solid var(--rule); border-right: 1px solid var(--hairline);
+      vertical-align: bottom;
+    }
+    .dp-table td {
+      padding: 10px 12px; border-bottom: 1px solid var(--hairline);
+      border-right: 1px solid var(--hairline); vertical-align: top; color: var(--ink);
+    }
+    .dp-table tr:last-child td { border-bottom: none; }
+    .dp-table td:last-child, .dp-table th:last-child { border-right: none; }
+    .dp-table__phase {
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.3px;
+      color: var(--accent); font-weight: 600; white-space: nowrap;
+    }
+    .dp-table__ziel { font-style: italic; color: var(--ink); }
+    .dp-table__begr { color: var(--muted); font-size: 12px; }
+
+    .dp-table--stundentyp .dp-table__phase { white-space: normal; max-width: 240px; }
+    .dp-table--stundentyp td:nth-child(3) {
+      font-family: var(--mono); font-size: 10.5px; color: var(--muted); letter-spacing: 0.3px;
+    }
+
+    .dp-bayern-box {
+      background: linear-gradient(to right, var(--accent-soft, #e8ece2), var(--paper) 60%);
+      border-left: 3px solid var(--accent);
+      padding: 18px 22px; margin: 18px 0 22px;
+      font-family: var(--serif); font-size: 13px; line-height: 1.6;
+    }
+    .dp-bayern-box__h {
+      font-family: var(--mono); font-size: 10.5px; letter-spacing: 1.2px;
+      text-transform: uppercase; color: var(--accent); font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .dp-bayern-box__grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px 22px;
+    }
+    .dp-bayern-box__col h4 {
+      font-family: var(--mono); font-size: 10px; letter-spacing: 1px;
+      text-transform: uppercase; color: var(--muted); font-weight: 600;
+      margin: 0 0 6px;
+    }
+    .dp-bayern-box__col ul {
+      margin: 0; padding-left: 18px; font-family: var(--serif); color: var(--ink);
+    }
+    .dp-bayern-box__col li { margin: 2px 0; line-height: 1.5; }
+
+    .dp-warn-box {
+      background: #fef7ec; border-left: 3px solid #c97320;
+      padding: 14px 18px; margin: 18px 0;
+      font-family: var(--serif); font-size: 13px; line-height: 1.6; color: var(--ink);
+    }
+    .dp-warn-box__h {
+      font-family: var(--mono); font-size: 10.5px; letter-spacing: 1.2px;
+      text-transform: uppercase; color: #c97320; font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .dp-warn-box strong { color: var(--ink); font-weight: 600; }
+
+    .dp-help-box {
+      background: #f0f4ee; border-left: 3px solid var(--accent);
+      padding: 14px 18px; margin: 18px 0;
+      font-family: var(--serif); font-size: 13px; line-height: 1.6; color: var(--ink);
+    }
+    .dp-help-box__h {
+      font-family: var(--mono); font-size: 10.5px; letter-spacing: 1.2px;
+      text-transform: uppercase; color: var(--accent); font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .dp-help-box strong { color: var(--ink); font-weight: 600; }
+    .dp-help-box code {
+      font-family: var(--mono); font-size: 12px;
+      background: var(--paper); padding: 1px 5px; border-radius: 2px;
+      border: 1px solid var(--hairline);
+    }
+
+    /* Sport-Methoden-Boxen · Definitionslisten (Mikro/Makro/Arbeitsweisen) */
+    .dp-method-box {
+      margin: 18px 0 22px;
+      padding: 16px 20px;
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      border-left: 3px solid var(--accent);
+    }
+    .dp-method-box__h {
+      font-family: var(--mono); font-size: 10.5px; letter-spacing: 1.2px;
+      text-transform: uppercase; color: var(--accent); font-weight: 600;
+      margin: 0 0 4px;
+    }
+    .dp-method-box__sub {
+      font-family: var(--serif); font-style: italic; font-size: 12.5px;
+      color: var(--muted); margin: 0 0 12px; line-height: 1.5;
+    }
+    .dp-method-box dl {
+      margin: 0; padding: 0;
+      display: grid; grid-template-columns: 1fr; gap: 4px 0;
+    }
+    .dp-method-box dt {
+      font-family: var(--serif); font-size: 13.5px; font-weight: 600;
+      color: var(--ink); margin-top: 8px;
+    }
+    .dp-method-box dt:first-child { margin-top: 0; }
+    .dp-method-box dt em.dp-quelle {
+      font-family: var(--mono); font-size: 9.5px; font-style: normal;
+      letter-spacing: 0.6px; color: var(--accent); font-weight: 600;
+      margin-left: 6px; padding: 1px 6px;
+      background: var(--accent-soft, #e8ece2); border-radius: 8px;
+    }
+    .dp-method-box dd {
+      font-family: var(--serif); font-size: 12.5px; line-height: 1.55;
+      color: var(--ink); margin: 2px 0 0; padding-left: 0;
+    }
+    .dp-method-box--mikro dl,
+    .dp-method-box--arbeitsweisen dl {
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 900px) {
+      .dp-method-box--mikro dl { grid-template-columns: 1fr 1fr; gap: 4px 24px; }
+    }
+
+    .dp-quellen {
+      font-family: var(--mono); font-size: 10.5px; line-height: 1.55;
+      color: var(--muted); margin-top: 24px;
+      padding: 12px 14px; background: var(--bg);
+      border-left: 2px solid var(--hairline);
+    }
+    .dp-quellen__h {
+      font-size: 9.5px; letter-spacing: 1.2px; text-transform: uppercase;
+      color: var(--muted); font-weight: 600; margin-bottom: 6px;
+    }
+    .dp-quellen ul { margin: 0; padding-left: 18px; }
+    .dp-quellen li { margin: 2px 0; }
+
+    @media print {
+      .didaktik-phasen { page-break-before: always; }
+      .dp-bayern-box, .dp-warn-box, .dp-help-box { break-inside: avoid; }
+      .dp-table-wrap { overflow-x: visible; }
+    }
+
     @media (max-width: 900px) {
       .mx-hero { grid-template-columns: 1fr; }
       .mx-hero__legend { align-items: start; flex-direction: row; flex-wrap: wrap; gap: 14px; }
       .mx-seq-meta__row { grid-template-columns: 1fr; gap: 2px; }
       .mx-callouts { grid-template-columns: 1fr; }
+      .dp-bayern-box__grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -255,26 +432,35 @@
   <main id="matrix-root" class="mx-shell">
     <header class="mx-hero">
       <div>
-        <div class="mx-hero__zalgm">Fachdidaktik · Sport · LP+ LB-Matrix v1 · Sport-5-Phasen-Standard</div>
+        <div class="mx-hero__zalgm">Fachdidaktik · Sport · LehrplanPLUS-LB-Matrix v1.2 · Söll-konforme 7-Phasen-Struktur (spez. Aufwärmen als eigenständige Phase) + UV-Artikulation Unterfranken kompatibel</div>
         <h1 class="mx-hero__title">LB × Jgst.</h1>
         <p class="mx-hero__sub"><em>Leichtathletik · Schwimmen · Sportspiele · Turnen · Gymnastik+Tanz × Fairness · Gesundheit — Jgst. 5 bis 10.</em></p>
         <p class="mx-hero__lead">
           Kompetenzerwartungen aus dem LehrplanPLUS Bayern Mittelschule
           <strong>Sport</strong> — Doppelauftrag »Erziehung IM Sport« +
           »Erziehung DURCH Sport«. Architektur <strong>spiralcurricular</strong>:
-          sportliche Handlungsfelder (Leichtathletik · Schwimmen · Sportspiele ·
-          Turnen · Gymnastik+Tanz) wiederholen sich mit wachsender Komplexität,
-          ergänzt durch Querschnitts-Lernbereiche Fairness (LB 2) und Gesundheit
-          (LB 3). Klick auf eine Zelle öffnet die KEs mit LP+-Wortlaut und
-          (sofern Pilot) Verlaufsplänen nach <strong>Sport-5-Phasen-Standard</strong>:
-          Begrüßung · <em>Aufwärmen</em> · Hauptteil (Technik/Taktik) ·
-          Anwendung (Spielform) · Ausklang + Reflexion.
-          <strong>1 Pilot-Sequenz</strong> (Jgst. 7 Sportspiele Handball ·
-          eigene Praxis Sm7abc SJ 25/26) mit BUV-Schwerpunktstunde UE 5
-          Schlagwurf-Präzision: 3-Stationen-Betrieb · 4-Spuren-Differenzierung ·
-          <strong>Hallenplan + Helfer-/Sicherungskonzept</strong> · Mager-3D-Lernziele
-          (motorisch · kognitiv · sozial) · Sachanalyse mit Phasenmodell +
-          Biomechanik + Fehlerbildern.
+          die sportlichen Handlungsfelder (Leichtathletik · Schwimmen ·
+          Kleine Spiele und Sportspiele · Turnen und Bewegungskünste ·
+          Gymnastik und Tanz) wiederholen sich mit wachsender Komplexität,
+          ergänzt durch die Gegenstandsbereiche Fairness, Kooperation,
+          Selbstkompetenz sowie Gesundheit und Fitness als Querschnitt.
+          Klick auf eine Zelle öffnet die KEs mit LP+-Wortlaut und (sofern
+          Pilot) Verlaufsplänen nach der <strong>Söll-konformen 7-Phasen-Struktur</strong>
+          (Begrüßung &rarr; allgemeines Aufwärmen &rarr; spezifisches Aufwärmen
+          &rarr; Erarbeitung &rarr; Übung/Stationsbetrieb &rarr; Anwendung/Spielform
+          &rarr; Ausklang), eingebettet in das
+          <strong>Drei-Phasen-Modell von Söll (2019)</strong> — Einstimmung ·
+          Schwerpunkt · Ausklang — als didaktischer Rahmen. Die
+          <em>spezifische Erwärmung</em> ist nach Söll eine eigenständige Phase
+          mit eigener didaktischer Funktion (sportartspezifische Vorbereitung
+          der Schwerpunkt-Bewegung).
+          <strong>1 Pilot-Sequenz</strong> (Jgst. 7 · Handlungsfeld Kleine
+          Spiele und Sportspiele · Handball · eigene Praxis Sm7abc SJ 25/26)
+          mit BUV-Schwerpunktstunde UE 5 Schlagwurf-Präzision:
+          3-Stationen-Betrieb · 4-Spuren-Differenzierung ·
+          <strong>Hallenplan + Helfer-/Sicherungskonzept</strong> ·
+          Mager-3D-Lernziele (motorisch · kognitiv · sozial) · Sachanalyse
+          mit Phasenmodell + Biomechanik + Fehlerbildern (Meinel/Schnabel).
         </p>
       </div>
       <div class="mx-hero__legend" aria-label="Legende">
@@ -284,6 +470,369 @@
     </header>
 
     <div id="mx-grid-host"></div>
+
+    <section class="didaktik-phasen" aria-labelledby="dp-h-main">
+      <div class="didaktik-phasen__zalgm">Fachdidaktik · Söll-konforme 7-Phasen-Struktur · LehrplanPLUS-Bayern-Spezifika</div>
+      <h2 class="didaktik-phasen__h" id="dp-h-main">Didaktische Phasenstruktur Sport — 7 Söll-Phasen (UV-Artikulation Unterfranken kompatibel)</h2>
+      <p class="didaktik-phasen__lead">
+        Verbindliche Verlaufsstruktur für Sportstunden MS Bayern folgt der
+        <strong>Söll-konformen 7-Phasen-Struktur</strong> (Begrüßung &rarr;
+        allgemeines Aufwärmen &rarr; spezifisches Aufwärmen &rarr; Erarbeitung
+        &rarr; Übung/Stationsbetrieb &rarr; Anwendung/Spielform &rarr; Ausklang),
+        eingebettet in das <strong>Drei-Phasen-Modell nach Söll (2019)</strong>
+        als Rahmen: <em>Einstimmung (1+2+3) — Schwerpunkt (4+5+6) — Ausklang (7)</em>.
+        Die <strong>spezifische Erwärmung</strong> ist nach Söll eine
+        <em>eigenständige Phase</em> mit eigener didaktischer Funktion
+        (sportartspezifische Vorbereitung der Schwerpunkt-Bewegung) — sie ist
+        weder Teil des allgemeinen Aufwärmens noch der Erarbeitung. Söll warnt
+        explizit vor dem »<strong>negativen Attraktivitätsgefälle</strong>«:
+        Das allgemeine Aufwärmspiel darf den Schwerpunkt emotional nicht
+        überstrahlen, und das spezifische Aufwärmen ist <em>kein</em>
+        attraktives Spiel, sondern zielgerichtete Vorbereitung. Diese Struktur
+        ist kompatibel zur UV-Artikulation Unterfranken (eigene
+        Lehrproben-Vorlage Sprungwurf 19.12.2022): die dortigen Detail-Phasen
+        (Motivation / Theorie / Stations-Einteilung) werden in die hier
+        ausgewiesenen 7 Söll-Phasen integriert.
+      </p>
+
+      <div class="dp-section">
+        <h3 class="dp-section__h">7-Phasen-Sport (Söll-konform, UV-Artikulation Unterfranken kompatibel)</h3>
+        <div class="dp-table-wrap">
+          <table class="dp-table">
+            <thead>
+              <tr>
+                <th>Phase</th>
+                <th>Söll-Funktion</th>
+                <th>Beispiel-Inhalt (UV Sprungwurf / Schlagwurf)</th>
+                <th>Söll-Rahmen</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="dp-table__phase">1 Begrüßung (3')</td>
+                <td class="dp-table__ziel">Anwesenheits- und Schmuckkontrolle · Stundenüberblick · Zielangabe (Selbstwirksamkeits-Slogan). Kognitive Hinführung in die Stunde · Stundenthema in eigenen Worten.</td>
+                <td class="dp-table__begr">»Schmuck ab, Uhren in die Tasche. Heute lernen wir den Sprungwurf.« Ziel: »Ich werfe über den Block ins Tor.« Optional: Kurzes Impulsvideo (Bundesliga-Sprungwurf) als Motivation.</td>
+                <td class="dp-table__begr"><em>Einstimmung</em> (Anfang)</td>
+              </tr>
+              <tr>
+                <td class="dp-table__phase">2 Allgemeines Aufwärmen (5-7')</td>
+                <td class="dp-table__ziel">Herz-Kreislauf-Aktivierung · mobilisierend · Verletzungsprophylaxe. Spiele oder Laufschule allgemein-belebend, ohne Sportart-Spezifik. Söll-Warnung: Spiele darf den Schwerpunkt emotional nicht überstrahlen.</td>
+                <td class="dp-table__begr">Laufschule mit Sprungelementen (Anfersen · Knie-Heben · Skipping mit Armzug) im Hallenrund · Herz-Kreislauf-Aktivierung.</td>
+                <td class="dp-table__begr"><em>Einstimmung</em> (allg. Aufwärmen)</td>
+              </tr>
+              <tr>
+                <td class="dp-table__phase">3 Spezifisches Aufwärmen (3-5') <strong>eigene Phase</strong></td>
+                <td class="dp-table__ziel"><strong>Sportartspezifische Vorbereitung der Schwerpunkt-Bewegung</strong> · Mobilisation der beanspruchten Strukturen · vorbereitende Übungen (Trocken-Drei-Schritt, Wurfarm-Mobilisation, einbeinige Hopser). Söll: <em>KEIN attraktives Aufwärmspiel</em> — »negatives Attraktivitätsgefälle« vermeiden.</td>
+                <td class="dp-table__begr">Sprungwurf: einbeinige Hopser links/rechts · Schultergürtel-Mobilisation · Sprunggelenk-Mobilisation · Trocken-3-Schritt-Anlauf ohne Ball.</td>
+                <td class="dp-table__begr"><em>Einstimmung</em> (spez. Aufwärmen)</td>
+              </tr>
+              <tr>
+                <td class="dp-table__phase">4 Erarbeitung (8-12')</td>
+                <td class="dp-table__ziel">Bewegungslernen · Demonstration der Lehrkraft · Knotenpunkte markieren · Phasen-Plakat · erste Versuche · Grobform-Erwerb (Meinel/Schnabel Phase 1).</td>
+                <td class="dp-table__begr">Lehrkraft-Demo Sprungwurf am Halbkreis · Plakat 4-Phasen-Sprungwurf + Fehlerbild-Karte · SuS-Verbalisierung der Phasen · Trocken-Anlauf am Hallenrand.</td>
+                <td class="dp-table__begr"><em>Schwerpunkt</em> (Erarbeitung · Grobform)</td>
+              </tr>
+              <tr>
+                <td class="dp-table__phase">5 Übung / Stationsbetrieb (10-15')</td>
+                <td class="dp-table__ziel">Hauptphase · Festigung · Methodische Übungsreihe (MÜR Söll/Größing) mit Vereinfachungs-/Erschwerungs-Strategien · Stations-Rotation · 4-Spuren-Differenzierung · Selbstkontroll-Kriterien · Feinkoordination (Meinel/Schnabel Phase 2).</td>
+                <td class="dp-table__begr">3 Stationen Anlauf-Absprung-Rhythmus / Sprungwurf vom Kasten / Sprungwurf aus Anlauf · Rotation 4-5 min · Beobachter-Karten · Differenzierung pro Station.</td>
+                <td class="dp-table__begr"><em>Schwerpunkt</em> (Übung · Feinform)</td>
+              </tr>
+              <tr>
+                <td class="dp-table__phase">6 Anwendung / Spielform (5-10')</td>
+                <td class="dp-table__ziel">Variable Verfügbarkeit unter Spielanforderungen · spielnahe Situation · Methodische Spielreihe (MSR Roth/Memmert) · vom Kleinen Spiel zum Zielspiel · freier Zugriff auf das gelernte Element.</td>
+                <td class="dp-table__begr">Goalchaball 3v3 mit passivem Block (Schaumstoff-Stange) · Bonus-Regel »Sprungwurf-Tor zählt doppelt« · taktische Wahl Schlagwurf vs. Sprungwurf.</td>
+                <td class="dp-table__begr"><em>Schwerpunkt</em> (Anwendung · variable Verfügbarkeit)</td>
+              </tr>
+              <tr>
+                <td class="dp-table__phase">7 Ausklang / Reflexion (3-5')</td>
+                <td class="dp-table__ziel">Cool-down · Verbalisierung der Knotenpunkte am Plakat · Selbstwirksamkeits-Aussage · Sicherung der Lernerträge · koordinierter Geräteabbau.</td>
+                <td class="dp-table__begr">Sitzkreis · »Welches Fehlerbild hast du gesehen? Welche Korrektur hilft?« · Begriffs-Zuordnung Plakat &rarr; Bewegungsbild · »Ich werfe über den Block ins Tor« · Geräteabbau gemeinsam.</td>
+                <td class="dp-table__begr"><em>Ausklang</em></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="dp-section">
+        <h3 class="dp-section__h">Fachspezifische Arbeitsweisen Sport — 5 prozessbezogene Vollzugsformen</h3>
+        <p class="didaktik-phasen__lead" style="margin-bottom: 14px; font-size: 13px;">
+          Hergeleitet aus den <strong>6 prozessbezogenen Kompetenzen</strong> des
+          LehrplanPLUS Bayern Sport und konsolidiert mit den fachdidaktischen
+          Standards Söll (2019) und Meinel/Schnabel (2018). Diese fünf
+          Arbeitsweisen sind keine zusätzlichen Phasen, sondern <em>methodische
+          Vollzugsformen</em>, die innerhalb der 7-Phasen-Struktur immer wieder
+          aktiviert werden — vor allem in Phase 4 (Erarbeitung), 5 (Übung) und
+          7 (Reflexion).
+        </p>
+        <div class="dp-method-box dp-method-box--arbeitsweisen">
+          <p class="dp-method-box__h">5 fachspezifische Arbeitsweisen Sport</p>
+          <p class="dp-method-box__sub">LP+ Bayern · prozessbezogene Kompetenzen + Söll (2019) + Meinel/Schnabel (2018)</p>
+          <dl>
+            <dt>1 Bewegungsanalyse <em class="dp-quelle">Meinel/Schnabel · LP+ Wahrnehmen, analysieren, bewerten</em></dt>
+            <dd>Bewegungen in <strong>Vorbereitungs-, Haupt- und Endphase</strong> gliedern, kinematische Knotenpunkte (Gelenkwinkel, Schwerpunkt, Kraftrichtung) identifizieren und Fehlerbilder benennen. Sachanalyse-Standard für jede BUV (Meinel/Schnabel 2018). Greift in Phase 4 Erarbeitung sowie als Beobachtungsraster in Phase 5.</dd>
+            <dt>2 Bewegungslernen <em class="dp-quelle">Meinel/Schnabel · Söll · LP+ Leisten</em></dt>
+            <dd>Drei-Phasen-Modell der Lernstufen: <strong>Grobform &rarr; Feinform &rarr; variable Verfügbarkeit</strong> (Meinel/Schnabel). Methodisch begründete Hilfen (visuell, verbal, manuell), Vereinfachungs- und Erschwerungs-Strategien (räumlich, zeitlich, regel-, geräte-, personenbezogen) nach Söll/Größing. Korreliert mit den Phasen 4 / 5 / 6 der 7-Phasen-Struktur.</dd>
+            <dt>3 Helfen + Sichern <em class="dp-quelle">KUVB Bayern · KMBek Sicherheit</em></dt>
+            <dd>Helfer-Stufung <strong>Doppelhelfer &rarr; Einzelhelfer &rarr; Sicherheitssteller</strong> mit verbalisiertem Übergang. Vier Helfergriffe nach KUVB-Standard: <strong>Klammer-, Stütz-, Dreh-, Drehstützgriff</strong>. Vor dem ersten Versuch verpflichtende Verbalisierung. BUV-Pflicht im Turnen, in Bewegungskünsten und in akrobatischen Anwendungen.</dd>
+            <dt>4 Beobachten + Reflektieren <em class="dp-quelle">LP+ Wahrnehmen, analysieren, bewerten · Söll</em></dt>
+            <dd>Sport-spezifisch: <strong>Partner- und Mit-Schüler:innen-Beobachtung</strong> mit Beobachtungskarte, <strong>Selbst- und Partner-Korrektur</strong> an markierten Knotenpunkten, <strong>Stundenend-Reflexion</strong> in Phase 7 (Sitzkreis, Reflexionsquadrat). Trägt den Wechsel von der externen zur internalisierten Bewegungs-Wahrnehmung.</dd>
+            <dt>5 Wettkämpfen + Fairplay <em class="dp-quelle">LP+ Fairness, Kooperation, Selbstkompetenz</em></dt>
+            <dd>Regeln vereinbaren und einhalten, Sieg und Niederlage verarbeiten, <strong>Schiedsrichter-Rolle</strong> übernehmen. Der LP+ Bayern hebt den <em>Fairplay-Gedanken als übergeordnetes Ziel</em> hervor — Wettkampf ist nie Selbstzweck, sondern Anlass für soziale Lernprozesse. Aktiv vor allem in Phase 6 (Anwendung/Spielform) und als pädagogische Klammer für Phase 7.</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="dp-section">
+        <h3 class="dp-section__h">Mikromethoden Sport — Werkzeuge für einzelne Unterrichtsschritte</h3>
+        <p class="didaktik-phasen__lead" style="margin-bottom: 14px; font-size: 13px;">
+          Mikromethoden sind <em>kleine, einzeln einsetzbare Werkzeuge</em>
+          innerhalb einer Sportstunde. Sie greifen je nach Funktion in eine
+          bestimmte Phase ein und können kombiniert werden. Auswahl folgt den
+          Säulen <strong>Bewegungslernen, Sicherheit, Reflexion,
+          Differenzierung</strong>.
+        </p>
+        <div class="dp-method-box dp-method-box--mikro">
+          <p class="dp-method-box__h">14 Mikromethoden Sport (Auswahl)</p>
+          <p class="dp-method-box__sub">Söll (2019) · Größing · Meinel/Schnabel · LP+ Bayern · KUVB</p>
+          <dl>
+            <dt>1 Demonstration <em class="dp-quelle">Söll</em></dt>
+            <dd>Lehrkraft- oder Schüler-Modell vor dem Bewegungsversuch, ggf. mit Slow-Motion-Video. Bildanker für Phase 4 Erarbeitung.</dd>
+            <dt>2 Bewegungsbeobachtung mit Beobachtungskarte <em class="dp-quelle">Meinel/Schnabel</em></dt>
+            <dd>Partner-Beobachtung mit laminierter Karte: Knotenpunkte abhaken, Daumen-Symbol für gelungen / nicht gelungen. Phase 5.</dd>
+            <dt>3 Bewegungskorrektur (verbal / manuell) <em class="dp-quelle">Söll · KUVB</em></dt>
+            <dd>Gezielte Hilfe an den identifizierten Knotenpunkten — verbal als kurzer Impuls, manuell als taktile Korrektur (mit Einwilligung).</dd>
+            <dt>4 Stationskarte <em class="dp-quelle">Söll · UV-Artikulation Unterfranken</em></dt>
+            <dd>Laminierte Karte mit Foto-Sequenz, Sicherheitshinweis und Niveau-Differenzierung (n1/n2/n3). Ermöglicht selbstgesteuerten Stationsbetrieb in Phase 5.</dd>
+            <dt>5 Reflexionswand / Reflexionsquadrat <em class="dp-quelle">LP+ Bayern</em></dt>
+            <dd>Stundenend-Plenum mit klaren Leitfragen: <em>Was gelang? Was nicht?</em> Phase 7.</dd>
+            <dt>6 Selbstwirksamkeits-Slogan <em class="dp-quelle">Söll</em></dt>
+            <dd>Kurze Ich-Aussage zur Bewegung: <em>»Ich werfe über den Block ins Tor«</em>. Vor dem Stundenende verbalisiert — sichert die kognitive Repräsentation des Lernertrags.</dd>
+            <dt>7 Beobachtungsauftrag <em class="dp-quelle">Söll · Meinel/Schnabel</em></dt>
+            <dd>Gezielte Aufmerksamkeitslenkung pro Versuch — etwa <em>»Beobachte den Anlauf-Drei-Schritt«</em>. Reduziert kognitive Last und macht Knotenpunkte sichtbar.</dd>
+            <dt>8 Video-Analyse <em class="dp-quelle">LP+ Bayern · digitale Medien</em></dt>
+            <dd>Eigene Bewegung aufzeichnen und analysieren. Der LP+ Bayern nennt digitale Medien explizit für die Bewegungsanalyse. Phase 4-5.</dd>
+            <dt>9 Tafelbild mit Foto-Sequenz <em class="dp-quelle">UV-Artikulation Unterfranken</em></dt>
+            <dd>Bewegungsphasen visualisiert (z. B. Aushol-Beschleunigung-Release, Anlauf-Absprung-Flug-Release). Anker für Phase 4 und für die Verbalisierung in Phase 7.</dd>
+            <dt>10 Wortspeicher / Bewegungs-Vokabular <em class="dp-quelle">DaZ/LRS-Standard</em></dt>
+            <dd>Schriftlich fixierte Fachbegriffe (Anlauf, Absprung, Stemmschritt, Klammergriff). Sichert sprachliche Teilhabe für DaZ- und LRS-Lernende.</dd>
+            <dt>11 Differenzierte Aufgabenkarte <em class="dp-quelle">Söll · LP+ Bayern</em></dt>
+            <dd>Niveau-Stufen pro Station — n1 (Vereinfachung), n2 (Standard), n3 (Erschwerung). Steuert die Belastung individuell.</dd>
+            <dt>12 Belastungssteuerung (Puls / Borg-Skala) <em class="dp-quelle">Trainingslehre</em></dt>
+            <dd>Pulskontrolle oder subjektive Belastungsskala (Borg 6-20) für Konditionsstunden. Sichert ziel- und altersgerechte Intensität.</dd>
+            <dt>13 Vereinfachungsstrategien <em class="dp-quelle">Söll · Größing</em></dt>
+            <dd>Systematische Reduktion auf fünf Achsen: <strong>räumlich, zeitlich, regelbezogen, gerätebezogen, personenbezogen</strong>. Grundlage für jede Differenzierung.</dd>
+            <dt>14 Spielkarten-Sammlung <em class="dp-quelle">LP+ Bayern · Mitbestimmung</em></dt>
+            <dd>Auswahl-Pool für Aufwärmspiele, aus dem die SuS wählen dürfen. Realisiert Selbst- und Mitbestimmung in Phase 2 — ohne Söll's »negatives Attraktivitätsgefälle« zum Schwerpunkt zu riskieren.</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="dp-section">
+        <h3 class="dp-section__h">Makromethoden Sport — Modelle für ganze UEs und Sequenzen</h3>
+        <p class="didaktik-phasen__lead" style="margin-bottom: 14px; font-size: 13px;">
+          Makromethoden sind <em>ganze Verlaufsmodelle</em>, die eine UE oder
+          Sequenz strukturieren. Sie korrelieren mit Stundentypen und legen
+          fest, welche der 7 Söll-Phasen besonders ausgeprägt wird.
+        </p>
+        <div class="dp-method-box dp-method-box--makro">
+          <p class="dp-method-box__h">7 Makromethoden Sport</p>
+          <p class="dp-method-box__sub">Söll · Größing · Roth/Memmert · LP+ Bayern</p>
+          <dl>
+            <dt>1 Methodische Übungsreihe (MÜR) <em class="dp-quelle">Söll / Größing</em></dt>
+            <dd>Sukzessive Schwierigkeitssteigerung in einer geordneten Stufenfolge (Übung 1 &rarr; Übung n). Zentral für <strong>Festigungsstunden Technik</strong>. Phase 5 wird Hauptphase mit klar abgestuften Vereinfachungs- und Erschwerungs-Strategien.</dd>
+            <dt>2 Methodische Spielreihe (MSR) <em class="dp-quelle">Roth / Memmert · Ballschule Heidelberg</em></dt>
+            <dd>Vom <strong>Kleinen Spiel (3v3)</strong> progressiv zur Zielspielform. Taktik vor Technik — die Spielidee steht im Mittelpunkt. Zentral für <strong>Spielstunden</strong>. Phase 6 wird vorgezogen und gesteigert.</dd>
+            <dt>3 Stationsbetrieb <em class="dp-quelle">Söll · UV-Artikulation Unterfranken</em></dt>
+            <dd>Parallele Bewegungsaufgaben mit Rotation und Niveau-Stationen. Zentral für <strong>Anwendungs- und Festigungsstunden</strong>. Phase 5 wird Hauptphase, Phase 4 betont (Aufgabenkarten, Materialverantwortliche, Selbstkontroll-Kriterien).</dd>
+            <dt>4 Wettkampfform / Turnier <em class="dp-quelle">LP+ Fairness · Meinel/Schnabel Phase 3</em></dt>
+            <dd>Anwendung erlernter Fertigkeiten in einer Wettkampfsituation — Klassenmeisterschaft, Bundesjugendspiele, Turnier-Spielplan. Zentral für <strong>Anwendungsstunden</strong>. Phase 6 wird Hauptphase, der Fairplay-Gedanke ist pädagogische Klammer.</dd>
+            <dt>5 Projekt: Choreografie / Tanz-Inszenierung / Pyramiden-Akrobatik <em class="dp-quelle">LP+ Gestalten, Spielen, Kooperieren</em></dt>
+            <dd>Mehrwöchige Erarbeitung mit Aufführungs-Produkt. Zentral für <strong>Gestaltungs- und Kooperations-Sequenzen</strong>. Mehrere Stunden bilden zusammen die 7-Phasen-Logik — der Schwerpunkt verschiebt sich von Phase 4 (frühe Stunden) zu Phase 6 (Aufführung).</dd>
+            <dt>6 Sportlernzentrum / Bewegungslandschaft <em class="dp-quelle">LP+ Bayern · Klasse 5/6</em></dt>
+            <dd>Offenes Bewegungsangebot mit Selbstwahl der Stationen. Geeignet für <strong>Jgst. 5/6</strong> als Bewegungs-Vielfalt und für die <strong>Diagnose</strong> motorischer Voraussetzungen. Phase 5 wird offen-explorativ.</dd>
+            <dt>7 Demonstrations- / Vorführstunde (Lehrproben-Klassiker) <em class="dp-quelle">UV-Artikulation Unterfranken</em></dt>
+            <dd>Klar sichtbarer didaktischer Kern, sichtbare Differenzierung, sichtbares Lehrerhandeln. Zentral für die <strong>BUV / 2. Staatsexamen</strong>. Alle 7 Phasen voll ausgeprägt, die spezifische Erwärmung (Phase 3) sorgfältig auf den Schwerpunkt zugeschnitten.</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="dp-section">
+        <h3 class="dp-section__h">Stundentyp-Differenzierung — Akzente auf der 7-Phasen-Struktur</h3>
+        <p class="didaktik-phasen__lead" style="margin-bottom: 12px; font-size: 13px;">
+          Je nach Stundentyp verschiebt sich der Akzent innerhalb der
+          7-Phasen-Struktur. Die Phasenfolge bleibt verbindlich, einzelne
+          Phasen werden je nach Stundentyp gewichtet oder schlanker gehalten.
+          Die <em>spezifische Erwärmung (Phase 3)</em> bleibt in jedem Stundentyp
+          eigenständig — sie wird nie aufgelöst.
+        </p>
+        <div class="dp-table-wrap">
+          <table class="dp-table dp-table--stundentyp">
+            <thead>
+              <tr>
+                <th>Stundentyp</th>
+                <th>Phasenakzent (auf der 7-Phasen-Struktur)</th>
+                <th>Relevante Mikro- / Makromethoden</th>
+                <th>Quelle / Modell</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="dp-table__phase">Einführungsstunde Technik</td>
+                <td class="dp-table__ziel">Alle 7 Phasen voll ausgeprägt. Phase 4 Erarbeitung mit Bewegungsanalyse + Demo + Phasen-Plakat, Phase 5 Stationsbetrieb als Grobform-Aufbau. Phase 3 (spez. Aufwärmen) zielgerichtet auf die einzuführende Bewegung.</td>
+                <td>Makro: Stationsbetrieb · Demonstrations-/Vorführstunde — Mikro: Demonstration · Tafelbild mit Foto-Sequenz · Wortspeicher · Beobachtungsauftrag · Stationskarte</td>
+                <td>Söll 2019; UV-Artikulation Unterfranken; Meinel/Schnabel Phase 1 Grobkoordination</td>
+              </tr>
+              <tr>
+                <td class="dp-table__phase">Festigungsstunde / Methodische Übungsreihe (MÜR)</td>
+                <td class="dp-table__ziel">Phase 1 verkürzt; Phase 4 Erarbeitung entfällt oder wird zu kurzer Wiederholung; Phase 5 Übung wird zur Hauptphase mit steigendem Schwierigkeitsgrad (Vereinfachungs-/Erschwerungs-Strategien). Phase 3 (spez. Aufwärmen) weiterhin Pflicht.</td>
+                <td>Makro: Methodische Übungsreihe (MÜR) — Mikro: Vereinfachungsstrategien · Differenzierte Aufgabenkarte · Bewegungsbeobachtung mit Beobachtungskarte · Bewegungskorrektur · Video-Analyse</td>
+                <td>Söll / Größing; Meinel/Schnabel Phase 2 Feinkoordination</td>
+              </tr>
+              <tr>
+                <td class="dp-table__phase">Stationsbetrieb</td>
+                <td class="dp-table__ziel">Phase 5 ist die Hauptphase. Phase 4 Erarbeitung betont (Aufgabenkarten, Materialverantwortliche, Selbstkontroll-Kriterien, Stations-Einweisung). Rotation und Beobachterrolle strukturieren die Erarbeitung.</td>
+                <td>Makro: Stationsbetrieb — Mikro: Stationskarte · Differenzierte Aufgabenkarte · Beobachtungsauftrag · Bewegungsbeobachtung mit Beobachtungskarte · Selbstwirksamkeits-Slogan</td>
+                <td>Söll 2019; UV-Artikulation Unterfranken; TUV-Anleitung Sm8ab</td>
+              </tr>
+              <tr>
+                <td class="dp-table__phase">Spielstunde / Methodische Spielreihe (MSR)</td>
+                <td class="dp-table__ziel">Phase 6 Anwendung/Spielform wird vorgezogen und gesteigert: vom Kleinen Spiel (3v3, vereinfachte Regeln, kleines Feld) progressiv zur Zielspielform. Taktik vor Technik — die Spielidee steht im Mittelpunkt. Phase 4/5 schlank.</td>
+                <td>Makro: Methodische Spielreihe (MSR) — Mikro: Spielkarten-Sammlung · Beobachtungsauftrag · Reflexionswand · Vereinfachungsstrategien (regelbezogen, personenbezogen)</td>
+                <td>Roth / Memmert · Ballschule Heidelberg</td>
+              </tr>
+              <tr>
+                <td class="dp-table__phase">Wettkampf- / Anwendungsstunde</td>
+                <td class="dp-table__ziel">Phase 6 ist Hauptphase: variable Verfügbarkeit der Bewegung in Wettkampfsituation, z. B. Klassenmeisterschaft, Bundesjugendspiele, Turnier-Spielplan. Phasen 4-5 schlank.</td>
+                <td>Makro: Wettkampfform / Turnier — Mikro: Reflexionsquadrat · Selbstwirksamkeits-Slogan · Beobachtungsauftrag — Arbeitsweise 5 Wettkämpfen + Fairplay</td>
+                <td>Meinel/Schnabel Phase 3 variable Verfügbarkeit</td>
+              </tr>
+              <tr>
+                <td class="dp-table__phase">Konditionsstunde</td>
+                <td class="dp-table__ziel">Phase 2 (allg. Aufwärmen) strukturiert und kontrolliert — kein spielerisches Aufwärmen wegen Belastungsspitzen. Phase 3 (spez. Aufwärmen) auf konditionelle Belastung vorbereitend. Phase 5/6 als konditionelle Hauptbelastung (Dauer-, Intervall- oder Zirkelmethode). Phase 7 Cool-down zwingend.</td>
+                <td>Makro: Stationsbetrieb (Zirkel) — Mikro: Belastungssteuerung (Puls / Borg-Skala) · Differenzierte Aufgabenkarte · Stationskarte</td>
+                <td>Trainingslehre; KMBek Sicherheit (Aufwärmpflicht)</td>
+              </tr>
+              <tr>
+                <td class="dp-table__phase">Gestaltungs- / Kooperationsstunde</td>
+                <td class="dp-table__ziel">Mehrwöchige Sequenz: Schwerpunkt verschiebt sich von Phase 4 (Erarbeitung gestalterischer Elemente) zu Phase 6 (Aufführung / Präsentation). Phase 7 sichert Reflexion gestalterischer Wirkung.</td>
+                <td>Makro: Projekt Choreografie / Tanz-Inszenierung / Pyramiden-Akrobatik — Mikro: Video-Analyse · Reflexionswand · Beobachtungsauftrag · Wortspeicher (Gestaltungsbegriffe)</td>
+                <td>LP+ Bayern Gestalten · Kooperieren, kommunizieren, präsentieren</td>
+              </tr>
+              <tr>
+                <td class="dp-table__phase">Diagnosestunde / offene Bewegungslandschaft (5/6)</td>
+                <td class="dp-table__ziel">Phase 5 öffnet sich: SuS wählen Stationen frei, Lehrkraft beobachtet motorische Voraussetzungen. Phase 7 sammelt Beobachtungen für die Sequenzplanung.</td>
+                <td>Makro: Sportlernzentrum / Bewegungslandschaft — Mikro: Stationskarte · Beobachtungsauftrag · Spielkarten-Sammlung — Arbeitsweise 4 Beobachten + Reflektieren</td>
+                <td>LP+ Bayern Jgst. 5/6; Söll</td>
+              </tr>
+              <tr>
+                <td class="dp-table__phase">Lehrproben- / Demonstrationsstunde (BUV)</td>
+                <td class="dp-table__ziel">Alle 7 Phasen voll ausgeprägt mit sichtbarer Differenzierung und sichtbarem Lehrerhandeln. Phase 3 sorgfältig auf den Schwerpunkt zugeschnitten; Phase 4 mit klar markierten Knotenpunkten.</td>
+                <td>Makro: Demonstrations-/Vorführstunde — Mikro: Demonstration · Tafelbild mit Foto-Sequenz · Differenzierte Aufgabenkarte · Bewegungskorrektur · Selbstwirksamkeits-Slogan — Arbeitsweise 3 Helfen + Sichern (sichtbar)</td>
+                <td>UV-Artikulation Unterfranken; Söll 2019; eigene Lehrproben-Vorlage 19.12.2022</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="dp-bayern-box">
+        <div class="dp-bayern-box__h">Bayern-Spezifika · LehrplanPLUS Mittelschule Sport (ISB)</div>
+        <div class="dp-bayern-box__grid">
+          <div class="dp-bayern-box__col">
+            <h4>4 Gegenstandsbereiche</h4>
+            <ul>
+              <li>Sportliche Handlungsfelder</li>
+              <li>Gesundheit und Fitness</li>
+              <li>Fairness, Kooperation, Selbstkompetenz</li>
+              <li>Freizeit und Umwelt</li>
+            </ul>
+          </div>
+          <div class="dp-bayern-box__col">
+            <h4>6 sportliche Handlungsfelder</h4>
+            <ul>
+              <li>Leichtathletik</li>
+              <li>Schwimmen</li>
+              <li>Kleine Spiele und Sportspiele</li>
+              <li>Turnen und Bewegungskünste</li>
+              <li>Gymnastik und Tanz</li>
+              <li>Wintersport</li>
+            </ul>
+          </div>
+          <div class="dp-bayern-box__col">
+            <h4>6 prozessbezogene Kompetenzen</h4>
+            <ul>
+              <li>Leisten</li>
+              <li>Gestalten</li>
+              <li>Spielen</li>
+              <li>Wahrnehmen, analysieren, bewerten</li>
+              <li>Entscheiden, handeln, verantworten</li>
+              <li>Kooperieren, kommunizieren, präsentieren</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="dp-warn-box" role="note" aria-label="Warnung Bayern-Diktion">
+        <div class="dp-warn-box__h">Achtung · Bayern-Diktion ist NICHT NRW-Diktion</div>
+        Bayern hat <strong>keine »Pädagogischen Perspektiven P1-P6«</strong> (Leistung,
+        Miteinander, Wagnis, Ausdruck, Gesundheit, Spielen) — das ist das NRW-Modell
+        des Doppelauftrags nach Kurz. Wer in der mündlichen Prüfung von »Perspektive
+        Leistung« oder »Perspektive Wagnis« spricht, mischt NRW-Konzeption in die
+        Bayern-Antwort. Bayern arbeitet stattdessen mit <strong>prozessbezogenen
+        Kompetenzen</strong> (6er-Modell, ausformuliert mit Kommata) + <strong>Gegenstandsbereichen</strong>
+        (4) + <strong>sportlichen Handlungsfeldern</strong> (6). Der Doppelauftrag
+        heißt in Bayern »Erziehung <em>IM</em> Sport« + »Erziehung <em>DURCH</em>
+        Sport« — auf Kompetenzen, nicht auf Perspektiven, bezogen.
+      </div>
+
+      <div class="dp-help-box" role="note" aria-label="Helferkonzept und Sicherheit">
+        <div class="dp-help-box__h">Helferkonzept + Sicherheit (KUVB Bayern · KMBek Sicherheit im Sportunterricht)</div>
+        <p style="margin: 0 0 6px;"><strong>Helfer-Stufung</strong>: <code>Doppelhelfer</code> &rarr;
+          <code>Einzelhelfer</code> &rarr; <code>Sicherheitssteller</code>. Übergang nur, wenn die
+          Schülerin / der Schüler die Helferkompetenz nachweislich beherrscht.</p>
+        <p style="margin: 0 0 6px;"><strong>Helfergriff-Kanon</strong> (Turnen, Bewegungskünste):
+          <code>Klammergriff</code> · <code>Stützgriff</code> · <code>Drehgriff</code> ·
+          <code>Drehstützgriff</code>. Vor dem ersten Versuch <strong>verbalisieren</strong>:
+          »Ich greife dich am Oberarm und am Oberschenkel — Klammergriff.« Erst nach
+          Verbalisierung darf der Versuch erfolgen.</p>
+        <p style="margin: 0;"><strong>Bewegungsanalyse</strong> nach Meinel/Schnabel als
+          Sachanalyse-Standard für jede BUV: <strong>Vorbereitungsphase</strong> ·
+          <strong>Hauptphase</strong> · <strong>Endphase</strong>. Pro Phase die kinematischen
+          Knotenpunkte (Gelenkwinkel, Schwerpunkt, Kraftrichtung) sowie typische
+          Fehlerbilder + Korrekturhinweise dokumentieren.</p>
+      </div>
+
+      <div class="dp-help-box" role="note" aria-label="Ergänzende fachdidaktische Modelle">
+        <div class="dp-help-box__h">Ergänzende fachdidaktische Modelle (überregional)</div>
+        <p style="margin: 0 0 4px;">Anker, die die Söll-konforme 7-Phasen-Struktur ergänzen:</p>
+        <ul style="margin: 4px 0 0; padding-left: 18px; font-family: var(--serif); font-size: 12.5px; line-height: 1.5;">
+          <li><strong>Söll, W. (2019)</strong> — Drei-Phasen-Modell als Rahmen (Einstimmung — Schwerpunkt — Ausklang) + Söll-Warnung »negatives Attraktivitätsgefälle«. Spezifisches Aufwärmen als eigenständige Phase.</li>
+          <li><strong>Meinel / Schnabel (2018)</strong> — Bewegungslehre: drei Lernphasen <em>Grobkoordination</em> &rarr; <em>Feinkoordination</em> &rarr; <em>variable Verfügbarkeit</em>. Korreliert mit Phase 4 / 5 / 6 der 7-Phasen-Struktur.</li>
+          <li><strong>Größing (2007)</strong> — Methodische Übungsreihe (MÜR) systematisch, Vereinfachungs-/Erschwerungs-Strategien. Anker für Phase 5 (Übung/Stationsbetrieb).</li>
+          <li><strong>Roth / Memmert (Ballschule Heidelberg)</strong> — Methodische Spielreihe (MSR), Taktik-vor-Technik, vom Kleinen Spiel zur Zielspielform. Anker für Phase 6 (Anwendung/Spielform).</li>
+          <li><strong>Balz / Kuhlmann · Scheid / Prohl · Funke-Wieneke</strong> — weiterführende Sportdidaktik-Theorie (Doppelauftrag, Erfahrungsorientierung).</li>
+        </ul>
+        <p style="margin: 6px 0 0; font-style: italic; color: var(--muted);">Primärquelle der Phasenstruktur: Söll, W. (2019). Eigene Lehrproben-Vorlage UV-Artikulation Unterfranken (19.12.2022, Sprungwurf) ist kompatibel.</p>
+      </div>
+
+      <div class="dp-quellen">
+        <div class="dp-quellen__h">Quellen — Primär</div>
+        <ul>
+          <li><strong>UV-Artikulation</strong>: <em>Artikulation Sport 7 Handball Sprungwurf (UV).</em> Lehrproben-Vorlage, 19.12.2022, Studienseminar Unterfranken (eigene Quelle).</li>
+          <li>Söll, W. (2019): <em>Sportunterricht — sportunterrichten. Ein Handbuch für Sportlehrer.</em> Schorndorf: Hofmann, 10. Auflage. <span style="color: var(--ink);">(Rahmen: Einstimmung · Schwerpunkt · Ausklang)</span></li>
+          <li>Staatsinstitut für Schulqualität und Bildungsforschung (ISB): <em>LehrplanPLUS Bayern — Mittelschule, Fachprofil und Fachlehrplan Sport</em> (mit den 4 Gegenstandsbereichen, 6 sportlichen Handlungsfeldern, 6 prozessbezogenen Kompetenzen).</li>
+          <li>KMBek <em>Sicherheit im Sportunterricht</em> (Bayerisches Staatsministerium für Unterricht und Kultus) sowie KUVB Bayern: <em>Sicherheit im Schulsport.</em></li>
+        </ul>
+        <div class="dp-quellen__h" style="margin-top: 12px;">Quellen — Sekundär (ergänzende Anker)</div>
+        <ul>
+          <li>Meinel, K. / Schnabel, G. (2018): <em>Bewegungslehre — Sportmotorik.</em> Aachen: Meyer &amp; Meyer.</li>
+          <li>Größing, S. (2007): <em>Einführung in die Sportdidaktik.</em> Wiebelsheim: Limpert.</li>
+          <li>Roth, K. / Memmert, D. (Hg.): <em>Ballschule Heidelberg — Spielerische Sportförderung.</em></li>
+        </ul>
+      </div>
+    </section>
   </main>
 
   <div class="mx-slideover-backdrop" id="mx-backdrop" data-open="false" aria-hidden="true"></div>

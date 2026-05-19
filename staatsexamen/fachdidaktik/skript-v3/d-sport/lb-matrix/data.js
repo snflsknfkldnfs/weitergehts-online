@@ -6,23 +6,58 @@
 // die sportlichen Handlungsfelder wiederholen sich mit wachsender Komplexität
 // (Technik → Taktik → Anwendung) über Jgst. 5-10.
 //
-// SPALTEN: Sportliche Handlungsfelder + Querschnitts-LB
-//   LB4.1 Laufen · Springen · Werfen (Leichtathletik)
-//   LB4.2 Sich im Wasser bewegen (Schwimmen)
-//   LB4.3 Spielen + Wetteifern (Sportspiele · Handball/Fußball/Rückschlag/Alternative)
-//   LB4.4 Sich an + mit Geräten bewegen (Turnen)
-//   LB4.5 Sich körperlich ausdrücken (Gymnastik + Tanz)
-//   LB2   Fairness/Kooperation/Selbstkompetenz (durchgängig)
-//   LB3   Gesundheit + Fitness (durchgängig)
+// BAYERN-SPEZIFIK (LehrplanPLUS MS Sport · ISB)
+//   4 GEGENSTANDSBEREICHE
+//     · Sportliche Handlungsfelder
+//     · Gesundheit und Fitness
+//     · Fairness, Kooperation, Selbstkompetenz
+//     · Freizeit und Umwelt
+//   6 SPORTLICHE HANDLUNGSFELDER
+//     · Leichtathletik · Schwimmen · Kleine Spiele und Sportspiele ·
+//       Turnen und Bewegungskünste · Gymnastik und Tanz · Wintersport
+//   6 PROZESSBEZOGENE KOMPETENZEN
+//     · Leisten · Gestalten · Spielen ·
+//       Wahrnehmen, analysieren, bewerten ·
+//       Entscheiden, handeln, verantworten ·
+//       Kooperieren, kommunizieren, präsentieren
+//
+// SPALTEN-MAPPING in dieser Matrix
+//   LA   Leichtathletik (Handlungsfeld)
+//   SC   Schwimmen (Handlungsfeld)
+//   SP   Kleine Spiele und Sportspiele (Handlungsfeld)
+//   TU   Turnen und Bewegungskünste (Handlungsfeld)
+//   GT   Gymnastik und Tanz (Handlungsfeld)
+//   FAIR Fairness, Kooperation, Selbstkompetenz (Gegenstandsbereich · Querschnitt)
+//   GES  Gesundheit und Fitness (Gegenstandsbereich · Querschnitt)
 //
 // ZEILEN: Jgst 5, 6, 7, 8, 9, 10 (M-Zug)
 //
-// PHASEN-STANDARD (Sport-spezifische 5-Phasen-UE, 45 min)
-//   1. Begrüßung + Stundeneinstieg  (3-5 min · Anwesenheit, Sportkleidung, Überblick)
-//   2. Aufwärmphase                  (5-10 min · Laufschule + Mobilisation)
-//   3. Hauptteil (Technik/Taktik)    (25-30 min · Demo + Übungsreihen + Vertiefung)
-//   4. Anwendungsphase               (8-10 min · Spielform/Wettkampfform)
-//   5. Ausklang + Reflexion          (3-5 min · Feedback, Sicherung, Geräteabbau)
+// PHASEN-STANDARD (Primärquelle User-eigene UV-Artikulation 19.12.2022 Sport 7 Handball
+//                  Sprungwurf · Studienseminar Unterfranken · Söll-Drei-Phasen-Modell als Rahmen)
+//
+//   7-PHASEN-SÖLL-KONFORM (Söll 2019 + UV-Artikulation Unterfranken kompatibel)
+//   ─────────────────────────────────────────────  ─────────────────────────
+//   1 Begrüßung (Anwesenheit · Schmuck · Zielangabe)            EINSTIMMUNG
+//   2 Allgemeines Aufwärmen (HK-Aktivierung · mobilisierend)    EINSTIMMUNG
+//   3 Spezifisches Aufwärmen (sportartspezifisch)               EINSTIMMUNG
+//   4 Erarbeitung (Bewegungslernen · Demo · Knotenpunkte)       SCHWERPUNKT
+//   5 Übung / Stationsbetrieb (Festigung · MÜR)                 SCHWERPUNKT
+//   6 Anwendung / Spielform (variable Verfügbarkeit · MSR)      SCHWERPUNKT
+//   7 Ausklang / Reflexion (Cool-down · Verbalisierung · Abbau) AUSKLANG
+//
+//   Phasen-Slot-Mapping (7 Slots im Datenmodell):
+//     s1_begruessung       → Phase 1
+//     s2_aufwaermen_allg   → Phase 2 (allg. HK-Aktivierung)
+//     s3_aufwaermen_spez   → Phase 3 (sportartspezifische Vorbereitung)
+//     s4_erarbeitung       → Phase 4 (Demo · Grobform · erste Versuche)
+//     s5_uebung            → Phase 5 (Hauptphase Stationsbetrieb/MÜR)
+//     s6_anwendung         → Phase 6 (Spielform · variable Verfügbarkeit)
+//     s7_ausklang          → Phase 7
+//
+//   Söll-Warnung: »Negatives Attraktivitätsgefälle« vermeiden — das Aufwärmspiel
+//   darf den Schwerpunkt emotional nicht überstrahlen. Speziell die SPEZIFISCHE
+//   Erwärmung (Phase 3) ist NICHT als attraktives Spiel zu gestalten, sondern als
+//   sportartspezifische Vorbereitung der Schwerpunkt-Bewegung.
 //
 // LERNZIELE 3-DIMENSIONAL (Mager-konform, Sport-spezifisch)
 //   - motorisch  (konkrete Bewegungshandlung + Erfolgs-Kriterium)
@@ -35,12 +70,23 @@
 //   · Hallenplan + Helfer-/Sicherungskonzept dokumentiert
 //
 // QUELLEN
-//   · LP+ Bayern Fachprofil Sport · /Sport Ressourcen/Sport_Anleitungen/LehrplanPLUS/Fachprofil Sport/
+//   PRIMÄR
+//   · User-eigene UV-Artikulation (19.12.2022 · Sport 7 Handball Sprungwurf ·
+//     Lehrprobe Studienseminar Unterfranken)
+//     PDF: Unterrichtseinwicklung/Repsitory Unterrichtsmaterial/Einzuordnen/
+//          Schulmaterial_Neu_Strukturiert/Sport/Klasse_7/7. Klasse/Handball/Sprungwurf/
+//          Artikulation Sport 7 Handball Sprungwurf (UV).pdf
+//   · LehrplanPLUS Bayern Mittelschule Sport (ISB)
+//   · Söll, W. (2019): Sportunterricht — sportunterrichten. Schorndorf: Hofmann, 10. Aufl. (Rahmen)
+//   · KMBek Sicherheit im Sportunterricht + KUVB Bayern (Helferkonzept, Helfergriffe)
+//   SEKUNDÄR (ergänzende fachdidaktische Anker)
+//   · Meinel, K. / Schnabel, G. (2018): Bewegungslehre — Sportmotorik. Aachen: Meyer & Meyer.
+//   · Größing, S. (2007): Einführung in die Sportdidaktik. Wiebelsheim: Limpert.
+//   · Roth, K. / Memmert, D. (Hg.): Ballschule Heidelberg — Spielerische Sportförderung.
 //   · Jahresplanung_Sport7_2025-26.md (eigene Praxis Sm7abc)
 //   · Sequenzplan_Handball_7abc_2025-26.md (Pilot-Material verbatim)
 //   · Sport_Anleitungen/Anleitung zur TUV-Erstellung Sport (Sm8ab).md
 //   · Sport_BUV_Entwicklung/ROLE_Sport_BUV_Unterrichtsentwicklung_Berater.md
-//   · KMBek Sicherheit im Sportunterricht + KUVB
 
 window.MATRIX = {
   fach: 'D Sport',
@@ -48,11 +94,36 @@ window.MATRIX = {
   schulart: 'Mittelschule Bayern · Erziehung im + durch Sport',
 
   meta: {
-    version: 'v1 · 2026-05-18 · Sport-Spiral · 5-Phasen-Standard',
-    spaltenLogik: 'Sportliche Handlungsfelder LB4.1-4.5 (Leichtathletik · Schwimmen · Sportspiele · Turnen · Gymnastik+Tanz) + Querschnitts-LB2 Fairness + LB3 Gesundheit. NICHT GPG-Lernbereich-Logik.',
-    quellenLogik: 'verbatim für LP+ Jgst. 7 (Jahresplanung_Sport7_2025-26 · eigene Quelle) + Pilot Handball (Sequenzplan-MD verbatim). sekundaer für andere Jgst (Anleitungen + KMK-Anker).',
-    pilotSequenz: 'LB 4.3 Sportspiele · Jgst. 7 · Handball-Sequenz · 9 UEs · Schwerpunktstunde UE 5 Schlagwurf-Präzision (BUV »Jahrmarkt«) mit Hallenplan + Helferkonzept.',
-    fachdidaktikStandard: 'LP+ Bayern Fachprofil Sport + Anleitung TUV Sm8ab + ROLE_Sport_BUV (Qualitätskriterien: Sachanalyse + Did. Reduktion + Method. Analyse + Stundenskizze + Hallenplan + Sicherheit).',
+    version: 'v1.2 · 2026-05-19 · Sport-Spiral · Söll-konforme 7-Phasen-Struktur (spez. Aufwärmen als eigenständige Phase) · Primärquelle: Söll 2019 + User-eigene UV-Artikulation (19.12.2022, Sprungwurf)',
+    spaltenLogik: 'Sportliche Handlungsfelder (Leichtathletik · Schwimmen · Kleine Spiele und Sportspiele · Turnen und Bewegungskünste · Gymnastik und Tanz) + Gegenstandsbereiche Fairness/Kooperation/Selbstkompetenz und Gesundheit/Fitness als Querschnitt. LehrplanPLUS Bayern MS Sport.',
+    quellenLogik: 'verbatim für LehrplanPLUS Jgst. 7 (Jahresplanung_Sport7_2025-26 · eigene Quelle) + Pilot Handball (Sequenzplan-MD verbatim). Phasenstruktur primaer aus User-eigener UV-Artikulation Sprungwurf (Lehrprobe Studienseminar Unterfranken). sekundaer für andere Jgst (Anleitungen + KMK-Anker).',
+    pilotSequenz: 'Handlungsfeld Kleine Spiele und Sportspiele · Jgst. 7 · Handball-Sequenz · 9 UEs · Schwerpunktstunde UE 5 Schlagwurf-Präzision (BUV »Jahrmarkt«) mit Hallenplan + Helferkonzept.',
+    fachdidaktikStandard: 'Primaerquelle: User-eigene UV-Artikulation (19.12.2022, Sport 7 Handball Sprungwurf, Lehrprobe Studienseminar Unterfranken). Rahmen: Söll-Drei-Phasen-Modell (Sportunterricht — sportunterrichten 2019). Erganzend: LehrplanPLUS Bayern MS Sport (ISB) + Meinel/Schnabel Bewegungslehre + Anleitung TUV Sm8ab + ROLE_Sport_BUV (Qualitätskriterien: Sachanalyse + Didaktische Reduktion + Methodische Analyse + Stundenskizze + Hallenplan + Helferkonzept + Sicherheit/KUVB).',
+    bayernKanon: {
+      gegenstandsbereiche: [
+        'Sportliche Handlungsfelder',
+        'Gesundheit und Fitness',
+        'Fairness, Kooperation, Selbstkompetenz',
+        'Freizeit und Umwelt',
+      ],
+      sportliche_handlungsfelder: [
+        'Leichtathletik',
+        'Schwimmen',
+        'Kleine Spiele und Sportspiele',
+        'Turnen und Bewegungskünste',
+        'Gymnastik und Tanz',
+        'Wintersport',
+      ],
+      prozessbezogene_kompetenzen: [
+        'Leisten',
+        'Gestalten',
+        'Spielen',
+        'Wahrnehmen, analysieren, bewerten',
+        'Entscheiden, handeln, verantworten',
+        'Kooperieren, kommunizieren, präsentieren',
+      ],
+      warnung_nrw_diktion: 'Bayern hat KEINE »Pädagogischen Perspektiven P1-P6« (das ist NRW). Bayern arbeitet mit prozessbezogenen Kompetenzen + Gegenstandsbereichen + sportlichen Handlungsfeldern.',
+    },
   },
 
   jgst: [
@@ -75,24 +146,23 @@ window.MATRIX = {
     { id: 'GES', titel: 'GES · Gesundheit',      kurz: 'Querschnitt: Fitness · Wohlbefinden' },
   ],
 
-  // Pädagogische Perspektiven (Kurz · LP+ Bayern Sport)
-  perspektiven: [
-    { id: 'P1', label: 'Leistung',     kurz: 'Wettkampf · Messung · Vergleich' },
-    { id: 'P2', label: 'Miteinander',  kurz: 'Fairplay · Teamfähigkeit · Unterstützung' },
-    { id: 'P3', label: 'Wagnis',       kurz: 'Angst überwinden · Vertrauen' },
-    { id: 'P4', label: 'Ausdruck',     kurz: 'Kreativität · Bewegungsgestaltung' },
-    { id: 'P5', label: 'Gesundheit',   kurz: 'Körperbewusstsein · Lebensweise · Ausdauer' },
-    { id: 'P6', label: 'Spielen',      kurz: 'Mit Ungewissheit umgehen · taktisches Denken' },
+  // Gegenstandsbereiche LehrplanPLUS Bayern MS Sport (4 Bereiche)
+  // Lösen die NRW-»Pädagogischen Perspektiven P1-P6« ab — Bayern hat diese nicht.
+  gegenstandsbereiche: [
+    { label: 'Sportliche Handlungsfelder',            kurz: 'Leichtathletik · Schwimmen · Kleine Spiele und Sportspiele · Turnen und Bewegungskünste · Gymnastik und Tanz · Wintersport' },
+    { label: 'Gesundheit und Fitness',                kurz: 'Körperbewusstsein · Belastung · Lebensführung · Aufwärmen · Ernährung' },
+    { label: 'Fairness, Kooperation, Selbstkompetenz', kurz: 'Fairplay · Teamrollen · Konfliktlösung · Helfen und Sichern · Verantwortung' },
+    { label: 'Freizeit und Umwelt',                   kurz: 'Sport im Verein · in der Natur · lebenslang · Bewegung in der Lebenswelt' },
   ],
 
-  // Prozessbezogene Kompetenzen (LP+ Sport · 6er-Modell)
+  // Prozessbezogene Kompetenzen (LehrplanPLUS Bayern MS Sport · 6er-Modell · verbatim)
   prozesskompetenzen: [
-    { id: 'PK1', label: 'Leisten',     kurz: 'Sportliches Handeln zu Gütekriterien setzen · Erfolg/Misserfolg verarbeiten' },
-    { id: 'PK2', label: 'Gestalten',   kurz: 'Bewegungen variantenreich · kreativ · individuell einsetzen' },
-    { id: 'PK3', label: 'Spielen',     kurz: 'Mit Ungewissheit umgehen · Spielregeln anpassen' },
-    { id: 'PK4', label: 'Wahrnehmen-analysieren-bewerten',  kurz: 'Körper · Bewegung · Umgebung differenziert wahrnehmen' },
-    { id: 'PK5', label: 'Entscheiden-handeln-verantworten', kurz: 'Sach- + situationsgerechte Entscheidungen treffen' },
-    { id: 'PK6', label: 'Kooperieren-kommunizieren-präsentieren', kurz: 'Fair verhalten · kommunizieren · präsentieren' },
+    { label: 'Leisten',                                 kurz: 'Sportliches Handeln zu Gütekriterien setzen · Erfolg/Misserfolg verarbeiten' },
+    { label: 'Gestalten',                               kurz: 'Bewegungen variantenreich · kreativ · individuell einsetzen' },
+    { label: 'Spielen',                                 kurz: 'Mit Ungewissheit umgehen · Spielregeln anpassen' },
+    { label: 'Wahrnehmen, analysieren, bewerten',       kurz: 'Körper · Bewegung · Umgebung differenziert wahrnehmen und beurteilen' },
+    { label: 'Entscheiden, handeln, verantworten',      kurz: 'Sach- und situationsgerechte Entscheidungen treffen und verantworten' },
+    { label: 'Kooperieren, kommunizieren, präsentieren', kurz: 'Fair verhalten · zielgerichtet kommunizieren · sportliche Ergebnisse präsentieren' },
   ],
 
   cells: {
@@ -216,10 +286,10 @@ window.MATRIX = {
             titel: '9-UE-Sequenz Handball · Schwerpunkt Schlagwurf-Präzision',
             praxis: 'Eigene Praxis Sm7abc SJ 25/26 verbatim + BUV-Standard',
             gesamtzeit: '9 UEs à 45 min = 6,75 Zeitstunden',
-            phasenStandard: 'Sport-Bayern · 5-Phasen-UE (Begrüßung · Aufwärmen · Hauptteil · Anwendung · Ausklang)',
-            qualitaetsstandards_quelle: 'Sport Ressourcen · LP+ Fachprofil Sport + Anleitung TUV-Erstellung Sm8ab + ROLE_Sport_BUV_Berater + KMBek Sicherheit',
+            phasenStandard: 'Söll-Drei-Phasen-Modell (Einstimmung · Schwerpunkt · Ausklang) mit Söll-konformer 7-Phasen-Feingliederung (Begrüßung · allgemeines Aufwärmen · spezifisches Aufwärmen · Erarbeitung · Übung/Stationsbetrieb · Anwendung/Spielform · Ausklang) — spezifisches Aufwärmen als eigenständige Phase mit eigener didaktischer Funktion (Söll 2019)',
+            qualitaetsstandards_quelle: 'Primärquelle: User-eigene UV-Artikulation (19.12.2022, Sport 7 Handball Sprungwurf, Lehrprobe Studienseminar Unterfranken) · Söll, W. (2019) Sportunterricht — sportunterrichten (Hofmann, 10. Aufl.) · Meinel/Schnabel Bewegungslehre · LehrplanPLUS Bayern MS Sport (ISB)',
             sequenz_meta: {
-              lehrplanbezug: 'Sport Jgst. 7 · LB 4.3 Spielen + Wetteifern (Sportspiele) · Querverweise LB 2 Fairness + LB 3 Wetteifern',
+              lehrplanbezug: 'Sport Jgst. 7 · Handlungsfeld Kleine Spiele und Sportspiele (Handball) · Querverweise Gegenstandsbereiche Fairness, Kooperation, Selbstkompetenz + Gesundheit und Fitness',
               kompetenzerwartungen_verbatim: [
                 'Die Schülerinnen und Schüler verwenden sportartspezifische Techniken im Handball zur Lösung spielnaher Situationsaufgaben.',
                 'Die Schülerinnen und Schüler wenden individualtaktische Verhaltensweisen im Handball gezielt an und fügen diese zu gruppentaktischen Grundstrukturen zusammen.',
@@ -235,59 +305,80 @@ window.MATRIX = {
               zielsetzung_uebergeordnet: 'Die Sequenz baut Handball-Grundtechniken systematisch von der Hinführung über Goalchaball (UE 1-4) zur Technikvertiefung Schlagwurf (UE 5 BUV-Schwerpunktstunde) und Sprungwurf (UE 7 LP) bis zum Anwendungsturnier (UE 8) auf. Schwerpunkt-Stunde UE 5 demonstriert Stationsbetrieb-Methode + Differenzierung in 4 Spuren + dokumentierten Hallenplan mit Helferkonzept.',
               methodische_schwerpunkte: [
                 'Stationsbetrieb (UE 5) als zentrale Methode der Schwerpunktstunde · 3 parallele Stationen + Rotation',
-                'Spielform-Progression: Goalchaball (vereinfacht) → Handball 7v7 (Regelform) gemäß didaktischer Reduktion',
+                'Methodische Spielreihe (MSR): Vom Kleinen Spiel (Goalchaball 3v3 mit vereinfachten Regeln) zum Zielspiel Handball 7v7 (Regelform) · Taktik vor Technik (Roth/Memmert)',
+                'Methodische Übungsreihe (MÜR) Schlagwurf: vom Grobform-Erwerb (UE 5) über Feinkoordination zur variablen Verfügbarkeit (Meinel/Schnabel)',
                 'Differenzierung in 4 Spuren (DaZ · LRS · leistungsschwach · leistungsstark) operationalisiert pro Station',
-                'Helfen + Sichern als Pflicht (LB 2 Fairness integriert · Sicherheits-KMBek)',
-                '5-Phasen-UE (Begrüßung · Aufwärmen · Hauptteil · Anwendung · Ausklang) konsequent',
+                'Helfen und Sichern als Pflicht (Gegenstandsbereich Fairness, Kooperation, Selbstkompetenz integriert · KMBek Sicherheit · KUVB)',
+                'Söll-Drei-Phasen-Modell mit 7-Phasen-Feingliederung (Begrüßung · allgemeines Aufwärmen · spezifisches Aufwärmen · Erarbeitung · Übung/Stationsbetrieb · Anwendung/Spielform · Ausklang) konsequent — spezifische Erwärmung als eigenständige Phase mit sportartspezifischer Vorbereitung der Schwerpunkt-Bewegung',
               ],
-              kompetenzerwerb_progression: 'Pädagogische Perspektiven-Mix: UE 1-3 vorrangig P6 Spielen + P2 Miteinander (Goalchaball-Hinführung). UE 4 P3 Wagnis (erste Handball-Spielsituationen). UE 5 BUV Schlagwurf: P1 Leistung + P4 Wahrnehmen-bewerten (AFB II-III). UE 6 LNW Drehwurf P1 (AFB III-Bewertung). UE 7 LP Sprungwurf P1+P4 (komplexere Technik). UE 8 Miniturnier P6+P2+P5 (alle Perspektiven integriert · Fairplay als Querschnitt).',
+              kompetenzerwerb_progression: 'Progression der prozessbezogenen Kompetenzen: UE 1-3 vorrangig Spielen + Kooperieren, kommunizieren, präsentieren (Goalchaball-Hinführung als Methodische Spielreihe). UE 4 Entscheiden, handeln, verantworten in Überzahlspielen 3v2/4v3 (erste Handball-Spielsituationen). UE 5 BUV Schlagwurf: Leisten + Wahrnehmen, analysieren, bewerten (AFB II-III · Grobform-Erwerb). UE 6 LNW Drehwurf: Leisten (AFB III-Bewertung). UE 7 LP Sprungwurf: Leisten + Wahrnehmen, analysieren, bewerten (komplexere Technik mit Spiral-Anschluss). UE 8 Miniturnier: Spielen + Kooperieren, kommunizieren, präsentieren + Entscheiden, handeln, verantworten (integrierte Anwendung · Fairplay als Querschnitt).',
               personifikation_durchgaengig: 'Anders als bei GPG/WiB nutzt Sport KEINE Identifikationsfigur, sondern operiert über die SuS selbst als Akteure. Stattdessen: konsequente Verwendung von "ich kann X" (Selbstwirksamkeits-Sprache LP+ Sport) und individuelle Trefferquoten-Ziele.',
               schwerpunktstunde_kandidat: 'UE 5 · BUV-Schlagwurf-Präzision (Stationsbetrieb · Hallenplan · Helferkonzept · 4-Spuren-Differenzierung · AFB I-III)',
             },
             sequenz_tabelle: [
               { uze: 1, datum: 'KW 39', stundenthema_frage: 'Wie spielen wir gemeinsam — auch wenn wir uns noch nicht kennen?',
-                prozesskompetenz: 'PK6 Kooperieren', gegenstand: 'Sportspiele', perspektive: 'P2 Miteinander',
+                prozesskompetenz: 'Kooperieren, kommunizieren, präsentieren',
+                gegenstand: 'Sportliche Handlungsfelder · Kleine Spiele und Sportspiele (Goalchaball als Hinführung)',
+                leitkompetenz: 'Kooperieren, kommunizieren, präsentieren',
                 stundenziel_kurz: 'Kleine Spiele · Goalchaball-Einführung · Bedürfnisse Mitschüler:innen',
                 kommentar: 'Sequenz-Einstieg · Kennenlernen · Partnerübungen Passen/Fangen', schwerpunkt: false },
               { uze: 2, datum: 'KW 40', stundenthema_frage: 'Was sind die Spielideen von Goalchaball?',
-                prozesskompetenz: 'PK3 Spielen', gegenstand: 'Sportspiele', perspektive: 'P6 Spielen',
+                prozesskompetenz: 'Spielen',
+                gegenstand: 'Sportliche Handlungsfelder · Kleine Spiele und Sportspiele (Goalchaball)',
+                leitkompetenz: 'Spielen',
                 stundenziel_kurz: 'Goalchaball-Spielidee + erste Spielformen',
                 kommentar: 'Wiederholung Passen/Fangen · Vertiefung', schwerpunkt: false },
               { uze: 3, datum: 'KW 41', stundenthema_frage: 'Wie wenden wir Passen + Fangen in Spielformen an?',
-                prozesskompetenz: 'PK3 Spielen · PK1 Leisten', gegenstand: 'Sportspiele', perspektive: 'P6 + P1',
+                prozesskompetenz: 'Spielen · Leisten',
+                gegenstand: 'Sportliche Handlungsfelder · Kleine Spiele und Sportspiele (Goalchaball 3v3)',
+                leitkompetenz: 'Spielen · Leisten',
                 stundenziel_kurz: 'Passen/Fangen in Spielform · Stationsbetrieb · Spielformen 3v3',
                 kommentar: 'Stationsbetrieb · Spielformen 3v3', schwerpunkt: false },
               { uze: 4, datum: 'KW 44', stundenthema_frage: 'Wie führen Überzahl-Spiele zu Handball?',
-                prozesskompetenz: 'PK3 Spielen · PK5 Entscheiden', gegenstand: 'Sportspiele', perspektive: 'P6 + P3',
+                prozesskompetenz: 'Spielen · Entscheiden, handeln, verantworten',
+                gegenstand: 'Sportliche Handlungsfelder · Kleine Spiele und Sportspiele (Handball-Hinführung)',
+                leitkompetenz: 'Spielen · Entscheiden, handeln, verantworten',
                 stundenziel_kurz: 'Individualtaktik · Überzahlspiele 3v2 + 4v3',
                 kommentar: 'Handball-Hinführung über Überzahlspiele', schwerpunkt: false },
               { uze: 5, datum: 'KW 49', stundenthema_frage: 'Wie werfe ich gezielt mit Schlagwurf zum Tor?',
-                prozesskompetenz: 'PK1 Leisten · PK4 Wahrnehmen-analysieren', gegenstand: 'Sportspiele',
-                perspektive: 'P1 + P4', stundenziel_kurz: 'Schlagwurf-Präzision spielnah · Stationsbetrieb',
+                prozesskompetenz: 'Leisten · Wahrnehmen, analysieren, bewerten',
+                gegenstand: 'Sportliche Handlungsfelder · Kleine Spiele und Sportspiele (Handball · Schlagwurf)',
+                leitkompetenz: 'Leisten · Wahrnehmen, analysieren, bewerten',
+                stundenziel_kurz: 'Schlagwurf-Präzision spielnah · Stationsbetrieb',
                 kommentar: '**BUV-SCHWERPUNKTSTUNDE** · Stationsbetrieb · Hallenplan · 4-Spuren-Diff', schwerpunkt: true },
               { uze: 6, datum: 'KW 03', stundenthema_frage: 'Beherrsche ich den Drehwurf — und passt mein Spielverständnis Goalchaball?',
-                prozesskompetenz: 'PK1 Leisten', gegenstand: 'Sportspiele', perspektive: 'P1',
+                prozesskompetenz: 'Leisten',
+                gegenstand: 'Sportliche Handlungsfelder · Kleine Spiele und Sportspiele (Handball · Drehwurf)',
+                leitkompetenz: 'Leisten',
                 stundenziel_kurz: 'LNW Drehwurf + Spielnote Goalchaball',
                 kommentar: 'Prüfungsformat · Leistungserhebung', schwerpunkt: false },
               { uze: 7, datum: 'Mo 02.03., KW 10', stundenthema_frage: 'Wie schließe ich spielnah mit Sprungwurf ab?',
-                prozesskompetenz: 'PK1 Leisten · PK4 Wahrnehmen', gegenstand: 'Sportspiele',
-                perspektive: 'P1 + P4', stundenziel_kurz: 'Sprungwurf-Technik · spielnah anwenden',
+                prozesskompetenz: 'Leisten · Wahrnehmen, analysieren, bewerten',
+                gegenstand: 'Sportliche Handlungsfelder · Kleine Spiele und Sportspiele (Handball · Sprungwurf)',
+                leitkompetenz: 'Leisten · Wahrnehmen, analysieren, bewerten',
+                stundenziel_kurz: 'Sprungwurf-Technik · spielnah anwenden',
                 kommentar: 'LP-Stunde (Lehrprobe) · Sondertermin · Erweiterung Wurfkompetenz', schwerpunkt: false },
               { uze: 8, datum: 'Mi 04.03., KW 10', stundenthema_frage: 'Wie integrieren wir Technik + Taktik + Fairplay im Turnier?',
-                prozesskompetenz: 'PK3 Spielen · PK6 Kooperieren · PK5 Entscheiden', gegenstand: 'Sportspiele + Fairness',
-                perspektive: 'P6 + P2 + P1', stundenziel_kurz: 'Miniturnier Handball 7v7 · Fairplay-Reflexion',
+                prozesskompetenz: 'Spielen · Kooperieren, kommunizieren, präsentieren · Entscheiden, handeln, verantworten',
+                gegenstand: 'Sportliche Handlungsfelder · Kleine Spiele und Sportspiele (Handball 7v7) + Fairness, Kooperation, Selbstkompetenz',
+                leitkompetenz: 'Spielen · Kooperieren, kommunizieren, präsentieren',
+                stundenziel_kurz: 'Miniturnier Handball 7v7 · Fairplay-Reflexion',
                 kommentar: 'Sequenzabschluss · Turnierform · Anwendung', schwerpunkt: false },
               { uze: 9, datum: 'KW 11', stundenthema_frage: 'Was nehme ich mit aus der Handball-Sequenz?',
-                prozesskompetenz: 'PK4 Wahrnehmen-bewerten · PK6 Kommunizieren', gegenstand: 'Sportspiele',
-                perspektive: 'P4 + P5', stundenziel_kurz: 'Reflexion · Selbsteinschätzung · Transfer',
+                prozesskompetenz: 'Wahrnehmen, analysieren, bewerten · Kooperieren, kommunizieren, präsentieren',
+                gegenstand: 'Sportliche Handlungsfelder · Kleine Spiele und Sportspiele (Reflexion) + Gesundheit und Fitness',
+                leitkompetenz: 'Wahrnehmen, analysieren, bewerten',
+                stundenziel_kurz: 'Reflexion · Selbsteinschätzung · Transfer',
                 kommentar: 'Sequenz-Reflexion · Heft + Selbsteinschätzungsbogen', schwerpunkt: false },
             ],
             phasenSchema: [
-              { id: 's1_begruessung', label: '1 Begrüßung',       kurz: 'Anwesenheit · Sportkleidung · Stundenüberblick (3-5 min)' },
-              { id: 's2_aufwaermen',  label: '2 Aufwärmen',        kurz: 'Laufschule + Mobilisation (5-10 min)' },
-              { id: 's3_hauptteil',   label: '3 Hauptteil',        kurz: 'Technik-Demo + Übungsreihe + Vertiefung (25-30 min)' },
-              { id: 's4_anwendung',   label: '4 Anwendung',        kurz: 'Spielform / Wettkampfform (8-10 min)' },
-              { id: 's5_ausklang',    label: '5 Ausklang',         kurz: 'Reflexion · Sicherung · Abbau (3-5 min)' },
+              { id: 's1_begruessung',     label: '1 Begrüßung',                  kurz: 'Anwesenheit · Schmuckkontrolle · Stundenüberblick · Zielangabe (Söll: Einstimmung)' },
+              { id: 's2_aufwaermen_allg', label: '2 Allgemeines Aufwärmen',      kurz: 'Herz-Kreislauf-Aktivierung · mobilisierend · Verletzungsprophylaxe (Söll: Einstimmung)' },
+              { id: 's3_aufwaermen_spez', label: '3 Spezifisches Aufwärmen',     kurz: 'sportartspezifische Vorbereitung · vorbereitende Übungen (Söll: hier kein attraktives Aufwärmspiel — »negatives Attraktivitätsgefälle« vermeiden)' },
+              { id: 's4_erarbeitung',     label: '4 Erarbeitung',                kurz: 'Bewegungslernen · Demonstration · Knotenpunkte · erste Versuche · Grobform (Meinel/Schnabel · Söll: Schwerpunkt)' },
+              { id: 's5_uebung',          label: '5 Übung / Stationsbetrieb',    kurz: 'Hauptphase · Festigung · Methodische Übungsreihe (MÜR) · Feinform (Söll: Schwerpunkt)' },
+              { id: 's6_anwendung',       label: '6 Anwendung / Spielform',      kurz: 'variable Verfügbarkeit · spielnahe Situation · Methodische Spielreihe (MSR Roth/Memmert · Söll: Schwerpunkt)' },
+              { id: 's7_ausklang',        label: '7 Ausklang / Reflexion',       kurz: 'Cool-down · Verbalisierung der Knotenpunkte · Geräteabbau (Söll: Ausklang)' },
             ],
             ues_detail: [
               // UE 5 (BUV-Schwerpunktstunde — voll ausgearbeitet)
@@ -316,18 +407,22 @@ window.MATRIX = {
                     indem: 'indem sie aus den drei Bewegungsmerkmalen das eigene Verbesserungs-Schwerpunkt-Merkmal benennen,',
                     erkennbar: 'was daran erkennbar wird, dass sie im Ausklang ihren konkreten Trainingsfokus formulieren (z.B. "Naechste Stunde achte ich auf die Schulterdrehung").', afb: 'III', differenziert: true },
                 ],
-                s1_begruessung: '3\' · Anwesenheit am Halleneingang · Sportkleidung kontrollieren · Stundenuebersicht an Tafel: "Heute Schlagwurf in 3 Stationen + Spielform Goalchaball."',
-                s2_aufwaermen: '7\' · Laufschule mit Hütchen-Parcours (Anfersen · Knie-Heben · Skipping) + dynamische Mobilisation Schultergürtel (Armkreisen vor/zurück · Halten 5 sek).',
-                s3_hauptteil: '20\' · Lehrkraft-Demo Schlagwurf am Halbkreis (3\') · Stationsbetrieb 3 Stationen (15\' · 3-4\' pro Station + Rotation): St.1 Zielwurf 5m auf Huetchen (3 Wuerfe · Partner zaehlt) · St.2 Wurfschule Schrittfolge auf Becken-Seite (ohne dann mit Ball) · St.3 Wandwurf gegen Wand + Reaktion-Fangen. Beobachter-Karten in Hand. Letzte 2\' Tafel-Sammlung Beobachtungen.',
-                s4_anwendung: '10\' · Spielform Goalchaball 3v3 auf 2 parallelen Feldern (Hütchen-Tore) · Fokus: Schlagwurf-Einsatz in Spielsituation · 2 mal 4\' mit Wechsel.',
-                s5_ausklang: '5\' · Sitzkreis · Reflexion: "Welches Bewegungsmerkmal gelang? Welches nicht?" · Begriffs-Zuordnung Aushol/Beschleunigung/Release · Selbstwirksamkeits-Aussage: "Naechste Stunde achte ich auf ___" · Geräteabbau koordiniert.',
-                phasen_minuten: { s1_begruessung: 3, s2_aufwaermen: 7, s3_hauptteil: 20, s4_anwendung: 10, s5_ausklang: 5 },
+                s1_begruessung: '3\' · Anwesenheit am Halleneingang · Sportkleidung + Schmuckkontrolle · Stundenuebersicht an Tafel: "Heute Schlagwurf in 3 Stationen + Spielform Goalchaball." · Zielangabe: "Ich werfe gezielt mit Schlagwurf zum Tor — 3 von 5 Wuerfen treffen."',
+                s2_aufwaermen_allg: '4\' · Allgemeines Aufwaermen · Laufschule mit Huetchen-Parcours (Anfersen · Knie-Heben · Skipping) im Hallenrund · Herz-Kreislauf-Aktivierung · Beweglichkeits-Mobilisation Sprunggelenk/Knie.',
+                s3_aufwaermen_spez: '3\' · Spezifisches Aufwaermen Schlagwurf · sportartspezifische Vorbereitung: dynamische Mobilisation Schulterguertel (Armkreisen vor/zurueck · Halten 5 sek) · Trocken-Wurfbewegung am Halbkreis ohne Ball · kurze Ballgewoehnung im Stand (Werfen-Fangen mit Partner aus 3 m).',
+                s4_erarbeitung: '8\' · Lehrkraft-Demo Schlagwurf am Halbkreis (3\' · 3 Phasen Aushol/Beschleunigung/Release zeigen · Plakat mit Foto-Sequenz aufhaengen) · SuS-Verbalisierung der 3 Phasen am Plakat (2\') · erste Versuche im Partner-Tandem aus 3 m (3\') · Knotenpunkte: Schrittfolge · Schulterdrehung · Handgelenk-Schnipp.',
+                s5_uebung: '12\' · Stationsbetrieb 3 Stationen (12\' · 4\' pro Station + Rotation): St.1 Zielwurf 5m auf Huetchen-Tor (3 Wuerfe · Partner zaehlt Treffer) · St.2 Wurfschule Schrittfolge auf Becken-Seite (ohne dann mit Ball · Methodische Uebungsreihe Groessing) · St.3 Wandwurf gegen Wand + Reaktion-Fangen. Beobachter-Karten in Hand · Selbstkontroll-Kriterien am Plakat sichtbar. Lehrkraft rotiert + korrigiert anhand der 3 Knotenpunkte.',
+                s6_anwendung: '10\' · Spielform Goalchaball 3v3 auf 2 parallelen Feldern (Huetchen-Tore) · Fokus: Schlagwurf-Einsatz in Spielsituation · variable Verfuegbarkeit unter Spielanforderungen · 2 mal 4\' mit Wechsel · Bonus-Regel: Schlagwurf-Tor zaehlt doppelt.',
+                s7_ausklang: '5\' · Sitzkreis · Reflexion: "Welches Bewegungsmerkmal gelang? Welches nicht?" · Begriffs-Zuordnung Aushol/Beschleunigung/Release am Plakat · Selbstwirksamkeits-Aussage: "Naechste Stunde achte ich auf ___" · Geraeteabbau koordiniert.',
+                phasen_minuten: { s1_begruessung: 3, s2_aufwaermen_allg: 4, s3_aufwaermen_spez: 3, s4_erarbeitung: 8, s5_uebung: 12, s6_anwendung: 10, s7_ausklang: 5 },
                 sozialform_phasen: {
                   s1_begruessung: 'Halbkreis (Halleneingang)',
-                  s2_aufwaermen: 'Plenum · Laufwege markiert',
-                  s3_hauptteil: 'GA (3er-Gruppen Stationen-Rotation)',
-                  s4_anwendung: '2 parallele Spielfelder · GA 3v3',
-                  s5_ausklang: 'Sitzkreis Plenum',
+                  s2_aufwaermen_allg: 'Plenum · Laufwege markiert',
+                  s3_aufwaermen_spez: 'Partner-Tandem · Halbkreis',
+                  s4_erarbeitung: 'Plenum (Demo) · Partner-Tandem (Versuche)',
+                  s5_uebung: 'GA (3er-Gruppen Stationen-Rotation)',
+                  s6_anwendung: '2 parallele Spielfelder · GA 3v3',
+                  s7_ausklang: 'Sitzkreis Plenum',
                 },
                 differenzierung_block: {
                   daz: 'Bewegungsmerkmale als Bilder (Stationen-Karten mit Foto-Schritten). Wortspeicher Aushol · Beschleunigung · Release · Schlagwurf. Demonstrieren statt erklaeren. Partner-Tandem mit Deutsch-Buddy.',
@@ -343,11 +438,11 @@ window.MATRIX = {
                 hausaufgabe: '—',
                 material: '20 Handbälle (Größe 1) · 8 Hütchen · 4 Markierungshemden · Beobachter-Karten (1 pro SuS) · Stations-Karten A4 (3 Stationen, laminiert) · Audio-Aufnahmegerät optional fuer Reflexion · Hallenplan-Skizze A3 sichtbar',
                 lp_bezug: 'KE J7-SP-01 (Schlagwurf · Individualtaktik) · KE J7-FAIR-01 (Helfen + Sichern) · KE J7-GES-01 (Aufwaermen + Verletzungsprophylaxe)',
-                prinzipien_b3: ['Mehrperspektivitaet', 'Differenzierung', 'Sicherheit', 'Fairplay-Erziehung', 'Selbstwirksamkeit'],
+                prinzipien_b3: ['Kompetenzvielfalt', 'Differenzierung', 'Sicherheit', 'Fairplay-Erziehung', 'Selbstwirksamkeit'],
                 kompetenzstruktur: {
-                  gegenstand: 'Sportspiele (LB 4.3) · Fairness (LB 2)',
-                  perspektive: 'P1 Leistung · P4 Wahrnehmen · P2 Miteinander',
-                  prozesskompetenz: 'PK1 Leisten · PK4 Wahrnehmen-analysieren-bewerten · PK6 Kooperieren-kommunizieren',
+                  gegenstand: 'Sportliche Handlungsfelder · Kleine Spiele und Sportspiele (Handball · Schlagwurf) + Gegenstandsbereich Fairness, Kooperation, Selbstkompetenz',
+                  leitkompetenz: 'Leisten · Wahrnehmen, analysieren, bewerten',
+                  prozesskompetenz: 'Leisten · Wahrnehmen, analysieren, bewerten · Kooperieren, kommunizieren, präsentieren',
                 },
                 sachanalyse: {
                   bewegungsphasen: 'Schlagwurf 3 Phasen: (1) AUSHOL (Arm auf Schulterhoehe, Ellbogen >= 90 Grad Flexion, Oberarm 45 Grad Abduktion) · (2) BESCHLEUNIGUNG (schnelle Armextension, Schulter-Hueft-Rotation, Schrittfolge stabilisiert Rumpfspannung) · (3) RELEASE (Handgelenk-Schnipp fuer Drall, Zeige-/Mittelfinger letzte Kontaktpunkte).',
@@ -363,62 +458,129 @@ window.MATRIX = {
                 lernziel: 'SuS spielen Goalchaball als kooperative Hinfuehrung zum Sportspiel und entwickeln Passen+Fangen.',
                 stage: 'geruest', material: 'Goalchaball-Bälle · Hütchen · Markierungshemden',
                 prinzipien_b3: ['Fairplay-Erziehung', 'Kennenlernen'], lp_bezug: 'KE J7-SP-01 · KE J7-FAIR-01',
-                kompetenzstruktur: { gegenstand: 'Sportspiele', perspektive: 'P2 Miteinander · P6 Spielen', prozesskompetenz: 'PK6 Kooperieren · PK3 Spielen' },
-                hinweis: 'In Folge-Iteration alle 5 Phasen voll ausarbeiten.' },
+                kompetenzstruktur: { gegenstand: 'Sportliche Handlungsfelder · Kleine Spiele und Sportspiele', leitkompetenz: 'Kooperieren, kommunizieren, präsentieren · Spielen', prozesskompetenz: 'Kooperieren, kommunizieren, präsentieren · Spielen' },
+                hinweis: 'In Folge-Iteration alle 7 Phasen voll ausarbeiten.' },
               { nr: 2, titel: 'Goalchaball Vertiefung', stundenthema_frage: 'Was sind die Spielideen von Goalchaball?', minuten: 45,
                 lernziel: 'SuS verstehen die Spielidee Goalchaball und wenden Passen+Fangen in Spielformen an.',
                 stage: 'geruest', material: 'Goalchaball-Bälle · Tore · Hütchen',
-                prinzipien_b3: ['Mehrperspektivitaet (P3+P6)'], lp_bezug: 'KE J7-SP-01',
-                kompetenzstruktur: { gegenstand: 'Sportspiele', perspektive: 'P6 Spielen', prozesskompetenz: 'PK3 Spielen' },
-                hinweis: 'In Folge-Iteration alle 5 Phasen voll ausarbeiten.' },
+                prinzipien_b3: ['Kompetenzvielfalt'], lp_bezug: 'KE J7-SP-01',
+                kompetenzstruktur: { gegenstand: 'Sportliche Handlungsfelder · Kleine Spiele und Sportspiele', leitkompetenz: 'Spielen', prozesskompetenz: 'Spielen' },
+                hinweis: 'In Folge-Iteration alle 7 Phasen voll ausarbeiten.' },
               { nr: 3, titel: 'Goalchaball Festigung · Stationsbetrieb', stundenthema_frage: 'Wie wenden wir Passen + Fangen in Spielformen an?', minuten: 45,
                 lernziel: 'SuS wenden Passen+Fangen in Stationsformen an und spielen 3v3 selbststaendig.',
                 stage: 'geruest', material: 'Stations-Karten · Bälle · Hütchen',
                 prinzipien_b3: ['Differenzierung', 'Selbsttaetigkeit'], lp_bezug: 'KE J7-SP-01',
-                kompetenzstruktur: { gegenstand: 'Sportspiele', perspektive: 'P6 + P1', prozesskompetenz: 'PK3 Spielen · PK1 Leisten' },
+                kompetenzstruktur: { gegenstand: 'Sportliche Handlungsfelder · Kleine Spiele und Sportspiele', leitkompetenz: 'Spielen · Leisten', prozesskompetenz: 'Spielen · Leisten' },
                 hinweis: 'Probe-UE fuer Stationsbetrieb der BUV (UE 5).' },
               { nr: 4, titel: 'Handball Hinfuehrung · Ueberzahlspiele', stundenthema_frage: 'Wie führen Überzahl-Spiele zu Handball?', minuten: 45,
                 lernziel: 'SuS wenden Individualtaktik in Überzahlsituationen 3v2 und 4v3 an.',
                 stage: 'geruest', material: 'Handbälle · Hütchen · Markierungshemden',
-                prinzipien_b3: ['Mehrperspektivitaet', 'Spiel-Progression'], lp_bezug: 'KE J7-SP-01',
-                kompetenzstruktur: { gegenstand: 'Sportspiele', perspektive: 'P6 + P3 + P5', prozesskompetenz: 'PK3 Spielen · PK5 Entscheiden' },
-                hinweis: 'In Folge-Iteration alle 5 Phasen voll ausarbeiten.' },
+                prinzipien_b3: ['Kompetenzvielfalt', 'Spiel-Progression'], lp_bezug: 'KE J7-SP-01',
+                kompetenzstruktur: { gegenstand: 'Sportliche Handlungsfelder · Kleine Spiele und Sportspiele (Handball-Hinführung)', leitkompetenz: 'Spielen · Entscheiden, handeln, verantworten', prozesskompetenz: 'Spielen · Entscheiden, handeln, verantworten' },
+                hinweis: 'In Folge-Iteration alle 7 Phasen voll ausarbeiten.' },
               { nr: 6, titel: 'LNW Drehwurf + Spielnote Goalchaball', stundenthema_frage: 'Beherrsche ich den Drehwurf — und passt mein Spielverständnis Goalchaball?', minuten: 45,
                 lernziel: 'SuS weisen Drehwurf-Technik in LNW nach und zeigen Spielverstaendnis Goalchaball.',
                 stage: 'geruest', material: 'LNW-Bogen · Bälle · Bewertungsraster',
                 prinzipien_b3: ['Veraenderte Leistungsmessung', 'AFB-Stufung'], lp_bezug: 'KE J7-SP-01',
-                kompetenzstruktur: { gegenstand: 'Sportspiele', perspektive: 'P1 Leistung', prozesskompetenz: 'PK1 Leisten · PK4 Wahrnehmen' },
+                kompetenzstruktur: { gegenstand: 'Sportliche Handlungsfelder · Kleine Spiele und Sportspiele (Handball · Drehwurf)', leitkompetenz: 'Leisten', prozesskompetenz: 'Leisten · Wahrnehmen, analysieren, bewerten' },
                 hinweis: 'Pruefungsformat · LNW-Stunde.' },
-              { nr: 7, titel: 'LP Sprungwurf · spielnahe Anwendung', stundenthema_frage: 'Wie schließe ich spielnah mit Sprungwurf ab?', minuten: 45,
-                lernziel: 'SuS erweitern Wurfkompetenz auf Sprungwurf und wenden ihn spielnah in Goalchaball an.',
-                stage: 'geruest', material: 'Handbälle · Tore · Hallenplan',
-                prinzipien_b3: ['Mehrperspektivitaet (P1+P4)', 'Spiral-Anschluss (Schlagwurf -> Sprungwurf)'], lp_bezug: 'KE J7-SP-01',
-                kompetenzstruktur: { gegenstand: 'Sportspiele', perspektive: 'P1 + P4', prozesskompetenz: 'PK1 Leisten · PK4 Wahrnehmen' },
-                hinweis: 'Lehrprobe-Stunde · Sondertermin · 2. Stunde Sonderschiene.' },
+              // UE 7 (LP-Schwerpunktstunde Sprungwurf — voll ausgearbeitet · Spiral-Anschluss UE 5 Schlagwurf)
+              {
+                nr: 7,
+                titel: 'LP Sprungwurf · spielnaher Torabschluss · Stationsbetrieb',
+                stundenthema_frage: 'Wie schließe ich spielnah mit Sprungwurf ab?',
+                minuten: 45,
+                lernziel: 'SuS fuehren den Sprungwurf einbeinig aus dem 3-Schritt-Rhythmus aus und schliessen damit spielnah ueber den gegnerischen Block ab.',
+                lernziel_stundenziel: {
+                  verhalten: 'Die Schuelerinnen und Schueler fuehren den Sprungwurf mit einbeinigem Stemmschritt, gegenseitigem Wurfarm-Sprungbein-Verhaeltnis und Release in der Flugphase aus,',
+                  bedingung: 'indem sie an drei rotierenden Stationen (Anlauf-Absprung-Rhythmus ohne Ball · Sprungwurf vom kleinen Kasten · Sprungwurf aus Anlauf auf Tor) den Bewegungsablauf isoliert ueben und im Anschluss in einer reduzierten Goalchaball-Spielform 3v3 einsetzen,',
+                  maszstab: 'was daran erkennbar wird, dass jede:r SuS bei Station 3 mindestens drei von fuenf Sprungwuerfen einbeinig abspringt und ueber dem Block hinweg ins Tor wirft und im Spiel mindestens einmal einen Sprungwurf als Torabschluss waehlt.'
+                },
+                lernziel_teilziele: [
+                  { tz: 'MOTORISCH · SuS fuehren den Sprungwurf aus dem 3-Schritt-Anlauf einbeinig aus,',
+                    indem: 'indem sie an Station 1 den Anlauf-Absprung-Rhythmus ohne Ball automatisieren und an Station 2 vom kleinen Kasten in die Flugphase abdruecken,',
+                    erkennbar: 'was daran erkennbar wird, dass sie das gegenseitige Stemmbein zum Wurfarm einsetzen (rechte Wurfhand · linkes Stemmbein) und die Wurfauslage in der Luft erreichen.', afb: 'II', differenziert: false },
+                  { tz: 'KOGNITIV · SuS analysieren typische Fehlerbilder des Sprungwurfs fachgerecht,',
+                    indem: 'indem sie nach der Lehrkraft-Demo + Partner-Beobachtung an der Fehlerbild-Karte die drei Hauptfehler (beidbeiniger Absprung · gleichseitiges Stemmbein · zu spaeter Release) zuordnen,',
+                    erkennbar: 'was daran erkennbar wird, dass sie im Ausklang einen beobachteten Fehler beim Partner benennen und einen Korrekturvorschlag formulieren.', afb: 'II', differenziert: false },
+                  { tz: 'SOZIAL · SuS sichern den Mitspielenden bei Sprungwurf-Stationen aktiv ab,',
+                    indem: 'indem sie an Station 2 Kasten-Abbau-Pflicht uebernehmen und an Station 3 die Anlaufzone fuer den Werfenden freihalten,',
+                    erkennbar: 'was daran erkennbar wird, dass keine Kollision in Anlaufzonen entsteht und die Stationsuebergaenge ohne Wartezeit ablaufen.', afb: 'II', differenziert: false },
+                  { tz: '[Differenziert / leistungsstark] SuS vergleichen Schlagwurf (UE 5) und Sprungwurf taktisch,',
+                    indem: 'indem sie aus der Spielform 3v3 begruenden, in welcher Spielsituation der Sprungwurf dem Schlagwurf taktisch ueberlegen ist (z.B. Block-Ueberwindung · hoehere Trefferzone),',
+                    erkennbar: 'was daran erkennbar wird, dass sie im Ausklang mindestens eine konkrete Spielsituation aus dem 3v3 benennen, in der sie den Sprungwurf bewusst gewaehlt haben.', afb: 'III', differenziert: true },
+                ],
+                s1_begruessung: '3\' · Anwesenheit am Halleneingang · Sportkleidung + Schmuckkontrolle · feste Hallenschuhe Pflicht · Stundenuebersicht an Tafel: "Heute Sprungwurf in 3 Stationen + Anwendung Goalchaball — wir bauen auf dem Schlagwurf aus UE 5 auf." · Kurzer Rueckbezug Schlagwurf (Frage in Plenum: "Welche drei Phasen hatte der Schlagwurf?") · Zielangabe: "Ich werfe ueber den Block ins Tor."',
+                s2_aufwaermen_allg: '4\' · Allgemeines Aufwaermen · Laufschule mit Sprungelementen (Anfersen · Knie-Heben · Skipping mit Armzug) im Hallenrund · Herz-Kreislauf-Aktivierung mit Sprungvorbereitung.',
+                s3_aufwaermen_spez: '3\' · Spezifisches Aufwaermen Sprungwurf · sportartspezifische Vorbereitung (Söll: KEIN attraktives Aufwaermspiel · negatives Attraktivitaetsgefaelle vermeiden): einbeinige Hopser links/rechts (4 x 8 m) + dynamische Mobilisation Schulterguertel + Sprunggelenk-Mobilisation (Fussgelenkkreisen · Wadenheben) + Trocken-3-Schritt-Anlauf ohne Ball. Pflicht-Erweiterung gegenueber UE 5: Sprungvorbereitung explizit (Sprunggelenk + Knie · Verletzungsprophylaxe Stemmbein).',
+                s4_erarbeitung: '10\' · Lehrkraft-Demo Sprungwurf am Halbkreis (3\' · 3-Schritt-Anlauf · einbeiniger Stemmschritt · Wurfauslage in der Luft · Release · Plakat 4-Phasen-Sprungwurf + Fehlerbild-Karte mit 3 Hauptfehlern aufhaengen) · SuS-Verbalisierung der 4 Phasen + Vergleich Schlagwurf/Sprungwurf am Plakat (3\') · erste Versuche im Trocken-Anlauf am Hallenrand mit Schrittfolge-Huetchen (4\') · Knotenpunkte: einbeiniger Absprung · gegenseitiges Stemmbein zum Wurfarm · Release am hoechsten Punkt.',
+                s5_uebung: '12\' · Stationsbetrieb 3 Stationen (12\' · 4\' pro Station + Rotation): St.1 Anlauf-Absprung-Rhythmus ohne Ball (3 Schritte links-rechts-links bei Rechtshaendern · Markierungs-Huetchen als Schrittfolge) · St.2 Sprungwurf vom kleinen Kasten 40 cm + Weichbodenmatte (Ball auf festes Ziel an Wand 4 m · Hoehengewinn spueren) · St.3 Sprungwurf aus 3-Schritt-Anlauf vom Boden auf Tor (5 m Distanz · Partner an Tor als Block-Attrappe mit Schaumstoff-Stange). Beobachter-Karten mit Fehlerbild-Symbolen in Hand. Methodische Uebungsreihe (MÜR Groessing): Vereinfachungs-/Erschwerungs-Strategien pro Station differenziert.',
+                s6_anwendung: '8\' · Spielform Goalchaball 3v3 auf 2 parallelen Feldern (Huetchen-Tore + 1 passiver Block-Spieler pro Team vor dem Tor mit Schaumstoff-Stange) · Fokus: Sprungwurf als Torabschluss ueber den Block · variable Verfuegbarkeit unter Spielanforderungen · 2 mal 3\' mit Wechsel · taktischer Auftrag leistungsstark: bewusst Sprungwurf statt Schlagwurf bei Block waehlen.',
+                s7_ausklang: '5\' · Sitzkreis · Reflexion: "Welches Fehlerbild hast du bei dir/beim Partner gesehen? Welche Korrektur hilft?" · Verbalisierung der Knotenpunkte am Plakat · Vergleich Schlagwurf-Sprungwurf in Spielform 3v3 (leistungsstark: konkrete Situation benennen) · Selbstwirksamkeits-Aussage: "Ich werfe ueber den Block ins Tor." · Geraeteabbau (Kaesten · Matten · Huetchen · Schaumstoff-Stangen) koordiniert.',
+                phasen_minuten: { s1_begruessung: 3, s2_aufwaermen_allg: 4, s3_aufwaermen_spez: 3, s4_erarbeitung: 10, s5_uebung: 12, s6_anwendung: 8, s7_ausklang: 5 },
+                sozialform_phasen: {
+                  s1_begruessung: 'Halbkreis (Halleneingang)',
+                  s2_aufwaermen_allg: 'Plenum · Laufwege markiert',
+                  s3_aufwaermen_spez: 'Plenum · Paar-Hopser · Trocken-Anlauf',
+                  s4_erarbeitung: 'Plenum (Demo) · Hallenrand-Trocken-Anlauf',
+                  s5_uebung: 'GA (3er-Gruppen Stationen-Rotation)',
+                  s6_anwendung: '2 parallele Spielfelder · GA 3v3 + 1 Block-Spieler pro Team',
+                  s7_ausklang: 'Sitzkreis Plenum',
+                },
+                differenzierung_block: {
+                  daz: 'Bewegungsmerkmale Sprungwurf als Foto-Sequenz (Anlauf · Absprung · Flug · Release) auf Stations-Karten. Wortspeicher Stemmschritt · Wurfauslage · Block. Demonstrieren statt erklaeren · Partner-Tandem mit Deutsch-Buddy. Fehlerbild-Karte mit Symbolen statt Text.',
+                  lrs: 'Stations-Karten in 18pt+ Schrift · Foto-Sequenzen statt Lesetexten · Fehlerbild-Karte mit Piktogrammen (Fuesse beidbeinig · Fuesse einbeinig · Pfeil rauf/runter fuer Release-Timing).',
+                  leistungsschwach: 'St.1 nur 2-Schritt-Anlauf statt 3-Schritt · St.2 Kasten 30 cm statt 40 cm + ohne Block-Attrappe an St.3 · weicherer Ball · Lehrkraft gibt Schrittfolge per Klatschen vor.',
+                  leistungsstark: 'St.3 Sprungwurf gegen aktive (nicht passive) Block-Attrappe · TZ4 Schlagwurf-Sprungwurf-Vergleich · Beobachter-Rolle uebernehmen + Partner mit Fehlerbild-Karte korrigieren · in Anwendungsphase taktische Wahl begruenden.',
+                },
+                personifikation_anteil: 'Sport nutzt KEINE Identifikationsfigur sondern SELBSTWIRKSAMKEITSSPRACHE: "Ich werfe ueber den Block ins Tor — ich springe einbeinig ab und treffe drei von fuenf."',
+                tafelbild_skizze: 'Tafel: 4-Phasen-Sprungwurf mit Foto-Sequenz (Anlauf 3 Schritte · einbeiniger Absprung · Flugphase mit Wurfauslage · Release mit Handgelenk-Schnipp) + Fehlerbild-Karte (3 Hauptfehler mit roten Kreuzen) + Stations-Karte (3 Stationen + Rotation-Reihenfolge) · Selbstwirksamkeits-Slogan "Ich werfe ueber den Block ins Tor" · Vergleichs-Spalte Schlagwurf | Sprungwurf (rechts).',
+                hallenplan: 'Halle 20 x 12 m. St.1 Anlauf-Absprung-Rhythmus (NORDseite · 4 Huetchen-Reihen je 3 Schritt-Markierungen · 8 m Lauflinie · KEIN Ball) · St.2 Sprungwurf vom kleinen Kasten (SUEDOSTecke · kleiner Kasten 40 cm + Weichbodenmatte 200x100x10 cm dahinter als Landungszone · Ziel an Wand markiert · 4 m Distanz Kasten-Wand · Sicherheitsabstand 2 m zu Nachbarstation) · St.3 Sprungwurf aus Anlauf auf Tor (WESTseite · Handballtor oder Huetchen-Tor · 3-Schritt-Anlaufzone 6 m markiert · 5 m Wurfdistanz · 1 Partner als passive Block-Attrappe mit Schaumstoff-Stange · 1 Partner Ball-Rueckgabe hinter Tor) · Spielfelder fuer Anwendung: 2 parallele 8x6 m im Hallenzentrum (Huetchen-Tore + 1 Block-Position pro Tor) · Eingang OSTseite (Sicherheitszone) · Sicherheitsabstand zwischen St.2 und St.3 mind. 3 m (Anlaufzonen kreuzen sich NICHT).',
+                helferkonzept: 'St.2 Sprungwurf vom Kasten: Weichbodenmatte als Landungssicherung Pflicht (Sturz auf Hartboden ausgeschlossen) · Lehrkraft positioniert sich initial an St.2 fuer Absprung-Korrektur · Kasten-Aufbau zu Beginn durch 4 SuS gemeinsam (Helfen+Sichern als Pflicht) · St.3 Block-Attrappe-Partner: Schaumstoff-Stange waagerecht vor dem Koerper · NIEMALS aktiv ins Anlaufgebiet treten · klare Trennung Anlaufzone | Wurfposition durch Bodenmarkierung · Stationen-Rotation zuegig · keine Warteschlangen · Lehrkraft rotiert zwischen Stationen mit Fokus St.2 (Sicherheit Hoehengewinn) und St.3 (Anlauf-Konflikte).',
+                sicherheit: 'Aufwaermen Pflicht inkl. Sprunggelenk-Mobilisation (Sprunggelenk-Verstauchung Hauptrisiko · Sprungwurf belastet Stemmbein einseitig hoch) · Sportkleidung kontrolliert (feste Hallenschuhe Pflicht · keine Socken-Rutschgefahr beim Absprung) · St.2 Weichbodenmatte als Landungssicherung Pflicht · St.3 Anlaufzone und Wurfposition durch Bodenmarkierung getrennt · Block-Attrappe-Partner mit Schaumstoff-Stange (kein Koerperkontakt) · Ballgroesse 1 (handlich · altersgerecht) · in Anwendung 3v3 KEIN aktives Blocken mit Koerper (nur passive Block-Stange) · Lehrkraft positioniert sich an Sicht-Achse beider Wurfstationen · Sprungwurf-Belastung im Hauptteil begrenzt auf 5-6 Wuerfe pro Station (Ueberlastungs-Prophylaxe Stemmbein).',
+                hausaufgabe: '—',
+                material: '15 Handbaelle (Groesse 1) · 1 kleiner Kasten (40 cm Hoehe) · 1 Weichbodenmatte (200x100x10 cm) · 1 Handballtor oder 4 Huetchen fuer Tor · 16 Huetchen fuer Anlauf-Markierung + Spielfeld-Begrenzung · 4 Markierungshemden · 2 Schaumstoff-Stangen (1,5 m · fuer Block-Attrappen) · Beobachter-Karten mit Fehlerbild-Symbolen (1 pro SuS) · Stations-Karten A4 (3 Stationen · laminiert · mit Foto-Sequenz) · Fehlerbild-Karte A3 zum Aufhaengen · Hallenplan-Skizze A3 sichtbar · Tafel-Skizze 4-Phasen-Sprungwurf vorbereitet',
+                lp_bezug: 'KE J7-SP-01 (Wurftechniken Handball · Sprungwurf · Individualtaktik) · KE J7-FAIR-01 (Helfen + Sichern Kasten + Anlaufzonen) · KE J7-GES-01 (Aufwaermen Sprunggelenk-Mobilisation · Verletzungsprophylaxe einseitige Belastung)',
+                prinzipien_b3: ['Kompetenzvielfalt (Leisten + Wahrnehmen, analysieren, bewerten)', 'Differenzierung', 'Sicherheit', 'Spiral-Anschluss (Schlagwurf UE 5 -> Sprungwurf UE 7)', 'Selbstwirksamkeit'],
+                kompetenzstruktur: {
+                  gegenstand: 'Sportliche Handlungsfelder · Kleine Spiele und Sportspiele (Handball · Sprungwurf) + Gegenstandsbereich Fairness, Kooperation, Selbstkompetenz',
+                  leitkompetenz: 'Leisten · Wahrnehmen, analysieren, bewerten',
+                  prozesskompetenz: 'Leisten · Wahrnehmen, analysieren, bewerten · Kooperieren, kommunizieren, präsentieren',
+                },
+                sachanalyse: {
+                  bewegungsphasen: 'Sprungwurf 3 Phasen (4 Teilbewegungen): (1) ANLAUF (2-3 Schritte Rhythmus · bei Rechtshaendern Schrittfolge links-rechts-links · Schritt 3 Stemmschritt) · (2) ABSPRUNG (einbeinig vom Stemmbein · GEGENSEITIG zum Wurfarm · Knie-Anwinkel-Vorbereitung des Schwungbeins · Schulterachse zum Tor) · (3) FLUGPHASE + RELEASE (Wurfauslage in der Luft auf Schulterhoehe · Wurfarm im Ellbogen ueber 90 Grad Flexion · Handgelenk-Schnipp fuer Drall · Release am hoechsten Punkt vor Bodenkontakt).',
+                  biomechanik: 'Geschwindigkeits-Uebertragung horizontaler Anlauf-Impuls -> vertikaler Sprung-Impuls. Energie-Kettenbildung Anlaufgeschwindigkeit -> Stemmbein-Streckung -> Rumpfrotation -> Wurfarm-Beschleunigung -> Handgelenk-Schnipp. Hoehere Release-Position als Schlagwurf (Vorteil: hoehere Wurfbahn ueber gegnerischen Block · steilerer Einfallswinkel ins Tor moeglich · Tor-Eckenpraezision oben erreichbar).',
+                  fehlerbilder: 'Fehler 1: Beidbeiniger Absprung statt einbeinig -> geringere Sprunghoehe + verlorene horizontale Geschwindigkeit. Korrektur: "Spring nur vom Stemmbein ab" + St.1 Trockenuebung. Fehler 2: Gleichseitiges Stemmbein zum Wurfarm (rechte Hand · rechtes Bein) -> kein Hueft-Schulter-Gegenzug · unausgeglichene Flugphase. Korrektur: "Links abspringen wenn du rechts wirfst" + Demo + Markierungs-Huetchen Schrittfolge. Fehler 3: Zu spaeter Release (Wurf erst nach Landung) -> Hoehenvorteil verloren · keine Block-Ueberwindung. Korrektur: "Werfen wenn du am hoechsten bist · NICHT erst beim Landen" + St.2 Kasten-Uebung (Hoehengewinn spueren). Fehler 4: Knie-Anwinkel-Vorbereitung fehlt -> Sprunghoehe nicht ausgeschoepft. Korrektur: "Schwungbein-Knie anziehen beim Absprung".',
+                  lernvoraussetzungen: 'Schlagwurf-Technik aus UE 5 sitzt (Aushol · Beschleunigung · Release-Phase bekannt · Wurfarm-Schulter-Hueft-Rotation automatisiert) · 3er-Schrittfolge aus Anlauf-Uebungen Leichtathletik (J5-J7) verankert · Goalchaball-Spielmechanik aus UE 1-4 gefestigt (Spielform 3v3 bekannt · Passspiel + Torschuss-Situationen vertraut) · koerperliche Voraussetzung Jgst. 7: Stemmbein-Belastbarkeit nach pubertaerer Knochenfestigung ausreichend · Koordination einbeiniger Absprung aus Leichtathletik Weitsprung (J6) angebahnt.',
+                },
+                didaktische_reduktion: 'Sprungwurf-Grobform vor Feinform: Anlauf zunaechst ohne Ball (St.1 Trockenuebung) · Absprung vom Kasten (St.2) zur Hoehenwahrnehmung BEVOR Bodenabsprung gefordert wird · St.3 erst nach St.1+St.2 (Pflicht-Rotation in dieser Reihenfolge fuer leistungsschwache · freier fuer leistungsstarke). Goalchaball 3v3 statt Handball 7v7 reduziert taktische Komplexitaet (kleines Feld · wenige Gegner) · Block-Attrappe mit Schaumstoff-Stange statt aktiver Verteidiger reduziert Verletzungsrisiko + Konzentrationsfokus auf Wurfauslage. Sprungwurf hier nur als Torabschluss (KEIN Pass-Sprungwurf · keine Sprungwurf-Varianten wie Heber/Dreher).',
+                didaktik: 'Stationsbetrieb (TUV-Anleitung Sm8ab) · 3-Phasen-Modell der Bewegungsanalyse (Meinel/Schnabel) erweitert um Vergleichs-Achse Schlagwurf|Sprungwurf · Differenzierung in 4 Spuren · Spiral-Anschluss UE 5 (Schlagwurf-Vorwissen aktiviert · taktischer Vergleich als AFB III-Element) · Selbstwirksamkeits-Sprache LP+ · Hallenplan + Helferkonzept als BUV-Pflicht (ROLE_Sport_BUV) · Block-Attrappe-Methode mit Schaumstoff-Stange zur Komplexitaets-Reduktion bei gleichzeitig spielnaher Situation.'
+              },
               { nr: 8, titel: 'Miniturnier Handball 7v7 · Fairplay-Anwendung', stundenthema_frage: 'Wie integrieren wir Technik + Taktik + Fairplay im Turnier?', minuten: 45,
                 lernziel: 'SuS wenden Technik+Taktik im Handball-Miniturnier an und reflektieren Fairplay als Querschnitt.',
                 stage: 'geruest', material: 'Handbälle · Tore · Spielplan · Schiedsrichter-Karten',
-                prinzipien_b3: ['Fairplay-Erziehung', 'Mehrperspektivitaet (P1+P2+P5+P6)'], lp_bezug: 'KE J7-SP-01 · KE J7-FAIR-01',
-                kompetenzstruktur: { gegenstand: 'Sportspiele + Fairness', perspektive: 'P6 + P2 + P1', prozesskompetenz: 'PK3 Spielen · PK6 Kooperieren · PK5 Entscheiden' },
+                prinzipien_b3: ['Fairplay-Erziehung', 'Kompetenzvielfalt (Spielen + Kooperieren + Entscheiden + Leisten)'], lp_bezug: 'KE J7-SP-01 · KE J7-FAIR-01',
+                kompetenzstruktur: { gegenstand: 'Sportliche Handlungsfelder · Kleine Spiele und Sportspiele (Handball 7v7) + Gegenstandsbereich Fairness, Kooperation, Selbstkompetenz', leitkompetenz: 'Spielen · Kooperieren, kommunizieren, präsentieren', prozesskompetenz: 'Spielen · Kooperieren, kommunizieren, präsentieren · Entscheiden, handeln, verantworten' },
                 hinweis: 'Sequenz-Abschluss · Turnierform.' },
               { nr: 9, titel: 'Sequenz-Reflexion · Heft + Selbsteinschätzung', stundenthema_frage: 'Was nehme ich mit aus der Handball-Sequenz?', minuten: 45,
                 lernziel: 'SuS reflektieren ihre Lernertraege schriftlich und benennen einen Transferbereich (Freizeit/Verein).',
                 stage: 'geruest', material: 'Heft · Selbsteinschätzungsbogen · Reflexions-Karten',
                 prinzipien_b3: ['Selbst-Regulation', 'Veraenderte Leistungsmessung'], lp_bezug: 'KE J7-SP-01 + Querschnitt',
-                kompetenzstruktur: { gegenstand: 'Sportspiele', perspektive: 'P4 + P5', prozesskompetenz: 'PK4 Wahrnehmen-bewerten · PK6 Kommunizieren' },
+                kompetenzstruktur: { gegenstand: 'Sportliche Handlungsfelder · Kleine Spiele und Sportspiele (Reflexion) + Gegenstandsbereich Gesundheit und Fitness', leitkompetenz: 'Wahrnehmen, analysieren, bewerten', prozesskompetenz: 'Wahrnehmen, analysieren, bewerten · Kooperieren, kommunizieren, präsentieren' },
                 hinweis: 'Sequenz-Reflexion · Heft-LZK.' },
             ],
             bezuege_global: [
-              { didaktik: 'Sport-5-Phasen-UE (Anleitung TUV-Erstellung Sm8ab)', verweis: 'Verbindlich Sport-Seminar Bayern: Begrüßung · Aufwärmen · Hauptteil · Anwendung · Ausklang. Konsequent in jeder UE durchgehalten.' },
+              { didaktik: 'Söll-Drei-Phasen-Modell (2019)', verweis: 'Verbindliche Grobstruktur Einstimmung — Schwerpunkt — Ausklang. Söll-konform feingegliedert in 7 Phasen (Begrüßung · allgemeines Aufwärmen · spezifisches Aufwärmen · Erarbeitung · Übung/Stationsbetrieb · Anwendung/Spielform · Ausklang). Spezifisches Aufwärmen als eigenständige Phase mit eigener didaktischer Funktion (sportartspezifische Vorbereitung). Söll-Warnung: »negatives Attraktivitätsgefälle« vermeiden — das Aufwärmspiel (allg. Aufwärmen) darf den Schwerpunkt emotional nicht überstrahlen; das spezifische Aufwärmen ist KEIN attraktives Spiel.' },
               { didaktik: 'BUV-Qualitätskriterien (ROLE_Sport_BUV)', verweis: 'UE 5 BUV-Schwerpunktstunde: Mager-3D-Lernziele (motorisch + kognitiv + sozial) · Sachanalyse mit Phasenmodell + Biomechanik + Fehlerbilder · Didaktische Reduktion · Methodische Analyse · Stundenskizze · Hallenplan + Helferkonzept · Sicherheitsmaßnahmen explizit.' },
-              { didaktik: 'Mehrperspektivität (LP+ Bayern Sport Fachprofil)', verweis: 'Sequenz aktiviert 5 pädagogische Perspektiven: P1 Leisten (Schlagwurf-Trefferquote) · P2 Miteinander (Partnerkorrektur) · P3 Wagnis (erste Spielsituation) · P4 Wahrnehmen (Bewegungsmerkmale) · P5 Gesundheit (Aufwärmen) · P6 Spielen (Goalchaball). Mehrperspektivität als didaktisches Pflichtprinzip.' },
-              { didaktik: 'Sicherheitserziehung (KMBek + KUVB)', verweis: 'Pro UE Sicherheitsmaßnahmen dokumentiert. UE 5 BUV: Hallenplan mit Gefahrenstellen (Wand · Beckenrand) markiert · Helferkonzept (Matten unter Beckenrand · Sicherheitsabstand Wand) · Aufwärmen als Verletzungsprophylaxe · altersgerechte Bälle.' },
+              { didaktik: 'Prozessbezogene Kompetenzen (LehrplanPLUS Bayern MS Sport)', verweis: 'Sequenz aktiviert alle 6 prozessbezogenen Kompetenzen: Leisten (Schlagwurf-Trefferquote · LNW Drehwurf) · Gestalten (Bewegungsausführung Sprungwurf) · Spielen (Goalchaball + Handball-Turnier) · Wahrnehmen, analysieren, bewerten (Bewegungsmerkmale · Partner-Korrektur) · Entscheiden, handeln, verantworten (Überzahlspiele · Turniersituation) · Kooperieren, kommunizieren, präsentieren (Partnerarbeit · Helfen und Sichern · Fairplay).' },
+              { didaktik: 'Sicherheitserziehung (KMBek + KUVB Bayern)', verweis: 'Pro UE Sicherheitsmaßnahmen dokumentiert. UE 5 BUV: Hallenplan mit Gefahrenstellen (Wand · Beckenrand) markiert · Helferkonzept (Matten unter Beckenrand · Sicherheitsabstand Wand) · Helfergriff-Kanon Klammergriff/Stützgriff/Drehgriff/Drehstützgriff bei Turnsequenzen · Aufwärmen als Verletzungsprophylaxe · altersgerechte Bälle. Helferkonzept-Stufung: Doppelhelfer → Einzelhelfer → Sicherheitssteller.' },
               { didaktik: 'Differenzierung in 4 Spuren', verweis: 'DaZ (Bewegungsmerkmale als Bilder · Wortspeicher) · LRS (Stations-Karten 18pt+) · leistungsschwach (Distanz 3m statt 5m · weicherer Ball) · leistungsstark (Distanz 7m · Beobachter-Rolle · AFB III Selbst-Verbesserungsfokus).' },
-              { didaktik: 'Bewegungsanalyse 3-Phasen-Modell (Meinel/Schnabel)', verweis: 'Schlagwurf: Aushol · Beschleunigung · Release. Biomechanische Kette Beine→Rumpf→Arm→Hand. Beschleunigungsprinzip. Sachanalyse-Standard fuer BUV.' },
-              { didaktik: 'Spiral-Progression Sport (LP+ Bayern Sport)', verweis: 'Vertikale Progression: Jgst. 5/6 Kleine Spiele + Goalchaball-Anbahnung → Jgst. 7 Handball-Techniken (DIESE Sequenz) → Jgst. 8/9 Handball-Gruppentaktik + Turnierform. Spiralcurricular nicht linear.' },
-              { didaktik: 'Selbstwirksamkeit (LP+ Bayern Sport)', verweis: 'Sport nutzt SELBSTWIRKSAMKEITSSPRACHE statt Personifikation: SuS formulieren "ich kann · ich erreiche · ich verbessere". Verankert im LP+-Schwerpunkt Erziehung IM Sport.' },
-              { didaktik: 'Aufgabenkultur differenziert + Leistungsmessung', verweis: 'UE 6 LNW Drehwurf mit AFB-Stufung. Kompetenzorientiertes Beurteilen LP+ Sport. Veraenderte Leistungsmessung.' },
-              { didaktik: 'Fairplay-Erziehung als Querschnitt (LB 2)', verweis: 'In jeder UE explizit (Partnerkorrektur respektvoll · Helfen + Sichern · Turnier-Fairplay-Reflexion UE 8). Fairplay als uebergeordnetes Ziel (KE J7-FAIR-01).' },
+              { didaktik: 'Bewegungsanalyse 3-Phasen-Modell (Meinel/Schnabel)', verweis: 'Vorbereitungs- · Haupt- · Endphase. Schlagwurf: Aushol · Beschleunigung · Release. Biomechanische Kette Beine→Rumpf→Arm→Hand. Beschleunigungsprinzip. Lernphasen-Progression: Grobkoordination (UE 5 Einführung) → Feinkoordination (UE 7 LP) → variable Verfügbarkeit (UE 8 Turnier). Sachanalyse-Standard für BUV.' },
+              { didaktik: 'Methodische Übungsreihe (MÜR) und Methodische Spielreihe (MSR)', verweis: 'MÜR Schlagwurf (Söll/Größing): Übungen mit steigendem Schwierigkeitsgrad · Vereinfachungsstrategien (Distanz · Ballgröße · Festigkeit) · Komplexitätsstufung. MSR (Roth/Memmert · Ballschule Heidelberg): Vom Kleinen Spiel (Goalchaball 3v3 · vereinfachte Regeln) zur Zielspielform Handball 7v7. Taktik vor Technik.' },
+              { didaktik: 'Spiral-Progression Sport (LehrplanPLUS Bayern MS Sport)', verweis: 'Vertikale Progression: Jgst. 5/6 Kleine Spiele + Goalchaball-Anbahnung → Jgst. 7 Handball-Techniken (DIESE Sequenz) → Jgst. 8/9 Handball-Gruppentaktik + Turnierform. Spiralcurricular nicht linear.' },
+              { didaktik: 'Selbstwirksamkeit (LehrplanPLUS Bayern Sport)', verweis: 'Sport nutzt SELBSTWIRKSAMKEITSSPRACHE statt Personifikation: SuS formulieren "ich kann · ich erreiche · ich verbessere". Verankert im Doppelauftrag »Erziehung IM Sport« und »Erziehung DURCH Sport«.' },
+              { didaktik: 'Aufgabenkultur differenziert + Leistungsmessung', verweis: 'UE 6 LNW Drehwurf mit AFB-Stufung. Kompetenzorientiertes Beurteilen LehrplanPLUS Sport. Veränderte Leistungsmessung.' },
+              { didaktik: 'Fairplay-Erziehung als Querschnitt (Gegenstandsbereich Fairness, Kooperation, Selbstkompetenz)', verweis: 'In jeder UE explizit (Partnerkorrektur respektvoll · Helfen und Sichern · Turnier-Fairplay-Reflexion UE 8). Fairplay als übergeordnetes Ziel (KE J7-FAIR-01).' },
             ]
           }
         },

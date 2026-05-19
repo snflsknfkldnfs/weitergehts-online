@@ -1,12 +1,12 @@
-// LB-Matrix-Renderer Sport v1 · Sport-5-Phasen-Standard · BUV-konform
-// Konsumiert window.MATRIX (data.js v1) mit:
-//   - cells.kes[].pilot_sequenz.ues_detail[] · Sport-5-Phasen-UE
-//     (s1_begruessung · s2_aufwaermen · s3_hauptteil · s4_anwendung · s5_ausklang)
+// LB-Matrix-Renderer Sport v1.2 · Söll-konforme 7-Phasen-Struktur · BUV-konform
+// Konsumiert window.MATRIX (data.js v1.2) mit:
+//   - cells.kes[].pilot_sequenz.ues_detail[] · 7-Phasen-UE (Söll-konforme Feingliederung)
+//     (s1_begruessung · s2_aufwaermen_allg · s3_aufwaermen_spez · s4_erarbeitung · s5_uebung · s6_anwendung · s7_ausklang)
 //   - cells.kes[].pilot_sequenz.ues_detail[].lernziel_stundenziel · Mager (motorisch+kognitiv+sozial integriert)
 //   - cells.kes[].pilot_sequenz.ues_detail[].sachanalyse · Phasenmodell + Biomechanik + Fehler
 //   - cells.kes[].pilot_sequenz.ues_detail[].hallenplan + helferkonzept + sicherheit · BUV-Pflicht
 //   - cells.kes[].pilot_sequenz.ues_detail[].differenzierung_block · 4 Spuren
-//   - cells.kes[].pilot_sequenz.phasenSchema · 5 Phasen-Items mit id/label/kurz
+//   - cells.kes[].pilot_sequenz.phasenSchema · 7 Phasen-Items mit id/label/kurz
 //   - cells.kes[].ke_wortlaut_anker[] · Ankerwoerter (sofern gesetzt)
 //   - cells.kes[].inhalte_lp[] (LP+-Inhalte)
 //   - cells.quelle_status (verbatim/sekundaer/ausstehend)
@@ -72,14 +72,21 @@
     setTimeout(() => { node.textContent = msg; }, 30);
   }
 
-  // Sport-Bayern 5-Phasen-Standard (Fallback)
-  const PHASEN_DEFAULT = [
-    { id: 's1_begruessung', label: '1 Begrüßung',  kurz: 'Anwesenheit · Sportkleidung · Stundenüberblick (3-5 min)' },
-    { id: 's2_aufwaermen',  label: '2 Aufwärmen',  kurz: 'Laufschule + Mobilisation (5-10 min)' },
-    { id: 's3_hauptteil',   label: '3 Hauptteil',  kurz: 'Technik-Demo + Übungsreihe + Vertiefung (25-30 min)' },
-    { id: 's4_anwendung',   label: '4 Anwendung',  kurz: 'Spielform / Wettkampfform (8-10 min)' },
-    { id: 's5_ausklang',    label: '5 Ausklang',   kurz: 'Reflexion · Sicherung · Abbau (3-5 min)' },
+  // Söll-konforme 7-Phasen-Struktur (Söll-Drei-Phasen-Modell feingegliedert · Fallback)
+  // Quelle: Söll, W. (2019): Sportunterricht — sportunterrichten. Hofmann, 10. Aufl.
+  // Spezifisches Aufwärmen als eigenständige Phase mit eigener didaktischer Funktion
+  // (sportartspezifische Vorbereitung der Schwerpunkt-Bewegung · KEIN attraktives Spiel).
+  const PHASEN_DEFAULT_SPORT = [
+    { id: 's1_begruessung',     label: '1 Begrüßung',                  kurz: 'Anwesenheit · Schmuckkontrolle · Stundenüberblick · Zielangabe (3 min · Söll: Einstimmung)' },
+    { id: 's2_aufwaermen_allg', label: '2 Allgemeines Aufwärmen',      kurz: 'Herz-Kreislauf-Aktivierung · mobilisierend · Verletzungsprophylaxe (5-7 min · Söll: Einstimmung)' },
+    { id: 's3_aufwaermen_spez', label: '3 Spezifisches Aufwärmen',     kurz: 'sportartspezifische Vorbereitung · vorbereitende Übungen (3-5 min · Söll: Einstimmung · »negatives Attraktivitätsgefälle« vermeiden)' },
+    { id: 's4_erarbeitung',    label: '4 Erarbeitung',                 kurz: 'Bewegungslernen · Demonstration · Knotenpunkte · erste Versuche · Grobform (8-12 min · Söll: Schwerpunkt · Meinel/Schnabel)' },
+    { id: 's5_uebung',         label: '5 Übung / Stationsbetrieb',     kurz: 'Hauptphase · Festigung · Methodische Übungsreihe (MÜR) · Feinform (10-15 min · Söll: Schwerpunkt)' },
+    { id: 's6_anwendung',      label: '6 Anwendung / Spielform',       kurz: 'variable Verfügbarkeit · spielnahe Situation · Methodische Spielreihe (MSR Roth/Memmert · 5-10 min · Söll: Schwerpunkt)' },
+    { id: 's7_ausklang',       label: '7 Ausklang / Reflexion',        kurz: 'Cool-down · Verbalisierung der Knotenpunkte · Geräteabbau (3-5 min · Söll: Ausklang)' },
   ];
+  // Backwards-Compat-Alias (alte Aufrufer)
+  const PHASEN_DEFAULT = PHASEN_DEFAULT_SPORT;
 
   // Mager-3-K Lernziel renderer (Verhalten · Bedingung · Maßstab)
   function renderMagerZiel(z, opts) {
@@ -143,8 +150,9 @@
       el.appendChild(renderTeilziele(ue.lernziel_teilziele));
     }
 
-    // 5 Artikulationsstufen mit Sozialform-Tag pro Phase
-    const phasen = h('div', { class: 'mx-ue-phasen mx-ue-phasen--multi' });
+    // 7 Söll-konforme Artikulationsphasen mit Sozialform-Tag pro Phase
+    // (Klasse mx-ue-phasen--7 zusätzlich vergeben für CSS-Hooks · generisch über phasenSchema.length)
+    const phasen = h('div', { class: `mx-ue-phasen mx-ue-phasen--multi mx-ue-phasen--${schema.length}` });
     schema.forEach(p => {
       const body = ue[p.id];
       if (!body) return;
@@ -166,14 +174,14 @@
       el.appendChild(chips);
     }
 
-    // Kompetenzstrukturmodell
+    // Kompetenzstrukturmodell (Bayern: Gegenstand · Leitkompetenz · prozessbezogene Kompetenzen)
     if (ue.kompetenzstruktur) {
       const k = ue.kompetenzstruktur;
       const kse = h('div', { class: 'mx-ue-kse' });
       kse.appendChild(h('span', { class: 'mx-ue-kse__label' }, 'Kompetenzstruktur'));
       if (k.gegenstand)        kse.appendChild(h('span', { class: 'mx-ue-kse__axis' }, h('em', null, 'Gegenstand: '), k.gegenstand));
-      if (k.perspektive)       kse.appendChild(h('span', { class: 'mx-ue-kse__axis' }, h('em', null, 'Perspektive: '), k.perspektive));
-      if (k.prozesskompetenz)  kse.appendChild(h('span', { class: 'mx-ue-kse__axis' }, h('em', null, 'Prozess: '), k.prozesskompetenz));
+      if (k.leitkompetenz)     kse.appendChild(h('span', { class: 'mx-ue-kse__axis' }, h('em', null, 'Leitkompetenz: '), k.leitkompetenz));
+      if (k.prozesskompetenz)  kse.appendChild(h('span', { class: 'mx-ue-kse__axis' }, h('em', null, 'Prozessbezogene Kompetenzen: '), k.prozesskompetenz));
       el.appendChild(kse);
     }
 
@@ -310,9 +318,9 @@
         h('th', null, 'UZE'),
         h('th', null, 'Datum'),
         h('th', null, 'Stundenthema (Frage)'),
-        h('th', null, 'Prozesskompetenz'),
+        h('th', null, 'Prozessbezogene Kompetenz(en)'),
         h('th', null, 'Gegenstand'),
-        h('th', null, 'Perspektive'),
+        h('th', null, 'Leitkompetenz'),
         h('th', null, 'Stundenziel (kurz)'),
         h('th', null, 'Kommentar'),
       ),
@@ -325,7 +333,7 @@
       tr.appendChild(h('td', { class: 'mx-seq-tab__frage' }, r.stundenthema_frage || ''));
       tr.appendChild(h('td', null, r.prozesskompetenz || ''));
       tr.appendChild(h('td', null, r.gegenstand || ''));
-      tr.appendChild(h('td', null, r.perspektive || ''));
+      tr.appendChild(h('td', null, r.leitkompetenz || ''));
       tr.appendChild(h('td', null, r.stundenziel_kurz || ''));
       tr.appendChild(h('td', null, r.kommentar || ''));
       tbody.appendChild(tr);
@@ -453,7 +461,7 @@
       if (ke.pilot_sequenz) {
         const p = ke.pilot_sequenz;
         sec.appendChild(h('div', { class: 'mx-section-h' },
-          'Pilot-Sequenz · BUV-Template v4 · 5-Phasen-Standard'));
+          'Pilot-Sequenz · BUV-Template v4 · Söll-konformer 7-Phasen-Standard'));
         sec.appendChild(h('div', { class: 'ke-section__umsetzung-titel' }, p.titel));
         sec.appendChild(h('div', { class: 'ke-section__umsetzung-meta' },
           `${p.gesamtzeit} · ${p.praxis}`));
@@ -492,7 +500,7 @@
           sec.appendChild(legend);
         }
 
-        sec.appendChild(h('div', { class: 'mx-section-h mx-section-h--sub' }, 'UE-Verlaufspläne · 10 × 45 min'));
+        sec.appendChild(h('div', { class: 'mx-section-h mx-section-h--sub' }, 'UE-Verlaufspläne · 9 × 45 min · 7 Söll-Phasen'));
         (p.ues_detail || []).forEach(ue => {
           sec.appendChild(renderPilotUE(ue, p.phasenSchema));
         });
@@ -607,7 +615,7 @@
         if ((cell.kes || []).some(k => k.pilot_sequenz)) {
           cellEl.appendChild(h('div', {
             style: 'font-family: var(--mono); font-size: 9.5px; letter-spacing: 1px; color: var(--accent); margin-top: 4px; font-weight: 600;'
-          }, '★ Pilot-Sequenz · 10 UEs detailliert'));
+          }, '★ Pilot-Sequenz · 9 UEs · 7 Söll-Phasen'));
         }
         grid.appendChild(cellEl);
       });

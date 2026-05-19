@@ -1,10 +1,10 @@
-// GB-Matrix-Renderer WiB v1 · 13-Phasen-Artikulation · BUV-Template-konform
-// Konsumiert window.MATRIX (data.js v1) mit:
-//   - cells.kes[].pilot_sequenz.ues_detail[] · WiB-13-Phasen-Artikulation pro UE
-//     (p01 Hinfuehrung · p02 Problemstufe · p03 Zielangabe · p04 Vermutungen
-//      · p05 Loesungsplanung · p06 Loesung · p07 Praesentation · p08 Erkenntnis
-//      · p09 Wertungsstufe · p10 Zusammenfassung · p11 Vermutungen pruefen
-//      · p12 Transfer · p13 Sicherung)
+// GB-Matrix-Renderer WiB v3 · 13-Phasen-Standard (Bausteinskript Moritz-Steigerwald)
+// Konsumiert window.MATRIX (data.js v3) mit:
+//   - cells.kes[].pilot_sequenz.ues_detail[] · 13-Phasen-Artikulation pro UE
+//     (p01 Hinführung · p02 Problemstufe · p03 Problemformulierung · p04 Vermutungen
+//      · p05 Lösungsplanung · p06 Lösung-Hauptphase · p07 Präsentation
+//      · p08 Erkenntnisstufe · p09 Wertungsstufe · p10 Gesamtzusammenfassung
+//      · p11 Vermutungen-prüfen · p12 Transfer · p13 Sicherung)
 //   - cells.kes[].pilot_sequenz.phasenSchema · 13 Phasen-Items mit id/label/kurz
 //   - cells.kes[].pilot_sequenz.ues_detail[].prinzipien_b3[] · WiB-B3-Prinzipien-Chips
 //   - cells.kes[].pilot_sequenz.ues_detail[].kompetenzstruktur · 3-Achsen WiB-KSM
@@ -74,22 +74,29 @@
     setTimeout(() => { node.textContent = msg; }, 30);
   }
 
-  // WiB-Bayern 13-Phasen Standard-Schema (Fallback)
-  const PHASEN_DEFAULT = [
-    { id: 'p01', label: '1 Hinführung',         kurz: 'Vorwissen aktivieren' },
-    { id: 'p02', label: '2 Problemstufe',       kurz: 'Lebenserfahrung problematisieren' },
-    { id: 'p03', label: '3 Zielangabe',         kurz: 'Stundenthema + PK transparent' },
-    { id: 'p04', label: '4 Vermutungen',        kurz: 'Hypothesen sammeln (unbewertet)' },
-    { id: 'p05', label: '5 Lösungsplanung',     kurz: 'Was/Wozu/Wer/Wie/Womit' },
-    { id: 'p06', label: '6 Lösung',             kurz: 'HAUPTPHASE · selbstständige Arbeit' },
-    { id: 'p07', label: '7 Präsentation',       kurz: 'SuS als Experten' },
-    { id: 'p08', label: '8 Erkenntnisstufe',    kurz: 'Begriffsarbeit · Strukturwissen' },
-    { id: 'p09', label: '9 Wertungsstufe',      kurz: 'Persönliche Reflexion · Haltungen' },
-    { id: 'p10', label: '10 Zusammenfassung',   kurz: 'SuS verbalisieren' },
-    { id: 'p11', label: '11 Vermutungen prüfen', kurz: 'Verifizieren/Falsifizieren' },
-    { id: 'p12', label: '12 Transfer',          kurz: 'Neuer Kontext' },
-    { id: 'p13', label: '13 Sicherung',         kurz: 'Lernprozess-Reflexion · Hefteintrag' },
+  // WiB-Bayern 13-Phasen-Strukturmodell — Primärquelle:
+  //   Moritz-Steigerwald, Nadine, SRin: Baustein GB »Planung von Unterrichtseinheiten
+  //   im Fach Wirtschaft und Beruf«. AG der MS-Seminarleiter:innen Unterfranken.
+  // Ergänzende fachdidaktische Bezüge (Sekundärliteratur):
+  //   Köck (2021) Methoden als Kompetenzen · Roth (1957) 6 Lernstufen ·
+  //   Meyer (2008) Drei-Phasen-Grundrhythmus.
+  const PHASEN_DEFAULT_WIB = [
+    { id: 'p01', label: '1 Hinführung / Vorwissensaktivierung', kurz: 'Gelerntes und Neuzulernendes verbinden · Lernmotivation' },
+    { id: 'p02', label: '2 Problemstufe',                       kurz: 'Lebenserfahrungen problematisieren · Erfahrungen abrufen' },
+    { id: 'p03', label: '3 Problemformulierung / Zielangabe',   kurz: 'Transparenz Stundenthema + prozessbez. Kompetenz' },
+    { id: 'p04', label: '4 Vermutungen',                        kurz: 'Vorwissen aktivieren · Hypothesen sammeln (unbewertet)' },
+    { id: 'p05', label: '5 Lösungsplanung / Teilintentionen',   kurz: 'Was · Wozu · Wer · Wie · Womit' },
+    { id: 'p06', label: '6 Lösung (Hauptphase)',                kurz: 'Selbstständige Informationsgewinnung · L als Berater · Differenzierung' },
+    { id: 'p07', label: '7 Präsentation',                       kurz: 'SuS als Experten · Ergebnisse vortragen + begründen' },
+    { id: 'p08', label: '8 Erkenntnisstufe / Problembeurteilung', kurz: 'Faktenwissen → Strukturwissen · Begriffsarbeit · Fachsprache' },
+    { id: 'p09', label: '9 Wertungsstufe',                      kurz: 'Persönliche Stellungnahme · Vergleich mit eigenen Erfahrungen' },
+    { id: 'p10', label: '10 Gesamtzusammenfassung',             kurz: 'SuS verbalisieren Kernerkenntnisse' },
+    { id: 'p11', label: '11 Vermutungen prüfen',                kurz: 'Verifizieren / Falsifizieren der Eingangsvermutungen' },
+    { id: 'p12', label: '12 Transfer',                          kurz: 'Anwendung in verschiedenen Zusammenhängen / Fallbeispiele' },
+    { id: 'p13', label: '13 Sicherung',                         kurz: 'Reflexion des Lernprozesses · individueller Lernzuwachs' },
   ];
+  // Backwards-compatibility-Alias (alte Variable-Name)
+  const PHASEN_DEFAULT = PHASEN_DEFAULT_WIB;
 
   // Mager-3-K Lernziel renderer (Verhalten · Bedingung · Maßstab)
   function renderMagerZiel(z, opts) {
@@ -153,8 +160,8 @@
       el.appendChild(renderTeilziele(ue.lernziel_teilziele));
     }
 
-    // 5 Artikulationsstufen mit Sozialform-Tag pro Phase
-    const phasen = h('div', { class: 'mx-ue-phasen mx-ue-phasen--multi' });
+    // 13-Phasen-Artikulation mit Sozialform-Tag pro Phase (Bausteinskript Moritz-Steigerwald)
+    const phasen = h('div', { class: 'mx-ue-phasen mx-ue-phasen--13' });
     schema.forEach(p => {
       const body = ue[p.id];
       if (!body) return;
@@ -433,7 +440,7 @@
       if (ke.pilot_sequenz) {
         const p = ke.pilot_sequenz;
         sec.appendChild(h('div', { class: 'mx-section-h' },
-          'Pilot-Sequenz · BUV-Template v4 · 5-Phasen-Standard'));
+          'Pilot-Sequenz · BUV-Template v4 · 13-Phasen-Standard (Bausteinskript Moritz-Steigerwald · Unterfranken)'));
         sec.appendChild(h('div', { class: 'ke-section__umsetzung-titel' }, p.titel));
         sec.appendChild(h('div', { class: 'ke-section__umsetzung-meta' },
           `${p.gesamtzeit} · ${p.praxis}`));
@@ -472,7 +479,7 @@
           sec.appendChild(legend);
         }
 
-        sec.appendChild(h('div', { class: 'mx-section-h mx-section-h--sub' }, 'UE-Verlaufspläne · 10 × 45 min'));
+        sec.appendChild(h('div', { class: 'mx-section-h mx-section-h--sub' }, 'UE-Verlaufspläne · 8 × 45 min'));
         (p.ues_detail || []).forEach(ue => {
           sec.appendChild(renderPilotUE(ue, p.phasenSchema));
         });
@@ -534,9 +541,9 @@
     const grid = h('div', { class: 'mx-grid', role: 'grid', 'aria-label': 'GB-Matrix WiB' });
     grid.appendChild(h('div', { class: 'mx-cell mx-cell--corner', role: 'columnheader' }, 'GB →'));
     M.lernbereiche.forEach(lb => {
+      // Spaltenheader: ausformulierter Titel (kein GB-/LB-Code im UI)
       grid.appendChild(h('div', { class: 'mx-cell mx-cell--lb-head', role: 'columnheader' },
-        h('span', { class: 'mx-lb-id' }, lb.id),
-        lb.titel.replace(lb.id + ' · ', ''),
+        lb.titel,
       ));
     });
 
@@ -587,7 +594,7 @@
         if ((cell.kes || []).some(k => k.pilot_sequenz)) {
           cellEl.appendChild(h('div', {
             style: 'font-family: var(--mono); font-size: 9.5px; letter-spacing: 1px; color: var(--accent); margin-top: 4px; font-weight: 600;'
-          }, '★ Pilot-Sequenz · 10 UEs detailliert'));
+          }, '★ Pilot-Sequenz · 8 UEs detailliert'));
         }
         grid.appendChild(cellEl);
       });
