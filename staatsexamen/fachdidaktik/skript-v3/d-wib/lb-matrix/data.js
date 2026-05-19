@@ -125,12 +125,39 @@ window.MATRIX = {
           ke_wortlaut: 'beschreiben Arbeit in unterschiedlichen Lebensbereichen (Haushalt · Beruf · Ehrenamt) und unterscheiden diese nach Sinn und Form.',
           ke_wortlaut_quelle: 'WiB-Anleitungen Jgst-Progression · sekundär aus LP+ Fachprofil',
           inhalte_lp: ['Formen von Arbeit · materielle Hausarbeit · Erziehungsarbeit · Pflegearbeit · Beziehungsarbeit · Erwerbsarbeit'],
-          fundort: 'WiB-Anleitungen Jgst. 5 (sekundär)' },
+          fundort: 'WiB-Anleitungen Jgst. 5 (sekundär)' ,
+          umsetzung_typ: 'idealtypisch',
+          umsetzung_titel: 'Skizze · Arbeitsformen-Plakat (4 UEs · Vorerfahrung-Aktivierung J5)',
+          ues: [
+            { nr: 1, titel: 'Was ist Arbeit? — Sammlung', inhalt: 'Bildimpuls: 5 Fotos (Bauarbeiter · Mutter im Haushalt · Lehrerin · Krankenpfleger · Ehrenamt Feuerwehr). SuS sortieren spontan + benennen, was sie als Arbeit erkennen. Sprachsensibel: Wortspeicher Arbeit · Aufgabe · Tätigkeit.' },
+            { nr: 2, titel: 'Hausarbeit · Erwerbsarbeit · Ehrenamt unterscheiden', inhalt: 'Drei-Spalten-Plakat anlegen. SuS ordnen 15 vorbereitete Tätigkeits-Karten zu (Wäsche waschen · Briefe austragen · Pakete im Sportverein-Stand verkaufen). Diskussion strittiger Fälle.' },
+            { nr: 3, titel: 'Familien-Interview als Hausaufgabe', inhalt: "SuS interviewen ein Familienmitglied: 'Welche Arbeit machst du an einem Tag? Wofür wirst du bezahlt, wofür nicht?' Ergebnis in 5 Sätzen in Mappe." },
+            { nr: 4, titel: 'Sicherung + Auswertung', inhalt: 'Klassen-Auswertung: was haben wir gemeinsam, was unterscheidet uns? Reflexion: Hausarbeit ist auch Arbeit, auch ohne Lohn. Hefteintrag mit Definition + Beispielen.' }
+          ],
+          bezuege: [
+            { didaktik: 'Beziehungshaltigkeit (Freudenthal)', verweis: 'UE 3 Familieninterview holt WiB aus der Lebenswelt der SuS in den Unterricht.' },
+            { didaktik: 'Sprachsensibler Fachunterricht', verweis: 'UE 1 Wortspeicher als Vorlauf zur Begriffsbildung — anschlussfähig bei DaZ-SuS.' },
+            { didaktik: '13-Phasen-Strukturmodell (Moritz-Steigerwald)', verweis: 'UE 1 = Hinführung + Problemstufe · UE 2 = Lösungsphase · UE 4 = Sicherung.' }
+          ]
+        },
         { ke_id: 'J5-GB1-02', thema: 'Eigene Arbeitserfahrungen reflektieren',
           ke_wortlaut: 'reflektieren eigene Arbeitserfahrungen in Familie und Schule und bewerten deren Sinn.',
           ke_wortlaut_quelle: 'WiB-Anleitungen · sekundär',
           inhalte_lp: ['Mitarbeit im Haushalt · Klassendienste · Schülerprojekte'],
-          fundort: 'WiB-Anleitungen Jgst. 5' },
+          fundort: 'WiB-Anleitungen Jgst. 5' ,
+          umsetzung_typ: 'idealtypisch',
+          umsetzung_titel: 'Skizze · Klassendienst-Reflexion (3 UEs · Selbstreflexion J5)',
+          ues: [
+            { nr: 1, titel: 'Klassendienst-Tagebuch', inhalt: 'SuS führen 1 Woche lang einen Klassendienst aus (Tafel · Mülldienst · Materialwart). Jeden Tag 3 Sätze ins Tagebuch: was habe ich gemacht, wie ist es mir dabei gegangen.' },
+            { nr: 2, titel: 'Auswertung im Sitzkreis', inhalt: 'Reflexionsrunde: Was war leicht/schwer? Wer hat mich gebraucht? Was hätte ich besser machen können? Satzanfänge an der Tafel (Mir fiel leicht … / Schwer war für mich …).' },
+            { nr: 3, titel: 'Mein Klassenbeitrag · Sicherung', inhalt: 'Jede:r SuS formuliert in 3 Sätzen: Mein wertvollster Klassenbeitrag war … · Das nehme ich mir für nächste Woche vor … . Im Berufswahlpass abgeheftet (Erstbefüllung).' }
+          ],
+          bezuege: [
+            { didaktik: 'Selbstwirksamkeit (Bandura)', verweis: 'Klassendienst als selbstwirksame Erfahrung — sehr früh in der Berufsorientierungs-Spirale.' },
+            { didaktik: 'Roth 6 Lernstufen', verweis: 'UE 1 Motivation+Tun · UE 2 Behalten · UE 3 Bereitstellen für späteren Transfer.' },
+            { didaktik: 'Berufswahlpass (KMK 2008)', verweis: 'UE 3 Erstbefüllung als Auftakt der portfolio-gestützten Berufsorientierung.' }
+          ]
+        },
       ],
     },
     'J5_GB2': { ke_anzahl: 1, jgst: 'J5', gb: 'GB2', gb_titel: 'Berufsorientierung', quelle_status: 'sekundaer',
@@ -139,7 +166,21 @@ window.MATRIX = {
           ke_wortlaut: 'erkunden Berufe im eigenen Lebensumfeld (Eltern · Verwandte · Nachbarn) und beschreiben deren Tätigkeiten.',
           ke_wortlaut_quelle: 'WiB-Anleitungen · sekundär',
           inhalte_lp: ['Berufsporträts · Erstaktivierung Berufswahlpass-Vorstufe'],
-          fundort: 'WiB-Anleitungen Jgst. 5' },
+          fundort: 'WiB-Anleitungen Jgst. 5' ,
+          umsetzung_typ: 'idealtypisch',
+          umsetzung_titel: 'Skizze · Berufekartei Lebensumfeld (4 UEs · Erstaktivierung BO J5)',
+          ues: [
+            { nr: 1, titel: 'Berufe-Bingo im Sitzkreis', inhalt: 'Spielimpuls: SuS nennen reihum einen Beruf, den sie kennen — keine Wiederholung erlaubt. An die Tafel: 25-30 Berufe. Sammlung als Klassenleistung.' },
+            { nr: 2, titel: 'Berufeporträt Familie', inhalt: 'Hausaufgabe: Steckbrief 1 Person aus dem Umfeld (Mutter · Vater · Onkel · Nachbar). Fragen: Was machst du? Was gefällt dir? Was ist anstrengend? Foto oder Zeichnung.' },
+            { nr: 3, titel: 'Vorstellung in Kleingruppen', inhalt: 'Je 4 SuS · 3 Min pro Steckbrief. Plakat-Sammlung der ganzen Klasse: 25 echte Berufeporträts mit Foto/Zeichnung + 3-Punkte-Beschreibung.' },
+            { nr: 4, titel: 'Berufekartei anlegen + Sicherung', inhalt: 'Karteikarten DIN-A6 mit Vorlage: Beruf · Tätigkeit · 1 Foto · 1 Satz von mir. Klassen-Karteikasten wird über alle 5 Jahrgangsstufen weitergeführt.' }
+          ],
+          bezuege: [
+            { didaktik: 'Realbegegnung (LP+ WiB-Methode)', verweis: 'UE 2 Familien-Interview = niederschwelligste Form der Realbegegnung — vor Erkundung + Praktikum.' },
+            { didaktik: 'Spiralprinzip (Bruner)', verweis: 'Berufekartei wächst über alle 5 Jgst — Anker für spätere Berufswahl-Auseinandersetzung.' },
+            { didaktik: '13-Phasen Moritz-Steigerwald', verweis: 'UE 1 Hinführung · UE 2 Lösungsplanung+Lösung (HA) · UE 3 Präsentation · UE 4 Sicherung.' }
+          ]
+        },
       ],
     },
     'J5_GB3': { ke_anzahl: 1, jgst: 'J5', gb: 'GB3', gb_titel: 'Wirtschaft', quelle_status: 'sekundaer',
@@ -148,7 +189,21 @@ window.MATRIX = {
           ke_wortlaut: 'reflektieren ihr eigenes Konsumverhalten und unterscheiden Bedürfnisse von Wünschen.',
           ke_wortlaut_quelle: 'WiB-Anleitungen · sekundär',
           inhalte_lp: ['Bedürfnishierarchie · Taschengeld · Werbeeinflüsse'],
-          fundort: 'WiB-Anleitungen Jgst. 5' },
+          fundort: 'WiB-Anleitungen Jgst. 5' ,
+          umsetzung_typ: 'idealtypisch',
+          umsetzung_titel: 'Skizze · Bedürfnis vs. Wunsch (4 UEs · Konsumreflexion J5)',
+          ues: [
+            { nr: 1, titel: 'Wunschzettel-Analyse', inhalt: 'Stiller Impuls: SuS schreiben anonym 5 Wünsche auf einen Zettel. Sortierung in 3 Spalten an der Tafel: brauche ich · hätte ich gern · ist mir egal.' },
+            { nr: 2, titel: 'Bedürfnishierarchie kindgerecht', inhalt: 'Vereinfachtes Maslow-Modell: Essen+Trinken · Schlaf · Schutz/Wohnung · Gemeinschaft · Lernen · Wünsche+Träume. Karten-Pyramide legen.' },
+            { nr: 3, titel: 'Taschengeld-Tagebuch (1 Woche)', inhalt: 'Hausaufgabe: jede Ausgabe notieren mit Kategorie (Essen · Spaß · Geschenk · Sparen). Auswertung mit Strichliste.' },
+            { nr: 4, titel: 'Werbe-Aufklärung + Sicherung', inhalt: 'Kurz-Werbung (max. 30 Sek) analysieren: Was verspricht sie? Brauche ich das? Werbe-Tricks erkennen — Verbraucherbildungs-Anker.' }
+          ],
+          bezuege: [
+            { didaktik: 'Verbraucherbildung (LP+ Querschnitt)', verweis: 'UE 4 als erste Stufe der Verbraucherbildung. Spiral-Anker zu J8-GB5 Verbraucherrechte.' },
+            { didaktik: 'Konsumenten-Rolle (LP+ WiB)', verweis: 'Sequenz aktiviert die Konsumenten-Rolle erstmalig + lebensweltnah.' },
+            { didaktik: '13-Phasen Moritz-Steigerwald', verweis: 'UE 1 Hinführung · UE 2 Erkenntnis · UE 3 Transfer (HA) · UE 4 Wertung+Sicherung.' }
+          ]
+        },
       ],
     },
     'J5_GB4': { ke_anzahl: 1, jgst: 'J5', gb: 'GB4', gb_titel: 'Technik', quelle_status: 'sekundaer',
@@ -157,7 +212,20 @@ window.MATRIX = {
           ke_wortlaut: 'beschreiben technische Geräte in Schule und Haushalt nach ihrer Funktion und benennen Motive ihrer Erfindung.',
           ke_wortlaut_quelle: 'QM-Rahmen Technik-Progression Jgst. 5',
           inhalte_lp: ['Erfindung · Geräte in Schule/Haushalt · Objektbetrachtung · Motive und Grenzen'],
-          fundort: 'QM_WiB_Evaluationsrahmen · Z. 278 (sekundär)' },
+          fundort: 'QM_WiB_Evaluationsrahmen · Z. 278 (sekundär)' ,
+          umsetzung_typ: 'idealtypisch',
+          umsetzung_titel: 'Skizze · Objektbetrachtung Wasserkocher (3 UEs · Technik-Einstieg J5)',
+          ues: [
+            { nr: 1, titel: 'Was tut ein Wasserkocher?', inhalt: 'Realobjekt im Klassenzimmer. SuS beschreiben Aufbau (Kanne · Deckel · Kabel · Schalter · Heizspirale). Funktion: Wasser erhitzen — wozu? Tee · Suppe · Reinigen.' },
+            { nr: 2, titel: 'Erfindungs-Geschichte', inhalt: 'Kurzimpuls: Vor 100 Jahren — wie hat man Wasser erhitzt? Holzofen · Gasflamme · Topf auf Herd. Vorteil des Wasserkochers? Schneller · sauberer · ungefährlicher.' },
+            { nr: 3, titel: 'Eigenes Gerät vorstellen + Sicherung', inhalt: 'Jede:r SuS stellt 1 technisches Gerät aus dem Haushalt vor (1 Min): Was macht es? Wozu? Wie hat man das früher gemacht? Hefteintrag: 5 Geräte mit Funktion + früher.' }
+          ],
+          bezuege: [
+            { didaktik: 'Objektbetrachtung (WiB-Methode Gegenstandsbereich Technik)', verweis: 'Methodisch standardisiert: Aufbau · Funktion · Wozu · Wie früher · Was wäre, wenn nicht?' },
+            { didaktik: 'Beziehungshaltigkeit (Freudenthal)', verweis: 'UE 1 startet am realen Gerät im Klassenraum.' },
+            { didaktik: '13-Phasen Moritz-Steigerwald', verweis: 'UE 1 Hinführung+Problemstufe · UE 2 Lösung · UE 3 Transfer+Sicherung.' }
+          ]
+        },
       ],
     },
     'J5_GB5': { ke_anzahl: 1, jgst: 'J5', gb: 'GB5', gb_titel: 'Recht', quelle_status: 'sekundaer',
@@ -166,7 +234,21 @@ window.MATRIX = {
           ke_wortlaut: 'verstehen Schul- und Hausordnung als Regelsystem und begründen die Notwendigkeit gemeinsamer Regeln.',
           ke_wortlaut_quelle: 'WiB-Anleitungen · sekundär',
           inhalte_lp: ['Schulordnung · Klassenregeln · Kinderrechte (Anbahnung)'],
-          fundort: 'WiB-Anleitungen Jgst. 5' },
+          fundort: 'WiB-Anleitungen Jgst. 5' ,
+          umsetzung_typ: 'idealtypisch',
+          umsetzung_titel: 'Skizze · Klassenregeln demokratisch (4 UEs · Recht J5)',
+          ues: [
+            { nr: 1, titel: 'Wozu Regeln?', inhalt: 'Gedankenexperiment: Stell dir vor, in unserer Klasse gäbe es keine Regeln. Was würde passieren? SuS sammeln Konsequenzen in Kleingruppen. Plenum: warum braucht eine Gemeinschaft Regeln?' },
+            { nr: 2, titel: 'Vorhandene Klassenregeln durchgehen', inhalt: 'Klassenregelplakat (existiert schon) wird Punkt für Punkt durchgegangen. Welche kennen SuS? Welche nicht? Welche werden eingehalten, welche nicht?' },
+            { nr: 3, titel: 'Demokratische Regel-Anpassung', inhalt: 'Vorschläge: Welche Regel würden wir gerne ändern, ergänzen, streichen? Diskussion + Klassenwahl (Mehrheitsentscheid). Neue Regel wird ausgehängt.' },
+            { nr: 4, titel: 'Sicherung + Reflexion Demokratie', inhalt: 'Hefteintrag: Wir haben eine Regel selbst beschlossen — das nennt man Demokratie. Spiralanker zu GPG-Demokratielernen.' }
+          ],
+          bezuege: [
+            { didaktik: 'Realhandeln (Petrik, GPG-Didaktik)', verweis: 'UE 3 demokratische Entscheidung in der Klasse = Realhandeln, nicht Simulation.' },
+            { didaktik: 'Beutelsbacher Konsens (Kontroversität)', verweis: 'UE 3 wahrt Kontroversitätsgebot: SuS dürfen unterschiedliche Positionen vertreten.' },
+            { didaktik: '13-Phasen Moritz-Steigerwald', verweis: 'UE 1 Problemstufe · UE 2 Vermutungen · UE 3 Lösung+Wertung · UE 4 Sicherung.' }
+          ]
+        },
       ],
     },
     'J5_LB6': { ke_anzahl: 1, jgst: 'J5', gb: 'LB6', gb_titel: 'Projekt', quelle_status: 'sekundaer',
@@ -175,7 +257,22 @@ window.MATRIX = {
           ke_wortlaut: 'beteiligen sich an einem kleinen Klassenprojekt (z.B. Klassenzimmer-Gestaltung · Schulfest-Beitrag) und benennen Projektphasen.',
           ke_wortlaut_quelle: 'LP+ Fachprofil · Aufbau des Fachlehrplans',
           inhalte_lp: ['Projektinitiative · Projektplanung · Durchführung · Präsentation · Reflexion (mit hoher L-Steuerung)'],
-          fundort: 'Aufbau-Fachlehrplan-Md · Z. 18' },
+          fundort: 'Aufbau-Fachlehrplan-Md · Z. 18' ,
+          umsetzung_typ: 'idealtypisch',
+          umsetzung_titel: 'Skizze · Klassenfest organisieren (5 UEs · erstes Projekt J5)',
+          ues: [
+            { nr: 1, titel: 'Wir planen ein Klassenfest', inhalt: 'Brainstorming: Was wollen wir feiern? Wann? Wer kommt? Klassen-Mind-Map. Lehrkraft sammelt + ordnet.' },
+            { nr: 2, titel: 'Aufgaben verteilen', inhalt: 'Vier Teams: Essen · Deko · Programm · Einladungen. Jedes Team plant für sich: Was brauchen wir? Wer macht was? Wann?' },
+            { nr: 3, titel: 'Vorbereitung in den Teams', inhalt: 'Materialbeschaffung, Einladungen schreiben, Spiele aussuchen, Deko basteln. Lehrkraft als Berater. Zwischenstand-Treffen.' },
+            { nr: 4, titel: 'Das Fest', inhalt: 'Durchführung. SuS sind Gastgeber. Lehrkraft im Hintergrund.' },
+            { nr: 5, titel: 'Reflexion + Sicherung', inhalt: 'Was hat funktioniert? Was nicht? Was nehmen wir mit für das nächste Projekt? Hefteintrag mit 3 Stichpunkten pro Person.' }
+          ],
+          bezuege: [
+            { didaktik: 'Vollständige Handlung 6 Schritte (Hacker/Aebli)', verweis: 'Klassenfest = idealtypisches erstes Projekt mit allen 6 Schritten: Informieren · Planen · Entscheiden · Ausführen · Kontrollieren · Bewerten.' },
+            { didaktik: 'Projektmethode (Frey 1982)', verweis: 'Niederschwelliges erstes Projekt, anschlussfähig für höhere Jgst (Schülerfirma J7, Praktikum J8/9).' },
+            { didaktik: '13-Phasen Moritz-Steigerwald', verweis: 'UE 1 Hinführung · UE 2 Planung · UE 3 Lösung · UE 4 Präsentation · UE 5 Wertung+Sicherung+Transfer.' }
+          ]
+        },
       ],
     },
 
@@ -186,7 +283,21 @@ window.MATRIX = {
           ke_wortlaut: 'untersuchen die Vielfalt von Arbeit in der Gesellschaft und benennen Unterschiede in Form, Sinn und Wertschätzung.',
           ke_wortlaut_quelle: 'WiB-Anleitungen · sekundär',
           inhalte_lp: ['Hauptberufe · Nebentätigkeiten · ehrenamtliche Arbeit · gesellschaftliche Wertschätzung'],
-          fundort: 'WiB-Anleitungen Jgst. 6' },
+          fundort: 'WiB-Anleitungen Jgst. 6' ,
+          umsetzung_typ: 'idealtypisch',
+          umsetzung_titel: 'Skizze · Arbeitsmittel-Rallye (4 UEs · Arbeit J6)',
+          ues: [
+            { nr: 1, titel: 'Was ist ein Arbeitsmittel?', inhalt: 'Realobjekte mitbringen: Hammer · Kuli · Mikroskop · Taschenrechner · Bohrmaschine. SuS ordnen: Was nutzt man wofür? Welcher Beruf?' },
+            { nr: 2, titel: 'Werkzeuge in 5 Berufen', inhalt: 'Plakate: Frisör · Maurer · Köchin · Mechaniker · Programmiererin. Welches Arbeitsmittel passt zu welchem Beruf? Bildkarten zuordnen.' },
+            { nr: 3, titel: 'Arbeitsmittel-Geschichte', inhalt: 'Wie war das früher? Schreibmaschine vs Computer · Pferd vs Bagger · Brief vs E-Mail. Wandel der Arbeitsmittel.' },
+            { nr: 4, titel: 'Sicherung + Hefteintrag', inhalt: 'Tabelle: 10 Arbeitsmittel · Beruf · Funktion. Reflexion: Arbeitsmittel verändern sich — Berufe auch.' }
+          ],
+          bezuege: [
+            { didaktik: 'Spiralprinzip (Bruner)', verweis: 'J5 Berufeporträts → J6 Arbeitsmittel-Vertiefung → J7+ Berufsfeld-Erkundung.' },
+            { didaktik: 'Objektbetrachtung-Methode', verweis: 'UE 1+2 nutzen Realobjekte als Lern-Anker.' },
+            { didaktik: '13-Phasen Moritz-Steigerwald', verweis: 'UE 1 Hinführung+Problem · UE 2-3 Lösung · UE 4 Sicherung+Transfer.' }
+          ]
+        },
       ],
     },
     'J6_GB2': { ke_anzahl: 1, jgst: 'J6', gb: 'GB2', gb_titel: 'Berufsorientierung', quelle_status: 'sekundaer',
@@ -195,7 +306,22 @@ window.MATRIX = {
           ke_wortlaut: 'erkunden ihre eigenen Stärken und Interessen und ordnen ihnen Tätigkeitsbereiche zu.',
           ke_wortlaut_quelle: 'WiB-Anleitungen · sekundär',
           inhalte_lp: ['Selbstbild-Fremdbild-Vergleich · Interessen-Inventur · erste Berufsfelder zuordnen'],
-          fundort: 'WiB-Anleitungen Jgst. 6' },
+          fundort: 'WiB-Anleitungen Jgst. 6' ,
+          umsetzung_typ: 'idealtypisch',
+          umsetzung_titel: 'Skizze · Berufsfeld-Erkundung erste (5 UEs · BO J6)',
+          ues: [
+            { nr: 1, titel: 'Was ist ein Berufsfeld?', inhalt: 'Klärung: Berufsfeld vs. Einzelberuf (z.B. Gesundheit → Krankenpfleger · Arzt · MFA · Apothekerin · Physiotherapeut). 5 Berufsfelder vorstellen.' },
+            { nr: 2, titel: 'Berufsfeld-Wahl in Kleingruppen', inhalt: 'Jede 3er-Gruppe wählt 1 Berufsfeld. Aufgabe: 4 Berufe darin finden + recherchieren (BERUFENET-Bilder · Berufebuch).' },
+            { nr: 3, titel: 'Berufefeld-Plakat', inhalt: 'Gruppen erstellen DIN-A2-Plakat: Berufsfeld-Name · 4 Berufe · je 1 Foto · je 1 Tätigkeit. Sehr visuell.' },
+            { nr: 4, titel: 'Galerie-Rundgang', inhalt: 'Plakate an Wände. Galerie-Rundgang mit Beobachtungsbogen: Welches Berufsfeld interessiert mich? Warum?' },
+            { nr: 5, titel: 'Sicherung + Berufswahlpass', inhalt: 'Eintrag in den Berufswahlpass: 2 Berufsfelder, die mich interessieren + Begründung. Spiralanker zur Stärken-Inventur in J7.' }
+          ],
+          bezuege: [
+            { didaktik: 'Berufswahlpass (KMK 2008)', verweis: 'UE 5 Erst-Eintrag — Portfolioarbeit als Spiral-Anker.' },
+            { didaktik: 'Spiralprinzip (Bruner)', verweis: 'J6 erste Berufsfeld-Erkundung → J7 Stärken-Inventur → J8 Anforderungsprofile → J9 Bewerbung.' },
+            { didaktik: '13-Phasen Moritz-Steigerwald', verweis: 'UE 1 Hinführung · UE 2-3 Lösung · UE 4 Präsentation · UE 5 Sicherung+Transfer.' }
+          ]
+        },
       ],
     },
     'J6_GB3': { ke_anzahl: 1, jgst: 'J6', gb: 'GB3', gb_titel: 'Wirtschaft', quelle_status: 'sekundaer',
@@ -204,7 +330,21 @@ window.MATRIX = {
           ke_wortlaut: 'beschreiben den Geldkreislauf in der Familie und unterscheiden Einnahmen von Ausgaben.',
           ke_wortlaut_quelle: 'WiB-Anleitungen · sekundär',
           inhalte_lp: ['Haushaltsplan-Vorstufe · Einnahmen · Ausgaben · Sparen'],
-          fundort: 'WiB-Anleitungen Jgst. 6' },
+          fundort: 'WiB-Anleitungen Jgst. 6' ,
+          umsetzung_typ: 'idealtypisch',
+          umsetzung_titel: 'Skizze · Anbieter und Nachfrager (4 UEs · Markt-Einstieg J6)',
+          ues: [
+            { nr: 1, titel: 'Klassen-Tauschmarkt simulieren', inhalt: 'SuS bringen 1 Tausch-Objekt mit (Sticker · Stift). Tauschbörse 10 Min frei. Reflexion: Wer hat was bekommen? War es ein guter Tausch?' },
+            { nr: 2, titel: 'Anbieter + Nachfrager als Rollen', inhalt: 'Begriffsklärung: jede:r war beides. Übung mit Karten: Wer bietet was an, wer fragt was nach — Bäcker · Schüler · Bäuerin · Käufer.' },
+            { nr: 3, titel: 'Preis als Tausch-Verhältnis', inhalt: 'Wie viele Sticker = 1 Stift? Übersetzung in Geld: Preis als Tausch-Maßstab. Klassenmarkt mit Spielgeld.' },
+            { nr: 4, titel: 'Sicherung + Beruf-Bezug', inhalt: 'Hefteintrag: Anbieter-Nachfrager-Modell. Bezug: Berufe sind Anbieter von Arbeitskraft, Unternehmen sind Nachfrager.' }
+          ],
+          bezuege: [
+            { didaktik: 'Beziehungshaltigkeit (Freudenthal)', verweis: 'UE 1 echter Klassen-Tauschmarkt als enaktiver Einstieg.' },
+            { didaktik: 'Konsumenten-Rolle + Unternehmer-Rolle', verweis: 'Sequenz aktiviert zwei LP+-Rollen gleichzeitig + spiralig.' },
+            { didaktik: '13-Phasen Moritz-Steigerwald', verweis: 'UE 1 Hinführung · UE 2-3 Erkenntnis · UE 4 Sicherung+Transfer.' }
+          ]
+        },
       ],
     },
     'J6_GB4': { ke_anzahl: 1, jgst: 'J6', gb: 'GB4', gb_titel: 'Technik', quelle_status: 'sekundaer',
@@ -213,7 +353,22 @@ window.MATRIX = {
           ke_wortlaut: 'erkunden technische Geräte und Verfahren mit Expertengesprächen und beschreiben Funktionen sowie Energieaufwand.',
           ke_wortlaut_quelle: 'QM-Rahmen Technik-Progression Jgst. 6',
           inhalte_lp: ['Technikerkundung · Expertengespräche · Funktionen · Energieaufwand · technischer Wandel'],
-          fundort: 'QM_WiB_Evaluationsrahmen · Z. 280 (sekundär)' },
+          fundort: 'QM_WiB_Evaluationsrahmen · Z. 280 (sekundär)' ,
+          umsetzung_typ: 'idealtypisch',
+          umsetzung_titel: 'Skizze · Werkstoff Holz (5 UEs · Technik J6)',
+          ues: [
+            { nr: 1, titel: 'Holz-Erkundung im Klassenzimmer', inhalt: 'Wo überall ist Holz? Stühle · Tische · Bleistift · Fenster · Tafel. Holzarten unterscheiden: Buche · Eiche · Kiefer (Realstücke betrachten).' },
+            { nr: 2, titel: 'Holzbearbeitung Werkstattregeln', inhalt: 'Werkstattraum-Einführung: Sicherheitsregeln · Werkzeug-Vorstellung (Säge · Hammer · Schleifpapier · Bohrer). Erste Übungen: gerade sägen.' },
+            { nr: 3, titel: 'Werkstück planen', inhalt: 'Einfaches Werkstück: Schlüsselanhänger aus Holz. Skizze + Maße + Materialliste + Arbeitsplan.' },
+            { nr: 4, titel: 'Werkstück fertigen', inhalt: 'Sägen · Schleifen · Bohren · Lackieren. In Gruppen oder Einzel mit Anleitung. Lehrkraft als Sicherheits- + Lernberater.' },
+            { nr: 5, titel: 'Bewertung + Sicherung', inhalt: 'Werkstück präsentieren · Selbsteinschätzung Qualität · Lernfortschritt im Werkstücktagebuch eintragen.' }
+          ],
+          bezuege: [
+            { didaktik: 'Vollständige Handlung (Hacker/Aebli)', verweis: 'UE 3-5 zeigen 6 Schritte: Informieren · Planen · Entscheiden · Ausführen · Kontrollieren · Bewerten.' },
+            { didaktik: 'Werkstattprinzip (LP+ Technik)', verweis: 'Sicherheitsregeln + Werkzeugkunde in UE 2 als Basisinventar.' },
+            { didaktik: '13-Phasen Moritz-Steigerwald', verweis: 'UE 1 Hinführung · UE 2 Erkenntnis Werkstatt · UE 3 Planung · UE 4 Lösung · UE 5 Bewertung+Sicherung.' }
+          ]
+        },
       ],
     },
     'J6_GB5': { ke_anzahl: 1, jgst: 'J6', gb: 'GB5', gb_titel: 'Recht', quelle_status: 'sekundaer',
@@ -222,7 +377,21 @@ window.MATRIX = {
           ke_wortlaut: 'kennen wichtige Kinderrechte und begründen ihre Bedeutung für das eigene Leben.',
           ke_wortlaut_quelle: 'WiB-Anleitungen · sekundär',
           inhalte_lp: ['UN-Kinderrechtskonvention · Schutz · Förderung · Beteiligung'],
-          fundort: 'WiB-Anleitungen Jgst. 6' },
+          fundort: 'WiB-Anleitungen Jgst. 6' ,
+          umsetzung_typ: 'idealtypisch',
+          umsetzung_titel: 'Skizze · Kinderrechte UN-Konvention (4 UEs · Recht J6)',
+          ues: [
+            { nr: 1, titel: 'Was sind Kinderrechte?', inhalt: 'Bildimpuls: Foto Kinder in Schule · Krankenhaus · Spielplatz vs Kinder bei Arbeit (historisch · global). Frage: Was steht Kindern zu?' },
+            { nr: 2, titel: 'UN-Kinderrechts-Konvention', inhalt: 'Vereinfachte Fassung der 10 wichtigsten Kinderrechte. SuS lesen + ordnen Bildkarten zu. Diskussion: Welches Recht ist mir besonders wichtig?' },
+            { nr: 3, titel: 'Realisierung in Bayern + global', inhalt: 'Wo sind Kinderrechte verwirklicht? Wo nicht? UNICEF-Materialien. Vergleich Bayern · Deutschland · andere Länder.' },
+            { nr: 4, titel: 'Sicherung + Handlungs-Auftrag', inhalt: 'Klassenplakat Unsere Kinderrechte. Reflexion: Was kann ICH tun für Kinderrechte? (z.B. UNICEF-Aktion in Schule unterstützen).' }
+          ],
+          bezuege: [
+            { didaktik: 'Realhandlungsorientierung', verweis: 'UE 4 Handlungsauftrag — Politische Bildung als Mündigkeit (Klafki Schlüsselproblem).' },
+            { didaktik: 'Beutelsbacher Konsens', verweis: 'UE 3 zeigt Kontroversität auf (verschiedene Realisierungs-Niveaus).' },
+            { didaktik: '13-Phasen Moritz-Steigerwald', verweis: 'UE 1 Hinführung+Problem · UE 2 Lösung · UE 3 Wertung · UE 4 Handlung+Sicherung.' }
+          ]
+        },
       ],
     },
     'J6_LB6': { ke_anzahl: 1, jgst: 'J6', gb: 'LB6', gb_titel: 'Projekt', quelle_status: 'sekundaer',
@@ -231,7 +400,22 @@ window.MATRIX = {
           ke_wortlaut: 'planen und führen ein Projekt unter Anleitung durch und reflektieren ihren Beitrag im Team.',
           ke_wortlaut_quelle: 'LP+ Fachprofil · Aufbau Fachlehrplan',
           inhalte_lp: ['Projekt-5-Phasen · Aufgabenteilung im Team · Zeitplan · Reflexion'],
-          fundort: 'Aufbau-Fachlehrplan-Md' },
+          fundort: 'Aufbau-Fachlehrplan-Md' ,
+          umsetzung_typ: 'idealtypisch',
+          umsetzung_titel: 'Skizze · Schul-Brotbox-Projekt (5 UEs · Projekt J6)',
+          ues: [
+            { nr: 1, titel: 'Projektidee + Auftrag', inhalt: 'Auftrag: Wir entwerfen eine Brotbox für jüngere Kinder. Zielgruppe + Anforderungen sammeln: leicht · spülmaschinenfest · attraktiv · sicher.' },
+            { nr: 2, titel: 'Recherche + Skizze', inhalt: 'Recherche: Welche Brotboxen gibt es? Was ist gut, was schlecht? Erste Skizzen in 2er-Teams.' },
+            { nr: 3, titel: 'Modellbau', inhalt: 'Aus Karton + Klebeband Modell anfertigen. Anpassungen nach Test (passt 2 Brote rein? Lässt sich tragen?).' },
+            { nr: 4, titel: 'Präsentation + Bewertung', inhalt: 'Jedes Team präsentiert sein Modell der Klasse 5 (Zielgruppe). Feedback einholen. Welches Modell wäre vermarktbar?' },
+            { nr: 5, titel: 'Reflexion + Sicherung', inhalt: 'Hefteintrag: 6 Schritte der Vollständigen Handlung. Was haben wir gelernt? Was war anstrengend?' }
+          ],
+          bezuege: [
+            { didaktik: 'Vollständige Handlung (Hacker/Aebli)', verweis: 'Sequenz illustriert alle 6 Schritte ideal.' },
+            { didaktik: 'Projektmethode (Frey 1982)', verweis: 'Sehr erprobtes Schul-Projektformat.' },
+            { didaktik: '13-Phasen Moritz-Steigerwald', verweis: 'UE 1 Hinführung+Problem · UE 2 Planung · UE 3 Lösung · UE 4 Präsentation+Wertung · UE 5 Sicherung.' }
+          ]
+        },
       ],
     },
 
@@ -242,12 +426,40 @@ window.MATRIX = {
           ke_wortlaut: 'analysieren Aufwand und Ertrag verschiedener Arbeitsformen und beurteilen ihre ökonomischen und ökologischen Auswirkungen.',
           ke_wortlaut_quelle: 'QM-Rahmen Technik-Progression · sekundär',
           inhalte_lp: ['Aufwand-Ertrag-Verhältnis · ökonomische und ökologische Folgen · technischer Wandel der Arbeitsprozesse'],
-          fundort: 'QM_WiB_Evaluationsrahmen · Z. 282' },
+          fundort: 'QM_WiB_Evaluationsrahmen · Z. 282' ,
+          umsetzung_typ: 'idealtypisch',
+          umsetzung_titel: 'Skizze · Arbeitsteilung in der Pizzaproduktion (4 UEs · Arbeit J7)',
+          ues: [
+            { nr: 1, titel: 'Selbst eine Pizza machen', inhalt: 'Wir machen eine Pizza in Einzelarbeit (theoretisch). SuS notieren alle 12 Schritte. Reflexion: dauert lang!' },
+            { nr: 2, titel: 'Pizza in der Fabrik', inhalt: 'Industrielle Pizza-Produktion: Video oder Bildfolge. Arbeitsteilung sichtbar: Teigling · Sauce · Belag · Verpackung · Tiefkühlung. Jeder macht nur 1 Schritt.' },
+            { nr: 3, titel: 'Vor- und Nachteile', inhalt: 'Tabelle: Einzel-Pizza vs. Fabrik-Pizza. Schnell? Lecker? Eintönig? Effizient? Diskussion.' },
+            { nr: 4, titel: 'Sicherung Arbeitsteilung', inhalt: 'Begriffs-Klärung: Arbeitsteilung als ökonomisches Prinzip. Smith-Stecknadel-Beispiel als Klassik. Hefteintrag mit Mindmap.' }
+          ],
+          bezuege: [
+            { didaktik: 'Smith (1776) Stecknadel-Manufaktur', verweis: 'Klassisches Beispiel der Arbeitsteilung — bildungstragend.' },
+            { didaktik: 'Beziehungshaltigkeit (Freudenthal)', verweis: 'UE 1-2 vom Eigenerleben zur Industrieerfahrung.' },
+            { didaktik: '13-Phasen Moritz-Steigerwald', verweis: 'UE 1 Hinführung · UE 2 Erkenntnis · UE 3 Wertung · UE 4 Sicherung.' }
+          ]
+        },
         { ke_id: 'J7-GB1-02', thema: 'Arbeit als personale und gesellschaftliche Realität',
           ke_wortlaut: 'beschreiben Arbeit als personale und gesellschaftliche Realität und reflektieren eigene Erfahrungen.',
           ke_wortlaut_quelle: 'WiB-Anleitungen · sekundär',
           inhalte_lp: ['Arbeitsformen · Wertschätzung · Wandel der Arbeitswelt (Anbahnung)'],
-          fundort: 'WiB-Anleitungen Jgst. 7' },
+          fundort: 'WiB-Anleitungen Jgst. 7' ,
+          umsetzung_typ: 'idealtypisch',
+          umsetzung_titel: 'Skizze · Arbeit als personale + gesellschaftliche Realitaet (4 UEs · Arbeit J7)',
+          ues: [
+            { nr: 1, titel: 'Was bedeutet mir meine Arbeit?', inhalt: 'SuS interviewen 2 Erwachsene zu ihrer Arbeit: Was gibt sie dir? Was nimmt sie dir? Stolz · Frust · Sinn · Anerkennung. Sammlung im Plenum.' },
+            { nr: 2, titel: 'Sinn und Wert von Arbeit', inhalt: 'Klassen-Diskussion: Warum arbeiten Menschen? Geld · Identitaet · Anerkennung · Sinn · Gemeinschaft. Pyramide nach Wichtigkeit.' },
+            { nr: 3, titel: 'Wandel der Arbeitswelt (Anbahnung)', inhalt: 'Vergleich: Eltern · Grosseltern. Was war anders? Was bleibt? Anbahnung J9 Arbeitsmarkt-Wandel.' },
+            { nr: 4, titel: 'Sicherung + Selbstreflexion', inhalt: 'Hefteintrag mit Stichpunkten. Reflexion: Welche Bedeutung wird Arbeit fuer mich haben?' }
+          ],
+          bezuege: [
+            { didaktik: 'Arbeitnehmer-Rolle (LP+ WiB)', verweis: 'Personalisiert + reflektiert.' },
+            { didaktik: 'Spiralprinzip', verweis: 'J7 personal/gesellschaftlich → J9 Arbeitsmarkt-Wandel.' },
+            { didaktik: '13-Phasen Moritz-Steigerwald', verweis: 'UE 1 Hinfuehrung+Problem · UE 2 Wertung · UE 3 Erkenntnis · UE 4 Sicherung.' }
+          ]
+        },
       ],
     },
     'J7_GB2': { ke_anzahl: 2, jgst: 'J7', gb: 'GB2', gb_titel: 'Berufsorientierung', quelle_status: 'sekundaer',
@@ -256,12 +468,42 @@ window.MATRIX = {
           ke_wortlaut: 'legen ein Berufswahlportfolio an und dokumentieren erste Erkundungsergebnisse über sich selbst und Berufsfelder.',
           ke_wortlaut_quelle: 'QM-Rahmen Berufsorientierung-Kernkompetenzen Jgst. 7',
           inhalte_lp: ['Berufswahlportfolio · individuelle Sichtweisen von Arbeit und Beruf · berufliche Tätigkeitsbereiche · Informationsbeschaffung'],
-          fundort: 'QM_WiB_Evaluationsrahmen · Z. 302-311' },
+          fundort: 'QM_WiB_Evaluationsrahmen · Z. 302-311' ,
+          umsetzung_typ: 'idealtypisch',
+          umsetzung_titel: 'Skizze · Erste Stärken-Inventur (5 UEs · BO J7)',
+          ues: [
+            { nr: 1, titel: 'Was kann ich gut?', inhalt: 'Anonyme Stärken-Sammlung: jede:r schreibt 3 Stärken auf einen Zettel. Klassen-Wortwolke.' },
+            { nr: 2, titel: 'Selbstbild vs Fremdbild', inhalt: 'Übung in 3er-Teams: jede:r benennt 3 Stärken einer Mitschülerin. Vergleich mit eigener Liste.' },
+            { nr: 3, titel: 'Stärken-Karte mit Beispielen', inhalt: 'Jede:r SuS füllt Stärken-Karte: Stärke · ein konkretes Beispiel · ein Bezug zum Beruf.' },
+            { nr: 4, titel: 'Berufe-Anker', inhalt: 'Zu jeder Stärke: welche Berufe brauchen das? Wortspeicher + Beispiele aus der Klasse-J6-Berufekartei.' },
+            { nr: 5, titel: 'Berufswahlpass-Eintrag + Sicherung', inhalt: 'Stärken-Profil in Berufswahlpass übertragen. Reflexion: Was nehme ich aus dieser Stunde mit?' }
+          ],
+          bezuege: [
+            { didaktik: 'Berufswahlpass (KMK 2008)', verweis: 'Portfolio-Spiral-Anker.' },
+            { didaktik: 'Spiralprinzip (Bruner)', verweis: 'J7 Stärken-Inventur ist Vorlauf für J8-GB2-01 Anforderungsprofile (DEM Pilot-Sequenz-Anker).' },
+            { didaktik: '13-Phasen Moritz-Steigerwald', verweis: 'UE 1 Hinführung · UE 2-3 Erkenntnis · UE 4 Transfer · UE 5 Sicherung.' }
+          ]
+        },
         { ke_id: 'J7-GB2-02', thema: 'Berufsfelder erkunden — erste Betriebserkundung',
           ke_wortlaut: 'erkunden Berufsfelder im Rahmen einer ersten Betriebserkundung und vergleichen sie mit eigenen Vorstellungen.',
           ke_wortlaut_quelle: 'Leitfaden-Methoden-GB · BO',
           inhalte_lp: ['Betriebserkundung · Beobachtungsbogen · Anforderungsprofile (Anbahnung)'],
-          fundort: 'Leitfaden_Methoden_Gegenstandsbereiche · Z. 50' },
+          fundort: 'Leitfaden_Methoden_Gegenstandsbereiche · Z. 50' ,
+          umsetzung_typ: 'idealtypisch',
+          umsetzung_titel: 'Skizze · Erste Betriebserkundung (5 UEs · BO J7)',
+          ues: [
+            { nr: 1, titel: 'Was ist eine Betriebserkundung?', inhalt: 'Unterschied Erkundung vs Praktikum klaeren. Erwartungen sammeln.' },
+            { nr: 2, titel: 'Beobachtungsauftraege formulieren', inhalt: 'Was wollen wir wissen? 5 Forschungsfragen pro Gruppe. Beobachtungsbogen anlegen.' },
+            { nr: 3, titel: 'Im Betrieb', inhalt: '2-3-Stunden-Besuch. Strukturierte Beobachtung. Foto-Erlaubnis vorab klaeren.' },
+            { nr: 4, titel: 'Auswertung im Plenum', inhalt: 'Plakat-Auswertung pro Gruppe. Vergleich mit Vorerwartungen aus UE 1.' },
+            { nr: 5, titel: 'Sicherung + Anschluss J8', inhalt: 'Hefteintrag Betriebserkundung. Spiralanker: in J8 vertiefen wir mit Anforderungsprofilen.' }
+          ],
+          bezuege: [
+            { didaktik: 'Realbegegnung (LP+ WiB-Methode)', verweis: 'Erkundung als Vorstufe zum Praktikum.' },
+            { didaktik: 'Spiralprinzip (Bruner)', verweis: 'J6 Berufsfelder → J7 Erkundung → J8 Anforderungsprofile + Praktikum.' },
+            { didaktik: '13-Phasen Moritz-Steigerwald', verweis: 'UE 1 Hinfuehrung · UE 2 Planung · UE 3 Loesung · UE 4 Praesentation · UE 5 Sicherung.' }
+          ]
+        },
       ],
     },
     'J7_GB3': { ke_anzahl: 1, jgst: 'J7', gb: 'GB3', gb_titel: 'Wirtschaft', quelle_status: 'sekundaer',
@@ -270,7 +512,21 @@ window.MATRIX = {
           ke_wortlaut: 'beschreiben den einfachen Wirtschaftskreislauf (Haushalt · Unternehmen) und ordnen ihre eigene Rolle als Konsument zu.',
           ke_wortlaut_quelle: 'WiB-Anleitungen · sekundär',
           inhalte_lp: ['Wirtschaftskreislauf · Akteure · Konsument-Rolle · Werbung kritisch'],
-          fundort: 'WiB-Anleitungen Jgst. 7' },
+          fundort: 'WiB-Anleitungen Jgst. 7' ,
+          umsetzung_typ: 'idealtypisch',
+          umsetzung_titel: 'Skizze · Geld im Wirtschaftskreislauf (4 UEs · Wirtschaft J7)',
+          ues: [
+            { nr: 1, titel: 'Wie kommt das Geld in meine Hosentasche?', inhalt: 'SuS zeichnen ihren persönlichen Geldfluss: Eltern → SuS → Geschäft → Verkäuferin. Erkenntnis: Geld zirkuliert.' },
+            { nr: 2, titel: 'Vereinfachter Wirtschaftskreislauf', inhalt: 'Modell: Haushalte · Unternehmen. Pfeile: Arbeit · Geld · Waren · Konsum. Tafelbild durchgehen.' },
+            { nr: 3, titel: 'Rollenspiel Marktszene', inhalt: '5 Stationen mit Spielgeld: Bauernhof · Mühle · Bäckerei · Supermarkt · Konsument. SuS wechseln Rollen, Geld fließt im Kreis.' },
+            { nr: 4, titel: 'Sicherung Tafelbild', inhalt: 'Hefteintrag Wirtschaftskreislauf-Modell. Reflexion: Wo bin ICH im Kreislauf? (mehrere Rollen!).' }
+          ],
+          bezuege: [
+            { didaktik: 'Modell-Methode (WiB-Methodik GB Wirtschaft)', verweis: 'UE 2 Modell ist klassischer GB-Wirtschaft-Zugang.' },
+            { didaktik: 'Konsumenten-/Arbeitnehmer-Rolle', verweis: 'Sequenz aktiviert beide LP+-Rollen kontrastiert.' },
+            { didaktik: '13-Phasen Moritz-Steigerwald', verweis: 'UE 1 Hinführung · UE 2 Lösung · UE 3 Lösung+Handeln · UE 4 Sicherung.' }
+          ]
+        },
       ],
     },
     'J7_GB4': { ke_anzahl: 1, jgst: 'J7', gb: 'GB4', gb_titel: 'Technik', quelle_status: 'sekundaer',
@@ -279,7 +535,22 @@ window.MATRIX = {
           ke_wortlaut: 'analysieren die Vielfalt technischer Geräte im Haushalt und beurteilen ihre ökonomischen und ökologischen Auswirkungen.',
           ke_wortlaut_quelle: 'QM-Rahmen Technik-Progression Jgst. 7',
           inhalte_lp: ['Vielfalt Haushalt · Aufwand/Ertrag · ökonomische/ökologische Auswirkungen · technischer Wandel → Arbeitsprozesse + Qualifikation'],
-          fundort: 'QM_WiB_Evaluationsrahmen · Z. 283' },
+          fundort: 'QM_WiB_Evaluationsrahmen · Z. 283' ,
+          umsetzung_typ: 'idealtypisch',
+          umsetzung_titel: 'Skizze · Werkstoff Metall (5 UEs · Technik J7)',
+          ues: [
+            { nr: 1, titel: 'Metall im Alltag erkunden', inhalt: 'Wo ist überall Metall? Stahl in Brücken · Aluminium in Dosen · Kupfer in Kabeln · Eisen in Schrauben. Eigenschaften-Tabelle.' },
+            { nr: 2, titel: 'Werkstattregeln Metallbearbeitung', inhalt: 'Sicherheitsregeln (Schutzbrille · Handschuhe) · Werkzeuge (Feile · Säge · Bohrer für Metall · Schraubstock). Erste Übungen.' },
+            { nr: 3, titel: 'Werkstück planen', inhalt: 'Schlüsselanhänger aus Aluminium-Blech. Skizze · Maße · Arbeitsplan.' },
+            { nr: 4, titel: 'Werkstück fertigen', inhalt: 'Anreißen · Sägen · Feilen · Bohren · Prägen oder Punzen. Sicherheitskontrollen durch Lehrkraft.' },
+            { nr: 5, titel: 'Bewertung + Sicherung', inhalt: 'Selbsteinschätzung Qualität. Vergleich Holz J6 vs. Metall J7. Hefteintrag mit Vor-/Nachteilen.' }
+          ],
+          bezuege: [
+            { didaktik: 'Vollständige Handlung (Hacker/Aebli)', verweis: 'Wieder alle 6 Schritte — spiral-vertiefend zu J6 Holz.' },
+            { didaktik: 'Spiralprinzip (Bruner)', verweis: 'Werkstoff-Spirale: Holz J6 → Metall J7 → Kunststoff J8 → komplexe Fertigung J9.' },
+            { didaktik: '13-Phasen Moritz-Steigerwald', verweis: 'Standard-Verlauf für Technik-Werkstücke.' }
+          ]
+        },
       ],
     },
     'J7_GB5': { ke_anzahl: 1, jgst: 'J7', gb: 'GB5', gb_titel: 'Recht', quelle_status: 'sekundaer',
@@ -288,7 +559,21 @@ window.MATRIX = {
           ke_wortlaut: 'kennen grundlegende Verbraucherrechte (Widerrufsrecht · Gewährleistung) und wenden sie auf einfache Alltagsfälle an.',
           ke_wortlaut_quelle: 'WiB-Anleitungen · sekundär',
           inhalte_lp: ['Widerrufsrecht · Gewährleistung · einfache Verbraucher-Fälle'],
-          fundort: 'WiB-Anleitungen Jgst. 7' },
+          fundort: 'WiB-Anleitungen Jgst. 7' ,
+          umsetzung_typ: 'idealtypisch',
+          umsetzung_titel: 'Skizze · Jugendarbeitsschutzgesetz (4 UEs · Recht J7)',
+          ues: [
+            { nr: 1, titel: 'Darf ich arbeiten? Wann? Wie viel?', inhalt: 'Provokationsfrage: SuS schätzen, ab wann/wie lange Jugendliche arbeiten dürfen. Sammlung Schätzungen.' },
+            { nr: 2, titel: 'JArbSchG-Eckpunkte', inhalt: 'Vereinfachte Übersicht: Mindestalter 15 · Höchstarbeitszeit 8h · Verbot Nacht/Sonntag · Schutz vor gefährlichen Tätigkeiten. Karten-Übung.' },
+            { nr: 3, titel: 'Fallbeispiele beurteilen', inhalt: '5 Fälle (Lina 14 · Tom 15 · Anna 17): Was darf der/die? Was nicht? Begründung mit JArbSchG-Paragraphen.' },
+            { nr: 4, titel: 'Sicherung + Berufswahl-Bezug', inhalt: 'Was bedeutet das für mein Praktikum? Wo darf ich überhaupt rein? Hefteintrag mit 5 wichtigsten Regeln.' }
+          ],
+          bezuege: [
+            { didaktik: 'Fallarbeit (Recht-Didaktik)', verweis: 'UE 3 Fallbeispiele = klassische Methode der Rechtskunde.' },
+            { didaktik: 'Realitätsbezug Praktikum', verweis: 'UE 4 schlägt Brücke zum Betriebspraktikum J8/9.' },
+            { didaktik: '13-Phasen Moritz-Steigerwald', verweis: 'UE 1 Problem · UE 2 Erkenntnis · UE 3 Wertung · UE 4 Sicherung+Transfer.' }
+          ]
+        },
       ],
     },
     'J7_LB6': { ke_anzahl: 1, jgst: 'J7', gb: 'LB6', gb_titel: 'Projekt', quelle_status: 'verbatim',
@@ -297,7 +582,22 @@ window.MATRIX = {
           ke_wortlaut: 'beginnen selbstständige leittextorientierte Projektarbeit und dokumentieren kontinuierlich den Berufswahlprozess.',
           ke_wortlaut_quelle: 'LP+ Fachprofil · Aufbau-Fachlehrplan · Z. 18-20',
           inhalte_lp: ['Leittextmethode (Anbahnung) · vollständige Handlung (Planen · Durchführen · Prüfen · Bewerten) · kontinuierliche Portfolio-Pflege'],
-          fundort: 'Aufbau-Fachlehrplan-Md · Z. 19' },
+          fundort: 'Aufbau-Fachlehrplan-Md · Z. 19' ,
+          umsetzung_typ: 'idealtypisch',
+          umsetzung_titel: 'Skizze · Mini-Schülerfirma vorbereiten (5 UEs · Projekt J7)',
+          ues: [
+            { nr: 1, titel: 'Was ist eine Schülerfirma?', inhalt: 'Beispiele zeigen (Bilder · Videos). Klassen-Diskussion: Was würden WIR anbieten können?' },
+            { nr: 2, titel: 'Produktidee + Markt', inhalt: 'Brainstorming 5 Ideen. Markttest: Wer würde das kaufen? Zu welchem Preis? 2 SuS interviewen je 5 Personen.' },
+            { nr: 3, titel: 'Geschäftsplan einfach', inhalt: 'Geschäftsplan-Mini: Produkt · Zielgruppe · Preis · Kosten · Gewinn. Excel-Tabelle oder Papier.' },
+            { nr: 4, titel: 'Rollen verteilen', inhalt: 'Geschäftsleitung · Produktion · Marketing · Buchhaltung. SuS bewerben sich · Klasse wählt.' },
+            { nr: 5, titel: 'Sicherung + Ausblick J8', inhalt: 'Sicherung Wirtschaftsprinzipien. Ausblick: in J8 setzen wir die Schülerfirma um (Aufgaben über Schuljahr verteilt).' }
+          ],
+          bezuege: [
+            { didaktik: 'Schülerfirma (LP+ WiB-Methode GB Wirtschaft)', verweis: 'Kanonische Methode für Wirtschaft + BO-Integration.' },
+            { didaktik: 'Vollständige Handlung (Hacker/Aebli)', verweis: 'Projektplanung deckt 4 erste Schritte ab — Ausführung folgt J8.' },
+            { didaktik: '13-Phasen Moritz-Steigerwald', verweis: 'UE 1 Hinführung · UE 2-3 Planung · UE 4 Lösungsorganisation · UE 5 Sicherung+Transfer.' }
+          ]
+        },
       ],
     },
 
@@ -308,7 +608,22 @@ window.MATRIX = {
           ke_wortlaut: 'beschreiben Arbeitsplatzbedingungen aus einer Betriebserkundung und beurteilen Aspekte von Ergonomie und Arbeitsschutz.',
           ke_wortlaut_quelle: 'QM-Rahmen Technik-Progression Jgst. 8',
           inhalte_lp: ['Betriebserkundung · Produktionsverfahren · Produktionsmittel · Arbeitsplatzbedingungen · Ergonomie · Arbeitsschutz'],
-          fundort: 'QM_WiB_Evaluationsrahmen · Z. 284' },
+          fundort: 'QM_WiB_Evaluationsrahmen · Z. 284' ,
+          umsetzung_typ: 'idealtypisch',
+          umsetzung_titel: 'Skizze · Betriebserkundung Ergonomie (5 UEs · Arbeit J8)',
+          ues: [
+            { nr: 1, titel: 'Betriebserkundung vorbereiten', inhalt: 'Klassen-Wahl Betrieb (z.B. Druckerei · Lebensmittel-Produktion · Werkstatt). Beobachtungsaufträge formulieren: Was wollen wir wissen? Sicherheits- und Verhaltensregeln.' },
+            { nr: 2, titel: 'Erkundung im Betrieb', inhalt: '3-Stunden-Besuch. Beobachtung mit Bogen: Arbeitsplätze · Werkzeuge · Schutzkleidung · Pausenregelung. Foto-Erlaubnis vorher klären.' },
+            { nr: 3, titel: 'Auswertung Ergonomie', inhalt: 'Plakat-Auswertung: Welche Arbeitsplätze sind ergonomisch gut? Welche schlecht? (Sitzhöhe · Lichtverhältnisse · Lärmschutz · Pausen).' },
+            { nr: 4, titel: 'Arbeitsschutz-Recherche', inhalt: 'Was sind Arbeitsschutz-Vorschriften? UVV · BG · Schutzkleidung · Ersthelfer. Kurz-Recherche im Internet (Berufsgenossenschaften).' },
+            { nr: 5, titel: 'Sicherung + Bewertung', inhalt: 'Klassen-Plakat Was macht einen guten Arbeitsplatz aus. Hefteintrag mit Ergonomie-Checkliste 10 Punkte. Spiralanker Praktikum.' }
+          ],
+          bezuege: [
+            { didaktik: 'Realbegegnung (LP+ WiB)', verweis: 'Betriebserkundung als kanonische Methode der Berufsorientierung.' },
+            { didaktik: 'Arbeitnehmer-Rolle (LP+)', verweis: 'Sequenz aktiviert Arbeitnehmer-Perspektive konkret.' },
+            { didaktik: '13-Phasen Moritz-Steigerwald', verweis: 'UE 1 Lösungsplanung · UE 2 Lösung · UE 3-4 Erkenntnis · UE 5 Wertung+Sicherung.' }
+          ]
+        },
       ],
     },
     'J8_GB2': { ke_anzahl: 3, jgst: 'J8', gb: 'GB2', gb_titel: 'Berufsorientierung', quelle_status: 'verbatim',
@@ -1023,12 +1338,41 @@ window.MATRIX = {
           ke_wortlaut: 'bereiten ein Betriebspraktikum vor (Bewerbung · Erkundungsfragen · Verhaltensregeln) und reflektieren ihre Erwartungen.',
           ke_wortlaut_quelle: 'WiB-Anleitungen + LP+ Jgst-Progression',
           inhalte_lp: ['Bewerbungsmappe · Anschreiben · Erkundungsfragen · Verhaltensregeln · Erwartungs-Reflexion'],
-          fundort: 'WiB-Anleitungen Jgst. 8' },
+          fundort: 'WiB-Anleitungen Jgst. 8' ,
+          umsetzung_typ: 'idealtypisch',
+          umsetzung_titel: 'Skizze · Praktikum vorbereiten (5 UEs · BO J8)',
+          ues: [
+            { nr: 1, titel: 'Praktikum verstehen', inhalt: 'Was unterscheidet Praktikum von Erkundung J7? Berichte ehemaliger SuS · Foto · Video. Erwartungen sammeln.' },
+            { nr: 2, titel: 'Praktikumsplatz finden + bewerben', inhalt: 'BERUFENET · Eltern-Netzwerk · Initiativbewerbung. Anschreiben + Lebenslauf entwickeln (Vorlage).' },
+            { nr: 3, titel: 'Erkundungsfragen + Beobachtungsplan', inhalt: 'Was moechte ICH herausfinden? 3 Forschungsfragen + Praktikumstagebuch-Vorlage.' },
+            { nr: 4, titel: 'Verhaltensregeln + Sicherheit', inhalt: 'JArbSchG-Wiederholung J7. Praktikums-Knigge: Puenktlichkeit · Schutzkleidung · Fragen stellen.' },
+            { nr: 5, titel: 'Sicherung + Notfall-Plan', inhalt: 'Was bei Problemen? Praktikumsbeauftragte · Eltern · Lehrkraft. Vorbereitungs-Sicherung.' }
+          ],
+          bezuege: [
+            { didaktik: 'Realbegegnung Praktikum (LP+ WiB)', verweis: 'Praktikum als Hoehepunkt MS-Berufsorientierung.' },
+            { didaktik: 'Berufswahlpass (KMK 2008)', verweis: 'Vorbereitete Materialien fliessen ins Portfolio.' },
+            { didaktik: '13-Phasen Moritz-Steigerwald', verweis: 'UE 1 Hinfuehrung · UE 2-3 Planung · UE 4 Erkenntnis · UE 5 Sicherung.' }
+          ]
+        },
         { ke_id: 'J8-GB2-03', thema: 'Betriebspraktikum auswerten',
           ke_wortlaut: 'werten ihr Betriebspraktikum strukturiert aus und integrieren die Erfahrungen in das Berufswahlportfolio.',
           ke_wortlaut_quelle: 'WiB-Anleitungen',
           inhalte_lp: ['Praktikumsbericht · Reflexionsbogen · Portfolio-Update · Praktikumspraesentation'],
-          fundort: 'WiB-Anleitungen Jgst. 8' },
+          fundort: 'WiB-Anleitungen Jgst. 8' ,
+          umsetzung_typ: 'idealtypisch',
+          umsetzung_titel: 'Skizze · Praktikum auswerten (4 UEs · BO J8 Reflexion)',
+          ues: [
+            { nr: 1, titel: 'Praktikums-Erfahrungen sammeln', inhalt: 'Sitzkreis: Jede:r SuS erzaehlt 3 Eindruecke vom Praktikum. Sammlung auf Plakat: positive/negative/ueberraschende.' },
+            { nr: 2, titel: 'Praktikumsbericht schreiben', inhalt: 'Strukturvorlage: Betrieb · Taetigkeiten · Anforderungen · Stimmung · Eigene Bewertung. 2-3 Seiten.' },
+            { nr: 3, titel: 'Praesentation in der Klasse', inhalt: 'Jede:r praesentiert 3 Min: Mein Praktikum. Mit Foto/Skizze/Material. Klassen-Resonanz.' },
+            { nr: 4, titel: 'Sicherung + Portfolio-Update', inhalt: 'Reflexionsbogen: Was nehme ich fuer meine Berufswahl mit? Berufswahlpass-Eintrag aktualisieren.' }
+          ],
+          bezuege: [
+            { didaktik: 'Reflexion + Transfer (Roth-Lernstufen)', verweis: 'Roth-Stufe 6 Bereitstellen fuer kuenftige Berufswahl.' },
+            { didaktik: 'Berufswahlpass-Synthese', verweis: 'Praktikum als zentraler Portfolio-Beitrag J8.' },
+            { didaktik: '13-Phasen Moritz-Steigerwald', verweis: 'UE 1 Hinfuehrung · UE 2-3 Wertung+Praesentation · UE 4 Sicherung+Transfer.' }
+          ]
+        },
       ],
     },
     'J8_GB3': { ke_anzahl: 1, jgst: 'J8', gb: 'GB3', gb_titel: 'Wirtschaft', quelle_status: 'sekundaer',
@@ -1037,7 +1381,21 @@ window.MATRIX = {
           ke_wortlaut: 'erstellen einen einfachen Haushaltsplan und treffen begründete Konsumentscheidungen.',
           ke_wortlaut_quelle: 'Lernziele_WiB_Leitfaden Beispiel 2',
           inhalte_lp: ['Einnahmen · Ausgaben · Tabellenkalkulation · Spar-Konsum-Balance · Konsumentscheidungen begruenden'],
-          fundort: 'Lernziele_WiB_Leitfaden · Z. 59-64 (sekundär)' },
+          fundort: 'Lernziele_WiB_Leitfaden · Z. 59-64 (sekundär)' ,
+          umsetzung_typ: 'idealtypisch',
+          umsetzung_titel: 'Skizze · Markt und Preisbildung (4 UEs · Wirtschaft J8)',
+          ues: [
+            { nr: 1, titel: 'Klassen-Markt simulieren', inhalt: 'Rollenspiel: 5 Anbieter und 5 Nachfrager handeln Spielwaren. Preise bilden sich frei. Beobachtung: Wo entstehen die Preise?' },
+            { nr: 2, titel: 'Angebot + Nachfrage', inhalt: 'Diagramm zeichnen: Preis hoch → Angebot hoch · Preis niedrig → Nachfrage hoch. Schnittpunkt = Gleichgewichtspreis.' },
+            { nr: 3, titel: 'Realbeispiele Preisbildung', inhalt: 'Erdbeeren im Sommer billig, im Winter teuer — warum? Benzinpreis schwankt — warum? SuS analysieren in Gruppen.' },
+            { nr: 4, titel: 'Sicherung Marktmodell', inhalt: 'Hefteintrag Angebot-Nachfrage-Diagramm. Reflexion: Welche Faktoren beeinflussen den Preis? Konsumenten-Tipps.' }
+          ],
+          bezuege: [
+            { didaktik: 'Modell-Methode (WiB GB Wirtschaft)', verweis: 'Angebot-Nachfrage-Modell als zentrales Werkzeug.' },
+            { didaktik: 'Konsumenten-Rolle (LP+)', verweis: 'UE 3-4 Konsumenten-Anker.' },
+            { didaktik: '13-Phasen Moritz-Steigerwald', verweis: 'UE 1 Hinführung · UE 2 Erkenntnis · UE 3 Wertung · UE 4 Sicherung.' }
+          ]
+        },
       ],
     },
     'J8_GB4': { ke_anzahl: 1, jgst: 'J8', gb: 'GB4', gb_titel: 'Technik', quelle_status: 'sekundaer',
@@ -1046,7 +1404,22 @@ window.MATRIX = {
           ke_wortlaut: 'beschreiben Arbeitsplatzbedingungen aus einer Betriebserkundung und beurteilen Ergonomie und Arbeitsschutz.',
           ke_wortlaut_quelle: 'QM-Rahmen Technik-Progression Jgst. 8',
           inhalte_lp: ['Betriebserkundung · Arbeitsplatzbedingungen · Ergonomie · Arbeitsschutz · Unfallverhuetung'],
-          fundort: 'QM_WiB_Evaluationsrahmen · Z. 284 (sekundär)' },
+          fundort: 'QM_WiB_Evaluationsrahmen · Z. 284 (sekundär)' ,
+          umsetzung_typ: 'idealtypisch',
+          umsetzung_titel: 'Skizze · Werkstoff Kunststoff (5 UEs · Technik J8)',
+          ues: [
+            { nr: 1, titel: 'Kunststoff im Alltag', inhalt: 'Wo ist Kunststoff? Welche Sorten? PET-Flasche · PVC-Rohr · PE-Tüte. Eigenschaften vs Metall/Holz.' },
+            { nr: 2, titel: 'Bearbeitungstechniken', inhalt: 'Sägen · Bohren · Biegen mit Wärme. Werkstattregeln (Schmelzdämpfe).' },
+            { nr: 3, titel: 'Werkstück planen', inhalt: 'Acrylglas-Bilderrahmen oder PET-Vase. Skizze · Plan.' },
+            { nr: 4, titel: 'Werkstück fertigen', inhalt: 'Bearbeitungsschritte umsetzen. Sicherheitskontrollen.' },
+            { nr: 5, titel: 'Bewertung + Umweltbezug', inhalt: 'Selbstreflexion Qualität. Diskussion Kunststoff + Umwelt: Recycling, Vermeidung, Mikroplastik. Verbraucherbildungs-Anker.' }
+          ],
+          bezuege: [
+            { didaktik: 'Vollständige Handlung (Hacker/Aebli)', verweis: 'Werkstück-Sequenz als Standard.' },
+            { didaktik: 'Spiralprinzip (Bruner)', verweis: 'Holz J6 → Metall J7 → Kunststoff J8 → komplex J9.' },
+            { didaktik: 'Nachhaltigkeit (LP+ Querschnitt)', verweis: 'UE 5 Umwelt-Bezug = Mündigkeit (Klafki Schlüsselproblem Umwelt).' }
+          ]
+        },
       ],
     },
     'J8_GB5': { ke_anzahl: 1, jgst: 'J8', gb: 'GB5', gb_titel: 'Recht', quelle_status: 'sekundaer',
@@ -1055,7 +1428,21 @@ window.MATRIX = {
           ke_wortlaut: 'erklaeren Rechte und Pflichten im Ausbildungsverhaeltnis und wenden Bestimmungen des Berufsbildungsgesetzes auf Fallbeispiele an.',
           ke_wortlaut_quelle: 'Lernziele_WiB_Leitfaden Beispiel 5',
           inhalte_lp: ['Ausbildungsvertrag · Berufsbildungsgesetz (BBiG) · Rechte/Pflichten Auszubildende · Jugendarbeitsschutzgesetz · Fallstudien'],
-          fundort: 'Lernziele_WiB_Leitfaden · Z. 70-75 (sekundär)' },
+          fundort: 'Lernziele_WiB_Leitfaden · Z. 70-75 (sekundär)' ,
+          umsetzung_typ: 'idealtypisch',
+          umsetzung_titel: 'Skizze · Verbraucherrechte (4 UEs · Recht J8)',
+          ues: [
+            { nr: 1, titel: 'Mein Recht beim Kauf', inhalt: 'Fallimpuls: SuS kaufen ein Handy, es geht nach 3 Wochen kaputt. Was tun? Klassen-Vermutungen.' },
+            { nr: 2, titel: 'Gewährleistung + Garantie', inhalt: 'Unterschied klären: Gewährleistung (gesetzlich · 2 Jahre) vs. Garantie (freiwillig · Hersteller). Verbraucherzentrale-Materialien.' },
+            { nr: 3, titel: 'Reklamation üben', inhalt: 'Rollenspiel Reklamation: SuS gehen ins Geschäft, Lehrkraft = Verkäuferin. SuS argumentieren mit Gewährleistung.' },
+            { nr: 4, titel: 'Sicherung + Beratungsstellen', inhalt: 'Wo bekomme ich Hilfe? Verbraucherzentrale · Schiedsstellen · Schlichtungsstellen. Hefteintrag mit Anlaufstellen-Liste.' }
+          ],
+          bezuege: [
+            { didaktik: 'Verbraucherbildung (LP+ Querschnitt)', verweis: 'Sequenz direkt aus Verbraucherbildungs-Strang.' },
+            { didaktik: 'Beutelsbacher Konsens', verweis: 'Realsituation + Rechte aus Verbrauchersicht.' },
+            { didaktik: '13-Phasen Moritz-Steigerwald', verweis: 'UE 1 Problem · UE 2 Erkenntnis · UE 3 Handlung · UE 4 Sicherung.' }
+          ]
+        },
       ],
     },
     'J8_LB6': { ke_anzahl: 1, jgst: 'J8', gb: 'LB6', gb_titel: 'Projekt', quelle_status: 'sekundaer',
@@ -1064,7 +1451,22 @@ window.MATRIX = {
           ke_wortlaut: 'planen und fuehren ein Projekt mit Leittextmethode durch und dokumentieren ihren Arbeitsprozess.',
           ke_wortlaut_quelle: 'LP+ Fachprofil · Aufbau-Fachlehrplan',
           inhalte_lp: ['Leittextmethode (M-Klassen verbindlich) · vollstaendige Handlung · Dokumentation Arbeitsprozess · Praesentation'],
-          fundort: 'Aufbau-Fachlehrplan-Md' },
+          fundort: 'Aufbau-Fachlehrplan-Md' ,
+          umsetzung_typ: 'idealtypisch',
+          umsetzung_titel: 'Skizze · Praktikumsvorbereitung (5 UEs · Projekt J8)',
+          ues: [
+            { nr: 1, titel: 'Was erwartet mich im Praktikum?', inhalt: 'Berichte ehemaliger SuS (Foto · Video · Interviews). Was war gut? Was schwierig? Erwartungen sammeln.' },
+            { nr: 2, titel: 'Praktikumsplatz finden', inhalt: 'Recherche-Strategie: Eltern · Verwandte · BERUFENET · Initiativbewerbung. SuS arbeiten an konkreten Anschreiben.' },
+            { nr: 3, titel: 'Beobachtungsaufträge formulieren', inhalt: 'Was möchte ICH herausfinden? 3 Forschungsfragen pro SuS. Strukturierung als Praktikumstagebuch-Vorlage.' },
+            { nr: 4, titel: 'Rechte+Pflichten + Sicherheit', inhalt: 'JArbSchG-Wiederholung J7. Praktikumsrechte (Arbeitszeit, Pausen) + Praktikumspflichten (Pünktlichkeit, Sorgfalt).' },
+            { nr: 5, titel: 'Sicherung + Notfallplan', inhalt: 'Was tun bei Problemen? Lehrkraft anrufen, Eltern, Verbraucherzentrale. Praktikumstagebuch wird abgegeben + bewertet.' }
+          ],
+          bezuege: [
+            { didaktik: 'Realbegegnung Praktikum (LP+ WiB-Methode)', verweis: 'Praktikum als Höhepunkt der MS-Berufsorientierung.' },
+            { didaktik: 'Berufswahlpass (KMK 2008)', verweis: 'Praktikum dokumentiert + reflektiert im Portfolio.' },
+            { didaktik: 'Vollständige Handlung', verweis: 'UE 1-5 decken Schritte Informieren · Planen · Entscheiden ab — Praktikum = Ausführung+Bewerten.' }
+          ]
+        },
       ],
     },
 
@@ -1075,7 +1477,21 @@ window.MATRIX = {
           ke_wortlaut: 'analysieren Veraenderungen des Arbeitsmarkts (Digitalisierung · Globalisierung) und beurteilen ihre Auswirkungen auf eigene Berufschancen.',
           ke_wortlaut_quelle: 'Leitfaden-Methoden Projekt »Arbeitsbedingungen im Wandel«',
           inhalte_lp: ['Digitalisierung · Globalisierung · Strukturwandel · Berufschancen · Weiterbildung'],
-          fundort: 'Leitfaden_Methoden_Gegenstandsbereiche · Z. 30-50 (sekundär)' },
+          fundort: 'Leitfaden_Methoden_Gegenstandsbereiche · Z. 30-50 (sekundär)' ,
+          umsetzung_typ: 'idealtypisch',
+          umsetzung_titel: 'Skizze · Arbeitsmarkt im Wandel (4 UEs · Arbeit J9)',
+          ues: [
+            { nr: 1, titel: 'Berufe verschwinden, Berufe entstehen', inhalt: 'Zeitleiste 1900-2025: Welche Berufe gab es früher, gibt es heute nicht mehr (Pferdekutscher · Schreibmaschinist · Setzer)? Welche sind neu (App-Entwicklerin · Drohnen-Pilotin)?' },
+            { nr: 2, titel: 'Treiber des Wandels', inhalt: 'Technisierung · Digitalisierung · Globalisierung · demographischer Wandel · Nachhaltigkeit. Karten-Übung: Welcher Treiber führt zu welchem Wandel?' },
+            { nr: 3, titel: 'Folgen für meine Berufswahl', inhalt: 'Welche Berufe sind in 10 Jahren noch da? Recherche BERUFENET + IHK-Prognosen. Diskussion: lebenslanges Lernen als Antwort.' },
+            { nr: 4, titel: 'Sicherung + Berufswahl-Bezug', inhalt: 'Hefteintrag: 5 Lehren aus dem Wandel für meine Berufswahl. Eintrag in Berufswahlpass.' }
+          ],
+          bezuege: [
+            { didaktik: 'Lebenslange Berufsorientierung', verweis: 'UE 3-4 schlagen Brücke zum Erwachsenenleben.' },
+            { didaktik: 'Mündigkeit (Klafki)', verweis: 'Wandel der Arbeitswelt als Schlüsselproblem.' },
+            { didaktik: '13-Phasen Moritz-Steigerwald', verweis: 'UE 1 Problem · UE 2 Erkenntnis · UE 3 Wertung · UE 4 Sicherung.' }
+          ]
+        },
       ],
     },
     'J9_GB2': { ke_anzahl: 1, jgst: 'J9', gb: 'GB2', gb_titel: 'Berufsorientierung', quelle_status: 'sekundaer',
@@ -1084,7 +1500,22 @@ window.MATRIX = {
           ke_wortlaut: 'treffen eine begruendete Berufswahl-Entscheidung und bereiten den Uebergang in Ausbildung/weitere Schullaufbahn vor.',
           ke_wortlaut_quelle: 'WiB-Anleitungen Jgst. 9',
           inhalte_lp: ['Bewerbungsphase · Ausbildungsplatzsuche · Schullaufbahn-Alternativen · Plan-B-Strategien'],
-          fundort: 'WiB-Anleitungen Jgst. 9' },
+          fundort: 'WiB-Anleitungen Jgst. 9' ,
+          umsetzung_typ: 'idealtypisch',
+          umsetzung_titel: 'Skizze · Berufswahl-Entscheidung treffen (5 UEs · BO J9 + Bewerbung)',
+          ues: [
+            { nr: 1, titel: 'Entscheidungs-Inventur', inhalt: 'Was weiß ich über mich (Stärken J7, Praktikum J8)? Was weiß ich über Berufe (Berufsfelder J6, Anforderungsprofile J8)? Sichten + abgleichen.' },
+            { nr: 2, titel: 'Top-3 Berufe begründen', inhalt: 'Jede:r SuS wählt 3 Wunschberufe + begründet schriftlich mit Stärken-Anker. Partner-Feedback.' },
+            { nr: 3, titel: 'Bewerbungsmappe', inhalt: 'Anschreiben · Lebenslauf · Zeugnisse · Berufswahlpass-Auszüge. Word-Vorlage am Computer.' },
+            { nr: 4, titel: 'Bewerbungsgespräch üben', inhalt: 'Rollenspiel: SuS bewerben sich, Klasse + Lehrkraft als Personalauswahl. Feedback-Bogen.' },
+            { nr: 5, titel: 'Sicherung + Versandbereit', inhalt: 'Bewerbungen werden tatsächlich verschickt (Praktikum/Ausbildung). Realhandeln.' }
+          ],
+          bezuege: [
+            { didaktik: 'Realhandeln (Petrik)', verweis: 'UE 5 echte Bewerbung verschicken.' },
+            { didaktik: 'Berufswahlpass-Synthese', verweis: 'UE 1 nutzt 5 Jahre Portfolio-Material.' },
+            { didaktik: '13-Phasen Moritz-Steigerwald', verweis: 'UE 1 Inventur · UE 2 Wertung · UE 3-4 Lösung · UE 5 Handlung+Sicherung.' }
+          ]
+        },
       ],
     },
     'J9_GB3': { ke_anzahl: 1, jgst: 'J9', gb: 'GB3', gb_titel: 'Wirtschaft', quelle_status: 'sekundaer',
@@ -1093,7 +1524,21 @@ window.MATRIX = {
           ke_wortlaut: 'beurteilen Konzepte nachhaltigen Wirtschaftens und entwickeln eigene Vorschläge zur Verbindung von Oekonomie und Oekologie.',
           ke_wortlaut_quelle: 'Leitfaden-Methoden Projekt Nachhaltige Wirtschaft',
           inhalte_lp: ['Nachhaltigkeit · Oekonomie vs. Oekologie · Geschaeftsmodelle · Pro-Contra-Debatte'],
-          fundort: 'Leitfaden_Methoden_Gegenstandsbereiche · Z. 70 (sekundär)' },
+          fundort: 'Leitfaden_Methoden_Gegenstandsbereiche · Z. 70 (sekundär)' ,
+          umsetzung_typ: 'idealtypisch',
+          umsetzung_titel: 'Skizze · Nachhaltiges Wirtschaften (4 UEs · Wirtschaft J9)',
+          ues: [
+            { nr: 1, titel: 'Was heißt nachhaltig?', inhalt: 'Drei-Säulen-Modell: ökologisch · ökonomisch · sozial. Beispiele suchen: nachhaltige Produkte, nachhaltige Unternehmen.' },
+            { nr: 2, titel: 'Mein Konsum unter der Lupe', inhalt: 'Tagebuch 1 Woche: Was kaufe ich? Woher kommt es? Wie viel CO2? Apps wie Codecheck nutzen.' },
+            { nr: 3, titel: 'Unternehmensverantwortung', inhalt: 'Beispiele: Patagonia · Fairphone · regionale Bäckerei. Was machen die anders? Klassendiskussion.' },
+            { nr: 4, titel: 'Sicherung + Handlungs-Ideen', inhalt: 'Hefteintrag Drei-Säulen-Modell. Klassen-Aktion: konkreter Schritt zum nachhaltigen Konsum (z.B. Schul-Müll-Reduktion).' }
+          ],
+          bezuege: [
+            { didaktik: 'Nachhaltigkeit (LP+ Querschnitt + BNE)', verweis: 'Bildung für nachhaltige Entwicklung als Querschnittsaufgabe.' },
+            { didaktik: 'Mündigkeit (Klafki Schlüsselproblem)', verweis: 'Nachhaltigkeit als Klafki-Schlüsselproblem ersten Rangs.' },
+            { didaktik: '13-Phasen Moritz-Steigerwald', verweis: 'UE 1 Erkenntnis · UE 2 Lösungsplanung+Lösung · UE 3 Wertung · UE 4 Sicherung+Handeln.' }
+          ]
+        },
       ],
     },
     'J9_GB4': { ke_anzahl: 1, jgst: 'J9', gb: 'GB4', gb_titel: 'Technik', quelle_status: 'sekundaer',
@@ -1102,7 +1547,22 @@ window.MATRIX = {
           ke_wortlaut: 'beurteilen den Technikeinsatz im Projekt und reflektieren Grenzen technischer Machbarkeit.',
           ke_wortlaut_quelle: 'QM-Rahmen Technik-Progression Jgst. 9',
           inhalte_lp: ['Technikeinsatz Projekt · Grenzen technischer Machbarkeit · Energiekonzept Schule (Projektbeispiel)'],
-          fundort: 'QM_WiB_Evaluationsrahmen · Z. 285 (sekundär)' },
+          fundort: 'QM_WiB_Evaluationsrahmen · Z. 285 (sekundär)' ,
+          umsetzung_typ: 'idealtypisch',
+          umsetzung_titel: 'Skizze · Technikeinsatz im Projekt + Grenzen (5 UEs · Technik J9)',
+          ues: [
+            { nr: 1, titel: 'Technik-Auftrag analysieren', inhalt: 'Klassen-Auftrag: technisches Produkt entwickeln (z.B. Solar-Lampe). Anforderungen + Grenzen sammeln.' },
+            { nr: 2, titel: 'Materialwahl + Planung', inhalt: 'Welche Werkstoffe (Holz J6 · Metall J7 · Kunststoff J8 · Elektronik)? Skizze + technische Zeichnung.' },
+            { nr: 3, titel: 'Fertigung mit Werkstoffwechsel', inhalt: 'Mehrere Werkstoffe kombinieren. Sicherheitskontrollen pro Werkstoff.' },
+            { nr: 4, titel: 'Grenzen technischer Machbarkeit', inhalt: 'Was funktioniert? Was nicht? Warum? Vermeidungs- und Anpassungsstrategien.' },
+            { nr: 5, titel: 'Bewertung + Reflexion', inhalt: 'Selbsteinschätzung + Klassen-Bewertung. Reflexion: Wo sind technische Grenzen? Lehrjahre-Synthese.' }
+          ],
+          bezuege: [
+            { didaktik: 'Vollständige Handlung (Hacker/Aebli)', verweis: 'Vollumfänglich alle 6 Schritte.' },
+            { didaktik: 'Spiralprinzip Werkstoffe', verweis: 'Synthese aus J6-J8.' },
+            { didaktik: '13-Phasen Moritz-Steigerwald', verweis: 'Standard-Verlauf erweitert auf 5 UE.' }
+          ]
+        },
       ],
     },
     'J9_GB5': { ke_anzahl: 1, jgst: 'J9', gb: 'GB5', gb_titel: 'Recht', quelle_status: 'sekundaer',
@@ -1111,7 +1571,21 @@ window.MATRIX = {
           ke_wortlaut: 'wenden Verbraucherrechte in digitalen Kontexten (E-Commerce · Plattform-Vertraege) an.',
           ke_wortlaut_quelle: 'Leitfaden-Methoden Projekt Verbraucherrechte',
           inhalte_lp: ['E-Commerce · Widerrufsrecht digital · AGB-Analyse · Plattform-Vertraege · Datenschutz'],
-          fundort: 'Leitfaden_Methoden_Gegenstandsbereiche · Z. 130 (sekundär)' },
+          fundort: 'Leitfaden_Methoden_Gegenstandsbereiche · Z. 130 (sekundär)' ,
+          umsetzung_typ: 'idealtypisch',
+          umsetzung_titel: 'Skizze · Verbraucherrecht digital (4 UEs · Recht J9)',
+          ues: [
+            { nr: 1, titel: 'Online kaufen + Datenrecht', inhalt: 'Fallimpuls: SuS bestellt Schuhe online, passen nicht. Was tun? 14 Tage Widerrufsrecht erklärt.' },
+            { nr: 2, titel: 'DSGVO + persönliche Daten', inhalt: 'Was sind persönliche Daten? Wer darf was speichern? DSGVO-Eckpunkte. Social-Media-Checks.' },
+            { nr: 3, titel: 'Abofallen + Schein-Gewinnspiele', inhalt: 'Beispiele aus dem Internet. Wie erkenne ich Betrug? Verbraucherzentrale-Materialien.' },
+            { nr: 4, titel: 'Sicherung + Hilfestellen', inhalt: 'Hefteintrag: 5 Regeln für sicheres Online-Konsumieren. Hilfeangebot Verbraucherzentrale.' }
+          ],
+          bezuege: [
+            { didaktik: 'Verbraucherbildung digital (LP+ Querschnitt)', verweis: 'Aktualisierte Form der Verbraucherbildung.' },
+            { didaktik: 'Medienkompetenz (LP+ Querschnitt)', verweis: 'Sequenz aktiviert Medienkompetenz.' },
+            { didaktik: '13-Phasen Moritz-Steigerwald', verweis: 'UE 1 Problem · UE 2-3 Erkenntnis · UE 4 Sicherung+Handlung.' }
+          ]
+        },
       ],
     },
     'J9_LB6': { ke_anzahl: 1, jgst: 'J9', gb: 'LB6', gb_titel: 'Projekt', quelle_status: 'verbatim',
@@ -1120,7 +1594,23 @@ window.MATRIX = {
           ke_wortlaut: 'planen und realisieren ein komplexes Projekt mit Leittextmethode und vollstaendiger Handlung; bereiten damit die Projektpruefung Jgst. 9 vor.',
           ke_wortlaut_quelle: 'LP+ Fachprofil · Aufbau-Fachlehrplan + § 12/4 MSO',
           inhalte_lp: ['Vollstaendige Handlung (Planen · Durchfuehren · Pruefen · Bewerten) · Leittext · Projekt-Dokumentation · Projektpruefung'],
-          fundort: 'Aufbau-Fachlehrplan-Md · Z. 20 · § 12/4 MSO Projektpruefung' },
+          fundort: 'Aufbau-Fachlehrplan-Md · Z. 20 · § 12/4 MSO Projektpruefung' ,
+          umsetzung_typ: 'idealtypisch',
+          umsetzung_titel: 'Skizze · Projektpruefung-Vorbereitung (6 UEs · Abschluss-Projekt J9)',
+          ues: [
+            { nr: 1, titel: 'Projektthema-Auswahl', inhalt: 'Klasse wählt aus 3-5 Themen das Projekt. Themen kommen aus dem WiB-Kontext + Praxisbezug.' },
+            { nr: 2, titel: 'Leittext-Methode anwenden', inhalt: 'Leittext mit 6 Schritten: Informieren · Planen · Entscheiden · Ausführen · Kontrollieren · Bewerten. Jede:r SuS bekommt Leittext.' },
+            { nr: 3, titel: 'Planung + Materialliste', inhalt: 'Was brauchen wir? Wer macht was? Wann? Was kostet das?' },
+            { nr: 4, titel: 'Durchführung in Teams', inhalt: 'Praxisphase mit Lehrkraft als Berater.' },
+            { nr: 5, titel: 'Präsentation + Dokumentation', inhalt: 'Klasse präsentiert. Projektdokumentation = Prüfungsleistung.' },
+            { nr: 6, titel: 'Sicherung + Reflexion', inhalt: 'Welche Kompetenzen habe ich gezeigt? Lernzielkontrolle. Vorbereitung auf reale Projektprüfung § 12/4 MSO.' }
+          ],
+          bezuege: [
+            { didaktik: 'Projektprüfung § 12/4 MSO', verweis: 'Direkte Vorbereitung auf die qualifizierende Abschlussprüfung.' },
+            { didaktik: 'Vollständige Handlung 6 Schritte (Hacker/Aebli)', verweis: 'Idealtypische Realisierung aller 6 Schritte.' },
+            { didaktik: 'Leittextmethode (Klippert · WiB-Methodik)', verweis: 'Methodisch standardisiertes Vorgehen.' }
+          ]
+        },
       ],
     },
   },
