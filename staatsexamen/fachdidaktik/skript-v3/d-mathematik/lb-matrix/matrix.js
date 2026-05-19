@@ -385,13 +385,24 @@
     ));
     frag.appendChild(h('h2', { class: 'mx-slideover__title', id: 'mx-slideover-title' }, cell.titel));
 
-    if (cell.status !== 'ausgearbeitet' || !cell.sequenz) {
+    // Wenn KEINE sequenz vorhanden ist → Stub/Gerüst-Note rendern und beenden.
+    // Bei vorhandener sequenz darf auch status='gerüst' oder 'skizze' rendern,
+    // damit Teilsequenzen sichtbar werden.
+    if (!cell.sequenz) {
       frag.appendChild(h('div', { class: 'mx-stub-note' },
         cell.status === 'gerüst'
           ? 'Gerüst — Sequenzplanung in Vorbereitung. Inhaltlicher Anker: ' + cell.kurz + '.'
           : 'Stub — Sequenzplanung folgt. Inhaltlicher Anker: ' + cell.kurz + '.'
       ));
       return frag;
+    }
+    // Status-Banner für noch-nicht-vollständig-ausgearbeitete Zellen
+    if (cell.status === 'skizze') {
+      frag.appendChild(h('div', { class: 'mx-status-banner mx-status-banner--skizze' },
+        'Skizze · innovative Unterrichtsidee + Sequenzbogen · UEs noch nicht voll ausgearbeitet'));
+    } else if (cell.status === 'gerüst') {
+      frag.appendChild(h('div', { class: 'mx-status-banner mx-status-banner--geruest' },
+        'Gerüst-Sequenz · Hauptphasen ausgearbeitet · Praxisfeinheiten in Vorbereitung'));
     }
 
     const s = cell.sequenz;
