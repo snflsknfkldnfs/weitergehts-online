@@ -241,7 +241,7 @@ window.MATRIX = {
         ],
       },
     },
-    'M5_LB5': { ke: '—', titel: '(L4 erst ab M6)', kurz: 'erste funktionale Anbahnung in M6', status: 'stub' },
+    'M5_LB5': { ke: '—', titel: 'Funktionaler Zusammenhang', kurz: 'L4 wird erst in M6 eingeführt · Anbahnung über M5_LB6 Zahlenfolgen + Muster', status: 'stub' },
     'M5_LB6': {
       ke: 'M5 LB6 · KMK L6 Variable/Strukturen',
       titel: 'Zahlenfolgen + Muster',

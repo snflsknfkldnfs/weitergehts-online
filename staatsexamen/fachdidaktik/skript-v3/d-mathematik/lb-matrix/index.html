@@ -181,7 +181,7 @@
     .mx-slideover {
       position: fixed;
       top: 0; right: 0;
-      width: min(720px, 92vw);
+      width: min(960px, 90vw);
       height: 100vh;
       background: var(--paper);
       border-left: 1px solid var(--rule);
@@ -531,6 +531,57 @@
       padding: 32px 0 0;
       border-top: 3px solid var(--ink);
     }
+    /* Akkordeon: Didaktik-Referenz initial collapsed */
+    .dp-accordion {
+      margin-top: 24px;
+      border-top: 1px solid var(--rule);
+      padding-top: 18px;
+    }
+    .dp-accordion__summary {
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      padding: 14px 16px;
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      font-family: var(--serif);
+      transition: background 0.15s;
+    }
+    .dp-accordion__summary::-webkit-details-marker { display: none; }
+    .dp-accordion__summary:hover { background: var(--paper); }
+    .dp-accordion[open] .dp-accordion__summary {
+      background: var(--paper);
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    .dp-accordion__chev {
+      font-family: var(--mono);
+      font-size: 14px;
+      color: var(--accent);
+      transition: transform 0.2s;
+      display: inline-block;
+      width: 14px;
+    }
+    .dp-accordion[open] .dp-accordion__chev { transform: rotate(90deg); }
+    .dp-accordion__label {
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--ink);
+    }
+    .dp-accordion__hint {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.3px;
+      margin-left: auto;
+    }
+    @media (max-width: 760px) {
+      .dp-accordion__summary { flex-direction: column; gap: 4px; align-items: flex-start; }
+      .dp-accordion__hint { margin-left: 0; }
+    }
     .didaktik-phasen__zalgm {
       font-family: var(--mono);
       font-size: 11px;
@@ -721,6 +772,13 @@
         <em>bei fachgerechter Verbalisierung</em>) und operationalisiert die
         LP+-Prozesskompetenz &bdquo;Darstellungen verwenden&ldquo;.
       </p>
+
+      <details class="dp-accordion">
+        <summary class="dp-accordion__summary">
+          <span class="dp-accordion__chev">▸</span>
+          <span class="dp-accordion__label">Vollständige Didaktik-Referenz öffnen</span>
+          <span class="dp-accordion__hint">4-Phasen-Tabelle · 15 Mikromethoden · 7 Makromethoden · 5 Fach-Arbeitsweisen · 6 Prozesskompetenzen · Stundentyp-Differenzierung · Sekundär-Modelle</span>
+        </summary>
 
       <h3>Engelking-4-Phasen &middot; UE-Verlauf (Bausteinskript M B1, Idealmodell des Abstraktions- und Lernprozesses)</h3>
       <div class="dp-table-wrap">
@@ -916,6 +974,7 @@
           <li><em>KMK (2003/04):</em> Bildungsstandards Mathematik Mittlerer Schulabschluss.</li>
         </ul>
       </div>
+      </details>
     </section>
   </main>
 
@@ -926,7 +985,7 @@
 
   <div id="sr-announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
 
-  <script src="data.js"></script>
-  <script src="matrix.js"></script>
+  <script src="data.js?v=20260520"></script>
+  <script src="matrix.js?v=20260520"></script>
 </body>
 </html>
