@@ -15,6 +15,26 @@
 .theme-list li a{color:#166534;font-weight:600;text-decoration:none;}
 .theme-list li a:hover{text-decoration:underline;}
 .theme-num{display:inline-block;width:36px;color:#94a3b8;font-weight:700;font-size:0.9em;}
+
+/* Top-12 Didaktik-Themen · verdichtete Visualisierung */
+.top12{list-style:none;padding:0;display:grid;grid-template-columns:1fr;gap:4px;}
+.top12 li{display:grid;grid-template-columns:32px 90px 50px 1fr;align-items:center;gap:10px;padding:8px 14px;background:#fff;border:1px solid #e2e8f0;border-radius:6px;font-size:14.5px;line-height:1.4;transition:border-color .15s;}
+.top12 li:hover{border-color:#15803d;}
+.top12 .t-num{color:#94a3b8;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:600;}
+.top12 .t-freq{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.8px;text-transform:uppercase;font-weight:600;padding:3px 8px;border-radius:3px;text-align:center;}
+.top12 .t-freq--sehrhoch{background:#fef2f2;color:#991b1b;border:1px solid #fecaca;}
+.top12 .t-freq--hoch{background:#fffbeb;color:#92400e;border:1px solid #fde68a;}
+.top12 .t-freq--mittelhoch{background:#fef3c7;color:#854d0e;border:1px solid #fcd34d;}
+.top12 .t-freq--mittel{background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;}
+.top12 .t-stars{color:#d97706;font-size:13px;letter-spacing:1px;text-align:center;}
+.top12 .t-body{display:flex;flex-direction:column;}
+.top12 .t-titel{color:#0f172a;font-weight:600;}
+.top12 .t-praxis{color:#64748b;font-size:12.5px;margin-top:1px;}
+.top12 .t-praxis em{color:#15803d;font-style:normal;font-weight:500;}
+@media (max-width:680px){
+  .top12 li{grid-template-columns:28px 80px 1fr;}
+  .top12 .t-stars{grid-column:1/-1;text-align:left;font-size:12px;}
+}
 .lerndeck-cta{background:#f0fdf4;border:2px solid #15803d;border-radius:8px;padding:14px 16px;margin:18px 0;}
 .lerndeck-cta a{color:#15803d;font-weight:700;font-size:1.05em;text-decoration:none;}
 .lerndeck-cta a:hover{text-decoration:underline;}
@@ -64,21 +84,81 @@
   </ul>
 
   <h2>Top-12 Didaktik-Themen (Antwortgerüste)</h2>
-  <p style="color:#475569;font-size:0.9em;margin-bottom:10px;">Examen-Häufigkeit + Praxis-Andockbarkeit. Volltext der Antwortgerüste lokal in <code>MuendlichePrüfungen/Fragenbearbeitung/</code>.</p>
-  <ul class="theme-list">
-    <li><span class="theme-num">1.</span> <strong>EIS-Prinzip / Repräsentationsebenen</strong> (Bruner) — sehr hoch, ★★ Seminarübung</li>
-    <li><span class="theme-num">2.</span> <strong>Modellieren / Sachrechnen / Beziehungshaltigkeit</strong> — sehr hoch, ★★ Prozent-Alltag</li>
-    <li><span class="theme-num">3.</span> <strong>Polya + Heuristiken</strong> — sehr hoch, ★ Aufgabenkultur</li>
-    <li><span class="theme-num">4.</span> <strong>Operatives Prinzip + 5 Operationsmerkmale</strong> (Wittmann/Aebli) — hoch, ★★ Reversibilität</li>
-    <li><span class="theme-num">5.</span> <strong>4-Phasen-Modell Sequenzaufbau</strong> (B1/B2) — hoch, ★★ Seminarübung v3</li>
-    <li><span class="theme-num">6.</span> <strong>Konstruktivistisches Lernen + Primat der Handlung</strong> — hoch, ★★ Montessori</li>
-    <li><span class="theme-num">7.</span> <strong>Induktives Vorgehen / Entdeckendes Lernen</strong> — hoch, ★ UE Prozentwert</li>
-    <li><span class="theme-num">8.</span> <strong>Produktives Üben / Aufgabenkultur SINUS</strong> — hoch, ★ AB-Diff</li>
-    <li><span class="theme-num">9.</span> <strong>Kompetenzstrukturmodell + prozessbez. Kompetenzen</strong> — hoch, ★ Doppeltagging</li>
-    <li><span class="theme-num">10.</span> <strong>Spiralprinzip + Kumulatives Lernen</strong> — mittel, ★★ Bruch→Prozent→Zins</li>
-    <li><span class="theme-num">11.</span> <strong>Differenzierung / Inklusion / Sprachsensibler MU</strong> — mittel-hoch, ★ heterogene M7c</li>
-    <li><span class="theme-num">12.</span> <strong>Veränderte Leistungsmessung + Fehlerkultur</strong> — mittel, ★ M7c LNW-Planung</li>
-  </ul>
+  <p style="color:#475569;font-size:0.9em;margin-bottom:10px;">Examen-Häufigkeit (links) · Praxis-Andockbarkeit (★). Sortiert nach Wichtigkeit.</p>
+  <ol class="top12">
+    <li>
+      <span class="t-num">01</span>
+      <span class="t-freq t-freq--sehrhoch">sehr hoch</span>
+      <span class="t-stars">★★</span>
+      <span class="t-body"><span class="t-titel">EIS-Prinzip · Repräsentationsebenen</span><span class="t-praxis">Bruner 1966 · <em>Seminarübung</em></span></span>
+    </li>
+    <li>
+      <span class="t-num">02</span>
+      <span class="t-freq t-freq--sehrhoch">sehr hoch</span>
+      <span class="t-stars">★★</span>
+      <span class="t-body"><span class="t-titel">Modellieren · Sachrechnen · Beziehungshaltigkeit</span><span class="t-praxis">Blum/Leiß · Freudenthal · <em>Prozent-Alltag</em></span></span>
+    </li>
+    <li>
+      <span class="t-num">03</span>
+      <span class="t-freq t-freq--sehrhoch">sehr hoch</span>
+      <span class="t-stars">★</span>
+      <span class="t-body"><span class="t-titel">Polya + Heuristiken</span><span class="t-praxis">Polya 1949 · <em>Aufgabenkultur</em></span></span>
+    </li>
+    <li>
+      <span class="t-num">04</span>
+      <span class="t-freq t-freq--hoch">hoch</span>
+      <span class="t-stars">★★</span>
+      <span class="t-body"><span class="t-titel">Operatives Prinzip + 5 Operationsmerkmale</span><span class="t-praxis">Wittmann/Aebli · <em>Reversibilität</em></span></span>
+    </li>
+    <li>
+      <span class="t-num">05</span>
+      <span class="t-freq t-freq--hoch">hoch</span>
+      <span class="t-stars">★★</span>
+      <span class="t-body"><span class="t-titel">4-Phasen-Modell Sequenzaufbau</span><span class="t-praxis">Engelking-B1/B2 · <em>Seminarübung v3</em></span></span>
+    </li>
+    <li>
+      <span class="t-num">06</span>
+      <span class="t-freq t-freq--hoch">hoch</span>
+      <span class="t-stars">★★</span>
+      <span class="t-body"><span class="t-titel">Konstruktivistisches Lernen + Primat der Handlung</span><span class="t-praxis">Piaget · Aebli · <em>Montessori</em></span></span>
+    </li>
+    <li>
+      <span class="t-num">07</span>
+      <span class="t-freq t-freq--hoch">hoch</span>
+      <span class="t-stars">★</span>
+      <span class="t-body"><span class="t-titel">Induktives Vorgehen · Entdeckendes Lernen</span><span class="t-praxis">Wittmann 2007 · <em>UE Prozentwert</em></span></span>
+    </li>
+    <li>
+      <span class="t-num">08</span>
+      <span class="t-freq t-freq--hoch">hoch</span>
+      <span class="t-stars">★</span>
+      <span class="t-body"><span class="t-titel">Produktives Üben · Aufgabenkultur SINUS</span><span class="t-praxis">Wittmann 1992 · SINUS 2003 · <em>AB-Diff</em></span></span>
+    </li>
+    <li>
+      <span class="t-num">09</span>
+      <span class="t-freq t-freq--hoch">hoch</span>
+      <span class="t-stars">★</span>
+      <span class="t-body"><span class="t-titel">Kompetenzstrukturmodell + prozessbez. Kompetenzen</span><span class="t-praxis">LP+ Bayern · KMK 2003 · <em>Doppeltagging</em></span></span>
+    </li>
+    <li>
+      <span class="t-num">10</span>
+      <span class="t-freq t-freq--mittel">mittel</span>
+      <span class="t-stars">★★</span>
+      <span class="t-body"><span class="t-titel">Spiralprinzip · Kumulatives Lernen</span><span class="t-praxis">Bruner 1966 · <em>Bruch→Prozent→Zins</em></span></span>
+    </li>
+    <li>
+      <span class="t-num">11</span>
+      <span class="t-freq t-freq--mittelhoch">mittel-hoch</span>
+      <span class="t-stars">★</span>
+      <span class="t-body"><span class="t-titel">Differenzierung · Inklusion · Sprachsensibler MU</span><span class="t-praxis">LP+ Pflicht · <em>heterogene M7c</em></span></span>
+    </li>
+    <li>
+      <span class="t-num">12</span>
+      <span class="t-freq t-freq--mittel">mittel</span>
+      <span class="t-stars">★</span>
+      <span class="t-body"><span class="t-titel">Veränderte Leistungsmessung + Fehlerkultur</span><span class="t-praxis">LP+ · SINUS · <em>M7c LNW-Planung</em></span></span>
+    </li>
+  </ol>
 
   <h2>Quellen-Pool</h2>
   <ul class="theme-list">

@@ -407,10 +407,11 @@
 
     frag.appendChild(h('div', { style: 'display:flex; gap:10px; align-items:center; margin-bottom: 12px;' }, statusBadge));
 
+    // Cell-Titel: LB/Sport-Handlungsfeld als prominenter Header
     frag.appendChild(h('h2', { class: 'mx-slideover__title', id: 'mx-slideover-title' },
-      `${cell.ke_anzahl} Kompetenzerwartung${cell.ke_anzahl > 1 ? 'en' : (cell.ke_anzahl === 0 ? 'en' : '')}`));
+      `${cell.gb_titel || cell.lb_titel || cellKey}`));
     frag.appendChild(h('div', { class: 'mx-slideover__sub' },
-      `${jgstObj?.label || jgst} · ${cell.gb_titel || cell.lb_titel || ''}`));
+      `${jgstObj?.label || jgst} · ${cell.gb || cell.lb || ''} · ${cell.ke_anzahl} Kompetenzerwartung${cell.ke_anzahl > 1 ? 'en' : 'en'}`));
 
     if (cell.ke_anzahl === 0) {
       frag.appendChild(h('div', { class: 'cell-ausstehend-note' },
@@ -611,11 +612,17 @@
           ));
         });
         cellEl.appendChild(themas);
-        // Pilot-Indikator
-        if ((cell.kes || []).some(k => k.pilot_sequenz)) {
+        // Pilot- + Skizze-Indikator (visuelle Tiefe-Differenzierung)
+        const hasPilot = (cell.kes || []).some(k => k.pilot_sequenz);
+        const skizzenCount = (cell.kes || []).filter(k => !k.pilot_sequenz && k.ues && k.ues.length).length;
+        if (hasPilot) {
           cellEl.appendChild(h('div', {
             style: 'font-family: var(--mono); font-size: 9.5px; letter-spacing: 1px; color: var(--accent); margin-top: 4px; font-weight: 600;'
-          }, '★ Pilot-Sequenz · 9 UEs · 7 Söll-Phasen'));
+          }, '★ Pilot · BUV detailliert'));
+        } else if (skizzenCount > 0) {
+          cellEl.appendChild(h('div', {
+            style: 'font-family: var(--mono); font-size: 9.5px; letter-spacing: 1px; color: #6b21a8; margin-top: 4px; font-weight: 500;'
+          }, `▸ Skizze · ${skizzenCount} Sequenz${skizzenCount > 1 ? 'en' : ''}`));
         }
         grid.appendChild(cellEl);
       });
