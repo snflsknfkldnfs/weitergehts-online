@@ -99,6 +99,7 @@ window.MODULE = {
     { id: 'FA09', frage: 'EB dürfen vor OM-Beschluss in den Klassenrat?', antwort: 'NEIN. EB sind bei {{Art. 88}}-Anhörung beteiligt (Anhörungsrecht), nicht im LK-Beschluss-Gremium. Klassenkonferenz = nur LK.' },
     { id: 'FA10', frage: 'Allein bei alleiniger Personensorge muss Schule beide EB informieren?', antwort: 'NEIN. {{§ 1626 BGB}}: bei alleiniger Sorge nur Sorgeberechtigte:r. Andere Elternteil kann nach {{§ 1686 BGB}} Auskunft verlangen — aber Schule beachtet die Sorgerechts-Lage.' },
     { id: 'FA11', frage: 'Elternbeirats-Mitglieder-Zahl ist überall gleich?', antwort: 'NEIN. **Schulart-spezifischer Schlüssel**: GS/MS/FöS = 1 EB pro 15 SuS-Eltern (engerer Schlüssel — kleinere Schulen, stärkere EB-Präsenz). RS/Gym/FOS/BOS = 1 pro 50. An MS i.d.R. 5-12 Mitglieder.' },
+    { id: 'FA12', frage: 'Erziehungsberechtigte und Erziehungsbeauftragte sind synonym?', antwort: 'NEIN. **Erziehungsberechtigte** ({{Art. 76 BayEUG}}) = Eltern bzw. sorgeberechtigte Personen (Personensorge nach {{§ 1626 BGB}}) — dauerhafte schulrechtliche Stellung. **Erziehungsbeauftragte** ({{§ 1 JuSchG}} Nr. 4) = über-18-Jährige, denen sorgeberechtigte Personen ad-hoc Erziehungsaufgaben übertragen (Klassenfahrt-Begleitung, Geschwister bei Veranstaltung). Zwei verschiedene Institute — Mp07 = Erziehungsberechtigte; Erziehungsbeauftragte siehe MP_01 L07 + MP_03 F4 (Klassenfahrt-Alkohol).' },
   ],
 
   faelle: [

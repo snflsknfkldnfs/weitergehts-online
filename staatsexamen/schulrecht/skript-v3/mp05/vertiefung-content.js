@@ -127,7 +127,7 @@ window.MODULE_BODIES = {
 
     { type: 'h', text: 'Vier Fördermaßnahmen' },
     { type: 'numbered', items: [
-      '**Vorkurs Deutsch 240** — 1,5 J. vor Einschulung, 240 WStd, KiGa + GS gemeinsam.',
+      '**Vorkurs Deutsch 240** — 1,5 J. vor Einschulung, **240 Stunden insgesamt** über die 1,5 SJ (nicht 240/Woche), KiGa + GS gemeinsam (je Hälfte).',
       '**Deutschklassen** — siehe oben ({{§ 8 GrSO}} / {{§ 10 MSO}}).',
       '**DeutschPLUS-Differenzierung** — innerhalb Regel-U.',
       '**DeutschPLUS-Kurse** — additiv.',
@@ -149,7 +149,7 @@ window.MODULE_BODIES = {
       { q: 'Wie ist die korrekte Reihenfolge: Bildungsstand-Diagnostik → Deutschklasse → Jgst.-Einstufung? Wann ist Tiefer-Einstufung zulässig ({{Art. 36/3 BayEUG}}) — wann nicht?',
         a: 'Reihenfolge: erst Bildungsstand-Diagnostik (NICHT Deutsch-Test allein), dann altersgleiche Jgst.-Zuordnung, dann Deutschklasse. Tiefer-Einstufung bis 2 Jgst. ZULÄSSIG nur bei mangelndem Bildungsstand ({{Art. 36/3 BayEUG}} S. 4) — NICHT bei sprachlichen Defiziten allein.' },
       { q: 'Welche vier Fördermaßnahmen flankieren die Deutschklasse — und welcher Träger-Verbund kennzeichnet den {{Vorkurs Deutsch 240}}?',
-        a: '(1) {{Vorkurs Deutsch 240}} (1,5 J. vor Einschulung, 240 WStd, KiGa+GS gemeinsam). (2) Deutschklassen {{§ 8 GrSO}} / {{§ 10 MSO}}. (3) {{DeutschPLUS}}-Differenzierung im Regel-U. (4) {{DeutschPLUS}}-Kurse additiv. Vorkurs-Träger: Kindertageseinrichtung + Grundschule gemeinsam.' },
+        a: '(1) {{Vorkurs Deutsch 240}} (1,5 J. vor Einschulung, 240 Stunden insgesamt über die 1,5 SJ, KiGa+GS gemeinsam je Hälfte). (2) Deutschklassen {{§ 8 GrSO}} / {{§ 10 MSO}}. (3) {{DeutschPLUS}}-Differenzierung im Regel-U. (4) {{DeutschPLUS}}-Kurse additiv. Vorkurs-Träger: Kindertageseinrichtung + Grundschule gemeinsam.' },
       { q: 'Welche Lehrplan-Verankerung gilt für DaZ ({{LehrplanPLUS DaZ}}) — und welche LK-Haltung verlangt die Interkulturelle Erziehung als Verfassungsauftrag ({{Art. 131 BV}})?',
         a: '{{LehrplanPLUS DaZ}} = Bayerischer Lehrplan für alle weiterführenden Schularten mit DaZ-Bezug, Noten ins Zeugnis. Interkulturelle Erziehung nach {{Art. 131 BV}} („Geist der Demokratie", „Völkerversöhnung") verlangt: reversible Sprachhaltung, positive Konfliktlösung, repressionsfrei-demokratisches LK-Verhalten.' },
     ]},

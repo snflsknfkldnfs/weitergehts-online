@@ -55,7 +55,7 @@ window.MODULE_BODIES = {
         ['**Grundsätze Hausaufgaben**', '{{Art. 58}} i.V.m. § 28/1 BaySchO — vor SJ-Beginn festlegen'],
         ['**Grundsätze Probearbeiten**', '{{Art. 58}} i.V.m. § 10/1 GrSO — Verteilung + Maßstab'],
         ['**Notenkonferenzen**', 'Vorrücken, Zeugnisse, Jgst.-Wiederholung'],
-        ['**OM-Eskalation**', '{{Art. 86/2}} Nr. 6 (2-4 Wochen) · Nr. 9 (Klassenwechsel) · Nr. 11 (Entlassung)'],
+        ['**OM-Eskalation**', '{{Art. 86/2}} Nr. 6 (2-4 Wochen) · Nr. 7 (Androhung Entlassung) · Nr. 8 (Entlassung) · Nr. 9 (Klassenwechsel) · Nr. 10 (Zuweisung andere Schule, **2/3-EB-Sperre**) · Nr. 11 (Entlassung MS/FöS/BS)'],
         ['**Schulentwicklung**', 'Grundsätze schulinterner Fortbildung, Schulprofil'],
       ],
     },

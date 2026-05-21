@@ -181,7 +181,7 @@ window.MODULE = {
       norm: 'Art. 58 BayEUG', status: 'open', cards: 2,
       subblocks: [
         { label: 'Zuständigkeiten + Beschluss-Form', cards: 1 },
-        { label: 'OM-Eskalation Nr. 6/9/11', cards: 1 },
+        { label: 'OM-Eskalation Nr. 6-11 (2/3-Sperre bei Nr. 10)', cards: 1 },
       ],
     },
     {
@@ -223,7 +223,7 @@ window.MODULE = {
     'Art. 130 BV': { titel: 'Art. 130 BV — Staatliche Schulaufsicht', wortlaut: '„Das gesamte Schul- und Bildungswesen steht unter der Aufsicht des Staates" (Verfassungs-Spiegelung Art. 7/1 GG).', karten: [] },
     'Art. 56 BayEUG': { titel: 'Art. 56 BayEUG — Schulleben + SuS-Beteiligung', wortlaut: 'Abs. 1: SuS gestalten das Schulleben aktiv mit. Abs. 2: Rechte (Information · Beratung · Beschwerde · Mitwirkung). Abs. 4: U.-Pflicht + Verhaltenspflicht. Abs. 5: Beschwerdeweg LK → SL → Schulforum.', karten: [] },
     'Art. 57 BayEUG': { titel: 'Art. 57 BayEUG — Schulleitung', wortlaut: 'Abs. 1: SL leitet die Schule. Abs. 2: „Die Schulleiterin oder der Schulleiter trägt die Gesamtverantwortung für die ordnungsgemäße Durchführung des Unterrichts und der Erziehungsarbeit an der Schule." Vorgesetzter aller LK an der Schule.', karten: ['B01'] },
-    'Art. 58 BayEUG': { titel: 'Art. 58 BayEUG — Lehrerkonferenz', wortlaut: 'Kollegiales Beschluss-Organ. Mitglieder = alle LK der Schule. Vorsitz SL. Zuständig u.a. für Grundsätze HA, Probearbeiten, OM-Eskalation (Art. 86/2 Nr. 6/9/11), Notenkonferenzen. Mehrheitsbeschluss; SL Stichentscheid.', karten: ['B02'] },
+    'Art. 58 BayEUG': { titel: 'Art. 58 BayEUG — Lehrerkonferenz', wortlaut: 'Kollegiales Beschluss-Organ. Mitglieder = alle LK der Schule. Vorsitz SL. Zuständig u.a. für Grundsätze HA, Probearbeiten, Notenkonferenzen, **OM-Eskalation Art. 86/2 Nr. 6 (Ausschluss 2-4 Wochen) + Nr. 7 (Androhung Entlassung) + Nr. 8 (Entlassung) + Nr. 9 (Klassenwechsel) + Nr. 10 (Zuweisung andere Schule, 2/3-EB-Mehrheits-Sperre) + Nr. 11 (Entlassung MS/FöS/BS)** — Mehrheitsbeschluss; SL Stichentscheid. Nr. 5 (bis 6 U.-Tage) bleibt SL allein. Nr. 12 (Ausschluss aller Schulen) Staatsministerium.', karten: ['B02'] },
     'Art. 69 BayEUG': { titel: 'Art. 69 BayEUG — Schulforum', wortlaut: 'Zusammensetzung an Mittelschule: SL + Elternbeirat-Vertretung + SMV-Vertretung + Schulträger-Vertretung + bis 2 LK. **Abs. 4: Einvernehmens-Befugnis** für Hausordnung + Pausenordnung + Grundsätze schulischer Veranstaltungen (Schule kann diese Akte nicht gegen Schulforum-Veto erlassen). Im Übrigen beratendes Gremium für Schulleben, Schulentwicklung, Bildungsangebot. KEIN Beschluss-Organ über Personal/Noten/U.-Inhalte.', karten: ['B02-NEU'] },
     'Art. 75 BayEUG': { titel: 'Art. 75 BayEUG — EB-Auskunft', wortlaut: 'EB sind über wesentliche, ihr Kind betreffende Vorgänge zu unterrichten. Bei OM: schriftlich, rechtzeitig vor Vollzug.', karten: ['B06'] },
     'Art. 84 BayEUG': { titel: 'Art. 84 BayEUG — Werbeverbot', wortlaut: 'Abs. 1: gewerbliche Werbung auf Schulgelände untersagt. Abs. 2: politische, religiöse, weltanschauliche Werbung untersagt. Abs. 3: politische Abzeichen zulässig, wenn 5 Schutzgüter nicht gefährdet (Schulfrieden · Schulbetrieb · Bildungs-/Erziehungsauftrag · persönliche Ehre · Erziehung zur Toleranz). Abs. 4: Sammlungen + Spenden nur mit SL-Genehmigung + Zweckbindung + EB-Information.', karten: ['B07'] },

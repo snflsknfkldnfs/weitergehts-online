@@ -525,7 +525,7 @@ window.MODULE = {
     },
     'Vorkurs Deutsch 240': {
       titel: 'KMBek Vorkurs Deutsch 240',
-      wortlaut: 'Sprachförderprogramm für K mit ndM 1,5 Jahre vor Einschulung. Umfang 240 Wochenstunden. Träger gemeinsam: Kindertageseinrichtung + Grundschule. Ziel: Deutschkenntnisse für erfolgreichen Übergang Regelklasse.',
+      wortlaut: 'Sprachförderprogramm für K mit ndM 1,5 Schuljahre vor Einschulung. Umfang **240 Stunden insgesamt** (verteilt über vorletztes + letztes KiTa-Jahr — je 120 Std). Träger gemeinsam: Kindertageseinrichtung (Hälfte) + Grundschule (Hälfte). Ziel: Deutschkenntnisse für erfolgreichen Übergang Regelklasse. (NICHT 240 Wochenstunden = 240/Woche — gemeint sind 240 Std über die gesamten 1,5 SJ.)',
       karten: [],
     },
     'DeutschPLUS': {
