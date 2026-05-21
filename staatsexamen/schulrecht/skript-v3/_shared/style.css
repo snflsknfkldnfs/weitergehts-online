@@ -1346,3 +1346,155 @@ h2.mono-h, h3.mono-h { margin: 0; font-weight: 500; font-size: 10.5px; }
   border-color: var(--accent);
 }
 
+/* ==========================================================================
+   VERDICHTUNG 2026-05-21 — Kerninhalte priorisieren, Visual Noise reduzieren
+   User-Direktive: "kompakter ohne Inhaltsverlust · Fallen-Elemente ablenkend ·
+   Kerninhalte valide + vollumfassend"
+   ========================================================================== */
+
+/* Verdichtung-4 — Skript-Header + Top-Row kompakter */
+.skript-header { padding: 24px 56px 22px; }
+.skript-header h1 { font-size: clamp(28px, 4vw, 40px); line-height: 1.02; }
+.skript-header__abriss { font-size: 14px; line-height: 1.45; max-width: 620px; }
+.skript-header__status-row { margin-bottom: 10px; }
+.top-row { padding: 22px 56px; gap: 28px; }
+.top-row .mono-cap { margin-bottom: 8px; }
+.top-row ol.kurz-list { gap: 8px; }
+.kurz-list .txt { font-size: 14.5px; line-height: 1.45; }
+.kartografie-row { padding: 8px 0; }
+
+/* Verdichtung-1 — Vertiefung Sub-Blocks dichter (Kerninhalt-Fokus) */
+.subblock { margin-bottom: 22px; padding-bottom: 16px; }
+.subblock__head { margin-bottom: 8px; }
+.subblock__title { font-size: 22px; line-height: 1.12; }
+.subblock__anriss {
+  font-size: 14.5px;
+  line-height: 1.45;
+  margin: 6px 0 0 94px;
+}
+.subblock__body { margin: 14px 0 0 94px; padding-left: 18px; }
+.rb-lead {
+  font-size: 15px;
+  font-style: normal;
+  line-height: 1.5;
+  padding: 2px 0 2px 14px;
+  margin: 0 0 14px;
+}
+.rb-h { margin: 22px 0 10px !important; padding-top: 14px !important; }
+.rb-h .mono-cap { font-size: 11.5px; }
+.rb-p { margin: 0 0 10px; line-height: 1.55; font-size: 14.5px; }
+.rb-list { margin: 0 0 12px; line-height: 1.5; font-size: 14.5px; }
+.rb-list li { margin-bottom: 3px; }
+.rb-table__head, .rb-table__row { padding: 8px 12px; gap: 10px; }
+.rb-table__head { font-size: 10.5px; }
+.rb-table__row { font-size: 13.5px; line-height: 1.45; }
+.rb-warn {
+  padding: 12px 14px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Verdichtung-2 — Aktiv-Abruf-Werkbank visuell zurückhaltend
+   (Vertiefung dominiert, Werkbank als sekundärer Trainings-Bereich) */
+.werkbank__aside { font-size: 14px; }
+.werkbank__aside .reveal-card {
+  padding: 12px 14px;
+  box-shadow: none;
+  border-color: var(--rule);
+}
+.werkbank__aside .reveal-card__frage {
+  font-size: 13.5px;
+  line-height: 1.35;
+  margin-top: 6px;
+}
+.werkbank__aside .reveal-card__antwort {
+  font-size: 13px;
+  line-height: 1.5;
+  margin-top: 8px;
+  padding-top: 8px;
+}
+.werkbank__aside .reveal-card__top .mono-cap { font-size: 9.5px; }
+.werkbank__aside .reveal-card__foot { margin-top: 8px; }
+.werkbank__aside .reveal-card__hint { font-size: 9px; }
+.werkbank__aside .pflicht-grid { gap: 6px; }
+.werkbank__aside .fa-row {
+  padding: 10px 0;
+  grid-template-columns: 14px 44px 1fr 28px;
+  gap: 10px;
+}
+.werkbank__aside .fa-row__frage { font-size: 13.5px; line-height: 1.35; }
+.werkbank__aside .fa-row__antwort {
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 8px 10px;
+  margin-top: 6px;
+}
+.werkbank__aside .fa-row__chevron {
+  font-size: 14px;
+  min-width: 28px;
+  min-height: 28px;
+}
+.werkbank__aside .fall-card { padding: 14px 16px; margin-bottom: 10px; box-shadow: none; }
+.werkbank__aside .fall-card__title { font-size: 16px; margin: 0 0 6px; }
+.werkbank__aside .fall-card__sachverhalt {
+  font-size: 13.5px;
+  line-height: 1.45;
+  padding: 2px 0 2px 12px;
+  margin-bottom: 10px;
+}
+.werkbank__aside .fall-card__btn { padding: 8px 12px; }
+.werkbank__aside .fall-card__panel { margin-top: 10px; padding-top: 8px; }
+
+/* Verdichtung-3 — Falle-Atlas + Fallbeispiele als kollabierbare Sektionen
+   (Pflichtwissen bleibt offen — das ist der Kern-Aktiv-Abruf).
+   <details>/<summary> ist HTML-nativ, kein Custom-JS-Modus. */
+.werkbank__aside details.section-collapse {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.werkbank__aside details.section-collapse > summary {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin: 0 0 18px;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 8px;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.werkbank__aside details.section-collapse > summary::-webkit-details-marker { display: none; }
+.werkbank__aside details.section-collapse > summary::before {
+  content: '+';
+  font-size: 16px;
+  width: 16px;
+  display: inline-block;
+  color: var(--accent);
+  transition: transform .15s;
+}
+.werkbank__aside details.section-collapse[open] > summary::before {
+  content: '−';
+}
+.werkbank__aside details.section-collapse > summary .summary-count {
+  color: var(--ink);
+  margin-left: auto;
+}
+@media print {
+  /* Print: alle <details> öffnen, Spickzettel-Funktion erhalten */
+  details.section-collapse { display: block !important; }
+  details.section-collapse > summary { margin-bottom: 8pt; }
+  details.section-collapse:not([open]) > * { display: block !important; }
+}
+
+/* Falle-Atlas-Sichtschutz-Hinweis bei der kompakten Werkbank-Variante
+   ausblenden (die Falle-Frage selbst hat schon Akkordeon-Mechanik) */
+.werkbank__aside .fa-row[data-open="false"] .fa-row__frage::after {
+  display: none;
+}

@@ -665,25 +665,27 @@
       h('div', { class: 'pflicht-grid' }, ...d.pflichtwissen.map(c => revealCard(c))),
     ));
 
-    // Falle-Atlas
-    aside.appendChild(h('section', { class: 'aside-section', 'aria-labelledby': 'sec-fa' },
-      h('div', { class: 'section-header' },
-        monoH('h2', 'Falle-Atlas', 'accent', 'sec-fa'),
-        h('span', { class: 'section-header__rule' }),
-        h('span', { class: 'mono-cap section-header__count' }, d.fallen.length + ' Stellen'),
-      ),
+    // Falle-Atlas (default kollabiert via <details>, HTML-nativ; auf Klick aufklappen)
+    const faSummary = h('summary', null,
+      h('span', null, 'Falle-Atlas'),
+      h('span', { class: 'summary-count' }, d.fallen.length + ' Stellen'),
+    );
+    const faDetails = h('details', { class: 'section-collapse', 'aria-labelledby': 'sec-fa' },
+      faSummary,
       h('div', null, ...d.fallen.map(f => falleRow(f))),
-    ));
+    );
+    aside.appendChild(h('section', { class: 'aside-section' }, faDetails));
 
-    // Fallbeispiele
-    aside.appendChild(h('section', { class: 'aside-section', 'aria-labelledby': 'sec-fb' },
-      h('div', { class: 'section-header' },
-        monoH('h2', 'Fallbeispiele', 'accent', 'sec-fb'),
-        h('span', { class: 'section-header__rule' }),
-        h('span', { class: 'mono-cap section-header__count' }, d.faelle.length + ' Fälle'),
-      ),
-      ...d.faelle.map(f => fallCard(f)),
-    ));
+    // Fallbeispiele (default kollabiert via <details>)
+    const fbSummary = h('summary', null,
+      h('span', null, 'Fallbeispiele'),
+      h('span', { class: 'summary-count' }, d.faelle.length + ' Fälle'),
+    );
+    const fbDetails = h('details', { class: 'section-collapse', 'aria-labelledby': 'sec-fb' },
+      fbSummary,
+      h('div', null, ...d.faelle.map(f => fallCard(f))),
+    );
+    aside.appendChild(h('section', { class: 'aside-section' }, fbDetails));
 
     return aside;
   };
@@ -696,6 +698,9 @@
         announce('Karte ' + id + ' nicht auf dieser Seite gefunden');
         return;
       }
+      // Wenn die Karte in einem kollabierten <details> liegt, erst öffnen
+      const parentDetails = card.closest('details.section-collapse');
+      if (parentDetails && !parentDetails.open) parentDetails.open = true;
       card.scrollIntoView({ behavior: 'smooth', block: 'center' });
       card.classList.add('pulse-highlight');
       // Reveal-Card: über interner Button-aria-expanded
