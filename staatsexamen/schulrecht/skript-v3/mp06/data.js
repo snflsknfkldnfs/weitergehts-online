@@ -27,7 +27,7 @@ window.MODULE = {
     { ebene: 'II', bez: 'BayEUG', kuerzel: 'BayEUG', normen: ['Art. 56/4', 'Art. 57/2', 'Art. 58', 'Art. 59', 'Art. 60a', 'Art. 75', 'Art. 84'], sub: 'SL-Verantwortung · Lehrkräfte · LK-Konferenz · EB-Auskunft · Werbeverbot' },
     { ebene: 'III', bez: 'LDO + BaySchO', kuerzel: 'VO', normen: ['§ 2 LDO', '§ 4 LDO', '§ 5 LDO', '§ 6 LDO', '§ 9a LDO', '§ 9b LDO', '§ 14 LDO', '§ 22 BaySchO'], sub: 'U.+Erz. · Wandertage · Aufsicht · KL · Dienstpflichten · Verschwiegenheit' },
     { ebene: 'IV', bez: 'Beamten-/Personalvertretungsrecht', kuerzel: 'BB', normen: ['Art. 6 BayDG', 'Art. 20 BayLBG', 'Art. 75 BayPVG', 'Art. 76 BayPVG'], sub: 'Disziplinar · Fortbildung · Personalvertretung · Mitbestimmung' },
-    { ebene: 'V', bez: 'Bundesrecht', kuerzel: 'BUND', normen: ['Art. 33/5 GG', 'Art. 34 GG', '§ 47 BeamtStG', '§ 839 BGB', '§ 203 StGB'], sub: 'Berufsbeamtentum · Amtshaftung · Dienstvergehen · Berufsgeheimnis' },
+    { ebene: 'V', bez: 'Bundesrecht', kuerzel: 'BUND', normen: ['Art. 33/5 GG', 'Art. 34 GG', '§ 47 BeamtStG', '§ 839 BGB', '§ 203 StGB', '§ 60a UrhG'], sub: 'Berufsbeamtentum · Amtshaftung · Dienstvergehen · Berufsgeheimnis · Bildungsschranke Urheberrecht' },
   ],
 
   pflichtwissen: [
@@ -63,6 +63,10 @@ window.MODULE = {
       frage: 'Warum dürfen verbeamtete LK nicht streiken — und welche Rechte haben sie?',
       antwort: 'Streikverbot folgt aus „hergebrachten Grundsätzen des Berufsbeamtentums" (GG Art. 33/5) — Treuepflicht + Alimentationsprinzip kompensieren. Beamte haben Vereinigungs-/Gewerkschafts-Recht (Art. 9/3 GG), aber kein Streikrecht. BVerfG-Rechtsprechung bestätigt. Tarifbeschäftigte LK dürfen streiken.',
       norm: 'Art. 33/5 GG', status: 'open' },
+    { id: 'L09', titel: '§ 60a UrhG — Bildungsschranke Kopier-/Vervielfältigungs-Anteil',
+      frage: 'Wie viel darf eine LK aus einem urheberrechtlich geschützten Werk für den Unterricht kopieren?',
+      antwort: '**§ 60a UrhG** (Bildungseinrichtungen-Schranke): bis zu **15 % eines Werks** dürfen vervielfältigt + verbreitet werden — **max. 20 Seiten** pro Klasse + Schuljahr (Konkretisierung Fotokopiervertrag KM/VG Wort 2018). Ausnahmen: vollständige Vervielfältigung zulässig bei (a) Werken geringen Umfangs (< 25 Seiten), (b) vergriffenen Werken, (c) Zeitungsartikeln. **Voraussetzung**: nicht-kommerzieller Zweck + bestimmt abgegrenzter Personenkreis (Klasse). Verstoß = Disziplinarrechtliche + zivilrechtliche Konsequenz möglich.',
+      norm: '§ 60a UrhG', status: 'open' },
   ],
 
   fallen: [
@@ -76,6 +80,7 @@ window.MODULE = {
     { id: 'FA08', frage: 'Symbol-Verbot Art. 59/2 ist absolut?', antwort: 'NEIN. Art. 59/2 S. 4: konditional — verboten, „sofern Symbole bei SuS/Eltern auch als Ausdruck einer Haltung verstanden werden können, die mit verfassungsrechtlichen Grundwerten + christlich-abendländischen Bildungs-/Kulturwerten nicht vereinbar ist". Einzelfall-Bewertung.' },
     { id: 'FA09', frage: 'Mitbestimmung = Mitwirkung?', antwort: 'NEIN. Mitbestimmung (BayPVG Art. 75) = Zustimmungspflicht. Mitwirkung (Art. 76) = Stellungnahme ohne Vetorecht. Zwei verschiedene Beteiligungsstufen.' },
     { id: 'FA10', frage: 'Beamte dürfen streiken, wenn die Gewerkschaft aufruft?', antwort: 'NEIN. GG Art. 33/5 hergebrachte Grundsätze — Treuepflicht schließt Streik aus. Vereinigungs-/Gewerkschafts-Recht (Art. 9/3 GG) bleibt, aber Streik ist Dienstvergehen.' },
+    { id: 'FA11', frage: 'LK darf bis zu 50 % eines Buchs für die Klasse kopieren?', antwort: 'NEIN. {{§ 60a UrhG}}: max. **15 % eines Werks**, **bis 20 Seiten** pro Klasse + Schuljahr. Bei Werken < 25 Seiten / vergriffenen Werken / Zeitungsartikeln: Vollkopie zulässig. Verstoß: Urheberrechts-Schadensersatz + Disziplinar.' },
   ],
 
   faelle: [
@@ -157,6 +162,7 @@ window.MODULE = {
     '§ 47 BeamtStG': { titel: '§ 47 BeamtStG — Dienstvergehen', wortlaut: 'Abs. 1: „Beamte begehen ein Dienstvergehen, wenn sie schuldhaft die ihnen obliegenden Pflichten verletzen." Außerdienstlich erfasst, wenn das Vertrauen in besonderem Maße beeinträchtigt wird.', karten: [] },
     '§ 839 BGB': { titel: '§ 839 BGB — Beamtenhaftung', wortlaut: 'Schadensersatz für vorsätzliche/fahrlässige Amtspflichtverletzung. I.V.m. Art. 34 GG: Staat haftet nach außen, Rückgriff bei Vorsatz + grober Fahrlässigkeit.', karten: ['L04'] },
     '§ 203 StGB': { titel: '§ 203 StGB — Berufsgeheimnis', wortlaut: 'Strafbarkeit bei unbefugter Offenbarung von Privatgeheimnissen durch Berufsgruppen. Schulpsycholog:innen sind erfasst; LK i.d.R. nicht — aber Verschwiegenheits-Pflicht § 14 LDO.', karten: [] },
+    '§ 60a UrhG': { titel: '§ 60a UrhG — Bildungsschranke (Bildung und Wissenschaft)', wortlaut: 'Abs. 1: Bis zu **15 % eines veröffentlichten Werks** dürfen zur Veranschaulichung des Unterrichts vervielfältigt, verbreitet, öffentlich zugänglich gemacht werden — für Lehrende + Teilnehmende einer Bildungseinrichtung. Abs. 2: Ausnahmen — Vollkopie zulässig bei (a) Werken **geringen Umfangs (< 25 Seiten)**, (b) vergriffenen Werken, (c) Zeitungsartikeln. **Fotokopiervertrag KM/VG Wort 2018** konkretisiert: **max. 20 Seiten pro Klasse + Schuljahr**. Voraussetzung: nicht-kommerzieller Zweck + bestimmt abgegrenzter Personenkreis. Bei Verstoß: VG-Wort-Schadensersatz + Disziplinar-Risiko.', karten: ['L09', 'FA11'] },
     'Art. 57/2 BayEUG': { titel: 'Art. 57 Abs. 2 BayEUG — SL-Gesamtverantwortung', wortlaut: 'SL trägt Gesamtverantwortung für ordnungsgemäßen Ablauf des Unterrichts und der Erziehungsarbeit. Aufsichts-Einteilung der LK durch SL (§ 5/2 LDO).', karten: [] },
     'Art. 58 BayEUG': { titel: 'Art. 58 BayEUG — Lehrerkonferenz', wortlaut: 'Kollegiales Beschluss-Organ der Schule. Zuständig u.a. für Grundsätze HA, EOM-Eskalation, Probearbeiten.', karten: [] },
     'Art. 59 BayEUG': { titel: 'Art. 59 BayEUG — Lehrkräfte', wortlaut: 'Abs. 1: LK tragen unmittelbare pädagogische Verantwortung für U. + Erziehung. Abs. 2: Distanz-U. — Bild + Ton bei techn. Voraussetzungen. Symbol-Verbot S. 4 konditional: „sofern auch als Haltung verstanden werden können", die verfassungsrechtlichen Grundwerten + christlich-abendländischen Bildungs-/Kulturwerten widerspricht.', karten: [] },

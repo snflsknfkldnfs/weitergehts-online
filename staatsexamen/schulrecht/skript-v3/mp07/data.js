@@ -21,7 +21,7 @@ window.MODULE = {
   kurz: [
     '**Klassenelternsprecher** ({{Art. 64 BayEUG}}): wird zu Beginn des SJ von den EB der Klasse gewählt. Bindeglied EB ↔ KL. Beratung in klasseninternen Angelegenheiten.',
     '**Elternbeirat** ({{Art. 65-67 BayEUG}}): Vertreter aller EB der Schule. Wahl alle 2 Jahre. Vorsitzende:r vertritt nach außen. Beratendes Organ + Anhörungsrecht in wesentlichen Schulangelegenheiten.',
-    '**Schulforum** ({{Art. 69 BayEUG}}): Bindeglied EB ↔ SL ↔ SMV ↔ Schulträger ↔ LK. Beratung des Schullebens + Schulentwicklung. Vorsitz SL. Bei OM-Eskalation: Anhörungs-/Stellungnahme-Funktion.',
+    '**Schulforum** ({{Art. 69 BayEUG}}): Bindeglied EB ↔ SL ↔ SMV ↔ Schulträger ↔ LK. Vorsitz SL. **Abs. 4 Einvernehmens-Befugnis** für Hausordnung + Pausenordnung + Grundsätze schul. Veranstaltungen. Im Übrigen Beratung Schulleben + Schulentwicklung. Bei OM-Beschwerde: Eskalations-Stufe nach Art. 56/5.',
     '**EB-Pflichten** {{Art. 76 BayEUG}}: zwei Pflichten — „**auf den regelmäßigen Schulbesuch zu achten**" + „**die Erziehungsarbeit der Schule zu unterstützen**". Ergänzt von § 20 BaySchO Meldepflicht bei Verhinderung.',
     'EB-Mitwirkung in Beschwerdeweg {{Art. 56}}/5: nacheinander LK → SL → Schulforum. Bei Unzufriedenheit mit OM: Widerspruch + Anrufung Schulaufsicht. Eltern haben Anhörungsrecht ({{Art. 88}}).',
   ],
@@ -46,7 +46,7 @@ window.MODULE = {
     {
       id: 'E02', titel: 'Elternbeirat — Wahl + Amtszeit',
       frage: 'Wie ist der Elternbeirat konstituiert?',
-      antwort: '{{Art. 65 BayEUG}}: Vertreter aller EB der Schule. **Wahl alle 2 Schuljahre** (in den ersten 6 Wochen). Wahlberechtigt: alle EB der Schule. Zahl der Mitglieder: an MS i.d.R. 5–12 (je nach Schulgröße). **Vorsitzende:r** wird aus der Mitte gewählt; vertritt EB nach außen.',
+      antwort: '{{Art. 65 BayEUG}}: Vertreter aller EB der Schule. **Wahl alle 2 Schuljahre** (in den ersten 6 Wochen). Wahlberechtigt: alle EB der Schule. **Schulart-spezifischer Schlüssel** der Mitgliederzahl: **GS/MS/FöS = 1 EB-Mitglied pro 15 SuS-Eltern**, **RS/Gym/FOS/BOS = 1 pro 50**. An MS typisch 5–12 Mitglieder (je nach Schulgröße). **Vorsitzende:r** wird aus der Mitte gewählt; vertritt EB nach außen.',
       norm: 'Art. 65 BayEUG', status: 'open',
     },
     {
@@ -58,7 +58,7 @@ window.MODULE = {
     {
       id: 'E04', titel: 'Schulforum — Zusammensetzung',
       frage: 'Wer sitzt im Schulforum — und welche Funktion hat es?',
-      antwort: '{{Art. 69 BayEUG}}: an MS Mitglieder = **SL (Vorsitz)** + **Elternbeirat-Vertretung** (mind. 2) + **SMV-Vertretung** (mind. 1, je nach Schule) + **Schulträger-Vertretung** + **bis 2 LK** (gewählt von der Lehrerkonferenz). **Funktion**: Beratung des **Schullebens**, der **Schulentwicklung** und des **Bildungsangebots**. Anhörung bei wesentlichen Veränderungen. KEIN Beschluss-Organ über Personal/Noten.',
+      antwort: '{{Art. 69 BayEUG}}: an MS Mitglieder = **SL (Vorsitz)** + **Elternbeirat-Vertretung** (mind. 2) + **SMV-Vertretung** (mind. 1, je nach Schule) + **Schulträger-Vertretung** + **bis 2 LK** (gewählt von der Lehrerkonferenz). **Funktion**: (1) **Einvernehmens-Befugnis Abs. 4**: Hausordnung + Pausenordnung + Grundsätze schulischer Veranstaltungen — Schule kann diese Akte nicht gegen Schulforum-Veto erlassen. (2) Beratung Schulleben + Schulentwicklung + Bildungsangebot. (3) Anhörung bei wesentlichen Veränderungen. **KEIN** Beschluss-Organ über Personal/Noten/U.-Inhalte.',
       norm: 'Art. 69 BayEUG', status: 'open',
     },
     {
@@ -89,7 +89,7 @@ window.MODULE = {
 
   fallen: [
     { id: 'FA01', frage: 'Elternbeirat hat Entscheidungs-Kompetenz über Stundenpläne?', antwort: 'NEIN. {{Art. 67}}: nur **Beratungs-** + **Anhörungsrecht**. Entscheidung bleibt bei SL/Lehrerkonferenz/Schulaufsicht.' },
-    { id: 'FA02', frage: 'Schulforum entscheidet über OM?', antwort: 'NEIN. {{Art. 69}}: beratendes Gremium. OM-Entscheidung bei SL ({{Art. 86/2}} Nr. 5) oder Lehrerkonferenz (Nr. 6, 9, 11).' },
+    { id: 'FA02', frage: 'Schulforum entscheidet über OM?', antwort: 'NEIN. {{Art. 69}}: primär beratendes Gremium. OM-Entscheidung bei SL ({{Art. 86/2}} Nr. 5) oder Lehrerkonferenz (Nr. 6, 9, 10, 11). ABER: Schulforum hat **Einvernehmens-Befugnis Art. 69 Abs. 4** bei Hausordnung + Pausenordnung — das ist mehr als Beratung.' },
     { id: 'FA03', frage: 'Klassenelternsprecher wählt die SMV?', antwort: 'NEIN. Klassenelternsprecher = EB-Wahl. SMV (Schülersprecher, Schülerrat) wird von SuS gewählt — getrennte Systeme.' },
     { id: 'FA04', frage: 'EB dürfen jederzeit U. besuchen?', antwort: 'NEIN. Nur mit Zustimmung der LK (und i.d.R. SL-Information). Hausrecht {{§ 27 LDO}} liegt bei SL.' },
     { id: 'FA05', frage: 'Art. 76 verlangt Erziehung im Sinne der Schule?', antwort: 'TEILWEISE. „Unterstützen der Erziehungsarbeit" — Eltern bleiben primär Erzieher (Art. 6/2 GG); Schule hat eigenen Bildungs-/Erziehungsauftrag. Subsidiäre Unterstützung, keine Vorherrschaft Schule.' },
@@ -98,6 +98,7 @@ window.MODULE = {
     { id: 'FA08', frage: 'Verteilung der Schülerzeitung muss vom Elternbeirat genehmigt werden?', antwort: 'NEIN. Schülerzeitung: bei SMV-Modus SL-Untersagung möglich; bei Druckwerk-Modus Eltern-Haftung (Art. 63 BayEUG, → mp05).' },
     { id: 'FA09', frage: 'EB dürfen vor OM-Beschluss in den Klassenrat?', antwort: 'NEIN. EB sind bei {{Art. 88}}-Anhörung beteiligt (Anhörungsrecht), nicht im LK-Beschluss-Gremium. Klassenkonferenz = nur LK.' },
     { id: 'FA10', frage: 'Allein bei alleiniger Personensorge muss Schule beide EB informieren?', antwort: 'NEIN. {{§ 1626 BGB}}: bei alleiniger Sorge nur Sorgeberechtigte:r. Andere Elternteil kann nach {{§ 1686 BGB}} Auskunft verlangen — aber Schule beachtet die Sorgerechts-Lage.' },
+    { id: 'FA11', frage: 'Elternbeirats-Mitglieder-Zahl ist überall gleich?', antwort: 'NEIN. **Schulart-spezifischer Schlüssel**: GS/MS/FöS = 1 EB pro 15 SuS-Eltern (engerer Schlüssel — kleinere Schulen, stärkere EB-Präsenz). RS/Gym/FOS/BOS = 1 pro 50. An MS i.d.R. 5-12 Mitglieder.' },
   ],
 
   faelle: [
@@ -173,7 +174,7 @@ window.MODULE = {
     },
     {
       id: 'A3', kuerzel: 'A.3', titel: 'Schulforum',
-      anriss: '{{Art. 69 BayEUG}}: Bindeglied EB ↔ SL ↔ SMV ↔ Schulträger ↔ LK. Beratung Schulleben + Schulentwicklung + Bildungsangebot. KEIN Beschluss-Organ über Personal/Noten.',
+      anriss: '{{Art. 69 BayEUG}}: Bindeglied EB ↔ SL ↔ SMV ↔ Schulträger ↔ LK. **Abs. 4 Einvernehmen** bei Hausordnung + Pausenordnung. Im Übrigen Beratung Schulleben + Schulentwicklung + Bildungsangebot. KEIN Beschluss-Organ über Personal/Noten/U.-Inhalte.',
       norm: 'Art. 69 BayEUG', status: 'open', cards: 2,
       subblocks: [
         { label: 'Zusammensetzung', cards: 1 },
@@ -208,10 +209,10 @@ window.MODULE = {
     'Art. 126 BV': { titel: 'Art. 126 BV — Familie', wortlaut: 'Verfassungs-Anker Familie als Erziehungseinheit. Vorrang elterlicher Erziehung; Staat schützt Familie.', karten: [] },
     'Art. 56 BayEUG': { titel: 'Art. 56 BayEUG — SuS-Rechte + Beschwerdeweg', wortlaut: 'Abs. 5: Beschwerdeweg nacheinander LK → SL → Schulforum. EB wirken auf Schulforum-Ebene mit.', karten: ['E07'] },
     'Art. 64 BayEUG': { titel: 'Art. 64 BayEUG — Klassenelternsprecher', wortlaut: 'Wahl zu SJ-Beginn durch EB der Klasse. Aufgaben: Information + Bündelung von Anliegen + Vermittlung KL ↔ EB. Amtszeit i.d.R. 1 Schuljahr.', karten: ['E01'] },
-    'Art. 65 BayEUG': { titel: 'Art. 65 BayEUG — Elternbeirat-Konstituierung', wortlaut: 'Elternbeirat = Vertreter aller EB der Schule. Wahl alle 2 Schuljahre in den ersten 6 Wochen. Zahl der Mitglieder nach Schulgröße. Vorsitzende:r aus der Mitte gewählt.', karten: ['E02'] },
+    'Art. 65 BayEUG': { titel: 'Art. 65 BayEUG — Elternbeirat-Konstituierung', wortlaut: 'Elternbeirat = Vertreter aller EB der Schule. Wahl alle 2 Schuljahre in den ersten 6 Wochen. **Schulart-spezifischer Schlüssel**: GS/MS/FöS = 1 EB-Mitglied pro 15 SuS-Eltern · RS/Gym/FOS/BOS = 1 pro 50. An MS typisch 5–12 Mitglieder je nach Schulgröße. Vorsitzende:r aus der Mitte gewählt.', karten: ['E02'] },
     'Art. 66 BayEUG': { titel: 'Art. 66 BayEUG — Wahl Elternbeirat', wortlaut: 'Wahlverfahren: alle EB wahlberechtigt + wählbar. Geheime Wahl. Wahlleitung durch SL oder beauftragte Person.', karten: [] },
     'Art. 67 BayEUG': { titel: 'Art. 67 BayEUG — Aufgaben Elternbeirat', wortlaut: '(1) Förderung Zusammenarbeit Schule ↔ EB. (2) Beratungsrecht. (3) Anhörungsrecht bei wesentlichen Schulangelegenheiten. (4) Beschwerde-Anrufung (Schulforum, SL). (5) Mitwirkung Schulpartner-Foren. KEINE Entscheidungskompetenz U./Noten.', karten: ['E03'] },
-    'Art. 69 BayEUG': { titel: 'Art. 69 BayEUG — Schulforum', wortlaut: 'an MS: SL (Vorsitz) + Elternbeirat-Vertretung + SMV-Vertretung + Schulträger-Vertretung + bis 2 LK. Beratung Schulleben + Schulentwicklung + Bildungsangebot. KEIN Beschluss-Organ über Personal/Noten/U.-Inhalte.', karten: ['E04'] },
+    'Art. 69 BayEUG': { titel: 'Art. 69 BayEUG — Schulforum', wortlaut: 'an MS: SL (Vorsitz) + Elternbeirat-Vertretung + SMV-Vertretung + Schulträger-Vertretung + bis 2 LK. **Abs. 4: Einvernehmens-Befugnis** bei Hausordnung + Pausenordnung + Grundsätzen schulischer Veranstaltungen (Schule kann diese Akte nicht gegen Schulforum-Veto erlassen). Im Übrigen: Beratung Schulleben + Schulentwicklung + Bildungsangebot. KEIN Beschluss-Organ über Personal/Noten/U.-Inhalte.', karten: ['E04'] },
     'Art. 75 BayEUG': { titel: 'Art. 75 BayEUG — EB-Auskunft', wortlaut: 'EB sind über wesentliche, ihr Kind betreffende Vorgänge zu unterrichten. Bei OM: schriftlich + rechtzeitig vor Vollzug.', karten: [] },
     'Art. 76 BayEUG': { titel: 'Art. 76 BayEUG — EB-Pflichten', wortlaut: 'EB haben „auf den regelmäßigen Schulbesuch des Kindes zu achten" und „die Erziehungsarbeit der Schule zu unterstützen". Zwei Pflichten.', karten: ['E05', 'FA05', 'FA06'] },
     'Art. 78 BayEUG': { titel: 'Art. 78 BayEUG — Schulberatung', wortlaut: 'Schule + jede LK beraten EB + SuS in Schullaufbahn-Fragen. Strukturelle Beratungspflicht.', karten: [] },

@@ -25,7 +25,7 @@ window.MODULE = {
   kartografie: [
     { ebene: 'I', bez: 'Bay. Verfassung', kuerzel: 'BV', normen: ['Art. 128 BV', 'Art. 129 BV', 'Art. 132 BV', 'Art. 133 BV'], sub: 'Bildungsanspruch · Schulpflicht · **Anlagen+Leistung+innere Berufung** · Bildungsträger' },
     { ebene: 'II', bez: 'BayEUG', kuerzel: 'BayEUG', normen: ['Art. 7 BayEUG', 'Art. 7a BayEUG', 'Art. 7b BayEUG', 'Art. 35 BayEUG', 'Art. 41 BayEUG', 'Art. 43 BayEUG', 'Art. 44 BayEUG', 'Art. 52 BayEUG', 'Art. 53 BayEUG', 'Art. 76 BayEUG', 'Art. 78 BayEUG', 'Art. 86 BayEUG'], sub: 'MS/M-Zug · Schulpflicht · Lernort · Schulartwechsel · Elternwahl · LNW · Vorrücken · Beratung · OM' },
-    { ebene: 'III', bez: 'Schulordnungen', kuerzel: 'VO', normen: ['§ 6 MSO', '§ 7 MSO', '§ 8 MSO', '§ 12 MSO', '§ 14 MSO', '§ 22 MSO', '§ 34 MSO', '§ 28 BaySchO', '§ 32 BaySchO', '§ 41/1 BaySchO'], sub: 'Gelenkklasse · M-Zug · Durchlässigkeit · LNW · Förderplan · Praxisklassen-Abschl. · Quabi · HA · Indiv. Unterstützung · Schülerakte' },
+    { ebene: 'III', bez: 'Schulordnungen + LDO', kuerzel: 'VO', normen: ['§ 6 MSO', '§ 7 MSO', '§ 8 MSO', '§ 12 MSO', '§ 14 MSO', '§ 22 MSO', '§ 34 MSO', '§ 28 BaySchO', '§ 32 BaySchO', '§ 41/1 BaySchO', '§ 3 LDO'], sub: 'Gelenkklasse · M-Zug · Durchlässigkeit · LNW · Förderplan · Praxisklassen-Abschl. · Quabi · HA · Indiv. Unterstützung · Schülerakte · LNW-Aufbewahrung' },
     { ebene: 'IV', bez: 'KMBek', kuerzel: 'KMBek', normen: ['KMBek QA-MS', 'KMBek MSA', 'KMBek ext. Bewerbung'], sub: 'Quali · MSA · ext. Bewerbung (Volltext nicht öffentlich strukturiert)' },
     { ebene: 'V', bez: 'Bundesrecht', kuerzel: 'BUND', normen: ['Art. 12 GG', '§§ 1626 BGB'], sub: 'Berufswahl-Anker · Sorgerecht (Eltern-Antragsrecht)' },
   ],
@@ -63,6 +63,10 @@ window.MODULE = {
       frage: 'Wie verzahnen sich Beratung, Elternwahl und Verfassungs-Anker?',
       antwort: '**Schule berät** ({{Art. 78 BayEUG}}) — strukturell, keine Schulwahl-Entscheidung der LK. **Eltern wählen** ({{Art. 44 BayEUG}}) Schulart/Ausbildungsrichtung — **gebunden an Eignung + Leistung**. **BV Art. 132**: Maßstab = **Anlagen + Neigungen + Leistung + innere Berufung**, NICHT wirtschaftliche/gesellschaftliche Stellung der Eltern.',
       norm: 'Art. 78 BayEUG', status: 'open' },
+    { id: 'S09', titel: '§ 3 LDO — LNW-Aufbewahrungsfrist (Schulrats-Lieblingsfalle)',
+      frage: 'Wie lange müssen schriftliche Leistungsnachweise von der Schule aufbewahrt werden — und welche Norm regelt das?',
+      antwort: '**{{§ 3 LDO}} Abs. 6**: schriftliche LNW sind **1 Jahr nach Ablauf des Schuljahres** aufzubewahren, in dem sie geschrieben wurden. Danach Vernichtung gemäß KMBek Schriftwesen. Abgrenzung: § 12/3 MSO regelt die **Rückgabe** an SuS („angemessene Frist") + die SuS-Pflicht zur Rückgabe an Schule („1 Woche unverändert"). Aufbewahrungs- + Rückgabefrist sind zwei verschiedene Anker. Klassische Schulrats-Frage.',
+      norm: '§ 3 LDO', status: 'open' },
   ],
 
   fallen: [
@@ -76,6 +80,7 @@ window.MODULE = {
     { id: 'FA08', frage: '{{Art. 84 BayEUG}} regelt Abschlüsse?', antwort: 'NEIN. Art. 84 BayEUG = **Werbung/Vertrieb in der Schule** (politische Werbung verboten). Abschluss-Werte stehen in MSO §§ 19 ff. bzw. § 22, § 34 MSO.' },
     { id: 'FA09', frage: 'M-Zug-Schwellen alle = 2,33?', antwort: 'NEIN. **M7 ≤ 2,66** · M8/M9/M10 ≤ **2,33** ({{§ 7 MSO}}). D+M+E-Mittel aus jeweiligem Jahreszeugnis.' },
     { id: 'FA10', frage: 'Elternwahlrecht {{Art. 44 BayEUG}} absolut?', antwort: 'NEIN. Gebunden an **Eignung + Leistung** ({{BV Art. 132}} + Art. 44). Spezial-Aufnahmeprüfungen (PU GS 4, M-Zug-Aufnahme, RS/Gym-Spezialprüfungen) zulässig.' },
+    { id: 'FA11', frage: 'LNW-Aufbewahrung = 2 Jahre wie Zeugnisse?', antwort: 'NEIN. {{§ 3 LDO}} Abs. 6: **1 Jahr nach Ablauf des Schuljahres**. Zeugnisse + Schülerakte haben andere Fristen (10 J. → § 41 BaySchO). Schulrats-Lieblings-Falle.' },
   ],
 
   faelle: [
@@ -187,5 +192,6 @@ window.MODULE = {
     '§ 28 BaySchO': { titel: '§ 28 BaySchO — Hausaufgaben', wortlaut: 'Abs. 1: HA in „**angemessener Zeit** bei durchschnittlichem Leistungsvermögen" — Berücksichtigung **Nachmittagsunterricht** + **berufliche Praktika**. Lehrerkonferenz legt Grundsätze fest. **Sonntage, Feiertage, Ferien** freizuhalten. Abs. 2: GS bis **eine Stunde** angemessen; an Förderschulen individuelle Leistungsfähigkeit. Cross-Ref MP_02.', karten: [] },
     '§ 32 BaySchO': { titel: '§ 32 BaySchO — Individuelle Unterstützung', wortlaut: '7-Maßnahmen-Katalog Abs. 2: Arbeitsmittel · Räumlichkeiten · Pausenregelung · Hand-/Lautzeichen · individuelle Arbeitsanweisungen · **HA-Differenzierung** · Visualisierung+Verbalisierung. **„Soweit nicht die Leistungsfeststellung berührt wird"** — Abgrenzung zu Nachteilsausgleich (§ 33 BaySchO, Cross-Ref MP_05).', karten: [] },
     '§ 41/1 BaySchO': { titel: '§ 41/1 BaySchO — Schülerakte-Einsicht (Cross-Ref MP_09)', wortlaut: 'Drei Personenkreise: SuS ab Vollendung 14. Lj. · aktuelle EB · frühere EB bis Vollendung 21. Lj. Vollzitat in MP_09 A.1.', karten: [] },
+    '§ 3 LDO': { titel: '§ 3 LDO — LNW-Aufbewahrungsfrist', wortlaut: 'Abs. 6: Schriftliche Leistungsnachweise sind **mindestens 1 Jahr nach Ablauf des Schuljahres**, in dem sie geschrieben wurden, aufzubewahren. Danach Vernichtung gemäß KMBek Schriftwesen-Aktenführung. NICHT zu verwechseln mit Schülerakte-Aufbewahrung (§ 41 BaySchO — 10 Jahre) oder Zeugnis-Kopien (Schule-Archiv). Schulrats-Lieblingsfalle in der mündlichen Prüfung.', karten: ['S09', 'FA11'] },
   },
 };
