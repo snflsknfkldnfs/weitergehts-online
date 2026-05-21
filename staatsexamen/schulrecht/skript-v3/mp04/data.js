@@ -1,10 +1,12 @@
-// MP_04 — Schulartenrecht und Schullaufbahn-Steuerung
+// MP_04 — Rechtliche Ordnung von Unterricht und Erziehung
+// PDF-Abschnitt 4 (Skript zum Schulrecht 2024 — Stephan Bauer):
+//   Unterrichtsbetrieb · LNW/Noten/Zeugnisse · Vorrücken · Abschlüsse + Prüfungen · Hausaufgaben · Ordnungsmaßnahmen (→ mp03)
 window.MODULE = {
   id: 'mp04',
   zalgm: 'ZALGM § 16 Nr. 4',
-  schwerpunkt: ['4.1 Schullaufbahn-Trias', '4.2 Vorrücken Art. 53 + § 12 MSO', '4.3 Übertritt', '4.4 LNW + HA', '4.5 MS-Abschlüsse'],
-  titel: 'Schulartenrecht',
-  titel2: '+ Schullaufbahn-Steuerung.',
+  schwerpunkt: ['4.1 Schullaufbahn-Trias', '4.2 LNW + Noten ({{Art. 52}})', '4.3 Vorrücken ({{Art. 53}} + § 12 MSO)', '4.4 Hausaufgaben + Förderplan', '4.5 MS-Abschlüsse + Prüfungen'],
+  titel: 'Rechtl. Ordnung',
+  titel2: 'Unterricht + Erziehung.',
   abriss:
     'Trias SuS/EB/Schule: Eltern wählen (Art. 44, gebunden an Eignung), Schule ' +
     'berät (Art. 78), Lehrerkonferenz entscheidet (Art. 53). Verfassungs-Anker ' +
@@ -23,7 +25,7 @@ window.MODULE = {
   kartografie: [
     { ebene: 'I', bez: 'Bay. Verfassung', kuerzel: 'BV', normen: ['Art. 128 BV', 'Art. 129 BV', 'Art. 132 BV', 'Art. 133 BV'], sub: 'Bildungsanspruch · Schulpflicht · **Anlagen+Leistung+innere Berufung** · Bildungsträger' },
     { ebene: 'II', bez: 'BayEUG', kuerzel: 'BayEUG', normen: ['Art. 7 BayEUG', 'Art. 7a BayEUG', 'Art. 7b BayEUG', 'Art. 35 BayEUG', 'Art. 41 BayEUG', 'Art. 43 BayEUG', 'Art. 44 BayEUG', 'Art. 52 BayEUG', 'Art. 53 BayEUG', 'Art. 76 BayEUG', 'Art. 78 BayEUG', 'Art. 86 BayEUG'], sub: 'MS/M-Zug · Schulpflicht · Lernort · Schulartwechsel · Elternwahl · LNW · Vorrücken · Beratung · OM' },
-    { ebene: 'III', bez: 'Schulordnungen', kuerzel: 'VO', normen: ['§ 6 MSO', '§ 7 MSO', '§ 8 MSO', '§ 12 MSO', '§ 14 MSO', '§ 22 MSO', '§ 34 MSO', '§ 28 BaySchO', '§ 32 BaySchO', '§ 41/1 BaySchO'], sub: 'Gelenkklasse · M-Zug · Durchlässigkeit · LNW · Förderplan · Praxisklassen-Abschl. · Quabi · HA · Indiv. Unterstützung · Schülerakte' },
+    { ebene: 'III', bez: 'Schulordnungen + LDO', kuerzel: 'VO', normen: ['§ 6 MSO', '§ 7 MSO', '§ 8 MSO', '§ 12 MSO', '§ 14 MSO', '§ 22 MSO', '§ 34 MSO', '§ 28 BaySchO', '§ 32 BaySchO', '§ 41/1 BaySchO', '§ 3 LDO'], sub: 'Gelenkklasse · M-Zug · Durchlässigkeit · LNW · Förderplan · Praxisklassen-Abschl. · Quabi · HA · Indiv. Unterstützung · Schülerakte · LNW-Aufbewahrung' },
     { ebene: 'IV', bez: 'KMBek', kuerzel: 'KMBek', normen: ['KMBek QA-MS', 'KMBek MSA', 'KMBek ext. Bewerbung'], sub: 'Quali · MSA · ext. Bewerbung (Volltext nicht öffentlich strukturiert)' },
     { ebene: 'V', bez: 'Bundesrecht', kuerzel: 'BUND', normen: ['Art. 12 GG', '§§ 1626 BGB'], sub: 'Berufswahl-Anker · Sorgerecht (Eltern-Antragsrecht)' },
   ],
@@ -61,6 +63,10 @@ window.MODULE = {
       frage: 'Wie verzahnen sich Beratung, Elternwahl und Verfassungs-Anker?',
       antwort: '**Schule berät** ({{Art. 78 BayEUG}}) — strukturell, keine Schulwahl-Entscheidung der LK. **Eltern wählen** ({{Art. 44 BayEUG}}) Schulart/Ausbildungsrichtung — **gebunden an Eignung + Leistung**. **BV Art. 132**: Maßstab = **Anlagen + Neigungen + Leistung + innere Berufung**, NICHT wirtschaftliche/gesellschaftliche Stellung der Eltern.',
       norm: 'Art. 78 BayEUG', status: 'open' },
+    { id: 'S09', titel: '§ 3 LDO — LNW-Aufbewahrungsfrist (Schulrats-Lieblingsfalle)',
+      frage: 'Wie lange müssen schriftliche Leistungsnachweise von der Schule aufbewahrt werden — und welche Norm regelt das?',
+      antwort: '**{{§ 3 LDO}} Abs. 6**: schriftliche LNW sind **1 Jahr nach Ablauf des Schuljahres** aufzubewahren, in dem sie geschrieben wurden. Danach Vernichtung gemäß KMBek Schriftwesen. Abgrenzung: § 12/3 MSO regelt die **Rückgabe** an SuS („angemessene Frist") + die SuS-Pflicht zur Rückgabe an Schule („1 Woche unverändert"). Aufbewahrungs- + Rückgabefrist sind zwei verschiedene Anker. Klassische Schulrats-Frage.',
+      norm: '§ 3 LDO', status: 'open' },
   ],
 
   fallen: [
@@ -74,6 +80,7 @@ window.MODULE = {
     { id: 'FA08', frage: '{{Art. 84 BayEUG}} regelt Abschlüsse?', antwort: 'NEIN. Art. 84 BayEUG = **Werbung/Vertrieb in der Schule** (politische Werbung verboten). Abschluss-Werte stehen in MSO §§ 19 ff. bzw. § 22, § 34 MSO.' },
     { id: 'FA09', frage: 'M-Zug-Schwellen alle = 2,33?', antwort: 'NEIN. **M7 ≤ 2,66** · M8/M9/M10 ≤ **2,33** ({{§ 7 MSO}}). D+M+E-Mittel aus jeweiligem Jahreszeugnis.' },
     { id: 'FA10', frage: 'Elternwahlrecht {{Art. 44 BayEUG}} absolut?', antwort: 'NEIN. Gebunden an **Eignung + Leistung** ({{BV Art. 132}} + Art. 44). Spezial-Aufnahmeprüfungen (PU GS 4, M-Zug-Aufnahme, RS/Gym-Spezialprüfungen) zulässig.' },
+    { id: 'FA11', frage: 'LNW-Aufbewahrung = 2 Jahre wie Zeugnisse?', antwort: 'NEIN. {{§ 3 LDO}} Abs. 6: **1 Jahr nach Ablauf des Schuljahres**. Zeugnisse + Schülerakte haben andere Fristen (10 J. → § 41 BaySchO). Schulrats-Lieblings-Falle.' },
   ],
 
   faelle: [
@@ -172,7 +179,7 @@ window.MODULE = {
     'Art. 76 BayEUG': { titel: 'Art. 76 BayEUG — Eltern-Mitwirkungspflicht', wortlaut: 'Abs. 1 (Wortlaut): „Die Erziehungsberechtigten sind verpflichtet, auf die gewissenhafte Erfüllung der schulischen Pflichten … durch die Schülerinnen und Schüler zu achten und die Erziehungsarbeit der Schule zu unterstützen." Abs. 2: regelm. Teilnahme + verbindliche Schulveranstaltungen.', karten: [] },
     'Art. 78 BayEUG': { titel: 'Art. 78 BayEUG — Schulberatung', wortlaut: 'Schule + Schulaufsicht **beraten** Eltern + SuS in Schullaufbahn-Fragen, geben Hilfen entsprechend **Anlagen + Fähigkeiten**. Beratung ist STRUKTURELL — keine Schulwahl-Entscheidung der LK. Cross-Ref MP_08 A.3 (5 Eskalationsstufen).', karten: ['S08'] },
     'Art. 84 BayEUG': { titel: 'Art. 84 BayEUG — Werbung/Vertrieb (NICHT Abschluss!)', wortlaut: 'Politische Werbung in der Schule verboten. **NICHT** Abschluss-Norm — Abschluss-Werte stehen in MSO §§ 19 ff. bzw. {{§ 22 MSO}} / {{§ 34 MSO}}. Falle FA08.', karten: [] },
-    'Art. 86 BayEUG': { titel: 'Art. 86 BayEUG — Erziehungs-/Ordnungsmaßnahmen', wortlaut: 'Abs. 1: Erziehungsmaßnahmen ZUERST, dann Ordnungs-/Sicherungsmaßnahmen. Maßnahmen werden nach **Verhältnismäßigkeit** ausgewählt. Schullaufbahn-relevante OM Abs. 2: Punkt 8 Schul-Zuweisung · Punkt 9 Entlassungs-Androhung · Punkt 10 Entlassung · Punkt 11+12 Schulart-Ausschluss. Cross-Ref MP_05 A.4.', karten: [] },
+    'Art. 86 BayEUG': { titel: 'Art. 86 BayEUG — Erziehungs-/Ordnungsmaßnahmen (Cross-Ref MP_03 A.4)', wortlaut: 'Abs. 1: Erziehungsmaßnahmen ZUERST, dann Ordnungs-/Sicherungsmaßnahmen. Maßnahmen werden nach **Verhältnismäßigkeit** ausgewählt. Schullaufbahn-relevante OM Abs. 2: Nr. 8 Entlassung · Nr. 9 Zuweisung andere Klasse · Nr. 10 Zuweisung andere gleichartige Schule (2/3-EB-Mehrheits-Sperre) · Nr. 11 Entlassung MS/FöS/BS · Nr. 12 Schulart-Ausschluss. **Vollkatalog 12-Nr. → MP_03 A.4**.', karten: [] },
     '§ 6 MSO': { titel: '§ 6 MSO — Gelenkklasse Jgst. 5', wortlaut: 'Jahreszeugnis Jgst. 5 MS: **D+M ≤ 2,0** Gymnasium · **D+M ≤ 2,5** Realschule (uneingeschränkt; sonst Härtefall Lehrerkonferenz).', karten: [] },
     '§ 7 MSO': { titel: '§ 7 MSO — M-Zug-Aufnahme', wortlaut: 'M-Zug-Schwellen (D+M+E aus Jahreszeugnis vorhergehende Klasse): **M7** ≤ **2,66** · **M8/M9/M10** ≤ **2,33**. **M10** zusätzlich Quali-Voraussetzung aus 9. Klasse. Cross-Ref {{Art. 7a BayEUG}}.', karten: ['S05'] },
     '§ 8 MSO': { titel: '§ 8 MSO — Durchlässigkeit', wortlaut: 'Rückkehr MS↔M-Zug **jederzeit** möglich. Sicherheitsnetz für M-Zug-Aufnahme.', karten: ['S05'] },
@@ -185,5 +192,6 @@ window.MODULE = {
     '§ 28 BaySchO': { titel: '§ 28 BaySchO — Hausaufgaben', wortlaut: 'Abs. 1: HA in „**angemessener Zeit** bei durchschnittlichem Leistungsvermögen" — Berücksichtigung **Nachmittagsunterricht** + **berufliche Praktika**. Lehrerkonferenz legt Grundsätze fest. **Sonntage, Feiertage, Ferien** freizuhalten. Abs. 2: GS bis **eine Stunde** angemessen; an Förderschulen individuelle Leistungsfähigkeit. Cross-Ref MP_02.', karten: [] },
     '§ 32 BaySchO': { titel: '§ 32 BaySchO — Individuelle Unterstützung', wortlaut: '7-Maßnahmen-Katalog Abs. 2: Arbeitsmittel · Räumlichkeiten · Pausenregelung · Hand-/Lautzeichen · individuelle Arbeitsanweisungen · **HA-Differenzierung** · Visualisierung+Verbalisierung. **„Soweit nicht die Leistungsfeststellung berührt wird"** — Abgrenzung zu Nachteilsausgleich (§ 33 BaySchO, Cross-Ref MP_05).', karten: [] },
     '§ 41/1 BaySchO': { titel: '§ 41/1 BaySchO — Schülerakte-Einsicht (Cross-Ref MP_09)', wortlaut: 'Drei Personenkreise: SuS ab Vollendung 14. Lj. · aktuelle EB · frühere EB bis Vollendung 21. Lj. Vollzitat in MP_09 A.1.', karten: [] },
+    '§ 3 LDO': { titel: '§ 3 LDO — LNW-Aufbewahrungsfrist', wortlaut: 'Abs. 6: Schriftliche Leistungsnachweise sind **mindestens 1 Jahr nach Ablauf des Schuljahres**, in dem sie geschrieben wurden, aufzubewahren. Danach Vernichtung gemäß KMBek Schriftwesen-Aktenführung. NICHT zu verwechseln mit Schülerakte-Aufbewahrung (§ 41 BaySchO — 10 Jahre) oder Zeugnis-Kopien (Schule-Archiv). Schulrats-Lieblingsfalle in der mündlichen Prüfung.', karten: ['S09', 'FA11'] },
   },
 };

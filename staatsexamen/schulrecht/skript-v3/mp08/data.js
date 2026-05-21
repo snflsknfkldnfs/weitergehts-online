@@ -1,4 +1,6 @@
 // MP_08 — Kooperation mit Bildungs- und Betreuungseinrichtungen
+// PDF-Abschnitt 8 (Skript zum Schulrecht 2024 — Stephan Bauer):
+//   Ganztags-/Mittagsbetreuung · Hort an der Schule · Schulberatung · Päd. Dienste
 window.MODULE = {
   id: 'mp08',
   zalgm: 'ZALGM § 16 Nr. 8',
@@ -75,7 +77,7 @@ window.MODULE = {
     { id: 'FA06', frage: 'LK darf selbst therapieren?', antwort: 'NEIN. **Weiterleitung Pflicht** (BL / SPych / Erziehungsberatung). **Verschwiegenheit + Eltern-Einverständnis** Voraussetzung.' },
     { id: 'FA07', frage: 'gGTS-Anmeldung verpflichtend?', antwort: 'NEIN — **Anmeldung freiwillig**. ABER: **Teilnahme ab Anmeldung verpflichtend** (Ganztagszug, kein Tages-Rückzug). Wechsel nur zum SJ-Ende.' },
     { id: 'FA08', frage: 'Mittagsbetreuung = Hort = GTS?', antwort: 'NEIN. **Drei verschiedene Rechtsträger**: Gemeinde (Mittagsbetreuung, {{Art. 31/3 BayEUG}}) · freier/kirchl./kommunaler JuHi-Träger (Hort, {{§ 22 SGB VIII}}) · staatl. Schule (GTS, {{Art. 6/4 BayEUG}}).' },
-    { id: 'FA09', frage: 'Aufsichtspflicht Mittagspause Halbtags-GS = Schule?', antwort: 'NEIN — **Schulverband / Gemeinde**, NICHT Schule. Aufsichtspflicht-Sphären getrennt (Cross-Ref MP_06 A.2 + MP_07 Haftungsachsen).' },
+    { id: 'FA09', frage: 'Aufsichtspflicht Mittagspause Halbtags-GS = Schule?', antwort: 'NEIN — **Schulverband / Gemeinde**, NICHT Schule. Aufsichtspflicht-Sphären getrennt (Cross-Ref MP_06 A.1 + A.2 — Aufsichtspflicht + Haftungsdreieck).' },
     { id: 'FA10', frage: 'Rechtsanspruch auf GTS-Platz?', antwort: 'NEIN. **Kein Anspruch**; Wahlfreiheit Halbtag↔Ganztag. **Antrag** läuft über **Schulaufwandsträger** an der jeweiligen Schulart; Ausbau hängt von Träger-Entscheidung.' },
     { id: 'FA11', frage: 'FL permanent als Vertretung einsetzbar?', antwort: 'NEIN. FL-Vertretungsunterricht NUR **kurzfristig** in unabweisbaren Fällen, **max. 5 WStd**, NICHT permanent. Schutz der 8 eigenverantwortlichen AG-Stunden.' },
   ],
@@ -118,14 +120,14 @@ window.MODULE = {
       ],
       antwortkette: 'Eltern-Beratung {{Art. 78 BayEUG}} → Wechsel-Antrag zum SJ-Ende, oder Wechsel in oGTS falls angeboten → bei Halbtags-Bedarf akut: Mittagsbetreuung (Gemeinde) oder Hort (außerschulisch) als Alternative.',
     },
-    { id: 'F5', titel: 'Niklas — Aufsichtspflicht Schule ↔ Hort (Cross-Ref MP_06/MP_07)',
+    { id: 'F5', titel: 'Niklas — Aufsichtspflicht Schule ↔ Hort (Cross-Ref MP_06 A.2)',
       sachverhalt: 'Niklas (7) verletzt sich auf dem Weg von der Halbtags-GS zum Hort um 13:15 Uhr. Mutter macht die Schule haftbar.',
       knackpunkte: [
         '**Aufsichtspflicht-Sphären getrennt**: Schule (Unterricht) ↔ Schulverband/Gemeinde (Mittagspause Halbtags-GS) ↔ Hort-Träger (außerschulisch, {{§ 22 SGB VIII}}).',
         '**Mittagsbetreuung ≠ Hort ≠ GTS** — drei verschiedene Träger, drei verschiedene Haftungsachsen.',
         '**Schule haftet nur** für die Zeit unter SL-Aufsicht (bei GTS Nachmittag inkl., bei Halbtags-GS NICHT).',
       ],
-      antwortkette: 'Sphären-Zuordnung klären → Niklas-Unfall um 13:15 außerhalb Schulpräsenz → Schulverband/Gemeinde bzw. Hort-Träger verantwortlich → KL informiert SL + Eltern, dokumentiert Vorfall, verweist Mutter an Hort-Träger / Gemeindeverwaltung. Cross-Ref MP_06 A.2 + MP_07 Haftungsdreieck.',
+      antwortkette: 'Sphären-Zuordnung klären → Niklas-Unfall um 13:15 außerhalb Schulpräsenz → Schulverband/Gemeinde bzw. Hort-Träger verantwortlich → KL informiert SL + Eltern, dokumentiert Vorfall, verweist Mutter an Hort-Träger / Gemeindeverwaltung. Cross-Ref MP_06 A.1 (Aufsichtspflicht) + A.2 (Haftungsdreieck).',
     },
   ],
 

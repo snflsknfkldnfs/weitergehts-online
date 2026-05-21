@@ -1,5 +1,7 @@
-// MP_05 — Inhaltsauszug (echte Quelle der Live-Seite, gekürzt + strukturiert für
-// die Reveal-Mechanik). Die Felder spiegeln das künftige Frontmatter-Schema.
+// MP_05 — Rechte und Pflichten der Schüler:innen
+// PDF-Abschnitt 5 (Skript zum Schulrecht 2024 — Stephan Bauer):
+//   Organe der Schülermitverantwortung · Schülerzeitung
+// (Schwerpunkte 5.4-5.5 ndM-Spezifika + Nachteilsausgleich aus Examens-Realität ergänzt)
 
 window.MODULE = {
   id: 'mp05',
@@ -361,7 +363,7 @@ window.MODULE = {
       id: 'A5',
       kuerzel: 'A.5',
       titel: 'Erziehungs- + Ordnungsmaßnahmen',
-      anriss: 'EOM strikt subsidiär nach EM. 6-Stufen-Katalog Art. 86 Abs. 2. Verfahrens-Trias Art. 88 mit Anhörung. Mitarbeitsnote ≠ Verhaltensstrafe. Nachteilsausgleich vs. Notenschutz nach BVerwG 2015.',
+      anriss: 'EOM strikt subsidiär nach EM. **12-Nr.-OM-Katalog** Art. 86 Abs. 2 (SuS-Perspektive: Nr. 1-6 niedrigschwellig; LK-Konferenz-Eskalation Nr. 6-10 inkl. 2/3-EB-Mehrheit für Nr. 10 — Vollkatalog → mp03 A.4). Verfahrens-Trias Art. 88 mit Anhörung. Mitarbeitsnote ≠ Verhaltensstrafe. Nachteilsausgleich vs. Notenschutz nach BVerwG 2015.',
       norm: 'Art. 86 BayEUG',
       status: 'open',
       cards: 8,
@@ -433,7 +435,7 @@ window.MODULE = {
     },
     'Art. 86 BayEUG': {
       titel: 'Art. 86 BayEUG — Erziehungs- und Ordnungsmaßnahmen',
-      wortlaut: 'Stufenmodell EOM. Verweis · Verschärfter Verweis · Versetzung · Ausschluss von Veranstaltungen · Androhung Entlassung · Entlassung. Begründung verhaltensbezogen — getrennt von Mitarbeitsnote.',
+      wortlaut: 'Art. 86/1: Subsidiarität — erst Erziehungs-, dann Ordnungs-/Sicherungsmaßnahmen. **Art. 86/2 12-Nr.-Katalog** (1) schriftl. Verweis · (2) verschärfter Verweis · (3) Versetzung in Parallelklasse · (4) Nacharbeit · (5) Ausschluss bis 6 U.-Tage [SL] · (6) Ausschluss 2-4 Wochen [LK-Konferenz] · (7) Androhung Entlassung · (8) Entlassung · (9) Zuweisung andere Klasse derselben Schule · (10) Zuweisung andere gleichartige Schule · (11) Entlassung MS/FöS/BS · (12) Ausschluss aller Schulen derselben Art. **Pos 10 erfordert 2/3-EB-Mehrheit nicht dagegen.** Abs. 3: Verbote körperl. Züchtigung · Kollektivstrafen · Strafarbeiten · entwürdigende Strafen. Abs. 3 Nr. 4: Pflichtschul-Schutz vor Nr. 9-12 (Ausnahme Nr. 11). Begründung verhaltensbezogen — getrennt von Mitarbeitsnote. Vollkatalog → mp03 A.4.',
       karten: ['K12'],
     },
     'Art. 103/3 GG': {
@@ -523,7 +525,7 @@ window.MODULE = {
     },
     'Vorkurs Deutsch 240': {
       titel: 'KMBek Vorkurs Deutsch 240',
-      wortlaut: 'Sprachförderprogramm für K mit ndM 1,5 Jahre vor Einschulung. Umfang 240 Wochenstunden. Träger gemeinsam: Kindertageseinrichtung + Grundschule. Ziel: Deutschkenntnisse für erfolgreichen Übergang Regelklasse.',
+      wortlaut: 'Sprachförderprogramm für K mit ndM 1,5 Schuljahre vor Einschulung. Umfang **240 Stunden insgesamt** (verteilt über vorletztes + letztes KiTa-Jahr — je 120 Std). Träger gemeinsam: Kindertageseinrichtung (Hälfte) + Grundschule (Hälfte). Ziel: Deutschkenntnisse für erfolgreichen Übergang Regelklasse. (NICHT 240 Wochenstunden = 240/Woche — gemeint sind 240 Std über die gesamten 1,5 SJ.)',
       karten: [],
     },
     'DeutschPLUS': {
