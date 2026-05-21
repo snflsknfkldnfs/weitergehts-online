@@ -130,6 +130,28 @@ window.MODULE = {
       ],
       antwortkette: 'Streikverbot Art. 33/5 GG → Treuepflicht + Alimentation → kein Streikrecht für Beamte → Mitgliedschaft + Demos in Freizeit OK → bei Streik Dienstvergehen + Disziplinar.',
     },
+    {
+      id: 'F5', titel: 'Vertretungs-Anordnung am Tag der Klausur',
+      sachverhalt: 'SL ordnet 30 Min vor U.-Beginn eine spontane Vertretung an: „Frau S. ist krank, übernehmen Sie bitte 7c Mathe statt Ihrer Freistunde." Die LK weigert sich mit „Ich brauche die Stunde für Korrektur einer Klausur in 8b".',
+      knackpunkte: [
+        '{{§ 34 BeamtStG}} + {{§ 35 BeamtStG}}: Pflicht zur Dienstleistung + Weisungsgebundenheit. Anordnung der SL ist verbindlich, soweit zumutbar.',
+        '{{§ 9a LDO}}/3: „Vertretung in **zumutbarem Umfang**" — Schranke. Klausur-Korrekturpflicht ist Dienstpflicht (Art. 52 BayEUG), aber **keine** Notlage gegenüber Vertretungs-Anordnung in akutem Krankheitsfall.',
+        'Verweigerung ohne triftigen Grund = Dienstvergehen ({{§ 47 BeamtStG}}) → BayDG-Verfahren möglich.',
+        'Pragmatik: LK nimmt Vertretung an, dokumentiert Korrektur-Aufschub schriftlich an SL. Bei häufigen Konflikten {{Art. 7 BayBG}}-Beschwerdeweg.',
+      ],
+      antwortkette: 'Vertretungspflicht §§ 34/35 BeamtStG + § 9a/3 LDO „zumutbar" → Klausur-Korrektur kein Verweigerungsgrund → Annahme + schriftlicher Vermerk → bei Wiederholung Art. 7 BayBG Beschwerdeweg SL → Schulamt.',
+    },
+    {
+      id: 'F6', titel: 'Verschwiegenheits-Falle — Elternstammtisch',
+      sachverhalt: 'Eine LK trifft eine Mutter beim Elternstammtisch und erwähnt beiläufig: „Die Klasse hat heute echt schwierige Stunden mit der Lehrerkonferenz gehabt — wegen Niko." Niko sitzt in der Klasse, die Mutter kennt ihn nicht persönlich.',
+      knackpunkte: [
+        '{{§ 14 LDO}} Drittauskunfts-Verbot: Auskunft über Dritte SuS (Niko) unzulässig — auch wenn nur erwähnt.',
+        '§ 37 BeamtStG (Bund) ergänzt: Verschwiegenheits-Pflicht über dienstlich bekannte Angelegenheiten — auch im **außerdienstlichen** Bereich (Stammtisch, soziale Anlässe).',
+        'Folge: Dienstvergehen § 47 BeamtStG → Disziplinarmaßnahme möglich (i.d.R. Verweis Art. 6 BayDG bei Erstvergehen).',
+        'Eltern können sich beim SL beschweren ({{Art. 7 BayBG}} analog) oder bei der Schulaufsicht — datenschutzrechtlich relevant (DSGVO Art. 6 ohne Rechtsgrundlage).',
+      ],
+      antwortkette: '§ 14 LDO + § 37 BeamtStG → Drittauskunfts-Verbot gilt auch außerdienstlich → Dienstvergehen § 47 → BayDG-Verfahren → Lerneffekt: keine konkreten SuS-Namen außerhalb dienstlichen Kontexts erwähnen.',
+    },
   ],
 
   vertiefung: [
@@ -189,5 +211,7 @@ window.MODULE = {
     'Art. 76 BayPVG': { titel: 'Art. 76 BayPVG — Mitwirkung', wortlaut: 'Geringere Beteiligungsstufe als Mitbestimmung. Personalrat gibt Stellungnahme ab; Dienststelle entscheidet trotzdem. Bei Auflösung/Verkleinerung Organisationseinheiten.', karten: ['L07'] },
     'Art. 95 BV': { titel: 'Art. 95 BV — Beamtenverhältnis Bayern', wortlaut: 'Bayern-spezifischer Verfassungsanker für das Beamtenrecht. Ergänzt GG Art. 33.', karten: [] },
     'Art. 136 BV': { titel: 'Art. 136 BV — Religionsunterricht', wortlaut: 'ReliU als ordentliches Lehrfach. Lehrkräfte bedürfen religionspädagogischer Bevollmächtigung (Vocatio/Missio canonica).', karten: [] },
+    'Art. 56/2 BayEUG': { titel: 'Art. 56/2 BayEUG — SuS-Rechte (Cross-Ref MP_05 A.1)', wortlaut: 'Trias: Information · Beteiligung · Beschwerde. Nr. 5: Beschwerderecht nacheinander LK → SL → Schulforum. Abs. 3: freie Meinungsäußerung im U. mit Wahrung sachlicher Zusammenhang. Vollzitat MP_05 A.1.', karten: [] },
+    'Art. 56/4 BayEUG': { titel: 'Art. 56/4 BayEUG — SuS-Pflichten (Cross-Ref MP_05 A.2)', wortlaut: 'Verhaltensgrundnorm: „Aufgabe der Schule erfüllen + Bildungsziel erreichen". S. 2: Verhüllungs-Verbot Gesicht. S. 3: Distanz-U. mit Bild + Ton bei techn. Voraussetzungen. Vollzitat MP_05 A.2.', karten: [] },
   },
 };

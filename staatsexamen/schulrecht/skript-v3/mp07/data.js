@@ -151,6 +151,30 @@ window.MODULE = {
       ],
       antwortkette: 'Anliegen Elternbeirat anhören → Schulforum-Beratung → Aufwandsträger einbinden (Schulbus) → SL-Entscheidung mit Begründung → ggf. Vorlage Schulaufsicht.',
     },
+    {
+      id: 'F5',
+      titel: 'Klassenfahrt — Erziehungsbeauftragte/r übernimmt',
+      sachverhalt: 'Bei der Skifreizeit der 7c wird die Klasse von 2 LK + 1 volljährigem Geschwister-Kind (19 J., Cousine eines SuS) begleitet. Eltern haben schriftlich zugestimmt, dass die Cousine bei nächtlichen Notfällen für Niko als Bezugsperson agiert.',
+      knackpunkte: [
+        '{{§ 1 JuSchG}} Nr. 4: **Erziehungsbeauftragte/r** = >18-Jährige, denen EB Erziehungsaufgaben übertragen — ad-hoc, nicht dauerhaft. Hier durch die schriftliche Eltern-Zustimmung erfüllt.',
+        '**Abgrenzung zu Art. 76 BayEUG**: Erziehungsberechtigte sind die Eltern (Personensorge). Erziehungsbeauftragte sind situative Vertretungs-Personen — keine Sorgeberechtigung, keine Schul-Auskunfts-Berechtigung.',
+        'LK-Aufsichtspflicht ({{§ 5 LDO}}) bleibt bestehen — die Cousine entlastet nicht die LK, sondern ergänzt im Notfall.',
+        '**Schul-rechtlich** ist die Begleitung gültig (KMBek Fahrten · 2 Begleitpersonen-Minimum erfüllt durch 2 LK · Cousine ist Bonus).',
+      ],
+      antwortkette: 'Cousine erfüllt § 1 Nr. 4 JuSchG-Definition (Eltern-Auftrag + volljährig) → Aufgabe: ad-hoc-Aufsicht im Notfall → LK-Aufsichtspflicht § 5 LDO bleibt unberührt → KMBek-Mindeststandard (2 Begleitpersonen) erfüllt → keine Schul-Auskunfts-Berechtigung der Cousine.',
+    },
+    {
+      id: 'F6',
+      titel: 'Schul-Profil-Änderung ohne Schulforum-Einvernehmen',
+      sachverhalt: 'Die SL kündigt im Lehrerzimmer an: „Ab nächstem SJ haben wir das Profil Sport+. Die Stundentafel wird angepasst." Der Elternbeirat erfährt davon zufällig durch ein Elternstammtisch-Gespräch.',
+      knackpunkte: [
+        '{{Art. 67 BayEUG}}: Elternbeirat hat **Anhörungsrecht** bei wesentlichen Schulangelegenheiten. Schul-Profil-Änderung ist wesentlich.',
+        '{{Art. 69 BayEUG}}/4: Schulforum hat **Einvernehmens-Befugnis** für Hausordnung + Grundsätze schul. Veranstaltungen — Profil-Bildung fällt darunter, soweit es die Schul-Organisation prägt.',
+        'SL hat das Anhörungs-/Einvernehmens-Verfahren übersprungen — Verfahrensfehler.',
+        'Folge: Beschwerde {{Art. 56}}/5 (LK → SL → Schulforum) bzw. unmittelbar Schulaufsichtsbehörde. SL kann zurückgewiesen werden; Profil-Beschluss in Schulforum nachzuholen.',
+      ],
+      antwortkette: 'Art. 67 Anhörungsrecht Elternbeirat + Art. 69/4 Einvernehmens-Befugnis Schulforum verletzt → Verfahrensfehler → SL-Beschwerde + Schulaufsicht-Anrufung → Nachholung der Beteiligung im Schulforum → Beschluss neu vorbereiten.',
+    },
   ],
 
   vertiefung: [
@@ -228,5 +252,14 @@ window.MODULE = {
     '§§ 1626 BGB': { titel: '§ 1626 BGB — Elterliche Sorge', wortlaut: 'Personensorge = elterliches Recht + Pflicht. Bei verheirateten EB gemeinsam; bei nicht verheirateten + Sorgerechts-Erklärung gemeinsam; sonst Mutter allein.', karten: ['E08', 'FA10'] },
     '§ 1631 BGB': { titel: '§ 1631 BGB — Inhalt + Grenzen Personensorge', wortlaut: 'Recht + Pflicht der EB zur Pflege, Erziehung, Beaufsichtigung. Verbot entwürdigender Erziehungsmaßnahmen.', karten: [] },
     '§ 1684 BGB': { titel: '§ 1684 BGB — Umgangsrecht', wortlaut: 'Kind hat Anspruch auf Umgang mit beiden Eltern. Schule berücksichtigt familiengerichtliche Regelungen.', karten: [] },
+    'Art. 57 BayEUG': { titel: 'Art. 57 BayEUG — Schulleitung (Cross-Ref MP_03 A.1)', wortlaut: '„Die Schulleiterin oder der Schulleiter trägt die Gesamtverantwortung für die ordnungsgemäße Durchführung des Unterrichts und der Erziehungsarbeit an der Schule." Vorgesetzter aller LK. Vollzitat MP_03 A.1.', karten: [] },
+    'Art. 86/2': { titel: 'Art. 86/2 BayEUG — 12-Nr.-OM-Katalog (Cross-Ref MP_03 A.4)', wortlaut: '12-Nr.-Katalog OM: Verweis · verschärfter Verweis · Parallelklasse · Nacharbeit · Ausschluss bis 6 Tage [SL] · 2-4 Wochen [LK-Konf] · Androhung Entlassung · Entlassung · Klassenwechsel · andere Schule [2/3-EB-Sperre Nr. 10] · MS/FöS/BS · Schulart-Ausschluss. Vollzitat MP_03 A.4.', karten: [] },
+    'Art. 87': { titel: 'Art. 87 BayEUG — Sicherungsmaßnahme PERSON (Cross-Ref MP_03 A.4)', wortlaut: 'Vorläufiger U.-Ausschluss einer PERSON zur Gefahrenabwehr. Abgrenzung § 23 BaySchO (GEGENSTAND). Vollzitat MP_03 A.4.', karten: [] },
+    '§ 1 JuSchG': { titel: '§ 1 JuSchG — Begriffsbestimmungen (Cross-Ref MP_01 L07)', wortlaut: 'Kind = <14 J. · Jugendliche/r = 14 bis <18 J. · Erziehungsbeauftragte/r = >18-Jährige im EB-Auftrag. NICHT identisch mit Erziehungsberechtigten (Art. 76). Vollzitat MP_01 L07.', karten: ['E08', 'FA12'] },
+    '§ 1626 BGB': { titel: '§ 1626 BGB — Elterliche Sorge', wortlaut: 'Personensorge bei verheirateten EB gemeinsam. Bei nicht verheirateten + Erklärung gemeinsam, sonst Mutter allein (§ 1626a BGB).', karten: ['E08', 'FA10'] },
+    '§ 1626a BGB': { titel: '§ 1626a BGB — Sorge bei nicht verheirateten Eltern', wortlaut: 'Ohne Sorgerechts-Erklärung Mutter allein sorgeberechtigt. Mit Erklärung oder Heirat gemeinsame Sorge.', karten: ['FA10'] },
+    '§ 1686 BGB': { titel: '§ 1686 BGB — Auskunftsrecht nicht sorgeberechtigter Elternteil', wortlaut: 'Bei berechtigtem Interesse Auskunft über die persönlichen Verhältnisse des Kindes — auch ohne Sorgerecht. Schule beachtet die Sorgerechts-Lage primär.', karten: ['FA10'] },
+    '§ 27 LDO': { titel: '§ 27 LDO — Hausrecht (Cross-Ref MP_03 A.1)', wortlaut: 'SL übt Hausrecht in den Schulanlagen aus. Zutrittsverweigerung + Verweis schulfremder Personen möglich.', karten: [] },
+    '§ 8a SGB VIII': { titel: '§ 8a SGB VIII — Schutzauftrag Kindeswohlgefährdung (Cross-Ref MP_01 A.5)', wortlaut: 'Jugendamt schätzt im Zusammenwirken mehrerer Fachkräfte ein. Schul-Meldepfad LK → KL → SL → Jugendamt. § 4 KKG durchbricht § 14-LDO-Verschwiegenheit im konkreten Fall.', karten: [] },
   },
 };

@@ -242,5 +242,8 @@ window.MODULE = {
     '§ 41 BaySchO': { titel: '§ 41 BaySchO — Schülerakte', wortlaut: 'Abs. 1: Einsichts-Berechtigte: SuS ab Vollendung 14. Lj. + aktuelle EB + frühere EB bis Vollendung 21. Lj. der SuS. Aufbewahrungs-Fristen.', karten: [] },
     'KMBek Fahrten': { titel: 'KMBek Fahrten und Wanderungen', wortlaut: 'Regelung schulischer Veranstaltungen außerhalb der Schulanlage: Wandertage (1-2 / SJ), Schullandheim, Studienfahrten, Skikurse. Pädagogische Begründung + EB-Zustimmung + Aufsichtskonzept + SL-Genehmigung.', karten: ['B08'] },
     'KMBek Schulverein': { titel: 'KMBek Schulverein + Pausenverkauf', wortlaut: 'Regelungen zu schulischen Vereinen (Förderverein), Pausenverkauf, Verkaufsständen. SMV-Mitwirkung. Hygiene + Lebensmittelrecht. Zweckbindung der Erlöse.', karten: ['B08'] },
+    'Art. 59 BayEUG': { titel: 'Art. 59 BayEUG — Lehrkräfte (Cross-Ref MP_06 A.1)', wortlaut: 'Abs. 1: LK tragen unmittelbare pädagogische Verantwortung für U. + Erziehung. Abs. 2: Distanz-U. — Bild + Ton bei techn. Voraussetzungen. Symbol-Verbot S. 4 konditional. Vollzitat MP_06 A.1.', karten: [] },
+    'Art. 76 BayEUG': { titel: 'Art. 76 BayEUG — EB-Pflichten (Cross-Ref MP_07 A.4)', wortlaut: '„Die Erziehungsberechtigten haben auf den regelmäßigen Schulbesuch des Kindes zu achten und die Erziehungsarbeit der Schule zu unterstützen." Zwei Pflichten: achten + unterstützen. Vollzitat MP_07 A.4.', karten: [] },
+    '§ 14 LDO': { titel: '§ 14 LDO — Verschwiegenheit + Auskunft (Cross-Ref MP_06 A.3)', wortlaut: 'Drei Bereiche: (1) Verschwiegenheit dienstlich bekannter Angelegenheiten · (2) Presse-Hoheit SL · (3) Drittauskunfts-Verbot. KEIN „Notengeheimnis" ggü. eigenen SuS/EB. Vollzitat MP_06 A.3.', karten: [] },
   },
 };

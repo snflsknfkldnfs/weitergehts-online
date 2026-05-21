@@ -538,5 +538,9 @@ window.MODULE = {
       wortlaut: 'Bayerischer Lehrplan für alle weiterführenden Schularten mit DaZ-Bezug. Noten kommen in das Zeugnis. Stützt die Interkulturelle Erziehung (Verfassungsauftrag Art. 131 BV — „Geist der Demokratie", „Völkerversöhnung").',
       karten: [],
     },
+    'Art. 52a BayEUG': { titel: 'Art. 52a BayEUG — Nachteilsausgleich + Notenschutz', wortlaut: 'Abs. 1: Nachteilsausgleich = Veränderung der Prüfungsbedingungen (Zeitverlängerung, Hilfsmittel, alternative Formate) bei BEHALTENEN Bewertungsmaßstäben — KEIN Zeugnis-Vermerk. Abs. 2: Notenschutz = Aussetzung der Bewertung bestimmter Teilleistungen (Rechtschreibung bei LRS) — MUSS im Zeugnis vermerkt werden (BVerwG 2015). Konkretisierung: §§ 33/34 BaySchO.', karten: ['K35'] },
+    'Art. 88 BayEUG': { titel: 'Art. 88 BayEUG — Anhörungspflicht (Cross-Ref MP_03 A.4)', wortlaut: 'Vor jeder OM ist SuS anzuhören. EB sind rechtzeitig zu informieren und können teilnehmen. Bei Klassenkonferenz: protokollierte Anhörung. Nur Sicherungsmaßnahme Art. 87 erlaubt Eilfall-Nachholung.', karten: [] },
+    'BVerwG 2015': { titel: 'BVerwG 6 C 35.14 (29.07.2015) — Notenschutz mit Zeugnisvermerk', wortlaut: 'Leiturteil: Wenn Teilleistungen (z.B. Rechtschreibung bei LRS) nicht bewertet werden = Notenschutz → MUSS im Zeugnis offen vermerkt werden (Transparenz-Pflicht). Abgrenzung zum Nachteilsausgleich (Bedingungen geändert, Maßstab bleibt — kein Vermerk). Anker für Art. 52a BayEUG.', karten: ['K35'] },
+    '§ 33/34 BaySchO': { titel: '§§ 33/34 BaySchO — Nachteilsausgleich + Notenschutz', wortlaut: '§ 33: Nachteilsausgleich-Verfahren — Antrag · Diagnostik · SL-Entscheidung. § 34: Notenschutz-Verfahren — strengeres Verfahren, Eltern-Information, Zeugnis-Vermerk pflicht (BVerwG 2015).', karten: ['K35'] },
   },
 };

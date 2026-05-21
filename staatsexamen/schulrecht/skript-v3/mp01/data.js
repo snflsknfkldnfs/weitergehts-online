@@ -150,6 +150,31 @@ window.MODULE = {
       ],
       antwortkette: 'JuSchG § 9 (15-Jährige: kein Bier ohne EB) → Schulveranstaltung: strenger via Aufsichtspflicht → Verbot in Klassenfahrt-Regeln + EB-Info → bei Verstoß OM Art. 86 (Verweis/Ausschluss).',
     },
+    {
+      id: 'F5',
+      titel: 'Inklusion — Förderschwerpunkt geistige Entwicklung an der MS',
+      sachverhalt: 'Frau M. möchte ihren Sohn Niko (Förderschwerpunkt geistige Entwicklung) in die Sprengel-MS einschulen. Der Schulträger weigert sich mit Verweis auf "fehlende bauliche Voraussetzungen". Was gilt?',
+      knackpunkte: [
+        '{{Art. 41 BayEUG}}/1: Eltern entscheiden über Lernort — allgemeine Schule oder Förderschule.',
+        '{{Art. 30a BayEUG}}/4 Ausnahme-Trias: Sachaufwandsträger-Zustimmung NUR bei Förderschwerpunkten **Sehen · Hören · körperlich-motorische Entwicklung**.',
+        '**Geistige Entwicklung gehört NICHT zu den Sachaufwandsträger-Ausnahmen** — die Weigerung mit "baulichen Voraussetzungen" ist hier rechtlich unzulässig.',
+        'Inklusiver U. ist Aufgabe aller Schulen (Art. 30a/1). MSD-Einbeziehung Art. 21 BayEUG.',
+        'Bei Streit: Schulaufsichtsbehörde entscheidet (Art. 41/6) nach Anhörung EB + betroffene Schulen.',
+      ],
+      antwortkette: 'Art. 41/1 EB-Entscheidung über Lernort → Art. 30a/4 Sachaufwandsträger-Zustimmung NUR bei Sehen/Hören/k.-m. → bei gE NICHT erforderlich → Weigerung unzulässig → Schulaufsichtsbehörde-Anrufung Art. 41/6 + MSD-Einbeziehung.',
+    },
+    {
+      id: 'F6',
+      titel: 'Religionsunterricht — Konfessionswechsel 14-jähriger SuS',
+      sachverhalt: 'Eine 14-jährige SuS möchte vom kath. ReliU in den ev. ReliU wechseln. EB sind dagegen.',
+      knackpunkte: [
+        '**Religionsmündigkeit** nach RKEG (Religionskindererziehungsgesetz): Wechsel der Konfession ab Vollendung 14. Lj. **eigene Entscheidung** der SuS. Ab 12 Lj.: kein Zwang gegen den Willen.',
+        '{{Art. 137 BV}}/1: Teilnahme am ReliU bis Vollendung 18. Lj. = EB-Entscheidung. ABER: Konfessionszugehörigkeit (= welcher ReliU) folgt RKEG, nicht Art. 137 BV.',
+        '14-Jährige hat das Recht zum Wechsel; Schule respektiert die selbst-erklärte Konfession.',
+        'EB werden informiert, haben aber kein Vetorecht. SL kann gerne moderieren — rechtlich gilt RKEG.',
+      ],
+      antwortkette: 'RKEG: Religionsmündigkeit ab 14 (Wechsel) → SuS-Erklärung gilt → EB-Info, kein Vetorecht → Schule meldet bei Klassenbuch + Zeugnis um → ev. ReliU-LK.',
+    },
   ],
 
   vertiefung: [
@@ -230,5 +255,9 @@ window.MODULE = {
     '§ 8a SGB VIII': { titel: '§ 8a SGB VIII — Schutzauftrag bei Kindeswohlgefährdung', wortlaut: 'Werden dem Jugendamt gewichtige Anhaltspunkte für die Gefährdung des Wohls eines Kindes/Jugendlichen bekannt, so hat es das Gefährdungsrisiko im Zusammenwirken mehrerer Fachkräfte einzuschätzen. Bei Bedarf Hilfen anbieten. Bei Verdacht in der Schule: Meldepfad SL → Jugendamt.', karten: ['L07'] },
     'KMBek': { titel: 'KMBek — Bekanntmachung des Staatsministeriums für Unterricht und Kultus', wortlaut: 'Verwaltungsvorschrift; konkretisiert organisatorische Fragen. Bsp.: KMBek über Fahrten und Wanderungen, KMBek Lehrerfortbildung 09.08.2002 (Anpassung 08.2025). Rang: unter Rechtsverordnungen, kann diese nicht ändern.', karten: ['L01'] },
     'KMS': { titel: 'KMS — KM-Schreiben', wortlaut: 'Verwaltungsvorschrift, ranghöher als RS, aber unter KMBek; auslegend/Ermessen. Häufig zu Sexualerziehung, Datenschutz, aktuellen Konfliktfällen. Kann höherrangige Norm (BayEUG/VO) nicht verdrängen.', karten: ['L01', 'L06', 'FA01'] },
+    'Art. 35 BayEUG': { titel: 'Art. 35 BayEUG — Schulpflicht', wortlaut: '„Wer die altersmäßigen Voraussetzungen erfüllt und in Bayern seinen gewöhnlichen Aufenthalt hat oder in einem Berufsausbildungsverhältnis oder einem Beschäftigungsverhältnis steht, unterliegt der Schulpflicht." 12 Jahre = 9 Vollzeit + 3 Berufsschule. Cross-Ref MP_02 A.3.', karten: [] },
+    'Art. 20/1': { titel: 'Art. 20 Abs. 1 BayEUG — 7 Förderschwerpunkte', wortlaut: '7 sonderpädagogische Förderschwerpunkte: (1) Sehen · (2) Hören · (3) körperliche und motorische Entwicklung · (4) geistige Entwicklung · (5) Sprache · (6) Lernen · (7) emotionale + soziale Entwicklung. Praxis-Erweiterung: Autismus + ELECOK. Cross-Ref MP_08 A.1 (MSD).', karten: ['L08'] },
+    'Art. 21 BayEUG': { titel: 'Art. 21 BayEUG — Mobiler Sonderpädagogischer Dienst (MSD)', wortlaut: 'MSD ist Dienst (nicht Schulart) der Förderschule. Aufgaben: diagnostizieren, fördern, beraten, koordinieren, fortbilden. Träger: nächstgelegene FöS mit dem Förderschwerpunkt. Cross-Ref MP_08 A.1.', karten: [] },
+    '§ 14 LDO': { titel: '§ 14 LDO — Verschwiegenheit + Auskunft (Cross-Ref MP_06 A.3)', wortlaut: 'Drei Bereiche: (1) Verschwiegenheit über dienstlich bekannte Angelegenheiten (post-dienstlich fortwirkend). (2) Presse-/Öffentlichkeits-Auskunft NUR durch SL. (3) Drittauskunfts-Verbot — KEIN „Notengeheimnis" ggü. eigenen SuS/EB. Vollzitat MP_06 A.3.', karten: [] },
   },
 };

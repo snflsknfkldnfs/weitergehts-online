@@ -154,6 +154,31 @@ window.MODULE = {
       ],
       antwortkette: 'Lehrplan-Vorgabe prüfen → im Wahl-Bereich Profil-Setzung möglich → Schulforum-Beratung → bei größerer Abweichung Schulversuchs-Antrag bei KM via Reg → Entscheidung.',
     },
+    {
+      id: 'F5',
+      titel: 'Schulträger vs. Schulaufsicht — Heizungsausfall im Februar',
+      sachverhalt: 'In der Mittelschule fällt die Heizung 3 Tage aus. Eltern fordern Schulausfall + Notbetreuung. Die SL fragt: „Wer ist eigentlich zuständig — Gemeinde oder Schulamt?"',
+      knackpunkte: [
+        '**Schulträgerschaft ≠ Schulaufsicht**: Gemeinde (Sachaufwandsträger) ist verantwortlich für Gebäude + Heizung + Sachmittel ({{Art. 114}} BayEUG).',
+        '**Schulaufsicht** (Staatl. Schulamt) ist verantwortlich für Personal + Unterricht + pädagogische Qualität.',
+        'Bei Heizungsausfall: **Gemeinde** muss reparieren + Ersatzraum stellen. SL kann bei akuter Gefahr (z.B. <15°C) Schulausfall verfügen ({{§ 27 LDO}} Hausrecht + Aufsichtspflicht).',
+        'Notbetreuung: keine Pflicht der Schule bei kompletten Ausfall. EB sind zu informieren.',
+      ],
+      antwortkette: 'Sachaufwandsträger (Gemeinde) zuständig für Gebäude/Heizung → SL informiert Schulamt + Gemeinde unverzüglich → bei akuter Gefahr SL-Verfügung Schulausfall (§ 27 LDO Hausrecht) → EB-Information → Gemeinde stellt Ersatz-Heizung/-Raum.',
+    },
+    {
+      id: 'F6',
+      titel: 'Schul-Inspektion identifiziert Mängel — Folge-Verfahren',
+      sachverhalt: 'Die externe Evaluation hat 3 schwerwiegende Mängel bei einer MS festgestellt (mangelhafte U.-Vorbereitung, Konflikt im Kollegium, Schulpartner-Kommunikation). Was passiert jetzt?',
+      knackpunkte: [
+        'Externe Evaluation = pädagogisch-systemische Bestandsaufnahme (KMBek). Ergebnis: **Bericht + Zielvereinbarung** SL ↔ Reg.',
+        '**Fachaufsicht** ({{Art. 113}}): Reg. kann pädagogische Vorgaben machen (Methodik-Beratung). **Dienstaufsicht**: bei nachgewiesenem Personal-Defizit Versetzung/Disziplinar.',
+        'Operative Unterstützung: Schulamt-Schulrat:rätin · Schulberatungsstelle der Reg. · MSD-Einsatz bei SuS-Förderung.',
+        'Folge-Evaluation in 2-3 J. zur Wirkungs-Prüfung. **KEINE direkte Schul-Schließung** durch eine einzelne Evaluation.',
+        'Bei Beschwerden: Eltern können sich an Schulaufsichtsbehörde wenden ({{Art. 113}} + Art. 56/5).',
+      ],
+      antwortkette: 'Evaluations-Bericht → Zielvereinbarung SL ↔ Reg → operative Unterstützung (Schulamt + Beratungsstelle + ggf. MSD) → Folge-Evaluation 2-3 J. → bei Personal-Defizit-Nachweis Dienstaufsichts-Maßnahmen.',
+    },
   ],
 
   vertiefung: [
@@ -225,5 +250,15 @@ window.MODULE = {
     'AGO': { titel: 'AGO — Allgemeine Geschäftsordnung', wortlaut: 'Regelt die Geschäftsbearbeitung in der bayerischen Verwaltung — auch Schulverwaltung. Akten-Führung, Schriftverkehr, Fristen.', karten: [] },
     'KMBek Schulaufsicht': { titel: 'KMBek Schulaufsicht', wortlaut: 'Verwaltungsvorschriften des KM zur Konkretisierung der Aufsichtsarbeit. Inspektions-Verfahren, Berichtspflichten, Personal-Verwaltung.', karten: [] },
     'KMBek Externe Evaluation': { titel: 'KMBek Externe Evaluation', wortlaut: 'KMBek zur regelmäßigen externen Evaluation an bayerischen Schulen. 5-7-jähriger Rhythmus. Reg-Teams. Bericht + Zielvereinbarung + Folge-Evaluation.', karten: ['V08'] },
+    'Art. 7/4 GG': { titel: 'Art. 7 Abs. 4 GG — Privatschulrecht', wortlaut: '„Das Recht zur Errichtung von privaten Schulen wird gewährleistet. Private Schulen als Ersatz für öffentliche Schulen bedürfen der Genehmigung des Staates und unterstehen den Landesgesetzen."', karten: [] },
+    'Art. 134 BV': { titel: 'Art. 134 BV — Privatschulen Bayern', wortlaut: 'Privatschulen müssen den an die öffentlichen Schulen gestellten Anforderungen entsprechen. Genehmigungspflicht. Sie unterstehen der staatlichen Schulaufsicht.', karten: [] },
+    'Art. 118': { titel: 'Art. 118 BayEUG — Schulzwang (Cross-Ref MP_02)', wortlaut: 'Auf Antrag der Schule kann die Kreisverwaltungsbehörde Schulpflichtige zwangsweise der Schule zuführen.', karten: [] },
+    'Art. 119': { titel: 'Art. 119 BayEUG — Ordnungswidrigkeit (Cross-Ref MP_02)', wortlaut: 'OWi + Geldbuße bei Unterlassung Schul-Anmeldung oder Vereitelung der Schulpflicht. Verfahren durch Kreisverwaltungsbehörde.', karten: [] },
+    'Art. 69': { titel: 'Art. 69 BayEUG — Schulforum (Cross-Ref MP_03 A.3)', wortlaut: 'SL + Elternbeirat + SMV + Schulträger + bis 2 LK. Abs. 4: Einvernehmens-Befugnis bei Haus-/Pausenordnung. Vollzitat MP_03 A.3.', karten: [] },
+    'Art. 76 BayEUG': { titel: 'Art. 76 BayEUG — EB-Pflichten (Cross-Ref MP_07 A.4)', wortlaut: '„Die EB haben auf den regelmäßigen Schulbesuch zu achten und die Erziehungsarbeit der Schule zu unterstützen." Vollzitat MP_07 A.4.', karten: [] },
+    'Art. 2': { titel: 'Art. 2 BayEUG — Aufgabenkatalog der Schule (Cross-Ref MP_01 L03)', wortlaut: 'Aufgaben: Kenntnisse + Fertigkeiten · selbstständiges Urteil · Heimatliebe · Toleranz · europäisches Bewusstsein · Berufswelt-Vorbereitung. Vollzitat MP_01 L03.', karten: [] },
+    'Art. 6': { titel: 'Art. 6 BayEUG — Schularten (Cross-Ref MP_02 A.1)', wortlaut: 'Allgemein bildend (GS, MS, RS, Gym, …), beruflich (BS, BFS, WS, FOS, BOS, …), Förderschulen, Schulen für Kranke.', karten: [] },
+    'Art. 30a': { titel: 'Art. 30a BayEUG — Inklusiver Unterricht (Cross-Ref MP_01 L08)', wortlaut: 'Abs. 1: Inklusiver U. = Aufgabe aller Schulen. Abs. 4: Bei Sehen/Hören/k.-m. zusätzliche Sachaufwandsträger-Zustimmung.', karten: [] },
+    '§ 24 LDO': { titel: '§ 24 LDO — Dienstaufsicht (Cross-Ref MP_03 A.1)', wortlaut: 'SL übt Dienstaufsicht über LK aus. U.-Besuche, Beurteilung, Personalführung. Beratungs- + Förder-Pflicht.', karten: [] },
   },
 };

@@ -571,9 +571,12 @@
           h('div', { class: 'rb-warn__body' }, renderInline(it.text)),
         );
       }
-      case 'selfcheck':
-        return h('div', { class: 'rb-selfcheck' },
-          h('span', { class: 'rb-selfcheck__t' }, it.titel || '✱ Selbst-Check · mündlich formulieren, dann aufdecken'),
+      case 'selfcheck': {
+        const wrap = h('details', { class: 'rb-selfcheck-wrap' });
+        wrap.appendChild(h('summary', null,
+          h('span', null, '✱ Selbst-Check · ' + (it.items?.length || 0) + ' Fragen mündlich formulieren · aufdecken'),
+        ));
+        wrap.appendChild(h('div', { class: 'rb-selfcheck' },
           h('ol', { class: 'rb-selfcheck__list' }, ...it.items.map((item, idx) => {
             // Backwards-compat: item may be string (q only) or object {q, a}
             const q = typeof item === 'string' ? item : item.q;
@@ -599,7 +602,9 @@
             }
             return li;
           })),
-        );
+        ));
+        return wrap;
+      }
       case 'svg': {
         // Diagramm-Block: SVG-Markup als String aus lokaler data.js (trusted) +
         // Caption + ARIA-Label. createContextualFragment statt innerHTML, weil
@@ -749,6 +754,25 @@
     setTimeout(onEnd, 320);
   }
 
+  // ─── Smart Norm-Resolver: probiert Suffix-/Slash-Varianten ───────────────
+  function resolveGlossarKey(name) {
+    const g = d.glossar || {};
+    if (g[name]) return name;
+    const SUFFIXES = [' BayEUG', ' BV', ' GG', ' LDO', ' BaySchO', ' MSO', ' GrSO', ' BayDG', ' BayPVG', ' BayLBG', ' BeamtStG', ' BGB', ' StGB', ' SGB VIII', ' JuSchG', ' UrhG', ' KUG'];
+    for (const s of SUFFIXES) if (g[name + s]) return name + s;
+    const noSlash = name.replace(/\/\S+$/, '');
+    if (noSlash !== name && g[noSlash]) return noSlash;
+    for (const s of SUFFIXES) if (g[noSlash + s]) return noSlash + s;
+    const baseMatch = name.match(/^(Art\.\s*\d+|§\s*\d+\S*)/);
+    if (baseMatch) {
+      const base = baseMatch[1];
+      for (const k of Object.keys(g)) {
+        if (k.startsWith(base + ' ') || k === base) return k;
+      }
+    }
+    return null;
+  }
+
   // ─── Slideover (Glossar) ─────────────────────────────────────────────────
   let slideoverBackdrop, slideoverEl, slideoverLastFocus = null;
   function openSlideover(name) {
@@ -756,7 +780,8 @@
     // Always clear karten-list at top to avoid stale entries leaking between opens
     const kList = slideoverEl.querySelector('.slideover__karten-list');
     if (kList) kList.innerHTML = '';
-    const entry = (d.glossar || {})[name];
+    const resolvedKey = resolveGlossarKey(name);
+    const entry = resolvedKey ? d.glossar[resolvedKey] : null;
     if (!entry) {
       slideoverEl.querySelector('.slideover__title').textContent = name;
       slideoverEl.querySelector('.slideover__wortlaut').textContent = '(Kein detaillierter Glossar-Eintrag — nur Norm-Kürzel)';
@@ -858,6 +883,38 @@
     });
   }
 
+  // ─── Inter-Module-Navigation (Prev/Hub/Next) ────────────────────────────
+  function buildModuleNav() {
+    const idMatch = (d.id || '').match(/^mp0?(\d+)$/);
+    if (!idMatch) return null;
+    const n = parseInt(idMatch[1], 10);
+    if (n < 1 || n > 9) return null;
+    const fmt = (num) => 'mp' + String(num).padStart(2, '0');
+    const prevExists = n > 1;
+    const nextExists = n < 9;
+    const nav = h('nav', { class: 'module-nav', 'aria-label': 'Modul-Navigation' });
+    const prevHref = prevExists ? '../' + fmt(n - 1) + '/' : '#';
+    const nextHref = nextExists ? '../' + fmt(n + 1) + '/' : '#';
+    nav.appendChild(h('a', {
+      class: 'module-nav__prev',
+      href: prevHref,
+      'aria-disabled': prevExists ? 'false' : 'true',
+      'aria-label': prevExists ? 'Vorheriges Modul ' + fmt(n - 1).toUpperCase() : 'Kein vorheriges Modul',
+    }, prevExists ? '← MP_' + String(n - 1).padStart(2, '0') : '←'));
+    nav.appendChild(h('a', {
+      class: 'module-nav__hub',
+      href: '../',
+      'aria-label': 'Zurück zum Hub',
+    }, 'Hub · alle 9 Mappen'));
+    nav.appendChild(h('a', {
+      class: 'module-nav__next',
+      href: nextHref,
+      'aria-disabled': nextExists ? 'false' : 'true',
+      'aria-label': nextExists ? 'Nächstes Modul ' + fmt(n + 1).toUpperCase() : 'Kein nächstes Modul',
+    }, nextExists ? 'MP_' + String(n + 1).padStart(2, '0') + ' →' : '→'));
+    return nav;
+  }
+
   // ─── Back-to-Top (Mobile-Hilfe) ──────────────────────────────────────────
   function buildBackToTop() {
     const btn = h('a', {
@@ -889,6 +946,8 @@
     werkbank.appendChild(renderVertiefung());
     werkbank.appendChild(renderAside());
     root.appendChild(werkbank);
+    const modNav = buildModuleNav();
+    if (modNav) root.appendChild(modNav);
     buildSlideover();
     buildBackToTop();
     setupScrollspy();
