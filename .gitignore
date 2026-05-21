@@ -28,3 +28,4 @@ __pycache__/
 
 # Lernraum-Smoketest-Output (Screenshots; ad-hoc)
 tools/lernraum/_smoketest_out/
+.ux-audit-screenshots/
