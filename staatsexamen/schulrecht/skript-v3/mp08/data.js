@@ -1,4 +1,6 @@
 // MP_08 — Kooperation mit Bildungs- und Betreuungseinrichtungen
+// PDF-Abschnitt 8 (Skript zum Schulrecht 2024 — Stephan Bauer):
+//   Ganztags-/Mittagsbetreuung · Hort an der Schule · Schulberatung · Päd. Dienste
 window.MODULE = {
   id: 'mp08',
   zalgm: 'ZALGM § 16 Nr. 8',

@@ -1,10 +1,12 @@
-// MP_04 — Schulartenrecht und Schullaufbahn-Steuerung
+// MP_04 — Rechtliche Ordnung von Unterricht und Erziehung
+// PDF-Abschnitt 4 (Skript zum Schulrecht 2024 — Stephan Bauer):
+//   Unterrichtsbetrieb · LNW/Noten/Zeugnisse · Vorrücken · Abschlüsse + Prüfungen · Hausaufgaben · Ordnungsmaßnahmen (→ mp03)
 window.MODULE = {
   id: 'mp04',
   zalgm: 'ZALGM § 16 Nr. 4',
-  schwerpunkt: ['4.1 Schullaufbahn-Trias', '4.2 Vorrücken Art. 53 + § 12 MSO', '4.3 Übertritt', '4.4 LNW + HA', '4.5 MS-Abschlüsse'],
-  titel: 'Schulartenrecht',
-  titel2: '+ Schullaufbahn-Steuerung.',
+  schwerpunkt: ['4.1 Schullaufbahn-Trias', '4.2 LNW + Noten ({{Art. 52}})', '4.3 Vorrücken ({{Art. 53}} + § 12 MSO)', '4.4 Hausaufgaben + Förderplan', '4.5 MS-Abschlüsse + Prüfungen'],
+  titel: 'Rechtl. Ordnung',
+  titel2: 'Unterricht + Erziehung.',
   abriss:
     'Trias SuS/EB/Schule: Eltern wählen (Art. 44, gebunden an Eignung), Schule ' +
     'berät (Art. 78), Lehrerkonferenz entscheidet (Art. 53). Verfassungs-Anker ' +

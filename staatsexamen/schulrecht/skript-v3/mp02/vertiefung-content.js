@@ -3,236 +3,276 @@ window.MODULE_BODIES = {
 
   A1: [
     { type: 'lead', text:
-      'Hausaufgaben sind nach {{§ 28 BaySchO}} ein **notwendiger und verbindlicher** Teil der Unterrichts- und Erziehungsarbeit — Stellpflicht der LK. Der Examens-Kern: drei Sätze in Abs. 1 (Maßstab + LK-Konferenz + Pause) + GS-Spezifik in Abs. 2.'
+      'Das bayerische Schulwesen ist **gegliedert und durchlässig zugleich**: Jede Schulart hat ein eigenes Bildungsprofil entsprechend Anlage und Neigung der SuS, **Wechsel an allen Schnittstellen möglich**. Verfassungsanker: {{Art. 128 BV}} + {{Art. 132 BV}} + {{Art. 133 BV}}.'
     },
 
-    { type: 'h', text: 'Drei-Sätze-Logik § 28 Abs. 1' },
+    { type: 'h', text: 'Verfassungsrahmen' },
+    { type: 'bullets', items: [
+      '**{{Art. 128 BV}}**: Bildungsanspruch jedes Bewohners entsprechend Anlagen + innerer Berufung.',
+      '**{{Art. 132 BV}}**: Maßstab = Anlagen + Neigungen + Leistung + innere Berufung. NICHT wirtschaftlich-gesellschaftliche Stellung der Eltern.',
+      '**{{Art. 133 BV}} Abs. 1**: Staat + Gemeinde wirken zusammen. Religions-/Weltanschauungsgemeinschaften sind Bildungsträger.',
+      '**{{Art. 134 BV}}**: Privatschulen bedürfen staatlicher Genehmigung.',
+    ]},
+
+    { type: 'h', text: 'Schularten-Katalog ({{Art. 6 BayEUG}})' },
+
+    { type: 'svg', titel: 'Schularten-Treppe nach Jahrgangsstufen',
+      caption: 'allgemein-bildend · beruflich · sonderpäd.',
+      svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" width="600" preserveAspectRatio="xMidYMid meet">
+  <text x="30" y="20" font-size="9.5" letter-spacing="1.4" class="muted">JGST.</text>
+  <text x="30" y="44" font-size="10" font-weight="500">1</text>
+  <text x="30" y="64" font-size="10" font-weight="500">4</text>
+  <text x="30" y="100" font-size="10" font-weight="500">5</text>
+  <text x="30" y="160" font-size="10" font-weight="500">9</text>
+  <text x="30" y="180" font-size="10" font-weight="500">10</text>
+  <text x="30" y="220" font-size="10" font-weight="500">11</text>
+  <text x="30" y="266" font-size="10" font-weight="500">13</text>
+  <line x1="55" y1="34" x2="55" y2="280" class="rule-line"/>
+
+  <text x="115" y="20" text-anchor="middle" font-size="9.5" letter-spacing="1.4" data-accent="true" font-weight="600">GS</text>
+  <rect x="70" y="32" width="90" height="50" class="box"/>
+  <text x="115" y="58" text-anchor="middle" font-size="11" font-weight="600">Grundschule</text>
+  <text x="115" y="74" text-anchor="middle" font-size="9" class="muted">Art. 7 BayEUG</text>
+
+  <text x="200" y="92" text-anchor="middle" font-size="9.5" letter-spacing="1.2" data-accent="true" font-weight="600">MS</text>
+  <rect x="170" y="100" width="100" height="80" class="box"/>
+  <text x="220" y="122" text-anchor="middle" font-size="10.5" font-weight="600">Mittelschule</text>
+  <text x="220" y="138" text-anchor="middle" font-size="9" class="muted">Art. 7a BayEUG</text>
+  <text x="220" y="154" text-anchor="middle" font-size="9" class="muted">5–9 / M-Zug</text>
+  <text x="220" y="168" text-anchor="middle" font-size="9" class="muted">5–10</text>
+
+  <text x="310" y="92" text-anchor="middle" font-size="9.5" letter-spacing="1.2" data-accent="true" font-weight="600">RS</text>
+  <rect x="280" y="100" width="80" height="80" class="box"/>
+  <text x="320" y="124" text-anchor="middle" font-size="10.5" font-weight="600">Realschule</text>
+  <text x="320" y="140" text-anchor="middle" font-size="9" class="muted">Art. 8 BayEUG</text>
+  <text x="320" y="156" text-anchor="middle" font-size="9" class="muted">5–10</text>
+
+  <text x="410" y="92" text-anchor="middle" font-size="9.5" letter-spacing="1.2" data-accent="true" font-weight="600">GYM</text>
+  <rect x="370" y="100" width="100" height="180" class="box"/>
+  <text x="420" y="122" text-anchor="middle" font-size="10.5" font-weight="600">Gymnasium</text>
+  <text x="420" y="138" text-anchor="middle" font-size="9" class="muted">Art. 9 BayEUG</text>
+  <text x="420" y="154" text-anchor="middle" font-size="9" class="muted">G9</text>
+  <text x="420" y="172" text-anchor="middle" font-size="9" class="muted">5–13</text>
+
+  <text x="525" y="212" text-anchor="middle" font-size="9.5" letter-spacing="1.2" data-accent="true" font-weight="600">BERUFL.</text>
+  <rect x="485" y="220" width="80" height="60" class="box"/>
+  <text x="525" y="240" text-anchor="middle" font-size="10" font-weight="600">FOS · BOS</text>
+  <text x="525" y="256" text-anchor="middle" font-size="9" class="muted">Art. 16 + 17</text>
+  <text x="525" y="270" text-anchor="middle" font-size="9" class="muted">11–13</text>
+
+  <line x1="55" y1="298" x2="565" y2="298" class="rule-line"/>
+  <text x="115" y="316" text-anchor="middle" font-size="9" class="muted">+ Förderschulen Art. 19–24 (7 Schwerpunkte) · BS Art. 11 · WS Art. 13 · Schulen f. Kranke Art. 41/2</text>
+  <text x="430" y="316" text-anchor="middle" font-size="9" class="muted">parallel</text>
+</svg>`
+    },
+
+    { type: 'bullets', items: [
+      '**Allgemein bildend**: GS (Art. 7, Jgst. 1–4) · MS (Art. 7a, 5–9/M-Zug 5–10) · RS (Art. 8, 5–10) · Gym (Art. 9, 5–13 G9).',
+      '**Beruflich** (Art. 11–18): BS · BFS · WS · FS · FOS · BOS · FA.',
+      '**Förderschulen** (Art. 19–24): 7 Förderschwerpunkte; Grund-/Mittel-/Berufsschulstufe.',
+      'Schulen für Kranke (Art. 41/2).',
+    ]},
+
+    { type: 'h', text: 'Privatschulen' },
     { type: 'table',
-      head: ['Satz', 'Inhalt', 'Falle'],
+      head: ['Typ', 'Rechtsgrund', 'Schulpflicht-Erfüllung'],
       rows: [
-        ['**S. 1**', 'Zweck (Einübung + Eigentätigkeit) + Maßstab „durchschnittliches Leistungsvermögen + angemessene Zeit + NM-U./prakt. Ausbildung"', 'Wortlaut: „durchschnittliches", NICHT „individuelles" Leistungsvermögen'],
-        ['**S. 2**', '**LK-Konferenz** legt vor Schuljahresbeginn die Grundsätze fest', 'Pflicht, nicht optional'],
-        ['**S. 3**', '**Sonntage UND Feiertage UND Ferien** freihalten', 'Drei Kategorien (Wortlaut!) — kein Spielraum'],
+        ['**Staatl. genehmigte Ersatzschule**', 'Art. 91–101 — eigenes päd. Konzept (Montessori, Waldorf)', 'erfüllt; Zeugnis NICHT identisch'],
+        ['**Staatl. anerkannte Ersatzschule**', 'dauerhafte öff.-Standard-Konformität', 'erfüllt; Zeugnis identisch'],
+        ['**Ergänzungsschule**', 'Art. 102–104 (z.B. Dolmetscherschule)', 'i.d.R. NICHT erfüllt'],
       ],
     },
 
-    { type: 'h', text: 'Verbindlichkeitsgrad' },
-    { type: 'bullets', items: [
-      '**Müssen HA gestellt werden?** JA — Stellpflicht aus {{§ 28 BaySchO}} Abs. 1 S. 1.',
-      '**Sind HA ein LNW?** NEIN — folgt aus LNW-Definition ({{Art. 52 BayEUG}}) + Lehrplan, NICHT aus § 28 selbst.',
-      '**Müssen HA benotet werden?** NEIN — Benotungs-VERBOT mittelbar aus LNW-Definition. HA dienen Einübung.',
-      '**Welche Zeitobergrenze?** GS + GS-Stufe FöS: bis zu 1 Stunde (§ 28/2 S. 1). MS: keine feste Obergrenze.',
-    ]},
-
-    { type: 'h', text: 'GS+FöS-Sonderregel bei NM-Unterricht' },
-    { type: 'p', text:
-      '§ 28 Abs. 2 S. 3 BaySchO: An Tagen mit verpflichtendem Nachmittagsunterricht dürfen an Grundschulen + Förderschulen KEINE schriftlichen HA für den nächsten Tag gestellt werden. Abweichung nur im Einvernehmen mit dem Elternbeirat. Schul-Adressat ausschließlich GS + GS-Stufe FöS (NICHT Mittelschule).'
-    },
-
-    { type: 'warn', titel: '⚠ Fallen § 28 BaySchO', text:
-      'Maßstab im Wortlaut: „**durchschnittliches Leistungsvermögen**" — NICHT „individuelle Bearbeitbarkeit". LK-Konferenz-Grundsätze sind PFLICHT (§ 28/1 S. 2). DREI Kategorien Pause (S. 3) — Sonntag, Feiertag, Ferien.',
+    { type: 'warn', titel: '⚠ Fallen Schulwesen', text:
+      '„Die GS ist die erste und gemeinsame Schule" ist NICHT absolut — Ausnahmen Förderschule ab Jgst. 1 + SVE. **Genehmigte ≠ anerkannte** Ersatzschule. {{Art. 44 BayEUG}} Elternwahlrecht ist NICHT absolut — gebunden an Eignung/Leistung.',
     },
 
     { type: 'selfcheck', items: [
-      { q: 'Welche drei Pflichten formuliert § 28 Abs. 1 BaySchO — und welcher Satz schützt die Erholung?',
-        a: 'S. 1 Stellpflicht + Maßstab durchschnittlich-bearbeitbar. S. 2 LK-Konferenz-Grundsätze vor Schuljahresbeginn. S. 3 Sonntage, Feiertage UND Ferien freihalten — DREI Kategorien.' },
-      { q: 'Warum sind HA in der Regel kein LNW — und woher kommt das Benotungs-Verbot?',
-        a: 'Nicht aus § 28 BaySchO selbst (Drift-Falle!), sondern aus der LNW-Definition {{Art. 52 BayEUG}} + Lehrplan-Vorgaben. HA dienen Einübung, nicht Leistungsbewertung.' },
+      { q: 'Welche zwei Bedingungen knüpft {{Art. 44 BayEUG}} an das Elternwahlrecht?',
+        a: 'Eignung + Leistung. Eltern dürfen Schulart wählen — aber gebunden an die nachgewiesene Eignung des Kindes ({{Art. 132 BV}} Anlagen-/Leistungs-Prinzip).' },
+      { q: 'Welche Privatschulen erfüllen die Schulpflicht — und welche vergeben anerkannte Zeugnisse?',
+        a: 'Genehmigte UND anerkannte Ersatzschulen erfüllen die Schulpflicht. Nur ANERKANNTE Ersatzschulen vergeben selbständig anerkannte Zeugnisse. Ergänzungsschulen erfüllen die Schulpflicht i.d.R. NICHT.' },
     ]},
   ],
 
   A2: [
     { type: 'lead', text:
-      'Die Frage „wieviel HA?" beantwortet sich schulart-spezifisch. Das **1-Stunde-Limit gilt NUR für Grundschule + Förderschulen-Grundschulstufe** — in der Mittelschule existiert KEINE feste Obergrenze. HA-Differenzierung ist in {{§ 32 BaySchO}} Abs. 2 Nr. 6 verankert, NICHT in § 28.'
+      'Übergang KiGa → GS lebt von Kooperations-Strukturen + Sprachförderung. **{{Vorkurs Deutsch 240}}** als KMBek-Programm: 240 h über 1,5 Schuljahre, vorletztes + letztes KiTa-Jahr, Träger gemeinsam KiTa + GS.'
     },
 
-    { type: 'h', text: 'Maßstab-Tabelle „angemessene Zeit"' },
-    { type: 'table',
-      head: ['Schulart', 'Zeitobergrenze', 'Norm'],
-      rows: [
-        ['**Grundschule + GS-Stufe FöS**', '„bis zu einer Stunde" als angemessen', '§ 28/2 S. 1 BaySchO'],
-        ['**Mittelschule**', 'KEINE feste Obergrenze; Maßstab „angemessen" + LK-Konferenz', '§ 28/1 S. 1+2 BaySchO'],
-        ['**Förderschulen (sonst)**', 'individuelle Leistungsfähigkeit', '§ 28/2 S. 2 BaySchO'],
-        ['**Mit verpflichtendem NM-U. (GS+FöS)**', 'KEINE schriftlichen HA für nächsten Tag', '§ 28/2 S. 3 BaySchO'],
-      ],
-    },
-
-    { type: 'h', text: '§ 32 BaySchO — Individuelle Unterstützung' },
+    { type: 'h', text: 'Kooperation KiGa ↔ GS' },
     { type: 'bullets', items: [
-      'Abs. 1 S. 1: Maßnahmen „**soweit nicht die Leistungsfeststellung berührt wird**" (Abgrenzung Nachteilsausgleich § 33).',
-      'Abs. 2 — 7-Maßnahmen-Katalog: besondere Arbeitsmittel · Räume · individuelle Pausen · Hand-/Lautzeichen · Arbeitsanweisungen · **Nr. 6 HA-Differenzierung** schulartspezifisch · Visualisierung/Verbalisierung.',
-      '**Schlüssel-Insight**: HA-Differenzierung lebt in {{§ 32 BaySchO}}, NICHT in {{§ 28 BaySchO}}!',
+      'Gemeinsame Konferenzen + Hospitationen.',
+      'KiTa-Kinder besuchen GS (Schnuppertage).',
+      'Elternabend zur Einschulung.',
+      'Gemeinsame Feste + Infobriefe.',
     ]},
 
-    { type: 'h', text: 'Drei-Stunden-Fall MS — Diagnose-Pfad' },
-    { type: 'numbered', items: [
-      '**Individuelles Problem**: SuS braucht mehr Zeit (Förderbedarf · Konzentration · LRS · ADHS). → § 32/2 Nr. 6 Differenzierung.',
-      '**Systemisches Problem**: HA-Gestaltung zu umfangreich / didaktisch ungeeignet. → LK-Konferenz-Grundsätze § 28/1 S. 2 überprüfen.',
+    { type: 'h', text: 'Vorkurs Deutsch 240 + SVE' },
+    { type: 'bullets', items: [
+      '{{Vorkurs Deutsch 240}}: **240 Stunden über 1,5 Schuljahre** — NICHT 1 J., NICHT 2 J.',
+      'Träger gemeinsam KiTa + GS (je Hälfte).',
+      '**SVE** (Schulvorbereitende Einrichtung) — Teil der Förderschule, sonderpäd. Anbahnung vor Jgst. 1.',
     ]},
 
-    { type: 'warn', titel: '⚠ Fallen Zeit + Differenzierung', text:
-      '**MS hat KEINE 1-Stunde-Obergrenze.** Wer das aus § 28/2 S. 1 ableitet, verwechselt Schularten. **§ 28 ≠ § 32**: HA-Differenzierung in {{§ 32 BaySchO}}/2 Nr. 6. **Schranke § 32/1 S. 1**: Differenzierung NUR, „soweit nicht Leistungsfeststellung berührt" — bei LNW kein Differenzierungs-Spielraum (sondern Nachteilsausgleich § 33).',
+    { type: 'warn', titel: '⚠ Falle Vorkurs', text:
+      '{{Vorkurs Deutsch 240}} = **240 h über 1,5 Schuljahre**. „Lieblings-Falle" der Schulräte — exakte Dauer + Träger-Verbund (KiTa + GS gemeinsam) müssen sitzen.',
     },
 
     { type: 'selfcheck', items: [
-      { q: 'Welche Norm regelt die HA-Differenzierung — und wo verläuft die Schranke?',
-        a: '{{§ 32 BaySchO}} Abs. 2 Nr. 6 (NICHT § 28!). Schranke § 32/1 S. 1: „soweit nicht die Leistungsfeststellung berührt wird". Bei LNW = Nachteilsausgleich § 33 statt Differenzierung.' },
-      { q: 'Was unterscheidet GS-Maßstab und MS-Maßstab in § 28 BaySchO?',
-        a: 'GS + GS-Stufe FöS: feste „bis zu 1 Stunde"-Obergrenze (§ 28/2 S. 1). MS: KEINE feste Obergrenze — nur Maßstab „angemessen" (S. 1) + LK-Konferenz-Grundsätze (S. 2).' },
+      { q: 'Wie lange dauert der Vorkurs Deutsch 240 — und wer trägt ihn?',
+        a: '240 Stunden über 1,5 Schuljahre (vorletztes + letztes KiTa-Jahr). Träger gemeinsam Kindergarten + Grundschule (je Hälfte). KMBek KWMBl 2011 S. 240.' },
     ]},
   ],
 
   A3: [
     { type: 'lead', text:
-      '{{Art. 56/2 BayEUG}} listet **5 SuS-Rechte** — Nr. 5 ist die Beschwerde-Eskalations-Kette: „**nacheinander** an Lehrkräfte, Schulleitung und Schulforum". Wortlaut „nacheinander" = sequenziell, NICHT parallel. Eltern-Beschwerde läuft separat über Art. 76 BayEUG + Elternbeirat.'
+      'Schulpflicht entsteht kraft Gesetz ({{Art. 35 BayEUG}}) und dauert 12 Jahre (9 Vollzeit + 3 BS). Stichtag 30.09. + Einschulungskorridor 01.07.–30.09. Wichtigste Begriffs-Falle: **Schulpflicht ≠ Schulzwang** — Pflicht vs. Sanktion.'
     },
 
-    { type: 'h', text: '5 SuS-Rechte aus Art. 56/2' },
-    { type: 'numbered', items: [
-      'Sich am Schulleben beteiligen.',
-      'Im Rahmen Schulordnung + Lehrpläne mitwirken.',
-      'Hinreichend unterrichtet werden über wesentliche Angelegenheiten.',
-      'Auskunft über Leistungsstand UND Hinweise auf Förderung.',
-      '**Bei ungerechter Behandlung/Beurteilung nacheinander LK → SL → Schulforum.**',
+    { type: 'h', text: 'Schulpflicht-Norm-Kette' },
+    { type: 'bullets', items: [
+      '**{{Art. 129 BV}}/1**: „Alle Kinder zum Besuch der Volksschule und Berufsschule verpflichtet."',
+      '**{{Art. 129 BV}}/2**: Unterricht unentgeltlich.',
+      '**{{Art. 35 BayEUG}}**: Schulpflicht bei altersmäßiger Voraussetzung + gewöhnlichem Aufenthalt Bayern. Dauer 12 J. = 9 Vollzeit + 3 BS.',
     ]},
 
-    { type: 'h', text: 'Drei-Stufen-Beschwerde-Kette' },
-
-    { type: 'svg', titel: 'Beschwerde-Kette · Art. 56/2 Nr. 5 BayEUG',
-      caption: 'nacheinander — sequenziell, nicht parallel',
-      svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 220" width="600" preserveAspectRatio="xMidYMid meet">
-  <text x="300" y="18" text-anchor="middle" font-size="9.5" letter-spacing="1.8" class="muted">SEQUENZIELL · NICHT PARALLEL</text>
-  <g>
-    <rect x="40" y="40" width="150" height="80" class="box"/>
-    <text x="115" y="60" text-anchor="middle" font-size="10.5" letter-spacing="1.2" data-accent="true" font-weight="600">STUFE 1</text>
-    <line x1="50" y1="68" x2="180" y2="68" class="rule-line"/>
-    <text x="115" y="88" text-anchor="middle" font-size="11" font-weight="600">Lehrkraft</text>
-    <text x="115" y="104" text-anchor="middle" font-size="9.5" class="muted">KL bei Querthemen</text>
-    <text x="115" y="116" text-anchor="middle" font-size="9.5" class="muted">Erstadressat</text>
-  </g>
-  <path d="M 200 80 L 230 80" class="rule-line" stroke-width="1.5" marker-end="url(#arr2)"/>
-  <text x="215" y="72" text-anchor="middle" font-size="8.5" class="muted">scheitert</text>
-  <g>
-    <rect x="225" y="40" width="150" height="80" class="box"/>
-    <text x="300" y="60" text-anchor="middle" font-size="10.5" letter-spacing="1.2" data-accent="true" font-weight="600">STUFE 2</text>
-    <line x1="235" y1="68" x2="365" y2="68" class="rule-line"/>
-    <text x="300" y="88" text-anchor="middle" font-size="11" font-weight="600">Schulleitung</text>
-    <text x="300" y="104" text-anchor="middle" font-size="9.5" class="muted">Art. 57 BayEUG</text>
-    <text x="300" y="116" text-anchor="middle" font-size="9.5" class="muted">systemische Klärung</text>
-  </g>
-  <path d="M 385 80 L 415 80" class="rule-line" stroke-width="1.5" marker-end="url(#arr2)"/>
-  <text x="400" y="72" text-anchor="middle" font-size="8.5" class="muted">scheitert</text>
-  <g>
-    <rect x="410" y="40" width="150" height="80" class="box"/>
-    <text x="485" y="60" text-anchor="middle" font-size="10.5" letter-spacing="1.2" data-accent="true" font-weight="600">STUFE 3</text>
-    <line x1="420" y1="68" x2="550" y2="68" class="rule-line"/>
-    <text x="485" y="88" text-anchor="middle" font-size="11" font-weight="600">Schulforum</text>
-    <text x="485" y="104" text-anchor="middle" font-size="9.5" class="muted">Art. 69 BayEUG</text>
-    <text x="485" y="116" text-anchor="middle" font-size="9.5" class="muted">letzte schul-int. Instanz</text>
-  </g>
-  <line x1="40" y1="155" x2="560" y2="155" class="rule-line"/>
-  <text x="300" y="178" text-anchor="middle" font-size="10" font-weight="600" data-accent="true">Eltern-Beschwerde getrennt</text>
-  <text x="300" y="195" text-anchor="middle" font-size="9.5" class="muted">Art. 76 BayEUG · Elternbeirat Art. 64/65</text>
-  <text x="300" y="210" text-anchor="middle" font-size="9.5" class="muted">Lockerung bei Befangenheit zulässig</text>
-  <defs>
-    <marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor"/>
-    </marker>
-  </defs>
-</svg>`
-    },
-
+    { type: 'h', text: 'Stichtag + Einschulungskorridor' },
     { type: 'table',
-      head: ['Stufe', 'Adressat', 'Hinweis'],
+      head: ['Geburtsdatum', 'Regelung'],
       rows: [
-        ['1', 'Lehrkraft (KL bei Querthemen)', 'Erstadressat'],
-        ['2', 'Schulleitung', 'Wenn LK-Klärung scheitert'],
-        ['3', 'Schulforum', 'Letzte schulinterne Instanz'],
+        ['**bis 30.09.**', 'regulär schulpflichtig im Folgesommer'],
+        ['**01.07.–30.09.**', 'Einschulungskorridor seit SJ 2019/2020: Eltern entscheiden'],
+        ['**01.10.–31.12.**', '„Kann-Kinder" — freiwillig auf Eltern-Antrag'],
+        ['**nach 31.12.**', 'freiwillig NUR mit schulpsychologischem Gutachten'],
       ],
     },
 
-    { type: 'h', text: 'KL-Stufenplan (Praxis-Choreographie)' },
-    { type: 'numbered', items: [
-      '**Sondierungsgespräch Eltern** (Arbeitsplatz, Ablenkungen, Block-Arbeit, Lernbeeinträchtigungen, Zeit-pro-Fach) — {{Art. 76 BayEUG}} + {{§ 14 LDO}} Verschwiegenheit.',
-      '**Austausch Fach-LK** (welche Aufgaben? Koordination? Häufung?) — {{§ 6/2 LDO}} KL-Koordinationspflicht + {{§ 22 BaySchO}} LK-Konferenz-Forum.',
-      '**LK-Konferenz** — Grundsätze {{§ 28 BaySchO}}/1 S. 2 prüfen + ggf. neu beschließen.',
-      '**Elternbeirat** ({{Art. 64 BayEUG}}/{{Art. 65 BayEUG}}) bei Klassen-/Schul-Klima-Berührung.',
-      '**Schulleitung** ({{Art. 57 BayEUG}}) bei systemischer Klärung.',
+    { type: 'h', text: 'Migration' },
+    { type: 'bullets', items: [
+      'Beginn der Schulpflicht: **3 Monate nach Zuzug** (bei Aufenthaltsgestattung/-erlaubnis/Duldung/Ausreisepflicht).',
+      'Einweisung: **Altersgleichheits-Prinzip** — Jgst. wie altersgleiche Dauer-in-Bayern-SuS.',
+      '**Tiefer-Einweisung bis 2 Jgst.** zulässig NUR bei allgemein mangelndem Bildungsstand ({{Art. 36/3 BayEUG}} S. 4) — NICHT sprachlich. Falle!',
+      'Keine Verlängerung der Schulpflicht durch tiefere Einweisung.',
     ]},
 
-    { type: 'warn', titel: '⚠ Falle Beschwerde-Kette', text:
-      '„**Nacheinander**" ist Wortlaut — NICHT „parallel an alle drei Stellen". Maßstab „**entsprechend Alter und Stellung im Schulverhältnis**" — kein 1:1-Rechte-Übertrag von Erwachsenen. Nr. 4 = Auskunft Leistungsstand UND Förderhinweise (beides!). Mutter-Beschwerde ist kein Art. 56/2 Nr. 5, sondern {{Art. 76 BayEUG}} Eltern-Mitwirkung.',
+    { type: 'h', text: 'Schulpflicht ≠ Schulzwang — Eskalations-Kette' },
+    { type: 'numbered', items: [
+      '{{Art. 76 BayEUG}} + {{§ 20 BaySchO}}: Eltern + Schule überwachen gemeinsam.',
+      '{{Art. 119 BayEUG}}: Ordnungswidrigkeit + Geldbuße bei Unterlassung Anmeldung.',
+      '{{Art. 118 BayEUG}}: Schulzwang — „auf Antrag der Schule" von der Kreisverwaltungsbehörde durch Beauftragte zwangsweise der Schule zugeführt.',
+      'Art. 120 BayEUG: Grundrechtseinschränkung Freiheit/Wohnung zugunsten Schulpflicht.',
+    ]},
+
+    { type: 'warn', titel: '⚠ Fallen Schulpflicht', text:
+      '**Schulpflicht ≠ Schulzwang**: Pflicht = Grundpflicht ({{Art. 35 BayEUG}} + {{Art. 76 BayEUG}} + § 20). Schulzwang = Sanktion (Art. 118/119/120). KEIN Synonym! **Migration**: Tiefer-Einweisung NUR bei allgemeinem Bildungsstand-Defizit, NICHT sprachlich. **BS-Pflicht-Ende**: SJ in dem 21. Lj. vollendet — NICHT „bis 18. Lj." oder „4 Jahre".',
     },
 
     { type: 'selfcheck', items: [
-      { q: 'Wer ist Adressat einer Beschwerde nach Art. 56/2 Nr. 5 BayEUG — und in welcher Reihenfolge?',
-        a: '„Nacheinander" Lehrkraft → Schulleitung → Schulforum. Sequenziell, NICHT parallel. Lockerung bei Befangenheit. Eltern-Beschwerde läuft separat über {{Art. 76 BayEUG}} + Elternbeirat.' },
-      { q: 'Welche zwei Pflichten ergeben sich aus Art. 76 BayEUG für Eltern?',
-        a: '„Achten auf" regelmäßige Schul-Teilnahme + Erfüllung der Schulpflicht; und „unterstützen" die Erziehungsarbeit der Schule. Zwei unterschiedliche Pflichten — bei Boykott SL-Mitteilung + {{Art. 75 BayEUG}} EB-Unterrichtung + ggf. Jugendamt.' },
+      { q: 'Welche drei Stufen kennt die Schulzwang-Eskalation in Bayern?',
+        a: '{{Art. 119 BayEUG}} OWi + Geldbuße → {{Art. 118 BayEUG}} Schulzwang auf Antrag der Schule bei Kreisverwaltungsbehörde → Art. 120 Grundrechtseinschränkung Freiheit/Wohnung. Vorgelagert: {{Art. 76 BayEUG}} + {{§ 20 BaySchO}} gemeinsame Überwachung.' },
+      { q: 'Wann genau beginnt die Schulpflicht bei aus dem Ausland zugezogenen Kindern?',
+        a: '3 Monate nach Zuzug (bei Aufenthaltsgestattung/-erlaubnis/Duldung/Ausreisepflicht). Altersgleichheits-Prinzip. Tiefer-Einweisung bis 2 Jgst. NUR bei allgemeinem Bildungsstand-Defizit ({{Art. 36/3 BayEUG}} S. 4), NICHT sprachlich.' },
     ]},
   ],
 
   A4: [
     { type: 'lead', text:
-      'Bei systematisch nicht erledigten HA greift {{Art. 86/1 BayEUG}}: „**Nacharbeit unter Aufsicht einer Lehrkraft**" — als Erziehungsmaßnahme. Subsidiarität: erst Erziehungs-, dann ggf. Ordnungsmaßnahme. Aufsicht für die Nacharbeit greift {{§ 5 LDO}}.'
+      'Übertritts-Schwellen sind die Examens-Klassiker. **{{§ 6 GrSO}}**: Mai-ÜZ Jgst. 4, nur **D/M/HSU**, Gym ≤ 2,33 / RS ≤ 2,66. **{{§ 6 MSO}}** Gelenkklasse: Jgst. 5 MS-Jahreszeugnis, D+M ≤ 2,0 / ≤ 2,5. **{{§ 7 MSO}}** M-Zug-Schwellen.'
     },
 
-    { type: 'h', text: 'Art. 86/1 Wortlaut (kondensiert)' },
+    { type: 'h', text: 'GS 4 → Sek I (Mai-ÜZ D/M/HSU)' },
+    { type: 'table',
+      head: ['Ziel', 'Schwelle', 'Probeunterricht'],
+      rows: [
+        ['**Gymnasium**', '≤ **2,33**', 'ab 2,34: PU 3 Tage D/M; bestanden = mind. 1×3 + 1×4; Elternwille bei 2× Note 4'],
+        ['**Realschule**', '≤ **2,66**', 'analog'],
+        ['**Mittelschule**', 'alle übrigen', '—'],
+      ],
+    },
     { type: 'p', text:
-      'Verbatim: „Zur Sicherung des Bildungs- und Erziehungsauftrags oder zum Schutz von Personen und Sachen können Erziehungsmaßnahmen gegenüber SuS getroffen werden. Dazu zählt bei nicht hinreichender Beteiligung am Unterricht **auch eine Nacharbeit unter Aufsicht einer Lehrkraft**. Soweit andere Erziehungsmaßnahmen nicht ausreichen, können Ordnungs- und Sicherungsmaßnahmen ergriffen werden. Maßnahmen des Hausrechts bleiben stets unberührt. Alle Maßnahmen werden nach dem Grundsatz der Verhältnismäßigkeit ausgewählt."'
+      'Eltern können **unabhängig vom Schnitt** Probeunterricht beantragen. **{{§ 10 GrSO}}**: 18 Probearbeiten bis ÜZ in D/M/HSU (Wortlaut Abs. 3 S. 2). Mindestens 4 U.-Wochen probearbeitenfrei „jeweils" pro Fach (Auslegung uneinheitlich — im Zweifel LK-Konferenz-Festlegung der konkreten Schule).'
     },
 
-    { type: 'h', text: 'Eskalations-Pfad bei HA-Verstoß' },
-    { type: 'numbered', items: [
-      'LK-Gespräch + Eltern-Information (informell).',
-      '**Erziehungsmaßnahme**: Nacharbeit unter Aufsicht — {{Art. 86/1 BayEUG}} + {{§ 5 LDO}}.',
-      'EB-Mitteilung schriftlich ({{Art. 75 BayEUG}}-Anker).',
-      'LK-Konferenz-Grundsätze prüfen ({{§ 28 BaySchO}}/1 S. 2).',
-      'Bei fortgesetzter Pflichtverletzung: **Ordnungsmaßnahme** aus Art. 86/2-Katalog mit Verhältnismäßigkeit + Anhörung ({{Art. 88 BayEUG}}). Cross-Ref MP_01 + MP_05.',
+    { type: 'h', text: 'MS 5 → Gym/RS (Gelenkklasse, Jahreszeugnis)' },
+    { type: 'table',
+      head: ['Ziel', 'Schwelle', 'Anmerkung'],
+      rows: [
+        ['**Gymnasium**', 'D+M ≤ **2,0**', 'uneingeschränkt; sonst Härtefall'],
+        ['**Realschule**', 'D+M ≤ **2,5**', 'uneingeschränkt'],
+      ],
+    },
+
+    { type: 'h', text: 'MS → M-Zug ({{§ 7 MSO}})' },
+    { type: 'table',
+      head: ['Ziel', 'Schwelle D+M+E', 'Bedingung'],
+      rows: [
+        ['**M7**', '≤ **2,66**', 'aus 6. Kl. Jahreszeugnis'],
+        ['**M8 / M9**', '≤ **2,33**', 'analog'],
+        ['**M10**', 'Quali + ≤ **2,33**', '+ Quali-Zeugnis aus 9. Klasse'],
+      ],
+    },
+    { type: 'p', text:
+      'Sonst Antrag + Aufnahmeprüfung. **Rückkehr MS ↔ M-Zug jederzeit** ({{§ 8 MSO}}/3).'
+    },
+
+    { type: 'h', text: 'MS → Wirtschaftsschule (4-stufig, Jgst. 7)' },
+    { type: 'bullets', items: [
+      'Aus 6./7. Kl. MS: Zwischen-/Jahreszeugnis D+M+E ≤ 2,66 uneingeschränkt.',
+      'Alternativ M-Zug-Vorrückungserlaubnis aus 7.',
+      'Sonst Probeunterricht 3 Tage.',
     ]},
 
-    { type: 'warn', titel: '⚠ Fallen Erziehungsmaßnahme bei HA', text:
-      '**Nacharbeit** = Erziehungsmaßnahme, NICHT Ordnungsmaßnahme. „Unter Aufsicht einer Lehrkraft" → {{§ 5 LDO}} greift. **Subsidiarität**: erst Erziehungs-, dann Ordnungsmaßnahme. Bei Eskalation: Verfahren {{Art. 88 BayEUG}} (Anhörung + EB-Mitteilung). Eltern-Boykott der HA = {{Art. 76 BayEUG}}-Verstoß; bei Verfestigung SL + ggf. Jugendamt.',
+    { type: 'warn', titel: '⚠ Fallen Übertritt', text:
+      '**Schwellen**: Gym ≤ 2,33 (NICHT 2,5/3,0); RS ≤ 2,66; NUR D/M/HSU, NICHT alle Fächer. **Elternwillen-Regel** gilt NACH Probeunterricht bei 2× Note 4, NICHT vorab. **Übertritts-Dokument** nicht nur Jgst. 4 ÜZ — auch Gelenkklasse Jgst. 5 MS. **Probearbeiten-Festlegung** durch LK-Konferenz (nicht einzelne LK).',
     },
 
     { type: 'selfcheck', items: [
-      { q: 'Welche Erziehungsmaßnahme nennt Art. 86/1 BayEUG ausdrücklich — und was greift bei der Aufsicht?',
-        a: '„Nacharbeit unter Aufsicht einer Lehrkraft" bei nicht hinreichender Beteiligung am Unterricht. Aufsicht greift {{§ 5 LDO}} — auch außerhalb des regulären Unterrichts. Subsidiarität: Erziehungs- vor Ordnungsmaßnahme.' },
-      { q: 'Wie eskaliert das Verfahren von Nacharbeit zur Ordnungsmaßnahme?',
-        a: 'Bei fortgesetzter Pflichtverletzung: Subsidiarität-Test (haben Erziehungsmaßnahmen nicht ausgereicht?). Dann Anhörung SuS + EB ({{Art. 88 BayEUG}}), Verhältnismäßigkeit ({{Art. 86 BayEUG}}/1 letzter Satz), Auswahl aus 12-Punkte-Katalog Art. 86/2. EB-Mitteilung schriftlich vor Vollzug.' },
+      { q: 'Welche Schwellen entscheiden den Übertritt GS Jgst. 4 → Sek I — und welche Fächer zählen?',
+        a: 'Mai-ÜZ, nur D/M/HSU: Gym ≤ 2,33 · RS ≤ 2,66 · MS alle übrigen. Bei knapper Verfehlung Probeunterricht 3 Tage D/M (bestanden = mind. 1×3 + 1×4). Bei 2× Note 4: Elternwille entscheidet.' },
+      { q: 'Was unterscheidet die Gelenkklasse Jgst. 5 vom Übertritt aus Jgst. 4?',
+        a: 'Gelenkklasse {{§ 6 MSO}} nutzt JAHRESZEUGNIS (nicht ÜZ). Schwellen: D+M ≤ 2,0 Gym / ≤ 2,5 RS — KEINE D/M/HSU-Logik wie in Jgst. 4. Zweite reguläre Schnittstelle, die viele übersehen.' },
     ]},
   ],
 
   A5: [
     { type: 'lead', text:
-      'Die häufigste Drift-Falle der Schulräte: „§ 28 BaySchO verbietet HA-Benotung." **Falsch.** § 28 sagt zur Benotung NICHTS. Das Verbot folgt mittelbar aus der LNW-Definition ({{Art. 52 BayEUG}}) und den Lehrplan-Vorgaben.'
+      'Die MS bietet vier Abschlüsse und drei Aufstiegswege zur Fachhochschulreife. Kerne: **ESA** (Vorrückung ≥ 4,00), **Quali** (50/50 + Projekt), **MSA** (M10), **Praxisklasse-Abschluss** ({{§ 22 MSO}}), **Quabi** ({{§ 34 MSO}}).'
     },
 
-    { type: 'h', text: 'Drift-Aufklärung' },
+    { type: 'h', text: 'Vier MS-Abschlüsse' },
     { type: 'table',
-      head: ['Aussage', 'Wahr/Falsch', 'Begründung'],
+      head: ['Abschluss', 'Norm', 'Bestehensformel'],
       rows: [
-        ['„§ 28 verbietet HA-Benotung"', '**FALSCH** (Drift)', '§ 28 enthält keine Benotungs-Norm. Wortlaut: nur Stellpflicht + Maßstab + Konferenz + Pause.'],
-        ['„HA dürfen nicht benotet werden"', '**WAHR**', 'Folgt aus LNW-Definition {{Art. 52 BayEUG}} + Lehrplan. HA dienen Einübung.'],
-        ['„Schlechte HA-Note als Sanktion"', '**FALSCH**', 'Verstoß gegen LNW-Definitions-Pfad. Stattdessen Nacharbeit {{Art. 86/1 BayEUG}}.'],
-        ['„Bei dauerhaftem HA-Fehlen Ordnungsmaßnahme"', '**WAHR**', '{{Art. 86 BayEUG}} Abs. 2 Katalog mit Subsidiarität + Verhältnismäßigkeit + Anhörung {{Art. 88 BayEUG}}.'],
+        ['**ESA** (Ende 9.)', 'MSO §§ 19 ff.', 'Vorrückungsfächer ≥ **4,00** + max. **3 Fächer schlechter als 4** (Note 6 = 2× Note 5)'],
+        ['**Quali** (freiwillig Ende 9.)', 'MSO §§ 26 ff.', '50 % Jahresfortgang + 50 % Prüfung; Fächer D/M/E/PCB/GSE/AWT + Projektprüfung'],
+        ['**MSA** (M10)', 'MSO §§ 30 ff.', 'schriftl./mündl./prakt. Prüfungen'],
+        ['**Praxisklasse**', '{{§ 22 MSO}}', 'D/DaZ 90 Min + M 60 Min + Fächerverbund 45 Min + Projekt AWT (zählt doppelt); Bestehen ≤ 4,0'],
+        ['**Quabi**', '{{§ 34 MSO}}', 'Quali + Berufsausbildungsabschluss → gleichwertig mittlerer Schulabschluss'],
       ],
     },
 
-    { type: 'h', text: 'Notenauskunfts-Falle (Cross-Ref MP_06)' },
+    { type: 'h', text: 'Drei Aufstiegswege MS → Fachabi' },
+    { type: 'numbered', items: [
+      '**Weg A — M-Zug**: MS 5 → M7 → M10 + MSA → FOS 11/12 → Fachabi.',
+      '**Weg B — Quali + BS + FOS**: ESA + Quali → Berufsausbildung + BS → Quabi → FOS 11/12 → Fachabi.',
+      '**Weg C — Wirtschaftsschule**: MS 6./7. → 4-stufige WS → mittlerer Abschluss → FOS.',
+    ]},
+
+    { type: 'h', text: 'Beratungspflicht {{Art. 78 BayEUG}}' },
     { type: 'p', text:
-      'Bei Eltern-Gespräch mit Notenbezug („Die anderen Kinder schaffen das doch auch!"): {{§ 14 LDO}}/4 Drittauskunfts-Schranke greift. KEIN „Notengeheimnis" ggü. den eigenen SuS/EB, ABER kein **vergleichender** Bezug auf andere SuS namentlich. Lara-Note geht andere Eltern nichts an. Cross-Ref MP_06 A.3 + MP_05.'
+      'Schule + jede LK haben Eltern + SuS in Schullaufbahn-Fragen zu beraten + Hilfe bei Bildungsmöglichkeitswahl entsprechend Anlagen/Fähigkeiten. Die Durchlässigkeits-Perspektive (drei Aufstiegswege) gehört in jede ÜZ-Beratungs-Antwort.'
     },
 
-    { type: 'warn', titel: '⚠ Drift-Falle HA ≠ LNW', text:
-      '**§ 28 BaySchO sagt zur Benotung NICHTS** — Verbot mittelbar über {{Art. 52 BayEUG}} + Lehrplan. „HA dürfen nicht benotet werden" ist KORREKT, aber Begründung MUSS über LNW-Definitions-Pfad laufen. Lieblingsfalle der Schulräte — verdeckt im Fallcover (Mutter-beschwert-sich, Häufung vor Zwischenzeugnis …). Nacharbeit {{Art. 86/1 BayEUG}} ist erlaubt; HA-Benotung als Sanktion NICHT.',
+    { type: 'warn', titel: '⚠ Falle Abschlüsse', text:
+      '**Quali ≠ MSA**: Quali = freiwillige externe Prüfung Ende 9. (50/50). MSA = M10-Abschluss mit eigenen Prüfungsformaten. Genauigkeit der Benennung wird bewertet.',
     },
 
     { type: 'selfcheck', items: [
-      { q: 'Wo steht das Benotungs-Verbot für HA wirklich — und warum NICHT in § 28 BaySchO?',
-        a: 'Nicht in § 28 (Drift!), sondern mittelbar aus der LNW-Definition {{Art. 52 BayEUG}} + Lehrplan-Vorgaben. HA sind Einübung, kein LNW. Wer § 28 als Quelle nennt, fällt in die Schulrats-Falle.' },
-      { q: 'Was darf die LK bei systematisch nicht erledigten HA — und was darf sie nicht?',
-        a: 'DARF: Nacharbeit unter Aufsicht ({{Art. 86/1 BayEUG}}), EB-Mitteilung, bei Fortsetzung Ordnungsmaßnahme nach Verhältnismäßigkeit. DARF NICHT: schlechte Note als Sanktion (Drift-Falle HA ≠ LNW).' },
+      { q: 'Welche Bestehensformel hat der ESA — und was unterscheidet ihn vom Quali?',
+        a: 'ESA: Vorrückungsfächer ≥ 4,00 + max. 3 Fächer schlechter als 4 (Note 6 = 2× Note 5). Quali: freiwillige externe Prüfung Ende 9., 50 % Jahresfortgang + 50 % Prüfung + Projektprüfung. ESA ist Abschluss-Voraussetzung; Quali zusätzliche Qualifikation.' },
+      { q: 'Nenne die drei Aufstiegswege MS → Fachabi mit jeweils einem Anker.',
+        a: 'A: M-Zug — M10 + MSA → FOS. B: Quali + BS → Quabi ({{§ 34 MSO}}) → FOS. C: Wirtschaftsschule → mittlerer Abschluss → FOS. Alle drei münden über FOS in die Fachhochschulreife.' },
     ]},
   ],
 };

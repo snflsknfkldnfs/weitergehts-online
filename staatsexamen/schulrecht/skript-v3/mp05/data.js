@@ -1,5 +1,7 @@
-// MP_05 — Inhaltsauszug (echte Quelle der Live-Seite, gekürzt + strukturiert für
-// die Reveal-Mechanik). Die Felder spiegeln das künftige Frontmatter-Schema.
+// MP_05 — Rechte und Pflichten der Schüler:innen
+// PDF-Abschnitt 5 (Skript zum Schulrecht 2024 — Stephan Bauer):
+//   Organe der Schülermitverantwortung · Schülerzeitung
+// (Schwerpunkte 5.4-5.5 ndM-Spezifika + Nachteilsausgleich aus Examens-Realität ergänzt)
 
 window.MODULE = {
   id: 'mp05',

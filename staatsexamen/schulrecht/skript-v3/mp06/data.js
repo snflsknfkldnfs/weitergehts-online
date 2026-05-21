@@ -1,4 +1,6 @@
 // MP_06 — Rechte und Pflichten der Lehrkräfte
+// PDF-Abschnitt 6 (Skript zum Schulrecht 2024 — Stephan Bauer):
+//   Rechte LK · Pflichten LK · Aufsichtspflicht · Lehrerkonferenz (→ mp03 A.2 für detaillierte LK-Konferenz-Zuständigkeiten)
 window.MODULE = {
   id: 'mp06',
   zalgm: 'ZALGM § 16 Nr. 6',

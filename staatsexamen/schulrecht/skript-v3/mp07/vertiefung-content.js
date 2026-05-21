@@ -3,230 +3,219 @@ window.MODULE_BODIES = {
 
   A1: [
     { type: 'lead', text:
-      'Die LK-Verantwortung im Schuldienst ist eine **Drei-Pfad-Haftung**: Zivil/Amtshaftung · Disziplinarrecht · Strafrecht — drei Schienen, drei Anspruchsgrundlagen, drei Adressaten der Außenhaftung. Sie laufen **kumulativ**, ohne {{Art. 103/3 GG}} ne-bis-in-idem-Verstoß.'
+      'Der/die **Klassenelternsprecher:in** ({{Art. 64 BayEUG}}) ist das Bindeglied zwischen EB einer Klasse, KL und Schule. Wahl zu SJ-Beginn; Vermittlungs-Funktion bei Konflikten. KEIN Beschluss-Organ.'
     },
 
-    { type: 'svg', titel: 'Haftungsdreieck im Schuldienst',
-      caption: '3 Schienen · kumulativ · ne bis in idem nur Strafrecht',
-      svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" width="600" preserveAspectRatio="xMidYMid meet">
-  <polygon points="300,40 80,280 520,280" class="rule-line" stroke-width="1.5" fill="none"/>
-  <g>
-    <text x="300" y="32" text-anchor="middle" font-size="11" font-weight="600" data-accent="true">ZIVIL / AMTSHAFTUNG</text>
-    <text x="300" y="50" text-anchor="middle" font-size="10">§ 839 BGB · Art. 34 GG</text>
-    <text x="300" y="66" text-anchor="middle" font-size="9.5" class="muted">außen: Freistaat haftet</text>
-    <text x="300" y="80" text-anchor="middle" font-size="9.5" class="muted">Rückgriff nur Vorsatz +</text>
-    <text x="300" y="94" text-anchor="middle" font-size="9.5" class="muted">grobe Fahrlässigkeit</text>
-  </g>
-  <g>
-    <text x="80" y="298" text-anchor="middle" font-size="11" font-weight="600" data-accent="true">DISZIPLINAR</text>
-    <text x="80" y="313" text-anchor="middle" font-size="10">§ 47 BeamtStG</text>
-    <text x="100" y="226" text-anchor="middle" font-size="10">Art. 6 BayDG</text>
-    <text x="100" y="244" text-anchor="middle" font-size="9.5" class="muted">5 Stufen Lebenszeit</text>
-    <text x="100" y="258" text-anchor="middle" font-size="9.5" class="muted">+ 2 Stufen Ruhestand</text>
-  </g>
-  <g>
-    <text x="520" y="298" text-anchor="middle" font-size="11" font-weight="600" data-accent="true">STRAFRECHT</text>
-    <text x="520" y="313" text-anchor="middle" font-size="10">StGB</text>
-    <text x="510" y="226" text-anchor="middle" font-size="10">§ 229 · § 203 · § 174</text>
-    <text x="510" y="244" text-anchor="middle" font-size="9.5" class="muted">LK persönlich</text>
-    <text x="510" y="258" text-anchor="middle" font-size="9.5" class="muted">Schuldprinzip</text>
-  </g>
-  <text x="300" y="180" text-anchor="middle" font-size="9" letter-spacing="2" class="muted">KUMULATIV</text>
-  <text x="300" y="196" text-anchor="middle" font-size="9" letter-spacing="1.5" class="muted">Art. 103/3 GG nur „allgemeine Strafgesetze"</text>
-  <text x="300" y="210" text-anchor="middle" font-size="9" letter-spacing="1.5" class="muted">Disziplinar = Sonderrecht ≠ ne bis in idem</text>
-</svg>`
-    },
-
-    { type: 'h', text: 'Drei-Pfad-Tabelle' },
-    { type: 'table',
-      head: ['Schiene', 'Anspruchsgrundlage', 'Außenhaftung', 'Rückgriff/persönlich'],
-      rows: [
-        ['**Zivil/Amtshaftung**', '{{§ 839 BGB}} + {{Art. 34 GG}}', '**Freistaat Bayern**', 'Rückgriff auf LK NUR bei Vorsatz + grober Fahrlässigkeit'],
-        ['**Disziplinarrecht**', '{{§ 47 BeamtStG}} + {{Art. 6 BayDG}}', 'LK persönlich (Dienstherr → LK)', '5 Stufen Lebenszeit + 2 Ruhestand'],
-        ['**Strafrecht**', 'StGB ({{§ 229 StGB}} · {{§ 203 StGB}} · {{§ 174 StGB}})', 'LK persönlich (Schuld)', 'Kumulativ neben Disziplinar zulässig'],
-      ],
-    },
-
-    { type: 'h', text: 'ne bis in idem — Wortlaut zählt' },
-    { type: 'p', text:
-      'Verbatim {{Art. 103/3 GG}}: „Niemand darf wegen derselben Tat auf Grund der **allgemeinen Strafgesetze** mehrmals bestraft werden." Disziplinarrecht ist **Sonderrecht** für Beamte, **kein „allgemeines Strafrecht"** — Strafverfahren + Disziplinarverfahren laufen daher **kumulativ**. Schulrechtliche Erziehungs-/Ordnungsmaßnahmen unterliegen Art. 103/3 GG nur analog über den Verhältnismäßigkeitsgrundsatz.'
-    },
-
-    { type: 'h', text: 'Bund-Land-Trennschärfe' },
+    { type: 'h', text: 'Wahl + Amtszeit' },
     { type: 'bullets', items: [
-      '**Bund**: {{§ 47 BeamtStG}} (Dienstvergehen-Tatbestand) · {{Art. 34 GG}} (Staatshaftung) · {{§ 839 BGB}} (Amtspflichtverletzung) · StGB (Strafrecht) · {{Art. 33/5 GG}} (Berufsbeamtentum-Anker).',
-      '**Land Bayern**: {{Art. 6 BayDG}} ff. (Maßnahmen-Katalog) · BayBG · LDO · BaySchO · BayEUG.',
-      '**Falle**: Berufsbeamtentum-Anker = {{Art. 33/5 GG}}, NICHT BV Art. 130 (stale Sekundärquellen-Pfad).',
+      'Wahl zu Beginn des Schuljahres im **Klassenelternabend** durch die EB der Klasse.',
+      'Wahlleitung: KL oder durch EB selbst organisiert.',
+      'Amtszeit i.d.R. **1 Schuljahr**.',
+      'Stellvertretung üblich (vor allem an größeren Schulen).',
+      'Klassenelternsprecher:in ist gleichzeitig Mitglied im Klassenelternabend-Kreis.',
     ]},
 
-    { type: 'warn', titel: '⚠ Fallen Haftungsdreieck', text:
-      'Außenhaftung trifft **Freistaat** ({{Art. 34 GG}}) — Eltern verklagen Staat, nicht LK. **Rückgriff Freistaat → LK NUR bei Vorsatz oder grober Fahrlässigkeit** (Art. 34 S. 2 GG). Strafrecht + Disziplinarrecht + Zivilrecht laufen **parallel** — KEINE Doppelbestrafung i.S.d. {{Art. 103/3 GG}} (gilt nur „allgemeine Strafgesetze"). **Tatbestand** des Dienstvergehens steht in {{§ 47 BeamtStG}} (Bund), nicht in BayDG. Aufsichtspflicht-Substrat → Cross-Ref MP_06 A.2.',
+    { type: 'h', text: 'Vermittlungs-Funktion' },
+    { type: 'p', text:
+      'Aufgabe: Information der EB der Klasse · Bündelung von Anliegen · Mitwirkung an Klassenelternabenden · **Vermittlung bei Konflikten** zwischen EB und LK. Klassenelternsprecher:in moderiert Gespräche zwischen EB und KL/Fach-LK, ohne selbst Beschlüsse zu fassen.'
+    },
+
+    { type: 'warn', titel: '⚠ Fallen Klassenelternsprecher', text:
+      '**Kein Beschwerde-Empfänger** im juristischen Sinn — Beschwerden gehen den Weg {{Art. 56}}/5: LK → SL → Schulforum. **Kein Disziplinar-Organ** ggü. LK. **Keine Notenkonferenz-Mitgliedschaft** — das ist Lehrerkonferenz.',
     },
 
     { type: 'selfcheck', items: [
-      { q: 'Welche drei Schienen umfasst das Haftungsdreieck — und wer haftet jeweils nach außen?',
-        a: 'Zivil/Amtshaftung ({{§ 839 BGB}} + {{Art. 34 GG}}): Freistaat haftet außen. Disziplinar ({{§ 47 BeamtStG}} + {{Art. 6 BayDG}}): LK persönlich. Strafrecht (StGB): LK persönlich (Schuldprinzip). Alle drei laufen kumulativ.' },
-      { q: 'Warum verstößt die parallele Strafe + Disziplinarmaßnahme NICHT gegen ne bis in idem?',
-        a: '{{Art. 103/3 GG}} Wortlaut: „allgemeine Strafgesetze". Disziplinarrecht ist Sonderrecht für Beamte, kein „allgemeines Strafrecht" — beide Verfahren laufen kumulativ. Auch schulrechtliche EOM unterliegen Art. 103/3 nur analog über Verhältnismäßigkeit.' },
-      { q: 'Wo steht der Tatbestand des Dienstvergehens — und wo der Maßnahmen-Katalog?',
-        a: 'Tatbestand: {{§ 47 BeamtStG}} (Bund). Maßnahmen: {{Art. 6 BayDG}} (Bayern). 5-Stufen Lebenszeit + 2 Ruhestand. Wer beide vermischt, fällt in die Bund-Land-Trennschärfe-Falle.' },
+      { q: 'Wer wählt den/die Klassenelternsprecher:in?',
+        a: 'Die EB der Klasse im Klassenelternabend. Wahlleitung KL oder EB-organisiert ({{Art. 64}}).' },
     ]},
   ],
 
   A2: [
     { type: 'lead', text:
-      '{{§ 839 BGB}} formt den Anspruch gegen den Beamten persönlich. {{Art. 34 GG}} **leitet die Haftung an den Staat um** — Außenhaftung trifft den Freistaat. **Rückgriff** auf die LK **nur bei Vorsatz oder grober Fahrlässigkeit** (Art. 34 S. 2 GG).'
+      'Der **Elternbeirat** ({{Art. 65-67 BayEUG}}) ist die Schul-Ebene der EB-Vertretung. Wahl alle 2 Schuljahre. Beratungs-, Anhörungs- und Beschwerde-Anrufungs-Rechte. KEINE Entscheidungskompetenz über U./Noten.'
     },
 
-    { type: 'h', text: 'Konstruktion (Vier Schritte)' },
-    { type: 'numbered', items: [
-      'Tatbestandsprüfung: {{§ 839 BGB}} → Schadensersatzanspruch des Dritten gegen Beamten persönlich.',
-      'Haftungsverlagerung: {{Art. 34 GG}} S. 1 → Anspruch trifft den STAAT (Freistaat Bayern), nicht die LK.',
-      'Rückgriff: {{Art. 34 GG}} S. 2 → Staat kann auf LK NUR bei Vorsatz oder grober Fahrlässigkeit zurückgreifen.',
-      'Beweislast: Staat trägt die Beweislast für Vorsatz/grobe Fahrlässigkeit (Rspr.).',
-    ]},
-
-    { type: 'h', text: 'Faustregel Verschuldensformen' },
+    { type: 'h', text: 'Wahl + Konstituierung' },
     { type: 'bullets', items: [
-      '**Einfache Fahrlässigkeit** = „Das kann vorkommen" → KEIN Rückgriff.',
-      '**Grobe Fahrlässigkeit** = „Das DARF NICHT vorkommen" → Rückgriff möglich.',
-      '**Vorsatz** = wissentlich + willentlich → Rückgriff sicher.',
+      '**Wahl alle 2 Schuljahre** ({{Art. 65}}). Erste 6 Wochen nach SJ-Beginn.',
+      'Wahlberechtigt + wählbar: alle EB der Schule (volljährig + Sorgerecht).',
+      'Mitgliederzahl an MS: 5–12 (je nach Schulgröße).',
+      'Aus der Mitte: **Vorsitzende:r** + Stellvertreter:in.',
+      'Wahl geheim ({{Art. 66}}).',
     ]},
 
-    { type: 'h', text: 'Antwort-Schema Amtshaftung' },
-    { type: 'numbered', items: [
-      'Pflichtverletzung benennen (z.B. Aufsichtspflichtverletzung {{§ 5 LDO}}).',
-      'Schaden + Kausalität feststellen.',
-      'Anspruchsgrundlage {{§ 839 BGB}} i.V.m. {{Art. 34 GG}}.',
-      'Außenhaftung Freistaat erläutern.',
-      'Verschulden bewerten (einfach / grob / Vorsatz) → Rückgriff-Frage.',
+    { type: 'h', text: 'Aufgaben Art. 67' },
+    { type: 'table',
+      head: ['Aufgabe', 'Reichweite'],
+      rows: [
+        ['**Zusammenarbeit fördern**', 'Bindeglied EB ↔ Schule; Elternabende; Information'],
+        ['**Beratungsrecht**', 'an wesentlichen Schulangelegenheiten teilnehmen + Stellungnahme'],
+        ['**Anhörungsrecht**', 'vor Entscheidungen, die die Schule wesentlich betreffen (Schul-Vereinbarung, Stundenplan-Grundsätze, Schulprofil)'],
+        ['**Beschwerde-Anrufung**', 'kann Schulforum + SL einschalten; bei Eskalation Schulaufsicht'],
+        ['**Mitwirkung Schulpartner-Foren**', 'Mitglied im Schulforum ({{Art. 69}})'],
+      ],
+    },
+
+    { type: 'h', text: 'Anhörungsrecht — was umfasst es?' },
+    { type: 'bullets', items: [
+      'Vor Entscheidung der SL/Lehrerkonferenz in wesentlichen Schulangelegenheiten.',
+      'Vor Beschluss von Schul-Vereinbarungen.',
+      'Bei wesentlichen Stundenplan-Änderungen.',
+      'KEIN Vetorecht — Stellungnahme + Berücksichtigungs-Pflicht.',
     ]},
 
-    { type: 'warn', titel: '⚠ Fallen Amtshaftung', text:
-      'Außenhaftung trifft **Freistaat**, nicht LK. Bei **einfacher Fahrlässigkeit** kein Rückgriff — Berufsausübung sonst gelähmt. **Beweislast** für Vorsatz/grobe F. liegt beim Staat. Im privaten Bereich greift Art. 34 NICHT — Privat-Haftpflicht.',
+    { type: 'warn', titel: '⚠ Fallen Elternbeirat', text:
+      '**Beratungs-/Anhörungsrecht ≠ Entscheidung** — Elternbeirat kann nicht über U.-Inhalte, Noten, Personal entscheiden. **Wahl alle 2 Jahre** (nicht jährlich wie Klassenelternsprecher). **Vorsitz** vertritt nach außen, nicht jedes Mitglied.',
     },
 
     { type: 'selfcheck', items: [
-      { q: 'Wann darf der Freistaat auf die LK Regress nehmen — und wer trägt die Beweislast?',
-        a: '{{Art. 34 GG}} S. 2: NUR bei Vorsatz oder grober Fahrlässigkeit. Bei einfacher Fahrlässigkeit kein Rückgriff. Beweislast: Freistaat. Faustregel: einfach = „kann vorkommen"; grob = „darf nicht vorkommen"; Vorsatz = wissentlich + willentlich.' },
-      { q: 'Welche vier Schritte gehören in das Amtshaftungs-Antwortschema?',
-        a: 'Pflichtverletzung → Schaden + Kausalität → {{§ 839 BGB}} + {{Art. 34 GG}} → Außenhaftung Freistaat + Verschulden bewerten (Rückgriff). Privatbereich: {{Art. 34 GG}} greift nicht.' },
+      { q: 'Wie oft wird der Elternbeirat gewählt?',
+        a: 'Alle 2 Schuljahre, in den ersten 6 Wochen nach SJ-Beginn ({{Art. 65}}).' },
+      { q: 'Hat der Elternbeirat ein Vetorecht?',
+        a: 'NEIN. Beratungs- + Anhörungsrecht; Stellungnahme + Berücksichtigungs-Pflicht der SL/Lehrerkonferenz, aber kein Veto.' },
     ]},
   ],
 
   A3: [
     { type: 'lead', text:
-      'Das bayerische Disziplinarrecht kennt **5 Stufen Lebenszeit + 2 Stufen Ruhestand** ({{Art. 6 BayDG}}). Tatbestand „Dienstvergehen" steht in **{{§ 47 BeamtStG}}** (Bund-Land-Trennschärfe). Subsidiaritäts- und Verhältnismäßigkeits-Prinzipien gelten parallel.'
+      'Das **Schulforum** ({{Art. 69 BayEUG}}) ist das Bindeglied zwischen allen Schulpartnern — EB, SuS, LK, SL, Schulträger. Beratungs-Gremium für Schulleben + Schulentwicklung + Bildungsangebot. KEIN Beschluss-Organ über Personal/Noten/U.-Inhalte.'
     },
 
-    { type: 'h', text: '5 Stufen Lebenszeit-Beamte (Abs. 1)' },
+    { type: 'h', text: 'Zusammensetzung (MS)' },
     { type: 'table',
-      head: ['Stufe', 'Maßnahme', 'Norm', 'Wirkung'],
+      head: ['Vertretung', 'Anzahl'],
       rows: [
-        ['1', 'Verweis', '{{Art. 7 BayDG}}', 'Schriftlicher Tadel; bleibt in Personalakte'],
-        ['2', 'Geldbuße', '{{Art. 8 BayDG}}', 'Bis Höhe monatlicher Dienstbezüge'],
-        ['3', 'Kürzung Dienstbezüge', '{{Art. 9 BayDG}}', 'Max. 1/5 für längstens 3 Jahre'],
-        ['4', 'Zurückstufung', '{{Art. 10 BayDG}}', 'In niedrigere Besoldungsgruppe'],
-        ['5', 'Entfernung aus Beamtenverhältnis', '{{Art. 11 BayDG}}', 'Beendigung — höchste Stufe'],
+        ['**SL (Vorsitz)**', '1'],
+        ['**Elternbeirat-Vertretung**', 'mind. 2'],
+        ['**SMV-Vertretung**', 'mind. 1 (Schülersprecher:in)'],
+        ['**Schulträger-Vertretung**', '1 (Gemeinde/Schulverband)'],
+        ['**Lehrkräfte**', 'bis 2 (gewählt von Lehrerkonferenz)'],
       ],
     },
 
-    { type: 'h', text: '2 Stufen Ruhestand (Abs. 2)' },
-    { type: 'table',
-      head: ['Stufe', 'Maßnahme', 'Norm', 'Wirkung'],
-      rows: [
-        ['1', 'Kürzung Ruhegehalt', '{{Art. 12 BayDG}}', 'Max. 1/5 für längstens 3 Jahre'],
-        ['2', 'Aberkennung Ruhegehalt', '{{Art. 13 BayDG}}', 'Verlust Ruhegehalt-Anspruch (Härtefall möglich)'],
-      ],
-    },
+    { type: 'h', text: 'Aufgaben + Grenzen' },
+    { type: 'bullets', items: [
+      '**Beratung Schulleben**: Schulvereinbarung, Schulkultur, Schul-Konflikte.',
+      '**Beratung Schulentwicklung**: Profil-Bildung, Programme, AGs.',
+      '**Beratung Bildungsangebot**: Wahlfächer, Lernlandschaften.',
+      'Bindeglied zwischen EB ↔ Schule ↔ SuS ↔ Aufwandsträger.',
+      '**Beschwerde-Eskalations-Stufe** ({{Art. 56}}/5): EB-Beschwerden landen letztlich hier (nach LK und SL).',
+      '**NICHT**: Personal-Entscheidungen, Noten-Festlegung, U.-Inhalte (gehört zu LK/SL/Lehrerkonferenz).',
+    ]},
 
-    { type: 'h', text: '§ 47 BeamtStG — Tatbestand' },
-    { type: 'p', text:
-      'Verbatim Abs. 1: „Beamte begehen ein Dienstvergehen, wenn sie schuldhaft die ihnen obliegenden Pflichten verletzen. Verhalten außerhalb des Dienstes ist nur dann ein Dienstvergehen, wenn es nach den Umständen des Einzelfalls in besonderem Maße geeignet ist, das Vertrauen in einer für ihr Amt bedeutsamen Weise zu beeinträchtigen." Hohe Schwelle für außerdienstliches Verhalten — Einzelfall-Bewertung.'
-    },
-
-    { type: 'warn', titel: '⚠ Fallen BayDG-Katalog', text:
-      'BayDG kennt **5 + 2 Stufen** — nicht „7 ohne Trennung". **Tatbestand in {{§ 47 BeamtStG}}** (Bund), NICHT BayDG Art. 6. Außerdienstliches Verhalten erfasst nur bei „bedeutsamer" Amts-Beeinträchtigung — hohe Schwelle.',
+    { type: 'warn', titel: '⚠ Fallen Schulforum', text:
+      '**Beratungsorgan ≠ Beschluss-Organ** — Schulforum-Beschlüsse haben Empfehlungs-Charakter. **Nicht identisch mit Elternbeirat** — zwei verschiedene Gremien (Elternbeirat = nur EB; Schulforum = alle Partner). **Vorsitz SL** — Schulforum ist nicht „Elternsache".',
     },
 
     { type: 'selfcheck', items: [
-      { q: 'Nenne die fünf Stufen der BayDG-Maßnahmen bei Lebenszeit-Beamten in aufsteigender Schwere.',
-        a: '(1) Verweis ({{Art. 7 BayDG}}) · (2) Geldbuße ({{Art. 8 BayDG}}) · (3) Kürzung Dienstbezüge ({{Art. 9 BayDG}}) · (4) Zurückstufung ({{Art. 10 BayDG}}) · (5) Entfernung aus Beamtenverhältnis ({{Art. 11 BayDG}}). Plus 2 Ruhestands-Stufen ({{Art. 12 BayDG}} + {{Art. 13 BayDG}}).' },
-      { q: 'Wann erfasst § 47 BeamtStG außerdienstliches Verhalten?',
-        a: 'Hohe Schwelle: nur, wenn „nach den Umständen des Einzelfalls in besonderem Maße geeignet, das Vertrauen in einer für ihr Amt bedeutsamen Weise zu beeinträchtigen". Bei LK sind Straftaten gegen K/J wegen Vorbildfunktion regelmäßig amtsbezogen.' },
+      { q: 'Wer hat den Vorsitz im Schulforum?',
+        a: 'Die SL ({{Art. 69 BayEUG}}).' },
+      { q: 'Was ist der Unterschied Schulforum vs. Elternbeirat?',
+        a: 'Schulforum = alle Schulpartner (SL + EB + SMV + LK + Schulträger). Elternbeirat = nur EB.' },
     ]},
   ],
 
   A4: [
     { type: 'lead', text:
-      'Die strafrechtliche Schiene trifft die LK persönlich (Schuldprinzip). Drei Tatbestände sind besonders relevant: {{§ 229 StGB}} fahrl. KV (Aufsichtsfall) · {{§ 203 StGB}} Berufsgeheimnis (Schulpsych. zwingend, LK i.d.R. nicht) · {{§ 174 StGB}} sex. Missbrauch Schutzbefohlener (gravierend).'
+      '**EB-Pflichten** {{Art. 76 BayEUG}}: zwei Pflichten wortlautgetreu — **„auf den regelmäßigen Schulbesuch zu achten"** + **„die Erziehungsarbeit der Schule zu unterstützen"**. Ergänzt durch {{§ 20 BaySchO}} Meldepflicht. Eskalation Art. 119 OWi → Art. 118 Schulzwang.'
     },
 
-    { type: 'h', text: 'StGB-Tatbestände in der Schul-Praxis' },
+    { type: 'h', text: 'Art. 76 BayEUG — Wortlaut' },
+    { type: 'p', text:
+      '„Die Erziehungsberechtigten haben auf den regelmäßigen Schulbesuch des Kindes zu achten und die Erziehungsarbeit der Schule zu unterstützen."'
+    },
+
+    { type: 'h', text: 'Zwei Pflichten' },
     { type: 'table',
-      head: ['Norm', 'Tatbestand', 'Schul-Relevanz'],
+      head: ['Pflicht', 'Reichweite'],
       rows: [
-        ['{{§ 229 StGB}}', 'Fahrlässige Körperverletzung', 'Aufsichtsversagen mit KV-Folge (Kausalität + Vorhersehbarkeit erforderlich)'],
-        ['{{§ 203 StGB}}', 'Verletzung Privatgeheimnisse durch geschützte Berufsgruppen', 'Schulpsych. zwingend erfasst; LK i.d.R. NICHT — aber {{§ 14 LDO}} greift'],
-        ['{{§ 174 StGB}}', 'Sex. Missbrauch Schutzbefohlener (Erziehungs-/Ausbildungsverhältnis)', 'Hohe Strafe + Disziplinarmaßnahme bis Entfernung; LK in besonderem Vertrauensverhältnis'],
+        ['**„achten auf"**', 'Aktive Überwachung des Schulbesuchs. Sicherstellen, dass das Kind morgens zur Schule geht. Bei Absenz: Meldung.'],
+        ['**„unterstützen"**', 'Positive Mitwirkung an der schulischen Erziehung. Hausaufgaben-Rahmenbedingungen schaffen. Schul-Entscheidungen mittragen, auch wenn schwierig.'],
       ],
     },
 
-    { type: 'h', text: '§ 203 StGB ≠ § 14 LDO' },
+    { type: 'h', text: '§ 20 BaySchO — Meldepflicht' },
     { type: 'bullets', items: [
-      '**{{§ 203 StGB}}** erfasst spezifische Berufsgruppen mit „geschütztem Privatgeheimnis": Ärzte, Anwälte, Schulpsychologen, Beratungslehrkräfte mit psychotherapeutischer Approbation. **LK regulär NICHT direkt erfasst.**',
-      '**{{§ 14 LDO}}** Verschwiegenheits-Pflicht greift FÜR ALLE LK. Verstoß = Dienstvergehen iSd {{§ 47 BeamtStG}}.',
-      'Bei LK-Verschwiegenheitsbruch: Disziplinar-Schiene + ggf. zivile Schadensersatz-Haftung — meist KEINE Strafbarkeit nach § 203 StGB.',
+      'Verhinderung des Kindes (Krankheit, Notfall): **unverzüglich** melden (i.d.R. vor U.-Beginn am Krankheitstag).',
+      'Schriftliche Mitteilung nachreichen (Entschuldigung).',
+      'Bei längerer Krankheit (>3 Tage): SL kann **schulärztliches Zeugnis** verlangen.',
+      'Bei Häufung unentschuldigter Fehlzeiten: KL → SL → ggf. OWi-Anzeige Art. 119.',
     ]},
 
-    { type: 'h', text: 'Schuldprinzip — Strafe trifft persönlich' },
-    { type: 'p', text:
-      'Anders als bei {{Art. 34 GG}} Amtshaftung trifft die strafrechtliche Sanktion die LK PERSÖNLICH. Der Freistaat haftet nicht für Strafen. Schuldprinzip Art. 1/1 + Art. 2/1 GG i.V.m. Art. 103/2 GG. Schuld als Höchstmaß-Grenze der Strafe.'
+    { type: 'h', text: 'Eskalations-Kette bei Pflichtverletzung' },
+    { type: 'table',
+      head: ['Stufe', 'Maßnahme', 'Anker'],
+      rows: [
+        ['1', 'Gespräch + Beratung', 'KL + SL + Beratungs-LK / Schulpsych'],
+        ['2', 'Schriftliche Mahnung', '§ 20 BaySchO + Art. 76'],
+        ['3', '**Ordnungswidrigkeits-Anzeige**', '{{Art. 119}} BayEUG → Kreisverwaltung Geldbuße'],
+        ['4', '**Schulzwang**', '{{Art. 118}} BayEUG — Antrag SL bei Kreisverwaltung'],
+        ['5', 'Grundrechtseinschränkung', 'Art. 120 BayEUG (selten — Freiheit/Wohnung)'],
+      ],
     },
 
-    { type: 'warn', titel: '⚠ Fallen Strafrechts-Schnittstelle', text:
-      '**Strafe trifft Täter persönlich** — Freistaat haftet NICHT. {{§ 203 StGB}} erfasst LK i.d.R. NICHT direkt; § 14 LDO greift dagegen für alle LK. Aufsichtsversagen ohne KV-Folge ist KEINE {{§ 229 StGB}}. Bei {{§ 174 StGB}} sex. Missbrauch: Strafe + Disziplinar regelmäßig bis Entfernung kumulativ.',
+    { type: 'warn', titel: '⚠ Fallen EB-Pflichten', text:
+      '**„achten" ≠ polizeiliche Überwachung** — keine Garantenstellung im strafrechtlichen Sinn, aber aktive Aufmerksamkeit. **„unterstützen" ≠ blinde Zustimmung** — Eltern dürfen Meinungs-Differenzen haben, müssen aber Verfassung des Bildungsauftrags akzeptieren. **OWi {{Art. 119}}** = Verfahren bei Kreisverwaltungsbehörde, nicht bei LK. Schulzwang {{Art. 118}} ist allerletzte Stufe.',
     },
 
     { type: 'selfcheck', items: [
-      { q: 'Welche drei StGB-Tatbestände sind im Schul-Kontext am häufigsten?',
-        a: '{{§ 229 StGB}} fahrl. KV (Aufsichtsversagen mit Folge), {{§ 203 StGB}} Berufsgeheimnis (Schulpsych. zwingend, LK nicht direkt), {{§ 174 StGB}} sex. Missbrauch Schutzbefohlener (gravierend, regelmäßig Entfernung).' },
-      { q: 'Warum greift § 203 StGB nicht direkt bei jeder LK — und was greift stattdessen?',
-        a: '§ 203 erfasst spezifische Berufsgruppen mit geschütztem Privatgeheimnis (Ärzte, Schulpsych.). LK regulär NICHT direkt. Stattdessen {{§ 14 LDO}} Verschwiegenheits-Pflicht für ALLE LK — Verstoß ist Dienstvergehen iSd {{§ 47 BeamtStG}}.' },
+      { q: 'Welche zwei Pflichten formuliert Art. 76 BayEUG verbatim?',
+        a: '„auf den regelmäßigen Schulbesuch zu achten" + „die Erziehungsarbeit der Schule zu unterstützen". Zwei Pflichten.' },
+      { q: 'Welche Norm regelt die Meldepflicht bei Verhinderung?',
+        a: '{{§ 20 BaySchO}}: EB müssen unverzüglich melden + schriftliche Mitteilung nachreichen.' },
     ]},
   ],
 
   A5: [
     { type: 'lead', text:
-      'Die drei Verschuldensformen entscheiden über Rückgriff und Strafmaß. **Einfache Fahrlässigkeit** („kann vorkommen") · **grobe Fahrlässigkeit** („darf nicht vorkommen") · **Vorsatz** (wissentlich + willentlich). Die Einstufung trägt die Beweislast des Freistaats.'
+      'EB-Mitwirkung in **Beschwerdeweg** + **Anhörung** + **Sorgerecht**. Beschwerdeweg {{Art. 56/5}} gestuft. Anhörung {{Art. 88}} bei OM. Personensorge {{§§ 1626 BGB}}: gemeinsam/allein. Getrenntlebende: i.d.R. beide auskunftsberechtigt.'
     },
 
-    { type: 'h', text: 'Drei Stufen — Faustregel' },
+    { type: 'h', text: 'Beschwerdeweg Art. 56/5 — gestuft' },
+    { type: 'p', text:
+      'Verbatim: Beschwerden gehen **nacheinander** den Weg: **LK → SL → Schulforum**. NICHT parallel. EB können die Eskalation Schritt für Schritt anstoßen. Bei OM-Beschwerde: Widerspruch + ggf. Verwaltungsklage parallel.'
+    },
+
+    { type: 'h', text: 'Anhörungsrecht bei OM' },
+    { type: 'bullets', items: [
+      '{{Art. 88 BayEUG}}: vor jeder OM ist **SuS anzuhören**; **EB rechtzeitig zu informieren**.',
+      'EB können an der Anhörung **teilnehmen** (Begleitung der minderjährigen SuS).',
+      'Bei Versäumnis der Anhörung: OM-Anfechtung möglich (Verfahrensfehler).',
+      'Nur bei Sicherungsmaßnahme {{Art. 87}}: Eilfall-Nachholung erlaubt.',
+    ]},
+
+    { type: 'h', text: 'Sorgerecht + Schul-Auskunft' },
     { type: 'table',
-      head: ['Stufe', 'Definition', 'Rückgriff'],
+      head: ['Sorgerechts-Lage', 'Auskunfts-Berechtigung'],
       rows: [
-        ['**Einfache Fahrlässigkeit**', '„Das kann vorkommen" — durchschnittliche Sorgfaltsverletzung', '**Kein Rückgriff** ({{Art. 34 GG}} S. 2)'],
-        ['**Grobe Fahrlässigkeit**', '„Das darf nicht vorkommen" — gravierende Sorgfaltsverletzung, einfachste Erwägungen außer Acht', 'Rückgriff **möglich** (Ermessen Freistaat)'],
-        ['**Vorsatz**', 'Wissentlich + willentlich — Pflichtverletzung gewollt', 'Rückgriff **sicher**'],
+        ['**Verheiratete EB**', 'gemeinsam — Schule informiert beide'],
+        ['**Nicht verheirateteEB + Sorgerechts-Erklärung**', 'gemeinsam'],
+        ['**Nicht verheiratete EB ohne Erklärung**', 'Mutter allein ({{§ 1626a BGB}})'],
+        ['**Geschieden / Getrennt**', 'i.d.R. weiterhin gemeinsam, sofern nicht gerichtlich anders'],
+        ['**Alleinige Sorge nach Beschluss**', 'nur sorgeberechtigte:r — andere:r Auskunft nur nach {{§ 1686 BGB}} (besondere Anfrage)'],
       ],
     },
 
-    { type: 'h', text: 'Wirkung auf Schienen' },
+    { type: 'h', text: 'Praxis-Hinweise' },
     { type: 'bullets', items: [
-      '**Zivil/Amtshaftung**: Verschulden-Form entscheidet über Rückgriff.',
-      '**Disziplinar**: Verschulden ist Tatbestandselement ({{§ 47 BeamtStG}} „schuldhaft"); Stufe der Maßnahme richtet sich auch nach Verschulden.',
-      '**Strafrecht**: bei {{§ 229 StGB}} reicht Fahrlässigkeit; bei vorsätzlichen Tatbeständen ({{§ 174 StGB}}) Vorsatz erforderlich.',
+      'Bei unklarer Sorge: Beschluss/Sorgerechts-Erklärung vorlegen lassen.',
+      'Schule ist KEINE Schiedsstelle in elterlichem Konflikt — neutrale Auskunft.',
+      'Bei Eskalation: Schul-Sozial-Arbeit + Jugendamt {{§ 8a SGB VIII}} einbeziehen.',
+      '**Erziehungsbeauftragte** (Klassenfahrt-Begleitung) ist KEINE Personensorgeberechtigte — keine Schul-Auskunft.',
     ]},
 
-    { type: 'warn', titel: '⚠ Falle Verschulden', text:
-      '**Einfache Fahrlässigkeit** = kein Rückgriff. Berufsausübung wäre sonst gelähmt. **Grobe Fahrlässigkeit**-Schwelle ist hoch — nicht jede Fehlleistung ist grob. **Beweislast** trägt der Freistaat. Gericht prüft Einzelfall.',
+    { type: 'warn', titel: '⚠ Fallen EB-Mitwirkung + Sorgerecht', text:
+      '**Beschwerdeweg gestuft, nicht parallel** — Eltern dürfen nicht erst SL überspringen. **Anhörung VORAB Pflicht** bei OM — Nachholung nur bei {{Art. 87}}. **Sorgerechts-Lage prüfen** — pauschale Auskunft an beide ist problematisch, wenn alleinige Sorge besteht. **Schule als Schiedsrichter elterlicher Konflikte** = unangemessen — neutral bleiben.',
     },
 
     { type: 'selfcheck', items: [
-      { q: 'Welche drei Verschuldensformen unterscheidet die Rechtsprechung — und wann gibt es Rückgriff?',
-        a: 'Einfache Fahrlässigkeit („kann vorkommen") → KEIN Rückgriff. Grobe Fahrlässigkeit („darf nicht vorkommen") → Rückgriff möglich. Vorsatz (wissentlich + willentlich) → Rückgriff sicher. Beweislast trägt der Freistaat ({{Art. 34 GG}} S. 2).' },
-      { q: 'Wo greift Verschulden in den drei Haftungsschienen?',
-        a: 'Zivil: Rückgriff-Schwelle ({{Art. 34 GG}}). Disziplinar: Tatbestand „schuldhaft" ({{§ 47 BeamtStG}}); Stufenwahl. Strafrecht: bei {{§ 229 StGB}} Fahrlässigkeit ausreichend; bei {{§ 174 StGB}} Vorsatz erforderlich.' },
+      { q: 'In welcher Reihenfolge geht der Beschwerdeweg nach Art. 56/5?',
+        a: 'LK → SL → Schulforum. Gestuft, nacheinander, NICHT parallel.' },
+      { q: 'Wer ist auskunftsberechtigt bei gemeinsamer Sorge nach Trennung?',
+        a: 'Beide EB ({{§ 1626 BGB}}). Schule informiert beide, sofern nicht gerichtlich anders.' },
+      { q: 'Ist die Erziehungsbeauftragte i.S.d. JuSchG eine Sorgeberechtigte?',
+        a: 'NEIN. Erziehungsbeauftragte i.S.v. {{§ 1 JuSchG}} Nr. 4 übernimmt ad-hoc Aufsicht (Klassenfahrt-Begleitung), ist aber nicht sorgeberechtigt + erhält keine Schul-Auskunft.' },
     ]},
   ],
+
 };

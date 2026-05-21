@@ -3,269 +3,255 @@ window.MODULE_BODIES = {
 
   A1: [
     { type: 'lead', text:
-      'Bedrohung mit Messer im Unterricht ist ein **Drei-Pfad-Vorfall** in drei Zeitfenstern. Gefahrenabwehr · Schulrecht · Strafrecht laufen **parallel und kumulativ** — keine Verdrängung. Die richtige Antwort denkt in Zeitfenstern, nicht in „alles auf einmal".'
+      'Schulrechtliche Normen folgen einer **9-stufigen Hierarchie** vom GG bis zur Dienstanweisung des Schulleiters. Höherrangige Norm verdrängt niedrigere (**lex superior**). Bei gleicher Stufe gilt **lex specialis** (Spezialregelung) und **lex posterior** (jüngere Norm).'
     },
 
-    { type: 'svg', titel: 'Drei-Pfad-Struktur · Messer im Unterricht',
-      caption: '3 Pfade · 3 Zeitfenster · parallel + kumulativ',
-      svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 250" width="600" preserveAspectRatio="xMidYMid meet">
-  <text x="300" y="14" text-anchor="middle" font-size="9.5" letter-spacing="1.8" class="muted">PARALLEL · KUMULATIV</text>
-  <line x1="100" y1="22" x2="100" y2="38" class="rule-line"/>
-  <line x1="300" y1="22" x2="300" y2="38" class="rule-line"/>
-  <line x1="500" y1="22" x2="500" y2="38" class="rule-line"/>
-  <g>
-    <rect x="20" y="38" width="160" height="200" class="box"/>
-    <text x="100" y="58" text-anchor="middle" font-size="10.5" font-weight="600" data-accent="true">GEFAHRENABWEHR</text>
-    <line x1="30" y1="68" x2="170" y2="68" class="rule-line"/>
-    <text x="100" y="88" text-anchor="middle" font-size="10">§ 5 LDO</text>
-    <text x="100" y="103" text-anchor="middle" font-size="10">§ 23/2 BaySchO</text>
-    <text x="100" y="118" text-anchor="middle" font-size="10">BayPolG</text>
-    <line x1="30" y1="138" x2="170" y2="138" class="rule-line"/>
-    <text x="100" y="160" text-anchor="middle" font-size="11" font-weight="600">Min 1–5</text>
-    <line x1="30" y1="178" x2="170" y2="178" class="rule-line"/>
-    <text x="100" y="200" text-anchor="middle" font-size="9.5" class="muted">LK · SL · Polizei</text>
-    <text x="100" y="216" text-anchor="middle" font-size="9.5" class="muted">Deeskalation +</text>
-    <text x="100" y="231" text-anchor="middle" font-size="9.5" class="muted">Sicherstellung</text>
-  </g>
-  <g>
-    <rect x="220" y="38" width="160" height="200" class="box"/>
-    <text x="300" y="58" text-anchor="middle" font-size="10.5" font-weight="600" data-accent="true">SCHULRECHT</text>
-    <line x1="230" y1="68" x2="370" y2="68" class="rule-line"/>
-    <text x="300" y="88" text-anchor="middle" font-size="10">Art. 86–88 BayEUG</text>
-    <text x="300" y="103" text-anchor="middle" font-size="10">Art. 87 (Person)</text>
-    <text x="300" y="118" text-anchor="middle" font-size="10" class="muted">EM · OM · Anhörung</text>
-    <line x1="230" y1="138" x2="370" y2="138" class="rule-line"/>
-    <text x="300" y="160" text-anchor="middle" font-size="11" font-weight="600">Min 5 → Tag 14</text>
-    <line x1="230" y1="178" x2="370" y2="178" class="rule-line"/>
-    <text x="300" y="200" text-anchor="middle" font-size="9.5" class="muted">LK · SL · Konferenz</text>
-    <text x="300" y="216" text-anchor="middle" font-size="9.5" class="muted">Verfahrens-Trias:</text>
-    <text x="300" y="231" text-anchor="middle" font-size="9.5" class="muted">Anhörung → OM → Vollzug</text>
-  </g>
-  <g>
-    <rect x="420" y="38" width="160" height="200" class="box"/>
-    <text x="500" y="58" text-anchor="middle" font-size="10.5" font-weight="600" data-accent="true">STRAFRECHT</text>
-    <line x1="430" y1="68" x2="570" y2="68" class="rule-line"/>
-    <text x="500" y="88" text-anchor="middle" font-size="10">§ 241 StGB</text>
-    <text x="500" y="103" text-anchor="middle" font-size="10">§ 224 StGB</text>
-    <text x="500" y="118" text-anchor="middle" font-size="10" class="muted">ab 14 J. JGG</text>
-    <line x1="430" y1="138" x2="570" y2="138" class="rule-line"/>
-    <text x="500" y="160" text-anchor="middle" font-size="11" font-weight="600">Wochen → Monate</text>
-    <line x1="430" y1="178" x2="570" y2="178" class="rule-line"/>
-    <text x="500" y="200" text-anchor="middle" font-size="9.5" class="muted">StA · Gericht</text>
-    <text x="500" y="216" text-anchor="middle" font-size="9.5" class="muted">LK = berechtigt</text>
-    <text x="500" y="231" text-anchor="middle" font-size="9.5" class="muted">(NICHT pflichtig § 138)</text>
-  </g>
-</svg>`
-    },
-
-    { type: 'h', text: 'Drei-Pfad-Tabelle' },
+    { type: 'h', text: '9-Stufen-Hierarchie (Stephan Bauer S. 5)' },
     { type: 'table',
-      head: ['Pfad', 'Rechtsgrundlage', 'Zeit', 'Adressat'],
+      head: ['Stufe', 'Kategorie', 'Beispiele'],
       rows: [
-        ['**Gefahrenabwehr**', '{{§ 5 LDO}} + {{§ 23/2 BaySchO}} + {{BayPolG}}', 'Min 1–5', 'LK / SL / ggf. Polizei'],
-        ['**Schulrecht**', '{{Art. 86 BayEUG}} – {{Art. 88 BayEUG}}', 'Min 5 → Tag 14', 'LK / SL / LK-Konferenz'],
-        ['**Strafrecht**', '{{§ 241 StGB}} + {{§ 224 StGB}}; ab 14 J. JGG', 'Wochen → Monate', 'StA (LK = berechtigt)'],
+        ['1', 'Verfassungsrecht — Bund', '{{Art. 7 GG}} (Schulwesen) · {{Art. 4 GG}} (Religionsfreiheit) · {{Art. 6/2 GG}} (Elternrecht)'],
+        ['2', 'Verfassungsrecht — Bayern', '{{Art. 128 BV}} (Bildungsanspruch) · {{Art. 131 BV}} (Oberste Bildungsziele) · {{Art. 132 BV}} (Anlage+Leistung) · {{Art. 136 BV}} (ReliU) · {{Art. 137 BV}} (Teilnahme)'],
+        ['3', 'Gesetze', '**BayEUG** — Bayerisches Gesetz über das Erziehungs- und Unterrichtswesen'],
+        ['4', 'Rechtsverordnungen', '**BaySchO** (Allgemein) · **BayMSO** (Mittelschule) · **LDO** (Dienstordnung LK) · **AGO** (Allgemeine Geschäftsordnung)'],
+        ['5', 'KMBek', 'KM-Bekanntmachungen — organisatorische Konkretisierungen'],
+        ['6', 'KMS', 'KM-Schreiben — auslegend, Ermessensrichtlinien'],
+        ['7', 'RS Regierung', 'Rundschreiben Bezirksregierung'],
+        ['8', 'RS Schulamt', 'Rundschreiben Staatl. Schulamt'],
+        ['9', 'Dienstanweisung SL', 'Schulinterne Konkretisierung'],
       ],
     },
 
-    { type: 'h', text: 'Bund-Land-Trennschärfe' },
+    { type: 'h', text: 'Konflikt-Regeln' },
     { type: 'bullets', items: [
-      '**Strafrecht** (StGB-Bund) trifft den **Täter persönlich** (Schuldprinzip) — NICHT den Freistaat.',
-      '**Schulrecht** (BayEUG/BaySchO/LDO) löst Erziehungs-/Ordnungsmaßnahmen über Land/Schule aus.',
-      '**Anzeige ≠ Ordnungsmaßnahme** — zwei verschiedene Verfahren auf zwei Rechtsebenen (Bund vs. Land).',
-      'Haftungsdreieck (Zivil/Disziplinar/Strafrecht) bei evtl. LK-Aufsichtsversagen → Cross-Ref MP_07 A.1.',
+      '**Lex superior derogat legi inferiori**: höherrangige Norm verdrängt niedrigere. KMS kann BayEUG NICHT überschreiben.',
+      '**Lex specialis derogat legi generali**: speziellere Norm verdrängt allgemeine. BayMSO (MS-spezifisch) > BaySchO (allgemein).',
+      '**Lex posterior derogat legi priori**: jüngere Norm verdrängt ältere — bei gleicher Stufe.',
+      'EU-Recht hat Anwendungsvorrang vor nationalem Recht (nicht im Schema, aber im Hintergrund relevant).',
     ]},
 
-    { type: 'warn', titel: '⚠ Drei-Pfad-Logik — Fallen', text:
-      'Die drei Pfade laufen PARALLEL/KUMULATIV — keine Verdrängung. **Strafrecht trifft den Täter persönlich**, NICHT den Freistaat. **Anzeige ≠ Ordnungsmaßnahme**. LK-Reaktion in DREI ZEITFENSTERN denken, nicht „alles auf einmal".',
+    { type: 'h', text: 'Praxis: KMS-vs-BayEUG-Konflikt' },
+    { type: 'p', text:
+      'KMS sind häufig der Versuch, gesetzliche Lücken auszufüllen oder zu konkretisieren. Solange sie BayEUG nicht widersprechen, sind sie verbindlich. **Widerspricht ein KMS dem BayEUG-Wortlaut, ist das KMS insoweit ungültig** — die gesetzliche Regelung gilt. Praxis: bei Konflikt SL/Schulamt einschalten, Akten-Vermerk anlegen, gesetzeskonforme Anwendung.'
+    },
+
+    { type: 'warn', titel: '⚠ Fallen Hierarchie', text:
+      '**KMBek ≠ KMS** — Bekanntmachung (organisatorisch, ranghöher) vs. Schreiben (auslegend). **Dienstanweisung SL** ist verbindlich für LK, aber nur insoweit, wie sie höherrangige Normen nicht verletzt. **RS Schulamt** (Stufe 8) ist nicht der „Schulamt-Brief" einer Schule, sondern Rundschreiben des Staatlichen Schulamts. **Verwaltungsvorschriften wirken nur intern** (Behörden) — Außenwirkung nur, wenn durch Selbstbindung der Verwaltung.',
     },
 
     { type: 'selfcheck', items: [
-      { q: 'Nenne die drei Pfade mit jeweils einer Rechtsgrundlage und einem Adressaten.',
-        a: 'Gefahrenabwehr ({{§ 5 LDO}} + {{§ 23/2 BaySchO}}) → LK/SL/Polizei. Schulrecht ({{Art. 86 BayEUG}} – {{Art. 88 BayEUG}}) → LK/SL/LK-Konferenz. Strafrecht ({{§ 241 StGB}} + {{§ 224 StGB}}) → StA, LK ist berechtigt zur Anzeige.' },
-      { q: 'Warum trifft die strafrechtliche Sanktion nicht den Freistaat?',
-        a: 'Schuldprinzip Art. 103 GG — Strafe folgt persönlicher Schuld. Anders als Amtshaftung Art. 34 GG (Cross-Ref MP_07), bei der der Freistaat zivilrechtlich nach außen haftet.' },
+      { q: 'Welche Stufe steht ZWISCHEN BayEUG und KMS?',
+        a: '**Rechtsverordnungen** (BaySchO, BayMSO, LDO, AGO) — Stufe 4. KMS = Stufe 6. Dazwischen liegen Rechtsverordnungen und KMBek (Stufe 5).' },
+      { q: 'Ein KMS schreibt eine kürzere Frist als BayEUG — was gilt?',
+        a: 'BayEUG gilt. KMS kann formelles Gesetz nicht verkürzen (lex superior). KMS-Passage ist insoweit unwirksam.' },
+      { q: 'Was unterscheidet BayMSO und BaySchO?',
+        a: 'BayMSO = Schulordnung speziell für die Mittelschule (lex specialis). BaySchO = allgemeine Schulordnung für alle Schularten. Bei MS-spezifischen Fragen: BayMSO vorrangig.' },
     ]},
   ],
 
   A2: [
     { type: 'lead', text:
-      'Die Sicherstellung des Messers folgt aus {{§ 23/2 BaySchO}} — drei Sätze mit drei verschiedenen Direktionalitäten. Der „Sicherstellungs-Akt" ist NICHT identisch mit der „Sicherungsmaßnahme" nach {{Art. 87 BayEUG}} — Homonym-Falle.'
+      'Der Bildungs- und Erziehungsauftrag der Schule ist **verfassungsrechtlich verankert**: {{Art. 131 BV}} formuliert den Grundwerte-Kompass, {{Art. 1 BayEUG}} + {{Art. 2 BayEUG}} operationalisieren ihn zu Schulaufgaben. Der Doppelauftrag „Wissen + Charakter" ist nicht trennbar.'
     },
 
-    { type: 'h', text: '§ 23 BaySchO Wortlaut (kondensiert)' },
-    { type: 'bullets', items: [
-      'Abs. 1: Konsum alkoholischer Getränke + sonstiger Rauschmittel UNTERSAGT (Schulanlage + Veranstaltungen).',
-      'Abs. 2 S. 1: Mitbringen + Mitführen **gefährlicher Gegenstände** + **sonstiger ordnungsstörender** Gegenstände UNTERSAGT.',
-      'Abs. 2 S. 2: „**können** weggenommen und sichergestellt werden" — Ermessen, im Gefahrenfall **auf Null reduziert** (faktische Pflicht).',
-      'Abs. 2 S. 3: Rückgabe gefährlicher Gegenstände bei Minderj. **NUR an Erziehungsberechtigte** — gilt NICHT für „sonstige" Gegenstände.',
-    ]},
+    { type: 'h', text: 'Art. 131 BV — Verbatim' },
+    { type: 'p', text:
+      'Abs. 1: „**Die Schulen sollen nicht nur Wissen und Können vermitteln, sondern auch Herz und Charakter bilden.**"'
+    },
+    { type: 'p', text:
+      'Abs. 2 (Auswahl): Oberste Bildungsziele sind: **Ehrfurcht vor Gott** · Achtung vor religiöser Überzeugung · **Achtung vor der Würde des Menschen** · Selbstbeherrschung · Verantwortungsgefühl + -bewusstsein · Hilfsbereitschaft · **Aufgeschlossenheit für alles Wahre, Gute und Schöne** · Verantwortungsbewusstsein für Natur und Umwelt · **Liebe zur Bayerischen Heimat** · **Erziehung im Geiste der Demokratie** · **Erziehung im Sinne der Völkerversöhnung**.'
+    },
+    { type: 'p', text:
+      'Abs. 3: Knaben und Mädchen sind in besonderem Maße im Geiste der Demokratie zu erziehen.'
+    },
 
-    { type: 'h', text: 'Drei-Sätze-Falle' },
+    { type: 'h', text: 'BayEUG Art. 1 + 2 — Aufgabenkatalog' },
     { type: 'table',
-      head: ['Satz', 'Inhalt', 'Falle'],
+      head: ['Anker', 'Inhalt'],
       rows: [
-        ['**S. 1**', 'Verbot: gefährlich UND ordnungsstörend', 'Beide Kategorien getrennt prüfen — Messer fällt in beide'],
-        ['**S. 2**', 'Ermessen-„können"', 'Im Gefahrenfall Ermessen auf Null reduziert'],
-        ['**S. 3**', 'Rückgabe NUR an EB (bei minderj.)', 'gilt NICHT für „sonstige ordnungsstörende"'],
+        ['{{Art. 1 BayEUG}}/1', 'Verfassungsmäßiger Auftrag — Wissen und Können vermitteln + Geist und Körper, Herz und Charakter bilden.'],
+        ['{{Art. 1 BayEUG}}/2', 'Oberste Bildungsziele = wortgleiche Spiegelung BV Art. 131 (Ehrfurcht vor Gott · Achtung religiöser Überzeugung · Würde des Menschen · Selbstbeherrschung · Verantwortungsgefühl · Hilfsbereitschaft · Aufgeschlossenheit für Wahres+Gutes+Schönes · Natur+Umwelt).'],
+        ['{{Art. 2 BayEUG}}', 'Operationalisierter Aufgabenkatalog (insbesondere): Kenntnisse + Fertigkeiten · Fähigkeiten entwickeln · selbstständiges Urteil · Geschichte/Kultur Bayerns + Heimatliebe · überliefertes Bildungsgut · Toleranz + friedliche Gesinnung · europäisches Bewusstsein · Völkerverständigung · fdGO + sozialer Rechtsstaat · Berufswelt-Vorbereitung · kulturelle + religiöse Werte · Rechte + Pflichten · Umwelt-Verantwortung.'],
       ],
     },
 
-    { type: 'h', text: '§ 5 LDO Aufsichts-Anker' },
-    { type: 'p', text:
-      '{{§ 5 LDO}} verlangt physische Präsenz der LK ab Unterrichtsbeginn + kontinuierliche Aufsicht. Vollzitat + räumlich-zeitliche Reichweite in MP_06 A.2. Im akuten Bedrohungsfall: physische Präsenz + Deeskalation + ggf. Hausmeister/SL/Polizei verständigen.'
-    },
+    { type: 'h', text: 'Konkretisierungs-Logik: vom Grundwert zur Schulaufgabe' },
+    { type: 'bullets', items: [
+      '**BV** = Verfassungs-Verankerung der Grundwerte (Ehrfurcht · Würde · Heimat · Demokratie · Völkerversöhnung).',
+      '**BayEUG Art. 1** = Spiegelung der Verfassungswerte als gesetzlicher Bildungsauftrag.',
+      '**BayEUG Art. 2** = Operationalisierung zu „Aufgaben der Schule" (was die Schule TUT, nicht nur woran sie sich orientiert).',
+      'Diese Vertikale ist im Examen häufig die Eröffnung der Antwort: erst BV, dann BayEUG, dann konkrete Schulpraxis.',
+    ]},
 
-    { type: 'warn', titel: '⚠ Fallen Sicherstellung', text:
-      '{{§ 23 BaySchO}} = Sicherstellung **GEGENSTAND**. {{Art. 87 BayEUG}} = Sicherungs-Ausschluss **PERSON**. **Homonym-Falle „Sicherung"**. „Können" weggenommen werden — im Gefahrenfall Ermessen auf Null reduziert. Rückgabe NUR an EB (Minderj.) gilt nur für „gefährliche", nicht „sonstige".',
+    { type: 'warn', titel: '⚠ Fallen Bildungsauftrag', text:
+      'Verfassungs-Bezug **nicht überspringen** — eine Antwort, die mit „Art. 1 BayEUG sagt…" beginnt, lässt den Schritt von BV → BayEUG aus. **„Sollen…"** (Art. 131) ist normativ (kein Programmsatz), das BVerfG erkennt darin Verfassungsauftrag mit subjektiver Komponente. **Bildungsziele BV vs. BayEUG**: nicht identisch — BV hat „Ehrfurcht vor Gott" + Heimatliebe explizit; BayEUG operationalisiert auf Schul-Ebene.',
     },
 
     { type: 'selfcheck', items: [
-      { q: 'Warum ist die Wegnahme des Messers im Akut-Fall keine bloße Ermessens-Entscheidung mehr?',
-        a: 'Bei akuter Gefahr (Bedrohung) reduziert sich das in {{§ 23/2 BaySchO}} S. 2 angelegte Ermessen auf Null — faktische Pflicht zur Sicherstellung. Aufsichtspflicht {{§ 5 LDO}} verstärkt die Pflichtenstellung.' },
-      { q: 'An wen wird das sichergestellte Messer zurückgegeben?',
-        a: 'Bei minderjährigen SuS NUR an Erziehungsberechtigte ({{§ 23 BaySchO}} S. 3). Bei volljährigen SuS Rückgabe an SuS möglich, ABER bei Waffen i.S.d. WaffG ggf. Polizei-Verwahrung.' },
-      { q: 'Wo verläuft die Linie zwischen § 23 BaySchO und {{Art. 87 BayEUG}}?',
-        a: '§ 23 BaySchO = Gegenstand-Sicherstellung (Messer). Art. 87 BayEUG = Person-Sicherungs-Ausschluss (Max). Zwei Institute, parallel anwendbar. Wer sie zusammenwirft, zeigt Oberflächen-Verständnis.' },
+      { q: 'Welche Norm formuliert den Verfassungssatz „Wissen + Herz und Charakter"?',
+        a: '{{Art. 131 BV}}/1 verbatim: „Die Schulen sollen nicht nur Wissen und Können vermitteln, sondern auch Herz und Charakter bilden."' },
+      { q: 'Wodurch unterscheiden sich Art. 131 BV und Art. 1+2 BayEUG inhaltlich?',
+        a: 'BV = Grundwerte-Kompass (Verfassungsverankerung). BayEUG Art. 1 = Spiegelung. BayEUG Art. 2 = operationalisierter Aufgabenkatalog der Schule (was sie TUT).' },
+      { q: 'Ist „Erziehung im Geiste der Demokratie" Bildungsziel der BV?',
+        a: 'Ja. {{Art. 131 BV}}/3: „Knaben und Mädchen sind in besonderem Maße im Geiste der Demokratie … zu erziehen." Verfassungsexpliziter Auftrag.' },
     ]},
   ],
 
   A3: [
     { type: 'lead', text:
-      'Das schulrechtliche Maßnahmen-System steht in {{Art. 86 BayEUG}} – {{Art. 88 BayEUG}}: Art. 86 zentral mit 12-Punkte-Katalog Abs. 2, Art. 87 Sicherung-Person, Art. 88 Verfahren mit Anhörung.'
+      'Religionsunterricht ist **verfassungsrechtlich „ordentliches Lehrfach"** ({{Art. 7 GG}}/3 + {{Art. 136 BV}}/2 + {{Art. 46 BayEUG}}). Folge: Pflichtfach mit Note + Vorrückungsrelevanz. Wer sich abmeldet, muss **Ethik** belegen ({{Art. 47 BayEUG}}). Verfassungs-Schwelle für die Teilnahme: **Vollendung 18. Lebensjahr** ({{Art. 137 BV}}/1).'
     },
 
-    { type: 'h', text: 'Art. 86/1 + /3 (Schlüsselsätze)' },
-    { type: 'bullets', items: [
-      'Abs. 1: Erziehungsmaßnahmen vorrangig. Ordnungs-/Sicherungsmaßnahmen NUR, wenn andere nicht ausreichen (SUBSIDIARITÄT). Hausrecht bleibt UNBERÜHRT. Auswahl nach VERHÄLTNISMÄßIGKEIT.',
-      'Abs. 3 Unzulässig: (1) körperliche Züchtigung · (2) Kollektivstrafen gegen Gruppen/Klassen als solche · (3-4) Pflichtschulen-Schutz vor Ausschluss-Stufen 6-7 + 9-12 · (5) Außerschulisches Verhalten (außer wenn Schul-Aufgabe gefährdet) · (6) andere als die Abs. 2-Maßnahmen.',
-    ]},
-
-    { type: 'h', text: '12-Punkte-Katalog Art. 86/2 (Auswahl)' },
-    { type: 'table',
-      head: ['Stufe', 'Maßnahme', 'Zuständigkeit'],
-      rows: [
-        ['1', 'Schriftlicher Verweis', 'LK'],
-        ['2', 'Verschärfter Verweis', 'SL'],
-        ['5', 'Ausschluss bis 6 Unterrichtstage', 'SL'],
-        ['6', 'Ausschluss 2–4 Wo. bei schul. Gefährdung', '**Lehrerkonferenz**'],
-        ['9', 'Androhung der Entlassung', 'LK-Konferenz'],
-        ['10', 'Entlassung', 'LK-Konferenz'],
-      ],
-    },
-
-    { type: 'h', text: 'Art. 87 — Sicherungs-Ausschluss (Person)' },
+    { type: 'h', text: 'Art. 7/3 GG + Art. 136 BV — Verbatim' },
     { type: 'p', text:
-      'Bei **akuter Gefahr für Leib oder Leben** oder **erheblicher Störung des Schulbetriebs** kann die SL den vorläufigen Ausschluss aussprechen. Endet, sobald die Ordnungsmaßnahme bestandskräftig entschieden wurde. **Anhörung nachholbar im Eilfall.**'
+      '{{Art. 7 GG}}/3 S. 1: „**Der Religionsunterricht ist in den öffentlichen Schulen mit Ausnahme der bekenntnisfreien Schulen ordentliches Lehrfach.**" S. 2: „Unbeschadet des staatlichen Aufsichtsrechtes wird der Religionsunterricht in Übereinstimmung mit den Grundsätzen der Religionsgemeinschaften erteilt." S. 3: „Kein Lehrer darf gegen seinen Willen verpflichtet werden, Religionsunterricht zu erteilen."'
+    },
+    { type: 'p', text:
+      '{{Art. 136 BV}}/2: „Der Religionsunterricht ist ordentliches Lehrfach an allen Schulen. … Die Lehrkräfte bedürfen der Bevollmächtigung durch die Religionsgemeinschaften."'
     },
 
-    { type: 'h', text: 'Art. 88 — Verfahren mit Anhörung' },
-    { type: 'numbered', items: [
-      'Anhörung SuS + EB (Verfahrensrechte). Bei Sicherungsmaßnahme {{Art. 87 BayEUG}} im Eilfall nachholbar.',
-      'Verhältnismäßigkeitsprüfung ({{Art. 86 BayEUG}} Abs. 1 verbatim).',
-      'Schriftliche Mitteilung an EB rechtzeitig vor Vollzug ({{Art. 75 BayEUG}}-Anker).',
-      'Zuständigkeit je Stufe LK / SL / LK-Konferenz (Art. 86/2).',
+    { type: 'h', text: 'Folgen „ordentliches Lehrfach"' },
+    { type: 'bullets', items: [
+      '**Pflichtfach** für alle SuS, die nicht abgemeldet sind — Note + Vorrückungsrelevanz.',
+      '**Getrennt nach Bekenntnissen** (kath./ev./isr./alt.-kath./orth.); konfessionelle Bindung des Unterrichts.',
+      '**Bevollmächtigung der LK** durch die Religionsgemeinschaft (kath.: Missio canonica; ev.: Vocatio) — keine reine staatliche Stellungs-Ernennung.',
+      '**Schulräume** sind bereitzustellen ({{Art. 136 BV}}/3).',
+      '**Kein Zwang für LK**, ReliU zu erteilen ({{Art. 7 GG}}/3 S. 3 + {{Art. 136 BV}}/3).',
     ]},
 
-    { type: 'warn', titel: '⚠ Fallen Art. 86 BayEUG', text:
-      '**12 Stufen** im Katalog Abs. 2. **Subsidiarität**: erst Erziehungs-, dann Ordnungsmaßnahme. **Kollektivstrafe verboten** (Abs. 3 Nr. 2) — Klasse rausschicken ist Gefahrenabwehr-Maßnahme, KEINE Ordnungsmaßnahme. **Außerschulisches Verhalten** nur, wenn Schul-Aufgabe gefährdet. **Hausrecht** bleibt unberührt — separate Rechtsgrundlage.',
+    { type: 'h', text: '18-Lj-Schwelle Art. 137 BV' },
+    { type: 'p', text:
+      'Verbatim {{Art. 137 BV}}/1: „**Über die Teilnahme am Religionsunterricht, kirchlichen Handlungen und Feierlichkeiten entscheiden bis zur Vollendung des 18. Lebensjahres die Erziehungsberechtigten des Schülers, danach er selbst.**"'
+    },
+    { type: 'bullets', items: [
+      '**Bis 18.** Lj.: EB entscheiden über Teilnahme.',
+      '**Ab Vollendung 18. Lj.**: SuS entscheidet selbst.',
+      'Religionsmündigkeit nach RKEG: **Wechsel** der Konfession ab 14 möglich. Ab 12 nicht gegen den eigenen Willen.',
+      'Abmelde-Form: schriftlich gegenüber der Schule, i.d.R. zum Schulhalbjahr/-jahr.',
+    ]},
+
+    { type: 'h', text: 'Ethik-Pflichtfach Art. 47 BayEUG' },
+    { type: 'p', text:
+      'Verbatim {{Art. 47 BayEUG}}: „Schülerinnen und Schüler, die nicht am Religionsunterricht teilnehmen, sind verpflichtet, am Unterricht im Fach Ethik teilzunehmen." Verfassungs-Anker {{Art. 137 BV}}/2: „**Ersatz für nicht besuchten Religionsunterricht ist ein Unterricht über anerkannte Grundsätze der Sittlichkeit.**"'
+    },
+    { type: 'bullets', items: [
+      'Ethik ist **kein Wahlfach** — Pflichtfach bei ReliU-Abmeldung.',
+      'Note + Vorrückungsrelevanz wie ReliU.',
+      'Inhalt: anerkannte Grundsätze der Sittlichkeit · werteinsichtiges Urteilen + Handeln · sittliche Orientierung.',
+    ]},
+
+    { type: 'warn', titel: '⚠ Fallen Religion + Ethik', text:
+      '**„Ordentliches Lehrfach" ≠ Wahlfach** — Pflichtfach mit Note. **18 Lj. = Vollendung**, nicht „im 18. Lebensjahr". **Religionsmündigkeit** (RKEG) ist separater Anker — Wechsel ab 14, kein Zwang ab 12; nicht zu verwechseln mit der Teilnahme-Entscheidung Art. 137 BV (18). **Bevollmächtigung** kommt von der Religionsgemeinschaft, nicht vom KM — staatliche Aufsicht bleibt aber. **Abmeldung vom ReliU** ≠ Befreiung vom Ethik-Unterricht.',
     },
 
     { type: 'selfcheck', items: [
-      { q: 'Wer ist zuständig für einen Ausschluss von 6 Unterrichtstagen — wer für 2–4 Wochen?',
-        a: '6 Tage = SL ({{Art. 86 BayEUG}} Abs. 2 Nr. 5). 2–4 Wochen bei schulischer Gefährdung = LEHRERKONFERENZ (Nr. 6). Klassische Examens-Falle, bei der die Zuständigkeit oft falsch zugeordnet wird.' },
-      { q: 'Wann ist die Anhörung nachholbar?',
-        a: 'Nur bei Sicherungsmaßnahme {{Art. 87 BayEUG}} im Eilfall — bei regulärer Ordnungsmaßnahme {{Art. 88 BayEUG}} ist die Anhörung VORAB Pflicht. Vermischung = Verfahrensfehler.' },
+      { q: 'Wer entscheidet im Schulalter (vor 18) über die Teilnahme am ReliU?',
+        a: 'Die EB. {{Art. 137 BV}}/1: „bis zur Vollendung des 18. Lebensjahres die Erziehungsberechtigten des Schülers".' },
+      { q: 'Was passiert mit einer SuS, die vom ReliU abgemeldet ist?',
+        a: 'Pflicht-Teilnahme am Ethikunterricht ({{Art. 47 BayEUG}} + {{Art. 137 BV}}/2). Keine Freistunde.' },
+      { q: 'Welche Bevollmächtigung braucht eine kath. ReliU-LK?',
+        a: '**Missio canonica** (kath.) — verliehen vom zuständigen Bischof. Ohne Missio keine ReliU-Lehrbefugnis. Bei ev. LK: **Vocatio** der Landeskirche.' },
     ]},
   ],
 
   A4: [
     { type: 'lead', text:
-      'Die strafrechtliche Schiene ist Bundesrecht und trifft den Täter persönlich. Drei Kernparagraphen: {{§ 241 StGB}} Bedrohung · {{§ 224 StGB}} gef. KV · {{§ 138 StGB}} Anzeigepflicht (taxativ). Bei < 14 J. greift {{§ 8a SGB VIII}} statt Strafanzeige.'
+      'Familien- und Sexualerziehung ist **Aufgabe der Schule** ({{Art. 48 BayEUG}}), nicht „Sexualkunde". Information der Eltern ist Verfahrenspflicht (KMS), KEIN Vetorecht. Verankerung in BV.'
     },
 
-    { type: 'h', text: '§ 241 StGB Bedrohung' },
+    { type: 'h', text: 'Art. 48 BayEUG' },
     { type: 'p', text:
-      'Bedrohung mit Begehung einer rechtswidrigen Tat → Freiheitsstrafe bis 1 Jahr / Geldstrafe. Bei Bedrohung mit einem Verbrechen erhöhter Strafrahmen. **Schul-Relevanz**: „Wenn du noch mal was sagst, stech ich dich!" trifft regelmäßig {{§ 241 StGB}}.'
+      'Familien- + Sexualerziehung sind **Aufgabe der Schule**, in Erfüllung ihres Bildungs- und Erziehungsauftrags. Orientierung an einschlägigen Vorgaben der BV. Information der Eltern erforderlich (KMS-Regelung — Eltern sind vor Unterrichtseinheiten zu informieren).'
     },
 
-    { type: 'h', text: '§ 224 StGB Gefährliche KV' },
-    { type: 'p', text:
-      'KV mittels eines gefährlichen Werkzeugs → Freiheitsstrafe 6 Monate bis 10 Jahre. Versuch strafbar. **Messer = klassisches gefährliches Werkzeug.** Mitführen OHNE konkrete Drohung verwirklicht {{§ 224 StGB}} NICHT — aber {{§ 23/2 BaySchO}} + ggf. {{WaffG}}.'
-    },
-
-    { type: 'h', text: '§ 138 StGB — Anzeigepflicht (taxativ)' },
-    { type: 'p', text:
-      '{{§ 138 StGB}} löst Anzeigepflicht NUR bei taxativ aufgeführten schweren GEPLANTEN Straftaten aus (Mord, Totschlag, Geiselnahme, schwere Raubtaten …). Eine **spontane Bedrohung mit Messer im Streit** fällt regelmäßig NICHT unter § 138.'
-    },
-
-    { type: 'h', text: 'Anzeigen-berechtigt vs. -pflichtig' },
-    { type: 'table',
-      head: ['Frage', 'Antwort', 'Norm'],
-      rows: [
-        ['Ist die LK generell anzeigen-pflichtig?', '**NEIN**', '—'],
-        ['Wann pflichtig?', 'NUR {{§ 138 StGB}} (taxativ)', '§ 138 StGB'],
-        ['Was regulär?', '**Anzeigen-berechtigt** aus Fürsorge', 'Praxis'],
-        ['Wer entscheidet operativ?', '**SL nach Abstimmung mit EB**', '{{Art. 57 BayEUG}}'],
-        ['Bei akuter Gefahr?', 'Polizei verständigen', '{{BayPolG}}'],
-      ],
-    },
-
-    { type: 'h', text: '§ 8a SGB VIII + § 1 JGG' },
+    { type: 'h', text: 'Aufgabe vs. Vetorecht' },
     { type: 'bullets', items: [
-      '{{§ 1 JGG}}: Strafmündigkeit ab **vollendetem 14. Lebensjahr**. < 14 = strafunmündig — Anzeige ist rechtsfolgenlos.',
-      '{{§ 8a SGB VIII}}: bei gewichtigen Anhaltspunkten für Kindeswohlgefährdung → Jugendamt + Kooperation Schule. Greift bei < 14 J. **parallel zum Schulrecht** statt der Strafanzeige.',
-      'Schuldprinzip: Strafe trifft Täter persönlich — anders als Amtshaftung Art. 34 GG (Freistaat-Außenhaftung).',
+      '**Aufgabe** = Schule MUSS die Erziehung leisten (verfassungs-/gesetzlicher Auftrag).',
+      '**Information** EB = Verfahrenspflicht **vor** Unterricht — transparente Kommunikation der Inhalte.',
+      '**Kein Vetorecht** der EB — kein Recht, das Kind vom Unterricht abzumelden.',
+      'Schulpflicht {{Art. 35 BayEUG}} gilt — auch für diese Sequenzen.',
     ]},
 
-    { type: 'warn', titel: '⚠ Fallen Strafrechts-Schnittstelle', text:
-      '**Strafe trifft Täter persönlich** (Schuldprinzip), NICHT Freistaat. **Strafmündigkeit ab vollendetem 14. Lj.** ({{§ 1 JGG}}). „Ich rufe sofort die Polizei!" ist rechtlich falsch framed — erst Deeskalation + SL + EB; Polizei nur bei akuter Gefahr/schwerer Tat. {{§ 138 StGB}} ist KEINE allgemeine Anzeigepflicht. Eltern haben KEIN Vetorecht gegen Strafanzeige.',
+    { type: 'h', text: 'KMS-Informations-Pflicht' },
+    { type: 'p', text:
+      'KMS regelt typischerweise: (1) Eltern sind vor entspr. Sequenzen schriftlich oder im Elternabend zu informieren · (2) Inhalte transparent darstellen · (3) bei begründeten Bedenken kann das pädagogische Gespräch gesucht werden — keine Befreiung vom Unterricht, aber Berücksichtigung in der Methodik. (4) Religiöse + kulturelle Sensibilitäten dürfen Bildungsauftrag nicht unterlaufen.'
+    },
+
+    { type: 'h', text: 'Begriffs-Schärfung: nicht „Sexualkunde"' },
+    { type: 'bullets', items: [
+      '**Familien- und Sexualerziehung** ist Erziehungsauftrag — Werte, Beziehung, Verantwortung.',
+      '**Sexualkunde** (alter Begriff) reduziert auf biologische Aufklärung — wird gerade NICHT damit gemeint.',
+      'Anknüpfungsfelder: Biologie, Religion, Ethik, Sozialkunde, KL-Stunde — fächerverbindend.',
+    ]},
+
+    { type: 'warn', titel: '⚠ Fallen Familien-/Sexualerziehung', text:
+      '**Vetorecht ≠ Informationsrecht** — EB können informiert werden müssen, ohne Vetorecht zu haben. **„Sexualkunde"** ist der falsche Begriff — Erziehungsauftrag, nicht reine Wissensvermittlung. **Schulpflicht** gilt — keine Befreiung. **KMS** ist die einschlägige Konkretisierungs-Ebene (auch wenn Details variieren).',
     },
 
     { type: 'selfcheck', items: [
-      { q: 'Welche Strafnorm trifft die Bedrohung mit Messer, welche den Einsatz?',
-        a: 'Bedrohung = {{§ 241 StGB}}. Einsatz (auch im Versuch) = {{§ 224 StGB}} (gefährliches Werkzeug). Mitführen ohne Drohung NICHT § 224 — aber {{§ 23/2 BaySchO}}.' },
-      { q: 'Wie ändert sich die rechtliche Bewertung bei einem 13- gegenüber einem 14-jährigen?',
-        a: '13 J. = strafunmündig ({{§ 1 JGG}}) → {{§ 8a SGB VIII}} Jugendamt + Schulrecht. 14 J. = strafmündig → § 241 / § 224 StGB persönlich + LK anzeigen-berechtigt + Schulrecht parallel.' },
-      { q: 'Wann hat die LK eine Strafanzeige-Pflicht?',
-        a: 'NUR bei {{§ 138 StGB}} taxativer Liste schwerer GEPLANTER Straftaten. Spontane Bedrohung fällt regelmäßig NICHT darunter. Sonst ist die LK anzeigen-berechtigt, SL entscheidet operativ.' },
+      { q: 'Können EB ihr Kind von der Sexualerziehung abmelden?',
+        a: 'NEIN. Aufgabe der Schule ({{Art. 48 BayEUG}}) + Schulpflicht ({{Art. 35 BayEUG}}). EB-Information ist Verfahrenspflicht, kein Vetorecht.' },
+      { q: 'Warum heißt es „Familien- und Sexualerziehung" und nicht „Sexualkunde"?',
+        a: 'Erziehungsauftrag (Werte/Beziehung/Verantwortung), nicht nur biologische Wissensvermittlung. Bewusste Begriffswahl.' },
     ]},
   ],
 
   A5: [
     { type: 'lead', text:
-      'Die Praxis-Choreographie folgt drei Zeitfenstern. Phase 1 (Min 1–5) Gefahrenabwehr · Phase 2 (Min 5–30) SL + EB + Art. 87-Abwägung · Phase 3 (Tag 1–14) Anhörung + Ordnungsmaßnahme.'
+      '**§ 1 JuSchG** definiert die drei Personenstufen Kind/Jugendl./Erziehungsbeauftragte — relevant für Klassenfahrten, Schulveranstaltungen, Aufsicht. **Inklusion**: Lernort = Eltern-Entscheidung ({{Art. 41 BayEUG}}/1), Ausnahme nur bei Sehen/Hören/k.-m. ({{Art. 30a BayEUG}}/4).'
     },
 
-    { type: 'h', text: 'Drei-Zeitfenster-Tabelle' },
+    { type: 'h', text: '§ 1 JuSchG — Drei Stufen' },
     { type: 'table',
-      head: ['Phase', 'Zeit', 'Rechtsgrundlage', 'Was tun?'],
+      head: ['Stufe', 'Definition', 'Schul-Relevanz'],
       rows: [
-        ['**Phase 1**', 'Min 1–5', '{{§ 5 LDO}} + {{§ 23/2 BaySchO}} + {{BayPolG}}', 'Deeskalation · physisch dazwischen · Klasse ggf. raus · Messer sicherstellen · SL/Polizei alarmieren'],
-        ['**Phase 2**', 'Min 5–30', '{{Art. 57 BayEUG}} + {{Art. 75 BayEUG}} + {{Art. 87 BayEUG}}', 'SL informieren · EB benachrichtigen · Dokumentation · Art. 87 Abwägung'],
-        ['**Phase 3**', 'Tag 1–14', '{{Art. 86 BayEUG}} + {{Art. 88 BayEUG}}', 'Anhörung · Verhältnismäßigkeit · Ordnungsmaßnahme · Strafanzeige (Abstimmung) · Sozialtraining'],
+        ['**Kind**', 'wer noch nicht 14 Jahre alt ist ({{§ 1 JuSchG}}/1 Nr. 1)', 'GS + Jgst. 5–7 MS überwiegend Kinder. Strafmündigkeit greift noch nicht (§ 1 JGG). Bei Gefährdung: § 8a SGB VIII Jugendamt.'],
+        ['**Jugendliche/r**', 'wer 14, aber noch nicht 18 Jahre alt ist ({{§ 1 JuSchG}}/1 Nr. 2)', 'Jgst. 8–10 MS i.d.R. Jugendliche. Strafmündigkeit ab Vollendung 14. JuSchG §§ 4–10 Schutz Alkohol/Nikotin/Veranstaltungen.'],
+        ['**Erziehungsbeauftragte/r**', 'jede über 18-Jährige, soweit Personensorgeberechtigte/r Erziehungsaufgaben überträgt ({{§ 1 JuSchG}}/1 Nr. 4)', 'Klassenfahrten: LK übernimmt regelmäßig die EB-Rolle. Begleitperson volljähriger Geschwister bei Veranstaltungen.'],
       ],
     },
 
-    { type: 'h', text: 'Antwort-Schema (für mündliche Prüfung)' },
-    { type: 'numbered', items: [
-      'Sachverhalt kurz benennen (drei Problemdimensionen markieren).',
-      'Phase 1 (Min 1–5): {{§ 5 LDO}} + {{§ 23/2 BaySchO}} + ggf. Polizei.',
-      'Phase 2 (Min 5–30): SL + EB + Art. 87-Abwägung.',
-      'Phase 3 (Tag 1–14): {{Art. 88 BayEUG}} Anhörung → {{Art. 86 BayEUG}} Abs. 2 Maßnahme nach Verhältnismäßigkeit.',
-      'Strafrecht parallel ({{§ 241 StGB}} + {{§ 224 StGB}}; LK = berechtigt, nicht pflichtig).',
-      'Pädagogische Stellungnahme: Verhältnismäßigkeit + Opferbetreuung + Sozialtraining.',
+    { type: 'h', text: 'JuSchG-Schutz-Bereiche (§§ 4–13)' },
+    { type: 'bullets', items: [
+      '**Gaststätten** § 4: bis 16 nur mit EB, ab 16 bis 23 Uhr, ab 18 ohne Beschränkung.',
+      '**Veranstaltungen** § 5: ab 16 bis 24 Uhr (mit EB länger). Tanzveranstaltungen ab 16 bis 24, mit EB länger.',
+      '**Filmveranstaltungen + Bildträger** § 11+12: FSK-Stufen 0/6/12/16/18 verbindlich.',
+      '**Alkohol** § 9: Bier/Wein ab 16, mit EB ab 14; Spirituosen ab 18.',
+      '**Nikotin** § 10: ab 18 (Tabak + E-Zigaretten + Shisha).',
+      '**Spielhallen** § 6: Aufenthalt ab 18.',
     ]},
 
-    { type: 'warn', titel: '⚠ Choreographie-Falle', text:
-      'Wer „alles auf einmal" antwortet, verliert die Klarheit. **In drei Zeitfenstern denken** — und in jedem Fenster die zuständige Rechtsgrundlage benennen. Strafrecht NICHT zuerst nennen — es ist die LETZTE der drei Schienen in der Zeit-Reihenfolge.',
+    { type: 'h', text: 'Inklusion — Art. 41 + 30a BayEUG' },
+    { type: 'p', text:
+      '{{Art. 41 BayEUG}}/1: Bei sonderpädagogischem Förderbedarf **entscheiden die Eltern über den Lernort** — allgemeine Schule oder Förderschule. Verfassungs-Spiegelung {{Art. 6/2 GG}} (Eltern-Vorrang).'
+    },
+    { type: 'p', text:
+      '{{Art. 30a BayEUG}}/4 Ausnahme: Bei Förderschwerpunkten **Sehen · Hören · körperlich-motorische Entwicklung** ist **ZUSÄTZLICH die Zustimmung des Sachaufwandsträgers** (Gemeinde/Schulverband) erforderlich — technisch-bauliche Voraussetzungen (Lift, Akustik, Brailledrucker).'
+    },
+    { type: 'bullets', items: [
+      '**7 Förderschwerpunkte** ({{Art. 20/1}}): Sehen · Hören · körperlich-motorische Entwicklung · geistige Entwicklung · Sprache · Lernen · emotionale + soziale Entwicklung.',
+      'Praxis-Erweiterung: **Autismus + ELECOK** (Elektronische Kommunikation).',
+      '**MSD** (Mobiler Sonderpädagogischer Dienst) — schulart-übergreifender Dienst ({{Art. 21 BayEUG}}), kein FöS.',
+      'Lernort allgemeine Schule + FöS = inklusive UND separative Strukturen koexistieren.',
+    ]},
+
+    { type: 'h', text: 'Kindeswohlgefährdung § 8a SGB VIII' },
+    { type: 'p', text:
+      'Bei Anhaltspunkten für Gefährdung ist die Schule kein Ermittlungsorgan. Meldepfad: **LK → KL → SL → Jugendamt** (bei akuter Gefahr: SL direkt). Jugendamt schätzt im Zusammenwirken mehrerer Fachkräfte ein. Schweigepflicht der LK ({{§ 14 LDO}}) wird durch § 4 KKG (Kooperationsgesetz Kinderschutz) im konkreten Fall durchbrochen.'
+    },
+
+    { type: 'warn', titel: '⚠ Fallen JuSchG + Inklusion', text:
+      '**Strafmündigkeit ≠ Jugendschutz-Grenze** — beides ist „ab 14", aber verschiedene Anker (JGG vs. JuSchG). Bei <14: § 8a SGB VIII. **„Erziehungsbeauftragte/r"** ist juristischer Begriff (§ 1 Nr. 4 JuSchG) — bei Klassenfahrten übernimmt LK regelmäßig diese Rolle für die jeweilige SuS, im Einzelfall mit EB-Schriftlich-Auftrag. **Lernort-Entscheidung** Art. 41/1 ist Eltern-Recht — Schule darf NICHT alleine entscheiden, nur beraten + empfehlen. **Sachaufwandsträger-Zustimmung** Art. 30a/4 nur bei Sehen/Hören/k.-m. — bei geistiger Entwicklung NICHT erforderlich.',
     },
 
     { type: 'selfcheck', items: [
-      { q: 'In welcher Reihenfolge nennst du die Pfade in der mündlichen Antwort?',
-        a: 'Erst Phase 1 Gefahrenabwehr (LK-Sofortreaktion), dann Phase 2 SL+EB (Schulleitungs-Pfad), dann Phase 3 Schulrecht-Maßnahme + Strafrecht parallel. Zeit-Reihenfolge spiegelt Rechts-Reihenfolge.' },
-      { q: 'Welche zwei Cross-Refs gehören in eine vollständige MP_01-Antwort?',
-        a: 'MP_06 A.2 für {{§ 5 LDO}} Aufsichtspflicht-Vollzitat. MP_07 A.1+A.2 für Haftungsdreieck (Zivil/Disziplinar/Strafrecht) bei evtl. Aufsichtsversagen.' },
+      { q: 'Wann ist eine SuS „Kind" i.S.d. JuSchG?',
+        a: '{{§ 1 JuSchG}}/1 Nr. 1: wer noch nicht 14 Jahre alt ist (bis Vollendung 14. Lj.).' },
+      { q: 'Wer entscheidet über den Lernort eines SuS mit Förderbedarf gE?',
+        a: 'Eltern ({{Art. 41 BayEUG}}/1). KEINE Sachaufwandsträger-Zustimmung erforderlich (Art. 30a/4 gilt nur Sehen/Hören/k.-m.).' },
+      { q: 'Welche zwei Anker greifen bei einem Kind <14, das Gewalt erlebt?',
+        a: '{{§ 8a SGB VIII}} (Jugendamt-Einschaltung über SL) + Schulrechtliche Erziehungs-/Schutzmaßnahmen. Strafmündigkeit greift bei <14 nicht.' },
     ]},
   ],
+
 };
