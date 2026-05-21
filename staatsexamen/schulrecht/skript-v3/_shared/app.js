@@ -191,43 +191,44 @@
   );
 
   // ─── Reveal-Card (Pflichtwissen) ─────────────────────────────────────────
+  // A11y-Refactor: das interaktive Reveal-Element ist NUR die Frage selbst
+  // (als <button>); Status-Dot + Norm-Tag liegen als eigenständige Controls
+  // als Geschwister daneben — WAI-ARIA-APG-konform (keine interaktiven
+  // Kinder in einem button-Role-Element).
   const revealCard = (card) => {
-    const el = h('div', {
+    const el = h('article', {
       class: 'reveal-card',
       data: { state: 'closed', id: card.id },
-      role: 'button',
-      tabindex: '0',
-      'aria-expanded': 'false',
-      'aria-label': card.id + ' · ' + card.titel + ' — Lösung ein-/ausblenden',
     });
+    // Status-Dot zuerst (eigenständig, Tastatur-erreichbar)
     el.appendChild(h('div', { class: 'reveal-card__top' },
-      monoCap(card.id + ' · ' + card.titel, 'accent'),
+      h('span', { class: 'mono-cap mono-cap--accent' }, card.id + ' · ' + card.titel),
       statusDot(card.id),
     ));
-    el.appendChild(h('div', { class: 'reveal-card__frage' }, renderInline(card.frage)));
-    el.appendChild(h('div', { class: 'reveal-card__antwort' }, renderInline(card.antwort)));
+    // Frage als Reveal-Button (semantisch korrekt)
+    const antwortId = 'antw-' + card.id;
+    const btn = h('button', {
+      class: 'reveal-card__btn',
+      type: 'button',
+      'aria-expanded': 'false',
+      'aria-controls': antwortId,
+      'aria-label': 'Lösung ein-/ausblenden — ' + card.titel,
+    },
+      h('span', { class: 'reveal-card__frage' }, renderInline(card.frage)),
+    );
+    el.appendChild(btn);
+    el.appendChild(h('div', { class: 'reveal-card__antwort', id: antwortId }, renderInline(card.antwort)));
     el.appendChild(h('div', { class: 'reveal-card__foot' },
       normTag(card.norm),
       h('span', { class: 'reveal-card__hint', 'aria-hidden': 'true' }, 'Lösung zeigen'),
     ));
-    const toggle = (ev) => {
-      if (ev.target.closest('.norm-tag, .status-dot')) return;
-      // Don't collapse when user just selected antwort text
-      const sel = window.getSelection && window.getSelection();
-      if (sel && sel.toString().length > 0) return;
+    const toggle = () => {
       const open = el.dataset.state === 'open';
       el.dataset.state = open ? 'closed' : 'open';
-      el.setAttribute('aria-expanded', open ? 'false' : 'true');
+      btn.setAttribute('aria-expanded', open ? 'false' : 'true');
       el.querySelector('.reveal-card__hint').textContent = open ? 'Lösung zeigen' : 'Lösung verbergen';
     };
-    el.addEventListener('click', toggle);
-    el.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        if (e.target.closest('.norm-tag, .status-dot')) return;
-        e.preventDefault();
-        toggle(e);
-      }
-    });
+    btn.addEventListener('click', toggle);
     return el;
   };
 
@@ -485,7 +486,12 @@
 
   // ─── Vertiefung (Sub-Blocks A.1-A.4) ─────────────────────────────────────
   const renderVertiefung = () => {
-    const main = h('article', { class: 'werkbank__main', id: 'vertiefung', tabindex: '-1' });
+    const main = h('article', {
+      class: 'werkbank__main',
+      id: 'vertiefung',
+      tabindex: '-1',
+      'aria-label': 'Stoff · Referenz · Hauptinhalt',
+    });
     main.appendChild(h('div', { class: 'section-header' },
       monoH('h2', 'Stoff · Referenz', 'accent'),
       h('span', { class: 'section-header__rule' }),
@@ -692,11 +698,30 @@
       }
       card.scrollIntoView({ behavior: 'smooth', block: 'center' });
       card.classList.add('pulse-highlight');
+      // Reveal-Card: über interner Button-aria-expanded
       if (card.classList.contains('reveal-card') && card.dataset.state !== 'open') {
         card.dataset.state = 'open';
-        card.setAttribute('aria-expanded', 'true');
+        const btn = card.querySelector('.reveal-card__btn');
+        if (btn) btn.setAttribute('aria-expanded', 'true');
         const hint = card.querySelector('.reveal-card__hint');
         if (hint) hint.textContent = 'Lösung verbergen';
+      }
+      // Falle-Row: data-open + aria-expanded synchron
+      if (card.classList.contains('fa-row') && card.dataset.open !== 'true') {
+        card.dataset.open = 'true';
+        card.setAttribute('aria-expanded', 'true');
+      }
+      // Fall-Card: beide Panels aufdecken (Knackpunkte + Antwortkette)
+      if (card.classList.contains('fall-card')) {
+        card.querySelectorAll('.fall-card__btn').forEach(b => {
+          if (b.dataset.on !== 'true') {
+            b.dataset.on = 'true';
+            b.setAttribute('aria-expanded', 'true');
+            const hintSpan = b.querySelector('.hint');
+            if (hintSpan) hintSpan.textContent = 'verbergen';
+          }
+        });
+        card.querySelectorAll('.fall-card__panel').forEach(p => p.dataset.on = 'true');
       }
       setTimeout(() => card.classList.remove('pulse-highlight'), 2000);
       announce('Sprung zu Karte ' + id);
@@ -784,7 +809,13 @@
     }
   }
   function buildSlideover() {
-    slideoverBackdrop = h('div', { class: 'slideover-backdrop', data: { open: 'false' }, onclick: closeSlideover });
+    slideoverBackdrop = h('div', {
+      class: 'slideover-backdrop',
+      data: { open: 'false' },
+      role: 'presentation',
+      'aria-hidden': 'true',
+      onclick: closeSlideover,
+    });
     slideoverEl = h('div', {
       class: 'slideover',
       data: { open: 'false' },
@@ -796,7 +827,15 @@
       h('div', { class: 'slideover__inner' },
         h('div', { class: 'slideover__head' },
           h('span', { class: 'mono-cap mono-cap--accent slideover__label' }, ''),
-          h('button', { class: 'slideover__close', type: 'button', onclick: closeSlideover }, 'ESC · schließen'),
+          h('button', {
+            class: 'slideover__close',
+            type: 'button',
+            onclick: closeSlideover,
+            'aria-label': 'Schließen (Taste ESC)',
+          },
+            h('span', null, 'Schließen'),
+            h('span', { class: 'mono-cap', 'aria-hidden': 'true' }, 'ESC'),
+          ),
         ),
         h('h3', { class: 'slideover__title', id: 'slideover-title' }),
         h('div', { class: 'slideover__wortlaut' }),
@@ -814,6 +853,26 @@
     });
   }
 
+  // ─── Back-to-Top (Mobile-Hilfe) ──────────────────────────────────────────
+  function buildBackToTop() {
+    const btn = h('a', {
+      class: 'back-to-top',
+      href: '#main',
+      data: { visible: 'false' },
+      'aria-label': 'Zurück nach oben',
+    }, '↑ nach oben');
+    document.body.appendChild(btn);
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        btn.dataset.visible = window.scrollY > 600 ? 'true' : 'false';
+        ticking = false;
+      });
+    }, { passive: true });
+  }
+
   // ─── Mount ───────────────────────────────────────────────────────────────
   function mount() {
     const root = document.getElementById('skript-root');
@@ -826,6 +885,7 @@
     werkbank.appendChild(renderAside());
     root.appendChild(werkbank);
     buildSlideover();
+    buildBackToTop();
     setupScrollspy();
   }
 
