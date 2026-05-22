@@ -1604,3 +1604,216 @@ details.rb-selfcheck-wrap .rb-selfcheck__q { font-size: 14px; line-height: 1.45;
   .module-nav__prev, .module-nav__hub, .module-nav__next { justify-self: stretch; }
 }
 @media print { .module-nav { display: none; } }
+
+/* ==========================================================================
+   iOS-MOBILE-PATCH-SUITE 2026-05-22 (Apple HIG · iPhone 13/15 optimiert)
+   8 Patches gemäß AUDIT_MOBILE_IPHONE_2026-05-22.md
+   ========================================================================== */
+
+/* HIGH-4: Tap-Highlight global deaktivieren (kein iOS-Standard-Grau-Flash).
+   Eigener Active-/Focus-State übernimmt visuelles Feedback. */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* HIGH-1: Safe-Area-Insets für Notch + Home-Indicator (iPhone X+) */
+.meta-bar {
+  padding-top: max(12px, env(safe-area-inset-top));
+  padding-left: max(20px, calc(50% - 760px + 56px), env(safe-area-inset-left));
+  padding-right: max(20px, calc(50% - 760px + 56px), env(safe-area-inset-right));
+}
+.back-to-top {
+  bottom: max(20px, calc(env(safe-area-inset-bottom) + 12px));
+  right: max(20px, env(safe-area-inset-right));
+}
+.module-nav {
+  padding-left: max(56px, env(safe-area-inset-left));
+  padding-right: max(56px, env(safe-area-inset-right));
+  padding-bottom: max(60px, calc(env(safe-area-inset-bottom) + 24px));
+}
+@media (max-width: 768px) {
+  .module-nav {
+    padding-left: max(20px, env(safe-area-inset-left));
+    padding-right: max(20px, env(safe-area-inset-right));
+  }
+}
+.werkbank__main, .werkbank__aside {
+  padding-left: max(20px, env(safe-area-inset-left));
+  padding-right: max(20px, env(safe-area-inset-right));
+}
+.slideover__inner {
+  padding-bottom: max(40px, calc(env(safe-area-inset-bottom) + 24px));
+  padding-left: max(22px, env(safe-area-inset-left));
+  padding-right: max(22px, env(safe-area-inset-right));
+}
+
+/* HIGH-2: Norm-Tags auf 44pt-äquivalente Trefferzone (visuell schlank bleibt,
+   Tap-Inset über ::after-Pseudo-Element für ergänzende Trefferzone). */
+@media (hover: none) and (pointer: coarse) {
+  .norm-tag {
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    position: relative;
+  }
+  .norm-tag::after {
+    content: '';
+    position: absolute;
+    inset: -4px -2px;
+    /* nichts visuelles — nur Tap-Inset */
+  }
+  /* Status-Dot: Inset auf 44pt-Tap-Zone erweitern */
+  .status-dot {
+    position: relative;
+  }
+  .status-dot::after {
+    content: '';
+    position: absolute;
+    inset: -14px;
+  }
+  /* Reveal-Card-Button auf min-44pt */
+  .reveal-card__btn {
+    min-height: 44px;
+  }
+  /* Falle-Row-Chevron in Werkbank zurück auf 44pt */
+  .werkbank__aside .fa-row__chevron {
+    min-width: 44px;
+    min-height: 44px;
+    font-size: 16px;
+  }
+  /* fa-row auf min 56px Total-Höhe für komfortables Tappen */
+  .werkbank__aside .fa-row { min-height: 56px; }
+}
+
+/* HIGH-3: Slideover als iOS-Bottom-Sheet (Drag-Handle, Rounded-Top, Native-Bezier) */
+.slideover {
+  border-radius: 14px 14px 0 0;
+  /* iOS-native Cubic-Bezier für Sheet-Bewegung */
+  transition: transform 0.4s cubic-bezier(0.32, 0.72, 0, 1);
+  box-shadow: 0 -4px 24px rgba(12, 12, 10, 0.18);
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+.slideover[data-open="true"] {
+  transform: translateY(0) !important;
+}
+.slideover__drag-handle {
+  width: 36px;
+  height: 5px;
+  background: var(--mute2);
+  border-radius: 3px;
+  margin: 8px auto 0;
+  opacity: 0.6;
+}
+.slideover__head {
+  padding-top: 8px;
+}
+
+/* HIGH-3 ergänzend: Backdrop-Blur stärker (iOS-Material-Feel) */
+@supports (backdrop-filter: blur(20px) saturate(180%)) {
+  .slideover-backdrop {
+    background: rgba(12, 12, 10, 0.35);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+  }
+}
+
+/* MED: Breadcrumb-Overflow auf Mobile — auf 2 Zeilen umbrechen, aber sauber */
+@media (max-width: 520px) {
+  .meta-bar {
+    flex-wrap: wrap;
+    gap: 4px 12px;
+    padding-top: max(10px, env(safe-area-inset-top));
+    padding-bottom: 8px;
+  }
+  .meta-bar > span:first-child {
+    flex: 1 1 100%;
+    line-height: 1.4;
+  }
+}
+
+/* MED: Sticky Mini-Header für einhändige Modul-Navigation
+   Beim Scrollen >300px erscheint kompakter Header oben mit Titel + Prev/Next. */
+.mini-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 80;
+  background: var(--paper);
+  border-bottom: 1px solid var(--hairline);
+  padding: max(8px, env(safe-area-inset-top)) 16px 8px;
+  padding-left: max(16px, env(safe-area-inset-left));
+  padding-right: max(16px, env(safe-area-inset-right));
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  gap: 8px;
+  align-items: center;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  transform: translateY(-100%);
+  transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+}
+.mini-header[data-visible="true"] {
+  transform: translateY(0);
+}
+.mini-header__title {
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--ink);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mini-header a {
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.mini-header a[aria-disabled="true"] { opacity: 0.25; pointer-events: none; }
+@media (min-width: 1201px) { .mini-header { display: none; } }
+@media print { .mini-header { display: none !important; } }
+
+/* MED: iOS-Smooth-Scrolling für alle scrollbaren Areas */
+html, body { -webkit-overflow-scrolling: touch; }
+.slideover, .werkbank__aside, .werkbank__main {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* MED: rb-table Mobile besser strukturiert mit data-label-Fallback
+   Wenn keine data-label vorhanden: weniger aggressives 1-Col-Stack mit
+   visueller Trennung statt nackter Bullets. */
+@media (max-width: 768px) {
+  .rb-table__row {
+    border-top: 1px solid var(--rule);
+    padding: 10px 12px;
+  }
+  .rb-table__row > div:first-child {
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+  .rb-table__row > div + div {
+    color: var(--muted);
+    font-size: 13.5px;
+  }
+}
+
+/* Mobile-Optimierte Focus-States (kein outline-Flash, eigener Active-State) */
+@media (hover: none) and (pointer: coarse) {
+  .reveal-card__btn:active,
+  .fa-row:active,
+  .norm-tag:active,
+  .back-to-top:active,
+  .slideover__close:active,
+  .module-nav a:active {
+    background-color: var(--accent-soft);
+    transition: background-color 0.05s;
+  }
+}

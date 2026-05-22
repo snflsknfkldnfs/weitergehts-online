@@ -854,6 +854,7 @@
       'aria-labelledby': 'slideover-title',
       tabindex: '-1',
     },
+      h('div', { class: 'slideover__drag-handle', 'aria-hidden': 'true' }),
       h('div', { class: 'slideover__inner' },
         h('div', { class: 'slideover__head' },
           h('span', { class: 'mono-cap mono-cap--accent slideover__label' }, ''),
@@ -881,6 +882,81 @@
       if (e.key === 'Escape') closeSlideover();
       else trapFocus(e);
     });
+    // iOS-Touch: Swipe-down auf Drag-Handle/Top schließt das Sheet
+    let touchStartY = null;
+    let touchDeltaY = 0;
+    const dragArea = slideoverEl.querySelector('.slideover__drag-handle');
+    const onTouchStart = (e) => {
+      if (slideoverEl.dataset.open !== 'true') return;
+      touchStartY = e.touches[0].clientY;
+      touchDeltaY = 0;
+      slideoverEl.style.transition = 'none';
+    };
+    const onTouchMove = (e) => {
+      if (touchStartY === null) return;
+      touchDeltaY = e.touches[0].clientY - touchStartY;
+      if (touchDeltaY > 0) {
+        slideoverEl.style.transform = 'translateY(' + touchDeltaY + 'px)';
+      }
+    };
+    const onTouchEnd = () => {
+      if (touchStartY === null) return;
+      slideoverEl.style.transition = '';
+      slideoverEl.style.transform = '';
+      if (touchDeltaY > 120) closeSlideover();
+      touchStartY = null;
+      touchDeltaY = 0;
+    };
+    if (dragArea) {
+      dragArea.addEventListener('touchstart', onTouchStart, { passive: true });
+      dragArea.addEventListener('touchmove', onTouchMove, { passive: true });
+      dragArea.addEventListener('touchend', onTouchEnd);
+    }
+    // Header-Bereich des Slideover auch als Drag-Area (großzügiger Trigger)
+    const headArea = slideoverEl.querySelector('.slideover__head');
+    if (headArea) {
+      headArea.addEventListener('touchstart', onTouchStart, { passive: true });
+      headArea.addEventListener('touchmove', onTouchMove, { passive: true });
+      headArea.addEventListener('touchend', onTouchEnd);
+    }
+  }
+
+  // ─── Sticky Mini-Header (Mobile, einhändige Navigation) ──────────────────
+  function buildMiniHeader() {
+    const idMatch = (d.id || '').match(/^mp0?(\d+)$/);
+    if (!idMatch) return;
+    const n = parseInt(idMatch[1], 10);
+    if (n < 1 || n > 9) return;
+    const fmt = (num) => 'mp' + String(num).padStart(2, '0');
+    const titel = (d.titel || '') + ' ' + (d.titel2 || '');
+    const header = h('div', {
+      class: 'mini-header',
+      data: { visible: 'false' },
+      'aria-hidden': 'true',
+    },
+      h('a', {
+        href: n > 1 ? '../' + fmt(n - 1) + '/' : '#',
+        'aria-disabled': n > 1 ? 'false' : 'true',
+        'aria-label': n > 1 ? 'Vorheriges Modul' : 'Kein vorheriges Modul',
+      }, '‹'),
+      h('span', { class: 'mini-header__title' }, 'MP_' + String(n).padStart(2, '0') + ' · ' + titel.trim().replace(/\.$/, '')),
+      h('a', {
+        href: n < 9 ? '../' + fmt(n + 1) + '/' : '#',
+        'aria-disabled': n < 9 ? 'false' : 'true',
+        'aria-label': n < 9 ? 'Nächstes Modul' : 'Kein nächstes Modul',
+      }, '›'),
+    );
+    document.body.appendChild(header);
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        header.dataset.visible = window.scrollY > 400 ? 'true' : 'false';
+        header.setAttribute('aria-hidden', window.scrollY > 400 ? 'false' : 'true');
+        ticking = false;
+      });
+    }, { passive: true });
   }
 
   // ─── Inter-Module-Navigation (Prev/Hub/Next) ────────────────────────────
@@ -950,6 +1026,7 @@
     if (modNav) root.appendChild(modNav);
     buildSlideover();
     buildBackToTop();
+    buildMiniHeader();
     setupScrollspy();
   }
 
