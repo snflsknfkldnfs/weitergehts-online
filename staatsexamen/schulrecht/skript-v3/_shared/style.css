@@ -296,29 +296,59 @@ button { font-family: inherit; }
   display: flex; flex-wrap: wrap; gap: 4px; margin-top: 8px;
 }
 
-/* Norm-Tag (klickbar → Slideover) ----------------------------------------- */
+/* Norm-Tag · Default = INLINE (dezent · max. Lesefluss) ------------------- */
+/* Im Lesetext: subtiles dotted-underline, kein Box-Frame.
+   Hover/Focus: Akzent-Hover-Highlight, Click → Slideover. */
 .norm-tag {
+  display: inline;
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  color: var(--accent);
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-decoration: underline dotted var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: background .12s, color .12s;
+}
+.norm-tag:hover,
+.norm-tag:focus-visible {
+  background: var(--accent-soft);
+  color: var(--accent);
+  text-decoration-style: solid;
+  outline: none;
+}
+.norm-tag:focus-visible {
+  box-shadow: 0 0 0 2px var(--accent);
+  border-radius: 2px;
+}
+
+/* Norm-Tag · BOX-Variante für Norm-Listings (Kartografie + Slideover-Cross-Refs) */
+.kartografie-row .norm-tag,
+.norm-tag--karten,
+.hub-card__norm.norm-tag {
   display: inline-flex;
   align-items: center;
   font-family: var(--mono);
   font-size: 10.5px;
   letter-spacing: 0.3px;
   color: var(--ink);
-  /* WCAG 2.5.8 AA target ≥ 24px height (10.5px + ~7px*2 padding = ~24-25px) */
   padding: 5px 8px;
   min-height: 24px;
   border: 1px solid var(--rule);
   background: transparent;
-  cursor: pointer;
-  vertical-align: 1px;
-  transition: background .12s, border-color .12s, color .12s;
+  text-decoration: none;
+  border-radius: 0;
 }
-.norm-tag:hover {
+.kartografie-row .norm-tag:hover,
+.norm-tag--karten:hover {
   background: var(--accent-soft);
   border-color: var(--accent);
   color: var(--accent);
 }
-.norm-tag:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 /* Werkbank-Grid: TOC (links) + Main (Vertiefung) + Aside (Werkbank).
    Bei <1320 px collapses TOC; bei <1200 px collapses 2→1 col. */
@@ -1295,11 +1325,8 @@ h2.mono-h, h3.mono-h { margin: 0; font-weight: 500; font-size: 10.5px; }
 .choreo-card ol li { margin-bottom: 4px; }
 .choreo-card ol li::marker { color: var(--accent); font-weight: 600; }
 
-/* M-01 — Norm-Tag visuell deutlicher klickbar */
-.norm-tag {
-  cursor: pointer;
-  border-bottom-style: dashed !important;
-}
+/* M-01 — Norm-Tag-Cursor (Inline-Default ist nun dotted-underline · siehe oben) */
+.norm-tag { cursor: pointer; }
 
 /* M-03 — Vertiefung-Intro nicht italic (italic-Klumpen mit Abk.-Dichten
    sind nach mehreren Stunden Lernen schwer lesbar) */
@@ -1650,18 +1677,22 @@ details.rb-selfcheck-wrap .rb-selfcheck__q { font-size: 14px; line-height: 1.45;
 /* HIGH-2: Norm-Tags auf 44pt-äquivalente Trefferzone (visuell schlank bleibt,
    Tap-Inset über ::after-Pseudo-Element für ergänzende Trefferzone). */
 @media (hover: none) and (pointer: coarse) {
+  /* Inline-Norm-Tags: keine min-height (würden Lesefluss brechen) — nur
+     erweiterte Tap-Inset via ::after. Box-Varianten (.kartografie-row,
+     .norm-tag--karten) erben min-height aus ihrer eigenen Regel. */
   .norm-tag {
-    min-height: 36px;
-    display: inline-flex;
-    align-items: center;
-    padding: 4px 10px;
     position: relative;
   }
   .norm-tag::after {
     content: '';
     position: absolute;
-    inset: -4px -2px;
-    /* nichts visuelles — nur Tap-Inset */
+    inset: -6px -4px;
+    /* nichts visuelles — nur Tap-Inset für Daumen-Trefferzone */
+  }
+  .kartografie-row .norm-tag,
+  .norm-tag--karten {
+    min-height: 36px;
+    padding: 4px 10px;
   }
   /* Status-Dot: Inset auf 44pt-Tap-Zone erweitern */
   .status-dot {
