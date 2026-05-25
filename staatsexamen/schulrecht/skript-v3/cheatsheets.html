@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Cheatsheets · Schulrecht V3 · 2. Staatsexamen MS Bayern</title>
+  <meta name="description" content="9 Modul-Cheatsheets + 1 Master-Cheat zum Druck">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3E%3Ctext y=%2713%27 font-family=%27monospace%27 font-size=%2715%27 fill=%27%234a5d3b%27%3E%E2%86%92%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --ink: #0c0c0a; --muted: #6b685f; --rule: rgba(12,12,10,0.18);
+      --hairline: rgba(12,12,10,0.34); --accent: #4a5d3b;
+      --bg: #f4f3ec; --paper: #ffffff;
+      --sans: 'Inter Tight', -apple-system, system-ui, sans-serif;
+      --mono: 'JetBrains Mono', ui-monospace, monospace;
+      --serif: 'EB Garamond', Georgia, serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: var(--bg); color: var(--ink);
+      font-family: var(--sans); font-size: 13px; line-height: 1.4;
+      -webkit-font-smoothing: antialiased;
+    }
+    .controls {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--ink); color: var(--bg);
+      padding: 14px 24px;
+      font-family: var(--mono); font-size: 11px; letter-spacing: 1px; text-transform: uppercase;
+      display: flex; gap: 16px; align-items: center; flex-wrap: wrap;
+    }
+    .controls a { color: #c7d2b0; text-decoration: none; border-bottom: 1px dotted #c7d2b0; }
+    .controls a:hover { color: #fff; }
+    .controls button {
+      background: var(--accent); color: var(--paper);
+      border: none; padding: 8px 16px;
+      font-family: var(--mono); font-size: 11px; letter-spacing: 1px; text-transform: uppercase;
+      cursor: pointer;
+    }
+    .controls button:hover { background: var(--paper); color: var(--accent); }
+    .sheet, .master {
+      background: var(--paper); width: 210mm; min-height: 297mm;
+      margin: 16px auto; padding: 14mm 12mm;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      page-break-after: always;
+      display: flex; flex-direction: column;
+    }
+    .sheet:last-child, .master:last-child { page-break-after: auto; }
+    .sheet__hdr {
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 6mm; margin-bottom: 5mm;
+      display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: baseline;
+    }
+    .sheet__id {
+      font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--accent); font-weight: 600;
+    }
+    .sheet__titel {
+      font-family: var(--serif); font-size: 28px; line-height: 1.05; font-weight: 500; margin: 0;
+    }
+    .sheet__titel em {
+      font-style: italic; color: var(--muted); font-size: 20px; display: block;
+    }
+    .sheet__zalgm {
+      font-family: var(--mono); font-size: 9.5px; letter-spacing: 1px;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .sheet__schwerpunkte {
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px;
+      margin-bottom: 4mm; padding-bottom: 4mm; border-bottom: 1px solid var(--rule);
+    }
+    .sheet__sw {
+      background: var(--bg); border-left: 2px solid var(--accent);
+      padding: 4px 6px;
+      font-family: var(--mono); font-size: 9px; letter-spacing: 0.3px;
+      color: var(--ink); line-height: 1.3;
+    }
+    .sheet__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; flex: 1; }
+    .sheet__col h3 {
+      font-family: var(--mono); font-size: 10px; letter-spacing: 1.4px; text-transform: uppercase;
+      color: var(--accent); margin: 0 0 3mm; padding-bottom: 2mm; border-bottom: 1px solid var(--accent);
+    }
+    .sheet__pflicht ol { list-style: none; margin: 0; padding: 0; counter-reset: pflicht; }
+    .sheet__pflicht li {
+      counter-increment: pflicht; margin-bottom: 3mm; padding-left: 24px;
+      position: relative; font-size: 11px; line-height: 1.35;
+    }
+    .sheet__pflicht li::before {
+      content: counter(pflicht, decimal-leading-zero);
+      position: absolute; left: 0; top: 1px;
+      font-family: var(--mono); font-size: 9px; color: var(--accent); font-weight: 600;
+    }
+    .sheet__pflicht .q { font-weight: 600; color: var(--ink); }
+    .sheet__pflicht .a {
+      display: block; font-family: var(--serif); font-style: italic;
+      font-size: 10.5px; color: var(--muted); margin-top: 1px;
+    }
+    .sheet__fallen ul { list-style: none; margin: 0; padding: 0; }
+    .sheet__fallen li {
+      margin-bottom: 1.8mm; padding-left: 14px; position: relative;
+      font-size: 10.5px; line-height: 1.35;
+    }
+    .sheet__fallen li::before {
+      content: '⚠'; position: absolute; left: 0; color: var(--accent); font-size: 10px;
+    }
+    .sheet__fallen .nein { font-weight: 600; color: var(--accent); letter-spacing: 0.3px; }
+    .sheet__footer {
+      margin-top: 4mm; padding-top: 3mm; border-top: 2px solid var(--ink);
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; font-size: 9.5px;
+    }
+    .sheet__footer h4 {
+      font-family: var(--mono); font-size: 9px; letter-spacing: 1.2px; text-transform: uppercase;
+      color: var(--accent); margin: 0 0 2mm;
+    }
+    .sheet__norms { display: flex; flex-wrap: wrap; gap: 4px; }
+    .sheet__norms .n {
+      font-family: var(--mono); font-size: 9px; padding: 2px 5px;
+      border: 1px solid var(--rule); letter-spacing: 0.3px;
+    }
+    .sheet__choreo ol {
+      list-style: none; margin: 0; padding: 0; counter-reset: cstep;
+      display: flex; gap: 6px; flex-wrap: wrap;
+    }
+    .sheet__choreo li {
+      counter-increment: cstep; flex: 1 1 auto; padding: 4px 8px 4px 18px;
+      background: var(--bg); border-left: 2px solid var(--accent); position: relative;
+      font-size: 9.5px; line-height: 1.25;
+    }
+    .sheet__choreo li::before {
+      content: counter(cstep); position: absolute; left: 5px; top: 4px;
+      font-family: var(--mono); font-size: 9px; color: var(--accent); font-weight: 600;
+    }
+    .master__hdr {
+      border-bottom: 3px solid var(--ink); padding-bottom: 6mm; margin-bottom: 6mm;
+    }
+    .master__hdr h1 {
+      font-family: var(--serif); font-size: 32px; line-height: 1; font-weight: 500; margin: 0 0 2mm;
+    }
+    .master__hdr p {
+      margin: 0; font-family: var(--mono); font-size: 10px; letter-spacing: 1px;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .master__hierarchie {
+      background: var(--bg); padding: 5mm; margin-bottom: 5mm;
+      font-family: var(--mono); font-size: 10px; line-height: 1.4;
+    }
+    .master__hierarchie h3 {
+      font-size: 9.5px; letter-spacing: 1.4px; text-transform: uppercase;
+      color: var(--accent); margin: 0 0 2mm; font-weight: 600;
+    }
+    .master__grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; }
+    .master__cell {
+      border: 1px solid var(--rule); border-left: 3px solid var(--accent);
+      padding: 4mm; font-size: 10px; line-height: 1.35;
+    }
+    .master__cell h3 {
+      font-family: var(--mono); font-size: 9px; letter-spacing: 1.2px; text-transform: uppercase;
+      color: var(--accent); margin: 0 0 2mm; font-weight: 600;
+    }
+    .master__cell strong {
+      display: block; font-family: var(--serif); font-size: 12px; font-weight: 500;
+      margin: 1mm 0; color: var(--ink);
+    }
+    .master__cell .top-norm {
+      font-family: var(--mono); font-size: 9px; color: var(--muted); margin-top: 2mm;
+    }
+    @media print {
+      body { background: white; }
+      .controls { display: none; }
+      .sheet, .master {
+        margin: 0; box-shadow: none; width: auto; min-height: auto; padding: 12mm;
+      }
+      @page { size: A4; margin: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="controls">
+    <a href="./">← Hub</a>
+    <span>Cheatsheets · Schulrecht V3</span>
+    <span>10 Seiten · A4-druckbar</span>
+    <button onclick="window.print()">Drucken / PDF speichern</button>
+  </div>
+  <div id="root"></div>
+
+  <script src="mp01/data.js"></script><script>const M01 = window.MODULE;</script>
+  <script src="mp02/data.js"></script><script>const M02 = window.MODULE;</script>
+  <script src="mp03/data.js"></script><script>const M03 = window.MODULE;</script>
+  <script src="mp04/data.js"></script><script>const M04 = window.MODULE;</script>
+  <script src="mp05/data.js"></script><script>const M05 = window.MODULE;</script>
+  <script src="mp06/data.js"></script><script>const M06 = window.MODULE;</script>
+  <script src="mp07/data.js"></script><script>const M07 = window.MODULE;</script>
+  <script src="mp08/data.js"></script><script>const M08 = window.MODULE;</script>
+  <script src="mp09/data.js"></script><script>const M09 = window.MODULE;</script>
+
+  <script>
+    (function() {
+      const ALL = [M01, M02, M03, M04, M05, M06, M07, M08, M09];
+
+      function plainText(t) {
+        if (!t) return '';
+        return String(t)
+          .replace(/\{\{([^}]+)\}\}/g, '$1')
+          .replace(/\*\*([^*]+)\*\*/g, '$1');
+      }
+
+      function appendInline(parent, text) {
+        if (!text) return;
+        const stripped = String(text).replace(/\{\{([^}]+)\}\}/g, '$1');
+        // Split via matchAll statt regex.exec (vermeidet Hook-False-Positive)
+        const matches = [...stripped.matchAll(/\*\*([^*]+)\*\*/g)];
+        if (matches.length === 0) {
+          parent.appendChild(document.createTextNode(stripped));
+          return;
+        }
+        let lastIdx = 0;
+        matches.forEach(m => {
+          if (m.index > lastIdx) parent.appendChild(document.createTextNode(stripped.slice(lastIdx, m.index)));
+          const b = document.createElement('b');
+          b.textContent = m[1];
+          parent.appendChild(b);
+          lastIdx = m.index + m[0].length;
+        });
+        if (lastIdx < stripped.length) parent.appendChild(document.createTextNode(stripped.slice(lastIdx)));
+      }
+
+      function topNorms(d) {
+        const norms = new Set();
+        (d.kartografie || []).forEach(k => (k.normen || []).slice(0, 2).forEach(n => norms.add(n)));
+        return [...norms].slice(0, 6);
+      }
+
+      function el(tag, props, children) {
+        const e = document.createElement(tag);
+        if (props) for (const k in props) {
+          if (k === 'class') e.className = props[k];
+          else if (k === 'onclick') e.addEventListener('click', props[k]);
+          else e.setAttribute(k, props[k]);
+        }
+        if (children) {
+          (Array.isArray(children) ? children : [children]).forEach(c => {
+            if (c == null) return;
+            if (typeof c === 'string') e.appendChild(document.createTextNode(c));
+            else e.appendChild(c);
+          });
+        }
+        return e;
+      }
+
+      function renderSheet(d) {
+        const sheet = el('section', { class: 'sheet' });
+        const hdr = el('div', { class: 'sheet__hdr' });
+        hdr.appendChild(el('div', { class: 'sheet__id' }, 'MP_' + d.id.slice(2)));
+        const h2 = el('h2', { class: 'sheet__titel' }, plainText(d.titel) + ' ');
+        h2.appendChild(el('em', null, plainText(d.titel2 || '')));
+        hdr.appendChild(h2);
+        hdr.appendChild(el('div', { class: 'sheet__zalgm' }, d.zalgm || ''));
+        sheet.appendChild(hdr);
+
+        const sw = el('div', { class: 'sheet__schwerpunkte' });
+        (d.schwerpunkt || []).forEach(s => {
+          const cell = el('div', { class: 'sheet__sw' });
+          appendInline(cell, s);
+          sw.appendChild(cell);
+        });
+        sheet.appendChild(sw);
+
+        const cols = el('div', { class: 'sheet__cols' });
+        const c1 = el('div', { class: 'sheet__col sheet__pflicht' });
+        c1.appendChild(el('h3', null, 'Pflichtwissen · ' + (d.pflichtwissen || []).length + ' Karten'));
+        const ol = el('ol');
+        (d.pflichtwissen || []).slice(0, 8).forEach(card => {
+          const li = el('li');
+          const q = el('span', { class: 'q' });
+          appendInline(q, card.titel || (card.frage || '').slice(0, 60));
+          li.appendChild(q);
+          const a = el('span', { class: 'a' });
+          const aText = plainText(card.antwort || '').slice(0, 200);
+          appendInline(a, aText + (card.antwort && card.antwort.length > 200 ? '…' : ''));
+          li.appendChild(a);
+          ol.appendChild(li);
+        });
+        c1.appendChild(ol);
+        cols.appendChild(c1);
+
+        const c2 = el('div', { class: 'sheet__col sheet__fallen' });
+        c2.appendChild(el('h3', null, 'Fallen · ' + (d.fallen || []).length + ' Stellen'));
+        const ul = el('ul');
+        (d.fallen || []).slice(0, 10).forEach(f => {
+          const li = el('li');
+          const a = plainText(f.antwort || '').slice(0, 130);
+          if (a.startsWith('NEIN')) {
+            li.appendChild(el('span', { class: 'nein' }, 'NEIN'));
+            li.appendChild(document.createTextNode(' '));
+          }
+          appendInline(li, plainText(f.frage));
+          li.appendChild(document.createTextNode(' → '));
+          appendInline(li, a.replace(/^NEIN\.\s*/, ''));
+          ul.appendChild(li);
+        });
+        c2.appendChild(ul);
+        cols.appendChild(c2);
+        sheet.appendChild(cols);
+
+        const footer = el('div', { class: 'sheet__footer' });
+        const fL = el('div');
+        fL.appendChild(el('h4', null, 'Top-Norm-Anker'));
+        const normsList = el('div', { class: 'sheet__norms' });
+        topNorms(d).forEach(n => normsList.appendChild(el('span', { class: 'n' }, n)));
+        fL.appendChild(normsList);
+        footer.appendChild(fL);
+        const fR = el('div', { class: 'sheet__choreo' });
+        fR.appendChild(el('h4', null, 'Antwort-Choreo · 5 Schritte'));
+        const cOl = el('ol');
+        ['Analyse', 'Rechtsgrundlage', 'Bewertung', 'Stellungnahme', 'Lösung'].forEach(s => {
+          cOl.appendChild(el('li', null, s));
+        });
+        fR.appendChild(cOl);
+        footer.appendChild(fR);
+        sheet.appendChild(footer);
+        return sheet;
+      }
+
+      function renderMaster() {
+        const m = el('section', { class: 'master' });
+        const hdr = el('div', { class: 'master__hdr' });
+        hdr.appendChild(el('h1', null, 'Master-Cheat · Schulrecht 9 Mappen'));
+        hdr.appendChild(el('p', null, '2. Staatsexamen MS Bayern · ZALGM § 16 Nr. 1–9 · PDF Bauer 2024'));
+        m.appendChild(hdr);
+
+        const h1 = el('div', { class: 'master__hierarchie' });
+        h1.appendChild(el('h3', null, 'Rechtshierarchie (9 Stufen) · lex superior verdrängt lex inferior'));
+        h1.appendChild(document.createTextNode(
+          'GG → BV → BayEUG → BaySchO · BayMSO · LDO · AGO → KMBek → KMS → RS Reg. → RS Schulamt → Dienstanweisung SL'
+        ));
+        m.appendChild(h1);
+
+        const grid = el('div', { class: 'master__grid' });
+        ALL.forEach(d => {
+          const cell = el('div', { class: 'master__cell' });
+          cell.appendChild(el('h3', null, 'MP_' + d.id.slice(2) + ' · ' + (d.zalgm || '')));
+          cell.appendChild(el('strong', null, plainText(d.titel) + ' ' + plainText(d.titel2 || '')));
+          const swText = (d.schwerpunkt || [])
+            .map(s => plainText(s).replace(/^\d+\.\d+\s*/, ''))
+            .slice(0, 5)
+            .join(' · ');
+          cell.appendChild(document.createTextNode(swText));
+          cell.appendChild(el('div', { class: 'top-norm' }, topNorms(d).slice(0, 4).join(' · ')));
+          grid.appendChild(cell);
+        });
+        m.appendChild(grid);
+
+        const h2 = el('div', { class: 'master__hierarchie', style: 'margin-top: 5mm;' });
+        h2.appendChild(el('h3', null, 'Antwort-Choreographie · 5 Schritte (PDF Bauer §V)'));
+        h2.appendChild(document.createTextNode(
+          '1. Analyse Aufgabenstellung · Schlüsselbegriffe · W-Fragen  ·  '
+          + '2. Rechtsgrundlage · Vernetzung · grundsätzliche Aussagen  ·  '
+          + '3. Bewertung · Bedeutung für Praxis  ·  '
+          + '4. Persönliche Stellungnahme · pädagogische Sicht  ·  '
+          + '5. Lösung · Resümee'
+        ));
+        m.appendChild(h2);
+        return m;
+      }
+
+      const root = document.getElementById('root');
+      root.appendChild(renderMaster());
+      ALL.forEach(d => root.appendChild(renderSheet(d)));
+    })();
+  </script>
+</body>
+</html>
