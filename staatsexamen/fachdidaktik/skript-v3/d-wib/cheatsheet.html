@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cheatsheet · D WiB · Fachdidaktik MS Bayern</title>
+<meta name="description" content="Druckbares A4-Cheatsheet WiB mit GB-Matrix · 13-Phasen-Moritz-Steigerwald · BUV-Schmankerl Anforderungsprofile J8 (Lena) · 2. Staatsexamen MS Bayern" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3E%3Ctext y=%2713%27 font-family=%27monospace%27 font-size=%2715%27 fill=%27%234a5d3b%27%3E%E2%86%92%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --paper: #fdfcf8;
+    --bg: #f4f2eb;
+    --rule: #ddd9cd;
+    --hairline: #ebe7d8;
+    --muted: #6b6857;
+    --accent: #4a5d3b;
+    --accent-soft: #e8ece2;
+    --warn: #a85a2a;
+    --serif: 'EB Garamond', Georgia, serif;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+    --sans: 'Inter Tight', system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); font-family: var(--serif); font-size: 11.5px; line-height: 1.4; }
+
+  .sheet { width: 210mm; min-height: 297mm; margin: 16px auto; padding: 18mm 14mm 16mm; background: var(--paper); page-break-after: always; position: relative; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+  .sheet:last-child { page-break-after: auto; }
+  .sheet__zalgm { font-family: var(--mono); font-size: 9px; letter-spacing: 1.4px; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 6px; }
+  .sheet__title { font-family: var(--serif); font-size: 22px; line-height: 1.1; font-weight: 500; margin: 0 0 4px; }
+  .sheet__sub { font-family: var(--serif); font-style: italic; font-size: 13px; color: var(--muted); margin: 0 0 14px; padding-bottom: 10px; border-bottom: 2px solid var(--ink); }
+  .sheet__pageno { position: absolute; top: 10mm; right: 14mm; font-family: var(--mono); font-size: 9px; color: var(--muted); letter-spacing: 1px; }
+
+  h2.section { font-family: var(--mono); font-size: 9.5px; letter-spacing: 1.4px; text-transform: uppercase; color: var(--accent); margin: 12px 0 6px; font-weight: 700; padding-bottom: 3px; border-bottom: 1px solid var(--rule); }
+  h3.sub { font-family: var(--sans); font-size: 12px; font-weight: 600; margin: 8px 0 4px; color: var(--ink); }
+  .lead { font-family: var(--serif); font-size: 12px; line-height: 1.45; margin: 0 0 8px; }
+  p { margin: 0 0 6px; }
+  strong { font-weight: 600; color: var(--ink); }
+  em { font-style: italic; }
+
+  ul.tight { list-style: none; padding: 0; margin: 0; }
+  ul.tight li { padding: 3px 0 3px 14px; border-bottom: 1px dotted var(--hairline); position: relative; }
+  ul.tight li:last-child { border-bottom: none; }
+  ul.tight li::before { content: '›'; position: absolute; left: 0; top: 3px; color: var(--accent); font-family: var(--mono); font-weight: 600; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+
+  .grid-phases { display: grid; grid-template-columns: 28px 1fr 1fr; gap: 0; border-top: 2px solid var(--ink); font-size: 10.5px; }
+  .grid-phases > div { padding: 5px 7px; border-bottom: 1px solid var(--rule); line-height: 1.3; }
+  .grid-phases .ph-num { font-family: var(--mono); font-size: 11px; font-weight: 600; color: var(--accent); background: var(--bg); display: flex; align-items: center; justify-content: center; }
+  .grid-phases .ph-name { font-family: var(--sans); font-weight: 600; }
+  .grid-phases .ph-rationale { font-family: var(--serif); }
+  .grid-phases .ph-block-divider { background: var(--accent-soft); grid-column: 1 / -1; padding: 3px 8px; font-family: var(--mono); font-size: 8.5px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+
+  table.lb { width: 100%; border-collapse: collapse; font-size: 9.5px; margin: 4px 0; }
+  table.lb th, table.lb td { border: 1px solid var(--rule); padding: 4px 5px; text-align: left; vertical-align: top; }
+  table.lb th { background: var(--bg); font-family: var(--mono); font-size: 8.5px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent); font-weight: 600; }
+  table.lb td.jg { background: var(--bg); font-family: var(--mono); font-weight: 600; color: var(--accent); width: 32px; text-align: center; font-size: 10px; }
+  table.lb td.cell { font-family: var(--serif); font-size: 9.5px; line-height: 1.25; }
+
+  .callout { background: var(--bg); border-left: 3px solid var(--accent); padding: 8px 10px; margin: 6px 0; font-size: 10.5px; }
+  .callout--warn { border-left-color: var(--warn); background: #fdf2e9; }
+  .callout__lbl { font-family: var(--mono); font-size: 8.5px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); font-weight: 600; display: block; margin-bottom: 3px; }
+  .callout--warn .callout__lbl { color: var(--warn); }
+
+  .seq { display: grid; grid-template-columns: 30px 1fr 80px; gap: 0; border-top: 1px solid var(--rule); font-size: 9.5px; }
+  .seq > div { padding: 4px 7px; border-bottom: 1px solid var(--hairline); line-height: 1.3; }
+  .seq .seq-num { font-family: var(--mono); font-weight: 600; color: var(--accent); background: var(--bg); text-align: center; }
+  .seq .seq-method { font-family: var(--sans); font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.4px; }
+
+  .footer { font-family: var(--mono); font-size: 8px; color: var(--muted); letter-spacing: 0.4px; margin-top: 12px; padding-top: 6px; border-top: 1px dotted var(--rule); display: flex; justify-content: space-between; }
+
+  @media print { body { background: white; } .sheet { margin: 0; box-shadow: none; } @page { size: A4 portrait; margin: 0; } }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════ SEITE 1 — KANON ═══════════════════════════ -->
+<section class="sheet">
+  <div class="sheet__pageno">1 / 4 · KANON</div>
+  <div class="sheet__zalgm">D Wirtschaft und Beruf · Fachdidaktik MS Bayern</div>
+  <h1 class="sheet__title">WiB — Leitfach Berufsorientierung.</h1>
+  <p class="sheet__sub">Kompetenzstrukturmodell · Realbegegnungen · Vollständige Handlung · Projektprüfung MS</p>
+
+  <h2 class="section">Selbstverständnis — was WiB ist (und nicht ist)</h2>
+  <p class="lead"><strong>WiB ist Leitfach des Lernfelds Berufsorientierung.</strong> Es bündelt die berufsorient. <strong>Wahlpflichtfächer Technik · E+S · W+K</strong> und liefert deren theoretisch-methodische Basis; die WPFs entfalten die praktische Anwendung. WiB verzahnt Theorie + Praxis als <em>Markenzeichen</em> — der Realbegegnungs-Anker (Dauenhauer) macht den Unterschied zum reinen Buchwissens-Fach.</p>
+
+  <div class="callout callout--warn">
+    <span class="callout__lbl">Falle 1 · Verwechslungs-Risiko</span>
+    Das Kompetenzstrukturmodell WiB hat <strong>ANDERE Achsen</strong> als Mathe und GPG! Im Examen nie verwechseln:
+    <ul class="tight" style="margin-top: 4px; font-size: 10px;">
+      <li><strong>WiB:</strong> 4 prozessbez. (Handeln · Analysieren · Kommunizieren · Beurteilen) × <strong>5 Gegenstandsbereiche</strong> (Arbeit · BO · Wirtschaft · Technik · Recht)</li>
+      <li><strong>Mathe:</strong> 6 prozessbez. × 4 Gegenstandsbereiche</li>
+      <li><strong>GPG:</strong> 5 Kompetenzen (Methoden · Sach · 2 Urteilsbildungen · Handlung) × Inhaltsbereiche</li>
+    </ul>
+  </div>
+
+  <h2 class="section">Verfassungsrahmen + Bundesrecht</h2>
+  <div class="grid-3">
+    <div>
+      <h3 class="sub">BV Art. 131</h3>
+      <p>Bayerischer Bildungsauftrag · Werteboden auch für Wirtschafts-/Berufs-Bildung.</p>
+    </div>
+    <div>
+      <h3 class="sub">GG Art. 12 — Berufsfreiheit</h3>
+      <p>„Alle Deutschen haben das Recht, Beruf, Arbeitsplatz und Ausbildungsstätte frei zu wählen." Verfassungsrechtlicher Anker für BO-Bildungsauftrag.</p>
+    </div>
+    <div>
+      <h3 class="sub">BBiG + JArbSchG</h3>
+      <p>BBiG = Rahmen duale Ausbildung (Vertrag, Probezeit, PrüfungsO). JArbSchG = Schutz Minderjähriger im Arbeitsverhältnis → <strong>Pflicht-Konsultation vor Praktikum</strong> (Höchstarbeitszeit · Pausen · Verbot gefährlicher Arbeiten).</p>
+    </div>
+  </div>
+
+  <h2 class="section">Theorie-Trias (jede WiB-Antwort braucht eine davon)</h2>
+  <div class="grid-3">
+    <div>
+      <h3 class="sub">Dauenhauer — Realbegegnungs-Konzept</h3>
+      <p>Drei Anker: <strong>(1) Schul-Umfeld</strong> (Schülerfirma · Pausenverkauf · Schulgarten — niederschwellig) · <strong>(2) Zuhause</strong> (Familien-/Hauswirtschaft) · <strong>(3) Betrieb</strong> (Erkundung + Praktikum — extern, intensiv).</p>
+    </div>
+    <div>
+      <h3 class="sub">Hacker / Aebli — Vollständige Handlung</h3>
+      <p><strong>6 Schritte</strong>: Informieren · Planen · Entscheiden · Durchführen · Prüfen · Bewerten. Ab Klasse 7 <strong>leittextgesteuert</strong> verbindlich. <em>Anti-Korrelat zum kleinschrittigen Frontal-U.</em></p>
+    </div>
+    <div>
+      <h3 class="sub">Köck — Methoden als Kompetenzen</h3>
+      <p>Michael Köck 2021 — Methodische Verfahren sind <strong>Kompetenzen, nicht Werkzeuge</strong>. Ergänzte Rolle „Berufswähler:in" (NICHT-LP+-Diktion · nur ergänzend zitieren).</p>
+    </div>
+  </div>
+
+  <h2 class="section">Berufswahl-Architektur Jgst. 5–10</h2>
+  <ul class="tight">
+    <li><strong>Jgst. 5/6:</strong> Berufsbilder in der Lebenswelt · einfache Erkundungen · Berufekartei (Klassen-Projekt)</li>
+    <li><strong>Jgst. 7:</strong> Selbsteinschätzung + Stärken-Inventur · <strong>Berufswahlpass</strong> startet (Pflicht-Dokumentation)</li>
+    <li><strong>Jgst. 8:</strong> <strong>Regel-Betriebspraktikum</strong> (1-2 Wochen) · Bewerbungstraining · Anforderungsprofile (BUV-Pilot Lena)</li>
+    <li><strong>Jgst. 9 (Regel):</strong> Vertiefungs-Praktikum + <strong>Projektprüfung</strong> (Fächerverbund WiB + WPF · {{§ 12/4 MSO}})</li>
+    <li><strong>Jgst. 9/10 (M-Zug):</strong> MSA + erweiterte BO-Vertiefung · NICHT die Projektprüfung Jgst. 9 Regel</li>
+  </ul>
+
+  <div class="callout">
+    <span class="callout__lbl">Cross-Ref Schulrecht MP_04</span>
+    <strong>§ 12/4 MSO</strong> Projektprüfung — Arbeitszeiten: Technik <strong>240 Min</strong> · W+K <strong>120 Min</strong> · E+S <strong>150 Min</strong> + SL-Zeitzuschlag bis 20 Min Gruppen-Kommunikation. Gesamtnote aus erbrachten Leistungen. <em>NUR Regelklasse Jgst. 9.</em>
+  </div>
+
+  <div class="footer">
+    <span>Cheatsheet 1/4 · KANON</span>
+    <span>Di 26.05.2026 Lerntag</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ SEITE 2 — 13 PHASEN ═══════════════════════════ -->
+<section class="sheet">
+  <div class="sheet__pageno">2 / 4 · 13-PHASEN</div>
+  <div class="sheet__zalgm">D WiB · Phasenstruktur Moritz-Steigerwald</div>
+  <h1 class="sheet__title">13-Phasen-Strukturmodell.</h1>
+  <p class="sheet__sub">Moritz-Steigerwald (Bausteinskript GB WiB) · AG MS-Seminarleiter:innen Unterfranken · verbindliche Diktion</p>
+
+  <p class="lead">Moritz-Steigerwalds 13-Phasen-Modell ist die <strong>verbindliche</strong> Artikulationsschema für WiB in Bayern-Unterfranken (LAA · BUV). Es ist <em>nicht</em> ein 5- oder 4-Phasen-Schema mit anderen Worten — die Differenziertheit ist Programm: WiB-Bildung ist <strong>handlungs- und problemlöseorientiert</strong>, und die 13 Phasen modellieren genau diesen Vollzug.</p>
+
+  <div class="grid-phases">
+    <div class="ph-block-divider">Block A · Problem-Eröffnung (Phasen 1–4)</div>
+    <div class="ph-num">1</div><div class="ph-name">Hinführung / Vorwissens-Aktivierung</div><div class="ph-rationale">Anknüpfen an Lebenswelt + Praxis-Erfahrungen — Lernen wird verankert.</div>
+    <div class="ph-num">2</div><div class="ph-name">Problemstufe</div><div class="ph-rationale">Kognitiver Konflikt: was wir wissen reicht NICHT — Motivations-Hebel.</div>
+    <div class="ph-num">3</div><div class="ph-name">Problemformulierung / Zielangabe</div><div class="ph-rationale">Explizite Stundenfrage. Lernziel transparent — Selbstgesteuertes Lernen wird ermöglicht.</div>
+    <div class="ph-num">4</div><div class="ph-name">Vermutungen</div><div class="ph-rationale">SuS antizipieren Lösungen — Vorwissen wird aktiviert + Erwartungshorizont gesetzt. <em>Konstruktivistischer Hebel.</em></div>
+
+    <div class="ph-block-divider">Block B · Lösungsvollzug (Phasen 5–7)</div>
+    <div class="ph-num">5</div><div class="ph-name">Lösungsplanung / Teilintentionen</div><div class="ph-rationale">Strategie wird sichtbar. <strong>Vollständige-Handlungs-Anker</strong>: Schritt 2 Planen.</div>
+    <div class="ph-num">6</div><div class="ph-name">Lösung <strong>(HAUPTPHASE)</strong></div><div class="ph-rationale">Schwerpunkt der UE — Realbegegnung, Erkundung, Befragung, Werkstück. Vollst. Handlung Schritte 3-4.</div>
+    <div class="ph-num">7</div><div class="ph-name">Präsentation der Ergebnisse</div><div class="ph-rationale">Kommunikationskompetenz (1 der 4 prozessbez.) wird operativ. Plakat, Vortrag, Werkstück-Demo.</div>
+
+    <div class="ph-block-divider">Block C · Erkenntnis-Sicherung (Phasen 8–11)</div>
+    <div class="ph-num">8</div><div class="ph-name">Problembeurteilung / Erkenntnisstufe</div><div class="ph-rationale">Was haben wir herausgefunden? Sachurteil. Vollst. Handlung Schritt 5 Prüfen.</div>
+    <div class="ph-num">9</div><div class="ph-name">Wertungsstufe</div><div class="ph-rationale">Was bedeutet die Erkenntnis für mich/uns? Werturteil → Beurteilen-Kompetenz (1 der 4 prozessbez.).</div>
+    <div class="ph-num">10</div><div class="ph-name">Gesamt-Zusammenfassung</div><div class="ph-rationale">Synthese der Erkenntnisse — Metakognition.</div>
+    <div class="ph-num">11</div><div class="ph-name">Überprüfen der Vermutungen</div><div class="ph-rationale">Rückbezug zu Phase 4 — Hypothesen-Validierung. <em>Wissenschaftspropädeutik im Kleinen.</em></div>
+
+    <div class="ph-block-divider">Block D · Anschluss + Sicherung (Phasen 12–13)</div>
+    <div class="ph-num">12</div><div class="ph-name">Transfer</div><div class="ph-rationale">Anwendung auf neue Situation — Tiefenverarbeitung + Spiralprinzip-Anker.</div>
+    <div class="ph-num">13</div><div class="ph-name">Sicherung</div><div class="ph-rationale">Hefteintrag · Berufswahlpass-Eintrag · LZK-Vorbereitung. Vollst. Handlung Schritt 6 Bewerten/Reflektieren.</div>
+  </div>
+
+  <div class="callout">
+    <span class="callout__lbl">Sekundär-Anker (verträglich, nicht ersetzend)</span>
+    Meyer 2008 (Drei-Phasen-Grundrhythmus: Einstieg/Erarbeitung/Sicherung) · Roth 1957 (6 Lernstufen) · Frey Projektmethode · KMK Vollst. Handlung. <em>Wichtig: Moritz-Steigerwald 13-Phasen ist verbindlich für Bayern-Unterfranken-MS-LAA — nicht durch NRW-Schemata ersetzen!</em>
+  </div>
+
+  <div class="footer">
+    <span>Cheatsheet 2/4 · 13-PHASEN-MS</span>
+    <span>verbindlich Bayern-MS Unterfranken</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ SEITE 3 — GB-MATRIX ═══════════════════════════ -->
+<section class="sheet">
+  <div class="sheet__pageno">3 / 4 · GB-MATRIX</div>
+  <div class="sheet__zalgm">D WiB · GB×Jgst-Matrix</div>
+  <h1 class="sheet__title">GB×Jgst-Matrix.</h1>
+  <p class="sheet__sub">5 Gegenstandsbereiche + LB6 Projekt × Jgst. 5–9 · 30 Zellen · LP+-konform</p>
+
+  <p class="lead">WiB folgt NICHT der GPG-LB-Logik, sondern dem eigenen <strong>Gegenstandsbereich-Modell</strong>: 5 GBs (Arbeit · BO · Wirtschaft · Technik · Recht) + LB6 Projekt als übergreifendem Lernbereich. Pro Jgst. 5 GB-Lernbereiche + 1 Projekt-LB = 6.</p>
+
+  <table class="lb">
+    <thead>
+      <tr>
+        <th></th>
+        <th>GB1 Arbeit</th>
+        <th>GB2 BO</th>
+        <th>GB3 Wirtschaft</th>
+        <th>GB4 Technik</th>
+        <th>GB5 Recht</th>
+        <th>LB6 Projekt</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="jg">5</td>
+        <td class="cell">Arbeitsformen unterscheiden · Klassendienst-Reflexion</td>
+        <td class="cell">Berufe in Lebenswelt · Berufekartei (Klassen-Projekt 5-9)</td>
+        <td class="cell">Bedürfnis/Wunsch · Taschengeld-Tagebuch · Werbe-Aufklärung</td>
+        <td class="cell">Objektbetrachtung Wasserkocher · Technik im Alltag</td>
+        <td class="cell">Regeln in Schule + Familie · Rechte/Pflichten von Kindern</td>
+        <td class="cell">Mini-Projekt Schulgarten o.ä.</td>
+      </tr>
+      <tr>
+        <td class="jg">6</td>
+        <td class="cell">Hausarbeit + Erwerbsarbeit + Ehrenamt (Spiralprinzip)</td>
+        <td class="cell">Erste Berufsfeld-Erkundung · Berufe-Spiel</td>
+        <td class="cell">Markt-Rollenspiel (Spielgeld 5 Stationen)</td>
+        <td class="cell">Bauen + Konstruieren · einfache Mechanik</td>
+        <td class="cell">Geld + Eigentum · Konsumentenrechte</td>
+        <td class="cell">Werkstück-Projekt mit WPF-Anbahnung</td>
+      </tr>
+      <tr>
+        <td class="jg">7</td>
+        <td class="cell">Arbeitsbedingungen + Arbeitsschutz</td>
+        <td class="cell"><strong>Stärken-Inventur</strong> + Berufswahlpass startet · erste Betriebserkundung</td>
+        <td class="cell">Wirtschaftskreislauf einfach · Unternehmer:in-Rolle</td>
+        <td class="cell">Werkstoff- + Verfahrenskunde · Werkstück mit WPF</td>
+        <td class="cell">Jugendschutz · Verträge (Anbahnung)</td>
+        <td class="cell">Schülerfirma-Anbahnung möglich</td>
+      </tr>
+      <tr>
+        <td class="jg">8</td>
+        <td class="cell">Arbeit + Beruf · Berufstypologie</td>
+        <td class="cell"><strong>★ Anforderungsprofile</strong> (BUV-Pilot Lena · 8 UEs · 13-Phasen) · <strong>Regel-Praktikum</strong></td>
+        <td class="cell">Unternehmensformen · Markt + Preis-Bildung</td>
+        <td class="cell">Vertiefung Werkstoffe · CNC/digitale Fertigung</td>
+        <td class="cell">JArbSchG operativ · Praktikums-Rechtsrahmen · Versicherungen</td>
+        <td class="cell">Praktikums-begleitendes Projekt</td>
+      </tr>
+      <tr>
+        <td class="jg">9</td>
+        <td class="cell">Sozialpartnerschaft · Tarif · Gewerkschaften</td>
+        <td class="cell">Bewerbungstraining · 2. Praktikum · Berufswege-Planung</td>
+        <td class="cell">Vertiefung Wirtschaft · Unternehmens-Simulation</td>
+        <td class="cell">Vertiefung Technik · WPF-Vertiefung</td>
+        <td class="cell">Ausbildungsvertrag (BBiG) · Arbeitsverträge · Auflösung</td>
+        <td class="cell"><strong>Projektprüfung MS Regelklasse</strong> (§ 12/4 MSO) — Fächerverbund WiB + WPF</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class="section">Realbegegnungs-Methoden im WiB</h2>
+  <div class="grid-2">
+    <div>
+      <h3 class="sub">Feldforschungs-Methoden (Aufbau Jgst. 5–9)</h3>
+      <ul class="tight">
+        <li><strong>Beobachten</strong> (Klasse 5: spontan · Klasse 8: strukturiert mit Protokoll)</li>
+        <li><strong>Befragen</strong> (mit Fragebogen + Auswertung)</li>
+        <li><strong>Interviewen</strong> (qualitatives Tiefeninterview · ab Klasse 8)</li>
+        <li><strong>Erkundung</strong> (geplante Wirklichkeitsbegegnung mit Auswertung) · Cross-Ref Sk GPG B4 §2.2.2</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="sub">Praxis-Anker / Praktikums-Rahmen Jgst. 8</h3>
+      <ul class="tight">
+        <li><strong>Vorlauf 8–10 Wochen</strong>: BIZ-Recherche · Bewerbungstraining · Platzsuche · JArbSchG-Belehrung</li>
+        <li><strong>Begleitung</strong>: 1 LK-Besuch pro SuS · Praktikumstagebuch täglich · Notfallnummern</li>
+        <li><strong>Bericht</strong>: Berufsbild · Aufgaben · Reflexion · Eignung — bewertet im WiB</li>
+        <li><strong>Nachbereitung</strong>: Klassen-Präsentation · Berufswahlpass-Eintrag · Anschluss-Schritte</li>
+        <li><strong>Recht</strong>: JArbSchG (Höchstzeit · Pausen · Verbot gefährl. Arbeiten) · Versicherung via Schulträger · Erziehungsberechtigte schriftl. informiert</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout callout--warn">
+    <span class="callout__lbl">Falle 2 · „Realbegegnung = jede Sachaufgabe mit Beruf"</span>
+    <strong>NEIN.</strong> Realbegegnung verlangt <strong>echten Kontakt</strong> mit Arbeitsplatz/Betrieb/arbeitenden Personen. Eingekleidete Sachaufgaben („Hans ist Friseur und schneidet …") sind KEINE Realbegegnungen. <em>Dauenhauer-Definition strikt zitieren.</em>
+  </div>
+
+  <div class="footer">
+    <span>Cheatsheet 3/4 · GB-MATRIX</span>
+    <span>5 GB + LB6 Projekt × Jgst 5–9</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ SEITE 4 — BUV-SCHMANKERL LENA ═══════════════════════════ -->
+<section class="sheet">
+  <div class="sheet__pageno">4 / 4 · SCHMANKERL</div>
+  <div class="sheet__zalgm">D WiB · BUV-Sequenz-Schmankerl</div>
+  <h1 class="sheet__title">Anforderungsprofile (Lena).</h1>
+  <p class="sheet__sub">8-UE-Sequenz Jgst. 8 GB2 · 13-Phasen-Standard · Personifikation als sequenzdurchgängige Identifikationsstrategie</p>
+
+  <p class="lead"><strong>LP+-KE</strong> (J8 GB2): „<em>analysieren die Anforderungen ausgewählter Ausbildungsberufe und gleichen sie mit dem eigenen Stärkenprofil ab.</em>" Operatoren: <strong>analysieren</strong> (AFB II) · <strong>abgleichen</strong> (AFB III). Sequenz schließt an Jgst. 7 Stärken-Inventur an + bereitet Praktikum (Jgst. 8/9) vor.</p>
+
+  <h2 class="section">Personifikation Lena · sequenzdurchgängig</h2>
+  <p class="lead"><strong>Lena, 14, Jgst. 8</strong>, Wunschberuf <strong>Fachverkäuferin Bäckereihandwerk</strong>. Stärken: Mathe-Grundrechnen sicher · sozial offen · LRS schwach · Frühaufstehen mag · Kundenkontakt liebt. <em>Lena wird in jeder UE wieder aufgenommen — Identifikationsfigur statt abstraktem Berufswahl-Modell. Didaktisch begründet: konkretes Beispiel reduziert kognitive Last (Sweller); Empathie aktiviert Selbst-Bezug (Cross-Ref Sk Mündigkeit/Selbst-Bezug Detjen).</em></p>
+
+  <div class="seq">
+    <div class="seq-num">1</div>
+    <div><strong>Hinführung Lenas Frage</strong>: „Bäckereifachverkäuferin — passt das zu mir?" Plakat-Impuls + Frage-Sammlung. <em>Phase 1-3.</em></div>
+    <div class="seq-method">Bildimpuls</div>
+
+    <div class="seq-num">2</div>
+    <div><strong>Was sind Anforderungen?</strong> Begriffsarbeit + Beispiele aus Klassen-Berufekartei. Vermutungen. <em>Phase 4-5.</em></div>
+    <div class="seq-method">Begriffsklärung</div>
+
+    <div class="seq-num">3</div>
+    <div><strong>Lenas Berufsbild-Recherche</strong>: BIZ-Online + Berufenet.arbeitsagentur.de — Anforderungen finden. <em>Phase 6 Hauptphase.</em></div>
+    <div class="seq-method">Recherche</div>
+
+    <div class="seq-num">4</div>
+    <div><strong>Strukturieren der Anforderungen</strong>: körperlich · kognitiv · sozial · sprachlich · mathem. (5-Bereiche-Modell). <em>Phase 6-7.</em></div>
+    <div class="seq-method">Mind-Map · Plakat</div>
+
+    <div class="seq-num">5 ★</div>
+    <div><strong>BUV-Schwerpunktstunde: Lenas Profil-Matrix</strong> — Anforderungs-Stärken-Matrix (Abgleich). <strong>AFB III Beurteilen.</strong> <em>Volle 13 Phasen sichtbar.</em></div>
+    <div class="seq-method">Matrix · ★</div>
+
+    <div class="seq-num">6</div>
+    <div><strong>Lenas Diskrepanz</strong>: LRS vs. Kassenarbeit — was tun mit Stärken-Schwächen-Diskrepanzen? Strategien diskutieren.</div>
+    <div class="seq-method">Diskussion</div>
+
+    <div class="seq-num">7</div>
+    <div><strong>Lenas Bewerbungsgespräch</strong>: Rollenspiel — wie spricht Lena über Stärken + Diskrepanz?</div>
+    <div class="seq-method">Rollenspiel</div>
+
+    <div class="seq-num">8</div>
+    <div><strong>Lenas Plan B + Sicherung</strong>: Alternativen erkunden; Berufswahlpass-Eintrag. <strong>Transfer auf eigenes Profil</strong>: jede:r SuS macht eigene Anforderungs-Stärken-Matrix.</div>
+    <div class="seq-method">Transfer · Pass</div>
+  </div>
+
+  <div class="callout">
+    <span class="callout__lbl">Sequenzplanungs-Schmankerl für die Prüfung</span>
+    <strong>Personifikations-Prinzip</strong> als WiB-Spezialität: Identifikationsfigur durch die ganze Sequenz reduziert kognitive Last (Sweller · Cognitive Load Theory), aktiviert emotionale Selbst-Bezugnahme, ermöglicht abstrakte Konzept-Wiederholung an konkreten Fall. <em>Im Examen explizit benennen: „Ich nutze Personifikation als sequenzdurchgängige Identifikationsstrategie — das senkt Extraneous Cognitive Load und erlaubt iterative Konzept-Spiralisierung."</em>
+  </div>
+
+  <h2 class="section">Schnell-Anker (für mündliche Antwort-Eröffnung WiB)</h2>
+  <ul class="tight">
+    <li><strong>LP+-Position:</strong> Leitfach Berufsorientierung · integriert WPFs Technik/E+S/W+K · Kompetenzstrukturmodell 4×5</li>
+    <li><strong>Theoretiker:</strong> Dauenhauer (Realbegegnung) · Hacker/Aebli (Vollst. Handlung 6 Schritte) · Köck 2021 (Methoden als Kompetenzen)</li>
+    <li><strong>Phasen:</strong> Moritz-Steigerwald 13-Phasen (verbindlich Bayern-Unterfranken-MS) — nicht durch andere ersetzen!</li>
+    <li><strong>Rechtsrahmen:</strong> GG Art. 12 · BBiG · JArbSchG · § 12/4 MSO Projektprüfung</li>
+    <li><strong>Eigene Praxis:</strong> M7c SJ 25/26 als Cross-Curriculum-Anker (Mischungsverhältnisse Bäckerei) · ggf. eigene BUV-Erfahrung</li>
+  </ul>
+
+  <div class="callout callout--warn">
+    <span class="callout__lbl">3 Klassische Fallen</span>
+    (1) <strong>Projektprüfung Jgst. 9 ist NUR Regelklasse</strong>, NICHT M-Zug (§ 12/4 MSO).
+    (2) <strong>Vollst. Handlung ≠ kleinschrittige Anleitung</strong> — SuS planen + entscheiden selbst (konstruktivistisch).
+    (3) <strong>Realbegegnung ≠ eingekleidete Sachaufgabe</strong> — echter Kontakt mit Arbeitsplatz/Person erforderlich.
+  </div>
+
+  <div class="footer">
+    <span>Cheatsheet 4/4 · ANFORDERUNGSPROFILE J8 (LENA)</span>
+    <span>13-Phasen · BUV-Template</span>
+  </div>
+</section>
+
+</body>
+</html>

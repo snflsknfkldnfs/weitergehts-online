@@ -270,6 +270,61 @@
       gap: 20px;
       flex-wrap: wrap;
     }
+
+    /* Lerntag-Banner direkt unter Hero — Master-Plan-Verweis */
+    .hub-lerntag {
+      background: var(--accent-soft, #e8ece2);
+      border: 1px solid var(--rule);
+      border-left: 4px solid var(--accent);
+      padding: 22px 26px 20px;
+      margin: 36px 0 24px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+    }
+    .hub-lerntag__cap { font-family: var(--mono); font-size: 10.5px; letter-spacing: 1.4px; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 6px; }
+    .hub-lerntag__title { font-family: var(--serif); font-size: 22px; line-height: 1.2; font-weight: 500; margin: 0 0 6px; color: var(--ink); }
+    .hub-lerntag__sub { font-family: var(--serif); font-style: italic; font-size: 14.5px; line-height: 1.5; color: var(--ink); margin: 0; }
+    .hub-lerntag__btn { display: inline-block; padding: 10px 18px; background: var(--ink); color: var(--paper); text-decoration: none; font-family: var(--mono); font-size: 11px; letter-spacing: 1.3px; text-transform: uppercase; font-weight: 600; border: 1px solid var(--ink); }
+    .hub-lerntag__btn:hover { background: var(--accent); border-color: var(--accent); }
+    @media (max-width: 720px) {
+      .hub-lerntag { grid-template-columns: 1fr; }
+      .hub-lerntag__btn { justify-self: start; }
+    }
+
+    /* Lernpaket-Cards (Cheatsheet + NotebookLM pro Fach) */
+    .lp-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    .lp-card {
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      padding: 16px 18px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .lp-card__fach { font-family: var(--mono); font-size: 10px; letter-spacing: 1.3px; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+    .lp-card__links { display: flex; flex-direction: column; gap: 4px; margin-top: 4px; }
+    .lp-card__link {
+      font-family: var(--mono);
+      font-size: 11.5px;
+      letter-spacing: 0.4px;
+      color: var(--ink);
+      text-decoration: none;
+      padding: 6px 10px;
+      border: 1px solid var(--hairline);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      transition: border-color .12s, background .12s;
+    }
+    .lp-card__link:hover { border-color: var(--accent); background: var(--accent-soft, #e8ece2); }
+    .lp-card__link__arrow { color: var(--accent); font-weight: 600; }
   </style>
 </head>
 <body>
@@ -297,6 +352,15 @@
         <span><b>~16</b> · Fallbeispiele</span>
       </div>
     </header>
+
+    <aside class="hub-lerntag" aria-label="Lerntag-Plan 25.–28. Mai 2026">
+      <div>
+        <div class="hub-lerntag__cap">Lerntag-Choreographie · Mo 25. – Do 28. Mai 2026</div>
+        <h2 class="hub-lerntag__title">Vier Tage bis zur Prüfung.</h2>
+        <p class="hub-lerntag__sub">Master-Plan mit Slot-Architektur — Mo Schulrecht · Di Didaktik (WiB + Mathe + Sport) · Mi Sozialkunde · Do Prüfung. Spaced Repetition + Sleep Consolidation + Distributed Practice integriert.</p>
+      </div>
+      <a class="hub-lerntag__btn" href="../../LERN_PROGRAMM_25-28_MAI.md">Lernplan öffnen →</a>
+    </aside>
 
     <div class="hub-section-head">
       <span class="hub-section-head__num">Prüfungsteil II</span>
@@ -377,6 +441,58 @@
           <span class="hub-card__arrow">öffnen →</span>
         </div>
       </a>
+
+    </div>
+
+    <div class="hub-section-head">
+      <span class="hub-section-head__num">Lernpaket</span>
+      <h2 class="hub-section-head__title">Cheatsheets + NotebookLM-Sources</h2>
+      <div class="hub-section-head__rule"></div>
+    </div>
+    <p style="font-family: var(--serif); font-size: 15px; line-height: 1.55; color: var(--ink); max-width: 760px; margin: 0 0 20px;">
+      Pro Fach ein druckbares 4-Seiten-Cheatsheet (lb-matrix-Übersicht · fach-spezifische Phasenstruktur · BUV-Sequenz-Schmankerl) und eine NotebookLM-Source-MD für Audio-Overview-Generierung. Free-Tier-Strategie: 3 Audio-Chunks/Tag.
+    </p>
+    <div class="lp-grid">
+
+      <div class="lp-card">
+        <span class="lp-card__fach">N18 · Sozialkunde</span>
+        <div class="lp-card__links">
+          <a class="lp-card__link" href="n18-sozialkunde/cheatsheet.html"><span>Cheatsheet (4× A4)</span><span class="lp-card__link__arrow">↗</span></a>
+          <a class="lp-card__link" href="n18-sozialkunde/notebooklm-source.md"><span>NotebookLM-Source</span><span class="lp-card__link__arrow">↗</span></a>
+        </div>
+      </div>
+
+      <div class="lp-card">
+        <span class="lp-card__fach">D · Mathematik</span>
+        <div class="lp-card__links">
+          <a class="lp-card__link" href="d-mathematik/cheatsheet.html"><span>Cheatsheet (4× A4)</span><span class="lp-card__link__arrow">↗</span></a>
+          <a class="lp-card__link" href="d-mathematik/notebooklm-source.md"><span>NotebookLM-Source</span><span class="lp-card__link__arrow">↗</span></a>
+        </div>
+      </div>
+
+      <div class="lp-card">
+        <span class="lp-card__fach">D · WiB</span>
+        <div class="lp-card__links">
+          <a class="lp-card__link" href="d-wib/cheatsheet.html"><span>Cheatsheet (4× A4)</span><span class="lp-card__link__arrow">↗</span></a>
+          <a class="lp-card__link" href="d-wib/notebooklm-source.md"><span>NotebookLM-Source</span><span class="lp-card__link__arrow">↗</span></a>
+        </div>
+      </div>
+
+      <div class="lp-card">
+        <span class="lp-card__fach">D · Sport</span>
+        <div class="lp-card__links">
+          <a class="lp-card__link" href="d-sport/cheatsheet.html"><span>Cheatsheet (4× A4)</span><span class="lp-card__link__arrow">↗</span></a>
+          <a class="lp-card__link" href="d-sport/notebooklm-source.md"><span>NotebookLM-Source</span><span class="lp-card__link__arrow">↗</span></a>
+        </div>
+      </div>
+
+      <div class="lp-card" style="border-left: 3px solid var(--accent);">
+        <span class="lp-card__fach">Schulrecht V3</span>
+        <div class="lp-card__links">
+          <a class="lp-card__link" href="../../schulrecht/skript-v3/cheatsheets.html"><span>Cheatsheets (10× A4)</span><span class="lp-card__link__arrow">↗</span></a>
+          <a class="lp-card__link" href="../../schulrecht/skript-v3/notebooklm-sources/"><span>NotebookLM-Chunks (3)</span><span class="lp-card__link__arrow">↗</span></a>
+        </div>
+      </div>
 
     </div>
 

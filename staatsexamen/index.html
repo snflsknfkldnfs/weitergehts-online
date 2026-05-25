@@ -21,6 +21,17 @@
 .pruefungs-table tr.is-planned { opacity: 0.55; }
 .pruefungs-table tr.is-planned .titel::after { content: " · in Vorbereitung"; font-family: var(--lr-font-mono); font-size: 10.5px; letter-spacing: 0.6px; color: var(--mute2); }
 .note { font-family: var(--lr-font-serif); font-style: italic; color: var(--muted); font-size: 13px; }
+
+.lerntag-block { margin-top: 48px; padding: 28px 32px; background: var(--paper); border: 1px solid var(--rule); border-left: 4px solid var(--accent); display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; }
+.lerntag-block__cap { font-family: var(--lr-font-mono); font-size: var(--lr-cap-size); letter-spacing: var(--lr-cap-track); text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 8px; }
+.lerntag-block h2 { font-size: 24px; font-weight: 600; margin: 0 0 8px; }
+.lerntag-block p { font-family: var(--lr-font-serif); font-style: italic; color: var(--muted); font-size: 15.5px; line-height: 1.55; margin: 0; }
+.lerntag-block__cta { display: inline-block; padding: 11px 22px; background: var(--ink); color: var(--paper); text-decoration: none; font-family: var(--lr-font-mono); font-size: 11.5px; letter-spacing: 1.3px; text-transform: uppercase; font-weight: 600; }
+.lerntag-block__cta:hover { background: var(--accent); }
+.lerntag-block__sub { margin-top: 14px; display: flex; gap: 12px; flex-wrap: wrap; font-family: var(--lr-font-mono); font-size: 11px; letter-spacing: 0.6px; color: var(--muted); }
+.lerntag-block__sub a { color: var(--accent); text-decoration: none; border-bottom: 1px dotted var(--accent); }
+.lerntag-block__sub a:hover { color: var(--ink); border-color: var(--ink); }
+@media (max-width: 720px) { .lerntag-block { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body data-lernraum>
@@ -99,6 +110,26 @@
     Die Reihenfolge entspricht der ZALGM-Bewertungsmatrix. Lernstand pro Themenfeld setzt
     sich aus dem jeweiligen Detail (L3) zusammen.
   </p>
+
+  <aside class="lerntag-block" aria-label="Lerntag-Choreographie Mai 2026">
+    <div>
+      <div class="lerntag-block__cap">Lerntag-Choreographie · Mo 25. – Do 28. Mai 2026</div>
+      <h2>Vier Tage bis zur Prüfung.</h2>
+      <p>
+        Master-Plan mit Slot-Architektur — Mo Schulrecht · Di Didaktik (WiB + Mathe + Sport) ·
+        Mi Sozialkunde · Do Prüfung. Pro Fach Cheatsheet (4× A4) und NotebookLM-Source.
+      </p>
+      <div class="lerntag-block__sub">
+        <span><a href="schulrecht/skript-v3/cheatsheets.html">Schulrecht Cheatsheets</a></span>
+        <span>·</span>
+        <span><a href="fachdidaktik/skript-v3/n18-sozialkunde/cheatsheet.html">Sk</a></span>
+        <span><a href="fachdidaktik/skript-v3/d-mathematik/cheatsheet.html">Mathe</a></span>
+        <span><a href="fachdidaktik/skript-v3/d-wib/cheatsheet.html">WiB</a></span>
+        <span><a href="fachdidaktik/skript-v3/d-sport/cheatsheet.html">Sport</a></span>
+      </div>
+    </div>
+    <a class="lerntag-block__cta" href="LERN_PROGRAMM_25-28_MAI.md">Master-Plan öffnen →</a>
+  </aside>
 </main>
 <script src="../assets/js/core.js"></script>
 </body>
