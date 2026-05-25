@@ -248,7 +248,7 @@
       }
 
       function renderSheet(d) {
-        const sheet = el('section', { class: 'sheet' });
+        const sheet = el('section', { class: 'sheet', id: d.id });
         const hdr = el('div', { class: 'sheet__hdr' });
         hdr.appendChild(el('div', { class: 'sheet__id' }, 'MP_' + d.id.slice(2)));
         const h2 = el('h2', { class: 'sheet__titel' }, plainText(d.titel) + ' ');

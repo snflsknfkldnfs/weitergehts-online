@@ -162,7 +162,7 @@
         h('div', { class: 'deck-box__row' }, h('span', null, 'Hochprior'), h('b', null, d.deck.hochprior)),
         h('div', { class: 'deck-box__row' }, h('span', null, 'Fallen'), h('b', null, d.deck.fallen)),
       ),
-      h('button', { class: 'print-btn', type: 'button', 'aria-label': 'Druckansicht öffnen', onclick: () => window.print() }, '↓ Spickzettel'),
+      h('button', { class: 'print-btn', type: 'button', 'aria-label': 'Diese Mappe drucken', onclick: () => window.print() }, '↓ Mappe drucken'),
     ),
   );
 
