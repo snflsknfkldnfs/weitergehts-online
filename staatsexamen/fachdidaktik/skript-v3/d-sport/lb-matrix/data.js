@@ -32,32 +32,59 @@
 //
 // ZEILEN: Jgst 5, 6, 7, 8, 9, 10 (M-Zug)
 //
-// PHASEN-STANDARD (Primärquelle User-eigene UV-Artikulation 19.12.2022 Sport 7 Handball
-//                  Sprungwurf · Studienseminar Unterfranken · Söll-Drei-Phasen-Modell als Rahmen)
+// PHASEN-STANDARD — KORRIGIERT 28.05.2026 nach Auswertung Bausteinskripte AG MS-Sem.-Unterfranken
 //
-//   7-PHASEN-SÖLL-KONFORM (Söll 2019 + UV-Artikulation Unterfranken kompatibel)
+//   VERBINDLICH BAYERN-UNTERFRANKEN = 3-PHASEN-MODELL nach HOFMANN, SR
+//   (Bausteinskript SP GB Kap. 8 "Strukturmodell einer Sportstunde")
+//   Bestätigt verbatim in SP B2 (Schwimmen) Kap. 1: "Schwimmen ist wie jeder andere
+//   Sportunterricht in drei Phasen gegliedert."
+//
+//   3 HAUPTPHASEN:
+//   1 AUFWÄRMPHASE      (8-10 min · Doppelstd. bis 15 min)
+//     1.1 allgemeine Erwärmung (HK-Aktivierung, mobilisierend, abwechslungsreich)
+//     1.2 spezielle Erwärmung  (auf thematischen Schwerpunkt ausgerichtet)
+//   2 HAUPTPHASE/ERARBEITUNG (ca. 25 min · Doppelstd. 2 Schwerpunkte à 30 min)
+//     Stundentypen Hofmann: Sammeln Bewegungserfahrung · Konditionsschulung ·
+//     Neuerwerb Bewegungsfertigkeiten · Üben+Festigen · Gestalten+Anwenden
+//   3 SCHLUSSTEIL/AUSKLANG (5 min · Doppelstd. 10 min)
+//     Beruhigung, Fehlerbesprechung, Lernzielkontrolle, Hygiene
+//
+//   OPERATIVE 7-SUB-PHASEN-FEINGLIEDERUNG (sekundär · Verfeinerung der 3 Hofmann-Phasen
+//   aus Aufwärm-Sub-Stufung + Meinel/Schnabel-Bewegungslernen-Logik + UV-Empirie):
 //   ─────────────────────────────────────────────  ─────────────────────────
-//   1 Begrüßung (Anwesenheit · Schmuck · Zielangabe)            EINSTIMMUNG
-//   2 Allgemeines Aufwärmen (HK-Aktivierung · mobilisierend)    EINSTIMMUNG
-//   3 Spezifisches Aufwärmen (sportartspezifisch)               EINSTIMMUNG
-//   4 Erarbeitung (Bewegungslernen · Demo · Knotenpunkte)       SCHWERPUNKT
-//   5 Übung / Stationsbetrieb (Festigung · MÜR)                 SCHWERPUNKT
-//   6 Anwendung / Spielform (variable Verfügbarkeit · MSR)      SCHWERPUNKT
-//   7 Ausklang / Reflexion (Cool-down · Verbalisierung · Abbau) AUSKLANG
+//   1 Begrüßung (Anwesenheit · Schmuck · Zielangabe)            HOFMANN 1 Stundeneröffnung
+//   2 Allgemeines Aufwärmen (HK-Aktivierung · mobilisierend)    HOFMANN 1.1
+//   3 Spezifisches Aufwärmen (sportartspezifisch)               HOFMANN 1.2
+//   4 Erarbeitung (Bewegungslernen · Demo · Knotenpunkte)       HOFMANN 2 (Neuerwerb)
+//   5 Übung / Stationsbetrieb (Festigung · MÜR)                 HOFMANN 2 (Üben+Festigen)
+//   6 Anwendung / Spielform (variable Verfügbarkeit · MSR)      HOFMANN 2 (Gestalten+Anwenden)
+//   7 Ausklang / Reflexion (Cool-down · Verbalisierung · Abbau) HOFMANN 3
 //
-//   Phasen-Slot-Mapping (7 Slots im Datenmodell):
-//     s1_begruessung       → Phase 1
-//     s2_aufwaermen_allg   → Phase 2 (allg. HK-Aktivierung)
-//     s3_aufwaermen_spez   → Phase 3 (sportartspezifische Vorbereitung)
-//     s4_erarbeitung       → Phase 4 (Demo · Grobform · erste Versuche)
-//     s5_uebung            → Phase 5 (Hauptphase Stationsbetrieb/MÜR)
-//     s6_anwendung         → Phase 6 (Spielform · variable Verfügbarkeit)
-//     s7_ausklang          → Phase 7
+//   Phasen-Slot-Mapping (7 Slots im Datenmodell · operative Feingliederung):
+//     s1_begruessung       → Sub-Phase 1 (Hofmann 1 Eröffnung)
+//     s2_aufwaermen_allg   → Sub-Phase 2 (Hofmann 1.1 allg. HK-Aktivierung)
+//     s3_aufwaermen_spez   → Sub-Phase 3 (Hofmann 1.2 sportartspezifische Vorbereitung)
+//     s4_erarbeitung       → Sub-Phase 4 (Hofmann 2 · Demo · Grobform)
+//     s5_uebung            → Sub-Phase 5 (Hofmann 2 · Stationsbetrieb/MÜR)
+//     s6_anwendung         → Sub-Phase 6 (Hofmann 2 · Spielform/MSR)
+//     s7_ausklang          → Sub-Phase 7 (Hofmann 3)
 //
-//   Söll-Warnung: »Negatives Attraktivitätsgefälle« vermeiden — das Aufwärmspiel
-//   darf den Schwerpunkt emotional nicht überstrahlen. Speziell die SPEZIFISCHE
-//   Erwärmung (Phase 3) ist NICHT als attraktives Spiel zu gestalten, sondern als
-//   sportartspezifische Vorbereitung der Schwerpunkt-Bewegung.
+//   Wichtige Bausteinskript-Warnung (HOFMANN GB Kap. 8, sinngemäss; Söll-äquivalent):
+//   "Negatives Attraktivitätsgefälle" vermeiden — die SPEZIFISCHE Erwärmung (Sub-Phase 3)
+//   ist NICHT als attraktives Spiel zu gestalten, sondern als sportartspezifische
+//   Vorbereitung der Schwerpunkt-Bewegung. Sonst überstrahlt Aufwärmen den Schwerpunkt.
+//
+// WEITERE BAUSTEINSKRIPT-INHALTE (B6/B7/GB Kap. 5-7):
+//   - GB Kap. 5: 4 Methoden-Grundkonzeptionen (deduktiv/induktiv × analytisch-synth/ganzheitlich)
+//   - GB Kap. 6: 7 Intensivierungs-Wege (organisatorisch · Zusatzaufgaben · Circuit ·
+//                rhythmische Reihen · vielfältige Lehrwege · methodische Spruenge · Leistung)
+//   - GB Kap. 7: 6 Merkmale "guten" Sportunterrichts (AK Sport 2011)
+//   - B6: Großtrampoline NICHT zulässig · Schmuck ablegen · schulsportgerechte Brille ·
+//         LK als Erste:r/Letzte:r · Sicht-/Funktionsprüfung Geräte · Stop-Signal
+//   - B7: 3-Achsen-Beurteilung (Können · Lernverhalten · Lernfortschritt) ·
+//         LASPO "2 praktische + 1 nicht-praktischer LNW pro HJ" ·
+//         DSU-Note-Formel (BSU×2 + DSU) : 3 ·
+//         MSO § 15 Abs. 2 S. 2: Sport ist KEIN Vorrückungsfach!
 //
 // LERNZIELE 3-DIMENSIONAL (Mager-konform, Sport-spezifisch)
 //   - motorisch  (konkrete Bewegungshandlung + Erfolgs-Kriterium)
@@ -70,19 +97,37 @@
 //   · Hallenplan + Helfer-/Sicherungskonzept dokumentiert
 //
 // QUELLEN
-//   PRIMÄR
-//   · User-eigene UV-Artikulation (19.12.2022 · Sport 7 Handball Sprungwurf ·
-//     Lehrprobe Studienseminar Unterfranken)
+//   PRIMÄR · BAYERN-UNTERFRANKEN-BAUSTEINSKRIPTE (Hofmann SR · AG MS-Sem.-Unterfranken)
+//   · SP GB Grundsätze eines zeitgemäßen Sportunterrichts (8 Kap.)
+//     PDF: Unterrichtseinwicklung/Repsitory Unterrichtsmaterial/Sport Ressourcen/
+//          Sport_Bausteinskripte/SP GB Grundsätze eines zeitgemäßen Sportunterrichts.pdf
+//   · SP B1 Werfen/Springen/Laufen — Leichtathletik
+//   · SP B2 Sich im Wasser bewegen — Schwimmen
+//   · SP B3 Spielen und Wetteifern mit + ohne Ball (Kleine Spiele + 4 Sportspiele FB/HB/BB/VB)
+//   · SP B4 Sich an + mit Geräten bewegen — Turnen + Bewegungskünste
+//   · SP B5 Sich körperlich ausdrücken und Bewegung gestalten — Gymnastik + Tanz
+//   · SP B6 Sicherheit im Sportunterricht (5 Kap.: Sportstätten/Geräte · Kleidung · Aufsicht · Inhalte · Lit.)
+//   · SP B7 Leistungsmessung und Leistungsbeurteilung
+//   · LehrplanPLUS Bayern Mittelschule Sport (ISB)
+//   · User-eigene UV-Artikulation (19.12.2022 · Sport 7 Handball Sprungwurf · Lehrprobe Stud-Sem. Unterfranken)
 //     PDF: Unterrichtseinwicklung/Repsitory Unterrichtsmaterial/Einzuordnen/
 //          Schulmaterial_Neu_Strukturiert/Sport/Klasse_7/7. Klasse/Handball/Sprungwurf/
 //          Artikulation Sport 7 Handball Sprungwurf (UV).pdf
-//   · LehrplanPLUS Bayern Mittelschule Sport (ISB)
-//   · Söll, W. (2019): Sportunterricht — sportunterrichten. Schorndorf: Hofmann, 10. Aufl. (Rahmen)
-//   · KMBek Sicherheit im Sportunterricht + KUVB Bayern (Helferkonzept, Helfergriffe)
-//   SEKUNDÄR (ergänzende fachdidaktische Anker)
-//   · Meinel, K. / Schnabel, G. (2018): Bewegungslehre — Sportmotorik. Aachen: Meyer & Meyer.
+//   · KMBek Sicherheits-Bestimmungen Schulsport (08.04.2003)
+//   · KMBek Sicherheit in Schule + Schülerunfallversicherung (11.12.2002)
+//   · KUVB Bayern (Helferkonzept · Helfergriffe · Sicherheits-Veröffentlichungen)
+//   · MSO § 15 Abs. 2 S. 2 (Sport ist KEIN Vorrückungsfach)
+//   · LASPO Bayer. Landesstelle Schulsport — Bewertungstabellen LA + Schwimmen
+//   SEKUNDÄR (ergänzende fachdidaktische Anker · NICHT im Bayern-Unterfranken-Bausteinskript zentral)
+//   · Söll, W. (2019): Sportunterricht — sportunterrichten. Schorndorf: Hofmann, 10. Aufl.
+//     (NICHT im Bausteinskript Hofmann SR zitiert — nur als überregional verträgliche Theorie-Quelle)
+//   · Kurz, Dietrich (1990 ff.): 6 Pädagogische Perspektiven (NRW-/Bundes-Tradition, im Bausteinskript NICHT zentral)
+//   · Meinel, K. / Schnabel, G. (2018): Bewegungslehre — Sportmotorik. Aachen: Meyer & Meyer (Klassiker)
 //   · Größing, S. (2007): Einführung in die Sportdidaktik. Wiebelsheim: Limpert.
 //   · Roth, K. / Memmert, D. (Hg.): Ballschule Heidelberg — Spielerische Sportförderung.
+//   · Garreis/Krug/Wolf (1997) Sportstunden mit Pfiff
+//   · Dill et al. (2001) Die Fundgrube für den Sport-Unterricht
+//   · Fetz (1996) · Erdmann (2007) · Miethling (1999) — Leistungsbeurteilungs-Klassiker
 //   · Jahresplanung_Sport7_2025-26.md (eigene Praxis Sm7abc)
 //   · Sequenzplan_Handball_7abc_2025-26.md (Pilot-Material verbatim)
 //   · Sport_Anleitungen/Anleitung zur TUV-Erstellung Sport (Sm8ab).md
@@ -94,11 +139,11 @@ window.MATRIX = {
   schulart: 'Mittelschule Bayern · Erziehung im + durch Sport',
 
   meta: {
-    version: 'v1.2 · 2026-05-19 · Sport-Spiral · Söll-konforme 7-Phasen-Struktur (spez. Aufwärmen als eigenständige Phase) · Primärquelle: Söll 2019 + User-eigene UV-Artikulation (19.12.2022, Sprungwurf)',
+    version: 'v1.3 · 2026-05-28 · Sport-Spiral · KORRIGIERT auf 3-Phasen-Hofmann (Bausteinskript Bayern-Unterfranken) als VERBINDLICHEN Rahmen + 7-Sub-Phasen-Feingliederung als operative Verfeinerung · Primärquelle: Bausteinskripte AG MS-Sem.-Unterfranken (Hofmann SR) GB+B6+B7 + User-eigene UV-Artikulation (19.12.2022, Sprungwurf)',
     spaltenLogik: 'Sportliche Handlungsfelder (Leichtathletik · Schwimmen · Kleine Spiele und Sportspiele · Turnen und Bewegungskünste · Gymnastik und Tanz) + Gegenstandsbereiche Fairness/Kooperation/Selbstkompetenz und Gesundheit/Fitness als Querschnitt. LehrplanPLUS Bayern MS Sport.',
-    quellenLogik: 'verbatim für LehrplanPLUS Jgst. 7 (Jahresplanung_Sport7_2025-26 · eigene Quelle) + Pilot Handball (Sequenzplan-MD verbatim). Phasenstruktur primaer aus User-eigener UV-Artikulation Sprungwurf (Lehrprobe Studienseminar Unterfranken). sekundaer für andere Jgst (Anleitungen + KMK-Anker).',
-    pilotSequenz: 'Handlungsfeld Kleine Spiele und Sportspiele · Jgst. 7 · Handball-Sequenz · 9 UEs · Schwerpunktstunde UE 5 Schlagwurf-Präzision (BUV »Jahrmarkt«) mit Hallenplan + Helferkonzept.',
-    fachdidaktikStandard: 'Primaerquelle: User-eigene UV-Artikulation (19.12.2022, Sport 7 Handball Sprungwurf, Lehrprobe Studienseminar Unterfranken). Rahmen: Söll-Drei-Phasen-Modell (Sportunterricht — sportunterrichten 2019). Erganzend: LehrplanPLUS Bayern MS Sport (ISB) + Meinel/Schnabel Bewegungslehre + Anleitung TUV Sm8ab + ROLE_Sport_BUV (Qualitätskriterien: Sachanalyse + Didaktische Reduktion + Methodische Analyse + Stundenskizze + Hallenplan + Helferkonzept + Sicherheit/KUVB).',
+    quellenLogik: 'verbatim für LehrplanPLUS Jgst. 7 (Jahresplanung_Sport7_2025-26 · eigene Quelle) + Pilot Handball (Sequenzplan-MD verbatim). Phasenstruktur primaer aus Bausteinskript Hofmann SR GB Kap. 8 (3-Phasen-Modell verbindlich Bayern-Unterfranken) · UV-Artikulation Sprungwurf als empirischer Praxis-Beleg. Sekundaer für andere Jgst (Anleitungen + KMK-Anker).',
+    pilotSequenz: 'Handlungsfeld Kleine Spiele und Sportspiele · Jgst. 7 · Handball-Sequenz · 9 UEs · Schwerpunktstunde UE 5 Schlagwurf-Präzision (BUV »Jahrmarkt«) mit Hallenplan + Helferkonzept · 3-Phasen-Hofmann mit 7-Sub-Stufung.',
+    fachdidaktikStandard: 'VERBINDLICH Bayern-Unterfranken-MS-LAA: Bausteinskripte AG MS-Sem.-Unterfranken Hofmann SR (SP GB + B1-B7). 3-Phasen-Hauptmodell (Aufwärm/Haupt/Ausklang) verbindlich; 7-Sub-Phasen-Feingliederung operativ aus Aufwärm-Sub-Stufung + Meinel/Schnabel + UV-Empirie. Söll 2019 + Kurz-6-Perspektiven sind SEKUNDÄR (NICHT im Bausteinskript zentral!). Praxis-Anker: User-eigene UV-Artikulation (19.12.2022, Sport 7 Handball Sprungwurf, Lehrprobe Studienseminar Unterfranken). Erganzend: LehrplanPLUS Bayern MS Sport (ISB) + Meinel/Schnabel Bewegungslehre + Anleitung TUV Sm8ab + ROLE_Sport_BUV (Qualitätskriterien: Sachanalyse + Didaktische Reduktion + Methodische Analyse + Stundenskizze + Hallenplan + Helferkonzept + Sicherheit/KUVB).',
     bayernKanon: {
       gegenstandsbereiche: [
         'Sportliche Handlungsfelder',
@@ -286,7 +331,7 @@ window.MATRIX = {
             titel: '9-UE-Sequenz Handball · Schwerpunkt Schlagwurf-Präzision',
             praxis: 'Eigene Praxis Sm7abc SJ 25/26 verbatim + BUV-Standard',
             gesamtzeit: '9 UEs à 45 min = 6,75 Zeitstunden',
-            phasenStandard: 'Söll-Drei-Phasen-Modell (Einstimmung · Schwerpunkt · Ausklang) mit Söll-konformer 7-Phasen-Feingliederung (Begrüßung · allgemeines Aufwärmen · spezifisches Aufwärmen · Erarbeitung · Übung/Stationsbetrieb · Anwendung/Spielform · Ausklang) — spezifisches Aufwärmen als eigenständige Phase mit eigener didaktischer Funktion (Söll 2019)',
+            phasenStandard: '3-Phasen-Modell nach HOFMANN (Bausteinskript SP GB Kap. 8, AG MS-Sem.-Unterfranken — VERBINDLICH Bayern-Unterfranken-MS-LAA): Aufwärmphase (mit Sub-Stufung 1.1 allg + 1.2 spez. Erwärmung) · Hauptphase/Erarbeitungsphase (Stundentypen: Sammeln · Konditionsschulung · Neuerwerb · Üben+Festigen · Gestalten+Anwenden) · Schlussteil/Ausklang. Operative 7-Sub-Phasen-Feingliederung (Begrüßung · allg. Aufwärmen · spez. Aufwärmen · Erarbeitung · Übung/Stationsbetrieb · Anwendung/Spielform · Ausklang) als Verfeinerung aus Aufwärm-Sub-Stufung + Meinel/Schnabel-Bewegungslernen + UV-Empirie. Söll 2019 verträglich, aber NICHT im Bausteinskript zitiert.',
             qualitaetsstandards_quelle: 'Primärquelle: User-eigene UV-Artikulation (19.12.2022, Sport 7 Handball Sprungwurf, Lehrprobe Studienseminar Unterfranken) · Söll, W. (2019) Sportunterricht — sportunterrichten (Hofmann, 10. Aufl.) · Meinel/Schnabel Bewegungslehre · LehrplanPLUS Bayern MS Sport (ISB)',
             sequenz_meta: {
               lehrplanbezug: 'Sport Jgst. 7 · Handlungsfeld Kleine Spiele und Sportspiele (Handball) · Querverweise Gegenstandsbereiche Fairness, Kooperation, Selbstkompetenz + Gesundheit und Fitness',
@@ -309,7 +354,7 @@ window.MATRIX = {
                 'Methodische Übungsreihe (MÜR) Schlagwurf: vom Grobform-Erwerb (UE 5) über Feinkoordination zur variablen Verfügbarkeit (Meinel/Schnabel)',
                 'Differenzierung in 4 Spuren (DaZ · LRS · leistungsschwach · leistungsstark) operationalisiert pro Station',
                 'Helfen und Sichern als Pflicht (Gegenstandsbereich Fairness, Kooperation, Selbstkompetenz integriert · KMBek Sicherheit · KUVB)',
-                'Söll-Drei-Phasen-Modell mit 7-Phasen-Feingliederung (Begrüßung · allgemeines Aufwärmen · spezifisches Aufwärmen · Erarbeitung · Übung/Stationsbetrieb · Anwendung/Spielform · Ausklang) konsequent — spezifische Erwärmung als eigenständige Phase mit sportartspezifischer Vorbereitung der Schwerpunkt-Bewegung',
+                '3-Phasen-Hofmann-Hauptmodell (Aufwärm/Haupt/Ausklang · VERBINDLICH Bausteinskript Bayern-Unterfranken) mit operativer 7-Sub-Phasen-Feingliederung (Begrüßung · allg. Aufwärmen · spez. Aufwärmen · Erarbeitung · Übung/Stationsbetrieb · Anwendung/Spielform · Ausklang) als Verfeinerung — spezifische Erwärmung als sportartspezifische Vorbereitung der Schwerpunkt-Bewegung (Bausteinskript-Warnung: NICHT als attraktives Spiel gestalten)',
               ],
               kompetenzerwerb_progression: 'Progression der prozessbezogenen Kompetenzen: UE 1-3 vorrangig Spielen + Kooperieren, kommunizieren, präsentieren (Goalchaball-Hinführung als Methodische Spielreihe). UE 4 Entscheiden, handeln, verantworten in Überzahlspielen 3v2/4v3 (erste Handball-Spielsituationen). UE 5 BUV Schlagwurf: Leisten + Wahrnehmen, analysieren, bewerten (AFB II-III · Grobform-Erwerb). UE 6 LNW Drehwurf: Leisten (AFB III-Bewertung). UE 7 LP Sprungwurf: Leisten + Wahrnehmen, analysieren, bewerten (komplexere Technik mit Spiral-Anschluss). UE 8 Miniturnier: Spielen + Kooperieren, kommunizieren, präsentieren + Entscheiden, handeln, verantworten (integrierte Anwendung · Fairplay als Querschnitt).',
               personifikation_durchgaengig: 'Anders als bei GPG/WiB nutzt Sport KEINE Identifikationsfigur, sondern operiert über die SuS selbst als Akteure. Stattdessen: konsequente Verwendung von "ich kann X" (Selbstwirksamkeits-Sprache LP+ Sport) und individuelle Trefferquoten-Ziele.',
@@ -570,7 +615,7 @@ window.MATRIX = {
                 hinweis: 'Sequenz-Reflexion · Heft-LZK.' },
             ],
             bezuege_global: [
-              { didaktik: 'Söll-Drei-Phasen-Modell (2019)', verweis: 'Verbindliche Grobstruktur Einstimmung — Schwerpunkt — Ausklang. Söll-konform feingegliedert in 7 Phasen (Begrüßung · allgemeines Aufwärmen · spezifisches Aufwärmen · Erarbeitung · Übung/Stationsbetrieb · Anwendung/Spielform · Ausklang). Spezifisches Aufwärmen als eigenständige Phase mit eigener didaktischer Funktion (sportartspezifische Vorbereitung). Söll-Warnung: »negatives Attraktivitätsgefälle« vermeiden — das Aufwärmspiel (allg. Aufwärmen) darf den Schwerpunkt emotional nicht überstrahlen; das spezifische Aufwärmen ist KEIN attraktives Spiel.' },
+              { didaktik: '3-Phasen-Modell nach Hofmann (Bausteinskript SP GB Kap. 8, AG MS-Sem.-Unterfranken)', verweis: 'VERBINDLICHE Grobstruktur Bayern-Unterfranken-MS-LAA: Aufwärmphase (mit Sub-Stufung 1.1 allg + 1.2 spez. Erwärmung) — Hauptphase/Erarbeitungsphase — Schlussteil/Ausklang. Bestätigt verbatim auch in Bausteinskript B2 (Schwimmen) Kap. 1. Operative 7-Sub-Phasen-Feingliederung (Begrüßung · allgemeines Aufwärmen · spezifisches Aufwärmen · Erarbeitung · Übung/Stationsbetrieb · Anwendung/Spielform · Ausklang) als didaktische Verfeinerung aus Aufwärm-Sub-Stufung + Meinel/Schnabel-Bewegungslernen + UV-Empirie. Spezifisches Aufwärmen als eigenständige Sub-Phase mit sportartspezifischer Funktion. Bausteinskript-Warnung: »negatives Attraktivitätsgefälle« vermeiden — das spezifische Aufwärmen ist KEIN attraktives Spiel.' },
               { didaktik: 'BUV-Qualitätskriterien (ROLE_Sport_BUV)', verweis: 'UE 5 BUV-Schwerpunktstunde: Mager-3D-Lernziele (motorisch + kognitiv + sozial) · Sachanalyse mit Phasenmodell + Biomechanik + Fehlerbilder · Didaktische Reduktion · Methodische Analyse · Stundenskizze · Hallenplan + Helferkonzept · Sicherheitsmaßnahmen explizit.' },
               { didaktik: 'Prozessbezogene Kompetenzen (LehrplanPLUS Bayern MS Sport)', verweis: 'Sequenz aktiviert alle 6 prozessbezogenen Kompetenzen: Leisten (Schlagwurf-Trefferquote · LNW Drehwurf) · Gestalten (Bewegungsausführung Sprungwurf) · Spielen (Goalchaball + Handball-Turnier) · Wahrnehmen, analysieren, bewerten (Bewegungsmerkmale · Partner-Korrektur) · Entscheiden, handeln, verantworten (Überzahlspiele · Turniersituation) · Kooperieren, kommunizieren, präsentieren (Partnerarbeit · Helfen und Sichern · Fairplay).' },
               { didaktik: 'Sicherheitserziehung (KMBek + KUVB Bayern)', verweis: 'Pro UE Sicherheitsmaßnahmen dokumentiert. UE 5 BUV: Hallenplan mit Gefahrenstellen (Wand · Beckenrand) markiert · Helferkonzept (Matten unter Beckenrand · Sicherheitsabstand Wand) · Helfergriff-Kanon Klammergriff/Stützgriff/Drehgriff/Drehstützgriff bei Turnsequenzen · Aufwärmen als Verletzungsprophylaxe · altersgerechte Bälle. Helferkonzept-Stufung: Doppelhelfer → Einzelhelfer → Sicherheitssteller.' },
