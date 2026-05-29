@@ -29,3 +29,6 @@ __pycache__/
 # Lernraum-Smoketest-Output (Screenshots; ad-hoc)
 tools/lernraum/_smoketest_out/
 .ux-audit-screenshots/
+
+# Examens-Archiv Mai 2026 (lokal behalten, NICHT publizieren)
+_archiv-staatsexamen-mai-2026/
