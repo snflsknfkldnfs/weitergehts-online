@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+#
+# pre-commit — Website-Pflege-Schicht Guard (BLOCKING-Tier).
+#
+# Installation: `make install-hooks` (symlinkt diese Datei nach .git/hooks/pre-commit).
+# Wird NICHT automatisch aktiv durch Klonen — Installer muss einmal laufen.
+#
+# Verhalten: Sind deploybare Website-Artefakte gestaged, laeuft
+# `tools/website/check.sh --blocking-only` gegen den Arbeitsbaum. ROT => Commit blockiert.
+# Doc-/PM-only-Commits (docs/, tools/, ...) laufen ungebremst durch.
+#
+# Bewusster Override (Ausnahmefall): git commit --no-verify
+#
+set -uo pipefail
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+staged="$(git diff --cached --name-only --diff-filter=ACM)"
+
+if printf '%s\n' "$staged" | grep -qE '^(escape-games/|assets/|sections/|index\.html$)'; then
+  echo "[pre-commit] Website-Artefakte gestaged → tools/website/check.sh --blocking-only"
+  if ! "$REPO_ROOT/tools/website/check.sh" --blocking-only; then
+    echo "" >&2
+    echo "[pre-commit] BLOCKIERT: BLOCKING-Tier ROT. Defekte oben beheben." >&2
+    echo "[pre-commit] (Bewusster Override nur im Ausnahmefall: git commit --no-verify)" >&2
+    exit 1
+  fi
+fi
+exit 0
