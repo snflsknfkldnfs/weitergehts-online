@@ -1,7 +1,7 @@
 # SITE_MAP — weitergehts.online
 
 > Informationsarchitektur der Site als Menge von **Verticals**. Anker für „wo gehört Neues hin".
-> Bei jeder neuen Sektion/Game/Seite hier eintragen. Stand: 2026-05-31.
+> Bei jeder neuen Sektion/Game/Seite hier eintragen. Stand: 2026-06-07.
 
 ## Verticals
 
@@ -10,6 +10,7 @@
 | **Home / Landing** | `index.html` | Hand-gepflegte `<ul>` der Games/Sektionen; Staging-Flag `?staging=1` | — | live |
 | **Unterrichtsmaterial · Escape-Games** | `escape-games/<id>/` | `data.json` (meta+mappen+materialien+aufgaben) → gerendert von `assets/js/escape-engine.js` | `escape-games/template/` | live (3 Games) |
 | **Unterrichtsmaterial · Lernraum** | `assets/data/*.json` | aus externen Quellen via `make lernraum` generierte Glossar-/KE-Daten | `tools/lernraum/` | Daten vorhanden; Konsument-Seiten teils mit Examens-Schiene archiviert |
+| **WiB · Wirtschaft (interaktive Tools)** | `sections/wib/` | self-contained HTML (Chart.js via CDN), `localStorage`, kein Backend/Tracking | — | live (1 Tool: Haushaltsbuch) |
 | **Blog / Notizen** | `sections/blog/` *(geplant)* | offen (statische HTML; optional datengetrieben) | *noch zu definieren* | **im Aufbau** |
 | **Weitere Sektionen** | `sections/<name>/` | je nach Bedarf | — | künftig |
 
@@ -50,3 +51,8 @@ liegen im Baum, aber nicht in der Landing. (Aufräum-Kandidaten, s. Repo-Hygiene
 - Eigentliche **Home-Seite** ist aktuell nur eine Game-Liste — für eine „komplette persönliche Website"
   perspektivisch echte Landing/Navigation (Design via `frontend-design`/`ui-design`).
 - **Favicon** fehlt (harmloser 404) — Mini-Win bei nächstem Sektions-Ausbau.
+- **Smoke-Coverage `sections/`:** `tools/smoke/smoke.py::pages()` leitet die Test-Menge per Regex
+  `escape-games/<id>/` aus `index.html` ab — Seiten unter `sections/**` werden derzeit **nicht**
+  automatisch headless gerendert (gilt seit `sections/wib/haushaltsbuch.html`). `make check` deckt
+  sie ab (Asset-Links/JSON); für Render-Smoke `pages()` um `sections/**/*.html` erweitern —
+  dabei CDN-Abhängigkeiten (z.B. Chart.js via jsdelivr) als mögliche Smoke-Flakiness bedenken.

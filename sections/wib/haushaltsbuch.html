@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mein Haushaltsbuch — WiB 7 · weitergehts.online</title>
+<meta name="description" content="Digitales Haushaltsbuch für die 7. Klasse — Einnahmen und Ausgaben strukturiert erfassen, visualisieren und mit Vergleichsdaten gegenüberstellen. Datenschutz-konform, lokale Speicherung.">
+<meta name="author" content="Paul Cebulla · weitergehts.online">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Mein Haushaltsbuch — WiB 7">
+<meta property="og:description" content="Wohin geht mein Geld? Digitales Haushaltsbuch für die 7. Klasse mit strukturanalogem Vergleich.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💰%3C/text%3E%3C/svg%3E">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+:root {
+  --akzent: #385723;
+  --akzent-mittel: #548235;
+  --akzent-hell: #E2EFDA;
+  --akzent-sehr-hell: #F4F9F0;
+  --akzent-dunkel: #1F3A12;
+  --grau-dunkel: #444;
+  --grau-mittel: #777;
+  --grau-hell: #ccc;
+  --warn-gelb: #FFF2CC;
+  --warn-rot: #C00000;
+  --bg: #fafafa;
+  --karte-bg: #ffffff;
+  --text: #1a1a1a;
+  --radius: 8px;
+  --shadow: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-hover: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(135deg, var(--akzent) 0%, var(--akzent-mittel) 100%);
+  color: white;
+  padding: 1.1rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+header .header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+header h1 { margin: 0; font-size: 1.35rem; font-weight: 700; }
+header h1 .emoji { margin-right: 0.4rem; }
+header .untertitel { font-size: 0.85rem; opacity: 0.92; margin-top: 0.15rem; }
+header .branding { font-size: 0.8rem; opacity: 0.85; text-decoration: none; color: white; }
+header .branding:hover { opacity: 1; text-decoration: underline; }
+
+/* NAV */
+nav {
+  display: flex;
+  gap: 0;
+  background: white;
+  border-bottom: 2px solid var(--akzent-hell);
+  position: sticky;
+  top: 70px;
+  z-index: 99;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+nav .nav-inner {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+nav button {
+  background: transparent;
+  border: none;
+  padding: 0.85rem 1.2rem;
+  cursor: pointer;
+  font-size: 0.98rem;
+  color: var(--grau-dunkel);
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+  font-weight: 500;
+  font-family: inherit;
+}
+nav button.active {
+  color: var(--akzent);
+  border-bottom-color: var(--akzent);
+  font-weight: 700;
+}
+nav button:hover { background: var(--akzent-sehr-hell); }
+nav button .badge {
+  display: inline-block;
+  background: var(--akzent);
+  color: white;
+  font-size: 0.7rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+  margin-left: 0.3rem;
+  vertical-align: middle;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+section { display: none; animation: fadeIn 0.25s ease-out; }
+section.active { display: block; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: none; }
+}
+
+h2 {
+  color: var(--akzent);
+  border-bottom: 2px solid var(--akzent-hell);
+  padding-bottom: 0.4rem;
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+h3 {
+  color: var(--akzent-dunkel);
+  margin-top: 1.5rem;
+  margin-bottom: 0.6rem;
+  font-size: 1.15rem;
+}
+h4 {
+  color: var(--akzent-mittel);
+  margin-top: 0.5rem;
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+}
+
+/* KARTEN */
+.karte {
+  background: var(--karte-bg);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 1.2rem;
+}
+.karte > h3:first-child { margin-top: 0; }
+
+/* EINGABE-TABELLEN (Mein Geld) */
+.eingabe-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+@media (max-width: 800px) { .eingabe-grid { grid-template-columns: 1fr; } }
+
+.eingabe-tabelle h3 {
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.eingabe-tabelle .pfeil {
+  font-size: 1.5rem; color: var(--akzent); font-weight: 700;
+}
+.zeile {
+  display: grid;
+  grid-template-columns: 1fr 110px;
+  gap: 0.6rem;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--akzent-sehr-hell);
+}
+.zeile:last-of-type { border-bottom: none; }
+.zeile label { font-size: 0.95rem; }
+.zeile input[type="number"] {
+  text-align: right;
+  border: 1px solid var(--grau-hell);
+  border-radius: 4px;
+  padding: 0.4rem 0.6rem;
+  font-size: 1rem;
+  background: var(--warn-gelb);
+  width: 100%;
+  font-family: inherit;
+}
+.zeile input[type="number"]:focus {
+  outline: 2px solid var(--akzent);
+  background: white;
+}
+.summe {
+  display: grid;
+  grid-template-columns: 1fr 110px;
+  gap: 0.6rem;
+  padding-top: 0.6rem;
+  margin-top: 0.4rem;
+  border-top: 2px solid var(--akzent);
+  font-weight: 700;
+  color: var(--akzent-dunkel);
+}
+.summe .wert {
+  text-align: right;
+  background: var(--akzent-hell);
+  padding: 0.45rem 0.6rem;
+  border-radius: 4px;
+}
+
+/* ID-Block */
+.identifikation {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.identifikation label {
+  display: flex; align-items: center; gap: 0.5rem;
+  font-size: 0.92rem;
+}
+.identifikation input[type="text"] {
+  border: 1px solid var(--grau-hell);
+  border-radius: 4px;
+  padding: 0.4rem 0.6rem;
+  background: var(--warn-gelb);
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+/* KPI Cards */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.kpi {
+  background: var(--karte-bg);
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  box-shadow: var(--shadow);
+  border-left: 4px solid var(--akzent);
+}
+.kpi .label { font-size: 0.85rem; color: var(--grau-dunkel); margin-bottom: 0.3rem; }
+.kpi .wert { font-size: 2rem; font-weight: 700; color: var(--akzent-dunkel); line-height: 1.1; }
+.kpi .wert.negativ { color: var(--warn-rot); }
+.kpi .wert.positiv { color: var(--akzent); }
+.kpi .wert.small { font-size: 1.15rem; line-height: 1.3; }
+
+/* CHARTS */
+.chart-karte {
+  background: var(--karte-bg);
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 1.2rem;
+}
+.chart-karte h3 { margin-top: 0; }
+.chart-wrap-small { position: relative; height: 110px; margin-bottom: 0.5rem; }
+.chart-wrap-medium { position: relative; height: 180px; margin-bottom: 0.5rem; }
+.chart-wrap-large { position: relative; height: 340px; margin-bottom: 0.5rem; }
+.chart-wrap-tall { position: relative; height: 280px; margin-bottom: 0.5rem; }
+
+/* DATA-TABELLE (Vergleich) */
+.daten-tabelle {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.5rem 0 1rem;
+  font-size: 0.93rem;
+}
+.daten-tabelle th {
+  background: var(--akzent);
+  color: white;
+  padding: 0.5rem 0.7rem;
+  text-align: left;
+}
+.daten-tabelle th.zahl, .daten-tabelle td.zahl { text-align: right; }
+.daten-tabelle td {
+  padding: 0.45rem 0.7rem;
+  border-bottom: 1px solid var(--akzent-hell);
+}
+.daten-tabelle tr:last-child td { border-bottom: none; }
+.daten-tabelle tr.summe td {
+  background: var(--akzent-hell);
+  font-weight: 700;
+  color: var(--akzent-dunkel);
+  border-top: 2px solid var(--akzent);
+}
+.daten-tabelle td.selbst-hoch {
+  background: var(--akzent-hell);
+  color: var(--akzent-dunkel);
+  font-weight: 600;
+}
+.daten-tabelle td.selbst-niedrig {
+  background: #F0F0F0;
+  color: var(--grau-mittel);
+}
+.daten-tabelle td input[type="number"] {
+  border: 1px solid var(--grau-hell);
+  border-radius: 4px;
+  padding: 0.25rem 0.4rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  background: var(--warn-gelb);
+  width: 80px;
+  text-align: right;
+}
+
+/* HINWEIS-BOXEN */
+.hinweis {
+  background: var(--akzent-sehr-hell);
+  border-left: 3px solid var(--akzent);
+  padding: 0.7rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  margin: 0.8rem 0;
+  color: var(--grau-dunkel);
+}
+.hinweis strong { color: var(--akzent-dunkel); }
+.hinweis-warn {
+  background: var(--warn-gelb);
+  border-left-color: #BF8F00;
+  color: var(--grau-dunkel);
+}
+
+/* REFLEXION */
+.frage {
+  background: var(--karte-bg);
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  margin-bottom: 0.9rem;
+  box-shadow: var(--shadow);
+}
+.frage .frage-text {
+  font-weight: 600;
+  color: var(--akzent-dunkel);
+  margin-bottom: 0.5rem;
+}
+.frage textarea {
+  width: 100%;
+  border: 1px solid var(--grau-hell);
+  border-radius: 4px;
+  padding: 0.6rem;
+  font-family: inherit;
+  font-size: 1rem;
+  background: var(--warn-gelb);
+  min-height: 70px;
+  resize: vertical;
+}
+.frage textarea:focus { outline: 2px solid var(--akzent); background: white; }
+
+.sicherung-block {
+  background: var(--akzent-hell);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  margin-top: 1.5rem;
+  border-left: 4px solid var(--akzent);
+}
+.sicherung-block h3 { margin-top: 0; color: var(--akzent-dunkel); }
+
+/* BUTTONS */
+.aktion-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+.aktion-buttons button {
+  background: white;
+  border: 1px solid var(--akzent);
+  color: var(--akzent);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+.aktion-buttons button.primary {
+  background: var(--akzent);
+  color: white;
+}
+.aktion-buttons button:hover { box-shadow: var(--shadow-hover); }
+.aktion-buttons button.danger {
+  border-color: var(--warn-rot);
+  color: var(--warn-rot);
+}
+
+/* ANLEITUNG */
+.anleitung-karte ol, .anleitung-karte ul {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+.anleitung-karte li { margin-bottom: 0.5rem; }
+.datenschutz-box {
+  background: var(--akzent-sehr-hell);
+  border: 1px solid var(--akzent-mittel);
+  padding: 0.9rem 1.1rem;
+  border-radius: var(--radius);
+  margin-top: 1rem;
+  font-size: 0.92rem;
+}
+
+/* FOOTER */
+footer {
+  background: var(--akzent-sehr-hell);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--grau-dunkel);
+  margin-top: 2rem;
+  border-top: 1px solid var(--akzent-hell);
+}
+footer a { color: var(--akzent); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+footer .quellen { margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.85; }
+
+/* TOAST */
+.toast {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(120%);
+  background: var(--akzent-dunkel);
+  color: white;
+  padding: 0.7rem 1.2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 1000;
+  font-size: 0.92rem;
+  transition: transform 0.3s ease-out;
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+/* PRINT */
+@media print {
+  header, nav, .aktion-buttons, footer, .branding { display: none !important; }
+  body { background: white; }
+  main { max-width: none; padding: 0.5cm; }
+  section { display: block !important; page-break-after: always; }
+  .karte, .chart-karte, .frage { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+  h2 { page-break-after: avoid; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div>
+      <h1><span class="emoji">💰</span> Mein Haushaltsbuch</h1>
+      <div class="untertitel">WiB 7 — Wohin geht mein Geld?</div>
+    </div>
+    <a href="https://weitergehts.online" class="branding">weitergehts.online</a>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <button data-tab="anleitung">Anleitung</button>
+    <button data-tab="mein-geld" class="active">Mein Geld</button>
+    <button data-tab="auswertung">Auswertung</button>
+    <button data-tab="vergleich">Vergleich</button>
+    <button data-tab="reflexion">Reflexion</button>
+  </div>
+</nav>
+
+<main>
+
+<!-- ANLEITUNG -->
+<section id="anleitung">
+  <h2>Wie nutze ich dieses Heft?</h2>
+  <div class="karte anleitung-karte">
+    <ol>
+      <li>Trag deine <strong>Einnahmen</strong> (Geld rein) und <strong>Ausgaben</strong> (Geld raus) auf „Mein Geld" ein.</li>
+      <li>Auf „Auswertung" siehst du sofort, wohin dein Geld geht — als <strong>Streifendiagramm</strong>.</li>
+      <li>Auf „Vergleich" siehst du dich neben <strong>Tim, Layla und deiner Klasse</strong>. Vergleich mit Erwachsenen (EVS 2023) zeigt strukturellen Kontrast.</li>
+      <li>Auf „Reflexion" beantwortest du Fragen und sammelst 3 Stichpunkte: <em>Warum hilft ein Haushaltsplan?</em></li>
+    </ol>
+  </div>
+
+  <div class="datenschutz-box">
+    🔒 <strong>Datenschutz:</strong> Deine Eingaben bleiben NUR auf deinem Gerät (Browser-Speicher). Es findet KEIN Upload, KEIN Cloud-Sync statt. Lehrkraft sieht nichts davon — du behältst die volle Kontrolle. Beim Forms-Eingabe-Schritt im Unterricht teilst du nur Kategorie-Summen, anonym.
+  </div>
+
+  <div class="aktion-buttons">
+    <button class="primary" onclick="speichern()">💾 Speichern</button>
+    <button onclick="laden()">📂 Letzten Stand laden</button>
+    <button onclick="exportierenJSON()">⬇️ Als Datei sichern</button>
+    <button onclick="datenImportieren()">📤 Datei laden</button>
+    <button class="danger" onclick="alleLoeschen()">🗑️ Alles löschen</button>
+    <input type="file" id="import-file" accept=".json" style="display:none" onchange="dateiImportiert(event)">
+  </div>
+</section>
+
+<!-- MEIN GELD -->
+<section id="mein-geld" class="active">
+  <h2>Mein Geld</h2>
+  <p>Trage die Beträge in die gelben Felder. Den Rest rechnet die Seite.</p>
+
+  <div class="identifikation">
+    <label>Pseudonym: <input type="text" id="pseudonym" placeholder="z. B. Eichhörnchen-7"></label>
+    <label>Zeitraum: <input type="text" id="zeitraum" value="25.05.–05.06.2026"></label>
+  </div>
+
+  <div class="eingabe-grid">
+    <!-- Einnahmen -->
+    <div class="karte eingabe-tabelle">
+      <h3><span class="pfeil">↗</span> Einnahmen (Geld rein)</h3>
+      <div class="zeile">
+        <label>Taschengeld</label>
+        <input type="number" step="0.50" min="0" data-kat="einn" data-name="taschengeld" placeholder="€">
+      </div>
+      <div class="zeile">
+        <label>Geschenk (Oma, Geburtstag, …)</label>
+        <input type="number" step="0.50" min="0" data-kat="einn" data-name="geschenk" placeholder="€">
+      </div>
+      <div class="zeile">
+        <label>Aushilfe / Nebenjob (Babysitten)</label>
+        <input type="number" step="0.50" min="0" data-kat="einn" data-name="aushilfe" placeholder="€">
+      </div>
+      <div class="zeile">
+        <label>Sonstiges</label>
+        <input type="number" step="0.50" min="0" data-kat="einn" data-name="einn_sonstiges" placeholder="€">
+      </div>
+      <div class="summe">
+        <span>Summe Einnahmen</span>
+        <span class="wert" id="summe-einn">0,00 €</span>
+      </div>
+    </div>
+
+    <!-- Ausgaben -->
+    <div class="karte eingabe-tabelle">
+      <h3><span class="pfeil">↘</span> Ausgaben (Geld raus)</h3>
+      <div class="zeile">
+        <label>Essen unterwegs (Pizza, Döner, …)</label>
+        <input type="number" step="0.50" min="0" data-kat="ausg" data-name="essen" placeholder="€">
+      </div>
+      <div class="zeile">
+        <label>Süßes / Snacks</label>
+        <input type="number" step="0.50" min="0" data-kat="ausg" data-name="suesses" placeholder="€">
+      </div>
+      <div class="zeile">
+        <label>Spaß / Freizeit (Kino, Spiele)</label>
+        <input type="number" step="0.50" min="0" data-kat="ausg" data-name="spass" placeholder="€">
+      </div>
+      <div class="zeile">
+        <label>Kleidung</label>
+        <input type="number" step="0.50" min="0" data-kat="ausg" data-name="kleidung" placeholder="€">
+      </div>
+      <div class="zeile">
+        <label>Geschenke für andere</label>
+        <input type="number" step="0.50" min="0" data-kat="ausg" data-name="geschenke" placeholder="€">
+      </div>
+      <div class="zeile">
+        <label>Sparen / aufs Konto</label>
+        <input type="number" step="0.50" min="0" data-kat="ausg" data-name="sparen" placeholder="€">
+      </div>
+      <div class="zeile">
+        <label>Sonstiges</label>
+        <input type="number" step="0.50" min="0" data-kat="ausg" data-name="ausg_sonstiges" placeholder="€">
+      </div>
+      <div class="summe">
+        <span>Summe Ausgaben</span>
+        <span class="wert" id="summe-ausg">0,00 €</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="label">Saldo (Einn − Ausg)</div>
+      <div class="wert" id="kpi-saldo">0,00 €</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Spar-Quote</div>
+      <div class="wert" id="kpi-spar">0,0 %</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Größter Posten</div>
+      <div class="wert small" id="kpi-groesster">–</div>
+    </div>
+  </div>
+
+  <div class="hinweis">ℹ Vergleich: 74 % der Jugendlichen (10–15 J) sparen — Quelle DJI 2025.</div>
+</section>
+
+<!-- AUSWERTUNG -->
+<section id="auswertung">
+  <h2>Meine Auswertung</h2>
+  <p>So sieht dein Geldfluss aus — Anteile pro Kategorie als Streifen.</p>
+
+  <div class="kpi-grid">
+    <div class="kpi"><div class="label">Saldo</div><div class="wert" id="kpi2-saldo">0,00 €</div></div>
+    <div class="kpi"><div class="label">Einnahmen</div><div class="wert" id="kpi2-einn">0,00 €</div></div>
+    <div class="kpi"><div class="label">Ausgaben</div><div class="wert" id="kpi2-ausg">0,00 €</div></div>
+    <div class="kpi"><div class="label">Spar-Quote</div><div class="wert" id="kpi2-spar">0,0 %</div></div>
+  </div>
+
+  <div class="chart-karte">
+    <h3>Wohin geht dein Geld?</h3>
+    <p style="font-size:0.88rem;color:var(--grau-dunkel);margin-top:0">Sortiert nach Größe. Klick auf einen Bereich für Details.</p>
+    <div class="chart-wrap-medium"><canvas id="chart-ausg-stack"></canvas></div>
+  </div>
+
+  <div class="chart-karte">
+    <h3>Woher kommt dein Geld?</h3>
+    <div class="chart-wrap-medium"><canvas id="chart-einn-stack"></canvas></div>
+  </div>
+</section>
+
+<!-- VERGLEICH -->
+<section id="vergleich">
+  <h2>Vergleich</h2>
+  <p>Strukturanalog — gleiche Kategorien. Vier Streifen direkt übereinander für direkten Vergleich.</p>
+
+  <!-- Klassen-Ø Eingabe (Lehrer setzt das nach Forms-Auswertung) -->
+  <div class="karte">
+    <h3>Datenbasis (in €)</h3>
+    <p style="font-size:0.88rem;color:var(--grau-dunkel);margin-top:0">
+      Die gelben Felder „Klasse Ø" werden in der Unterrichtsstunde durch die Lehrkraft nach Forms-Auswertung eingegeben.
+      Per URL-Parameter setzbar: <code>?klasse=12,15,25,15,8,35,10</code>
+    </p>
+    <table class="daten-tabelle" id="vergleichs-tabelle">
+      <thead>
+        <tr>
+          <th>Kategorie</th>
+          <th class="zahl">Du</th>
+          <th class="zahl">Tim (Spar)</th>
+          <th class="zahl">Layla (Spaß)</th>
+          <th class="zahl">Klasse Ø</th>
+        </tr>
+      </thead>
+      <tbody id="vergleichs-tbody"></tbody>
+      <tfoot>
+        <tr class="summe">
+          <td>Summe</td>
+          <td class="zahl" id="sum-du">0 €</td>
+          <td class="zahl" id="sum-tim">50 €</td>
+          <td class="zahl" id="sum-layla">45 €</td>
+          <td class="zahl" id="sum-klasse">0 €</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <div class="chart-karte">
+    <h3>Anteile pro Kategorie — wer gibt wofür wie viel aus?</h3>
+    <div class="chart-wrap-tall"><canvas id="chart-vergleich-stack"></canvas></div>
+  </div>
+
+  <!-- EVS Kontrast -->
+  <div class="chart-karte">
+    <h3>🏠 Kontrast: Erwachsene Haushalte (EVS 2023)</h3>
+    <div class="hinweis">
+      <strong>Anders strukturiert:</strong> Bei Erwachsenen dominiert <strong>Wohnen (38 %)</strong>. Bei Jugendlichen ist Wohnen noch Eltern-Sache. Deshalb anderer Bezugsrahmen — vergleiche deinen „freien Konsum" mit den Erwachsenen-Anteilen.
+    </div>
+    <div class="chart-wrap-small"><canvas id="chart-evs-stack"></canvas></div>
+  </div>
+
+  <!-- DJI Sidebar Info -->
+  <div class="karte">
+    <h3>🧑‍🎓 Zusatz-Info: Was Jugendlichen wichtig ist (DJI 2025)</h3>
+    <div class="hinweis hinweis-warn">
+      <strong>Methodischer Hinweis:</strong> Diese Daten zeigen Verbreitung (wie viele Jugendliche geben überhaupt viel aus für die Kategorie), NICHT Anteil pro Person. Daher nicht direkt mit deinen Werten vergleichbar — eher zur Orientierung.
+    </div>
+    <table class="daten-tabelle">
+      <thead>
+        <tr>
+          <th>Konsum-Kategorie</th>
+          <th class="zahl">Anteil Jugendliche</th>
+          <th class="zahl">Selbst gezahlt</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Essen mit Freund:innen</td><td class="zahl">60,9 %</td><td class="zahl selbst-hoch">79,8 %</td></tr>
+        <tr><td>Kino, Theater</td><td class="zahl">55,3 %</td><td class="zahl selbst-niedrig">46,2 %</td></tr>
+        <tr><td>Technik (Handy, Kopfhörer, Konsole)</td><td class="zahl">52,9 %</td><td class="zahl selbst-niedrig">30,8 %</td></tr>
+        <tr><td>Kleidung, Kosmetik</td><td class="zahl">45,6 %</td><td class="zahl selbst-niedrig">42,6 %</td></tr>
+        <tr><td>Veranstaltungen</td><td class="zahl">43,4 %</td><td class="zahl selbst-hoch">50,0 %</td></tr>
+        <tr><td>Sportliches</td><td class="zahl">40,7 %</td><td class="zahl selbst-hoch">58,7 %</td></tr>
+        <tr><td>Verreisen, Ferienlager</td><td class="zahl">40,3 %</td><td class="zahl selbst-niedrig">33,8 %</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- REFLEXION -->
+<section id="reflexion">
+  <h2>Reflexion</h2>
+  <p>Beantworte die Fragen — das ist gleichzeitig dein Hefteintrag für die Stunde.</p>
+
+  <div class="frage">
+    <div class="frage-text">1. Wie war dein Saldo? Positiv (+) oder negativ (–)? Was bedeutet das?</div>
+    <textarea data-reflex="1"></textarea>
+  </div>
+  <div class="frage">
+    <div class="frage-text">2. Welche Kategorie war dein größter Ausgaben-Posten? Hat dich das überrascht?</div>
+    <textarea data-reflex="2"></textarea>
+  </div>
+  <div class="frage">
+    <div class="frage-text">3. Wie viel hast du gespart? Mehr oder weniger als andere Jugendliche (DJI: 74 % sparen)?</div>
+    <textarea data-reflex="3"></textarea>
+  </div>
+  <div class="frage">
+    <div class="frage-text">4. Wem ähnelt dein Streifen am meisten — Tim oder Layla? Warum?</div>
+    <textarea data-reflex="4"></textarea>
+  </div>
+  <div class="frage">
+    <div class="frage-text">5. Was wäre, wenn du keine Übersicht gehabt hättest — wüsstest du es trotzdem?</div>
+    <textarea data-reflex="5"></textarea>
+  </div>
+
+  <div class="sicherung-block">
+    <h3>Sicherung — Warum hilft ein Haushaltsplan?</h3>
+    <p>Sammle 3 Stichpunkte. Diese kommen ins Heft.</p>
+    <div class="frage">
+      <div class="frage-text">Ein Haushaltsplan hilft, weil …</div>
+      <textarea data-reflex="s1"></textarea>
+    </div>
+    <div class="frage">
+      <div class="frage-text">Ein Haushaltsplan hilft, weil …</div>
+      <textarea data-reflex="s2"></textarea>
+    </div>
+    <div class="frage">
+      <div class="frage-text">Ein Haushaltsplan hilft, weil …</div>
+      <textarea data-reflex="s3"></textarea>
+    </div>
+  </div>
+
+  <div class="aktion-buttons">
+    <button class="primary" onclick="window.print()">🖨️ Reflexion drucken</button>
+    <button onclick="exportierenJSON()">⬇️ Alles als Datei sichern</button>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div><strong>Mein Haushaltsbuch</strong> · WiB 7 · LB4 Wirtschaft · <a href="https://weitergehts.online">weitergehts.online</a></div>
+  <div class="quellen">
+    Quellen: <a href="https://www.dsgv.de/uploads/Expertise_Taschengeld_Chabursky_Langmeyer2025_aktualisiert_3fd1aa659e.pdf" target="_blank">DJI-Expertise 2025</a> · <a href="https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Einkommen-Konsum-Lebensbedingungen/Konsumausgaben-Lebenshaltungskosten/aktuell_evs2023.html" target="_blank">EVS 2023</a> · Daten bleiben lokal auf deinem Gerät · Kein Tracking, kein Cloud-Sync
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ============================================================
+// KONFIGURATION
+// ============================================================
+const STORAGE_KEY = 'wib_haushaltsbuch_v2';
+
+// Farbpalette — kategorienspezifisch (konsistent über alle Charts),
+// kategorisch differenziert für hohe visuelle Trennschärfe (Tableau-10-Stil),
+// Sparen bleibt grün (LP-Anker), Konsum-Kategorien warm/kühl gemischt
+const FARBEN_AUSG = {
+  essen: '#E67E22',         // warmes orange
+  suesses: '#E84A8E',       // pink
+  spass: '#3498DB',         // blau
+  kleidung: '#9B59B6',      // lila
+  geschenke: '#16A2A6',     // türkis
+  sparen: '#27AE60',        // grün (Spar-Anker)
+  ausg_sonstiges: '#7F8C8D' // grau
+};
+
+const FARBEN_EINN = {
+  taschengeld: '#3498DB',   // blau
+  geschenk: '#E67E22',      // orange
+  aushilfe: '#27AE60',      // grün
+  einn_sonstiges: '#7F8C8D' // grau
+};
+
+// EVS-Erwachsene: 8 Kategorien, eigene Palette
+const FARBEN_EVS = [
+  '#2C3E50',  // Wohnen — dunkelblau (dominant)
+  '#E67E22',  // Lebensmittel — orange
+  '#C0392B',  // Verkehr — rot
+  '#9B59B6',  // Freizeit — lila
+  '#E84A8E',  // Gastronomie — pink
+  '#16A2A6',  // IT — türkis
+  '#F1C40F',  // Innenausstattung — gelb
+  '#7F8C8D',  // Sonstiges — grau
+];
+
+// Ausgaben-Kategorien (key + label + color via FARBEN_AUSG)
+const AUSGABEN_KAT = [
+  { key: 'essen', label: 'Essen unterwegs' },
+  { key: 'suesses', label: 'Süßes / Snacks' },
+  { key: 'spass', label: 'Spaß / Freizeit' },
+  { key: 'kleidung', label: 'Kleidung' },
+  { key: 'geschenke', label: 'Geschenke für andere' },
+  { key: 'sparen', label: 'Sparen / aufs Konto' },
+  { key: 'ausg_sonstiges', label: 'Sonstiges' },
+];
+
+const EINNAHMEN_KAT = [
+  { key: 'taschengeld', label: 'Taschengeld' },
+  { key: 'geschenk', label: 'Geschenk' },
+  { key: 'aushilfe', label: 'Aushilfe / Nebenjob' },
+  { key: 'einn_sonstiges', label: 'Sonstiges' },
+];
+
+// Persona Tim (Spar-Profil): 50 € Einnahmen, 50 € Ausgaben, 30 € Sparen (60 %)
+const TIM_AUSG = { essen: 5, suesses: 3, spass: 8, kleidung: 0, geschenke: 4, sparen: 30, ausg_sonstiges: 0 };
+// Persona Layla (Spaß-Profil): 40 € Einnahmen, 45 € Ausgaben, 0 Sparen
+const LAYLA_AUSG = { essen: 8, suesses: 6, spass: 10, kleidung: 18, geschenke: 3, sparen: 0, ausg_sonstiges: 0 };
+
+// EVS 2023 Erwachsene
+const EVS_KAT = [
+  { label: 'Wohnen (Miete, NK)', anteil: 0.38 },
+  { label: 'Lebensmittel', anteil: 0.14 },
+  { label: 'Verkehr', anteil: 0.12 },
+  { label: 'Freizeit/Sport/Kultur', anteil: 0.09 },
+  { label: 'Gastronomie', anteil: 0.07 },
+  { label: 'IT/Kommunikation', anteil: 0.05 },
+  { label: 'Innenausstattung', anteil: 0.05 },
+  { label: 'Sonstiges', anteil: 0.10 },
+];
+
+// ============================================================
+// URL-PARAMETER
+// ============================================================
+function getKlasseAusURL() {
+  const params = new URLSearchParams(window.location.search);
+  const raw = params.get('klasse');
+  if (!raw) return null;
+  const werte = raw.split(',').map(v => parseFloat(v) || 0);
+  if (werte.length !== AUSGABEN_KAT.length) return null;
+  const result = {};
+  AUSGABEN_KAT.forEach((k, i) => result[k.key] = werte[i]);
+  return result;
+}
+
+let klasseDaten = getKlasseAusURL() || {};
+
+function getTabAusURL() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('tab');
+}
+
+// ============================================================
+// TAB-NAVIGATION
+// ============================================================
+function aktivereTab(name) {
+  document.querySelectorAll('nav button').forEach(b => b.classList.toggle('active', b.dataset.tab === name));
+  document.querySelectorAll('main section').forEach(s => s.classList.toggle('active', s.id === name));
+  aktualisiereCharts();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+document.querySelectorAll('nav button').forEach(btn => {
+  btn.addEventListener('click', () => aktivereTab(btn.dataset.tab));
+});
+
+// ============================================================
+// LOCAL STORAGE
+// ============================================================
+function sammleDaten() {
+  const daten = { meta: {}, einn: {}, ausg: {}, klasse: {}, reflex: {} };
+  daten.meta.pseudonym = document.getElementById('pseudonym').value;
+  daten.meta.zeitraum = document.getElementById('zeitraum').value;
+  document.querySelectorAll('input[data-kat]').forEach(inp => {
+    const kat = inp.dataset.kat;
+    daten[kat][inp.dataset.name] = parseFloat(inp.value) || 0;
+  });
+  document.querySelectorAll('textarea[data-reflex]').forEach(t => {
+    daten.reflex[t.dataset.reflex] = t.value;
+  });
+  // Klassen-Daten (gelbe Felder in Vergleichs-Tabelle)
+  AUSGABEN_KAT.forEach(k => {
+    daten.klasse[k.key] = klasseDaten[k.key] || 0;
+  });
+  return daten;
+}
+
+function setzeDaten(daten) {
+  if (!daten) return;
+  document.getElementById('pseudonym').value = daten.meta?.pseudonym || '';
+  document.getElementById('zeitraum').value = daten.meta?.zeitraum || '25.05.–05.06.2026';
+  document.querySelectorAll('input[data-kat]').forEach(inp => {
+    const kat = inp.dataset.kat;
+    const wert = daten[kat]?.[inp.dataset.name];
+    if (wert) inp.value = wert;
+  });
+  document.querySelectorAll('textarea[data-reflex]').forEach(t => {
+    if (daten.reflex?.[t.dataset.reflex]) t.value = daten.reflex[t.dataset.reflex];
+  });
+  if (daten.klasse) {
+    AUSGABEN_KAT.forEach(k => {
+      if (daten.klasse[k.key] != null) klasseDaten[k.key] = daten.klasse[k.key];
+    });
+  }
+}
+
+function speichern() {
+  const daten = sammleDaten();
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(daten));
+  zeigeToast('💾 Gespeichert');
+}
+
+function laden() {
+  const raw = localStorage.getItem(STORAGE_KEY);
+  if (raw) {
+    setzeDaten(JSON.parse(raw));
+    aktualisiereAlles();
+    zeigeToast('📂 Letzter Stand geladen');
+  } else {
+    zeigeToast('Noch nichts gespeichert');
+  }
+}
+
+function alleLoeschen() {
+  if (!confirm('Wirklich alle Eingaben löschen?')) return;
+  localStorage.removeItem(STORAGE_KEY);
+  document.querySelectorAll('input[data-kat]').forEach(i => i.value = '');
+  document.querySelectorAll('textarea[data-reflex]').forEach(t => t.value = '');
+  document.getElementById('pseudonym').value = '';
+  klasseDaten = getKlasseAusURL() || {};
+  aktualisiereAlles();
+  zeigeToast('🗑️ Alles gelöscht');
+}
+
+function exportierenJSON() {
+  const daten = sammleDaten();
+  const blob = new Blob([JSON.stringify(daten, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = (daten.meta.pseudonym || 'mein') + '_haushaltsbuch.json';
+  a.click();
+  URL.revokeObjectURL(url);
+  zeigeToast('⬇️ Datei heruntergeladen');
+}
+
+function datenImportieren() {
+  document.getElementById('import-file').click();
+}
+
+function dateiImportiert(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      const daten = JSON.parse(e.target.result);
+      setzeDaten(daten);
+      aktualisiereAlles();
+      zeigeToast('📤 Datei geladen');
+    } catch(err) {
+      zeigeToast('Fehler beim Laden');
+    }
+  };
+  reader.readAsText(file);
+}
+
+// ============================================================
+// FORMATIERUNG
+// ============================================================
+const fmtEUR = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' });
+const fmtPCT = new Intl.NumberFormat('de-DE', { style: 'percent', minimumFractionDigits: 1, maximumFractionDigits: 1 });
+const fmtPCT0 = new Intl.NumberFormat('de-DE', { style: 'percent', minimumFractionDigits: 0, maximumFractionDigits: 0 });
+
+// ============================================================
+// AUSWERTUNG
+// ============================================================
+function aktualisiereAuswertung() {
+  const daten = sammleDaten();
+  const summeEinn = Object.values(daten.einn).reduce((a, b) => a + b, 0);
+  const summeAusg = Object.values(daten.ausg).reduce((a, b) => a + b, 0);
+  const saldo = summeEinn - summeAusg;
+  const sparquote = summeEinn > 0 ? (daten.ausg.sparen || 0) / summeEinn : 0;
+
+  document.getElementById('summe-einn').textContent = fmtEUR.format(summeEinn);
+  document.getElementById('summe-ausg').textContent = fmtEUR.format(summeAusg);
+
+  const kpiSaldo = document.getElementById('kpi-saldo');
+  kpiSaldo.textContent = (saldo > 0 ? '+ ' : '') + fmtEUR.format(saldo);
+  kpiSaldo.className = 'wert ' + (saldo > 0 ? 'positiv' : saldo < 0 ? 'negativ' : '');
+
+  document.getElementById('kpi-spar').textContent = fmtPCT.format(sparquote);
+
+  // Größter Posten
+  let maxKey = null, maxVal = 0;
+  AUSGABEN_KAT.forEach(k => {
+    const v = daten.ausg[k.key] || 0;
+    if (v > maxVal) { maxVal = v; maxKey = k.label; }
+  });
+  document.getElementById('kpi-groesster').textContent = maxKey || '–';
+
+  // KPI auf Auswertung-Sheet
+  document.getElementById('kpi2-saldo').textContent = (saldo > 0 ? '+ ' : '') + fmtEUR.format(saldo);
+  document.getElementById('kpi2-saldo').className = 'wert ' + (saldo > 0 ? 'positiv' : saldo < 0 ? 'negativ' : '');
+  document.getElementById('kpi2-einn').textContent = fmtEUR.format(summeEinn);
+  document.getElementById('kpi2-ausg').textContent = fmtEUR.format(summeAusg);
+  document.getElementById('kpi2-spar').textContent = fmtPCT.format(sparquote);
+}
+
+// ============================================================
+// CHARTS — STREIFENDIAGRAMME
+// ============================================================
+let chartAusg, chartEinn, chartVergleich, chartEvs;
+
+function macheStackedChart(canvasId, datasets, labels, options = {}) {
+  const ctx = document.getElementById(canvasId);
+  if (!ctx) return null;
+  return new Chart(ctx, {
+    type: 'bar',
+    data: { labels, datasets },
+    options: Object.assign({
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        x: {
+          stacked: true,
+          max: 100,
+          ticks: { callback: v => v + ' %' },
+          grid: { color: 'rgba(0,0,0,0.05)' }
+        },
+        y: { stacked: true, grid: { display: false } }
+      },
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: { boxWidth: 14, font: { size: 11 }, padding: 8 }
+        },
+        tooltip: {
+          callbacks: {
+            label: ctx => {
+              const value = ctx.parsed.x;
+              const meta = ctx.dataset.eurValues?.[ctx.dataIndex];
+              const eur = meta != null ? ` (${fmtEUR.format(meta)})` : '';
+              return `${ctx.dataset.label}: ${value.toFixed(1)} %${eur}`;
+            }
+          }
+        }
+      }
+    }, options)
+  });
+}
+
+function berechneAnteile(werte) {
+  const sum = werte.reduce((a,b) => a + b, 0);
+  if (sum === 0) return werte.map(() => 0);
+  return werte.map(v => (v / sum) * 100);
+}
+
+function initCharts() {
+  // === Auswertung — Ausgaben Stack (1 Subjekt) ===
+  // WICHTIG: Datensets in fester Kategorie-Reihenfolge, Farbe kategorienspezifisch
+  chartAusg = macheStackedChart('chart-ausg-stack',
+    AUSGABEN_KAT.map(k => ({
+      label: k.label,
+      data: [0],
+      backgroundColor: FARBEN_AUSG[k.key],
+      borderWidth: 0,
+      eurValues: [0],
+      katKey: k.key
+    })),
+    ['Du']
+  );
+
+  // === Auswertung — Einnahmen Stack ===
+  chartEinn = macheStackedChart('chart-einn-stack',
+    EINNAHMEN_KAT.map(k => ({
+      label: k.label,
+      data: [0],
+      backgroundColor: FARBEN_EINN[k.key],
+      borderWidth: 0,
+      eurValues: [0],
+      katKey: k.key
+    })),
+    ['Du']
+  );
+
+  // === Vergleich — 4 Subjekte Stack ===
+  chartVergleich = macheStackedChart('chart-vergleich-stack',
+    AUSGABEN_KAT.map(k => ({
+      label: k.label,
+      data: [0, 0, 0, 0],
+      backgroundColor: FARBEN_AUSG[k.key],
+      borderWidth: 0,
+      eurValues: [0, 0, 0, 0],
+      katKey: k.key
+    })),
+    ['Du', 'Tim (Spar)', 'Layla (Spaß)', 'Klasse Ø']
+  );
+
+  // === EVS Erwachsene ===
+  chartEvs = macheStackedChart('chart-evs-stack',
+    EVS_KAT.map((k, i) => ({
+      label: k.label,
+      data: [k.anteil * 100],
+      backgroundColor: FARBEN_EVS[i % FARBEN_EVS.length],
+      borderWidth: 0
+    })),
+    ['Erwachsene EVS 2023']
+  );
+}
+
+function aktualisiereCharts() {
+  if (!chartAusg) return;
+
+  const daten = sammleDaten();
+
+  // === Auswertung Ausgaben ===
+  const ausgWerte = AUSGABEN_KAT.map(k => daten.ausg[k.key] || 0);
+  // Sortiere nach Größe absteigend
+  const ausgIndices = ausgWerte.map((v, i) => i).sort((a, b) => ausgWerte[b] - ausgWerte[a]);
+  const ausgAnteile = berechneAnteile(ausgWerte);
+  ausgIndices.forEach((origIdx, sortIdx) => {
+    const kat = AUSGABEN_KAT[origIdx];
+    chartAusg.data.datasets[sortIdx].label = kat.label;
+    chartAusg.data.datasets[sortIdx].data = [ausgAnteile[origIdx]];
+    // KATEGORIENSPEZIFISCHE Farbe (folgt der Kategorie, nicht der Position)
+    chartAusg.data.datasets[sortIdx].backgroundColor = FARBEN_AUSG[kat.key];
+    chartAusg.data.datasets[sortIdx].eurValues = [ausgWerte[origIdx]];
+  });
+  chartAusg.update();
+
+  // === Auswertung Einnahmen ===
+  const einnWerte = EINNAHMEN_KAT.map(k => daten.einn[k.key] || 0);
+  const einnIndices = einnWerte.map((v, i) => i).sort((a, b) => einnWerte[b] - einnWerte[a]);
+  const einnAnteile = berechneAnteile(einnWerte);
+  einnIndices.forEach((origIdx, sortIdx) => {
+    const kat = EINNAHMEN_KAT[origIdx];
+    chartEinn.data.datasets[sortIdx].label = kat.label;
+    chartEinn.data.datasets[sortIdx].data = [einnAnteile[origIdx]];
+    chartEinn.data.datasets[sortIdx].backgroundColor = FARBEN_EINN[kat.key];
+    chartEinn.data.datasets[sortIdx].eurValues = [einnWerte[origIdx]];
+  });
+  chartEinn.update();
+
+  // === Vergleich Stack 4 Subjekte ===
+  const duWerte = AUSGABEN_KAT.map(k => daten.ausg[k.key] || 0);
+  const timWerte = AUSGABEN_KAT.map(k => TIM_AUSG[k.key] || 0);
+  const laylaWerte = AUSGABEN_KAT.map(k => LAYLA_AUSG[k.key] || 0);
+  const klasseWerte = AUSGABEN_KAT.map(k => klasseDaten[k.key] || 0);
+
+  const duAnteile = berechneAnteile(duWerte);
+  const timAnteile = berechneAnteile(timWerte);
+  const laylaAnteile = berechneAnteile(laylaWerte);
+  const klasseAnteile = berechneAnteile(klasseWerte);
+
+  AUSGABEN_KAT.forEach((k, i) => {
+    chartVergleich.data.datasets[i].data = [duAnteile[i], timAnteile[i], laylaAnteile[i], klasseAnteile[i]];
+    chartVergleich.data.datasets[i].eurValues = [duWerte[i], timWerte[i], laylaWerte[i], klasseWerte[i]];
+  });
+  chartVergleich.update();
+
+  // === Vergleichs-Tabelle aktualisieren ===
+  aktualisiereVergleichsTabelle(duWerte, timWerte, laylaWerte, klasseWerte);
+}
+
+function aktualisiereVergleichsTabelle(du, tim, layla, klasse) {
+  const tbody = document.getElementById('vergleichs-tbody');
+  tbody.innerHTML = '';
+  AUSGABEN_KAT.forEach((k, i) => {
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td>${k.label}</td>
+      <td class="zahl">${fmtEUR.format(du[i])}</td>
+      <td class="zahl">${fmtEUR.format(tim[i])}</td>
+      <td class="zahl">${fmtEUR.format(layla[i])}</td>
+      <td class="zahl"><input type="number" step="0.50" min="0" value="${klasse[i] || ''}" data-klasse="${k.key}" placeholder="– €"></td>
+    `;
+    tbody.appendChild(row);
+  });
+  // Listener für Klasse-Ø-Eingaben
+  tbody.querySelectorAll('input[data-klasse]').forEach(inp => {
+    inp.addEventListener('input', () => {
+      klasseDaten[inp.dataset.klasse] = parseFloat(inp.value) || 0;
+      const daten = sammleDaten();
+      aktualisiereCharts();
+      // Auto-Save
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(daten));
+    });
+  });
+  // Summen
+  document.getElementById('sum-du').textContent = fmtEUR.format(du.reduce((a, b) => a + b, 0));
+  document.getElementById('sum-tim').textContent = fmtEUR.format(tim.reduce((a, b) => a + b, 0));
+  document.getElementById('sum-layla').textContent = fmtEUR.format(layla.reduce((a, b) => a + b, 0));
+  document.getElementById('sum-klasse').textContent = fmtEUR.format(klasse.reduce((a, b) => a + b, 0));
+}
+
+// ============================================================
+// AGGREGATE
+// ============================================================
+function aktualisiereAlles() {
+  aktualisiereAuswertung();
+  aktualisiereCharts();
+}
+
+// ============================================================
+// TOAST
+// ============================================================
+function zeigeToast(msg, dauer = 2200) {
+  const toast = document.getElementById('toast');
+  toast.textContent = msg;
+  toast.classList.add('show');
+  clearTimeout(zeigeToast._t);
+  zeigeToast._t = setTimeout(() => toast.classList.remove('show'), dauer);
+}
+
+// ============================================================
+// EVENT-LISTENER
+// ============================================================
+document.querySelectorAll('input[data-kat]').forEach(inp => {
+  inp.addEventListener('input', () => {
+    aktualisiereAlles();
+  });
+});
+
+// Auto-Save bei jedem blur
+document.querySelectorAll('input, textarea').forEach(el => {
+  el.addEventListener('blur', () => {
+    const daten = sammleDaten();
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(daten));
+  });
+});
+
+// ============================================================
+// INIT
+// ============================================================
+window.addEventListener('DOMContentLoaded', () => {
+  initCharts();
+  // Auto-Load
+  const raw = localStorage.getItem(STORAGE_KEY);
+  if (raw) {
+    try { setzeDaten(JSON.parse(raw)); } catch(e) {}
+  }
+  // Klasse aus URL überschreibt localStorage
+  const urlKlasse = getKlasseAusURL();
+  if (urlKlasse) klasseDaten = urlKlasse;
+
+  // Tab aus URL
+  const urlTab = getTabAusURL();
+  if (urlTab && document.querySelector(`[data-tab="${urlTab}"]`)) {
+    aktivereTab(urlTab);
+  }
+  aktualisiereAlles();
+});
+</script>
+</body>
+</html>
