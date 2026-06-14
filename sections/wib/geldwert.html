@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wie viel ist mein Geld wert? — WiB 7 · weitergehts.online</title>
+<meta name="description" content="Interaktives Lernwerkzeug: Mein Erwachsenen-Budget gestalten, Arbeitsstunden pro Beruf berechnen, mit Reichen vergleichen. Streifendiagramm mit Slidern, drei Schritte.">
+<meta name="author" content="Paul Cebulla · weitergehts.online">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Wie viel ist mein Geld wert? — WiB 7">
+<meta property="og:description" content="Drei Schritte: Mein Budget → Mein Beruf → Was zahlen Reiche?">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E⏱%3C/text%3E%3C/svg%3E">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+:root {
+  --akzent: #385723;
+  --akzent-mittel: #548235;
+  --akzent-hell: #E2EFDA;
+  --akzent-sehr-hell: #F4F9F0;
+  --akzent-dunkel: #1F3A12;
+  --grau-dunkel: #444;
+  --grau-mittel: #777;
+  --grau-hell: #ccc;
+  --warn-gelb: #FFF2CC;
+  --warn-rot: #C00000;
+  --warn-orange: #BF8F00;
+  --bg: #fafafa;
+  --karte-bg: #ffffff;
+  --text: #1a1a1a;
+  --radius: 8px;
+  --shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
+
+header {
+  background: linear-gradient(135deg, var(--akzent) 0%, var(--akzent-mittel) 100%);
+  color: white;
+  padding: 1.5rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+header .header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+header h1 { margin: 0; font-size: 1.7rem; font-weight: 700; }
+header h1 .emoji { margin-right: 0.5rem; }
+header .untertitel { font-size: 0.95rem; opacity: 0.95; margin-top: 0.3rem; max-width: 700px; }
+header .branding { font-size: 0.85rem; opacity: 0.9; text-decoration: none; color: white; }
+header .branding:hover { opacity: 1; text-decoration: underline; }
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* STEPPER */
+.step-nav {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  background: var(--karte-bg);
+  padding: 0.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  flex-wrap: wrap;
+}
+.step-nav button {
+  flex: 1;
+  background: transparent;
+  border: 2px solid transparent;
+  padding: 0.85rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.98rem;
+  color: var(--grau-dunkel);
+  min-width: 220px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.step-nav button .step-num {
+  display: inline-flex;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  background: var(--grau-hell);
+  color: white;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+.step-nav button.active {
+  background: var(--akzent-hell);
+  color: var(--akzent-dunkel);
+  border-color: var(--akzent);
+  font-weight: 600;
+}
+.step-nav button.active .step-num { background: var(--akzent); }
+.step-content { display: none; animation: fadeIn 0.25s ease-out; }
+.step-content.active { display: block; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: none; }
+}
+
+.karte {
+  background: var(--karte-bg);
+  border-radius: var(--radius);
+  padding: 1.3rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 1.2rem;
+}
+.karte > h3:first-child { margin-top: 0; }
+h3 {
+  color: var(--akzent-dunkel);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+/* HINWEIS */
+.hinweis {
+  background: var(--akzent-sehr-hell);
+  border-left: 3px solid var(--akzent);
+  padding: 0.7rem 1rem;
+  border-radius: 4px;
+  font-size: 0.92rem;
+  margin: 0.8rem 0;
+  color: var(--grau-dunkel);
+}
+.hinweis strong { color: var(--akzent-dunkel); }
+.hinweis-warn {
+  background: var(--warn-gelb);
+  border-left-color: var(--warn-orange);
+}
+
+/* SLIDER mit Median-Anzeige + Differenz-Farbe */
+.slider-grid {
+  display: grid;
+  gap: 0.6rem;
+}
+.slider-zeile {
+  display: grid;
+  grid-template-columns: 240px 1fr 130px;
+  gap: 0.8rem;
+  align-items: center;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--akzent-sehr-hell);
+  /* CSS-Variablen für den Track (von JS gesetzt) */
+  --median-pct: 50%;
+  --wert-pct: 50%;
+  --diff-farbe: var(--akzent-mittel);
+}
+.slider-zeile:last-child { border-bottom: none; }
+@media (max-width: 700px) {
+  .slider-zeile { grid-template-columns: 1fr 130px; gap: 0.3rem; }
+  .slider-zeile label { grid-column: 1 / -1; }
+  .slider-wrap { grid-column: 1 / -1; }
+}
+.slider-zeile label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.slider-zeile .farb-punkt {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+/* Slider-Wrapper mit Track-Hintergrund + Median-Marker */
+.slider-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 28px;
+}
+.slider-wrap input[type=range] {
+  width: 100%;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  position: relative;
+  z-index: 2;
+  height: 28px;
+  margin: 0;
+}
+/* Track-Hintergrund (durch Pseudo-Element auf wrap) */
+.slider-wrap::before {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(
+    to right,
+    #d8d8d8 0%,
+    #d8d8d8 var(--klein-pct),
+    var(--diff-farbe) var(--klein-pct),
+    var(--diff-farbe) var(--gross-pct),
+    #d8d8d8 var(--gross-pct),
+    #d8d8d8 100%
+  );
+  z-index: 1;
+}
+/* Median-Marker als vertikaler Strich */
+.slider-wrap::after {
+  content: '';
+  position: absolute;
+  left: var(--median-pct);
+  top: 4px;
+  bottom: 4px;
+  width: 2px;
+  background: #333;
+  border-radius: 2px;
+  transform: translateX(-1px);
+  z-index: 3;
+  pointer-events: none;
+}
+/* Slider-Thumb (Daumen) — überschreibe Default */
+.slider-wrap input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid var(--akzent);
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.slider-wrap input[type=range]::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid var(--akzent);
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.slider-wrap input[type=range]::-webkit-slider-runnable-track {
+  background: transparent;
+  height: 28px;
+}
+.slider-wrap input[type=range]::-moz-range-track {
+  background: transparent;
+  height: 28px;
+}
+
+/* Wert-Anzeige mit Median-Vergleich */
+.slider-zeile .wert-block {
+  text-align: right;
+  font-family: ui-monospace, 'SF Mono', Monaco, monospace;
+}
+.slider-zeile .wert {
+  font-weight: 700;
+  color: var(--akzent-dunkel);
+  font-size: 1rem;
+  display: block;
+  line-height: 1.1;
+}
+.slider-zeile .diff {
+  font-size: 0.78rem;
+  font-weight: 600;
+  display: block;
+  margin-top: 0.15rem;
+  line-height: 1.1;
+}
+.slider-zeile .diff.uber  { color: var(--akzent); }
+.slider-zeile .diff.unter { color: var(--warn-rot); }
+.slider-zeile .diff.gleich { color: var(--grau-mittel); }
+
+/* KPI */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.kpi {
+  background: white;
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  box-shadow: var(--shadow);
+  border-left: 4px solid var(--akzent);
+}
+.kpi .label { font-size: 0.85rem; color: var(--grau-dunkel); margin-bottom: 0.3rem; }
+.kpi .wert { font-size: 1.8rem; font-weight: 700; color: var(--akzent-dunkel); line-height: 1.1; }
+.kpi .wert.positiv { color: var(--akzent); }
+.kpi .wert.negativ { color: var(--warn-rot); }
+
+/* CHART */
+.chart-karte {
+  background: white;
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 1.2rem;
+}
+.chart-karte h3 { margin-top: 0; }
+.chart-wrap-medium { position: relative; height: 200px; }
+
+/* BUTTONS */
+.lohn-grid, .persoenlichkeit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0.6rem;
+}
+.lohn-btn, .person-btn {
+  background: white;
+  border: 1.5px solid var(--grau-hell);
+  border-radius: var(--radius);
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: border-color 0.15s, background 0.15s;
+}
+.lohn-btn:hover, .person-btn:hover { border-color: var(--akzent-mittel); background: var(--akzent-sehr-hell); }
+.lohn-btn.active, .person-btn.active {
+  border-color: var(--akzent);
+  background: var(--akzent-hell);
+  border-width: 2px;
+}
+.lohn-btn .beruf, .person-btn .name { font-weight: 600; font-size: 0.95rem; color: var(--akzent-dunkel); }
+.lohn-btn .stundenlohn, .person-btn .lohn { font-size: 1.35rem; font-weight: 700; color: var(--akzent); margin-top: 0.25rem; }
+.lohn-btn .quelle, .person-btn .quelle-mini { font-size: 0.75rem; color: var(--grau-mittel); margin-top: 0.15rem; }
+.person-btn .rolle { font-size: 0.8rem; color: var(--grau-mittel); margin-top: 0.1rem; }
+
+.aktion-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+.aktion-buttons button {
+  background: white;
+  border: 1px solid var(--akzent);
+  color: var(--akzent);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+.aktion-buttons button.primary { background: var(--akzent); color: white; }
+.aktion-buttons button:hover { box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+
+/* REFLEXION */
+.frage {
+  background: white;
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  margin-bottom: 0.9rem;
+  box-shadow: var(--shadow);
+}
+.frage .frage-text {
+  font-weight: 600;
+  color: var(--akzent-dunkel);
+  margin-bottom: 0.5rem;
+}
+.frage textarea {
+  width: 100%;
+  border: 1px solid var(--grau-hell);
+  border-radius: 4px;
+  padding: 0.6rem;
+  font-family: inherit;
+  font-size: 1rem;
+  background: var(--warn-gelb);
+  min-height: 70px;
+  resize: vertical;
+}
+.frage textarea:focus { outline: 2px solid var(--akzent); background: white; }
+
+/* WEITER-BUTTON */
+.weiter-zeile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.weiter-btn {
+  background: var(--akzent);
+  color: white;
+  border: none;
+  padding: 0.85rem 1.5rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 600;
+}
+.weiter-btn:hover { background: var(--akzent-dunkel); }
+.weiter-btn .pfeil { margin-left: 0.4rem; }
+.zurueck-btn {
+  background: transparent;
+  color: var(--grau-dunkel);
+  border: 1px solid var(--grau-hell);
+  padding: 0.85rem 1.2rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+/* FOOTER */
+footer {
+  background: var(--akzent-sehr-hell);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--grau-dunkel);
+  margin-top: 2rem;
+  border-top: 1px solid var(--akzent-hell);
+}
+footer a { color: var(--akzent); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+footer .quellen { margin-top: 0.5rem; font-size: 0.78rem; opacity: 0.85; }
+
+/* HOVER-TOOLTIPS für Fachbegriffe */
+abbr[title] {
+  text-decoration: underline dotted var(--akzent-mittel);
+  cursor: help;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+abbr[title]:hover { color: var(--akzent); }
+
+/* TOAST */
+.toast {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(120%);
+  background: var(--akzent-dunkel);
+  color: white;
+  padding: 0.7rem 1.2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 1000;
+  font-size: 0.92rem;
+  transition: transform 0.3s ease-out;
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+@media print {
+  header, footer, .step-nav, .weiter-zeile, .aktion-buttons { display: none !important; }
+  body { background: white; }
+  .step-content { display: block !important; page-break-after: always; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div>
+      <h1><span class="emoji">⏱️</span> Wie viel ist mein Geld wert?</h1>
+      <div class="untertitel">Drei Schritte: <strong>Mein Erwachsenen-Budget</strong> → <strong>Mein Beruf — reicht das?</strong> → <strong>Was zahlen Reiche?</strong></div>
+    </div>
+    <a href="https://weitergehts.online" class="branding">weitergehts.online</a>
+  </div>
+</header>
+
+<main>
+
+<!-- STEPPER -->
+<div class="step-nav">
+  <button data-step="1" class="active"><span class="step-num">1</span> Mein Budget</button>
+  <button data-step="2"><span class="step-num">2</span> Mein Beruf — reicht das?</button>
+  <button data-step="3"><span class="step-num">3</span> Was zahlen Reiche?</button>
+</div>
+
+<!-- STEP 1 -->
+<div class="step-content active" data-step-content="1">
+  <div class="karte">
+    <h3>So gibt der typische Erwachsene in Deutschland sein Geld aus</h3>
+    <p style="font-size:0.95rem;color:var(--grau-dunkel);margin-top:0">
+      Quelle: <abbr title="Einkommens- und Verbrauchsstichprobe — alle 5 Jahre vom Statistischen Bundesamt: 60.000 Haushalte werden gefragt, wofür sie Geld ausgeben">Erhebung 2023</abbr> vom Statistischen Bundesamt.
+      Pro Monat etwa <strong>3.030 €</strong> — verteilt auf acht große Posten.
+    </p>
+    <p style="font-size:0.95rem;color:var(--grau-dunkel)">
+      Schieb mit den Reglern: <em>Wofür willst DU als Erwachsene/r mehr/weniger ausgeben?</em>
+      Der Streifen unten zeigt dein angepasstes Budget.
+    </p>
+  </div>
+
+  <div class="karte">
+    <h3>Meine Wunsch-Ausgaben (€ pro Monat)</h3>
+    <div class="slider-grid" id="slider-grid"></div>
+
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="label">Mein Budget pro Monat</div>
+        <div class="wert" id="kpi-budget-total">3.031 €</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Unterschied zum <abbr title="Durchschnittswert — der Wert, den die typische Erwachsene-Person ausgibt">typischen Wert</abbr></div>
+        <div class="wert" id="kpi-budget-diff" style="font-size:1.4rem">± 0 €</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Pro Jahr</div>
+        <div class="wert" id="kpi-budget-jahr" style="font-size:1.4rem">36.372 €</div>
+      </div>
+    </div>
+
+    <div class="aktion-buttons">
+      <button onclick="resetBudget()">↺ Auf typischen Wert zurücksetzen</button>
+    </div>
+  </div>
+
+  <div class="chart-karte">
+    <h3>Mein Budget — Streifendiagramm</h3>
+    <p style="font-size:0.88rem;color:var(--grau-dunkel);margin-top:0">Anteile pro Kategorie. Tooltip zeigt €-Werte.</p>
+    <div class="chart-wrap-medium"><canvas id="chart-budget"></canvas></div>
+  </div>
+
+  <div class="weiter-zeile">
+    <div></div>
+    <button class="weiter-btn" onclick="naechsterStep(2)">Weiter zu Schritt 2 <span class="pfeil">→</span></button>
+  </div>
+</div>
+
+<!-- STEP 2 -->
+<div class="step-content" data-step-content="2">
+  <div class="karte">
+    <h3>Mein Beruf — reicht das?</h3>
+    <p style="font-size:0.95rem;color:var(--grau-dunkel);margin-top:0">
+      Wähle einen Stundenlohn — entweder einen Beruf aus der Liste oder gib deinen Wunschberuf-Stundenlohn frei ein
+      (Stundenlohn deines Wunschberufs recherchieren: <a href="https://www.stepstone.de/gehalt/" target="_blank" style="color:var(--akzent)">stepstone.de</a>, <a href="https://www.meingehalt.net/" target="_blank" style="color:var(--akzent)">meingehalt.net</a>).
+    </p>
+    <p style="font-size:0.95rem;color:var(--grau-dunkel)">
+      Das Streifendiagramm ist <strong>dasselbe wie in Schritt 1</strong> — nur ändert sich die Skala: jetzt
+      <strong>Arbeitsstunden pro Tag</strong>, die du arbeiten musst, um dir jede Kategorie zu leisten.
+    </p>
+
+    <h4 style="margin-top:1.5rem;margin-bottom:0.7rem">Stundenlohn wählen:</h4>
+    <div class="lohn-grid" id="lohn-grid"></div>
+
+    <div style="margin-top:1rem;display:flex;gap:0.6rem;align-items:center;flex-wrap:wrap">
+      <label for="eigen-lohn"><strong>Oder eigener Stundenlohn (z. B. Wunschberuf):</strong></label>
+      <input type="number" id="eigen-lohn" step="0.50" min="0" placeholder="z. B. 16 €/h" style="border:1px solid var(--grau-hell);border-radius:4px;padding:0.4rem 0.6rem;background:var(--warn-gelb);width:140px">
+      <span style="font-size:0.9rem;color:var(--grau-mittel)">€/Stunde brutto</span>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="label">Stundenlohn</div>
+        <div class="wert" id="kpi-lohn" style="font-size:1.5rem">13,90 €/h</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Arbeit gesamt</div>
+        <div class="wert" id="kpi-arbeit-gesamt" style="font-size:1.5rem">7,3 Std/Tag</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Vergleich 8-h-Tag</div>
+        <div class="wert" id="kpi-arbeit-vergleich" style="font-size:1.1rem">–</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chart-karte">
+    <h3>Arbeitsstunden pro Tag — pro Kategorie</h3>
+    <p style="font-size:0.88rem;color:var(--grau-dunkel);margin-top:0">
+      Wie viele Stunden täglich für jede Budget-Kategorie?
+      Tooltip zeigt: Stunden oder Minuten oder Sekunden.
+    </p>
+    <div class="chart-wrap-medium"><canvas id="chart-arbeit"></canvas></div>
+  </div>
+
+  <div class="weiter-zeile">
+    <button class="zurueck-btn" onclick="naechsterStep(1)">← Zurück</button>
+    <button class="weiter-btn" onclick="naechsterStep(3)">Weiter zu Schritt 3 <span class="pfeil">→</span></button>
+  </div>
+</div>
+
+<!-- STEP 3 -->
+<div class="step-content" data-step-content="3">
+  <div class="karte">
+    <h3>Was zahlen Reiche dafür?</h3>
+    <p style="font-size:0.95rem;color:var(--grau-dunkel);margin-top:0">
+      Wähle eine Persönlichkeit. So lange müsste sie <strong>für DEIN Budget</strong> täglich arbeiten —
+      bei demselben Streifendiagramm, nur logarithmisch skaliert.
+    </p>
+
+    <h4 style="margin-top:1.5rem;margin-bottom:0.7rem">Persönlichkeit wählen:</h4>
+    <div class="persoenlichkeit-grid" id="persoenlichkeit-grid"></div>
+
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="label">Tages-Arbeitszeit für dein Budget</div>
+        <div class="wert" id="kpi-reich-gesamt" style="font-size:1.4rem">–</div>
+      </div>
+      <div class="kpi">
+        <div class="label">So oft mehr verdient diese Person <abbr title="Wie oft passt dein Stundenlohn in den Stundenlohn der Person rein? Beispiel: Wenn jemand 10× mehr verdient als du, kann man auch sagen 'der Faktor ist 10'">pro Stunde als du</abbr></div>
+        <div class="wert" id="kpi-reich-faktor" style="font-size:1.4rem">–</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chart-karte">
+    <h3>Arbeitszeit pro Tag — pro Kategorie</h3>
+    <p style="font-size:0.88rem;color:var(--grau-dunkel);margin-top:0">
+      Die Skala ist <abbr title="Statt 1, 2, 3, 4 zeigt sie 1, 10, 100, 1000 — sonst würden bei riesigen Unterschieden die kleinen Werte gar nicht mehr sichtbar sein">gestreckt</abbr> — die Zahlen sind extrem unterschiedlich. Bei Musk werden ganze Kategorien zu Bruchteilen einer Sekunde.
+    </p>
+    <div class="chart-wrap-medium"><canvas id="chart-reicher"></canvas></div>
+  </div>
+
+  <div class="hinweis hinweis-warn">
+    <strong>Wichtig — drei sehr verschiedene Wege zum Geld:</strong>
+    <ul style="margin:0.4rem 0 0 1rem;padding:0">
+      <li><strong>Geld aus Arbeit</strong> (Mindestlohn, Polizist, Verkäufer, Lehrer, Arzt, auch Merz als Kanzler):
+      Geld kommt aus <em>Lebenszeit gegen Lohn</em>. Stunden-Lohn = das, was wirklich pro Stunde Arbeit bezahlt wird.</li>
+      <li><strong>Geld aus Besitz</strong> (Musk, Bezos): Geld kommt aus <em>Besitz von Aktien/Firmen-Anteilen</em>, die im Wert steigen.
+      Der „€/h"-Wert ist eine <abbr title="Rechnung zum Veranschaulichen — nicht das, was die Person tatsächlich pro Stunde bekommt">Schätzrechnung</abbr> (gesamtes Vermögen ÷ alle Stunden seiner Karriere) — kein echter Lohn.</li>
+      <li><strong>Geld aus Karriere</strong> (Ronaldo, Apache 207, MrBeast, Schweinfurt-Spieler): Mischung aus Arbeit (Training, Auftritte) + Verträgen + Sponsoring + Werbung.</li>
+    </ul>
+  </div>
+
+  <div class="karte">
+    <h3>📝 Reflexion zur Sicherung</h3>
+    <p style="font-size:0.92rem;color:var(--grau-dunkel);margin-top:0">
+      Die Fragen helfen dir, die Stunde im Heft zu sichern. Antworte ehrlich — die Antworten bleiben nur auf deinem Gerät.
+    </p>
+
+    <h4 style="color:var(--akzent);margin-top:1.2rem">A) Mein Geld = meine Lebenszeit</h4>
+    <div class="frage">
+      <div class="frage-text">1. Bei welcher deiner Budget-Kategorien (Schritt 1) denkst du jetzt: „Lohnt sich der Zeitaufwand wirklich?" Wo würdest du sparen, weil dir die Lebenszeit dafür zu schade wäre?</div>
+      <textarea data-reflex="r1" rows="3"></textarea>
+    </div>
+    <div class="frage">
+      <div class="frage-text">2. Eine Pizza beim Italiener kostet 12 €. Rechne mit deinem Stundenlohn: Wie viele Minuten deines Lebens kostet sie? Würdest du diese Minuten wieder dafür geben?</div>
+      <textarea data-reflex="r2" rows="3"></textarea>
+    </div>
+
+    <h4 style="color:var(--akzent);margin-top:1.5rem">B) Geld aus Arbeit ≠ Geld aus Kapital</h4>
+    <div class="frage">
+      <div class="frage-text">3. Beim Mindestlöhner ist 1 Stunde Arbeit = 13,90 €. Bei Musk ist 1 Stunde rechnerisch 19,7 Mio €. Aber: Musk besitzt nicht „Arbeit für 19,7 Mio" — er besitzt Aktien. Ist sein „Stundenlohn" überhaupt verdient? Was ist er?</div>
+      <textarea data-reflex="r3" rows="3"></textarea>
+    </div>
+    <div class="frage">
+      <div class="frage-text">4. Es gibt zwei Wege, an Geld zu kommen: (a) Arbeiten gegen Lohn — Zeit eintauschen. (b) Besitz haben, der im Wert steigt — Aktien, Häuser, Bitcoin. Welcher Weg ist verbreiteter? Welcher ist schneller? Was bedeutet das für Menschen, die wenig oder nichts besitzen?</div>
+      <textarea data-reflex="r4" rows="3"></textarea>
+    </div>
+
+    <h4 style="color:var(--akzent);margin-top:1.5rem">C) Staatsbürger-Perspektive: Macht und Geld</h4>
+    <div class="frage">
+      <div class="frage-text">5. Friedrich Merz ist als Bundeskanzler von Wähler:innen <strong>gewählt</strong> und entscheidet über Gesetze für 84 Mio. Menschen — Einkommen: 173 €/h. Elon Musk hat <strong>keine deutsche Wahl gewonnen</strong>, entscheidet über keine Gesetze — aber sein „Stundeneinkommen" ist <strong>~115.000× höher</strong>. Wer hat mehr <em>echte</em> Macht? Warum?</div>
+      <textarea data-reflex="r5" rows="4"></textarea>
+    </div>
+    <div class="frage">
+      <div class="frage-text">6. In der Demokratie gilt: „Eine Person — eine Stimme". In der Wirtschaft gilt: „Ein Euro — eine Stimme". Wenn eine einzige Person 1,11 Billionen Euro besitzt — wie viele „Wirtschafts-Stimmen" hat sie? Was bedeutet das für die Demokratie?</div>
+      <textarea data-reflex="r6" rows="4"></textarea>
+    </div>
+
+    <h4 style="color:var(--akzent);margin-top:1.5rem">D) Sicherung — die Antwort der Stunde</h4>
+    <div class="frage">
+      <div class="frage-text">7. <strong>Was ist mein Geld wert?</strong> Beziehe dich auf (a) deinen Zeit-Aufwand pro Euro, (b) den Unterschied zwischen Arbeitsgeld und Kapitalgeld. Schreibe 3–4 Sätze.</div>
+      <textarea data-reflex="r7" rows="5"></textarea>
+    </div>
+
+    <div class="aktion-buttons">
+      <button class="primary" onclick="window.print()">🖨️ Reflexion drucken</button>
+      <button onclick="exportierenJSON()">⬇️ Als Datei sichern</button>
+    </div>
+  </div>
+
+  <div class="weiter-zeile">
+    <button class="zurueck-btn" onclick="naechsterStep(2)">← Zurück</button>
+    <div></div>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <div><strong>Wie viel ist mein Geld wert?</strong> · WiB 7 · LB4 Wirtschaft · <a href="https://weitergehts.online">weitergehts.online</a></div>
+  <div class="quellen">
+    Quellen: <a href="https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Einkommen-Konsum-Lebensbedingungen/Konsumausgaben-Lebenshaltungskosten/aktuell_evs2023.html" target="_blank">EVS 2023 DESTATIS</a> · DGB Mindestlohn 2026 · Forbes 2025 Sport/Creator Earnings · Bloomberg Billionaires Index Juni 2026 · Daten bleiben lokal auf deinem Gerät
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ============================================================
+// KONSTANTEN
+// ============================================================
+const STORAGE_KEY = 'wib_geldwert_v1';
+
+// Erwachsenen-Konsum (EVS 2023 Median ~3.030 €/Monat × Anteile)
+const ERWACHSENEN_KAT = [
+  { key: 'wohnen',         label: 'Wohnen',                        median: 1151, max: 2800, farbe: '#2C3E50' },
+  { key: 'essen',          label: 'Essen (Lebensm. + Restaurant)', median: 636,  max: 1500, farbe: '#E67E22' },
+  { key: 'mobilitaet',     label: 'Mobilität (Auto, ÖPNV)',        median: 364,  max: 1200, farbe: '#C0392B' },
+  { key: 'freizeit',       label: 'Freizeit & Spaß',               median: 273,  max: 800,  farbe: '#9B59B6' },
+  { key: 'kleidung',       label: 'Kleidung',                      median: 121,  max: 500,  farbe: '#E84A8E' },
+  { key: 'gesundheit',     label: 'Gesundheit & Versicherung',     median: 152,  max: 500,  farbe: '#16A2A6' },
+  { key: 'kommunikation',  label: 'Handy/Internet/Tech',           median: 152,  max: 400,  farbe: '#3498DB' },
+  { key: 'sparen',         label: 'Sparen + Sonstiges',            median: 182,  max: 1500, farbe: '#27AE60' },
+];
+const MEDIAN_TOTAL = ERWACHSENEN_KAT.reduce((s, k) => s + k.median, 0);
+
+// Stundenlöhne brutto DE 2026 — Median-Werte (nicht Einstieg)
+const STUNDENLOEHNE = [
+  { id: 'mindest',  beruf: 'Mindestlohn',             lohn: 13.90, quelle: 'gesetzl. Mindestlohn ab 01/2026' },
+  { id: 'verkauf',  beruf: 'Verkäufer/in',            lohn: 18.00, quelle: 'StepStone typischer Wert 2026' },
+  { id: 'polizei',  beruf: 'Polizist/in (typisch)',   lohn: 20.00, quelle: '~3.500 €/Mt mittlerer Dienst' },
+  { id: 'kfz',      beruf: 'KFZ-Mechatroniker/in',    lohn: 22.00, quelle: '~3.785 €/Mt' },
+  { id: 'lehrer',   beruf: 'Lehrer/in',               lohn: 27.00, quelle: '~4.500 €/Mt brutto' },
+  { id: 'arzt',     beruf: 'Arzt/Ärztin (Assistenz)', lohn: 32.00, quelle: '~5.300 €/Mt brutto' },
+  { id: 'pflege',   beruf: 'Pflegekraft',             lohn: 21.00, quelle: '~3.500 €/Mt brutto' },
+];
+
+// Persönlichkeiten (€/h rechnerisch ÷ 2.080 h/Jahr) — schülernahe Auswahl
+const PERSOENLICHKEITEN = [
+  { id: 'arda',     name: 'Arda Saatci',        rolle: 'DE Influencer (TR-stämmig)',    lohnH: 75,         quelle: '~150 k €/J (Schätzung)' },
+  { id: 'merz',     name: 'Friedrich Merz',     rolle: 'Bundeskanzler (gewählt)',       lohnH: 173,        quelle: 'Kanzler-Bezüge ~360 k €/J' },
+  { id: 'schweinfurt', name: 'FC Schweinfurt 05 Spieler', rolle: '3. Liga 2025/26 (Aufsteiger)', lohnH: 45, quelle: '~8 k €/Mt Schätzung' },
+  { id: 'mero',     name: 'Mero',               rolle: 'Rapper (TR-stämmig)',           lohnH: 1_500,      quelle: '~3 Mio €/J Schätzung' },
+  { id: 'loredana', name: 'Loredana',           rolle: 'Rapperin (XK-stämmig, CH)',     lohnH: 2_500,      quelle: '~5 Mio €/J Schätzung' },
+  { id: 'capital',  name: 'Capital Bra',        rolle: 'Rapper (RU-stämmig)',           lohnH: 3_500,      quelle: '~7 Mio €/J Schätzung' },
+  { id: 'apache',   name: 'Apache 207',         rolle: 'Rapper (TR-stämmig, Mannheim)', lohnH: 3_850,      quelle: '~8 Mio €/J · 10 Mio € Vermögen' },
+  { id: 'mrbeast',  name: 'MrBeast',            rolle: 'YouTuber',                      lohnH: 41_000,     quelle: '85 Mio €/J (Forbes 2025)' },
+  { id: 'ronaldo',  name: 'Cristiano Ronaldo',  rolle: 'Fußball-Superstar',             lohnH: 144_000,    quelle: '300 Mio €/J (Forbes 2025)' },
+  { id: 'bezos',    name: 'Jeff Bezos',         rolle: 'Amazon-Gründer',                lohnH: 4_000_000,  quelle: '~250 Mrd ÷ 30 J ÷ 2080 h' },
+  { id: 'musk',     name: 'Elon Musk',          rolle: 'Trillionär (SpaceX/Tesla)',     lohnH: 19_700_000, quelle: '1,11 Bio ÷ 25 J ÷ 2080 h' },
+];
+
+// ============================================================
+// STATE
+// ============================================================
+let mein_budget = {};
+ERWACHSENEN_KAT.forEach(k => mein_budget[k.key] = k.median);
+
+let aktuellerLohn = 13.90;
+let aktivePerson = PERSOENLICHKEITEN[0];
+
+let chartBudget, chartArbeit, chartReicher;
+
+// ============================================================
+// FORMATTERS
+// ============================================================
+const fmtEUR = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 });
+const fmtEUR2 = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' });
+
+function formatGross(n) {
+  if (n >= 1_000_000) return (n / 1_000_000).toFixed(1) + ' Mio';
+  if (n >= 1_000) return (n / 1_000).toFixed(0) + ' Tsd';
+  return n.toFixed(0);
+}
+
+function formatStd(h) {
+  if (h <= 0) return '–';
+  if (h < 1/60) return Math.round(h * 3600) + ' Sek';
+  if (h < 1) return Math.round(h * 60) + ' Min';
+  return h.toFixed(1) + ' Std';
+}
+
+function formatZeitFein(sek) {
+  if (sek < 0.001) return (sek * 1_000_000).toFixed(0) + ' μs';
+  if (sek < 1) return (sek * 1000).toFixed(0) + ' ms';
+  if (sek < 60) return sek.toFixed(1) + ' Sek';
+  if (sek < 3600) return (sek/60).toFixed(1) + ' Min';
+  if (sek < 86400) return (sek/3600).toFixed(2) + ' Std';
+  return (sek/86400).toFixed(1) + ' Tage';
+}
+
+// ============================================================
+// STEPPER NAV
+// ============================================================
+function naechsterStep(n) {
+  document.querySelectorAll('.step-nav button').forEach(b => b.classList.remove('active'));
+  document.querySelector(`.step-nav button[data-step="${n}"]`).classList.add('active');
+  document.querySelectorAll('.step-content').forEach(s => s.classList.remove('active'));
+  document.querySelector(`[data-step-content="${n}"]`).classList.add('active');
+  aktualisiereCharts();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+document.querySelectorAll('.step-nav button').forEach(btn => {
+  btn.addEventListener('click', () => naechsterStep(btn.dataset.step));
+});
+
+// ============================================================
+// STEP 1: BUDGET-SLIDER mit Median-Marker + Differenz-Farbe
+// ============================================================
+function initBudgetSlider() {
+  const grid = document.getElementById('slider-grid');
+  grid.innerHTML = '';
+  ERWACHSENEN_KAT.forEach(k => {
+    const z = document.createElement('div');
+    z.className = 'slider-zeile';
+    z.dataset.kat = k.key;
+    z.innerHTML = `
+      <label>
+        <span class="farb-punkt" style="background:${k.farbe}"></span>
+        ${k.label}
+      </label>
+      <div class="slider-wrap">
+        <input type="range" min="0" max="${k.max}" step="10" value="${mein_budget[k.key]}" data-budget-kat="${k.key}">
+      </div>
+      <div class="wert-block">
+        <span class="wert" data-budget-val="${k.key}">${fmtEUR.format(mein_budget[k.key])}</span>
+        <span class="diff gleich" data-budget-diff="${k.key}">typisch: ${fmtEUR.format(k.median)}</span>
+      </div>
+    `;
+    grid.appendChild(z);
+  });
+  grid.querySelectorAll('input[data-budget-kat]').forEach(inp => {
+    inp.addEventListener('input', () => {
+      mein_budget[inp.dataset.budgetKat] = parseFloat(inp.value) || 0;
+      aktualisiereSliderUI(inp.dataset.budgetKat);
+      aktualisiereCharts();
+      autoSave();
+    });
+  });
+  // Initiales UI-Update für alle Slider (Median-Marker etc.)
+  ERWACHSENEN_KAT.forEach(k => aktualisiereSliderUI(k.key));
+}
+
+function aktualisiereSliderUI(katKey) {
+  const k = ERWACHSENEN_KAT.find(x => x.key === katKey);
+  if (!k) return;
+  const zeile = document.querySelector(`.slider-zeile[data-kat="${katKey}"]`);
+  if (!zeile) return;
+
+  const wert = mein_budget[katKey];
+  const wertEl = zeile.querySelector(`[data-budget-val="${katKey}"]`);
+  const diffEl = zeile.querySelector(`[data-budget-diff="${katKey}"]`);
+
+  // Wert formatieren
+  if (wertEl) wertEl.textContent = fmtEUR.format(wert);
+
+  // Differenz zum Median
+  const diff = wert - k.median;
+  if (diffEl) {
+    diffEl.classList.remove('uber', 'unter', 'gleich');
+    if (Math.abs(diff) < 5) {
+      diffEl.textContent = `typisch: ${fmtEUR.format(k.median)}`;
+      diffEl.classList.add('gleich');
+    } else if (diff > 0) {
+      diffEl.textContent = `+ ${fmtEUR.format(diff)} mehr als typisch`;
+      diffEl.classList.add('uber');
+    } else {
+      diffEl.textContent = `− ${fmtEUR.format(Math.abs(diff))} weniger als typisch`;
+      diffEl.classList.add('unter');
+    }
+  }
+
+  // CSS-Variablen setzen für Track-Hintergrund
+  const medianPct = (k.median / k.max) * 100;
+  const wertPct = (wert / k.max) * 100;
+  const kleinPct = Math.min(medianPct, wertPct);
+  const grossPct = Math.max(medianPct, wertPct);
+
+  // Farbe: grün wenn drüber, rot wenn drunter, akzent-grau wenn gleich
+  let diffFarbe;
+  if (Math.abs(diff) < 5) diffFarbe = '#bbb';
+  else if (diff > 0) diffFarbe = '#27AE60';  // grün
+  else diffFarbe = '#C0392B';  // rot
+
+  zeile.style.setProperty('--median-pct', medianPct + '%');
+  zeile.style.setProperty('--wert-pct', wertPct + '%');
+  zeile.style.setProperty('--klein-pct', kleinPct + '%');
+  zeile.style.setProperty('--gross-pct', grossPct + '%');
+  zeile.style.setProperty('--diff-farbe', diffFarbe);
+}
+
+function resetBudget() {
+  ERWACHSENEN_KAT.forEach(k => {
+    mein_budget[k.key] = k.median;
+    const inp = document.querySelector(`input[data-budget-kat="${k.key}"]`);
+    if (inp) inp.value = k.median;
+    aktualisiereSliderUI(k.key);
+  });
+  aktualisiereCharts();
+  autoSave();
+  zeigeToast('↺ Auf typischen Wert zurückgesetzt');
+}
+
+// ============================================================
+// STEP 2: LOHN
+// ============================================================
+function initLohnButtons() {
+  const grid = document.getElementById('lohn-grid');
+  grid.innerHTML = '';
+  STUNDENLOEHNE.forEach((s, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'lohn-btn' + (i === 0 ? ' active' : '');
+    btn.dataset.lohn = s.lohn;
+    btn.innerHTML = `
+      <div class="beruf">${s.beruf}</div>
+      <div class="stundenlohn">${fmtEUR2.format(s.lohn)} <span style="font-size:0.7em;font-weight:400;color:var(--grau-mittel)">/h</span></div>
+      <div class="quelle">${s.quelle}</div>
+    `;
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.lohn-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      aktuellerLohn = s.lohn;
+      document.getElementById('eigen-lohn').value = '';
+      aktualisiereCharts();
+      autoSave();
+    });
+    grid.appendChild(btn);
+  });
+  document.getElementById('eigen-lohn').addEventListener('input', e => {
+    const v = parseFloat(e.target.value);
+    if (v > 0) {
+      aktuellerLohn = v;
+      document.querySelectorAll('.lohn-btn').forEach(b => b.classList.remove('active'));
+      aktualisiereCharts();
+      autoSave();
+    }
+  });
+}
+
+// ============================================================
+// STEP 3: PERSÖNLICHKEITEN
+// ============================================================
+function initPersoenlichkeitButtons() {
+  const grid = document.getElementById('persoenlichkeit-grid');
+  grid.innerHTML = '';
+  PERSOENLICHKEITEN.forEach((p, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'person-btn' + (i === 0 ? ' active' : '');
+    btn.innerHTML = `
+      <div class="name">${p.name}</div>
+      <div class="rolle">${p.rolle}</div>
+      <div class="lohn">${formatGross(p.lohnH)} €/h</div>
+      <div class="quelle-mini">${p.quelle}</div>
+    `;
+    btn.addEventListener('click', () => {
+      grid.querySelectorAll('.person-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      aktivePerson = p;
+      aktualisiereCharts();
+      autoSave();
+    });
+    grid.appendChild(btn);
+  });
+}
+
+// ============================================================
+// CHARTS
+// ============================================================
+function initCharts() {
+  // BUDGET
+  const ctxB = document.getElementById('chart-budget');
+  chartBudget = new Chart(ctxB, {
+    type: 'bar',
+    data: {
+      labels: ['Mein Budget'],
+      datasets: ERWACHSENEN_KAT.map(k => ({
+        label: k.label,
+        data: [mein_budget[k.key]],
+        backgroundColor: k.farbe,
+        borderWidth: 0
+      }))
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        x: {
+          stacked: true,
+          title: { display: true, text: '€ pro Monat' },
+          min: 0,
+          max: 8000,   // KONSTANTE Skala: Median 3030 + Spielraum bis 8.000 €
+          ticks: { callback: v => v + ' €' }
+        },
+        y: { stacked: true, grid: { display: false } }
+      },
+      plugins: {
+        legend: { position: 'bottom', labels: { boxWidth: 14, font: { size: 11 }, padding: 8 } },
+        tooltip: { callbacks: { label: c => `${c.dataset.label}: ${fmtEUR2.format(c.parsed.x)}/Monat` } }
+      }
+    }
+  });
+
+  // ARBEIT
+  const ctxA = document.getElementById('chart-arbeit');
+  chartArbeit = new Chart(ctxA, {
+    type: 'bar',
+    data: {
+      labels: ['Du'],
+      datasets: ERWACHSENEN_KAT.map(k => ({
+        label: k.label, data: [0], backgroundColor: k.farbe, borderWidth: 0
+      }))
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        x: {
+          stacked: true,
+          title: { display: true, text: 'Stunden pro Tag' },
+          min: 0,
+          max: 24,   // KONSTANTE Skala: max 24 Stunden (Tageslänge) — Werte darüber = unmöglich
+          ticks: {
+            stepSize: 4,
+            callback: v => v.toFixed(0) + ' h'
+          }
+        },
+        y: { stacked: true, grid: { display: false } }
+      },
+      plugins: {
+        legend: { position: 'bottom', labels: { boxWidth: 14, font: { size: 11 }, padding: 8 } },
+        tooltip: { callbacks: { label: c => `${c.dataset.label}: ${formatStd(c.parsed.x)}` } },
+        annotation: undefined
+      }
+    }
+  });
+
+  // REICHER
+  const ctxR = document.getElementById('chart-reicher');
+  chartReicher = new Chart(ctxR, {
+    type: 'bar',
+    data: {
+      labels: [aktivePerson.name],
+      datasets: ERWACHSENEN_KAT.map(k => ({
+        label: k.label, data: [0.001], backgroundColor: k.farbe, borderWidth: 0
+      }))
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        x: {
+          type: 'logarithmic',
+          title: { display: true, text: 'Sekunden pro Tag (gestreckte Skala)' },
+          min: 0.001,
+          max: 86400,   // KONSTANTE Skala: 1 ms bis 1 Tag — feste Vergleichsachse
+          ticks: {
+            callback: v => {
+              if (v === 0.001) return '1 ms';
+              if (v === 0.1) return '100 ms';
+              if (v === 1) return '1 s';
+              if (v === 10) return '10 s';
+              if (v === 60) return '1 min';
+              if (v === 600) return '10 min';
+              if (v === 3600) return '1 h';
+              if (v === 28800) return '8 h';
+              if (v === 86400) return '24 h';
+              return '';
+            }
+          }
+        },
+        y: { grid: { display: false } }
+      },
+      plugins: {
+        legend: { position: 'bottom', labels: { boxWidth: 14, font: { size: 11 }, padding: 8 } },
+        tooltip: { callbacks: { label: c => `${c.dataset.label}: ${formatZeitFein(c.parsed.x)}` } }
+      }
+    }
+  });
+}
+
+function aktualisiereCharts() {
+  // === STEP 1 ===
+  if (chartBudget) {
+    ERWACHSENEN_KAT.forEach((k, i) => { chartBudget.data.datasets[i].data = [mein_budget[k.key]]; });
+    chartBudget.update();
+  }
+  const total = Object.values(mein_budget).reduce((a, b) => a + b, 0);
+  const diff = total - MEDIAN_TOTAL;
+  document.getElementById('kpi-budget-total').textContent = fmtEUR2.format(total);
+  const dfEl = document.getElementById('kpi-budget-diff');
+  dfEl.textContent = (diff >= 0 ? '+ ' : '– ') + fmtEUR2.format(Math.abs(diff));
+  dfEl.className = 'wert ' + (diff > 0 ? 'positiv' : diff < 0 ? 'negativ' : '');
+  dfEl.style.fontSize = '1.4rem';
+  document.getElementById('kpi-budget-jahr').textContent = fmtEUR2.format(total * 12);
+
+  // === STEP 2 ===
+  document.getElementById('kpi-lohn').textContent = fmtEUR2.format(aktuellerLohn) + '/h';
+  if (chartArbeit) {
+    let gesamt = 0;
+    ERWACHSENEN_KAT.forEach((k, i) => {
+      const std = (mein_budget[k.key] / aktuellerLohn) / 30;
+      chartArbeit.data.datasets[i].data = [std];
+      gesamt += std;
+    });
+    chartArbeit.update();
+    document.getElementById('kpi-arbeit-gesamt').textContent = gesamt.toFixed(1) + ' Std/Tag';
+    const v = document.getElementById('kpi-arbeit-vergleich');
+    if (gesamt > 24) v.innerHTML = '<span style="color:var(--warn-rot);font-weight:700">⚠ Unmöglich!</span>';
+    else if (gesamt > 8) v.innerHTML = '<span style="color:var(--warn-orange);font-weight:600">über 8 h/Tag</span>';
+    else if (gesamt > 6) v.innerHTML = '<span style="color:var(--akzent)">knapp möglich</span>';
+    else v.innerHTML = '<span style="color:var(--akzent);font-weight:600">✓ entspannt</span>';
+  }
+
+  // === STEP 3 ===
+  if (chartReicher) {
+    let gesamt = 0;
+    ERWACHSENEN_KAT.forEach((k, i) => {
+      const sek = Math.max(((mein_budget[k.key] / aktivePerson.lohnH) / 30) * 3600, 0.0001);
+      chartReicher.data.datasets[i].data = [sek];
+      gesamt += sek;
+    });
+    chartReicher.data.labels = [aktivePerson.name];
+    chartReicher.update();
+    document.getElementById('kpi-reich-gesamt').textContent = formatZeitFein(gesamt) + '/Tag';
+    const faktor = aktivePerson.lohnH / aktuellerLohn;
+    document.getElementById('kpi-reich-faktor').textContent = formatGross(faktor) + ' ×';
+  }
+}
+
+// ============================================================
+// PERSIST
+// ============================================================
+function autoSave() {
+  const daten = {
+    budget: mein_budget,
+    lohn: aktuellerLohn,
+    person: aktivePerson.id,
+    reflex: {}
+  };
+  document.querySelectorAll('textarea[data-reflex]').forEach(t => { daten.reflex[t.dataset.reflex] = t.value; });
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(daten));
+}
+
+function loadFromStorage() {
+  const raw = localStorage.getItem(STORAGE_KEY);
+  if (!raw) return;
+  try {
+    const d = JSON.parse(raw);
+    if (d.budget) {
+      ERWACHSENEN_KAT.forEach(k => {
+        if (d.budget[k.key] != null) mein_budget[k.key] = d.budget[k.key];
+      });
+    }
+    if (d.lohn) aktuellerLohn = d.lohn;
+    if (d.person) {
+      const p = PERSOENLICHKEITEN.find(x => x.id === d.person);
+      if (p) aktivePerson = p;
+    }
+    if (d.reflex) {
+      Object.keys(d.reflex).forEach(k => {
+        const t = document.querySelector(`textarea[data-reflex="${k}"]`);
+        if (t) t.value = d.reflex[k];
+      });
+    }
+  } catch(e) {}
+}
+
+function exportierenJSON() {
+  const daten = {
+    budget: mein_budget,
+    lohn: aktuellerLohn,
+    person: { id: aktivePerson.id, name: aktivePerson.name },
+    reflex: {},
+    erstellt: new Date().toISOString()
+  };
+  document.querySelectorAll('textarea[data-reflex]').forEach(t => { daten.reflex[t.dataset.reflex] = t.value; });
+  const blob = new Blob([JSON.stringify(daten, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'mein_geld_wert.json';
+  a.click();
+  URL.revokeObjectURL(url);
+  zeigeToast('⬇️ Datei heruntergeladen');
+}
+
+// Reflexion-Auto-Save
+document.addEventListener('input', e => {
+  if (e.target.matches('textarea[data-reflex]')) autoSave();
+});
+
+// ============================================================
+// TOAST
+// ============================================================
+function zeigeToast(msg, dauer = 2000) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(zeigeToast._t);
+  zeigeToast._t = setTimeout(() => t.classList.remove('show'), dauer);
+}
+
+// ============================================================
+// URL-PARAMETER
+// ============================================================
+function getStepFromURL() {
+  const p = new URLSearchParams(window.location.search);
+  return p.get('step') || '1';
+}
+
+// ============================================================
+// INIT
+// ============================================================
+window.addEventListener('DOMContentLoaded', () => {
+  initBudgetSlider();
+  initLohnButtons();
+  initPersoenlichkeitButtons();
+  initCharts();
+  loadFromStorage();
+  // Slider-UI auf geladene Daten syncen (Track-Färbung + Median-Marker)
+  ERWACHSENEN_KAT.forEach(k => {
+    const inp = document.querySelector(`input[data-budget-kat="${k.key}"]`);
+    if (inp) inp.value = mein_budget[k.key];
+    aktualisiereSliderUI(k.key);
+  });
+  // Lohn-Button sync
+  document.querySelectorAll('.lohn-btn').forEach(b => {
+    if (parseFloat(b.dataset.lohn) === aktuellerLohn) {
+      document.querySelectorAll('.lohn-btn').forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+    }
+  });
+  // Person-Button sync
+  document.querySelectorAll('.person-btn').forEach((b, i) => {
+    if (PERSOENLICHKEITEN[i].id === aktivePerson.id) {
+      document.querySelectorAll('.person-btn').forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+    }
+  });
+  aktualisiereCharts();
+  const step = getStepFromURL();
+  if (step !== '1') naechsterStep(step);
+});
+</script>
+</body>
+</html>

@@ -421,6 +421,154 @@ footer a { color: var(--akzent); text-decoration: none; }
 footer a:hover { text-decoration: underline; }
 footer .quellen { margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.85; }
 
+/* GELD-WERT — STEPPER */
+.step-nav {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  background: var(--karte-bg);
+  padding: 0.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  flex-wrap: wrap;
+}
+.step-nav button {
+  flex: 1;
+  background: transparent;
+  border: 2px solid transparent;
+  padding: 0.7rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--grau-dunkel);
+  min-width: 180px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.step-nav button .step-num {
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+  background: var(--grau-hell);
+  color: white;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.step-nav button.active {
+  background: var(--akzent-hell);
+  color: var(--akzent-dunkel);
+  border-color: var(--akzent);
+  font-weight: 600;
+}
+.step-nav button.active .step-num {
+  background: var(--akzent);
+}
+.step-content { display: none; }
+.step-content.active { display: block; }
+
+/* SLIDER (Budget-Anpassung) */
+.slider-grid {
+  display: grid;
+  gap: 0.6rem;
+}
+.slider-zeile {
+  display: grid;
+  grid-template-columns: 200px 1fr 110px;
+  gap: 0.8rem;
+  align-items: center;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--akzent-sehr-hell);
+}
+.slider-zeile:last-child { border-bottom: none; }
+@media (max-width: 700px) {
+  .slider-zeile { grid-template-columns: 1fr; gap: 0.2rem; }
+  .slider-zeile .wert { text-align: left; }
+}
+.slider-zeile label {
+  font-size: 0.92rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.slider-zeile .farb-punkt {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+.slider-zeile input[type=range] {
+  width: 100%;
+  cursor: pointer;
+  accent-color: var(--akzent);
+}
+.slider-zeile .wert {
+  text-align: right;
+  font-weight: 700;
+  color: var(--akzent-dunkel);
+  font-family: ui-monospace, 'SF Mono', Monaco, monospace;
+  font-size: 0.95rem;
+}
+
+/* LOHN-BUTTONS */
+.lohn-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.6rem;
+}
+.lohn-btn {
+  background: white;
+  border: 1.5px solid var(--grau-hell);
+  border-radius: var(--radius);
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: border-color 0.15s, background 0.15s;
+}
+.lohn-btn:hover { border-color: var(--akzent-mittel); background: var(--akzent-sehr-hell); }
+.lohn-btn.active {
+  border-color: var(--akzent);
+  background: var(--akzent-hell);
+  border-width: 2px;
+}
+.lohn-btn .beruf { font-weight: 600; font-size: 0.95rem; color: var(--akzent-dunkel); }
+.lohn-btn .stundenlohn { font-size: 1.4rem; font-weight: 700; color: var(--akzent); margin-top: 0.2rem; }
+.lohn-btn .quelle { font-size: 0.75rem; color: var(--grau-mittel); margin-top: 0.15rem; }
+
+/* PERSÖNLICHKEITS-BUTTONS */
+.persoenlichkeit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0.6rem;
+}
+.person-btn {
+  background: white;
+  border: 1.5px solid var(--grau-hell);
+  border-radius: var(--radius);
+  padding: 0.7rem 0.9rem;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: border-color 0.15s, background 0.15s;
+}
+.person-btn:hover { border-color: var(--akzent-mittel); background: var(--akzent-sehr-hell); }
+.person-btn.active {
+  border-color: var(--akzent);
+  background: var(--akzent-hell);
+  border-width: 2px;
+}
+.person-btn .name { font-weight: 700; font-size: 0.98rem; color: var(--akzent-dunkel); }
+.person-btn .rolle { font-size: 0.78rem; color: var(--grau-mittel); margin-top: 0.1rem; }
+.person-btn .lohn { font-size: 1.1rem; font-weight: 700; color: var(--akzent); margin-top: 0.35rem; }
+.person-btn .quelle-mini { font-size: 0.7rem; color: var(--grau-mittel); margin-top: 0.15rem; font-style: italic; }
+
 /* TOAST */
 .toast {
   position: fixed;
@@ -467,6 +615,7 @@ footer .quellen { margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.85; }
     <button data-tab="mein-geld" class="active">Mein Geld</button>
     <button data-tab="auswertung">Auswertung</button>
     <button data-tab="vergleich">Vergleich</button>
+    <button data-tab="geld-wert">Was ist Geld wert? <span class="badge">NEU</span></button>
     <button data-tab="reflexion">Reflexion</button>
   </div>
 </nav>
@@ -691,6 +840,139 @@ footer .quellen { margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.85; }
   </div>
 </section>
 
+<!-- GELD-WERT -->
+<section id="geld-wert">
+  <h2>Was ist mein Geld wert?</h2>
+  <p>Drei Schritte — derselbe Streifen, jedes Mal eine andere Sicht.</p>
+
+  <div class="hinweis">
+    <strong>Aktuell (12.06.2026):</strong> Elon Musk ist nach dem SpaceX-Börsengang <strong>erster Trillionär der Welt</strong> (≈ 1.110 Mrd. USD). Mindestlohn 2026: 13,90 € pro Stunde. Das ist Faktor ≈ 1,4 Mio.
+  </div>
+
+  <!-- STEPPER -->
+  <div class="step-nav">
+    <button data-step="1" class="active"><span class="step-num">1</span> Mein Erwachsenen-Budget</button>
+    <button data-step="2"><span class="step-num">2</span> Mein Beruf — reicht das?</button>
+    <button data-step="3"><span class="step-num">3</span> Was zahlen Reiche?</button>
+  </div>
+
+  <!-- STEP 1: BUDGET MIT SLIDERN -->
+  <div class="step-content active" data-step-content="1">
+    <div class="karte">
+      <h3>Mein zukünftiges Erwachsenen-Budget</h3>
+      <p style="font-size:0.9rem;color:var(--grau-dunkel)">Erwachsene in Deutschland geben im Schnitt <strong>3.030 €/Monat</strong> aus (EVS 2023). Pass mit den Slidern an: <em>Wofür willst DU als Erwachsene/r mehr/weniger ausgeben?</em></p>
+
+      <div class="slider-grid" id="slider-grid"></div>
+
+      <div class="kpi-grid" style="margin-top:1rem">
+        <div class="kpi">
+          <div class="label">Mein Budget pro Monat</div>
+          <div class="wert" id="kpi-budget-total">0 €</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Differenz zum Median</div>
+          <div class="wert" id="kpi-budget-diff" style="font-size:1.4rem">±0 €</div>
+        </div>
+      </div>
+
+      <div class="aktion-buttons">
+        <button onclick="resetBudget()">↺ Auf EVS-Median zurücksetzen</button>
+      </div>
+    </div>
+
+    <div class="chart-karte">
+      <h3>Mein Budget — Streifendiagramm</h3>
+      <p style="font-size:0.88rem;color:var(--grau-dunkel);margin-top:0">Wie groß ist jede Kategorie in deinem Budget? (€ pro Monat)</p>
+      <div class="chart-wrap-medium"><canvas id="chart-budget"></canvas></div>
+    </div>
+  </div>
+
+  <!-- STEP 2: BERUF -->
+  <div class="step-content" data-step-content="2">
+    <div class="karte">
+      <h3>Mein Beruf — reicht das?</h3>
+      <p style="font-size:0.9rem;color:var(--grau-dunkel)">Wähle einen Stundenlohn oder recherchiere deinen Wunschberuf. Die Streifen-Werte ändern sich: <strong>Arbeitsstunden pro Tag pro Kategorie</strong>.</p>
+
+      <div class="lohn-grid" id="lohn-grid"></div>
+
+      <div style="margin-top:1rem;display:flex;gap:0.6rem;align-items:center;flex-wrap:wrap">
+        <label for="eigen-lohn"><strong>Oder eigener Stundenlohn:</strong></label>
+        <input type="number" id="eigen-lohn" step="0.50" min="0" placeholder="z. B. 16 €/h" style="border:1px solid var(--grau-hell);border-radius:4px;padding:0.4rem 0.6rem;background:var(--warn-gelb);width:140px">
+        <span style="font-size:0.9rem;color:var(--grau-mittel)">€/Stunde</span>
+      </div>
+
+      <div class="kpi-grid" style="margin-top:1rem">
+        <div class="kpi">
+          <div class="label">Aktueller Stundenlohn</div>
+          <div class="wert" id="kpi-lohn" style="font-size:1.6rem">13,90 €</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Gesamt-Arbeitszeit</div>
+          <div class="wert" id="kpi-arbeit-gesamt" style="font-size:1.6rem">– Std/Tag</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Vergleich 8-h-Tag</div>
+          <div class="wert" id="kpi-arbeit-vergleich" style="font-size:1.1rem">–</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chart-karte">
+      <h3>Arbeitsstunden pro Tag — pro Kategorie</h3>
+      <p style="font-size:0.88rem;color:var(--grau-dunkel);margin-top:0">Wie viele Stunden täglich musst du arbeiten, um dir jede Kategorie deines Budgets zu leisten?</p>
+      <div class="chart-wrap-medium"><canvas id="chart-arbeit"></canvas></div>
+    </div>
+  </div>
+
+  <!-- STEP 3: REICHE -->
+  <div class="step-content" data-step-content="3">
+    <div class="karte">
+      <h3>Was zahlen Reiche dafür?</h3>
+      <p style="font-size:0.9rem;color:var(--grau-dunkel)">Wähle eine Persönlichkeit. So lange müsste sie/er <strong>für DEIN Budget</strong> täglich arbeiten:</p>
+
+      <div class="persoenlichkeit-grid" id="persoenlichkeit-grid"></div>
+
+      <div class="kpi-grid" style="margin-top:1rem">
+        <div class="kpi">
+          <div class="label">Tages-Arbeitszeit</div>
+          <div class="wert" id="kpi-reich-gesamt" style="font-size:1.4rem">–</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Faktor (Du ÷ Person)</div>
+          <div class="wert" id="kpi-reich-faktor" style="font-size:1.4rem">–</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chart-karte">
+      <h3>Arbeitszeit pro Tag — pro Kategorie (logarithmisch)</h3>
+      <p style="font-size:0.88rem;color:var(--grau-dunkel);margin-top:0">Logarithmische Achse, weil die Zahlen extrem unterschiedlich sind. Bei Musk werden ganze Kategorien zu Sekunden.</p>
+      <div class="chart-wrap-medium"><canvas id="chart-reicher"></canvas></div>
+    </div>
+
+    <div class="hinweis hinweis-warn">
+      <strong>Achtung Methodik:</strong> Musk/Bezos „verdienen" nicht — sie besitzen Aktien, deren Wert gestiegen ist. Ronaldo/MrBeast sind Einkommen aus Vertrag+Werbung+Sponsoring. Merz ist Bundeskanzler-Bezüge. Die Zahl pro Stunde ist überall ÷ 2.080 Stunden pro Jahr — eine <em>Anschauungs-Rechnung</em>, kein realer Stundenlohn.
+    </div>
+  </div>
+
+  <!-- REFLEXION (ENDE) -->
+  <div class="karte" style="margin-top:1.5rem">
+    <h3>📝 Reflexion zur Sicherung</h3>
+    <div class="frage">
+      <div class="frage-text">Wenn du an deinem Wunschberuf 8 Stunden täglich arbeitest — kommst du mit deinem Wunsch-Budget hin?</div>
+      <textarea data-reflex="gw1" rows="2"></textarea>
+    </div>
+    <div class="frage">
+      <div class="frage-text">Was bedeutet der Faktor zu Elon Musk für dich? Findest du das fair, unfair, normal? Warum?</div>
+      <textarea data-reflex="gw2" rows="3"></textarea>
+    </div>
+    <div class="frage">
+      <div class="frage-text">Was ist DEIN Geld wert? Schreibe 2–3 Sätze.</div>
+      <textarea data-reflex="gw3" rows="3"></textarea>
+    </div>
+  </div>
+</section>
+
 <!-- REFLEXION -->
 <section id="reflexion">
   <h2>Reflexion</h2>
@@ -812,6 +1094,43 @@ const TIM_AUSG = { essen: 5, suesses: 3, spass: 8, kleidung: 0, geschenke: 4, sp
 // Persona Layla (Spaß-Profil): 40 € Einnahmen, 45 € Ausgaben, 0 Sparen
 const LAYLA_AUSG = { essen: 8, suesses: 6, spass: 10, kleidung: 18, geschenke: 3, sparen: 0, ausg_sonstiges: 0 };
 
+// ============================================================
+// GELD-WERT DATEN
+// ============================================================
+// Stundenlöhne brutto Deutschland 2026 (recherchiert: DGB / StepStone / meingehalt.net 06/2026)
+const STUNDENLOEHNE = [
+  { id: 'mindest', beruf: 'Mindestlohn',            lohn: 13.90, quelle: 'gesetzl. Mindestlohn 2026' },
+  { id: 'polizei', beruf: 'Polizist/in (Einstieg)', lohn: 15.00, quelle: '~3.700 €/Monat brutto' },
+  { id: 'verkauf', beruf: 'Verkäufer/in',           lohn: 18.00, quelle: 'Median StepStone 2026' },
+  { id: 'kfz',     beruf: 'KFZ-Verkäufer/in',       lohn: 22.00, quelle: 'Median 3.785 € brutto' },
+  { id: 'lehrer',  beruf: 'Lehrer/in',              lohn: 27.00, quelle: 'Median 4.500 € brutto' },
+  { id: 'arzt',    beruf: 'Arzt/Ärztin (Assistenz)', lohn: 32.00, quelle: 'Median ~5.300 € brutto' },
+  { id: 'influencer', beruf: 'Influencer/in (Top 10%)', lohn: 80.00, quelle: 'Spitzen-Schätzung' },
+];
+
+// Erwachsenen-Konsum-Kategorien (auf Basis EVS 2023 Anteile × Median 3.030 €/Monat)
+const ERWACHSENEN_KAT = [
+  { key: 'wohnen',         label: 'Wohnen',                     median: 1151, max: 2800, farbe: '#2C3E50' },
+  { key: 'essen',          label: 'Essen (Lebensm. + Restaurant)', median: 636, max: 1500, farbe: '#E67E22' },
+  { key: 'mobilitaet',     label: 'Mobilität (Auto, ÖPNV)',     median: 364,  max: 1200, farbe: '#C0392B' },
+  { key: 'freizeit',       label: 'Freizeit & Spaß',            median: 273,  max: 800,  farbe: '#9B59B6' },
+  { key: 'kleidung',       label: 'Kleidung',                   median: 121,  max: 500,  farbe: '#E84A8E' },
+  { key: 'gesundheit',     label: 'Gesundheit & Versicherung',  median: 152,  max: 500,  farbe: '#16A2A6' },
+  { key: 'kommunikation',  label: 'Handy/Internet/Tech',        median: 152,  max: 400,  farbe: '#3498DB' },
+  { key: 'sparen',         label: 'Sparen + Sonstiges',         median: 182,  max: 1500, farbe: '#27AE60' },
+];
+// Summe Median = 3.031 € (EVS 2023 Median Privathaushalt DE)
+
+// Reichen-/Bekannte-Persönlichkeiten (€/Stunde rechnerisch ÷ 2080h/Jahr)
+const PERSOENLICHKEITEN = [
+  { id: 'musk',    name: 'Elon Musk',          rolle: 'Trillionär (SpaceX/Tesla/X)',  lohnH: 19_700_000, quelle: '1,11 Bio. USD ÷ 25 J ÷ 2080 h' },
+  { id: 'bezos',   name: 'Jeff Bezos',         rolle: 'Amazon-Gründer',               lohnH: 4_000_000,  quelle: '~250 Mrd. ÷ 30 J ÷ 2080 h' },
+  { id: 'ronaldo', name: 'Cristiano Ronaldo',  rolle: 'Fußball-Superstar',            lohnH: 144_000,    quelle: '300 Mio €/Jahr Forbes 2025' },
+  { id: 'mrbeast', name: 'MrBeast',            rolle: 'YouTuber (Jimmy Donaldson)',   lohnH: 41_000,     quelle: '85 Mio €/Jahr Forbes 2025' },
+  { id: 'merz',    name: 'Friedrich Merz',     rolle: 'Bundeskanzler',                lohnH: 173,        quelle: 'Kanzler-Bezüge ~360 k €/J' },
+  { id: 'arda',    name: 'Arda Saatci',        rolle: 'DE Influencer',                lohnH: 75,         quelle: 'Schätzung ~150 k €/J' },
+];
+
 // EVS 2023 Erwachsene
 const EVS_KAT = [
   { label: 'Wohnen (Miete, NK)', anteil: 0.38 },
@@ -896,6 +1215,26 @@ function setzeDaten(daten) {
     AUSGABEN_KAT.forEach(k => {
       if (daten.klasse[k.key] != null) klasseDaten[k.key] = daten.klasse[k.key];
     });
+  }
+  // Geld-Wert-Restore
+  if (daten.geldwert) {
+    if (daten.geldwert.budget) {
+      ERWACHSENEN_KAT.forEach(k => {
+        if (daten.geldwert.budget[k.key] != null) mein_budget[k.key] = daten.geldwert.budget[k.key];
+      });
+      // Slider-UI sync
+      ERWACHSENEN_KAT.forEach(k => {
+        const inp = document.querySelector(`input[data-budget-kat="${k.key}"]`);
+        if (inp) inp.value = mein_budget[k.key];
+        const sp = document.querySelector(`[data-budget-val="${k.key}"]`);
+        if (sp) sp.textContent = fmtEUR.format(mein_budget[k.key]);
+      });
+    }
+    if (daten.geldwert.lohn) aktuellerLohn = daten.geldwert.lohn;
+    if (daten.geldwert.person) {
+      const p = PERSOENLICHKEITEN.find(x => x.id === daten.geldwert.person);
+      if (p) aktivePerson = p;
+    }
   }
 }
 
@@ -1006,6 +1345,13 @@ function aktualisiereAuswertung() {
 // CHARTS — STREIFENDIAGRAMME
 // ============================================================
 let chartAusg, chartEinn, chartVergleich, chartEvs;
+let chartBudget, chartArbeit, chartReicher;
+
+// GELD-WERT STATE
+let aktuellerLohn = 13.90;  // default Mindestlohn
+let mein_budget = {};       // Erwachsenen-Budget pro Kategorie (€)
+ERWACHSENEN_KAT.forEach(k => mein_budget[k.key] = k.median);
+let aktivePerson = PERSOENLICHKEITEN[0];
 
 function macheStackedChart(canvasId, datasets, labels, options = {}) {
   const ctx = document.getElementById(canvasId);
@@ -1103,6 +1449,371 @@ function initCharts() {
     })),
     ['Erwachsene EVS 2023']
   );
+
+  // === Geld-Wert: 3 Charts + Sliders + Step-Nav ===
+  initSteppNavigation();
+  initBudgetSlider();
+  initBudgetChart();
+  initLohnButtons();
+  initArbeitChart();
+  initPersoenlichkeitButtons();
+  initReicherChart();
+  initEigenLohnInput();
+}
+
+// ============================================================
+// GELD-WERT — STEP NAVIGATION
+// ============================================================
+function initSteppNavigation() {
+  document.querySelectorAll('.step-nav button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.step-nav button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.step-content').forEach(s => s.classList.remove('active'));
+      const sc = document.querySelector(`[data-step-content="${btn.dataset.step}"]`);
+      if (sc) sc.classList.add('active');
+      aktualisiereGeldWertCharts();
+    });
+  });
+}
+
+// ============================================================
+// STEP 1 — BUDGET-SLIDER
+// ============================================================
+function initBudgetSlider() {
+  const grid = document.getElementById('slider-grid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  ERWACHSENEN_KAT.forEach(k => {
+    const z = document.createElement('div');
+    z.className = 'slider-zeile';
+    z.innerHTML = `
+      <label>
+        <span class="farb-punkt" style="background:${k.farbe}"></span>
+        ${k.label}
+      </label>
+      <input type="range" min="0" max="${k.max}" step="10" value="${mein_budget[k.key]}" data-budget-kat="${k.key}">
+      <span class="wert" data-budget-val="${k.key}">${fmtEUR.format(mein_budget[k.key])}</span>
+    `;
+    grid.appendChild(z);
+  });
+  grid.querySelectorAll('input[data-budget-kat]').forEach(inp => {
+    inp.addEventListener('input', () => {
+      mein_budget[inp.dataset.budgetKat] = parseFloat(inp.value) || 0;
+      document.querySelector(`[data-budget-val="${inp.dataset.budgetKat}"]`).textContent = fmtEUR.format(parseFloat(inp.value));
+      aktualisiereGeldWertCharts();
+      autoSave();
+    });
+  });
+}
+
+function resetBudget() {
+  ERWACHSENEN_KAT.forEach(k => {
+    mein_budget[k.key] = k.median;
+    const inp = document.querySelector(`input[data-budget-kat="${k.key}"]`);
+    if (inp) inp.value = k.median;
+    const sp = document.querySelector(`[data-budget-val="${k.key}"]`);
+    if (sp) sp.textContent = fmtEUR.format(k.median);
+  });
+  aktualisiereGeldWertCharts();
+  autoSave();
+  zeigeToast('↺ Auf EVS-Median zurückgesetzt');
+}
+
+// ============================================================
+// STEP 2 — LOHN-BUTTONS
+// ============================================================
+function initLohnButtons() {
+  const grid = document.getElementById('lohn-grid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  STUNDENLOEHNE.forEach((s, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'lohn-btn' + (i === 0 ? ' active' : '');
+    btn.dataset.lohn = s.lohn;
+    btn.innerHTML = `
+      <div class="beruf">${s.beruf}</div>
+      <div class="stundenlohn">${fmtEUR.format(s.lohn)} <span style="font-size:0.7em;font-weight:400;color:var(--grau-mittel)">/h</span></div>
+      <div class="quelle">${s.quelle}</div>
+    `;
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.lohn-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      aktuellerLohn = s.lohn;
+      const eig = document.getElementById('eigen-lohn');
+      if (eig) eig.value = '';
+      aktualisiereGeldWertCharts();
+    });
+    grid.appendChild(btn);
+  });
+}
+
+function initEigenLohnInput() {
+  const eig = document.getElementById('eigen-lohn');
+  if (!eig) return;
+  eig.addEventListener('input', () => {
+    const v = parseFloat(eig.value);
+    if (v > 0) {
+      aktuellerLohn = v;
+      document.querySelectorAll('.lohn-btn').forEach(b => b.classList.remove('active'));
+      aktualisiereGeldWertCharts();
+    }
+  });
+}
+
+// ============================================================
+// STEP 3 — PERSÖNLICHKEITS-BUTTONS
+// ============================================================
+function formatiereGrosseZahl(n) {
+  if (n >= 1_000_000) return (n / 1_000_000).toFixed(1) + ' Mio';
+  if (n >= 1_000) return (n / 1_000).toFixed(0) + ' Tsd';
+  return n.toFixed(0);
+}
+
+function initPersoenlichkeitButtons() {
+  const grid = document.getElementById('persoenlichkeit-grid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  PERSOENLICHKEITEN.forEach((p, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'person-btn' + (i === 0 ? ' active' : '');
+    btn.dataset.personId = p.id;
+    btn.innerHTML = `
+      <div class="name">${p.name}</div>
+      <div class="rolle">${p.rolle}</div>
+      <div class="lohn">${formatiereGrosseZahl(p.lohnH)} €/h</div>
+      <div class="quelle-mini">${p.quelle}</div>
+    `;
+    btn.addEventListener('click', () => {
+      grid.querySelectorAll('.person-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      aktivePerson = p;
+      aktualisiereGeldWertCharts();
+    });
+    grid.appendChild(btn);
+  });
+}
+
+// ============================================================
+// CHARTS — Budget / Arbeit / Reicher (alle Streifen-konsistent)
+// ============================================================
+function initBudgetChart() {
+  const ctx = document.getElementById('chart-budget');
+  if (!ctx) return;
+  chartBudget = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Mein Budget'],
+      datasets: ERWACHSENEN_KAT.map(k => ({
+        label: k.label,
+        data: [mein_budget[k.key]],
+        backgroundColor: k.farbe,
+        borderWidth: 0
+      }))
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        x: { stacked: true, title: { display: true, text: '€ pro Monat' } },
+        y: { stacked: true, grid: { display: false } }
+      },
+      plugins: {
+        legend: { position: 'bottom', labels: { boxWidth: 14, font: { size: 11 }, padding: 8 } },
+        tooltip: {
+          callbacks: {
+            label: ctx => `${ctx.dataset.label}: ${fmtEUR.format(ctx.parsed.x)}/Monat`
+          }
+        }
+      }
+    }
+  });
+}
+
+function initArbeitChart() {
+  const ctx = document.getElementById('chart-arbeit');
+  if (!ctx) return;
+  chartArbeit = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Du'],
+      datasets: ERWACHSENEN_KAT.map(k => ({
+        label: k.label,
+        data: [0],
+        backgroundColor: k.farbe,
+        borderWidth: 0
+      }))
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        x: {
+          stacked: true,
+          title: { display: true, text: 'Stunden pro Tag' },
+          ticks: { callback: v => v.toFixed(1) + ' h' }
+        },
+        y: { stacked: true, grid: { display: false } }
+      },
+      plugins: {
+        legend: { position: 'bottom', labels: { boxWidth: 14, font: { size: 11 }, padding: 8 } },
+        tooltip: {
+          callbacks: {
+            label: ctx => `${ctx.dataset.label}: ${formatiereStunden(ctx.parsed.x)}`
+          }
+        }
+      }
+    }
+  });
+}
+
+function initReicherChart() {
+  const ctx = document.getElementById('chart-reicher');
+  if (!ctx) return;
+  chartReicher = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: [aktivePerson.name],
+      datasets: ERWACHSENEN_KAT.map(k => ({
+        label: k.label,
+        data: [0.001],
+        backgroundColor: k.farbe,
+        borderWidth: 0
+      }))
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        x: {
+          type: 'logarithmic',
+          title: { display: true, text: 'Sekunden pro Tag (log)' },
+          ticks: {
+            callback: v => {
+              if (v === 0.001) return '1 ms';
+              if (v === 0.01) return '';
+              if (v === 0.1) return '100 ms';
+              if (v === 1) return '1 s';
+              if (v === 10) return '10 s';
+              if (v === 60) return '1 min';
+              if (v === 600) return '10 min';
+              if (v === 3600) return '1 h';
+              if (v === 28800) return '8 h';
+              return '';
+            }
+          }
+        },
+        y: { grid: { display: false } }
+      },
+      plugins: {
+        legend: { position: 'bottom', labels: { boxWidth: 14, font: { size: 11 }, padding: 8 } },
+        tooltip: {
+          callbacks: {
+            label: ctx => `${ctx.dataset.label}: ${formatiereZeitFein(ctx.parsed.x)}`
+          }
+        }
+      }
+    }
+  });
+}
+
+function formatiereStunden(h) {
+  if (h <= 0) return '–';
+  if (h < 1/60) return Math.round(h * 3600) + ' Sek';
+  if (h < 1) return Math.round(h * 60) + ' Min';
+  return h.toFixed(1) + ' Std';
+}
+
+function formatiereZeitFein(sek) {
+  if (sek < 0.01) return (sek * 1000).toFixed(1) + ' ms';
+  if (sek < 1) return (sek * 1000).toFixed(0) + ' ms';
+  if (sek < 60) return sek.toFixed(1) + ' Sek';
+  if (sek < 3600) return (sek/60).toFixed(1) + ' Min';
+  if (sek < 86400) return (sek/3600).toFixed(2) + ' Std';
+  return (sek/86400).toFixed(1) + ' Tage';
+}
+
+function aktualisiereGeldWertCharts() {
+  // KPIs Schritt 2
+  const lohnEl = document.getElementById('kpi-lohn');
+  if (lohnEl) lohnEl.textContent = fmtEUR.format(aktuellerLohn) + '/h';
+
+  // === STEP 1: Budget-Chart ===
+  if (chartBudget) {
+    ERWACHSENEN_KAT.forEach((k, i) => {
+      chartBudget.data.datasets[i].data = [mein_budget[k.key]];
+    });
+    chartBudget.update();
+
+    const total = Object.values(mein_budget).reduce((a, b) => a + b, 0);
+    const median = ERWACHSENEN_KAT.reduce((s, k) => s + k.median, 0);
+    const diff = total - median;
+    const totEl = document.getElementById('kpi-budget-total');
+    if (totEl) totEl.textContent = fmtEUR.format(total);
+    const dfEl = document.getElementById('kpi-budget-diff');
+    if (dfEl) {
+      dfEl.textContent = (diff >= 0 ? '+ ' : '– ') + fmtEUR.format(Math.abs(diff));
+      dfEl.className = 'wert ' + (diff > 0 ? 'positiv' : diff < 0 ? 'negativ' : '');
+      dfEl.style.fontSize = '1.4rem';
+    }
+  }
+
+  // === STEP 2: Arbeit-Chart ===
+  if (chartArbeit) {
+    let gesamtStdProTag = 0;
+    ERWACHSENEN_KAT.forEach((k, i) => {
+      // €/Monat → Std/Monat → Std/Tag
+      const stdProTag = (mein_budget[k.key] / aktuellerLohn) / 30;
+      chartArbeit.data.datasets[i].data = [stdProTag];
+      gesamtStdProTag += stdProTag;
+    });
+    chartArbeit.update();
+
+    const gesEl = document.getElementById('kpi-arbeit-gesamt');
+    if (gesEl) gesEl.textContent = gesamtStdProTag.toFixed(1) + ' Std/Tag';
+    const verEl = document.getElementById('kpi-arbeit-vergleich');
+    if (verEl) {
+      if (gesamtStdProTag > 24) {
+        verEl.innerHTML = '<span style="color:var(--warn-rot);font-weight:700">⚠ Unmöglich!</span>';
+      } else if (gesamtStdProTag > 8) {
+        verEl.innerHTML = '<span style="color:#BF8F00;font-weight:600">über 8 h/Tag</span>';
+      } else if (gesamtStdProTag > 6) {
+        verEl.innerHTML = '<span style="color:var(--akzent)">knapp möglich</span>';
+      } else {
+        verEl.innerHTML = '<span style="color:var(--akzent);font-weight:600">✓ entspannt</span>';
+      }
+    }
+  }
+
+  // === STEP 3: Reicher-Chart ===
+  if (chartReicher) {
+    let gesamtSek = 0;
+    ERWACHSENEN_KAT.forEach((k, i) => {
+      // €/Monat ÷ €/Stunde = Std/Monat → /30 = Std/Tag → *3600 = Sek/Tag
+      const sekProTag = Math.max(((mein_budget[k.key] / aktivePerson.lohnH) / 30) * 3600, 0.001);
+      chartReicher.data.datasets[i].data = [sekProTag];
+      gesamtSek += sekProTag;
+    });
+    chartReicher.data.labels = [aktivePerson.name];
+    chartReicher.update();
+
+    const reichEl = document.getElementById('kpi-reich-gesamt');
+    if (reichEl) reichEl.textContent = formatiereZeitFein(gesamtSek) + '/Tag';
+    const faktorEl = document.getElementById('kpi-reich-faktor');
+    if (faktorEl) {
+      const faktor = aktivePerson.lohnH / aktuellerLohn;
+      faktorEl.textContent = formatiereGrosseZahl(faktor) + ' ×';
+    }
+  }
+}
+
+function autoSave() {
+  const daten = sammleDaten();
+  daten.geldwert = { budget: mein_budget, lohn: aktuellerLohn, person: aktivePerson.id };
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(daten));
 }
 
 function aktualisiereCharts() {
@@ -1196,6 +1907,7 @@ function aktualisiereVergleichsTabelle(du, tim, layla, klasse) {
 function aktualisiereAlles() {
   aktualisiereAuswertung();
   aktualisiereCharts();
+  aktualisiereGeldWertCharts();
 }
 
 // ============================================================
