@@ -10,7 +10,14 @@ Laedt jede oeffentliche Seite in einem echten (headless) Chromium und faellt, we
   - der erwartete Kern-DOM-Knoten fehlt.
 
 Seitenliste ist SELBSTPFLEGEND: Home + jedes aus index.html verlinkte LIVE-Game
-(dessen index.html, lehrkraft.html und alle mappe-*.html).
+(dessen index.html, lehrkraft.html und alle mappe-*.html) + alle deploybaren
+sections/**/*.html (ohne _-praefixierte Scratch-Segmente).
+
+CDN-Policy (weich, Entscheidung 2026-07-17): Subressourcen-Fehler FREMDER Hosts
+(z.B. cdn.jsdelivr.net) sind WARN und blocken nicht; same-origin-Fehler,
+pageerrors und console.error blocken hart. Faellt ein CDN komplett aus, schlaegt
+die Seite selbst fehl (z.B. "Chart is not defined" -> pageerror) — das gilt als
+echter Defekt und blockt bewusst.
 
 Voraussetzung lokal:  pip install playwright && python3 -m playwright install chromium
 In CI:                 laeuft im Container mcr.microsoft.com/playwright/python (Browser vorinstalliert).
@@ -51,6 +58,14 @@ def pages() -> list[str]:
                 urls.append(f"/escape-games/{g}/{name}")
         for mappe in sorted(gdir.glob("mappe-*.html")):
             urls.append(f"/escape-games/{g}/{mappe.name}")
+    # sections/**: alles Deploybare (Konvention: _-praefixierte Segmente = Scratch, nie live)
+    sections = REPO_ROOT / "sections"
+    if sections.is_dir():
+        for f in sorted(sections.rglob("*.html")):
+            rel = f.relative_to(REPO_ROOT)
+            if any(part.startswith("_") for part in rel.parts):
+                continue
+            urls.append("/" + rel.as_posix())
     return urls
 
 
@@ -58,8 +73,9 @@ def allowed(msg: str) -> bool:
     return any(sub in msg for sub in CONSOLE_ALLOWLIST)
 
 
-def check_page(page, url: str) -> list[str]:
+def check_page(page, base: str, url: str) -> tuple[list[str], list[str]]:
     problems: list[str] = []
+    warnings: list[str] = []
     page.on("console", lambda m: (
         problems.append(f"console.{m.type}: {m.text}")
         if m.type == "error" and not allowed(m.text) else None))
@@ -67,7 +83,12 @@ def check_page(page, url: str) -> list[str]:
 
     def on_response(resp):
         if resp.status >= 400 and not any(sub in resp.url for sub in RESPONSE_IGNORE):
-            problems.append(f"http {resp.status}: {resp.url}")
+            # Weiche CDN-Policy (Entscheidung 2026-07-17): Fehler FREMDER Hosts blocken
+            # den Deploy nicht (Dritt-Infrastruktur), same-origin-Fehler bleiben harte FAILs.
+            if resp.url.startswith(base):
+                problems.append(f"http {resp.status}: {resp.url}")
+            else:
+                warnings.append(f"http {resp.status} (extern): {resp.url}")
     page.on("response", on_response)
 
     resp = page.goto(url, wait_until="load", timeout=20000)
@@ -78,7 +99,7 @@ def check_page(page, url: str) -> list[str]:
     # Kern-DOM: jede Seite muss <main> ODER den Game-Container haben
     if page.locator("main, #game, .escape, body > *").count() == 0:
         problems.append("kein Kern-DOM-Knoten (main/#game/.escape) gefunden")
-    return problems
+    return problems, warnings
 
 
 def main() -> int:
@@ -90,7 +111,7 @@ def main() -> int:
         browser = p.chromium.launch()
         for path in urls:
             page = browser.new_page()
-            problems = check_page(page, base + path)
+            problems, warnings = check_page(page, base, base + path)
             page.close()
             if problems:
                 fail = 1
@@ -99,6 +120,8 @@ def main() -> int:
                     print(f"          {pr}")
             else:
                 print(f"  ok    {path}")
+            for w in warnings:
+                print(f"  WARN  {path}: {w}")
         browser.close()
     print("smoke:", "ROT" if fail else "GRUEN")
     return fail
