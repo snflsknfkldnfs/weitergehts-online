@@ -340,10 +340,26 @@ main.mappe {
 .material--bild figcaption {
   font-family: var(--rd-font-hand) !important;
   font-size: 16px !important;
-  color: #3a2f1a !important;
+  color: var(--rd-ink) !important; /* nicht hart Dunkelbraun: sonst braun-auf-braun im Dark-Mode (--rd-ink adaptiert) */
   text-align: left;
   margin-top: 14px;
   padding: 0 4px;
+}
+
+/* Statistik-Diagramm: der statistik-Producer authort das inline-SVG mit dunklen Text-Fills
+   (#444/#555/#8a8a8a) fuer HELLEN Hintergrund. Im Dark-Mode waere das dunkel-auf-dunkel
+   (gemessen 1.8-2.1:1). Loesung: der Chart sitzt auf einer hellen "Daten-Papier"-Karte —
+   das SVG rendert immer dark-on-light wie intendiert, alle authored Farben (Text + Balken)
+   bleiben erhalten, in beiden Modi legibel. */
+.material--statistik .statistik__grafik {
+  background: #f7f3e8;
+  border: 1px solid rgba(0,0,0,0.10);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0 6px;
+}
+.material--statistik .statistik__grafik svg {
+  display: block; max-width: 100%; height: auto; margin: 0 auto;
 }
 
 /* ── 7. Material-Überleitungen — Karteikarten mit Pin + Pfeil ───────────── */

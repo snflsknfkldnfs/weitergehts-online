@@ -1174,9 +1174,24 @@ var EscapeEngine = (function () {
     h3.textContent = mat.titel || '';
     div.appendChild(h3);
 
-    // inhalt ist JSON-Object {spalten[], zeilen[[]]}
+    // inhalt kann ein inline-SVG-Diagramm (String) ODER Tabellendaten {spalten,zeilen} sein
+    // (der statistik-Producer emittiert beides). Ein SVG-String ist kein JSON -> als Grafik
+    // einbetten, nicht in eine leere Tabelle parsen (sonst rendert der Vergleich 'gar nichts').
     var daten = mat.inhalt || {};
     if (typeof daten === 'string') {
+      if (daten.trim().slice(0, 4).toLowerCase() === '<svg') {
+        var grafik = document.createElement('div');
+        grafik.className = 'material__inhalt statistik__grafik';
+        grafik.innerHTML = daten;  // assemble-seitig _safe_html-sanitisiert (wie tagebuch/quellentext)
+        div.appendChild(grafik);
+        if (mat.quelle) {
+          var quelleSvg = document.createElement('p');
+          quelleSvg.className = 'material__quelle';
+          quelleSvg.textContent = mat.quelle;
+          div.appendChild(quelleSvg);
+        }
+        return div;
+      }
       try { daten = JSON.parse(daten); } catch (e) { daten = {}; }
     }
 
