@@ -1,0 +1,776 @@
+/* ==========================================================================
+   base.css – Basis-Stylesheet (fach-agnostisch)
+
+   Moderner CSS-Reset, Custom Properties, Grundlayout, Utility-Klassen.
+   Theme-Dateien (z.B. theme-gpg.css) ueberschreiben die Custom Properties.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS-Reset
+   -------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%; /* 16px Basis */
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.6;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+  font-family: var(--font-heading);
+}
+
+/* --------------------------------------------------------------------------
+   2. CSS Custom Properties (Defaults – ueberschreibbar durch Themes)
+   -------------------------------------------------------------------------- */
+
+:root {
+  /* Farben (neutrale Defaults – werden durch Theme-Dateien ueberschrieben) */
+  --color-primary: #333333;
+  --color-secondary: #666666;
+  --color-background: #ffffff;
+  --color-surface: #f5f5f5;
+  --color-text: #222222;
+  --color-success: #2D6A4F;
+  --color-error: #9B2226;
+  --color-tipp: #4A6FA5;
+
+  /* Typografie (neutrale Defaults) */
+  --font-heading: system-ui, -apple-system, sans-serif;
+  --font-body: system-ui, -apple-system, sans-serif;
+  --font-code: "Courier New", monospace;
+
+  /* Schriftgroessen */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+
+  /* Abstaende */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+
+  /* Rundungen */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Schatten */
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-elevated: 0 4px 16px rgba(0, 0, 0, 0.15);
+
+  /* Uebergaenge */
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
+  --transition-slow: 500ms ease;
+
+  /* Layout */
+  --max-width: 960px;
+  --max-width-wide: 1400px;
+  --content-padding: var(--space-md);
+
+  /* Borders */
+  --color-border: #e0e0e0;
+  --color-muted: #666666;
+  --color-surface-warm: #fdf6e3;
+}
+
+/* --------------------------------------------------------------------------
+   3. Grundlayout
+   -------------------------------------------------------------------------- */
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  padding: var(--space-lg) var(--content-padding);
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding: var(--space-lg) var(--content-padding);
+}
+
+nav {
+  padding: var(--space-sm) var(--content-padding);
+}
+
+footer {
+  padding: var(--space-md) var(--content-padding);
+  text-align: center;
+  font-size: var(--text-sm);
+}
+
+/* --------------------------------------------------------------------------
+   4. Interaktive Elemente – Touch-Targets & Fokus
+   -------------------------------------------------------------------------- */
+
+/* Touch-Targets: Minimum 48x48px */
+button,
+[role="button"],
+input[type="radio"],
+input[type="checkbox"],
+select,
+a {
+  min-height: 48px;
+  min-width: 48px;
+}
+
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+  min-height: 48px;
+  padding: var(--space-sm) var(--space-md);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  font-size: var(--text-base); /* Verhindert iOS-Zoom */
+}
+
+/* Sichtbare Fokus-Outlines */
+:focus-visible {
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+/* Fokus-Ring nur bei Keyboard-Navigation */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* --------------------------------------------------------------------------
+   5. Utility-Klassen
+   -------------------------------------------------------------------------- */
+
+/* Visuell versteckt, aber fuer Screenreader zugaenglich */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Scroll-Lock (z.B. bei Modal) */
+.no-scroll {
+  overflow: hidden;
+}
+
+/* Fade-In-Animation */
+.fade-in {
+  animation: fadeIn var(--transition-normal) ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Text-Ausrichtung */
+.text-center { text-align: center; }
+.text-left   { text-align: left; }
+.text-right  { text-align: right; }
+
+/* --------------------------------------------------------------------------
+   6. Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+
+/* Mobile (< 640px) – Standard / Mobile-First */
+
+/* Tablet (640px – 1024px) */
+@media (min-width: 640px) {
+  :root {
+    --content-padding: var(--space-lg);
+  }
+
+  main {
+    padding: var(--space-xl) var(--content-padding);
+  }
+}
+
+/* Desktop (> 1024px) */
+@media (min-width: 1024px) {
+  :root {
+    --content-padding: var(--space-xl);
+    --max-width: 1100px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   7. Print-Reset
+   -------------------------------------------------------------------------- */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+  }
+
+  /* Seitenumbrueche */
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+
+  section, article {
+    page-break-inside: avoid;
+  }
+
+  /* Interaktive Elemente im Druck ausblenden */
+  button,
+  input,
+  select,
+  textarea,
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   8. Reduzierte Bewegung (prefers-reduced-motion)
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================================
+   wg.lernraum — Redesign-Spec v1.1 §2 (RESTYLING.md + 06-spec-erweiterung.md)
+
+   Aktivierung: <body data-lernraum> in allen staatsexamen/- und
+   migrierten lerndecks/-Pages. Token-Block ist scoped, damit escape-games/
+   und nicht-migrierte Bereiche die Escape-Engine-Tokens behalten.
+
+   Akzentfarbe pro Sitzung: <body data-lernraum data-fach="…">
+     - default      Olive  (Spec §2)
+     - mathe        Olive
+     - sk           Indigo
+     - gpg          Terra
+     - wib          Tinte  (planned)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   9. wg.lernraum — Tokens (Spec §2)
+   -------------------------------------------------------------------------- */
+
+body[data-lernraum] {
+  /* Farb-Tokens */
+  --bg:           #fafaf6;
+  --paper:        #ffffff;
+  --ink:          #0c0c0a;
+  --muted:        #6b685f;
+  --mute2:        #9b988e;
+  --rule:         rgba(12, 12, 10, 0.14);
+  --hairline:     rgba(12, 12, 10, 0.34);
+
+  /* Akzent (Default Olive; per data-fach übersteuerbar) */
+  --accent:       #4a5d3b;
+  --accent-soft:  rgba(74, 93, 59, 0.10);
+
+  /* Status-Vokabular (Spec §3) */
+  --status-work:    #c89933;
+  --status-repeat:  #4a5d3b;
+  --status-sit:     #2d4a1f;
+  --status-fail:    #a05a2c;   /* v3.4-Audit-Erhalt: Drill-Tool-Dashboard */
+
+  /* Typografie */
+  --lr-font-sans:   "Inter Tight", "Inter", system-ui, -apple-system, sans-serif;
+  --lr-font-mono:   "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --lr-font-serif:  "EB Garamond", Georgia, "Times New Roman", serif;
+
+  /* Raster (Spec §2) */
+  --lr-container:    1280px;
+  --lr-pad-x:        56px;
+  --lr-section-gap:  48px;
+  --lr-row-pad:      22px;
+
+  /* Schriftgrößen — Mono-Cap-Konvention */
+  --lr-cap-size:    10.5px;
+  --lr-cap-track:   1.5px;
+}
+
+/* Fach-Marker-Tokens (global, fuer L2-Hub-Cross-Refs nutzbar) */
+body[data-lernraum] {
+  --accent-sk:    #3a4a6b;
+  --accent-mathe: #4a5d3b;
+  --accent-gpg:   #a05a2c;
+  --accent-wib:   #0c0c0a;
+}
+
+/* Akzent-Override pro Fach (Spec §11.1 + Antwort 14) */
+body[data-lernraum][data-fach="sk"]    { --accent: var(--accent-sk);    --accent-soft: rgba(58, 74, 107, 0.10); }
+body[data-lernraum][data-fach="mathe"] { --accent: var(--accent-mathe); --accent-soft: rgba(74, 93, 59, 0.10); }
+body[data-lernraum][data-fach="gpg"]   { --accent: var(--accent-gpg);   --accent-soft: rgba(160, 90, 44, 0.10); }
+body[data-lernraum][data-fach="wib"]   { --accent: var(--accent-wib);   --accent-soft: rgba(12, 12, 10, 0.10); }
+
+/* Fach-Marker (4px-Quadrat als Brand-Marker im Fachdidaktik-Hub, Antwort 14) */
+body[data-lernraum] .fach-marker {
+  display: inline-block;
+  width: 4px;
+  height: 14px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+body[data-lernraum] .fach-marker[data-fach="sk"]    { background: var(--accent-sk); }
+body[data-lernraum] .fach-marker[data-fach="mathe"] { background: var(--accent-mathe); }
+body[data-lernraum] .fach-marker[data-fach="gpg"]   { background: var(--accent-gpg); }
+body[data-lernraum] .fach-marker[data-fach="wib"]   { background: var(--accent-wib); }
+
+/* --------------------------------------------------------------------------
+   10. wg.lernraum — Grundlayout-Overrides
+   -------------------------------------------------------------------------- */
+
+body[data-lernraum] {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--lr-font-sans);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+body[data-lernraum] main {
+  max-width: var(--lr-container);
+  padding: var(--lr-section-gap) var(--lr-pad-x);
+}
+
+body[data-lernraum] h1,
+body[data-lernraum] h2,
+body[data-lernraum] h3,
+body[data-lernraum] h4 {
+  font-family: var(--lr-font-sans);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+body[data-lernraum] em,
+body[data-lernraum] i,
+body[data-lernraum] .lead {
+  font-family: var(--lr-font-serif);
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* Skip-Link (v3.4-ARIA-Erhalt §11.2) */
+body[data-lernraum] .skip-link {
+  position: absolute; top: -100px; left: 0;
+  padding: 8px 16px; background: var(--ink); color: var(--paper);
+  font-family: var(--lr-font-mono); font-size: 13px;
+  z-index: 9999;
+}
+body[data-lernraum] .skip-link:focus { top: 0; }
+
+/* --------------------------------------------------------------------------
+   11. wg.lernraum — Mono-Cap (Spec §2)
+   -------------------------------------------------------------------------- */
+
+body[data-lernraum] .mono-cap {
+  font-family: var(--lr-font-mono);
+  font-size: var(--lr-cap-size);
+  letter-spacing: var(--lr-cap-track);
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* --------------------------------------------------------------------------
+   12. wg.lernraum — Anchor-Tag (Spec §4 + §12 Generalisierung)
+   -------------------------------------------------------------------------- */
+
+body[data-lernraum] .anchor-tag {
+  font-family: var(--lr-font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.4px;
+  color: var(--ink);
+  padding: 2px 6px;
+  border: 1px solid var(--rule);
+  background: transparent;
+  cursor: pointer;
+  min-height: auto; min-width: auto;
+  display: inline-block;
+  line-height: 1.4;
+  transition: background 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+body[data-lernraum] .anchor-tag:hover,
+body[data-lernraum] .anchor-tag:focus-visible {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+body[data-lernraum] .anchor-tag[data-type="lp"] {
+  border-style: dashed;
+}
+body[data-lernraum] .anchor-tag[data-type="prinzip"] {
+  border-style: dotted;            /* alle 4 Seiten — Antwort 15 */
+}
+/* Legacy-Fallback: nackte data-norm wie in Original-Spec §4 */
+body[data-lernraum] .norm-tag {
+  font-family: var(--lr-font-mono);
+  font-size: 10.5px; letter-spacing: 0.4px; color: var(--ink);
+  padding: 2px 6px; border: 1px solid var(--rule);
+  background: transparent; cursor: pointer;
+  min-height: auto; min-width: auto;
+  display: inline-block; line-height: 1.4;
+}
+body[data-lernraum] .norm-tag:hover,
+body[data-lernraum] .norm-tag:focus-visible {
+  background: var(--accent-soft); border-color: var(--accent); color: var(--accent);
+}
+
+/* --------------------------------------------------------------------------
+   13. wg.lernraum — Status-Dot + Label (Spec §3)
+   -------------------------------------------------------------------------- */
+
+body[data-lernraum] .status-dot {
+  display: inline-block;
+  width: 10px; height: 10px;
+  border: 1.5px solid var(--mute2);
+  background: transparent;
+  vertical-align: middle;
+}
+body[data-lernraum] .status-dot[data-status="open"]    { background: var(--paper);       border-color: var(--hairline); }
+body[data-lernraum] .status-dot[data-status="work"]    { background: var(--status-work); border-color: var(--status-work); }
+body[data-lernraum] .status-dot[data-status="repeat"]  { background: var(--status-repeat); border-color: var(--status-repeat); }
+body[data-lernraum] .status-dot[data-status="sit"]     { background: var(--status-sit);  border-color: var(--status-sit); }
+body[data-lernraum] .status-dot[data-status="planned"] { background: transparent; border-color: var(--mute2); }
+
+body[data-lernraum] .status-label {
+  font-family: var(--lr-font-mono);
+  font-size: 10.5px; letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Progress-Stacked-Bar (v3.4-Erhalt §11.2) */
+body[data-lernraum] .status-bar {
+  display: flex; height: 7px;
+  border: 1px solid var(--rule); background: var(--bg);
+  width: 100%; max-width: 200px;
+}
+body[data-lernraum] .status-bar-seg { height: 100%; }
+body[data-lernraum] .status-bar-seg[data-status="sit"]     { background: var(--status-sit); }
+body[data-lernraum] .status-bar-seg[data-status="repeat"]  { background: var(--status-repeat); }
+body[data-lernraum] .status-bar-seg[data-status="work"]    { background: var(--status-work); }
+body[data-lernraum] .status-bar-seg[data-status="open"]    { background: var(--mute2); }
+body[data-lernraum] .status-bar-seg[data-status="planned"] { background: transparent; }
+
+/* --------------------------------------------------------------------------
+   14. wg.lernraum — Buttons (.btn als Token-Pattern für v3.4-Filter §11.2)
+   -------------------------------------------------------------------------- */
+
+body[data-lernraum] .lr-btn {
+  font-family: var(--lr-font-mono);
+  font-size: 11px; letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 8px 14px;
+  border: 1px solid var(--rule);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  min-height: auto; min-width: auto;
+}
+body[data-lernraum] .lr-btn:hover,
+body[data-lernraum] .lr-btn:focus-visible {
+  border-color: var(--accent); color: var(--accent);
+}
+body[data-lernraum] .lr-btn[aria-pressed="true"],
+body[data-lernraum] .lr-btn.is-active {
+  background: var(--status-work);
+  border-color: var(--status-work);
+  color: var(--paper);
+}
+body[data-lernraum] .lr-btn--primary {
+  background: var(--ink); color: var(--paper); border-color: var(--ink);
+}
+
+/* --------------------------------------------------------------------------
+   15. wg.lernraum — Tabellen (Spec §5 Spaltenkonvention)
+   -------------------------------------------------------------------------- */
+
+body[data-lernraum] .lr-table {
+  width: 100%; border-collapse: collapse;
+  font-size: 14.5px;
+}
+body[data-lernraum] .lr-table th,
+body[data-lernraum] .lr-table td {
+  padding: var(--lr-row-pad) 12px;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: middle;
+  text-align: left;
+}
+body[data-lernraum] .lr-table th {
+  font-family: var(--lr-font-mono);
+  font-size: var(--lr-cap-size); letter-spacing: var(--lr-cap-track);
+  text-transform: uppercase; color: var(--muted);
+  font-weight: 500;
+  border-bottom: 1px solid var(--hairline);
+}
+body[data-lernraum] .lr-table tbody tr:hover { background: var(--accent-soft); }
+body[data-lernraum] .lr-table .col-nr     { width: 40px; font-family: var(--lr-font-mono); color: var(--muted); }
+body[data-lernraum] .lr-table .col-status { width: 28px; }
+body[data-lernraum] .lr-table .col-tags   { width: 260px; }
+body[data-lernraum] .lr-table .col-stand  { width: 120px; }
+body[data-lernraum] .lr-table .col-arrow  { width: 24px; text-align: right; color: var(--muted); }
+
+/* --------------------------------------------------------------------------
+   16. wg.lernraum — Lernpfad-Karten (Spec §5 L3 Lernpfade)
+   -------------------------------------------------------------------------- */
+
+body[data-lernraum] .lernpfad-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  margin: var(--lr-section-gap) 0;
+}
+body[data-lernraum] .lernpfad-card {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  padding: 28px 24px;
+  display: flex; flex-direction: column;
+  min-height: 180px;
+}
+body[data-lernraum] .lernpfad-card--primary {
+  background: var(--ink); color: var(--paper); border-color: var(--ink);
+}
+body[data-lernraum] .lernpfad-card--primary .mono-cap { color: rgba(255,255,255,0.65); }
+
+/* --------------------------------------------------------------------------
+   17. wg.lernraum — Slideover (Spec §4 Glossar-Slideover)
+   -------------------------------------------------------------------------- */
+
+body[data-lernraum] .slideover-backdrop {
+  position: fixed; inset: 0;
+  background: rgba(12, 12, 10, 0.32);
+  z-index: 1000;
+  opacity: 0; pointer-events: none;
+  transition: opacity 180ms ease;
+}
+body[data-lernraum] .slideover-backdrop[aria-hidden="false"] {
+  opacity: 1; pointer-events: auto;
+}
+body[data-lernraum] .slideover {
+  position: fixed; left: 50%; bottom: 0;
+  transform: translate(-50%, 100%);
+  width: min(920px, calc(100% - 32px));
+  max-height: 80vh; overflow-y: auto;
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-bottom: none;
+  padding: 28px 56px 40px;
+  z-index: 1001;
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+body[data-lernraum] .slideover[aria-hidden="false"] {
+  transform: translate(-50%, 0);
+}
+body[data-lernraum] .slideover-head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  border-bottom: 1px solid var(--rule); padding-bottom: 14px; margin-bottom: 18px;
+}
+body[data-lernraum] .slideover-title {
+  font-family: var(--lr-font-mono); font-size: 13px;
+  letter-spacing: 0.6px; color: var(--ink);
+}
+body[data-lernraum] .slideover-badge {
+  font-family: var(--lr-font-mono); font-size: 10px; letter-spacing: 1.4px;
+  text-transform: uppercase; color: var(--muted);
+  padding: 2px 8px; border: 1px solid var(--rule);
+}
+body[data-lernraum] .slideover-close {
+  font-family: var(--lr-font-mono); font-size: 11px;
+  letter-spacing: 1px; text-transform: uppercase;
+  color: var(--muted); background: transparent; border: none;
+  cursor: pointer; padding: 4px 8px;
+  min-height: auto; min-width: auto;
+}
+body[data-lernraum] .slideover-close:hover { color: var(--accent); }
+body[data-lernraum] .slideover-body {
+  font-size: 15px; line-height: 1.6; color: var(--ink);
+}
+body[data-lernraum] .slideover-body p { margin-bottom: 12px; }
+body[data-lernraum] .slideover-sources {
+  margin-top: 16px; padding-top: 12px; border-top: 1px dashed var(--rule);
+  font-family: var(--lr-font-mono); font-size: 11.5px; color: var(--muted);
+}
+@media (prefers-reduced-motion: reduce) {
+  body[data-lernraum] .slideover { transition: none; }
+  body[data-lernraum] .slideover-backdrop { transition: none; }
+}
+
+/* --------------------------------------------------------------------------
+   18. wg.lernraum — Hotkey-Bar (v3.4-Erhalt §11.2)
+   -------------------------------------------------------------------------- */
+
+body[data-lernraum] kbd {
+  font-family: var(--lr-font-mono); font-size: 11px;
+  padding: 2px 6px; border: 1px solid var(--rule);
+  background: var(--paper); color: var(--ink);
+  letter-spacing: 0;
+}
+
+/* --------------------------------------------------------------------------
+   19. wg.lernraum — Eckig + keine Schatten (Spec §2)
+   -------------------------------------------------------------------------- */
+
+body[data-lernraum] .lr-table,
+body[data-lernraum] .lr-table th,
+body[data-lernraum] .lr-table td,
+body[data-lernraum] .anchor-tag,
+body[data-lernraum] .norm-tag,
+body[data-lernraum] .lr-btn,
+body[data-lernraum] .lernpfad-card,
+body[data-lernraum] .slideover,
+body[data-lernraum] .status-dot,
+body[data-lernraum] .status-bar,
+body[data-lernraum] .status-bar-seg {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* --------------------------------------------------------------------------
+   20. wg.lernraum — Mobile (<480px Card-Stack §11.2, <768px Tag-Wrap §03)
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  body[data-lernraum] main {
+    padding: 32px 20px;
+  }
+  body[data-lernraum] .lernpfad-grid {
+    grid-template-columns: 1fr;
+  }
+  body[data-lernraum] .lr-table .col-tags { display: none; }
+  body[data-lernraum] .lr-table .anchor-tags-mobile {
+    display: block; margin-top: 6px;
+  }
+}
+@media (max-width: 480px) {
+  body[data-lernraum] .lr-table,
+  body[data-lernraum] .lr-table thead,
+  body[data-lernraum] .lr-table tbody,
+  body[data-lernraum] .lr-table tr,
+  body[data-lernraum] .lr-table th,
+  body[data-lernraum] .lr-table td {
+    display: block; width: 100%;
+  }
+  body[data-lernraum] .lr-table thead { display: none; }
+  body[data-lernraum] .lr-table tr {
+    border-bottom: 1px solid var(--hairline);
+    padding: 14px 0;
+  }
+  body[data-lernraum] .lr-table td {
+    border: none; padding: 4px 0;
+  }
+  body[data-lernraum] .slideover {
+    width: 100%; padding: 24px 20px 32px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   21. wg.lernraum — Print (Spec §03 Frage-2, v3.4-Erhalt §11.2)
+   -------------------------------------------------------------------------- */
+
+@media print {
+  body[data-lernraum] {
+    background: white !important;
+    color: black !important;
+  }
+  body[data-lernraum] .slideover-backdrop,
+  body[data-lernraum] .slideover,
+  body[data-lernraum] .skip-link,
+  body[data-lernraum] .hotkey-bar,
+  body[data-lernraum] .tweaks-panel,
+  body[data-lernraum] .lr-btn {
+    display: none !important;
+  }
+  body[data-lernraum] .anchor-tag,
+  body[data-lernraum] .norm-tag {
+    border: 1px solid #888;
+    background: white !important;
+    color: black !important;
+  }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de" data-bg="dark" data-fontset="humanist">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ein Land, in dem niemand mitreden durfte</title>
+<link rel="stylesheet" href="vendor/fonts/fonts.css">
+<link rel="stylesheet" href="vendor/base.css">
+<link rel="stylesheet" href="vendor/theme-gpg.css">
+<link rel="stylesheet" href="vendor/redesign.css">
+<link rel="stylesheet" href="vendor/media-placeholder.css">
+</head>
+<body>
+<header>
+  <h1 class="mappe__titel">Ein Land, in dem niemand mitreden durfte</h1>
+  <div class="header__meta"><span class="mappe__beschreibung">Warum schwiegen die Menschen so lange?</span></div>
+</header>
+<main class="mappe">
+  <div class="mappe__header" style="display:none;">
+    <div class="fortschritt" aria-label="Fortschritt in dieser Mappe">
+      <div class="fortschritt__label" id="fortschritt-label">0 von ? Aufgaben gelöst</div>
+      <div class="fortschritt__track">
+        <div class="fortschritt__bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+    </div>
+  </div>
+  <section class="mappe__einstieg" id="einstieg-container"></section>
+  <section class="mappe__erarbeitung" id="erarbeitung-container">
+    <div class="erarbeitung__materialien" id="material-container"></div>
+    <div class="erarbeitung__aufgaben" id="aufgaben-container">
+      <p class="text-center">Aufgaben werden geladen...</p>
+    </div>
+  </section>
+  <section class="mappe__sicherung" id="sicherung-container" style="display:none;"></section>
+  <nav class="mappe__navigation" aria-label="Mappe-Navigation">
+    <a href="index.html" class="mappe__nav-btn">&larr; Übersicht</a>
+    <span id="nav-mappe-info">Mappe 1 von 4</span>
+    <a href="mappe-2.html" class="mappe__nav-btn" id="nav-weiter">Weiter &rarr;</a>
+  </nav>
+</main>
+<script src="vendor/core.js"></script>
+<script src="vendor/escape-engine.js"></script>
+<script src="vendor/rd-inject.js"></script>
+<script>
+(function(){
+  'use strict';
+  var mappeId = "mappe-1";
+  EscapeEngine.init(mappeId);
+})();
+</script>
+</body>
+</html>
