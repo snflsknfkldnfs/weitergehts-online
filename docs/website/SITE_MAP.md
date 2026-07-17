@@ -1,16 +1,16 @@
 # SITE_MAP — weitergehts.online
 
 > Informationsarchitektur der Site als Menge von **Verticals**. Anker für „wo gehört Neues hin".
-> Bei jeder neuen Sektion/Game/Seite hier eintragen. Stand: 2026-06-07.
+> Bei jeder neuen Sektion/Game/Seite hier eintragen. Stand: 2026-07-17.
 
 ## Verticals
 
 | Vertical | Verzeichnis | Content-Modell | Template | Status |
 |---|---|---|---|---|
 | **Home / Landing** | `index.html` | Hand-gepflegte `<ul>` der Games/Sektionen; Staging-Flag `?staging=1` | — | live |
-| **Unterrichtsmaterial · Escape-Games** | `escape-games/<id>/` | `data.json` (meta+mappen+materialien+aufgaben) → gerendert von `assets/js/escape-engine.js` | `escape-games/template/` | live (3 Games) |
+| **Unterrichtsmaterial · Escape-Games** | `escape-games/<id>/` | `data.json` (meta+mappen+materialien+aufgaben) → gerendert von `assets/js/escape-engine.js` | `escape-games/_template/` | live (4 Games) |
 | **Unterrichtsmaterial · Lernraum** | `assets/data/*.json` | aus externen Quellen via `make lernraum` generierte Glossar-/KE-Daten | `tools/lernraum/` | Daten vorhanden; Konsument-Seiten teils mit Examens-Schiene archiviert |
-| **WiB · Wirtschaft (interaktive Tools)** | `sections/wib/` | self-contained HTML (Chart.js via CDN), `localStorage`, kein Backend/Tracking | — | live (1 Tool: Haushaltsbuch) |
+| **WiB · Wirtschaft (interaktive Tools)** | `sections/wib/` | self-contained HTML (Chart.js via CDN), `localStorage`, kein Backend/Tracking | — | live (2 Tools: Haushaltsbuch + Geld-Wert; Geld-Wert nur noch als eigenständige Seite — Duplikat-Tab im Haushaltsbuch am 17.07. entfernt) |
 | **Blog / Notizen** | `sections/blog/` *(geplant)* | offen (statische HTML; optional datengetrieben) | *noch zu definieren* | **im Aufbau** |
 | **Weitere Sektionen** | `sections/<name>/` | je nach Bedarf | — | künftig |
 
@@ -21,9 +21,14 @@
 - `gpg-erster-weltkrieg-ursachen` — Erster Weltkrieg: Ursachen und Ausbruch (GPG R7)
 - `verlauf-erster-weltkrieg-marne-ende` — Erster Weltkrieg: Verlauf Marne→Ende (GPG R7)
 - `deutscher-nationalismus-kolonialismus` — Deutscher Nationalismus und Kolonialismus (GPG R7)
+- `syrische-revolution-2011` — Syrische Revolution 2011 (GPG R7). **⚠ Ausnahme:** nutzt eine eigene
+  `vendor/`-Runtime (Engine-Fork +33 Zeilen, Redesign-CSS, ohne `?v=`-Governance) — `make bump A=engine`
+  erreicht dieses Game NICHT; Rückführung geplant (E2 im Redesign-Prozess).
 
-**Nicht-verlinkte Game-Verzeichnisse** (`*-run4-v050`, `*-diff`, `template/`) sind Dev-/Vorlagen-Stände —
-liegen im Baum, aber nicht in der Landing. (Aufräum-Kandidaten, s. Repo-Hygiene.)
+**Nicht-verlinkte Game-Verzeichnisse** — seit 17.07. per `_`-Präfix aus Deploy und Checks ausgenommen:
+`_template/` (Scaffold für neue Games), `_archiv-gpg-erster-weltkrieg-ursachen-run4-v050/` (alter
+Parallel-Cut) und `_dev-verlauf-erster-weltkrieg-marne-ende-diff/` (enthält die fertige Differenzierung
+als Merge-Material für das Live-Pendant, das noch keine hat).
 
 ## Geteilte Assets (treffen alle Verticals)
 
@@ -51,8 +56,6 @@ liegen im Baum, aber nicht in der Landing. (Aufräum-Kandidaten, s. Repo-Hygiene
 - Eigentliche **Home-Seite** ist aktuell nur eine Game-Liste — für eine „komplette persönliche Website"
   perspektivisch echte Landing/Navigation (Design via `frontend-design`/`ui-design`).
 - **Favicon** fehlt (harmloser 404) — Mini-Win bei nächstem Sektions-Ausbau.
-- **Smoke-Coverage `sections/`:** `tools/smoke/smoke.py::pages()` leitet die Test-Menge per Regex
-  `escape-games/<id>/` aus `index.html` ab — Seiten unter `sections/**` werden derzeit **nicht**
-  automatisch headless gerendert (gilt seit `sections/wib/haushaltsbuch.html`). `make check` deckt
-  sie ab (Asset-Links/JSON); für Render-Smoke `pages()` um `sections/**/*.html` erweitern —
-  dabei CDN-Abhängigkeiten (z.B. Chart.js via jsdelivr) als mögliche Smoke-Flakiness bedenken.
+- ~~Smoke-Coverage `sections/`~~ **erledigt 2026-07-17:** `smoke.py` testet alle deploybaren
+  `sections/**/*.html` mit (ohne `_`-Segmente). CDN-Policy weich: Subressourcen-Fehler fremder
+  Hosts (z.B. cdn.jsdelivr.net) = WARN, same-origin-Fehler/pageerrors = FAIL.

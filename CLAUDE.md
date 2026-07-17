@@ -43,7 +43,7 @@ Lernraum neu bauen · Landing/Sichtbarkeit. Jeder Loop hat dort ein exaktes Reze
 
 ```bash
 make check          # DER Validierungs-Gate (BLOCKING + ADVISORY). Vor jedem Push.
-make smoke          # Headless-Render-Smoke aller Live-Seiten (Playwright; lokal: pip install playwright)
+make smoke          # Headless-Render-Smoke aller Live-Seiten inkl. sections/ (Playwright; lokal: pip install playwright)
 make bump A=engine  # escape-engine.js geändert → Token bumpen + alle HTML angleichen
 make site           # baut _site/ = exakt der Public-Deploy-Baum (lokale Vorschau des Scopings)
 make install-hooks  # pre-commit-Hook aktivieren (einmalig pro Clone)
@@ -53,6 +53,9 @@ python3 -m http.server 8080   # lokale Vorschau (oder .claude/launch.json "stati
 - **Geteilte Runtime:** `assets/js/escape-engine.js` (~5150 Z.) rendert *alle* Games aus `data.json`.
   Änderung daran trifft alle Spiele → danach `make bump A=engine` + `make smoke`. Für Navigation im
   großen File hilft das **serena**-Plugin; Diffs mit `/code-review`.
+  **Ausnahme (Stand 07/2026):** `syrische-revolution-2011` bindet eine eigene `vendor/`-Kopie der
+  Runtime ein (Engine-Fork, ohne `?v=`) — bis zur Rückführung (E2) erreichen Engine-Bumps dieses
+  Game NICHT.
 - **Karte der Site:** `docs/website/SITE_MAP.md`. **Memory** (Projekt-Fakten): siehe Recall.
 - **Konventionen:** `_`-präfixierte Ordner (`_archive/`, …) = Scratch, werden weder geprüft noch deployt.
 
