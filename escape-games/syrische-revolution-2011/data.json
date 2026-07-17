@@ -617,7 +617,13 @@
       "sicherung": {
         "typ": "tafelbild",
         "html": "tafelbild/mappe-1.html"
-      }
+      },
+      "verfuegbare_sprachen": [
+        "de",
+        "ar",
+        "uk",
+        "ru"
+      ]
     },
     {
       "id": "mappe-2",
@@ -1288,7 +1294,13 @@
       "sicherung": {
         "typ": "tafelbild",
         "html": "tafelbild/mappe-2.html"
-      }
+      },
+      "verfuegbare_sprachen": [
+        "de",
+        "ar",
+        "uk",
+        "ru"
+      ]
     },
     {
       "id": "mappe-3",
@@ -2035,7 +2047,13 @@
       "sicherung": {
         "typ": "tafelbild",
         "html": "tafelbild/mappe-3.html"
-      }
+      },
+      "verfuegbare_sprachen": [
+        "de",
+        "ar",
+        "uk",
+        "ru"
+      ]
     },
     {
       "id": "mappe-4",
@@ -2664,7 +2682,13 @@
       "sicherung": {
         "typ": "tafelbild",
         "html": "tafelbild/mappe-4.html"
-      }
+      },
+      "verfuegbare_sprachen": [
+        "de",
+        "ar",
+        "uk",
+        "ru"
+      ]
     }
   ]
 }

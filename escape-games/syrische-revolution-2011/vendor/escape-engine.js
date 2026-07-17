@@ -5114,7 +5114,7 @@ var EscapeEngine = (function () {
     function tryApply() {
       attempts++;
       var matsReady = !matContainer || matContainer.querySelector('[id^="mat-"]');
-      var aufsReady = !aufContainer || aufContainer.querySelector('[id^="aufgabe-"]');
+      var aufsReady = !aufContainer || aufContainer.querySelector('[id^="auf"]');
       if (matsReady && aufsReady) {
         done = true;
         applyToAllMaterials();
