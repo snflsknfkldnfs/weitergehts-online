@@ -2,7 +2,7 @@
   "_comment": "Single source of truth for shared-asset cache-bust versions. NEVER edit ?v= tokens in HTML by hand — run tools/website/bump-assets.py. tools/website/check.sh enforces that every ?v= token in the deployed HTML matches this file (drift = hard FAIL).",
   "assets": {
     "core.js": "4.6",
-    "escape-engine.js": "3.20",
+    "escape-engine.js": "3.21",
     "base.css": "4.6",
     "theme-gpg.css": "3.16"
   }

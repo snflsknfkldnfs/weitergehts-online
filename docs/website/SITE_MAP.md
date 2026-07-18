@@ -22,20 +22,20 @@
 - `gpg-erster-weltkrieg-ursachen` — Erster Weltkrieg: Ursachen und Ausbruch (GPG R7)
 - `verlauf-erster-weltkrieg-marne-ende` — Erster Weltkrieg: Verlauf Marne→Ende (GPG R7)
 - `deutscher-nationalismus-kolonialismus` — Deutscher Nationalismus und Kolonialismus (GPG R7)
-- `syrische-revolution-2011` — Syrische Revolution 2011 (GPG R7). **⚠ Ausnahme:** nutzt eine eigene
-  `vendor/`-Runtime (Engine-Fork +33 Zeilen, Redesign-CSS, ohne `?v=`-Governance) — `make bump A=engine`
-  erreicht dieses Game NICHT; Rückführung geplant (E2 im Redesign-Prozess).
+- `syrische-revolution-2011` — Syrische Revolution 2011 (GPG R7). Seit E2 (18.07.) auf der
+  geteilten Runtime unter `?v=`-Governance; game-lokal bleibt nur das Redesign-Overlay
+  (`vendor/redesign*.css`, `rd-inject.js`, `media-placeholder.css`, `fonts/`) als E1-Material.
 
 **Nicht-verlinkte Game-Verzeichnisse** — seit 17.07. per `_`-Präfix aus Deploy und Checks ausgenommen:
-`_template/` (Scaffold für neue Games), `_archiv-gpg-erster-weltkrieg-ursachen-run4-v050/` (alter
-Parallel-Cut) und `_dev-verlauf-erster-weltkrieg-marne-ende-diff/` (enthält die fertige Differenzierung
-als Merge-Material für das Live-Pendant, das noch keine hat).
+`_template/` (Scaffold für neue Games) und `_archiv-gpg-erster-weltkrieg-ursachen-run4-v050/` (alter
+Parallel-Cut). Der frühere `_dev-…-marne-ende-diff/`-Ordner ist mit E2 (18.07.) ins Live-Pendant
+gemergt und entfernt.
 
 ## Geteilte Assets (treffen alle Verticals)
 
 | Datei | Rolle | Versionierung |
 |---|---|---|
-| `assets/js/escape-engine.js` | Game-Runtime (~5150 Z.) | `?v=` via `assets/versions.json` + `make bump A=engine` |
+| `assets/js/escape-engine.js` | Game-Runtime (~5180 Z.) | `?v=` via `assets/versions.json` + `make bump A=engine` |
 | `assets/js/core.js` | Storage/Nav/Utilities | `make bump A=core` |
 | `assets/css/base.css` | Reset/Tokens/Layout | `make bump A=base` |
 | `assets/css/themes/theme-gpg.css` | GPG-Theme | `make bump A=theme` |

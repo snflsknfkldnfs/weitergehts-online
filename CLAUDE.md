@@ -50,12 +50,10 @@ make install-hooks  # pre-commit-Hook aktivieren (einmalig pro Clone)
 python3 -m http.server 8080   # lokale Vorschau (oder .claude/launch.json "static-server")
 ```
 
-- **Geteilte Runtime:** `assets/js/escape-engine.js` (~5150 Z.) rendert *alle* Games aus `data.json`.
+- **Geteilte Runtime:** `assets/js/escape-engine.js` (~5180 Z.) rendert *alle* Games aus `data.json`.
   Änderung daran trifft alle Spiele → danach `make bump A=engine` + `make smoke`. Für Navigation im
-  großen File hilft das **serena**-Plugin; Diffs mit `/code-review`.
-  **Ausnahme (Stand 07/2026):** `syrische-revolution-2011` bindet eine eigene `vendor/`-Kopie der
-  Runtime ein (Engine-Fork, ohne `?v=`) — bis zur Rückführung (E2) erreichen Engine-Bumps dieses
-  Game NICHT.
+  großen File hilft das **serena**-Plugin; Diffs mit `/code-review`. Seit E2 (07/2026) gibt es
+  keinen Engine-Fork mehr — Bumps erreichen wieder ALLE Games.
 - **Prozess-Stand** (wo stehen wir, nächster Schritt, Ansage-Punkte): `docs/website/PROZESS.md`
   — bei Weiterentwicklungs-Arbeit ZUERST lesen; Source of Truth vor dem Memory.
 - **Karte der Site:** `docs/website/SITE_MAP.md`. **Memory** (Projekt-Fakten): siehe Recall.

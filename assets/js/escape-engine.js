@@ -1174,9 +1174,24 @@ var EscapeEngine = (function () {
     h3.textContent = mat.titel || '';
     div.appendChild(h3);
 
-    // inhalt ist JSON-Object {spalten[], zeilen[[]]}
+    // inhalt kann ein inline-SVG-Diagramm (String) ODER Tabellendaten {spalten,zeilen} sein
+    // (der statistik-Producer emittiert beides). Ein SVG-String ist kein JSON -> als Grafik
+    // einbetten, nicht in eine leere Tabelle parsen (sonst rendert der Vergleich 'gar nichts').
     var daten = mat.inhalt || {};
     if (typeof daten === 'string') {
+      if (daten.trim().slice(0, 4).toLowerCase() === '<svg') {
+        var grafik = document.createElement('div');
+        grafik.className = 'material__inhalt statistik__grafik';
+        grafik.innerHTML = daten;  // assemble-seitig _safe_html-sanitisiert (wie tagebuch/quellentext)
+        div.appendChild(grafik);
+        if (mat.quelle) {
+          var quelleSvg = document.createElement('p');
+          quelleSvg.className = 'material__quelle';
+          quelleSvg.textContent = mat.quelle;
+          div.appendChild(quelleSvg);
+        }
+        return div;
+      }
       try { daten = JSON.parse(daten); } catch (e) { daten = {}; }
     }
 
@@ -1289,6 +1304,20 @@ var EscapeEngine = (function () {
     if (!sicherung || !container) return;
 
     container.className = 'mappe__sicherung';
+
+    // egg-v2 Tafelbild-Sicherung (hand-drawn, client-side gerendert) — kein SCPL.
+    if (sicherung.typ === 'tafelbild' && sicherung.html) {
+      var tbWrap = document.createElement('div');
+      tbWrap.className = 'sicherung__tafelbild';
+      var tbFrame = document.createElement('iframe');
+      tbFrame.className = 'sicherung__tafelbild-frame';
+      tbFrame.setAttribute('src', sicherung.html);
+      tbFrame.setAttribute('title', 'Hefteintrag (Tafelbild)');
+      tbFrame.setAttribute('loading', 'lazy');
+      tbWrap.appendChild(tbFrame);
+      container.appendChild(tbWrap);
+      return;
+    }
 
     var h2 = document.createElement('h2');
     h2.textContent = 'Hefteintrag';
@@ -5100,7 +5129,7 @@ var EscapeEngine = (function () {
     function tryApply() {
       attempts++;
       var matsReady = !matContainer || matContainer.querySelector('[id^="mat-"]');
-      var aufsReady = !aufContainer || aufContainer.querySelector('[id^="aufgabe-"]');
+      var aufsReady = !aufContainer || aufContainer.querySelector('[id^="auf"]');
       if (matsReady && aufsReady) {
         done = true;
         applyToAllMaterials();

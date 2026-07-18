@@ -112,6 +112,12 @@ Format: Datum · Entscheidung · Warum · verworfene Alternative(n).
   für eine Ein-Personen-Site); kein Log verworfen (das Warum ginge verloren).
 - **2026-07-18 — Umbau inkrementell.** Site bleibt durchgehend live, Gates greifen je Schritt;
   Big-Bang-Branch und `/v2/`-Parallelbau verworfen.
+- **2026-07-18 — E2 Engine-Reunifikation.** Die 3 Syrien-Fork-Hunks (Statistik-SVG, Tafelbild-
+  Sicherung, Differenzierungs-Selektor `[id^="auf"]` als Superset) in die geteilte Engine gemergt
+  (v3.21), Syrien-HTML unter `?v=`-Governance, Fork-Duplikate gelöscht; Redesign-Overlay bleibt
+  bewusst game-lokal bis E1. Marne-Differenzierung dev→live gemergt, `_dev`-Ordner entfernt.
+  Alternative (Syrien-Aufgaben-IDs auf `aufgabe-*` migrieren) verworfen: data.json-Blast-Radius
+  plus localStorage-Progress der Schüler hinge an den alten IDs.
 - **2026-07-18 — Prozess-Steuerung = `PROZESS.md`.** Prozess-Stand (Stand · nächster Schritt ·
   Ansage-Punkte · Einstiegs-Ritual) lebt versioniert im Repo, Claude-Memory nur als Zeiger;
   COWORK-artiger Modus-Apparat verworfen (Pflege-Last ohne Gegenwert für eine Ein-Personen-Site).
