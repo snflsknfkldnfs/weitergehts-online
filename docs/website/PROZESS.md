@@ -38,3 +38,9 @@ Kleinkram (Hotfix, Typo, Content) läuft ohne Spec/Plan direkt über die RUNBUCH
   — NICHT anfassen: `wave-1-engine-patches` (ungemergt), `claude/silly-shirley` (fachfremd).
 - **Domain-Sicherung** (optional, z. B. paulcebulla.de registrieren + Redirect): Pauls manueller
   Schritt außerhalb des Repos, kein Blocker (s. `ARCHITEKTUR.md` → Separierbarkeits-Regeln).
+- **Repo-Entmischung** (Grundsatzfrage, unentschieden; sinnvoll VOR E3 entscheiden): Generator-/
+  PM-Apparat (`docs/projekt/`, `docs/agents/`, `docs/architektur/`, `bridge/` u. a.) aus dem
+  Website-Repo in den Generator-Kontext verlagern → Ein-Zweck-Repo. Öffentliches Leak-Risiko ist
+  bereits durch das Allowlist-Deploy geschlossen; Nutzen ist Session-Klarheit + Repo-Gewicht.
+  Wenn ja: eigener Schritt, vom Generator-Workflow aus koordiniert (Zwei-Welten-Boundary!),
+  NICHT nebenbei in einer Website-Session.
