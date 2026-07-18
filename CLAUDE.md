@@ -7,13 +7,13 @@
 
 `weitergehts.online` ist die **persönliche Website von Paul Cebulla** (Lehrkraft) — statisch,
 vanilla HTML/CSS/JS, **kein Build/npm/Framework**, gehostet auf **GitHub Pages**.
-Sie wächst zu einer mehrsektionigen Site:
+Zielbild: **drei Säulen** (Soll-Architektur + Entscheidungs-Log: `docs/website/ARCHITEKTUR.md`):
 
-- **Unterrichtsmaterial** — interaktive **Escape-Games** (GPG/Geschichte R7), datengetrieben:
+- **Unterricht** — interaktive **Escape-Games** (GPG/Geschichte R7), datengetrieben:
   je Spiel `escape-games/<id>/data.json` + geteilte `assets/js/escape-engine.js` + Theme-CSS.
-  Plus **Lernraum**-Daten (`assets/data/*.json`, via `make lernraum`).
-- **Blog/Notizen** — *im Aufbau* (Sektion `sections/…`, s. SITE_MAP).
-- **Home** (`index.html`) + künftige Sektionen.
+  Plus WiB-Tools (`sections/wib/`) + **Lernraum**-Daten (`assets/data/*.json`, via `make lernraum`).
+- **Zettelkasten** — Mount des extern generierten PKM-Atlas (*geplant*, E4).
+- **Profil** — Visitenkarte; Root wird neutraler Verteiler (*geplant*, E3).
 
 ## ⚠️ Zwei getrennte Welten — nicht vermischen
 

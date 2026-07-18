@@ -1,7 +1,8 @@
 # SITE_MAP — weitergehts.online
 
-> Informationsarchitektur der Site als Menge von **Verticals**. Anker für „wo gehört Neues hin".
-> Bei jeder neuen Sektion/Game/Seite hier eintragen. Stand: 2026-07-17.
+> **Ist-Zustand** der Site als Menge von **Verticals**. Anker für „wo gehört Neues hin".
+> Soll-Architektur, Prämissen + Entscheidungs-Log: `ARCHITEKTUR.md`.
+> Bei jeder neuen Sektion/Game/Seite hier eintragen. Stand: 2026-07-18.
 
 ## Verticals
 
@@ -11,7 +12,7 @@
 | **Unterrichtsmaterial · Escape-Games** | `escape-games/<id>/` | `data.json` (meta+mappen+materialien+aufgaben) → gerendert von `assets/js/escape-engine.js` | `escape-games/_template/` | live (4 Games) |
 | **Unterrichtsmaterial · Lernraum** | `assets/data/*.json` | aus externen Quellen via `make lernraum` generierte Glossar-/KE-Daten | `tools/lernraum/` | Daten vorhanden; Konsument-Seiten teils mit Examens-Schiene archiviert |
 | **WiB · Wirtschaft (interaktive Tools)** | `sections/wib/` | self-contained HTML (Chart.js via CDN), `localStorage`, kein Backend/Tracking | — | live (2 Tools: Haushaltsbuch + Geld-Wert; Geld-Wert nur noch als eigenständige Seite — Duplikat-Tab im Haushaltsbuch am 17.07. entfernt) |
-| **Blog / Notizen** | `sections/blog/` *(geplant)* | offen (statische HTML; optional datengetrieben) | *noch zu definieren* | **im Aufbau** |
+| **Zettelkasten** | `/zettelkasten/` *(geplant, E4)* | extern generierter Atlas-Mount (`zk-atlas` → statisches HTML, nie handeditiert) | — | geplant (s. `ARCHITEKTUR.md`) |
 | **Weitere Sektionen** | `sections/<name>/` | je nach Bedarf | — | künftig |
 
 ## Live-Games (verlinkt aus `index.html`)
@@ -52,10 +53,11 @@ als Merge-Material für das Live-Pendant, das noch keine hat).
 
 ## Offene IA-Fragen (für später)
 
-- Blog/Notizen: statisch-handgepflegt vs. datengetrieben (JSON/Markdown→Render)? Navigation/Menü der Gesamtsite?
-- Eigentliche **Home-Seite** ist aktuell nur eine Game-Liste — für eine „komplette persönliche Website"
-  perspektivisch echte Landing/Navigation (Design via `frontend-design`/`ui-design`).
-- **Favicon** fehlt (harmloser 404) — Mini-Win bei nächstem Sektions-Ausbau.
+- ~~Blog/Notizen-Modell~~ **beantwortet 2026-07-18 (A0):** kein Blog, sondern Zettelkasten-Mount
+  (`ARCHITEKTUR.md`; Umsetzung E4).
+- ~~Home-Seite~~ **beantwortet 2026-07-18 (A0):** Root wird neutraler Verteiler auf 3 Säulen;
+  Umsetzung E3 (Design dort via `frontend-design`/`ui-design`).
+- **Favicon** fehlt (harmloser 404) — wird in E3 miterledigt.
 - ~~Smoke-Coverage `sections/`~~ **erledigt 2026-07-17:** `smoke.py` testet alle deploybaren
   `sections/**/*.html` mit (ohne `_`-Segmente). CDN-Policy weich: Subressourcen-Fehler fremder
   Hosts (z.B. cdn.jsdelivr.net) = WARN, same-origin-Fehler/pageerrors = FAIL.
