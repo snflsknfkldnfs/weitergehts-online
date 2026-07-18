@@ -56,6 +56,8 @@ python3 -m http.server 8080   # lokale Vorschau (oder .claude/launch.json "stati
   **Ausnahme (Stand 07/2026):** `syrische-revolution-2011` bindet eine eigene `vendor/`-Kopie der
   Runtime ein (Engine-Fork, ohne `?v=`) — bis zur Rückführung (E2) erreichen Engine-Bumps dieses
   Game NICHT.
+- **Prozess-Stand** (wo stehen wir, nächster Schritt, Ansage-Punkte): `docs/website/PROZESS.md`
+  — bei Weiterentwicklungs-Arbeit ZUERST lesen; Source of Truth vor dem Memory.
 - **Karte der Site:** `docs/website/SITE_MAP.md`. **Memory** (Projekt-Fakten): siehe Recall.
 - **Konventionen:** `_`-präfixierte Ordner (`_archive/`, …) = Scratch, werden weder geprüft noch deployt.
 
