@@ -2,7 +2,7 @@
 #
 # run.sh — startet einen lokalen Static-Server, faehrt smoke.py, raeumt auf.
 #
-# Lokal:  pip install playwright && python3 -m playwright install chromium  (einmalig)
+# Lokal:  make smoke-setup   (einmalig; legt .venv/ mit Playwright+Chromium an)
 # Aufruf: ./tools/smoke/run.sh   (oder `make smoke`)
 # Exit:   0 = Smoke GRUEN, sonst ROT.
 #
@@ -12,8 +12,12 @@ SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 REPO_ROOT="$(cd -- "$SCRIPT_DIR/../.." &> /dev/null && pwd)"
 PORT="${SMOKE_PORT:-8099}"
 
+# Repo-lokales venv bevorzugen (Homebrew-Python ist PEP-668-managed, kein System-pip)
+PY="$REPO_ROOT/.venv/bin/python3"
+[ -x "$PY" ] || PY=python3
+
 cd "$REPO_ROOT" || exit 1
-python3 -m http.server "$PORT" --bind 127.0.0.1 >/tmp/smoke_server.log 2>&1 &
+"$PY" -m http.server "$PORT" --bind 127.0.0.1 >/tmp/smoke_server.log 2>&1 &
 SERVER_PID=$!
 trap 'kill "$SERVER_PID" 2>/dev/null' EXIT
 
@@ -23,5 +27,5 @@ for _ in $(seq 1 30); do
   sleep 0.2
 done
 
-python3 tools/smoke/smoke.py "http://127.0.0.1:${PORT}"
+"$PY" tools/smoke/smoke.py "http://127.0.0.1:${PORT}"
 exit $?

@@ -6,12 +6,13 @@
 #   make help
 
 .PHONY: help glossare themen-mp ke-stats lernraum clean-data \
-        check smoke bump install-hooks site clean-site
+        check smoke smoke-setup bump install-hooks site clean-site
 
 help:
 	@echo "Website-Pflege-Targets (siehe docs/website/RUNBUCH.md):"
 	@echo "  make check         BLOCKING+ADVISORY-Validierung (DER Gate-Einstiegspunkt)"
 	@echo "  make smoke         Headless-Render-Smoke aller Live-Seiten (Playwright)"
+	@echo "  make smoke-setup   Einmalig: .venv/ mit Playwright+Chromium anlegen (PEP-668-sicher)"
 	@echo "  make bump A=engine Cache-Bust: Asset bumpen + alle HTML angleichen (A=engine|core|base|theme|all)"
 	@echo "  make install-hooks Pre-commit-Hook nach .git/hooks/ verlinken"
 	@echo "  make site          Baut _site/ (genau das, was deployt wird)"
@@ -30,6 +31,13 @@ check:
 
 smoke:
 	./tools/smoke/run.sh
+
+# Einmalige lokale Smoke-Umgebung: Homebrew-Python ist PEP-668-managed (kein
+# `pip install` ins System); run.sh bevorzugt .venv/bin/python3, wenn vorhanden.
+smoke-setup:
+	python3 -m venv .venv
+	.venv/bin/pip install --quiet playwright
+	.venv/bin/python3 -m playwright install chromium
 
 # Cache-Bust: `make bump A=engine` (Default: nur synchronisieren)
 bump:

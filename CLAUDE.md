@@ -43,7 +43,7 @@ Lernraum neu bauen · Landing/Sichtbarkeit. Jeder Loop hat dort ein exaktes Reze
 
 ```bash
 make check          # DER Validierungs-Gate (BLOCKING + ADVISORY). Vor jedem Push.
-make smoke          # Headless-Render-Smoke aller Live-Seiten inkl. sections/ (Playwright; lokal: pip install playwright)
+make smoke          # Headless-Render-Smoke aller Live-Seiten inkl. sections/ (Playwright; lokal einmalig: make smoke-setup)
 make bump A=engine  # escape-engine.js geändert → Token bumpen + alle HTML angleichen
 make site           # baut _site/ = exakt der Public-Deploy-Baum (lokale Vorschau des Scopings)
 make install-hooks  # pre-commit-Hook aktivieren (einmalig pro Clone)

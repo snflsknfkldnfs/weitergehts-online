@@ -37,3 +37,6 @@ _archiv-staatsexamen-mai-2026/
 _site/
 .playwright-mcp/
 tools/smoke/_out/
+
+# Lokale Smoke-Umgebung (make smoke-setup)
+.venv/
