@@ -25,7 +25,7 @@ Kleinkram (Hotfix, Typo, Content) läuft ohne Spec/Plan direkt über die RUNBUCH
 |---|---|
 | E0 Hygiene | ✅ deployt 2026-07-17 |
 | A0 Architektur-Fundament | ✅ gemergt 2026-07-18 → `ARCHITEKTUR.md` |
-| E2 Engine-Reunifikation | ✅ umgesetzt 2026-07-18 auf `feat/e2-engine-reunifikation` (Spec/Plan unter `specs/`+`plans/`; Merge auf Ansage) |
+| E2 Engine-Reunifikation | ✅ deployt 2026-07-18 (Commit 6fc0e0d; Spec/Plan unter `specs/`+`plans/`) |
 | **E1 Design-Fundament** | **⬅ NÄCHSTER SCHRITT:** Syrien-Redesign-Overlay (`vendor/redesign*.css`, `rd-inject.js`, `fonts/`) → Site-weites Token-Fundament in `assets/css/` |
 | E3 IA-Umsetzung (der eine URL-Bruch) | offen (nach E1) |
 | E4 Zettelkasten-Mount | offen (wartet auf `zk-atlas` Plan 5) |
