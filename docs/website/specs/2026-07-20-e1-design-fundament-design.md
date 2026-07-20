@@ -17,9 +17,9 @@ geteilte Game-Schicht (Theme + Engine) wird als eigener Folgeschritt **E5** defi
   hartcodiert. Hartcodierte CSS-Content-Strings („AKTE 04 · PULVERFASS EUROPA" — ein
   WW1-Artefakt im Syrien-Game — vs. „AKTE 14" auf der Übersicht) und ein toter
   `.rd-tweaks`-Block ohne Erzeuger.
-- **Site-CSS:** `base.css` (776 Z.) ist zu ~56 % toter „wg.lernraum"-Block (Abschnitte
-  9–21, von keiner Live-Seite genutzt), der die präfix-freien Token-Namen `--bg`, `--ink`,
-  `--paper`, `--accent`, `--muted` belegt. `theme-gpg.css` (2778 Z.) lädt in Zeile 1 per
+- **Site-CSS:** `base.css` (776 Z.) ist zu ~58 % toter „wg.lernraum"-Block (Z. 326–776,
+  von keiner Live-Seite genutzt; seine Tokens `--bg`, `--ink`, `--paper`, `--accent`, …
+  sind dort unter `body[data-lernraum]` gescoped, nicht global). `theme-gpg.css` (2778 Z.) lädt in Zeile 1 per
   `@import` Google-Fonts-CDN (Architects Daughter, Caveat, Patrick Hand) — bei **jedem
   Schüler-Aufruf aller GPG-Games** gehen IPs an Google (DSGVO-Risiko, vgl. LG München
   2022); im Syrien-Game läuft Architects Daughter dadurch doppelt (CDN + vendored).
@@ -61,12 +61,11 @@ geteilte Game-Schicht (Theme + Engine) wird als eigener Folgeschritt **E5** defi
    Konsumenten sind E3 (Root/Profil) und E5 (Games). Lade-Konvention ab E3:
    `fonts.css → base.css → tokens.css → theme-*.css` (Tokens überschreiben die neutralen
    base-Fallbacks, Themes die Tokens).
-4. **`base.css`-Entmischung:** der „wg.lernraum"-Block (Abschnitte 9–21, ~435 Z.) zieht
+4. **`base.css`-Entmischung:** der „wg.lernraum"-Block (Z. 326–776, ~450 Z.) zieht
    1:1 in ein neues, ungeladenes `assets/css/lernraum.css`. `base.css` behält Reset,
    neutrale `:root`-Fallbacks, Skalen (`--space-*`, `--text-*`, `--radius-*`, …), Layout
-   und Utilities. Der präfix-freie Namensraum wird frei. *(Verworfen: löschen —
-   ARCHITEKTUR hält Lernraum-Konsumseiten offen; liegen lassen — 9 KB toter Ballast auf
-   jeder Seite + Namenskollision mit dem Fundament.)*
+   und Utilities. *(Verworfen: löschen — ARCHITEKTUR hält Lernraum-Konsumseiten offen;
+   liegen lassen — ~9 KB toter Ballast auf jeder Seite.)*
 5. **Governance:** `assets/versions.json` + `bump-assets.py` bekommen die Einträge/Aliase
    `fonts` (`fonts.css`) und `tokens` (`tokens.css`); Root-`index.html` erhält `?v=` auf
    `base.css`. `lernraum.css`/`tokens.css` sind ungeladen und brauchen keine Live-Links.
