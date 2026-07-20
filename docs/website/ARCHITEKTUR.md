@@ -89,6 +89,8 @@ Inkrementell unter diesem Dach — kein Big-Bang-Branch, kein `/v2/`-Parallelbau
 - **E3 IA-Umsetzung (der eine URL-Bruch):** Root-Verteiler, `/profil/`, Umzug nach
   `/unterricht/…`, Unterricht-Assets in den Säulen-Baum, Checks/Smoke/SITE_MAP ziehen mit, Favicon.
 - **E4 Zettelkasten-Mount:** sobald `zk-atlas` Plan 5 liefert.
+- **E5 Akten-Look-Absorption:** Redesign-Overlay in `theme-gpg.css` in-place absorbieren +
+  rd-inject-Logik in die Engine; nach der E3-Triage, spätestens vor dem nächsten neuen Game.
 
 ## Entscheidungs-Log
 
@@ -121,3 +123,17 @@ Format: Datum · Entscheidung · Warum · verworfene Alternative(n).
 - **2026-07-18 — Prozess-Steuerung = `PROZESS.md`.** Prozess-Stand (Stand · nächster Schritt ·
   Ansage-Punkte · Einstiegs-Ritual) lebt versioniert im Repo, Claude-Memory nur als Zeiger;
   COWORK-artiger Modus-Apparat verworfen (Pflege-Last ohne Gegenwert für eine Ein-Personen-Site).
+- **2026-07-20 — E1 schlank zugeschnitten; E5 terminiert.** E1 liefert nur das Fundament
+  (`tokens.css`, self-gehostete Fonts/DSGVO-Sanierung, `base.css`-Entmischung,
+  `?v=`-Lücken); der Akten-Look-Rollout (Theme-Absorption in-place, rd-inject → Engine,
+  datengetriebene Akten-Labels, Dark-Default) wird E5 — fällig nach der E3-Game-Triage,
+  spätestens vor dem nächsten neuen Game. Warum: Design erreicht zukünftige Games nur über
+  die geteilte Schicht, aber die Alt-Games sind Triage-Kandidaten — Absorption vor der
+  Triage wäre teils für Sterbekandidaten. Verworfen: Sofort-Rollout (voller Umbau jetzt)
+  und Token-Extraktion ohne Font-Sanierung (DSGVO-Risiko bliebe live). Abweichung vom Plan
+  (auf Ansage mitgeschlossen): Der Font-Abriss legte einen zweiten, im Plan übersehenen
+  Google-Kanal offen — die Engine (`escape-engine.js`, `injectArabicFont`) lud Noto Sans
+  Arabic (DaZ-Differenzierung) per CDN bei jedem Laden einer differenzierten Mappe (3/4
+  Live-Games). Daher auch Arabic self-gehostet (`assets/fonts/`, @font-face in `fonts.css`),
+  `injectArabicFont()` auf No-op, Engine-Bump 3.22 — der einzige E1-Engine-Eingriff, rein
+  aus DSGVO-Gründen (nicht Akten-Look; der bleibt E5).

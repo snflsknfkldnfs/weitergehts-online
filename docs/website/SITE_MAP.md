@@ -2,7 +2,7 @@
 
 > **Ist-Zustand** der Site als Menge von **Verticals**. Anker für „wo gehört Neues hin".
 > Soll-Architektur, Prämissen + Entscheidungs-Log: `ARCHITEKTUR.md`.
-> Bei jeder neuen Sektion/Game/Seite hier eintragen. Stand: 2026-07-18.
+> Bei jeder neuen Sektion/Game/Seite hier eintragen. Stand: 2026-07-20.
 
 ## Verticals
 
@@ -23,8 +23,9 @@
 - `verlauf-erster-weltkrieg-marne-ende` — Erster Weltkrieg: Verlauf Marne→Ende (GPG R7)
 - `deutscher-nationalismus-kolonialismus` — Deutscher Nationalismus und Kolonialismus (GPG R7)
 - `syrische-revolution-2011` — Syrische Revolution 2011 (GPG R7). Seit E2 (18.07.) auf der
-  geteilten Runtime unter `?v=`-Governance; game-lokal bleibt nur das Redesign-Overlay
-  (`vendor/redesign*.css`, `rd-inject.js`, `media-placeholder.css`, `fonts/`) als E1-Material.
+  geteilten Runtime unter `?v=`-Governance; game-lokal bleibt nur noch das Redesign-Overlay
+  (`vendor/redesign*.css`, `rd-inject.js`, `media-placeholder.css`) als E5-Material —
+  `vendor/fonts/` ist seit E1 (20.07.) site-weit (`assets/fonts/`).
 
 **Nicht-verlinkte Game-Verzeichnisse** — seit 17.07. per `_`-Präfix aus Deploy und Checks ausgenommen:
 `_template/` (Scaffold für neue Games) und `_archiv-gpg-erster-weltkrieg-ursachen-run4-v050/` (alter
@@ -39,6 +40,9 @@ gemergt und entfernt.
 | `assets/js/core.js` | Storage/Nav/Utilities | `make bump A=core` |
 | `assets/css/base.css` | Reset/Tokens/Layout | `make bump A=base` |
 | `assets/css/themes/theme-gpg.css` | GPG-Theme | `make bump A=theme` |
+| `assets/css/fonts.css` + `assets/fonts/` | self-gehostete Webfonts (7 Familien, DSGVO) | `make bump A=fonts` |
+| `assets/css/tokens.css` | Site-Design-Vokabular (E1; ungeladen bis E3/E5) | `make bump A=tokens` |
+| `assets/css/lernraum.css` | ausgelagerter wg.lernraum-Block (ungeladen, bereitliegend) | — |
 | `assets/img/<game-id>/` | Game-Medien | — |
 | `assets/data/*.json` | Lernraum-Daten (generiert) | `make lernraum` |
 

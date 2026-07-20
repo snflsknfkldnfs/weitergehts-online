@@ -19,16 +19,17 @@ Plan (`plans/JJJJ-MM-TT-<thema>.md`) → Umsetzung auf Branch, explizit stagen �
 (+ ggf. Log-Eintrag in `ARCHITEKTUR.md`).
 Kleinkram (Hotfix, Typo, Content) läuft ohne Spec/Plan direkt über die RUNBUCH-Loops.
 
-## Stand (2026-07-18)
+## Stand (2026-07-20)
 
 | Schritt | Status |
 |---|---|
 | E0 Hygiene | ✅ deployt 2026-07-17 |
 | A0 Architektur-Fundament | ✅ gemergt 2026-07-18 → `ARCHITEKTUR.md` |
 | E2 Engine-Reunifikation | ✅ deployt 2026-07-18 (Commit 6fc0e0d; Spec/Plan unter `specs/`+`plans/`) |
-| **E1 Design-Fundament** | **⬅ NÄCHSTER SCHRITT:** Syrien-Redesign-Overlay (`vendor/redesign*.css`, `rd-inject.js`, `fonts/`) → Site-weites Token-Fundament in `assets/css/` |
-| E3 IA-Umsetzung (der eine URL-Bruch) | offen (nach E1) |
+| E1 Design-Fundament | ✅ umgesetzt 2026-07-20 auf `feat/e1-design-fundament` (schlanker Zuschnitt: tokens.css · Fonts self-hosted/DSGVO inkl. Noto-Sans-Arabic-Kanal in der Engine · base.css entmischt · ?v=-Lücken; Spec/Plan unter `specs/`+`plans/`). Merge/Deploy auf Ansage. |
+| **E3 IA-Umsetzung (der eine URL-Bruch)** | **⬅ NÄCHSTER SCHRITT** (davor: Repo-Entmischungs-Grundsatzfrage, s. Ansage-Punkte) |
 | E4 Zettelkasten-Mount | offen (wartet auf `zk-atlas` Plan 5) |
+| E5 Akten-Look-Absorption (Theme+Engine) | offen — fällig nach E3-Game-Triage, spätestens VOR dem nächsten neuen Game; Vorentscheidungen in E1-Spec §6 |
 
 ## Offene Ansage-Punkte (nur Paul entscheidet)
 
