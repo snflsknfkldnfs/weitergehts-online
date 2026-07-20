@@ -54,6 +54,7 @@ ALIASES = {
     "core": "core.js",
     "base": "base.css",
     "theme": "theme-gpg.css",
+    "fonts": "fonts.css",
 }
 
 

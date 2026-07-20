@@ -4,6 +4,7 @@
     "core.js": "4.6",
     "escape-engine.js": "3.21",
     "base.css": "4.6",
-    "theme-gpg.css": "3.16"
+    "theme-gpg.css": "3.16",
+    "fonts.css": "1.0"
   }
 }
