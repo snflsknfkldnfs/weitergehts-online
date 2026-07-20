@@ -13,7 +13,7 @@ help:
 	@echo "  make check         BLOCKING+ADVISORY-Validierung (DER Gate-Einstiegspunkt)"
 	@echo "  make smoke         Headless-Render-Smoke aller Live-Seiten (Playwright)"
 	@echo "  make smoke-setup   Einmalig: .venv/ mit Playwright+Chromium anlegen (PEP-668-sicher)"
-	@echo "  make bump A=engine Cache-Bust: Asset bumpen + alle HTML angleichen (A=engine|core|base|theme|fonts|all)"
+	@echo "  make bump A=engine Cache-Bust: Asset bumpen + alle HTML angleichen (A=engine|core|base|theme|fonts|tokens|all)"
 	@echo "  make install-hooks Pre-commit-Hook nach .git/hooks/ verlinken"
 	@echo "  make site          Baut _site/ (genau das, was deployt wird)"
 	@echo ""

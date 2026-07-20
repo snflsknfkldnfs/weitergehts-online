@@ -1,0 +1,54 @@
+/* ==========================================================================
+   tokens.css — Site-weites Design-Vokabular (E1, 2026-07-20)
+
+   Quelle: destilliert aus dem Syrien-Redesign-Overlay (vendor/redesign*.css).
+   Kaskaden-Konvention (ab E3): fonts.css → base.css → tokens.css → theme-*.css
+   — dieses File ueberschreibt die neutralen base.css-Fallbacks mit der
+   Site-Identitaet; Themes (Saeulen) verfeinern darueber.
+
+   Modus: DARK ist Site-Default. <html data-bg="white"> schaltet die helle
+   Pergament-Variante (dokumentierter Schalter pro Seite).
+
+   In E1 laedt noch KEINE Live-Seite dieses File — erste Konsumenten:
+   E3 (Root/Profil), E5 (Akten-Look-Absorption der Games).
+   Spec: docs/website/specs/2026-07-20-e1-design-fundament-design.md
+   ========================================================================== */
+
+:root {
+  /* Farb-Identitaet — Akten-Palette, Dark-Default */
+  --color-primary: #1B2A4A;          /* Navy */
+  --color-secondary: #C9A84C;        /* Gold */
+  --color-secondary-light: #E0C57E;
+  --color-background: #1F1812;
+  --color-surface: #2A211A;          /* "Papier" im Dark-Modus */
+  --color-surface-raised: #2A211A;   /* Cream-Pendant; im Dark == surface */
+  --color-desk: #3A2616;             /* Schreibtisch-/Pinnwand-Grund (konstant) */
+  --color-text: #E8E0D0;
+  --color-muted: #B8AC95;
+  --color-border: #4a3e2c;
+
+  /* Status */
+  --color-success: #2D6A4F;
+  --color-error: #9B2226;
+  --color-tipp: #4A6FA5;
+  --color-status-done: var(--color-success);
+  --color-status-open: #D4A017;
+  --color-status-locked: var(--color-error);
+
+  /* Font-Rollen (Dateien: assets/css/fonts.css → assets/fonts/) */
+  --font-body: 'Spectral', Georgia, serif;
+  --font-display: 'IM Fell English', Georgia, serif;
+  --font-hand: 'Architects Daughter', cursive;
+  --font-mono-display: 'Special Elite', 'Courier New', monospace;
+  --font-heading: var(--font-display);   /* base.css-Regeln nutzen --font-heading */
+}
+
+/* Helle Pergament-Variante */
+[data-bg="white"] {
+  --color-background: #F5F0E8;
+  --color-surface: #FAF6EC;
+  --color-surface-raised: #FDF6E3;
+  --color-text: #2C2416;
+  --color-muted: #6B6358;
+  --color-border: #C5BFB3;
+}
