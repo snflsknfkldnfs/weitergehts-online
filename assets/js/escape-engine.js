@@ -4601,17 +4601,12 @@ var EscapeEngine = (function () {
     updateSprachButton();
   }
 
-  // -- Webfont AR injizieren -------------------------------------------------
-
-  function injectArabicFont() {
-    if (document.getElementById('diff-mvp-font-ar')) return;
-    var link = document.createElement('link');
-    link.id = 'diff-mvp-font-ar';
-    link.rel = 'stylesheet';
-    link.href = 'https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600&display=swap';
-    link.crossOrigin = 'anonymous';
-    document.head.appendChild(link);
-  }
+  // -- Webfont AR ------------------------------------------------------------
+  // Noto Sans Arabic wird seit E1 (2026-07-20) site-weit self-gehostet
+  // (assets/css/fonts.css, @font-face 'Noto Sans Arabic'). Der fruehere
+  // Google-Fonts-CDN-@import (DSGVO, LG Muenchen 2022) entfaellt; die Funktion
+  // bleibt als No-op, damit die Aufrufstelle unveraendert bleibt.
+  function injectArabicFont() { /* self-hosted via fonts.css — no-op */ }
 
   // -- Sprach-Button im Header ----------------------------------------------
 
