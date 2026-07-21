@@ -137,6 +137,19 @@ Format: Datum · Entscheidung · Warum · verworfene Alternative(n).
   Live-Games). Daher auch Arabic self-gehostet (`assets/fonts/`, @font-face in `fonts.css`),
   `injectArabicFont()` auf No-op, Engine-Bump 3.22 — der einzige E1-Engine-Eingriff, rein
   aus DSGVO-Gründen (nicht Akten-Look; der bleibt E5).
+- **2026-07-20 — Repo-Entmischung: JA (Snapshot-Move, kein History-Rewrite).** Die Generator-/
+  PM-Pfade (`docs/projekt|agents|architektur|analyse|befunde|checklisten|uebergabe|briefings|
+  testdaten|fachdidaktik`, 3/4 von `docs/assets/`, Root-Generator-Transkript, die 4 Brücken-
+  Skripte in `tools/`) ziehen als Snapshot ins Generator-Repo `~/escape-game-generator/`,
+  koordiniert AUS der Generator-Welt (Zwei-Welten-Boundary); E3 wartet darauf nicht.
+  `bridge/` (222 MB) war ein versehentlich eingecheckter Claude-Desktop-Diagnose-Export ohne
+  Generator-Bezug → gelöscht statt umgezogen (2026-07-21); 859 MB ungetrackte Session-Exports
+  (`docs/analyse/Verlauf Game Imperialismus/`) sofort gelöscht. Warum: Ein-Zweck-Repo =
+  Session-Klarheit + Repo-Gewicht; das öffentliche Leak-Risiko war schon vorher durch das
+  Allowlist-Deploy geschlossen. Verworfen: History-Rewrite (`git filter-repo` — Aufwand/Risiko
+  ohne Gegenwert, die Blobs bleiben in der Historie), Status quo (Zwei-Welten-Reibung in jeder
+  Session), `bridge/`-Umzug (kein Generator-Kanal — die reale Übergabe läuft via
+  sandbox-export-Skill).
 - **2026-07-21 — Site-Design-Identität = „Nebel & Papier" (claude-design-Scoping).** Die
   Site-Ebene (Root, /profil/, später /zettelkasten/) übernimmt das von Paul gescopte
   System (Referenz: claude.ai/design „website allgemein", lokal `_design-scoping/`):
