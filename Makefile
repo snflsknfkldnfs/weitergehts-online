@@ -49,7 +49,7 @@ install-hooks:
 	@echo "pre-commit-Hook installiert (.git/hooks/pre-commit -> tools/hooks/pre-commit)"
 
 # Baut den Publish-Baum _site/ als ALLOWLIST (default-deny): nur oeffentliche Inhalte,
-# nie docs/, tools/, bridge/, _archiv*, .claude/, README, *.skill etc.
+# nie docs/, tools/, _archiv*, .claude/, README, *.skill etc.
 site: clean-site
 	mkdir -p _site
 	cp index.html _site/
