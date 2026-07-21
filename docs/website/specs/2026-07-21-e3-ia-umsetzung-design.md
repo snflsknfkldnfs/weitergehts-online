@@ -100,11 +100,14 @@ bewertet. `blog/*` bleibt geparkt.
    Staging-Script verlassen den Root (Staging zieht in den Unterricht-Hub). Zusätzlich
    **schlanke `404.html`** im wg-System mit Links auf die Säulen-Einstiege (GitHub Pages
    liefert sie automatisch aus) — der bewusste URL-Bruch bekommt eine weiche Landung.
-4. **`/profil/`** aus `ueber.html`: Porträt-Hero + Footer bleiben; die
-   `hero--kind`-Sektion (Kindheitsfoto + Prosa „Haltung/Unterricht/Schreiben“) entfällt
-   ersatzlos (Pauls Minimal-Entscheid: Foto + Kontakt, Website spricht für sich).
-   `mailto:`-Platzhalter wird durch Pauls echte Kontakt-Adresse ersetzt (liefert Paul);
-   Credit „Foto: Uwe Niklas“ bleibt erhalten. *(Verworfen: Prosa behalten/kürzen.)*
+4. **`/profil/`** aus `ueber.html`: Porträt-Hero + Footer bleiben, und **das
+   Kindheitsfoto bleibt drin** (Paul 2026-07-21: es korrespondiert mit dem Porträt).
+   Die `hero--kind`-Sektion wird dafür zum reinen Bild-Element: die Prosa
+   „Haltung/Unterricht/Schreiben“ (Platzhaltertexte) entfällt ersatzlos, das
+   Sektions-Layout wird bildzentriert nachgeführt (Pauls Minimal-Entscheid: Fotos +
+   Kontakt, Website spricht für sich). `mailto:`-Platzhalter wird durch Pauls echte
+   Kontakt-Adresse ersetzt (liefert Paul); Credit „Foto: Uwe Niklas“ bleibt erhalten.
+   *(Verworfen: Prosa behalten/kürzen; Kindheitsfoto streichen.)*
 5. **`/unterricht/` + Umzug:** Neuer Säulen-Hub `unterricht/index.html` im wg-System;
    er übernimmt Game-Liste, WiB-Liste und die Staging-Mechanik des alten Root.
    `git mv escape-games unterricht/escape-games` (kompletter Baum inkl. `_template/` und
@@ -137,12 +140,12 @@ bewertet. `blog/*` bleibt geparkt.
 7. **Favicon:** `favicon.svg` + `favicon.ico` im Root — dunkles Quadrat, Wortmarke „w.“
    (Archivo), Nebelblau-Akzent; `<link rel="icon">` nur in den Site-Köpfen, Games/WiB
    erben den Browser-Fallback auf `/favicon.ico` (WiB behält seine Data-URI-Icons).
-8. **Site-Bilder:** `profil/img/paul-portrait.jpg` (säulen-lokal) und
+8. **Site-Bilder:** `profil/img/{paul-portrait,kindheit-frankfurterschule}.jpg`
+   (säulen-lokal) und
    `assets/img/site/{gleise-ueberwachsen,museum-blick,turm-beton}.jpg` (Root-Verteiler);
    Bildpfade in den übernommenen HTMLs entsprechend angepasst. **Beschaffung durch Paul**
    (Export aus der Design-UI oder Originale) — Voraussetzung für die betroffenen Tasks;
-   `zeitschriften.jpg`/`kindheit-frankfurterschule.jpg` werden erst bei Reaktivierung
-   (E4 bzw. Profil-Ausbau) benötigt.
+   `zeitschriften.jpg` wird erst mit der Zettelkasten-Kachel (E4) benötigt.
 9. **Gates/Werkzeuge ziehen mit:** `make site`-Allowlist neu: `index.html`, `404.html`,
    `CNAME`, `favicon.svg`+`favicon.ico`, `unterricht/`, `profil/`, `impressum/`,
    `datenschutz/`, `assets/` (Excludes unverändert `_*/`); `escape-games`/`sections`
