@@ -1,75 +1,90 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="mode-dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>weitergehts.online – Interaktive Unterrichtsmaterialien</title>
-    <link rel="stylesheet" href="assets/css/base.css?v=4.7">
-    <!-- v3.11 Staging-Flag: blendet <li data-status="staging"> aus; nur sichtbar mit ?staging=1 -->
-    <style>
-      li[data-status="staging"] { display: none; }
-      html.staging-mode li[data-status="staging"] {
-        display: list-item;
-        outline: 2px dashed #d97706;
-        padding: 4px 8px;
-        background: #fff7ed;
-      }
-      html.staging-mode li[data-status="staging"]::after {
-        content: " [STAGING — nicht live]";
-        color: #d97706;
-        font-weight: bold;
-        font-size: 0.9em;
-      }
-      html.staging-mode body::before {
-        content: "STAGING-MODUS aktiv (via ?staging=1)";
-        display: block;
-        background: #d97706;
-        color: white;
-        padding: 8px 16px;
-        font-weight: bold;
-        text-align: center;
-      }
-    </style>
-    <script>
-      // Synchron im <head>: verhindert Flash-of-Hidden-Content
-      (function() {
-        try {
-          var params = new URLSearchParams(window.location.search);
-          if (params.get('staging') === '1') {
-            document.documentElement.classList.add('staging-mode');
-          }
-        } catch (e) { /* keine URLSearchParams-Unterstuetzung -> staging off */ }
-      })();
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>weitergehts.online</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="assets/css/fonts.css?v=1.1">
+<link rel="stylesheet" href="assets/css/tokens.css?v=1.1">
+<link rel="stylesheet" href="assets/css/wg.css?v=1.1">
+<script>
+  (function(){ try{ var m=localStorage.getItem('wg-mode'); var r=document.documentElement;
+    r.classList.remove('mode-light','mode-dark'); r.classList.add(m==='light'?'mode-light':'mode-dark'); }catch(e){} })();
+</script>
 </head>
-<body>
-    <main>
-        <h1>weitergehts.online</h1>
-        <p>Interaktive Unterrichtsmaterialien</p>
+<body class="halo">
+<div class="tapete" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
 
-        <h2>Escape-Games</h2>
-        <ul>
-            <li id="game-syrische-revolution-2011">
-                <a href="unterricht/escape-games/syrische-revolution-2011/index.html">
-                    Syrische Revolution 2011 (GPG R7)
-                </a>
-            </li>
-        </ul>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="sq"></span></a>
+    <nav class="nav">
+      <a href="profil/">Profil</a>
+      <a href="unterricht/">Unterricht</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <div class="toggle" role="group" aria-label="Hell- oder Dunkelmodus">
+      <button id="m-light" aria-pressed="false">Hell</button>
+      <button id="m-dark" aria-pressed="true">Dunkel</button>
+    </div>
+  </div>
+</header>
 
-        <h2>WiB · Wirtschaft</h2>
-        <ul>
-            <li id="tool-wib-haushaltsbuch">
-                <a href="unterricht/wib/haushaltsbuch.html">
-                    Mein Haushaltsbuch — Wohin geht mein Geld? (WiB 7)
-                </a>
-            </li>
-            <li id="tool-wib-geldwert">
-                <a href="unterricht/wib/geldwert.html">
-                    Wie viel ist mein Geld wert? — Drei Schritte: Budget · Beruf · Reiche (WiB 7)
-                </a>
-            </li>
-        </ul>
-    </main>
-    <script src="assets/js/core.js"></script>
+<section class="hero">
+  <figure class="hero-bleed">
+    <img src="assets/img/site/gleise-ueberwachsen.jpg" alt="Überwachsene, stillgelegte Gleise im Abendlicht">
+  </figure>
+  <div class="wrap hero-text">
+    <h1>weitergehts.online</h1>
+    <p class="lede">Illusionen + Simulationen</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <span class="cap">Bereiche</span>
+    <div class="gw-grid">
+      <a class="gw" href="profil/">
+        <img class="thumb" src="assets/img/site/museum-blick.jpg" alt="Blick aus einem Museumsraum auf eine Landschaft">
+        <h3>Profil / Visitenkarte</h3>
+        <p>Wer hinter der Seite steht — das öffentliche Gesicht.</p>
+      </a>
+      <a class="gw" href="unterricht/">
+        <img class="thumb" src="assets/img/site/turm-beton.jpg" alt="Betonturm mit Uhr vor blauem Himmel">
+        <h3>Unterricht</h3>
+        <p>Interaktive Lernmaterialien und Escape-Games für meine Schülerinnen und Schüler.</p>
+      </a>
+      <!-- E4: dritter Slot reserviert für die Zettelkasten-Kachel (.gw analog, Thumb zeitschriften.jpg) -->
+    </div>
+  </div>
+</section>
+
+<footer id="kontakt">
+  <div class="wrap foot">
+    <span class="fmark">weitergehts.online</span>
+    <span class="fline">
+      <a href="mailto:paulcebulla@proton.me">Kontakt</a>
+      <a href="impressum/">Impressum</a>
+      <a href="datenschutz/">Datenschutz</a>
+    </span>
+    <span class="fline">© 2026</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var bL=document.getElementById('m-light'), bD=document.getElementById('m-dark');
+  function paint(){ var d=root.classList.contains('mode-dark');
+    bL.setAttribute('aria-pressed', d?'false':'true'); bD.setAttribute('aria-pressed', d?'true':'false'); }
+  function set(d){ root.classList.remove('mode-light','mode-dark'); root.classList.add(d?'mode-dark':'mode-light');
+    try{ localStorage.setItem('wg-mode', d?'dark':'light'); }catch(e){} paint(); }
+  bL.addEventListener('click',function(){ set(false); });
+  bD.addEventListener('click',function(){ set(true); });
+  paint();
+})();
+</script>
 </body>
 </html>

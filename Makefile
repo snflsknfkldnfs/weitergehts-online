@@ -53,12 +53,17 @@ install-hooks:
 site: clean-site
 	mkdir -p _site
 	cp index.html _site/
+	cp 404.html _site/ 2>/dev/null || true
+	[ -f favicon.svg ] && cp favicon.svg _site/ || true
 	cp CNAME _site/ 2>/dev/null || true
 	[ -f favicon.ico ] && cp favicon.ico _site/ || true
 	rsync -a --exclude='_*/' --exclude='.DS_Store' unterricht _site/
 	rsync -a --exclude='_*/' --exclude='.DS_Store' assets _site/
+	[ -d profil ] && rsync -a --exclude='_*/' --exclude='.DS_Store' profil _site/ || true
+	[ -d impressum ] && rsync -a --exclude='_*/' --exclude='.DS_Store' impressum _site/ || true
+	[ -d datenschutz ] && rsync -a --exclude='_*/' --exclude='.DS_Store' datenschutz _site/ || true
 	touch _site/.nojekyll
-	@echo "_site/ gebaut (Allowlist: index.html, CNAME, unterricht/, assets/)."
+	@echo "_site/ gebaut (Allowlist: index.html, 404.html, favicon.*, CNAME, unterricht/, assets/, profil/, impressum/, datenschutz/)."
 
 clean-site:
 	rm -rf _site
