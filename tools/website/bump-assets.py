@@ -56,6 +56,7 @@ ALIASES = {
     "theme": "theme-gpg.css",
     "fonts": "fonts.css",
     "tokens": "tokens.css",
+    "wg": "wg.css",
 }
 
 

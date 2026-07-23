@@ -40,3 +40,6 @@ tools/smoke/_out/
 
 # Lokale Smoke-Umgebung (make smoke-setup)
 .venv/
+
+# E3-Design-Scoping — read-only Referenz-Spiegel (claude.ai/design), NICHT deployen
+_design-scoping/
