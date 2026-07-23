@@ -36,16 +36,19 @@ def _is_scratch(path: Path) -> bool:
 
 
 def deployed_html() -> list[Path]:
-    files = sorted(REPO_ROOT.glob("escape-games/**/*.html"))
-    idx = REPO_ROOT / "index.html"
-    if idx.exists():
-        files.append(idx)
-    files += sorted(REPO_ROOT.glob("sections/**/*.html"))
+    files = sorted(REPO_ROOT.glob("unterricht/**/*.html"))
+    for extra in ("index.html", "404.html"):
+        p = REPO_ROOT / extra
+        if p.exists():
+            files.append(p)
+    files += sorted(REPO_ROOT.glob("profil/**/*.html"))
+    files += sorted(REPO_ROOT.glob("impressum/**/*.html"))
+    files += sorted(REPO_ROOT.glob("datenschutz/**/*.html"))
     return [f for f in files if not _is_scratch(f)]
 
 
 def deployed_json() -> list[Path]:
-    files = sorted(REPO_ROOT.glob("escape-games/*/data.json"))
+    files = sorted(REPO_ROOT.glob("unterricht/escape-games/*/data.json"))
     files += sorted(REPO_ROOT.glob("assets/data/*.json"))
     vj = REPO_ROOT / "assets" / "versions.json"
     if vj.exists():

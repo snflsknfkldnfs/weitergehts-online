@@ -74,7 +74,7 @@ fi
 
 # B4 Feedback-/Tipps-Schema je LIVE-Game (FAIL blockt, WARN toleriert)
 for g in ${LIVE_GAMES[@]+"${LIVE_GAMES[@]}"}; do
-  dj="escape-games/$g/data.json"
+  dj="unterricht/escape-games/$g/data.json"
   [[ -f "$dj" ]] || { bad "$g: data.json fehlt"; continue; }
   if node tools/validate-feedback-schema.js "$dj" >/tmp/wcheck_fb.txt 2>&1; then
     ok "$g: feedback/tipps-schema ($(grep -c WARN /tmp/wcheck_fb.txt) WARN toleriert)"
@@ -88,7 +88,7 @@ if [[ $BLOCKING_ONLY -eq 0 ]]; then
   section "ADVISORY — didaktische Kriterien (blockt NICHT)"
 
   for g in ${LIVE_GAMES[@]+"${LIVE_GAMES[@]}"}; do
-    dj="escape-games/$g/data.json"
+    dj="unterricht/escape-games/$g/data.json"
     [[ -f "$dj" ]] || continue
     if python3 tools/validate_bloom_distribution.py "$dj" >/tmp/wcheck_bl.txt 2>&1; then
       note "$g: bloom-verteilung OK"

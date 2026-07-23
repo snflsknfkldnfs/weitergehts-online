@@ -48,24 +48,25 @@ def live_games() -> list[str]:
     return sorted(set(re.findall(r"escape-games/([a-z0-9-]+)/", idx)))
 
 
-def pages() -> list[str]:
-    """Repo-relative URL-Pfade aller zu testenden Seiten."""
-    urls = ["/index.html"]
+def pages():
+    urls = []
+    for static in ["index.html", "404.html", "profil/index.html",
+                   "impressum/index.html", "datenschutz/index.html",
+                   "unterricht/index.html"]:
+        if (REPO_ROOT / static).exists():
+            urls.append("/" + static)
     for g in live_games():
-        gdir = REPO_ROOT / "escape-games" / g
+        gdir = REPO_ROOT / "unterricht" / "escape-games" / g
         for name in ["index.html", "lehrkraft.html"]:
             if (gdir / name).exists():
-                urls.append(f"/escape-games/{g}/{name}")
+                urls.append(f"/unterricht/escape-games/{g}/{name}")
         for mappe in sorted(gdir.glob("mappe-*.html")):
-            urls.append(f"/escape-games/{g}/{mappe.name}")
-    # sections/**: alles Deploybare (Konvention: _-praefixierte Segmente = Scratch, nie live)
-    sections = REPO_ROOT / "sections"
-    if sections.is_dir():
-        for f in sorted(sections.rglob("*.html")):
-            rel = f.relative_to(REPO_ROOT)
-            if any(part.startswith("_") for part in rel.parts):
-                continue
-            urls.append("/" + rel.as_posix())
+            urls.append(f"/unterricht/escape-games/{g}/{mappe.name}")
+    for f in sorted((REPO_ROOT / "unterricht" / "wib").glob("*.html")):
+        rel = f.relative_to(REPO_ROOT)
+        if any(part.startswith("_") for part in rel.parts):
+            continue
+        urls.append("/" + str(rel))
     return urls
 
 

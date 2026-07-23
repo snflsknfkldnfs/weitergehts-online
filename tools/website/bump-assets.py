@@ -77,12 +77,14 @@ def save_versions(data: dict) -> None:
 def html_files() -> list[Path]:
     """Alle deploybaren HTML-Dateien, die geteilte Assets referenzieren koennen.
     '_'-praefixierte Scratch/Archiv-Segmente (z.B. _archive/) werden ignoriert."""
-    files = sorted(REPO_ROOT.glob("escape-games/**/*.html"))
-    root_index = REPO_ROOT / "index.html"
-    if root_index.exists():
-        files.append(root_index)
-    # Kuenftige Sektionen (Blog/Notizen/...) liegen unter sections/ — automatisch erfasst:
-    files += sorted(REPO_ROOT.glob("sections/**/*.html"))
+    files = list(REPO_ROOT.glob("unterricht/**/*.html"))
+    for extra in ["index.html", "404.html"]:
+        p = REPO_ROOT / extra
+        if p.exists():
+            files.append(p)
+    files += list(REPO_ROOT.glob("profil/**/*.html"))
+    files += list(REPO_ROOT.glob("impressum/**/*.html"))
+    files += list(REPO_ROOT.glob("datenschutz/**/*.html"))
     return [
         f for f in files
         if not any(part.startswith("_") for part in f.relative_to(REPO_ROOT).parts)

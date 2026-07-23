@@ -27,7 +27,7 @@ fi
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 SOURCE_DIR="$REPO_ROOT/docs/agents/artefakte/$GAME_ID"
-DATA_JSON="$REPO_ROOT/escape-games/$GAME_ID/data.json"
+DATA_JSON="$REPO_ROOT/unterricht/escape-games/$GAME_ID/data.json"
 
 # Checks
 if ! command -v jq >/dev/null 2>&1; then

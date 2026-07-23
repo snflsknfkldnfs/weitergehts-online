@@ -55,11 +55,10 @@ site: clean-site
 	cp index.html _site/
 	cp CNAME _site/ 2>/dev/null || true
 	[ -f favicon.ico ] && cp favicon.ico _site/ || true
-	rsync -a --exclude='_*/' --exclude='.DS_Store' escape-games _site/
+	rsync -a --exclude='_*/' --exclude='.DS_Store' unterricht _site/
 	rsync -a --exclude='_*/' --exclude='.DS_Store' assets _site/
-	[ -d sections ] && rsync -a --exclude='_*/' --exclude='.DS_Store' sections _site/ || true
 	touch _site/.nojekyll
-	@echo "_site/ gebaut (Allowlist: index.html, CNAME, escape-games/, assets/, sections/)."
+	@echo "_site/ gebaut (Allowlist: index.html, CNAME, unterricht/, assets/)."
 
 clean-site:
 	rm -rf _site

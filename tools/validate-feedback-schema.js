@@ -281,7 +281,7 @@ function main() {
   if (args.length === 0) {
     // Default: alle data.json im Repo
     var cwd = process.cwd();
-    args = ['escape-games/**/data.json'];
+    args = ['unterricht/escape-games/**/data.json'];
   }
 
   var files = resolveFiles(args);

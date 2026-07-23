@@ -40,7 +40,7 @@ def validate(path):
 
 def main():
     ok = True
-    files = sorted(glob.glob("escape-games/*/data.json"))
+    files = sorted(glob.glob("unterricht/escape-games/*/data.json"))
     if not files:
         print("[validate-no-lehrkraft-meta] WARNUNG: keine data.json gefunden")
         return 0
