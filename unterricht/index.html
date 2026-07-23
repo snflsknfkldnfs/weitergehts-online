@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="de" class="mode-dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unterricht — weitergehts.online</title>
+<link rel="stylesheet" href="../assets/css/fonts.css?v=1.1">
+<link rel="stylesheet" href="../assets/css/tokens.css?v=1.1">
+<link rel="stylesheet" href="../assets/css/wg.css?v=1.1">
+<script>
+  (function(){ try{ var m=localStorage.getItem('wg-mode'); var r=document.documentElement;
+    r.classList.remove('mode-light','mode-dark'); r.classList.add(m==='light'?'mode-light':'mode-dark'); }catch(e){} })();
+</script>
+<!-- Staging-Flag (aus dem alten Root übernommen): blendet <li data-status="staging"> aus; sichtbar nur mit ?staging=1 -->
+<style>
+  li[data-status="staging"] { display: none; }
+  html.staging-mode li[data-status="staging"] {
+    display: list-item;
+    outline: 2px dashed #d97706;
+    padding: 4px 8px;
+    background: #fff7ed;
+    color: #16170f;
+  }
+  html.staging-mode li[data-status="staging"]::after {
+    content: " [STAGING — nicht live]";
+    color: #d97706;
+    font-weight: bold;
+    font-size: 0.9em;
+  }
+  html.staging-mode body::before {
+    content: "STAGING-MODUS aktiv (via ?staging=1)";
+    display: block;
+    background: #d97706;
+    color: white;
+    padding: 8px 16px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .hub-list { list-style: none; }
+  .hub-list li { border-top: 1px solid var(--rule); }
+  .hub-list li:last-child { border-bottom: 1px solid var(--rule); }
+  .hub-list a { display: block; padding: 14px 4px; font-family: var(--serif); font-size: 1.15rem; }
+  .hub-list a:hover { color: var(--accent); }
+</style>
+<script>
+  (function() {
+    try {
+      var params = new URLSearchParams(window.location.search);
+      if (params.get('staging') === '1') {
+        document.documentElement.classList.add('staging-mode');
+      }
+    } catch (e) { /* staging off */ }
+  })();
+</script>
+</head>
+<body class="halo">
+<div class="tapete" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="sq"></span></a>
+    <nav class="nav">
+      <a href="../profil/">Profil</a>
+      <a href="./" aria-current="page">Unterricht</a>
+    </nav>
+    <div class="toggle" role="group" aria-label="Hell- oder Dunkelmodus">
+      <button id="m-light" aria-pressed="false">Hell</button>
+      <button id="m-dark" aria-pressed="true">Dunkel</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="block">
+    <div class="wrap">
+      <span class="cap">Unterricht</span>
+      <h1>Interaktive Unterrichtsmaterialien</h1>
+
+      <h2 class="cap" style="margin-top:2.5rem">Escape-Games</h2>
+      <ul class="hub-list">
+        <li id="game-syrische-revolution-2011">
+          <a href="escape-games/syrische-revolution-2011/index.html">
+            Syrische Revolution 2011 (GPG R7)
+          </a>
+        </li>
+      </ul>
+
+      <h2 class="cap" style="margin-top:2.5rem">WiB · Wirtschaft</h2>
+      <ul class="hub-list">
+        <li id="tool-wib-haushaltsbuch">
+          <a href="wib/haushaltsbuch.html">
+            Mein Haushaltsbuch — Wohin geht mein Geld? (WiB 7)
+          </a>
+        </li>
+        <li id="tool-wib-geldwert">
+          <a href="wib/geldwert.html">
+            Wie viel ist mein Geld wert? — Drei Schritte: Budget · Beruf · Reiche (WiB 7)
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer id="kontakt">
+  <div class="wrap foot">
+    <span class="fmark">weitergehts.online</span>
+    <span class="fline">
+      <a href="../index.html">Start</a>
+      <a href="../profil/">Profil</a>
+    </span>
+    <span class="fline">
+      <a href="../impressum/">Impressum</a>
+      <a href="../datenschutz/">Datenschutz</a>
+    </span>
+    <span class="fline">© 2026</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var bL=document.getElementById('m-light'), bD=document.getElementById('m-dark');
+  function paint(){ var d=root.classList.contains('mode-dark');
+    bL.setAttribute('aria-pressed', d?'false':'true'); bD.setAttribute('aria-pressed', d?'true':'false'); }
+  function set(d){ root.classList.remove('mode-light','mode-dark'); root.classList.add(d?'mode-dark':'mode-light');
+    try{ localStorage.setItem('wg-mode', d?'dark':'light'); }catch(e){} paint(); }
+  bL.addEventListener('click',function(){ set(false); });
+  bD.addEventListener('click',function(){ set(true); });
+  paint();
+})();
+</script>
+</body>
+</html>

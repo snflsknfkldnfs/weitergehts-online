@@ -44,7 +44,7 @@ RESPONSE_IGNORE: tuple[str, ...] = ("favicon.ico",)
 
 
 def live_games() -> list[str]:
-    idx = (REPO_ROOT / "index.html").read_text(encoding="utf-8")
+    idx = (REPO_ROOT / "unterricht" / "index.html").read_text(encoding="utf-8")
     return sorted(set(re.findall(r"escape-games/([a-z0-9-]+)/", idx)))
 
 

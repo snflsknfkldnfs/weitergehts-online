@@ -45,7 +45,7 @@ note()    { printf '  \033[36mi\033[0m     %s\n' "$1"; }
 LIVE_GAMES=()
 while IFS= read -r g; do
   [ -n "$g" ] && LIVE_GAMES+=("$g")
-done < <(grep -oE 'escape-games/[a-z0-9-]+/' index.html 2>/dev/null \
+done < <(grep -oE 'escape-games/[a-z0-9-]+/' unterricht/index.html 2>/dev/null \
   | sed 's#escape-games/##; s#/##' | sort -u)
 
 printf '\033[1mweitergehts.online — website check\033[0m\n'

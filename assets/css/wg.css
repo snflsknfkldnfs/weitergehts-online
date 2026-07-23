@@ -16,7 +16,7 @@ a{ color:inherit; text-decoration:none; }
 
 /* ---- TEXTUREN: Tapete (austauschbar) + Korn ---- */
 .tapete{ position:fixed; inset:0; z-index:0; pointer-events:none;
-  background-image:url("img/tapete-placeholder.png");   /* eigenes Foto: img/tapete-placeholder.png ersetzen */
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23t)'/%3E%3C/svg%3E");   /* eigenes Foto: img/tapete-placeholder.png ersetzen */
   background-repeat:repeat; background-size:var(--tapete-size) auto;
   opacity:var(--tapete-op); filter:grayscale(1) contrast(1.05); mix-blend-mode:multiply; }
 .mode-dark .tapete{ mix-blend-mode:screen; }
@@ -203,7 +203,7 @@ main{ display:block; }
 .block .about{ padding-bottom:0; }
 .about-aside figure img{ width:100%; height:auto; display:block; }
 .portrait{ padding:12px; border:1px solid var(--rule);
-  background:var(--paper-2) url("img/tapete-placeholder.png"); background-size:130px auto; background-blend-mode:overlay; }
+  background:var(--paper-2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23t)'/%3E%3C/svg%3E"); background-size:130px auto; background-blend-mode:overlay; }
 .portrait img{ width:100%; display:block; }
 .portrait figcaption{ font-family:var(--mono); font-size:10px; letter-spacing:.06em; color:var(--ink-faint); margin-top:9px; }
 .contact .cap{ display:block; margin-bottom:10px; }

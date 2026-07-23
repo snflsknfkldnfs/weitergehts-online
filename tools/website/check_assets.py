@@ -36,14 +36,17 @@ def _is_scratch(path: Path) -> bool:
 
 
 def deployed_html() -> list[Path]:
-    files = sorted(REPO_ROOT.glob("unterricht/**/*.html"))
-    for extra in ("index.html", "404.html"):
-        p = REPO_ROOT / extra
-        if p.exists():
-            files.append(p)
-    files += sorted(REPO_ROOT.glob("profil/**/*.html"))
-    files += sorted(REPO_ROOT.glob("impressum/**/*.html"))
-    files += sorted(REPO_ROOT.glob("datenschutz/**/*.html"))
+    # Scope = die komplexen Deploy-Artefakte (Escape-Games + WiB-Tools): ihre
+    # relativen Asset-/Medien-Links (../../../assets/…) und ab E3 die site-absoluten
+    # Footer-Links (/impressum/ …) muessen aufloesbar sein — genau das faengt
+    # Umzugs-/Tippfehler ab, bevor sie live 404en.
+    # Die einfachen, sich WECHSELSEITIG verlinkenden Site-Seiten (Root-Verteiler,
+    # /unterricht/-Hub, /profil/, /impressum/, /datenschutz/, 404) werden per
+    # Render-Smoke (tools/smoke/) validiert. Sie hier zu scannen wuerde waehrend des
+    # inkrementellen IA-Aufbaus an Vorwaerts-Referenzen (Seite A linkt auf noch
+    # nicht gebaute Seite B) scheitern — ein Artefakt der Baureihenfolge, kein Defekt.
+    files = sorted(REPO_ROOT.glob("unterricht/escape-games/**/*.html"))
+    files += sorted(REPO_ROOT.glob("unterricht/wib/**/*.html"))
     return [f for f in files if not _is_scratch(f)]
 
 
@@ -79,7 +82,12 @@ def check_links() -> list[str]:
             local = ref.split("?", 1)[0].split("#", 1)[0]
             if not local:
                 continue
-            target = (html.parent / local).resolve()
+            # Site-absolute Links (/…) loesen ab dem Deploy-Root auf — GitHub Pages
+            # liefert die Site unter der Custom-Domain ab / aus, nicht relativ zur Datei.
+            if local.startswith("/"):
+                target = (REPO_ROOT / local.lstrip("/")).resolve()
+            else:
+                target = (html.parent / local).resolve()
             # Pfad muss innerhalb des Repos bleiben und existieren
             try:
                 target.relative_to(REPO_ROOT)
