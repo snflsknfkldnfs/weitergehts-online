@@ -2,35 +2,42 @@
 
 > **Ist-Zustand** der Site als Menge von **Verticals**. Anker für „wo gehört Neues hin".
 > Soll-Architektur, Prämissen + Entscheidungs-Log: `ARCHITEKTUR.md`.
-> Bei jeder neuen Sektion/Game/Seite hier eintragen. Stand: 2026-07-20.
+> Bei jeder neuen Sektion/Game/Seite hier eintragen. Stand: 2026-07-23 (nach E3-IA-Umsetzung).
 
-## Verticals
+## Verticals (Drei-Säulen-IA seit E3)
 
 | Vertical | Verzeichnis | Content-Modell | Template | Status |
 |---|---|---|---|---|
-| **Home / Landing** | `index.html` | Hand-gepflegte `<ul>` der Games/Sektionen; Staging-Flag `?staging=1` | — | live |
-| **Unterrichtsmaterial · Escape-Games** | `escape-games/<id>/` | `data.json` (meta+mappen+materialien+aufgaben) → gerendert von `assets/js/escape-engine.js` | `escape-games/_template/` | live (4 Games) |
-| **Unterrichtsmaterial · Lernraum** | `assets/data/*.json` | aus externen Quellen via `make lernraum` generierte Glossar-/KE-Daten | `tools/lernraum/` | Daten vorhanden; Konsument-Seiten teils mit Examens-Schiene archiviert |
-| **WiB · Wirtschaft (interaktive Tools)** | `sections/wib/` | self-contained HTML (Chart.js via CDN), `localStorage`, kein Backend/Tracking | — | live (2 Tools: Haushaltsbuch + Geld-Wert; Geld-Wert nur noch als eigenständige Seite — Duplikat-Tab im Haushaltsbuch am 17.07. entfernt) |
+| **Root · Verteiler** | `index.html` | Nebel-&-Papier-Verteiler (`wg`-System): Hero + 2 Kacheln (Profil, Unterricht), 3. Slot für Zettelkasten reserviert (E4) | — | live |
+| **Profil · Visitenkarte** | `profil/` | minimal: Porträt-Hero + Kindheitsfoto (bild-only, keine Prosa — Pauls Entscheid); Fotos in `profil/img/` | — | live |
+| **Unterricht · Hub** | `unterricht/index.html` | Hub-Liste (Escape-Games + WiB); Discovery-Quelle für `check`/`smoke`; Staging-Flag `?staging=1` | — | live |
+| **Unterricht · Escape-Games** | `unterricht/escape-games/<id>/` | `data.json` (meta+mappen+materialien+aufgaben) → gerendert von `assets/js/escape-engine.js` | `unterricht/escape-games/_template/` | live (1 Game: Syrien) |
+| **Unterricht · WiB-Tools** | `unterricht/wib/` | self-contained HTML (Chart.js via CDN), `localStorage`, kein Backend/Tracking | — | live (2 Tools: Haushaltsbuch + Geld-Wert) |
+| **Unterricht · Lernraum** | `assets/data/*.json` | via `make lernraum` generierte Glossar-/KE-Daten | `tools/lernraum/` | Daten vorhanden; Konsument-Seiten teils mit Examens-Schiene archiviert |
+| **Impressum** | `impressum/` | statische Pflichtangaben (§ 5 DDG) | — | live (⚠ Anschrift `TODO-PAUL`) |
+| **Datenschutz** | `datenschutz/` | statische DSGVO-Erklärung (Hosting/Cookies/Fonts/Dritt-Inhalte/Rechte) | — | live (⚠ Anschrift `TODO-PAUL`) |
+| **404** | `404.html` | „umgezogen"-Seite mit root-absoluten Links (unter beliebiger URL ausgeliefert) | — | live |
 | **Zettelkasten** | `/zettelkasten/` *(geplant, E4)* | extern generierter Atlas-Mount (`zk-atlas` → statisches HTML, nie handeditiert) | — | geplant (s. `ARCHITEKTUR.md`) |
-| **Weitere Sektionen** | `sections/<name>/` | je nach Bedarf | — | künftig |
 
-## Live-Games (verlinkt aus `index.html`)
+**Der eine URL-Bruch (E3):** Games/WiB sind von `escape-games/…` bzw. `sections/wib/…` nach
+`unterricht/escape-games/…` bzw. `unterricht/wib/…` umgezogen. Bewusst einmalig; alte URLs
+fängt `404.html` ab. Die Unterricht-**Assets** (`escape-engine.js`, `theme-gpg.css`) bleiben
+unter `/assets/` — ihr Umzug fällt mit E5 zusammen (s. `ARCHITEKTUR.md`).
 
-`make check`/`smoke` leiten die „Live"-Menge automatisch aus `index.html` ab:
+## Live-Games (Discovery aus `unterricht/index.html`)
 
-- `gpg-erster-weltkrieg-ursachen` — Erster Weltkrieg: Ursachen und Ausbruch (GPG R7)
-- `verlauf-erster-weltkrieg-marne-ende` — Erster Weltkrieg: Verlauf Marne→Ende (GPG R7)
-- `deutscher-nationalismus-kolonialismus` — Deutscher Nationalismus und Kolonialismus (GPG R7)
-- `syrische-revolution-2011` — Syrische Revolution 2011 (GPG R7). Seit E2 (18.07.) auf der
-  geteilten Runtime unter `?v=`-Governance; game-lokal bleibt nur noch das Redesign-Overlay
-  (`vendor/redesign*.css`, `rd-inject.js`, `media-placeholder.css`) als E5-Material —
-  `vendor/fonts/` ist seit E1 (20.07.) site-weit (`assets/fonts/`).
+`make check`/`smoke` leiten die „Live"-Menge automatisch aus **`unterricht/index.html`** ab
+(seit E3; vorher `index.html`):
 
-**Nicht-verlinkte Game-Verzeichnisse** — seit 17.07. per `_`-Präfix aus Deploy und Checks ausgenommen:
-`_template/` (Scaffold für neue Games) und `_archiv-gpg-erster-weltkrieg-ursachen-run4-v050/` (alter
-Parallel-Cut). Der frühere `_dev-…-marne-ende-diff/`-Ordner ist mit E2 (18.07.) ins Live-Pendant
-gemergt und entfernt.
+- `syrische-revolution-2011` — Syrische Revolution 2011 (GPG R7). Auf der geteilten Runtime unter
+  `?v=`-Governance; game-lokal bleibt nur das Redesign-Overlay (`vendor/redesign*.css`,
+  `rd-inject.js`, `media-placeholder.css`) als E5-Material.
+
+**Archivierte Games** — bei der E3-Triage per `_archiv-`-Präfix aus Deploy + Checks genommen,
+jederzeit reaktivierbar (Präfix entfernen + `<li>` in `unterricht/index.html`):
+`_archiv-gpg-erster-weltkrieg-ursachen`, `_archiv-verlauf-erster-weltkrieg-marne-ende`,
+`_archiv-deutscher-nationalismus-kolonialismus` (+ der ältere `_archiv-…-run4-v050`-Cut).
+`_template/` = Scaffold für neue Games (nie live).
 
 ## Geteilte Assets (treffen alle Verticals)
 
@@ -38,30 +45,38 @@ gemergt und entfernt.
 |---|---|---|
 | `assets/js/escape-engine.js` | Game-Runtime (~5180 Z.) | `?v=` via `assets/versions.json` + `make bump A=engine` |
 | `assets/js/core.js` | Storage/Nav/Utilities | `make bump A=core` |
-| `assets/css/base.css` | Reset/Tokens/Layout | `make bump A=base` |
-| `assets/css/themes/theme-gpg.css` | GPG-Theme | `make bump A=theme` |
-| `assets/css/fonts.css` + `assets/fonts/` | self-gehostete Webfonts (7 Familien, DSGVO) | `make bump A=fonts` |
-| `assets/css/tokens.css` | Site-Design-Vokabular (E1; ungeladen bis E3/E5) | `make bump A=tokens` |
+| `assets/css/base.css` | Reset/Tokens/Layout (Game-Kette) | `make bump A=base` |
+| `assets/css/themes/theme-gpg.css` | GPG-Theme (Game-Kette) | `make bump A=theme` |
+| `assets/css/fonts.css` + `assets/fonts/` | self-gehostete Webfonts (10 Familien; E3 +Newsreader/Archivo/Space Mono) | `make bump A=fonts` |
+| `assets/css/tokens.css` | **Site**-Token-Vokabular „Nebel & Papier" (`.mode-light`/`.mode-dark`/`:root`); seit E3 aktiv geladen | `make bump A=tokens` |
+| `assets/css/wg.css` | **Site**-Komponenten (Topbar/Hero/Gateways/Footer/…); Site-Kette `fonts → tokens → wg` | `make bump A=wg` |
 | `assets/css/lernraum.css` | ausgelagerter wg.lernraum-Block (ungeladen, bereitliegend) | — |
+| `assets/img/site/` | Root/Profil-Fotos (`gleise-ueberwachsen`, `museum-blick`, `turm-beton`; Profil-Fotos in `profil/img/`) | — |
 | `assets/img/<game-id>/` | Game-Medien | — |
 | `assets/data/*.json` | Lernraum-Daten (generiert) | `make lernraum` |
 
+**Zwei Ladeketten:** Site-Seiten `fonts.css → tokens.css → wg.css` · Games `fonts.css → base.css → theme-gpg.css`.
+Games laden `tokens.css`/`wg.css` NICHT.
+
 ## Konventionen
 
-- **Neue Sektion** = `sections/<name>/` + Eintrag hier + Link in `index.html`. Geteilte Assets mit
-  `?v=`-Token referenzieren (von `bump-assets`/`check` automatisch erfasst).
-- **`_`-präfixierte Ordner** (`_archive/`, `_smoketest_out/`, …) = nicht-deploybarer Scratch:
-  von `check`, `bump` und dem Publish (`make site`) ausgeschlossen.
-- **Deploy-Scope:** öffentlich = `index.html`, `escape-games/`, `assets/`, `sections/`, `CNAME`.
-  Intern (nie live) = `docs/`, `tools/`, `bridge/`, `_archiv*`, `.claude/`, Repo-Meta.
+- **Neues Unterrichtsmaterial** = unter `unterricht/…` (Game via Generator-Export nach
+  `unterricht/escape-games/<id>/`, Tool als `unterricht/wib/…`) + Eintrag hier + `<li>` in
+  `unterricht/index.html`. Geteilte Assets mit `?v=`-Token (von `bump-assets`/`check` erfasst).
+- **Neue Säule/Seite** (analog /profil/) = eigener Top-Level-Ordner + Kachel im Root + Allowlist
+  in `Makefile` (`site`-Target) + hier eintragen.
+- **`_`-präfixierte Ordner** (`_archiv-…`, `_template/`, `_smoketest_out/`, …) = nicht-deploybarer
+  Scratch/Archiv: von `check`, `bump` und Publish (`make site`) ausgeschlossen.
+- **Deploy-Scope (Allowlist, `make site`):** öffentlich = `index.html`, `404.html`, `favicon.svg`,
+  `favicon.ico`, `unterricht/`, `assets/`, `profil/`, `impressum/`, `datenschutz/`, `CNAME`.
+  Intern (nie live) = `docs/`, `tools/`, `bridge/`, `_archiv*`, `_design-scoping/`, `.claude/`, Repo-Meta.
 
 ## Offene IA-Fragen (für später)
 
 - ~~Blog/Notizen-Modell~~ **beantwortet 2026-07-18 (A0):** kein Blog, sondern Zettelkasten-Mount
-  (`ARCHITEKTUR.md`; Umsetzung E4).
-- ~~Home-Seite~~ **beantwortet 2026-07-18 (A0):** Root wird neutraler Verteiler auf 3 Säulen;
-  Umsetzung E3 (Design dort via `frontend-design`/`ui-design`).
-- **Favicon** fehlt (harmloser 404) — wird in E3 miterledigt.
-- ~~Smoke-Coverage `sections/`~~ **erledigt 2026-07-17:** `smoke.py` testet alle deploybaren
-  `sections/**/*.html` mit (ohne `_`-Segmente). CDN-Policy weich: Subressourcen-Fehler fremder
-  Hosts (z.B. cdn.jsdelivr.net) = WARN, same-origin-Fehler/pageerrors = FAIL.
+  (`ARCHITEKTUR.md`; Umsetzung E4). Das Blog-Konzept aus `_design-scoping/claude-design/blog/`
+  wurde in E3 NICHT übernommen (E4-Vorbehalt).
+- ~~Home-Seite~~ **beantwortet + umgesetzt E3:** Root ist neutraler Verteiler auf die Säulen.
+- ~~Favicon fehlt~~ **erledigt E3:** `favicon.svg` (+ `.ico`-Fallback).
+- **Generator-TARGET** muss noch nachgezogen werden (sandbox-export → `unterricht/escape-games/`,
+  Generator-Welt) — s. `PROZESS.md` Ansage-Punkte.

@@ -137,3 +137,32 @@ Format: Datum · Entscheidung · Warum · verworfene Alternative(n).
   Live-Games). Daher auch Arabic self-gehostet (`assets/fonts/`, @font-face in `fonts.css`),
   `injectArabicFont()` auf No-op, Engine-Bump 3.22 — der einzige E1-Engine-Eingriff, rein
   aus DSGVO-Gründen (nicht Akten-Look; der bleibt E5).
+- **2026-07-21 — Site-Design-Identität = „Nebel & Papier" (claude-design-Scoping).** Die
+  Site-Ebene (Root, /profil/, später /zettelkasten/) übernimmt das von Paul gescopte
+  System (Referenz: claude.ai/design „website allgemein", lokal `_design-scoping/`):
+  Papier-/Nebel-Palette, Newsreader/Archivo/Space Mono (self-hosted), eckig/Haarlinien,
+  Dark-Default via `wg-mode`. Der Akten-Look (Navy/Gold) wird Game-Theme → E5; E5 mappt
+  `--rd-*`/`--op-*` auf einen theme-internen Akten-Token-Block (Präzisierung E1-Spec §6).
+  Zwei Ladeketten: Site `fonts → tokens → wg` · Games `fonts → base → theme-gpg`.
+  Verworfen: Akten-Identität site-weit (Dossier-Kostüm für Person/PKM); Neubau statt
+  Referenz-Integration (wirft lauffähige High-Fidelity-Referenz weg).
+- **2026-07-21/23 — E3 IA-Umsetzung (der eine URL-Bruch) umgesetzt.** Root = Verteiler
+  (2 Kacheln, 3. Slot für Zettelkasten/E4 reserviert), /profil/ minimal (Porträt +
+  Kindheitsfoto, keine Prosa), /unterricht/ = Hub + Games + WiB (Umzug; Alt-Games →
+  `_archiv-`), /impressum/ + /datenschutz/, 404.html, Favicon; Gates-Discovery liest
+  `unterricht/index.html`. **Quittierte Abweichung vom A0-Umbau-Pfad:** die
+  Unterricht-Assets (`escape-engine.js`, `theme-gpg.css`) bleiben unter `/assets/`;
+  ihr Umzug in den Säulen-Baum fällt mit E5 zusammen (ein Asset-Touch statt zwei, der
+  E3-Bruch bleibt auf Seiten-URLs begrenzt). Verworfen: Asset-Umzug jetzt.
+- **2026-07-23 — E3-Gate-Härtungen (drei Plan-Abweichungen, beim Bau aufgedeckt).**
+  (1) `check_assets.py` Dead-Link-Scope auf die komplexen Deploy-Artefakte (Games + WiB)
+  eingeengt — die sich wechselseitig verlinkenden Site-Seiten (Root/Hub/profil/impressum/
+  datenschutz/404) werden per Render-Smoke validiert, sonst scheitern Vorwärts-Referenzen
+  während des inkrementellen IA-Aufbaus (Seite A linkt auf noch nicht gebaute Seite B).
+  (2) `check_assets.py` löst site-absolute `/`-Links ab Deploy-Root auf (GitHub Pages
+  liefert unter der Custom-Domain ab /), sonst „ESCAPES REPO" bei favicon/404/Footer.
+  (3) `wg.css`: der aus der Referenz übernommene, nie erfüllte Platzhalter
+  `img/tapete-placeholder.png` (same-origin-404 im Smoke) durch eine self-contained
+  fractalNoise-data-URI ersetzt (on-theme, tileable). Alle drei nötig, damit die vom Plan
+  selbst eingeführten Seiten die Gates grün passieren. Verworfen: Smoke-Ignore-Liste
+  erweitern (verstecke echten 404); Pre-Crop der Fotos (object-fit rahmt, Zuschnitt = Pauls).
