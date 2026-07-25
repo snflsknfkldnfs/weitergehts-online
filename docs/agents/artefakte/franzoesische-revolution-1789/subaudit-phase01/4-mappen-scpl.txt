@@ -1,8 +1,0 @@
-Mappen-Aufteilung-Inhalt (Top-Level-Strukturen):
-
-SCPL-Pattern-Hypothese (M1=Situation / M2=Komplikation / M3=Problem / M4=Loesung):
-  M1 'Frankreich vor 1789 — Drei Staende, ein Koenig' → Situation ✓
-  M2 'Sommer 1789 — Vom Staendetreffen zur Erklaerung der Menschenrechte' → Komplikation ✓ (Eskalation 1789-Sommer)
-  M3 '1792-1794 — Wenn die Revolution ihre Kinder verschlingt' → Problem ✓ (Terror-Aporie)
-  M4 'Was bleibt? — Vom Code Civil zu unseren Grundrechten' → Loesung/Synthese ✓ (Transfer-Reflexion)
-  → SCPL-Pattern KONSISTENT angewendet.
