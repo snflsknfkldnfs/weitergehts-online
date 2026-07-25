@@ -34,14 +34,11 @@ Kleinkram (Hotfix, Typo, Content) läuft ohne Spec/Plan direkt über die RUNBUCH
 
 ## Offene Ansage-Punkte (nur Paul entscheidet)
 
-- **Entmischungs-Restfragen** (aus der Generator-Session-Rückmeldung 2026-07-25):
-  (a) `docs/Lehrplan_GPG7.md` — mitnehmen oder Generator-seitig Verweise auf die dortigen
-  aktuelleren Lehrplan-Quellen umbiegen? (b) ~11 MB ungetrackte/gitignorierte Reste unter
-  `docs/{projekt,agents,architektur,analyse,checklisten,uebergabe}` + `tools/q-gate-log` löschen?
-  (git fasst sie nicht an — Löschung ist endgültig).
-- **sandbox-export-Skill zeigt noch auf den Pre-E3-Pfad** (`plugin-source/skills/sandbox-export`,
-  Generator-Welt, beim Move bewusst nicht angefasst): VOR dem nächsten Game-Export dort nachziehen —
-  Ziel `unterricht/escape-games/<id>/`, Asset-Tiefe `../../../assets/`. Die Brücken-Skripte
-  (deploy-check, tiefen-agnostisch via normpath) sind bereits umgestellt.
+- **Generator-seitiger Entmischungs-Rest** (ein kurzer Auftrag an die Generator-Session, spätestens
+  VOR dem nächsten Game-Export): (1) sandbox-export-Skill (`plugin-source/skills/sandbox-export`)
+  trägt noch den Pre-E3-Pfad — Ziel `unterricht/escape-games/<id>/`, Asset-Tiefe `../../../assets/`
+  (die Brücken-Skripte sind schon umgestellt); (2) STATUS.md um die Entmischung ergänzen;
+  (3) `docs/fachdidaktik/*`-Verweise auf `Lehrplan_GPG7.md` auf die dortigen aktuelleren
+  Lehrplan-Quellen umbiegen (die Website-Kopie ist gelöscht, 2026-07-25).
 - **Domain-Sicherung** (optional, z. B. paulcebulla.de registrieren + Redirect): Pauls manueller
   Schritt außerhalb des Repos, kein Blocker (s. `ARCHITEKTUR.md` → Separierbarkeits-Regeln).
