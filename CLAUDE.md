@@ -10,8 +10,8 @@ vanilla HTML/CSS/JS, **kein Build/npm/Framework**, gehostet auf **GitHub Pages**
 Zielbild: **drei Säulen** (Soll-Architektur + Entscheidungs-Log: `docs/website/ARCHITEKTUR.md`):
 
 - **Unterricht** — interaktive **Escape-Games** (GPG/Geschichte R7), datengetrieben:
-  je Spiel `escape-games/<id>/data.json` + geteilte `assets/js/escape-engine.js` + Theme-CSS.
-  Plus WiB-Tools (`sections/wib/`) + **Lernraum**-Daten (`assets/data/*.json`, via `make lernraum`).
+  je Spiel `unterricht/escape-games/<id>/data.json` + geteilte `assets/js/escape-engine.js` + Theme-CSS.
+  Plus WiB-Tools (`unterricht/wib/`) + **Lernraum**-Daten (`assets/data/*.json`, via `make lernraum`).
 - **Zettelkasten** — Mount des extern generierten PKM-Atlas (*geplant*, E4).
 - **Profil** — Visitenkarte; Root wird neutraler Verteiler (*geplant*, E3).
 
@@ -19,11 +19,12 @@ Zielbild: **drei Säulen** (Soll-Architektur + Entscheidungs-Log: `docs/website/
 
 | Welt | Wo | Wofür |
 |---|---|---|
-| **Website-Pflege-Schicht** (HIER relevant) | `CLAUDE.md`, `docs/website/`, `tools/website/`, `tools/smoke/`, `assets/`, `escape-games/`, `index.html`, `sections/` | Die Live-Site warten & erweitern. |
-| **Generator-/PM-Apparat** (NICHT anfassen) | `docs/projekt/`, `docs/agents/`, `docs/architektur/`, `bridge/`, externes Repo `~/escape-game-generator/` | Produktion *neuer* Games (Plugin, STATUS.md, Vertraege, Q-Gates). Eigene Steuerung (`docs/projekt/COWORK_PROJECT_ANLEITUNG.md`). |
+| **Website-Pflege-Schicht** (= dieses Repo) | `CLAUDE.md`, `docs/website/`, `tools/`, `assets/`, `unterricht/`, `profil/`, `impressum/`, `datenschutz/`, `index.html` | Die Live-Site warten & erweitern. |
+| **Generator-/PM-Apparat** (NICHT anfassen) | ausschließlich das externe Repo `~/escape-game-generator/` (seit der Entmischung 2026-07-25) | Produktion *neuer* Games (Plugin, STATUS.md, Vertraege, Q-Gates). Eigene Steuerung: dort `docs/projekt/COWORK_PROJECT_ANLEITUNG.md`. |
 
 **Faustregel:** Website *pflegen/erweitern* → diese Schicht + `docs/website/RUNBUCH.md`.
-*Neues Game produzieren* → Generator-Workflow (Plugin `escape-game-generator`, dann `sandbox-export`).
+*Neues Game produzieren* → Generator-Workflow im externen Repo (Plugin `escape-game-generator`,
+dann `sandbox-export`; Export-Ziel seit E3: `unterricht/escape-games/<id>/`).
 Diese Datei steuert NICHT die Generator-Entwicklung.
 
 ## Harte Regeln (Deploy = push auf `main` = in ~1 Min live für Schüler)
@@ -32,7 +33,7 @@ Diese Datei steuert NICHT die Generator-Entwicklung.
 2. **Pre-commit-Hook einmalig aktivieren:** `make install-hooks` (blockt kaputte Commits lokal).
 3. **Cache-Bust nur via Script:** `make bump A=engine` (bzw. core/base/theme/all) — **niemals `?v=` von Hand** editieren. `assets/versions.json` ist die Single Source.
 4. **Git:** auf `main` immer erst branchen; **explizit stagen, nie `git add .`/`-A`**; Push/PR nur auf Ansage.
-5. **Deploy ist gescopt:** veröffentlicht wird nur `_site/` (Allowlist via `make site`) — `docs/`, `tools/`, `bridge/`, `_archiv*`, `.claude/` gehen **nicht** live.
+5. **Deploy ist gescopt:** veröffentlicht wird nur `_site/` (Allowlist via `make site`) — `docs/`, `tools/`, `_archiv*`, `.claude/` gehen **nicht** live.
 
 ## Die wiederkehrenden Loops → `docs/website/RUNBUCH.md`
 

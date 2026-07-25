@@ -19,7 +19,7 @@ Plan (`plans/JJJJ-MM-TT-<thema>.md`) → Umsetzung auf Branch, explizit stagen �
 (+ ggf. Log-Eintrag in `ARCHITEKTUR.md`).
 Kleinkram (Hotfix, Typo, Content) läuft ohne Spec/Plan direkt über die RUNBUCH-Loops.
 
-## Stand (2026-07-23)
+## Stand (2026-07-25)
 
 | Schritt | Status |
 |---|---|
@@ -27,18 +27,21 @@ Kleinkram (Hotfix, Typo, Content) läuft ohne Spec/Plan direkt über die RUNBUCH
 | A0 Architektur-Fundament | ✅ gemergt 2026-07-18 → `ARCHITEKTUR.md` |
 | E2 Engine-Reunifikation | ✅ deployt 2026-07-18 (Commit 6fc0e0d; Spec/Plan unter `specs/`+`plans/`) |
 | E1 Design-Fundament | ✅ deployt 2026-07-20 (FF-Merge 053baa0; schlanker Zuschnitt: tokens.css · Fonts self-hosted/DSGVO inkl. Noto-Sans-Arabic-Kanal in der Engine, v3.22 · base.css entmischt · ?v=-Lücken; Spec/Plan unter `specs/`+`plans/`) |
-| Repo-Entmischung (Meta) | ✅ entschieden 2026-07-20: JA — Snapshot-Move ohne History-Rewrite, koordiniert aus der Generator-Welt (Warum/Verworfenes: `ARCHITEKTUR.md`-Log). `bridge/` gelöscht 2026-07-21. Move ausstehend; danach website-seitig fällig: check.sh-A2-Hinweis · CLAUDE.md-Zwei-Welten-Kapitel · projekt-website-Skill-Redirect. E3 wartet nicht. |
+| Repo-Entmischung (Meta) | ✅ vollzogen 2026-07-25: Snapshot-Move ins Generator-Repo (dort Commits 24cd34b Move · 4795943 E3-TARGET in den Brücken-Skripten · 6e014b8 PROJECT_INSTRUCTIONS v2.11; 931/931 Dateien blob-identisch verifiziert). Website-seitig Lösch-Commit `119fa95` (936 Dateien, deploy-neutral) + Nacharbeit Teil 2 (check.sh-A2-Hinweis · CLAUDE.md/RUNBUCH/SITE_MAP-Verweise · projekt-website-Skill-Redirect). `bridge/` gelöscht 2026-07-21. Warum/Verworfenes: `ARCHITEKTUR.md`-Log 2026-07-20. |
 | E3 IA-Umsetzung (der eine URL-Bruch) | ✅ deployt 2026-07-23 (FF-Merge `ef56891`, live verifiziert): Root-Verteiler + /profil/ + /unterricht/-Hub + Impressum/Datenschutz (Anschrift eingetragen) + 404 + Favicon; „Nebel & Papier" via `tokens.css`/`wg.css` + 3 self-hosted Fonts; Games/WiB nach `unterricht/…` umgezogen + Gates nachgezogen; Spec/Plan unter `specs/`+`plans/`; 3 Gate-Härtungen im `ARCHITEKTUR.md`-Log |
 | E4 Zettelkasten-Mount | offen (wartet auf `zk-atlas` Plan 5) |
 | **E5 Akten-Look-Absorption (Theme+Engine)** | **⬅ NÄCHSTER SCHRITT** (Website-Schicht) — Game-Triage erledigt (E3); fällig spätestens VOR dem nächsten neuen Game; Vorentscheidungen in E1-Spec §6 |
 
 ## Offene Ansage-Punkte (nur Paul entscheidet)
 
-- **Generator-TARGET nachziehen** (sandbox-export → `unterricht/escape-games/` statt `escape-games/`) —
-  in der **Generator-Welt** (Zwei-Welten-Boundary!), VOR dem nächsten Game-Export. Bis dahin: Export-Baum
-  von Hand nach `unterricht/escape-games/<id>/` verschieben und die Asset-Pfad-Tiefe auf `../../../assets/` prüfen.
+- **Entmischungs-Restfragen** (aus der Generator-Session-Rückmeldung 2026-07-25):
+  (a) `docs/Lehrplan_GPG7.md` — mitnehmen oder Generator-seitig Verweise auf die dortigen
+  aktuelleren Lehrplan-Quellen umbiegen? (b) ~11 MB ungetrackte/gitignorierte Reste unter
+  `docs/{projekt,agents,architektur,analyse,checklisten,uebergabe}` + `tools/q-gate-log` löschen?
+  (git fasst sie nicht an — Löschung ist endgültig).
+- **sandbox-export-Skill zeigt noch auf den Pre-E3-Pfad** (`plugin-source/skills/sandbox-export`,
+  Generator-Welt, beim Move bewusst nicht angefasst): VOR dem nächsten Game-Export dort nachziehen —
+  Ziel `unterricht/escape-games/<id>/`, Asset-Tiefe `../../../assets/`. Die Brücken-Skripte
+  (deploy-check, tiefen-agnostisch via normpath) sind bereits umgestellt.
 - **Domain-Sicherung** (optional, z. B. paulcebulla.de registrieren + Redirect): Pauls manueller
   Schritt außerhalb des Repos, kein Blocker (s. `ARCHITEKTUR.md` → Separierbarkeits-Regeln).
-- **Generator-Umzug anstoßen** (Entmischung ist entschieden, s. Stand-Tabelle): Paul startet
-  die Generator-Session mit dem übergebenen Snapshot-Move-Prompt; erst danach ist die
-  website-seitige Nacharbeit (check.sh-A2 · CLAUDE.md · Skill-Redirect) fällig.

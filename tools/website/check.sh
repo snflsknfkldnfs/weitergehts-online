@@ -16,7 +16,8 @@
 #
 #   ADVISORY (didaktische Generator-Kriterien — NUR Bericht, blockt NIE):
 #     A1  Bloom-Verteilung je LIVE-Game          (validate_bloom_distribution.py)
-#     A2  Source-Deploy-Parity je LIVE-Game      (source-deploy-parity.sh, falls Artefakte+jq)
+#     A2  Source-Deploy-Parity je LIVE-Game      (source-deploy-parity.sh, falls Artefakte+jq;
+#         Source-Artefakte leben seit der Entmischung 2026-07 im Generator-Repo → skippt hier i.d.R.)
 #
 # LIVE-Games werden aus index.html abgeleitet (selbstpflegend).
 #
@@ -99,7 +100,7 @@ if [[ $BLOCKING_ONLY -eq 0 ]]; then
 
   if command -v jq >/dev/null 2>&1; then
     for g in ${LIVE_GAMES[@]+"${LIVE_GAMES[@]}"}; do
-      [[ -d "docs/agents/artefakte/$g" ]] || { note "$g: parity uebersprungen (keine Source-Artefakte)"; continue; }
+      [[ -d "docs/agents/artefakte/$g" ]] || { note "$g: parity uebersprungen (Source-Artefakte seit Entmischung im Generator-Repo)"; continue; }
       if ./tools/source-deploy-parity.sh "$g" >/tmp/wcheck_pp.txt 2>&1; then
         note "$g: source-deploy-parity OK"
       else

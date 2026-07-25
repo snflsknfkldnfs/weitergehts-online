@@ -69,7 +69,7 @@ Games laden `tokens.css`/`wg.css` NICHT.
   Scratch/Archiv: von `check`, `bump` und Publish (`make site`) ausgeschlossen.
 - **Deploy-Scope (Allowlist, `make site`):** öffentlich = `index.html`, `404.html`, `favicon.svg`,
   `favicon.ico`, `unterricht/`, `assets/`, `profil/`, `impressum/`, `datenschutz/`, `CNAME`.
-  Intern (nie live) = `docs/`, `tools/`, `bridge/`, `_archiv*`, `_design-scoping/`, `.claude/`, Repo-Meta.
+  Intern (nie live) = `docs/`, `tools/`, `_archiv*`, `_design-scoping/`, `.claude/`, Repo-Meta.
 
 ## Offene IA-Fragen (für später)
 

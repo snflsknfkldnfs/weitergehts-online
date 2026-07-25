@@ -2,7 +2,7 @@
 
 > Entscheidungsbaum für die wiederkehrenden Pflege-/Entwicklungs-Loops. Ergänzt
 > `CLAUDE.md` (Rückgrat) und `SITE_MAP.md` (was wo liegt). Gehört zur **Website-Pflege-Schicht**
-> — NICHT zum Generator-/PM-Apparat (`docs/projekt|agents|architektur`).
+> — NICHT zum Generator-/PM-Apparat (externes Repo `~/escape-game-generator/`).
 
 ## „Ich will …" → Loop wählen
 
@@ -101,5 +101,6 @@
 ## Was NICHT hierher gehört
 
 Generator-/Plugin-Entwicklung, STATUS.md/CHANGELOG/Vertraege/Q-Gates, Bridge-Pairs, didaktische
-Audits → `docs/projekt/COWORK_PROJECT_ANLEITUNG.md` (eigene Welt). Bloom-Verteilung u.ä. sind
+Audits → externes Repo `~/escape-game-generator/` (dort `docs/projekt/COWORK_PROJECT_ANLEITUNG.md`).
+Bloom-Verteilung u.ä. sind
 **ADVISORY** in `make check` (Content-Hoheit Generator), blocken den Website-Deploy nicht.
