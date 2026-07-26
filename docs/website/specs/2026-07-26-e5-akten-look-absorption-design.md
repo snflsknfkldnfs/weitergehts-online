@@ -57,6 +57,12 @@ Vorentscheidungen: E1-Spec §6 · ARCHITEKTUR-Log 2026-07-20 (E5 terminiert), 20
    2026-07-21). Nicht-wertgleiche `--rd-*`/`--op-*`-Doppelgänger werden bei der Vereinigung
    einzeln aufgelöst und im Commit-Body dokumentiert. `.rd-tweaks` entfällt ersatzlos,
    `data-fontset` entfällt (Spectral fest), **Dark ist Default für alle Games**.
+   *Präzisierung Plan-Exploration 2026-07-26:* Basis des Token-Blocks sind die heute
+   **aktiven** Werte (= der `[data-bg="dark"]`+`humanist`-Zweig, nicht die inaktiven
+   `:root`-Literale); ein Light-Schalter für Games entfällt (YAGNI — Light lebt nur in der
+   Site-Schicht); neue Tokens ohne bestehendes theme-gpg-Pendant tragen das Präfix
+   `--akte-*` (Rollennamen analog `tokens.css`), wertgleiche Rollen nutzen die
+   vorhandenen `--color-*`-Tokens weiter.
    `media-placeholder.css` (9 Z.) wird mit absorbiert. *(Verworfen: v2-Parallelbau
    `theme-gpg-v2.css` — doppelte Pflege, und es gibt nur einen Konsumenten; tokens.css in
    die Game-Kette — vierter Request und Site/Game-Kopplung ohne Bedarf.)*
@@ -69,6 +75,16 @@ Vorentscheidungen: E1-Spec §6 · ARCHITEKTUR-Log 2026-07-20 (E5 terminiert), 20
    CSS-Kontrakt ist derselbe, nur der Erzeuger wechselt. Engine-Bump auf 3.23 via
    `make bump A=engine`. *(Verworfen: Observer in die Engine kopieren — Workaround-Import
    statt Integration; die Engine kennt ihre Render-Zeitpunkte selbst.)*
+   **Erweiterung (Befund Plan-Exploration + Paul 2026-07-26): auch das
+   Übersichts-Rendering wandert in die Engine.** Befund: Die Mappen-Kacheln der
+   Game-Übersicht rendert heute ein ~60-Zeilen-Inline-Script in jeder Game-`index.html`
+   (pro Game dupliziertes Boilerplate; die Status-Stempel „Archiviert/Vertraulich/Dringend"
+   existieren nur in der Syrien-Kopie, nicht im `_template`). Entscheid: neue öffentliche
+   Engine-Funktion `EscapeEngine.initUebersicht()` übernimmt Laden + Kachel-Rendering +
+   Status-Stempel + Akten-Labels; die Game-`index.html` schrumpft auf einen Aufruf. Nur so
+   erbt ein zukünftiges Game den Übersichts-Look wirklich über die geteilte Schicht.
+   *(Verworfen: Inline-Boilerplate behalten und nur Labels datengetrieben machen — der
+   Übersichts-Look hinge dauerhaft am Generator-HTML-Template.)*
 4. **Datengetriebene Akten-Labels:** Die hartcodierten CSS-`content`-Labels werden durch
    optionale `data.json`-Felder ersetzt, die die Engine ins DOM rendert (CSS zeigt nur noch
    an): `meta.akten_label` (Dossier-Label der Übersicht, z. B. „AKTE 11") und je Mappe
@@ -81,6 +97,17 @@ Vorentscheidungen: E1-Spec §6 · ARCHITEKTUR-Log 2026-07-20 (E5 terminiert), 20
    eingetragen (Regressions-Freiheit). Feldnamen generisch (kein `wg_`-Präfix) — s.
    Entscheidung 6. *(Verworfen: Labels weiter im CSS — bricht für jedes neue Game;
    Pflicht-Felder — bricht alte data.json.)*
+   *Präzisierungen Plan-Exploration + Paul 2026-07-26:* (a) Es gibt eine **dritte
+   Label-Stelle**: das Kachel-Label der Übersicht (heute CSS-hartcodiert
+   „DOSSIER · GPG / R7") → drittes optionales Feld `meta.dossier_label`, Fallback
+   `"DOSSIER"`. (b) Befund: die heutigen Ist-Texte sind **Fremd-Game-Leftovers**
+   („AKTE 04 · PULVERFASS EUROPA" — WW1-Text — identisch auf allen 4 Syrien-Mappen;
+   „LAGEBESPRECHUNG · AKTE 14" bei nur 4 Mappen). Entschieden: **Migration treu +
+   Fix-Commit** — die Migration übernimmt die Ist-Texte (Abnahme bleibt pixel-identisch),
+   unmittelbar danach korrigiert ein eigener Commit im selben Branch die Syrien-Labels
+   (getrennt prüfbare Diffs, ein Deploy). (c) Die game-agnostischen CSS-Labels
+   („SICHERUNGSHEFT", „PHASE 3 · SICHERUNG", Submit-Texte, „✓") bleiben CSS-`content`
+   im Theme — sie passen für jedes Game und brauchen keine Daten.
 5. **Asset-Umzug in den Säulen-Baum (gebündelt mit E5, ARCHITEKTUR-Log 2026-07-23):**
    Die vier game-only-Assets ziehen um: `assets/js/escape-engine.js` + `assets/js/core.js`
    → `unterricht/assets/js/` · `assets/css/base.css` + `assets/css/themes/theme-gpg.css`
