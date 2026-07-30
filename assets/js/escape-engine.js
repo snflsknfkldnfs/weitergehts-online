@@ -145,6 +145,16 @@ var EscapeEngine = (function () {
   // ------------------------------------------------------------------
   var AufgabentypRegistry = {};
 
+  // E5: Anzeigetexte fuer das Typ-Badge im Aufgaben-Header (frueher
+  // vendor/rd-inject.js, das den Typ aus der CSS-Klasse zurueckgelesen hat).
+  // Um die drei spaeter ergaenzten Typen erweitert.
+  var TYP_LABEL = {
+    'multiple-choice': 'Multiple-Choice', 'zuordnung': 'Zuordnung',
+    'lueckentext': 'Lückentext', 'reihenfolge': 'Reihenfolge',
+    'freitext-code': 'Freitext', 'freitext': 'Freitext',
+    'vergleich': 'Vergleich', 'begruendung': 'Begründung', 'quellenkritik': 'Quellenkritik'
+  };
+
   function _buildAufgabentypRegistry() {
     AufgabentypRegistry['multiple-choice'] = _renderMultipleChoice;
     AufgabentypRegistry['zuordnung']       = _renderZuordnung;
@@ -1049,7 +1059,14 @@ var EscapeEngine = (function () {
     img.src = mat.inhalt || '';
     img.alt = mat.titel || '';
     img.loading = 'lazy';
-    figure.appendChild(img);
+    // E5: Abzugsrahmen (frueher rd-inject). Klassennamen = CSS-Kontrakt.
+    var mount = document.createElement('span');
+    mount.className = 'rd-foto-mount';
+    var stage = document.createElement('span');
+    stage.className = 'rd-foto-stage';
+    stage.appendChild(img);
+    mount.appendChild(stage);
+    figure.appendChild(mount);
 
     // v3.8 U4: Bildunterschrift und Quellenangabe getrennt
     // v3.12: innerHTML statt createTextNode — rendert <strong>, &bdquo; etc.
@@ -1094,7 +1111,11 @@ var EscapeEngine = (function () {
       img.src = inhalt;
       img.alt = mat.titel || '';
       img.loading = 'lazy';
-      inhaltDiv.appendChild(img);
+      // E5: Kartenrahmen (frueher rd-inject; nur der img-Zweig wurde gewrappt).
+      var frame = document.createElement('span');
+      frame.className = 'rd-karte-frame';
+      frame.appendChild(img);
+      inhaltDiv.appendChild(frame);
     }
     figure.appendChild(inhaltDiv);
 
@@ -2099,6 +2120,9 @@ var EscapeEngine = (function () {
       observer.observe(observeTarget);
     }
 
+    // E5: Leitfragen-Strip + Stempelfeld — hier stehen alle .aufgabe-Knoten
+    // und der Einstieg im DOM.
+    _renderLeitfragenStrip();
   }
 
   // ========================================================================
@@ -2130,6 +2154,9 @@ var EscapeEngine = (function () {
       var aufgabeEl = _renderAufgabe(aufgabe, i, geloest, total);
       container.appendChild(aufgabeEl);
     }
+
+    // E5: gleicher Job wie im V1-Pfad (s. _renderMappeV1)
+    _renderLeitfragenStrip();
   }
 
   /**
@@ -2157,6 +2184,12 @@ var EscapeEngine = (function () {
     header.innerHTML =
       '<span class="aufgabe__nummer">' + (index + 1) + '</span>';
     section.appendChild(header);
+
+    // E5: Typ-Kennzeichnung (frueher rd-inject). Klassenname = CSS-Kontrakt.
+    var typBadge = document.createElement('span');
+    typBadge.className = 'aufgabe__typ-badge';
+    typBadge.textContent = TYP_LABEL[aufgabe.typ] || aufgabe.typ;
+    header.appendChild(typBadge);
 
     // Frage
     var frage = document.createElement('p');
@@ -4452,6 +4485,58 @@ var EscapeEngine = (function () {
    * @param {Object} progress
    * @private
    */
+  /**
+   * E5: Baut den Leitfragen-Strip mit Stempelfeld unter dem Header.
+   * Frueher vendor/rd-inject.js per MutationObserver — die Engine kennt ihre
+   * Render-Zeitpunkte selbst. Idempotent (Guard auf vorhandenen Strip).
+   * @private
+   */
+  function _renderLeitfragenStrip() {
+    if (document.querySelector('.rd-leitfrage-strip')) return;
+    var lf = document.querySelector('.einstieg__problemstellung');
+    var aufg = document.querySelectorAll('.aufgabe');
+    if (!lf || !aufg.length) return;
+    var strip = document.createElement('div');
+    strip.className = 'rd-leitfrage-strip';
+    var label = document.createElement('span');
+    label.className = 'rd-leitfrage-strip__label';
+    label.textContent = 'Leitfrage';
+    var text = document.createElement('span');
+    text.className = 'rd-leitfrage-strip__text';
+    text.textContent = lf.textContent;
+    strip.appendChild(label);
+    strip.appendChild(text);
+    var stf = document.createElement('div');
+    stf.className = 'rd-stempelfeld';
+    stf.setAttribute('aria-label', 'Fortschritt');
+    for (var i = 0; i < aufg.length; i++) {
+      var c = document.createElement('span');
+      c.className = 'rd-stempelfeld__cell';
+      c.textContent = String(i + 1);
+      stf.appendChild(c);
+    }
+    strip.appendChild(stf);
+    var main = document.querySelector('.mappe') || document.body;
+    main.parentNode.insertBefore(strip, main);
+    _syncStempelfeld();
+  }
+
+  /**
+   * E5: Haelt die Stempelfeld-Zellen am Solved-State der Aufgaben.
+   * Laeuft am Ende von _updateFortschritt, also nach jedem Loesen.
+   * @private
+   */
+  function _syncStempelfeld() {
+    var cells = document.querySelectorAll('.rd-stempelfeld__cell');
+    var aufg = document.querySelectorAll('.aufgabe');
+    for (var j = 0; j < cells.length && j < aufg.length; j++) {
+      var solved = aufg[j].classList.contains('aufgabe--solved');
+      cells[j].classList.toggle('rd-stempelfeld__cell--solved', solved);
+      var want = solved ? '' : String(j + 1);
+      if (cells[j].textContent !== want) cells[j].textContent = want;
+    }
+  }
+
   function _updateFortschritt(mappe, progress) {
     if (!mappe || !progress) return;
 
@@ -4499,6 +4584,9 @@ var EscapeEngine = (function () {
     if (freshSolved === total && total > 0) {
       _aktiviereLoesungswort(mappe);
     }
+
+    // E5: Stempelfeld mitziehen (jede _check<Typ>-Funktion endet hier).
+    _syncStempelfeld();
   }
 
   // ========================================================================
