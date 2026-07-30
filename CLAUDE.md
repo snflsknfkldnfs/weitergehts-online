@@ -10,7 +10,7 @@ vanilla HTML/CSS/JS, **kein Build/npm/Framework**, gehostet auf **GitHub Pages**
 Zielbild: **drei Säulen** (Soll-Architektur + Entscheidungs-Log: `docs/website/ARCHITEKTUR.md`):
 
 - **Unterricht** — interaktive **Escape-Games** (GPG/Geschichte R7), datengetrieben:
-  je Spiel `unterricht/escape-games/<id>/data.json` + geteilte `assets/js/escape-engine.js` + Theme-CSS.
+  je Spiel `unterricht/escape-games/<id>/data.json` + geteilte `unterricht/assets/js/escape-engine.js` + Theme-CSS.
   Plus WiB-Tools (`unterricht/wib/`) + **Lernraum**-Daten (`assets/data/*.json`, via `make lernraum`).
 - **Zettelkasten** — Mount des extern generierten PKM-Atlas (*geplant*, E4).
 - **Profil** — Visitenkarte; Root wird neutraler Verteiler (*geplant*, E3).
@@ -51,10 +51,17 @@ make install-hooks  # pre-commit-Hook aktivieren (einmalig pro Clone)
 python3 -m http.server 8080   # lokale Vorschau (oder .claude/launch.json "static-server")
 ```
 
-- **Geteilte Runtime:** `assets/js/escape-engine.js` (~5180 Z.) rendert *alle* Games aus `data.json`.
-  Änderung daran trifft alle Spiele → danach `make bump A=engine` + `make smoke`. Für Navigation im
-  großen File hilft das **serena**-Plugin; Diffs mit `/code-review`. Seit E2 (07/2026) gibt es
-  keinen Engine-Fork mehr — Bumps erreichen wieder ALLE Games.
+- **Geteilte Runtime:** `unterricht/assets/js/escape-engine.js` (~5400 Z.) rendert *alle* Games aus
+  `data.json` — seit E5 auch die Spiel-Übersicht (`EscapeEngine.initUebersicht()`) und den
+  Akten-Look-DOM. Änderung daran trifft alle Spiele → danach `make bump A=engine` + `make smoke`.
+  Für Navigation im großen File hilft das **serena**-Plugin; Diffs mit `/code-review`. Seit E2
+  (07/2026) gibt es keinen Engine-Fork mehr — Bumps erreichen wieder ALLE Games.
+- **Game-Assets liegen in der Säule:** `unterricht/assets/{js,css}/` (Engine, core, base,
+  theme-gpg) — `fonts.css`/`assets/fonts/` bleiben site-geteilt unter `/assets/`. Game-HTML
+  referenziert deshalb zwei Tiefen: Runtime `../../assets/…`, Fonts `../../../assets/…`.
+  Der Akten-Look steckt seit E5 in `theme-gpg.css`; game-lokale `vendor/`-Overlays gibt es nicht
+  mehr. Visuelle Regressionen prüfen: `.venv/bin/python3 tools/smoke/screenshot.py shoot <label>`
+  + `diff <a> <b>` (pixelgenau).
 - **Prozess-Stand** (wo stehen wir, nächster Schritt, Ansage-Punkte): `docs/website/PROZESS.md`
   — bei Weiterentwicklungs-Arbeit ZUERST lesen; Source of Truth vor dem Memory.
 - **Karte der Site:** `docs/website/SITE_MAP.md`. **Memory** (Projekt-Fakten): siehe Recall.

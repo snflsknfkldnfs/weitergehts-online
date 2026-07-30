@@ -96,6 +96,28 @@ Inkrementell unter diesem Dach — kein Big-Bang-Branch, kein `/v2/`-Parallelbau
 
 Format: Datum · Entscheidung · Warum · verworfene Alternative(n).
 
+- **2026-07-30 — E5 umgesetzt: Akten-Look ist geteilte Schicht.** Das game-lokale
+  `vendor/`-Overlay (redesign.css 835 Z. · redesign-uebersicht.css 297 Z. · rd-inject.js 53 Z. ·
+  media-placeholder.css 9 Z., zusammen 397 `!important`) wurde in `theme-gpg.css` **in-place
+  absorbiert** — Überschreiben wurde Ersetzen, Restbestand `!important` = 6 (nur Print-Block).
+  Die `--rd-*`/`--op-*`-Namensräume sind zu einem theme-internen `--akte-*`-Block vereinigt
+  (Basis: die real aktiven Dark-Werte; `data-bg`/`data-fontset` entfallen, Dark ist Default).
+  Die drei rd-inject-DOM-Jobs rendert die Engine an ihren eigenen Render-Zeitpunkten; der
+  MutationObserver entfällt. **Erweiterung gegenüber der ursprünglichen E5-Skizze:** auch das
+  Übersichts-Rendering wanderte in die Engine (`initUebersicht`) — sonst hinge der
+  Übersichts-Look dauerhaft am Generator-HTML-Template. Die hartcodierten CSS-`content`-Labels
+  sind optionale `data.json`-Felder mit Fallbacks geworden; die Syrien-Texte waren
+  WW1-Leftover und wurden in einem separaten Commit korrigiert (einzige gewollte visuelle
+  Abweichung). Zuletzt zogen die vier game-only-Assets nach `unterricht/assets/`
+  (`fonts.css` bleibt site-geteilt → Game-HTML referenziert bewusst zwei Tiefen).
+  Abgenommen per 0-px-Screenshot-Diff (7 Seiten-Varianten) plus einem
+  Computed-Style-Fingerabdruck (282 Messpunkte, Hover + alle Zustandsklassen), weil
+  Screenshots Zustände nicht sehen, die das Overlay per `!important` stillgelegt hatte.
+  Verworfen: v2-Parallelbau `theme-gpg-v2.css` (doppelte Pflege bei einem Konsumenten) ·
+  `tokens.css` in die Game-Kette (vierter Request + Site/Game-Kopplung ohne Bedarf) ·
+  Migration mit gleichzeitigen Look-Verbesserungen (vermischt Refactor- und Design-Diff und
+  macht die Abnahme wertlos) · den Asset-Umzug separat fahren (zwei Asset-Touches statt einem).
+
 - **2026-07-17 — E0 Hygiene deployt.** Deploy-Leaks geschlossen (`_`-Präfix-Konvention in allen
   rsync-Zweigen), Smoke-Coverage `sections/**`, Geld-Wert-Duplikat exzidiert. Smoke-CDN-Policy
   weich (extern = WARN), weil Dritt-Infrastruktur den Deploy nicht blocken soll; hart-für-alles

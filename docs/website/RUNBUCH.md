@@ -31,7 +31,10 @@
 
 ## L2 — Engine/CSS-Änderung (höchstes Risiko: trifft ALLE Games)
 
-1. Editiere `assets/js/escape-engine.js` (~5150 Z.) bzw. `assets/css/base.css` / `assets/css/themes/theme-gpg.css`.
+1. Editiere `unterricht/assets/js/escape-engine.js` (~5400 Z.) bzw. `unterricht/assets/css/base.css` / `unterricht/assets/css/theme-gpg.css`.
+   - **Seit E5 trifft `theme-gpg.css` auch den Akten-Look** (Dossier-Übersicht, Mappen-Optik,
+     Sicherungsheft) — er hat kein game-lokales Overlay mehr. Vorher/Nachher-Screenshots:
+     `.venv/bin/python3 tools/smoke/screenshot.py shoot <label>` + `diff <a> <b>`.
    - Große Engine: mit **serena** navigieren (`find_symbol`/`find_referencing_symbols`).
 2. **Cache-Bust (Pflicht):** `make bump A=engine` (bzw. `A=base`, `A=theme`, `A=core`, `A=all`).
    Das erhöht den Token in `assets/versions.json` und gleicht **alle** `?v=` in den HTML an.
@@ -49,7 +52,10 @@
    (verifiziert Manifest/SHA-256). **⚠ Seit E3:** der sandbox-export muss sein TARGET von
    `escape-games/` auf `unterricht/escape-games/` nachziehen — in der **Generator-Welt**, s. Ansage-Punkt in `PROZESS.md`.
    Solange offen: Export-Baum von Hand nach `unterricht/escape-games/<id>/` verschieben.
-   Zu beachten: Game-HTML lädt Assets mit **`../../../assets/`** (Tiefe 3, seit E3), nicht `../../`.
+   Zu beachten: Game-HTML lädt **zwei Tiefen** (seit E5): Runtime (`base.css`, `theme-gpg.css`,
+   `core.js`, `escape-engine.js`) mit **`../../assets/`**, `fonts.css` weiterhin mit
+   **`../../../assets/`**. Die Übersichtsseite braucht `class="uebersicht"` am `<body>` und
+   ruft nur noch `EscapeEngine.initUebersicht()` auf (kein Inline-Script mehr).
 3. In die **Website-Schicht** zurück: `make check` + `make smoke` (rendert das neue Game sauber?).
 4. **Hub** ergänzen (→ L6): `<li>` in `unterricht/index.html` (hub-relativer Link `escape-games/<id>/index.html`), zunächst `data-status="staging"`.
 5. Cache-Bust prüfen: `python3 tools/website/bump-assets.py --check` (neue HTML müssen die aktuellen Tokens tragen; sonst `make bump` mit Sync).

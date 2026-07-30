@@ -2,7 +2,7 @@
 
 > **Ist-Zustand** der Site als Menge von **Verticals**. Anker für „wo gehört Neues hin".
 > Soll-Architektur, Prämissen + Entscheidungs-Log: `ARCHITEKTUR.md`.
-> Bei jeder neuen Sektion/Game/Seite hier eintragen. Stand: 2026-07-23 (nach E3-IA-Umsetzung).
+> Bei jeder neuen Sektion/Game/Seite hier eintragen. Stand: 2026-07-30 (nach E5-Akten-Look-Absorption).
 
 ## Verticals (Drei-Säulen-IA seit E3)
 
@@ -11,7 +11,7 @@
 | **Root · Verteiler** | `index.html` | Nebel-&-Papier-Verteiler (`wg`-System): Hero + 2 Kacheln (Profil, Unterricht), 3. Slot für Zettelkasten reserviert (E4) | — | live |
 | **Profil · Visitenkarte** | `profil/` | minimal: Porträt-Hero + Kindheitsfoto (bild-only, keine Prosa — Pauls Entscheid); Fotos in `profil/img/` | — | live |
 | **Unterricht · Hub** | `unterricht/index.html` | Hub-Liste (Escape-Games + WiB); Discovery-Quelle für `check`/`smoke`; Staging-Flag `?staging=1` | — | live |
-| **Unterricht · Escape-Games** | `unterricht/escape-games/<id>/` | `data.json` (meta+mappen+materialien+aufgaben) → gerendert von `assets/js/escape-engine.js` | `unterricht/escape-games/_template/` | live (1 Game: Syrien) |
+| **Unterricht · Escape-Games** | `unterricht/escape-games/<id>/` | `data.json` (meta+mappen+materialien+aufgaben) → gerendert von `unterricht/assets/js/escape-engine.js` | `unterricht/escape-games/_template/` | live (1 Game: Syrien) |
 | **Unterricht · WiB-Tools** | `unterricht/wib/` | self-contained HTML (Chart.js via CDN), `localStorage`, kein Backend/Tracking | — | live (2 Tools: Haushaltsbuch + Geld-Wert) |
 | **Unterricht · Lernraum** | `assets/data/*.json` | via `make lernraum` generierte Glossar-/KE-Daten | `tools/lernraum/` | Daten vorhanden; Konsument-Seiten teils mit Examens-Schiene archiviert |
 | **Impressum** | `impressum/` | statische Pflichtangaben (§ 5 DDG) | — | live (⚠ Anschrift `TODO-PAUL`) |
@@ -43,10 +43,10 @@ jederzeit reaktivierbar (Präfix entfernen + `<li>` in `unterricht/index.html`):
 
 | Datei | Rolle | Versionierung |
 |---|---|---|
-| `assets/js/escape-engine.js` | Game-Runtime (~5180 Z.) | `?v=` via `assets/versions.json` + `make bump A=engine` |
-| `assets/js/core.js` | Storage/Nav/Utilities | `make bump A=core` |
-| `assets/css/base.css` | Reset/Tokens/Layout (Game-Kette) | `make bump A=base` |
-| `assets/css/themes/theme-gpg.css` | GPG-Theme (Game-Kette) | `make bump A=theme` |
+| `unterricht/assets/js/escape-engine.js` | Game-Runtime (~5400 Z.); rendert seit E5 auch die Spiel-Übersicht (`initUebersicht`) + Akten-Look-DOM | `?v=` via `assets/versions.json` + `make bump A=engine` |
+| `unterricht/assets/js/core.js` | Storage/Nav/Utilities | `make bump A=core` |
+| `unterricht/assets/css/base.css` | Reset/Tokens/Layout (Game-Kette) | `make bump A=base` |
+| `unterricht/assets/css/theme-gpg.css` | GPG-Theme **inkl. Akten-Look** (Game-Kette); seit E5 ohne game-lokales Overlay | `make bump A=theme` |
 | `assets/css/fonts.css` + `assets/fonts/` | self-gehostete Webfonts (10 Familien; E3 +Newsreader/Archivo/Space Mono) | `make bump A=fonts` |
 | `assets/css/tokens.css` | **Site**-Token-Vokabular „Nebel & Papier" (`.mode-light`/`.mode-dark`/`:root`); seit E3 aktiv geladen | `make bump A=tokens` |
 | `assets/css/wg.css` | **Site**-Komponenten (Topbar/Hero/Gateways/Footer/…); Site-Kette `fonts → tokens → wg` | `make bump A=wg` |
@@ -57,6 +57,13 @@ jederzeit reaktivierbar (Präfix entfernen + `<li>` in `unterricht/index.html`):
 
 **Zwei Ladeketten:** Site-Seiten `fonts.css → tokens.css → wg.css` · Games `fonts.css → base.css → theme-gpg.css`.
 Games laden `tokens.css`/`wg.css` NICHT.
+
+**Unterricht-Assets seit E5 unter `unterricht/assets/`.** Die vier game-only-Dateien
+(Engine, core, base, theme-gpg) liegen in der Unterricht-Säule; `fonts.css` + `assets/fonts/`
+bleiben site-geteilt unter `/assets/`. Game-HTML referenziert deshalb **zwei Tiefen**:
+Runtime `../../assets/…`, Fonts `../../../assets/css/fonts.css`. Der `themes/`-Zwischenordner
+entfällt. Das game-lokale `vendor/`-Overlay (Akten-Look) existiert nicht mehr — der Look
+steckt vollständig in `theme-gpg.css` + Engine, jedes neue Game erbt ihn.
 
 ## Konventionen
 
