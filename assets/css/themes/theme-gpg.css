@@ -1137,33 +1137,51 @@ main.mappe {
    16. v1: Material-Typ-Styles (BEM)
    -------------------------------------------------------------------------- */
 
-/* Basis */
-.material { margin-bottom: var(--space-md); padding: var(--space-md); border-radius: var(--radius-md); position: relative; }
-.material__titel { margin-top: 0; }
+/* Basis — E5: Aktenpapier mit Schlagschatten statt gerundeter Leinen-Kachel */
+.material {
+  margin: 36px 0;
+  padding: 24px 28px;
+  background: var(--akte-paper);
+  position: relative;
+  box-shadow: 0 2px 8px rgba(20, 12, 4, .08);
+}
+/* Kontext-Praefix ist NOETIG, nicht kosmetisch: der RTL-Block am Dateiende setzt
+   `.material *  { font-family: inherit }` und steht spaeter in der Kaskade. Ohne
+   das Praefix (0,2,0 statt 0,1,0) faellt der Aktentitel auf den Fliesstext zurueck.
+   Gilt ebenso fuer .material__flag. */
+.material .material__titel {
+  font-family: var(--akte-font-display);
+  font-size: 24px;
+  color: var(--akte-gold-light);
+  margin: 8px 0 14px;
+  line-height: 1.2;
+  letter-spacing: -.2px;
+}
 .material__quelle { font-size: 0.85em; color: var(--color-muted); }
 
-/* v3.5b: Material-Flag (M1, M2, ...) */
-.material__flag {
+/* v3.5b: Material-Flag (M1, M2, ...) — E5: Reiter auf der Aktenkante */
+.material .material__flag {
   position: absolute;
-  top: -8px;
-  left: 12px;
+  top: -1px;
+  left: 16px;
   background: var(--color-primary);
-  color: white;
-  font-size: 0.7rem;
+  color: #fff;
+  font-family: var(--akte-font-mono);
+  font-size: 11px;
   font-weight: 600;
-  padding: 2px 8px;
-  border-radius: 0 0 4px 4px;
-  letter-spacing: 0.05em;
+  padding: 4px 12px;
+  letter-spacing: 1.5px;
   line-height: 1.3;
   min-height: auto;
   min-width: auto;
+  text-transform: uppercase;
 }
 
-/* Darstellungstext */
-.material--darstellung { background: var(--color-surface); border-left: 4px solid var(--color-primary); }
+/* Darstellungstext (Aktenpapier-Grund kommt aus .material) */
+.material--darstellung { border-left: 4px solid var(--color-primary); }
 
-/* Quellentext */
-.material--quelle { font-style: italic; border-left: 4px solid var(--color-secondary); padding-left: var(--space-lg); }
+/* Quellentext (Cremepapier-Grund + Rahmen s. E5-Block am Sektionsende) */
+.material--quelle { font-style: italic; }
 
 /* v3.5b: Blocksatz fuer Textmaterialien */
 .material--darstellung .material__inhalt,
@@ -1171,12 +1189,33 @@ main.mappe {
 .material--tagebuch .tagebuch__text { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
 .material--quelle cite { display: block; margin-top: var(--space-sm); font-style: normal; }
 
-/* Bildquelle */
+/* Bildquelle — E5: Foto im Abzugsrahmen, Bildunterschrift handschriftlich */
 .material--bild img { max-width: 100%; height: auto; border-radius: var(--radius-sm); }
-.material--bild figcaption { font-size: 0.85em; margin-top: var(--space-xs); }
+.material--bild {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  text-align: center;
+}
+.material--bild figcaption {
+  font-family: var(--font-fragebogen);
+  font-size: 16px;
+  /* nicht hart Dunkelbraun: sonst braun-auf-braun, --akte-ink adaptiert */
+  color: var(--akte-ink);
+  text-align: left;
+  margin-top: 14px;
+  padding: 0 4px;
+}
 
-/* Karte */
-.material--karte { text-align: center; }
+/* Karte — E5: Kartenblatt im Goldrahmen, linksbuendig */
+.material--karte {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  text-align: left;
+}
 .material--karte img, .material--karte svg { max-width: 100%; height: auto; }
 
 /* Zeitleiste */
@@ -1190,9 +1229,186 @@ main.mappe {
 .material--statistik th, .material--statistik td { padding: var(--space-xs) var(--space-sm); border: 1px solid var(--color-border); text-align: left; }
 .material--statistik th { background: var(--color-surface); font-weight: bold; }
 
-/* Tagebuch */
-.material--tagebuch { background: var(--color-surface-warm, #fdf6e3); border: 1px solid var(--color-border); font-family: 'Georgia', serif; }
+/* Tagebuch (Cremepapier-Grund + Rahmen s. E5-Block am Sektionsende) */
+.material--tagebuch { font-family: 'Georgia', serif; }
 .material--tagebuch .tagebuch__text { line-height: 1.8; }
+
+/* ── E5: Akten-Materialoptik (absorbiert aus vendor/redesign.css) ─────────
+   Reihenfolge ist bewusst: die Typ-Regeln muessen NACH .material stehen
+   (gleiche Spezifitaet), der Media-Platzhalter ganz zuletzt. */
+
+.material p,
+.material__inhalt p {
+  font-family: var(--akte-font-body);
+  font-size: var(--akte-fs-body);
+  line-height: 1.7;
+  margin-bottom: 12px;
+  hyphens: auto;
+  text-align: justify;
+}
+
+/* Quelle / Tagebuch — Cremepapier (im Akten-Look dunkel, ohne Linien-Raster) */
+.material--tagebuch,
+.material--quelle {
+  background: #2a2218;
+  border: 1px solid #4a3e2c;
+  border-left: none;
+}
+.material--tagebuch .material__titel,
+.material--quelle .material__titel {
+  font-style: italic;
+}
+.material--tagebuch .tagebuch__ort {
+  display: block;
+  font-family: var(--font-fragebogen);
+  font-size: 16px;
+  color: var(--akte-gold-light);
+  margin-bottom: 14px;
+  text-align: right;
+  border-bottom: 1px dashed #4a3e2c;
+  padding-bottom: 8px;
+}
+.material--tagebuch .tagebuch__text p {
+  font-style: italic;
+  color: #d6c39a;
+  line-height: 1.85;
+  font-size: calc(var(--akte-fs-body) + 1px);
+}
+
+/* Karte — Kartenblatt im Goldrahmen mit Gitternetz */
+.material--karte .material__flag {
+  top: -1px;
+  left: 0;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+.material--karte .rd-karte-frame {
+  background: linear-gradient(135deg, #f5e6c0 0%, #e8d29a 100%);
+  border: 2px solid var(--color-secondary);
+  height: auto;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  color: #5a4a2a;
+  font-family: var(--akte-font-mono);
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  margin-top: 8px;
+}
+.material--karte.material--karte--dark .rd-karte-frame {
+  background: linear-gradient(135deg, #2a3f5f 0%, #1B2A4A 100%);
+  border-color: #0c1424;
+  color: #d6c39a;
+}
+.rd-karte-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: .25;
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 39px, currentColor 39px 40px),
+    repeating-linear-gradient(90deg, transparent 0 39px, currentColor 39px 40px);
+}
+.material--karte figcaption {
+  font-family: var(--akte-font-body);
+  font-size: 14px;
+  color: var(--akte-muted);
+  margin-top: 10px;
+  line-height: 1.5;
+}
+.material--karte figcaption strong {
+  color: var(--akte-ink);
+  display: block;
+  margin-bottom: 6px;
+  font-style: normal;
+  line-height: 1.4;
+}
+.material--karte figcaption em {
+  display: block;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* Bild — Foto im Abzugsrahmen (leicht gekippt, mit Passepartout) */
+.material--bild .material__flag {
+  top: -1px;
+  left: 0;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+.material--bild .rd-foto-mount {
+  display: inline-block;
+  background: #fafafa;
+  padding: 12px 12px 50px;
+  box-shadow: 0 8px 18px rgba(20, 12, 4, .28);
+  transform: rotate(-.6deg);
+  margin-top: 8px;
+}
+.material--bild .rd-foto-stage {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  min-height: 120px;
+  background: linear-gradient(135deg, #4a4640 0%, #2a2622 100%);
+  color: #a8a098;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--akte-font-mono);
+  font-size: 13px;
+  letter-spacing: 1.5px;
+}
+/* Rahmen-Adaption: Bild-Frames wachsen mit dem Artefakt-Aspekt; das Bild bleibt
+   intrinsisch + gekappt, nie Overflow (Foto) / Crop (Karte) / Misfit (Tafelbild). */
+.material--bild .rd-foto-stage img,
+.material--karte .rd-karte-frame img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(480px, 100%);
+  max-height: 520px;
+}
+.sicherung__tafelbild-frame img,
+.sicherung__tafelbild-frame svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Statistik: der Producer authort das inline-SVG mit dunklen Text-Fills fuer HELLEN
+   Grund. Im Akten-Look waere das dunkel-auf-dunkel (gemessen 1.8-2.1:1). Loesung:
+   der Chart sitzt auf einer hellen "Daten-Papier"-Karte — alle authored Farben
+   bleiben erhalten und legibel. */
+.material--statistik .statistik__grafik {
+  background: #f7f3e8;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0 6px;
+}
+.material--statistik .statistik__grafik svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Grauer Platzhalter fuer Materialien ohne echte src (frueher media-placeholder.css).
+   Muss NACH den .rd-foto-stage-/.rd-karte-frame-img-Regeln stehen — gleiche
+   Spezifitaet, die spaetere Regel gewinnt. */
+.material--bild img[src=""], .material--bild img:not([src]),
+.material--karte img[src=""], .material--karte img:not([src]) {
+  display: block;
+  width: 100%;
+  min-height: 180px;
+  background: #c8c8c8;
+  content: '';
+}
 
 /* --------------------------------------------------------------------------
    17. v1: Einstieg + Sicherung Styles
@@ -1584,32 +1800,62 @@ main.mappe {
    19b. v3.5: Material-Überleitungen (optimiert — zentriert, Pfeil, Gradient)
    -------------------------------------------------------------------------- */
 
+/* E5: Karteikarte mit Pin + Pfeil statt Gradient-Band mit Dreieck */
 .material-ueberleitung {
-  text-align: center;
-  padding: var(--space-lg) var(--space-md);
-  margin: var(--space-sm) 0;
+  text-align: left;
+  padding: 0;
+  margin: 28px auto;
+  max-width: 540px;
   position: relative;
+  transform: rotate(-1deg);
 }
 
+.material-ueberleitung:nth-of-type(even) { transform: rotate(1.2deg); }
+
 .material-ueberleitung::before {
-  content: '▽';
-  display: block;
-  font-size: 1.2rem;
-  color: var(--color-secondary);
-  margin-bottom: var(--space-sm);
-  opacity: 0.6;
+  display: none;
 }
 
 .material-ueberleitung__text {
-  font-style: italic;
-  color: var(--color-muted);
-  font-size: 1.05rem;
-  line-height: 1.5;
-  max-width: 600px;
+  background: #FFF4B8;
+  border: 1px solid #E8D27A;
+  padding: 18px 22px 16px 46px;
+  border-radius: 2px;
+  font-family: var(--font-fragebogen);
+  font-style: normal;
+  font-size: 18px;
+  color: #2A1F0F;
+  line-height: 1.45;
+  max-width: none;
   margin-inline: auto;
-  background: linear-gradient(180deg, transparent 0%, rgba(201,168,76,0.06) 30%, rgba(201,168,76,0.06) 70%, transparent 100%);
-  padding: var(--space-sm) var(--space-md);
-  border-radius: 4px;
+  position: relative;
+  box-shadow: 0 6px 14px rgba(20, 12, 4, .18), 0 1px 0 rgba(0, 0, 0, .05) inset;
+}
+
+/* Pin */
+.material-ueberleitung__text::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 14px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, var(--akte-gold-light) 0%, var(--color-secondary) 70%);
+  box-shadow: 0 3px 4px rgba(0, 0, 0, .4);
+  border: 1px solid #8a7530;
+}
+
+/* Pfeil-Glyph fuer die Brueckenfunktion */
+.material-ueberleitung__text::after {
+  content: "↳";
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  color: rgba(0, 0, 0, .35);
+  font-family: Georgia, serif;
 }
 
 /* --------------------------------------------------------------------------
