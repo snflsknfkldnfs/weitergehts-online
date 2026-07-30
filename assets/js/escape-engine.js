@@ -215,6 +215,9 @@ var EscapeEngine = (function () {
         // Seiten-Titel setzen
         _updateSeitenTitel(mappe);
 
+        // E5: Akten-Label im Header (datengetrieben)
+        _renderAktenLabel();
+
         // Fortschritt laden
         var progress = loadProgress(mappeId);
 
@@ -4486,6 +4489,28 @@ var EscapeEngine = (function () {
    * @private
    */
   /**
+   * E5: Akten-Label im Mappen-Header. Frueher eine hartcodierte
+   * CSS-content-Regel (body > header::before) im Game-Overlay, jetzt aus
+   * data.json. Fallback ohne Feld: "AKTE 01", "AKTE 02", ...
+   * @private
+   */
+  function _renderAktenLabel() {
+    var header = document.querySelector('body > header');
+    if (!header || header.querySelector('.akten-label')) return;
+    var mappen = (_state.data && _state.data.mappen) || [];
+    var idx = -1;
+    for (var i = 0; i < mappen.length; i++) {
+      if (mappen[i].id === _state.mappeId) { idx = i; break; }
+    }
+    var mappe = idx >= 0 ? mappen[idx] : null;
+    var nr = ('0' + (Math.max(idx, 0) + 1)).slice(-2);
+    var el = document.createElement('span');
+    el.className = 'akten-label';
+    el.textContent = (mappe && mappe.akten_label) || ('AKTE ' + nr);
+    header.insertBefore(el, header.firstChild);
+  }
+
+  /**
    * E5: Baut den Leitfragen-Strip mit Stempelfeld unter dem Header.
    * Frueher vendor/rd-inject.js per MutationObserver — die Engine kennt ihre
    * Render-Zeitpunkte selbst. Idempotent (Guard auf vorhandenen Strip).
@@ -4590,11 +4615,156 @@ var EscapeEngine = (function () {
   }
 
   // ========================================================================
+  // E5: Spiel-Uebersicht (index.html)
+  //
+  // Frueher rendered jede Game-index.html die Mappen-Kacheln mit ~60 Zeilen
+  // dupliziertem Inline-Script. Jetzt macht das die geteilte Schicht, damit
+  // ein neues Game den Uebersichts-Look erbt statt ihn vom Generator-Template
+  // mitgeliefert zu bekommen.
+  // ========================================================================
+
+  /** Statustexte der Dossier-Stempel. @private */
+  var STEMPEL_LABEL = {
+    completed: 'Archiviert',
+    current: 'Dringend',
+    locked: 'Vertraulich'
+  };
+
+  /** @private */
+  function _setTextById(id, text) {
+    var el = document.getElementById(id);
+    if (el) el.textContent = text;
+  }
+
+  /**
+   * Rendert eine Dossier-Kachel der Uebersicht.
+   * @param {Object} mappe – Mappen-Daten
+   * @param {number} index – 0-basierter Index
+   * @param {Object|null} progress – Fortschritt dieser Mappe
+   * @param {Object} allProgress – Fortschritt aller Mappen
+   * @param {Object} meta – data.json-meta (fuer das Dossier-Label)
+   * @returns {HTMLElement}
+   * @private
+   */
+  function _renderMappeKarte(mappe, index, progress, allProgress, meta) {
+    var article = document.createElement('article');
+    article.className = 'mappe-karte';
+
+    var isCompleted = !!(progress && progress.abgeschlossen);
+    var isLocked = false;
+    // Erste Mappe immer offen, jede weitere erst nach Abschluss der vorherigen
+    if (index > 0) {
+      var prevProgress = (allProgress.mappen && allProgress.mappen['mappe-' + index]) || null;
+      isLocked = !(prevProgress && prevProgress.abgeschlossen);
+    }
+
+    var status = isCompleted ? 'completed' : (isLocked ? 'locked' : 'current');
+    article.classList.add('mappe-karte--' + status);
+
+    var stempel = document.createElement('span');
+    stempel.className = 'rd-stempel';
+    stempel.textContent = STEMPEL_LABEL[status];
+    article.appendChild(stempel);
+
+    var titel = document.createElement('h2');
+    titel.className = 'mappe-karte__titel';
+    // Das Dossier-Label ist erstes Kind des Titels — genau die Position, an der
+    // frueher die CSS-content-Regel .mappe-karte__titel::before sass.
+    var dossier = document.createElement('span');
+    dossier.className = 'mappe-karte__dossier-label';
+    dossier.textContent = (meta && meta.dossier_label) || 'DOSSIER';
+    titel.appendChild(dossier);
+    titel.appendChild(document.createTextNode(mappe.titel || ('Mappe ' + (index + 1))));
+    article.appendChild(titel);
+
+    var beschreibung = document.createElement('p');
+    beschreibung.className = 'mappe-karte__beschreibung';
+    beschreibung.textContent = mappe.beschreibung || '';
+    article.appendChild(beschreibung);
+
+    if (!isLocked) {
+      var link = document.createElement('a');
+      link.className = 'mappe-karte__link';
+      link.href = mappe.id + '.html';
+      link.textContent = isCompleted ? '✅ Abgeschlossen' : '▶ Starten';
+      link.setAttribute('aria-label',
+        (isCompleted ? 'Abgeschlossene Mappe: ' : 'Mappe starten: ') + (mappe.titel || ''));
+      article.appendChild(link);
+    }
+
+    return article;
+  }
+
+  /**
+   * Rendert die komplette Uebersichtsseite aus data.json.
+   * @param {Object} data – Geladene Spieldaten
+   * @private
+   */
+  function _renderStartseite(data) {
+    var meta = data.meta || {};
+    document.title = (meta.titel || 'Escape-Game') + ' – Startseite';
+    _setTextById('game-titel', meta.titel || 'Escape-Game');
+    _setTextById('game-fach', meta.fach || '');
+    _setTextById('game-jahrgangsstufe', meta.jahrgangsstufe || '');
+    _setTextById('game-schwierigkeit', meta.schwierigkeit || '');
+    _setTextById('narrativ-text', meta.narrativ || 'Willkommen zum Escape-Game!');
+
+    // Akten-Label als erstes Kind des Titels (frueher #game-titel::before).
+    // Muss NACH dem textContent-Setzen laufen, sonst wird es wieder entfernt.
+    var titelEl = document.getElementById('game-titel');
+    if (titelEl && !titelEl.querySelector('.akten-label')) {
+      var akte = document.createElement('span');
+      akte.className = 'akten-label';
+      akte.textContent = meta.akten_label || 'AKTE';
+      titelEl.insertBefore(akte, titelEl.firstChild);
+    }
+
+    var thema = (meta.titel || 'unbenannt').toLowerCase().replace(/\s+/g, '-');
+    var allProgress = Core.storage.get('escape-' + thema) || { mappen: {} };
+
+    var container = document.getElementById('mappen-uebersicht');
+    if (!container) return;
+    container.innerHTML = '';
+
+    var mappen = data.mappen || [];
+    if (mappen.length === 0) {
+      var leer = document.createElement('p');
+      leer.className = 'text-center';
+      leer.textContent = 'Noch keine Mappen vorhanden.';
+      container.appendChild(leer);
+      return;
+    }
+
+    for (var i = 0; i < mappen.length; i++) {
+      var mappeProgress = (allProgress.mappen && allProgress.mappen[mappen[i].id]) || null;
+      container.appendChild(_renderMappeKarte(mappen[i], i, mappeProgress, allProgress, meta));
+    }
+  }
+
+  /**
+   * Initialisiert die Spiel-Uebersicht (index.html eines Games).
+   * Gegenstueck zu init(mappeId) fuer die Mappen-Seiten.
+   */
+  function initUebersicht() {
+    _loadData()
+      .then(_renderStartseite)
+      .catch(function (err) {
+        if (window.console) console.error('[EscapeEngine.initUebersicht]', err);
+        var hinweis = document.getElementById('lade-hinweis');
+        if (hinweis) {
+          hinweis.textContent = 'Keine data.json gefunden.';
+          hinweis.className = 'aufgabe__feedback aufgabe__feedback--visible aufgabe__feedback--info';
+        }
+      });
+  }
+
+  // ========================================================================
   // Oeffentliche API
   // ========================================================================
 
   return {
     init: init,
+    initUebersicht: initUebersicht,
     checkCode: checkCode,
     saveProgress: saveProgress,
     loadProgress: loadProgress,

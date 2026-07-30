@@ -85,8 +85,19 @@ def shoot(label):
                 # Elemente (.rd-leitfrage-strip, .sticky-stundenfrage) frieren im full_page-
                 # Shot an der Scroll-Position ein und ueberdecken sich dort. Zurueck auf 0:
                 # der Leitfragen-Strip steht an seiner Fluss-Position und ist voll pruefbar.
-                pg.evaluate("window.scrollTo(0, 0)")
-                pg.wait_for_timeout(400)
+                # Die Wiederherstellung laeuft asynchron und kann NACH dem ersten
+                # scrollTo greifen. Solange nachfassen, bis scrollY zweimal in
+                # Folge 0 ist — sonst friert der sticky Strip an falscher Stelle
+                # ein und der Shot ist ein Fehlalarm (beobachtet auf mappe-1-solved).
+                stable = 0
+                for _ in range(20):
+                    pg.evaluate("window.scrollTo(0, 0)")
+                    pg.wait_for_timeout(200)
+                    stable = stable + 1 if pg.evaluate("window.scrollY") == 0 else 0
+                    if stable >= 2:
+                        break
+                else:
+                    raise RuntimeError("Scroll-Position auf %s nicht stabilisierbar" % name)
                 pg.screenshot(path=str(outdir / (name + ".png")),
                               full_page=True, animations="disabled")
                 ctx.close()

@@ -28,71 +28,7 @@
 </main>
 <script src="../../../assets/js/core.js?v=4.6"></script>
 <script src="../../../assets/js/escape-engine.js?v=3.22"></script>
-<script>
-(function(){
-  'use strict';
-  fetch('data.json')
-    .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
-    .then(function(data){ renderStartseite(data); })
-    .catch(function(err){
-      console.error('[Startseite] Fehler:', err);
-      var h=document.getElementById('lade-hinweis');
-      if(h) h.textContent='Keine data.json gefunden.';
-    });
-
-  function renderStartseite(data){
-    var meta=data.meta||{};
-    document.title=(meta.titel||'Escape-Game')+' – Startseite';
-    setText('game-titel', meta.titel||'Escape-Game');
-    setText('game-fach', meta.fach||'');
-    setText('game-jahrgangsstufe', meta.jahrgangsstufe||'');
-    setText('narrativ-text', meta.narrativ||'Willkommen!');
-    var thema=(meta.titel||'unbenannt').toLowerCase().replace(/\s+/g,'-');
-    var storageKey='escape-'+thema;
-    var allProgress=Core.storage.get(storageKey)||{mappen:{}};
-    var container=document.getElementById('mappen-uebersicht');
-    if(!container) return;
-    container.innerHTML='';
-    var mappen=data.mappen||[];
-    for(var i=0;i<mappen.length;i++){
-      var mappe=mappen[i];
-      var mp=(allProgress.mappen&&allProgress.mappen[mappe.id])||null;
-      container.appendChild(renderMappeKarte(mappe,i,mp,allProgress));
-    }
-  }
-
-  function renderMappeKarte(mappe,index,progress,allProgress){
-    var article=document.createElement('article');
-    article.className='mappe-karte';
-    var isCompleted=progress&&progress.abgeschlossen;
-    var isLocked=false;
-    if(index>0){
-      var prevId='mappe-'+index;
-      var prevP=(allProgress.mappen&&allProgress.mappen[prevId])||null;
-      isLocked=!(prevP&&prevP.abgeschlossen);
-    }
-    if(isCompleted) article.classList.add('mappe-karte--completed');
-    else if(isLocked) article.classList.add('mappe-karte--locked');
-    else article.classList.add('mappe-karte--current');
-    var stempel=document.createElement('span'); stempel.className='rd-stempel';
-    stempel.textContent=isCompleted?'Archiviert':isLocked?'Vertraulich':'Dringend';
-    article.appendChild(stempel);
-    var t=document.createElement('h2'); t.className='mappe-karte__titel';
-    t.textContent=mappe.titel||('Mappe '+(index+1)); article.appendChild(t);
-    var b=document.createElement('p'); b.className='mappe-karte__beschreibung';
-    b.textContent=mappe.beschreibung||''; article.appendChild(b);
-    if(!isLocked){
-      var a=document.createElement('a'); a.className='mappe-karte__link';
-      a.href=mappe.id+'.html';
-      a.textContent=isCompleted?'✅ Abgeschlossen':'▶ Starten';
-      article.appendChild(a);
-    }
-    return article;
-  }
-
-  function setText(id,text){ var el=document.getElementById(id); if(el) el.textContent=text; }
-})();
-</script>
+<script>EscapeEngine.initUebersicht();</script>
 <footer>
   <a href="/impressum/">Impressum</a> · <a href="/datenschutz/">Datenschutz</a>
 </footer>

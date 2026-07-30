@@ -168,6 +168,27 @@ body.uebersicht > footer a {
   color: var(--color-secondary);
 }
 
+/* E5: Akten-Label. Text kommt aus data.json (meta.akten_label bzw.
+   mappen[i].akten_label) und wird von der Engine ins DOM gerendert — das CSS
+   zeigt nur noch an. Frueher standen die Texte als CSS-content im Game-Overlay
+   und waren damit pro Spiel unveraenderlich. */
+body > header .akten-label {
+  display: block;
+  font-family: var(--akte-font-mono);
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--akte-gold-light);
+  margin-bottom: 8px;
+}
+
+/* Auf der Uebersicht sitzt das Label im aufgeklebten Titel-Schild (rot, kleiner) */
+body.uebersicht header .akten-label {
+  font-size: 10px;
+  color: var(--color-error);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
 /* E5: Akten-Header statt simpler Navy-Bar */
 header {
   background: var(--color-primary);
@@ -324,6 +345,18 @@ body.uebersicht .mappen-uebersicht {
   letter-spacing: -.3px;
   color: var(--akte-dossier-ink);
   margin: 0 0 12px;
+}
+
+/* Dossier-Meta-Zeile im Kacheltitel — Text aus data.json (meta.dossier_label) */
+.mappe-karte__dossier-label {
+  display: block;
+  font-family: var(--akte-font-mono);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: var(--akte-dossier-meta);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-weight: 400;
 }
 
 .mappe-karte__beschreibung {
