@@ -282,33 +282,113 @@ footer a:hover {
   line-height: 1.4;
 }
 
+/* E5: Fussleiste als Navy-Band ueber die volle Mappenbreite (negative Margins
+   heben das main-Padding auf), Buttons als Gold-Konturstempel. */
 .mappe__navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--space-lg) 0;
-  margin-top: var(--space-xl);
-  border-top: 2px solid var(--color-border);
+  background: var(--color-primary);
+  padding: 16px 24px;
+  margin: 40px -32px -60px;
+  border-top: 4px solid var(--color-secondary);
   gap: var(--space-sm);
   flex-wrap: wrap;
 }
 
 .mappe__nav-btn {
-  padding: var(--space-sm) var(--space-lg);
-  background-color: var(--color-primary);
-  color: #fff;
-  border-radius: var(--radius-sm);
+  padding: 8px 16px;
+  background: transparent;
+  color: var(--akte-gold-light);
+  font-family: var(--akte-font-mono);
+  font-size: 12px;
   font-weight: bold;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: 1.5px solid var(--color-secondary);
+  border-radius: 2px;
+  min-height: 0;
   transition: background-color var(--transition-fast);
 }
 
-.mappe__nav-btn:hover {
-  background-color: var(--color-primary-light);
+#nav-mappe-info {
+  font-family: var(--akte-font-mono);
+  font-size: 11px;
+  color: rgba(255, 255, 255, .6);
+  letter-spacing: 1.5px;
 }
 
 .mappe__nav-btn--disabled {
   opacity: 0.5;
   pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   5b. E5: Leitfragen-Strip + Stempelfeld (Engine-gerendert, s. escape-engine.js)
+   -------------------------------------------------------------------------- */
+
+.rd-leitfrage-strip {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: #2a2218;
+  border-bottom: 1px solid #4a3e2c;
+  padding: 10px 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .06);
+}
+
+.rd-leitfrage-strip__label {
+  font-family: var(--akte-font-mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--akte-muted);
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.rd-leitfrage-strip__text {
+  font-family: var(--font-fragebogen);
+  font-size: 17px;
+  color: var(--akte-gold-light);
+  font-weight: 600;
+  flex: 1;
+  line-height: 1.3;
+}
+
+/* Stempelfeld statt Fortschrittsbalken: eine Zelle je Aufgabe */
+.rd-stempelfeld {
+  display: flex;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.rd-stempelfeld__cell {
+  width: 24px;
+  height: 24px;
+  border: 1.5px solid var(--akte-border);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--akte-font-mono);
+  font-size: 12px;
+  color: var(--akte-muted);
+}
+
+.rd-stempelfeld__cell--solved {
+  border-color: var(--color-success);
+  background: rgba(45, 106, 79, .12);
+  color: var(--color-success);
+}
+
+.rd-stempelfeld__cell--solved::before {
+  content: "✓";
+  transform: rotate(-8deg);
+  font-weight: 700;
+  font-size: 16px;
 }
 
 /* --------------------------------------------------------------------------
@@ -362,13 +442,14 @@ footer a:hover {
   border-color: var(--color-success);
 }
 
+/* E5: Kopfzeile ohne Trennlinie — die Aufgabenkarte traegt die Struktur */
 .aufgabe__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: var(--space-md);
-  padding-bottom: var(--space-sm);
-  border-bottom: 1px solid var(--color-border);
+  gap: 10px;
+  margin-bottom: 10px;
+  padding: 0;
 }
 
 .aufgabe__nummer {
@@ -377,14 +458,18 @@ footer a:hover {
   font-weight: bold;
 }
 
+/* E5: Typ-Kennzeichnung als dezenter Aktenvermerk statt Farb-Pille */
 .aufgabe__typ-badge {
-  font-size: var(--text-xs);
-  padding: var(--space-xs) var(--space-sm);
-  background-color: var(--color-primary);
-  color: #fff;
+  background: transparent;
+  color: var(--akte-muted);
+  font-family: var(--akte-font-mono);
+  font-size: 10px;
+  padding: 0;
+  border: none;
   border-radius: var(--radius-sm);
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  margin-left: auto;
 }
 
 .aufgabe__titel {
@@ -401,14 +486,16 @@ footer a:hover {
 }
 
 .aufgabe__body {
-  margin-bottom: var(--space-lg);
+  padding-left: 0;
+  margin-bottom: 10px;
+  font-size: 14px;
 }
 
 /* Multiple-Choice-Optionen */
 .aufgabe__optionen {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: 6px;
 }
 
 .aufgabe__option {
@@ -455,18 +542,20 @@ footer a:hover {
 .aufgabe__zuordnung {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: 6px;
 }
 
 .aufgabe__zuordnung-zeile {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: var(--space-md);
+  grid-template-columns: 1fr auto auto;
+  gap: 8px;
   align-items: center;
-  padding: var(--space-sm);
-  background-color: #fff;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  font-size: 13px;
+  background: rgba(0, 0, 0, .2);
+  border: 1px solid #4a3e2c;
+  border-radius: 3px;
+  color: #e0d8c5;
 }
 
 .aufgabe__zuordnung-begriff {
@@ -474,11 +563,21 @@ footer a:hover {
 }
 
 .aufgabe__zuordnung-pfeil {
-  color: var(--color-muted);
+  color: var(--akte-muted);
+  font-size: 14px;
 }
 
 .aufgabe__zuordnung-select {
   width: 100%;
+  font-family: var(--akte-font-body);
+  font-size: 13px;
+  padding: 4px 6px;
+  border: 1px solid #4a3e2c;
+  border-radius: 2px;
+  background: #1a1410;
+  color: #e0d8c5;
+  min-height: 0;
+  min-width: 0;
 }
 
 .aufgabe__zuordnung-zeile--correct {
@@ -491,11 +590,15 @@ footer a:hover {
   background-color: rgba(155, 34, 38, 0.05);
 }
 
-/* Lueckentext */
+/* Lueckentext — E5: Luecke als goldener Markierstreifen (Font/Farbe s. Sektion 19c) */
 .aufgabe__lueckentext {
-  line-height: 2;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #e0d8c5;
 }
 
+/* Optik der Luecke steht in Sektion 19c — nur dort schlaegt sie die
+   spaetere --pool-Regel (Antwortpool-Modus). */
 .aufgabe__luecke {
   display: inline-block;
   min-width: 120px;
@@ -503,7 +606,6 @@ footer a:hover {
   border-bottom: 2px dashed var(--color-primary);
   background: transparent;
   text-align: center;
-  font-family: var(--font-code);
   padding: var(--space-xs);
   margin: 0 var(--space-xs);
 }
@@ -631,52 +733,70 @@ footer a:hover {
 }
 
 /* Reihenfolge */
+/* Reihenfolge — E5: kompakte Karteizeilen mit Gold-Nummernscheibe */
 .aufgabe__reihenfolge {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px;
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: 4px;
 }
 
 .aufgabe__reihenfolge-item {
   display: flex;
   align-items: center;
-  gap: var(--space-md);
-  padding: var(--space-md);
-  background-color: #fff;
-  border: 2px solid var(--color-border);
-  border-radius: var(--radius-sm);
+  gap: 8px;
+  padding: 7px 10px;
+  font-size: 13px;
+  background: rgba(0, 0, 0, .2);
+  border: 1px solid #4a3e2c;
+  border-radius: 3px;
+  color: #e0d8c5;
 }
 
 .aufgabe__reihenfolge-nummer {
-  font-weight: bold;
-  color: var(--color-primary);
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  background: var(--color-secondary);
+  color: #1a1410;
+  border-radius: 50%;
   min-width: 2rem;
   text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--akte-font-mono);
+  font-size: 10px;
+  font-weight: 700;
 }
 
 .aufgabe__reihenfolge-text {
   flex: 1;
+  line-height: 1.4;
 }
 
 .aufgabe__reihenfolge-buttons {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
+  flex-shrink: 0;
 }
 
 .aufgabe__reihenfolge-btn {
+  width: 22px;
+  height: 16px;
   padding: var(--space-xs) var(--space-sm);
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  font-size: var(--text-sm);
-  min-height: 32px;
-  min-width: 32px;
-}
-
-.aufgabe__reihenfolge-btn:hover {
-  background-color: var(--color-primary);
-  color: #fff;
+  background: var(--color-secondary);
+  color: #1a1410;
+  border: none;
+  border-radius: 2px;
+  font-size: 9px;
+  line-height: 1;
+  cursor: pointer;
+  min-height: 0;
+  min-width: 0;
 }
 
 /* Freitext-Code */
@@ -686,36 +806,38 @@ footer a:hover {
 
 .aufgabe__textarea {
   width: 100%;
-  min-height: 120px;
-  padding: var(--space-md);
-  border: 2px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  font-family: var(--font-body);
+  min-height: 90px;
+  padding: 10px;
+  border: 1px solid #4a3e2c;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, .3);
+  color: #e0d8c5;
+  font-family: var(--akte-font-body);
+  font-size: 14px;
+  line-height: 1.5;
   resize: vertical;
 }
 
-.aufgabe__textarea:focus {
-  border-color: var(--color-primary);
-}
-
-/* Submit-Button fuer Aufgaben */
+/* Submit-Button fuer Aufgaben — E5: Notiz-Stempel statt Vollflaechen-Button.
+   Beschriftung kommt aus ::before, der Engine-Text im Button wird ausgeblendet. */
 .aufgabe__submit {
   display: inline-flex;
   align-items: center;
   gap: var(--space-sm);
-  margin-top: var(--space-md);
-  padding: var(--space-sm) var(--space-xl);
-  background-color: var(--color-primary);
+  margin-top: 4px;
   color: #fff;
-  border-radius: var(--radius-sm);
+  border: none;
+  border-radius: 2px;
   font-weight: bold;
-  font-size: var(--text-base);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  min-height: 0;
+  cursor: pointer;
   transition: background-color var(--transition-fast);
 }
 
-.aufgabe__submit:hover {
-  background-color: var(--color-primary-light);
-}
+.aufgabe__submit::before { content: "Antwort eintragen"; }
+.aufgabe__submit > * { display: none; }
 
 .aufgabe__submit:disabled {
   opacity: 0.5;
@@ -1427,8 +1549,28 @@ main.mappe {
 }
 .einstieg__problemstellung { font-size: 1.1em; font-weight: 600; margin-top: var(--space-md); }
 
-.mappe__sicherung { margin-top: var(--space-xl); padding: var(--space-lg); background: var(--color-surface); border-radius: var(--radius-md); }
+/* E5: Sicherung ohne Kachel, mit Phasen-Vermerk (game-agnostisch) */
+.mappe__sicherung { margin-top: 40px; padding: 32px 0; border-radius: var(--radius-md); }
+.mappe__sicherung::before {
+  content: "PHASE 3 · SICHERUNG";
+  display: block;
+  font-family: var(--akte-font-mono);
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  color: var(--akte-muted);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  text-align: center;
+}
 .sicherung__tafelbild { margin-bottom: var(--space-lg); }
+/* egg-v2 Tafelbild-Sicherung */
+.sicherung__tafelbild-frame {
+  width: 100%;
+  min-height: 120px;
+  border: 1px solid var(--color-secondary);
+  border-radius: 4px;
+  background: var(--akte-paper);
+}
 .sicherung__tafelbild svg { max-width: 100%; height: auto; }
 .sicherung__zusammenfassung { margin-bottom: var(--space-md); }
 .sicherung__ueberleitung { font-style: italic; color: var(--color-muted); }
@@ -1862,35 +2004,24 @@ main.mappe {
    19c. v3.5: Fragebogen — Notizbuch-Stil (Arbeitsblatt-Metapher)
    -------------------------------------------------------------------------- */
 
+/* E5: Das Sicherungsheft ist eine Aktenmappe, kein kariertes Notizblatt —
+   das Karo-Raster entfaellt, margin-top schlaegt bewusst den 0-Wert aus
+   Sektion 15 (spaetere Regel gewinnt), wie es das Overlay auch tat. */
 .erarbeitung__aufgaben {
-  background: var(--fb-bg);
-  border-radius: 0 0 8px 8px;
-  box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.08);
-  background-image:
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent calc(1.5em - 1px),
-      var(--fb-grid) calc(1.5em - 1px),
-      var(--fb-grid) 1.5em
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent calc(1.5em - 1px),
-      var(--fb-grid) calc(1.5em - 1px),
-      var(--fb-grid) 1.5em
-    );
-  background-size: 1.5em 1.5em;
-  background-attachment: local;
+  margin-top: 48px;
+  background: #1a1410;
+  border: 1px solid #4a3e2c;
+  border-radius: 4px;
+  box-shadow: 0 8px 22px rgba(20, 12, 4, .10);
+  padding: 0;
 }
 
-/* Lochrand oben */
+/* Lochrand oben — im Akten-Look ausgeblendet */
 .fragebogen__lochrand {
+  display: none;
   background: var(--fb-primary);
   height: 36px;
   border-radius: 8px 8px 0 0;
-  display: flex;
   align-items: center;
   justify-content: center;
   gap: 40px;
@@ -1908,99 +2039,124 @@ main.mappe {
   box-shadow: inset 0 1px 2px rgba(0,0,0,0.15);
 }
 
-/* Fragebogen Header */
+/* Fragebogen Header — E5: Navy-Balken mit Goldkante */
 .fragebogen__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--space-md) var(--space-lg);
-  border-bottom: 2px solid var(--fb-primary);
+  padding: 14px 20px;
+  background: var(--color-primary);
+  border-bottom: 3px solid var(--color-secondary);
+  border-radius: 4px 4px 0 0;
 }
 
 .fragebogen__titel {
-  font-family: var(--font-fragebogen);
-  font-size: 1.2rem;
-  color: var(--fb-primary);
+  font-family: var(--akte-font-display);
+  font-size: 19px;
+  color: #fff;
+  font-weight: 700;
   margin: 0;
+  line-height: 1.2;
+}
+
+/* Game-agnostische Aktenbezeichnung (kein Datenfeld noetig) */
+.fragebogen__titel::before {
+  content: "SICHERUNGSHEFT";
+  display: block;
+  font-family: var(--akte-font-mono);
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  color: var(--akte-gold-light);
+  margin-bottom: 4px;
+  font-weight: 400;
 }
 
 /* Fragebogen Inner (Aufgaben-Bereich) */
 .fragebogen__inner {
-  padding: var(--space-md) var(--space-lg);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
   font-size: 1rem;
   line-height: 1.5em;
   position: relative;
   z-index: 1;
 }
 
-/* Aufgaben im Notizbuch-Stil */
+/* E5: Jede Aufgabe ist eine eigenstaendige Karte mit Status-Akzent links.
+   Kein :last-of-type-Sonderfall mehr — die Karte hat rundum einen Rahmen. */
 .erarbeitung__aufgaben .aufgabe {
-  background-color: transparent;
-  border: none;
-  border-bottom: 2px dashed var(--fb-grid);
-  border-radius: 0;
+  background: #2a2218;
+  border: 1px solid #4a3e2c;
+  border-left: 4px solid #4a3e2c;
+  border-radius: 3px;
   box-shadow: none;
-  padding: var(--space-md) 0;
-  margin-bottom: 0;
+  padding: 14px 16px;
+  margin: 0;
 }
 
-.erarbeitung__aufgaben .aufgabe:last-of-type {
-  border-bottom: none;
+.erarbeitung__aufgaben .aufgabe--solved {
+  background: #1f2820;
+  border-left-color: var(--color-success);
 }
 
-/* Aufgaben-Nummer im Kreis — v3.5f: Textmarker-Gelb */
+/* Aufgaben-Nummer als Gold-Scheibe (Stempel-Anmutung) */
 .erarbeitung__aufgaben .aufgabe__nummer {
-  font-family: var(--font-fragebogen);
+  font-family: var(--akte-font-mono);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
-  min-height: 28px;
-  min-width: 28px;
+  width: 26px;
+  height: 26px;
+  min-height: 26px;
+  min-width: 26px;
   border-radius: 50%;
-  border: 2px solid rgba(255, 249, 196, 0.9);
-  background-color: rgba(255, 249, 196, 0.7);
-  color: var(--fb-primary);
-  font-size: 0.9rem;
+  border: 1.5px solid var(--color-secondary);
+  background: var(--color-secondary);
+  color: #1a1410;
+  font-size: 12px;
   font-weight: 600;
+  flex-shrink: 0;
 }
 
-/* Frage-Text */
+/* Frage-Text — E5: ruhige Lese-Typo statt Textmarker-Band */
 .erarbeitung__aufgaben .aufgabe__frage {
-  font-family: var(--font-fragebogen);
-  font-size: 1.05em;
-  line-height: 1.5;
-  /* v3.5e: Textmarker-Stil */
-  background: linear-gradient(
-    to bottom,
-    transparent 10%,
-    rgba(255, 249, 196, 0.55) 10%,
-    rgba(255, 249, 196, 0.55) 90%,
-    transparent 90%
-  );
+  font-family: var(--akte-font-body);
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: 0;
+  background: none;
+  color: #f0e8d0;
   font-weight: 600;
-  padding: 0.2em 0.4em;
-  margin-bottom: 0.8em;
+  font-style: normal;
+  padding: 0;
+  margin: 0 0 12px;
   border-radius: 2px;
-  display: inline;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
+  display: block;
 }
 
-/* MC-Optionen im Arbeitsblatt-Stil */
+/* MC-Optionen als abgesetzte Zeilen */
 .erarbeitung__aufgaben .aufgabe__option {
-  background-color: transparent;
-  border: none;
-  border-radius: 4px;
-  padding: 6px 10px;
+  font-family: var(--akte-font-body);
+  font-size: 14px;
+  background: rgba(0, 0, 0, .2);
+  border: 1px solid #4a3e2c;
+  border-radius: 3px;
+  color: #e0d8c5;
+  padding: 8px 10px;
   gap: var(--space-sm);
+  cursor: pointer;
   transition: background 150ms ease;
 }
 
-.erarbeitung__aufgaben .aufgabe__option:hover {
-  background: rgba(41, 82, 163, 0.06);
-  border-color: transparent;
+/* BEFUND E5 (unveraendert uebernommen, nicht repariert): Im Overlay ueberstimmte
+   der [data-bg="dark"]-Zweig von .aufgabe__option (0,2,0) den Korrekt-State
+   (0,1,0) — Fuellung und Rahmenfarbe der richtigen Antwort waren nie sichtbar,
+   nur Randbreite und Fettung. E5 ist eine Migration, kein Redesign; ob der
+   Korrekt-State sichtbar werden soll, entscheidet ein eigener Schritt. */
+.erarbeitung__aufgaben .aufgabe__option--correct {
+  border-left-width: 3px;
+  font-weight: 600;
 }
 
 /* Custom Radio-Buttons */
@@ -2053,22 +2209,34 @@ main.mappe {
 
 /* Submit-Button im Fragebogen */
 .erarbeitung__aufgaben .aufgabe__submit {
-  background: var(--fb-primary);
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  padding: var(--space-sm) var(--space-lg);
+  background: var(--color-primary);
+  font-family: var(--akte-font-mono);
+  font-size: 11px;
+  padding: 7px 14px;
 }
 
-.erarbeitung__aufgaben .aufgabe__submit:hover {
-  background: #1e3d7a;
-}
-
-/* Solved State */
+/* Solved State — gruene Quittung statt Aktionsflaeche */
 .erarbeitung__aufgaben .aufgabe--solved .aufgabe__nummer {
-  border-color: var(--fb-success);
-  color: var(--fb-success);
-  background: rgba(56, 142, 60, 0.08);
+  background: var(--color-success);
+  border-color: var(--color-success);
+  color: #fff;
 }
+
+.aufgabe--solved .aufgabe__nummer::before {
+  content: "✓";
+  font-family: var(--akte-font-body);
+  font-size: 14px;
+}
+
+.aufgabe--solved .aufgabe__nummer-text { display: none; }
+
+.erarbeitung__aufgaben .aufgabe--solved .aufgabe__submit {
+  background: transparent;
+  color: var(--color-success);
+  border: 1.5px solid var(--color-success);
+}
+
+.aufgabe--solved .aufgabe__submit::before { content: "✓ NOTIERT"; }
 
 /* v3.5h: Lösungswort-Bereich (initial unsichtbar, bis alle Aufgaben gelöst) */
 .loesungswort-bereich {
@@ -2100,20 +2268,23 @@ main.mappe {
   display: block;
 }
 
-/* Lückentext im Fragebogen */
+/* Lückentext im Fragebogen — E5: goldener Markierstreifen.
+   Muss hier stehen (0,2,0), sonst gewinnt die --pool-Regel weiter oben. */
 .erarbeitung__aufgaben .aufgabe__luecke {
-  border-bottom-color: var(--fb-primary);
-  font-family: var(--font-fragebogen);
-  color: var(--fb-primary);
+  background: rgba(201, 168, 76, .12);
+  border-bottom: 1.5px solid var(--color-secondary);
+  border-radius: 2px;
+  padding: 1px 6px;
+  font-family: var(--akte-font-body);
+  font-weight: 600;
+  font-style: normal;
+  color: var(--akte-gold-light);
 }
 
-/* Tipp-Buttons im Fragebogen */
-.erarbeitung__aufgaben .tipp__trigger {
-  background-color: var(--fb-hint);
-}
-
-.erarbeitung__aufgaben .tipp__trigger:hover {
-  background-color: #607d8b;
+.erarbeitung__aufgaben .aufgabe__luecke--correct {
+  background: rgba(45, 106, 79, .18);
+  border-bottom-color: var(--color-success);
+  color: #6FAB8B;
 }
 
 /* Code-Eingabe im Fragebogen */
@@ -2141,9 +2312,9 @@ main.mappe {
   flex-wrap: wrap;
   gap: 6px;
   align-items: flex-start;
-  margin-top: var(--space-sm);
+  margin-top: 8px;
   border-top: none;
-  padding-top: 0;
+  padding: 0;
 }
 
 .erarbeitung__aufgaben .tipp {
@@ -2151,32 +2322,30 @@ main.mappe {
   margin-bottom: 0;
 }
 
+/* E5: Tipp-Pille in Blaugrau-Kontur statt Vollflaeche.
+   Die frueheren Zustandsvarianten (--active, :hover, --used-Einfaerbung) lagen
+   unter dem Overlay-!important brach; sie bleiben bewusst weg, damit die
+   Migration auch im Zustandsverhalten regressionsfrei ist. */
 .erarbeitung__aufgaben .tipp__trigger {
   width: auto;
-  padding: 4px 12px;
-  font-size: 0.75rem;
+  padding: 3px 9px;
+  font-family: var(--akte-font-mono);
+  font-size: 10px;
+  letter-spacing: 1px;
   border-radius: 12px;
-  background-color: var(--fb-hint);
-  min-height: auto;
+  background: rgba(120, 160, 210, .15);
+  color: #94B5DB;
+  border: 1px solid rgba(120, 160, 210, .35);
+  min-height: 0;
   min-width: auto;
+  cursor: pointer;
 }
 
 .erarbeitung__aufgaben .tipp__trigger::before {
   content: none;
 }
 
-.erarbeitung__aufgaben .tipp__trigger:hover {
-  background-color: #607d8b;
-}
-
-.erarbeitung__aufgaben .tipp__trigger--active {
-  background-color: var(--fb-primary);
-}
-
 .erarbeitung__aufgaben .tipp__trigger--used {
-  background-color: var(--fb-grid);
-  color: var(--fb-hint);
-  border: 1px dashed var(--fb-hint);
   opacity: 1;
 }
 .erarbeitung__aufgaben .tipp__trigger--used::after {
@@ -2193,9 +2362,6 @@ main.mappe {
   opacity: 0.35;
   pointer-events: none;
   cursor: default;
-  background-color: #e0e0e0;
-  color: #999;
-  border: 1px solid #ccc;
 }
 
 .aufgabe__tipp-inhalt-area {
