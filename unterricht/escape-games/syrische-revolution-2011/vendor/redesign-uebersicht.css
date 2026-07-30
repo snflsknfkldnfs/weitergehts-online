@@ -1,297 +1,31 @@
 /* ============================================================================
-   redesign-uebersicht.css — "Operationskarte V2" (Mappen-ÜBERSICHT / index.html)
+   redesign-uebersicht.css — Rest des Uebersichts-Overlays
    ----------------------------------------------------------------------------
-   Lädt NACH theme-gpg.css. Überschreibt den Engine-Output der Startseite,
-   lässt das DOM unverändert. Der Engine-Renderer liefert pro Mappe nur
-   titel + beschreibung + link + Status-Modifier — das Overlay kommt damit aus.
-
-   <link rel="stylesheet" href="assets/css/themes/theme-gpg.css">
-   <link rel="stylesheet" href="assets/css/redesign-uebersicht.css">
-
-   Einzige DOM-Ergänzung (optional): ein <span class="rd-stempel"> je Karte
-   für den Status-Stempel. Siehe dom-contract-uebersicht.md.
+   E5-Absorption (Task 6): Der Dossier-Look liegt jetzt in
+   assets/css/themes/theme-gpg.css (Sektion 3/4, body.uebersicht-Scope). Hier
+   stehen nur noch die zwei hartcodierten Labels; sie werden in Task 8
+   datengetrieben und diese Datei danach mit vendor/ geloescht (Task 9).
    ============================================================================ */
 
-/* ============================================================================
-   redesign-uebersicht.css — "Operationskarte V2"
-   Overlay über theme-gpg.css für die MAPPEN-ÜBERSICHT (index.html).
-   Engine-DOM unverändert: nur .mappe-karte__titel + __beschreibung + __link
-   + Status-Modifier stehen zur Verfügung — das Redesign kommt ohne weitere
-   Datenfelder aus.
-   ============================================================================ */
-
-:root {
-  --op-desk: #3A2616;
-  --op-dossier: #FAF3E3;
-  --op-label: #F5E6C0;
-  --op-navy: #1B2A4A;
-  --op-gold: #C9A84C;
-  --op-ink: #2A1F0F;
-  --op-meta: #5A4A2A;
-  --op-pin-done: #2D6A4F;
-  --op-pin-open: #D4A017;
-  --op-pin-locked: #9B2226;
-  --op-font-display: 'IM Fell English', Georgia, serif;
-  --op-font-mono: 'Special Elite', 'Courier New', monospace;
-  --op-font-hand: 'Architects Daughter', cursive;
-}
-
-/* ── Schreibtisch-Hintergrund ───────────────────────────────────────────── */
-body {
-  background: var(--op-desk) !important;
-  background-image:
-    radial-gradient(ellipse at 30% 15%, rgba(255,220,150,.10), transparent 55%),
-    radial-gradient(ellipse at 70% 85%, rgba(0,0,0,.45), transparent 60%),
-    repeating-linear-gradient(90deg, rgba(255,255,255,.015) 0 4px, transparent 4px 11px) !important;
-  color: var(--op-label) !important;
-}
-
-/* ── Header → cremefarbenes Aktenlabel ──────────────────────────────────── */
-body > header {
-  background: transparent !important;
-  border-bottom: none !important;
-  text-align: left !important;
-  padding: 40px 40px 8px !important;
-  position: relative;
-}
-#game-titel {
-  display: inline-block;
-  box-sizing: border-box !important;
-  width: fit-content;
-  max-width: min(660px, 92%);
-  height: auto !important;
-  background: var(--op-label) !important;
-  color: var(--op-navy) !important;
-  font-family: var(--op-font-display) !important;
-  font-size: 34px !important;
-  line-height: 1.12 !important;
-  letter-spacing: -.4px;
-  padding: 16px 32px 18px !important;
-  margin: 0 !important;
-  border-radius: 2px;
-  box-shadow: 0 8px 18px rgba(0,0,0,.4);
-  transform: rotate(-1.2deg);
-  transform-origin: left center;
-  position: relative;
-  overflow: visible !important;
-  white-space: normal !important;
-  text-wrap: balance;
-}
 #game-titel::before {
   content: "LAGEBESPRECHUNG · AKTE 14";
   display: block;
-  font-family: var(--op-font-mono);
+  font-family: var(--akte-font-mono);
   font-size: 10px;
   letter-spacing: 3px;
-  color: var(--op-pin-locked);
+  color: var(--color-error);
   text-transform: uppercase;
   margin-bottom: 6px;
 }
-/* Klebeband über dem Label */
-body > header::after {
-  content: "";
-  position: absolute;
-  top: 28px; left: 210px;
-  width: 78px; height: 18px;
-  background: rgba(255,243,200,.5);
-  transform: rotate(-4deg);
-  box-shadow: 0 2px 4px rgba(0,0,0,.25);
-}
-.header__meta {
-  margin-top: 14px !important;
-  padding-left: 8px;
-  font-family: var(--op-font-mono) !important;
-  font-size: 12px !important;
-  letter-spacing: 1.5px;
-  color: #d6c39a !important;
-  text-align: left !important;
-}
 
-/* ── Narrativ → Briefing-Notiz auf dem Tisch ────────────────────────────── */
-main {
-  max-width: 1120px !important;
-  padding: 8px 40px 56px !important;
-}
-.narrativ {
-  background: transparent !important;
-  border: none !important;
-  border-left: none !important;
-  border-radius: 0 !important;
-  padding: 0 8px 20px !important;
-  margin: 0 0 20px !important;
-  font-style: normal !important;
-}
-.narrativ::before { display: none !important; }
-#narrativ-text {
-  font-family: var(--op-font-mono) !important;
-  font-size: 14px !important;
-  line-height: 1.6 !important;
-  color: #f0dfb4 !important;
-  max-width: 720px;
-  margin: 0 !important;
-}
-
-/* ── Mappen-Grid → Pinnwand ─────────────────────────────────────────────── */
-.mappen-uebersicht {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
-  gap: 56px 72px !important;
-  margin-top: 8px !important;
-  padding: 12px 20px 0 !important;
-}
-@media (max-width: 720px) {
-  .mappen-uebersicht { grid-template-columns: 1fr !important; gap: 44px !important; }
-}
-/* Treppen-Versatz für den Ablauf-Lesefluss */
-.mappe-karte:nth-child(2) { margin-top: 22px; }
-.mappe-karte:nth-child(3) { margin-top: 12px; }
-.mappe-karte:nth-child(4) { margin-top: 34px; }
-@media (max-width: 720px) {
-  .mappe-karte { margin-top: 0 !important; }
-}
-
-/* ── Dossier-Karte ──────────────────────────────────────────────────────── */
-.mappe-karte {
-  background: var(--op-dossier) !important;
-  background-image: repeating-linear-gradient(0deg, transparent 0 22px, rgba(122,90,40,.05) 22px 23px) !important;
-  border: 1px solid #d8c89c !important;
-  border-radius: 2px !important;
-  padding: 30px 32px 26px 46px !important;
-  box-shadow:
-    0 1px 0 rgba(0,0,0,.04) inset,
-    0 22px 30px rgba(20,12,4,.35),
-    0 4px 6px rgba(20,12,4,.18) !important;
-  position: relative !important;
-  overflow: visible !important;
-  transition: transform .15s !important;
-}
-.mappe-karte:nth-child(odd)  { transform: rotate(-1.4deg); }
-.mappe-karte:nth-child(even) { transform: rotate(1.1deg); }
-.mappe-karte:hover { transform: rotate(0deg) translateY(-3px) !important; box-shadow: 0 28px 40px rgba(20,12,4,.42), 0 6px 8px rgba(20,12,4,.22) !important; }
-
-/* Lochung am linken Rand */
-.mappe-karte::before {
-  content: "";
-  position: absolute;
-  left: 16px; top: 34px;
-  width: 10px; height: 10px;
-  border-radius: 50%;
-  background: #1a140a;
-  box-shadow:
-    0 0 0 0 transparent,
-    0 34px 0 #1a140a,
-    0 68px 0 #1a140a;
-}
-
-/* Messing-Pin oben mittig — Farbe nach Status */
-.mappe-karte::after {
-  content: "";
-  position: absolute;
-  top: -12px; left: 50%; margin-left: -13px;
-  width: 26px; height: 26px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #e6cf88 0%, var(--op-pin-open) 70%);
-  box-shadow: 0 4px 5px rgba(0,0,0,.45);
-  border: 1px solid rgba(0,0,0,.3);
-}
-.mappe-karte--completed::after { background: radial-gradient(circle at 35% 35%, #7bbf97 0%, var(--op-pin-done) 70%); }
-.mappe-karte--current::after   { background: radial-gradient(circle at 35% 35%, #e6cf88 0%, var(--op-pin-open) 70%); }
-.mappe-karte--locked::after    { background: radial-gradient(circle at 35% 35%, #c96b6e 0%, var(--op-pin-locked) 70%); }
-
-/* Dossier-Meta-Zeile (aus Pseudoelement, engine-unabhängig) */
-.mappe-karte__titel {
-  font-family: var(--op-font-display) !important;
-  font-size: 27px !important;
-  line-height: 1.12 !important;
-  letter-spacing: -.3px;
-  color: var(--op-ink) !important;
-  margin: 0 0 12px !important;
-}
 .mappe-karte__titel::before {
   content: "DOSSIER · GPG / R7";
   display: block;
-  font-family: var(--op-font-mono);
+  font-family: var(--akte-font-mono);
   font-size: 11px;
   letter-spacing: 1.5px;
-  color: var(--op-meta);
+  color: var(--akte-dossier-meta);
   text-transform: uppercase;
   margin-bottom: 8px;
   font-weight: 400;
-}
-.mappe-karte__beschreibung {
-  font-family: var(--op-font-mono) !important;
-  font-size: 13.5px !important;
-  line-height: 1.55 !important;
-  color: #3a2f1a !important;
-}
-
-/* Aktions-Fußzeile / Link → Stempel-Button */
-.mappe-karte__link {
-  display: inline-block !important;
-  margin-top: 20px !important;
-  padding: 9px 20px !important;
-  background: var(--op-navy) !important;
-  color: var(--op-dossier) !important;
-  font-family: var(--op-font-mono) !important;
-  font-size: 13px !important;
-  letter-spacing: 1px;
-  border-radius: 2px !important;
-  min-height: 0 !important;
-  border-top: 1px dashed transparent;
-}
-.mappe-karte--completed .mappe-karte__link {
-  background: transparent !important;
-  color: var(--op-pin-done) !important;
-  border: 1.5px solid var(--op-pin-done) !important;
-}
-
-/* Status-Stempel (rotiert, oben rechts) */
-.mappe-karte--completed,
-.mappe-karte--current,
-.mappe-karte--locked { position: relative; }
-.mappe-karte--completed .mappe-karte__titel,
-.mappe-karte--current .mappe-karte__titel,
-.mappe-karte--locked .mappe-karte__titel { padding-right: 90px; }
-
-.mappe-karte--completed > .mappe-karte__beschreibung::after,
-.mappe-karte--current > .mappe-karte__beschreibung::after,
-.mappe-karte--locked > .mappe-karte__beschreibung::after { content: none; }
-
-/* Stempel via zusätzlichem Overlay-Element (siehe DOM-Vertrag: .rd-stempel).
-   Fallback: Wenn der Generator keinen Stempel einfügt, greift der Text-Stempel
-   aus dem Modifier unten. */
-.rd-stempel {
-  position: absolute;
-  top: 20px; right: 22px;
-  font-family: var(--op-font-mono);
-  font-size: 13px; font-weight: 700; letter-spacing: 2px;
-  border: 3px solid currentColor;
-  padding: 4px 10px; border-radius: 2px;
-  text-transform: uppercase;
-  pointer-events: none;
-  opacity: .8;
-}
-.mappe-karte--completed .rd-stempel { color: var(--op-pin-done); transform: rotate(-12deg); }
-.mappe-karte--current   .rd-stempel { color: var(--op-pin-locked); transform: rotate(-9deg); }
-.mappe-karte--locked    .rd-stempel { color: var(--op-meta); transform: rotate(6deg); opacity: .55; }
-
-/* Locked-Dossier gedämpft */
-.mappe-karte--locked {
-  filter: grayscale(.5) brightness(.94);
-  opacity: .72 !important;
-}
-.mappe-karte--locked::after { opacity: 1; }
-
-/* ── Footer ─────────────────────────────────────────────────────────────── */
-body > footer {
-  background: var(--op-navy) !important;
-  border-top: 4px solid var(--op-gold) !important;
-  text-align: right !important;
-  padding: 14px 40px !important;
-}
-body > footer a {
-  font-family: var(--op-font-mono) !important;
-  font-size: 12px !important;
-  letter-spacing: 1.5px;
-  color: var(--op-gold) !important;
 }

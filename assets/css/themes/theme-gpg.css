@@ -97,12 +97,75 @@ body {
   font-size: var(--akte-fs-body);
 }
 
-/* E5: Die Spiel-Uebersicht behaelt die Site-Basistypografie — ihr Dossier-Look
-   setzt Schriften pro Komponente; den Akten-Fliesstext erben nur die Mappen.
-   (Scope-Klasse fuer den gesamten Uebersichts-Block, s. Sektion 4.) */
+/* E5: Die Spiel-Uebersicht ist der Schreibtisch, auf dem die Dossiers liegen.
+   Sie behaelt die Site-Basistypografie — ihr Look setzt Schriften pro Komponente;
+   den Akten-Fliesstext erben nur die Mappen. Die Scope-Klasse `uebersicht` am
+   <body> trennt beide Welten, seit der Akten-Look in der geteilten Schicht liegt
+   (vorher lag die Uebersicht in einer eigenen Datei, die nur index.html lud). */
 body.uebersicht {
   font-family: var(--font-body);
   font-size: 1rem;
+  background: var(--akte-desk);
+  background-image:
+    radial-gradient(ellipse at 30% 15%, rgba(255, 220, 150, .10), transparent 55%),
+    radial-gradient(ellipse at 70% 85%, rgba(0, 0, 0, .45), transparent 60%),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, .015) 0 4px, transparent 4px 11px);
+  color: var(--akte-label);
+}
+
+/* Header der Uebersicht: kein Navy-Balken, sondern freier Tisch */
+body.uebersicht > header {
+  background: transparent;
+  border-bottom: none;
+  text-align: left;
+  padding: 40px 40px 8px;
+  position: relative;
+}
+
+/* Klebeband ueber dem Aktenlabel */
+body.uebersicht > header::after {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: 210px;
+  width: 78px;
+  height: 18px;
+  background: rgba(255, 243, 200, .5);
+  transform: rotate(-4deg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .25);
+}
+
+body.uebersicht .header__meta {
+  margin-top: 14px;
+  padding-left: 8px;
+  font-family: var(--akte-font-mono);
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  color: #d6c39a;
+  text-align: left;
+}
+
+body.uebersicht main {
+  max-width: 1120px;
+  padding: 8px 40px 56px;
+}
+
+/* Fussleiste. font-size/opacity standen frueher als Inline-Style im HTML und
+   wurden nur vom !important des Overlays ueberstimmt — jetzt stehen sie hier. */
+body.uebersicht > footer {
+  background: var(--color-primary);
+  border-top: 4px solid var(--color-secondary);
+  text-align: right;
+  padding: 14px 40px;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+body.uebersicht > footer a {
+  font-family: var(--akte-font-mono);
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  color: var(--color-secondary);
 }
 
 /* E5: Akten-Header statt simpler Navy-Bar */
@@ -144,83 +207,192 @@ footer a:hover {
    4. Mappe-Karten (Uebersicht auf index.html)
    -------------------------------------------------------------------------- */
 
-.mappen-uebersicht {
+/* E5: Die Uebersicht ist eine Pinnwand — jede Mappe ein angehefteten Dossier.
+   Das Raster braucht den body.uebersicht-Scope, weil die Spaltenregeln der
+   Responsive-Sektion (14) sonst spaeter in der Kaskade gewinnen wuerden. */
+body.uebersicht .mappen-uebersicht {
   display: grid;
-  gap: var(--space-lg);
-  margin-top: var(--space-xl);
+  grid-template-columns: 1fr 1fr;
+  gap: 56px 72px;
+  margin-top: 8px;
+  padding: 12px 20px 0;
+}
+
+@media (max-width: 720px) {
+  body.uebersicht .mappen-uebersicht {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+}
+
+/* Spieltitel als schraeg aufgeklebtes Aktenlabel */
+#game-titel {
+  display: inline-block;
+  box-sizing: border-box;
+  width: fit-content;
+  max-width: min(660px, 92%);
+  height: auto;
+  background: var(--akte-label);
+  color: var(--color-primary);
+  font-family: var(--akte-font-display);
+  font-size: 34px;
+  line-height: 1.12;
+  letter-spacing: -.4px;
+  padding: 16px 32px 18px;
+  margin: 0;
+  border-radius: 2px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, .4);
+  transform: rotate(-1.2deg);
+  transform-origin: left center;
+  position: relative;
+  overflow: visible;
+  white-space: normal;
+  text-wrap: balance;
+}
+
+/* Treppen-Versatz fuer den Ablauf-Lesefluss */
+.mappe-karte:nth-child(2) { margin-top: 22px; }
+.mappe-karte:nth-child(3) { margin-top: 12px; }
+.mappe-karte:nth-child(4) { margin-top: 34px; }
+
+@media (max-width: 720px) {
+  body.uebersicht .mappe-karte { margin-top: 0; }
 }
 
 .mappe-karte {
-  background-color: var(--color-surface);
-  border: 2px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: var(--space-lg);
-  box-shadow: var(--shadow-card);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  background: var(--akte-dossier);
+  background-image: repeating-linear-gradient(0deg, transparent 0 22px, rgba(122, 90, 40, .05) 22px 23px);
+  border: 1px solid #d8c89c;
+  border-radius: 2px;
+  padding: 30px 32px 26px 46px;
+  box-shadow:
+    0 1px 0 rgba(0, 0, 0, .04) inset,
+    0 22px 30px rgba(20, 12, 4, .35),
+    0 4px 6px rgba(20, 12, 4, .18);
   position: relative;
+  overflow: visible;
+  transition: transform .15s;
 }
+
+.mappe-karte:nth-child(odd)  { transform: rotate(-1.4deg); }
+.mappe-karte:nth-child(even) { transform: rotate(1.1deg); }
 
 .mappe-karte:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-elevated);
+  transform: rotate(0deg) translateY(-3px);
+  box-shadow: 0 28px 40px rgba(20, 12, 4, .42), 0 6px 8px rgba(20, 12, 4, .22);
 }
 
-.mappe-karte--locked {
-  opacity: 0.6;
-  pointer-events: none;
-}
-
-.mappe-karte--locked::after {
-  content: "🔒";
+/* Lochung am linken Rand */
+.mappe-karte::before {
+  content: "";
   position: absolute;
-  top: var(--space-md);
-  right: var(--space-md);
-  font-size: var(--text-2xl);
+  left: 16px;
+  top: 34px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #1a140a;
+  box-shadow:
+    0 0 0 0 transparent,
+    0 34px 0 #1a140a,
+    0 68px 0 #1a140a;
 }
 
-.mappe-karte--completed {
-  border-color: var(--color-success);
-}
-
-.mappe-karte--completed::after {
-  content: "✅";
+/* Messing-Pin oben mittig — Farbe nach Status */
+.mappe-karte::after {
+  content: "";
   position: absolute;
-  top: var(--space-md);
-  right: var(--space-md);
-  font-size: var(--text-2xl);
+  top: -12px;
+  left: 50%;
+  margin-left: -13px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #e6cf88 0%, var(--akte-pin-open) 70%);
+  box-shadow: 0 4px 5px rgba(0, 0, 0, .45);
+  border: 1px solid rgba(0, 0, 0, .3);
 }
 
-.mappe-karte--current {
-  border-color: var(--color-secondary);
-  border-width: 3px;
-}
+.mappe-karte--completed::after { background: radial-gradient(circle at 35% 35%, #7bbf97 0%, var(--color-success) 70%); }
+.mappe-karte--current::after   { background: radial-gradient(circle at 35% 35%, #e6cf88 0%, var(--akte-pin-open) 70%); }
+.mappe-karte--locked::after    { background: radial-gradient(circle at 35% 35%, #c96b6e 0%, var(--color-error) 70%); }
 
 .mappe-karte__titel {
-  font-family: var(--font-heading);
-  font-size: var(--text-xl);
-  color: var(--color-primary);
-  margin-bottom: var(--space-sm);
+  font-family: var(--akte-font-display);
+  font-size: 27px;
+  line-height: 1.12;
+  letter-spacing: -.3px;
+  color: var(--akte-dossier-ink);
+  margin: 0 0 12px;
 }
 
 .mappe-karte__beschreibung {
-  color: var(--color-muted);
-  font-size: var(--text-sm);
+  font-family: var(--akte-font-mono);
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #3a2f1a;
 }
 
+/* Aktions-Fusszeile / Link als Stempel-Button */
 .mappe-karte__link {
   display: inline-block;
-  margin-top: var(--space-md);
-  padding: var(--space-sm) var(--space-lg);
-  background-color: var(--color-primary);
-  color: #fff;
-  border-radius: var(--radius-sm);
+  margin-top: 20px;
+  padding: 9px 20px;
+  background: var(--color-primary);
+  color: var(--akte-dossier);
+  font-family: var(--akte-font-mono);
+  font-size: 13px;
   font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 2px;
+  min-height: 0;
+  border-top: 1px dashed transparent;
   transition: background-color var(--transition-fast);
 }
 
-.mappe-karte__link:hover {
-  background-color: var(--color-primary-light);
+.mappe-karte--completed .mappe-karte__link {
+  background: transparent;
+  color: var(--color-success);
+  border: 1.5px solid var(--color-success);
 }
+
+/* Status-Stempel (rotiert, oben rechts) — Text kommt aus der Engine */
+.mappe-karte--completed .mappe-karte__titel,
+.mappe-karte--current .mappe-karte__titel,
+.mappe-karte--locked .mappe-karte__titel { padding-right: 90px; }
+
+.mappe-karte--completed > .mappe-karte__beschreibung::after,
+.mappe-karte--current > .mappe-karte__beschreibung::after,
+.mappe-karte--locked > .mappe-karte__beschreibung::after { content: none; }
+
+.rd-stempel {
+  position: absolute;
+  top: 20px;
+  right: 22px;
+  font-family: var(--akte-font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  border: 3px solid currentColor;
+  padding: 4px 10px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  pointer-events: none;
+  opacity: .8;
+}
+
+.mappe-karte--completed .rd-stempel { color: var(--color-success); transform: rotate(-12deg); }
+.mappe-karte--current   .rd-stempel { color: var(--color-error); transform: rotate(-9deg); }
+.mappe-karte--locked    .rd-stempel { color: var(--akte-dossier-meta); transform: rotate(6deg); opacity: .55; }
+
+/* Gesperrtes Dossier gedaempft */
+.mappe-karte--locked {
+  filter: grayscale(.5) brightness(.94);
+  opacity: .72;
+  pointer-events: none;
+}
+
+.mappe-karte--locked::after { opacity: 1; }
 
 /* --------------------------------------------------------------------------
    5. Mappe-Seite (mappe-X.html)
@@ -1007,22 +1179,21 @@ footer a:hover {
    11. Narrativ-Bereich
    -------------------------------------------------------------------------- */
 
+/* E5: Briefing-Notiz auf dem Schreibtisch — ohne Kachel, ohne Schriftrollen-Icon */
 .narrativ {
-  background-color: var(--color-surface);
-  border-left: 4px solid var(--color-secondary);
-  padding: var(--space-lg);
-  margin-bottom: var(--space-xl);
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
-  font-style: italic;
+  padding: 0 8px 20px;
+  margin: 0 0 20px;
+  font-style: normal;
   line-height: 1.8;
 }
 
-.narrativ::before {
-  content: "📜";
-  display: block;
-  font-size: var(--text-2xl);
-  margin-bottom: var(--space-sm);
-  font-style: normal;
+#narrativ-text {
+  font-family: var(--akte-font-mono);
+  font-size: 14px;
+  line-height: 1.6;
+  color: #f0dfb4;
+  max-width: 720px;
+  margin: 0;
 }
 
 /* --------------------------------------------------------------------------
