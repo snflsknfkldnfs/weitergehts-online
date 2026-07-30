@@ -45,22 +45,8 @@
 [data-fontset="humanist"] { --rd-font-body: 'Spectral', Georgia, serif; }
 [data-fontset="sans"]     { --rd-font-body: system-ui, -apple-system, "Segoe UI", sans-serif; }
 
-body {
-  background: var(--rd-bg) !important;
-  color: var(--rd-ink) !important;
-  font-family: var(--rd-font-body) !important;
-  font-size: var(--rd-fs-body) !important;
-}
-
-/* ── 1. Akten-Header (statt simpler navy-bar) ───────────────────────────── */
-body > header {
-  background: var(--rd-navy) !important;
-  color: #fff !important;
-  border-bottom: 4px solid var(--rd-gold) !important;
-  padding: 22px 32px 18px !important;
-  text-align: left !important;
-  position: relative;
-}
+/* ── 1. Akten-Header — absorbiert (theme-gpg Sektion 3/5, E5 Task 3).
+   Rest: nur noch das hartcodierte Akten-Label; es wird in Task 8 datengetrieben. */
 body > header::before {
   content: "AKTE 04 · PULVERFASS EUROPA";
   display: block;
@@ -70,31 +56,6 @@ body > header::before {
   color: var(--rd-gold-light);
   margin-bottom: 8px;
 }
-.mappe__titel {
-  background: transparent !important;
-  color: #fff !important;
-  font-family: var(--rd-font-display) !important;
-  font-size: 32px !important;
-  text-align: left !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
-  letter-spacing: -.3px;
-  line-height: 1.15 !important;
-  margin: 0 0 10px !important;
-}
-.header__meta { text-align: left !important; }
-.mappe__beschreibung {
-  font-family: var(--rd-font-hand) !important;
-  font-style: normal !important;
-  font-size: 18px !important;
-  color: var(--rd-gold-light) !important;
-  border-left: 2px solid var(--rd-gold);
-  padding-left: 12px !important;
-  display: inline-block;
-  max-width: 640px;
-  text-align: left !important;
-}
-
 /* ── 2. Sticky Leitfragen-Strip — sitzt unter dem Header ──────────────── */
 .rd-leitfrage-strip {
   position: sticky; top: 0; z-index: 30;
@@ -136,63 +97,7 @@ body > header::before {
   content: "✓"; transform: rotate(-8deg); font-weight: 700; font-size: 16px;
 }
 
-/* ── 4. Main: 2-Spalten ab 1024px (Material links, Aufgaben sticky rechts) */
-main.mappe {
-  max-width: 760px !important;
-  padding: 28px 32px 60px !important;
-}
-.mappe__erarbeitung {
-  display: block !important;
-}
-@media (min-width: 1024px) {
-  main.mappe { max-width: 1320px !important; padding: 28px 40px 60px !important; }
-  .mappe__erarbeitung {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) 380px !important;
-    gap: 36px !important;
-    align-items: start !important;
-  }
-  .erarbeitung__materialien { max-width: none !important; margin: 0 !important; min-width: 0; }
-  .erarbeitung__aufgaben {
-    position: sticky !important;
-    top: 88px !important;
-    max-height: calc(100vh - 110px) !important;
-    overflow-y: auto !important;
-    margin-top: 0 !important;
-  }
-}
-
-/* ── 5. Einstieg ────────────────────────────────────────────────────────── */
-.mappe__einstieg {
-  background: transparent !important;
-  border: none !important;
-  padding: 28px 0 !important;
-  text-align: center;
-}
-.einstieg__narrativ {
-  font-family: var(--rd-font-body) !important;
-  font-style: italic;
-  font-size: calc(var(--rd-fs-body) + 2px) !important;
-  color: var(--rd-ink) !important;
-  line-height: 1.65 !important;
-  margin-bottom: 14px;
-}
-.einstieg__problemstellung {
-  display: inline-block;
-  padding: 14px 28px !important;
-  border: 2px solid var(--rd-navy);
-  background: rgba(27,42,74,.04);
-  font-family: var(--rd-font-hand) !important;
-  font-size: 22px !important;
-  color: var(--rd-navy) !important;
-  font-weight: 600 !important;
-  margin-top: 18px !important;
-}
-[data-bg="dark"] .einstieg__problemstellung {
-  border-color: var(--rd-gold);
-  background: rgba(201,168,76,.08);
-  color: #fff !important;
-}
+/* ── 4./5. Grid + Einstieg — absorbiert (theme-gpg Sektion 5/15/17, E5 Task 3) */
 
 /* ── 6. Material-Blöcke ─────────────────────────────────────────────────── */
 .material {
