@@ -2775,3 +2775,31 @@ body.quellen-hidden .material__inhalt cite {
   color: var(--color-text-muted, #666);
   margin-left: 0.4em;
 }
+
+/* ============================================================
+   21. E5: Akten-Token-Block (2026-07)
+   Vereinigt die vendor-Namensraeume --rd-* (Mappen, Dark-Zweig)
+   und --op-* (Uebersicht). Rollennamen analog tokens.css,
+   Praefix --akte- gegen Kollision mit der Site-Kette.
+   Wertgleiche Rollen nutzen die --color-*-Tokens aus Sektion 1.
+   ============================================================ */
+:root {
+  --akte-bg: #1F1812;
+  --akte-paper: #2A211A;
+  --akte-cream: #2A211A;
+  --akte-ink: #E8E0D0;
+  --akte-muted: #B8AC95;
+  --akte-border: #4a3e2c;
+  --akte-gold-light: #E0C57E;
+  --akte-font-body: 'Spectral', Georgia, serif;
+  --akte-font-display: 'IM Fell English', Georgia, serif;
+  --akte-font-mono: 'Special Elite', 'Courier New', monospace;
+  --akte-fs-body: 17px;
+  /* Uebersicht (Schreibtisch/Dossier) */
+  --akte-desk: #3A2616;
+  --akte-dossier: #FAF3E3;
+  --akte-dossier-ink: #2A1F0F;
+  --akte-dossier-meta: #5A4A2A;
+  --akte-label: #F5E6C0;
+  --akte-pin-open: #D4A017;
+}
