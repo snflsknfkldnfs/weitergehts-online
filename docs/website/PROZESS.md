@@ -41,5 +41,16 @@ Kleinkram (Hotfix, Typo, Content) läuft ohne Spec/Plan direkt über die RUNBUCH
   `class="uebersicht"` am `<body>` + `EscapeEngine.initUebersicht()` statt Inline-Script,
   und `data.json` kann optional `meta.akten_label` / `meta.dossier_label` /
   `mappen[i].akten_label` mitliefern (ohne die Felder greifen Fallbacks).
+  **Übergeben 2026-08-01** in die Generator-Welt (dort Commit `46bc57d`): Befund + Soll-Tabelle
+  in `~/escape-game-generator/docs/uebergabe/UEBERGABE_PORTABILITAET_HOSTING.md`, getrackt als
+  Issue `I-10` (Export-Blocker: die dortige Pfadregel ist seit E5 *invertiert* und würde
+  korrekte Pfade zerstören) in `docs/projekt/STATUS.md`. Hier nichts zu tun.
+- **Portabilität der Games** (Generator-Welt, Paul entscheidet — `D-OPEN-7`): gemessen am
+  Live-Stand nach E5 sind Games *nicht* self-contained (Ordner allein = 404-Ruine, `file://`
+  scheitert, 29 nackte CSS-Element-Selektoren beanspruchen die ganze Seite). Keine Domain-,
+  Backend- oder Token-Kopplung. Vorschlag: portabel als Default, diese Site biegt per
+  `data-runtime-base` auf die geteilte Runtime um; Kernentscheid ist die CSS-Isolation
+  (iframe-Ganzseitenvertrag vs. Wurzelklassen-Scoping). Beitrag dieser Schicht wäre klein
+  (ein Body-Attribut) und erst nach dem Entscheid fällig. Vorlage: dieselbe Übergabe §3–§5.
 - **Domain-Sicherung** (optional, z. B. paulcebulla.de registrieren + Redirect): Pauls manueller
   Schritt außerhalb des Repos, kein Blocker (s. `ARCHITEKTUR.md` → Separierbarkeits-Regeln).
