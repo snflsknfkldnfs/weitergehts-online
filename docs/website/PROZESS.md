@@ -54,3 +54,27 @@ Kleinkram (Hotfix, Typo, Content) läuft ohne Spec/Plan direkt über die RUNBUCH
   (ein Body-Attribut) und erst nach dem Entscheid fällig. Vorlage: dieselbe Übergabe §3–§5.
 - **Domain-Sicherung** (optional, z. B. paulcebulla.de registrieren + Redirect): Pauls manueller
   Schritt außerhalb des Repos, kein Blocker (s. `ARCHITEKTUR.md` → Separierbarkeits-Regeln).
+
+## Track-Pause (Paul-Entscheid 2026-08-01)
+
+Die Agenda ist mit E5 abgearbeitet; E4 bleibt blockiert (`zk-atlas` war am 30.07. aktiv, aber
+Plan 5 Render/Publish ist nicht begonnen — `plan1`–`plan4` liegen als Diffs vor, kein
+`out/deploy/public/`). **Paul hat den Track bewusst pausiert**, statt Ersatzarbeit zu beginnen.
+Wieder-Einstiegspunkte, damit die nächste Session nicht neu sondieren muss:
+
+- **Alt-Game-Bestand** (in dieser Session gefunden, sonst nirgends notiert): unter
+  `unterricht/escape-games/` liegen vier `_archiv-`-Games, davon zwei **vollständige** —
+  „Deutscher Nationalismus und Kolonialismus" (4 Mappen · 21 Aufgaben · 23 Materialien) und
+  „Der Erste Weltkrieg — Ursachen und Ausbruch" (4 Mappen · 26 Aufgaben · 25 Materialien);
+  dazu das Fragment „WW1 Verlauf Marne–Ende" (1 Mappe) und eine Run-Variante.
+  **Keines hat ein `vendor/`-Overlay** — sie sind genau die nackte Bauform, die E5 zum Normalfall
+  gemacht hat. Kaputt sind nur die Asset-Pfade (`../../assets/css/themes/…` = Prä-E3/E5-Stand);
+  die Reparatur ist dasselbe Muster wie bei Syrien (Pfade + `class="uebersicht"` +
+  `initUebersicht()` + `make bump` + Smoke). **Offene Vorfrage an Paul: warum wurden sie bei der
+  E3-Triage archiviert?** Nur wegen der Pfade → Website-Arbeit von ~1 Nachmittag. Wegen
+  didaktischer Qualität → Generator-Welt (dortiger Track „Wave-3 Daten-Regen", 117 Quality-Gaps).
+- **Nebenbefund:** E5 ist bisher an **genau einem** Game verifiziert. Ein zweites Game auf der
+  geteilten Schicht wäre der eigentliche Beleg, dass sie generisch trägt.
+- Weitere erwogene, nicht gewählte Richtungen: E4-Vorarbeit ohne zk-atlas (Mount-Punkt,
+  Deploy-Scope, Smoke-Policy, Design-Entscheid Atlas-eigen vs. Site-Tokens) · Profil/Inhalt
+  (`/profil/` hat Porträt ohne Prosa, kein Blog).
