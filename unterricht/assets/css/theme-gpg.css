@@ -87,18 +87,116 @@ code,
    3. Seiten-Layout (GPG-Archiv-Stil)
    -------------------------------------------------------------------------- */
 
+/* E5: Akten-Grund. Der frueher per Overlay gesetzte Dark-Look ist jetzt Default;
+   das Pergament-Verlaufsbild entfaellt (das Overlay hat es per background-Shorthand
+   ohnehin neutralisiert). */
 body {
-  background-color: var(--color-background);
-  background-image:
-    radial-gradient(ellipse at 20% 50%, rgba(201, 168, 76, 0.03) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(27, 42, 74, 0.02) 0%, transparent 50%);
+  background: var(--akte-bg);
+  color: var(--akte-ink);
+  font-family: var(--akte-font-body);
+  font-size: var(--akte-fs-body);
 }
 
+/* E5: Die Spiel-Uebersicht ist der Schreibtisch, auf dem die Dossiers liegen.
+   Sie behaelt die Site-Basistypografie — ihr Look setzt Schriften pro Komponente;
+   den Akten-Fliesstext erben nur die Mappen. Die Scope-Klasse `uebersicht` am
+   <body> trennt beide Welten, seit der Akten-Look in der geteilten Schicht liegt
+   (vorher lag die Uebersicht in einer eigenen Datei, die nur index.html lud). */
+body.uebersicht {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  background: var(--akte-desk);
+  background-image:
+    radial-gradient(ellipse at 30% 15%, rgba(255, 220, 150, .10), transparent 55%),
+    radial-gradient(ellipse at 70% 85%, rgba(0, 0, 0, .45), transparent 60%),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, .015) 0 4px, transparent 4px 11px);
+  color: var(--akte-label);
+}
+
+/* Header der Uebersicht: kein Navy-Balken, sondern freier Tisch */
+body.uebersicht > header {
+  background: transparent;
+  border-bottom: none;
+  text-align: left;
+  padding: 40px 40px 8px;
+  position: relative;
+}
+
+/* Klebeband ueber dem Aktenlabel */
+body.uebersicht > header::after {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: 210px;
+  width: 78px;
+  height: 18px;
+  background: rgba(255, 243, 200, .5);
+  transform: rotate(-4deg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .25);
+}
+
+body.uebersicht .header__meta {
+  margin-top: 14px;
+  padding-left: 8px;
+  font-family: var(--akte-font-mono);
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  color: #d6c39a;
+  text-align: left;
+}
+
+body.uebersicht main {
+  max-width: 1120px;
+  padding: 8px 40px 56px;
+}
+
+/* Fussleiste. font-size/opacity standen frueher als Inline-Style im HTML und
+   wurden nur vom !important des Overlays ueberstimmt — jetzt stehen sie hier. */
+body.uebersicht > footer {
+  background: var(--color-primary);
+  border-top: 4px solid var(--color-secondary);
+  text-align: right;
+  padding: 14px 40px;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+body.uebersicht > footer a {
+  font-family: var(--akte-font-mono);
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  color: var(--color-secondary);
+}
+
+/* E5: Akten-Label. Text kommt aus data.json (meta.akten_label bzw.
+   mappen[i].akten_label) und wird von der Engine ins DOM gerendert — das CSS
+   zeigt nur noch an. Frueher standen die Texte als CSS-content im Game-Overlay
+   und waren damit pro Spiel unveraenderlich. */
+body > header .akten-label {
+  display: block;
+  font-family: var(--akte-font-mono);
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--akte-gold-light);
+  margin-bottom: 8px;
+}
+
+/* Auf der Uebersicht sitzt das Label im aufgeklebten Titel-Schild (rot, kleiner) */
+body.uebersicht header .akten-label {
+  font-size: 10px;
+  color: var(--color-error);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+/* E5: Akten-Header statt simpler Navy-Bar */
 header {
-  background-color: var(--color-primary);
+  background: var(--color-primary);
   color: #fff;
-  text-align: center;
-  border-bottom: 3px solid var(--color-secondary);
+  text-align: left;
+  border-bottom: 4px solid var(--color-secondary);
+  padding: 22px 32px 18px;
+  position: relative;
 }
 
 header h1 {
@@ -109,6 +207,7 @@ header .header__meta {
   font-size: var(--text-sm);
   color: var(--color-secondary-light);
   margin-top: var(--space-xs);
+  text-align: left;
 }
 
 footer {
@@ -129,83 +228,204 @@ footer a:hover {
    4. Mappe-Karten (Uebersicht auf index.html)
    -------------------------------------------------------------------------- */
 
-.mappen-uebersicht {
+/* E5: Die Uebersicht ist eine Pinnwand — jede Mappe ein angehefteten Dossier.
+   Das Raster braucht den body.uebersicht-Scope, weil die Spaltenregeln der
+   Responsive-Sektion (14) sonst spaeter in der Kaskade gewinnen wuerden. */
+body.uebersicht .mappen-uebersicht {
   display: grid;
-  gap: var(--space-lg);
-  margin-top: var(--space-xl);
+  grid-template-columns: 1fr 1fr;
+  gap: 56px 72px;
+  margin-top: 8px;
+  padding: 12px 20px 0;
+}
+
+@media (max-width: 720px) {
+  body.uebersicht .mappen-uebersicht {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+}
+
+/* Spieltitel als schraeg aufgeklebtes Aktenlabel */
+#game-titel {
+  display: inline-block;
+  box-sizing: border-box;
+  width: fit-content;
+  max-width: min(660px, 92%);
+  height: auto;
+  background: var(--akte-label);
+  color: var(--color-primary);
+  font-family: var(--akte-font-display);
+  font-size: 34px;
+  line-height: 1.12;
+  letter-spacing: -.4px;
+  padding: 16px 32px 18px;
+  margin: 0;
+  border-radius: 2px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, .4);
+  transform: rotate(-1.2deg);
+  transform-origin: left center;
+  position: relative;
+  overflow: visible;
+  white-space: normal;
+  text-wrap: balance;
+}
+
+/* Treppen-Versatz fuer den Ablauf-Lesefluss */
+.mappe-karte:nth-child(2) { margin-top: 22px; }
+.mappe-karte:nth-child(3) { margin-top: 12px; }
+.mappe-karte:nth-child(4) { margin-top: 34px; }
+
+@media (max-width: 720px) {
+  body.uebersicht .mappe-karte { margin-top: 0; }
 }
 
 .mappe-karte {
-  background-color: var(--color-surface);
-  border: 2px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: var(--space-lg);
-  box-shadow: var(--shadow-card);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  background: var(--akte-dossier);
+  background-image: repeating-linear-gradient(0deg, transparent 0 22px, rgba(122, 90, 40, .05) 22px 23px);
+  border: 1px solid #d8c89c;
+  border-radius: 2px;
+  padding: 30px 32px 26px 46px;
+  box-shadow:
+    0 1px 0 rgba(0, 0, 0, .04) inset,
+    0 22px 30px rgba(20, 12, 4, .35),
+    0 4px 6px rgba(20, 12, 4, .18);
   position: relative;
+  overflow: visible;
+  transition: transform .15s;
 }
+
+.mappe-karte:nth-child(odd)  { transform: rotate(-1.4deg); }
+.mappe-karte:nth-child(even) { transform: rotate(1.1deg); }
 
 .mappe-karte:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-elevated);
+  transform: rotate(0deg) translateY(-3px);
+  box-shadow: 0 28px 40px rgba(20, 12, 4, .42), 0 6px 8px rgba(20, 12, 4, .22);
 }
 
-.mappe-karte--locked {
-  opacity: 0.6;
-  pointer-events: none;
-}
-
-.mappe-karte--locked::after {
-  content: "🔒";
+/* Lochung am linken Rand */
+.mappe-karte::before {
+  content: "";
   position: absolute;
-  top: var(--space-md);
-  right: var(--space-md);
-  font-size: var(--text-2xl);
+  left: 16px;
+  top: 34px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #1a140a;
+  box-shadow:
+    0 0 0 0 transparent,
+    0 34px 0 #1a140a,
+    0 68px 0 #1a140a;
 }
 
-.mappe-karte--completed {
-  border-color: var(--color-success);
-}
-
-.mappe-karte--completed::after {
-  content: "✅";
+/* Messing-Pin oben mittig — Farbe nach Status */
+.mappe-karte::after {
+  content: "";
   position: absolute;
-  top: var(--space-md);
-  right: var(--space-md);
-  font-size: var(--text-2xl);
+  top: -12px;
+  left: 50%;
+  margin-left: -13px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #e6cf88 0%, var(--akte-pin-open) 70%);
+  box-shadow: 0 4px 5px rgba(0, 0, 0, .45);
+  border: 1px solid rgba(0, 0, 0, .3);
 }
 
-.mappe-karte--current {
-  border-color: var(--color-secondary);
-  border-width: 3px;
-}
+.mappe-karte--completed::after { background: radial-gradient(circle at 35% 35%, #7bbf97 0%, var(--color-success) 70%); }
+.mappe-karte--current::after   { background: radial-gradient(circle at 35% 35%, #e6cf88 0%, var(--akte-pin-open) 70%); }
+.mappe-karte--locked::after    { background: radial-gradient(circle at 35% 35%, #c96b6e 0%, var(--color-error) 70%); }
 
 .mappe-karte__titel {
-  font-family: var(--font-heading);
-  font-size: var(--text-xl);
-  color: var(--color-primary);
-  margin-bottom: var(--space-sm);
+  font-family: var(--akte-font-display);
+  font-size: 27px;
+  line-height: 1.12;
+  letter-spacing: -.3px;
+  color: var(--akte-dossier-ink);
+  margin: 0 0 12px;
+}
+
+/* Dossier-Meta-Zeile im Kacheltitel — Text aus data.json (meta.dossier_label) */
+.mappe-karte__dossier-label {
+  display: block;
+  font-family: var(--akte-font-mono);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: var(--akte-dossier-meta);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-weight: 400;
 }
 
 .mappe-karte__beschreibung {
-  color: var(--color-muted);
-  font-size: var(--text-sm);
+  font-family: var(--akte-font-mono);
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #3a2f1a;
 }
 
+/* Aktions-Fusszeile / Link als Stempel-Button */
 .mappe-karte__link {
   display: inline-block;
-  margin-top: var(--space-md);
-  padding: var(--space-sm) var(--space-lg);
-  background-color: var(--color-primary);
-  color: #fff;
-  border-radius: var(--radius-sm);
+  margin-top: 20px;
+  padding: 9px 20px;
+  background: var(--color-primary);
+  color: var(--akte-dossier);
+  font-family: var(--akte-font-mono);
+  font-size: 13px;
   font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 2px;
+  min-height: 0;
+  border-top: 1px dashed transparent;
   transition: background-color var(--transition-fast);
 }
 
-.mappe-karte__link:hover {
-  background-color: var(--color-primary-light);
+.mappe-karte--completed .mappe-karte__link {
+  background: transparent;
+  color: var(--color-success);
+  border: 1.5px solid var(--color-success);
 }
+
+/* Status-Stempel (rotiert, oben rechts) — Text kommt aus der Engine */
+.mappe-karte--completed .mappe-karte__titel,
+.mappe-karte--current .mappe-karte__titel,
+.mappe-karte--locked .mappe-karte__titel { padding-right: 90px; }
+
+.mappe-karte--completed > .mappe-karte__beschreibung::after,
+.mappe-karte--current > .mappe-karte__beschreibung::after,
+.mappe-karte--locked > .mappe-karte__beschreibung::after { content: none; }
+
+.rd-stempel {
+  position: absolute;
+  top: 20px;
+  right: 22px;
+  font-family: var(--akte-font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  border: 3px solid currentColor;
+  padding: 4px 10px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  pointer-events: none;
+  opacity: .8;
+}
+
+.mappe-karte--completed .rd-stempel { color: var(--color-success); transform: rotate(-12deg); }
+.mappe-karte--current   .rd-stempel { color: var(--color-error); transform: rotate(-9deg); }
+.mappe-karte--locked    .rd-stempel { color: var(--akte-dossier-meta); transform: rotate(6deg); opacity: .55; }
+
+/* Gesperrtes Dossier gedaempft */
+.mappe-karte--locked {
+  filter: grayscale(.5) brightness(.94);
+  opacity: .72;
+  pointer-events: none;
+}
+
+.mappe-karte--locked::after { opacity: 1; }
 
 /* --------------------------------------------------------------------------
    5. Mappe-Seite (mappe-X.html)
@@ -218,25 +438,30 @@ footer a:hover {
   border-bottom: 2px solid var(--color-border);
 }
 
-/* v3.8 U1: Stundenfrage gross, zentriert, volle Breite */
+/* E5: Aktentitel im Header — linksbuendig auf Navy, ohne Pergament-Kachel */
 .mappe__titel {
-  font-size: 2.2rem;
-  color: var(--color-primary);
-  text-align: center;
-  line-height: 1.3;
-  padding: var(--space-md) var(--space-lg);
-  background: var(--color-surface);
-  border-radius: 8px;
+  font-family: var(--akte-font-display);
+  font-size: 32px;
+  color: #fff;
+  text-align: left;
+  letter-spacing: -.3px;
+  line-height: 1.15;
+  margin: 0 0 10px;
 }
 
+/* E5: Beschreibung als handschriftliche Randnotiz am Goldstrich */
 .mappe__beschreibung {
-  font-style: italic;
-  color: var(--color-muted);
-  max-width: 600px;
+  font-family: var(--font-fragebogen);
+  font-style: normal;
+  font-size: 18px;
+  color: var(--akte-gold-light);
+  border-left: 2px solid var(--color-secondary);
+  padding-left: 12px;
+  display: inline-block;
+  max-width: 640px;
   margin-inline: auto;
   margin-top: var(--space-sm);
-  text-align: center;
-  font-size: 1.05rem;
+  text-align: left;
 }
 
 /* v3.8 U9: Einstieg-Block zentriert */
@@ -247,40 +472,128 @@ footer a:hover {
   padding: var(--space-xl, 2rem) var(--space-lg, 1.5rem);
 }
 
+/* E5: Leitfrage als gerahmter Handschrift-Block (gewinnender Ort gegenueber
+   der allgemeinen .einstieg__problemstellung-Regel in Sektion 17) */
 .mappe__einstieg .einstieg__problemstellung {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-top: var(--space-md, 1rem);
+  display: inline-block;
+  padding: 14px 28px;
+  border: 2px solid var(--color-secondary);
+  background: rgba(201, 168, 76, .08);
+  font-family: var(--font-fragebogen);
+  font-size: 22px;
+  color: #fff;
+  font-weight: 600;
+  margin-top: 18px;
   line-height: 1.4;
 }
 
+/* E5: Fussleiste als Navy-Band ueber die volle Mappenbreite (negative Margins
+   heben das main-Padding auf), Buttons als Gold-Konturstempel. */
 .mappe__navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--space-lg) 0;
-  margin-top: var(--space-xl);
-  border-top: 2px solid var(--color-border);
+  background: var(--color-primary);
+  padding: 16px 24px;
+  margin: 40px -32px -60px;
+  border-top: 4px solid var(--color-secondary);
   gap: var(--space-sm);
   flex-wrap: wrap;
 }
 
 .mappe__nav-btn {
-  padding: var(--space-sm) var(--space-lg);
-  background-color: var(--color-primary);
-  color: #fff;
-  border-radius: var(--radius-sm);
+  padding: 8px 16px;
+  background: transparent;
+  color: var(--akte-gold-light);
+  font-family: var(--akte-font-mono);
+  font-size: 12px;
   font-weight: bold;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: 1.5px solid var(--color-secondary);
+  border-radius: 2px;
+  min-height: 0;
   transition: background-color var(--transition-fast);
 }
 
-.mappe__nav-btn:hover {
-  background-color: var(--color-primary-light);
+#nav-mappe-info {
+  font-family: var(--akte-font-mono);
+  font-size: 11px;
+  color: rgba(255, 255, 255, .6);
+  letter-spacing: 1.5px;
 }
 
 .mappe__nav-btn--disabled {
   opacity: 0.5;
   pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   5b. E5: Leitfragen-Strip + Stempelfeld (Engine-gerendert, s. escape-engine.js)
+   -------------------------------------------------------------------------- */
+
+.rd-leitfrage-strip {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: #2a2218;
+  border-bottom: 1px solid #4a3e2c;
+  padding: 10px 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .06);
+}
+
+.rd-leitfrage-strip__label {
+  font-family: var(--akte-font-mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--akte-muted);
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.rd-leitfrage-strip__text {
+  font-family: var(--font-fragebogen);
+  font-size: 17px;
+  color: var(--akte-gold-light);
+  font-weight: 600;
+  flex: 1;
+  line-height: 1.3;
+}
+
+/* Stempelfeld statt Fortschrittsbalken: eine Zelle je Aufgabe */
+.rd-stempelfeld {
+  display: flex;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.rd-stempelfeld__cell {
+  width: 24px;
+  height: 24px;
+  border: 1.5px solid var(--akte-border);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--akte-font-mono);
+  font-size: 12px;
+  color: var(--akte-muted);
+}
+
+.rd-stempelfeld__cell--solved {
+  border-color: var(--color-success);
+  background: rgba(45, 106, 79, .12);
+  color: var(--color-success);
+}
+
+.rd-stempelfeld__cell--solved::before {
+  content: "✓";
+  transform: rotate(-8deg);
+  font-weight: 700;
+  font-size: 16px;
 }
 
 /* --------------------------------------------------------------------------
@@ -334,13 +647,14 @@ footer a:hover {
   border-color: var(--color-success);
 }
 
+/* E5: Kopfzeile ohne Trennlinie — die Aufgabenkarte traegt die Struktur */
 .aufgabe__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: var(--space-md);
-  padding-bottom: var(--space-sm);
-  border-bottom: 1px solid var(--color-border);
+  gap: 10px;
+  margin-bottom: 10px;
+  padding: 0;
 }
 
 .aufgabe__nummer {
@@ -349,14 +663,18 @@ footer a:hover {
   font-weight: bold;
 }
 
+/* E5: Typ-Kennzeichnung als dezenter Aktenvermerk statt Farb-Pille */
 .aufgabe__typ-badge {
-  font-size: var(--text-xs);
-  padding: var(--space-xs) var(--space-sm);
-  background-color: var(--color-primary);
-  color: #fff;
+  background: transparent;
+  color: var(--akte-muted);
+  font-family: var(--akte-font-mono);
+  font-size: 10px;
+  padding: 0;
+  border: none;
   border-radius: var(--radius-sm);
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  margin-left: auto;
 }
 
 .aufgabe__titel {
@@ -373,14 +691,16 @@ footer a:hover {
 }
 
 .aufgabe__body {
-  margin-bottom: var(--space-lg);
+  padding-left: 0;
+  margin-bottom: 10px;
+  font-size: 14px;
 }
 
 /* Multiple-Choice-Optionen */
 .aufgabe__optionen {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: 6px;
 }
 
 .aufgabe__option {
@@ -427,18 +747,20 @@ footer a:hover {
 .aufgabe__zuordnung {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: 6px;
 }
 
 .aufgabe__zuordnung-zeile {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: var(--space-md);
+  grid-template-columns: 1fr auto auto;
+  gap: 8px;
   align-items: center;
-  padding: var(--space-sm);
-  background-color: #fff;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  font-size: 13px;
+  background: rgba(0, 0, 0, .2);
+  border: 1px solid #4a3e2c;
+  border-radius: 3px;
+  color: #e0d8c5;
 }
 
 .aufgabe__zuordnung-begriff {
@@ -446,11 +768,21 @@ footer a:hover {
 }
 
 .aufgabe__zuordnung-pfeil {
-  color: var(--color-muted);
+  color: var(--akte-muted);
+  font-size: 14px;
 }
 
 .aufgabe__zuordnung-select {
   width: 100%;
+  font-family: var(--akte-font-body);
+  font-size: 13px;
+  padding: 4px 6px;
+  border: 1px solid #4a3e2c;
+  border-radius: 2px;
+  background: #1a1410;
+  color: #e0d8c5;
+  min-height: 0;
+  min-width: 0;
 }
 
 .aufgabe__zuordnung-zeile--correct {
@@ -463,11 +795,15 @@ footer a:hover {
   background-color: rgba(155, 34, 38, 0.05);
 }
 
-/* Lueckentext */
+/* Lueckentext — E5: Luecke als goldener Markierstreifen (Font/Farbe s. Sektion 19c) */
 .aufgabe__lueckentext {
-  line-height: 2;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #e0d8c5;
 }
 
+/* Optik der Luecke steht in Sektion 19c — nur dort schlaegt sie die
+   spaetere --pool-Regel (Antwortpool-Modus). */
 .aufgabe__luecke {
   display: inline-block;
   min-width: 120px;
@@ -475,7 +811,6 @@ footer a:hover {
   border-bottom: 2px dashed var(--color-primary);
   background: transparent;
   text-align: center;
-  font-family: var(--font-code);
   padding: var(--space-xs);
   margin: 0 var(--space-xs);
 }
@@ -603,52 +938,70 @@ footer a:hover {
 }
 
 /* Reihenfolge */
+/* Reihenfolge — E5: kompakte Karteizeilen mit Gold-Nummernscheibe */
 .aufgabe__reihenfolge {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px;
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: 4px;
 }
 
 .aufgabe__reihenfolge-item {
   display: flex;
   align-items: center;
-  gap: var(--space-md);
-  padding: var(--space-md);
-  background-color: #fff;
-  border: 2px solid var(--color-border);
-  border-radius: var(--radius-sm);
+  gap: 8px;
+  padding: 7px 10px;
+  font-size: 13px;
+  background: rgba(0, 0, 0, .2);
+  border: 1px solid #4a3e2c;
+  border-radius: 3px;
+  color: #e0d8c5;
 }
 
 .aufgabe__reihenfolge-nummer {
-  font-weight: bold;
-  color: var(--color-primary);
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  background: var(--color-secondary);
+  color: #1a1410;
+  border-radius: 50%;
   min-width: 2rem;
   text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--akte-font-mono);
+  font-size: 10px;
+  font-weight: 700;
 }
 
 .aufgabe__reihenfolge-text {
   flex: 1;
+  line-height: 1.4;
 }
 
 .aufgabe__reihenfolge-buttons {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
+  flex-shrink: 0;
 }
 
 .aufgabe__reihenfolge-btn {
+  width: 22px;
+  height: 16px;
   padding: var(--space-xs) var(--space-sm);
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  font-size: var(--text-sm);
-  min-height: 32px;
-  min-width: 32px;
-}
-
-.aufgabe__reihenfolge-btn:hover {
-  background-color: var(--color-primary);
-  color: #fff;
+  background: var(--color-secondary);
+  color: #1a1410;
+  border: none;
+  border-radius: 2px;
+  font-size: 9px;
+  line-height: 1;
+  cursor: pointer;
+  min-height: 0;
+  min-width: 0;
 }
 
 /* Freitext-Code */
@@ -658,36 +1011,38 @@ footer a:hover {
 
 .aufgabe__textarea {
   width: 100%;
-  min-height: 120px;
-  padding: var(--space-md);
-  border: 2px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  font-family: var(--font-body);
+  min-height: 90px;
+  padding: 10px;
+  border: 1px solid #4a3e2c;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, .3);
+  color: #e0d8c5;
+  font-family: var(--akte-font-body);
+  font-size: 14px;
+  line-height: 1.5;
   resize: vertical;
 }
 
-.aufgabe__textarea:focus {
-  border-color: var(--color-primary);
-}
-
-/* Submit-Button fuer Aufgaben */
+/* Submit-Button fuer Aufgaben — E5: Notiz-Stempel statt Vollflaechen-Button.
+   Beschriftung kommt aus ::before, der Engine-Text im Button wird ausgeblendet. */
 .aufgabe__submit {
   display: inline-flex;
   align-items: center;
   gap: var(--space-sm);
-  margin-top: var(--space-md);
-  padding: var(--space-sm) var(--space-xl);
-  background-color: var(--color-primary);
+  margin-top: 4px;
   color: #fff;
-  border-radius: var(--radius-sm);
+  border: none;
+  border-radius: 2px;
   font-weight: bold;
-  font-size: var(--text-base);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  min-height: 0;
+  cursor: pointer;
   transition: background-color var(--transition-fast);
 }
 
-.aufgabe__submit:hover {
-  background-color: var(--color-primary-light);
-}
+.aufgabe__submit::before { content: "Antwort eintragen"; }
+.aufgabe__submit > * { display: none; }
 
 .aufgabe__submit:disabled {
   opacity: 0.5;
@@ -857,22 +1212,21 @@ footer a:hover {
    11. Narrativ-Bereich
    -------------------------------------------------------------------------- */
 
+/* E5: Briefing-Notiz auf dem Schreibtisch — ohne Kachel, ohne Schriftrollen-Icon */
 .narrativ {
-  background-color: var(--color-surface);
-  border-left: 4px solid var(--color-secondary);
-  padding: var(--space-lg);
-  margin-bottom: var(--space-xl);
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
-  font-style: italic;
+  padding: 0 8px 20px;
+  margin: 0 0 20px;
+  font-style: normal;
   line-height: 1.8;
 }
 
-.narrativ::before {
-  content: "📜";
-  display: block;
-  font-size: var(--text-2xl);
-  margin-bottom: var(--space-sm);
-  font-style: normal;
+#narrativ-text {
+  font-family: var(--akte-font-mono);
+  font-size: 14px;
+  line-height: 1.6;
+  color: #f0dfb4;
+  max-width: 720px;
+  margin: 0;
 }
 
 /* --------------------------------------------------------------------------
@@ -1061,27 +1415,40 @@ footer a:hover {
    15. v3.5: Erarbeitung 2/3-1/3 Grid (Material dominant, Fragebogen sticky)
    -------------------------------------------------------------------------- */
 
+/* E5: Mappen-Kolumne — einspaltig als Basis (tablet-tauglich, kein Sticky-Spalt
+   unter 1024px), zweispaltig ab 1024px: Material links, Sicherungsheft sticky rechts. */
+main.mappe {
+  max-width: 760px;
+  padding: 28px 32px 60px;
+}
+
 .mappe__erarbeitung {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-lg);
+  display: block;
 }
 
 @media (min-width: 1024px) {
+  main.mappe {
+    max-width: 1320px;
+    padding: 28px 40px 60px;
+  }
   .mappe__erarbeitung {
-    grid-template-columns: 2fr 1fr;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 380px;
+    gap: 36px;
+    align-items: start;
   }
   .erarbeitung__materialien {
     min-width: 0;
-    max-width: 700px;
-    margin-inline: auto;
+    max-width: none;
+    margin: 0;
   }
   .erarbeitung__aufgaben {
     position: sticky;
-    top: 1rem;
+    top: 88px;
     align-self: start;
-    max-height: calc(100vh - 2rem);
+    max-height: calc(100vh - 110px);
     overflow-y: auto;
+    margin-top: 0;
   }
 }
 
@@ -1096,33 +1463,51 @@ footer a:hover {
    16. v1: Material-Typ-Styles (BEM)
    -------------------------------------------------------------------------- */
 
-/* Basis */
-.material { margin-bottom: var(--space-md); padding: var(--space-md); border-radius: var(--radius-md); position: relative; }
-.material__titel { margin-top: 0; }
+/* Basis — E5: Aktenpapier mit Schlagschatten statt gerundeter Leinen-Kachel */
+.material {
+  margin: 36px 0;
+  padding: 24px 28px;
+  background: var(--akte-paper);
+  position: relative;
+  box-shadow: 0 2px 8px rgba(20, 12, 4, .08);
+}
+/* Kontext-Praefix ist NOETIG, nicht kosmetisch: der RTL-Block am Dateiende setzt
+   `.material *  { font-family: inherit }` und steht spaeter in der Kaskade. Ohne
+   das Praefix (0,2,0 statt 0,1,0) faellt der Aktentitel auf den Fliesstext zurueck.
+   Gilt ebenso fuer .material__flag. */
+.material .material__titel {
+  font-family: var(--akte-font-display);
+  font-size: 24px;
+  color: var(--akte-gold-light);
+  margin: 8px 0 14px;
+  line-height: 1.2;
+  letter-spacing: -.2px;
+}
 .material__quelle { font-size: 0.85em; color: var(--color-muted); }
 
-/* v3.5b: Material-Flag (M1, M2, ...) */
-.material__flag {
+/* v3.5b: Material-Flag (M1, M2, ...) — E5: Reiter auf der Aktenkante */
+.material .material__flag {
   position: absolute;
-  top: -8px;
-  left: 12px;
+  top: -1px;
+  left: 16px;
   background: var(--color-primary);
-  color: white;
-  font-size: 0.7rem;
+  color: #fff;
+  font-family: var(--akte-font-mono);
+  font-size: 11px;
   font-weight: 600;
-  padding: 2px 8px;
-  border-radius: 0 0 4px 4px;
-  letter-spacing: 0.05em;
+  padding: 4px 12px;
+  letter-spacing: 1.5px;
   line-height: 1.3;
   min-height: auto;
   min-width: auto;
+  text-transform: uppercase;
 }
 
-/* Darstellungstext */
-.material--darstellung { background: var(--color-surface); border-left: 4px solid var(--color-primary); }
+/* Darstellungstext (Aktenpapier-Grund kommt aus .material) */
+.material--darstellung { border-left: 4px solid var(--color-primary); }
 
-/* Quellentext */
-.material--quelle { font-style: italic; border-left: 4px solid var(--color-secondary); padding-left: var(--space-lg); }
+/* Quellentext (Cremepapier-Grund + Rahmen s. E5-Block am Sektionsende) */
+.material--quelle { font-style: italic; }
 
 /* v3.5b: Blocksatz fuer Textmaterialien */
 .material--darstellung .material__inhalt,
@@ -1130,12 +1515,33 @@ footer a:hover {
 .material--tagebuch .tagebuch__text { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
 .material--quelle cite { display: block; margin-top: var(--space-sm); font-style: normal; }
 
-/* Bildquelle */
+/* Bildquelle — E5: Foto im Abzugsrahmen, Bildunterschrift handschriftlich */
 .material--bild img { max-width: 100%; height: auto; border-radius: var(--radius-sm); }
-.material--bild figcaption { font-size: 0.85em; margin-top: var(--space-xs); }
+.material--bild {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  text-align: center;
+}
+.material--bild figcaption {
+  font-family: var(--font-fragebogen);
+  font-size: 16px;
+  /* nicht hart Dunkelbraun: sonst braun-auf-braun, --akte-ink adaptiert */
+  color: var(--akte-ink);
+  text-align: left;
+  margin-top: 14px;
+  padding: 0 4px;
+}
 
-/* Karte */
-.material--karte { text-align: center; }
+/* Karte — E5: Kartenblatt im Goldrahmen, linksbuendig */
+.material--karte {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  text-align: left;
+}
 .material--karte img, .material--karte svg { max-width: 100%; height: auto; }
 
 /* Zeitleiste */
@@ -1149,21 +1555,226 @@ footer a:hover {
 .material--statistik th, .material--statistik td { padding: var(--space-xs) var(--space-sm); border: 1px solid var(--color-border); text-align: left; }
 .material--statistik th { background: var(--color-surface); font-weight: bold; }
 
-/* Tagebuch */
-.material--tagebuch { background: var(--color-surface-warm, #fdf6e3); border: 1px solid var(--color-border); font-family: 'Georgia', serif; }
+/* Tagebuch (Cremepapier-Grund + Rahmen s. E5-Block am Sektionsende) */
+.material--tagebuch { font-family: 'Georgia', serif; }
 .material--tagebuch .tagebuch__text { line-height: 1.8; }
+
+/* ── E5: Akten-Materialoptik (absorbiert aus vendor/redesign.css) ─────────
+   Reihenfolge ist bewusst: die Typ-Regeln muessen NACH .material stehen
+   (gleiche Spezifitaet), der Media-Platzhalter ganz zuletzt. */
+
+.material p,
+.material__inhalt p {
+  font-family: var(--akte-font-body);
+  font-size: var(--akte-fs-body);
+  line-height: 1.7;
+  margin-bottom: 12px;
+  hyphens: auto;
+  text-align: justify;
+}
+
+/* Quelle / Tagebuch — Cremepapier (im Akten-Look dunkel, ohne Linien-Raster) */
+.material--tagebuch,
+.material--quelle {
+  background: #2a2218;
+  border: 1px solid #4a3e2c;
+  border-left: none;
+}
+.material--tagebuch .material__titel,
+.material--quelle .material__titel {
+  font-style: italic;
+}
+.material--tagebuch .tagebuch__ort {
+  display: block;
+  font-family: var(--font-fragebogen);
+  font-size: 16px;
+  color: var(--akte-gold-light);
+  margin-bottom: 14px;
+  text-align: right;
+  border-bottom: 1px dashed #4a3e2c;
+  padding-bottom: 8px;
+}
+.material--tagebuch .tagebuch__text p {
+  font-style: italic;
+  color: #d6c39a;
+  line-height: 1.85;
+  font-size: calc(var(--akte-fs-body) + 1px);
+}
+
+/* Karte — Kartenblatt im Goldrahmen mit Gitternetz */
+.material--karte .material__flag {
+  top: -1px;
+  left: 0;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+.material--karte .rd-karte-frame {
+  background: linear-gradient(135deg, #f5e6c0 0%, #e8d29a 100%);
+  border: 2px solid var(--color-secondary);
+  height: auto;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  color: #5a4a2a;
+  font-family: var(--akte-font-mono);
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  margin-top: 8px;
+}
+.material--karte.material--karte--dark .rd-karte-frame {
+  background: linear-gradient(135deg, #2a3f5f 0%, #1B2A4A 100%);
+  border-color: #0c1424;
+  color: #d6c39a;
+}
+.rd-karte-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: .25;
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 39px, currentColor 39px 40px),
+    repeating-linear-gradient(90deg, transparent 0 39px, currentColor 39px 40px);
+}
+.material--karte figcaption {
+  font-family: var(--akte-font-body);
+  font-size: 14px;
+  color: var(--akte-muted);
+  margin-top: 10px;
+  line-height: 1.5;
+}
+.material--karte figcaption strong {
+  color: var(--akte-ink);
+  display: block;
+  margin-bottom: 6px;
+  font-style: normal;
+  line-height: 1.4;
+}
+.material--karte figcaption em {
+  display: block;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* Bild — Foto im Abzugsrahmen (leicht gekippt, mit Passepartout) */
+.material--bild .material__flag {
+  top: -1px;
+  left: 0;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+.material--bild .rd-foto-mount {
+  display: inline-block;
+  background: #fafafa;
+  padding: 12px 12px 50px;
+  box-shadow: 0 8px 18px rgba(20, 12, 4, .28);
+  transform: rotate(-.6deg);
+  margin-top: 8px;
+}
+.material--bild .rd-foto-stage {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  min-height: 120px;
+  background: linear-gradient(135deg, #4a4640 0%, #2a2622 100%);
+  color: #a8a098;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--akte-font-mono);
+  font-size: 13px;
+  letter-spacing: 1.5px;
+}
+/* Rahmen-Adaption: Bild-Frames wachsen mit dem Artefakt-Aspekt; das Bild bleibt
+   intrinsisch + gekappt, nie Overflow (Foto) / Crop (Karte) / Misfit (Tafelbild). */
+.material--bild .rd-foto-stage img,
+.material--karte .rd-karte-frame img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(480px, 100%);
+  max-height: 520px;
+}
+.sicherung__tafelbild-frame img,
+.sicherung__tafelbild-frame svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Statistik: der Producer authort das inline-SVG mit dunklen Text-Fills fuer HELLEN
+   Grund. Im Akten-Look waere das dunkel-auf-dunkel (gemessen 1.8-2.1:1). Loesung:
+   der Chart sitzt auf einer hellen "Daten-Papier"-Karte — alle authored Farben
+   bleiben erhalten und legibel. */
+.material--statistik .statistik__grafik {
+  background: #f7f3e8;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0 6px;
+}
+.material--statistik .statistik__grafik svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Grauer Platzhalter fuer Materialien ohne echte src (frueher media-placeholder.css).
+   Muss NACH den .rd-foto-stage-/.rd-karte-frame-img-Regeln stehen — gleiche
+   Spezifitaet, die spaetere Regel gewinnt. */
+.material--bild img[src=""], .material--bild img:not([src]),
+.material--karte img[src=""], .material--karte img:not([src]) {
+  display: block;
+  width: 100%;
+  min-height: 180px;
+  background: #c8c8c8;
+  content: '';
+}
 
 /* --------------------------------------------------------------------------
    17. v1: Einstieg + Sicherung Styles
    -------------------------------------------------------------------------- */
 
-.mappe__einstieg { margin-bottom: var(--space-xl); padding: var(--space-lg); background: var(--color-surface); border-radius: var(--radius-md); }
+/* E5: Einstieg ohne Leinen-Kachel — der Akten-Look traegt den Block selbst */
+.mappe__einstieg { margin-bottom: var(--space-xl); padding: 28px 0; border-radius: var(--radius-md); }
 .mappe__einstieg:empty { display: none; }
-.einstieg__narrativ { line-height: 1.7; }
+.einstieg__narrativ {
+  font-family: var(--akte-font-body);
+  font-style: italic;
+  font-size: calc(var(--akte-fs-body) + 2px);
+  color: var(--akte-ink);
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
 .einstieg__problemstellung { font-size: 1.1em; font-weight: 600; margin-top: var(--space-md); }
 
-.mappe__sicherung { margin-top: var(--space-xl); padding: var(--space-lg); background: var(--color-surface); border-radius: var(--radius-md); }
+/* E5: Sicherung ohne Kachel, mit Phasen-Vermerk (game-agnostisch) */
+.mappe__sicherung { margin-top: 40px; padding: 32px 0; border-radius: var(--radius-md); }
+.mappe__sicherung::before {
+  content: "PHASE 3 · SICHERUNG";
+  display: block;
+  font-family: var(--akte-font-mono);
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  color: var(--akte-muted);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  text-align: center;
+}
 .sicherung__tafelbild { margin-bottom: var(--space-lg); }
+/* egg-v2 Tafelbild-Sicherung */
+.sicherung__tafelbild-frame {
+  width: 100%;
+  min-height: 120px;
+  border: 1px solid var(--color-secondary);
+  border-radius: 4px;
+  background: var(--akte-paper);
+}
 .sicherung__tafelbild svg { max-width: 100%; height: auto; }
 .sicherung__zusammenfassung { margin-bottom: var(--space-md); }
 .sicherung__ueberleitung { font-style: italic; color: var(--color-muted); }
@@ -1535,67 +2146,86 @@ footer a:hover {
    19b. v3.5: Material-Überleitungen (optimiert — zentriert, Pfeil, Gradient)
    -------------------------------------------------------------------------- */
 
+/* E5: Karteikarte mit Pin + Pfeil statt Gradient-Band mit Dreieck */
 .material-ueberleitung {
-  text-align: center;
-  padding: var(--space-lg) var(--space-md);
-  margin: var(--space-sm) 0;
+  text-align: left;
+  padding: 0;
+  margin: 28px auto;
+  max-width: 540px;
   position: relative;
+  transform: rotate(-1deg);
 }
 
+.material-ueberleitung:nth-of-type(even) { transform: rotate(1.2deg); }
+
 .material-ueberleitung::before {
-  content: '▽';
-  display: block;
-  font-size: 1.2rem;
-  color: var(--color-secondary);
-  margin-bottom: var(--space-sm);
-  opacity: 0.6;
+  display: none;
 }
 
 .material-ueberleitung__text {
-  font-style: italic;
-  color: var(--color-muted);
-  font-size: 1.05rem;
-  line-height: 1.5;
-  max-width: 600px;
+  background: #FFF4B8;
+  border: 1px solid #E8D27A;
+  padding: 18px 22px 16px 46px;
+  border-radius: 2px;
+  font-family: var(--font-fragebogen);
+  font-style: normal;
+  font-size: 18px;
+  color: #2A1F0F;
+  line-height: 1.45;
+  max-width: none;
   margin-inline: auto;
-  background: linear-gradient(180deg, transparent 0%, rgba(201,168,76,0.06) 30%, rgba(201,168,76,0.06) 70%, transparent 100%);
-  padding: var(--space-sm) var(--space-md);
-  border-radius: 4px;
+  position: relative;
+  box-shadow: 0 6px 14px rgba(20, 12, 4, .18), 0 1px 0 rgba(0, 0, 0, .05) inset;
+}
+
+/* Pin */
+.material-ueberleitung__text::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 14px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, var(--akte-gold-light) 0%, var(--color-secondary) 70%);
+  box-shadow: 0 3px 4px rgba(0, 0, 0, .4);
+  border: 1px solid #8a7530;
+}
+
+/* Pfeil-Glyph fuer die Brueckenfunktion */
+.material-ueberleitung__text::after {
+  content: "↳";
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  color: rgba(0, 0, 0, .35);
+  font-family: Georgia, serif;
 }
 
 /* --------------------------------------------------------------------------
    19c. v3.5: Fragebogen — Notizbuch-Stil (Arbeitsblatt-Metapher)
    -------------------------------------------------------------------------- */
 
+/* E5: Das Sicherungsheft ist eine Aktenmappe, kein kariertes Notizblatt —
+   das Karo-Raster entfaellt, margin-top schlaegt bewusst den 0-Wert aus
+   Sektion 15 (spaetere Regel gewinnt), wie es das Overlay auch tat. */
 .erarbeitung__aufgaben {
-  background: var(--fb-bg);
-  border-radius: 0 0 8px 8px;
-  box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.08);
-  background-image:
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent calc(1.5em - 1px),
-      var(--fb-grid) calc(1.5em - 1px),
-      var(--fb-grid) 1.5em
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent calc(1.5em - 1px),
-      var(--fb-grid) calc(1.5em - 1px),
-      var(--fb-grid) 1.5em
-    );
-  background-size: 1.5em 1.5em;
-  background-attachment: local;
+  margin-top: 48px;
+  background: #1a1410;
+  border: 1px solid #4a3e2c;
+  border-radius: 4px;
+  box-shadow: 0 8px 22px rgba(20, 12, 4, .10);
+  padding: 0;
 }
 
-/* Lochrand oben */
+/* Lochrand oben — im Akten-Look ausgeblendet */
 .fragebogen__lochrand {
+  display: none;
   background: var(--fb-primary);
   height: 36px;
   border-radius: 8px 8px 0 0;
-  display: flex;
   align-items: center;
   justify-content: center;
   gap: 40px;
@@ -1613,99 +2243,124 @@ footer a:hover {
   box-shadow: inset 0 1px 2px rgba(0,0,0,0.15);
 }
 
-/* Fragebogen Header */
+/* Fragebogen Header — E5: Navy-Balken mit Goldkante */
 .fragebogen__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--space-md) var(--space-lg);
-  border-bottom: 2px solid var(--fb-primary);
+  padding: 14px 20px;
+  background: var(--color-primary);
+  border-bottom: 3px solid var(--color-secondary);
+  border-radius: 4px 4px 0 0;
 }
 
 .fragebogen__titel {
-  font-family: var(--font-fragebogen);
-  font-size: 1.2rem;
-  color: var(--fb-primary);
+  font-family: var(--akte-font-display);
+  font-size: 19px;
+  color: #fff;
+  font-weight: 700;
   margin: 0;
+  line-height: 1.2;
+}
+
+/* Game-agnostische Aktenbezeichnung (kein Datenfeld noetig) */
+.fragebogen__titel::before {
+  content: "SICHERUNGSHEFT";
+  display: block;
+  font-family: var(--akte-font-mono);
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  color: var(--akte-gold-light);
+  margin-bottom: 4px;
+  font-weight: 400;
 }
 
 /* Fragebogen Inner (Aufgaben-Bereich) */
 .fragebogen__inner {
-  padding: var(--space-md) var(--space-lg);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
   font-size: 1rem;
   line-height: 1.5em;
   position: relative;
   z-index: 1;
 }
 
-/* Aufgaben im Notizbuch-Stil */
+/* E5: Jede Aufgabe ist eine eigenstaendige Karte mit Status-Akzent links.
+   Kein :last-of-type-Sonderfall mehr — die Karte hat rundum einen Rahmen. */
 .erarbeitung__aufgaben .aufgabe {
-  background-color: transparent;
-  border: none;
-  border-bottom: 2px dashed var(--fb-grid);
-  border-radius: 0;
+  background: #2a2218;
+  border: 1px solid #4a3e2c;
+  border-left: 4px solid #4a3e2c;
+  border-radius: 3px;
   box-shadow: none;
-  padding: var(--space-md) 0;
-  margin-bottom: 0;
+  padding: 14px 16px;
+  margin: 0;
 }
 
-.erarbeitung__aufgaben .aufgabe:last-of-type {
-  border-bottom: none;
+.erarbeitung__aufgaben .aufgabe--solved {
+  background: #1f2820;
+  border-left-color: var(--color-success);
 }
 
-/* Aufgaben-Nummer im Kreis — v3.5f: Textmarker-Gelb */
+/* Aufgaben-Nummer als Gold-Scheibe (Stempel-Anmutung) */
 .erarbeitung__aufgaben .aufgabe__nummer {
-  font-family: var(--font-fragebogen);
+  font-family: var(--akte-font-mono);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
-  min-height: 28px;
-  min-width: 28px;
+  width: 26px;
+  height: 26px;
+  min-height: 26px;
+  min-width: 26px;
   border-radius: 50%;
-  border: 2px solid rgba(255, 249, 196, 0.9);
-  background-color: rgba(255, 249, 196, 0.7);
-  color: var(--fb-primary);
-  font-size: 0.9rem;
+  border: 1.5px solid var(--color-secondary);
+  background: var(--color-secondary);
+  color: #1a1410;
+  font-size: 12px;
   font-weight: 600;
+  flex-shrink: 0;
 }
 
-/* Frage-Text */
+/* Frage-Text — E5: ruhige Lese-Typo statt Textmarker-Band */
 .erarbeitung__aufgaben .aufgabe__frage {
-  font-family: var(--font-fragebogen);
-  font-size: 1.05em;
-  line-height: 1.5;
-  /* v3.5e: Textmarker-Stil */
-  background: linear-gradient(
-    to bottom,
-    transparent 10%,
-    rgba(255, 249, 196, 0.55) 10%,
-    rgba(255, 249, 196, 0.55) 90%,
-    transparent 90%
-  );
+  font-family: var(--akte-font-body);
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: 0;
+  background: none;
+  color: #f0e8d0;
   font-weight: 600;
-  padding: 0.2em 0.4em;
-  margin-bottom: 0.8em;
+  font-style: normal;
+  padding: 0;
+  margin: 0 0 12px;
   border-radius: 2px;
-  display: inline;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
+  display: block;
 }
 
-/* MC-Optionen im Arbeitsblatt-Stil */
+/* MC-Optionen als abgesetzte Zeilen */
 .erarbeitung__aufgaben .aufgabe__option {
-  background-color: transparent;
-  border: none;
-  border-radius: 4px;
-  padding: 6px 10px;
+  font-family: var(--akte-font-body);
+  font-size: 14px;
+  background: rgba(0, 0, 0, .2);
+  border: 1px solid #4a3e2c;
+  border-radius: 3px;
+  color: #e0d8c5;
+  padding: 8px 10px;
   gap: var(--space-sm);
+  cursor: pointer;
   transition: background 150ms ease;
 }
 
-.erarbeitung__aufgaben .aufgabe__option:hover {
-  background: rgba(41, 82, 163, 0.06);
-  border-color: transparent;
+/* BEFUND E5 (unveraendert uebernommen, nicht repariert): Im Overlay ueberstimmte
+   der [data-bg="dark"]-Zweig von .aufgabe__option (0,2,0) den Korrekt-State
+   (0,1,0) — Fuellung und Rahmenfarbe der richtigen Antwort waren nie sichtbar,
+   nur Randbreite und Fettung. E5 ist eine Migration, kein Redesign; ob der
+   Korrekt-State sichtbar werden soll, entscheidet ein eigener Schritt. */
+.erarbeitung__aufgaben .aufgabe__option--correct {
+  border-left-width: 3px;
+  font-weight: 600;
 }
 
 /* Custom Radio-Buttons */
@@ -1758,22 +2413,34 @@ footer a:hover {
 
 /* Submit-Button im Fragebogen */
 .erarbeitung__aufgaben .aufgabe__submit {
-  background: var(--fb-primary);
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  padding: var(--space-sm) var(--space-lg);
+  background: var(--color-primary);
+  font-family: var(--akte-font-mono);
+  font-size: 11px;
+  padding: 7px 14px;
 }
 
-.erarbeitung__aufgaben .aufgabe__submit:hover {
-  background: #1e3d7a;
-}
-
-/* Solved State */
+/* Solved State — gruene Quittung statt Aktionsflaeche */
 .erarbeitung__aufgaben .aufgabe--solved .aufgabe__nummer {
-  border-color: var(--fb-success);
-  color: var(--fb-success);
-  background: rgba(56, 142, 60, 0.08);
+  background: var(--color-success);
+  border-color: var(--color-success);
+  color: #fff;
 }
+
+.aufgabe--solved .aufgabe__nummer::before {
+  content: "✓";
+  font-family: var(--akte-font-body);
+  font-size: 14px;
+}
+
+.aufgabe--solved .aufgabe__nummer-text { display: none; }
+
+.erarbeitung__aufgaben .aufgabe--solved .aufgabe__submit {
+  background: transparent;
+  color: var(--color-success);
+  border: 1.5px solid var(--color-success);
+}
+
+.aufgabe--solved .aufgabe__submit::before { content: "✓ NOTIERT"; }
 
 /* v3.5h: Lösungswort-Bereich (initial unsichtbar, bis alle Aufgaben gelöst) */
 .loesungswort-bereich {
@@ -1805,20 +2472,23 @@ footer a:hover {
   display: block;
 }
 
-/* Lückentext im Fragebogen */
+/* Lückentext im Fragebogen — E5: goldener Markierstreifen.
+   Muss hier stehen (0,2,0), sonst gewinnt die --pool-Regel weiter oben. */
 .erarbeitung__aufgaben .aufgabe__luecke {
-  border-bottom-color: var(--fb-primary);
-  font-family: var(--font-fragebogen);
-  color: var(--fb-primary);
+  background: rgba(201, 168, 76, .12);
+  border-bottom: 1.5px solid var(--color-secondary);
+  border-radius: 2px;
+  padding: 1px 6px;
+  font-family: var(--akte-font-body);
+  font-weight: 600;
+  font-style: normal;
+  color: var(--akte-gold-light);
 }
 
-/* Tipp-Buttons im Fragebogen */
-.erarbeitung__aufgaben .tipp__trigger {
-  background-color: var(--fb-hint);
-}
-
-.erarbeitung__aufgaben .tipp__trigger:hover {
-  background-color: #607d8b;
+.erarbeitung__aufgaben .aufgabe__luecke--correct {
+  background: rgba(45, 106, 79, .18);
+  border-bottom-color: var(--color-success);
+  color: #6FAB8B;
 }
 
 /* Code-Eingabe im Fragebogen */
@@ -1846,9 +2516,9 @@ footer a:hover {
   flex-wrap: wrap;
   gap: 6px;
   align-items: flex-start;
-  margin-top: var(--space-sm);
+  margin-top: 8px;
   border-top: none;
-  padding-top: 0;
+  padding: 0;
 }
 
 .erarbeitung__aufgaben .tipp {
@@ -1856,32 +2526,30 @@ footer a:hover {
   margin-bottom: 0;
 }
 
+/* E5: Tipp-Pille in Blaugrau-Kontur statt Vollflaeche.
+   Die frueheren Zustandsvarianten (--active, :hover, --used-Einfaerbung) lagen
+   unter dem Overlay-!important brach; sie bleiben bewusst weg, damit die
+   Migration auch im Zustandsverhalten regressionsfrei ist. */
 .erarbeitung__aufgaben .tipp__trigger {
   width: auto;
-  padding: 4px 12px;
-  font-size: 0.75rem;
+  padding: 3px 9px;
+  font-family: var(--akte-font-mono);
+  font-size: 10px;
+  letter-spacing: 1px;
   border-radius: 12px;
-  background-color: var(--fb-hint);
-  min-height: auto;
+  background: rgba(120, 160, 210, .15);
+  color: #94B5DB;
+  border: 1px solid rgba(120, 160, 210, .35);
+  min-height: 0;
   min-width: auto;
+  cursor: pointer;
 }
 
 .erarbeitung__aufgaben .tipp__trigger::before {
   content: none;
 }
 
-.erarbeitung__aufgaben .tipp__trigger:hover {
-  background-color: #607d8b;
-}
-
-.erarbeitung__aufgaben .tipp__trigger--active {
-  background-color: var(--fb-primary);
-}
-
 .erarbeitung__aufgaben .tipp__trigger--used {
-  background-color: var(--fb-grid);
-  color: var(--fb-hint);
-  border: 1px dashed var(--fb-hint);
   opacity: 1;
 }
 .erarbeitung__aufgaben .tipp__trigger--used::after {
@@ -1898,9 +2566,6 @@ footer a:hover {
   opacity: 0.35;
   pointer-events: none;
   cursor: default;
-  background-color: #e0e0e0;
-  color: #999;
-  border: 1px solid #ccc;
 }
 
 .aufgabe__tipp-inhalt-area {
@@ -2774,4 +3439,32 @@ body.quellen-hidden .material__inhalt cite {
   font-style: italic;
   color: var(--color-text-muted, #666);
   margin-left: 0.4em;
+}
+
+/* ============================================================
+   21. E5: Akten-Token-Block (2026-07)
+   Vereinigt die vendor-Namensraeume --rd-* (Mappen, Dark-Zweig)
+   und --op-* (Uebersicht). Rollennamen analog tokens.css,
+   Praefix --akte- gegen Kollision mit der Site-Kette.
+   Wertgleiche Rollen nutzen die --color-*-Tokens aus Sektion 1.
+   ============================================================ */
+:root {
+  --akte-bg: #1F1812;
+  --akte-paper: #2A211A;
+  --akte-cream: #2A211A;
+  --akte-ink: #E8E0D0;
+  --akte-muted: #B8AC95;
+  --akte-border: #4a3e2c;
+  --akte-gold-light: #E0C57E;
+  --akte-font-body: 'Spectral', Georgia, serif;
+  --akte-font-display: 'IM Fell English', Georgia, serif;
+  --akte-font-mono: 'Special Elite', 'Courier New', monospace;
+  --akte-fs-body: 17px;
+  /* Uebersicht (Schreibtisch/Dossier) */
+  --akte-desk: #3A2616;
+  --akte-dossier: #FAF3E3;
+  --akte-dossier-ink: #2A1F0F;
+  --akte-dossier-meta: #5A4A2A;
+  --akte-label: #F5E6C0;
+  --akte-pin-open: #D4A017;
 }

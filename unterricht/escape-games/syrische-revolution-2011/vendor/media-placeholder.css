@@ -1,9 +1,0 @@
-/* media-placeholder.css — grey placeholder for materials without a real src */
-.material--bild img[src=""], .material--bild img:not([src]),
-.material--karte img[src=""], .material--karte img:not([src]) {
-  display: block;
-  width: 100%;
-  min-height: 180px;
-  background: #c8c8c8;
-  content: '';
-}

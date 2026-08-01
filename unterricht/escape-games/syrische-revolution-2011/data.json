@@ -1,6 +1,8 @@
 {
   "meta": {
     "titel": "Syrische Revolution 2011",
+    "akten_label": "LAGEBESPRECHUNG · SYRIEN 2011",
+    "dossier_label": "DOSSIER · GPG / R7",
     "thema": "Syrische Revolution 2011",
     "fach": "GPG",
     "jahrgangsstufe": "R7-Basis",
@@ -10,6 +12,7 @@
   "mappen": [
     {
       "id": "mappe-1",
+      "akten_label": "AKTE 01 · DAS SCHWEIGEN",
       "titel": "Ein Land, in dem niemand mitreden durfte",
       "beschreibung": "Warum schwiegen die Menschen so lange?",
       "freischalt_code": "SCHWEIGEN",
@@ -627,6 +630,7 @@
     },
     {
       "id": "mappe-2",
+      "akten_label": "AKTE 02 · DER FUNKE",
       "titel": "Der Funke: Von der Schulwand auf die Straße",
       "beschreibung": "Warum machte Gewalt den Protest größer statt kleiner?",
       "freischalt_code": "ESKALATION",
@@ -1304,6 +1308,7 @@
     },
     {
       "id": "mappe-3",
+      "akten_label": "AKTE 03 · KRIEG UND SCHULD",
       "titel": "Wenn aus Protest Krieg wird - und wer trägt die Schuld?",
       "beschreibung": "Wer trägt die Schuld an diesem Krieg?",
       "freischalt_code": "STELLVERTRETERKRIEG",
@@ -2057,6 +2062,7 @@
     },
     {
       "id": "mappe-4",
+      "akten_label": "AKTE 04 · DIE MENSCHEN",
       "titel": "Was der Krieg den Menschen antut - bis nach Deutschland",
       "beschreibung": "Warum geht uns dieser ferne Krieg etwas an?",
       "freischalt_code": "WILLKOMMENSKULTUR",
