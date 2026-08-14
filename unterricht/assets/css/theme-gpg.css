@@ -1483,7 +1483,12 @@ main.mappe {
   line-height: 1.2;
   letter-spacing: -.2px;
 }
-.material__quelle { font-size: 0.85em; color: var(--color-muted); }
+/* Quellenzeile sitzt auf dem dunklen Aktengrund (--akte-paper #2A211A), nicht auf
+   hellem Pergament. Mit --color-muted (#6b6358) waere sie dunkel-auf-dunkel:
+   gemessen 2,67:1, also unter WCAG-AA. --akte-muted ist die Rolle "gedaempfter Text
+   auf Aktengrund" und bringt 7,04:1 — dezenter als der Fliesstext (12:1), aber lesbar.
+   Gleiche Klasse von Befund wie der frueher gefixte figcaption-Kontrast. */
+.material__quelle { font-size: 0.85em; color: var(--akte-muted, #B8AC95); }
 
 /* v3.5b: Material-Flag (M1, M2, ...) — E5: Reiter auf der Aktenkante */
 .material .material__flag {
