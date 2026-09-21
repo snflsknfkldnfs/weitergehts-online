@@ -1,0 +1,946 @@
+/* ============================================================================
+   redesign.css — GPG-Mappen Redesign-Overlay
+   ----------------------------------------------------------------------------
+   Lädt NACH theme-gpg.css. Überschreibt Engine-Output, lässt das DOM
+   unverändert. Erwartete BEM-Klassen siehe README.md.
+
+   <link rel="stylesheet" href="assets/css/themes/theme-gpg.css">
+   <link rel="stylesheet" href="assets/css/redesign.css">
+
+   Tweak-bare Tokens via data-Attributen am <html>:
+     data-bg="parchment" | "white" | "dark"     (default: dark)
+     data-fontset="serif" | "humanist" | "sans" (default: humanist)
+     style="--akte-fs-body: 17px"                 (Body-Schriftgröße)
+   ============================================================================ */
+
+/* ============================================================================
+   REDESIGN-OVERLAY — überschreibt theme-gpg.css, lässt Engine-DOM unverändert
+   Vorgabe: Tablet-tauglich (kein Sticky-Aufgaben-Spalt unter 1024px),
+   ruhiger Lesefluss in der Hauptkolumne, Material-Differenzierung verstärkt,
+   Karteikarten-Überleitungen mit Brückenfunktion, Stempelfeld als Fortschritt.
+   ============================================================================ */
+
+/* ── Tokens (Tweak-bar) ──────────────────────────────────────────────────── */
+:root {
+  --akte-bg: #F5F0E8;
+  --akte-paper: #FAF6EC;
+  --akte-cream: #FDF6E3;
+  --akte-ink: #2C2416;
+  --akte-muted: #6B6358;
+  --akte-navy: #1B2A4A;
+  --akte-gold: #C9A84C;
+  --akte-gold-light: #E0C57E;
+  --akte-border: #C5BFB3;
+  --akte-success: #2D6A4F;
+  --akte-error: #9B2226;
+  --akte-tipp: #4A6FA5;
+  --akte-font-body: Georgia, "Times New Roman", serif;
+  --akte-font-display: 'IM Fell English', Georgia, serif;
+  --akte-font-hand: 'Architects Daughter', cursive;
+  --akte-font-mono: 'Special Elite', 'Courier New', monospace;
+  --akte-fs-body: 17px;
+}
+[data-bg="white"]    { --akte-bg: #FBF8F2; --akte-paper: #FFFFFF; }
+[data-bg="dark"]     { --akte-bg: #1F1812; --akte-paper: #2A211A; --akte-cream: #2A211A; --akte-ink: #E8E0D0; --akte-muted: #B8AC95; --akte-border: #4a3e2c; }
+[data-fontset="humanist"] { --akte-font-body: 'Spectral', Georgia, serif; }
+[data-fontset="sans"]     { --akte-font-body: system-ui, -apple-system, "Segoe UI", sans-serif; }
+
+body {
+  background: var(--akte-bg) !important;
+  color: var(--akte-ink) !important;
+  font-family: var(--akte-font-body) !important;
+  font-size: var(--akte-fs-body) !important;
+}
+
+/* ── 1. Akten-Header (statt simpler navy-bar) ───────────────────────────── */
+body > header {
+  background: var(--akte-navy) !important;
+  color: #fff !important;
+  border-bottom: 4px solid var(--akte-gold) !important;
+  padding: 22px 32px 18px !important;
+  text-align: left !important;
+  position: relative;
+}
+/* Akten-Label: Text kommt aus data.json (mappen[i].akten_label, sonst die Mappen-Nummer)
+   und wird vom Builder ins DOM geschrieben — das CSS zeigt nur noch an. Als CSS-content
+   trug jede Mappenseite jedes Games das Aktenzeichen des Spiels, in dem die Regel entstand. */
+body > header .akten-label {
+  display: block;
+  font-family: var(--akte-font-mono);
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--akte-gold-light);
+  margin-bottom: 8px;
+}
+.mappe__titel {
+  background: transparent !important;
+  color: #fff !important;
+  font-family: var(--akte-font-display) !important;
+  font-size: 32px !important;
+  text-align: left !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  letter-spacing: -.3px;
+  line-height: 1.15 !important;
+  margin: 0 0 10px !important;
+}
+.header__meta { text-align: left !important; }
+.mappe__beschreibung {
+  font-family: var(--akte-font-hand) !important;
+  font-style: normal !important;
+  font-size: 18px !important;
+  color: var(--akte-gold-light) !important;
+  border-left: 2px solid var(--akte-gold);
+  padding-left: 12px !important;
+  display: inline-block;
+  max-width: 640px;
+  text-align: left !important;
+}
+
+/* ── 2. Sticky Leitfragen-Strip — sitzt unter dem Header ──────────────── */
+.rd-leitfrage-strip {
+  position: sticky; top: 0; z-index: 30;
+  background: #FAF3E3;
+  border-bottom: 1px solid var(--akte-border);
+  padding: 10px 32px;
+  display: flex; align-items: center; gap: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.06);
+}
+[data-bg="dark"] .rd-leitfrage-strip { background: #2a2218; border-bottom-color: #4a3e2c; }
+.rd-leitfrage-strip__label {
+  font-family: var(--akte-font-mono); font-size: 10px; letter-spacing: 2px;
+  color: var(--akte-muted); text-transform: uppercase; flex-shrink: 0;
+}
+.rd-leitfrage-strip__text {
+  font-family: var(--akte-font-hand); font-size: 17px; color: var(--akte-navy);
+  font-weight: 600; flex: 1; line-height: 1.3;
+}
+[data-bg="dark"] .rd-leitfrage-strip__text { color: var(--akte-gold-light); }
+
+/* ── 3. Stempelfeld (statt Balken) ──────────────────────────────────────── */
+.rd-stempelfeld {
+  display: flex; gap: 5px; flex-shrink: 0;
+}
+.rd-stempelfeld__cell {
+  width: 24px; height: 24px;
+  border: 1.5px solid var(--akte-border);
+  background: transparent;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--akte-font-mono); font-size: 12px;
+  color: var(--akte-muted);
+}
+.rd-stempelfeld__cell--solved {
+  border-color: var(--akte-success);
+  background: rgba(45,106,79,.12);
+  color: var(--akte-success);
+}
+.rd-stempelfeld__cell--solved::before {
+  content: "✓"; transform: rotate(-8deg); font-weight: 700; font-size: 16px;
+}
+
+/* ── 4. Main: 2-Spalten ab 1024px (Material links, Aufgaben sticky rechts) */
+main.mappe {
+  max-width: 760px !important;
+  padding: 28px 32px 60px !important;
+}
+.mappe__erarbeitung {
+  display: block !important;
+}
+@media (min-width: 1024px) {
+  main.mappe { max-width: 1320px !important; padding: 28px 40px 60px !important; }
+  .mappe__erarbeitung {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 380px !important;
+    gap: 36px !important;
+    align-items: start !important;
+  }
+  .erarbeitung__materialien { max-width: none !important; margin: 0 !important; min-width: 0; }
+  .erarbeitung__aufgaben {
+    position: sticky !important;
+    top: 88px !important;
+    max-height: calc(100vh - 110px) !important;
+    overflow-y: auto !important;
+    margin-top: 0 !important;
+  }
+}
+
+/* ── 5. Einstieg ────────────────────────────────────────────────────────── */
+.mappe__einstieg {
+  background: transparent !important;
+  border: none !important;
+  padding: 28px 0 !important;
+  text-align: center;
+}
+.einstieg__narrativ {
+  font-family: var(--akte-font-body) !important;
+  font-style: italic;
+  font-size: calc(var(--akte-fs-body) + 2px) !important;
+  color: var(--akte-ink) !important;
+  line-height: 1.65 !important;
+  margin-bottom: 14px;
+}
+.einstieg__problemstellung {
+  display: inline-block;
+  padding: 14px 28px !important;
+  border: 2px solid var(--akte-navy);
+  background: rgba(27,42,74,.04);
+  font-family: var(--akte-font-hand) !important;
+  font-size: 22px !important;
+  color: var(--akte-navy) !important;
+  font-weight: 600 !important;
+  margin-top: 18px !important;
+}
+[data-bg="dark"] .einstieg__problemstellung {
+  border-color: var(--akte-gold);
+  background: rgba(201,168,76,.08);
+  color: #fff !important;
+}
+
+/* ── 6. Material-Blöcke ─────────────────────────────────────────────────── */
+.material {
+  margin: 36px 0 !important;
+  padding: 24px 28px !important;
+  border-radius: 0 !important;
+  background: var(--akte-paper) !important;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(20,12,4,.08);
+}
+.material__flag {
+  position: absolute !important;
+  top: -1px !important; left: 16px !important;
+  background: var(--akte-navy) !important;
+  color: #fff !important;
+  font-family: var(--akte-font-mono) !important;
+  font-size: 11px !important;
+  padding: 4px 12px !important;
+  letter-spacing: 1.5px !important;
+  border-radius: 0 !important;
+  text-transform: uppercase;
+}
+.material__titel {
+  font-family: var(--akte-font-display) !important;
+  font-size: 24px !important;
+  color: var(--akte-navy) !important;
+  margin: 8px 0 14px !important;
+  line-height: 1.2;
+  letter-spacing: -.2px;
+}
+[data-bg="dark"] .material__titel { color: var(--akte-gold-light) !important; }
+.material p, .material__inhalt p {
+  font-family: var(--akte-font-body); font-size: var(--akte-fs-body); line-height: 1.7;
+  margin-bottom: 12px; hyphens: auto; text-align: justify;
+}
+
+/* Darstellung */
+.material--darstellung {
+  border-left: 4px solid var(--akte-navy) !important;
+}
+
+/* Quelle / Tagebuch — Cremepapier mit Linien-Optik */
+.material--tagebuch, .material--quelle {
+  background: var(--akte-cream) !important;
+  border: 1px solid #d4c5a0 !important;
+  border-left: none !important;
+  background-image: repeating-linear-gradient(0deg, transparent 0 28px, rgba(122,90,40,.07) 28px 29px) !important;
+}
+[data-bg="dark"] .material--tagebuch, [data-bg="dark"] .material--quelle {
+  background: #2a2218 !important; border-color: #4a3e2c !important; background-image: none !important;
+}
+.material--tagebuch .material__titel, .material--quelle .material__titel {
+  font-style: italic;
+}
+.material--tagebuch .tagebuch__ort {
+  display: block;
+  font-family: var(--akte-font-hand);
+  font-size: 16px;
+  color: #7a5a2a;
+  margin-bottom: 14px;
+  text-align: right;
+  border-bottom: 1px dashed #b89f6a;
+  padding-bottom: 8px;
+}
+[data-bg="dark"] .material--tagebuch .tagebuch__ort { color: var(--akte-gold-light); border-bottom-color: #4a3e2c; }
+.material--tagebuch .tagebuch__text p {
+  font-style: italic; color: #3a2f1a; line-height: 1.85; font-size: calc(var(--akte-fs-body) + 1px);
+}
+[data-bg="dark"] .material--tagebuch .tagebuch__text p { color: #d6c39a; }
+
+/* Begleitbild — Farb-/Rahmenwerte dark-mode-reaktiv (theme-gpg.css traegt nur das Layout,
+   da --akte-border/--akte-ink hier UND per [data-bg="dark"] definiert sind). */
+.material__begleitbild img { border: 1px solid var(--akte-border); }
+.material__begleitbild figcaption { color: var(--akte-ink); }
+
+/* Karte */
+.material--karte {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  text-align: left !important;
+}
+.material--karte .material__flag { top: -1px !important; left: 0 !important; position: relative !important; display: inline-block !important; margin-bottom: 6px; }
+.material--karte .rd-karte-frame {
+  background: linear-gradient(135deg, #f5e6c0 0%, #e8d29a 100%);
+  border: 2px solid var(--akte-gold);
+  height: auto; min-height: 120px;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+  color: #5a4a2a;
+  font-family: var(--akte-font-mono); font-size: 13px; letter-spacing: 1.5px;
+  margin-top: 8px;
+}
+.material--karte.material--karte--dark .rd-karte-frame {
+  background: linear-gradient(135deg, #2a3f5f 0%, #1B2A4A 100%);
+  border-color: #0c1424; color: #d6c39a;
+}
+.rd-karte-frame::before {
+  content: ""; position: absolute; inset: 0; opacity: .25;
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 39px, currentColor 39px 40px),
+    repeating-linear-gradient(90deg, transparent 0 39px, currentColor 39px 40px);
+}
+.material--karte figcaption {
+  font-family: var(--akte-font-body) !important;
+  font-size: 14px !important;
+  color: var(--akte-muted) !important;
+  margin-top: 10px !important;
+  line-height: 1.5;
+}
+.material--karte figcaption strong { color: var(--akte-ink); display: block; margin-bottom: 6px; font-style: normal; line-height: 1.4; }
+.material--karte figcaption em { display: block; font-style: italic; line-height: 1.5; }
+
+/* Bild / Foto im Abzugsrahmen */
+.material--bild {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  text-align: center !important;
+}
+.material--bild .material__flag { top: -1px !important; left: 0 !important; position: relative !important; display: inline-block !important; margin-bottom: 6px; }
+.material--bild .rd-foto-mount {
+  display: inline-block;
+  background: #fafafa;
+  padding: 12px 12px 50px;
+  box-shadow: 0 8px 18px rgba(20,12,4,.28);
+  transform: rotate(-.6deg);
+  margin-top: 8px;
+}
+.material--bild .rd-foto-stage {
+  width: auto; max-width: 100%; height: auto; min-height: 120px;
+  background: linear-gradient(135deg, #4a4640 0%, #2a2622 100%);
+  color: #a8a098;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--akte-font-mono); font-size: 13px; letter-spacing: 1.5px;
+}
+/* Fix (Rahmen-Adaption): Bild-Frames wachsen mit dem Artefakt-Aspekt; das Bild bleibt
+   intrinsisch + gekappt, nie Overflow (Foto) / Crop (Karte) / Misfit (Tafelbild). */
+.material--bild .rd-foto-stage img,
+.material--karte .rd-karte-frame img {
+  display: block; width: auto; height: auto;
+  max-width: min(480px, 100%); max-height: 520px;
+}
+.sicherung__tafelbild-frame img,
+.sicherung__tafelbild-frame svg {
+  display: block; max-width: 100%; height: auto;
+}
+.material--bild figcaption {
+  font-family: var(--akte-font-hand) !important;
+  font-size: 16px !important;
+  color: var(--akte-ink) !important; /* nicht hart Dunkelbraun: sonst braun-auf-braun im Dark-Mode (--akte-ink adaptiert) */
+  text-align: left;
+  margin-top: 14px;
+  padding: 0 4px;
+}
+
+/* Statistik-Diagramm: der statistik-Producer authort das inline-SVG mit dunklen Text-Fills
+   (#444/#555/#8a8a8a) fuer HELLEN Hintergrund. Im Dark-Mode waere das dunkel-auf-dunkel
+   (gemessen 1.8-2.1:1). Loesung: der Chart sitzt auf einer hellen "Daten-Papier"-Karte —
+   das SVG rendert immer dark-on-light wie intendiert, alle authored Farben (Text + Balken)
+   bleiben erhalten, in beiden Modi legibel. */
+.material--statistik .statistik__grafik {
+  background: #f7f3e8;
+  border: 1px solid rgba(0,0,0,0.10);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0 6px;
+}
+.material--statistik .statistik__grafik svg {
+  display: block; max-width: 100%; height: auto; margin: 0 auto;
+}
+
+/* ── 7. Material-Überleitungen — Karteikarten mit Pin + Pfeil ───────────── */
+.material-ueberleitung {
+  text-align: left !important;
+  background: none !important;
+  padding: 0 !important;
+  margin: 28px auto !important;
+  max-width: 540px;
+  position: relative;
+  transform: rotate(-1deg);
+}
+.material-ueberleitung:nth-of-type(even) { transform: rotate(1.2deg); }
+.material-ueberleitung::before { display: none !important; }
+.material-ueberleitung__text {
+  background: #FFF4B8 !important;
+  border: 1px solid #E8D27A !important;
+  padding: 18px 22px 16px 46px !important;
+  border-radius: 2px !important;
+  font-family: var(--akte-font-hand) !important;
+  font-style: normal !important;
+  font-size: 18px !important;
+  color: #2A1F0F !important;
+  line-height: 1.45 !important;
+  max-width: none !important;
+  position: relative;
+  box-shadow: 0 6px 14px rgba(20,12,4,.18), 0 1px 0 rgba(0,0,0,.05) inset;
+}
+.material-ueberleitung__text::before {
+  /* Pin */
+  content: "";
+  position: absolute; top: -10px; left: 14px;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, var(--akte-gold-light) 0%, var(--akte-gold) 70%);
+  box-shadow: 0 3px 4px rgba(0,0,0,.4);
+  border: 1px solid #8a7530;
+}
+.material-ueberleitung__text::after {
+  /* Pfeil-Glyph für Brückenfunktion */
+  content: "↳";
+  position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+  font-size: 22px; color: rgba(0,0,0,.35); font-family: Georgia, serif;
+}
+
+/* ── 8. Sicherungsheft — als Werkbank, nicht als Quiz ────────────────────
+   Strategie: ruhige Container-Hülle, jede Aufgabe ist eine eigenständige
+   Karte mit hartem Hintergrund-Kontrast, klarer Typo-Hierarchie
+   (Body-Schrift für Frage, Hand-Schrift NUR für Nummer-Stempel), grünem
+   Status-Akzent links bei gelöst.                                          */
+
+.erarbeitung__aufgaben {
+  margin-top: 48px !important;
+  background: var(--akte-paper) !important;
+  border: 1px solid var(--akte-border) !important;
+  border-radius: 4px !important;
+  background-image: none !important;
+  box-shadow: 0 8px 22px rgba(20,12,4,.10) !important;
+  padding: 0 !important;
+}
+[data-bg="dark"] .erarbeitung__aufgaben {
+  background: #1a1410 !important;
+  border-color: #4a3e2c !important;
+}
+.fragebogen__lochrand { display: none !important; }
+
+.fragebogen__header {
+  background: var(--akte-navy) !important;
+  border-bottom: 3px solid var(--akte-gold) !important;
+  padding: 14px 20px !important;
+  border-radius: 4px 4px 0 0;
+}
+.fragebogen__titel {
+  font-family: var(--akte-font-display) !important;
+  font-size: 19px !important;
+  color: #fff !important;
+  font-weight: 700;
+  margin: 0 !important;
+  line-height: 1.2;
+}
+.fragebogen__titel::before {
+  content: "SICHERUNGSHEFT";
+  display: block;
+  font-family: var(--akte-font-mono);
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  color: var(--akte-gold-light);
+  margin-bottom: 4px;
+  font-weight: 400;
+}
+.fragebogen__inner {
+  padding: 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+}
+
+/* Eine Aufgabe = eigenständige Karte */
+.aufgabe {
+  border: 1px solid var(--akte-border) !important;
+  border-left: 4px solid var(--akte-border) !important;
+  border-radius: 3px !important;
+  background: #fdfaf3 !important;
+  padding: 14px 16px !important;
+  margin: 0 !important;
+  box-shadow: 0 1px 0 rgba(20,12,4,.04);
+}
+[data-bg="dark"] .aufgabe {
+  background: #2a2218 !important;
+  border-color: #4a3e2c !important;
+  border-left-color: #4a3e2c !important;
+}
+.aufgabe--solved {
+  border-left-color: var(--akte-success) !important;
+  background: #f5f9f3 !important;
+}
+[data-bg="dark"] .aufgabe--solved {
+  background: #1f2820 !important;
+  border-left-color: var(--akte-success) !important;
+}
+
+.aufgabe__header {
+  background: transparent !important;
+  color: inherit !important;
+  border: none !important;
+  padding: 0 !important;
+  margin-bottom: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+.aufgabe__nummer {
+  width: 26px !important; height: 26px !important;
+  min-height: 26px !important; min-width: 26px !important;
+  border-radius: 50% !important;
+  border: 1.5px solid var(--akte-navy) !important;
+  background: var(--akte-navy) !important;
+  color: #fff !important;
+  font-family: var(--akte-font-mono) !important;
+  font-size: 12px !important;
+  font-weight: 700;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0;
+}
+[data-bg="dark"] .aufgabe__nummer {
+  background: var(--akte-gold) !important;
+  border-color: var(--akte-gold) !important;
+  color: #1a1410 !important;
+}
+.aufgabe--solved .aufgabe__nummer {
+  background: var(--akte-success) !important;
+  border-color: var(--akte-success) !important;
+  color: #fff !important;
+}
+.aufgabe--solved .aufgabe__nummer::before {
+  content: "✓";
+  font-family: var(--akte-font-body);
+  font-size: 14px;
+}
+.aufgabe--solved .aufgabe__nummer-text { display: none !important; }
+
+.aufgabe__typ-badge {
+  background: transparent !important;
+  color: var(--akte-muted) !important;
+  font-family: var(--akte-font-mono) !important;
+  font-size: 10px !important;
+  padding: 0 !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase;
+  border: none !important;
+  margin-left: auto !important;
+}
+
+/* Frage — Body-Schrift, lesbar, klar */
+.aufgabe__frage {
+  background: none !important;
+  font-family: var(--akte-font-body) !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  font-style: normal !important;
+  color: var(--akte-ink) !important;
+  padding: 0 !important;
+  margin: 0 0 12px !important;
+  display: block !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0;
+}
+[data-bg="dark"] .aufgabe__frage { color: #f0e8d0 !important; }
+
+.aufgabe__body {
+  padding-left: 0 !important;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.aufgabe__lueckentext {
+  font-size: 14px !important;
+  line-height: 1.65 !important;
+  color: var(--akte-ink) !important;
+}
+[data-bg="dark"] .aufgabe__lueckentext { color: #e0d8c5 !important; }
+.aufgabe__luecke {
+  background: rgba(201,168,76,.18) !important;
+  border-bottom: 1.5px solid var(--akte-gold) !important;
+  padding: 1px 6px !important;
+  font-weight: 600;
+  color: var(--akte-navy) !important;
+  font-style: normal !important;
+  font-family: var(--akte-font-body) !important;
+  border-radius: 2px;
+}
+[data-bg="dark"] .aufgabe__luecke {
+  color: var(--akte-gold-light) !important;
+  background: rgba(201,168,76,.12) !important;
+}
+.aufgabe__luecke--correct {
+  background: rgba(45,106,79,.18) !important;
+  border-bottom-color: var(--akte-success) !important;
+  color: var(--akte-success) !important;
+}
+[data-bg="dark"] .aufgabe__luecke--correct {
+  color: #6FAB8B !important;
+  background: rgba(45,106,79,.18) !important;
+}
+
+.aufgabe__optionen { display: flex !important; flex-direction: column !important; gap: 6px !important; }
+.aufgabe__option {
+  font-family: var(--akte-font-body) !important;
+  font-size: 14px !important;
+  background: rgba(255,255,255,.4) !important;
+  border: 1px solid var(--akte-border) !important;
+  border-radius: 3px !important;
+  padding: 8px 10px !important;
+  cursor: pointer;
+}
+[data-bg="dark"] .aufgabe__option {
+  background: rgba(0,0,0,.2) !important;
+  border-color: #4a3e2c !important;
+  color: #e0d8c5 !important;
+}
+.aufgabe__option--correct {
+  background: rgba(45,106,79,.12) !important;
+  border-color: var(--akte-success) !important;
+  border-left: 3px solid var(--akte-success) !important;
+  font-weight: 600;
+}
+
+/* Submit-Button — Notiz-Stempel */
+.aufgabe__submit {
+  background: var(--akte-navy) !important;
+  color: #fff !important;
+  font-family: var(--akte-font-mono) !important;
+  font-size: 11px !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase;
+  border-radius: 2px !important;
+  padding: 7px 14px !important;
+  min-height: 0 !important;
+  border: none !important;
+  cursor: pointer;
+  margin-top: 4px;
+}
+/* Kein CSS-Label auf dem Button: die Engine setzt seinen Text selbst (textContent) und
+   uebersetzt ihn beim Sprachwechsel. Ein ::before-Label addiert sich dazu, statt es zu
+   ersetzen, und bleibt in jeder Sprache deutsch. Geloest signalisieren Farbe + Rahmen. */
+.aufgabe--solved .aufgabe__submit {
+  background: transparent !important;
+  color: var(--akte-success) !important;
+  border: 1.5px solid var(--akte-success) !important;
+}
+
+/* Reihenfolge */
+.aufgabe__reihenfolge {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 0 8px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+}
+.aufgabe__reihenfolge-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: rgba(255,255,255,.5) !important;
+  border: 1px solid var(--akte-border) !important;
+  border-radius: 3px !important;
+  padding: 7px 10px !important;
+  font-size: 13px !important;
+}
+[data-bg="dark"] .aufgabe__reihenfolge-item {
+  background: rgba(0,0,0,.2) !important;
+  border-color: #4a3e2c !important;
+  color: #e0d8c5 !important;
+}
+.aufgabe__reihenfolge-nummer {
+  width: 20px; height: 20px; flex-shrink: 0;
+  background: var(--akte-navy); color: #fff;
+  border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--akte-font-mono); font-size: 10px; font-weight: 700;
+}
+[data-bg="dark"] .aufgabe__reihenfolge-nummer { background: var(--akte-gold); color: #1a1410; }
+.aufgabe__reihenfolge-text { flex: 1; line-height: 1.4; }
+.aufgabe__reihenfolge-buttons { display: flex; flex-direction: column; gap: 1px; flex-shrink: 0; }
+.aufgabe__reihenfolge-btn {
+  width: 22px; height: 16px;
+  background: var(--akte-navy); color: #fff;
+  border: none; border-radius: 2px;
+  font-size: 9px; line-height: 1; cursor: pointer;
+  min-height: 0 !important; min-width: 0 !important;
+}
+[data-bg="dark"] .aufgabe__reihenfolge-btn { background: var(--akte-gold); color: #1a1410; }
+
+/* Zuordnung */
+.aufgabe__zuordnung { display: flex !important; flex-direction: column !important; gap: 6px !important; }
+.aufgabe__zuordnung-zeile {
+  display: grid !important;
+  grid-template-columns: 1fr auto auto !important;
+  gap: 8px !important;
+  align-items: center !important;
+  background: rgba(255,255,255,.5) !important;
+  border: 1px solid var(--akte-border) !important;
+  border-radius: 3px !important;
+  padding: 6px 10px !important;
+  font-size: 13px !important;
+}
+[data-bg="dark"] .aufgabe__zuordnung-zeile {
+  background: rgba(0,0,0,.2) !important;
+  border-color: #4a3e2c !important;
+  color: #e0d8c5 !important;
+}
+.aufgabe__zuordnung-pfeil { color: var(--akte-muted); font-size: 14px; }
+.aufgabe__zuordnung-select {
+  font-family: var(--akte-font-body) !important;
+  font-size: 13px !important;
+  padding: 4px 6px !important;
+  border-radius: 2px;
+  border: 1px solid var(--akte-border);
+  background: #fff;
+  min-height: 0 !important;
+  min-width: 0 !important;
+}
+[data-bg="dark"] .aufgabe__zuordnung-select {
+  background: #1a1410 !important;
+  color: #e0d8c5 !important;
+  border-color: #4a3e2c !important;
+}
+
+/* Freitext */
+.aufgabe__textarea {
+  width: 100% !important;
+  min-height: 90px !important;
+  font-family: var(--akte-font-body) !important;
+  font-size: 14px !important;
+  padding: 10px !important;
+  border: 1px solid var(--akte-border) !important;
+  border-radius: 3px !important;
+  background: rgba(255,255,255,.6) !important;
+  color: var(--akte-ink) !important;
+  line-height: 1.5;
+  resize: vertical;
+}
+[data-bg="dark"] .aufgabe__textarea {
+  background: rgba(0,0,0,.3) !important;
+  color: #e0d8c5 !important;
+  border-color: #4a3e2c !important;
+}
+
+/* Tipp-Pillen */
+.aufgabe__tipps {
+  padding: 0 !important;
+  margin-top: 8px !important;
+  display: flex !important;
+  gap: 6px !important;
+  flex-wrap: wrap;
+}
+.tipp__trigger {
+  background: rgba(74,111,165,.15) !important;
+  color: var(--akte-tipp) !important;
+  border: 1px solid rgba(74,111,165,.35) !important;
+  font-family: var(--akte-font-mono) !important;
+  font-size: 10px !important;
+  letter-spacing: 1px;
+  border-radius: 12px !important;
+  padding: 3px 9px !important;
+  min-height: 0 !important;
+  cursor: pointer;
+}
+[data-bg="dark"] .tipp__trigger {
+  background: rgba(120,160,210,.15) !important;
+  color: #94B5DB !important;
+  border-color: rgba(120,160,210,.35) !important;
+}
+
+/* ── 9. Sicherung / Hefteintrag — bleibt im Original-Stil (gut!) ────────── */
+.mappe__sicherung {
+  background: transparent !important;
+  border: none !important;
+  padding: 32px 0 !important;
+  margin-top: 40px;
+}
+.mappe__sicherung::before {
+  content: "PHASE 3 · SICHERUNG";
+  display: block;
+  font-family: var(--akte-font-mono);
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  color: var(--akte-muted);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+/* ── 10. Footer-Nav ─────────────────────────────────────────────────────── */
+.mappe__navigation {
+  background: var(--akte-navy);
+  padding: 16px 24px !important;
+  margin: 40px -32px -60px !important;
+  border-top: 4px solid var(--akte-gold) !important;
+}
+.mappe__nav-btn {
+  background: transparent !important;
+  color: var(--akte-gold-light) !important;
+  font-family: var(--akte-font-mono) !important;
+  font-size: 12px !important;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: 1.5px solid var(--akte-gold);
+  border-radius: 2px !important;
+  padding: 8px 16px !important;
+  min-height: 0 !important;
+}
+#nav-mappe-info {
+  font-family: var(--akte-font-mono);
+  font-size: 11px;
+  color: rgba(255,255,255,.6);
+  letter-spacing: 1.5px;
+}
+
+body > footer { display: none; }
+
+/* egg-v2 Tafelbild-Sicherung */
+.sicherung__tafelbild-frame { width: 100%; min-height: 120px; border: 1px solid var(--akte-gold);
+  border-radius: 4px; background: var(--akte-paper); }
+
+/* === Dokument-Form-Grundgerüst (Design-Increment #4) === */
+/* Basisregel gattungs-neutral (EVAL 2026-08-01 M6): vorher gab sie ALLEN acht Gattungen
+   Handschrift + rechtsbuendig — also auch dem Behoerden-Kopf eines Formulars ("Syrische
+   Arabische Republik · Stimmzettel" in Architects Daughter) und der Ortszeile eines
+   quelle_generisch, dessen Chrome-Regel ausdruecklich "bewusst leer" ist. Die Anmutung
+   war auf die Ort-Datum-Zeile des Briefs kalibriert; briefliche Formen holen sie sich
+   unten selbst zurueck. */
+.material--dok .dok__kopf {
+  text-align: left; font-size: 16px;
+  color: #7a5a2a; border-bottom: 1px dashed #b89f6a;
+  padding-bottom: 8px; margin-bottom: 14px;
+}
+/* briefliche Formen: Ort/Datum als handschriftliche Kopfzeile oben rechts */
+.material--dok-brief .dok__kopf,
+.material--dok-tagebuchseite .dok__kopf { text-align: right; font-family: var(--akte-font-hand); }
+
+/* Dokument-Blatt (EVAL 2026-08-01 M1): der quellentext-`inhalt` ist ein Dreischritt
+   (Einleitung + Wortlaut + Erlaeuterung). Ohne Grenze umschloss das Gattungs-Chrome alle
+   drei — im amtlichen Rahmen stand dann auch die didaktische Wertung ("Die Abstimmung war
+   deshalb eher ein Ja-Sagen als eine echte Wahl."), also Generator-Sprache mit der
+   Autoritaet des Staates. Nennt der Producer die Korpus-Grenzen, wrappt assemble nur den
+   Wortlaut in .dok__blatt; der Rahmentext tritt daneben typografisch zurueck.
+   Ohne Anker gibt es kein .dok__blatt und alles bleibt wie bisher. */
+.material--dok .dok__blatt {
+  margin: 6px 0; padding: 10px 14px;
+  border-left: 3px solid #b89f6a; background: rgba(138, 117, 80, 0.06);
+}
+.material--dok .dok__korpus:has(.dok__blatt) > p {
+  font-family: var(--akte-font-body); font-size: calc(var(--akte-fs-body) - 1px); opacity: 0.85;
+}
+.material--dok .dok__schluss { margin-top: 14px; }
+.material--dok .dok__kennzeichnung {
+  margin-top: 16px; padding-top: 8px; border-top: 1px solid rgba(122,90,40,.35);
+  font-size: 13px; font-style: normal; color: var(--akte-muted);
+}
+[data-bg="dark"] .material--dok .dok__kopf { color: var(--akte-gold-light); border-bottom-color: #4a3e2c; }
+[data-bg="dark"] .material--dok .dok__kennzeichnung { border-top-color: #4a3e2c; }
+
+/* === Dokument-Gattungs-Chromes (Design-Increment #4, schemenhaft, kein Faksimile) === */
+/* Papier-Objekt-Prinzip: Dokumente bleiben auch im Dark-Mode helle Objekte (v0.1.27-Lehre).
+   Render-Proof-Fix (Task 6): --akte-cream wird von [data-bg="dark"] auf #2A211A (dunkel)
+   umdefiniert (Zeile 44) -- var(--akte-cream) haette hier also die Dark-Farbe zurueckgegeben und
+   das Papier-Objekt-Prinzip gebrochen (fast unlesbarer dunkler Text auf dunklem Grund, siehe
+   Render-Proof mat-1-1/1-2/1-4_dark.png vor dem Fix). Literaler Hell-Hex statt Custom-Property,
+   analog dem bestehenden .material--tagebuch/.material--quelle-Dark-Override (Zeile 245). */
+[data-bg="dark"] .material--dok { background: #FDF6E3 !important; }
+[data-bg="dark"] .material--dok .material__inhalt, [data-bg="dark"] .material--dok .material__inhalt p,
+[data-bg="dark"] .material--dok .tagebuch__text p { color: #3a2f1a !important; }
+/* Folgefix: Task-5-Grundgerüst faerbte dok__kopf/dok__kennzeichnung im Dark-Mode gold/tan
+   (Annahme: Papier bleibt dunkel) -- nach obigem Hell-Fix sass das als niedrigkontrastiges
+   Tan-auf-Creme. Auf den ink-Ton der jetzt hellen Flaeche zurueckziehen. */
+[data-bg="dark"] .material--dok .dok__kopf { color: #7a5a2a !important; }
+[data-bg="dark"] .material--dok .dok__kennzeichnung { color: #6B6358 !important; }
+/* Fix-Round 1 (Review-Finding): die globale Dark-Titel-Regel (Zeile 226,
+   .material__titel -> var(--akte-gold-light) !important) liess auch auf dem jetzt hellen
+   Dok-Papier alle 8 Titel blass-gold stehen -- dieselbe Niedrigkontrast-Lage wie beim
+   dok__kopf-Folgefix, nur an der prominentesten Zeile. Auf Navy zurueckziehen = exakt die
+   Light-Mode-Titelfarbe (Zeile 221; --akte-navy wird im Dark-Scope NICHT umdefiniert), das
+   Papier-Objekt sieht damit in beiden Modi identisch aus. NUR .material--dok-scoped:
+   .material--quelle/.material--tagebuch OHNE dokument-Block behalten ihren dunklen Grund
+   (Zeile 245) und brauchen den goldenen Titel weiterhin. */
+[data-bg="dark"] .material--dok .material__titel { color: var(--akte-navy) !important; }
+/* Fix-Round 1, Teil 2 (gleiches Finding, andere Ursache): "Dein Bruder Karim" war fast
+   unsichtbar, weil dok__schluss AUSSERHALB von material__inhalt liegt und darum vom
+   Korpus-Farbfix oben nicht erfasst wird -- es erbte das Dark-Scope-Body-ink #E8E0D0
+   (hell) auf hellem Papier (per getComputedStyle verifiziert: rgb(232,224,208) auf
+   rgb(253,246,227)). Auf den Korpus-Ink-Ton der hellen Flaeche ziehen. */
+[data-bg="dark"] .material--dok .dok__schluss { color: #3a2f1a !important; }
+
+/* formular: duenner Doppelrahmen + tabellarische Anmutung */
+.material--dok-formular {
+  border: 1px solid #8a7550 !important; outline: 3px double #8a7550; outline-offset: -8px;
+  background-image: none !important;
+}
+.material--dok-formular .material__titel { font-style: normal; text-transform: uppercase; letter-spacing: 1.5px; text-align: center; }
+/* Mono auf dem Absatz, nicht auf dem Container (EVAL 2026-08-01 M7): der Container-Selektor
+   (0,1,0) wirkt nur per Vererbung und verliert gegen .material__inhalt p (0,1,1) — gemessen
+   rendert der Korpus sonst in Spectral statt Special Elite. Muster wie rede_transkript. */
+.material--dok-formular .dok__korpus p { font-style: normal; line-height: 2.0; font-family: var(--akte-font-mono); }
+.material--dok-formular .dok__blatt p { font-family: var(--akte-font-mono); }
+.material--dok-formular .dok__kopf { font-family: var(--akte-font-mono); }
+
+/* brief: Kopfzeile rechts (erbt dok__kopf), Grussformel abgesetzt */
+.material--dok-brief { background-image: none !important; }
+.material--dok-brief .dok__korpus p { font-style: italic; }
+.material--dok-brief .dok__schluss { text-align: right; font-style: italic; font-family: var(--akte-font-hand); font-size: 17px; }
+
+/* erlass/bekanntmachung: zentrierter Kopf, gesperrter Titel, strenge Typo */
+.material--dok-erlass_bekanntmachung { background-image: none !important; border: 2px solid #6a5a3a !important; }
+.material--dok-erlass_bekanntmachung .material__titel {
+  font-style: normal; text-align: center; text-transform: uppercase; letter-spacing: 3px;
+  border-bottom: 2px solid #6a5a3a; padding-bottom: 10px;
+}
+.material--dok-erlass_bekanntmachung .dok__kopf { text-align: center; font-family: var(--akte-font-body); border-bottom: none; }
+.material--dok-erlass_bekanntmachung .dok__korpus p { font-style: normal; text-align: justify; hyphens: auto; }
+
+/* zeitungsartikel: Kopfleiste + ab Tablet zweispaltig */
+.material--dok-zeitungsartikel { background: #f4efe4 !important; background-image: none !important; }
+.material--dok-zeitungsartikel .material__titel {
+  font-style: normal; border-top: 3px solid var(--akte-ink); border-bottom: 1px solid var(--akte-ink); padding: 6px 0;
+}
+.material--dok-zeitungsartikel .dok__korpus p { font-style: normal; }
+/* Spalten gehoeren aufs Blatt — auf dem Korpus wuerden sie das Dokument zerreissen. */
+@media (min-width: 700px) {
+  .material--dok-zeitungsartikel .dok__blatt,
+  .material--dok-zeitungsartikel .dok__korpus:not(:has(.dok__blatt)) {
+    column-count: 2; column-gap: 28px; column-rule: 1px solid #c9bfa8;
+  }
+}
+
+/* plakat/flugblatt: zentrierte Plakat-Typo */
+.material--dok-plakat_flugblatt { background-image: none !important; border: 2px solid #8a7550 !important; text-align: center; }
+/* Render-Proof-Fix (Task 6): uppercase + letter-spacing auf laengeren Titelworten (z.B.
+   "PROTESTBEWEGUNG") liess den Titel bei 375px ueber den Material-Rand hinauslaufen
+   (scrollWidth 296px > clientWidth 251px, siehe mat-1-5_mobile375-Proof) -- overflow-wrap
+   erlaubt Mitwort-Umbruch statt Abschneiden am Rand. */
+.material--dok-plakat_flugblatt .material__titel {
+  font-style: normal; text-transform: uppercase; letter-spacing: 2px;
+  overflow-wrap: break-word; word-break: break-word;
+}
+/* Zentrierung auf dem Absatz (EVAL 2026-08-01 M7): text-align auf dem Container verliert
+   gegen .material p { text-align: justify } und war damit wirkungslos. */
+.material--dok-plakat_flugblatt .dok__korpus p { font-style: normal; font-weight: 600; line-height: 1.6; text-align: center; }
+.material--dok-plakat_flugblatt .dok__kopf { text-align: center; }
+
+/* rede/transkript: Manuskript-Look mit Randlinie */
+.material--dok-rede_transkript { background-image: none !important; border-left: 3px solid #8a7550 !important; }
+.material--dok-rede_transkript .dok__korpus p { font-style: normal; font-family: var(--akte-font-mono); font-size: calc(var(--akte-fs-body) - 1px); line-height: 1.9; }
+
+/* tagebuchseite + quelle_generisch: heutiges Linienpapier (Chrome = Grundgerüst + Kennzeichnung) */
+.material--dok-tagebuchseite, .material--dok-quelle_generisch { /* bewusst leer — erben .material--quelle/.material--tagebuch */ }
