@@ -1,0 +1,404 @@
+{
+ "titel": "Verlauf und Ende des Zweiten Weltkriegs — vom Kriegsverlauf (Jgst. 8) zur Nachkriegszeit (Jgst. 9)",
+ "leitfrage": "War der 8. Mai 1945 ein Ende oder ein Anfang – und für wen?",
+ "mappen": [
+  {
+   "id": "mappe-1",
+   "nr": 1,
+   "titel": "Der dunkle Fleck auf der Karte (1939–1944)",
+   "stundenfrage": "Konnte Hitlers Deutschland diesen Krieg überhaupt gewinnen?",
+   "loesungswort": "FABRIKEN",
+   "kernerkenntnis": "Nein: Seit Sommer 1944 war der Krieg entschieden – die Alliierten hatten mehr Soldaten und Panzer.",
+   "hefteintrag": [
+    "Expansionspolitik: Polen 1939, Blitzkriege → Moskau 1941: Abnutzungskrieg → Stalingrad 1943: Kapitulation → Normandie 1944: 100 zu 1 → Alliierte Fabriken: mehr Panzer"
+   ],
+   "hefteintrag_format": "fluss",
+   "abschreib_minuten": 5,
+   "tafelbild": "tafelbild/mappe-1.html",
+   "lehrplan": [
+    {
+     "id": "gpg-r8-lb2-ke03",
+     "text": "gliedern die Ursachen, den Verlauf (z. B. Wendepunkte) und das Ende des Zweiten Weltkrieges mithilfe von Ereignissen und Daten und erklären die Folgen der nationalsozialistischen Expansionspolitik für Deutschland sowie für seine Nachbarländer."
+    },
+    {
+     "id": "gpg-r8-lb3-ke01",
+     "text": "beschreiben Methoden und Ziele der NS-Propaganda und vergleichen die Rolle der Medien in Demokratie und Diktatur."
+    }
+   ],
+   "aufgaben": [
+    {
+     "nr": 1,
+     "typ": "multiple-choice",
+     "frage": "Was seht ihr auf dem Foto aus Warschau wirklich – bevor ihr es deutet?",
+     "loesung": [
+      "Ein leerer Denkmalsockel mit Treppenstufen, dahinter ausgebrannte Häuser ohne Dächer"
+     ]
+    },
+    {
+     "nr": 2,
+     "typ": "multiple-choice",
+     "frage": "Was zeigt das zerstörte Denkmal in Warschau über die Ziele der Besatzer?",
+     "loesung": [
+      "Die Besatzer zerstörten das Denkmal gezielt, sie wollten auch die Erinnerung der Stadt auslöschen."
+     ]
+    },
+    {
+     "nr": 3,
+     "typ": "lueckentext",
+     "frage": "Setzt die passenden Begriffe aus dem Text in die Lücken ein.",
+     "loesung": [
+      "Wehrmacht",
+      "Lebensraum",
+      "Blitzkriege",
+      "Vernichtungskrieg",
+      "Alliierten",
+      "bedingungslose Kapitulation"
+     ]
+    },
+    {
+     "nr": 4,
+     "typ": "reihenfolge",
+     "frage": "Bringt die sechs Ereignisse aus der Zeitleiste in die richtige zeitliche Reihenfolge, vom frühesten bis zum spätesten.",
+     "loesung": [
+      "Vor Moskau scheitert die Wehrmacht: Aus dem geplanten schnellen Sieg wird ein langer, verlustreicher Abnutzungskrieg.",
+      "Bei Stalingrad zwingt die Rote Armee 100.000 eingekesselte, also umzingelte, deutsche Soldaten zur Kapitulation, also zur Aufgabe.",
+      "In Tunis in Nordafrika müssen 270.000 deutsche und italienische Soldaten aufgeben; die Wehrmacht zieht sich überall zurück.",
+      "1,5 Millionen alliierte Soldaten landen in der Normandie. Die Wehrmacht bekommt dagegen nur noch 15.000 Mann Verstärkung.",
+      "Sowjetische und amerikanische Fabriken bauen inzwischen viel mehr Panzer als deutsche Fabriken: Militärisch ist der Krieg entschieden.",
+      "Der Krieg dauert noch elf weitere Monate, obwohl er militärisch längst entschieden ist – bevor die Wehrmacht endgültig kapituliert."
+     ]
+    },
+    {
+     "nr": 5,
+     "typ": "multiple-choice",
+     "frage": "Warum konnte 1944 keine deutsche Armee die Landung in der Normandie aufhalten?",
+     "loesung": [
+      "Die alliierten Soldaten waren den deutschen Soldaten weit überlegen an Zahl."
+     ]
+    },
+    {
+     "nr": 6,
+     "typ": "zuordnung",
+     "frage": "Die Expansionspolitik hatte Folgen. Ordnet zu: Wen traf diese Folge – die Nachbarländer oder die Menschen in Deutschland?",
+     "loesung": [
+      "In Warschau zerstören die Besatzer gezielt ein Denkmal der Stadt. → Folge für die Nachbarländer",
+      "Polen verliert im Krieg jeden sechsten Einwohner. → Folge für die Nachbarländer",
+      "In den besetzten Ländern herrschen Terror, Zwangsarbeit und Mord. → Folge für die Nachbarländer",
+      "Auf der Lebensmittelkarte stehen 2.250 Gramm Brot für die ganze Woche. → Folge für die Menschen in Deutschland",
+      "Der neunjährige Franz ist mit seiner Klasse aufs Land geschickt, sein Stuhl bleibt leer. → Folge für die Menschen in Deutschland",
+      "Bei Stalingrad müssen 100.000 eingekesselte Soldaten kapitulieren. → Folge für die Menschen in Deutschland"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mappe-2",
+   "nr": 2,
+   "titel": "Elf Monate zu lang: Das Ende des Krieges (1944–1945)",
+   "stundenfrage": "War der 8. Mai 1945 auch für die Deutschen eine Befreiung?",
+   "loesungswort": "BEDINGUNGSLOS",
+   "kernerkenntnis": "Die meisten Deutschen erlebten das Kriegsende als Zusammenbruch, Weizsäcker nennt es Befreiung von der Gewaltherrschaft.",
+   "hefteintrag": [
+    "Wer? | Der 8. Mai 1945 bedeutet …",
+    "Wehrmacht | Kapitulation, bedingungslos: aufgeben ohne Bedingung",
+    "KZ-Häftlinge, Zwangsarbeiter, Verfolgte | Rettung, Freiheit",
+    "Elf Millionen deutsche Soldaten | Gefangenschaft",
+    "Millionen Familien im Osten | Flucht und Vertreibung",
+    "Deutsche unter dem Regime | Ende von Standgericht, Volkssturm, Nero-Befehl"
+   ],
+   "hefteintrag_format": "tabelle",
+   "abschreib_minuten": 6,
+   "tafelbild": "tafelbild/mappe-2.html",
+   "lehrplan": [
+    {
+     "id": "gpg-r8-lb2-ke03",
+     "text": "gliedern die Ursachen, den Verlauf (z. B. Wendepunkte) und das Ende des Zweiten Weltkrieges mithilfe von Ereignissen und Daten und erklären die Folgen der nationalsozialistischen Expansionspolitik für Deutschland sowie für seine Nachbarländer."
+    },
+    {
+     "id": "gpg-r8-lb3-ke02",
+     "text": "erläutern Motive und Formen des Widerstands einzelner Gruppen unter dem Nationalsozialismus, diskutieren Möglichkeiten und Grenzen, Menschenrechte auch in einer Demokratie einzufordern und erkennen dabei Zivilcourage als eine zum Erhalt und zur Stabilisierung demokratischer Gesellschaftsstrukturen unverzichtbare Voraussetzung."
+    },
+    {
+     "id": "gpg-r8-lb2-ke04",
+     "text": "recherchieren Lebensgeschichten von Menschen, die unter bzw. nach Ende der NS-Gewaltherrschaft verfolgt, ermordet oder vertrieben wurden. Dabei unterscheiden sie rassische und politische Motive."
+    },
+    {
+     "id": "gpg-r9-lb2-ke01",
+     "text": "erläutern die vielfältigen Funktionen von Gedenkstätten und Gedenkorten der NS-Zeit (z. B. durch eine Exkursion an außerschulische Lernorte wie etwa Dachau oder Flossenbürg) und ordnen sie in den Kontext der NS-Gewaltherrschaft (vor allem Konzentrationslager) ein. Dadurch verstehen sie die dauerhafte Notwendigkeit einer reflektierten Erinnerungskultur und bewerten den 8. Mai 1945 als „Tag der Befreiung vom menschenverachtenden System der nationalsozialistischen Gewaltherrschaft“."
+    }
+   ],
+   "aufgaben": [
+    {
+     "nr": 1,
+     "typ": "multiple-choice",
+     "frage": "Wie wirken die Jugendlichen im Foto im Vergleich zu Goebbels und dem Offizier neben ihnen?",
+     "loesung": [
+      "Sie wirken deutlich jünger als Goebbels und der Offizier."
+     ]
+    },
+    {
+     "nr": 2,
+     "typ": "multiple-choice",
+     "frage": "Warum wurde das Foto von Goebbels und dem Jungen des Volkssturms im März 1945 aufgenommen?",
+     "loesung": [
+      "Es ist eine geplante Propaganda-Aufnahme des Regimes, das die Jugendlichen trotz aussichtslosem Krieg weiterkämpfen ließ."
+     ]
+    },
+    {
+     "nr": 3,
+     "typ": "reihenfolge",
+     "frage": "Bringt die acht Ereignisse vom Sommer 1944 bis zum Kriegsende in die richtige zeitliche Reihenfolge.",
+     "loesung": [
+      "20. Juli 1944: Offiziere um Stauffenberg scheitern mit ihrem Attentat auf Hitler.",
+      "September 1944: Hitler ruft den Volkssturm aus: Männer von 16 bis 60 Jahren sollen kämpfen.",
+      "27. Januar 1945: Die Rote Armee, das sowjetische Heer, befreit das Vernichtungslager Auschwitz.",
+      "19. März 1945: Hitler ordnet den Nero-Befehl an: Fabriken und Brücken sollen zerstört werden.",
+      "25. April 1945: In Torgau treffen US-Soldaten und sowjetische Soldaten aufeinander: Deutschland ist zerteilt.",
+      "29. April 1945: US-Soldaten befreien das Konzentrationslager (KZ) Dachau.",
+      "30. April 1945: Hitler nimmt sich im Bunker in Berlin das Leben.",
+      "8./9. Mai 1945: Die Wehrmacht kapituliert: erst in Reims, dann noch einmal in Berlin-Karlshorst."
+     ]
+    },
+    {
+     "nr": 4,
+     "typ": "zuordnung",
+     "frage": "Ordnet jedem der vier Gründe fürs Weiterkämpfen den passenden Beleg aus Text, Karte oder Zeitleiste zu.",
+     "loesung": [
+      "Terror des Regimes → Nero-Befehl vom 19. März 1945: Wer eine weiße Fahne hisste, kam vor ein Standgericht.",
+      "Angst vor der Roten Armee → Fluchtpfeile auf der Karte: Millionen Menschen fliehen im Winter 1945 nach Westen.",
+      "Hoffnung auf Wunderwaffen → Propaganda versprach neue Waffen, die den Krieg noch wenden sollten.",
+      "Keine politische Alternative → Das Attentat auf Hitler am 20. Juli 1944 scheitert."
+     ]
+    },
+    {
+     "nr": 5,
+     "typ": "lueckentext",
+     "frage": "Füllt die Lücken im Text zur Kapitulationsurkunde. Nutzt dazu die Bildunterschrift.",
+     "loesung": [
+      "Reims",
+      "bedingungslos",
+      "8. Mai, 23:01 Uhr",
+      "Sowjetunion",
+      "Berlin-Karlshorst",
+      "Unterschied zwischen dem 8. und 9. Mai"
+     ]
+    },
+    {
+     "nr": 6,
+     "typ": "zuordnung",
+     "frage": "Ordnet zu: Was bedeutete der 8. Mai 1945 für jede Gruppe? Nutzt die Fakten aus den Texten.",
+     "loesung": [
+      "Häftlinge im KZ Dachau → Rettung",
+      "Zwangsarbeiter und Verfolgte → Freiheit",
+      "Elf Millionen deutsche Soldaten → Gefangenschaft",
+      "Millionen Familien im Osten → Flucht und Vertreibung"
+     ]
+    },
+    {
+     "nr": 7,
+     "typ": "freitext-code",
+     "frage": "Beurteilt gemeinsam: War der 8. Mai 1945 auch für die Deutschen eine Befreiung?",
+     "loesung": [
+      "offene Antwort, jede Eingabe wird angenommen"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mappe-3",
+   "nr": 3,
+   "titel": "Leben in Trümmern: Hunger, Heimkehr, neue Nachbarn (1945–1948)",
+   "stundenfrage": "War das Elend der Deutschen nach 1945 selbst verschuldet?",
+   "loesungswort": "KRIEGSFOLGE",
+   "kernerkenntnis": "Das Elend war Folge des Krieges, den Deutschland begann. Die Vertreibung war zugleich ein Unrecht.",
+   "hefteintrag": [
+    "Wer | Was der Krieg kostete",
+    "Sowjetunion | über 20 Mio. Tote (Deutschland 6,35)",
+    "Hungernde | 1.000 Kilokalorien, Zigaretten als Ersatzwährung",
+    "Trümmerfrauen | Schutt räumen: Pflicht, sonst keine Lebensmittelkarte",
+    "Heimkehrer | elf Millionen Kriegsgefangene, letzte erst 1955/56",
+    "Vertriebene | 12–14 Millionen Deutsche ohne Heimat"
+   ],
+   "hefteintrag_format": "tabelle",
+   "abschreib_minuten": 6,
+   "tafelbild": "tafelbild/mappe-3.html",
+   "lehrplan": [
+    {
+     "id": "gpg-r8-lb2-ke05",
+     "text": "beschreiben die Alltagsituation in den Nachkriegsjahren (z. B. Wohnungsnot, Nahrungsmittelknappheit, Kriegsheimkehrer, Integration der Vertriebenen) und erläutern unmittelbare Folgen des Zweiten Weltkrieges für Menschen in den verschiedensten Lebenssituationen."
+    },
+    {
+     "id": "gpg-r8-lb2-ke06",
+     "text": "diskutieren unmittelbare und langfristige Konsequenzen für Opfer von Kriegen und Kriegsverbrechern bis heute."
+    },
+    {
+     "id": "gpg-r8-lb2-ke04",
+     "text": "recherchieren Lebensgeschichten von Menschen, die unter bzw. nach Ende der NS-Gewaltherrschaft verfolgt, ermordet oder vertrieben wurden. Dabei unterscheiden sie rassische und politische Motive."
+    }
+   ],
+   "aufgaben": [
+    {
+     "nr": 1,
+     "typ": "multiple-choice",
+     "frage": "Was zeigt das Foto von der Trümmerräumung in Berlin wirklich?",
+     "loesung": [
+      "Frauen reichen Eimer mit Schutt weiter, im Hintergrund gehen Passanten einfach vorbei."
+     ]
+    },
+    {
+     "nr": 2,
+     "typ": "multiple-choice",
+     "frage": "Was zeigt das Balkendiagramm zu den Kriegstoten wirklich?",
+     "loesung": [
+      "Die Sowjetunion hatte mehr als dreimal so viele Kriegstote wie Deutschland."
+     ]
+    },
+    {
+     "nr": 3,
+     "typ": "multiple-choice",
+     "frage": "Warum bekamen die Displaced Persons laut Liesls Eintrag doppelt so viele Kalorien wie die Deutschen?",
+     "loesung": [
+      "Die Amerikaner entschieden das mit Absicht, als Wiedergutmachung."
+     ]
+    },
+    {
+     "nr": 4,
+     "typ": "zuordnung",
+     "frage": "Ordnet jedem Foto die passende Tatsache zu seiner Entstehung zu.",
+     "loesung": [
+      "Foto Leipzig, 1948 → Passanten gehen einfach vorbei, die einzelne Frau steht vor einer riesigen Ruine.",
+      "Foto Berlin, 1945 → Nur wer arbeitete, bekam eine Lebensmittelkarte – die Arbeit war Pflicht."
+     ]
+    },
+    {
+     "nr": 5,
+     "typ": "reihenfolge",
+     "frage": "Bringt die fünf Schritte in die zeitliche Reihenfolge: Wer entschied wann, dass Deutsche ihre Heimat verlassen mussten?",
+     "loesung": [
+      "Menschen fliehen vor der Roten Armee über das zugefrorene Haff.",
+      "„Wilde Vertreibungen“ jagen Deutsche mit Gewalt aus ihren Dörfern.",
+      "Die Siegermächte beschließen in Potsdam: Die Ausweisung soll künftig geordnet ablaufen.",
+      "Organisierte Ausweisungen bringen Menschen in Lager und an Bahnhöfe.",
+      "Bilanz: 12 bis 14 Millionen Deutsche haben bis 1950 ihre Heimat verloren."
+     ]
+    },
+    {
+     "nr": 6,
+     "typ": "multiple-choice",
+     "frage": "Warum ist es zu einfach, nur die Charta von 1950 oder nur Schröders Satz von 1999 gelten zu lassen?",
+     "loesung": [
+      "Weil beides stimmt: Die Vertreibung war Folge des Krieges, den Deutschland begonnen hatte, und zugleich Unrecht an den Betroffenen."
+     ]
+    },
+    {
+     "nr": 7,
+     "typ": "freitext-code",
+     "frage": "Beurteilt in eurer Gruppe: War das Elend der Deutschen nach 1945 selbst verschuldet?",
+     "loesung": [
+      "offene Antwort, jede Eingabe wird angenommen"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mappe-4",
+   "nr": 4,
+   "titel": "Vier Zonen, zwei Staaten, drei Antworten (1945–1950)",
+   "stundenfrage": "Machten die Sieger es 1945 besser als 1919?",
+   "loesungswort": "EINBINDEN",
+   "kernerkenntnis": "Anders als 1919 straften die Sieger 1945 die Führung und banden Deutschland ein.",
+   "hefteintrag": [
+    "Antwort der Sieger | Wann, wo | Was geschah",
+    "Beschluss | Potsdam, Sommer 1945 | vier D-Grundsätze, vier Besatzungszonen",
+    "Gericht | Nürnberg 1945/46 | 22 führende Nationalsozialisten angeklagt, 12 Todesurteile",
+    "Teilung | Berlin 1948/49 | Blockade: alle Wege gesperrt; Luftbrücke: Versorgung aus der Luft; 1949 BRD und DDR",
+    "Gedenken | Dachau, seit 1965 | Friedhof, Beweisort, Lernort, Mahnung",
+    "Einbindung | Schuman-Erklärung 1950 | Kohle und Stahl gemeinsam: Montanunion"
+   ],
+   "hefteintrag_format": "tabelle",
+   "abschreib_minuten": 6,
+   "tafelbild": "tafelbild/mappe-4.html",
+   "lehrplan": [
+    {
+     "id": "gpg-r8-lb3-ke03",
+     "text": "stellen die Beschlüsse der Potsdamer Konferenz sowie die unterschiedliche Umsetzung durch die Siegermächte in Grundzügen dar, um die wesentlichen Gründe für die Teilung Deutschlands zu erklären."
+    },
+    {
+     "id": "gpg-r9-lb2-ke01",
+     "text": "erläutern die vielfältigen Funktionen von Gedenkstätten und Gedenkorten der NS-Zeit (z. B. durch eine Exkursion an außerschulische Lernorte wie etwa Dachau oder Flossenbürg) und ordnen sie in den Kontext der NS-Gewaltherrschaft (vor allem Konzentrationslager) ein. Dadurch verstehen sie die dauerhafte Notwendigkeit einer reflektierten Erinnerungskultur und bewerten den 8. Mai 1945 als „Tag der Befreiung vom menschenverachtenden System der nationalsozialistischen Gewaltherrschaft“."
+    },
+    {
+     "id": "gpg-r8-lb2-ke06",
+     "text": "diskutieren unmittelbare und langfristige Konsequenzen für Opfer von Kriegen und Kriegsverbrechern bis heute."
+    },
+    {
+     "id": "gpg-r9-lb3-ke03",
+     "text": "stellen Organisationen der nationalen und internationalen Friedenssicherung dar und diskutieren deren Rolle in aktuellen humanitären und militärischen Einsätzen."
+    },
+    {
+     "id": "gpg-r9-lb1-ke01",
+     "text": "stellen in Grundzügen die Entwicklung der Europäischen Union von ihrer Gründung bis zur Gegenwart aus unterschiedlichen Perspektiven dar und erörtern aktuelle Fragestellungen."
+    }
+   ],
+   "aufgaben": [
+    {
+     "nr": 1,
+     "typ": "multiple-choice",
+     "frage": "Wer sitzt auf dem Foto vorne in zwei Reihen, mit Kopfhörern auf den Ohren?",
+     "loesung": [
+      "Die angeklagten Männer"
+     ]
+    },
+    {
+     "nr": 2,
+     "typ": "zuordnung",
+     "frage": "In Potsdam beschlossen die Sieger vier Grundsätze mit dem Wort „De-“. Ordnet jedem Begriff seinen einfachen Plan zu.",
+     "loesung": [
+      "Denazifizierung → Nationalsozialisten werden aus allen Ämtern entfernt.",
+      "Demilitarisierung → Alle Streitkräfte werden aufgelöst, es gibt keine Armee mehr.",
+      "Demokratisierung → Das politische Leben wird von unten neu aufgebaut.",
+      "Dezentralisierung → Sehr große Unternehmen werden aufgelöst, damit Macht nicht an einem Ort liegt."
+     ]
+    },
+    {
+     "nr": 3,
+     "typ": "reihenfolge",
+     "frage": "Bringt diese Schritte auf dem Weg zur deutschen Teilung in die richtige zeitliche Reihenfolge.",
+     "loesung": [
+      "1946: Die USA stoppen ihre Lieferungen an die Sowjetunion.",
+      "1947: USA und Großbritannien legen ihre Besatzungszonen zur „Bizone“ zusammen.",
+      "20. Juni 1948: Der Westen führt die D-Mark als neues Geld ein.",
+      "Juni 1948: Stalin sperrt alle Straßen und Schienen nach West-Berlin (Blockade).",
+      "Juni 1948 bis Mai 1949: Die Westmächte versorgen West-Berlin elf Monate lang aus der Luft, die Luftbrücke.",
+      "23. Mai 1949: Das Grundgesetz tritt in Kraft, die Bundesrepublik Deutschland entsteht.",
+      "7. Oktober 1949: Die Sowjetunion gründet die DDR, die Deutsche Demokratische Republik."
+     ]
+    },
+    {
+     "nr": 4,
+     "typ": "multiple-choice",
+     "frage": "Warum kam es laut Konfliktforschung zur Teilung Deutschlands, obwohl niemand sie geplant hatte?",
+     "loesung": [
+      "Jeder Schritt einer Seite machte der anderen Angst und löste einen Gegenschritt aus."
+     ]
+    },
+    {
+     "nr": 5,
+     "typ": "multiple-choice",
+     "frage": "Was zeigen die drei Rechnungen zu Nürnberg, Entnazifizierung und deutschen Gerichten gemeinsam?",
+     "loesung": [
+      "Bei allen drei Wegen standen viele Menschen in einem Verfahren, aber nur ein kleiner Teil wurde tatsächlich zur Verantwortung gezogen."
+     ]
+    },
+    {
+     "nr": 6,
+     "typ": "freitext-code",
+     "frage": "Beurteilt: Machten die Sieger es 1945 besser als 1919 – oder nur anders? Nennt auch die Gegenposition.",
+     "loesung": [
+      "offene Antwort, jede Eingabe wird angenommen"
+     ]
+    }
+   ]
+  }
+ ]
+}

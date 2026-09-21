@@ -3,157 +3,129 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lehrkraft-Zugang – Escape Game</title>
+<title>Lehrkraft-Überblick – Escape Game</title>
 <link rel="stylesheet" href="vendor/fonts/fonts.css">
 <link rel="stylesheet" href="vendor/base.css">
 <link rel="stylesheet" href="vendor/theme-gpg.css">
 <style>
-  .lehrkraft__inhalt--hidden, .lehrkraft__gate--hidden { display: none; }
-  .lehrkraft__mappe-block { margin: 1.5rem 0; padding: 1rem 1.25rem; border: 1px solid rgba(255,255,255,.2); border-radius: 8px; }
-  .lehrkraft__code-display { font-family: monospace; font-size: 1.3em; letter-spacing: .15em; padding: .1em .4em; background: rgba(255,255,255,.12); border-radius: 4px; }
-  .lehrkraft__aufgabe-detail { margin: .75rem 0 .75rem .5rem; padding-left: .75rem; border-left: 3px solid rgba(255,255,255,.25); }
-  .lehrkraft__aufgabe-detail p { margin: .25rem 0; }
-  .lehrkraft__loesung-liste { margin: .25rem 0 .25rem 1.25rem; }
-  .lehrkraft__btn { margin: .4rem .4rem .4rem 0; padding: .5rem 1rem; cursor: pointer; }
-  .lehrkraft__controls { margin: 2rem 0; }
-  .lehrkraft__gate input { font-size: 1.1em; padding: .4em .6em; }
-  .lehrkraft__hinweis { opacity: .75; font-size: .9em; }
+  .hidden { display: none; }
+  main.lk { max-width: 60rem; margin: 0 auto; padding: 1rem 1.25rem 3rem; }
+  .lk__gate input { font-size: 1.1em; padding: .4em .6em; }
+  .lk__btn { margin: .3rem .4rem .3rem 0; padding: .45rem .9rem; cursor: pointer; }
+  .lk__hinweis { opacity: .75; font-size: .9em; }
+  .lk__leitfrage { font-style: italic; opacity: .9; margin: .25rem 0 1.5rem; }
+  .lk__nav a { margin-right: 1rem; }
+  .mappe-card { margin: 2rem 0; padding: 1rem 1.25rem; border: 1px solid rgba(255,255,255,.25); border-radius: 8px; }
+  .mappe-card h2 { margin: 0 0 .25rem; font-size: 1.3em; }
+  .mappe-card .frage { font-size: 1.15em; margin: .25rem 0 .75rem; }
+  .kv { display: grid; grid-template-columns: 11rem 1fr; gap: .3rem 1rem; margin: .5rem 0 1rem; }
+  .kv dt { opacity: .75; } .kv dd { margin: 0; }
+  .code { font-family: monospace; font-size: 1.25em; letter-spacing: .15em; padding: .05em .4em; background: rgba(255,255,255,.12); border-radius: 4px; }
+  .heft li { margin: .15rem 0; }
+  details { margin: .6rem 0; } summary { cursor: pointer; font-weight: 600; }
+  .loesung { margin: .5rem 0 .5rem .25rem; padding-left: .75rem; border-left: 3px solid rgba(255,255,255,.25); }
+  .loesung p { margin: .15rem 0; } .loesung ul { margin: .15rem 0 .3rem 1.2rem; }
+  .typ { opacity: .7; font-size: .85em; }
+  .tafel { width: 100%; height: 620px; border: 0; background: #fff; border-radius: 6px; }
+  .lp { font-size: .95em; } .lp li { margin: .3rem 0; }
 </style>
 </head>
 <body>
 <header>
-  <h1>&#128273; Lehrkraft-Zugang</h1>
-  <div class="header__meta">Lösungen, Lösungswörter und Steuerung</div>
+  <h1>&#128273; Lehrkraft-Überblick</h1>
+  <div class="header__meta">Stundenfragen, Lösungswörter, Tafelbilder, Lösungen</div>
 </header>
-<main>
-  <section class="lehrkraft__gate" id="gate" aria-label="Zugangsschutz">
+<main class="lk">
+  <section class="lk__gate" id="gate">
     <p>Bitte Passwort eingeben:</p>
     <p><input type="password" id="gate-password" placeholder="Passwort" autocomplete="off" aria-label="Lehrkraft-Passwort">
-       <button type="button" class="lehrkraft__btn" id="gate-submit">Zugang prüfen</button></p>
+       <button type="button" class="lk__btn" id="gate-submit">Zugang</button></p>
     <div id="gate-feedback" role="alert" aria-live="polite"></div>
-    <p class="lehrkraft__hinweis">Einfacher Sichtschutz, keine echte Sicherheit. Die Lösungen stehen auch in <code>data.json</code>.</p>
+    <p class="lk__hinweis">Einfacher Sichtschutz, keine echte Sicherheit.</p>
   </section>
 
-  <div id="lehrkraft-inhalt" class="lehrkraft__inhalt--hidden">
-    <section class="lehrkraft__controls" id="controls" aria-label="Steuerung">
-      <h2>Steuerung (gilt für dieses Gerät und diesen Browser)</h2>
-      <button type="button" class="lehrkraft__btn" id="btn-unlock-all">&#128275; Alle Mappen freischalten</button>
-      <button type="button" class="lehrkraft__btn" id="btn-reset">&#128465; Fortschritt zurücksetzen</button>
-      <p class="lehrkraft__hinweis">Der Spielstand liegt im Browser-Speicher (localStorage) des jeweiligen Geräts. Zurücksetzen vor der nächsten Gruppe auf jedem iPad einzeln.</p>
-    </section>
-    <section id="loesungen" aria-label="Lösungsübersicht">
-      <h2>&#128203; Lösungsübersicht</h2>
-      <p id="lade-hinweis">Spieldaten werden geladen...</p>
-    </section>
+  <div id="inhalt" class="hidden">
+    <p id="game-titel"></p>
+    <p class="lk__leitfrage" id="leitfrage"></p>
+    <p class="lk__nav" id="nav"></p>
+    <p class="lk__hinweis">Eine Mappe = eine Unterrichtsstunde. Der Spielstand liegt im Browser des jeweiligen Geräts; vor einer neuen Gruppe auf jedem Gerät zurücksetzen. Alle Mappen sind nach dem Lösungswort der vorigen frei; zum Vorführen einzelne Mappen hier freischalten.</p>
+    <p>
+      <button type="button" class="lk__btn" id="btn-unlock-all">&#128275; Alle Mappen freischalten</button>
+      <button type="button" class="lk__btn" id="btn-reset">&#128465; Spielstand dieses Geräts zurücksetzen</button>
+    </p>
+    <div id="controls-feedback"></div>
+    <div id="mappen"></div>
   </div>
 </main>
-<footer>
-  <p><a href="index.html">&larr; Zurück zur Übersicht</a></p>
-</footer>
+<footer><p><a href="index.html">&larr; Zur Übersicht</a></p></footer>
 <script src="vendor/core.js"></script>
 <script src="vendor/escape-engine.js"></script>
 <script>
 (function () {
   'use strict';
   var PASSWORT = 'lehrkraft';
-  var gatePassword = document.getElementById('gate-password');
-  var gateSubmit = document.getElementById('gate-submit');
-  var gateFeedback = document.getElementById('gate-feedback');
-  var gate = document.getElementById('gate');
-  var inhalt = document.getElementById('lehrkraft-inhalt');
-
-  gateSubmit.addEventListener('click', pruefePasswort);
-  gatePassword.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); pruefePasswort(); } });
-
-  function pruefePasswort() {
-    if ((gatePassword.value || '').trim().toLowerCase() === PASSWORT) {
-      gate.classList.add('lehrkraft__gate--hidden');
-      inhalt.classList.remove('lehrkraft__inhalt--hidden');
-      ladeDaten();
-    } else {
-      gateFeedback.textContent = 'Falsches Passwort.';
-      gatePassword.value = '';
-      gatePassword.focus();
-    }
+  var gate = document.getElementById('gate'), inhalt = document.getElementById('inhalt');
+  var pw = document.getElementById('gate-password');
+  document.getElementById('gate-submit').addEventListener('click', pruefe);
+  pw.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); pruefe(); } });
+  function pruefe() {
+    if ((pw.value || '').trim().toLowerCase() === PASSWORT) { gate.classList.add('hidden'); inhalt.classList.remove('hidden'); lade(); }
+    else { document.getElementById('gate-feedback').textContent = 'Falsches Passwort.'; pw.value = ''; pw.focus(); }
   }
-
-  function ladeDaten() {
-    fetch('data.json?_=' + Date.now())
-      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-      .then(function (data) { renderLoesungen(data); initSteuerung(data); })
-      .catch(function (err) {
-        console.error('[Lehrkraft] Fehler beim Laden:', err);
-        document.getElementById('lade-hinweis').textContent = 'Spieldaten konnten nicht geladen werden.';
+  function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt !== undefined) e.textContent = txt; return e; }
+  function lade() {
+    Promise.all([
+      fetch('lehrkraft.json?_=' + Date.now()).then(function (r) { if (!r.ok) throw new Error('lehrkraft.json ' + r.status); return r.json(); }),
+      fetch('data.json?_=' + Date.now()).then(function (r) { if (!r.ok) throw new Error('data.json ' + r.status); return r.json(); })
+    ]).then(function (res) { render(res[0]); steuerung(res[1]); })
+      .catch(function (err) { document.getElementById('mappen').textContent = 'Daten konnten nicht geladen werden: ' + err.message; });
+  }
+  function render(lk) {
+    document.getElementById('game-titel').textContent = lk.titel;
+    document.getElementById('leitfrage').textContent = lk.leitfrage ? 'Leitfrage des Spiels: ' + lk.leitfrage : '';
+    var nav = document.getElementById('nav');
+    lk.mappen.forEach(function (m) { var a = el('a', null, 'Mappe ' + m.nr); a.href = '#' + m.id; nav.appendChild(a); });
+    var wrap = document.getElementById('mappen');
+    lk.mappen.forEach(function (m) {
+      var card = el('section', 'mappe-card'); card.id = m.id;
+      card.appendChild(el('h2', null, 'Mappe ' + m.nr + ': ' + m.titel));
+      card.appendChild(el('p', 'frage', m.stundenfrage));
+      var dl = el('dl', 'kv');
+      function row(k, v) { dl.appendChild(el('dt', null, k)); var dd = el('dd'); if (typeof v === 'string') dd.textContent = v; else dd.appendChild(v); dl.appendChild(dd); }
+      var code = el('span', 'code', m.loesungswort); row('Lösungswort', code);
+      row('Kernerkenntnis', m.kernerkenntnis);
+      var heft = el('ul', 'heft'); m.hefteintrag.forEach(function (z) { heft.appendChild(el('li', null, z)); });
+      row('Hefteintrag (' + (m.hefteintrag_format || '') + (m.abschreib_minuten ? ', ca. ' + m.abschreib_minuten + ' min' : '') + ')', heft);
+      card.appendChild(dl);
+      var lnk = el('p'); var a = el('a', null, 'Tafelbild in neuem Tab öffnen'); a.href = m.tafelbild; a.target = '_blank'; lnk.appendChild(a); card.appendChild(lnk);
+      var dt = el('details'); dt.appendChild(el('summary', null, 'Tafelbild anzeigen'));
+      var fr = document.createElement('iframe'); fr.className = 'tafel'; fr.loading = 'lazy'; fr.src = m.tafelbild; fr.title = 'Tafelbild Mappe ' + m.nr; dt.appendChild(fr); card.appendChild(dt);
+      var dl2 = el('details'); dl2.appendChild(el('summary', null, 'Lösungen (' + m.aufgaben.length + ' Aufgaben)'));
+      m.aufgaben.forEach(function (auf) {
+        var d = el('div', 'loesung'); var p = el('p'); p.appendChild(el('strong', null, auf.nr + '. ')); p.appendChild(document.createTextNode(auf.frage + ' ')); p.appendChild(el('span', 'typ', '(' + auf.typ + ')')); d.appendChild(p);
+        var ul = el('ul'); auf.loesung.forEach(function (x) { ul.appendChild(el('li', null, x)); }); d.appendChild(ul); dl2.appendChild(d);
       });
-  }
-
-  function text(tag, cls, txt) {
-    var el = document.createElement(tag);
-    if (cls) el.className = cls;
-    if (txt !== undefined) el.textContent = txt;
-    return el;
-  }
-
-  function loesungAlsListe(loesung) {
-    var ul = text('ul', 'lehrkraft__loesung-liste');
-    if (Array.isArray(loesung)) {
-      if (loesung.length === 0) ul.appendChild(text('li', null, 'offene Begründung, jede Antwort wird angenommen'));
-      loesung.forEach(function (x, i) { ul.appendChild(text('li', null, (i + 1) + '. ' + x)); });
-    } else if (loesung && typeof loesung === 'object') {
-      Object.keys(loesung).forEach(function (k) { ul.appendChild(text('li', null, k + ' → ' + loesung[k])); });
-    } else {
-      ul.appendChild(text('li', null, String(loesung || '')));
-    }
-    return ul;
-  }
-
-  function renderLoesungen(data) {
-    var container = document.getElementById('loesungen');
-    document.getElementById('lade-hinweis').remove();
-    (data.mappen || []).forEach(function (mappe, i) {
-      var block = text('div', 'lehrkraft__mappe-block');
-      block.appendChild(text('h3', null, 'Mappe ' + (i + 1) + ': ' + (mappe.titel || '')));
-      var codeP = text('p', null, 'Lösungswort: ');
-      codeP.appendChild(text('span', 'lehrkraft__code-display', mappe.freischalt_code || '–'));
-      block.appendChild(codeP);
-      var unlockBtn = text('button', 'lehrkraft__btn', '🔓 Diese Mappe freischalten');
-      unlockBtn.type = 'button';
-      unlockBtn.addEventListener('click', function () {
-        EscapeEngine.unlockMappe(mappe.id);
-        Core.feedback.showSuccess(block, 'Mappe ' + (i + 1) + ' freigeschaltet.');
-      });
-      block.appendChild(unlockBtn);
-      (mappe.aufgaben || []).forEach(function (a, j) {
-        var d = text('div', 'lehrkraft__aufgabe-detail');
-        var head = text('p');
-        head.appendChild(text('strong', null, 'Aufgabe ' + (j + 1) + ' (' + a.typ + '): '));
-        head.appendChild(document.createTextNode(a.frage || ''));
-        d.appendChild(head);
-        d.appendChild(loesungAlsListe(a.loesung));
-        if (a.tipps && a.tipps.length) {
-          var tl = text('ul', 'lehrkraft__loesung-liste');
-          a.tipps.forEach(function (t) { tl.appendChild(text('li', null, 'Tipp ' + t.stufe + ': ' + (t.text || ''))); });
-          d.appendChild(tl);
-        }
-        block.appendChild(d);
-      });
-      container.appendChild(block);
+      card.appendChild(dl2);
+      if (m.lehrplan.length) {
+        var lp = el('details'); lp.appendChild(el('summary', null, 'Lehrplanbezug (LehrplanPLUS, wortgetreu)'));
+        var ul2 = el('ul', 'lp'); m.lehrplan.forEach(function (k) { var li = el('li'); li.appendChild(el('span', 'typ', k.id + ': ')); li.appendChild(document.createTextNode('Die Schülerinnen und Schüler ' + k.text)); ul2.appendChild(li); });
+        lp.appendChild(ul2); card.appendChild(lp);
+      }
+      var b = el('button', 'lk__btn', '🔓 Mappe ' + m.nr + ' auf diesem Gerät freischalten'); b.type = 'button';
+      b.addEventListener('click', function () { EscapeEngine.unlockMappe(m.id); Core.feedback.showSuccess(card, 'Mappe ' + m.nr + ' freigeschaltet.'); });
+      card.appendChild(b);
+      wrap.appendChild(card);
     });
   }
-
-  function initSteuerung(data) {
+  function steuerung(data) {
     var thema = (data.meta && data.meta.titel) ? data.meta.titel.toLowerCase().replace(/\s+/g, '-') : 'unbenannt';
-    var storageKey = 'escape-' + thema;
-    EscapeEngine.setStorageKey(storageKey, data);
+    var key = 'escape-' + thema; EscapeEngine.setStorageKey(key, data);
+    var fb = document.getElementById('controls-feedback');
     document.getElementById('btn-unlock-all').addEventListener('click', function () {
-      (data.mappen || []).forEach(function (m) { EscapeEngine.unlockMappe(m.id); });
-      Core.feedback.showSuccess(document.getElementById('controls'), 'Alle ' + data.mappen.length + ' Mappen freigeschaltet.');
+      (data.mappen || []).forEach(function (m) { EscapeEngine.unlockMappe(m.id); }); Core.feedback.showSuccess(fb, 'Alle ' + data.mappen.length + ' Mappen freigeschaltet.');
     });
     document.getElementById('btn-reset').addEventListener('click', function () {
-      if (window.confirm('Gesamten Fortschritt auf diesem Gerät zurücksetzen?')) {
-        Core.storage.remove(storageKey);
-        Core.feedback.showSuccess(document.getElementById('controls'), 'Fortschritt zurückgesetzt.');
-      }
+      if (window.confirm('Spielstand auf diesem Gerät zurücksetzen?')) { Core.storage.remove(key); Core.feedback.showSuccess(fb, 'Spielstand zurückgesetzt.'); }
     });
   }
 })();
