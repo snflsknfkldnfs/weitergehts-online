@@ -39,8 +39,20 @@
   .hub-list { list-style: none; }
   .hub-list li { border-top: 1px solid var(--rule); }
   .hub-list li:last-child { border-bottom: 1px solid var(--rule); }
-  .hub-list a { display: block; padding: 14px 4px; font-family: var(--serif); font-size: 1.15rem; }
+  .hub-list a { display: grid; grid-template-columns: 4.5rem 1fr auto; gap: 0 1.2rem;
+                align-items: baseline; padding: 14px 4px;
+                font-family: var(--serif); font-size: 1.15rem; }
   .hub-list a:hover { color: var(--accent); }
+  /* Jahrgang und Format als ruhige Marken, nicht als zweite Überschrift */
+  .hub-list .stufe, .hub-list .art { font-family: var(--ui); font-size: .72rem;
+                letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); }
+  .hub-list .art { white-space: nowrap; }
+  @media (max-width: 560px) {
+    .hub-list a { grid-template-columns: 1fr auto; gap: 2px .8rem; }
+    .hub-list .stufe { grid-column: 1; grid-row: 1; }
+    .hub-list .art { grid-column: 2; grid-row: 1; }
+    .hub-list .titel { grid-column: 1 / -1; grid-row: 2; }
+  }
 </style>
 <script>
   (function() {
@@ -77,48 +89,52 @@
       <span class="cap">Unterricht</span>
       <h1>Interaktive Unterrichtsmaterialien</h1>
 
-      <h2 class="cap" style="margin-top:2.5rem">Escape-Games</h2>
+      <h2 class="cap" style="margin-top:2.5rem">Geschichte · Politik · Geographie</h2>
       <ul class="hub-list">
         <li id="game-syrische-revolution-2011">
           <a href="escape-games/syrische-revolution-2011/index.html">
-            Syrische Revolution 2011 (GPG R7)
+            <span class="stufe">Kl. 7</span>
+            <span class="titel">Syrische Revolution 2011 — wie aus Protest Krieg wurde</span>
+            <span class="art">Escape-Game</span>
+          </a>
+        </li>
+        <li id="tool-gpg-smv">
+          <a href="smv/">
+            <span class="stufe">Kl. 8</span>
+            <span class="titel">Was andere Schulen gemacht haben — Ideen für unsere SMV</span>
+            <span class="art">Recherche</span>
           </a>
         </li>
         <li id="game-zweiter-weltkrieg-ende-1945" data-status="staging">
           <a href="escape-games/zweiter-weltkrieg-ende-1945/index.html">
-            Verlauf und Ende des Zweiten Weltkriegs (GPG R9)
+            <span class="stufe">Kl. 9</span>
+            <span class="titel">Verlauf und Ende des Zweiten Weltkriegs</span>
+            <span class="art">Escape-Game</span>
           </a>
         </li>
-      </ul>
-
-      <h2 class="cap" style="margin-top:2.5rem">GPG · Wochenrückblick</h2>
-      <ul class="hub-list">
         <li id="tool-gpg-wochenrueckblick">
           <a href="gpg/wochenrueckblick.html">
-            Mein politischer Wochenrückblick — So bereitest du dein Referat vor (GPG 9)
+            <span class="stufe">Kl. 9</span>
+            <span class="titel">Mein politischer Wochenrückblick — so bereitest du dein Referat vor</span>
+            <span class="art">Anleitung</span>
           </a>
         </li>
       </ul>
 
-      <h2 class="cap" style="margin-top:2.5rem">GPG · Schülermitverantwortung</h2>
-      <ul class="hub-list">
-        <li id="tool-gpg-smv">
-          <a href="smv/">
-            Was andere Schulen gemacht haben — Ideen für unsere SMV (GPG 8)
-          </a>
-        </li>
-      </ul>
-
-      <h2 class="cap" style="margin-top:2.5rem">WiB · Wirtschaft</h2>
+      <h2 class="cap" style="margin-top:2.5rem">Wirtschaft und Beruf</h2>
       <ul class="hub-list">
         <li id="tool-wib-haushaltsbuch">
           <a href="wib/haushaltsbuch.html">
-            Mein Haushaltsbuch — Wohin geht mein Geld? (WiB 7)
+            <span class="stufe">Kl. 7</span>
+            <span class="titel">Mein Haushaltsbuch — wohin geht mein Geld?</span>
+            <span class="art">Werkzeug</span>
           </a>
         </li>
         <li id="tool-wib-geldwert">
           <a href="wib/geldwert.html">
-            Wie viel ist mein Geld wert? — Drei Schritte: Budget · Beruf · Reiche (WiB 7)
+            <span class="stufe">Kl. 7</span>
+            <span class="titel">Wie viel ist mein Geld wert? — Budget · Beruf · Reiche</span>
+            <span class="art">Werkzeug</span>
           </a>
         </li>
       </ul>
