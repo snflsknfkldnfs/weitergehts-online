@@ -1,0 +1,138 @@
+{
+ "titel": "Vom Kaiserreich zur Republik",
+ "leitfrage": "Wie wurde aus dem Kaiserreich in einem einzigen Jahr eine Republik?",
+ "auftrag": "Zwölf Karten, zwei stehen schon fest: die erste und die letzte. Bringt die zehn dazwischen in die richtige Reihenfolge. Zieht sie mit dem Finger oder benutzt die Pfeile.",
+ "pruefen": true,
+ "karten": [
+  {
+   "id": "01_kaiser",
+   "bild": "bilder/01_kaiser.jpg",
+   "alt": "Kaiser Wilhelm II. in Uniform, Fotografie um 1898",
+   "titel": "Deutschland hat einen Kaiser",
+   "satz": "Wilhelm II. bestimmt, wer Kanzler wird. Der Reichstag darf reden, aber wenig entscheiden.",
+   "fix": "start",
+   "bild_passung": "ganz"
+  },
+  {
+   "id": "02_kriegsausbruch",
+   "bild": "bilder/02_kriegsausbruch.jpg",
+   "alt": "Soldaten in einem Eisenbahnwaggon bei der Mobilmachung 1914",
+   "titel": "Der Krieg beginnt",
+   "satz": "Soldaten fahren singend an die Front. Viele glauben: Weihnachten sind wir wieder zu Hause.",
+   "fix": null,
+   "bild_ausschnitt": "center 62%"
+  },
+  {
+   "id": "03_schuetzengraben",
+   "bild": "bilder/03_schuetzengraben.jpg",
+   "alt": "Soldaten in einem Schützengraben an der Westfront",
+   "titel": "Der Krieg bleibt stecken",
+   "satz": "Monatelang Schützengräben. Hunderttausende sterben – und die Front bewegt sich kaum.",
+   "fix": null
+  },
+  {
+   "id": "04_hunger",
+   "bild": "bilder/04_hunger.jpg",
+   "alt": "Amtliche Kohlrübenkarte der Stadt Erfurt aus dem Jahr 1917",
+   "titel": "Zu Hause wird das Essen knapp",
+   "satz": "Brot, Fleisch und Kartoffeln gibt es nur noch auf Karte. In einem Winter bleibt fast nur die Steckrübe.",
+   "fix": null,
+   "bild_passung": "ganz"
+  },
+  {
+   "id": "05_usa",
+   "bild": "bilder/05_usa.jpg",
+   "alt": "Amerikanische Soldaten gehen in Frankreich an Land",
+   "titel": "Die USA greifen ein",
+   "satz": "Frische Soldaten und volle Lager für Deutschlands Gegner. Dagegen kann Deutschland nichts mehr aufbieten.",
+   "fix": null
+  },
+  {
+   "id": "06_heeresleitung",
+   "bild": "bilder/06_heeresleitung.jpg",
+   "alt": "Hindenburg und Ludendorff an einem Kartentisch",
+   "titel": "Die Heeresleitung weiß Bescheid",
+   "satz": "Hindenburg und Ludendorff wissen: Der Krieg ist verloren. Dem Volk sagen sie es nicht.",
+   "fix": null,
+   "bild_passung": "ganz"
+  },
+  {
+   "id": "07_kiel",
+   "bild": "bilder/07_kiel.jpg",
+   "alt": "Matrosen in Kiel, links Karl Artelt, der den Aufstand später mit anführte",
+   "titel": "Die Matrosen verweigern den Befehl",
+   "satz": "In Kiel sollen sie noch einmal auslaufen. Sie weigern sich – und der Aufstand greift auf ganz Deutschland über.",
+   "fix": null
+  },
+  {
+   "id": "08_republik",
+   "bild": "bilder/08_republik.jpg",
+   "alt": "Menschenmenge vor dem Reichstagsgebäude bei der Ausrufung der Republik",
+   "titel": "Die Republik wird ausgerufen",
+   "satz": "In Berlin ruft Philipp Scheidemann aus dem Fenster die Republik aus. Der Kaiser dankt ab und flieht ins Ausland.",
+   "fix": null,
+   "bild_passung": "ganz"
+  },
+  {
+   "id": "09_waffenstillstand",
+   "bild": "bilder/09_waffenstillstand.jpg",
+   "alt": "Heimkehrende deutsche Soldaten überqueren im November 1918 eine Rheinbrücke",
+   "titel": "Die Waffen schweigen",
+   "satz": "Waffenstillstand. Der Krieg ist zu Ende, die Soldaten kommen heim. Deutschland hat verloren.",
+   "fix": null
+  },
+  {
+   "id": "10_wahl",
+   "bild": "bilder/10_wahl.jpg",
+   "alt": "Weibliche Stadtverordnete in Berlin, 1919",
+   "titel": "Zum ersten Mal wählen auch Frauen",
+   "satz": "Ganz Deutschland wählt eine Nationalversammlung. Frauen dürfen zum ersten Mal mitwählen und selbst gewählt werden.",
+   "fix": null
+  },
+  {
+   "id": "11_versailles",
+   "bild": "bilder/11_versailles.jpg",
+   "alt": "Gruppenbild der deutschen Friedensunterhändler in Versailles",
+   "titel": "Der Friedensvertrag",
+   "satz": "In Versailles muss Deutschland unterschreiben: Gebiete ab, hohe Zahlungen, allein schuld am Krieg.",
+   "fix": null
+  },
+  {
+   "id": "12_verfassung",
+   "bild": "bilder/12_verfassung.jpg",
+   "alt": "Die gedruckte Verfassung des Deutschen Reichs, Titelseite mit dem Adler ohne Krone",
+   "titel": "Deutschland bekommt eine Verfassung",
+   "satz": "Die Nationalversammlung beschließt sie in Weimar. Jetzt entscheidet ein gewähltes Parlament – kein Kaiser mehr.",
+   "fix": "ende",
+   "bild_passung": "ganz"
+  }
+ ],
+ "fragen": [
+  {
+   "text": "Nehmt eine einzige Karte weg – welche müsste es sein, damit es die Republik nie gegeben hätte? Schreibt auf, warum ihr gerade diese wählt.",
+   "fuer_schnelle": false
+  },
+  {
+   "text": "Zwei Dinge überraschen an eurer Reihenfolge: Der Kaiser war weg, BEVOR der Krieg offiziell zu Ende war. Und der Friedensvertrag kam VOR der Verfassung. Was bedeutet das für die neue Republik?",
+   "fuer_schnelle": false
+  },
+  {
+   "text": "Welches dieser Ereignisse haben die Menschen damals in ihrem Alltag am stärksten gespürt? Begründet eure Wahl.",
+   "fuer_schnelle": true
+  }
+ ],
+ "nachweise": [
+  "Wilhelm II , The German Emperor (cropped).jpg · Reichard & Lindner · 1898 · Public domain · Wikimedia Commons",
+  "Bundesarchiv Bild 146-1994-022-19A, Mobilmachung, Truppentransport mit der Bahn.jpg · Oscar Tellgmann · August 1914 · Public domain · Wikimedia Commons",
+  "Cheshire Regiment trench Somme 1916.jpg · John Warwick Brooke · 1916-07 · Public domain · Wikimedia Commons",
+  "Kohlrübenkarte stadt erfurt 1917.png · Stadt Erfurt · 1917-02 · Public domain · Wikimedia Commons",
+  "American troops in France passing British men resting by the roadside (3016335435).jpg · National Library of Scotland · 1918-01-01 00:00:00 · No restrictions · Wikimedia Commons",
+  "Generalfeldmarschall von Hindenburg und General Ludendorff.png · Urheber unbekannt · 1916-09-23 · Public domain · Wikimedia Commons",
+  "Bundesarchiv Bild 183-G1102-0003-001, Kiel, Novemberrevolution, Matrosenaufmarsch.jpg · Robert Sennecke · 20 November 1918 · Public domain · Wikimedia Commons",
+  "Ausrufung Republik Scheidemann.jpg · Erich Greiser (1883–1939) · Taken on 9 November 1918 · Public domain · Wikimedia Commons",
+  "Bundesarchiv Bild 146-1976-076-25A, Koblenz, Soldaten überqueren Rheinbrücke.jpg · Robert Sennecke · November 1918 · CC BY-SA 3.0 de · Wikimedia Commons",
+  "Bundesarchiv Bild 183-1983-1205-508, Berlin, Weibliche Stadtverordnete.jpg · Urheber unbekannt · 1919 · CC BY-SA 3.0 de · Wikimedia Commons",
+  "Bundesarchiv Bild 183-R11112, Versailles, Gruppenbild deutscher Friedensverhändler.jpg · Urheber unbekannt · May 1919 · CC BY-SA 3.0 de · Wikimedia Commons",
+  "Weimar Constitution.jpg · JonRoma (Wikimedia Commons) · Heft von 1919, Aufnahme… · Public domain · Wikimedia Commons"
+ ]
+}

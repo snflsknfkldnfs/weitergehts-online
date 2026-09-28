@@ -1,0 +1,177 @@
+/* Anordnen — geteiltes Werkzeug fuer Anordnungsaufgaben (Zeitstrahl, Rangfolge, Ablauf).
+   Datengetrieben: je Aufgabe ein Ordner mit index.html + data.json. Kein Framework. */
+
+:root {
+  --o-bg: #f4f2ee;
+  --o-flaeche: #ffffff;
+  --o-linie: #d9d3c9;
+  --o-text: #1d1b18;
+  --o-gedaempft: #6b655c;
+  --o-akzent: #1f5673;
+  --o-akzent-hell: #e3eef4;
+  --o-fix: #f6efe0;
+  --o-fix-linie: #d8c79a;
+  --o-radius: 12px;
+  --o-schatten: 0 1px 2px rgba(0,0,0,.07), 0 6px 18px rgba(0,0,0,.06);
+}
+
+* { box-sizing: border-box; }
+
+body.ordnen {
+  margin: 0;
+  background: var(--o-bg);
+  color: var(--o-text);
+  font: 17px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+.o-huelle { max-width: 760px; margin: 0 auto; padding: 16px 14px 96px; }
+
+.o-kopf { padding: 8px 2px 14px; }
+.o-kopf h1 { margin: 0 0 6px; font-size: 1.45rem; line-height: 1.25; }
+.o-kopf p { margin: 0; color: var(--o-gedaempft); font-size: .95rem; }
+
+/* ── Liste ───────────────────────────────────────────────────────────── */
+.o-liste { list-style: none; margin: 0; padding: 0; position: relative; }
+
+.o-karte {
+  display: grid;
+  grid-template-columns: minmax(0, 42%) 1fr auto;
+  gap: 14px;
+  align-items: center;
+  background: var(--o-flaeche);
+  border: 1px solid var(--o-linie);
+  border-radius: var(--o-radius);
+  padding: 8px 10px 8px 8px;
+  margin: 0 0 12px;
+  box-shadow: var(--o-schatten);
+  touch-action: none;           /* Ziehen mit dem Finger, kein Seiten-Scroll */
+  -webkit-user-select: none;
+  user-select: none;
+  position: relative;
+}
+
+.o-karte.o-fix {
+  background: var(--o-fix);
+  border-color: var(--o-fix-linie);
+  touch-action: auto;
+  cursor: default;
+}
+
+.o-karte.o-greift {
+  box-shadow: 0 8px 26px rgba(0,0,0,.20);
+  border-color: var(--o-akzent);
+  z-index: 40;
+  position: relative;
+  opacity: .97;
+}
+
+.o-nr {
+  position: absolute;
+  top: -8px; left: -8px;
+  min-width: 23px; height: 23px;
+  border-radius: 999px;
+  background: var(--o-akzent);
+  color: #fff;
+  font-size: .78rem;
+  font-weight: 700;
+  display: grid; place-items: center;
+  padding: 0 6px;
+}
+.o-karte.o-fix .o-nr { background: #9a8654; }
+
+/* Das Bild ist der Hauptinhalt der Karte, nicht die Beigabe. */
+.o-bild {
+  width: 100%;
+  height: 152px;
+  object-fit: cover;
+  object-position: center 38%;
+  border-radius: 9px;
+  background: #e8e4dd;
+  display: block;
+  pointer-events: none;
+}
+
+.o-bild-ganz {
+  object-fit: contain;
+  background: #fbfaf8;
+  border: 1px solid var(--o-linie);
+  padding: 4px;
+}
+
+.o-text { min-width: 0; }
+.o-titel { font-weight: 700; font-size: 1.12rem; margin: 0 0 5px; line-height: 1.2; }
+.o-satz { margin: 0; font-size: .92rem; color: #46423b; line-height: 1.38; }
+
+.o-griff {
+  display: flex; flex-direction: column; gap: 4px; align-items: center;
+}
+.o-pfeil {
+  width: 34px; height: 30px;
+  border: 1px solid var(--o-linie);
+  background: #fbfaf8;
+  border-radius: 7px;
+  font-size: 15px; line-height: 1;
+  color: var(--o-akzent);
+  cursor: pointer;
+  padding: 0;
+}
+.o-pfeil:disabled { opacity: .3; cursor: default; }
+.o-pfeil:active { background: var(--o-akzent-hell); }
+
+/* ── Leiste unten ────────────────────────────────────────────────────── */
+.o-leiste {
+  position: fixed; left: 0; right: 0; bottom: 0;
+  background: rgba(255,255,255,.96);
+  border-top: 1px solid var(--o-linie);
+  padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+  display: flex; gap: 10px; align-items: center; justify-content: center;
+  backdrop-filter: saturate(180%) blur(8px);
+}
+.o-knopf {
+  border: 1px solid var(--o-akzent);
+  background: var(--o-akzent);
+  color: #fff;
+  border-radius: 9px;
+  padding: 11px 18px;
+  font-size: 1rem; font-weight: 600;
+  cursor: pointer;
+}
+.o-knopf.o-zweit { background: #fff; color: var(--o-akzent); }
+.o-stand { font-size: .95rem; color: var(--o-gedaempft); min-width: 0; }
+.o-stand strong { color: var(--o-text); }
+
+/* ── Fragen ──────────────────────────────────────────────────────────── */
+.o-fragen { margin-top: 28px; }
+.o-fragen h2 { font-size: 1.1rem; margin: 0 0 4px; }
+.o-hinweis { font-size: .84rem; color: var(--o-gedaempft); margin: 0 0 14px; }
+.o-frage { background: var(--o-flaeche); border: 1px solid var(--o-linie); border-radius: var(--o-radius); padding: 12px; margin-bottom: 12px; }
+.o-frage p { margin: 0 0 8px; font-size: .95rem; }
+.o-frage textarea {
+  width: 100%; min-height: 78px;
+  border: 1px solid var(--o-linie); border-radius: 8px;
+  padding: 8px; font: inherit; font-size: .95rem; resize: vertical;
+  background: #fdfdfc;
+}
+.o-fuer-schnelle { border-style: dashed; }
+.o-fuer-schnelle .o-fahne {
+  display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .04em;
+  text-transform: uppercase; color: var(--o-akzent); margin-bottom: 6px;
+}
+
+.o-nachweis { margin-top: 30px; font-size: .74rem; color: var(--o-gedaempft); line-height: 1.5; }
+.o-nachweis h3 { font-size: .8rem; margin: 0 0 4px; }
+
+/* Schmales Geraet: Bild oben, Text darunter — das Bild bleibt gross. */
+@media (max-width: 560px) {
+  .o-karte {
+    grid-template-columns: 1fr auto;
+    grid-template-areas: "bild bild" "text griff";
+    gap: 10px;
+    padding: 8px;
+  }
+  .o-bild { grid-area: bild; height: 168px; }
+  .o-text { grid-area: text; }
+  .o-griff { grid-area: griff; flex-direction: row; }
+  .o-titel { font-size: 1.05rem; }
+}
