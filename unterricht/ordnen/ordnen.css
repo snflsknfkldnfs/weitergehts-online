@@ -175,3 +175,42 @@ body.ordnen {
   .o-griff { grid-area: griff; flex-direction: row; }
   .o-titel { font-size: 1.05rem; }
 }
+
+/* ── KI-Hilfe je Karte ───────────────────────────────────────────────────
+   Knopf sitzt unter den Pfeilen in derselben Spalte; bei den festen Karten
+   steht er allein. Bewusst zurueckhaltend: die Karte bleibt der Hauptinhalt. */
+.o-ki-zeile {
+  margin: 8px 0 0;
+  color: var(--o-gedaempft);
+  font-size: .88rem;
+  line-height: 1.35;
+}
+
+.o-ki {
+  width: 34px; height: 30px;
+  border: 1px solid var(--o-linie);
+  background: #fbfaf8;
+  border-radius: 7px;
+  font-size: 15px; line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 4px;
+}
+.o-ki:active { background: var(--o-akzent-hell); }
+.o-ki:focus-visible { outline: 2px solid var(--o-akzent); outline-offset: 2px; }
+
+/* Rueckmeldung nach dem Tippen: kurz, neben der Karte, verschwindet von selbst. */
+.o-ki-hinweis {
+  position: absolute;
+  right: 52px;
+  bottom: 8px;
+  max-width: 62%;
+  background: var(--o-text);
+  color: #fff;
+  font-size: .8rem;
+  line-height: 1.25;
+  padding: 5px 8px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.18);
+  z-index: 50;
+}

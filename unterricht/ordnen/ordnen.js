@@ -8,7 +8,10 @@
  * {
  *   "titel": "...", "leitfrage": "...", "auftrag": "...",
  *   "pruefen": true,                      // Zaehl-Rueckmeldung anbieten (nie: welche)
- *   "karten": [ { "id", "bild", "alt", "titel", "satz", "fix": "start"|"ende"|null } ],
+ *   "ki_hilfe": true,                     // KI-Knopf je Karte (oeffnet duck.ai mit "ki_prompt")
+ *   "ki_hinweis": "...",                  // eine Zeile fuer die Klasse unter dem Auftrag
+ *   "karten": [ { "id", "bild", "alt", "titel", "satz", "fix": "start"|"ende"|null,
+ *                 "ki_prompt": "..." } ],
  *   "fragen": [ { "text", "fuer_schnelle": false } ],
  *   "nachweise": [ "..." ]
  * }
@@ -53,6 +56,62 @@
     return anordnung;
   }
 
+  /* ── KI-Hilfe je Karte ─────────────────────────────────────────────────
+     Ein Knopf, ein Text: der Prompt steht fertig in data.json (gebaut vom
+     Stunden-Skript), hier wird er nur kopiert und an duck.ai uebergeben.
+     Kopieren zusaetzlich zum Oeffnen, damit ein blockiertes Popup nicht das
+     Ende ist — dann steht der Text im Zwischenspeicher. */
+  var DUCKAI = 'https://duck.ai/?q=';
+
+  function kiKnopf(k) {
+    var b = el('button', 'o-ki');
+    b.type = 'button';
+    b.setAttribute('aria-label', 'KI-Hilfe zu „' + k.titel + '“');
+    b.title = 'KI-Hilfe zu dieser Karte';
+    b.textContent = '✨';
+    b.addEventListener('click', function () {
+      kopieren(k.ki_prompt);
+      var fenster = null;
+      try {
+        fenster = window.open(DUCKAI + encodeURIComponent(k.ki_prompt), '_blank', 'noopener,noreferrer');
+      } catch (e) { fenster = null; }
+      meldung(b, fenster
+        ? 'Tab geöffnet – Frage eintippen und Enter'
+        : 'Popup blockiert – der Text ist kopiert, duck.ai selbst öffnen', !fenster);
+    });
+    return b;
+  }
+
+  function kopieren(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).catch(function () { ersatzKopie(text); });
+    } else {
+      ersatzKopie(text);
+    }
+  }
+
+  function ersatzKopie(text) {
+    var ta = el('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+
+  function meldung(knopf, text, lang) {
+    var alt = knopf.parentNode.querySelector('.o-ki-hinweis');
+    if (alt) alt.parentNode.removeChild(alt);
+    var m = el('span', 'o-ki-hinweis', text);
+    m.setAttribute('role', 'status');
+    knopf.parentNode.appendChild(m);
+    setTimeout(function () {
+      if (m.parentNode) m.parentNode.removeChild(m);
+    }, lang ? 7000 : 4000);
+  }
+
   function karteBauen(k) {
     var li = el('li', 'o-karte' + (k.fix ? ' o-fix' : ''));
     li.dataset.id = k.id;
@@ -85,6 +144,7 @@
         griff.appendChild(b);
       });
     }
+    if (daten && daten.ki_hilfe && k.ki_prompt) griff.appendChild(kiKnopf(k));
     li.appendChild(griff);
     return li;
   }
@@ -224,6 +284,9 @@
     document.title = d.titel;
     document.getElementById('o-leitfrage').textContent = d.leitfrage;
     document.getElementById('o-auftrag').textContent = d.auftrag;
+    if (d.ki_hilfe && d.ki_hinweis) {
+      document.getElementById('o-auftrag').after(el('p', 'o-ki-zeile', d.ki_hinweis));
+    }
 
     liste = document.getElementById('o-liste');
     startAnordnung(d.karten).forEach(function (k) { liste.appendChild(karteBauen(k)); });
