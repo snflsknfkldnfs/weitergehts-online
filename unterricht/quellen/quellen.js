@@ -12,7 +12,9 @@
  *   "fragen_titel": "...", "fragen": [ "..." ],      // worauf beim Lesen achten
  *   "ki_hilfe": true, "ki_hinweis": "...",
  *   "quellen": [ { "id", "kennung", "farbe": "blau"|"rot"|..., "seite", "kopf", "wer", "wann",
- *                  "absaetze": [ "Text mit {{Fachwort}}" ], "glossar": { "Fachwort": "Erklaerung" },
+ *                  "absaetze": [ "Wortlaut mit {{Fachwort}}" | { "eigen": "Erklaersatz" } ],
+ *                  "glossar": { "Fachwort": "Erklaerung" },
+ *                  "link": { "text", "url" } | null,      // zum Original (neuer Tab)
  *                  "nachweis", "plakat": { "bild", "unterschrift", "nachweis" } | null,
  *                  "ki_prompt": "..." } ]
  * }
@@ -31,6 +33,14 @@
 
   /* ── Fachwoerter: Antippen blendet die Erklaerung direkt dahinter ein ── */
   function absatzBauen(text, glossar) {
+    /* { eigen: "..." } = Satz der Lehrkraft, kein Wortlaut — sichtbar anders gesetzt,
+       damit die Klasse Quelle und Erklaerung nie verwechselt. */
+    if (text && typeof text === 'object') {
+      var e = el('p', 'q-eigen');
+      e.appendChild(el('span', 'q-eigen-marke', 'Erklärt:'));
+      e.appendChild(document.createTextNode(' ' + text.eigen));
+      return e;
+    }
     var p = el('p', 'q-absatz');
     var teile = text.split(/(\{\{.+?\}\})/);
     teile.forEach(function (t) {
@@ -116,7 +126,14 @@
     var text = el('div', 'q-text');
     q.absaetze.forEach(function (a) { text.appendChild(absatzBauen(a, q.glossar || {})); });
     art.appendChild(text);
-    art.appendChild(el('p', 'q-nachweis', q.nachweis));
+    var nw = el('p', 'q-nachweis', q.nachweis);
+    if (q.link && q.link.url) {
+      var a = el('a', 'q-link', q.link.text || 'Zum Original');
+      a.href = q.link.url; a.target = '_blank'; a.rel = 'noopener noreferrer';
+      nw.appendChild(document.createTextNode(' '));
+      nw.appendChild(a);
+    }
+    art.appendChild(nw);
     if (mitKi && q.ki_prompt) art.appendChild(kiKnopf(q));
 
     if (q.plakat) {
