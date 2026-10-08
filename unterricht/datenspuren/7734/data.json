@@ -52,9 +52,9 @@
     "Lies die Lieferadressen."
    ],
    "modus": "wort",
-   "anzeige": "Kitzingen",
    "erkenntnis": "Jede Lieferung braucht eine Adresse.",
-   "k": "WyJLSVRaSU5HRU4iXQ=="
+   "k": "WyJLSVRaSU5HRU4iXQ==",
+   "a": "S2l0emluZ2Vu"
   },
   {
    "id": "essen",
@@ -66,9 +66,9 @@
     "Suchwort: pizza"
    ],
    "modus": "wort",
-   "anzeige": "Pizza",
    "erkenntnis": "Gewohnheiten werden zu Daten.",
-   "k": "WyJQSVpaQSIsICJQSVpaRU4iXQ=="
+   "k": "WyJQSVpaQSIsICJQSVpaRU4iXQ==",
+   "a": "UGl6emE="
   },
   {
    "id": "gesundheit",
@@ -80,9 +80,9 @@
     "Suchwort: notiz"
    ],
    "modus": "wort",
-   "anzeige": "Gluten (Krankheit Zöliakie)",
    "erkenntnis": "Aus Bestellungen wird eine Krankheit.",
-   "k": "WyJHTFVURU4iLCAiWk9FTElBS0lFIiwgIlpPTElBS0lFIiwgIldFSVpFTiIsICJNRUhMIl0="
+   "k": "WyJHTFVURU4iLCAiWk9FTElBS0lFIiwgIlpPTElBS0lFIiwgIldFSVpFTiIsICJNRUhMIl0=",
+   "a": "R2x1dGVuIChLcmFua2hlaXQgWsO2bGlha2llKQ=="
   },
   {
    "id": "name",
@@ -94,9 +94,9 @@
     "Suchwort: klingel"
    ],
    "modus": "wort",
-   "anzeige": "Schmitt (Vorname: Robin)",
    "erkenntnis": "Nur aus einer einzigen Datenart: ein Name.",
-   "k": "WyJTQ0hNSVRUIiwgIlNDSE1JRFQiLCAiU0NITUlUIl0="
+   "k": "WyJTQ0hNSVRUIiwgIlNDSE1JRFQiLCAiU0NITUlUIl0=",
+   "a": "U2NobWl0dCAoVm9ybmFtZTogUm9iaW4p"
   },
   {
    "id": "strasse",
@@ -108,9 +108,9 @@
     "Uhrzeit von 22 bis 6."
    ],
    "modus": "wort",
-   "anzeige": "Mühlenweg",
    "erkenntnis": "Ein Filter, zwei Sekunden. Mit mehr Daten geht es viel schneller.",
-   "k": "WyJNVUVITEVOV0VHIiwgIk1VSExFTldFRyJd"
+   "k": "WyJNVUVITEVOV0VHIiwgIk1VSExFTldFRyJd",
+   "a": "TcO8aGxlbndlZw=="
   },
   {
    "id": "arbeit",
@@ -122,9 +122,9 @@
     "Uhrzeit von 14 bis 22."
    ],
    "modus": "wort",
-   "anzeige": "Tankstelle in Kitzingen (Spätschicht)",
    "erkenntnis": "Jetzt weißt du auch, wann 7734 nicht zu Hause ist.",
-   "k": "WyJUQU5LU1RFTExFIl0="
+   "k": "WyJUQU5LU1RFTExFIl0=",
+   "a": "VGFua3N0ZWxsZSBpbiBLaXR6aW5nZW4gKFNww6R0c2NoaWNodCk="
   }
  ],
  "eintraege": [

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Fall 4711 · Datenspuren</title>
+<link rel="stylesheet" href="../datenspuren.css?v=1.0">
+</head>
+<body class="datenspuren">
+
+<header class="d-kopf">
+  <div>
+    <p class="d-stempel">Vertraulich</p>
+    <h1 id="d-titel">Fall 4711</h1>
+    <p class="d-absender" id="d-absender"></p>
+  </div>
+  <p class="d-fortschritt" id="d-fortschritt"></p>
+</header>
+
+<main class="d-raster">
+
+  <aside class="d-akte" aria-label="Akte">
+    <details class="d-briefing" open>
+      <summary>Dein Auftrag</summary>
+      <div id="d-briefing"></div>
+    </details>
+
+    <section class="d-stufe" id="d-stufe" aria-live="polite">Lade Akte …</section>
+
+    <section class="d-steckbrief-box">
+      <h2>Steckbrief 4711</h2>
+      <dl class="d-steckbrief" id="d-steckbrief"></dl>
+    </section>
+
+    <p class="d-fuss">
+      <span id="d-fiktion"></span>
+      <button type="button" class="d-link" id="d-neu">Akte neu beginnen</button>
+    </p>
+  </aside>
+
+  <section class="d-daten" aria-label="Datensatz">
+    <h2>Datenpaket „anonymisiert“</h2>
+    <p class="d-phase" id="d-phase" hidden></p>
+    <div class="d-filter">
+      <label>Nutzer <select id="d-f-nutzer"><option value="">alle</option></select></label>
+      <label>Quelle <select id="d-f-quelle"></select></label>
+      <label>Tag <select id="d-f-datum"><option value="">alle</option></select></label>
+      <label>von <select id="d-f-von"></select></label>
+      <label>bis <select id="d-f-bis"></select></label>
+      <label class="d-suche">Suchwort <input type="search" id="d-f-text" placeholder="z. B. wetter" autocomplete="off"></label>
+      <button type="button" class="d-knopf d-zweit" id="d-f-reset">Filter zurücksetzen</button>
+    </div>
+    <p class="d-zeile-info"><span id="d-anzahl"></span>
+      <button type="button" class="d-link" id="d-sort">Sortierung: <span id="d-sortpfeil"></span></button></p>
+    <div class="d-tabelle-huelle">
+      <table class="d-tabelle">
+        <thead><tr><th>Nutzer</th><th>Tag</th><th>Uhrzeit</th><th>Quelle</th><th>Eintrag</th></tr></thead>
+        <tbody id="d-zeilen"></tbody>
+      </table>
+      <p class="d-leer" id="d-leer" hidden>Keine Einträge. Lockere einen Filter.</p>
+    </div>
+  </section>
+
+</main>
+
+<script src="../datenspuren.js?v=1.2"></script>
+</body>
+</html>

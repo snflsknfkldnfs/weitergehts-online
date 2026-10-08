@@ -52,9 +52,9 @@
     "Lies, wo die Bonuskarte benutzt wird."
    ],
    "modus": "wort",
-   "anzeige": "Schwarzach",
    "erkenntnis": "Die Bonuskarte zeigt, wo jemand einkauft.",
-   "k": "WyJTQ0hXQVJaQUNIIl0="
+   "k": "WyJTQ0hXQVJaQUNIIl0=",
+   "a": "U2Nod2FyemFjaA=="
   },
   {
    "id": "familie",
@@ -66,9 +66,9 @@
     "Suchwort: windeln"
    ],
    "modus": "wort",
-   "anzeige": "ein Baby (wenige Wochen alt)",
    "erkenntnis": "Einkäufe verraten, was sich in einer Familie ändert.",
-   "k": "WyJCQUJZIiwgIlNBRVVHTElORyIsICJORVVHRUJPUkVOIiwgIktJTkQiXQ=="
+   "k": "WyJCQUJZIiwgIlNBRVVHTElORyIsICJORVVHRUJPUkVOIiwgIktJTkQiXQ==",
+   "a": "ZWluIEJhYnkgKHdlbmlnZSBXb2NoZW4gYWx0KQ=="
   },
   {
    "id": "tier",
@@ -80,9 +80,9 @@
     "Suchwort: futter"
    ],
    "modus": "wort",
-   "anzeige": "ein Hund",
    "erkenntnis": "Auch Haustiere hinterlassen Datenspuren.",
-   "k": "WyJIVU5EIl0="
+   "k": "WyJIVU5EIl0=",
+   "a": "ZWluIEh1bmQ="
   },
   {
    "id": "name",
@@ -94,9 +94,9 @@
     "Suchwort: aufkleber"
    ],
    "modus": "wort",
-   "anzeige": "Weber (Vorname: Jo)",
    "erkenntnis": "Nur aus einer einzigen Datenart: ein Name.",
-   "k": "WyJXRUJFUiJd"
+   "k": "WyJXRUJFUiJd",
+   "a": "V2ViZXIgKFZvcm5hbWU6IEpvKQ=="
   },
   {
    "id": "strasse",
@@ -108,9 +108,9 @@
     "Uhrzeit von 22 bis 6."
    ],
    "modus": "wort",
-   "anzeige": "Am Kirchberg",
    "erkenntnis": "Ein Filter, zwei Sekunden. Mit mehr Daten geht es viel schneller.",
-   "k": "WyJLSVJDSEJFUkciXQ=="
+   "k": "WyJLSVJDSEJFUkciXQ==",
+   "a": "QW0gS2lyY2hiZXJn"
   },
   {
    "id": "arbeit",
@@ -122,9 +122,9 @@
     "Uhrzeit von 8 bis 16."
    ],
    "modus": "wort",
-   "anzeige": "Bankfiliale in Volkach",
    "erkenntnis": "Jetzt weißt du auch, wann 5208 nicht zu Hause ist.",
-   "k": "WyJCQU5LIiwgIkJBTktGSUxJQUxFIl0="
+   "k": "WyJCQU5LIiwgIkJBTktGSUxJQUxFIl0=",
+   "a": "QmFua2ZpbGlhbGUgaW4gVm9sa2FjaA=="
   }
  ],
  "eintraege": [

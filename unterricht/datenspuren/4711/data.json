@@ -52,9 +52,9 @@
     "Welcher Ort kommt in den Suchen oft vor?"
    ],
    "modus": "wort",
-   "anzeige": "Volkach",
    "erkenntnis": "Der Ort steckt in ganz normalen Suchen.",
-   "k": "WyJWT0xLQUNIIl0="
+   "k": "WyJWT0xLQUNIIl0=",
+   "a": "Vm9sa2FjaA=="
   },
   {
    "id": "alter",
@@ -66,9 +66,9 @@
     "Suchwort: geburtstag"
    ],
    "modus": "zahl",
-   "anzeige": "18",
    "erkenntnis": "Das Alter hat 4711 nirgends eingetragen.",
-   "k": "WyIxOCIsICJBQ0hUWkVITiJd"
+   "k": "WyIxOCIsICJBQ0hUWkVITiJd",
+   "a": "MTg="
   },
   {
    "id": "sorge",
@@ -80,9 +80,9 @@
     "Suchwort: prüfung"
    ],
    "modus": "wort",
-   "anzeige": "Führerschein-Prüfung, Prüfungsangst",
    "erkenntnis": "Das hat 4711 niemandem erzählt. Nur der Suchmaschine.",
-   "k": "WyJQUlVFRlVORyIsICJQUlVGVU5HIiwgIkZVRUhSRVJTQ0hFSU4iLCAiRlVIUkVSU0NIRUlOIiwgIlRIRU9SSUUiLCAiQU5HU1QiLCAiQkxBQ0tPVVQiXQ=="
+   "k": "WyJQUlVFRlVORyIsICJQUlVGVU5HIiwgIkZVRUhSRVJTQ0hFSU4iLCAiRlVIUkVSU0NIRUlOIiwgIlRIRU9SSUUiLCAiQU5HU1QiLCAiQkxBQ0tPVVQiXQ==",
+   "a": "RsO8aHJlcnNjaGVpbi1QcsO8ZnVuZywgUHLDvGZ1bmdzYW5nc3Q="
   },
   {
    "id": "name",
@@ -94,9 +94,9 @@
     "Suchwort: opa"
    ],
    "modus": "wort",
-   "anzeige": "Krämer (Vorname: Alex)",
    "erkenntnis": "Nur aus Suchanfragen: Ort, Alter, Sorge und Name.",
-   "k": "WyJLUkFFTUVSIiwgIktSQU1FUiJd"
+   "k": "WyJLUkFFTUVSIiwgIktSQU1FUiJd",
+   "a": "S3LDpG1lciAoVm9ybmFtZTogQWxleCk="
   },
   {
    "id": "strasse",
@@ -108,9 +108,9 @@
     "Uhrzeit von 22 bis 6."
    ],
    "modus": "wort",
-   "anzeige": "Lindenweg",
    "erkenntnis": "Ein Filter, zwei Sekunden. Mit mehr Daten geht es viel schneller.",
-   "k": "WyJMSU5ERU5XRUciLCAiTElOREVOIl0="
+   "k": "WyJMSU5ERU5XRUciLCAiTElOREVOIl0=",
+   "a": "TGluZGVud2Vn"
   },
   {
    "id": "hobby",
@@ -122,9 +122,9 @@
     "Ist dein Nutzerfilter noch an?"
    ],
    "modus": "wort",
-   "anzeige": "Kletterhalle in Würzburg",
    "erkenntnis": "Jetzt weißt du auch, wann 4711 nicht zu Hause ist.",
-   "k": "WyJLTEVUVEVSIiwgIktMRVRURVJOIiwgIktMRVRURVJIQUxMRSIsICJCT1VMREVSIl0="
+   "k": "WyJLTEVUVEVSIiwgIktMRVRURVJOIiwgIktMRVRURVJIQUxMRSIsICJCT1VMREVSIl0=",
+   "a": "S2xldHRlcmhhbGxlIGluIFfDvHJ6YnVyZw=="
   }
  ],
  "eintraege": [

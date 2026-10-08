@@ -52,9 +52,9 @@
     "Die Foto-App speichert den Ort jedes Fotos."
    ],
    "modus": "wort",
-   "anzeige": "Gerolzhofen",
    "erkenntnis": "Fotos speichern oft heimlich den Ort.",
-   "k": "WyJHRVJPTFpIT0ZFTiJd"
+   "k": "WyJHRVJPTFpIT0ZFTiJd",
+   "a": "R2Vyb2x6aG9mZW4="
   },
   {
    "id": "schule",
@@ -66,9 +66,9 @@
     "Suchwort: schule"
    ],
    "modus": "wort",
-   "anzeige": "Realschule in Gerolzhofen (Klasse 10b)",
    "erkenntnis": "Sogar die Klasse steht in den Foto-Orten.",
-   "k": "WyJSRUFMU0NIVUxFIl0="
+   "k": "WyJSRUFMU0NIVUxFIl0=",
+   "a": "UmVhbHNjaHVsZSBpbiBHZXJvbHpob2ZlbiAoS2xhc3NlIDEwYik="
   },
   {
    "id": "hobby",
@@ -80,9 +80,9 @@
     "Suchwort: reit"
    ],
    "modus": "wort",
-   "anzeige": "Reiten (Reitstall in Dingolshausen)",
    "erkenntnis": "Die App erkennt sogar, was auf den Fotos ist.",
-   "k": "WyJSRUlUIiwgIlBGRVJEIl0="
+   "k": "WyJSRUlUIiwgIlBGRVJEIl0=",
+   "a": "UmVpdGVuIChSZWl0c3RhbGwgaW4gRGluZ29sc2hhdXNlbik="
   },
   {
    "id": "name",
@@ -94,9 +94,9 @@
     "Suchwort: familie"
    ],
    "modus": "wort",
-   "anzeige": "Lehmann (Vorname: Sam)",
    "erkenntnis": "Nur aus einer einzigen Datenart: ein Name.",
-   "k": "WyJMRUhNQU5OIiwgIkxFTUFOTiJd"
+   "k": "WyJMRUhNQU5OIiwgIkxFTUFOTiJd",
+   "a": "TGVobWFubiAoVm9ybmFtZTogU2FtKQ=="
   },
   {
    "id": "strasse",
@@ -108,9 +108,9 @@
     "Uhrzeit von 22 bis 6."
    ],
    "modus": "wort",
-   "anzeige": "Ahornweg",
    "erkenntnis": "Ein Filter, zwei Sekunden. Mit mehr Daten geht es viel schneller.",
-   "k": "WyJBSE9STldFRyIsICJBSE9STiJd"
+   "k": "WyJBSE9STldFRyIsICJBSE9STiJd",
+   "a": "QWhvcm53ZWc="
   },
   {
    "id": "job",
@@ -122,9 +122,9 @@
     "Uhrzeit von 6 bis 12."
    ],
    "modus": "wort",
-   "anzeige": "Bäckerei in Gerolzhofen (Samstagsjob)",
    "erkenntnis": "Sogar der Lohn steht in den Daten.",
-   "k": "WyJCQUVDS0VSRUkiLCAiQkFDS0VSRUkiLCAiQkFFQ0tFUiIsICJCQUNLRVIiXQ=="
+   "k": "WyJCQUVDS0VSRUkiLCAiQkFDS0VSRUkiLCAiQkFFQ0tFUiIsICJCQUNLRVIiXQ==",
+   "a": "QsOkY2tlcmVpIGluIEdlcm9semhvZmVuIChTYW1zdGFnc2pvYik="
   }
  ],
  "eintraege": [

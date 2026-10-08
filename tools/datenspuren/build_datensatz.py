@@ -8,10 +8,10 @@ Suche, Lauf-App, Bonuskarte, Foto-App, Lieferdienst, Smartwatch), Stufen 1–4 e
 Phase 2 schaltet alle Datenarten frei, Stufen 5–6 gehen dann sehr schnell.
 
 Eine Quelle für alle Abnehmer:
-  unterricht/datenspuren/<fall>/data.json + index.html   das Spiel je Fall
+  unterricht/datenspuren/<nutzernummer>/data.json + index.html   das Spiel je Fall (Adresse = Nummer, nie ein Name)
   unterricht/datenspuren/index.html                       Übersicht der Fälle
   --loesung <pfad.md>                                     Lösungsschlüssel aller Fälle (NICHT auf die Website)
-  --auszug-dir <ordner>                                   je Fall <fall>_auszug.json für Druckmaterial (NICHT auf die Website)
+  --auszug-dir <ordner>                                   je Fall <nutzernummer>_auszug.json für Druckmaterial (NICHT auf die Website)
 
 ALLES ERFUNDEN: Personen und Daten. Echte Orte (Volkach und Umgebung) nur als Ortsnamen, Orte darin allgemein
 („Gewerbegebiet“, „Bäckerei“), keine echten Firmen, keine Hausnummern. Zeitraum Mo 21.09. bis So 04.10.2026.
@@ -34,7 +34,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 WEB = ROOT / 'unterricht' / 'datenspuren'
-VORLAGE = WEB / 'alex' / 'index.html'   # Seitenvorlage, für alle Fälle identisch (Inhalt kommt aus data.json)
+VORLAGE = ROOT / 'tools' / 'datenspuren' / 'seite_vorlage.html'   # Seitenvorlage (nicht veröffentlicht), Platzhalter {{TITEL}}
 BASIS_URL = 'https://weitergehts.online/unterricht/datenspuren/'
 START = date(2026, 9, 21)  # Montag
 TAGE = 14
@@ -751,6 +751,9 @@ def pruefe(f, eintraege, ph, ak):
         fehler.append(f"{f['id']}: Nachname auch bei anderen Nutzern: {fremd[:2]}")
     sichtbar_text = json.dumps([ak, ph, [{k: s[k] for k in ('frage', 'tipps', 'erkenntnis', 'anzeige')}
                                          for s in f['stufen']]], ensure_ascii=False)
+    vorname = f['person'].split()[0].lower()
+    if vorname in (f['nutzer'] + ak['titel']).lower():
+        fehler.append(f"{f['id']}: Vorname in Adresse oder Titel")
     for verboten in ('2006', 'AOL', 'Reporter', 'echte', 'wirklich'):
         if verboten in sichtbar_text:
             fehler.append(f"{f['id']}: Hinweis auf den echten Fall: {verboten}")
@@ -759,7 +762,7 @@ def pruefe(f, eintraege, ph, ak):
 
 def uebersicht(faelle):
     punkte = '\n'.join(
-        f'    <li><a href="{f["id"]}/">\n      <strong>Fall {f["nutzer"]}</strong>\n'
+        f'    <li><a href="{f["nutzer"]}/">\n      <strong>Fall {f["nutzer"]}</strong>\n'
         f'      <span>Informatik 6 · Wer steckt hinter Nutzer {f["nutzer"]}?</span>\n    </a></li>' for f in faelle)
     alt = (WEB / 'index.html').read_text(encoding='utf-8')
     a, b = alt.index('<ul class="d-wahl">'), alt.index('</ul>')
@@ -774,6 +777,10 @@ def main():
 
     assert len({f['nutzer'] for f in FAELLE}) == len(FAELLE) and len({f['id'] for f in FAELLE}) == len(FAELLE)
     vorlage = VORLAGE.read_text(encoding='utf-8')
+    # Cache-Bust-Versionen aus der zentralen Quelle (assets/versions.json), nie aus der Vorlage
+    versionen = json.loads((ROOT / 'assets' / 'versions.json').read_text(encoding='utf-8'))['assets']
+    for datei in ('datenspuren.js', 'datenspuren.css'):
+        vorlage = re.sub(re.escape(datei) + r'\?v=[0-9.]+', f'{datei}?v={versionen[datei]}', vorlage)
     alle_fehler, ausgaben = [], []
     loesung = ['# Datenspuren — Lösungsschlüssel aller Fälle (Lehrkraft, nicht für die Klasse)', '',
                'Erzeugt von `tools/datenspuren/build_datensatz.py` im Website-Repo; nie von Hand pflegen.',
@@ -788,12 +795,13 @@ def main():
         alle_fehler += pruefe(f, eintraege, ph, ak)
         pruefungen += sum(len(s['richtig']) + len(s['falsch']) for s in f['stufen'])
         stufen_web = [{**{k: v for k, v in s.items()
-                          if k not in ('schluessel', 'richtig', 'falsch', 'beleg', 'beleg_lehrkraft', 'belegwort')},
-                       'k': base64.b64encode(json.dumps(s['schluessel']).encode()).decode()} for s in f['stufen']]
+                          if k not in ('schluessel', 'richtig', 'falsch', 'beleg', 'beleg_lehrkraft', 'belegwort', 'anzeige')},
+                       'k': base64.b64encode(json.dumps(s['schluessel']).encode()).decode(),
+                       'a': base64.b64encode(s['anzeige'].encode('utf-8')).decode()} for s in f['stufen']]
         daten = {'version': 3, 'akte': ak, 'phasen': ph, 'max_woerter': MAX_WOERTER, 'stufen': stufen_web,
                  'eintraege': eintraege}
-        fall_kopf = {'id': f['id'], 'titel': ak['titel'], 'nutzer': f['nutzer'], 'url': BASIS_URL + f['id'] + '/',
-                     'kurz_url': 'weitergehts.online/unterricht/datenspuren/' + f['id']}
+        fall_kopf = {'id': f['nutzer'], 'titel': ak['titel'], 'nutzer': f['nutzer'], 'url': BASIS_URL + f['nutzer'] + '/',
+                     'kurz_url': 'weitergehts.online/unterricht/datenspuren/' + f['nutzer']}
         ausgaben.append((f, daten, fall_kopf, ak, ph, eintraege))
         n_ziel = sum(1 for e in eintraege if e['nutzer'] == f['nutzer'])
         print(f'{f["id"]:6} Fall {f["nutzer"]}: {len(eintraege)} Einträge, davon Nutzer {f["nutzer"]}: {n_ziel}, '
@@ -805,19 +813,22 @@ def main():
             loesung.append(f"| {i} | {s['phase'] + 1} | {s['frage']} | **{s['anzeige']}** | {' · '.join(s['schluessel'])} | "
                            f"{' · '.join(s['richtig'][:5])} | {s['beleg_lehrkraft']} |")
         loesung.append('')
+    # Kein Name im Klartext der Webdaten (Antworten und Lösungstexte nur verschleiert)
+    for f, daten, *_ in ausgaben:
+        roh = json.dumps({k: v for k, v in daten.items() if k != 'eintraege'}, ensure_ascii=False).lower()
+        for name in (f['person'].split()[0].lower(), f['nachname']):
+            if re.search(r'(?<![a-zäöüß])' + re.escape(name) + r'(?![a-zäöüß])', roh):
+                alle_fehler.append(f"{f['nutzer']}: „{name}“ im Klartext der Webdaten (außerhalb der Einträge)")
     # Erst schreiben, wenn ALLE Fälle die Selbstprüfung bestehen
     assert not alle_fehler, '\n'.join(alle_fehler)
     for f, daten, fall_kopf, ak, ph, eintraege in ausgaben:
-        ordner = WEB / f['id']
+        ordner = WEB / f['nutzer']
         ordner.mkdir(exist_ok=True)
         (ordner / 'data.json').write_text(json.dumps(daten, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
-        if f['id'] != 'alex':
-            seite = (vorlage.replace('<title>Fall 4711 · Datenspuren</title>', f'<title>Fall {f["nutzer"]} · Datenspuren</title>')
-                     .replace('<h1 id="d-titel">Fall 4711</h1>', f'<h1 id="d-titel">Fall {f["nutzer"]}</h1>'))
-            (ordner / 'index.html').write_text(seite, encoding='utf-8')
+        (ordner / 'index.html').write_text(vorlage.replace('{{TITEL}}', ak['titel']), encoding='utf-8')
         if a.auszug_dir:
             Path(a.auszug_dir).mkdir(parents=True, exist_ok=True)
-            (Path(a.auszug_dir) / f'{f["id"]}_auszug.json').write_text(
+            (Path(a.auszug_dir) / f'{f["nutzer"]}_auszug.json').write_text(
                 json.dumps({'fall': fall_kopf, 'akte': ak, 'phasen': ph, 'stufen': f['stufen'], 'eintraege': eintraege},
                            ensure_ascii=False, indent=1), encoding='utf-8')
     (WEB / 'index.html').write_text(uebersicht(FAELLE), encoding='utf-8')

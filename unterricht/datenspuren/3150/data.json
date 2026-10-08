@@ -52,9 +52,9 @@
     "Lies die Einträge der Lauf-App."
    ],
    "modus": "wort",
-   "anzeige": "Dettelbach",
    "erkenntnis": "Die Lauf-App kennt jede Runde, auch den Ort.",
-   "k": "WyJERVRURUxCQUNIIl0="
+   "k": "WyJERVRURUxCQUNIIl0=",
+   "a": "RGV0dGVsYmFjaA=="
   },
   {
    "id": "ziel",
@@ -66,9 +66,9 @@
     "Suchwort: halb"
    ],
    "modus": "wort",
-   "anzeige": "Halbmarathon in Würzburg",
    "erkenntnis": "Die App weiß, worauf 3150 hinarbeitet.",
-   "k": "WyJIQUxCTUFSQVRIT04iLCAiTUFSQVRIT04iXQ=="
+   "k": "WyJIQUxCTUFSQVRIT04iLCAiTUFSQVRIT04iXQ==",
+   "a": "SGFsYm1hcmF0aG9uIGluIFfDvHJ6YnVyZw=="
   },
   {
    "id": "sorge",
@@ -80,9 +80,9 @@
     "Suchwort: knie"
    ],
    "modus": "wort",
-   "anzeige": "Knie (Lauf abgebrochen, Schmerztagebuch)",
    "erkenntnis": "Gesundheitsdaten sind besonders privat.",
-   "k": "WyJLTklFIl0="
+   "k": "WyJLTklFIl0=",
+   "a": "S25pZSAoTGF1ZiBhYmdlYnJvY2hlbiwgU2NobWVyenRhZ2VidWNoKQ=="
   },
   {
    "id": "name",
@@ -94,9 +94,9 @@
     "Suchwort: papa"
    ],
    "modus": "wort",
-   "anzeige": "Hofmann (Vorname: Kim)",
    "erkenntnis": "Nur aus einer einzigen Datenart: ein Name.",
-   "k": "WyJIT0ZNQU5OIiwgIkhPRkZNQU5OIl0="
+   "k": "WyJIT0ZNQU5OIiwgIkhPRkZNQU5OIl0=",
+   "a": "SG9mbWFubiAoVm9ybmFtZTogS2ltKQ=="
   },
   {
    "id": "strasse",
@@ -108,9 +108,9 @@
     "Uhrzeit von 22 bis 6."
    ],
    "modus": "wort",
-   "anzeige": "Rosengasse",
    "erkenntnis": "Ein Filter, zwei Sekunden. Mit mehr Daten geht es viel schneller.",
-   "k": "WyJST1NFTkdBU1NFIiwgIlJPU0VOR0FTUyJd"
+   "k": "WyJST1NFTkdBU1NFIiwgIlJPU0VOR0FTUyJd",
+   "a": "Um9zZW5nYXNzZQ=="
   },
   {
    "id": "arbeit",
@@ -122,9 +122,9 @@
     "Uhrzeit von 6 bis 14."
    ],
    "modus": "wort",
-   "anzeige": "Pflegeheim in Kitzingen (Frühschicht)",
    "erkenntnis": "Jetzt weißt du auch, wann 3150 nicht zu Hause ist.",
-   "k": "WyJQRkxFR0VIRUlNIiwgIlBGTEVHRSIsICJBTFRFTkhFSU0iLCAiU0VOSU9SRU5IRUlNIiwgIkFMVEVSU0hFSU0iXQ=="
+   "k": "WyJQRkxFR0VIRUlNIiwgIlBGTEVHRSIsICJBTFRFTkhFSU0iLCAiU0VOSU9SRU5IRUlNIiwgIkFMVEVSU0hFSU0iXQ==",
+   "a": "UGZsZWdlaGVpbSBpbiBLaXR6aW5nZW4gKEZyw7xoc2NoaWNodCk="
   }
  ],
  "eintraege": [

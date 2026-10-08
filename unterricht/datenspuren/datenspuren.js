@@ -13,7 +13,7 @@
  *   "zeitung": { "titel", "schlagzeile", "text" }?,                     // nur fuer Stufen mit material "zeitung"
  *   "stufen":  [ { "id", "phase": <Index in phasen>, "steckbrief", "frage", "tipps": [..],
  *                  "modus": "wort"|"zahl", "k": base64(JSON-Liste der Schluesselwoerter),
- *                  "anzeige", "erkenntnis", "material": "zeitung"? } ],
+ *                  "a": base64(UTF-8 Loesungstext fuer den Steckbrief), "erkenntnis", "material": "zeitung"? } ],
  *   "max_woerter": 5
  *   "eintraege": [ { "nutzer", "datum": "JJJJ-MM-TT", "tag": "Mo", "zeit": "HH:MM", "quelle", "eintrag" } ]
  * }
@@ -69,6 +69,15 @@
       zeile = neu;
     }
     return zeile[b.length];
+  }
+  /* Loesungstext erst nach dem Loesen sichtbar; im Datensatz nur Base64 (UTF-8) */
+  function anzeige(s) {
+    if (!s.a) return s.anzeige || '';
+    try {
+      var bin = atob(s.a), bytes = new Uint8Array(bin.length);
+      for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+      return new TextDecoder('utf-8').decode(bytes);
+    } catch (e) { return ''; }
   }
   function schluessel(s) {
     try { return JSON.parse(atob(s.k)); } catch (e) { return []; }
@@ -210,7 +219,7 @@
     dl.textContent = '';
     daten.stufen.forEach(function (s, i) {
       dl.appendChild(el('dt', null, s.steckbrief));
-      dl.appendChild(el('dd', i < stand.geloest ? 'd-bekannt' : 'd-offen', i < stand.geloest ? s.anzeige : '?'));
+      dl.appendChild(el('dd', i < stand.geloest ? 'd-bekannt' : 'd-offen', i < stand.geloest ? anzeige(s) : '?'));
     });
     $('d-fortschritt').textContent = 'Stufe ' + Math.min(stand.geloest + 1, daten.stufen.length) +
       ' von ' + daten.stufen.length;

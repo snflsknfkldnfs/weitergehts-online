@@ -52,9 +52,9 @@
     "Suchwort: wetter"
    ],
    "modus": "wort",
-   "anzeige": "Wiesentheid",
    "erkenntnis": "Die Uhr weiß, wo sie morgens ist.",
-   "k": "WyJXSUVTRU5USEVJRCJd"
+   "k": "WyJXSUVTRU5USEVJRCJd",
+   "a": "V2llc2VudGhlaWQ="
   },
   {
    "id": "hobby",
@@ -66,9 +66,9 @@
     "Suchwort: training"
    ],
    "modus": "wort",
-   "anzeige": "Radfahren (bis zu 64 km)",
    "erkenntnis": "Trainingsdaten zeigen Hobby und Fitness.",
-   "k": "WyJSQURGQUhSIiwgIkZBSFJSQUQiLCAiUkFERUxOIiwgIlJBRFRPVVIiLCAiUkVOTlJBRCIsICJSQUQiXQ=="
+   "k": "WyJSQURGQUhSIiwgIkZBSFJSQUQiLCAiUkFERUxOIiwgIlJBRFRPVVIiLCAiUkVOTlJBRCIsICJSQUQiXQ==",
+   "a": "UmFkZmFocmVuIChiaXMgenUgNjQga20p"
   },
   {
    "id": "gesundheit",
@@ -80,9 +80,9 @@
     "Suchwort: warnung"
    ],
    "modus": "wort",
-   "anzeige": "Herz: unregelmäßiger Herzrhythmus, Puls zu hoch",
    "erkenntnis": "Gesundheitsdaten sind besonders privat.",
-   "k": "WyJIRVJaIiwgIlBVTFMiLCAiUkhZVEhNVVMiLCAiSEVSWlJIWVRITVVTIl0="
+   "k": "WyJIRVJaIiwgIlBVTFMiLCAiUkhZVEhNVVMiLCAiSEVSWlJIWVRITVVTIl0=",
+   "a": "SGVyejogdW5yZWdlbG3DpMOfaWdlciBIZXJ6cmh5dGhtdXMsIFB1bHMgenUgaG9jaA=="
   },
   {
    "id": "name",
@@ -94,9 +94,9 @@
     "Suchwort: nachricht"
    ],
    "modus": "wort",
-   "anzeige": "Bauer (Vorname: Luca)",
    "erkenntnis": "Nur aus einer einzigen Datenart: ein Name.",
-   "k": "WyJCQVVFUiJd"
+   "k": "WyJCQVVFUiJd",
+   "a": "QmF1ZXIgKFZvcm5hbWU6IEx1Y2Ep"
   },
   {
    "id": "strasse",
@@ -108,9 +108,9 @@
     "Uhrzeit von 22 bis 6."
    ],
    "modus": "wort",
-   "anzeige": "Birkenweg",
    "erkenntnis": "Ein Filter, zwei Sekunden. Mit mehr Daten geht es viel schneller.",
-   "k": "WyJCSVJLRU5XRUciLCAiQklSS0VOIl0="
+   "k": "WyJCSVJLRU5XRUciLCAiQklSS0VOIl0=",
+   "a": "Qmlya2Vud2Vn"
   },
   {
    "id": "arzt",
@@ -122,9 +122,9 @@
     "Uhrzeit von 9 bis 11."
    ],
    "modus": "wort",
-   "anzeige": "Kardiologische Praxis (Herzarzt) in Würzburg",
    "erkenntnis": "Ein Standort reicht, um auf eine Krankheit zu schließen.",
-   "k": "WyJLQVJESU8iLCAiQVJaVCIsICJQUkFYSVMiLCAiSEVSWkFSWlQiLCAiQUVSWlRJTiJd"
+   "k": "WyJLQVJESU8iLCAiQVJaVCIsICJQUkFYSVMiLCAiSEVSWkFSWlQiLCAiQUVSWlRJTiJd",
+   "a": "S2FyZGlvbG9naXNjaGUgUHJheGlzIChIZXJ6YXJ6dCkgaW4gV8O8cnpidXJn"
   }
  ],
  "eintraege": [
