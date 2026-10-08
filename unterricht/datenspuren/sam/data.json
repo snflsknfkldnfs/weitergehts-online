@@ -1,0 +1,3012 @@
+{
+ "version": 3,
+ "akte": {
+  "titel": "Fall 6620",
+  "absender": "Agentur NEBEL · Ausbildungsfall",
+  "briefing": [
+   "Datenpaket aus unserer Gegend. „Alles anonym, nur Nummern.“",
+   "Finde heraus, wer Nutzer 6620 ist."
+  ],
+  "hinweis_fiktion": "Personen und Daten sind erfunden.",
+  "abschluss": {
+   "titel": "Akte geschlossen. War das in Ordnung?",
+   "text": [
+    "Aus einer Nummer ist ein Mensch geworden: Ort, Schule, Hobby, Nachname, Straße, Samstags."
+   ],
+   "fragen": [
+    "Was würde 6620 nicht wollen, dass Fremde es wissen?",
+    "Wer könnte so ein Profil kaufen wollen?"
+   ]
+  }
+ },
+ "phasen": [
+  {
+   "id": "eine",
+   "titel": "Phase 1",
+   "quellen": [
+    "App"
+   ],
+   "text": "Du siehst nur App-Daten."
+  },
+  {
+   "id": "alle",
+   "titel": "Phase 2",
+   "quellen": [
+    "Standort",
+    "Suche",
+    "Einkauf",
+    "App"
+   ],
+   "text": "Neu freigeschaltet: alle Datenarten."
+  }
+ ],
+ "max_woerter": 5,
+ "stufen": [
+  {
+   "id": "ort",
+   "phase": 0,
+   "steckbrief": "Ort",
+   "frage": "In welchem Ort macht 6620 die meisten Fotos?",
+   "tipps": [
+    "Filtere nach Nutzer 6620.",
+    "Die Foto-App speichert den Ort jedes Fotos."
+   ],
+   "modus": "wort",
+   "anzeige": "Gerolzhofen",
+   "erkenntnis": "Fotos speichern oft heimlich den Ort.",
+   "k": "WyJHRVJPTFpIT0ZFTiJd"
+  },
+  {
+   "id": "schule",
+   "phase": 0,
+   "steckbrief": "Schule",
+   "frage": "Auf welche Schulart geht 6620?",
+   "tipps": [
+    "Wo entstehen vormittags Fotos?",
+    "Suchwort: schule"
+   ],
+   "modus": "wort",
+   "anzeige": "Realschule in Gerolzhofen (Klasse 10b)",
+   "erkenntnis": "Sogar die Klasse steht in den Foto-Orten.",
+   "k": "WyJSRUFMU0NIVUxFIl0="
+  },
+  {
+   "id": "hobby",
+   "phase": 0,
+   "steckbrief": "Hobby",
+   "frage": "Was ist das Hobby von 6620?",
+   "tipps": [
+    "Wo entstehen dienstags und freitags viele Fotos?",
+    "Suchwort: reit"
+   ],
+   "modus": "wort",
+   "anzeige": "Reiten (Reitstall in Dingolshausen)",
+   "erkenntnis": "Die App erkennt sogar, was auf den Fotos ist.",
+   "k": "WyJSRUlUIiwgIlBGRVJEIl0="
+  },
+  {
+   "id": "name",
+   "phase": 0,
+   "steckbrief": "Nachname",
+   "frage": "Wie heißt 6620 mit Nachnamen?",
+   "tipps": [
+    "Mit wem werden Fotos geteilt?",
+    "Suchwort: familie"
+   ],
+   "modus": "wort",
+   "anzeige": "Lehmann (Vorname: Sam)",
+   "erkenntnis": "Nur aus einer einzigen Datenart: ein Name.",
+   "k": "WyJMRUhNQU5OIiwgIkxFTUFOTiJd"
+  },
+  {
+   "id": "strasse",
+   "phase": 1,
+   "steckbrief": "Straße",
+   "frage": "In welcher Straße schläft 6620?",
+   "tipps": [
+    "Quelle: Standort.",
+    "Uhrzeit von 22 bis 6."
+   ],
+   "modus": "wort",
+   "anzeige": "Ahornweg",
+   "erkenntnis": "Ein Filter, zwei Sekunden. Mit mehr Daten geht es viel schneller.",
+   "k": "WyJBSE9STldFRyIsICJBSE9STiJd"
+  },
+  {
+   "id": "job",
+   "phase": 1,
+   "steckbrief": "Samstags",
+   "frage": "Wo ist 6620 samstags am Vormittag?",
+   "tipps": [
+    "Tag: Sa 26.09., Quelle: Standort.",
+    "Uhrzeit von 6 bis 12."
+   ],
+   "modus": "wort",
+   "anzeige": "Bäckerei in Gerolzhofen (Samstagsjob)",
+   "erkenntnis": "Sogar der Lohn steht in den Daten.",
+   "k": "WyJCQUVDS0VSRUkiLCAiQkFDS0VSRUkiLCAiQkFFQ0tFUiIsICJCQUNLRVIiXQ=="
+  }
+ ],
+ "eintraege": [
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "03:20",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:26",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:39",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "07:02",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "07:05",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "07:38",
+   "quelle": "Standort",
+   "eintrag": "Realschule, Gerolzhofen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "07:46",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "08:30",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "10:12",
+   "quelle": "App",
+   "eintrag": "Foto-App: 3 Fotos, Ort: Pausenhof, Realschule Gerolzhofen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "12:27",
+   "quelle": "Standort",
+   "eintrag": "Universität, Würzburg"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "13:05",
+   "quelle": "Standort",
+   "eintrag": "Realschule, Gerolzhofen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "13:11",
+   "quelle": "Einkauf",
+   "eintrag": "Sportgeschäft, Würzburg: Kletterseil, 149,00 €"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "14:41",
+   "quelle": "Standort",
+   "eintrag": "Bushaltestelle, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "16:06",
+   "quelle": "Einkauf",
+   "eintrag": "Apotheke, Volkach: Blutdruckmessgerät, 39,95 €"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "16:40",
+   "quelle": "Einkauf",
+   "eintrag": "Kiosk, Dettelbach: Eistee, Kaugummi"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "17:16",
+   "quelle": "Standort",
+   "eintrag": "Gärtnerei, Dettelbach"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "20:15",
+   "quelle": "App",
+   "eintrag": "Video-App: 1 h 05 min"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "22:02",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "22:04",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "22:17",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "22:45",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "22:56",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "23:28",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "03:20",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:11",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:40",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "07:05",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "07:16",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "07:27",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "07:38",
+   "quelle": "Standort",
+   "eintrag": "Realschule, Gerolzhofen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "08:05",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "09:12",
+   "quelle": "Einkauf",
+   "eintrag": "Sportgeschäft, Würzburg: Kletterseil, 149,00 €"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "09:42",
+   "quelle": "Standort",
+   "eintrag": "Arztpraxis, Volkach"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "13:05",
+   "quelle": "Standort",
+   "eintrag": "Realschule, Gerolzhofen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "13:24",
+   "quelle": "Suche",
+   "eintrag": "kletterhalle würzburg öffnungszeiten"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "13:33",
+   "quelle": "Einkauf",
+   "eintrag": "Kiosk, Dettelbach: Eistee, Kaugummi"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "14:02",
+   "quelle": "Standort",
+   "eintrag": "Kletterhalle, Würzburg"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "15:30",
+   "quelle": "Standort",
+   "eintrag": "Reitstall, Dingolshausen"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "16:40",
+   "quelle": "App",
+   "eintrag": "Foto-App: 14 Fotos, Ort: Reitstall, Dingolshausen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "16:54",
+   "quelle": "Standort",
+   "eintrag": "Musikschule, Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "17:15",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Kitzingen: Windeln, Bananen, Haferflocken"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "17:39",
+   "quelle": "Suche",
+   "eintrag": "blutdruck werte normal mit 70"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "17:52",
+   "quelle": "App",
+   "eintrag": "Klettertagebuch: 6 Boulder, 1 h 30 min"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "17:57",
+   "quelle": "App",
+   "eintrag": "Nachrichten-App: 2 neue Nachrichten"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "18:10",
+   "quelle": "Standort",
+   "eintrag": "Reitstall, Dingolshausen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "22:31",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "22:34",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "22:45",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "22:48",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "23:20",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "23:24",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "03:20",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:33",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:37",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "07:05",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "07:38",
+   "quelle": "Standort",
+   "eintrag": "Realschule, Gerolzhofen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "07:52",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "08:28",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "08:57",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "10:27",
+   "quelle": "Standort",
+   "eintrag": "Gärtnerei, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "11:23",
+   "quelle": "Einkauf",
+   "eintrag": "Sportgeschäft, Würzburg: Kletterseil, 149,00 €"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "11:57",
+   "quelle": "Standort",
+   "eintrag": "Supermarkt, Kitzingen"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "13:05",
+   "quelle": "Standort",
+   "eintrag": "Realschule, Gerolzhofen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "13:06",
+   "quelle": "Suche",
+   "eintrag": "blutdruck werte normal mit 70"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "13:08",
+   "quelle": "Suche",
+   "eintrag": "günstige kinderschuhe"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "14:44",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "15:34",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Kitzingen: Windeln, Bananen, Haferflocken"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "16:04",
+   "quelle": "Standort",
+   "eintrag": "Musikschule, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "16:41",
+   "quelle": "Suche",
+   "eintrag": "pizza lieferdienst würzburg nachts"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "17:30",
+   "quelle": "App",
+   "eintrag": "Foto-App: 2 Fotos, Ort: Eisdiele, Marktplatz Gerolzhofen"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "20:15",
+   "quelle": "App",
+   "eintrag": "Video-App: 1 h 05 min"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "20:50",
+   "quelle": "Suche",
+   "eintrag": "boulder technik heel hook"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "21:05",
+   "quelle": "App",
+   "eintrag": "Video-App: 48 min"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "22:18",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "22:24",
+   "quelle": "App",
+   "eintrag": "Wetter-App: 3 Aufrufe"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "22:27",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "22:45",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "23:30",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "23:35",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "23:56",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "03:20",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "06:27",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "06:50",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "07:05",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "07:38",
+   "quelle": "Standort",
+   "eintrag": "Realschule, Gerolzhofen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "08:16",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "08:23",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "08:57",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "09:37",
+   "quelle": "Suche",
+   "eintrag": "gitarre akkorde lernen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "09:52",
+   "quelle": "Standort",
+   "eintrag": "Kletterhalle, Würzburg"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "10:15",
+   "quelle": "App",
+   "eintrag": "Foto-App: 1 Foto, Ort: Klassenzimmer 10b, Realschule Gerolzhofen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "12:28",
+   "quelle": "Suche",
+   "eintrag": "kita elternabend ideen"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "13:05",
+   "quelle": "Standort",
+   "eintrag": "Realschule, Gerolzhofen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "13:07",
+   "quelle": "Standort",
+   "eintrag": "Gärtnerei, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "13:27",
+   "quelle": "Suche",
+   "eintrag": "blutdruck werte normal mit 70"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "13:34",
+   "quelle": "Standort",
+   "eintrag": "Mensa, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "15:15",
+   "quelle": "Einkauf",
+   "eintrag": "Drogerie, Kitzingen: Fiebersaft, Pflaster"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "16:54",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Volkach: Milch, Brot, Kaffee"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "18:10",
+   "quelle": "Einkauf",
+   "eintrag": "Mensa, Würzburg: Tagesgericht, 3,20 €"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "19:38",
+   "quelle": "App",
+   "eintrag": "Musik-App: 30 min"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "20:15",
+   "quelle": "Suche",
+   "eintrag": "hausarbeit zitieren regeln"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "20:15",
+   "quelle": "App",
+   "eintrag": "Video-App: 1 h 05 min"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "22:34",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "22:45",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "22:50",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "22:57",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "23:05",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "23:46",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "03:20",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:00",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:35",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "07:05",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "07:08",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "07:38",
+   "quelle": "Standort",
+   "eintrag": "Realschule, Gerolzhofen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "07:52",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "08:18",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "12:21",
+   "quelle": "Suche",
+   "eintrag": "lustige katzenvideos"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "13:05",
+   "quelle": "Standort",
+   "eintrag": "Realschule, Gerolzhofen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "13:49",
+   "quelle": "Suche",
+   "eintrag": "steuererklärung frist 2026"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "14:24",
+   "quelle": "Standort",
+   "eintrag": "Kita, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "14:24",
+   "quelle": "Standort",
+   "eintrag": "Mensa, Würzburg"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "15:25",
+   "quelle": "Standort",
+   "eintrag": "Reitstall, Dingolshausen"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "16:55",
+   "quelle": "App",
+   "eintrag": "Foto-App: 9 Fotos, Ort: Reitplatz, Dingolshausen. Erkannt: Pferd"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "18:00",
+   "quelle": "Standort",
+   "eintrag": "Reitstall, Dingolshausen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "18:19",
+   "quelle": "Suche",
+   "eintrag": "fieber kind 3 jahre was tun"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "22:45",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "22:45",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "22:50",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "22:55",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "22:59",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "23:58",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "03:20",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "06:16",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "06:19",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "06:37",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "06:39",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "06:50",
+   "quelle": "Standort",
+   "eintrag": "Bäckerei, Gerolzhofen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "08:06",
+   "quelle": "Suche",
+   "eintrag": "zug würzburg nürnberg verspätung"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "08:44",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "12:05",
+   "quelle": "Standort",
+   "eintrag": "Bäckerei, Gerolzhofen"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "12:10",
+   "quelle": "Einkauf",
+   "eintrag": "Bäckerei, Gerolzhofen: Lohn Samstag, 36,00 €"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "14:28",
+   "quelle": "Standort",
+   "eintrag": "Bar, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "15:22",
+   "quelle": "Standort",
+   "eintrag": "Friedhof, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "15:59",
+   "quelle": "Suche",
+   "eintrag": "lustige katzenvideos"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "16:57",
+   "quelle": "Einkauf",
+   "eintrag": "Tankstelle, Würzburg: Super E10, 61,20 €"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "17:10",
+   "quelle": "Standort",
+   "eintrag": "Musikschule, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "18:10",
+   "quelle": "Einkauf",
+   "eintrag": "Musikgeschäft, Kitzingen: Gitarrensaiten, 8,50 €"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "19:20",
+   "quelle": "App",
+   "eintrag": "Foto-App: Album „Sommer“ geteilt mit Gruppe „Familie Lehmann“"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "19:46",
+   "quelle": "Einkauf",
+   "eintrag": "Apotheke, Volkach: Blutdruckmessgerät, 39,95 €"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "22:42",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "22:45",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "22:49",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "22:57",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "23:02",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "23:06",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "03:20",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "07:23",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "07:42",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "08:34",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "08:47",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "08:59",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "11:40",
+   "quelle": "Suche",
+   "eintrag": "boulder technik heel hook"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "14:12",
+   "quelle": "Standort",
+   "eintrag": "Hauptbahnhof, Würzburg"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "15:10",
+   "quelle": "App",
+   "eintrag": "Foto-App: 22 Fotos, Ort: Stadtfest, Gerolzhofen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "16:53",
+   "quelle": "Standort",
+   "eintrag": "Friedhof, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "18:12",
+   "quelle": "App",
+   "eintrag": "Navi-App: Route Würzburg → Nürnberg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "19:45",
+   "quelle": "Suche",
+   "eintrag": "fieber kind 3 jahre was tun"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "21:04",
+   "quelle": "Suche",
+   "eintrag": "pizza lieferdienst würzburg nachts"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "22:07",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "22:25",
+   "quelle": "App",
+   "eintrag": "Wetter-App: 3 Aufrufe"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "22:30",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "22:45",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "22:48",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "23:36",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "23:48",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "03:20",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:25",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:50",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "07:03",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "07:05",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "07:36",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "07:38",
+   "quelle": "Standort",
+   "eintrag": "Realschule, Gerolzhofen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "08:34",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "09:16",
+   "quelle": "Suche",
+   "eintrag": "fieber kind 3 jahre was tun"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "10:46",
+   "quelle": "Suche",
+   "eintrag": "boulder technik heel hook"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "11:06",
+   "quelle": "Suche",
+   "eintrag": "mathe brüche erklärung"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "11:06",
+   "quelle": "Einkauf",
+   "eintrag": "Tankstelle, Würzburg: Super E10, 61,20 €"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "13:05",
+   "quelle": "Standort",
+   "eintrag": "Realschule, Gerolzhofen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "14:51",
+   "quelle": "Suche",
+   "eintrag": "hausarbeit zitieren regeln"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "15:42",
+   "quelle": "Suche",
+   "eintrag": "tomaten überwintern"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "15:45",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "16:19",
+   "quelle": "App",
+   "eintrag": "Lieferdienst-App: Bestellung"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "16:33",
+   "quelle": "Standort",
+   "eintrag": "Mensa, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "17:01",
+   "quelle": "Standort",
+   "eintrag": "Kita, Kitzingen"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "19:40",
+   "quelle": "Suche",
+   "eintrag": "reithelm größe 56 test"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "20:15",
+   "quelle": "App",
+   "eintrag": "Video-App: 1 h 05 min"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "22:13",
+   "quelle": "App",
+   "eintrag": "Musik-App: 30 min"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "22:38",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "22:45",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "23:28",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "23:45",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "23:48",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "23:55",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "03:20",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "06:04",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "07:05",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "07:14",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "07:38",
+   "quelle": "Standort",
+   "eintrag": "Realschule, Gerolzhofen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "08:19",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "08:31",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "08:31",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "09:41",
+   "quelle": "Standort",
+   "eintrag": "Bar, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "10:18",
+   "quelle": "Einkauf",
+   "eintrag": "Apotheke, Volkach: Blutdruckmessgerät, 39,95 €"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "10:39",
+   "quelle": "Standort",
+   "eintrag": "Musikschule, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "13:00",
+   "quelle": "Standort",
+   "eintrag": "Arztpraxis, Volkach"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "13:05",
+   "quelle": "Standort",
+   "eintrag": "Realschule, Gerolzhofen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "13:21",
+   "quelle": "Suche",
+   "eintrag": "wg zimmer würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "14:26",
+   "quelle": "Suche",
+   "eintrag": "wie lange hält ein handyakku"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "14:49",
+   "quelle": "Standort",
+   "eintrag": "Kita, Kitzingen"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "15:30",
+   "quelle": "Standort",
+   "eintrag": "Reitstall, Dingolshausen"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "16:30",
+   "quelle": "App",
+   "eintrag": "Foto-App: 11 Fotos, Ort: Reitstall, Dingolshausen. Erkannt: Pferd"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "17:30",
+   "quelle": "Standort",
+   "eintrag": "Kletterhalle, Würzburg"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "18:10",
+   "quelle": "Standort",
+   "eintrag": "Reitstall, Dingolshausen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "20:31",
+   "quelle": "Suche",
+   "eintrag": "fieber kind 3 jahre was tun"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "20:32",
+   "quelle": "App",
+   "eintrag": "Kalender-App: Termin „Elternabend“"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "22:27",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "22:29",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "22:45",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "23:11",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "23:38",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "23:57",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "03:20",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:25",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:40",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:43",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "07:05",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "07:38",
+   "quelle": "Standort",
+   "eintrag": "Realschule, Gerolzhofen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "07:45",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "08:45",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "08:58",
+   "quelle": "Suche",
+   "eintrag": "kita elternabend ideen"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "13:05",
+   "quelle": "Standort",
+   "eintrag": "Realschule, Gerolzhofen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "14:52",
+   "quelle": "Standort",
+   "eintrag": "Kletterhalle, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "16:10",
+   "quelle": "App",
+   "eintrag": "Video-App: 48 min"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "16:24",
+   "quelle": "Einkauf",
+   "eintrag": "Musikgeschäft, Kitzingen: Gitarrensaiten, 8,50 €"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "16:54",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Kitzingen: Windeln, Bananen, Haferflocken"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "17:02",
+   "quelle": "Standort",
+   "eintrag": "Apotheke, Volkach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "17:16",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Volkach: Milch, Brot, Kaffee"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "18:45",
+   "quelle": "App",
+   "eintrag": "Foto-App: Geburtstagsfoto gesendet an „Oma Lehmann“"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "18:59",
+   "quelle": "App",
+   "eintrag": "Kalender-App: Termin „Elternabend“"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "20:15",
+   "quelle": "App",
+   "eintrag": "Video-App: 1 h 05 min"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "20:48",
+   "quelle": "Suche",
+   "eintrag": "hausarbeit zitieren regeln"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "21:00",
+   "quelle": "Suche",
+   "eintrag": "ausbildung pferdewirt bayern"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "22:35",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "22:36",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "22:45",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "23:03",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "23:12",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "23:50",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "03:20",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:30",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:45",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "07:05",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "07:38",
+   "quelle": "Standort",
+   "eintrag": "Realschule, Gerolzhofen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "08:06",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "08:19",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "08:41",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "09:33",
+   "quelle": "Standort",
+   "eintrag": "Arztpraxis, Volkach"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "10:20",
+   "quelle": "App",
+   "eintrag": "Foto-App: 2 Fotos, Ort: Sporthalle, Realschule Gerolzhofen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "10:47",
+   "quelle": "Einkauf",
+   "eintrag": "Sportgeschäft, Würzburg: Kletterseil, 149,00 €"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "11:49",
+   "quelle": "Suche",
+   "eintrag": "referat klimawandel gliederung"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "12:12",
+   "quelle": "Suche",
+   "eintrag": "hausarbeit zitieren regeln"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "13:00",
+   "quelle": "Standort",
+   "eintrag": "Supermarkt, Kitzingen"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "13:05",
+   "quelle": "Standort",
+   "eintrag": "Realschule, Gerolzhofen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "13:14",
+   "quelle": "Suche",
+   "eintrag": "fieber kind 3 jahre was tun"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "13:59",
+   "quelle": "Standort",
+   "eintrag": "Mensa, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "15:17",
+   "quelle": "Suche",
+   "eintrag": "blutdruck werte normal mit 70"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "15:46",
+   "quelle": "App",
+   "eintrag": "Lieferdienst-App: Bestellung"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "16:56",
+   "quelle": "Suche",
+   "eintrag": "boulder technik heel hook"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "17:05",
+   "quelle": "Einkauf",
+   "eintrag": "Kiosk, Dettelbach: Eistee, Kaugummi"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "17:26",
+   "quelle": "Einkauf",
+   "eintrag": "Mensa, Würzburg: Tagesgericht, 3,20 €"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "18:14",
+   "quelle": "Einkauf",
+   "eintrag": "Apotheke, Volkach: Blutdruckmessgerät, 39,95 €"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "20:15",
+   "quelle": "App",
+   "eintrag": "Video-App: 1 h 05 min"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "22:03",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "22:45",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "22:47",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "22:49",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "23:10",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "23:15",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "03:20",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "07:05",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "07:38",
+   "quelle": "Standort",
+   "eintrag": "Realschule, Gerolzhofen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "07:48",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "08:08",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "08:22",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "08:23",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "08:42",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "09:30",
+   "quelle": "Einkauf",
+   "eintrag": "Mensa, Würzburg: Tagesgericht, 3,20 €"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "10:53",
+   "quelle": "Standort",
+   "eintrag": "Hauptbahnhof, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "12:17",
+   "quelle": "Standort",
+   "eintrag": "Bar, Würzburg"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "13:05",
+   "quelle": "Standort",
+   "eintrag": "Realschule, Gerolzhofen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "13:39",
+   "quelle": "Standort",
+   "eintrag": "Friedhof, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "13:42",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "13:56",
+   "quelle": "Suche",
+   "eintrag": "kindergeburtstag 4 jahre ideen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "15:20",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Kitzingen: Windeln, Bananen, Haferflocken"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "15:25",
+   "quelle": "Standort",
+   "eintrag": "Reitstall, Dingolshausen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "16:23",
+   "quelle": "Standort",
+   "eintrag": "Kinderarztpraxis, Kitzingen"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "17:05",
+   "quelle": "App",
+   "eintrag": "Foto-App: 7 Fotos, Ort: Reitstall, Dingolshausen"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "18:00",
+   "quelle": "Standort",
+   "eintrag": "Reitstall, Dingolshausen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "22:36",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "22:36",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "22:37",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "22:45",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "22:58",
+   "quelle": "App",
+   "eintrag": "Foto-App: 23 neue Fotos"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "23:22",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "23:58",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "03:20",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "06:50",
+   "quelle": "Standort",
+   "eintrag": "Bäckerei, Gerolzhofen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "07:06",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "07:27",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "07:41",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "08:52",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "08:53",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "09:32",
+   "quelle": "Standort",
+   "eintrag": "Bar, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "10:19",
+   "quelle": "Einkauf",
+   "eintrag": "Musikgeschäft, Kitzingen: Gitarrensaiten, 8,50 €"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "10:31",
+   "quelle": "Standort",
+   "eintrag": "Musikschule, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "10:36",
+   "quelle": "Suche",
+   "eintrag": "pizza lieferdienst würzburg nachts"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "11:55",
+   "quelle": "Suche",
+   "eintrag": "kletterhalle würzburg öffnungszeiten"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "12:05",
+   "quelle": "Standort",
+   "eintrag": "Bäckerei, Gerolzhofen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "14:13",
+   "quelle": "Standort",
+   "eintrag": "Kita, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "17:50",
+   "quelle": "Standort",
+   "eintrag": "Arztpraxis, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "21:56",
+   "quelle": "App",
+   "eintrag": "Foto-App: 23 neue Fotos"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "22:04",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "22:16",
+   "quelle": "App",
+   "eintrag": "Musik-App: 30 min"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "22:31",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "22:45",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "23:25",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "23:32",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "23:56",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "03:20",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "06:21",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "07:46",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "07:46",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "07:54",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "08:12",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "13:19",
+   "quelle": "Standort",
+   "eintrag": "Spielplatz am Main, Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "13:57",
+   "quelle": "Suche",
+   "eintrag": "günstige kinderschuhe"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "14:00",
+   "quelle": "App",
+   "eintrag": "Foto-App: 5 Fotos, Ort: Badesee, Gerolzhofen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "14:38",
+   "quelle": "Einkauf",
+   "eintrag": "Kiosk, Dettelbach: Eistee, Kaugummi"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "14:44",
+   "quelle": "Standort",
+   "eintrag": "Bürogebäude, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "15:18",
+   "quelle": "Standort",
+   "eintrag": "Universität, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "15:29",
+   "quelle": "App",
+   "eintrag": "Foto-App: 23 neue Fotos"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "17:08",
+   "quelle": "Suche",
+   "eintrag": "pizza lieferdienst würzburg nachts"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "17:13",
+   "quelle": "Standort",
+   "eintrag": "Musikschule, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "22:01",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "22:15",
+   "quelle": "App",
+   "eintrag": "Wetter-App: 3 Aufrufe"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "22:23",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "22:37",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6620",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "22:45",
+   "quelle": "Standort",
+   "eintrag": "Ahornweg, Gerolzhofen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "22:50",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "23:51",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  }
+ ]
+}

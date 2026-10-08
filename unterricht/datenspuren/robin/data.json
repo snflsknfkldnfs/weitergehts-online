@@ -1,0 +1,2884 @@
+{
+ "version": 3,
+ "akte": {
+  "titel": "Fall 7734",
+  "absender": "Agentur NEBEL · Ausbildungsfall",
+  "briefing": [
+   "Datenpaket aus unserer Gegend. „Alles anonym, nur Nummern.“",
+   "Finde heraus, wer Nutzer 7734 ist."
+  ],
+  "hinweis_fiktion": "Personen und Daten sind erfunden.",
+  "abschluss": {
+   "titel": "Akte geschlossen. War das in Ordnung?",
+   "text": [
+    "Aus einer Nummer ist ein Mensch geworden: Ort, Lieblingsessen, Gesundheit, Nachname, Straße, Arbeit."
+   ],
+   "fragen": [
+    "Was würde 7734 nicht wollen, dass Fremde es wissen?",
+    "Wer könnte so ein Profil kaufen wollen?"
+   ]
+  }
+ },
+ "phasen": [
+  {
+   "id": "eine",
+   "titel": "Phase 1",
+   "quellen": [
+    "Einkauf"
+   ],
+   "text": "Du siehst nur Einkäufe."
+  },
+  {
+   "id": "alle",
+   "titel": "Phase 2",
+   "quellen": [
+    "Standort",
+    "Suche",
+    "Einkauf",
+    "App"
+   ],
+   "text": "Neu freigeschaltet: alle Datenarten."
+  }
+ ],
+ "max_woerter": 5,
+ "stufen": [
+  {
+   "id": "ort",
+   "phase": 0,
+   "steckbrief": "Ort",
+   "frage": "In welchen Ort liefert der Lieferdienst an 7734?",
+   "tipps": [
+    "Filtere nach Nutzer 7734.",
+    "Lies die Lieferadressen."
+   ],
+   "modus": "wort",
+   "anzeige": "Kitzingen",
+   "erkenntnis": "Jede Lieferung braucht eine Adresse.",
+   "k": "WyJLSVRaSU5HRU4iXQ=="
+  },
+  {
+   "id": "essen",
+   "phase": 0,
+   "steckbrief": "Lieblingsessen",
+   "frage": "Was bestellt 7734 fast immer?",
+   "tipps": [
+    "Zähle, was am häufigsten bestellt wird.",
+    "Suchwort: pizza"
+   ],
+   "modus": "wort",
+   "anzeige": "Pizza",
+   "erkenntnis": "Gewohnheiten werden zu Daten.",
+   "k": "WyJQSVpaQSIsICJQSVpaRU4iXQ=="
+  },
+  {
+   "id": "gesundheit",
+   "phase": 0,
+   "steckbrief": "Gesundheit",
+   "frage": "Was darf 7734 nicht essen?",
+   "tipps": [
+    "Was steht bei fast jeder Pizza dabei?",
+    "Suchwort: notiz"
+   ],
+   "modus": "wort",
+   "anzeige": "Gluten (Krankheit Zöliakie)",
+   "erkenntnis": "Aus Bestellungen wird eine Krankheit.",
+   "k": "WyJHTFVURU4iLCAiWk9FTElBS0lFIiwgIlpPTElBS0lFIiwgIldFSVpFTiIsICJNRUhMIl0="
+  },
+  {
+   "id": "name",
+   "phase": 0,
+   "steckbrief": "Nachname",
+   "frage": "Wie heißt 7734 mit Nachnamen?",
+   "tipps": [
+    "Was muss der Fahrer an der Tür wissen?",
+    "Suchwort: klingel"
+   ],
+   "modus": "wort",
+   "anzeige": "Schmitt (Vorname: Robin)",
+   "erkenntnis": "Nur aus einer einzigen Datenart: ein Name.",
+   "k": "WyJTQ0hNSVRUIiwgIlNDSE1JRFQiLCAiU0NITUlUIl0="
+  },
+  {
+   "id": "strasse",
+   "phase": 1,
+   "steckbrief": "Straße",
+   "frage": "In welcher Straße schläft 7734?",
+   "tipps": [
+    "Quelle: Standort.",
+    "Uhrzeit von 22 bis 6."
+   ],
+   "modus": "wort",
+   "anzeige": "Mühlenweg",
+   "erkenntnis": "Ein Filter, zwei Sekunden. Mit mehr Daten geht es viel schneller.",
+   "k": "WyJNVUVITEVOV0VHIiwgIk1VSExFTldFRyJd"
+  },
+  {
+   "id": "arbeit",
+   "phase": 1,
+   "steckbrief": "Arbeit",
+   "frage": "Wo ist 7734 werktags von 14 bis 22 Uhr?",
+   "tipps": [
+    "Tag: Mo 21.09., Quelle: Standort.",
+    "Uhrzeit von 14 bis 22."
+   ],
+   "modus": "wort",
+   "anzeige": "Tankstelle in Kitzingen (Spätschicht)",
+   "erkenntnis": "Jetzt weißt du auch, wann 7734 nicht zu Hause ist.",
+   "k": "WyJUQU5LU1RFTExFIl0="
+  }
+ ],
+ "eintraege": [
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "03:30",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:06",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "07:24",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "07:31",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "07:31",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "08:29",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "09:10",
+   "quelle": "Standort",
+   "eintrag": "Musikschule, Kitzingen"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "10:20",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "11:01",
+   "quelle": "Standort",
+   "eintrag": "Supermarkt, Kitzingen"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "13:52",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "15:53",
+   "quelle": "Standort",
+   "eintrag": "Friedhof, Volkach"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "18:00",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "18:02",
+   "quelle": "Suche",
+   "eintrag": "referat klimawandel gliederung"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "21:04",
+   "quelle": "App",
+   "eintrag": "Wetter-App: 3 Aufrufe"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "21:58",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "22:04",
+   "quelle": "App",
+   "eintrag": "Klettertagebuch: 6 Boulder, 1 h 30 min"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "22:30",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "22:41",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "22:50",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "23:00",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "23:05",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "23:15",
+   "quelle": "Einkauf",
+   "eintrag": "Lieferdienst: Pizza Margherita, glutenfrei · Lieferung nach Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "23:59",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "03:30",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:32",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "07:01",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "07:55",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "08:26",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "08:54",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "10:19",
+   "quelle": "Einkauf",
+   "eintrag": "Apotheke, Volkach: Blutdruckmessgerät, 39,95 €"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "10:20",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "10:33",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "13:31",
+   "quelle": "Suche",
+   "eintrag": "wg zimmer würzburg"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "13:52",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "16:11",
+   "quelle": "Einkauf",
+   "eintrag": "Tankstelle, Würzburg: Super E10, 61,20 €"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "16:17",
+   "quelle": "Standort",
+   "eintrag": "Arztpraxis, Volkach"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "18:00",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "20:10",
+   "quelle": "Suche",
+   "eintrag": "arzt volkach notdienst"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "20:18",
+   "quelle": "Suche",
+   "eintrag": "lustige katzenvideos"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "21:09",
+   "quelle": "App",
+   "eintrag": "Lieferdienst-App: Bestellung"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "21:58",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "22:55",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "23:05",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "23:20",
+   "quelle": "Einkauf",
+   "eintrag": "Lieferdienst: Pizza Funghi, glutenfrei · Lieferung nach Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "23:32",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "23:32",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "23:37",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "23:42",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "03:30",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:21",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:44",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:47",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "07:49",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "08:08",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "09:46",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Kitzingen"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "10:20",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "11:15",
+   "quelle": "Suche",
+   "eintrag": "glutenfreies brot kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "12:06",
+   "quelle": "Standort",
+   "eintrag": "Hauptbahnhof, Würzburg"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "13:52",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "16:48",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "17:29",
+   "quelle": "Einkauf",
+   "eintrag": "Mensa, Würzburg: Tagesgericht, 3,20 €"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "17:35",
+   "quelle": "Standort",
+   "eintrag": "Kinderarztpraxis, Kitzingen"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "18:00",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "18:16",
+   "quelle": "Suche",
+   "eintrag": "zug würzburg nürnberg verspätung"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "18:22",
+   "quelle": "Suche",
+   "eintrag": "nebenjob würzburg abends"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "18:57",
+   "quelle": "App",
+   "eintrag": "Navi-App: Route Würzburg → Nürnberg"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "21:58",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "22:30",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "22:34",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "22:44",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "23:05",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "23:05",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "23:10",
+   "quelle": "Einkauf",
+   "eintrag": "Lieferdienst: Salat, Pommes · Lieferung nach Kitzingen, Klingel „Schmitt“"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "23:51",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "03:30",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "06:26",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "07:27",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "08:00",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "08:14",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "08:23",
+   "quelle": "Suche",
+   "eintrag": "kletterhalle würzburg öffnungszeiten"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "08:51",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "10:20",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "11:54",
+   "quelle": "Standort",
+   "eintrag": "Hauptbahnhof, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "12:38",
+   "quelle": "Suche",
+   "eintrag": "seniorentreff volkach"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "13:52",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "15:33",
+   "quelle": "App",
+   "eintrag": "Foto-App: 23 neue Fotos"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "15:37",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Volkach: Milch, Brot, Kaffee"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "18:00",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "18:57",
+   "quelle": "App",
+   "eintrag": "Nachrichten-App: 2 neue Nachrichten"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "21:58",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "22:11",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "22:44",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "23:05",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "23:25",
+   "quelle": "Einkauf",
+   "eintrag": "Lieferdienst: Pizza Salami, glutenfrei · Lieferung nach Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "23:26",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "23:37",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "23:42",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "03:30",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:10",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:14",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:28",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "08:29",
+   "quelle": "Suche",
+   "eintrag": "wg zimmer würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "08:53",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "08:56",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "10:20",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "11:24",
+   "quelle": "Einkauf",
+   "eintrag": "Sportgeschäft, Würzburg: Kletterseil, 149,00 €"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "12:30",
+   "quelle": "Suche",
+   "eintrag": "zöliakie was darf ich essen"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "13:52",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "15:06",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "15:29",
+   "quelle": "Standort",
+   "eintrag": "Hauptbahnhof, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "16:13",
+   "quelle": "Einkauf",
+   "eintrag": "Musikgeschäft, Kitzingen: Gitarrensaiten, 8,50 €"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "17:43",
+   "quelle": "Standort",
+   "eintrag": "Kinderarztpraxis, Kitzingen"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "18:00",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "19:03",
+   "quelle": "App",
+   "eintrag": "Video-App: 2 h 30 min"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "21:58",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "22:19",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "22:58",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "23:00",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "23:05",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "23:05",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "23:11",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "03:30",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "06:02",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "06:11",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "06:17",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "08:37",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "08:59",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "09:54",
+   "quelle": "Standort",
+   "eintrag": "Universität, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "10:26",
+   "quelle": "Suche",
+   "eintrag": "günstige kinderschuhe"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "10:41",
+   "quelle": "Einkauf",
+   "eintrag": "Apotheke, Volkach: Blutdruckmessgerät, 39,95 €"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "11:00",
+   "quelle": "Standort",
+   "eintrag": "Fitnessstudio, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "11:15",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "12:28",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "15:49",
+   "quelle": "Suche",
+   "eintrag": "boulder technik heel hook"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "19:30",
+   "quelle": "Einkauf",
+   "eintrag": "Lieferdienst: Pizza Margherita, glutenfrei. Notiz: „Bitte wirklich ohne Gluten, Zöliakie!“"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "22:17",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "23:05",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "23:12",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "23:15",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "23:19",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "23:53",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "03:30",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "06:01",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "07:18",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "07:41",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "07:54",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "08:21",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "09:50",
+   "quelle": "Einkauf",
+   "eintrag": "Kiosk, Dettelbach: Eistee, Kaugummi"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "10:19",
+   "quelle": "Standort",
+   "eintrag": "Kita, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "10:44",
+   "quelle": "Einkauf",
+   "eintrag": "Mensa, Würzburg: Tagesgericht, 3,20 €"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "11:15",
+   "quelle": "Suche",
+   "eintrag": "glutenfreies brot kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "11:23",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "11:36",
+   "quelle": "Suche",
+   "eintrag": "wie lange hält ein handyakku"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "11:55",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Volkach: Milch, Brot, Kaffee"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "12:50",
+   "quelle": "Suche",
+   "eintrag": "kindergeburtstag 4 jahre ideen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "14:47",
+   "quelle": "Standort",
+   "eintrag": "Musikschule, Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "15:19",
+   "quelle": "App",
+   "eintrag": "Kalender-App: Termin „Elternabend“"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "16:21",
+   "quelle": "Standort",
+   "eintrag": "Mensa, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "17:55",
+   "quelle": "Standort",
+   "eintrag": "Arztpraxis, Volkach"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "18:45",
+   "quelle": "Einkauf",
+   "eintrag": "Lieferdienst: Pizza Tonno, glutenfrei · Lieferung nach Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "21:18",
+   "quelle": "App",
+   "eintrag": "Spiele-App: 1 h 12 min"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "22:08",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "22:17",
+   "quelle": "Suche",
+   "eintrag": "boulder technik heel hook"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "22:54",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "22:56",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "23:05",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "23:10",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "23:23",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "03:30",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:09",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:18",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:37",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "07:08",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "08:11",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "09:07",
+   "quelle": "Standort",
+   "eintrag": "Bürogebäude, Würzburg"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "10:20",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "10:26",
+   "quelle": "Standort",
+   "eintrag": "Kita, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "13:45",
+   "quelle": "Suche",
+   "eintrag": "zug würzburg nürnberg verspätung"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "13:52",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "14:48",
+   "quelle": "Standort",
+   "eintrag": "Bar, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "15:51",
+   "quelle": "Einkauf",
+   "eintrag": "Kiosk, Dettelbach: Eistee, Kaugummi"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "18:00",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "19:13",
+   "quelle": "App",
+   "eintrag": "Wetter-App: 3 Aufrufe"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "20:24",
+   "quelle": "App",
+   "eintrag": "Navi-App: Route Würzburg → Nürnberg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "20:56",
+   "quelle": "Suche",
+   "eintrag": "lustige katzenvideos"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "21:58",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "22:37",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "22:43",
+   "quelle": "Suche",
+   "eintrag": "arzt volkach notdienst"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "23:05",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "23:12",
+   "quelle": "Einkauf",
+   "eintrag": "Lieferdienst: Pizza Margherita, glutenfrei · Lieferung nach Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "23:13",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "23:28",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "23:36",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "23:49",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "03:30",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "06:38",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "07:20",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "07:51",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "07:53",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "08:19",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "10:20",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "10:45",
+   "quelle": "App",
+   "eintrag": "Fitness-App: Training Oberkörper, 55 min"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "11:46",
+   "quelle": "Standort",
+   "eintrag": "Musikschule, Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "12:29",
+   "quelle": "Standort",
+   "eintrag": "Spielplatz am Main, Kitzingen"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "13:52",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "14:19",
+   "quelle": "Suche",
+   "eintrag": "gitarre akkorde lernen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "14:31",
+   "quelle": "Suche",
+   "eintrag": "nebenjob würzburg abends"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "15:39",
+   "quelle": "Standort",
+   "eintrag": "Friedhof, Volkach"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "18:00",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "20:33",
+   "quelle": "App",
+   "eintrag": "Musik-App: 30 min"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "21:58",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "22:06",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "22:08",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "22:41",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "22:42",
+   "quelle": "App",
+   "eintrag": "Lieferdienst-App: Bestellung"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "22:59",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "23:05",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "23:34",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "03:30",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:39",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:56",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "07:08",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "08:21",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "08:45",
+   "quelle": "Suche",
+   "eintrag": "nebenjob würzburg abends"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "08:52",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "09:35",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "10:16",
+   "quelle": "Einkauf",
+   "eintrag": "Tankstelle, Würzburg: Super E10, 61,20 €"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "10:20",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "11:36",
+   "quelle": "Suche",
+   "eintrag": "steuererklärung frist 2026"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "12:06",
+   "quelle": "Einkauf",
+   "eintrag": "Drogerie, Kitzingen: Fiebersaft, Pflaster"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "12:30",
+   "quelle": "Standort",
+   "eintrag": "Musikschule, Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "13:29",
+   "quelle": "Standort",
+   "eintrag": "Spielplatz am Main, Kitzingen"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "13:52",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "14:06",
+   "quelle": "Standort",
+   "eintrag": "Arztpraxis, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "16:36",
+   "quelle": "Standort",
+   "eintrag": "Bar, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "17:35",
+   "quelle": "Einkauf",
+   "eintrag": "Kiosk, Dettelbach: Eistee, Kaugummi"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "18:00",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "19:44",
+   "quelle": "App",
+   "eintrag": "Musik-App: 30 min"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "21:48",
+   "quelle": "App",
+   "eintrag": "Navi-App: Route Würzburg → Nürnberg"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "21:58",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "22:08",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "22:51",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "23:05",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "23:19",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "23:20",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "23:30",
+   "quelle": "Einkauf",
+   "eintrag": "Lieferdienst: Pizza Hawaii, glutenfrei · Klingel „Schmitt“"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "23:50",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "03:30",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:00",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:07",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:21",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:35",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "08:51",
+   "quelle": "Suche",
+   "eintrag": "steuererklärung frist 2026"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "08:57",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "10:20",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "11:02",
+   "quelle": "Standort",
+   "eintrag": "Bürogebäude, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "12:11",
+   "quelle": "Standort",
+   "eintrag": "Kita, Kitzingen"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "13:52",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "15:34",
+   "quelle": "Standort",
+   "eintrag": "Musikschule, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "15:37",
+   "quelle": "Standort",
+   "eintrag": "Apotheke, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "17:14",
+   "quelle": "App",
+   "eintrag": "Video-App: 48 min"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "17:48",
+   "quelle": "Standort",
+   "eintrag": "Hauptbahnhof, Würzburg"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "18:00",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Kitzingen"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "21:58",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "22:18",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "22:19",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "22:45",
+   "quelle": "Suche",
+   "eintrag": "arzt volkach notdienst"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "22:58",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "23:05",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "23:16",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "23:17",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "23:18",
+   "quelle": "Einkauf",
+   "eintrag": "Lieferdienst: Burger ohne Brötchen · Lieferung nach Kitzingen"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "03:30",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:16",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "07:06",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "07:56",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "08:02",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "08:16",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "08:22",
+   "quelle": "Suche",
+   "eintrag": "günstige kinderschuhe"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "08:54",
+   "quelle": "Suche",
+   "eintrag": "wie lange hält ein handyakku"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "10:20",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "10:22",
+   "quelle": "Einkauf",
+   "eintrag": "Drogerie, Kitzingen: Fiebersaft, Pflaster"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "10:36",
+   "quelle": "Standort",
+   "eintrag": "Gärtnerei, Dettelbach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "10:49",
+   "quelle": "Einkauf",
+   "eintrag": "Musikgeschäft, Kitzingen: Gitarrensaiten, 8,50 €"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "11:15",
+   "quelle": "Suche",
+   "eintrag": "glutenfreies brot kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "12:26",
+   "quelle": "Standort",
+   "eintrag": "Bushaltestelle, Dettelbach"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "13:52",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "14:47",
+   "quelle": "Einkauf",
+   "eintrag": "Sportgeschäft, Würzburg: Kletterseil, 149,00 €"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "15:22",
+   "quelle": "Suche",
+   "eintrag": "seniorentreff volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "15:59",
+   "quelle": "Standort",
+   "eintrag": "Hauptbahnhof, Würzburg"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "18:00",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "18:27",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Volkach: Milch, Brot, Kaffee"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "20:04",
+   "quelle": "Suche",
+   "eintrag": "nebenjob würzburg abends"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "21:58",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "22:15",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "22:43",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "23:05",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "23:27",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "23:32",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "23:54",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "03:30",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "06:02",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "06:27",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "07:26",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "08:11",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "08:14",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "09:16",
+   "quelle": "Standort",
+   "eintrag": "Kletterhalle, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "09:27",
+   "quelle": "Standort",
+   "eintrag": "Gärtnerei, Dettelbach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "10:30",
+   "quelle": "Standort",
+   "eintrag": "Kita, Kitzingen"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "11:00",
+   "quelle": "Standort",
+   "eintrag": "Fitnessstudio, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "11:31",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Volkach: Milch, Brot, Kaffee"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "12:27",
+   "quelle": "Einkauf",
+   "eintrag": "Tankstelle, Würzburg: Super E10, 61,20 €"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "12:43",
+   "quelle": "Standort",
+   "eintrag": "Mensa, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "16:26",
+   "quelle": "Suche",
+   "eintrag": "pizza lieferdienst würzburg nachts"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "18:40",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Kitzingen: Windeln, Bananen, Haferflocken"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "20:05",
+   "quelle": "Einkauf",
+   "eintrag": "Lieferdienst: Pizza Margherita, glutenfrei · Lieferung nach Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "20:45",
+   "quelle": "App",
+   "eintrag": "Lieferdienst-App: Bestellung"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "22:00",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "22:34",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "22:52",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "23:00",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "23:05",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "23:24",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "03:30",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "06:07",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "06:30",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "06:35",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "07:33",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "08:40",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "09:22",
+   "quelle": "Einkauf",
+   "eintrag": "Apotheke, Volkach: Blutdruckmessgerät, 39,95 €"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "13:05",
+   "quelle": "Standort",
+   "eintrag": "Bushaltestelle, Dettelbach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "13:09",
+   "quelle": "Suche",
+   "eintrag": "kindergeburtstag 4 jahre ideen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "14:18",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Kitzingen: Windeln, Bananen, Haferflocken"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "14:54",
+   "quelle": "Suche",
+   "eintrag": "steuererklärung frist 2026"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "15:25",
+   "quelle": "App",
+   "eintrag": "Foto-App: 23 neue Fotos"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "15:40",
+   "quelle": "App",
+   "eintrag": "Klettertagebuch: 6 Boulder, 1 h 30 min"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "19:09",
+   "quelle": "App",
+   "eintrag": "Lieferdienst-App: Bestellung"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "19:40",
+   "quelle": "Einkauf",
+   "eintrag": "Lieferdienst: Pizza Funghi, glutenfrei · Lieferung nach Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "22:33",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "22:51",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "7734",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "23:05",
+   "quelle": "Standort",
+   "eintrag": "Mühlenweg, Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "23:37",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "23:42",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "23:45",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  }
+ ]
+}

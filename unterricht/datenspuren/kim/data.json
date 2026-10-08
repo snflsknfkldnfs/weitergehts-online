@@ -1,0 +1,2828 @@
+{
+ "version": 3,
+ "akte": {
+  "titel": "Fall 3150",
+  "absender": "Agentur NEBEL · Ausbildungsfall",
+  "briefing": [
+   "Datenpaket aus unserer Gegend. „Alles anonym, nur Nummern.“",
+   "Finde heraus, wer Nutzer 3150 ist."
+  ],
+  "hinweis_fiktion": "Personen und Daten sind erfunden.",
+  "abschluss": {
+   "titel": "Akte geschlossen. War das in Ordnung?",
+   "text": [
+    "Aus einer Nummer ist ein Mensch geworden: Ort, Ziel, Gesundheit, Nachname, Straße, Arbeit."
+   ],
+   "fragen": [
+    "Was würde 3150 nicht wollen, dass Fremde es wissen?",
+    "Wer könnte so ein Profil kaufen wollen?"
+   ]
+  }
+ },
+ "phasen": [
+  {
+   "id": "eine",
+   "titel": "Phase 1",
+   "quellen": [
+    "App"
+   ],
+   "text": "Du siehst nur App-Daten."
+  },
+  {
+   "id": "alle",
+   "titel": "Phase 2",
+   "quellen": [
+    "Standort",
+    "Suche",
+    "Einkauf",
+    "App"
+   ],
+   "text": "Neu freigeschaltet: alle Datenarten."
+  }
+ ],
+ "max_woerter": 5,
+ "stufen": [
+  {
+   "id": "ort",
+   "phase": 0,
+   "steckbrief": "Ort",
+   "frage": "In welchem Ort läuft 3150 fast immer?",
+   "tipps": [
+    "Filtere nach Nutzer 3150.",
+    "Lies die Einträge der Lauf-App."
+   ],
+   "modus": "wort",
+   "anzeige": "Dettelbach",
+   "erkenntnis": "Die Lauf-App kennt jede Runde, auch den Ort.",
+   "k": "WyJERVRURUxCQUNIIl0="
+  },
+  {
+   "id": "ziel",
+   "phase": 0,
+   "steckbrief": "Ziel",
+   "frage": "Für welchen Wettkampf trainiert 3150?",
+   "tipps": [
+    "Gibt es einen Trainingsplan?",
+    "Suchwort: halb"
+   ],
+   "modus": "wort",
+   "anzeige": "Halbmarathon in Würzburg",
+   "erkenntnis": "Die App weiß, worauf 3150 hinarbeitet.",
+   "k": "WyJIQUxCTUFSQVRIT04iLCAiTUFSQVRIT04iXQ=="
+  },
+  {
+   "id": "sorge",
+   "phase": 0,
+   "steckbrief": "Gesundheit",
+   "frage": "Was tut 3150 gerade weh?",
+   "tipps": [
+    "Was passiert am Di 29.09.?",
+    "Suchwort: knie"
+   ],
+   "modus": "wort",
+   "anzeige": "Knie (Lauf abgebrochen, Schmerztagebuch)",
+   "erkenntnis": "Gesundheitsdaten sind besonders privat.",
+   "k": "WyJLTklFIl0="
+  },
+  {
+   "id": "name",
+   "phase": 0,
+   "steckbrief": "Nachname",
+   "frage": "Wie heißt 3150 mit Nachnamen?",
+   "tipps": [
+    "Wer schickt 3150 Kudos und Nachrichten?",
+    "Suchwort: papa"
+   ],
+   "modus": "wort",
+   "anzeige": "Hofmann (Vorname: Kim)",
+   "erkenntnis": "Nur aus einer einzigen Datenart: ein Name.",
+   "k": "WyJIT0ZNQU5OIiwgIkhPRkZNQU5OIl0="
+  },
+  {
+   "id": "strasse",
+   "phase": 1,
+   "steckbrief": "Straße",
+   "frage": "In welcher Straße schläft 3150?",
+   "tipps": [
+    "Quelle: Standort.",
+    "Uhrzeit von 22 bis 6."
+   ],
+   "modus": "wort",
+   "anzeige": "Rosengasse",
+   "erkenntnis": "Ein Filter, zwei Sekunden. Mit mehr Daten geht es viel schneller.",
+   "k": "WyJST1NFTkdBU1NFIiwgIlJPU0VOR0FTUyJd"
+  },
+  {
+   "id": "arbeit",
+   "phase": 1,
+   "steckbrief": "Arbeit",
+   "frage": "Wo arbeitet 3150 werktags ab 6 Uhr früh?",
+   "tipps": [
+    "Tag: Mo 21.09., Quelle: Standort.",
+    "Uhrzeit von 6 bis 14."
+   ],
+   "modus": "wort",
+   "anzeige": "Pflegeheim in Kitzingen (Frühschicht)",
+   "erkenntnis": "Jetzt weißt du auch, wann 3150 nicht zu Hause ist.",
+   "k": "WyJQRkxFR0VIRUlNIiwgIlBGTEVHRSIsICJBTFRFTkhFSU0iLCAiU0VOSU9SRU5IRUlNIiwgIkFMVEVSU0hFSU0iXQ=="
+  }
+ ],
+ "eintraege": [
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "03:05",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "05:38",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:02",
+   "quelle": "Standort",
+   "eintrag": "Pflegeheim, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:02",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:05",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:09",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "07:49",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "08:40",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "10:55",
+   "quelle": "Standort",
+   "eintrag": "Hauptbahnhof, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "12:45",
+   "quelle": "Standort",
+   "eintrag": "Spielplatz am Main, Kitzingen"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "13:55",
+   "quelle": "Standort",
+   "eintrag": "Pflegeheim, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "14:48",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Würzburg"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "16:28",
+   "quelle": "Standort",
+   "eintrag": "Mainufer, Dettelbach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "16:46",
+   "quelle": "Standort",
+   "eintrag": "Bushaltestelle, Dettelbach"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "17:15",
+   "quelle": "App",
+   "eintrag": "Lauf-App: Runde Mainufer Dettelbach, 7,1 km, 38 min"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "17:20",
+   "quelle": "App",
+   "eintrag": "Lauf-App: Trainingsplan Halbmarathon, Woche 6 von 10"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "17:52",
+   "quelle": "Einkauf",
+   "eintrag": "Apotheke, Volkach: Blutdruckmessgerät, 39,95 €"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "21:29",
+   "quelle": "App",
+   "eintrag": "Klettertagebuch: 6 Boulder, 1 h 30 min"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "21:43",
+   "quelle": "App",
+   "eintrag": "Video-App: 2 h 30 min"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "22:00",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "22:20",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "22:32",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "22:32",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "22:35",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "23:04",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "03:05",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "05:38",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:00",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:00",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:02",
+   "quelle": "Standort",
+   "eintrag": "Pflegeheim, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:30",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:37",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "08:48",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "09:13",
+   "quelle": "Suche",
+   "eintrag": "lustige katzenvideos"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "09:31",
+   "quelle": "Suche",
+   "eintrag": "wg zimmer würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "10:15",
+   "quelle": "Standort",
+   "eintrag": "Bushaltestelle, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "11:19",
+   "quelle": "Standort",
+   "eintrag": "Arztpraxis, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "13:31",
+   "quelle": "Standort",
+   "eintrag": "Spielplatz am Main, Kitzingen"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "13:55",
+   "quelle": "Standort",
+   "eintrag": "Pflegeheim, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "17:25",
+   "quelle": "Standort",
+   "eintrag": "Kletterhalle, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "18:13",
+   "quelle": "App",
+   "eintrag": "Navi-App: Route Würzburg → Nürnberg"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "21:40",
+   "quelle": "App",
+   "eintrag": "Musik-App: Hörbuch, 35 min"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "22:09",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "22:10",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "22:20",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "22:35",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "22:38",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "23:41",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "03:05",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "05:38",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:02",
+   "quelle": "Standort",
+   "eintrag": "Pflegeheim, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:14",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:21",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "07:44",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "08:03",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "08:09",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "09:09",
+   "quelle": "Standort",
+   "eintrag": "Spielplatz am Main, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "12:14",
+   "quelle": "Standort",
+   "eintrag": "Friedhof, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "12:49",
+   "quelle": "Standort",
+   "eintrag": "Universität, Würzburg"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "13:55",
+   "quelle": "Standort",
+   "eintrag": "Pflegeheim, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "15:00",
+   "quelle": "Standort",
+   "eintrag": "Hauptbahnhof, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "15:10",
+   "quelle": "Standort",
+   "eintrag": "Bushaltestelle, Dettelbach"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "16:31",
+   "quelle": "Standort",
+   "eintrag": "Mainufer, Dettelbach"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "17:15",
+   "quelle": "App",
+   "eintrag": "Lauf-App: Runde Mainufer Dettelbach, 8,0 km, 43 min"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "18:42",
+   "quelle": "App",
+   "eintrag": "Wetter-App: 3 Aufrufe"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "19:30",
+   "quelle": "Suche",
+   "eintrag": "laufschuhe pronation test"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "20:58",
+   "quelle": "App",
+   "eintrag": "Kalender-App: Termin „Elternabend“"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "21:14",
+   "quelle": "Suche",
+   "eintrag": "rosen schneiden wann"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "22:20",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "22:23",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "22:47",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "23:10",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "23:42",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "23:45",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "03:05",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "05:38",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "06:02",
+   "quelle": "Standort",
+   "eintrag": "Pflegeheim, Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "06:26",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "07:39",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "07:43",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "07:50",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "08:14",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "12:14",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Volkach: Milch, Brot, Kaffee"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "12:15",
+   "quelle": "Einkauf",
+   "eintrag": "Musikgeschäft, Kitzingen: Gitarrensaiten, 8,50 €"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "12:20",
+   "quelle": "Standort",
+   "eintrag": "Bar, Würzburg"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "13:55",
+   "quelle": "Standort",
+   "eintrag": "Pflegeheim, Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "14:32",
+   "quelle": "Standort",
+   "eintrag": "Kita, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "15:10",
+   "quelle": "Suche",
+   "eintrag": "pizza lieferdienst würzburg nachts"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "15:27",
+   "quelle": "Standort",
+   "eintrag": "Hauptbahnhof, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "17:13",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Kitzingen"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "20:10",
+   "quelle": "App",
+   "eintrag": "Lauf-App: Anmeldung bestätigt: Halbmarathon Würzburg"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "21:40",
+   "quelle": "App",
+   "eintrag": "Musik-App: Hörbuch, 35 min"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "22:12",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "22:20",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "22:31",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "22:43",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "23:05",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "23:45",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "03:05",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "05:38",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:00",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:02",
+   "quelle": "Standort",
+   "eintrag": "Pflegeheim, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "07:27",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "08:07",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "08:18",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "08:36",
+   "quelle": "Suche",
+   "eintrag": "fieber kind 3 jahre was tun"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "08:41",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "09:44",
+   "quelle": "Standort",
+   "eintrag": "Hauptbahnhof, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "09:50",
+   "quelle": "Standort",
+   "eintrag": "Bürogebäude, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "09:53",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "12:59",
+   "quelle": "Standort",
+   "eintrag": "Friedhof, Volkach"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "13:55",
+   "quelle": "Standort",
+   "eintrag": "Pflegeheim, Kitzingen"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "14:30",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Dettelbach: Haferflocken, Bananen, Isogetränk"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "15:25",
+   "quelle": "Einkauf",
+   "eintrag": "Sportgeschäft, Würzburg: Kletterseil, 149,00 €"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "17:15",
+   "quelle": "App",
+   "eintrag": "Lauf-App: Runde Mainufer Dettelbach, 6,5 km, 35 min"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "17:18",
+   "quelle": "Einkauf",
+   "eintrag": "Lieferdienst: Pizza Salami, 9,50 €"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "18:25",
+   "quelle": "App",
+   "eintrag": "Klettertagebuch: 6 Boulder, 1 h 30 min"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "19:05",
+   "quelle": "Einkauf",
+   "eintrag": "Drogerie, Kitzingen: Fiebersaft, Pflaster"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "21:11",
+   "quelle": "App",
+   "eintrag": "Wetter-App: 3 Aufrufe"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "22:05",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "22:11",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "22:20",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "22:51",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "23:18",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "23:57",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "03:05",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "06:10",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "07:27",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "07:59",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "08:01",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "08:05",
+   "quelle": "Standort",
+   "eintrag": "Mainufer, Dettelbach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "08:22",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "09:39",
+   "quelle": "Standort",
+   "eintrag": "Hauptbahnhof, Würzburg"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "09:40",
+   "quelle": "App",
+   "eintrag": "Lauf-App: Runde Mainufer Dettelbach, 16,2 km, 1 h 31 min"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "09:45",
+   "quelle": "App",
+   "eintrag": "Lauf-App: 3 Kudos, u. a. von Papa Hofmann"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "09:57",
+   "quelle": "Standort",
+   "eintrag": "Bürogebäude, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "11:10",
+   "quelle": "Suche",
+   "eintrag": "rosen schneiden wann"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "11:55",
+   "quelle": "Standort",
+   "eintrag": "Spielplatz am Main, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "11:58",
+   "quelle": "Standort",
+   "eintrag": "Gärtnerei, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "12:15",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Volkach: Milch, Brot, Kaffee"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "15:38",
+   "quelle": "Suche",
+   "eintrag": "mathe brüche erklärung"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "16:09",
+   "quelle": "Einkauf",
+   "eintrag": "Musikgeschäft, Kitzingen: Gitarrensaiten, 8,50 €"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "16:45",
+   "quelle": "Suche",
+   "eintrag": "nebenjob würzburg abends"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "18:02",
+   "quelle": "App",
+   "eintrag": "Nachrichten-App: 2 neue Nachrichten"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "22:20",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "22:21",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "22:44",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "22:55",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "23:24",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "23:50",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "03:05",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "07:17",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "07:48",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "07:59",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "08:45",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "08:58",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "11:42",
+   "quelle": "Suche",
+   "eintrag": "mathe brüche erklärung"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "15:25",
+   "quelle": "Suche",
+   "eintrag": "nebenjob würzburg abends"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "15:36",
+   "quelle": "App",
+   "eintrag": "Spiele-App: 1 h 12 min"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "16:06",
+   "quelle": "Standort",
+   "eintrag": "Hauptbahnhof, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "17:09",
+   "quelle": "Standort",
+   "eintrag": "Apotheke, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "17:28",
+   "quelle": "App",
+   "eintrag": "Video-App: 2 h 30 min"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "18:02",
+   "quelle": "App",
+   "eintrag": "Lauf-App: Nachricht von Tante Gerda Hofmann: „Weiter so!“"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "18:47",
+   "quelle": "Suche",
+   "eintrag": "arzt volkach notdienst"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "19:17",
+   "quelle": "Suche",
+   "eintrag": "steuererklärung frist 2026"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "21:40",
+   "quelle": "App",
+   "eintrag": "Musik-App: Hörbuch, 35 min"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "22:20",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "22:23",
+   "quelle": "App",
+   "eintrag": "Wetter-App: 3 Aufrufe"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "22:32",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "22:33",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "22:44",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "23:08",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "23:54",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "03:05",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "05:38",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:02",
+   "quelle": "Standort",
+   "eintrag": "Pflegeheim, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "07:09",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "07:15",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "08:11",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "08:23",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "08:56",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "09:40",
+   "quelle": "Einkauf",
+   "eintrag": "Drogerie, Kitzingen: Fiebersaft, Pflaster"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "10:47",
+   "quelle": "Standort",
+   "eintrag": "Arztpraxis, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "10:57",
+   "quelle": "Suche",
+   "eintrag": "kita elternabend ideen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "11:52",
+   "quelle": "Standort",
+   "eintrag": "Musikschule, Kitzingen"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "13:55",
+   "quelle": "Standort",
+   "eintrag": "Pflegeheim, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "14:27",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Volkach: Milch, Brot, Kaffee"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "14:32",
+   "quelle": "Suche",
+   "eintrag": "gitarre akkorde lernen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "16:26",
+   "quelle": "App",
+   "eintrag": "Lieferdienst-App: Bestellung"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "16:28",
+   "quelle": "Standort",
+   "eintrag": "Mainufer, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "16:37",
+   "quelle": "App",
+   "eintrag": "Wetter-App: 3 Aufrufe"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "16:56",
+   "quelle": "Standort",
+   "eintrag": "Bar, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "16:58",
+   "quelle": "Standort",
+   "eintrag": "Spielplatz am Main, Kitzingen"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "17:15",
+   "quelle": "App",
+   "eintrag": "Lauf-App: Runde Mainufer Dettelbach, 7,3 km, 39 min"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "17:15",
+   "quelle": "Suche",
+   "eintrag": "zug würzburg nürnberg verspätung"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "22:20",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "22:42",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "22:50",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "22:55",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "23:26",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "23:45",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "03:05",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "05:38",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "06:02",
+   "quelle": "Standort",
+   "eintrag": "Pflegeheim, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "06:30",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "06:55",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "07:36",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "08:03",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "08:04",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "10:59",
+   "quelle": "Suche",
+   "eintrag": "zug würzburg nürnberg verspätung"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "13:55",
+   "quelle": "Standort",
+   "eintrag": "Pflegeheim, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "15:01",
+   "quelle": "Suche",
+   "eintrag": "gitarre akkorde lernen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "15:02",
+   "quelle": "App",
+   "eintrag": "Navi-App: Route Würzburg → Nürnberg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "15:05",
+   "quelle": "Suche",
+   "eintrag": "wg zimmer würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "16:32",
+   "quelle": "Einkauf",
+   "eintrag": "Musikgeschäft, Kitzingen: Gitarrensaiten, 8,50 €"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "16:44",
+   "quelle": "App",
+   "eintrag": "Lauf-App: Lauf abgebrochen nach 2,1 km. Notiz: Knie tut weh"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "17:28",
+   "quelle": "Standort",
+   "eintrag": "Hauptbahnhof, Würzburg"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "22:20",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "22:34",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "22:46",
+   "quelle": "App",
+   "eintrag": "Video-App: 2 h 30 min"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "23:08",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "23:22",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "23:44",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "23:46",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "03:05",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "05:38",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:02",
+   "quelle": "Standort",
+   "eintrag": "Pflegeheim, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:49",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "07:39",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "08:15",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "08:34",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "08:38",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "09:18",
+   "quelle": "Standort",
+   "eintrag": "Hauptbahnhof, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "12:00",
+   "quelle": "Standort",
+   "eintrag": "Spielplatz am Main, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "13:28",
+   "quelle": "Standort",
+   "eintrag": "Arztpraxis, Volkach"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "13:55",
+   "quelle": "Standort",
+   "eintrag": "Pflegeheim, Kitzingen"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "16:31",
+   "quelle": "Standort",
+   "eintrag": "Mainufer, Dettelbach"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "17:10",
+   "quelle": "Standort",
+   "eintrag": "Apotheke, Dettelbach"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "17:12",
+   "quelle": "Einkauf",
+   "eintrag": "Apotheke, Dettelbach: Kniebandage, Schmerzgel"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "18:29",
+   "quelle": "App",
+   "eintrag": "Klettertagebuch: 6 Boulder, 1 h 30 min"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "19:11",
+   "quelle": "Suche",
+   "eintrag": "fieber kind 3 jahre was tun"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "21:30",
+   "quelle": "App",
+   "eintrag": "Gesundheits-App: Schmerztagebuch Knie, Stärke 6 von 10"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "22:12",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "22:20",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "22:20",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "23:10",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "23:15",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "23:22",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "03:05",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "05:38",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:02",
+   "quelle": "Standort",
+   "eintrag": "Pflegeheim, Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:08",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "07:29",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "08:04",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "08:50",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "08:53",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "10:55",
+   "quelle": "Standort",
+   "eintrag": "Bürogebäude, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "11:28",
+   "quelle": "Standort",
+   "eintrag": "Musikschule, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "12:12",
+   "quelle": "Suche",
+   "eintrag": "wie lange hält ein handyakku"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "13:55",
+   "quelle": "Standort",
+   "eintrag": "Pflegeheim, Kitzingen"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "15:20",
+   "quelle": "Standort",
+   "eintrag": "Orthopädische Praxis, Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "15:58",
+   "quelle": "Suche",
+   "eintrag": "fieber kind 3 jahre was tun"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "16:54",
+   "quelle": "Einkauf",
+   "eintrag": "Musikgeschäft, Kitzingen: Gitarrensaiten, 8,50 €"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "21:40",
+   "quelle": "App",
+   "eintrag": "Musik-App: Hörbuch, 35 min"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "22:00",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "22:15",
+   "quelle": "Suche",
+   "eintrag": "knie schmerzen außen beim laufen"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "22:20",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "22:25",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "22:30",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "23:34",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "23:38",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "03:05",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "05:38",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:02",
+   "quelle": "Standort",
+   "eintrag": "Pflegeheim, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:13",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:42",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:46",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "07:00",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "07:31",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "09:05",
+   "quelle": "Standort",
+   "eintrag": "Arztpraxis, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "12:05",
+   "quelle": "Suche",
+   "eintrag": "günstige kinderschuhe"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "13:36",
+   "quelle": "Standort",
+   "eintrag": "Universität, Würzburg"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "13:55",
+   "quelle": "Standort",
+   "eintrag": "Pflegeheim, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "15:26",
+   "quelle": "App",
+   "eintrag": "Klettertagebuch: 6 Boulder, 1 h 30 min"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "15:54",
+   "quelle": "App",
+   "eintrag": "Lieferdienst-App: Bestellung"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "17:51",
+   "quelle": "Einkauf",
+   "eintrag": "Lieferdienst: Pizza Salami, 9,50 €"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "21:05",
+   "quelle": "App",
+   "eintrag": "Gesundheits-App: Schmerztagebuch Knie, Stärke 7 von 10"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "21:08",
+   "quelle": "Suche",
+   "eintrag": "wg zimmer würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "22:02",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "22:20",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "22:30",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "22:49",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "23:04",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "23:35",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "03:05",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "06:08",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "06:53",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "07:20",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "08:05",
+   "quelle": "Standort",
+   "eintrag": "Mainufer, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "08:15",
+   "quelle": "Suche",
+   "eintrag": "tomaten überwintern"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "08:53",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "08:55",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "10:15",
+   "quelle": "App",
+   "eintrag": "Lauf-App: Trainingsplan pausiert"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "11:52",
+   "quelle": "Standort",
+   "eintrag": "Kita, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "14:36",
+   "quelle": "Suche",
+   "eintrag": "kletterhalle würzburg öffnungszeiten"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "16:35",
+   "quelle": "App",
+   "eintrag": "Klettertagebuch: 6 Boulder, 1 h 30 min"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "17:14",
+   "quelle": "Standort",
+   "eintrag": "Hauptbahnhof, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "17:46",
+   "quelle": "Suche",
+   "eintrag": "kita elternabend ideen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "19:24",
+   "quelle": "App",
+   "eintrag": "Video-App: 2 h 30 min"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "21:56",
+   "quelle": "Suche",
+   "eintrag": "mathe brüche erklärung"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "22:03",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "22:20",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "23:17",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "23:28",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "23:38",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "23:53",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "03:05",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "06:20",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "07:36",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "07:59",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "08:16",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "08:51",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "10:09",
+   "quelle": "Suche",
+   "eintrag": "lustige katzenvideos"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "10:38",
+   "quelle": "Standort",
+   "eintrag": "Hauptbahnhof, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "11:31",
+   "quelle": "Standort",
+   "eintrag": "Hauptbahnhof, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "12:21",
+   "quelle": "Suche",
+   "eintrag": "zug würzburg nürnberg verspätung"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "20:47",
+   "quelle": "App",
+   "eintrag": "Spiele-App: 1 h 12 min"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "20:56",
+   "quelle": "App",
+   "eintrag": "Video-App: 2 h 30 min"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "21:06",
+   "quelle": "Suche",
+   "eintrag": "kindergeburtstag 4 jahre ideen"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "21:40",
+   "quelle": "App",
+   "eintrag": "Musik-App: Hörbuch, 35 min"
+  },
+  {
+   "nutzer": "3150",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "22:20",
+   "quelle": "Standort",
+   "eintrag": "Rosengasse, Dettelbach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "22:23",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "22:35",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "22:49",
+   "quelle": "Suche",
+   "eintrag": "wg zimmer würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "23:21",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "23:47",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "23:53",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  }
+ ]
+}

@@ -1,0 +1,2972 @@
+{
+ "version": 3,
+ "akte": {
+  "titel": "Fall 5208",
+  "absender": "Agentur NEBEL · Ausbildungsfall",
+  "briefing": [
+   "Datenpaket aus unserer Gegend. „Alles anonym, nur Nummern.“",
+   "Finde heraus, wer Nutzer 5208 ist."
+  ],
+  "hinweis_fiktion": "Personen und Daten sind erfunden.",
+  "abschluss": {
+   "titel": "Akte geschlossen. War das in Ordnung?",
+   "text": [
+    "Aus einer Nummer ist ein Mensch geworden: Ort, Familie, Haustier, Nachname, Straße, Arbeit."
+   ],
+   "fragen": [
+    "Was würde 5208 nicht wollen, dass Fremde es wissen?",
+    "Wer könnte so ein Profil kaufen wollen?"
+   ]
+  }
+ },
+ "phasen": [
+  {
+   "id": "eine",
+   "titel": "Phase 1",
+   "quellen": [
+    "Einkauf"
+   ],
+   "text": "Du siehst nur Einkäufe."
+  },
+  {
+   "id": "alle",
+   "titel": "Phase 2",
+   "quellen": [
+    "Standort",
+    "Suche",
+    "Einkauf",
+    "App"
+   ],
+   "text": "Neu freigeschaltet: alle Datenarten."
+  }
+ ],
+ "max_woerter": 5,
+ "stufen": [
+  {
+   "id": "ort",
+   "phase": 0,
+   "steckbrief": "Ort",
+   "frage": "In welchem Ort kauft 5208 fast immer ein?",
+   "tipps": [
+    "Filtere nach Nutzer 5208.",
+    "Lies, wo die Bonuskarte benutzt wird."
+   ],
+   "modus": "wort",
+   "anzeige": "Schwarzach",
+   "erkenntnis": "Die Bonuskarte zeigt, wo jemand einkauft.",
+   "k": "WyJTQ0hXQVJaQUNIIl0="
+  },
+  {
+   "id": "familie",
+   "phase": 0,
+   "steckbrief": "Familie",
+   "frage": "Wer ist neu in der Familie von 5208?",
+   "tipps": [
+    "Was wird ganz neu gekauft?",
+    "Suchwort: windeln"
+   ],
+   "modus": "wort",
+   "anzeige": "ein Baby (wenige Wochen alt)",
+   "erkenntnis": "Einkäufe verraten, was sich in einer Familie ändert.",
+   "k": "WyJCQUJZIiwgIlNBRVVHTElORyIsICJORVVHRUJPUkVOIiwgIktJTkQiXQ=="
+  },
+  {
+   "id": "tier",
+   "phase": 0,
+   "steckbrief": "Haustier",
+   "frage": "Welches Tier lebt bei 5208?",
+   "tipps": [
+    "Welches Futter wird gekauft?",
+    "Suchwort: futter"
+   ],
+   "modus": "wort",
+   "anzeige": "ein Hund",
+   "erkenntnis": "Auch Haustiere hinterlassen Datenspuren.",
+   "k": "WyJIVU5EIl0="
+  },
+  {
+   "id": "name",
+   "phase": 0,
+   "steckbrief": "Nachname",
+   "frage": "Wie heißt 5208 mit Nachnamen?",
+   "tipps": [
+    "Welche Aufkleber und Karten werden gekauft?",
+    "Suchwort: aufkleber"
+   ],
+   "modus": "wort",
+   "anzeige": "Weber (Vorname: Jo)",
+   "erkenntnis": "Nur aus einer einzigen Datenart: ein Name.",
+   "k": "WyJXRUJFUiJd"
+  },
+  {
+   "id": "strasse",
+   "phase": 1,
+   "steckbrief": "Straße",
+   "frage": "In welcher Straße schläft 5208?",
+   "tipps": [
+    "Quelle: Standort.",
+    "Uhrzeit von 22 bis 6."
+   ],
+   "modus": "wort",
+   "anzeige": "Am Kirchberg",
+   "erkenntnis": "Ein Filter, zwei Sekunden. Mit mehr Daten geht es viel schneller.",
+   "k": "WyJLSVJDSEJFUkciXQ=="
+  },
+  {
+   "id": "arbeit",
+   "phase": 1,
+   "steckbrief": "Arbeit",
+   "frage": "Wo arbeitet 5208 werktags?",
+   "tipps": [
+    "Tag: Mo 21.09., Quelle: Standort.",
+    "Uhrzeit von 8 bis 16."
+   ],
+   "modus": "wort",
+   "anzeige": "Bankfiliale in Volkach",
+   "erkenntnis": "Jetzt weißt du auch, wann 5208 nicht zu Hause ist.",
+   "k": "WyJCQU5LIiwgIkJBTktGSUxJQUxFIl0="
+  }
+ ],
+ "eintraege": [
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "03:40",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:06",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:49",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:55",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:58",
+   "quelle": "Standort",
+   "eintrag": "Hundewiese, Schwarzach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "07:00",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "07:30",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "07:42",
+   "quelle": "Standort",
+   "eintrag": "Bankfiliale, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "08:57",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "09:37",
+   "quelle": "Suche",
+   "eintrag": "wg zimmer würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "09:56",
+   "quelle": "Standort",
+   "eintrag": "Bar, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "10:45",
+   "quelle": "Suche",
+   "eintrag": "günstige kinderschuhe"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "10:56",
+   "quelle": "Standort",
+   "eintrag": "Bushaltestelle, Dettelbach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "12:30",
+   "quelle": "Standort",
+   "eintrag": "Bankfiliale, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "12:49",
+   "quelle": "Suche",
+   "eintrag": "gitarre akkorde lernen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "15:51",
+   "quelle": "Einkauf",
+   "eintrag": "Sportgeschäft, Würzburg: Kletterseil, 149,00 €"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "16:24",
+   "quelle": "Standort",
+   "eintrag": "Arztpraxis, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "16:42",
+   "quelle": "Einkauf",
+   "eintrag": "Musikgeschäft, Kitzingen: Gitarrensaiten, 8,50 €"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "16:50",
+   "quelle": "Standort",
+   "eintrag": "Bankfiliale, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "17:01",
+   "quelle": "Suche",
+   "eintrag": "zug würzburg nürnberg verspätung"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "17:20",
+   "quelle": "Einkauf",
+   "eintrag": "Bonuskarte · Supermarkt, Schwarzach: Windeln Gr. 1, Feuchttücher, Kaffee"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "17:45",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "20:38",
+   "quelle": "Suche",
+   "eintrag": "rosen schneiden wann"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "22:47",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "22:51",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "23:14",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "23:27",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "23:30",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "23:46",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "02:10",
+   "quelle": "App",
+   "eintrag": "Baby-App: Fläschchen 120 ml"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "03:40",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:03",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:24",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:55",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:58",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "07:31",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "07:42",
+   "quelle": "Standort",
+   "eintrag": "Bankfiliale, Volkach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "08:39",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "12:30",
+   "quelle": "Standort",
+   "eintrag": "Bankfiliale, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "12:49",
+   "quelle": "Standort",
+   "eintrag": "Spielplatz am Main, Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "13:08",
+   "quelle": "Suche",
+   "eintrag": "kita elternabend ideen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "13:15",
+   "quelle": "Standort",
+   "eintrag": "Bushaltestelle, Dettelbach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "14:03",
+   "quelle": "Standort",
+   "eintrag": "Bar, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "14:13",
+   "quelle": "Standort",
+   "eintrag": "Kletterhalle, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "16:19",
+   "quelle": "App",
+   "eintrag": "Video-App: 48 min"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "16:40",
+   "quelle": "Einkauf",
+   "eintrag": "Apotheke, Volkach: Blutdruckmessgerät, 39,95 €"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "16:50",
+   "quelle": "Standort",
+   "eintrag": "Bankfiliale, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "17:08",
+   "quelle": "Einkauf",
+   "eintrag": "Drogerie, Kitzingen: Fiebersaft, Pflaster"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "17:35",
+   "quelle": "Einkauf",
+   "eintrag": "Bonuskarte · Supermarkt, Schwarzach: Hundefutter 12 kg, Kauknochen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "17:56",
+   "quelle": "App",
+   "eintrag": "Foto-App: 23 neue Fotos"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "22:23",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "22:36",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "22:46",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "23:05",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "23:13",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "23:30",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "03:40",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:21",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:26",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:35",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:55",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:58",
+   "quelle": "Standort",
+   "eintrag": "Hundewiese, Schwarzach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "07:42",
+   "quelle": "Standort",
+   "eintrag": "Bankfiliale, Volkach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "08:39",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "08:51",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "09:20",
+   "quelle": "Standort",
+   "eintrag": "Universität, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "09:48",
+   "quelle": "Standort",
+   "eintrag": "Bushaltestelle, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "12:17",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Volkach: Milch, Brot, Kaffee"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "12:30",
+   "quelle": "Standort",
+   "eintrag": "Bankfiliale, Volkach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "13:01",
+   "quelle": "Suche",
+   "eintrag": "tomaten überwintern"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "14:50",
+   "quelle": "Standort",
+   "eintrag": "Spielplatz am Main, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "15:06",
+   "quelle": "App",
+   "eintrag": "Lieferdienst-App: Bestellung"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "16:21",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "16:22",
+   "quelle": "Suche",
+   "eintrag": "günstige kinderschuhe"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "16:31",
+   "quelle": "Standort",
+   "eintrag": "Apotheke, Volkach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "16:50",
+   "quelle": "Standort",
+   "eintrag": "Bankfiliale, Volkach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "17:15",
+   "quelle": "Einkauf",
+   "eintrag": "Bonuskarte · Supermarkt, Schwarzach: Pre-Milch, Fläschchen-Sauger, Brot"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "20:22",
+   "quelle": "App",
+   "eintrag": "Wetter-App: 3 Aufrufe"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "22:01",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "22:03",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "22:19",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "22:42",
+   "quelle": "App",
+   "eintrag": "Video-App: 48 min"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "23:30",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "23:34",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "23:58",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "03:40",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "06:55",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "07:13",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "07:42",
+   "quelle": "Standort",
+   "eintrag": "Bankfiliale, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "07:54",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "08:21",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "08:33",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "08:46",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "09:06",
+   "quelle": "Standort",
+   "eintrag": "Bürogebäude, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "10:34",
+   "quelle": "Standort",
+   "eintrag": "Apotheke, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "11:22",
+   "quelle": "Suche",
+   "eintrag": "kletterhalle würzburg öffnungszeiten"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "12:30",
+   "quelle": "Standort",
+   "eintrag": "Bankfiliale, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "13:48",
+   "quelle": "Einkauf",
+   "eintrag": "Sportgeschäft, Würzburg: Kletterseil, 149,00 €"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "14:05",
+   "quelle": "Suche",
+   "eintrag": "gitarre akkorde lernen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "14:06",
+   "quelle": "Standort",
+   "eintrag": "Supermarkt, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "14:44",
+   "quelle": "Einkauf",
+   "eintrag": "Lieferdienst: Pizza Salami, 9,50 €"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "16:50",
+   "quelle": "Standort",
+   "eintrag": "Bankfiliale, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "16:57",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Kitzingen"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "17:40",
+   "quelle": "Einkauf",
+   "eintrag": "Bonuskarte · Schreibwaren, Schwarzach: Glückwunschkarte „Zur Geburt“"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "18:16",
+   "quelle": "Einkauf",
+   "eintrag": "Musikgeschäft, Kitzingen: Gitarrensaiten, 8,50 €"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "19:43",
+   "quelle": "App",
+   "eintrag": "Video-App: 2 h 30 min"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "22:05",
+   "quelle": "Suche",
+   "eintrag": "baby schläft nachts nicht durch 3 wochen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "22:07",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "22:54",
+   "quelle": "App",
+   "eintrag": "Spiele-App: 1 h 12 min"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "23:11",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "23:17",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "23:30",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "23:44",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "23:58",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "02:10",
+   "quelle": "App",
+   "eintrag": "Baby-App: Fläschchen 120 ml"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "03:40",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:04",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:55",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "07:07",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "07:19",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "07:42",
+   "quelle": "Standort",
+   "eintrag": "Bankfiliale, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "08:04",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "08:45",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "09:48",
+   "quelle": "Suche",
+   "eintrag": "günstige kinderschuhe"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "10:29",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "12:08",
+   "quelle": "Standort",
+   "eintrag": "Kinderarztpraxis, Kitzingen"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "12:30",
+   "quelle": "Standort",
+   "eintrag": "Bankfiliale, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "15:15",
+   "quelle": "App",
+   "eintrag": "Kalender-App: Termin „Elternabend“"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "15:55",
+   "quelle": "Standort",
+   "eintrag": "Apotheke, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "16:42",
+   "quelle": "Standort",
+   "eintrag": "Musikschule, Kitzingen"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "16:50",
+   "quelle": "Standort",
+   "eintrag": "Bankfiliale, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "17:01",
+   "quelle": "Standort",
+   "eintrag": "Hauptbahnhof, Würzburg"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "17:25",
+   "quelle": "Einkauf",
+   "eintrag": "Bonuskarte · Schreibwaren, Schwarzach: Namensaufkleber „Weber“, 50 Stück"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "21:20",
+   "quelle": "Suche",
+   "eintrag": "lustige katzenvideos"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "22:08",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "22:18",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "22:28",
+   "quelle": "App",
+   "eintrag": "Wetter-App: 3 Aufrufe"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "22:36",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "23:18",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "23:19",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "23:30",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "03:40",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "06:09",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "06:22",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "07:42",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "07:44",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "08:10",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "09:30",
+   "quelle": "Standort",
+   "eintrag": "Supermarkt, Schwarzach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "09:35",
+   "quelle": "Einkauf",
+   "eintrag": "Bonuskarte · Supermarkt, Schwarzach: Windeln Gr. 1, Babybrei, Hundeleckerli, Wein"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "09:56",
+   "quelle": "Einkauf",
+   "eintrag": "Musikgeschäft, Kitzingen: Gitarrensaiten, 8,50 €"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "10:07",
+   "quelle": "Standort",
+   "eintrag": "Musikschule, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "12:06",
+   "quelle": "Einkauf",
+   "eintrag": "Apotheke, Volkach: Blutdruckmessgerät, 39,95 €"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "12:55",
+   "quelle": "Standort",
+   "eintrag": "Friedhof, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "15:56",
+   "quelle": "Standort",
+   "eintrag": "Universität, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "16:33",
+   "quelle": "Suche",
+   "eintrag": "nebenjob würzburg abends"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "17:57",
+   "quelle": "Standort",
+   "eintrag": "Kletterhalle, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "18:06",
+   "quelle": "App",
+   "eintrag": "Foto-App: 23 neue Fotos"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "18:35",
+   "quelle": "App",
+   "eintrag": "Video-App: 2 h 30 min"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "22:27",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "22:32",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "22:50",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "23:05",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "23:30",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "23:50",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "03:40",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "06:16",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "08:17",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "08:25",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "08:47",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "08:48",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "10:15",
+   "quelle": "Standort",
+   "eintrag": "Spielplatz, Schwarzach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "14:27",
+   "quelle": "Standort",
+   "eintrag": "Bushaltestelle, Dettelbach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "15:24",
+   "quelle": "Standort",
+   "eintrag": "Kinderarztpraxis, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "15:31",
+   "quelle": "Standort",
+   "eintrag": "Bar, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "15:32",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "18:59",
+   "quelle": "App",
+   "eintrag": "Spiele-App: 1 h 12 min"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "18:59",
+   "quelle": "App",
+   "eintrag": "Navi-App: Route Würzburg → Nürnberg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "19:55",
+   "quelle": "App",
+   "eintrag": "Kalender-App: Termin „Elternabend“"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "20:30",
+   "quelle": "Suche",
+   "eintrag": "hund an baby gewöhnen tipps"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "22:34",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "22:52",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "23:01",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "23:17",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "23:21",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "23:30",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "03:40",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:50",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:55",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:55",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:58",
+   "quelle": "Standort",
+   "eintrag": "Hundewiese, Schwarzach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "07:17",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "07:42",
+   "quelle": "Standort",
+   "eintrag": "Bankfiliale, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "07:54",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "08:40",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "11:50",
+   "quelle": "Standort",
+   "eintrag": "Bushaltestelle, Dettelbach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "12:30",
+   "quelle": "Standort",
+   "eintrag": "Bankfiliale, Volkach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "14:11",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Volkach: Milch, Brot, Kaffee"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "16:43",
+   "quelle": "Standort",
+   "eintrag": "Mensa, Würzburg"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "16:50",
+   "quelle": "Standort",
+   "eintrag": "Bankfiliale, Volkach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "17:22",
+   "quelle": "Einkauf",
+   "eintrag": "Bonuskarte · Supermarkt, Schwarzach: Feuchttücher, Wundschutzcreme, Kaffee"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "18:54",
+   "quelle": "Einkauf",
+   "eintrag": "Musikgeschäft, Kitzingen: Gitarrensaiten, 8,50 €"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "22:12",
+   "quelle": "Suche",
+   "eintrag": "blutdruck werte normal mit 70"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "22:12",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "22:20",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "22:26",
+   "quelle": "App",
+   "eintrag": "Foto-App: 23 neue Fotos"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "22:36",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "23:30",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "23:33",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "23:41",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "02:10",
+   "quelle": "App",
+   "eintrag": "Baby-App: Fläschchen 120 ml"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "03:40",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "06:12",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "06:55",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "07:11",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "07:20",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "07:42",
+   "quelle": "Standort",
+   "eintrag": "Bankfiliale, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "07:45",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "08:38",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "08:53",
+   "quelle": "Suche",
+   "eintrag": "wie lange hält ein handyakku"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "09:39",
+   "quelle": "Einkauf",
+   "eintrag": "Kiosk, Dettelbach: Eistee, Kaugummi"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "10:32",
+   "quelle": "Standort",
+   "eintrag": "Bar, Würzburg"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "12:30",
+   "quelle": "Standort",
+   "eintrag": "Bankfiliale, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "14:32",
+   "quelle": "Standort",
+   "eintrag": "Supermarkt, Kitzingen"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "16:50",
+   "quelle": "Standort",
+   "eintrag": "Bankfiliale, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "17:05",
+   "quelle": "Einkauf",
+   "eintrag": "Drogerie, Kitzingen: Fiebersaft, Pflaster"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "17:30",
+   "quelle": "Einkauf",
+   "eintrag": "Bonuskarte · Drogerie, Volkach: Babybadewanne, Schnuller"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "18:07",
+   "quelle": "App",
+   "eintrag": "Video-App: 48 min"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "19:50",
+   "quelle": "Suche",
+   "eintrag": "hausarbeit zitieren regeln"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "21:35",
+   "quelle": "Suche",
+   "eintrag": "seniorentreff volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "22:03",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "22:21",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "22:22",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "22:28",
+   "quelle": "Suche",
+   "eintrag": "fieber kind 3 jahre was tun"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "23:08",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "23:10",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "23:30",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "03:40",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:32",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:55",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:56",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:58",
+   "quelle": "Standort",
+   "eintrag": "Hundewiese, Schwarzach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "07:14",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "07:32",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "07:42",
+   "quelle": "Standort",
+   "eintrag": "Bankfiliale, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "08:12",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "08:39",
+   "quelle": "Suche",
+   "eintrag": "wie lange hält ein handyakku"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "10:37",
+   "quelle": "Suche",
+   "eintrag": "boulder technik heel hook"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "12:30",
+   "quelle": "Standort",
+   "eintrag": "Bankfiliale, Volkach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "12:35",
+   "quelle": "Suche",
+   "eintrag": "elterngeld antrag bayern"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "12:38",
+   "quelle": "Standort",
+   "eintrag": "Mensa, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "15:22",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "16:33",
+   "quelle": "App",
+   "eintrag": "Kalender-App: Termin „Elternabend“"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "16:50",
+   "quelle": "Standort",
+   "eintrag": "Bankfiliale, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "16:56",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Würzburg"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "17:18",
+   "quelle": "Einkauf",
+   "eintrag": "Bonuskarte · Supermarkt, Schwarzach: Hundefutter 12 kg, Kotbeutel"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "18:14",
+   "quelle": "Einkauf",
+   "eintrag": "Sportgeschäft, Würzburg: Kletterseil, 149,00 €"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "22:28",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "22:38",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "22:57",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "23:07",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "23:30",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "23:56",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "03:40",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:25",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:30",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:32",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:55",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "07:38",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "07:42",
+   "quelle": "Standort",
+   "eintrag": "Bankfiliale, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "08:10",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "10:09",
+   "quelle": "Einkauf",
+   "eintrag": "Lieferdienst: Pizza Salami, 9,50 €"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "12:30",
+   "quelle": "Standort",
+   "eintrag": "Bankfiliale, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "15:16",
+   "quelle": "Suche",
+   "eintrag": "kita elternabend ideen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "15:35",
+   "quelle": "Standort",
+   "eintrag": "Apotheke, Volkach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "16:50",
+   "quelle": "Standort",
+   "eintrag": "Bankfiliale, Volkach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "17:45",
+   "quelle": "Einkauf",
+   "eintrag": "Bonuskarte · Blumenladen, Schwarzach: Blumen, Karte „Für Oma Weber“"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "19:17",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Volkach: Milch, Brot, Kaffee"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "22:00",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "22:12",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "22:17",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "22:34",
+   "quelle": "Suche",
+   "eintrag": "steuererklärung frist 2026"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "22:44",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "23:30",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "23:49",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "02:10",
+   "quelle": "App",
+   "eintrag": "Baby-App: Fläschchen 120 ml"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "03:40",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:08",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:36",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:55",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:58",
+   "quelle": "Standort",
+   "eintrag": "Hundewiese, Schwarzach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "07:01",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "07:22",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "07:42",
+   "quelle": "Standort",
+   "eintrag": "Bankfiliale, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "08:55",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "09:17",
+   "quelle": "Einkauf",
+   "eintrag": "Apotheke, Volkach: Blutdruckmessgerät, 39,95 €"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "12:30",
+   "quelle": "Standort",
+   "eintrag": "Bankfiliale, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "12:41",
+   "quelle": "Standort",
+   "eintrag": "Musikschule, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "13:59",
+   "quelle": "Einkauf",
+   "eintrag": "Lieferdienst: Pizza Salami, 9,50 €"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "14:43",
+   "quelle": "Standort",
+   "eintrag": "Hauptbahnhof, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "16:27",
+   "quelle": "Suche",
+   "eintrag": "arzt volkach notdienst"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "16:43",
+   "quelle": "App",
+   "eintrag": "Spiele-App: 1 h 12 min"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "16:50",
+   "quelle": "Standort",
+   "eintrag": "Bankfiliale, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "21:30",
+   "quelle": "Suche",
+   "eintrag": "referat klimawandel gliederung"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "22:03",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "22:12",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "22:42",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "23:10",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "23:30",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "23:50",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "03:40",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "06:59",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "07:13",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "07:54",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "08:37",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "08:53",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "09:30",
+   "quelle": "Standort",
+   "eintrag": "Supermarkt, Schwarzach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "09:38",
+   "quelle": "Suche",
+   "eintrag": "kletterhalle würzburg öffnungszeiten"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "09:40",
+   "quelle": "Einkauf",
+   "eintrag": "Bonuskarte · Supermarkt, Schwarzach: Pre-Milch, Windeln Gr. 1, Pizza"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "10:00",
+   "quelle": "Standort",
+   "eintrag": "Mensa, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "14:24",
+   "quelle": "Einkauf",
+   "eintrag": "Apotheke, Volkach: Blutdruckmessgerät, 39,95 €"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "15:27",
+   "quelle": "Standort",
+   "eintrag": "Arztpraxis, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "15:48",
+   "quelle": "Standort",
+   "eintrag": "Hauptbahnhof, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "17:00",
+   "quelle": "Einkauf",
+   "eintrag": "Sportgeschäft, Würzburg: Kletterseil, 149,00 €"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "17:49",
+   "quelle": "App",
+   "eintrag": "Lieferdienst-App: Bestellung"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "18:08",
+   "quelle": "App",
+   "eintrag": "Kalender-App: Termin „Elternabend“"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "19:18",
+   "quelle": "Einkauf",
+   "eintrag": "Drogerie, Kitzingen: Fiebersaft, Pflaster"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "19:40",
+   "quelle": "Suche",
+   "eintrag": "fieber kind 3 jahre was tun"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "21:21",
+   "quelle": "App",
+   "eintrag": "Video-App: 48 min"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "22:28",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "22:44",
+   "quelle": "Suche",
+   "eintrag": "nebenjob würzburg abends"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "22:54",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "22:59",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "23:12",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "23:15",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "23:30",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "03:40",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "06:45",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "07:20",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "07:50",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "07:54",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "08:29",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "09:14",
+   "quelle": "Standort",
+   "eintrag": "Bar, Würzburg"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "10:15",
+   "quelle": "Standort",
+   "eintrag": "Spielplatz, Schwarzach"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "10:20",
+   "quelle": "Einkauf",
+   "eintrag": "Bonuskarte · Bäckerei, Schwarzach: 6 Brötchen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "11:19",
+   "quelle": "Einkauf",
+   "eintrag": "Lieferdienst: Pizza Salami, 9,50 €"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "13:58",
+   "quelle": "Einkauf",
+   "eintrag": "Apotheke, Volkach: Blutdruckmessgerät, 39,95 €"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "15:43",
+   "quelle": "Suche",
+   "eintrag": "blutdruck werte normal mit 70"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "16:30",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Kitzingen: Windeln, Bananen, Haferflocken"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "17:55",
+   "quelle": "Standort",
+   "eintrag": "Kinderarztpraxis, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "22:05",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "22:09",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "22:38",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "22:38",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "23:13",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "5208",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "23:30",
+   "quelle": "Standort",
+   "eintrag": "Am Kirchberg, Schwarzach"
+  }
+ ]
+}

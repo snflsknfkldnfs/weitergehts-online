@@ -82,7 +82,7 @@
     var zusammen = w.join('');
     return k.some(function (key) {
       if (zusammen.indexOf(key) !== -1) return true;
-      var grenze = key.length >= 8 ? 2 : (key.length >= 5 ? 1 : 0);
+      var grenze = key.length >= 8 ? 2 : (key.length >= 4 ? 1 : 0);
       return grenze > 0 && w.some(function (x) {
         return Math.abs(x.length - key.length) <= grenze && abstand(x, key) <= grenze;
       });

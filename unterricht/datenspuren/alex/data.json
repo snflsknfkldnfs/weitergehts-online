@@ -11,7 +11,7 @@
   "abschluss": {
    "titel": "Akte geschlossen. War das in Ordnung?",
    "text": [
-    "Aus einer Nummer ist ein Mensch geworden: Ort, Straße, Alter, Name, Hobby und eine Sorge."
+    "Aus einer Nummer ist ein Mensch geworden: Ort, Alter, Sorge, Nachname, Straße, Hobby."
    ],
    "fragen": [
     "Was würde 4711 nicht wollen, dass Fremde es wissen?",
@@ -21,7 +21,7 @@
  },
  "phasen": [
   {
-   "id": "suche",
+   "id": "eine",
    "titel": "Phase 1",
    "quellen": [
     "Suche"
@@ -37,7 +37,7 @@
     "Einkauf",
     "App"
    ],
-   "text": "Neu freigeschaltet: Standort, Einkauf, App."
+   "text": "Neu freigeschaltet: alle Datenarten."
   }
  ],
  "max_woerter": 5,

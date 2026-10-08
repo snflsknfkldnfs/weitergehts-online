@@ -1,0 +1,2972 @@
+{
+ "version": 3,
+ "akte": {
+  "titel": "Fall 8892",
+  "absender": "Agentur NEBEL · Ausbildungsfall",
+  "briefing": [
+   "Datenpaket aus unserer Gegend. „Alles anonym, nur Nummern.“",
+   "Finde heraus, wer Nutzer 8892 ist."
+  ],
+  "hinweis_fiktion": "Personen und Daten sind erfunden.",
+  "abschluss": {
+   "titel": "Akte geschlossen. War das in Ordnung?",
+   "text": [
+    "Aus einer Nummer ist ein Mensch geworden: Ort, Hobby, Gesundheit, Nachname, Straße, Termin."
+   ],
+   "fragen": [
+    "Was würde 8892 nicht wollen, dass Fremde es wissen?",
+    "Wer könnte so ein Profil kaufen wollen?"
+   ]
+  }
+ },
+ "phasen": [
+  {
+   "id": "eine",
+   "titel": "Phase 1",
+   "quellen": [
+    "App"
+   ],
+   "text": "Du siehst nur App-Daten."
+  },
+  {
+   "id": "alle",
+   "titel": "Phase 2",
+   "quellen": [
+    "Standort",
+    "Suche",
+    "Einkauf",
+    "App"
+   ],
+   "text": "Neu freigeschaltet: alle Datenarten."
+  }
+ ],
+ "max_woerter": 5,
+ "stufen": [
+  {
+   "id": "ort",
+   "phase": 0,
+   "steckbrief": "Ort",
+   "frage": "Für welchen Ort zeigt die Smartwatch von 8892 das Wetter?",
+   "tipps": [
+    "Filtere nach Nutzer 8892.",
+    "Suchwort: wetter"
+   ],
+   "modus": "wort",
+   "anzeige": "Wiesentheid",
+   "erkenntnis": "Die Uhr weiß, wo sie morgens ist.",
+   "k": "WyJXSUVTRU5USEVJRCJd"
+  },
+  {
+   "id": "hobby",
+   "phase": 0,
+   "steckbrief": "Hobby",
+   "frage": "Welchen Sport macht 8892?",
+   "tipps": [
+    "Welche Trainings zeichnet die Uhr auf?",
+    "Suchwort: training"
+   ],
+   "modus": "wort",
+   "anzeige": "Radfahren (bis zu 64 km)",
+   "erkenntnis": "Trainingsdaten zeigen Hobby und Fitness.",
+   "k": "WyJSQURGQUhSIiwgIkZBSFJSQUQiLCAiUkFERUxOIiwgIlJBRFRPVVIiLCAiUkVOTlJBRCIsICJSQUQiXQ=="
+  },
+  {
+   "id": "gesundheit",
+   "phase": 0,
+   "steckbrief": "Gesundheit",
+   "frage": "Was meldet die Smartwatch von 8892 als Problem?",
+   "tipps": [
+    "Gibt es Warnungen?",
+    "Suchwort: warnung"
+   ],
+   "modus": "wort",
+   "anzeige": "Herz: unregelmäßiger Herzrhythmus, Puls zu hoch",
+   "erkenntnis": "Gesundheitsdaten sind besonders privat.",
+   "k": "WyJIRVJaIiwgIlBVTFMiLCAiUkhZVEhNVVMiLCAiSEVSWlJIWVRITVVTIl0="
+  },
+  {
+   "id": "name",
+   "phase": 0,
+   "steckbrief": "Nachname",
+   "frage": "Wie heißt 8892 mit Nachnamen?",
+   "tipps": [
+    "Wer schreibt 8892, wer ist Notfallkontakt?",
+    "Suchwort: nachricht"
+   ],
+   "modus": "wort",
+   "anzeige": "Bauer (Vorname: Luca)",
+   "erkenntnis": "Nur aus einer einzigen Datenart: ein Name.",
+   "k": "WyJCQVVFUiJd"
+  },
+  {
+   "id": "strasse",
+   "phase": 1,
+   "steckbrief": "Straße",
+   "frage": "In welcher Straße schläft 8892?",
+   "tipps": [
+    "Quelle: Standort.",
+    "Uhrzeit von 22 bis 6."
+   ],
+   "modus": "wort",
+   "anzeige": "Birkenweg",
+   "erkenntnis": "Ein Filter, zwei Sekunden. Mit mehr Daten geht es viel schneller.",
+   "k": "WyJCSVJLRU5XRUciLCAiQklSS0VOIl0="
+  },
+  {
+   "id": "arzt",
+   "phase": 1,
+   "steckbrief": "Termin",
+   "frage": "Wo war 8892 am Mittwoch, 30.09., von 9 bis 10:35 Uhr?",
+   "tipps": [
+    "Tag: Mi 30.09., Quelle: Standort.",
+    "Uhrzeit von 9 bis 11."
+   ],
+   "modus": "wort",
+   "anzeige": "Kardiologische Praxis (Herzarzt) in Würzburg",
+   "erkenntnis": "Ein Standort reicht, um auf eine Krankheit zu schließen.",
+   "k": "WyJLQVJESU8iLCAiQVJaVCIsICJQUkFYSVMiLCAiSEVSWkFSWlQiLCAiQUVSWlRJTiJd"
+  }
+ ],
+ "eintraege": [
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "03:15",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:30",
+   "quelle": "App",
+   "eintrag": "Smartwatch: Wetter für Wiesentheid, 11 °C"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:44",
+   "quelle": "App",
+   "eintrag": "Smartwatch: Schlaf 6 h 15 min"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:45",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:50",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "07:45",
+   "quelle": "Standort",
+   "eintrag": "Büro, Wiesentheid"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "07:53",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "07:54",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "08:08",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "08:14",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "11:09",
+   "quelle": "Standort",
+   "eintrag": "Supermarkt, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "12:07",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "13:12",
+   "quelle": "Suche",
+   "eintrag": "zug würzburg nürnberg verspätung"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "13:18",
+   "quelle": "Standort",
+   "eintrag": "Bar, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "15:50",
+   "quelle": "Suche",
+   "eintrag": "lustige katzenvideos"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "16:30",
+   "quelle": "Standort",
+   "eintrag": "Büro, Wiesentheid"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "17:52",
+   "quelle": "Einkauf",
+   "eintrag": "Drogerie, Kitzingen: Fiebersaft, Pflaster"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "19:24",
+   "quelle": "Einkauf",
+   "eintrag": "Apotheke, Volkach: Blutdruckmessgerät, 39,95 €"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "20:15",
+   "quelle": "App",
+   "eintrag": "Foto-App: 23 neue Fotos"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "22:50",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "22:55",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "23:11",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "23:18",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "23:21",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "23:44",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "03:15",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:09",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:30",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:43",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:44",
+   "quelle": "App",
+   "eintrag": "Smartwatch: Schlaf 7 h 22 min"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:45",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "07:25",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "07:38",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "07:45",
+   "quelle": "Standort",
+   "eintrag": "Büro, Wiesentheid"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "11:24",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "15:39",
+   "quelle": "Standort",
+   "eintrag": "Supermarkt, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "15:50",
+   "quelle": "Standort",
+   "eintrag": "Gärtnerei, Dettelbach"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "16:30",
+   "quelle": "Standort",
+   "eintrag": "Büro, Wiesentheid"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "18:40",
+   "quelle": "App",
+   "eintrag": "Smartwatch: Training Radfahren, 28 km, Puls Ø 131"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "19:16",
+   "quelle": "App",
+   "eintrag": "Video-App: 2 h 30 min"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "19:52",
+   "quelle": "Suche",
+   "eintrag": "seniorentreff volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "20:31",
+   "quelle": "App",
+   "eintrag": "Video-App: 48 min"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "22:41",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "22:50",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "22:50",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "23:13",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "23:30",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "23:53",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "03:15",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:44",
+   "quelle": "App",
+   "eintrag": "Smartwatch: Schlaf 6 h 29 min"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:45",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:52",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "07:19",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "07:45",
+   "quelle": "Standort",
+   "eintrag": "Büro, Wiesentheid"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "08:27",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "08:33",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "08:56",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "12:35",
+   "quelle": "Standort",
+   "eintrag": "Hauptbahnhof, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "14:32",
+   "quelle": "Suche",
+   "eintrag": "wie lange hält ein handyakku"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "15:26",
+   "quelle": "Suche",
+   "eintrag": "boulder technik heel hook"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "16:08",
+   "quelle": "Standort",
+   "eintrag": "Friedhof, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "16:11",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Kitzingen"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "16:30",
+   "quelle": "Standort",
+   "eintrag": "Büro, Wiesentheid"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "16:58",
+   "quelle": "Standort",
+   "eintrag": "Kletterhalle, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "19:55",
+   "quelle": "App",
+   "eintrag": "Klettertagebuch: 6 Boulder, 1 h 30 min"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "22:34",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "22:42",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "22:47",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "22:50",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "23:15",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "23:59",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "03:15",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "06:08",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "06:18",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "06:20",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "06:30",
+   "quelle": "App",
+   "eintrag": "Smartwatch: Wetter für Wiesentheid, 11 °C"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "06:44",
+   "quelle": "App",
+   "eintrag": "Smartwatch: Schlaf 7 h 36 min"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "06:45",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "07:44",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "07:45",
+   "quelle": "Standort",
+   "eintrag": "Büro, Wiesentheid"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "08:17",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "12:18",
+   "quelle": "Suche",
+   "eintrag": "referat klimawandel gliederung"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "13:59",
+   "quelle": "Standort",
+   "eintrag": "Hauptbahnhof, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "14:07",
+   "quelle": "Standort",
+   "eintrag": "Hauptbahnhof, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "15:18",
+   "quelle": "App",
+   "eintrag": "Musik-App: 30 min"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "16:08",
+   "quelle": "App",
+   "eintrag": "Nachrichten-App: 2 neue Nachrichten"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "16:30",
+   "quelle": "Standort",
+   "eintrag": "Büro, Wiesentheid"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "16:34",
+   "quelle": "Standort",
+   "eintrag": "Gärtnerei, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "17:17",
+   "quelle": "Suche",
+   "eintrag": "blutdruck werte normal mit 70"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "18:43",
+   "quelle": "Suche",
+   "eintrag": "wg zimmer würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "19:49",
+   "quelle": "App",
+   "eintrag": "Klettertagebuch: 6 Boulder, 1 h 30 min"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "22:50",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "23:00",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "23:14",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "23:42",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "23:50",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "23:59",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "03:15",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:24",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:30",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:44",
+   "quelle": "App",
+   "eintrag": "Smartwatch: Schlaf 6 h 43 min"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:45",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "07:45",
+   "quelle": "Standort",
+   "eintrag": "Büro, Wiesentheid"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "07:47",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "07:56",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "08:40",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "10:49",
+   "quelle": "Standort",
+   "eintrag": "Bushaltestelle, Dettelbach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "11:15",
+   "quelle": "Standort",
+   "eintrag": "Spielplatz am Main, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "11:44",
+   "quelle": "Suche",
+   "eintrag": "boulder technik heel hook"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "11:59",
+   "quelle": "Standort",
+   "eintrag": "Bar, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "14:07",
+   "quelle": "Standort",
+   "eintrag": "Apotheke, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "15:33",
+   "quelle": "App",
+   "eintrag": "Musik-App: 30 min"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "15:56",
+   "quelle": "App",
+   "eintrag": "Foto-App: 23 neue Fotos"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "16:30",
+   "quelle": "Standort",
+   "eintrag": "Büro, Wiesentheid"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "17:33",
+   "quelle": "Einkauf",
+   "eintrag": "Musikgeschäft, Kitzingen: Gitarrensaiten, 8,50 €"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "20:16",
+   "quelle": "Suche",
+   "eintrag": "referat klimawandel gliederung"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "22:07",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "22:12",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "22:15",
+   "quelle": "App",
+   "eintrag": "Wetter-App: 3 Aufrufe"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "22:31",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "22:36",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "22:50",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "23:11",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "03:15",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "06:26",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "06:44",
+   "quelle": "App",
+   "eintrag": "Smartwatch: Schlaf 7 h 50 min"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "06:55",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "07:00",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "07:02",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "07:09",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "09:00",
+   "quelle": "Standort",
+   "eintrag": "Radweg am Main, Volkach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "09:52",
+   "quelle": "Standort",
+   "eintrag": "Friedhof, Volkach"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "11:30",
+   "quelle": "App",
+   "eintrag": "Smartwatch: Training Radfahren, 64 km, Puls Ø 138"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "13:37",
+   "quelle": "Standort",
+   "eintrag": "Musikschule, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "15:52",
+   "quelle": "Einkauf",
+   "eintrag": "Kiosk, Dettelbach: Eistee, Kaugummi"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "17:25",
+   "quelle": "Standort",
+   "eintrag": "Hauptbahnhof, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "17:27",
+   "quelle": "Suche",
+   "eintrag": "wie lange hält ein handyakku"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "21:03",
+   "quelle": "App",
+   "eintrag": "Musik-App: 30 min"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "22:12",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "22:27",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "22:32",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "22:43",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "22:50",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "23:02",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "03:15",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "06:12",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "06:30",
+   "quelle": "App",
+   "eintrag": "Smartwatch: Wetter für Wiesentheid, 11 °C"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "06:44",
+   "quelle": "App",
+   "eintrag": "Smartwatch: Schlaf 6 h 7 min"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "07:30",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "07:45",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "08:35",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "08:51",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "09:15",
+   "quelle": "Standort",
+   "eintrag": "Radweg, Steigerwald"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "10:16",
+   "quelle": "Suche",
+   "eintrag": "referat klimawandel gliederung"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "10:31",
+   "quelle": "Standort",
+   "eintrag": "Bushaltestelle, Dettelbach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "11:46",
+   "quelle": "Standort",
+   "eintrag": "Mensa, Würzburg"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "12:05",
+   "quelle": "App",
+   "eintrag": "Smartwatch: Training Radfahren, 52 km, Puls Ø 135"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "12:42",
+   "quelle": "Suche",
+   "eintrag": "kita elternabend ideen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "13:11",
+   "quelle": "Standort",
+   "eintrag": "Arztpraxis, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "14:16",
+   "quelle": "Standort",
+   "eintrag": "Supermarkt, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "16:19",
+   "quelle": "Standort",
+   "eintrag": "Kletterhalle, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "20:03",
+   "quelle": "App",
+   "eintrag": "Foto-App: 23 neue Fotos"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "22:10",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "22:27",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "22:38",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "22:50",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "23:24",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "23:43",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "03:15",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:16",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:44",
+   "quelle": "App",
+   "eintrag": "Smartwatch: Schlaf 7 h 14 min"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:45",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "07:21",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "07:25",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "07:45",
+   "quelle": "Standort",
+   "eintrag": "Büro, Wiesentheid"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "07:46",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "08:04",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "08:16",
+   "quelle": "Suche",
+   "eintrag": "tomaten überwintern"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "09:06",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Volkach: Milch, Brot, Kaffee"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "09:19",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Kitzingen: Windeln, Bananen, Haferflocken"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "10:21",
+   "quelle": "Standort",
+   "eintrag": "Kletterhalle, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "10:57",
+   "quelle": "Suche",
+   "eintrag": "referat klimawandel gliederung"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "11:51",
+   "quelle": "Einkauf",
+   "eintrag": "Mensa, Würzburg: Tagesgericht, 3,20 €"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "12:29",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "13:27",
+   "quelle": "Standort",
+   "eintrag": "Universität, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "14:05",
+   "quelle": "Einkauf",
+   "eintrag": "Sportgeschäft, Würzburg: Kletterseil, 149,00 €"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "14:12",
+   "quelle": "App",
+   "eintrag": "Smartwatch: Warnung: unregelmäßiger Herzrhythmus erkannt"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "14:59",
+   "quelle": "Standort",
+   "eintrag": "Friedhof, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "15:48",
+   "quelle": "Einkauf",
+   "eintrag": "Kiosk, Dettelbach: Eistee, Kaugummi"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "15:57",
+   "quelle": "Suche",
+   "eintrag": "kita elternabend ideen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "16:08",
+   "quelle": "Standort",
+   "eintrag": "Kinderarztpraxis, Kitzingen"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "16:30",
+   "quelle": "Standort",
+   "eintrag": "Büro, Wiesentheid"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "22:20",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "22:38",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "22:50",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "23:20",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "23:38",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "23:49",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "03:15",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "03:40",
+   "quelle": "App",
+   "eintrag": "Smartwatch: Puls in Ruhe 112, ungewöhnlich hoch"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "06:44",
+   "quelle": "App",
+   "eintrag": "Smartwatch: Schlaf 6 h 21 min"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "06:45",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "06:47",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "06:48",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "06:59",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "07:10",
+   "quelle": "App",
+   "eintrag": "Smartwatch: Nachricht von „Tim Bauer“: Gute Besserung!"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "07:45",
+   "quelle": "Standort",
+   "eintrag": "Büro, Wiesentheid"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "08:49",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "08:57",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "09:15",
+   "quelle": "Einkauf",
+   "eintrag": "Apotheke, Volkach: Blutdruckmessgerät, 39,95 €"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "11:58",
+   "quelle": "Suche",
+   "eintrag": "zug würzburg nürnberg verspätung"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "12:06",
+   "quelle": "Standort",
+   "eintrag": "Bar, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "12:45",
+   "quelle": "Standort",
+   "eintrag": "Supermarkt, Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "14:59",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Kitzingen: Windeln, Bananen, Haferflocken"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "15:29",
+   "quelle": "Suche",
+   "eintrag": "mathe brüche erklärung"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "15:36",
+   "quelle": "Standort",
+   "eintrag": "Friedhof, Volkach"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "16:30",
+   "quelle": "Standort",
+   "eintrag": "Büro, Wiesentheid"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "17:14",
+   "quelle": "Standort",
+   "eintrag": "Kletterhalle, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "17:40",
+   "quelle": "Einkauf",
+   "eintrag": "Kiosk, Dettelbach: Eistee, Kaugummi"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "20:20",
+   "quelle": "App",
+   "eintrag": "Video-App: 2 h 30 min"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "21:15",
+   "quelle": "Suche",
+   "eintrag": "herzrhythmusstörung gefährlich"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "22:42",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "22:49",
+   "quelle": "App",
+   "eintrag": "Kalender-App: Termin „Elternabend“"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "22:50",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "22:55",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "23:06",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "23:12",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "23:49",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "03:15",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:02",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:30",
+   "quelle": "App",
+   "eintrag": "Smartwatch: Wetter für Wiesentheid, 11 °C"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:44",
+   "quelle": "App",
+   "eintrag": "Smartwatch: Schlaf 7 h 28 min"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:45",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:46",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "07:06",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "07:45",
+   "quelle": "Standort",
+   "eintrag": "Büro, Wiesentheid"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "08:05",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "08:53",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "09:00",
+   "quelle": "Standort",
+   "eintrag": "Kardiologische Praxis, Würzburg"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "10:35",
+   "quelle": "Standort",
+   "eintrag": "Kardiologische Praxis, Würzburg"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "10:50",
+   "quelle": "Einkauf",
+   "eintrag": "Apotheke, Würzburg: Medikament nach Rezept"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "12:25",
+   "quelle": "Suche",
+   "eintrag": "arzt volkach notdienst"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "14:00",
+   "quelle": "Standort",
+   "eintrag": "Supermarkt, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "14:14",
+   "quelle": "Standort",
+   "eintrag": "Bushaltestelle, Dettelbach"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "16:30",
+   "quelle": "Standort",
+   "eintrag": "Büro, Wiesentheid"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "16:52",
+   "quelle": "Standort",
+   "eintrag": "Universität, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "17:18",
+   "quelle": "Einkauf",
+   "eintrag": "Drogerie, Kitzingen: Fiebersaft, Pflaster"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "17:39",
+   "quelle": "Standort",
+   "eintrag": "Friedhof, Volkach"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "20:30",
+   "quelle": "App",
+   "eintrag": "Smartwatch: Notfallkontakt geändert: „Eva Bauer“"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "20:48",
+   "quelle": "Suche",
+   "eintrag": "fieber kind 3 jahre was tun"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "22:19",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "22:50",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "22:57",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "23:33",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "23:57",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "23:59",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "03:15",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:04",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:36",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:44",
+   "quelle": "App",
+   "eintrag": "Smartwatch: Schlaf 6 h 35 min"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:45",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "07:15",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "07:15",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "07:45",
+   "quelle": "Standort",
+   "eintrag": "Büro, Wiesentheid"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "08:28",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "09:59",
+   "quelle": "Standort",
+   "eintrag": "Bar, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "11:02",
+   "quelle": "Einkauf",
+   "eintrag": "Musikgeschäft, Kitzingen: Gitarrensaiten, 8,50 €"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "11:19",
+   "quelle": "Standort",
+   "eintrag": "Bushaltestelle, Dettelbach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "12:15",
+   "quelle": "Standort",
+   "eintrag": "Kita, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "15:14",
+   "quelle": "Suche",
+   "eintrag": "seniorentreff volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "16:08",
+   "quelle": "Standort",
+   "eintrag": "Kletterhalle, Würzburg"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "16:30",
+   "quelle": "Standort",
+   "eintrag": "Büro, Wiesentheid"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "17:47",
+   "quelle": "App",
+   "eintrag": "Video-App: 48 min"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "18:59",
+   "quelle": "Einkauf",
+   "eintrag": "Sportgeschäft, Würzburg: Kletterseil, 149,00 €"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "19:26",
+   "quelle": "Suche",
+   "eintrag": "pizza lieferdienst würzburg nachts"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "22:15",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "22:23",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "22:50",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "22:53",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "22:59",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "23:22",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "03:15",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:17",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:21",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:44",
+   "quelle": "App",
+   "eintrag": "Smartwatch: Schlaf 7 h 42 min"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:45",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "07:45",
+   "quelle": "Standort",
+   "eintrag": "Büro, Wiesentheid"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "07:49",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "07:49",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "07:54",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "10:52",
+   "quelle": "Standort",
+   "eintrag": "Kletterhalle, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "12:57",
+   "quelle": "Standort",
+   "eintrag": "Bushaltestelle, Dettelbach"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "13:20",
+   "quelle": "App",
+   "eintrag": "Smartwatch: Warnung: unregelmäßiger Herzrhythmus erkannt"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "14:48",
+   "quelle": "Standort",
+   "eintrag": "Bar, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "14:51",
+   "quelle": "Standort",
+   "eintrag": "Friedhof, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "16:07",
+   "quelle": "Suche",
+   "eintrag": "kindergeburtstag 4 jahre ideen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "16:28",
+   "quelle": "Standort",
+   "eintrag": "Kita, Kitzingen"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "16:30",
+   "quelle": "Standort",
+   "eintrag": "Büro, Wiesentheid"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "16:34",
+   "quelle": "Suche",
+   "eintrag": "nebenjob würzburg abends"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "19:58",
+   "quelle": "App",
+   "eintrag": "Nachrichten-App: 2 neue Nachrichten"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "20:48",
+   "quelle": "App",
+   "eintrag": "Spiele-App: 1 h 12 min"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "22:02",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "22:08",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "22:26",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "22:50",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "23:27",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "23:57",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "03:15",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "06:26",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "06:30",
+   "quelle": "App",
+   "eintrag": "Smartwatch: Wetter für Wiesentheid, 11 °C"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "06:44",
+   "quelle": "App",
+   "eintrag": "Smartwatch: Schlaf 6 h 49 min"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "06:49",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "07:19",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "07:30",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "07:51",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "09:00",
+   "quelle": "Standort",
+   "eintrag": "Radweg am Main, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "11:04",
+   "quelle": "Standort",
+   "eintrag": "Supermarkt, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "12:07",
+   "quelle": "Einkauf",
+   "eintrag": "Sportgeschäft, Würzburg: Kletterseil, 149,00 €"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "13:11",
+   "quelle": "Suche",
+   "eintrag": "fieber kind 3 jahre was tun"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "13:33",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "14:13",
+   "quelle": "Einkauf",
+   "eintrag": "Drogerie, Kitzingen: Fiebersaft, Pflaster"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "15:12",
+   "quelle": "Standort",
+   "eintrag": "Apotheke, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "15:27",
+   "quelle": "Suche",
+   "eintrag": "mathe brüche erklärung"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "16:13",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Volkach: Milch, Brot, Kaffee"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "20:19",
+   "quelle": "Suche",
+   "eintrag": "steuererklärung frist 2026"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "22:23",
+   "quelle": "Suche",
+   "eintrag": "hausarbeit zitieren regeln"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "22:26",
+   "quelle": "App",
+   "eintrag": "Video-App: 48 min"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "22:28",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "22:34",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "22:37",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "22:50",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "23:02",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "23:27",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "03:15",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "06:30",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "06:44",
+   "quelle": "App",
+   "eintrag": "Smartwatch: Schlaf 7 h 6 min"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "06:45",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "06:57",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "07:00",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "08:11",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "08:37",
+   "quelle": "Suche",
+   "eintrag": "pizza lieferdienst würzburg nachts"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "08:43",
+   "quelle": "Suche",
+   "eintrag": "lustige katzenvideos"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "09:05",
+   "quelle": "Suche",
+   "eintrag": "arzt volkach notdienst"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "09:15",
+   "quelle": "Standort",
+   "eintrag": "Radweg, Steigerwald"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "12:20",
+   "quelle": "Einkauf",
+   "eintrag": "Tankstelle, Würzburg: Super E10, 61,20 €"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "15:05",
+   "quelle": "Standort",
+   "eintrag": "Apotheke, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "17:12",
+   "quelle": "App",
+   "eintrag": "Navi-App: Route Würzburg → Nürnberg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "22:01",
+   "quelle": "Suche",
+   "eintrag": "günstige kinderschuhe"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "22:05",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "22:17",
+   "quelle": "App",
+   "eintrag": "Foto-App: 23 neue Fotos"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "22:44",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "22:48",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8892",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "22:50",
+   "quelle": "Standort",
+   "eintrag": "Birkenweg, Wiesentheid"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "23:22",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "23:37",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  }
+ ]
+}
