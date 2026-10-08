@@ -47,12 +47,14 @@ def deployed_html() -> list[Path]:
     # nicht gebaute Seite B) scheitern — ein Artefakt der Baureihenfolge, kein Defekt.
     files = sorted(REPO_ROOT.glob("unterricht/escape-games/**/*.html"))
     files += sorted(REPO_ROOT.glob("unterricht/wib/**/*.html"))
+    files += sorted(REPO_ROOT.glob("unterricht/datenspuren/**/*.html"))
     return [f for f in files if not _is_scratch(f)]
 
 
 def deployed_json() -> list[Path]:
     files = sorted(REPO_ROOT.glob("unterricht/escape-games/*/data.json"))
     files += sorted(REPO_ROOT.glob("assets/data/*.json"))
+    files += sorted(REPO_ROOT.glob("unterricht/datenspuren/*/data.json"))
     vj = REPO_ROOT / "assets" / "versions.json"
     if vj.exists():
         files.append(vj)
