@@ -22,6 +22,7 @@ Beide ändern sich nur gemeinsam. main() prüft bei jedem Lauf je Fall: Lösbark
 alle Prüfeingaben (richtig/falsch), Nachname nicht bei anderen Nutzern, kein Hinweis auf den echten Fall.
 
 Aufruf:  python3 tools/datenspuren/build_datensatz.py [--loesung PFAD.md] [--auszug-dir ORDNER]
+Mit --auszug-dir läuft danach tools/datenspuren/test_seite.js (Prüfcode der Seite gegen dieselben Eingaben).
 """
 import argparse
 import base64
@@ -839,6 +840,11 @@ def main():
         print('Lösung:', a.loesung)
     if a.auszug_dir:
         print('Auszüge:', a.auszug_dir)
+        # Gegenprobe: derselbe Satz Prüfeingaben gegen den Code der SEITE (datenspuren.js)
+        import subprocess
+        r = subprocess.run(['node', str(ROOT / 'tools' / 'datenspuren' / 'test_seite.js'), a.auszug_dir])
+        if r.returncode:
+            return r.returncode
     return 0
 
 
