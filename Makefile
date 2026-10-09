@@ -62,8 +62,9 @@ site: clean-site
 	[ -d profil ] && rsync -a --exclude='_*/' --exclude='.DS_Store' profil _site/ || true
 	[ -d impressum ] && rsync -a --exclude='_*/' --exclude='.DS_Store' impressum _site/ || true
 	[ -d datenschutz ] && rsync -a --exclude='_*/' --exclude='.DS_Store' datenschutz _site/ || true
+	[ -d lernen ] && rsync -a --exclude='_*/' --exclude='.DS_Store' lernen _site/ || true
 	touch _site/.nojekyll
-	@echo "_site/ gebaut (Allowlist: index.html, 404.html, favicon.*, CNAME, unterricht/, assets/, profil/, impressum/, datenschutz/)."
+	@echo "_site/ gebaut (Allowlist: index.html, 404.html, favicon.*, CNAME, unterricht/, assets/, profil/, impressum/, datenschutz/, lernen/)."
 
 clean-site:
 	rm -rf _site
