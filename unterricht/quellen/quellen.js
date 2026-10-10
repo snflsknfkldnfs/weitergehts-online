@@ -16,8 +16,14 @@
  *                  "glossar": { "Fachwort": "Erklaerung" },
  *                  "link": { "text", "url" } | null,      // zum Original (neuer Tab)
  *                  "nachweis", "plakat": { "bild", "unterschrift", "nachweis" } | null,
- *                  "ki_prompt": "..." } ]
+ *                  "ki_prompt": "...",
+ *                  "entlastet": [ "Absatz in leichter Sprache, {{Fachwort}} erlaubt" ] | fehlt } ],
+ *   "start_fassung": "wortlaut" | "entlastet"        // welcher Reiter zuerst offen ist (Standard: wortlaut)
  * }
+ *
+ * Entlastete Fassung (seit 1.2, Werkzeugkasten PL-0256): Hat eine Quelle "entlastet", zeigt sie zwei Reiter
+ * „Originaltext" und „Leichter lesen". Die leichte Fassung trägt immer die Marke „Leichter gesagt – nicht der
+ * Originaltext"; der Originaltext bleibt mit einem Tipp erreichbar und wird nie still ersetzt.
  */
 (function () {
   'use strict';
@@ -110,6 +116,45 @@
     document.body.classList.add('q-gesperrt');
   }
 
+  /* ── Zwei Fassungen: Originaltext und leichte Fassung als Reiter ── */
+  function fassungenBauen(art, q, original, start) {
+    var leicht = el('div', 'q-text q-leicht');
+    var marke = el('p', 'q-leicht-marke', 'Leichter gesagt – das ist nicht der Originaltext.');
+    leicht.appendChild(marke);
+    q.entlastet.forEach(function (a) { leicht.appendChild(absatzBauen(a, q.glossar || {})); });
+
+    var leiste = el('div', 'q-fassungen');
+    leiste.setAttribute('role', 'tablist');
+    leiste.setAttribute('aria-label', 'Fassung von ' + q.kennung);
+    var reiter = [
+      { name: 'wortlaut', titel: 'Originaltext', feld: original },
+      { name: 'entlastet', titel: 'Leichter lesen', feld: leicht }
+    ];
+    var knoepfe = reiter.map(function (r) {
+      var b = el('button', 'q-reiter', r.titel);
+      b.type = 'button';
+      b.setAttribute('role', 'tab');
+      r.feld.setAttribute('role', 'tabpanel');
+      b.addEventListener('click', function () { zeigen(r.name); });
+      leiste.appendChild(b);
+      return b;
+    });
+    function zeigen(name) {
+      reiter.forEach(function (r, i) {
+        var an = r.name === name;
+        r.feld.hidden = !an;
+        knoepfe[i].setAttribute('aria-selected', an ? 'true' : 'false');
+        knoepfe[i].classList.toggle('q-aktiv', an);
+      });
+    }
+    art.appendChild(leiste);
+    art.appendChild(original);
+    art.appendChild(leicht);
+    zeigen(start === 'entlastet' ? 'entlastet' : 'wortlaut');
+  }
+
+  var startFassung = 'wortlaut';
+
   function quelleBauen(q, mitKi) {
     var art = el('article', 'q-quelle q-' + (q.farbe || 'grau'));
     art.id = q.id;
@@ -125,7 +170,11 @@
 
     var text = el('div', 'q-text');
     q.absaetze.forEach(function (a) { text.appendChild(absatzBauen(a, q.glossar || {})); });
-    art.appendChild(text);
+    if (q.entlastet && q.entlastet.length) {
+      fassungenBauen(art, q, text, startFassung);
+    } else {
+      art.appendChild(text);
+    }
     var nw = el('p', 'q-nachweis', q.nachweis);
     if (q.link && q.link.url) {
       var a = el('a', 'q-link', q.link.text || 'Zum Original');
@@ -173,6 +222,7 @@
       var h = document.getElementById('q-ki-text');
       h.textContent = d.ki_hinweis; h.hidden = false;
     }
+    startFassung = d.start_fassung || 'wortlaut';
     var raum = document.getElementById('q-quellen');
     d.quellen.forEach(function (q) { raum.appendChild(quelleBauen(q, !!d.ki_hilfe)); });
 

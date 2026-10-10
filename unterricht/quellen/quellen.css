@@ -169,3 +169,17 @@ body.q-gesperrt { overflow: hidden; }
   background: #fff; color: var(--q-text); border: 0; border-radius: 999px;
   padding: 10px 18px; min-height: 44px; cursor: pointer;
 }
+
+/* ── Zwei Fassungen (1.2): Originaltext | Leichter lesen ──────────────── */
+.q-fassungen { display: flex; gap: 6px; margin: 10px 0 4px; }
+.q-reiter {
+  font: inherit; font-size: .9rem; font-weight: 600;
+  padding: 6px 14px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--q-linie); background: var(--q-bg); color: var(--q-gedaempft);
+}
+.q-reiter.q-aktiv { background: var(--q-akzent); border-color: var(--q-akzent); color: #fff; }
+.q-leicht { border-left: 4px solid var(--q-akzent); padding-left: 12px; }
+.q-leicht-marke {
+  margin: 0 0 8px; font-size: .85rem; font-weight: 600; color: var(--q-akzent);
+  text-transform: none; letter-spacing: .01em;
+}
