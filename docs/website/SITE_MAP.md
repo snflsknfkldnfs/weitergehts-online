@@ -14,6 +14,7 @@
 | **Unterricht · Escape-Games** | `unterricht/escape-games/<id>/` | `data.json` (meta+mappen+materialien+aufgaben) → gerendert von `unterricht/assets/js/escape-engine.js` | `unterricht/escape-games/_template/` | live (1 Game: Syrien) |
 | **Unterricht · WiB-Tools** | `unterricht/wib/` | self-contained HTML (Chart.js via CDN), `localStorage`, kein Backend/Tracking | — | live (2 Tools: Haushaltsbuch + Geld-Wert) |
 | **Unterricht · Lernraum** | `assets/data/*.json` | via `make lernraum` generierte Glossar-/KE-Daten | `tools/lernraum/` | Daten vorhanden; Konsument-Seiten teils mit Examens-Schiene archiviert |
+| **Lernen · Stoffliste PhC III** | `lernen/phc3-stoffliste/` (einfache Karten, unverändert seit 2026-10-09) + `lernen/phc3-stoffliste/abfrage/` (Lernmodus) | self-contained HTML, 210 Karten (RDKit-SVG) im JSON-Block; Lernmodus mit Reitern Abfrage (Wiederholung mit Abstand, 2 Richtungen, Stufen A–D, Familien) · Familien · Stand (Export/Import); `localStorage`, kein Backend; noindex, nicht verlinkt. Datenblock via `lernen/phc3-stoffliste/_build/build.py` aus `karten.json` + `ordnung.tsv` (Quelle: `~/weitergehts.online/Bahar/Zulassungsklausur/`) | — | live (privat, Bahar) |
 | **Impressum** | `impressum/` | statische Pflichtangaben (§ 5 DDG) | — | live (⚠ Anschrift `TODO-PAUL`) |
 | **Datenschutz** | `datenschutz/` | statische DSGVO-Erklärung (Hosting/Cookies/Fonts/Dritt-Inhalte/Rechte) | — | live (⚠ Anschrift `TODO-PAUL`) |
 | **404** | `404.html` | „umgezogen"-Seite mit root-absoluten Links (unter beliebiger URL ausgeliefert) | — | live |
