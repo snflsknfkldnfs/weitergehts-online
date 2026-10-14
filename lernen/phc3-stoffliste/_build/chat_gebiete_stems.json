@@ -1,0 +1,210 @@
+{
+ "gebiete": {
+  "H": "Herz, Kreislauf, Niere",
+  "S": "Schmerz, Fieber, Entzündung",
+  "A": "Atemwege, Husten, Allergie",
+  "P": "Psyche, Schlaf, Angst",
+  "N": "Nerven: Epilepsie, Parkinson, Migräne, Demenz",
+  "I": "Bakterielle Infektionen",
+  "V": "Viren, Pilze, Parasiten, Malaria",
+  "M": "Magen-Darm",
+  "D": "Diabetes, Hormone, Stoffwechsel",
+  "K": "Krebs & Immunsuppression",
+  "L": "Auge, Nase, Haut, Mund (lokal)",
+  "X": "Notfall & Antidote"
+ },
+ "stems": [
+  [
+   "-pril",
+   "ACE-Hemmer",
+   "Hypertonie, Herzinsuffizienz",
+   "Captopril, Ramipril"
+  ],
+  [
+   "-sartan",
+   "AT1-Antagonist",
+   "Hypertonie, Herzinsuffizienz",
+   "Valsartan, Candesartan"
+  ],
+  [
+   "-dipin",
+   "Ca-Antagonist",
+   "Hypertonie",
+   "Nifedipin, Amlodipin, Lercanidipin"
+  ],
+  [
+   "-olol",
+   "β-Blocker",
+   "Hypertonie, KHK; im Auge: Glaukom",
+   "Bisoprolol, Metoprolol, Timolol"
+  ],
+  [
+   "-semid / -thiazid",
+   "Diuretikum",
+   "Ödeme, Hypertonie",
+   "Furosemid, Torasemid, Hydrochlorothiazid"
+  ],
+  [
+   "-zolamid",
+   "Carboanhydrase-Hemmer",
+   "Glaukom",
+   "Acetazolamid, Dorzolamid"
+  ],
+  [
+   "-statin",
+   "HMG-CoA-Reduktase-Hemmer",
+   "Hypercholesterinämie",
+   "Atorvastatin, Simvastatin"
+  ],
+  [
+   "-xaban",
+   "Faktor-Xa-Hemmer",
+   "Thromboseprophylaxe",
+   "Rivaroxaban"
+  ],
+  [
+   "-osin",
+   "α1-Blocker",
+   "Prostatahyperplasie, Hypertonie",
+   "Prazosin, Tamsulosin"
+  ],
+  [
+   "-terol",
+   "β2-Agonist",
+   "Asthma, COPD",
+   "Formoterol, Indacaterol (+ Salbutamol)"
+  ],
+  [
+   "-tropium",
+   "Anticholinergikum (inhalativ)",
+   "COPD",
+   "Ipratropium, Tiotropium"
+  ],
+  [
+   "-son / -olon / -sonid",
+   "Glucocorticoid",
+   "Entzündung, Allergie, Asthma",
+   "Dexamethason, Prednisolon, Budesonid"
+  ],
+  [
+   "-astin / -tadin / -izin",
+   "H1-Antihistaminikum",
+   "Allergie, Heuschnupfen",
+   "Azelastin, Loratadin, Cetirizin"
+  ],
+  [
+   "-zolin",
+   "α-Agonist",
+   "Abschwellend: Nase, Auge",
+   "Xylometazolin, Tetryzolin"
+  ],
+  [
+   "-profen / -proxen",
+   "NSAR",
+   "Schmerzen, Fieber, Entzündung",
+   "Ibuprofen, Naproxen"
+  ],
+  [
+   "-coxib",
+   "COX-2-Hemmer",
+   "Arthrose, Rheuma",
+   "Celecoxib"
+  ],
+  [
+   "-cain",
+   "Lokalanästhetikum",
+   "Örtliche Betäubung",
+   "Benzocain, Procain, Lidocain"
+  ],
+  [
+   "-azepam / -azolam",
+   "Benzodiazepin",
+   "Angst, Krampfanfall, Sedierung",
+   "Diazepam, Lorazepam, Midazolam"
+  ],
+  [
+   "-ipramin / -triptylin",
+   "Trizyklisches Antidepressivum",
+   "Depression",
+   "Imipramin, Amitriptylin"
+  ],
+  [
+   "-triptan",
+   "5-HT1B/1D-Agonist",
+   "Migräne",
+   "Sumatriptan, Naratriptan"
+  ],
+  [
+   "-prazol",
+   "Protonenpumpenhemmer",
+   "Ulkus, Reflux",
+   "Omeprazol, Pantoprazol"
+  ],
+  [
+   "-setron",
+   "5-HT3-Antagonist",
+   "Übelkeit bei Chemotherapie",
+   "Ondansetron"
+  ],
+  [
+   "-cillin / Cef-",
+   "β-Lactam-Antibiotikum",
+   "Bakterielle Infektionen",
+   "Amoxicillin, Penicillin V, Cefuroxim"
+  ],
+  [
+   "-floxacin",
+   "Gyrasehemmer",
+   "Harnwegs-, Atemwegsinfekte",
+   "Ofloxacin"
+  ],
+  [
+   "-cyclin",
+   "Tetracyclin",
+   "Bakterielle Infektionen",
+   "Doxycyclin, Tigecyclin"
+  ],
+  [
+   "-vir",
+   "Virustatikum",
+   "Herpes, HIV, Hepatitis B",
+   "Aciclovir, Tenofovir, Raltegravir, Efavirenz"
+  ],
+  [
+   "-azol (Haut)",
+   "Antimykotikum",
+   "Pilzinfektion",
+   "Clotrimazol"
+  ],
+  [
+   "-oquin / -guanil",
+   "Antimalariamittel",
+   "Malaria",
+   "Chloroquin, Proguanil (+ Atovaquon, Chinin)"
+  ],
+  [
+   "-gliptin / -gliflozin / -formin",
+   "Antidiabetikum",
+   "Diabetes Typ 2",
+   "Sitagliptin, Empagliflozin, Metformin"
+  ],
+  [
+   "-tinib",
+   "Tyrosinkinase-Hemmer",
+   "Krebs (CML)",
+   "Imatinib"
+  ],
+  [
+   "-trozol",
+   "Aromatase-Hemmer",
+   "Brustkrebs",
+   "Letrozol"
+  ],
+  [
+   "-dronsäure",
+   "Bisphosphonat",
+   "Osteoporose",
+   "Alendronsäure"
+  ]
+ ]
+}

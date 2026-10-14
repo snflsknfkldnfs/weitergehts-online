@@ -1,0 +1,125 @@
+name	tier	day	ak	akn	fam	fh
+Bisoprololfumarat	A	1	SS25/WS25	1	β-Blocker	Ar–O–CH2–CH(OH)–CH2–NH-iPr/tBu
+Timololhydrogenmaleat	A	1	SS25/WS25	1	β-Blocker	Ar–O–CH2–CH(OH)–CH2–NH-iPr/tBu
+Xylometazolin-HCl	A	1	SS25/WS25	1	Imidazoline	2-substituiertes Imidazolin
+Atropinsulfat	A	1	SS14	1	Parasympathikus	Cholinester, Tropanester, Carbamat
+Butylscopolamin-Bromid	A	1	SS17	1	Parasympathikus	Cholinester, Tropanester, Carbamat
+Ipratropiumbromid	A	1	SS24	1	Parasympathikus	Cholinester, Tropanester, Carbamat
+Tiotropiumbromid	A	1	SS25/WS25	1	Parasympathikus	Cholinester, Tropanester, Carbamat
+Sumatriptanhydrogensuccinat	A	1	SS24 · SS25/WS25	2	Indole / Triptane	Tryptamin-Gerüst
+Salicylsäure	A	2			Analgetika / NSAR	Arylessig-/Arylpropionsäuren, Salicylate, Pyrazolone
+Acetylsalicylsäure	A	2			Analgetika / NSAR	Arylessig-/Arylpropionsäuren, Salicylate, Pyrazolone
+Paracetamol	A	2	SS24	1	Analgetika / NSAR	Arylessig-/Arylpropionsäuren, Salicylate, Pyrazolone
+Ibuprofen	A	2	SS21	1	Analgetika / NSAR	Arylessig-/Arylpropionsäuren, Salicylate, Pyrazolone
+Naproxen	A	2	SS24	1	Analgetika / NSAR	Arylessig-/Arylpropionsäuren, Salicylate, Pyrazolone
+Diclofenac-Natrium	A	2			Analgetika / NSAR	Arylessig-/Arylpropionsäuren, Salicylate, Pyrazolone
+Indometacin	A	2			Analgetika / NSAR	Arylessig-/Arylpropionsäuren, Salicylate, Pyrazolone
+Celecoxib	A	2			Analgetika / NSAR	Arylessig-/Arylpropionsäuren, Salicylate, Pyrazolone
+Phenazon	A	2			Analgetika / NSAR	Arylessig-/Arylpropionsäuren, Salicylate, Pyrazolone
+Metamizol-Natrium	A	2			Analgetika / NSAR	Arylessig-/Arylpropionsäuren, Salicylate, Pyrazolone
+Benzydamin-HCl	A	2	SS25/WS25 (Struktur→Name)	1	Analgetika / NSAR	Arylessig-/Arylpropionsäuren, Salicylate, Pyrazolone
+Ambroxol-HCl	A	2	SS25/WS25	1	Aminobenzoesäure-Derivate / Anilide	p-Aminobenzoesäureester, Anilide, Benzylamine
+Pentoxyverin	A	2	SS25/WS25	1	Synthetische Opioide / Antitussiva	Piperidine, offenkettige Opioide
+Phenobarbital	A	3			Weitere ZNS-Stoffe	Antiepileptika, Antidepressiva, Neuroleptika
+Phenytoin-Natrium	A	3	SS14	1	Weitere ZNS-Stoffe	Antiepileptika, Antidepressiva, Neuroleptika
+Natriumvalproat	A	3	SS17 · SS21	2	Weitere ZNS-Stoffe	Antiepileptika, Antidepressiva, Neuroleptika
+Pregabalin	A	3			Weitere ZNS-Stoffe	Antiepileptika, Antidepressiva, Neuroleptika
+Haloperidol	A	3			Weitere ZNS-Stoffe	Antiepileptika, Antidepressiva, Neuroleptika
+Escitalopram	A	3			Weitere ZNS-Stoffe	Antiepileptika, Antidepressiva, Neuroleptika
+Venlafaxin	A	3	SS24	1	Weitere ZNS-Stoffe	Antiepileptika, Antidepressiva, Neuroleptika
+Methylphenidat	A	3	SS24	1	Weitere ZNS-Stoffe	Antiepileptika, Antidepressiva, Neuroleptika
+Fingolimod-HCl	A	3			Weitere ZNS-Stoffe	Antiepileptika, Antidepressiva, Neuroleptika
+Dronabinol	A	3			Weitere ZNS-Stoffe	Antiepileptika, Antidepressiva, Neuroleptika
+Captopril	A	4	SS24	1	RAAS-Hemmstoffe	Prolin-Derivate, Biphenyl-Tetrazole
+Ramipril	A	4	SS17 · SS21	2	RAAS-Hemmstoffe	Prolin-Derivate, Biphenyl-Tetrazole
+Valsartan	A	4	SS25/WS25	1	RAAS-Hemmstoffe	Prolin-Derivate, Biphenyl-Tetrazole
+Candesartancilexetil	A	4			RAAS-Hemmstoffe	Prolin-Derivate, Biphenyl-Tetrazole
+Sacubitril	A	4			RAAS-Hemmstoffe	Prolin-Derivate, Biphenyl-Tetrazole
+Furosemid	A	4			Diuretika / CA-Hemmer	Sulfonamid (–SO2NH2) als roter Faden
+Torasemid	A	4	SS24 · SS25/WS25	2	Diuretika / CA-Hemmer	Sulfonamid (–SO2NH2) als roter Faden
+Hydrochlorothiazid	A	4	SS21	1	Diuretika / CA-Hemmer	Sulfonamid (–SO2NH2) als roter Faden
+Amilorid-HCl	A	4	SS17 (Struktur→Name)	1	Diuretika / CA-Hemmer	Sulfonamid (–SO2NH2) als roter Faden
+Acetazolamid	A	4			Diuretika / CA-Hemmer	Sulfonamid (–SO2NH2) als roter Faden
+Dorzolamid-HCl	A	4	SS21	1	Diuretika / CA-Hemmer	Sulfonamid (–SO2NH2) als roter Faden
+Omeprazol	A	5	SS14	1	Magen-Darm	PPI = Benzimidazol-Sulfoxid
+Pantoprazol	A	5			Magen-Darm	PPI = Benzimidazol-Sulfoxid
+Ranitidin-HCl	A	5			Magen-Darm	PPI = Benzimidazol-Sulfoxid
+Ondansetron	A	5			Magen-Darm	PPI = Benzimidazol-Sulfoxid
+Bisacodyl	A	5	SS17 · SS21 · SS24	3	Magen-Darm	PPI = Benzimidazol-Sulfoxid
+Racecadotril	A	5	SS21 (Struktur→Name)	1	Magen-Darm	PPI = Benzimidazol-Sulfoxid
+Tamoxifen	A	5	SS25/WS25	1	Zytostatika / Immunsuppressiva	Antimetabolite, Alkylanzien, Kinase-Hemmer
+Aciclovir	A	6	SS24 (Struktur→Name)	1	Virustatika / Antimykotika / Antiparasitika	Nucleosid-Analoga, Azole, Chinoline
+Zidovudin	A	6			Virustatika / Antimykotika / Antiparasitika	Nucleosid-Analoga, Azole, Chinoline
+Tenofovir	A	6			Virustatika / Antimykotika / Antiparasitika	Nucleosid-Analoga, Azole, Chinoline
+Efavirenz	A	6			Virustatika / Antimykotika / Antiparasitika	Nucleosid-Analoga, Azole, Chinoline
+Raltegravir-Kalium	A	6			Virustatika / Antimykotika / Antiparasitika	Nucleosid-Analoga, Azole, Chinoline
+Clotrimazol	A	6	SS24	1	Virustatika / Antimykotika / Antiparasitika	Nucleosid-Analoga, Azole, Chinoline
+Ciclopiroxolamin	A	6	SS25/WS25 (Struktur→Name)	1	Virustatika / Antimykotika / Antiparasitika	Nucleosid-Analoga, Azole, Chinoline
+Chloroquinhydrogenphosphat	A	6	SS17	1	Virustatika / Antimykotika / Antiparasitika	Nucleosid-Analoga, Azole, Chinoline
+Atovaquon	A	6			Virustatika / Antimykotika / Antiparasitika	Nucleosid-Analoga, Azole, Chinoline
+Proguanil-HCl	A	6	SS25/WS25	1	Virustatika / Antimykotika / Antiparasitika	Nucleosid-Analoga, Azole, Chinoline
+Niclosamid	A	6	SS25/WS25	1	Virustatika / Antimykotika / Antiparasitika	Nucleosid-Analoga, Azole, Chinoline
+L-DOPA	B	1			Phenylethylamine / Catecholamine	Ar–CH(OH)–CH2–NHR; Brenzcatechin oder Ersatz
+Benserazid	B	1			Phenylethylamine / Catecholamine	Ar–CH(OH)–CH2–NHR; Brenzcatechin oder Ersatz
+Isoprenalinsulfat	B	1			Phenylethylamine / Catecholamine	Ar–CH(OH)–CH2–NHR; Brenzcatechin oder Ersatz
+Etilefrin-HCl	B	1			Phenylethylamine / Catecholamine	Ar–CH(OH)–CH2–NHR; Brenzcatechin oder Ersatz
+Phenylephrin-HCl	B	1			Phenylethylamine / Catecholamine	Ar–CH(OH)–CH2–NHR; Brenzcatechin oder Ersatz
+Ephedrin-HCl	B	1	SS14	1	Phenylethylamine / Catecholamine	Ar–CH(OH)–CH2–NHR; Brenzcatechin oder Ersatz
+Pseudoephedrin-HCl	B	1			Phenylethylamine / Catecholamine	Ar–CH(OH)–CH2–NHR; Brenzcatechin oder Ersatz
+Salbutamolsulfat	B	1			Phenylethylamine / Catecholamine	Ar–CH(OH)–CH2–NHR; Brenzcatechin oder Ersatz
+Formoterolfumarat	B	1	SS17	1	Phenylethylamine / Catecholamine	Ar–CH(OH)–CH2–NHR; Brenzcatechin oder Ersatz
+Indacaterolhydrogenmaleat	B	1			Phenylethylamine / Catecholamine	Ar–CH(OH)–CH2–NHR; Brenzcatechin oder Ersatz
+Metoprololtartrat	B	1			β-Blocker	Ar–O–CH2–CH(OH)–CH2–NH-iPr/tBu
+Clonidin-HCl	B	1			Imidazoline	2-substituiertes Imidazolin
+Tetryzolin-HCl	B	1	SS21	1	Imidazoline	2-substituiertes Imidazolin
+Neostigmin-Bromid	B	1			Parasympathikus	Cholinester, Tropanester, Carbamat
+Pilocarpin-HCl	B	1			Parasympathikus	Cholinester, Tropanester, Carbamat
+Donepezil	B	1			Parasympathikus	Cholinester, Tropanester, Carbamat
+Naratriptan-HCl	B	1			Indole / Triptane	Tryptamin-Gerüst
+Benzocain	B	2			Aminobenzoesäure-Derivate / Anilide	p-Aminobenzoesäureester, Anilide, Benzylamine
+Procain-HCl	B	2			Aminobenzoesäure-Derivate / Anilide	p-Aminobenzoesäureester, Anilide, Benzylamine
+Lidocain-HCl	B	2	SS21	1	Aminobenzoesäure-Derivate / Anilide	p-Aminobenzoesäureester, Anilide, Benzylamine
+Metoclopramid-HCl	B	2			Aminobenzoesäure-Derivate / Anilide	p-Aminobenzoesäureester, Anilide, Benzylamine
+Bromhexin-HCl	B	2			Aminobenzoesäure-Derivate / Anilide	p-Aminobenzoesäureester, Anilide, Benzylamine
+Fentanyl	B	2			Synthetische Opioide / Antitussiva	Piperidine, offenkettige Opioide
+Loperamid-HCl	B	2			Synthetische Opioide / Antitussiva	Piperidine, offenkettige Opioide
+Methadon-HCl	B	2			Synthetische Opioide / Antitussiva	Piperidine, offenkettige Opioide
+Tramadol-HCl	B	2			Synthetische Opioide / Antitussiva	Piperidine, offenkettige Opioide
+Tilidin-HCl	B	2	SS24	1	Synthetische Opioide / Antitussiva	Piperidine, offenkettige Opioide
+Diazepam	B	3	SS14	1	Benzodiazepine / Z-Substanz	1,4-Benzodiazepin
+Lorazepam	B	3			Benzodiazepine / Z-Substanz	1,4-Benzodiazepin
+Midazolam	B	3			Benzodiazepine / Z-Substanz	1,4-Benzodiazepin
+Flumazenil	B	3			Benzodiazepine / Z-Substanz	1,4-Benzodiazepin
+Zopiclon	B	3			Benzodiazepine / Z-Substanz	1,4-Benzodiazepin
+Diphenhydramin-HCl	B	4			Antihistaminika	Benzhydryl-/Diaryl-Gerüst + Amin
+Dimetindenmaleat	B	4			Antihistaminika	Benzhydryl-/Diaryl-Gerüst + Amin
+Cetirizin-2 HCl	B	4	SS21	1	Antihistaminika	Benzhydryl-/Diaryl-Gerüst + Amin
+Azelastin-HCl	B	4	SS24 (Struktur→Name)	1	Antihistaminika	Benzhydryl-/Diaryl-Gerüst + Amin
+Nifedipin	B	4	SS21 (Struktur→Name)	1	Ca-Antagonisten	1,4-Dihydropyridin; Verapamil, Diltiazem
+Amlodipinbesylat	B	4	SS14	1	Ca-Antagonisten	1,4-Dihydropyridin; Verapamil, Diltiazem
+Lercanidipin	B	4			Ca-Antagonisten	1,4-Dihydropyridin; Verapamil, Diltiazem
+Verapamil-HCl	B	4	SS14	1	Ca-Antagonisten	1,4-Dihydropyridin; Verapamil, Diltiazem
+Diltiazem-HCl	B	4			Ca-Antagonisten	1,4-Dihydropyridin; Verapamil, Diltiazem
+Metformin-HCl	B	4	SS17 · SS21	2	Antidiabetika	Biguanid, Sulfonylharnstoffe, Gliptin, Gliflozin
+Tolbutamid	B	4			Antidiabetika	Biguanid, Sulfonylharnstoffe, Gliptin, Gliflozin
+Sitagliptin	B	4			Antidiabetika	Biguanid, Sulfonylharnstoffe, Gliptin, Gliflozin
+Empagliflozin	B	4			Antidiabetika	Biguanid, Sulfonylharnstoffe, Gliptin, Gliflozin
+Penicillin-V-Kalium	B	5			β-Lactam-Antibiotika	β-Lactam + Thiazolidin/Dihydrothiazin
+Amoxicillin	B	5	SS17 · SS21	2	β-Lactam-Antibiotika	β-Lactam + Thiazolidin/Dihydrothiazin
+Pivmecillinam-HCl	B	5			β-Lactam-Antibiotika	β-Lactam + Thiazolidin/Dihydrothiazin
+Cefuroxim	B	5			β-Lactam-Antibiotika	β-Lactam + Thiazolidin/Dihydrothiazin
+Clavulansäure	B	5			β-Lactam-Antibiotika	β-Lactam + Thiazolidin/Dihydrothiazin
+Ofloxacin	B	5	SS17	1	Weitere Antibiotika	Tetracycline, Chinolone, Sulfonamide, Nitroaromaten
+Sulfamethoxazol	B	5			Weitere Antibiotika	Tetracycline, Chinolone, Sulfonamide, Nitroaromaten
+Trimethoprim	B	5			Weitere Antibiotika	Tetracycline, Chinolone, Sulfonamide, Nitroaromaten
+Chloramphenicol	B	5			Weitere Antibiotika	Tetracycline, Chinolone, Sulfonamide, Nitroaromaten
+Metronidazol	B	5	SS17	1	Weitere Antibiotika	Tetracycline, Chinolone, Sulfonamide, Nitroaromaten
+Nitrofurantoin	B	5			Weitere Antibiotika	Tetracycline, Chinolone, Sulfonamide, Nitroaromaten
+Isoniazid	B	5	SS24	1	Weitere Antibiotika	Tetracycline, Chinolone, Sulfonamide, Nitroaromaten
+Ethambutol-2 HCl	B	5			Weitere Antibiotika	Tetracycline, Chinolone, Sulfonamide, Nitroaromaten
+5-Fluorouracil	B	5			Zytostatika / Immunsuppressiva	Antimetabolite, Alkylanzien, Kinase-Hemmer
+Folsäure	B	5	SS14	1	Zytostatika / Immunsuppressiva	Antimetabolite, Alkylanzien, Kinase-Hemmer
+Methotrexat	B	5			Zytostatika / Immunsuppressiva	Antimetabolite, Alkylanzien, Kinase-Hemmer
+Azathioprin	B	5			Zytostatika / Immunsuppressiva	Antimetabolite, Alkylanzien, Kinase-Hemmer
+Cyclophosphamid	B	5			Zytostatika / Immunsuppressiva	Antimetabolite, Alkylanzien, Kinase-Hemmer
+Acetylcystein	B	6	SS14 · SS21	2	Vitamine / Purine / Sonstige	

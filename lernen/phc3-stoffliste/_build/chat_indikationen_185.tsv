@@ -1,0 +1,186 @@
+name	gebiet	kurz	merkhilfe	zeichnen
+5-Fluorouracil	K	Zytostatikum (Darmkrebs, Brustkrebs)	5-FU: falsches Uracil für Tumor-DNA	True
+Acetazolamid	L	Glaukom	Carboanhydrase-Hemmer senkt Augeninnendruck; auch Höhenkrankheit	True
+Acetylcystein	A	Schleimlöser (Husten); Paracetamol-Antidot	ACC = ‚Abhusten mit Cystein‘; SH-Gruppe spaltet Schleim	True
+Acetylsalicylsäure	S	Schmerzen, Fieber; Thrombozytenaggregationshemmung	Aspirin: hoch dosiert Schmerz, 100 mg fürs Herz	True
+Aciclovir	V	Herpes	-vir = Virus; Lippenherpes-Creme	True
+Alendronsäure	D	Osteoporose	-dronat/-dronsäure = Bisphosphonat = Knochen	False
+Aliskiren	H	Hypertonie	ALIS-KIREN → ReNIN-Hemmer → Blutdruck	False
+Allopurinol	D	Gicht	‚Alle Purine weg‘ → weniger Harnsäure	False
+Ambroxol-HCl	A	Schleimlöser; Halsschmerzen	Mucosolvan / Lutschtablette bei Halsweh	True
+Amilorid-HCl	H	Diuretikum (Ödeme, Hypertonie)	kaliumsparend, Partner von HCT	True
+Amitriptylin-HCl	P	Depression; neuropathische Schmerzen	-triptylin/-ipramin = trizyklisches Antidepressivum	False
+Amlodipinbesylat	H	Hypertonie	-dipin = Ca-Antagonist = Blutdruck	True
+Amoxicillin	I	Bakterielle Infektionen (Atemwege, HWI)	-cillin = Penicillin	True
+Ascorbinsäure	D	Vitamin-C-Mangel (Skorbut)	A-SKORB-insäure → Anti-Skorbut	False
+Atorvastatin	H	Hypercholesterinämie	-statin = Cholesterin runter	False
+Atovaquon	V	Malaria (mit Proguanil)	Malarone = Atovaquon + Proguanil	True
+Atropinsulfat	X	Bradykardie; Mydriatikum; Organophosphat-Antidot	Tollkirsche: Pupille weit, Herz schneller	True
+Azathioprin	K	Immunsuppression	AZA-THIO-PRIN → Purin-Analogon bremst Immunzellen	True
+Azelastin-HCl	A	Allergische Rhinitis/Konjunktivitis	-astin/-tadin = Antihistaminikum; Heuschnupfen-Spray	True
+Benserazid	N	Parkinson (mit L-DOPA)	Madopar = L-DOPA + Benserazid	True
+Benzocain	L	Lokalanästhesie (Oberfläche)	-cain = Lokalanästhetikum; Halsschmerz-Lutschtablette	True
+Benzydamin-HCl	L	Entzündung im Mund-Rachen-Raum	Tantum Verde: grünes Gurgelzeug	True
+Bisacodyl	M	Obstipation	Dulcolax: ‚Bisa-Klo‘ → Abführmittel	True
+Bisoprololfumarat	H	Hypertonie, KHK, Herzinsuffizienz	-olol = β-Blocker = Herz	True
+Bromhexin-HCl	A	Schleimlöser	Brom-HEX-in: Vorstufe von Ambroxol	True
+Budesonid	A	Asthma, COPD (inhalativ)	-sonid/-son = Cortison; Pulmicort-Inhalator	False
+Buprenorphin	S	Starke Schmerzen; Opioid-Substitution	-orphin = Opioid; Pflaster und Substitution	False
+Butylscopolamin-Bromid	M	Krämpfe (Spasmolytikum) Magen-Darm	Buscopan: Bauchkrämpfe	True
+Candesartancilexetil	H	Hypertonie, Herzinsuffizienz	-sartan = AT1-Blocker = Blutdruck	True
+Captopril	H	Hypertonie, Herzinsuffizienz	-pril = ACE-Hemmer = Blutdruck	True
+Carbamazepin	N	Epilepsie; Trigeminusneuralgie	Carba-MAZ-epin: Antiepileptikum, auch Gesichtsnerv-Schmerz	False
+Carbimazol	D	Hyperthyreose	-imazol bei Schilddrüse: Thyreostatikum	False
+Cefuroxim	I	Bakterielle Infektionen	Cef- = Cephalosporin	True
+Celecoxib	S	Arthrose, Rheuma	-coxib = COX-2-Hemmer	True
+Cetirizin-2 HCl	A	Allergie (Heuschnupfen, Urtikaria)	-izin bei Allergie: Zyrtec	True
+Chinidinsulfat	H	Herzrhythmusstörungen	ChiniDIN: Diastereomer von Chinin, fürs Herz	False
+Chinin-HCl	V	Malaria; Wadenkrämpfe	Chinarinde, Tonic Water, Malaria	False
+Chloramphenicol	I	Reserveantibiotikum; Auge lokal	Chlor-AMPHENI-col: Antibiotikum, heute Augensalbe	True
+Chlorhexidindiacetat	V	Antiseptikum (Mund, Haut)	Chlorhexamed Mundspülung	False
+Chloroquinhydrogenphosphat	V	Malaria; Rheuma, Lupus	-oquin = Chinolin = Malaria	True
+Chlorpromazin-HCl	P	Psychosen (Neuroleptikum)	-promazin = Phenothiazin-Neuroleptikum	False
+Ciclopiroxolamin	V	Pilzinfektion (Haut, Nägel)	Nagellack gegen Nagelpilz	True
+Clavulansäure	I	β-Lactamase-Hemmer (mit Amoxicillin)	Augmentan = Amoxi + Clav	True
+Clonidin-HCl	H	Hypertonie; Entzug	-onidin = α2-Agonist, senkt Sympathikus	True
+Clopidogrel	H	Thrombozytenaggregationshemmung (Stent, Infarkt)	Plavix: Blutplättchen-Bremse nach Stent	False
+Clotrimazol	V	Pilzinfektion (Haut, Vagina)	-azol = Antimykotikum; Canesten	True
+Codeindihydrogenphosphat	A	Reizhusten; Schmerzen	Codein: Hustenstiller-Opioid	False
+Coffein	N	Analeptikum; Kopfschmerz (Kombi)	Kaffee: wach + in Thomapyrin	False
+Cyclophosphamid	K	Zytostatikum; Immunsuppression	N-Lost: alkyliert DNA	True
+Dexamethason	S	Entzündung, Allergie, Hirnödem	-son = Glucocorticoid	False
+Dexpanthenol	L	Wundheilung, Haut	Bepanthen-Salbe	False
+Dextrometorphan-HBr	A	Reizhusten	-orphan ohne Opioid-Wirkung: Hustenstiller	False
+Diazepam	P	Angst, Krampfanfälle, Muskelverspannung	-azepam = Benzodiazepin; Valium	True
+Diclofenac-Natrium	S	Schmerzen, Entzündung, Rheuma	Voltaren-Gel	True
+Dihydrocodeinhydrogentartrat	A	Reizhusten	wie Codein: Hustenstiller	False
+Diltiazem-HCl	H	Hypertonie, Angina pectoris, Rhythmusstörungen	Ca-Antagonist vom Benzothiazepin-Typ	True
+Dimetindenmaleat	L	Juckreiz, Allergie (Haut)	Fenistil-Gel bei Mückenstich	True
+Diphenhydramin-HCl	P	Schlafstörungen; Übelkeit	altes H1-Antihistaminikum macht müde: Schlaftablette	True
+Donepezil	N	Alzheimer-Demenz	-pezil: AChE-Hemmer gegen Vergessen	True
+Dorzolamid-HCl	L	Glaukom	-zolamid = Carboanhydrase-Hemmer → Augentropfen	True
+Doxepin-HCl	P	Depression, Angst, Schlafstörungen	trizyklisch, stark sedierend	False
+Doxycyclin	I	Bakterielle Infektionen (Borreliose, Akne)	-cyclin = Tetracyclin	False
+Dronabinol	N	Spastik bei MS; Appetitlosigkeit	THC = Cannabis-Wirkstoff	True
+Efavirenz	V	HIV	-vir- = Virus; NNRTI	True
+Empagliflozin	D	Diabetes Typ 2; Herzinsuffizienz	-gliflozin = SGLT2: Zucker über Urin	True
+Ephedrin-HCl	H	Hypotonie (Narkose)	Ephedra-Pflanze: Sympathomimetikum hebt Blutdruck	True
+Escitalopram	P	Depression, Angststörung	-oxetin/-pram = SSRI	True
+Ethambutol-2 HCl	I	Tuberkulose	TB-Mittel: Isoniazid, Ethambutol	True
+Ethinylestradiol	D	Kontrazeption	-estradiol = Östrogen der Pille	False
+Etilefrin-HCl	H	Hypotonie	Effortil: -frin = Sympathomimetikum hebt Blutdruck	True
+Fentanyl	S	Starke Schmerzen; Narkose	-fentanil = stärkstes Opioid, Pflaster	True
+Finasterid	D	Prostatavergrößerung; Haarausfall	-sterid = 5α-Reduktase-Hemmer	False
+Fingolimod-HCl	N	Multiple Sklerose	-imod = Immunmodulator bei MS	True
+Flumazenil	X	Benzodiazepin-Antidot	-mazenil: Gegenmittel zu -azepam	True
+Folsäure	D	Folsäuremangel, Schwangerschaft	Vitamin B9 für Neuralrohr	True
+Formoterolfumarat	A	Asthma, COPD	-terol = β2-Agonist = Asthma	True
+Furosemid	H	Ödeme, Herzinsuffizienz	-semid = Schleifendiuretikum; Lasix	True
+Glimepirid	D	Diabetes Typ 2	Gli- = Glukose; Sulfonylharnstoff	False
+Haloperidol	P	Psychosen, Delir	Haldol: -peridol = Neuroleptikum	True
+Hyaluronsäure	L	Arthrose (Gelenk); trockenes Auge	Gleitmittel für Gelenk und Auge	False
+Hydrochlorothiazid	H	Hypertonie, Ödeme	-thiazid = Diuretikum; HCT	True
+Hydrocortison	L	Ekzeme (topisch); Nebennierenschwäche	Cortison-Creme gegen Juckreiz	False
+Ibuprofen	S	Schmerzen, Fieber, Entzündung	-profen = NSAR	True
+Imatinib	K	CML (Leukämie)	-tinib = Tyrosinkinase-Hemmer = Krebs	False
+Imipramin-HCl	P	Depression	-ipramin = trizyklisches Antidepressivum	False
+Indacaterolhydrogenmaleat	A	COPD	-terol = β2-Agonist	True
+Indometacin	S	Rheuma, Gichtanfall	NSAR mit Indol	True
+Ipratropiumbromid	A	COPD, Asthma	-tropium = Anticholinergikum inhalativ	True
+Isoniazid	I	Tuberkulose	INH = TB	True
+Isoprenalinsulfat	X	Bradykardie, AV-Block	β-Agonist macht Herz schneller	True
+Isosorbiddinitrat	H	Angina pectoris	Nitrat = Herzspray-Prinzip	False
+L-DOPA	N	Parkinson	Dopamin-Vorstufe	True
+L-Thyroxin-Natrium	D	Hypothyreose	Schilddrüsenhormon T4	False
+Lactulose	M	Obstipation; hepatische Enzephalopathie	Zucker zieht Wasser in den Darm	False
+Lercanidipin	H	Hypertonie	-dipin = Ca-Antagonist	True
+Letrozol	K	Brustkrebs	-trozol = Aromatase-Hemmer	False
+Levonorgestrel	D	Kontrazeption; Pille danach	-gestrel = Gestagen	False
+Lidocain-HCl	L	Lokalanästhesie; Herzrhythmusstörungen	-cain = Lokalanästhetikum (Zahnarzt)	True
+Loperamid-HCl	M	Durchfall	Imodium: Opioid nur im Darm	True
+Loratadin	A	Allergie (Heuschnupfen)	-tadin = Antihistaminikum	False
+Lorazepam	P	Angst, Status epilepticus	-azepam = Benzodiazepin; Tavor	True
+Menadion	D	Vitamin K3 (Provitamin)	K wie Koagulation	False
+Metamizol-Natrium	S	Starke Schmerzen, Koliken, Fieber	Novalgin-Tropfen	True
+Metformin-HCl	D	Diabetes Typ 2	-formin = Biguanid, Mittel der 1. Wahl	True
+Methadon-HCl	S	Opioid-Substitution; Schmerzen	Heroin-Ersatz	True
+Methotrexat	K	Krebs; Rheuma (1× pro Woche)	MTX: Folsäure-Antagonist	True
+Methylphenidat	P	ADHS	Ritalin	True
+Metoclopramid-HCl	M	Übelkeit, Erbrechen	MCP-Tropfen	True
+Metoprololtartrat	H	Hypertonie, KHK, Rhythmusstörungen	-olol = β-Blocker	True
+Metronidazol	I	Anaerobier-Infektionen, Trichomonaden	-nidazol = Nitroimidazol gegen Anaerobier	True
+Midazolam	P	Sedierung, Narkoseeinleitung	-azolam = Benzodiazepin, kurz wirksam (Dormicum)	True
+Mirtazapin	P	Depression mit Schlafstörung	tetrazyklisch, macht müde und hungrig	False
+Mometasonfuroat	A	Allergische Rhinitis, Asthma, Haut	-son = Cortison-Nasenspray	False
+Morphin-HCl	S	Starke Schmerzen	Morpheus: Opioid-Prototyp	False
+Naloxon-HCl	X	Opioid-Antidot	-oxon: Opioid-Gegenspieler	False
+Naproxen	S	Schmerzen, Entzündung, Rheuma	-proxen ≈ -profen = NSAR	True
+Naratriptan-HCl	N	Migräne	-triptan = Migräne	True
+Natriumvalproat	N	Epilepsie; bipolare Störung	Valproinsäure: Antiepileptikum	True
+Neostigmin-Bromid	X	Myasthenie; Muskelrelaxans-Aufhebung	-stigmin = AChE-Hemmer	True
+Niclosamid	V	Bandwurm	Yomesan: Wurmmittel	True
+Nifedipin	H	Hypertonie	-dipin = Ca-Antagonist (Beispiel aus der Klausurinfo)	True
+Nitrofurantoin	I	Harnwegsinfekt	Nitro-FURAN: Blasenentzündung	True
+Noscapin	A	Reizhusten	Opium-Alkaloid ohne Sucht: Hustenstiller	False
+Ofloxacin	I	Harnwegs-, Atemwegs-, Augeninfektion	-floxacin = Gyrasehemmer	True
+Omeprazol	M	Ulkus, Reflux	-prazol = Protonenpumpenhemmer	True
+Ondansetron	M	Übelkeit/Erbrechen bei Chemotherapie	-setron = 5-HT3-Antagonist	True
+Opipramol-HCl	P	Angststörung	Insidon; -ipramol klingt wie -ipramin	False
+Pantoprazol	M	Ulkus, Reflux	-prazol = Protonenpumpenhemmer	True
+Papaverin-HCl	M	Krämpfe (Spasmolytikum)	Mohn-Alkaloid entspannt glatte Muskulatur	False
+Paracetamol	S	Schmerzen, Fieber	ben-u-ron: nicht entzündungshemmend	True
+Penicillin-V-Kalium	I	Streptokokken-Infektionen (Angina)	-cillin = Penicillin, oral (V)	True
+Pentoxyverin	A	Reizhusten	Sedotussin: Hustenstiller	True
+Phenazon	S	Schmerzen, Fieber; Ohrentropfen	-azon = Pyrazolon-Analgetikum	True
+Phenobarbital	N	Epilepsie	-barbital = Barbiturat	True
+Phenprocoumon	H	Thromboseprophylaxe, Vorhofflimmern	Marcumar: Vitamin-K-Antagonist	False
+Phenylephrin-HCl	L	Abschwellend (Nase); Mydriatikum	-ephrin = α-Agonist zieht Gefäße zusammen	True
+Phenytoin-Natrium	N	Epilepsie, Status epilepticus	-toin = Hydantoin-Antiepileptikum	True
+Pilocarpin-HCl	L	Glaukom; Mundtrockenheit	Pupille eng (Gegenteil von Atropin)	True
+Pivmecillinam-HCl	I	Harnwegsinfekt	-cillin = Penicillin für die Blase	True
+Prazosin-HCl	H	Hypertonie, Prostatahyperplasie	-azosin = α1-Blocker	False
+Prednisolonacetat	S	Entzündung, Allergie, Autoimmun	-olon = Cortison	False
+Pregabalin	N	Neuropathische Schmerzen, Epilepsie, Angst	-gabalin = GABA-Analogon (Lyrica)	True
+Procain-HCl	L	Lokalanästhesie	-cain = Lokalanästhetikum	True
+Proguanil-HCl	V	Malaria (mit Atovaquon)	Pro-GUAN-il: Biguanid gegen Malaria	True
+Promethazin-HCl	P	Unruhe, Schlafstörung; Allergie	Phenothiazin, macht müde	False
+Pseudoephedrin-HCl	A	Schnupfen (abschwellend)	Erkältungskapseln: Nase frei	True
+Pyridoxin-HCl	D	Vitamin-B6-Mangel	B6 wird unter Isoniazid ergänzt	False
+Quetiapin	P	Schizophrenie, bipolare Störung	-apin = atypisches Neuroleptikum	False
+Racecadotril	M	Durchfall	Tiorfan: Enkephalinase-Hemmer	True
+Raltegravir-Kalium	V	HIV	-tegravir = Integrase-Hemmer	True
+Ramipril	H	Hypertonie, Herzinsuffizienz	-pril = ACE-Hemmer	True
+Ranitidin-HCl	M	Ulkus, Reflux	-tidin = H2-Antagonist	True
+Rivaroxaban	H	Thromboseprophylaxe, Vorhofflimmern	-xaban = Faktor-Xa-Hemmer	False
+Sacubitril	H	Herzinsuffizienz (mit Valsartan)	Entresto = Sacubitril + Valsartan	True
+Salbutamolsulfat	A	Asthma bronchiale	Notfallspray (Beispiel aus jeder Klausur)	True
+Salicylsäure	L	Warzen, Hühneraugen (Keratolytikum)	löst Hornhaut	True
+Sildenafil-dihydrogencitrat	H	Erektile Dysfunktion; pulmonale Hypertonie	Viagra: -afil = PDE5-Hemmer	False
+Simeticon	M	Blähungen	Lefax: Entschäumer	False
+Simvastatin	H	Hypercholesterinämie	-statin = Cholesterinsenker	False
+Sitagliptin	D	Diabetes Typ 2	-gliptin = DPP-4-Hemmer	True
+Spironolacton	H	Herzinsuffizienz, Ödeme	Aldosteron-Antagonist, kaliumsparend	False
+Sulfamethoxazol	I	Harnwegsinfekt (mit Trimethoprim)	Sulfa- = Sulfonamid; Cotrimoxazol	True
+Sumatriptanhydrogensuccinat	N	Migräne, Cluster-Kopfschmerz	-triptan = Migräne	True
+Tamoxifen	K	Brustkrebs	SERM blockiert Östrogen am Tumor	True
+Tamsulosin-HCl	H	Prostatahyperplasie	-osin = α1-Blocker; Prostata	False
+Tenofovir	V	HIV, Hepatitis B	-fovir = Virus	True
+Testosteronenantat	D	Hypogonadismus	Testosteron-Depotspritze	False
+Tetryzolin-HCl	L	Gerötete Augen, Schnupfen	-zolin = α-Agonist, abschwellend (Augentropfen)	True
+Theophyllin	A	Asthma, COPD	Tee-Inhaltsstoff erweitert Bronchien	False
+Tigecyclin	I	Schwere Haut- und Bauchinfektionen (Reserve)	-cyclin = Tetracyclin-Verwandter	False
+Tilidin-HCl	S	Mittelstarke bis starke Schmerzen	Valoron: Opioid mit Naloxon	True
+Timololhydrogenmaleat	L	Glaukom	-olol im Auge = Glaukom-Tropfen	True
+Tiotropiumbromid	A	COPD	-tropium = Anticholinergikum (Spiriva)	True
+Tolbutamid	D	Diabetes Typ 2	Sulfonylharnstoff, 1. Generation	True
+Topotecan	K	Lungen-, Ovarialkrebs	-tecan = Topoisomerase-Hemmer	False
+Torasemid	H	Ödeme, Hypertonie	Schleifendiuretikum wie Furosemid	True
+Tramadol-HCl	S	Mittelstarke Schmerzen	Tramal: schwaches Opioid	True
+Triamcinolonacetonid	L	Ekzeme; Gelenkentzündung	-olon = Cortison	False
+Trimethoprim	I	Harnwegsinfekt	-prim mit Sulfa = Cotrimoxazol	True
+Valsartan	H	Hypertonie, Herzinsuffizienz	-sartan = AT1-Blocker	True
+Venlafaxin	P	Depression, Angst	-faxin = SNRI	True
+Verapamil-HCl	H	Hypertonie, Rhythmusstörungen, Angina	Ca-Antagonist fürs Herz	True
+Xylometazolin-HCl	L	Schnupfen (Nasenspray)	-metazolin = Otriven-Nasenspray	True
+Zidovudin	V	HIV	AZT: erstes HIV-Mittel	True
+Zopiclon	P	Schlafstörungen	Z-Substanz = Zzz	True
