@@ -14,6 +14,7 @@
 | **Neue Seite / Säule / Vertical** (Standalone analog /profil/) | **L4 Seite/Vertical** |
 | **Lernraum-Daten** (Glossare/KE-Stats) neu erzeugen | **L5 Lernraum** |
 | Game **sichtbar/unsichtbar** schalten, Hub/Root pflegen | **L6 Sichtbarkeit/Hub** |
+| **Material einem Kurs zuordnen**, Kursseite pflegen | **L7 Kurse** |
 
 **Goldene Klammer für JEDEN Loop:** vor dem Push `make check` (BLOCKING grün) → committen
 (pre-commit-Hook prüft erneut) → push `main` → CI-`validate` gated den Deploy.
@@ -57,7 +58,7 @@
    **`../../../assets/`**. Die Übersichtsseite braucht `class="uebersicht"` am `<body>` und
    ruft nur noch `EscapeEngine.initUebersicht()` auf (kein Inline-Script mehr).
 3. In die **Website-Schicht** zurück: `make check` + `make smoke` (rendert das neue Game sauber?).
-4. **Hub** ergänzen (→ L6): `<li>` in `unterricht/index.html` (hub-relativer Link `escape-games/<id>/index.html`), zunächst `data-status="staging"`.
+4. **Hub** ergänzen (→ L7): Eintrag in `unterricht/kurse.json` (`id: "game-<id>"`, `pfad: "escape-games/<id>/index.html"`), zunächst `"status": "staging"`, dann `make kurse`.
 5. Cache-Bust prüfen: `python3 tools/website/bump-assets.py --check` (neue HTML müssen die aktuellen Tokens tragen; sonst `make bump` mit Sync).
 6. Stagen → commit `feat(<game>): …` → push.
 
@@ -71,7 +72,7 @@
    mit `?v=0`, dann `python3 tools/website/bump-assets.py --sync` normalisiert die Tokens. Für Layout die
    `wg`-Komponenten nutzen (`.topbar`/`.hero`/`.gw-grid`/`.block`/`.foot`); `<html class="mode-dark">` +
    Inline-Mode-Script (localStorage `wg-mode`). Die Referenz `_design-scoping/claude-design/` zeigt weitere Muster.
-2. Verlinken (Root-Kachel `.gw` bzw. Hub-`<li>`, → L6). Bei neuem Top-Level-Ordner: `Makefile`-Allowlist
+2. Verlinken (Root-Kachel `.gw`, → L6; Unterrichtsmaterial über `unterricht/kurse.json`, → L7). Bei neuem Top-Level-Ordner: `Makefile`-Allowlist
    (`site`-Target) ergänzen. `SITE_MAP.md` aktualisieren.
 3. `make check` (Asset-Links + JSON) + `make smoke` (neue Seiten werden automatisch mitgetestet — Site-Seiten
    werden vom Render-Smoke validiert; `check_assets` prüft Dead-Links nur im Game/WiB-Baum).
@@ -87,12 +88,27 @@
 
 ## L6 — Sichtbarkeit / Hub / Root
 
-- **Games + WiB-Tools** listet der Hub `unterricht/index.html` (= Discovery-Quelle für `check`/`smoke`).
-  **Staging-Mechanik** (dort): `<li data-status="staging">` ist versteckt, nur mit `?staging=1` sichtbar
-  (gelber Banner). So lässt sich Neues live deployen, aber für Besucher verborgen testen.
-  Game live schalten = `data-status="staging"` entfernen.
+- **Der Hub `unterricht/index.html` ist generiert** (seit 2026-10-15, → L7) und bleibt Discovery-Quelle
+  für `check`/`smoke`. **Staging:** `"status": "staging"` am Eintrag in `kurse.json` → `<li data-status="staging">`,
+  versteckt, nur mit `?staging=1` sichtbar (gelber Banner). Live schalten = Feld entfernen + `make kurse`.
 - **Root `index.html`** = Verteiler-Kacheln (Säulen), keine per-Game-Liste. Neue Säule = neue `.gw`-Kachel.
 - Nach Edit: `make check` (Asset-Link-Sanity) → commit → push.
+
+## L7 — Kurse: Material zuordnen, Kursseiten
+
+> Eine Quelle `unterricht/kurse.json` → `make kurse` schreibt den Hub `unterricht/index.html` und
+> `unterricht/k/<kurs>/index.html`. **Beide nie von Hand editieren** (`make check` B5 blockt Drift).
+> Spec: `specs/2026-10-15-kursseiten-design.md`.
+
+1. Neue Materialseite angelegt? Eintrag in `materialien` von `unterricht/kurse.json`: `pfad` (relativ zu
+   `unterricht/`), `titel`, `art`, `fach`, `jahrgang`; für Kursmaterial zusätzlich `kurse`, `thema`, `datum`
+   (Datum der Stunde). Mehrteiliges (z. B. Datenspuren-Fälle) über `teile`.
+2. Neuer Kurs: Eintrag in `kurse` (Schlüssel = Adresse `k/<schlüssel>/`, nicht mehr ändern, sobald QR-Codes
+   im Umlauf sind).
+3. `make kurse` → `make check` (B5 + Verwaist-Bericht A3) → stagen: `kurse.json` + generierte Seiten.
+- **Sichtbarkeit (Paul 2026-10-15):** Hub öffentlich, aber **ohne Kurskürzel und ohne Datum**; Kursseiten
+  **unverlinkt + `noindex`**, nur per Direktlink/QR. `kurse.json` selbst wird nicht deployt (`make site`).
+  Unsichtbarkeit, kein Zugriffsschutz.
 
 ---
 

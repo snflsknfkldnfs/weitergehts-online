@@ -1,42 +1,147 @@
 <!DOCTYPE html>
-<html lang="de">
+<!-- GENERIERT von tools/kurse/build.py aus unterricht/kurse.json — nicht von Hand editieren, sondern: make kurse -->
+<html lang="de" class="mode-dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Datenspuren – euer Fall · Inf6b · weitergehts.online</title>
 <meta name="robots" content="noindex">
+<title>Inf 6b · weitergehts.online</title>
+<link rel="stylesheet" href="../../../assets/css/fonts.css?v=1.2">
+<link rel="stylesheet" href="../../../assets/css/tokens.css?v=1.2">
+<link rel="stylesheet" href="../../../assets/css/wg.css?v=1.2">
+<script>
+  (function(){ try{ var m=localStorage.getItem('wg-mode'); var r=document.documentElement;
+    r.classList.remove('mode-light','mode-dark'); r.classList.add(m==='light'?'mode-light':'mode-dark'); }catch(e){} })();
+</script>
 <style>
-:root{--akzent:#A6293F;--akzent-hell:#F8E9EC;--text:#1a1a1a;--grau:#555;--linie:#e3d4d7;--bg:#fafafa;--karte:#fff}
-@media (prefers-color-scheme:dark){:root{--akzent:#e38a9a;--akzent-hell:#3a2226;--text:#f0f0f0;--grau:#b8b8b8;--linie:#4a3a3d;--bg:#161616;--karte:#202020}}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sans-serif;font-size:20px;line-height:1.45}
-main{max-width:760px;margin:0 auto;padding:24px 16px 48px}
-header p{color:var(--grau);margin:0 0 4px;font-size:16px}
-h1{color:var(--akzent);font-size:1.7rem;line-height:1.25;margin:4px 0 20px}
-ul{list-style:none;padding:0;margin:0}
-li{margin:0 0 14px}
-a.link{display:block;background:var(--karte);border:2px solid var(--akzent);border-radius:12px;padding:18px 20px;color:var(--akzent);font-weight:600;font-size:1.25rem;text-decoration:none;word-break:break-word}
-a.link:hover,a.link:focus{background:var(--akzent-hell)}
-.hinweis{color:var(--grau);font-size:15px;margin:4px 6px 0}
-footer{color:var(--grau);font-size:14px;margin-top:28px}
+  .hub-list { list-style: none; }
+  .hub-list li { border-top: 1px solid var(--rule); }
+  .hub-list li:last-child { border-bottom: 1px solid var(--rule); }
+  .hub-list a { display: grid; grid-template-columns: 4.5rem 1fr auto; gap: 0 1.2rem;
+                align-items: baseline; padding: 14px 4px;
+                font-family: var(--serif); font-size: 1.15rem; }
+  .hub-list a:hover { color: var(--accent); }
+  /* Jahrgang/Datum und Format als ruhige Marken, nicht als zweite Überschrift */
+  .hub-list .stufe, .hub-list .art { font-family: var(--ui); font-size: .72rem;
+                letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); }
+  .hub-list .stufe { font-variant-numeric: tabular-nums; }
+  .hub-list .art { white-space: nowrap; }
+  .gruppe { margin-top: 2.5rem; }
+  @media (max-width: 560px) {
+    .hub-list a { grid-template-columns: 1fr auto; gap: 2px .8rem; }
+    .hub-list .stufe { grid-column: 1; grid-row: 1; }
+    .hub-list .art { grid-column: 2; grid-row: 1; }
+    .hub-list .titel { grid-column: 1 / -1; grid-row: 2; }
+  }
 </style>
 </head>
-<body>
+<body class="halo">
+<div class="tapete" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="../../../index.html"><span class="sq"></span></a>
+    <nav class="nav">
+      <a href="../../../profil/">Profil</a>
+      <a href="../../../unterricht/">Unterricht</a>
+    </nav>
+    <div class="toggle" role="group" aria-label="Hell- oder Dunkelmodus">
+      <button id="m-light" aria-pressed="false">Hell</button>
+      <button id="m-dark" aria-pressed="true">Dunkel</button>
+    </div>
+  </div>
+</header>
+
 <main>
-  <header>
-    <p>Inf6b</p>
-    <h1>Datenspuren – euer Fall</h1>
-  </header>
-  <ul>
-    <li><a class="link" href="https://weitergehts.online/unterricht/datenspuren/2580/">Kampagne: Fall 2580</a></li>
-    <li><a class="link" href="https://weitergehts.online/unterricht/datenspuren/3150/">Fall 3150</a></li>
-    <li><a class="link" href="https://weitergehts.online/unterricht/datenspuren/4711/">Fall 4711</a></li>
-    <li><a class="link" href="https://weitergehts.online/unterricht/datenspuren/5208/">Fall 5208</a></li>
-    <li><a class="link" href="https://weitergehts.online/unterricht/datenspuren/6620/">Fall 6620</a></li>
-    <li><a class="link" href="https://weitergehts.online/unterricht/datenspuren/7734/">Fall 7734</a></li>
-    <li><a class="link" href="https://weitergehts.online/unterricht/datenspuren/8892/">Fall 8892</a></li>
-  </ul>
-  <footer>weitergehts.online</footer>
+  <section class="block">
+    <div class="wrap">
+      <span class="cap">Inf 6b · Informatik · 2026/27</span>
+      <h1>Unser Material</h1>
+
+      <h2 class="cap gruppe">Datenspuren</h2>
+      <ul class="hub-list">
+        <li>
+          <a href="../../datenspuren/2580/">
+            <span class="stufe">16.10.</span>
+            <span class="titel">Kampagne: Fall 2580</span>
+            <span class="art">Werkzeug</span>
+          </a>
+        </li>
+        <li>
+          <a href="../../datenspuren/3150/">
+            <span class="stufe">08.10.</span>
+            <span class="titel">Fall 3150</span>
+            <span class="art">Werkzeug</span>
+          </a>
+        </li>
+        <li>
+          <a href="../../datenspuren/4711/">
+            <span class="stufe">08.10.</span>
+            <span class="titel">Fall 4711</span>
+            <span class="art">Werkzeug</span>
+          </a>
+        </li>
+        <li>
+          <a href="../../datenspuren/5208/">
+            <span class="stufe">08.10.</span>
+            <span class="titel">Fall 5208</span>
+            <span class="art">Werkzeug</span>
+          </a>
+        </li>
+        <li>
+          <a href="../../datenspuren/6620/">
+            <span class="stufe">08.10.</span>
+            <span class="titel">Fall 6620</span>
+            <span class="art">Werkzeug</span>
+          </a>
+        </li>
+        <li>
+          <a href="../../datenspuren/7734/">
+            <span class="stufe">08.10.</span>
+            <span class="titel">Fall 7734</span>
+            <span class="art">Werkzeug</span>
+          </a>
+        </li>
+        <li>
+          <a href="../../datenspuren/8892/">
+            <span class="stufe">08.10.</span>
+            <span class="titel">Fall 8892</span>
+            <span class="art">Werkzeug</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
 </main>
+
+<footer id="kontakt">
+  <div class="wrap foot">
+    <span class="fmark">weitergehts.online</span>
+    <span class="fline">
+      <a href="../../../index.html">Start</a>
+      <a href="../../../profil/">Profil</a>
+    </span>
+    <span class="fline">
+      <a href="../../../impressum/">Impressum</a>
+      <a href="../../../datenschutz/">Datenschutz</a>
+    </span>
+    <span class="fline">© 2026</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var bL=document.getElementById('m-light'), bD=document.getElementById('m-dark');
+  function paint(){ var d=root.classList.contains('mode-dark');
+    bL.setAttribute('aria-pressed', d?'false':'true'); bD.setAttribute('aria-pressed', d?'true':'false'); }
+  function set(d){ root.classList.remove('mode-light','mode-dark'); root.classList.add(d?'mode-dark':'mode-light');
+    try{ localStorage.setItem('wg-mode', d?'dark':'light'); }catch(e){} paint(); }
+  bL.addEventListener('click',function(){ set(false); });
+  bD.addEventListener('click',function(){ set(true); });
+  paint();
+})();
+</script>
 </body>
 </html>

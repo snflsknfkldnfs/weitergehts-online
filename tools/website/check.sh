@@ -13,9 +13,11 @@
 #     B2  Cache-Bust-Konsistenz                  (bump-assets.py --check)
 #     B3  Kein Lehrkraft-Meta im Schueler-DOM    (validate-no-lehrkraft-meta.py)
 #     B4  Feedback-/Tipps-Schema je LIVE-Game    (validate-feedback-schema.js, FAIL only)
+#     B5  Kursseiten: kurse.json gültig + Übersicht/k/ aktuell (tools/kurse/build.py --check)
 #
 #   ADVISORY (didaktische Generator-Kriterien — NUR Bericht, blockt NIE):
 #     A1  Bloom-Verteilung je LIVE-Game          (validate_bloom_distribution.py)
+#     A3  Verwaiste Materialseiten (nicht in unterricht/kurse.json)
 #     A2  Source-Deploy-Parity je LIVE-Game      (source-deploy-parity.sh, falls Artefakte+jq;
 #         Source-Artefakte leben seit der Entmischung 2026-07 im Generator-Repo → skippt hier i.d.R.)
 #
@@ -84,9 +86,15 @@ for g in ${LIVE_GAMES[@]+"${LIVE_GAMES[@]}"}; do
   fi
 done
 
+# B5 Kursseiten: kurse.json gültig, generierte Übersicht + k/<kurs>/ aktuell
+if out=$(python3 tools/kurse/build.py --check 2>&1); then ok "$out"; else bad "$out"; fi
+
 # ───────────────────────── ADVISORY ─────────────────────────
 if [[ $BLOCKING_ONLY -eq 0 ]]; then
   section "ADVISORY — didaktische Kriterien (blockt NICHT)"
+
+  # A3 Verwaiste Materialseiten
+  while IFS= read -r l; do note "$l"; done < <(python3 tools/kurse/build.py --orphans 2>&1)
 
   for g in ${LIVE_GAMES[@]+"${LIVE_GAMES[@]}"}; do
     dj="unterricht/escape-games/$g/data.json"

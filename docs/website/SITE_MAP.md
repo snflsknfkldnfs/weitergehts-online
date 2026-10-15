@@ -2,7 +2,7 @@
 
 > **Ist-Zustand** der Site als Menge von **Verticals**. Anker für „wo gehört Neues hin".
 > Soll-Architektur, Prämissen + Entscheidungs-Log: `ARCHITEKTUR.md`.
-> Bei jeder neuen Sektion/Game/Seite hier eintragen. Stand: 2026-07-30 (nach E5-Akten-Look-Absorption).
+> Bei jeder neuen Sektion/Game/Seite hier eintragen. Stand: 2026-10-15 (Kursseiten; Einzel-Material steht in `unterricht/kurse.json`, nicht hier).
 
 ## Verticals (Drei-Säulen-IA seit E3)
 
@@ -10,7 +10,9 @@
 |---|---|---|---|---|
 | **Root · Verteiler** | `index.html` | Nebel-&-Papier-Verteiler (`wg`-System): Hero + 2 Kacheln (Profil, Unterricht), 3. Slot für Zettelkasten reserviert (E4) | — | live |
 | **Profil · Visitenkarte** | `profil/` | minimal: Porträt-Hero + Kindheitsfoto (bild-only, keine Prosa — Pauls Entscheid); Fotos in `profil/img/` | — | live |
-| **Unterricht · Hub** | `unterricht/index.html` | Hub-Liste (Escape-Games + WiB); Discovery-Quelle für `check`/`smoke`; Staging-Flag `?staging=1` | — | live |
+| **Unterricht · Hub** | `unterricht/index.html` | **generiert** aus `unterricht/kurse.json` (`make kurse`): alles Material nach Fach + Jahrgang, ohne Kurskürzel/Datum; Discovery-Quelle für `check`/`smoke`; Staging-Flag `?staging=1` | `tools/kurse/build.py` | live |
+| **Unterricht · Kursseiten** | `unterricht/k/<kurs>/` | **generiert** aus `kurse.json`: Aktuell + nach Thema, mit Datum; unverlinkt + `noindex` (Direktlink/QR) | `tools/kurse/build.py` | live (gpg8a, gpg9a, inf6b) |
+| **Unterricht · Quellen / Anordnen / Datenspuren** | `unterricht/quellen/<id>/`, `ordnen/<id>/`, `datenspuren/<fall>/` | je `data.json` + geteilte `quellen.js`/`ordnen.js`/`datenspuren.js` | — | live (Zuordnung in `kurse.json`) |
 | **Unterricht · Escape-Games** | `unterricht/escape-games/<id>/` | `data.json` (meta+mappen+materialien+aufgaben) → gerendert von `unterricht/assets/js/escape-engine.js` | `unterricht/escape-games/_template/` | live (1 Game: Syrien) |
 | **Unterricht · WiB-Tools** | `unterricht/wib/` | self-contained HTML (Chart.js via CDN), `localStorage`, kein Backend/Tracking | — | live (2 Tools: Haushaltsbuch + Geld-Wert) |
 | **Unterricht · Lernraum** | `assets/data/*.json` | via `make lernraum` generierte Glossar-/KE-Daten | `tools/lernraum/` | Daten vorhanden; Konsument-Seiten teils mit Examens-Schiene archiviert |
@@ -69,8 +71,8 @@ steckt vollständig in `theme-gpg.css` + Engine, jedes neue Game erbt ihn.
 ## Konventionen
 
 - **Neues Unterrichtsmaterial** = unter `unterricht/…` (Game via Generator-Export nach
-  `unterricht/escape-games/<id>/`, Tool als `unterricht/wib/…`) + Eintrag hier + `<li>` in
-  `unterricht/index.html`. Geteilte Assets mit `?v=`-Token (von `bump-assets`/`check` erfasst).
+  `unterricht/escape-games/<id>/`, Tool als `unterricht/wib/…`) + Eintrag in
+  `unterricht/kurse.json` + `make kurse` (RUNBUCH L7). Geteilte Assets mit `?v=`-Token (von `bump-assets`/`check` erfasst).
 - **Neue Säule/Seite** (analog /profil/) = eigener Top-Level-Ordner + Kachel im Root + Allowlist
   in `Makefile` (`site`-Target) + hier eintragen.
 - **`_`-präfixierte Ordner** (`_archiv-…`, `_template/`, `_smoketest_out/`, …) = nicht-deploybarer

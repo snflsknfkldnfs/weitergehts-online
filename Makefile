@@ -11,6 +11,7 @@
 help:
 	@echo "Website-Pflege-Targets (siehe docs/website/RUNBUCH.md):"
 	@echo "  make check         BLOCKING+ADVISORY-Validierung (DER Gate-Einstiegspunkt)"
+	@echo "  make kurse         Übersicht + Kursseiten aus unterricht/kurse.json erzeugen"
 	@echo "  make smoke         Headless-Render-Smoke aller Live-Seiten (Playwright)"
 	@echo "  make smoke-setup   Einmalig: .venv/ mit Playwright+Chromium anlegen (PEP-668-sicher)"
 	@echo "  make bump A=engine Cache-Bust: Asset bumpen + alle HTML angleichen (A=engine|core|base|theme|fonts|tokens|all)"
@@ -28,6 +29,10 @@ help:
 
 check:
 	./tools/website/check.sh
+
+# Übersicht + Kursseiten aus unterricht/kurse.json neu erzeugen (nach jeder Änderung an kurse.json)
+kurse:
+	python3 tools/kurse/build.py
 
 smoke:
 	./tools/smoke/run.sh
@@ -57,7 +62,7 @@ site: clean-site
 	[ -f favicon.svg ] && cp favicon.svg _site/ || true
 	cp CNAME _site/ 2>/dev/null || true
 	[ -f favicon.ico ] && cp favicon.ico _site/ || true
-	rsync -a --exclude='_*/' --exclude='.DS_Store' unterricht _site/
+	rsync -a --exclude='_*/' --exclude='.DS_Store' --exclude='/unterricht/kurse.json' unterricht _site/
 	rsync -a --exclude='_*/' --exclude='.DS_Store' assets _site/
 	[ -d profil ] && rsync -a --exclude='_*/' --exclude='.DS_Store' profil _site/ || true
 	[ -d impressum ] && rsync -a --exclude='_*/' --exclude='.DS_Store' impressum _site/ || true

@@ -62,6 +62,8 @@ def pages():
                 urls.append(f"/unterricht/escape-games/{g}/{name}")
         for mappe in sorted(gdir.glob("mappe-*.html")):
             urls.append(f"/unterricht/escape-games/{g}/{mappe.name}")
+    for f in sorted((REPO_ROOT / "unterricht" / "k").glob("*/index.html")):
+        urls.append("/" + str(f.relative_to(REPO_ROOT)))
     for f in sorted((REPO_ROOT / "unterricht" / "wib").glob("*.html")):
         rel = f.relative_to(REPO_ROOT)
         if any(part.startswith("_") for part in rel.parts):
