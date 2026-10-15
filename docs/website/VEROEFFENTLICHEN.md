@@ -5,6 +5,7 @@
 > **Was hier steht:** *wohin* eine Seite gehört, *wie* sie in Übersicht und Kursseite kommt,
 > *welche Prüfungen* vor dem Push laufen. **Nicht hier:** wie das Material didaktisch entsteht
 > (das regelt die Kurs-Welt, z. B. `welt/GPG/README.md`).
+> Verwiesen aus: `welt/GPG/README.md`, `welt/Inf6b/CLAUDE.md`, `welt/WiB6b/CLAUDE.md` (Commit `4fb7105` dort).
 > Stand 2026-10-15 · Spec: `specs/2026-10-15-kursseiten-design.md` · Website-Repo:
 > `/Users/paulad/weitergehts.online/weitergehts-online/`
 
@@ -66,7 +67,7 @@ Ein Objekt in `materialien` (Reihenfolge egal; der Generator sortiert):
 | `art` | ja | `quellen` · `anordnen` · `werkzeug` · `anleitung` · `recherche` · `escape-game` |
 | `fach` | ja | Schlüssel aus `faecher` (`gpg`, `wib`, `inf`) — neues Fach dort anlegen |
 | `strang` | bei GPG | `aktuelles` oder `geschichte` (s. u.) |
-| `jahrgang` | ja | Zahl; ergibt den Klassen-Reiter der Übersicht |
+| `jahrgang` | ja | Zahl; ergibt den Klassen-Reiter der Übersicht („8. Klasse") |
 | `kurse` | — | Liste von Kurs-Schlüsseln; leer = nur Übersicht, keine Kursseite |
 | `thema` | bei Kurs | Gruppe auf der Kursseite. **Wörtlich gleich schreiben** wie bei den Geschwistern — ein abweichender Name macht eine neue Gruppe |
 | `datum` | bei Kurs | `JJJJ-MM-TT` der Stunde, **in der das Material eingesetzt wird** (nicht der Bau-Tag). Nur auf der Kursseite sichtbar |

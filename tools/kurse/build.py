@@ -395,12 +395,12 @@ def uebersicht(daten: dict, v: dict) -> str:
                      f'aria-label="Klassen in {e(d["reiter"])}">')
         for jg, k_ms in jahrgaenge:
             teile.append(f'          <button role="tab" id="reiter-{f}-{jg}" aria-controls="fach-{f}-{jg}" '
-                         f'data-key="{jg}" aria-selected="false"{staging(k_ms)}>Klasse {jg}</button>')
+                         f'data-key="{jg}" aria-selected="false"{staging(k_ms)}>{jg}. Klasse</button>')
         teile.append("        </div>")
         for jg, k_ms in jahrgaenge:
             teile.append(f'        <div class="klassen-panel" id="fach-{f}-{jg}" role="tabpanel" '
                          f'aria-labelledby="reiter-{f}-{jg}"{staging(k_ms)}>\n'
-                         f'        <h3 class="klasse">Klasse {jg}</h3>')
+                         f'        <h3 class="klasse">{jg}. Klasse</h3>')
             gruppen = ([(name, [m for m in k_ms if m["strang"] == s_]) for s_, name in d["straenge"].items()]
                        if d.get("straenge") else [(None, k_ms)])
             for name, g in gruppen:

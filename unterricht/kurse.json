@@ -80,7 +80,7 @@
 
     { "id": "tool-inf-datenspuren", "pfad": "datenspuren/",
       "titel": "Datenspuren — Fälle: Wer steckt hinter der Nummer?",
-      "art": "werkzeug", "fach": "inf", "jahrgang": 6, "status": "staging",
+      "art": "werkzeug", "fach": "inf", "jahrgang": 6,
       "kurse": ["inf6b"], "thema": "Datenspuren", "datum": "2026-10-08",
       "teile": [
         { "pfad": "datenspuren/2580/", "titel": "Kampagne: Fall 2580", "datum": "2026-10-16" },
