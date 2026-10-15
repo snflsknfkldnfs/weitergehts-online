@@ -10,8 +10,8 @@
 |---|---|---|---|---|
 | **Root · Verteiler** | `index.html` | Nebel-&-Papier-Verteiler (`wg`-System): Hero + 2 Kacheln (Profil, Unterricht), 3. Slot für Zettelkasten reserviert (E4) | — | live |
 | **Profil · Visitenkarte** | `profil/` | minimal: Porträt-Hero + Kindheitsfoto (bild-only, keine Prosa — Pauls Entscheid); Fotos in `profil/img/` | — | live |
-| **Unterricht · Hub** | `unterricht/index.html` | **generiert** aus `unterricht/kurse.json` (`make kurse`): alles Material nach Fach + Jahrgang, ohne Kurskürzel/Datum; Discovery-Quelle für `check`/`smoke`; Staging-Flag `?staging=1` | `tools/kurse/build.py` | live |
-| **Unterricht · Kursseiten** | `unterricht/k/<kurs>/` | **generiert** aus `kurse.json`: Aktuell + nach Thema, mit Datum; unverlinkt + `noindex` (Direktlink/QR) | `tools/kurse/build.py` | live (gpg8a, gpg9a, inf6b) |
+| **Unterricht · Hub** | `unterricht/index.html` | **generiert** aus `unterricht/kurse.json` (`make kurse`): ein Reiter pro Fach, darin Klasse → (GPG) Aktuelles/Geschichte, ohne Kurskürzel/Datum; Discovery-Quelle für `check`/`smoke`; Staging-Flag `?staging=1` | `tools/kurse/build.py` | live |
+| **Unterricht · Kursseiten** | `unterricht/k/<kurs>/` | **generiert** aus `kurse.json`: Zuletzt + (GPG) Aktuelles/Geschichte + nach Thema, mit Datum; unverlinkt + `noindex` (Direktlink/QR) | `tools/kurse/build.py` | live (gpg8a, gpg9a, inf6b) |
 | **Unterricht · Quellen / Anordnen / Datenspuren** | `unterricht/quellen/<id>/`, `ordnen/<id>/`, `datenspuren/<fall>/` | je `data.json` + geteilte `quellen.js`/`ordnen.js`/`datenspuren.js` | — | live (Zuordnung in `kurse.json`) |
 | **Unterricht · Escape-Games** | `unterricht/escape-games/<id>/` | `data.json` (meta+mappen+materialien+aufgaben) → gerendert von `unterricht/assets/js/escape-engine.js` | `unterricht/escape-games/_template/` | live (1 Game: Syrien) |
 | **Unterricht · WiB-Tools** | `unterricht/wib/` | self-contained HTML (Chart.js via CDN), `localStorage`, kein Backend/Tracking | — | live (2 Tools: Haushaltsbuch + Geld-Wert) |

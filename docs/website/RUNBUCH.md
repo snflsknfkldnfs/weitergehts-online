@@ -101,11 +101,12 @@
 > Spec: `specs/2026-10-15-kursseiten-design.md`.
 
 1. Neue Materialseite angelegt? Eintrag in `materialien` von `unterricht/kurse.json`: `pfad` (relativ zu
-   `unterricht/`), `titel`, `art`, `fach`, `jahrgang`; für Kursmaterial zusätzlich `kurse`, `thema`, `datum`
-   (Datum der Stunde). Mehrteiliges (z. B. Datenspuren-Fälle) über `teile`.
+   `unterricht/`), `titel`, `art`, `fach`, `jahrgang`; bei GPG zusätzlich `strang` (`aktuelles` | `geschichte`);
+   für Kursmaterial zusätzlich `kurse`, `thema`, `datum` (Datum der Stunde). Mehrteiliges (z. B. Datenspuren-Fälle) über `teile`.
 2. Neuer Kurs: Eintrag in `kurse` (Schlüssel = Adresse `k/<schlüssel>/`, nicht mehr ändern, sobald QR-Codes
    im Umlauf sind).
 3. `make kurse` → `make check` (B5 + Verwaist-Bericht A3) → stagen: `kurse.json` + generierte Seiten.
+- **Hub = ein Reiter pro Fach** (Klasse → bei GPG Aktuelles/Geschichte); direkt verlinkbar mit `#gpg`, `#wib`, `#inf`.
 - **Sichtbarkeit (Paul 2026-10-15):** Hub öffentlich, aber **ohne Kurskürzel und ohne Datum**; Kursseiten
   **unverlinkt + `noindex`**, nur per Direktlink/QR. `kurse.json` selbst wird nicht deployt (`make site`).
   Unsichtbarkeit, kein Zugriffsschutz.

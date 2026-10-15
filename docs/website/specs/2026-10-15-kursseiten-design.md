@@ -21,6 +21,11 @@ gehört, steht nur in Commit-Nachrichten.
    Fach + Jahrgang — **ohne Klassenbuchstaben, ohne Stundendatum** (kein ablesbarer
    Stundenplan in Kombination mit dem Impressum).
 3. **Zuordnung** wie unten in der Startbefüllung (aus den Commits erschlossen, von Paul bestätigt).
+4. **Nachtrag 2026-10-15 (Paul):** GPG gliedert sich immer in **Aktuelles** und **Geschichte**
+   (Feld `strang`, Pflicht für Fächer mit `straenge`) — auf Kursseiten und in der Übersicht.
+   Die Übersicht bekommt **einen Reiter pro Fach**; darin Klasse → (bei GPG) Aktuelles/Geschichte.
+   Kurse bleiben nur auf den versteckten Kursseiten. Der Neueste-Block heißt **„Zuletzt"**
+   (Kollision mit „Aktuelles"); die Funktion heißt `zuletzt()`.
 
 ## Lösung in einem Satz
 
@@ -73,6 +78,10 @@ Bestand — handgepflegt driften sie (genau das ist passiert). Generiert wird wi
 
 ### Übersicht `/unterricht/` (generiert, öffentlich)
 
+> **Überholt durch Entscheid 4:** Reiter pro Fach (Optik des Hell/Dunkel-Schalters, ARIA-Tabs,
+> Reiter in der Adresse `#gpg`, ohne JS alle Fächer untereinander), darin Klasse → Strang →
+> Zeilen `Titel · ART`. Ein Reiter, dessen Material komplett `staging` ist, erscheint nur mit `?staging=1`.
+
 Bestehende `hub-list` bleibt das Muster (Haarlinien, Serifentitel, Mono-Marken). Pro Fach eine
 Gruppe, darin **nach Jahrgang** sortiert, Spalten `KL. 8 · Titel · ART`. Neu: vollständig.
 Mehrteiliges Material erscheint einmal (Datenspuren → Fall-Übersicht, nicht sieben Fälle;
@@ -102,7 +111,8 @@ WOCHENRÜCKBLICK
 
 - Erste Spalte = Datum `TT.MM.` statt Jahrgang (gleiches Grid wie `hub-list`).
 - Themen-Reihenfolge: das Thema mit der jüngsten Stunde zuerst; innerhalb neueste zuerst.
-- *Aktuell*-Auswahl: **offener Entscheidungspunkt** (Funktion `aktuell()` im Generator, s. u.).
+- *Zuletzt*-Auswahl: **offener Entscheidungspunkt** (Funktion `zuletzt()` im Generator, s. u.).
+- Bei GPG: unter *Zuletzt* zwei Hauptabschnitte *Aktuelles* / *Geschichte*, darin die Themen.
 - Nur für Schüler auf dem Tablet gedacht: große Trefferflächen (bestehende 14 px Padding reichen),
   mobil Datum + Art in Zeile 1, Titel in Zeile 2 (bestehende Media-Query).
 
@@ -142,16 +152,16 @@ Neuer Check `tools/kurse/build.py --check` (in `check.sh` eingehängt):
 | quellen/wehrdienst/ | quellen | 9 | gpg9a | Wochenrückblick | 2026-10-08 |
 | quellen/markt-oder-plan-west/ | quellen | 9 | gpg9a | Markt oder Plan | 2026-10-08 |
 | quellen/markt-oder-plan-ost/ | quellen | 9 | gpg9a | Markt oder Plan | 2026-10-08 |
-| ordnen/eigener-staat/ | anordnen | 9 | gpg9a | Markt oder Plan | 2026-10-16 |
+| ordnen/eigener-staat/ | anordnen | 9 | gpg9a | Staat und Wirtschaft | 2026-10-16 |
 | datenspuren/ (+ 7 Fälle auf der Kursseite) | werkzeug | 6 | inf6b | Datenspuren | 2026-10-08 / 2580: 2026-10-16 |
 | ordnen/ (Übersicht Anordnen) | — | — | — | Unterseite-Hub, nicht gelistet | — |
 
 \* Datum = Erst-Commit bzw. Stundendatum aus der Commit-Nachricht; **Paul korrigiert** beim Review.
-Themen-Namen sind Vorschläge.
+Themen-Namen sind Vorschläge. Strang (GPG): Aktuelles = SMV, Schulproteste, Wochenrückblick-Anleitung, Frühstartrente, Wehrdienst, Mein eigener Staat; Geschichte = alles Übrige inkl. Syrien-Game (Claude-Setzung, Paul kann umhängen).
 
-## Offener Entscheidungspunkt: Was ist „Aktuell"?
+## Offener Entscheidungspunkt: Was ist „Zuletzt"?
 
-`aktuell(materialien, heute)` im Generator. Varianten: die letzte Stunde (alle Einträge mit dem
+`zuletzt(eintraege, heute)` im Generator; `heute` = Datum der jüngsten Stunde des Kurses (nicht der Build-Tag, sonst meldet `make check` täglich Drift). Varianten: die letzte Stunde (alle Einträge mit dem
 jüngsten Datum) · alles der letzten 7 Tage · feste Anzahl (2–3). Abwägung: Die Seite ist statisch
 — „heute" ist der Build-Tag, nicht der Besuchstag. Eine Zeitfenster-Regel veraltet also, wenn
 länger nichts gebaut wird; „letzte Stunde" ist build-tag-unabhängig. Paul schreibt diese Funktion.

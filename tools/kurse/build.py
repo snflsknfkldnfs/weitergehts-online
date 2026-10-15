@@ -39,10 +39,10 @@ def e(s: str) -> str:
     return html.escape(s, quote=True)
 
 
-# ─────────────────────────── Aktuell ───────────────────────────
+# ─────────────────────────── Zuletzt ───────────────────────────
 
-def aktuell(eintraege: list[dict], heute: dt.date) -> list[dict]:
-    """Wählt die Einträge für den Block „Aktuell" oben auf einer Kursseite.
+def zuletzt(eintraege: list[dict], heute: dt.date) -> list[dict]:
+    """Wählt die Einträge für den Block „Zuletzt" oben auf einer Kursseite.
 
     eintraege: alle Zeilen der Kursseite, neueste zuerst sortiert; jede Zeile hat
                mindestens "titel", "art", "href" und "datum" (dt.date).
@@ -50,7 +50,7 @@ def aktuell(eintraege: list[dict], heute: dt.date) -> list[dict]:
                Bewusst NICHT der Build-Tag: sonst würde `make check` jeden Tag
                „veraltet" melden und den Deploy blocken. „Letzte N Tage" heißt also:
                N Tage vor der jüngsten Stunde.
-    Rückgabe:  die Teilmenge, die oben unter „Aktuell" stehen soll (leer = Block entfällt).
+    Rückgabe:  die Teilmenge, die oben unter „Zuletzt" stehen soll (leer = Block entfällt).
     """
     # TODO(Paul): Regel festlegen. Varianten aus der Spec: die letzte Stunde
     # (alle Einträge mit dem jüngsten Datum) · alles der letzten N Tage · feste Anzahl.
@@ -87,6 +87,12 @@ def fehler(daten: dict) -> list[str]:
             out.append(f"{wo}: unbekannte Art {m['art']!r}")
         if m["fach"] not in faecher:
             out.append(f"{wo}: unbekanntes Fach {m['fach']!r}")
+        else:
+            straenge = faecher[m["fach"]].get("straenge")
+            if straenge and m.get("strang") not in straenge:
+                out.append(f"{wo}: strang fehlt/unbekannt ({m.get('strang')!r}), erlaubt: {', '.join(straenge)}")
+            if not straenge and "strang" in m:
+                out.append(f"{wo}: Fach {m['fach']!r} kennt keine straenge")
         for k in m.get("kurse", []):
             if k not in kurse:
                 out.append(f"{wo}: unbekannter Kurs {k!r}")
@@ -145,6 +151,22 @@ LISTEN_CSS = """  .hub-list { list-style: none; }
   .hub-list .stufe { font-variant-numeric: tabular-nums; }
   .hub-list .art { white-space: nowrap; }
   .gruppe { margin-top: 2.5rem; }
+  .klasse { margin-top: 2.8rem; font-family: var(--ui); font-weight: 600; font-size: 1.35rem;
+            letter-spacing: -.02em; }
+  .unter { margin: 1.6rem 0 .4rem; }
+  /* Fach-Reiter: Optik des Hell/Dunkel-Schalters (Haarlinie, aktiver Reiter invertiert).
+     Ohne JS bleiben alle Panels sichtbar und die Reiterleiste versteckt. */
+  .reiter { display: none; flex-wrap: wrap; border: 1px solid var(--hairline); width: fit-content;
+            margin-top: 2rem; }
+  .js .reiter { display: flex; }
+  .reiter button { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+            background: transparent; border: none; color: var(--ink-soft); padding: 9px 16px; cursor: pointer; }
+  .reiter button:hover { color: var(--accent); }
+  .reiter button[aria-selected="true"] { background: var(--ink); color: var(--paper); }
+  .reiter button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .js .fach[hidden] { display: none; }
+  .fach > h2 { margin-top: 2.5rem; }
+  .js .fach > h2 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
   @media (max-width: 560px) {
     .hub-list a { grid-template-columns: 1fr auto; gap: 2px .8rem; }
     .hub-list .stufe { grid-column: 1; grid-row: 1; }
@@ -153,9 +175,11 @@ LISTEN_CSS = """  .hub-list { list-style: none; }
   }"""
 
 STAGING_CSS = """  /* Staging-Flag: blendet <li data-status="staging"> aus; sichtbar nur mit ?staging=1 */
-  li[data-status="staging"] { display: none; }
+  [data-status="staging"] { display: none !important; }
+  html.staging-mode li[data-status="staging"] { display: list-item !important; }
+  html.staging-mode div[data-status="staging"], html.staging-mode section[data-status="staging"] { display: block !important; }
+  html.staging-mode button[data-status="staging"] { display: inline-block !important; }
   html.staging-mode li[data-status="staging"] {
-    display: list-item;
     outline: 2px dashed #d97706;
     padding: 4px 8px;
     background: #fff7ed;
@@ -265,24 +289,91 @@ def zeile(href: str, marke: str, titel: str, art: str, *, li_attr: str = "") -> 
 
 # ─────────────────────────── Übersicht ───────────────────────────
 
+REITER_JS = """<script>
+/* Fach-Reiter (ARIA-Tabs). Gewählter Reiter steht in der Adresse (#gpg), damit er verlinkbar ist. */
+(function(){
+  var tabs = [].slice.call(document.querySelectorAll('.reiter [role=tab]'));
+  function sichtbar(t){ return getComputedStyle(t).display !== 'none'; }
+  function zeige(t, fokus){
+    tabs.forEach(function(x){
+      var an = x === t;
+      x.setAttribute('aria-selected', an ? 'true' : 'false');
+      x.tabIndex = an ? 0 : -1;
+      document.getElementById(x.getAttribute('aria-controls')).hidden = !an;
+    });
+    if (fokus) t.focus();
+    try { history.replaceState(null, '', '#' + t.dataset.fach); } catch(e){}
+  }
+  tabs.forEach(function(t, i){
+    t.addEventListener('click', function(){ zeige(t); });
+    t.addEventListener('keydown', function(ev){
+      var v = tabs.filter(sichtbar), j = v.indexOf(t);
+      if (ev.key === 'ArrowRight') { zeige(v[(j + 1) % v.length], true); ev.preventDefault(); }
+      if (ev.key === 'ArrowLeft')  { zeige(v[(j - 1 + v.length) % v.length], true); ev.preventDefault(); }
+    });
+  });
+  var h = location.hash.slice(1);
+  var start = tabs.filter(function(t){ return t.dataset.fach === h && sichtbar(t); })[0]
+           || tabs.filter(sichtbar)[0];
+  if (start) { zeige(start); if (!h) try { history.replaceState(null, '', location.pathname + location.search); } catch(e){} }
+})();
+</script>"""
+
+
+def staging(ms: list[dict]) -> str:
+    """Gruppe nur mit ?staging=1 zeigen, wenn ALLE ihre Materialien staging sind."""
+    return ' data-status="staging"' if ms and all(m.get("status") == "staging" for m in ms) else ""
+
+
+def hub_zeile(m: dict) -> str:
+    attr = f' id="{e(m["id"])}"' if m.get("id") else ""
+    if m.get("status") == "staging":
+        attr += ' data-status="staging"'
+    return f"""          <li{attr}>
+            <a href="{e(m["pfad"])}">
+              <span class="titel">{e(m["titel"])}</span>
+              <span class="art">{e(ARTEN[m["art"]])}</span>
+            </a>
+          </li>"""
+
+
 def uebersicht(daten: dict, v: dict) -> str:
     teile = ["      <span class=\"cap\">Unterricht</span>",
              "      <h1>Interaktive Unterrichtsmaterialien</h1>"]
-    for fach, name in daten["faecher"].items():
-        ms = [m for m in daten["materialien"] if m["fach"] == fach]
-        if not ms:
-            continue
-        ms.sort(key=lambda m: m["jahrgang"])  # stabil: innerhalb des Jahrgangs Reihenfolge der Quelle
-        teile.append(f'\n      <h2 class="cap gruppe">{e(name)}</h2>\n      <ul class="hub-list">')
-        for m in ms:
-            attr = f' id="{e(m["id"])}"' if m.get("id") else ""
-            if m.get("status") == "staging":
-                attr += ' data-status="staging"'
-            teile.append(zeile(m["pfad"], f"Kl. {m['jahrgang']}", m["titel"], m["art"], li_attr=attr))
-        teile.append("      </ul>")
+    faecher = [(f, d, [m for m in daten["materialien"] if m["fach"] == f])
+               for f, d in daten["faecher"].items()]
+    faecher = [x for x in faecher if x[2]]
+    teile.append('      <div class="reiter" role="tablist" aria-label="Fächer">')
+    for f, d, ms in faecher:
+        teile.append(f'        <button role="tab" id="reiter-{f}" aria-controls="fach-{f}" '
+                     f'data-fach="{f}" aria-selected="false"{staging(ms)}>{e(d["reiter"])}</button>')
+    teile.append("      </div>")
+    for f, d, ms in faecher:
+        teile.append(f'\n      <section class="fach" id="fach-{f}" role="tabpanel" '
+                     f'aria-labelledby="reiter-{f}"{staging(ms)}>')
+        teile.append(f'        <h2 class="cap">{e(d["name"])}</h2>')
+        for jg in sorted({m["jahrgang"] for m in ms}):
+            k_ms = [m for m in ms if m["jahrgang"] == jg]
+            teile.append(f'        <div{staging(k_ms)}>\n        <h3 class="klasse">Klasse {jg}</h3>')
+            gruppen = ([(name, [m for m in k_ms if m["strang"] == s_]) for s_, name in d["straenge"].items()]
+                       if d.get("straenge") else [(None, k_ms)])
+            for name, g in gruppen:
+                if not g:
+                    continue
+                if name:
+                    teile.append(f'        <h4 class="cap unter"{staging(g)}>{e(name)}</h4>')
+                teile.append('        <ul class="hub-list zwei">')
+                teile.extend(hub_zeile(m) for m in g)
+                teile.append("        </ul>")
+            teile.append("        </div>")
+        teile.append("      </section>")
+    css = STAGING_CSS + "\n" + LISTEN_CSS + """
+  .hub-list.zwei a { grid-template-columns: 1fr auto; }
+  @media (max-width: 560px) { .hub-list.zwei .titel { grid-row: 1; grid-column: 1; } }"""
     return seite(titel="Unterricht — weitergehts.online", tiefe="../", v=v,
-                 kopf_extra="", css=STAGING_CSS + "\n" + LISTEN_CSS, nav_aktuell=True,
-                 main="\n".join(teile) + "\n" + STAGING_JS)
+                 kopf_extra="<script>document.documentElement.classList.add('js');</script>\n",
+                 css=css, nav_aktuell=True,
+                 main="\n".join(teile) + "\n" + STAGING_JS + "\n" + REITER_JS)
 
 
 # ─────────────────────────── Kursseite ───────────────────────────
@@ -294,7 +385,7 @@ def kurs_eintraege(daten: dict, kurs: str) -> list[dict]:
             continue
         for t in m.get("teile") or [m]:
             out.append({"titel": t["titel"], "art": m["art"], "thema": m["thema"],
-                        "href": "../../" + t["pfad"],
+                        "strang": m.get("strang"), "href": "../../" + t["pfad"],
                         "datum": dt.date.fromisoformat(t.get("datum") or m["datum"])})
     out.sort(key=lambda x: x["datum"], reverse=True)  # stabil: gleiche Daten in Quell-Reihenfolge
     return out
@@ -302,25 +393,37 @@ def kurs_eintraege(daten: dict, kurs: str) -> list[dict]:
 
 def kursseite(daten: dict, kurs: str, v: dict) -> str:
     k = daten["kurse"][kurs]
+    fach = daten["faecher"][k["fach"]]
     eintraege = kurs_eintraege(daten, kurs)
-    kopf = f"{k['titel']} · {daten['faecher'][k['fach']]} · {daten['schuljahr']}"
+    kopf = f"{k['titel']} · {fach['name']} · {daten['schuljahr']}"
     teile = [f'      <span class="cap">{e(kopf)}</span>',
              "      <h1>Unser Material</h1>"]
 
-    def liste(name: str, zeilen: list[dict]) -> None:
-        teile.append(f'\n      <h2 class="cap gruppe">{e(name)}</h2>\n      <ul class="hub-list">')
+    def liste(kopf_html: str, zeilen: list[dict]) -> None:
+        teile.append(kopf_html + '\n      <ul class="hub-list">')
         for z in zeilen:
             teile.append(zeile(z["href"], z["datum"].strftime("%d.%m."), z["titel"], z["art"]))
         teile.append("      </ul>")
 
-    oben = aktuell(eintraege, eintraege[0]["datum"]) if eintraege else []
+    def nach_thema(zeilen: list[dict], ebene: str) -> None:
+        themen: dict[str, list[dict]] = {}
+        for z in zeilen:  # neueste zuerst → Thema mit der jüngsten Stunde steht vorn
+            themen.setdefault(z["thema"], []).append(z)
+        for name, tz in themen.items():
+            klasse = "cap gruppe" if ebene == "h2" else "cap unter"
+            liste(f'\n      <{ebene} class="{klasse}">{e(name)}</{ebene}>', tz)
+
+    oben = zuletzt(eintraege, eintraege[0]["datum"]) if eintraege else []
     if oben:
-        liste("Aktuell", oben)
-    themen: dict[str, list[dict]] = {}
-    for z in eintraege:  # neueste zuerst → Thema mit der jüngsten Stunde steht vorn
-        themen.setdefault(z["thema"], []).append(z)
-    for name, zeilen in themen.items():
-        liste(name, zeilen)
+        liste('\n      <h2 class="cap gruppe">Zuletzt</h2>', oben)
+    if fach.get("straenge"):
+        for s_, name in fach["straenge"].items():
+            zs = [z for z in eintraege if z["strang"] == s_]
+            if zs:
+                teile.append(f'\n      <h2 class="klasse">{e(name)}</h2>')
+                nach_thema(zs, "h3")
+    else:
+        nach_thema(eintraege, "h2")
 
     return seite(titel=f"{k['titel']} · weitergehts.online", tiefe="../../../", v=v,
                  kopf_extra='<meta name="robots" content="noindex">\n', css=LISTEN_CSS,
