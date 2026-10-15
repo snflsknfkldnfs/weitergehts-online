@@ -10,7 +10,7 @@
 |---|---|---|---|---|
 | **Root · Verteiler** | `index.html` | Nebel-&-Papier-Verteiler (`wg`-System): Hero + 2 Kacheln (Profil, Unterricht), 3. Slot für Zettelkasten reserviert (E4) | — | live |
 | **Profil · Visitenkarte** | `profil/` | minimal: Porträt-Hero + Kindheitsfoto (bild-only, keine Prosa — Pauls Entscheid); Fotos in `profil/img/` | — | live |
-| **Unterricht · Hub** | `unterricht/index.html` | **generiert** aus `unterricht/kurse.json` (`make kurse`): ein Reiter pro Fach, darin Klasse → (GPG) Aktuelles/Geschichte, ohne Kurskürzel/Datum; Discovery-Quelle für `check`/`smoke`; Staging-Flag `?staging=1` | `tools/kurse/build.py` | live |
+| **Unterricht · Hub** | `unterricht/index.html` | **generiert** aus `unterricht/kurse.json` (`make kurse`): Reiter pro Fach → Reiter pro Klasse → (GPG) Aktuelles/Geschichte, ohne Kurskürzel/Datum (Wächter in B5); Discovery-Quelle für `check`/`smoke`; Staging-Flag `?staging=1` | `tools/kurse/build.py` | live |
 | **Unterricht · Kursseiten** | `unterricht/k/<kurs>/` | **generiert** aus `kurse.json`: Zuletzt + (GPG) Aktuelles/Geschichte + nach Thema, mit Datum; unverlinkt + `noindex` (Direktlink/QR) | `tools/kurse/build.py` | live (gpg8a, gpg9a, inf6b) |
 | **Unterricht · Quellen / Anordnen / Datenspuren** | `unterricht/quellen/<id>/`, `ordnen/<id>/`, `datenspuren/<fall>/` | je `data.json` + geteilte `quellen.js`/`ordnen.js`/`datenspuren.js` | — | live (Zuordnung in `kurse.json`) |
 | **Unterricht · Escape-Games** | `unterricht/escape-games/<id>/` | `data.json` (meta+mappen+materialien+aufgaben) → gerendert von `unterricht/assets/js/escape-engine.js` | `unterricht/escape-games/_template/` | live (1 Game: Syrien) |
@@ -72,7 +72,7 @@ steckt vollständig in `theme-gpg.css` + Engine, jedes neue Game erbt ihn.
 
 - **Neues Unterrichtsmaterial** = unter `unterricht/…` (Game via Generator-Export nach
   `unterricht/escape-games/<id>/`, Tool als `unterricht/wib/…`) + Eintrag in
-  `unterricht/kurse.json` + `make kurse` (RUNBUCH L7). Geteilte Assets mit `?v=`-Token (von `bump-assets`/`check` erfasst).
+  `unterricht/kurse.json` + `make kurse` — Rezept für Kurssessions: `VEROEFFENTLICHEN.md`. Geteilte Assets mit `?v=`-Token (von `bump-assets`/`check` erfasst).
 - **Neue Säule/Seite** (analog /profil/) = eigener Top-Level-Ordner + Kachel im Root + Allowlist
   in `Makefile` (`site`-Target) + hier eintragen.
 - **`_`-präfixierte Ordner** (`_archiv-…`, `_template/`, `_smoketest_out/`, …) = nicht-deploybarer

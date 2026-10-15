@@ -35,6 +35,11 @@ Diese Datei steuert NICHT die Generator-Entwicklung.
 4. **Git:** auf `main` immer erst branchen; **explizit stagen, nie `git add .`/`-A`**; Push/PR nur auf Ansage.
 5. **Deploy ist gescopt:** veröffentlicht wird nur `_site/` (Allowlist via `make site`) — `docs/`, `tools/`, `_archiv*`, `.claude/` gehen **nicht** live.
 
+## Material aus einer Kurssession veröffentlichen → `docs/website/VEROEFFENTLICHEN.md`
+
+Wohin die Seite gehört, Eintrag in `unterricht/kurse.json`, `make kurse`, Prüfungen, Commit, Link an die
+Klasse. **`unterricht/index.html` und `unterricht/k/*/` sind generiert — nie von Hand schreiben.**
+
 ## Die wiederkehrenden Loops → `docs/website/RUNBUCH.md`
 
 `data.json`-Hotfix · Engine/CSS-Änderung · neues Game einspielen · neue Sektion/Blog-Post ·

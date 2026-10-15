@@ -26,6 +26,9 @@ gehört, steht nur in Commit-Nachrichten.
    Die Übersicht bekommt **einen Reiter pro Fach**; darin Klasse → (bei GPG) Aktuelles/Geschichte.
    Kurse bleiben nur auf den versteckten Kursseiten. Der Neueste-Block heißt **„Zuletzt"**
    (Kollision mit „Aktuelles"); die Funktion heißt `zuletzt()`.
+5. **Nachtrag 2 (Paul):** auch **Klassen bekommen Reiter** (zweite Ebene unter dem Fach, leiser gestaltet:
+   Text-Reiter mit Unterstrich; Adresse `#gpg-8`). Veröffentlichungswege der Kurssessions werden in
+   `docs/website/VEROEFFENTLICHEN.md` dokumentiert; ein Wächter in B5 blockt Kurskürzel in öffentlichen Titeln.
 
 ## Lösung in einem Satz
 

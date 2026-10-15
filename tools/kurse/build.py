@@ -83,6 +83,12 @@ def fehler(daten: dict) -> list[str]:
         for p in [m["pfad"]] + [t["pfad"] for t in m.get("teile", [])]:
             if not ziel_existiert(p):
                 out.append(f"{wo}: Pfad existiert nicht: unterricht/{p}")
+        # Sichtbarkeits-Wächter (Paul 2026-10-15): Titel erscheinen in der öffentlichen Übersicht —
+        # dort darf kein Kurskürzel stehen (kein ablesbarer Stundenplan).
+        flach = m["titel"].lower().replace(" ", "")
+        for kk, kurs in kurse.items():
+            if kk in flach or kurs["titel"].lower().replace(" ", "") in flach:
+                out.append(f"{wo}: Titel nennt den Kurs {kurs['titel']!r} — Titel sind öffentlich, Kurs gehört nur in 'kurse'")
         if m["art"] not in ARTEN:
             out.append(f"{wo}: unbekannte Art {m['art']!r}")
         if m["fach"] not in faecher:
@@ -164,7 +170,15 @@ LISTEN_CSS = """  .hub-list { list-style: none; }
   .reiter button:hover { color: var(--accent); }
   .reiter button[aria-selected="true"] { background: var(--ink); color: var(--paper); }
   .reiter button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-  .js .fach[hidden] { display: none; }
+  .js .fach[hidden], .js .klassen-panel[hidden] { display: none; }
+  /* Zweite Ebene (Klassen): leiser als die Fach-Reiter — Text-Reiter mit Unterstrich, ohne Rahmen */
+  .reiter.klassen { border: none; gap: 22px; margin-top: 1.6rem; border-bottom: 1px solid var(--rule);
+            width: auto; }
+  .reiter.klassen button { padding: 8px 0; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+  .reiter.klassen button[aria-selected="true"] { background: transparent; color: var(--ink);
+            border-bottom-color: var(--accent); }
+  .js .klassen-panel > .klasse { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .js .klassen-panel > .unter:first-of-type { margin-top: 1.4rem; }
   .fach > h2 { margin-top: 2.5rem; }
   .js .fach > h2 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
   @media (max-width: 560px) {
@@ -290,32 +304,56 @@ def zeile(href: str, marke: str, titel: str, art: str, *, li_attr: str = "") -> 
 # ─────────────────────────── Übersicht ───────────────────────────
 
 REITER_JS = """<script>
-/* Fach-Reiter (ARIA-Tabs). Gewählter Reiter steht in der Adresse (#gpg), damit er verlinkbar ist. */
+/* Reiter in zwei Ebenen (ARIA-Tabs): Fach, darin Klasse. Die Wahl steht in der Adresse
+   (#gpg-8 = GPG, Klasse 8), damit sie verlinkbar ist. Ohne JS bleibt alles untereinander. */
 (function(){
-  var tabs = [].slice.call(document.querySelectorAll('.reiter [role=tab]'));
   function sichtbar(t){ return getComputedStyle(t).display !== 'none'; }
-  function zeige(t, fokus){
-    tabs.forEach(function(x){
+  function tabsVon(l){ return [].slice.call(l.querySelectorAll('[role=tab]')); }
+  function gewaehlt(l){ return l && tabsVon(l).filter(function(t){ return t.getAttribute('aria-selected') === 'true'; })[0]; }
+  function adresse(){
+    var f = gewaehlt(document.querySelector('.reiter.faecher'));
+    if (!f) return;
+    var k = gewaehlt(document.querySelector('#' + f.getAttribute('aria-controls') + ' .reiter.klassen'));
+    try { history.replaceState(null, '', '#' + f.dataset.key + (k ? '-' + k.dataset.key : '')); } catch(e){}
+  }
+  function zeige(l, t, fokus, still){
+    tabsVon(l).forEach(function(x){
       var an = x === t;
       x.setAttribute('aria-selected', an ? 'true' : 'false');
       x.tabIndex = an ? 0 : -1;
       document.getElementById(x.getAttribute('aria-controls')).hidden = !an;
     });
     if (fokus) t.focus();
-    try { history.replaceState(null, '', '#' + t.dataset.fach); } catch(e){}
+    if (!still) adresse();
   }
-  tabs.forEach(function(t, i){
-    t.addEventListener('click', function(){ zeige(t); });
-    t.addEventListener('keydown', function(ev){
-      var v = tabs.filter(sichtbar), j = v.indexOf(t);
-      if (ev.key === 'ArrowRight') { zeige(v[(j + 1) % v.length], true); ev.preventDefault(); }
-      if (ev.key === 'ArrowLeft')  { zeige(v[(j - 1 + v.length) % v.length], true); ev.preventDefault(); }
+  var listen = [].slice.call(document.querySelectorAll('.reiter'));
+  function ausAdresse(){
+    var h = location.hash.slice(1).split('-');
+    listen.forEach(function(l){
+      var tabs = tabsVon(l);
+      var wunsch = l.classList.contains('faecher') ? h[0] : (l.dataset.fach === h[0] ? h[1] : null);
+      var start = tabs.filter(function(t){ return t.dataset.key === wunsch && sichtbar(t); })[0]
+               || gewaehlt(l) || tabs.filter(sichtbar)[0];
+      if (start) zeige(l, start, false, true);
+    });
+  }
+  listen.forEach(function(l){
+    var tabs = tabsVon(l);
+    tabs.forEach(function(t){
+      t.addEventListener('click', function(){ zeige(l, t); });
+      t.addEventListener('keydown', function(ev){
+        var v = tabs.filter(sichtbar), j = v.indexOf(t), n = null;
+        if (ev.key === 'ArrowRight') n = v[(j + 1) % v.length];
+        if (ev.key === 'ArrowLeft')  n = v[(j - 1 + v.length) % v.length];
+        if (ev.key === 'Home') n = v[0];
+        if (ev.key === 'End')  n = v[v.length - 1];
+        if (n) { zeige(l, n, true); ev.preventDefault(); }
+      });
     });
   });
-  var h = location.hash.slice(1);
-  var start = tabs.filter(function(t){ return t.dataset.fach === h && sichtbar(t); })[0]
-           || tabs.filter(sichtbar)[0];
-  if (start) { zeige(start); if (!h) try { history.replaceState(null, '', location.pathname + location.search); } catch(e){} }
+  ausAdresse();
+  if (location.hash) adresse();
+  window.addEventListener('hashchange', ausAdresse);
 })();
 </script>"""
 
@@ -343,18 +381,26 @@ def uebersicht(daten: dict, v: dict) -> str:
     faecher = [(f, d, [m for m in daten["materialien"] if m["fach"] == f])
                for f, d in daten["faecher"].items()]
     faecher = [x for x in faecher if x[2]]
-    teile.append('      <div class="reiter" role="tablist" aria-label="Fächer">')
+    teile.append('      <div class="reiter faecher" role="tablist" aria-label="Fächer">')
     for f, d, ms in faecher:
         teile.append(f'        <button role="tab" id="reiter-{f}" aria-controls="fach-{f}" '
-                     f'data-fach="{f}" aria-selected="false"{staging(ms)}>{e(d["reiter"])}</button>')
+                     f'data-key="{f}" aria-selected="false"{staging(ms)}>{e(d["reiter"])}</button>')
     teile.append("      </div>")
     for f, d, ms in faecher:
         teile.append(f'\n      <section class="fach" id="fach-{f}" role="tabpanel" '
                      f'aria-labelledby="reiter-{f}"{staging(ms)}>')
         teile.append(f'        <h2 class="cap">{e(d["name"])}</h2>')
-        for jg in sorted({m["jahrgang"] for m in ms}):
-            k_ms = [m for m in ms if m["jahrgang"] == jg]
-            teile.append(f'        <div{staging(k_ms)}>\n        <h3 class="klasse">Klasse {jg}</h3>')
+        jahrgaenge = [(jg, [m for m in ms if m["jahrgang"] == jg]) for jg in sorted({m["jahrgang"] for m in ms})]
+        teile.append(f'        <div class="reiter klassen" role="tablist" data-fach="{f}" '
+                     f'aria-label="Klassen in {e(d["reiter"])}">')
+        for jg, k_ms in jahrgaenge:
+            teile.append(f'          <button role="tab" id="reiter-{f}-{jg}" aria-controls="fach-{f}-{jg}" '
+                         f'data-key="{jg}" aria-selected="false"{staging(k_ms)}>Klasse {jg}</button>')
+        teile.append("        </div>")
+        for jg, k_ms in jahrgaenge:
+            teile.append(f'        <div class="klassen-panel" id="fach-{f}-{jg}" role="tabpanel" '
+                         f'aria-labelledby="reiter-{f}-{jg}"{staging(k_ms)}>\n'
+                         f'        <h3 class="klasse">Klasse {jg}</h3>')
             gruppen = ([(name, [m for m in k_ms if m["strang"] == s_]) for s_, name in d["straenge"].items()]
                        if d.get("straenge") else [(None, k_ms)])
             for name, g in gruppen:

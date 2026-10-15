@@ -14,7 +14,7 @@
 | **Neue Seite / Säule / Vertical** (Standalone analog /profil/) | **L4 Seite/Vertical** |
 | **Lernraum-Daten** (Glossare/KE-Stats) neu erzeugen | **L5 Lernraum** |
 | Game **sichtbar/unsichtbar** schalten, Hub/Root pflegen | **L6 Sichtbarkeit/Hub** |
-| **Material einem Kurs zuordnen**, Kursseite pflegen | **L7 Kurse** |
+| **Material einem Kurs zuordnen**, Kursseite pflegen | **L7 Kurse** (Kurssessions: `VEROEFFENTLICHEN.md`) |
 
 **Goldene Klammer für JEDEN Loop:** vor dem Push `make check` (BLOCKING grün) → committen
 (pre-commit-Hook prüft erneut) → push `main` → CI-`validate` gated den Deploy.
@@ -106,7 +106,8 @@
 2. Neuer Kurs: Eintrag in `kurse` (Schlüssel = Adresse `k/<schlüssel>/`, nicht mehr ändern, sobald QR-Codes
    im Umlauf sind).
 3. `make kurse` → `make check` (B5 + Verwaist-Bericht A3) → stagen: `kurse.json` + generierte Seiten.
-- **Hub = ein Reiter pro Fach** (Klasse → bei GPG Aktuelles/Geschichte); direkt verlinkbar mit `#gpg`, `#wib`, `#inf`.
+- **Hub = Reiter pro Fach, darin Reiter pro Klasse** (bei GPG darunter Aktuelles/Geschichte); verlinkbar mit `#gpg-8`, `#wib-7`, `#inf-6`.
+- **Vollständiges Rezept für Kurssessions:** `VEROEFFENTLICHEN.md` (Ordner je Art, Feldregeln, Strang, Grenzen).
 - **Sichtbarkeit (Paul 2026-10-15):** Hub öffentlich, aber **ohne Kurskürzel und ohne Datum**; Kursseiten
   **unverlinkt + `noindex`**, nur per Direktlink/QR. `kurse.json` selbst wird nicht deployt (`make site`).
   Unsichtbarkeit, kein Zugriffsschutz.
