@@ -360,6 +360,102 @@ def fall_luca(s):
     add(L, 8, '21:15', 'Suche', 'herzrhythmusstörung gefährlich')
 
 
+# ══ Fall 2580 · Kampagnen-Fall (Inf6b S02, Duell 1 Bürgerentscheid Volkach „Nachtbus oder Parkhaus?“, 16.10.2026) ══
+# Toni Weidner, 18, Volkach, Ausbildung Pflege im Krankenhaus Würzburg, Schichtdienst, Führerschein, aber kein eigenes Auto.
+# Alle Datenarten von Anfang an offen (eine Phase), mehr Rauschen. Hebel für BEIDE Seiten:
+#   Nachtbus: nach der Spätschicht kein Bus mehr → teures Taxi (3×), Angst nachts allein am Bahnhof, Mitfahr-App früh.
+#   Parkhaus: jobbt samstags in der Bäckerei am Marktplatz (Altstadt), kreist mit dem geliehenen Auto, Verwarngeld 25 €,
+#             spart auf ein eigenes Auto. Gemeinsam: Geld knapp (Kontostand), Werbezeit abends in der Social-Media-App.
+def fall_toni(s):
+    T = '2580'
+    HEIM = 'Am Sonnenhang, Volkach'
+    KH = 'Krankenhaus, Würzburg'
+    BHF = 'Hauptbahnhof, Würzburg'
+    SCHULE = 'Pflegeschule, Würzburg'
+    MARKT = 'Bäckerei am Marktplatz, Volkach'
+    add = s.add
+    for n in range(TAGE):
+        wt = tag(n).weekday()
+        if n < 5:                      # Woche 1: Spätschicht 13:45–21:45
+            add(T, n, '10:20', 'Standort', HEIM)
+            add(T, n, '13:38', 'Standort', KH)
+            add(T, n, '21:52', 'Standort', KH)
+            add(T, n, '22:31', 'Standort', BHF)
+            add(T, n, '23:58', 'Standort', HEIM)
+        elif 7 <= n < 12 and wt != 2:  # Woche 2: Frühschicht 6:00–14:15, mittwochs Pflegeschule
+            add(T, n, '05:12', 'Standort', HEIM)
+            add(T, n, '05:58', 'Standort', KH)
+            add(T, n, '14:20', 'Standort', KH)
+            add(T, n, '15:35', 'Standort', HEIM)
+        elif wt == 2:
+            add(T, n, '07:40', 'Standort', SCHULE)
+            add(T, n, '15:10', 'Standort', SCHULE)
+        if wt == 5:                    # samstags Minijob in der Altstadt
+            add(T, n, '07:28', 'Standort', MARKT)
+            add(T, n, '13:05', 'Standort', MARKT)
+        add(T, n, '03:10', 'Standort', HEIM)
+        if n % 7 not in (5,):
+            add(T, n, '22:47' if n < 5 else '21:40', 'App', f'Social-Media-App: {40 + (n * 13) % 50} min')
+    for n in (7, 8, 10, 11):
+        add(T, n, '04:45', 'App', 'Wecker-App: Wecker 04:45')
+        add(T, n, '05:20', 'App', 'Mitfahr-App: Fahrt Volkach → Würzburg gebucht, 6,00 €')
+    for n in (0, 1, 3, 4):
+        add(T, n, '13:05', 'App', 'Musik-App: 31 min gehört')
+    # Nachtbus-Hebel
+    add(T, 0, '22:36', 'App', 'Bus-App: Würzburg → Volkach: heute keine Verbindung mehr')
+    add(T, 0, '22:41', 'Suche', 'letzter bus würzburg volkach')
+    add(T, 0, '23:20', 'Einkauf', 'Taxi Würzburg → Volkach: 42,00 €')
+    add(T, 1, '22:44', 'Suche', 'taxi würzburg volkach preis nachts')
+    add(T, 1, '22:58', 'App', 'Mitfahr-App: keine Fahrt nach Volkach gefunden')
+    add(T, 1, '23:10', 'Einkauf', 'Taxi Würzburg → Volkach: 42,00 €')
+    add(T, 3, '22:40', 'App', 'Bus-App: Würzburg → Volkach: heute keine Verbindung mehr')
+    add(T, 3, '22:53', 'Suche', 'nachts allein am bahnhof angst was tun')
+    add(T, 3, '23:25', 'Einkauf', 'Taxi Würzburg → Volkach: 44,50 €')
+    add(T, 4, '00:35', 'Suche', 'schichtdienst ausbildung immer müde')
+    add(T, 5, '19:50', 'Standort', 'Konzerthalle, Würzburg')
+    add(T, 5, '18:42', 'Einkauf', 'Konzertkasse, Würzburg: 1 Karte, 34,00 €')
+    add(T, 6, '00:55', 'Standort', BHF)
+    add(T, 6, '01:05', 'App', 'Nachrichten-App: „Kannst du mich am Bahnhof abholen?“ an Mama')
+    add(T, 6, '02:10', 'Standort', HEIM)
+    add(T, 9, '21:30', 'Suche', 'mitfahrgelegenheit würzburg volkach früh morgens')
+    # Parkhaus-Hebel
+    add(T, 5, '07:21', 'Standort', 'Hauptstraße, Volkach')
+    add(T, 5, '13:20', 'Einkauf', 'Bäckerei am Marktplatz, Volkach: Lohn Samstag, 48,00 €')
+    add(T, 8, '20:15', 'Suche', 'gebrauchtwagen bis 4000 euro')
+    add(T, 9, '21:50', 'Suche', 'autokredit in der ausbildung')
+    add(T, 10, '07:10', 'App', 'Banking-App: Kontostand 61,30 €')
+    add(T, 11, '22:05', 'Suche', 'parken volkach altstadt samstag')
+    add(T, 12, '07:14', 'Standort', 'Parkplatz Mainufer, Volkach')
+    add(T, 12, '07:19', 'Standort', 'Hauptstraße, Volkach')
+    add(T, 12, '07:24', 'Standort', 'Parkplatz Kirchplatz, Volkach')
+    add(T, 12, '07:31', 'Standort', 'Hauptstraße, Volkach')
+    add(T, 12, '13:15', 'Einkauf', 'Stadt Volkach: Verwarngeld Falschparken, 25,00 €')
+    add(T, 12, '13:30', 'Suche', 'strafzettel falsch geparkt wie viel')
+    add(T, 12, '13:40', 'App', 'Nachrichten-App: „Darf ich nächsten Samstag wieder das Auto haben?“ an Mama')
+    add(T, 12, '14:05', 'Einkauf', 'Bäckerei am Marktplatz, Volkach: Lohn Samstag, 48,00 €')
+    add(T, 12, '16:20', 'Einkauf', 'Tankstelle, Volkach: Super E10, 20,00 €')
+    # Alltag
+    add(T, 2, '12:30', 'Suche', 'ausbildungsvergütung pflege 1. jahr')
+    add(T, 2, '19:10', 'Suche', 'konzert würzburg samstag tickets')
+    add(T, 4, '11:15', 'Suche', 'wetter volkach heute')
+    add(T, 6, '15:40', 'Suche', 'rezept nudelauflauf schnell')
+    add(T, 7, '05:50', 'Einkauf', 'Bäckerei, Würzburg: Kaffee groß, Croissant')
+    add(T, 10, '05:52', 'Einkauf', 'Bäckerei, Würzburg: Kaffee groß')
+    add(T, 13, '11:00', 'Suche', 'pflege praxisanleitung prüfung tipps')
+    add(T, 13, '17:30', 'Standort', 'Mainufer, Volkach')
+
+
+def extra_toni(s):
+    """Mehr Rauschen (Lehrkraft 15.10.): ein zweiter Durchlauf der anderen Nutzer und Fallen, die zu 2580 passen."""
+    rauschen(s, 25802)
+    s.add('2093', 5, '08:10', 'Standort', 'Bäckerei am Marktplatz, Volkach')
+    s.add('2093', 12, '08:30', 'Standort', 'Bäckerei am Marktplatz, Volkach')
+    s.add('6612', 2, '23:30', 'Standort', 'Hauptbahnhof, Würzburg')
+    s.add('6612', 9, '23:45', 'Einkauf', 'Taxi Würzburg Innenstadt: 9,80 €')
+    s.add('8146', 4, '07:40', 'Standort', 'Krankenhaus, Würzburg')
+    s.add('5520', 8, '20:30', 'App', 'Social-Media-App: 1 h 20 min')
+
+
 def stufe(sid, phase, steckbrief, frage, tipps, modus, schluessel, richtig, falsch, anzeige, erkenntnis, belegwort,
           beleg, beleg_lehrkraft):
     return dict(id=sid, phase=phase, steckbrief=steckbrief, frage=frage, tipps=tipps, modus=modus,
@@ -658,6 +754,53 @@ FAELLE = [
                'Kardiologische Praxis', 'Standort Mi 30.09. 09:00 bis 10:35',
                'Phase 2: Standort Mi 30.09. 09:00 und 10:35 Kardiologische Praxis Würzburg, danach Apotheke'),
      ]},
+    {'id': 'toni', 'nutzer': '2580', 'person': 'Toni Weidner, 18, Volkach, Ausbildung Pflege Würzburg, Schichtdienst',
+     'kampagne': True, 'quelle1': None, 'baue': fall_toni, 'extra': extra_toni, 'seed': 2580, 'nachname': 'weidner',
+     'stufen': [
+         stufe('ort', 0, 'Wohnort', 'In welchem Ort wohnt 2580?', ['Filtere nach Nutzer 2580.', 'Wo ist das Handy nachts um 3 Uhr?'],
+               'wort', ['VOLKACH'],
+               ['Volkach', 'volkach', 'in Volkach', 'Am Sonnenhang, Volkach', 'Volkah', 'Folkach'],
+               ['Würzburg', 'Kitzingen', 'Sonnenhang', 'Krankenhaus', 'Volk'],
+               'Volkach (Am Sonnenhang)', 'Der Wohnort steckt in jeder Nacht.', 'Volkach',
+               'Standort nachts 03:10: „Am Sonnenhang, Volkach“', 'Standort jede Nacht 03:10 und 23:58/15:35 → Am Sonnenhang, Volkach'),
+         stufe('arbeit', 0, 'Arbeit', 'Wo arbeitet 2580 unter der Woche?', ['Quelle: Standort, Mo 21.09.', 'Wo ist das Handy von 14 bis 21 Uhr?'],
+               'wort', ['KRANKENHAUS', 'KLINIK', 'PFLEGE', 'SPITAL', 'KLINIKUM'],
+               ['Krankenhaus', 'im Krankenhaus', 'Krankenhaus Würzburg', 'Klinik', 'in der Pflege', 'Krankenhuas', 'Kranknhaus'],
+               ['Würzburg', 'Bäckerei', 'Hauptbahnhof', 'Schule', 'Haus'],
+               'Krankenhaus in Würzburg (Ausbildung Pflege, Schichtdienst)', 'Arbeit und Schichtzeiten: aus dem Standort.', 'Krankenhaus',
+               'Standort Mo–Fr 13:38 bis 21:52 (Woche 1), 05:58 bis 14:20 (Woche 2)',
+               'Woche 1 Spätschicht 13:38–21:52, Woche 2 Frühschicht 05:58–14:20, Mi Pflegeschule; Falle: 8146 einmal am Krankenhaus'),
+         stufe('heimweg', 0, 'Heimweg', 'Womit fährt 2580 nach der Arbeit spätabends nach Hause?',
+               ['Was zeigt die Bus-App um 22:36?', 'Quelle: Einkauf, Uhrzeit 22 bis 23.'],
+               'wort', ['TAXI'],
+               ['Taxi', 'mit dem Taxi', 'Taxi für 42 Euro', 'taxi', 'Taxie'],
+               ['Bus', 'Zug', 'Auto', 'Fahrrad', 'Mitfahr-App', 'Mama'],
+               'Mit dem Taxi (42 bis 44,50 €), weil kein Bus mehr fährt', 'Ein Einkauf verrät den Heimweg und den Preis.', 'Taxi',
+               'Einkauf Mo/Di/Do 23:10–23:25: „Taxi Würzburg → Volkach: 42,00 €“',
+               'Bus-App 22:36/22:40 „keine Verbindung mehr“, Taxi 3× (42,00 / 42,00 / 44,50 €); Falle: 6612 Taxi in Würzburg'),
+         stufe('samstag', 0, 'Samstag', 'Wo jobbt 2580 samstags?', ['Tag: Sa 26.09., Quelle: Standort.', 'Was steht beim Einkauf um 13:20?'],
+               'wort', ['BAECKEREI', 'BACKEREI', 'BAECKER', 'MARKTPLATZ'],
+               ['Bäckerei', 'in der Bäckerei', 'Bäckerei am Marktplatz', 'Bäcker', 'Baeckerei', 'Bäckrei', 'am Marktplatz'],
+               ['Volkach', 'Krankenhaus', 'Café', 'Supermarkt', 'Konzert'],
+               'Bäckerei am Marktplatz in Volkach (Altstadt), 48 € Lohn', 'Der Lohn verrät den Nebenjob.', 'Bäckerei am Marktplatz',
+               'Standort Sa 07:28–13:05, Einkauf Sa „Lohn Samstag, 48,00 €“',
+               'Sa 26.09. und 03.10. Bäckerei am Marktplatz 07:28–13:05, Lohn 48 €; Falle: 2093 kauft dort ein'),
+         stufe('aerger', 0, 'Ärger', 'Wofür musste 2580 am Samstag, 03.10., 25 Euro zahlen?',
+               ['Tag: Sa 03.10., Quelle: Einkauf.', 'Schau dir den Standort von 07:14 bis 07:31 an.'],
+               'wort', ['VERWARNGELD', 'STRAFZETTEL', 'FALSCHPARKEN', 'PARKEN', 'GEPARKT', 'KNOELLCHEN'],
+               ['Falschparken', 'Strafzettel', 'Verwarngeld', 'falsch geparkt', 'fürs Parken', 'Knöllchen', 'Strafzetel'],
+               ['Tanken', 'Taxi', 'Bäckerei', 'Konzert', 'Auto', 'Geld'],
+               'Verwarngeld fürs Falschparken in der Altstadt (vorher Parkplatzsuche)', 'Vier Standorte in 17 Minuten: Parkplatzsuche.', 'Verwarngeld',
+               'Einkauf Sa 03.10. 13:15 „Verwarngeld Falschparken, 25,00 €“',
+               'Sa 03.10. 07:14–07:31 Mainufer → Hauptstraße → Kirchplatz → Hauptstraße, 13:15 Verwarngeld 25 €, 13:40 Nachricht an Mama'),
+         stufe('handy', 0, 'Handyzeit', 'Welche App öffnet 2580 fast jeden Abend?', ['Quelle: App.', 'Uhrzeit von 21 bis 23.'],
+               'wort', ['SOCIAL', 'MEDIA', 'SOZIAL', 'SOCIALMEDIA'],
+               ['Social-Media-App', 'Social Media', 'die Social-Media-App', 'social media app', 'Socialmedia', 'Social Medai'],
+               ['Bus-App', 'Musik-App', 'Wecker', 'Banking', 'App', 'Mitfahr-App'],
+               'Social-Media-App, abends gegen 21:40 bzw. 22:47', 'Hier und um diese Zeit sieht 2580 eure Anzeige.', 'Social-Media-App',
+               'App fast jeden Abend 21:40/22:47: „Social-Media-App: … min“',
+               'Social-Media-App 12× abends (nicht samstags) (22:47 in Woche 1, 21:40 danach); Falle: 5520 auch Social Media'),
+     ]},
 ]
 
 
@@ -700,6 +843,21 @@ QUELLE_TEXT = {'Suche': 'Suchanfragen', 'App': 'App-Daten', 'Einkauf': 'Einkäuf
 
 def akte(f):
     nu = f['nutzer']
+    if f.get('kampagne'):
+        return {
+            'titel': f'Fall {nu}',
+            'absender': 'Bürgerentscheid Volkach · Kampagnenteam',
+            'briefing': [f'Ihr habt die Daten von Nutzer {nu} gekauft. {nu} darf abstimmen und hat sich noch nicht entschieden.',
+                         f'Lernt {nu} kennen. Jede Frage füllt eine Zeile eures Profils.'],
+            'hinweis_fiktion': 'Personen, Daten und Bürgerentscheid sind erfunden.',
+            'abschluss': {
+                'titel': 'Profil fertig. Jetzt eure Kampagne.',
+                'text': ['Aus einer Nummer ist ein Profil geworden: '
+                         + ', '.join(s['steckbrief'] for s in f['stufen']) + '.'],
+                'fragen': ['Welches Detail hilft eurer Seite am meisten?',
+                           f'Wann und in welcher App erreicht ihr {nu}?'],
+            },
+        }
     return {
         'titel': f'Fall {nu}',
         'absender': 'Agentur NEBEL · Ausbildungsfall',
@@ -717,6 +875,9 @@ def akte(f):
 
 
 def phasen(f):
+    if f.get('kampagne'):   # Kampagnen-Fall: alle Datenarten von Anfang an
+        return [{'id': 'alle', 'titel': 'Alle Daten', 'quellen': QUELLEN,
+                 'text': 'Ihr seht alle Datenarten. Filtert nach Nutzer und Datenquelle.'}]
     return [{'id': 'eine', 'titel': 'Phase 1', 'quellen': [f['quelle1']],
              'text': f'Du siehst nur {QUELLE_TEXT[f["quelle1"]]}.'},
             {'id': 'alle', 'titel': 'Phase 2', 'quellen': QUELLEN,
@@ -764,7 +925,8 @@ def pruefe(f, eintraege, ph, ak):
 def uebersicht(faelle):
     punkte = '\n'.join(
         f'    <li><a href="{f["nutzer"]}/">\n      <strong>Fall {f["nutzer"]}</strong>\n'
-        f'      <span>Informatik 6 · Wer steckt hinter Nutzer {f["nutzer"]}?</span>\n    </a></li>' for f in faelle)
+        f'      <span>Informatik 6 · Wer steckt hinter Nutzer {f["nutzer"]}?</span>\n    </a></li>' for f in faelle
+        if not f.get('kampagne'))   # Kampagnen-Fälle nur über die Link-Seite des Kurses
     alt = (WEB / 'index.html').read_text(encoding='utf-8')
     a, b = alt.index('<ul class="d-wahl">'), alt.index('</ul>')
     return alt[:a] + '<ul class="d-wahl">\n' + punkte + '\n  ' + alt[b:]
@@ -806,8 +968,8 @@ def main():
         ausgaben.append((f, daten, fall_kopf, ak, ph, eintraege))
         n_ziel = sum(1 for e in eintraege if e['nutzer'] == f['nutzer'])
         print(f'{f["id"]:6} Fall {f["nutzer"]}: {len(eintraege)} Einträge, davon Nutzer {f["nutzer"]}: {n_ziel}, '
-              f'Phase 1 = {f["quelle1"]}')
-        loesung += [f'## Fall {f["nutzer"]} · {f["person"]} · Phase 1: {QUELLE_TEXT[f["quelle1"]]} · {fall_kopf["url"]}', '',
+              f'Phase 1 = {f["quelle1"] or "alle (Kampagne)"}')
+        loesung += [f'## Fall {f["nutzer"]} · {f["person"]} · Phase 1: {QUELLE_TEXT[f["quelle1"]] if f["quelle1"] else "alle Datenarten (Kampagnen-Fall)"} · {fall_kopf["url"]}', '',
                     '| Stufe | Phase | Frage | Lösung | Schlüssel | Beispiele, die angenommen werden | Belege im Datensatz |',
                     '|---|---|---|---|---|---|---|']
         for i, s in enumerate(f['stufen'], 1):
