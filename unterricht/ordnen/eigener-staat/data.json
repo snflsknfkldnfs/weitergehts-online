@@ -1,0 +1,134 @@
+{
+ "titel": "Mein eigener Staat",
+ "leitfrage": "Du gründest deinen eigenen Staat: Wer soll wofür sorgen?",
+ "auftrag": "Oben steht „Der Staat sorgt für alle“, unten „Jede und jeder sorgt selbst“. Legt die zehn Karten dazwischen: Was soll eher der Staat besorgen, was jede und jeder selbst? Es gibt kein Richtig oder Falsch, aber jede Karte braucht einen Grund. Zieht die Karten oder benutzt die Pfeile.",
+ "pruefen": false,
+ "ki_hilfe": false,
+ "karten": [
+  {
+   "id": "staat",
+   "bild": "bilder/staat.png",
+   "alt": "Symbol: Der Staat sorgt für alle",
+   "titel": "Der Staat sorgt für alle",
+   "satz": "Es gehört allen. Der Staat plant, wie viel es gibt und was es kostet. Niemand darf damit Geld verdienen.",
+   "fix": "start",
+   "bild_passung": "ganz"
+  },
+  {
+   "id": "brot",
+   "bild": "bilder/brot.png",
+   "alt": "Symbol: Brot und Lebensmittel",
+   "titel": "Brot und Lebensmittel",
+   "satz": "Bäckereien, Bauernhöfe, Supermärkte. Alle brauchen jeden Tag etwas zu essen.",
+   "fix": null,
+   "bild_passung": "ganz"
+  },
+  {
+   "id": "wohnung",
+   "bild": "bilder/wohnung.png",
+   "alt": "Symbol: Wohnungen",
+   "titel": "Wohnungen",
+   "satz": "Häuser mit Wohnungen. Wer darin wohnt, zahlt Miete an den, dem das Haus gehört.",
+   "fix": null,
+   "bild_passung": "ganz"
+  },
+  {
+   "id": "strom",
+   "bild": "bilder/strom.png",
+   "alt": "Symbol: Strom und Heizung",
+   "titel": "Strom und Heizung",
+   "satz": "Kraftwerke und Leitungen. Ohne Strom und Heizung geht im Winter nichts.",
+   "fix": null,
+   "bild_passung": "ganz"
+  },
+  {
+   "id": "wasser",
+   "bild": "bilder/wasser.png",
+   "alt": "Symbol: Trinkwasser",
+   "titel": "Trinkwasser",
+   "satz": "Wasserwerke und Leitungen bis in jedes Haus.",
+   "fix": null,
+   "bild_passung": "ganz"
+  },
+  {
+   "id": "krankenhaus",
+   "bild": "bilder/krankenhaus.png",
+   "alt": "Symbol: Krankenhaus und Arzt",
+   "titel": "Krankenhaus und Arzt",
+   "satz": "Ärztinnen, Ärzte und Krankenhäuser. Krank werden kann jeder.",
+   "fix": null,
+   "bild_passung": "ganz"
+  },
+  {
+   "id": "bus",
+   "bild": "bilder/bus.png",
+   "alt": "Symbol: Bus und Bahn",
+   "titel": "Bus und Bahn",
+   "satz": "Busse, Züge, Schienen. Damit kommen viele zur Arbeit und zur Schule.",
+   "fix": null,
+   "bild_passung": "ganz"
+  },
+  {
+   "id": "fabrik",
+   "bild": "bilder/fabrik.png",
+   "alt": "Symbol: Fabriken",
+   "titel": "Fabriken",
+   "satz": "Hier werden Autos, Maschinen und Möbel hergestellt. Hier arbeiten viele Menschen.",
+   "fix": null,
+   "bild_passung": "ganz"
+  },
+  {
+   "id": "auto",
+   "bild": "bilder/auto.png",
+   "alt": "Symbol: Autos",
+   "titel": "Autos",
+   "satz": "Ein eigenes Auto: Man fährt, wann und wohin man will.",
+   "fix": null,
+   "bild_passung": "ganz"
+  },
+  {
+   "id": "handy",
+   "bild": "bilder/handy.png",
+   "alt": "Symbol: Handys",
+   "titel": "Handys",
+   "satz": "Smartphones in vielen Modellen und zu vielen Preisen.",
+   "fix": null,
+   "bild_passung": "ganz"
+  },
+  {
+   "id": "schuhe",
+   "bild": "bilder/schuhe.png",
+   "alt": "Symbol: Turnschuhe und Kleidung",
+   "titel": "Turnschuhe und Kleidung",
+   "satz": "Viele Marken, Farben und Preise.",
+   "fix": null,
+   "bild_passung": "ganz"
+  },
+  {
+   "id": "selbst",
+   "bild": "bilder/selbst.png",
+   "alt": "Symbol: Jede und jeder sorgt selbst",
+   "titel": "Jede und jeder sorgt selbst",
+   "satz": "Es darf jemandem gehören. Man darf es kaufen und verkaufen und damit Geld verdienen.",
+   "fix": "ende",
+   "bild_passung": "ganz"
+  }
+ ],
+ "fragen": [
+  {
+   "text": "Schaut auf eure Reihe: Wo hört „Der Staat sorgt“ auf, wo fängt „Jede und jeder sorgt selbst“ an? Warum gerade dort?",
+   "fuer_schnelle": false
+  },
+  {
+   "text": "Wie hätte die DDR die Karten gelegt, wie die BRD 1955? Wo liegt ihr selbst näher dran?",
+   "fuer_schnelle": false
+  },
+  {
+   "text": "Bei welcher Karte soll niemand Geld verdienen dürfen? Begründet.",
+   "fuer_schnelle": true
+  }
+ ],
+ "nachweise": [
+  "Symbole: OpenMoji, das offene Emoji-Projekt (openmoji.org), Lizenz CC BY-SA 4.0"
+ ]
+}
