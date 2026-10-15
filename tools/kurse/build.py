@@ -52,9 +52,8 @@ def zuletzt(eintraege: list[dict], heute: dt.date) -> list[dict]:
                N Tage vor der jüngsten Stunde.
     Rückgabe:  die Teilmenge, die oben unter „Zuletzt" stehen soll (leer = Block entfällt).
     """
-    # TODO(Paul): Regel festlegen. Varianten aus der Spec: die letzte Stunde
-    # (alle Einträge mit dem jüngsten Datum) · alles der letzten N Tage · feste Anzahl.
-    return []
+    # Regel (Paul 2026-10-15): die letzte Stunde — alle Einträge mit dem jüngsten Datum.
+    return [z for z in eintraege if z["datum"] == heute]
 
 
 # ─────────────────────────── Laden + Prüfen ───────────────────────────

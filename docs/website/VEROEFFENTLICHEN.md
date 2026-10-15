@@ -106,7 +106,8 @@ Commit-Betreff mit Kurs und Stunde (Commits sind nicht öffentlich, die Seite sc
 
 - **Push nur nach Freigabe der Lehrkraft.** Danach ~1 Minute bis live.
 - Link an die Klasse ist **die Kursseite** `https://weitergehts.online/unterricht/k/<kurs>/`
-  (QR-Code, Computerraum-Lesezeichen) — sie zeigt oben „Zuletzt" und darunter alles nach Thema.
+  (QR-Code, Computerraum-Lesezeichen) — sie zeigt oben unter „Zuletzt" alles mit dem jüngsten `datum`
+  (= die letzte Stunde) und darunter alles nach Thema. Darum `datum` immer auf die Stunde setzen, in der das Material dran ist.
   Direktlinks auf eine einzelne Materialseite sind für Arbeitsblätter weiter in Ordnung.
 - Nicht die Übersicht `/unterricht/` als Klassenlink verwenden — sie ist bewusst kursneutral.
 
@@ -114,7 +115,8 @@ Commit-Betreff mit Kurs und Stunde (Commits sind nicht öffentlich, die Seite sc
 
 - ❌ `unterricht/index.html` oder `unterricht/k/*/index.html` von Hand oder mit einem anderen
   Werkzeug schreiben (auch nicht mit `werkzeugkasten/core/tools/material/linkseite.py`) —
-  `make check` blockt jede Abweichung vom Generator. ✅ Eintrag in `kurse.json` + `make kurse`.
+  `make check` blockt jede Abweichung vom Generator, und `linkseite.py` verweigert diese Ziele seit 15.10.
+  (Werkzeugkasten `33a0080`). ✅ Eintrag in `kurse.json` + `make kurse`.
 - ❌ Kurskürzel, Datum oder Namen in `titel`, `pfad`, Ordner- oder Dateinamen.
 - ❌ Kursseite in der Übersicht oder auf anderen öffentlichen Seiten verlinken (Kursseiten sind
   unverlinkt + `noindex`; das ist Unsichtbarkeit, kein Zugriffsschutz — nichts Vertrauliches darauf).

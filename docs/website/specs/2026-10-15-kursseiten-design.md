@@ -162,7 +162,9 @@ Neuer Check `tools/kurse/build.py --check` (in `check.sh` eingehängt):
 \* Datum = Erst-Commit bzw. Stundendatum aus der Commit-Nachricht; **Paul korrigiert** beim Review.
 Themen-Namen sind Vorschläge. Strang (GPG): Aktuelles = SMV, Schulproteste, Wochenrückblick-Anleitung, Frühstartrente, Wehrdienst, Mein eigener Staat; Geschichte = alles Übrige inkl. Syrien-Game (Claude-Setzung, Paul kann umhängen).
 
-## Offener Entscheidungspunkt: Was ist „Zuletzt"?
+## Entschieden (Paul 2026-10-15): „Zuletzt" = die letzte Stunde
+
+Alle Einträge mit dem jüngsten Datum des Kurses. Abgewogen waren:
 
 `zuletzt(eintraege, heute)` im Generator; `heute` = Datum der jüngsten Stunde des Kurses (nicht der Build-Tag, sonst meldet `make check` täglich Drift). Varianten: die letzte Stunde (alle Einträge mit dem
 jüngsten Datum) · alles der letzten 7 Tage · feste Anzahl (2–3). Abwägung: Die Seite ist statisch
