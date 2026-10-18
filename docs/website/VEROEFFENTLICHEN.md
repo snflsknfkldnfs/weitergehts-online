@@ -16,7 +16,7 @@ Materialordner unter `unterricht/` → **Eintrag in `unterricht/kurse.json`** �
 `make check` → Commit (explizit gestagt) → **Push nur nach Freigabe der Lehrkraft** → ~1 Min. live.
 
 Der Eintrag in `kurse.json` ist der Schritt, der früher fehlte: Ohne ihn ist die Seite zwar live,
-aber in keiner Übersicht und auf keiner Kursseite zu finden (`make check` meldet sie als „verwaist").
+aber in keiner Übersicht und auf keiner Kursseite zu finden. Seit 18.10.2026 **blockiert** `make check` eine verwaiste Seite (B5b; Befund: `quellen/versailles/` war live und verwaist, weil der Hinweis nur als ADVISORY lief). Stunden-Erzeuger schreiben den Eintrag selbst mit dem Werkzeugkasten-Baustein `/Users/paulad/werkzeugkasten/core/tools/material/kurse_eintrag.py` (`eintragen(WEBSITE, {...})`: fügt im Stil der Datei ein oder ersetzt, ruft `make kurse` und die Verwaist-Prüfung); Vorbild `welt/GPG8a/S01_weimar/UE08-09_2026-10-20_versailles/_render/seite_bauen.py`.
 
 ## Schritt 0 — Arbeitsbaum, nie der Hauptcheckout
 

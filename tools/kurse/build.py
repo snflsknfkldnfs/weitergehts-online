@@ -486,7 +486,8 @@ def soll(daten: dict) -> dict[Path, str]:
 
 
 def verwaist(daten: dict) -> list[str]:
-    """Materialseiten unter unterricht/, die in kurse.json fehlen (ADVISORY)."""
+    """Materialseiten unter unterricht/, die in kurse.json fehlen (BLOCKING seit 18.10.2026: eine verwaiste Seite ist
+    live, aber in keiner Übersicht und auf keiner Kursseite — Befund quellen/versailles/)."""
     gelistet = {m["pfad"].removesuffix("index.html") for m in daten["materialien"]}
     gelistet |= {t["pfad"] for m in daten["materialien"] for t in m.get("teile", [])}
     gelistet |= set(daten.get("hubs", []))
@@ -518,7 +519,7 @@ def main(argv: list[str]) -> int:
             print(f"verwaist (nicht in kurse.json): unterricht/{s}")
         if not w:
             print("keine verwaisten Materialseiten")
-        return 0
+        return 1 if (w and "--strict" in argv) else 0
     if probleme:
         print("kurse.json ungültig:\n" + "\n".join("  - " + p for p in probleme))
         return 1
