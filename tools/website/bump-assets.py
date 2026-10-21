@@ -57,6 +57,7 @@ ALIASES = {
     "fonts": "fonts.css",
     "tokens": "tokens.css",
     "wg": "wg.css",
+    "material": "material.css",
 }
 
 

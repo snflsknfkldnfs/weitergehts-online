@@ -1,216 +1,119 @@
 /* Anordnen — geteiltes Werkzeug fuer Anordnungsaufgaben (Zeitstrahl, Rangfolge, Ablauf).
-   Datengetrieben: je Aufgabe ein Ordner mit index.html + data.json. Kein Framework. */
+   Datengetrieben: je Aufgabe ein Ordner mit index.html + data.json. Kein Framework.
+   Gestaltung „Blatt" (2026-10-21): Farben, Schrift, Knopf und Blatt kommen aus
+   ../assets/css/material.css (vorher geladen); hier nur das Layout des Werkzeugs, nur --m-*-Tokens. */
 
-:root {
-  --o-bg: #f4f2ee;
-  --o-flaeche: #ffffff;
-  --o-linie: #d9d3c9;
-  --o-text: #1d1b18;
-  --o-gedaempft: #6b655c;
-  --o-akzent: #1f5673;
-  --o-akzent-hell: #e3eef4;
-  --o-fix: #f6efe0;
-  --o-fix-linie: #d8c79a;
-  --o-radius: 12px;
-  --o-schatten: 0 1px 2px rgba(0,0,0,.07), 0 6px 18px rgba(0,0,0,.06);
-}
+.o-huelle { max-width: 780px; margin: 0 auto; padding: 32px 20px 112px; }
 
-* { box-sizing: border-box; }
+.o-kopf { padding: 0 2px 20px; }
+.o-kopf h1 { margin: 0 0 8px; font-size: 1.5rem; line-height: 1.25; font-weight: 700; }
+.o-kopf p { margin: 0 0 6px; max-width: var(--m-mass); }
+.o-ki-zeile { color: var(--m-leise); font-size: .95rem; }
 
-body.ordnen {
-  margin: 0;
-  background: var(--o-bg);
-  color: var(--o-text);
-  font: 17px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  -webkit-text-size-adjust: 100%;
-}
-
-.o-huelle { max-width: 760px; margin: 0 auto; padding: 16px 14px 96px; }
-
-.o-kopf { padding: 8px 2px 14px; }
-.o-kopf h1 { margin: 0 0 6px; font-size: 1.45rem; line-height: 1.25; }
-.o-kopf p { margin: 0; color: var(--o-gedaempft); font-size: .95rem; }
-
-/* ── Liste ───────────────────────────────────────────────────────────── */
+/* ── Liste: jede Karte ein Blatt ─────────────────────────────────────── */
 .o-liste { list-style: none; margin: 0; padding: 0; position: relative; }
 
 .o-karte {
-  display: grid;
-  grid-template-columns: minmax(0, 42%) 1fr auto;
-  gap: 14px;
-  align-items: center;
-  background: var(--o-flaeche);
-  border: 1px solid var(--o-linie);
-  border-radius: var(--o-radius);
-  padding: 8px 10px 8px 8px;
-  margin: 0 0 12px;
-  box-shadow: var(--o-schatten);
+  display: grid; grid-template-columns: minmax(0, 40%) 1fr auto; gap: 16px; align-items: center;
+  background: var(--m-blatt); border: 1px solid var(--m-linie); border-radius: 2px;
+  box-shadow: var(--m-schatten);
+  padding: 10px 10px 10px 10px; margin: 0 0 16px; position: relative;
   touch-action: none;           /* Ziehen mit dem Finger, kein Seiten-Scroll */
-  -webkit-user-select: none;
-  user-select: none;
-  position: relative;
+  -webkit-user-select: none; user-select: none;
 }
-
-.o-karte.o-fix {
-  background: var(--o-fix);
-  border-color: var(--o-fix-linie);
-  touch-action: auto;
-  cursor: default;
-}
-
-.o-karte.o-greift {
-  box-shadow: 0 8px 26px rgba(0,0,0,.20);
-  border-color: var(--o-akzent);
-  z-index: 40;
-  position: relative;
-  opacity: .97;
-}
+/* Feste Karte: steht schon richtig — gestrichelter Rand, ohne Kante, keine Pfeile */
+.o-karte.o-fix { border-style: dashed; box-shadow: none; background: var(--m-blatt); touch-action: auto; cursor: default; }
+/* Gegriffene Karte: hebt sich mit größerer Kante ab */
+.o-karte.o-greift { box-shadow: 9px 9px 0 var(--m-kante); border-color: var(--m-tinte); z-index: 40; }
 
 .o-nr {
-  position: absolute;
-  top: -8px; left: -8px;
-  min-width: 23px; height: 23px;
-  border-radius: 999px;
-  background: var(--o-akzent);
-  color: #fff;
-  font-size: .78rem;
-  font-weight: 700;
-  display: grid; place-items: center;
-  padding: 0 6px;
+  position: absolute; top: -12px; left: -12px;
+  min-width: 28px; height: 28px; padding: 0 7px; border-radius: 999px;
+  background: var(--m-tinte); color: var(--m-blatt);
+  font-size: .85rem; font-weight: 700; display: grid; place-items: center;
 }
-.o-karte.o-fix .o-nr { background: #9a8654; }
+.o-karte.o-fix .o-nr { background: var(--m-blatt); color: var(--m-tinte); border: 2px solid var(--m-tinte); }
 
 /* Das Bild ist der Hauptinhalt der Karte, nicht die Beigabe. */
 .o-bild {
-  width: 100%;
-  height: 152px;
-  object-fit: cover;
-  object-position: center 38%;
-  border-radius: 9px;
-  background: #e8e4dd;
-  display: block;
-  pointer-events: none;
+  width: 100%; height: 152px; display: block; pointer-events: none;
+  object-fit: cover; object-position: center 38%;
+  background: var(--m-notiz); border: 1px solid var(--m-linie-hell);
 }
-
-.o-bild-ganz {
-  object-fit: contain;
-  background: #fbfaf8;
-  border: 1px solid var(--o-linie);
-  padding: 4px;
-}
+.o-bild-ganz { object-fit: contain; padding: 4px; }
 
 .o-text { min-width: 0; }
-.o-titel { font-weight: 700; font-size: 1.12rem; margin: 0 0 5px; line-height: 1.2; }
-.o-satz { margin: 0; font-size: .92rem; color: #46423b; line-height: 1.38; }
+.o-titel { margin: 0 0 6px; font-weight: 700; font-size: 1.12rem; line-height: 1.25; }
+.o-satz { margin: 0; font-size: .98rem; line-height: 1.45; }
 
-.o-griff {
-  display: flex; flex-direction: column; gap: 4px; align-items: center;
-}
+/* Pfeile nebeneinander: hält 44 px zum Antippen und lässt kompakte Karten flach (eigener-staat: alle zwölf an der Tafel) */
+.o-griff { display: flex; flex-direction: row; gap: 8px; align-items: center; }
 .o-pfeil {
-  width: 34px; height: 30px;
-  border: 1px solid var(--o-linie);
-  background: #fbfaf8;
-  border-radius: 7px;
+  width: var(--m-klick); height: var(--m-klick); padding: 0; cursor: pointer;
+  border: 2px solid var(--m-tinte); border-radius: var(--m-ecke); background: var(--m-blatt);
   font-size: 15px; line-height: 1;
-  color: var(--o-akzent);
-  cursor: pointer;
-  padding: 0;
 }
-.o-pfeil:disabled { opacity: .3; cursor: default; }
-.o-pfeil:active { background: var(--o-akzent-hell); }
+.o-pfeil:disabled { opacity: .25; cursor: default; }
+.o-pfeil:active { background: var(--m-notiz); }
 
-/* ── Leiste unten ────────────────────────────────────────────────────── */
+/* KI-Knopf unter dem Text der Karte (Gestalt aus .m-knopf), kleiner, damit die Karte führt */
+.o-ki-huelle { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+.o-ki { min-height: 40px; padding: 0 14px; font-size: .92rem; }
+.o-ki-hinweis { font-size: .88rem; color: var(--m-leise); }
+
+/* ── Leiste unten: die eine Handlung ─────────────────────────────────── */
 .o-leiste {
   position: fixed; left: 0; right: 0; bottom: 0;
-  background: rgba(255,255,255,.96);
-  border-top: 1px solid var(--o-linie);
-  padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
-  display: flex; gap: 10px; align-items: center; justify-content: center;
-  backdrop-filter: saturate(180%) blur(8px);
+  background: var(--m-blatt); border-top: 1px solid var(--m-linie);
+  padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+  display: flex; gap: 12px; align-items: center; justify-content: center; flex-wrap: wrap;
 }
 .o-knopf {
-  border: 1px solid var(--o-akzent);
-  background: var(--o-akzent);
-  color: #fff;
-  border-radius: 9px;
-  padding: 11px 18px;
-  font-size: 1rem; font-weight: 600;
-  cursor: pointer;
+  min-height: var(--m-klick); padding: 0 22px; cursor: pointer;
+  border: 2px solid var(--m-tinte); border-radius: var(--m-ecke);
+  background: var(--m-tinte); color: var(--m-blatt); font-size: 1rem; font-weight: 600;
 }
-.o-knopf.o-zweit { background: #fff; color: var(--o-akzent); }
-.o-stand { font-size: .95rem; color: var(--o-gedaempft); min-width: 0; }
-.o-stand strong { color: var(--o-text); }
+.o-knopf.o-zweit { background: var(--m-blatt); color: var(--m-tinte); }
+.o-knopf:active { opacity: .85; }
+.o-stand { font-size: .95rem; color: var(--m-leise); min-width: 0; }
+.o-stand strong { color: var(--m-tinte); }
 
-/* ── Fragen ──────────────────────────────────────────────────────────── */
-.o-fragen { margin-top: 28px; }
-.o-fragen h2 { font-size: 1.1rem; margin: 0 0 4px; }
-.o-hinweis { font-size: .84rem; color: var(--o-gedaempft); margin: 0 0 14px; }
-.o-frage { background: var(--o-flaeche); border: 1px solid var(--o-linie); border-radius: var(--o-radius); padding: 12px; margin-bottom: 12px; }
-.o-frage p { margin: 0 0 8px; font-size: .95rem; }
+/* ── Fragen zum Schluss ──────────────────────────────────────────────── */
+.o-fragen { margin-top: 40px; }
+.o-fragen h2 { font-size: 1.15rem; margin: 0 0 6px; }
+.o-hinweis { font-size: .9rem; color: var(--m-leise); margin: 0 0 16px; max-width: var(--m-mass); }
+.o-frage {
+  background: var(--m-blatt); border: 1px solid var(--m-linie); border-radius: 2px;
+  box-shadow: var(--m-schatten); padding: 16px 18px; margin-bottom: 18px;
+}
+.o-frage p { margin: 0 0 10px; }
 .o-frage textarea {
-  width: 100%; min-height: 78px;
-  border: 1px solid var(--o-linie); border-radius: 8px;
-  padding: 8px; font: inherit; font-size: .95rem; resize: vertical;
-  background: #fdfdfc;
+  width: 100%; min-height: 84px; padding: 8px 10px; resize: vertical;
+  border: 1px solid var(--m-linie); border-radius: var(--m-ecke); background: var(--m-blatt);
 }
-.o-fuer-schnelle { border-style: dashed; }
-.o-fuer-schnelle .o-fahne {
-  display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .04em;
-  text-transform: uppercase; color: var(--o-akzent); margin-bottom: 6px;
-}
+/* Frage für Schnelle: gestrichelt, ohne Kante; der Satz „Für Schnelle" leise darüber */
+.o-fuer-schnelle { border-style: dashed; box-shadow: none; }
+.o-fuer-schnelle .o-fahne { display: block; margin-bottom: 6px; font-size: .9rem; font-style: italic; color: var(--m-leise); }
 
-.o-nachweis { margin-top: 30px; font-size: .74rem; color: var(--o-gedaempft); line-height: 1.5; }
-.o-nachweis h3 { font-size: .8rem; margin: 0 0 4px; }
+.o-nachweis { margin-top: 36px; font-size: .8rem; color: var(--m-leise); line-height: 1.5; }
+.o-nachweis h3 { font-size: .85rem; margin: 0 0 4px; }
 
-/* Schmales Geraet: Bild oben, Text darunter — das Bild bleibt gross. */
+/* Schmales Gerät: Bild oben, Text darunter — das Bild bleibt groß. */
 @media (max-width: 560px) {
-  .o-karte {
-    grid-template-columns: 1fr auto;
-    grid-template-areas: "bild bild" "text griff";
-    gap: 10px;
-    padding: 8px;
-  }
+  .o-huelle { padding: 20px 14px 112px; }
+  .o-karte { grid-template-columns: 1fr auto; grid-template-areas: "bild bild" "text griff"; gap: 10px; padding: 10px; }
   .o-bild { grid-area: bild; height: 168px; }
   .o-text { grid-area: text; }
-  .o-griff { grid-area: griff; flex-direction: row; }
+  .o-griff { grid-area: griff; flex-direction: row; align-self: end; }
   .o-titel { font-size: 1.05rem; }
 }
 
-/* ── KI-Hilfe je Karte ───────────────────────────────────────────────────
-   Knopf sitzt unter den Pfeilen in derselben Spalte; bei den festen Karten
-   steht er allein. Bewusst zurueckhaltend: die Karte bleibt der Hauptinhalt. */
-.o-ki-zeile {
-  margin: 8px 0 0;
-  color: var(--o-gedaempft);
-  font-size: .88rem;
-  line-height: 1.35;
+/* ── Übersicht der Anordnungsaufgaben (ordnen/index.html) ─────────────── */
+.o-wahl { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 14px; }
+.o-wahl a {
+  display: block; padding: 16px 18px; color: var(--m-tinte); text-decoration: none;
+  background: var(--m-blatt); border: 1px solid var(--m-linie); border-radius: 2px; box-shadow: var(--m-schatten);
 }
-
-.o-ki {
-  width: 34px; height: 30px;
-  border: 1px solid var(--o-linie);
-  background: #fbfaf8;
-  border-radius: 7px;
-  font-size: 15px; line-height: 1;
-  cursor: pointer;
-  padding: 0;
-  margin-top: 4px;
-}
-.o-ki:active { background: var(--o-akzent-hell); }
-.o-ki:focus-visible { outline: 2px solid var(--o-akzent); outline-offset: 2px; }
-
-/* Rueckmeldung nach dem Tippen: kurz, neben der Karte, verschwindet von selbst. */
-.o-ki-hinweis {
-  position: absolute;
-  right: 52px;
-  bottom: 8px;
-  max-width: 62%;
-  background: var(--o-text);
-  color: #fff;
-  font-size: .8rem;
-  line-height: 1.25;
-  padding: 5px 8px;
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-  z-index: 50;
-}
+.o-wahl a:active { box-shadow: 2px 2px 0 var(--m-kante); transform: translate(3px, 3px); }
+.o-wahl strong { display: block; font-size: 1.12rem; margin-bottom: 3px; }
+.o-wahl span { font-size: .95rem; color: var(--m-leise); }

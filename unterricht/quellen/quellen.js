@@ -42,10 +42,8 @@
     /* { eigen: "..." } = Satz der Lehrkraft, kein Wortlaut — sichtbar anders gesetzt,
        damit die Klasse Quelle und Erklaerung nie verwechselt. */
     if (text && typeof text === 'object') {
-      var e = el('p', 'q-eigen');
-      e.appendChild(el('span', 'q-eigen-marke', 'Erklärt:'));
-      e.appendChild(document.createTextNode(' ' + text.eigen));
-      return e;
+      /* Seit „Blatt" (2026-10-21) ohne Etikett: die Form trennt (ohne Serifen, ohne Nummer, Linie links). */
+      return el('p', 'q-eigen', text.eigen);
     }
     var p = el('p', 'q-absatz');
     var teile = text.split(/(\{\{.+?\}\})/);
@@ -87,8 +85,9 @@
 
   function kiKnopf(q) {
     var huelle = el('div', 'q-ki-huelle');
-    var b = el('button', 'q-ki', '✨ KI-Hilfe zu ' + q.kennung);
+    var b = el('button', 'q-ki m-knopf', 'Mit KI verstehen');
     b.type = 'button';
+    b.setAttribute('aria-label', 'Mit KI verstehen: ' + q.kennung);
     b.addEventListener('click', function () {
       kopieren(q.ki_prompt);
       var f = null;
@@ -155,6 +154,11 @@
 
   var startFassung = 'wortlaut';
 
+  /* Ältere Texte sagen „tippe auf ✨"; der Knopf heißt seit 2026-10-21 „Mit KI verstehen". */
+  function knopfWort(t) {
+    return String(t || '').replace(/\s*✨\s*/g, ' „Mit KI verstehen“ ').replace(/ {2,}/g, ' ').trim();
+  }
+
   function quelleBauen(q, mitKi) {
     var art = el('article', 'q-quelle q-' + (q.farbe || 'grau'));
     art.id = q.id;
@@ -209,7 +213,7 @@
     document.title = d.titel;
     document.getElementById('q-titel').textContent = d.titel;
     document.getElementById('q-leitfrage').textContent = d.leitfrage;
-    document.getElementById('q-auftrag').textContent = d.auftrag;
+    document.getElementById('q-auftrag').textContent = knopfWort(d.auftrag);
     if (d.fragen && d.fragen.length) {
       var box = document.getElementById('q-fragen');
       box.appendChild(el('h2', null, d.fragen_titel || 'Darauf achtet ihr'));
@@ -220,7 +224,7 @@
     }
     if (d.ki_hilfe && d.ki_hinweis) {
       var h = document.getElementById('q-ki-text');
-      h.textContent = d.ki_hinweis; h.hidden = false;
+      h.textContent = knopfWort(d.ki_hinweis); h.hidden = false;
     }
     startFassung = d.start_fassung || 'wortlaut';
     var raum = document.getElementById('q-quellen');

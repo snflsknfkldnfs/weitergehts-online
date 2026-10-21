@@ -942,7 +942,7 @@ def main():
     vorlage = VORLAGE.read_text(encoding='utf-8')
     # Cache-Bust-Versionen aus der zentralen Quelle (assets/versions.json), nie aus der Vorlage
     versionen = json.loads((ROOT / 'assets' / 'versions.json').read_text(encoding='utf-8'))['assets']
-    for datei in ('datenspuren.js', 'datenspuren.css'):
+    for datei in ('datenspuren.js', 'datenspuren.css', 'material.css'):
         vorlage = re.sub(re.escape(datei) + r'\?v=[0-9.]+', f'{datei}?v={versionen[datei]}', vorlage)
     alle_fehler, ausgaben = [], []
     loesung = ['# Datenspuren — Lösungsschlüssel aller Fälle (Lehrkraft, nicht für die Klasse)', '',

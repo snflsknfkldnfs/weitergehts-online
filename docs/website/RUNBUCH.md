@@ -44,6 +44,15 @@
 5. Stagen (Engine/CSS + `assets/versions.json` + die geänderten HTML) → commit → push.
 - **Vergessenes Cache-Bust = check.sh ROT** (Drift wird gefangen, nicht still).
 
+### L2b — Gestaltung der Materialseiten (Quellen, Anordnen, Datenspuren)
+
+1. Farben/Schrift/Knopf/Blatt nur in `unterricht/assets/css/material.css` (Tokens `--m-*`); Werkzeug-CSS enthält
+   nur Layout (Wächter B6 blockt Farbwerte dort). Spec: `specs/2026-10-21-material-design-design.md`.
+2. Vorher/Nachher: `.venv/bin/python3 tools/smoke/material_shots.py shoot <label>` (alle Materialseiten,
+   Tablet + Handy) — vor der Änderung `vorher`, danach `nachher`, Bilder nebeneinander sichten.
+3. Cache-Bust: `make bump A=material` bzw. `python3 tools/website/bump-assets.py --bump quellen.css` (…js, ordnen.*, datenspuren.*).
+4. `make check` + `make smoke` (der Smoke rendert seit 2026-10-21 alle Materialseiten mit).
+
 ## L3 — Neues Escape-Game einspielen (Generator → Site)
 
 > Produktion läuft im **Generator-Workflow** (anderes Repo/Plugin), nicht hier.

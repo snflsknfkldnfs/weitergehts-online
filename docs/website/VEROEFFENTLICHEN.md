@@ -48,6 +48,18 @@ Erzeuger schreiben mit `WEBSITE_REPO=<dieser Arbeitsbaum>` (Konvention aus `welt
 
 Neues JS/CSS: **sofort** Eintrag in `assets/versions.json` + `?v=`-Token im HTML (`CLAUDE.md` Regel 3).
 
+**Die Hülle (`index.html`) immer von einer bestehenden Seite desselben Werkzeugs kopieren** (Quellen:
+`quellen/raete-parlament/index.html`, Anordnen: `ordnen/kaiserreich/index.html`; Datenspuren erzeugt der
+Generator aus `tools/datenspuren/seite_vorlage.html`), nur `<title>` ersetzen. Die Hülle lädt
+`../../assets/css/material.css` vor dem Werkzeug-CSS — das ist die gemeinsame Gestaltung „Blatt" aller
+Materialseiten. ❌ Eine selbst geschriebene Hülle (wie früher in `staat_bauen.py`) verliert sie;
+`make check` blockt das (B6). Gestaltung nie pro Seite: keine `<style>`-Blöcke mit Farben, keine eigenen Knöpfe.
+
+**Wortlaut für den KI-Hinweis** (`ki_hinweis` in `data.json`): Der Knopf heißt „Mit KI verstehen" —
+✅ „Bei jeder Quelle kannst du auf „Mit KI verstehen" tippen …" (ältere Texte mit ✨ übersetzt das Werkzeug
+beim Anzeigen). Erklärsätze der Lehrkraft (`{"eigen": …}`) brauchen kein Etikett; das Werkzeug setzt sie
+sichtbar anders als den Wortlaut.
+
 ## Schritt 2 — Eintrag in `unterricht/kurse.json`
 
 Ein Objekt in `materialien` (Reihenfolge egal; der Generator sortiert):

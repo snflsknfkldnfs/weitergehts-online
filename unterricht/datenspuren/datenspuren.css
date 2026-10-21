@@ -1,157 +1,148 @@
 /* Datenspuren — geteiltes Werkzeug fuer Datenschutz-Faelle (Informatik).
-   Links die Akte (Auftrag, Stufe, Steckbrief), rechts der durchsuchbare Datensatz. Kein Framework. */
+   Links die Akte (Auftrag, Stufe, Steckbrief), rechts der durchsuchbare Datensatz. Kein Framework.
+   Gestaltung „Blatt" (2026-10-21): Farben, Schrift, Knopf und Blatt kommen aus
+   ../assets/css/material.css (vorher geladen); hier nur das Layout des Werkzeugs, nur --m-*-Tokens. */
 
-:root {
-  --d-bg: #eceae4;
-  --d-flaeche: #ffffff;
-  --d-akte: #f7f1e1;
-  --d-akte-linie: #d9c9a0;
-  --d-linie: #d6d1c7;
-  --d-text: #1b1d22;
-  --d-gedaempft: #5f6168;
-  --d-dunkel: #1e2a3a;
-  --d-akzent: #1f5673;
-  --d-akzent-hell: #e3eef4;
-  --d-gut: #1d6b3a;
-  --d-gut-hell: #e4f3e8;
-  --d-stempel: #a3262a;
-  --d-radius: 10px;
-}
-
-* { box-sizing: border-box; }
-
-body.datenspuren {
-  margin: 0;
-  background: var(--d-bg);
-  color: var(--d-text);
-  font: 17px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  -webkit-text-size-adjust: 100%;
-}
-
-/* ── Kopf ─────────────────────────────────────────────────────────────── */
+/* ── Kopf: ein Blatt-Streifen mit Stempel ─────────────────────────────── */
 .d-kopf {
   display: flex; justify-content: space-between; align-items: flex-end; gap: 16px;
-  background: var(--d-dunkel); color: #fff; padding: 14px 20px 12px;
+  background: var(--m-blatt); border-bottom: 1px solid var(--m-linie); padding: 18px 24px 14px;
 }
-.d-kopf h1 { margin: 0; font-size: 1.6rem; letter-spacing: .02em; }
+.d-kopf h1 { margin: 0; font-size: 1.6rem; line-height: 1.2; }
+/* Der Stempel gehört zur Geschichte des Falls (Akte), darum bleibt er: gerahmt, schräg, rot */
 .d-stempel {
-  display: inline-block; margin: 0 0 4px; padding: 1px 8px;
-  border: 2px solid #e8a3a5; color: #f3c4c5; border-radius: 4px;
-  font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  display: inline-block; margin: 0 0 6px; padding: 1px 8px; transform: rotate(-2deg);
+  border: 2px solid var(--m-rot); color: var(--m-rot); border-radius: 3px;
+  font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
 }
-.d-absender { margin: 2px 0 0; font-size: .85rem; color: #c9d3df; }
+.d-absender { margin: 4px 0 0; font-size: .9rem; color: var(--m-leise); }
 .d-fortschritt { margin: 0; font-weight: 700; white-space: nowrap; }
 
 /* ── Raster ───────────────────────────────────────────────────────────── */
 .d-raster {
   display: grid; grid-template-columns: minmax(300px, 380px) minmax(0, 1fr);
-  gap: 16px; padding: 16px; max-width: 1500px; margin: 0 auto;
+  gap: 24px; padding: 24px; max-width: 1500px; margin: 0 auto;
 }
-@media (max-width: 900px) { .d-raster { grid-template-columns: minmax(0, 1fr); padding: 12px; } }
+@media (max-width: 900px) { .d-raster { grid-template-columns: minmax(0, 1fr); padding: 14px; gap: 20px; } }
 
-/* ── Akte ─────────────────────────────────────────────────────────────── */
+/* ── Akte: ein Blatt ──────────────────────────────────────────────────── */
 .d-akte {
-  background: var(--d-akte); border: 1px solid var(--d-akte-linie); border-radius: var(--d-radius);
-  padding: 14px 16px; align-self: start;
+  background: var(--m-blatt); border: 1px solid var(--m-linie); border-radius: 2px; box-shadow: var(--m-schatten);
+  padding: 18px 20px; align-self: start;
 }
-@media (min-width: 901px) { .d-akte { position: sticky; top: 12px; max-height: calc(100vh - 24px); overflow: auto; } }
+@media (min-width: 901px) { .d-akte { position: sticky; top: 16px; max-height: calc(100vh - 32px); overflow: auto; } }
 
-.d-briefing summary { font-weight: 700; cursor: pointer; padding: 2px 0 6px; }
+.d-briefing summary { font-weight: 700; cursor: pointer; padding: 2px 0 8px; min-height: 32px; }
 .d-briefing p { margin: 0 0 8px; }
 
-.d-stufe { border-top: 1px dashed var(--d-akte-linie); margin-top: 8px; padding-top: 10px; }
+.d-stufe { border-top: 1px solid var(--m-linie-hell); margin-top: 10px; padding-top: 12px; }
 .d-stufe h3 { margin: 0 0 6px; font-size: 1.15rem; }
 .d-stufe h4 { margin: 12px 0 4px; }
 .d-frage { font-weight: 600; margin: 0 0 10px; }
 
 .d-eingabe { display: flex; gap: 8px; }
 .d-eingabe input {
-  flex: 1; min-width: 0; font: inherit; padding: 8px 10px;
-  border: 2px solid var(--d-linie); border-radius: 8px; background: #fff;
+  flex: 1; min-width: 0; min-height: var(--m-klick); padding: 0 10px;
+  border: 2px solid var(--m-linie); border-radius: var(--m-ecke); background: var(--m-blatt);
 }
-.d-eingabe input:focus { outline: none; border-color: var(--d-akzent); }
-.d-rueck { min-height: 1.4em; margin: 6px 0 0; color: var(--d-stempel); font-size: .95rem; }
+.d-eingabe input:focus { outline: none; border-color: var(--m-tinte); }
+.d-rueck { min-height: 1.4em; margin: 6px 0 0; color: var(--m-rot); font-size: .95rem; }
 
+/* Erkenntnis: was schon herausgefunden ist — Haken und Linie links, kein Farbfeld */
 .d-erkenntnis {
-  background: var(--d-gut-hell); border-left: 4px solid var(--d-gut); border-radius: 6px;
-  padding: 8px 10px; margin-bottom: 12px; font-size: .95rem;
+  border-left: 3px solid var(--m-gut); padding: 4px 0 4px 12px; margin-bottom: 12px; font-size: .95rem;
 }
-.d-erkenntnis strong { color: var(--d-gut); }
+.d-erkenntnis strong { color: var(--m-gut); }
 
 .d-tipps { margin-top: 8px; }
-.d-tipp { background: #fff; border-radius: 6px; padding: 6px 10px; margin: 0 0 6px; font-size: .95rem; }
+.d-tipp { background: var(--m-notiz); border-radius: var(--m-ecke); padding: 6px 10px; margin: 0 0 6px; font-size: .95rem; }
 
+/* Zeitungsausschnitt: ein eigenes kleines Blatt in der Akte */
 .d-zeitung {
-  margin: 0 0 12px; padding: 10px 12px; background: #fbfaf6; border: 1px solid var(--d-linie);
-  font-family: Georgia, "Times New Roman", serif; box-shadow: 2px 2px 0 var(--d-linie);
+  margin: 0 0 12px; padding: 10px 12px; background: var(--m-blatt); border: 1px solid var(--m-linie);
+  font-family: var(--m-wortlaut); box-shadow: 3px 3px 0 var(--m-kante);
 }
-.d-zeitung figcaption { font-size: .8rem; color: var(--d-gedaempft); font-family: inherit; }
+.d-zeitung figcaption { font-size: .8rem; color: var(--m-leise); font-family: var(--m-schrift); }
 .d-zeitung h4 { margin: 4px 0 6px; font-size: 1.05rem; }
 .d-zeitung p { margin: 0; font-size: .95rem; }
 
 .d-fragenliste li { margin-bottom: 6px; }
 
-.d-steckbrief-box { margin-top: 14px; background: #fff; border-radius: 8px; padding: 10px 12px; }
-.d-steckbrief-box h2 { font-size: 1rem; margin: 0 0 6px; }
-.d-steckbrief { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; margin: 0; font-size: .95rem; }
-.d-steckbrief dt { color: var(--d-gedaempft); }
+.d-steckbrief-box { margin-top: 16px; border-top: 1px solid var(--m-linie-hell); padding-top: 12px; }
+.d-steckbrief-box h2 { font-size: 1rem; margin: 0 0 8px; }
+.d-steckbrief { display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; margin: 0; font-size: .95rem; }
+.d-steckbrief dt { color: var(--m-leise); }
 .d-steckbrief dd { margin: 0; }
-.d-steckbrief dd.d-offen { color: #b4b0a6; letter-spacing: .1em; }
+.d-steckbrief dd.d-offen { color: var(--m-leise); letter-spacing: .1em; }
 .d-steckbrief dd.d-bekannt { font-weight: 600; }
 
 .d-fuss { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap;
-  margin: 12px 0 0; font-size: .8rem; color: var(--d-gedaempft); }
+  margin: 14px 0 0; font-size: .85rem; color: var(--m-leise); }
 
-/* ── Knoepfe ──────────────────────────────────────────────────────────── */
+/* ── Knöpfe ───────────────────────────────────────────────────────────── */
 .d-knopf {
-  font: inherit; font-weight: 600; padding: 8px 14px; border-radius: 8px; cursor: pointer;
-  border: 2px solid var(--d-akzent); background: var(--d-akzent); color: #fff;
+  min-height: var(--m-klick); padding: 0 16px; cursor: pointer; font-weight: 600;
+  border: 2px solid var(--m-tinte); border-radius: var(--m-ecke); background: var(--m-tinte); color: var(--m-blatt);
 }
-.d-knopf.d-zweit { background: #fff; color: var(--d-akzent); font-size: .9rem; padding: 6px 10px; }
-.d-knopf:focus-visible, .d-link:focus-visible, select:focus-visible { outline: 3px solid #f0b429; outline-offset: 2px; }
-.d-link { font: inherit; background: none; border: 0; padding: 0; color: var(--d-akzent);
-  text-decoration: underline; cursor: pointer; }
+.d-knopf.d-zweit { background: var(--m-blatt); color: var(--m-tinte); font-size: .95rem; }
+.d-link { background: none; border: 0; padding: 0; color: var(--m-tinte); cursor: pointer;
+  text-decoration: underline; text-underline-offset: 3px; }
 
-/* ── Datensatz ────────────────────────────────────────────────────────── */
-.d-daten { background: var(--d-flaeche); border-radius: var(--d-radius); padding: 14px 16px; min-width: 0; }
-.d-daten h2 { margin: 0 0 10px; font-size: 1.15rem; }
+/* ── Datensatz: ein Blatt mit Tabelle ─────────────────────────────────── */
+.d-daten {
+  background: var(--m-blatt); border: 1px solid var(--m-linie); border-radius: 2px; box-shadow: var(--m-schatten);
+  padding: 18px 20px; min-width: 0;
+}
+.d-daten h2 { margin: 0 0 12px; font-size: 1.15rem; }
 
-.d-filter { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: flex-end;
-  background: var(--d-akzent-hell); border-radius: 8px; padding: 10px 12px; }
-.d-filter label { display: flex; flex-direction: column; font-size: .8rem; font-weight: 600; color: var(--d-gedaempft); }
+.d-filter { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: flex-end;
+  padding: 0 0 14px; border-bottom: 1px solid var(--m-linie-hell); }
+.d-filter label { display: flex; flex-direction: column; font-size: .85rem; font-weight: 600; color: var(--m-leise); }
 .d-filter select, .d-filter input {
-  font: inherit; font-size: .95rem; padding: 5px 6px; margin-top: 2px;
-  border: 1px solid var(--d-linie); border-radius: 6px; background: #fff; color: var(--d-text);
+  min-height: var(--m-klick); padding: 0 8px; margin-top: 4px; font-size: .95rem;
+  border: 1px solid var(--m-linie); border-radius: var(--m-ecke); background: var(--m-blatt); color: var(--m-tinte);
 }
 .d-filter .d-suche { flex: 1; min-width: 160px; }
+.d-filter select:disabled { background: var(--m-notiz); color: var(--m-leise); }
 
 .d-zeile-info { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap;
-  margin: 10px 0 6px; font-size: .9rem; color: var(--d-gedaempft); }
+  margin: 12px 0 8px; font-size: .9rem; color: var(--m-leise); }
 
-.d-tabelle-huelle { overflow-x: auto; border: 1px solid var(--d-linie); border-radius: 8px; }
-.d-tabelle { width: 100%; border-collapse: collapse; font-size: .92rem; }
-.d-tabelle th { position: sticky; top: 0; background: var(--d-dunkel); color: #fff; text-align: left;
-  padding: 7px 10px; font-weight: 600; }
-.d-tabelle td { padding: 6px 10px; border-top: 1px solid #eeeae2; vertical-align: top; }
-.d-tabelle tbody tr:nth-child(even) td { background: #faf9f6; }
+.d-tabelle-huelle { overflow-x: auto; border-top: 2px solid var(--m-tinte); }
+.d-tabelle { width: 100%; border-collapse: collapse; font-size: .95rem; }
+.d-tabelle th { position: sticky; top: 0; background: var(--m-blatt); text-align: left;
+  padding: 8px 10px; font-weight: 650; border-bottom: 1px solid var(--m-linie); }
+.d-tabelle td { padding: 7px 10px; border-top: 1px solid var(--m-linie-hell); vertical-align: top; }
 .d-nr, .d-zeit { font-variant-numeric: tabular-nums; white-space: nowrap; }
 .d-datum { white-space: nowrap; }
 .d-nr { font-weight: 700; }
 
-.d-marke { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: .8rem; font-weight: 600;
-  white-space: nowrap; }
-.d-q-standort { background: #dbe9f6; color: #18466b; }
-.d-q-suche    { background: #f4e3c6; color: #6d4510; }
-.d-q-einkauf  { background: #dcefdc; color: #22582a; }
-.d-q-app      { background: #eadff2; color: #4f2a6b; }
+/* Quelle eines Eintrags: Wort + kleines Farbquadrat (Form und Farbe, nie Farbe allein) */
+.d-marke { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; font-size: .88rem; font-weight: 600; }
+.d-marke::before { content: ""; width: 9px; height: 9px; border-radius: 1px; background: var(--m-linie); flex: none; }
+.d-q-standort::before { background: var(--m-blau); }
+.d-q-suche::before    { background: var(--m-ocker); }
+.d-q-einkauf::before  { background: var(--m-gut); }
+.d-q-app::before      { background: var(--m-violett); }
 
-.d-leer { padding: 14px; margin: 0; color: var(--d-gedaempft); }
+.d-leer { padding: 14px 0; margin: 0; color: var(--m-leise); }
 
 /* ── Phasen-Hinweis (2006: nur Suche; heute: alle Quellen) ─────────────── */
-.d-phase { margin: 0 0 10px; padding: 8px 12px; border-radius: 8px; font-size: .95rem;
-  background: #f4e3c6; color: #4d3109; }
-.d-phase.d-phase-alle { background: #dbe9f6; color: #18466b; }
+.d-phase { margin: 0 0 12px; padding: 8px 12px; background: var(--m-notiz); border-left: 3px solid var(--m-tinte);
+  font-size: .95rem; }
 .d-phase.d-neu { animation: d-blink 1.2s ease-in-out 2; }
-@keyframes d-blink { 50% { box-shadow: 0 0 0 4px #f0b429; } }
-@media (prefers-reduced-motion: reduce) { .d-phase.d-neu { animation: none; outline: 3px solid #f0b429; } }
-.d-filter select:disabled { background: #f1efe9; color: var(--d-gedaempft); }
+@keyframes d-blink { 50% { box-shadow: 0 0 0 3px var(--m-tinte); } }
+@media (prefers-reduced-motion: reduce) { .d-phase.d-neu { animation: none; outline: 3px solid var(--m-tinte); } }
+
+/* ── Fall-Übersicht (datenspuren/index.html) ──────────────────────────── */
+.d-wahl-huelle { max-width: 640px; margin: 0 auto; padding: 32px 20px 64px; }
+.d-wahl-huelle h1 { margin: 0 0 6px; font-size: 1.6rem; }
+.d-wahl-huelle > p { margin: 0 0 20px; }
+.d-wahl { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.d-wahl a {
+  display: block; padding: 14px 18px; color: var(--m-tinte); text-decoration: none;
+  background: var(--m-blatt); border: 1px solid var(--m-linie); border-radius: 2px; box-shadow: var(--m-schatten);
+}
+.d-wahl a:active { box-shadow: 2px 2px 0 var(--m-kante); transform: translate(3px, 3px); }
+.d-wahl strong { display: block; font-size: 1.1rem; }
+.d-wahl span { display: block; color: var(--m-leise); font-size: .95rem; }

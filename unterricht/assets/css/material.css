@@ -1,0 +1,74 @@
+/* ==========================================================================
+   material.css — gemeinsame Gestaltung aller Materialseiten („Blatt", 2026-10-21).
+   Geladen VOR dem Werkzeug-CSS (quellen.css, ordnen.css, datenspuren.css).
+   Maß: minimalistischer Wireframe der D-Matrix-Umgebung (GRUNDSAETZE.md Nr. 6) —
+   grauer Grund, weiße Blätter mit harter Kante, schwarze Tinte, keine Farbflächen,
+   keine Etiketten. Werkzeug-CSS nutzt NUR diese Tokens, keine eigenen Farben.
+   Spec + gemessene Kontraste: docs/website/specs/2026-10-21-material-design-design.md
+   ========================================================================== */
+
+:root {
+  --m-grund: #e6e6e6;
+  --m-blatt: #ffffff;
+  --m-tinte: #141414;
+  --m-leise: #474747;
+  --m-linie: #8a8a8a;
+  --m-linie-hell: #c4c4c4;
+  --m-kante: #a9a9a9;
+  --m-notiz: #f0f0f0;
+  --m-blau: #1b4a7a;
+  --m-rot: #8f1a0f;
+  --m-gut: #14532c;
+  /* Kategorie-Zeichen (nur Flächen kleiner Zeichen, nie Text): Datenspuren-Quellen */
+  --m-ocker: #a0661b;
+  --m-violett: #6b3a8a;
+  --m-vollbild: rgba(20, 20, 20, .94);
+
+  --m-schrift: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --m-wortlaut: Georgia, "Times New Roman", serif;
+  --m-mass: 66ch;
+  --m-klick: 44px;
+  --m-ecke: 4px;
+  --m-schatten: 5px 5px 0 var(--m-kante);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Grund: gilt für jede Materialseite (body trägt die Werkzeug-Klasse) */
+body.quellen, body.ordnen, body.datenspuren {
+  margin: 0;
+  background: var(--m-grund);
+  color: var(--m-tinte);
+  font: 17px/1.5 var(--m-schrift);
+  -webkit-text-size-adjust: 100%;
+}
+button, input, textarea, select { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--m-tinte); outline-offset: 2px; }
+
+/* Blatt: weiße Fläche, dünne Linie, harte Kante */
+.m-blatt {
+  background: var(--m-blatt);
+  border: 1px solid var(--m-linie);
+  border-radius: 2px;
+  box-shadow: var(--m-schatten);
+}
+
+/* Knopf: gerahmt, mindestens 44 px; .voll = die eine Haupthandlung */
+.m-knopf {
+  min-height: var(--m-klick);
+  padding: 0 18px;
+  border: 2px solid var(--m-tinte);
+  border-radius: var(--m-ecke);
+  background: var(--m-blatt);
+  color: var(--m-tinte);
+  font-weight: 600;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  cursor: pointer;
+}
+.m-knopf.voll { background: var(--m-tinte); color: var(--m-blatt); }
+.m-knopf:active { background: var(--m-notiz); }
+.m-knopf.voll:active { opacity: .85; }
+.m-knopf:disabled { opacity: .4; cursor: default; }
+
+/* Nebentext */
+.m-leise { color: var(--m-leise); }

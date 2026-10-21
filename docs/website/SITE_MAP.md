@@ -54,6 +54,8 @@ jederzeit reaktivierbar (Präfix entfernen + `<li>` in `unterricht/index.html`):
 | `assets/css/tokens.css` | **Site**-Token-Vokabular „Nebel & Papier" (`.mode-light`/`.mode-dark`/`:root`); seit E3 aktiv geladen | `make bump A=tokens` |
 | `assets/css/wg.css` | **Site**-Komponenten (Topbar/Hero/Gateways/Footer/…); Site-Kette `fonts → tokens → wg` | `make bump A=wg` |
 | `assets/css/lernraum.css` | ausgelagerter wg.lernraum-Block (ungeladen, bereitliegend) | — |
+| `unterricht/assets/css/material.css` | **gemeinsame Gestaltung aller Materialseiten** („Blatt", 2026-10-21): `--m-*`-Tokens, Blatt, Knopf; geladen VOR `quellen.css`/`ordnen.css`/`datenspuren.css` (die nur Layout und nur `--m-*` enthalten; Wächter B6 `check_material.py`) | `make bump A=material` |
+| `unterricht/{quellen,ordnen,datenspuren}/*.{css,js}` | Werkzeuge der Materialseiten | `--bump quellen.css` usw. |
 | `assets/img/site/` | Root/Profil-Fotos (`gleise-ueberwachsen`, `museum-blick`, `turm-beton`; Profil-Fotos in `profil/img/`) | — |
 | `assets/img/<game-id>/` | Game-Medien | — |
 | `assets/data/*.json` | Lernraum-Daten (generiert) | `make lernraum` |

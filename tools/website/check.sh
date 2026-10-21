@@ -13,6 +13,7 @@
 #     B2  Cache-Bust-Konsistenz                  (bump-assets.py --check)
 #     B3  Kein Lehrkraft-Meta im Schueler-DOM    (validate-no-lehrkraft-meta.py)
 #     B4  Feedback-/Tipps-Schema je LIVE-Game    (validate-feedback-schema.js, FAIL only)
+#     B6  Materialseiten laden material.css, Werkzeug-CSS ohne eigene Farben (check_material.py)
 #     B5  Kursseiten: kurse.json gültig + Übersicht/k/ aktuell (tools/kurse/build.py --check)
 #     B5b keine verwaiste Materialseite (tools/kurse/build.py --orphans --strict), seit 18.10.2026
 #
@@ -91,6 +92,9 @@ done
 if out=$(python3 tools/kurse/build.py --check 2>&1); then ok "$out"; else bad "$out"; fi
 # B5b Keine verwaiste Materialseite (live, aber in keiner Übersicht) — blockiert seit 18.10.2026 (Befund quellen/versailles/)
 if out=$(python3 tools/kurse/build.py --orphans --strict 2>&1); then ok "$out"; else bad "$out (fix: Eintrag in unterricht/kurse.json, make kurse)"; fi
+
+# B6 Materialseiten: gemeinsame Gestaltung „Blatt“
+if out=$(python3 tools/website/check_material.py 2>&1); then ok "$out"; else bad "$out"; fi
 
 # ───────────────────────── ADVISORY ─────────────────────────
 if [[ $BLOCKING_ONLY -eq 0 ]]; then

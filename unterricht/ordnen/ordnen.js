@@ -64,11 +64,9 @@
   var DUCKAI = 'https://duck.ai/?q=';
 
   function kiKnopf(k) {
-    var b = el('button', 'o-ki');
+    var b = el('button', 'o-ki m-knopf', 'Mit KI verstehen');
     b.type = 'button';
-    b.setAttribute('aria-label', 'KI-Hilfe zu „' + k.titel + '“');
-    b.title = 'KI-Hilfe zu dieser Karte';
-    b.textContent = '✨';
+    b.setAttribute('aria-label', 'Mit KI verstehen: „' + k.titel + '“');
     b.addEventListener('click', function () {
       kopieren(k.ki_prompt);
       var fenster = null;
@@ -112,6 +110,11 @@
     }, lang ? 7000 : 4000);
   }
 
+  /* Ältere Texte sagen „tippe auf ✨"; der Knopf heißt seit 2026-10-21 „Mit KI verstehen". */
+  function knopfWort(t) {
+    return String(t || '').replace(/\s*✨\s*/g, ' „Mit KI verstehen“ ').replace(/ {2,}/g, ' ').trim();
+  }
+
   function karteBauen(k) {
     var li = el('li', 'o-karte' + (k.fix ? ' o-fix' : ''));
     li.dataset.id = k.id;
@@ -144,7 +147,12 @@
         griff.appendChild(b);
       });
     }
-    if (daten && daten.ki_hilfe && k.ki_prompt) griff.appendChild(kiKnopf(k));
+    /* Seit „Blatt" (2026-10-21) ein Wort-Knopf unter dem Text der Karte, nicht mehr ✨ in der Pfeil-Spalte */
+    if (daten && daten.ki_hilfe && k.ki_prompt) {
+      var kiZeile = el('div', 'o-ki-huelle');
+      kiZeile.appendChild(kiKnopf(k));
+      text.appendChild(kiZeile);
+    }
     li.appendChild(griff);
     return li;
   }
@@ -283,9 +291,9 @@
     daten = d;
     document.title = d.titel;
     document.getElementById('o-leitfrage').textContent = d.leitfrage;
-    document.getElementById('o-auftrag').textContent = d.auftrag;
+    document.getElementById('o-auftrag').textContent = knopfWort(d.auftrag);
     if (d.ki_hilfe && d.ki_hinweis) {
-      document.getElementById('o-auftrag').after(el('p', 'o-ki-zeile', d.ki_hinweis));
+      document.getElementById('o-auftrag').after(el('p', 'o-ki-zeile', knopfWort(d.ki_hinweis)));
     }
 
     liste = document.getElementById('o-liste');
