@@ -26,7 +26,7 @@ const fehler = [];
 for (const datei of fs.readdirSync(ausz).filter((f) => f.endsWith('_auszug.json')).sort()) {
   const roh = JSON.parse(fs.readFileSync(path.join(ausz, datei), 'utf8'));
   const nu = roh.fall.nutzer;
-  const web = JSON.parse(fs.readFileSync(path.join(WEB, nu, 'data.json'), 'utf8')).stufen;
+  const web = JSON.parse(fs.readFileSync(path.join(WEB, roh.fall.ordner || nu, 'data.json'), 'utf8')).stufen;
   roh.stufen.forEach((s, i) => {
     n++;
     if (anzeige(web[i]) !== s.anzeige) fehler.push(`${nu}/${s.id}: Lösungstext „${anzeige(web[i])}“`);

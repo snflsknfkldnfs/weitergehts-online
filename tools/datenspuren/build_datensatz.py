@@ -457,10 +457,10 @@ def extra_toni(s):
 
 
 def stufe(sid, phase, steckbrief, frage, tipps, modus, schluessel, richtig, falsch, anzeige, erkenntnis, belegwort,
-          beleg, beleg_lehrkraft):
+          beleg, beleg_lehrkraft, **mehr):
     return dict(id=sid, phase=phase, steckbrief=steckbrief, frage=frage, tipps=tipps, modus=modus,
                 schluessel=schluessel, richtig=richtig, falsch=falsch, anzeige=anzeige, erkenntnis=erkenntnis,
-                belegwort=belegwort, beleg=beleg, beleg_lehrkraft=beleg_lehrkraft)
+                belegwort=belegwort, beleg=beleg, beleg_lehrkraft=beleg_lehrkraft, **mehr)
 
 
 ERK_NAME = 'Nur aus einer einzigen Datenart: ein Name.'
@@ -804,6 +804,100 @@ FAELLE = [
 ]
 
 
+# ══ Fall 2580 je Seite (Inf6b S02 UE03, Fr 23.10.2026, Lehrkraft: auf den iPads alles bis zu den Hebeln) ══
+# Derselbe Datensatz wie Fall 2580, davor Lage (Zeitungsmeldung) und Rolle als Fragen, danach je Seite zwei
+# Hebel-Fragen (ein Grund der Rolle → ein Detail aus den Daten). Die Anzeige baut die Klasse auf Papier.
+ZEITUNG_2580 = {
+    'titel': 'Mainschleife aktuell (erfundene Zeitung)',
+    'schlagzeile': 'Nachtbus oder Parkhaus? Volkach stimmt ab',
+    'text': 'Am Sonntag, 8. November, entscheiden die Volkacher selbst. Die Stadt hat Geld für nur ein großes '
+            'Vorhaben: entweder einen Nachtbus nach Würzburg und Kitzingen, jede Stunde bis Mitternacht, oder ein '
+            'Parkhaus mit 200 Plätzen am Rand der Altstadt. Zwei Bürgerinitiativen werben um jede Stimme: '
+            '„Nachtbus für Volkach“ und „Parkhaus für Volkach“. Besonders umkämpft sind die jungen Leute, die '
+            'zum ersten Mal abstimmen dürfen.',
+}
+SEITEN_2580 = {
+    'nachtbus': {
+        'name': 'Nachtbus für Volkach', 'ziel': 'den Nachtbus',
+        'wer': 'junge Leute, Eltern und alle, die kein Auto haben',
+        'gruende': ['Wer keinen Führerschein oder kein Auto hat, kommt abends nicht nach Hause.',
+                    'Eltern müssen nachts nicht mehr Taxi spielen.',
+                    'Wer nach dem Feiern Bus fährt, fährt nicht selbst. Weniger Unfälle.'],
+        'rolle': stufe('rolle', 0, 'Unser Ziel', 'Lest oben eure Rolle. Für welches Vorhaben kämpft ihr?',
+                       ['Lies den ersten Satz unter „Fall 2580“.', 'Euer Ziel steht im zweiten Absatz.'],
+                       'wort', ['NACHTBUS', 'BUS'],
+                       ['Nachtbus', 'den Nachtbus', 'für den Nachtbus', 'Bus', 'Nachtbuss'],
+                       ['Parkhaus', 'Auto', 'Taxi', 'Volkach', 'Altstadt'],
+                       '2580 soll für den Nachtbus stimmen', 'Euer Ziel ist klar. Jetzt lernt ihr 2580 kennen.',
+                       'Nachtbus für Volkach', 'Rolle', 'Rolle oben: Bürgerinitiative „Nachtbus für Volkach“', aus_text=True),
+        'hebel': [
+            stufe('hebel1', 0, 'Hebel zu Grund 1',
+                  'Grund 1: Wer kein Auto hat, kommt abends nicht nach Hause. Wie viel Euro hat 2580 am Mo 21.09. für den Heimweg bezahlt?',
+                  ['Filtere: Nutzer 2580, Tag Mo 21.09., Quelle Einkauf.', 'Schau nach 23 Uhr.'],
+                  'zahl', ['42'], ['42', '42 Euro', '42,00 €', '42€'], ['44', '25', '6', '61', '48'],
+                  'Nach der Spätschicht kein Bus: Taxi für 42 € (Grund 1)',
+                  'Hebel gefunden: Ein Nachtbus würde 2580 viel Geld sparen.', '42,00',
+                  'Einkauf Mo 21.09. 23:20 „Taxi Würzburg → Volkach: 42,00 €“',
+                  'Mo 21.09. 22:36 Bus-App „keine Verbindung mehr“, 23:20 Taxi 42 €; auch Di 42 €, Do 44,50 €'),
+            stufe('hebel2', 0, 'Hebel zu Grund 2',
+                  'Grund 2: Eltern müssen nachts nicht mehr Taxi spielen. Wen bittet 2580 in der Nacht auf Sonntag, 27.09., um Hilfe?',
+                  ['Filtere: Nutzer 2580, Tag So 27.09., Quelle App.', 'Lies die Nachricht um 01:05.'],
+                  'wort', ['MAMA', 'MUTTER', 'MAMI'], ['Mama', 'die Mama', 'an Mama', 'Mutter', 'Mamma'],
+                  ['Papa', 'Taxi', 'Freund', 'Bahnhof', 'Oma'],
+                  'Nachts nach dem Konzert am Bahnhof: „Kannst du mich abholen?“ an Mama (Grund 2)',
+                  'Hebel gefunden: Mit dem Nachtbus müsste Mama nachts nicht los.', 'an Mama',
+                  'App So 27.09. 01:05 Nachrichten-App „Kannst du mich am Bahnhof abholen?“ an Mama',
+                  'Sa 26.09. Konzert Würzburg, So 00:55 Hauptbahnhof, 01:05 Nachricht an Mama, 02:10 zu Hause'),
+        ],
+    },
+    'parkhaus': {
+        'name': 'Parkhaus für Volkach', 'ziel': 'das Parkhaus',
+        'wer': 'Geschäftsleute aus der Altstadt, Handwerker und Autofahrer',
+        'gruende': ['Wer keinen Parkplatz findet, kauft woanders ein. Läden und Gasthäuser in der Altstadt sterben.',
+                    'Autofahrer kreisen ewig und zahlen Strafzettel.',
+                    'Auf dem Land braucht man ein Auto. Ein Bus fährt nie dann, wann man ihn braucht.'],
+        'rolle': stufe('rolle', 0, 'Unser Ziel', 'Lest oben eure Rolle. Für welches Vorhaben kämpft ihr?',
+                       ['Lies den ersten Satz unter „Fall 2580“.', 'Euer Ziel steht im zweiten Absatz.'],
+                       'wort', ['PARKHAUS'],
+                       ['Parkhaus', 'das Parkhaus', 'für das Parkhaus', 'Parkhous', 'Parkhauß'],
+                       ['Nachtbus', 'Bus', 'Auto', 'Altstadt', 'Parkplatz'],
+                       '2580 soll für das Parkhaus stimmen', 'Euer Ziel ist klar. Jetzt lernt ihr 2580 kennen.',
+                       'Parkhaus für Volkach', 'Rolle', 'Rolle oben: Bürgerinitiative „Parkhaus für Volkach“', aus_text=True),
+        'hebel': [
+            stufe('hebel1', 0, 'Hebel zu Grund 2',
+                  'Grund 2: Autofahrer kreisen ewig und zahlen Strafzettel. Wie viele Minuten sucht 2580 am Sa 03.10. einen Parkplatz?',
+                  ['Filtere: Nutzer 2580, Tag Sa 03.10., Quelle Standort.', 'Von 07:14 bis 07:31: Wie viele Minuten sind das?'],
+                  'zahl', ['17'], ['17', '17 Minuten', '17 min'], ['14', '31', '25', '4', '7'],
+                  'Sa 03.10.: 17 Minuten Parkplatzsuche, dann 25 € Verwarngeld (Grund 2)',
+                  'Hebel gefunden: Mit einem Parkhaus hätte 2580 Zeit und 25 € gespart.', 'Parkplatz Kirchplatz',
+                  'Standort Sa 03.10. 07:14 bis 07:31 (Mainufer, Hauptstraße, Kirchplatz, Hauptstraße)',
+                  'Sa 03.10. 07:14–07:31 vier Standorte, 13:15 Verwarngeld 25 €, 13:40 „Darf ich nächsten Samstag wieder das Auto haben?“'),
+            stufe('hebel2', 0, 'Hebel zu Grund 3',
+                  'Grund 3: Auf dem Land braucht man ein Auto. Wonach sucht 2580 am Di 29.09. abends?',
+                  ['Filtere: Nutzer 2580, Tag Di 29.09., Quelle Suche.', 'Schau nach 20 Uhr.'],
+                  'wort', ['GEBRAUCHTWAGEN', 'AUTO', 'WAGEN'],
+                  ['Gebrauchtwagen', 'ein Auto', 'Auto', 'gebrauchtes Auto', 'Gebrauchtwagn'],
+                  ['Taxi', 'Bus', 'Parkplatz', 'Kredit', 'Konzert'],
+                  'Sucht einen Gebrauchtwagen bis 4000 € (Grund 3)',
+                  'Hebel gefunden: 2580 will ein eigenes Auto, und das braucht einen Parkplatz.', 'gebrauchtwagen',
+                  'Suche Di 29.09. 20:15 „gebrauchtwagen bis 4000 euro“',
+                  'Di 29.09. 20:15 „gebrauchtwagen bis 4000 euro“, Mi 30.09. 21:50 „autokredit in der ausbildung“'),
+        ],
+    },
+}
+LAGE_2580 = stufe('lage', 0, 'Lage', 'Lest die Zeitungsmeldung. Wie viele große Vorhaben kann die Stadt bezahlen?',
+                  ['Lies den zweiten Satz der Meldung.', 'Entweder … oder …'],
+                  'zahl', ['1', 'EINS', 'EINES', 'EIN', 'EINE'], ['1', 'eins', 'nur eins', 'nur eines', 'ein Vorhaben'],
+                  ['2', 'zwei', 'beide', '3', '200'],
+                  'Nur eins: Nachtbus oder Parkhaus', 'Nur eins von beiden. Darum kämpfen zwei Gruppen um jede Stimme.',
+                  'nur ein großes', 'Zeitungsmeldung', 'Zeitungsmeldung, zweiter Satz: „Geld für nur ein großes Vorhaben“',
+                  aus_text=True, material='zeitung')
+_TONI = next(f for f in FAELLE if f['id'] == 'toni')
+for _seite, _k in SEITEN_2580.items():
+    FAELLE.append({**_TONI, 'id': 'toni-' + _seite, 'ordner': '2580-' + _seite, 'seite': _k, 'zeitung': ZEITUNG_2580,
+                   'stufen': [LAGE_2580, _k['rolle'], *_TONI['stufen'], *_k['hebel']]})
+
+
 def woerter(eingabe):
     s = eingabe.upper().replace('Ä', 'AE').replace('Ö', 'OE').replace('Ü', 'UE')
     return [w for w in re.split(r'[^A-Z0-9]+', s) if w]
@@ -843,6 +937,26 @@ QUELLE_TEXT = {'Suche': 'Suchanfragen', 'App': 'App-Daten', 'Einkauf': 'Einkäuf
 
 def akte(f):
     nu = f['nutzer']
+    if f.get('seite'):
+        k = f['seite']
+        return {
+            'titel': f'Fall {nu}',
+            'absender': f'Bürgerentscheid Volkach · Kampagne {k["name"]}',
+            'briefing': [f'Ihr seid die Bürgerinitiative „{k["name"]}“: {k["wer"]}.',
+                         f'Euer Ziel: {nu} stimmt für {k["ziel"]}. {nu} darf zum ersten Mal abstimmen und hat sich noch nicht entschieden.',
+                         *[f'Grund {i}: {g}' for i, g in enumerate(k['gruende'], 1)],
+                         f'Ihr habt die Daten von {nu} gekauft. Erst lernt ihr {nu} kennen, dann sucht ihr Details, die zu euren Gründen passen: eure Hebel.'],
+            'hinweis_fiktion': 'Personen, Daten, Zeitung und Bürgerentscheid sind erfunden.',
+            'abschluss': {
+                'titel': 'Profil und Hebel fertig.',
+                'text': [f'Aus einer Nummer ist ein Profil geworden, und ihr habt zwei Hebel für {k["ziel"]}.',
+                         'Schreibt jetzt eure zwei Hebel auf das Kampagnenblatt (Schritt 2), je mit der Nummer des Grundes. '
+                         'Das iPad speichert nichts für nächste Woche.'],
+                'fragen': ['Welcher Hebel ist euer stärkster?',
+                           f'Wann und in welcher App erreicht ihr {nu}? (für eure Anzeige nächste Woche)',
+                           f'Noch Zeit? Sucht in Suche und Nachrichten weitere Wünsche und Sorgen von {nu}.'],
+            },
+        }
     if f.get('kampagne'):
         return {
             'titel': f'Fall {nu}',
@@ -901,9 +1015,13 @@ def pruefe(f, eintraege, ph, ak):
     fehler = []
     if nu in ANDERE:
         fehler.append(f"{f['id']}: Nutzernummer {nu} gehört schon einem Rausch-Nutzer")
+    text = json.dumps([f.get('zeitung'), ak], ensure_ascii=False).lower()
     for s in f['stufen']:
         erlaubt = ph[s['phase']]['quellen']
-        if not any(s['belegwort'].lower() in e['eintrag'].lower() for e in eintraege
+        if s.get('aus_text'):
+            if s['belegwort'].lower() not in text:
+                fehler.append(f"{f['id']}/{s['id']}: Beleg „{s['belegwort']}“ steht nicht in Zeitung oder Rolle")
+        elif not any(s['belegwort'].lower() in e['eintrag'].lower() for e in eintraege
                    if e['nutzer'] == nu and e['quelle'] in erlaubt):
             fehler.append(f"{f['id']}/{s['id']}: in Phase {s['phase'] + 1} nicht lösbar (Beleg „{s['belegwort']}“ fehlt)")
         fehler += [f"{f['id']}/{s['id']}: '{x}' abgelehnt" for x in s['richtig'] if passt(x, s) is not True]
@@ -914,7 +1032,7 @@ def pruefe(f, eintraege, ph, ak):
     sichtbar_text = json.dumps([ak, ph, [{k: s[k] for k in ('frage', 'tipps', 'erkenntnis', 'anzeige')}
                                          for s in f['stufen']]], ensure_ascii=False)
     vorname = f['person'].split()[0].lower()
-    if vorname in (f['nutzer'] + ak['titel']).lower():
+    if vorname in (f.get('ordner', f['nutzer']) + ak['titel']).lower():
         fehler.append(f"{f['id']}: Vorname in Adresse oder Titel")
     for verboten in ('2006', 'AOL', 'Reporter', 'echte', 'wirklich'):
         if verboten in sichtbar_text:
@@ -938,7 +1056,7 @@ def main():
     ap.add_argument('--auszug-dir')
     a = ap.parse_args()
 
-    assert len({f['nutzer'] for f in FAELLE}) == len(FAELLE) and len({f['id'] for f in FAELLE}) == len(FAELLE)
+    assert len({f.get('ordner', f['nutzer']) for f in FAELLE}) == len(FAELLE) and len({f['id'] for f in FAELLE}) == len(FAELLE)
     vorlage = VORLAGE.read_text(encoding='utf-8')
     # Cache-Bust-Versionen aus der zentralen Quelle (assets/versions.json), nie aus der Vorlage
     versionen = json.loads((ROOT / 'assets' / 'versions.json').read_text(encoding='utf-8'))['assets']
@@ -958,18 +1076,20 @@ def main():
         alle_fehler += pruefe(f, eintraege, ph, ak)
         pruefungen += sum(len(s['richtig']) + len(s['falsch']) for s in f['stufen'])
         stufen_web = [{**{k: v for k, v in s.items()
-                          if k not in ('schluessel', 'richtig', 'falsch', 'beleg', 'beleg_lehrkraft', 'belegwort', 'anzeige')},
+                          if k not in ('schluessel', 'richtig', 'falsch', 'beleg', 'beleg_lehrkraft', 'belegwort', 'anzeige',
+                                       'aus_text')},
                        'k': base64.b64encode(json.dumps(s['schluessel']).encode()).decode(),
                        'a': base64.b64encode(s['anzeige'].encode('utf-8')).decode()} for s in f['stufen']]
         daten = {'version': 3, 'akte': ak, 'phasen': ph, 'max_woerter': MAX_WOERTER, 'stufen': stufen_web,
-                 'eintraege': eintraege}
-        fall_kopf = {'id': f['nutzer'], 'titel': ak['titel'], 'nutzer': f['nutzer'], 'url': BASIS_URL + f['nutzer'] + '/',
-                     'kurz_url': 'weitergehts.online/unterricht/datenspuren/' + f['nutzer']}
+                 **({'zeitung': f['zeitung']} if f.get('zeitung') else {}), 'eintraege': eintraege}
+        od = f.get('ordner', f['nutzer'])
+        fall_kopf = {'id': od, 'ordner': od, 'titel': ak['titel'], 'nutzer': f['nutzer'], 'url': BASIS_URL + od + '/',
+                     'kurz_url': 'weitergehts.online/unterricht/datenspuren/' + od}
         ausgaben.append((f, daten, fall_kopf, ak, ph, eintraege))
         n_ziel = sum(1 for e in eintraege if e['nutzer'] == f['nutzer'])
-        print(f'{f["id"]:6} Fall {f["nutzer"]}: {len(eintraege)} Einträge, davon Nutzer {f["nutzer"]}: {n_ziel}, '
+        print(f'{f["id"]:6} Fall {fall_kopf["ordner"]}: {len(eintraege)} Einträge, davon Nutzer {f["nutzer"]}: {n_ziel}, '
               f'Phase 1 = {f["quelle1"] or "alle (Kampagne)"}')
-        loesung += [f'## Fall {f["nutzer"]} · {f["person"]} · Phase 1: {QUELLE_TEXT[f["quelle1"]] if f["quelle1"] else "alle Datenarten (Kampagnen-Fall)"} · {fall_kopf["url"]}', '',
+        loesung += [f'## Fall {fall_kopf["ordner"]} · {f["person"]} · Phase 1: {QUELLE_TEXT[f["quelle1"]] if f["quelle1"] else "alle Datenarten (Kampagnen-Fall)"} · {fall_kopf["url"]}', '',
                     '| Stufe | Phase | Frage | Lösung | Schlüssel | Beispiele, die angenommen werden | Belege im Datensatz |',
                     '|---|---|---|---|---|---|---|']
         for i, s in enumerate(f['stufen'], 1):
@@ -985,14 +1105,15 @@ def main():
     # Erst schreiben, wenn ALLE Fälle die Selbstprüfung bestehen
     assert not alle_fehler, '\n'.join(alle_fehler)
     for f, daten, fall_kopf, ak, ph, eintraege in ausgaben:
-        ordner = WEB / f['nutzer']
+        ordner = WEB / fall_kopf['ordner']
         ordner.mkdir(exist_ok=True)
         (ordner / 'data.json').write_text(json.dumps(daten, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
         (ordner / 'index.html').write_text(vorlage.replace('{{TITEL}}', ak['titel']), encoding='utf-8')
         if a.auszug_dir:
             Path(a.auszug_dir).mkdir(parents=True, exist_ok=True)
-            (Path(a.auszug_dir) / f'{f["nutzer"]}_auszug.json').write_text(
-                json.dumps({'fall': fall_kopf, 'akte': ak, 'phasen': ph, 'stufen': f['stufen'], 'eintraege': eintraege},
+            (Path(a.auszug_dir) / f'{fall_kopf["ordner"]}_auszug.json').write_text(
+                json.dumps({'fall': fall_kopf, 'akte': ak, 'phasen': ph, 'stufen': f['stufen'],
+                            **({'zeitung': f['zeitung']} if f.get('zeitung') else {}), 'eintraege': eintraege},
                            ensure_ascii=False, indent=1), encoding='utf-8')
     (WEB / 'index.html').write_text(uebersicht(FAELLE), encoding='utf-8')
     print(f'Selbstprüfung: {len(FAELLE)} Fälle, {pruefungen} Prüfeingaben korrekt, alle Stufen in ihrer Phase lösbar, '
