@@ -950,7 +950,7 @@ def akte(f):
             'abschluss': {
                 'titel': 'Profil und Hebel fertig.',
                 'text': [f'Aus einer Nummer ist ein Profil geworden, und ihr habt zwei Hebel für {k["ziel"]}.',
-                         'Schreibt jetzt eure zwei Hebel auf das Kampagnenblatt (Schritt 2), je mit der Nummer des Grundes. '
+                         'Schreibt jetzt eure zwei Hebel auf Seite 1 des Kampagnenblatts: Detail, Nummer des Grundes und Moment (Tag, Uhrzeit, App). '
                          'Das iPad speichert nichts für nächste Woche.'],
                 'fragen': ['Welcher Hebel ist euer stärkster?',
                            f'Wann und in welcher App erreicht ihr {nu}? (für eure Anzeige nächste Woche)',
