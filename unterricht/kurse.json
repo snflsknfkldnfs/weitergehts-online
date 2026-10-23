@@ -95,6 +95,8 @@
       "art": "werkzeug", "fach": "inf", "jahrgang": 6,
       "kurse": ["inf6b"], "thema": "Datenspuren", "datum": "2026-10-08",
       "teile": [
+        { "pfad": "datenspuren/anzeige-nachtbus/", "titel": "Anzeige Nachtbus: Fall 2580", "datum": "2026-10-30" },
+        { "pfad": "datenspuren/anzeige-parkhaus/", "titel": "Anzeige Parkhaus: Fall 2580", "datum": "2026-10-30" },
         { "pfad": "datenspuren/2580-nachtbus/", "titel": "Kampagne Nachtbus: Fall 2580", "datum": "2026-10-23" },
         { "pfad": "datenspuren/2580-parkhaus/", "titel": "Kampagne Parkhaus: Fall 2580", "datum": "2026-10-23" },
         { "pfad": "datenspuren/2580/", "titel": "Kampagne: Fall 2580", "datum": "2026-10-16" },

@@ -36,6 +36,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 WEB = ROOT / 'unterricht' / 'datenspuren'
 VORLAGE = ROOT / 'tools' / 'datenspuren' / 'seite_vorlage.html'   # Seitenvorlage (nicht veröffentlicht), Platzhalter {{TITEL}}
+ANZEIGE_VORLAGE = ROOT / 'tools' / 'datenspuren' / 'anzeige_vorlage.html'   # Anzeigen-Werkstatt, Platzhalter {{TITEL}}
 BASIS_URL = 'https://weitergehts.online/unterricht/datenspuren/'
 START = date(2026, 9, 21)  # Montag
 TAGE = 14
@@ -898,6 +899,89 @@ for _seite, _k in SEITEN_2580.items():
                    'stufen': [LAGE_2580, _k['rolle'], *_TONI['stufen'], *_k['hebel']]})
 
 
+# ══ Anzeigen-Werkstatt 2580 je Seite (Inf6b S02 UE04, Fr 30.10.2026; Nachbereitung UE03: Profil als Artefakt,
+# dann Artefakt Werbeanzeige Zeile für Zeile über W-Fragen und Textbausteine, alles auf dem iPad, keine Zwischenbegriffe) ══
+# Je Zeile der Anzeige: W-Frage, Hilfe, Textbausteine aus dem Datensatz (je Baustein ein Belegwort, das main() im
+# Datensatz von 2580 sucht — ein Baustein darf nichts behaupten, was die Daten nicht hergeben), eigener Text erlaubt.
+def _zeile(zid, ort, frage, hilfe, bausteine, max_woerter=None):
+    return {'id': zid, 'ort': ort, 'frage': frage, 'hilfe': hilfe, 'max_woerter': max_woerter,
+            'bausteine': [{'text': t, 'beleg': b} for t, b in bausteine]}
+
+
+WANN_2580 = _zeile('wann', 'status', 'Wann und in welcher App sieht 2580 eure Anzeige?',
+                   'Schaut ins Profil: Handyzeit.',
+                   [('abends · Social-Media-App', 'Social-Media-App'), ('mittags · Musik-App', 'Musik-App'),
+                    ('früh um 04:45 · Wecker-App', 'Wecker 04:45')])
+PROFIL_EXTRA_2580 = {'steckbrief': 'Sorgen und Wünsche', 'text': 'aus Suche und Nachrichten: nachts allein am Bahnhof Angst · '
+                     'sucht einen Gebrauchtwagen bis 4000 € · Kontostand 61,30 € · „immer müde“'}
+WERKSTATT_2580 = {
+    'nachtbus': [
+        WANN_2580,
+        _zeile('ueberschrift', 'ueberschrift', 'Was ärgert 2580? Macht daraus eine Frage als Überschrift.',
+               'Höchstens 6 Wörter. Ihr dürft den Baustein ändern.',
+               [('Schon wieder 42 € fürs Taxi?', '42,00'), ('Kein Bus nach der Spätschicht?', 'keine Verbindung mehr'),
+                ('Nachts allein am Bahnhof?', 'nachts allein am bahnhof')], max_woerter=6),
+        _zeile('passiert', 'text', 'Was ist 2580 passiert? Sagt es mit „du“.',
+               'Ein Satz. Nehmt einen Baustein oder schreibt selbst.',
+               [('Nach der Spätschicht fährt kein Bus mehr, und das Taxi kostet dich 42 €.', '42,00'),
+                ('Nachts am Bahnhof musst du Mama bitten, dich abzuholen.', 'an Mama'),
+                ('Du stehst nachts allein am Bahnhof und weißt nicht, wie du heimkommst.', 'nachts allein am bahnhof')]),
+        _zeile('aendert', 'text', 'Was ändert der Nachtbus für 2580?', 'Ein Satz mit „du“.',
+               [('Mit dem Nachtbus fährst du jede Stunde bis Mitternacht heim.', 'keine Verbindung mehr'),
+                ('Du sparst dir das Taxi und hast mehr Geld übrig.', 'Kontostand'),
+                ('Mama kann schlafen, du kommst allein sicher heim.', 'an Mama')]),
+        _zeile('knopf', 'knopf', 'Was soll 2580 tun? Das steht auf dem Knopf.', 'Kurz, mit Ausrufezeichen.',
+               [('Stimm für den Nachtbus!', None), ('Am 8. November: Nachtbus!', None), ('Ja zum Nachtbus!', None)], max_woerter=5),
+    ],
+    'parkhaus': [
+        WANN_2580,
+        _zeile('ueberschrift', 'ueberschrift', 'Was ärgert 2580? Macht daraus eine Frage als Überschrift.',
+               'Höchstens 6 Wörter. Ihr dürft den Baustein ändern.',
+               [('Schon wieder 17 Minuten Parkplatzsuche?', 'Parkplatz Kirchplatz'), ('Wieder 25 € Strafzettel?', 'Verwarngeld'),
+                ('Bald ein Auto, aber wohin damit?', 'gebrauchtwagen')], max_woerter=6),
+        _zeile('passiert', 'text', 'Was ist 2580 passiert? Sagt es mit „du“.',
+               'Ein Satz. Nehmt einen Baustein oder schreibt selbst.',
+               [('Am Samstag suchst du 17 Minuten einen Parkplatz und zahlst dann 25 € Strafe.', 'Verwarngeld'),
+                ('Du jobbst samstags am Marktplatz und findest dort keinen Parkplatz.', 'Lohn Samstag'),
+                ('Du sparst auf ein Auto, aber in der Altstadt ist kein Platz dafür.', 'gebrauchtwagen')]),
+        _zeile('aendert', 'text', 'Was ändert das Parkhaus für 2580?', 'Ein Satz mit „du“.',
+               [('Im Parkhaus am Rand der Altstadt findest du sofort einen Platz.', 'Hauptstraße'),
+                ('Kein Suchen mehr, kein Strafzettel mehr.', 'Verwarngeld'),
+                ('Mit deinem eigenen Auto kommst du entspannt zur Arbeit.', 'gebrauchtwagen')]),
+        _zeile('knopf', 'knopf', 'Was soll 2580 tun? Das steht auf dem Knopf.', 'Kurz, mit Ausrufezeichen.',
+               [('Stimm für das Parkhaus!', None), ('Am 8. November: Parkhaus!', None), ('Ja zum Parkhaus!', None)], max_woerter=5),
+    ],
+}
+
+
+def werkstatt(seite, k, eintraege):
+    """data.json der Anzeigen-Werkstatt: Profil als fertige Karte (Artefakt 1), Zeilen der Anzeige (Artefakt 2)."""
+    profil = [{'steckbrief': s_['steckbrief'], 'text': s_['anzeige']} for s_ in _TONI['stufen']] + [PROFIL_EXTRA_2580]
+    fehler = []
+    eigene = ' '.join(e['eintrag'] for e in eintraege if e['nutzer'] == _TONI['nutzer']).lower()
+    for z in WERKSTATT_2580[seite]:
+        for b in z['bausteine']:
+            if b['beleg'] and b['beleg'].lower() not in eigene:
+                fehler.append(f"anzeige-{seite}/{z['id']}: Baustein „{b['text']}“ ohne Beleg „{b['beleg']}“ im Datensatz")
+            if z['max_woerter'] and len(woerter(b['text'])) > z['max_woerter']:
+                fehler.append(f"anzeige-{seite}/{z['id']}: Baustein „{b['text']}“ hat mehr als {z['max_woerter']} Wörter")
+    daten = {
+        'version': 1, 'titel': f'Anzeige für {_TONI["nutzer"]}', 'nutzer': _TONI['nutzer'],
+        'absender': f'Bürgerentscheid Volkach · Kampagne {k["name"]}',
+        'auftrag': [f'Ihr seid die Bürgerinitiative „{k["name"]}“. Euer Ziel: {_TONI["nutzer"]} stimmt am 8. November für {k["ziel"]}.',
+                    f'Links seht ihr das Profil von {_TONI["nutzer"]}, das ihr letzte Woche aus den Daten erstellt habt.',
+                    'Rechts baut ihr eure Werbeanzeige auf dem Handy von ' + _TONI['nutzer'] + ': Zeile für Zeile, '
+                    'die offene Zeile ist markiert. Tippt einen Baustein an oder schreibt selbst.'],
+        'hinweis_fiktion': 'Personen, Daten und Bürgerentscheid sind erfunden.',
+        'profil': profil,
+        'zeilen': [{**z, 'bausteine': [b['text'] for b in z['bausteine']]} for z in WERKSTATT_2580[seite]],
+        'fertig': {'titel': 'Eure Anzeige ist fertig.',
+                   'text': f'So sieht {_TONI["nutzer"]} sie auf dem Handy. Zeigt sie der Klasse, dann vergleichen wir: '
+                           'Welche Anzeige würde 2580 überzeugen, und warum?'},
+    }
+    return daten, fehler
+
+
 def woerter(eingabe):
     s = eingabe.upper().replace('Ä', 'AE').replace('Ö', 'OE').replace('Ü', 'UE')
     return [w for w in re.split(r'[^A-Z0-9]+', s) if w]
@@ -1102,6 +1186,16 @@ def main():
         for name in (f['person'].split()[0].lower(), f['nachname']):
             if re.search(r'(?<![a-zäöüß])' + re.escape(name) + r'(?![a-zäöüß])', roh):
                 alle_fehler.append(f"{f['nutzer']}: „{name}“ im Klartext der Webdaten (außerhalb der Einträge)")
+    werkstaetten = []
+    toni_eintraege = next(e for f, _d, _k, _a, _p, e in ausgaben if f['id'] == 'toni')
+    for seite, k in SEITEN_2580.items():
+        daten_w, fehler_w = werkstatt(seite, k, toni_eintraege)
+        alle_fehler += fehler_w
+        roh = json.dumps(daten_w, ensure_ascii=False).lower()
+        for name in (_TONI['person'].split()[0].lower(), _TONI['nachname']):
+            if re.search(r'(?<![a-zäöüß])' + re.escape(name) + r'(?![a-zäöüß])', roh):
+                alle_fehler.append(f"anzeige-{seite}: „{name}“ im Klartext")
+        werkstaetten.append((seite, daten_w))
     # Erst schreiben, wenn ALLE Fälle die Selbstprüfung bestehen
     assert not alle_fehler, '\n'.join(alle_fehler)
     for f, daten, fall_kopf, ak, ph, eintraege in ausgaben:
@@ -1115,6 +1209,15 @@ def main():
                 json.dumps({'fall': fall_kopf, 'akte': ak, 'phasen': ph, 'stufen': f['stufen'],
                             **({'zeitung': f['zeitung']} if f.get('zeitung') else {}), 'eintraege': eintraege},
                            ensure_ascii=False, indent=1), encoding='utf-8')
+    anzeige_vorlage = ANZEIGE_VORLAGE.read_text(encoding='utf-8')
+    for datei in ('anzeige.js', 'datenspuren.css', 'material.css'):
+        anzeige_vorlage = re.sub(re.escape(datei) + r'\?v=[0-9.]+', f'{datei}?v={versionen[datei]}', anzeige_vorlage)
+    for seite, daten_w in werkstaetten:
+        ordner = WEB / f'anzeige-{seite}'
+        ordner.mkdir(exist_ok=True)
+        (ordner / 'data.json').write_text(json.dumps(daten_w, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
+        (ordner / 'index.html').write_text(anzeige_vorlage.replace('{{TITEL}}', daten_w['titel']), encoding='utf-8')
+    print(f'Anzeigen-Werkstatt: {len(werkstaetten)} Seiten, Bausteine im Datensatz belegt')
     (WEB / 'index.html').write_text(uebersicht(FAELLE), encoding='utf-8')
     print(f'Selbstprüfung: {len(FAELLE)} Fälle, {pruefungen} Prüfeingaben korrekt, alle Stufen in ihrer Phase lösbar, '
           'Nachnamen eindeutig, kein Hinweis auf den echten Fall')

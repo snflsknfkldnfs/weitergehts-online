@@ -1,0 +1,108 @@
+{
+ "version": 1,
+ "titel": "Anzeige für 2580",
+ "nutzer": "2580",
+ "absender": "Bürgerentscheid Volkach · Kampagne Nachtbus für Volkach",
+ "auftrag": [
+  "Ihr seid die Bürgerinitiative „Nachtbus für Volkach“. Euer Ziel: 2580 stimmt am 8. November für den Nachtbus.",
+  "Links seht ihr das Profil von 2580, das ihr letzte Woche aus den Daten erstellt habt.",
+  "Rechts baut ihr eure Werbeanzeige auf dem Handy von 2580: Zeile für Zeile, die offene Zeile ist markiert. Tippt einen Baustein an oder schreibt selbst."
+ ],
+ "hinweis_fiktion": "Personen, Daten und Bürgerentscheid sind erfunden.",
+ "profil": [
+  {
+   "steckbrief": "Wohnort",
+   "text": "Volkach (Am Sonnenhang)"
+  },
+  {
+   "steckbrief": "Arbeit",
+   "text": "Krankenhaus in Würzburg (Ausbildung Pflege, Schichtdienst)"
+  },
+  {
+   "steckbrief": "Heimweg",
+   "text": "Mit dem Taxi (42 bis 44,50 €), weil kein Bus mehr fährt"
+  },
+  {
+   "steckbrief": "Samstag",
+   "text": "Bäckerei am Marktplatz in Volkach (Altstadt), 48 € Lohn"
+  },
+  {
+   "steckbrief": "Ärger",
+   "text": "Verwarngeld fürs Falschparken in der Altstadt (vorher Parkplatzsuche)"
+  },
+  {
+   "steckbrief": "Handyzeit",
+   "text": "Social-Media-App, abends gegen 21:40 bzw. 22:47"
+  },
+  {
+   "steckbrief": "Sorgen und Wünsche",
+   "text": "aus Suche und Nachrichten: nachts allein am Bahnhof Angst · sucht einen Gebrauchtwagen bis 4000 € · Kontostand 61,30 € · „immer müde“"
+  }
+ ],
+ "zeilen": [
+  {
+   "id": "wann",
+   "ort": "status",
+   "frage": "Wann und in welcher App sieht 2580 eure Anzeige?",
+   "hilfe": "Schaut ins Profil: Handyzeit.",
+   "max_woerter": null,
+   "bausteine": [
+    "abends · Social-Media-App",
+    "mittags · Musik-App",
+    "früh um 04:45 · Wecker-App"
+   ]
+  },
+  {
+   "id": "ueberschrift",
+   "ort": "ueberschrift",
+   "frage": "Was ärgert 2580? Macht daraus eine Frage als Überschrift.",
+   "hilfe": "Höchstens 6 Wörter. Ihr dürft den Baustein ändern.",
+   "max_woerter": 6,
+   "bausteine": [
+    "Schon wieder 42 € fürs Taxi?",
+    "Kein Bus nach der Spätschicht?",
+    "Nachts allein am Bahnhof?"
+   ]
+  },
+  {
+   "id": "passiert",
+   "ort": "text",
+   "frage": "Was ist 2580 passiert? Sagt es mit „du“.",
+   "hilfe": "Ein Satz. Nehmt einen Baustein oder schreibt selbst.",
+   "max_woerter": null,
+   "bausteine": [
+    "Nach der Spätschicht fährt kein Bus mehr, und das Taxi kostet dich 42 €.",
+    "Nachts am Bahnhof musst du Mama bitten, dich abzuholen.",
+    "Du stehst nachts allein am Bahnhof und weißt nicht, wie du heimkommst."
+   ]
+  },
+  {
+   "id": "aendert",
+   "ort": "text",
+   "frage": "Was ändert der Nachtbus für 2580?",
+   "hilfe": "Ein Satz mit „du“.",
+   "max_woerter": null,
+   "bausteine": [
+    "Mit dem Nachtbus fährst du jede Stunde bis Mitternacht heim.",
+    "Du sparst dir das Taxi und hast mehr Geld übrig.",
+    "Mama kann schlafen, du kommst allein sicher heim."
+   ]
+  },
+  {
+   "id": "knopf",
+   "ort": "knopf",
+   "frage": "Was soll 2580 tun? Das steht auf dem Knopf.",
+   "hilfe": "Kurz, mit Ausrufezeichen.",
+   "max_woerter": 5,
+   "bausteine": [
+    "Stimm für den Nachtbus!",
+    "Am 8. November: Nachtbus!",
+    "Ja zum Nachtbus!"
+   ]
+  }
+ ],
+ "fertig": {
+  "titel": "Eure Anzeige ist fertig.",
+  "text": "So sieht 2580 sie auf dem Handy. Zeigt sie der Klasse, dann vergleichen wir: Welche Anzeige würde 2580 überzeugen, und warum?"
+ }
+}

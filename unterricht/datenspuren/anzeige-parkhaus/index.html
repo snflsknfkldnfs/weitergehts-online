@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Anzeige für 2580 · Datenspuren</title>
+<link rel="stylesheet" href="../../assets/css/material.css?v=1.0">
+<link rel="stylesheet" href="../datenspuren.css?v=1.2">
+</head>
+<body class="datenspuren">
+
+<header class="d-kopf">
+  <div>
+    <h1 id="a-titel">Anzeige für 2580</h1>
+    <p class="d-absender" id="a-absender"></p>
+  </div>
+  <p class="d-fortschritt" id="a-fortschritt"></p>
+</header>
+
+<main class="a-raster">
+
+  <aside class="d-akte a-profil" aria-label="Profil">
+    <details class="d-briefing" open>
+      <summary>Euer Auftrag</summary>
+      <div id="a-auftrag"></div>
+    </details>
+    <section class="d-steckbrief-box">
+      <h2>Artefakt 1 · Profil von <span id="a-nr"></span></h2>
+      <dl class="d-steckbrief" id="a-profil"></dl>
+    </section>
+    <p class="d-fuss">
+      <span id="a-fiktion"></span>
+      <button type="button" class="d-link" id="a-neu">Anzeige neu beginnen</button>
+    </p>
+  </aside>
+
+  <section class="a-werkstatt" aria-label="Werbeanzeige">
+    <h2>Artefakt 2 · Eure Werbeanzeige</h2>
+    <div class="a-handy" id="a-handy" aria-live="polite">Lade …</div>
+    <div class="a-fertig" id="a-fertig" hidden></div>
+  </section>
+
+</main>
+
+<script src="../anzeige.js?v=1.0"></script>
+</body>
+</html>
