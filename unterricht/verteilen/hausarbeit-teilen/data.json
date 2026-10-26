@@ -1,14 +1,40 @@
 {
  "titel": "Wer macht was bis 14:30?",
- "auftrag": "Geh die Stufen der Reihe nach durch. Tippe bei jeder Aufgabe an, wer sie übernimmt; die Balken zeigen, wann jede Person fertig ist. In Stufe 1 prüfst du die These: Gib alle Aufgaben Mama. Dann finde eine Verteilung, mit der um 14:30 alles fertig ist.",
+ "auftrag": "Tippe bei jeder Aufgabe an, wer sie übernimmt. Die Balken zeigen, wann jede Person fertig ist. Fang mit Fall 1 an. Wenn du ihn gelöst hast, geht es mit den nächsten Fällen weiter.",
  "hinweis": "Die Familien und die Minuten sind ausgedacht.",
  "nachweis": "Idee der Rechnung: „Inselspiel“, Universität Siegen (Arbeitsteilung, Tim und Tom).",
  "lagen": [
   {
    "id": "besuch",
-   "reiter": "Stufe 1 · Besuch",
-   "titel": "Stufe 1 · Besuch um 14:30",
-   "text": "Es ist 14:00 Uhr. Um 14:30 Uhr kommt Besuch. Zwei Zimmer müssen gesaugt und zwei Körbe Wäsche zusammengelegt sein. Mama kann alles schneller als ihr Kind.",
+   "reiter": "Fall 1 · Besuch",
+   "titel": "Fall 1 · Besuch um 14:30",
+   "text": "Es ist 14:00 Uhr. Um 14:30 Uhr kommt Besuch. Zwei Zimmer müssen gesaugt und zwei Körbe Wäsche zusammengelegt sein. Prüf die These: Gib zuerst alle Aufgaben Mama. Dann finde eine Verteilung, mit der um 14:30 alles fertig ist.",
+   "these": "Mama kann alles schneller als ihr Kind. Also ist alles am schnellsten fertig, wenn Mama alles macht.",
+   "erkenntnis": {
+    "titel": "Warum klappt es geteilt?",
+    "text": "Mama ist bei beiden Arbeiten schneller. Die roten Stücke zeigen, wie viel länger das Kind braucht.",
+    "schnell": "Mama",
+    "langsam": "Kind",
+    "arbeiten": [
+     {
+      "name": "Ein Zimmer saugen",
+      "schnell": 10,
+      "langsam": 15,
+      "farbe": 0
+     },
+     {
+      "name": "Einen Korb Wäsche zusammenlegen",
+      "schnell": 10,
+      "langsam": 35,
+      "farbe": 1
+     }
+    ],
+    "frage": "Wo ist das Kind am wenigsten langsamer als Mama?",
+    "richtig": 0,
+    "rueck_richtig": "Stimmt: Beim Saugen braucht das Kind nur 5 Minuten länger, bei der Wäsche 25 Minuten länger. Schau auf deine Lösung oben: Was hat das Kind übernommen?",
+    "rueck_falsch": "Schau noch einmal auf die roten Stücke: Wo ist das Stück kürzer?",
+    "weiter": "Weiter zu Fall 2"
+   },
    "start": "14:00",
    "frist": "14:30",
    "frist_name": "Besuch 14:30",
@@ -66,36 +92,9 @@
    ]
   },
   {
-   "id": "warum",
-   "art": "vergleich",
-   "reiter": "Stufe 2 · Warum?",
-   "titel": "Stufe 2 · Warum saugt das Kind?",
-   "text": "Mama ist bei beiden Arbeiten schneller. Die roten Stücke zeigen, wie viel länger das Kind braucht.",
-   "schnell": "Mama",
-   "langsam": "Kind",
-   "arbeiten": [
-    {
-     "name": "Ein Zimmer saugen",
-     "schnell": 10,
-     "langsam": 15,
-     "farbe": 0
-    },
-    {
-     "name": "Einen Korb Wäsche zusammenlegen",
-     "schnell": 10,
-     "langsam": 35,
-     "farbe": 1
-    }
-   ],
-   "frage": "Wo ist das Kind am wenigsten langsamer als Mama?",
-   "richtig": 0,
-   "rueck_richtig": "Stimmt: Beim Saugen braucht das Kind nur 5 Minuten länger, bei der Wäsche 25 Minuten länger. Schau auf deine Lösung in Stufe 1: Was hat das Kind dort übernommen?",
-   "rueck_falsch": "Schau noch einmal auf die roten Stücke: Wo ist das Stück kürzer?"
-  },
-  {
    "id": "lea-ben",
-   "reiter": "Stufe 3 · Lea und Ben",
-   "titel": "Stufe 3 · Lea und Ben",
+   "reiter": "Fall 2 · Lea und Ben",
+   "titel": "Fall 2 · Lea und Ben",
    "text": "Samstag, 14:00 Uhr. Lea und Ben müssen zwei Zimmer saugen und zwei Körbe Wäsche zusammenlegen, dann dürfen sie raus. Wie werden sie am schnellsten fertig?",
    "start": "14:00",
    "personen": [
@@ -153,8 +152,8 @@
   },
   {
    "id": "grossputz",
-   "reiter": "Stufe 4 · Großputz",
-   "titel": "Stufe 4 · Großputz zu dritt",
+   "reiter": "Fall 3 · Großputz",
+   "titel": "Fall 3 · Großputz zu dritt",
    "text": "Es ist 14:00 Uhr. Um 14:45 Uhr kommt Oma zum Geburtstag. Sieben Aufgaben müssen bis dahin erledigt sein. Mama und Papa sind bei allem schneller als das Kind. Probier zuerst, ob Mama und Papa es allein schaffen. Dann finde eine Verteilung, mit der um 14:45 alles fertig ist.",
    "start": "14:00",
    "frist": "14:45",
@@ -256,8 +255,8 @@
   {
    "id": "eigen",
    "art": "eigen",
-   "reiter": "Stufe 5 · Eigene Lage",
-   "titel": "Stufe 5 · Denk dir eine Lage aus",
+   "reiter": "Fall 4 · Eigener Fall",
+   "titel": "Fall 4 · Denk dir einen Fall aus",
    "text": "Wer hilft mit? Welche Aufgaben gibt es, und wie lange braucht jede Person? Trag es ein und verteile. Schaffst du eine Lage, in der nur geteilt alles rechtzeitig fertig wird?",
    "start": "14:00",
    "fristen": [

@@ -2,6 +2,8 @@
    Liest data.json im Ordner der Seite. Eine Seite hat eine oder mehrere Lagen (Reiter), je Lage eine Art:
      "verteilen" (Vorgabe): Startzeit, optional Frist, Personen, Aufgaben mit Dauer je Person; zuteilen und sehen.
      "vergleich": je Arbeit zwei Balken (schnellere und langsamere Person), der Rückstand markiert; eine Frage zum Antippen.
+   Eine Lage "verteilen" kann eine "these" tragen (steht über den Aufgaben) und eine "erkenntnis" (Form wie "vergleich"):
+   die Erkenntnis klappt erst auf, wenn die Lage einmal rechtzeitig gelöst ist, und führt danach zur nächsten Lage.
      "eigen":     die Klasse trägt Personen, Aufgaben und Minuten selbst ein und verteilt dann wie bei "verteilen".
    Jede Person arbeitet ihre Aufgaben nacheinander ab (in der Reihenfolge der Liste), alle Personen zugleich.
    Gezählt wird, wann alles fertig ist — nicht die Summe der Minuten. Nichts wird gespeichert. */
@@ -12,7 +14,7 @@
   var lageNr = 0;
   var zuteilung = [];   // je Lage: { aufgabeId: personId | null }
   var versuche = [];    // je Lage: [{ schluessel, text, urteil }]
-  var antwort = [];     // je Lage (vergleich): gewählter Index oder null
+  var antwort = {};     // je Frage (Lage oder Erkenntnis): gewählter Index
   var eigenZaehler = 0;
 
   function el(tag, klasse, text) {
@@ -200,7 +202,8 @@
   }
 
   /* ── Art „vergleich“: Rückstand je Arbeit als Balken, eine Frage ─── */
-  function vergleichZeichnen(lage, blatt) {
+  function vergleichZeichnen(lage, blatt, schluessel) {
+    schluessel = schluessel || ('v' + lageNr);
     var max = 0;
     lage.arbeiten.forEach(function (a) { max = Math.max(max, a.schnell, a.langsam); });
     var box = el('div', 'v-vergleich');
@@ -235,15 +238,20 @@
     frage.appendChild(el('p', 'v-frage-text', lage.frage));
     var wahl = el('div', 'v-handlungen');
     lage.arbeiten.forEach(function (a, i) {
-      var k = knopf(a.name, null, function () { antwort[lageNr] = i; zeichnen(); });
-      k.setAttribute('aria-pressed', antwort[lageNr] === i ? 'true' : 'false');
+      var k = knopf(a.name, null, function () { antwort[schluessel] = i; zeichnen(); });
+      k.setAttribute('aria-pressed', antwort[schluessel] === i ? 'true' : 'false');
       wahl.appendChild(k);
     });
     frage.appendChild(wahl);
-    if (antwort[lageNr] != null) {
-      var richtig = antwort[lageNr] === lage.richtig;
+    if (antwort[schluessel] != null) {
+      var richtig = antwort[schluessel] === lage.richtig;
       frage.appendChild(el('p', 'v-ergebnis ' + (richtig ? 'v-rechtzeitig' : 'v-zu-spaet'),
         richtig ? lage.rueck_richtig : lage.rueck_falsch));
+      if (richtig && lage.weiter && lageNr + 1 < daten.lagen.length) {
+        var weiter = el('div', 'v-handlungen');
+        weiter.appendChild(knopf(lage.weiter, 'voll', function () { lageNr += 1; zeichnen(); window.scrollTo(0, 0); }));
+        frage.appendChild(weiter);
+      }
     }
     blatt.appendChild(frage);
   }
@@ -347,15 +355,36 @@
       vergleichZeichnen(lage, blatt);
       document.getElementById('v-plan').hidden = true;
       versucheZeichnen(false);
+      erkenntnisZeichnen({});
       return;
     }
     if (lage.art === 'eigen') {
       eigenZeichnen(lage, zu, blatt);
       planZeichnen(lage, zu, false);
+      erkenntnisZeichnen({});
       return;
+    }
+    if (lage.these) {
+      var these = el('div', 'v-these');
+      these.appendChild(el('span', 'v-these-wort', 'These'));
+      these.appendChild(el('p', null, lage.these));
+      blatt.appendChild(these);
     }
     blatt.appendChild(aufgabenListe(lage, zu));
     planZeichnen(lage, zu, true);
+    erkenntnisZeichnen(lage);
+  }
+
+  function erkenntnisZeichnen(lage) {
+    var box = document.getElementById('v-erkenntnis');
+    if (!box) return;
+    leeren(box);
+    var geloest = versuche[lageNr].some(function (v) { return v.urteil.klasse === 'v-rechtzeitig'; });
+    box.hidden = !(lage.erkenntnis && geloest);
+    if (box.hidden) return;
+    box.appendChild(el('h2', null, lage.erkenntnis.titel));
+    box.appendChild(el('p', null, lage.erkenntnis.text));
+    vergleichZeichnen(lage.erkenntnis, box, 'e' + lageNr);
   }
 
   function start(d) {
@@ -376,7 +405,6 @@
       (lage.aufgaben || []).forEach(function (a) { leer[a.id] = null; });
       zuteilung.push(leer);
       versuche.push([]);
-      antwort.push(null);
       reiter.appendChild(knopf(lage.reiter || lage.titel, 'v-lage-knopf', function () {
         lageNr = i;
         zeichnen();

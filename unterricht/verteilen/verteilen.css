@@ -99,6 +99,14 @@ body.verteilen {
 .v-frage-text { font-weight: 700; margin: 0 0 4px; }
 .v-handlungen .m-knopf[aria-pressed="true"] { background: var(--m-tinte); color: var(--m-blatt); }
 
+/* ── These und Erkenntnis ────────────────────────────────────────────── */
+.v-these { border: 2px solid var(--m-tinte); border-radius: var(--m-ecke); padding: 10px 14px; margin: 0 0 14px; }
+.v-these-wort { display: block; font-size: .85rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--m-leise); }
+.v-these p { margin: 2px 0 0; font-size: 1.12rem; font-weight: 700; }
+.v-erkenntnis { padding: 16px 18px 18px; margin: 0 0 20px; border-width: 2px; border-color: var(--m-tinte); }
+.v-erkenntnis h2 { margin: 0 0 4px; font-size: 1.2rem; }
+.v-erkenntnis > p { margin: 0 0 12px; max-width: var(--m-mass); }
+
 /* ── Eigene Lage ─────────────────────────────────────────────────────── */
 .v-eigen-zeile { display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: center; margin: 0 0 12px; }
 .v-eigen-titel { font-weight: 700; }
