@@ -103,9 +103,22 @@ body.verteilen {
 .v-these { border: 2px solid var(--m-tinte); border-radius: var(--m-ecke); padding: 10px 14px; margin: 0 0 14px; }
 .v-these-wort { display: block; font-size: .85rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--m-leise); }
 .v-these p { margin: 2px 0 0; font-size: 1.12rem; font-weight: 700; }
-.v-erkenntnis { padding: 16px 18px 18px; margin: 0 0 20px; border-width: 2px; border-color: var(--m-tinte); }
-.v-erkenntnis h2 { margin: 0 0 4px; font-size: 1.2rem; }
+.v-erkenntnis { padding: 18px 20px 20px; margin: 28px 0 20px; border: 3px solid var(--m-tinte); box-shadow: 8px 8px 0 var(--m-kante); }
+.v-erkenntnis-wort { display: block; font-size: .85rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--m-leise); }
+.v-erkenntnis h2 { margin: 2px 0 12px; font-size: 1.35rem; line-height: 1.25; }
+.v-erkenntnis h3 { margin: 18px 0 4px; font-size: 1.1rem; }
 .v-erkenntnis > p { margin: 0 0 12px; max-width: var(--m-mass); }
+.v-erkenntnis-satz {
+  margin: 0 0 12px; padding: 10px 14px; max-width: var(--m-mass);
+  border-left: 5px solid var(--m-tinte); background: var(--m-notiz); font-size: 1.08rem; font-weight: 700;
+}
+.v-merk { margin-top: 12px; }
+
+/* ── Wiedergabe ──────────────────────────────────────────────────────── */
+.v-jetzt { position: absolute; top: -2px; bottom: -2px; width: 0; border-left: 3px solid var(--m-tinte); z-index: 6; }
+.v-uhrzeile { margin: 4px 0 0; min-height: 1.5em; font-variant-numeric: tabular-nums; font-weight: 600; }
+.v-grund { margin: 2px 0 0; color: var(--m-tinte); max-width: var(--m-mass); }
+.v-balken { transition: none; }
 
 /* ── Eigene Lage ─────────────────────────────────────────────────────── */
 .v-eigen-zeile { display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: center; margin: 0 0 12px; }

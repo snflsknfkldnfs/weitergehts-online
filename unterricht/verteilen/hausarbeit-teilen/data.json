@@ -1,6 +1,6 @@
 {
  "titel": "Wer macht was bis 14:30?",
- "auftrag": "Tippe bei jeder Aufgabe an, wer sie übernimmt. Die Balken zeigen, wann jede Person fertig ist. Fang mit Fall 1 an. Wenn du ihn gelöst hast, geht es mit den nächsten Fällen weiter.",
+ "auftrag": "Tippe bei jeder Aufgabe an, wer sie übernimmt, und drück auf Start. Dann läuft die Zeit, und du siehst, wer wann was macht. Fang mit Fall 1 an. Wenn du ihn gelöst hast, geht es mit den nächsten Fällen weiter.",
  "hinweis": "Die Familien und die Minuten sind ausgedacht.",
  "nachweis": "Idee der Rechnung: „Inselspiel“, Universität Siegen (Arbeitsteilung, Tim und Tom).",
  "lagen": [
@@ -8,10 +8,12 @@
    "id": "besuch",
    "reiter": "Fall 1 · Besuch",
    "titel": "Fall 1 · Besuch um 14:30",
-   "text": "Es ist 14:00 Uhr. Um 14:30 Uhr kommt Besuch. Zwei Zimmer müssen gesaugt und zwei Körbe Wäsche zusammengelegt sein. Prüf die These: Gib zuerst alle Aufgaben Mama. Dann finde eine Verteilung, mit der um 14:30 alles fertig ist.",
+   "text": "Es ist 14:00 Uhr. Um 14:30 Uhr kommt Besuch. Zwei Zimmer müssen gesaugt und zwei Körbe Wäsche zusammengelegt sein. Prüf die These: Gib zuerst alle Aufgaben Mama und drück auf Start. Dann finde eine Verteilung, mit der um 14:30 alles fertig ist.",
    "these": "Mama kann alles schneller als ihr Kind. Also ist alles am schnellsten fertig, wenn Mama alles macht.",
    "erkenntnis": {
-    "titel": "Warum klappt es geteilt?",
+    "titel": "Warum ist es besser, wenn man die Arbeit teilt?",
+    "gleichzeitig": "Zu zweit wird gleichzeitig gearbeitet: Während Mama die Wäsche zusammenlegt, saugt das Kind. So ist in derselben Zeit mehr geschafft, auch wenn das Kind langsamer ist.",
+    "zweite_frage": "Welche Arbeit soll das Kind übernehmen?",
     "text": "Mama ist bei beiden Arbeiten schneller. Die roten Stücke zeigen, wie viel länger das Kind braucht.",
     "schnell": "Mama",
     "langsam": "Kind",
@@ -31,8 +33,8 @@
     ],
     "frage": "Wo ist das Kind am wenigsten langsamer als Mama?",
     "richtig": 0,
-    "rueck_richtig": "Stimmt: Beim Saugen braucht das Kind nur 5 Minuten länger, bei der Wäsche 25 Minuten länger. Schau auf deine Lösung oben: Was hat das Kind übernommen?",
-    "rueck_falsch": "Schau noch einmal auf die roten Stücke: Wo ist das Stück kürzer?",
+    "rueck_richtig": "Das Kind übernimmt die Arbeit, bei der es am wenigsten langsamer ist: das Saugen. Dort braucht es nur 5 Minuten länger als Mama, bei der Wäsche 25 Minuten.",
+    "rueck_falsch": "Bei der Wäsche braucht das Kind 25 Minuten länger als Mama. Schau auf die roten Stücke: Wo ist das Stück kürzer?",
     "weiter": "Weiter zu Fall 2"
    },
    "start": "14:00",

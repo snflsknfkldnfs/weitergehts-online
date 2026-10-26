@@ -16,6 +16,8 @@
   var versuche = [];    // je Lage: [{ schluessel, text, urteil }]
   var antwort = {};     // je Frage (Lage oder Erkenntnis): gewählter Index
   var eigenZaehler = 0;
+  var abgespielt = [];  // je Lage: Schlüssel der zuletzt ganz abgespielten Verteilung
+  var laufend = null;   // laufende Wiedergabe (requestAnimationFrame)
 
   function el(tag, klasse, text) {
     var e = document.createElement(tag);
@@ -108,11 +110,48 @@
     return wahl;
   }
 
+  function schluesselVon(lage, zu) {
+    return lage.aufgaben.map(function (a) { return a.id + '=' + zu[a.id] + ':' +
+      lage.personen.map(function (p) { return a.dauer[p.id]; }).join(','); }).join('|') +
+      '|' + (lage.frist || '') + '|' + lage.personen.map(function (p) { return p.id; }).join(',');
+  }
+
+  /* Grund am Ende: wer zur Frist noch arbeitet, und woran */
+  function grund(lage, ab) {
+    if (!lage.frist || ab.offen > 0) return '';
+    var frist = minuten(lage.frist);
+    var spaet = [];
+    lage.personen.forEach(function (p) {
+      var spur = ab.proPerson[p.id];
+      if (spur.ende <= frist) return;
+      var dran = spur.balken.filter(function (b) { return b.bis > frist; }).map(function (b) { return b.aufgabe.kurz || b.aufgabe.name; });
+      spaet.push(p.name + ' arbeitet noch bis ' + uhr(spur.ende) + ' (' + dran.join(', ') + ')');
+    });
+    if (!spaet.length) return 'Um ' + lage.frist + ' sind alle fertig.';
+    return 'Um ' + lage.frist + ' ist noch nicht alles fertig: ' + spaet.join('; ') + '.';
+  }
+
+  function versuchMerken(lage, zu, u) {
+    var schluessel = lage.aufgaben.map(function (a) { return zu[a.id]; }).join('|');
+    var liste = versuche[lageNr];
+    if (liste.some(function (v) { return v.schluessel === schluessel; })) return;
+    var teile = lage.personen.map(function (p) {
+      var meine = lage.aufgaben.filter(function (a) { return zu[a.id] === p.id; })
+        .map(function (a) { return a.kurz || a.name; });
+      return p.name + ': ' + (meine.length ? meine.join(', ') : 'nichts');
+    });
+    liste.push({ schluessel: schluessel, text: teile.join(' · '), urteil: u });
+  }
+
+  /* Plan: Bahnen je Person. Erst nach „Start“ läuft die Zeit; Balken wachsen mit, das Ergebnis kommt am Ende. */
   function planZeichnen(lage, zu, mitVersuchen) {
+    if (laufend) { cancelAnimationFrame(laufend); laufend = null; }
     var ab = ablauf(lage, zu);
     var frist = lage.frist ? minuten(lage.frist) : null;
     var spanne = Math.max(60, Math.ceil((ab.ende - ab.start) / 10) * 10, frist ? frist - ab.start + 10 : 0);
     function pos(min) { return ((min - ab.start) / spanne * 100) + '%'; }
+    var key = schluesselVon(lage, zu);
+    var fertig = abgespielt[lageNr] === key && ab.offen === 0;
 
     var plan = document.getElementById('v-plan');
     plan.hidden = false;
@@ -137,6 +176,9 @@
     kopf.appendChild(el('span'));
     plan.appendChild(kopf);
 
+    var zeiger = [];   // Zeitstrich je Bahn
+    var balkenAlle = [];
+    var enden = {};
     lage.personen.forEach(function (p) {
       var spur = ab.proPerson[p.id];
       var zeile = el('div', 'v-zeile');
@@ -145,44 +187,102 @@
       spur.balken.forEach(function (b) {
         var balken = el('div', 'v-balken v-f' + (b.aufgabe.farbe || 0), b.aufgabe.kurz || b.aufgabe.name);
         balken.style.left = pos(b.von);
-        balken.style.width = (b.dauer / spanne * 100) + '%';
+        balken.style.width = fertig ? (b.dauer / spanne * 100) + '%' : '0';
+        balken.style.visibility = fertig ? 'visible' : 'hidden';
         balken.title = (b.aufgabe.name || 'Aufgabe') + ', ' + b.dauer + ' Min.';
         bahn.appendChild(balken);
+        balkenAlle.push({ el: balken, b: b });
       });
       if (frist !== null) {
         var linie = el('div', 'v-frist');
         linie.style.left = pos(frist);
         bahn.appendChild(linie);
       }
+      var jetzt = el('div', 'v-jetzt');
+      jetzt.hidden = true;
+      bahn.appendChild(jetzt);
+      zeiger.push(jetzt);
       zeile.appendChild(bahn);
-      var ende = el('div', 'v-zeile-ende', spur.balken.length ? 'fertig um ' + uhr(spur.ende) : 'hat nichts zu tun');
-      if (frist !== null && spur.ende > frist) ende.classList.add('v-zu-spaet');
+      var endeText = '';
+      if (fertig) endeText = spur.balken.length ? 'fertig um ' + uhr(spur.ende) : 'hat nichts zu tun';
+      var ende = el('div', 'v-zeile-ende', endeText);
+      if (fertig && frist !== null && spur.ende > frist) ende.classList.add('v-zu-spaet');
+      enden[p.id] = ende;
       zeile.appendChild(ende);
       plan.appendChild(zeile);
     });
 
+    var uhrzeile = el('p', 'v-uhrzeile');
+    plan.appendChild(uhrzeile);
+
     var u = urteil(lage, ab);
-    plan.appendChild(el('p', 'v-ergebnis ' + u.klasse, u.text));
+    var ergebnis = el('p', 'v-ergebnis');
+    var begruendung = el('p', 'v-grund');
+    if (fertig) {
+      ergebnis.textContent = u.text;
+      ergebnis.className = 'v-ergebnis ' + u.klasse;
+      begruendung.textContent = grund(lage, ab);
+    } else if (ab.offen > 0 || !lage.aufgaben.length) {
+      ergebnis.textContent = u.text;
+      ergebnis.className = 'v-ergebnis v-offen';
+    } else {
+      ergebnis.textContent = 'Alles verteilt. Drück auf Start und schau zu, wer wann was macht.';
+      ergebnis.className = 'v-ergebnis v-offen';
+    }
+    plan.appendChild(ergebnis);
+    plan.appendChild(begruendung);
+
     var handeln = el('div', 'v-handlungen');
+    var startKnopf = knopf(fertig ? 'Noch einmal abspielen' : 'Start', fertig ? null : 'voll', function () {
+      abspielen();
+    });
+    startKnopf.disabled = ab.offen > 0 || !lage.aufgaben.length;
+    handeln.appendChild(startKnopf);
     handeln.appendChild(knopf('Alles neu verteilen', null, function () {
       lage.aufgaben.forEach(function (a) { zu[a.id] = null; });
       zeichnen();
     }));
     plan.appendChild(handeln);
 
-    if (mitVersuchen && ab.offen === 0 && lage.aufgaben.length) {
-      var schluessel = lage.aufgaben.map(function (a) { return zu[a.id]; }).join('|');
-      var liste = versuche[lageNr];
-      if (!liste.some(function (v) { return v.schluessel === schluessel; })) {
-        var teile = lage.personen.map(function (p) {
-          var meine = lage.aufgaben.filter(function (a) { return zu[a.id] === p.id; })
-            .map(function (a) { return a.kurz || a.name; });
-          return p.name + ': ' + (meine.length ? meine.join(', ') : 'nichts');
+    function abspielen() {
+      startKnopf.disabled = true;
+      ergebnis.textContent = '';
+      begruendung.textContent = '';
+      Object.keys(enden).forEach(function (k) { enden[k].textContent = ''; enden[k].classList.remove('v-zu-spaet'); });
+      balkenAlle.forEach(function (x) { x.el.style.width = '0'; x.el.style.visibility = 'hidden'; });
+      zeiger.forEach(function (z) { z.hidden = false; });
+      var dauerMs = Math.max(6000, Math.min(14000, (ab.ende - ab.start) * 160));
+      var bisMin = ab.ende - ab.start;
+      var t0 = null;
+      function schritt(zeit) {
+        if (t0 === null) t0 = zeit;
+        var anteil = Math.min(1, (zeit - t0) / dauerMs);
+        var jetzt = ab.start + anteil * bisMin;
+        zeiger.forEach(function (z) { z.style.left = pos(jetzt); });
+        balkenAlle.forEach(function (x) {
+          var w = Math.max(0, Math.min(x.b.dauer, jetzt - x.b.von));
+          x.el.style.width = (w / spanne * 100) + '%';
+          x.el.style.visibility = w > 0 ? 'visible' : 'hidden';
         });
-        liste.push({ schluessel: schluessel, text: teile.join(' · '), urteil: u });
+        var tun = lage.personen.map(function (p) {
+          var spur = ab.proPerson[p.id];
+          var dran = spur.balken.filter(function (b) { return b.von <= jetzt && jetzt < b.bis; })[0];
+          var text = dran ? (dran.aufgabe.kurz || dran.aufgabe.name) : (spur.balken.length && jetzt >= spur.ende ? 'fertig' : 'nichts zu tun');
+          enden[p.id].textContent = dran ? dran.aufgabe.kurz || dran.aufgabe.name : (text === 'fertig' ? 'fertig um ' + uhr(spur.ende) : '');
+          return p.name + ': ' + text;
+        });
+        uhrzeile.textContent = uhr(Math.floor(jetzt)) + ' Uhr · ' + tun.join(' · ');
+        if (anteil < 1) { laufend = requestAnimationFrame(schritt); return; }
+        laufend = null;
+        abgespielt[lageNr] = key;
+        if (mitVersuchen) versuchMerken(lage, zu, u);
+        zeichnen();
       }
+      laufend = requestAnimationFrame(schritt);
     }
+
     versucheZeichnen(mitVersuchen);
+    return fertig && u.klasse === 'v-rechtzeitig';
   }
 
   function versucheZeichnen(zeigen) {
@@ -202,7 +302,7 @@
   }
 
   /* ── Art „vergleich“: Rückstand je Arbeit als Balken, eine Frage ─── */
-  function vergleichZeichnen(lage, blatt, schluessel) {
+  function vergleichZeichnen(lage, blatt, schluessel, merk) {
     schluessel = schluessel || ('v' + lageNr);
     var max = 0;
     lage.arbeiten.forEach(function (a) { max = Math.max(max, a.schnell, a.langsam); });
@@ -245,7 +345,7 @@
     frage.appendChild(wahl);
     if (antwort[schluessel] != null) {
       var richtig = antwort[schluessel] === lage.richtig;
-      frage.appendChild(el('p', 'v-ergebnis ' + (richtig ? 'v-rechtzeitig' : 'v-zu-spaet'),
+      frage.appendChild(el('p', richtig && merk ? 'v-erkenntnis-satz v-merk' : 'v-ergebnis ' + (richtig ? 'v-rechtzeitig' : 'v-zu-spaet'),
         richtig ? lage.rueck_richtig : lage.rueck_falsch));
       if (richtig && lage.weiter && lageNr + 1 < daten.lagen.length) {
         var weiter = el('div', 'v-handlungen');
@@ -382,9 +482,13 @@
     var geloest = versuche[lageNr].some(function (v) { return v.urteil.klasse === 'v-rechtzeitig'; });
     box.hidden = !(lage.erkenntnis && geloest);
     if (box.hidden) return;
-    box.appendChild(el('h2', null, lage.erkenntnis.titel));
-    box.appendChild(el('p', null, lage.erkenntnis.text));
-    vergleichZeichnen(lage.erkenntnis, box, 'e' + lageNr);
+    var e = lage.erkenntnis;
+    box.appendChild(el('span', 'v-erkenntnis-wort', 'Erkenntnis'));
+    box.appendChild(el('h2', null, e.titel));
+    if (e.gleichzeitig) box.appendChild(el('p', 'v-erkenntnis-satz', e.gleichzeitig));
+    if (e.zweite_frage) box.appendChild(el('h3', 'v-erkenntnis-frage', e.zweite_frage));
+    box.appendChild(el('p', null, e.text));
+    vergleichZeichnen(e, box, 'e' + lageNr, true);
   }
 
   function start(d) {
@@ -405,6 +509,7 @@
       (lage.aufgaben || []).forEach(function (a) { leer[a.id] = null; });
       zuteilung.push(leer);
       versuche.push([]);
+      abgespielt.push(null);
       reiter.appendChild(knopf(lage.reiter || lage.titel, 'v-lage-knopf', function () {
         lageNr = i;
         zeichnen();
