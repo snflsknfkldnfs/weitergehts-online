@@ -1,0 +1,76 @@
+/* Abstimmen — geteiltes Werkzeug fuer eine Abstimmung der Klasse an der Tafel (2026-10-26).
+   Datengetrieben: je Aufgabe ein Ordner mit index.html + data.json. Kein Framework.
+   Gestaltung „Blatt": Farben, Schrift, Knopf und Blatt aus ../assets/css/material.css (vorher geladen);
+   hier nur das Layout, nur --m-*-Tokens. Flaggenfarben kommen als Daten aus data.json. */
+
+body.abstimmen {
+  margin: 0; background: var(--m-grund); color: var(--m-tinte);
+  font: 20px/1.45 var(--m-schrift); -webkit-text-size-adjust: 100%;
+}
+.a-huelle { max-width: 1280px; margin: 0 auto; padding: 24px 28px 64px; }
+
+.a-kopf { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: baseline; justify-content: space-between; }
+.a-kopf h1 { margin: 0; font-size: 1.6rem; line-height: 1.2; }
+.a-leitfrage { margin: 4px 0 0; font-size: 1.15rem; font-weight: 500; color: var(--m-leise); }
+
+.a-schritte { display: flex; gap: 8px; flex-wrap: wrap; margin: 18px 0 22px; }
+.a-schritte .m-knopf[aria-current="true"] { background: var(--m-tinte); color: var(--m-blatt); }
+
+.a-blatt { background: var(--m-blatt); border: 1px solid var(--m-linie); border-radius: 2px;
+  box-shadow: var(--m-schatten); padding: 24px 32px; }
+
+/* Verhandeln: eine Streitfrage, Bausteine mit Stimmen */
+.a-frage-kopf { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+.a-frage { margin: 0 0 18px; font-size: 2rem; line-height: 1.2; }
+.a-nr { color: var(--m-leise); font-weight: 600; white-space: nowrap; }
+.a-bausteine { display: grid; gap: 14px; }
+.a-baustein { display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: center;
+  border: 2px solid var(--m-linie-hell); border-radius: var(--m-ecke); padding: 14px 16px; }
+.a-baustein.a-vorne { border-color: var(--m-tinte); }
+.a-flagge { display: flex; flex-direction: column; width: 54px; height: 36px; border: 1px solid var(--m-linie); }
+.a-flagge span { flex: 1; }
+.a-flagge.leer { visibility: hidden; }
+.a-btext { font-size: 1.25rem; font-weight: 600; }
+.a-balken { height: 10px; margin-top: 8px; background: var(--m-notiz); border-radius: 2px; overflow: hidden; }
+.a-balken i { display: block; height: 100%; background: var(--m-tinte); transition: width .25s; }
+.a-zaehler { display: flex; align-items: center; gap: 10px; }
+.a-zaehler b { min-width: 2ch; text-align: center; font-size: 1.6rem; }
+.a-zaehler .m-knopf { width: var(--m-klick); padding: 0; font-size: 1.3rem; }
+.a-navi { display: flex; justify-content: space-between; margin-top: 20px; gap: 12px; }
+.a-hinweis { margin: 14px 0 0; color: var(--m-leise); font-size: 1rem; }
+
+/* Entwurf und Vergleich */
+.a-dokument h2 { margin: 0 0 4px; font-family: var(--m-wortlaut); font-size: 1.8rem; }
+.a-ort { margin: 0 0 18px; color: var(--m-leise); font-family: var(--m-wortlaut); font-style: italic; }
+.a-artikel { display: grid; grid-template-columns: 9ch 1fr; gap: 6px 18px; padding: 12px 0;
+  border-top: 1px solid var(--m-linie-hell); font-family: var(--m-wortlaut); font-size: 1.25rem; }
+.a-artikel .a-art { font-weight: 700; }
+.a-artikel .a-ffrage { grid-column: 2; font-family: var(--m-schrift); font-size: .95rem; color: var(--m-leise); }
+.a-vergleich { display: grid; grid-template-columns: 1fr 1fr 9ch; gap: 8px 22px; padding: 12px 0;
+  border-top: 1px solid var(--m-linie-hell); align-items: start; }
+.a-vergleich h3 { grid-column: 1 / -1; margin: 0; font-size: 1.1rem; }
+.a-spalte { font-size: 1.15rem; }
+.a-spalte small { display: block; color: var(--m-leise); font-size: .9rem; }
+.a-wortlaut { font-family: var(--m-wortlaut); }
+.a-marke { font-weight: 700; }
+.a-marke.gleich { color: var(--m-gut); }
+.a-marke.anders { color: var(--m-rot); }
+.a-wer { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.a-chip { border: 1px solid var(--m-linie); border-radius: 999px; padding: 0 10px; font-size: .85rem; }
+
+/* Rollen mit Zufriedenheit 0–10 */
+.a-rollen { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 22px; }
+.a-rolle { border: 1px solid var(--m-linie); border-radius: 2px; padding: 12px; display: grid; gap: 8px; }
+.a-rolle img { width: 100%; height: 120px; object-fit: cover; border: 1px solid var(--m-linie-hell); }
+.a-rolle strong { font-size: 1.15rem; }
+.a-rolle label { font-size: .9rem; color: var(--m-leise); }
+.a-rolle input[type=range] { width: 100%; }
+.a-unterschrift { font-weight: 700; }
+.a-unterschrift.ja { color: var(--m-gut); }
+.a-unterschrift.nein { color: var(--m-rot); }
+
+.a-ergebnis { margin-top: 22px; display: grid; gap: 10px; }
+.a-ergebnis .a-zahl { font-size: 2.4rem; font-weight: 700; }
+.a-zitat { font-family: var(--m-wortlaut); font-size: 1.2rem; border-left: 3px solid var(--m-linie); padding-left: 14px; }
+
+.a-fuss { margin-top: 28px; display: flex; justify-content: flex-end; }

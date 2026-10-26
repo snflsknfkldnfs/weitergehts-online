@@ -1,0 +1,198 @@
+{
+ "titel": "Die Verfassung der Klasse",
+ "leitfrage": "Wer bekam in der Verfassung von 1919, was er wollte?",
+ "speicher": "verfassung-1919",
+ "entwurf_titel": "Verfassung der Klasse",
+ "entwurf_ort": "Beschlossen von Emma, Anna, Josef und Friedrich, Weimar, im Sommer 1919",
+ "vergleich_titel": "Und 1919?",
+ "rollen": [
+  {
+   "id": "emma",
+   "name": "Emma",
+   "kurz": "Emma, 22, Arbeiterin in Berlin",
+   "bild": "bilder/emma.jpg"
+  },
+  {
+   "id": "anna",
+   "name": "Anna",
+   "kurz": "Anna, 38, Hausfrau in Augsburg",
+   "bild": "bilder/anna.jpg"
+  },
+  {
+   "id": "josef",
+   "name": "Josef",
+   "kurz": "Josef, 45, Bauer bei Landshut",
+   "bild": "bilder/josef.jpg"
+  },
+  {
+   "id": "friedrich",
+   "name": "Friedrich",
+   "kurz": "Friedrich, 30, Offizier aus Potsdam",
+   "bild": "bilder/friedrich.jpg"
+  }
+ ],
+ "fragen": [
+  {
+   "id": "spitze",
+   "frage": "Wer soll an der Spitze stehen?",
+   "echt": {
+    "text": "Der Reichspräsident wird „vom ganzen deutschen Volke gewählt“.",
+    "artikel": "Art. 41"
+   },
+   "bausteine": [
+    {
+     "id": "a",
+     "text": "Ein Kaiser.",
+     "wer": [
+      "friedrich"
+     ]
+    },
+    {
+     "id": "b",
+     "text": "Ein Präsident, den das ganze Volk wählt.",
+     "wer": [],
+     "echt": true
+    },
+    {
+     "id": "c",
+     "text": "Niemand allein: Die Räte führen.",
+     "wer": [
+      "emma"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "wahl",
+   "frage": "Wer darf wählen?",
+   "echt": {
+    "text": "Männer und Frauen über zwanzig wählen den Reichstag; Räte gibt es nur in den Betrieben.",
+    "artikel": "Art. 22, 165"
+   },
+   "bausteine": [
+    {
+     "id": "a",
+     "text": "Wie im Kaiserreich: nur Männer ab 25.",
+     "wer": []
+    },
+    {
+     "id": "b",
+     "text": "Alle Männer und Frauen ab 20 wählen ein Parlament.",
+     "wer": [
+      "anna",
+      "josef"
+     ],
+     "echt": true
+    },
+    {
+     "id": "c",
+     "text": "Arbeiterinnen und Arbeiter wählen Räte in ihren Betrieben.",
+     "wer": [
+      "emma"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "laender",
+   "frage": "Wer bestimmt mehr: das Reich oder die Länder?",
+   "echt": {
+    "text": "„Jedes Land muß eine freistaatliche Verfassung haben.“ „Reichsrecht bricht Landrecht.“",
+    "artikel": "Art. 17, 13"
+   },
+   "bausteine": [
+    {
+     "id": "a",
+     "text": "Die Länder werden abgeschafft: eine Republik für ganz Deutschland.",
+     "wer": [
+      "emma"
+     ]
+    },
+    {
+     "id": "b",
+     "text": "Die Länder bestimmen viel selbst.",
+     "wer": [
+      "josef"
+     ]
+    },
+    {
+     "id": "c",
+     "text": "Die Länder bleiben Freistaaten, aber das Recht des Reichs geht vor.",
+     "wer": [],
+     "echt": true
+    }
+   ]
+  },
+  {
+   "id": "farben",
+   "frage": "Welche Farben hat Deutschland?",
+   "echt": {
+    "text": "„Die Reichsfarben sind schwarz-rot-gold. Die Handelsflagge ist schwarz-weiß-rot …“",
+    "artikel": "Art. 3"
+   },
+   "bausteine": [
+    {
+     "id": "a",
+     "text": "Schwarz-Weiß-Rot.",
+     "wer": [
+      "friedrich"
+     ],
+     "flagge": [
+      "#111111",
+      "#ffffff",
+      "#d11f1f"
+     ]
+    },
+    {
+     "id": "b",
+     "text": "Rot.",
+     "wer": [
+      "emma"
+     ],
+     "flagge": [
+      "#d11f1f"
+     ]
+    },
+    {
+     "id": "c",
+     "text": "Schwarz-Rot-Gold.",
+     "wer": [],
+     "flagge": [
+      "#111111",
+      "#d11f1f",
+      "#f2c200"
+     ]
+    },
+    {
+     "id": "d",
+     "text": "Schwarz-Rot-Gold, aber die Handelsflagge bleibt Schwarz-Weiß-Rot.",
+     "wer": [],
+     "flagge": [
+      "#111111",
+      "#d11f1f",
+      "#f2c200"
+     ],
+     "echt": true
+    }
+   ]
+  }
+ ],
+ "ergebnis": {
+  "ja": 262,
+  "nein": 75,
+  "enthaltung": 1,
+  "dafuer": [
+   "MSPD",
+   "Zentrum",
+   "DDP"
+  ],
+  "dagegen": [
+   "USPD",
+   "DVP",
+   "DNVP"
+  ],
+  "zitat": "Eine neue Zeit beginnt; möge sie auch eine bessere sein",
+  "zitat_wer": "Gustav Bauer (SPD), Reichsministerpräsident, 31. Juli 1919",
+  "nachweis": "Abstimmung der Nationalversammlung am 31. Juli 1919. Nach: Deutscher Bundestag, Textarchiv; Deutsches Historisches Museum, LeMO."
+ }
+}
