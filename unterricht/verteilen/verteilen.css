@@ -40,11 +40,12 @@ body.verteilen {
 .v-wahl .m-knopf { padding: 0 14px; min-width: 88px; }
 .v-wahl .m-knopf[aria-pressed="true"] { background: var(--m-tinte); color: var(--m-blatt); }
 
-/* Farben der Arbeiten: nur Flächen, die Schrift im Balken ist weiß auf dunklem Grund */
+/* Farben der Arbeiten: nur Flächen, die Schrift im Balken ist weiß auf dunklem Grund.
+   Nie Rot oder Grün: die stehen für „zu spät“ und „rechtzeitig“. */
 .v-f0 { background: var(--m-blau); }
 .v-f1 { background: var(--m-violett); }
-.v-f2 { background: var(--m-gut); }
-.v-f3 { background: var(--m-rot); }
+.v-f2 { background: var(--m-leise); }
+.v-f3 { background: var(--m-tinte); }
 
 /* ── Zeitbalken ──────────────────────────────────────────────────────── */
 .v-plan { padding: 16px 18px 14px; margin: 0 0 20px; }
@@ -82,6 +83,34 @@ body.verteilen {
 .v-versuche li { margin: 0 0 4px; }
 .v-versuche .v-zu-spaet { color: var(--m-rot); font-weight: 700; }
 .v-versuche .v-rechtzeitig { color: var(--m-gut); font-weight: 700; }
+
+/* ── Vergleich: Rückstand je Arbeit ──────────────────────────────────── */
+.v-vergleich { display: grid; gap: 16px; margin: 4px 0 16px; }
+.v-vg-gruppe { border: 1px solid var(--m-linie-hell); border-radius: 2px; padding: 10px 12px; }
+.v-vg-gruppe .v-aufgabe-name { margin-bottom: 8px; }
+.v-vg-zeile { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 10px; align-items: center; margin: 0 0 6px; }
+.v-vg-bahn { position: relative; height: 34px; }
+.v-vg-mehr {
+  position: absolute; top: 4px; bottom: 4px; border: 2px dashed var(--m-rot); border-left: 0;
+  color: var(--m-rot); font-weight: 700; font-size: .85rem; line-height: 1; padding: 0 6px;
+  display: flex; align-items: center; justify-content: flex-end; white-space: nowrap; overflow: visible;
+}
+.v-frage { border-top: 1px solid var(--m-linie-hell); padding-top: 12px; }
+.v-frage-text { font-weight: 700; margin: 0 0 4px; }
+.v-handlungen .m-knopf[aria-pressed="true"] { background: var(--m-tinte); color: var(--m-blatt); }
+
+/* ── Eigene Lage ─────────────────────────────────────────────────────── */
+.v-eigen-zeile { display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: center; margin: 0 0 12px; }
+.v-eigen-titel { font-weight: 700; }
+.v-eingabe {
+  min-height: var(--m-klick); padding: 0 10px; max-width: 100%;
+  border: 1px solid var(--m-linie); border-radius: var(--m-ecke); background: var(--m-blatt);
+}
+.v-aufgabe-name .v-eingabe { flex: 1; min-width: 0; font-weight: 700; }
+.v-zahl { width: 4.6em; text-align: right; }
+.v-eigen-zeiten { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; color: var(--m-tinte); }
+.v-eigen-feld { display: inline-flex; gap: 6px; align-items: center; }
+.v-klein { min-height: 36px; padding: 0 10px; font-size: .88rem; font-weight: 400; }
 
 .v-nachweis { margin-top: 28px; font-size: .8rem; color: var(--m-leise); line-height: 1.5; }
 

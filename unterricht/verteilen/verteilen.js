@@ -1,5 +1,8 @@
 /* Verteilen — geteiltes Werkzeug: Aufgaben Personen zuteilen und an Zeitbalken sehen, wann alles fertig ist.
-   Liest data.json im Ordner der Seite. Je Lage: Startzeit, optional eine Frist, Personen, Aufgaben mit Dauer je Person.
+   Liest data.json im Ordner der Seite. Eine Seite hat eine oder mehrere Lagen (Reiter), je Lage eine Art:
+     "verteilen" (Vorgabe): Startzeit, optional Frist, Personen, Aufgaben mit Dauer je Person; zuteilen und sehen.
+     "vergleich": je Arbeit zwei Balken (schnellere und langsamere Person), der Rückstand markiert; eine Frage zum Antippen.
+     "eigen":     die Klasse trägt Personen, Aufgaben und Minuten selbst ein und verteilt dann wie bei "verteilen".
    Jede Person arbeitet ihre Aufgaben nacheinander ab (in der Reihenfolge der Liste), alle Personen zugleich.
    Gezählt wird, wann alles fertig ist — nicht die Summe der Minuten. Nichts wird gespeichert. */
 (function () {
@@ -8,7 +11,9 @@
   var daten = null;
   var lageNr = 0;
   var zuteilung = [];   // je Lage: { aufgabeId: personId | null }
-  var versuche = [];    // je Lage: [{ schluessel, text, klasse }]
+  var versuche = [];    // je Lage: [{ schluessel, text, urteil }]
+  var antwort = [];     // je Lage (vergleich): gewählter Index oder null
+  var eigenZaehler = 0;
 
   function el(tag, klasse, text) {
     var e = document.createElement(tag);
@@ -16,6 +21,8 @@
     if (text != null) e.textContent = text;
     return e;
   }
+
+  function leeren(e) { while (e.firstChild) e.removeChild(e.firstChild); }
 
   function minuten(uhr) {
     var t = uhr.split(':');
@@ -27,32 +34,39 @@
     return h + ':' + (m < 10 ? '0' : '') + m;
   }
 
-  /* Ablauf: je Person die zugeteilten Aufgaben nacheinander ab Start */
+  function knopf(text, klasse, beiKlick) {
+    var k = el('button', 'm-knopf' + (klasse ? ' ' + klasse : ''), text);
+    k.type = 'button';
+    k.addEventListener('click', beiKlick);
+    return k;
+  }
+
+  /* ── Rechnung ────────────────────────────────────────────────────── */
   function ablauf(lage, zu) {
     var start = minuten(lage.start);
     var proPerson = {};
     lage.personen.forEach(function (p) { proPerson[p.id] = { ende: start, balken: [] }; });
-    lage.aufgaben.forEach(function (a, i) {
+    lage.aufgaben.forEach(function (a) {
       var p = zu[a.id];
-      if (!p) return;
+      if (!p || !proPerson[p]) return;
       var spur = proPerson[p];
-      var dauer = a.dauer[p];
-      spur.balken.push({ aufgabe: a, nr: i, von: spur.ende, bis: spur.ende + dauer, dauer: dauer });
+      var dauer = Math.max(0, parseInt(a.dauer[p], 10) || 0);
+      spur.balken.push({ aufgabe: a, von: spur.ende, bis: spur.ende + dauer, dauer: dauer });
       spur.ende += dauer;
     });
-    var offen = lage.aufgaben.filter(function (a) { return !zu[a.id]; }).length;
+    var offen = lage.aufgaben.filter(function (a) { return !zu[a.id] || !proPerson[zu[a.id]]; }).length;
     var ende = start;
     Object.keys(proPerson).forEach(function (k) { ende = Math.max(ende, proPerson[k].ende); });
     return { start: start, proPerson: proPerson, offen: offen, ende: ende };
   }
 
   function urteil(lage, ab) {
+    if (!lage.aufgaben.length) return { text: 'Trag zuerst eine Aufgabe ein.', klasse: 'v-offen' };
     if (ab.offen > 0) {
       return { text: ab.offen === 1 ? 'Noch 1 Aufgabe ohne Person.' : 'Noch ' + ab.offen + ' Aufgaben ohne Person.', klasse: 'v-offen' };
     }
     if (lage.frist) {
-      var frist = minuten(lage.frist);
-      if (ab.ende <= frist) return { text: 'Alles fertig um ' + uhr(ab.ende) + ' – rechtzeitig.', klasse: 'v-rechtzeitig' };
+      if (ab.ende <= minuten(lage.frist)) return { text: 'Alles fertig um ' + uhr(ab.ende) + ' – rechtzeitig.', klasse: 'v-rechtzeitig' };
       return { text: 'Alles fertig um ' + uhr(ab.ende) + ' – zu spät.', klasse: 'v-zu-spaet' };
     }
     return { text: 'Alles fertig um ' + uhr(ab.ende) + '.', klasse: 'v-rechtzeitig' };
@@ -62,20 +76,8 @@
     return lage.personen.map(function (p) { return p.name + ': ' + a.dauer[p.id] + ' Min.'; }).join(' · ');
   }
 
-  function zeichnen() {
-    var lage = daten.lagen[lageNr];
-    var zu = zuteilung[lageNr];
-
-    // Reiter
-    Array.prototype.forEach.call(document.querySelectorAll('.v-lage-knopf'), function (k, i) {
-      k.setAttribute('aria-pressed', i === lageNr ? 'true' : 'false');
-    });
-
-    // Lage und Aufgaben
-    var blatt = document.getElementById('v-lage');
-    blatt.innerHTML = '';
-    blatt.appendChild(el('h2', null, lage.titel));
-    blatt.appendChild(el('p', null, lage.text));
+  /* ── Teile der Seite ─────────────────────────────────────────────── */
+  function aufgabenListe(lage, zu) {
     var liste = el('ul', 'v-aufgaben');
     lage.aufgaben.forEach(function (a) {
       var li = el('li', 'v-aufgabe');
@@ -84,38 +86,43 @@
       name.appendChild(el('span', null, a.name));
       li.appendChild(name);
       li.appendChild(el('div', 'v-zeiten', zeitenText(lage, a)));
-      var wahl = el('div', 'v-wahl');
-      lage.personen.forEach(function (p) {
-        var k = el('button', 'm-knopf', p.name);
-        k.type = 'button';
-        k.setAttribute('aria-pressed', zu[a.id] === p.id ? 'true' : 'false');
-        k.setAttribute('aria-label', a.name + ': ' + p.name);
-        k.addEventListener('click', function () {
-          zu[a.id] = zu[a.id] === p.id ? null : p.id;
-          zeichnen();
-        });
-        wahl.appendChild(k);
-      });
-      li.appendChild(wahl);
+      li.appendChild(wahlKnoepfe(lage, zu, a));
       liste.appendChild(li);
     });
-    blatt.appendChild(liste);
+    return liste;
+  }
 
-    // Zeitbalken
+  function wahlKnoepfe(lage, zu, a) {
+    var wahl = el('div', 'v-wahl');
+    lage.personen.forEach(function (p) {
+      var k = knopf(p.name, null, function () {
+        zu[a.id] = zu[a.id] === p.id ? null : p.id;
+        zeichnen();
+      });
+      k.setAttribute('aria-pressed', zu[a.id] === p.id ? 'true' : 'false');
+      k.setAttribute('aria-label', (a.name || 'Aufgabe') + ': ' + p.name);
+      wahl.appendChild(k);
+    });
+    return wahl;
+  }
+
+  function planZeichnen(lage, zu, mitVersuchen) {
     var ab = ablauf(lage, zu);
     var frist = lage.frist ? minuten(lage.frist) : null;
     var spanne = Math.max(60, Math.ceil((ab.ende - ab.start) / 10) * 10, frist ? frist - ab.start + 10 : 0);
     function pos(min) { return ((min - ab.start) / spanne * 100) + '%'; }
 
     var plan = document.getElementById('v-plan');
-    plan.innerHTML = '';
+    plan.hidden = false;
+    leeren(plan);
     plan.appendChild(el('h2', null, 'Wann ist alles fertig?'));
 
     var kopf = el('div', 'v-zeile');
     kopf.appendChild(el('span'));
     var achse = el('div', 'v-achse');
-    for (var t = 0; t <= spanne; t += 10) {
-      var s = el('span', t % 20 ? 'v-strich v-strich-zwischen' : 'v-strich', uhr(ab.start + t));
+    var schritt = spanne > 120 ? 20 : 10;
+    for (var t = 0; t <= spanne; t += schritt) {
+      var s = el('span', (t % (2 * schritt)) ? 'v-strich v-strich-zwischen' : 'v-strich', uhr(ab.start + t));
       s.style.left = pos(ab.start + t);
       achse.appendChild(s);
     }
@@ -136,8 +143,8 @@
       spur.balken.forEach(function (b) {
         var balken = el('div', 'v-balken v-f' + (b.aufgabe.farbe || 0), b.aufgabe.kurz || b.aufgabe.name);
         balken.style.left = pos(b.von);
-        balken.style.width = 'calc(' + (b.dauer / spanne * 100) + '% )';
-        balken.title = b.aufgabe.name + ', ' + b.dauer + ' Min.';
+        balken.style.width = (b.dauer / spanne * 100) + '%';
+        balken.title = (b.aufgabe.name || 'Aufgabe') + ', ' + b.dauer + ' Min.';
         bahn.appendChild(balken);
       });
       if (frist !== null) {
@@ -146,8 +153,7 @@
         bahn.appendChild(linie);
       }
       zeile.appendChild(bahn);
-      var endeText = spur.balken.length ? 'fertig um ' + uhr(spur.ende) : 'hat nichts zu tun';
-      var ende = el('div', 'v-zeile-ende', endeText);
+      var ende = el('div', 'v-zeile-ende', spur.balken.length ? 'fertig um ' + uhr(spur.ende) : 'hat nichts zu tun');
       if (frist !== null && spur.ende > frist) ende.classList.add('v-zu-spaet');
       zeile.appendChild(ende);
       plan.appendChild(zeile);
@@ -156,37 +162,33 @@
     var u = urteil(lage, ab);
     plan.appendChild(el('p', 'v-ergebnis ' + u.klasse, u.text));
     var handeln = el('div', 'v-handlungen');
-    var neu = el('button', 'm-knopf', 'Alles neu verteilen');
-    neu.type = 'button';
-    neu.addEventListener('click', function () {
+    handeln.appendChild(knopf('Alles neu verteilen', null, function () {
       lage.aufgaben.forEach(function (a) { zu[a.id] = null; });
       zeichnen();
-    });
-    handeln.appendChild(neu);
+    }));
     plan.appendChild(handeln);
 
-    // Versuche merken, sobald alles verteilt ist
-    if (ab.offen === 0) {
+    if (mitVersuchen && ab.offen === 0 && lage.aufgaben.length) {
       var schluessel = lage.aufgaben.map(function (a) { return zu[a.id]; }).join('|');
-      var liste2 = versuche[lageNr];
-      if (!liste2.some(function (v) { return v.schluessel === schluessel; })) {
+      var liste = versuche[lageNr];
+      if (!liste.some(function (v) { return v.schluessel === schluessel; })) {
         var teile = lage.personen.map(function (p) {
           var meine = lage.aufgaben.filter(function (a) { return zu[a.id] === p.id; })
             .map(function (a) { return a.kurz || a.name; });
           return p.name + ': ' + (meine.length ? meine.join(', ') : 'nichts');
         });
-        liste2.push({ schluessel: schluessel, text: teile.join(' · '), urteil: u });
+        liste.push({ schluessel: schluessel, text: teile.join(' · '), urteil: u });
       }
     }
-    zeichneVersuche();
+    versucheZeichnen(mitVersuchen);
   }
 
-  function zeichneVersuche() {
+  function versucheZeichnen(zeigen) {
     var box = document.getElementById('v-versuche');
     var liste = versuche[lageNr];
-    box.hidden = liste.length === 0;
-    box.innerHTML = '';
-    if (!liste.length) return;
+    leeren(box);
+    box.hidden = !zeigen || liste.length === 0;
+    if (box.hidden) return;
     box.appendChild(el('h2', null, 'Deine Versuche'));
     var ol = el('ol');
     liste.forEach(function (v) {
@@ -197,6 +199,165 @@
     box.appendChild(ol);
   }
 
+  /* ── Art „vergleich“: Rückstand je Arbeit als Balken, eine Frage ─── */
+  function vergleichZeichnen(lage, blatt) {
+    var max = 0;
+    lage.arbeiten.forEach(function (a) { max = Math.max(max, a.schnell, a.langsam); });
+    var box = el('div', 'v-vergleich');
+    lage.arbeiten.forEach(function (a) {
+      var gruppe = el('div', 'v-vg-gruppe');
+      var kopf = el('div', 'v-aufgabe-name');
+      kopf.appendChild(el('span', 'v-zeichen v-f' + (a.farbe || 0)));
+      kopf.appendChild(el('span', null, a.name));
+      gruppe.appendChild(kopf);
+      [[lage.schnell, a.schnell, 0], [lage.langsam, a.langsam, a.langsam - a.schnell]].forEach(function (r) {
+        var zeile = el('div', 'v-vg-zeile');
+        zeile.appendChild(el('div', 'v-zeile-name', r[0]));
+        var bahn = el('div', 'v-vg-bahn');
+        var grund = el('div', 'v-balken v-f' + (a.farbe || 0), r[1] + ' Min.');
+        grund.style.left = '0';
+        grund.style.width = ((r[1] - r[2]) / max * 100) + '%';
+        bahn.appendChild(grund);
+        if (r[2] > 0) {
+          var mehr = el('div', 'v-vg-mehr', '+' + r[2] + ' Min.');
+          mehr.style.left = ((r[1] - r[2]) / max * 100) + '%';
+          mehr.style.width = (r[2] / max * 100) + '%';
+          bahn.appendChild(mehr);
+        }
+        zeile.appendChild(bahn);
+        gruppe.appendChild(zeile);
+      });
+      box.appendChild(gruppe);
+    });
+    blatt.appendChild(box);
+
+    var frage = el('div', 'v-frage');
+    frage.appendChild(el('p', 'v-frage-text', lage.frage));
+    var wahl = el('div', 'v-handlungen');
+    lage.arbeiten.forEach(function (a, i) {
+      var k = knopf(a.name, null, function () { antwort[lageNr] = i; zeichnen(); });
+      k.setAttribute('aria-pressed', antwort[lageNr] === i ? 'true' : 'false');
+      wahl.appendChild(k);
+    });
+    frage.appendChild(wahl);
+    if (antwort[lageNr] != null) {
+      var richtig = antwort[lageNr] === lage.richtig;
+      frage.appendChild(el('p', 'v-ergebnis ' + (richtig ? 'v-rechtzeitig' : 'v-zu-spaet'),
+        richtig ? lage.rueck_richtig : lage.rueck_falsch));
+    }
+    blatt.appendChild(frage);
+  }
+
+  /* ── Art „eigen“: Personen, Aufgaben und Minuten selbst eintragen ── */
+  function eingabe(wert, art, beiAenderung, beschriftung) {
+    var i = el('input', 'v-eingabe' + (art === 'number' ? ' v-zahl' : ''));
+    i.type = art;
+    i.value = wert;
+    if (art === 'number') { i.min = '0'; i.max = '240'; i.step = '5'; i.inputMode = 'numeric'; }
+    i.setAttribute('aria-label', beschriftung);
+    i.addEventListener('change', function () { beiAenderung(i.value); zeichnen(); });
+    return i;
+  }
+
+  function eigenZeichnen(lage, zu, blatt) {
+    var personen = el('div', 'v-eigen-zeile');
+    personen.appendChild(el('span', 'v-eigen-titel', 'Wer hilft mit?'));
+    lage.personen.forEach(function (p, i) {
+      personen.appendChild(eingabe(p.name, 'text', function (w) { p.name = w.trim() || ('Person ' + (i + 1)); }, 'Name der Person ' + (i + 1)));
+    });
+    if (lage.personen.length < (lage.max_personen || 3)) {
+      personen.appendChild(knopf('+ Person', null, function () {
+        var id = 'p' + (++eigenZaehler);
+        lage.personen.push({ id: id, name: 'Person ' + (lage.personen.length + 1) });
+        lage.aufgaben.forEach(function (a) { a.dauer[id] = 10; });
+        zeichnen();
+      }));
+    }
+    blatt.appendChild(personen);
+
+    var frist = el('div', 'v-eigen-zeile');
+    frist.appendChild(el('span', 'v-eigen-titel', 'Fertig sein bis:'));
+    var auswahl = el('select', 'v-eingabe');
+    auswahl.setAttribute('aria-label', 'Fertig sein bis');
+    [''].concat(lage.fristen || []).forEach(function (f) {
+      var o = el('option', null, f || 'egal');
+      o.value = f;
+      if ((lage.frist || '') === f) o.selected = true;
+      auswahl.appendChild(o);
+    });
+    auswahl.addEventListener('change', function () { lage.frist = auswahl.value || null; lage.frist_name = auswahl.value; zeichnen(); });
+    frist.appendChild(auswahl);
+    blatt.appendChild(frist);
+
+    var liste = el('ul', 'v-aufgaben');
+    lage.aufgaben.forEach(function (a, nr) {
+      var li = el('li', 'v-aufgabe v-aufgabe-eigen');
+      var name = el('div', 'v-aufgabe-name');
+      name.appendChild(el('span', 'v-zeichen v-f' + (a.farbe || 0)));
+      name.appendChild(eingabe(a.name, 'text', function (w) { a.name = w.trim(); a.kurz = a.name; }, 'Name der Aufgabe ' + (nr + 1)));
+      li.appendChild(name);
+      var zeiten = el('div', 'v-zeiten v-eigen-zeiten');
+      lage.personen.forEach(function (p) {
+        var feld = el('label', 'v-eigen-feld');
+        feld.appendChild(el('span', null, p.name));
+        feld.appendChild(eingabe(a.dauer[p.id], 'number', function (w) { a.dauer[p.id] = Math.max(0, parseInt(w, 10) || 0); }, a.name + ', Minuten ' + p.name));
+        feld.appendChild(el('span', null, 'Min.'));
+        zeiten.appendChild(feld);
+      });
+      zeiten.appendChild(knopf('Entfernen', 'v-klein', function () {
+        lage.aufgaben.splice(nr, 1);
+        delete zu[a.id];
+        zeichnen();
+      }));
+      li.appendChild(zeiten);
+      li.appendChild(wahlKnoepfe(lage, zu, a));
+      liste.appendChild(li);
+    });
+    blatt.appendChild(liste);
+    if (lage.aufgaben.length < (lage.max_aufgaben || 8)) {
+      var neu = el('div', 'v-handlungen');
+      neu.appendChild(knopf('+ Aufgabe', null, function () {
+        var id = 'e' + (++eigenZaehler);
+        var dauer = {};
+        lage.personen.forEach(function (p) { dauer[p.id] = 10; });
+        lage.aufgaben.push({ id: id, name: 'Aufgabe ' + (lage.aufgaben.length + 1), kurz: 'Aufgabe ' + (lage.aufgaben.length + 1),
+          farbe: lage.aufgaben.length % 4, dauer: dauer });
+        zu[id] = null;
+        zeichnen();
+      }));
+      blatt.appendChild(neu);
+    }
+  }
+
+  /* ── Seite ───────────────────────────────────────────────────────── */
+  function zeichnen() {
+    var lage = daten.lagen[lageNr];
+    var zu = zuteilung[lageNr];
+
+    Array.prototype.forEach.call(document.querySelectorAll('.v-lage-knopf'), function (k, i) {
+      k.setAttribute('aria-pressed', i === lageNr ? 'true' : 'false');
+    });
+
+    var blatt = document.getElementById('v-lage');
+    leeren(blatt);
+    blatt.appendChild(el('h2', null, lage.titel));
+    blatt.appendChild(el('p', null, lage.text));
+
+    if (lage.art === 'vergleich') {
+      vergleichZeichnen(lage, blatt);
+      document.getElementById('v-plan').hidden = true;
+      versucheZeichnen(false);
+      return;
+    }
+    if (lage.art === 'eigen') {
+      eigenZeichnen(lage, zu, blatt);
+      planZeichnen(lage, zu, false);
+      return;
+    }
+    blatt.appendChild(aufgabenListe(lage, zu));
+    planZeichnen(lage, zu, true);
+  }
+
   function start(d) {
     daten = d;
     document.title = d.titel;
@@ -205,14 +366,22 @@
     document.getElementById('v-erfunden').textContent = d.hinweis || '';
     var reiter = document.getElementById('v-lagen');
     d.lagen.forEach(function (lage, i) {
+      if (lage.art === 'eigen') {
+        lage.personen = (lage.personen || [{ name: 'Person 1' }, { name: 'Person 2' }]).map(function (p) {
+          return { id: 'p' + (++eigenZaehler), name: p.name };
+        });
+        lage.aufgaben = lage.aufgaben || [];
+      }
       var leer = {};
-      lage.aufgaben.forEach(function (a) { leer[a.id] = null; });
+      (lage.aufgaben || []).forEach(function (a) { leer[a.id] = null; });
       zuteilung.push(leer);
       versuche.push([]);
-      var k = el('button', 'm-knopf v-lage-knopf', lage.reiter || lage.titel);
-      k.type = 'button';
-      k.addEventListener('click', function () { lageNr = i; zeichnen(); });
-      reiter.appendChild(k);
+      antwort.push(null);
+      reiter.appendChild(knopf(lage.reiter || lage.titel, 'v-lage-knopf', function () {
+        lageNr = i;
+        zeichnen();
+        window.scrollTo(0, 0);
+      }));
     });
     reiter.hidden = d.lagen.length < 2;
     if (d.nachweis) document.getElementById('v-nachweis').textContent = d.nachweis;
