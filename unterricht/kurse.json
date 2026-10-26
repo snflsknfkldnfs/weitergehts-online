@@ -10,7 +10,8 @@
   "kurse": {
     "gpg8a": { "fach": "gpg", "jahrgang": 8, "titel": "GPG 8a" },
     "gpg9a": { "fach": "gpg", "jahrgang": 9, "titel": "GPG 9a" },
-    "inf6b": { "fach": "inf", "jahrgang": 6, "titel": "Inf 6b" }
+    "inf6b": { "fach": "inf", "jahrgang": 6, "titel": "Inf 6b" },
+    "wib6b": { "fach": "wib", "jahrgang": 6, "titel": "WiB 6b" }
   },
   "materialien": [
     { "id": "game-syrische-revolution-2011", "pfad": "escape-games/syrische-revolution-2011/index.html",
@@ -89,6 +90,10 @@
     { "id": "tool-wib-geldwert", "pfad": "wib/geldwert.html",
       "titel": "Wie viel ist mein Geld wert? — Budget · Beruf · Reiche",
       "art": "werkzeug", "fach": "wib", "jahrgang": 7, "kurse": [] },
+    { "id": "verteilen-hausarbeit-teilen", "pfad": "verteilen/hausarbeit-teilen/",
+      "titel": "Wer macht was bis 14:30?",
+      "art": "werkzeug", "fach": "wib", "jahrgang": 6,
+      "kurse": ["wib6b"], "thema": "Arbeit", "datum": "2026-10-27" },
 
     { "id": "tool-inf-datenspuren", "pfad": "datenspuren/",
       "titel": "Datenspuren — Fälle: Wer steckt hinter der Nummer?",

@@ -63,7 +63,7 @@ def pages():
         for mappe in sorted(gdir.glob("mappe-*.html")):
             urls.append(f"/unterricht/escape-games/{g}/{mappe.name}")
     # Materialseiten (Quellen, Anordnen, Datenspuren) — seit „Blatt" 2026-10-21 im Smoke
-    for werkzeug in ("quellen", "ordnen", "datenspuren"):
+    for werkzeug in ("quellen", "ordnen", "datenspuren", "verteilen"):
         for f in sorted((REPO_ROOT / "unterricht" / werkzeug).rglob("index.html")):
             rel = f.relative_to(REPO_ROOT)
             if not any(part.startswith("_") for part in rel.parts):

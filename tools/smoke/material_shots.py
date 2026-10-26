@@ -24,7 +24,7 @@ RANDOM_STUB = """(() => { let s = 42; Math.random = () => { s = (s * 1664525 + 1
 
 def seiten() -> list[str]:
     out = []
-    for werkzeug in ("quellen", "ordnen", "datenspuren"):
+    for werkzeug in ("quellen", "ordnen", "datenspuren", "verteilen"):
         for f in sorted((REPO / "unterricht" / werkzeug).rglob("index.html")):
             rel = f.relative_to(REPO)
             if any(t.startswith("_") for t in rel.parts):

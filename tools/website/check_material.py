@@ -15,7 +15,7 @@ import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
-WERKZEUGE = ("quellen", "ordnen", "datenspuren")
+WERKZEUGE = ("quellen", "ordnen", "datenspuren", "verteilen")
 
 
 def huellen() -> list[Path]:
@@ -34,7 +34,7 @@ def main() -> int:
         s = f.read_text(encoding="utf-8")
         rel = f.relative_to(REPO).as_posix()
         m = s.find("material.css")
-        w = re.search(r"(quellen|ordnen|datenspuren)\.css", s)
+        w = re.search(r"(quellen|ordnen|datenspuren|verteilen)\.css", s)
         if m < 0:
             fehler.append(f"{rel}: lädt material.css nicht (Hülle von einer bestehenden Seite kopieren)")
         elif w and w.start() < m:

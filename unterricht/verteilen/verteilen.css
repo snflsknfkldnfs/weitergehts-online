@@ -1,0 +1,96 @@
+/* Verteilen — geteiltes Werkzeug fuer Verteilungsaufgaben mit Zeitbalken (wer macht was, wann ist alles fertig?).
+   Datengetrieben: je Aufgabe ein Ordner mit index.html + data.json. Kein Framework.
+   Gestaltung „Blatt" (2026-10-21): Farben, Schrift, Knopf und Blatt kommen aus
+   ../assets/css/material.css (vorher geladen); hier nur das Layout des Werkzeugs, nur --m-*-Tokens.
+   Den Grund setzt dieses Werkzeug selbst (material.css nennt nur quellen/ordnen/datenspuren), mit denselben Tokens. */
+
+body.verteilen {
+  margin: 0;
+  background: var(--m-grund);
+  color: var(--m-tinte);
+  font: 17px/1.5 var(--m-schrift);
+  -webkit-text-size-adjust: 100%;
+}
+
+.v-huelle { max-width: 900px; margin: 0 auto; padding: 28px 20px 48px; }
+
+.v-kopf { padding: 0 2px 16px; }
+.v-kopf h1 { margin: 0 0 8px; font-size: 1.5rem; line-height: 1.25; font-weight: 700; }
+.v-kopf p { margin: 0 0 6px; max-width: var(--m-mass); }
+.v-erfunden { font-size: .9rem; color: var(--m-leise); font-style: italic; }
+
+/* ── Lagen: Reiter ───────────────────────────────────────────────────── */
+.v-lagen { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 18px; }
+.v-lage-knopf[aria-pressed="true"] { background: var(--m-tinte); color: var(--m-blatt); }
+
+.v-blatt { padding: 16px 18px 18px; margin: 0 0 20px; }
+.v-blatt h2 { margin: 0 0 4px; font-size: 1.2rem; }
+.v-blatt > p { margin: 0 0 12px; max-width: var(--m-mass); }
+
+/* ── Aufgaben: je Karte die Zeiten und die Wahl der Person ───────────── */
+.v-aufgaben { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.v-aufgabe {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 14px; align-items: center;
+  border: 1px solid var(--m-linie-hell); border-radius: 2px; padding: 10px 12px; background: var(--m-blatt);
+}
+.v-aufgabe-name { font-weight: 700; font-size: 1.05rem; display: flex; align-items: center; gap: 10px; }
+.v-zeichen { width: 18px; height: 18px; border-radius: 3px; flex: none; }
+.v-zeiten { grid-column: 1; font-size: .95rem; color: var(--m-leise); }
+.v-wahl { grid-column: 2; grid-row: 1 / span 2; display: flex; gap: 8px; }
+.v-wahl .m-knopf { padding: 0 14px; min-width: 88px; }
+.v-wahl .m-knopf[aria-pressed="true"] { background: var(--m-tinte); color: var(--m-blatt); }
+
+/* Farben der Arbeiten: nur Flächen, die Schrift im Balken ist weiß auf dunklem Grund */
+.v-f0 { background: var(--m-blau); }
+.v-f1 { background: var(--m-violett); }
+.v-f2 { background: var(--m-gut); }
+.v-f3 { background: var(--m-rot); }
+
+/* ── Zeitbalken ──────────────────────────────────────────────────────── */
+.v-plan { padding: 16px 18px 14px; margin: 0 0 20px; }
+.v-plan h2 { margin: 0 0 10px; font-size: 1.2rem; }
+.v-zeile { display: grid; grid-template-columns: 96px minmax(0, 1fr) 150px; gap: 10px; align-items: center; margin: 0 0 10px; }
+.v-zeile-name { font-weight: 700; }
+.v-zeile-bahn {
+  position: relative; height: 48px;
+  background: var(--m-notiz); border: 1px solid var(--m-linie-hell); border-radius: 2px; overflow: hidden;
+}
+.v-balken {
+  position: absolute; top: 4px; bottom: 4px; border-radius: 2px;
+  color: var(--m-blatt); font-size: .82rem; font-weight: 600; line-height: 1.15;
+  padding: 3px 6px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+  border-right: 2px solid var(--m-blatt);
+}
+.v-zeile-ende { font-size: .95rem; }
+.v-zeile-ende.v-zu-spaet { color: var(--m-rot); font-weight: 700; }
+.v-achse { position: relative; height: 42px; font-size: .8rem; color: var(--m-leise); }
+.v-strich { position: absolute; top: 2px; transform: translateX(-50%); white-space: nowrap; }
+.v-frist { position: absolute; top: 0; bottom: 0; width: 0; border-left: 3px solid var(--m-rot); z-index: 5; }
+.v-frist-schild { position: absolute; top: 20px; transform: translateX(-50%); color: var(--m-rot); font-weight: 700; white-space: nowrap; }
+
+/* ── Ergebnis ────────────────────────────────────────────────────────── */
+.v-ergebnis { margin: 6px 0 0; font-size: 1.15rem; font-weight: 700; min-height: 1.6em; }
+.v-ergebnis.v-zu-spaet { color: var(--m-rot); }
+.v-ergebnis.v-rechtzeitig { color: var(--m-gut); }
+.v-ergebnis.v-offen { color: var(--m-leise); font-weight: 400; font-size: 1rem; }
+.v-handlungen { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+
+/* ── Versuche ────────────────────────────────────────────────────────── */
+.v-versuche { padding: 14px 18px; }
+.v-versuche h2 { margin: 0 0 6px; font-size: 1.1rem; }
+.v-versuche ol { margin: 0; padding-left: 1.4em; }
+.v-versuche li { margin: 0 0 4px; }
+.v-versuche .v-zu-spaet { color: var(--m-rot); font-weight: 700; }
+.v-versuche .v-rechtzeitig { color: var(--m-gut); font-weight: 700; }
+
+.v-nachweis { margin-top: 28px; font-size: .8rem; color: var(--m-leise); line-height: 1.5; }
+
+/* Schmales Gerät: Namen über die Bahn, Ende darunter */
+@media (max-width: 620px) {
+  .v-huelle { padding: 18px 12px 40px; }
+  .v-aufgabe { grid-template-columns: 1fr; }
+  .v-wahl { grid-column: 1; grid-row: auto; }
+  .v-zeile { grid-template-columns: 60px minmax(0, 1fr); gap: 6px; }
+  .v-zeile-ende { grid-column: 2; }
+  .v-strich-zwischen { display: none; }
+}

@@ -1,0 +1,128 @@
+{
+ "titel": "Wer macht was bis 14:30?",
+ "auftrag": "Tippe bei jeder Aufgabe an, wer sie übernimmt. Die Balken zeigen, wann jede Person fertig ist. Prüf zuerst die These: Gib alle Aufgaben Mama. Dann finde eine Verteilung, mit der um 14:30 alles fertig ist.",
+ "hinweis": "Die Familien und die Minuten sind ausgedacht.",
+ "nachweis": "Idee der Rechnung: „Inselspiel“, Universität Siegen (Arbeitsteilung, Tim und Tom).",
+ "lagen": [
+  {
+   "id": "besuch",
+   "reiter": "Besuch um 14:30",
+   "titel": "Besuch um 14:30",
+   "text": "Es ist 14:00 Uhr. Um 14:30 Uhr kommt Besuch. Zwei Zimmer müssen gesaugt und zwei Körbe Wäsche zusammengelegt sein. Mama kann alles schneller als ihr Kind.",
+   "start": "14:00",
+   "frist": "14:30",
+   "frist_name": "Besuch 14:30",
+   "personen": [
+    {
+     "id": "mama",
+     "name": "Mama"
+    },
+    {
+     "id": "kind",
+     "name": "Kind"
+    }
+   ],
+   "aufgaben": [
+    {
+     "id": "z1",
+     "name": "Zimmer 1 saugen",
+     "kurz": "Zimmer 1",
+     "farbe": 0,
+     "dauer": {
+      "mama": 10,
+      "kind": 15
+     }
+    },
+    {
+     "id": "z2",
+     "name": "Zimmer 2 saugen",
+     "kurz": "Zimmer 2",
+     "farbe": 0,
+     "dauer": {
+      "mama": 10,
+      "kind": 15
+     }
+    },
+    {
+     "id": "k1",
+     "name": "Korb 1 Wäsche zusammenlegen",
+     "kurz": "Korb 1",
+     "farbe": 1,
+     "dauer": {
+      "mama": 10,
+      "kind": 35
+     }
+    },
+    {
+     "id": "k2",
+     "name": "Korb 2 Wäsche zusammenlegen",
+     "kurz": "Korb 2",
+     "farbe": 1,
+     "dauer": {
+      "mama": 10,
+      "kind": 35
+     }
+    }
+   ]
+  },
+  {
+   "id": "lea-ben",
+   "reiter": "Lea und Ben",
+   "titel": "Lea und Ben",
+   "text": "Samstag, 14:00 Uhr. Lea und Ben müssen zwei Zimmer saugen und zwei Körbe Wäsche zusammenlegen, dann dürfen sie raus. Wie werden sie am schnellsten fertig?",
+   "start": "14:00",
+   "personen": [
+    {
+     "id": "lea",
+     "name": "Lea"
+    },
+    {
+     "id": "ben",
+     "name": "Ben"
+    }
+   ],
+   "aufgaben": [
+    {
+     "id": "z1",
+     "name": "Zimmer 1 saugen",
+     "kurz": "Zimmer 1",
+     "farbe": 0,
+     "dauer": {
+      "lea": 10,
+      "ben": 20
+     }
+    },
+    {
+     "id": "z2",
+     "name": "Zimmer 2 saugen",
+     "kurz": "Zimmer 2",
+     "farbe": 0,
+     "dauer": {
+      "lea": 10,
+      "ben": 20
+     }
+    },
+    {
+     "id": "k1",
+     "name": "Korb 1 Wäsche zusammenlegen",
+     "kurz": "Korb 1",
+     "farbe": 1,
+     "dauer": {
+      "lea": 20,
+      "ben": 10
+     }
+    },
+    {
+     "id": "k2",
+     "name": "Korb 2 Wäsche zusammenlegen",
+     "kurz": "Korb 2",
+     "farbe": 1,
+     "dauer": {
+      "lea": 20,
+      "ben": 10
+     }
+    }
+   ]
+  }
+ ]
+}
