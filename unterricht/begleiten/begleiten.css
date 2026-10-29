@@ -1,0 +1,84 @@
+/* Begleiten — geteiltes Werkzeug: die Stunde Schritt für Schritt auf dem iPad (2026-10-29).
+   Gestaltung „Blatt": Farben, Schrift, Knopf und Blatt aus ../assets/css/material.css (vorher geladen);
+   hier nur das Layout, nur --m-*-Tokens. Den Grund setzt das Werkzeug selbst (wie verteilen.css). */
+
+body.begleiten {
+  margin: 0;
+  background: var(--m-grund);
+  color: var(--m-tinte);
+  font: 17px/1.5 var(--m-schrift);
+  -webkit-text-size-adjust: 100%;
+}
+
+.b-huelle { max-width: 860px; margin: 0 auto; padding: 24px 16px 48px; }
+
+.b-kopf { padding: 0 2px 12px; }
+.b-kopf h1 { margin: 0 0 6px; font-size: 1.5rem; line-height: 1.25; }
+.b-leitfrage { margin: 0 0 6px; font-weight: 700; font-size: 1.1rem; }
+.b-kopf p { max-width: var(--m-mass); margin: 0 0 6px; }
+
+/* Reiter: wo die Klasse steht */
+.b-reiter { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; }
+.b-reiter .m-knopf { padding: 0 14px; }
+.m-knopf[aria-pressed="true"] { background: var(--m-tinte); color: var(--m-blatt); }
+
+.b-schrittkopf { padding: 0 2px 8px; }
+.b-schrittkopf h2 { margin: 0 0 6px; font-size: 1.3rem; }
+.b-auftrag { margin: 0 0 12px; max-width: var(--m-mass); }
+
+/* Sortieren */
+.b-karten { list-style: none; margin: 0 0 16px; padding: 0; display: grid; gap: 12px; }
+.b-karte { padding: 12px 14px; }
+.b-kartentext { margin: 0 0 10px; font-weight: 600; }
+.b-faecher { display: flex; flex-wrap: wrap; gap: 8px; }
+.b-faecher .m-knopf { padding: 0 14px; min-width: 96px; }
+.b-faecher .m-knopf:disabled[aria-pressed="true"] { opacity: 1; }
+.b-amtlich { margin: 12px 0 2px; padding-left: 10px; border-left: 3px solid var(--m-tinte); }
+.b-du { margin: 0; font-size: .95rem; }
+.b-aktion { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 0 0 18px; }
+.b-erkenntnis { padding: 14px 16px; margin: 0 0 18px; }
+.b-erkenntnis h3 { margin: 0 0 6px; font-size: 1.1rem; }
+.b-erkenntnis p { margin: 0; max-width: var(--m-mass); }
+
+/* Seiten wählen (links / rechts) */
+.b-seitenwahl { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 16px; }
+.b-hinweis { margin: 0 0 16px; }
+
+/* Material */
+.b-material { padding: 14px 16px 12px; margin: 0 0 16px; }
+.b-mkopf { display: flex; align-items: baseline; gap: 10px; }
+.b-mkopf h3 { margin: 0; font-size: 1.15rem; line-height: 1.3; }
+.b-kennung { flex: none; font-weight: 700; border: 2px solid var(--m-tinte); border-radius: var(--m-ecke); padding: 0 6px; }
+.b-wer { margin: 4px 0 10px; font-size: .95rem; }
+.b-text p { max-width: var(--m-mass); margin: 0 0 10px; }
+.b-wortlaut { font-family: var(--m-wortlaut); font-size: 1.05rem; }
+.b-eigen { padding-left: 10px; border-left: 3px solid var(--m-linie); }
+.b-marke { font-size: .9rem; color: var(--m-leise); font-style: italic; }
+.b-fassungen { display: flex; gap: 8px; margin: 0 0 10px; }
+.b-wort {
+  font: inherit; background: none; border: 0; padding: 0; color: var(--m-blau);
+  text-decoration: underline; text-underline-offset: 3px; cursor: pointer;
+}
+.b-erklaerung { display: block; margin-top: 6px; padding: 6px 10px; background: var(--m-notiz); font-family: var(--m-schrift); font-size: .95rem; }
+.b-plakat { margin: 6px 0 10px; }
+.b-plakat img { max-width: 100%; height: auto; border: 1px solid var(--m-linie-hell); }
+.b-plakat figcaption { font-size: .9rem; margin-top: 4px; }
+.b-ki-zeile { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 4px 0 8px; }
+.b-ki-hinweis { font-size: .9rem; }
+.b-nachweis { font-size: .8rem; margin: 6px 0 0; }
+
+/* Fragen */
+.b-fragen { padding: 14px 16px; margin: 0 0 16px; }
+.b-fragen h3 { margin: 0 0 8px; font-size: 1.1rem; }
+.b-fragenliste { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+.b-fundstelle { margin: 0; font-size: .9rem; }
+.b-fragetext { margin: 0 0 6px; font-weight: 600; }
+.b-antwort {
+  display: block; width: 100%; min-height: 64px; padding: 8px 10px; margin: 0 0 8px;
+  border: 1px solid var(--m-linie); border-radius: 2px; background: var(--m-blatt); resize: vertical;
+}
+.b-loesung { margin: 8px 0 0; padding-left: 10px; border-left: 3px solid var(--m-gut); }
+
+.b-weiter { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 12px; margin: 8px 0 18px; }
+.b-fuss { margin-top: 28px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; align-items: center; }
+.b-fuss p { margin: 0; font-size: .85rem; max-width: var(--m-mass); }

@@ -78,6 +78,10 @@
       "titel": "Die Notfallreform",
       "art": "quellen", "fach": "gpg", "strang": "aktuelles", "jahrgang": 8,
       "kurse": ["gpg8a"], "thema": "Wochenrückblick", "datum": "2026-10-30" },
+    { "id": "begleiten-notfallreform", "pfad": "begleiten/notfallreform/",
+      "titel": "Die Notfallreform: Schritt für Schritt",
+      "art": "werkzeug", "fach": "gpg", "strang": "aktuelles", "jahrgang": 8,
+      "kurse": ["gpg8a"], "thema": "Wochenrückblick", "datum": "2026-10-30" },
 
     { "id": "game-zweiter-weltkrieg-ende-1945", "pfad": "escape-games/zweiter-weltkrieg-ende-1945/index.html",
       "titel": "Verlauf und Ende des Zweiten Weltkriegs",
