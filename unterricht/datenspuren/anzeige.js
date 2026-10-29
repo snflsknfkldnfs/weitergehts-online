@@ -11,15 +11,19 @@
  *   "titel", "nutzer", "absender", "auftrag": [..], "hinweis_fiktion",
  *   "profil": [ { "steckbrief", "text" } ],
  *   "zeilen": [ { "id", "ort": "status"|"ueberschrift"|"text"|"knopf", "frage", "hilfe",
- *                 "max_woerter": Zahl|null, "bausteine": [..] } ],
+ *                 "max_woerter": Zahl|null, "profil_schritt": bool,
+ *                 "bausteine": [ { "text", "profil": Profilzeile|null } ] } ],
  *   "fertig": { "titel", "text" }
  * }
+ * Profil zuerst (Lehrkraft Inf6b 29.10.): Bei Zeilen mit profil_schritt wählt das Kind zuerst die Profilzeile, die es
+ * nutzt; dann erscheinen deren Bausteine und die unpassenden (profil null). Die Herkunft steht klein unter der Zeile,
+ * „groß zeigen“ zeigt die Anzeige ohne Herkunft (für die stille Bewertung in der Klasse).
  * Stand nur lokal (localStorage "anzeige-<ordner>"), keine Übertragung.
  */
 (function () {
   'use strict';
   var daten = null;
-  var stand = { werte: {}, offen: 0 };
+  var stand = { werte: {}, herkunft: {}, offen: 0 };
   var SCHLUESSEL = 'anzeige-' + location.pathname.split('/').filter(Boolean).slice(-1)[0];
 
   function $(id) { return document.getElementById(id); }
@@ -32,7 +36,7 @@
   function laden() {
     try {
       var s = JSON.parse(localStorage.getItem(SCHLUESSEL) || 'null');
-      if (s && s.werte) stand = { werte: s.werte, offen: typeof s.offen === 'number' ? s.offen : 0 };
+      if (s && s.werte) stand = { werte: s.werte, herkunft: s.herkunft || {}, offen: typeof s.offen === 'number' ? s.offen : 0 };
     } catch (e) { /* egal */ }
   }
   function sichern() {
@@ -45,9 +49,23 @@
   function profilZeichnen() {
     var dl = $('a-profil');
     daten.profil.forEach(function (p) {
-      dl.appendChild(el('dt', null, p.steckbrief));
-      dl.appendChild(el('dd', 'd-bekannt', p.text));
+      var dt = el('dt', null, p.steckbrief), dd = el('dd', 'd-bekannt', p.text);
+      dt.setAttribute('data-profil', p.steckbrief);
+      dd.setAttribute('data-profil', p.steckbrief);
+      dl.appendChild(dt);
+      dl.appendChild(dd);
     });
+  }
+  /* die gewählte Profilzeile der offenen Zeile links markieren */
+  function profilMarkieren(name) {
+    Array.prototype.forEach.call($('a-profil').children, function (e) {
+      e.classList.toggle('a-gewaehlt', !!name && e.getAttribute('data-profil') === name);
+    });
+  }
+  /* gleiche Reihenfolge auf jedem Gerät, aber nicht immer der passende Baustein zuerst */
+  function mischen(liste) {
+    function h(t) { var x = 0; for (var k = 0; k < t.length; k++) x = (x * 31 + t.charCodeAt(k)) % 9973; return x; }
+    return liste.slice().sort(function (a, b) { return h(a.text) - h(b.text); });
   }
 
   /* ── Handy (Artefakt 2) ── */
@@ -58,6 +76,7 @@
     b.setAttribute('aria-label', 'Zeile ' + (i + 1) + ' ändern: ' + wert);
     if (z.ort === 'knopf') b.appendChild(el('span', 'a-knopf', wert));
     else b.appendChild(el('span', null, wert));
+    if (stand.herkunft[z.id]) b.appendChild(el('span', 'a-herkunft', 'aus dem Profil: ' + stand.herkunft[z.id]));
     b.addEventListener('click', function () { stand.offen = i; sichern(); zeichnen(); });
     return b;
   }
@@ -74,6 +93,22 @@
     box.appendChild(el('p', 'a-nr', 'Zeile ' + (i + 1) + ' von ' + daten.zeilen.length));
     box.appendChild(el('p', 'a-frage', z.frage));
     box.appendChild(el('p', 'a-hilfe', z.hilfe));
+    var gewaehlt = z.profil_schritt ? stand.herkunft[z.id] : null;
+    profilMarkieren(gewaehlt);
+    if (z.profil_schritt) {
+      var wahl = el('div', 'a-profilwahl');
+      wahl.appendChild(el('p', 'a-schritt', gewaehlt ? 'Aus dem Profil: ' + gewaehlt : 'Schritt 1: Welche Zeile im Profil hilft dir?'));
+      daten.profil.forEach(function (p) {
+        var c = el('button', 'a-profilknopf' + (p.steckbrief === gewaehlt ? ' a-gewaehlt' : ''), p.steckbrief);
+        c.type = 'button';
+        c.setAttribute('aria-pressed', p.steckbrief === gewaehlt ? 'true' : 'false');
+        c.addEventListener('click', function () { stand.herkunft[z.id] = p.steckbrief; sichern(); zeichnen(); });
+        wahl.appendChild(c);
+      });
+      box.appendChild(wahl);
+      if (!gewaehlt) return box;
+      box.appendChild(el('p', 'a-schritt', 'Schritt 2: Nimm einen Baustein oder schreib selbst.'));
+    }
     var feld = el('textarea', 'a-feld');
     feld.rows = z.ort === 'text' ? 3 : 2;
     feld.value = stand.werte[z.id] || '';
@@ -90,7 +125,14 @@
       weiter.disabled = !n || !!zuviel;
     }
     var bausteine = el('div', 'a-bausteine');
-    z.bausteine.forEach(function (t) {
+    var zeigen = z.profil_schritt
+      ? mischen(z.bausteine.filter(function (b) { return b.profil === gewaehlt || b.profil === null; }))
+      : z.bausteine;
+    if (z.profil_schritt && !z.bausteine.some(function (b) { return b.profil === gewaehlt; })) {
+      box.appendChild(el('p', 'a-hinweis', 'Zu „' + gewaehlt + '“ gibt es hier keinen Baustein. Tipp eine andere Zeile im Profil an oder schreib selbst einen Satz dazu.'));
+    }
+    zeigen.forEach(function (b) {
+      var t = b.text;
       var c = el('button', 'a-baustein', t);
       c.type = 'button';
       c.addEventListener('click', function () { feld.value = t; pruefen(); feld.focus(); });
@@ -146,6 +188,7 @@
       gross.addEventListener('click', vollbild);
       f.appendChild(gross);
     }
+    if (!handy.querySelector('.a-offen')) profilMarkieren(null);
     var offen = handy.querySelector('.a-offen');
     if (offen && offen.scrollIntoView) offen.scrollIntoView({ block: 'nearest' });
   }
@@ -176,7 +219,7 @@
         $('a-fiktion').textContent = d.hinweis_fiktion;
         $('a-neu').addEventListener('click', function () {
           if (!window.confirm('Anzeige wirklich neu beginnen? Alle Zeilen werden geleert.')) return;
-          stand = { werte: {}, offen: 0 };
+          stand = { werte: {}, herkunft: {}, offen: 0 };
           sichern();
           zeichnen();
         });

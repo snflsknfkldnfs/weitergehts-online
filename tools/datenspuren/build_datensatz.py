@@ -903,53 +903,70 @@ for _seite, _k in SEITEN_2580.items():
 # dann Artefakt Werbeanzeige Zeile für Zeile über W-Fragen und Textbausteine, alles auf dem iPad, keine Zwischenbegriffe) ══
 # Je Zeile der Anzeige: W-Frage, Hilfe, Textbausteine aus dem Datensatz (je Baustein ein Belegwort, das main() im
 # Datensatz von 2580 sucht — ein Baustein darf nichts behaupten, was die Daten nicht hergeben), eigener Text erlaubt.
-def _zeile(zid, ort, frage, hilfe, bausteine, max_woerter=None):
+# Profil zuerst (Lehrkraft 29.10., V1): Bei Zeilen mit profil_schritt wählt das Kind zuerst die Profilzeile, die es nutzt;
+# danach erscheinen die Bausteine dieser Profilzeile und die unpassenden (profil None, Beleg None: passen nicht zu 2580,
+# sie sind der Stoff für die Bewertung). Die Herkunft steht klein unter der Zeile, „groß zeigen“ blendet sie aus.
+UNPASSEND = None
+
+
+def _zeile(zid, ort, frage, hilfe, bausteine, max_woerter=None, profil_schritt=True):
     return {'id': zid, 'ort': ort, 'frage': frage, 'hilfe': hilfe, 'max_woerter': max_woerter,
-            'bausteine': [{'text': t, 'beleg': b} for t, b in bausteine]}
+            'profil_schritt': profil_schritt,
+            'bausteine': [{'text': t, 'beleg': b, 'profil': p} for t, b, p in bausteine]}
 
 
-WANN_2580 = _zeile('wann', 'status', 'Wann und in welcher App sieht 2580 eure Anzeige?',
-                   'Schaut ins Profil: Handyzeit.',
-                   [('abends · Social-Media-App', 'Social-Media-App'), ('mittags · Musik-App', 'Musik-App'),
-                    ('früh um 04:45 · Wecker-App', 'Wecker 04:45')])
+WANN_2580 = _zeile('wann', 'status', 'Wann und in welcher App sieht 2580 deine Anzeige?',
+                   'Tipp zuerst die Zeile im Profil an, die dir das verrät.',
+                   [('abends · Social-Media-App', 'Social-Media-App', 'Handyzeit'),
+                    ('früh um 04:45 · Wecker-App', 'Wecker 04:45', 'Arbeit'),
+                    ('mittags · Musik-App', 'Musik-App', UNPASSEND)])
 PROFIL_EXTRA_2580 = {'steckbrief': 'Sorgen und Wünsche', 'text': 'aus Suche und Nachrichten: nachts allein am Bahnhof Angst · '
                      'sucht einen Gebrauchtwagen bis 4000 € · Kontostand 61,30 € · „immer müde“'}
+UEBERSCHRIFT = ('Was ärgert 2580? Mach daraus eine Frage als Überschrift.',
+                'Tipp zuerst die Zeile im Profil an. Höchstens 6 Wörter, du darfst den Baustein ändern.')
+PASSIERT = ('Was ist 2580 passiert? Sag es mit „du“.', 'Tipp zuerst die Zeile im Profil an. Ein Satz: Baustein oder selbst geschrieben.')
 WERKSTATT_2580 = {
     'nachtbus': [
         WANN_2580,
-        _zeile('ueberschrift', 'ueberschrift', 'Was ärgert 2580? Macht daraus eine Frage als Überschrift.',
-               'Höchstens 6 Wörter. Ihr dürft den Baustein ändern.',
-               [('Schon wieder 42 € fürs Taxi?', '42,00'), ('Kein Bus nach der Spätschicht?', 'keine Verbindung mehr'),
-                ('Nachts allein am Bahnhof?', 'nachts allein am bahnhof')], max_woerter=6),
-        _zeile('passiert', 'text', 'Was ist 2580 passiert? Sagt es mit „du“.',
-               'Ein Satz. Nehmt einen Baustein oder schreibt selbst.',
-               [('Nach der Spätschicht fährt kein Bus mehr, und das Taxi kostet dich 42 €.', '42,00'),
-                ('Nachts am Bahnhof musst du Mama bitten, dich abzuholen.', 'an Mama'),
-                ('Du stehst nachts allein am Bahnhof und weißt nicht, wie du heimkommst.', 'nachts allein am bahnhof')]),
-        _zeile('aendert', 'text', 'Was ändert der Nachtbus für 2580?', 'Ein Satz mit „du“.',
-               [('Mit dem Nachtbus fährst du jede Stunde bis Mitternacht heim.', 'keine Verbindung mehr'),
-                ('Du sparst dir das Taxi und hast mehr Geld übrig.', 'Kontostand'),
-                ('Mama kann schlafen, du kommst allein sicher heim.', 'an Mama')]),
+        _zeile('ueberschrift', 'ueberschrift', *UEBERSCHRIFT,
+               [('Schon wieder 42 € fürs Taxi?', '42,00', 'Heimweg'),
+                ('Kein Bus mehr nach der Arbeit?', 'keine Verbindung mehr', 'Heimweg'),
+                ('Nachts allein am Bahnhof?', 'nachts allein am bahnhof', 'Sorgen und Wünsche'),
+                ('Lust auf ein Eis in Volkach?', None, UNPASSEND)], max_woerter=6),
+        _zeile('passiert', 'text', *PASSIERT,
+               [('Nach der Arbeit fährt kein Bus mehr, und das Taxi kostet dich 42 €.', '42,00', 'Heimweg'),
+                ('Du stehst nachts allein am Bahnhof und weißt nicht, wie du heimkommst.', 'nachts allein am bahnhof',
+                 'Sorgen und Wünsche'),
+                ('Du gehst gern abends feiern und kommst spät heim.', None, UNPASSEND)]),
+        _zeile('aendert', 'text', 'Was ändert der Nachtbus für 2580?', 'Tipp zuerst die Zeile im Profil an. Ein Satz mit „du“.',
+               [('Mit dem Nachtbus fährst du jede Stunde bis Mitternacht heim.', 'keine Verbindung mehr', 'Heimweg'),
+                ('Du sparst dir das Taxi und hast mehr Geld übrig.', 'Kontostand', 'Sorgen und Wünsche'),
+                ('Du brauchst kein Auto für 4000 €, der Bus bringt dich heim.', 'gebrauchtwagen', 'Sorgen und Wünsche'),
+                ('Mit dem Nachtbus bist du schneller in der Schule.', None, UNPASSEND)]),
         _zeile('knopf', 'knopf', 'Was soll 2580 tun? Das steht auf dem Knopf.', 'Kurz, mit Ausrufezeichen.',
-               [('Stimm für den Nachtbus!', None), ('Am 8. November: Nachtbus!', None), ('Ja zum Nachtbus!', None)], max_woerter=5),
+               [('Stimm für den Nachtbus!', None, None), ('Am 8. November: Nachtbus!', None, None),
+                ('Ja zum Nachtbus!', None, None)], max_woerter=5, profil_schritt=False),
     ],
     'parkhaus': [
         WANN_2580,
-        _zeile('ueberschrift', 'ueberschrift', 'Was ärgert 2580? Macht daraus eine Frage als Überschrift.',
-               'Höchstens 6 Wörter. Ihr dürft den Baustein ändern.',
-               [('Schon wieder 17 Minuten Parkplatzsuche?', 'Parkplatz Kirchplatz'), ('Wieder 25 € Strafzettel?', 'Verwarngeld'),
-                ('Bald ein Auto, aber wohin damit?', 'gebrauchtwagen')], max_woerter=6),
-        _zeile('passiert', 'text', 'Was ist 2580 passiert? Sagt es mit „du“.',
-               'Ein Satz. Nehmt einen Baustein oder schreibt selbst.',
-               [('Am Samstag suchst du 17 Minuten einen Parkplatz und zahlst dann 25 € Strafe.', 'Verwarngeld'),
-                ('Du jobbst samstags am Marktplatz und findest dort keinen Parkplatz.', 'Lohn Samstag'),
-                ('Du sparst auf ein Auto, aber in der Altstadt ist kein Platz dafür.', 'gebrauchtwagen')]),
-        _zeile('aendert', 'text', 'Was ändert das Parkhaus für 2580?', 'Ein Satz mit „du“.',
-               [('Im Parkhaus am Rand der Altstadt findest du sofort einen Platz.', 'Hauptstraße'),
-                ('Kein Suchen mehr, kein Strafzettel mehr.', 'Verwarngeld'),
-                ('Mit deinem eigenen Auto kommst du entspannt zur Arbeit.', 'gebrauchtwagen')]),
+        _zeile('ueberschrift', 'ueberschrift', *UEBERSCHRIFT,
+               [('Schon wieder 17 Minuten Parkplatzsuche?', 'Parkplatz Kirchplatz', 'Ärger'),
+                ('Wieder 25 € Strafzettel?', 'Verwarngeld', 'Ärger'),
+                ('Bald ein Auto, aber wohin damit?', 'gebrauchtwagen', 'Sorgen und Wünsche'),
+                ('Lust auf ein Eis in Volkach?', None, UNPASSEND)], max_woerter=6),
+        _zeile('passiert', 'text', *PASSIERT,
+               [('Am Samstag suchst du 17 Minuten einen Parkplatz und zahlst dann 25 € Strafe.', 'Verwarngeld', 'Ärger'),
+                ('Du jobbst samstags am Marktplatz und findest dort keinen Parkplatz.', 'Lohn Samstag', 'Samstag'),
+                ('Du sparst auf ein Auto, aber in der Altstadt ist kein Platz dafür.', 'gebrauchtwagen', 'Sorgen und Wünsche'),
+                ('Du fährst jeden Tag mit dem Rad zur Schule.', None, UNPASSEND)]),
+        _zeile('aendert', 'text', 'Was ändert das Parkhaus für 2580?', 'Tipp zuerst die Zeile im Profil an. Ein Satz mit „du“.',
+               [('Kein Suchen mehr, kein Strafzettel mehr.', 'Verwarngeld', 'Ärger'),
+                ('Im Parkhaus am Rand der Altstadt findest du sofort einen Platz.', 'Hauptstraße', 'Samstag'),
+                ('Mit deinem eigenen Auto kommst du entspannt zur Arbeit.', 'gebrauchtwagen', 'Sorgen und Wünsche'),
+                ('Im Parkhaus kannst du dein Fahrrad abstellen.', None, UNPASSEND)]),
         _zeile('knopf', 'knopf', 'Was soll 2580 tun? Das steht auf dem Knopf.', 'Kurz, mit Ausrufezeichen.',
-               [('Stimm für das Parkhaus!', None), ('Am 8. November: Parkhaus!', None), ('Ja zum Parkhaus!', None)], max_woerter=5),
+               [('Stimm für das Parkhaus!', None, None), ('Am 8. November: Parkhaus!', None, None),
+                ('Ja zum Parkhaus!', None, None)], max_woerter=5, profil_schritt=False),
     ],
 }
 
@@ -957,27 +974,34 @@ WERKSTATT_2580 = {
 def werkstatt(seite, k, eintraege):
     """data.json der Anzeigen-Werkstatt: Profil als fertige Karte (Artefakt 1), Zeilen der Anzeige (Artefakt 2)."""
     profil = [{'steckbrief': s_['steckbrief'], 'text': s_['anzeige']} for s_ in _TONI['stufen']] + [PROFIL_EXTRA_2580]
+    namen = {p['steckbrief'] for p in profil}
     fehler = []
     eigene = ' '.join(e['eintrag'] for e in eintraege if e['nutzer'] == _TONI['nutzer']).lower()
     for z in WERKSTATT_2580[seite]:
+        if z['profil_schritt'] and not any(b['profil'] is UNPASSEND for b in z['bausteine']):
+            fehler.append(f"anzeige-{seite}/{z['id']}: kein unpassender Baustein")
         for b in z['bausteine']:
             if b['beleg'] and b['beleg'].lower() not in eigene:
                 fehler.append(f"anzeige-{seite}/{z['id']}: Baustein „{b['text']}“ ohne Beleg „{b['beleg']}“ im Datensatz")
+            if z['profil_schritt'] and b['profil'] is not UNPASSEND and b['profil'] not in namen:
+                fehler.append(f"anzeige-{seite}/{z['id']}: Baustein „{b['text']}“ nennt Profilzeile „{b['profil']}“, die es nicht gibt")
             if z['max_woerter'] and len(woerter(b['text'])) > z['max_woerter']:
                 fehler.append(f"anzeige-{seite}/{z['id']}: Baustein „{b['text']}“ hat mehr als {z['max_woerter']} Wörter")
+            if 'spätschicht' in b['text'].lower():
+                fehler.append(f"anzeige-{seite}/{z['id']}: Fachwort „Spätschicht“ (gestrichen 15.10.)")
     daten = {
-        'version': 1, 'titel': f'Anzeige für {_TONI["nutzer"]}', 'nutzer': _TONI['nutzer'],
+        'version': 2, 'titel': f'Anzeige für {_TONI["nutzer"]}', 'nutzer': _TONI['nutzer'],
         'absender': f'Bürgerentscheid Volkach · Kampagne {k["name"]}',
-        'auftrag': [f'Ihr seid die Bürgerinitiative „{k["name"]}“. Euer Ziel: {_TONI["nutzer"]} stimmt am 8. November für {k["ziel"]}.',
-                    f'Links seht ihr das Profil von {_TONI["nutzer"]}, das ihr letzte Woche aus den Daten erstellt habt.',
-                    'Rechts baut ihr eure Werbeanzeige auf dem Handy von ' + _TONI['nutzer'] + ': Zeile für Zeile, '
-                    'die offene Zeile ist markiert. Tippt einen Baustein an oder schreibt selbst.'],
+        'auftrag': [f'Du bist in der Bürgerinitiative „{k["name"]}“. Dein Ziel: {_TONI["nutzer"]} stimmt am 8. November für {k["ziel"]}.',
+                    f'Links siehst du das Profil von {_TONI["nutzer"]}, das du letzte Woche aus den Daten erstellt hast.',
+                    'Rechts baust du die Werbeanzeige auf dem Handy von ' + _TONI['nutzer'] + ', Zeile für Zeile: '
+                    'Tipp zuerst die Zeile im Profil an, die dir hilft. Dann nimm einen Baustein oder schreib selbst.'],
         'hinweis_fiktion': 'Personen, Daten und Bürgerentscheid sind erfunden.',
         'profil': profil,
-        'zeilen': [{**z, 'bausteine': [b['text'] for b in z['bausteine']]} for z in WERKSTATT_2580[seite]],
-        'fertig': {'titel': 'Eure Anzeige ist fertig.',
-                   'text': f'So sieht {_TONI["nutzer"]} sie auf dem Handy. Zeigt sie der Klasse, dann vergleichen wir: '
-                           'Welche Anzeige würde 2580 überzeugen, und warum?'},
+        'zeilen': [{**z, 'bausteine': [{'text': b['text'], 'profil': b['profil']} for b in z['bausteine']]}
+                   for z in WERKSTATT_2580[seite]],
+        'fertig': {'titel': 'Deine Anzeige ist fertig.',
+                   'text': f'So sieht {_TONI["nutzer"]} sie auf dem Handy. Tipp auf „Anzeige groß zeigen“ und heb die Hand.'},
     }
     return daten, fehler
 

@@ -1,12 +1,12 @@
 {
- "version": 1,
+ "version": 2,
  "titel": "Anzeige für 2580",
  "nutzer": "2580",
  "absender": "Bürgerentscheid Volkach · Kampagne Nachtbus für Volkach",
  "auftrag": [
-  "Ihr seid die Bürgerinitiative „Nachtbus für Volkach“. Euer Ziel: 2580 stimmt am 8. November für den Nachtbus.",
-  "Links seht ihr das Profil von 2580, das ihr letzte Woche aus den Daten erstellt habt.",
-  "Rechts baut ihr eure Werbeanzeige auf dem Handy von 2580: Zeile für Zeile, die offene Zeile ist markiert. Tippt einen Baustein an oder schreibt selbst."
+  "Du bist in der Bürgerinitiative „Nachtbus für Volkach“. Dein Ziel: 2580 stimmt am 8. November für den Nachtbus.",
+  "Links siehst du das Profil von 2580, das du letzte Woche aus den Daten erstellt hast.",
+  "Rechts baust du die Werbeanzeige auf dem Handy von 2580, Zeile für Zeile: Tipp zuerst die Zeile im Profil an, die dir hilft. Dann nimm einen Baustein oder schreib selbst."
  ],
  "hinweis_fiktion": "Personen, Daten und Bürgerentscheid sind erfunden.",
  "profil": [
@@ -43,49 +43,97 @@
   {
    "id": "wann",
    "ort": "status",
-   "frage": "Wann und in welcher App sieht 2580 eure Anzeige?",
-   "hilfe": "Schaut ins Profil: Handyzeit.",
+   "frage": "Wann und in welcher App sieht 2580 deine Anzeige?",
+   "hilfe": "Tipp zuerst die Zeile im Profil an, die dir das verrät.",
    "max_woerter": null,
+   "profil_schritt": true,
    "bausteine": [
-    "abends · Social-Media-App",
-    "mittags · Musik-App",
-    "früh um 04:45 · Wecker-App"
+    {
+     "text": "abends · Social-Media-App",
+     "profil": "Handyzeit"
+    },
+    {
+     "text": "früh um 04:45 · Wecker-App",
+     "profil": "Arbeit"
+    },
+    {
+     "text": "mittags · Musik-App",
+     "profil": null
+    }
    ]
   },
   {
    "id": "ueberschrift",
    "ort": "ueberschrift",
-   "frage": "Was ärgert 2580? Macht daraus eine Frage als Überschrift.",
-   "hilfe": "Höchstens 6 Wörter. Ihr dürft den Baustein ändern.",
+   "frage": "Was ärgert 2580? Mach daraus eine Frage als Überschrift.",
+   "hilfe": "Tipp zuerst die Zeile im Profil an. Höchstens 6 Wörter, du darfst den Baustein ändern.",
    "max_woerter": 6,
+   "profil_schritt": true,
    "bausteine": [
-    "Schon wieder 42 € fürs Taxi?",
-    "Kein Bus nach der Spätschicht?",
-    "Nachts allein am Bahnhof?"
+    {
+     "text": "Schon wieder 42 € fürs Taxi?",
+     "profil": "Heimweg"
+    },
+    {
+     "text": "Kein Bus mehr nach der Arbeit?",
+     "profil": "Heimweg"
+    },
+    {
+     "text": "Nachts allein am Bahnhof?",
+     "profil": "Sorgen und Wünsche"
+    },
+    {
+     "text": "Lust auf ein Eis in Volkach?",
+     "profil": null
+    }
    ]
   },
   {
    "id": "passiert",
    "ort": "text",
-   "frage": "Was ist 2580 passiert? Sagt es mit „du“.",
-   "hilfe": "Ein Satz. Nehmt einen Baustein oder schreibt selbst.",
+   "frage": "Was ist 2580 passiert? Sag es mit „du“.",
+   "hilfe": "Tipp zuerst die Zeile im Profil an. Ein Satz: Baustein oder selbst geschrieben.",
    "max_woerter": null,
+   "profil_schritt": true,
    "bausteine": [
-    "Nach der Spätschicht fährt kein Bus mehr, und das Taxi kostet dich 42 €.",
-    "Nachts am Bahnhof musst du Mama bitten, dich abzuholen.",
-    "Du stehst nachts allein am Bahnhof und weißt nicht, wie du heimkommst."
+    {
+     "text": "Nach der Arbeit fährt kein Bus mehr, und das Taxi kostet dich 42 €.",
+     "profil": "Heimweg"
+    },
+    {
+     "text": "Du stehst nachts allein am Bahnhof und weißt nicht, wie du heimkommst.",
+     "profil": "Sorgen und Wünsche"
+    },
+    {
+     "text": "Du gehst gern abends feiern und kommst spät heim.",
+     "profil": null
+    }
    ]
   },
   {
    "id": "aendert",
    "ort": "text",
    "frage": "Was ändert der Nachtbus für 2580?",
-   "hilfe": "Ein Satz mit „du“.",
+   "hilfe": "Tipp zuerst die Zeile im Profil an. Ein Satz mit „du“.",
    "max_woerter": null,
+   "profil_schritt": true,
    "bausteine": [
-    "Mit dem Nachtbus fährst du jede Stunde bis Mitternacht heim.",
-    "Du sparst dir das Taxi und hast mehr Geld übrig.",
-    "Mama kann schlafen, du kommst allein sicher heim."
+    {
+     "text": "Mit dem Nachtbus fährst du jede Stunde bis Mitternacht heim.",
+     "profil": "Heimweg"
+    },
+    {
+     "text": "Du sparst dir das Taxi und hast mehr Geld übrig.",
+     "profil": "Sorgen und Wünsche"
+    },
+    {
+     "text": "Du brauchst kein Auto für 4000 €, der Bus bringt dich heim.",
+     "profil": "Sorgen und Wünsche"
+    },
+    {
+     "text": "Mit dem Nachtbus bist du schneller in der Schule.",
+     "profil": null
+    }
    ]
   },
   {
@@ -94,15 +142,25 @@
    "frage": "Was soll 2580 tun? Das steht auf dem Knopf.",
    "hilfe": "Kurz, mit Ausrufezeichen.",
    "max_woerter": 5,
+   "profil_schritt": false,
    "bausteine": [
-    "Stimm für den Nachtbus!",
-    "Am 8. November: Nachtbus!",
-    "Ja zum Nachtbus!"
+    {
+     "text": "Stimm für den Nachtbus!",
+     "profil": null
+    },
+    {
+     "text": "Am 8. November: Nachtbus!",
+     "profil": null
+    },
+    {
+     "text": "Ja zum Nachtbus!",
+     "profil": null
+    }
    ]
   }
  ],
  "fertig": {
-  "titel": "Eure Anzeige ist fertig.",
-  "text": "So sieht 2580 sie auf dem Handy. Zeigt sie der Klasse, dann vergleichen wir: Welche Anzeige würde 2580 überzeugen, und warum?"
+  "titel": "Deine Anzeige ist fertig.",
+  "text": "So sieht 2580 sie auf dem Handy. Tipp auf „Anzeige groß zeigen“ und heb die Hand."
  }
 }

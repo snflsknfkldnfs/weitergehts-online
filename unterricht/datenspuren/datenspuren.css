@@ -200,3 +200,16 @@
 .a-gross { width: min(520px, 100%); }
 .a-gross .a-bildschirm { min-height: 0; }
 .a-gross .a-gefuellt { cursor: default; }
+/* Profil zuerst (Inf6b 29.10.): Wahl der Profilzeile in der offenen Zeile, Herkunft unter der fertigen Zeile */
+.a-schritt { margin: 6px 0 6px; font-weight: 700; font-size: .95rem; }
+.a-profilwahl { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+.a-profilwahl .a-schritt { flex-basis: 100%; margin-bottom: 0; }
+.a-profilknopf {
+  padding: 8px 12px; min-height: var(--m-klick); border: 2px solid var(--m-blau); border-radius: 999px;
+  background: var(--m-blatt); color: var(--m-tinte); cursor: pointer;
+}
+.a-profilknopf.a-gewaehlt { background: var(--m-blau); color: var(--m-blatt); font-weight: 700; }
+.a-hinweis { margin: 0 0 8px; font-size: .9rem; color: var(--m-rot); }
+.a-herkunft { display: block; margin-top: 2px; font-size: .75rem; font-weight: 400; color: var(--m-leise); }
+.d-steckbrief .a-gewaehlt { background: var(--m-notiz); outline: 2px solid var(--m-blau); border-radius: 4px; }
+.a-vollbild .a-herkunft { display: none; }
