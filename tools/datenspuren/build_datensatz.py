@@ -11,7 +11,8 @@ Eine Quelle für alle Abnehmer:
   unterricht/datenspuren/<nutzernummer>/data.json + index.html   das Spiel je Fall (Adresse = Nummer, nie ein Name)
   unterricht/datenspuren/index.html                       Übersicht der Fälle
   --loesung <pfad.md>                                     Lösungsschlüssel aller Fälle (NICHT auf die Website)
-  --auszug-dir <ordner>                                   je Fall <nutzernummer>_auszug.json für Druckmaterial (NICHT auf die Website)
+  --auszug-dir <ordner>                                   je Fall <nutzernummer>_auszug.json für Druckmaterial (NICHT auf die Website),
+                                                          dazu anzeige-<seite>.json je Anzeigen-Werkstatt (Plan B, Folien)
 
 ALLES ERFUNDEN: Personen und Daten. Echte Orte (Volkach und Umgebung) nur als Ortsnamen, Orte darin allgemein
 („Gewerbegebiet“, „Bäckerei“), keine echten Firmen, keine Hausnummern. Zeitraum Mo 21.09. bis So 04.10.2026.
@@ -1237,6 +1238,10 @@ def main():
     for datei in ('anzeige.js', 'datenspuren.css', 'material.css'):
         anzeige_vorlage = re.sub(re.escape(datei) + r'\?v=[0-9.]+', f'{datei}?v={versionen[datei]}', anzeige_vorlage)
     for seite, daten_w in werkstaetten:
+        if a.auszug_dir:   # Plan B und Folien der Stunde aus derselben Quelle wie die Seite (Inf6b UE04)
+            (Path(a.auszug_dir) / f'anzeige-{seite}.json').write_text(
+                json.dumps({**daten_w, 'url': f'https://weitergehts.online/unterricht/datenspuren/anzeige-{seite}/'},
+                           ensure_ascii=False, indent=1), encoding='utf-8')
         ordner = WEB / f'anzeige-{seite}'
         ordner.mkdir(exist_ok=True)
         (ordner / 'data.json').write_text(json.dumps(daten_w, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
