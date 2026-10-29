@@ -2,7 +2,7 @@
 
 > **Ist-Zustand** der Site als Menge von **Verticals**. Anker für „wo gehört Neues hin".
 > Soll-Architektur, Prämissen + Entscheidungs-Log: `ARCHITEKTUR.md`.
-> Bei jeder neuen Sektion/Game/Seite hier eintragen. Stand: 2026-10-15 (Kursseiten; Einzel-Material steht in `unterricht/kurse.json`, nicht hier).
+> Bei jeder neuen Sektion/Game/Seite hier eintragen. Stand: 2026-10-29 (Werkzeuge Verteilen, Abstimmen, Begleiten; Kursseiten; Einzel-Material steht in `unterricht/kurse.json`, nicht hier).
 
 ## Verticals (Drei-Säulen-IA seit E3)
 
@@ -13,6 +13,8 @@
 | **Unterricht · Hub** | `unterricht/index.html` | **generiert** aus `unterricht/kurse.json` (`make kurse`): Reiter pro Fach → Reiter pro Klasse → (GPG) Aktuelles/Geschichte, ohne Kurskürzel/Datum (Wächter in B5); Discovery-Quelle für `check`/`smoke`; Staging-Flag `?staging=1` | `tools/kurse/build.py` | live |
 | **Unterricht · Kursseiten** | `unterricht/k/<kurs>/` | **generiert** aus `kurse.json`: Zuletzt + (GPG) Aktuelles/Geschichte + nach Thema, mit Datum; unverlinkt + `noindex` (Direktlink/QR) | `tools/kurse/build.py` | live (gpg8a, gpg9a, inf6b) |
 | **Unterricht · Quellen / Anordnen / Datenspuren** | `unterricht/quellen/<id>/`, `ordnen/<id>/`, `datenspuren/<fall>/` | je `data.json` + geteilte `quellen.js`/`ordnen.js`/`datenspuren.js` | — | live (Zuordnung in `kurse.json`) |
+| **Unterricht · Verteilen / Abstimmen** | `unterricht/verteilen/<id>/`, `abstimmen/<id>/` | je `data.json` + geteilte `verteilen.js`/`abstimmen.js` (Abstimmen: Lehrkraft an der Tafel) | — | live (seit 26.10.2026) |
+| **Unterricht · Begleiten** | `unterricht/begleiten/<thema>/` | die Stunde Schritt für Schritt auf dem iPad (Sortieren mit Auflösung, Lesen mit Fragen und Vergleichen, links/rechts); `data.json` + geteiltes `begleiten.js`; Antworten nur im `localStorage` | `tools/begleiten/seite_vorlage.html` (Hülle) | live (seit 29.10.2026: `notfallreform`) |
 | **Unterricht · Escape-Games** | `unterricht/escape-games/<id>/` | `data.json` (meta+mappen+materialien+aufgaben) → gerendert von `unterricht/assets/js/escape-engine.js` | `unterricht/escape-games/_template/` | live (1 Game: Syrien) |
 | **Unterricht · WiB-Tools** | `unterricht/wib/` | self-contained HTML (Chart.js via CDN), `localStorage`, kein Backend/Tracking | — | live (2 Tools: Haushaltsbuch + Geld-Wert) |
 | **Unterricht · Lernraum** | `assets/data/*.json` | via `make lernraum` generierte Glossar-/KE-Daten | `tools/lernraum/` | Daten vorhanden; Konsument-Seiten teils mit Examens-Schiene archiviert |
@@ -55,7 +57,7 @@ jederzeit reaktivierbar (Präfix entfernen + `<li>` in `unterricht/index.html`):
 | `assets/css/wg.css` | **Site**-Komponenten (Topbar/Hero/Gateways/Footer/…); Site-Kette `fonts → tokens → wg` | `make bump A=wg` |
 | `assets/css/lernraum.css` | ausgelagerter wg.lernraum-Block (ungeladen, bereitliegend) | — |
 | `unterricht/assets/css/material.css` | **gemeinsame Gestaltung aller Materialseiten** („Blatt", 2026-10-21): `--m-*`-Tokens, Blatt, Knopf; geladen VOR `quellen.css`/`ordnen.css`/`datenspuren.css` (die nur Layout und nur `--m-*` enthalten; Wächter B6 `check_material.py`) | `make bump A=material` |
-| `unterricht/{quellen,ordnen,datenspuren}/*.{css,js}` | Werkzeuge der Materialseiten | `--bump quellen.css` usw. |
+| `unterricht/{quellen,ordnen,datenspuren,verteilen,abstimmen,begleiten}/*.{css,js}` | Werkzeuge der Materialseiten | `--bump quellen.css` usw. |
 | `assets/img/site/` | Root/Profil-Fotos (`gleise-ueberwachsen`, `museum-blick`, `turm-beton`; Profil-Fotos in `profil/img/`) | — |
 | `assets/img/<game-id>/` | Game-Medien | — |
 | `assets/data/*.json` | Lernraum-Daten (generiert) | `make lernraum` |

@@ -37,6 +37,9 @@ Erzeuger schreiben mit `WEBSITE_REPO=<dieser Arbeitsbaum>` (Konvention aus `welt
 | `quellen` — Quellenarbeit am iPad | `unterricht/quellen/<slug>/` (`index.html` + `data.json`) | `quellen.js` / `quellen.css` | `GPG8a/S01_weimar/UE03-04_…/_render/quellen_bauen.py` |
 | `anordnen` — Karten in Reihenfolge | `unterricht/ordnen/<slug>/` (`index.html` + `data.json` + `bilder/`) | `ordnen.js` / `ordnen.css` | `GPG8a/S01_weimar/UE01-02_…/_render/karten_bauen.py` |
 | `werkzeug` — Fall eines Web-Werkzeugs (Datenspuren) | `unterricht/datenspuren/<nummer>/` | `datenspuren.js` | Generator im Website-Repo: `tools/datenspuren/build_datensatz.py` |
+| `werkzeug` — Verteilen (Zeitbalken) | `unterricht/verteilen/<slug>/` | `verteilen.js` / `verteilen.css` | `WiB6b/S01_arbeit/UE06_…` |
+| `werkzeug` — Abstimmen an der Tafel | `unterricht/abstimmen/<slug>/` | `abstimmen.js` / `abstimmen.css` | `GPG8a/S01_weimar/UE11-12_2026-10-27_…` |
+| `werkzeug` — Begleiten: die Stunde Schritt für Schritt am iPad | `unterricht/begleiten/<slug>/` (`index.html` + `data.json` + `bilder/`) | `begleiten.js` / `begleiten.css`; Hülle aus `tools/begleiten/seite_vorlage.html` | `GPG8a/S01_weimar/UE13_2026-10-30_…/_render/begleiten_bauen.py` |
 | `escape-game` | `unterricht/escape-games/<id>/` | `escape-engine.js` | Generator-Repo, dann `RUNBUCH.md` L3 |
 | `anleitung` · `recherche` · `werkzeug` (Einzelseite) | `unterricht/<fach>/<slug>.html` oder `unterricht/<slug>/` | Site-Kette `fonts → tokens → wg` | `unterricht/gpg/wochenrueckblick.html`, `unterricht/smv/` |
 
@@ -50,7 +53,7 @@ Neues JS/CSS: **sofort** Eintrag in `assets/versions.json` + `?v=`-Token im HTML
 
 **Die Hülle (`index.html`) immer von einer bestehenden Seite desselben Werkzeugs kopieren** (Quellen:
 `quellen/raete-parlament/index.html`, Anordnen: `ordnen/kaiserreich/index.html`; Datenspuren erzeugt der
-Generator aus `tools/datenspuren/seite_vorlage.html`), nur `<title>` ersetzen. Die Hülle lädt
+Generator aus `tools/datenspuren/seite_vorlage.html`, Begleiten aus `tools/begleiten/seite_vorlage.html`), nur `<title>` ersetzen. Die Hülle lädt
 `../../assets/css/material.css` vor dem Werkzeug-CSS — das ist die gemeinsame Gestaltung „Blatt" aller
 Materialseiten. ❌ Eine selbst geschriebene Hülle (wie früher in `staat_bauen.py`) verliert sie;
 `make check` blockt das (B6). Gestaltung nie pro Seite: keine `<style>`-Blöcke mit Farben, keine eigenen Knöpfe.
