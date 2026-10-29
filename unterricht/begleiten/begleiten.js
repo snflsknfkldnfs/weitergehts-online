@@ -286,7 +286,8 @@
     wurzel.appendChild(kopf);
     if (s.typ === 'sortieren') sortierenBauen(s, wurzel);
     else lesenBauen(s, wurzel);
-    if (nr < D.schritte.length - 1) {
+    var sortOffen = s.typ === 'sortieren' && !S.aufgeloest[s.id];  /* erst Auflösung, dann der nächste Code */
+    if (nr < D.schritte.length - 1 && !sortOffen) {
       var z = el('div', 'b-weiter');
       if (nr < S.offen) {
         var weiter = knopf('Weiter zu Schritt ' + (nr + 2));
