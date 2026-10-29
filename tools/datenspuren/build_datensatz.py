@@ -993,7 +993,7 @@ def werkstatt(seite, k, eintraege):
     daten = {
         'version': 2, 'titel': f'Anzeige für {_TONI["nutzer"]}', 'nutzer': _TONI['nutzer'],
         'absender': f'Bürgerentscheid Volkach · Kampagne {k["name"]}',
-        'auftrag': [f'Du bist in der Bürgerinitiative „{k["name"]}“. Dein Ziel: {_TONI["nutzer"]} stimmt am 8. November für {k["ziel"]}.',
+        'auftrag': [f'Du bist in der Gruppe „{k["name"]}“. Dein Ziel: {_TONI["nutzer"]} stimmt am 8. November für {k["ziel"]}.',
                     f'Links siehst du das Profil von {_TONI["nutzer"]}, das du letzte Woche aus den Daten erstellt hast.',
                     'Rechts baust du die Werbeanzeige auf dem Handy von ' + _TONI['nutzer'] + ', Zeile für Zeile: '
                     'Tipp zuerst die Zeile im Profil an, die dir hilft. Dann nimm einen Baustein oder schreib selbst.'],
