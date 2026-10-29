@@ -10,13 +10,17 @@
  *     { "id", "reiter", "titel", "auftrag", "typ": "sortieren",
  *       "faecher": [ { "id", "name" } ],
  *       "karten": [ { "id", "text", "amtlich": "<Name eines Fachs oder Satz>", "erklaerung" } ],
- *       "aufloesung_titel", "erkenntnis" },
+ *       "aufloesung_code": "<Hash>", "aufloesung_titel", "erkenntnis", "nachher": [ MATERIAL ] },
  *     { "id", "reiter", "titel", "auftrag", "typ": "lesen",
  *       "materialien": [ MATERIAL ], "fragen": [ FRAGE ],
  *       "seiten": [ { "id", "name", "materialien": [ MATERIAL ], "fragen": [ FRAGE ] } ] | fehlt } ] }
- * MATERIAL = { "kennung", "kopf", "wer", "wann", "absaetze": [ "Wortlaut mit {{Wort}}" | { "eigen": "Satz" } ],
+ * MATERIAL = { "kennung", "kopf", "wer", "wann", "absaetze": [ "Wortlaut mit {{Wort}}" | { "eigen": "Satz" } ] | fehlt,
  *              "entlastet": [ … ] | fehlt, "glossar": { "Wort": "Erklärung" }, "plakat": { "bild", "unterschrift" },
- *              "ki_prompt", "nachweis" }
+ *              "video": { "src", "start", "ende", "untertitel", "unterschrift" } | fehlt,
+ *              "audio": { "src", "start", "ende", "bild", "unterschrift" } | fehlt (Podcast: bild = Cover), "ki_prompt", "nachweis" }
+ * Freischalten (seit 2026-10-29): Jeder Schritt ab dem zweiten trägt "code" (Hash des Codeworts, das die Lehrkraft auf der
+ * Folie zeigt); spätere Schritte sind unsichtbar, die Reiter heißen nur „Schritt n“. Die Auflösung beim Sortieren hat
+ * ebenso einen Code. Hash: djb2 über das kleingeschriebene Wort, hexadezimal (gleich im Erzeuger der Stunde).
  * FRAGE = { "id", "fundstelle", "frage", "loesung" }
  */
 (function () {
@@ -36,9 +40,33 @@
 
   function laden() {
     try { S = JSON.parse(localStorage.getItem(schluessel)) || null; } catch (e) { S = null; }
-    if (!S) S = { schritt: 0, sortiert: {}, aufgeloest: {}, antworten: {}, verglichen: {}, seite: {} };
+    if (!S) S = { schritt: 0, offen: 0, sortiert: {}, aufgeloest: {}, antworten: {}, verglichen: {}, seite: {} };
+    if (S.offen == null) S.offen = 0;
   }
   function sichern() { try { localStorage.setItem(schluessel, JSON.stringify(S)); } catch (e) { /* ohne Speicher weiter */ } }
+
+  function hash(w) {
+    var h = 5381, s = String(w || '').trim().toLowerCase();
+    for (var i = 0; i < s.length; i++) h = ((h * 33) ^ s.charCodeAt(i)) >>> 0;
+    return h.toString(16);
+  }
+  /* Codefeld: richtig → wenn(); falsch → Hinweis, nichts passiert */
+  function codeFeld(text, ziel, wenn) {
+    var z = el('div', 'b-code');
+    var lab = el('label', null, text);
+    var feld = el('input', 'b-code-feld'); feld.type = 'text'; feld.autocomplete = 'off'; feld.autocapitalize = 'characters';
+    lab.appendChild(feld);
+    var k = knopf('Öffnen', true);
+    var meld = el('span', 'b-code-meldung m-leise');
+    function pruefen() {
+      if (hash(feld.value) === ziel) { wenn(); return; }
+      meld.textContent = 'Das ist nicht der Code. Warte, bis deine Lehrkraft ihn zeigt.';
+    }
+    k.addEventListener('click', pruefen);
+    feld.addEventListener('keydown', function (e) { if (e.key === 'Enter') pruefen(); });
+    z.appendChild(lab); z.appendChild(k); z.appendChild(meld);
+    return z;
+  }
 
   /* ── Text: {{Wort}} wird antippbar, die Erklärung erscheint unter dem Absatz ── */
   function absatzBauen(a, glossar) {
@@ -78,6 +106,32 @@
     return h;
   }
 
+  function videoBauen(v) {
+    var fig = el('figure', 'b-video');
+    var vid = el('video');
+    vid.controls = true; vid.preload = 'metadata'; vid.setAttribute('playsinline', '');
+    vid.src = v.src + (v.start != null ? '#t=' + v.start + (v.ende != null ? ',' + v.ende : '') : '');
+    if (v.untertitel) {
+      var tr = el('track'); tr.kind = 'subtitles'; tr.srclang = 'de'; tr.label = 'Deutsch'; tr.src = v.untertitel; tr.default = true;
+      vid.appendChild(tr);
+    }
+    fig.appendChild(vid);
+    if (v.unterschrift) fig.appendChild(el('figcaption', 'm-leise', v.unterschrift));
+    return fig;
+  }
+
+  function audioBauen(a) {
+    var fig = el('figure', 'b-audio');
+    if (a.bild) { var img = el('img'); img.src = a.bild; img.alt = ''; img.loading = 'lazy'; fig.appendChild(img); }
+    var rechts = el('div');
+    var au = el('audio'); au.controls = true; au.preload = 'metadata';
+    au.src = a.src + (a.start != null ? '#t=' + a.start + (a.ende != null ? ',' + a.ende : '') : '');
+    rechts.appendChild(au);
+    if (a.unterschrift) rechts.appendChild(el('figcaption', 'm-leise', a.unterschrift));
+    fig.appendChild(rechts);
+    return fig;
+  }
+
   function materialBauen(m) {
     var art = el('article', 'b-material m-blatt');
     var kopf = el('header', 'b-mkopf');
@@ -86,8 +140,10 @@
     art.appendChild(kopf);
     if (m.wer || m.wann) art.appendChild(el('p', 'b-wer m-leise', [m.wer, m.wann].filter(Boolean).join(' · ')));
     var glossar = m.glossar || {};
+    if (m.video) art.appendChild(videoBauen(m.video));
+    if (m.audio) art.appendChild(audioBauen(m.audio));
     var wortlaut = el('div', 'b-text');
-    m.absaetze.forEach(function (a) { wortlaut.appendChild(absatzBauen(a, glossar)); });
+    (m.absaetze || []).forEach(function (a) { wortlaut.appendChild(absatzBauen(a, glossar)); });
     if (m.entlastet && m.entlastet.length) {
       var leicht = el('div', 'b-text');
       leicht.appendChild(el('p', 'b-marke', 'Leichter lesen – nicht der Originaltext'));
@@ -200,26 +256,24 @@
     wohin.appendChild(liste);
     var fertig = s.karten.every(function (k) { return sortiert[k.id]; });
     if (offen) {
-      var auf = knopf('Auflösung zeigen', true);
-      auf.disabled = !fertig;
-      auf.addEventListener('click', function () { S.aufgeloest[s.id] = true; sichern(); zeichnen(); });
-      var zeile = el('div', 'b-aktion'); zeile.appendChild(auf);
-      if (!fertig) zeile.appendChild(el('span', 'm-leise', 'Erst jeden Fall einordnen.'));
-      wohin.appendChild(zeile);
+      if (fertig) wohin.appendChild(codeFeld('Code für die Auflösung: ', s.aufloesung_code,
+        function () { S.aufgeloest[s.id] = true; sichern(); zeichnen(); }));
+      else wohin.appendChild(el('p', 'b-aktion m-leise', 'Ordne zuerst jeden Fall ein.'));
     } else {
       var e = el('section', 'b-erkenntnis m-blatt');
       e.appendChild(el('h3', null, s.aufloesung_titel || 'Was fällt dir auf?'));
       e.appendChild(el('p', null, s.erkenntnis));
       wohin.appendChild(e);
+      (s.nachher || []).forEach(function (m) { wohin.appendChild(materialBauen(m)); });
     }
   }
 
   function zeichnen() {
-    var nr = Math.min(S.schritt || 0, D.schritte.length - 1);
+    var nr = Math.min(S.schritt || 0, S.offen, D.schritte.length - 1);
     var reiter = document.getElementById('b-reiter');
     reiter.textContent = '';
-    D.schritte.forEach(function (s, i) {
-      var k = knopf(s.reiter);
+    D.schritte.slice(0, S.offen + 1).forEach(function (s, i) {
+      var k = knopf('Schritt ' + (i + 1));
       k.setAttribute('aria-pressed', String(i === nr));
       k.addEventListener('click', function () { S.schritt = i; sichern(); zeichnen(); window.scrollTo(0, 0); });
       reiter.appendChild(k);
@@ -233,9 +287,16 @@
     if (s.typ === 'sortieren') sortierenBauen(s, wurzel);
     else lesenBauen(s, wurzel);
     if (nr < D.schritte.length - 1) {
-      var weiter = knopf('Weiter: ' + D.schritte[nr + 1].reiter);
-      weiter.addEventListener('click', function () { S.schritt = nr + 1; sichern(); zeichnen(); window.scrollTo(0, 0); });
-      var z = el('div', 'b-weiter'); z.appendChild(el('span', 'm-leise', 'Erst, wenn deine Lehrkraft es sagt.')); z.appendChild(weiter);
+      var z = el('div', 'b-weiter');
+      if (nr < S.offen) {
+        var weiter = knopf('Weiter zu Schritt ' + (nr + 2));
+        weiter.addEventListener('click', function () { S.schritt = nr + 1; sichern(); zeichnen(); window.scrollTo(0, 0); });
+        z.appendChild(weiter);
+      } else {
+        z.appendChild(codeFeld('Code für den nächsten Schritt: ', D.schritte[nr + 1].code, function () {
+          S.offen = nr + 1; S.schritt = nr + 1; sichern(); zeichnen(); window.scrollTo(0, 0);
+        }));
+      }
       wurzel.appendChild(z);
     }
   }

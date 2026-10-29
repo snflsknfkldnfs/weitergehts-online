@@ -79,6 +79,27 @@ body.begleiten {
 }
 .b-loesung { margin: 8px 0 0; padding-left: 10px; border-left: 3px solid var(--m-gut); }
 
-.b-weiter { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 12px; margin: 8px 0 18px; }
+.b-weiter { display: flex; flex-wrap: wrap; justify-content: flex-start; align-items: center; gap: 12px; margin: 8px 0 18px; }
 .b-fuss { margin-top: 28px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; align-items: center; }
 .b-fuss p { margin: 0; font-size: .85rem; max-width: var(--m-mass); }
+
+/* Freischalten mit Code (seit 2026-10-29) */
+.b-code { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 0 0 18px; }
+.b-code label { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-weight: 600; }
+.b-code-feld {
+  min-height: var(--m-klick); width: 9em; padding: 0 10px; text-transform: uppercase; letter-spacing: .08em;
+  border: 2px solid var(--m-tinte); border-radius: var(--m-ecke); background: var(--m-blatt);
+}
+.b-code-meldung { font-size: .9rem; }
+
+/* Film */
+.b-video { margin: 6px 0 12px; }
+.b-video video { display: block; width: 100%; max-width: 720px; background: var(--m-tinte); border: 1px solid var(--m-linie-hell); }
+.b-video figcaption { font-size: .9rem; margin-top: 4px; }
+
+/* Hörausschnitt (Podcast): Cover links, Spieler rechts */
+.b-audio { display: flex; align-items: center; gap: 14px; margin: 6px 0 12px; }
+.b-audio img { width: 88px; height: 88px; object-fit: cover; border: 1px solid var(--m-linie-hell); flex: none; }
+.b-audio audio { width: 100%; max-width: 520px; }
+.b-audio > div { flex: 1; min-width: 0; }
+.b-audio figcaption { font-size: .9rem; margin-top: 4px; }
