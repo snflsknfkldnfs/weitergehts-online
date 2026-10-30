@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Persisch-Weide</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="../../assets/css/fonts.css?v=1.2">
+<style>
+@font-face{font-family:'Vazirmatn';font-style:normal;font-weight:100 900;font-display:swap;src:url('../../assets/fonts/vazirmatn-var-normal-arabic.woff2') format('woff2');unicode-range:U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC}
+@font-face{font-family:'Vazirmatn';font-style:normal;font-weight:100 900;font-display:swap;src:url('../../assets/fonts/vazirmatn-var-normal-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Vazirmatn';font-style:normal;font-weight:100 900;font-display:swap;src:url('../../assets/fonts/vazirmatn-var-normal-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+
+@font-face{font-family:'Fredoka';font-style:normal;font-weight:300 700;font-display:swap;src:url('../../assets/fonts/fredoka-var-normal-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Fredoka';font-style:normal;font-weight:300 700;font-display:swap;src:url('../../assets/fonts/fredoka-var-normal-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Nunito';font-style:normal;font-weight:200 1000;font-display:swap;src:url('../../assets/fonts/nunito-var-normal-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Nunito';font-style:normal;font-weight:200 1000;font-display:swap;src:url('../../assets/fonts/nunito-var-normal-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+
+/* Layout: Karteikasten-Expedition – oben Status (XP, Serie, Countdown), darunter Tagesreiter mit Quests; Spielmodus ersetzt die Quest-Ansicht */
+:root{
+  --bg:#fff3f7; --bg2:#f3ecff; --card:#ffffff; --ink:#3b2340; --muted:#8a6b8c; --line:#f2d3e1;
+  --accent:#d4467e; --accent-soft:#ffe1ec; --xp:#8a5bd6; --xp-soft:#ece2fc; --good:#2f9e6e; --bad:#d6514a;
+  --mint:#d9f5ea; --shadow:0 6px 18px -8px rgba(160,60,110,.28); color-scheme:light;
+  --f-display:"Fredoka",ui-rounded,system-ui,sans-serif;
+  --f-body:"Nunito",ui-rounded,system-ui,sans-serif;
+  --f-mono:"Space Mono",ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:radial-gradient(circle at 10% 0%,var(--bg2),transparent 40%),radial-gradient(circle at 90% 30%,var(--accent-soft),transparent 35%),var(--bg);background-attachment:fixed;min-height:100vh;color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.45;margin:0;padding:0 16px}
+.wrap{max-width:760px;margin:0 auto;padding-block:16px 40px;display:flex;flex-direction:column;gap:16px}
+h1,h2,h3{font-family:var(--f-display);margin:0;letter-spacing:-.01em;text-wrap:balance}
+h1{font-size:1.45rem;font-weight:800}
+h2{font-size:1.15rem;font-weight:700}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:10px}
+.count{font-family:var(--f-mono);font-size:.8rem;color:var(--muted);text-align:right}
+.count b{color:var(--ink);font-size:1rem}
+.stats{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:10px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;min-width:0}
+.stat .lab{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.stat .val{font-family:var(--f-display);font-weight:800;font-size:1.25rem}
+.lvlbar{height:6px;border-radius:3px;background:var(--xp-soft);overflow:hidden;margin-top:6px}
+.lvlbar i{display:block;height:100%;background:var(--xp);width:0;transition:width .4s}
+@media (max-width:480px){.stats{grid-template-columns:1fr 1fr}.stats .stat:first-child{grid-column:1/-1}}
+.days{display:flex;gap:6px;flex-wrap:wrap}
+.day{font:inherit;font-family:var(--f-mono);font-size:.8rem;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.day[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--card)}
+.day .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--xp);margin-left:6px;vertical-align:middle}
+.dayhead p{margin:.3rem 0 0;color:var(--muted);max-width:62ch}
+.quests{display:grid;gap:10px}
+.quest{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.quest.done{border-color:var(--good)}
+.quest.boss{border:2px solid var(--xp);background:linear-gradient(0deg,var(--card),var(--card)) padding-box}
+.ring{width:44px;height:44px}
+.ring circle{fill:none;stroke-width:5}
+.ring .bgc{stroke:var(--line)} .ring .fgc{stroke:var(--accent);stroke-linecap:round;transition:stroke-dashoffset .4s}
+.quest.done .ring .fgc{stroke:var(--good)}
+.quest.boss .ring .fgc{stroke:var(--xp)}
+.ring text{font-family:var(--f-mono);font-size:11px;fill:var(--ink);text-anchor:middle;dominant-baseline:central}
+.qt{min-width:0}
+.qt h3{font-size:1rem}
+.qt p{margin:2px 0 0;font-size:.85rem;color:var(--muted)}
+.btn{font:inherit;font-weight:700;font-size:.92rem;padding:10px 16px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--card)}
+.btn.xp{background:var(--xp);border-color:var(--xp);color:var(--card)}
+.btn.good{background:var(--good);border-color:var(--good);color:var(--card)}
+.btn.bad{border-color:var(--bad);color:var(--bad)}
+.btn:disabled{opacity:.45;cursor:default}
+.btn:focus-visible,.day:focus-visible,.opt:focus-visible,.link:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.link{font:inherit;font-size:.85rem;background:none;border:0;color:var(--muted);text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:2px}
+.review{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;background:var(--accent-soft);border-radius:12px;padding:12px 14px}
+/* Spielansicht */
+.playhead{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.pbar{height:8px;border-radius:4px;background:var(--line);overflow:hidden}
+.pbar i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:14px;min-height:360px}
+.kind{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;gap:8px}
+.kind .tag{color:var(--bad)}
+.qname{font-family:var(--f-display);font-weight:800;font-size:clamp(1.6rem,6vw,2.4rem);text-align:center;overflow-wrap:anywhere;line-height:1.1}
+.task{text-align:center;color:var(--muted);font-size:.92rem}
+.svgbox{color:var(--ink);width:100%;max-width:480px;margin:0 auto;aspect-ratio:440/300}
+.svgbox svg{width:100%;height:100%}
+.ans{display:grid;grid-template-columns:minmax(96px,auto) 1fr;gap:6px 14px;border-top:1px solid var(--line);padding-top:12px}
+.ans dt{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.ans dd{margin:0;min-width:0}
+.ans dd.ind{font-weight:700;color:var(--accent)}
+@media (max-width:480px){.ans{grid-template-columns:1fr;gap:0}.ans dd{margin-bottom:8px}}
+.opts{display:grid;gap:8px}
+.opt{font:inherit;text-align:left;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.opt.ok{border-color:var(--good);background:var(--good);color:var(--card);font-weight:700}
+.opt.no{border-color:var(--bad);color:var(--bad);text-decoration:line-through}
+.opt:disabled{cursor:default}
+.fb{font-size:.92rem}
+.fb b{color:var(--accent)}
+.rate{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--xp);color:var(--card);font-family:var(--f-mono);font-weight:700;padding:8px 14px;border-radius:999px;opacity:0;transition:opacity .25s;pointer-events:none}
+.toast.on{opacity:1}
+.donebox{text-align:center;display:flex;flex-direction:column;gap:12px;align-items:center;padding:20px}
+.big{font-family:var(--f-display);font-weight:800;font-size:2.4rem;color:var(--xp)}
+/* Boss */
+.exam ol{margin:0;padding-left:1.4em;display:grid;gap:8px}
+.exam li{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-width:0}
+.exam li .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center}
+.exam .sol{display:grid;grid-template-columns:minmax(0,220px) 1fr;gap:6px 14px;margin-top:8px;font-size:.88rem}
+.exam .sol .s{color:var(--ink);aspect-ratio:440/300;max-width:100%} .exam .sol .s svg{width:100%;height:100%}
+.exam .q2 .s{color:var(--ink);max-width:340px;aspect-ratio:440/300} .exam .q2 .s svg{width:100%;height:100%}
+@media (max-width:480px){.exam .sol{grid-template-columns:1fr}}
+.checks{display:flex;gap:10px;flex-wrap:wrap;font-size:.85rem}
+.checks label{display:flex;gap:4px;align-items:center;cursor:pointer}
+.timer{font-family:var(--f-mono);font-size:1.4rem;color:var(--xp);font-variant-numeric:tabular-nums}
+.timer.over{color:var(--bad)}
+.score{font-family:var(--f-display);font-weight:800;font-size:1.6rem}
+.foot{font-size:.78rem;color:var(--muted)}
+/* Kühe */
+.cow{display:inline-block;width:64px;height:52px;flex:none}
+.cow svg{width:100%;height:100%;overflow:visible}
+.cow .tail{transform-origin:12px 22px;animation:swish 2.4s ease-in-out infinite}
+.cow .eyes{transform-origin:50px 15px;animation:blink 4.5s infinite}
+.cow .head{transform-origin:46px 26px;animation:nod 3.2s ease-in-out infinite}
+.cow.hop{animation:hop .55s cubic-bezier(.3,1.6,.5,1)}
+.cow.shake .head{animation:shake .5s}
+.titlerow{display:flex;align-items:center;gap:10px}
+.playcow{position:relative}
+.bubble{position:absolute;left:58px;top:-6px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:2px 8px;font-family:var(--f-mono);font-size:.75rem;white-space:nowrap;opacity:0;transition:opacity .2s}
+.bubble.on{opacity:1}
+.runner{position:fixed;left:0;bottom:calc(64px + env(safe-area-inset-bottom,0px));width:90px;height:72px;pointer-events:none;z-index:5;animation:run 3.4s linear forwards}
+.runner .cow{width:90px;height:72px;animation:gallop .35s ease-in-out infinite}
+.runner .bubble{opacity:1;left:70px;top:-14px}
+.herd{display:flex;gap:6px;justify-content:center}
+.herd .cow{animation:dance .9s ease-in-out infinite}
+.herd .cow:nth-child(2){animation-delay:.15s}.herd .cow:nth-child(3){animation-delay:.3s}
+@keyframes swish{0%,100%{transform:rotate(0)}50%{transform:rotate(-28deg)}}
+@keyframes blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+@keyframes nod{0%,100%{transform:rotate(0)}50%{transform:rotate(4deg)}}
+@keyframes hop{0%{transform:translateY(0)}40%{transform:translateY(-16px) rotate(-6deg)}100%{transform:translateY(0)}}
+@keyframes shake{0%,100%{transform:rotate(0)}25%{transform:rotate(-10deg)}75%{transform:rotate(10deg)}}
+@keyframes run{from{transform:translateX(-110px)}to{transform:translateX(calc(100vw + 20px))}}
+@keyframes gallop{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes dance{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-10px) rotate(4deg)}}
+@media (prefers-reduced-motion:reduce){.cow,.cow *,.runner,.herd .cow{animation:none!important}.runner{display:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+.ans dd.sm{color:var(--accent,inherit);font-weight:500}
+
+/* Bea-Edition */
+.stat,.quest,.card,.exam li{border-radius:20px;box-shadow:var(--shadow);border-color:var(--line)}
+.btn{border-radius:999px;font-family:var(--f-display);font-weight:600;letter-spacing:.01em;transition:transform .12s}
+.btn:active{transform:scale(.96)}
+.btn.primary{box-shadow:0 4px 0 -1px color-mix(in srgb,var(--accent) 60%,#000 0%)}
+.day{border-radius:999px;font-family:var(--f-display);font-size:.9rem}
+.day.indtab{border-style:dashed;border-color:var(--xp);color:var(--xp)}
+.day.indtab[aria-pressed="true"]{background:var(--xp);color:var(--card);border-style:solid}
+.opt{border-radius:14px}
+h1{font-size:1.6rem;font-weight:700}
+.hero{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:14px 18px;box-shadow:var(--shadow)}
+.hero .cow{width:92px;height:76px;cursor:pointer}
+.say{position:relative;background:var(--accent-soft);color:var(--ink);border-radius:18px;padding:10px 14px;font-family:var(--f-display);font-weight:500;font-size:1.02rem;line-height:1.3}
+.say::before{content:"";position:absolute;left:-8px;top:50%;margin-top:-8px;border:8px solid transparent;border-right-color:var(--accent-soft);border-left:0}
+.examset{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:.85rem;color:var(--muted)}
+.examset input{font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:10px;padding:4px 8px}
+.sec{font-family:var(--f-display);font-weight:600;font-size:1rem;margin:14px 0 2px;display:flex;align-items:center;gap:8px}
+.sec .pill{font-family:var(--f-mono);font-size:.68rem;padding:2px 8px;border-radius:999px;background:var(--mint);color:var(--good)}
+.sec .pill.bonus{background:var(--xp-soft);color:var(--xp)}
+.secnote{margin:0;font-size:.85rem;color:var(--muted)}
+.bubble{white-space:normal;width:max-content;max-width:min(240px,58vw);font-family:var(--f-display);font-size:.85rem;border-radius:14px;padding:6px 10px;box-shadow:var(--shadow);z-index:3}
+.runner .bubble{max-width:200px}
+.playcow .bubble{left:0;top:calc(100% + 2px)}
+.donebox .say::before{display:none}
+.toast{background:var(--accent)}
+.grass{position:fixed;left:0;right:0;bottom:0;height:18px;pointer-events:none;opacity:.5;background:repeating-linear-gradient(90deg,transparent 0 6px,var(--mint) 6px 9px);mask:linear-gradient(transparent,#000);-webkit-mask:linear-gradient(transparent,#000)}
+
+/* Persisch-Edition: Türkis (Fliesen), Granatapfel, Safran */
+:root{--bg:#f1faf8; --bg2:#fff4dd; --card:#ffffff; --ink:#1f3236; --muted:#5f7a7d; --line:#cfe8e3;
+  --accent:#0f8b8d; --accent-soft:#d7f1ee; --xp:#c2410c; --xp-soft:#fde7d6; --good:#2f9e6e; --bad:#c2334d;
+  --mint:#fdecc8; --shadow:0 6px 18px -8px rgba(15,110,110,.28); color-scheme:light}
+.fa{font-family:"Vazirmatn",system-ui,sans-serif;direction:rtl;unicode-bidi:isolate}
+.qfa{font-family:"Vazirmatn",system-ui,sans-serif;direction:rtl;unicode-bidi:isolate;font-weight:700;font-size:clamp(2rem,9vw,3.2rem);text-align:center;line-height:1.5}
+.qfa.letter{font-size:clamp(4rem,22vw,6.5rem);line-height:1.2}
+.tr{font-family:var(--f-display);font-weight:600;color:var(--accent);text-align:center;font-size:1.15rem}
+.de{font-family:var(--f-display);font-weight:600;font-size:clamp(1.3rem,5vw,1.8rem);text-align:center;line-height:1.2}
+.forms{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;border-top:1px solid var(--line);padding-top:12px;align-items:baseline}
+.forms dt{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.forms dd{margin:0;min-width:0}
+.forms .fa{font-size:1.5rem;font-weight:600;margin-left:8px}
+.opt .fa{font-size:1.25rem;font-weight:600}
+.say-btn{font:inherit;font-size:.8rem;border:1px solid var(--line);background:var(--bg);color:var(--accent);border-radius:999px;padding:4px 10px;cursor:pointer;align-self:center}
+.key{font-size:.82rem;color:var(--muted);background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px 14px}
+.key b{color:var(--accent);font-family:var(--f-display)}
+.bubble{pointer-events:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="titlerow"><h1>Persisch-Weide</h1><span class="fa" style="font-size:1.3rem;color:var(--muted)">فارسی</span></div>
+    <div class="count" id="countdown"></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="lab" id="lvlName">Level 1</div><div class="val mono" id="xp">0 XP</div><div class="lvlbar"><i id="lvlBar"></i></div></div>
+    <div class="stat"><div class="lab">Serie</div><div class="val mono" id="streak">0</div></div>
+    <div class="stat"><div class="lab">Gelernt</div><div class="val mono" id="learned">0</div></div>
+  </div>
+
+  <section id="home">
+    <div class="hero"><span class="cow" id="homeCow" role="button" tabindex="0" aria-label="Kuh antippen für einen neuen Spruch"></span><div class="say" id="homeSay" aria-live="polite"></div></div>
+    <div class="days" role="group" aria-label="Bereich" id="days" style="margin-top:14px"></div>
+    <div class="dayhead" style="margin-top:14px"><h2 id="dayTitle"></h2><p id="dayText"></p></div>
+    <div class="review" style="margin-top:14px" id="reviewBox">
+      <div><b id="dueN">0</b> Karten fällig zur Wiederholung</div>
+      <button class="btn primary" id="reviewBtn">Wiederholen</button>
+    </div>
+    <div class="quests" id="quests" style="margin-top:14px"></div>
+    <div class="key" style="margin-top:18px"><b>Umschrift:</b> â langes a wie in „Vater“ · a kurz, fast wie ä · u langes u · i langes i · kh wie ch in „Bach“ · gh Rachen-r · sh = sch · ch = tsch · j = dsch · zh wie j in „Journal“ · ' kurzer Stimmabsatz. <b>umg.</b> = so spricht man im Alltag (Teheran), <b>schr.</b> = Schriftsprache.</div>
+    <p class="foot" style="margin-top:12px">Falsche Karten kommen nach wenigen Karten wieder, richtige nach 1 h, 8 h, 1 Tag, 2 Tagen. Gelernt = zweimal hintereinander richtig. Der Fortschritt bleibt nur in diesem Browser. <button class="link" id="resetBtn">Fortschritt zurücksetzen</button></p>
+    <p class="foot"><a class="link" href="/">weitergehts.online</a> · <a class="link" href="/impressum/">Impressum</a> · <a class="link" href="/datenschutz/">Datenschutz</a></p>
+  </section>
+
+  <section id="play" hidden>
+    <div class="playhead"><div class="titlerow playcow"><span class="cow" id="playCow" aria-hidden="true"></span><span class="bubble" id="moo"></span><h2 id="playTitle"></h2></div><button class="link" id="quitBtn">Zur Übersicht</button></div>
+    <div class="pbar" style="margin-top:8px"><i id="pbar"></i></div>
+    <p class="foot mono" id="pinfo" style="margin:6px 0 10px"></p>
+    <div class="card" id="card"></div>
+  </section>
+</div>
+<div class="toast" id="toast"></div>
+<div class="grass" aria-hidden="true"></div>
+<script type="application/json" id="data">{"cards": {"l:0": {"ch": "ا", "name": "alef", "snd": "â oder a (Wortanfang)", "ex": ["آب", "âb", "Wasser"], "nl": true}, "l:1": {"ch": "ب", "name": "be", "snd": "b", "ex": ["بابا", "bâbâ", "Papa"], "nl": false}, "l:2": {"ch": "پ", "name": "pe", "snd": "p", "ex": ["پدر", "pedar", "Vater"], "nl": false}, "l:3": {"ch": "ت", "name": "te", "snd": "t", "ex": ["توت", "tut", "Maulbeere"], "nl": false}, "l:4": {"ch": "ث", "name": "se", "snd": "s (nur arabische Wörter)", "ex": ["مثل", "mesl", "wie"], "nl": false}, "l:5": {"ch": "ج", "name": "jim", "snd": "dsch (j)", "ex": ["جان", "jân", "Seele, Liebling"], "nl": false}, "l:6": {"ch": "چ", "name": "che", "snd": "tsch (ch)", "ex": ["چای", "chây", "Tee"], "nl": false}, "l:7": {"ch": "ح", "name": "he-ye jimi", "snd": "h", "ex": ["حال", "hâl", "Befinden"], "nl": false}, "l:8": {"ch": "خ", "name": "khe", "snd": "ch wie in „Bach“ (kh)", "ex": ["خوب", "khub", "gut"], "nl": false}, "l:9": {"ch": "د", "name": "dâl", "snd": "d", "ex": ["دست", "dast", "Hand"], "nl": true}, "l:10": {"ch": "ذ", "name": "zâl", "snd": "z = stimmhaftes s (arab. Wörter)", "ex": ["ذرت", "zorrat", "Mais"], "nl": true}, "l:11": {"ch": "ر", "name": "re", "snd": "gerolltes r", "ex": ["روز", "ruz", "Tag"], "nl": true}, "l:12": {"ch": "ز", "name": "ze", "snd": "z = stimmhaftes s wie in „Sonne“", "ex": ["زن", "zan", "Frau"], "nl": true}, "l:13": {"ch": "ژ", "name": "zhe", "snd": "zh wie das j in „Journal“", "ex": ["ژاپن", "zhâpon", "Japan"], "nl": true}, "l:14": {"ch": "س", "name": "sin", "snd": "s (scharf)", "ex": ["سلام", "salâm", "Hallo"], "nl": false}, "l:15": {"ch": "ش", "name": "shin", "snd": "sch (sh)", "ex": ["شب", "shab", "Nacht"], "nl": false}, "l:16": {"ch": "ص", "name": "sâd", "snd": "s (arab. Wörter)", "ex": ["صبح", "sobh", "Morgen"], "nl": false}, "l:17": {"ch": "ض", "name": "zâd", "snd": "z (arab. Wörter)", "ex": ["ضعیف", "za'if", "schwach"], "nl": false}, "l:18": {"ch": "ط", "name": "tâ", "snd": "t (arab. Wörter)", "ex": ["طلا", "talâ", "Gold"], "nl": false}, "l:19": {"ch": "ظ", "name": "zâ", "snd": "z (arab. Wörter)", "ex": ["ظهر", "zohr", "Mittag"], "nl": false}, "l:20": {"ch": "ع", "name": "eyn", "snd": "Stimmabsatz (') oder stumm", "ex": ["عشق", "eshgh", "Liebe"], "nl": false}, "l:21": {"ch": "غ", "name": "gheyn", "snd": "gh = Rachen-r", "ex": ["غذا", "ghazâ", "Essen"], "nl": false}, "l:22": {"ch": "ف", "name": "fe", "snd": "f", "ex": ["فارسی", "fârsi", "Persisch"], "nl": false}, "l:23": {"ch": "ق", "name": "ghâf", "snd": "gh = Rachen-r (wie غ)", "ex": ["قند", "ghand", "Würfelzucker"], "nl": false}, "l:24": {"ch": "ک", "name": "kâf", "snd": "k", "ex": ["کتاب", "ketâb", "Buch"], "nl": false}, "l:25": {"ch": "گ", "name": "gâf", "snd": "g", "ex": ["گل", "gol", "Blume"], "nl": false}, "l:26": {"ch": "ل", "name": "lâm", "snd": "l", "ex": ["لب", "lab", "Lippe"], "nl": false}, "l:27": {"ch": "م", "name": "mim", "snd": "m", "ex": ["مادر", "mâdar", "Mutter"], "nl": false}, "l:28": {"ch": "ن", "name": "nun", "snd": "n", "ex": ["نان", "nân", "Brot"], "nl": false}, "l:29": {"ch": "و", "name": "vâv", "snd": "v, u oder o", "ex": ["وقت", "vaght", "Zeit"], "nl": true}, "l:30": {"ch": "ه", "name": "he-ye do-cheshm", "snd": "h, am Wortende oft e", "ex": ["خانه", "khâne", "Haus"], "nl": false}, "l:31": {"ch": "ی", "name": "ye", "snd": "y oder i", "ex": ["یک", "yek", "eins"], "nl": false}, "r:0": {"fa": "آب", "tr": "âb", "de": "Wasser"}, "r:1": {"fa": "بابا", "tr": "bâbâ", "de": "Papa"}, "r:2": {"fa": "مامان", "tr": "mâmân", "de": "Mama"}, "r:3": {"fa": "سلام", "tr": "salâm", "de": "Hallo"}, "r:4": {"fa": "خوب", "tr": "khub", "de": "gut"}, "r:5": {"fa": "نان", "tr": "nân", "de": "Brot"}, "r:6": {"fa": "شب", "tr": "shab", "de": "Nacht"}, "r:7": {"fa": "روز", "tr": "ruz", "de": "Tag"}, "r:8": {"fa": "گل", "tr": "gol", "de": "Blume"}, "r:9": {"fa": "چای", "tr": "chây", "de": "Tee"}, "r:10": {"fa": "کتاب", "tr": "ketâb", "de": "Buch"}, "r:11": {"fa": "دوست", "tr": "dust", "de": "Freund"}, "r:12": {"fa": "زن", "tr": "zan", "de": "Frau"}, "r:13": {"fa": "شیر", "tr": "shir", "de": "Milch / Löwe"}, "r:14": {"fa": "سیب", "tr": "sib", "de": "Apfel"}, "r:15": {"fa": "انار", "tr": "anâr", "de": "Granatapfel"}, "r:16": {"fa": "پول", "tr": "pul", "de": "Geld"}, "r:17": {"fa": "گاو", "tr": "gâv", "de": "Kuh"}, "r:18": {"fa": "خانه", "tr": "khâne", "de": "Haus"}, "r:19": {"fa": "ایران", "tr": "irân", "de": "Iran"}, "r:20": {"fa": "تهران", "tr": "tehrân", "de": "Teheran"}, "r:21": {"fa": "فارسی", "tr": "fârsi", "de": "Persisch"}, "r:22": {"fa": "دل", "tr": "del", "de": "Herz (Gefühl)"}, "r:23": {"fa": "ماه", "tr": "mâh", "de": "Mond / Monat"}, "p:0": {"de": "Hallo", "fu": "سلام", "tu": "salâm", "fs": null, "ts": null, "note": "Passt immer, umgangssprachlich und förmlich."}, "p:1": {"de": "Wie geht's?", "fu": "چطوری؟", "tu": "chetori?", "fs": "حالت چطور است؟", "ts": "hâlet chetor ast?", "note": "Unter Freunden auch einfach: خوبی؟ khubi? – Bist du gut?"}, "p:2": {"de": "Mir geht's gut.", "fu": "خوبم", "tu": "khubam", "fs": "خوب هستم", "ts": "khub hastam", "note": "khub = gut, -am = ich bin."}, "p:3": {"de": "Danke", "fu": "مرسی", "tu": "mersi", "fs": "متشکرم", "ts": "motashakkeram", "note": "Auch sehr häufig: ممنون mamnun."}, "p:4": {"de": "Bitte / Gern geschehen", "fu": "خواهش می‌کنم", "tu": "khâhesh mikonam", "fs": null, "ts": null, "note": "Wörtlich: Ich bitte (dich)."}, "p:5": {"de": "Ja", "fu": "آره", "tu": "âre", "fs": "بله", "ts": "bale", "note": "âre ist locker, bale höflich."}, "p:6": {"de": "Nein", "fu": "نه", "tu": "na", "fs": null, "ts": null, "note": ""}, "p:7": {"de": "Entschuldigung", "fu": "ببخشید", "tu": "bebakhshid", "fs": null, "ts": null, "note": "Auch für: Darf ich kurz stören?"}, "p:8": {"de": "Wie heißt du?", "fu": "اسمت چیه؟", "tu": "esmet chiye?", "fs": "اسم شما چیست؟", "ts": "esm-e shomâ chist?", "note": "esm = Name."}, "p:9": {"de": "Ich heiße …", "fu": "اسمم … ه", "tu": "esmam …-e", "fs": "اسم من … است", "ts": "esm-e man … ast", "note": ""}, "p:10": {"de": "Woher kommst du?", "fu": "اهل کجایی؟", "tu": "ahl-e kojâyi?", "fs": "اهل کجا هستید؟", "ts": "ahl-e kojâ hastid?", "note": "kojâ = wo."}, "p:11": {"de": "Ich komme aus Deutschland.", "fu": "من اهل آلمانم", "tu": "man ahl-e âlmânam", "fs": "من اهل آلمان هستم", "ts": "man ahl-e âlmân hastam", "note": "âlmân = Deutschland."}, "p:12": {"de": "Ich verstehe nicht.", "fu": "نمی‌فهمم", "tu": "nemifahmam", "fs": null, "ts": null, "note": "ne- verneint, mi- = Präsens."}, "p:13": {"de": "Ich spreche ein bisschen Persisch.", "fu": "یه کم فارسی بلدم", "tu": "ye kam fârsi baladam", "fs": "کمی فارسی می‌دانم", "ts": "kami fârsi midânam", "note": "balad = können, sich auskennen."}, "p:14": {"de": "Noch einmal, bitte.", "fu": "یه بار دیگه بگو", "tu": "ye bâr dige begu", "fs": "یک بار دیگر بگویید", "ts": "yek bâr-e digar beguyid", "note": ""}, "p:15": {"de": "Langsamer, bitte.", "fu": "آروم‌تر لطفاً", "tu": "ârumtar lotfan", "fs": "آرام‌تر لطفاً", "ts": "ârâmtar lotfan", "note": "lotfan = bitte (als Bitte)."}, "p:16": {"de": "Ich weiß nicht.", "fu": "نمی‌دونم", "tu": "nemidunam", "fs": "نمی‌دانم", "ts": "nemidânam", "note": "Umgangssprache: â vor n wird oft zu u."}, "p:17": {"de": "Kein Problem.", "fu": "اشکال نداره", "tu": "eshkâl nadâre", "fs": "اشکالی ندارد", "ts": "eshkâli nadârad", "note": ""}, "p:18": {"de": "Guten Morgen", "fu": "صبح بخیر", "tu": "sobh bekheyr", "fs": null, "ts": null, "note": ""}, "p:19": {"de": "Gute Nacht", "fu": "شب بخیر", "tu": "shab bekheyr", "fs": null, "ts": null, "note": ""}, "p:20": {"de": "Tschüss", "fu": "خداحافظ", "tu": "khodâhâfez", "fs": null, "ts": null, "note": "Wörtlich: Gott beschütze (dich)."}, "p:21": {"de": "Bis morgen", "fu": "تا فردا", "tu": "tâ fardâ", "fs": null, "ts": null, "note": ""}, "p:22": {"de": "Guten Appetit", "fu": "نوش جان", "tu": "nush-e jân", "fs": null, "ts": null, "note": "Sagt man auch nach dem Essen: Wohl bekomm's."}, "p:23": {"de": "Lecker!", "fu": "خوشمزه‌ست", "tu": "khoshmazast", "fs": "خوشمزه است", "ts": "khoshmaze ast", "note": "Begeistert auch: به به! bah bah!"}, "p:24": {"de": "Ich habe Hunger.", "fu": "گشنمه", "tu": "goshname", "fs": "گرسنه هستم", "ts": "gorosne hastam", "note": ""}, "p:25": {"de": "Ich bin müde.", "fu": "خسته‌م", "tu": "khastam", "fs": "خسته هستم", "ts": "khaste hastam", "note": ""}, "p:26": {"de": "Was machst du?", "fu": "چیکار می‌کنی؟", "tu": "chikâr mikoni?", "fs": "چه کار می‌کنی؟", "ts": "che kâr mikoni?", "note": ""}, "p:27": {"de": "Komm her.", "fu": "بیا اینجا", "tu": "biyâ injâ", "fs": null, "ts": null, "note": ""}, "p:28": {"de": "Wie viel kostet das?", "fu": "این چنده؟", "tu": "in chande?", "fs": "قیمت این چند است؟", "ts": "gheymat-e in chand ast?", "note": ""}, "p:29": {"de": "Wo ist die Toilette?", "fu": "دستشویی کجاست؟", "tu": "dastshuyi kojâst?", "fs": null, "ts": null, "note": ""}, "p:30": {"de": "Das ist schön.", "fu": "قشنگه", "tu": "ghashange", "fs": "قشنگ است", "ts": "ghashang ast", "note": "Umgangssprache: ast wird zu -e."}, "p:31": {"de": "Bravo! / Gut gemacht!", "fu": "آفرین", "tu": "âfarin", "fs": null, "ts": null, "note": "Unter Freunden auch: دمت گرم damet garm."}, "p:32": {"de": "Mein Schatz", "fu": "عزیزم", "tu": "azizam", "fs": null, "ts": null, "note": "aziz = lieb, -am = mein."}, "p:33": {"de": "Ich liebe dich.", "fu": "دوستت دارم", "tu": "dustet dâram", "fs": null, "ts": "dustat dâram", "note": "Wörtlich: Ich habe dich als Freund."}, "p:34": {"de": "Ich vermisse dich.", "fu": "دلم برات تنگ شده", "tu": "delam barât tang shode", "fs": "دلم برایت تنگ شده است", "ts": "delam barâyat tang shode ast", "note": "Wörtlich: Mein Herz ist eng geworden für dich."}, "p:35": {"de": "Du bist hübsch.", "fu": "خوشگلی", "tu": "khoshgeli", "fs": "تو زیبا هستی", "ts": "to zibâ hasti", "note": ""}, "p:36": {"de": "Alles Gute zum Geburtstag!", "fu": "تولدت مبارک", "tu": "tavallodet mobârak", "fs": null, "ts": null, "note": ""}, "p:37": {"de": "Ich opfere mich für dich (Kosewort)", "fu": "قربونت برم", "tu": "ghorbunet beram", "fs": "قربانت بروم", "ts": "ghorbânat beravam", "note": "Typisch persische Zärtlichkeit, auch als Danke unter Liebsten."}, "w:0": {"fa": "مادر", "tr": "mâdar", "de": "Mutter", "fu": "مامان", "tu": "mâmân", "th": "Familie"}, "w:1": {"fa": "پدر", "tr": "pedar", "de": "Vater", "fu": "بابا", "tu": "bâbâ", "th": "Familie"}, "w:2": {"fa": "برادر", "tr": "barâdar", "de": "Bruder", "fu": "داداش", "tu": "dâdâsh", "th": "Familie"}, "w:3": {"fa": "خواهر", "tr": "khâhar", "de": "Schwester", "fu": "آبجی", "tu": "âbji", "th": "Familie"}, "w:4": {"fa": "پدربزرگ", "tr": "pedarbozorg", "de": "Großvater", "fu": null, "tu": null, "th": "Familie"}, "w:5": {"fa": "مادربزرگ", "tr": "mâdarbozorg", "de": "Großmutter", "fu": null, "tu": null, "th": "Familie"}, "w:6": {"fa": "بچه", "tr": "bachche", "de": "Kind", "fu": null, "tu": null, "th": "Familie"}, "w:7": {"fa": "دوست", "tr": "dust", "de": "Freund, Freundin", "fu": null, "tu": null, "th": "Familie"}, "w:8": {"fa": "شوهر", "tr": "showhar", "de": "Ehemann", "fu": null, "tu": null, "th": "Familie"}, "w:9": {"fa": "زن", "tr": "zan", "de": "Frau, Ehefrau", "fu": null, "tu": null, "th": "Familie"}, "w:10": {"fa": "خانواده", "tr": "khânevâde", "de": "Familie", "fu": null, "tu": null, "th": "Familie"}, "w:11": {"fa": "عمو", "tr": "amu", "de": "Onkel (Vaterseite)", "fu": null, "tu": null, "th": "Familie"}, "w:12": {"fa": "دایی", "tr": "dâyi", "de": "Onkel (Mutterseite)", "fu": null, "tu": null, "th": "Familie"}, "w:13": {"fa": "عمه", "tr": "amme", "de": "Tante (Vaterseite)", "fu": null, "tu": null, "th": "Familie"}, "w:14": {"fa": "خاله", "tr": "khâle", "de": "Tante (Mutterseite)", "fu": null, "tu": null, "th": "Familie"}, "w:15": {"fa": "نان", "tr": "nân", "de": "Brot", "fu": null, "tu": null, "th": "Essen & Trinken"}, "w:16": {"fa": "آب", "tr": "âb", "de": "Wasser", "fu": null, "tu": null, "th": "Essen & Trinken"}, "w:17": {"fa": "چای", "tr": "chây", "de": "Tee", "fu": null, "tu": null, "th": "Essen & Trinken"}, "w:18": {"fa": "قهوه", "tr": "ghahve", "de": "Kaffee", "fu": null, "tu": null, "th": "Essen & Trinken"}, "w:19": {"fa": "شیر", "tr": "shir", "de": "Milch", "fu": null, "tu": null, "th": "Essen & Trinken"}, "w:20": {"fa": "برنج", "tr": "berenj", "de": "Reis", "fu": null, "tu": null, "th": "Essen & Trinken"}, "w:21": {"fa": "مرغ", "tr": "morgh", "de": "Huhn", "fu": null, "tu": null, "th": "Essen & Trinken"}, "w:22": {"fa": "گوشت", "tr": "gusht", "de": "Fleisch", "fu": null, "tu": null, "th": "Essen & Trinken"}, "w:23": {"fa": "سبزی", "tr": "sabzi", "de": "Kräuter", "fu": null, "tu": null, "th": "Essen & Trinken"}, "w:24": {"fa": "ماست", "tr": "mâst", "de": "Joghurt", "fu": null, "tu": null, "th": "Essen & Trinken"}, "w:25": {"fa": "پنیر", "tr": "panir", "de": "Käse", "fu": null, "tu": null, "th": "Essen & Trinken"}, "w:26": {"fa": "تخم‌مرغ", "tr": "tokhm-e morgh", "de": "Ei", "fu": null, "tu": null, "th": "Essen & Trinken"}, "w:27": {"fa": "میوه", "tr": "mive", "de": "Obst", "fu": null, "tu": null, "th": "Essen & Trinken"}, "w:28": {"fa": "سیب", "tr": "sib", "de": "Apfel", "fu": null, "tu": null, "th": "Essen & Trinken"}, "w:29": {"fa": "انار", "tr": "anâr", "de": "Granatapfel", "fu": null, "tu": null, "th": "Essen & Trinken"}, "w:30": {"fa": "هندوانه", "tr": "hendevâne", "de": "Wassermelone", "fu": null, "tu": null, "th": "Essen & Trinken"}, "w:31": {"fa": "شکر", "tr": "shekar", "de": "Zucker", "fu": null, "tu": null, "th": "Essen & Trinken"}, "w:32": {"fa": "نمک", "tr": "namak", "de": "Salz", "fu": null, "tu": null, "th": "Essen & Trinken"}, "w:33": {"fa": "خورش", "tr": "khoresh", "de": "Schmorgericht", "fu": null, "tu": null, "th": "Essen & Trinken"}, "w:34": {"fa": "ته‌دیگ", "tr": "tahdig", "de": "knusprige Reiskruste", "fu": null, "tu": null, "th": "Essen & Trinken"}, "w:35": {"fa": "صفر · ۰", "tr": "sefr", "de": "0", "fu": null, "tu": null, "th": "Zahlen"}, "w:36": {"fa": "یک · ۱", "tr": "yek", "de": "1", "fu": null, "tu": null, "th": "Zahlen"}, "w:37": {"fa": "دو · ۲", "tr": "do", "de": "2", "fu": null, "tu": null, "th": "Zahlen"}, "w:38": {"fa": "سه · ۳", "tr": "se", "de": "3", "fu": null, "tu": null, "th": "Zahlen"}, "w:39": {"fa": "چهار · ۴", "tr": "chahâr", "de": "4", "fu": null, "tu": null, "th": "Zahlen"}, "w:40": {"fa": "پنج · ۵", "tr": "panj", "de": "5", "fu": null, "tu": null, "th": "Zahlen"}, "w:41": {"fa": "شش · ۶", "tr": "shesh", "de": "6", "fu": null, "tu": null, "th": "Zahlen"}, "w:42": {"fa": "هفت · ۷", "tr": "haft", "de": "7", "fu": null, "tu": null, "th": "Zahlen"}, "w:43": {"fa": "هشت · ۸", "tr": "hasht", "de": "8", "fu": null, "tu": null, "th": "Zahlen"}, "w:44": {"fa": "نه · ۹", "tr": "noh", "de": "9", "fu": null, "tu": null, "th": "Zahlen"}, "w:45": {"fa": "ده · ۱۰", "tr": "dah", "de": "10", "fu": null, "tu": null, "th": "Zahlen"}, "w:46": {"fa": "بیست · ۲۰", "tr": "bist", "de": "20", "fu": null, "tu": null, "th": "Zahlen"}, "w:47": {"fa": "صد · ۱۰۰", "tr": "sad", "de": "100", "fu": null, "tu": null, "th": "Zahlen"}, "w:48": {"fa": "قرمز", "tr": "ghermez", "de": "rot", "fu": null, "tu": null, "th": "Farben"}, "w:49": {"fa": "آبی", "tr": "âbi", "de": "blau", "fu": null, "tu": null, "th": "Farben"}, "w:50": {"fa": "سبز", "tr": "sabz", "de": "grün", "fu": null, "tu": null, "th": "Farben"}, "w:51": {"fa": "زرد", "tr": "zard", "de": "gelb", "fu": null, "tu": null, "th": "Farben"}, "w:52": {"fa": "سفید", "tr": "sefid", "de": "weiß", "fu": null, "tu": null, "th": "Farben"}, "w:53": {"fa": "سیاه", "tr": "siyâh", "de": "schwarz", "fu": null, "tu": null, "th": "Farben"}, "w:54": {"fa": "صورتی", "tr": "surati", "de": "rosa", "fu": null, "tu": null, "th": "Farben"}, "w:55": {"fa": "نارنجی", "tr": "nârenji", "de": "orange", "fu": null, "tu": null, "th": "Farben"}, "w:56": {"fa": "بنفش", "tr": "banafsh", "de": "lila", "fu": null, "tu": null, "th": "Farben"}, "w:57": {"fa": "سر", "tr": "sar", "de": "Kopf", "fu": null, "tu": null, "th": "Körper"}, "w:58": {"fa": "چشم", "tr": "cheshm", "de": "Auge", "fu": null, "tu": null, "th": "Körper"}, "w:59": {"fa": "گوش", "tr": "gush", "de": "Ohr", "fu": null, "tu": null, "th": "Körper"}, "w:60": {"fa": "دهان", "tr": "dahân", "de": "Mund", "fu": "دهن", "tu": "dahan", "th": "Körper"}, "w:61": {"fa": "مو", "tr": "mu", "de": "Haar", "fu": null, "tu": null, "th": "Körper"}, "w:62": {"fa": "صورت", "tr": "surat", "de": "Gesicht", "fu": null, "tu": null, "th": "Körper"}, "w:63": {"fa": "دست", "tr": "dast", "de": "Hand, Arm", "fu": null, "tu": null, "th": "Körper"}, "w:64": {"fa": "پا", "tr": "pâ", "de": "Fuß, Bein", "fu": null, "tu": null, "th": "Körper"}, "w:65": {"fa": "دل", "tr": "del", "de": "Herz (Gefühl), Bauch", "fu": null, "tu": null, "th": "Körper"}, "w:66": {"fa": "قلب", "tr": "ghalb", "de": "Herz (Organ)", "fu": null, "tu": null, "th": "Körper"}, "w:67": {"fa": "خانه", "tr": "khâne", "de": "Haus, Zuhause", "fu": "خونه", "tu": "khune", "th": "Alltag"}, "w:68": {"fa": "خیابان", "tr": "khiyâbân", "de": "Straße", "fu": "خیابون", "tu": "khiyâbun", "th": "Alltag"}, "w:69": {"fa": "شهر", "tr": "shahr", "de": "Stadt", "fu": null, "tu": null, "th": "Alltag"}, "w:70": {"fa": "کار", "tr": "kâr", "de": "Arbeit", "fu": null, "tu": null, "th": "Alltag"}, "w:71": {"fa": "مدرسه", "tr": "madrese", "de": "Schule", "fu": null, "tu": null, "th": "Alltag"}, "w:72": {"fa": "دانشگاه", "tr": "dâneshgâh", "de": "Universität", "fu": null, "tu": null, "th": "Alltag"}, "w:73": {"fa": "ماشین", "tr": "mâshin", "de": "Auto", "fu": null, "tu": null, "th": "Alltag"}, "w:74": {"fa": "پول", "tr": "pul", "de": "Geld", "fu": null, "tu": null, "th": "Alltag"}, "w:75": {"fa": "کتاب", "tr": "ketâb", "de": "Buch", "fu": null, "tu": null, "th": "Alltag"}, "w:76": {"fa": "گربه", "tr": "gorbe", "de": "Katze", "fu": null, "tu": null, "th": "Alltag"}, "w:77": {"fa": "سگ", "tr": "sag", "de": "Hund", "fu": null, "tu": null, "th": "Alltag"}, "w:78": {"fa": "گاو", "tr": "gâv", "de": "Kuh", "fu": null, "tu": null, "th": "Alltag"}, "w:79": {"fa": "روز", "tr": "ruz", "de": "Tag", "fu": null, "tu": null, "th": "Alltag"}, "w:80": {"fa": "شب", "tr": "shab", "de": "Nacht", "fu": null, "tu": null, "th": "Alltag"}, "w:81": {"fa": "امروز", "tr": "emruz", "de": "heute", "fu": null, "tu": null, "th": "Alltag"}, "w:82": {"fa": "فردا", "tr": "fardâ", "de": "morgen", "fu": null, "tu": null, "th": "Alltag"}, "w:83": {"fa": "دیروز", "tr": "diruz", "de": "gestern", "fu": null, "tu": null, "th": "Alltag"}, "w:84": {"fa": "الان", "tr": "alân", "de": "jetzt", "fu": null, "tu": null, "th": "Alltag"}, "w:85": {"fa": "هوا", "tr": "havâ", "de": "Wetter, Luft", "fu": null, "tu": null, "th": "Alltag"}, "w:86": {"fa": "خوب", "tr": "khub", "de": "gut", "fu": null, "tu": null, "th": "Eigenschaften"}, "w:87": {"fa": "بد", "tr": "bad", "de": "schlecht", "fu": null, "tu": null, "th": "Eigenschaften"}, "w:88": {"fa": "بزرگ", "tr": "bozorg", "de": "groß", "fu": null, "tu": null, "th": "Eigenschaften"}, "w:89": {"fa": "کوچک", "tr": "kuchek", "de": "klein", "fu": "کوچیک", "tu": "kuchik", "th": "Eigenschaften"}, "w:90": {"fa": "گرم", "tr": "garm", "de": "warm", "fu": null, "tu": null, "th": "Eigenschaften"}, "w:91": {"fa": "سرد", "tr": "sard", "de": "kalt", "fu": null, "tu": null, "th": "Eigenschaften"}, "w:92": {"fa": "خسته", "tr": "khaste", "de": "müde", "fu": null, "tu": null, "th": "Eigenschaften"}, "w:93": {"fa": "خوشحال", "tr": "khoshhâl", "de": "froh, glücklich", "fu": null, "tu": null, "th": "Eigenschaften"}, "w:94": {"fa": "ناراحت", "tr": "nârâhat", "de": "traurig, verstimmt", "fu": null, "tu": null, "th": "Eigenschaften"}, "w:95": {"fa": "گرسنه", "tr": "gorosne", "de": "hungrig", "fu": "گشنه", "tu": "goshne", "th": "Eigenschaften"}, "w:96": {"fa": "زیبا", "tr": "zibâ", "de": "schön", "fu": null, "tu": null, "th": "Eigenschaften"}, "w:97": {"fa": "قشنگ", "tr": "ghashang", "de": "hübsch", "fu": null, "tu": null, "th": "Eigenschaften"}, "w:98": {"fa": "نو", "tr": "now", "de": "neu", "fu": null, "tu": null, "th": "Eigenschaften"}, "w:99": {"fa": "قدیمی", "tr": "ghadimi", "de": "alt (Dinge)", "fu": null, "tu": null, "th": "Eigenschaften"}, "w:100": {"fa": "پیر", "tr": "pir", "de": "alt (Menschen)", "fu": null, "tu": null, "th": "Eigenschaften"}, "w:101": {"fa": "من", "tr": "man", "de": "ich", "fu": null, "tu": null, "th": "Wer, was, wo"}, "w:102": {"fa": "تو", "tr": "to", "de": "du", "fu": null, "tu": null, "th": "Wer, was, wo"}, "w:103": {"fa": "او", "tr": "u", "de": "er, sie", "fu": "اون", "tu": "un", "th": "Wer, was, wo"}, "w:104": {"fa": "ما", "tr": "mâ", "de": "wir", "fu": null, "tu": null, "th": "Wer, was, wo"}, "w:105": {"fa": "شما", "tr": "shomâ", "de": "ihr; Sie (höflich)", "fu": null, "tu": null, "th": "Wer, was, wo"}, "w:106": {"fa": "آنها", "tr": "ânhâ", "de": "sie (Plural)", "fu": "اونا", "tu": "unâ", "th": "Wer, was, wo"}, "w:107": {"fa": "چه", "tr": "che", "de": "was", "fu": "چی", "tu": "chi", "th": "Wer, was, wo"}, "w:108": {"fa": "کجا", "tr": "kojâ", "de": "wo, wohin", "fu": null, "tu": null, "th": "Wer, was, wo"}, "w:109": {"fa": "چرا", "tr": "cherâ", "de": "warum", "fu": null, "tu": null, "th": "Wer, was, wo"}, "w:110": {"fa": "چطور", "tr": "chetor", "de": "wie", "fu": null, "tu": null, "th": "Wer, was, wo"}, "w:111": {"fa": "چند", "tr": "chand", "de": "wie viel", "fu": null, "tu": null, "th": "Wer, was, wo"}, "w:112": {"fa": "رفتن", "tr": "raftan", "de": "gehen", "fu": null, "tu": null, "th": "Verben", "ich": "می‌روم", "ichtr": "miravam", "umg": ["می‌رم", "miram"]}, "w:113": {"fa": "آمدن", "tr": "âmadan", "de": "kommen", "fu": null, "tu": null, "th": "Verben", "ich": "می‌آیم", "ichtr": "miâyam", "umg": ["میام", "miyâm"]}, "w:114": {"fa": "خوردن", "tr": "khordan", "de": "essen (umg. auch: trinken)", "fu": null, "tu": null, "th": "Verben", "ich": "می‌خورم", "ichtr": "mikhoram", "umg": null}, "w:115": {"fa": "دیدن", "tr": "didan", "de": "sehen", "fu": null, "tu": null, "th": "Verben", "ich": "می‌بینم", "ichtr": "mibinam", "umg": null}, "w:116": {"fa": "گفتن", "tr": "goftan", "de": "sagen", "fu": null, "tu": null, "th": "Verben", "ich": "می‌گویم", "ichtr": "miguyam", "umg": ["می‌گم", "migam"]}, "w:117": {"fa": "خواستن", "tr": "khâstan", "de": "wollen", "fu": null, "tu": null, "th": "Verben", "ich": "می‌خواهم", "ichtr": "mikhâham", "umg": ["می‌خوام", "mikhâm"]}, "w:118": {"fa": "داشتن", "tr": "dâshtan", "de": "haben", "fu": null, "tu": null, "th": "Verben", "ich": "دارم", "ichtr": "dâram", "umg": null}, "w:119": {"fa": "کردن", "tr": "kardan", "de": "machen, tun", "fu": null, "tu": null, "th": "Verben", "ich": "می‌کنم", "ichtr": "mikonam", "umg": null}, "w:120": {"fa": "دانستن", "tr": "dânestan", "de": "wissen", "fu": null, "tu": null, "th": "Verben", "ich": "می‌دانم", "ichtr": "midânam", "umg": ["می‌دونم", "midunam"]}, "w:121": {"fa": "خوابیدن", "tr": "khâbidan", "de": "schlafen", "fu": null, "tu": null, "th": "Verben", "ich": "می‌خوابم", "ichtr": "mikhâbam", "umg": null}, "w:122": {"fa": "خریدن", "tr": "kharidan", "de": "kaufen", "fu": null, "tu": null, "th": "Verben", "ich": "می‌خرم", "ichtr": "mikharam", "umg": null}, "w:123": {"fa": "نوشتن", "tr": "neveshtan", "de": "schreiben", "fu": null, "tu": null, "th": "Verben", "ich": "می‌نویسم", "ichtr": "minevisam", "umg": null}, "w:124": {"fa": "خواندن", "tr": "khândan", "de": "lesen, singen", "fu": null, "tu": null, "th": "Verben", "ich": "می‌خوانم", "ichtr": "mikhânam", "umg": ["می‌خونم", "mikhunam"]}, "w:125": {"fa": "فهمیدن", "tr": "fahmidan", "de": "verstehen", "fu": null, "tu": null, "th": "Verben", "ich": "می‌فهمم", "ichtr": "mifahmam", "umg": null}, "w:126": {"fa": "دوست داشتن", "tr": "dust dâshtan", "de": "mögen, lieben", "fu": null, "tu": null, "th": "Verben", "ich": "دوست دارم", "ichtr": "dust dâram", "umg": null}, "g:0": {"q": "In welche Richtung liest man Persisch?", "a": "Von rechts nach links", "w": ["Von links nach rechts", "Von oben nach unten", "Beides geht"], "ex": "Wörter und Sätze laufen von rechts nach links. Zahlen schreibt man aber von links nach rechts: ۲۰ = 20."}, "g:1": {"q": "Welche Vokale schreibt man meistens NICHT?", "a": "Die kurzen: a, e, o", "w": ["Die langen: â, i, u", "Gar keine", "Alle"], "ex": "Nur â, i, u stehen im Wort. ketâb (کتاب) schreibt man k-t-â-b, das e fehlt."}, "g:2": {"q": "Wie heißt „er“ und „sie“ (Einzahl)?", "a": "Beides u (او)", "w": ["u = er, in = sie", "Es gibt nur „er“", "man"], "ex": "Persisch hat kein grammatisches Geschlecht. Kein der/die/das, kein er/sie."}, "g:3": {"q": "Wo steht das Verb im Satz?", "a": "Am Ende", "w": ["Am Anfang", "An zweiter Stelle", "Egal"], "ex": "Subjekt – Objekt – Verb: man chây mikhoram = ich Tee trinke."}, "g:4": {"q": "Was bedeutet khaste-am (خسته‌ام)?", "a": "Ich bin müde", "w": ["Du bist müde", "Ich war müde", "Er ist müde"], "ex": "Die Endungen für „sein“: -am ich, -i du, -e/ast er/sie, -im wir, -id ihr, -and sie."}, "g:5": {"q": "Was bedeutet khaste-i (خسته‌ای)?", "a": "Du bist müde", "w": ["Ich bin müde", "Wir sind müde", "Bist du da?"], "ex": "-i = du bist. Als Frage reicht der Tonfall: khaste-i? = Bist du müde?"}, "g:6": {"q": "Wie bildet man das Präsens?", "a": "mi- + Stamm + Endung", "w": ["Stamm + -tan", "be- + Stamm", "Nur die Endung"], "ex": "mi-rav-am = ich gehe, mi-rav-i = du gehst. Ausnahme: dâram (haben) ohne mi-."}, "g:7": {"q": "Wie verneint man ein Verb?", "a": "ne-/na- davor", "w": ["-na hinten dran", "nist am Satzende", "Gar nicht, nur Tonfall"], "ex": "mikhâm → nemikhâm (ich will nicht), dâram → nadâram (ich habe nicht)."}, "g:8": {"q": "Was macht das -e in ketâb-e khub?", "a": "Verbindet Nomen und Adjektiv", "w": ["Macht den Plural", "Heißt „ist“", "Verneint"], "ex": "Das Ezâfe -e (nach Vokal -ye) verbindet: ketâb-e khub = gutes Buch, khâne-ye man = mein Haus."}, "g:9": {"q": "„mein Buch“ kurz und alltäglich?", "a": "ketâbam", "w": ["ketâbhâ", "ketâbi", "man-ketâb"], "ex": "Besitz als Endung: -am mein, -et dein (schr. -at), -esh sein/ihr, -emun unser, -etun euer."}, "g:10": {"q": "Wie bildet man meistens den Plural?", "a": "-hâ anhängen", "w": ["-en anhängen", "Wort verdoppeln", "Gar nicht"], "ex": "ketâb → ketâbhâ (Bücher). Für Menschen auch -ân: dust → dustân."}, "g:11": {"q": "Wie heißt „zwei Bücher“?", "a": "do ketâb", "w": ["do ketâbhâ", "ketâb do", "do-e ketâb"], "ex": "Nach einer Zahl bleibt das Nomen in der Einzahl."}, "g:12": {"q": "Wofür steht râ (umg. -o / -ro)?", "a": "Markiert ein bestimmtes Objekt", "w": ["Heißt „und“", "Macht Vergangenheit", "Ist eine Frage"], "ex": "ketâb râ didam = ich habe DAS Buch gesehen. Umgangssprachlich: ketâbo didam."}, "g:13": {"q": "Wie bildet man die einfache Vergangenheit?", "a": "Infinitiv ohne -an + Endung", "w": ["mi- + Stamm", "-ast anhängen", "be- + Stamm"], "ex": "raftan → raft-am (ich ging), didan → did-am (ich sah). In der 3. Person ohne Endung: raft (er/sie ging)."}, "g:14": {"q": "Was ist die höfliche Anrede?", "a": "shomâ", "w": ["to", "u", "mâ"], "ex": "shomâ = Sie (und ihr). to nur bei Freunden, Familie, Partner."}, "g:15": {"q": "Was wird umgangssprachlich aus khub ast (es ist gut)?", "a": "khube", "w": ["khubast", "khub-am", "khubi"], "ex": "ast wird in der Alltagssprache zu -e angehängt: ghashange, khube."}, "g:16": {"q": "Was heißt dâram, dâri, dâre?", "a": "ich habe, du hast, er/sie hat", "w": ["ich gehe, du gehst, er geht", "ich bin, du bist, er ist", "ich will, du willst, er will"], "ex": "Haben: dâram, dâri, dâre (schr. dârad), dârim, dârid, dâran (schr. dârand)."}, "g:17": {"q": "Wie stellt man eine Ja/Nein-Frage?", "a": "Über den Tonfall", "w": ["Verb an den Anfang", "-ka anhängen", "Mit „was“ beginnen"], "ex": "Satzmelodie hoch: khubi? Förmlich kann âyâ (آیا) am Anfang stehen."}}, "themes": [["Familie", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]], ["Essen & Trinken", [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34]], ["Zahlen", [35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47]], ["Farben", [48, 49, 50, 51, 52, 53, 54, 55, 56]], ["Körper", [57, 58, 59, 60, 61, 62, 63, 64, 65, 66]], ["Alltag", [67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85]], ["Eigenschaften", [86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]], ["Wer, was, wo", [101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111]], ["Verben", [112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126]]], "nL": 32, "nR": 24, "nP": 38, "nG": 18, "nW": 127}</script>
+<script>
+const DATA = JSON.parse(document.getElementById('data').textContent);
+const K = DATA.cards;
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const pick = a => a[Math.floor(Math.random() * a.length)];
+const HOUR = 3600e3, DAY = 864e5;
+const IV = [0, 0, HOUR, 8 * HOUR, DAY, 2 * DAY, 3 * DAY];
+const range = (p, n) => Array.from({ length: n }, (_, i) => p + i);
+
+// ── Kühe
+function cowSVG(spots, bow) {
+  const s = spots || '#1d2a26';
+  return `<svg viewBox="0 0 64 52"><g class="tail"><path d="M12 22 Q4 26 6 36" stroke="#1d2a26" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="6" cy="37" r="2.4" fill="#1d2a26"/></g>
+  <rect x="16" y="36" width="5" height="13" rx="2" fill="#f6f4ef" stroke="#1d2a26" stroke-width="1.4"/><rect x="36" y="36" width="5" height="13" rx="2" fill="#f6f4ef" stroke="#1d2a26" stroke-width="1.4"/>
+  <rect x="16" y="46" width="5" height="3" fill="#1d2a26"/><rect x="36" y="46" width="5" height="3" fill="#1d2a26"/>
+  <ellipse cx="29" cy="29" rx="19" ry="12" fill="#f6f4ef" stroke="#1d2a26" stroke-width="1.6"/>
+  <path d="M20 21 q5 -3 8 2 q-2 6 -8 4 z" fill="${s}"/><path d="M33 31 q6 -2 8 3 q-4 5 -9 1 z" fill="${s}"/><circle cx="24" cy="35" r="2.6" fill="${s}"/>
+  <ellipse cx="29" cy="40" rx="4" ry="2.4" fill="#f4a7b9" stroke="#1d2a26" stroke-width="1"/>
+  <g class="head"><path d="M41 9 l-3 -6 M55 9 l3 -6" stroke="#d9c7a1" stroke-width="2.6" stroke-linecap="round"/>
+   <ellipse cx="38" cy="13" rx="4.5" ry="2.6" fill="#f6f4ef" stroke="#1d2a26" stroke-width="1.2" transform="rotate(-25 38 13)"/><ellipse cx="58" cy="13" rx="4.5" ry="2.6" fill="#f6f4ef" stroke="#1d2a26" stroke-width="1.2" transform="rotate(25 58 13)"/>
+   <ellipse cx="48" cy="17" rx="10" ry="10.5" fill="#f6f4ef" stroke="#1d2a26" stroke-width="1.6"/>
+   <g class="eyes"><circle cx="44" cy="15" r="1.7" fill="#1d2a26"/><circle cx="52" cy="15" r="1.7" fill="#1d2a26"/></g>
+   <ellipse cx="48" cy="24" rx="7.5" ry="5" fill="#f4a7b9" stroke="#1d2a26" stroke-width="1.4"/><circle cx="45.5" cy="24" r="1" fill="#1d2a26"/><circle cx="50.5" cy="24" r="1" fill="#1d2a26"/>
+   <circle cx="40.5" cy="19.5" r="2" fill="#ff9fbf" opacity=".75"/><circle cx="55.5" cy="19.5" r="2" fill="#ff9fbf" opacity=".75"/>
+   <g transform="translate(44 4)"><path d="M0 3 L-5 0 L-5 6 Z M0 3 L5 0 L5 6 Z" fill="${bow || '#ff5c9a'}" stroke="#1d2a26" stroke-width=".8"/><circle cx="0" cy="3" r="1.6" fill="${bow || '#ff5c9a'}" stroke="#1d2a26" stroke-width=".8"/></g></g></svg>`;
+}
+
+$('homeCow').innerHTML = cowSVG(null, '#0f8b8d'); $('playCow').innerHTML = cowSVG(null, '#0f8b8d');
+const MOO = ["Âfarin!", "Kheyli khub!", "Damet garm!", "Eyval, azizam!", "Bah bah! (= mega!)", "Slay. Auf Persisch: âfarin.", "No cap, du klingst schon wie aus Teheran.", "Ta'ârof-Level: Profi.", "Main-Character in Teheran.", "Das war kheyli khub.", "Nush-e jân – hast du dir verdient.", "Aura +1000.", "Ghorbunet beram, das saß."];
+const OOPS = ["Eyb nadâre – macht nix.", "Eshkâl nadâre, dobâre!", "Yavâsh yavâsh – langsam, langsam.", "Kein Stress, auch Tahdig braucht Zeit.", "Fast! Rechts-nach-links-Energy.", "Die Kuh glaubt an dich. Dobâre!", "Plot-Twist: Die kommt gleich nochmal."];
+const HI = ["Salâm, azizam! Bereit für Persisch?", "Fünf Karten am Tag = bald Smalltalk auf Persisch.", "Tipp: Erst Sätze, dann Schrift. Reden kommt vor Lesen.", "Persisch hat kein der/die/das. Ehrlich ein W.", "Ghorbunet beram heißt so viel wie: Ich opfere mich für dich. So cute ist Persisch.", "Kuh heißt auf Persisch gâv. Merk dir das.", "Chây-Pause erlaubt. Danach weiter.", "Kheyli khub = sehr gut. Das wirst du heute oft hören.", "Persisch liest man von rechts. Die Kuh guckt auch nach rechts. Zufall? Nein."];
+const RUN = ["Serie {n}! Kheyli khub!", "{n} am Stück. Bah bah!", "Serie {n}. Damet garm!", "Serie {n}. Literally Teheran-ready."];
+function homeSay() { $('homeSay').textContent = pick(HI); const c = $('homeCow'); c.classList.remove('hop'); void c.offsetWidth; c.classList.add('hop'); }
+$('homeCow').onclick = homeSay; $('homeCow').onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); homeSay(); } };
+function cowReact(ok) {
+  const c = $('playCow'), b = $('moo');
+  c.classList.remove('hop', 'shake'); void c.offsetWidth;
+  c.classList.add(ok ? 'hop' : 'shake');
+  b.textContent = ok ? pick(MOO) : pick(OOPS);
+  b.classList.add('on'); clearTimeout(b._t); b._t = setTimeout(() => b.classList.remove('on'), 1800);
+}
+function cowRun(text) {
+  const r = document.createElement('div'); r.className = 'runner';
+  r.innerHTML = `<span class="cow">${cowSVG('#7a4a2a', '#c2410c')}</span><span class="bubble">${esc(text)}</span>`;
+  document.body.appendChild(r); setTimeout(() => r.remove(), 3500);
+}
+
+// ── Vorlesen (nur wenn das Gerät eine persische Stimme hat)
+let FA_VOICE = null;
+function findVoice() { try { FA_VOICE = speechSynthesis.getVoices().find(v => /^fa/i.test(v.lang)) || null; } catch (e) {} }
+try { findVoice(); speechSynthesis.onvoiceschanged = findVoice; } catch (e) {}
+function speak(t) { try { const u = new SpeechSynthesisUtterance(t.replace(/[·…]/g, ' ')); u.lang = 'fa-IR'; if (FA_VOICE) u.voice = FA_VOICE; u.rate = .85; speechSynthesis.cancel(); speechSynthesis.speak(u); } catch (e) {} }
+const sayBtn = t => FA_VOICE ? `<button class="say-btn" data-say="${esc(t)}">Anhören</button>` : '';
+function wireSay() { $('card').querySelectorAll('[data-say]').forEach(b => b.onclick = () => speak(b.dataset.say)); }
+
+// ── Bereiche
+const ids = (t, list) => list.map(i => t + ':' + i);
+const W_ALL = range(0, DATA.nW);
+const TABS = [
+  { label: 'Sätze', title: 'Sätze zum Sprechen', text: 'Deutsch sehen, laut auf Persisch sagen, dann aufdecken und ehrlich bewerten. Fang hier an.',
+    quests: [
+      { id: 'p1', t: 'Sätze I · Basics', d: 'Hallo, danke, ja, nein …', cards: ids('p', range(0, 12)) },
+      { id: 'p2', t: 'Sätze II · Alltag', d: 'Verstehen, Essen, Tschüss …', cards: ids('p', range(12, 13)) },
+      { id: 'p3', t: 'Sätze III · Herz', d: 'Für die Liebsten', cards: ids('p', range(25, DATA.nP - 25)) },
+    ] },
+  { label: 'Wörter', title: 'Wortschatz', text: 'Persisches Wort sehen, Bedeutung wählen. Danach rückwärts: Deutsch → Persisch.',
+    quests: [
+      ...DATA.themes.map(([th, list], i) => ({ id: 'w' + i, t: th, d: 'Quiz · Persisch → Deutsch', cards: ids('w', list) })),
+      { id: 'vrev', t: 'Rückwärts: Deutsch → Persisch', d: 'Alle Wörter, wenn die Themen sitzen', cards: ids('v', W_ALL) },
+    ] },
+  { label: 'Schrift', title: 'Persische Schrift', text: '32 Buchstaben, von rechts nach links, kurze Vokale werden nicht geschrieben. Erst die Buchstaben, dann erste Wörter lesen.',
+    quests: [
+      { id: 'l1', t: 'Alphabet I', d: 'alef bis zhe', cards: ids('l', range(0, 14)) },
+      { id: 'l2', t: 'Alphabet II', d: 'sin bis ye', cards: ids('l', range(14, DATA.nL - 14)) },
+      { id: 'rd', t: 'Erste Wörter lesen', d: 'Schrift → Umschrift + Bedeutung', cards: ids('r', range(0, DATA.nR)) },
+    ] },
+  { label: 'Grammatik', title: 'Grammatik-Basics', text: 'Die gute Nachricht: kein Geschlecht, keine Artikel, regelmäßige Verben. Kurze Fragen mit Erklärung.',
+    quests: [
+      { id: 'g1', t: 'Grammatik I', d: 'Schrift, Satzbau, sein', cards: ids('g', range(0, 9)) },
+      { id: 'g2', t: 'Grammatik II', d: 'Besitz, Plural, Vergangenheit', cards: ids('g', range(9, DATA.nG - 9)) },
+    ] },
+  { label: 'Mix', tab: 'indtab', title: 'Mix & Fehler', text: 'Zufällige Karten aus allem, was du schon gesehen hast, und deine Fehlerliste.',
+    quests: [
+      { id: 'mix', t: 'Mix-Runde', d: '20 zufällige Karten aus allen Bereichen', dyn: 'mix' },
+      { id: 'err', t: 'Fehlerliste', d: 'Alle Karten, die du mindestens einmal falsch hattest', dyn: 'err' },
+    ] },
+];
+const ALLIDS = [...new Set(TABS.flatMap(t => t.quests.flatMap(q => q.cards || [])))];
+
+// ── Zustand
+const KEY = 'fa-weide-v1';
+let S = { v: 1, xp: 0, streak: 0, best: 0, cards: {}, quests: {}, day: 0, updated: 0 };
+try { const raw = localStorage.getItem(KEY); if (raw) S = Object.assign(S, JSON.parse(raw)); } catch (e) {}
+function save() { S.updated = Date.now(); try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+const C = id => S.cards[id] || (S.cards[id] = { b: 0, due: 0, l: 0, n: 0 });
+const isLearned = id => (S.cards[id] && S.cards[id].b >= 2);
+const LEVELS = ['Tâze-kâr (Neuling)', 'Salâm-Sager', 'Chây-Trinker', 'Tahdig-Fan', 'Ta\'ârof-Profi', 'Hâfez-Leser', 'Fast schon Iraner'];
+function lvl() { const l = Math.floor(S.xp / 300); return { n: l + 1, name: LEVELS[Math.min(l, LEVELS.length - 1)], frac: (S.xp % 300) / 300 }; }
+function toast(t) { const el = $('toast'); el.textContent = t; el.classList.add('on'); clearTimeout(el._t); el._t = setTimeout(() => el.classList.remove('on'), 1100); }
+function addXP(n) { S.xp += n; renderStats(); }
+function renderStats() {
+  const L = lvl();
+  $('lvlName').textContent = `Level ${L.n} · ${L.name}`;
+  $('xp').textContent = S.xp + ' XP';
+  $('lvlBar').style.width = (L.frac * 100) + '%';
+  $('streak').textContent = S.streak + (S.best ? ` / ${S.best}` : '');
+  $('learned').textContent = `${ALLIDS.filter(isLearned).length}/${ALLIDS.length}`;
+  $('countdown').innerHTML = `Rekord-Serie<br><b>${S.best}</b>`;
+}
+
+// ── Übersicht
+let cur = Math.min(S.day || 0, TABS.length - 1);
+function questCards(q) {
+  if (q.cards) return q.cards;
+  if (q.dyn === 'mix') { const seen = ALLIDS.filter(id => S.cards[id] && S.cards[id].n > 0 && id[0] !== 'p'); return shuffle(seen.length >= 8 ? seen : ALLIDS.filter(id => id[0] !== 'p')).slice(0, 20); }
+  if (q.dyn === 'err') return Object.keys(S.cards).filter(id => S.cards[id].l > 0 && K[id.replace(/^v:/, 'w:')]);
+  return [];
+}
+function qProgress(q) {
+  if (q.dyn) return S.quests[q.id] ? 1 : 0;
+  const c = q.cards; return c.length ? c.filter(isLearned).length / c.length : 0;
+}
+function dueList() { const now = Date.now(); return Object.keys(S.cards).filter(id => { const c = S.cards[id]; return c.n > 0 && (c.b < 2 || c.due <= now); }); }
+function ring(p, label) {
+  const r = 18, L = 2 * Math.PI * r;
+  return `<svg class="ring" viewBox="0 0 44 44" aria-hidden="true"><circle class="bgc" cx="22" cy="22" r="${r}"/><circle class="fgc" cx="22" cy="22" r="${r}" stroke-dasharray="${L}" stroke-dashoffset="${L * (1 - p)}" transform="rotate(-90 22 22)"/><text x="22" y="22">${label}</text></svg>`;
+}
+function renderHome() {
+  renderStats();
+  $('days').innerHTML = TABS.map((d, i) => { const all = d.quests.every(q => qProgress(q) >= 1); return `<button class="day${d.tab ? ' ' + d.tab : ''}" data-i="${i}" aria-pressed="${i === cur}">${d.label}${all ? '<span class="dot" title="geschafft"></span>' : ''}</button>`; }).join('');
+  $('days').querySelectorAll('.day').forEach(b => b.onclick = () => { cur = +b.dataset.i; S.day = cur; save(); renderHome(); });
+  const d = TABS[cur];
+  $('dayTitle').textContent = d.title; $('dayText').textContent = d.text;
+  const due = dueList(); $('dueN').textContent = due.length; $('reviewBtn').disabled = !due.length;
+  $('quests').innerHTML = d.quests.map(q => {
+    const p = qProgress(q), pct = Math.round(p * 100);
+    const sub = q.cards ? `${q.d} · ${q.cards.filter(isLearned).length}/${q.cards.length} gelernt` : q.d;
+    return `<div class="quest${p >= 1 ? ' done' : ''}">${ring(p, pct + '%')}<div class="qt"><h3>${esc(q.t)}</h3><p>${esc(sub)}</p></div><button class="btn primary" data-q="${q.id}">${p >= 1 && !q.dyn ? 'Nochmal' : 'Start'}</button></div>`;
+  }).join('');
+  $('quests').querySelectorAll('[data-q]').forEach(b => b.onclick = () => { const q = d.quests.find(x => x.id === b.dataset.q); startSession(q.t, questCards(q), q); });
+}
+
+// ── Lern-Engine
+let sess = null;
+function startSession(title, pool, quest) {
+  pool = pool.filter(id => K[id.replace(/^v:/, 'w:')]);
+  const now = Date.now();
+  const reviews = pool.filter(id => S.cards[id] && S.cards[id].n > 0 && (S.cards[id].b < 2 || S.cards[id].due <= now));
+  const fresh = pool.filter(id => !S.cards[id] || S.cards[id].n === 0);
+  sess = { title, pool, quest, queue: reviews.slice(), fresh, right: 0, wrong: 0, xp0: S.xp };
+  if (!sess.queue.length) pullNew();
+  if (quest && quest.dyn) { sess.queue = shuffle(pool); sess.fresh = []; }
+  $('home').hidden = true; $('play').hidden = false;
+  $('playTitle').textContent = title; window.scrollTo(0, 0); next();
+}
+function pullNew() { sess.queue.push(...sess.fresh.splice(0, 5)); }
+function sessDone() { return !sess.queue.length && !sess.fresh.length; }
+function updateBar() {
+  const p = sess.pool.length ? sess.pool.filter(isLearned).length / sess.pool.length : 1;
+  $('pbar').style.width = (p * 100) + '%';
+  $('pinfo').textContent = `${sess.pool.filter(isLearned).length}/${sess.pool.length} gelernt · ${sess.queue.length} in der Runde · ${sess.fresh.length} neu übrig · Serie ${S.streak}`;
+}
+function next() {
+  if (sess.queue.length < 2 && sess.fresh.length) pullNew();
+  updateBar();
+  if (sessDone()) return finish();
+  const id = sess.queue[0];
+  ({ l: showLetter, r: showRead, p: showPhrase, w: showWord, v: showRev, g: showGram })[id[0]](id);
+}
+function grade(id, res) { // 2 richtig, 1 fast, 0 falsch
+  const c = C(id); c.n++;
+  sess.queue.shift();
+  if (res === 2) {
+    c.b++; S.streak++; S.best = Math.max(S.best, S.streak); sess.right++;
+    const gain = (id[0] === 'p' ? 15 : 10) + (S.streak % 5 === 0 ? 10 : 0);
+    addXP(gain); toast('+' + gain + ' XP' + (S.streak % 5 === 0 ? ' · Serie ' + S.streak : ''));
+    if (id[0] === 'p') cowReact(true);
+    if (S.streak % 10 === 0) cowRun(pick(RUN).replace('{n}', S.streak));
+    if (c.b === 1) sess.queue.splice(Math.min(4, sess.queue.length), 0, id);
+    else c.due = Date.now() + IV[Math.min(c.b, IV.length - 1)];
+  } else {
+    S.streak = 0; sess.wrong++; if (id[0] === 'p') cowReact(false);
+    if (res === 0) { c.l++; c.b = 0; sess.queue.splice(Math.min(2, sess.queue.length), 0, id); }
+    else { sess.queue.splice(Math.min(4, sess.queue.length), 0, id); addXP(3); }
+  }
+  if (sess.quest && sess.quest.dyn && sessDone()) S.quests[sess.quest.id] = 1;
+  save(); next();
+}
+const head = (kind, tag) => `<div class="kind"><span>${kind}</span>${tag ? `<span class="tag" style="color:var(--xp)">${esc(tag)}</span>` : ''}</div>`;
+function mc(id, question, options, correct, after) {
+  $('card').innerHTML = question + `<div class="opts">${options.map((o, i) => `<button class="opt" data-i="${i}">${i + 1} · ${o}</button>`).join('')}</div><div class="fb" id="fb"></div><div id="nextRow" hidden style="display:flex;justify-content:flex-end"><button class="btn primary" id="nx">Weiter</button></div>`;
+  wireSay();
+  let answered = false;
+  $('card').querySelectorAll('.opt').forEach(b => b.onclick = () => {
+    if (answered) return; answered = true;
+    const i = +b.dataset.i, ok = i === correct; cowReact(ok);
+    $('card').querySelectorAll('.opt').forEach((x, j) => { x.disabled = true; if (j === correct) x.classList.add('ok'); else if (j === i) x.classList.add('no'); });
+    $('fb').innerHTML = (ok ? '<b>Richtig.</b> ' : '<b>Falsch.</b> ') + after;
+    $('nextRow').hidden = false; $('nx').focus(); wireSay();
+    $('nx').onclick = () => grade(id, ok ? 2 : 0);
+  });
+}
+const others = (prefix, n, id, key) => { const all = Object.keys(K).filter(k => k.startsWith(prefix) && k !== id && K[k][key] !== K[id][key]); return shuffle(all).slice(0, n); };
+const faSpan = t => `<span class="fa">${esc(t)}</span>`;
+
+function showLetter(id) {
+  const L = K[id], lab = x => `<b>${esc(x.name)}</b> – ${esc(x.snd)}`;
+  const opts = shuffle([id, ...others('l:', 3, id, 'snd')]);
+  mc(id, `${head('Buchstabe')}<div class="qfa letter">${esc(L.ch)}</div><p class="task">Wie heißt der Buchstabe, wie klingt er?</p>`,
+    opts.map(k => lab(K[k])), opts.indexOf(id),
+    `Beispiel: ${faSpan(L.ex[0])} ${esc(L.ex[1])} = ${esc(L.ex[2])}.` + (L.nl ? ' Dieser Buchstabe verbindet sich nicht mit dem nächsten (links davon).' : ''));
+}
+function showRead(id) {
+  const R = K[id], opts = shuffle([id, ...others('r:', 3, id, 'tr')]);
+  mc(id, `${head('Lesen')}<div class="qfa">${esc(R.fa)}</div><p class="task">Was steht da?</p>`,
+    opts.map(k => `${esc(K[k].tr)} – ${esc(K[k].de)}`), opts.indexOf(id), `${faSpan(R.fa)} ${esc(R.tr)} = ${esc(R.de)} ${sayBtn(R.fa)}`);
+}
+function wordInfo(w) {
+  let s = '';
+  if (w.fu) s += `<br>umg.: ${faSpan(w.fu)} ${esc(w.tu)}`;
+  if (w.ich) s += `<br>ich …: ${faSpan(w.ich)} ${esc(w.ichtr)}` + (w.umg ? ` · umg. ${faSpan(w.umg[0])} ${esc(w.umg[1])}` : '');
+  return s;
+}
+function showWord(id) {
+  const w = K[id], pool = Object.keys(K).filter(k => k.startsWith('w:') && k !== id && K[k].de !== w.de);
+  const same = pool.filter(k => K[k].th === w.th);
+  const opts = shuffle([id, ...shuffle(same.length >= 3 ? same : pool).slice(0, 3)]);
+  mc(id, `${head('Wort', w.th)}<div class="qfa">${esc(w.fa)}</div><div class="tr">${esc(w.tr)}</div>${sayBtn(w.fa)}<p class="task">Was heißt das?</p>`,
+    opts.map(k => esc(K[k].de)), opts.indexOf(id), `${faSpan(w.fa)} ${esc(w.tr)} = ${esc(w.de)}${wordInfo(w)}`);
+}
+function showRev(id) {
+  const wid = 'w:' + id.slice(2), w = K[wid];
+  const pool = Object.keys(K).filter(k => k.startsWith('w:') && k !== wid && K[k].de !== w.de);
+  const same = pool.filter(k => K[k].th === w.th);
+  const opts = shuffle([wid, ...shuffle(same.length >= 3 ? same : pool).slice(0, 3)]);
+  mc(id, `${head('Rückwärts', w.th)}<div class="de">${esc(w.de)}</div><p class="task">Wie heißt das auf Persisch?</p>`,
+    opts.map(k => `${faSpan(K[k].fa)} · ${esc(K[k].tr)}`), opts.indexOf(wid), `${esc(w.de)} = ${faSpan(w.fa)} ${esc(w.tr)}${wordInfo(w)}`);
+}
+function showGram(id) {
+  const g = K[id], opts = shuffle([g.a, ...g.w]);
+  mc(id, `${head('Grammatik')}<div class="de" style="font-size:1.3rem">${esc(g.q)}</div>`, opts.map(esc), opts.indexOf(g.a), esc(g.ex));
+}
+function showPhrase(id) {
+  const p = K[id];
+  $('card').innerHTML = `${head('Sprechen')}<div class="de">${esc(p.de)}</div>
+    <p class="task">Laut auf Persisch sagen. Dann aufdecken.</p>
+    <button class="btn primary" id="reveal" style="align-self:center">Aufdecken</button>`;
+  $('reveal').onclick = () => {
+    const schr = p.fs ? `${faSpan(p.fs)} ${esc(p.ts)}` : p.ts ? esc(p.ts) + ' (gleiche Schrift)' : 'gleich';
+    $('card').innerHTML = `${head('Sprechen')}<div class="de" style="font-size:1.2rem">${esc(p.de)}</div>
+      <div class="qfa">${esc(p.fu)}</div><div class="tr">${esc(p.tu)}</div>${sayBtn(p.fu)}
+      <dl class="forms"><dt>umg.</dt><dd>${esc(p.tu)}</dd><dt>schr.</dt><dd>${schr}</dd>${p.note ? `<dt>Tipp</dt><dd>${esc(p.note)}</dd>` : ''}</dl>
+      <p class="task">Hast du es gewusst?</p>
+      <div class="rate"><button class="btn bad" id="r0">Nein</button><button class="btn" id="r1">Fast</button><button class="btn good" id="r2">Ja</button></div>`;
+    wireSay();
+    [0, 1, 2].forEach(k => $('r' + k).onclick = () => grade(id, k));
+    $('r2').focus();
+  };
+  $('reveal').focus();
+}
+function finish() {
+  const gained = S.xp - sess.xp0, q = sess.quest;
+  if (q && q.dyn) S.quests[q.id] = 1;
+  save();
+  $('card').innerHTML = `<div class="donebox"><div class="herd" aria-hidden="true"><span class="cow">${cowSVG(null, '#0f8b8d')}</span><span class="cow">${cowSVG('#7a4a2a', '#c2410c')}</span><span class="cow">${cowSVG(null, '#0f8b8d')}</span></div><div class="big">+${gained} XP</div><h2>${esc(sess.title)}: Runde geschafft</h2>
+    <div class="say">${esc(pick(['Âfarin! Runde komplett.', 'Kheyli khub. Gönn dir einen Chây.', 'Damet garm, das war stark.', 'Bah bah! Die Kuh ist stolz.']))}</div>
+    <p class="muted">${sess.right} richtig · ${sess.wrong} falsch. Was du falsch hattest, kommt in der nächsten Wiederholung zurück.</p>
+    <button class="btn primary" id="back">Zur Übersicht</button></div>`;
+  $('back').onclick = goHome; updateBar(); $('pbar').style.width = '100%';
+}
+function goHome() { $('play').hidden = true; $('home').hidden = false; renderHome(); window.scrollTo(0, 0); }
+$('quitBtn').onclick = goHome;
+$('reviewBtn').onclick = () => startSession('Wiederholung', dueList(), null);
+document.addEventListener('keydown', e => {
+  if ($('play').hidden) return;
+  if (['1', '2', '3', '4'].includes(e.key)) { const b = $('card').querySelectorAll('.opt')[+e.key - 1]; if (b) b.click(); }
+  if (e.key === 'Enter' || e.key === ' ') { const b = $('nx') || $('reveal'); if (b && !b.closest('[hidden]')) { e.preventDefault(); b.click(); } }
+});
+$('resetBtn').onclick = () => {
+  const b = $('resetBtn');
+  if (b.dataset.arm) { S = { v: 1, xp: 0, streak: 0, best: 0, cards: {}, quests: {}, day: 0, updated: 0 }; save(); delete b.dataset.arm; b.textContent = 'Fortschritt zurücksetzen'; renderHome(); }
+  else { b.dataset.arm = 1; b.textContent = 'Wirklich alles löschen?'; setTimeout(() => { delete b.dataset.arm; b.textContent = 'Fortschritt zurücksetzen'; }, 3000); }
+};
+homeSay();
+renderHome();
+</script>
+</body>
+</html>
