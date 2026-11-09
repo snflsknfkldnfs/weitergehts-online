@@ -5,6 +5,7 @@
  "auftrag": "",
  "ki_hilfe": true,
  "ki_hinweis": "",
+ "reiter": false,
  "nachweis": "Nach: Deutsches Historisches Museum, LeMO (Kapitel Weimarer Republik und Jahreschronik 1923); Historisches Lexikon Bayerns; Verfassung des Deutschen Reichs von 1919. Karte: Karte: Shadowxfox, Alphathon, CC BY-SA 3.0, via Wikimedia Commons („Länder der Weimarer Republik“); Orte und Zeitstrahl ergänzt",
  "schritte": [
   {
@@ -189,7 +190,8 @@
     }
    ],
    "code_nach_seite": "b4",
-   "code_label": "Code:"
+   "code_label": "Code:",
+   "weiter_label": "Zu deiner Rolle →"
   },
   {
    "id": "rolle",

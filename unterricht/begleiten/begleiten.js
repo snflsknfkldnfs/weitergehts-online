@@ -32,6 +32,9 @@
  * Fokus (seit 1.5, 2026-11-09): Die Reiter erscheinen erst, wenn ein zweiter Schritt offen ist. Ein Schritt kann
  *   "code_nach_seite": "<seiten-id>" tragen: Das Codefeld für den nächsten Schritt steht dann nur unter dieser Seite,
  *   und mit "code_label" (kurz, etwa „Code:“) erscheint es zurückhaltend gesetzt.
+ * Ohne Reiter (seit 1.7): "reiter": false in data.json blendet die Reiter immer aus; der Weg in den nächsten Schritt
+ *   führt dann nur über das Codefeld bzw. danach über "weiter_label" (etwa „Zu deiner Rolle →“), zurück über einen
+ *   dezenten Knopf unten im späteren Schritt.
  */
 (function () {
   'use strict';
@@ -324,7 +327,7 @@
     var nr = Math.min(S.schritt || 0, S.offen, D.schritte.length - 1);
     var reiter = document.getElementById('b-reiter');
     reiter.textContent = '';
-    reiter.hidden = S.offen < 1;   /* ein einziger Schritt braucht keine Reiter; sie lenken nur ab */
+    reiter.hidden = S.offen < 1 || D.reiter === false;   /* ein einziger Schritt braucht keine Reiter; sie lenken nur ab */
     D.schritte.slice(0, S.offen + 1).forEach(function (s, i) {
       var k = knopf('Schritt ' + (i + 1));
       k.setAttribute('aria-pressed', String(i === nr));
@@ -340,12 +343,19 @@
     if (s.typ === 'sortieren') sortierenBauen(s, wurzel);
     else if (s.typ === 'rolle') rolleBauen(s, wurzel);
     else lesenBauen(s, wurzel);
+    if (D.reiter === false && nr > 0) {
+      var zr = el('div', 'b-weiter b-weiter-dezent');
+      var zurueck = knopf('← Zurück zu den Materialien');
+      zurueck.addEventListener('click', function () { S.schritt = nr - 1; sichern(); zeichnen(); window.scrollTo(0, 0); });
+      zr.appendChild(zurueck); wurzel.appendChild(zr);
+    }
     var sortOffen = s.typ === 'sortieren' && !S.aufgeloest[s.id];  /* erst Auflösung, dann der nächste Code */
-    var codeHier = !s.code_nach_seite || nr < S.offen || S.seite[s.id] === s.code_nach_seite;
+    var codeHier = !s.code_nach_seite || S.seite[s.id] === s.code_nach_seite;   /* Code und Weiter nur unter dieser Seite */
     if (nr < D.schritte.length - 1 && !sortOffen && codeHier) {
       var z = el('div', 'b-weiter');
       if (nr < S.offen) {
-        var weiter = knopf('Weiter zu Schritt ' + (nr + 2));
+        if (s.code_label) z.className = 'b-weiter b-weiter-dezent';
+        var weiter = knopf(s.weiter_label || ('Weiter zu Schritt ' + (nr + 2)));
         weiter.addEventListener('click', function () { S.schritt = nr + 1; sichern(); zeichnen(); window.scrollTo(0, 0); });
         z.appendChild(weiter);
       } else {
