@@ -145,182 +145,116 @@ body.verteilen {
   .v-strich-zwischen { display: none; }
 }
 
-/* ══ Art „woche“: Wochenplan-Rennen, Oberfläche Version 2 (Zeitbalken-Sprache, 2026-11-09) ═══════
+/* ══ Art „woche“: Wochenplan-Rennen, Version 3 (Ergänzung 3, 2026-11-09) ══════════════════════════
    Breiter Modus nur, wenn die Lage „woche“ offen ist (body.v-woche-an, setzt verteilen.js).
-   Zwei Zonen: oben der Kalender (Plätze = weiße Balken, Länge = freie Minuten; Arbeiten = Bausteine,
-   Länge = Minuten), unten der Kartenstapel. Farbe nach Art der Arbeit, nie allein (Etikett mit Wort + Zeichen).
+   Je Arbeit ein Knopf je Person mit den Wochenminuten; ein Balken je Person; danach die Wochenplan-Tabelle.
+   Keine Emojis. Eine ruhige Farbe je Person (helle Fläche, dunkle Schrift), Art der Arbeit als farbiges Wort.
    Helle Flächen aus den Tokens gemischt (color-mix); ältere Browser nehmen die Zeile davor (--m-notiz). */
-.v-woche-an .v-huelle { max-width: 1500px; padding: 10px 12px 72px; display: flex; flex-wrap: wrap; align-items: center; column-gap: 16px; }
+.v-woche-an .v-huelle { max-width: 1240px; padding: 10px 12px 28px; display: flex; flex-wrap: wrap; align-items: center; column-gap: 16px; }
 .v-woche-an .v-huelle > * { flex: 1 1 100%; }
 .v-woche-an .v-kopf { flex: 1 1 auto; padding: 0 2px 6px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 14px; }
-.v-woche-an .v-kopf h1 { margin: 0; font-size: 1.05rem; color: var(--m-leise); }
+.v-woche-an .v-kopf h1 { margin: 0; font-size: 1rem; color: var(--m-leise); }
 .v-woche-an .v-kopf p { margin: 0; }
 .v-woche-an .v-kopf p:empty { display: none; }
 .v-woche-an .v-lagen { flex: 0 0 auto; margin: 0 0 6px; gap: 8px; }
 .v-woche-an .v-lagen .m-knopf { min-height: 44px; padding: 0 14px; }
-.v-woche-an .v-blatt { --w-name: 104px; --w-zeit: 40px; padding: 10px 12px 14px; margin: 0 0 10px; }
+.v-woche-an .v-blatt { padding: 12px 14px 16px; margin: 0 0 10px; }
 .v-woche-an .v-nachweis { margin-top: 6px; }
 
-/* Farben der Arten (Fläche hell, Rand kräftig, Schrift immer Tinte) */
-.w-art-haus { --w-farbe: var(--m-blau); }
-.w-art-erziehung { --w-farbe: var(--m-violett); }
-.w-art-pflege { --w-farbe: var(--m-gut); }
-.w-art-beziehung { --w-farbe: var(--m-ocker); }
+/* Farben: Personen und Arten (Fläche hell, Rand kräftig, Schrift Tinte) */
+.w-p0 { --w-farbe: var(--m-blau); }
+.w-p1 { --w-farbe: var(--m-ocker); }
+.w-p2 { --w-farbe: var(--m-gut); }
+.w-art { display: inline-block; padding: 1px 7px; border-radius: 3px; font-size: .78rem; font-weight: 700; line-height: 1.35;
+  border: 1px solid var(--w-art); color: var(--m-tinte); background: var(--m-notiz); background: color-mix(in srgb, var(--w-art) 14%, var(--m-blatt)); }
+.w-art-haus { --w-art: var(--m-leise); }
+.w-art-erziehung { --w-art: var(--m-violett); }
+.w-art-pflege { --w-art: var(--m-rot); }
+.w-art-beziehung { --w-art: var(--m-blau); }
 
-/* Oben */
-.w-oben { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 14px; align-items: start; margin: 0 0 10px; }
-.w-intro h2 { margin: 0 0 2px; font-size: 1.6rem; line-height: 1.2; }
-.w-intro > p { margin: 0; }
-.w-neben { display: flex; flex-wrap: wrap; gap: 8px; margin-left: auto; }
-.w-klein { min-height: 44px; padding: 0 12px; font-size: .9rem; font-weight: 600; border-width: 1px; }
-.w-start { padding: 10px 12px; border: 2px solid var(--m-tinte); border-radius: 8px; background: var(--m-blatt); }
-.w-start-knopf { width: 100%; min-height: 56px; margin-top: 6px; font-size: 1.25rem; }
-.w-start-knopf:not(.voll) { border-width: 3px; }
-.w-gewinn { margin: 0; font-size: 1.15rem; font-weight: 700; line-height: 1.25; }
+/* Oben: Titel und Schritte, Start an fester Stelle */
+.w-oben { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 16px; align-items: center; margin: 0 0 10px; }
+.w-intro h2 { margin: 0 0 4px; font-size: 1.6rem; line-height: 1.2; }
+.w-intro > p:empty { display: none; }
+.w-schritte { margin: 0; padding-left: 1.4em; font-size: 1.05rem; font-weight: 700; line-height: 1.4; }
+.w-start-knopf { width: 100%; min-height: 60px; font-size: 1.3rem; border-width: 3px; }
+
+.w-raster { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 16px; align-items: start; }
+
+/* Personenkarten */
+.w-personen { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 0 0 10px; }
+.w-pkarte { display: flex; flex-direction: column; gap: 2px; padding: 6px 10px; border-radius: 6px; border-left: 6px solid var(--w-farbe);
+  background: var(--m-notiz); background: color-mix(in srgb, var(--w-farbe) 12%, var(--m-blatt)); font-size: .88rem; line-height: 1.3; }
+.w-pkarte strong { font-size: 1.05rem; }
+
+/* Liste der Arbeiten: je Zeile ein Knopf je Person */
+.w-liste-kopf { display: flex; justify-content: space-between; padding: 0 4px 4px; font-size: .85rem; font-weight: 700; color: var(--m-leise); }
+.w-liste { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--m-tinte); }
+.w-zeile { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; align-items: center; min-height: 64px; padding: 6px 4px;
+  border-bottom: 1px solid var(--m-linie-hell); }
+.w-arbeit { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.w-arbeit-name { font-size: 1.1rem; font-weight: 700; line-height: 1.2; }
+.w-arbeit-unter { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; }
+.w-tage { font-size: .85rem; color: var(--m-leise); }
+.w-wahl { display: flex; gap: 6px; }
+.w-knopf {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0;
+  width: 92px; min-height: 52px; padding: 2px 4px; border: 2px solid var(--m-linie); border-radius: 6px;
+  background: var(--m-blatt); color: var(--m-tinte); font: inherit; line-height: 1.15; cursor: pointer;
+}
+.w-knopf-name { font-size: .82rem; font-weight: 600; }
+.w-knopf-zahl { font-size: 1.15rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.w-knopf[aria-pressed="true"] { border: 3px solid var(--w-farbe); background: var(--m-notiz); background: color-mix(in srgb, var(--w-farbe) 24%, var(--m-blatt)); }
+.w-knopf.w-gesperrt { border-style: dashed; color: var(--m-leise); background: var(--m-notiz); cursor: help; }
+.w-knopf.w-gesperrt .w-knopf-zahl { font-size: .8rem; font-weight: 600; }
+.w-grund { grid-column: 1 / -1; margin: 0; padding: 4px 10px; border-left: 4px solid var(--m-tinte); background: var(--m-notiz); font-weight: 600; }
+
+/* Balken je Person */
+.w-balken-box h3, .w-laeufe h3 { margin: 0 0 6px; font-size: 1rem; }
+.w-bzeile { display: grid; grid-template-columns: 52px minmax(0, 1fr) 40px; gap: 6px; align-items: center; margin: 0 0 6px; }
+.w-bname { font-weight: 700; }
+.w-bahn { position: relative; height: 34px; border: 1px solid var(--m-linie-hell); border-radius: 4px; background: var(--m-notiz); }
+.w-balken { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 3px; border: 2px solid var(--w-farbe);
+  background: var(--m-notiz); background: color-mix(in srgb, var(--w-farbe) 30%, var(--m-blatt)); }
+.w-balken[style*="width: 0"] { border-width: 0; }
+.w-bisher { position: absolute; top: -4px; bottom: -4px; width: 0; border-left: 3px dashed var(--m-tinte); }
+.w-bzahl { font-weight: 700; font-variant-numeric: tabular-nums; text-align: right; }
+.w-bisher-legende { margin: 0; font-size: .8rem; color: var(--m-leise); }
+
+/* Ergebnis: der größte Text der Seite */
+.w-ergebnis { margin: 12px 0 0; }
+.w-satz { margin: 0; font-size: 1.05rem; line-height: 1.35; }
+.w-gewinn { margin: 4px 0 0; font-size: 1.2rem; font-weight: 700; line-height: 1.2; }
 .w-zahl { display: block; font-size: 3.4rem; line-height: 1; font-variant-numeric: tabular-nums; }
-.w-gesamt { margin: 4px 0 0; font-size: .95rem; line-height: 1.3; }
-.w-status { margin: 0; font-weight: 700; font-size: 1.05rem; }
-.w-schritte { margin: 0; padding-left: 1.4em; font-size: 1.05rem; font-weight: 700; line-height: 1.35; }
-.w-lauf { margin: 4px 0 0; font-weight: 700; font-variant-numeric: tabular-nums; }
-.w-lauf:empty { display: none; }
-.w-laeufe { margin: 8px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 2px 14px; font-size: .92rem; font-variant-numeric: tabular-nums; }
+.w-status { margin: 0; font-weight: 700; }
+.w-status:empty { display: none; }
+.w-laeufe { margin: 12px 0 0; }
+.w-laeufe ol { margin: 0; padding-left: 1.5em; font-variant-numeric: tabular-nums; }
 .w-bester { font-weight: 700; }
+.w-klein { margin-top: 12px; min-height: 44px; padding: 0 14px; font-size: .95rem; }
+body.w-laeuft .w-knopf { cursor: default; }
 
-/* Kalender */
-.w-kalender { display: grid; border: 1px solid var(--m-linie-hell); border-radius: 8px; overflow: hidden; background: var(--m-blatt); }
-.w-ecke { background: var(--m-blatt); }
-.w-tag { padding: 4px 0; text-align: center; font-weight: 700; font-size: 1.05rem; border-left: 1px solid var(--m-linie-hell); background: var(--m-blatt); }
-.w-tag.w-jetzt { background: var(--m-tinte); color: var(--m-blatt); }
-.w-person {
-  display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 2px;
-  padding: 6px 6px; border-top: 2px solid var(--m-linie-hell);
-}
-.w-gesicht { display: flex; align-items: center; gap: 6px; font-weight: 700; font-size: 1rem; }
-.w-person-zeichen { font-size: 2rem; line-height: 1; }
-.w-merkmal { display: flex; align-items: center; gap: 4px; font-size: .74rem; line-height: 1.15; color: var(--m-leise); }
-.w-merkmal-zeichen { font-size: .95rem; }
-.w-person-summe { margin-top: 2px; font-size: .85rem; font-weight: 700; padding: 1px 6px; border-radius: 3px; background: var(--m-tinte); color: var(--m-blatt); }
-.w-zeit { display: flex; align-items: center; padding: 0 2px; font-size: .72rem; color: var(--m-leise); border-top: 1px solid var(--m-linie-hell); }
-.w-zeit.w-erste, .w-platz.w-erste, .w-band.w-erste { border-top: 2px solid var(--m-linie-hell); }
+/* Wochenplan-Tabelle: tafelfähig, Wörter, wenig Farbe */
+.w-wochenplan { margin-top: 18px; padding-top: 12px; border-top: 2px solid var(--m-tinte); }
+.w-wochenplan[hidden] { display: none; }
+.w-wochenplan-kopf { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+.w-wochenplan h2 { margin: 0; font-size: 1.4rem; }
+.w-umschalter { display: flex; gap: 8px; }
+.w-umschalter .w-klein { margin-top: 0; }
+.w-umschalter .m-knopf[aria-pressed="true"] { background: var(--m-tinte); color: var(--m-blatt); }
+.w-tabelle h3 { margin: 10px 0 6px; font-size: 1.05rem; }
+.w-tabelle table { width: 100%; border-collapse: collapse; table-layout: fixed; background: var(--m-blatt); }
+.w-tabelle th, .w-tabelle td { border: 1px solid var(--m-linie); padding: 5px 5px; vertical-align: top; text-align: left; }
+.w-tabelle thead th { font-size: .9rem; background: var(--m-notiz); }
+.w-tab-person { width: 70px; font-size: 1rem; border-left: 6px solid var(--w-farbe) !important; }
+.w-tab-summe { width: 70px; text-align: right !important; font-weight: 700; font-variant-numeric: tabular-nums; }
+.w-eintrag { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; margin: 0 0 6px; }
+.w-eintrag-name { font-size: .92rem; font-weight: 600; line-height: 1.2; }
+.w-eintrag .w-art { max-width: 100%; font-size: .7rem; white-space: normal; overflow-wrap: anywhere; -webkit-hyphens: auto; hyphens: auto; }
+.w-merkmale { margin: 8px 0 0; padding-left: 1.2em; font-size: .9rem; line-height: 1.45; }
 
-/* Platz = Balken; daneben bleibt leer, was es an diesem Platz nicht gibt */
-.w-platz {
-  position: relative; min-width: 0; min-height: 54px; padding: 5px 4px; overflow: hidden;
-  display: flex; align-items: center;
-  border-top: 1px solid var(--m-linie-hell); border-left: 1px solid var(--m-linie-hell);
-  cursor: pointer;
-}
-.w-spur {
-  position: relative; height: 44px; display: flex; align-items: stretch;
-  border: 2px solid var(--m-linie); border-radius: 6px; background: var(--m-blatt);
-}
-.w-langsam .w-spur { border-style: dashed; }
-.w-tempo-zeichen { position: absolute; right: 3px; top: 1px; font-size: .9rem; line-height: 1; pointer-events: none; }
-
-/* Baustein: Länge = Minuten dieser Person hier */
-.w-stein {
-  flex: none; min-width: 22px; margin: 0; padding: 0 2px; border: 0; border-right: 2px solid var(--m-blatt);
-  display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden;
-  background: var(--m-notiz); background: color-mix(in srgb, var(--w-farbe) 22%, var(--m-blatt));
-  box-shadow: inset 0 -4px 0 var(--w-farbe), 0 2px 0 var(--m-kante);
-  color: var(--m-tinte); font: inherit; cursor: grab; touch-action: none; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none;
-}
-.w-stein:first-child { border-top-left-radius: 4px; border-bottom-left-radius: 4px; }
-.w-stein-bild { font-size: 1.05rem; line-height: 1.1; }
-.w-stein-min { font-size: .72rem; font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; }
-.w-stein.w-gewaehlt { outline: 3px solid var(--m-tinte); outline-offset: -3px; }
-.w-stein.w-erledigt { opacity: .45; }
-.w-stein.w-erledigt .w-stein-min::after { content: " ✓"; }
-
-/* Geisterbild der ausgewählten Karte: so lang, wie es hier dauert; ragt über, wenn es nicht passt */
-.w-geist-stein {
-  flex: none; min-width: 22px; display: flex; align-items: center; justify-content: center;
-  border: 2px dashed var(--m-blau); border-radius: 4px; margin: -2px 0; background: transparent;
-  color: var(--m-blau); font-weight: 700; font-size: .85rem; font-variant-numeric: tabular-nums; pointer-events: none;
-}
-.w-geist-stein[hidden] { display: none; }
-.w-zulang .w-geist-stein {
-  border-color: var(--m-rot); color: var(--m-rot);
-  background: repeating-linear-gradient(135deg, transparent 0 5px, var(--m-notiz) 5px 9px);
-}
-.w-platz.w-passt .w-spur { border-color: var(--m-blau); box-shadow: 0 0 0 2px var(--m-blau); }
-.w-platz.w-zulang .w-spur { opacity: .8; }
-.w-platz.w-nein .w-spur { opacity: .4; }
-.w-platz.w-nein::after { content: "🚫"; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-size: 1.3rem; pointer-events: none; }
-.w-platz.w-ort .w-spur { box-shadow: 0 0 0 3px var(--m-tinte); }
-.w-platz.w-ueber .w-spur { box-shadow: 0 0 0 4px var(--m-blau); }
-.w-platz.w-jetzt { background: var(--m-notiz); }
-.w-platz.w-jetzt .w-spur { box-shadow: 0 0 0 3px var(--m-tinte); }
-
-/* Nicht da: graues Band mit Zeichen (und Wort, wenn es mehrere Tage überspannt) */
-.w-band {
-  display: flex; align-items: center; justify-content: center; gap: 6px; min-height: 54px;
-  border-top: 1px solid var(--m-linie-hell); border-left: 1px solid var(--m-linie-hell);
-  background: var(--m-notiz); color: var(--m-leise); font-size: .85rem; font-weight: 600;
-}
-.w-band-zeichen { font-size: 1.15rem; }
-
-@keyframes w-wackeln { 0%, 100% { transform: translateX(0); } 20% { transform: translateX(-6px); } 40% { transform: translateX(6px); } 60% { transform: translateX(-4px); } 80% { transform: translateX(4px); } }
-.w-wackeln .w-spur, .w-band.w-wackeln { animation: w-wackeln .45s ease-in-out; }
-
-/* Kartenstapel */
-.w-stapel { margin-top: 12px; padding: 8px 10px 10px; border: 2px dashed var(--m-linie-hell); border-radius: 8px; background: var(--m-blatt); }
-.w-stapel.w-bereit { border-color: var(--m-blau); }
-.w-stapel.w-ueber { border-color: var(--m-blau); border-style: solid; }
-.w-stapel-kopf { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; margin: 0 0 8px; }
-.w-stapel-kopf h3 { margin: 0; font-size: 1.1rem; }
-.w-stapel-hinweis { color: var(--m-leise); }
-.w-stapel-karten { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
-.w-karte {
-  display: flex; flex-direction: column; align-items: stretch; gap: 2px; min-height: 80px; padding: 0 0 4px; overflow: hidden;
-  border: 2px solid var(--w-farbe); border-radius: 8px; background: var(--m-blatt);
-  color: var(--m-tinte); font: inherit; font-size: .82rem; line-height: 1.2; text-align: left;
-  cursor: grab; touch-action: none; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none;
-}
-.w-karte > span { padding: 0 8px; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.w-karte-kopf { white-space: normal !important; }
-.w-karte-art { padding-top: 2px !important; padding-bottom: 2px !important; font-size: .74rem; font-weight: 700;
-  background: var(--m-notiz); background: color-mix(in srgb, var(--w-farbe) 20%, var(--m-blatt)); }
-.w-karte-kopf { display: flex; align-items: center; gap: 6px; margin-top: 2px; }
-.w-karte-bild { font-size: 1.5rem; line-height: 1; }
-.w-karte-name { font-size: .9rem; font-weight: 700; white-space: normal; -webkit-hyphens: auto; hyphens: auto; overflow-wrap: anywhere; line-height: 1.1; }
-.w-karte-zeile { color: var(--m-tinte); }
-.w-karte-bei { margin-top: 2px; font-weight: 700; font-size: .8rem; }
-.w-karte.w-ohne-platz { border-style: dashed; }
-.w-karte.w-ohne-platz .w-karte-bei { color: var(--m-rot); }
-.w-karte.w-gewaehlt { box-shadow: 0 0 0 3px var(--m-blatt), 0 0 0 6px var(--m-tinte); }
-.w-karte.w-gezogen, .w-stein.w-gezogen { opacity: .35; }
-.w-geist {
-  position: fixed; z-index: 50; pointer-events: none; display: flex; align-items: center; gap: 6px; padding: 8px 12px;
-  border: 2px solid var(--w-farbe); border-radius: 8px; background: var(--m-blatt); box-shadow: 4px 4px 0 var(--m-kante); font-weight: 700;
-}
-body.w-zieht { cursor: grabbing; -webkit-user-select: none; user-select: none; }
-body.w-laeuft .w-platz, body.w-laeuft .w-karte, body.w-laeuft .w-stein { cursor: default; }
-
-/* Kurzer Satz (nur „kann nicht“ und Fehler, die kein Bild zeigt): fest unten im Bild */
-.w-meldung {
-  position: fixed; z-index: 30; left: 50%; bottom: 12px; transform: translateX(-50%);
-  width: max-content; max-width: calc(100vw - 32px); margin: 0; padding: 10px 16px;
-  border-radius: 8px; background: var(--m-tinte); color: var(--m-blatt);
-  box-shadow: 4px 4px 0 var(--m-kante); font-weight: 600; line-height: 1.3;
-}
-.w-meldung:empty { display: none; }
-
-/* Wochenplan-Blatt (für die Tafel) */
-.w-overlay { position: fixed; inset: 0; z-index: 40; display: flex; align-items: center; justify-content: center; padding: 16px; background: var(--m-vollbild); }
-.w-wochenplan { width: 100%; max-width: 900px; max-height: calc(100vh - 32px); overflow: auto; padding: 18px 22px; }
-.w-wochenplan h2 { margin: 0 0 6px; font-size: 1.5rem; }
-.w-wochenplan h3 { margin: 14px 0 4px; font-size: 1.15rem; }
-.w-plan-liste { margin: 0; padding: 0; list-style: none; font-size: 1.25rem; line-height: 1.45; }
-.w-plan-liste li { padding: 4px 0; border-bottom: 1px solid var(--m-linie-hell); }
-
-@media (min-width: 1150px) {
-  .v-woche-an .v-blatt { --w-name: 120px; --w-zeit: 46px; }
-  .w-stapel-karten { grid-template-columns: repeat(auto-fill, minmax(168px, 1fr)); }
-}
-/* Schmal (Hochformat, Handy): eine Spalte, der Kalender scrollt waagrecht */
 @media (max-width: 899px) {
-  .w-oben { grid-template-columns: minmax(0, 1fr); }
-  .w-kalender-rahmen { overflow-x: auto; }
-  .w-kalender { min-width: 860px; }
+  .w-oben, .w-raster { grid-template-columns: minmax(0, 1fr); }
+  .w-tabelle { overflow-x: auto; }
+  .w-tabelle table { min-width: 760px; }
 }

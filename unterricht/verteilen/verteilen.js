@@ -5,9 +5,9 @@
    Eine Lage "verteilen" kann eine "these" tragen (steht über den Aufgaben) und eine "erkenntnis" (Form wie "vergleich"):
    die Erkenntnis klappt erst auf, wenn die Lage einmal rechtzeitig gelöst ist, und führt danach zur nächsten Lage.
      "eigen":     die Klasse trägt Personen, Aufgaben und Minuten selbst ein und verteilt dann wie bei "verteilen".
-     "woche":     Wochenkalender (Mo–So × Tageszeiten) mit freien Minuten und Tempo je Person; Karten antippen oder
-                  ziehen; ein Lauf geht durch die Woche; gezählt wird die Summe der Arbeitsminuten gegenüber dem
-                  bisherigen Plan (Zeitgewinn). Eigener Abschnitt unten („Art woche“).
+     "woche":     Wochenplan-Rennen: je Arbeit (feste Tage) eine Person antippen; ein Balken je Person; gezählt wird
+                  die längste Wochenzeit gegenüber dem bisherigen Plan (Zeitgewinn); danach der Plan als Wochenplan.
+                  Eigener Abschnitt unten („Art woche“).
    Jede Person arbeitet ihre Aufgaben nacheinander ab (in der Reihenfolge der Liste), alle Personen zugleich.
    Gezählt wird, wann alles fertig ist — nicht die Summe der Minuten. Nichts wird gespeichert. */
 (function () {
@@ -440,624 +440,327 @@
     }
   }
 
-  /* ── Art „woche“: Wochenplan-Rennen (Zeitbalken-Sprache, Oberfläche Version 2) ──
-     Daten: tage, tage_lang, zeiten, arten {id: {name, zeichen}};
-     personen[] mit bloecke = 14 × [freie Minuten, Tempo] (Mo vorm., Mo nachm., Di vorm., …; 0 = nicht da,
-       Tempo > 1 langsamer, < 1 schneller), weg / weg_wochenende = {zeichen, text} (Grund fürs Fehlen),
-       merkmale = [{zeichen, text}] (zwei bis drei Zeichen neben dem Gesicht);
-     arbeiten[] mit dauer je Person (bei Tempo 1), art, womit, wo, optional kann_nicht {person: Satz};
-     bisher[] = Startplan.
-     Bild: Ein Platz ist ein Balken (Länge = freie Minuten), eine gelegte Arbeit ein Baustein (Länge = Minuten,
-     die diese Person dort braucht). Dauer = Grunddauer × Tempo, gerundet (floor(x + 0,5)); Summe im Platz ≤ freie Minuten.
-     Gezählt wird die Summe der Arbeitsminuten. Das Werkzeug zeigt nur Zahlen und Längen, nie einen Tipp. */
-  var wWahl = null;        // ausgewählte Karte (id)
-  var wMeldung = '';       // kurzer Satz unten (nur, wenn ein Bild den Grund nicht zeigt)
-  var wWackeln = null;     // Platz, der nach einer Ablehnung wackeln soll: 'p@b'
-  var wLauf = null;        // laufende Wiedergabe (setTimeout)
-  var wZeigen = false;     // Wochenplan-Blatt offen
-  var wZug = null;         // laufendes Ziehen
-  var wZeigerZeit = 0;     // Ende des letzten Ziehens …
-  var wZeigerKarte = null; // … und welche Karte gezogen wurde (deren Klick danach ignorieren)
+  /* ── Art „woche“: Wochenplan-Rennen (Version 3) ──────────────────────────
+     Daten: titel, schritte[], einheit, tage[], tage_lang[], arten {id: {name}},
+       personen[] {id, name, satz, farbe}, arbeiten[] {id, name, art, mittel, ort, tage[], dauer {person: Minuten pro Mal},
+       kann_nicht {person: Satz}}, bisher {arbeit: person}.
+     Je Arbeit genau eine Entscheidung: wer macht sie. Wochenminuten einer Person = Summe (Minuten pro Mal × Zahl der Tage).
+     Die Zahl, die zählt: die längste Wochenzeit (wer am meisten arbeitet). Zeitgewinn = bisher − jetzt.
+     Nach jedem Lauf erscheint der Plan als Wochenplan (Personen × Tage). Das Werkzeug zeigt nur Zahlen, nie einen Tipp. */
+  var wGrund = null;        // {aid, text}: Satz unter einer Zeile, nach Tipp auf „kann nicht“
+  var wLauf = null;         // laufende Wiedergabe (requestAnimationFrame)
+  var wSicht = 'jetzt';     // Wochenplan-Ansicht: 'jetzt' oder 'bester'
+  var wTabelleAn = false;   // Wochenplan-Ansicht per Knopf geöffnet
 
-  function wBlockZahl(lage) { return lage.tage.length * lage.zeiten.length; }
   function wPerson(lage, id) { return lage.personen.filter(function (p) { return p.id === id; })[0]; }
-  function wArbeit(lage, id) { return lage.arbeiten.filter(function (a) { return a.id === id; })[0]; }
-  function wArt(lage, a) { return (lage.arten && lage.arten[a.art]) || null; }
+  function wKann(a, pid) { return !(a.kann_nicht && a.kann_nicht[pid]); }
+  function wWoche(a, pid) { return (parseInt(a.dauer[pid], 10) || 0) * a.tage.length; }
 
-  function wDauer(lage, a, pid, b) {
-    var blk = wPerson(lage, pid).bloecke[b];
-    return Math.floor(a.dauer[pid] * blk[1] + 0.5 + 1e-9);
-  }
-
-  function wMax(lage) {
-    var m = 0;
-    lage.personen.forEach(function (p) { p.bloecke.forEach(function (x) { if (x[0] > m) m = x[0]; }); });
-    return m || 60;
-  }
-
-  function wBlockName(lage, b, lang) {
-    var t = Math.floor(b / lage.zeiten.length);
-    var tag = lang ? (lage.tage_lang || lage.tage)[t] : lage.tage[t];
-    return tag + ' ' + lage.zeiten[b % lage.zeiten.length];
-  }
-
-  function wImBlock(lage, zu, pid, b, ohne) {
-    return lage.arbeiten.filter(function (a) {
-      var z = zu[a.id];
-      return a.id !== ohne && z && z.p === pid && z.b === b;
-    });
-  }
-
-  function wBelegt(lage, zu, pid, b, ohne) {
-    return wImBlock(lage, zu, pid, b, ohne).reduce(function (s, a) { return s + wDauer(lage, a, pid, b); }, 0);
-  }
-
-  /* Darf Karte aid in Block b von Person pid? Liefert {ok, art: 'kann'|'weg'|'voll', grund, dauer}. */
-  function wPruefen(lage, zu, aid, pid, b) {
-    var a = wArbeit(lage, aid), p = wPerson(lage, pid);
-    if (a.kann_nicht && a.kann_nicht[pid]) return { ok: false, art: 'kann', grund: a.kann_nicht[pid] };
-    var kap = p.bloecke[b][0];
-    if (!kap) return { ok: false, art: 'weg', grund: p.name + ' ist am ' + wBlockName(lage, b, true) + ' nicht da.' };
-    var d = wDauer(lage, a, pid, b);
-    var fehlt = wBelegt(lage, zu, pid, b, aid) + d - kap;
-    if (fehlt > 0) return { ok: false, art: 'voll', fehlt: fehlt, dauer: d };
-    return { ok: true, dauer: d };
-  }
-
-  function wSumme(lage, zu) {
-    var je = {}, gesamt = 0, offen = 0;
+  function wLast(lage, zu) {
+    var je = {};
     lage.personen.forEach(function (p) { je[p.id] = 0; });
-    lage.arbeiten.forEach(function (a) {
-      var z = zu[a.id];
-      if (!z) { offen += 1; return; }
-      var d = wDauer(lage, a, z.p, z.b);
-      je[z.p] += d;
-      gesamt += d;
-    });
-    return { gesamt: gesamt, je: je, offen: offen };
+    lage.arbeiten.forEach(function (a) { if (zu[a.id]) je[zu[a.id]] += wWoche(a, zu[a.id]); });
+    return je;
   }
 
-  function wSchluessel(lage, zu) {
-    return lage.arbeiten.map(function (a) { var z = zu[a.id]; return z ? z.p + '@' + z.b : '-'; }).join('|');
+  function wZahl(lage, zu) {
+    var je = wLast(lage, zu), m = 0;
+    Object.keys(je).forEach(function (k) { m = Math.max(m, je[k]); });
+    return m;
   }
 
-  function wBisher(lage) {
-    var zu = {};
-    lage.arbeiten.forEach(function (a) { zu[a.id] = null; });
-    (lage.bisher || []).forEach(function (e) {
-      zu[e.arbeit] = { p: e.person, b: lage.tage.indexOf(e.tag) * lage.zeiten.length + lage.zeiten.indexOf(e.zeit) };
-    });
-    return zu;
+  function wSchluessel(lage, zu) { return lage.arbeiten.map(function (a) { return zu[a.id]; }).join('|'); }
+
+  function wKopie(zu) { var k = {}; Object.keys(zu).forEach(function (x) { k[x] = zu[x]; }); return k; }
+
+  function wBester(laeufe) {
+    return laeufe.reduce(function (m, l, i) { return l.Z > laeufe[m].Z ? i : m; }, 0);
   }
 
-  /* Liste „Person: Arbeiten“ (gleiche Arbeiten zusammengefasst, in der Reihenfolge der Woche) */
-  function wListe(lage, zu, mitMinuten) {
-    var s = wSumme(lage, zu);
-    return lage.personen.map(function (p) {
-      var meine = lage.arbeiten.filter(function (a) { return zu[a.id] && zu[a.id].p === p.id; })
-        .sort(function (x, y) { return zu[x.id].b - zu[y.id].b; });
-      var zahl = {}, reihe = [];
-      meine.forEach(function (a) {
-        var n = a.typ || a.kurz || a.name;
-        if (!zahl[n]) { zahl[n] = 0; reihe.push({ n: n, z: a.zeichen }); }
-        zahl[n] += 1;
-      });
-      var teile = reihe.map(function (r) { return (zahl[r.n] > 1 ? zahl[r.n] + ' × ' : '') + (r.z ? r.z + ' ' : '') + r.n; });
-      return { person: p, text: teile.length ? teile.join(', ') : 'nichts', minuten: mitMinuten ? s.je[p.id] : null };
-    });
-  }
-
-  function wZeigerAn(k, aid, ausKalender) {
-    k.addEventListener('pointerdown', function (e) { wZeigerStart(e, aid, k); });
-    k.addEventListener('click', function (e) {
-      e.stopPropagation();
-      if (wZeigerKarte === aid && Date.now() - wZeigerZeit < 400) return;   // Klick nach dem Ziehen: schon erledigt
-      wKarteTippen(aid, ausKalender);
-    });
-  }
-
-  /* Karte im Stapel: Etikett „Art der Arbeit“, Bild + Name (Arbeitsaufgabe), Womit, Wo, und wer sie gerade hat. */
-  function wKarte(lage, zu, a) {
-    var z = zu[a.id], art = wArt(lage, a);
-    var k = el('button', 'w-karte w-art-' + (a.art || 'haus') + (z ? '' : ' w-ohne-platz'));
-    k.type = 'button';
-    k.setAttribute('data-a', a.id);
-    if (art) k.appendChild(el('span', 'w-karte-art', (art.zeichen ? art.zeichen + ' ' : '') + art.name));
-    var kopf = el('span', 'w-karte-kopf');
-    kopf.appendChild(el('span', 'w-karte-bild', a.zeichen || ''));
-    kopf.appendChild(el('span', 'w-karte-name', a.kurz || a.name));
-    k.appendChild(kopf);
-    if (a.womit) k.appendChild(el('span', 'w-karte-zeile', (a.womit.zeichen ? a.womit.zeichen + ' ' : '') + a.womit.text));
-    if (a.wo) k.appendChild(el('span', 'w-karte-zeile', (a.wo.zeichen ? a.wo.zeichen + ' ' : '') + a.wo.text));
-    var bei = el('span', 'w-karte-bei');
-    if (z) {
-      var p = wPerson(lage, z.p);
-      bei.textContent = (p.zeichen ? p.zeichen + ' ' : '') + wDauer(lage, a, z.p, z.b) + ' Min.';
-    } else {
-      bei.textContent = '❓ ohne Platz';
-    }
-    k.appendChild(bei);
-    k.setAttribute('aria-label', a.name + (art ? ', ' + art.name : '') + (a.womit ? ', womit: ' + a.womit.text : '') +
-      (a.wo ? ', wo: ' + a.wo.text : '') + ', ' + (z ? wPerson(lage, z.p).name + ', ' + wBlockName(lage, z.b, true) + ', ' +
-      wDauer(lage, a, z.p, z.b) + ' Minuten' : 'ohne Platz'));
-    if (wWahl === a.id) k.classList.add('w-gewaehlt');
-    k.setAttribute('aria-pressed', wWahl === a.id ? 'true' : 'false');
-    wZeigerAn(k, a.id, false);
-    return k;
-  }
-
-  /* Baustein im Platz: Länge = Minuten dieser Person an diesem Platz (Anteil an der Balkenlänge). */
-  function wStein(lage, zu, a, kap) {
-    var z = zu[a.id], d = wDauer(lage, a, z.p, z.b);
-    var s = el('button', 'w-stein w-art-' + (a.art || 'haus'));
-    s.type = 'button';
-    s.setAttribute('data-a', a.id);
-    s.style.width = (d / kap * 100) + '%';
-    s.appendChild(el('span', 'w-stein-bild', a.zeichen || '•'));
-    s.appendChild(el('span', 'w-stein-min', String(d)));
-    s.setAttribute('aria-label', a.name + ', ' + d + ' Minuten');
-    if (wWahl === a.id) s.classList.add('w-gewaehlt');
-    wZeigerAn(s, a.id, true);
-    return s;
-  }
-
-  /* Ist schon eine Karte ausgewählt, zählt ein Tipp auf einen Baustein im Kalender als Tipp auf seinen Platz
-     (Kinder tippen dorthin, wo die Karte hin soll, auch wenn dort schon etwas liegt). Im Stapel wechselt die Auswahl. */
-  function wKarteTippen(aid, ausKalender) {
-    if (wLauf) return;
-    var zu = zuteilung[lageNr];
-    if (wWahl && wWahl !== aid && ausKalender && zu[aid]) { wLegen(wWahl, { p: zu[aid].p, b: zu[aid].b }); return; }
-    wWahl = wWahl === aid ? null : aid;
-    wMeldung = '';
-    zeichnen();
-  }
-
-  /* Ziel antippen oder Karte dort loslassen: ziel = {p, b} oder null (= zurück in den Stapel, ohne Platz) */
-  function wLegen(aid, ziel) {
-    var lage = daten.lagen[lageNr], zu = zuteilung[lageNr];
-    if (!aid || wLauf) return;
-    if (ziel) {
-      var r = wPruefen(lage, zu, aid, ziel.p, ziel.b);
-      if (!r.ok) {
-        wMeldung = r.art === 'kann' ? r.grund : '';   // nur „kann nicht“ braucht einen Satz; sonst zeigt es das Bild
-        wWackeln = ziel.p + '@' + ziel.b;
-        wWahl = aid;
-        zeichnen();
-        return;
+  /* Eine Zeile der Liste: Arbeit (Name, Art, Tage) und je Person ein Knopf mit den Wochenminuten. */
+  function wZeile(lage, zu, a) {
+    var li = el('li', 'w-zeile');
+    var links = el('div', 'w-arbeit');
+    links.appendChild(el('span', 'w-arbeit-name', a.name));
+    var unter = el('span', 'w-arbeit-unter');
+    var art = lage.arten && lage.arten[a.art];
+    if (art) unter.appendChild(el('span', 'w-art w-art-' + a.art, art.name));
+    unter.appendChild(el('span', 'w-tage', a.tage.join(' · ')));
+    links.appendChild(unter);
+    li.appendChild(links);
+    var wahl = el('div', 'w-wahl');
+    lage.personen.forEach(function (p) {
+      var kann = wKann(a, p.id);
+      var k = el('button', 'w-knopf w-p' + (p.farbe || 0));
+      k.type = 'button';
+      k.appendChild(el('span', 'w-knopf-name', p.name));
+      k.appendChild(el('span', 'w-knopf-zahl', kann ? String(wWoche(a, p.id)) : 'kann nicht'));
+      k.setAttribute('data-a', a.id);
+      k.setAttribute('data-p', p.id);
+      if (!kann) {
+        k.classList.add('w-gesperrt');
+        k.setAttribute('aria-disabled', 'true');
+        k.setAttribute('aria-label', a.name + ': ' + p.name + ' kann nicht');
+      } else {
+        k.setAttribute('aria-pressed', zu[a.id] === p.id ? 'true' : 'false');
+        k.setAttribute('aria-label', a.name + ': ' + p.name + ', ' + wWoche(a, p.id) + ' Minuten in der Woche');
       }
-      zu[aid] = { p: ziel.p, b: ziel.b };
-    } else {
-      zu[aid] = null;
-    }
-    wWahl = null;
-    wMeldung = '';
-    zeichnen();
-  }
-
-  /* Ziehen mit Pointer Events (kein HTML5-Drag-and-Drop). Unter 8 px Bewegung = Tippen:
-     das erledigt das normale Klick-Ereignis (auch Tastatur), die Zeiger-Ereignisse nur das Ziehen. */
-  function wZeigerStart(e, aid, k) {
-    if (wLauf || (e.pointerType === 'mouse' && e.button !== 0)) return;
-    wZug = { aid: aid, k: k, x: e.clientX, y: e.clientY, id: e.pointerId, zieht: false, geist: null, ueber: null };
-    try { k.setPointerCapture(e.pointerId); } catch (x) { /* ältere Geräte */ }
-    k.addEventListener('pointermove', wZeigerZug);
-    k.addEventListener('pointerup', wZeigerEnde);
-    k.addEventListener('pointercancel', wZeigerAbbruch);
-  }
-
-  function wZielUnter(x, y) {
-    var t = document.elementFromPoint(x, y);
-    if (!t) return null;
-    var platz = t.closest('.w-platz');
-    if (platz) return { el: platz, ziel: { p: platz.getAttribute('data-p'), b: parseInt(platz.getAttribute('data-b'), 10) } };
-    var band = t.closest('.w-band');
-    if (band) return { el: band, ziel: 'weg' };
-    var stapel = t.closest('.w-stapel');
-    if (stapel) return { el: stapel, ziel: null };
-    return null;
-  }
-
-  function wZeigerZug(e) {
-    if (!wZug || e.pointerId !== wZug.id) return;
-    var dx = e.clientX - wZug.x, dy = e.clientY - wZug.y;
-    if (!wZug.zieht) {
-      if (dx * dx + dy * dy < 64) return;
-      wZug.zieht = true;
-      wWahl = wZug.aid;
-      var a = wArbeit(daten.lagen[lageNr], wZug.aid);
-      var g = el('div', 'w-geist w-art-' + (a.art || 'haus'));
-      g.appendChild(el('span', 'w-karte-bild', a.zeichen || ''));
-      g.appendChild(el('span', 'w-karte-name', a.kurz || a.name));
-      document.body.appendChild(g);
-      wZug.geist = g;
-      wZug.k.classList.add('w-gezogen');
-      document.body.classList.add('w-zieht');
-      wMarkieren();
-    }
-    wZug.geist.style.left = (e.clientX - 30) + 'px';
-    wZug.geist.style.top = (e.clientY - 26) + 'px';
-    wZug.letztY = e.clientY;
-    wRandScroll();
-    var u = wZielUnter(e.clientX, e.clientY);
-    var neu = u ? u.el : null;
-    if (wZug.ueber !== neu) {
-      if (wZug.ueber) wZug.ueber.classList.remove('w-ueber');
-      if (neu) neu.classList.add('w-ueber');
-      wZug.ueber = neu;
-    }
-    e.preventDefault();
-  }
-
-  /* Beim Ziehen am oberen oder unteren Bildrand die Seite mitscrollen (der Finger kann nicht scrollen, solange er zieht). */
-  function wRandScroll() {
-    if (!wZug || wZug.scroll) return;
-    function schritt() {
-      if (!wZug || !wZug.zieht) { if (wZug) wZug.scroll = null; return; }
-      var y = wZug.letztY, h = window.innerHeight, d = 0;
-      if (y > h - 40) d = Math.min(12, (y - (h - 40)) / 3 + 3);
-      else if (y < 40) d = -Math.min(12, (40 - y) / 3 + 3);
-      if (d) window.scrollBy(0, d);
-      wZug.scroll = d ? requestAnimationFrame(schritt) : null;
-    }
-    wZug.scroll = requestAnimationFrame(schritt);
-  }
-
-  function wZeigerAufraeumen() {
-    if (!wZug) return;
-    if (wZug.scroll) cancelAnimationFrame(wZug.scroll);
-    var k = wZug.k;
-    k.removeEventListener('pointermove', wZeigerZug);
-    k.removeEventListener('pointerup', wZeigerEnde);
-    k.removeEventListener('pointercancel', wZeigerAbbruch);
-    if (wZug.geist && wZug.geist.parentNode) wZug.geist.parentNode.removeChild(wZug.geist);
-    if (wZug.ueber) wZug.ueber.classList.remove('w-ueber');
-    k.classList.remove('w-gezogen');
-    document.body.classList.remove('w-zieht');
-  }
-
-  function wZeigerEnde(e) {
-    if (!wZug || e.pointerId !== wZug.id) return;
-    var zug = wZug;
-    wZeigerAufraeumen();
-    wZug = null;
-    if (!zug.zieht) return;
-    wZeigerZeit = Date.now();
-    wZeigerKarte = zug.aid;
-    var u = wZielUnter(e.clientX, e.clientY);
-    if (u && u.ziel === 'weg') { wWahl = null; wMeldung = ''; wWackeln = 'band'; zeichnen(); return; }
-    if (u) { wLegen(zug.aid, u.ziel); return; }
-    wWahl = null;          // daneben losgelassen: die Karte springt zurück
-    zeichnen();
-  }
-
-  function wZeigerAbbruch() {
-    wZeigerAufraeumen();
-    wZug = null;
-    zeichnen();
-  }
-
-  /* Bei ausgewählter Karte: Geisterbild in jedem Platz (Länge = Minuten dort), passt / zu lang / kann nicht. */
-  function wMarkieren() {
-    var lage = daten.lagen[lageNr], zu = zuteilung[lageNr];
-    Array.prototype.forEach.call(document.querySelectorAll('.w-platz'), function (z) {
-      var pid = z.getAttribute('data-p'), b = parseInt(z.getAttribute('data-b'), 10);
-      var g = z.querySelector('.w-geist-stein');
-      z.classList.remove('w-passt', 'w-zulang', 'w-nein', 'w-ort');
-      g.hidden = true;
-      if (!wWahl) return;
-      var jetzt = zu[wWahl];
-      if (jetzt && jetzt.p === pid && jetzt.b === b) { z.classList.add('w-ort'); return; }
-      var r = wPruefen(lage, zu, wWahl, pid, b);
-      if (r.art === 'kann') { z.classList.add('w-nein'); return; }
-      var kap = wPerson(lage, pid).bloecke[b][0];
-      g.hidden = false;
-      g.style.width = (r.dauer / kap * 100) + '%';
-      g.textContent = String(r.dauer);
-      z.classList.add(r.ok ? 'w-passt' : 'w-zulang');
+      k.addEventListener('click', function () {
+        if (wLauf) return;
+        if (!kann) { wGrund = { aid: a.id, text: a.kann_nicht[p.id] }; zeichnen(); return; }
+        zu[a.id] = p.id;
+        wGrund = null;
+        zeichnen();
+      });
+      wahl.appendChild(k);
     });
-    var st = document.querySelector('.w-stapel');
-    if (st) st.classList.toggle('w-bereit', !!wWahl && !!zu[wWahl]);
+    li.appendChild(wahl);
+    if (wGrund && wGrund.aid === a.id) li.appendChild(el('p', 'w-grund', wGrund.text));
+    return li;
   }
 
-  function wWegVon(lage, p, b) {
-    var t = Math.floor(b / lage.zeiten.length);
-    return (t >= 5 && p.weg_wochenende) ? p.weg_wochenende : (p.weg || { zeichen: '–', text: 'nicht da' });
-  }
-
-  /* Ein Platz: weißer Balken, Länge = freie Minuten (bezogen auf den größten Platz der Woche). */
-  function wPlatz(lage, zu, p, b, max) {
-    var blk = p.bloecke[b], kap = blk[0];
-    var z = el('div', 'w-platz');
-    z.setAttribute('data-p', p.id);
-    z.setAttribute('data-b', String(b));
-    z.setAttribute('role', 'button');
-    var frei = kap - wBelegt(lage, zu, p.id, b);
-    z.setAttribute('aria-label', p.name + ', ' + wBlockName(lage, b, true) + ', ' + frei + ' Minuten frei' +
-      (blk[1] > 1 ? ', langsamer' : blk[1] < 1 ? ', schneller' : ''));
-    var spur = el('div', 'w-spur');
-    spur.style.width = (kap / max * 84) + '%';     // 60 Min. = 84 % der Spalte: ein zu langes Geisterbild ragt sichtbar über
-    wImBlock(lage, zu, p.id, b).forEach(function (a) { spur.appendChild(wStein(lage, zu, a, kap)); });
-    var g = el('div', 'w-geist-stein');
-    g.hidden = true;
-    spur.appendChild(g);
-    z.appendChild(spur);
-    if (blk[1] > 1) { z.classList.add('w-langsam'); z.appendChild(el('span', 'w-tempo-zeichen', '🐢')); }
-    else if (blk[1] < 1) { z.classList.add('w-schnell'); z.appendChild(el('span', 'w-tempo-zeichen', '⚡')); }
-    if (wWackeln === p.id + '@' + b) z.classList.add('w-wackeln');
-    z.addEventListener('click', function () {
-      if (wLauf || !wWahl) return;
-      wLegen(wWahl, { p: p.id, b: b });
+  /* Wochenplan: Zeilen = Personen, Spalten = Tage; jede Arbeit an ihren festen Tagen bei der Person, die sie macht. */
+  function wTabelle(lage, plan, titel) {
+    var box = el('div', 'w-tabelle');
+    box.appendChild(el('h3', null, titel));
+    var tab = el('table');
+    var kopf = el('tr');
+    kopf.appendChild(el('th', null, ''));
+    (lage.tage_lang || lage.tage).forEach(function (t) { var th = el('th', null, t); th.setAttribute('scope', 'col'); kopf.appendChild(th); });
+    var thw = el('th', 'w-tab-summe', 'Minuten');
+    thw.setAttribute('scope', 'col');
+    kopf.appendChild(thw);
+    var thead = el('thead');
+    thead.appendChild(kopf);
+    tab.appendChild(thead);
+    var tbody = el('tbody');
+    var je = wLast(lage, plan);
+    lage.personen.forEach(function (p) {
+      var tr = el('tr', 'w-p' + (p.farbe || 0));
+      tr.setAttribute('data-p', p.id);
+      var th = el('th', 'w-tab-person', p.name);
+      th.setAttribute('scope', 'row');
+      tr.appendChild(th);
+      lage.tage.forEach(function (t) {
+        var td = el('td');
+        td.setAttribute('data-tag', t);
+        lage.arbeiten.forEach(function (a) {
+          if (plan[a.id] !== p.id || a.tage.indexOf(t) < 0) return;
+          var e = el('div', 'w-eintrag');
+          e.appendChild(el('span', 'w-eintrag-name', a.name));
+          var art = lage.arten && lage.arten[a.art];
+          if (art) e.appendChild(el('span', 'w-art w-art-' + a.art, art.name));
+          td.appendChild(e);
+        });
+        tr.appendChild(td);
+      });
+      tr.appendChild(el('td', 'w-tab-summe', String(je[p.id])));
+      tbody.appendChild(tr);
     });
-    return z;
-  }
-
-  /* Graues Band für zusammenhängende Tage, an denen die Person zu dieser Tageszeit nicht da ist. */
-  function wBand(weg, spanne, aria) {
-    var band = el('div', 'w-band');
-    band.style.gridColumn = 'span ' + spanne;
-    band.setAttribute('aria-label', aria);
-    band.appendChild(el('span', 'w-band-zeichen', weg.zeichen));
-    if (spanne >= 2) band.appendChild(el('span', 'w-band-wort', weg.text));
-    band.addEventListener('click', function () {
-      if (!wWahl || wLauf) return;
-      wWackeln = 'band';
-      band.classList.remove('w-wackeln');
-      void band.offsetWidth;
-      band.classList.add('w-wackeln');
+    tab.appendChild(tbody);
+    box.appendChild(tab);
+    var merk = el('ul', 'w-merkmale');
+    lage.arbeiten.forEach(function (a) {
+      var li = el('li');
+      li.appendChild(el('strong', null, a.name + ': '));
+      li.appendChild(document.createTextNode('Arbeitsmittel ' + a.mittel + ' · Arbeitsort ' + a.ort));
+      merk.appendChild(li);
     });
-    return band;
+    box.appendChild(merk);
+    return box;
   }
 
   function wocheZeichnen(lage, zu, blatt) {
-    var s = wSumme(lage, zu);
     var key = wSchluessel(lage, zu);
     var laeufe = versuche[lageNr];
-    var fertig = abgespielt[lageNr] === key && s.offen === 0;
-    var max = wMax(lage);
-    var Y = wSumme(lage, wBisher(lage)).gesamt;
+    var fertig = abgespielt[lageNr] === key;
+    var bisher = {};
+    Object.keys(lage.bisher).forEach(function (k) { bisher[k] = lage.bisher[k]; });
+    var Y = wZahl(lage, bisher), X = wZahl(lage, zu), je = wLast(lage, zu);
+    var unberuehrt = !laeufe.length && key === wSchluessel(lage, bisher);
 
-    /* Oben: großer Satz und Nebenknöpfe links, Start/Ergebnis rechts an fester Stelle */
+    /* Oben: Titel und Schritte links, Start rechts */
     var oben = el('div', 'w-oben');
     var intro = el('div', 'w-intro');
     while (blatt.firstChild) intro.appendChild(blatt.firstChild);
-    var neben = el('div', 'w-neben');   // kommt in den Kopf des Kartenstapels
-    neben.appendChild(knopf('📋 Wochenplan zeigen', 'w-klein', function () { if (wLauf) return; wZeigen = true; zeichnen(); }));
-    neben.appendChild(knopf('↺ Alles neu planen', 'w-klein', function () {
-      if (wLauf) return;
-      lage.arbeiten.forEach(function (a) { zu[a.id] = null; });
-      wWahl = null;
-      wMeldung = '';
-      zeichnen();
-    }));
+    if (lage.schritte) {
+      var ol = el('ol', 'w-schritte');
+      lage.schritte.forEach(function (s) { ol.appendChild(el('li', null, s)); });
+      intro.appendChild(ol);
+    }
     oben.appendChild(intro);
-
-    var start = el('div', 'w-start');
-    if (fertig) {
-      var Z = Y - s.gesamt;
-      var gew = el('p', 'w-gewinn');
-      if (Z >= 0) {
-        gew.appendChild(document.createTextNode('Du hast '));
-        gew.appendChild(el('strong', 'w-zahl', String(Z)));
-        gew.appendChild(document.createTextNode(' Minuten gespart.'));
-      } else {
-        gew.appendChild(document.createTextNode('Dein Plan braucht '));
-        gew.appendChild(el('strong', 'w-zahl', String(-Z)));
-        gew.appendChild(document.createTextNode(' Minuten mehr als bisher.'));
-      }
-      start.appendChild(gew);
-      start.appendChild(el('p', 'w-gesamt', 'Die Familie hat ' + s.gesamt + ' Minuten gearbeitet. Bisher: ' + Y + ' Minuten.'));
-    } else {
-      var st = s.offen > 0 ? (s.offen === 1 ? 'Noch 1 Arbeit ohne Platz.' : 'Noch ' + s.offen + ' Arbeiten ohne Platz.')
-        : (laeufe.length ? 'Plan geändert. Drück auf Start.' : '');
-      if (st) start.appendChild(el('p', 'w-status' + (s.offen > 0 ? ' w-gesperrt' : ''), st));
-      else {
-        var schritte = el('ol', 'w-schritte');
-        schritte.appendChild(el('li', null, 'Zieh Karten in andere Plätze.'));
-        schritte.appendChild(el('li', null, 'Drück auf Start.'));
-        start.appendChild(schritte);
-      }
-    }
-    var lauf = el('p', 'w-lauf');
-    lauf.setAttribute('aria-live', 'polite');
-    start.appendChild(lauf);
-    var unberuehrt = !laeufe.length && key === wSchluessel(lage, wBisher(lage));
-    var startKnopf = knopf(fertig ? '↻ Noch einmal abspielen' : '▶ Start', (unberuehrt || fertig ? '' : 'voll ') + 'w-start-knopf', function () {
-      wAbspielen(lage, zu, key, startKnopf, lauf);
+    var startKnopf = knopf(fertig ? 'Noch einmal abspielen' : 'Start', (unberuehrt || fertig ? '' : 'voll ') + 'w-start-knopf', function () {
+      wAbspielen(lage, zu, key);
     });
-    startKnopf.disabled = s.offen > 0;
-    start.appendChild(startKnopf);
-    if (laeufe.length) {
-      var bester = laeufe.reduce(function (m, l, i) { return l.Z > laeufe[m].Z ? i : m; }, 0);
-      var ol = el('ol', 'w-laeufe');
-      laeufe.forEach(function (l, i) {
-        var li = el('li', i === bester ? 'w-bester' : null, 'Lauf ' + (i + 1) + ': ' + (l.Z >= 0 ? l.Z + ' gespart' : (-l.Z) + ' mehr'));
-        if (i === bester) li.appendChild(el('span', 'w-stern', ' ★'));
-        ol.appendChild(li);
-      });
-      start.appendChild(ol);
-    }
-    oben.appendChild(start);
+    oben.appendChild(startKnopf);
     blatt.appendChild(oben);
 
-    /* Kalender: Spalten = Tage, je Person zwei Spuren; Plätze als Balken, Abwesenheit als graue Bänder */
-    var rahmen = el('div', 'w-kalender-rahmen');
-    var kal = el('div', 'w-kalender');
-    kal.style.gridTemplateColumns = 'var(--w-name) var(--w-zeit) repeat(' + lage.tage.length + ', minmax(0, 1fr))';
-    kal.appendChild(el('div', 'w-ecke'));
-    kal.appendChild(el('div', 'w-ecke'));
-    lage.tage.forEach(function (t, i) {
-      var k = el('div', 'w-tag', t);
-      k.setAttribute('data-t', String(i));
-      kal.appendChild(k);
-    });
+    var raster = el('div', 'w-raster');
+    var links = el('div', 'w-links');
+    var rechts = el('div', 'w-rechts');
+    raster.appendChild(links);
+    raster.appendChild(rechts);
+    blatt.appendChild(raster);
+
+    /* Links: Personenkarten und Liste der Arbeiten */
+    var karten = el('div', 'w-personen');
     lage.personen.forEach(function (p) {
-      lage.zeiten.forEach(function (zeit, zi) {
-        if (zi === 0) {
-          var name = el('div', 'w-person');
-          name.style.gridRow = 'span ' + lage.zeiten.length;
-          var gesicht = el('span', 'w-gesicht');
-          gesicht.appendChild(el('span', 'w-person-zeichen', p.zeichen || ''));
-          gesicht.appendChild(el('span', 'w-person-name', p.name));
-          name.appendChild(gesicht);
-          (p.merkmale || []).forEach(function (m) {
-            var mk = el('span', 'w-merkmal');
-            mk.appendChild(el('span', 'w-merkmal-zeichen', m.zeichen));
-            mk.appendChild(el('span', 'w-merkmal-wort', m.text));
-            name.appendChild(mk);
-          });
-          if (fertig) name.appendChild(el('span', 'w-person-summe', s.je[p.id] + ' Min.'));
-          if (p.profil) name.title = p.profil.join(' ');
-          kal.appendChild(name);
-        }
-        kal.appendChild(el('div', 'w-zeit' + (zi === 0 ? ' w-erste' : ''), zeit === 'vormittags' ? 'vorm.' : zeit === 'nachmittags' ? 'nachm.' : zeit));
-        var t = 0;
-        while (t < lage.tage.length) {
-          var b = t * lage.zeiten.length + zi;
-          if (p.bloecke[b][0]) {
-            var platz = wPlatz(lage, zu, p, b, max);
-            if (zi === 0) platz.classList.add('w-erste');
-            kal.appendChild(platz);
-            t += 1;
-            continue;
-          }
-          var weg = wWegVon(lage, p, b), n = 1;
-          while (t + n < lage.tage.length && !p.bloecke[(t + n) * lage.zeiten.length + zi][0] &&
-                 wWegVon(lage, p, (t + n) * lage.zeiten.length + zi) === weg) n += 1;
-          var band = wBand(weg, n, p.name + ', ' + lage.tage[t] + (n > 1 ? ' bis ' + lage.tage[t + n - 1] : '') + ' ' + zeit + ': ' + weg.text);
-          if (zi === 0) band.classList.add('w-erste');
-          kal.appendChild(band);
-          t += n;
-        }
-      });
+      var k = el('div', 'w-pkarte w-p' + (p.farbe || 0));
+      k.appendChild(el('strong', null, p.name));
+      if (p.satz) k.appendChild(el('span', null, p.satz));
+      karten.appendChild(k);
     });
-    rahmen.appendChild(kal);
-    blatt.appendChild(rahmen);
+    links.appendChild(karten);
+    var kopf = el('div', 'w-liste-kopf');
+    kopf.appendChild(el('span', null, 'Arbeit'));
+    kopf.appendChild(el('span', null, lage.einheit || 'Minuten'));
+    links.appendChild(kopf);
+    var liste = el('ul', 'w-liste');
+    lage.arbeiten.forEach(function (a) { liste.appendChild(wZeile(lage, zu, a)); });
+    links.appendChild(liste);
 
-    /* Kartenstapel: alle Arbeiten der Woche; Karten ohne Platz zuerst. Auch Ablage-Ziel („zurück in den Stapel“). */
-    var stapel = el('div', 'w-stapel');
-    var kopf = el('div', 'w-stapel-kopf');
-    kopf.appendChild(el('h3', null, '🃏 Die Arbeiten der Woche'));
-    kopf.appendChild(el('span', 'w-stapel-hinweis', 'Zieh eine Karte in einen Platz.'));
-    kopf.appendChild(neben);
-    stapel.appendChild(kopf);
-    var reihe = el('div', 'w-stapel-karten');
-    lage.arbeiten.filter(function (a) { return !zu[a.id]; }).concat(lage.arbeiten.filter(function (a) { return zu[a.id]; }))
-      .forEach(function (a) { reihe.appendChild(wKarte(lage, zu, a)); });
-    stapel.appendChild(reihe);
-    stapel.addEventListener('click', function (e) {
-      if (e.target.closest('.w-karte') || !wWahl || wLauf) return;
-      wLegen(wWahl, null);
+    /* Rechts: ein Balken je Person, Ergebnis, Läufe */
+    var max = Math.max(Y, X, 1);
+    var balken = el('div', 'w-balken-box');
+    balken.appendChild(el('h3', null, 'Wie lange arbeitet jede Person in der Woche?'));
+    lage.personen.forEach(function (p) {
+      var z = el('div', 'w-bzeile');
+      z.appendChild(el('span', 'w-bname', p.name));
+      var bahn = el('div', 'w-bahn');
+      var b = el('div', 'w-balken w-p' + (p.farbe || 0));
+      b.setAttribute('data-p', p.id);
+      b.setAttribute('data-ziel', String(je[p.id] / max * 100));
+      b.style.width = fertig ? (je[p.id] / max * 100) + '%' : '0';
+      bahn.appendChild(b);
+      var strich = el('div', 'w-bisher');
+      strich.style.left = (Y / max * 100) + '%';
+      bahn.appendChild(strich);
+      z.appendChild(bahn);
+      var zahl = el('span', 'w-bzahl', fertig ? String(je[p.id]) : '');
+      zahl.setAttribute('data-p', p.id);
+      z.appendChild(zahl);
+      balken.appendChild(z);
     });
-    blatt.appendChild(stapel);
+    balken.appendChild(el('p', 'w-bisher-legende', 'Strich = bisher (' + Y + ' Minuten)'));
+    rechts.appendChild(balken);
 
-    var meldung = el('p', 'w-meldung', wMeldung);
-    meldung.setAttribute('aria-live', 'polite');
-    blatt.appendChild(meldung);
-
-    wBlattZeichnen(lage, zu, laeufe);
-    wMarkieren();
-    wWackeln = null;
-  }
-
-  /* Wochenplan-Blatt: Liste „Person: Arbeiten“ für die Tafel */
-  function wBlattZeichnen(lage, zu, laeufe) {
-    var alt = document.getElementById('w-wochenplan');
-    if (alt) alt.parentNode.removeChild(alt);
-    if (!wZeigen) return;
-    var hinter = el('div', 'w-overlay');
-    hinter.id = 'w-wochenplan';
-    var b = el('div', 'w-wochenplan m-blatt');
-    b.setAttribute('role', 'dialog');
-    b.setAttribute('aria-label', 'Wochenplan');
-    b.appendChild(el('h2', null, '📋 Wochenplan: Wer macht was?'));
-    function abschnitt(titel, plan, mitMinuten) {
-      b.appendChild(el('h3', null, titel));
-      var ul = el('ul', 'w-plan-liste');
-      wListe(lage, plan, mitMinuten).forEach(function (z) {
-        var li = el('li');
-        li.appendChild(el('strong', null, (z.person.zeichen ? z.person.zeichen + ' ' : '') + z.person.name +
-          (z.minuten != null ? ' (' + z.minuten + ' Min.)' : '') + ': '));
-        li.appendChild(document.createTextNode(z.text));
-        ul.appendChild(li);
-      });
-      b.appendChild(ul);
-    }
-    abschnitt('Dein Plan jetzt', zu, false);
-    if (laeufe.length) {
-      var bi = laeufe.reduce(function (m, l, i) { return l.Z > laeufe[m].Z ? i : m; }, 0);
-      var l = laeufe[bi];
-      abschnitt('Dein bester Lauf: Lauf ' + (bi + 1) + ', ' + (l.Z >= 0 ? l.Z + ' Minuten gespart' : (-l.Z) + ' Minuten mehr'), l.plan, true);
-    }
-    var h = el('div', 'v-handlungen');
-    h.appendChild(knopf('Schließen', 'voll', function () { wZeigen = false; zeichnen(); }));
-    b.appendChild(h);
-    hinter.appendChild(b);
-    hinter.addEventListener('click', function (e) { if (e.target === hinter) { wZeigen = false; zeichnen(); } });
-    document.body.appendChild(hinter);
-  }
-
-  /* Lauf: Zeiger wandert über die Tageszeiten der Woche, Bausteine werden erledigt, am Ende die Zahl. */
-  function wAbspielen(lage, zu, key, startKnopf, lauf) {
-    if (wLauf) return;
-    wWahl = null;
-    wMeldung = '';
-    wMarkieren();
-    var meld = document.querySelector('.w-meldung');
-    if (meld) meld.textContent = '';
-    startKnopf.disabled = true;
-    document.body.classList.add('w-laeuft');
-    Array.prototype.forEach.call(document.querySelectorAll('.w-gewinn, .w-gesamt, .w-status, .w-person-summe'), function (e) { e.hidden = true; });
-    var nb = wBlockZahl(lage), schritt = lage.lauf_ms ? lage.lauf_ms / nb : 650;
-    var b = 0, bisher = 0;
-    function weiter() {
-      Array.prototype.forEach.call(document.querySelectorAll('.w-jetzt'), function (e) { e.classList.remove('w-jetzt'); });
-      if (b >= nb) {
-        wLauf = setTimeout(function () {
-          wLauf = null;
-          document.body.classList.remove('w-laeuft');
-          abgespielt[lageNr] = key;
-          var s = wSumme(lage, zu);
-          var Y = wSumme(lage, wBisher(lage)).gesamt;
-          var liste = versuche[lageNr];
-          if (!liste.some(function (l) { return l.key === key; })) {
-            var kopie = {};
-            Object.keys(zu).forEach(function (k) { kopie[k] = zu[k] ? { p: zu[k].p, b: zu[k].b } : null; });
-            liste.push({ key: key, X: s.gesamt, Z: Y - s.gesamt, plan: kopie });
-          }
-          zeichnen();
-        }, 300);
-        return;
+    var erg = el('div', 'w-ergebnis');
+    erg.setAttribute('aria-live', 'polite');
+    if (fertig) {
+      var Z = Y - X;
+      var s1 = el('p', 'w-satz');
+      s1.appendChild(document.createTextNode('Wer am meisten arbeitet, braucht '));
+      s1.appendChild(el('strong', null, X + ' Minuten'));
+      s1.appendChild(document.createTextNode('. Bisher: ' + Y + ' Minuten.'));
+      erg.appendChild(s1);
+      var s2 = el('p', 'w-gewinn');
+      if (Z >= 0) {
+        s2.appendChild(document.createTextNode('Du hast '));
+        s2.appendChild(el('strong', 'w-zahl', String(Z)));
+        s2.appendChild(document.createTextNode(' Minuten gespart.'));
+      } else {
+        s2.appendChild(document.createTextNode('Du brauchst '));
+        s2.appendChild(el('strong', 'w-zahl', String(-Z)));
+        s2.appendChild(document.createTextNode(' Minuten mehr als bisher.'));
       }
-      var tag = Math.floor(b / lage.zeiten.length);
-      var kopf = document.querySelector('.w-tag[data-t="' + tag + '"]');
-      if (kopf) kopf.classList.add('w-jetzt');
-      Array.prototype.forEach.call(document.querySelectorAll('.w-platz[data-b="' + b + '"]'), function (z) {
-        z.classList.add('w-jetzt');
-        Array.prototype.forEach.call(z.querySelectorAll('.w-stein'), function (k) {
-          k.classList.add('w-erledigt');
-          var a = wArbeit(lage, k.getAttribute('data-a'));
-          var zz = zu[a.id];
-          bisher += wDauer(lage, a, zz.p, zz.b);
-        });
-      });
-      lauf.textContent = wBlockName(lage, b, true) + ' · ' + bisher + ' Minuten';
-      b += 1;
-      wLauf = setTimeout(weiter, schritt);
+      erg.appendChild(s2);
+    } else {
+      erg.appendChild(el('p', 'w-status', laeufe.length ? 'Plan geändert. Drück auf Start.' : ''));
     }
-    wLauf = setTimeout(weiter, 50);
+    rechts.appendChild(erg);
+
+    if (laeufe.length) {
+      var bi = wBester(laeufe);
+      var lb = el('div', 'w-laeufe');
+      lb.appendChild(el('h3', null, 'Deine Läufe'));
+      var ol2 = el('ol');
+      laeufe.forEach(function (l, i) {
+        var li = el('li', i === bi ? 'w-bester' : null, (l.Z >= 0 ? l.Z + ' Minuten gespart' : (-l.Z) + ' Minuten mehr'));
+        if (i === bi) li.appendChild(el('span', null, ' ★ bester'));
+        ol2.appendChild(li);
+      });
+      lb.appendChild(ol2);
+      rechts.appendChild(lb);
+    }
+    var zeigen = knopf(wTabelleAn ? 'Wochenplan ausblenden' : 'Wochenplan zeigen', 'w-klein', function () {
+      if (wLauf) return;
+      wTabelleAn = !wTabelleAn;
+      zeichnen();
+    });
+    rechts.appendChild(zeigen);
+
+    /* Wochenplan: nach jedem Lauf von selbst, sonst per Knopf */
+    if (fertig || wTabelleAn) {
+      var wp = el('section', 'w-wochenplan');
+      wp.id = 'w-wochenplan';
+      var wkopf = el('div', 'w-wochenplan-kopf');
+      wkopf.appendChild(el('h2', null, 'Wochenplan: Wer macht was?'));
+      if (laeufe.length) {
+        var um = el('div', 'w-umschalter');
+        [['jetzt', 'jetzt'], ['bester', 'bester Lauf']].forEach(function (x) {
+          var k = knopf(x[1], 'w-klein', function () { wSicht = x[0]; zeichnen(); });
+          k.setAttribute('aria-pressed', wSicht === x[0] ? 'true' : 'false');
+          um.appendChild(k);
+        });
+        wkopf.appendChild(um);
+      }
+      wp.appendChild(wkopf);
+      if (wSicht === 'bester' && laeufe.length) {
+        var l = laeufe[wBester(laeufe)];
+        wp.appendChild(wTabelle(lage, l.plan, 'Bester Lauf: wer am meisten arbeitet, braucht ' + l.X + ' Minuten'));
+      } else {
+        wp.appendChild(wTabelle(lage, zu, 'Dein Plan jetzt: wer am meisten arbeitet, braucht ' + X + ' Minuten'));
+      }
+      blatt.appendChild(wp);
+    }
+  }
+
+  /* Lauf: alle Balken wachsen zugleich (etwa 7 Sekunden), dann das Ergebnis. */
+  function wAbspielen(lage, zu, key) {
+    if (wLauf) return;
+    wGrund = null;
+    var dauer = lage.lauf_ms || 7000;
+    document.body.classList.add('w-laeuft');
+    var balken = Array.prototype.slice.call(document.querySelectorAll('.w-balken'));
+    var zahlen = {};
+    Array.prototype.forEach.call(document.querySelectorAll('.w-bzahl'), function (z) { zahlen[z.getAttribute('data-p')] = z; });
+    Array.prototype.forEach.call(document.querySelectorAll('.w-start-knopf, .w-knopf, .w-klein'), function (k) { k.disabled = true; });
+    var erg = document.querySelector('.w-ergebnis');
+    if (erg) erg.textContent = '';
+    var wp = document.getElementById('w-wochenplan');
+    if (wp) wp.hidden = true;
+    var je = wLast(lage, zu), max = 0;
+    Object.keys(je).forEach(function (k) { max = Math.max(max, je[k]); });
+    var t0 = null;
+    function schritt(zeit) {
+      if (t0 === null) t0 = zeit;
+      var anteil = Math.min(1, (zeit - t0) / dauer);
+      var jetzt = anteil * max;
+      balken.forEach(function (b) {
+        var pid = b.getAttribute('data-p');
+        var w = Math.min(je[pid], jetzt);
+        b.style.width = (parseFloat(b.getAttribute('data-ziel')) * (je[pid] ? w / je[pid] : 0)) + '%';
+        zahlen[pid].textContent = String(Math.round(w));
+      });
+      if (anteil < 1) { wLauf = requestAnimationFrame(schritt); return; }
+      wLauf = null;
+      document.body.classList.remove('w-laeuft');
+      abgespielt[lageNr] = key;
+      var Y = wZahl(lage, lage.bisher), X = wZahl(lage, zu);
+      var liste = versuche[lageNr];
+      if (!liste.some(function (l) { return l.key === key; })) liste.push({ key: key, X: X, Z: Y - X, plan: wKopie(zu) });
+      wSicht = 'jetzt';
+      zeichnen();
+    }
+    wLauf = requestAnimationFrame(schritt);
   }
 
   /* ── Seite ───────────────────────────────────────────────────────── */
   function zeichnen() {
     var lage = daten.lagen[lageNr];
     var zu = zuteilung[lageNr];
-    if (wLauf) { clearTimeout(wLauf); wLauf = null; document.body.classList.remove('w-laeuft'); }
+    if (wLauf) { cancelAnimationFrame(wLauf); wLauf = null; document.body.classList.remove('w-laeuft'); }
     document.body.classList.toggle('v-woche-an', lage.art === 'woche');
-    if (lage.art !== 'woche') {
-      wZeigen = false;
-      var blattAlt = document.getElementById('w-wochenplan');
-      if (blattAlt) blattAlt.parentNode.removeChild(blattAlt);
-    }
 
     Array.prototype.forEach.call(document.querySelectorAll('.v-lage-knopf'), function (k, i) {
       k.setAttribute('aria-pressed', i === lageNr ? 'true' : 'false');
@@ -1132,7 +835,7 @@
       }
       var leer = {};
       (lage.aufgaben || []).forEach(function (a) { leer[a.id] = null; });
-      zuteilung.push(lage.art === 'woche' ? wBisher(lage) : leer);
+      zuteilung.push(lage.art === 'woche' ? wKopie(lage.bisher) : leer);
       versuche.push([]);
       abgespielt.push(null);
       reiter.appendChild(knopf(lage.reiter || lage.titel, 'v-lage-knopf', function () {
