@@ -142,6 +142,10 @@
       "titel": "Wochenplan-Rennen",
       "art": "werkzeug", "fach": "wib", "jahrgang": 6,
       "kurse": ["wib6b"], "thema": "Arbeit", "datum": "2026-11-10" },
+    { "id": "quiz-arbeit", "pfad": "quiz/arbeit/",
+      "titel": "Quiz: Arbeit",
+      "art": "werkzeug", "fach": "wib", "jahrgang": 6,
+      "kurse": ["wib6b"], "thema": "Arbeit", "datum": "2026-11-10" },
 
     { "id": "tool-inf-datenspuren", "pfad": "datenspuren/",
       "titel": "Datenspuren — Fälle: Wer steckt hinter der Nummer?",

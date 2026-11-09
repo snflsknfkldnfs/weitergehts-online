@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """check_material.py — jede Materialseite trägt die gemeinsame Gestaltung „Blatt" (BLOCKING in check.sh).
 
-Prüft alle index.html unter unterricht/{quellen,ordnen,datenspuren,verteilen,abstimmen,begleiten}/ (ohne _-Ordner)
+Prüft alle index.html unter unterricht/{quellen,ordnen,datenspuren,verteilen,abstimmen,begleiten,quiz}/ (ohne _-Ordner)
 und die Vorlagen tools/datenspuren/seite_vorlage.html, tools/begleiten/seite_vorlage.html:
   1. material.css wird geladen, und zwar VOR dem Werkzeug-CSS (sonst fehlen die --m-*-Tokens);
   2. das Werkzeug-CSS (quellen.css, ordnen.css, datenspuren.css) enthält keine eigenen Farbwerte —
@@ -15,7 +15,7 @@ import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
-WERKZEUGE = ("quellen", "ordnen", "datenspuren", "verteilen", "abstimmen", "begleiten")
+WERKZEUGE = ("quellen", "ordnen", "datenspuren", "verteilen", "abstimmen", "begleiten", "quiz")
 
 
 def huellen() -> list[Path]:
@@ -35,7 +35,7 @@ def main() -> int:
         s = f.read_text(encoding="utf-8")
         rel = f.relative_to(REPO).as_posix()
         m = s.find("material.css")
-        w = re.search(r"(quellen|ordnen|datenspuren|verteilen|abstimmen|begleiten)\.css", s)
+        w = re.search(r"(quellen|ordnen|datenspuren|verteilen|abstimmen|begleiten|quiz)\.css", s)
         if m < 0:
             fehler.append(f"{rel}: lädt material.css nicht (Hülle von einer bestehenden Seite kopieren)")
         elif w and w.start() < m:

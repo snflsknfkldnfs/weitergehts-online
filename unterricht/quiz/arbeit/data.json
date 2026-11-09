@@ -1,0 +1,1388 @@
+{
+ "titel": "Quiz: Arbeit",
+ "satz": "Übe, was in deinem Heft steht.",
+ "runde": 10,
+ "zusatz_zeigen": false,
+ "stunden": [
+  {
+   "id": "UE01",
+   "titel": "Ist das Arbeit?",
+   "ues": [
+    "UE01"
+   ]
+  },
+  {
+   "id": "UE02",
+   "titel": "Wer macht bei uns zu Hause die Arbeit?",
+   "ues": [
+    "UE02"
+   ]
+  },
+  {
+   "id": "UE03",
+   "titel": "Woran erkenne ich einen Arbeitsplatz?",
+   "ues": [
+    "UE03"
+   ]
+  },
+  {
+   "id": "UE05",
+   "titel": "Was ist ein guter Arbeitsplatz?",
+   "ues": [
+    "UE05",
+    "UE04"
+   ]
+  },
+  {
+   "id": "UE06",
+   "titel": "Sollten wir uns die Arbeit teilen?",
+   "ues": [
+    "UE06"
+   ]
+  },
+  {
+   "id": "UE07",
+   "titel": "Wie verteilen wir die Arbeit der Woche?",
+   "ues": [
+    "UE07"
+   ]
+  }
+ ],
+ "fragen": [
+  {
+   "id": "Q01",
+   "ue": "UE01",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Welcher Satz beschreibt Arbeit richtig?",
+   "richtig": "Arbeit ist planvoll, zielgerichtet, anstrengend und bewusst.",
+   "falsch": [
+    "Arbeit ist zufällig, spielerisch, leicht und kurz.",
+    "Arbeit gibt es nur im Betrieb und wird immer bezahlt."
+   ],
+   "erklaerung": "Arbeit hat vier Merkmale: planvoll, zielgerichtet, anstrengend, bewusst."
+  },
+  {
+   "id": "Q02",
+   "ue": "UE01",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Du scrollst ohne Ziel auf dem Handy. Ist das Arbeit?",
+   "richtig": "Nein: Es ist nicht zielgerichtet und nicht anstrengend.",
+   "falsch": [
+    "Ja, denn es kostet Zeit und Akku, also ist es Arbeit.",
+    "Ja, denn du bist dabei sehr konzentriert und aufmerksam."
+   ],
+   "erklaerung": "Arbeit ist planvoll, zielgerichtet, anstrengend und bewusst. Das Scrollen ist es nicht."
+  },
+  {
+   "id": "Q03",
+   "ue": "UE01",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Was ist Erwerbsarbeit?",
+   "richtig": "Arbeit, für die man Geld bekommt, zum Beispiel im Beruf.",
+   "falsch": [
+    "Arbeit ohne Bezahlung, die man zum Beispiel zu Hause macht.",
+    "Arbeit, die man nur am Wochenende und in den Ferien macht."
+   ],
+   "erklaerung": "Erwerbsarbeit ist Arbeit, für die man Geld bekommt."
+  },
+  {
+   "id": "Q04",
+   "ue": "UE01",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Welche Arbeit ist Nichterwerbsarbeit?",
+   "richtig": "Eine Mutter kocht zu Hause für ihre Familie.",
+   "falsch": [
+    "Ein Bäcker backt Brot in der Bäckerei.",
+    "Eine Verkäuferin arbeitet im Supermarkt."
+   ],
+   "erklaerung": "Nichterwerbsarbeit ist Arbeit ohne Bezahlung, zum Beispiel zu Hause."
+  },
+  {
+   "id": "Q05",
+   "ue": "UE01",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Welche vier Formen von Arbeit gibt es zu Hause?",
+   "richtig": "Hausarbeit, Erziehung, Pflege und Beziehung",
+   "falsch": [
+    "Hausarbeit, Schularbeit, Gartenarbeit und Handarbeit",
+    "Kochen, Putzen, Waschen und Bügeln"
+   ],
+   "erklaerung": "Zu Hause gibt es vier Formen: Hausarbeit, Erziehung, Pflege und Beziehung."
+  },
+  {
+   "id": "Q06",
+   "ue": "UE01",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Du legst die Wäsche zusammen. Welche Form von Arbeit ist das?",
+   "richtig": "Hausarbeit",
+   "falsch": [
+    "Pflegearbeit",
+    "Erziehungsarbeit"
+   ],
+   "erklaerung": "Wäsche, Putzen und Kochen sind Hausarbeit."
+  },
+  {
+   "id": "Q07",
+   "ue": "UE01",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Eine Mutter übt mit ihrem Kind für die Schule. Welche Form von Arbeit ist das?",
+   "richtig": "Erziehungsarbeit",
+   "falsch": [
+    "Pflegearbeit",
+    "Hausarbeit"
+   ],
+   "erklaerung": "Wer ein Kind erzieht und beim Lernen begleitet, macht Erziehungsarbeit."
+  },
+  {
+   "id": "Q08",
+   "ue": "UE01",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Ein Enkel hilft seiner kranken Oma beim Anziehen. Welche Form von Arbeit ist das?",
+   "richtig": "Pflegearbeit",
+   "falsch": [
+    "Beziehungsarbeit",
+    "Erziehungsarbeit"
+   ],
+   "erklaerung": "Wer jemandem hilft, der Hilfe braucht, macht Pflegearbeit."
+  },
+  {
+   "id": "Q09",
+   "ue": "UE01",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Du hörst deinem Bruder zu, weil er Kummer hat. Welche Form von Arbeit ist das?",
+   "richtig": "Beziehungsarbeit",
+   "falsch": [
+    "Hausarbeit",
+    "Pflegearbeit"
+   ],
+   "erklaerung": "Zuhören und füreinander da sein ist Beziehungsarbeit."
+  },
+  {
+   "id": "Q10",
+   "ue": "UE01",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Welcher Satz stimmt?",
+   "richtig": "Auch zu Hause wird gearbeitet, ohne Geld, aber es ist echte Arbeit.",
+   "falsch": [
+    "Zu Hause wird nicht gearbeitet, weil man dafür kein Geld bekommt.",
+    "Nur Arbeit im Betrieb oder im Büro ist wirklich echte Arbeit."
+   ],
+   "erklaerung": "Auch Arbeit ohne Geld ist echte Arbeit."
+  },
+  {
+   "id": "Q11",
+   "ue": "UE02",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Wo fällt Haus- und Familienarbeit an?",
+   "richtig": "In jedem Haushalt",
+   "falsch": [
+    "Nur in großen Familien",
+    "Nur dort, wo jemand dafür bezahlt wird"
+   ],
+   "erklaerung": "In jedem Haushalt gibt es Haus- und Familienarbeit."
+  },
+  {
+   "id": "Q12",
+   "ue": "UE02",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Ein Elternteil lebt allein mit seinen Kindern. Welche Haushaltsform ist das?",
+   "richtig": "alleinerziehend",
+   "falsch": [
+    "Einzelperson",
+    "mehrere Generationen"
+   ],
+   "erklaerung": "Wer allein mit Kindern lebt, ist alleinerziehend."
+  },
+  {
+   "id": "Q13",
+   "ue": "UE02",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Oma, Eltern und Kinder wohnen in einem Haus zusammen. Welche Haushaltsform ist das?",
+   "richtig": "mehrere Generationen",
+   "falsch": [
+    "alleinerziehend",
+    "Einzelperson"
+   ],
+   "erklaerung": "Wenn Großeltern, Eltern und Kinder zusammenleben, sind es mehrere Generationen."
+  },
+  {
+   "id": "Q14",
+   "ue": "UE02",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Eine Person wohnt allein in ihrer Wohnung. Welche Haushaltsform ist das?",
+   "richtig": "Einzelperson",
+   "falsch": [
+    "mehrere Generationen",
+    "alleinerziehend"
+   ],
+   "erklaerung": "Wer allein wohnt, ist ein Haushalt mit einer Einzelperson."
+  },
+  {
+   "id": "Q15",
+   "ue": "UE02",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Wer in einem Haushalt welche Arbeit macht ...",
+   "richtig": "ist in jedem Haushalt anders.",
+   "falsch": [
+    "ist überall gleich.",
+    "hängt nur vom Alter ab."
+   ],
+   "erklaerung": "Wer welche Arbeit macht, ist in jedem Haushalt anders."
+  },
+  {
+   "id": "Q16",
+   "ue": "UE03",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Welches Merkmal fragt: Was wird gemacht?",
+   "richtig": "Arbeitsaufgabe",
+   "falsch": [
+    "Arbeitsmittel",
+    "Arbeitsbedingungen"
+   ],
+   "erklaerung": "Die Arbeitsaufgabe sagt, was gemacht wird."
+  },
+  {
+   "id": "Q17",
+   "ue": "UE03",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Die Frage „Womit?“ gehört zu welchem Merkmal?",
+   "richtig": "Arbeitsmittel",
+   "falsch": [
+    "Arbeitsort",
+    "Arbeitszeit"
+   ],
+   "erklaerung": "Arbeitsmittel: Womit? Arbeitsort: Wo?"
+  },
+  {
+   "id": "Q18",
+   "ue": "UE03",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Die Frage „Wo?“ gehört zu welchem Merkmal?",
+   "richtig": "Arbeitsort",
+   "falsch": [
+    "Arbeitsmittel",
+    "Arbeitsaufgabe"
+   ],
+   "erklaerung": "Arbeitsort: Wo?"
+  },
+  {
+   "id": "Q19",
+   "ue": "UE03",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Du saugst am Samstagvormittag. Welches Merkmal ist „Samstagvormittag“?",
+   "richtig": "Arbeitszeit",
+   "falsch": [
+    "Arbeitsdauer",
+    "Arbeitsort"
+   ],
+   "erklaerung": "Arbeitszeit: Wann?"
+  },
+  {
+   "id": "Q20",
+   "ue": "UE03",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Du saugst 20 Minuten lang. Welches Merkmal sind die „20 Minuten“?",
+   "richtig": "Arbeitsdauer",
+   "falsch": [
+    "Arbeitszeit",
+    "Arbeitsaufgabe"
+   ],
+   "erklaerung": "Arbeitsdauer: Wie lange?"
+  },
+  {
+   "id": "Q21",
+   "ue": "UE03",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Was beschreiben die Arbeitsbedingungen?",
+   "richtig": "Wie es am Arbeitsplatz ist: für den Körper, die Geräte und die Umwelt",
+   "falsch": [
+    "Wer die Arbeit macht, wie alt die Person ist und wie sie heißt",
+    "Wie viel Geld es für die Arbeit gibt und wann es ausgezahlt wird"
+   ],
+   "erklaerung": "Arbeitsbedingungen: Wie ist es dort? Körper, Geräte, Umwelt."
+  },
+  {
+   "id": "Q22",
+   "ue": "UE03",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Wie viele Merkmale hat ein Arbeitsplatz?",
+   "richtig": "sechs",
+   "falsch": [
+    "vier",
+    "drei"
+   ],
+   "erklaerung": "Ein Arbeitsplatz hat sechs Merkmale."
+  },
+  {
+   "id": "Q23",
+   "ue": "UE05",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Was bedeutet Ergonomie?",
+   "richtig": "Der Arbeitsplatz passt zu meinem Körper.",
+   "falsch": [
+    "Der Arbeitsplatz schont die Umwelt.",
+    "Die Geräte machen die Arbeit schneller."
+   ],
+   "erklaerung": "Ergonomie: Der Arbeitsplatz passt zu meinem Körper."
+  },
+  {
+   "id": "Q24",
+   "ue": "UE05",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Was bedeutet Technik am Arbeitsplatz?",
+   "richtig": "Geräte machen die Arbeit leichter oder schneller.",
+   "falsch": [
+    "Der Arbeitsplatz passt zu meinem Körper.",
+    "Der Arbeitsplatz schont die Umwelt."
+   ],
+   "erklaerung": "Technik: Geräte machen die Arbeit leichter oder schneller."
+  },
+  {
+   "id": "Q25",
+   "ue": "UE05",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Was bedeutet Ökologie am Arbeitsplatz?",
+   "richtig": "Der Arbeitsplatz schont die Umwelt.",
+   "falsch": [
+    "Die Geräte machen die Arbeit leichter.",
+    "Der Arbeitsplatz ist bequem."
+   ],
+   "erklaerung": "Ökologie: Der Arbeitsplatz schont die Umwelt."
+  },
+  {
+   "id": "Q26",
+   "ue": "UE05",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Auf einem Stuhl kannst du gerade sitzen, das schont deinen Rücken. Welche Bedingung ist das?",
+   "richtig": "Ergonomie",
+   "falsch": [
+    "Ökologie",
+    "Technik"
+   ],
+   "erklaerung": "Was zum Körper passt, ist Ergonomie."
+  },
+  {
+   "id": "Q27",
+   "ue": "UE05",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Ein Staubsauger ohne Kabel macht das Saugen leichter. Welche Bedingung ist das?",
+   "richtig": "Technik",
+   "falsch": [
+    "Ergonomie",
+    "Ökologie"
+   ],
+   "erklaerung": "Was die Arbeit leichter oder schneller macht, ist Technik."
+  },
+  {
+   "id": "Q28",
+   "ue": "UE05",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Ein Gerät, das wenig Strom braucht, schont die Umwelt. Welche Bedingung ist das?",
+   "richtig": "Ökologie",
+   "falsch": [
+    "Ergonomie",
+    "Technik"
+   ],
+   "erklaerung": "Was die Umwelt schont, ist Ökologie."
+  },
+  {
+   "id": "Q29",
+   "ue": "UE05",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Wann ist ein Arbeitsplatz gut?",
+   "richtig": "Wenn er zum Körper passt, die Arbeit erleichtert und die Umwelt schont.",
+   "falsch": [
+    "Wenn er möglichst viel gekostet hat und viele Geräte hat.",
+    "Wenn er schön aussieht, groß ist und viele Schubladen hat."
+   ],
+   "erklaerung": "Ein guter Arbeitsplatz passt zum Körper, erleichtert die Arbeit und schont die Umwelt."
+  },
+  {
+   "id": "Q30",
+   "ue": "UE06",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Was ist Arbeitsteilung?",
+   "richtig": "Eine Arbeit wird auf mehrere aufgeteilt, jeder übernimmt einen Teil.",
+   "falsch": [
+    "Eine Person macht alle Arbeiten allein, die anderen sehen zu.",
+    "Alle machen dieselbe Arbeit nacheinander und warten aufeinander."
+   ],
+   "erklaerung": "Arbeitsteilung: Eine Arbeit wird aufgeteilt, jeder übernimmt einen Teil."
+  },
+  {
+   "id": "Q31",
+   "ue": "UE06",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Warum ist es gut, wenn alle gleichzeitig arbeiten?",
+   "richtig": "In derselben Zeit ist mehr geschafft.",
+   "falsch": [
+    "Dann wird die Arbeit schwerer.",
+    "Dann braucht jeder länger."
+   ],
+   "erklaerung": "Wenn alle gleichzeitig arbeiten, ist in derselben Zeit mehr geschafft."
+  },
+  {
+   "id": "Q32",
+   "ue": "UE06",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Mama kann alles schneller als das Kind. Welche Arbeit soll das Kind übernehmen?",
+   "richtig": "Die Arbeit, bei der es im Vergleich am wenigsten langsamer ist.",
+   "falsch": [
+    "Gar keine Arbeit, denn Mama ist ja bei allem schneller als das Kind.",
+    "Die Arbeit, die am längsten dauert und am schwersten ist."
+   ],
+   "erklaerung": "Das Kind übernimmt die Arbeit, bei der es im Vergleich am wenigsten langsamer ist."
+  },
+  {
+   "id": "Q33",
+   "ue": "UE06",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Wann ist die ganze Gruppe am schnellsten fertig?",
+   "richtig": "Wenn jeder die Arbeit macht, die er im Vergleich am schnellsten kann.",
+   "falsch": [
+    "Wenn die schnellste Person alle Arbeiten ganz allein übernimmt.",
+    "Wenn jeder genau gleich viele Arbeiten bekommt wie alle anderen."
+   ],
+   "erklaerung": "Die Gruppe ist am schnellsten fertig, wenn jeder die Arbeit macht, die er im Vergleich am schnellsten kann."
+  },
+  {
+   "id": "Q34",
+   "ue": "UE07",
+   "status": "heft_geplant",
+   "typ": "mc",
+   "frage": "Was steht in einem Wochenplan?",
+   "richtig": "Wer in der Woche welche Arbeit macht.",
+   "falsch": [
+    "Wie das Wetter in der Woche wird.",
+    "Welche Noten es in der Woche gibt."
+   ],
+   "erklaerung": "Ein Wochenplan sagt: Wer macht was?"
+  },
+  {
+   "id": "Q35",
+   "ue": "UE07",
+   "status": "heft_geplant",
+   "typ": "mc",
+   "frage": "Wer bekommt im Wochenplan eine bestimmte Arbeit?",
+   "richtig": "Die Person, die dabei im Vergleich am wenigsten langsamer ist.",
+   "falsch": [
+    "Die Person, die an diesem Tag am meisten freie Zeit hat.",
+    "Immer die älteste Person im Haushalt, weil sie am meisten weiß."
+   ],
+   "erklaerung": "Jeder übernimmt die Arbeit, bei der er im Vergleich am wenigsten langsamer ist."
+  },
+  {
+   "id": "Q36",
+   "ue": "UE07",
+   "status": "heft_geplant",
+   "typ": "mc",
+   "frage": "Was ist der Vorteil eines guten Wochenplans?",
+   "richtig": "Alle sind mit der Arbeit am schnellsten fertig.",
+   "falsch": [
+    "Dann muss niemand mehr in der Woche arbeiten.",
+    "Man braucht dafür kein Heft und keinen Stift mehr."
+   ],
+   "erklaerung": "Wer die Arbeit gut verteilt, ist mit dem Wochenplan am schnellsten fertig."
+  },
+  {
+   "id": "Z01",
+   "ue": null,
+   "status": "zusatz",
+   "typ": "mc",
+   "frage": "Man unterscheidet materielle Hausarbeit und Familienarbeit. Was gehört zur Familienarbeit?",
+   "richtig": "Beziehungsarbeit, Erziehungsarbeit und Pflegearbeit",
+   "falsch": [
+    "Kochen, Putzen, Waschen und Bügeln in der Wohnung",
+    "Einkaufen, Tanken und Rechnungen bezahlen im Alltag"
+   ],
+   "erklaerung": "Nicht im Heft: Auer S. 23, „Das weiß ich jetzt“."
+  },
+  {
+   "id": "Z02",
+   "ue": null,
+   "status": "zusatz",
+   "typ": "mc",
+   "frage": "Was erleichtert die Belastungen der Hausarbeit?",
+   "richtig": "Eine sinnvolle Arbeitsplanung und Arbeitsteilung",
+   "falsch": [
+    "Wenn eine Person alle Arbeiten ganz allein macht",
+    "Wenn man die Arbeit einfach nach Lust und Laune macht"
+   ],
+   "erklaerung": "Nicht im Heft: Auer S. 23, „Das weiß ich jetzt“."
+  },
+  {
+   "id": "Q37",
+   "ue": "UE01",
+   "status": "heft",
+   "typ": "rf",
+   "frage": "Stimmt das? Arbeit ist anstrengend und hat ein Ziel.",
+   "richtig": "stimmt",
+   "falsch": [
+    "stimmt nicht"
+   ],
+   "erklaerung": "Arbeit ist planvoll, zielgerichtet, anstrengend und bewusst."
+  },
+  {
+   "id": "Q38",
+   "ue": "UE01",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Welche Tätigkeit ist Arbeit?",
+   "richtig": "Du planst und kochst das Abendessen für deine Familie.",
+   "falsch": [
+    "Du schaust auf dem Sofa eine Serie und ruhst dich aus.",
+    "Du wirfst zum Spaß Steine in einen See und siehst zu."
+   ],
+   "erklaerung": "Arbeit ist planvoll, zielgerichtet, anstrengend und bewusst."
+  },
+  {
+   "id": "Q39",
+   "ue": "UE01",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Was gehört NICHT zu den Merkmalen von Arbeit?",
+   "richtig": "zufällig",
+   "falsch": [
+    "planvoll",
+    "anstrengend"
+   ],
+   "erklaerung": "Arbeit ist planvoll, zielgerichtet, anstrengend und bewusst, aber nicht zufällig."
+  },
+  {
+   "id": "Q40",
+   "ue": "UE01",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Welche Person hat Erwerbsarbeit?",
+   "richtig": "Eine Krankenpflegerin arbeitet im Krankenhaus und bekommt Lohn.",
+   "falsch": [
+    "Ein Vater bügelt zu Hause die Wäsche seiner Familie.",
+    "Ein Schüler räumt zu Hause sein Zimmer auf und putzt es."
+   ],
+   "erklaerung": "Erwerbsarbeit ist Arbeit, für die man Geld bekommt."
+  },
+  {
+   "id": "Q41",
+   "ue": "UE01",
+   "status": "heft",
+   "typ": "rf",
+   "frage": "Stimmt das? Wer Erwerbsarbeit hat, bekommt dafür Geld.",
+   "richtig": "stimmt",
+   "falsch": [
+    "stimmt nicht"
+   ],
+   "erklaerung": "Erwerbsarbeit ist Arbeit, für die man Geld bekommt (Beruf)."
+  },
+  {
+   "id": "Q42",
+   "ue": "UE01",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Wie heißt Arbeit, für die man Geld bekommt?",
+   "richtig": "Erwerbsarbeit",
+   "falsch": [
+    "Nichterwerbsarbeit",
+    "Hausarbeit"
+   ],
+   "erklaerung": "Erwerbsarbeit = Arbeit, für die man Geld bekommt."
+  },
+  {
+   "id": "Q43",
+   "ue": "UE01",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Was ist Nichterwerbsarbeit?",
+   "richtig": "Arbeit ohne Bezahlung, zum Beispiel zu Hause.",
+   "falsch": [
+    "Arbeit, für die man Geld bekommt, zum Beispiel im Beruf.",
+    "Arbeit, die niemand sieht und niemand braucht."
+   ],
+   "erklaerung": "Nichterwerbsarbeit = Arbeit ohne Bezahlung, zum Beispiel zu Hause."
+  },
+  {
+   "id": "Q44",
+   "ue": "UE01",
+   "status": "heft",
+   "typ": "rf",
+   "frage": "Stimmt das? Wer zu Hause kocht und putzt, hat Erwerbsarbeit.",
+   "richtig": "stimmt nicht",
+   "falsch": [
+    "stimmt"
+   ],
+   "erklaerung": "Kochen und Putzen zu Hause gibt kein Geld: Das ist Nichterwerbsarbeit."
+  },
+  {
+   "id": "Q45",
+   "ue": "UE01",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Eine Oma passt jeden Tag unbezahlt auf ihre Enkel auf. Welche Art von Arbeit ist das?",
+   "richtig": "Nichterwerbsarbeit",
+   "falsch": [
+    "Erwerbsarbeit",
+    "keine Arbeit"
+   ],
+   "erklaerung": "Auch Arbeit ohne Bezahlung ist Arbeit: Nichterwerbsarbeit."
+  },
+  {
+   "id": "Q46",
+   "ue": "UE01",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Was ist der Unterschied zwischen Erwerbsarbeit und Nichterwerbsarbeit?",
+   "richtig": "Bei Erwerbsarbeit bekommt man Geld, bei Nichterwerbsarbeit nicht.",
+   "falsch": [
+    "Erwerbsarbeit ist anstrengend, Nichterwerbsarbeit ist es nicht.",
+    "Erwerbsarbeit macht man zu Hause, die andere nur im Betrieb."
+   ],
+   "erklaerung": "Der Unterschied ist das Geld: Erwerbsarbeit wird bezahlt."
+  },
+  {
+   "id": "Q47",
+   "ue": "UE01",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Du gehst für deine Familie einkaufen. Welche Form von Arbeit ist das?",
+   "richtig": "Hausarbeit",
+   "falsch": [
+    "Pflegearbeit",
+    "Beziehungsarbeit"
+   ],
+   "erklaerung": "Einkaufen, Kochen und Putzen sind Hausarbeit."
+  },
+  {
+   "id": "Q48",
+   "ue": "UE01",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Ein Vater zeigt seinem Kind, wie man sich die Schuhe bindet. Welche Form von Arbeit ist das?",
+   "richtig": "Erziehungsarbeit",
+   "falsch": [
+    "Hausarbeit",
+    "Pflegearbeit"
+   ],
+   "erklaerung": "Wer einem Kind etwas beibringt, macht Erziehungsarbeit."
+  },
+  {
+   "id": "Q49",
+   "ue": "UE01",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Eine Tochter bringt ihrem kranken Vater Tee und misst sein Fieber. Welche Form von Arbeit ist das?",
+   "richtig": "Pflegearbeit",
+   "falsch": [
+    "Beziehungsarbeit",
+    "Hausarbeit"
+   ],
+   "erklaerung": "Wer sich um einen kranken Menschen kümmert, macht Pflegearbeit."
+  },
+  {
+   "id": "Q50",
+   "ue": "UE01",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Die Familie spielt am Sonntag zusammen und redet miteinander. Welche Form von Arbeit ist das?",
+   "richtig": "Beziehungsarbeit",
+   "falsch": [
+    "Erziehungsarbeit",
+    "Hausarbeit"
+   ],
+   "erklaerung": "Zeit miteinander verbringen und reden ist Beziehungsarbeit."
+  },
+  {
+   "id": "Q51",
+   "ue": "UE01",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Wie heißt die Arbeit, bei der man ein Kind erzieht und begleitet?",
+   "richtig": "Erziehungsarbeit",
+   "falsch": [
+    "Pflegearbeit",
+    "Hausarbeit"
+   ],
+   "erklaerung": "Erziehung gehört zu den vier Formen der Arbeit zu Hause."
+  },
+  {
+   "id": "Q52",
+   "ue": "UE01",
+   "status": "heft",
+   "typ": "rf",
+   "frage": "Stimmt das? Zur Arbeit zu Hause gehört auch, sich um Menschen zu kümmern.",
+   "richtig": "stimmt",
+   "falsch": [
+    "stimmt nicht"
+   ],
+   "erklaerung": "Erziehung, Pflege und Beziehung gehören zu den vier Formen der Arbeit zu Hause."
+  },
+  {
+   "id": "Q53",
+   "ue": "UE01",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Welche Arbeit gehört NICHT zu den vier Formen der Arbeit zu Hause?",
+   "richtig": "Büroarbeit in einer Firma",
+   "falsch": [
+    "Pflegearbeit",
+    "Beziehungsarbeit"
+   ],
+   "erklaerung": "Die vier Formen zu Hause sind Hausarbeit, Erziehung, Pflege und Beziehung."
+  },
+  {
+   "id": "Q54",
+   "ue": "UE01",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Welche Tätigkeit ist Hausarbeit?",
+   "richtig": "das Bad putzen",
+   "falsch": [
+    "dem Opa beim Aufstehen helfen",
+    "dem Bruder bei den Hausaufgaben helfen"
+   ],
+   "erklaerung": "Putzen, Kochen und Waschen sind Hausarbeit."
+  },
+  {
+   "id": "Q55",
+   "ue": "UE01",
+   "status": "heft",
+   "typ": "rf",
+   "frage": "Stimmt das? Arbeit zu Hause ist keine echte Arbeit, weil man kein Geld bekommt.",
+   "richtig": "stimmt nicht",
+   "falsch": [
+    "stimmt"
+   ],
+   "erklaerung": "Auch zu Hause wird gearbeitet, ohne Geld, aber es ist echte Arbeit."
+  },
+  {
+   "id": "Q56",
+   "ue": "UE01",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Warum ist Hausarbeit echte Arbeit?",
+   "richtig": "Sie ist planvoll, zielgerichtet und anstrengend, auch ohne Geld.",
+   "falsch": [
+    "Weil man dafür immer Geld von der Familie bekommt.",
+    "Weil sie nur Erwachsene machen dürfen und können."
+   ],
+   "erklaerung": "Echte Arbeit hängt nicht vom Geld ab."
+  },
+  {
+   "id": "Q57",
+   "ue": "UE02",
+   "status": "heft",
+   "typ": "rf",
+   "frage": "Stimmt das? Auch dort, wo eine Person allein wohnt, fällt Hausarbeit an.",
+   "richtig": "stimmt",
+   "falsch": [
+    "stimmt nicht"
+   ],
+   "erklaerung": "In jedem Haushalt gibt es Haus- und Familienarbeit."
+  },
+  {
+   "id": "Q58",
+   "ue": "UE02",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Welche vier Haushaltsformen stehen im Heft?",
+   "richtig": "Familie, alleinerziehend, mehrere Generationen, Einzelperson",
+   "falsch": [
+    "Schule, Verein, Betrieb, Kirche",
+    "Wohnung, Haus, Garten, Keller"
+   ],
+   "erklaerung": "Im Heft stehen vier Haushaltsformen: Familie, alleinerziehend, mehrere Generationen, Einzelperson."
+  },
+  {
+   "id": "Q59",
+   "ue": "UE02",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Mama, Papa und zwei Kinder wohnen zusammen. Welche Haushaltsform ist das?",
+   "richtig": "Familie",
+   "falsch": [
+    "Einzelperson",
+    "alleinerziehend"
+   ],
+   "erklaerung": "Eltern mit ihren Kindern sind eine Familie."
+  },
+  {
+   "id": "Q60",
+   "ue": "UE02",
+   "status": "heft",
+   "typ": "rf",
+   "frage": "Stimmt das? Ein Vater, der allein mit seinem Kind lebt, ist alleinerziehend.",
+   "richtig": "stimmt",
+   "falsch": [
+    "stimmt nicht"
+   ],
+   "erklaerung": "Wer allein mit Kindern lebt, ist alleinerziehend."
+  },
+  {
+   "id": "Q61",
+   "ue": "UE02",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Wie viele Personen leben in einem Haushalt mit „Einzelperson“?",
+   "richtig": "eine",
+   "falsch": [
+    "zwei",
+    "mindestens drei"
+   ],
+   "erklaerung": "Einzelperson heißt: Eine Person wohnt allein."
+  },
+  {
+   "id": "Q62",
+   "ue": "UE02",
+   "status": "heft",
+   "typ": "rf",
+   "frage": "Stimmt das? In jedem Haushalt macht dieselbe Person dieselbe Arbeit.",
+   "richtig": "stimmt nicht",
+   "falsch": [
+    "stimmt"
+   ],
+   "erklaerung": "Wer welche Arbeit macht, ist in jedem Haushalt anders."
+  },
+  {
+   "id": "Q63",
+   "ue": "UE03",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Wie heißt das Merkmal für die Frage „Wann?“",
+   "richtig": "Arbeitszeit",
+   "falsch": [
+    "Arbeitsdauer",
+    "Arbeitsort"
+   ],
+   "erklaerung": "Arbeitszeit: Wann?"
+  },
+  {
+   "id": "Q64",
+   "ue": "UE03",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Wie heißt das Merkmal für die Frage „Wie lange?“",
+   "richtig": "Arbeitsdauer",
+   "falsch": [
+    "Arbeitszeit",
+    "Arbeitsmittel"
+   ],
+   "erklaerung": "Arbeitsdauer: Wie lange?"
+  },
+  {
+   "id": "Q65",
+   "ue": "UE03",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Du putzt das Bad mit einem Schwamm. Welches Merkmal ist der Schwamm?",
+   "richtig": "Arbeitsmittel",
+   "falsch": [
+    "Arbeitsort",
+    "Arbeitsaufgabe"
+   ],
+   "erklaerung": "Arbeitsmittel: Womit? Mit dem Schwamm."
+  },
+  {
+   "id": "Q66",
+   "ue": "UE03",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Du putzt das Bad. Welches Merkmal ist das Bad?",
+   "richtig": "Arbeitsort",
+   "falsch": [
+    "Arbeitsmittel",
+    "Arbeitszeit"
+   ],
+   "erklaerung": "Arbeitsort: Wo? Im Bad."
+  },
+  {
+   "id": "Q67",
+   "ue": "UE03",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Du putzt das Bad. Welches Merkmal ist „das Bad putzen“?",
+   "richtig": "Arbeitsaufgabe",
+   "falsch": [
+    "Arbeitsdauer",
+    "Arbeitsbedingungen"
+   ],
+   "erklaerung": "Arbeitsaufgabe: Was wird gemacht?"
+  },
+  {
+   "id": "Q68",
+   "ue": "UE03",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Der Tisch ist zu niedrig, du musst dich beim Arbeiten bücken. Welches Merkmal beschreibt das?",
+   "richtig": "Arbeitsbedingungen",
+   "falsch": [
+    "Arbeitsdauer",
+    "Arbeitsmittel"
+   ],
+   "erklaerung": "Arbeitsbedingungen: Wie ist es dort? Für den Körper, die Geräte und die Umwelt."
+  },
+  {
+   "id": "Q69",
+   "ue": "UE03",
+   "status": "heft",
+   "typ": "rf",
+   "frage": "Stimmt das? Die sechs Arbeitsplatzmerkmale passen nur auf Arbeitsplätze im Betrieb.",
+   "richtig": "stimmt nicht",
+   "falsch": [
+    "stimmt"
+   ],
+   "erklaerung": "Die sechs Merkmale passen auf jeden Arbeitsplatz, auch zu Hause."
+  },
+  {
+   "id": "Q70",
+   "ue": "UE03",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Für welche Arbeitsplätze gelten die sechs Merkmale?",
+   "richtig": "Für jeden Arbeitsplatz, auch zu Hause.",
+   "falsch": [
+    "Nur für Büros in einer Firma.",
+    "Nur für Arbeitsplätze mit einem Computer."
+   ],
+   "erklaerung": "Die sechs Merkmale passen auf jeden Arbeitsplatz."
+  },
+  {
+   "id": "Q71",
+   "ue": "UE03",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Du gießt die Blumen jeden Montag um 17 Uhr. Welches Merkmal ist „Montag um 17 Uhr“?",
+   "richtig": "Arbeitszeit",
+   "falsch": [
+    "Arbeitsdauer",
+    "Arbeitsort"
+   ],
+   "erklaerung": "Arbeitszeit: Wann?"
+  },
+  {
+   "id": "Q72",
+   "ue": "UE03",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Arbeitsaufgabe, Arbeitsmittel, Arbeitsort, Arbeitszeit, Arbeitsdauer und ... Welches sechste Merkmal fehlt?",
+   "richtig": "Arbeitsbedingungen",
+   "falsch": [
+    "Arbeitsplatz",
+    "Arbeitsweg"
+   ],
+   "erklaerung": "Das sechste Merkmal sind die Arbeitsbedingungen."
+  },
+  {
+   "id": "Q73",
+   "ue": "UE03",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Was ist der Unterschied zwischen Arbeitszeit und Arbeitsdauer?",
+   "richtig": "Arbeitszeit sagt, wann man arbeitet, Arbeitsdauer sagt, wie lange.",
+   "falsch": [
+    "Arbeitszeit ist am Vormittag, Arbeitsdauer ist am Nachmittag.",
+    "Es gibt keinen Unterschied, beide sagen dasselbe aus."
+   ],
+   "erklaerung": "Arbeitszeit: Wann? Arbeitsdauer: Wie lange?"
+  },
+  {
+   "id": "Q74",
+   "ue": "UE05",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Wie heißt die Bedingung: Der Arbeitsplatz passt zu meinem Körper?",
+   "richtig": "Ergonomie",
+   "falsch": [
+    "Technik",
+    "Ökologie"
+   ],
+   "erklaerung": "Ergonomie: Der Arbeitsplatz passt zu meinem Körper."
+  },
+  {
+   "id": "Q75",
+   "ue": "UE05",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Wie heißt die Bedingung: Der Arbeitsplatz schont die Umwelt?",
+   "richtig": "Ökologie",
+   "falsch": [
+    "Ergonomie",
+    "Technik"
+   ],
+   "erklaerung": "Ökologie: Der Arbeitsplatz schont die Umwelt."
+  },
+  {
+   "id": "Q76",
+   "ue": "UE05",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Wie heißt die Bedingung: Geräte machen die Arbeit leichter oder schneller?",
+   "richtig": "Technik",
+   "falsch": [
+    "Ökologie",
+    "Ergonomie"
+   ],
+   "erklaerung": "Technik: Geräte machen die Arbeit leichter oder schneller."
+  },
+  {
+   "id": "Q77",
+   "ue": "UE05",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Ein Tisch lässt sich auf deine Größe einstellen. Welche Bedingung ist das?",
+   "richtig": "Ergonomie",
+   "falsch": [
+    "Technik",
+    "Ökologie"
+   ],
+   "erklaerung": "Was zu deinem Körper passt, ist Ergonomie."
+  },
+  {
+   "id": "Q78",
+   "ue": "UE05",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Die Waschmaschine wäscht die Wäsche für dich. Welche Bedingung ist das?",
+   "richtig": "Technik",
+   "falsch": [
+    "Ergonomie",
+    "Ökologie"
+   ],
+   "erklaerung": "Geräte, die die Arbeit leichter machen, sind Technik."
+  },
+  {
+   "id": "Q79",
+   "ue": "UE05",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Du trennst den Müll, damit er wiederverwertet werden kann. Welche Bedingung ist das?",
+   "richtig": "Ökologie",
+   "falsch": [
+    "Technik",
+    "Ergonomie"
+   ],
+   "erklaerung": "Was die Umwelt schont, ist Ökologie."
+  },
+  {
+   "id": "Q80",
+   "ue": "UE05",
+   "status": "heft",
+   "typ": "rf",
+   "frage": "Stimmt das? Ein guter Arbeitsplatz schont die Umwelt.",
+   "richtig": "stimmt",
+   "falsch": [
+    "stimmt nicht"
+   ],
+   "erklaerung": "Ein guter Arbeitsplatz passt zum Körper, erleichtert die Arbeit und schont die Umwelt."
+  },
+  {
+   "id": "Q81",
+   "ue": "UE05",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Du sitzt bei den Hausaufgaben krumm und bekommst Rückenschmerzen. Welche Bedingung fehlt?",
+   "richtig": "Ergonomie",
+   "falsch": [
+    "Technik",
+    "Ökologie"
+   ],
+   "erklaerung": "Ein Arbeitsplatz muss zum Körper passen: Ergonomie."
+  },
+  {
+   "id": "Q82",
+   "ue": "UE05",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Welche drei Bedingungen machen einen guten Arbeitsplatz aus?",
+   "richtig": "Ergonomie, Technik und Ökologie",
+   "falsch": [
+    "Ergonomie, Technik und Ökonomie",
+    "Ergonomie, Technik und Preis"
+   ],
+   "erklaerung": "Ergonomie, Technik und Ökologie, nicht Ökonomie."
+  },
+  {
+   "id": "Q83",
+   "ue": "UE05",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Wozu hilft Ergonomie am Arbeitsplatz?",
+   "richtig": "Dein Körper wird geschont, zum Beispiel dein Rücken.",
+   "falsch": [
+    "Das Gerät braucht weniger Strom für die Arbeit.",
+    "Die Arbeit ist in kürzerer Zeit erledigt."
+   ],
+   "erklaerung": "Ergonomie heißt: Der Arbeitsplatz passt zu meinem Körper."
+  },
+  {
+   "id": "Q84",
+   "ue": "UE05",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Welcher Hausaufgabenplatz ist gut?",
+   "richtig": "Der Tisch passt zu deiner Größe, das Licht ist hell, die Lampe spart Strom.",
+   "falsch": [
+    "Du sitzt auf dem Boden, es ist dunkel, die Lampe brennt den ganzen Tag.",
+    "Der Stuhl ist zu klein, der Tisch zu hoch, aber alles ist ganz neu."
+   ],
+   "erklaerung": "Gut ist ein Arbeitsplatz, der zum Körper passt, die Arbeit erleichtert und die Umwelt schont."
+  },
+  {
+   "id": "Q85",
+   "ue": "UE06",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Wie heißt es, wenn eine Arbeit auf mehrere Personen aufgeteilt wird?",
+   "richtig": "Arbeitsteilung",
+   "falsch": [
+    "Arbeitsplanung",
+    "Arbeitsdauer"
+   ],
+   "erklaerung": "Arbeitsteilung: Jeder übernimmt einen Teil."
+  },
+  {
+   "id": "Q86",
+   "ue": "UE06",
+   "status": "heft",
+   "typ": "rf",
+   "frage": "Stimmt das? Bei Arbeitsteilung übernimmt jeder einen Teil der Arbeit.",
+   "richtig": "stimmt",
+   "falsch": [
+    "stimmt nicht"
+   ],
+   "erklaerung": "Arbeitsteilung: Eine Arbeit wird auf mehrere aufgeteilt, jeder übernimmt einen Teil."
+  },
+  {
+   "id": "Q87",
+   "ue": "UE06",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Drei Personen putzen zugleich: Eine saugt, eine wischt, eine putzt das Bad. Was ist das?",
+   "richtig": "Arbeitsteilung",
+   "falsch": [
+    "Arbeitsmittel",
+    "Erwerbsarbeit"
+   ],
+   "erklaerung": "Die Arbeit ist auf mehrere Personen aufgeteilt: Arbeitsteilung."
+  },
+  {
+   "id": "Q88",
+   "ue": "UE06",
+   "status": "heft",
+   "typ": "rf",
+   "frage": "Stimmt das? Wenn alle gleichzeitig arbeiten, ist in derselben Zeit mehr geschafft.",
+   "richtig": "stimmt",
+   "falsch": [
+    "stimmt nicht"
+   ],
+   "erklaerung": "Alle arbeiten gleichzeitig. So ist in derselben Zeit mehr geschafft."
+  },
+  {
+   "id": "Q89",
+   "ue": "UE06",
+   "status": "heft",
+   "typ": "rf",
+   "frage": "Stimmt das? Wenn Mama alles schneller kann, sollte sie auch alles allein machen.",
+   "richtig": "stimmt nicht",
+   "falsch": [
+    "stimmt"
+   ],
+   "erklaerung": "Auch wenn einer alles schneller kann, ist die Gruppe schneller fertig, wenn alle mitarbeiten."
+  },
+  {
+   "id": "Q90",
+   "ue": "UE06",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Das Kind saugt in 25 Minuten (Papa: 20), legt Wäsche in 40 Minuten zusammen (Papa: 10). Was soll das Kind übernehmen?",
+   "richtig": "Das Saugen, denn dort ist es am wenigsten langsamer.",
+   "falsch": [
+    "Die Wäsche, denn Papa hat dort den größten Vorsprung.",
+    "Gar nichts, denn Papa ist bei beiden Arbeiten schneller."
+   ],
+   "erklaerung": "Beim Saugen ist das Kind nur 5 Minuten langsamer, bei der Wäsche 30."
+  },
+  {
+   "id": "Q91",
+   "ue": "UE06",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Mama ist beim Kochen viel schneller als das Kind, beim Müll kaum. Wer sollte den Müll rausbringen?",
+   "richtig": "Das Kind, denn dort ist es im Vergleich am wenigsten langsamer.",
+   "falsch": [
+    "Mama, denn sie ist bei beiden Arbeiten schneller.",
+    "Das Kind, denn Müll ist keine richtige Arbeit."
+   ],
+   "erklaerung": "Das Kind übernimmt die Arbeit, bei der es im Vergleich am wenigsten langsamer ist."
+  },
+  {
+   "id": "Q92",
+   "ue": "UE07",
+   "status": "heft",
+   "typ": "rf",
+   "frage": "Stimmt das? In einem Wochenplan steht, wer welche Arbeit macht.",
+   "richtig": "stimmt",
+   "falsch": [
+    "stimmt nicht"
+   ],
+   "erklaerung": "Wochenplan: Wer macht was?"
+  },
+  {
+   "id": "Q93",
+   "ue": "UE07",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Wie heißt der Plan, in dem steht, wer in der Woche welche Arbeit macht?",
+   "richtig": "Wochenplan",
+   "falsch": [
+    "Stundenplan",
+    "Speiseplan"
+   ],
+   "erklaerung": "Der Wochenplan zeigt: Wer macht was?"
+  },
+  {
+   "id": "Q94",
+   "ue": "UE07",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Was machst du zuerst, wenn du einen Wochenplan für den Haushalt anlegst?",
+   "richtig": "Ich schreibe auf, welche Arbeiten in der Woche anfallen.",
+   "falsch": [
+    "Ich mache alle Arbeiten allein und sage es dann den anderen.",
+    "Ich warte, bis jemand die Arbeit von selbst übernimmt."
+   ],
+   "erklaerung": "Zuerst werden die Aufgaben der Woche aufgelistet, dann verteilt."
+  },
+  {
+   "id": "Q95",
+   "ue": "UE07",
+   "status": "heft",
+   "typ": "rf",
+   "frage": "Stimmt das? Im Wochenplan bekommt jeder die Arbeit, bei der er im Vergleich am wenigsten langsamer ist.",
+   "richtig": "stimmt",
+   "falsch": [
+    "stimmt nicht"
+   ],
+   "erklaerung": "Jeder übernimmt die Arbeit, bei der er im Vergleich am wenigsten langsamer ist."
+  },
+  {
+   "id": "Q96",
+   "ue": "UE07",
+   "status": "heft",
+   "typ": "mc",
+   "frage": "Opa kocht langsamer als Mama, bringt aber fast gleich schnell den Müll raus. Was bekommt Opa im Wochenplan?",
+   "richtig": "Den Müll, denn dort ist er im Vergleich am wenigsten langsamer.",
+   "falsch": [
+    "Das Kochen, denn Mama hat sowieso genug zu tun.",
+    "Gar keine Arbeit, denn Mama ist schneller."
+   ],
+   "erklaerung": "Opa übernimmt die Arbeit, bei der er im Vergleich am wenigsten langsamer ist."
+  },
+  {
+   "id": "Q97",
+   "ue": "UE07",
+   "status": "heft",
+   "typ": "rf",
+   "frage": "Stimmt das? Wer die Aufgaben der Woche auflistet und klug verteilt, ist mit dem Wochenplan am schnellsten fertig.",
+   "richtig": "stimmt",
+   "falsch": [
+    "stimmt nicht"
+   ],
+   "erklaerung": "Wer die Aufgaben auflistet und jedem die gibt, die er im Vergleich am schnellsten kann, ist am schnellsten fertig."
+  },
+  {
+   "id": "Z03",
+   "ue": null,
+   "status": "zusatz",
+   "typ": "rf",
+   "frage": "Stimmt das? Es ist wichtig, dass alle Haushaltsmitglieder im Haushalt mit anpacken.",
+   "richtig": "stimmt",
+   "falsch": [
+    "stimmt nicht"
+   ],
+   "erklaerung": "Nicht im Heft: Auer S. 23, „Das weiß ich jetzt“."
+  },
+  {
+   "id": "Z04",
+   "ue": null,
+   "status": "zusatz",
+   "typ": "mc",
+   "frage": "Kinder aus früheren Beziehungen leben mit ihren Eltern zusammen. Wie heißt diese Haushaltsform?",
+   "richtig": "Patchworkfamilie",
+   "falsch": [
+    "Singlehaushalt",
+    "Wohngemeinschaft"
+   ],
+   "erklaerung": "Nicht im Heft: Auer S. 23, Haushaltsformen."
+  },
+  {
+   "id": "Z05",
+   "ue": null,
+   "status": "zusatz",
+   "typ": "mc",
+   "frage": "Wie heißt die Haushaltsform: Eltern und ihre Kinder?",
+   "richtig": "Kernfamilie",
+   "falsch": [
+    "Singlehaushalt",
+    "Patchworkfamilie"
+   ],
+   "erklaerung": "Nicht im Heft: Auer S. 8/9, Haushaltsformen."
+  },
+  {
+   "id": "Z06",
+   "ue": null,
+   "status": "zusatz",
+   "typ": "mc",
+   "frage": "Eine Frau hilft unbezahlt im Sportverein mit. Wie nennt man das?",
+   "richtig": "Ehrenamt",
+   "falsch": [
+    "Erwerbsarbeit",
+    "Hausarbeit"
+   ],
+   "erklaerung": "Nicht im Heft: Auer S. 10/11, Ehrenamt gehört zur Nichterwerbsarbeit."
+  },
+  {
+   "id": "Z07",
+   "ue": null,
+   "status": "zusatz",
+   "typ": "mc",
+   "frage": "Ihr erkundet einen Arbeitsvorgang zu Hause. Was ist die Reihenfolge?",
+   "richtig": "Planung, Durchführung, Präsentation und Reflexion",
+   "falsch": [
+    "Präsentation, Planung, Reflexion und Durchführung",
+    "Durchführung, Reflexion, Planung und Präsentation"
+   ],
+   "erklaerung": "Nicht im Heft: Auer S. 18/19, Leittext zur Erkundung."
+  }
+ ]
+}
