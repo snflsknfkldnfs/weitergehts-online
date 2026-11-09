@@ -1,0 +1,233 @@
+{
+ "titel": "Krisenjahr 1923",
+ "von": "1923-01-01",
+ "bis": "1923-12-31",
+ "karte": {
+  "bild": "bilder/karte.jpg",
+  "breite": 1920,
+  "hoehe": 1610,
+  "nachweis": "Karte: Shadowxfox, Alphathon, CC BY-SA 3.0, via Wikimedia Commons („Länder der Weimarer Republik“); Orte und Zeitstrahl ergänzt"
+ },
+ "orte": {
+  "berlin": {
+   "name": "Berlin",
+   "x": 904,
+   "y": 664
+  },
+  "ruhr": {
+   "name": "Ruhrgebiet",
+   "x": 275,
+   "y": 855
+  },
+  "hamburg": {
+   "name": "Hamburg",
+   "x": 572,
+   "y": 474
+  },
+  "sachsen": {
+   "name": "Sachsen",
+   "x": 937,
+   "y": 926
+  },
+  "thueringen": {
+   "name": "Thüringen",
+   "x": 669,
+   "y": 968
+  },
+  "bayern": {
+   "name": "Bayern (München)",
+   "x": 726,
+   "y": 1453
+  }
+ },
+ "seiten": {
+  "lage": {
+   "name": "Lage und Not",
+   "farbe": "#5a5a5a"
+  },
+  "links": {
+   "name": "Angriff von links",
+   "farbe": "#b3261e"
+  },
+  "rechts": {
+   "name": "Angriff von rechts",
+   "farbe": "#1b4a7a"
+  },
+  "republik": {
+   "name": "Antwort der Republik",
+   "farbe": "#2e7d32"
+  }
+ },
+ "ereignisse": [
+  {
+   "datum": "1923-01-11",
+   "datum_text": "11. Januar",
+   "ort": "ruhr",
+   "seite": "lage",
+   "titel": "Das Ruhrgebiet wird besetzt",
+   "text": "Französische und belgische Soldaten besetzen das Ruhrgebiet. Die Regierung ruft zum Streik auf und bezahlt ihn mit gedrucktem Geld.",
+   "bild": {
+    "src": "bilder/ev_essen.jpg",
+    "unterschrift": "Französische Soldaten ziehen in Essen ein (Bain News Service, gemeinfrei)"
+   }
+  },
+  {
+   "datum": "1923-09-26",
+   "datum_text": "26. September",
+   "ort": "berlin",
+   "seite": "lage",
+   "titel": "Das Geld ist wertlos",
+   "text": "Der Streik ist nicht mehr zu bezahlen. Die Reichsregierung bricht ihn ab.",
+   "bild": {
+    "src": "bilder/ev_tapete.jpg",
+    "unterschrift": "Geldscheine als Tapete, 1923 (Bundesarchiv, Bild 102-00104, CC BY-SA 3.0 de)"
+   }
+  },
+  {
+   "datum": "1923-09-26",
+   "datum_text": "26. September",
+   "ort": "bayern",
+   "seite": "rechts",
+   "titel": "Bayern stellt sich gegen Berlin",
+   "text": "Bayern verhängt den Ausnahmezustand. Kahr bekommt fast unbegrenzte Macht und gehorcht Berlin nicht mehr."
+  },
+  {
+   "datum": "1923-10-10",
+   "datum_text": "10. Oktober",
+   "ort": "sachsen",
+   "seite": "links",
+   "titel": "Die KPD regiert mit",
+   "text": "In Sachsen (bald auch in Thüringen) regiert die KPD mit. Es gibt bewaffnete Arbeiter, und Sachsen gehorcht Berlin nicht."
+  },
+  {
+   "datum": "1923-10-23",
+   "datum_text": "23. Oktober",
+   "ort": "hamburg",
+   "seite": "links",
+   "titel": "Aufstand in Hamburg",
+   "text": "Einige hundert Bewaffnete erheben sich. Sie bleiben allein, etwa 100 Menschen sterben.",
+   "bild": {
+    "src": "bilder/ev_hamburg.jpg",
+    "unterschrift": "Barrikade in Hamburg-Barmbek (Wikimedia Commons, CC0)"
+   }
+  },
+  {
+   "datum": "1923-10-29",
+   "datum_text": "22. bis 29. Oktober",
+   "ort": "sachsen",
+   "seite": "republik",
+   "titel": "Die Reichswehr greift ein",
+   "text": "Nach Artikel 48 marschiert die Reichswehr in Sachsen ein. Die sächsische Regierung wird abgesetzt.",
+   "bild": {
+    "src": "bilder/ev_sachsen.jpg",
+    "unterschrift": "Reichswehr auf dem Weg zum Landtag in Dresden (Robert Sennecke, CC0)"
+   }
+  },
+  {
+   "datum": "1923-11-09",
+   "datum_text": "8. und 9. November",
+   "ort": "bayern",
+   "seite": "rechts",
+   "titel": "Der Hitler-Putsch scheitert",
+   "text": "Hitler will von München aus die Macht übernehmen. Kahr und die Reichswehr machen nicht mit, die bayerische Polizei stoppt den Marsch.",
+   "bild": {
+    "src": "bilder/ev_odeonsplatz.jpg",
+    "unterschrift": "München, Odeonsplatz, 9. November 1923 (Bundesarchiv, Bild 119-1426, CC BY-SA 3.0 de)"
+   }
+  },
+  {
+   "datum": "1923-11-15",
+   "datum_text": "15. November",
+   "ort": "berlin",
+   "seite": "lage",
+   "titel": "Neues Geld",
+   "text": "Die Rentenmark kommt: eine Rentenmark für eine Billion Mark.",
+   "bild": {
+    "src": "bilder/ev_rentenmark.jpg",
+    "unterschrift": "Ausgabe der Rentenmark in Berlin (Bundesarchiv, Bild 183-H29263, CC BY-SA 3.0 de)"
+   }
+  },
+  {
+   "datum": "1923-11-23",
+   "datum_text": "23. November",
+   "ort": "berlin",
+   "seite": "republik",
+   "titel": "Verbote",
+   "text": "Nach Bayern schickt Berlin keine Truppen. Die NSDAP und die KPD werden im ganzen Reich verboten."
+  }
+ ],
+ "werte": {
+  "titel": "Das Geld wird wertlos",
+  "frage": "Was kostet ein Kilo Brot? Schieb den Regler.",
+  "stufen": [
+   {
+    "datum_text": "Januar 1923",
+    "kurz": "Jan",
+    "wert_text": "250 Mark",
+    "voll": "250",
+    "stellen": 3,
+    "satz": "Soldaten besetzen das Ruhrgebiet. Der Staat bezahlt den Streik mit Geld, das er drucken lässt.",
+    "bild": null
+   },
+   {
+    "datum_text": "Juli 1923",
+    "kurz": "Jul",
+    "wert_text": "3.465 Mark",
+    "voll": "3.465",
+    "stellen": 4,
+    "satz": "Der Staat druckt immer mehr Geld. Die Löhne kommen nicht hinterher.",
+    "bild": {
+     "src": "bilder/geld_schlange.jpg",
+     "unterschrift": "Schlange vor einem Lebensmittelgeschäft in Berlin, 1923 (Bundesarchiv, Bild 146-1971-109-42, CC BY-SA 3.0 de)"
+    }
+   },
+   {
+    "datum_text": "August 1923",
+    "kurz": "Aug",
+    "wert_text": "69.000 Mark",
+    "voll": "69.000",
+    "stellen": 5,
+    "satz": "Viele bekommen ihren Lohn jeden Tag und kaufen sofort ein, bevor das Geld noch weniger wert ist.",
+    "bild": {
+     "src": "bilder/geld_schein.jpg",
+     "unterschrift": "Ein Geldschein über eine Million Mark, 1923 (Bundesarchiv, Bild 102-00193, CC BY-SA 3.0 de)"
+    }
+   },
+   {
+    "datum_text": "September 1923",
+    "kurz": "Sep",
+    "wert_text": "1,5 Millionen Mark",
+    "voll": "1.512.000",
+    "stellen": 7,
+    "satz": "Wer gespart hat, verliert alles. Der Staat ist seine Schulden los.",
+    "bild": {
+     "src": "bilder/geld_tapete.jpg",
+     "unterschrift": "Eine Wand wird mit Geldscheinen tapeziert, 1923 (Bundesarchiv, Bild 102-00104, Foto: Georg Pahl, CC BY-SA 3.0 de)"
+    }
+   },
+   {
+    "datum_text": "Oktober 1923",
+    "kurz": "Okt",
+    "wert_text": "1,7 Milliarden Mark",
+    "voll": "1.743.000.000",
+    "stellen": 10,
+    "satz": "Viele Menschen vertrauen dem Staat nicht mehr.",
+    "bild": null
+   },
+   {
+    "datum_text": "November 1923",
+    "kurz": "Nov",
+    "wert_text": "201 Milliarden Mark",
+    "voll": "201.000.000.000",
+    "stellen": 12,
+    "satz": "Am 15. November kommt neues Geld, die Rentenmark: eine Rentenmark für eine Billion Mark.",
+    "bild": {
+     "src": "bilder/geld_rentenmark.jpg",
+     "unterschrift": "Ausgabe der neuen Rentenmark in Berlin, 1923 (Bundesarchiv, Bild 183-H29263, CC BY-SA 3.0 de)"
+    }
+   }
+  ],
+  "nachweis": "Preise: Statistisches Reichsamt, Zahlen zur Geldentwertung in Deutschland 1914 bis 1923, S. 34 (1 kg Roggenbrot in Berlin, Monatsdurchschnitt)."
+ },
+ "nachweis": "Nach: Deutsches Historisches Museum, LeMO (Kapitel Weimarer Republik und Jahreschronik 1923); Historisches Lexikon Bayerns; Verfassung des Deutschen Reichs von 1919."
+}
