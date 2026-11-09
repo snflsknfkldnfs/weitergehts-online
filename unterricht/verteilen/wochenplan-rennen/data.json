@@ -1,0 +1,585 @@
+{
+ "titel": "Wochenplan-Rennen",
+ "auftrag": "",
+ "hinweis": "Die Familie und die Minuten sind ausgedacht.",
+ "nachweis": "Idee der Rechnung: „Inselspiel“, Universität Siegen (Arbeitsteilung, Tim und Tom).",
+ "lagen": [
+  {
+   "id": "woche",
+   "art": "woche",
+   "reiter": "Wochenplan-Rennen",
+   "titel": "Du planst die Woche neu.",
+   "text": "So arbeitet die Familie bisher. Tausch die Arbeiten und drück auf Start.",
+   "tage": [
+    "Mo",
+    "Di",
+    "Mi",
+    "Do",
+    "Fr",
+    "Sa",
+    "So"
+   ],
+   "tage_lang": [
+    "Montag",
+    "Dienstag",
+    "Mittwoch",
+    "Donnerstag",
+    "Freitag",
+    "Samstag",
+    "Sonntag"
+   ],
+   "zeiten": [
+    "vormittags",
+    "nachmittags"
+   ],
+   "personen": [
+    {
+     "id": "mama",
+     "name": "Mama",
+     "zeichen": "👩",
+     "profil": [
+      "Mama arbeitet viel.",
+      "Sie hat nur Di, Do und Sa vormittags Zeit.",
+      "Sie ist bei fast allem am schnellsten."
+     ],
+     "bloecke": [
+      [
+       0,
+       1.0
+      ],
+      [
+       0,
+       1.0
+      ],
+      [
+       45,
+       1.0
+      ],
+      [
+       0,
+       1.0
+      ],
+      [
+       0,
+       1.0
+      ],
+      [
+       0,
+       1.0
+      ],
+      [
+       45,
+       1.0
+      ],
+      [
+       0,
+       1.0
+      ],
+      [
+       0,
+       1.0
+      ],
+      [
+       0,
+       1.0
+      ],
+      [
+       30,
+       1.0
+      ],
+      [
+       0,
+       1.0
+      ],
+      [
+       0,
+       1.0
+      ],
+      [
+       0,
+       1.0
+      ]
+     ]
+    },
+    {
+     "id": "papa",
+     "name": "Papa",
+     "zeichen": "👨",
+     "profil": [
+      "Papa arbeitet Mo bis Fr vormittags.",
+      "Nach der Arbeit ist er müde und langsamer.",
+      "Am Samstag hat er viel Zeit, am Sonntag ist er weg."
+     ],
+     "bloecke": [
+      [
+       0,
+       1.0
+      ],
+      [
+       45,
+       1.5
+      ],
+      [
+       0,
+       1.0
+      ],
+      [
+       45,
+       1.5
+      ],
+      [
+       0,
+       1.0
+      ],
+      [
+       45,
+       1.5
+      ],
+      [
+       0,
+       1.0
+      ],
+      [
+       45,
+       1.5
+      ],
+      [
+       0,
+       1.0
+      ],
+      [
+       45,
+       1.5
+      ],
+      [
+       60,
+       1.0
+      ],
+      [
+       60,
+       1.0
+      ],
+      [
+       0,
+       1.0
+      ],
+      [
+       0,
+       1.0
+      ]
+     ]
+    },
+    {
+     "id": "kind",
+     "name": "Kind",
+     "zeichen": "🧒",
+     "profil": [
+      "Das Kind ist 12 und vormittags in der Schule.",
+      "Nachmittags hat es 30 Minuten Zeit.",
+      "Am Wochenende hat es vormittags mehr Zeit."
+     ],
+     "bloecke": [
+      [
+       0,
+       1.0
+      ],
+      [
+       30,
+       1.0
+      ],
+      [
+       0,
+       1.0
+      ],
+      [
+       30,
+       1.0
+      ],
+      [
+       0,
+       1.0
+      ],
+      [
+       30,
+       1.0
+      ],
+      [
+       0,
+       1.0
+      ],
+      [
+       30,
+       1.0
+      ],
+      [
+       0,
+       1.0
+      ],
+      [
+       30,
+       1.0
+      ],
+      [
+       60,
+       1.0
+      ],
+      [
+       30,
+       1.0
+      ],
+      [
+       60,
+       1.0
+      ],
+      [
+       30,
+       1.0
+      ]
+     ]
+    },
+    {
+     "id": "opa",
+     "name": "Opa",
+     "zeichen": "👴",
+     "profil": [
+      "Opa ist jeden Tag da.",
+      "Vormittags ist er fit, nachmittags langsamer.",
+      "Er kann nicht auf die Leiter."
+     ],
+     "bloecke": [
+      [
+       60,
+       1.0
+      ],
+      [
+       45,
+       1.5
+      ],
+      [
+       60,
+       1.0
+      ],
+      [
+       45,
+       1.5
+      ],
+      [
+       60,
+       1.0
+      ],
+      [
+       45,
+       1.5
+      ],
+      [
+       60,
+       1.0
+      ],
+      [
+       45,
+       1.5
+      ],
+      [
+       60,
+       1.0
+      ],
+      [
+       45,
+       1.5
+      ],
+      [
+       60,
+       1.0
+      ],
+      [
+       45,
+       1.5
+      ],
+      [
+       60,
+       1.0
+      ],
+      [
+       45,
+       1.5
+      ]
+     ]
+    }
+   ],
+   "arbeiten": [
+    {
+     "id": "saugen1",
+     "typ": "Saugen",
+     "name": "Wohnung saugen",
+     "kurz": "Saugen",
+     "zeichen": "🧹",
+     "farbe": 0,
+     "dauer": {
+      "mama": 20,
+      "papa": 35,
+      "kind": 30,
+      "opa": 40
+     }
+    },
+    {
+     "id": "saugen2",
+     "typ": "Saugen",
+     "name": "Wohnung saugen",
+     "kurz": "Saugen",
+     "zeichen": "🧹",
+     "farbe": 0,
+     "dauer": {
+      "mama": 20,
+      "papa": 35,
+      "kind": 30,
+      "opa": 40
+     }
+    },
+    {
+     "id": "waesche1",
+     "typ": "Wäsche",
+     "name": "Wäsche zusammenlegen",
+     "kurz": "Wäsche",
+     "zeichen": "👕",
+     "farbe": 1,
+     "dauer": {
+      "mama": 10,
+      "papa": 30,
+      "kind": 45,
+      "opa": 20
+     }
+    },
+    {
+     "id": "waesche2",
+     "typ": "Wäsche",
+     "name": "Wäsche zusammenlegen",
+     "kurz": "Wäsche",
+     "zeichen": "👕",
+     "farbe": 1,
+     "dauer": {
+      "mama": 10,
+      "papa": 30,
+      "kind": 45,
+      "opa": 20
+     }
+    },
+    {
+     "id": "muell1",
+     "typ": "Müll",
+     "name": "Müll rausbringen",
+     "kurz": "Müll",
+     "zeichen": "🗑️",
+     "farbe": 2,
+     "dauer": {
+      "mama": 10,
+      "papa": 20,
+      "kind": 10,
+      "opa": 20
+     }
+    },
+    {
+     "id": "muell2",
+     "typ": "Müll",
+     "name": "Müll rausbringen",
+     "kurz": "Müll",
+     "zeichen": "🗑️",
+     "farbe": 2,
+     "dauer": {
+      "mama": 10,
+      "papa": 20,
+      "kind": 10,
+      "opa": 20
+     }
+    },
+    {
+     "id": "kochen1",
+     "typ": "Kochen",
+     "name": "Abendessen kochen",
+     "kurz": "Kochen",
+     "zeichen": "🍲",
+     "farbe": 3,
+     "dauer": {
+      "mama": 30,
+      "papa": 50,
+      "kind": 55,
+      "opa": 40
+     }
+    },
+    {
+     "id": "kochen2",
+     "typ": "Kochen",
+     "name": "Abendessen kochen",
+     "kurz": "Kochen",
+     "zeichen": "🍲",
+     "farbe": 3,
+     "dauer": {
+      "mama": 30,
+      "papa": 50,
+      "kind": 55,
+      "opa": 40
+     }
+    },
+    {
+     "id": "bad",
+     "typ": "Bad",
+     "name": "Bad putzen",
+     "kurz": "Bad",
+     "zeichen": "🛁",
+     "farbe": 0,
+     "dauer": {
+      "mama": 20,
+      "papa": 45,
+      "kind": 55,
+      "opa": 55
+     }
+    },
+    {
+     "id": "einkauf",
+     "typ": "Einkauf",
+     "name": "Großeinkauf mit dem Auto",
+     "kurz": "Einkauf",
+     "zeichen": "🛒",
+     "farbe": 1,
+     "dauer": {
+      "mama": 40,
+      "papa": 60,
+      "opa": 70,
+      "kind": 0
+     },
+     "kann_nicht": {
+      "kind": "Das Kind kann noch nicht Auto fahren."
+     }
+    },
+    {
+     "id": "fenster",
+     "typ": "Fenster",
+     "name": "Fenster putzen",
+     "kurz": "Fenster",
+     "zeichen": "🪟",
+     "farbe": 2,
+     "dauer": {
+      "mama": 45,
+      "papa": 45,
+      "kind": 70,
+      "opa": 0
+     },
+     "kann_nicht": {
+      "opa": "Opa kann nicht auf die Leiter."
+     }
+    },
+    {
+     "id": "keller",
+     "typ": "Keller",
+     "name": "Keller aufräumen",
+     "kurz": "Keller",
+     "zeichen": "📦",
+     "farbe": 3,
+     "dauer": {
+      "mama": 55,
+      "papa": 50,
+      "kind": 70,
+      "opa": 60
+     }
+    }
+   ],
+   "bisher": [
+    {
+     "arbeit": "saugen1",
+     "person": "opa",
+     "tag": "Di",
+     "zeit": "vormittags"
+    },
+    {
+     "arbeit": "saugen2",
+     "person": "opa",
+     "tag": "Do",
+     "zeit": "vormittags"
+    },
+    {
+     "arbeit": "waesche1",
+     "person": "kind",
+     "tag": "Sa",
+     "zeit": "vormittags"
+    },
+    {
+     "arbeit": "waesche2",
+     "person": "kind",
+     "tag": "So",
+     "zeit": "vormittags"
+    },
+    {
+     "arbeit": "muell1",
+     "person": "mama",
+     "tag": "Di",
+     "zeit": "vormittags"
+    },
+    {
+     "arbeit": "muell2",
+     "person": "mama",
+     "tag": "Do",
+     "zeit": "vormittags"
+    },
+    {
+     "arbeit": "kochen1",
+     "person": "mama",
+     "tag": "Di",
+     "zeit": "vormittags"
+    },
+    {
+     "arbeit": "kochen2",
+     "person": "mama",
+     "tag": "Do",
+     "zeit": "vormittags"
+    },
+    {
+     "arbeit": "bad",
+     "person": "mama",
+     "tag": "Sa",
+     "zeit": "vormittags"
+    },
+    {
+     "arbeit": "einkauf",
+     "person": "papa",
+     "tag": "Sa",
+     "zeit": "vormittags"
+    },
+    {
+     "arbeit": "fenster",
+     "person": "papa",
+     "tag": "Sa",
+     "zeit": "nachmittags"
+    },
+    {
+     "arbeit": "keller",
+     "person": "opa",
+     "tag": "Mi",
+     "zeit": "vormittags"
+    }
+   ]
+  },
+  {
+   "id": "eigen",
+   "art": "eigen",
+   "reiter": "Eigenes Haus",
+   "titel": "Dein eigenes Haus",
+   "text": "Wer wohnt bei dir? Welche Arbeiten gibt es, und wie lange braucht jede Person? Trag es ein und verteile.",
+   "start": "14:00",
+   "fristen": [
+    "14:30",
+    "14:45",
+    "15:00",
+    "15:30"
+   ],
+   "personen": [
+    {
+     "name": "Person 1"
+    },
+    {
+     "name": "Person 2"
+    }
+   ],
+   "max_personen": 3,
+   "max_aufgaben": 8
+  }
+ ]
+}

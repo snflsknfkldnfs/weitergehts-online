@@ -144,3 +144,131 @@ body.verteilen {
   .v-zeile-ende { grid-column: 2; }
   .v-strich-zwischen { display: none; }
 }
+
+/* ══ Art „woche“: Wochenkalender (Wochenplan-Rennen, 2026-11-09) ═══════════════
+   Breiter Modus nur, wenn die Lage „woche“ offen ist (body.v-woche-an, setzt verteilen.js).
+   Ziel: Tablet quer 1024×768 und 1180×820 ohne waagrechtes Scrollen; Zielflächen für Finger. */
+.v-woche-an .v-huelle { max-width: 1500px; padding: 10px 12px 28px; display: flex; flex-wrap: wrap; align-items: center; column-gap: 16px; }
+.v-woche-an .v-huelle > * { flex: 1 1 100%; }
+.v-woche-an .v-kopf { flex: 1 1 auto; padding: 0 2px 6px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 14px; }
+.v-woche-an .v-kopf h1 { margin: 0; font-size: 1.05rem; color: var(--m-leise); }
+.v-woche-an .v-kopf p { margin: 0; }
+.v-woche-an .v-kopf p:empty { display: none; }
+.v-woche-an .v-lagen { flex: 0 0 auto; margin: 0 0 6px; gap: 8px; }
+.v-woche-an .v-lagen .m-knopf { min-height: 40px; padding: 0 14px; }
+.v-woche-an .v-blatt { padding: 10px 12px 14px; margin: 0 0 10px; }
+.v-woche-an .v-blatt > h2 { margin: 0 0 2px; font-size: 1.6rem; line-height: 1.2; }
+.v-woche-an .v-blatt > p { margin: 0 0 10px; }
+.v-woche-an .v-nachweis { margin-top: 6px; }
+
+.w-raster { --w-name: 52px; --w-zeit: 40px; display: grid; grid-template-columns: minmax(0, 1fr) 256px; gap: 12px; align-items: start; }
+
+/* Kalender */
+.w-kalender { display: grid; border: 1px solid var(--m-linie); background: var(--m-blatt); }
+.w-ecke { background: var(--m-notiz); border-bottom: 2px solid var(--m-tinte); }
+.w-tag { padding: 3px 0; text-align: center; font-weight: 700; background: var(--m-notiz); border-bottom: 2px solid var(--m-tinte); border-left: 1px solid var(--m-linie-hell); }
+.w-tag.w-jetzt { background: var(--m-tinte); color: var(--m-blatt); }
+.w-person {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  padding: 4px 2px; text-align: center; font-weight: 700; font-size: .92rem;
+  border-top: 2px solid var(--m-tinte); border-right: 1px solid var(--m-linie-hell);
+}
+.w-person-zeichen { font-size: 1.35rem; line-height: 1; }
+.w-person-summe { font-size: .78rem; padding: 1px 4px; border-radius: 2px; background: var(--m-tinte); color: var(--m-blatt); white-space: nowrap; }
+.w-zeit { display: flex; align-items: center; padding: 0 2px; font-size: .68rem; letter-spacing: -.01em; color: var(--m-leise); border-top: 1px solid var(--m-linie-hell); }
+.w-zelle {
+  position: relative; min-width: 0; min-height: 62px; padding: 3px;
+  display: flex; flex-direction: column; gap: 3px;
+  border-top: 1px solid var(--m-linie-hell); border-left: 1px solid var(--m-linie-hell);
+  cursor: pointer;
+}
+.w-zeit.w-erste, .w-zelle.w-erste { border-top: 2px solid var(--m-tinte); }
+.w-zelle-kopf { font-size: .72rem; line-height: 1.15; color: var(--m-leise); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.w-tempo { font-size: .72rem; line-height: 1.1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.w-nichtda { cursor: default; background: repeating-linear-gradient(135deg, var(--m-notiz) 0 7px, var(--m-linie-hell) 7px 8px); }
+.w-nichtda .w-zelle-kopf { align-self: flex-start; padding: 0 3px; background: var(--m-notiz); font-weight: 600; }
+.w-hier { font-size: .74rem; font-weight: 700; color: var(--m-blau); }
+.w-hier:empty { display: none; }
+
+/* Zustände beim Auswählen, Ziehen und im Lauf (nie nur Farbe: Rahmenart + Wort „hier … Min.“) */
+.w-zelle.w-passt { outline: 3px dashed var(--m-blau); outline-offset: -3px; }
+.w-zelle.w-passt-nicht { opacity: .45; }
+.w-zelle.w-ort { outline: 3px solid var(--m-tinte); outline-offset: -3px; }
+.w-zelle.w-ueber, .w-vorrat.w-ueber { outline: 4px solid var(--m-blau); outline-offset: -4px; background: var(--m-notiz); }
+.w-zelle.w-jetzt { box-shadow: inset 0 0 0 3px var(--m-tinte); }
+
+/* Karten (Arbeiten) */
+.w-karte {
+  display: flex; flex-direction: column; align-items: stretch; justify-content: center; gap: 0;
+  width: 100%; min-height: 34px; padding: 2px 5px; border: 0; border-radius: 3px;
+  color: var(--m-blatt); font: inherit; font-size: .8rem; font-weight: 600; line-height: 1.1; text-align: left;
+  cursor: grab; touch-action: none; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none;
+}
+.w-karte-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.w-karte-min { flex: none; font-size: .92em; font-weight: 700; font-variant-numeric: tabular-nums; }
+.w-karte.w-gewaehlt { box-shadow: 0 0 0 2px var(--m-blatt), 0 0 0 5px var(--m-tinte); position: relative; z-index: 2; }
+.w-karte.w-erledigt { opacity: .55; }
+.w-karte.w-erledigt .w-karte-min::after { content: "  ✓"; white-space: pre; }
+.w-karte.w-gezogen { opacity: .3; }
+.w-geist { position: fixed; z-index: 50; pointer-events: none; box-shadow: 4px 4px 0 var(--m-kante); }
+body.w-zieht { cursor: grabbing; -webkit-user-select: none; user-select: none; }
+body.w-laeuft .w-zelle, body.w-laeuft .w-karte { cursor: default; }
+
+/* Personenkarten */
+.w-personen { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-top: 10px; }
+.w-pkarte { padding: 6px 8px; border: 1px solid var(--m-linie-hell); border-radius: 2px; background: var(--m-blatt); font-size: .85rem; line-height: 1.3; }
+.w-pkarte p { margin: 2px 0 0; }
+.w-pkarte-kopf { display: flex; align-items: center; gap: 6px; font-size: 1rem; font-weight: 700; }
+
+/* Steuerleiste */
+.w-leiste { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.w-leiste h3 { margin: 0 0 4px; font-size: 1rem; }
+.w-start { padding: 10px 12px; border: 2px solid var(--m-tinte); border-radius: var(--m-ecke); background: var(--m-blatt); }
+.w-start .v-handlungen { margin-top: 8px; }
+.w-start .m-knopf { width: 100%; }
+.w-start-knopf { min-height: 54px; font-size: 1.15rem; }
+.w-gewinn { margin: 0; font-size: 1.15rem; font-weight: 700; line-height: 1.25; }
+.w-zahl { display: block; font-size: 3.4rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.w-gesamt { margin: 6px 0 0; font-size: .95rem; line-height: 1.35; }
+.w-je { margin: 4px 0 0; font-size: .9rem; color: var(--m-leise); }
+.w-status { margin: 0; font-weight: 700; }
+.w-lauf { margin: 6px 0 0; font-weight: 600; font-variant-numeric: tabular-nums; }
+.w-lauf:empty { display: none; }
+.w-meldung { margin: 0; padding: 8px 10px; border-left: 5px solid var(--m-tinte); background: var(--m-notiz); font-weight: 600; line-height: 1.3; }
+.w-meldung:empty { display: none; }
+.w-laeufe ol { margin: 0; padding-left: 1.7em; font-variant-numeric: tabular-nums; }
+.w-laeufe li { margin: 0 0 2px; }
+.w-bester { font-weight: 700; }
+.w-vorrat { min-height: 64px; padding: 8px 10px; border: 2px dashed var(--m-linie); border-radius: var(--m-ecke); background: var(--m-blatt); cursor: pointer; }
+.w-vorrat.w-passt { border-color: var(--m-blau); border-width: 3px; }
+.w-vorrat-karten { display: flex; flex-wrap: wrap; gap: 6px; }
+.w-vorrat .w-karte { width: auto; min-height: 40px; padding: 4px 10px; font-size: .9rem; }
+.w-leer { margin: 0; font-size: .9rem; color: var(--m-leise); }
+.w-knoepfe { margin-top: 0; }
+.w-knoepfe .m-knopf { flex: 1 1 auto; padding: 0 10px; }
+.w-tafel-hinweis { margin: 0 0 4px; font-size: .8rem; color: var(--m-leise); }
+.w-tafel table { width: 100%; border-collapse: collapse; font-size: .88rem; font-variant-numeric: tabular-nums; background: var(--m-blatt); }
+.w-tafel th, .w-tafel td { padding: 3px 4px; border: 1px solid var(--m-linie-hell); text-align: center; }
+.w-tafel thead th { font-size: .78rem; line-height: 1.15; white-space: pre-line; }
+.w-tafel tbody th { text-align: left; font-weight: 600; white-space: nowrap; }
+.w-kann-nicht { font-size: .7rem; line-height: 1.1; color: var(--m-leise); }
+
+/* Wochenplan-Blatt (für die Tafel) */
+.w-overlay { position: fixed; inset: 0; z-index: 40; display: flex; align-items: center; justify-content: center; padding: 16px; background: var(--m-vollbild); }
+.w-wochenplan { width: 100%; max-width: 900px; max-height: calc(100vh - 32px); overflow: auto; padding: 18px 22px; }
+.w-wochenplan h2 { margin: 0 0 6px; font-size: 1.5rem; }
+.w-wochenplan h3 { margin: 14px 0 4px; font-size: 1.15rem; }
+.w-plan-liste { margin: 0; padding: 0; list-style: none; font-size: 1.25rem; line-height: 1.45; }
+.w-plan-liste li { padding: 4px 0; border-bottom: 1px solid var(--m-linie-hell); }
+
+@media (min-width: 1150px) {
+  .w-raster { --w-name: 60px; --w-zeit: 46px; grid-template-columns: minmax(0, 1fr) 300px; gap: 14px; }
+  .w-karte { font-size: .86rem; }
+}
+/* Schmal (Hochformat, Handy): eine Spalte, der Kalender scrollt waagrecht */
+@media (max-width: 899px) {
+  .w-raster { grid-template-columns: minmax(0, 1fr); }
+  .w-kalender-rahmen { overflow-x: auto; }
+  .w-kalender { min-width: 700px; }
+  .w-personen { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

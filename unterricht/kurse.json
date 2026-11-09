@@ -138,6 +138,10 @@
       "titel": "Wer macht was bis 14:30?",
       "art": "werkzeug", "fach": "wib", "jahrgang": 6,
       "kurse": ["wib6b"], "thema": "Arbeit", "datum": "2026-10-27" },
+    { "id": "verteilen-wochenplan-rennen", "pfad": "verteilen/wochenplan-rennen/",
+      "titel": "Wochenplan-Rennen",
+      "art": "werkzeug", "fach": "wib", "jahrgang": 6,
+      "kurse": ["wib6b"], "thema": "Arbeit", "datum": "2026-11-10" },
 
     { "id": "tool-inf-datenspuren", "pfad": "datenspuren/",
       "titel": "Datenspuren — Fälle: Wer steckt hinter der Nummer?",
