@@ -15,13 +15,23 @@
  *       "materialien": [ MATERIAL ], "fragen": [ FRAGE ],
  *       "seiten": [ { "id", "name", "materialien": [ MATERIAL ], "fragen": [ FRAGE ] } ] | fehlt } ] }
  * MATERIAL = { "kennung", "kopf", "wer", "wann", "absaetze": [ "Wortlaut mit {{Wort}}" | { "eigen": "Satz" } ] | fehlt,
- *              "entlastet": [ … ] | fehlt, "glossar": { "Wort": "Erklärung" }, "plakat": { "bild", "unterschrift" },
+ *              "entlastet": [ … ] | fehlt, "glossar": { "Wort": "Erklärung" }, "plakat": { "bild", "unterschrift", "oben": bool },
+ *              (plakat.oben, seit 1.3 / 2026-11-09: Bild vor dem Text, etwa eine Lagekarte, die beim Lesen sichtbar bleiben soll)
+ *              "einbettung": { "src", "hoehe", "titel" } | fehlt (seit 1.4 / 2026-11-09: interaktive Seite, etwa eine Zeitkarte,
+ *              als Rahmen vor dem Text; darunter ein Knopf, der sie groß öffnet)
  *              "video": { "src", "start", "ende", "untertitel", "unterschrift" } | fehlt,
  *              "audio": { "src", "start", "ende", "bild", "unterschrift" } | fehlt (Podcast: bild = Cover), "ki_prompt", "nachweis" }
  * Freischalten (seit 2026-10-29): Jeder Schritt ab dem zweiten trägt "code" (Hash des Codeworts, das die Lehrkraft auf der
  * Folie zeigt); spätere Schritte sind unsichtbar, die Reiter heißen nur „Schritt n“. Die Auflösung beim Sortieren hat
  * ebenso einen Code. Hash: djb2 über das kleingeschriebene Wort, hexadezimal (gleich im Erzeuger der Stunde).
  * FRAGE = { "id", "fundstelle", "frage", "loesung" }
+ * Rolle (seit 1.5 / 2026-11-09): { "id", "reiter", "titel", "auftrag", "typ": "rolle", "code", "lage": [ MATERIAL ],
+ *   "rollen": [ { "id", "name", "farbe", "materialien": [ MATERIAL ] } ], "hinweis" }. Beim ersten Öffnen der Seite zieht
+ *   das Gerät zufällig eine Rolle und merkt sie sich (localStorage, wie alles hier); zu sehen ist sie erst nach dem Code.
+ *   ?rolle=<id> in der Adresse setzt die Rolle fest (zum Ausgleichen durch die Lehrkraft).
+ * Fokus (seit 1.5, 2026-11-09): Die Reiter erscheinen erst, wenn ein zweiter Schritt offen ist. Ein Schritt kann
+ *   "code_nach_seite": "<seiten-id>" tragen: Das Codefeld für den nächsten Schritt steht dann nur unter dieser Seite,
+ *   und mit "code_label" (kurz, etwa „Code:“) erscheint es zurückhaltend gesetzt.
  */
 (function () {
   'use strict';
@@ -42,6 +52,7 @@
     try { S = JSON.parse(localStorage.getItem(schluessel)) || null; } catch (e) { S = null; }
     if (!S) S = { schritt: 0, offen: 0, sortiert: {}, aufgeloest: {}, antworten: {}, verglichen: {}, seite: {} };
     if (S.offen == null) S.offen = 0;
+    if (!S.rolle) S.rolle = {};
   }
   function sichern() { try { localStorage.setItem(schluessel, JSON.stringify(S)); } catch (e) { /* ohne Speicher weiter */ } }
 
@@ -132,6 +143,23 @@
     return fig;
   }
 
+  function einbettungBauen(e) {
+    var z = el('div', 'b-einbettung');
+    var f = el('iframe'); f.src = e.src; f.title = e.titel || 'Interaktives Material'; f.loading = 'lazy';
+    f.style.width = '100%'; f.style.height = (e.hoehe || 700) + 'px'; f.style.border = '1px solid var(--m-linie-hell)';
+    z.appendChild(f);
+    var a = el('a', 'm-knopf', 'Groß öffnen'); a.href = e.src; a.target = '_blank'; a.rel = 'noopener';
+    z.appendChild(a);
+    return z;
+  }
+  function plakatBauen(p) {
+    var fig = el('figure', 'b-plakat');
+    var a = el('a'); a.href = p.bild; a.target = '_blank'; a.rel = 'noopener';
+    var img = el('img'); img.src = p.bild; img.alt = p.unterschrift || ''; img.loading = 'lazy';
+    a.appendChild(img); fig.appendChild(a);
+    if (p.unterschrift) fig.appendChild(el('figcaption', 'm-leise', p.unterschrift));
+    return fig;
+  }
   function materialBauen(m) {
     var art = el('article', 'b-material m-blatt');
     var kopf = el('header', 'b-mkopf');
@@ -142,6 +170,8 @@
     var glossar = m.glossar || {};
     if (m.video) art.appendChild(videoBauen(m.video));
     if (m.audio) art.appendChild(audioBauen(m.audio));
+    if (m.einbettung) art.appendChild(einbettungBauen(m.einbettung));
+    if (m.plakat && m.plakat.oben) art.appendChild(plakatBauen(m.plakat));
     var wortlaut = el('div', 'b-text');
     (m.absaetze || []).forEach(function (a) { wortlaut.appendChild(absatzBauen(a, glossar)); });
     if (m.entlastet && m.entlastet.length) {
@@ -162,14 +192,7 @@
     } else {
       art.appendChild(wortlaut);
     }
-    if (m.plakat) {
-      var fig = el('figure', 'b-plakat');
-      var a = el('a'); a.href = m.plakat.bild; a.target = '_blank'; a.rel = 'noopener';
-      var img = el('img'); img.src = m.plakat.bild; img.alt = m.plakat.unterschrift || ''; img.loading = 'lazy';
-      a.appendChild(img); fig.appendChild(a);
-      if (m.plakat.unterschrift) fig.appendChild(el('figcaption', 'm-leise', m.plakat.unterschrift));
-      art.appendChild(fig);
-    }
+    if (m.plakat && !m.plakat.oben) art.appendChild(plakatBauen(m.plakat));
     if (D.ki_hilfe && m.ki_prompt) art.appendChild(kiKnopf(m));
     if (m.nachweis) art.appendChild(el('p', 'b-nachweis m-leise', m.nachweis));
     return art;
@@ -268,10 +291,40 @@
     }
   }
 
+  function rollenZiehen() {
+    var fest = new URLSearchParams(location.search).get('rolle');
+    var neu = false;
+    D.schritte.forEach(function (s) {
+      if (s.typ !== 'rolle') return;
+      var ids = s.rollen.map(function (r) { return r.id; });
+      if (fest && ids.indexOf(fest) >= 0 && S.rolle[s.id] !== fest) { S.rolle[s.id] = fest; neu = true; }
+      if (!S.rolle[s.id] || ids.indexOf(S.rolle[s.id]) < 0) {
+        var z = new Uint32Array(1);
+        if (window.crypto && crypto.getRandomValues) crypto.getRandomValues(z); else z[0] = Math.floor(Math.random() * 4294967295);
+        S.rolle[s.id] = ids[z[0] % ids.length]; neu = true;
+      }
+    });
+    if (neu) sichern();
+  }
+  function rolleBauen(s, wohin) {
+    var r = s.rollen.filter(function (x) { return x.id === S.rolle[s.id]; })[0];
+    if (!r) return;
+    var karte = el('section', 'b-rolle m-blatt');
+    var kopf = el('header', 'b-rollenkopf');
+    kopf.style.background = r.farbe; kopf.style.color = '#fff'; kopf.style.padding = '10px 14px';
+    kopf.appendChild(el('p', 'b-rollenvor', 'Deine Rolle'));
+    kopf.appendChild(el('h3', null, r.name));
+    karte.appendChild(kopf);
+    (r.materialien || []).forEach(function (m) { karte.appendChild(materialBauen(m)); });
+    if (s.hinweis) karte.appendChild(el('p', 'b-rollenhinweis', s.hinweis));
+    wohin.appendChild(karte);   /* zuerst die eigene Rolle, darunter die gemeinsame Lage */
+    (s.lage || []).forEach(function (m) { wohin.appendChild(materialBauen(m)); });
+  }
   function zeichnen() {
     var nr = Math.min(S.schritt || 0, S.offen, D.schritte.length - 1);
     var reiter = document.getElementById('b-reiter');
     reiter.textContent = '';
+    reiter.hidden = S.offen < 1;   /* ein einziger Schritt braucht keine Reiter; sie lenken nur ab */
     D.schritte.slice(0, S.offen + 1).forEach(function (s, i) {
       var k = knopf('Schritt ' + (i + 1));
       k.setAttribute('aria-pressed', String(i === nr));
@@ -281,20 +334,23 @@
     var s = D.schritte[nr];
     wurzel.textContent = '';
     var kopf = el('header', 'b-schrittkopf');
-    kopf.appendChild(el('h2', null, s.titel));
+    if (s.titel) kopf.appendChild(el('h2', null, s.titel));
     if (s.auftrag) kopf.appendChild(el('p', 'b-auftrag', s.auftrag));
-    wurzel.appendChild(kopf);
+    if (s.titel || s.auftrag) wurzel.appendChild(kopf);
     if (s.typ === 'sortieren') sortierenBauen(s, wurzel);
+    else if (s.typ === 'rolle') rolleBauen(s, wurzel);
     else lesenBauen(s, wurzel);
     var sortOffen = s.typ === 'sortieren' && !S.aufgeloest[s.id];  /* erst Auflösung, dann der nächste Code */
-    if (nr < D.schritte.length - 1 && !sortOffen) {
+    var codeHier = !s.code_nach_seite || nr < S.offen || S.seite[s.id] === s.code_nach_seite;
+    if (nr < D.schritte.length - 1 && !sortOffen && codeHier) {
       var z = el('div', 'b-weiter');
       if (nr < S.offen) {
         var weiter = knopf('Weiter zu Schritt ' + (nr + 2));
         weiter.addEventListener('click', function () { S.schritt = nr + 1; sichern(); zeichnen(); window.scrollTo(0, 0); });
         z.appendChild(weiter);
       } else {
-        z.appendChild(codeFeld('Code für den nächsten Schritt: ', D.schritte[nr + 1].code, function () {
+        if (s.code_label) z.className = 'b-weiter b-weiter-dezent';
+        z.appendChild(codeFeld(s.code_label || 'Code für den nächsten Schritt: ', D.schritte[nr + 1].code, function () {
           S.offen = nr + 1; S.schritt = nr + 1; sichern(); zeichnen(); window.scrollTo(0, 0);
         }));
       }
@@ -306,6 +362,7 @@
     D = d;
     schluessel = 'begleiten:' + (d.speicher || location.pathname);
     laden();
+    rollenZiehen();
     document.title = d.titel;
     document.getElementById('b-titel').textContent = d.titel;
     if (d.leitfrage) document.getElementById('b-leitfrage').textContent = d.leitfrage;
@@ -315,8 +372,9 @@
     var neu = document.getElementById('b-neu');
     neu.addEventListener('click', function () {
       if (!window.confirm('Alles auf diesem Gerät löschen und neu anfangen?')) return;
+      var rolle = S.rolle;   /* die gezogene Rolle bleibt: kein neues Ziehen durch Neu anfangen */
       try { localStorage.removeItem(schluessel); } catch (e) { /* ohne Speicher weiter */ }
-      laden(); zeichnen();
+      laden(); S.rolle = rolle; sichern(); zeichnen();
     });
     zeichnen();
   }

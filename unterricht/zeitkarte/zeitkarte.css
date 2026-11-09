@@ -1,0 +1,101 @@
+/* Zeitkarte — Gestaltung über material.css (Blatt); hier nur das Werkzeug (2026-11-09). */
+body.zeitkarte { margin: 0; background: var(--m-grund); font-family: var(--m-schrift); color: var(--m-tinte); }
+.z-huelle { max-width: 980px; margin: 0 auto; padding: 8px; }
+.z-blatt { padding: 14px 16px 16px; }
+.z-datum { font-size: 1.5rem; font-weight: 700; margin: 0 0 8px; }
+.z-karte { position: relative; border: 1px solid var(--m-linie-hell); background: #fff; }
+.z-karte img { display: block; width: 100%; height: auto; }
+.z-marke { position: absolute; transform: translate(-11px, -11px); display: flex; align-items: center; gap: 6px; }
+.z-marke[hidden] { display: none; }
+.z-punkt { display: inline-block; width: 22px; height: 22px; border-radius: 50%; border: 3px solid #fff;
+  box-shadow: 0 0 0 1px var(--m-linie); flex: none; }
+.z-name { background: rgba(255, 255, 255, .92); padding: 1px 6px; font-weight: 700; font-size: .95rem; border-radius: 3px; white-space: nowrap; }
+.z-neu .z-punkt { animation: z-puls 1.2s ease-in-out infinite; }
+.z-neu .z-name { outline: 2px solid var(--m-tinte); }
+@keyframes z-puls { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.45); } }
+.z-reglerfeld { position: relative; margin: 14px 4px 30px; }
+.z-regler { width: 100%; height: var(--m-klick); margin: 0; accent-color: var(--m-tinte); }
+.z-skala { position: relative; height: 22px; }
+.z-monat { position: absolute; top: 2px; font-size: .8rem; color: var(--m-leise); transform: translateX(-2px); white-space: nowrap; }
+.z-stufen .z-monat { transform: translateX(-50%); font-size: .85rem; }
+.z-stufen .z-monat:first-child { transform: none; }
+.z-stufen .z-monat:last-child { transform: translateX(-100%); }
+.z-strich { position: absolute; top: -12px; width: 3px; height: 10px; }
+.z-leiste { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 8px; }
+.z-legende { display: flex; flex-wrap: wrap; gap: 14px; font-size: .9rem; margin: 6px 0 10px; }
+.z-leg { display: inline-flex; align-items: center; gap: 6px; }
+.z-leg .z-punkt { width: 14px; height: 14px; border-width: 2px; }
+.z-liste { list-style: none; margin: 0; padding: 0; }
+.z-ev { display: flex; gap: 10px; align-items: flex-start; padding: 6px 0; border-top: 1px solid var(--m-linie-hell); }
+.z-ev .z-punkt { width: 14px; height: 14px; border-width: 2px; margin-top: 4px; }
+.z-ev p { margin: 4px 0 0; }
+.z-jetzt { font-size: 1.05rem; }
+.z-ev:not(.z-jetzt) strong { font-weight: 400; color: var(--m-leise); }
+.z-frage { font-size: 1.2rem; margin: 0 0 6px; }
+.z-zahl { font-size: 2.2rem; font-weight: 800; }
+.z-voll { font-family: var(--m-wortlaut); font-size: 1.25rem; letter-spacing: .02em; overflow-wrap: anywhere; margin: 2px 0 8px; }
+.z-balken { height: 26px; background: var(--m-notiz); border: 1px solid var(--m-linie-hell); }
+.z-balken span { display: block; height: 100%; background: var(--m-ocker); transition: width .4s ease; }
+.z-satz { font-size: 1.1rem; margin: 6px 0 10px; max-width: var(--m-mass); }
+.z-bild { margin: 0; }
+.z-bild img { max-width: 100%; max-height: 340px; width: auto; height: auto; border: 1px solid var(--m-linie-hell); }
+.z-bild[hidden] { display: none; }
+.z-nachweis, .z-hinweis { font-size: .8rem; margin: 8px 0 0; }
+
+/* 1.1: Ablauf neben der Karte, Infokarte am Punkt */
+.z-oben { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; }
+.z-oben .z-datum { margin: 0; }
+.z-haupt { display: grid; grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr); gap: 10px; align-items: start; }
+@media (max-width: 620px) { .z-haupt { grid-template-columns: 1fr; } }
+.z-marke { border: 0; background: none; padding: 0; cursor: pointer; pointer-events: auto; font: inherit; color: inherit; }
+.z-offen .z-name { background: var(--m-tinte); color: #fff; }
+.z-offen { z-index: 4; }
+.z-info { position: absolute; z-index: 3; width: 48%; max-height: 80%; overflow: auto; background: #fff;
+  border: 2px solid var(--m-tinte); border-radius: var(--m-ecke); box-shadow: var(--m-schatten); padding: 8px 10px; font-size: .92rem; }
+.z-info[hidden] { display: none; }
+.z-info h3 { margin: 0 24px 6px 0; font-size: 1rem; }
+.z-zu { position: absolute; top: 2px; right: 4px; border: 0; background: none; font-size: 1.3rem; cursor: pointer; min-width: 32px; min-height: 32px; }
+.z-ie { border-left: 5px solid; padding: 2px 0 2px 8px; margin: 0 0 8px; color: var(--m-leise); }
+.z-ie p { margin: 2px 0 0; }
+.z-ie-gewaehlt { color: var(--m-tinte); }
+.z-rechts { max-height: 520px; overflow: auto; font-size: .9rem; }
+.z-ablauf { margin: 0 0 6px; font-size: 1rem; }
+.z-evknopf { display: flex; gap: 8px; align-items: flex-start; width: 100%; text-align: left; border: 0; background: none;
+  padding: 6px 4px; font: inherit; color: var(--m-leise); cursor: pointer; min-height: 40px; }
+.z-ev { border-top: 1px solid var(--m-linie-hell); padding: 0; display: block; }
+.z-ev[hidden] { display: none; }
+.z-ev-neu .z-evknopf, .z-ev-gewaehlt .z-evknopf { color: var(--m-tinte); }
+.z-ev-gewaehlt { background: var(--m-notiz); }
+.z-evknopf .z-punkt { width: 14px; height: 14px; border-width: 2px; margin-top: 3px; }
+.z-leerhinweis { margin: 0; font-size: .9rem; }
+
+/* 1.2: Karte volle Breite, alles andere darunter */
+.z-blatt { padding: 8px 8px 12px; }
+.z-unter { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; margin-top: 8px; }
+.z-unter .z-datum { margin: 0; }
+.z-ablaufteil { margin-top: 6px; }
+.z-iebild { margin: 6px 0 0; }
+.z-iebild img { display: block; max-width: 100%; max-height: 150px; width: auto; border: 1px solid var(--m-linie-hell); }
+.z-iebild figcaption { font-size: .75rem; }
+
+/* 1.3: Fokus auf den neu erschienenen Ort */
+.z-marke { z-index: 1; }
+.z-dunkel { position: absolute; inset: 0; z-index: 2; background: rgba(15, 15, 15, .55); opacity: 0;
+  transition: opacity .45s ease; pointer-events: none; }
+.z-fokus .z-dunkel { opacity: 1; }
+.z-fokusmarke { z-index: 3; }
+.z-fokusmarke .z-punkt { transform: scale(1.7); box-shadow: 0 0 0 5px rgba(255, 255, 255, .9), 0 0 26px 10px rgba(255, 255, 255, .85); }
+.z-fokusmarke .z-name { font-size: 1.1rem; outline: 3px solid #fff; }
+.z-info { transition: box-shadow .45s ease; }
+.z-fokus .z-info { box-shadow: 0 0 0 4px rgba(255, 255, 255, .9), var(--m-schatten); }
+@media (prefers-reduced-motion: reduce) { .z-dunkel, .z-info { transition: none; } .z-neu .z-punkt { animation: none; } }
+.z-info { z-index: 5; }
+/* 1.4: Ereignisse eines Ortes zeitlich von oben nach unten, Pfeil dazwischen */
+.z-ie { margin: 0; }
+.z-pfeil { text-align: center; font-size: 1.3rem; line-height: 1; color: var(--m-leise); margin: 2px 0; }
+.z-info { width: 44%; }
+.z-leer .z-name { color: var(--m-leise); font-weight: 600; }
+.z-leer { cursor: default; }
+/* 1.5: Karte nie höher als der Bildschirm, damit Regler und Knöpfe am Beamer sichtbar bleiben */
+.z-karte { width: fit-content; max-width: 100%; margin: 0 auto; }
+.z-karte img { width: auto; max-width: 100%; max-height: 70vh; }

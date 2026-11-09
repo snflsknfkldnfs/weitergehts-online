@@ -103,3 +103,13 @@ body.begleiten {
 .b-audio audio { width: 100%; max-width: 520px; }
 .b-audio > div { flex: 1; min-width: 0; }
 .b-audio figcaption { font-size: .9rem; margin-top: 4px; }
+
+/* 1.2 (2026-11-09): Rollenkarte im Schritt-Typ „rolle“ */
+.b-rolle { margin: 14px 0; padding: 0; overflow: hidden; }
+.b-rollenkopf h3 { margin: 2px 0 0; font-size: 1.4rem; }
+.b-rollenvor { margin: 0; font-size: .85rem; text-transform: uppercase; letter-spacing: .06em; opacity: .9; }
+.b-rolle .b-material { box-shadow: none; border: 0; margin: 0; }
+.b-rollenhinweis { margin: 0; padding: 10px 14px 14px; font-weight: 600; }
+.b-reiter[hidden] { display: none; }
+.b-weiter-dezent { margin-top: 28px; padding-top: 10px; border-top: 1px solid var(--m-linie-hell); font-size: .9rem; color: var(--m-leise); }
+.b-weiter-dezent .b-code-feld { max-width: 9em; }
