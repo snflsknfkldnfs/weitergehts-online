@@ -548,10 +548,10 @@
    "ue": "UE01",
    "status": "heft",
    "typ": "rf",
-   "frage": "Stimmt das? Arbeit ist anstrengend und hat ein Ziel.",
-   "richtig": "stimmt",
+   "frage": "Stimmt das? Arbeit ist zufällig und hat kein Ziel.",
+   "richtig": "stimmt nicht",
    "falsch": [
-    "stimmt nicht"
+    "stimmt"
    ],
    "erklaerung": "Arbeit ist planvoll, zielgerichtet, anstrengend und bewusst."
   },
@@ -599,10 +599,10 @@
    "ue": "UE01",
    "status": "heft",
    "typ": "rf",
-   "frage": "Stimmt das? Wer Erwerbsarbeit hat, bekommt dafür Geld.",
-   "richtig": "stimmt",
+   "frage": "Stimmt das? Wer Erwerbsarbeit hat, bekommt dafür kein Geld.",
+   "richtig": "stimmt nicht",
    "falsch": [
-    "stimmt nicht"
+    "stimmt"
    ],
    "erklaerung": "Erwerbsarbeit ist Arbeit, für die man Geld bekommt (Beruf)."
   },
@@ -1175,10 +1175,10 @@
    "ue": "UE06",
    "status": "heft",
    "typ": "rf",
-   "frage": "Stimmt das? Bei Arbeitsteilung übernimmt jeder einen Teil der Arbeit.",
-   "richtig": "stimmt",
+   "frage": "Stimmt das? Bei Arbeitsteilung macht eine Person die ganze Arbeit.",
+   "richtig": "stimmt nicht",
    "falsch": [
-    "stimmt nicht"
+    "stimmt"
    ],
    "erklaerung": "Arbeitsteilung: Eine Arbeit wird auf mehrere aufgeteilt, jeder übernimmt einen Teil."
   },
