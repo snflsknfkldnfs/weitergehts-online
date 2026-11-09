@@ -9,7 +9,7 @@
    "art": "woche",
    "reiter": "Wochenplan-Rennen",
    "titel": "Du planst die Woche neu.",
-   "text": "So arbeitet die Familie bisher. Tausch die Arbeiten und drück auf Start.",
+   "text": "Das ist der Plan der Familie. Du kannst ihn besser machen.",
    "tage": [
     "Mo",
     "Di",
@@ -32,11 +32,47 @@
     "vormittags",
     "nachmittags"
    ],
+   "arten": {
+    "haus": {
+     "name": "Hausarbeit",
+     "zeichen": "🏠"
+    },
+    "erziehung": {
+     "name": "Erziehungsarbeit",
+     "zeichen": "🎒"
+    },
+    "pflege": {
+     "name": "Pflegearbeit",
+     "zeichen": "🤲"
+    },
+    "beziehung": {
+     "name": "Beziehungsarbeit",
+     "zeichen": "💬"
+    }
+   },
    "personen": [
     {
      "id": "mama",
      "name": "Mama",
      "zeichen": "👩",
+     "weg": {
+      "zeichen": "💼",
+      "text": "Arbeit"
+     },
+     "weg_wochenende": {
+      "zeichen": "🚶",
+      "text": "weg"
+     },
+     "merkmale": [
+      {
+       "zeichen": "⚡",
+       "text": "schnell"
+      },
+      {
+       "zeichen": "💼",
+       "text": "wenig Zeit"
+      }
+     ],
      "profil": [
       "Mama arbeitet viel.",
       "Sie hat nur Di, Do und Sa vormittags Zeit.",
@@ -105,6 +141,24 @@
      "id": "papa",
      "name": "Papa",
      "zeichen": "👨",
+     "weg": {
+      "zeichen": "💼",
+      "text": "Arbeit"
+     },
+     "weg_wochenende": {
+      "zeichen": "🚶",
+      "text": "weg"
+     },
+     "merkmale": [
+      {
+       "zeichen": "💼",
+       "text": "vorm. Arbeit"
+      },
+      {
+       "zeichen": "🐢",
+       "text": "nachm. müde"
+      }
+     ],
      "profil": [
       "Papa arbeitet Mo bis Fr vormittags.",
       "Nach der Arbeit ist er müde und langsamer.",
@@ -173,6 +227,20 @@
      "id": "kind",
      "name": "Kind",
      "zeichen": "🧒",
+     "weg": {
+      "zeichen": "🏫",
+      "text": "Schule"
+     },
+     "merkmale": [
+      {
+       "zeichen": "🏫",
+       "text": "vorm. Schule"
+      },
+      {
+       "zeichen": "🎂",
+       "text": "12 Jahre"
+      }
+     ],
      "profil": [
       "Das Kind ist 12 und vormittags in der Schule.",
       "Nachmittags hat es 30 Minuten Zeit.",
@@ -241,6 +309,24 @@
      "id": "opa",
      "name": "Opa",
      "zeichen": "👴",
+     "weg": {
+      "zeichen": "🚶",
+      "text": "weg"
+     },
+     "merkmale": [
+      {
+       "zeichen": "💪",
+       "text": "vorm. fit"
+      },
+      {
+       "zeichen": "🐢",
+       "text": "nachm. langsam"
+      },
+      {
+       "zeichen": "🚫",
+       "text": "keine Leiter"
+      }
+     ],
      "profil": [
       "Opa ist jeden Tag da.",
       "Vormittags ist er fit, nachmittags langsamer.",
@@ -313,12 +399,21 @@
      "name": "Wohnung saugen",
      "kurz": "Saugen",
      "zeichen": "🧹",
+     "art": "haus",
+     "womit": {
+      "zeichen": "🔌",
+      "text": "Staubsauger"
+     },
+     "wo": {
+      "zeichen": "🚪",
+      "text": "Wohnung"
+     },
      "farbe": 0,
      "dauer": {
       "mama": 20,
-      "papa": 35,
-      "kind": 30,
-      "opa": 40
+      "papa": 40,
+      "kind": 25,
+      "opa": 45
      }
     },
     {
@@ -327,68 +422,67 @@
      "name": "Wohnung saugen",
      "kurz": "Saugen",
      "zeichen": "🧹",
+     "art": "haus",
+     "womit": {
+      "zeichen": "🔌",
+      "text": "Staubsauger"
+     },
+     "wo": {
+      "zeichen": "🚪",
+      "text": "Wohnung"
+     },
      "farbe": 0,
      "dauer": {
       "mama": 20,
-      "papa": 35,
-      "kind": 30,
-      "opa": 40
+      "papa": 40,
+      "kind": 25,
+      "opa": 45
      }
     },
     {
-     "id": "waesche1",
+     "id": "waesche",
      "typ": "Wäsche",
      "name": "Wäsche zusammenlegen",
      "kurz": "Wäsche",
      "zeichen": "👕",
-     "farbe": 1,
+     "art": "haus",
+     "womit": {
+      "zeichen": "🧺",
+      "text": "Wäschekorb"
+     },
+     "wo": {
+      "zeichen": "🛏️",
+      "text": "Schlafzimmer"
+     },
+     "farbe": 0,
      "dauer": {
       "mama": 10,
-      "papa": 30,
-      "kind": 45,
+      "papa": 20,
+      "kind": 40,
       "opa": 20
      }
     },
     {
-     "id": "waesche2",
-     "typ": "Wäsche",
-     "name": "Wäsche zusammenlegen",
-     "kurz": "Wäsche",
-     "zeichen": "👕",
-     "farbe": 1,
-     "dauer": {
-      "mama": 10,
-      "papa": 30,
-      "kind": 45,
-      "opa": 20
-     }
-    },
-    {
-     "id": "muell1",
+     "id": "muell",
      "typ": "Müll",
      "name": "Müll rausbringen",
      "kurz": "Müll",
      "zeichen": "🗑️",
-     "farbe": 2,
+     "art": "haus",
+     "womit": {
+      "zeichen": "🛍️",
+      "text": "Müllsack"
+     },
+     "wo": {
+      "zeichen": "🌳",
+      "text": "Hof"
+     },
+     "farbe": 0,
      "dauer": {
-      "mama": 10,
-      "papa": 20,
-      "kind": 10,
-      "opa": 20
-     }
-    },
-    {
-     "id": "muell2",
-     "typ": "Müll",
-     "name": "Müll rausbringen",
-     "kurz": "Müll",
-     "zeichen": "🗑️",
-     "farbe": 2,
-     "dauer": {
-      "mama": 10,
-      "papa": 20,
-      "kind": 10,
-      "opa": 20
+      "mama": 15,
+      "papa": 15,
+      "kind": 15,
+      "opa": 15
      }
     },
     {
@@ -397,12 +491,21 @@
      "name": "Abendessen kochen",
      "kurz": "Kochen",
      "zeichen": "🍲",
-     "farbe": 3,
+     "art": "haus",
+     "womit": {
+      "zeichen": "🍳",
+      "text": "Herd"
+     },
+     "wo": {
+      "zeichen": "🍽️",
+      "text": "Küche"
+     },
+     "farbe": 0,
      "dauer": {
-      "mama": 30,
-      "papa": 50,
-      "kind": 55,
-      "opa": 40
+      "mama": 25,
+      "papa": 45,
+      "kind": 50,
+      "opa": 45
      }
     },
     {
@@ -411,40 +514,44 @@
      "name": "Abendessen kochen",
      "kurz": "Kochen",
      "zeichen": "🍲",
-     "farbe": 3,
-     "dauer": {
-      "mama": 30,
-      "papa": 50,
-      "kind": 55,
-      "opa": 40
-     }
-    },
-    {
-     "id": "bad",
-     "typ": "Bad",
-     "name": "Bad putzen",
-     "kurz": "Bad",
-     "zeichen": "🛁",
+     "art": "haus",
+     "womit": {
+      "zeichen": "🍳",
+      "text": "Herd"
+     },
+     "wo": {
+      "zeichen": "🍽️",
+      "text": "Küche"
+     },
      "farbe": 0,
      "dauer": {
-      "mama": 20,
+      "mama": 25,
       "papa": 45,
-      "kind": 55,
-      "opa": 55
+      "kind": 50,
+      "opa": 45
      }
     },
     {
      "id": "einkauf",
      "typ": "Einkauf",
-     "name": "Großeinkauf mit dem Auto",
+     "name": "Großeinkauf",
      "kurz": "Einkauf",
      "zeichen": "🛒",
-     "farbe": 1,
+     "art": "haus",
+     "womit": {
+      "zeichen": "🚗",
+      "text": "Auto"
+     },
+     "wo": {
+      "zeichen": "🏪",
+      "text": "Supermarkt"
+     },
+     "farbe": 0,
      "dauer": {
       "mama": 40,
       "papa": 60,
-      "opa": 70,
-      "kind": 0
+      "kind": 0,
+      "opa": 60
      },
      "kann_nicht": {
       "kind": "Das Kind kann noch nicht Auto fahren."
@@ -456,11 +563,20 @@
      "name": "Fenster putzen",
      "kurz": "Fenster",
      "zeichen": "🪟",
-     "farbe": 2,
+     "art": "haus",
+     "womit": {
+      "zeichen": "🪜",
+      "text": "Leiter"
+     },
+     "wo": {
+      "zeichen": "🚪",
+      "text": "Wohnung"
+     },
+     "farbe": 0,
      "dauer": {
       "mama": 45,
-      "papa": 45,
-      "kind": 70,
+      "papa": 50,
+      "kind": 65,
       "opa": 0
      },
      "kann_nicht": {
@@ -473,12 +589,96 @@
      "name": "Keller aufräumen",
      "kurz": "Keller",
      "zeichen": "📦",
-     "farbe": 3,
+     "art": "haus",
+     "womit": {
+      "zeichen": "🗃️",
+      "text": "Kisten"
+     },
+     "wo": {
+      "zeichen": "⬇️",
+      "text": "Keller"
+     },
+     "farbe": 0,
      "dauer": {
-      "mama": 55,
+      "mama": 50,
       "papa": 50,
       "kind": 70,
-      "opa": 60
+      "opa": 55
+     }
+    },
+    {
+     "id": "medikamente",
+     "typ": "Medikamente",
+     "name": "Medikamente für Opa richten",
+     "kurz": "Medikamente",
+     "zeichen": "💊",
+     "art": "pflege",
+     "womit": {
+      "zeichen": "🗓️",
+      "text": "Tablettenbox"
+     },
+     "wo": {
+      "zeichen": "🍽️",
+      "text": "Küche"
+     },
+     "farbe": 3,
+     "dauer": {
+      "mama": 10,
+      "papa": 25,
+      "kind": 25,
+      "opa": 0
+     },
+     "kann_nicht": {
+      "opa": "Die Medikamente richtet jemand anderes für Opa."
+     }
+    },
+    {
+     "id": "hausaufgaben",
+     "typ": "Hausaufgaben",
+     "name": "Hausaufgaben mit dem Kind durchsehen",
+     "kurz": "Hausaufgaben",
+     "zeichen": "📓",
+     "art": "erziehung",
+     "womit": {
+      "zeichen": "✏️",
+      "text": "Heft"
+     },
+     "wo": {
+      "zeichen": "🪑",
+      "text": "Kinderzimmer"
+     },
+     "farbe": 1,
+     "dauer": {
+      "mama": 20,
+      "papa": 25,
+      "kind": 0,
+      "opa": 25
+     },
+     "kann_nicht": {
+      "kind": "Die Hausaufgaben sieht ein Erwachsener mit dem Kind durch."
+     }
+    },
+    {
+     "id": "spieleabend",
+     "typ": "Spieleabend",
+     "name": "Spieleabend vorbereiten",
+     "kurz": "Spieleabend",
+     "zeichen": "🎲",
+     "art": "beziehung",
+     "womit": {
+      "zeichen": "🃏",
+      "text": "Spiele"
+     },
+     "wo": {
+      "zeichen": "🛋️",
+      "text": "Wohnzimmer"
+     },
+     "farbe": 2,
+     "dauer": {
+      "mama": 20,
+      "papa": 35,
+      "kind": 15,
+      "opa": 25
      }
     }
    ],
@@ -496,25 +696,13 @@
      "zeit": "vormittags"
     },
     {
-     "arbeit": "waesche1",
+     "arbeit": "waesche",
      "person": "kind",
      "tag": "Sa",
      "zeit": "vormittags"
     },
     {
-     "arbeit": "waesche2",
-     "person": "kind",
-     "tag": "So",
-     "zeit": "vormittags"
-    },
-    {
-     "arbeit": "muell1",
-     "person": "mama",
-     "tag": "Di",
-     "zeit": "vormittags"
-    },
-    {
-     "arbeit": "muell2",
+     "arbeit": "muell",
      "person": "mama",
      "tag": "Do",
      "zeit": "vormittags"
@@ -529,12 +717,6 @@
      "arbeit": "kochen2",
      "person": "mama",
      "tag": "Do",
-     "zeit": "vormittags"
-    },
-    {
-     "arbeit": "bad",
-     "person": "mama",
-     "tag": "Sa",
      "zeit": "vormittags"
     },
     {
@@ -554,6 +736,24 @@
      "person": "opa",
      "tag": "Mi",
      "zeit": "vormittags"
+    },
+    {
+     "arbeit": "medikamente",
+     "person": "mama",
+     "tag": "Di",
+     "zeit": "vormittags"
+    },
+    {
+     "arbeit": "hausaufgaben",
+     "person": "mama",
+     "tag": "Sa",
+     "zeit": "vormittags"
+    },
+    {
+     "arbeit": "spieleabend",
+     "person": "opa",
+     "tag": "Fr",
+     "zeit": "nachmittags"
     }
    ]
   },
