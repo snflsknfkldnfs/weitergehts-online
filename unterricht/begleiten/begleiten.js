@@ -145,7 +145,7 @@
 
   function einbettungBauen(e) {
     var z = el('div', 'b-einbettung');
-    var f = el('iframe'); f.src = e.src; f.title = e.titel || 'Interaktives Material'; f.loading = 'lazy';
+    var f = el('iframe'); f.src = e.src; f.title = e.titel || 'Interaktives Material';   /* sofort laden: verzögert blieb der Rahmen live leer (09.11.) */
     f.style.width = '100%'; f.style.height = (e.hoehe || 700) + 'px'; f.style.border = '1px solid var(--m-linie-hell)';
     z.appendChild(f);
     var a = el('a', 'm-knopf', 'Groß öffnen'); a.href = e.src; a.target = '_blank'; a.rel = 'noopener';
