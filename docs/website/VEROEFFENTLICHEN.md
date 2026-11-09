@@ -40,6 +40,7 @@ Erzeuger schreiben mit `WEBSITE_REPO=<dieser Arbeitsbaum>` (Konvention aus `welt
 | `werkzeug` — Verteilen (Zeitbalken) | `unterricht/verteilen/<slug>/` | `verteilen.js` / `verteilen.css` | `WiB6b/S01_arbeit/UE06_…` |
 | `werkzeug` — Abstimmen an der Tafel | `unterricht/abstimmen/<slug>/` | `abstimmen.js` / `abstimmen.css` | `GPG8a/S01_weimar/UE11-12_2026-10-27_…` |
 | `werkzeug` — Begleiten: die Stunde Schritt für Schritt am iPad | `unterricht/begleiten/<slug>/` (`index.html` + `data.json` + `bilder/`) | `begleiten.js` / `begleiten.css`; Hülle aus `tools/begleiten/seite_vorlage.html` | `GPG8a/S01_weimar/UE13_2026-10-30_…/_render/begleiten_bauen.py` |
+| `werkzeug` — Zeitkarte: Ereignisse auf einer Karte mit Zeitregler (auch Stufenregler für Werte) | `unterricht/zeitkarte/<slug>/` (`index.html` + `data.json` + `bilder/`) | `zeitkarte.js` / `zeitkarte.css`; Hülle aus `tools/zeitkarte/seite_vorlage.html` | `GPG8a/S01_weimar/UE14-15_2026-11-10_krisenjahr-1923/_render/seite_bauen.py` (`zeitkarte_bauen`) |
 | `escape-game` | `unterricht/escape-games/<id>/` | `escape-engine.js` | Generator-Repo, dann `RUNBUCH.md` L3 |
 | `anleitung` · `recherche` · `werkzeug` (Einzelseite) | `unterricht/<fach>/<slug>.html` oder `unterricht/<slug>/` | Site-Kette `fonts → tokens → wg` | `unterricht/gpg/wochenrueckblick.html`, `unterricht/smv/` |
 
@@ -50,6 +51,14 @@ Erzeuger schreiben mit `WEBSITE_REPO=<dieser Arbeitsbaum>` (Konvention aus `welt
 - ❌ `datenspuren/mueller/` — nie ein Name; bei Fällen nur die Nummer
 
 Neues JS/CSS: **sofort** Eintrag in `assets/versions.json` + `?v=`-Token im HTML (`CLAUDE.md` Regel 3).
+
+**Begleiten und Zeitkarte zusammen (seit 2026-11-09, Vorbild GPG8a Krisenjahr 1923):** Eine Begleiten-Seite bettet die Zeitkarte
+über `einbettung: {src, hoehe, titel}` in ein Material ein (ein Werkzeug je Bereich, nicht je Material). Weitere Begleiten-Felder:
+`plakat.oben` (Bild vor dem Text), Schritt-Typ `rolle` (Zufallsrolle je Gerät, sichtbar erst mit `code`; `?rolle=<id>` setzt sie fest),
+`reiter: false` (nie Reiter), `code_nach_seite` / `code_label` / `weiter_label` (Codefeld nur unter einer Seite, dezent).
+Zeitkarte: `?start=JJJJ-MM-TT`, `?orte=alle` (alle Orte grau, für den Beamer), `?ansicht=werte` (Stufenregler). Beschreibung der
+Felder jeweils im Kopf von `begleiten.js` und `zeitkarte.js`. Nach dem Push die echte Adresse durchklicken (Einbettung lädt? Code
+öffnet?), nicht nur die lokale Vorschau: Am 09.11. blieb eine Einbettung mit `loading=lazy` nur live leer.
 
 **Die Hülle (`index.html`) immer von einer bestehenden Seite desselben Werkzeugs kopieren** (Quellen:
 `quellen/raete-parlament/index.html`, Anordnen: `ordnen/kaiserreich/index.html`; Datenspuren erzeugt der
