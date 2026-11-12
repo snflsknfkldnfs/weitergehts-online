@@ -167,6 +167,7 @@
         { "pfad": "datenspuren/ebike-leicht/", "titel": "Fall E-Bike · leicht", "datum": "2026-11-13" },
         { "pfad": "datenspuren/ebike-mittel/", "titel": "Fall E-Bike · mittel", "datum": "2026-11-13" },
         { "pfad": "datenspuren/ebike-schwer/", "titel": "Fall E-Bike · schwer", "datum": "2026-11-13" },
+        { "pfad": "datenspuren/graffiti/", "titel": "Fall Graffiti (für Schnelle)", "datum": "2026-11-13" },
         { "pfad": "datenspuren/anzeige-nachtbus/", "titel": "Anzeige Nachtbus: Fall 2580", "datum": "2026-10-30" },
         { "pfad": "datenspuren/anzeige-parkhaus/", "titel": "Anzeige Parkhaus: Fall 2580", "datum": "2026-10-30" },
         { "pfad": "datenspuren/2580-nachtbus/", "titel": "Kampagne Nachtbus: Fall 2580", "datum": "2026-10-23" },

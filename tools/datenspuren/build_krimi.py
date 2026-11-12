@@ -464,6 +464,169 @@ def pruefe(v, ein, st):
     return f
 
 
+# ══ Zweiter Fall für Schnelle: „Graffiti“ — anderer Mechanismus (verlorenes Handy, Farbe, Foto-Ort) ═════════════
+# Was wirklich geschah (Sa 03.10.2026): 5309 (14) verliert um 18:05 sein Handy am Skatepark; es liegt dort bis So 09:40
+# (Familie meldet es um 19:40 über „Handy finden“ als verloren). 5309 hat Mi nach Sprühlack gesucht und Do schwarzen
+# Lack und eine Leinwand gekauft (Kunstprojekt). Gesprüht hat 2718 (17): Fr vier Dosen SILBER gekauft, Sa Standort aus,
+# um 23:24 lädt seine Foto-App ein Foto mit Ort Skatepark hoch. Die Zeitung nennt eine silberne Schrift.
+G_TAG = 12               # Sa 03.10.2026
+SP = 'Skatepark, Volkach'
+G_FENSTER = ('23:00', '23:59')
+G_ZEITUNG = {
+    'titel': 'Mainschleifen-Bote (erfunden)',
+    'schlagzeile': 'Silberne Schrift auf der Wand am Skatepark',
+    'text': ('Volkach. In der Nacht zum Sonntag, 4. Oktober, hat jemand die Wand am Skatepark mit einer großen silbernen '
+             'Schrift besprüht. Ein Anwohner hörte zwischen 23 Uhr und Mitternacht das Zischen von Sprühdosen, sah aber '
+             'niemanden. Die Polizei hat die Standorte und Suchanfragen aller Handys aus der Gegend angefordert, nur Nummern.'),
+}
+G_AKTE = {
+    'titel': 'Fall Graffiti',
+    'absender': 'Ermittlungsakte · Sachbeschädigung Volkach',
+    'briefing': ['In der Nacht zum Sonntag, 04.10., wurde die Wand am Skatepark Volkach besprüht.',
+                 'Du ermittelst mit den Daten der Polizei: nur Nummern, keine Namen. Lies zuerst die Zeitungsmeldung.'],
+    'hinweis_fiktion': 'Personen, Daten und Zeitung sind erfunden. Die Orte gibt es.',
+    'abschluss': {
+        'titel': 'Fall gelöst. Und 5309?',
+        'text': ['Das Handy von 5309 lag seit 18:05 verloren am Skatepark. Der schwarze Lack war für ein Kunstprojekt.',
+                 'Gesprüht hat 2718: silberne Dosen gekauft, Standort aus, aber die Foto-App hat den Ort verraten.'],
+        'fragen': ['Was zeigt ein Handy, das sich die ganze Nacht nicht bewegt?',
+                   'Welche Daten haben 5309 entlastet?'],
+    },
+}
+
+
+def g_baue():
+    s = Sammler()
+    nu, heim = '5309', 'Neubaugebiet, Volkach'
+    for n in range(TAGE):
+        if n in (G_TAG, G_TAG + 1):
+            continue
+        s.add(nu, n, '07:10', 'Standort', heim)
+        if tag(n).weekday() < 5:
+            s.add(nu, n, '07:45', 'Standort', 'Schulzentrum, Volkach')
+        s.add(nu, n, '17:00', 'Standort', SP if n % 3 == 0 else heim)
+        s.add(nu, n, '21:30', 'Standort', heim)
+    s.add(nu, 9, '16:30', 'Suche', 'sprühlack schwarz matt preis')
+    s.add(nu, 9, '16:34', 'Suche', 'kunstprojekt schule leinwand sprühen')
+    s.add(nu, 10, '15:20', 'Einkauf', 'Bastelladen, Volkach: Sprühlack schwarz, Leinwand 40×50, 21,80 €')
+    s.add(nu, G_TAG, '10:00', 'Standort', heim)
+    s.add(nu, G_TAG, '17:30', 'Standort', SP)
+    for z in ('18:05', '19:05', '20:05', '21:05', '22:05', '23:05'):
+        s.add(nu, G_TAG, z, 'Standort', SP)
+    for z in ('00:05', '02:05', '04:05', '06:05', '08:05', '09:40'):
+        s.add(nu, G_TAG + 1, z, 'Standort', SP)
+    s.add(nu, G_TAG, '19:40', 'App', 'Handy finden: Gerät als verloren markiert (vom Tablet der Familie)')
+    s.add(nu, G_TAG + 1, '09:38', 'App', 'Handy finden: Gerät gefunden')
+    s.add(nu, G_TAG + 1, '09:52', 'Standort', heim)
+    # Täter 2718
+    nu, heim = '2718', 'Ortsteil Fahr, Volkach'
+    for n in range(TAGE):
+        s.add(nu, n, '08:30', 'Standort', heim)
+        if tag(n).weekday() < 5:
+            s.add(nu, n, '09:00', 'Standort', 'Berufsschule, Kitzingen')
+        if n != G_TAG:
+            s.add(nu, n, '22:40', 'Standort', heim)
+    s.add(nu, 11, '16:45', 'Einkauf', 'Baumarkt, Kitzingen: 4 Sprühdosen silber, 27,96 €')
+    s.add(nu, G_TAG, '22:20', 'Standort', heim)
+    s.add(nu, G_TAG, '23:24', 'App', 'Foto-App: 1 Foto hochgeladen (Ort: Skatepark, Volkach)')
+    s.add(nu, G_TAG + 1, '01:10', 'Standort', heim)
+    s.add(nu, 5, '19:00', 'App', 'Video-App: 50 min')
+    # Falschspur: Hundespaziergang, kurz am Skatepark, Foto am Mainufer
+    s.add('4087', G_TAG, '23:02', 'Standort', SP)
+    s.add('4087', G_TAG, '23:04', 'App', 'Foto-App: 1 Foto hochgeladen (Ort: Mainufer, Volkach)')
+    s.add('4087', G_TAG, '23:09', 'Standort', 'Mainufer, Volkach')
+    s.add('4087', G_TAG, '23:25', 'Standort', 'Altstadt, Volkach')
+    for n in range(TAGE):
+        s.add('4087', n, '07:00', 'Standort', 'Altstadt, Volkach')
+    # Falschspur: kauft auch silbernen Lack (Fahrrad), Foto in der eigenen Garage
+    s.add('1940', 11, '10:15', 'Einkauf', 'Baumarkt, Kitzingen: Sprühlack silber, Schleifpapier, 12,40 €')
+    s.add('1940', G_TAG, '23:40', 'App', 'Foto-App: 1 Foto hochgeladen (Ort: Garage, Astheim)')
+    for n in range(TAGE):
+        s.add('1940', n, '20:00', 'Standort', 'Ortsteil Astheim, Volkach')
+    s.add('1940', G_TAG, '23:38', 'Standort', 'Ortsteil Astheim, Volkach')
+    rauschen(s, 3101)
+    belegt = set(ANDERE) | {'5309', '2718', '4087', '1940'}
+    pendler(s, 10, 3101, belegt)
+    s.e.sort(key=lambda e: (e[1], e[2], e[0]))
+    wt = ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So']
+    return [{'nutzer': nu, 'datum': d.isoformat(), 'tag': wt[d.weekday()], 'zeit': z, 'quelle': q, 'eintrag': t}
+            for nu, d, z, q, t in s.e]
+
+
+def g_stufen():
+    return [
+        stufe('fenster', 0, 'Zeitfenster', 'Wie viele Handys waren in der Tatzeit am Skatepark?',
+              ['Tag: Sa 03.10., Uhrzeit 23, Suchwort: Skatepark.'],
+              'zahl', ['2', 'ZWEI'], ['2', 'zwei', '2 Handys'], ['1', '3', '4', '0'],
+              '2 Handys zwischen 23 Uhr und Mitternacht', 'Zwei Nummern. Eine davon nur vier Minuten.',
+              [('Standort', 'Skatepark')], '5309 (23:05, liegt dort seit 18:05), 4087 (23:02, Hund, 23:09 Mainufer)',
+              material='zeitung'),
+        stufe('suche', 0, 'Suche vorher', 'Wonach hat einer der beiden einige Tage vorher gesucht?',
+              ['Quelle: Suche. Filtere nach den zwei Nummern.'],
+              'wort', ['SPRUEH', 'LACK'], ['Sprühlack', 'sprühlack schwarz', 'Lack', 'Sprühdose', 'Spruehlack', 'Sprülack'],
+              ['Hund', 'Kunst', 'Leinwand', 'Skatepark', 'Graffiti', 'Farbe'],
+              '5309 am Mi 30.09.: „sprühlack schwarz matt preis“', 'Sprühlack. Das passt zu gut.',
+              [('Suche', 'sprühlack')], '5309 Mi 16:30 „sprühlack schwarz matt preis“, 16:34 „kunstprojekt schule leinwand sprühen“ (Gegenspur)'),
+        stufe('verdacht', 0, 'Verdacht', 'Wen verdächtigt die Polizei?', ['Wer war da und hat nach Lack gesucht?'],
+              'zahl', ['5309'], ['5309', 'Nutzer 5309'], ['4087', '2718', '1940', '530'],
+              '5309', 'Am Tatort, Sprühlack gesucht. Fall klar? Neue Daten kommen.',
+              [('Standort', 'Skatepark')], 'Ergebnis von Phase 1 (falsch)'),
+        stufe('verloren', 1, 'Neue Spur 1', 'Neue Daten. Was meldet eine App von 5309 am Samstagabend?',
+              ['Quelle: App, Nutzer 5309, Sa 03.10. Schau auch, wie oft sich sein Standort in der Nacht ändert.'],
+              'wort', ['VERLOREN', 'VERLOR'], ['verloren', 'Handy verloren', 'als verloren markiert', 'verlorn', 'Gerät verloren'],
+              ['gefunden', 'Foto', 'Skatepark', 'gestohlen', 'Video'],
+              'Handy um 19:40 als verloren gemeldet; es lag von 18:05 bis 09:40 am Skatepark',
+              'Das Handy war da. 5309 nicht.', [('App', 'verloren')], '5309 App 19:40 verloren, So 09:38 gefunden; Standort ohne Bewegung 18:05–09:40'),
+        stufe('farbe', 1, 'Neue Spur 2', 'Welche Farbe hat 5309 gekauft?',
+              ['Quelle: Einkauf, Nutzer 5309. Vergleiche mit der Zeitung.'],
+              'wort', ['SCHWARZ'], ['schwarz', 'Schwarz matt', 'schwarzer Lack', 'schwarzen', 'schwartz'],
+              ['silber', 'weiß', 'rot', 'bunt', 'matt'],
+              'Schwarz, mit Leinwand (Kunstprojekt). Die Schrift an der Wand ist silber.',
+              'Falsche Farbe. Wer hat Silber?', [('Einkauf', 'schwarz')], '5309 Do 01.10. Bastelladen: Sprühlack schwarz, Leinwand'),
+        stufe('taeter', 1, 'Neue Spur 3', 'Wer hat silberne Farbe gekauft und war in der Nacht am Skatepark?',
+              ['Quelle: Einkauf, Suchwort silber. Dann die App-Daten der Nacht.'],
+              'zahl', ['2718'], ['2718', 'Nutzer 2718', 'die 2718'], ['1940', '4087', '5309', '271'],
+              '2718: Fr 4 Dosen silber, Sa Standort aus, 23:24 Foto mit Ort Skatepark',
+              'Der Standort war aus. Das Foto wusste trotzdem, wo es gemacht wurde.',
+              [('Einkauf', 'silber'), ('App', 'Ort: Skatepark')],
+              '2718 Einkauf Fr 16:45 silber, App Sa 23:24 Foto Ort Skatepark, kein Standort 22:21–01:09; '
+              'Fallen: 1940 silber (Fahrrad), Foto 23:40 Garage Astheim; 4087 Foto 23:04 Mainufer'),
+    ]
+
+
+def g_pruefe(ein, st):
+    f = []
+    d0 = tag(G_TAG).isoformat()
+    am = [e for e in ein if e['datum'] == d0]
+    im = sorted({e['nutzer'] for e in am if e['quelle'] == 'Standort' and e['eintrag'] == SP
+                 and minuten(G_FENSTER[0]) <= minuten(e['zeit']) <= minuten(G_FENSTER[1])})
+    if im != ['4087', '5309']:
+        f.append(f'graffiti: im Fenster {im}')
+    if {e['nutzer'] for e in ein if e['quelle'] == 'Suche' and 'sprühlack' in e['eintrag']} != {'5309'}:
+        f.append('graffiti: Sprühlack-Suche nicht nur bei 5309')
+    silber = {e['nutzer'] for e in ein if e['quelle'] == 'Einkauf' and 'silber' in e['eintrag'].lower()}
+    if silber != {'2718', '1940'}:
+        f.append(f'graffiti: Silber gekauft von {silber}')
+    foto_sp = {e['nutzer'] for e in am if e['quelle'] == 'App' and 'Ort: Skatepark' in e['eintrag']
+               and minuten(G_FENSTER[0]) <= minuten(e['zeit'])}
+    if foto_sp != {'2718'}:
+        f.append(f'graffiti: Foto am Skatepark von {foto_sp}')
+    nacht = [e for e in ein if e['nutzer'] == '5309' and e['quelle'] == 'Standort'
+             and ((e['datum'] == d0 and e['zeit'] >= '18:05') or (e['datum'] == tag(G_TAG + 1).isoformat() and e['zeit'] <= '09:40'))]
+    if {e['eintrag'] for e in nacht} != {SP}:
+        f.append('graffiti: Handy von 5309 bewegt sich in der Nacht')
+    if any(e['nutzer'] == '2718' and e['quelle'] == 'Standort' and e['datum'] == d0 and e['zeit'] > '22:20' for e in ein):
+        f.append('graffiti: 2718 hat in der Tatnacht einen Standort')
+    for s in st:
+        erlaubt = PHASEN[s['phase']]['quellen']
+        for q, wort in s['belege']:
+            if not any(e['quelle'] == q and q in erlaubt and wort.lower() in e['eintrag'].lower() for e in ein):
+                f.append(f'graffiti/{s["id"]}: Beleg „{wort}“ ({q}) nicht sichtbar')
+        f += [f"graffiti/{s['id']}: '{x}' abgelehnt" for x in s['richtig'] if passt(x, s) is not True]
+        f += [f"graffiti/{s['id']}: '{x}' angenommen" for x in s['falsch'] if passt(x, s) is True]
+    return f
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--loesung')
@@ -483,27 +646,30 @@ def main():
                '21:38 ist 8471 am Busbahnhof, dann Handy aus; 21:42 fährt das E-Bike los, 21:51 Sommerach, 21:56 zahlt 8471 an der '
                'Tankstelle Sommerach, 21:58 Akku entfernt. 6143 sitzt um 21:42 im Bus bei Dettelbach, kommt 21:52 an, sein '
                'Schloss-Akku ist leer (3× fehlgeschlagen), 22:11 auf, 22:12 mit seinem Rad heim (22:19 Astheim).', '']
+    faelle = []
     for v in VARIANTEN:
-        ein = baue(v)
-        st = stufen(v)
+        ein, st = baue(v), stufen(v)
         fehler += pruefe(v, ein, st)
-        ak = {'titel': v['titel'], **AKTE}
+        faelle.append(('ebike-' + v['id'], {'titel': v['titel'], **AKTE}, ZEITUNG, ein, st, v['tipps']))
+    ein, st = g_baue(), g_stufen()
+    fehler += g_pruefe(ein, st)
+    faelle.append(('graffiti', G_AKTE, G_ZEITUNG, ein, st, 1))
+    for od, ak, zeitung, ein, st, tipps in faelle:
         web = [{**{k: x for k, x in s.items() if k not in ('schluessel', 'richtig', 'falsch', 'belege', 'beleg_lehrkraft', 'anzeige')},
                 'k': base64.b64encode(json.dumps(s['schluessel']).encode()).decode(),
                 'a': base64.b64encode(s['anzeige'].encode('utf-8')).decode()} for s in st]
         daten = {'version': 3, 'akte': ak, 'phasen': PHASEN, 'max_woerter': MAX_WOERTER, 'stufen': web,
-                 'zeitung': ZEITUNG, 'eintraege': ein}
-        od = 'ebike-' + v['id']
-        kopf = {'id': od, 'ordner': od, 'titel': v['titel'], 'nutzer': od, 'url': BASIS_URL + od + '/',
+                 'zeitung': zeitung, 'eintraege': ein}
+        kopf = {'id': od, 'ordner': od, 'titel': ak['titel'], 'nutzer': od, 'url': BASIS_URL + od + '/',
                 'kurz_url': 'weitergehts.online/unterricht/datenspuren/' + od}
-        aus.append((v, daten, kopf, ak, st, ein))
-        print(f'{od}: {len(ein)} Einträge, {len({e["nutzer"] for e in ein})} Nummern, {len(st)} Stufen, Tipps {v["tipps"]}')
-        loesung += [f'## {v["titel"]} · {kopf["url"]}', '', '| Stufe | Phase | Frage | Lösung | Belege und Fallen |', '|---|---|---|---|---|']
+        aus.append((zeitung, daten, kopf, ak, st, ein))
+        print(f'{od}: {len(ein)} Einträge, {len({e["nutzer"] for e in ein})} Nummern, {len(st)} Stufen, Tipps {tipps}')
+        loesung += [f'## {ak["titel"]} · {kopf["url"]}', '', '| Stufe | Phase | Frage | Lösung | Belege und Fallen |', '|---|---|---|---|---|']
         for i, s in enumerate(st, 1):
             loesung.append(f"| {i} | {s['phase'] + 1} | {s['frage']} | **{s['anzeige']}** | {s['beleg_lehrkraft']} |")
         loesung.append('')
     assert not fehler, '\n'.join(fehler)
-    for v, daten, kopf, ak, st, ein in aus:
+    for zeitung, daten, kopf, ak, st, ein in aus:
         ordner = WEB / kopf['ordner']
         ordner.mkdir(exist_ok=True)
         (ordner / 'data.json').write_text(json.dumps(daten, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
@@ -513,8 +679,8 @@ def main():
             (Path(a.auszug_dir) / f'{kopf["ordner"]}_auszug.json').write_text(
                 json.dumps({'fall': kopf, 'akte': ak, 'phasen': PHASEN,
                             'stufen': [{k: x for k, x in s.items() if k != 'belege'} for s in st],
-                            'zeitung': ZEITUNG, 'eintraege': ein}, ensure_ascii=False, indent=1), encoding='utf-8')
-    print(f'Selbstprüfung: {len(VARIANTEN)} Stufen-Seiten, Zeitfenster, Schloss-Suche, Zahler Sommerach, Lücke 8471, '
+                            'zeitung': zeitung, 'eintraege': ein}, ensure_ascii=False, indent=1), encoding='utf-8')
+    print(f'Selbstprüfung: {len(faelle)} Seiten (E-Bike in drei Stufen, Graffiti), Zeitfenster, Schloss-Suche, Zahler Sommerach, Lücke 8471, '
           f'{len(GEGENSPUREN)} Gegenspuren, alle Prüfeingaben korrekt')
     if a.loesung:
         Path(a.loesung).write_text('\n'.join(loesung) + '\n', encoding='utf-8')

@@ -1,0 +1,9326 @@
+{
+ "version": 3,
+ "akte": {
+  "titel": "Fall Graffiti",
+  "absender": "Ermittlungsakte · Sachbeschädigung Volkach",
+  "briefing": [
+   "In der Nacht zum Sonntag, 04.10., wurde die Wand am Skatepark Volkach besprüht.",
+   "Du ermittelst mit den Daten der Polizei: nur Nummern, keine Namen. Lies zuerst die Zeitungsmeldung."
+  ],
+  "hinweis_fiktion": "Personen, Daten und Zeitung sind erfunden. Die Orte gibt es.",
+  "abschluss": {
+   "titel": "Fall gelöst. Und 5309?",
+   "text": [
+    "Das Handy von 5309 lag seit 18:05 verloren am Skatepark. Der schwarze Lack war für ein Kunstprojekt.",
+    "Gesprüht hat 2718: silberne Dosen gekauft, Standort aus, aber die Foto-App hat den Ort verraten."
+   ],
+   "fragen": [
+    "Was zeigt ein Handy, das sich die ganze Nacht nicht bewegt?",
+    "Welche Daten haben 5309 entlastet?"
+   ]
+  }
+ },
+ "phasen": [
+  {
+   "id": "eine",
+   "titel": "Daten der Polizei",
+   "quellen": [
+    "Standort",
+    "Suche"
+   ],
+   "text": "Du siehst Standorte und Suchanfragen, so wie die Polizei."
+  },
+  {
+   "id": "alle",
+   "titel": "Neue Daten",
+   "quellen": [
+    "Standort",
+    "Suche",
+    "Einkauf",
+    "App"
+   ],
+   "text": "Neu dazu: Einkäufe und App-Daten. Prüf, ob der Verdacht hält."
+  }
+ ],
+ "max_woerter": 5,
+ "stufen": [
+  {
+   "id": "fenster",
+   "phase": 0,
+   "steckbrief": "Zeitfenster",
+   "frage": "Wie viele Handys waren in der Tatzeit am Skatepark?",
+   "tipps": [
+    "Tag: Sa 03.10., Uhrzeit 23, Suchwort: Skatepark."
+   ],
+   "modus": "zahl",
+   "erkenntnis": "Zwei Nummern. Eine davon nur vier Minuten.",
+   "material": "zeitung",
+   "k": "WyIyIiwgIlpXRUkiXQ==",
+   "a": "MiBIYW5keXMgendpc2NoZW4gMjMgVWhyIHVuZCBNaXR0ZXJuYWNodA=="
+  },
+  {
+   "id": "suche",
+   "phase": 0,
+   "steckbrief": "Suche vorher",
+   "frage": "Wonach hat einer der beiden einige Tage vorher gesucht?",
+   "tipps": [
+    "Quelle: Suche. Filtere nach den zwei Nummern."
+   ],
+   "modus": "wort",
+   "erkenntnis": "Sprühlack. Das passt zu gut.",
+   "k": "WyJTUFJVRUgiLCAiTEFDSyJd",
+   "a": "NTMwOSBhbSBNaSAzMC4wOS46IOKAnnNwcsO8aGxhY2sgc2Nod2FyeiBtYXR0IHByZWlz4oCc"
+  },
+  {
+   "id": "verdacht",
+   "phase": 0,
+   "steckbrief": "Verdacht",
+   "frage": "Wen verdächtigt die Polizei?",
+   "tipps": [
+    "Wer war da und hat nach Lack gesucht?"
+   ],
+   "modus": "zahl",
+   "erkenntnis": "Am Tatort, Sprühlack gesucht. Fall klar? Neue Daten kommen.",
+   "k": "WyI1MzA5Il0=",
+   "a": "NTMwOQ=="
+  },
+  {
+   "id": "verloren",
+   "phase": 1,
+   "steckbrief": "Neue Spur 1",
+   "frage": "Neue Daten. Was meldet eine App von 5309 am Samstagabend?",
+   "tipps": [
+    "Quelle: App, Nutzer 5309, Sa 03.10. Schau auch, wie oft sich sein Standort in der Nacht ändert."
+   ],
+   "modus": "wort",
+   "erkenntnis": "Das Handy war da. 5309 nicht.",
+   "k": "WyJWRVJMT1JFTiIsICJWRVJMT1IiXQ==",
+   "a": "SGFuZHkgdW0gMTk6NDAgYWxzIHZlcmxvcmVuIGdlbWVsZGV0OyBlcyBsYWcgdm9uIDE4OjA1IGJpcyAwOTo0MCBhbSBTa2F0ZXBhcms="
+  },
+  {
+   "id": "farbe",
+   "phase": 1,
+   "steckbrief": "Neue Spur 2",
+   "frage": "Welche Farbe hat 5309 gekauft?",
+   "tipps": [
+    "Quelle: Einkauf, Nutzer 5309. Vergleiche mit der Zeitung."
+   ],
+   "modus": "wort",
+   "erkenntnis": "Falsche Farbe. Wer hat Silber?",
+   "k": "WyJTQ0hXQVJaIl0=",
+   "a": "U2Nod2FyeiwgbWl0IExlaW53YW5kIChLdW5zdHByb2pla3QpLiBEaWUgU2NocmlmdCBhbiBkZXIgV2FuZCBpc3Qgc2lsYmVyLg=="
+  },
+  {
+   "id": "taeter",
+   "phase": 1,
+   "steckbrief": "Neue Spur 3",
+   "frage": "Wer hat silberne Farbe gekauft und war in der Nacht am Skatepark?",
+   "tipps": [
+    "Quelle: Einkauf, Suchwort silber. Dann die App-Daten der Nacht."
+   ],
+   "modus": "zahl",
+   "erkenntnis": "Der Standort war aus. Das Foto wusste trotzdem, wo es gemacht wurde.",
+   "k": "WyIyNzE4Il0=",
+   "a": "MjcxODogRnIgNCBEb3NlbiBzaWxiZXIsIFNhIFN0YW5kb3J0IGF1cywgMjM6MjQgRm90byBtaXQgT3J0IFNrYXRlcGFyaw=="
+  }
+ ],
+ "zeitung": {
+  "titel": "Mainschleifen-Bote (erfunden)",
+  "schlagzeile": "Silberne Schrift auf der Wand am Skatepark",
+  "text": "Volkach. In der Nacht zum Sonntag, 4. Oktober, hat jemand die Wand am Skatepark mit einer großen silbernen Schrift besprüht. Ein Anwohner hörte zwischen 23 Uhr und Mitternacht das Zischen von Sprühdosen, sah aber niemanden. Die Polizei hat die Standorte und Suchanfragen aller Handys aus der Gegend angefordert, nur Nummern."
+ },
+ "eintraege": [
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:37",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:38",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:39",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:43",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:44",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:44",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:46",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:46",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:47",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:48",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:51",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:52",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:53",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:53",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:55",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:55",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:58",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:59",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:59",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "06:59",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4087",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "07:00",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "07:02",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "07:10",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "07:20",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "07:31",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "07:34",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "07:36",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "07:37",
+   "quelle": "Standort",
+   "eintrag": "Büro, Würzburg"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "07:41",
+   "quelle": "Standort",
+   "eintrag": "Gewerbegebiet, Kitzingen"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "07:42",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Gerolzhofen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "07:42",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "07:45",
+   "quelle": "Standort",
+   "eintrag": "Schulzentrum, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "07:47",
+   "quelle": "Standort",
+   "eintrag": "Klinik, Kitzingen"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "07:52",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Gerolzhofen"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "07:55",
+   "quelle": "Standort",
+   "eintrag": "Schulzentrum, Kitzingen"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "07:56",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Gerolzhofen"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "08:29",
+   "quelle": "Suche",
+   "eintrag": "wetter volkach morgen"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "08:30",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "08:41",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "08:49",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "09:00",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "09:04",
+   "quelle": "Suche",
+   "eintrag": "regenjacke günstig"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "10:04",
+   "quelle": "Standort",
+   "eintrag": "Supermarkt, Kitzingen"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "10:24",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Volkach: Brot, Käse"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "11:39",
+   "quelle": "Suche",
+   "eintrag": "lustige katzenvideos"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "13:15",
+   "quelle": "Suche",
+   "eintrag": "handy akku schnell leer"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "14:15",
+   "quelle": "Suche",
+   "eintrag": "pizza volkach lieferung"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "14:32",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Kitzingen: Windeln, Bananen, Haferflocken"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "14:59",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Volkach: Milch, Brot, Kaffee"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "15:08",
+   "quelle": "Suche",
+   "eintrag": "wetter volkach morgen"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "15:10",
+   "quelle": "App",
+   "eintrag": "Bus-App: Fahrplan geöffnet"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "15:12",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "15:15",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Würzburg"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "15:22",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "15:31",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "16:01",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "16:17",
+   "quelle": "Suche",
+   "eintrag": "fußball ergebnisse heute"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "16:27",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "16:38",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "16:40",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "16:57",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "17:00",
+   "quelle": "Standort",
+   "eintrag": "Skatepark, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "17:10",
+   "quelle": "Einkauf",
+   "eintrag": "Drogerie, Kitzingen: Duschgel"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "17:14",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "17:30",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "17:59",
+   "quelle": "App",
+   "eintrag": "Musik-App: 35 min"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "18:03",
+   "quelle": "App",
+   "eintrag": "Musik-App: 35 min"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "19:43",
+   "quelle": "Suche",
+   "eintrag": "regenjacke günstig"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "19:43",
+   "quelle": "App",
+   "eintrag": "Nachrichten-App: 4 neue Nachrichten"
+  },
+  {
+   "nutzer": "1940",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "20:00",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "20:22",
+   "quelle": "App",
+   "eintrag": "Kalender-App: Termin „Elternabend“"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "20:40",
+   "quelle": "Suche",
+   "eintrag": "fieber kind 3 jahre was tun"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "21:30",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "21:44",
+   "quelle": "Suche",
+   "eintrag": "e bike oder normales fahrrad"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "22:00",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "22:09",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "22:09",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "22:21",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "22:23",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "22:32",
+   "quelle": "App",
+   "eintrag": "Spiele-App: 45 min"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "22:33",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "22:38",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "22:40",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "22:41",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "23:06",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "23:06",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "23:21",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "23:21",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "23:40",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "23:50",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-21",
+   "tag": "Mo",
+   "zeit": "23:56",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:02",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:18",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:30",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:31",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:32",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:34",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:40",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:42",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:43",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:45",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:46",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:48",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:51",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:52",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:53",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:55",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:55",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:56",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:57",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:57",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:58",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "06:58",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4087",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "07:00",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "07:06",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "07:10",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "07:13",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "07:30",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "07:34",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Gerolzhofen"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "07:42",
+   "quelle": "Standort",
+   "eintrag": "Klinik, Kitzingen"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "07:44",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Gerolzhofen"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "07:44",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Gerolzhofen"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "07:45",
+   "quelle": "Standort",
+   "eintrag": "Schulzentrum, Volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "07:47",
+   "quelle": "Standort",
+   "eintrag": "Büro, Würzburg"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "07:50",
+   "quelle": "Standort",
+   "eintrag": "Schulzentrum, Kitzingen"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "07:51",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "07:57",
+   "quelle": "Standort",
+   "eintrag": "Gewerbegebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "07:58",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "08:26",
+   "quelle": "Suche",
+   "eintrag": "günstige kinderschuhe"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "08:30",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "08:57",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "09:00",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "09:04",
+   "quelle": "Suche",
+   "eintrag": "wetter volkach morgen"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "10:12",
+   "quelle": "Suche",
+   "eintrag": "wetter volkach morgen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "10:32",
+   "quelle": "Standort",
+   "eintrag": "Kita, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "10:45",
+   "quelle": "Einkauf",
+   "eintrag": "Musikgeschäft, Kitzingen: Gitarrensaiten, 8,50 €"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "11:14",
+   "quelle": "Suche",
+   "eintrag": "wann fährt der letzte bus"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "11:28",
+   "quelle": "Einkauf",
+   "eintrag": "Bäckerei, Volkach: Brezel, 0,95 €"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "12:35",
+   "quelle": "Standort",
+   "eintrag": "Bürogebäude, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "13:31",
+   "quelle": "Einkauf",
+   "eintrag": "Drogerie, Kitzingen: Fiebersaft, Pflaster"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "15:09",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "15:35",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "15:46",
+   "quelle": "App",
+   "eintrag": "Nachrichten-App: 4 neue Nachrichten"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "16:22",
+   "quelle": "App",
+   "eintrag": "Navi-App: Route Würzburg → Nürnberg"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "16:26",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "16:27",
+   "quelle": "App",
+   "eintrag": "Nachrichten-App: 2 neue Nachrichten"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "16:28",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "16:40",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "16:50",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "17:00",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "17:05",
+   "quelle": "App",
+   "eintrag": "Video-App: 2 h 30 min"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "17:08",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "17:23",
+   "quelle": "Standort",
+   "eintrag": "Gärtnerei, Dettelbach"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "17:26",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "17:31",
+   "quelle": "Suche",
+   "eintrag": "weinfest volkach termine"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "17:36",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "17:57",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "18:02",
+   "quelle": "Suche",
+   "eintrag": "handy akku schnell leer"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "18:12",
+   "quelle": "Suche",
+   "eintrag": "e bike oder normales fahrrad"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "19:34",
+   "quelle": "Suche",
+   "eintrag": "referat klimawandel gliederung"
+  },
+  {
+   "nutzer": "1940",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "20:00",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "20:50",
+   "quelle": "App",
+   "eintrag": "Video-App: 1 h 10 min"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "21:30",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "22:03",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "22:04",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "22:23",
+   "quelle": "Suche",
+   "eintrag": "rosen schneiden wann"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "22:30",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "22:40",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "22:53",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "23:13",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "23:15",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "23:21",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "23:26",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "23:36",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "23:46",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "23:47",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "23:47",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "23:51",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "23:56",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-22",
+   "tag": "Di",
+   "zeit": "23:56",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:03",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:23",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:32",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:36",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:37",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:40",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:42",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:43",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:43",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:47",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:48",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:49",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:51",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:52",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:52",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:52",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:53",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:54",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:54",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:54",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:55",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "06:56",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4087",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "07:00",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "07:10",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "07:31",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "07:31",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "07:32",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Gerolzhofen"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "07:39",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Gerolzhofen"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "07:41",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Gerolzhofen"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "07:41",
+   "quelle": "Standort",
+   "eintrag": "Gewerbegebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "07:45",
+   "quelle": "Standort",
+   "eintrag": "Schulzentrum, Volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "07:48",
+   "quelle": "Standort",
+   "eintrag": "Büro, Würzburg"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "07:52",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "07:54",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "07:55",
+   "quelle": "Standort",
+   "eintrag": "Klinik, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "07:56",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "07:59",
+   "quelle": "Standort",
+   "eintrag": "Schulzentrum, Kitzingen"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "08:30",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "08:57",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "09:00",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "09:20",
+   "quelle": "Suche",
+   "eintrag": "weinfest volkach termine"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "09:54",
+   "quelle": "Einkauf",
+   "eintrag": "Fahrradladen, Volkach: Schlauch, 6,50 €"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "10:34",
+   "quelle": "Standort",
+   "eintrag": "Bushaltestelle, Dettelbach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "10:53",
+   "quelle": "Einkauf",
+   "eintrag": "Mensa, Würzburg: Tagesgericht, 3,20 €"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "11:54",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Würzburg"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "13:11",
+   "quelle": "Suche",
+   "eintrag": "fahrrad reifen flicken"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "13:32",
+   "quelle": "Suche",
+   "eintrag": "wetter volkach morgen"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "14:14",
+   "quelle": "Einkauf",
+   "eintrag": "Drogerie, Kitzingen: Duschgel"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "14:22",
+   "quelle": "Einkauf",
+   "eintrag": "Bäckerei, Volkach: Brezel, 0,95 €"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "14:32",
+   "quelle": "Einkauf",
+   "eintrag": "Tankstelle, Volkach: Kaffee, 2,20 €"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "15:26",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "15:44",
+   "quelle": "Einkauf",
+   "eintrag": "Drogerie, Kitzingen: Fiebersaft, Pflaster"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "15:54",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "16:02",
+   "quelle": "App",
+   "eintrag": "Spiele-App: 45 min"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "16:13",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "16:30",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "16:50",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "16:57",
+   "quelle": "App",
+   "eintrag": "Video-App: 1 h 10 min"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "17:00",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "17:04",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "17:09",
+   "quelle": "Standort",
+   "eintrag": "Kinderarztpraxis, Kitzingen"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "17:13",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "17:29",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "17:31",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "17:56",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "18:29",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Volkach: Milch, Brot, Kaffee"
+  },
+  {
+   "nutzer": "1940",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "20:00",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "20:32",
+   "quelle": "App",
+   "eintrag": "Nachrichten-App: 4 neue Nachrichten"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "20:38",
+   "quelle": "App",
+   "eintrag": "Musik-App: 35 min"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "20:43",
+   "quelle": "App",
+   "eintrag": "Spiele-App: 45 min"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "21:18",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "21:30",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "21:46",
+   "quelle": "Suche",
+   "eintrag": "e bike oder normales fahrrad"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "22:36",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "22:38",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "22:38",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "22:39",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "22:40",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "22:44",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "22:57",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "22:57",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "23:06",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "23:07",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "23:09",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "23:09",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "23:14",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "23:28",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "23:30",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "23:32",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-23",
+   "tag": "Mi",
+   "zeit": "23:50",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "06:00",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "06:31",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "06:32",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "06:39",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "06:43",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "06:44",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "06:45",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "06:46",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "06:46",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "06:49",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "06:50",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "06:51",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "06:52",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "06:52",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "06:52",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "06:53",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "06:54",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "06:55",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "06:55",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "06:56",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "06:56",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "06:59",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4087",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "07:00",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "07:10",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "07:32",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "07:35",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Gerolzhofen"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "07:35",
+   "quelle": "Standort",
+   "eintrag": "Klinik, Kitzingen"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "07:36",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Gerolzhofen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "07:36",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "07:36",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Gerolzhofen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "07:36",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "07:43",
+   "quelle": "Standort",
+   "eintrag": "Gewerbegebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "07:45",
+   "quelle": "Standort",
+   "eintrag": "Schulzentrum, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "07:48",
+   "quelle": "Standort",
+   "eintrag": "Schulzentrum, Kitzingen"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "07:49",
+   "quelle": "Standort",
+   "eintrag": "Büro, Würzburg"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "07:49",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "07:49",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "08:26",
+   "quelle": "Suche",
+   "eintrag": "fahrrad reifen flicken"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "08:30",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "08:32",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "09:00",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "09:45",
+   "quelle": "Suche",
+   "eintrag": "regenjacke günstig"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "10:41",
+   "quelle": "Suche",
+   "eintrag": "günstige kinderschuhe"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "11:05",
+   "quelle": "Suche",
+   "eintrag": "fahrrad reifen flicken"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "12:22",
+   "quelle": "Standort",
+   "eintrag": "Apotheke, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "13:31",
+   "quelle": "Einkauf",
+   "eintrag": "Drogerie, Kitzingen: Duschgel"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "13:43",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Kitzingen"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "14:21",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Volkach: Brot, Käse"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "14:24",
+   "quelle": "Standort",
+   "eintrag": "Universität, Würzburg"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "14:26",
+   "quelle": "App",
+   "eintrag": "Bus-App: Fahrplan geöffnet"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "15:23",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "15:29",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "15:43",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "15:59",
+   "quelle": "App",
+   "eintrag": "Video-App: 1 h 10 min"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "16:40",
+   "quelle": "App",
+   "eintrag": "Bus-App: Fahrplan geöffnet"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "17:00",
+   "quelle": "Standort",
+   "eintrag": "Skatepark, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "17:07",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "17:09",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "17:13",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "17:29",
+   "quelle": "Einkauf",
+   "eintrag": "Fahrradladen, Volkach: Schlauch, 6,50 €"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "17:34",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "17:35",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "17:52",
+   "quelle": "Suche",
+   "eintrag": "weinfest volkach termine"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "17:55",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "17:59",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "19:11",
+   "quelle": "App",
+   "eintrag": "Wetter-App: 3 Aufrufe"
+  },
+  {
+   "nutzer": "1940",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "20:00",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "21:14",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "21:30",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "21:37",
+   "quelle": "Suche",
+   "eintrag": "wie lange hält ein handyakku"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "22:06",
+   "quelle": "Suche",
+   "eintrag": "handy akku schnell leer"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "22:30",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "22:33",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "22:34",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "22:40",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "22:45",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "22:45",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "22:49",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "22:57",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "23:09",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "23:12",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "23:21",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "23:31",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "23:37",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "23:45",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "23:45",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-24",
+   "tag": "Do",
+   "zeit": "23:57",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:31",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:34",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:34",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:35",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:39",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:41",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:43",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:44",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:47",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:48",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:48",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:49",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:52",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:53",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:53",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:54",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:54",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:55",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:57",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:57",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:58",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:58",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "06:59",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4087",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "07:00",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "07:10",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "07:21",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "07:30",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "07:30",
+   "quelle": "Standort",
+   "eintrag": "Gewerbegebiet, Kitzingen"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "07:31",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "07:35",
+   "quelle": "Standort",
+   "eintrag": "Klinik, Kitzingen"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "07:36",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "07:45",
+   "quelle": "Standort",
+   "eintrag": "Schulzentrum, Volkach"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "07:47",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Gerolzhofen"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "07:50",
+   "quelle": "Standort",
+   "eintrag": "Schulzentrum, Kitzingen"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "07:56",
+   "quelle": "Standort",
+   "eintrag": "Büro, Würzburg"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "07:56",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "07:58",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Gerolzhofen"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "07:59",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Gerolzhofen"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "08:30",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "09:00",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "09:04",
+   "quelle": "Suche",
+   "eintrag": "pizza lieferdienst würzburg nachts"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "09:50",
+   "quelle": "Suche",
+   "eintrag": "günstige kinderschuhe"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "11:05",
+   "quelle": "Einkauf",
+   "eintrag": "Tankstelle, Volkach: Kaffee, 2,20 €"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "11:30",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Kitzingen: Windeln, Bananen, Haferflocken"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "11:49",
+   "quelle": "Suche",
+   "eintrag": "fahrrad reifen flicken"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "12:10",
+   "quelle": "Einkauf",
+   "eintrag": "Fahrradladen, Volkach: Schlauch, 6,50 €"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "14:08",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Volkach: Brot, Käse"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "14:44",
+   "quelle": "Suche",
+   "eintrag": "fußball ergebnisse heute"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "14:52",
+   "quelle": "App",
+   "eintrag": "Musik-App: 35 min"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "15:01",
+   "quelle": "Standort",
+   "eintrag": "Kita, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "15:02",
+   "quelle": "App",
+   "eintrag": "Wetter-App: 3 Aufrufe"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "15:08",
+   "quelle": "App",
+   "eintrag": "Wetter-App: 2 Aufrufe"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "15:49",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "15:52",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "15:55",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "16:05",
+   "quelle": "App",
+   "eintrag": "Musik-App: 35 min"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "16:20",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "16:20",
+   "quelle": "App",
+   "eintrag": "Nachrichten-App: 4 neue Nachrichten"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "16:31",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "16:43",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "16:50",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "16:56",
+   "quelle": "Standort",
+   "eintrag": "Friedhof, Volkach"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "17:00",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "17:09",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "17:41",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Volkach: Milch, Brot, Kaffee"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "17:43",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "17:51",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "18:36",
+   "quelle": "Suche",
+   "eintrag": "regenjacke günstig"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "18:59",
+   "quelle": "Suche",
+   "eintrag": "weinfest volkach termine"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "19:32",
+   "quelle": "App",
+   "eintrag": "Spiele-App: 45 min"
+  },
+  {
+   "nutzer": "1940",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "20:00",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "21:20",
+   "quelle": "Suche",
+   "eintrag": "zug würzburg nürnberg verspätung"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "21:30",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "22:00",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "22:03",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "22:11",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "22:20",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "22:25",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "22:28",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "22:40",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "22:44",
+   "quelle": "App",
+   "eintrag": "Nachrichten-App: 4 neue Nachrichten"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "23:09",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "23:15",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "23:16",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "23:17",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "23:17",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "23:23",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "23:28",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "23:35",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "23:39",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-25",
+   "tag": "Fr",
+   "zeit": "23:44",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "06:11",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "06:30",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "06:33",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "06:35",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "06:39",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "06:41",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "06:41",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "06:42",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "06:43",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "06:47",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "06:47",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "06:53",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "4087",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "07:00",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "07:02",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "07:10",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Volkach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "08:09",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "08:30",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "08:56",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "09:24",
+   "quelle": "Suche",
+   "eintrag": "kindergeburtstag 4 jahre ideen"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "09:50",
+   "quelle": "Suche",
+   "eintrag": "e bike oder normales fahrrad"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "10:01",
+   "quelle": "Suche",
+   "eintrag": "regenjacke günstig"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "10:39",
+   "quelle": "Einkauf",
+   "eintrag": "Tankstelle, Volkach: Kaffee, 2,20 €"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "10:53",
+   "quelle": "Einkauf",
+   "eintrag": "Tankstelle, Volkach: Kaffee, 2,20 €"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "10:54",
+   "quelle": "Suche",
+   "eintrag": "wann fährt der letzte bus"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "12:10",
+   "quelle": "Suche",
+   "eintrag": "wetter volkach morgen"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "12:43",
+   "quelle": "Suche",
+   "eintrag": "wetter volkach morgen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "14:01",
+   "quelle": "Suche",
+   "eintrag": "arzt volkach notdienst"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "14:02",
+   "quelle": "App",
+   "eintrag": "Wetter-App: 2 Aufrufe"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "14:31",
+   "quelle": "Standort",
+   "eintrag": "Arztpraxis, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "14:43",
+   "quelle": "App",
+   "eintrag": "Spiele-App: 45 min"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "15:11",
+   "quelle": "App",
+   "eintrag": "Navi-App: Route Würzburg → Nürnberg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "15:17",
+   "quelle": "App",
+   "eintrag": "Nachrichten-App: 2 neue Nachrichten"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "15:33",
+   "quelle": "Einkauf",
+   "eintrag": "Bäckerei, Volkach: Brezel, 0,95 €"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "16:34",
+   "quelle": "App",
+   "eintrag": "Spiele-App: 45 min"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "16:42",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Kitzingen"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "17:00",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Volkach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "17:02",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Volkach: Brot, Käse"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "17:12",
+   "quelle": "Suche",
+   "eintrag": "mathe prozentrechnung"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "17:40",
+   "quelle": "App",
+   "eintrag": "Spiele-App: 45 min"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "18:36",
+   "quelle": "Einkauf",
+   "eintrag": "Tankstelle, Volkach: Kaffee, 2,20 €"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "19:00",
+   "quelle": "App",
+   "eintrag": "Video-App: 50 min"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "19:16",
+   "quelle": "App",
+   "eintrag": "Bus-App: Fahrplan geöffnet"
+  },
+  {
+   "nutzer": "1940",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "20:00",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "20:26",
+   "quelle": "Suche",
+   "eintrag": "gitarre akkorde lernen"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "21:11",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "21:30",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "22:03",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "22:19",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "22:21",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "22:25",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "22:26",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "22:40",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "22:47",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "23:04",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "23:06",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "23:24",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "23:32",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "23:33",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "23:34",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "23:37",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "23:41",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "23:46",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-26",
+   "tag": "Sa",
+   "zeit": "23:55",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "06:12",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "06:30",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "06:32",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "06:33",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "06:34",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "06:39",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "06:39",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "06:40",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "06:42",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "06:42",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "06:45",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "4087",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "07:00",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "07:10",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Volkach"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "08:30",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "08:45",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "08:50",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "08:51",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "08:57",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "10:17",
+   "quelle": "Suche",
+   "eintrag": "handy akku schnell leer"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "12:13",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Kitzingen"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "12:50",
+   "quelle": "Suche",
+   "eintrag": "pizza volkach lieferung"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "13:11",
+   "quelle": "Suche",
+   "eintrag": "weinfest volkach termine"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "13:24",
+   "quelle": "Suche",
+   "eintrag": "busfahrplan volkach kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "13:27",
+   "quelle": "Suche",
+   "eintrag": "günstige kinderschuhe"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "13:42",
+   "quelle": "Suche",
+   "eintrag": "boulder technik heel hook"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "14:22",
+   "quelle": "Standort",
+   "eintrag": "Arztpraxis, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "14:30",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Volkach: Brot, Käse"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "15:20",
+   "quelle": "App",
+   "eintrag": "Nachrichten-App: 4 neue Nachrichten"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "17:00",
+   "quelle": "Standort",
+   "eintrag": "Skatepark, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "17:42",
+   "quelle": "App",
+   "eintrag": "Schloss-App: geöffnet"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "18:09",
+   "quelle": "App",
+   "eintrag": "Musik-App: 35 min"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "18:23",
+   "quelle": "Suche",
+   "eintrag": "hausaufgaben englisch simple past"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "18:24",
+   "quelle": "App",
+   "eintrag": "Musik-App: 35 min"
+  },
+  {
+   "nutzer": "1940",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "20:00",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "21:02",
+   "quelle": "App",
+   "eintrag": "Musik-App: 35 min"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "21:05",
+   "quelle": "Suche",
+   "eintrag": "gitarre akkorde lernen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "21:24",
+   "quelle": "App",
+   "eintrag": "Kalender-App: Termin „Elternabend“"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "21:30",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Volkach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "21:37",
+   "quelle": "Suche",
+   "eintrag": "seniorentreff volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "21:45",
+   "quelle": "App",
+   "eintrag": "Nachrichten-App: 4 neue Nachrichten"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "22:00",
+   "quelle": "Suche",
+   "eintrag": "wg zimmer würzburg"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "22:03",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "22:08",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "22:17",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "22:18",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "22:26",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "22:40",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "22:57",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "23:00",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "23:01",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "23:05",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "23:16",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "23:38",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "23:39",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "23:45",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "23:49",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "23:53",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-27",
+   "tag": "So",
+   "zeit": "23:57",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:15",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:30",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:32",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:32",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:33",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:36",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:38",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:40",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:40",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:44",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:44",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:45",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:46",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:51",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:51",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:52",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:53",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:53",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:53",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:54",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:56",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:56",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:56",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "06:59",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4087",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "07:00",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "07:10",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "07:32",
+   "quelle": "Standort",
+   "eintrag": "Gewerbegebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "07:34",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "07:37",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Gerolzhofen"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "07:38",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "07:39",
+   "quelle": "Standort",
+   "eintrag": "Büro, Würzburg"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "07:40",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Gerolzhofen"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "07:42",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Gerolzhofen"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "07:43",
+   "quelle": "Standort",
+   "eintrag": "Schulzentrum, Kitzingen"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "07:44",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "07:45",
+   "quelle": "Standort",
+   "eintrag": "Schulzentrum, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "07:50",
+   "quelle": "Standort",
+   "eintrag": "Klinik, Kitzingen"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "08:30",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "08:46",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "09:00",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "10:22",
+   "quelle": "Suche",
+   "eintrag": "wetter volkach morgen"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "10:38",
+   "quelle": "Standort",
+   "eintrag": "Hauptbahnhof, Würzburg"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "10:47",
+   "quelle": "Standort",
+   "eintrag": "Apotheke, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "11:01",
+   "quelle": "Standort",
+   "eintrag": "Spielplatz am Main, Kitzingen"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "11:34",
+   "quelle": "Suche",
+   "eintrag": "busfahrplan volkach kitzingen"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "11:44",
+   "quelle": "Suche",
+   "eintrag": "wetter volkach morgen"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "12:03",
+   "quelle": "Einkauf",
+   "eintrag": "Fahrradladen, Volkach: Schlauch, 6,50 €"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "13:08",
+   "quelle": "Suche",
+   "eintrag": "kletterhalle würzburg öffnungszeiten"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "14:09",
+   "quelle": "Suche",
+   "eintrag": "fahrrad reifen flicken"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "15:04",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "15:06",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "15:12",
+   "quelle": "Einkauf",
+   "eintrag": "Tankstelle, Volkach: Kaffee, 2,20 €"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "15:17",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "15:46",
+   "quelle": "Suche",
+   "eintrag": "fußball ergebnisse heute"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "15:51",
+   "quelle": "Einkauf",
+   "eintrag": "Drogerie, Kitzingen: Duschgel"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "16:20",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "16:30",
+   "quelle": "App",
+   "eintrag": "Musik-App: 35 min"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "16:31",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "16:40",
+   "quelle": "App",
+   "eintrag": "Schloss-App: geöffnet"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "16:55",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "16:55",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "16:57",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "17:00",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Volkach"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "17:25",
+   "quelle": "App",
+   "eintrag": "Nachrichten-App: 4 neue Nachrichten"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "17:25",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "17:28",
+   "quelle": "Suche",
+   "eintrag": "kindergeburtstag 4 jahre ideen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "17:33",
+   "quelle": "Standort",
+   "eintrag": "Hauptbahnhof, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "17:37",
+   "quelle": "Suche",
+   "eintrag": "mathe brüche erklärung"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "17:38",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "17:50",
+   "quelle": "Suche",
+   "eintrag": "pizza volkach lieferung"
+  },
+  {
+   "nutzer": "1940",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "20:00",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "21:30",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "22:11",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "22:11",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "22:13",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "22:19",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "22:27",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "22:31",
+   "quelle": "Suche",
+   "eintrag": "e bike oder normales fahrrad"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "22:32",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "22:36",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "22:40",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "22:53",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "22:58",
+   "quelle": "Suche",
+   "eintrag": "wann fährt der letzte bus"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "23:03",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "23:11",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "23:21",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "23:34",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "23:44",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "23:47",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-28",
+   "tag": "Mo",
+   "zeit": "23:56",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "06:30",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "06:33",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "06:33",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "06:33",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "06:34",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "06:35",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "06:37",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "06:41",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "06:45",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "06:47",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "06:48",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "06:49",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "06:51",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "06:52",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "06:52",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "06:54",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "06:56",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "06:56",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "06:56",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "06:56",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "06:58",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "06:59",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4087",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "07:00",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "07:10",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "07:40",
+   "quelle": "Standort",
+   "eintrag": "Klinik, Kitzingen"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "07:41",
+   "quelle": "Standort",
+   "eintrag": "Schulzentrum, Kitzingen"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "07:42",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "07:43",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "07:44",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Gerolzhofen"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "07:45",
+   "quelle": "Standort",
+   "eintrag": "Schulzentrum, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "07:46",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Gerolzhofen"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "07:46",
+   "quelle": "Standort",
+   "eintrag": "Gewerbegebiet, Kitzingen"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "07:48",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "07:50",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "07:52",
+   "quelle": "Standort",
+   "eintrag": "Büro, Würzburg"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "07:52",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Gerolzhofen"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "08:30",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "08:44",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "08:46",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "09:00",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "09:08",
+   "quelle": "Einkauf",
+   "eintrag": "Tankstelle, Volkach: Kaffee, 2,20 €"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "10:49",
+   "quelle": "Standort",
+   "eintrag": "Spielplatz am Main, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "13:12",
+   "quelle": "Suche",
+   "eintrag": "arzt volkach notdienst"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "13:23",
+   "quelle": "Standort",
+   "eintrag": "Tankstelle, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "13:42",
+   "quelle": "Standort",
+   "eintrag": "Bar, Würzburg"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "13:53",
+   "quelle": "Suche",
+   "eintrag": "regenjacke günstig"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "14:05",
+   "quelle": "Suche",
+   "eintrag": "regenjacke günstig"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "14:14",
+   "quelle": "Einkauf",
+   "eintrag": "Drogerie, Kitzingen: Duschgel"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "14:16",
+   "quelle": "App",
+   "eintrag": "Nachrichten-App: 4 neue Nachrichten"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "14:24",
+   "quelle": "Einkauf",
+   "eintrag": "Kiosk, Volkach: Kaugummi, Eistee"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "14:42",
+   "quelle": "Einkauf",
+   "eintrag": "Tankstelle, Volkach: Kaffee, 2,20 €"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "15:02",
+   "quelle": "Suche",
+   "eintrag": "regenjacke günstig"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "15:18",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "15:32",
+   "quelle": "App",
+   "eintrag": "Musik-App: 35 min"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "15:55",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "16:27",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "16:28",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "16:41",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "16:48",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "16:58",
+   "quelle": "Suche",
+   "eintrag": "zug würzburg nürnberg verspätung"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "17:00",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "17:07",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "17:39",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "17:45",
+   "quelle": "Suche",
+   "eintrag": "e bike oder normales fahrrad"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "17:51",
+   "quelle": "Suche",
+   "eintrag": "weinfest volkach termine"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "17:55",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "17:57",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "19:36",
+   "quelle": "App",
+   "eintrag": "Kalender-App: Termin „Elternabend“"
+  },
+  {
+   "nutzer": "1940",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "20:00",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "20:12",
+   "quelle": "App",
+   "eintrag": "Musik-App: 30 min"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "21:30",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Volkach"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "22:10",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "22:26",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "22:27",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "22:30",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "22:30",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "22:40",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "22:41",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "22:47",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "22:47",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "22:47",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "22:48",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "23:27",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "23:38",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "23:49",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "23:54",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-29",
+   "tag": "Di",
+   "zeit": "23:54",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:35",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:35",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:39",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:39",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:40",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:41",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:43",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:46",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:47",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:47",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:51",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:51",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:51",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:52",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:52",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:56",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:56",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:56",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:58",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "06:58",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4087",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "07:00",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "07:10",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "07:30",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "07:30",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "07:33",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "07:36",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Gerolzhofen"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "07:43",
+   "quelle": "Standort",
+   "eintrag": "Büro, Würzburg"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "07:44",
+   "quelle": "Standort",
+   "eintrag": "Klinik, Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "07:45",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "07:45",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Gerolzhofen"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "07:45",
+   "quelle": "Standort",
+   "eintrag": "Schulzentrum, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "07:51",
+   "quelle": "Standort",
+   "eintrag": "Schulzentrum, Kitzingen"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "07:51",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "07:51",
+   "quelle": "Standort",
+   "eintrag": "Gewerbegebiet, Kitzingen"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "07:58",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Gerolzhofen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "08:00",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "08:30",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "08:33",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "08:53",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "09:00",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "09:38",
+   "quelle": "Suche",
+   "eintrag": "handy akku schnell leer"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "10:49",
+   "quelle": "Suche",
+   "eintrag": "nebenjob würzburg abends"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "10:52",
+   "quelle": "Standort",
+   "eintrag": "Universität, Würzburg"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "11:37",
+   "quelle": "Einkauf",
+   "eintrag": "Drogerie, Kitzingen: Duschgel"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "12:39",
+   "quelle": "Suche",
+   "eintrag": "konzert würzburg tickets"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "14:08",
+   "quelle": "Einkauf",
+   "eintrag": "Tankstelle, Volkach: Kaffee, 2,20 €"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "14:28",
+   "quelle": "Suche",
+   "eintrag": "wann fährt der letzte bus"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "15:33",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "15:53",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Kitzingen: Windeln, Bananen, Haferflocken"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "15:53",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "15:57",
+   "quelle": "Standort",
+   "eintrag": "Musikschule, Kitzingen"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "16:05",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "16:09",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "16:13",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "16:15",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "16:17",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "16:30",
+   "quelle": "Suche",
+   "eintrag": "sprühlack schwarz matt preis"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "16:34",
+   "quelle": "Suche",
+   "eintrag": "kunstprojekt schule leinwand sprühen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "16:42",
+   "quelle": "App",
+   "eintrag": "Foto-App: 23 neue Fotos"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "17:00",
+   "quelle": "Standort",
+   "eintrag": "Skatepark, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "17:22",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "17:26",
+   "quelle": "Suche",
+   "eintrag": "fußball ergebnisse heute"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "17:42",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "17:44",
+   "quelle": "App",
+   "eintrag": "Wetter-App: 2 Aufrufe"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "17:46",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "17:47",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Volkach: Brot, Käse"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "19:06",
+   "quelle": "Suche",
+   "eintrag": "weinfest volkach termine"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "19:10",
+   "quelle": "Suche",
+   "eintrag": "referat klimawandel gliederung"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "19:50",
+   "quelle": "App",
+   "eintrag": "Schloss-App: geöffnet"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "19:52",
+   "quelle": "Suche",
+   "eintrag": "zug würzburg nürnberg verspätung"
+  },
+  {
+   "nutzer": "1940",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "20:00",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "21:00",
+   "quelle": "Suche",
+   "eintrag": "hausaufgaben englisch simple past"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "21:30",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "21:39",
+   "quelle": "Suche",
+   "eintrag": "bewerbung praktikum"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "22:16",
+   "quelle": "App",
+   "eintrag": "Nachrichten-App: 4 neue Nachrichten"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "22:20",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "22:21",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "22:25",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "22:27",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "22:32",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "22:32",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "22:34",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "22:40",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "22:49",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "22:49",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "23:12",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "23:14",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "23:20",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "23:37",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "23:44",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "23:45",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-09-30",
+   "tag": "Mi",
+   "zeit": "23:53",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:30",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:31",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:35",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:37",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:38",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:38",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:40",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:41",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:43",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:49",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:50",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:51",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:52",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:53",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:53",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:54",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:54",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:55",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:55",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:56",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "06:58",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4087",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "07:00",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "07:10",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "07:30",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "07:32",
+   "quelle": "Standort",
+   "eintrag": "Klinik, Kitzingen"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "07:32",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Gerolzhofen"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "07:33",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "07:34",
+   "quelle": "Standort",
+   "eintrag": "Schulzentrum, Kitzingen"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "07:35",
+   "quelle": "Standort",
+   "eintrag": "Büro, Würzburg"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "07:44",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "07:45",
+   "quelle": "Standort",
+   "eintrag": "Schulzentrum, Volkach"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "07:49",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Gerolzhofen"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "07:55",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Gerolzhofen"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "07:58",
+   "quelle": "Standort",
+   "eintrag": "Gewerbegebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "08:17",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "08:21",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "08:30",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "08:39",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "08:52",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "09:00",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "10:29",
+   "quelle": "Suche",
+   "eintrag": "pizza volkach lieferung"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "12:18",
+   "quelle": "Standort",
+   "eintrag": "Apotheke, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "12:25",
+   "quelle": "Standort",
+   "eintrag": "Supermarkt, Kitzingen"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "12:42",
+   "quelle": "Suche",
+   "eintrag": "regenjacke günstig"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "14:02",
+   "quelle": "Standort",
+   "eintrag": "Hauptbahnhof, Würzburg"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "14:10",
+   "quelle": "Suche",
+   "eintrag": "bewerbung praktikum"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "14:47",
+   "quelle": "Einkauf",
+   "eintrag": "Lieferdienst: Pizza Salami, 9,50 €"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "15:10",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "15:20",
+   "quelle": "Einkauf",
+   "eintrag": "Bastelladen, Volkach: Sprühlack schwarz, Leinwand 40×50, 21,80 €"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "15:29",
+   "quelle": "Einkauf",
+   "eintrag": "Sportgeschäft, Würzburg: Kletterseil, 149,00 €"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "15:30",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "15:32",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "15:32",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "15:47",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "15:48",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "15:51",
+   "quelle": "Standort",
+   "eintrag": "Bürogebäude, Würzburg"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "16:21",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "16:23",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "16:43",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "17:00",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "17:21",
+   "quelle": "App",
+   "eintrag": "Spiele-App: 45 min"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "17:28",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "17:40",
+   "quelle": "App",
+   "eintrag": "Musik-App: 30 min"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "17:47",
+   "quelle": "App",
+   "eintrag": "Wetter-App: 2 Aufrufe"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "18:34",
+   "quelle": "Suche",
+   "eintrag": "hausaufgaben englisch simple past"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "19:40",
+   "quelle": "App",
+   "eintrag": "Kalender-App: Termin „Elternabend“"
+  },
+  {
+   "nutzer": "1940",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "20:00",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "20:20",
+   "quelle": "App",
+   "eintrag": "Navi-App: Route Würzburg → Nürnberg"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "21:30",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "21:37",
+   "quelle": "Suche",
+   "eintrag": "weinfest volkach termine"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "22:29",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "22:34",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "22:36",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "22:40",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "22:44",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "22:47",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "22:55",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "23:03",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "23:23",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "23:25",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "23:32",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "23:41",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "23:44",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "23:57",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "23:58",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-10-01",
+   "tag": "Do",
+   "zeit": "23:59",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:00",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:12",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:22",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:41",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:44",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:44",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:45",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:46",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:46",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:47",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:48",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:49",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:49",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:51",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:51",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:52",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:52",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:53",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:54",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:54",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:55",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:56",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:58",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "06:59",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4087",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "07:00",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "07:10",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "07:32",
+   "quelle": "Standort",
+   "eintrag": "Gewerbegebiet, Kitzingen"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "07:37",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "07:38",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Gerolzhofen"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "07:42",
+   "quelle": "Standort",
+   "eintrag": "Klinik, Kitzingen"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "07:44",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Gerolzhofen"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "07:45",
+   "quelle": "Standort",
+   "eintrag": "Schulzentrum, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "07:46",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Gerolzhofen"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "07:48",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "07:51",
+   "quelle": "Standort",
+   "eintrag": "Schulzentrum, Kitzingen"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "07:54",
+   "quelle": "Standort",
+   "eintrag": "Büro, Würzburg"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "07:58",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "08:00",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "08:22",
+   "quelle": "Suche",
+   "eintrag": "hausarbeit zitieren regeln"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "08:30",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "09:00",
+   "quelle": "Standort",
+   "eintrag": "Berufsschule, Kitzingen"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "09:49",
+   "quelle": "Suche",
+   "eintrag": "handy akku schnell leer"
+  },
+  {
+   "nutzer": "1940",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "10:15",
+   "quelle": "Einkauf",
+   "eintrag": "Baumarkt, Kitzingen: Sprühlack silber, Schleifpapier, 12,40 €"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "12:13",
+   "quelle": "Suche",
+   "eintrag": "fußball ergebnisse heute"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "13:18",
+   "quelle": "Suche",
+   "eintrag": "regenjacke günstig"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "15:02",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "15:21",
+   "quelle": "Standort",
+   "eintrag": "Kita, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "15:32",
+   "quelle": "App",
+   "eintrag": "Nachrichten-App: 2 neue Nachrichten"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "15:37",
+   "quelle": "App",
+   "eintrag": "Nachrichten-App: 4 neue Nachrichten"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "15:52",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "15:55",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "16:04",
+   "quelle": "App",
+   "eintrag": "Video-App: 48 min"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "16:17",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "16:19",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "16:25",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Volkach: Brot, Käse"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "16:30",
+   "quelle": "App",
+   "eintrag": "Schloss-App: geöffnet"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "16:32",
+   "quelle": "Standort",
+   "eintrag": "Apotheke, Volkach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "16:43",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "16:45",
+   "quelle": "Einkauf",
+   "eintrag": "Baumarkt, Kitzingen: 4 Sprühdosen silber, 27,96 €"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "16:52",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "17:00",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "17:09",
+   "quelle": "Suche",
+   "eintrag": "bewerbung praktikum"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "17:10",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "17:13",
+   "quelle": "Suche",
+   "eintrag": "fußball ergebnisse heute"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "17:22",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "17:33",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "17:34",
+   "quelle": "Einkauf",
+   "eintrag": "Kiosk, Volkach: Kaugummi, Eistee"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "17:45",
+   "quelle": "App",
+   "eintrag": "Schloss-App: geöffnet"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "17:59",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "1940",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "20:00",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "20:36",
+   "quelle": "App",
+   "eintrag": "Schloss-App: geöffnet"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "20:56",
+   "quelle": "Suche",
+   "eintrag": "mathe prozentrechnung"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "21:30",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "21:51",
+   "quelle": "App",
+   "eintrag": "Video-App: 2 h 30 min"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "21:58",
+   "quelle": "App",
+   "eintrag": "Klettertagebuch: 6 Boulder, 1 h 30 min"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "22:09",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "22:20",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "22:24",
+   "quelle": "App",
+   "eintrag": "Schloss-App: geöffnet"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "22:40",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "22:55",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "22:59",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "23:02",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "23:06",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "23:14",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "23:25",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "23:27",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "23:29",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "23:30",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "23:36",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "23:37",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "23:51",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "23:56",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-10-02",
+   "tag": "Fr",
+   "zeit": "23:58",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "06:11",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "06:30",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "06:30",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "06:30",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "06:31",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "06:37",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "06:37",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "06:38",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "06:39",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "06:46",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "06:48",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "06:49",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "4087",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "07:00",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "07:06",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "07:07",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "08:12",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "08:30",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "10:00",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Volkach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "10:30",
+   "quelle": "Standort",
+   "eintrag": "Gärtnerei, Dettelbach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "10:46",
+   "quelle": "Standort",
+   "eintrag": "Kinderarztpraxis, Kitzingen"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "10:55",
+   "quelle": "Suche",
+   "eintrag": "e bike oder normales fahrrad"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "11:18",
+   "quelle": "Standort",
+   "eintrag": "Bürogebäude, Würzburg"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "12:40",
+   "quelle": "Einkauf",
+   "eintrag": "Tankstelle, Volkach: Kaffee, 2,20 €"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "13:00",
+   "quelle": "Einkauf",
+   "eintrag": "Tankstelle, Volkach: Kaffee, 2,20 €"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "15:29",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Volkach: Brot, Käse"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "15:43",
+   "quelle": "Suche",
+   "eintrag": "wie lange hält ein handyakku"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "16:12",
+   "quelle": "Standort",
+   "eintrag": "Gymnasium, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "16:28",
+   "quelle": "Einkauf",
+   "eintrag": "Mensa, Würzburg: Tagesgericht, 3,20 €"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "16:33",
+   "quelle": "Einkauf",
+   "eintrag": "Kiosk, Dettelbach: Eistee, Kaugummi"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "16:45",
+   "quelle": "Einkauf",
+   "eintrag": "Supermarkt, Volkach: Milch, Brot, Kaffee"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "17:25",
+   "quelle": "Einkauf",
+   "eintrag": "Kiosk, Volkach: Kaugummi, Eistee"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "17:30",
+   "quelle": "Standort",
+   "eintrag": "Skatepark, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "17:47",
+   "quelle": "Einkauf",
+   "eintrag": "Bäckerei, Volkach: Brezel, 0,95 €"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "18:05",
+   "quelle": "Standort",
+   "eintrag": "Skatepark, Volkach"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "19:05",
+   "quelle": "Standort",
+   "eintrag": "Skatepark, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "19:20",
+   "quelle": "App",
+   "eintrag": "Bus-App: Fahrplan geöffnet"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "19:26",
+   "quelle": "Einkauf",
+   "eintrag": "Fahrradladen, Volkach: Schlauch, 6,50 €"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "19:34",
+   "quelle": "App",
+   "eintrag": "Wetter-App: 2 Aufrufe"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "19:40",
+   "quelle": "App",
+   "eintrag": "Handy finden: Gerät als verloren markiert (vom Tablet der Familie)"
+  },
+  {
+   "nutzer": "1940",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "20:00",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "20:05",
+   "quelle": "Standort",
+   "eintrag": "Skatepark, Volkach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "20:15",
+   "quelle": "App",
+   "eintrag": "Nachrichten-App: 2 neue Nachrichten"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "20:28",
+   "quelle": "Suche",
+   "eintrag": "konzert würzburg tickets"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "21:05",
+   "quelle": "Standort",
+   "eintrag": "Skatepark, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "21:31",
+   "quelle": "App",
+   "eintrag": "Spiele-App: 45 min"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "22:02",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "22:04",
+   "quelle": "Standort",
+   "eintrag": "Busbahnhof, Volkach"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "22:05",
+   "quelle": "Standort",
+   "eintrag": "Skatepark, Volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "22:09",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "22:20",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "22:27",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "22:27",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "22:30",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "22:37",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "22:38",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "22:39",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "22:41",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "22:44",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "4087",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "23:02",
+   "quelle": "Standort",
+   "eintrag": "Skatepark, Volkach"
+  },
+  {
+   "nutzer": "4087",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "23:04",
+   "quelle": "App",
+   "eintrag": "Foto-App: 1 Foto hochgeladen (Ort: Mainufer, Volkach)"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "23:05",
+   "quelle": "Standort",
+   "eintrag": "Skatepark, Volkach"
+  },
+  {
+   "nutzer": "4087",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "23:09",
+   "quelle": "Standort",
+   "eintrag": "Mainufer, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "23:15",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "23:16",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "23:24",
+   "quelle": "App",
+   "eintrag": "Foto-App: 1 Foto hochgeladen (Ort: Skatepark, Volkach)"
+  },
+  {
+   "nutzer": "4087",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "23:25",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "23:34",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "1940",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "23:38",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "1940",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "23:40",
+   "quelle": "App",
+   "eintrag": "Foto-App: 1 Foto hochgeladen (Ort: Garage, Astheim)"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "23:41",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-10-03",
+   "tag": "Sa",
+   "zeit": "23:59",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "00:05",
+   "quelle": "Standort",
+   "eintrag": "Skatepark, Volkach"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "01:10",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "02:05",
+   "quelle": "Standort",
+   "eintrag": "Skatepark, Volkach"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "04:05",
+   "quelle": "Standort",
+   "eintrag": "Skatepark, Volkach"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "06:05",
+   "quelle": "Standort",
+   "eintrag": "Skatepark, Volkach"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "06:21",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "06:31",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "06:35",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "06:36",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "06:36",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "06:37",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "06:40",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "06:44",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "06:47",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "06:48",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "06:49",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "4087",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "07:00",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "07:10",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "07:24",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "07:42",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "08:05",
+   "quelle": "Standort",
+   "eintrag": "Skatepark, Volkach"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "08:30",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "08:36",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "08:37",
+   "quelle": "Suche",
+   "eintrag": "weinfest volkach termine"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "09:04",
+   "quelle": "Suche",
+   "eintrag": "tomaten überwintern"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "09:38",
+   "quelle": "App",
+   "eintrag": "Handy finden: Gerät gefunden"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "09:40",
+   "quelle": "Standort",
+   "eintrag": "Skatepark, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "09:48",
+   "quelle": "Suche",
+   "eintrag": "kita elternabend ideen"
+  },
+  {
+   "nutzer": "5309",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "09:52",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "10:36",
+   "quelle": "Standort",
+   "eintrag": "Musikschule, Kitzingen"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "10:46",
+   "quelle": "Standort",
+   "eintrag": "Bar, Würzburg"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "11:39",
+   "quelle": "Suche",
+   "eintrag": "handy akku schnell leer"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "13:07",
+   "quelle": "Standort",
+   "eintrag": "Kita, Kitzingen"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "13:28",
+   "quelle": "Einkauf",
+   "eintrag": "Drogerie, Kitzingen: Fiebersaft, Pflaster"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "14:02",
+   "quelle": "Einkauf",
+   "eintrag": "Tankstelle, Volkach: Kaffee, 2,20 €"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "14:04",
+   "quelle": "Suche",
+   "eintrag": "hausaufgaben englisch simple past"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "14:29",
+   "quelle": "Standort",
+   "eintrag": "Gärtnerei, Dettelbach"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "14:30",
+   "quelle": "App",
+   "eintrag": "Spiele-App: 45 min"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "17:26",
+   "quelle": "App",
+   "eintrag": "Lieferdienst-App: Bestellung"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "17:27",
+   "quelle": "App",
+   "eintrag": "Wetter-App: 2 Aufrufe"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "17:52",
+   "quelle": "Suche",
+   "eintrag": "fußball ergebnisse heute"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "18:12",
+   "quelle": "Einkauf",
+   "eintrag": "Tankstelle, Volkach: Kaffee, 2,20 €"
+  },
+  {
+   "nutzer": "1940",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "20:00",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "21:00",
+   "quelle": "App",
+   "eintrag": "Video-App: 1 h 10 min"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "21:34",
+   "quelle": "App",
+   "eintrag": "Nachrichten-App: 4 neue Nachrichten"
+  },
+  {
+   "nutzer": "7907",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "22:30",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "2718",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "22:40",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "6612",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "22:44",
+   "quelle": "Standort",
+   "eintrag": "Studentenwohnheim, Würzburg"
+  },
+  {
+   "nutzer": "8146",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "22:59",
+   "quelle": "Standort",
+   "eintrag": "Stadtteil Zellerau, Würzburg"
+  },
+  {
+   "nutzer": "6906",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "23:01",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Fahr, Volkach"
+  },
+  {
+   "nutzer": "4279",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "23:06",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "5445",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "23:07",
+   "quelle": "Standort",
+   "eintrag": "Ortsteil Astheim, Volkach"
+  },
+  {
+   "nutzer": "6989",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "23:07",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "9296",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "23:11",
+   "quelle": "Standort",
+   "eintrag": "Hauptstraße, Volkach"
+  },
+  {
+   "nutzer": "5520",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "23:15",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Dettelbach"
+  },
+  {
+   "nutzer": "4513",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "23:16",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "6947",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "23:28",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Nordheim"
+  },
+  {
+   "nutzer": "1612",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "23:41",
+   "quelle": "Standort",
+   "eintrag": "Ortsmitte, Escherndorf"
+  },
+  {
+   "nutzer": "3485",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "23:44",
+   "quelle": "Standort",
+   "eintrag": "Altstadt, Volkach"
+  },
+  {
+   "nutzer": "2093",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "23:46",
+   "quelle": "Standort",
+   "eintrag": "Wohngebiet Süd, Volkach"
+  },
+  {
+   "nutzer": "3307",
+   "datum": "2026-10-04",
+   "tag": "So",
+   "zeit": "23:50",
+   "quelle": "Standort",
+   "eintrag": "Neubaugebiet, Kitzingen"
+  }
+ ]
+}
