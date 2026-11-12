@@ -1,0 +1,153 @@
+{
+ "titel": "Weltwirtschaftskrise 1923 bis 1932",
+ "von": "1923-11-01",
+ "bis": "1932-12-31",
+ "karte": {
+  "bild": "bilder/karte.jpg",
+  "breite": 1920,
+  "hoehe": 1610,
+  "nachweis": "Karte: Shadowxfox, Alphathon, CC BY-SA 3.0, via Wikimedia Commons („Länder der Weimarer Republik“)"
+ },
+ "orte": {
+  "berlin": {
+   "name": "Berlin",
+   "x": 904,
+   "y": 664
+  },
+  "ruhr": {
+   "name": "Ruhrgebiet",
+   "x": 275,
+   "y": 855
+  },
+  "hamburg": {
+   "name": "Hamburg",
+   "x": 572,
+   "y": 474
+  }
+ },
+ "seiten": {
+  "gut": {
+   "name": "Die guten Jahre",
+   "farbe": "#2e7d32"
+  },
+  "krise": {
+   "name": "Die Krise",
+   "farbe": "#b3261e"
+  },
+  "staat": {
+   "name": "Was der Staat tat",
+   "farbe": "#1b4a7a"
+  }
+ },
+ "ereignisse": [
+  {
+   "datum": "1923-11-15",
+   "datum_text": "15. November 1923",
+   "ort": "berlin",
+   "seite": "gut",
+   "titel": "Neues Geld",
+   "text": "Die Rentenmark kommt: eine Rentenmark für eine Billion alte Mark. Die Inflation ist vorbei.",
+   "bild": {
+    "src": "bilder/ev_rentenmark.jpg",
+    "unterschrift": "Ausgabe der Rentenmark in Berlin, 1923 (Bundesarchiv, Bild 183-H29263, CC BY-SA 3.0 de)"
+   }
+  },
+  {
+   "datum": "1924-04-09",
+   "datum_text": "April 1924",
+   "ort": "berlin",
+   "seite": "gut",
+   "titel": "Ein neuer Plan",
+   "text": "Der Dawes-Plan regelt die Reparationen neu. Mit ihm kommt Geld aus dem Ausland: Kredite für deutsche Firmen.",
+   "bild": {
+    "src": "bilder/ev_gold.jpg",
+    "unterschrift": "Das erste amerikanische Gold für die Reichsbank kommt in Berlin an, 23.12.1924 (Bundesarchiv, Bild 102-00924, CC BY-SA 3.0 de)"
+   }
+  },
+  {
+   "datum": "1924-04-10",
+   "datum_text": "1924",
+   "ort": "ruhr",
+   "seite": "gut",
+   "titel": "Das Ruhrgebiet wird frei",
+   "text": "Mit dem Dawes-Plan verspricht Frankreich, das Ruhrgebiet zu räumen."
+  },
+  {
+   "datum": "1927-06-30",
+   "datum_text": "1927",
+   "ort": "berlin",
+   "seite": "gut",
+   "titel": "Eine Kasse für Arbeitslose",
+   "text": "Die Arbeitslosenversicherung kommt. Wer arbeitet, und die Firma zahlen ein; wer arbeitslos wird, bekommt Geld."
+  },
+  {
+   "datum": "1929-09-15",
+   "datum_text": "September 1929",
+   "ort": "berlin",
+   "seite": "gut",
+   "titel": "Es geht aufwärts",
+   "text": "Die Fabriken stellen 50 Prozent mehr her als 1924. 1,3 Millionen Menschen sind arbeitslos."
+  },
+  {
+   "datum": "1929-10-25",
+   "datum_text": "Oktober 1929",
+   "ort": "berlin",
+   "seite": "krise",
+   "titel": "Das Geld geht zurück",
+   "text": "In New York bricht die Börse zusammen. Banken aus dem Ausland holen ihre Kredite aus Deutschland zurück."
+  },
+  {
+   "datum": "1930-03-27",
+   "datum_text": "März 1930",
+   "ort": "berlin",
+   "seite": "staat",
+   "titel": "Die Regierung zerbricht",
+   "text": "Die Parteien der Regierung streiten über die Kasse für Arbeitslose und einigen sich nicht."
+  },
+  {
+   "datum": "1930-03-29",
+   "datum_text": "März 1930",
+   "ort": "berlin",
+   "seite": "staat",
+   "titel": "Brüning wird Kanzler",
+   "text": "Hindenburg macht Heinrich Brüning zum Kanzler. Brüning spart: Gehälter, Renten und das Geld für Arbeitslose sinken."
+  },
+  {
+   "datum": "1930-07-16",
+   "datum_text": "Juli 1930",
+   "ort": "berlin",
+   "seite": "staat",
+   "titel": "Die erste Notverordnung",
+   "text": "Der Reichstag ist gegen Brünings Plan. Hindenburg setzt ihn mit Artikel 48 trotzdem durch."
+  },
+  {
+   "datum": "1931-01-15",
+   "datum_text": "Januar 1931",
+   "ort": "hamburg",
+   "seite": "krise",
+   "titel": "Keine Arbeit im Hafen",
+   "text": "Arbeitslose Hafenarbeiter stehen im Hamburger Hafenviertel.",
+   "bild": {
+    "src": "bilder/ev_hamburg.jpg",
+    "unterschrift": "Arbeitslose Hafenarbeiter im Hamburger Hafenviertel, Januar 1931 (Bundesarchiv, Bild 102-11008, CC BY-SA 3.0 de)"
+   }
+  },
+  {
+   "datum": "1931-03-15",
+   "datum_text": "März 1931",
+   "ort": "berlin",
+   "seite": "krise",
+   "titel": "Fast fünf Millionen",
+   "text": "Fast fünf Millionen Menschen sind arbeitslos. Nur die Hälfte ist versichert."
+  },
+  {
+   "datum": "1932-02-15",
+   "datum_text": "Februar 1932",
+   "ort": "berlin",
+   "seite": "krise",
+   "titel": "Jeder Dritte",
+   "text": "6,1 Millionen Menschen sind arbeitslos: jeder dritte Arbeitnehmer. Nur 3 von 10 bekommen Geld aus der Kasse."
+  }
+ ],
+ "nachweis": "Nach: Deutsches Historisches Museum, LeMO (Weltwirtschaftskrise, Arbeitslosenversicherung, Dawes-Plan, Jahreschroniken 1930 bis 1932). Die Stimmen der Familie Brandt und der Parteien sind erfunden."
+}
