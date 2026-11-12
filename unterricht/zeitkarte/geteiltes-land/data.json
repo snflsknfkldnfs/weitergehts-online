@@ -1,0 +1,190 @@
+{
+ "titel": "Geteiltes Land",
+ "von": "1945-01-01",
+ "bis": "1955-12-31",
+ "skala": "jahre",
+ "karten": [
+  {
+   "von": "1945-01-01",
+   "bild": "bilder/karte.jpg",
+   "titel": "Besatzungszonen"
+  },
+  {
+   "von": "1949-06-01",
+   "bild": "bilder/karte_staaten.jpg",
+   "titel": "Zwei Staaten"
+  }
+ ],
+ "flaechen": {
+  "usa": {
+   "bild": "bilder/flaeche_usa.png",
+   "rand": "bilder/rand_usa.png",
+   "spur": "bilder/spur_usa.png"
+  },
+  "sowjet": {
+   "bild": "bilder/flaeche_sowjet.png",
+   "rand": "bilder/rand_sowjet.png",
+   "spur": "bilder/spur_sowjet.png"
+  },
+  "west": {
+   "bild": "bilder/flaeche_west.png",
+   "rand": "bilder/rand_west.png",
+   "spur": "bilder/spur_west.png"
+  },
+  "alle": {
+   "bild": "bilder/flaeche_alle.png",
+   "rand": "bilder/rand_alle.png",
+   "spur": "bilder/spur_alle.png"
+  }
+ },
+ "karte": {
+  "bild": "bilder/karte.jpg",
+  "breite": 1600,
+  "hoehe": 1359,
+  "nachweis": "Karte: „Map-Germany-1945“, 52 Pickup / IEG-Maps Mainz, CC BY-SA 2.5, via Wikimedia Commons; Orte ergänzt, ab 1949 Westzonen und Ostzone zu zwei Staaten umgefärbt (Bearbeitung)"
+ },
+ "orte": {
+  "berlin": {
+   "name": "Berlin",
+   "x": 745,
+   "y": 545
+  },
+  "zone_usa": {
+   "name": "Zone der USA",
+   "x": 520,
+   "y": 1020,
+   "flaeche": "usa"
+  },
+  "zone_su": {
+   "name": "Zone der Sowjetunion",
+   "x": 690,
+   "y": 700,
+   "flaeche": "sowjet"
+  },
+  "westzonen": {
+   "name": "Westzonen",
+   "x": 330,
+   "y": 700,
+   "flaeche": "west"
+  },
+  "brd": {
+   "name": "Bundesrepublik",
+   "x": 330,
+   "y": 700,
+   "flaeche": "west"
+  },
+  "ddr": {
+   "name": "DDR",
+   "x": 690,
+   "y": 700,
+   "flaeche": "sowjet"
+  }
+ },
+ "seiten": {
+  "lage": {
+   "name": "Lage",
+   "farbe": "#5a5a5a"
+  },
+  "westen": {
+   "name": "Westen",
+   "farbe": "#1b4a7a"
+  },
+  "osten": {
+   "name": "Osten",
+   "farbe": "#b3261e"
+  }
+ },
+ "ereignisse": [
+  {
+   "datum": "1945-06-01",
+   "datum_text": "1945",
+   "ort": "berlin",
+   "seite": "lage",
+   "titel": "Vier Zonen",
+   "text": "Die Sieger des Krieges teilen Deutschland in vier Zonen: eine für die USA, eine für Großbritannien, eine für Frankreich und eine für die Sowjetunion.",
+   "flaeche": "alle",
+   "bild": {
+    "src": "bilder/ev_torgau.jpg",
+    "unterschrift": "Soldaten der USA und der Sowjetunion geben sich an der Elbe bei Torgau die Hand, April 1945 (US Army Signal Corps, gemeinfrei, via Wikimedia Commons)"
+   }
+  },
+  {
+   "datum": "1946-01-01",
+   "datum_text": "Nach 1945",
+   "ort": "zone_su",
+   "seite": "osten",
+   "titel": "Fabriken wandern ab",
+   "text": "Die Sowjetunion lässt sich aus ihrer Zone Fabriken, Maschinen und Gleise als Wiedergutmachung geben."
+  },
+  {
+   "datum": "1947-06-01",
+   "datum_text": "1947",
+   "ort": "zone_usa",
+   "seite": "westen",
+   "titel": "Truman spricht",
+   "text": "Der amerikanische Präsident Truman nennt sein Land demokratisch und spricht von freien Wahlen.",
+   "bild": {
+    "src": "bilder/ev_truman.jpg",
+    "unterschrift": "Harry S. Truman, Präsident der USA (Gemälde von Greta Kempton, gemeinfrei, via Wikimedia Commons)"
+   }
+  },
+  {
+   "datum": "1947-06-02",
+   "datum_text": "1947",
+   "ort": "zone_su",
+   "seite": "osten",
+   "titel": "Schdanow antwortet",
+   "text": "Der sowjetische Politiker Schdanow nennt die Sowjetunion auch demokratisch und sagt, sie sei für den Frieden."
+  },
+  {
+   "datum": "1948-06-01",
+   "datum_text": "1948",
+   "ort": "westzonen",
+   "seite": "westen",
+   "titel": "Der Marshallplan",
+   "text": "Die USA geben Westeuropa Kredite für den Wiederaufbau. So wollen sie verhindern, dass sich der Kommunismus ausbreitet.",
+   "bild": {
+    "src": "bilder/ev_marshall.jpg",
+    "unterschrift": "Marshallplan-Plakat (E. Spreckmeester / Economic Cooperation Administration, gemeinfrei, via Wikimedia Commons)"
+   }
+  },
+  {
+   "datum": "1949-06-01",
+   "datum_text": "1949",
+   "ort": "brd",
+   "seite": "westen",
+   "titel": "Die Bundesrepublik",
+   "text": "Aus den Westzonen wird die Bundesrepublik Deutschland. Bei der Wahl stehen mehrere Parteien auf dem Stimmzettel.",
+   "bild": {
+    "src": "bilder/ev_stimmzettel49.jpg",
+    "unterschrift": "Stimmzettel zur Bundestagswahl 1949 (gemeinfrei, via Wikimedia Commons)"
+   }
+  },
+  {
+   "datum": "1949-06-02",
+   "datum_text": "1949",
+   "ort": "ddr",
+   "seite": "osten",
+   "titel": "Die DDR",
+   "text": "Aus der Ostzone wird die Deutsche Demokratische Republik. Bei der Wahl 1950 steht nur eine Liste auf dem Stimmzettel.",
+   "bild": {
+    "src": "bilder/ev_stimmzettel50.jpg",
+    "unterschrift": "Stimmzettel zur Volkskammerwahl 1950 (gemeinfrei, via Wikimedia Commons)"
+   }
+  },
+  {
+   "datum": "1955-06-01",
+   "datum_text": "1955",
+   "ort": "berlin",
+   "seite": "lage",
+   "titel": "Zwei Bündnisse",
+   "text": "Der Westen schließt sich in der NATO zusammen, der Osten im Warschauer Pakt. Deutschland liegt dazwischen.",
+   "flaeche": "alle",
+   "bild": {
+    "src": "bilder/ev_vorhang.jpg",
+    "unterschrift": "Europa mit NATO (blau) und Warschauer Pakt (rot) (Sémhur, CC BY-SA 4.0, via Wikimedia Commons)"
+   }
+  }
+ ],
+ "nachweis": "Nach: Hefteinträge und Stunden GPG9a vom 1. Oktober bis 12. November 2026; Trio 9 (Westermann), S. 10 bis 11."
+}

@@ -99,3 +99,23 @@ body.zeitkarte { margin: 0; background: var(--m-grund); font-family: var(--m-sch
 /* 1.5: Karte nie höher als der Bildschirm, damit Regler und Knöpfe am Beamer sichtbar bleiben */
 .z-karte { width: fit-content; max-width: 100%; margin: 0 auto; }
 .z-karte img { width: auto; max-width: 100%; max-height: 70vh; }
+
+/* 1.7: Gebiet hervorgehoben (Maske = Gebiet, Farbe = Seite des Ereignisses), über der Abdunklung des Fokus */
+.z-flaeche { position: absolute; inset: 0; z-index: 1; opacity: .12; pointer-events: none; -webkit-mask-size: 100% 100%; mask-size: 100% 100%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; transition: opacity .4s; }
+.z-flaeche[hidden] { display: none; }
+.z-fokus .z-flaeche { opacity: .2; z-index: 3; }
+.z-kartentitel { position: absolute; left: 8px; top: 8px; z-index: 4; padding: 3px 10px; border-radius: 999px; background: rgba(255, 255, 255, .92); font-weight: 600; font-size: .9rem; box-shadow: var(--m-schatten); pointer-events: none; }
+.z-kartentitel[hidden] { display: none; }
+/* 1.8: der Umriss des Gebiets pulsiert, solange das Ereignis gewählt ist; Punkte pulsieren dann nicht (Lehrkraft 12.11.) */
+.z-rand { position: absolute; inset: 0; z-index: 3; pointer-events: none; -webkit-mask-size: 100% 100%; mask-size: 100% 100%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; animation: z-puls 1.6s ease-in-out infinite; }
+.z-rand[hidden] { display: none; }
+@keyframes z-puls { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
+.z-mit-flaeche .z-neu .z-punkt { animation: none; }
+.z-mit-flaeche .z-fokusmarke .z-punkt { transform: none; box-shadow: none; }
+.z-mit-flaeche .z-fokusmarke .z-name { font-size: inherit; outline: 0; }
+@media (prefers-reduced-motion: reduce) { .z-rand { animation: none; } }
+/* 1.9: Gebiete statt Punkte; dünner Umriss nach dem ersten Ereignis, pulsierender Umriss beim gewählten */
+.z-gebiet { display: none !important; }
+.z-spur { position: absolute; inset: 0; z-index: 1; opacity: .9; pointer-events: none; -webkit-mask-size: 100% 100%; mask-size: 100% 100%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; }
+.z-spur[hidden] { display: none; }
+.z-mit-flaeche .z-karte { cursor: pointer; }
