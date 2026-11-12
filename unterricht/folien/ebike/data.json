@@ -1,0 +1,155 @@
+{
+ "titel": "Folien: Wer hat das E-Bike gestohlen?",
+ "speicher": "folien-ebike",
+ "folien": [
+  {
+   "kopf": "Informatik · Freitag, 13.11.",
+   "titel": "Leg bereit:",
+   "punkte": [
+    "deinen Hefter",
+    "dein Mäppchen"
+   ],
+   "notiz": "F = Vollbild, Pfeil rechts = weiter, N = diese Notiz aus."
+  },
+  {
+   "kopf": "Ein neuer Fall",
+   "titel": "Wer hat das E-Bike gestohlen?",
+   "zeitung": {
+    "titel": "Mainschleifen-Bote (erfunden)",
+    "schlagzeile": "Grünes E-Bike am Busbahnhof gestohlen",
+    "text": "Volkach. Am Dienstagabend, 29. September, hat eine Frau ihr grünes E-Bike um 21:40 Uhr am Busbahnhof abgeschlossen und ist um 21:44 Uhr mit dem Bus nach Würzburg gefahren. Als sie um 23:50 Uhr zurückkam, war das Rad weg. Ein Zeuge sah gegen 22:15 Uhr einen Jugendlichen mit einem Fahrrad über die Mainbrücke Richtung Astheim fahren. Die Farbe konnte er im Dunkeln nicht erkennen. Die Polizei hat die Standorte und Suchanfragen aller Handys aus der Gegend angefordert, nur Nummern, keine Namen."
+   },
+   "eingabe": {
+    "label": "Unsere Vermutungen",
+    "zeilen": 2
+   },
+   "notiz": "Vorlesen. Zwei, drei Vermutungen ins Feld tippen, nicht bewerten."
+  },
+  {
+   "kopf": "Anmelden",
+   "titel": "Öffne die Akte.",
+   "punkte": [
+    "Meldet euch zu zweit an einem PC an.",
+    "Öffnet die Kursseite.",
+    "Wählt eine Stufe: leicht, mittel oder schwer."
+   ],
+   "nummeriert": true,
+   "link": {
+    "text": "weitergehts.online/unterricht/k/inf6b",
+    "url": "https://weitergehts.online/unterricht/k/inf6b/"
+   },
+   "absaetze": [
+    "Schon fertig? Lies die Zeitungsmeldung auf der Seite und schreib die Tatzeit auf."
+   ],
+   "ziel": "Fertig: Stufe 1 offen."
+  },
+  {
+   "kopf": "Daten der Polizei",
+   "titel": "Ermittle wie die Polizei.",
+   "punkte": [
+    "Filtere nach Tag, Uhrzeit und Ort.",
+    "Löst Stufe 1 bis 5.",
+    "Beim Verdacht: Schreibt an die Tafel, wie sicher ihr seid (1 bis 10)."
+   ],
+   "nummeriert": true,
+   "ziel": "Fertig: euer Wert an der Tafel.",
+   "notiz": "Nichts zur Wendung sagen. Bei Stufe 1 fragen: Ab wann genau?"
+  },
+  {
+   "kopf": "Neue Daten",
+   "titel": "Prüf den Verdacht.",
+   "punkte": [
+    "Lies die neuen Daten: Einkäufe und Apps.",
+    "Löst Stufe 6 bis 9.",
+    "Schon fertig? Spielt die Stufe schwer."
+   ],
+   "nummeriert": true,
+   "ziel": "Fertig: Stufe 9 gelöst.",
+   "notiz": "Wer bei Stufe 7 hängt: Vergleich die Uhrzeiten."
+  },
+  {
+   "kopf": "Was wirklich geschah",
+   "titel": "Dienstag, 29.09., am Busbahnhof Volkach",
+   "aufdecken": true,
+   "zeitstrahl": [
+    {
+     "zeit": "21:38",
+     "text": "8471 ist am Busbahnhof. Danach ist sein Handy aus."
+    },
+    {
+     "zeit": "21:40",
+     "text": "Die Besitzerin schließt ihr E-Bike ab und fährt mit dem Bus weg."
+    },
+    {
+     "zeit": "21:42",
+     "text": "Das E-Bike fährt los. 6143 sitzt noch im Bus bei Dettelbach."
+    },
+    {
+     "zeit": "21:51",
+     "text": "Das E-Bike ist in Sommerach."
+    },
+    {
+     "zeit": "21:52",
+     "text": "6143 kommt am Busbahnhof an. Der Akku seines Schlosses ist leer."
+    },
+    {
+     "zeit": "21:56",
+     "text": "8471 bezahlt an der Tankstelle in Sommerach mit Karte."
+    },
+    {
+     "zeit": "21:53–22:03",
+     "text": "Das Schloss von 6143 geht dreimal nicht auf. Er sucht im Netz nach Hilfe."
+    },
+    {
+     "zeit": "22:11",
+     "text": "Das Schloss ist offen."
+    },
+    {
+     "zeit": "22:12–22:19",
+     "text": "6143 fährt mit seinem eigenen Rad nach Hause."
+    }
+   ],
+   "notiz": "Erst die Sicherheitswerte an der Tafel zeigen, dann Zeile für Zeile aufdecken."
+  },
+  {
+   "kopf": "Gemeinsam",
+   "titel": "Die Polizei hatte richtige Daten und lag trotzdem falsch.",
+   "absaetze": [
+    "Erklär, wie das passieren konnte."
+   ],
+   "eingabe": {
+    "label": "Eure Erklärungen",
+    "zeilen": 4
+   },
+   "notiz": "Mittippen. Erwartet: Minuten, Handy aus, fehlende App-Daten, Schloss hatte eine Erklärung."
+  },
+  {
+   "kopf": "Vor einem Verdacht",
+   "titel": "Vier Prüffragen",
+   "punkte": [
+    "Stimmt die Zeit genau?",
+    "Zeigt die Spur das Handy oder den Menschen?",
+    "Welche Daten fehlen?",
+    "Gibt es eine harmlose Erklärung?"
+   ],
+   "nummeriert": true,
+   "aufdecken": true,
+   "notiz": "Zu jeder Frage ein Beispiel aus dem Fall nennen lassen."
+  },
+  {
+   "kopf": "Hefteintrag",
+   "titel": "Wer hat das E-Bike gestohlen?",
+   "merke": "Daten zeigen, wo ein Handy war, nicht, wer etwas getan hat.",
+   "punkte": [
+    "Stimmt die Zeit genau?",
+    "Zeigt die Spur das Handy oder den Menschen?",
+    "Welche Daten fehlen?",
+    "Gibt es eine harmlose Erklärung?"
+   ],
+   "nummeriert": true,
+   "absaetze": [
+    "Schreib Überschrift, Datum und Merksatz von Hand. Schreib zu jeder Frage ein Beispiel."
+   ]
+  }
+ ]
+}

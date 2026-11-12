@@ -1,0 +1,37 @@
+/* Folien — geteiltes Werkzeug: Folien einer Stunde als Webseite für den Beamer.
+   Gestaltung „Blatt": Farben, Schrift, Knopf und Blatt aus ../assets/css/material.css (vorher geladen);
+   hier nur Layout und Größen, nur --m-*-Tokens. Groß genug für die letzte Reihe: Grundschrift wächst mit der Breite. */
+
+body.folien {
+  margin: 0;
+  background: var(--m-grund);
+  color: var(--m-tinte);
+  font: clamp(16px, min(2vw, 3.3vh), 34px)/1.35 var(--m-schrift);
+}
+.f-huelle { max-width: 1400px; margin: 0 auto; padding: 2vh 2vw; min-height: 100vh; box-sizing: border-box;
+  display: flex; flex-direction: column; }
+.f-folie { flex: 1; padding: 3vh 3vw; }
+.f-kopf { margin: 0 0 .3em; font-size: .8em; font-weight: 700; color: var(--m-leise); text-transform: uppercase; letter-spacing: .04em; }
+.f-titel { margin: 0 0 .6em; font-size: 1.9em; line-height: 1.15; }
+.f-absatz { margin: 0 0 .6em; }
+.f-punkte { margin: 0 0 .6em; padding-left: 1.3em; }
+.f-punkte li { margin: 0 0 .45em; }
+.f-verdeckt { visibility: hidden; }
+.f-zeitung { margin: 0 0 .6em; padding: .5em .9em; font-size: .85em; border: 1px solid var(--m-linie); background: var(--m-blatt);
+  font-family: var(--m-wortlaut); box-shadow: var(--m-schatten); }
+.f-zeitung-name { font-size: .7em; color: var(--m-leise); }
+.f-zeitung-schlag { margin: .2em 0 .4em; font-size: 1.25em; font-weight: 700; }
+.f-zeitung p:last-child { margin: 0; }
+.f-zeitstrahl { list-style: none; margin: 0; padding: 0 0 0 1em; border-left: 3px solid var(--m-linie); }
+.f-zeitstrahl li { display: flex; gap: 1em; margin: 0 0 .35em; }
+.f-zeit { flex: 0 0 5.2em; font-weight: 700; font-variant-numeric: tabular-nums; }
+.f-link { display: inline-block; margin: .2em 0 .6em; font-size: 1.15em; font-weight: 700; color: var(--m-blau); word-break: break-all; }
+.f-eingabe { display: block; margin: .4em 0; }
+.f-eingabe-label { display: block; margin-bottom: .2em; font-weight: 700; }
+.f-eingabe textarea { width: 100%; box-sizing: border-box; padding: .4em .6em; font-size: 1em; line-height: 1.4;
+  border: 2px solid var(--m-linie); border-radius: var(--m-ecke); background: var(--m-blatt); }
+.f-merke { margin: .6em 0; padding: .5em .8em; border-left: 6px solid var(--m-ocker); background: var(--m-notiz); }
+.f-ziel { margin: .8em 0 0; font-weight: 700; }
+.f-notiz { margin-top: 1em; padding: .5em .8em; border: 1px dashed var(--m-linie); font-size: .7em; color: var(--m-leise); }
+.f-leiste { display: flex; align-items: center; gap: 12px; justify-content: flex-end; padding: 1vh 0 0; font-size: 16px; }
+.f-zaehler { margin-right: auto; }

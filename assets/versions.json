@@ -25,6 +25,8 @@
     "begleiten.js": "1.7",
     "begleiten.css": "1.2",
     "zeitkarte.js": "1.9",
-    "zeitkarte.css": "1.9"
+    "zeitkarte.css": "1.9",
+    "folien.js": "1.0",
+    "folien.css": "1.0"
   }
 }
