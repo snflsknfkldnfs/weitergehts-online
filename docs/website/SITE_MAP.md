@@ -2,7 +2,7 @@
 
 > **Ist-Zustand** der Site als Menge von **Verticals**. Anker für „wo gehört Neues hin".
 > Soll-Architektur, Prämissen + Entscheidungs-Log: `ARCHITEKTUR.md`.
-> Bei jeder neuen Sektion/Game/Seite hier eintragen. Stand: 2026-10-29 (Werkzeuge Verteilen, Abstimmen, Begleiten; Kursseiten; Einzel-Material steht in `unterricht/kurse.json`, nicht hier).
+> Bei jeder neuen Sektion/Game/Seite hier eintragen. Stand: 2026-11-13 (AK-Seiten `ak/`; Werkzeuge Verteilen, Abstimmen, Begleiten; Kursseiten; Einzel-Material steht in `unterricht/kurse.json`, nicht hier).
 
 ## Verticals (Drei-Säulen-IA seit E3)
 
@@ -21,8 +21,9 @@
 | **Unterricht · WiB-Tools** | `unterricht/wib/` | self-contained HTML (Chart.js via CDN), `localStorage`, kein Backend/Tracking | — | live (2 Tools: Haushaltsbuch + Geld-Wert) |
 | **Unterricht · Lernraum** | `assets/data/*.json` | via `make lernraum` generierte Glossar-/KE-Daten | `tools/lernraum/` | Daten vorhanden; Konsument-Seiten teils mit Examens-Schiene archiviert |
 | **Lernen · Stoffliste PhC III** | `lernen/phc3-stoffliste/` (einfache Karten, unverändert seit 2026-10-09) + `lernen/phc3-stoffliste/abfrage/` (Lernmodus) | self-contained HTML, 210 Karten (RDKit-SVG) im JSON-Block; Lernmodus mit Reitern Abfrage (Wiederholung mit Abstand, 2 Richtungen, Stufen A–D, Familien) · Familien · Stand (Export/Import); `localStorage`, kein Backend; noindex, nicht verlinkt. Datenblock via `lernen/phc3-stoffliste/_build/build.py` aus `karten.json` + `ordnung.tsv` (Quelle: `~/weitergehts.online/Bahar/Zulassungsklausur/`) | — | live (privat, Bahar) |
+| **AK Ehrenamt · Rollen + Rückmeldung** | `ak/` | `index.html` (Kacheln), `rolle.html?nr=NN\|allgemein` (Karte + anonymes Formular); Kartendaten `ak/rollen.json`, Logik `ak/ak.js`, Gestaltung `ak/ak.css` (Wireframe-Sprache aus die-matrixe, nicht `wg`); Antworten an das Umfragen-Backend (Supabase Frankfurt, Verwaltung im Repo `~/umfragen-backend/`); unverlinkt + `noindex` (QR/Direktlink) | — | live (seit 13.11.2026; Umfrage `ak-rollen-2026`) |
 | **Impressum** | `impressum/` | statische Pflichtangaben (§ 5 DDG) | — | live (⚠ Anschrift `TODO-PAUL`) |
-| **Datenschutz** | `datenschutz/` | statische DSGVO-Erklärung (Hosting/Cookies/Fonts/Dritt-Inhalte/Rechte) | — | live (⚠ Anschrift `TODO-PAUL`) |
+| **Datenschutz** | `datenschutz/` | statische DSGVO-Erklärung (Hosting/Cookies/Fonts/Dritt-Inhalte/anonyme Umfragen `#umfragen`/Rechte) | — | live (⚠ Anschrift `TODO-PAUL`) |
 | **404** | `404.html` | „umgezogen"-Seite mit root-absoluten Links (unter beliebiger URL ausgeliefert) | — | live |
 | **Zettelkasten** | `/zettelkasten/` *(geplant, E4)* | extern generierter Atlas-Mount (`zk-atlas` → statisches HTML, nie handeditiert) | — | geplant (s. `ARCHITEKTUR.md`) |
 
@@ -84,7 +85,7 @@ steckt vollständig in `theme-gpg.css` + Engine, jedes neue Game erbt ihn.
 - **`_`-präfixierte Ordner** (`_archiv-…`, `_template/`, `_smoketest_out/`, …) = nicht-deploybarer
   Scratch/Archiv: von `check`, `bump` und Publish (`make site`) ausgeschlossen.
 - **Deploy-Scope (Allowlist, `make site`):** öffentlich = `index.html`, `404.html`, `favicon.svg`,
-  `favicon.ico`, `unterricht/`, `assets/`, `profil/`, `impressum/`, `datenschutz/`, `CNAME`.
+  `favicon.ico`, `unterricht/`, `assets/`, `profil/`, `impressum/`, `datenschutz/`, `ak/`, `CNAME`.
   Intern (nie live) = `docs/`, `tools/`, `_archiv*`, `_design-scoping/`, `.claude/`, Repo-Meta.
 
 ## Offene IA-Fragen (für später)
