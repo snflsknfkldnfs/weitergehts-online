@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Schüler machen Schule · Rollen</title>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="stylesheet" href="ak.css?v=1.0">
+<link rel="stylesheet" href="ak.css?v=1.1">
 </head>
 <body data-seite="start">
 <header class="kopf">
@@ -15,16 +15,33 @@
 </header>
 <main class="rumpf">
   <section class="blatt-kopf">
-    <h1>Rollen zur Diskussion</h1>
-    <ul class="zeilen">
-      <li>Mögliche Rollen, in denen Schülerinnen und Schüler Verantwortung an unserer Schule übernehmen.</li>
-      <li>Eine Karte antippen, lesen, Rückmeldung geben.</li>
-      <li>Anonym, bitte ohne Namen.</li>
-    </ul>
+    <h1 id="v-titel">Schüler machen Schule</h1>
+    <p class="leise" id="v-satz"></p>
     <div class="stand">
       <span class="zustand" id="status">Stand wird geladen …</span>
       <button type="button" class="linkknopf" id="dsgvo-oeffnen">Hinweise zum Datenschutz</button>
     </div>
+  </section>
+
+  <div class="zweispaltig">
+    <section class="abschnitt">
+      <h2>Worum es geht</h2>
+      <ul class="blatt zeilen" id="v-worum"></ul>
+    </section>
+    <section class="abschnitt">
+      <h2>Warum jetzt</h2>
+      <ul class="blatt zeilen" id="v-warum"></ul>
+    </section>
+  </div>
+
+  <section class="abschnitt">
+    <h2>Der Weg</h2>
+    <ol class="blatt strecke" id="v-strecke"></ol>
+  </section>
+
+  <section class="abschnitt">
+    <h2>Was du jetzt tun kannst</h2>
+    <ul class="blatt zeilen" id="v-mitmachen"></ul>
   </section>
 
   <section class="abschnitt">
@@ -38,13 +55,13 @@
     </div>
   </section>
 
-  <section class="abschnitt">
+  <section class="abschnitt" id="rollen">
     <h2>Die Rollen</h2>
     <div class="kacheln" id="kacheln"><p class="leise">Rollen werden geladen …</p></div>
   </section>
 
   <p class="fuss"><span>Arbeitskreis Ehrenamt · Entwurf</span><a href="../datenschutz/#umfragen">Datenschutz</a><a href="../impressum/">Impressum</a></p>
 </main>
-<script src="ak.js?v=1.0"></script>
+<script src="ak.js?v=1.1"></script>
 </body>
 </html>

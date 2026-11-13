@@ -175,6 +175,34 @@
     }).catch(function () {
       $('#kacheln').innerHTML = '<p class="leise">Die Rollen ließen sich nicht laden. Bitte Seite neu laden.</p>';
     });
+    vorhabenLaden();
+  }
+
+  // Überblick über das Vorhaben aus vorhaben.json (Worum, Warum, Der Weg, Mitmachen)
+  function vorhabenLaden() {
+    fetch('vorhaben.json', { cache: 'no-store' }).then(function (r) {
+      if (!r.ok) throw new Error('vorhaben.json ' + r.status);
+      return r.json();
+    }).then(function (v) {
+      var esc = function (z) { return e(z); };
+      $('#v-titel').textContent = v.titel;
+      $('#v-satz').textContent = v.satz;
+      $('#v-worum').innerHTML = v.worum.map(function (z) { return '<li>' + esc(z) + '</li>'; }).join('');
+      $('#v-warum').innerHTML = v.warum.map(function (z) { return '<li>' + esc(z) + '</li>'; }).join('');
+      $('#v-mitmachen').innerHTML = v.mitmachen.map(function (z) { return '<li>' + esc(z) + '</li>'; }).join('');
+      var jetzt = -1;
+      v.stationen.forEach(function (s, i) { if (s.id === v.jetzt) jetzt = i; });
+      $('#v-strecke').innerHTML = v.stationen.map(function (s, i) {
+        var art = i < jetzt ? 'erledigt' : (i === jetzt ? 'jetzt' : 'kommt');
+        return '<li class="halt ' + art + '"' + (art === 'jetzt' ? ' aria-current="step"' : '') + '>' +
+          '<span class="knoten" aria-hidden="true">' + (art === 'erledigt' ? '✓' : '') + '</span>' +
+          '<span><span class="zeit">' + esc(s.zeit) + (art === 'erledigt' ? ' · erledigt' : '') + '</span>' +
+          '<strong>' + esc(s.titel) + (art === 'jetzt' ? '<span class="hier">hier sind wir</span>' : '') + '</strong>' +
+          '<span class="zeile">' + esc(s.zeile) + '</span></span></li>';
+      }).join('');
+    }).catch(function () {
+      $('#v-strecke').innerHTML = '<li class="leise">Der Überblick ließ sich nicht laden. Bitte Seite neu laden.</li>';
+    });
   }
 
   // ---- Rollenseite ----------------------------------------------------------------------------

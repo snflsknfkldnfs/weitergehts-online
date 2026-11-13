@@ -145,3 +145,27 @@ dialog.dsgvo .mehr { margin-top: 10px; color: var(--leise); font-size: .9375rem;
 
 /* ---- Fuß ---- */
 .fuss { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 32px; color: var(--leise); font-size: .875rem; }
+
+/* ---- Startseite: Überblick über das Vorhaben ---- */
+.zweispaltig { display: grid; gap: 0 20px; grid-template-columns: 1fr; }
+@media (min-width: 900px) { .zweispaltig { grid-template-columns: 1fr 1fr; } }
+ul.blatt.zeilen { margin: 0; padding: 12px 20px; }
+#v-satz { margin-top: 4px; }
+
+/* Der Weg als Streckenplan: eine Linie mit Halten; erledigt = gefüllt mit Haken,
+   jetzt = Ring mit dem Wort „hier sind wir“, künftig = hohl. Form trägt die Bedeutung, Farbe kommt dazu. */
+.strecke { list-style: none; margin: 0; padding: 14px 20px 6px; }
+.halt { position: relative; display: grid; grid-template-columns: 28px 1fr; gap: 0 12px; padding-bottom: 16px; }
+.halt::before { content: ""; position: absolute; left: 13px; top: 22px; bottom: -2px; width: 2px; background: var(--linie-hell); }
+.halt:last-child::before { display: none; }
+.halt.erledigt::before { background: var(--tinte); }
+.knoten { width: 20px; height: 20px; margin: 2px 4px 0; border-radius: 50%; border: 2px solid var(--linie); background: var(--flaeche);
+  display: flex; align-items: center; justify-content: center; font-size: 12px; line-height: 1; color: #fff; z-index: 1; }
+.erledigt .knoten { background: var(--tinte); border-color: var(--tinte); }
+.jetzt .knoten { border: 3px solid var(--hier); box-shadow: 0 0 0 4px rgba(17,97,125,.15); }
+.halt .zeit { font-size: .875rem; color: var(--leise); }
+.halt strong { display: block; font-weight: 650; line-height: 1.3; }
+.halt .zeile { color: var(--leise); font-size: .9375rem; }
+.erledigt strong { font-weight: 500; }
+.hier { display: inline-block; margin-left: 8px; padding: 0 9px; border: 1.5px solid var(--hier); border-radius: 999px;
+  color: var(--hier); font-size: .8125rem; font-weight: 650; vertical-align: 2px; }

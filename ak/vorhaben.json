@@ -1,0 +1,33 @@
+{
+ "_hinweis": "Inhalt der Startseite /ak/. Nur Vorderbühne: verständlich ohne Vorwissen, je Satz eine Zeile. Den aktuellen Halt über 'jetzt' setzen (id einer Station). Stationen davor gelten als erledigt.",
+ "titel": "Schüler machen Schule",
+ "satz": "Ein Vorhaben des Arbeitskreises Ehrenamt an unserer Schule.",
+ "worum": [
+  "Schülerinnen und Schüler übernehmen Verantwortung für einen Raum, eine Gruppe, ein Kind oder eine Aufgabe.",
+  "Dafür bekommen sie Anerkennung, eigene Ressourcen und echte Entscheidungen.",
+  "Sie helfen und sind Gastgeber; sie kontrollieren keine Mitschülerinnen und Mitschüler.",
+  "Ordnung durchsetzen bleibt Sache der Lehrkräfte."
+ ],
+ "warum": [
+  "Engagement in der Schule sichtbar machen und stärken.",
+  "Der Lotsendienst braucht mehr Freiwillige.",
+  "In den Pausen ist an den Toiletten Gedränge, im Schulbus wird geschubst.",
+  "Wer Verantwortung trägt, erlebt: Mein Einsatz bewirkt etwas."
+ ],
+ "jetzt": "sichten",
+ "stationen": [
+  { "id": "klaeren", "zeit": "November", "titel": "Klären im Arbeitskreis", "zeile": "Auftrag, Leitbild und Reihenfolge" },
+  { "id": "sichten", "zeit": "November", "titel": "Rollen sichten im Arbeitskreis", "zeile": "28 mögliche Rollen, was nicht passt, fällt heraus" },
+  { "id": "kollegium", "zeit": "Ende November", "titel": "Rückmeldung aus dem Kollegium", "zeile": "Karten im Aushang und online, anonyme Rückmeldung je Rolle" },
+  { "id": "schueler", "zeit": "Dezember", "titel": "Stimmen der Schülerinnen und Schüler", "zeile": "zu den Rollen, die das Kollegium vorausgewählt hat" },
+  { "id": "auswahl", "zeit": "Januar", "titel": "Zwei bis drei Pilotrollen auswählen", "zeile": "mit Ansprechpersonen aus dem Kollegium" },
+  { "id": "pilot", "zeit": "Februar bis Juli", "titel": "Pilotrollen starten", "zeile": "nach etwa sechs Wochen gemeinsamer Rückblick" },
+  { "id": "ehrung", "zeit": "Juli", "titel": "Ehrung und Auswertung", "zeile": "Zertifikat mit Unterschrift des Rektors, Zeugnisvermerk" },
+  { "id": "ausweiten", "zeit": "ab Schuljahr 2027/28", "titel": "Ausweiten und öffnen", "zeile": "weitere Rollen, Zusammenarbeit mit Vereinen und Organisationen" }
+ ],
+ "mitmachen": [
+  "Karten ansehen: unten eine Rolle antippen.",
+  "Rückmeldung geben: anonym, je Rolle oder zum Vorhaben insgesamt.",
+  "Ansprechperson werden: auf der Karte angeben, ob du dir das vorstellen kannst."
+ ]
+}
