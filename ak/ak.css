@@ -257,3 +257,13 @@ ins.hand.lang sup.anker-nr { font-size: 1.05rem; }
 .veto-an .blatt > * { opacity: .5; }
 .veto-an .blatt::after { content: ""; position: absolute; inset: 0; pointer-events: none;
   background: linear-gradient(to top right, transparent calc(50% - 1.5px), var(--hand) calc(50% - 1px), var(--hand) calc(50% + 1px), transparent calc(50% + 1.5px)); }
+
+/* Notiz zur ganzen Karte: als erkennbarer Knopf, aufgeklappt mit Feld */
+details.freitext { border-top: 0; padding-top: 0; margin-top: 14px; }
+details.freitext summary { list-style: none; display: inline-flex; align-items: center; gap: 8px; min-height: var(--klick);
+  padding: 0 16px; border: 1px solid var(--linie); border-radius: 999px; background: var(--flaeche); font-weight: 600; cursor: pointer; }
+details.freitext summary::-webkit-details-marker { display: none; }
+details.freitext summary:hover { border-color: var(--tinte); }
+details.freitext .plus::before { content: "+"; font-size: 1.15rem; line-height: 1; }
+details.freitext[open] .plus::before { content: "−"; }
+details.freitext[open] summary { margin-bottom: 4px; }

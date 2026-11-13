@@ -285,7 +285,7 @@
             return '<label><input type="radio" name="pult-' + f.feld + '" value="' + e(o) + '"><span>' + e(o) + '</span></label>';
           }).join('') + '</div></fieldset>';
       }).join('') +
-      '<details class="freitext"><summary>' + (istGanzesVorhaben ? 'Zum Vorhaben insgesamt' : 'Zur ganzen Karte') + '</summary>' +
+      '<details class="freitext"><summary><span class="plus" aria-hidden="true"></span>' + (istGanzesVorhaben ? 'Notiz zum Vorhaben schreiben' : 'Notiz zur ganzen Karte schreiben') + '</summary>' +
       '<p class="leitfragen">' + (istGanzesVorhaben ? LEITFRAGEN.allgemein : LEITFRAGEN.rolle).map(e).join(' · ') + '</p>' +
       '<textarea id="f-ganzes" data-feld="ganzes" maxlength="' + GRENZE + '" aria-label="Notiz zur ganzen Karte"></textarea></details>' +
       '<p class="datenhinweis">Anonym, bitte keine Namen.</p>' +
