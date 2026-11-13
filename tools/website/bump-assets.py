@@ -84,6 +84,7 @@ def html_files() -> list[Path]:
         if p.exists():
             files.append(p)
     files += list(REPO_ROOT.glob("profil/**/*.html"))
+    files += list(REPO_ROOT.glob("ak/**/*.html"))
     files += list(REPO_ROOT.glob("impressum/**/*.html"))
     files += list(REPO_ROOT.glob("datenschutz/**/*.html"))
     return [

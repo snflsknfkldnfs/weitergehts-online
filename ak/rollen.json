@@ -1,0 +1,537 @@
+{
+ "stand": "13.11.2026",
+ "rollen": [
+  {
+   "nr": "01",
+   "symbol": "🚸",
+   "rolle": "Schülerlotsen",
+   "satz": "Ich bringe jüngere Kinder sicher über die Straße.",
+   "jgst": "7–10 (ab 13 Jahren)",
+   "verantwortung": "eine Gruppe",
+   "bei_uns": "gibt es schon",
+   "loest": "Zu wenig Lotsen, gefährliche Übergänge am Schulweg",
+   "aufgaben": [
+    "an einem festen Übergang lotsen",
+    "Einsatzplan im Team organisieren",
+    "Neue Lotsen begleiten"
+   ],
+   "ressourcen": "Ausbildung durch die Polizei, Kelle und Weste, Schulweg-Pass",
+   "entscheidest": "Einsatzplan und Vertretungen",
+   "braucht": "Verkehrswacht, Polizei, Einwilligung der Eltern",
+   "beachten": "Mindestalter 13, freiwillig, gesetzlich unfallversichert"
+  },
+  {
+   "nr": "02",
+   "symbol": "🤝",
+   "rolle": "Tutoren / Mentoren für die 5. Klassen",
+   "satz": "Ich begleite eine 5. Klasse durch ihr erstes Jahr an unserer Schule.",
+   "jgst": "8–10",
+   "verantwortung": "eine Gruppe",
+   "bei_uns": "gibt es schon",
+   "loest": "Neue Fünftklässler finden schwer Anschluss und Orientierung",
+   "aufgaben": [
+    "Ansprechpartner für „meine“ Klasse sein",
+    "Aktionen planen (Rallye, Pausenspiele)",
+    "Bei Sorgen an Erwachsene weitergeben"
+   ],
+   "ressourcen": "Feste Zeit bei der Klasse, kleines Aktionsbudget",
+   "entscheidest": "Welche Aktionen das Team mit seiner Klasse macht",
+   "braucht": "Einführung durch die Schulsozialarbeit",
+   "beachten": "Ernste Sorgen immer an Klassenleitung oder Schulsozialarbeit"
+  },
+  {
+   "nr": "03",
+   "symbol": "🗳️",
+   "rolle": "Klassen- und Schülersprecher (SMV)",
+   "satz": "Ich bin die Stimme meiner Klasse bzw. der Schülerschaft.",
+   "jgst": "5–10",
+   "verantwortung": "eine Gruppe",
+   "bei_uns": "gibt es schon",
+   "loest": "Anliegen der Schüler kommen bei Schulleitung und Verwaltung nicht an",
+   "aufgaben": [
+    "Anliegen sammeln und einbringen",
+    "Ideenkasten auswerten",
+    "SMV-Aktionen organisieren"
+   ],
+   "ressourcen": "Klassensprecherversammlung, SMV-Zimmer, eigenes Budget",
+   "entscheidest": "Was mit den Ideen der Schülerschaft passiert",
+   "braucht": "Verbindungslehrerinnen, sichtbare Antworten der Schulleitung",
+   "beachten": "Gesetzliche Grundlage: Art. 62 BayEUG"
+  },
+  {
+   "nr": "04",
+   "symbol": "🚻",
+   "rolle": "Toiletten-Gastgeber",
+   "satz": "Ich sorge dafür, dass sich alle in unseren Toiletten wohlfühlen.",
+   "jgst": "7–10 (Vorschlag)",
+   "verantwortung": "einen Raum",
+   "bei_uns": "neu",
+   "loest": "Ungepflegte, ungemütliche Toiletten und Gedränge in den Pausen",
+   "aufgaben": [
+    "Ausstattung und Gestaltung planen",
+    "Mängel an den Hausmeister melden",
+    "Jüngere freundlich empfangen"
+   ],
+   "ressourcen": "Budget für Ausstattung, direkter Draht zum Hausmeister, Erkennungszeichen",
+   "entscheidest": "Wie der Raum gestaltet und ausgestattet wird",
+   "braucht": "Hausmeister, der Mängel zeitnah behebt",
+   "beachten": "Kein Durchsetzen von Regeln, Aufsicht bleibt bei der Lehrkraft, kein Aufenthalt in den Kabinenbereichen"
+  },
+  {
+   "nr": "05",
+   "symbol": "🚌",
+   "rolle": "Buspaten",
+   "satz": "Ich bin im Schulbus ein freundliches Gesicht für die Jüngeren.",
+   "jgst": "8–10 (Vorschlag)",
+   "verantwortung": "eine Gruppe",
+   "bei_uns": "neu",
+   "loest": "Jüngere fühlen sich im Bus unsicher, es wird geschubst",
+   "aufgaben": [
+    "Die Jüngeren meiner Linie kennenlernen",
+    "Ansprechbar sein und einen Platz anbieten",
+    "Verbesserungen vorschlagen"
+   ],
+   "ressourcen": "Kennenlernen der Fünftklässler zum Schuljahresbeginn, Erkennungszeichen",
+   "entscheidest": "Wie das Team die Jüngeren seiner Linie begleitet",
+   "braucht": "Kontakt zum Busunternehmen, ggf. Ausbildung durch die Verkehrswacht",
+   "beachten": "Kein Eingreifen, im Bus ist der Fahrer zuständig, Versicherung klären"
+  },
+  {
+   "nr": "06",
+   "symbol": "⚽",
+   "rolle": "Pausenhelfer / Spielausleihe",
+   "satz": "Ich kümmere mich um die Spielekiste unserer Pause.",
+   "jgst": "5–7 (Einstiegsrolle)",
+   "verantwortung": "einen Raum",
+   "bei_uns": "neu",
+   "loest": "Langeweile und Konflikte in der Pause",
+   "aufgaben": [
+    "Spielgeräte ausgeben und zurücknehmen",
+    "Kleine Pausenspiele anleiten",
+    "Wünsche der Klassen sammeln"
+   ],
+   "ressourcen": "Eigene Spielekiste, Budget für Spielgeräte",
+   "entscheidest": "Welche Spielgeräte angeschafft werden",
+   "braucht": "Platz für eine Ausleihstation",
+   "beachten": "Pausenaufsicht bleibt bestehen"
+  },
+  {
+   "nr": "07",
+   "symbol": "⛑️",
+   "rolle": "Schulsanitätsdienst",
+   "satz": "Ich leiste Erste Hilfe, bis Erwachsene übernehmen.",
+   "jgst": "ab 5, sinnvoll eher ab 7",
+   "verantwortung": "eine Aufgabe",
+   "bei_uns": "neu",
+   "loest": "Kleine Verletzungen und Unwohlsein im Schulalltag",
+   "aufgaben": [
+    "Erstversorgung leisten",
+    "Sanitätstasche pflegen",
+    "Erste-Hilfe-Aktionen für Klassen"
+   ],
+   "ressourcen": "Ausbildung mit Zertifikat, eigene Sanitätstasche bzw. eigener Raum",
+   "entscheidest": "Dienstplan, Materialpflege und Bestellungen",
+   "braucht": "BRK, Johanniter oder Malteser, betreuende Lehrkraft",
+   "beachten": "Unter Aufsicht einer Lehrkraft, bei Ernstfall sofort Notruf"
+  },
+  {
+   "nr": "08",
+   "symbol": "🕊️",
+   "rolle": "Streitschlichter",
+   "satz": "Ich helfe zwei Streitenden, selbst eine Lösung zu finden.",
+   "jgst": "7–10",
+   "verantwortung": "eine Aufgabe",
+   "bei_uns": "neu",
+   "loest": "Kleine Konflikte eskalieren",
+   "aufgaben": [
+    "Schlichtungsgespräche führen",
+    "Sprechzeiten anbieten",
+    "Angebot in den Klassen vorstellen"
+   ],
+   "ressourcen": "Ausbildung in Gesprächsführung, eigener Schlichtungsraum",
+   "entscheidest": "Sprechzeiten und Gestaltung des Raums",
+   "braucht": "Ausbildung durch Schulsozialarbeit oder externe Anbieter",
+   "beachten": "Nur bei Freiwilligkeit beider Seiten, Mobbing und Gewalt gehen an Erwachsene"
+  },
+  {
+   "nr": "09",
+   "symbol": "🎛️",
+   "rolle": "Technikteam",
+   "satz": "Ich sorge dafür, dass bei Veranstaltungen die Technik läuft.",
+   "jgst": "7–10",
+   "verantwortung": "eine Aufgabe",
+   "bei_uns": "neu",
+   "loest": "Lehrkräfte kämpfen mit Beamer, Ton und iPad-Koffern",
+   "aufgaben": [
+    "Ton und Licht bei Veranstaltungen",
+    "Technik vorbereiten",
+    "Lehrkräften und Mitschülern helfen"
+   ],
+   "ressourcen": "Eigener Technikbestand, Budget für Kabel und Adapter",
+   "entscheidest": "Aufbau und Anschaffungen",
+   "braucht": "Einführung durch die Systembetreuung",
+   "beachten": "Kein Zugriff auf Accounts, Passwörter oder Verwaltungsnetz"
+  },
+  {
+   "nr": "10",
+   "symbol": "📱",
+   "rolle": "Medienscouts",
+   "satz": "Ich berate Jüngere zu Social Media und Cybermobbing.",
+   "jgst": "7–10",
+   "verantwortung": "eine Aufgabe",
+   "bei_uns": "neu",
+   "loest": "Probleme mit Social Media, Cybermobbing und Datenschutz",
+   "aufgaben": [
+    "Workshops für 5./6. Klassen",
+    "Sprechstunde",
+    "Infoplakate"
+   ],
+   "ressourcen": "Ausbildung, Zeitfenster in Klassleiterstunden, Material",
+   "entscheidest": "Inhalte und Form der Workshops",
+   "braucht": "Ausbildungsangebot (in Bayern noch zu klären)",
+   "beachten": "Keine Einsicht in fremde Handys, Gefährdung sofort an Erwachsene"
+  },
+  {
+   "nr": "11",
+   "symbol": "📖",
+   "rolle": "Lesepaten",
+   "satz": "Ich lese regelmäßig mit einem jüngeren Kind.",
+   "jgst": "6–10",
+   "verantwortung": "ein Kind",
+   "bei_uns": "neu",
+   "loest": "Jüngere und DaZ-Kinder lesen zu wenig",
+   "aufgaben": [
+    "Regelmäßig gemeinsam lesen",
+    "Bücher auswählen",
+    "Lesestunden gestalten"
+   ],
+   "ressourcen": "Feste Zeitfenster, eigene Bücherkiste",
+   "entscheidest": "Welche Bücher gelesen werden",
+   "braucht": "Absprache mit Grundschule bzw. Klassenleitungen",
+   "beachten": "Weg und Aufsicht bei Einsätzen an der Grundschule klären"
+  },
+  {
+   "nr": "12",
+   "symbol": "🌟",
+   "rolle": "Wertebotschafter",
+   "satz": "Ich setze eigene Projekte für ein gutes Miteinander um.",
+   "jgst": "8–10 (je nach Ausschreibung)",
+   "verantwortung": "eine Aufgabe",
+   "bei_uns": "neu",
+   "loest": "Respekt und Miteinander an der Schule stärken",
+   "aufgaben": [
+    "Ausbildung im Landesprogramm",
+    "Eigenes Werteprojekt planen",
+    "Projekt umsetzen"
+   ],
+   "ressourcen": "Ausbildung durch das Land, Zeit für Projekte",
+   "entscheidest": "Thema und Form der Projekte",
+   "braucht": "Vorschlag durch die Schulleitung zu Schuljahresbeginn",
+   "beachten": "Teilnahme über die Schulleitung"
+  },
+  {
+   "nr": "13",
+   "symbol": "💬",
+   "rolle": "Ideenkasten-Team",
+   "satz": "Ich sorge dafür, dass Ideen und Anliegen aller Schüler ankommen.",
+   "jgst": "7–10",
+   "verantwortung": "eine Aufgabe",
+   "bei_uns": "neu",
+   "loest": "Schüler haben keinen einfachen Weg, Ideen und Kritik loszuwerden",
+   "aufgaben": [
+    "Ideenkasten (Papier und QR) betreuen",
+    "Anliegen sortieren und weitergeben",
+    "Antworten der Schulleitung sichtbar machen"
+   ],
+   "ressourcen": "Ideenkasten, Aushangfläche, fester Termin mit der Schulleitung",
+   "entscheidest": "Welche Anliegen wie weitergegeben und veröffentlicht werden",
+   "braucht": "Schulleitung, die sichtbar antwortet",
+   "beachten": "Hinweis am Kasten: Bei Mobbing oder Gefahr direkt an Vertrauenspersonen wenden"
+  },
+  {
+   "nr": "14",
+   "symbol": "🛋️",
+   "rolle": "SMV-Zimmer-Team",
+   "satz": "Ich verantworte den Raum, in dem sich Engagierte treffen.",
+   "jgst": "7–10",
+   "verantwortung": "einen Raum",
+   "bei_uns": "neu",
+   "loest": "Engagierte haben keinen eigenen Ort",
+   "aufgaben": [
+    "Raum einrichten und gestalten",
+    "Material und Belegung organisieren",
+    "Ansprechbar sein"
+   ],
+   "ressourcen": "Eigener Raum, Budget für Einrichtung, Schlüsselregelung",
+   "entscheidest": "Einrichtung, Gestaltung und Nutzung des Raums",
+   "braucht": "Einen freien Raum",
+   "beachten": "Schlüssel und Aufsicht klären"
+  },
+  {
+   "nr": "15",
+   "symbol": "✏️",
+   "rolle": "Lernpaten",
+   "satz": "Ich helfe einem jüngeren Kind beim Lernen.",
+   "jgst": "8–10",
+   "verantwortung": "ein Kind",
+   "bei_uns": "neu",
+   "loest": "Jüngere brauchen Unterstützung, Nachhilfe ist teuer",
+   "aufgaben": [
+    "Regelmäßig mit „meinem“ Kind lernen",
+    "Hausaufgaben begleiten",
+    "Fortschritte feiern"
+   ],
+   "ressourcen": "Feste Lernzeit und Raum, Lernmaterial",
+   "entscheidest": "Wie die Lernzeit gestaltet wird",
+   "braucht": "Absprache mit Klassen- bzw. Fachlehrkräften",
+   "beachten": "Keine Notenverantwortung, Probleme an Lehrkräfte"
+  },
+  {
+   "nr": "16",
+   "symbol": "🌍",
+   "rolle": "Sprachpaten",
+   "satz": "Ich helfe neu zugezogenen Kindern, bei uns anzukommen.",
+   "jgst": "7–10",
+   "verantwortung": "ein Kind",
+   "bei_uns": "neu",
+   "loest": "Kinder mit wenig Deutsch sind oft allein",
+   "aufgaben": [
+    "Schulhaus und Abläufe zeigen",
+    "Im Alltag übersetzen und erklären",
+    "Gemeinsam die Pause verbringen"
+   ],
+   "ressourcen": "Zeit mit „meinem“ Kind, kleines Willkommenspaket",
+   "entscheidest": "Wie das Ankommen gestaltet wird",
+   "braucht": "Schüler mit gemeinsamer Sprache, Begleitung durch DaZ-Lehrkraft",
+   "beachten": "Kein Dolmetschen in Eltern- oder Notengesprächen"
+  },
+  {
+   "nr": "17",
+   "symbol": "🙋",
+   "rolle": "Willkommenspaten",
+   "satz": "Ich begleite Mitschüler, die im laufenden Schuljahr neu in meine Klasse kommen.",
+   "jgst": "5–10",
+   "verantwortung": "ein Kind",
+   "bei_uns": "neu",
+   "loest": "Wer mitten im Jahr kommt, findet schwer Anschluss",
+   "aufgaben": [
+    "Die ersten Tage begleiten",
+    "Schulhaus und Regeln zeigen",
+    "Mit in die Pause nehmen"
+   ],
+   "ressourcen": "Willkommensmappe, Freistellung für die ersten Tage",
+   "entscheidest": "Wie die ersten Tage gestaltet werden",
+   "braucht": "Info durch die Klassenleitung",
+   "beachten": "Einstiegsrolle, gut ab Jgst. 5"
+  },
+  {
+   "nr": "18",
+   "symbol": "🏫",
+   "rolle": "Schulhausführer",
+   "satz": "Ich zeige Gästen und künftigen Fünftklässlern unsere Schule.",
+   "jgst": "7–10",
+   "verantwortung": "eine Aufgabe",
+   "bei_uns": "neu",
+   "loest": "Gäste und Viertklässler lernen die Schule nur aus Erwachsenensicht kennen",
+   "aufgaben": [
+    "Führungen am Tag der offenen Tür",
+    "Viertklässler beim Schnuppertag begleiten",
+    "Schule vorstellen"
+   ],
+   "ressourcen": "Führungsrunde, Erkennungszeichen, Infomaterial",
+   "entscheidest": "Wie die Schule präsentiert wird",
+   "braucht": "Termine wie Tag der offenen Tür und Übertritt",
+   "beachten": "Aufsicht bei Gruppen mit Grundschulkindern"
+  },
+  {
+   "nr": "19",
+   "symbol": "♻️",
+   "rolle": "Umwelt- und Energieteam",
+   "satz": "Ich kümmere mich darum, dass unsere Schule Energie und Müll spart.",
+   "jgst": "6–10",
+   "verantwortung": "eine Aufgabe",
+   "bei_uns": "neu",
+   "loest": "Licht brennt, Müll wird nicht getrennt",
+   "aufgaben": [
+    "Mülltrennung organisieren",
+    "Energiespar-Aktionen planen",
+    "Ideen an die Schulleitung"
+   ],
+   "ressourcen": "Budget für Behälter und Aktionen, Kontakt zum Sachaufwandsträger",
+   "entscheidest": "Welche Aktionen umgesetzt werden",
+   "braucht": "Hausmeister, ggf. Förderprogramme",
+   "beachten": "Aktionen statt Kontrolle von Mitschülern"
+  },
+  {
+   "nr": "20",
+   "symbol": "🌱",
+   "rolle": "Schulgarten-Team",
+   "satz": "Ich pflege ein Stück Schulgelände, das allen gehört.",
+   "jgst": "5–10",
+   "verantwortung": "einen Raum",
+   "bei_uns": "neu",
+   "loest": "Das Schulgelände ist grau und ungenutzt",
+   "aufgaben": [
+    "Beete anlegen und pflegen",
+    "Ernte verwenden",
+    "Garten für Klassen öffnen"
+   ],
+   "ressourcen": "Fläche, Werkzeug, Budget für Pflanzen",
+   "entscheidest": "Was angepflanzt wird und wie der Garten aussieht",
+   "braucht": "Fläche, Gießen in den Ferien",
+   "beachten": "Werkzeug sicher verwenden"
+  },
+  {
+   "nr": "21",
+   "symbol": "📰",
+   "rolle": "Schülerzeitung / Social-Media-Redaktion",
+   "satz": "Ich berichte, was an unserer Schule passiert.",
+   "jgst": "6–10",
+   "verantwortung": "eine Aufgabe",
+   "bei_uns": "neu",
+   "loest": "Gutes Engagement bleibt unsichtbar",
+   "aufgaben": [
+    "Artikel und Posts schreiben",
+    "Fotos machen",
+    "Engagierte vorstellen"
+   ],
+   "ressourcen": "Redaktionsraum bzw. Zeit, Technik, Seite auf der Website",
+   "entscheidest": "Themen und Gestaltung",
+   "braucht": "Betreuende Lehrkraft, ggf. Wettbewerbe",
+   "beachten": "Einwilligungen für Fotos und Namen, Presserecht"
+  },
+  {
+   "nr": "22",
+   "symbol": "🎉",
+   "rolle": "Veranstaltungsteam",
+   "satz": "Ich organisiere Feste und Aktionen für die ganze Schule.",
+   "jgst": "7–10",
+   "verantwortung": "eine Aufgabe",
+   "bei_uns": "neu",
+   "loest": "Es gibt wenig Gemeinschaftserlebnisse",
+   "aufgaben": [
+    "Schulfeste und Aktionstage planen",
+    "Aufgaben verteilen",
+    "Durchführen und auswerten"
+   ],
+   "ressourcen": "Budget für Veranstaltungen, Zeit für Planung",
+   "entscheidest": "Was gefeiert wird und wie",
+   "braucht": "Schulleitung, Hausmeister, ggf. Elternbeirat",
+   "beachten": "Aufsicht und Genehmigung als Schulveranstaltung"
+  },
+  {
+   "nr": "23",
+   "symbol": "☕",
+   "rolle": "Schülercafé / Kiosk",
+   "satz": "Ich betreibe mit meinem Team einen Treffpunkt mit Snacks.",
+   "jgst": "8–10",
+   "verantwortung": "einen Raum",
+   "bei_uns": "neu",
+   "loest": "Es gibt keinen gemütlichen Treffpunkt",
+   "aufgaben": [
+    "Einkaufen und verkaufen",
+    "Kasse führen",
+    "Café gestalten"
+   ],
+   "ressourcen": "Raum oder Theke, Startkapital, Kasse",
+   "entscheidest": "Angebot, Preise und Gestaltung",
+   "braucht": "Begleitung bei Kasse und Hygiene",
+   "beachten": "Hygieneregeln, Kassenführung, kein Lohn"
+  },
+  {
+   "nr": "24",
+   "symbol": "📚",
+   "rolle": "Bücherei-Team",
+   "satz": "Ich verantworte unsere Schulbücherei.",
+   "jgst": "5–10",
+   "verantwortung": "einen Raum",
+   "bei_uns": "neu",
+   "loest": "Die Bücherei ist selten offen",
+   "aufgaben": [
+    "Ausleihe betreuen",
+    "Neue Bücher vorschlagen",
+    "Lese-Aktionen"
+   ],
+   "ressourcen": "Bücherei-Raum, Budget für neue Bücher",
+   "entscheidest": "Welche Bücher angeschafft werden, Öffnungszeiten",
+   "braucht": "Betreuende Lehrkraft",
+   "beachten": "Ausleihdaten vertraulich behandeln"
+  },
+  {
+   "nr": "25",
+   "symbol": "🏆",
+   "rolle": "Pausensport-Team",
+   "satz": "Ich organisiere Turniere und Sport in der Pause.",
+   "jgst": "6–10",
+   "verantwortung": "eine Aufgabe",
+   "bei_uns": "neu",
+   "loest": "Bewegungsdrang findet kein Ventil",
+   "aufgaben": [
+    "Pausenturniere organisieren",
+    "Mannschaften einteilen",
+    "Sportgeräte verwalten"
+   ],
+   "ressourcen": "Hallen- oder Platzzeit, Sportgeräte, kleine Preise",
+   "entscheidest": "Welche Turniere stattfinden",
+   "braucht": "Absprache mit der Fachschaft Sport",
+   "beachten": "Aufsicht durch eine Lehrkraft"
+  },
+  {
+   "nr": "26",
+   "symbol": "🪑",
+   "rolle": "Klassenrat-Moderation",
+   "satz": "Ich leite den Klassenrat meiner Klasse.",
+   "jgst": "5–10",
+   "verantwortung": "eine Gruppe",
+   "bei_uns": "neu",
+   "loest": "Anliegen in der Klasse werden nicht besprochen",
+   "aufgaben": [
+    "Klassenrat moderieren",
+    "Anliegen sammeln",
+    "Beschlüsse festhalten"
+   ],
+   "ressourcen": "Feste Klassenratsstunde, Moderationsmaterial",
+   "entscheidest": "Tagesordnung und Ablauf",
+   "braucht": "Einführung in Moderation, Klassenleitung im Hintergrund",
+   "beachten": "Keine Strafen, Konflikte mit Gefährdung an Erwachsene"
+  },
+  {
+   "nr": "27",
+   "symbol": "📸",
+   "rolle": "Chronik- und Fototeam",
+   "satz": "Ich halte fest, was unsere Schule erlebt.",
+   "jgst": "7–10",
+   "verantwortung": "eine Aufgabe",
+   "bei_uns": "neu",
+   "loest": "Das Schuljahr wird nicht dokumentiert",
+   "aufgaben": [
+    "Veranstaltungen fotografieren",
+    "Jahreschronik gestalten",
+    "Bilder für Website und Jahresbericht"
+   ],
+   "ressourcen": "Kamera bzw. Tablet, Speicherplatz",
+   "entscheidest": "Auswahl und Gestaltung",
+   "braucht": "Betreuende Lehrkraft",
+   "beachten": "Einwilligungen für Fotos, keine privaten Geräte"
+  },
+  {
+   "nr": "28",
+   "symbol": "🧰",
+   "rolle": "Fundsachen- und Materialteam",
+   "satz": "Ich verantworte Fundsachen und gemeinsames Material.",
+   "jgst": "5–7 (Einstiegsrolle)",
+   "verantwortung": "einen Raum",
+   "bei_uns": "neu",
+   "loest": "Fundsachen landen im Müll, Material verschwindet",
+   "aufgaben": [
+    "Fundsachen sammeln und ausstellen",
+    "Materialausgabe betreuen",
+    "Übersicht führen"
+   ],
+   "ressourcen": "Regal bzw. Schrank, Aushangfläche",
+   "entscheidest": "Wie Fundsachen und Material organisiert werden",
+   "braucht": "Platz im Schulhaus",
+   "beachten": "Wertsachen ans Sekretariat"
+  }
+ ]
+}

@@ -1,0 +1,147 @@
+/* ==========================================================================
+   ak.css — Arbeitskreis Ehrenamt: Ausstellung der Rollenkarten + Rückmeldung.
+   Designsprache „Wireframe“ (Herkunft: die-matrixe, spiel/DESIGN/GRUNDSAETZE.md + entwuerfe/pult):
+   hell, ruhig, Form vor Farbe; das Blatt weiß auf grauem Grund; eine Farbe nur mit Bedeutung;
+   kein Fließtext (je Satz eine Zeile); Klickflächen mindestens 44 px.
+   ========================================================================== */
+:root {
+  --grund: #e6e6e6; --flaeche: #fff; --tinte: #141414; --leise: #4d4d4d;
+  --linie: #8a8a8a; --linie-hell: #c4c4c4;
+  --wartet: #b42318;   /* wartet auf Dich: Fehler, Hinweis, der Handlung braucht */
+  --hier: #11617d;     /* hier sind wir: Rückmeldung offen, Auswahl */
+  --schrift: 1.0625rem; --mass: 66ch; --klick: 44px; --r: 4px;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--grund); color: var(--tinte); font: var(--schrift)/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+button, textarea, input { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--tinte); outline-offset: 2px; }
+a { color: inherit; }
+h1, h2, h3, p, ul { margin: 0; }
+.leise { color: var(--leise); }
+
+/* ---- Kopf ---- */
+.kopf { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: 16px; min-height: 56px; padding: 6px 24px;
+  background: var(--flaeche); border-bottom: 1px solid var(--linie-hell); }
+.kopf .titel { font-weight: 650; text-decoration: none; }
+.kopf .wo { margin-left: auto; color: var(--leise); font-size: .9375rem; text-align: right; }
+.zurueck { display: inline-flex; align-items: center; min-height: var(--klick); padding: 0 16px; border: 1px solid var(--linie); border-radius: 999px;
+  text-decoration: none; font-size: .9375rem; background: var(--flaeche); }
+.zurueck:hover { border-color: var(--tinte); }
+
+.rumpf { max-width: 1180px; margin: 0 auto; padding: 24px 24px 64px; }
+
+/* ---- Startseite ---- */
+.blatt-kopf { background: var(--flaeche); border: 1px solid var(--linie-hell); border-radius: var(--r); padding: 22px 24px; }
+.blatt-kopf h1 { font-size: 1.5rem; line-height: 1.25; }
+.zeilen { list-style: none; padding: 0; margin-top: 10px; }
+.zeilen li { padding: 3px 0; }
+.zeilen li + li { border-top: 1px solid var(--grund); }
+.stand { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--linie-hell); }
+.zustand { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; }
+.zustand::before { content: ""; width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--linie); }
+.zustand.offen { color: var(--hier); }
+.zustand.offen::before { background: var(--hier); border-color: var(--hier); }
+.linkknopf { min-height: var(--klick); padding: 0 16px; border: 1px solid var(--linie); border-radius: 999px; background: var(--flaeche); cursor: pointer; }
+.linkknopf:hover { border-color: var(--tinte); }
+
+.abschnitt { margin-top: 28px; }
+.abschnitt > h2 { font-size: .9375rem; font-weight: 600; color: var(--leise); margin: 0 0 10px 2px; }
+.kacheln { display: grid; gap: 10px; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .kacheln { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .kacheln { grid-template-columns: repeat(3, 1fr); } }
+.kachel { display: grid; grid-template-columns: 34px 1fr; gap: 2px 12px; align-content: start; min-height: 96px; padding: 14px 16px;
+  background: var(--flaeche); border: 1px solid var(--linie-hell); border-radius: var(--r); text-decoration: none;
+  transition: border-color .12s, box-shadow .12s; }
+.kachel:hover { border-color: var(--tinte); box-shadow: 0 0 0 1px var(--tinte); }
+.kachel .sym { grid-row: 1 / span 3; font-size: 26px; line-height: 1.1; }
+.kachel .nr { font-size: .8125rem; color: var(--leise); }
+.kachel strong { font-weight: 650; line-height: 1.3; }
+.kachel .satz { color: var(--leise); font-size: .9375rem; line-height: 1.4; }
+.kachel.ganzes { border-style: dashed; border-color: var(--linie); }
+
+/* ---- Rollenseite ---- */
+.seite { display: grid; gap: 20px; grid-template-columns: 1fr; }
+.blatt { background: var(--flaeche); border: 1px solid var(--linie-hell); border-radius: var(--r); }
+.blatt-titel { display: flex; gap: 14px; align-items: flex-start; padding: 20px 24px 16px; border-bottom: 1px solid var(--linie-hell); }
+.blatt-titel .sym { font-size: 34px; line-height: 1; }
+.blatt-titel h1 { font-size: 1.5rem; line-height: 1.2; }
+.blatt-titel .satz { color: var(--leise); margin-top: 4px; }
+.merkmale { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.merkmal { border: 1px solid var(--linie); border-radius: 999px; padding: 1px 10px; font-size: .875rem; }
+.merkmal.neu { border-style: dashed; }
+.felder { display: grid; grid-template-columns: 1fr; }
+.felder > div { padding: 16px 24px; }
+.felder > div + div { border-top: 1px solid var(--linie-hell); }
+@media (min-width: 640px) {
+  .felder { grid-template-columns: 1fr 1fr; }
+  .felder > div + div { border-top: 0; border-left: 1px solid var(--linie-hell); }
+}
+.blatt h2 { font-size: .8125rem; font-weight: 600; color: var(--leise); margin: 14px 0 2px; }
+.felder > div > h2:first-child { margin-top: 0; }
+.blatt ul { padding-left: 1.15em; }
+.blatt-fuss { padding: 10px 24px; border-top: 1px solid var(--linie-hell); color: var(--leise); font-size: .8125rem; }
+.blatt .zeilen { margin: 0; padding: 14px 24px 18px; }
+
+/* Rückmeldung */
+.antwort { background: var(--flaeche); border: 1px solid var(--linie-hell); border-radius: var(--r); padding: 18px 20px 20px; }
+.antwort > h2 { font-size: 1.0625rem; font-weight: 650; }
+.antwort .zustand { margin-top: 6px; font-size: .9375rem; }
+.griff { display: none; }
+label.frage, fieldset legend { display: block; font-weight: 600; line-height: 1.35; margin: 18px 0 6px; padding: 0; }
+textarea { display: block; width: 100%; min-height: 104px; padding: 10px 12px; background: var(--flaeche); color: var(--tinte);
+  border: 1px solid var(--linie); border-radius: var(--r); resize: vertical; line-height: 1.45; }
+textarea:focus { outline: 2px solid var(--tinte); outline-offset: 0; border-color: var(--tinte); }
+fieldset { border: 0; margin: 0; padding: 0; }
+.wahl { display: inline-flex; gap: 4px; padding: 4px; background: var(--grund); border-radius: 999px; }
+.wahl label { cursor: pointer; }
+.wahl input { position: absolute; opacity: 0; pointer-events: none; }
+.wahl span { display: inline-flex; align-items: center; min-height: 36px; padding: 0 18px; border-radius: 999px; color: var(--leise); font-weight: 500; }
+.wahl input:checked + span { background: var(--flaeche); color: var(--tinte); font-weight: 650; box-shadow: 0 0 0 1px var(--linie); }
+.wahl input:focus-visible + span { outline: 3px solid var(--tinte); outline-offset: 2px; }
+.datenhinweis { list-style: none; padding: 12px 0 0; margin-top: 18px; border-top: 1px solid var(--linie-hell); font-size: .875rem; color: var(--leise); }
+.datenhinweis li { padding: 1px 0; }
+.datenhinweis a { color: var(--tinte); }
+.senden { display: block; width: 100%; min-height: var(--klick); margin-top: 16px; border: 0; border-radius: var(--r);
+  background: var(--tinte); color: #fff; font-weight: 650; cursor: pointer; }
+.senden:disabled { opacity: .4; cursor: not-allowed; }
+.meldung { margin-top: 10px; font-weight: 600; }
+.meldung.fehler { color: var(--wartet); }
+.meldung.fehler::before { content: "! "; }
+.danke { margin-top: 10px; }
+.danke li { padding: 2px 0; }
+.falle { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+/* Handy: Rückmeldung als Leiste unten, das Blatt bleibt darüber lesbar */
+@media (max-width: 899px) {
+  .kopf { padding: 6px 16px; }
+  .rumpf { padding: 16px 12px 48px; }
+  body.rollenseite { padding-bottom: 64px; }
+  body.rollenseite.offen { padding-bottom: 58vh; }
+  .antwort { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; border-radius: 12px 12px 0 0; border-width: 1px 0 0;
+    padding: 0 16px calc(14px + env(safe-area-inset-bottom)); max-height: 60px; overflow: hidden;
+    box-shadow: 0 -4px 18px rgba(0,0,0,.14); transition: max-height .25s ease; }
+  .offen .antwort { max-height: 56vh; overflow-y: auto; }
+  .griff { display: flex; justify-content: space-between; align-items: center; width: 100%; min-height: 60px;
+    position: sticky; top: 0; z-index: 1; background: var(--flaeche); border: 0; border-bottom: 1px solid var(--linie-hell);
+    font-weight: 650; cursor: pointer; padding: 0; }
+  .griff .pfeil { transition: transform .2s; }
+  .offen .griff .pfeil { transform: rotate(180deg); }
+  .antwort > h2 { display: none; }
+}
+@media (min-width: 900px) {
+  .seite { grid-template-columns: minmax(0, 1.4fr) minmax(340px, 1fr); align-items: start; }
+  .antwort { position: sticky; top: 76px; }
+}
+
+/* ---- Datenschutz-Dialog ---- */
+dialog.dsgvo { margin: auto; max-width: 560px; width: calc(100% - 24px); max-height: calc(100dvh - 24px); overflow-y: auto;
+  border: 1px solid var(--linie); border-radius: var(--r); padding: 22px 24px; background: var(--flaeche); color: var(--tinte); }
+dialog.dsgvo::backdrop { background: rgba(20,20,20,.35); }
+dialog.dsgvo h2 { font-size: 1.25rem; line-height: 1.25; margin-bottom: 10px; }
+dialog.dsgvo ul { list-style: none; padding: 0; }
+dialog.dsgvo li { padding: 8px 0; border-top: 1px solid var(--linie-hell); }
+dialog.dsgvo .mehr { margin-top: 10px; color: var(--leise); font-size: .9375rem; }
+
+/* ---- Fuß ---- */
+.fuss { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 32px; color: var(--leise); font-size: .875rem; }
