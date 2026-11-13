@@ -13,6 +13,107 @@
     "inf6b": { "fach": "inf", "jahrgang": 6, "titel": "Inf 6b" },
     "wib6b": { "fach": "wib", "jahrgang": 6, "titel": "WiB 6b" }
   },
+  "sequenzen_comment": "Kurse mit Eintrag hier werden auf ihrer Kursseite nach Sequenzen und Stunden gegliedert (Schuelersicht, angelehnt an die Leiste der Matrixe); jedes Kursmaterial braucht dann \"stunde\": \"s01/ue09-10\" (oder \"s01\" = zur Sequenz ohne feste Stunde). Stunden mit \"kommt\": true sind noch nicht gehalten, \"art\": \"probe\" ist ein Probentermin. Quelle der Stunden: Sequenzplaene im Kurs-Ordner, nach jeder Stunde fortschreiben.",
+  "sequenzen": {
+    "gpg9a": {
+      "reihe": [
+        {
+          "id": "s01",
+          "titel": "Geteiltes Land: BRD und DDR im Vergleich",
+          "frage": "Zwei deutsche Staaten, zwei Versprechen – wurden sie gehalten?",
+          "stunden": [
+            {
+              "id": "ue01",
+              "datum": "2026-10-01",
+              "titel": "Europa nach 1945",
+              "frage": "Wie wurde Europa nach 1945 geteilt?"
+            },
+            {
+              "id": "ue02",
+              "datum": "2026-10-08",
+              "titel": "Verbündete werden Gegner",
+              "frage": "Warum wurden aus Verbündeten Gegner?"
+            },
+            {
+              "id": "ue03-04",
+              "datum": "2026-10-09",
+              "titel": "Markt oder Plan",
+              "frage": "Wer soll bestimmen, was es zu kaufen gibt: der Markt oder der Staat?"
+            },
+            {
+              "id": "ue05",
+              "datum": "2026-10-15",
+              "titel": "Der neue Wehrdienst",
+              "frage": "Muss ich für Deutschland kämpfen, wenn ich nicht davon überzeugt bin?"
+            },
+            {
+              "id": "ue06-07",
+              "datum": "2026-10-16",
+              "titel": "Kalter Krieg und Wirtschaftswunder",
+              "frage": "Hätte ich damals Angst vor einem Krieg haben müssen? Wo hätte ich 1955 mehr kaufen können?"
+            },
+            {
+              "id": "ue08",
+              "datum": "2026-11-12",
+              "titel": "Zwei Sieger, zwei Staaten",
+              "frage": "Warum machten die USA und die Sowjetunion aus ihren Teilen Deutschlands so verschiedene Staaten?"
+            },
+            {
+              "id": "ue09-10",
+              "datum": "2026-11-13",
+              "titel": "Jugend in Ost und West",
+              "frage": "Wie frei waren Jugendliche in der DDR und in der BRD?"
+            },
+            {
+              "id": "ue11",
+              "datum": "2026-11-19",
+              "titel": "Übung für die Probe",
+              "kommt": true
+            },
+            {
+              "id": "probe1",
+              "datum": "2026-11-20",
+              "titel": "Probe",
+              "art": "probe",
+              "kommt": true,
+              "text": "Stoff: deine Hefteinträge vom 08.10. bis 13.11. Zu jeder Stunde darunter stehen die Frage und, wo es welches gibt, das Material."
+            }
+          ]
+        },
+        {
+          "id": "s00",
+          "titel": "Aktuelles: Der politische Wochenrückblick",
+          "frage": "Was ist diese Woche passiert, und warum ist es wichtig?",
+          "stunden": [
+            {
+              "id": "ue01",
+              "datum": "2026-09-17",
+              "titel": "Einstieg Wochenrückblick",
+              "frage": "Was ist diese Woche passiert, und warum ist es wichtig?"
+            },
+            {
+              "id": "ue02-03",
+              "datum": "2026-09-18",
+              "titel": "Präsentation und Sicherung",
+              "frage": "Was ist diese Woche passiert, und warum ist es wichtig?"
+            },
+            {
+              "id": "ue04",
+              "datum": "2026-09-24",
+              "titel": "Die AfD",
+              "frage": "Warum wählen so viele Menschen die AfD?"
+            },
+            {
+              "id": "ue05-06",
+              "datum": "2026-09-25",
+              "titel": "Der 8. Mai 1945",
+              "frage": "War der 8. Mai 1945 auch für die Deutschen eine Befreiung?"
+            }
+          ]
+        }
+      ]
+    }
+  },
   "materialien": [
     { "id": "game-syrische-revolution-2011", "pfad": "escape-games/syrische-revolution-2011/index.html",
       "titel": "Syrische Revolution 2011 — wie aus Protest Krieg wurde",
@@ -102,43 +203,43 @@
     { "id": "game-zweiter-weltkrieg-ende-1945", "pfad": "escape-games/zweiter-weltkrieg-ende-1945/index.html",
       "titel": "Verlauf und Ende des Zweiten Weltkriegs",
       "art": "escape-game", "fach": "gpg", "strang": "geschichte", "jahrgang": 9,
-      "kurse": ["gpg9a"], "thema": "Zweiter Weltkrieg", "datum": "2026-09-21" },
+      "kurse": ["gpg9a"], "stunde": "s00/ue05-06", "thema": "Zweiter Weltkrieg", "datum": "2026-09-21" },
     { "id": "tool-gpg-wochenrueckblick", "pfad": "gpg/wochenrueckblick.html",
       "titel": "Mein politischer Wochenrückblick — so bereitest du dein Referat vor",
       "art": "anleitung", "fach": "gpg", "strang": "aktuelles", "jahrgang": 9,
-      "kurse": ["gpg9a"], "thema": "Wochenrückblick", "datum": "2026-09-24" },
+      "kurse": ["gpg9a"], "stunde": "s00/ue05-06", "thema": "Wochenrückblick", "datum": "2026-09-24" },
     { "id": "quellen-fruehstartrente", "pfad": "quellen/fruehstartrente/",
       "titel": "Wochenrückblick: Die Frühstartrente",
       "art": "quellen", "fach": "gpg", "strang": "aktuelles", "jahrgang": 9,
-      "kurse": ["gpg9a"], "thema": "Wochenrückblick", "datum": "2026-10-05" },
+      "kurse": ["gpg9a"], "stunde": "s00", "thema": "Wochenrückblick", "datum": "2026-10-05" },
     { "id": "quellen-wehrdienst", "pfad": "quellen/wehrdienst/",
       "titel": "Wochenrückblick: Der neue Wehrdienst",
       "art": "quellen", "fach": "gpg", "strang": "aktuelles", "jahrgang": 9,
-      "kurse": ["gpg9a"], "thema": "Wochenrückblick", "datum": "2026-10-08" },
+      "kurse": ["gpg9a"], "stunde": "s01/ue05", "thema": "Wochenrückblick", "datum": "2026-10-08" },
     { "id": "quellen-markt-oder-plan-west", "pfad": "quellen/markt-oder-plan-west/",
       "titel": "Markt oder Plan? · Gruppe West",
       "art": "quellen", "fach": "gpg", "strang": "geschichte", "jahrgang": 9,
-      "kurse": ["gpg9a"], "thema": "Markt oder Plan", "datum": "2026-10-08" },
+      "kurse": ["gpg9a"], "stunde": "s01/ue03-04", "thema": "Markt oder Plan", "datum": "2026-10-08" },
     { "id": "quellen-markt-oder-plan-ost", "pfad": "quellen/markt-oder-plan-ost/",
       "titel": "Markt oder Plan? · Gruppe Ost",
       "art": "quellen", "fach": "gpg", "strang": "geschichte", "jahrgang": 9,
-      "kurse": ["gpg9a"], "thema": "Markt oder Plan", "datum": "2026-10-08" },
+      "kurse": ["gpg9a"], "stunde": "s01/ue03-04", "thema": "Markt oder Plan", "datum": "2026-10-08" },
     { "id": "begleiten-zwei-sieger", "pfad": "begleiten/zwei-sieger/",
       "titel": "Zwei Sieger, zwei Staaten: Stationen",
       "art": "werkzeug", "fach": "gpg", "strang": "geschichte", "jahrgang": 9,
-      "kurse": ["gpg9a"], "thema": "Markt oder Plan", "datum": "2026-11-12" },
+      "kurse": ["gpg9a"], "stunde": "s01/ue08", "thema": "Markt oder Plan", "datum": "2026-11-12" },
     { "id": "begleiten-jugend-ost-west", "pfad": "begleiten/jugend-ost-west/",
       "titel": "Jugend in Ost und West",
       "art": "werkzeug", "fach": "gpg", "strang": "geschichte", "jahrgang": 9,
-      "kurse": ["gpg9a"], "thema": "Markt oder Plan", "datum": "2026-11-13" },
+      "kurse": ["gpg9a"], "stunde": "s01/ue09-10", "thema": "Markt oder Plan", "datum": "2026-11-13" },
     { "id": "zeitkarte-geteiltes-land", "pfad": "zeitkarte/geteiltes-land/",
       "titel": "Geteiltes Land: Zeitkarte",
       "art": "werkzeug", "fach": "gpg", "strang": "geschichte", "jahrgang": 9,
-      "kurse": ["gpg9a"], "thema": "Markt oder Plan", "datum": "2026-11-13" },
+      "kurse": ["gpg9a"], "stunde": "s01/ue09-10", "thema": "Markt oder Plan", "datum": "2026-11-13" },
     { "id": "ordnen-eigener-staat", "pfad": "ordnen/eigener-staat/",
       "titel": "Mein eigener Staat",
       "art": "anordnen", "fach": "gpg", "strang": "aktuelles", "jahrgang": 9,
-      "kurse": ["gpg9a"], "thema": "Staat und Wirtschaft", "datum": "2026-10-16" },
+      "kurse": ["gpg9a"], "stunde": "s01/ue06-07", "thema": "Staat und Wirtschaft", "datum": "2026-10-16" },
 
     { "id": "tool-wib-haushaltsbuch", "pfad": "wib/haushaltsbuch.html",
       "titel": "Mein Haushaltsbuch — wohin geht mein Geld?",

@@ -111,6 +111,41 @@ def fehler(daten: dict) -> list[str]:
                     out.append(f"{wo}: datum kein JJJJ-MM-TT: {d!r}")
             if not m.get("thema"):
                 out.append(f"{wo}: Kursmaterial ohne thema")
+    out += fehler_sequenzen(daten)
+    return out
+
+
+def fehler_sequenzen(daten: dict) -> list[str]:
+    """Kurse mit Eintrag unter "sequenzen" werden nach Sequenzen und Stunden gegliedert (Schülersicht);
+    dann braucht jedes Kursmaterial ein Feld "stunde" ("s01/ue09-10", oder "s01" = zur Sequenz ohne feste Stunde)."""
+    out = []
+    ziele: dict[str, set[str]] = {}
+    for kurs, sq in daten.get("sequenzen", {}).items():
+        if kurs not in daten["kurse"]:
+            out.append(f"sequenzen: unbekannter Kurs {kurs!r}")
+            continue
+        for s in sq["reihe"]:
+            ziele.setdefault(kurs, set()).add(s["id"])
+            ids = set()
+            for st in s["stunden"]:
+                if st["id"] in ids:
+                    out.append(f"sequenzen {kurs}/{s['id']}: Stunde {st['id']!r} doppelt")
+                ids.add(st["id"])
+                ziele[kurs].add(f"{s['id']}/{st['id']}")
+                try:
+                    dt.date.fromisoformat(st["datum"])
+                except (KeyError, ValueError):
+                    out.append(f"sequenzen {kurs}/{s['id']}/{st.get('id')}: datum kein JJJJ-MM-TT")
+                if not st.get("titel"):
+                    out.append(f"sequenzen {kurs}/{s['id']}/{st['id']}: titel fehlt")
+    for m in daten["materialien"]:
+        for k in m.get("kurse", []):
+            if k in ziele:
+                st = m.get("stunde")
+                if not st:
+                    out.append(f"{m.get('id', m['pfad'])}: Kurs {k} gliedert nach Sequenzen, Feld 'stunde' fehlt")
+                elif st not in ziele[k]:
+                    out.append(f"{m.get('id', m['pfad'])}: stunde {st!r} gibt es in sequenzen/{k} nicht")
     return out
 
 
@@ -430,13 +465,155 @@ def kurs_eintraege(daten: dict, kurs: str) -> list[dict]:
             continue
         for t in m.get("teile") or [m]:
             out.append({"titel": t["titel"], "art": m["art"], "thema": m["thema"],
-                        "strang": m.get("strang"), "href": "../../" + t["pfad"],
+                        "strang": m.get("strang"), "stunde": m.get("stunde"), "href": "../../" + t["pfad"],
                         "datum": dt.date.fromisoformat(t.get("datum") or m["datum"])})
     out.sort(key=lambda x: x["datum"], reverse=True)  # stabil: gleiche Daten in Quell-Reihenfolge
     return out
 
 
+SEQUENZ_CSS = """  /* Kursseite nach Sequenzen (Schülersicht, angelehnt an die Leiste der Matrixe: Stunde vorn und kräftig,
+     Datum leise; „hier sind wir“ in der Akzentfarbe; Kommendes gestrichelt; Probe als Strich) */
+  .seq { margin-top: 3rem; }
+  .seq > h2 { font-family: var(--ui); font-weight: 600; font-size: 1.35rem; letter-spacing: -.02em; }
+  .seq .leitfrage { font-family: var(--serif); font-size: 1.1rem; color: var(--ink-soft); margin: .3rem 0 0; }
+  .leiste { list-style: none; display: flex; gap: 8px; overflow-x: auto; padding: 1rem 0 .6rem; margin: 0;
+            scroll-snap-type: x proximity; }
+  .leiste a { display: block; min-width: 7.2rem; max-width: 9rem; padding: 9px 11px; border: 1px solid var(--hairline);
+              scroll-snap-align: start; height: 100%; }
+  .leiste a:hover { border-color: var(--accent); }
+  .leiste .dat { display: block; font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em;
+                 color: var(--ink-faint); }
+  .leiste .tit { display: block; font-family: var(--ui); font-weight: 600; font-size: .86rem; line-height: 1.25;
+                 margin-top: 3px; }
+  .leiste .hier a { border-color: var(--accent); border-width: 2px; }
+  .leiste .hier .dat { color: var(--accent); }
+  .leiste .kommt a { border-style: dashed; color: var(--ink-soft); }
+  .leiste .probe a { border-left: 5px solid var(--accent); }
+  .stunden { list-style: none; margin: 1.6rem 0 0; padding: 0; }
+  .stunde { border-top: 1px solid var(--rule); padding: 1.3rem 0 1.1rem; scroll-margin-top: 1rem; }
+  .stunde:last-child { border-bottom: 1px solid var(--rule); }
+  .stunde .kopf { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
+  .stunde h3 { font-family: var(--ui); font-weight: 600; font-size: 1.25rem; letter-spacing: -.02em; margin: 0; }
+  .stunde .dat { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+                 color: var(--ink-faint); }
+  .stunde .marke { font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase;
+                   color: var(--paper); background: var(--accent); padding: 2px 8px; }
+  .stunde .frage { font-family: var(--serif); font-size: 1.1rem; margin: .5rem 0 .2rem; }
+  .stunde .leer { font-family: var(--ui); font-size: .9rem; color: var(--ink-soft); margin: .5rem 0 0; }
+  .stunde.kommt h3, .stunde.kommt .frage { color: var(--ink-soft); }
+  .stunde .hub-list { margin-top: .5rem; }
+  .stunde .hub-list li:first-child { border-top: none; }
+  .stunde .hub-list li:last-child { border-bottom: none; }
+  .stunde .hub-list a { grid-template-columns: 1fr auto; font-size: 1.05rem; padding: 10px 4px; }
+  .stunde .hub-list .titel { grid-column: 1; grid-row: 1; }
+  .stunde .hub-list .art { grid-column: 2; grid-row: 1; }
+  .probenkarte { margin-top: 2rem; padding: 14px 16px; border: 1px solid var(--accent); border-left-width: 6px; }
+  .probenkarte .dat { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+                      color: var(--accent); }
+  .probenkarte h2 { font-family: var(--ui); font-weight: 600; font-size: 1.25rem; margin: .2rem 0 .3rem; }
+  .probenkarte p { margin: 0; font-family: var(--serif); font-size: 1.05rem; }"""
+
+WOCHENTAGE = ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"]
+
+
+def kursseite_sequenzen(daten: dict, kurs: str, v: dict) -> str:
+    """Kursseite nach Sequenzen: oben Probe und Zuletzt, dann je Sequenz eine Leiste und die Stunden
+    der Reihe nach (Stundentitel, Stundenfrage, Material). Nichts hängt vom Build-Tag ab."""
+    k = daten["kurse"][kurs]
+    fach = daten["faecher"][k["fach"]]
+    reihe = daten["sequenzen"][kurs]["reihe"]
+    eintraege = kurs_eintraege(daten, kurs)
+    teile = [f'      <span class="cap">{e(k["titel"] + " · " + fach["name"] + " · " + daten["schuljahr"])}</span>',
+             "      <h1>Unser Material</h1>",
+             '      <p class="leitfrage">Alles aus dem Unterricht, Stunde für Stunde. Zum Lernen: Stundenfrage lesen, '
+             "Material öffnen, im Heft vergleichen.</p>"]
+
+    def datum_kurz(iso: str) -> str:
+        d = dt.date.fromisoformat(iso)
+        return f"{WOCHENTAGE[d.weekday()]} {d.day:02d}.{d.month:02d}."
+
+    # die nächste Probe (erste kommende Stunde der Art "probe", in der Reihenfolge der Sequenzen)
+    for s in reihe:
+        probe = next((st for st in s["stunden"] if st.get("art") == "probe" and st.get("kommt")), None)
+        if probe:
+            teile.append(f'      <div class="probenkarte">\n        <span class="dat">{e(datum_kurz(probe["datum"]))}</span>\n'
+                         f'        <h2>{e(probe["titel"])}</h2>\n        <p>{e(probe.get("text", ""))}</p>\n      </div>')
+            break
+
+    oben = zuletzt(eintraege, eintraege[0]["datum"]) if eintraege else []
+    if oben:
+        teile.append('\n      <h2 class="cap gruppe">Zuletzt</h2>\n      <ul class="hub-list">')
+        for z in oben:
+            teile.append(zeile(z["href"], z["datum"].strftime("%d.%m."), z["titel"], z["art"]))
+        teile.append("      </ul>")
+
+    hier = None  # die jüngste gehaltene Stunde der ersten (= neuesten) Sequenz: „Hier sind wir“
+    for s in reihe:
+        gehalten = [st for st in s["stunden"] if not st.get("kommt") and st.get("art") != "probe"]
+        if gehalten:
+            hier = f"{s['id']}/{gehalten[-1]['id']}"
+            break
+
+    for s in reihe:
+        teile.append(f'\n      <section class="seq" id="{e(s["id"])}">\n        <h2>{e(s["titel"])}</h2>')
+        if s.get("frage"):
+            teile.append(f'        <p class="leitfrage">{e(s["frage"])}</p>')
+        teile.append('        <ul class="leiste">')
+        for st in s["stunden"]:
+            kl = [c for c, an in (("hier", f"{s['id']}/{st['id']}" == hier), ("kommt", st.get("kommt")),
+                                  ("probe", st.get("art") == "probe")) if an]
+            teile.append(f'          <li class="{" ".join(kl)}"><a href="#{e(s["id"] + "-" + st["id"])}">'
+                         f'<span class="dat">{e(datum_kurz(st["datum"]))}</span>'
+                         f'<span class="tit">{e(st["titel"])}</span></a></li>')
+        teile.append("        </ul>")
+        teile.append('        <ol class="stunden">')
+        for st in s["stunden"]:
+            ref = f"{s['id']}/{st['id']}"
+            kl = ["stunde"] + [c for c, an in (("hier", ref == hier), ("kommt", st.get("kommt")),
+                                               ("probe", st.get("art") == "probe")) if an]
+            doppelt = " · Doppelstunde" if "-" in st["id"] and st.get("art") != "probe" else ""
+            teile.append(f'          <li class="{" ".join(kl)}" id="{e(s["id"] + "-" + st["id"])}">')
+            teile.append(f'            <div class="kopf"><h3>{e(st["titel"])}</h3>'
+                         f'<span class="dat">{e(datum_kurz(st["datum"]) + doppelt)}</span>'
+                         + ('<span class="marke">Hier sind wir</span>' if ref == hier else "") + "</div>")
+            if st.get("frage"):
+                teile.append(f'            <p class="frage">{e(st["frage"])}</p>')
+            if st.get("text"):
+                teile.append(f'            <p class="frage">{e(st["text"])}</p>')
+            if st.get("art") == "probe":
+                teile.append("          </li>")
+                continue
+            ms = [z for z in eintraege if z["stunde"] in (ref, ) ]
+            if ms:
+                teile.append('            <ul class="hub-list">')
+                for z in sorted(ms, key=lambda x: x["titel"]):
+                    teile.append(zeile(z["href"], "", z["titel"], z["art"]).replace(
+                        '<span class="stufe"></span>\n            ', ""))
+                teile.append("            </ul>")
+            elif st.get("kommt"):
+                teile.append('            <p class="leer">Kommt noch.</p>')
+            else:
+                teile.append('            <p class="leer">Hierzu gibt es nichts im Netz: Es liegt in deinem Heft '
+                             "und im Schnellhefter.</p>")
+            teile.append("          </li>")
+        teile.append("        </ol>")
+        # Material zur Sequenz ohne feste Stunde (stunde = "s01")
+        lose = [z for z in eintraege if z["stunde"] == s["id"]]
+        if lose:
+            teile.append('        <h3 class="cap unter">Weiteres zu dieser Sequenz</h3>\n        <ul class="hub-list">')
+            for z in lose:
+                teile.append(zeile(z["href"], z["datum"].strftime("%d.%m."), z["titel"], z["art"]))
+            teile.append("        </ul>")
+        teile.append("      </section>")
+
+    return seite(titel=f"{k['titel']} · weitergehts.online", tiefe="../../../", v=v,
+                 kopf_extra='<meta name="robots" content="noindex">\n', css=LISTEN_CSS + "\n" + SEQUENZ_CSS,
+                 nav_aktuell=False, main="\n".join(teile))
+
+
 def kursseite(daten: dict, kurs: str, v: dict) -> str:
+    if kurs in daten.get("sequenzen", {}):
+        return kursseite_sequenzen(daten, kurs, v)
     k = daten["kurse"][kurs]
     fach = daten["faecher"][k["fach"]]
     eintraege = kurs_eintraege(daten, kurs)

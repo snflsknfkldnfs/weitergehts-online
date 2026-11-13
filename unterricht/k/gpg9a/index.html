@@ -57,6 +57,47 @@
     .hub-list .art { grid-column: 2; grid-row: 1; }
     .hub-list .titel { grid-column: 1 / -1; grid-row: 2; }
   }
+  /* Kursseite nach Sequenzen (Schülersicht, angelehnt an die Leiste der Matrixe: Stunde vorn und kräftig,
+     Datum leise; „hier sind wir“ in der Akzentfarbe; Kommendes gestrichelt; Probe als Strich) */
+  .seq { margin-top: 3rem; }
+  .seq > h2 { font-family: var(--ui); font-weight: 600; font-size: 1.35rem; letter-spacing: -.02em; }
+  .seq .leitfrage { font-family: var(--serif); font-size: 1.1rem; color: var(--ink-soft); margin: .3rem 0 0; }
+  .leiste { list-style: none; display: flex; gap: 8px; overflow-x: auto; padding: 1rem 0 .6rem; margin: 0;
+            scroll-snap-type: x proximity; }
+  .leiste a { display: block; min-width: 7.2rem; max-width: 9rem; padding: 9px 11px; border: 1px solid var(--hairline);
+              scroll-snap-align: start; height: 100%; }
+  .leiste a:hover { border-color: var(--accent); }
+  .leiste .dat { display: block; font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em;
+                 color: var(--ink-faint); }
+  .leiste .tit { display: block; font-family: var(--ui); font-weight: 600; font-size: .86rem; line-height: 1.25;
+                 margin-top: 3px; }
+  .leiste .hier a { border-color: var(--accent); border-width: 2px; }
+  .leiste .hier .dat { color: var(--accent); }
+  .leiste .kommt a { border-style: dashed; color: var(--ink-soft); }
+  .leiste .probe a { border-left: 5px solid var(--accent); }
+  .stunden { list-style: none; margin: 1.6rem 0 0; padding: 0; }
+  .stunde { border-top: 1px solid var(--rule); padding: 1.3rem 0 1.1rem; scroll-margin-top: 1rem; }
+  .stunde:last-child { border-bottom: 1px solid var(--rule); }
+  .stunde .kopf { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
+  .stunde h3 { font-family: var(--ui); font-weight: 600; font-size: 1.25rem; letter-spacing: -.02em; margin: 0; }
+  .stunde .dat { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+                 color: var(--ink-faint); }
+  .stunde .marke { font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase;
+                   color: var(--paper); background: var(--accent); padding: 2px 8px; }
+  .stunde .frage { font-family: var(--serif); font-size: 1.1rem; margin: .5rem 0 .2rem; }
+  .stunde .leer { font-family: var(--ui); font-size: .9rem; color: var(--ink-soft); margin: .5rem 0 0; }
+  .stunde.kommt h3, .stunde.kommt .frage { color: var(--ink-soft); }
+  .stunde .hub-list { margin-top: .5rem; }
+  .stunde .hub-list li:first-child { border-top: none; }
+  .stunde .hub-list li:last-child { border-bottom: none; }
+  .stunde .hub-list a { grid-template-columns: 1fr auto; font-size: 1.05rem; padding: 10px 4px; }
+  .stunde .hub-list .titel { grid-column: 1; grid-row: 1; }
+  .stunde .hub-list .art { grid-column: 2; grid-row: 1; }
+  .probenkarte { margin-top: 2rem; padding: 14px 16px; border: 1px solid var(--accent); border-left-width: 6px; }
+  .probenkarte .dat { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+                      color: var(--accent); }
+  .probenkarte h2 { font-family: var(--ui); font-weight: 600; font-size: 1.25rem; margin: .2rem 0 .3rem; }
+  .probenkarte p { margin: 0; font-family: var(--serif); font-size: 1.05rem; }
 </style>
 </head>
 <body class="halo">
@@ -82,6 +123,12 @@
     <div class="wrap">
       <span class="cap">GPG 9a · Geschichte · Politik · Geographie · 2026/27</span>
       <h1>Unser Material</h1>
+      <p class="leitfrage">Alles aus dem Unterricht, Stunde für Stunde. Zum Lernen: Stundenfrage lesen, Material öffnen, im Heft vergleichen.</p>
+      <div class="probenkarte">
+        <span class="dat">Fr 20.11.</span>
+        <h2>Probe</h2>
+        <p>Stoff: deine Hefteinträge vom 08.10. bis 13.11. Zu jeder Stunde darunter stehen die Frage und, wo es welches gibt, das Material.</p>
+      </div>
 
       <h2 class="cap gruppe">Zuletzt</h2>
       <ul class="hub-list">
@@ -101,28 +148,160 @@
         </li>
       </ul>
 
-      <h2 class="klasse">Aktuelles</h2>
-
-      <h3 class="cap unter">Staat und Wirtschaft</h3>
-      <ul class="hub-list">
+      <section class="seq" id="s01">
+        <h2>Geteiltes Land: BRD und DDR im Vergleich</h2>
+        <p class="leitfrage">Zwei deutsche Staaten, zwei Versprechen – wurden sie gehalten?</p>
+        <ul class="leiste">
+          <li class=""><a href="#s01-ue01"><span class="dat">Do 01.10.</span><span class="tit">Europa nach 1945</span></a></li>
+          <li class=""><a href="#s01-ue02"><span class="dat">Do 08.10.</span><span class="tit">Verbündete werden Gegner</span></a></li>
+          <li class=""><a href="#s01-ue03-04"><span class="dat">Fr 09.10.</span><span class="tit">Markt oder Plan</span></a></li>
+          <li class=""><a href="#s01-ue05"><span class="dat">Do 15.10.</span><span class="tit">Der neue Wehrdienst</span></a></li>
+          <li class=""><a href="#s01-ue06-07"><span class="dat">Fr 16.10.</span><span class="tit">Kalter Krieg und Wirtschaftswunder</span></a></li>
+          <li class=""><a href="#s01-ue08"><span class="dat">Do 12.11.</span><span class="tit">Zwei Sieger, zwei Staaten</span></a></li>
+          <li class="hier"><a href="#s01-ue09-10"><span class="dat">Fr 13.11.</span><span class="tit">Jugend in Ost und West</span></a></li>
+          <li class="kommt"><a href="#s01-ue11"><span class="dat">Do 19.11.</span><span class="tit">Übung für die Probe</span></a></li>
+          <li class="kommt probe"><a href="#s01-probe1"><span class="dat">Fr 20.11.</span><span class="tit">Probe</span></a></li>
+        </ul>
+        <ol class="stunden">
+          <li class="stunde" id="s01-ue01">
+            <div class="kopf"><h3>Europa nach 1945</h3><span class="dat">Do 01.10.</span></div>
+            <p class="frage">Wie wurde Europa nach 1945 geteilt?</p>
+            <p class="leer">Hierzu gibt es nichts im Netz: Es liegt in deinem Heft und im Schnellhefter.</p>
+          </li>
+          <li class="stunde" id="s01-ue02">
+            <div class="kopf"><h3>Verbündete werden Gegner</h3><span class="dat">Do 08.10.</span></div>
+            <p class="frage">Warum wurden aus Verbündeten Gegner?</p>
+            <p class="leer">Hierzu gibt es nichts im Netz: Es liegt in deinem Heft und im Schnellhefter.</p>
+          </li>
+          <li class="stunde" id="s01-ue03-04">
+            <div class="kopf"><h3>Markt oder Plan</h3><span class="dat">Fr 09.10. · Doppelstunde</span></div>
+            <p class="frage">Wer soll bestimmen, was es zu kaufen gibt: der Markt oder der Staat?</p>
+            <ul class="hub-list">
         <li>
-          <a href="../../ordnen/eigener-staat/">
-            <span class="stufe">16.10.</span>
-            <span class="titel">Mein eigener Staat</span>
-            <span class="art">Anordnen</span>
+          <a href="../../quellen/markt-oder-plan-ost/">
+            <span class="titel">Markt oder Plan? · Gruppe Ost</span>
+            <span class="art">Quellen</span>
           </a>
         </li>
-      </ul>
-
-      <h3 class="cap unter">Wochenrückblick</h3>
-      <ul class="hub-list">
+        <li>
+          <a href="../../quellen/markt-oder-plan-west/">
+            <span class="titel">Markt oder Plan? · Gruppe West</span>
+            <span class="art">Quellen</span>
+          </a>
+        </li>
+            </ul>
+          </li>
+          <li class="stunde" id="s01-ue05">
+            <div class="kopf"><h3>Der neue Wehrdienst</h3><span class="dat">Do 15.10.</span></div>
+            <p class="frage">Muss ich für Deutschland kämpfen, wenn ich nicht davon überzeugt bin?</p>
+            <ul class="hub-list">
         <li>
           <a href="../../quellen/wehrdienst/">
-            <span class="stufe">08.10.</span>
             <span class="titel">Wochenrückblick: Der neue Wehrdienst</span>
             <span class="art">Quellen</span>
           </a>
         </li>
+            </ul>
+          </li>
+          <li class="stunde" id="s01-ue06-07">
+            <div class="kopf"><h3>Kalter Krieg und Wirtschaftswunder</h3><span class="dat">Fr 16.10. · Doppelstunde</span></div>
+            <p class="frage">Hätte ich damals Angst vor einem Krieg haben müssen? Wo hätte ich 1955 mehr kaufen können?</p>
+            <ul class="hub-list">
+        <li>
+          <a href="../../ordnen/eigener-staat/">
+            <span class="titel">Mein eigener Staat</span>
+            <span class="art">Anordnen</span>
+          </a>
+        </li>
+            </ul>
+          </li>
+          <li class="stunde" id="s01-ue08">
+            <div class="kopf"><h3>Zwei Sieger, zwei Staaten</h3><span class="dat">Do 12.11.</span></div>
+            <p class="frage">Warum machten die USA und die Sowjetunion aus ihren Teilen Deutschlands so verschiedene Staaten?</p>
+            <ul class="hub-list">
+        <li>
+          <a href="../../begleiten/zwei-sieger/">
+            <span class="titel">Zwei Sieger, zwei Staaten: Stationen</span>
+            <span class="art">Werkzeug</span>
+          </a>
+        </li>
+            </ul>
+          </li>
+          <li class="stunde hier" id="s01-ue09-10">
+            <div class="kopf"><h3>Jugend in Ost und West</h3><span class="dat">Fr 13.11. · Doppelstunde</span><span class="marke">Hier sind wir</span></div>
+            <p class="frage">Wie frei waren Jugendliche in der DDR und in der BRD?</p>
+            <ul class="hub-list">
+        <li>
+          <a href="../../zeitkarte/geteiltes-land/">
+            <span class="titel">Geteiltes Land: Zeitkarte</span>
+            <span class="art">Werkzeug</span>
+          </a>
+        </li>
+        <li>
+          <a href="../../begleiten/jugend-ost-west/">
+            <span class="titel">Jugend in Ost und West</span>
+            <span class="art">Werkzeug</span>
+          </a>
+        </li>
+            </ul>
+          </li>
+          <li class="stunde kommt" id="s01-ue11">
+            <div class="kopf"><h3>Übung für die Probe</h3><span class="dat">Do 19.11.</span></div>
+            <p class="leer">Kommt noch.</p>
+          </li>
+          <li class="stunde kommt probe" id="s01-probe1">
+            <div class="kopf"><h3>Probe</h3><span class="dat">Fr 20.11.</span></div>
+            <p class="frage">Stoff: deine Hefteinträge vom 08.10. bis 13.11. Zu jeder Stunde darunter stehen die Frage und, wo es welches gibt, das Material.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="seq" id="s00">
+        <h2>Aktuelles: Der politische Wochenrückblick</h2>
+        <p class="leitfrage">Was ist diese Woche passiert, und warum ist es wichtig?</p>
+        <ul class="leiste">
+          <li class=""><a href="#s00-ue01"><span class="dat">Do 17.09.</span><span class="tit">Einstieg Wochenrückblick</span></a></li>
+          <li class=""><a href="#s00-ue02-03"><span class="dat">Fr 18.09.</span><span class="tit">Präsentation und Sicherung</span></a></li>
+          <li class=""><a href="#s00-ue04"><span class="dat">Do 24.09.</span><span class="tit">Die AfD</span></a></li>
+          <li class=""><a href="#s00-ue05-06"><span class="dat">Fr 25.09.</span><span class="tit">Der 8. Mai 1945</span></a></li>
+        </ul>
+        <ol class="stunden">
+          <li class="stunde" id="s00-ue01">
+            <div class="kopf"><h3>Einstieg Wochenrückblick</h3><span class="dat">Do 17.09.</span></div>
+            <p class="frage">Was ist diese Woche passiert, und warum ist es wichtig?</p>
+            <p class="leer">Hierzu gibt es nichts im Netz: Es liegt in deinem Heft und im Schnellhefter.</p>
+          </li>
+          <li class="stunde" id="s00-ue02-03">
+            <div class="kopf"><h3>Präsentation und Sicherung</h3><span class="dat">Fr 18.09. · Doppelstunde</span></div>
+            <p class="frage">Was ist diese Woche passiert, und warum ist es wichtig?</p>
+            <p class="leer">Hierzu gibt es nichts im Netz: Es liegt in deinem Heft und im Schnellhefter.</p>
+          </li>
+          <li class="stunde" id="s00-ue04">
+            <div class="kopf"><h3>Die AfD</h3><span class="dat">Do 24.09.</span></div>
+            <p class="frage">Warum wählen so viele Menschen die AfD?</p>
+            <p class="leer">Hierzu gibt es nichts im Netz: Es liegt in deinem Heft und im Schnellhefter.</p>
+          </li>
+          <li class="stunde" id="s00-ue05-06">
+            <div class="kopf"><h3>Der 8. Mai 1945</h3><span class="dat">Fr 25.09. · Doppelstunde</span></div>
+            <p class="frage">War der 8. Mai 1945 auch für die Deutschen eine Befreiung?</p>
+            <ul class="hub-list">
+        <li>
+          <a href="../../gpg/wochenrueckblick.html">
+            <span class="titel">Mein politischer Wochenrückblick — so bereitest du dein Referat vor</span>
+            <span class="art">Anleitung</span>
+          </a>
+        </li>
+        <li>
+          <a href="../../escape-games/zweiter-weltkrieg-ende-1945/index.html">
+            <span class="titel">Verlauf und Ende des Zweiten Weltkriegs</span>
+            <span class="art">Escape-Game</span>
+          </a>
+        </li>
+            </ul>
+          </li>
+        </ol>
+        <h3 class="cap unter">Weiteres zu dieser Sequenz</h3>
+        <ul class="hub-list">
         <li>
           <a href="../../quellen/fruehstartrente/">
             <span class="stufe">05.10.</span>
@@ -130,66 +309,8 @@
             <span class="art">Quellen</span>
           </a>
         </li>
-        <li>
-          <a href="../../gpg/wochenrueckblick.html">
-            <span class="stufe">24.09.</span>
-            <span class="titel">Mein politischer Wochenrückblick — so bereitest du dein Referat vor</span>
-            <span class="art">Anleitung</span>
-          </a>
-        </li>
-      </ul>
-
-      <h2 class="klasse">Geschichte</h2>
-
-      <h3 class="cap unter">Markt oder Plan</h3>
-      <ul class="hub-list">
-        <li>
-          <a href="../../begleiten/jugend-ost-west/">
-            <span class="stufe">13.11.</span>
-            <span class="titel">Jugend in Ost und West</span>
-            <span class="art">Werkzeug</span>
-          </a>
-        </li>
-        <li>
-          <a href="../../zeitkarte/geteiltes-land/">
-            <span class="stufe">13.11.</span>
-            <span class="titel">Geteiltes Land: Zeitkarte</span>
-            <span class="art">Werkzeug</span>
-          </a>
-        </li>
-        <li>
-          <a href="../../begleiten/zwei-sieger/">
-            <span class="stufe">12.11.</span>
-            <span class="titel">Zwei Sieger, zwei Staaten: Stationen</span>
-            <span class="art">Werkzeug</span>
-          </a>
-        </li>
-        <li>
-          <a href="../../quellen/markt-oder-plan-west/">
-            <span class="stufe">08.10.</span>
-            <span class="titel">Markt oder Plan? · Gruppe West</span>
-            <span class="art">Quellen</span>
-          </a>
-        </li>
-        <li>
-          <a href="../../quellen/markt-oder-plan-ost/">
-            <span class="stufe">08.10.</span>
-            <span class="titel">Markt oder Plan? · Gruppe Ost</span>
-            <span class="art">Quellen</span>
-          </a>
-        </li>
-      </ul>
-
-      <h3 class="cap unter">Zweiter Weltkrieg</h3>
-      <ul class="hub-list">
-        <li>
-          <a href="../../escape-games/zweiter-weltkrieg-ende-1945/index.html">
-            <span class="stufe">21.09.</span>
-            <span class="titel">Verlauf und Ende des Zweiten Weltkriegs</span>
-            <span class="art">Escape-Game</span>
-          </a>
-        </li>
-      </ul>
+        </ul>
+      </section>
     </div>
   </section>
 </main>
