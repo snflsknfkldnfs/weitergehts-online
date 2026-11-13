@@ -231,3 +231,29 @@ details.freitext summary { cursor: pointer; font-weight: 600; min-height: 36px; 
 details.freitext summary::marker { color: var(--leise); }
 p.datenhinweis { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--linie-hell); font-size: .875rem; color: var(--leise); }
 p.datenhinweis a { color: var(--tinte); }
+
+/* Kopf des Rückmeldekastens: Zustand klein rechts */
+.antwort-kopf { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.antwort-kopf h2 { font-size: 1.0625rem; font-weight: 650; margin: 0; }
+.zustand.klein { margin: 0; font-size: .8125rem; font-weight: 500; color: var(--leise); white-space: nowrap; }
+.zustand.klein::before { width: 8px; height: 8px; }
+@media (max-width: 899px) {
+  .antwort-kopf { justify-content: flex-end; margin-top: 6px; }
+  .antwort-kopf h2 { display: none; }
+}
+/* Notiz zur ganzen Karte: Leitfragen leise */
+.leitfragen { margin: 4px 0 8px; font-size: .875rem; color: var(--leise); }
+/* Lange Einfügung: in der Zeile nur V mit Nummer, die Anmerkung erscheint weich am Rand */
+ins.hand.lang { cursor: pointer; }
+ins.hand.lang sup.anker-nr { font-size: 1.05rem; }
+@keyframes notiz-ein { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+.notiz.neu { animation: notiz-ein .25s ease-out; }
+
+/* Veto: dezentes Kästchen; gesetzt, wirkt die Karte gestrichen (gedimmt, diagonal durchgestrichen) */
+.veto { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; min-height: 36px; font-size: .9375rem; color: var(--leise); cursor: pointer; }
+.veto input { width: 18px; height: 18px; accent-color: var(--hand); margin: 0; }
+.veto-an .veto { color: var(--hand); font-weight: 600; }
+.veto-an .blatt { position: relative; }
+.veto-an .blatt > * { opacity: .5; }
+.veto-an .blatt::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to top right, transparent calc(50% - 1.5px), var(--hand) calc(50% - 1px), var(--hand) calc(50% + 1px), transparent calc(50% + 1.5px)); }

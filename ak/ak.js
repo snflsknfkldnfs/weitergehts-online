@@ -22,7 +22,7 @@
   // Ohne den Schalter sieht und schickt die Seite nur die Kollegiumsrunde.
   var RUNDE_AK = new URLSearchParams(location.search).get('runde') === 'ak';
   if (RUNDE_AK) KONFIG.umfrage = 'ak-sichtung-2026';
-  var AUSHANG = { feld: 'aushang', typ: 'wahl', frage: 'Soll diese Rolle in den Aushang fürs Kollegium?', optionen: ['ja', 'mit Änderungen', 'Veto: nicht aushängen'] };
+  var AUSHANG = { feld: 'aushang', typ: 'veto', frage: 'Veto: diese Rolle nicht aushängen' };
 
   // ---- Zentraler Datenschutz-Hinweis (Dialog auf der Startseite + Kurzfassung am Formular) -----
   var LOESCHFRIST = '31.07.2027';
@@ -44,16 +44,16 @@
 
   var FRAGEN = {
     rolle: [
-      { feld: 'eindruck', typ: 'text', frage: 'Wie findest du diesen Vorschlag? Was überzeugt dich daran?' },
-      { feld: 'uebersehen', typ: 'text', frage: 'Was übersehen wir vielleicht? Was müsste man nachschärfen?' },
       { feld: 'begleiten', typ: 'wahl', frage: 'Könntest du dir vorstellen, diese Rolle als Ansprechperson zu begleiten?', optionen: ['ja', 'vielleicht', 'nein'] }
     ],
-    allgemein: [
-      { feld: 'eindruck', typ: 'text', frage: 'Wie findest du das Vorhaben? Was überzeugt dich daran?' },
-      { feld: 'uebersehen', typ: 'text', frage: 'Was übersehen wir vielleicht? Was müsste man nachschärfen?' },
-      { feld: 'fehlende_rolle', typ: 'text', frage: 'Fehlt eine Rolle, die es an unserer Schule bräuchte?' }
-    ]
+    allgemein: []
   };
+  // Leitfragen für die Notiz zur ganzen Karte (klein, als Anregung, nicht als Pflichtfragen)
+  var LEITFRAGEN = {
+    rolle: ['Was überzeugt dich?', 'Was übersehen wir?', 'Was müsste man nachschärfen?'],
+    allgemein: ['Was überzeugt dich?', 'Was übersehen wir?', 'Fehlt eine Rolle, die es bräuchte?']
+  };
+  var EINFUEGE_LANG = 25; // längere Einfügungen wandern als Anmerkung an den Rand (wie im Pult)
 
   var ALLGEMEIN = {
     titel: 'Das Vorhaben insgesamt',
@@ -111,7 +111,12 @@
     }).catch(function () { return { zustand: 'unbekannt' }; });
   }
 
-  function statusText(s) {
+  function kurzdatum(iso) {
+    var d = new Date(iso), z = function (n) { return (n < 10 ? '0' : '') + n; };
+    return ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'][d.getDay()] + ', ' + z(d.getDate()) + '.' + z(d.getMonth() + 1) + '.' + String(d.getFullYear()).slice(2);
+  }
+  function statusText(s, kurz) {
+    if (kurz && s.zustand === 'offen') return 'offen bis ' + kurzdatum(s.bis);
     switch (s.zustand) {
       case 'offen': return 'Rückmeldung offen bis ' + datum(s.bis);
       case 'bald': return 'Rückmeldung ab ' + datum(s.von);
@@ -120,8 +125,8 @@
       default: return 'Zum Ansehen. Die Rückmeldung startet in Kürze.';
     }
   }
-  function statusSetzen(el, s) {
-    el.textContent = statusText(s);
+  function statusSetzen(el, s, kurz) {
+    el.textContent = statusText(s, kurz);
     el.className = 'zustand' + (s.zustand === 'offen' ? ' offen' : '');
   }
 
@@ -237,7 +242,7 @@
         '<div class="seite"><div>' + (istAllgemein ? allgemeinHtml() : karteHtml(rolle)) + '</div>' +
         '<aside class="antwort" aria-label="Rückmeldung">' +
         '<button class="griff" type="button" aria-expanded="false"><span>Rückmeldung geben</span><span class="pfeil" aria-hidden="true">▲</span></button>' +
-        '<h2>Rückmeldung</h2><p class="zustand" id="status-form"></p><div id="formular-ort"></div></aside></div>';
+        '<div class="antwort-kopf"><h2>Rückmeldung</h2><p class="zustand klein" id="status-form"></p></div><div id="formular-ort"></div></aside></div>';
 
       var griff = $('.griff');
       griff.addEventListener('click', function () {
@@ -246,7 +251,7 @@
       });
 
       statusLaden().then(function (s) {
-        statusSetzen($('#status-form'), s);
+        statusSetzen($('#status-form'), s, true);
         if (s.zustand !== 'offen') {
           $('#formular-ort').innerHTML = liste(DSGVO_KURZ, 'datenhinweis');
           return;
@@ -269,22 +274,21 @@
   var PULT = { an: false, notizen: [], nr: 0 };
 
   function pultHtml(fragen) {
-    var wahl = fragen.filter(function (f) { return f.typ === 'wahl' && (RUNDE_AK ? f.feld === 'aushang' : true); });
-    var frei = fragen.filter(function (f) { return f.typ === 'text'; });
+    var wahl = fragen.filter(function (f) { return RUNDE_AK ? f.feld === 'aushang' : f.typ === 'wahl'; });
+    var istGanzesVorhaben = !document.querySelector('.blatt .merkmale');
     return '<p class="pult-hilfe">Korrigier die Karte wie im Heft: streichen, darüberschreiben, markieren und anmerken.</p>' +
       '<ol class="rand" id="rand"></ol>' +
       wahl.map(function (f) {
+        if (f.typ === 'veto') return '<label class="veto"><input type="checkbox" name="pult-' + f.feld + '" value="Veto"><span>' + e(f.frage) + '</span></label>';
         return '<fieldset><legend>' + e(f.frage) + '</legend><div class="wahl">' +
           f.optionen.map(function (o) {
             return '<label><input type="radio" name="pult-' + f.feld + '" value="' + e(o) + '"><span>' + e(o) + '</span></label>';
           }).join('') + '</div></fieldset>';
       }).join('') +
-      '<details class="freitext"><summary>Lieber in eigenen Worten</summary>' +
-      frei.map(function (f) {
-        return '<label class="frage" for="f-' + f.feld + '">' + e(f.frage) + '</label>' +
-          '<textarea id="f-' + f.feld + '" data-feld="' + f.feld + '" maxlength="' + GRENZE + '"></textarea>';
-      }).join('') + '</details>' +
-      '<p class="datenhinweis">Anonym, bitte keine Namen. ' + DSGVO_LINK + '</p>' +
+      '<details class="freitext"><summary>' + (istGanzesVorhaben ? 'Zum Vorhaben insgesamt' : 'Zur ganzen Karte') + '</summary>' +
+      '<p class="leitfragen">' + (istGanzesVorhaben ? LEITFRAGEN.allgemein : LEITFRAGEN.rolle).map(e).join(' · ') + '</p>' +
+      '<textarea id="f-ganzes" data-feld="ganzes" maxlength="' + GRENZE + '" aria-label="Notiz zur ganzen Karte"></textarea></details>' +
+      '<p class="datenhinweis">Anonym, bitte keine Namen.</p>' +
       '<button class="senden" type="button" id="pult-senden">Korrigierte Karte abschicken</button>' +
       '<p class="meldung" id="pult-meldung" role="status" aria-live="polite"></p>';
   }
@@ -388,7 +392,7 @@
         var text = art === 'insertText' ? ev.data : (art === 'insertFromPaste' || art === 'insertReplacementText') ?
           ((ev.dataTransfer && ev.dataTransfer.getData('text/plain')) || ev.data || '') : ' ';
         if (!range.collapsed) streichen(range);
-        if (text) einfuegen(range, text.replace(/\s+/g, ' '));
+        if (text) { einfuegen(range, text.replace(/\s+/g, ' ')); if (langUmwandeln(range)) return; }
         sel.removeAllRanges(); sel.addRange(range);
       } else if (art.indexOf('delete') === 0) {
         ev.preventDefault();
@@ -423,6 +427,28 @@
     });
     document.addEventListener('selectionchange', griffZeigen);
     $('#pult-senden').addEventListener('click', function () { pultSenden(bereich, fragen); });
+    var veto = document.querySelector('.veto input');
+    if (veto) veto.addEventListener('change', function () { document.body.classList.toggle('veto-an', veto.checked); });
+  }
+
+  // Wird eine Einfügung zu lang, bleibt in der Zeile nur das V mit Nummer; der Text wandert als Anmerkung
+  // an den Rand, der Cursor folgt ins Feld, man schreibt ohne Unterbrechung weiter.
+  function langUmwandeln(range) {
+    var ins = imHand(range.startContainer);
+    if (!ins || !ins.classList.contains('einfuegung') || ins.dataset.id || ins.textContent.trim().length <= EINFUEGE_LANG) return false;
+    var einh = einheitVon(ins), davor = document.createRange();
+    davor.setStart(einh, 0); davor.setEndBefore(ins);
+    var worte = davor.toString().trim().split(/\s+/), nach = worte[worte.length - 1] || 'Anfang';
+    var nr = ++PULT.nr, id = 'e' + nr, text = ins.textContent.replace(/^\s+/, '');
+    PULT.notizen.push({ id: id, nr: nr, art: 'einfuegung', wo: einh.dataset.einheit, nach: nach, text: text, neu: true });
+    ins.textContent = '';
+    ins.dataset.id = id; ins.classList.add('lang'); ins.setAttribute('contenteditable', 'false');
+    var s = document.createElement('sup'); s.className = 'anker-nr'; s.textContent = nr; ins.append(s);
+    getSelection().removeAllRanges();
+    randZeichnen(); oeffnen();
+    var ta = document.querySelector('#rand [data-id="' + id + '"] textarea');
+    if (ta) { ta.focus(); ta.setSelectionRange(ta.value.length, ta.value.length); }
+    return true;
   }
 
   function oeffnen() {
@@ -468,9 +494,10 @@
   function randZeichnen() {
     var rand = $('#rand');
     rand.innerHTML = PULT.notizen.map(function (n) {
-      return '<li class="notiz" data-id="' + n.id + '"><span class="notiz-nr">' + n.nr + '</span><div>' +
-        '<p class="notiz-wo">' + e(n.wo) + ': „' + e(n.zitat) + '“</p>' +
-        '<textarea maxlength="' + GRENZE + '" placeholder="Was soll anders sein, und warum?">' + e(n.text) + '</textarea>' +
+      var neu = n.neu; n.neu = false;
+      return '<li class="notiz' + (neu ? ' neu' : '') + '" data-id="' + n.id + '"><span class="notiz-nr">' + n.nr + '</span><div>' +
+        '<p class="notiz-wo">' + e(n.wo) + (n.art === 'einfuegung' ? ', Einfügung nach „' + e(n.nach) + '“' : ': „' + e(n.zitat) + '“') + '</p>' +
+        '<textarea maxlength="' + GRENZE + '"' + (n.art === 'einfuegung' ? '' : ' placeholder="Was soll anders sein, und warum?"') + '>' + e(n.text) + '</textarea>' +
         '<button type="button" class="linkknopf klein" data-weg="' + n.id + '">Anmerkung entfernen</button></div></li>';
     }).join('');
     Array.prototype.forEach.call(rand.querySelectorAll('textarea'), function (ta) {
@@ -484,11 +511,12 @@
         PULT.notizen = PULT.notizen.filter(function (x) { return x.id !== id; });
         var m = document.querySelector('mark.anker[data-id="' + id + '"]');
         if (m) { var s = m.nextSibling; if (s && s.classList && s.classList.contains('anker-nr')) s.remove(); m.replaceWith.apply(m, m.childNodes); }
+        var v = document.querySelector('ins.hand.lang[data-id="' + id + '"]'); if (v) v.remove();
         randZeichnen();
       });
     });
     Array.prototype.forEach.call(rand.querySelectorAll('.notiz'), function (li) {
-      var m = document.querySelector('mark.anker[data-id="' + li.dataset.id + '"]');
+      var m = document.querySelector('mark.anker[data-id="' + li.dataset.id + '"], ins.hand.lang[data-id="' + li.dataset.id + '"]');
       li.addEventListener('mouseenter', function () { if (m) m.classList.add('aktiv'); });
       li.addEventListener('mouseleave', function () { if (m) m.classList.remove('aktiv'); });
     });
@@ -503,6 +531,7 @@
         var dd = n.querySelector('del.hand'), ii = n.querySelector('ins.hand');
         s += '[− ' + (dd ? dd.textContent : '') + ' → + ' + (ii ? ii.textContent : '') + ']';
       }
+      else if (n.matches('ins.hand.lang')) s += '[+ siehe Anmerkung ' + n.dataset.id.slice(1) + ']';
       else if (n.matches('ins.hand')) s += '[+ ' + n.textContent + ']';
       else if (n.matches('del.hand')) s += '[− ' + n.textContent + ']';
       else if (n.matches('sup.anker-nr')) return;
@@ -519,16 +548,18 @@
       if (el.querySelector('ins.hand, del.hand')) hand.push(el.dataset.einheit + ': ' + handText(el));
     });
     var anm = PULT.notizen.filter(function (n) { return n.text.trim(); }).map(function (n) {
-      return n.nr + '. ' + n.wo + ', „' + n.zitat + '“: ' + n.text.trim();
+      return n.nr + '. ' + n.wo + ', ' + (n.art === 'einfuegung' ? 'Einfügung nach „' + n.nach + '“' : '„' + n.zitat + '“') + ': ' + n.text.trim();
     });
     var felder = {};
     if (hand.length) felder.hand = hand.join('\n').slice(0, GRENZE);
     if (anm.length) felder.anmerkungen = anm.join('\n').slice(0, GRENZE);
     fragen.forEach(function (f) {
       var wert = '';
-      if (f.typ === 'wahl') { var x = document.querySelector('input[name="pult-' + f.feld + '"]:checked'); wert = x ? x.value : ''; }
-      else { var ta = document.querySelector('textarea[data-feld="' + f.feld + '"]'); wert = ta ? ta.value.trim().slice(0, GRENZE) : ''; }
+      if (f.typ === 'wahl' || f.typ === 'veto') { var x = document.querySelector('input[name="pult-' + f.feld + '"]:checked'); wert = x ? x.value : ''; }
       if (wert) felder[f.feld] = wert;
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('#formular-ort textarea[data-feld]'), function (ta) {
+      var w = ta.value.trim().slice(0, GRENZE); if (w) felder[ta.dataset.feld] = w;
     });
     if (!Object.keys(felder).length) {
       meldung.className = 'meldung fehler';
@@ -543,7 +574,7 @@
       body: JSON.stringify({ umfrage_id: KONFIG.umfrage, bereich: bereich, felder: felder })
     }).then(function (r) {
       if (!r.ok) throw new Error(String(r.status));
-      pultAus();
+      pultAus(); document.body.classList.remove('veto-an');
       $('#formular-ort').innerHTML = '<ul class="zeilen danke"><li><strong>Danke, angekommen.</strong></li><li><a href="./">Zu allen Rollen</a></li></ul>';
     }).catch(function () {
       knopf.disabled = false; meldung.className = 'meldung fehler';
