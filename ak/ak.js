@@ -138,25 +138,28 @@
   function karteHtml(r) {
     return '<article class="blatt">' +
       '<div class="blatt-titel"><div class="sym" aria-hidden="true">' + e(r.symbol) + '</div><div>' +
-      '<h1>' + e(r.rolle) + '</h1><p class="satz">' + e(r.satz) + '</p>' +
+      '<h1 class="einheit" data-einheit="Rollenname">' + e(r.rolle) + '</h1><p class="satz einheit" data-einheit="Satz">' + e(r.satz) + '</p>' +
       '<div class="merkmale"><span class="merkmal">Jgst. ' + e(r.jgst) + '</span>' +
       '<span class="merkmal">Verantwortung für ' + e(r.verantwortung) + '</span>' +
       '<span class="merkmal' + (r.bei_uns === 'neu' ? ' neu' : '') + '">bei uns: ' + e(r.bei_uns) + '</span></div>' +
       '</div></div>' +
       '<div class="felder"><div>' +
-      '<h2>Löst</h2><p>' + e(r.loest) + '</p>' +
-      '<h2>Aufgaben</h2><ul>' + r.aufgaben.map(function (a) { return '<li>' + e(a) + '</li>'; }).join('') + '</ul>' +
+      '<h2>Löst</h2>' + einheit('p', 'Löst', r.loest) +
+      '<h2>Aufgaben</h2><ul>' + r.aufgaben.map(function (a, i) { return einheit('li', 'Aufgabe ' + (i + 1), a); }).join('') + '</ul>' +
       '</div><div>' +
-      '<h2>Ressourcen</h2><p>' + e(r.ressourcen) + '</p>' +
-      '<h2>Du entscheidest</h2><p>' + e(r.entscheidest) + '</p>' +
-      '<h2>Braucht</h2><p>' + e(r.braucht) + '</p>' +
-      '<h2>Beachten</h2><p>' + e(r.beachten) + '</p>' +
+      '<h2>Ressourcen</h2>' + einheit('p', 'Ressourcen', r.ressourcen) +
+      '<h2>Du entscheidest</h2>' + einheit('p', 'Du entscheidest', r.entscheidest) +
+      '<h2>Braucht</h2>' + einheit('p', 'Braucht', r.braucht) +
+      '<h2>Beachten</h2>' + einheit('p', 'Beachten', r.beachten) +
       '</div></div><p class="blatt-fuss">Karte ' + e(r.nr) + ' · Entwurf</p></article>';
   }
   function allgemeinHtml() {
     return '<article class="blatt"><div class="blatt-titel"><div class="sym" aria-hidden="true">🧭</div><div>' +
-      '<h1>' + ALLGEMEIN.titel + '</h1><p class="satz">' + ALLGEMEIN.satz + '</p></div></div>' +
-      liste(ALLGEMEIN.zeilen, 'zeilen') + '</article>';
+      '<h1>' + ALLGEMEIN.titel + '</h1>' + einheit('p', 'Satz', ALLGEMEIN.satz, 'satz') + '</div></div>' +
+      '<ul class="zeilen">' + ALLGEMEIN.zeilen.map(function (z, i) { return einheit('li', 'Zeile ' + (i + 1), z); }).join('') + '</ul></article>';
+  }
+  function einheit(tag, name, text, klasse) {
+    return '<' + tag + ' class="einheit' + (klasse ? ' ' + klasse : '') + '" data-einheit="' + e(name) + '">' + e(text) + '</' + tag + '>';
   }
 
   // ---- Startseite -----------------------------------------------------------------------------
@@ -261,8 +264,18 @@
           $('#formular-ort').innerHTML = liste(DSGVO_KURZ, 'datenhinweis');
           return;
         }
-        $('#formular-ort').innerHTML = formularHtml(fragen);
-        formularVerdrahten(istAllgemein ? 'allgemein' : 'rolle-' + rolle.nr, fragen);
+        var bereich = istAllgemein ? 'allgemein' : 'rolle-' + rolle.nr;
+        $('#formular-ort').innerHTML =
+          '<div class="modus" role="radiogroup" aria-label="Art der Rückmeldung">' +
+          '<label><input type="radio" name="modus" value="fragen" checked><span>Fragen beantworten</span></label>' +
+          '<label><input type="radio" name="modus" value="pult"><span>Am Text anmerken</span></label></div>' +
+          '<div id="modus-fragen">' + formularHtml(fragen) + '</div>' +
+          '<div id="modus-pult" hidden>' + pultHtml(!istAllgemein) + '</div>';
+        formularVerdrahten(bereich, fragen);
+        pultVerdrahten(bereich, !istAllgemein);
+        Array.prototype.forEach.call(document.querySelectorAll('input[name="modus"]'), function (r) {
+          r.addEventListener('change', function () { modusSetzen(r.value); });
+        });
       });
     }).catch(function () {
       $('#inhalt').innerHTML = '<p>Die Karte ließ sich nicht laden. Bitte Seite neu laden.</p>';
@@ -313,6 +326,263 @@
       form.innerHTML = '<ul class="zeilen danke"><li><strong>Danke, angekommen.</strong></li>' +
         '<li><a href="./">Zu allen Rollen</a></li></ul>';
     }
+  }
+
+  // ---- Pult: Rückmeldung direkt am Text --------------------------------------------------------
+  // Nach dem Pult-Entwurf aus die-matrixe (spiel/DESIGN/entwuerfe/pult): Tippen schreibt in Korrekturrot
+  // über die Zeile, Löschen streicht (das Gestrichene bleibt lesbar), Markieren → „Anmerken“ setzt eine
+  // nummerierte Anmerkung an die Stelle, „Zum ganzen Blatt“ ist eine Notiz ohne Stelle.
+  var PULT = { an: false, notizen: [], nr: 0, ganz: '' };
+
+  function pultHtml(mitBegleiten) {
+    return '<ul class="zeilen pult-hilfe">' +
+      '<li>Ins Blatt tippen: Dein Wort steht rot über der Zeile.</li>' +
+      '<li>Löschen streicht durch, das Gestrichene bleibt lesbar.</li>' +
+      '<li>Eine Stelle markieren, dann „Anmerken“: Die Anmerkung steht hier mit Nummer.</li>' +
+      '<li class="leise nur-handy">Am Computer geht es bequemer.</li></ul>' +
+      '<ol class="rand" id="rand"></ol>' +
+      '<button type="button" class="linkknopf" id="ganz-knopf">Zum ganzen Blatt</button>' +
+      '<div id="ganz-ort" hidden><label class="frage" for="ganz-text">Zum ganzen Blatt: Was fehlt, was übersehen wir?</label>' +
+      '<textarea id="ganz-text" maxlength="' + GRENZE + '"></textarea></div>' +
+      (mitBegleiten ? '<fieldset><legend>' + e(FRAGEN.rolle[2].frage) + '</legend><div class="wahl">' +
+        FRAGEN.rolle[2].optionen.map(function (o) {
+          return '<label><input type="radio" name="pult-begleiten" value="' + o + '"><span>' + o + '</span></label>';
+        }).join('') + '</div></fieldset>' : '') +
+      liste(DSGVO_KURZ, 'datenhinweis') +
+      '<button class="senden" type="button" id="pult-senden">Anmerkungen abschicken</button>' +
+      '<p class="meldung" id="pult-meldung" role="status" aria-live="polite"></p>';
+  }
+
+  function modusSetzen(modus) {
+    var pult = modus === 'pult';
+    $('#modus-fragen').hidden = pult;
+    $('#modus-pult').hidden = !pult;
+    PULT.an = pult;
+    document.body.classList.toggle('pult-an', pult);
+    Array.prototype.forEach.call(document.querySelectorAll('.blatt .einheit'), function (el) {
+      if (pult) { el.setAttribute('contenteditable', 'true'); el.setAttribute('spellcheck', 'false'); }
+      else el.removeAttribute('contenteditable');
+    });
+    if (!pult) griffWeg();
+  }
+
+  function imHand(node) {
+    for (var n = node; n && !(n.classList && n.classList.contains('einheit')); n = n.parentNode)
+      if (n.nodeType === 1 && n.matches('ins.hand')) return n;
+    return null;
+  }
+  function einheitVon(node) {
+    for (var n = node; n; n = n.parentNode) if (n.nodeType === 1 && n.classList.contains('einheit')) return n;
+    return null;
+  }
+  function streichen(range) {
+    var frag = range.extractContents();
+    Array.prototype.forEach.call(frag.querySelectorAll('ins.hand'), function (i) { i.remove(); });
+    Array.prototype.forEach.call(frag.querySelectorAll('del.hand'), function (d) { d.replaceWith.apply(d, d.childNodes); });
+    if (!frag.textContent) return;
+    var d = document.createElement('del'); d.className = 'hand'; d.append(frag);
+    range.insertNode(d);
+    // direkt benachbarte Streichungen zu einer zusammenfassen
+    var leer = function (x) { return x && x.nodeType === 3 && !x.length; };
+    while (leer(d.previousSibling)) d.previousSibling.remove();
+    while (leer(d.nextSibling)) d.nextSibling.remove();
+    var v = d.previousSibling, n = d.nextSibling;
+    if (v && v.nodeType === 1 && v.matches('del.hand')) { while (d.firstChild) v.append(d.firstChild); d.remove(); d = v; }
+    if (n && n.nodeType === 1 && n.matches('del.hand')) { while (n.firstChild) d.append(n.firstChild); n.remove(); }
+    range.setStartAfter(d); range.collapse(true);
+  }
+  // Das Zeichen vor (rueck) oder nach dem Cursor, Gestrichenes und Nummern übersprungen
+  function nachbarZeichen(range, rueck, einh) {
+    if (!einh) return null;
+    var w = document.createTreeWalker(einh, NodeFilter.SHOW_TEXT, { acceptNode: function (n) {
+      return n.parentNode.closest('del.hand, sup.anker-nr') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT; } });
+    var knoten = []; while (w.nextNode()) knoten.push(w.currentNode);
+    var cur = document.createRange();
+    if (rueck) {
+      for (var i = knoten.length - 1; i >= 0; i--) {
+        var n = knoten[i];
+        for (var o = n.length; o > 0; o--) { cur.setStart(n, o); cur.collapse(true); if (cur.compareBoundaryPoints(Range.START_TO_START, range) <= 0) return { node: n, off: o - 1 }; }
+      }
+    } else {
+      for (var j = 0; j < knoten.length; j++) {
+        var m = knoten[j];
+        for (var p = 0; p < m.length; p++) { cur.setStart(m, p); cur.collapse(true); if (cur.compareBoundaryPoints(Range.START_TO_START, range) >= 0) return { node: m, off: p }; }
+      }
+    }
+    return null;
+  }
+  function einfuegen(range, text) {
+    if (imHand(range.startContainer)) {
+      var tn = document.createTextNode(text); range.insertNode(tn); range.setStartAfter(tn); range.collapse(true); return;
+    }
+    var i = document.createElement('ins'); i.className = 'hand'; i.textContent = text;
+    range.insertNode(i); range.setStart(i.firstChild, text.length); range.collapse(true);
+  }
+
+  function pultVerdrahten(bereich, mitBegleiten) {
+    var blatt = document.querySelector('.blatt');
+    blatt.addEventListener('beforeinput', function (ev) {
+      if (!PULT.an || !einheitVon(ev.target)) return;
+      var sel = getSelection(); if (!sel.rangeCount) return;
+      var range = sel.getRangeAt(0);
+      var art = ev.inputType;
+      if (art === 'insertText' || art === 'insertFromPaste' || art === 'insertReplacementText' || art === 'insertParagraph' || art === 'insertLineBreak') {
+        ev.preventDefault();
+        var text = art === 'insertText' ? ev.data : (art === 'insertFromPaste' || art === 'insertReplacementText') ?
+          ((ev.dataTransfer && ev.dataTransfer.getData('text/plain')) || ev.data || '') : ' ';
+        if (!range.collapsed) streichen(range);
+        if (text) einfuegen(range, text.replace(/\s+/g, ' '));
+        sel.removeAllRanges(); sel.addRange(range);
+      } else if (art.indexOf('delete') === 0) {
+        ev.preventDefault();
+        if (!range.collapsed) { streichen(range); }
+        else {
+          var rueck = art.indexOf('Backward') >= 0;
+          var z = nachbarZeichen(range, rueck, einheitVon(ev.target));
+          if (!z) return;
+          var ins = imHand(z.node);
+          if (ins) {                                    // im eigenen Wort: Zeichen wirklich löschen
+            z.node.deleteData(z.off, 1);
+            range.setStart(z.node, z.off); range.collapse(true);
+            if (!ins.textContent) { range.setStartBefore(ins); range.collapse(true); ins.remove(); }
+          } else {                                      // im Kartentext: Zeichen streichen
+            var r = document.createRange(); r.setStart(z.node, z.off); r.setEnd(z.node, z.off + 1);
+            streichen(r);
+            var d = r.startContainer.childNodes[r.startOffset - 1];
+            if (rueck && d) range.setStartBefore(d); else range.setStart(r.startContainer, r.startOffset);
+            range.collapse(true);
+          }
+        }
+        sel.removeAllRanges(); sel.addRange(range);
+      } else ev.preventDefault();
+    });
+    blatt.addEventListener('click', function (ev) {
+      var m = ev.target.closest('mark.anker'); if (!m) return;
+      var feld = document.querySelector('#rand [data-id="' + m.dataset.id + '"] textarea');
+      if (feld) { oeffnen(); feld.focus(); }
+    });
+    document.addEventListener('selectionchange', griffZeigen);
+    $('#ganz-knopf').addEventListener('click', function () {
+      $('#ganz-ort').hidden = false; $('#ganz-knopf').hidden = true; oeffnen(); $('#ganz-text').focus();
+    });
+    $('#pult-senden').addEventListener('click', function () { pultSenden(bereich, mitBegleiten); });
+  }
+
+  function oeffnen() {
+    if (!document.body.classList.contains('offen')) {
+      document.body.classList.add('offen');
+      var g = document.querySelector('.griff'); if (g) g.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  var griffEl = null;
+  function griffWeg() { if (griffEl) { griffEl.remove(); griffEl = null; } }
+  function griffZeigen() {
+    if (!PULT.an) return;
+    var sel = getSelection();
+    if (!sel.rangeCount || sel.isCollapsed || !einheitVon(sel.anchorNode) || einheitVon(sel.anchorNode) !== einheitVon(sel.focusNode)) { griffWeg(); return; }
+    var r = sel.getRangeAt(0).getBoundingClientRect(); if (!r.width) return;
+    if (!griffEl) {
+      griffEl = document.createElement('div'); griffEl.className = 'markier';
+      griffEl.innerHTML = '<button type="button" data-tu="anmerken">Anmerken</button><button type="button" data-tu="streichen">Streichen</button>';
+      document.body.append(griffEl);
+      griffEl.addEventListener('mousedown', function (ev) { ev.preventDefault(); });
+      griffEl.addEventListener('click', griffKlick);
+    }
+    griffEl.style.left = Math.max(8, r.left + window.scrollX + r.width / 2 - 90) + 'px';
+    griffEl.style.top = Math.max(8, r.top + window.scrollY - 52) + 'px';
+  }
+  function griffKlick(ev) {
+    var b = ev.target.closest('button'); if (!b) return;
+    var sel = getSelection(); if (!sel.rangeCount) return;
+    var range = sel.getRangeAt(0);
+    if (b.dataset.tu === 'streichen') { streichen(range); sel.removeAllRanges(); griffWeg(); return; }
+    var nr = ++PULT.nr, id = 'a' + nr;
+    var m = document.createElement('mark'); m.className = 'anker'; m.dataset.id = id;
+    try { range.surroundContents(m); } catch (err) { var frag = range.extractContents(); m.append(frag); range.insertNode(m); }
+    var s = document.createElement('sup'); s.className = 'anker-nr'; s.textContent = nr; s.setAttribute('contenteditable', 'false');
+    m.after(s);
+    var einh = einheitVon(m);
+    PULT.notizen.push({ id: id, nr: nr, wo: einh ? einh.dataset.einheit : 'Blatt', zitat: m.textContent, text: '' });
+    sel.removeAllRanges(); griffWeg(); randZeichnen(); oeffnen();
+    var feld = document.querySelector('#rand [data-id="' + id + '"] textarea'); if (feld) feld.focus();
+  }
+
+  function randZeichnen() {
+    var rand = $('#rand');
+    rand.innerHTML = PULT.notizen.map(function (n) {
+      return '<li class="notiz" data-id="' + n.id + '"><span class="notiz-nr">' + n.nr + '</span><div>' +
+        '<p class="notiz-wo">' + e(n.wo) + ': „' + e(n.zitat) + '“</p>' +
+        '<textarea maxlength="' + GRENZE + '" placeholder="Was soll anders sein, und warum?">' + e(n.text) + '</textarea>' +
+        '<button type="button" class="linkknopf klein" data-weg="' + n.id + '">Anmerkung entfernen</button></div></li>';
+    }).join('');
+    Array.prototype.forEach.call(rand.querySelectorAll('textarea'), function (ta) {
+      ta.addEventListener('input', function () {
+        var n = PULT.notizen.filter(function (x) { return x.id === ta.closest('.notiz').dataset.id; })[0]; if (n) n.text = ta.value;
+      });
+    });
+    Array.prototype.forEach.call(rand.querySelectorAll('[data-weg]'), function (b) {
+      b.addEventListener('click', function () {
+        var id = b.dataset.weg;
+        PULT.notizen = PULT.notizen.filter(function (x) { return x.id !== id; });
+        var m = document.querySelector('mark.anker[data-id="' + id + '"]');
+        if (m) { var s = m.nextSibling; if (s && s.classList && s.classList.contains('anker-nr')) s.remove(); m.replaceWith.apply(m, m.childNodes); }
+        randZeichnen();
+      });
+    });
+    Array.prototype.forEach.call(rand.querySelectorAll('.notiz'), function (li) {
+      var m = document.querySelector('mark.anker[data-id="' + li.dataset.id + '"]');
+      li.addEventListener('mouseenter', function () { if (m) m.classList.add('aktiv'); });
+      li.addEventListener('mouseleave', function () { if (m) m.classList.remove('aktiv'); });
+    });
+  }
+
+  // Text einer Einheit mit Eingefügtem als [+ …] und Gestrichenem als [− …]
+  function handText(el) {
+    var s = '';
+    Array.prototype.forEach.call(el.childNodes, function (n) {
+      if (n.nodeType === 3) s += n.textContent;
+      else if (n.matches('ins.hand')) s += '[+ ' + n.textContent + ']';
+      else if (n.matches('del.hand')) s += '[− ' + n.textContent + ']';
+      else if (n.matches('sup.anker-nr')) return;
+      else s += handText(n);
+    });
+    return s;
+  }
+
+  function pultSenden(bereich, mitBegleiten) {
+    var meldung = $('#pult-meldung'), knopf = $('#pult-senden');
+    meldung.className = 'meldung'; meldung.textContent = '';
+    var hand = [];
+    Array.prototype.forEach.call(document.querySelectorAll('.blatt .einheit'), function (el) {
+      if (el.querySelector('ins.hand, del.hand')) hand.push(el.dataset.einheit + ': ' + handText(el));
+    });
+    var anm = PULT.notizen.filter(function (n) { return n.text.trim(); }).map(function (n) {
+      return n.nr + '. ' + n.wo + ', „' + n.zitat + '“: ' + n.text.trim();
+    });
+    var felder = { modus: 'pult' };
+    if (hand.length) felder.hand = hand.join('\n').slice(0, GRENZE);
+    if (anm.length) felder.anmerkungen = anm.join('\n').slice(0, GRENZE);
+    var ganz = $('#ganz-text').value.trim(); if (ganz) felder.ganzes = ganz.slice(0, GRENZE);
+    if (mitBegleiten) { var x = document.querySelector('input[name="pult-begleiten"]:checked'); if (x) felder.begleiten = x.value; }
+    if (Object.keys(felder).length === 1) {
+      meldung.className = 'meldung fehler';
+      meldung.textContent = 'Noch nichts angemerkt. Tippe, streiche oder markiere eine Stelle im Blatt.';
+      return;
+    }
+    knopf.disabled = true; meldung.textContent = 'Wird gesendet …';
+    fetch(KONFIG.url + '/rest/v1/antworten', {
+      method: 'POST',
+      headers: kopfzeilen({ 'Content-Type': 'application/json', Prefer: 'return=minimal' }),
+      body: JSON.stringify({ umfrage_id: KONFIG.umfrage, bereich: bereich, felder: felder })
+    }).then(function (r) {
+      if (!r.ok) throw new Error(String(r.status));
+      modusSetzen('fragen');
+      $('#formular-ort').innerHTML = '<ul class="zeilen danke"><li><strong>Danke, angekommen.</strong></li><li><a href="./">Zu allen Rollen</a></li></ul>';
+    }).catch(function () {
+      knopf.disabled = false; meldung.className = 'meldung fehler';
+      meldung.textContent = 'Nicht angekommen. Ist die Rückmeldung noch offen? Bitte später erneut versuchen.';
+    });
   }
 
   // ---- Start ----------------------------------------------------------------------------------

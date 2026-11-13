@@ -169,3 +169,41 @@ ul.blatt.zeilen { margin: 0; padding: 12px 20px; }
 .erledigt strong { font-weight: 500; }
 .hier { display: inline-block; margin-left: 8px; padding: 0 9px; border: 1.5px solid var(--hier); border-radius: 999px;
   color: var(--hier); font-size: .8125rem; font-weight: 650; vertical-align: 2px; }
+
+/* ---- Pult: Rückmeldung direkt am Text (nach die-matrixe, entwuerfe/pult + DESIGNSPRACHE §11) ----
+   Deine Hand = Korrekturrot wie im Heft; Eingefügtes in Handschrift über der Zeile, Gestrichenes bleibt lesbar;
+   Anmerkung = rote gerade Unterstreichung mit Nummer an beiden Enden. Form trägt die Bedeutung, Farbe kommt dazu. */
+@font-face { font-family: "Caveat"; src: url("schrift/caveat-latin.woff2") format("woff2"); font-weight: 400 700; font-display: swap; }
+:root { --hand: #9b1c10; }
+.modus { display: inline-flex; gap: 4px; padding: 4px; background: var(--grund); border-radius: 999px; margin-top: 14px; flex-wrap: wrap; }
+.modus label { cursor: pointer; }
+.modus input { position: absolute; opacity: 0; pointer-events: none; }
+.modus span { display: inline-flex; align-items: center; min-height: 36px; padding: 0 16px; border-radius: 999px; color: var(--leise); font-weight: 500; }
+.modus input:checked + span { background: var(--flaeche); color: var(--tinte); font-weight: 650; box-shadow: 0 0 0 1px var(--linie); }
+.modus input:focus-visible + span { outline: 3px solid var(--tinte); outline-offset: 2px; }
+
+.pult-an .blatt { box-shadow: 0 0 0 2px var(--hand); }
+.pult-an .blatt .einheit { cursor: text; outline: none; border-radius: 2px; caret-color: var(--hand); }
+.pult-an .blatt .einheit:hover { background: rgba(155,28,16,.04); }
+.pult-an .blatt .einheit:focus { background: rgba(155,28,16,.06); }
+ins.hand { text-decoration: none; color: var(--hand); font-family: "Caveat", cursive; font-size: 1.18em; line-height: 1; }
+del.hand { color: var(--leise); text-decoration: line-through; text-decoration-color: var(--hand); text-decoration-thickness: 2px; }
+mark.anker { background: transparent; color: inherit; text-decoration: underline; text-decoration-color: var(--hand); text-decoration-thickness: 2px; text-underline-offset: 3px; cursor: pointer; }
+mark.anker.aktiv { background: rgba(155,28,16,.08); }
+sup.anker-nr { font-family: "Caveat", cursive; color: var(--hand); font-size: 1rem; font-weight: 700; margin-left: 1px; user-select: none; }
+
+.markier { position: absolute; z-index: 60; background: var(--tinte); border-radius: 6px; padding: 4px; display: flex; gap: 2px; box-shadow: 0 2px 0 rgba(0,0,0,.2); }
+.markier button { background: transparent; border: 0; color: #fff; padding: 6px 14px; border-radius: 4px; cursor: pointer; font: inherit; font-size: .9375rem; min-height: 40px; }
+.markier button:hover { background: rgba(255,255,255,.15); }
+
+.pult-hilfe { margin: 12px 0 0; padding: 0; font-size: .9375rem; }
+.nur-handy { display: none; }
+@media (max-width: 899px) { .nur-handy { display: list-item; } }
+ol.rand { list-style: none; margin: 12px 0 0; padding: 0; }
+.notiz { display: grid; grid-template-columns: 26px 1fr; gap: 8px; padding: 10px 10px 8px; margin-bottom: 8px; background: #f0f0f0; border-radius: 6px; }
+.notiz:hover, .notiz:focus-within { background: #f7f7f7; }
+.notiz-nr { font-family: "Caveat", cursive; color: var(--hand); font-size: 1.4rem; font-weight: 700; line-height: 1; }
+.notiz-wo { font-size: .8125rem; color: var(--leise); margin-bottom: 4px; }
+.notiz textarea { min-height: 70px; border-color: var(--linie-hell); color: var(--hand); }
+.linkknopf.klein { min-height: 32px; padding: 0 10px; font-size: .8125rem; margin-top: 4px; }
+#ganz-knopf { margin-top: 10px; }
