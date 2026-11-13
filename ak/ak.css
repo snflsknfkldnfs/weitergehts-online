@@ -207,3 +207,7 @@ ol.rand { list-style: none; margin: 12px 0 0; padding: 0; }
 .notiz textarea { min-height: 70px; border-color: var(--linie-hell); color: var(--hand); }
 .linkknopf.klein { min-height: 32px; padding: 0 10px; font-size: .8125rem; margin-top: 4px; }
 #ganz-knopf { margin-top: 10px; }
+
+/* Runde des Arbeitskreises (?runde=ak) */
+.runde-hinweis { margin: 0 0 16px; padding: 10px 14px; border: 2px dashed var(--hier); border-radius: var(--r); background: var(--flaeche); color: var(--tinte); }
+.runde-hinweis strong { color: var(--hier); }

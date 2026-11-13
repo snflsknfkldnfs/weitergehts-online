@@ -18,6 +18,12 @@
     umfrage: 'ak-rollen-2026'
   };
 
+  // Runde des Arbeitskreises: Link mit ?runde=ak. Eigene Umfrage, zusätzliche Frage zum Aushang (mit Veto).
+  // Ohne den Schalter sieht und schickt die Seite nur die Kollegiumsrunde.
+  var RUNDE_AK = new URLSearchParams(location.search).get('runde') === 'ak';
+  if (RUNDE_AK) KONFIG.umfrage = 'ak-sichtung-2026';
+  var AUSHANG = { feld: 'aushang', typ: 'wahl', frage: 'Soll diese Rolle in den Aushang fürs Kollegium?', optionen: ['ja', 'mit Änderungen', 'Veto: nicht aushängen'] };
+
   // ---- Zentraler Datenschutz-Hinweis (Dialog auf der Startseite + Kurzfassung am Formular) -----
   var LOESCHFRIST = '31.07.2027';
   var DSGVO_LINK = '<a href="../datenschutz/#umfragen">Datenschutzerklärung</a>';
@@ -215,7 +221,7 @@
       if (f.typ === 'wahl') {
         return '<fieldset><legend>' + e(f.frage) + '</legend><div class="wahl">' +
           f.optionen.map(function (o) {
-            return '<label><input type="radio" name="' + f.feld + '" value="' + o + '"><span>' + o + '</span></label>';
+            return '<label><input type="radio" name="' + f.feld + '" value="' + e(o) + '"><span>' + e(o) + '</span></label>';
           }).join('') + '</div></fieldset>';
       }
       return '<label class="frage" for="' + id + '">' + e(f.frage) + '</label>' +
@@ -245,7 +251,7 @@
       var titel = istAllgemein ? ALLGEMEIN.titel : rolle.rolle;
       document.title = titel + ' · Rückmeldung';
       $('#wo').textContent = istAllgemein ? 'Allgemein' : 'Karte ' + rolle.nr;
-      var fragen = istAllgemein ? FRAGEN.allgemein : FRAGEN.rolle;
+      var fragen = istAllgemein ? FRAGEN.allgemein : (RUNDE_AK ? [AUSHANG].concat(FRAGEN.rolle) : FRAGEN.rolle);
       $('#inhalt').innerHTML =
         '<div class="seite"><div>' + (istAllgemein ? allgemeinHtml() : karteHtml(rolle)) + '</div>' +
         '<aside class="antwort" aria-label="Rückmeldung">' +
@@ -270,9 +276,9 @@
           '<label><input type="radio" name="modus" value="fragen" checked><span>Fragen beantworten</span></label>' +
           '<label><input type="radio" name="modus" value="pult"><span>Am Text anmerken</span></label></div>' +
           '<div id="modus-fragen">' + formularHtml(fragen) + '</div>' +
-          '<div id="modus-pult" hidden>' + pultHtml(!istAllgemein) + '</div>';
+          '<div id="modus-pult" hidden>' + pultHtml(wahlFragen(fragen)) + '</div>';
         formularVerdrahten(bereich, fragen);
-        pultVerdrahten(bereich, !istAllgemein);
+        pultVerdrahten(bereich, wahlFragen(fragen));
         Array.prototype.forEach.call(document.querySelectorAll('input[name="modus"]'), function (r) {
           r.addEventListener('change', function () { modusSetzen(r.value); });
         });
@@ -334,7 +340,8 @@
   // nummerierte Anmerkung an die Stelle, „Zum ganzen Blatt“ ist eine Notiz ohne Stelle.
   var PULT = { an: false, notizen: [], nr: 0, ganz: '' };
 
-  function pultHtml(mitBegleiten) {
+  function wahlFragen(fragen) { return fragen.filter(function (f) { return f.typ === 'wahl'; }); }
+  function pultHtml(wahl) {
     return '<ul class="zeilen pult-hilfe">' +
       '<li>Ins Blatt tippen: Dein Wort steht rot über der Zeile.</li>' +
       '<li>Löschen streicht durch, das Gestrichene bleibt lesbar.</li>' +
@@ -344,10 +351,12 @@
       '<button type="button" class="linkknopf" id="ganz-knopf">Zum ganzen Blatt</button>' +
       '<div id="ganz-ort" hidden><label class="frage" for="ganz-text">Zum ganzen Blatt: Was fehlt, was übersehen wir?</label>' +
       '<textarea id="ganz-text" maxlength="' + GRENZE + '"></textarea></div>' +
-      (mitBegleiten ? '<fieldset><legend>' + e(FRAGEN.rolle[2].frage) + '</legend><div class="wahl">' +
-        FRAGEN.rolle[2].optionen.map(function (o) {
-          return '<label><input type="radio" name="pult-begleiten" value="' + o + '"><span>' + o + '</span></label>';
-        }).join('') + '</div></fieldset>' : '') +
+      wahl.map(function (f) {
+        return '<fieldset><legend>' + e(f.frage) + '</legend><div class="wahl">' +
+          f.optionen.map(function (o) {
+            return '<label><input type="radio" name="pult-' + f.feld + '" value="' + e(o) + '"><span>' + e(o) + '</span></label>';
+          }).join('') + '</div></fieldset>';
+      }).join('') +
       liste(DSGVO_KURZ, 'datenhinweis') +
       '<button class="senden" type="button" id="pult-senden">Anmerkungen abschicken</button>' +
       '<p class="meldung" id="pult-meldung" role="status" aria-live="polite"></p>';
@@ -419,7 +428,7 @@
     range.insertNode(i); range.setStart(i.firstChild, text.length); range.collapse(true);
   }
 
-  function pultVerdrahten(bereich, mitBegleiten) {
+  function pultVerdrahten(bereich, wahl) {
     var blatt = document.querySelector('.blatt');
     blatt.addEventListener('beforeinput', function (ev) {
       if (!PULT.an || !einheitVon(ev.target)) return;
@@ -465,7 +474,7 @@
     $('#ganz-knopf').addEventListener('click', function () {
       $('#ganz-ort').hidden = false; $('#ganz-knopf').hidden = true; oeffnen(); $('#ganz-text').focus();
     });
-    $('#pult-senden').addEventListener('click', function () { pultSenden(bereich, mitBegleiten); });
+    $('#pult-senden').addEventListener('click', function () { pultSenden(bereich, wahl); });
   }
 
   function oeffnen() {
@@ -550,7 +559,7 @@
     return s;
   }
 
-  function pultSenden(bereich, mitBegleiten) {
+  function pultSenden(bereich, wahl) {
     var meldung = $('#pult-meldung'), knopf = $('#pult-senden');
     meldung.className = 'meldung'; meldung.textContent = '';
     var hand = [];
@@ -564,7 +573,7 @@
     if (hand.length) felder.hand = hand.join('\n').slice(0, GRENZE);
     if (anm.length) felder.anmerkungen = anm.join('\n').slice(0, GRENZE);
     var ganz = $('#ganz-text').value.trim(); if (ganz) felder.ganzes = ganz.slice(0, GRENZE);
-    if (mitBegleiten) { var x = document.querySelector('input[name="pult-begleiten"]:checked'); if (x) felder.begleiten = x.value; }
+    wahl.forEach(function (f) { var x = document.querySelector('input[name="pult-' + f.feld + '"]:checked'); if (x) felder[f.feld] = x.value; });
     if (Object.keys(felder).length === 1) {
       meldung.className = 'meldung fehler';
       meldung.textContent = 'Noch nichts angemerkt. Tippe, streiche oder markiere eine Stelle im Blatt.';
@@ -587,6 +596,18 @@
 
   // ---- Start ----------------------------------------------------------------------------------
   document.addEventListener('DOMContentLoaded', function () {
+    if (RUNDE_AK) {
+      document.body.classList.add('runde-ak');
+      var h = document.createElement('p'); h.className = 'runde-hinweis';
+      h.innerHTML = '<strong>Runde des Arbeitskreises.</strong> Eure Rückmeldung entscheidet, welche Rollen in den Aushang fürs Kollegium kommen.';
+      var rumpf = document.querySelector('.rumpf'); if (rumpf) rumpf.insertBefore(h, rumpf.firstChild);
+      document.addEventListener('click', function (ev) {
+        var a = ev.target.closest('a'); if (!a) return;
+        var ziel = a.getAttribute('href') || '';
+        if (/^(\.\/|rolle\.html)/.test(ziel) && ziel.indexOf('runde=ak') < 0)
+          a.setAttribute('href', ziel + (ziel.indexOf('?') >= 0 ? '&' : '?') + 'runde=ak');
+      }, true);
+    }
     if (document.body.dataset.seite === 'start') startseite();
     else rollenseite();
   });
