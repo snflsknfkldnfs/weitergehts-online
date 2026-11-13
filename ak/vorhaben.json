@@ -23,7 +23,8 @@
   { "id": "auswahl", "zeit": "Januar", "titel": "Zwei bis drei Pilotrollen auswählen", "zeile": "mit Ansprechpersonen aus dem Kollegium" },
   { "id": "pilot", "zeit": "Februar bis Juli", "titel": "Pilotrollen starten", "zeile": "nach etwa sechs Wochen gemeinsamer Rückblick" },
   { "id": "ehrung", "zeit": "Juli", "titel": "Ehrung und Auswertung", "zeile": "Zertifikat mit Unterschrift des Rektors, Zeugnisvermerk" },
-  { "id": "ausweiten", "zeit": "ab Schuljahr 2027/28", "titel": "Ausweiten und öffnen", "zeile": "weitere Rollen, Zusammenarbeit mit Vereinen und Organisationen" }
+  { "id": "ausweiten", "zeit": "ab Schuljahr 2027/28", "titel": "Ausweiten und öffnen", "zeile": "weitere Rollen, Zusammenarbeit mit Vereinen und Organisationen" },
+  { "id": "thementag", "zeit": "wenn die Rollen laufen", "titel": "Thementag Engagement", "zeile": "Vereine aus der Region und unsere eigenen Rollen stellen sich vor, zum Mitmachen" }
  ],
  "mitmachen": [
   "Karten ansehen: unten eine Rolle antippen.",
