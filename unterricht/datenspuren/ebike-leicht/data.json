@@ -49,15 +49,15 @@
    "id": "fenster",
    "phase": 0,
    "steckbrief": "Zeitfenster",
-   "frage": "Wie viele Handys waren in der Tatzeit am Busbahnhof? Die Tatzeit steht in der Zeitung.",
+   "frage": "Wie viele Handys waren zwischen 21:40 und 23:50 am Busbahnhof? Wer nur vorher da war, zählt nicht.",
    "tipps": [
-    "Tag: Di 29.09., Uhrzeit von 21 bis 23, Suchwort: Busbahnhof.",
+    "Tag: Di 29.09., Uhrzeit von 21 bis 23, Suchwort: Busbahnhof. Dann jede Uhrzeit genau lesen.",
     "Lies die Minuten genau: Wer war vor 21:40 schon wieder weg?"
    ],
    "modus": "zahl",
    "erkenntnis": "Wer kurz vor 21:40 da war, fällt durch dein Raster. Merk dir das.",
    "material": "zeitung",
-   "k": "WyIzIl0=",
+   "k": "WyIzIiwgIkRSRUkiXQ==",
    "a": "MyBIYW5keXMgendpc2NoZW4gMjE6NDAgdW5kIDIzOjUw"
   },
   {
@@ -79,7 +79,7 @@
    "id": "suche",
    "phase": 0,
    "steckbrief": "Suche am Tatort",
-   "frage": "Wonach hat jemand gesucht, während er in der Tatzeit am Busbahnhof stand?",
+   "frage": "Jemand stand in der Tatzeit am Busbahnhof und hat etwas zu einem Fahrrad gesucht. Wonach?",
    "tipps": [
     "Quelle: Suche, Di 29.09., ab 21 Uhr.",
     "Es geht um etwas, das man an einem Fahrrad hat."
@@ -135,7 +135,7 @@
    "id": "wende",
    "phase": 1,
    "steckbrief": "Neue Spur 2",
-   "frage": "Wann bewegte sich das E-Bike zum ersten Mal? Wo war 6143 in diesem Moment?",
+   "frage": "In welchem Ort war 6143, als sich das E-Bike zum ersten Mal bewegte?",
    "tipps": [
     "Such in den App-Daten nach „E-Bike“.",
     "Vergleiche die Uhrzeit mit dem Standort von 6143."

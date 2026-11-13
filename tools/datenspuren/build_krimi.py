@@ -257,16 +257,20 @@ def stufe(sid, phase, steckbrief, frage, tipps, modus, schluessel, richtig, fals
     return d
 
 
+ZAHLWORT = {2: 'ZWEI', 3: 'DREI', 4: 'VIER', 5: 'FUENF'}
+
+
 def stufen(v):
     n_fenster = v['n_fenster']
     t = v['tipps']   # 2 = alle Tipps, 1 = nur der erste, 0 = keine
     T = (lambda *xs: list(xs[:t]))
     return [
         stufe('fenster', 0, 'Zeitfenster',
-              'Wie viele Handys waren in der Tatzeit am Busbahnhof? Die Tatzeit steht in der Zeitung.',
-              T('Tag: Di 29.09., Uhrzeit von 21 bis 23, Suchwort: Busbahnhof.',
+              'Wie viele Handys waren zwischen 21:40 und 23:50 am Busbahnhof? Wer nur vorher da war, zählt nicht.',
+              T('Tag: Di 29.09., Uhrzeit von 21 bis 23, Suchwort: Busbahnhof. Dann jede Uhrzeit genau lesen.',
                 'Lies die Minuten genau: Wer war vor 21:40 schon wieder weg?'),
-              'zahl', [str(n_fenster)], [str(n_fenster), f'{n_fenster} Handys', f'es waren {n_fenster}'],
+              'zahl', [str(n_fenster), ZAHLWORT[n_fenster]],
+              [str(n_fenster), f'{n_fenster} Handys', f'es waren {n_fenster}', ZAHLWORT[n_fenster].lower()],
               [x for x in ('2', '3', '4', '5', '6') if x != str(n_fenster)],
               f'{n_fenster} Handys zwischen 21:40 und 23:50',
               'Wer kurz vor 21:40 da war, fällt durch dein Raster. Merk dir das.',
@@ -282,7 +286,7 @@ def stufen(v):
               [('Standort', 'Würzburg')], '3390: 21:44 Busbahnhof, 22:31 Kino Würzburg, 23:52 „fahrrad gestohlen was tun polizei“',
               material='zeitung'),
         stufe('suche', 0, 'Suche am Tatort',
-              'Wonach hat jemand gesucht, während er in der Tatzeit am Busbahnhof stand?',
+              'Jemand stand in der Tatzeit am Busbahnhof und hat etwas zu einem Fahrrad gesucht. Wonach?',
               T('Quelle: Suche, Di 29.09., ab 21 Uhr.', 'Es geht um etwas, das man an einem Fahrrad hat.'),
               'wort', ['SCHLOSS'],
               ['Fahrradschloss öffnen', 'fahrradschloss öffnen ohne schlüssel', 'Schloss knacken', 'ein Schloss',
@@ -320,7 +324,7 @@ def stufen(v):
               'Er hat mit seinem eigenen Schloss gekämpft. Jeden Dienstag und Donnerstag holt er hier sein Rad.',
               [('App', 'fehlgeschlagen')], '6143 App 21:53, 21:57, 22:03 fehlgeschlagen, 22:11 geöffnet; Mo 28.09. Akku 8 %; Mi 30.09. Akku gekauft'),
         stufe('wende', 1, 'Neue Spur 2',
-              'Wann bewegte sich das E-Bike zum ersten Mal? Wo war 6143 in diesem Moment?',
+              'In welchem Ort war 6143, als sich das E-Bike zum ersten Mal bewegte?',
               T('Such in den App-Daten nach „E-Bike“.', 'Vergleiche die Uhrzeit mit dem Standort von 6143.'),
               'wort', ['DETTELBACH'], ['Dettelbach', 'im Bus bei Dettelbach', 'in Dettelbach', 'Detelbach', 'im Bus, Dettelbach'],
               ['Busbahnhof', 'Volkach', 'Astheim', 'Kitzingen', 'Sommerach', 'im Bus'],
