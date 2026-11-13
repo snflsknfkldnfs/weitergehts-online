@@ -215,25 +215,6 @@
   }
 
   // ---- Rollenseite ----------------------------------------------------------------------------
-  function formularHtml(fragen) {
-    var teile = fragen.map(function (f) {
-      var id = 'f-' + f.feld;
-      if (f.typ === 'wahl') {
-        return '<fieldset><legend>' + e(f.frage) + '</legend><div class="wahl">' +
-          f.optionen.map(function (o) {
-            return '<label><input type="radio" name="' + f.feld + '" value="' + e(o) + '"><span>' + e(o) + '</span></label>';
-          }).join('') + '</div></fieldset>';
-      }
-      return '<label class="frage" for="' + id + '">' + e(f.frage) + '</label>' +
-        '<textarea id="' + id + '" name="' + f.feld + '" maxlength="' + GRENZE + '"></textarea>';
-    }).join('');
-    return '<form id="rueckmeldung" novalidate>' + teile +
-      '<div class="falle" aria-hidden="true"><label>Bitte leer lassen <input name="webseite" tabindex="-1" autocomplete="off"></label></div>' +
-      liste(DSGVO_KURZ, 'datenhinweis') +
-      '<button class="senden" type="submit">Rückmeldung abschicken</button>' +
-      '<p class="meldung" role="status" aria-live="polite"></p></form>';
-  }
-
   function rollenseite() {
     document.body.classList.add('rollenseite');
     var nr = new URLSearchParams(location.search).get('nr') || '';
@@ -271,108 +252,55 @@
           return;
         }
         var bereich = istAllgemein ? 'allgemein' : 'rolle-' + rolle.nr;
-        $('#formular-ort').innerHTML =
-          '<div class="modus" role="radiogroup" aria-label="Art der Rückmeldung">' +
-          '<label><input type="radio" name="modus" value="fragen" checked><span>Fragen beantworten</span></label>' +
-          '<label><input type="radio" name="modus" value="pult"><span>Am Text anmerken</span></label></div>' +
-          '<div id="modus-fragen">' + formularHtml(fragen) + '</div>' +
-          '<div id="modus-pult" hidden>' + pultHtml(wahlFragen(fragen)) + '</div>';
-        formularVerdrahten(bereich, fragen);
-        pultVerdrahten(bereich, wahlFragen(fragen));
-        Array.prototype.forEach.call(document.querySelectorAll('input[name="modus"]'), function (r) {
-          r.addEventListener('change', function () { modusSetzen(r.value); });
-        });
+        $('#formular-ort').innerHTML = pultHtml(fragen);
+        pultVerdrahten(bereich, fragen);
+        pultAn();
       });
     }).catch(function () {
       $('#inhalt').innerHTML = '<p>Die Karte ließ sich nicht laden. Bitte Seite neu laden.</p>';
     });
   }
 
-  function formularVerdrahten(bereich, fragen) {
-    var form = $('#rueckmeldung');
-    var meldung = form.querySelector('.meldung');
-    var knopf = form.querySelector('.senden');
-    form.addEventListener('submit', function (ev) {
-      ev.preventDefault();
-      meldung.className = 'meldung';
-      meldung.textContent = '';
-      var felder = {}, leer = true;
-      fragen.forEach(function (f) {
-        var wert;
-        if (f.typ === 'wahl') {
-          var x = form.querySelector('input[name="' + f.feld + '"]:checked');
-          wert = x ? x.value : '';
-        } else {
-          wert = form.elements[f.feld].value.trim().slice(0, GRENZE);
-        }
-        if (wert) { felder[f.feld] = wert; leer = false; }
-      });
-      if (leer) {
-        meldung.className = 'meldung fehler';
-        meldung.textContent = 'Bitte mindestens eine Frage beantworten.';
-        return;
-      }
-      if (form.elements.webseite.value) { fertig(); return; } // Spam-Falle: still verwerfen
-      knopf.disabled = true;
-      meldung.textContent = 'Wird gesendet …';
-      fetch(KONFIG.url + '/rest/v1/antworten', {
-        method: 'POST',
-        headers: kopfzeilen({ 'Content-Type': 'application/json', Prefer: 'return=minimal' }),
-        body: JSON.stringify({ umfrage_id: KONFIG.umfrage, bereich: bereich, felder: felder })
-      }).then(function (r) {
-        if (!r.ok) throw new Error(String(r.status));
-        fertig();
-      }).catch(function () {
-        knopf.disabled = false;
-        meldung.className = 'meldung fehler';
-        meldung.textContent = 'Nicht angekommen. Ist die Rückmeldung noch offen? Bitte später erneut versuchen.';
-      });
-    });
-    function fertig() {
-      form.innerHTML = '<ul class="zeilen danke"><li><strong>Danke, angekommen.</strong></li>' +
-        '<li><a href="./">Zu allen Rollen</a></li></ul>';
-    }
-  }
-
   // ---- Pult: Rückmeldung direkt am Text --------------------------------------------------------
-  // Nach dem Pult-Entwurf aus die-matrixe (spiel/DESIGN/entwuerfe/pult): Tippen schreibt in Korrekturrot
-  // über die Zeile, Löschen streicht (das Gestrichene bleibt lesbar), Markieren → „Anmerken“ setzt eine
-  // nummerierte Anmerkung an die Stelle, „Zum ganzen Blatt“ ist eine Notiz ohne Stelle.
-  var PULT = { an: false, notizen: [], nr: 0, ganz: '' };
+  // Nach dem Pult aus die-matrixe (entwuerfe/pult, DESIGNSPRACHE §11): Die Karte korrigiert man wie im Heft.
+  // Löschen streicht (Gestrichenes bleibt lesbar); was man danach tippt, steht klein in Handschrift ÜBER dem
+  // Gestrichenen (Ersetzung); Tippen in eine Lücke setzt ein V-Zeichen, der Text steht darüber (Einfügung).
+  // Markieren → „Anmerken“ setzt eine nummerierte Randbemerkung. Freitext liegt ausklappbar darunter.
+  var PULT = { an: false, notizen: [], nr: 0 };
 
-  function wahlFragen(fragen) { return fragen.filter(function (f) { return f.typ === 'wahl'; }); }
-  function pultHtml(wahl) {
-    return '<ul class="zeilen pult-hilfe">' +
-      '<li>Ins Blatt tippen: Dein Wort steht rot über der Zeile.</li>' +
-      '<li>Löschen streicht durch, das Gestrichene bleibt lesbar.</li>' +
-      '<li>Eine Stelle markieren, dann „Anmerken“: Die Anmerkung steht hier mit Nummer.</li>' +
-      '<li class="leise nur-handy">Am Computer geht es bequemer.</li></ul>' +
+  function pultHtml(fragen) {
+    var wahl = fragen.filter(function (f) { return f.typ === 'wahl' && (RUNDE_AK ? f.feld === 'aushang' : true); });
+    var frei = fragen.filter(function (f) { return f.typ === 'text'; });
+    return '<p class="pult-hilfe">Korrigier die Karte wie im Heft: streichen, darüberschreiben, markieren und anmerken.</p>' +
       '<ol class="rand" id="rand"></ol>' +
-      '<button type="button" class="linkknopf" id="ganz-knopf">Zum ganzen Blatt</button>' +
-      '<div id="ganz-ort" hidden><label class="frage" for="ganz-text">Zum ganzen Blatt: Was fehlt, was übersehen wir?</label>' +
-      '<textarea id="ganz-text" maxlength="' + GRENZE + '"></textarea></div>' +
       wahl.map(function (f) {
         return '<fieldset><legend>' + e(f.frage) + '</legend><div class="wahl">' +
           f.optionen.map(function (o) {
             return '<label><input type="radio" name="pult-' + f.feld + '" value="' + e(o) + '"><span>' + e(o) + '</span></label>';
           }).join('') + '</div></fieldset>';
       }).join('') +
-      liste(DSGVO_KURZ, 'datenhinweis') +
-      '<button class="senden" type="button" id="pult-senden">Anmerkungen abschicken</button>' +
+      '<details class="freitext"><summary>Lieber in eigenen Worten</summary>' +
+      frei.map(function (f) {
+        return '<label class="frage" for="f-' + f.feld + '">' + e(f.frage) + '</label>' +
+          '<textarea id="f-' + f.feld + '" data-feld="' + f.feld + '" maxlength="' + GRENZE + '"></textarea>';
+      }).join('') + '</details>' +
+      '<p class="datenhinweis">Anonym, bitte keine Namen. ' + DSGVO_LINK + '</p>' +
+      '<button class="senden" type="button" id="pult-senden">Korrigierte Karte abschicken</button>' +
       '<p class="meldung" id="pult-meldung" role="status" aria-live="polite"></p>';
   }
 
-  function modusSetzen(modus) {
-    var pult = modus === 'pult';
-    $('#modus-fragen').hidden = pult;
-    $('#modus-pult').hidden = !pult;
-    PULT.an = pult;
-    document.body.classList.toggle('pult-an', pult);
+  function pultAn() {
+    PULT.an = true;
+    document.body.classList.add('pult-an');
     Array.prototype.forEach.call(document.querySelectorAll('.blatt .einheit'), function (el) {
-      if (pult) { el.setAttribute('contenteditable', 'true'); el.setAttribute('spellcheck', 'false'); }
-      else el.removeAttribute('contenteditable');
+      el.setAttribute('contenteditable', 'true'); el.setAttribute('spellcheck', 'false');
     });
-    if (!pult) griffWeg();
+  }
+  function pultAus() {
+    PULT.an = false;
+    document.body.classList.remove('pult-an');
+    Array.prototype.forEach.call(document.querySelectorAll('.blatt .einheit'), function (el) { el.removeAttribute('contenteditable'); });
+    griffWeg();
   }
 
   function imHand(node) {
@@ -420,15 +348,35 @@
     }
     return null;
   }
+  function leerText(x) { return x && x.nodeType === 3 && !x.length; }
+  // Knoten direkt vor bzw. nach dem (zusammengefallenen) Cursor
+  function nebenCursor(range, davor) {
+    var c = range.startContainer, o = range.startOffset, n;
+    if (c.nodeType === 3) {
+      if (davor && o > 0) return null;
+      if (!davor && o < c.length) return null;
+      n = davor ? c.previousSibling : c.nextSibling;
+    } else n = davor ? c.childNodes[o - 1] : c.childNodes[o];
+    while (leerText(n)) n = davor ? n.previousSibling : n.nextSibling;
+    return n || null;
+  }
+  function istStrich(n) { return n && n.nodeType === 1 && n.matches('del.hand') && !(n.parentNode.classList && n.parentNode.classList.contains('ersetzt')); }
   function einfuegen(range, text) {
-    if (imHand(range.startContainer)) {
+    if (imHand(range.startContainer)) {                 // im eigenen Wort weiterschreiben
       var tn = document.createTextNode(text); range.insertNode(tn); range.setStartAfter(tn); range.collapse(true); return;
     }
     var i = document.createElement('ins'); i.className = 'hand'; i.textContent = text;
-    range.insertNode(i); range.setStart(i.firstChild, text.length); range.collapse(true);
+    var d = nebenCursor(range, true); if (!istStrich(d)) d = nebenCursor(range, false);
+    if (istStrich(d)) {                                  // Ersetzung: Neues über dem Gestrichenen
+      var w = document.createElement('span'); w.className = 'ersetzt';
+      d.parentNode.insertBefore(w, d); w.append(d, i);
+    } else {                                             // Einfügung: V in der Lücke, Text darüber
+      i.classList.add('einfuegung'); range.insertNode(i);
+    }
+    range.setStart(i.firstChild, text.length); range.collapse(true);
   }
 
-  function pultVerdrahten(bereich, wahl) {
+  function pultVerdrahten(bereich, fragen) {
     var blatt = document.querySelector('.blatt');
     blatt.addEventListener('beforeinput', function (ev) {
       if (!PULT.an || !einheitVon(ev.target)) return;
@@ -453,7 +401,10 @@
           if (ins) {                                    // im eigenen Wort: Zeichen wirklich löschen
             z.node.deleteData(z.off, 1);
             range.setStart(z.node, z.off); range.collapse(true);
-            if (!ins.textContent) { range.setStartBefore(ins); range.collapse(true); ins.remove(); }
+            if (!ins.textContent) {
+              var hülle = ins.parentNode; range.setStartBefore(ins); range.collapse(true); ins.remove();
+              if (hülle.classList && hülle.classList.contains('ersetzt')) { range.setStartAfter(hülle); range.collapse(true); hülle.replaceWith.apply(hülle, hülle.childNodes); }
+            }
           } else {                                      // im Kartentext: Zeichen streichen
             var r = document.createRange(); r.setStart(z.node, z.off); r.setEnd(z.node, z.off + 1);
             streichen(r);
@@ -471,10 +422,7 @@
       if (feld) { oeffnen(); feld.focus(); }
     });
     document.addEventListener('selectionchange', griffZeigen);
-    $('#ganz-knopf').addEventListener('click', function () {
-      $('#ganz-ort').hidden = false; $('#ganz-knopf').hidden = true; oeffnen(); $('#ganz-text').focus();
-    });
-    $('#pult-senden').addEventListener('click', function () { pultSenden(bereich, wahl); });
+    $('#pult-senden').addEventListener('click', function () { pultSenden(bereich, fragen); });
   }
 
   function oeffnen() {
@@ -551,6 +499,10 @@
     var s = '';
     Array.prototype.forEach.call(el.childNodes, function (n) {
       if (n.nodeType === 3) s += n.textContent;
+      else if (n.matches('span.ersetzt')) {
+        var dd = n.querySelector('del.hand'), ii = n.querySelector('ins.hand');
+        s += '[− ' + (dd ? dd.textContent : '') + ' → + ' + (ii ? ii.textContent : '') + ']';
+      }
       else if (n.matches('ins.hand')) s += '[+ ' + n.textContent + ']';
       else if (n.matches('del.hand')) s += '[− ' + n.textContent + ']';
       else if (n.matches('sup.anker-nr')) return;
@@ -559,7 +511,7 @@
     return s;
   }
 
-  function pultSenden(bereich, wahl) {
+  function pultSenden(bereich, fragen) {
     var meldung = $('#pult-meldung'), knopf = $('#pult-senden');
     meldung.className = 'meldung'; meldung.textContent = '';
     var hand = [];
@@ -569,16 +521,21 @@
     var anm = PULT.notizen.filter(function (n) { return n.text.trim(); }).map(function (n) {
       return n.nr + '. ' + n.wo + ', „' + n.zitat + '“: ' + n.text.trim();
     });
-    var felder = { modus: 'pult' };
+    var felder = {};
     if (hand.length) felder.hand = hand.join('\n').slice(0, GRENZE);
     if (anm.length) felder.anmerkungen = anm.join('\n').slice(0, GRENZE);
-    var ganz = $('#ganz-text').value.trim(); if (ganz) felder.ganzes = ganz.slice(0, GRENZE);
-    wahl.forEach(function (f) { var x = document.querySelector('input[name="pult-' + f.feld + '"]:checked'); if (x) felder[f.feld] = x.value; });
-    if (Object.keys(felder).length === 1) {
+    fragen.forEach(function (f) {
+      var wert = '';
+      if (f.typ === 'wahl') { var x = document.querySelector('input[name="pult-' + f.feld + '"]:checked'); wert = x ? x.value : ''; }
+      else { var ta = document.querySelector('textarea[data-feld="' + f.feld + '"]'); wert = ta ? ta.value.trim().slice(0, GRENZE) : ''; }
+      if (wert) felder[f.feld] = wert;
+    });
+    if (!Object.keys(felder).length) {
       meldung.className = 'meldung fehler';
-      meldung.textContent = 'Noch nichts angemerkt. Tippe, streiche oder markiere eine Stelle im Blatt.';
+      meldung.textContent = 'Noch nichts korrigiert oder angemerkt.';
       return;
     }
+    felder.modus = (felder.hand || felder.anmerkungen) ? 'pult' : 'fragen';
     knopf.disabled = true; meldung.textContent = 'Wird gesendet …';
     fetch(KONFIG.url + '/rest/v1/antworten', {
       method: 'POST',
@@ -586,7 +543,7 @@
       body: JSON.stringify({ umfrage_id: KONFIG.umfrage, bereich: bereich, felder: felder })
     }).then(function (r) {
       if (!r.ok) throw new Error(String(r.status));
-      modusSetzen('fragen');
+      pultAus();
       $('#formular-ort').innerHTML = '<ul class="zeilen danke"><li><strong>Danke, angekommen.</strong></li><li><a href="./">Zu allen Rollen</a></li></ul>';
     }).catch(function () {
       knopf.disabled = false; meldung.className = 'meldung fehler';

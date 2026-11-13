@@ -211,3 +211,23 @@ ol.rand { list-style: none; margin: 12px 0 0; padding: 0; }
 /* Runde des Arbeitskreises (?runde=ak) */
 .runde-hinweis { margin: 0 0 16px; padding: 10px 14px; border: 2px dashed var(--hier); border-radius: var(--r); background: var(--flaeche); color: var(--tinte); }
 .runde-hinweis strong { color: var(--hier); }
+
+/* Pult als Standard: Platz über den Zeilen für die Handschrift */
+.pult-an .blatt .einheit { line-height: 2.25; }
+.pult-an .blatt-titel h1.einheit { line-height: 1.9; }
+.pult-an .blatt { box-shadow: none; }
+/* Ersetzung: Neues klein in Handschrift mittig über dem Gestrichenen */
+.ersetzt { position: relative; }
+.ersetzt > ins.hand { position: absolute; left: 50%; bottom: 1.05em; transform: translateX(-50%); white-space: nowrap; line-height: 1; pointer-events: auto; }
+/* Einfügung: V in der Lücke, Text mittig darüber; nimmt in der Zeile keinen Platz ein */
+ins.hand.einfuegung { display: inline-flex; justify-content: center; width: 0; white-space: nowrap; position: relative; vertical-align: baseline; }
+ins.hand.einfuegung { transform: translateY(-1.05em); }
+ins.hand.einfuegung::after { content: ""; position: absolute; left: -5px; top: 1.15em; width: 10px; height: 9px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='9'%3E%3Cpath d='M1 1 L5.2 8 L9 1.4' fill='none' stroke='%239b1c10' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat; }
+/* Freitext ausklappbar */
+.pult-hilfe { margin: 10px 0 0; font-size: .9375rem; color: var(--leise); }
+details.freitext { margin-top: 16px; border-top: 1px solid var(--linie-hell); padding-top: 10px; }
+details.freitext summary { cursor: pointer; font-weight: 600; min-height: 36px; display: flex; align-items: center; }
+details.freitext summary::marker { color: var(--leise); }
+p.datenhinweis { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--linie-hell); font-size: .875rem; color: var(--leise); }
+p.datenhinweis a { color: var(--tinte); }
