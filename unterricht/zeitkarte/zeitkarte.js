@@ -4,6 +4,7 @@
  * Adresse: ?ansicht=karte (Vorgabe) oder ?ansicht=werte; ?start=JJJJ-MM-TT setzt den Regler beim Öffnen (Karte);
  * ?orte=alle zeigt alle Orte schon vor ihrem ersten Ereignis grau (1.5, zum Verorten im Plenum am Beamer).
  * Gedacht zum Einbetten in eine Begleiten-Seite (iframe) und für den Tafelrechner. Nichts wird gespeichert.
+ * 2.0 (14.11.2026, Lehrkraft: eingebettet zu klein, Ablauf nur durch Scrollen): im Rahmen Karte links, Ablauf rechts.
  *
  * data.json (erzeugt vom Stunden-Skript, nie von Hand pflegen):
  * { "titel", "von": "JJJJ-MM-TT", "bis": "JJJJ-MM-TT", "nachweis",
@@ -21,6 +22,10 @@
   'use strict';
   var wurzel = document.getElementById('z-inhalt');
   var Q = new URLSearchParams(location.search);
+  // 2.0: eingebettet (Klassenbereich, Begleiten-Seite) oder ?eingebettet=1: Karte und Regler links, Ablauf rechts daneben
+  var eingebettet = Q.get('eingebettet') === '1';
+  try { eingebettet = eingebettet || window.self !== window.top; } catch (e) { eingebettet = true; }
+  if (eingebettet) document.body.classList.add('z-eingebettet');
   var MONATE = ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'];
   var MONATE_LANG = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober',
                      'November', 'Dezember'];

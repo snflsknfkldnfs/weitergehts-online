@@ -119,3 +119,23 @@ body.zeitkarte { margin: 0; background: var(--m-grund); font-family: var(--m-sch
 .z-spur { position: absolute; inset: 0; z-index: 1; opacity: .9; pointer-events: none; -webkit-mask-size: 100% 100%; mask-size: 100% 100%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; }
 .z-spur[hidden] { display: none; }
 .z-mit-flaeche .z-karte { cursor: pointer; }
+
+/* 2.0: eingebettet (im Rahmen des Klassenbereichs oder einer Begleiten-Seite): die Fläche des Rahmens ganz nutzen;
+   ab 900 px Karte, Datum und Regler links, Legende und Ablauf rechts mit eigenem Scrollen — alles ohne Seiten-Scrollen sichtbar.
+   Am Beamer (eigenes Fenster) bleibt die Anordnung 1.2. (Lehrkraft 14.11.2026) */
+.z-eingebettet .z-huelle { max-width: none; padding: 4px; }
+.z-eingebettet .z-blatt { padding: 6px; }
+@media (min-width: 900px) {
+  .z-eingebettet .z-blatt { display: grid; grid-template-columns: minmax(0, 1.75fr) minmax(15rem, 1fr); column-gap: 18px; align-items: start; }
+  .z-eingebettet .z-karte { grid-column: 1; grid-row: 1 / span 2; }
+  .z-eingebettet .z-karte img { max-height: calc(100vh - 150px); }
+  .z-eingebettet .z-karte { margin: 0; }
+  /* die Erklärung zum Gebiet liegt nicht auf der Karte, sondern rechts daneben über dem Ablauf: die Karte bleibt frei */
+  .z-eingebettet .z-info { position: fixed; left: auto !important; right: 6px !important; top: 6px !important; bottom: auto !important;
+    width: calc(100vw / 2.75 - 16px) !important; max-height: calc(100vh - 12px); }
+  .z-eingebettet .z-unter { grid-column: 1; grid-row: 3; }
+  .z-eingebettet .z-reglerfeld { grid-column: 1; grid-row: 4; margin-bottom: 18px; }
+  .z-eingebettet .z-nachweis { grid-column: 1; grid-row: 5; }
+  .z-eingebettet .z-legende { grid-column: 2; grid-row: 1; align-self: start; margin-top: 0; }
+  .z-eingebettet .z-ablaufteil { grid-column: 2; grid-row: 2 / span 4; margin-top: 0; max-height: calc(100vh - 60px); overflow: auto; }
+}

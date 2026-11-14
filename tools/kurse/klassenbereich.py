@@ -105,6 +105,8 @@ def bereich(text: str, quelle: dict) -> list[str]:
         start = next(i for i, z in enumerate(zeilen) if z.startswith(quelle["abschnitt"]))
         ende = next((i for i in range(start + 1, len(zeilen)) if zeilen[i].startswith("## ")), len(zeilen))
         zeilen = zeilen[start + 1:ende]
+    zeilen = zeilen[:next((i for i, z in enumerate(zeilen) if z.startswith(("### Lösung", "**Vorne liegt", "**Am Stundenende"))), len(zeilen))] \
+        if quelle.get("abschnitt") else zeilen
     if quelle.get("bis"):
         zeilen = zeilen[:next((i for i, z in enumerate(zeilen) if z.startswith(quelle["bis"])), len(zeilen))]
     return [re.sub(r"^>\s?", "", z).rstrip() for z in zeilen]
@@ -114,19 +116,24 @@ def zellen(z: str) -> list[str]:
     return [c.strip() for c in z.strip().strip("|").split("|")]
 
 
+# Zeilen einer Lösung, die die Lehrkraft beschreiben, nicht das Heft (GPG8a: „Gedruckt: …“, „Von Hand oben: …“)
+META = re.compile(r"^(Erzeugt|Quelle|Gedruckt|Von Hand oben|Die Felder|Überschrift|Darüber|Das Heft, wie|Lösungen auf|Lösung —|"
+                  r"Urteilszeile|Ich hätte|Hefteintrag \(von Hand|Vorne liegt|Am Stundenende|Steht in )", re.I)
+
+
 def heft_teile(quelle: dict, ordner: Path) -> list[dict]:
     text = (ordner / quelle["datei"]).read_text(encoding="utf-8")
     zeilen = bereich(text, quelle)
     if quelle.get("nur_satz"):
         satz = next(z.split(quelle["nur_satz"], 1)[1].strip() for z in zeilen if quelle["nur_satz"] in z)
-        return [{"titel": None, "kopf": None, "zeilen": [], "antwort": satz, "saetze": []}]
+        return [{"titel": None, "kopf": None, "zeilen": [], "antwort": satz, "saetze": [], "punkte": []}]
     teile, t, tab = [], None, []
 
     def neu(titel=None):
         nonlocal t
-        if t and (t["zeilen"] or t["antwort"]):
+        if t and (t["zeilen"] or t["antwort"] or t["punkte"]):
             teile.append(t)
-        t = {"titel": titel, "kopf": None, "zeilen": [], "antwort": None, "saetze": []}
+        t = {"titel": titel, "kopf": None, "zeilen": [], "antwort": None, "saetze": [], "punkte": []}
 
     def tabelle_schliessen():
         nonlocal tab
@@ -171,13 +178,25 @@ def heft_teile(quelle: dict, ordner: Path) -> list[dict]:
         s = z.strip()
         if not s:
             continue
+        punkt = re.match(r"^(?:[-*]|\d+\.)\s+(.*)$", s)
+        inhalt = re.sub(r"\s*\[Sätze?[^\]]*\]", "", punkt.group(1) if punkt else s).strip()
+        nackt = inhalt.replace("**", "")
+        antwort = re.search(r"\b(Antwortsatz|Antwort|Merksatz)\b[^:]{0,40}:\s*(.+)$", nackt)
         if s.startswith("## "):
             neu(s[3:].strip())
-        elif m := re.match(r"^\*\*Antwortsatz[^*]*\*\*\s*(.+)$", s):
-            t["antwort"] = m.group(1).strip()
-        elif re.fullmatch(r"\*\*[^*]+\*\*", s) and not t["zeilen"]:
-            t["titel"] = s.strip("*")
-        elif t["zeilen"] and not t["antwort"] and not s.startswith(("#", "Erzeugt", "Quelle", "*")):
+        elif s.startswith("#") or META.match(nackt):
+            continue
+        elif antwort and not antwort.group(2).lower().startswith("frei"):
+            t["antwort"] = antwort.group(2).strip().strip("*_ ").strip("„“\"")
+        elif re.fullmatch(r"\*\*[^*]+\*\*:?", s):
+            if t["zeilen"] or t["punkte"]:
+                neu(s.strip("*:"))
+            else:
+                t["titel"] = s.strip("*:")
+        elif punkt:
+            if not re.search(r":\**\s*frei\b", inhalt):
+                t["punkte"].append(inhalt)
+        elif t["zeilen"] and not t["antwort"] and not s.startswith(("Erzeugt", "Quelle", "*")):
             t["antwort"] = s
     tabelle_schliessen()
     neu()
@@ -235,6 +254,8 @@ def heft_text(teile: list[dict]) -> str:
                 out.append(f"- {r[0]}: {r[1]}")
             else:
                 out.append(f"- {r[0]}: " + " | ".join(f"{kopf[i + 1]}: {c}" for i, c in enumerate(r[1:])))
+        for pk in t.get("punkte", []):
+            out.append(f"- {pk}")
         for label, satz in t["saetze"]:
             out.append(f"- {label}: {satz}")
         if t["antwort"]:
@@ -411,12 +432,29 @@ def schale(titel: str, tiefe: str, kurs: str, salz: str, payload: str, v: dict, 
 """
 
 
-def zuschneiden(png: bytes) -> bytes:
-    """Weißen Rand um einen Einkleber abschneiden (A5-PDF mit leerer unterer Hälfte, PNG mit Rand)."""
+def zuschneiden(png: bytes, block: bool = False) -> bytes:
+    """Weißen Rand um einen Einkleber abschneiden (A5-PDF mit leerer unterer Hälfte, PNG mit Rand). block: nur den größten
+    zusammenhängenden Inhalt behalten (Vordruck auf einer A4-Seite mit Schnittlinie weit darunter, GPG8a 29.09.)."""
     import io
     from PIL import Image, ImageChops, ImageOps
     im = Image.open(io.BytesIO(png)).convert("RGB")
-    box = ImageChops.difference(im, Image.new("RGB", im.size, (255, 255, 255))).convert("L").point(lambda x: 255 if x > 18 else 0).getbbox()
+    maske = ImageChops.difference(im, Image.new("RGB", im.size, (255, 255, 255))).convert("L").point(lambda x: 255 if x > 18 else 0)
+    if block:
+        zeilen = [maske.crop((0, y, im.width, y + 1)).getbbox() is not None for y in range(im.height)]
+        bloecke, start, leer = [], None, 0
+        for y, voll in enumerate(zeilen + [False] * 81):
+            if voll:
+                start = y if start is None else start
+                leer = 0
+            elif start is not None:
+                leer += 1
+                if leer > 80:
+                    bloecke.append((start, y - leer + 1))
+                    start, leer = None, 0
+        if bloecke:
+            oben, unten = max(bloecke, key=lambda b: sum(zeilen[b[0]:b[1]]))
+            im, maske = im.crop((0, oben, im.width, unten)), maske.crop((0, oben, im.width, unten))
+    box = maske.getbbox()
     if box:
         r = 16
         im = im.crop((max(0, box[0] - r), max(0, box[1] - r), min(im.width, box[2] + r), min(im.height, box[3] + r)))
@@ -429,7 +467,7 @@ def einkleber_bilder(a: dict, ordner: Path) -> list[bytes]:
     out = []
     for b in a.get("heft_bild", []):
         if "bild" in b:
-            out.append(zuschneiden((ordner / b["bild"]).read_bytes()))
+            out.append(zuschneiden((ordner / b["bild"]).read_bytes(), block=bool(b.get("vordruck"))))
         else:
             if "bau" in b:
                 with tempfile.TemporaryDirectory() as tmp:
@@ -463,6 +501,7 @@ def hand_tabelle(t: dict) -> str:
 
 
 def heftseite(st: dict, a: dict, teile: list[dict], bilder: list[str]) -> str:
+    vordruck = any(b.get("vordruck") for b in a.get("heft_bild", []))
     """Die Heftseite: Karopapier, Datum und Frage von Hand, der Einkleber, der Antwortsatz von Hand."""
     out = ['<div class="heft">', f'<p class="h-datum">{e(datum_hand(st["datum"]))}</p>']
     titel_je_teil = len(bilder) > 1 and len(bilder) == len(teile) and all(t["titel"] for t in teile)
@@ -477,12 +516,14 @@ def heftseite(st: dict, a: dict, teile: list[dict], bilder: list[str]) -> str:
                 out.append(f'<p class="h-frage">{inline(teile[i]["titel"])}</p>')
             out.append(f'<figure class="einkleber"><img data-kb-src="{src}" data-kb-typ="image/jpeg" '
                        f'alt="Einkleber, ausgefüllt"></figure>')
-    else:
+    if not bilder or vordruck:
         for t in teile:
             if t["titel"]:
                 out.append(f'<p class="h-titel">{inline(t["titel"])}</p>')
             if t["zeilen"]:
                 out.append(hand_tabelle(t))
+            if t.get("punkte"):
+                out.append('<ul class="hand-l">' + "".join(f"<li>{inline(pk)}</li>" for pk in t["punkte"]) + "</ul>")
     if antworten_von_hand:
         for t in teile:
             if t["antwort"]:
@@ -556,7 +597,7 @@ def planung_kopf(ordner: Path) -> tuple[str, str]:
             titel = re.sub(r"\s*\((vorne|Doppelstunde)[^)]*\)", "", titel).strip()
         m = re.match(r"\*{0,2}Stundenfrage\*{0,2}:\*{0,2}\s*(.+)", z.strip())
         if m and not frage:
-            frage = re.sub(r"\s*\*\(.*$", "", m.group(1)).strip().strip("„“\"")
+            frage = re.sub(r"\s*\*\(.*$", "", m.group(1)).replace("**", "").strip().strip("„“\" ")
     return titel, frage
 
 
@@ -574,10 +615,17 @@ def stunde_auto(ordner: Path, ueber: dict, materialien_der_stunde: list[dict]) -
         a["heft"] = [{"datei": "PLANUNG.md", "abschnitt": "## Sicherung", "bis": "**Vorne liegt"}]
     else:
         a["heft"] = []
-    if (ordner / "bilder" / "einkleber_loesung.png").is_file():
-        a["heft_bild"] = [{"bild": "bilder/einkleber_loesung.png"}]
+    # Was im Heft klebt: zuerst das ausgefüllte Bild (Lösung des Einklebers, gefülltes Tafelbild), sonst der gedruckte Vordruck
+    # (Bild-Zeitleiste, Kette), zu dem dann die Punkte von Hand erscheinen (GPG8a 29.09., 06.10.)
+    gefuellt = next((f"bilder/{n}" for n in ("einkleber_loesung.png", "tafel_voll.png", "hefteintrag_tafel.png")
+                     if (ordner / "bilder" / n).is_file()), None)
+    if gefuellt:
+        a["heft_bild"] = [{"bild": gefuellt}]
+    elif (pdfs := sorted(ordner.glob("LOESUNG_Einkleber*.pdf"))):
+        a["heft_bild"] = [{"pdf": p.name} for p in pdfs]
     else:
-        a["heft_bild"] = [{"pdf": p.name} for p in sorted(ordner.glob("LOESUNG_Einkleber*.pdf"))]
+        vordruck = sorted((ordner / "drucken").glob("*_Heft.png")) + sorted((ordner / "bilder").glob("*heftstreifen*.png"))
+        a["heft_bild"] = [{"bild": str(p.relative_to(ordner)), "vordruck": True} for p in vordruck[:1]]
     if len(a["heft_bild"]) > 1:
         a["antwort_im_einkleber"] = True
     blaetter = []
@@ -656,6 +704,7 @@ def struktur(kurs: str, auswahl: dict, daten: dict, welt: Path) -> tuple[list[di
                     continue
                 p_titel, p_frage = planung_kopf(f) if f else ("", "")
                 titel = "Probe" if probe else (p_titel or z["thema"] or z["frage"] or "Stunde")
+                titel = titel.replace("**", "").strip()
                 stunden.append({"id": sid_st, "datum": datum, "titel": titel, "frage": p_frage or z["frage"].replace("**", "").strip("„“ "),
                                 "kommt": not gehalten, **({"art": "probe"} if probe else {}),
                                 **({"_ordner": f.name} if f else {})})
@@ -834,6 +883,7 @@ def stundenseite(s, st, a, ordner, teile, stunden, hier, vor, nach, ablage, mate
     for m in zeitkarten:
         out.append(f'<div class="spalte einstieg"><div class="spalte-kopf"><span>Zum Einstieg: {e(m["titel"])}. '
                    f'Schieb den Regler und schau, was sich ändert.</span>'
+                   f'<button type="button" class="ln" data-voll>groß</button>'
                    f'<a class="ln" href="{unt}{e(m["pfad"])}" target="_blank" rel="noopener">eigenes Fenster</a></div>'
                    f'<iframe data-src="{unt}{e(m["pfad"])}" title="{e(m["titel"])}" loading="lazy"></iframe></div>')
     if len(blaetter) > 1:

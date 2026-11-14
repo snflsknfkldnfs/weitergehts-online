@@ -76,7 +76,7 @@
     var h1 = seite.querySelector('h1'); if (h1) document.title = h1.textContent + ' · ' + document.title.split(' · ').pop();
     seite.querySelectorAll('[data-ki]').forEach(kiKnopf);
     seite.querySelectorAll('[data-kb-pdf]').forEach(pdfLink);
-    reiter(); blattWahl(); umschalter(); folien(); sequenzWahl(); trapez();
+    reiter(); blattWahl(); umschalter(); folien(); sequenzWahl(); vollbild(); trapez();
     window.addEventListener('resize', trapez);
     seite.querySelectorAll('[role=tabpanel]').forEach(sichtbarLaden);
   }
@@ -134,6 +134,15 @@
         document.addEventListener('keydown', taste);
         document.body.appendChild(ov); setze(i);
       });
+    });
+  }
+  // Zeitkarte groß: der Rahmen füllt den Bildschirm, Esc oder „klein“ zurück
+  function vollbild() {
+    seite.querySelectorAll('[data-voll]').forEach(function (b) {
+      var box = b.closest('.einstieg');
+      function setze(an) { box.classList.toggle('voll', an); b.textContent = an ? 'klein' : 'groß'; document.body.style.overflow = an ? 'hidden' : ''; }
+      b.addEventListener('click', function () { setze(!box.classList.contains('voll')); });
+      document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape' && box.classList.contains('voll')) setze(false); });
     });
   }
   // Kursseite: eine Sequenz im Jahr antippen zeigt ihre Stunden (Adresse #s01 merkt die Wahl, auch für „‹ Unser Jahr“)
