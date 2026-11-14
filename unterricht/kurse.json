@@ -8,7 +8,8 @@
     "inf": { "name": "Informatik", "reiter": "Informatik" }
   },
   "kurse": {
-    "gpg8a": { "fach": "gpg", "jahrgang": 8, "titel": "GPG 8a" },
+    "gpg8a": { "fach": "gpg", "jahrgang": 8, "titel": "GPG 8a",
+   "klassenbereich": true },
     "gpg9a": { "fach": "gpg", "jahrgang": 9, "titel": "GPG 9a",
    "klassenbereich": true },
     "inf6b": { "fach": "inf", "jahrgang": 6, "titel": "Inf 6b" },

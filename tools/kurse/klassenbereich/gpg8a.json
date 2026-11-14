@@ -1,0 +1,11 @@
+{
+  "_comment": "Klassenbereich GPG 8a (Stufe 2, Entwurf 14.11.2026): Struktur und Material kommen aus der Welt (tools/kurse/klassenbereich.py, Abschnitt Ableitung); hier stehen nur Ausnahmen. Wochenrückblick-Stunden ausgespart wie in GPG 9a (Entscheid der Lehrkraft für 8a offen).",
+  "kurs": "gpg8a",
+  "welt": "/Users/paulad/Schule_2026-27/Unterrichtsplanung26_27/welt/GPG8a",
+  "ausblenden": [
+    "s00",
+    "s01/ue07",
+    "s01/ue13"
+  ],
+  "stunden": {}
+}
