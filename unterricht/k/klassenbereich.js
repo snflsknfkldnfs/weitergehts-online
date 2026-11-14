@@ -76,7 +76,7 @@
     var h1 = seite.querySelector('h1'); if (h1) document.title = h1.textContent + ' · ' + document.title.split(' · ').pop();
     seite.querySelectorAll('[data-ki]').forEach(kiKnopf);
     seite.querySelectorAll('[data-kb-pdf]').forEach(pdfLink);
-    reiter(); blattWahl(); umschalter(); folien(); trapez();
+    reiter(); blattWahl(); umschalter(); folien(); sequenzWahl(); trapez();
     window.addEventListener('resize', trapez);
     seite.querySelectorAll('[role=tabpanel]').forEach(sichtbarLaden);
   }
@@ -135,6 +135,21 @@
         document.body.appendChild(ov); setze(i);
       });
     });
+  }
+  // Kursseite: eine Sequenz im Jahr antippen zeigt ihre Stunden (Adresse #s01 merkt die Wahl, auch für „‹ Unser Jahr“)
+  function sequenzWahl() {
+    var knoepfe = [].slice.call(seite.querySelectorAll('.jahr-leiste [data-seq]'));
+    if (!knoepfe.length) return;
+    function wahl(id, merkenInAdresse) {
+      var gibt = knoepfe.some(function (b) { return b.dataset.seq === id; });
+      if (!gibt) return;
+      knoepfe.forEach(function (b) { b.classList.toggle('gewaehlt', b.dataset.seq === id); b.setAttribute('aria-pressed', b.dataset.seq === id ? 'true' : 'false'); });
+      seite.querySelectorAll('.seq-block').forEach(function (x) { x.hidden = x.dataset.seq !== id; });
+      trapez();
+      if (merkenInAdresse) try { history.replaceState(null, '', '#' + id); } catch (e) {}
+    }
+    knoepfe.forEach(function (b) { b.addEventListener('click', function () { wahl(b.dataset.seq, true); }); });
+    if (location.hash) wahl(location.hash.slice(1), false);
   }
   // Trichter von der laufenden Sequenz im Jahr zur Leiste ihrer Stunden (wie die Ansicht Kurs der Matrixe)
   function trapez() {

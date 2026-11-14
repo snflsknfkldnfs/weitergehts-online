@@ -10,6 +10,10 @@ Warum verschlüsselt (Lehrkraft 14.11.2026): Blätter und Folien enthalten Bilde
 dort nichts. Darum liegt jede Seite und jede Datei nur als AES-GCM-Chiffrat im Repo; der Browser entschlüsselt mit
 dem Klassenpasswort (PBKDF2-SHA256). Klartext und Passwort verlassen den Rechner der Lehrkraft nie.
 
+Spec und Entscheide der Lehrkraft: docs/website/specs/2026-11-14-klassenbereich-design.md; Anleitung für einen neuen Kurs:
+docs/website/VEROEFFENTLICHEN.md § Klassenbereich. Struktur und Material werden aus der Welt abgeleitet (struktur, stunde_auto);
+die Auswahl-Datei trägt nur Ausnahmen.
+
 Quellen (nie Inhalte im Repo):
   tools/kurse/klassenbereich/<kurs>.json    Auswahl je Stunde (Pfade in die Welt, Zuordnung Blatt ↔ Material)
   unterricht/kurse.json                     Struktur der Stunden (Datum, Titel, Stundenfrage), Material-Links
@@ -251,31 +255,6 @@ def herkunft(ordner: Path) -> list[list[str]]:
     return rows
 
 
-# ─────────────────────────── Jahresplan ───────────────────────────
-
-def jahr(welt: Path, datei: str, ausblenden: list[str]) -> list[dict]:
-    out = []
-    for z in (welt / datei).read_text(encoding="utf-8").splitlines():
-        if not re.match(r"^\|\s*S\d\d\s*\|", z):
-            continue
-        c = zellen(z)
-        if len(c) < 10:  # andere Tabellen der Datei (Stundenbilanz)
-            continue
-        sid = c[0].lower()
-        if sid in ausblenden:
-            continue
-        probe = c[7] if c[7] not in ("–", "-", "") and "?" not in c[7] and "🔲" not in c[7] else ""
-        probe = re.sub(r"\s*\(.*?\)", "", probe).strip()
-        stand = c[8].split()[0].strip(";,.").lower() if c[8] else ""
-        stand = {"läuft": "läuft", "abgeschlossen": "fertig"}.get(stand, "geplant")
-        titel = re.sub(r"\s*\(\*\*neu\*\*.*?\)", "", c[1]).strip()
-        m = re.search(r"\d+", c[6])
-        kurz = re.sub(r"\s*\(.*?\)", "", titel).split(":")[0].split(" – ")[0].strip()
-        out.append({"id": sid, "titel": titel, "kurz": kurz, "zeitraum": c[5], "probe": probe, "stand": stand,
-                    "umfang": int(m.group()) if m else 6})
-    return out
-
-
 # ─────────────────────────── Dateien (Bilder, PDFs) ───────────────────────────
 
 class Ablage:
@@ -366,6 +345,20 @@ def datum_hand(iso: str) -> str:
     return f"{d.day:02d}.{d.month:02d}.{d.year}"
 
 
+MONATE = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"]
+
+
+def monate(zeitraum: str) -> str:
+    """„01.10.–20.11.2026“ → „Oktober bis November“; „Feb.–11.03.2027“ → „Februar bis März“. Kinder brauchen den Monat, nicht den Tag."""
+    gefunden = []
+    for teil in re.split(r"[–-]| bis ", zeitraum):
+        m = re.search(r"\d{1,2}\.(\d{1,2})\.", teil)
+        name = MONATE[int(m.group(1)) - 1] if m else next((x for x in MONATE if re.search(r"\b" + x[:3].lower(), teil.lower())), None)
+        if name and name not in gefunden:
+            gefunden.append(name)
+    return " bis ".join(gefunden[:2]) if gefunden else ""
+
+
 def stunden_leiste(stunden: list[dict], hier: str | None, aktuell: str | None, zu: str, gross: bool) -> str:
     """Ebene 2. gross: Kacheln mit Datum und Titel (Kursseite); sonst kleine Felder (Stundenseite)."""
     out = []
@@ -377,7 +370,7 @@ def stunden_leiste(stunden: list[dict], hier: str | None, aktuell: str | None, z
         inhalt = (f'<span class="d">{e(datum_kurz(st["datum"]))}{" ✓" if z == "g" else ""}</span>'
                   f'<span class="t">{e(titel)}</span>') if gross else ("✓" if z == "g" else "")
         tip = f'{datum_kurz(st["datum"])} · {titel}'
-        offen = z == "g" or probe
+        offen = (z == "g" and not st.get("ohne_seite")) or probe
         cur = ' aria-current="page"' if st["id"] == aktuell else ""
         if offen:
             out.append(f'<a class="{kl}" href="{zu}{st["id"]}/" title="{e(tip)}"{cur}>{inhalt}</a>')
@@ -498,13 +491,195 @@ def heftseite(st: dict, a: dict, teile: list[dict], bilder: list[str]) -> str:
     return "\n".join(out)
 
 
-def kopfzeile(stunden, hier, aktuell, i_vor, i_nach) -> str:
+def kopfzeile(stunden, hier, aktuell, i_vor, i_nach, seq) -> str:
     vor = (f'<a class="pfeil" href="../{i_vor["id"]}/" aria-label="Stunde davor" rel="prev">‹</a>' if i_vor
            else '<span class="pfeil aus">‹</span>')
     nach = (f'<a class="pfeil" href="../{i_nach["id"]}/" aria-label="Stunde danach" rel="next">›</a>' if i_nach
             else '<span class="pfeil aus">›</span>')
-    return (f'<div class="oben"><a class="zurueck" href="../../">‹ Unser Jahr</a>'
+    return (f'<div class="oben"><a class="zurueck" href="../../#{seq}">‹ Unser Jahr</a>'
             f'<div class="schalter">{vor}{stunden_leiste(stunden, None, aktuell, "../", False)}{nach}</div></div>')  # klein: nur „diese Stunde“ markiert
+
+
+MATRIXE_LESER = Path("/Users/paulad/die-matrixe/werkzeuge/oberflaeche.py")
+
+
+def matrixe_leser():
+    """Die Leser für Sequenzplan und Jahresplan aus der Matrixe (nur lesend importiert): eine Stelle, die die Pläne der
+    Lehrkraft versteht, statt einer zweiten hier (Lehrkraft 14.11.2026, Stufe 2)."""
+    spec = importlib.util.spec_from_file_location("matrixe_oberflaeche", MATRIXE_LESER)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+# Nicht in die Erarbeitung: was ins Heft gehört (Einkleber, Heft-Vordrucke), was nicht von der Lehrkraft ist (Kollegin), was nur
+# Einzelne betrifft (Vortrag, Namensschild, Notfall-Ersatz ohne iPad), Leistungsnachweise und Graufassungen für den Kopierer.
+AUSSCHLUSS_BLAETTER = ["Einkleber", "Kollegin", "Wochenrueckblick", "_grau", "Mitschreiben", "Karten_", "Hefteintrag", "_Heft",
+                       "Namensschild", "Notfall", "LN_", "Vortrag", "Zuhoeren", "Dilemma"]
+ARTEN_BLATT = [("Beobachtungsbogen", "Beobachtungsbogen"), ("Vertiefung", "Für Schnelle"), ("AB_", "Arbeitsblatt")]
+
+
+def pdf_titel(pdf: Path) -> str:
+    """Die Überschrift auf Seite 1 eines Blatts (nach Kopfzeile „GPG · Datum …“ und „Name:“), sonst leer."""
+    r = subprocess.run(["pdftotext", "-l", "1", str(pdf), "-"], capture_output=True, text=True)
+    zeilen = [z.strip() for z in r.stdout.splitlines() if z.strip()]
+    nach_name = next((zeilen[i + 1] for i, z in enumerate(zeilen[:-1]) if z.startswith("Name:")), "")
+    if nach_name and len(nach_name) <= 70:   # Blätter des Bauwegs: die Überschrift steht unter „Name:“
+        return nach_name.replace("–", "-").replace(" - ", " – ")
+    for z in r.stdout.splitlines():
+        z = z.strip()
+        if not z or " · " in z or z.startswith(("Name:", "✂", "hier ")) or len(z) > 70 or len(z.split()) < 2:
+            continue
+        return z.replace("–", "-").replace(" - ", " – ")
+    return ""
+
+
+def blatt_titel(name: str) -> tuple[str, str]:
+    """„25x_doppelseitig_AB_Zwei-Reden-1947.pdf“ → („Arbeitsblatt: Zwei Reden 1947“, „Arbeitsblatt“)."""
+    n = re.sub(r"^\d+x_(einseitig|doppelseitig)_", "", Path(name).stem)
+    n = re.sub(r"_A5-.*$", "", n)
+    art = next((a for k, a in ARTEN_BLATT if k in n), "Blatt")
+    rest = re.sub(r"^(AB|Beobachtungsbogen)_", "", n).replace("_", " ").replace("-", " ").strip()
+    rest = rest[:1].upper() + rest[1:]
+    return (f"{art}: {rest}" if art != "Blatt" else rest), art
+
+
+def planung_kopf(ordner: Path) -> tuple[str, str]:
+    """Titel und Stundenfrage aus dem Kopf der PLANUNG.md („# Stunde: Kurs · Datum · UE nn … · Titel“, „Stundenfrage: …“)."""
+    p = ordner / "PLANUNG.md"
+    if not p.is_file():
+        return "", ""
+    titel = frage = ""
+    for z in p.read_text(encoding="utf-8").splitlines()[:12]:
+        if z.startswith("# Stunde:") and not titel:
+            titel = z.split(" · ")[-1].strip()
+            titel = re.sub(r"\s*\((vorne|Doppelstunde)[^)]*\)", "", titel).strip()
+        m = re.match(r"\*{0,2}Stundenfrage\*{0,2}:\*{0,2}\s*(.+)", z.strip())
+        if m and not frage:
+            frage = re.sub(r"\s*\*\(.*$", "", m.group(1)).strip().strip("„“\"")
+    return titel, frage
+
+
+def stunde_auto(ordner: Path, ueber: dict, materialien_der_stunde: list[dict]) -> dict:
+    """Was zu einer Stunde gehört, aus ihrem Ordner in der Welt abgeleitet; `ueber` (Auswahl je Stunde) überschreibt Feld für
+    Feld. Abgeleitet: Hefteintrag (Lösung des Einklebers oder Hefteintrags, sonst § Sicherung der Planung), der ausgefüllte
+    Einkleber als Bild (bilder/einkleber_loesung.png, sonst LOESUNG_Einkleber*.pdf), die Blätter der Klasse aus drucken/ ohne
+    Einkleber und fremdes Material, die Folien (folien.pdf oder <Datum>_<Kurs>_*.pdf), das iPad-Material zum Blatt."""
+    a: dict = {}
+    ek, he = sorted(ordner.glob("LOESUNG_Einkleber*.md")), sorted(ordner.glob("LOESUNG_Hefteintrag*.md"))
+    md = he if (len(ek) > 1 and he) else (ek or he)   # zwei Einkleber (16.10.): die Lösung des ganzen Hefteintrags
+    if md:
+        a["heft"] = [{"datei": md[0].name}]
+    elif (ordner / "PLANUNG.md").is_file() and "## Sicherung" in (ordner / "PLANUNG.md").read_text(encoding="utf-8"):
+        a["heft"] = [{"datei": "PLANUNG.md", "abschnitt": "## Sicherung", "bis": "**Vorne liegt"}]
+    else:
+        a["heft"] = []
+    if (ordner / "bilder" / "einkleber_loesung.png").is_file():
+        a["heft_bild"] = [{"bild": "bilder/einkleber_loesung.png"}]
+    else:
+        a["heft_bild"] = [{"pdf": p.name} for p in sorted(ordner.glob("LOESUNG_Einkleber*.pdf"))]
+    if len(a["heft_bild"]) > 1:
+        a["antwort_im_einkleber"] = True
+    blaetter = []
+    werkzeuge = [m for m in materialien_der_stunde if not m["pfad"].startswith("zeitkarte/")]
+    for p in sorted((ordner / "drucken").glob("*.pdf")) if (ordner / "drucken").is_dir() else []:
+        if any(x.lower() in p.name.lower() for x in AUSSCHLUSS_BLAETTER) or p.name.endswith("_farbe.pdf"):
+            continue
+        titel, art = blatt_titel(p.name)
+        kopf = pdf_titel(p)
+        if kopf:
+            titel = kopf if kopf.split()[0].lower() == art.split()[0].lower() or art == "Blatt" else f"{art}: {kopf}"
+        blaetter.append({"datei": f"drucken/{p.name}", "titel": titel, "art": art, "zu": []})
+    # iPad-Material zum Blatt: gleicher Name (West/Ost), sonst je Arbeitsblatt der Reihe nach
+    frei = list(werkzeuge)
+    woerter = {m["id"]: set(re.findall(r"[a-zäöü]{3,}", m["pfad"].lower())) for m in werkzeuge}
+    gemeinsam = set.intersection(*woerter.values()) if len(woerter) > 1 else set()
+    for b in blaetter:
+        if b["art"] != "Arbeitsblatt":
+            continue
+        name = b["datei"].lower()
+        wertung = [(sum(w in name for w in woerter[m["id"]] - gemeinsam), m) for m in frei]
+        bester = max(wertung, key=lambda x: x[0], default=(0, None))
+        einziges = sum(1 for x in blaetter if x["art"] == "Arbeitsblatt") == 1
+        treffer = bester[1] if bester[0] else (frei[0] if frei and einziges else None)
+        if treffer:
+            b["zu"] = [treffer["id"]]
+            frei.remove(treffer)
+    a["blaetter"] = blaetter
+    folien = [ordner / "folien.pdf"] if (ordner / "folien.pdf").is_file() else sorted(ordner.glob("20??-??-??_*.pdf"))
+    if folien:
+        a["folien"] = folien[0].name
+    a.update(ueber)
+    return a
+
+
+def struktur(kurs: str, auswahl: dict, daten: dict, welt: Path) -> tuple[list[dict], list[dict]]:
+    """Sequenzen mit ihren Stunden und das Jahr. Trägt kurse.json für den Kurs `sequenzen`, gilt diese Struktur (von Hand,
+    GPG9a seit 13.11.); sonst kommt sie aus Jahresplan und Sequenzplänen der Welt (Leser der Matrixe)."""
+    M = matrixe_leser()
+    aus = auswahl.get("ausblenden", [])
+    jp = M.jahresplan_sequenzen(welt / auswahl.get("jahresplan", "JAHRESPLAN.md"))
+    reihe = []
+    if daten.get("sequenzen", {}).get(kurs):
+        for s in daten["sequenzen"][kurs]["reihe"]:
+            if s["id"] in aus:
+                continue
+            ordner = (auswahl.get("sequenzen", {}).get(s["id"], {}).get("ordner")
+                      or next((x["ordner"] for x in jp if x["nr"].lower() == s["id"]), ""))
+            reihe.append({**s, "ordner": welt / ordner if ordner else None,
+                          "stunden": [st for st in s["stunden"] if f"{s['id']}/{st['id']}" not in aus]})
+    else:
+        for x in jp:
+            sid = x["nr"].lower()
+            if sid in aus or not x["ordner"] or not (welt / x["ordner"] / "SEQUENZPLAN.md").is_file():
+                continue
+            plan = welt / x["ordner"] / "SEQUENZPLAN.md"
+            zeilen = M.sequenzplan_zeilen(plan)
+            ordner_am = {}
+            for p in (welt / x["ordner"]).glob("UE*_20??-??-??_*"):
+                if p.is_dir():
+                    ordner_am[re.search(r"20\d\d-\d\d-\d\d", p.name).group(0)] = p
+            probe_am = x["probe"]["datum"] if x["probe"] else ""
+            stunden = []
+            for datum in sorted(set(zeilen) | set(ordner_am)):
+                z = zeilen.get(datum, {"thema": "", "frage": "", "zustand": "", "lnw": "", "ue": ""})
+                if z["zustand"] == "faellt_aus":
+                    continue
+                f = ordner_am.get(datum)
+                probe = z["lnw"] == "gross" or datum == probe_am
+                gehalten = z["zustand"] == "gehalten" or bool(f and (f / "NACHBEREITUNG.md").is_file())
+                if not (f or probe or z["ue"] or (z["frage"] and not gehalten)):
+                    continue   # Wandertag, Praktikum, Ausblick: keine Stunde
+                sid_st = (f.name.split("_")[0].lower() if f else ("ue" + z["ue"].lower() if z["ue"] else
+                          ("probe-" if probe else "d") + datum))
+                if f"{sid}/{sid_st}" in aus or any(st["id"] == sid_st for st in stunden):
+                    continue
+                p_titel, p_frage = planung_kopf(f) if f else ("", "")
+                titel = "Probe" if probe else (p_titel or z["thema"] or z["frage"] or "Stunde")
+                stunden.append({"id": sid_st, "datum": datum, "titel": titel, "frage": p_frage or z["frage"].replace("**", "").strip("„“ "),
+                                "kommt": not gehalten, **({"art": "probe"} if probe else {}),
+                                **({"_ordner": f.name} if f else {})})
+            m = re.search(r"\*\*Sequenzfrage[^*]*\*\*:?\s*(.+)", plan.read_text(encoding="utf-8"))
+            frage = auswahl.get("sequenzen", {}).get(sid, {}).get("frage") or (m.group(1).strip().strip("*") if m else "")
+            if stunden:
+                reihe.append({"id": sid, "titel": x["name"], "frage": frage, "ordner": welt / x["ordner"], "stunden": stunden})
+    # Das Jahr: Stand nach der jüngsten gehaltenen Stunde (nicht nach dem Bautag, sonst wäre der Bau nicht wiederholbar)
+    gehalten = [st["datum"] for s in reihe for st in s["stunden"] if not st.get("kommt") and st.get("art") != "probe"]
+    heute = max(gehalten) if gehalten else ""
+    jahr_ = []
+    for x in jp:
+        if x["nr"].lower() in aus:
+            continue
+        laufend = next((s["id"] for s in reihe if any(st.get("kommt") for st in s["stunden"])), None)
+        laeuft = x["nr"].lower() == laufend
+        fertig = x["abgeschlossen"] or (x["bis"] and heute and x["bis"] < heute)
+        stand = "läuft" if laeuft else "fertig" if fertig else "geplant"
+        probe = ""
+        if x["probe"] and not x["probe"]["vorlaeufig"]:
+            probe = "Probe " + datum_kurz(x["probe"]["datum"])
+        jahr_.append({"id": x["nr"].lower(), "titel": x["lang"], "kurz": x["name"], "zeitraum": x["zeitraum"],
+                      "probe": probe, "stand": stand, "umfang": x["ue"] or 6})
+    return reihe, jahr_
 
 
 def bauen(kurs: str) -> int:
@@ -517,9 +692,9 @@ def bauen(kurs: str) -> int:
     ziel = UNTERRICHT / "k" / kurs
     ablage = Ablage(tresor, ziel / "dateien")
     k = daten["kurse"][kurs]
-    aus = auswahl["ausblenden"]
-    reihe = [s for s in daten["sequenzen"][kurs]["reihe"] if s["id"] not in aus]
+    fach = daten["faecher"][k["fach"]]
     materialien = {m["id"]: m for m in daten["materialien"] if kurs in m.get("kurse", []) and m.get("id")}
+    reihe, jahrplan = struktur(kurs, auswahl, daten, welt)
     geschrieben: set[Path] = set()
 
     def schreiben(rel: str, titel: str, tiefe: str, start: str, inhalt: str) -> None:
@@ -532,64 +707,85 @@ def bauen(kurs: str) -> int:
             print(f"geschrieben: {p.relative_to(REPO)}")
         geschrieben.add(p)
 
-    jahrplan = jahr(welt, auswahl["jahresplan"], aus)
-    laufend = reihe[0]
-    sq = auswahl["sequenzen"][laufend["id"]]
-    stunden = [st for st in laufend["stunden"] if f"{laufend['id']}/{st['id']}" not in aus]
-    gehalten = [st for st in stunden if not st.get("kommt") and st.get("art") != "probe"]
-    hier = gehalten[-1]["id"] if gehalten else None
-    gesammelt = []
+    def mat_der_stunde(s, st):
+        ref = f"{s['id']}/{st['id']}"
+        return [m for m in materialien.values() if m.get("stunde") == ref or (not m.get("stunde") and m.get("datum") == st["datum"])]
 
-    # ── Stundenseiten ──
-    offen = [st for st in stunden if not st.get("kommt") or st.get("art") == "probe"]
-    for st in stunden:
-        ref = f"{laufend['id']}/{st['id']}"
-        a = auswahl["stunden"].get(ref)
-        if not a:
-            continue
-        ordner = welt / sq["ordner"] / a["ordner"]
-        teile = []
-        for q in a["heft"]:
-            teile += heft_teile(q, ordner)
-        gesammelt.append((st, datum_kurz(st["datum"]), teile))
-        i = offen.index(st)
-        inhalt = stundenseite(st, a, ordner, teile, stunden, hier, offen[i - 1] if i else None,
-                              offen[i + 1] if i + 1 < len(offen) else None, ablage, materialien)
-        schreiben(ref, f"{st['titel']} · {k['titel']}", "../../../../../", "../../", inhalt)
+    leisten = []   # je Sequenz die Stundenleiste der Kursseite
+    for s in reihe:
+        stunden = s["stunden"]
+        gehalten = [st for st in stunden if not st.get("kommt") and st.get("art") != "probe"]
+        hier = gehalten[-1]["id"] if gehalten else None
+        offen = [st for st in stunden if not st.get("kommt") or st.get("art") == "probe"]
+        gesammelt = []
+        for st in gehalten:
+            ref = f"{s['id']}/{st['id']}"
+            ueber = auswahl.get("stunden", {}).get(ref, {})
+            if s["ordner"] is None:
+                continue
+            kand = ([s["ordner"] / ueber["ordner"]] if ueber.get("ordner") else [s["ordner"] / st["_ordner"]] if st.get("_ordner") else
+                    sorted(p for p in s["ordner"].glob(f"{st['id'].upper()}_{st['datum']}*") if p.is_dir()))
+            if not kand:
+                print(f"HINWEIS {ref}: kein Stundenordner {st['id'].upper()}_{st['datum']}_… in {s['ordner'].name} — Stunde ohne Seite")
+                continue
+            ordner = kand[0]
+            a = stunde_auto(ordner, ueber, mat_der_stunde(s, st))
+            teile = []
+            for q in a["heft"]:
+                teile += heft_teile(q, ordner)
+            gesammelt.append((st, datum_kurz(st["datum"]), teile))
+            i = offen.index(st)
+            inhalt = stundenseite(s, st, a, ordner, teile, stunden, hier, offen[i - 1] if i else None,
+                                  offen[i + 1] if i + 1 < len(offen) else None, ablage, materialien, mat_der_stunde(s, st))
+            schreiben(ref, f"{st['titel']} · {k['titel']}", "../../../../../", "../../", inhalt)
+        mit_seite = {st["id"] for st, _, _ in gesammelt}
+        for st in stunden:   # gehaltene Stunden ohne Ordner bekommen keinen Link
+            if not st.get("kommt") and st.get("art") != "probe" and st["id"] not in mit_seite:
+                st["ohne_seite"] = True
 
-    # ── Probenseite ──
-    probe = next((st for st in stunden if st.get("art") == "probe"), None)
-    if probe:
-        i = offen.index(probe)
-        out = [kopfzeile(stunden, hier, probe["id"], offen[i - 1] if i else None, None),
-               f'<p class="dat">Probe · {e(datum_kurz(probe["datum"]))}</p>',
-               '<h1 class="frage">Für die Probe lernen</h1>',
-               f'<p class="leise">Stoff: deine Hefteinträge. Hier steht jede Stunde mit ihrer Frage und ihrem Antwortsatz. '
-               f'Tipp auf eine Stunde, um den ganzen Hefteintrag zu sehen.</p>',
-               ki_knopf("Mit KI für die Probe üben", prompt_sequenz(laufend, datum_kurz(probe["datum"]), gesammelt)),
-               '<ol class="probe-liste">']
-        for st, datum, teile in gesammelt:
-            antw = "".join(f'<p class="pl-antwort">{inline(t["antwort"])}</p>' for t in teile if t["antwort"])
-            out.append(f'<li><a href="../{st["id"]}/"><span class="d">{e(datum)}</span>'
-                       f'<span class="pl-frage">{e(st.get("frage", st["titel"]))}</span></a>{antw}</li>')
-        out.append("</ol>")
-        schreiben(f"{laufend['id']}/{probe['id']}", f"Probe · {k['titel']}", "../../../../../", "../../", "\n".join(out))
+        probe = next((st for st in stunden if st.get("art") == "probe"), None)
+        if probe:
+            i = offen.index(probe)
+            out = [kopfzeile(stunden, hier, probe["id"], offen[i - 1] if i else None, None, s["id"]),
+                   f'<p class="dat">Probe · {e(datum_kurz(probe["datum"]))}</p>',
+                   '<h1 class="frage">Für die Probe lernen</h1>',
+                   '<p class="leise">Stoff: deine Hefteinträge. Hier steht jede Stunde mit ihrer Frage und ihrem Antwortsatz. '
+                   'Tipp auf eine Stunde, um den ganzen Hefteintrag zu sehen.</p>',
+                   ki_knopf("Mit KI für die Probe üben", prompt_sequenz(s, datum_kurz(probe["datum"]), gesammelt)),
+                   '<ol class="probe-liste">']
+            for st, datum, teile in gesammelt:
+                antw = "".join(f'<p class="pl-antwort">{inline(t["antwort"])}</p>' for t in teile if t["antwort"])
+                out.append(f'<li><a href="../{st["id"]}/"><span class="d">{e(datum)}</span>'
+                           f'<span class="pl-frage">{e(st.get("frage") or st["titel"])}</span></a>{antw}</li>')
+            out.append("</ol>")
+            schreiben(f"{s['id']}/{probe['id']}", f"Probe · {k['titel']}", "../../../../../", "../../", "\n".join(out))
+        leisten.append((s, hier))
 
-    # ── Kursseite: das Jahr, darunter die Stunden der laufenden Sequenz ──
+    # ── Kursseite: das Jahr, darunter die Stunden einer Sequenz (Standard: die laufende) ──
+    laufend = next((s for s, _ in leisten if any(st.get("kommt") for st in s["stunden"])), leisten[-1][0] if leisten else None)
+    mit_stunden = {s["id"] for s, _ in leisten}
     js = []
     for x in jahrplan:
-        kl = "js " + {"läuft": "jetzt gewaehlt", "fertig": "vorbei", "geplant": "entw"}[x["stand"]]
+        kl = "js " + {"läuft": "jetzt", "fertig": "vorbei", "geplant": "entw"}[x["stand"]]
+        kl += " gewaehlt" if laufend and x["id"] == laufend["id"] else ""
         mark = '<span class="lnw" title="Probe"></span>' if x["probe"] else ""
-        js.append(f'<span class="{kl}" style="flex:{x["umfang"]} 1 0" title="{e(x["titel"])}">'
-                  f'<span class="nm">{"✓ " if x["stand"] == "fertig" else ""}{e(x["kurz"])}</span>{mark}</span>')
+        inner = (f'<span class="nm">{"✓ " if x["stand"] == "fertig" else ""}{e(x["kurz"])}</span>'
+                 f'<span class="zr">{e(monate(x["zeitraum"]))}</span>{mark}')
+        if x["id"] in mit_stunden:
+            js.append(f'<button type="button" class="{kl}" data-seq="{x["id"]}" style="flex:{x["umfang"]} 1 0" title="{e(x["titel"])}">{inner}</button>')
+        else:
+            js.append(f'<span class="{kl}" style="flex:{x["umfang"]} 1 0" title="{e(x["titel"])}">{inner}</span>')
     out = [f'<h1 class="kurs-name">{e(k["titel"])}</h1>',
-           '<p class="leise">Unser Jahr in Geschichte, Politik und Geographie.</p>',
+           f'<p class="leise">Unser Jahr in {e(fach["name"].replace(" · ", ", ").replace(", G", " und G"))}.</p>' if k["fach"] == "gpg"
+           else f'<p class="leise">Unser Jahr in {e(fach["name"])}.</p>',
            f'<div class="jahr-leiste">{"".join(js)}</div>',
-           '<div class="trapez"><svg id="trapez" preserveAspectRatio="none" aria-hidden="true"></svg></div>',
-           f'<p class="leitfrage"><b>{e(jahrplan[0]["kurz"] if jahrplan else laufend["titel"])}</b>'
-           + (f' · {e(laufend["frage"])}' if laufend.get("frage") else "") + "</p>",
-           stunden_leiste(stunden, hier, None, f"{laufend['id']}/", True),
-           '<p class="leise tipp">Tipp auf eine Stunde: Dort findest du deinen Hefteintrag, die Blätter und die Folien.</p>']
+           '<div class="trapez"><svg id="trapez" preserveAspectRatio="none" aria-hidden="true"></svg></div>']
+    for s, hier in leisten:
+        sichtbar = laufend and s["id"] == laufend["id"]
+        out.append(f'<div class="seq-block" data-seq="{s["id"]}"{"" if sichtbar else " hidden"}>'
+                   f'<p class="leitfrage"><b>{e(s["titel"])}</b>' + (f' · {e(s["frage"])}' if s.get("frage") else "") + "</p>"
+                   + stunden_leiste(s["stunden"], hier, None, f"{s['id']}/", True) + "</div>")
+    out.append('<p class="leise tipp">Tipp auf eine Stunde: Dort findest du deinen Hefteintrag, die Blätter und die Folien.</p>')
     schreiben("", f"{k['titel']} · Unser Jahr", "../../../", "./", "\n".join(out))
 
     for p in ziel.rglob("index.html"):
@@ -603,10 +799,10 @@ def bauen(kurs: str) -> int:
     return 0
 
 
-def stundenseite(st, a, ordner, teile, stunden, hier, vor, nach, ablage, materialien) -> str:
+def stundenseite(s, st, a, ordner, teile, stunden, hier, vor, nach, ablage, materialien, material_der_stunde) -> str:
     unt = "../../../../"   # von k/<kurs>/<s>/<ue>/ nach unterricht/
     dat = "../../dateien/"
-    out = [kopfzeile(stunden, hier, st["id"], vor, nach),
+    out = [kopfzeile(stunden, hier, st["id"], vor, nach, s["id"]),
            f'<p class="dat">{e(datum_kurz(st["datum"]))} · {e(st["titel"])}</p>',
            f'<h1 class="frage">{e(st.get("frage", st["titel"]))}</h1>',
            '<div class="reiter" role="tablist">'
@@ -630,7 +826,7 @@ def stundenseite(st, a, ordner, teile, stunden, hier, vor, nach, ablage, materia
         ipad = [materialien[mid] for mid in b.get("zu", [])]
         blaetter.append((b, seiten, dat + ablage.ablegen(pdf.read_bytes(), ".pdf"), ipad))
     gezeigt = {m["id"] for _, _, _, ms in blaetter for m in ms}
-    lose = [m for m in materialien.values() if m.get("stunde", "").endswith("/" + st["id"]) and m["id"] not in gezeigt]
+    lose = [m for m in material_der_stunde if m["id"] not in gezeigt]
     # Zeitkarten der Stunde stehen am Anfang der Erarbeitung, wie in der Stunde (Einstieg; Lehrkraft 14.11.)
     zeitkarten = [m for m in lose if m["pfad"].startswith("zeitkarte/")]
     lose = [m for m in lose if m not in zeitkarten]

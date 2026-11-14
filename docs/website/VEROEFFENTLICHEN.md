@@ -137,6 +137,32 @@ Commit-Betreff mit Kurs und Stunde (Commits sind nicht öffentlich, die Seite sc
   Direktlinks auf eine einzelne Materialseite sind für Arbeitsblätter weiter in Ordnung.
 - Nicht die Übersicht `/unterricht/` als Klassenlink verwenden — sie ist bewusst kursneutral.
 
+## Klassenbereich: ein Kurs hinter dem Klassenpasswort (seit 14.11.2026)
+
+Spec: `specs/2026-11-14-klassenbereich-design.md`. Ein Kurs mit Klassenbereich hat statt der öffentlichen Kursseite eine
+verschlüsselte: Jahr, Stunden, Heftseite mit Einkleber, Blätter neben iPad-Seiten, Folien, Probenseite. Heute: GPG 9a (live),
+GPG 8a (Entwurf).
+
+**Einen Kurs anschließen (einmal):**
+1. Auswahl-Datei anlegen, nur mit dem Nötigen: `tools/kurse/klassenbereich/<kurs>.json`
+   `{"kurs": "<kurs>", "welt": "/Users/paulad/Schule_2026-27/Unterrichtsplanung26_27/welt/<Kurs>", "ausblenden": ["s00"], "stunden": {}}`
+2. In `unterricht/kurse.json` beim Kurs `"klassenbereich": true` setzen (dann schreibt `make kurse` die öffentliche Kursseite nicht mehr).
+3. Bauen: `make klassenbereich K=<kurs>` — legt beim ersten Mal ein Klassenpasswort in `~/.config/weitergehts/klassenbereich.json` an
+   (anzeigen: `python3 tools/kurse/klassenbereich.py <kurs> --passwort`; die Lehrkraft kann es dort ersetzen).
+4. Ansehen (lokal, Desktop und Handy): jede Stunde öffnen, Heft · Erarbeitung · Folien. Was die Ableitung falsch wählt, als Ausnahme
+   in die Auswahl-Datei (`ausblenden`, `stunden.<seq/ue>.blaetter` …, Felder in der Spec § 5), nie im Generator für einen Kurs.
+5. `make kurse`, `make check`, Commit, **Push nur nach Freigabe der Lehrkraft**.
+6. Im Werkzeugkasten `themes/regeln/GPG.json` → `kursseite.kurse` den Kurs ergänzen: dann verlangt der Folienbau Code und Link
+   der Kursseite auf der letzten Folie.
+
+**Nach jeder Stunde:** Die Ableitung liest Sequenzplan und Stundenordner selbst. Es genügt
+`make klassenbereich K=<kurs>` → `make check` → Commit → Push. Eine Stunde erscheint, sobald ihr Ordner eine `NACHBEREITUNG.md`
+hat oder der Sequenzplan sie mit ✅ führt. (GPG 9a liest seine Struktur noch aus `kurse.json` `sequenzen`: dort die Stunde
+eintragen und `kommt` streichen; Auswahl je Stunde steht in `gpg9a.json`.)
+
+**Grenzen:** ❌ Inhalte (Hefteinträge, Fragen) in die Auswahl-Datei oder sonst unverschlüsselt ins Repo; ❌ Passwort ins Repo,
+in Commits oder in Chat-Zusammenfassungen; ❌ `unterricht/k/<kurs>/` von Hand ändern (B5c blockt).
+
 ## Grenzen
 
 - ❌ `unterricht/index.html` oder `unterricht/k/*/index.html` von Hand oder mit einem anderen

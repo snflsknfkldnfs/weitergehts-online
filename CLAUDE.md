@@ -40,6 +40,11 @@ Diese Datei steuert NICHT die Generator-Entwicklung.
 Wohin die Seite gehört, Eintrag in `unterricht/kurse.json`, `make kurse`, Prüfungen, Commit, Link an die
 Klasse. **`unterricht/index.html` und `unterricht/k/*/` sind generiert — nie von Hand schreiben.**
 
+## Klassenbereich eines Kurses (verschlüsselt, Schülersicht) → `docs/website/VEROEFFENTLICHEN.md` § Klassenbereich
+
+Spec `docs/website/specs/2026-11-14-klassenbereich-design.md`; Bau `make klassenbereich K=<kurs>`; leitet Jahr, Stunden, Hefteinträge,
+Blätter und Folien aus der Welt ab. Nie Inhalte oder Passwörter unverschlüsselt ins Repo.
+
 ## Die wiederkehrenden Loops → `docs/website/RUNBUCH.md`
 
 `data.json`-Hotfix · Engine/CSS-Änderung · neues Game einspielen · neue Sektion/Blog-Post ·
