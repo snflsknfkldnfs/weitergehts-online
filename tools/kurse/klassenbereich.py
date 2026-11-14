@@ -1,0 +1,730 @@
+#!/usr/bin/env python3
+"""klassenbereich.py — baut den verschlüsselten Klassenbereich eines Kurses (Kurs → Sequenz → Stunde).
+
+  python3 tools/kurse/klassenbereich.py gpg9a           # baut unterricht/k/gpg9a/ (braucht die Welt und das Passwort)
+  python3 tools/kurse/klassenbereich.py gpg9a --passwort  # zeigt das Klassenpasswort
+  python3 tools/kurse/klassenbereich.py --check         # ohne Schlüssel: Gerüst vollständig? (für make check / CI)
+
+Warum verschlüsselt (Lehrkraft 14.11.2026): Blätter und Folien enthalten Bilder, die nur die Klasse sehen darf
+(§ 60a UrhG, Gesamtvertrag Schulbücher). Das Repo und GitHub Pages sind öffentlich; ein Passwortfeld allein schützt
+dort nichts. Darum liegt jede Seite und jede Datei nur als AES-GCM-Chiffrat im Repo; der Browser entschlüsselt mit
+dem Klassenpasswort (PBKDF2-SHA256). Klartext und Passwort verlassen den Rechner der Lehrkraft nie.
+
+Quellen (nie Inhalte im Repo):
+  tools/kurse/klassenbereich/<kurs>.json    Auswahl je Stunde (Pfade in die Welt, Zuordnung Blatt ↔ Material)
+  unterricht/kurse.json                     Struktur der Stunden (Datum, Titel, Stundenfrage), Material-Links
+  <Welt>/<Kurs>/JAHRESPLAN.md               das Jahr (Sequenzen, Zeitraum, Probe, Stand)
+  <Welt>/…/LOESUNG_*.md, PLANUNG.md         Hefteinträge; drucken/*.pdf Blätter; Folien-PDF; bilder/HERKUNFT.md
+  ~/.config/weitergehts/klassenbereich.json Passwort und Salz je Kurs (außerhalb des Repos)
+
+Deterministisch: gleicher Klartext → gleiche IV (HMAC) → gleiches Chiffrat, also kein Git-Rauschen bei Neubau.
+"""
+from __future__ import annotations
+
+import base64
+import hashlib
+import hmac
+import html
+import importlib.util
+import json
+import os
+import re
+import secrets
+import subprocess
+import sys
+import tempfile
+from pathlib import Path
+
+REPO = Path(__file__).resolve().parents[2]
+UNTERRICHT = REPO / "unterricht"
+AUSWAHL = Path(__file__).resolve().parent / "klassenbereich"
+GEHEIM = Path.home() / ".config" / "weitergehts" / "klassenbereich.json"
+ITER = 600_000
+MARKE = "<!-- KLASSENBEREICH: verschlüsselt erzeugt von tools/kurse/klassenbereich.py — nicht von Hand editieren -->"
+DUCKAI = "https://duck.ai/?q="
+
+_spec = importlib.util.spec_from_file_location("kurse_build", Path(__file__).resolve().parent / "build.py")
+build = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(build)
+e = build.e
+WOCHENTAGE = build.WOCHENTAGE
+
+
+# ─────────────────────────── Schlüssel ───────────────────────────
+
+WOERTER = """apfel ampel anker ast baum bach ball berg birne blatt blitz boot brief brot bruecke burg dach dorf drache
+eiche eimer eis ente erde esel fahne feder feld fenster fisch flamme floss fluss fuchs gabel garten geige glas glocke
+gras hafen hahn hammer hase haus heft helm himmel hirsch hof honig horn hut igel insel jacke kaefer kamm kanne karte
+katze kerze kette kiste klee knopf koffer kohle korb kran kreide krone kuchen kugel lampe laterne leiter licht linde
+loewe loeffel luchs mantel markt mauer maus meer mond moos muehle muschel mutze nadel nebel nest netz nuss ofen palme
+papier pfeil pferd pilz pinsel platz pumpe quelle rabe rad regen ring rose ruder sand schaf schiff schild schirm
+schloss schnee schuh see segel seil sonne spiegel stern stiefel stein strand stuhl sturm tanne tasche teich teller
+tiger tisch tor treppe tuer turm uhr ufer vogel wagen wald wal wand wasser welle wiese wind wolke wurm zange zaun
+zelt ziege zug zwerg""".split()
+
+
+def geheim(kurs: str, neu: bool = True) -> dict:
+    daten = json.loads(GEHEIM.read_text(encoding="utf-8")) if GEHEIM.is_file() else {}
+    if kurs not in daten:
+        if not neu:
+            sys.exit(f"Kein Passwort für {kurs} in {GEHEIM}")
+        w = [secrets.choice(WOERTER) for _ in range(3)]
+        daten[kurs] = {"passwort": f"{w[0]}-{w[1]}-{w[2]}-{secrets.randbelow(90) + 10}",
+                       "salz": base64.b64encode(secrets.token_bytes(16)).decode()}
+        GEHEIM.parent.mkdir(parents=True, exist_ok=True)
+        GEHEIM.write_text(json.dumps(daten, ensure_ascii=False, indent=2), encoding="utf-8")
+        os.chmod(GEHEIM, 0o600)
+        print(f"neues Klassenpasswort für {kurs} angelegt in {GEHEIM}")
+    return daten[kurs]
+
+
+class Tresor:
+    def __init__(self, passwort: str, salz_b64: str):
+        from cryptography.hazmat.primitives import hashes
+        from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+        from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
+        self.salz = salz_b64
+        self.key = PBKDF2HMAC(algorithm=hashes.SHA256(), length=32, salt=base64.b64decode(salz_b64),
+                              iterations=ITER).derive(passwort.encode("utf-8"))
+        self.aes = AESGCM(self.key)
+
+    def zu(self, klar: bytes) -> bytes:
+        iv = hmac.new(self.key, b"iv" + klar, hashlib.sha256).digest()[:12]
+        return iv + self.aes.encrypt(iv, klar, None)
+
+
+# ─────────────────────────── Hefteinträge aus Markdown ───────────────────────────
+
+def bereich(text: str, quelle: dict) -> list[str]:
+    zeilen = text.splitlines()
+    if quelle.get("abschnitt"):
+        start = next(i for i, z in enumerate(zeilen) if z.startswith(quelle["abschnitt"]))
+        ende = next((i for i in range(start + 1, len(zeilen)) if zeilen[i].startswith("## ")), len(zeilen))
+        zeilen = zeilen[start + 1:ende]
+    if quelle.get("bis"):
+        zeilen = zeilen[:next((i for i, z in enumerate(zeilen) if z.startswith(quelle["bis"])), len(zeilen))]
+    return [re.sub(r"^>\s?", "", z).rstrip() for z in zeilen]
+
+
+def zellen(z: str) -> list[str]:
+    return [c.strip() for c in z.strip().strip("|").split("|")]
+
+
+def heft_teile(quelle: dict, ordner: Path) -> list[dict]:
+    text = (ordner / quelle["datei"]).read_text(encoding="utf-8")
+    zeilen = bereich(text, quelle)
+    if quelle.get("nur_satz"):
+        satz = next(z.split(quelle["nur_satz"], 1)[1].strip() for z in zeilen if quelle["nur_satz"] in z)
+        return [{"titel": None, "kopf": None, "zeilen": [], "antwort": satz, "saetze": []}]
+    teile, t, tab = [], None, []
+
+    def neu(titel=None):
+        nonlocal t
+        if t and (t["zeilen"] or t["antwort"]):
+            teile.append(t)
+        t = {"titel": titel, "kopf": None, "zeilen": [], "antwort": None, "saetze": []}
+
+    def tabelle_schliessen():
+        nonlocal tab
+        if tab:
+            rows = [zellen(r) for r in tab if not re.fullmatch(r"\|?[\s:|-]+\|?", r.strip())]
+            kopf, body = rows[0], rows[1:]
+            rest = []
+            for r in body:
+                if r[0] == "Antwort":
+                    t["antwort"] = " ".join(c for c in r[1:] if c)
+                elif r[0] in quelle.get("saetze", {}):
+                    label = quelle["saetze"][r[0]]  # "Label" oder ["Label", "Text für die Klasse statt der Erwartung"]
+                    t["saetze"].append(tuple(label) if isinstance(label, list) else (label, " ".join(r[1:])))
+                else:
+                    rest.append(r)
+            sep = quelle.get("umklappen")
+            if sep and rest and all(sep in r[0] for r in rest):
+                # Einkleber mit zwei Seiten, deren Zeilen verschieden sind: je Seite eine eigene Liste
+                gruppen: dict[str, list] = {}
+                for r in rest:
+                    seite_, reihe = (x.strip() for x in r[0].split(sep, 1))
+                    gruppen.setdefault(seite_, []).append([re.sub(r"\s{2,}", " – ", reihe), r[1]])
+                saetze, t["saetze"] = t["saetze"], []
+                for i, (seite_, zs) in enumerate(gruppen.items()):
+                    if i:
+                        neu()
+                    t.update({"titel": seite_, "kopf": ["", "Lösung"], "zeilen": zs, "seite": seite_von(seite_)})
+                t["saetze"] = saetze
+                tab = []
+                return
+            if kopf[0] in ("Feld", "Reihe", "Zeile"):
+                kopf[0] = ""
+            t["kopf"], t["zeilen"] = kopf, t["zeilen"] + rest
+        tab = []
+
+    neu()
+    for z in zeilen:
+        if z.startswith("|"):
+            tab.append(z)
+            continue
+        tabelle_schliessen()
+        s = z.strip()
+        if not s:
+            continue
+        if s.startswith("## "):
+            neu(s[3:].strip())
+        elif m := re.match(r"^\*\*Antwortsatz[^*]*\*\*\s*(.+)$", s):
+            t["antwort"] = m.group(1).strip()
+        elif re.fullmatch(r"\*\*[^*]+\*\*", s) and not t["zeilen"]:
+            t["titel"] = s.strip("*")
+        elif t["zeilen"] and not t["antwort"] and not s.startswith(("#", "Erzeugt", "Quelle", "*")):
+            t["antwort"] = s
+    tabelle_schliessen()
+    neu()
+    return teile
+
+
+def inline(s: str) -> str:
+    return re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", e(s))
+
+
+WEST = ("usa", "brd", "west", "truman")
+OST = ("sowjetunion", "ddr", "ost", "schdanow")
+
+
+def seite_von(k: str) -> str:
+    k = k.lower()
+    return "west" if any(w in k for w in WEST) else "ost" if any(o in k for o in OST) else ""
+
+
+def heft_html(teile: list[dict]) -> str:
+    out = []
+    for t in teile:
+        out.append(f'<div class="heft-teil{" s-" + t["seite"] if t.get("seite") else ""}">')
+        if t["titel"]:
+            out.append(f'<h3 class="heft-titel">{inline(t["titel"])}</h3>')
+        if t["zeilen"] and len(t["kopf"]) == 2 and t["kopf"][1] in ("Lösung", "Erwartete Antwort"):
+            out.append(f'<dl class="heft-l s-{t.get("seite", "")}">' + "".join(
+                f'<div><dt>{inline(r[0])}</dt><dd>{inline(r[1])}</dd></div>' for r in t["zeilen"]) + "</dl>")
+        elif t["zeilen"]:
+            kopf = t["kopf"]
+            th = "".join(f'<th scope="col" class="s-{seite_von(k)}">{inline(k)}</th>' for k in kopf[1:])
+            body = "".join(
+                "<tr>" + f'<th scope="row">{inline(r[0])}</th>'
+                + "".join(f'<td class="s-{seite_von(kopf[i + 1])}" data-label="{e(kopf[i + 1])}">{inline(c)}</td>'
+                          for i, c in enumerate(r[1:]))
+                + "</tr>" for r in t["zeilen"])
+            out.append(f'<table class="heft-t"><thead><tr><td></td>{th}</tr></thead><tbody>{body}</tbody></table>')
+        for label, satz in t["saetze"]:
+            out.append(f'<p class="heft-satz"><span class="lbl">{e(label)}</span>{inline(satz)}</p>')
+        if t["antwort"]:
+            out.append(f'<p class="antwort"><span class="lbl">Antwortsatz</span>{inline(t["antwort"])}</p>')
+        out.append("</div>")
+    return "\n".join(out)
+
+
+def heft_text(teile: list[dict]) -> str:
+    """Klartext des Hefts für den Lernbegleiter."""
+    out = []
+    for t in teile:
+        if t["titel"]:
+            out.append(f"## {t['titel']}")
+        kopf = t["kopf"] or []
+        for r in t["zeilen"]:
+            if len(kopf) == 2:
+                out.append(f"- {r[0]}: {r[1]}")
+            else:
+                out.append(f"- {r[0]}: " + " | ".join(f"{kopf[i + 1]}: {c}" for i, c in enumerate(r[1:])))
+        for label, satz in t["saetze"]:
+            out.append(f"- {label}: {satz}")
+        if t["antwort"]:
+            out.append(f"Antwortsatz: {t['antwort']}")
+    return "\n".join(re.sub(r"\*\*", "", z) for z in out)
+
+
+def herkunft(ordner: Path) -> list[list[str]]:
+    p = ordner / "bilder" / "HERKUNFT.md"
+    if not p.is_file():
+        return []
+    rows = []
+    for z in p.read_text(encoding="utf-8").splitlines():
+        if z.startswith("| `") or z.startswith("| (") or re.match(r"^\| `", z):
+            c = zellen(z)
+            if len(c) >= 5:
+                rows.append([c[1], c[2], c[4]])
+    return rows
+
+
+# ─────────────────────────── Jahresplan ───────────────────────────
+
+def jahr(welt: Path, datei: str, ausblenden: list[str]) -> list[dict]:
+    out = []
+    for z in (welt / datei).read_text(encoding="utf-8").splitlines():
+        if not re.match(r"^\|\s*S\d\d\s*\|", z):
+            continue
+        c = zellen(z)
+        if len(c) < 10:  # andere Tabellen der Datei (Stundenbilanz)
+            continue
+        sid = c[0].lower()
+        if sid in ausblenden:
+            continue
+        probe = c[7] if c[7] not in ("–", "-", "") and "?" not in c[7] and "🔲" not in c[7] else ""
+        probe = re.sub(r"\s*\(.*?\)", "", probe).strip()
+        stand = c[8].split()[0].strip(";,.").lower() if c[8] else ""
+        stand = {"läuft": "läuft", "abgeschlossen": "fertig"}.get(stand, "geplant")
+        titel = re.sub(r"\s*\(\*\*neu\*\*.*?\)", "", c[1]).strip()
+        m = re.search(r"\d+", c[6])
+        kurz = re.sub(r"\s*\(.*?\)", "", titel).split(":")[0].split(" – ")[0].strip()
+        out.append({"id": sid, "titel": titel, "kurz": kurz, "zeitraum": c[5], "probe": probe, "stand": stand,
+                    "umfang": int(m.group()) if m else 6})
+    return out
+
+
+# ─────────────────────────── Dateien (Bilder, PDFs) ───────────────────────────
+
+class Ablage:
+    """Legt verschlüsselte Dateien unter k/<kurs>/dateien/ ab; Name = Hash des Klartexts."""
+
+    def __init__(self, tresor: Tresor, ziel: Path):
+        self.t, self.ziel, self.benutzt = tresor, ziel, set()
+        ziel.mkdir(parents=True, exist_ok=True)
+
+    def ablegen(self, klar: bytes, endung: str) -> str:
+        name = hashlib.sha256(self.t.key + klar).hexdigest()[:20] + endung + ".bin"
+        p = self.ziel / name
+        if not p.is_file():
+            p.write_bytes(self.t.zu(klar))
+        self.benutzt.add(name)
+        return name
+
+    def aufraeumen(self) -> int:
+        alt = [p for p in self.ziel.glob("*.bin") if p.name not in self.benutzt]
+        for p in alt:
+            p.unlink()
+        return len(alt)
+
+
+def seiten_bilder(pdf: Path, breite: int, qualitaet: int) -> list[bytes]:
+    with tempfile.TemporaryDirectory() as tmp:
+        r = subprocess.run(["pdftoppm", "-jpeg", "-jpegopt", f"quality={qualitaet}", "-scale-to", str(breite),
+                            str(pdf), f"{tmp}/s"], capture_output=True, text=True)
+        if r.returncode != 0:
+            sys.exit(f"pdftoppm scheitert an {pdf}: {r.stderr}")
+        return [p.read_bytes() for p in sorted(Path(tmp).glob("s-*.jpg"), key=lambda p: int(p.stem.split("-")[1]))]
+
+
+# ─────────────────────────── Lernbegleiter ───────────────────────────
+
+REGELN = """You are a friendly learning companion for a student about 14-15 years old in 9th grade at a Bavarian Mittelschule, who is revising history for a short test ("Probe"). The class is mixed: some read German well, some are still learning it. These rules never bend:
+1. ANSWER ONLY in German, in short, plain, everyday sentences.
+2. The student's notebook entry ("Heft") below is what the student must know. Help the student learn it: ask questions, listen, give feedback.
+3. If the student is curious and asks for MORE - background, what happened before or after, what a word means, how people lived then - you MAY explain beyond the notebook with well-established facts, in a bit more detail than you would for younger students. Say clearly when something goes beyond the notebook ("Das steht nicht in deinem Heft, aber ..."). Never invent quotes or numbers; if you are not sure, say so honestly.
+4. Present East and West fairly, with their claims and their reality. Never say which state was better; the student's own judgement counts. When asked for your opinion, ask back what the student thinks and why.
+5. Never ask for the student's name or other personal information."""
+
+WIE = """<HOW TO TALK>
+- FIRST reply (2-3 sentences): greet briefly, name the topic in everyday words, and offer three ways to go on: (a) "Frag mich ab", (b) "Erklär mir etwas", (c) "Ich übe den Antwortsatz". Then wait.
+- (a) Quiz: one question per turn. Start easy (Wer? Was? Wann?), then ask Warum- and Vergleich-questions. After each answer: say what is right, correct gently, add one small detail. After 4-5 questions give a short summary of what sits and what to repeat.
+- (b) Explain step by step, one idea per turn, with an everyday comparison from a teenager's life, then one short question back.
+- (c) Ask the student to write the answer to the lesson question in one sentence with "weil". Compare it with the notebook's answer sentence and give ONE concrete tip to improve it. Do not just hand over the notebook sentence.
+- Explain every hard word (z. B. Planwirtschaft, Imperialisten, Reparationen) in plain words.
+- Praise concrete thinking, not constantly.
+</HOW TO TALK>
+
+Remember: German only, short sentences, the notebook is the core, curiosity welcome, no verdict. Begin now with your short opening."""
+
+
+def prompt_stunde(st: dict, datum: str, teile: list[dict]) -> str:
+    return (f"{REGELN}\n\n<LESSON>\nDate: {datum}\nTopic: {st['titel']}\nLesson question: {st.get('frage', '')}\n</LESSON>\n\n"
+            f"<NOTEBOOK>\n{heft_text(teile)}\n</NOTEBOOK>\n\n{WIE}\n")
+
+
+def prompt_sequenz(s: dict, probe: str, stunden: list[tuple[dict, str, list[dict]]]) -> str:
+    teile = "\n\n".join(f"### {datum}: {st['titel']} – {st.get('frage', '')}\n{heft_text(t)}" for st, datum, t in stunden)
+    return (f"{REGELN}\n\n<TEST>\nThe test is on {probe}. Topic of the unit: {s['titel']}. Unit question: {s.get('frage', '')}\n"
+            "Quiz across ALL lessons below, mixed, and also ask questions that connect two lessons "
+            "(z. B. what a state promised on paper and what people experienced).\n</TEST>\n\n"
+            f"<NOTEBOOK>\n{teile}\n</NOTEBOOK>\n\n{WIE}\n")
+
+
+def ki_knopf(text: str, prompt: str) -> str:
+    return (f'<div class="ki"><button type="button" class="knopf-neben ki-knopf" data-ki="{e(prompt)}">{e(text)}</button>'
+            '<span class="ki-hinweis">öffnet duck.ai mit deinem Hefteintrag · schreib keinen Namen hinein</span></div>')
+
+
+# ─────────────────────────── Seiten ───────────────────────────
+# Zwei Seitenarten (Lehrkraft 14.11.2026): Kursseite = das Jahr (Ebene 1) und darunter die Stunden der laufenden
+# Sequenz (Ebene 2, der Einstieg); Stundenseite = eine Stunde in Ruhe (Heft, Erarbeitung, Folien), oben die Ebene 2
+# klein zum Weiterschalten. Formen wie in der Ansicht Kurs der Matrixe (oberflaeche/stil.css): gehalten grau mit ✓,
+# kommt gestrichelt, hier dicker Rahmen, Probe unten dunkel. Was nur die Lehrkraft braucht, steht nicht da.
+
+def datum_kurz(iso: str) -> str:
+    import datetime as dt
+    d = dt.date.fromisoformat(iso)
+    return f"{WOCHENTAGE[d.weekday()]} {d.day:02d}.{d.month:02d}."
+
+
+def datum_hand(iso: str) -> str:
+    import datetime as dt
+    d = dt.date.fromisoformat(iso)
+    return f"{d.day:02d}.{d.month:02d}.{d.year}"
+
+
+def stunden_leiste(stunden: list[dict], hier: str | None, aktuell: str | None, zu: str, gross: bool) -> str:
+    """Ebene 2. gross: Kacheln mit Datum und Titel (Kursseite); sonst kleine Felder (Stundenseite)."""
+    out = []
+    for st in stunden:
+        probe = st.get("art") == "probe"
+        z = "p" if probe else "o" if st.get("kommt") else "g"
+        kl = f"sf {z}" + (" hier" if st["id"] == hier else "") + (" ist" if st["id"] == aktuell else "")
+        titel = "Probe" if probe else st["titel"]
+        inhalt = (f'<span class="d">{e(datum_kurz(st["datum"]))}{" ✓" if z == "g" else ""}</span>'
+                  f'<span class="t">{e(titel)}</span>') if gross else ("✓" if z == "g" else "")
+        tip = f'{datum_kurz(st["datum"])} · {titel}'
+        offen = z == "g" or probe
+        cur = ' aria-current="page"' if st["id"] == aktuell else ""
+        if offen:
+            out.append(f'<a class="{kl}" href="{zu}{st["id"]}/" title="{e(tip)}"{cur}>{inhalt}</a>')
+        else:
+            out.append(f'<span class="{kl}" title="{e(tip)}">{inhalt}</span>')
+    return f'<nav class="seq-leiste{" gross" if gross else ""}" aria-label="Stunden">{"".join(out)}</nav>'
+
+
+def schale(titel: str, tiefe: str, kurs: str, salz: str, payload: str, v: dict, kurs_titel: str, start: str) -> str:
+    return f"""<!DOCTYPE html>
+{MARKE}
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>{e(titel)}</title>
+<link rel="stylesheet" href="{tiefe}unterricht/k/klassenbereich.css?v={v['klassenbereich.css']}">
+</head>
+<body>
+<header class="kopf"><a class="kurs" href="{start}">{e(kurs_titel)}</a><span class="rechts"><button type="button" id="kb-abmelden" hidden>Abmelden</button></span></header>
+<main id="kb" data-kurs="{e(kurs)}" data-salz="{e(salz)}" data-iter="{ITER}">
+  <form class="tor" id="kb-tor" hidden>
+    <h1>{e(kurs_titel)}</h1>
+    <p>Gib das Passwort ein, das du in der Stunde bekommen hast. Dein Gerät merkt es sich.</p>
+    <label for="kb-pw">Passwort</label>
+    <div class="tor-zeile"><input id="kb-pw" type="password" autocomplete="current-password" autocapitalize="none" spellcheck="false" required><button type="submit" class="knopf-haupt">Öffnen</button></div>
+    <p class="fehler" id="kb-fehler" role="alert"></p>
+  </form>
+  <noscript><p>Diese Seite braucht JavaScript.</p></noscript>
+  <div id="kb-seite"></div>
+</main>
+<footer class="fuss"><a href="{tiefe}impressum/">Impressum</a> · <a href="{tiefe}datenschutz/">Datenschutz</a></footer>
+<script type="application/octet-stream" id="kb-inhalt">{payload}</script>
+<script src="{tiefe}unterricht/k/klassenbereich.js?v={v['klassenbereich.js']}"></script>
+</body>
+</html>
+"""
+
+
+def zuschneiden(png: bytes) -> bytes:
+    """Weißen Rand um einen Einkleber abschneiden (A5-PDF mit leerer unterer Hälfte, PNG mit Rand)."""
+    import io
+    from PIL import Image, ImageChops, ImageOps
+    im = Image.open(io.BytesIO(png)).convert("RGB")
+    box = ImageChops.difference(im, Image.new("RGB", im.size, (255, 255, 255))).convert("L").point(lambda x: 255 if x > 18 else 0).getbbox()
+    if box:
+        r = 16
+        im = im.crop((max(0, box[0] - r), max(0, box[1] - r), min(im.width, box[2] + r), min(im.height, box[3] + r)))
+    out = io.BytesIO()
+    im.save(out, "JPEG", quality=82)
+    return out.getvalue()
+
+
+def einkleber_bilder(a: dict, ordner: Path) -> list[bytes]:
+    out = []
+    for b in a.get("heft_bild", []):
+        if "bild" in b:
+            out.append(zuschneiden((ordner / b["bild"]).read_bytes()))
+        else:
+            if "bau" in b:
+                with tempfile.TemporaryDirectory() as tmp:
+                    ziel = Path(tmp) / "einkleber.pdf"
+                    cmd = [x.replace("{ordner}", str(ordner)) for x in b["bau"]] + [str(ziel)]
+                    r = subprocess.run(cmd, cwd=REPO, capture_output=True, text=True)
+                    if r.returncode != 0:
+                        sys.exit(f"Einkleber-Bau scheitert ({' '.join(cmd)}): {r.stderr}{r.stdout}")
+                    seiten = seiten_png(ziel, 1600)
+            else:
+                seiten = seiten_png(ordner / b["pdf"], 1600)
+            out.append(zuschneiden(seiten[0]))
+    return out
+
+
+def seiten_png(pdf: Path, breite: int) -> list[bytes]:
+    with tempfile.TemporaryDirectory() as tmp:
+        r = subprocess.run(["pdftoppm", "-png", "-scale-to", str(breite), str(pdf), f"{tmp}/s"], capture_output=True, text=True)
+        if r.returncode != 0:
+            sys.exit(f"pdftoppm scheitert an {pdf}: {r.stderr}")
+        return [p.read_bytes() for p in sorted(Path(tmp).glob("s-*.png"), key=lambda p: int(p.stem.split("-")[1]))]
+
+
+def hand_tabelle(t: dict) -> str:
+    """Ein Raster, wie es die Klasse von Hand ins Heft schreibt (ohne Einkleber, GPG9a 08.10.)."""
+    kopf = t["kopf"]
+    th = "".join(f"<th>{inline(k)}</th>" for k in kopf[1:])
+    body = "".join("<tr><th>" + inline(r[0]) + "</th>" + "".join(f"<td>{inline(c)}</td>" for c in r[1:]) + "</tr>"
+                   for r in t["zeilen"])
+    return f'<table class="hand-t"><thead><tr><td></td>{th}</tr></thead><tbody>{body}</tbody></table>'
+
+
+def heftseite(st: dict, a: dict, teile: list[dict], bilder: list[str]) -> str:
+    """Die Heftseite: Karopapier, Datum und Frage von Hand, der Einkleber, der Antwortsatz von Hand."""
+    out = ['<div class="heft">', f'<p class="h-datum">{e(datum_hand(st["datum"]))}</p>']
+    titel_je_teil = len(bilder) > 1 and len(bilder) == len(teile) and all(t["titel"] for t in teile)
+    if not titel_je_teil:
+        out.append(f'<p class="h-frage">{e(st.get("frage", st["titel"]))}</p>')
+    if a.get("hinweis"):
+        out.append(f'<p class="h-hinweis">{e(a["hinweis"])}</p>')
+    antworten_von_hand = not a.get("antwort_im_einkleber")
+    if bilder:
+        for i, src in enumerate(bilder):
+            if titel_je_teil:
+                out.append(f'<p class="h-frage">{inline(teile[i]["titel"])}</p>')
+            out.append(f'<figure class="einkleber"><img data-kb-src="{src}" data-kb-typ="image/jpeg" '
+                       f'alt="Einkleber, ausgefüllt"></figure>')
+    else:
+        for t in teile:
+            if t["titel"]:
+                out.append(f'<p class="h-titel">{inline(t["titel"])}</p>')
+            if t["zeilen"]:
+                out.append(hand_tabelle(t))
+    if antworten_von_hand:
+        for t in teile:
+            if t["antwort"]:
+                out.append(f'<p class="h-antwort">{inline(t["antwort"])}</p>')
+    out.append("</div>")
+    return "\n".join(out)
+
+
+def kopfzeile(stunden, hier, aktuell, i_vor, i_nach) -> str:
+    vor = (f'<a class="pfeil" href="../{i_vor["id"]}/" aria-label="Stunde davor" rel="prev">‹</a>' if i_vor
+           else '<span class="pfeil aus">‹</span>')
+    nach = (f'<a class="pfeil" href="../{i_nach["id"]}/" aria-label="Stunde danach" rel="next">›</a>' if i_nach
+            else '<span class="pfeil aus">›</span>')
+    return (f'<div class="oben"><a class="zurueck" href="../../">‹ Unser Jahr</a>'
+            f'<div class="schalter">{vor}{stunden_leiste(stunden, None, aktuell, "../", False)}{nach}</div></div>')  # klein: nur „diese Stunde“ markiert
+
+
+def bauen(kurs: str) -> int:
+    auswahl = json.loads((AUSWAHL / f"{kurs}.json").read_text(encoding="utf-8"))
+    welt = Path(auswahl["welt"])
+    daten = build.laden()
+    v = json.loads(build.VERSIONS.read_text(encoding="utf-8"))["assets"]
+    g = geheim(kurs)
+    tresor = Tresor(g["passwort"], g["salz"])
+    ziel = UNTERRICHT / "k" / kurs
+    ablage = Ablage(tresor, ziel / "dateien")
+    k = daten["kurse"][kurs]
+    aus = auswahl["ausblenden"]
+    reihe = [s for s in daten["sequenzen"][kurs]["reihe"] if s["id"] not in aus]
+    materialien = {m["id"]: m for m in daten["materialien"] if kurs in m.get("kurse", []) and m.get("id")}
+    geschrieben: set[Path] = set()
+
+    def schreiben(rel: str, titel: str, tiefe: str, start: str, inhalt: str) -> None:
+        p = ziel / rel / "index.html" if rel else ziel / "index.html"
+        p.parent.mkdir(parents=True, exist_ok=True)
+        payload = base64.b64encode(tresor.zu(inhalt.encode("utf-8"))).decode()
+        text = schale(titel, tiefe, kurs, g["salz"], payload, v, k["titel"], start)
+        if not p.is_file() or p.read_text(encoding="utf-8") != text:
+            p.write_text(text, encoding="utf-8")
+            print(f"geschrieben: {p.relative_to(REPO)}")
+        geschrieben.add(p)
+
+    jahrplan = jahr(welt, auswahl["jahresplan"], aus)
+    laufend = reihe[0]
+    sq = auswahl["sequenzen"][laufend["id"]]
+    stunden = [st for st in laufend["stunden"] if f"{laufend['id']}/{st['id']}" not in aus]
+    gehalten = [st for st in stunden if not st.get("kommt") and st.get("art") != "probe"]
+    hier = gehalten[-1]["id"] if gehalten else None
+    gesammelt = []
+
+    # ── Stundenseiten ──
+    offen = [st for st in stunden if not st.get("kommt") or st.get("art") == "probe"]
+    for st in stunden:
+        ref = f"{laufend['id']}/{st['id']}"
+        a = auswahl["stunden"].get(ref)
+        if not a:
+            continue
+        ordner = welt / sq["ordner"] / a["ordner"]
+        teile = []
+        for q in a["heft"]:
+            teile += heft_teile(q, ordner)
+        gesammelt.append((st, datum_kurz(st["datum"]), teile))
+        i = offen.index(st)
+        inhalt = stundenseite(st, a, ordner, teile, stunden, hier, offen[i - 1] if i else None,
+                              offen[i + 1] if i + 1 < len(offen) else None, ablage, materialien)
+        schreiben(ref, f"{st['titel']} · {k['titel']}", "../../../../../", "../../", inhalt)
+
+    # ── Probenseite ──
+    probe = next((st for st in stunden if st.get("art") == "probe"), None)
+    if probe:
+        i = offen.index(probe)
+        out = [kopfzeile(stunden, hier, probe["id"], offen[i - 1] if i else None, None),
+               f'<p class="dat">Probe · {e(datum_kurz(probe["datum"]))}</p>',
+               '<h1 class="frage">Für die Probe lernen</h1>',
+               f'<p class="leise">Stoff: deine Hefteinträge. Hier steht jede Stunde mit ihrer Frage und ihrem Antwortsatz. '
+               f'Tipp auf eine Stunde, um den ganzen Hefteintrag zu sehen.</p>',
+               ki_knopf("Mit KI für die Probe üben", prompt_sequenz(laufend, datum_kurz(probe["datum"]), gesammelt)),
+               '<ol class="probe-liste">']
+        for st, datum, teile in gesammelt:
+            antw = "".join(f'<p class="pl-antwort">{inline(t["antwort"])}</p>' for t in teile if t["antwort"])
+            out.append(f'<li><a href="../{st["id"]}/"><span class="d">{e(datum)}</span>'
+                       f'<span class="pl-frage">{e(st.get("frage", st["titel"]))}</span></a>{antw}</li>')
+        out.append("</ol>")
+        schreiben(f"{laufend['id']}/{probe['id']}", f"Probe · {k['titel']}", "../../../../../", "../../", "\n".join(out))
+
+    # ── Kursseite: das Jahr, darunter die Stunden der laufenden Sequenz ──
+    js = []
+    for x in jahrplan:
+        kl = "js " + {"läuft": "jetzt gewaehlt", "fertig": "vorbei", "geplant": "entw"}[x["stand"]]
+        mark = '<span class="lnw" title="Probe"></span>' if x["probe"] else ""
+        js.append(f'<span class="{kl}" style="flex:{x["umfang"]} 1 0" title="{e(x["titel"])}">'
+                  f'<span class="nm">{"✓ " if x["stand"] == "fertig" else ""}{e(x["kurz"])}</span>{mark}</span>')
+    out = [f'<h1 class="kurs-name">{e(k["titel"])}</h1>',
+           '<p class="leise">Unser Jahr in Geschichte, Politik und Geographie.</p>',
+           f'<div class="jahr-leiste">{"".join(js)}</div>',
+           '<div class="trapez"><svg id="trapez" preserveAspectRatio="none" aria-hidden="true"></svg></div>',
+           f'<p class="leitfrage"><b>{e(jahrplan[0]["kurz"] if jahrplan else laufend["titel"])}</b>'
+           + (f' · {e(laufend["frage"])}' if laufend.get("frage") else "") + "</p>",
+           stunden_leiste(stunden, hier, None, f"{laufend['id']}/", True),
+           '<p class="leise tipp">Tipp auf eine Stunde: Dort findest du deinen Hefteintrag, die Blätter und die Folien.</p>']
+    schreiben("", f"{k['titel']} · Unser Jahr", "../../../", "./", "\n".join(out))
+
+    for p in ziel.rglob("index.html"):
+        if p not in geschrieben and MARKE in p.read_text(encoding="utf-8"):
+            p.unlink()
+            print(f"entfernt: {p.relative_to(REPO)}")
+    weg = ablage.aufraeumen()
+    groesse = sum(p.stat().st_size for p in (ziel / "dateien").glob("*.bin"))
+    print(f"Klassenbereich {kurs}: {len(geschrieben)} Seiten, {len(ablage.benutzt)} Dateien ({groesse / 1e6:.1f} MB)"
+          + (f", {weg} alte Dateien entfernt" if weg else ""))
+    return 0
+
+
+def stundenseite(st, a, ordner, teile, stunden, hier, vor, nach, ablage, materialien) -> str:
+    unt = "../../../../"   # von k/<kurs>/<s>/<ue>/ nach unterricht/
+    dat = "../../dateien/"
+    out = [kopfzeile(stunden, hier, st["id"], vor, nach),
+           f'<p class="dat">{e(datum_kurz(st["datum"]))} · {e(st["titel"])}</p>',
+           f'<h1 class="frage">{e(st.get("frage", st["titel"]))}</h1>',
+           '<div class="reiter" role="tablist">'
+           '<button role="tab" aria-selected="true" data-zu="heft">Heft</button>'
+           '<button role="tab" aria-selected="false" data-zu="erarbeitung">Erarbeitung</button>'
+           + ('<button role="tab" aria-selected="false" data-zu="folien">Folien</button>' if a.get("folien") else "")
+           + "</div>"]
+
+    bilder = [dat + ablage.ablegen(b, ".jpg") for b in einkleber_bilder(a, ordner)]
+    out.append('<section class="tafel" id="heft" role="tabpanel">')
+    out.append(heftseite(st, a, teile, bilder))
+    out.append(ki_knopf("Mit KI lernen", prompt_stunde(st, datum_kurz(st["datum"]), teile)))
+    out.append("</section>")
+
+    # Erarbeitung: Blatt links, iPad-Seite rechts
+    blaetter = []
+    for b in [b for b in a["blaetter"] if b["art"] != "Einkleber"]:   # Einkleber stehen im Heft (Lehrkraft 14.11.)
+        pdf = ordner / b["datei"]
+        seiten = "".join(f'<img data-kb-src="{dat}{ablage.ablegen(sb, ".jpg")}" data-kb-typ="image/jpeg" alt="{e(b["titel"])}, Seite {n + 1}">'
+                         for n, sb in enumerate(seiten_bilder(pdf, 1240, 72)))
+        ipad = [materialien[mid] for mid in b.get("zu", [])]
+        blaetter.append((b, seiten, dat + ablage.ablegen(pdf.read_bytes(), ".pdf"), ipad))
+    gezeigt = {m["id"] for _, _, _, ms in blaetter for m in ms}
+    lose = [m for m in materialien.values() if m.get("stunde", "").endswith("/" + st["id"]) and m["id"] not in gezeigt]
+    # Zeitkarten der Stunde stehen am Anfang der Erarbeitung, wie in der Stunde (Einstieg; Lehrkraft 14.11.)
+    zeitkarten = [m for m in lose if m["pfad"].startswith("zeitkarte/")]
+    lose = [m for m in lose if m not in zeitkarten]
+    out.append('<section class="tafel" id="erarbeitung" role="tabpanel" hidden>')
+    for m in zeitkarten:
+        out.append(f'<div class="spalte einstieg"><div class="spalte-kopf"><span>Zum Einstieg: {e(m["titel"])}. '
+                   f'Schieb den Regler und schau, was sich ändert.</span>'
+                   f'<a class="ln" href="{unt}{e(m["pfad"])}" target="_blank" rel="noopener">eigenes Fenster</a></div>'
+                   f'<iframe data-src="{unt}{e(m["pfad"])}" title="{e(m["titel"])}" loading="lazy"></iframe></div>')
+    if len(blaetter) > 1:
+        out.append('<div class="blatt-wahl">' + "".join(
+            f'<button type="button" data-blatt="{n}" aria-pressed="{"true" if n == 0 else "false"}">{e(b["titel"])}</button>'
+            for n, (b, _, _, _) in enumerate(blaetter)) + "</div>")
+    for n, (b, seiten, pdf, ipad) in enumerate(blaetter):
+        zwei = bool(ipad)
+        out.append(f'<div class="paar{" zwei" if zwei else ""}" data-blatt="{n}"{" hidden" if n else ""}>')
+        if zwei:   # iPad links, das Blatt dazu rechts (Lehrkraft 14.11.)
+            m = ipad[0]
+            out.append('<div class="umschalter" role="group"><button type="button" data-seite="ipad" aria-pressed="true">iPad</button>'
+                       '<button type="button" data-seite="blatt" aria-pressed="false">Blatt</button></div>')
+            out.append(f'<div class="spalte ipad-spalte"><div class="spalte-kopf"><span>iPad: {e(m["titel"])}</span>'
+                       f'<a class="ln" href="{unt}{e(m["pfad"])}" target="_blank" rel="noopener">eigenes Fenster</a></div>'
+                       f'<iframe data-src="{unt}{e(m["pfad"])}" title="{e(m["titel"])}" loading="lazy"></iframe></div>')
+        out.append(f'<div class="spalte blatt-spalte"><div class="spalte-kopf"><span>{e(b["titel"])}</span>'
+                   f'<a class="ln" data-kb-pdf="{pdf}" href="#">Drucken</a></div><div class="seiten">{seiten}</div></div>')
+        out.append("</div>")
+    if lose:
+        out.append('<p class="lose">Außerdem: ' + " · ".join(
+            f'<a class="ln" href="{unt}{e(m["pfad"])}" target="_blank" rel="noopener">{e(m["titel"])}</a>' for m in lose) + "</p>")
+    if not blaetter and not lose:
+        out.append('<p class="leise">In dieser Stunde gab es kein Blatt, das hier steht.</p>')
+    out.append("</section>")
+
+    if a.get("folien"):
+        ohne = set(a.get("folien_ohne", []))
+        folien = [f for n, f in enumerate(seiten_bilder(ordner / a["folien"], 1280, 70)) if n + 1 not in ohne]
+        out.append('<section class="tafel" id="folien" role="tabpanel" hidden><div class="folien">'
+                   + "".join(f'<button type="button" class="folie"><img data-kb-src="{dat}{ablage.ablegen(fb, ".jpg")}" '
+                             f'data-kb-typ="image/jpeg" alt="Folie {n + 1}"></button>' for n, fb in enumerate(folien))
+                   + "</div></section>")
+
+    hk = herkunft(ordner)
+    if hk:
+        out.append('<details class="nachweis"><summary>Bildnachweise</summary><ul>'
+                   + "".join(f"<li>{inline(m)} · {inline(u)} · {inline(q)}</li>" for m, u, q in hk) + "</ul></details>")
+    return "\n".join(out)
+
+
+# ─────────────────────────── Prüfung ohne Schlüssel ───────────────────────────
+
+def pruefen() -> list[str]:
+    """Für make check / CI: jeder Klassenbereich-Kurs hat seine Seiten, verschlüsselt, ohne Klartext-Reste."""
+    out = []
+    daten = build.laden()
+    for f in sorted(AUSWAHL.glob("*.json")):
+        kurs = f.stem
+        auswahl = json.loads(f.read_text(encoding="utf-8"))
+        if not daten["kurse"].get(kurs, {}).get("klassenbereich"):
+            out.append(f"{kurs}: Auswahl vorhanden, aber kurse.json setzt nicht \"klassenbereich\": true")
+        ziel = UNTERRICHT / "k" / kurs
+        soll = [ziel / "index.html"]
+        for s in daten["sequenzen"].get(kurs, {}).get("reihe", []):
+            if s["id"] in auswahl["ausblenden"]:
+                continue
+            soll += [ziel / s["id"] / st["id"] / "index.html" for st in s["stunden"]
+                     if f"{s['id']}/{st['id']}" in auswahl["stunden"] or st.get("art") == "probe"]
+        for p in soll:
+            if not p.is_file():
+                out.append(f"fehlt: {p.relative_to(REPO)} (fix: make klassenbereich K={kurs})")
+            elif MARKE not in (t := p.read_text(encoding="utf-8")) or 'id="kb-inhalt"' not in t:
+                out.append(f"nicht verschlüsselt: {p.relative_to(REPO)}")
+        for p in ziel.rglob("*"):
+            if p.is_file() and p.suffix not in (".html", ".bin"):
+                out.append(f"Klartext-Datei im Klassenbereich: {p.relative_to(REPO)}")
+    return out
+
+
+def main(argv: list[str]) -> int:
+    if "--check" in argv:
+        p = pruefen()
+        if p:
+            print("Klassenbereich unvollständig:\n" + "\n".join("  - " + x for x in p))
+            return 1
+        print(f"Klassenbereich: {len(list(AUSWAHL.glob('*.json')))} Kurs(e) verschlüsselt und vollständig")
+        return 0
+    if not argv:
+        print(__doc__)
+        return 2
+    kurs = argv[0]
+    if "--passwort" in argv:
+        print(geheim(kurs, neu=False)["passwort"])
+        return 0
+    return bauen(kurs)
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1:]))

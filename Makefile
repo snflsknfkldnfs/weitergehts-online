@@ -11,6 +11,7 @@
 help:
 	@echo "Website-Pflege-Targets (siehe docs/website/RUNBUCH.md):"
 	@echo "  make check         BLOCKING+ADVISORY-Validierung (DER Gate-Einstiegspunkt)"
+	@echo "  make klassenbereich K=gpg9a  verschlüsselten Klassenbereich bauen (Hefte, Blätter, Folien aus der Welt)"
 	@echo "  make kurse         Übersicht + Kursseiten aus unterricht/kurse.json erzeugen"
 	@echo "  make smoke         Headless-Render-Smoke aller Live-Seiten (Playwright)"
 	@echo "  make smoke-setup   Einmalig: .venv/ mit Playwright+Chromium anlegen (PEP-668-sicher)"
@@ -33,6 +34,10 @@ check:
 # Übersicht + Kursseiten aus unterricht/kurse.json neu erzeugen (nach jeder Änderung an kurse.json)
 kurse:
 	python3 tools/kurse/build.py
+
+# Verschlüsselter Klassenbereich eines Kurses (braucht die Welt und ~/.config/weitergehts/klassenbereich.json)
+klassenbereich:
+	python3 tools/kurse/klassenbereich.py $(K)
 
 smoke:
 	./tools/smoke/run.sh

@@ -1,0 +1,208 @@
+{
+  "_comment": "Auswahl für den verschlüsselten Klassenbereich unterricht/k/gpg9a/ (Generator: tools/kurse/klassenbereich.py, make klassenbereich K=gpg9a). Hier stehen nur Pfade und Zuordnungen, keine Inhalte: Hefteinträge, Blätter und Folien liest der Generator aus der Welt und legt sie nur verschlüsselt ins Repo. Struktur der Stunden (Datum, Titel, Stundenfrage) kommt aus unterricht/kurse.json (sequenzen), das Jahr aus JAHRESPLAN.md des Kurses. heft_bild = der ausgefüllte Einkleber (bild: PNG, pdf: Lösungs-PDF, bau: Befehl, der ein PDF baut; {ordner} = Stundenordner, das Ziel hängt der Generator an).",
+  "kurs": "gpg9a",
+  "welt": "/Users/paulad/Schule_2026-27/Unterrichtsplanung26_27/welt/GPG9a",
+  "jahresplan": "JAHRESPLAN.md",
+  "ausblenden": [
+    "s00",
+    "s01/ue05"
+  ],
+  "sequenzen": {
+    "s01": {
+      "ordner": "S01_geteiltes-land",
+      "jahresplan_id": "S01"
+    }
+  },
+  "stunden": {
+    "s01/ue01": {
+      "ordner": "UE01_2026-10-01_europa-nach-1945",
+      "heft": [
+        {
+          "datei": "PLANUNG.md",
+          "abschnitt": "## Sicherung",
+          "nur_satz": "Antwortsatz (Folie 8, mündlich):"
+        }
+      ],
+      "hinweis": "Die Karte mit NATO und Warschauer Pakt hast du auf einem Blatt gefärbt. Es liegt in deiner Mappe.",
+      "blaetter": [],
+      "folien": "folien.pdf",
+      "folien_ohne": [
+        1,
+        2
+      ]
+    },
+    "s01/ue02": {
+      "ordner": "UE02_2026-10-08_verbuendete-werden-gegner",
+      "heft": [
+        {
+          "datei": "PLANUNG.md",
+          "abschnitt": "## Sicherung",
+          "bis": "**Vorne liegt"
+        }
+      ],
+      "blaetter": [
+        {
+          "datei": "drucken/25x_doppelseitig_AB_Zwei-Reden-1947.pdf",
+          "titel": "Arbeitsblatt: Zwei Reden 1947",
+          "art": "Arbeitsblatt"
+        },
+        {
+          "datei": "drucken/6x_einseitig_AB_Vertiefung-Zwei-Reden.pdf",
+          "titel": "Vertiefung: Zwei Reden",
+          "art": "Für Schnelle"
+        }
+      ],
+      "folien": "folien.pdf"
+    },
+    "s01/ue03-04": {
+      "ordner": "UE03-04_2026-10-09_markt-oder-plan",
+      "heft": [
+        {
+          "datei": "LOESUNG_Einkleber_Europa-nach-dem-Zweiten-Weltkrieg.md",
+          "umklappen": " · ",
+          "saetze": {
+            "Urteilssatz": [
+              "Dein Urteilssatz",
+              "Ich finde, … soll bestimmen, weil … Dein Grund kommt aus einer Zeile des Einklebers."
+            ]
+          }
+        }
+      ],
+      "blaetter": [
+        {
+          "datei": "drucken/13x_einseitig_AB_Markt-oder-Plan_Gruppe-West.pdf",
+          "titel": "Arbeitsblatt: Gruppe West",
+          "art": "Arbeitsblatt",
+          "zu": [
+            "quellen-markt-oder-plan-west"
+          ]
+        },
+        {
+          "datei": "drucken/12x_einseitig_AB_Markt-oder-Plan_Gruppe-Ost.pdf",
+          "titel": "Arbeitsblatt: Gruppe Ost",
+          "art": "Arbeitsblatt",
+          "zu": [
+            "quellen-markt-oder-plan-ost"
+          ]
+        },
+        {
+          "datei": "drucken/13x_einseitig_Einkleber_Europa-nach-dem-Zweiten-Weltkrieg_A5-zweimal-senkrecht-schneiden.pdf",
+          "titel": "Einkleber: Europa nach dem Zweiten Weltkrieg (leer)",
+          "art": "Einkleber"
+        }
+      ],
+      "folien": "folien.pdf",
+      "heft_bild": [
+        {
+          "bau": [
+            "python3",
+            "tools/kurse/klassenbereich/einkleber_fuellen.py",
+            "{ordner}/_render",
+            "{ordner}/LOESUNG_Einkleber_Europa-nach-dem-Zweiten-Weltkrieg.md"
+          ]
+        }
+      ]
+    },
+    "s01/ue06-07": {
+      "ordner": "UE06-07_2026-10-16_kalter-krieg-und-wirtschaftswunder",
+      "heft": [
+        {
+          "datei": "LOESUNG_Hefteintrag_Kalter-Krieg-Wirtschaftswunder.md"
+        }
+      ],
+      "blaetter": [
+        {
+          "datei": "drucken/13x_einseitig_Beobachtungsbogen_Kalter-Krieg_A5-zweimal-schneiden.pdf",
+          "titel": "Beobachtungsbogen: Kalter Krieg (zum Film)",
+          "art": "Beobachtungsbogen"
+        },
+        {
+          "datei": "drucken/13x_einseitig_Einkleber-1_Kalter-Krieg_A5-zweimal-schneiden.pdf",
+          "titel": "Einkleber 1: Kalter Krieg (leer)",
+          "art": "Einkleber"
+        },
+        {
+          "datei": "drucken/25x_doppelseitig_AB_Zwei-Wege-zum-Wohlstand.pdf",
+          "titel": "Arbeitsblatt: Zwei Wege zum Wohlstand",
+          "art": "Arbeitsblatt",
+          "zu": [
+            "ordnen-eigener-staat"
+          ]
+        },
+        {
+          "datei": "drucken/13x_einseitig_Einkleber-2_Wirtschaft-BRD-DDR_A5-zweimal-schneiden.pdf",
+          "titel": "Einkleber 2: Wirtschaft in BRD und DDR (leer)",
+          "art": "Einkleber"
+        }
+      ],
+      "folien": "folien.pdf",
+      "heft_bild": [
+        {
+          "pdf": "LOESUNG_Einkleber-1_Kalter-Krieg.pdf"
+        },
+        {
+          "pdf": "LOESUNG_Einkleber-2_Wirtschaft-BRD-DDR.pdf"
+        }
+      ],
+      "antwort_im_einkleber": true
+    },
+    "s01/ue08": {
+      "ordner": "UE08_2026-11-12_rueckblick-luecken",
+      "heft": [
+        {
+          "datei": "LOESUNG_Einkleber_Zwei-Sieger_Farbdruck.md"
+        }
+      ],
+      "blaetter": [
+        {
+          "datei": "drucken/25x_doppelseitig_AB_Zwei-Sieger.pdf",
+          "titel": "Arbeitsblatt: Zwei Sieger, zwei Staaten",
+          "art": "Arbeitsblatt",
+          "zu": [
+            "begleiten-zwei-sieger"
+          ]
+        },
+        {
+          "datei": "drucken/13x_einseitig_Einkleber_Zwei-Sieger_Farbdruck.pdf",
+          "titel": "Einkleber: Zwei Sieger, zwei Staaten (leer)",
+          "art": "Einkleber"
+        }
+      ],
+      "folien": "2026-11-12_GPG9a_rueckblick-luecken.pdf",
+      "heft_bild": [
+        {
+          "bild": "bilder/einkleber_loesung.png"
+        }
+      ]
+    },
+    "s01/ue09-10": {
+      "ordner": "UE09-10_2026-11-13_jugend-in-ost-und-west",
+      "heft": [
+        {
+          "datei": "LOESUNG_Einkleber_Jugend-Ost-West_Farbdruck.md"
+        }
+      ],
+      "blaetter": [
+        {
+          "datei": "drucken/25x_doppelseitig_AB_Jugend-Ost-West.pdf",
+          "titel": "Arbeitsblatt: Jugend in Ost und West",
+          "art": "Arbeitsblatt",
+          "zu": [
+            "begleiten-jugend-ost-west"
+          ]
+        },
+        {
+          "datei": "drucken/13x_einseitig_Einkleber_Jugend-Ost-West_Farbdruck.pdf",
+          "titel": "Einkleber: Jugend in Ost und West (leer)",
+          "art": "Einkleber"
+        }
+      ],
+      "folien": "2026-11-13_GPG9a_jugend-in-ost-und-west.pdf",
+      "heft_bild": [
+        {
+          "bild": "bilder/einkleber_loesung.png"
+        }
+      ]
+    }
+  }
+}

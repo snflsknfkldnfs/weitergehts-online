@@ -93,6 +93,9 @@ if out=$(python3 tools/kurse/build.py --check 2>&1); then ok "$out"; else bad "$
 # B5b Keine verwaiste Materialseite (live, aber in keiner Übersicht) — blockiert seit 18.10.2026 (Befund quellen/versailles/)
 if out=$(python3 tools/kurse/build.py --orphans --strict 2>&1); then ok "$out"; else bad "$out (fix: Eintrag in unterricht/kurse.json, make kurse)"; fi
 
+# B5c Klassenbereich: Seiten vollständig und nur verschlüsselt (Repo ist öffentlich)
+if out=$(python3 tools/kurse/klassenbereich.py --check 2>&1); then ok "$out"; else bad "$out"; fi
+
 # B6 Materialseiten: gemeinsame Gestaltung „Blatt“
 if out=$(python3 tools/website/check_material.py 2>&1); then ok "$out"; else bad "$out"; fi
 

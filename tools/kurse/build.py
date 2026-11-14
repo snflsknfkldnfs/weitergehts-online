@@ -657,7 +657,9 @@ def kursseite(daten: dict, kurs: str, v: dict) -> str:
 def soll(daten: dict) -> dict[Path, str]:
     v = json.loads(VERSIONS.read_text(encoding="utf-8"))["assets"]
     out = {UNTERRICHT / "index.html": uebersicht(daten, v)}
-    for kurs in daten["kurse"]:
+    for kurs, k in daten["kurse"].items():
+        if k.get("klassenbereich"):  # verschlüsselt, erzeugt von tools/kurse/klassenbereich.py (braucht das Passwort)
+            continue
         out[UNTERRICHT / "k" / kurs / "index.html"] = kursseite(daten, kurs, v)
     return out
 
