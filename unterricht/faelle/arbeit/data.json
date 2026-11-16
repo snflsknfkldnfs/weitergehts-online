@@ -1,0 +1,1089 @@
+{
+ "titel": "Fälle: Arbeit",
+ "satz": "Wende an, was du weißt.",
+ "faelle": [
+  {
+   "id": "F01",
+   "titel": "Der Familienchat",
+   "textsorte": "Familienchat und Wochenplan",
+   "haushalt": "Familie",
+   "kennzeichnung": "Ausgedacht. Die Familie, der Chat und die Minuten gibt es nicht.",
+   "einleitung": "Eine Familie, die du kennst: Mama, Papa und das Kind (12). Im Wochenplan hatte Mama 250 Minuten Arbeit, Papa 60 und das Kind 20. Hier ist der Chat vom Sonntagabend.",
+   "einheiten": [
+    {
+     "id": "e0",
+     "von": "Wochenplan",
+     "zeit": null,
+     "text": "Mama hat an allen sieben Tagen Arbeit im Haushalt."
+    },
+    {
+     "id": "e1",
+     "von": "Mama",
+     "zeit": "20:41",
+     "text": "Ich bin fertig. Ich hatte diese Woche keinen freien Tag."
+    },
+    {
+     "id": "e2",
+     "von": "Papa",
+     "zeit": "20:43",
+     "text": "Du übertreibst. Ich sauge doch am Donnerstag und am Samstag."
+    },
+    {
+     "id": "e3",
+     "von": "Kind",
+     "zeit": "20:44",
+     "text": "Ich muss noch meine Tasche für morgen packen."
+    },
+    {
+     "id": "e4",
+     "von": "Mama",
+     "zeit": "20:46",
+     "text": "Immer ich! Keiner fragt, ob ich Hilfe brauche."
+    },
+    {
+     "id": "e5",
+     "von": "Mama",
+     "zeit": "20:47",
+     "text": "Mein Rücken tut weh. Ich schlafe schlecht."
+    },
+    {
+     "id": "e6",
+     "von": "Papa",
+     "zeit": "20:49",
+     "text": "Morgen hole ich Brot vom Bäcker."
+    },
+    {
+     "id": "e7",
+     "von": "Kind",
+     "zeit": "20:50",
+     "text": "Mama kann das doch schneller. Das ist nicht mein Problem."
+    },
+    {
+     "id": "e8",
+     "von": "Mama",
+     "zeit": "20:51",
+     "text": "Ich kann morgen nicht schon wieder. Ich bin so müde."
+    }
+   ],
+   "schritt1": {
+    "auftrag": "Tippe eine Zeile an und wähle, was sie zeigt.",
+    "kategorien": [
+     {
+      "id": "k1",
+      "name": "Körper",
+      "frage": "Hier wird es für den Körper zu viel."
+     },
+     {
+      "id": "k2",
+      "name": "Streit",
+      "frage": "Hier gibt es Ärger zwischen Personen."
+     },
+     {
+      "id": "k0",
+      "name": "Keine Spur",
+      "frage": "Hier ist weder das eine noch das andere zu sehen."
+     }
+    ],
+    "loesung": {
+     "e0": "k1",
+     "e1": "k1",
+     "e2": "k2",
+     "e3": "k0",
+     "e4": "k2",
+     "e5": "k1",
+     "e6": "k0",
+     "e7": "k2",
+     "e8": "k1"
+    },
+    "erklaerung": {
+     "e0": "Mama hat keinen freien Tag. Der Körper bekommt keine Pause.",
+     "e1": "Ohne freien Tag kann sich der Körper nicht erholen.",
+     "e2": "Papa wirft Mama etwas vor. Das ist Ärger im Zusammenleben.",
+     "e3": "Das Kind erzählt nur, was es noch tut. Das ist weder Müdigkeit noch Streit.",
+     "e4": "Mama ist verärgert, weil keiner fragt. Das ist Streit.",
+     "e5": "Rücken und Schlaf zeigen: Die Arbeit belastet den Körper.",
+     "e6": "Das ist eine ruhige Absprache ohne Ärger.",
+     "e7": "Das Kind schiebt die Arbeit weg. Das gibt Ärger.",
+     "e8": "Müde und erschöpft: Der Körper kann nicht mehr."
+    }
+   },
+   "schritt2": {
+    "frage": "Warum gibt es bei dieser Familie Streit und Müdigkeit?",
+    "antworten": [
+     {
+      "text": "Die Arbeit ist ungleich verteilt: Mama macht fast alles.",
+      "richtig": true
+     },
+     {
+      "text": "Mama arbeitet zu langsam und braucht darum so lange.",
+      "richtig": false
+     },
+     {
+      "text": "Das Kind ist mit zwölf Jahren noch zu klein zum Helfen.",
+      "richtig": false
+     }
+    ],
+    "erklaerung": "Wenn eine Person fast alles macht, wird sie müde, und die anderen verstehen es nicht."
+   },
+   "schritt3": {
+    "frage": "Ist der bisherige Wochenplan gut für die Familie?",
+    "positionen": [
+     {
+      "id": "a",
+      "text": "Ja, denn Mama ist bei fast allem am schnellsten."
+     },
+     {
+      "id": "b",
+      "text": "Nein, denn eine Person trägt fast die ganze Arbeit."
+     }
+    ],
+    "begruendungen": [
+     {
+      "text": "Mama arbeitet an jedem Tag und wird müde.",
+      "passt_zu": "b"
+     },
+     {
+      "text": "Papa und das Kind helfen kaum, das gibt Streit.",
+      "passt_zu": "b"
+     },
+     {
+      "text": "Mama braucht für die meisten Arbeiten am wenigsten Zeit.",
+      "passt_zu": "a"
+     },
+     {
+      "text": "Wenn Mama alles macht, muss niemand etwas planen.",
+      "passt_zu": "a"
+     },
+     {
+      "text": "Die Familie hat einen Staubsauger und eine Waschmaschine.",
+      "passt_zu": "keine"
+     }
+    ],
+    "gut": "b",
+    "erklaerung": "Schnell reicht nicht: Im Siegerplan ist die Familie schneller fertig, und niemand ist erschöpft.",
+    "muster": "Ich finde: Der Plan ist nicht gut, weil Mama an jedem Tag arbeitet und die anderen kaum helfen."
+   }
+  },
+  {
+   "id": "F02",
+   "titel": "Die erste eigene Küche",
+   "textsorte": "Mängelliste",
+   "haushalt": "Einzelperson",
+   "kennzeichnung": "Ausgedacht. Die Person und die Küche gibt es nicht.",
+   "einleitung": "Eine Person zieht allein in die erste eigene Wohnung. Sie schreibt auf, was in der Küche auffällt.",
+   "einheiten": [
+    {
+     "id": "e1",
+     "von": null,
+     "zeit": null,
+     "text": "Die Arbeitsplatte ist so niedrig, dass der Rücken beim Kochen schmerzt."
+    },
+    {
+     "id": "e2",
+     "von": null,
+     "zeit": null,
+     "text": "Der alte Kühlschrank verbraucht sehr viel Strom."
+    },
+    {
+     "id": "e3",
+     "von": null,
+     "zeit": null,
+     "text": "Der Herd hat nur eine Platte, zwei Töpfe passen nicht."
+    },
+    {
+     "id": "e4",
+     "von": null,
+     "zeit": null,
+     "text": "Das Fenster über dem Herd lässt sich leicht öffnen."
+    },
+    {
+     "id": "e5",
+     "von": null,
+     "zeit": null,
+     "text": "Die Spüle ist so tief, dass man sich beim Abwaschen weit bücken muss."
+    },
+    {
+     "id": "e6",
+     "von": null,
+     "zeit": null,
+     "text": "Die Lampen sind alte Glühbirnen, die viel Strom brauchen."
+    },
+    {
+     "id": "e7",
+     "von": null,
+     "zeit": null,
+     "text": "Der Mixer ist kaputt, Gemüse schneidet man lange von Hand."
+    },
+    {
+     "id": "e8",
+     "von": null,
+     "zeit": null,
+     "text": "Die Messer sind scharf und liegen griffbereit in einer Schublade."
+    },
+    {
+     "id": "e9",
+     "von": null,
+     "zeit": null,
+     "text": "Der Küchenstuhl hat keine Lehne, das Sitzen beim Schälen ermüdet."
+    }
+   ],
+   "schritt1": {
+    "auftrag": "Tippe eine Zeile an und wähle, was sie zeigt.",
+    "kategorien": [
+     {
+      "id": "kk",
+      "name": "Körper (Ergonomie)",
+      "frage": "Das passt nicht zu meinem Körper."
+     },
+     {
+      "id": "kg",
+      "name": "Geräte (Technik)",
+      "frage": "Ein Gerät fehlt oder macht die Arbeit schwer."
+     },
+     {
+      "id": "ku",
+      "name": "Umwelt (Ökologie)",
+      "frage": "Das belastet die Umwelt."
+     },
+     {
+      "id": "k0",
+      "name": "Passt",
+      "frage": "Hier ist alles in Ordnung."
+     }
+    ],
+    "loesung": {
+     "e1": "kk",
+     "e2": "ku",
+     "e3": "kg",
+     "e4": "k0",
+     "e5": "kk",
+     "e6": "ku",
+     "e7": "kg",
+     "e8": "k0",
+     "e9": "kk"
+    },
+    "erklaerung": {
+     "e1": "Die Platte ist zu niedrig: Das passt nicht zum Körper.",
+     "e2": "Der Kühlschrank braucht viel Strom: Das belastet die Umwelt.",
+     "e3": "Zu wenig Platten: Das Gerät erschwert die Arbeit.",
+     "e4": "Das Fenster lässt sich leicht öffnen. Hier gibt es keinen Mangel.",
+     "e5": "Wer sich tief bücken muss, belastet den Rücken.",
+     "e6": "Glühbirnen brauchen viel Strom: Das belastet die Umwelt.",
+     "e7": "Ohne Mixer dauert die Arbeit lange: Ein Gerät fehlt.",
+     "e8": "Scharfe Messer in Reichweite erleichtern die Arbeit. Hier ist alles gut.",
+     "e9": "Ohne Lehne ermüdet das Sitzen den Rücken: Das passt nicht zum Körper."
+    }
+   },
+   "schritt2": {
+    "frage": "Die Person hat 100 Euro. Welche Anschaffung ist am besten?",
+    "antworten": [
+     {
+      "text": "Füße für die Arbeitsplatte für 40 Euro, damit der Rücken gerade bleibt.",
+      "richtig": true
+     },
+     {
+      "text": "Eine Küchenmaschine für 300 Euro, die fast alles kann.",
+      "richtig": false
+     },
+     {
+      "text": "Neue Vorhänge für 30 Euro, damit die Küche schöner aussieht.",
+      "richtig": false
+     }
+    ],
+    "erklaerung": "Gut ist, was viel Nutzen für wenig Geld bringt, hier: weniger Rückenschmerzen."
+   },
+   "schritt3": {
+    "frage": "Ist diese Küche ein guter Arbeitsplatz?",
+    "positionen": [
+     {
+      "id": "a",
+      "text": "Ja, denn alles Wichtige zum Kochen ist da."
+     },
+     {
+      "id": "b",
+      "text": "Nein, denn sie passt nicht zum Körper und schont die Umwelt nicht."
+     }
+    ],
+    "begruendungen": [
+     {
+      "text": "Der Rücken schmerzt, weil Platte und Spüle zu tief liegen.",
+      "passt_zu": "b"
+     },
+     {
+      "text": "Alte Geräte brauchen viel Strom und belasten die Umwelt.",
+      "passt_zu": "b"
+     },
+     {
+      "text": "Die Küche hat einen Herd, einen Kühlschrank und Messer.",
+      "passt_zu": "a"
+     },
+     {
+      "text": "Zum Kochen reicht das, mehr braucht man nicht.",
+      "passt_zu": "a"
+     },
+     {
+      "text": "Die Person wohnt allein in der Wohnung.",
+      "passt_zu": "keine"
+     }
+    ],
+    "gut": "b",
+    "erklaerung": "Ein guter Arbeitsplatz passt zum Körper, erleichtert die Arbeit und schont die Umwelt. Das trifft hier nicht zu.",
+    "muster": "Ich finde: Die Küche ist kein guter Arbeitsplatz, weil der Rücken schmerzt und viel Strom verbraucht wird."
+   }
+  },
+  {
+   "id": "F03",
+   "titel": "Ein Tag im Mehrgenerationenhaus",
+   "textsorte": "Tagesprotokoll",
+   "haushalt": "mehrere Generationen",
+   "kennzeichnung": "Ausgedacht. Die Familie und ihr Tag gibt es nicht.",
+   "einleitung": "Ein Haus, drei Generationen: Oma und Opa, Mama und Papa, ein Kind. Hier steht, wer an einem Mittwoch was tut.",
+   "einheiten": [
+    {
+     "id": "e1",
+     "von": "Papa",
+     "zeit": "06:30",
+     "text": "Papa fährt in die Fabrik und bekommt dafür Lohn."
+    },
+    {
+     "id": "e2",
+     "von": "Mama",
+     "zeit": "07:00",
+     "text": "Mama macht das Frühstück und räumt die Küche auf."
+    },
+    {
+     "id": "e3",
+     "von": "Oma",
+     "zeit": "08:00",
+     "text": "Oma hilft Opa beim Anziehen und gibt ihm seine Tabletten."
+    },
+    {
+     "id": "e4",
+     "von": "Mama",
+     "zeit": "09:00",
+     "text": "Mama arbeitet im Supermarkt an der Kasse und bekommt Lohn."
+    },
+    {
+     "id": "e5",
+     "von": "Oma",
+     "zeit": "15:30",
+     "text": "Oma übt mit dem Kind Lesen und sieht die Hausaufgaben durch."
+    },
+    {
+     "id": "e6",
+     "von": "Oma",
+     "zeit": "17:00",
+     "text": "Oma ruft ihre Schwester an und fragt, wie es ihr geht."
+    },
+    {
+     "id": "e7",
+     "von": "Papa",
+     "zeit": "18:00",
+     "text": "Papa kocht das Abendessen für alle."
+    },
+    {
+     "id": "e8",
+     "von": "Mama",
+     "zeit": "19:00",
+     "text": "Mama bereitet den Spieleabend für die ganze Familie vor."
+    },
+    {
+     "id": "e9",
+     "von": "Papa",
+     "zeit": "20:00",
+     "text": "Papa erklärt dem Kind, wie man sich bei Streit entschuldigt."
+    },
+    {
+     "id": "e10",
+     "von": "Mama",
+     "zeit": "21:00",
+     "text": "Mama wäscht die Wäsche und hängt sie auf."
+    },
+    {
+     "id": "e11",
+     "von": "Oma",
+     "zeit": "21:30",
+     "text": "Oma misst Opas Blutdruck und schreibt die Werte auf."
+    }
+   ],
+   "schritt1": {
+    "auftrag": "Tippe eine Zeile an und wähle, welche Arbeit es ist.",
+    "kategorien": [
+     {
+      "id": "ke",
+      "name": "Erwerbsarbeit",
+      "frage": "Dafür bekommt man Geld."
+     },
+     {
+      "id": "kh",
+      "name": "Hausarbeit",
+      "frage": "Kochen, waschen, aufräumen."
+     },
+     {
+      "id": "kz",
+      "name": "Erziehungsarbeit",
+      "frage": "Dem Kind etwas beibringen."
+     },
+     {
+      "id": "kp",
+      "name": "Pflegearbeit",
+      "frage": "Jemandem helfen, der Hilfe braucht."
+     },
+     {
+      "id": "kb",
+      "name": "Beziehungsarbeit",
+      "frage": "Zeit füreinander schaffen."
+     }
+    ],
+    "loesung": {
+     "e1": "ke",
+     "e2": "kh",
+     "e3": "kp",
+     "e4": "ke",
+     "e5": "kz",
+     "e6": "kb",
+     "e7": "kh",
+     "e8": "kb",
+     "e9": "kz",
+     "e10": "kh",
+     "e11": "kp"
+    },
+    "erklaerung": {
+     "e1": "Dafür gibt es Lohn: Das ist Erwerbsarbeit.",
+     "e2": "Frühstück und Aufräumen sind Hausarbeit ohne Lohn.",
+     "e3": "Opa braucht Hilfe: Das ist Pflegearbeit.",
+     "e4": "An der Kasse gibt es Lohn: Das ist Erwerbsarbeit.",
+     "e5": "Dem Kind helfen und üben ist Erziehungsarbeit.",
+     "e6": "Kontakt pflegen ist Beziehungsarbeit.",
+     "e7": "Kochen für alle ist Hausarbeit.",
+     "e8": "Ein Spieleabend schafft Zeit füreinander: Das ist Beziehungsarbeit.",
+     "e9": "Dem Kind etwas beibringen ist Erziehungsarbeit.",
+     "e10": "Wäsche waschen ist Hausarbeit.",
+     "e11": "Blutdruck messen für Opa ist Pflegearbeit."
+    }
+   },
+   "schritt2": {
+    "frage": "Warum ist Kochen zu Hause Arbeit, obwohl es kein Geld gibt?",
+    "antworten": [
+     {
+      "text": "Weil sie planvoll, zielgerichtet, anstrengend und bewusst ist.",
+      "richtig": true
+     },
+     {
+      "text": "Weil man dabei auch ein bisschen Geld sparen kann.",
+      "richtig": false
+     },
+     {
+      "text": "Weil es jeden Tag zur gleichen Uhrzeit gemacht wird.",
+      "richtig": false
+     }
+    ],
+    "erklaerung": "Arbeit ist planvoll, zielgerichtet, anstrengend und bewusst. Das gilt auch ohne Lohn."
+   },
+   "schritt3": {
+    "frage": "Ist Omas Arbeit weniger wert, weil sie kein Geld bekommt?",
+    "positionen": [
+     {
+      "id": "a",
+      "text": "Ja, denn nur bezahlte Arbeit zählt."
+     },
+     {
+      "id": "b",
+      "text": "Nein, denn Hausarbeit ist echte Arbeit auch ohne Geld."
+     }
+    ],
+    "begruendungen": [
+     {
+      "text": "Oma pflegt Opa, das ist anstrengend und wichtig.",
+      "passt_zu": "b"
+     },
+     {
+      "text": "Ohne diese Arbeit würde die Familie nicht funktionieren.",
+      "passt_zu": "b"
+     },
+     {
+      "text": "Nur Papa und Mama bekommen am Monatsende Lohn.",
+      "passt_zu": "a"
+     },
+     {
+      "text": "Wer kein Geld bekommt, arbeitet nicht richtig.",
+      "passt_zu": "a"
+     },
+     {
+      "text": "Die Familie wohnt in einem Haus mit Garten.",
+      "passt_zu": "keine"
+     }
+    ],
+    "gut": "b",
+    "erklaerung": "Auch zu Hause wird gearbeitet, ohne Geld, aber echte Arbeit. So steht es im Heft.",
+    "muster": "Ich finde: Omas Arbeit ist genauso wichtig, weil Pflegearbeit anstrengend ist, auch ohne Lohn."
+   }
+  },
+  {
+   "id": "F04",
+   "titel": "Der Plan hat Fehler",
+   "textsorte": "Wochenplan",
+   "haushalt": "alleinerziehend",
+   "kennzeichnung": "Ausgedacht. Die Familie und ihr Plan gibt es nicht.",
+   "einleitung": "Mama ist alleinerziehend. Sie arbeitet von Montag bis Freitag bis 17 Uhr. Das Kind ist 13. Im Plan für die Hausarbeit stecken Fehler.",
+   "einheiten": [
+    {
+     "id": "e1",
+     "von": null,
+     "zeit": null,
+     "text": "Montag, 16 Uhr: Das Kind deckt den Tisch."
+    },
+    {
+     "id": "e2",
+     "von": null,
+     "zeit": null,
+     "text": "Dienstag, 16 Uhr: Mama kocht das Mittagessen."
+    },
+    {
+     "id": "e3",
+     "von": null,
+     "zeit": null,
+     "text": "Mittwoch, 15 Uhr: Das Kind kauft für das Abendessen ein."
+    },
+    {
+     "id": "e4",
+     "von": null,
+     "zeit": null,
+     "text": "Donnerstag, 18 Uhr: Mama kocht, das Kind deckt den Tisch."
+    },
+    {
+     "id": "e5",
+     "von": null,
+     "zeit": null,
+     "text": "Samstag: Mama putzt die ganze Wohnung, wäscht und kauft ein. Das Kind hat frei."
+    },
+    {
+     "id": "e6",
+     "von": null,
+     "zeit": null,
+     "text": "Freitag, 18 Uhr: Mama wäscht ab und räumt auf."
+    },
+    {
+     "id": "e7",
+     "von": null,
+     "zeit": null,
+     "text": "Sonntag: Mama und das Kind kochen zusammen und essen gemeinsam."
+    }
+   ],
+   "schritt1": {
+    "auftrag": "Tippe eine Zeile an: Passt sie oder ist sie ein Fehler?",
+    "kategorien": [
+     {
+      "id": "kp",
+      "name": "Passt",
+      "frage": "Das geht so."
+     },
+     {
+      "id": "kf",
+      "name": "Fehler",
+      "frage": "Das geht nicht gut."
+     }
+    ],
+    "loesung": {
+     "e1": "kp",
+     "e2": "kf",
+     "e3": "kp",
+     "e4": "kp",
+     "e5": "kf",
+     "e6": "kp",
+     "e7": "kp"
+    },
+    "erklaerung": {
+     "e1": "Das Kind ist nach der Schule zu Hause. Das passt.",
+     "e2": "Mama arbeitet bis 17 Uhr. Um 16 Uhr kann sie nicht kochen.",
+     "e3": "Das Kind kann nach der Schule einkaufen. Das passt.",
+     "e4": "Um 18 Uhr ist Mama zu Hause. Beide teilen sich die Arbeit.",
+     "e5": "Eine Person macht fast alles, das Kind nichts. Das macht müde und gibt Ärger.",
+     "e6": "Um 18 Uhr ist Mama zu Hause, die Arbeit ist klein. Das passt.",
+     "e7": "Beide arbeiten zusammen und haben Zeit füreinander. Das passt."
+    }
+   },
+   "schritt2": {
+    "frage": "Was hilft beim Fehler am Samstag?",
+    "antworten": [
+     {
+      "text": "Die Arbeit aufteilen, damit das Kind einen Teil übernimmt.",
+      "richtig": true
+     },
+     {
+      "text": "Mama putzt schneller und braucht dann weniger Zeit.",
+      "richtig": false
+     },
+     {
+      "text": "Das Kind darf am Samstag immer ausschlafen.",
+      "richtig": false
+     }
+    ],
+    "erklaerung": "Arbeitsteilung hilft: Jeder übernimmt einen Teil, und niemand wird überlastet."
+   },
+   "schritt3": {
+    "frage": "Ist es gerecht, dass das Kind am Samstag frei hat?",
+    "positionen": [
+     {
+      "id": "a",
+      "text": "Ja, denn das Kind hat unter der Woche Schule."
+     },
+     {
+      "id": "b",
+      "text": "Nein, denn alle im Haushalt übernehmen einen Teil."
+     }
+    ],
+    "begruendungen": [
+     {
+      "text": "Mama putzt, wäscht und kauft allein ein, das macht müde.",
+      "passt_zu": "b"
+     },
+     {
+      "text": "Das Kind kann einen Teil übernehmen, zum Beispiel das Putzen.",
+      "passt_zu": "b"
+     },
+     {
+      "text": "Das Kind lernt unter der Woche für die Schule.",
+      "passt_zu": "a"
+     },
+     {
+      "text": "Am Wochenende soll sich das Kind erholen.",
+      "passt_zu": "a"
+     },
+     {
+      "text": "Die Wohnung hat ein Bad und eine Küche.",
+      "passt_zu": "keine"
+     }
+    ],
+    "gut": "b",
+    "erklaerung": "Alle im Haushalt übernehmen einen Teil. Das Kind hat andere Aufgaben als Mama, aber nicht keine.",
+    "muster": "Ich finde: Das Kind sollte am Samstag helfen, weil Mama sonst alles allein macht und müde wird."
+   }
+  },
+  {
+   "id": "F05",
+   "titel": "Mama kann alles schneller",
+   "textsorte": "Zeiten und Behauptungen",
+   "haushalt": "Familie",
+   "kennzeichnung": "Ausgedacht. Die Zeiten sind erfunden.",
+   "einleitung": "Mama und das Kind haben zwei Arbeiten: Wäsche waschen und Staubsaugen. Mama braucht für die Wäsche 20 Minuten und fürs Saugen 10. Das Kind braucht für die Wäsche 24 Minuten und fürs Saugen 30. Beide arbeiten gleichzeitig.",
+   "einheiten": [
+    {
+     "id": "e1",
+     "von": null,
+     "zeit": null,
+     "text": "Wenn Mama alles macht, sind beide am schnellsten fertig."
+    },
+    {
+     "id": "e2",
+     "von": null,
+     "zeit": null,
+     "text": "Das Kind wäscht und Mama saugt: Dann sind beide nach 24 Minuten fertig."
+    },
+    {
+     "id": "e3",
+     "von": null,
+     "zeit": null,
+     "text": "Mama und das Kind arbeiten gleichzeitig, das spart Zeit."
+    },
+    {
+     "id": "e4",
+     "von": null,
+     "zeit": null,
+     "text": "Das Kind macht beides, denn dann hat Mama Pause."
+    },
+    {
+     "id": "e5",
+     "von": null,
+     "zeit": null,
+     "text": "Mama kann beides schneller, also muss sie auch beides machen."
+    },
+    {
+     "id": "e6",
+     "von": null,
+     "zeit": null,
+     "text": "Das Kind ist beim Waschen fast so schnell wie Mama, darum wäscht es."
+    }
+   ],
+   "schritt1": {
+    "auftrag": "Tippe eine Aussage an: Stimmt sie oder nicht?",
+    "kategorien": [
+     {
+      "id": "ks",
+      "name": "Stimmt",
+      "frage": "Das passt zu den Zeiten."
+     },
+     {
+      "id": "kn",
+      "name": "Stimmt nicht",
+      "frage": "Das passt nicht zu den Zeiten."
+     }
+    ],
+    "loesung": {
+     "e1": "kn",
+     "e2": "ks",
+     "e3": "ks",
+     "e4": "kn",
+     "e5": "kn",
+     "e6": "ks"
+    },
+    "erklaerung": {
+     "e1": "Mama allein braucht 30 Minuten. Zu zweit geht es schneller.",
+     "e2": "Das Kind wäscht 24 Minuten, Mama saugt 10 Minuten. Nach 24 Minuten sind beide fertig.",
+     "e3": "Wer gleichzeitig arbeitet, spart Zeit.",
+     "e4": "Das Kind allein braucht 54 Minuten. Das dauert am längsten.",
+     "e5": "Auch wenn Mama alles schneller kann, lohnt sich das Teilen.",
+     "e6": "Das Kind braucht 24 statt 20 Minuten, also nur wenig länger."
+    }
+   },
+   "schritt2": {
+    "frage": "Warum ist es gut, dass auch das Kind etwas übernimmt?",
+    "antworten": [
+     {
+      "text": "Beide arbeiten gleichzeitig und sind darum früher fertig.",
+      "richtig": true
+     },
+     {
+      "text": "Das Kind ist beim Saugen schneller als Mama.",
+      "richtig": false
+     },
+     {
+      "text": "Mama darf dann länger arbeiten, ohne zu ermüden.",
+      "richtig": false
+     }
+    ],
+    "erklaerung": "Wer gleichzeitig arbeitet, spart Zeit. Das gilt auch, wenn einer alles schneller kann."
+   },
+   "schritt3": {
+    "frage": "Soll Mama alles machen, weil sie schneller ist?",
+    "positionen": [
+     {
+      "id": "a",
+      "text": "Ja, denn sie braucht für alles weniger Zeit."
+     },
+     {
+      "id": "b",
+      "text": "Nein, denn zu zweit sind beide schneller fertig."
+     }
+    ],
+    "begruendungen": [
+     {
+      "text": "Zu zweit sind es 24 statt 30 Minuten.",
+      "passt_zu": "b"
+     },
+     {
+      "text": "Das Kind kann die Wäsche fast so schnell wie Mama.",
+      "passt_zu": "b"
+     },
+     {
+      "text": "Mama braucht für jede einzelne Arbeit weniger Zeit.",
+      "passt_zu": "a"
+     },
+     {
+      "text": "Mama muss dann niemandem etwas erklären.",
+      "passt_zu": "a"
+     },
+     {
+      "text": "Die Wäsche ist aus Baumwolle.",
+      "passt_zu": "keine"
+     }
+    ],
+    "gut": "b",
+    "erklaerung": "Mama braucht allein 30 Minuten, zu zweit nur 24. Teilen lohnt sich auch, wenn einer alles schneller kann.",
+    "muster": "Ich finde: Mama sollte nicht alles machen, weil beide zusammen schneller fertig sind."
+   }
+  },
+  {
+   "id": "F06",
+   "titel": "Der Erkundungsbogen mit Fehlern",
+   "textsorte": "Erkundungsbogen",
+   "haushalt": "Familie",
+   "kennzeichnung": "Ausgedacht. Das Kind und sein Bogen gibt es nicht.",
+   "einleitung": "Ein Kind erkundet einen Arbeitsvorgang zu Hause: Es hängt Wäsche auf. Das Kind arbeitet am Samstag um 10 Uhr im Wohnzimmer, zehn Minuten lang. Es braucht einen Wäscheständer und Klammern. Mama hilft ein bisschen mit. Der Ständer steht niedrig, das Kind muss sich bücken.",
+   "einheiten": [
+    {
+     "id": "e1",
+     "von": "Bogen",
+     "zeit": null,
+     "text": "Arbeitsaufgabe: Wäsche aufhängen."
+    },
+    {
+     "id": "e2",
+     "von": "Bogen",
+     "zeit": null,
+     "text": "Arbeitsmittel: Wäscheständer, Klammern und Mama."
+    },
+    {
+     "id": "e3",
+     "von": "Bogen",
+     "zeit": null,
+     "text": "Arbeitsort: Wohnzimmer."
+    },
+    {
+     "id": "e4",
+     "von": "Bogen",
+     "zeit": null,
+     "text": "Arbeitszeit: zehn Minuten."
+    },
+    {
+     "id": "e5",
+     "von": "Bogen",
+     "zeit": null,
+     "text": "Arbeitsdauer: Samstag, 10 Uhr."
+    },
+    {
+     "id": "e6",
+     "von": "Bogen",
+     "zeit": null,
+     "text": "Arbeitsbedingungen: Der niedrige Ständer ist schlecht für den Rücken."
+    }
+   ],
+   "schritt1": {
+    "auftrag": "Tippe eine Zeile an: Stimmt der Eintrag oder ist er ein Fehler?",
+    "kategorien": [
+     {
+      "id": "ks",
+      "name": "Stimmt",
+      "frage": "Der Eintrag passt zum Merkmal."
+     },
+     {
+      "id": "kf",
+      "name": "Fehler",
+      "frage": "Der Eintrag passt nicht zum Merkmal."
+     }
+    ],
+    "loesung": {
+     "e1": "ks",
+     "e2": "kf",
+     "e3": "ks",
+     "e4": "kf",
+     "e5": "kf",
+     "e6": "ks"
+    },
+    "erklaerung": {
+     "e1": "Was wird gemacht? Wäsche aufhängen. Das stimmt.",
+     "e2": "Mama ist eine Person, kein Arbeitsmittel. Das Mittel sagt: womit.",
+     "e3": "Wo wird gearbeitet? Im Wohnzimmer. Das stimmt.",
+     "e4": "Zehn Minuten ist die Dauer. Die Zeit sagt: wann.",
+     "e5": "Samstag, 10 Uhr ist die Zeit. Die Dauer sagt: wie lange.",
+     "e6": "Der niedrige Ständer passt nicht zum Körper: Das ist Ergonomie."
+    }
+   },
+   "schritt2": {
+    "frage": "Was gehört zu den Arbeitsbedingungen?",
+    "antworten": [
+     {
+      "text": "Wie es am Arbeitsplatz ist: Körper, Geräte, Umwelt.",
+      "richtig": true
+     },
+     {
+      "text": "Wer bei der Arbeit helfen darf und wer nicht.",
+      "richtig": false
+     },
+     {
+      "text": "Wann die Arbeit anfängt und wie lange sie dauert.",
+      "richtig": false
+     }
+    ],
+    "erklaerung": "Arbeitsbedingungen fragen: Wie ist es dort? Das sind Körper, Geräte und Umwelt."
+   },
+   "schritt3": {
+    "frage": "Ist der Erkundungsbogen gut ausgefüllt?",
+    "positionen": [
+     {
+      "id": "a",
+      "text": "Ja, denn alle sechs Merkmale stehen auf dem Bogen."
+     },
+     {
+      "id": "b",
+      "text": "Nein, denn drei Einträge stehen am falschen Platz."
+     }
+    ],
+    "begruendungen": [
+     {
+      "text": "Zeit und Dauer sind vertauscht.",
+      "passt_zu": "b"
+     },
+     {
+      "text": "Mama ist kein Arbeitsmittel.",
+      "passt_zu": "b"
+     },
+     {
+      "text": "Das Kind hat zu jedem Merkmal etwas geschrieben.",
+      "passt_zu": "a"
+     },
+     {
+      "text": "Der Bogen ist ordentlich und lesbar.",
+      "passt_zu": "a"
+     },
+     {
+      "text": "Der Wäscheständer steht im Wohnzimmer.",
+      "passt_zu": "keine"
+     }
+    ],
+    "gut": "b",
+    "erklaerung": "Alle sechs Merkmale müssen am richtigen Platz stehen. Sonst beschreibt der Bogen den Arbeitsplatz nicht.",
+    "muster": "Ich finde: Der Bogen ist nicht gut, weil Zeit und Dauer vertauscht sind und Mama kein Arbeitsmittel ist."
+   }
+  },
+  {
+   "id": "F07",
+   "titel": "Wer wohnt hier?",
+   "textsorte": "Steckbriefe",
+   "haushalt": "alle vier Haushaltsformen",
+   "kennzeichnung": "Ausgedacht. Die Haushalte gibt es nicht.",
+   "einleitung": "Acht kurze Steckbriefe aus vier Haushalten. Ordne sie den Haushaltsformen zu.",
+   "einheiten": [
+    {
+     "id": "e1",
+     "von": null,
+     "zeit": null,
+     "text": "Zwei Eltern und zwei Kinder wohnen zusammen."
+    },
+    {
+     "id": "e2",
+     "von": null,
+     "zeit": null,
+     "text": "Ein Vater lebt mit seiner Tochter allein in der Wohnung."
+    },
+    {
+     "id": "e3",
+     "von": null,
+     "zeit": null,
+     "text": "Oma, Mama, Papa und ein Kind wohnen in einem Haus."
+    },
+    {
+     "id": "e4",
+     "von": null,
+     "zeit": null,
+     "text": "Eine Frau wohnt allein in einer kleinen Wohnung."
+    },
+    {
+     "id": "e5",
+     "von": null,
+     "zeit": null,
+     "text": "Mama, Papa und ein Kind essen jeden Abend zusammen."
+    },
+    {
+     "id": "e6",
+     "von": null,
+     "zeit": null,
+     "text": "Eine Mutter zieht ihre zwei Söhne allein groß."
+    },
+    {
+     "id": "e7",
+     "von": null,
+     "zeit": null,
+     "text": "Opa, Mama, Papa und zwei Kinder teilen sich ein Haus."
+    },
+    {
+     "id": "e8",
+     "von": null,
+     "zeit": null,
+     "text": "Ein Mann lebt allein und kocht für sich selbst."
+    }
+   ],
+   "schritt1": {
+    "auftrag": "Tippe einen Steckbrief an und wähle die Haushaltsform.",
+    "kategorien": [
+     {
+      "id": "kf",
+      "name": "Familie",
+      "frage": "Eltern mit Kindern."
+     },
+     {
+      "id": "ka",
+      "name": "Alleinerziehend",
+      "frage": "Ein Elternteil mit Kind oder Kindern."
+     },
+     {
+      "id": "kg",
+      "name": "Mehrere Generationen",
+      "frage": "Großeltern, Eltern und Kinder zusammen."
+     },
+     {
+      "id": "ke",
+      "name": "Einzelperson",
+      "frage": "Eine Person wohnt allein."
+     }
+    ],
+    "loesung": {
+     "e1": "kf",
+     "e2": "ka",
+     "e3": "kg",
+     "e4": "ke",
+     "e5": "kf",
+     "e6": "ka",
+     "e7": "kg",
+     "e8": "ke"
+    },
+    "erklaerung": {
+     "e1": "Zwei Eltern mit Kindern: Das ist eine Familie.",
+     "e2": "Ein Elternteil mit Kind: Das ist alleinerziehend.",
+     "e3": "Oma und Eltern und Kind: Das sind mehrere Generationen.",
+     "e4": "Eine Person allein: Das ist eine Einzelperson.",
+     "e5": "Eltern mit Kind: Das ist eine Familie.",
+     "e6": "Eine Mutter mit Kindern: Das ist alleinerziehend.",
+     "e7": "Opa, Eltern und Kinder: Das sind mehrere Generationen.",
+     "e8": "Ein Mann allein: Das ist eine Einzelperson."
+    }
+   },
+   "schritt2": {
+    "frage": "Warum macht nicht in jedem Haushalt dieselbe Person die Arbeit?",
+    "antworten": [
+     {
+      "text": "Weil in jedem Haushalt andere Personen mit anderer Zeit leben.",
+      "richtig": true
+     },
+     {
+      "text": "Weil ein Gesetz sagt, wer welche Arbeit machen muss.",
+      "richtig": false
+     },
+     {
+      "text": "Weil in manchen Haushalten gar keine Arbeit anfällt.",
+      "richtig": false
+     }
+    ],
+    "erklaerung": "Wer welche Arbeit macht, ist in jedem Haushalt anders."
+   },
+   "schritt3": {
+    "frage": "Gibt es in jedem Haushalt Haus- und Familienarbeit?",
+    "positionen": [
+     {
+      "id": "a",
+      "text": "Ja, in jedem Haushalt fällt Arbeit an."
+     },
+     {
+      "id": "b",
+      "text": "Nein, in kleinen Haushalten gibt es keine."
+     }
+    ],
+    "begruendungen": [
+     {
+      "text": "Auch wer allein wohnt, muss kochen und waschen.",
+      "passt_zu": "a"
+     },
+     {
+      "text": "Auch wer allein wohnt, pflegt Kontakt zu anderen.",
+      "passt_zu": "a"
+     },
+     {
+      "text": "Wer allein wohnt, hat viel Zeit und wenig zu tun.",
+      "passt_zu": "b"
+     },
+     {
+      "text": "Ohne Kinder gibt es keine Familienarbeit.",
+      "passt_zu": "b"
+     },
+     {
+      "text": "Im Heft stehen vier Haushaltsformen.",
+      "passt_zu": "keine"
+     }
+    ],
+    "gut": "a",
+    "erklaerung": "In jedem Haushalt gibt es Haus- und Familienarbeit, auch bei einer Person.",
+    "muster": "Ich finde: In jedem Haushalt gibt es Arbeit, weil auch eine Person kochen, waschen und putzen muss."
+   }
+  }
+ ]
+}

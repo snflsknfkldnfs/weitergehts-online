@@ -121,7 +121,19 @@ META = re.compile(r"^(Erzeugt|Quelle|Gedruckt|Von Hand oben|Die Felder|Überschr
                   r"Urteilszeile|Ich hätte|Hefteintrag \(von Hand|Vorne liegt|Am Stundenende|Steht in )", re.I)
 
 
+def heft_aus_werkauftrag(pfad: Path) -> list[dict]:
+    """Hefteintrag aus der Hefteintrag-Folie des Deck-Auftrags (`ue0n.werkauftrag.json`, Rolle `hefteintrag` mit Stichpunkten).
+    WiB6b hat keine Einkleber: Der Eintrag steht dort als Stichpunkte und Merksatz. Nur auf Anforderung der Auswahl
+    (`heft: [{"werkauftrag": "<Datei>"}]`), nie als Vorgabe: GPG-Kurse bleiben unverändert."""
+    d = json.loads(pfad.read_text(encoding="utf-8"))
+    folien = [f for f in d.get("folien", []) if f.get("rolle") == "hefteintrag" and f.get("punkte")]
+    return [{"titel": f.get("ueberschrift") if len(folien) > 1 else None, "kopf": None, "zeilen": [],
+             "antwort": f.get("merksatz") or None, "saetze": [], "punkte": [pk["text"] for pk in f["punkte"]]} for f in folien]
+
+
 def heft_teile(quelle: dict, ordner: Path) -> list[dict]:
+    if quelle.get("werkauftrag"):
+        return heft_aus_werkauftrag(ordner / quelle["werkauftrag"])
     text = (ordner / quelle["datei"]).read_text(encoding="utf-8")
     zeilen = bereich(text, quelle)
     if quelle.get("nur_satz"):
@@ -388,8 +400,8 @@ def stunden_leiste(stunden: list[dict], hier: str | None, aktuell: str | None, z
         z = "p" if probe else "o" if st.get("kommt") else "g"
         kl = f"sf {z}" + (" hier" if st["id"] == hier else "") + (" ist" if st["id"] == aktuell else "")
         titel = "Probe" if probe else st["titel"]
-        inhalt = (f'<span class="d">{e(datum_kurz(st["datum"]))}{" ✓" if z == "g" else ""}</span>'
-                  f'<span class="t">{e(titel)}</span>') if gross else ("✓" if z == "g" else "")
+        inhalt = (f'<span class="d">{e(datum_kurz(st["datum"]))}{" ✓" if z == "g" and not st.get("heute") else ""}</span>'
+                  f'<span class="t">{e(titel)}</span>') if gross else ("✓" if z == "g" and not st.get("heute") else "")
         tip = f'{datum_kurz(st["datum"])} · {titel}'
         offen = (z == "g" and not st.get("ohne_seite")) or probe
         cur = ' aria-current="page"' if st["id"] == aktuell else ""
@@ -706,7 +718,9 @@ def struktur(kurs: str, auswahl: dict, daten: dict, welt: Path) -> tuple[list[di
                 titel = "Probe" if probe else (p_titel or z["thema"] or z["frage"] or "Stunde")
                 titel = titel.replace("**", "").strip()
                 stunden.append({"id": sid_st, "datum": datum, "titel": titel, "frage": p_frage or z["frage"].replace("**", "").strip("„“ "),
-                                "kommt": not gehalten, **({"art": "probe"} if probe else {}),
+                                "kommt": not gehalten and f"{sid}/{sid_st}" not in auswahl.get("zeigen", []),
+                                **({"heute": True} if not gehalten and f"{sid}/{sid_st}" in auswahl.get("zeigen", []) else {}),
+                                **({"art": "probe"} if probe else {}),
                                 **({"_ordner": f.name} if f else {})})
             m = re.search(r"\*\*Sequenzfrage[^*]*\*\*:?\s*(.+)", plan.read_text(encoding="utf-8"))
             frage = auswahl.get("sequenzen", {}).get(sid, {}).get("frage") or (m.group(1).strip().strip("*") if m else "")
@@ -767,6 +781,7 @@ def bauen(kurs: str) -> int:
         hier = gehalten[-1]["id"] if gehalten else None
         offen = [st for st in stunden if not st.get("kommt") or st.get("art") == "probe"]
         gesammelt = []
+        seiten_ids = set()
         for st in gehalten:
             ref = f"{s['id']}/{st['id']}"
             ueber = auswahl.get("stunden", {}).get(ref, {})
@@ -782,12 +797,14 @@ def bauen(kurs: str) -> int:
             teile = []
             for q in a["heft"]:
                 teile += heft_teile(q, ordner)
-            gesammelt.append((st, datum_kurz(st["datum"]), teile))
+            if not (a.get("uebung") or a.get("ohne_heft")):   # Übungsstunde oder Stunde ohne Eintrag: nicht in der Probe-Liste
+                gesammelt.append((st, datum_kurz(st["datum"]), teile))
+            seiten_ids.add(st["id"])
             i = offen.index(st)
             inhalt = stundenseite(s, st, a, ordner, teile, stunden, hier, offen[i - 1] if i else None,
                                   offen[i + 1] if i + 1 < len(offen) else None, ablage, materialien, mat_der_stunde(s, st))
             schreiben(ref, f"{st['titel']} · {k['titel']}", "../../../../../", "../../", inhalt)
-        mit_seite = {st["id"] for st, _, _ in gesammelt}
+        mit_seite = seiten_ids
         for st in stunden:   # gehaltene Stunden ohne Ordner bekommen keinen Link
             if not st.get("kommt") and st.get("art") != "probe" and st["id"] not in mit_seite:
                 st["ohne_seite"] = True
@@ -848,23 +865,57 @@ def bauen(kurs: str) -> int:
     return 0
 
 
+def uebungsseite(s, st, a, ordner, stunden, hier, vor, nach, ablage, materialien) -> str:
+    """Übungsstunde (Auswahl `uebung: [<Material-id>, …]`): statt Heft und Erarbeitung je Werkzeug ein Reiter (Quiz, Fälle),
+    in dem die Seite direkt bedienbar eingebettet ist (wie die Zeitkarte), dazu die Folien. Reiter statt Blattwahl: Die
+    Blattwahl blendet ein `.paar` nur über `hidden` aus, und `.paar { display: grid }` überstimmt das (WiB6b, 16.11.2026)."""
+    unt = "../../../../"
+    dat = "../../dateien/"
+    werkzeuge = [materialien[mid] for mid in a["uebung"]]
+    tabs = "".join(f'<button role="tab" aria-selected="{"true" if n == 0 else "false"}" data-zu="ueben-{n}">{e(m["titel"])}</button>'
+                   for n, m in enumerate(werkzeuge))
+    out = [kopfzeile(stunden, hier, st["id"], vor, nach, s["id"]),
+           f'<p class="dat">{e(datum_kurz(st["datum"]))} · {e(st["titel"])}</p>',
+           f'<h1 class="frage">{e(st.get("frage", st["titel"]))}</h1>',
+           '<div class="reiter" role="tablist">' + tabs
+           + ('<button role="tab" aria-selected="false" data-zu="folien">Folien</button>' if a.get("folien") else "") + "</div>"]
+    for n, m in enumerate(werkzeuge):
+        out.append(f'<section class="tafel" id="ueben-{n}" role="tabpanel"{" hidden" if n else ""}>'
+                   f'<div class="spalte einstieg"><div class="spalte-kopf"><span>{e(m["titel"])}</span>'
+                   f'<button type="button" class="ln" data-voll>groß</button>'
+                   f'<a class="ln" href="{unt}{e(m["pfad"])}" target="_blank" rel="noopener">eigenes Fenster</a></div>'
+                   f'<iframe data-src="{unt}{e(m["pfad"])}" title="{e(m["titel"])}"></iframe></div></section>')   # ohne loading=lazy: WebKit (iPad) lädt einen später eingeblendeten lazy-Rahmen nicht
+    if a.get("folien"):
+        ohne = set(a.get("folien_ohne", []))
+        folien = [f for n, f in enumerate(seiten_bilder(ordner / a["folien"], 1280, 70)) if n + 1 not in ohne]
+        out.append('<section class="tafel" id="folien" role="tabpanel" hidden><div class="folien">'
+                   + "".join(f'<button type="button" class="folie"><img data-kb-src="{dat}{ablage.ablegen(fb, ".jpg")}" '
+                             f'data-kb-typ="image/jpeg" alt="Folie {n + 1}"></button>' for n, fb in enumerate(folien))
+                   + "</div></section>")
+    return "\n".join(out)
+
+
 def stundenseite(s, st, a, ordner, teile, stunden, hier, vor, nach, ablage, materialien, material_der_stunde) -> str:
+    if a.get("uebung"):
+        return uebungsseite(s, st, a, ordner, stunden, hier, vor, nach, ablage, materialien)
     unt = "../../../../"   # von k/<kurs>/<s>/<ue>/ nach unterricht/
     dat = "../../dateien/"
+    heft_da = not a.get("ohne_heft")   # Stunde, in der kein Eintrag geschrieben wurde: ohne Reiter „Heft“
     out = [kopfzeile(stunden, hier, st["id"], vor, nach, s["id"]),
            f'<p class="dat">{e(datum_kurz(st["datum"]))} · {e(st["titel"])}</p>',
            f'<h1 class="frage">{e(st.get("frage", st["titel"]))}</h1>',
            '<div class="reiter" role="tablist">'
-           '<button role="tab" aria-selected="true" data-zu="heft">Heft</button>'
-           '<button role="tab" aria-selected="false" data-zu="erarbeitung">Erarbeitung</button>'
+           + ('<button role="tab" aria-selected="true" data-zu="heft">Heft</button>' if heft_da else "")
+           + f'<button role="tab" aria-selected="{"false" if heft_da else "true"}" data-zu="erarbeitung">Erarbeitung</button>'
            + ('<button role="tab" aria-selected="false" data-zu="folien">Folien</button>' if a.get("folien") else "")
            + "</div>"]
 
-    bilder = [dat + ablage.ablegen(b, ".jpg") for b in einkleber_bilder(a, ordner)]
-    out.append('<section class="tafel" id="heft" role="tabpanel">')
-    out.append(heftseite(st, a, teile, bilder))
-    out.append(ki_knopf("Mit KI lernen", prompt_stunde(st, datum_kurz(st["datum"]), teile)))
-    out.append("</section>")
+    if heft_da:
+        bilder = [dat + ablage.ablegen(b, ".jpg") for b in einkleber_bilder(a, ordner)]
+        out.append('<section class="tafel" id="heft" role="tabpanel">')
+        out.append(heftseite(st, a, teile, bilder))
+        out.append(ki_knopf("Mit KI lernen", prompt_stunde(st, datum_kurz(st["datum"]), teile)))
+        out.append("</section>")
 
     # Erarbeitung: Blatt links, iPad-Seite rechts
     blaetter = []
@@ -879,7 +930,7 @@ def stundenseite(s, st, a, ordner, teile, stunden, hier, vor, nach, ablage, mate
     # Zeitkarten der Stunde stehen am Anfang der Erarbeitung, wie in der Stunde (Einstieg; Lehrkraft 14.11.)
     zeitkarten = [m for m in lose if m["pfad"].startswith("zeitkarte/")]
     lose = [m for m in lose if m not in zeitkarten]
-    out.append('<section class="tafel" id="erarbeitung" role="tabpanel" hidden>')
+    out.append('<section class="tafel" id="erarbeitung" role="tabpanel"' + (" hidden" if heft_da else "") + ">")
     for m in zeitkarten:
         out.append(f'<div class="spalte einstieg"><div class="spalte-kopf"><span>Zum Einstieg: {e(m["titel"])}. '
                    f'Schieb den Regler und schau, was sich ändert.</span>'

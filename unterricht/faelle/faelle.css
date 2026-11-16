@@ -1,0 +1,130 @@
+/* Fälle — geteiltes Werkzeug zum Üben zu Hause: ein kurzer ausgedachter Fall, drei Schritte (finden, erklären, urteilen).
+   Gestaltung „Blatt": Farben, Schrift, Knopf und Blatt kommen aus ../assets/css/material.css (vorher geladen);
+   hier nur das Layout, nur --m-*-Tokens, keine eigenen Farbwerte. Ein Gedanke je Bildschirm.
+   Richtig/falsch nie nur über Farbe: Wort („richtig“, „falsch“) und Rahmenart. */
+
+body.faelle {
+  margin: 0;
+  background: var(--m-grund);
+  color: var(--m-tinte);
+  font: 18px/1.5 var(--m-schrift);
+  -webkit-text-size-adjust: 100%;
+}
+
+body.faelle button { -webkit-tap-highlight-color: transparent; }
+
+.f-huelle { max-width: 720px; margin: 0 auto; padding: 24px 16px 48px; }
+.f-buehne { padding: 22px 22px 26px; }
+
+/* Startbild */
+.f-kopf { margin: 0 0 20px; }
+.f-kopf h1 { margin: 0 0 6px; font-size: 1.9rem; line-height: 1.2; }
+.f-kopf h1:focus { outline: none; }
+.f-satz-start { margin: 0; font-size: 1.1rem; }
+.f-karten { display: grid; gap: 12px; }
+.f-karte { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; width: 100%; min-height: 64px; padding: 10px 16px; text-align: left; font-size: 1.1rem; line-height: 1.3; }
+.f-karte-titel { font-weight: 700; }
+.f-karte-art { font-size: .92rem; color: var(--m-leise); }
+.f-hinweis { margin: 22px 4px 0; font-size: .95rem; }
+.f-hinweis a { color: var(--m-tinte); }
+
+/* Kopf mit Fortschritt */
+.f-fortschritt { margin: 0 0 18px; }
+.f-zaehler { margin: 0 0 6px; font-weight: 700; color: var(--m-leise); }
+.f-balken { display: flex; gap: 6px; }
+.f-teil { flex: 1; height: 10px; border: 1px solid var(--m-linie); border-radius: 5px; background: var(--m-blatt); }
+.f-teil.f-fertig { background: var(--m-tinte); }
+
+/* Überschriften, Text */
+.f-frage { margin: 0 0 16px; font-size: 1.45rem; line-height: 1.3; }
+.f-frage:focus { outline: none; }
+.f-kennzeichnung { margin: 0 0 12px; padding: 4px 10px; display: inline-block; border: 1px solid var(--m-linie); border-radius: var(--m-ecke); font-size: .9rem; color: var(--m-leise); }
+.f-einleitung { margin: 0 0 16px; font-size: 1.1rem; }
+.f-text { list-style: none; margin: 0 0 22px; padding: 0; display: grid; gap: 10px; }
+.f-text li { padding: 8px 12px; border-left: 5px solid var(--m-linie); background: var(--m-blatt); }
+.f-von { display: block; font-size: .9rem; font-weight: 700; color: var(--m-leise); }
+.f-gross { width: 100%; min-height: 64px; font-size: 1.2rem; }
+
+/* Schritt 1: Zeilen antippen, Kategorie wählen */
+.f-gewaehlt-zaehler { margin: 0 0 12px; font-weight: 700; color: var(--m-leise); min-height: 1.5em; }
+.f-einheiten { list-style: none; margin: 0 0 18px; padding: 0; display: grid; gap: 12px; }
+.f-zeile {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  width: 100%; min-height: 64px; padding: 10px 14px;
+  border: 2px solid var(--m-tinte); border-radius: var(--m-ecke); background: var(--m-blatt); color: var(--m-tinte);
+  font: inherit; font-size: 1.05rem; line-height: 1.3; text-align: left; cursor: pointer;
+}
+.f-zeile[aria-expanded="true"] { background: var(--m-notiz); }
+.f-zeile[aria-disabled="true"] { cursor: default; }
+.f-zeile-text { flex: 1; }
+.f-tag { flex: none; max-width: 40%; padding: 1px 8px; border: 2px dashed var(--m-leise); border-radius: var(--m-ecke); font-size: .88rem; font-weight: 700; color: var(--m-leise); text-align: center; }
+.f-tag.f-tag-gesetzt { border-style: solid; border-color: var(--m-tinte); color: var(--m-tinte); }
+.f-marke { flex: none; padding: 1px 8px; border: 2px solid currentColor; border-radius: var(--m-ecke); font-size: .92rem; font-weight: 700; }
+.f-wahl { display: grid; gap: 8px; margin: 8px 0 4px 12px; padding-left: 12px; border-left: 5px solid var(--m-tinte); }
+.f-wahl[hidden] { display: none; }
+.f-kat {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 0;
+  width: 100%; min-height: 64px; padding: 8px 14px;
+  border: 2px solid var(--m-tinte); border-radius: var(--m-ecke); background: var(--m-blatt); color: var(--m-tinte);
+  font: inherit; text-align: left; cursor: pointer;
+}
+.f-kat:active { background: var(--m-notiz); }
+.f-kat-name { font-weight: 700; font-size: 1.05rem; }
+.f-kat-frage { font-size: .92rem; color: var(--m-leise); }
+.f-richtig { border: 4px solid var(--m-gut); color: var(--m-gut); }
+.f-falsch { border: 4px dashed var(--m-rot); color: var(--m-rot); }
+.f-info { margin: 6px 0 0 12px; }
+.f-richtig-ist { margin: 0 0 2px; font-weight: 700; }
+.f-pruefen { margin-top: 6px; display: grid; gap: 10px; }
+.f-s1-ergebnis { margin: 0; font-size: 1.3rem; font-weight: 700; }
+
+/* Schritt 2 und 3: Antworten, Gründe */
+.f-position { margin: 0 0 14px; padding: 8px 12px; border-left: 5px solid var(--m-tinte); background: var(--m-notiz); font-weight: 600; }
+.f-antworten, .f-gruende { display: grid; gap: 12px; margin: 0 0 6px; }
+.f-antwort {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  width: 100%; min-height: 64px; padding: 10px 16px;
+  border: 2px solid var(--m-tinte); border-radius: var(--m-ecke); background: var(--m-blatt); color: var(--m-tinte);
+  font: inherit; font-size: 1.08rem; font-weight: 600; line-height: 1.3; text-align: left; cursor: pointer;
+}
+.f-antwort:active { background: var(--m-notiz); }
+.f-antwort[aria-disabled="true"] { cursor: default; }
+.f-antwort[aria-disabled="true"]:not(.f-ist-richtig):not(.f-ist-falsch):not(.f-gewaehlt) { opacity: .6; }
+.f-antwort[aria-pressed="true"] { background: var(--m-notiz); border-width: 4px; }
+.f-ist-richtig { border: 4px solid var(--m-gut); color: var(--m-gut); }
+.f-ist-falsch { border: 4px dashed var(--m-rot); color: var(--m-rot); }
+.f-gewaehlt { background: var(--m-notiz); }
+
+/* Rückmeldung */
+.f-rueck { margin-top: 16px; }
+.f-urteil { margin: 0 0 4px; font-size: 1.2rem; font-weight: 700; }
+.f-urteil-richtig { color: var(--m-gut); }
+.f-urteil-falsch { color: var(--m-rot); }
+.f-erklaerung { margin: 0 0 14px; padding: 10px 14px; border-left: 5px solid var(--m-tinte); background: var(--m-notiz); }
+.f-muster { margin: 14px 0; padding: 12px 14px; border: 2px solid var(--m-tinte); border-radius: var(--m-ecke); background: var(--m-blatt); }
+.f-muster h3 { margin: 0 0 6px; font-size: 1rem; }
+.f-muster p { margin: 0; font-size: 1.1rem; }
+.f-weiter { margin-top: 6px; }
+
+/* Ende */
+.f-ergebnis { margin: 0 0 12px; font-size: 1.8rem; line-height: 1.2; }
+.f-ergebnis:focus { outline: none; }
+.f-zeilen-ende { margin: 0 0 18px; display: grid; gap: 4px; font-size: 1.1rem; }
+.f-zeilen-ende p { margin: 0; }
+.f-falsche h3 { margin: 0 0 8px; font-size: 1.1rem; }
+.f-falsche ul { list-style: none; margin: 0 0 18px; padding: 0; display: grid; gap: 10px; }
+.f-falsche li { padding: 10px 14px; border: 1px solid var(--m-linie-hell); border-radius: var(--m-ecke); background: var(--m-blatt); }
+.f-falsch-frage { margin: 0 0 4px; font-weight: 600; }
+.f-falsch-loesung { margin: 0; }
+.f-ende-knoepfe { display: grid; gap: 10px; }
+
+/* Schmales Gerät (Phone hochkant) */
+@media (max-width: 520px) {
+  .f-huelle { padding: 12px 10px 32px; }
+  .f-buehne { padding: 16px 14px 20px; }
+  .f-kopf h1 { font-size: 1.6rem; }
+  .f-frage { font-size: 1.25rem; }
+  .f-zeile { flex-wrap: wrap; font-size: 1rem; }
+  .f-tag { max-width: 100%; }
+  .f-antwort { font-size: 1.02rem; }
+}

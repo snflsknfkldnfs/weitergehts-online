@@ -13,7 +13,8 @@
     "gpg9a": { "fach": "gpg", "jahrgang": 9, "titel": "GPG 9a",
    "klassenbereich": true },
     "inf6b": { "fach": "inf", "jahrgang": 6, "titel": "Inf 6b" },
-    "wib6b": { "fach": "wib", "jahrgang": 6, "titel": "WiB 6b" }
+    "wib6b": { "fach": "wib", "jahrgang": 6, "titel": "WiB 6b",
+   "klassenbereich": true }
   },
   "sequenzen_comment": "Kurse mit Eintrag hier werden auf ihrer Kursseite nach Sequenzen und Stunden gegliedert (Schuelersicht, angelehnt an die Leiste der Matrixe); jedes Kursmaterial braucht dann \"stunde\": \"s01/ue09-10\" (oder \"s01\" = zur Sequenz ohne feste Stunde). Stunden mit \"kommt\": true sind noch nicht gehalten, \"art\": \"probe\" ist ein Probentermin. Quelle der Stunden: Sequenzplaene im Kurs-Ordner, nach jeder Stunde fortschreiben.",
   "sequenzen": {
@@ -261,6 +262,10 @@
       "titel": "Quiz: Arbeit",
       "art": "werkzeug", "fach": "wib", "jahrgang": 6,
       "kurse": ["wib6b"], "thema": "Arbeit", "datum": "2026-11-10" },
+    { "id": "faelle-arbeit", "pfad": "faelle/arbeit/",
+      "titel": "Fälle: Arbeit",
+      "art": "werkzeug", "fach": "wib", "jahrgang": 6,
+      "kurse": ["wib6b"], "thema": "Arbeit", "datum": "2026-11-17" },
 
     { "id": "tool-inf-datenspuren", "pfad": "datenspuren/",
       "titel": "Datenspuren — Fälle: Wer steckt hinter der Nummer?",

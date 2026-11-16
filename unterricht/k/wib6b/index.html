@@ -1,161 +1,28 @@
 <!DOCTYPE html>
-<!-- GENERIERT von tools/kurse/build.py aus unterricht/kurse.json — nicht von Hand editieren, sondern: make kurse -->
-<html lang="de" class="mode-dark">
+<!-- KLASSENBEREICH: verschlüsselt erzeugt von tools/kurse/klassenbereich.py — nicht von Hand editieren -->
+<html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex">
-<title>WiB 6b · weitergehts.online</title>
-<link rel="stylesheet" href="../../../assets/css/fonts.css?v=1.2">
-<link rel="stylesheet" href="../../../assets/css/tokens.css?v=1.2">
-<link rel="stylesheet" href="../../../assets/css/wg.css?v=1.2">
-<script>
-  (function(){ try{ var m=localStorage.getItem('wg-mode'); var r=document.documentElement;
-    r.classList.remove('mode-light','mode-dark'); r.classList.add(m==='light'?'mode-light':'mode-dark'); }catch(e){} })();
-</script>
-<style>
-  .hub-list { list-style: none; }
-  .hub-list li { border-top: 1px solid var(--rule); }
-  .hub-list li:last-child { border-bottom: 1px solid var(--rule); }
-  .hub-list a { display: grid; grid-template-columns: 4.5rem 1fr auto; gap: 0 1.2rem;
-                align-items: baseline; padding: 14px 4px;
-                font-family: var(--serif); font-size: 1.15rem; }
-  .hub-list a:hover { color: var(--accent); }
-  /* Jahrgang/Datum und Format als ruhige Marken, nicht als zweite Überschrift */
-  .hub-list .stufe, .hub-list .art { font-family: var(--ui); font-size: .72rem;
-                letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); }
-  .hub-list .stufe { font-variant-numeric: tabular-nums; }
-  .hub-list .art { white-space: nowrap; }
-  .gruppe { margin-top: 2.5rem; }
-  .klasse { margin-top: 2.8rem; font-family: var(--ui); font-weight: 600; font-size: 1.35rem;
-            letter-spacing: -.02em; }
-  .unter { margin: 1.6rem 0 .4rem; }
-  /* Fach-Reiter: Optik des Hell/Dunkel-Schalters (Haarlinie, aktiver Reiter invertiert).
-     Ohne JS bleiben alle Panels sichtbar und die Reiterleiste versteckt. */
-  .reiter { display: none; flex-wrap: wrap; border: 1px solid var(--hairline); width: fit-content;
-            margin-top: 2rem; }
-  .js .reiter { display: flex; }
-  .reiter button { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
-            background: transparent; border: none; color: var(--ink-soft); padding: 9px 16px; cursor: pointer; }
-  .reiter button:hover { color: var(--accent); }
-  .reiter button[aria-selected="true"] { background: var(--ink); color: var(--paper); }
-  .reiter button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-  .js .fach[hidden], .js .klassen-panel[hidden] { display: none; }
-  /* Zweite Ebene (Klassen): leiser als die Fach-Reiter — Text-Reiter mit Unterstrich, ohne Rahmen */
-  .reiter.klassen { border: none; gap: 22px; margin-top: 1.6rem; border-bottom: 1px solid var(--rule);
-            width: auto; }
-  .reiter.klassen button { padding: 8px 0; border-bottom: 2px solid transparent; margin-bottom: -1px; }
-  .reiter.klassen button[aria-selected="true"] { background: transparent; color: var(--ink);
-            border-bottom-color: var(--accent); }
-  .js .klassen-panel > .klasse { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-  .js .klassen-panel > .unter:first-of-type { margin-top: 1.4rem; }
-  .fach > h2 { margin-top: 2.5rem; }
-  .js .fach > h2 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-  @media (max-width: 560px) {
-    .hub-list a { grid-template-columns: 1fr auto; gap: 2px .8rem; }
-    .hub-list .stufe { grid-column: 1; grid-row: 1; }
-    .hub-list .art { grid-column: 2; grid-row: 1; }
-    .hub-list .titel { grid-column: 1 / -1; grid-row: 2; }
-  }
-</style>
+<meta name="robots" content="noindex, nofollow">
+<title>WiB 6b · Unser Jahr</title>
+<link rel="stylesheet" href="../../../unterricht/k/klassenbereich.css?v=1.6">
 </head>
-<body class="halo">
-<div class="tapete" aria-hidden="true"></div>
-<div class="grain" aria-hidden="true"></div>
-
-<header class="topbar">
-  <div class="wrap">
-    <a class="brand" href="../../../index.html"><span class="sq"></span></a>
-    <nav class="nav">
-      <a href="../../../profil/">Profil</a>
-      <a href="../../../unterricht/">Unterricht</a>
-    </nav>
-    <div class="toggle" role="group" aria-label="Hell- oder Dunkelmodus">
-      <button id="m-light" aria-pressed="false">Hell</button>
-      <button id="m-dark" aria-pressed="true">Dunkel</button>
-    </div>
-  </div>
-</header>
-
-<main>
-  <section class="block">
-    <div class="wrap">
-      <span class="cap">WiB 6b · Wirtschaft und Beruf · 2026/27</span>
-      <h1>Unser Material</h1>
-
-      <h2 class="cap gruppe">Zuletzt</h2>
-      <ul class="hub-list">
-        <li>
-          <a href="../../verteilen/wochenplan-rennen/">
-            <span class="stufe">10.11.</span>
-            <span class="titel">Wochenplan-Rennen</span>
-            <span class="art">Werkzeug</span>
-          </a>
-        </li>
-        <li>
-          <a href="../../quiz/arbeit/">
-            <span class="stufe">10.11.</span>
-            <span class="titel">Quiz: Arbeit</span>
-            <span class="art">Werkzeug</span>
-          </a>
-        </li>
-      </ul>
-
-      <h2 class="cap gruppe">Arbeit</h2>
-      <ul class="hub-list">
-        <li>
-          <a href="../../verteilen/wochenplan-rennen/">
-            <span class="stufe">10.11.</span>
-            <span class="titel">Wochenplan-Rennen</span>
-            <span class="art">Werkzeug</span>
-          </a>
-        </li>
-        <li>
-          <a href="../../quiz/arbeit/">
-            <span class="stufe">10.11.</span>
-            <span class="titel">Quiz: Arbeit</span>
-            <span class="art">Werkzeug</span>
-          </a>
-        </li>
-        <li>
-          <a href="../../verteilen/hausarbeit-teilen/">
-            <span class="stufe">27.10.</span>
-            <span class="titel">Wer macht was bis 14:30?</span>
-            <span class="art">Werkzeug</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </section>
+<body>
+<header class="kopf"><a class="kurs" href="./">WiB 6b</a><span class="rechts"><button type="button" id="kb-abmelden" hidden>Abmelden</button></span></header>
+<main id="kb" data-kurs="wib6b" data-salz="agGxexFb3Kqzsi8/Zfz8aw==" data-iter="600000">
+  <form class="tor" id="kb-tor" hidden>
+    <h1>WiB 6b</h1>
+    <p>Gib das Passwort ein, das du in der Stunde bekommen hast. Dein Gerät merkt es sich.</p>
+    <label for="kb-pw">Passwort</label>
+    <div class="tor-zeile"><input id="kb-pw" type="password" autocomplete="current-password" autocapitalize="none" spellcheck="false" required><button type="submit" class="knopf-haupt">Öffnen</button></div>
+    <p class="fehler" id="kb-fehler" role="alert"></p>
+  </form>
+  <noscript><p>Diese Seite braucht JavaScript.</p></noscript>
+  <div id="kb-seite"></div>
 </main>
-
-<footer id="kontakt">
-  <div class="wrap foot">
-    <span class="fmark">weitergehts.online</span>
-    <span class="fline">
-      <a href="../../../index.html">Start</a>
-      <a href="../../../profil/">Profil</a>
-    </span>
-    <span class="fline">
-      <a href="../../../impressum/">Impressum</a>
-      <a href="../../../datenschutz/">Datenschutz</a>
-    </span>
-    <span class="fline">© 2026</span>
-  </div>
-</footer>
-
-<script>
-(function(){
-  var root=document.documentElement;
-  var bL=document.getElementById('m-light'), bD=document.getElementById('m-dark');
-  function paint(){ var d=root.classList.contains('mode-dark');
-    bL.setAttribute('aria-pressed', d?'false':'true'); bD.setAttribute('aria-pressed', d?'true':'false'); }
-  function set(d){ root.classList.remove('mode-light','mode-dark'); root.classList.add(d?'mode-dark':'mode-light');
-    try{ localStorage.setItem('wg-mode', d?'dark':'light'); }catch(e){} paint(); }
-  bL.addEventListener('click',function(){ set(false); });
-  bD.addEventListener('click',function(){ set(true); });
-  paint();
-})();
-</script>
+<footer class="fuss"><a href="../../../impressum/">Impressum</a> · <a href="../../../datenschutz/">Datenschutz</a></footer>
+<script type="application/octet-stream" id="kb-inhalt">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</script>
+<script src="../../../unterricht/k/klassenbereich.js?v=1.3"></script>
 </body>
 </html>

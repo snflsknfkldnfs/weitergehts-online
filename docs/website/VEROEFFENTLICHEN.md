@@ -42,6 +42,7 @@ Erzeuger schreiben mit `WEBSITE_REPO=<dieser Arbeitsbaum>` (Konvention aus `welt
 | `werkzeug` — Begleiten: die Stunde Schritt für Schritt am iPad | `unterricht/begleiten/<slug>/` (`index.html` + `data.json` + `bilder/`) | `begleiten.js` / `begleiten.css`; Hülle aus `tools/begleiten/seite_vorlage.html` | `GPG8a/S01_weimar/UE13_2026-10-30_…/_render/begleiten_bauen.py` |
 | `werkzeug` — Zeitkarte: Ereignisse auf einer Karte mit Zeitregler (auch Stufenregler für Werte) | `unterricht/zeitkarte/<slug>/` (`index.html` + `data.json` + `bilder/`) | `zeitkarte.js` / `zeitkarte.css`; Hülle aus `tools/zeitkarte/seite_vorlage.html` | `GPG8a/S01_weimar/UE14-15_2026-11-10_krisenjahr-1923/_render/seite_bauen.py` (`zeitkarte_bauen`) |
 | `werkzeug` — Quiz: Fragen zum Üben zu Hause (Mehrfachwahl, „stimmt / stimmt nicht“; Runden zu zehn, je Stunde, „Falsche noch einmal“) | `unterricht/quiz/<slug>/` (`index.html` + `data.json`) | `quiz.js` / `quiz.css`; Hülle aus `unterricht/quiz/arbeit/index.html`; `data.json` nur vom Bauskript aus einem Fragen-Pool | `WiB6b/S01_arbeit/quiz/quiz_bauen.py` (aus `pool.tsv`, geprüft mit `quiz_pruefen.py`) |
+| `werkzeug` — Fälle: ein ausgedachter Fall zum Üben zu Hause (Zeilen zuordnen, Antwort wählen, Position beurteilen) | `unterricht/faelle/<slug>/` (`index.html` + `data.json`) | `faelle.js` / `faelle.css`; Hülle aus `unterricht/faelle/arbeit/index.html`; `data.json` nur vom Bauskript aus den Fall-Dateien | `WiB6b/S01_arbeit/faelle/faelle_bauen.py` (aus `F0n_*.json`, geprüft mit `faelle_pruefen.py`) |
 | `werkzeug` — Folien: die Folien einer Stunde als Webseite für den Beamer (Pfeiltasten, Aufdecken, Tippfeld, F = Vollbild, N = Notiz), wo das Gerät der Lehrkraft nicht an den Beamer geht | `unterricht/folien/<slug>/` (`index.html` + `data.json`) | `folien.js` / `folien.css`; Hülle aus `tools/folien/seite_vorlage.html`; `data.json` nur vom Bauskript der Stunde | `Inf6b/S02_datenspuren/UE05_2026-11-13_…/_render/folien_bauen.py` |
 | `escape-game` | `unterricht/escape-games/<id>/` | `escape-engine.js` | Generator-Repo, dann `RUNBUCH.md` L3 |
 | `anleitung` · `recherche` · `werkzeug` (Einzelseite) | `unterricht/<fach>/<slug>.html` oder `unterricht/<slug>/` | Site-Kette `fonts → tokens → wg` | `unterricht/gpg/wochenrueckblick.html`, `unterricht/smv/` |
@@ -141,7 +142,7 @@ Commit-Betreff mit Kurs und Stunde (Commits sind nicht öffentlich, die Seite sc
 
 Spec: `specs/2026-11-14-klassenbereich-design.md`. Ein Kurs mit Klassenbereich hat statt der öffentlichen Kursseite eine
 verschlüsselte: Jahr, Stunden, Heftseite mit Einkleber, Blätter neben iPad-Seiten, Folien, Probenseite. Heute: GPG 9a (live),
-GPG 8a (Entwurf).
+GPG 8a (Entwurf), WiB6b (Entwurf, 16.11.2026: Hefteinträge aus dem Deck-Auftrag, Übungsstunde mit Quiz und Fällen).
 
 **Einen Kurs anschließen (einmal):**
 1. Auswahl-Datei anlegen, nur mit dem Nötigen: `tools/kurse/klassenbereich/<kurs>.json`

@@ -72,6 +72,10 @@ Pflicht: `kurs`, `welt`. Alles andere sind Ausnahmen; die Datei enthält nur Pfa
 | `sequenzen.<id>.ordner` / `.frage` | Ordner oder Leitfrage einer Sequenz, wenn die Ableitung sie nicht findet |
 | `stunden.<seq/ue>` | überschreibt Feld für Feld, was `stunde_auto` ableitet: `ordner`, `heft` (Liste `{datei, abschnitt?, bis?, nur_satz?, umklappen?, saetze?}`), `heft_bild` (`{bild}` · `{pdf}` · `{bau: [Befehl], …}`), `antwort_im_einkleber`, `hinweis`, `blaetter` (`{datei, titel, art, zu: [Material-ids]}`), `folien`, `folien_ohne` |
 
+**Weitere Felder (WiB6b, 16.11.2026; ändern nichts für Kurse, die sie nicht setzen, belegt: GPG 8a und 9a bauen byte-gleich):**
+`zeigen` (Liste wie `["s01/ue08"]`): die aktuelle, noch nicht gehaltene Stunde erscheint schon, ohne ✓ (Klasse `heute`); sonst erscheint eine Stunde erst mit ✅ oder `NACHBEREITUNG.md`.
+Je Stunde: `heft: [{"werkauftrag": "ue0n.werkauftrag.json"}]` liest den Hefteintrag aus der Hefteintrag-Folie des Deck-Auftrags (Stichpunkte, Merksatz; für Kurse ohne Einkleber, nur auf Anforderung); `ohne_heft: true` lässt den Reiter „Heft“ weg und nimmt die Stunde aus „Für die Probe lernen“; `uebung: [<Material-id>, …]` macht die Stunde zur Übungsstunde: ein Reiter je Werkzeug-Seite (Quiz, Fälle), direkt eingebettet bedienbar, dazu die Folien; kein Heft, keine Erarbeitung, nicht in der Probenliste.
+
 Beispiel für einen Bau-Befehl: der Einkleber vom 09.10. (GPG 9a) hat kein Lösungsbild; `einkleber_fuellen.py` setzt ihn mit dem
 Werkzeug der Stunde und der Lösung neu (`{ordner}` = Stundenordner, das Ziel hängt der Generator an).
 
@@ -96,5 +100,6 @@ oder nach Weitergabe wechseln.
 ## 8 Offen
 
 - Lernbegleiter als eigene Funktion (Probe-Training über die Sequenz, Fortschritt), nicht nur ein Knopf.
-- Inf6b, WiB6b, E5: Ableitung prüfen (andere Hefteinträge, keine Einkleber); erst mit Entscheid der Lehrkraft je Kurs.
+- WiB6b angeschlossen (16.11.2026, Entscheid der Lehrkraft). Inf6b, E5: Ableitung prüfen, je Kurs mit Entscheid der Lehrkraft.
+- **Offener Fehler (nicht behoben):** `.paar { display: grid }` in `klassenbereich.css` überstimmt `hidden`; die Blattwahl blendet ein zweites Blatt deshalb nicht aus. Behebung (`.paar[hidden] { display: none }`) braucht neue CSS-Version und Neubau aller Kurse, eigener Schritt.
 - Blatt der Kollegin (GPG 9a, 01.10.): nur mit ihrem Okay.

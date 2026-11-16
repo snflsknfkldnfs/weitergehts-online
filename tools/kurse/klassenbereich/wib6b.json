@@ -1,0 +1,16 @@
+{
+  "kurs": "wib6b",
+  "welt": "/Users/paulad/Schule_2026-27/Unterrichtsplanung26_27/welt/WiB6b",
+  "ausblenden": [],
+  "zeigen": ["s01/ue08"],
+  "stunden": {
+    "s01/ue01": {"heft": [{"werkauftrag": "ue01.werkauftrag.json"}], "folien": "ue01.pdf"},
+    "s01/ue02": {"heft": [{"werkauftrag": "ue02.werkauftrag.json"}], "folien": "ue02.pdf"},
+    "s01/ue03": {"heft": [{"werkauftrag": "ue03.werkauftrag.json"}], "folien": "ue03.pdf"},
+    "s01/ue04": {"heft": [], "ohne_heft": true},
+    "s01/ue05": {"heft": [], "ohne_heft": true},
+    "s01/ue06": {"heft": [{"werkauftrag": "ue06.werkauftrag.json"}]},
+    "s01/ue07": {"heft": [{"werkauftrag": "ue07.werkauftrag.json"}]},
+    "s01/ue08": {"heft": [], "uebung": ["quiz-arbeit", "faelle-arbeit"]}
+  }
+}
