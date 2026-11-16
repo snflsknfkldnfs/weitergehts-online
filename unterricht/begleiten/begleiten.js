@@ -32,6 +32,13 @@
  * Fokus (seit 1.5, 2026-11-09): Die Reiter erscheinen erst, wenn ein zweiter Schritt offen ist. Ein Schritt kann
  *   "code_nach_seite": "<seiten-id>" tragen: Das Codefeld für den nächsten Schritt steht dann nur unter dieser Seite,
  *   und mit "code_label" (kurz, etwa „Code:“) erscheint es zurückhaltend gesetzt.
+ * Regler (seit 1.8 / 2026-11-16): MATERIAL.sitze = { "id", "titel", "teile": [ { "id", "name", "lager": "links|fuer|rechts|andere" } ] (von links nach rechts),
+ *   "stufen": [ { "label", "gesamt", "n": { "<teil-id>": Sitze } } ], "summen": [ { "name", "lager", "teile": [ "<teil-id>" ] } ], "legende": "…" }.
+ *   Ein Regler über die Stufen (Wahlen nacheinander): Die Balken wachsen und schrumpfen, die Mehrheitsmarke (mehr als die Hälfte) steht fest
+ *   in der Mitte; unter dem Balken stehen die Summen. Dazu „Abspielen“ (läuft einmal durch). Merkt sich die Stufe wie alles hier.
+ * Wort für die Reiter (seit 1.8): "reiter_wort": "Bereich" in data.json statt „Schritt“ (Reiter, Weiter-Knopf, Codefeld).
+ * Blatt-Hinweis (seit 1.8): ein Schritt kann "blatt": "…" tragen (Text unter dem Auftrag: wo auf dem Arbeitsblatt die Aufgaben stehen);
+ *   mit "fragen": [] entfällt der Fragenkasten auf dem iPad, die Antworten stehen auf Papier.
  * Ohne Reiter (seit 1.7): "reiter": false in data.json blendet die Reiter immer aus; der Weg in den nächsten Schritt
  *   führt dann nur über das Codefeld bzw. danach über "weiter_label" (etwa „Zu deiner Rolle →“), zurück über einen
  *   dezenten Knopf unten im späteren Schritt.
@@ -163,6 +170,75 @@
     if (p.unterschrift) fig.appendChild(el('figcaption', 'm-leise', p.unterschrift));
     return fig;
   }
+  /* ── Regler über die Sitzverteilung (seit 1.8) ── */
+  function sitzeBauen(sz) {
+    var fig = el('figure', 'b-sitze');
+    var key = sz.id || 'sitze';
+    S.sitze = S.sitze || {};
+    var n = sz.stufen.length;
+    var i = Math.max(0, Math.min(S.sitze[key] || 0, n - 1));
+    var kopf = el('p', 'b-sitze-kopf');
+    var balkenRahmen = el('div', 'b-sitze-rahmen');
+    var balken = el('div', 'b-sitze-balken');
+    balken.setAttribute('role', 'img');
+    var teile = {};
+    sz.teile.forEach(function (t) {
+      var d = el('div', 'b-sitze-teil lager-' + t.lager);
+      var nm = el('span', 'b-sitze-name', t.name), zahl = el('strong', 'b-sitze-zahl', '');
+      d.appendChild(nm); d.appendChild(zahl);
+      balken.appendChild(d); teile[t.id] = { d: d, zahl: zahl, nm: nm };
+    });
+    balkenRahmen.appendChild(balken);
+    var marke = el('div', 'b-sitze-marke');
+    var markeText = el('span', 'b-sitze-markentext', '');
+    marke.appendChild(markeText);
+    balkenRahmen.appendChild(marke);
+    var regler = el('input', 'b-sitze-regler');
+    regler.type = 'range'; regler.min = 0; regler.max = n - 1; regler.step = 1; regler.value = i;
+    regler.setAttribute('aria-label', 'Wahl wählen: ' + sz.stufen.map(function (x) { return x.label; }).join(', '));
+    var skala = el('div', 'b-sitze-skala');
+    var tasten = sz.stufen.map(function (x, k) {
+      var b = knopf(x.label); b.addEventListener('click', function () { setzen(k); }); skala.appendChild(b); return b;
+    });
+    var abspielen = knopf('Abspielen ▶');
+    var summenZeile = el('ul', 'b-sitze-summen');
+    var timer = null;
+    function stoppen() { if (timer) { clearInterval(timer); timer = null; abspielen.textContent = 'Abspielen ▶'; } }
+    function setzen(k) {
+      i = k; regler.value = k; S.sitze[key] = k; sichern();
+      var st = sz.stufen[k];
+      kopf.textContent = st.label + ': ' + st.gesamt + ' Sitze im Reichstag';
+      sz.teile.forEach(function (t) {
+        var v = st.n[t.id] || 0, pct = 100 * v / st.gesamt, x = teile[t.id];
+        x.d.style.flexBasis = pct + '%';
+        x.zahl.textContent = v; x.nm.hidden = pct < 7; x.zahl.hidden = pct < 3;
+        x.d.title = t.name + ': ' + v + ' Sitze';
+      });
+      var mehr = Math.floor(st.gesamt / 2) + 1;
+      markeText.textContent = 'Mehrheit ab ' + mehr + ' Sitzen';
+      balken.setAttribute('aria-label', st.label + ': ' + sz.teile.map(function (t) { return t.name + ' ' + (st.n[t.id] || 0); }).join(', ') + '. Mehrheit ab ' + mehr + ' Sitzen.');
+      summenZeile.textContent = '';
+      sz.summen.forEach(function (sm) {
+        var sum = 0; sm.teile.forEach(function (id) { sum += st.n[id] || 0; });
+        var li = el('li', 'b-sitze-summe lager-' + sm.lager);
+        li.appendChild(el('span', null, sm.name)); li.appendChild(el('strong', null, String(sum)));
+        summenZeile.appendChild(li);
+      });
+      tasten.forEach(function (b, j) { b.setAttribute('aria-pressed', String(j === k)); });
+    }
+    regler.addEventListener('input', function () { stoppen(); setzen(Number(regler.value)); });
+    abspielen.addEventListener('click', function () {
+      if (timer) { stoppen(); return; }
+      setzen(0); abspielen.textContent = 'Anhalten ■';
+      timer = setInterval(function () { if (i >= n - 1) { stoppen(); return; } setzen(i + 1); }, 2200);
+    });
+    fig.appendChild(kopf); fig.appendChild(balkenRahmen); fig.appendChild(regler); fig.appendChild(skala);
+    var zeile = el('div', 'b-sitze-zeile'); zeile.appendChild(abspielen); fig.appendChild(zeile);
+    fig.appendChild(summenZeile);
+    if (sz.legende) fig.appendChild(el('figcaption', 'm-leise', sz.legende));
+    setzen(i);
+    return fig;
+  }
   function materialBauen(m) {
     var art = el('article', 'b-material m-blatt');
     var kopf = el('header', 'b-mkopf');
@@ -174,6 +250,7 @@
     if (m.video) art.appendChild(videoBauen(m.video));
     if (m.audio) art.appendChild(audioBauen(m.audio));
     if (m.einbettung) art.appendChild(einbettungBauen(m.einbettung));
+    if (m.sitze) art.appendChild(sitzeBauen(m.sitze));
     if (m.plakat && m.plakat.oben) art.appendChild(plakatBauen(m.plakat));
     var wortlaut = el('div', 'b-text');
     (m.absaetze || []).forEach(function (a) { wortlaut.appendChild(absatzBauen(a, glossar)); });
@@ -329,7 +406,7 @@
     reiter.textContent = '';
     reiter.hidden = S.offen < 1 || D.reiter === false;   /* ein einziger Schritt braucht keine Reiter; sie lenken nur ab */
     D.schritte.slice(0, S.offen + 1).forEach(function (s, i) {
-      var k = knopf('Schritt ' + (i + 1));
+      var k = knopf((D.reiter_wort || 'Schritt') + ' ' + (i + 1));
       k.setAttribute('aria-pressed', String(i === nr));
       k.addEventListener('click', function () { S.schritt = i; sichern(); zeichnen(); window.scrollTo(0, 0); });
       reiter.appendChild(k);
@@ -339,6 +416,7 @@
     var kopf = el('header', 'b-schrittkopf');
     if (s.titel) kopf.appendChild(el('h2', null, s.titel));
     if (s.auftrag) kopf.appendChild(el('p', 'b-auftrag', s.auftrag));
+    if (s.blatt) kopf.appendChild(el('p', 'b-blatt', s.blatt));
     if (s.titel || s.auftrag) wurzel.appendChild(kopf);
     if (s.typ === 'sortieren') sortierenBauen(s, wurzel);
     else if (s.typ === 'rolle') rolleBauen(s, wurzel);
@@ -355,12 +433,12 @@
       var z = el('div', 'b-weiter');
       if (nr < S.offen) {
         if (s.code_label) z.className = 'b-weiter b-weiter-dezent';
-        var weiter = knopf(s.weiter_label || ('Weiter zu Schritt ' + (nr + 2)));
+        var weiter = knopf(s.weiter_label || ('Weiter zu ' + (D.reiter_wort || 'Schritt') + ' ' + (nr + 2)));
         weiter.addEventListener('click', function () { S.schritt = nr + 1; sichern(); zeichnen(); window.scrollTo(0, 0); });
         z.appendChild(weiter);
       } else {
         if (s.code_label) z.className = 'b-weiter b-weiter-dezent';
-        z.appendChild(codeFeld(s.code_label || 'Code für den nächsten Schritt: ', D.schritte[nr + 1].code, function () {
+        z.appendChild(codeFeld(s.code_label || ('Code für den nächsten ' + (D.reiter_wort || 'Schritt') + ': '), D.schritte[nr + 1].code, function () {
           S.offen = nr + 1; S.schritt = nr + 1; sichern(); zeichnen(); window.scrollTo(0, 0);
         }));
       }
