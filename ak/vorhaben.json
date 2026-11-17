@@ -17,7 +17,7 @@
  "jetzt": "sichten",
  "stationen": [
   { "id": "klaeren", "zeit": "November", "titel": "Klären im Arbeitskreis", "zeile": "Auftrag, Leitbild und Reihenfolge" },
-  { "id": "sichten", "zeit": "November", "titel": "Rollen sichten im Arbeitskreis", "zeile": "Von 28 möglichen Rollen bleiben 23 im Vorschlag" },
+  { "id": "sichten", "zeit": "November", "titel": "Rollen sichten im Arbeitskreis", "zeile": "Welche Rollen passen zu unserer Schule?" },
   { "id": "kollegium", "zeit": "Ende November", "titel": "Rückmeldung aus dem Kollegium", "zeile": "Karten im Aushang und online, anonyme Rückmeldung je Rolle" },
   { "id": "schueler", "zeit": "Dezember", "titel": "Stimmen der Schülerinnen und Schüler", "zeile": "zu den Rollen, die das Kollegium vorausgewählt hat" },
   { "id": "auswahl", "zeit": "Januar", "titel": "Zwei bis drei Pilotrollen auswählen", "zeile": "mit Ansprechpersonen aus dem Kollegium" },

@@ -230,7 +230,7 @@
    "beachten": "Teilnahme über die Schulleitung"
   },
   {
-   "nr": "14",
+   "nr": "13",
    "symbol": "🛋️",
    "rolle": "SMV-Zimmer-Team",
    "satz": "Ich verantworte den Raum, in dem sich Engagierte treffen.",
@@ -250,7 +250,7 @@
    "beachten": "Schlüssel und Aufsicht klären"
   },
   {
-   "nr": "15",
+   "nr": "14",
    "symbol": "✏️",
    "rolle": "Lernpaten",
    "satz": "Ich helfe einem jüngeren Kind beim Lernen.",
@@ -269,7 +269,7 @@
    "beachten": "Keine Notenverantwortung, Probleme an Lehrkräfte"
   },
   {
-   "nr": "16",
+   "nr": "15",
    "symbol": "🌍",
    "rolle": "Sprachpaten",
    "satz": "Ich helfe neu zugezogenen Kindern, bei uns anzukommen.",
@@ -288,7 +288,7 @@
    "beachten": "Kein Dolmetschen in Eltern- oder Notengesprächen; Einsatz bei Bedarf, nicht in jeder Klasse"
   },
   {
-   "nr": "17",
+   "nr": "16",
    "symbol": "🙋",
    "rolle": "Willkommenspaten",
    "satz": "Ich begleite Mitschüler, die im laufenden Schuljahr neu in meine Klasse kommen.",
@@ -307,7 +307,7 @@
    "beachten": "Einstiegsrolle, gut ab Jgst. 5"
   },
   {
-   "nr": "19",
+   "nr": "17",
    "symbol": "♻️",
    "rolle": "Umwelt- und Energieteam",
    "satz": "Ich kümmere mich darum, dass unsere Schule Energie und Müll spart.",
@@ -326,7 +326,7 @@
    "beachten": "Aktionen statt Kontrolle von Mitschülern"
   },
   {
-   "nr": "20",
+   "nr": "18",
    "symbol": "🌱",
    "rolle": "Schulgarten-Team",
    "satz": "Ich pflege ein Stück Schulgelände, das allen gehört.",
@@ -345,7 +345,7 @@
    "beachten": "Werkzeug sicher verwenden"
   },
   {
-   "nr": "21",
+   "nr": "19",
    "symbol": "📰",
    "rolle": "Schülerzeitung / Social-Media-Redaktion",
    "satz": "Ich berichte, was an unserer Schule passiert.",
@@ -364,7 +364,7 @@
    "beachten": "Einwilligungen für Fotos und Namen, Presserecht"
   },
   {
-   "nr": "23",
+   "nr": "20",
    "symbol": "☕",
    "rolle": "Schülercafé / Kiosk",
    "satz": "Ich betreibe mit meinem Team einen Treffpunkt mit Snacks.",
@@ -383,7 +383,7 @@
    "beachten": "Hygieneregeln, Kassenführung, kein Lohn"
   },
   {
-   "nr": "25",
+   "nr": "21",
    "symbol": "🏆",
    "rolle": "Pausensport-Team",
    "satz": "Ich organisiere Turniere und Sport in der Pause.",
@@ -402,7 +402,7 @@
    "beachten": "Aufsicht durch eine Lehrkraft"
   },
   {
-   "nr": "27",
+   "nr": "22",
    "symbol": "📸",
    "rolle": "Chronik- und Fototeam",
    "satz": "Ich halte fest, was unsere Schule erlebt.",
@@ -421,7 +421,7 @@
    "beachten": "Einwilligungen für Fotos, keine privaten Geräte"
   },
   {
-   "nr": "28",
+   "nr": "23",
    "symbol": "🧰",
    "rolle": "Fundsachen- und Materialteam",
    "satz": "Ich verantworte Fundsachen und gemeinsames Material.",
