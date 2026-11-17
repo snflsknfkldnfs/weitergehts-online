@@ -5,163 +5,167 @@
   {
    "id": "F01",
    "titel": "Der Familienchat",
-   "textsorte": "Familienchat und Wochenplan",
+   "textsorte": "Familienchat",
    "haushalt": "Familie",
-   "kennzeichnung": "Ausgedacht. Die Familie, der Chat und die Minuten gibt es nicht.",
-   "einleitung": "Eine Familie, die du kennst: Mama, Papa und das Kind (12). Im Wochenplan hatte Mama 250 Minuten Arbeit, Papa 60 und das Kind 20. Hier ist der Chat vom Sonntagabend.",
+   "kennzeichnung": "Ausgedacht. Die Familie und der Chat gibt es nicht.",
+   "einleitung": "Mama, Papa und das Kind (12) planen im Chat ihre Woche.",
    "einheiten": [
-    {
-     "id": "e0",
-     "von": "Wochenplan",
-     "zeit": null,
-     "text": "Mama hat an allen sieben Tagen Arbeit im Haushalt."
-    },
     {
      "id": "e1",
      "von": "Mama",
-     "zeit": "20:41",
-     "text": "Ich bin fertig. Ich hatte diese Woche keinen freien Tag."
+     "zeit": "19:02",
+     "text": "Diese Woche müssen wir waschen, saugen und einkaufen."
     },
     {
      "id": "e2",
      "von": "Papa",
-     "zeit": "20:43",
-     "text": "Du übertreibst. Ich sauge doch am Donnerstag und am Samstag."
+     "zeit": "19:03",
+     "text": "Dazu kommt noch das Bad putzen."
     },
     {
      "id": "e3",
      "von": "Kind",
-     "zeit": "20:44",
-     "text": "Ich muss noch meine Tasche für morgen packen."
+     "zeit": "19:04",
+     "text": "Staubsaugen kann ich gut, das übernehme ich."
     },
     {
      "id": "e4",
-     "von": "Mama",
-     "zeit": "20:46",
-     "text": "Immer ich! Keiner fragt, ob ich Hilfe brauche."
+     "von": "Papa",
+     "zeit": "19:05",
+     "text": "Ich kaufe ein, der Laden liegt auf meinem Heimweg."
     },
     {
      "id": "e5",
-     "von": "Mama",
-     "zeit": "20:47",
-     "text": "Mein Rücken tut weh. Ich schlafe schlecht."
+     "von": "Kind",
+     "zeit": "19:06",
+     "text": "Hat jemand mein Ladekabel gesehen?"
     },
     {
      "id": "e6",
-     "von": "Papa",
-     "zeit": "20:49",
-     "text": "Morgen hole ich Brot vom Bäcker."
+     "von": "Mama",
+     "zeit": "19:07",
+     "text": "Dann wasche ich und putze das Bad."
     },
     {
      "id": "e7",
-     "von": "Kind",
-     "zeit": "20:50",
-     "text": "Mama kann das doch schneller. Das ist nicht mein Problem."
+     "von": "Papa",
+     "zeit": "19:08",
+     "text": "Heute war der Zug wieder zu spät."
     },
     {
      "id": "e8",
      "von": "Mama",
-     "zeit": "20:51",
-     "text": "Ich kann morgen nicht schon wieder. Ich bin so müde."
+     "zeit": "19:09",
+     "text": "Die Fenster müssen auch noch geputzt werden."
+    },
+    {
+     "id": "e9",
+     "von": "Kind",
+     "zeit": "19:10",
+     "text": "Die Fenster nehme ich auch."
     }
    ],
    "schritt1": {
-    "auftrag": "Tippe eine Zeile an und wähle, was sie zeigt.",
+    "auftrag": "Was geschieht in jeder Zeile des Chats? Tippe sie an und wähle.",
+    "wort": "Zeilen",
     "kategorien": [
      {
-      "id": "k1",
-      "name": "Körper",
-      "frage": "Hier wird es für den Körper zu viel."
+      "id": "ka",
+      "name": "Das fällt an",
+      "frage": "Hier steht, welche Arbeit in der Woche gemacht werden muss."
      },
      {
-      "id": "k2",
-      "name": "Streit",
-      "frage": "Hier gibt es Ärger zwischen Personen."
+      "id": "kw",
+      "name": "Wer macht es",
+      "frage": "Hier übernimmt jemand eine Arbeit."
      },
      {
       "id": "k0",
-      "name": "Keine Spur",
-      "frage": "Hier ist weder das eine noch das andere zu sehen."
+      "name": "Gehört nicht zum Plan",
+      "frage": "Hier geht es um etwas anderes."
      }
     ],
     "loesung": {
-     "e0": "k1",
-     "e1": "k1",
-     "e2": "k2",
-     "e3": "k0",
-     "e4": "k2",
-     "e5": "k1",
-     "e6": "k0",
-     "e7": "k2",
-     "e8": "k1"
+     "e1": "ka",
+     "e2": "ka",
+     "e3": "kw",
+     "e4": "kw",
+     "e5": "k0",
+     "e6": "kw",
+     "e7": "k0",
+     "e8": "ka",
+     "e9": "kw"
     },
     "erklaerung": {
-     "e0": "Mama hat keinen freien Tag. Der Körper bekommt keine Pause.",
-     "e1": "Ohne freien Tag kann sich der Körper nicht erholen.",
-     "e2": "Papa wirft Mama etwas vor. Das ist Ärger im Zusammenleben.",
-     "e3": "Das Kind erzählt nur, was es noch tut. Das ist weder Müdigkeit noch Streit.",
-     "e4": "Mama ist verärgert, weil keiner fragt. Das ist Streit.",
-     "e5": "Rücken und Schlaf zeigen: Die Arbeit belastet den Körper.",
-     "e6": "Das ist eine ruhige Absprache ohne Ärger.",
-     "e7": "Das Kind schiebt die Arbeit weg. Das gibt Ärger.",
-     "e8": "Müde und erschöpft: Der Körper kann nicht mehr."
+     "e1": "Die Arbeiten der Woche werden aufgezählt. Noch übernimmt sie niemand.",
+     "e2": "Das ist eine weitere Arbeit, die anfällt. Niemand übernimmt sie.",
+     "e3": "Das Kind übernimmt das Saugen, weil es das gut kann.",
+     "e4": "Papa übernimmt das Einkaufen, weil es zu seinem Heimweg passt.",
+     "e5": "Das Ladekabel hat mit der Arbeit der Woche nichts zu tun.",
+     "e6": "Mama übernimmt Wäsche und Bad. So steht fest, wer was macht.",
+     "e7": "Der Zug hat mit der Hausarbeit nichts zu tun.",
+     "e8": "Die Fenster sind eine weitere Arbeit, die anfällt.",
+     "e9": "Das Kind übernimmt die Fenster. So steht fest, wer was macht."
     }
    },
    "schritt2": {
-    "frage": "Warum gibt es bei dieser Familie Streit und Müdigkeit?",
+    "anweisung": "Du entscheidest, was beim Planen zuerst kommt.",
+    "kurz": "Womit der Plan anfängt",
+    "frage": "Womit fängt die Familie an, wenn sie die Woche plant?",
     "antworten": [
      {
-      "text": "Die Arbeit ist ungleich verteilt: Mama macht fast alles.",
+      "text": "Sie schreibt auf, welche Arbeiten in der Woche anfallen.",
       "richtig": true
      },
      {
-      "text": "Mama arbeitet zu langsam und braucht darum so lange.",
+      "text": "Sie wartet ab, bis die Arbeiten von selbst fertig sind.",
       "richtig": false
      },
      {
-      "text": "Das Kind ist mit zwölf Jahren noch zu klein zum Helfen.",
+      "text": "Sie lässt Mama alle Arbeiten der Woche allein machen.",
       "richtig": false
      }
     ],
-    "erklaerung": "Wenn eine Person fast alles macht, wird sie müde, und die anderen verstehen es nicht."
+    "erklaerung": "Zuerst steht fest, was anfällt. Danach wird verteilt, wer was macht."
    },
    "schritt3": {
-    "frage": "Ist der bisherige Wochenplan gut für die Familie?",
+    "anweisung": "Du entscheidest, ob der Plan der Familie gut ist.",
+    "frage": "Ist der Plan der Familie gut?",
     "positionen": [
      {
       "id": "a",
-      "text": "Ja, denn Mama ist bei fast allem am schnellsten."
+      "text": "Ja, denn alle arbeiten gleichzeitig und jeder übernimmt eine Arbeit."
      },
      {
       "id": "b",
-      "text": "Nein, denn eine Person trägt fast die ganze Arbeit."
+      "text": "Nein, denn Mama wäre allein schneller fertig gewesen."
      }
     ],
+    "gut": "a",
+    "erklaerung": "Wer die Arbeit aufteilt, ist zusammen schneller fertig, auch wenn einer alles schneller kann.",
     "begruendungen": [
      {
-      "text": "Mama arbeitet an jedem Tag und wird müde.",
-      "passt_zu": "b"
-     },
-     {
-      "text": "Papa und das Kind helfen kaum, das gibt Streit.",
-      "passt_zu": "b"
-     },
-     {
-      "text": "Mama braucht für die meisten Arbeiten am wenigsten Zeit.",
+      "text": "Alle drei arbeiten gleichzeitig.",
       "passt_zu": "a"
      },
      {
-      "text": "Wenn Mama alles macht, muss niemand etwas planen.",
+      "text": "Papa kauft ein, weil der Laden auf seinem Heimweg liegt.",
       "passt_zu": "a"
      },
      {
-      "text": "Die Familie hat einen Staubsauger und eine Waschmaschine.",
+      "text": "Mama kann jede Arbeit schneller als die anderen.",
+      "passt_zu": "b"
+     },
+     {
+      "text": "Dann müsste sonst niemand eine Arbeit übernehmen.",
+      "passt_zu": "b"
+     },
+     {
+      "text": "Die Familie plant am Sonntagabend im Chat.",
       "passt_zu": "keine"
      }
     ],
-    "gut": "b",
-    "erklaerung": "Schnell reicht nicht: Im Siegerplan ist die Familie schneller fertig, und niemand ist erschöpft.",
-    "muster": "Ich finde: Der Plan ist nicht gut, weil Mama an jedem Tag arbeitet und die anderen kaum helfen."
+    "muster": "Ich finde: Der Plan ist gut, weil alle gleichzeitig arbeiten und jeder etwas übernimmt."
    }
   },
   {
@@ -228,7 +232,7 @@
     }
    ],
    "schritt1": {
-    "auftrag": "Tippe eine Zeile an und wähle, was sie zeigt.",
+    "auftrag": "Was ist an dieser Küche gut oder schlecht? Tippe jede Zeile an und wähle.",
     "kategorien": [
      {
       "id": "kk",
@@ -272,9 +276,12 @@
      "e7": "Ohne Mixer dauert die Arbeit lange: Ein Gerät fehlt.",
      "e8": "Scharfe Messer in Reichweite erleichtern die Arbeit. Hier ist alles gut.",
      "e9": "Ohne Lehne ermüdet das Sitzen den Rücken: Das passt nicht zum Körper."
-    }
+    },
+    "wort": "Zeilen"
    },
    "schritt2": {
+    "anweisung": "Du entscheidest, wofür das Geld am meisten nützt.",
+    "kurz": "Beste Anschaffung",
     "frage": "Die Person hat 100 Euro. Welche Anschaffung ist am besten?",
     "antworten": [
      {
@@ -293,6 +300,7 @@
     "erklaerung": "Gut ist, was viel Nutzen für wenig Geld bringt, hier: weniger Rückenschmerzen."
    },
    "schritt3": {
+    "anweisung": "Du entscheidest, ob die Küche ein guter Arbeitsplatz ist.",
     "frage": "Ist diese Küche ein guter Arbeitsplatz?",
     "positionen": [
      {
@@ -385,13 +393,13 @@
      "id": "e8",
      "von": "Mama",
      "zeit": "19:00",
-     "text": "Mama bereitet den Spieleabend für die ganze Familie vor."
+     "text": "Mama plant den Geburtstag von Oma, damit sich alle treffen."
     },
     {
      "id": "e9",
      "von": "Papa",
      "zeit": "20:00",
-     "text": "Papa erklärt dem Kind, wie man sich bei Streit entschuldigt."
+     "text": "Papa zeigt dem Kind, wie man Schuhe bindet."
     },
     {
      "id": "e10",
@@ -407,7 +415,7 @@
     }
    ],
    "schritt1": {
-    "auftrag": "Tippe eine Zeile an und wähle, welche Arbeit es ist.",
+    "auftrag": "Welche Arbeit steckt in jeder Zeile? Tippe sie an und wähle.",
     "kategorien": [
      {
       "id": "ke",
@@ -456,13 +464,16 @@
      "e5": "Dem Kind helfen und üben ist Erziehungsarbeit.",
      "e6": "Kontakt pflegen ist Beziehungsarbeit.",
      "e7": "Kochen für alle ist Hausarbeit.",
-     "e8": "Ein Spieleabend schafft Zeit füreinander: Das ist Beziehungsarbeit.",
+     "e8": "Zeit füreinander schaffen ist Beziehungsarbeit.",
      "e9": "Dem Kind etwas beibringen ist Erziehungsarbeit.",
      "e10": "Wäsche waschen ist Hausarbeit.",
      "e11": "Blutdruck messen für Opa ist Pflegearbeit."
-    }
+    },
+    "wort": "Zeilen"
    },
    "schritt2": {
+    "anweisung": "Du entscheidest, was Kochen zu Hause zur Arbeit macht.",
+    "kurz": "Warum Kochen Arbeit ist",
     "frage": "Warum ist Kochen zu Hause Arbeit, obwohl es kein Geld gibt?",
     "antworten": [
      {
@@ -481,6 +492,7 @@
     "erklaerung": "Arbeit ist planvoll, zielgerichtet, anstrengend und bewusst. Das gilt auch ohne Lohn."
    },
    "schritt3": {
+    "anweisung": "Du entscheidest, ob Omas Arbeit weniger wert ist.",
     "frage": "Ist Omas Arbeit weniger wert, weil sie kein Geld bekommt?",
     "positionen": [
      {
@@ -571,7 +583,7 @@
     }
    ],
    "schritt1": {
-    "auftrag": "Tippe eine Zeile an: Passt sie oder ist sie ein Fehler?",
+    "auftrag": "Passt jede Zeile des Plans? Tippe sie an und wähle.",
     "kategorien": [
      {
       "id": "kp",
@@ -601,9 +613,12 @@
      "e5": "Eine Person macht fast alles, das Kind nichts. Das macht müde und gibt Ärger.",
      "e6": "Um 18 Uhr ist Mama zu Hause, die Arbeit ist klein. Das passt.",
      "e7": "Beide arbeiten zusammen und haben Zeit füreinander. Das passt."
-    }
+    },
+    "wort": "Zeilen"
    },
    "schritt2": {
+    "anweisung": "Du entscheidest, was am Samstag helfen würde.",
+    "kurz": "Was am Samstag hilft",
     "frage": "Was hilft beim Fehler am Samstag?",
     "antworten": [
      {
@@ -622,6 +637,7 @@
     "erklaerung": "Arbeitsteilung hilft: Jeder übernimmt einen Teil, und niemand wird überlastet."
    },
    "schritt3": {
+    "anweisung": "Du entscheidest, ob das gerecht ist.",
     "frage": "Ist es gerecht, dass das Kind am Samstag frei hat?",
     "positionen": [
      {
@@ -706,7 +722,7 @@
     }
    ],
    "schritt1": {
-    "auftrag": "Tippe eine Aussage an: Stimmt sie oder nicht?",
+    "auftrag": "Stimmt jede Aussage zu den Zeiten? Tippe sie an und wähle.",
     "kategorien": [
      {
       "id": "ks",
@@ -734,9 +750,12 @@
      "e4": "Das Kind allein braucht 54 Minuten. Das dauert am längsten.",
      "e5": "Auch wenn Mama alles schneller kann, lohnt sich das Teilen.",
      "e6": "Das Kind braucht 24 statt 20 Minuten, also nur wenig länger."
-    }
+    },
+    "wort": "Aussagen"
    },
    "schritt2": {
+    "anweisung": "Du entscheidest, warum das Teilen hilft.",
+    "kurz": "Warum Teilen hilft",
     "frage": "Warum ist es gut, dass auch das Kind etwas übernimmt?",
     "antworten": [
      {
@@ -755,6 +774,7 @@
     "erklaerung": "Wer gleichzeitig arbeitet, spart Zeit. Das gilt auch, wenn einer alles schneller kann."
    },
    "schritt3": {
+    "anweisung": "Du entscheidest, ob Mama alles machen soll.",
     "frage": "Soll Mama alles machen, weil sie schneller ist?",
     "positionen": [
      {
@@ -839,7 +859,7 @@
     }
    ],
    "schritt1": {
-    "auftrag": "Tippe eine Zeile an: Stimmt der Eintrag oder ist er ein Fehler?",
+    "auftrag": "Steht jeder Eintrag am richtigen Platz? Tippe ihn an und wähle.",
     "kategorien": [
      {
       "id": "ks",
@@ -867,9 +887,12 @@
      "e4": "Zehn Minuten ist die Dauer. Die Zeit sagt: wann.",
      "e5": "Samstag, 10 Uhr ist die Zeit. Die Dauer sagt: wie lange.",
      "e6": "Der niedrige Ständer passt nicht zum Körper: Das ist Ergonomie."
-    }
+    },
+    "wort": "Einträge"
    },
    "schritt2": {
+    "anweisung": "Du entscheidest, was dieses Merkmal bedeutet.",
+    "kurz": "Arbeitsbedingungen",
     "frage": "Was gehört zu den Arbeitsbedingungen?",
     "antworten": [
      {
@@ -888,6 +911,7 @@
     "erklaerung": "Arbeitsbedingungen fragen: Wie ist es dort? Das sind Körper, Geräte und Umwelt."
    },
    "schritt3": {
+    "anweisung": "Du entscheidest, ob der Bogen richtig ausgefüllt ist.",
     "frage": "Ist der Erkundungsbogen gut ausgefüllt?",
     "positionen": [
      {
@@ -984,7 +1008,7 @@
     }
    ],
    "schritt1": {
-    "auftrag": "Tippe einen Steckbrief an und wähle die Haushaltsform.",
+    "auftrag": "Welche Haushaltsform ist das? Tippe einen Steckbrief an und wähle.",
     "kategorien": [
      {
       "id": "kf",
@@ -1026,9 +1050,12 @@
      "e6": "Eine Mutter mit Kindern: Das ist alleinerziehend.",
      "e7": "Opa, Eltern und Kinder: Das sind mehrere Generationen.",
      "e8": "Ein Mann allein: Das ist eine Einzelperson."
-    }
+    },
+    "wort": "Steckbriefe"
    },
    "schritt2": {
+    "anweisung": "Du entscheidest, warum die Arbeit verschieden verteilt ist.",
+    "kurz": "Warum es verschieden ist",
     "frage": "Warum macht nicht in jedem Haushalt dieselbe Person die Arbeit?",
     "antworten": [
      {
@@ -1047,6 +1074,7 @@
     "erklaerung": "Wer welche Arbeit macht, ist in jedem Haushalt anders."
    },
    "schritt3": {
+    "anweisung": "Du entscheidest, ob in jedem Haushalt Arbeit anfällt.",
     "frage": "Gibt es in jedem Haushalt Haus- und Familienarbeit?",
     "positionen": [
      {

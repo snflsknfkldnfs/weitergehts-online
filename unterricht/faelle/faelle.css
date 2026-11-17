@@ -31,6 +31,7 @@ body.faelle button { -webkit-tap-highlight-color: transparent; }
 /* Kopf mit Fortschritt */
 .f-fortschritt { margin: 0 0 18px; }
 .f-zaehler { margin: 0 0 6px; font-weight: 700; color: var(--m-leise); }
+.f-aufgabe { margin: 0 0 6px; font-size: 1.05rem; font-weight: 700; color: var(--m-tinte); }
 .f-balken { display: flex; gap: 6px; }
 .f-teil { flex: 1; height: 10px; border: 1px solid var(--m-linie); border-radius: 5px; background: var(--m-blatt); }
 .f-teil.f-fertig { background: var(--m-tinte); }

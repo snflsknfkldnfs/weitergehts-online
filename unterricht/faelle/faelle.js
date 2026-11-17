@@ -1,12 +1,13 @@
-/* Fälle — geteiltes Werkzeug: ein kurzer ausgedachter Fall zum Üben zu Hause, drei Schritte (finden, erklären, urteilen).
+/* Fälle — geteiltes Werkzeug: ein kurzer ausgedachter Fall zum Üben zu Hause, drei Aufgaben (zuordnen, erklären, urteilen).
    Liest data.json im Ordner der Seite (erzeugt von einem Bauskript aus den Fall-Dateien der Kurs-Welt, nie von Hand):
      titel, satz, faelle[] {id, titel, textsorte, haushalt, kennzeichnung, einleitung,
        einheiten[] {id, von, zeit, text},
-       schritt1 {auftrag, kategorien[] {id, name, frage}, loesung {einheit: kategorie}, erklaerung {einheit: Satz}},
-       schritt2 {frage, antworten[] {text, richtig}, erklaerung},
-       schritt3 {frage, positionen[] {id, text}, gut, erklaerung, begruendungen[] {text, passt_zu}, muster}}.
-   Ablauf je Fall: Lesen → Schritt 1 (Zeilen antippen, Kategorie wählen, Prüfen) → Schritt 2 (eine Antwort)
-   → Schritt 3 (Position wählen, dann die Gründe, die zu ihr passen, dann Beispielsatz) → Ende.
+       schritt1 {auftrag, wort, kategorien[] {id, name, frage}, loesung {einheit: kategorie}, erklaerung {einheit: Satz}},
+       schritt2 {anweisung, kurz, frage, antworten[] {text, richtig}, erklaerung},
+       schritt3 {anweisung, frage, positionen[] {id, text}, gut, erklaerung, begruendungen[] {text, passt_zu}, muster}}.
+   Ablauf je Fall (17.11.2026: keine vorgeschaltete Lese-Seite mehr, der Fall ist sofort bearbeitbar):
+   Zeilen antippen und zuordnen, Prüfen → eine Antwort wählen → urteilen, dann die Gründe zur Antwort → Ende.
+   Jede Seite sagt in Worten der Sache, was hier entschieden wird (Feld auftrag bzw. anweisung); keine Formwörter.
    Keine Note, keine Rangliste, kein Zeitdruck. Nichts wird gespeichert (kein Server, kein localStorage). */
 (function () {
   'use strict';
@@ -45,10 +46,10 @@
     return k ? k.name : '';
   }
 
-  /* Kopf: Titel des Falls (Lesen) oder „Schritt n von 3“ mit drei Teilen */
+  /* Kopf: Titel des Falls mit einem Balken aus drei Teilen (Fortschritt) */
   function kopf(schritt) {
     var k = el('header', 'f-fortschritt');
-    k.appendChild(el('p', 'f-zaehler', schritt === 0 ? z.f.titel : 'Schritt ' + schritt + ' von 3'));
+    k.appendChild(el('p', 'f-zaehler', z.f.titel));
     var b = el('div', 'f-balken');
     b.setAttribute('role', 'progressbar');
     b.setAttribute('aria-label', 'Fortschritt');
@@ -90,7 +91,7 @@
       b.setAttribute('data-fall', f.id);
       b.appendChild(el('span', 'f-karte-titel', f.titel));
       b.appendChild(el('span', 'f-karte-art', f.textsorte));
-      b.addEventListener('click', function () { lesenZeigen(i); });
+      b.addEventListener('click', function () { fallStarten(i); });
       liste.appendChild(b);
     });
     buehne.appendChild(liste);
@@ -102,33 +103,20 @@
     oben(h1);
   }
 
-  /* ── Lesen ────────────────────────────────────────────────────────── */
-  function lesenZeigen(idx) {
+  /* ── Fall starten: sofort bearbeitbar, ohne vorgeschaltete Lese-Seite ─ */
+  function fallStarten(idx) {
     z = { idx: idx, f: daten.faelle[idx], wahl: {}, s1: null, s2: null, s3: null, gr: null };
-    leeren(buehne);
-    buehne.appendChild(kopf(0));
-    var h = ueberschrift(z.f.titel);
-    buehne.appendChild(h);
-    buehne.appendChild(el('p', 'f-kennzeichnung', z.f.kennzeichnung));
-    buehne.appendChild(el('p', 'f-einleitung', z.f.einleitung));
-    var ul = el('ul', 'f-text');
-    z.f.einheiten.forEach(function (e) {
-      var li = el('li');
-      if (e.von) li.appendChild(el('span', 'f-von', e.von + (e.zeit ? ' ' + e.zeit : '')));
-      li.appendChild(el('span', 'f-satz', e.text));
-      ul.appendChild(li);
-    });
-    buehne.appendChild(ul);
-    buehne.appendChild(knopf('Los', 'voll f-gross', schritt1Zeigen));
-    oben(h);
+    schritt1Zeigen();
   }
 
-  /* ── Schritt 1: Zeilen antippen, Kategorie wählen, prüfen ─────────── */
+  /* ── Erste Aufgabe: Zeilen antippen, zuordnen, prüfen ─────────────── */
   function schritt1Zeigen() {
     var f = z.f;
     var s = f.schritt1;
     leeren(buehne);
     buehne.appendChild(kopf(1));
+    buehne.appendChild(el('p', 'f-kennzeichnung', f.kennzeichnung));
+    buehne.appendChild(el('p', 'f-einleitung', f.einleitung));
     var h = ueberschrift(s.auftrag);
     buehne.appendChild(h);
     var zaehler = el('p', 'f-gewaehlt-zaehler');
@@ -142,7 +130,7 @@
     function aktualisieren() {
       var n = Object.keys(z.wahl).length;
       var gesamt = f.einheiten.length;
-      zaehler.textContent = n + ' von ' + gesamt + ' gewählt';
+      zaehler.textContent = n + ' von ' + gesamt + ' ' + s.wort + ' gewählt';
       leeren(pruefBox);
       if (!geprueft && n === gesamt) pruefBox.appendChild(knopf('Prüfen', 'voll f-gross', pruefen));
     }
@@ -169,7 +157,7 @@
       var panel = el('div', 'f-wahl');
       panel.hidden = true;
       panel.setAttribute('role', 'group');
-      panel.setAttribute('aria-label', 'Was zeigt diese Zeile?');
+      panel.setAttribute('aria-label', 'Wähle eine Möglichkeit');
       s.kategorien.forEach(function (k) {
         var b = el('button', 'f-kat');
         b.type = 'button';
@@ -224,7 +212,7 @@
       z.s1 = { n: f.einheiten.length, ok: ok, falsche: falsche };
       zaehler.textContent = '';
       leeren(pruefBox);
-      pruefBox.appendChild(el('p', 'f-s1-ergebnis', 'Du hast ' + ok + ' von ' + z.s1.n + ' richtig.'));
+      pruefBox.appendChild(el('p', 'f-s1-ergebnis', 'Du hast ' + ok + ' von ' + z.s1.n + ' ' + s.wort + ' richtig.'));
       var w = knopf('Weiter', 'voll f-gross f-weiter', schritt2Zeigen);
       pruefBox.appendChild(w);
       w.focus({ preventScroll: true });
@@ -258,11 +246,12 @@
     k.appendChild(el('span', 'f-marke', wort));
   }
 
-  /* ── Schritt 2: eine Antwort ──────────────────────────────────────── */
+  /* ── Zweite Aufgabe: eine Antwort ─────────────────────────────────── */
   function schritt2Zeigen() {
     var s = z.f.schritt2;
     leeren(buehne);
     buehne.appendChild(kopf(2));
+    buehne.appendChild(el('p', 'f-aufgabe', s.anweisung));
     var h = ueberschrift(s.frage);
     h.id = 'f-frage';
     buehne.appendChild(h);
@@ -298,11 +287,12 @@
     oben(h);
   }
 
-  /* ── Schritt 3: erst die Position, dann die passenden Gründe ──────── */
+  /* ── Dritte Aufgabe: erst urteilen, dann die Gründe dazu ──────────── */
   function schritt3Zeigen() {
     var s = z.f.schritt3;
     leeren(buehne);
     buehne.appendChild(kopf(3));
+    buehne.appendChild(el('p', 'f-aufgabe', s.anweisung));
     var h = ueberschrift(s.frage);
     h.id = 'f-frage';
     buehne.appendChild(h);
@@ -323,11 +313,11 @@
         z.s3 = p.id === s.gut;
         knoepfe.forEach(function (x) {
           x.k.setAttribute('aria-disabled', 'true');
-          if (x.p.id === s.gut) markieren(x.k, true, 'passt zum Heft');
-          else if (x.k === k) markieren(x.k, false, 'passt nicht zum Heft');
+          if (x.p.id === s.gut) markieren(x.k, true, 'richtig');
+          else if (x.k === k) markieren(x.k, false, 'falsch');
           if (x.k === k) { x.k.classList.add('f-gewaehlt'); x.k.setAttribute('aria-pressed', 'true'); }
         });
-        var r = rueckmeldung(z.s3, s.erklaerung, 'Weiter', gruendeZeigen, 'Richtig.', 'Das trägt nicht.');
+        var r = rueckmeldung(z.s3, s.erklaerung, 'Weiter', gruendeZeigen, 'Richtig.', 'Falsch.');
         rueckBox.appendChild(r.box);
         r.weiter.focus({ preventScroll: true });
         if (r.weiter.scrollIntoView) r.weiter.scrollIntoView({ block: 'nearest' });
@@ -344,9 +334,10 @@
     var gutText = s.positionen.filter(function (p) { return p.id === s.gut; })[0].text;
     leeren(buehne);
     buehne.appendChild(kopf(3));
-    var h = ueberschrift('Welche Gründe passen zu dieser Position?');
+    var h = ueberschrift('Warum ist das die richtige Antwort?');
     buehne.appendChild(h);
     buehne.appendChild(el('p', 'f-position', gutText));
+    buehne.appendChild(el('p', 'f-aufgabe', 'Tippe alle Gründe an, die zu dieser Antwort passen. Es können mehrere sein.'));
     var gruppe = el('div', 'f-gruende');
     gruppe.setAttribute('role', 'group');
     gruppe.setAttribute('aria-label', 'Gründe zum Antippen, mehrere möglich');
@@ -408,12 +399,12 @@
   /* ── Ende des Falls ───────────────────────────────────────────────── */
   function endeZeigen() {
     leeren(buehne);
-    var h = el('h2', 'f-ergebnis', 'Schritt 1: ' + z.s1.ok + ' von ' + z.s1.n + ' richtig.');
+    var h = el('h2', 'f-ergebnis', z.f.schritt1.wort + ': ' + z.s1.ok + ' von ' + z.s1.n + ' richtig.');
     h.tabIndex = -1;
     buehne.appendChild(h);
     var zeilen = el('div', 'f-zeilen-ende');
-    zeilen.appendChild(el('p', null, 'Schritt 2: ' + (z.s2 ? 'richtig.' : 'falsch.')));
-    zeilen.appendChild(el('p', null, 'Schritt 3: Position ' + (z.s3 ? 'richtig' : 'falsch') + ', Gründe ' + z.gr.ok + ' von ' + z.gr.n + ' richtig.'));
+    zeilen.appendChild(el('p', null, z.f.schritt2.kurz + ': ' + (z.s2 ? 'richtig.' : 'falsch.')));
+    zeilen.appendChild(el('p', null, 'Urteil: ' + (z.s3 ? 'richtig' : 'falsch') + ', Gründe ' + z.gr.ok + ' von ' + z.gr.n + ' richtig.'));
     buehne.appendChild(zeilen);
     if (z.s1.falsche.length) {
       var box = el('section', 'f-falsche');
@@ -431,8 +422,8 @@
     var wahl = el('div', 'f-ende-knoepfe');
     var idx = z.idx;
     var hatNaechsten = idx + 1 < daten.faelle.length;
-    wahl.appendChild(knopf('Fall noch einmal', 'f-gross', function () { lesenZeigen(idx); }));
-    if (hatNaechsten) wahl.appendChild(knopf('Nächster Fall', 'voll f-gross', function () { lesenZeigen(idx + 1); }));
+    wahl.appendChild(knopf('Fall noch einmal', 'f-gross', function () { fallStarten(idx); }));
+    if (hatNaechsten) wahl.appendChild(knopf('Nächster Fall', 'voll f-gross', function () { fallStarten(idx + 1); }));
     wahl.appendChild(knopf('Zum Start', 'f-gross', startZeigen));
     buehne.appendChild(wahl);
     oben(h);
