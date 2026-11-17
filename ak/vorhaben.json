@@ -14,7 +14,7 @@
   "In den Pausen ist an den Toiletten Gedränge, im Schulbus wird geschubst.",
   "Wer Verantwortung trägt, erlebt: Mein Einsatz bewirkt etwas."
  ],
- "jetzt": "sichten",
+ "jetzt": "kollegium",
  "stationen": [
   { "id": "klaeren", "zeit": "November", "titel": "Klären im Arbeitskreis", "zeile": "Auftrag, Leitbild und Reihenfolge" },
   { "id": "sichten", "zeit": "November", "titel": "Rollen sichten im Arbeitskreis", "zeile": "Welche Rollen passen zu unserer Schule?" },
