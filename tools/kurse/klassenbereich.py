@@ -16,12 +16,14 @@ die Auswahl-Datei trägt nur Ausnahmen.
 
 Quellen (nie Inhalte im Repo):
   tools/kurse/klassenbereich/<kurs>.json    Auswahl je Stunde (Pfade in die Welt, Zuordnung Blatt ↔ Material)
-  unterricht/kurse.json                     Struktur der Stunden (Datum, Titel, Stundenfrage), Material-Links
-  <Welt>/<Kurs>/JAHRESPLAN.md               das Jahr (Sequenzen, Zeitraum, Probe, Stand)
+  unterricht/kurse.json                     Kurs (Titel, Fach), Material-Links (Feld "stunde")
+  <Welt>/<Kurs>/JAHRESPLAN.md, SEQUENZPLAN.md  das Jahr und die Stunden (Datum, Titel, Stundenfrage, gehalten)
   <Welt>/…/LOESUNG_*.md, PLANUNG.md         Hefteinträge; drucken/*.pdf Blätter; Folien-PDF; bilder/HERKUNFT.md
   ~/.config/weitergehts/klassenbereich.json Passwort und Salz je Kurs (außerhalb des Repos)
 
 Deterministisch: gleicher Klartext → gleiche IV (HMAC) → gleiches Chiffrat, also kein Git-Rauschen bei Neubau.
+Ausgabe neben den Seiten: unterricht/k/<kurs>/stand.json (nur Kennungen; liest der Sitzungsstart und make kursseite).
+Nachführen nach einer Stunde: make kursseite K=<kurs> (tools/kurse/nachfuehren.py).
 """
 from __future__ import annotations
 
@@ -295,6 +297,7 @@ class Ablage:
 
     def __init__(self, tresor: Tresor, ziel: Path):
         self.t, self.ziel, self.benutzt = tresor, ziel, set()
+        self.seite: list[str] = []   # Dateien der Seite, die gerade entsteht (für den Stand)
         ziel.mkdir(parents=True, exist_ok=True)
 
     def ablegen(self, klar: bytes, endung: str) -> str:
@@ -303,6 +306,7 @@ class Ablage:
         if not p.is_file():
             p.write_bytes(self.t.zu(klar))
         self.benutzt.add(name)
+        self.seite.append(name)
         return name
 
     def aufraeumen(self) -> int:
@@ -772,7 +776,51 @@ def struktur(kurs: str, auswahl: dict, daten: dict, welt: Path) -> tuple[list[di
     return reihe, jahr_
 
 
-def bauen(kurs: str) -> int:
+def kennung(tresor: Tresor, kern: str) -> str:
+    """Hash dessen, was eine Seite aus der Welt trägt, mit dem Schlüssel des Kurses (verrät nichts über den Klartext)."""
+    return hmac.new(tresor.key, kern.encode("utf-8"), hashlib.sha256).hexdigest()[:16]
+
+
+def hat_nachbereitung(ordner: Path) -> bool:
+    """Gehalten heißt hier wie im Sitzungsstart (werkzeugkasten/core/tools/kalender/session_start.py): NACHBEREITUNG.md nicht leer."""
+    try:
+        return bool((ordner / "NACHBEREITUNG.md").read_text(encoding="utf-8").strip())
+    except OSError:
+        return False
+
+
+def stand_schreiben(ziel: Path, kurs: str, welt: Path, auswahl: dict, seiten: dict) -> dict:
+    """unterricht/k/<kurs>/stand.json: welche Stunde der Welt auf der Kursseite steht, ohne Inhalt. Liest der Sitzungsstart
+    (meldet Stunden mit Nachbereitung, die fehlen) und make kursseite (Bericht: neu, geändert, entfernt). Nicht veröffentlicht.
+      seiten     Datum → {seite, kennung}; Kennung = Hash von Heft, Blättern, Folien und Dateien der Stunde (ohne die Leiste)
+      ausgespart ordner: ausgeblendete Sequenzen (gilt auch für ihre künftigen Stunden); daten: gehaltene Stunden ohne Seite"""
+    aus = auswahl.get("ausblenden", [])
+    jp = matrixe_leser().jahresplan_sequenzen(welt / auswahl.get("jahresplan", "JAHRESPLAN.md"))
+    aus_ordner = sorted(Path(x["ordner"]).name for x in jp if x["nr"].lower() in aus and x["ordner"])
+    am = {v["datum"] for k, v in seiten.items() if v.get("datum")}
+    daten = set()
+    for p in welt.rglob("UE*_20??-??-??_*"):
+        if not p.is_dir() or "protokoll" in p.parts or any(o in p.parts for o in aus_ordner):
+            continue
+        m = re.search(r"_(20\d\d-\d\d-\d\d)_", p.name)
+        if m and m.group(1) not in am and hat_nachbereitung(p):
+            daten.add(m.group(1))
+    stand = {"_comment": "Erzeugt von tools/kurse/klassenbereich.py, nicht von Hand. Nur Kennungen, kein Inhalt; nicht veröffentlicht.",
+             "kurs": kurs, "welt_kurs": welt.name,
+             "seiten": {k: seiten[k] for k in sorted(seiten)},
+             "ausgespart": {"ordner": aus_ordner, "daten": sorted(daten)}}
+    text = json.dumps(stand, ensure_ascii=False, indent=1, sort_keys=True) + "\n"
+    p = ziel / "stand.json"
+    if not p.is_file() or p.read_text(encoding="utf-8") != text:
+        p.write_text(text, encoding="utf-8")
+        print(f"geschrieben: {p.relative_to(REPO)}")
+    return stand
+
+
+def bauen(kurs: str, bericht: dict | None = None) -> int:
+    """Baut den Klassenbereich. `bericht` (von tools/kurse/nachfuehren.py) bekommt je Seite, was sie in Worten der Stunde zeigt:
+    Seite → {titel, datum, heft, blaetter, folien}; das steht nur im Speicher, nie im Repo."""
+    bericht = {} if bericht is None else bericht
     auswahl = json.loads((AUSWAHL / f"{kurs}.json").read_text(encoding="utf-8"))
     welt = Path(auswahl["welt"])
     daten = build.laden()
@@ -786,8 +834,12 @@ def bauen(kurs: str) -> int:
     materialien = {m["id"]: m for m in daten["materialien"] if kurs in m.get("kurse", []) and m.get("id")}
     reihe, jahrplan = struktur(kurs, auswahl, daten, welt)
     geschrieben: set[Path] = set()
+    seiten: dict[str, dict] = {}   # für stand.json: Seite → {datum, kennung}
 
-    def schreiben(rel: str, titel: str, tiefe: str, start: str, inhalt: str) -> None:
+    def schreiben(rel: str, titel: str, tiefe: str, start: str, inhalt: str, kern: str | None = None,
+                  datum: str = "") -> None:
+        seiten[rel or "kursseite"] = {"kennung": kennung(tresor, inhalt if kern is None else kern),
+                                      **({"datum": datum} if datum else {})}
         p = ziel / rel / "index.html" if rel else ziel / "index.html"
         p.parent.mkdir(parents=True, exist_ok=True)
         payload = base64.b64encode(tresor.zu(inhalt.encode("utf-8"))).decode()
@@ -838,9 +890,14 @@ def bauen(kurs: str) -> int:
                 hefte[st["id"]] = {"html": heftseite(st, a, teile, pfade), "teile": teile, "datum": datum_kurz(st["datum"]),
                                    "titel": st["titel"], "ocr": [texterkennung(j) for j in jpgs]}
             i = offen.index(st)
+            ablage.seite = []
             inhalt = stundenseite(s, st, a, ordner, teile, stunden, hier, offen[i - 1] if i else None,
                                   offen[i + 1] if i + 1 < len(offen) else None, ablage, materialien, mat_der_stunde(s, st))
-            schreiben(ref, f"{st['titel']} · {k['titel']}", "../../../../../", "../../", inhalt)
+            kern = json.dumps({"stunde": {x: st.get(x) for x in ("titel", "frage", "datum")}, "auswahl": a, "heft": teile,
+                               "dateien": ablage.seite}, ensure_ascii=False, sort_keys=True, default=str)
+            schreiben(ref, f"{st['titel']} · {k['titel']}", "../../../../../", "../../", inhalt, kern, st["datum"])
+            bericht[ref] = {"titel": st["titel"], "datum": st["datum"], "heft": bool(teile or a.get("heft_bild")),
+                            "blaetter": len(a.get("blaetter", [])), "folien": bool(a.get("folien"))}
         mit_seite = seiten_ids
         for st in stunden:   # gehaltene Stunden ohne Ordner bekommen keinen Link
             if not st.get("kommt") and st.get("art") != "probe" and st["id"] not in mit_seite:
@@ -869,7 +926,9 @@ def bauen(kurs: str) -> int:
                 out.append(f'<li><a href="../{st["id"]}/"><span class="d">{e(datum)}</span>'
                            f'<span class="pl-frage">{e(st.get("frage") or st["titel"])}</span></a>{antw}</li>')
             out.append("</ol>" + ("</section>" if pool else ""))
-            schreiben(f"{s['id']}/{probe['id']}", f"Probe · {k['titel']}", "../../../../../", "../../", "\n".join(out))
+            schreiben(f"{s['id']}/{probe['id']}", f"Probe · {k['titel']}", "../../../../../", "../../", "\n".join(out),
+                      "\n".join(out[1:]), probe["datum"])   # ohne die Leiste
+            bericht[f"{s['id']}/{probe['id']}"] = {"titel": "Probe", "datum": probe["datum"], "probe": True}
         leisten.append((s, hier))
 
     # ── Kursseite: das Jahr, darunter die Stunden einer Sequenz (Standard: die laufende) ──
@@ -898,6 +957,8 @@ def bauen(kurs: str) -> int:
                    + stunden_leiste(s["stunden"], hier, None, f"{s['id']}/", True) + "</div>")
     out.append('<p class="leise tipp">Tipp auf eine Stunde: Dort findest du deinen Hefteintrag, die Blätter und die Folien.</p>')
     schreiben("", f"{k['titel']} · Unser Jahr", "../../../", "./", "\n".join(out))
+    bericht["kursseite"] = {"titel": "Kursseite (Jahr und Stundenleiste)"}
+    stand_schreiben(ziel, kurs, welt, auswahl, seiten)
 
     for p in ziel.rglob("index.html"):
         if p not in geschrieben and MARKE in p.read_text(encoding="utf-8"):
@@ -1244,19 +1305,17 @@ def pruefen() -> list[str]:
         if not daten["kurse"].get(kurs, {}).get("klassenbereich"):
             out.append(f"{kurs}: Auswahl vorhanden, aber kurse.json setzt nicht \"klassenbereich\": true")
         ziel = UNTERRICHT / "k" / kurs
-        soll = [ziel / "index.html"]
-        for s in daten["sequenzen"].get(kurs, {}).get("reihe", []):
-            if s["id"] in auswahl["ausblenden"]:
-                continue
-            soll += [ziel / s["id"] / st["id"] / "index.html" for st in s["stunden"]
-                     if f"{s['id']}/{st['id']}" in auswahl["stunden"] or st.get("art") == "probe"]
+        soll = [ziel / "index.html"]   # die Seiten der Stunden nennt der Stand des letzten Baus
+        if (ziel / "stand.json").is_file():
+            stand = json.loads((ziel / "stand.json").read_text(encoding="utf-8"))
+            soll += [ziel / rel / "index.html" for rel in stand["seiten"] if rel != "kursseite"]
         for p in soll:
             if not p.is_file():
                 out.append(f"fehlt: {p.relative_to(REPO)} (fix: make klassenbereich K={kurs})")
             elif MARKE not in (t := p.read_text(encoding="utf-8")) or 'id="kb-inhalt"' not in t:
                 out.append(f"nicht verschlüsselt: {p.relative_to(REPO)}")
         for p in ziel.rglob("*"):
-            if p.is_file() and p.suffix not in (".html", ".bin"):
+            if p.is_file() and p.suffix not in (".html", ".bin") and p != ziel / "stand.json":
                 out.append(f"Klartext-Datei im Klassenbereich: {p.relative_to(REPO)}")
     return out
 
