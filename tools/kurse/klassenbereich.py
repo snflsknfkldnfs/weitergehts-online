@@ -705,58 +705,57 @@ def stunde_auto(ordner: Path, ueber: dict, materialien_der_stunde: list[dict]) -
 
 
 def struktur(kurs: str, auswahl: dict, daten: dict, welt: Path) -> tuple[list[dict], list[dict]]:
-    """Sequenzen mit ihren Stunden und das Jahr. Trägt kurse.json für den Kurs `sequenzen`, gilt diese Struktur (von Hand,
-    GPG9a seit 13.11.); sonst kommt sie aus Jahresplan und Sequenzplänen der Welt (Leser der Matrixe)."""
+    """Sequenzen mit ihren Stunden und das Jahr, aus Jahresplan und Sequenzplänen der Welt (Leser der Matrixe). Gehalten ist
+    eine Stunde, deren Sequenzplan-Zeile ✅ trägt oder deren Ordner eine NACHBEREITUNG.md hat. Die Auswahl-Datei trägt nur
+    Ausnahmen (ausblenden, zeigen, frage je Sequenz). Bis 18.11.2026 gab es für GPG9a eine Struktur von Hand in kurse.json
+    (sequenzen, kommt); sie ging mit der Spezifikation 2026-11-18_kursseite-pflege (Entscheid der Lehrkraft: Pflege im Planungsweg)."""
     M = matrixe_leser()
     aus = auswahl.get("ausblenden", [])
     jp = M.jahresplan_sequenzen(welt / auswahl.get("jahresplan", "JAHRESPLAN.md"))
     reihe = []
-    if daten.get("sequenzen", {}).get(kurs):
-        for s in daten["sequenzen"][kurs]["reihe"]:
-            if s["id"] in aus:
+    for x in jp:
+        sid = x["nr"].lower()
+        if sid in aus or not x["ordner"] or not (welt / x["ordner"] / "SEQUENZPLAN.md").is_file():
+            continue
+        plan = welt / x["ordner"] / "SEQUENZPLAN.md"
+        zeilen = M.sequenzplan_zeilen(plan)
+        ordner_am = {}
+        for p in (welt / x["ordner"]).glob("UE*_20??-??-??_*"):
+            if p.is_dir():
+                ordner_am[re.search(r"20\d\d-\d\d-\d\d", p.name).group(0)] = p
+        probe_am = x["probe"]["datum"] if x["probe"] else ""
+        stunden = []
+        for datum in sorted(set(zeilen) | set(ordner_am)):
+            z = zeilen.get(datum, {"thema": "", "frage": "", "zustand": "", "lnw": "", "ue": ""})
+            if z["zustand"] == "faellt_aus":
                 continue
-            ordner = (auswahl.get("sequenzen", {}).get(s["id"], {}).get("ordner")
-                      or next((x["ordner"] for x in jp if x["nr"].lower() == s["id"]), ""))
-            reihe.append({**s, "ordner": welt / ordner if ordner else None,
-                          "stunden": [st for st in s["stunden"] if f"{s['id']}/{st['id']}" not in aus]})
-    else:
-        for x in jp:
-            sid = x["nr"].lower()
-            if sid in aus or not x["ordner"] or not (welt / x["ordner"] / "SEQUENZPLAN.md").is_file():
+            f = ordner_am.get(datum)
+            probe = z["lnw"] == "gross" or datum == probe_am
+            gehalten = z["zustand"] == "gehalten" or bool(f and (f / "NACHBEREITUNG.md").is_file())
+            if not (f or probe or z["ue"] or (z["frage"] and not gehalten)):
+                continue   # Wandertag, Praktikum, Ausblick: keine Stunde
+            sid_st = (f.name.split("_")[0].lower() if f else ("ue" + z["ue"].lower() if z["ue"] else
+                      ("probe-" if probe else "d") + datum))
+            if f"{sid}/{sid_st}" in aus or any(st["id"] == sid_st for st in stunden):
                 continue
-            plan = welt / x["ordner"] / "SEQUENZPLAN.md"
-            zeilen = M.sequenzplan_zeilen(plan)
-            ordner_am = {}
-            for p in (welt / x["ordner"]).glob("UE*_20??-??-??_*"):
-                if p.is_dir():
-                    ordner_am[re.search(r"20\d\d-\d\d-\d\d", p.name).group(0)] = p
-            probe_am = x["probe"]["datum"] if x["probe"] else ""
-            stunden = []
-            for datum in sorted(set(zeilen) | set(ordner_am)):
-                z = zeilen.get(datum, {"thema": "", "frage": "", "zustand": "", "lnw": "", "ue": ""})
-                if z["zustand"] == "faellt_aus":
-                    continue
-                f = ordner_am.get(datum)
-                probe = z["lnw"] == "gross" or datum == probe_am
-                gehalten = z["zustand"] == "gehalten" or bool(f and (f / "NACHBEREITUNG.md").is_file())
-                if not (f or probe or z["ue"] or (z["frage"] and not gehalten)):
-                    continue   # Wandertag, Praktikum, Ausblick: keine Stunde
-                sid_st = (f.name.split("_")[0].lower() if f else ("ue" + z["ue"].lower() if z["ue"] else
-                          ("probe-" if probe else "d") + datum))
-                if f"{sid}/{sid_st}" in aus or any(st["id"] == sid_st for st in stunden):
-                    continue
-                p_titel, p_frage = planung_kopf(f) if f else ("", "")
-                titel = "Probe" if probe else (p_titel or z["thema"] or z["frage"] or "Stunde")
-                titel = titel.replace("**", "").strip()
-                stunden.append({"id": sid_st, "datum": datum, "titel": titel, "frage": p_frage or z["frage"].replace("**", "").strip("„“ "),
-                                "kommt": not gehalten and f"{sid}/{sid_st}" not in auswahl.get("zeigen", []),
-                                **({"heute": True} if not gehalten and f"{sid}/{sid_st}" in auswahl.get("zeigen", []) else {}),
-                                **({"art": "probe"} if probe else {}),
-                                **({"_ordner": f.name} if f else {})})
-            m = re.search(r"\*\*Sequenzfrage[^*]*\*\*:?\s*(.+)", plan.read_text(encoding="utf-8"))
-            frage = auswahl.get("sequenzen", {}).get(sid, {}).get("frage") or (m.group(1).strip().strip("*") if m else "")
-            if stunden:
-                reihe.append({"id": sid, "titel": x["name"], "frage": frage, "ordner": welt / x["ordner"], "stunden": stunden})
+            p_titel, p_frage = planung_kopf(f) if f else ("", "")
+            ueber = auswahl.get("stunden", {}).get(f"{sid}/{sid_st}", {})   # Ausnahme: titel, frage
+            p_titel, p_frage = ueber.get("titel") or p_titel, ueber.get("frage") or p_frage
+            # kommende Stunde ohne Ordner: Thema der Zeile, sonst ihr erster Satzteil („Übung für die Probe, mit …“)
+            kurz = "" if f else re.split(r",| · | – | — |\(", z.get("inhalt", ""))[0].strip()
+            titel = "Probe" if probe else (p_titel or z["thema"] or kurz or z["frage"] or "Stunde")
+            titel = titel.replace("**", "").strip()
+            stunden.append({"id": sid_st, "datum": datum, "titel": titel, "frage": p_frage or z["frage"].replace("**", "").strip("„“ "),
+                            "kommt": not gehalten and f"{sid}/{sid_st}" not in auswahl.get("zeigen", []),
+                            **({"heute": True} if not gehalten and f"{sid}/{sid_st}" in auswahl.get("zeigen", []) else {}),
+                            **({"art": "probe"} if probe else {}),
+                            **({"_ordner": f.name} if f else {})})
+        m = re.search(r"\*\*(?:Sequenzfrage|Leitfrage der Sequenz)[^*]*\*\*:?\s*(.+)", plan.read_text(encoding="utf-8"))
+        frage = m.group(1).strip().strip("*") if m else ""
+        frage = re.match(r"(.+?\?)(?:\s|$)", frage).group(1) if "?" in frage else frage   # ohne Vermerk dahinter
+        frage = auswahl.get("sequenzen", {}).get(sid, {}).get("frage") or frage
+        if stunden:
+            reihe.append({"id": sid, "titel": x["name"], "frage": frage, "ordner": welt / x["ordner"], "stunden": stunden})
     # Das Jahr: Stand nach der jüngsten gehaltenen Stunde (nicht nach dem Bautag, sonst wäre der Bau nicht wiederholbar)
     gehalten = [st["datum"] for s in reihe for st in s["stunden"] if not st.get("kommt") and st.get("art") != "probe"]
     heute = max(gehalten) if gehalten else ""
