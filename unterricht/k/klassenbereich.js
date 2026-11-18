@@ -247,6 +247,10 @@
       // Die Liste zum Antippen steht unten als Knöpfe: aus Frage oder Material nur den Satz davor zeigen
       var liste = function (t) { var i = t.indexOf(' · '); if (i < 0) return t; var c = Math.max(t.lastIndexOf('?', i), t.lastIndexOf(':', i)); return t.slice(0, c + 1); };
       var tipp = f.form === 'wahl' || f.form === 'ordnen';
+      if (f.bild) {   // Setting über der Frage, klein; Nachweis im Fuß
+        var fig = el('figure', 'q-bild'), bild = document.createElement('img');
+        bild.setAttribute('data-kb-src', f.bild.src); bild.alt = ''; fig.appendChild(bild); box.appendChild(fig);
+      }
       if (f.material && !(tipp && f.material.indexOf(' · ') >= 0)) box.appendChild(el('blockquote', 'q-material', f.material));
       box.appendChild(el('p', 'q-frage', f.form === 'rf' ? 'Richtig oder falsch?' : tipp ? liste(f.frage) : f.frage));
       var feld = el('div', 'q-feld'); box.appendChild(feld);
@@ -256,6 +260,7 @@
       });
       var heft = f.stellen.length ? knopf('Im Heft nachsehen', 'knopf-neben q-heft', function () { heftAuf(f); }) : null;
       ({ frei: frei, rf: rf, wahl: wahl, ordnen: ordnen })[f.form](f, erg, feld, unten, weiter, heft);
+      if (f.bild) { var fuss = el('p', 'q-nachweis'); fuss.innerHTML = 'Bild: ' + f.bild.nachweis; box.appendChild(fuss); bilderLaden(box); }
       var h2 = box.querySelector('.q-frage'); if (h2) { h2.tabIndex = -1; h2.focus({ preventScroll: true }); }
     }
 

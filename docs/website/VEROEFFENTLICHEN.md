@@ -212,6 +212,9 @@ der Übungsstunde zeigen auf die Adresse der Stunde. Ein Passwort für alles: da
 - Richtig/falsch, Ankreuzen, Ordnen und Sortieren werden angetippt, das Quiz prüft selbst. Das Bauprotokoll nennt je Frage die Lösung:
   gegen den Pool lesen. Am 18.11. war 8.2 vertauscht, seither ordnet der Bau über Wortstämme. Alles andere ist Freitext: eigene Antwort,
   Vergleichen, Abhaken.
+- `BILDER[nr] = (absoluter Pfad, Lizenzklasse)` (optional): ein kleines Bild über der Frage als Setting und Stütze, nie als
+  Lösungshinweis, verschlüsselt wie die Einkleber (darum auch § 60a, Spec Nr. 5); Nachweis im Fuß der Frage aus Urheber
+  (`bilder/HERKUNFT.md` neben dem Bild) und Lizenzklasse. Fehlt ein Bild, bricht der Bau ab.
 - Markierungen vor dem Deploy ansehen: `python3 tools/kurse/klassenbereich/markierung_pruefen.py <kurs> <sequenz>/<probe> <ziel>`.
 
 **Lernbegleiter (KI):** Die Knöpfe öffnen duck.ai und kopieren die Aufforderung zugleich. Mit Pool fragt „Mit KI lernen“ die Fragen

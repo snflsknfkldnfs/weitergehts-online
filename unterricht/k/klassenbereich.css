@@ -189,6 +189,9 @@ img.laedt { background: var(--gehalten) !important; }
 .q-kopf { display: flex; align-items: center; gap: 12px; font-size: .87em; color: var(--leise); }
 .q-balken { flex: 1; height: 4px; background: var(--hell); } .q-balken span { display: block; height: 100%; background: var(--tinte); }
 .q-block-name { font-size: .82em; color: var(--leise); margin: 14px 0 4px; }
+.q-bild { margin: 4px 0 10px; }
+.q-bild img { display: block; max-width: 100%; max-height: 220px; width: auto; height: auto; border-radius: 6px; border: 1px solid var(--linie); }
+.q-nachweis { margin-top: 18px; font-size: .8em; color: var(--leise); }
 .q-material { margin: 6px 0 10px; padding: 10px 14px; border-left: 3px solid var(--linie); background: var(--papier); font-style: italic; }
 .q-frage { font-size: 1.3em; font-weight: 650; line-height: 1.3; margin: 4px 0 14px; outline: none; }
 .q-antwort { width: 100%; font: inherit; padding: 10px 12px; border: 1px solid var(--linie); border-radius: 4px; background: var(--papier); resize: vertical; }

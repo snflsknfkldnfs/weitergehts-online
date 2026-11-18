@@ -869,7 +869,7 @@ def bauen(kurs: str) -> int:
             schreiben(ref, f"{st['titel']} · {k['titel']}", "../../../../../", "../../", inhalt)
         quiz_html = None
         if pool:
-            quiz_html, quiz_fehler = quiz_bauen(P, hefte, s["id"])
+            quiz_html, quiz_fehler = quiz_bauen(P, hefte, s["id"], ablage)
             if quiz_fehler:
                 sys.exit("Quiz: Fundstellen nicht gefunden:\n  " + "\n  ".join(quiz_fehler))
         for st, a, ordner, teile in spaeter:   # Stunde mit dem Quiz: Reiter „Üben“ zuerst
@@ -1232,9 +1232,29 @@ def quiz_prompt(frage_text: str, mat: str | None, el: list[str], punkte: int, he
             "<STUDENT ANSWER>\n{ANTWORT}\n</STUDENT ANSWER>\n\nBegin now: first one sentence what is already good, then the missing points as hints.\n")
 
 
-def quiz_bauen(P, hefte: dict, sequenz: str) -> tuple[str, list[str]]:
+def quiz_bild(pfad: Path, lizenz: str, ablage) -> dict:
+    """Bild über der Frage (Pool `BILDER`, Lehrkraft 18.11.: Setting, kognitive Stütze, kein Lösungshinweis): klein,
+    verschlüsselt wie die Einkleber; Nachweis aus bilder/HERKUNFT.md der Stunde, sonst die Lizenzklasse."""
+    import io
+    from PIL import Image
+    im = Image.open(pfad).convert("RGB")
+    im.thumbnail((720, 480))
+    out = io.BytesIO()
+    im.save(out, "JPEG", quality=76)
+    h = pfad.parent / "HERKUNFT.md"
+    zeilen = [zellen(z) for z in h.read_text(encoding="utf-8").splitlines() if z.startswith("|")] if h.is_file() else []
+    urheber = next((c[2] for c in zeilen if len(c) > 3 and f"`{pfad.name}`" in c[0] and "🔲" not in c[2]), "")
+    klasse = "§ 60a UrhG, nur für den Unterricht" if lizenz.replace(" ", "") == "§60a" else lizenz
+    h_ = len(urheber) // 2
+    urheber = urheber[:h_] if urheber[:h_] == urheber[h_:] else urheber   # „Unknown authorUnknown author“ (Commons-Kopie)
+    nachweis = " · ".join(x for x in (inline(urheber) if urheber not in klasse else "", e(klasse)) if x)
+    return {"src": "../../dateien/" + ablage.ablegen(out.getvalue(), ".jpg"), "nachweis": nachweis}
+
+
+def quiz_bauen(P, hefte: dict, sequenz: str, ablage=None) -> tuple[str, list[str]]:
     """HTML des Reiters „Üben“ (Daten als JSON, Hefte als Vorlagen) und die Liste der Fehler (leer = alles gefunden)."""
     fehler, fragen, benutzt = [], [], set()
+    bilder = getattr(P, "BILDER", {}) if ablage else {}
     for nr, block, art, form, typ, mat, frage, pkt, el, wo, vert in P.POOL:
         stellen = []
         for st, reihe, spalte in P.FUNDSTELLEN[nr]:
@@ -1269,6 +1289,11 @@ def quiz_bauen(P, hefte: dict, sequenz: str) -> tuple[str, list[str]]:
         f = {"nr": nr, "block": block, "art": art, "typ": typ, "material": mat, "frage": frage, "punkte": pkt,
              "elemente": [x for x in el if not x.startswith("(")], "vertiefung": vert, "stellen": stellen,
              **frage_form(nr, typ, mat, frage, el)}
+        if nr in bilder:
+            if Path(bilder[nr][0]).is_file():
+                f["bild"] = quiz_bild(Path(bilder[nr][0]), bilder[nr][1], ablage)
+            else:
+                fehler.append(f"{nr}: Bild fehlt: {bilder[nr][0]}")
         if f["form"] == "frei":
             f["ki"] = quiz_prompt(frage, mat, f["elemente"], pkt, heft_text_ or wo)
         fragen.append(f)
