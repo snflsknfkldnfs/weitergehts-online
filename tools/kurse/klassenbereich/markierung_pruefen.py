@@ -2,7 +2,7 @@
 """markierung_pruefen.py — zeichnet jede Fundstelle des Quiz als Rahmen auf ihren Einkleber, zum Ansehen vor dem Deploy.
 
   python3 tools/kurse/klassenbereich/markierung_pruefen.py <kurs> <sequenz>/<probe> <zielordner>
-  z. B.  python3 tools/kurse/klassenbereich/markierung_pruefen.py gpg9a s01/probe1 /tmp/markierung
+  z. B.  python3 tools/kurse/klassenbereich/markierung_pruefen.py gpg9a s01/ue12-13 /tmp/markierung
 
 Liest die gebaute, verschlüsselte Probenseite mit dem Schlüssel des Kurses (lokal), schreibt je Fundstelle ein JPG
 „<Frage>_<n>.jpg“ und eine Übersicht „uebersicht_<k>.png“ (12 je Bild). Gefunden heißt nicht richtig markiert: ansehen.
