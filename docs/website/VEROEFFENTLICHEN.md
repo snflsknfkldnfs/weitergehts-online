@@ -140,31 +140,83 @@ Commit-Betreff mit Kurs und Stunde (Commits sind nicht öffentlich, die Seite sc
 
 ## Klassenbereich: ein Kurs hinter dem Klassenpasswort (seit 14.11.2026)
 
-Ausführliche Anleitung für jede Session (nach jeder Stunde, Quiz zur Probe, Fallstricke): `tools/kurse/KURSSEITE_PFLEGEN.md`.
+Einzige Anleitung zur Pflege der Kursseiten (Warum und Entscheide der Lehrkraft: `specs/2026-11-14-klassenbereich-design.md`).
+Ein Kurs mit Klassenbereich hat statt der öffentlichen Kursseite eine verschlüsselte unter `https://weitergehts.online/unterricht/k/<kurs>/`
+(**Kleinschreibung**: `k/gpg9a`, nicht `k/GPG9a`, sonst 404). Heute: GPG 9a, GPG 8a, WiB 6b.
 
-Spec: `specs/2026-11-14-klassenbereich-design.md`. Ein Kurs mit Klassenbereich hat statt der öffentlichen Kursseite eine
-verschlüsselte: Jahr, Stunden, Heftseite mit Einkleber, Blätter neben iPad-Seiten, Folien, Probenseite. Heute: GPG 9a (live),
-GPG 8a (Entwurf), WiB6b (Entwurf, 16.11.2026: Hefteinträge aus dem Deck-Auftrag, Übungsstunde mit Quiz und Fällen).
+| Seite | Adresse | Inhalt |
+|---|---|---|
+| Kursseite | `k/<kurs>/` | Jahresleiste (aus dem Jahresplan), darunter die Stunden der gewählten Sequenz |
+| Stundenseite | `k/<kurs>/<sequenz>/<ue>/` | **Heft** (Heftseite mit dem echten, ausgefüllten Einkleber), **Erarbeitung** (iPad-Seite links, Blatt rechts, Zeitkarte oben), **Folien** |
+| Probenseite | `k/<kurs>/<sequenz>/<probe>/` | **Üben** (Quiz aus dem Pool der Probe, wenn einer eingetragen ist), **Antwortsätze**, „Mit KI für die Probe üben“ |
+
+**Wo was liegt:** Generator `tools/kurse/klassenbereich.py` (`make klassenbereich K=<kurs>`) · Auswahl je Kurs, nur Ausnahmen,
+nie Inhalte: `tools/kurse/klassenbereich/<kurs>.json` (Felder: Spec § 5) · Bedienung im Browser `unterricht/k/klassenbereich.{js,css}`
+(nach Änderung `python3 tools/website/bump-assets.py --set <datei> <version>`) · Einkleber ohne Lösungsbild nachbauen:
+`tools/kurse/klassenbereich/einkleber_fuellen.py` · Texterkennung für die Markierung im Quiz: `tools/kurse/klassenbereich/texterkennung.swift`
+· Passwort und Salz je Kurs **nur** in `~/.config/weitergehts/klassenbereich.json` (anzeigen: `python3 tools/kurse/klassenbereich.py <kurs> --passwort`)
+· Leser für Jahres- und Sequenzplan aus der Matrixe, nur lesend: `/Users/paulad/die-matrixe/werkzeuge/oberflaeche.py` · Inhalte: die Welt
+`/Users/paulad/Schule_2026-27/Unterrichtsplanung26_27/welt/<Kurs>/`. Zwischenspeicher (Einkleber, Texterkennung): `~/.cache/weitergehts/`.
+
+**Arbeitsbaum:** wie Schritt 0, z. B. `/Users/paulad/weitergehts.online/_wt-gpg9a-kursseite`. Andere Sessions schreiben auch auf `main`:
+vor jedem Bau `git fetch -q origin && git rebase origin/main`. Konflikte in `assets/versions.json` lösen, indem beide Zeilen bleiben;
+danach `make kurse`.
 
 **Einen Kurs anschließen (einmal):**
 1. Auswahl-Datei anlegen, nur mit dem Nötigen: `tools/kurse/klassenbereich/<kurs>.json`
    `{"kurs": "<kurs>", "welt": "/Users/paulad/Schule_2026-27/Unterrichtsplanung26_27/welt/<Kurs>", "ausblenden": ["s00"], "stunden": {}}`
 2. In `unterricht/kurse.json` beim Kurs `"klassenbereich": true` setzen (dann schreibt `make kurse` die öffentliche Kursseite nicht mehr).
-3. Bauen: `make klassenbereich K=<kurs>` — legt beim ersten Mal ein Klassenpasswort in `~/.config/weitergehts/klassenbereich.json` an
-   (anzeigen: `python3 tools/kurse/klassenbereich.py <kurs> --passwort`; die Lehrkraft kann es dort ersetzen).
+3. Bauen: `make klassenbereich K=<kurs>`. Beim ersten Mal legt das ein Klassenpasswort an; die Lehrkraft kann es ersetzen.
 4. Ansehen (lokal, Desktop und Handy): jede Stunde öffnen, Heft · Erarbeitung · Folien. Was die Ableitung falsch wählt, als Ausnahme
-   in die Auswahl-Datei (`ausblenden`, `stunden.<seq/ue>.blaetter` …, Felder in der Spec § 5), nie im Generator für einen Kurs.
+   in die Auswahl-Datei, nie im Generator für einen Kurs.
 5. `make kurse`, `make check`, Commit, **Push nur nach Freigabe der Lehrkraft**.
 6. Im Werkzeugkasten `themes/regeln/GPG.json` → `kursseite.kurse` den Kurs ergänzen: dann verlangt der Folienbau Code und Link
-   der Kursseite auf der letzten Folie.
+   der Kursseite auf der letzten Folie (CHANGELOG 172; Folien mit Website-Werkzeug brauchen ohnehin Code und Link).
 
-**Nach jeder Stunde:** Die Ableitung liest Sequenzplan und Stundenordner selbst. Es genügt
-`make klassenbereich K=<kurs>` → `make check` → Commit → Push. Eine Stunde erscheint, sobald ihr Ordner eine `NACHBEREITUNG.md`
-hat oder der Sequenzplan sie mit ✅ führt. (GPG 9a liest seine Struktur noch aus `kurse.json` `sequenzen`: dort die Stunde
-eintragen und `kommt` streichen; Auswahl je Stunde steht in `gpg9a.json`.)
+**Nach jeder Stunde:**
+1. In der Welt braucht die Stunde ihren Ordner `UE<nr>_<JJJJ-MM-TT>_<slug>/`, dazu `NACHBEREITUNG.md` (erst dann gilt sie als gehalten)
+   oder ✅ im Sequenzplan. Nur GPG 9a liest seine Struktur noch aus `kurse.json` `sequenzen`: dort die Stunde eintragen und `kommt` streichen.
+2. `make klassenbereich K=<kurs>`, `make kurse`, `make check`. Ein zweiter Bau schreibt nichts.
+3. Im Browser ansehen: `preview_start` `kursseite-wt` (Port 8093, `welt/GPG9a/.claude/launch.json`). Das Passwort nur in die lokale Vorschau tippen.
+4. Commit mit ausdrücklich genannten Pfaden, `unterricht/k/<kurs>/dateien` mit `git add -A` (gelöschte Dateien gehen sonst nicht mit).
+5. Push nach dem Ja (`git push origin HEAD:main`), Deploy abwarten (`gh run list --branch main --limit 1`). Live prüfen, ohne das
+   Passwort in die öffentliche Seite zu tippen: Dateien Byte für Byte vergleichen (`curl -s https://weitergehts.online/<pfad> | cmp - <pfad>`)
+   und eine Seite mit dem `Tresor` des Generators entschlüsseln (Spec § 7).
 
-**Grenzen:** ❌ Inhalte (Hefteinträge, Fragen) in die Auswahl-Datei oder sonst unverschlüsselt ins Repo; ❌ Passwort ins Repo,
-in Commits oder in Chat-Zusammenfassungen; ❌ `unterricht/k/<kurs>/` von Hand ändern (B5c blockt).
+**Wenn die Ableitung etwas falsch wählt:**
+
+| Befund | Ursache | Abhilfe |
+|---|---|---|
+| Stunde fehlt | kein Ordner `UE…_<Datum>_…`, keine `NACHBEREITUNG.md`, kein ✅ | in der Welt nachholen; vorher zeigen: `zeigen` |
+| Heft leer | Lösung in unbekannter Form | `heft` setzen: `{datei, abschnitt, bis}` (Leser: Tabellen, Listen, „Antwortsatz:/Merksatz:“) |
+| Einkleber-Bild fehlt | weder `einkleber_loesung.png`, `tafel_voll.png`, `hefteintrag_tafel.png` noch `LOESUNG_Einkleber*.pdf` | `heft_bild`: `{bild}`, `{pdf}` oder `{bau: [Befehl]}` (Beispiel 09.10. in `gpg9a.json`) |
+| falsches Blatt oder iPad-Seite | Ausschlussliste oder Wortvergleich | `blaetter` der Stunde setzen |
+| „**“ oder Zeilen über die Lösung im Heft | neue Schreibweise | im Generator lösen (`META`, `planung_kopf`), dann bauen GPG 8a und 9a gleich bis auf diese Stelle |
+| Wochenrückblick soll nicht erscheinen | Entscheid der Lehrkraft | `ausblenden: ["s01/ue07"]` |
+
+**Quiz zur Probe (Reiter „Üben“, seit 18.11.2026), datengetrieben:** Das Werkzeug ist generisch: Generator (`quiz_bauen`) und
+Bedienung (`quiz()` in `klassenbereich.js`). Eine neue Probe braucht nur Daten: einen Pool als Python-Datei mit `POOL`, `BLOECKE`,
+`FUNDSTELLEN` und `pruefen()` (Vorbild GPG 9a:
+`/Users/paulad/Schule_2026-27/Unterrichtsplanung26_27/.b/entwurf/GPG9a/S01_geteiltes-land/UE12-13_2026-11-20_probe/pool/pool.py`)
+und in der Auswahl eine Zeile `"uebung_pool": {"<sequenz>": "<pfad>/pool.py"}`. Das Quiz liegt im Klassenbereich und nicht
+öffentlich wie `ordnen/` oder `quellen/`, weil es die Einkleber (Bilder nur für die Klasse) einblendet.
+- `FUNDSTELLEN[nr]`: Liste `(Stunde, Reihe, Spalte | None)` im Wortlaut des Einklebers. `"Antwortsatz"` meint den Satz unter dem Einkleber,
+  `"Karte"` ein Blatt in der Mappe, eine leere Liste steht für Vertiefung. Der Bau findet jede Stelle (Texterkennung, sonst Tabellenzeile)
+  oder bricht ab.
+- Richtig/falsch, Ankreuzen, Ordnen und Sortieren werden angetippt, das Quiz prüft selbst. Das Bauprotokoll nennt je Frage die Lösung:
+  gegen den Pool lesen. Am 18.11. war 8.2 vertauscht, seither ordnet der Bau über Wortstämme. Alles andere ist Freitext: eigene Antwort,
+  Vergleichen, Abhaken.
+- Markierungen vor dem Deploy ansehen: `python3 tools/kurse/klassenbereich/markierung_pruefen.py <kurs> <sequenz>/<probe> <ziel>`.
+
+**Lernbegleiter (KI):** Die Knöpfe öffnen duck.ai und kopieren die Aufforderung zugleich. Mit Pool fragt „Mit KI lernen“ die Fragen
+der Stunde ab, „Mit KI für die Probe üben“ alle; im Quiz prüft „Mit KI über meine Antwort sprechen“ die eigene Antwort an der
+Erwartung (Tipps statt Musterlösung). Regeln: `REGELN`, `WIE`, `QUIZ_REGELN` im Generator. Grenze: sehr lange Aufforderungen
+(Probenseite etwa 19 000 Zeichen) kann die Adresse abschneiden; dann fügt das Kind den kopierten Text ein.
+
+**Grenzen:** ❌ Inhalte (Hefteinträge, Fragen, Lösungen) in die Auswahl-Datei oder sonst unverschlüsselt ins Repo (B5c prüft
+`k/<kurs>/`); ❌ Passwort ins Repo, in Commits oder in Chat-Zusammenfassungen; ❌ `unterricht/k/<kurs>/` von Hand ändern;
+❌ das Passwort zum Testen in die öffentliche Seite tippen; ❌ LibreOffice neben einer anderen Session starten (der Einkleber-Bau
+läuft unter `/usr/bin/lockf` mit `/Users/paulad/werkzeugkasten/out/.lauf.lock`).
 
 ## Grenzen
 
