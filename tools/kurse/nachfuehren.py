@@ -56,9 +56,9 @@ def aussen(kurse: list[str], ja: str | None, basis: str) -> int:
         if not wt.is_dir():
             git("worktree", "add", "-q", "-B", ZWEIG, str(wt), basis, cwd=haupt)
         else:
-            if git("log", "--oneline", "origin/main..HEAD", cwd=wt):
-                return halt(f"{wt} trägt Commits, die nicht auf origin/main sind (ein Push schlug fehl?). Ansehen: "
-                            f"git -C {wt} log origin/main..HEAD")
+            if git("log", "--oneline", f"{basis}..HEAD", cwd=wt):
+                return halt(f"{wt} trägt Commits, die nicht auf {basis} sind (ein Push schlug fehl?). Ansehen: "
+                            f"git -C {wt} log {basis}..HEAD")
             git("reset", "-q", "--hard", cwd=wt)
             git("clean", "-fdq", "unterricht/k", cwd=wt)
             git("checkout", "-q", "-B", ZWEIG, basis, cwd=wt)
@@ -117,9 +117,17 @@ def geaendert_laut_git(kurs: str) -> set[str]:
 
 
 def kurs_bericht(kurs: str, alt: dict | None, neu: dict, bericht: dict) -> list[str]:
-    a = (alt or {}).get("seiten", {})
     n = neu["seiten"]
     dateien = geaendert_laut_git(kurs)
+    if alt is None:   # erster Lauf mit Stand: die Seiten können schon da sein, Kennungen gibt es noch nicht
+        zeilen = [f"  erster Lauf mit Stand: {len(n)} Seiten erfasst"]
+        da = set(git("ls-files", f"unterricht/k/{kurs}", cwd=REPO).splitlines())
+        for r in sorted(n, key=lambda r: n[r].get("datum", "")):
+            pfad = f"unterricht/k/{kurs}/" + (f"{r}/" if r != "kursseite" else "") + "index.html"
+            wie = "neu" if pfad not in da else "geändert" if r in dateien else "unverändert"
+            zeilen.append(f"  {wie}: {in_worten(r, bericht.get(r))}")
+        return zeilen
+    a = alt["seiten"]
     zeilen = []
     for rel in sorted(set(n) - set(a), key=lambda r: n[r].get("datum", "")):
         zeilen.append(f"  neu: {in_worten(rel, bericht.get(rel))}")
@@ -131,9 +139,7 @@ def kurs_bericht(kurs: str, alt: dict | None, neu: dict, bericht: dict) -> list[
     nur_leiste = sorted(r for r in dateien if r in a and r in n and a[r]["kennung"] == n[r]["kennung"])
     if nur_leiste:
         zeilen.append(f"  nur die Stundenleiste: {len(nur_leiste)} Seite(n)")
-    if alt is None and dateien:
-        zeilen.insert(0, "  (erster Lauf mit Stand: alle Seiten zählen als neu)")
-    if neu["ausgespart"]["daten"] != (alt or {}).get("ausgespart", {}).get("daten", neu["ausgespart"]["daten"]):
+    if neu["ausgespart"]["daten"] != alt.get("ausgespart", {}).get("daten", neu["ausgespart"]["daten"]):
         zeilen.append(f"  gehalten ohne Seite: {', '.join(tag(d) for d in neu['ausgespart']['daten']) or 'keine'}")
     return zeilen
 
