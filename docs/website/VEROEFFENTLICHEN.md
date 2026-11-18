@@ -147,8 +147,9 @@ Ein Kurs mit Klassenbereich hat statt der öffentlichen Kursseite eine verschlü
 | Seite | Adresse | Inhalt |
 |---|---|---|
 | Kursseite | `k/<kurs>/` | Jahresleiste (aus dem Jahresplan), darunter die Stunden der gewählten Sequenz |
-| Stundenseite | `k/<kurs>/<sequenz>/<ue>/` | **Heft** (Heftseite mit dem echten, ausgefüllten Einkleber), **Erarbeitung** (iPad-Seite links, Blatt rechts, Zeitkarte oben), **Folien** |
-| Probenseite | `k/<kurs>/<sequenz>/<probe>/` | **Üben** (Quiz aus dem Pool der Probe, wenn einer eingetragen ist), **Antwortsätze**, „Mit KI für die Probe üben“ |
+| Stundenseite | `k/<kurs>/<sequenz>/<ue>/` | **Heft** (Heftseite mit dem echten, ausgefüllten Einkleber), **Erarbeitung** (iPad-Seite links, Blatt rechts, Zeitkarte oben), **Folien**; in der Stunde, der ein Pool zugeordnet ist, zuerst **Üben** (Quiz) |
+| Kommende Stunde | wie Stundenseite | die **nächste** Stunde einer Sequenz, sobald ihr Ordner eine `PLANUNG.md` hat: nur **Folien** (und **Üben**, wenn ihr der Pool gehört); Heft und Blätter erst, wenn sie gehalten ist, damit keine Lösung vorab sichtbar ist |
+| Probenseite | `k/<kurs>/<sequenz>/<probe>/` | **Antwortsätze**, „Mit KI für die Probe üben“, ein Link zum Quiz in der Übungsstunde (liegt der Pool auf keiner Stunde, steht das Quiz hier als Reiter **Üben**) |
 
 **Wo was liegt:** Generator `tools/kurse/klassenbereich.py` (`make klassenbereich K=<kurs>`) · Auswahl je Kurs, nur Ausnahmen,
 nie Inhalte: `tools/kurse/klassenbereich/<kurs>.json` (Felder: Spec § 5) · Bedienung im Browser `unterricht/k/klassenbereich.{js,css}`
@@ -187,7 +188,7 @@ danach `make kurse`.
 
 | Befund | Ursache | Abhilfe |
 |---|---|---|
-| Stunde fehlt | kein Ordner `UE…_<Datum>_…`, keine `NACHBEREITUNG.md`, kein ✅ | in der Welt nachholen; vorher zeigen: `zeigen` |
+| Stunde fehlt | kein Ordner `UE…_<Datum>_…`, keine `NACHBEREITUNG.md`, kein ✅ (die nächste Stunde erscheint schon mit `PLANUNG.md`, nur mit Folien) | in der Welt nachholen; eine spätere Stunde vorher zeigen: `zeigen` |
 | Heft leer | Lösung in unbekannter Form | `heft` setzen: `{datei, abschnitt, bis}` (Leser: Tabellen, Listen, „Antwortsatz:/Merksatz:“) |
 | Einkleber-Bild fehlt | weder `einkleber_loesung.png`, `tafel_voll.png`, `hefteintrag_tafel.png` noch `LOESUNG_Einkleber*.pdf` | `heft_bild`: `{bild}`, `{pdf}` oder `{bau: [Befehl]}` (Beispiel 09.10. in `gpg9a.json`) |
 | falsches Blatt oder iPad-Seite | Ausschlussliste oder Wortvergleich | `blaetter` der Stunde setzen |
@@ -198,7 +199,12 @@ danach `make kurse`.
 Bedienung (`quiz()` in `klassenbereich.js`). Eine neue Probe braucht nur Daten: einen Pool als Python-Datei mit `POOL`, `BLOECKE`,
 `FUNDSTELLEN` und `pruefen()` (Vorbild GPG 9a:
 `/Users/paulad/Schule_2026-27/Unterrichtsplanung26_27/.b/entwurf/GPG9a/S01_geteiltes-land/UE12-13_2026-11-20_probe/pool/pool.py`)
-und in der Auswahl eine Zeile `"uebung_pool": {"<sequenz>": "<pfad>/pool.py"}`. Das Quiz liegt im Klassenbereich und nicht
+und in der Auswahl die Zeile `"uebung_pool": {"<sequenz>": {"pool": "<pfad>/pool.py", "stunde": "<ue der Übungsstunde>"}}`
+(GPG 9a: `"stunde": "ue11"`, Adresse `k/gpg9a/s01/ue11/#ueben`). Das Quiz liegt dann in der Stunde, in der damit geübt wird;
+die Probenseite verlinkt dorthin. Hat diese Stunde noch keinen Ordner mit `PLANUNG.md`, meldet der Bau einen HINWEIS und legt
+das Quiz auf die Probenseite. Ohne `stunde` (nur der Pfad) liegt das Quiz auf der Probenseite: so stand es bis 18.11. für GPG 9a,
+und die Lehrkraft rügte es („liegt aber in der falschen UE, also im slot am 20.11. statt am slot für 19.11.“). QR-Code und Folie
+der Übungsstunde zeigen auf die Adresse der Stunde. Ein Passwort für alles: das der Kursseite. Das Quiz liegt im Klassenbereich und nicht
 öffentlich wie `ordnen/` oder `quellen/`, weil es die Einkleber (Bilder nur für die Klasse) einblendet.
 - `FUNDSTELLEN[nr]`: Liste `(Stunde, Reihe, Spalte | None)` im Wortlaut des Einklebers. `"Antwortsatz"` meint den Satz unter dem Einkleber,
   `"Karte"` ein Blatt in der Mappe, eine leere Liste steht für Vertiefung. Der Bau findet jede Stelle (Texterkennung, sonst Tabellenzeile)

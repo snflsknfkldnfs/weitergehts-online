@@ -801,29 +801,52 @@ def bauen(kurs: str) -> int:
         ref = f"{s['id']}/{st['id']}"
         return [m for m in materialien.values() if m.get("stunde") == ref or (not m.get("stunde") and m.get("datum") == st["datum"])]
 
+    def stundenordner(s, st) -> Path | None:
+        ueber = auswahl.get("stunden", {}).get(f"{s['id']}/{st['id']}", {})
+        if s["ordner"] is None:
+            return None
+        kand = ([s["ordner"] / ueber["ordner"]] if ueber.get("ordner") else [s["ordner"] / st["_ordner"]] if st.get("_ordner") else
+                sorted(p for p in s["ordner"].glob(f"{st['id'].upper()}_{st['datum']}*") if p.is_dir()))
+        return kand[0] if kand and kand[0].is_dir() else None
+
     leisten = []   # je Sequenz die Stundenleiste der Kursseite
     for s in reihe:
         stunden = s["stunden"]
+        # Die nächste kommende Stunde mit Ordner und Planung erscheint vor der Stunde, nur mit Folien und, wenn ein Pool auf
+        # sie zeigt, dem Üben; Heft und Blätter erst, wenn sie gehalten ist (keine Lösung vorab). Lehrkraft 18.11.2026: das
+        # Quiz gehört in die Übungsstunde am 19.11., nicht auf die Probenseite am 20.11.
+        naechste = next((st for st in stunden if st.get("kommt") and st.get("art") != "probe"), None)
+        if naechste and (o := stundenordner(s, naechste)) and (o / "PLANUNG.md").is_file():
+            naechste.pop("kommt")
+            naechste["heute"] = naechste["vorab"] = True
         gehalten = [st for st in stunden if not st.get("kommt") and st.get("art") != "probe"]
-        hier = gehalten[-1]["id"] if gehalten else None
+        hier = next((st["id"] for st in reversed(gehalten) if not st.get("vorab")), None)
         offen = [st for st in stunden if not st.get("kommt") or st.get("art") == "probe"]
         gesammelt = []
         seiten_ids = set()
-        pool = auswahl.get("uebung_pool", {}).get(s["id"])   # Fragen-Pool der Probe: Reiter „Üben“ auf der Probenseite
+        # Fragen-Pool zum Üben: {"pool": <pfad>, "stunde": <ue>} legt das Quiz in diese Stunde (Reiter „Üben“), die
+        # Probenseite verlinkt nur dorthin; ein bloßer Pfad (Form bis 18.11.) legt es auf die Probenseite.
+        pool_ein = auswahl.get("uebung_pool", {}).get(s["id"])
+        pool = pool_ein.get("pool") if isinstance(pool_ein, dict) else pool_ein
+        pool_stunde = pool_ein.get("stunde") if isinstance(pool_ein, dict) else None
+        if pool_stunde and not any(st["id"] == pool_stunde and not st.get("kommt") for st in stunden):
+            print(f"HINWEIS {s['id']}/{pool_stunde}: Stunde des Quiz noch ohne Seite (Ordner mit PLANUNG.md fehlt) — Quiz auf der Probenseite")
+            pool_stunde = None
         P = pool_laden(Path(pool)) if pool else None
         hefte: dict = {}
+        spaeter = []   # die Stunde mit dem Quiz: erst nach allen Heften bauen, die das Quiz einblendet
         for st in gehalten:
             ref = f"{s['id']}/{st['id']}"
             ueber = auswahl.get("stunden", {}).get(ref, {})
             if s["ordner"] is None:
                 continue
-            kand = ([s["ordner"] / ueber["ordner"]] if ueber.get("ordner") else [s["ordner"] / st["_ordner"]] if st.get("_ordner") else
-                    sorted(p for p in s["ordner"].glob(f"{st['id'].upper()}_{st['datum']}*") if p.is_dir()))
-            if not kand:
+            ordner = stundenordner(s, st)
+            if ordner is None:
                 print(f"HINWEIS {ref}: kein Stundenordner {st['id'].upper()}_{st['datum']}_… in {s['ordner'].name} — Stunde ohne Seite")
                 continue
-            ordner = kand[0]
             a = stunde_auto(ordner, ueber, mat_der_stunde(s, st))
+            if st.get("vorab"):   # noch nicht gehalten: kein Heft, keine Blätter
+                a.update(heft=[], heft_bild=[], blaetter=[], ohne_heft=True, vorab=True)
             if P:   # Fragen des Pools, die auf diese Stunde zeigen: der Lernbegleiter der Stunde fragt sie ab
                 a["_pool"] = [x for x in P.POOL if any(f_[0] == ref for f_ in P.FUNDSTELLEN[x[0]])]
             teile = []
@@ -837,10 +860,24 @@ def bauen(kurs: str) -> int:
                 pfade = ["../../dateien/" + ablage.ablegen(j, ".jpg") for j in jpgs]
                 hefte[st["id"]] = {"html": heftseite(st, a, teile, pfade), "teile": teile, "datum": datum_kurz(st["datum"]),
                                    "titel": st["titel"], "ocr": [texterkennung(j) for j in jpgs]}
+            if st["id"] == pool_stunde:
+                spaeter.append((st, a, ordner, teile))
+                continue
             i = offen.index(st)
             inhalt = stundenseite(s, st, a, ordner, teile, stunden, hier, offen[i - 1] if i else None,
                                   offen[i + 1] if i + 1 < len(offen) else None, ablage, materialien, mat_der_stunde(s, st))
             schreiben(ref, f"{st['titel']} · {k['titel']}", "../../../../../", "../../", inhalt)
+        quiz_html = None
+        if pool:
+            quiz_html, quiz_fehler = quiz_bauen(P, hefte, s["id"])
+            if quiz_fehler:
+                sys.exit("Quiz: Fundstellen nicht gefunden:\n  " + "\n  ".join(quiz_fehler))
+        for st, a, ordner, teile in spaeter:   # Stunde mit dem Quiz: Reiter „Üben“ zuerst
+            i = offen.index(st)
+            inhalt = stundenseite(s, st, a, ordner, teile, stunden, hier, offen[i - 1] if i else None,
+                                  offen[i + 1] if i + 1 < len(offen) else None, ablage, materialien, mat_der_stunde(s, st),
+                                  quiz_html)
+            schreiben(f"{s['id']}/{st['id']}", f"{st['titel']} · {k['titel']}", "../../../../../", "../../", inhalt)
         mit_seite = seiten_ids
         for st in stunden:   # gehaltene Stunden ohne Ordner bekommen keinen Link
             if not st.get("kommt") and st.get("art") != "probe" and st["id"] not in mit_seite:
@@ -856,10 +893,12 @@ def bauen(kurs: str) -> int:
                    'Tipp auf eine Stunde, um den ganzen Hefteintrag zu sehen.</p>',
                    ki_knopf("Mit KI für die Probe üben", prompt_sequenz(s, datum_kurz(probe["datum"]), gesammelt, P.POOL if pool else None)),
                    '<ol class="probe-liste">']
-            if pool:
-                quiz_html, quiz_fehler = quiz_bauen(P, hefte, s["id"])
-                if quiz_fehler:
-                    sys.exit("Quiz: Fundstellen nicht gefunden:\n  " + "\n  ".join(quiz_fehler))
+            auf_probe = pool and not pool_stunde
+            if pool_stunde:   # das Quiz liegt in der Übungsstunde; hier nur der Weg dorthin
+                ue = next(st for st in stunden if st["id"] == pool_stunde)
+                out.insert(4, f'<p class="lose"><a class="ln" href="../{e(pool_stunde)}/#ueben">Üben: Quiz zur Probe '
+                              f'(Stunde am {e(datum_kurz(ue["datum"]))})</a></p>')
+            if auf_probe:
                 out[3:3] = ['<div class="reiter" role="tablist"><button role="tab" aria-selected="true" data-zu="ueben">Üben</button>'
                             '<button role="tab" aria-selected="false" data-zu="saetze">Antwortsätze</button></div>',
                             f'<section class="tafel" id="ueben" role="tabpanel">{quiz_html}</section>',
@@ -868,7 +907,7 @@ def bauen(kurs: str) -> int:
                 antw = "".join(f'<p class="pl-antwort">{inline(t["antwort"])}</p>' for t in teile if t["antwort"])
                 out.append(f'<li><a href="../{st["id"]}/"><span class="d">{e(datum)}</span>'
                            f'<span class="pl-frage">{e(st.get("frage") or st["titel"])}</span></a>{antw}</li>')
-            out.append("</ol>" + ("</section>" if pool else ""))
+            out.append("</ol>" + ("</section>" if auf_probe else ""))
             schreiben(f"{s['id']}/{probe['id']}", f"Probe · {k['titel']}", "../../../../../", "../../", "\n".join(out))
         leisten.append((s, hier))
 
@@ -940,24 +979,34 @@ def uebungsseite(s, st, a, ordner, stunden, hier, vor, nach, ablage, materialien
     return "\n".join(out)
 
 
-def stundenseite(s, st, a, ordner, teile, stunden, hier, vor, nach, ablage, materialien, material_der_stunde) -> str:
+def stundenseite(s, st, a, ordner, teile, stunden, hier, vor, nach, ablage, materialien, material_der_stunde,
+                 quiz_html: str | None = None) -> str:
+    """quiz_html: das Quiz aus dem Pool, wenn er auf diese Stunde zeigt (Reiter „Üben“ zuerst). a["vorab"]: Stunde noch nicht
+    gehalten, nur Folien (und Üben)."""
     if a.get("uebung"):
         return uebungsseite(s, st, a, ordner, stunden, hier, vor, nach, ablage, materialien)
     unt = "../../../../"   # von k/<kurs>/<s>/<ue>/ nach unterricht/
     dat = "../../dateien/"
     heft_da = not a.get("ohne_heft")   # Stunde, in der kein Eintrag geschrieben wurde: ohne Reiter „Heft“
+    erarb_da = not a.get("vorab")      # vor der Stunde keine Blätter
+    erster = "ueben" if quiz_html else "heft" if heft_da else "erarbeitung" if erarb_da else "folien"
+    def reiter(zu, name):
+        return f'<button role="tab" aria-selected="{"true" if zu == erster else "false"}" data-zu="{zu}">{name}</button>'
     out = [kopfzeile(stunden, hier, st["id"], vor, nach, s["id"]),
            f'<p class="dat">{e(datum_kurz(st["datum"]))} · {e(st["titel"])}</p>',
-           f'<h1 class="frage">{e(st.get("frage", st["titel"]))}</h1>',
+           f'<h1 class="frage">{e(st.get("frage") or st["titel"])}</h1>',
            '<div class="reiter" role="tablist">'
-           + ('<button role="tab" aria-selected="true" data-zu="heft">Heft</button>' if heft_da else "")
-           + f'<button role="tab" aria-selected="{"false" if heft_da else "true"}" data-zu="erarbeitung">Erarbeitung</button>'
-           + ('<button role="tab" aria-selected="false" data-zu="folien">Folien</button>' if a.get("folien") else "")
+           + (reiter("ueben", "Üben") if quiz_html else "")
+           + (reiter("heft", "Heft") if heft_da else "")
+           + (reiter("erarbeitung", "Erarbeitung") if erarb_da else "")
+           + (reiter("folien", "Folien") if a.get("folien") else "")
            + "</div>"]
+    if quiz_html:
+        out.append(f'<section class="tafel" id="ueben" role="tabpanel">{quiz_html}</section>')
 
     if heft_da:
         bilder = [dat + ablage.ablegen(b, ".jpg") for b in einkleber_bilder(a, ordner)]
-        out.append('<section class="tafel" id="heft" role="tabpanel">')
+        out.append('<section class="tafel" id="heft" role="tabpanel"' + ("" if erster == "heft" else " hidden") + ">")
         out.append(heftseite(st, a, teile, bilder))
         out.append(ki_knopf("Mit KI lernen", prompt_stunde(st, datum_kurz(st["datum"]), teile, a.get("_pool"))))
         out.append("</section>")
@@ -975,41 +1024,42 @@ def stundenseite(s, st, a, ordner, teile, stunden, hier, vor, nach, ablage, mate
     # Zeitkarten der Stunde stehen am Anfang der Erarbeitung, wie in der Stunde (Einstieg; Lehrkraft 14.11.)
     zeitkarten = [m for m in lose if m["pfad"].startswith("zeitkarte/")]
     lose = [m for m in lose if m not in zeitkarten]
-    out.append('<section class="tafel" id="erarbeitung" role="tabpanel"' + (" hidden" if heft_da else "") + ">")
+    ea = out if erarb_da else []   # vor der Stunde: ohne Reiter „Erarbeitung“
+    ea.append('<section class="tafel" id="erarbeitung" role="tabpanel"' + ("" if erster == "erarbeitung" else " hidden") + ">")
     for m in zeitkarten:
-        out.append(f'<div class="spalte einstieg"><div class="spalte-kopf"><span>Zum Einstieg: {e(m["titel"])}. '
+        ea.append(f'<div class="spalte einstieg"><div class="spalte-kopf"><span>Zum Einstieg: {e(m["titel"])}. '
                    f'Schieb den Regler und schau, was sich ändert.</span>'
                    f'<button type="button" class="ln" data-voll>groß</button>'
                    f'<a class="ln" href="{unt}{e(m["pfad"])}" target="_blank" rel="noopener">eigenes Fenster</a></div>'
                    f'<iframe data-src="{unt}{e(m["pfad"])}" title="{e(m["titel"])}" loading="lazy"></iframe></div>')
     if len(blaetter) > 1:
-        out.append('<div class="blatt-wahl">' + "".join(
+        ea.append('<div class="blatt-wahl">' + "".join(
             f'<button type="button" data-blatt="{n}" aria-pressed="{"true" if n == 0 else "false"}">{e(b["titel"])}</button>'
             for n, (b, _, _, _) in enumerate(blaetter)) + "</div>")
     for n, (b, seiten, pdf, ipad) in enumerate(blaetter):
         zwei = bool(ipad)
-        out.append(f'<div class="paar{" zwei" if zwei else ""}" data-blatt="{n}"{" hidden" if n else ""}>')
+        ea.append(f'<div class="paar{" zwei" if zwei else ""}" data-blatt="{n}"{" hidden" if n else ""}>')
         if zwei:   # iPad links, das Blatt dazu rechts (Lehrkraft 14.11.)
             m = ipad[0]
-            out.append('<div class="umschalter" role="group"><button type="button" data-seite="ipad" aria-pressed="true">iPad</button>'
+            ea.append('<div class="umschalter" role="group"><button type="button" data-seite="ipad" aria-pressed="true">iPad</button>'
                        '<button type="button" data-seite="blatt" aria-pressed="false">Blatt</button></div>')
-            out.append(f'<div class="spalte ipad-spalte"><div class="spalte-kopf"><span>iPad: {e(m["titel"])}</span>'
+            ea.append(f'<div class="spalte ipad-spalte"><div class="spalte-kopf"><span>iPad: {e(m["titel"])}</span>'
                        f'<a class="ln" href="{unt}{e(m["pfad"])}" target="_blank" rel="noopener">eigenes Fenster</a></div>'
                        f'<iframe data-src="{unt}{e(m["pfad"])}" title="{e(m["titel"])}" loading="lazy"></iframe></div>')
-        out.append(f'<div class="spalte blatt-spalte"><div class="spalte-kopf"><span>{e(b["titel"])}</span>'
+        ea.append(f'<div class="spalte blatt-spalte"><div class="spalte-kopf"><span>{e(b["titel"])}</span>'
                    f'<a class="ln" data-kb-pdf="{pdf}" href="#">Drucken</a></div><div class="seiten">{seiten}</div></div>')
-        out.append("</div>")
+        ea.append("</div>")
     if lose:
-        out.append('<p class="lose">Außerdem: ' + " · ".join(
+        ea.append('<p class="lose">Außerdem: ' + " · ".join(
             f'<a class="ln" href="{unt}{e(m["pfad"])}" target="_blank" rel="noopener">{e(m["titel"])}</a>' for m in lose) + "</p>")
     if not blaetter and not lose:
-        out.append('<p class="leise">In dieser Stunde gab es kein Blatt, das hier steht.</p>')
-    out.append("</section>")
+        ea.append('<p class="leise">In dieser Stunde gab es kein Blatt, das hier steht.</p>')
+    ea.append("</section>")
 
     if a.get("folien"):
         ohne = set(a.get("folien_ohne", []))
         folien = [f for n, f in enumerate(seiten_bilder(ordner / a["folien"], 1280, 70)) if n + 1 not in ohne]
-        out.append('<section class="tafel" id="folien" role="tabpanel" hidden><div class="folien">'
+        out.append('<section class="tafel" id="folien" role="tabpanel"' + ("" if erster == "folien" else " hidden") + '><div class="folien">'
                    + "".join(f'<button type="button" class="folie"><img data-kb-src="{dat}{ablage.ablegen(fb, ".jpg")}" '
                              f'data-kb-typ="image/jpeg" alt="Folie {n + 1}"></button>' for n, fb in enumerate(folien))
                    + "</div></section>")
