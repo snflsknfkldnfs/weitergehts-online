@@ -140,6 +140,8 @@ Commit-Betreff mit Kurs und Stunde (Commits sind nicht öffentlich, die Seite sc
 
 ## Klassenbereich: ein Kurs hinter dem Klassenpasswort (seit 14.11.2026)
 
+Ausführliche Anleitung für jede Session (nach jeder Stunde, Quiz zur Probe, Fallstricke): `tools/kurse/KURSSEITE_PFLEGEN.md`.
+
 Spec: `specs/2026-11-14-klassenbereich-design.md`. Ein Kurs mit Klassenbereich hat statt der öffentlichen Kursseite eine
 verschlüsselte: Jahr, Stunden, Heftseite mit Einkleber, Blätter neben iPad-Seiten, Folien, Probenseite. Heute: GPG 9a (live),
 GPG 8a (Entwurf), WiB6b (Entwurf, 16.11.2026: Hefteinträge aus dem Deck-Auftrag, Übungsstunde mit Quiz und Fällen).

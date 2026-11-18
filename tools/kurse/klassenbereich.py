@@ -342,17 +342,33 @@ WIE = """<HOW TO TALK>
 Remember: German only, short sentences, the notebook is the core, curiosity welcome, no verdict. Begin now with your short opening."""
 
 
-def prompt_stunde(st: dict, datum: str, teile: list[dict]) -> str:
+def uebungsfragen(pool: list | None) -> str:
+    """Fragen aus dem Pool der Probe für den Lernbegleiter (Lehrkraft 18.11.: KI-Hilfe auf das Üben zur Probe umbauen): die KI
+    fragt sie ab, die Erwartung ist nur für sie."""
+    if not pool:
+        return ""
+    zeilen = []
+    for nr, block, art, form, typ, mat, frage, pkt, el, wo, vert in pool:
+        if vert:
+            continue
+        zeilen.append(f"- ({pkt} P) {(mat + ' ') if mat else ''}{frage} || expected: " + "; ".join(x for x in el if not x.startswith("(")))
+    return ("\n\n<PRACTICE QUESTIONS - from the real test pool. For option (a) ask THESE, one per turn, in mixed order, in the student's "
+            "words of the notebook. The expected points are for you only: never show them before the student has answered; after "
+            "the answer, say which points the student has and give a hint for each missing one, then the next question.>\n"
+            + "\n".join(zeilen) + "\n</PRACTICE QUESTIONS>")
+
+
+def prompt_stunde(st: dict, datum: str, teile: list[dict], pool: list | None = None) -> str:
     return (f"{REGELN}\n\n<LESSON>\nDate: {datum}\nTopic: {st['titel']}\nLesson question: {st.get('frage', '')}\n</LESSON>\n\n"
-            f"<NOTEBOOK>\n{heft_text(teile)}\n</NOTEBOOK>\n\n{WIE}\n")
+            f"<NOTEBOOK>\n{heft_text(teile)}\n</NOTEBOOK>{uebungsfragen(pool)}\n\n{WIE}\n")
 
 
-def prompt_sequenz(s: dict, probe: str, stunden: list[tuple[dict, str, list[dict]]]) -> str:
+def prompt_sequenz(s: dict, probe: str, stunden: list[tuple[dict, str, list[dict]]], pool: list | None = None) -> str:
     teile = "\n\n".join(f"### {datum}: {st['titel']} – {st.get('frage', '')}\n{heft_text(t)}" for st, datum, t in stunden)
     return (f"{REGELN}\n\n<TEST>\nThe test is on {probe}. Topic of the unit: {s['titel']}. Unit question: {s.get('frage', '')}\n"
             "Quiz across ALL lessons below, mixed, and also ask questions that connect two lessons "
             "(z. B. what a state promised on paper and what people experienced).\n</TEST>\n\n"
-            f"<NOTEBOOK>\n{teile}\n</NOTEBOOK>\n\n{WIE}\n")
+            f"<NOTEBOOK>\n{teile}\n</NOTEBOOK>{uebungsfragen(pool)}\n\n{WIE}\n")
 
 
 def ki_knopf(text: str, prompt: str) -> str:
@@ -482,13 +498,24 @@ def einkleber_bilder(a: dict, ordner: Path) -> list[bytes]:
             out.append(zuschneiden((ordner / b["bild"]).read_bytes(), block=bool(b.get("vordruck"))))
         else:
             if "bau" in b:
-                with tempfile.TemporaryDirectory() as tmp:
-                    ziel = Path(tmp) / "einkleber.pdf"
-                    cmd = [x.replace("{ordner}", str(ordner)) for x in b["bau"]] + [str(ziel)]
-                    r = subprocess.run(cmd, cwd=REPO, capture_output=True, text=True)
-                    if r.returncode != 0:
-                        sys.exit(f"Einkleber-Bau scheitert ({' '.join(cmd)}): {r.stderr}{r.stdout}")
-                    seiten = seiten_png(ziel, 1600)
+                # Ergebnis zwischengespeichert (Schlüssel: Befehl und Inhalt der genannten Dateien), damit nicht jeder Bau
+                # LibreOffice braucht; LibreOffice läuft unter der Sperre des Werkzeugkastens (nur eines zur Zeit).
+                cmd0 = [x.replace("{ordner}", str(ordner)) for x in b["bau"]]
+                h = hashlib.sha256(json.dumps(cmd0).encode())
+                for x in cmd0:
+                    q = Path(x) if Path(x).is_absolute() else REPO / x
+                    for f in ([q] if q.is_file() else sorted(q.glob("*.py")) + sorted(q.glob("*.js")) if q.is_dir() else []):
+                        h.update(f.read_bytes())
+                cache = Path.home() / ".cache" / "weitergehts" / "einkleber" / f"{h.hexdigest()[:24]}.pdf"
+                if not cache.is_file():
+                    cache.parent.mkdir(parents=True, exist_ok=True)
+                    sperre = Path("/Users/paulad/werkzeugkasten/out/.lauf.lock")
+                    vor = ["/usr/bin/lockf", "-k", str(sperre)] if sperre.parent.is_dir() else []
+                    r = subprocess.run(vor + cmd0 + [str(cache)], cwd=REPO, capture_output=True, text=True,
+                                       env={**os.environ, "WERKZEUGKASTEN_SPERRE": "1"})
+                    if r.returncode != 0 or not cache.is_file():
+                        sys.exit(f"Einkleber-Bau scheitert ({' '.join(cmd0)}): {r.stderr}{r.stdout}")
+                seiten = seiten_png(cache, 1600)
             else:
                 seiten = seiten_png(ordner / b["pdf"], 1600)
             out.append(zuschneiden(seiten[0]))
@@ -507,8 +534,8 @@ def hand_tabelle(t: dict) -> str:
     """Ein Raster, wie es die Klasse von Hand ins Heft schreibt (ohne Einkleber, GPG9a 08.10.)."""
     kopf = t["kopf"]
     th = "".join(f"<th>{inline(k)}</th>" for k in kopf[1:])
-    body = "".join("<tr><th>" + inline(r[0]) + "</th>" + "".join(f"<td>{inline(c)}</td>" for c in r[1:]) + "</tr>"
-                   for r in t["zeilen"])
+    body = "".join(f'<tr data-reihe="{e(_norm(r[0]))}"><th>' + inline(r[0]) + "</th>" + "".join(f"<td>{inline(c)}</td>" for c in r[1:])
+                   + "</tr>" for r in t["zeilen"])
     return f'<table class="hand-t"><thead><tr><td></td>{th}</tr></thead><tbody>{body}</tbody></table>'
 
 
@@ -539,7 +566,7 @@ def heftseite(st: dict, a: dict, teile: list[dict], bilder: list[str]) -> str:
     if antworten_von_hand:
         for t in teile:
             if t["antwort"]:
-                out.append(f'<p class="h-antwort">{inline(t["antwort"])}</p>')
+                out.append(f'<p class="h-antwort" data-ziel="antwort">{inline(t["antwort"])}</p>')
     out.append("</div>")
     return "\n".join(out)
 
@@ -782,6 +809,9 @@ def bauen(kurs: str) -> int:
         offen = [st for st in stunden if not st.get("kommt") or st.get("art") == "probe"]
         gesammelt = []
         seiten_ids = set()
+        pool = auswahl.get("uebung_pool", {}).get(s["id"])   # Fragen-Pool der Probe: Reiter „Üben“ auf der Probenseite
+        P = pool_laden(Path(pool)) if pool else None
+        hefte: dict = {}
         for st in gehalten:
             ref = f"{s['id']}/{st['id']}"
             ueber = auswahl.get("stunden", {}).get(ref, {})
@@ -794,12 +824,19 @@ def bauen(kurs: str) -> int:
                 continue
             ordner = kand[0]
             a = stunde_auto(ordner, ueber, mat_der_stunde(s, st))
+            if P:   # Fragen des Pools, die auf diese Stunde zeigen: der Lernbegleiter der Stunde fragt sie ab
+                a["_pool"] = [x for x in P.POOL if any(f_[0] == ref for f_ in P.FUNDSTELLEN[x[0]])]
             teile = []
             for q in a["heft"]:
                 teile += heft_teile(q, ordner)
             if not (a.get("uebung") or a.get("ohne_heft")):   # Übungsstunde oder Stunde ohne Eintrag: nicht in der Probe-Liste
                 gesammelt.append((st, datum_kurz(st["datum"]), teile))
             seiten_ids.add(st["id"])
+            if pool and not (a.get("uebung") or a.get("ohne_heft")):   # für das Quiz: dieselbe Heftseite, mit Texterkennung
+                jpgs = einkleber_bilder(a, ordner)
+                pfade = ["../../dateien/" + ablage.ablegen(j, ".jpg") for j in jpgs]
+                hefte[st["id"]] = {"html": heftseite(st, a, teile, pfade), "teile": teile, "datum": datum_kurz(st["datum"]),
+                                   "titel": st["titel"], "ocr": [texterkennung(j) for j in jpgs]}
             i = offen.index(st)
             inhalt = stundenseite(s, st, a, ordner, teile, stunden, hier, offen[i - 1] if i else None,
                                   offen[i + 1] if i + 1 < len(offen) else None, ablage, materialien, mat_der_stunde(s, st))
@@ -817,13 +854,21 @@ def bauen(kurs: str) -> int:
                    '<h1 class="frage">Für die Probe lernen</h1>',
                    '<p class="leise">Stoff: deine Hefteinträge. Hier steht jede Stunde mit ihrer Frage und ihrem Antwortsatz. '
                    'Tipp auf eine Stunde, um den ganzen Hefteintrag zu sehen.</p>',
-                   ki_knopf("Mit KI für die Probe üben", prompt_sequenz(s, datum_kurz(probe["datum"]), gesammelt)),
+                   ki_knopf("Mit KI für die Probe üben", prompt_sequenz(s, datum_kurz(probe["datum"]), gesammelt, P.POOL if pool else None)),
                    '<ol class="probe-liste">']
+            if pool:
+                quiz_html, quiz_fehler = quiz_bauen(P, hefte, s["id"])
+                if quiz_fehler:
+                    sys.exit("Quiz: Fundstellen nicht gefunden:\n  " + "\n  ".join(quiz_fehler))
+                out[3:3] = ['<div class="reiter" role="tablist"><button role="tab" aria-selected="true" data-zu="ueben">Üben</button>'
+                            '<button role="tab" aria-selected="false" data-zu="saetze">Antwortsätze</button></div>',
+                            f'<section class="tafel" id="ueben" role="tabpanel">{quiz_html}</section>',
+                            '<section class="tafel" id="saetze" role="tabpanel" hidden>']
             for st, datum, teile in gesammelt:
                 antw = "".join(f'<p class="pl-antwort">{inline(t["antwort"])}</p>' for t in teile if t["antwort"])
                 out.append(f'<li><a href="../{st["id"]}/"><span class="d">{e(datum)}</span>'
                            f'<span class="pl-frage">{e(st.get("frage") or st["titel"])}</span></a>{antw}</li>')
-            out.append("</ol>")
+            out.append("</ol>" + ("</section>" if pool else ""))
             schreiben(f"{s['id']}/{probe['id']}", f"Probe · {k['titel']}", "../../../../../", "../../", "\n".join(out))
         leisten.append((s, hier))
 
@@ -914,7 +959,7 @@ def stundenseite(s, st, a, ordner, teile, stunden, hier, vor, nach, ablage, mate
         bilder = [dat + ablage.ablegen(b, ".jpg") for b in einkleber_bilder(a, ordner)]
         out.append('<section class="tafel" id="heft" role="tabpanel">')
         out.append(heftseite(st, a, teile, bilder))
-        out.append(ki_knopf("Mit KI lernen", prompt_stunde(st, datum_kurz(st["datum"]), teile)))
+        out.append(ki_knopf("Mit KI lernen", prompt_stunde(st, datum_kurz(st["datum"]), teile, a.get("_pool"))))
         out.append("</section>")
 
     # Erarbeitung: Blatt links, iPad-Seite rechts
@@ -974,6 +1019,217 @@ def stundenseite(s, st, a, ordner, teile, stunden, hier, vor, nach, ablage, mate
         out.append('<details class="nachweis"><summary>Bildnachweise</summary><ul>'
                    + "".join(f"<li>{inline(m)} · {inline(u)} · {inline(q)}</li>" for m, u, q in hk) + "</ul></details>")
     return "\n".join(out)
+
+
+# ─────────────────────────── Üben: Quiz mit Heft daneben ───────────────────────────
+# Lehrkraft 18.11.2026 (GPG9a): Übungs-Quiz zur Probe; jede Frage zeigt, wo im Hefteintrag die Antwort steht, die Stelle
+# wird markiert. Fragen aus dem Pool der Probe (pool.py, POOL + FUNDSTELLEN), nie abgeschrieben. Eine Entscheidung je
+# Bildschirm (wie das Quiz WiB6b); Freitext: eigene Antwort, dann vergleichen und abhaken; vier Formen tippt man an.
+
+TEXTERKENNUNG = Path(__file__).resolve().parent / "klassenbereich" / "texterkennung.swift"
+
+
+def texterkennung(jpg: bytes) -> list[dict]:
+    """Textzeilen eines Einkleber-Bilds mit Lage (macOS Vision), zwischengespeichert nach dem Inhalt des Bilds."""
+    cache = Path.home() / ".cache" / "weitergehts" / "texterkennung" / (hashlib.sha256(jpg).hexdigest()[:24] + ".json")
+    if cache.is_file():
+        return json.loads(cache.read_text(encoding="utf-8"))
+    with tempfile.TemporaryDirectory() as tmp:
+        b = Path(tmp) / "b.jpg"
+        b.write_bytes(jpg)
+        r = subprocess.run(["swift", str(TEXTERKENNUNG), str(b)], capture_output=True, text=True)
+        if r.returncode != 0:
+            sys.exit(f"Texterkennung scheitert: {r.stderr[-400:]}")
+    zeilen = json.loads(r.stdout)
+    cache.parent.mkdir(parents=True, exist_ok=True)
+    cache.write_text(json.dumps(zeilen, ensure_ascii=False), encoding="utf-8")
+    return zeilen
+
+
+def _norm(t: str) -> str:
+    return re.sub(r"[^a-zäöüß0-9]+", " ", t.lower()).strip()
+
+
+def _passt(zeile: str, wort: str) -> bool:
+    z, w = _norm(zeile), _norm(wort)
+    return bool(z) and len(z) >= 3 and (w.startswith(z) or z.startswith(w))
+
+
+def stelle_finden(zeilen: list[dict], reihe: str, spalte: str | None, titel: set[str] = frozenset()) -> list[float] | None:
+    """Rahmen [x0, y0, x1, y1] (Anteile) um die Reihe des Einklebers, deren Titel mit `reihe` beginnt; mit `spalte` nur das Feld
+    unter dem Spaltenkopf. Die Reihe endet vor dem nächsten bekannten Reihentitel (`titel`) in derselben Spalte des Bilds,
+    sonst nach einer Lücke. Spalten beginnen dort, wo der Text der Reihe beginnt (Köpfe sind mal mittig, mal linksbündig)."""
+    sortiert = sorted(zeilen, key=lambda z: (z["y"], z["x"]))
+    anker = next((z for z in sortiert if _passt(z["t"], reihe)), None)
+    if not anker:
+        return None
+    andere = [t for t in titel | {"Antwort", "Antwortsatz", "Merksatz"} if _norm(t) != _norm(reihe)]
+    hoehe = sorted(z["h"] for z in zeilen)[len(zeilen) // 2] if zeilen else 0.03
+    spalte_l = sorted((z for z in zeilen if abs(z["x"] - anker["x"]) < 0.02 and z["y"] > anker["y"] + 1e-6), key=lambda z: z["y"])
+    naechste, letzte = None, anker["y"] + anker["h"]
+    for z in spalte_l:
+        if any(_passt(z["t"], t) for t in andere) or z["y"] - letzte > 1.6 * hoehe:
+            naechste = z
+            break
+        letzte = z["y"] + z["h"]
+    unten = max(z["y"] + z["h"] for z in zeilen) + 0.015
+    y0, y1 = max(0.0, anker["y"] - 0.02), min(1.0, (naechste["y"] - 0.012) if naechste else unten)
+    x0, x1 = max(0.0, anker["x"] - 0.015), 0.995
+    if spalte:
+        koepfe = [z for z in zeilen if z["y"] < anker["y"] and _passt(z["t"].split(":")[0], spalte.split(":")[0])]
+        if not koepfe:
+            return None
+        kopf = max(koepfe, key=lambda z: z["y"])
+        mitte = kopf["x"] + kopf["w"] / 2
+        inhalt = sorted({round(z["x"], 2) for z in zeilen if y0 <= z["y"] < y1 and z["x"] > anker["x"] + anker["w"] * 0.6})
+        starts = []
+        for x in inhalt:   # Textanfänge der Reihe zu Spalten bündeln
+            if not starts or x - starts[-1] > 0.04:
+                starts.append(x)
+        if not starts:
+            return None
+        j = max([i for i, x in enumerate(starts) if x <= mitte + 0.02] or [0])
+        x0 = max(0.0, starts[j] - 0.012)
+        x1 = (starts[j + 1] - 0.012) if j + 1 < len(starts) else 0.995
+    return [round(x0, 4), round(y0, 4), round(x1, 4), round(y1, 4)]
+
+
+def pool_laden(pfad: Path):
+    spec = importlib.util.spec_from_file_location("probe_pool", pfad)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    mod.pruefen()
+    return mod
+
+
+def _teile(text: str, nach: str = ":") -> list[str]:
+    """„Richtig oder falsch? a) … b) …“ → Aussagen; „Westen oder Osten? A · B · C“ → Begriffe."""
+    rest = text.split(nach, 1)[1] if nach in text else text
+    return [x.strip(" .") for x in rest.split(" · ") if x.strip(" .")]
+
+
+def _staemme(t: str) -> set[str]:
+    """Wortstämme (erste fünf Buchstaben) ab vier Buchstaben: „versprach“ und „versprochen“ treffen sich."""
+    return {w[:5] for w in _norm(t).split() if len(w) >= 4}
+
+
+def _zuordnen(karten: list[str], gruppen: dict[str, list[str]]) -> dict[str, str] | None:
+    """Karten (langer Text) den Gruppen zuordnen, deren Kurzformen sie am meisten teilen: immer das insgesamt beste Paar
+    zuerst, jede Kurzform und jede Karte genau einmal, Rest durch Ausschluss. None, wenn es nicht eindeutig aufgeht
+    (dann bleibt die Frage Freitext)."""
+    kurz = [(g, k) for g, ks in gruppen.items() for k in ks]
+    paare = sorted(((len(_staemme(c) & _staemme(k)), c, g, k) for c in karten for g, k in kurz), key=lambda x: -x[0])
+    zu, frei_k, frei_c = {}, set(kurz), set(karten)
+    for wert, c, g, k in paare:
+        if wert == 0:
+            break
+        if c in frei_c and (g, k) in frei_k:
+            zu[c] = g
+            frei_c.discard(c)
+            frei_k.discard((g, k))
+    if len(frei_c) == 1 and len(frei_k) == 1:
+        zu[frei_c.pop()] = next(iter(frei_k))[0]
+    return zu if len(zu) == len(karten) else None
+
+
+def frage_form(nr, typ, mat, frage, el) -> dict:
+    """Die vier Formen zum Antippen (Lehrkraft 18.11.: eindeutig prüfbar); sonst Freitext mit Selbstkontrolle."""
+    if typ == "Richtig oder falsch":
+        aussagen = re.split(r"\s*[a-h]\)\s*", frage)[1:]
+        loes = [("richtig" in x.split(")", 1)[1]) for x in el]
+        if len(aussagen) == len(loes):
+            return {"form": "rf", "aussagen": aussagen, "loesung": loes,
+                    "hinweise": [x.split(")", 1)[1].strip() for x in el]}
+    if typ == "Ankreuzen":
+        begriffe = _teile(frage, "?")
+        gruppen = {g.split(":")[0].strip(): [x.strip() for x in g.split(":", 1)[1].split(",")] for g in el if ":" in g and not g.startswith("(")}
+        loes = {}
+        for b in begriffe:
+            treffer = [g for g, ks in gruppen.items() if any(_norm(k) == _norm(b) for k in ks)]
+            if len(treffer) != 1:
+                break
+            loes[b] = treffer[0]
+        if len(loes) == len(begriffe):
+            return {"form": "wahl", "begriffe": begriffe, "gruppen": list(gruppen), "loesung": loes}
+    if typ == "Ordnen":
+        karten = _teile(frage, ":")
+        schritte = [x.strip() for x in el[0].split("(")[0].split("→")]
+        zu = _zuordnen(karten, {str(i): [s_] for i, s_ in enumerate(schritte)})
+        if zu and len(set(zu.values())) == len(karten):
+            return {"form": "ordnen", "karten": karten, "loesung": sorted(karten, key=lambda k: int(zu[k]))}
+    if typ == "Sortieren" and mat:
+        karten = _teile(mat, ":")
+        gruppen = {g.split(":")[0].strip(): [x.strip() for x in g.split(":", 1)[1].split("·")] for g in el if ":" in g and not g.startswith("(")}
+        zu = _zuordnen(karten, gruppen)
+        if zu:
+            return {"form": "wahl", "begriffe": karten, "gruppen": list(gruppen), "loesung": zu}
+    return {"form": "frei"}
+
+
+QUIZ_REGELN = """You are a fair, friendly checker for a student about 14-15 years old in 9th grade at a Bavarian Mittelschule, who practises for a history test ("Probe"). Rules that never bend:
+1. Answer ONLY in German, short plain sentences.
+2. Compare the student's answer with the expected points below. Say which points the student already has (in the student's own words counts), which are missing, and why a point matters. Be generous with wording, strict with content.
+3. Do not just hand over a model answer. For each missing point, give a hint where it stands in the notebook (Heft) and ask the student to improve the answer. Only after a second try, show the missing point plainly.
+4. Points: say "Das wären etwa X von Y Punkten" (whole points only). No grades.
+5. You may explain background if the student asks; say when something is not in the notebook. Never invent facts or numbers. Present East and West fairly.
+6. Never ask for the student's name."""
+
+
+def quiz_prompt(frage_text: str, mat: str | None, el: list[str], punkte: int, heft: str) -> str:
+    return (f"{QUIZ_REGELN}\n\n<QUESTION>\n{(mat + chr(10)) if mat else ''}{frage_text}\n(max. {punkte} points)\n</QUESTION>\n\n"
+            "<EXPECTED - one point each, never paste this list as is>\n" + "\n".join(f"- {x}" for x in el) + "\n</EXPECTED>\n\n"
+            f"<NOTEBOOK - where it stands>\n{heft}\n</NOTEBOOK>\n\n"
+            "<STUDENT ANSWER>\n{ANTWORT}\n</STUDENT ANSWER>\n\nBegin now: first one sentence what is already good, then the missing points as hints.\n")
+
+
+def quiz_bauen(P, hefte: dict, sequenz: str) -> tuple[str, list[str]]:
+    """HTML des Reiters „Üben“ (Daten als JSON, Hefte als Vorlagen) und die Liste der Fehler (leer = alles gefunden)."""
+    fehler, fragen, benutzt = [], [], set()
+    for nr, block, art, form, typ, mat, frage, pkt, el, wo, vert in P.POOL:
+        stellen = []
+        for st, reihe, spalte in P.FUNDSTELLEN[nr]:
+            sid = st.split("/", 1)[1] if st.startswith(sequenz + "/") else None
+            h = hefte.get(sid)
+            if reihe == "Karte":
+                stellen.append({"stunde": sid, "text": "Das steht auf deiner Karte in der Mappe (Blatt vom " + (h["datum"] if h else "01.10.") + ")."})
+                continue
+            if not h:
+                fehler.append(f"{nr}: Stunde {st} hat keine Heftseite")
+                continue
+            benutzt.add(sid)
+            ziel = None
+            if reihe == "Antwortsatz":
+                ziel = {"art": "antwort"}
+            elif any(any(_norm(r[0]) == _norm(reihe) for r in t["zeilen"]) for t in h["teile"]) and not h["ocr"]:
+                ziel = {"art": "reihe", "zeile": _norm(reihe)}
+            else:
+                titel = ({r[0] for t in h["teile"] for r in t["zeilen"]} | {pk.split(":")[0].replace("**", "") for t in h["teile"] for pk in t["punkte"]}
+                         | {r_ for st_, r_, _ in (x for fs in P.FUNDSTELLEN.values() for x in fs) if st_ == st})
+                for i, zeilen in enumerate(h["ocr"]):
+                    box = stelle_finden(zeilen, reihe, spalte, titel)
+                    if box:
+                        ziel = {"art": "bild", "bild": i, "box": box}
+                        break
+            if not ziel:
+                fehler.append(f"{nr}: „{reihe}“{' / ' + spalte if spalte else ''} nicht gefunden im Heft vom {h['datum']}")
+                continue
+            stellen.append({"stunde": sid, "datum": h["datum"], "titel": h["titel"], "reihe": reihe, "spalte": spalte, **ziel})
+        heft_text_ = "\n".join(f"{s_['datum']} {s_['titel']}: {s_['reihe']}{' (' + s_['spalte'] + ')' if s_.get('spalte') else ''}"
+                               for s_ in stellen if s_.get("reihe"))
+        f = {"nr": nr, "block": block, "art": art, "typ": typ, "material": mat, "frage": frage, "punkte": pkt,
+             "elemente": [x for x in el if not x.startswith("(")], "vertiefung": vert, "stellen": stellen,
+             **frage_form(nr, typ, mat, frage, el)}
+        if f["form"] == "frei":
+            f["ki"] = quiz_prompt(frage, mat, f["elemente"], pkt, heft_text_ or wo)
+        fragen.append(f)
+    for f in fragen:   # zum Gegenlesen im Bauprotokoll: was das Quiz bei den Formen zum Antippen als richtig zählt
+        if f["form"] != "frei":
+            print(f"Quiz {f['nr']} ({f['form']}): {f['loesung']}")
+    daten = {"bloecke": {str(k): v.split(" (")[0] for k, v in P.BLOECKE.items()}, "fragen": fragen, "runde": 10}
+    vorlagen = "".join(f'<template data-heft="{sid}">{hefte[sid]["html"]}</template>' for sid in sorted(benutzt))
+    roh = json.dumps(daten, ensure_ascii=False).replace("</", "<\\/")
+    teil = f'<div id="quiz" class="quiz"></div><script type="application/json" id="kb-quiz">{roh}</script>' + vorlagen
+    return teil, fehler
 
 
 # ─────────────────────────── Prüfung ohne Schlüssel ───────────────────────────

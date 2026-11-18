@@ -76,7 +76,7 @@
     var h1 = seite.querySelector('h1'); if (h1) document.title = h1.textContent + ' · ' + document.title.split(' · ').pop();
     seite.querySelectorAll('[data-ki]').forEach(kiKnopf);
     seite.querySelectorAll('[data-kb-pdf]').forEach(pdfLink);
-    reiter(); blattWahl(); umschalter(); folien(); sequenzWahl(); vollbild(); trapez();
+    reiter(); blattWahl(); umschalter(); folien(); sequenzWahl(); vollbild(); quiz(); trapez();
     window.addEventListener('resize', trapez);
     seite.querySelectorAll('[role=tabpanel]').forEach(sichtbarLaden);
   }
@@ -196,6 +196,268 @@
       try { f = window.open(DUCKAI + encodeURIComponent(p), '_blank', 'noopener,noreferrer'); } catch (e) { f = null; }
       if (!f && hinweis) hinweis.textContent = 'Popup blockiert: Der Text ist kopiert. Öffne duck.ai selbst und füge ihn ein.';
     });
+  }
+
+  // ── Üben: Quiz zur Probe mit dem Heft daneben (Lehrkraft 18.11.2026) ──
+  // Daten: <script id="kb-quiz"> (aus dem Pool der Probe erzeugt), Heftseiten als <template data-heft="ue08">.
+  // Eine Entscheidung je Bildschirm; Freitext: eigene Antwort → vergleichen → abhaken; rf/wahl/ordnen: antippen, prüft selbst.
+  // Nichts wird gespeichert.
+  function quiz() {
+    var box = document.getElementById('quiz'), roh = document.getElementById('kb-quiz');
+    if (!box || !roh) return;
+    var D = JSON.parse(roh.textContent);
+    var leiste = null, runde = null;
+
+    function el(tag, kl, text) { var n = document.createElement(tag); if (kl) n.className = kl; if (text != null) n.textContent = text; return n; }
+    function knopf(text, kl, f) { var k = el('button', kl || 'knopf-neben', text); k.type = 'button'; k.addEventListener('click', f); return k; }
+    function mischen(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+    function leeren() { box.innerHTML = ''; window.scrollTo(0, box.getBoundingClientRect().top + window.scrollY - 70); }
+    function pkt(n) { return n === 1 ? '1 Punkt' : n + ' Punkte'; }
+    function vonPkt(n) { return n === 1 ? '1 Punkt' : n + ' Punkten'; }
+
+    // ── Start ──
+    function start() {
+      heftZu(); leeren();
+      box.appendChild(el('h2', 'q-titel', 'Üben für die Probe'));
+      box.appendChild(el('p', 'leise', 'Beantworte jede Frage zuerst selbst. Dann vergleichst du mit deinem Heft.'));
+      var alle = D.fragen.filter(function (f) { return !f.vertiefung; });
+      box.appendChild(knopf('Zehn Fragen mischen', 'knopf-haupt q-gross', function () { los(mischen(alle).slice(0, D.runde)); }));
+      var liste = el('div', 'q-bloecke');
+      Object.keys(D.bloecke).forEach(function (b) {
+        var fs = alle.filter(function (f) { return String(f.block) === b; });
+        if (!fs.length) return;
+        var k = knopf('', 'q-block', function () { los(fs); });
+        k.appendChild(el('span', 'q-bt', D.bloecke[b])); k.appendChild(el('span', 'q-bz', fs.length + ' Fragen'));
+        liste.appendChild(k);
+      });
+      box.appendChild(liste);
+    }
+
+    function los(fragen) { runde = { fragen: fragen, nr: 0, erg: [] }; frage(); }
+
+    // ── eine Frage ──
+    function frage() {
+      heftZu(); leeren();
+      var f = runde.fragen[runde.nr], erg = { f: f, punkte: 0, fertig: false };
+      var kopf = el('div', 'q-kopf');
+      kopf.appendChild(el('span', '', 'Frage ' + (runde.nr + 1) + ' von ' + runde.fragen.length));
+      var balken = el('span', 'q-balken'); var fuell = el('span'); fuell.style.width = (100 * runde.nr / runde.fragen.length) + '%';
+      balken.appendChild(fuell); kopf.appendChild(balken); box.appendChild(kopf);
+      box.appendChild(el('p', 'q-block-name', D.bloecke[f.block] + ' · ' + pkt(f.punkte)));
+      // Die Liste zum Antippen steht unten als Knöpfe: aus Frage oder Material nur den Satz davor zeigen
+      var liste = function (t) { var i = t.indexOf(' · '); if (i < 0) return t; var c = Math.max(t.lastIndexOf('?', i), t.lastIndexOf(':', i)); return t.slice(0, c + 1); };
+      var tipp = f.form === 'wahl' || f.form === 'ordnen';
+      if (f.material && !(tipp && f.material.indexOf(' · ') >= 0)) box.appendChild(el('blockquote', 'q-material', f.material));
+      box.appendChild(el('p', 'q-frage', f.form === 'rf' ? 'Richtig oder falsch?' : tipp ? liste(f.frage) : f.frage));
+      var feld = el('div', 'q-feld'); box.appendChild(feld);
+      var unten = el('div', 'q-unten'); box.appendChild(unten);
+      var weiter = knopf(runde.nr + 1 < runde.fragen.length ? 'Weiter' : 'Zum Ergebnis', 'knopf-haupt', function () {
+        runde.erg.push(erg); runde.nr++; if (runde.nr < runde.fragen.length) frage(); else ende();
+      });
+      var heft = f.stellen.length ? knopf('Im Heft nachsehen', 'knopf-neben q-heft', function () { heftAuf(f); }) : null;
+      ({ frei: frei, rf: rf, wahl: wahl, ordnen: ordnen })[f.form](f, erg, feld, unten, weiter, heft);
+      var h2 = box.querySelector('.q-frage'); if (h2) { h2.tabIndex = -1; h2.focus({ preventScroll: true }); }
+    }
+
+    function frei(f, erg, feld, unten, weiter, heft) {
+      var ta = el('textarea', 'q-antwort'); ta.rows = 4; ta.placeholder = 'Deine Antwort (wird nicht gespeichert)';
+      ta.setAttribute('aria-label', 'Deine Antwort'); feld.appendChild(ta);
+      var vergl = knopf('Vergleichen', 'knopf-haupt', function () {
+        vergl.remove();
+        var liste = el('div', 'q-punkte'); liste.appendChild(el('p', 'q-hast', 'Was davon hast du? Hak ab.'));
+        var stand = el('p', 'q-stand');
+        function zaehlen() {
+          var n = liste.querySelectorAll('input:checked').length; erg.punkte = Math.min(f.punkte, n);
+          stand.textContent = erg.punkte + ' von ' + vonPkt(f.punkte) + (n > f.punkte ? ' (mehr Punkte gibt es nicht)' : '');
+        }
+        f.elemente.forEach(function (x, i) {
+          var auch = /^gilt auch:/i.test(x);
+          var lab = el('label', 'q-el' + (auch ? ' q-auch' : ''));
+          var cb = el('input'); cb.type = 'checkbox'; cb.addEventListener('change', zaehlen);
+          lab.appendChild(cb); lab.appendChild(el('span', '', auch ? 'zählt auch: ' + x.replace(/^gilt auch:\s*/i, '') : x));
+          liste.appendChild(lab);
+        });
+        zaehlen(); liste.appendChild(stand); feld.appendChild(liste);
+        var ki = knopf('Mit KI über meine Antwort sprechen', 'knopf-neben ki-knopf', function () {
+          kiOeffnen(f.ki.replace('{ANTWORT}', ta.value.trim() || '(Ich habe noch nichts geschrieben. Hilf mir mit einem Tipp, wo ich im Heft nachsehe.)'), hinweis);
+        });
+        var hinweis = el('span', 'ki-hinweis', 'öffnet duck.ai mit Frage, Heft und deiner Antwort · schreib keinen Namen hinein');
+        var kz = el('div', 'ki'); kz.appendChild(ki); kz.appendChild(hinweis);
+        leer(unten); unten.appendChild(weiter); if (heft) unten.appendChild(heft); feld.appendChild(kz);
+      });
+      unten.appendChild(vergl); if (heft) unten.appendChild(heft);
+    }
+    function leer(n) { while (n.firstChild) n.removeChild(n.firstChild); }
+
+    function rf(f, erg, feld, unten, weiter, heft) {
+      var antworten = [];
+      f.aussagen.forEach(function (a, i) {
+        var z = el('div', 'q-zeile'); z.appendChild(el('p', 'q-aussage', a));
+        var gr = el('div', 'q-wahlen');
+        ['stimmt', 'stimmt nicht'].forEach(function (w, j) {
+          gr.appendChild(knopf(w, 'q-wahl', function (ev) {
+            antworten[i] = j === 0; gr.querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-pressed', b === ev.target ? 'true' : 'false'); });
+            if (antworten.filter(function (x) { return x !== undefined; }).length === f.aussagen.length) pruefen.disabled = false;
+          }));
+        });
+        z.appendChild(gr); feld.appendChild(z);
+      });
+      var pruefen = knopf('Prüfen', 'knopf-haupt', function () {
+        var n = 0;
+        feld.querySelectorAll('.q-zeile').forEach(function (z, i) {
+          var ok = antworten[i] === f.loesung[i]; if (ok) n++;
+          z.classList.add(ok ? 'q-ok' : 'q-falsch');
+          z.appendChild(el('p', 'q-loes', (ok ? 'richtig: ' : 'falsch: ') + f.hinweise[i]));
+          z.querySelectorAll('button').forEach(function (b) { b.disabled = true; });
+        });
+        erg.punkte = Math.min(f.punkte, n); fertig(feld, unten, weiter, heft, erg, f);
+      });
+      pruefen.disabled = true; unten.appendChild(pruefen); if (heft) unten.appendChild(heft);
+    }
+
+    function wahl(f, erg, feld, unten, weiter, heft) {
+      var zu = {};
+      f.begriffe.forEach(function (b) {
+        var z = el('div', 'q-zeile q-zeile-wahl'); z.appendChild(el('p', 'q-aussage', b));
+        var gr = el('div', 'q-wahlen');
+        f.gruppen.forEach(function (g) {
+          gr.appendChild(knopf(g, 'q-wahl', function (ev) {
+            zu[b] = g; gr.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === ev.target ? 'true' : 'false'); });
+            if (Object.keys(zu).length === f.begriffe.length) pruefen.disabled = false;
+          }));
+        });
+        z.appendChild(gr); feld.appendChild(z);
+      });
+      var pruefen = knopf('Prüfen', 'knopf-haupt', function () {
+        var n = 0;
+        feld.querySelectorAll('.q-zeile').forEach(function (z, i) {
+          var b = f.begriffe[i], ok = zu[b] === f.loesung[b]; if (ok) n++;
+          z.classList.add(ok ? 'q-ok' : 'q-falsch');
+          if (!ok) z.appendChild(el('p', 'q-loes', 'richtig: ' + f.loesung[b]));
+          z.querySelectorAll('button').forEach(function (x) { x.disabled = true; });
+        });
+        erg.punkte = Math.min(f.punkte, n); fertig(feld, unten, weiter, heft, erg, f);
+      });
+      pruefen.disabled = true; unten.appendChild(pruefen); if (heft) unten.appendChild(heft);
+    }
+
+    function ordnen(f, erg, feld, unten, weiter, heft) {
+      var folge = [];
+      feld.appendChild(el('p', 'leise', 'Tipp die Karten in der richtigen Reihenfolge an.'));
+      var karten = mischen(f.karten);
+      karten.forEach(function (k) {
+        var b = knopf('', 'q-karte', function () {
+          if (folge.indexOf(k) >= 0) return;
+          folge.push(k); b.querySelector('.q-nr').textContent = folge.length; b.setAttribute('aria-pressed', 'true');
+          if (folge.length === karten.length) pruefen.disabled = false;
+        });
+        b.appendChild(el('span', 'q-nr', '')); b.appendChild(el('span', '', k)); feld.appendChild(b);
+      });
+      var neu = knopf('Neu anfangen', 'knopf-neben', function () { folge = []; feld.querySelectorAll('.q-karte').forEach(function (b) { b.querySelector('.q-nr').textContent = ''; b.setAttribute('aria-pressed', 'false'); }); pruefen.disabled = true; });
+      var pruefen = knopf('Prüfen', 'knopf-haupt', function () {
+        var richtig = folge.filter(function (k, i) { return k === f.loesung[i]; }).length;
+        erg.punkte = richtig === f.loesung.length ? f.punkte : richtig >= f.loesung.length - 2 ? Math.max(0, f.punkte - 1) : 0;
+        feld.querySelectorAll('.q-karte').forEach(function (b) { b.disabled = true; });
+        var l = el('ol', 'q-loes-liste'); f.loesung.forEach(function (k) { l.appendChild(el('li', '', k)); });
+        feld.appendChild(el('p', 'q-loes', richtig === f.loesung.length ? 'Alles in der richtigen Reihenfolge.' : 'So ist die Reihenfolge:'));
+        feld.appendChild(l); neu.remove(); fertig(feld, unten, weiter, heft, erg, f);
+      });
+      pruefen.disabled = true; unten.appendChild(pruefen); unten.appendChild(neu); if (heft) unten.appendChild(heft);
+    }
+
+    function fertig(feld, unten, weiter, heft, erg, f) {
+      feld.appendChild(el('p', 'q-stand', erg.punkte + ' von ' + vonPkt(f.punkte)));
+      leer(unten); unten.appendChild(weiter); if (heft) unten.appendChild(heft); weiter.focus();
+    }
+
+    // ── Ende ──
+    function ende() {
+      heftZu(); leeren();
+      var hat = 0, max = 0; runde.erg.forEach(function (r) { hat += r.punkte; max += r.f.punkte; });
+      box.appendChild(el('h2', 'q-titel', 'Du hattest ' + hat + ' von ' + max + ' Punkten.'));
+      var offen = runde.erg.filter(function (r) { return r.punkte < r.f.punkte; });
+      if (offen.length) {
+        box.appendChild(el('p', 'q-hast', 'Das übst du noch:'));
+        var l = el('ul', 'q-offen');
+        offen.forEach(function (r) {
+          var li = el('li'); li.appendChild(el('span', '', r.f.frage.split(/(?<=[?.:])\s/)[0] + ' (' + r.punkte + ' von ' + r.f.punkte + ')'));
+          if (r.f.stellen.length) li.appendChild(knopf('Im Heft nachsehen', 'ln', function () { heftAuf(r.f); }));
+          l.appendChild(li);
+        });
+        box.appendChild(l);
+      }
+      var u = el('div', 'q-unten');
+      if (offen.length) u.appendChild(knopf('Diese noch einmal', 'knopf-haupt', function () { los(offen.map(function (r) { return r.f; })); }));
+      u.appendChild(knopf('Neue Runde', offen.length ? 'knopf-neben' : 'knopf-haupt', function () {
+        los(mischen(D.fragen.filter(function (f) { return !f.vertiefung; })).slice(0, D.runde));
+      }));
+      u.appendChild(knopf('Zum Start', 'knopf-neben', start));
+      box.appendChild(u);
+    }
+
+    // ── Heft daneben, die Stelle markiert ──
+    function heftAuf(f) {
+      heftZu();
+      leiste = el('aside', 'q-leiste'); leiste.setAttribute('aria-label', 'Dein Heft');
+      var kopf = el('div', 'q-leiste-kopf');
+      kopf.appendChild(el('b', '', 'Dein Heft'));
+      kopf.appendChild(knopf('zurück zur Frage', 'ln', heftZu));
+      leiste.appendChild(kopf);
+      var tabs = el('div', 'q-leiste-reiter'), koerper = el('div', 'q-leiste-koerper');
+      f.stellen.forEach(function (s, i) {
+        var t = knopf(s.datum ? s.datum + ' · ' + s.reihe + (s.spalte ? ' · ' + s.spalte : '') : 'Karte', 'q-tab', function () { zeige(i); });
+        tabs.appendChild(t);
+      });
+      if (f.stellen.length > 1) leiste.appendChild(tabs);
+      leiste.appendChild(koerper);
+      document.body.appendChild(leiste); document.body.classList.add('q-mit-leiste');
+      function zeige(i) {
+        tabs.querySelectorAll('button').forEach(function (b, j) { b.setAttribute('aria-pressed', i === j ? 'true' : 'false'); });
+        leer(koerper);
+        var s = f.stellen[i];
+        if (s.text) { koerper.appendChild(el('p', 'h-hinweis', s.text)); return; }
+        koerper.appendChild(el('p', 'leise', s.datum + ' · ' + s.titel));
+        var vorlage = seite.querySelector('template[data-heft="' + s.stunde + '"]');
+        if (!vorlage) return;
+        var heft = vorlage.content.cloneNode(true); koerper.appendChild(heft);
+        bilderLaden(koerper);
+        var ziel = null;
+        if (s.art === 'bild') {
+          var fig = koerper.querySelectorAll('figure.einkleber')[s.bild];
+          if (fig) {
+            var m = el('span', 'q-mark'); var b = s.box;
+            m.style.left = (b[0] * 100) + '%'; m.style.top = (b[1] * 100) + '%';
+            m.style.width = ((b[2] - b[0]) * 100) + '%'; m.style.height = ((b[3] - b[1]) * 100) + '%';
+            fig.classList.add('q-fig'); fig.appendChild(m); ziel = fig;
+            var img = fig.querySelector('img');
+            var hin = function () { setTimeout(function () { m.scrollIntoView({ block: 'center', behavior: 'smooth' }); }, 60); };
+            if (img.complete && img.naturalWidth) hin(); else img.addEventListener('load', hin);
+          }
+        } else if (s.art === 'reihe') {
+          ziel = koerper.querySelector('tr[data-reihe="' + s.zeile + '"]');
+        } else if (s.art === 'antwort') {
+          ziel = koerper.querySelector('[data-ziel="antwort"]');
+        }
+        if (ziel && s.art !== 'bild') { ziel.classList.add('q-markiert'); setTimeout(function () { ziel.scrollIntoView({ block: 'center', behavior: 'smooth' }); }, 60); }
+        var a = el('a', 'ln', 'Ganze Stunde öffnen'); a.href = '../' + s.stunde + '/'; koerper.appendChild(a);
+      }
+      zeige(0);
+      document.addEventListener('keydown', esc);
+    }
+    function esc(ev) { if (ev.key === 'Escape') heftZu(); }
+    function heftZu() {
+      if (leiste) { leiste.remove(); leiste = null; }
+      document.body.classList.remove('q-mit-leiste'); document.removeEventListener('keydown', esc);
+    }
+
+    start();
+  }
+
+  function kiOeffnen(p, hinweis) {
+    try { navigator.clipboard.writeText(p); } catch (e) {}
+    var f = null;
+    try { f = window.open(DUCKAI + encodeURIComponent(p), '_blank', 'noopener,noreferrer'); } catch (e) { f = null; }
+    if (!f && hinweis) hinweis.textContent = 'Popup blockiert: Der Text ist kopiert. Öffne duck.ai selbst und füge ihn ein.';
   }
 
   var gemerkt = null;
