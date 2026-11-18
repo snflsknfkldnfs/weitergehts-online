@@ -38,7 +38,7 @@ def git(*args: str, cwd: Path, check: bool = True) -> str:
     r = subprocess.run(["git", *args], cwd=cwd, text=True, capture_output=True)
     if check and r.returncode:
         sys.exit(f"git {' '.join(args)} schlug fehl:\n{r.stderr.strip()}")
-    return r.stdout.strip()
+    return r.stdout.rstrip("\n")   # nur das Zeilenende: git status beginnt Zeilen mit Leerzeichen
 
 
 def halt(text: str) -> int:
@@ -106,11 +106,12 @@ def in_worten(rel: str, b: dict | None, datum: str = "") -> str:
     return f"{b['titel']} ({tag(b['datum'])}){mit}"
 
 
-def geaendert_laut_git(kurs: str) -> set[str]:
+def geaendert_laut_git(kurs: str, art: str = "") -> set[str]:
+    """Seiten des Kurses, deren Datei sich gegenüber HEAD ändert (art "D": nur gelöschte)."""
     out = set()
     for z in git("status", "--porcelain", "--untracked-files=all", f"unterricht/k/{kurs}", cwd=REPO).splitlines():
         p = z[3:]
-        if p.endswith("/index.html"):
+        if p.endswith("index.html") and (not art or art in z[:2]):
             rel = p.removeprefix(f"unterricht/k/{kurs}/").removesuffix("index.html").strip("/")
             out.add(rel or "kursseite")
     return out
@@ -126,6 +127,7 @@ def kurs_bericht(kurs: str, alt: dict | None, neu: dict, bericht: dict) -> list[
             pfad = f"unterricht/k/{kurs}/" + (f"{r}/" if r != "kursseite" else "") + "index.html"
             wie = "neu" if pfad not in da else "geändert" if r in dateien else "unverändert"
             zeilen.append(f"  {wie}: {in_worten(r, bericht.get(r))}")
+        zeilen += [f"  entfernt: Seite {r}" for r in sorted(geaendert_laut_git(kurs, "D"))]
         return zeilen
     a = alt["seiten"]
     zeilen = []
