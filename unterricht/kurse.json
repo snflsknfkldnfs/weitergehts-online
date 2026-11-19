@@ -307,7 +307,11 @@
     { "id": "folien-ebike", "pfad": "folien/ebike/",
       "titel": "Folien: Wer hat das E-Bike gestohlen?",
       "art": "werkzeug", "fach": "inf", "jahrgang": 6,
-      "kurse": ["inf6b"], "thema": "Datenspuren", "datum": "2026-11-13" }
+      "kurse": ["inf6b"], "thema": "Datenspuren", "datum": "2026-11-13" },
+    { "id": "begleiten-mauerbau-1961", "pfad": "begleiten/mauerbau-1961/",
+      "titel": "Mauerbau 1961",
+      "art": "werkzeug", "fach": "gpg", "strang": "geschichte", "jahrgang": 9,
+      "kurse": ["gpg9a"], "thema": "Geteiltes Land", "datum": "2026-11-20", "stunde": "s01/probe1" }
   ],
   "hubs": ["ordnen/"]
 }
