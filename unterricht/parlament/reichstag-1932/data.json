@@ -1,0 +1,152 @@
+{
+ "titel": "Wer hat zusammen eine Mehrheit?",
+ "leitfrage": "Was ist im Reichstag los?",
+ "auftrag": "Stell selbst eine Regierung zusammen. Sie braucht mehr als die Hälfte der Sitze.",
+ "aufgaben": [
+  "Tipp SPD, Zentrum und DDP an: die drei Parteien, die die Verfassung gemacht haben. Reicht es?",
+  "Nimm DVP, BVP und die kleinen Parteien dazu. Reicht es jetzt?",
+  "Wähl alles ab. Tipp nur NSDAP und KPD an. Was können die beiden zusammen?",
+  "Für Schnelle: Schalt auf Juli 1932. War es da anders?"
+ ],
+ "wahlen": [
+  {
+   "label": "November 1932",
+   "gesamt": 584,
+   "parteien": [
+    {
+     "id": "KPD",
+     "name": "KPD",
+     "sitze": 100,
+     "farbe": "#b3261e",
+     "zusatz": "gegen die Republik"
+    },
+    {
+     "id": "SPD",
+     "name": "SPD",
+     "sitze": 121,
+     "farbe": "#2e7d32",
+     "zusatz": "für die Republik"
+    },
+    {
+     "id": "DDP",
+     "name": "DDP",
+     "sitze": 2,
+     "farbe": "#66bb6a",
+     "zusatz": "für die Republik"
+    },
+    {
+     "id": "Zentrum",
+     "name": "Zentrum",
+     "sitze": 70,
+     "farbe": "#43a047",
+     "zusatz": "für die Republik"
+    },
+    {
+     "id": "BVP",
+     "name": "BVP",
+     "sitze": 20,
+     "farbe": "#a5a5a5",
+     "zusatz": ""
+    },
+    {
+     "id": "DVP",
+     "name": "DVP",
+     "sitze": 11,
+     "farbe": "#8d8d8d",
+     "zusatz": ""
+    },
+    {
+     "id": "klein",
+     "name": "kleine Parteien",
+     "sitze": 13,
+     "farbe": "#bdbdbd",
+     "zusatz": ""
+    },
+    {
+     "id": "DNVP",
+     "name": "DNVP",
+     "sitze": 51,
+     "farbe": "#5c84b2",
+     "zusatz": "gegen die Republik"
+    },
+    {
+     "id": "NSDAP",
+     "name": "NSDAP",
+     "sitze": 196,
+     "farbe": "#1b4a7a",
+     "zusatz": "gegen die Republik"
+    }
+   ]
+  },
+  {
+   "label": "Juli 1932",
+   "gesamt": 608,
+   "parteien": [
+    {
+     "id": "KPD",
+     "name": "KPD",
+     "sitze": 89,
+     "farbe": "#b3261e",
+     "zusatz": "gegen die Republik"
+    },
+    {
+     "id": "SPD",
+     "name": "SPD",
+     "sitze": 133,
+     "farbe": "#2e7d32",
+     "zusatz": "für die Republik"
+    },
+    {
+     "id": "DDP",
+     "name": "DDP",
+     "sitze": 4,
+     "farbe": "#66bb6a",
+     "zusatz": "für die Republik"
+    },
+    {
+     "id": "Zentrum",
+     "name": "Zentrum",
+     "sitze": 75,
+     "farbe": "#43a047",
+     "zusatz": "für die Republik"
+    },
+    {
+     "id": "BVP",
+     "name": "BVP",
+     "sitze": 22,
+     "farbe": "#a5a5a5",
+     "zusatz": ""
+    },
+    {
+     "id": "DVP",
+     "name": "DVP",
+     "sitze": 7,
+     "farbe": "#8d8d8d",
+     "zusatz": ""
+    },
+    {
+     "id": "klein",
+     "name": "kleine Parteien",
+     "sitze": 11,
+     "farbe": "#bdbdbd",
+     "zusatz": ""
+    },
+    {
+     "id": "DNVP",
+     "name": "DNVP",
+     "sitze": 37,
+     "farbe": "#5c84b2",
+     "zusatz": "gegen die Republik"
+    },
+    {
+     "id": "NSDAP",
+     "name": "NSDAP",
+     "sitze": 230,
+     "farbe": "#1b4a7a",
+     "zusatz": "gegen die Republik"
+    }
+   ]
+  }
+ ],
+ "nachweis": "Sitze im Reichstag nach: Wahlen in der Weimarer Republik (gonschior.de), wie Statistisches Jahrbuch für das Deutsche Reich 1933, S. 539 (LeMO). DDP: 1932 Deutsche Staatspartei."
+}

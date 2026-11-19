@@ -1,0 +1,28 @@
+{
+ "titel": "Der Kreislauf der Regierung",
+ "auftrag": "Die erste Karte steht schon oben. Leg die anderen drei im Uhrzeigersinn auf die Plätze. Dann tipp auf Prüfen.",
+ "start": {
+  "text": "Der Präsident erlässt eine Notverordnung",
+  "farbe": "#1b4a7a"
+ },
+ "karten": [
+  {
+   "id": "aufheben",
+   "text": "Der Reichstag hebt sie auf",
+   "farbe": "#2e7d32"
+  },
+  {
+   "id": "aufloesen",
+   "text": "Der Reichstag wird aufgelöst",
+   "farbe": "#1b4a7a"
+  },
+  {
+   "id": "neuwahl",
+   "text": "Neuwahl",
+   "farbe": "#6d6d6d"
+  }
+ ],
+ "mitte": "Kein Ausweg|Es beginnt immer wieder von vorn.",
+ "nachher": "So lief es 1930. Im September 1932 geschah es wieder: Papen setzte sein Wirtschaftsprogramm per Notverordnung in Kraft, 512 von 554 Abgeordneten stimmten gegen die Regierung, Hindenburg löste den Reichstag auf, im November wurde neu gewählt.",
+ "nachweis": "Nach Deutsches Historisches Museum (LeMO), Jahreschronik 1930 (16. und 18. Juli, 14. September) und 1932 (4. und 12. September); Weimarer Reichsverfassung Artikel 48. Blau: der Reichspräsident, grün: der Reichstag, grau: die Wähler."
+}

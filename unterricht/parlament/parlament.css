@@ -1,0 +1,32 @@
+/* Parlament — geteiltes Werkzeug: Mehrheiten im Parlament selbst zusammenstellen (2026-11-19, GPG8a UE19).
+   Datengetrieben: je Aufgabe ein Ordner mit index.html + data.json. Kein Framework.
+   Gestaltung „Blatt": Farben, Schrift, Knopf aus ../assets/css/material.css (vorher geladen); hier nur Layout,
+   nur --m-*-Tokens. Parteifarben kommen als Daten aus data.json. */
+body.parlament { margin: 0; background: var(--m-grund); color: var(--m-tinte);
+  font: 20px/1.45 var(--m-schrift); -webkit-text-size-adjust: 100%; }
+.p-huelle { max-width: 1100px; margin: 0 auto; padding: 20px 22px 48px; }
+.p-kopf h1 { margin: 0; font-size: 1.5rem; line-height: 1.2; }
+.p-kopf p { margin: 6px 0 0; color: var(--m-leise); }
+.p-blatt { background: var(--m-blatt); border: 1px solid var(--m-linie); border-radius: 2px;
+  box-shadow: var(--m-schatten); padding: 20px 24px; margin-top: 16px; }
+.p-wahl { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+.p-wahl .m-knopf[aria-pressed="true"] { background: var(--m-tinte); color: var(--m-blatt); }
+.p-parteien { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+.p-partei { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; padding: 10px 12px;
+  border: 3px solid var(--m-linie-hell); border-radius: var(--m-ecke); background: var(--m-blatt);
+  font: inherit; color: inherit; text-align: left; cursor: pointer; min-height: var(--m-klick); }
+.p-partei b { font-size: 1.15rem; }
+.p-partei span { font-size: .95rem; color: var(--m-leise); }
+.p-partei[aria-pressed="true"] { color: #fff; }
+.p-partei[aria-pressed="true"] span { color: #fff; }
+.p-balken { position: relative; height: 64px; margin: 22px 0 8px; background: var(--m-notiz);
+  border: 1px solid var(--m-linie); display: flex; }
+.p-balken i { display: block; height: 100%; transition: width .25s; }
+.p-linie { position: absolute; top: -10px; bottom: -10px; left: 50%; width: 4px; margin-left: -2px; background: var(--m-tinte); }
+.p-linie-text { margin: 0; font-size: .95rem; color: var(--m-leise); text-align: center; }
+.p-ergebnis { margin: 14px 0 0; font-size: 1.35rem; font-weight: 700; }
+.p-ergebnis.ja { color: #2e7d32; }
+.p-ergebnis.nein { color: #b3261e; }
+.p-aufgaben { margin: 18px 0 0; padding-left: 1.3em; }
+.p-aufgaben li { margin: 6px 0; }
+.p-fuss { margin-top: 18px; font-size: .85rem; color: var(--m-leise); }
