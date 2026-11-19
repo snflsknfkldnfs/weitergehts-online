@@ -1,0 +1,112 @@
+{
+ "titel": "Folien: Wer hat das E-Bike gestohlen? (kurz)",
+ "speicher": "folien-ebike-kurz",
+ "folien": [
+  {
+   "kopf": "Informatik · Freitag, 20.11.",
+   "titel": "Leg bereit:",
+   "punkte": [
+    "deinen Hefter",
+    "dein Mäppchen"
+   ],
+   "notiz": "F = Vollbild, Pfeil rechts = weiter, N = diese Notiz aus."
+  },
+  {
+   "kopf": "Noch einmal",
+   "titel": "Wer hat das E-Bike gestohlen?",
+   "zeitung": {
+    "titel": "Mainschleifen-Bote (erfunden)",
+    "schlagzeile": "Grünes E-Bike am Busbahnhof gestohlen",
+    "text": "Volkach. Am Dienstagabend, 29. September, hat eine Frau ihr grünes E-Bike um 21:40 Uhr am Busbahnhof abgeschlossen und ist um 21:44 Uhr mit dem Bus nach Würzburg gefahren. Als sie um 23:50 Uhr zurückkam, war das Rad weg. Ein Zeuge sah gegen 22:15 Uhr einen Jugendlichen mit einem Fahrrad über die Mainbrücke Richtung Astheim fahren. Die Farbe konnte er im Dunkeln nicht erkennen. Die Polizei hat die Standorte und Suchanfragen aller Handys aus der Gegend angefordert, nur Nummern, keine Namen."
+   },
+   "absaetze": [
+    "Letzte Woche war der Fall zu lang. Heute löst ihr ihn in vier Fragen."
+   ],
+   "notiz": "Meldung vorlesen. Fragen: Was ist passiert, wo, wann?"
+  },
+  {
+   "kopf": "iPads",
+   "titel": "Öffne den Fall.",
+   "punkte": [
+    "Holt zu zweit ein iPad.",
+    "Scannt den Code oder tippt die Adresse.",
+    "Tippt auf der Kursseite auf „Fall E-Bike“."
+   ],
+   "nummeriert": true,
+   "bild": {
+    "src": "kursseite_qr.png",
+    "alt": "QR-Code zur Kursseite Inf 6b"
+   },
+   "link": {
+    "text": "weitergehts.online/unterricht/k/inf6b",
+    "url": "https://weitergehts.online/unterricht/k/inf6b/"
+   },
+   "ziel": "Fertig: Stufe 1 offen.",
+   "notiz": "Wo es hakt, die Seite selbst öffnen."
+  },
+  {
+   "kopf": "Daten der Polizei",
+   "titel": "Ermittle wie die Polizei.",
+   "punkte": [
+    "Löst Stufe 1 und 2.",
+    "Wen verdächtigt die Polizei?",
+    "Zeigt mit 1 bis 5 Fingern, wie sicher ihr seid."
+   ],
+   "nummeriert": true,
+   "ziel": "Fertig: Verdacht steht.",
+   "notiz": "Nichts zur Wendung sagen. Sicherheit grob an die Tafel schreiben."
+  },
+  {
+   "kopf": "Neue Daten",
+   "titel": "Prüf den Verdacht.",
+   "punkte": [
+    "Löst Stufe 3 und 4.",
+    "Schon fertig? Öffnet auf der Kursseite den Fall Graffiti."
+   ],
+   "nummeriert": true,
+   "ziel": "Fertig: Stufe 4 gelöst.",
+   "notiz": "Wenn die Zeit knapp wird: Stufe 4 gemeinsam am Beamer."
+  },
+  {
+   "kopf": "Gemeinsam",
+   "titel": "Die Polizei hatte richtige Daten und lag trotzdem falsch.",
+   "absaetze": [
+    "iPads umdrehen.",
+    "Erklär, wie das passieren konnte."
+   ],
+   "eingabe": {
+    "label": "Eure Erklärungen",
+    "zeilen": 4
+   },
+   "notiz": "Erst die Sicherheit von der Tafel zeigen. Mittippen. Erwartet: eigenes Schloss, Handy aus, App und Einkauf fehlten, Standort zeigt nur das Handy."
+  },
+  {
+   "kopf": "Vor einem Verdacht",
+   "titel": "Bevor ich einer Datenspur glaube, prüfe ich:",
+   "punkte": [
+    "Zeigt die Spur das Handy oder den Menschen?",
+    "Welche Daten fehlen?",
+    "Gibt es eine harmlose Erklärung?"
+   ],
+   "nummeriert": true,
+   "aufdecken": true,
+   "notiz": "Jede Erklärung einer Prüffrage zuordnen, zu jeder ein Beispiel aus dem Fall."
+  },
+  {
+   "kopf": "Hefteintrag",
+   "titel": "Wer hat das E-Bike gestohlen?",
+   "merke": "Eine Datenspur zeigt, wo ein Handy war, nicht, wer etwas getan hat.",
+   "punkte": [
+    "Zeigt die Spur das Handy oder den Menschen?",
+    "Welche Daten fehlen?",
+    "Gibt es eine harmlose Erklärung?"
+   ],
+   "nummeriert": true,
+   "absaetze": [
+    "Bevor ich einer Datenspur glaube, prüfe ich:"
+   ],
+   "ziel": "Von Hand: Überschrift, Datum, Merksatz und ein Beispiel je Frage.",
+   "notiz": "Sagen: Das kommt in der Probe dran."
+  }
+ ]
+}

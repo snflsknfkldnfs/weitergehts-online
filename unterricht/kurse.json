@@ -288,10 +288,11 @@
       "art": "werkzeug", "fach": "inf", "jahrgang": 6,
       "kurse": ["inf6b"], "thema": "Datenspuren", "datum": "2026-10-08",
       "teile": [
+        { "pfad": "datenspuren/ebike-kurz/", "titel": "Fall E-Bike", "datum": "2026-11-20" },
+        { "pfad": "datenspuren/graffiti/", "titel": "Fall Graffiti (für Schnelle)", "datum": "2026-11-20" },
         { "pfad": "datenspuren/ebike-leicht/", "titel": "Fall E-Bike · leicht", "datum": "2026-11-13" },
         { "pfad": "datenspuren/ebike-mittel/", "titel": "Fall E-Bike · mittel", "datum": "2026-11-13" },
         { "pfad": "datenspuren/ebike-schwer/", "titel": "Fall E-Bike · schwer", "datum": "2026-11-13" },
-        { "pfad": "datenspuren/graffiti/", "titel": "Fall Graffiti (für Schnelle)", "datum": "2026-11-13" },
         { "pfad": "datenspuren/anzeige-nachtbus/", "titel": "Anzeige Nachtbus: Fall 2580", "datum": "2026-10-30" },
         { "pfad": "datenspuren/anzeige-parkhaus/", "titel": "Anzeige Parkhaus: Fall 2580", "datum": "2026-10-30" },
         { "pfad": "datenspuren/2580-nachtbus/", "titel": "Kampagne Nachtbus: Fall 2580", "datum": "2026-10-23" },
@@ -304,6 +305,10 @@
         { "pfad": "datenspuren/7734/", "titel": "Fall 7734", "datum": "2026-10-08" },
         { "pfad": "datenspuren/8892/", "titel": "Fall 8892", "datum": "2026-10-08" }
       ] },
+    { "id": "folien-ebike-kurz", "pfad": "folien/ebike-kurz/",
+      "titel": "Folien: Wer hat das E-Bike gestohlen? (20.11.)",
+      "art": "werkzeug", "fach": "inf", "jahrgang": 6,
+      "kurse": ["inf6b"], "thema": "Datenspuren", "datum": "2026-11-20" },
     { "id": "folien-ebike", "pfad": "folien/ebike/",
       "titel": "Folien: Wer hat das E-Bike gestohlen?",
       "art": "werkzeug", "fach": "inf", "jahrgang": 6,

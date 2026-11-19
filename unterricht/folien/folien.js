@@ -86,6 +86,12 @@
       a.rel = 'noopener';
       blatt.appendChild(a);
     }
+    if (f.bild) {                       // z. B. QR-Code zur Kursseite neben dem Link (Code + Link)
+      var img = el('img', 'f-bild');
+      img.src = f.bild.src;
+      img.alt = f.bild.alt || '';
+      blatt.appendChild(img);
+    }
     if (f.eingabe) {
       var lab = el('label', 'f-eingabe');
       lab.appendChild(el('span', 'f-eingabe-label', f.eingabe.label));

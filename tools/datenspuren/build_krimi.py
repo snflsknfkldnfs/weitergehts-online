@@ -118,14 +118,15 @@ def verdaechtiger(s):       # 6143, 15, Ortsteil Astheim, pendelt mit Bus nach K
         s.add(nu, n, z, q, t)
 
 
-def taeter(s):              # 8471, Sommerach, Spätschicht im Supermarkt Volkach, fährt sonst mit dem Bus 21:44 heim
+def taeter(s, kurz=False):  # 8471, Sommerach, Spätschicht im Supermarkt Volkach, fährt sonst mit dem Bus 21:44 heim
     nu, heim = '8471', 'Ortsmitte, Sommerach'
     for n in range(TAGE):
         wt = tag(n).weekday()
         s.add(nu, n, '09:10', 'Standort', heim)
         if wt < 6:
             s.add(nu, n, '13:20', 'Standort', 'Supermarkt, Volkach')
-            s.add(nu, n, '21:38', 'Standort', BB)
+            if not (kurz and n == TATTAG):      # kurz: Handy schon vor dem Busbahnhof aus, keine Falle 21:38
+                s.add(nu, n, '21:38', 'Standort', BB)
             if n != TATTAG:
                 s.add(nu, n, '21:58', 'Standort', 'Bushaltestelle, Sommerach')
         if n != TATTAG:
@@ -354,6 +355,73 @@ def stufen(v):
     ]
 
 
+def stufen_kurz(v):
+    """Kurzer Fall (Inf6b 20.11.2026, Nachbereitung 13.11.: „zu schwer, zu verschachtelt, zu kleinschrittig“):
+    vier Fragen, je eine Entscheidung, kein Minuten-Rechnen. Phase 1 → Verdacht 6143, Phase 2 → 8471."""
+    return [
+        stufe('tatort', 0, 'Am Tatort',
+              'Welches Handy war am Dienstagabend nach 21:40 am Busbahnhof? Die Besitzerin 3390 zählt nicht.',
+              ['Quelle: Standort, Tag: Di 29.09., Uhrzeit von 21 bis 23, Suchwort: Busbahnhof.'],
+              'zahl', ['6143'], ['6143', 'Nummer 6143', 'die 6143', 'Handy 6143'],
+              ['3390', '8471', '2207', '614', '61430'],
+              '6143 (21:52 und 22:12 am Busbahnhof)',
+              'Nur ein Handy außer der Besitzerin. Was hat es dort gemacht?',
+              [('Standort', 'Busbahnhof')], 'Di 21–23 Uhr am Busbahnhof nur 3390 und 6143 (8471 hat das Handy aus)',
+              material='zeitung'),
+        stufe('suche', 0, 'Suche am Tatort',
+              'Wonach hat 6143 am Dienstagabend gesucht, das mit einem Fahrrad zu tun hat?',
+              ['Quelle: Suche, Suchwort: schloss.'],
+              'wort', ['SCHLOSS'],
+              ['Fahrradschloss öffnen', 'fahrradschloss öffnen ohne schlüssel', 'ein Schloss', 'Fahrradschloss',
+               'Schloss knacken', 'schlos öffnen'],
+              ['Taxi', 'Bus', 'Taschenlampe', 'Kino', 'Fahrrad kaufen'],
+              '6143 um 21:55: „fahrradschloss öffnen ohne schlüssel“',
+              'Am Tatort, und er will ein Schloss ohne Schlüssel öffnen. Die Polizei verdächtigt 6143. '
+              'Wie sicher bist du? Zeig es mit 1 bis 5 Fingern.',
+              [('Suche', 'fahrradschloss öffnen')],
+              '6143 21:55 „fahrradschloss öffnen ohne schlüssel“, 22:01 „schloss app bluetooth geht nicht“; '
+              'Ende Phase 1: Verdacht 6143 (falsch)'),
+        stufe('schloss', 1, 'Neue Spur 1',
+              'Neue Daten. Wie oft ging das Schloss von 6143 am Dienstagabend nicht auf?',
+              ['Nutzer: 6143, Quelle: App, Tag: Di 29.09.'],
+              'zahl', ['3', 'DREI', 'DREIMAL'], ['3', 'dreimal', '3 mal', 'drei'], ['1', '2', '4', '5'],
+              '3× „Öffnen fehlgeschlagen“, 22:11 geöffnet (Akku 2 %): sein eigenes Schloss',
+              'Er hat mit seinem eigenen Schloss gekämpft, der Akku war fast leer. Darum hat er gesucht.',
+              [('App', 'fehlgeschlagen')], '6143 App 21:53, 21:57, 22:03 fehlgeschlagen, 22:11 geöffnet; Mi 30.09. Akku gekauft'),
+        stufe('taeter', 1, 'Neue Spur 2',
+              'Das E-Bike meldet um 21:51 seinen Ort: Sommerach. Wer hat am Dienstagabend in Sommerach bezahlt?',
+              ['Quelle: Einkauf, Tag: Di 29.09., Suchwort: Sommerach.'],
+              'zahl', ['8471'], ['8471', 'Nummer 8471', 'die 8471', 'Handy 8471'], v['taeter_falsch'],
+              '8471: 21:56 Kartenzahlung Tankstelle Sommerach; am Busbahnhof kein Standort (Handy aus)',
+              'Sein Handy war aus, darum stand er nicht in den Daten der Polizei. Die Karte hat ihn verraten.',
+              [('Einkauf', 'Sommerach'), ('App', 'Sommerach')],
+              '8471: kein Standort von 13:20 bis 22:31; Einkauf 21:56 Tankstelle Sommerach; Mi 00:14 „e bike akku ohne schlüssel entfernen“'),
+    ]
+
+
+def pruefe_kurz(ein):
+    """Eindeutigkeit über die ganze Frage, nicht nur das Fenster: Tipp-Filter nachspielen."""
+    f = []
+    d0 = tag(TATTAG).isoformat()
+    am = [e for e in ein if e['datum'] == d0]
+    bb = {e['nutzer'] for e in am if e['quelle'] == 'Standort' and e['eintrag'] == BB and 21 <= int(e['zeit'][:2]) <= 23}
+    if bb != {'3390', '6143'}:
+        f.append(f'kurz/tatort: Tipp-Filter (Standort, Di, 21–23 Uhr, Busbahnhof) zeigt {sorted(bb)}')
+    such = {(e['nutzer'], e['eintrag']) for e in ein if e['quelle'] == 'Suche' and 'schloss' in e['eintrag'].lower()}
+    if {nu for nu, _ in such} != {'6143'}:
+        f.append(f'kurz/suche: Schloss-Suchen bei {sorted(such)}')
+    rad = [t for nu, t in such if nu == '6143' and ('fahrrad' in t or 'schloss' in t)]
+    if not all('SCHLOSS' in t.upper() for t in rad):
+        f.append('kurz/suche: zweite richtige Antwort möglich')
+    nicht = [e for e in am if e['nutzer'] == '6143' and e['quelle'] == 'App' and 'fehlgeschlagen' in e['eintrag']]
+    if len(nicht) != 3:
+        f.append(f'kurz/schloss: {len(nicht)}× fehlgeschlagen')
+    zahl = {e['nutzer'] for e in am if e['quelle'] == 'Einkauf' and 'sommerach' in e['eintrag'].lower()}
+    if zahl != {'8471'}:
+        f.append(f'kurz/taeter: Tipp-Filter (Einkauf, Di, Sommerach) zeigt {sorted(zahl)}')
+    return f
+
+
 VARIANTEN = [
     {'id': 'leicht', 'titel': 'Fall E-Bike · leicht', 'seed': 2909, 'tipps': 2, 'pendler': 6,
      'falsch': [], 'n_fenster': 3, 'im_fenster': '6143, 2207, 3390', 'davor': '8471 (21:38)',
@@ -365,6 +433,9 @@ VARIANTEN = [
      'falsch': [fs_1188, fs_1166, fs_7720, fs_4419, fs_9024, fs_5520], 'n_fenster': 4,
      'im_fenster': '6143, 2207, 3390, 4419', 'davor': '8471 (21:38), 1188 (21:20–21:35)',
      'taeter_falsch': ['6143', '1166', '9024', '5520', '3390', '4419']},
+    {'id': 'kurz', 'titel': 'Fall E-Bike', 'seed': 2912, 'tipps': 1, 'pendler': 4, 'kurz': True,
+     'falsch': [], 'n_fenster': 2, 'im_fenster': '3390, 6143', 'davor': 'niemand (8471 Handy aus)',
+     'taeter_falsch': ['6143', '3390', '2207', '847', '84710']},
 ]
 PHASEN = [
     {'id': 'eine', 'titel': 'Daten der Polizei', 'quellen': ['Standort', 'Suche'],
@@ -406,8 +477,9 @@ def baue(v):
     s = Sammler()
     besitzerin(s)
     verdaechtiger(s)
-    taeter(s)
-    spaetschicht(s)
+    taeter(s, kurz=v.get('kurz', False))
+    if not v.get('kurz'):
+        spaetschicht(s)
     for f in v['falsch']:
         f(s)
     rauschen(s, v['seed'])
@@ -652,8 +724,10 @@ def main():
                'Schloss-Akku ist leer (3× fehlgeschlagen), 22:11 auf, 22:12 mit seinem Rad heim (22:19 Astheim).', '']
     faelle = []
     for v in VARIANTEN:
-        ein, st = baue(v), stufen(v)
+        ein, st = baue(v), (stufen_kurz(v) if v.get('kurz') else stufen(v))
         fehler += pruefe(v, ein, st)
+        if v.get('kurz'):
+            fehler += pruefe_kurz(ein)
         faelle.append(('ebike-' + v['id'], {'titel': v['titel'], **AKTE}, ZEITUNG, ein, st, v['tipps']))
     ein, st = g_baue(), g_stufen()
     fehler += g_pruefe(ein, st)

@@ -25,6 +25,7 @@ body.folien {
 .f-zeitstrahl { list-style: none; margin: 0; padding: 0 0 0 1em; border-left: 3px solid var(--m-linie); }
 .f-zeitstrahl li { display: flex; gap: 1em; margin: 0 0 .35em; }
 .f-zeit { flex: 0 0 5.2em; font-weight: 700; font-variant-numeric: tabular-nums; }
+.f-bild { display: block; width: min(38vh, 70vw); height: auto; margin: .4em 0; image-rendering: pixelated; }
 .f-link { display: inline-block; margin: .2em 0 .6em; font-size: 1.15em; font-weight: 700; color: var(--m-blau); word-break: break-all; }
 .f-eingabe { display: block; margin: .4em 0; }
 .f-eingabe-label { display: block; margin-bottom: .2em; font-weight: 700; }
