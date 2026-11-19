@@ -80,6 +80,12 @@
               "art": "probe",
               "kommt": true,
               "text": "Stoff: deine Hefteinträge vom 08.10. bis 13.11. Unten steht jede Stunde mit ihrem Antwortsatz. Tipp auf eine Stunde: Dort findest du Hefteintrag, Blätter und Folien."
+            },
+            {
+              "id": "ue13",
+              "datum": "2026-11-20",
+              "titel": "Mauerbau 1961",
+              "frage": "Warum baute die DDR eine Mauer mitten durch Berlin?"
             }
           ]
         },
@@ -316,7 +322,7 @@
     { "id": "begleiten-mauerbau-1961", "pfad": "begleiten/mauerbau-1961/",
       "titel": "Mauerbau 1961",
       "art": "werkzeug", "fach": "gpg", "strang": "geschichte", "jahrgang": 9,
-      "kurse": ["gpg9a"], "thema": "Geteiltes Land", "datum": "2026-11-20", "stunde": "s01/probe1" }
+      "kurse": ["gpg9a"], "thema": "Geteiltes Land", "datum": "2026-11-20", "stunde": "s01/ue13" }
   ],
   "hubs": ["ordnen/"]
 }

@@ -203,6 +203,31 @@
           "bild": "bilder/einkleber_loesung.png"
         }
       ]
+    },
+    "s01/ue13": {
+      "_hinweis": "Mauerbau (2. Stunde der Doppelstunde mit der Probe, 20.11.2026). Vor der Stunde: Erarbeitung (iPad und Blatt) und Folien ohne die Lösungsfolien 7, 9, 15, 17, 18, kein Heft. Nach der Nachbereitung: ohne_heft, heft, heft_bild und folien_ohne streichen.",
+      "ordner": "UE12-13_2026-11-20_1-probe",
+      "ohne_heft": true,
+      "heft": [],
+      "heft_bild": [],
+      "blaetter": [
+        {
+          "datei": "drucken/25x_einseitig_AB_Mauerbau.pdf",
+          "titel": "Arbeitsblatt: Mauerbau 1961",
+          "art": "Arbeitsblatt",
+          "zu": [
+            "begleiten-mauerbau-1961"
+          ]
+        }
+      ],
+      "folien": "2026-11-20_GPG9a_1-probe.pdf",
+      "folien_ohne": [
+        7,
+        9,
+        15,
+        17,
+        18
+      ]
     }
   },
   "uebung_pool": {
