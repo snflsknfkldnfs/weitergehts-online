@@ -81,32 +81,16 @@
    "notiz": "Erst die Sicherheit von der Tafel zeigen. Mittippen. Erwartet: eigenes Schloss, Handy aus, App und Einkauf fehlten, Standort zeigt nur das Handy."
   },
   {
-   "kopf": "Vor einem Verdacht",
-   "titel": "Bevor ich einer Datenspur glaube, prüfe ich:",
-   "punkte": [
-    "Zeigt die Spur das Handy oder den Menschen?",
-    "Welche Daten fehlen?",
-    "Gibt es eine harmlose Erklärung?"
-   ],
-   "nummeriert": true,
-   "aufdecken": true,
-   "notiz": "Jede Erklärung einer Prüffrage zuordnen, zu jeder ein Beispiel aus dem Fall."
-  },
-  {
    "kopf": "Hefteintrag",
-   "titel": "Wer hat das E-Bike gestohlen?",
-   "merke": "Eine Datenspur zeigt, wo ein Handy war, nicht, wer etwas getan hat.",
+   "titel": "Kleb das Blatt in deinen Hefter.",
    "punkte": [
-    "Zeigt die Spur das Handy oder den Menschen?",
-    "Welche Daten fehlen?",
-    "Gibt es eine harmlose Erklärung?"
+    "Schreib Überschrift und Datum von Hand.",
+    "Lies die drei Sätze.",
+    "Schreib den Merksatz von der Tafel ab."
    ],
    "nummeriert": true,
-   "absaetze": [
-    "Bevor ich einer Datenspur glaube, prüfe ich:"
-   ],
-   "ziel": "Von Hand: Überschrift, Datum, Merksatz und ein Beispiel je Frage.",
-   "notiz": "Sagen: Das kommt in der Probe dran."
+   "ziel": "Fertig: Blatt im Hefter.",
+   "notiz": "Überschrift und Merksatz an die Tafel (Lösungsblatt). Sagen: Das kommt in der Probe dran."
   }
  ]
 }
