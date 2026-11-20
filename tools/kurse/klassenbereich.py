@@ -809,7 +809,8 @@ def stand_schreiben(ziel: Path, kurs: str, welt: Path, auswahl: dict, seiten: di
         if not p.is_dir() or "protokoll" in p.parts or any(o in p.parts for o in aus_ordner):
             continue
         m = re.search(r"_(20\d\d-\d\d-\d\d)_", p.name)
-        if m and m.group(1) not in am and hat_nachbereitung(p):
+        ref = f"{p.parent.name.split('_')[0].lower()}/{p.name.split('_')[0].lower()}"   # ausgeblendete Stunde (Wochenrückblick) zählt als ausgespart
+        if m and m.group(1) not in am and (hat_nachbereitung(p) or ref in aus):
             daten.add(m.group(1))
     stand = {"_comment": "Erzeugt von tools/kurse/klassenbereich.py, nicht von Hand. Nur Kennungen, kein Inhalt; nicht veröffentlicht.",
              "kurs": kurs, "welt_kurs": welt.name,
