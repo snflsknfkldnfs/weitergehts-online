@@ -1,0 +1,50 @@
+{
+ "_comment": "Erzeugt von tools/kurse/klassenbereich.py, nicht von Hand. Nur Kennungen, kein Inhalt; nicht veröffentlicht.",
+ "ausgespart": {
+  "daten": [],
+  "ordner": []
+ },
+ "kurs": "wib6b",
+ "seiten": {
+  "kursseite": {
+   "kennung": "7c58edd630160ab2"
+  },
+  "s01/probe-2026-11-24": {
+   "datum": "2026-11-24",
+   "kennung": "2d63fe002e9eab47"
+  },
+  "s01/ue01": {
+   "datum": "2026-09-22",
+   "kennung": "733b5ed7e0939c15"
+  },
+  "s01/ue02": {
+   "datum": "2026-09-29",
+   "kennung": "ccddd99fb8154305"
+  },
+  "s01/ue03": {
+   "datum": "2026-10-06",
+   "kennung": "c7f05e25dc99105a"
+  },
+  "s01/ue04": {
+   "datum": "2026-10-13",
+   "kennung": "8e1ee265843ea0f2"
+  },
+  "s01/ue05": {
+   "datum": "2026-10-20",
+   "kennung": "03551c2b02d8497c"
+  },
+  "s01/ue06": {
+   "datum": "2026-10-27",
+   "kennung": "ad2d627040f76fef"
+  },
+  "s01/ue07": {
+   "datum": "2026-11-10",
+   "kennung": "fc77f74b1246ec56"
+  },
+  "s01/ue08": {
+   "datum": "2026-11-17",
+   "kennung": "e6ec0a4cbb2ed864"
+  }
+ },
+ "welt_kurs": "WiB6b"
+}

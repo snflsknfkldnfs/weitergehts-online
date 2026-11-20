@@ -1,0 +1,62 @@
+{
+ "_comment": "Erzeugt von tools/kurse/klassenbereich.py, nicht von Hand. Nur Kennungen, kein Inhalt; nicht veröffentlicht.",
+ "ausgespart": {
+  "daten": [
+   "2026-10-16"
+  ],
+  "ordner": [
+   "S00_aktuelles"
+  ]
+ },
+ "kurs": "gpg8a",
+ "seiten": {
+  "kursseite": {
+   "kennung": "db2a4b33df7460e5"
+  },
+  "s01/ue01-02": {
+   "datum": "2026-09-29",
+   "kennung": "a7fc4d896c470b66"
+  },
+  "s01/ue03-04": {
+   "datum": "2026-10-06",
+   "kennung": "edb35b47033d189c"
+  },
+  "s01/ue05-06": {
+   "datum": "2026-10-13",
+   "kennung": "aeb9c81fb2fbafc8"
+  },
+  "s01/ue08-09": {
+   "datum": "2026-10-20",
+   "kennung": "837aed4b28b010bd"
+  },
+  "s01/ue10": {
+   "datum": "2026-10-23",
+   "kennung": "33d99fe777dd12a7"
+  },
+  "s01/ue11-12": {
+   "datum": "2026-10-27",
+   "kennung": "462e851c3bfbe828"
+  },
+  "s01/ue14-15": {
+   "datum": "2026-11-10",
+   "kennung": "f9ff6ae68eb2154a"
+  },
+  "s01/ue16": {
+   "datum": "2026-11-13",
+   "kennung": "e4f577834622a866"
+  },
+  "s01/ue17-18": {
+   "datum": "2026-11-17",
+   "kennung": "5e5d910532ff3592"
+  },
+  "s01/ue19": {
+   "datum": "2026-11-20",
+   "kennung": "506b5567e8fe2bda"
+  },
+  "s01/ue28": {
+   "datum": "2026-12-11",
+   "kennung": "1a6c84f013775c65"
+  }
+ },
+ "welt_kurs": "GPG8a"
+}

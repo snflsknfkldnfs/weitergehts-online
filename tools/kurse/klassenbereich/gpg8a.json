@@ -7,8 +7,26 @@
     "s01/ue07",
     "s01/ue13"
   ],
-  "stunden": {},
+  "stunden": {
+    "s01/ue19": {
+      "_hinweis": "30. Januar 1933 (Fr 20.11.2026). Vor der Stunde: Erarbeitung (iPad-Seite und Blatt) und Folien, kein Heft. Nach der Nachbereitung diese Ausnahme streichen und zeigen wieder auf die Ableitung stellen.",
+      "ohne_heft": true,
+      "heft": [],
+      "heft_bild": [],
+      "blaetter": [
+        {
+          "datei": "drucken/15x_einseitig_AB_30-januar-1933.pdf",
+          "titel": "Arbeitsblatt: 30. Januar 1933",
+          "art": "Arbeitsblatt",
+          "zu": [
+            "begleiten-30-januar-1933"
+          ]
+        }
+      ]
+    }
+  },
   "zeigen": [
-    "s01/ue17-18"
+    "s01/ue17-18",
+    "s01/ue19"
   ]
 }

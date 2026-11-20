@@ -750,6 +750,13 @@ def struktur(kurs: str, auswahl: dict, daten: dict, welt: Path) -> tuple[list[di
                             **({"heute": True} if not gehalten and f"{sid}/{sid_st}" in auswahl.get("zeigen", []) else {}),
                             **({"art": "probe"} if probe else {}),
                             **({"_ordner": f.name} if f else {})})
+        # Ausnahme „zusatz“: eine Stunde, die der Sequenzplan nicht als eigene Zeile führt (zweite Stunde einer Doppelstunde
+        # mit der Probe, GPG9a 20.11.2026): steht vor der Probe desselben Tages, steht wie eine gehaltene Stunde da; die Ausnahmen der Stunde bestimmen Erarbeitung, Folien und Heft.
+        for zu in auswahl.get("zusatz", {}).get(sid, []):
+            if f"{sid}/{zu['id']}" in aus or any(st["id"] == zu["id"] for st in stunden):
+                continue
+            pos = next((i for i, st in enumerate(stunden) if st["datum"] == zu["datum"] and st.get("art") == "probe"), len(stunden))
+            stunden.insert(pos, {"id": zu["id"], "datum": zu["datum"], "titel": zu["titel"], "frage": zu.get("frage", "")})
         m = re.search(r"\*\*(?:Sequenzfrage|Leitfrage der Sequenz)[^*]*\*\*:?\s*(.+)", plan.read_text(encoding="utf-8"))
         frage = m.group(1).strip().strip("*") if m else ""
         frage = re.match(r"(.+?\?)(?:\s|$)", frage).group(1) if "?" in frage else frage   # ohne Vermerk dahinter
