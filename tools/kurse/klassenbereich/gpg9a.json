@@ -5,7 +5,9 @@
   "jahresplan": "JAHRESPLAN.md",
   "ausblenden": [
     "s00",
-    "s01/ue05"
+    "s01/ue05",
+    "s01/ue11",
+    "s01/ue12-13"
   ],
   "stunden": {
     "s01/ue01": {
