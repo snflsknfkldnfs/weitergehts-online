@@ -174,15 +174,27 @@ danach `make kurse`.
 6. Im Werkzeugkasten `themes/regeln/GPG.json` → `kursseite.kurse` den Kurs ergänzen: dann verlangt der Folienbau Code und Link
    der Kursseite auf der letzten Folie (CHANGELOG 172; Folien mit Website-Werkzeug brauchen ohnehin Code und Link).
 
-**Nach jeder Stunde:**
-1. In der Welt braucht die Stunde ihren Ordner `UE<nr>_<JJJJ-MM-TT>_<slug>/`, dazu `NACHBEREITUNG.md` (erst dann gilt sie als gehalten)
-   oder ✅ im Sequenzplan. Nur GPG 9a liest seine Struktur noch aus `kurse.json` `sequenzen`: dort die Stunde eintragen und `kommt` streichen.
-2. `make klassenbereich K=<kurs>`, `make kurse`, `make check`. Ein zweiter Bau schreibt nichts.
-3. Im Browser ansehen: `preview_start` `kursseite-wt` (Port 8093, `welt/GPG9a/.claude/launch.json`). Das Passwort nur in die lokale Vorschau tippen.
-4. Commit mit ausdrücklich genannten Pfaden, `unterricht/k/<kurs>/dateien` mit `git add -A` (gelöschte Dateien gehen sonst nicht mit).
-5. Push nach dem Ja (`git push origin HEAD:main`), Deploy abwarten (`gh run list --branch main --limit 1`). Live prüfen, ohne das
-   Passwort in die öffentliche Seite zu tippen: Dateien Byte für Byte vergleichen (`curl -s https://weitergehts.online/<pfad> | cmp - <pfad>`)
-   und eine Seite mit dem `Tresor` des Generators entschlüsseln (Spec § 7).
+**Nach jeder Stunde (seit 18.11.2026 im Planungsweg, ohne LLM-Arbeit):** Die Session der Nachbereitung ruft nach der Auswertung
+`make kursseite K=<kurs>` auf (mehrere Kurse: `K="gpg8a gpg9a"`), aus jedem Checkout des Website-Repos. Der Befehl
+(`tools/kurse/nachfuehren.py`) setzt den festen Arbeitsbaum `../_wt-kursseite` auf `origin/main` zurück, baut den Klassenbereich,
+dann `make kurse` und `make check`, und berichtet in Worten der Stunde (neu, geändert, entfernt, nur die Stundenleiste), dann
+hält er an. Vor dem Ja ansehen, wo es um Neues geht: `preview_start` `kursseite-wt` (Port 8093,
+`welt/GPG9a/.claude/launch.json`; das Passwort nur in die lokale Vorschau tippen). Den Bericht der Lehrkraft vorlegen; nach ihrem Ja `make kursseite K=<kurs> JA="<Wortlaut des Ja>"`: Commit mit dem
+Wortlaut und Push, aber nur, wenn `origin/main` sich seit dem Bericht nicht bewegt hat, der Stand Byte für Byte der berichtete ist
+und sich nur Seiten der Kurse ändern. Ein Sammel-Ja deckt reine Nachführungen (Entscheid der Lehrkraft 18.11.2026); ein neues
+Werkzeug oder eine neue Seitenart kommt über einen eigenen Zweig mit eigenem Ja, nie über diesen Befehl. Im Arbeitsbaum
+`_wt-kursseite` nie von Hand arbeiten. Nach dem Push: Deploy abwarten (`gh run list --branch main --limit 1`) und live prüfen,
+ohne das Passwort in die öffentliche Seite zu tippen: Dateien Byte für Byte vergleichen (`curl -s https://weitergehts.online/<pfad> | cmp - <pfad>`)
+und eine Seite mit dem `Tresor` des Generators entschlüsseln (Spec § 7).
+
+Eine Stunde erscheint, sobald ihr Ordner eine `NACHBEREITUNG.md` hat oder der Sequenzplan sie mit ✅ führt; Struktur, Titel und
+Fragen kommen für alle Kurse aus Jahres- und Sequenzplan (GPG 9a seit 18.11.2026, vorher von Hand in `kurse.json`). Ausnahmen nur
+in der Auswahl-Datei (`ausblenden`, `zeigen`, `sequenzen.<seq>.frage`, `stunden.<seq/ue>.titel|frage|blaetter|…`).
+
+**Was liegen blieb, meldet der Sitzungsstart** (`werkzeugkasten/core/tools/kalender/session_start.py`): `KURSSEITE: GPG9a UE11
+(Do 19.11.) hat eine Nachbereitung und fehlt auf der Kursseite`. Grundlage ist `unterricht/k/<kurs>/stand.json` auf `origin/main`,
+den der Bau schreibt: je Seite Datum und Kennung (Hash dessen, was sie aus der Welt trägt, mit dem Kursschlüssel), dazu ausgesparte
+Sequenzen und Stunden; kein Inhalt, nicht veröffentlicht (`make site` lässt ihn weg). Fehlt nichts, steht nichts.
 
 **Wenn die Ableitung etwas falsch wählt:**
 

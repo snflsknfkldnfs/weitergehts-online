@@ -1,5 +1,5 @@
 {
-  "_comment": "Auswahl für den verschlüsselten Klassenbereich unterricht/k/gpg9a/ (Generator: tools/kurse/klassenbereich.py, make klassenbereich K=gpg9a). Hier stehen nur Pfade und Zuordnungen, keine Inhalte: Hefteinträge, Blätter und Folien liest der Generator aus der Welt und legt sie nur verschlüsselt ins Repo. Struktur der Stunden (Datum, Titel, Stundenfrage) kommt aus unterricht/kurse.json (sequenzen), das Jahr aus JAHRESPLAN.md des Kurses. heft_bild = der ausgefüllte Einkleber (bild: PNG, pdf: Lösungs-PDF, bau: Befehl, der ein PDF baut; {ordner} = Stundenordner, das Ziel hängt der Generator an).",
+  "_comment": "Auswahl für den verschlüsselten Klassenbereich unterricht/k/gpg9a/ (Generator: tools/kurse/klassenbereich.py, make klassenbereich K=gpg9a). Hier stehen nur Pfade und Zuordnungen, keine Inhalte: Hefteinträge, Blätter und Folien liest der Generator aus der Welt und legt sie nur verschlüsselt ins Repo. Struktur der Stunden (Datum, Titel, Stundenfrage, gehalten) und das Jahr kommen aus JAHRESPLAN.md und SEQUENZPLAN.md des Kurses (seit 18.11.2026, vorher von Hand in kurse.json). heft_bild = der ausgefüllte Einkleber (bild: PNG, pdf: Lösungs-PDF, bau: Befehl, der ein PDF baut; {ordner} = Stundenordner, das Ziel hängt der Generator an). titel und frage je Stunde nur, wo Planung und Sequenzplan sie nicht lesbar tragen (UE06-07: zwei Stundenfragen).",
   "kurs": "gpg9a",
   "welt": "/Users/paulad/Schule_2026-27/Unterrichtsplanung26_27/welt/GPG9a",
   "jahresplan": "JAHRESPLAN.md",
@@ -7,12 +7,6 @@
     "s00",
     "s01/ue05"
   ],
-  "sequenzen": {
-    "s01": {
-      "ordner": "S01_geteiltes-land",
-      "jahresplan_id": "S01"
-    }
-  },
   "stunden": {
     "s01/ue01": {
       "ordner": "UE01_2026-10-01_europa-nach-1945",
@@ -104,6 +98,7 @@
       ]
     },
     "s01/ue06-07": {
+      "frage": "Hätte ich damals Angst vor einem Krieg haben müssen? Wo hätte ich 1955 mehr kaufen können?",
       "ordner": "UE06-07_2026-10-16_kalter-krieg-und-wirtschaftswunder",
       "heft": [
         {

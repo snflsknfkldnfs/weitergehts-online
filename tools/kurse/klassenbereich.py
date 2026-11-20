@@ -16,12 +16,14 @@ die Auswahl-Datei trägt nur Ausnahmen.
 
 Quellen (nie Inhalte im Repo):
   tools/kurse/klassenbereich/<kurs>.json    Auswahl je Stunde (Pfade in die Welt, Zuordnung Blatt ↔ Material)
-  unterricht/kurse.json                     Struktur der Stunden (Datum, Titel, Stundenfrage), Material-Links
-  <Welt>/<Kurs>/JAHRESPLAN.md               das Jahr (Sequenzen, Zeitraum, Probe, Stand)
+  unterricht/kurse.json                     Kurs (Titel, Fach), Material-Links (Feld "stunde")
+  <Welt>/<Kurs>/JAHRESPLAN.md, SEQUENZPLAN.md  das Jahr und die Stunden (Datum, Titel, Stundenfrage, gehalten)
   <Welt>/…/LOESUNG_*.md, PLANUNG.md         Hefteinträge; drucken/*.pdf Blätter; Folien-PDF; bilder/HERKUNFT.md
   ~/.config/weitergehts/klassenbereich.json Passwort und Salz je Kurs (außerhalb des Repos)
 
 Deterministisch: gleicher Klartext → gleiche IV (HMAC) → gleiches Chiffrat, also kein Git-Rauschen bei Neubau.
+Ausgabe neben den Seiten: unterricht/k/<kurs>/stand.json (nur Kennungen; liest der Sitzungsstart und make kursseite).
+Nachführen nach einer Stunde: make kursseite K=<kurs> (tools/kurse/nachfuehren.py).
 """
 from __future__ import annotations
 
@@ -295,6 +297,7 @@ class Ablage:
 
     def __init__(self, tresor: Tresor, ziel: Path):
         self.t, self.ziel, self.benutzt = tresor, ziel, set()
+        self.seite: list[str] = []   # Dateien der Seite, die gerade entsteht (für den Stand)
         ziel.mkdir(parents=True, exist_ok=True)
 
     def ablegen(self, klar: bytes, endung: str) -> str:
@@ -303,6 +306,7 @@ class Ablage:
         if not p.is_file():
             p.write_bytes(self.t.zu(klar))
         self.benutzt.add(name)
+        self.seite.append(name)
         return name
 
     def aufraeumen(self) -> int:
@@ -701,58 +705,57 @@ def stunde_auto(ordner: Path, ueber: dict, materialien_der_stunde: list[dict]) -
 
 
 def struktur(kurs: str, auswahl: dict, daten: dict, welt: Path) -> tuple[list[dict], list[dict]]:
-    """Sequenzen mit ihren Stunden und das Jahr. Trägt kurse.json für den Kurs `sequenzen`, gilt diese Struktur (von Hand,
-    GPG9a seit 13.11.); sonst kommt sie aus Jahresplan und Sequenzplänen der Welt (Leser der Matrixe)."""
+    """Sequenzen mit ihren Stunden und das Jahr, aus Jahresplan und Sequenzplänen der Welt (Leser der Matrixe). Gehalten ist
+    eine Stunde, deren Sequenzplan-Zeile ✅ trägt oder deren Ordner eine NACHBEREITUNG.md hat. Die Auswahl-Datei trägt nur
+    Ausnahmen (ausblenden, zeigen, frage je Sequenz). Bis 18.11.2026 gab es für GPG9a eine Struktur von Hand in kurse.json
+    (sequenzen, kommt); sie ging mit der Spezifikation 2026-11-18_kursseite-pflege (Entscheid der Lehrkraft: Pflege im Planungsweg)."""
     M = matrixe_leser()
     aus = auswahl.get("ausblenden", [])
     jp = M.jahresplan_sequenzen(welt / auswahl.get("jahresplan", "JAHRESPLAN.md"))
     reihe = []
-    if daten.get("sequenzen", {}).get(kurs):
-        for s in daten["sequenzen"][kurs]["reihe"]:
-            if s["id"] in aus:
+    for x in jp:
+        sid = x["nr"].lower()
+        if sid in aus or not x["ordner"] or not (welt / x["ordner"] / "SEQUENZPLAN.md").is_file():
+            continue
+        plan = welt / x["ordner"] / "SEQUENZPLAN.md"
+        zeilen = M.sequenzplan_zeilen(plan)
+        ordner_am = {}
+        for p in (welt / x["ordner"]).glob("UE*_20??-??-??_*"):
+            if p.is_dir():
+                ordner_am[re.search(r"20\d\d-\d\d-\d\d", p.name).group(0)] = p
+        probe_am = x["probe"]["datum"] if x["probe"] else ""
+        stunden = []
+        for datum in sorted(set(zeilen) | set(ordner_am)):
+            z = zeilen.get(datum, {"thema": "", "frage": "", "zustand": "", "lnw": "", "ue": ""})
+            if z["zustand"] == "faellt_aus":
                 continue
-            ordner = (auswahl.get("sequenzen", {}).get(s["id"], {}).get("ordner")
-                      or next((x["ordner"] for x in jp if x["nr"].lower() == s["id"]), ""))
-            reihe.append({**s, "ordner": welt / ordner if ordner else None,
-                          "stunden": [st for st in s["stunden"] if f"{s['id']}/{st['id']}" not in aus]})
-    else:
-        for x in jp:
-            sid = x["nr"].lower()
-            if sid in aus or not x["ordner"] or not (welt / x["ordner"] / "SEQUENZPLAN.md").is_file():
+            f = ordner_am.get(datum)
+            probe = z["lnw"] == "gross" or datum == probe_am
+            gehalten = z["zustand"] == "gehalten" or bool(f and (f / "NACHBEREITUNG.md").is_file())
+            if not (f or probe or z["ue"] or (z["frage"] and not gehalten)):
+                continue   # Wandertag, Praktikum, Ausblick: keine Stunde
+            sid_st = (f.name.split("_")[0].lower() if f else ("ue" + z["ue"].lower() if z["ue"] else
+                      ("probe-" if probe else "d") + datum))
+            if f"{sid}/{sid_st}" in aus or any(st["id"] == sid_st for st in stunden):
                 continue
-            plan = welt / x["ordner"] / "SEQUENZPLAN.md"
-            zeilen = M.sequenzplan_zeilen(plan)
-            ordner_am = {}
-            for p in (welt / x["ordner"]).glob("UE*_20??-??-??_*"):
-                if p.is_dir():
-                    ordner_am[re.search(r"20\d\d-\d\d-\d\d", p.name).group(0)] = p
-            probe_am = x["probe"]["datum"] if x["probe"] else ""
-            stunden = []
-            for datum in sorted(set(zeilen) | set(ordner_am)):
-                z = zeilen.get(datum, {"thema": "", "frage": "", "zustand": "", "lnw": "", "ue": ""})
-                if z["zustand"] == "faellt_aus":
-                    continue
-                f = ordner_am.get(datum)
-                probe = z["lnw"] == "gross" or datum == probe_am
-                gehalten = z["zustand"] == "gehalten" or bool(f and (f / "NACHBEREITUNG.md").is_file())
-                if not (f or probe or z["ue"] or (z["frage"] and not gehalten)):
-                    continue   # Wandertag, Praktikum, Ausblick: keine Stunde
-                sid_st = (f.name.split("_")[0].lower() if f else ("ue" + z["ue"].lower() if z["ue"] else
-                          ("probe-" if probe else "d") + datum))
-                if f"{sid}/{sid_st}" in aus or any(st["id"] == sid_st for st in stunden):
-                    continue
-                p_titel, p_frage = planung_kopf(f) if f else ("", "")
-                titel = "Probe" if probe else (p_titel or z["thema"] or z["frage"] or "Stunde")
-                titel = titel.replace("**", "").strip()
-                stunden.append({"id": sid_st, "datum": datum, "titel": titel, "frage": p_frage or z["frage"].replace("**", "").strip("„“ "),
-                                "kommt": not gehalten and f"{sid}/{sid_st}" not in auswahl.get("zeigen", []),
-                                **({"heute": True} if not gehalten and f"{sid}/{sid_st}" in auswahl.get("zeigen", []) else {}),
-                                **({"art": "probe"} if probe else {}),
-                                **({"_ordner": f.name} if f else {})})
-            m = re.search(r"\*\*Sequenzfrage[^*]*\*\*:?\s*(.+)", plan.read_text(encoding="utf-8"))
-            frage = auswahl.get("sequenzen", {}).get(sid, {}).get("frage") or (m.group(1).strip().strip("*") if m else "")
-            if stunden:
-                reihe.append({"id": sid, "titel": x["name"], "frage": frage, "ordner": welt / x["ordner"], "stunden": stunden})
+            p_titel, p_frage = planung_kopf(f) if f else ("", "")
+            ueber = auswahl.get("stunden", {}).get(f"{sid}/{sid_st}", {})   # Ausnahme: titel, frage
+            p_titel, p_frage = ueber.get("titel") or p_titel, ueber.get("frage") or p_frage
+            # kommende Stunde ohne Ordner: Thema der Zeile, sonst ihr erster Satzteil („Übung für die Probe, mit …“)
+            kurz = "" if f else re.split(r",| · | – | — |\(", z.get("inhalt", ""))[0].strip()
+            titel = "Probe" if probe else (p_titel or z["thema"] or kurz or z["frage"] or "Stunde")
+            titel = titel.replace("**", "").strip()
+            stunden.append({"id": sid_st, "datum": datum, "titel": titel, "frage": p_frage or z["frage"].replace("**", "").strip("„“ "),
+                            "kommt": not gehalten and f"{sid}/{sid_st}" not in auswahl.get("zeigen", []),
+                            **({"heute": True} if not gehalten and f"{sid}/{sid_st}" in auswahl.get("zeigen", []) else {}),
+                            **({"art": "probe"} if probe else {}),
+                            **({"_ordner": f.name} if f else {})})
+        m = re.search(r"\*\*(?:Sequenzfrage|Leitfrage der Sequenz)[^*]*\*\*:?\s*(.+)", plan.read_text(encoding="utf-8"))
+        frage = m.group(1).strip().strip("*") if m else ""
+        frage = re.match(r"(.+?\?)(?:\s|$)", frage).group(1) if "?" in frage else frage   # ohne Vermerk dahinter
+        frage = auswahl.get("sequenzen", {}).get(sid, {}).get("frage") or frage
+        if stunden:
+            reihe.append({"id": sid, "titel": x["name"], "frage": frage, "ordner": welt / x["ordner"], "stunden": stunden})
     # Das Jahr: Stand nach der jüngsten gehaltenen Stunde (nicht nach dem Bautag, sonst wäre der Bau nicht wiederholbar)
     gehalten = [st["datum"] for s in reihe for st in s["stunden"] if not st.get("kommt") and st.get("art") != "probe"]
     heute = max(gehalten) if gehalten else ""
@@ -772,7 +775,51 @@ def struktur(kurs: str, auswahl: dict, daten: dict, welt: Path) -> tuple[list[di
     return reihe, jahr_
 
 
-def bauen(kurs: str) -> int:
+def kennung(tresor: Tresor, kern: str) -> str:
+    """Hash dessen, was eine Seite aus der Welt trägt, mit dem Schlüssel des Kurses (verrät nichts über den Klartext)."""
+    return hmac.new(tresor.key, kern.encode("utf-8"), hashlib.sha256).hexdigest()[:16]
+
+
+def hat_nachbereitung(ordner: Path) -> bool:
+    """Gehalten heißt hier wie im Sitzungsstart (werkzeugkasten/core/tools/kalender/session_start.py): NACHBEREITUNG.md nicht leer."""
+    try:
+        return bool((ordner / "NACHBEREITUNG.md").read_text(encoding="utf-8").strip())
+    except OSError:
+        return False
+
+
+def stand_schreiben(ziel: Path, kurs: str, welt: Path, auswahl: dict, seiten: dict) -> dict:
+    """unterricht/k/<kurs>/stand.json: welche Stunde der Welt auf der Kursseite steht, ohne Inhalt. Liest der Sitzungsstart
+    (meldet Stunden mit Nachbereitung, die fehlen) und make kursseite (Bericht: neu, geändert, entfernt). Nicht veröffentlicht.
+      seiten     Datum → {seite, kennung}; Kennung = Hash von Heft, Blättern, Folien und Dateien der Stunde (ohne die Leiste)
+      ausgespart ordner: ausgeblendete Sequenzen (gilt auch für ihre künftigen Stunden); daten: gehaltene Stunden ohne Seite"""
+    aus = auswahl.get("ausblenden", [])
+    jp = matrixe_leser().jahresplan_sequenzen(welt / auswahl.get("jahresplan", "JAHRESPLAN.md"))
+    aus_ordner = sorted(Path(x["ordner"]).name for x in jp if x["nr"].lower() in aus and x["ordner"])
+    am = {v["datum"] for k, v in seiten.items() if v.get("datum")}
+    daten = set()
+    for p in welt.rglob("UE*_20??-??-??_*"):
+        if not p.is_dir() or "protokoll" in p.parts or any(o in p.parts for o in aus_ordner):
+            continue
+        m = re.search(r"_(20\d\d-\d\d-\d\d)_", p.name)
+        if m and m.group(1) not in am and hat_nachbereitung(p):
+            daten.add(m.group(1))
+    stand = {"_comment": "Erzeugt von tools/kurse/klassenbereich.py, nicht von Hand. Nur Kennungen, kein Inhalt; nicht veröffentlicht.",
+             "kurs": kurs, "welt_kurs": welt.name,
+             "seiten": {k: seiten[k] for k in sorted(seiten)},
+             "ausgespart": {"ordner": aus_ordner, "daten": sorted(daten)}}
+    text = json.dumps(stand, ensure_ascii=False, indent=1, sort_keys=True) + "\n"
+    p = ziel / "stand.json"
+    if not p.is_file() or p.read_text(encoding="utf-8") != text:
+        p.write_text(text, encoding="utf-8")
+        print(f"geschrieben: {p.relative_to(REPO)}")
+    return stand
+
+
+def bauen(kurs: str, bericht: dict | None = None) -> int:
+    """Baut den Klassenbereich. `bericht` (von tools/kurse/nachfuehren.py) bekommt je Seite, was sie in Worten der Stunde zeigt:
+    Seite → {titel, datum, heft, blaetter, folien}; das steht nur im Speicher, nie im Repo."""
+    bericht = {} if bericht is None else bericht
     auswahl = json.loads((AUSWAHL / f"{kurs}.json").read_text(encoding="utf-8"))
     welt = Path(auswahl["welt"])
     daten = build.laden()
@@ -786,8 +833,12 @@ def bauen(kurs: str) -> int:
     materialien = {m["id"]: m for m in daten["materialien"] if kurs in m.get("kurse", []) and m.get("id")}
     reihe, jahrplan = struktur(kurs, auswahl, daten, welt)
     geschrieben: set[Path] = set()
+    seiten: dict[str, dict] = {}   # für stand.json: Seite → {datum, kennung}
 
-    def schreiben(rel: str, titel: str, tiefe: str, start: str, inhalt: str) -> None:
+    def schreiben(rel: str, titel: str, tiefe: str, start: str, inhalt: str, kern: str | None = None,
+                  datum: str = "") -> None:
+        seiten[rel or "kursseite"] = {"kennung": kennung(tresor, inhalt if kern is None else kern),
+                                      **({"datum": datum} if datum else {})}
         p = ziel / rel / "index.html" if rel else ziel / "index.html"
         p.parent.mkdir(parents=True, exist_ok=True)
         payload = base64.b64encode(tresor.zu(inhalt.encode("utf-8"))).decode()
@@ -864,9 +915,14 @@ def bauen(kurs: str) -> int:
                 spaeter.append((st, a, ordner, teile))
                 continue
             i = offen.index(st)
+            ablage.seite = []
             inhalt = stundenseite(s, st, a, ordner, teile, stunden, hier, offen[i - 1] if i else None,
                                   offen[i + 1] if i + 1 < len(offen) else None, ablage, materialien, mat_der_stunde(s, st))
-            schreiben(ref, f"{st['titel']} · {k['titel']}", "../../../../../", "../../", inhalt)
+            kern = json.dumps({"stunde": {x: st.get(x) for x in ("titel", "frage", "datum")}, "auswahl": a, "heft": teile,
+                               "dateien": ablage.seite}, ensure_ascii=False, sort_keys=True, default=str)
+            schreiben(ref, f"{st['titel']} · {k['titel']}", "../../../../../", "../../", inhalt, kern, st["datum"])
+            bericht[ref] = {"titel": st["titel"], "datum": st["datum"], "heft": bool(teile or a.get("heft_bild")),
+                            "blaetter": len(a.get("blaetter", [])), "folien": bool(a.get("folien"))}
         quiz_html = None
         if pool:
             quiz_html, quiz_fehler = quiz_bauen(P, hefte, s["id"], ablage)
@@ -874,10 +930,15 @@ def bauen(kurs: str) -> int:
                 sys.exit("Quiz: Fundstellen nicht gefunden:\n  " + "\n  ".join(quiz_fehler))
         for st, a, ordner, teile in spaeter:   # Stunde mit dem Quiz: Reiter „Üben“ zuerst
             i = offen.index(st)
+            ablage.seite = []
             inhalt = stundenseite(s, st, a, ordner, teile, stunden, hier, offen[i - 1] if i else None,
                                   offen[i + 1] if i + 1 < len(offen) else None, ablage, materialien, mat_der_stunde(s, st),
                                   quiz_html)
-            schreiben(f"{s['id']}/{st['id']}", f"{st['titel']} · {k['titel']}", "../../../../../", "../../", inhalt)
+            kern = json.dumps({"stunde": {x: st.get(x) for x in ("titel", "frage", "datum")}, "auswahl": a, "heft": teile,
+                               "dateien": ablage.seite, "quiz": quiz_html}, ensure_ascii=False, sort_keys=True, default=str)
+            schreiben(f"{s['id']}/{st['id']}", f"{st['titel']} · {k['titel']}", "../../../../../", "../../", inhalt, kern, st["datum"])
+            bericht[f"{s['id']}/{st['id']}"] = {"titel": st["titel"], "datum": st["datum"], "heft": bool(teile or a.get("heft_bild")),
+                                                "blaetter": len(a.get("blaetter", [])), "folien": bool(a.get("folien"))}
         mit_seite = seiten_ids
         for st in stunden:   # gehaltene Stunden ohne Ordner bekommen keinen Link
             if not st.get("kommt") and st.get("art") != "probe" and st["id"] not in mit_seite:
@@ -908,7 +969,9 @@ def bauen(kurs: str) -> int:
                 out.append(f'<li><a href="../{st["id"]}/"><span class="d">{e(datum)}</span>'
                            f'<span class="pl-frage">{e(st.get("frage") or st["titel"])}</span></a>{antw}</li>')
             out.append("</ol>" + ("</section>" if auf_probe else ""))
-            schreiben(f"{s['id']}/{probe['id']}", f"Probe · {k['titel']}", "../../../../../", "../../", "\n".join(out))
+            schreiben(f"{s['id']}/{probe['id']}", f"Probe · {k['titel']}", "../../../../../", "../../", "\n".join(out),
+                      "\n".join(out[1:]), probe["datum"])   # ohne die Leiste
+            bericht[f"{s['id']}/{probe['id']}"] = {"titel": "Probe", "datum": probe["datum"], "probe": True}
         leisten.append((s, hier))
 
     # ── Kursseite: das Jahr, darunter die Stunden einer Sequenz (Standard: die laufende) ──
@@ -937,6 +1000,8 @@ def bauen(kurs: str) -> int:
                    + stunden_leiste(s["stunden"], hier, None, f"{s['id']}/", True) + "</div>")
     out.append('<p class="leise tipp">Tipp auf eine Stunde: Dort findest du deinen Hefteintrag, die Blätter und die Folien.</p>')
     schreiben("", f"{k['titel']} · Unser Jahr", "../../../", "./", "\n".join(out))
+    bericht["kursseite"] = {"titel": "Kursseite (Jahr und Stundenleiste)"}
+    stand_schreiben(ziel, kurs, welt, auswahl, seiten)
 
     for p in ziel.rglob("index.html"):
         if p not in geschrieben and MARKE in p.read_text(encoding="utf-8"):
@@ -1319,19 +1384,17 @@ def pruefen() -> list[str]:
         if not daten["kurse"].get(kurs, {}).get("klassenbereich"):
             out.append(f"{kurs}: Auswahl vorhanden, aber kurse.json setzt nicht \"klassenbereich\": true")
         ziel = UNTERRICHT / "k" / kurs
-        soll = [ziel / "index.html"]
-        for s in daten["sequenzen"].get(kurs, {}).get("reihe", []):
-            if s["id"] in auswahl["ausblenden"]:
-                continue
-            soll += [ziel / s["id"] / st["id"] / "index.html" for st in s["stunden"]
-                     if f"{s['id']}/{st['id']}" in auswahl["stunden"] or st.get("art") == "probe"]
+        soll = [ziel / "index.html"]   # die Seiten der Stunden nennt der Stand des letzten Baus
+        if (ziel / "stand.json").is_file():
+            stand = json.loads((ziel / "stand.json").read_text(encoding="utf-8"))
+            soll += [ziel / rel / "index.html" for rel in stand["seiten"] if rel != "kursseite"]
         for p in soll:
             if not p.is_file():
                 out.append(f"fehlt: {p.relative_to(REPO)} (fix: make klassenbereich K={kurs})")
             elif MARKE not in (t := p.read_text(encoding="utf-8")) or 'id="kb-inhalt"' not in t:
                 out.append(f"nicht verschlüsselt: {p.relative_to(REPO)}")
         for p in ziel.rglob("*"):
-            if p.is_file() and p.suffix not in (".html", ".bin"):
+            if p.is_file() and p.suffix not in (".html", ".bin") and p != ziel / "stand.json":
                 out.append(f"Klartext-Datei im Klassenbereich: {p.relative_to(REPO)}")
     return out
 

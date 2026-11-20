@@ -6,12 +6,13 @@
 #   make help
 
 .PHONY: help glossare themen-mp ke-stats lernraum clean-data \
-        check smoke smoke-setup bump install-hooks site clean-site
+        check smoke smoke-setup bump install-hooks site clean-site kurse klassenbereich kursseite
 
 help:
 	@echo "Website-Pflege-Targets (siehe docs/website/RUNBUCH.md):"
 	@echo "  make check         BLOCKING+ADVISORY-Validierung (DER Gate-Einstiegspunkt)"
 	@echo "  make klassenbereich K=gpg9a  verschlüsselten Klassenbereich bauen (Hefte, Blätter, Folien aus der Welt)"
+	@echo "  make kursseite K=gpg9a  nach einer Stunde: bauen, prüfen, Bericht; mit JA=\"…\" committen und pushen"
 	@echo "  make kurse         Übersicht + Kursseiten aus unterricht/kurse.json erzeugen"
 	@echo "  make smoke         Headless-Render-Smoke aller Live-Seiten (Playwright)"
 	@echo "  make smoke-setup   Einmalig: .venv/ mit Playwright+Chromium anlegen (PEP-668-sicher)"
@@ -38,6 +39,12 @@ kurse:
 # Verschlüsselter Klassenbereich eines Kurses (braucht die Welt und ~/.config/weitergehts/klassenbereich.json)
 klassenbereich:
 	python3 tools/kurse/klassenbereich.py $(K)
+
+# Nachführen nach einer gehaltenen Stunde (Anleitung: docs/website/VEROEFFENTLICHEN.md § Klassenbereich):
+#   make kursseite K="gpg9a"                   fester Arbeitsbaum ../_wt-kursseite ab origin/main, Bau, Prüfung, Bericht, Halt
+#   make kursseite K="gpg9a" JA="<Wortlaut>"   committet und pusht genau den berichteten Stand, mit dem Ja der Lehrkraft
+kursseite:
+	python3 tools/kurse/nachfuehren.py $(K) $(if $(JA),--push "$(JA)")
 
 smoke:
 	./tools/smoke/run.sh
@@ -67,7 +74,7 @@ site: clean-site
 	[ -f favicon.svg ] && cp favicon.svg _site/ || true
 	cp CNAME _site/ 2>/dev/null || true
 	[ -f favicon.ico ] && cp favicon.ico _site/ || true
-	rsync -a --exclude='_*/' --exclude='.DS_Store' --exclude='/unterricht/kurse.json' unterricht _site/
+	rsync -a --exclude='_*/' --exclude='.DS_Store' --exclude='/unterricht/kurse.json' --exclude='/unterricht/k/*/stand.json' unterricht _site/
 	rsync -a --exclude='_*/' --exclude='.DS_Store' assets _site/
 	[ -d profil ] && rsync -a --exclude='_*/' --exclude='.DS_Store' profil _site/ || true
 	[ -d impressum ] && rsync -a --exclude='_*/' --exclude='.DS_Store' impressum _site/ || true
