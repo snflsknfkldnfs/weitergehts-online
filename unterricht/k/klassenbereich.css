@@ -214,6 +214,9 @@ img.laedt { background: var(--gehalten) !important; }
 .q-wahl[aria-pressed="true"] { border: 2px solid var(--tinte); font-weight: 650; }
 .q-ok { border-color: var(--gruen); border-width: 2px; } .q-falsch { border-color: var(--rot); border-style: dashed; border-width: 2px; }
 .q-loes { margin: 8px 0 0; font-size: .92em; }
+.q-optionen { display: flex; flex-direction: column; gap: 10px; }
+.q-option { width: 100%; text-align: left; min-height: 56px; font-size: 1.05em; }
+.q-hinweis { color: var(--tinte); }
 .q-ok .q-loes { color: var(--gruen); } .q-falsch .q-loes { color: var(--rot); }
 .q-karte { display: flex; gap: 12px; align-items: center; width: 100%; text-align: left; border: 1px solid var(--linie); border-radius: 4px; background: var(--papier); padding: 10px 12px; margin-bottom: 8px; min-height: 52px; }
 .q-karte[aria-pressed="true"] { border: 2px solid var(--tinte); }

@@ -259,7 +259,7 @@
         runde.erg.push(erg); runde.nr++; if (runde.nr < runde.fragen.length) frage(); else ende();
       });
       var heft = f.stellen.length ? knopf('Im Heft nachsehen', 'knopf-neben q-heft', function () { heftAuf(f); }) : null;
-      ({ frei: frei, rf: rf, wahl: wahl, ordnen: ordnen })[f.form](f, erg, feld, unten, weiter, heft);
+      ({ frei: frei, rf: rf, wahl: wahl, ordnen: ordnen, eine: eine })[f.form](f, erg, feld, unten, weiter, heft);
       if (f.bild) { var fuss = el('p', 'q-nachweis'); fuss.innerHTML = 'Bild: ' + f.bild.nachweis; box.appendChild(fuss); bilderLaden(box); }
       var h2 = box.querySelector('.q-frage'); if (h2) { h2.tabIndex = -1; h2.focus({ preventScroll: true }); }
     }
@@ -368,6 +368,29 @@
         feld.appendChild(l); neu.remove(); fertig(feld, unten, weiter, heft, erg, f);
       });
       pruefen.disabled = true; unten.appendChild(pruefen); unten.appendChild(neu); if (heft) unten.appendChild(heft);
+    }
+
+    // eine von drei Antworten (GPG8a 20.11.): antippen, prüfen, die richtige steht mit „richtig“, die falsch gewählte mit „falsch“
+    function eine(f, erg, feld, unten, weiter, heft) {
+      var gewaehlt = null, gr = el('div', 'q-optionen');
+      mischen(f.optionen).forEach(function (o) {
+        var b = knopf(o, 'q-wahl q-option', function () {
+          gewaehlt = o; gr.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+          pruefen.disabled = false;
+        });
+        b.setAttribute('data-option', o); gr.appendChild(b);
+      });
+      feld.appendChild(gr);
+      var pruefen = knopf('Prüfen', 'knopf-haupt', function () {
+        gr.querySelectorAll('button').forEach(function (b) {
+          var o = b.getAttribute('data-option'); b.disabled = true;
+          if (o === f.loesung) { b.classList.add('q-ok'); b.textContent = 'richtig: ' + o; }
+          else if (o === gewaehlt) { b.classList.add('q-falsch'); b.textContent = 'falsch: ' + o; }
+        });
+        if (f.hinweis) feld.appendChild(el('p', 'q-loes q-hinweis', f.hinweis));
+        erg.punkte = gewaehlt === f.loesung ? f.punkte : 0; fertig(feld, unten, weiter, heft, erg, f);
+      });
+      pruefen.disabled = true; unten.appendChild(pruefen); if (heft) unten.appendChild(heft);
     }
 
     function fertig(feld, unten, weiter, heft, erg, f) {

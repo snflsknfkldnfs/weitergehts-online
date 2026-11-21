@@ -157,7 +157,7 @@ def heft_teile(quelle: dict, ordner: Path) -> list[dict]:
             rest = []
             for r in body:
                 if r[0] == "Antwort":
-                    t["antwort"] = " ".join(c for c in r[1:] if c)
+                    t["antwort"] = _ohne_satz(" ".join(c for c in r[1:] if c))
                 elif r[0] in quelle.get("saetze", {}):
                     label = quelle["saetze"][r[0]]  # "Label" oder ["Label", "Text für die Klasse statt der Erwartung"]
                     t["saetze"].append(tuple(label) if isinstance(label, list) else (label, " ".join(r[1:])))
@@ -201,7 +201,7 @@ def heft_teile(quelle: dict, ordner: Path) -> list[dict]:
         elif s.startswith("#") or META.match(nackt):
             continue
         elif antwort and not antwort.group(2).lower().startswith("frei"):
-            t["antwort"] = antwort.group(2).strip().strip("*_ ").strip("„“\"")
+            t["antwort"] = _ohne_satz(antwort.group(2)).strip().strip("*_ ").strip("„“\"")
         elif re.fullmatch(r"\*\*[^*]+\*\*:?", s):
             if t["zeilen"] or t["punkte"]:
                 neu(s.strip("*:"))
@@ -211,7 +211,7 @@ def heft_teile(quelle: dict, ordner: Path) -> list[dict]:
             if not re.search(r":\**\s*frei\b", inhalt):
                 t["punkte"].append(inhalt)
         elif t["zeilen"] and not t["antwort"] and not s.startswith(("Erzeugt", "Quelle", "*")):
-            t["antwort"] = s
+            t["antwort"] = _ohne_satz(s)
     tabelle_schliessen()
     neu()
     return teile
@@ -254,6 +254,14 @@ def heft_html(teile: list[dict]) -> str:
             out.append(f'<p class="antwort"><span class="lbl">Antwortsatz</span>{inline(t["antwort"])}</p>')
         out.append("</div>")
     return "\n".join(out)
+
+
+def _ohne_satz(s: str) -> str:
+    """Die Satz-Marke der Sache („[Satz 24]“) gehört nie in Schülertext (GPG8a 21.11.2026: stand im Antwortsatz der Heftseite UE19)."""
+    return re.sub(r"\s*\[Satz[^\]]*\]", "", s)
+
+
+_JG = ["9"]   # Jahrgang des Kurses, die KI-Regeln nennen ihn (bis 21.11.2026 stand dort immer „9th grade“)
 
 
 def heft_text(teile: list[dict]) -> str:
@@ -837,6 +845,9 @@ def bauen(kurs: str, bericht: dict | None = None) -> int:
     ziel = UNTERRICHT / "k" / kurs
     ablage = Ablage(tresor, ziel / "dateien")
     k = daten["kurse"][kurs]
+    _JG[0] = str(k.get("jahrgang", 9))
+    global REGELN, QUIZ_REGELN
+    REGELN, QUIZ_REGELN = (x.replace("9th grade", _JG[0] + "th grade") for x in (_REGELN0, _QUIZ0))
     fach = daten["faecher"][k["fach"]]
     materialien = {m["id"]: m for m in daten["materialien"] if kurs in m.get("kurse", []) and m.get("id")}
     reihe, jahrplan = struktur(kurs, auswahl, daten, welt)
@@ -1256,7 +1267,17 @@ def _zuordnen(karten: list[str], gruppen: dict[str, list[str]]) -> dict[str, str
 
 
 def frage_form(nr, typ, mat, frage, el) -> dict:
-    """Die vier Formen zum Antippen (Lehrkraft 18.11.: eindeutig prüfbar); sonst Freitext mit Selbstkontrolle."""
+    """Die Formen zum Antippen (Lehrkraft 18.11.: eindeutig prüfbar); sonst Freitext mit Selbstkontrolle."""
+    if typ == "Eine von drei":   # GPG8a 20.11.: eine Frage, drei Antworten, eine richtig; Element 4 ist die Erklärung
+        if len(el) >= 3 and len(set(el[:3])) == 3:
+            return {"form": "eine", "optionen": list(el[:3]), "loesung": el[0],
+                    "hinweis": el[3].split(":", 1)[1].strip() if len(el) > 3 and ":" in el[3] else ""}
+    if typ == "Stimmt das":      # GPG8a 20.11.: eine Aussage, stimmt / stimmt nicht; Element 2 ist die Erklärung
+        aussage = frage.split("?", 1)[1].strip() if frage.startswith("Stimmt das?") else frage
+        if el and el[0] in ("stimmt", "stimmt nicht"):
+            ok = el[0] == "stimmt"
+            return {"form": "rf", "aussagen": [aussage], "loesung": [ok],
+                    "hinweise": [("Das stimmt. " if ok else "Das stimmt nicht. ") + (el[1] if len(el) > 1 else "")]}
     if typ == "Richtig oder falsch":
         aussagen = re.split(r"\s*[a-h]\)\s*", frage)[1:]
         loes = [("richtig" in x.split(")", 1)[1]) for x in el]
@@ -1296,6 +1317,7 @@ QUIZ_REGELN = """You are a fair, friendly checker for a student about 14-15 year
 4. Points: say "Das wären etwa X von Y Punkten" (whole points only). No grades.
 5. You may explain background if the student asks; say when something is not in the notebook. Never invent facts or numbers. Present East and West fairly.
 6. Never ask for the student's name."""
+_REGELN0, _QUIZ0 = REGELN, QUIZ_REGELN   # Vorlagen mit „9th grade“; bauen() setzt den Jahrgang des Kurses ein
 
 
 def quiz_prompt(frage_text: str, mat: str | None, el: list[str], punkte: int, heft: str) -> str:

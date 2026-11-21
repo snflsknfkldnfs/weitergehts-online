@@ -12,51 +12,51 @@
  "kurs": "gpg8a",
  "seiten": {
   "kursseite": {
-   "kennung": "db2a4b33df7460e5"
+   "kennung": "b616c28d2b183984"
   },
   "s01/ue01-02": {
    "datum": "2026-09-29",
-   "kennung": "a7fc4d896c470b66"
+   "kennung": "6b2edf49c4371987"
   },
   "s01/ue03-04": {
    "datum": "2026-10-06",
-   "kennung": "edb35b47033d189c"
+   "kennung": "7d3867b33561e981"
   },
   "s01/ue05-06": {
    "datum": "2026-10-13",
-   "kennung": "aeb9c81fb2fbafc8"
+   "kennung": "bdc1356e27f17ea7"
   },
   "s01/ue08-09": {
    "datum": "2026-10-20",
-   "kennung": "837aed4b28b010bd"
+   "kennung": "1b8ca5af255993cf"
   },
   "s01/ue10": {
    "datum": "2026-10-23",
-   "kennung": "33d99fe777dd12a7"
+   "kennung": "eb321ab23a676713"
   },
   "s01/ue11-12": {
    "datum": "2026-10-27",
-   "kennung": "462e851c3bfbe828"
+   "kennung": "fb8515744fefaffa"
   },
   "s01/ue14-15": {
    "datum": "2026-11-10",
-   "kennung": "f9ff6ae68eb2154a"
+   "kennung": "5094879ef70f7719"
   },
   "s01/ue16": {
    "datum": "2026-11-13",
-   "kennung": "e4f577834622a866"
+   "kennung": "1bc153021adb55c1"
   },
   "s01/ue17-18": {
    "datum": "2026-11-17",
-   "kennung": "5e5d910532ff3592"
+   "kennung": "a90ed4fd6391bbb5"
   },
   "s01/ue19": {
    "datum": "2026-11-20",
-   "kennung": "506b5567e8fe2bda"
+   "kennung": "a1c246349e7f9c10"
   },
-  "s01/ue28": {
-   "datum": "2026-12-11",
-   "kennung": "1a6c84f013775c65"
+  "s01/ue22": {
+   "datum": "2026-11-27",
+   "kennung": "523088a91165a1ba"
   }
  },
  "welt_kurs": "GPG8a"
