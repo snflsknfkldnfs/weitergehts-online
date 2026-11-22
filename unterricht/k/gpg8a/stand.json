@@ -28,11 +28,11 @@
   },
   "s01/ue08-09": {
    "datum": "2026-10-20",
-   "kennung": "801f12b1c94829cf"
+   "kennung": "2e541fe980c0f1e5"
   },
   "s01/ue10": {
    "datum": "2026-10-23",
-   "kennung": "617f0d192f7e10a9"
+   "kennung": "491e773d5806819f"
   },
   "s01/ue11-12": {
    "datum": "2026-10-27",
@@ -40,11 +40,11 @@
   },
   "s01/ue14-15": {
    "datum": "2026-11-10",
-   "kennung": "ca83458ce9c76eaf"
+   "kennung": "a21882dc6d7ebbc9"
   },
   "s01/ue16": {
    "datum": "2026-11-13",
-   "kennung": "341c306732341613"
+   "kennung": "591368417a35c9f4"
   },
   "s01/ue17-18": {
    "datum": "2026-11-17",
@@ -52,11 +52,11 @@
   },
   "s01/ue19": {
    "datum": "2026-11-20",
-   "kennung": "48bf9dbf0bc04584"
+   "kennung": "ce9ae1e3e916439e"
   },
   "s01/ue22": {
    "datum": "2026-11-27",
-   "kennung": "fb2187f9aa7f162d"
+   "kennung": "c0ceb2887ec5eac9"
   }
  },
  "welt_kurs": "GPG8a"
