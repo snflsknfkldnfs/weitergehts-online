@@ -183,7 +183,7 @@ hält er an. Vor dem Ja ansehen, wo es um Neues geht: `preview_start` `kursseite
 Wortlaut und Push, aber nur, wenn `origin/main` sich seit dem Bericht nicht bewegt hat, der Stand Byte für Byte der berichtete ist
 und sich nur Seiten der Kurse ändern. Ein Sammel-Ja deckt reine Nachführungen (Entscheid der Lehrkraft 18.11.2026); ein neues
 Werkzeug oder eine neue Seitenart kommt über einen eigenen Zweig mit eigenem Ja, nie über diesen Befehl. Im Arbeitsbaum
-`_wt-kursseite` nie von Hand arbeiten. Nach dem Push: Deploy abwarten (`gh run list --branch main --limit 1`) und live prüfen,
+`_wt-kursseite` nie von Hand arbeiten. Nach dem Push: Deploy abwarten (`gh run list --branch main --limit 3 --json status,conclusion,headSha`: den Lauf mit dem eigenen Commit nehmen, nicht den letzten „completed“; bei „Found 0 artifact(s)“ den ganzen Workflow neu starten mit `gh run rerun <id>`, nicht nur `--failed`) und live prüfen,
 ohne das Passwort in die öffentliche Seite zu tippen: Dateien Byte für Byte vergleichen (`curl -s https://weitergehts.online/<pfad> | cmp - <pfad>`)
 und eine Seite mit dem `Tresor` des Generators entschlüsseln (Spec § 7).
 
