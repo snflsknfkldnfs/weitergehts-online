@@ -4,7 +4,11 @@
   "welt": "/Users/paulad/Schule_2026-27/Unterrichtsplanung26_27/welt/GPG9a",
   "jahresplan": "JAHRESPLAN.md",
   "ausblenden": [
-    "s00",
+    "s00/ue01",
+    "s00/ue02-03",
+    "s00/ue04",
+    "s00/ue05-06",
+    "s00/ue07",
     "s01/ue05",
     "s01/ue11",
     "s01/ue12-13"
@@ -224,6 +228,28 @@
         15,
         17,
         18
+      ]
+    },
+    "s00/ue08": {
+      "_hinweis": "Wochenrückblick Geheimdienstreform (26.11.2026). Vor der Stunde: Folien ohne die Lösungsfolie 13 (Hefteintrag). Nach der Nachbereitung folien_ohne streichen; heft aus PLANUNG.md § Sicherung.",
+      "ordner": "UE08_2026-11-26_geheimdienstreform",
+      "heft": [
+        {
+          "datei": "PLANUNG.md",
+          "abschnitt": "### Lösung",
+          "bis": "- Heft beim Bau gekürzt"
+        }
+      ],
+      "blaetter": [
+        {
+          "datei": "drucken/25x_einseitig_AB_Befugnisse.pdf",
+          "titel": "Arbeitsblatt: Was der Geheimdienst jetzt darf",
+          "art": "Arbeitsblatt"
+        }
+      ],
+      "folien": "2026-11-26_GPG9a_geheimdienstreform.pdf",
+      "folien_ohne": [
+        13
       ]
     }
   },

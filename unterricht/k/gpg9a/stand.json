@@ -2,17 +2,23 @@
  "_comment": "Erzeugt von tools/kurse/klassenbereich.py, nicht von Hand. Nur Kennungen, kein Inhalt; nicht veröffentlicht.",
  "ausgespart": {
   "daten": [
+   "2026-09-17",
+   "2026-09-18",
+   "2026-09-24",
+   "2026-09-25",
    "2026-10-15",
    "2026-11-19"
   ],
-  "ordner": [
-   "S00_aktuelles"
-  ]
+  "ordner": []
  },
  "kurs": "gpg9a",
  "seiten": {
   "kursseite": {
-   "kennung": "b8f707b992c48cac"
+   "kennung": "5b9c5bb89b19aba8"
+  },
+  "s00/ue08": {
+   "datum": "2026-11-26",
+   "kennung": "05ed4aa1c148d5f0"
   },
   "s01/ue01": {
    "datum": "2026-10-01",
