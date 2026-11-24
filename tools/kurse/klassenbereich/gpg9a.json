@@ -231,7 +231,7 @@
       ]
     },
     "s00/ue08": {
-      "_hinweis": "Wochenrückblick Geheimdienstreform, vorgezogen auf Di 24.11.2026 (Vertretung). Erarbeitung an der iPad-Seite begleiten/geheimdienst, das Blatt ist die Sicherung (kein Hefteintrag). Lösung des Blatts erst nach der Nachbereitung zeigen.",
+      "_hinweis": "Wochenrückblick Geheimdienstreform, gehalten Di 24.11.2026 (Vertretung). Blatt ist die Sicherung (ohne_heft). Antwortsatz (Aufgabe 7) wird am Do 26.11. nachgeholt; die Lösung erst danach zeigen.",
       "ordner": "UE08_2026-11-24_geheimdienstreform",
       "blaetter": [
         {
@@ -262,8 +262,5 @@
         "frage": "Warum baute die DDR eine Mauer mitten durch Berlin?"
       }
     ]
-  },
-  "zeigen": [
-    "s00/ue08"
-  ]
+  }
 }
