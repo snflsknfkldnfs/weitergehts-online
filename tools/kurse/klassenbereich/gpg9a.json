@@ -245,6 +245,22 @@
       ],
       "folien": "2026-11-24_GPG9a_geheimdienstreform.pdf",
       "ohne_heft": true
+    },
+    "s00/ue09": {
+      "_hinweis": "Wochenrückblick, Fortsetzung von UE08: Wer kontrolliert den Geheimdienst? Do 26.11.2026. Blatt ist die Sicherung (ohne_heft); vor der Stunde mit Erarbeitung gezeigt (zeigen), nach der Nachbereitung aus zeigen streichen.",
+      "ordner": "UE09_2026-11-26_wer-passt-auf",
+      "blaetter": [
+        {
+          "datei": "drucken/25x_doppelseitig_AB_Kontrolle.pdf",
+          "titel": "Arbeitsblatt: Wer kontrolliert den Geheimdienst?",
+          "art": "Arbeitsblatt",
+          "zu": [
+            "begleiten-kontrolle"
+          ]
+        }
+      ],
+      "folien": "2026-11-26_GPG9a_wer-passt-auf.pdf",
+      "ohne_heft": true
     }
   },
   "uebung_pool": {
@@ -262,5 +278,8 @@
         "frage": "Warum baute die DDR eine Mauer mitten durch Berlin?"
       }
     ]
-  }
+  },
+  "zeigen": [
+    "s00/ue09"
+  ]
 }
