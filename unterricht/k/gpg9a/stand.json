@@ -14,11 +14,15 @@
  "kurs": "gpg9a",
  "seiten": {
   "kursseite": {
-   "kennung": "40b7a3be445285a2"
+   "kennung": "8ef8a00f4e44f799"
   },
   "s00/ue08": {
    "datum": "2026-11-24",
    "kennung": "5d3b3e4917115464"
+  },
+  "s00/ue09": {
+   "datum": "2026-11-26",
+   "kennung": "f3278e0636fd7b9b"
   },
   "s01/ue01": {
    "datum": "2026-10-01",
