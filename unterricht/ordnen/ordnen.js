@@ -292,7 +292,7 @@
     document.title = d.titel;
     document.getElementById('o-leitfrage').textContent = d.leitfrage;
     document.getElementById('o-auftrag').textContent = knopfWort(d.auftrag);
-    if (d.ki_hilfe && d.ki_hinweis) {
+    if (false && d.ki_hilfe && d.ki_hinweis) {   // seit 2026-11-26: KI-Knopf wird nicht mehr erklärt (Lehrkraft)
       document.getElementById('o-auftrag').after(el('p', 'o-ki-zeile', knopfWort(d.ki_hinweis)));
     }
 

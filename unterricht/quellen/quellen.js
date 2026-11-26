@@ -222,7 +222,7 @@
       box.appendChild(ol);
       box.hidden = false;
     }
-    if (d.ki_hilfe && d.ki_hinweis) {
+    if (false && d.ki_hilfe && d.ki_hinweis) {   // seit 2026-11-26: KI-Knopf wird nicht mehr erklärt (Lehrkraft)
       var h = document.getElementById('q-ki-text');
       h.textContent = knopfWort(d.ki_hinweis); h.hidden = false;
     }

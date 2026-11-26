@@ -130,3 +130,9 @@ body.q-gesperrt { overflow: hidden; }
   .q-ki-huelle, .q-plakat { padding-left: 20px; padding-right: 20px; }
   .q-fragen { padding: 16px 20px 10px; }
 }
+
+/* KI-Knopf unscheinbar (2026-11-26, Lehrkraft: soll im Lesen nicht ablenken): leiser Textknopf rechts, Tippfläche bleibt groß */
+.q-ki-huelle { justify-content: flex-end; }
+.q-quelle .q-ki, .q-ki-huelle .q-ki { background: none; border: 0; box-shadow: none; color: var(--m-leise); font-size: .82rem; font-weight: 400;
+  text-decoration: underline dotted; text-underline-offset: 3px; padding: 0 4px; min-height: var(--m-klick); }
+.q-quelle .q-ki:hover, .q-quelle .q-ki:focus-visible { color: var(--m-tinte); }

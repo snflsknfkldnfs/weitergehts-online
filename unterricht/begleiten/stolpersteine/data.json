@@ -2,7 +2,7 @@
  "titel": "Stolpersteine",
  "leitfrage": "Würde ich Stolpersteine in meiner Stadt verbieten?",
  "speicher": "stolpersteine-2026",
- "auftrag": "Tipp oben auf die Station, die gerade dran ist. Lies die Sätze. Die Fragen stehen auf deinem Blatt.",
+ "auftrag": "",
  "ki_hilfe": true,
  "ki_hinweis": "Bei jedem Material kannst du auf „Mit KI verstehen“ tippen. Deine Antworten schreibst du selbst auf dein Blatt.",
  "nachweis": "Texte: Lehrkraft, nach den Biografien Max und Paul Henle (Stadtarchiv Gerolzhofen), alemannia-judaica.de (Gerolzhofen), zdfheute (25.09.2026), evangelisch.de, Wikipedia „Stolpersteine“, bpb und DGB; Zitate wörtlich. Bilder: Wikimedia Commons (Nachweis am Bild).",
@@ -11,7 +11,7 @@
    "id": "stationen",
    "reiter": "Stationen",
    "titel": "Stationen",
-   "auftrag": "Immer nur die Station, die gerade dran ist. Bei Station 3 erst Karte A, dann Karte B.",
+   "auftrag": "Tipp auf die Station, die gerade dran ist. Die Fragen stehen auf Deinem Blatt.",
    "typ": "lesen",
    "seiten": [
     {

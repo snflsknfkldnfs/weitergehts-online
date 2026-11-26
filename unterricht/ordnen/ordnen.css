@@ -117,3 +117,9 @@
 .o-wahl a:active { box-shadow: 2px 2px 0 var(--m-kante); transform: translate(3px, 3px); }
 .o-wahl strong { display: block; font-size: 1.12rem; margin-bottom: 3px; }
 .o-wahl span { font-size: .95rem; color: var(--m-leise); }
+
+/* KI-Knopf unscheinbar (2026-11-26, Lehrkraft: soll im Lesen nicht ablenken): leiser Textknopf rechts, Tippfläche bleibt groß */
+.o-ki-huelle { justify-content: flex-end; }
+.o-ki-huelle .o-ki { background: none; border: 0; box-shadow: none; color: var(--m-leise); font-size: .82rem; font-weight: 400;
+  text-decoration: underline dotted; text-underline-offset: 3px; padding: 0 4px; min-height: var(--m-klick); }
+.o-ki-huelle .o-ki:hover, .o-ki-huelle .o-ki:focus-visible { color: var(--m-tinte); }

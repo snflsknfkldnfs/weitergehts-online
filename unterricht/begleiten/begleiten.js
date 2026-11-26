@@ -471,10 +471,12 @@
     laden();
     rollenZiehen();
     document.title = d.titel;
-    document.getElementById('b-titel').textContent = d.titel;
-    if (d.leitfrage) document.getElementById('b-leitfrage').textContent = d.leitfrage;
-    if (d.auftrag) document.getElementById('b-auftrag').textContent = d.auftrag;
-    if (d.ki_hilfe && d.ki_hinweis) { var h = document.getElementById('b-ki-hinweis'); h.textContent = d.ki_hinweis; h.hidden = false; }
+    /* Kopf (seit 1.10 / 2026-11-26, Lehrkraft: „Titel braucht es nicht, Stundenfrage reicht“; der KI-Knopf wird nicht mehr
+     * erklärt): Mit Stundenfrage steht nur sie oben; ein leerer Auftrag erscheint nicht; ki_hinweis wird nicht gezeigt. */
+    var lf = document.getElementById('b-leitfrage'), au = document.getElementById('b-auftrag');
+    document.getElementById('b-titel').textContent = d.leitfrage || d.titel;
+    lf.hidden = true;
+    if (d.auftrag) au.textContent = d.auftrag; else au.hidden = true;
     if (d.nachweis) document.getElementById('b-nachweis').textContent = d.nachweis;
     var neu = document.getElementById('b-neu');
     neu.addEventListener('click', function () {
