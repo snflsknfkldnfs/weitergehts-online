@@ -1,0 +1,216 @@
+{
+ "titel": "Daten schützen",
+ "leitfrage": "Wie schütze ich meine Daten vor Fremden?",
+ "speicher": "daten-schuetzen-2026",
+ "auftrag": "",
+ "ki_hilfe": false,
+ "reiter": false,
+ "nachweis": "Texte und Bildschirme: Lehrkraft (nachgebaut, erfunden, keine echten Seiten oder Marken).",
+ "schritte": [
+  {
+   "id": "stationen",
+   "reiter": "Stationen",
+   "titel": "Stationen",
+   "auftrag": "Sieh dir zuerst den Bildschirm an und kreuz auf deinem Blatt an. Dann lies weiter.",
+   "blatt": "Die Fragen stehen auf deinem Blatt.",
+   "fragen": [],
+   "typ": "lesen",
+   "seiten": [
+    {
+     "id": "s1",
+     "name": "1 Der Gratis-Cheat",
+     "materialien": [
+      {
+       "kopf": "Das siehst du",
+       "absaetze": [
+        {
+         "eigen": "Du suchst einen Cheat für dein Lieblingsspiel und findest eine Seite: „Unendlich Münzen, gratis herunterladen!“"
+        },
+        {
+         "eigen": "Du tippst auf den Knopf. Dein Handy zeigt sofort eine Warnung."
+        }
+       ],
+       "plakat": {
+        "bild": "bilder/bildschirm_cheat.jpg",
+        "unterschrift": "So sieht es aus: eine Seite mit Gratis-Cheats, darunter die Warnung des Handys.",
+        "lage": "rechts"
+       }
+      },
+      {
+       "kopf": "Was dahinter steckt",
+       "absaetze": [
+        {
+         "eigen": "Gratis-Cheats, Mods und Spiele, die eigentlich Geld kosten, kommen oft von fremden Seiten oder über Torrent. Darin steckt oft ein Schadprogramm."
+        },
+        {
+         "eigen": "Ein Schadprogramm läuft heimlich mit. Es liest deine Passwörter mit, schickt Nachrichten in deinem Namen oder sperrt deine Fotos, bis jemand Geld bezahlt."
+        },
+        {
+         "eigen": "Ein Virenschutzprogramm erkennt solche Programme und blockiert sie. Auf dem Handy und auf dem PC ist es meist schon eingebaut."
+        },
+        {
+         "eigen": "Wer auf „Trotzdem installieren“ tippt, schaltet den Schutz selbst aus."
+        },
+        {
+         "eigen": "So schützt du dich: Apps und Spiele nur aus dem offiziellen Store laden, den Virenschutz anlassen und seine Warnung ernst nehmen."
+        }
+       ],
+       "glossar": {
+        "Schadprogramm": "ein Programm, das heimlich Schaden anrichtet (auch Schadsoftware oder Virus)",
+        "Virenschutzprogramm": "ein Programm, das Schadprogramme findet und blockiert",
+        "Mod": "eine Veränderung an einem Spiel, von anderen Spielern gebaut",
+        "Torrent": "ein Weg, Dateien von fremden Rechnern zu laden, oft ohne Erlaubnis",
+        "offizieller Store": "der App Store oder Google Play, wo Apps geprüft werden"
+       }
+      }
+     ]
+    },
+    {
+     "id": "s2",
+     "name": "2 Die Gewinn-Nachricht",
+     "materialien": [
+      {
+       "kopf": "Das siehst du",
+       "absaetze": [
+        {
+         "eigen": "Du bekommst eine Nachricht: „Glückwunsch! Du hast 10.000 Spielmünzen gewonnen. Melde dich in 24 Stunden an, sonst ist der Gewinn weg.“"
+        },
+        {
+         "eigen": "Darunter steht ein Link zu einer Anmeldeseite."
+        }
+       ],
+       "plakat": {
+        "bild": "bilder/bildschirm_gewinn.jpg",
+        "unterschrift": "So sieht es aus: eine Nachricht über einen Gewinn mit einem Link.",
+        "lage": "rechts"
+       }
+      },
+      {
+       "kopf": "Was dahinter steckt",
+       "absaetze": [
+        {
+         "eigen": "So eine Nachricht heißt Phishing (gesprochen: Fisching). Das Wort kommt vom englischen Wort für Angeln: Jemand angelt nach deinem Passwort."
+        },
+        {
+         "eigen": "Der Link führt auf eine nachgemachte Seite. Die Adresse ist nicht die echte Adresse deines Spiels."
+        },
+        {
+         "eigen": "Typisch sind drei Dinge: ein Gewinn, Zeitdruck und ein Link."
+        },
+        {
+         "eigen": "Wer dort sein Passwort eintippt, schickt es an Fremde. Sie übernehmen das Konto, verkaufen deine Sachen und schreiben deine Freunde an."
+        },
+        {
+         "eigen": "So schützt du dich: Tippe nie auf so einen Link. Öffne das Spiel selbst und melde dich nur dort an."
+        },
+        {
+         "eigen": "Hat jedes Konto ein eigenes Passwort, ist nur ein Konto in Gefahr, nicht alle. Ein Passwort-Manager merkt sie sich für dich."
+        }
+       ],
+       "glossar": {
+        "Phishing": "eine falsche Nachricht, die dein Passwort will",
+        "Konto": "dein Zugang zu einem Spiel oder einer App, mit Name und Passwort",
+        "Passwort-Manager": "ein Tresor für Passwörter mit einem Hauptpasswort (25.09.)"
+       }
+      }
+     ]
+    },
+    {
+     "id": "s3",
+     "name": "3 Die Taschenlampen-App",
+     "materialien": [
+      {
+       "kopf": "Das siehst du",
+       "absaetze": [
+        {
+         "eigen": "Du lädst eine Taschenlampen-App. Beim Öffnen fragt sie: Darf ich deinen Standort, deine Kontakte und dein Mikrofon benutzen?"
+        },
+        {
+         "eigen": "Oben erscheint eine Meldung: „Sicherheits-Update verfügbar“. Du kannst „Jetzt“ oder „Später“ tippen."
+        }
+       ],
+       "plakat": {
+        "bild": "bilder/bildschirm_taschenlampe.jpg",
+        "unterschrift": "So sieht es aus: Eine Taschenlampen-App fragt nach Rechten, oben eine Update-Meldung.",
+        "lage": "rechts"
+       }
+      },
+      {
+       "kopf": "Was dahinter steckt",
+       "absaetze": [
+        {
+         "eigen": "Eine Taschenlampe braucht nur das Licht am Handy. Standort, Kontakte und Mikrofon braucht sie nicht."
+        },
+        {
+         "eigen": "Fragt sie trotzdem danach, will der Anbieter Daten sammeln: wo du bist und wen du kennst. Er verkauft sie weiter. So entsteht ein Profil über dich, wie bei 2580."
+        },
+        {
+         "eigen": "So schützt du dich: Gib einer App nur die Rechte, die sie für ihre Aufgabe braucht. In den Einstellungen siehst du, welche App was darf."
+        },
+        {
+         "eigen": "Ein Update schließt Lücken. Eine Lücke ist ein Fehler im Programm, durch den Fremde in dein Handy kommen."
+        },
+        {
+         "eigen": "Wer das Update immer auf später schiebt, lässt die Lücke offen. Darum: Updates bald installieren."
+        }
+       ],
+       "glossar": {
+        "Recht (einer App)": "eine Erlaubnis, etwas auf dem Handy zu benutzen",
+        "Update": "eine neue Fassung einer App oder des Handys",
+        "Lücke": "ein Fehler im Programm, durch den Fremde hineinkommen"
+       }
+      }
+     ]
+    },
+    {
+     "id": "s4",
+     "name": "4 Das Freibad-WLAN",
+     "materialien": [
+      {
+       "kopf": "Das siehst du",
+       "absaetze": [
+        {
+         "eigen": "Im Freibad hast du kaum Netz. In der Liste steht „Freibad_Gratis“, ohne Schloss, ohne Passwort."
+        },
+        {
+         "eigen": "Du willst dich bei deinem Spiel anmelden."
+        }
+       ],
+       "plakat": {
+        "bild": "bilder/bildschirm_wlan.jpg",
+        "unterschrift": "So sieht es aus: die WLAN-Liste im Freibad.",
+        "lage": "rechts"
+       }
+      },
+      {
+       "kopf": "Was dahinter steckt",
+       "absaetze": [
+        {
+         "eigen": "Ein offenes WLAN braucht kein Passwort. Jeder in der Nähe kann sich einwählen. Manchmal stellt jemand so ein WLAN mit einem harmlosen Namen selbst auf, um mitzulesen."
+        },
+        {
+         "eigen": "Was du über ein offenes WLAN schickst, können andere sehen. Gib dort darum kein Passwort ein."
+        },
+        {
+         "eigen": "Besser: mobile Daten nutzen oder warten, bis du zu Hause bist."
+        },
+        {
+         "eigen": "Ein VPN ist ein Programm, das deine Verbindung verschlüsselt, wie ein Tunnel. Es schützt aber nicht vor Schadprogrammen oder falschen Links."
+        },
+        {
+         "eigen": "Ein VPN macht dich auch nicht unsichtbar: Wer sich bei einem Spiel anmeldet, ist dort trotzdem bekannt."
+        }
+       ],
+       "glossar": {
+        "offenes WLAN": "ein WLAN ohne Passwort, ohne Schloss in der Liste",
+        "mobile Daten": "Internet über die SIM-Karte statt über WLAN",
+        "VPN": "ein Programm, das die Verbindung verschlüsselt",
+        "verschlüsseln": "so verändern, dass nur der Empfänger es lesen kann"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
