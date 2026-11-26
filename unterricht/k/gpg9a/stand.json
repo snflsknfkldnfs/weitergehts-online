@@ -6,15 +6,16 @@
    "2026-09-18",
    "2026-09-24",
    "2026-09-25",
-   "2026-10-15",
-   "2026-11-19"
+   "2026-10-15"
   ],
-  "ordner": []
+  "ordner": [
+   "S02_erinnerungskultur"
+  ]
  },
  "kurs": "gpg9a",
  "seiten": {
   "kursseite": {
-   "kennung": "8ef8a00f4e44f799"
+   "kennung": "00971c3ce0defa75"
   },
   "s00/ue08": {
    "datum": "2026-11-24",
@@ -47,6 +48,14 @@
   "s01/ue09-10": {
    "datum": "2026-11-13",
    "kennung": "8cdfc5ef80da8c82"
+  },
+  "s01/ue11": {
+   "datum": "2026-11-19",
+   "kennung": "e89d2c86fd5273cd"
+  },
+  "s01/ue12-13": {
+   "datum": "2026-11-20",
+   "kennung": "33e4e24e6d75283d"
   },
   "s01/ue13": {
    "datum": "2026-11-20",
