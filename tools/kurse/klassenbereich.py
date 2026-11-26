@@ -1073,7 +1073,12 @@ def stundenseite(s, st, a, ordner, teile, stunden, hier, vor, nach, ablage, mate
     dat = "../../dateien/"
     heft_da = not a.get("ohne_heft")   # Stunde, in der kein Eintrag geschrieben wurde: ohne Reiter „Heft“
     erarb_da = not a.get("vorab")      # vor der Stunde keine Blätter
-    erster = "ueben" if quiz_html else "heft" if heft_da else "erarbeitung" if erarb_da else "folien"
+    # Heft gesperrt bis nach der Stunde (Lehrkraft 26.11.2026: „Heft noch nicht freischalten … damit SuS nicht am Anfang schon
+    # die Sicherung sehen“): Auswahl „heft_frei_ab“ (ISO-Zeit, Ende der Stunde) und optional „heft_code“ (Codewort der
+    # Lehrkraft zum früheren Öffnen; nur sein Hash steht in der Seite). Die Seite zeigt das Heft ab dieser Zeit von selbst.
+    sperre = a.get("heft_frei_ab") if heft_da else None
+    erster = ("ueben" if quiz_html else "heft" if heft_da and not sperre else "erarbeitung" if erarb_da
+              else "heft" if heft_da else "folien")
     def reiter(zu, name):
         return f'<button role="tab" aria-selected="{"true" if zu == erster else "false"}" data-zu="{zu}">{name}</button>'
     out = [kopfzeile(stunden, hier, st["id"], vor, nach, s["id"]),
@@ -1090,10 +1095,19 @@ def stundenseite(s, st, a, ordner, teile, stunden, hier, vor, nach, ablage, mate
 
     if heft_da:
         bilder = [dat + ablage.ablegen(b, ".jpg") for b in einkleber_bilder(a, ordner)]
-        out.append('<section class="tafel" id="heft" role="tabpanel"' + ("" if erster == "heft" else " hidden") + ">")
-        out.append(heftseite(st, a, teile, bilder))
-        out.append(ki_knopf("Mit KI lernen", prompt_stunde(st, datum_kurz(st["datum"]), teile, a.get("_pool"))))
-        out.append("</section>")
+        innen = heftseite(st, a, teile, bilder) + ki_knopf("Mit KI lernen", prompt_stunde(st, datum_kurz(st["datum"]), teile, a.get("_pool")))
+        if sperre:
+            code = hashlib.sha256(a.get("heft_code", "").strip().lower().encode()).hexdigest()[:16] if a.get("heft_code") else ""
+            out.append(f'<section class="tafel" id="heft" role="tabpanel" data-frei-ab="{e(sperre)}" data-code="{code}"'
+                       + ("" if erster == "heft" else " hidden") + ">"
+                       + '<div class="sperre"><p>Das Heft siehst Du nach der Stunde. Erst erarbeitest Du es selbst.</p>'
+                       + ('<form class="sperre-code"><label>Code der Lehrkraft <input type="text" autocomplete="off" '
+                          'autocapitalize="none" spellcheck="false"></label><button type="submit">Öffnen</button></form>' if code else "")
+                       + f'</div><template>{innen}</template></section>')
+        else:
+            out.append('<section class="tafel" id="heft" role="tabpanel"' + ("" if erster == "heft" else " hidden") + ">")
+            out.append(innen)
+            out.append("</section>")
 
     # Erarbeitung: Blatt links, iPad-Seite rechts
     blaetter = []

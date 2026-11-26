@@ -74,11 +74,34 @@
     seite.innerHTML = html;
     abmelden.hidden = false;
     var h1 = seite.querySelector('h1'); if (h1) document.title = h1.textContent + ' · ' + document.title.split(' · ').pop();
+    seite.querySelectorAll('[data-frei-ab]').forEach(sperre);
     seite.querySelectorAll('[data-ki]').forEach(kiKnopf);
     seite.querySelectorAll('[data-kb-pdf]').forEach(pdfLink);
     reiter(); blattWahl(); umschalter(); folien(); sequenzWahl(); vollbild(); quiz(); trapez();
     window.addEventListener('resize', trapez);
     seite.querySelectorAll('[role=tabpanel]').forEach(sichtbarLaden);
+  }
+
+  // ── Heft gesperrt bis nach der Stunde (seit 2026-11-26): Inhalt steht in <template>, frei ab data-frei-ab oder mit Code ──
+  function sperre(sek) {
+    var tpl = sek.querySelector('template'); if (!tpl) return;
+    function frei() {
+      var box = sek.querySelector('.sperre'); if (box) box.remove();
+      sek.appendChild(tpl.content.cloneNode(true)); tpl.remove(); sek.removeAttribute('data-frei-ab');
+      sek.querySelectorAll('[data-ki]').forEach(kiKnopf); sichtbarLaden(sek);
+    }
+    var ab = Date.parse(sek.getAttribute('data-frei-ab'));
+    if (!isNaN(ab) && Date.now() >= ab) { frei(); return; }
+    if (!isNaN(ab)) setTimeout(function () { if (sek.querySelector('template')) frei(); }, Math.min(ab - Date.now(), 2147483000));
+    var f = sek.querySelector('.sperre-code'), soll = sek.getAttribute('data-code');
+    if (f && soll) f.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var wort = f.querySelector('input').value.trim().toLowerCase();
+      crypto.subtle.digest('SHA-256', new TextEncoder().encode(wort)).then(function (h) {
+        var hex = Array.prototype.map.call(new Uint8Array(h), function (x) { return ('0' + x.toString(16)).slice(-2); }).join('');
+        if (hex.slice(0, 16) === soll) frei(); else f.querySelector('input').value = '';
+      });
+    });
   }
 
   function reiter() {
