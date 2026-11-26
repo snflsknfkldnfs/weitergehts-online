@@ -63,6 +63,18 @@ body.begleiten {
 .b-plakat { margin: 6px 0 10px; }
 .b-plakat img { max-width: 100%; height: auto; border: 1px solid var(--m-linie-hell); }
 .b-plakat figcaption { font-size: .9rem; margin-top: 4px; }
+/* plakat.lage (1.9): klein neben dem Text oder begrenzt hoch; Tipp öffnet groß */
+.b-material::after { content: ""; display: block; clear: both; }
+.b-plakat-rechts { float: right; width: 40%; max-width: 360px; margin: 4px 0 10px 16px; }
+.b-plakat-breit img { max-height: 40vh; width: auto; max-width: 100%; display: block; }
+.b-plakat-rechts img, .b-plakat-breit img { cursor: zoom-in; }
+.b-lupe { display: block; font-size: .8rem; margin-top: 2px; }
+@media (max-width: 600px) { .b-plakat-rechts { float: none; width: 100%; max-width: none; margin: 6px 0 10px; } .b-plakat-rechts img { max-height: 35vh; width: auto; } }
+.b-gross { position: fixed; inset: 0; z-index: 1000; background: var(--m-vollbild); display: flex; flex-direction: column;
+  align-items: center; justify-content: center; padding: 16px; cursor: zoom-out; }
+.b-gross img { max-width: 100%; max-height: 82vh; object-fit: contain; background: var(--m-blatt); }
+.b-gross-text { color: var(--m-blatt); max-width: 60rem; margin: 10px 0 0; font-size: .95rem; text-align: center; }
+.b-gross-zu { position: absolute; top: 10px; right: 14px; font-size: 2rem; line-height: 1; color: var(--m-blatt); background: none; border: 0; cursor: pointer; }
 .b-ki-zeile { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 4px 0 8px; }
 .b-ki-hinweis { font-size: .9rem; }
 .b-nachweis { font-size: .8rem; margin: 6px 0 0; }

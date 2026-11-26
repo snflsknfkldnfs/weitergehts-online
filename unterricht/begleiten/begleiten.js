@@ -16,7 +16,8 @@
  *       "seiten": [ { "id", "name", "materialien": [ MATERIAL ], "fragen": [ FRAGE ] } ] | fehlt } ] }
  * MATERIAL = { "kennung", "kopf", "wer", "wann", "absaetze": [ "Wortlaut mit {{Wort}}" | { "eigen": "Satz" } ] | fehlt,
  *              "entlastet": [ … ] | fehlt, "glossar": { "Wort": "Erklärung" }, "plakat": { "bild", "unterschrift", "oben": bool },
- *              (plakat.oben, seit 1.3 / 2026-11-09: Bild vor dem Text, etwa eine Lagekarte, die beim Lesen sichtbar bleiben soll)
+ *              (plakat.oben, seit 1.3 / 2026-11-09: Bild vor dem Text, etwa eine Lagekarte, die beim Lesen sichtbar bleiben soll;
+ *              plakat.lage "rechts" | "breit", seit 1.9 / 2026-11-26: klein neben dem Text bzw. begrenzt hoch, Tipp öffnet groß)
  *              "einbettung": { "src", "hoehe", "titel" } | fehlt (seit 1.4 / 2026-11-09: interaktive Seite, etwa eine Zeitkarte,
  *              als Rahmen vor dem Text; darunter ein Knopf, der sie groß öffnet)
  *              "video": { "src", "start", "ende", "untertitel", "unterschrift" } | fehlt,
@@ -162,11 +163,29 @@
     z.appendChild(a);
     return z;
   }
+  /* plakat.lage (seit 1.9 / 2026-11-26): "rechts" = kleines Bild rechts neben dem Text (auf schmalen Geräten darüber),
+   * "breit" = über die ganze Breite, aber höchstens 40 % der Bildschirmhöhe (Karte, Zeitstrahl); ohne lage wie bisher.
+   * Ein Tipp aufs Bild öffnet es groß auf derselben Seite (Lehrkraft 26.11.: kleine Bildschirme, nicht überladen). */
+  function grossZeigen(p) {
+    var hg = el('div', 'b-gross'); hg.setAttribute('role', 'dialog'); hg.setAttribute('aria-label', p.unterschrift || 'Bild');
+    var img = el('img'); img.src = p.bild; img.alt = p.unterschrift || '';
+    var zu = el('button', 'b-gross-zu', '×'); zu.setAttribute('aria-label', 'Schließen');
+    hg.appendChild(zu); hg.appendChild(img);
+    if (p.unterschrift) hg.appendChild(el('p', 'b-gross-text', p.unterschrift));
+    function weg() { hg.remove(); document.removeEventListener('keydown', taste); }
+    function taste(e) { if (e.key === 'Escape') weg(); }
+    hg.addEventListener('click', weg); document.addEventListener('keydown', taste);
+    document.body.appendChild(hg);
+  }
   function plakatBauen(p) {
-    var fig = el('figure', 'b-plakat');
+    var fig = el('figure', 'b-plakat' + (p.lage ? ' b-plakat-' + p.lage : ''));
     var a = el('a'); a.href = p.bild; a.target = '_blank'; a.rel = 'noopener';
     var img = el('img'); img.src = p.bild; img.alt = p.unterschrift || ''; img.loading = 'lazy';
     a.appendChild(img); fig.appendChild(a);
+    if (p.lage) {
+      a.addEventListener('click', function (e) { e.preventDefault(); grossZeigen(p); });
+      fig.appendChild(el('span', 'b-lupe m-leise', 'Tipp aufs Bild: groß'));
+    }
     if (p.unterschrift) fig.appendChild(el('figcaption', 'm-leise', p.unterschrift));
     return fig;
   }
@@ -251,7 +270,7 @@
     if (m.audio) art.appendChild(audioBauen(m.audio));
     if (m.einbettung) art.appendChild(einbettungBauen(m.einbettung));
     if (m.sitze) art.appendChild(sitzeBauen(m.sitze));
-    if (m.plakat && m.plakat.oben) art.appendChild(plakatBauen(m.plakat));
+    if (m.plakat && (m.plakat.oben || m.plakat.lage)) art.appendChild(plakatBauen(m.plakat));
     var wortlaut = el('div', 'b-text');
     (m.absaetze || []).forEach(function (a) { wortlaut.appendChild(absatzBauen(a, glossar)); });
     if (m.entlastet && m.entlastet.length) {
@@ -272,7 +291,7 @@
     } else {
       art.appendChild(wortlaut);
     }
-    if (m.plakat && !m.plakat.oben) art.appendChild(plakatBauen(m.plakat));
+    if (m.plakat && !m.plakat.oben && !m.plakat.lage) art.appendChild(plakatBauen(m.plakat));
     if (D.ki_hilfe && m.ki_prompt) art.appendChild(kiKnopf(m));
     if (m.nachweis) art.appendChild(el('p', 'b-nachweis m-leise', m.nachweis));
     return art;

@@ -223,7 +223,11 @@
     { "id": "begleiten-mauerbau-1961", "pfad": "begleiten/mauerbau-1961/",
       "titel": "Mauerbau 1961",
       "art": "werkzeug", "fach": "gpg", "strang": "geschichte", "jahrgang": 9,
-      "kurse": ["gpg9a"], "thema": "Geteiltes Land", "datum": "2026-11-20", "stunde": "s01/ue13" }
+      "kurse": ["gpg9a"], "thema": "Geteiltes Land", "datum": "2026-11-20", "stunde": "s01/ue13" },
+    { "id": "begleiten-stolpersteine", "pfad": "begleiten/stolpersteine/",
+      "titel": "Stolpersteine: Stationen",
+      "art": "werkzeug", "fach": "gpg", "strang": "geschichte", "jahrgang": 9,
+      "kurse": ["gpg9a"], "thema": "Erinnerungskultur", "datum": "2026-11-27" }
   ],
   "hubs": ["ordnen/"]
 }

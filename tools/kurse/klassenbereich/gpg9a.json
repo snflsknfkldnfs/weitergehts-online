@@ -259,6 +259,26 @@
       ],
       "folien": "2026-11-26_GPG9a_wer-passt-auf.pdf",
       "ohne_heft": true
+    },
+    "s02/ue01-02": {
+      "_hinweis": "Erinnerungskultur, Doppelstunde Fr 27.11.2026: Würde ich Stolpersteine in meiner Stadt verbieten? Vor der Stunde mit Erarbeitung gezeigt (zeigen), nach der Nachbereitung aus zeigen streichen.",
+      "ordner": "UE01-02_2026-11-27_wuerde-ich-stolpersteine-in-meiner-stadt",
+      "blaetter": [
+        {
+          "datei": "drucken/25x_doppelseitig_AB_Stolpersteine.pdf",
+          "titel": "Arbeitsblatt: Stolpersteine",
+          "art": "Arbeitsblatt",
+          "zu": [
+            "begleiten-stolpersteine"
+          ]
+        }
+      ],
+      "folien": "2026-11-27_GPG9a_wuerde-ich-stolpersteine-in-meiner-stadt.pdf",
+      "heft_bild": [
+        {
+          "bild": "bilder/einkleber_loesung_a5.png"
+        }
+      ]
     }
   },
   "uebung_pool": {
@@ -278,6 +298,6 @@
     ]
   },
   "zeigen": [
-    "s00/ue09"
+    "s02/ue01-02"
   ]
 }
